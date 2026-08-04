@@ -3,6 +3,7 @@ import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles, userSkills } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, shiftDay } from "@/lib/session";
 import { getExercise, itemCount, xpFor } from "@/lib/skills";
 
@@ -18,6 +19,8 @@ export const dynamic = "force-dynamic";
  * hedefi (reviews) kelime oyunlarına aittir; burada XP/süre/seri güncellenir.
  */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
