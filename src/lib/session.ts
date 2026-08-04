@@ -194,34 +194,25 @@ function composeRounds(
     if (b.length) merged.push(b.shift()!);
   }
 
-  // Eşleştirme turu yalnızca 5 uygun kelime varsa kurulur; o kelimeler
-  // ayrılır ve tek başlarına tekrar sorulmaz. 5'ten azsa hiçbiri ayrılmaz.
-  const matchCandidates = merged.filter((m) => m.state >= 1).slice(0, 5);
+  // Eşleştirme turu: tanıtımı yapılan kelimeler de aday olur, böylece oyun
+  // ilk günden itibaren çıkar. Tur oturumun sonuna konur — o noktada tüm
+  // kelimeler tanıtılmış olur.
+  const matchCandidates = merged.filter((m) => m.state >= 0).slice(0, 5);
   const useMatch = matchCandidates.length === 5;
-  const reserved = new Set(useMatch ? matchCandidates.map((m) => m.word.id) : []);
-  let matchInserted = !useMatch;
 
   let lastGame = "";
   for (const item of merged) {
-    if (rounds.length >= ROUNDS_PER_SESSION) break;
-    if (!matchInserted && rounds.length >= 3) {
-      rounds.push({ id: nextId(), game: "match", words: matchCandidates.map((m) => m.word) });
-      matchInserted = true;
-      lastGame = "match";
-      continue;
-    }
-    if (reserved.has(item.word.id)) continue;
-
+    if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
     const round = pickRound(item.word, item.state, pool, lastGame, nextId);
     if (!round) continue;
     rounds.push(round);
     lastGame = round.game;
   }
 
-  // Eşleştirme turu sıraya girmediyse (oturum kısa kaldıysa) sona ekle.
-  if (!matchInserted) {
+  if (useMatch) {
     rounds.push({ id: nextId(), game: "match", words: matchCandidates.map((m) => m.word) });
   }
+
   return rounds;
 }
 
@@ -236,8 +227,10 @@ function pickRound(
 
   const candidates: Round["game"][] = [];
   if (state === 0) {
-    // Kelimeyi ilk kez gördü: önce tanıma, üretim daha sonra.
-    candidates.push("choice");
+    // Kelimeyi ilk kez gördü: tanıma temelli oyunlar (üretim daha sonra).
+    // Cümle tamamlama da şıklı olduğu için bu aşamada uygundur ve örnek cümle
+    // tanıtım kartında zaten gösterilmiştir.
+    candidates.push("choice", "cloze");
     if (word.artikel) candidates.push("artikel");
   } else if (state === 1) {
     candidates.push("choice");

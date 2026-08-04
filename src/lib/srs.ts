@@ -50,7 +50,7 @@ export function grade(
 }
 
 const MIN_EASE = 1.3;
-const LEARNING_STEPS_MIN = [1, 10]; // dakika
+const LEARNING_STEPS_MIN = [1, 5]; // dakika
 
 /** Bir sonraki durumu hesaplar. Saf fonksiyon — test edilebilir. */
 export function schedule(prev: SrsState, quality: number, now = new Date()): SrsState {
