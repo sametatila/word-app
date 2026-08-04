@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { isEmailNotVerified, runAuth, translateAuthError } from "@/lib/auth/errors";
+import { authApi, type SignUpResponse } from "@/lib/auth/api";
+import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
 
 type Mode = "signin" | "signup";
 
@@ -26,13 +26,14 @@ export function AuthForm() {
 
     try {
       if (mode === "signin") {
-        const res = await runAuth(() => authClient.signIn.email({ email, password }));
+        const res = await authApi("sign-in/email", { email, password });
         if (!res.ok) {
-          if (isEmailNotVerified(res.err)) {
+          // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
+          if (isEmailNotVerified(res)) {
             router.push(`/eposta-dogrula?email=${encodeURIComponent(email)}&durum=dogrulanmadi`);
             return;
           }
-          setError(translateAuthError(res.err));
+          setError(translateAuthError(res));
           return;
         }
         router.push("/learn");
@@ -40,18 +41,20 @@ export function AuthForm() {
         return;
       }
 
-      const res = await runAuth(() =>
-        authClient.signUp.email({ email, password, name: name.trim() || email.split("@")[0] }),
-      );
+      const res = await authApi<SignUpResponse>("sign-up/email", {
+        email,
+        password,
+        name: name.trim() || email.split("@")[0],
+      });
       if (!res.ok) {
-        setError(translateAuthError(res.err));
+        setError(translateAuthError(res));
         return;
       }
 
-      // Doğrulama zorunluysa oturum açılmaz; kullanıcıyı bilgilendirme ekranına al.
-      const session = await runAuth(() => authClient.getSession());
-      const user = session.ok ? (session.data as { data?: { user?: unknown } })?.data?.user : null;
-      if (user) {
+      // Oturum açılmadıysa (token yok / e-posta doğrulanmamış) doğrulama ekranına.
+      const verified = res.data?.user?.emailVerified === true;
+      const hasSession = Boolean(res.data?.token) || verified;
+      if (hasSession) {
         router.push("/learn");
         router.refresh();
       } else {

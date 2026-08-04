@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { authClient } from "@/lib/auth/client";
+import { authApi } from "@/lib/auth/api";
 import { AlertIcon, CheckIcon } from "@/components/icons";
 
 type Initial = {
@@ -182,7 +182,7 @@ export function ProfileForm({
               onClick={async () => {
                 setSigningOut(true);
                 try {
-                  await authClient.signOut();
+                  await authApi("sign-out", {});
                 } catch {
                   /* yine de ana sayfaya dön */
                 }

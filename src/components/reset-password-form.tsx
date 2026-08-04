@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { runAuth, translateAuthError } from "@/lib/auth/errors";
+import { authApi } from "@/lib/auth/api";
+import { translateAuthError } from "@/lib/auth/errors";
 
 export function ResetPasswordForm({ token }: { token: string | null }) {
   const router = useRouter();
@@ -24,10 +24,10 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
     }
     setBusy(true);
     setError(null);
-    const res = await runAuth(() => authClient.resetPassword({ newPassword: password, token }));
+    const res = await authApi("reset-password", { newPassword: password, token });
     setBusy(false);
     if (!res.ok) {
-      setError(translateAuthError(res.err));
+      setError(translateAuthError(res));
       return;
     }
     setDone(true);

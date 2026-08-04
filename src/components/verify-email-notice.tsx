@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell } from "@/components/auth-shell";
-import { runAuth, translateAuthError } from "@/lib/auth/errors";
+import { authApi } from "@/lib/auth/api";
+import { translateAuthError } from "@/lib/auth/errors";
 import { InfoIcon } from "@/components/icons";
 
 const RESEND_COOLDOWN = 60;
@@ -33,15 +33,13 @@ export function VerifyEmailNotice({
     setBusy(true);
     setError(null);
     setSent(false);
-    const res = await runAuth(() =>
-      authClient.sendVerificationEmail({
-        email,
-        callbackURL: `${window.location.origin}/learn`,
-      }),
-    );
+    const res = await authApi("send-verification-email", {
+      email,
+      callbackURL: `${window.location.origin}/learn`,
+    });
     setBusy(false);
     if (!res.ok) {
-      setError(translateAuthError(res.err));
+      setError(translateAuthError(res));
       return;
     }
     setSent(true);

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { runAuth, translateAuthError } from "@/lib/auth/errors";
+import { authApi } from "@/lib/auth/api";
+import { translateAuthError } from "@/lib/auth/errors";
 
 export function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -17,15 +17,13 @@ export function ForgotPasswordForm() {
     if (busy) return;
     setBusy(true);
     setError(null);
-    const res = await runAuth(() =>
-      authClient.requestPasswordReset({
-        email,
-        redirectTo: `${window.location.origin}/sifre-sifirla`,
-      }),
-    );
+    const res = await authApi("request-password-reset", {
+      email,
+      redirectTo: `${window.location.origin}/sifre-sifirla`,
+    });
     setBusy(false);
     if (!res.ok) {
-      setError(translateAuthError(res.err));
+      setError(translateAuthError(res));
       return;
     }
     setSent(true);
