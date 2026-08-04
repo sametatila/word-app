@@ -36,15 +36,18 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
   const [showText, setShowText] = useState(false);
 
   const speakers = [...new Set(exercise.segments.map((s) => s.speaker ?? ""))];
+  // Gerçek kayıt (statik ses dosyası) varsa TTS yerine o çalınır.
+  const hasAudio = exercise.segments.some((s) => s.audio);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const ok = typeof window !== "undefined" && "speechSynthesis" in window;
     setAvailable(ok);
     if (!ok) {
-      setShowText(true); // ses yoksa egzersiz okumaya dönüşür, duvara toslamaz
+      if (!hasAudio) setShowText(true); // hiç ses yoksa egzersiz okumaya dönüşür
       return;
     }
-    // Ses listesi tembel yüklenir; şimdiden iste ki ilk çalmada Almanca ses hazır olsun.
+    // Ses listesi tembel yüklenir; şimdiden iste ki ilk çalmada doğru ses hazır olsun.
     const synth = window.speechSynthesis;
     synth.getVoices();
     const warm = () => synth.getVoices();
@@ -52,8 +55,9 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
     return () => {
       synth.removeEventListener?.("voiceschanged", warm);
       synth.cancel();
+      audioRef.current?.pause();
     };
-  }, []);
+  }, [hasAudio]);
 
   function makeUtterance(text: string, speaker: string | undefined, slowNow: boolean) {
     const synth = window.speechSynthesis;
@@ -67,12 +71,58 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
   }
 
   function stop() {
-    window.speechSynthesis.cancel();
+    window.speechSynthesis?.cancel();
+    if (audioRef.current) {
+      audioRef.current.onended = null;
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
     setPlaying(false);
     setSegIdx(-1);
   }
 
+  function endOfRun() {
+    setPlaying(false);
+    setSegIdx(-1);
+    setPlayCount((c) => c + 1);
+  }
+
+  /** Statik kayıtları sırayla çalar (gerçek lehçe sesi). */
+  function playAudioFrom(start: number, slowNow: boolean, single = false) {
+    stop();
+    setPlaying(true);
+    const next = (i: number) => {
+      if (i >= exercise.segments.length || (single && i > start)) {
+        if (single) {
+          setPlaying(false);
+          setSegIdx(-1);
+        } else endOfRun();
+        return;
+      }
+      const src = exercise.segments[i].audio;
+      if (!src) {
+        next(i + 1);
+        return;
+      }
+      setSegIdx(i);
+      const a = new Audio(src);
+      a.playbackRate = slowNow ? 0.75 : 1;
+      audioRef.current = a;
+      a.onended = () => next(i + 1);
+      a.onerror = () => {
+        setPlaying(false);
+        setSegIdx(-1);
+      };
+      void a.play();
+    };
+    next(start);
+  }
+
   function play(slowNow: boolean = slow) {
+    if (hasAudio) {
+      playAudioFrom(0, slowNow);
+      return;
+    }
     const synth = window.speechSynthesis;
     synth.cancel();
     setPlaying(true);
@@ -80,11 +130,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
       const u = makeUtterance(seg.text, seg.speaker, slowNow);
       u.onstart = () => setSegIdx(i);
       if (i === exercise.segments.length - 1) {
-        u.onend = () => {
-          setPlaying(false);
-          setSegIdx(-1);
-          setPlayCount((c) => c + 1);
-        };
+        u.onend = () => endOfRun();
       }
       u.onerror = () => {
         setPlaying(false);
@@ -96,6 +142,10 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
 
   /** Transkript satırına dokununca yalnızca o bölümü tekrar dinlet. */
   function playSegment(i: number) {
+    if (hasAudio && exercise.segments[i].audio) {
+      playAudioFrom(i, slow, true);
+      return;
+    }
     if (available === false) return;
     const synth = window.speechSynthesis;
     synth.cancel();
@@ -117,7 +167,12 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
   function toggleSlow() {
     const next = !slow;
     setSlow(next);
-    // Çalma sırasında değiştirilirse baştan yeni hızla başlat — düğme "ölü" hissettirmesin.
+    if (playing && hasAudio && audioRef.current) {
+      // Kayıt çalarken hız anında değişir, baştan başlamaya gerek yok.
+      audioRef.current.playbackRate = next ? 0.75 : 1;
+      return;
+    }
+    // TTS'te kuyruk hızı değiştirilemez; baştan yeni hızla başlat.
     if (playing) play(next);
   }
 
@@ -131,7 +186,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
             type="button"
             whileTap={{ scale: 0.92 }}
             onClick={() => (playing ? stop() : play())}
-            disabled={available === false}
+            disabled={available === false && !hasAudio}
             aria-label={playing ? "Durdur" : "Dinle"}
             className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-40"
           >
@@ -146,7 +201,9 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
                   : "Dinlemeye başla"}
             </p>
             <p className="muted mt-0.5 text-xs">
-              İstediğin kadar tekrar dinleyebilirsin. Goethe sınavında iki kez dinlersin.
+              {hasAudio
+                ? "Gerçek lehçe kaydı — istediğin kadar tekrar dinle."
+                : "İstediğin kadar tekrar dinleyebilirsin. Goethe sınavında iki kez dinlersin."}
             </p>
             <div className="mt-2 flex items-center gap-1.5">
               {exercise.segments.map((_, i) => (
@@ -183,7 +240,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
           ) : null}
         </div>
 
-        {available === false ? (
+        {available === false && !hasAudio ? (
           <p
             className="mt-3 rounded-xl px-3 py-2 text-xs"
             style={{

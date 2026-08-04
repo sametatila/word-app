@@ -9,6 +9,11 @@ import { a2 } from "./content/a2";
 import { b1 } from "./content/b1";
 import { b2 } from "./content/b2";
 import { c1 } from "./content/c1";
+import { zhA1 } from "./content/zh-a1";
+import { zhA2 } from "./content/zh-a2";
+import { zhB1 } from "./content/zh-b1";
+import { zhB2 } from "./content/zh-b2";
+import { zhC1 } from "./content/zh-c1";
 
 export { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER, itemCount, xpFor } from "./meta";
 
@@ -17,8 +22,22 @@ export { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER, itemCount, xpFor } from "./meta
  * `skill_exercises` tablosuna yükler. Çalışma zamanında içerik veritabanından
  * okunur; tablo boşsa ya da veritabanına ulaşılamazsa bu gömülü kopya devreye
  * girer — uygulama hiçbir durumda boş ekranla kalmaz.
+ *
+ * İki kurs yan yana yaşar: zh-* egzersizleri `course: "gsw-zh"` taşır ve
+ * yalnızca Zürih kursundaki öğrenciye listelenir.
  */
-export const BUNDLED_EXERCISES: SkillExercise[] = [...a1, ...a2, ...b1, ...b2, ...c1];
+export const BUNDLED_EXERCISES: SkillExercise[] = [
+  ...a1,
+  ...a2,
+  ...b1,
+  ...b2,
+  ...c1,
+  ...zhA1,
+  ...zhA2,
+  ...zhB1,
+  ...zhB2,
+  ...zhC1,
+];
 
 const bundledById = new Map(BUNDLED_EXERCISES.map((e) => [e.id, e]));
 
@@ -45,7 +64,7 @@ function toMeta(e: SkillExercise): SkillMeta {
   };
 }
 
-export async function listExerciseMeta(): Promise<SkillMeta[]> {
+export async function listExerciseMeta(course = "de"): Promise<SkillMeta[]> {
   try {
     const rows = await db
       .select({
@@ -58,12 +77,13 @@ export async function listExerciseMeta(): Promise<SkillMeta[]> {
         items: skillExercises.items,
       })
       .from(skillExercises)
+      .where(eq(skillExercises.course, course))
       .orderBy(asc(skillExercises.level), asc(skillExercises.skill), asc(skillExercises.position));
     if (rows.length) return rows as SkillMeta[];
   } catch (err) {
     console.error("[skills] liste veritabanından okunamadı, gömülü içerik kullanılıyor", err);
   }
-  return BUNDLED_EXERCISES.map(toMeta);
+  return BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === course).map(toMeta);
 }
 
 export async function getExercise(id: string): Promise<SkillExercise | undefined> {

@@ -24,8 +24,10 @@ export type SkillQuestion = {
 };
 
 type ExerciseBase = {
-  /** "a1-r1" gibi: seviye + beceri harfi + sıra. Kalıcı kimlik, değiştirme. */
+  /** "a1-r1", "zh-a1-r1" gibi kalıcı kimlik — değiştirme. */
   id: string;
+  /** Hangi kursa ait: "de" (varsayılan) ya da "gsw-zh" (Zürih Almancası). */
+  course?: "de" | "gsw-zh";
   level: CefrLevel;
   /** Almanca başlık. */
   title: string;
@@ -45,8 +47,12 @@ export type ReadingExercise = ExerciseBase & {
   questions: SkillQuestion[];
 };
 
-/** Diyaloglar konuşmacıya bölünür; tek konuşmacılı metinlerde speaker boş kalır. */
-export type ListeningSegment = { speaker?: string; text: string };
+/**
+ * Diyaloglar konuşmacıya bölünür; tek konuşmacılı metinlerde speaker boş kalır.
+ * `audio` varsa oynatıcı önce onu çalar (gerçek kayıt/lehçe sentezi, /public
+ * altında statik dosya); yoksa cihazın konuşma sentezine düşer.
+ */
+export type ListeningSegment = { speaker?: string; text: string; audio?: string };
 
 export type ListeningExercise = ExerciseBase & {
   skill: "listening";

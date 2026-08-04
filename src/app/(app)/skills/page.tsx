@@ -19,17 +19,19 @@ export default async function SkillsPage() {
   if (!user) return null;
 
   let activeLevel: CefrLevel = "A1";
+  let course = "de";
   try {
     const profile = await ensureProfile(user.id, user.name);
     const lv = profile.activeLevel as CefrLevel;
     if (["A1", "A2", "B1", "B2", "C1"].includes(lv)) activeLevel = lv;
+    course = profile.course;
   } catch (err) {
     // Veritabanına ulaşılamazsa içerik yine açılır; seviye A1'den başlar.
     console.error("[skills] profil okunamadı", err);
   }
 
-  // İçerik veritabanından gelir; ulaşılamazsa gömülü kopya kullanılır.
-  const items = await listExerciseMeta();
+  // İçerik veritabanından gelir (aktif kurs); ulaşılamazsa gömülü kopya kullanılır.
+  const items = await listExerciseMeta(course);
 
   // Tamamlanma durumu sunucudan gelir ki cihazlar arasında senkron olsun;
   // istemci bunu localStorage'daki (çevrimdışı) kayıtlarla birleştirir.
