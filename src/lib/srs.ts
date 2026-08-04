@@ -20,7 +20,7 @@ export type SrsState = {
 };
 
 /** Oyunun zorluğuna göre "hızlı cevap" eşiği (ms). */
-export const GAME_TIME_BUDGET: Record<string, number> = {
+const GAME_TIME_BUDGET: Record<string, number> = {
   intro: 12000,
   match: 30000,
   choice: 8000,
@@ -113,21 +113,6 @@ export function schedule(prev: SrsState, quality: number, now = new Date()): Srs
   next.intervalDays = clamp(round1(base * factor), 1, 365);
   next.dueAt = addDays(now, next.intervalDays);
   return next;
-}
-
-/** Kelimenin ne kadar öğrenildiği (0-100) — ilerleme ekranı için. */
-export function mastery(w: Pick<SrsState, "state" | "intervalDays" | "correctStreak">): number {
-  if (w.state === 0) return 0;
-  const byInterval = Math.min(1, w.intervalDays / 21);
-  const byStreak = Math.min(1, w.correctStreak / 5);
-  return Math.round((byInterval * 0.65 + byStreak * 0.35) * 100);
-}
-
-export function masteryBucket(m: number): "new" | "learning" | "familiar" | "mastered" {
-  if (m <= 0) return "new";
-  if (m < 35) return "learning";
-  if (m < 80) return "familiar";
-  return "mastered";
 }
 
 export const xpForQuality = (q: number) => (q >= 5 ? 12 : q >= 4 ? 10 : q >= 3 ? 7 : 3);

@@ -27,7 +27,7 @@ export function speakGerman(text: string) {
  * Almanca ses aramayız; API varsa düğmeyi gösteririz (tarayıcı de-DE isteğini
  * varsayılan sesle de karşılar). Sunucu render'ında false döner.
  */
-export function useSpeechAvailable() {
+function useSpeechAvailable() {
   const [ok, setOk] = useState(false);
   useEffect(() => {
     setOk(typeof window !== "undefined" && "speechSynthesis" in window);

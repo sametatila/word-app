@@ -8,8 +8,8 @@
  * Burada durum kodu ve gövde sunucudan geldiği gibi okunur — arada yorum yok.
  * İstekler kendi `/api/auth/[...path]` proxy'mize gider, çerezler otomatik işlenir.
  */
-export type AuthOk<T> = { ok: true; data: T };
-export type AuthFail = { ok: false; status: number; code: string; message: string };
+type AuthOk<T> = { ok: true; data: T };
+type AuthFail = { ok: false; status: number; code: string; message: string };
 export type AuthResult<T> = AuthOk<T> | AuthFail;
 
 export async function authApi<T = Record<string, unknown>>(

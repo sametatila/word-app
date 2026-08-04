@@ -56,10 +56,19 @@ export type SessionPayload = {
     currentStreak: number;
     totalXp: number;
     displayName: string | null;
+    difficulty: "easy" | "normal" | "hard";
+    accuracy: number | null;
+    activeLevel: string;
+    levelScore: number;
+    levelCeiling: string;
   };
 };
 
 export type AnswerResult = {
+  levelUp: string | null;
+  levelDown: string | null;
+  activeLevel: string;
+  levelScore: number;
   xpGained: number;
   totalXp: number;
   currentStreak: number;

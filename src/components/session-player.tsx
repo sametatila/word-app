@@ -6,16 +6,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { Answer, AnswerResult, Round, SessionPayload } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
-import { IntroGame } from "@/components/games/intro-game";
-import { ChoiceGame } from "@/components/games/choice-game";
-import { MatchGame } from "@/components/games/match-game";
-import { ArtikelGame } from "@/components/games/artikel-game";
-import { ScrambleGame } from "@/components/games/scramble-game";
-import { TypingGame } from "@/components/games/typing-game";
-import { ClozeGame } from "@/components/games/cloze-game";
+import { GameSwitch } from "@/components/game-switch";
+import { LevelBadge, LevelChangeBanner } from "@/components/level-badge";
+import { ChallengePlayer } from "@/components/challenge-player";
 import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
-type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error";
+type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error" | "challenge";
 
 const STORE_KEY = "wortspiel:session";
 
@@ -249,6 +245,15 @@ export function SessionPlayer() {
     return () => window.removeEventListener("pagehide", onHide);
   }, []);
 
+  if (status === "challenge")
+    return (
+      <ChallengePlayer
+        onExit={() => {
+          router.refresh();
+          void load();
+        }}
+      />
+    );
   if (status === "loading") return <LoadingCard />;
   if (status === "ready" && session)
     return (
@@ -273,6 +278,7 @@ export function SessionPlayer() {
           router.refresh();
           void load();
         }}
+        onChallenge={() => setStatus("challenge")}
       />
     );
 
@@ -281,6 +287,13 @@ export function SessionPlayer() {
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
+      <div className="mb-4">
+        <LevelBadge
+          level={session!.meta.activeLevel}
+          score={session!.meta.levelScore}
+          ceiling={session!.meta.levelCeiling}
+        />
+      </div>
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between text-xs font-semibold">
           <span className="muted flex items-center gap-2">
@@ -339,25 +352,6 @@ export function SessionPlayer() {
   );
 }
 
-function GameSwitch({ round, onDone }: { round: Round; onDone: (r: GameResult[]) => void }) {
-  switch (round.game) {
-    case "intro":
-      return <IntroGame round={round} onDone={onDone} />;
-    case "choice":
-      return <ChoiceGame round={round} onDone={onDone} />;
-    case "match":
-      return <MatchGame round={round} onDone={onDone} />;
-    case "artikel":
-      return <ArtikelGame round={round} onDone={onDone} />;
-    case "scramble":
-      return <ScrambleGame round={round} onDone={onDone} />;
-    case "typing":
-      return <TypingGame round={round} onDone={onDone} />;
-    case "cloze":
-      return <ClozeGame round={round} onDone={onDone} />;
-  }
-}
-
 function StartCard({
   meta,
   rounds,
@@ -390,9 +384,12 @@ function StartCard({
               ? `${meta.currentStreak} günlük serideysin`
               : "Bugün serini başlat"}
           </p>
-          <h1 className="mt-1 text-2xl font-bold">
-            {name ? `Hoş geldin, ${name}` : "Hoş geldin"}
-          </h1>
+          <div className="mt-1 flex items-center gap-2">
+            <h1 className="text-2xl font-bold">{name ? `Hoş geldin, ${name}` : "Hoş geldin"}</h1>
+            <span className="rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
+              {meta.activeLevel}
+            </span>
+          </div>
           <div className="mt-4">
             <div className="mb-1.5 flex justify-between text-xs font-semibold opacity-90">
               <span>Günlük hedef</span>
@@ -423,6 +420,39 @@ function StartCard({
         </div>
 
         <div className="px-6 pb-6 pt-4">
+          {meta.accuracy !== null ? (
+            <div
+              className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
+              style={{ background: "var(--surface-2)" }}
+            >
+              <span className="muted">Son 50 cevapta </span>
+              <strong>%{meta.accuracy}</strong>
+              <span className="muted"> doğruluk — </span>
+              <strong
+                style={{
+                  color:
+                    meta.difficulty === "hard"
+                      ? "var(--color-mint-500)"
+                      : meta.difficulty === "easy"
+                        ? "var(--color-flame-500)"
+                        : "var(--color-brand-500)",
+                }}
+              >
+                {meta.difficulty === "hard"
+                  ? "zorluk yükseltildi"
+                  : meta.difficulty === "easy"
+                    ? "zorluk hafifletildi"
+                    : "normal zorluk"}
+              </strong>
+              <p className="muted mt-1 text-xs">
+                {meta.difficulty === "hard"
+                  ? "İyi gidiyorsun: yazma ve harf bulmacası gibi üretim oyunları öne çıkıyor."
+                  : meta.difficulty === "easy"
+                    ? "Zorlandığın görülüyor: şıklı tanıma oyunları öne çıkıyor, hız kazanınca yükselecek."
+                    : "Doğruluk oranın değiştikçe oyun türleri kendiliğinden zorlaşır ya da hafifler."}
+              </p>
+            </div>
+          ) : null}
           <p className="muted mb-4 text-center text-sm">
             {reviewCount > 0
               ? "Tekrar zamanı gelen kelimeler bu turda kendiliğinden karşına çıkacak — ayrıca bir şey yapman gerekmiyor."
@@ -556,11 +586,13 @@ function SummaryCard({
   result,
   missed,
   onContinue,
+  onChallenge,
 }: {
   tally: { correct: number; total: number; xp: number };
   result: AnswerResult | null;
   missed: { id: number; de: string; tr: string }[];
   onContinue: () => void;
+  onChallenge: () => void;
 }) {
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const xp = result?.xpGained ?? tally.xp;
@@ -617,6 +649,8 @@ function SummaryCard({
           </div>
         ) : null}
 
+        <LevelChangeBanner up={result?.levelUp ?? null} down={result?.levelDown ?? null} />
+
         <p className="muted px-6 pt-4 text-center text-xs">
           Bu turdaki kelimeler tekrar planına alındı; unutmaya başlayacağın gün
           kendiliğinden karşına çıkacaklar.
@@ -647,9 +681,12 @@ function SummaryCard({
           </div>
         ) : null}
 
-        <div className="p-6 pt-4">
+        <div className="space-y-2 p-6 pt-4">
           <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5">
             Devam et
+          </button>
+          <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
+            60 saniye meydan okuma
           </button>
         </div>
       </div>

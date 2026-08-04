@@ -4,7 +4,7 @@
  *  - fırlatılan istisna (BetterFetchError, Error, düz nesne…)
  * Her ikisini de tek bir `{ code, message, status }` biçimine indirir.
  */
-export type AuthErrorInfo = { code: string; message: string; status?: number };
+type AuthErrorInfo = { code: string; message: string; status?: number };
 
 function pick(obj: unknown, keys: string[]): unknown {
   if (typeof obj !== "object" || obj === null) return undefined;
@@ -14,7 +14,7 @@ function pick(obj: unknown, keys: string[]): unknown {
 }
 
 /** Hangi biçimde gelirse gelsin hatanın kodunu ve mesajını çıkarır. */
-export function extractAuthError(input: unknown): AuthErrorInfo {
+function extractAuthError(input: unknown): AuthErrorInfo {
   const seen = new Set<unknown>();
   let code = "";
   let message = "";
@@ -94,21 +94,4 @@ export function translateAuthError(input: unknown): string {
 export function isEmailNotVerified(input: unknown): boolean {
   const { code, message } = extractAuthError(input);
   return code === "EMAIL_NOT_VERIFIED" || message.toLowerCase().includes("email not verified");
-}
-
-/**
- * Neon Auth çağrılarını tek biçimde çalıştırır: hata ister dönsün ister fırlatılsın
- * `{ ok: false, err }` olarak gelir.
- */
-export async function runAuth<T>(
-  fn: () => Promise<T>,
-): Promise<{ ok: true; data: T } | { ok: false; err: unknown }> {
-  try {
-    const data = await fn();
-    const maybe = data as { error?: unknown } | null;
-    if (maybe && typeof maybe === "object" && maybe.error) return { ok: false, err: maybe.error };
-    return { ok: true, data };
-  } catch (err) {
-    return { ok: false, err };
-  }
 }

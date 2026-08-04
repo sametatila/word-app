@@ -17,9 +17,11 @@ type Initial = {
 };
 
 const LEVELS = [
-  { id: "A1", label: "A1 — Yeni başlıyorum" },
-  { id: "A2", label: "A2 — Temel seviyeyi biliyorum" },
-  { id: "B1", label: "B1 — Orta seviyedeyim" },
+  { id: "A1", label: "A1", desc: "Yeni başlıyorum" },
+  { id: "A2", label: "A2", desc: "Temel günlük dili biliyorum" },
+  { id: "B1", label: "B1", desc: "Kendimi genel konularda ifade ederim" },
+  { id: "B2", label: "B2", desc: "İş ve toplum dilini anlarım" },
+  { id: "C1", label: "C1", desc: "Akademik ve soyut dile hâkimim" },
 ];
 
 export function ProfileForm({
@@ -96,21 +98,23 @@ export function ProfileForm({
 
         <div>
           <span className="muted mb-1.5 block text-sm font-semibold">Başlangıç seviyen</span>
-          <div className="grid gap-2 sm:grid-cols-3">
+          <div className="grid gap-2 sm:grid-cols-5">
             {LEVELS.map((l) => (
               <button
                 key={l.id}
                 onClick={() => setLevel(l.id)}
-                className={`option px-3 py-3 text-sm font-semibold ${
+                className={`option px-3 py-3 text-sm font-bold ${
                   level === l.id ? "option-correct" : ""
                 }`}
+                title={l.desc}
               >
                 {l.label}
               </button>
             ))}
           </div>
           <p className="muted mt-1.5 text-xs">
-            Seçtiğin seviyeye kadar olan tüm kelimeler havuza girer.
+            {LEVELS.find((l) => l.id === level)?.desc}. Seçtiğin seviyeye <strong>kadar</strong> olan
+            tüm kelimeler havuza girer — A1 ve A2 atlanmaz, sıra yine en yaygın kelimelerden başlar.
           </p>
         </div>
 

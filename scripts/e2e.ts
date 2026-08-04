@@ -7,6 +7,7 @@ import { and, eq, inArray, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
 import { dailyStats, profiles, reviews, userWords, words } from "../src/lib/db/schema";
 import {
+  buildChallenge,
   buildSession,
   submitAnswers,
   getProgress,
@@ -159,7 +160,7 @@ async function main() {
 
   console.log("\n8) İlerleme sorguları");
   const prog = await getProgress(USER, day5);
-  check("seviye dağılımı geldi", prog.levels.length === 3);
+  check("seviye dağılımı geldi (A1-C1)", prog.levels.length === 5, `(${prog.levels.length})`);
   check("A1 toplamı gerçek", (prog.levels.find((l) => l.niveau === "A1")?.total ?? 0) > 800);
   check("görülen kelime sayısı > 0", (prog.levels.find((l) => l.niveau === "A1")?.seen ?? 0) > 0);
   check("günlük kayıtlar geldi", prog.days.length >= 1);
@@ -202,7 +203,40 @@ async function main() {
     !afterSkip.rounds.some((r) => r.game === "intro" && r.word.id === skipWord.id),
   );
 
-  console.log("\n10) SRS saf fonksiyon davranışı");
+  console.log("\n10) Seviye ilerlemesi ve meydan okuma");
+  await reset();
+  await ensureProfile(USER); // önce profil oluşsun, sonra tavan yükseltilsin
+  await db.update(profiles).set({ level: "B1" }).where(eq(profiles.userId, USER));
+  let lastLevel = "A1";
+  let sawLevelUp = false;
+  for (let i = 0; i < 8 && !sawLevelUp; i++) {
+    const s = await buildSession(USER, day1);
+    if (!s.rounds.length) break;
+    const r = await submitAnswers(USER, answersFor(s.rounds, 1), day1, 60);
+    lastLevel = r.activeLevel;
+    if (r.levelUp) sawLevelUp = true;
+  }
+  check("hep doğru cevaplayınca seviye yükseliyor", sawLevelUp, `(son seviye: ${lastLevel})`);
+
+  const beforeDown = lastLevel;
+  let sawLevelDown = false;
+  for (let i = 0; i < 8 && !sawLevelDown; i++) {
+    const s = await buildSession(USER, day1);
+    if (!s.rounds.length) break;
+    const wrong = answersFor(s.rounds, 1).map((a) => ({ ...a, correct: false }));
+    const r = await submitAnswers(USER, wrong, day1, 60);
+    if (r.levelDown) sawLevelDown = true;
+  }
+  check("sürekli yanlışta seviye düşüyor", sawLevelDown, `(başlangıç: ${beforeDown})`);
+
+  const challenge = await buildChallenge(USER);
+  check("meydan okuma turu kuruluyor", challenge.rounds.length > 0, `(${challenge.rounds.length})`);
+  check(
+    "meydan okumada tanıtım kartı yok",
+    challenge.rounds.every((r) => r.game !== "intro"),
+  );
+
+  console.log("\n11) SRS saf fonksiyon davranışı");
   let st: SrsState = {
     state: 0, ease: 2.5, intervalDays: 0, reps: 0, lapses: 0,
     correctStreak: 0, leech: false, dueAt: new Date(),

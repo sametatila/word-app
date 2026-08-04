@@ -17,7 +17,7 @@ export type GameProps<R extends Round = Round> = {
   onDone: (results: GameResult[]) => void;
 };
 
-export type { Round, RoundWord };
+export type { RoundWord };
 
 /** Almanca kelimeyi artikeliyle birlikte gösterir. */
 export function withArtikel(w: RoundWord): string {

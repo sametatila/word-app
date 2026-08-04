@@ -18,6 +18,7 @@ export type WordRow = {
   intervalDays: number | null;
   dueAt: string | null;
   lapses: number | null;
+  leech: boolean;
 };
 
 const ARTIKEL_TONE: Record<string, string> = {
@@ -31,6 +32,8 @@ const LEVELS = [
   { id: "A1", label: "A1" },
   { id: "A2", label: "A2" },
   { id: "B1", label: "B1" },
+  { id: "B2", label: "B2" },
+  { id: "C1", label: "C1" },
 ];
 
 const STATUSES = [
@@ -41,6 +44,7 @@ const STATUSES = [
 ];
 
 function statusOf(r: WordRow): { label: string; tone: string } {
+  if (r.leech) return { label: "zorlanıyorsun", tone: "var(--color-rose-500)" };
   if (r.intervalDays == null) return { label: "yeni", tone: "var(--text-muted)" };
   if (r.intervalDays >= 21) return { label: "pekişmiş", tone: "var(--color-mint-500)" };
   if (r.intervalDays >= 3) return { label: "tanıdık", tone: "var(--color-sky-400)" };

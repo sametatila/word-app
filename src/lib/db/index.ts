@@ -26,4 +26,3 @@ export const db = new Proxy({} as Db, {
   },
 });
 
-export { schema };

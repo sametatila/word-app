@@ -5,4 +5,3 @@ import * as schema from "../src/lib/db/schema";
 
 export const pool = new Pool({ connectionString: process.env.TEST_DATABASE_URL });
 export const db = drizzle(pool, { schema });
-export { schema };

@@ -50,6 +50,7 @@ export default async function WordsPage({
         intervalDays: userWords.intervalDays,
         dueAt: userWords.dueAt,
         lapses: userWords.lapses,
+        leech: userWords.leech,
       })
       .from(words)
       .leftJoin(userWords, and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)))
@@ -77,6 +78,7 @@ export default async function WordsPage({
       intervalDays: r.intervalDays,
       dueAt: r.dueAt ? r.dueAt.toISOString() : null,
       lapses: r.lapses,
+      leech: r.leech ?? false,
     }));
 
     return (

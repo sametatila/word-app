@@ -22,7 +22,7 @@ export async function POST(req: Request) {
   if (typeof body.displayName === "string") patch.displayName = body.displayName.slice(0, 60);
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, 5, 120);
   if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, 0, 40);
-  if (typeof body.level === "string" && ["A1", "A2", "B1"].includes(body.level))
+  if (typeof body.level === "string" && ["A1", "A2", "B1", "B2", "C1"].includes(body.level))
     patch.level = body.level;
 
   if (!Object.keys(patch).length) return NextResponse.json({ error: "empty" }, { status: 400 });

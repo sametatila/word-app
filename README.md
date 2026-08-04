@@ -3,13 +3,23 @@
 Goethe A1–B1 kelime listeleriyle çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan**
 Almanca kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar.
 
+- **A1–C1 · 4.046 kelime** (A1 858 · A2 481 · B1 1.853 · B2 419 · C1 435)
 - **6 kelime oyunu:** Eşleştirme, Doğru Anlam, Artikel Yarışı, Harf Bulmacası, Cümleyi Tamamla, Yazarak Hatırla
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
   çevrilir, kelimenin bir sonraki gösterim zamanı SM-2 türevi bir motorla hesaplanır ve kelime
   oyunun akışına kendiliğinden karışır. Aynı gün içindeki tekrarlar aralığı şişirmez, son 30 dakikada
   sorulan kelime yeniden sıraya girmez.
-- **Sıklık sırası:** yeni kelimeler alfabetik değil, Almancadaki kullanım sıklığına göre gelir
-  (ich, sie, du, nicht… ile başlar).
+- **Sıklık sırası ve tür karışımı:** yeni kelimeler alfabetik değil, kullanım sıklığına göre gelir
+  (ich, sie, du, nicht…) ve isim/fiil/diğer olarak serpiştirilir.
+- **Dinamik CEFR seviyesi:** aktif seviye performansa göre yükselir ve düşer. Öğren ekranının
+  üstünde seviye rozeti ve bir sonraki seviyeye ilerleme çubuğu görünür; oturum sonunda terfi/düşüş
+  duyurulur. Profildeki seçim tavanı belirler.
+- **Adaptif zorluk:** son 50 cevabın doğruluğu %85'in üstündeyse üretim oyunları (yazma, harf
+  bulmacası), %60'ın altındaysa tanıma oyunları öne çıkar. Kullanıcıya ekranda açıklanır.
+- **60 saniye meydan okuma:** oturum sonunda, öğrenilenlerden rastgele ve karışık oyun türleriyle
+  süreye karşı tur.
+- **Zorlayıcı çeldiriciler:** çoktan seçmelide rastgele kelime yerine Almanca biçimi hedefe benzeyen
+  kelimeler kullanılır (aufhören / aufheben / aufräumen).
 - **Telaffuz:** her Almanca kelime ve örnek cümle tek dokunuşla sesli okunur (tarayıcı konuşma sentezi).
 - **"Bunu zaten biliyorum":** bildiğin kelimeyi tek dokunuşla pekişmiş işaretleyip atlarsın.
 - **Kelimelerim ekranı:** 3.192 kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
@@ -72,6 +82,8 @@ Deploy sonrası Neon Console → Auth → Configuration → **Domains** kısmın
 
 ```bash
 npm run test:sql          # üretilen tüm SQL cümlelerini yazdırır (veritabanı gerekmez)
+npm run test:mix          # yeni öğrencinin ilk günlerde gördüğü oyun dağılımı
+npm run test:playtest     # arayüzden oynayan öğrenci simülasyonu (dev sunucusu açıkken)
 
 # uçtan uca mantık testi — yerel PostgreSQL 18 ister
 docker run -d --name wa-pg -e POSTGRES_PASSWORD=test -e POSTGRES_DB=wa \
@@ -135,7 +147,21 @@ Oyun türü kelimenin durumuna göre seçilir: yeni/öğrenilen kelimelerde tan�
 (çoktan seçmeli, eşleştirme, artikel), pekişenlerde üretim ağırlıklı (yazma, cümle tamamlama,
 harf bulmacası). Aynı oyun arka arkaya gelmez.
 
-## 6. E-posta akışları (parola sıfırlama, kayıt onayı)
+## 6. Seviye ve zorluk mantığı
+
+| Olay | Etki |
+|---|---|
+| Oturum doğruluğu ≥ %85 | seviye puanı +2 |
+| %70–85 | +1 |
+| %50–70 | 0 |
+| < %50 | −2 |
+| Puan 10'a ulaşır | **bir üst seviyeye terfi**, puan 4'e döner |
+| Puan −6'ya iner | **bir alt seviyeye iniş**, puan 4'e döner |
+
+Aktif seviye asla profilde seçilen tavanı aşmaz. Yeni kelimeler aktif seviyeye kadar olan
+havuzdan, sıklık sırasıyla gelir.
+
+## 7. E-posta akışları (parola sıfırlama, kayıt onayı)
 
 Doğrulama ve sıfırlama e-postalarını **Neon Auth sunucusu** gönderir; uygulama yalnızca
 akışı tetikler ve ekranları gösterir:
@@ -163,7 +189,11 @@ From: Wortspiel <noreply@exfe.me>
 
 Resend tarafında `exfe.me` alan adını doğrulaman (DKIM/SPF kayıtları) gerekir.
 
-## 7. Kelime verisi
+## 8. Kelime verisi
 
-`data/` klasöründeki CSV/JSON dosyaları Goethe-Institut'un resmî Wortliste PDF'lerinden
-çıkarılmış, Türkçe karşılıkları eklenmiş ve doğrulanmıştır. Ayrıntı: `data/README.md`.
+A1–B1 kelimeleri Goethe-Institut'un resmî Wortliste PDF'lerinden çıkarılmış, Türkçe karşılıkları
+eklenmiş ve doğrulanmıştır (ayrıntı: `data/README.md`).
+
+**B2 ve C1** için Goethe resmî bir liste yayınlamadığından bu seviyeler konu bazlı olarak
+üretilmiştir (iş, toplum, akademik dil, hukuk, kültür, ileri fiil/sıfat…); her madde artikel,
+çoğul/çekim, Türkçe karşılık ve örnek cümle içerir, A1–B1 ile çakışanlar ayıklanmıştır.

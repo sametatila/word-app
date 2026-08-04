@@ -26,9 +26,10 @@ export default async function ProgressPage() {
         dueNow={data.dueNow}
         upcoming={data.upcoming}
         games={data.games}
+        seconds={data.seconds}
+        leeches={data.leeches}
         streak={data.profile.currentStreak}
         longest={data.profile.longestStreak}
-        totalXp={data.profile.totalXp}
         today={localDayFallback()}
       />
     );

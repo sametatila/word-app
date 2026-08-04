@@ -14,12 +14,14 @@ type LevelRow = {
   learning: number;
 };
 type DayRow = { day: string; reviews: number; correct: number; xp: number };
-type GameRow = { game: string; total: number; correct: number };
+type GameRow = { game: string; total: number; correct: number; avgMs: number };
 
 const LEVEL_COLOR: Record<string, string> = {
   A1: "var(--color-mint-500)",
   A2: "var(--color-sky-400)",
   B1: "var(--color-violet-400)",
+  B2: "var(--color-brand-500)",
+  C1: "var(--color-flame-500)",
 };
 
 export function ProgressView({
@@ -30,7 +32,8 @@ export function ProgressView({
   games,
   streak,
   longest,
-  totalXp,
+  seconds,
+  leeches,
   today,
 }: {
   levels: LevelRow[];
@@ -40,7 +43,8 @@ export function ProgressView({
   games: GameRow[];
   streak: number;
   longest: number;
-  totalXp: number;
+  seconds: number;
+  leeches: number;
   today: string;
 }) {
   const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
@@ -60,7 +64,7 @@ export function ProgressView({
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame-500)" Icon={FlameIcon} />
         <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand-500)" Icon={TrophyIcon} />
-        <KpiCard label="Toplam XP" value={String(totalXp)} tone="var(--color-violet-400)" Icon={SparkIcon} />
+        <KpiCard label="Çalışma süresi" value={formatDuration(seconds)} tone="var(--color-violet-400)" Icon={SparkIcon} />
         <KpiCard label="Öğrenilen" value={`${totalMastered}`} tone="var(--color-mint-500)" Icon={BookIcon} />
       </div>
 
@@ -133,6 +137,11 @@ export function ProgressView({
                 hazır
               </p>
               <p className="muted mt-1">{upcoming} kelime ileri tarihe planlandı</p>
+              {leeches > 0 ? (
+                <p className="mt-1 text-[color:var(--color-rose-500)]">
+                  {leeches} kelimede zorlanıyorsun — sık sık geri gelecekler
+                </p>
+              ) : null}
             </div>
           </div>
         </section>
@@ -149,7 +158,10 @@ export function ProgressView({
                   <li key={g.game} className="text-sm">
                     <div className="mb-1 flex justify-between">
                       <span>{GAME_LABELS[g.game as GameId] ?? g.game}</span>
-                      <span className="muted">%{pct}</span>
+                      <span className="muted">
+                        %{pct}
+                        {g.avgMs ? ` · ${(g.avgMs / 1000).toFixed(1)} sn` : ""}
+                      </span>
                     </div>
                     <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
                       <motion.div
@@ -168,6 +180,13 @@ export function ProgressView({
       </div>
     </div>
   );
+}
+
+function formatDuration(totalSeconds: number): string {
+  const m = Math.round(totalSeconds / 60);
+  if (m < 60) return `${m} dk`;
+  const h = Math.floor(m / 60);
+  return `${h} sa ${m % 60} dk`;
 }
 
 function KpiCard({

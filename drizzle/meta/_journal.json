@@ -15,6 +15,13 @@
       "when": 1785838707116,
       "tag": "0001_flimsy_wonder_man",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1785848073262,
+      "tag": "0002_overrated_jocasta",
+      "breakpoints": true
     }
   ]
 }

@@ -11,7 +11,9 @@
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx scripts/seed.ts",
     "test:e2e": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/e2e.ts",
-    "test:sql": "tsx scripts/sqlcheck.ts"
+    "test:sql": "tsx scripts/sqlcheck.ts",
+    "test:playtest": "node scripts/playtest.mjs 330",
+    "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.4.2-beta",
@@ -20,7 +22,8 @@
     "framer-motion": "^12.23.24",
     "next": "^16.3.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",

@@ -1,11 +1,13 @@
 import "server-only";
-import { and, asc, eq, gt, inArray, lte, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gt, inArray, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles, reviews, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import type { Answer, AnswerResult, Round, RoundWord, SessionPayload } from "@/lib/types";
 
-const LEVEL_ORDER = ["A1", "A2", "B1"];
+const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
+
+type Difficulty = "easy" | "normal" | "hard";
 const ROUNDS_PER_SESSION = 14;
 
 export async function ensureProfile(userId: string, name?: string | null) {
@@ -92,7 +94,10 @@ export async function buildSession(
 
   // 2) Kalan kontenjan kadar yeni kelime
   const newBudget = extra ? 10 : Math.max(0, profile.newPerDay - newToday);
-  const levelsUpTo = LEVEL_ORDER.slice(0, Math.max(1, LEVEL_ORDER.indexOf(profile.level) + 1));
+  // Aktif seviye performansa göre değişir; kullanıcının profildeki seçimi tavandır.
+  const ceilingIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.level));
+  const activeIdx = Math.min(ceilingIdx, Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel)));
+  const levelsUpTo = LEVEL_ORDER.slice(0, activeIdx + 1);
 
   // Günlük kota bir hız ayarıdır, duvar değil: tekrar kuyruğu zayıfsa oturumu
   // dolduracak kadar yeni kelime her hâlükârda gelir (tek turluk oturum olmaz).
@@ -153,7 +158,27 @@ export async function buildSession(
     }
   }
 
-  const rounds = composeRounds(dueWords, newWords, pool);
+  // Son cevaplara bakarak zorluğu ayarla: iyi gidiyorsa üretim ağırlıklı,
+  // zorlanıyorsa tanıma ağırlıklı oyunlar seçilir.
+  const [recent] = await db
+    .select({
+      total: sql<number>`count(*)::int`,
+      correct: sql<number>`count(*) filter (where ${reviews.correct})::int`,
+    })
+    .from(
+      db
+        .select({ correct: reviews.correct })
+        .from(reviews)
+        .where(eq(reviews.userId, userId))
+        .orderBy(desc(reviews.createdAt))
+        .limit(50)
+        .as("son"),
+    );
+  const accuracy = recent && recent.total >= 12 ? recent.correct / recent.total : null;
+  const difficulty: Difficulty =
+    accuracy === null ? "normal" : accuracy >= 0.85 ? "hard" : accuracy <= 0.6 ? "easy" : "normal";
+
+  const rounds = composeRounds(dueWords, newWords, pool, difficulty);
 
   // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
@@ -182,6 +207,11 @@ export async function buildSession(
       currentStreak: profile.currentStreak,
       totalXp: profile.totalXp,
       displayName: profile.displayName,
+      difficulty,
+      accuracy: accuracy === null ? null : Math.round(accuracy * 100),
+      activeLevel: LEVEL_ORDER[activeIdx],
+      levelScore: profile.levelScore,
+      levelCeiling: LEVEL_ORDER[ceilingIdx],
     },
   };
 }
@@ -194,6 +224,7 @@ function composeRounds(
   due: { word: RoundWord; state: number }[],
   fresh: { word: RoundWord; state: number }[],
   pool: (typeof words.$inferSelect)[],
+  difficulty: Difficulty = "normal",
 ): Round[] {
   const rounds: Round[] = [];
   let seq = 0;
@@ -224,7 +255,7 @@ function composeRounds(
   let lastGame = "";
   for (const item of merged) {
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
-    const round = pickRound(item.word, item.state, pool, lastGame, nextId);
+    const round = pickRound(item.word, item.state, pool, lastGame, nextId, difficulty);
     if (!round) continue;
     rounds.push(round);
     lastGame = round.game;
@@ -243,6 +274,7 @@ function pickRound(
   pool: (typeof words.$inferSelect)[],
   lastGame: string,
   nextId: () => string,
+  difficulty: Difficulty = "normal",
 ): Round | null {
   if (state === -1) return { id: nextId(), game: "intro", word };
 
@@ -263,8 +295,17 @@ function pickRound(
     if (word.de.length <= 12) candidates.push("scramble");
   }
 
-  const usable = candidates.filter((g) => g !== lastGame);
-  const order = usable.length ? usable : candidates;
+  // Zorluk ayarı: iyi gidene üretim (yazma/harf), zorlanana tanıma (şıklı) oyunu.
+  const PRODUCTION: Round["game"][] = ["typing", "scramble"];
+  const tuned =
+    difficulty === "hard"
+      ? [...candidates.filter((g) => PRODUCTION.includes(g)), ...candidates]
+      : difficulty === "easy"
+        ? [...candidates.filter((g) => !PRODUCTION.includes(g)), ...candidates]
+        : candidates;
+
+  const usable = tuned.filter((g) => g !== lastGame);
+  const order = usable.length ? usable : tuned;
 
   for (const game of shuffle(order)) {
     const round = makeRound(game, word, pool, nextId);
@@ -309,11 +350,8 @@ function makeRound(
         answer: cloze.answer,
         options: shuffle([
           cloze.answer,
-          ...pool
-            .filter((p) => p.id !== word.id && p.typ === word.typ)
-            .slice(0, 3)
-            .map((p) => p.de),
-        ]).slice(0, 4),
+          ...pickDistractors(word, pool, 3, (p) => p.de),
+        ]),
       };
     }
     default:
@@ -333,6 +371,58 @@ function buildCloze(word: RoundWord): { sentence: string; answer: string } | nul
   return { sentence: raw.replace(re, "_____"), answer: match[0] };
 }
 
+/**
+ * Çeldirici seçimi.
+ *
+ * Rastgele kelime kolay eleniyordu; öğrenciyi asıl zorlayan, Almanca biçimi
+ * birbirine benzeyen kelimeler (beantragen/beantworten, aufhören/aufheben).
+ * Bu yüzden adaylar hedefe biçim benzerliğine göre puanlanır, en yakın havuzdan
+ * rastgele seçim yapılır — hem zor hem her seferinde farklı.
+ */
+function similarity(a: string, b: string): number {
+  const x = a.toLocaleLowerCase("de-DE");
+  const y = b.toLocaleLowerCase("de-DE");
+  if (x === y) return -100;
+  let prefix = 0;
+  while (prefix < x.length && prefix < y.length && x[prefix] === y[prefix]) prefix++;
+  let suffix = 0;
+  while (
+    suffix < x.length - prefix &&
+    suffix < y.length - prefix &&
+    x[x.length - 1 - suffix] === y[y.length - 1 - suffix]
+  )
+    suffix++;
+  const lenPenalty = Math.abs(x.length - y.length);
+  return prefix * 3 + suffix * 2 - lenPenalty;
+}
+
+/** Hedefe en çok benzeyen adaylardan rastgele `count` tane döndürür. */
+function pickDistractors(
+  word: RoundWord,
+  pool: (typeof words.$inferSelect)[],
+  count: number,
+  label: (p: { de: string; tr: string; artikel: string | null }) => string,
+): string[] {
+  const target = label(word);
+  const seen = new Set([target]);
+  const scored: { text: string; score: number }[] = [];
+
+  for (const p of pool) {
+    const text = label(p);
+    if (p.id === word.id || seen.has(text)) continue;
+    seen.add(text);
+    const typBonus = p.typ === word.typ ? 6 : 0;
+    const trBonus = similarity(p.tr.split(",")[0], word.tr.split(",")[0]) / 2;
+    scored.push({ text, score: similarity(p.de, word.de) + typBonus + trBonus });
+  }
+
+  scored.sort((a, b) => b.score - a.score);
+  // En yakın 10 aday arasından rastgele seç: zorluk yüksek, tekrar eden şık yok.
+  return shuffle(scored.slice(0, Math.max(count, 10)))
+    .slice(0, count)
+    .map((c) => c.text);
+}
+
 /** Şıklar sorunun yönüne göre Türkçe ya da Almanca üretilir. */
 function optionsFor(
   word: RoundWord,
@@ -342,13 +432,7 @@ function optionsFor(
   // Almanca şıklarda artikel de görünür: "die Apotheke" kelimenin bir parçasıdır.
   const label = (p: { de: string; tr: string; artikel: string | null }) =>
     direction === "de-tr" ? p.tr : p.artikel ? `${p.artikel} ${p.de}` : p.de;
-  const target = label(word);
-  const others = pool.filter((p) => p.id !== word.id && label(p) !== target);
-  const sameType = others.filter((p) => p.typ === word.typ);
-  const picks = shuffle(sameType.length >= 3 ? sameType : others)
-    .slice(0, 3)
-    .map(label);
-  return shuffle([target, ...picks]);
+  return shuffle([label(word), ...pickDistractors(word, pool, 3, label)]);
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -491,6 +575,26 @@ export async function submitAnswers(
     })
     .returning();
 
+  // Seviye puanı: oturum doğruluğuna göre artar/azalır, eşikte seviye değişir.
+  const sessionAccuracy = answers.length ? correctCount / answers.length : 0;
+  const delta =
+    sessionAccuracy >= 0.85 ? 2 : sessionAccuracy >= 0.7 ? 1 : sessionAccuracy >= 0.5 ? 0 : -2;
+  const ceilingIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.level));
+  let activeIdx = Math.min(ceilingIdx, Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel)));
+  let levelScore = Math.max(-8, Math.min(10, profile.levelScore + delta));
+  let levelUp: string | null = null;
+  let levelDown: string | null = null;
+
+  if (levelScore >= 10 && activeIdx < ceilingIdx) {
+    activeIdx += 1;
+    levelScore = 4;
+    levelUp = LEVEL_ORDER[activeIdx];
+  } else if (levelScore <= -6 && activeIdx > 0) {
+    activeIdx -= 1;
+    levelScore = 4;
+    levelDown = LEVEL_ORDER[activeIdx];
+  }
+
   // Streak: bugün ilk kez aktifse güncellenir.
   let { currentStreak, longestStreak } = profile;
   if (profile.lastActiveDay !== today) {
@@ -506,10 +610,16 @@ export async function submitAnswers(
       longestStreak,
       lastActiveDay: today,
       totalXp: profile.totalXp + xpGained,
+      activeLevel: LEVEL_ORDER[activeIdx],
+      levelScore,
     })
     .where(eq(profiles.userId, userId));
 
   return {
+    levelUp,
+    levelDown,
+    activeLevel: LEVEL_ORDER[activeIdx],
+    levelScore,
     xpGained,
     totalXp: profile.totalXp + xpGained,
     currentStreak,
@@ -521,7 +631,7 @@ export async function submitAnswers(
 }
 
 /** "Bunu zaten biliyorum": kelime pekişmiş sayılır, tekrar kuyruğuna girmez. */
-export const KNOWN_INTERVAL_DAYS = 21;
+const KNOWN_INTERVAL_DAYS = 21;
 
 export async function markKnown(userId: string, wordId: number) {
   const now = new Date();
@@ -551,6 +661,49 @@ export function shiftDay(day: string, delta: number) {
   const d = new Date(`${day}T00:00:00Z`);
   d.setUTCDate(d.getUTCDate() + delta);
   return d.toISOString().slice(0, 10);
+}
+
+/**
+ * Meydan okuma turu: öğrenilmiş kelimelerden rastgele seçip karışık oyun
+ * türleriyle süreye karşı kısa bir tur kurar. Tanıtım kartı yoktur; amaç
+ * hız ve hatırlama, öğretim değil.
+ */
+export async function buildChallenge(userId: string): Promise<{ rounds: Round[]; pool: number }> {
+  const profile = await ensureProfile(userId);
+  // Aktif seviye performansa göre değişir; kullanıcının profildeki seçimi tavandır.
+  const ceilingIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.level));
+  const activeIdx = Math.min(ceilingIdx, Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel)));
+  const levelsUpTo = LEVEL_ORDER.slice(0, activeIdx + 1);
+
+  const learned = await db
+    .select({ w: words, uw: userWords })
+    .from(userWords)
+    .innerJoin(words, eq(words.id, userWords.wordId))
+    .where(and(eq(userWords.userId, userId), gt(userWords.reps, 0)))
+    .orderBy(sql`random()`)
+    .limit(14);
+
+  const pool = await db
+    .select()
+    .from(words)
+    .where(inArray(words.niveau, levelsUpTo))
+    .orderBy(sql`random()`)
+    .limit(120);
+
+  let seq = 0;
+  const nextId = () => `c${++seq}`;
+  const rounds: Round[] = [];
+  let lastGame = "";
+  for (const row of learned) {
+    const word = toRoundWord(row.w, false);
+    // Meydan okumada hep üretim/tanıma karışık, tanıtım yok.
+    const round = pickRound(word, Math.max(1, row.uw.state), pool, lastGame, nextId, "hard");
+    if (!round) continue;
+    rounds.push(round);
+    lastGame = round.game;
+  }
+
+  return { rounds, pool: learned.length };
 }
 
 /** İlerleme ekranı verileri */
@@ -596,10 +749,21 @@ export async function getProgress(userId: string, today: string) {
       game: reviews.game,
       total: sql<number>`count(*)::int`,
       correct: sql<number>`count(*) filter (where ${reviews.correct})::int`,
+      avgMs: sql<number>`coalesce(round(avg(${reviews.latencyMs}))::int, 0)`,
     })
     .from(reviews)
     .where(eq(reviews.userId, userId))
     .groupBy(reviews.game);
 
-  return { profile, levels, days, dueNow, upcoming, games };
+  const [{ seconds }] = await db
+    .select({ seconds: sql<number>`coalesce(sum(${dailyStats.seconds}), 0)::int` })
+    .from(dailyStats)
+    .where(eq(dailyStats.userId, userId));
+
+  const [{ leeches }] = await db
+    .select({ leeches: sql<number>`count(*)::int` })
+    .from(userWords)
+    .where(and(eq(userWords.userId, userId), eq(userWords.leech, true)));
+
+  return { profile, levels, days, dueNow, upcoming, games, seconds, leeches };
 }
