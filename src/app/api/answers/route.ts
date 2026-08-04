@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { submitAnswers } from "@/lib/session";
 import type { Answer, GameId } from "@/lib/types";
 
@@ -8,6 +9,8 @@ export const dynamic = "force-dynamic";
 const GAMES: GameId[] = ["intro", "match", "choice", "artikel", "cloze", "scramble", "typing"];
 
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

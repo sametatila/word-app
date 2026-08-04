@@ -1,11 +1,14 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { markKnown } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
 /** "Bunu zaten biliyorum": kelime tekrar kuyruğuna girmeden pekişmiş sayılır. */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
