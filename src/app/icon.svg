@@ -1,12 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="55%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="52%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
+    <radialGradient id="gloss" cx="0.28" cy="0.12" r="0.9">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <text x="32" y="45" font-family="system-ui, sans-serif" font-size="36" font-weight="800"
-        fill="#fff" text-anchor="middle">W</text>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="url(#gloss)"/>
+  <g transform="translate(256 256) scale(0.94) translate(-256 -256)" fill="#ffffff">
+    <circle cx="224" cy="146" r="24"/>
+    <circle cx="288" cy="146" r="24"/>
+    <path d="M126 218 L188 392 L256 244 L324 392 L386 218" fill="none" stroke="#ffffff"
+          stroke-width="43" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

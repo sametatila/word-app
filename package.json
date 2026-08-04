@@ -13,7 +13,8 @@
     "test:e2e": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/e2e.ts",
     "test:sql": "tsx scripts/sqlcheck.ts",
     "test:playtest": "node scripts/playtest.mjs 330",
-    "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts"
+    "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
+    "icons": "node scripts/icons.mjs"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.4.2-beta",
@@ -35,6 +36,7 @@
     "drizzle-kit": "^0.31.5",
     "pg": "^8.22.0",
     "playwright-core": "^1.62.1",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"

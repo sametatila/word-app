@@ -206,16 +206,20 @@ export const RefreshIcon = (p: IconProps) => (
   </Svg>
 );
 
-/** Marka işareti (logo) */
+/**
+ * Marka işareti: "W" (Wort) ve üzerinde umlaut noktaları — Almancanın görsel
+ * imzası. public/ altındaki uygulama ikonlarıyla aynı çizim.
+ */
 export const LogoMark = ({ size = 24, ...props }: IconProps) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+    <circle cx="10.5" cy="6.1" r="1.25" fill="currentColor" />
+    <circle cx="13.5" cy="6.1" r="1.25" fill="currentColor" />
     <path
-      d="M4 6.5 7 17.5 10.2 9.5 13.4 17.5 16.4 6.5"
+      d="M5.9 9.6 8.8 17.9 12 10.8 15.2 17.9 18.1 9.6"
       stroke="currentColor"
-      strokeWidth="2.2"
+      strokeWidth="2.1"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <circle cx="19" cy="7.5" r="1.6" fill="currentColor" />
   </svg>
 );
