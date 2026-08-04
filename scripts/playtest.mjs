@@ -350,6 +350,14 @@ async function main() {
     await sleep(500);
   }
 
+  // kelime listesi ekranı
+  await page.goto(`${BASE}/words`, { waitUntil: "domcontentloaded" });
+  await sleep(2000);
+  await screenshot(page, "words");
+  await page.locator("input").first().fill("haus");
+  await sleep(1500);
+  await screenshot(page, "words-search");
+
   // ilerleme ekranı
   await page.goto(`${BASE}/progress`, { waitUntil: "domcontentloaded" });
   await sleep(2000);

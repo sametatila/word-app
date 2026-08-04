@@ -43,7 +43,7 @@ const ROUNDS: Round[] = [
   },
   { id: "d4", game: "artikel", word: w(8, "Fenster", "das", "pencere") },
   { id: "d5", game: "scramble", word: w(9, "Schlüssel", "der", "anahtar") },
-  { id: "d6", game: "typing", word: w(10, "arbeiten", null, "çalışmak") },
+  { id: "d6", game: "typing", word: w(10, "arbeiten", null, "çalışmak"), alternatives: ["schaffen"] },
   {
     id: "d7",
     game: "cloze",

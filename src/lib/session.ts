@@ -94,7 +94,8 @@ export async function buildSession(
           )`,
         ),
       )
-      .orderBy(asc(words.niveau), asc(words.id))
+      // Seviye içinde en yaygın kelimeler önce gelir (sıklık sırası).
+      .orderBy(asc(words.niveau), sql`${words.rank} asc nulls last`, asc(words.id))
       .limit(newLimit);
   }
 
@@ -132,6 +133,23 @@ export async function buildSession(
   }
 
   const rounds = composeRounds(dueWords, newWords, pool);
+
+  // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
+  // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
+  const typingTrs = rounds.filter((r) => r.game === "typing").map((r) => r.word.tr);
+  if (typingTrs.length) {
+    const synonyms = await db
+      .select({ de: words.de, tr: words.tr })
+      .from(words)
+      .where(inArray(words.tr, [...new Set(typingTrs)]));
+    for (const r of rounds) {
+      if (r.game !== "typing") continue;
+      r.alternatives = synonyms
+        .filter((s) => s.tr === r.word.tr && s.de !== r.word.de)
+        .map((s) => s.de)
+        .slice(0, 6);
+    }
+  }
 
   return {
     rounds,
@@ -265,7 +283,7 @@ function makeRound(
         ? { id: nextId(), game: "scramble", word }
         : null;
     case "typing":
-      return { id: nextId(), game: "typing", word };
+      return { id: nextId(), game: "typing", word, alternatives: [] };
     case "cloze": {
       const cloze = buildCloze(word);
       if (!cloze) return null;
@@ -486,6 +504,33 @@ export async function submitAnswers(
     dailyGoal: profile.dailyGoal,
     goalReached: stat.reviews >= profile.dailyGoal,
   };
+}
+
+/** "Bunu zaten biliyorum": kelime pekişmiş sayılır, tekrar kuyruğuna girmez. */
+export const KNOWN_INTERVAL_DAYS = 21;
+
+export async function markKnown(userId: string, wordId: number) {
+  const now = new Date();
+  const dueAt = new Date(now.getTime() + KNOWN_INTERVAL_DAYS * 86400000);
+  await ensureProfile(userId);
+  await db
+    .insert(userWords)
+    .values({
+      userId,
+      wordId,
+      state: 2,
+      ease: 2.6,
+      intervalDays: KNOWN_INTERVAL_DAYS,
+      dueAt,
+      reps: 1,
+      correctStreak: 1,
+      lastReviewedAt: now,
+    })
+    .onConflictDoUpdate({
+      target: [userWords.userId, userWords.wordId],
+      set: { state: 2, intervalDays: KNOWN_INTERVAL_DAYS, dueAt, lastReviewedAt: now },
+    });
+  return dueAt;
 }
 
 export function shiftDay(day: string, delta: number) {

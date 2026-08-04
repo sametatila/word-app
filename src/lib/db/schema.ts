@@ -24,8 +24,13 @@ export const words = pgTable(
     typ: text("typ").notNull(), // Nomen | Verb | Sonstiges
     niveau: text("niveau").notNull(), // A1 | A2 | B1
     beispiel: text("beispiel"),
+    rank: integer("rank"), // Almanca sıklık sırası (küçük = daha yaygın)
   },
-  (t) => [index("words_niveau_idx").on(t.niveau), index("words_typ_idx").on(t.typ)],
+  (t) => [
+    index("words_niveau_idx").on(t.niveau),
+    index("words_typ_idx").on(t.typ),
+    index("words_rank_idx").on(t.niveau, t.rank),
+  ],
 );
 
 /** Kullanıcı profili + streak durumu */

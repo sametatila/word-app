@@ -15,6 +15,7 @@ type Row = {
   typ: string;
   niveau: string;
   beispiel: string;
+  rank?: number | null;
 };
 
 async function main() {
@@ -51,6 +52,7 @@ async function main() {
     typ: inferTyp(r),
     niveau: r.niveau.startsWith("A1") ? "A1" : r.niveau,
     beispiel: r.beispiel || null,
+    rank: r.rank ?? null,
   }));
 
   const CHUNK = 400;
@@ -69,6 +71,7 @@ async function main() {
           typ: sql`excluded.typ`,
           niveau: sql`excluded.niveau`,
           beispiel: sql`excluded.beispiel`,
+          rank: sql`excluded.rank`,
         },
       });
     console.log(`  ${Math.min(i + CHUNK, values.length)}/${values.length}`);

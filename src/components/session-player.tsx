@@ -32,6 +32,7 @@ export function SessionPlayer() {
   const startedAt = useRef(Date.now());
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
+  const missed = useRef<{ id: number; de: string; tr: string }[]>([]);
 
   const load = useCallback(async (extra = false) => {
     setStatus("loading");
@@ -40,6 +41,7 @@ export function SessionPlayer() {
     setResult(null);
     pending.current = [];
     sessionXp.current = 0;
+    missed.current = [];
     try {
       const res = await fetch(`/api/session?day=${localDay()}${extra ? "&extra=1" : ""}`, {
         cache: "no-store",
@@ -89,6 +91,17 @@ export function SessionPlayer() {
       const enriched: Answer[] = results.map((r) => ({ ...r, game: round.game }));
       pending.current.push(...enriched);
 
+      // Yanlış bilinen kelimeleri oturum özetinde göstermek için topla
+      if (results.some((r) => !r.correct)) {
+        const ws = round.game === "match" ? round.words : [round.word];
+        for (const r of results.filter((x) => !x.correct)) {
+          const w = ws.find((x) => x.id === r.wordId);
+          if (w && !missed.current.some((m) => m.id === w.id)) {
+            missed.current.push({ id: w.id, de: w.artikel ? `${w.artikel} ${w.de}` : w.de, tr: w.tr });
+          }
+        }
+      }
+
       setTally((t) => ({
         correct: t.correct + results.filter((r) => r.correct).length,
         total: t.total + results.length,
@@ -133,6 +146,7 @@ export function SessionPlayer() {
       <SummaryCard
         tally={tally}
         result={result}
+        missed={missed.current}
         onContinue={() => {
           router.refresh();
           void load();
@@ -263,10 +277,12 @@ function EmptyCard({
 function SummaryCard({
   tally,
   result,
+  missed,
   onContinue,
 }: {
   tally: { correct: number; total: number; xp: number };
   result: AnswerResult | null;
+  missed: { id: number; de: string; tr: string }[];
   onContinue: () => void;
 }) {
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
@@ -321,6 +337,31 @@ function SummaryCard({
                 Günlük hedefi tamamladın 🔥
               </p>
             ) : null}
+          </div>
+        ) : null}
+
+        {missed.length ? (
+          <div className="px-6 pt-4">
+            <p className="muted mb-2 text-xs font-semibold uppercase tracking-wide">
+              Zorlandıkların ({missed.length})
+            </p>
+            <ul className="space-y-1.5">
+              {missed.slice(0, 6).map((w) => (
+                <li
+                  key={w.id}
+                  className="flex items-baseline justify-between gap-3 rounded-xl px-3 py-2 text-sm surface-2"
+                >
+                  <span className="font-semibold">{w.de}</span>
+                  <span className="muted truncate text-right">{w.tr}</span>
+                </li>
+              ))}
+            </ul>
+            {missed.length > 6 ? (
+              <p className="muted mt-2 text-center text-xs">+{missed.length - 6} kelime daha</p>
+            ) : null}
+            <p className="muted mt-2 text-center text-xs">
+              Bunlar yakında tekrar karşına çıkacak — ayrıca bir şey yapmana gerek yok.
+            </p>
           </div>
         ) : null}
 

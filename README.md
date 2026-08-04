@@ -6,9 +6,16 @@ Almanca kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıka
 - **6 kelime oyunu:** Eşleştirme, Doğru Anlam, Artikel Yarışı, Harf Bulmacası, Cümleyi Tamamla, Yazarak Hatırla
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
   çevrilir, kelimenin bir sonraki gösterim zamanı SM-2 türevi bir motorla hesaplanır ve kelime
-  oyunun akışına kendiliğinden karışır.
+  oyunun akışına kendiliğinden karışır. Aynı gün içindeki tekrarlar aralığı şişirmez, son 30 dakikada
+  sorulan kelime yeniden sıraya girmez.
+- **Sıklık sırası:** yeni kelimeler alfabetik değil, Almancadaki kullanım sıklığına göre gelir
+  (ich, sie, du, nicht… ile başlar).
+- **Telaffuz:** her Almanca kelime ve örnek cümle tek dokunuşla sesli okunur (tarayıcı konuşma sentezi).
+- **"Bunu zaten biliyorum":** bildiğin kelimeyi tek dokunuşla pekişmiş işaretleyip atlarsın.
+- **Kelimelerim ekranı:** 3.192 kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
+  ve bir sonraki tekrar tarihi.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
-  ısı haritası, oyun bazında doğruluk.
+  ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
 - **Mobil öncelikli, masaüstünde de tam:** mobilde alt sekme çubuğu, masaüstünde kenar çubuğu.
   Açık/koyu tema.
 
@@ -34,15 +41,15 @@ Neon Auth anahtarları boş bırakılırsa uygulama **demo modunda** tek kullan�
 veritabanı bağlıysa tüm oyunlar, ilerleme ve streak çalışır. Anahtarlar eklenince giriş/kayıt
 kendiliğinden devreye girer.
 
-Faydalı adresler: `/` tanıtım · `/learn` oturum · `/progress` ilerleme · `/profile` ayarlar ·
-`/demo-games` altı oyunun tek sayfada önizlemesi.
+Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi · `/progress` ilerleme ·
+`/profile` ayarlar · `/demo-games` altı oyunun tek sayfada önizlemesi.
 
 ## 2. Neon kurulumu (Postgres 18)
 
 1. [console.neon.tech](https://console.neon.tech) → yeni proje (Postgres 18).
 2. **Connection string** → *Pooled connection* olanı kopyala, `DATABASE_URL` yap.
-3. `npm run db:push` → tablolar oluşur (`drizzle/0000_*.sql` dosyası da hazır, istersen SQL
-   Editor'a yapıştırabilirsin).
+3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
+   Editor'a sırayla yapıştırabilirsin).
 4. `npm run db:seed` → `data/app/words.json` içindeki 3.192 kelime yüklenir.
 5. **Auth** sekmesinden Neon Auth'u aç, üç anahtarı `.env` ve Vercel'e ekle.
 
@@ -68,13 +75,20 @@ npm run test:sql          # üretilen tüm SQL cümlelerini yazdırır (veritaba
 # uçtan uca mantık testi — yerel PostgreSQL 18 ister
 docker run -d --name wa-pg -e POSTGRES_PASSWORD=test -e POSTGRES_DB=wa \
   -p 55432:5432 postgres:18-alpine
-docker cp drizzle/0000_wooden_patriot.sql wa-pg:/tmp/m.sql
-docker exec wa-pg psql -U postgres -d wa -f /tmp/m.sql
+for f in drizzle/*.sql; do
+  docker cp "$f" wa-pg:/tmp/m.sql && docker exec wa-pg psql -U postgres -d wa -q -f /tmp/m.sql
+done
 TEST_DATABASE_URL="postgres://postgres:test@localhost:55432/wa" npm run test:e2e
 ```
 
-E2E testi oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak mantığını ve
-ilerleme sorgularını gerçek PostgreSQL üzerinde doğrular.
+E2E testi (45 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını ve ilerleme
+sorgularını gerçek PostgreSQL üzerinde doğrular.
+
+```bash
+# arayüzden oynayan öğrenci simülasyonu (dev sunucusu açıkken)
+node scripts/playtest.mjs 330
+```
 
 ## 5. Mimari
 
@@ -82,10 +96,11 @@ ilerleme sorgularını gerçek PostgreSQL üzerinde doğrular.
 src/
   app/
     page.tsx                tanıtım sayfası
-    (app)/learn|progress|profile
+    (app)/learn|words|progress|profile
     api/session             oturum kuyruğunu üretir
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
+    api/words/known         "bunu zaten biliyorum" işaretlemesi
     handler/[...stack]      Neon Auth ekranları
   lib/
     srs.ts                  tekrar motoru (saf fonksiyonlar)
@@ -106,6 +121,8 @@ data/
 | Doğru (hızlı) | Kalite 5 → aralık `ease × 1.15` kadar uzar |
 | Doğru (yavaş) | Kalite 3 → aralık kısa tutulur |
 | Yanlış | Öğrenme adımına düşer, 1 dk sonra tekrar; `ease` −0.2, lapse +1 |
+| Aynı gün ikinci doğru | Aralık büyümez (6 dakikalık oturumda kelime haftalar sonrasına atılmaz) |
+| "Zaten biliyorum" | Kelime 21 gün sonrasına planlanır, kuyruğu meşgul etmez |
 | 6 lapse | Kelime "leech" işaretlenir |
 
 Oyun türü kelimenin durumuna göre seçilir: yeni/öğrenilen kelimelerde tanıma ağırlıklı

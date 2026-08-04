@@ -42,7 +42,10 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   function submit() {
     if (status !== "idle") return;
-    const correct = compareKey(value) === compareKey(word.de);
+    // Aynı Türkçe anlama sahip başka bir Almanca kelime yazıldıysa da doğru sayılır.
+    const typed = compareKey(value);
+    const accepted = [word.de, ...(round.alternatives ?? [])].map(compareKey);
+    const correct = accepted.includes(typed);
     setStatus(correct ? "correct" : "wrong");
     const latencyMs = Date.now() - started.current;
     setTimeout(
@@ -80,7 +83,9 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           <span className="surface-2 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
             {typLabel(word.typ, word.tr)}
           </span>
-          <span>{letterCount} harf</span>
+          <span>
+            {letterCount} harf · <strong>{firstLetter}</strong> ile başlıyor
+          </span>
         </div>
       }
     >

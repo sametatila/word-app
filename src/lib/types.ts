@@ -36,7 +36,7 @@ export type Round =
   | { id: string; game: "artikel"; word: RoundWord }
   | { id: string; game: "cloze"; word: RoundWord; sentence: string; answer: string; options: string[] }
   | { id: string; game: "scramble"; word: RoundWord }
-  | { id: string; game: "typing"; word: RoundWord };
+  | { id: string; game: "typing"; word: RoundWord; alternatives: string[] };
 
 export type Answer = {
   wordId: number;

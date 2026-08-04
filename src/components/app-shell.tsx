@@ -8,6 +8,7 @@ import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
   { href: "/learn", label: "Öğren", icon: "◆" },
+  { href: "/words", label: "Kelimeler", icon: "▤" },
   { href: "/progress", label: "İlerleme", icon: "▲" },
   { href: "/profile", label: "Profil", icon: "●" },
 ];

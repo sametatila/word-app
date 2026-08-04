@@ -3,10 +3,17 @@
  *   TEST_DATABASE_URL=postgres://... npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/e2e.ts
  * Oturum kurgusu, SRS zamanlaması, streak ve ilerleme sorguları doğrulanır.
  */
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq, inArray, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, profiles, reviews, userWords } from "../src/lib/db/schema";
-import { buildSession, submitAnswers, getProgress, ensureProfile, shiftDay } from "../src/lib/session";
+import { dailyStats, profiles, reviews, userWords, words } from "../src/lib/db/schema";
+import {
+  buildSession,
+  submitAnswers,
+  getProgress,
+  ensureProfile,
+  markKnown,
+  shiftDay,
+} from "../src/lib/session";
 import { schedule, grade, type SrsState } from "../src/lib/srs";
 import type { Answer, Round } from "../src/lib/types";
 
@@ -159,7 +166,43 @@ async function main() {
   check("oyun istatistikleri geldi", prog.games.length > 0);
   check("planlanmış kelime var", prog.upcoming > 0);
 
-  console.log("\n9) SRS saf fonksiyon davranışı");
+  console.log("\n9) Sıklık sırası, eşanlamlılar ve 'zaten biliyorum'");
+  await reset();
+  const freshSession = await buildSession(USER, day1);
+  const introWords = freshSession.rounds.filter((r) => r.game === "intro").map((r) => r.word);
+  const ranks = await db
+    .select({ id: words.id, rank: words.rank, de: words.de })
+    .from(words)
+    .where(inArray(words.id, introWords.map((w) => w.id)));
+  const maxRank = Math.max(...ranks.map((r) => r.rank ?? 999999));
+  check("ilk kelimeler en yaygınlardan seçiliyor", maxRank < 500, `(en yüksek sıra: ${maxRank})`);
+  check("sıralama alfabetik değil", introWords[0]?.de !== "ab", `(${introWords[0]?.de})`);
+
+  const typingRounds = freshSession.rounds.filter((r) => r.game === "typing");
+  check(
+    "yazma turlarında eşanlamlı listesi var",
+    typingRounds.every((r) => Array.isArray(r.alternatives)),
+    `(${typingRounds.length} tur)`,
+  );
+
+  const skipWord = introWords[0];
+  await markKnown(USER, skipWord.id);
+  const [knownRow] = await db
+    .select()
+    .from(userWords)
+    .where(and(eq(userWords.userId, USER), eq(userWords.wordId, skipWord.id)));
+  check("zaten biliyorum: pekişmiş sayılıyor", knownRow.state === 2 && knownRow.intervalDays === 21);
+  check(
+    "zaten biliyorum: uzun süre sonraya planlandı",
+    knownRow.dueAt.getTime() - Date.now() > 20 * 86400000,
+  );
+  const afterSkip = await buildSession(USER, day1);
+  check(
+    "atlanan kelime yeniden yeni olarak gelmiyor",
+    !afterSkip.rounds.some((r) => r.game === "intro" && r.word.id === skipWord.id),
+  );
+
+  console.log("\n10) SRS saf fonksiyon davranışı");
   let st: SrsState = {
     state: 0, ease: 2.5, intervalDays: 0, reps: 0, lapses: 0,
     correctStreak: 0, leech: false, dueAt: new Date(),
