@@ -158,3 +158,29 @@
 .safe-bottom {
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
+
+/* Ana ekrana eklendiğinde durum çubuğunun altına girmesin */
+.safe-top {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+/* Uygulama hissiyatı: arayüzde metin seçimi ve uzun basma menüsü olmasın,
+   yalnızca girdi alanlarında seçim serbest kalsın. */
+@layer base {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  input,
+  textarea,
+  [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  /* iOS'ta yumuşak kaydırma */
+  html,
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}

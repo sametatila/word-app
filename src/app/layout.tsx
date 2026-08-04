@@ -4,9 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Wortspiel — Almanca Kelime",
   description:
-    "Goethe A1–B1 kelime listeleriyle, oyunlaştırılmış ve kendi kendine ayarlanan tekrar sistemine sahip Almanca kelime uygulaması.",
+    "A1'den C1'e 4.046 kelime, altı oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması.",
   applicationName: "Wortspiel",
-  appleWebApp: { capable: true, title: "Wortspiel", statusBarStyle: "default" },
+  manifest: "/manifest.webmanifest",
+  appleWebApp: { capable: true, title: "Wortspiel", statusBarStyle: "black-translucent" },
+  icons: {
+    icon: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {

@@ -111,7 +111,7 @@ export function WordList({
       <header>
         <h1 className="text-2xl font-bold">Kelimelerim</h1>
         <p className="muted mt-1 text-sm">
-          {total.toLocaleString("tr-TR")} kelime · en yaygın kelimeler başta
+          {total.toLocaleString("tr-TR")} kelime · A1'den C1'e, en yaygın olanlar başta
         </p>
       </header>
 

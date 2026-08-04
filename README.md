@@ -1,7 +1,8 @@
 # Wortspiel — Almanca Kelime Uygulaması
 
-Goethe A1–B1 kelime listeleriyle çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan**
-Almanca kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar.
+A1'den C1'e 4.046 kelimeyle çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan** Almanca
+kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana eklenince
+uygulama gibi tam ekran açılır (PWA).
 
 - **A1–C1 · 4.046 kelime** (A1 858 · A2 481 · B1 1.853 · B2 419 · C1 435)
 - **6 kelime oyunu:** Eşleştirme, Doğru Anlam, Artikel Yarışı, Harf Bulmacası, Cümleyi Tamamla, Yazarak Hatırla
@@ -22,7 +23,7 @@ Almanca kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıka
   kelimeler kullanılır (aufhören / aufheben / aufräumen).
 - **Telaffuz:** her Almanca kelime ve örnek cümle tek dokunuşla sesli okunur (tarayıcı konuşma sentezi).
 - **"Bunu zaten biliyorum":** bildiğin kelimeyi tek dokunuşla pekişmiş işaretleyip atlarsın.
-- **Kelimelerim ekranı:** 3.192 kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
+- **Kelimelerim ekranı:** 4.046 kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
   ve bir sonraki tekrar tarihi.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
   ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
@@ -37,7 +38,7 @@ Almanca kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıka
 npm install
 cp .env.example .env            # DATABASE_URL'i Neon'dan yapıştır
 npm run db:push                 # tabloları oluştur
-npm run db:seed                 # 3.192 kelimeyi yükle
+npm run db:seed                 # 4.046 kelimeyi yükle
 npm run dev                     # http://localhost:3000
 ```
 
@@ -62,7 +63,7 @@ Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi �
 2. **Connection string** → *Pooled connection* olanı kopyala, `DATABASE_URL` yap.
 3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
    Editor'a sırayla yapıştırabilirsin).
-4. `npm run db:seed` → `data/app/words.json` içindeki 3.192 kelime yüklenir.
+4. `npm run db:seed` → `data/app/words.json` içindeki 4.046 kelime yüklenir.
 
 ## 3. Vercel'e deploy
 
@@ -128,7 +129,7 @@ src/
     session-player.tsx      oyun akışını yöneten oynatıcı
     games/*.tsx             altı oyun + ortak çerçeve
 data/
-  app/words.json            tohumlama kaynağı (3.192 kelime)
+  app/words.json            tohumlama kaynağı (4.046 kelime, A1–C1)
 ```
 
 ### Tekrar mantığı özet

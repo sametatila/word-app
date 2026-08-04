@@ -26,12 +26,20 @@ const FEATURES = [
     body: "Ayrı bir “tekrar” bölümü yok. Her cevabın hızı ve doğruluğu ölçülür; kelime tam unutulmadan önce oyunun içinde tekrar karşına çıkar.",
   },
   {
-    title: "Goethe A1–B1 kelime listesi",
-    body: "3.192 kelime, artikel ve çoğul bilgisiyle, resmî Goethe listelerinden çıkarılmış örnek cümlelerle birlikte.",
+    title: "A1'den C1'e kadar",
+    body: "A1–B1 resmî Goethe listelerinden, B2–C1 konu bazlı hazırlanmış 4.046 kelime; her biri artikel, çoğul ve örnek cümleyle.",
+  },
+  {
+    title: "Seviyen canlı değişir",
+    body: "Doğru bildikçe bir üst CEFR seviyesine yükselirsin, zorlandıkça bir alt seviyeye inersin. Zorluk da doğruluk oranına göre kendini ayarlar.",
   },
   {
     title: "Sıkılmadan devam",
     body: "Oyun türü kelimenin ne kadar oturduğuna göre değişir. Yeni kelimede tanıma, pekişende yazma — aynı ekran arka arkaya gelmez.",
+  },
+  {
+    title: "60 saniye meydan okuma",
+    body: "Tur sonunda öğrendiklerinden rastgele sorular, karışık oyunlarla süreye karşı. Skorunu kırmaya çalışırsın.",
   },
 ];
 
@@ -63,7 +71,7 @@ export default function Home() {
         <section className="py-14 text-center sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
-              Goethe A1 · A2 · B1 · 3.192 kelime
+              A1 → C1 · 4.046 kelime · 6 oyun
             </span>
           </Reveal>
           <Reveal delay={0.06}>
@@ -89,7 +97,7 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="grid gap-4 sm:grid-cols-3">
+        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.08}>
               <div className="card h-full p-6">
@@ -105,7 +113,7 @@ export default function Home() {
           <Reveal>
             <h2 className="text-center text-2xl font-bold sm:text-3xl">Altı oyun, tek akış</h2>
             <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
-              Kelimenin durumuna göre uygun oyun otomatik seçilir.
+              Kelimenin ne kadar oturduğuna ve doğruluk oranına göre oyun otomatik seçilir.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -130,7 +138,7 @@ export default function Home() {
             <div className="card brand-gradient p-8 text-center text-white sm:p-12">
               <h2 className="text-2xl font-bold sm:text-3xl">Bugün 5 dakika ayır</h2>
               <p className="mx-auto mt-3 max-w-md text-sm opacity-90">
-                Serini başlat, ilk 8 kelimeni öğren. Gerisini uygulama takip ediyor.
+  Serini başlat, ilk kelimelerini öğren. Neyi ne zaman tekrar edeceğini uygulama takip ediyor.
               </p>
               <Link
                 href="/learn"
@@ -144,7 +152,7 @@ export default function Home() {
       </main>
 
       <footer className="muted border-t px-5 py-8 text-center text-xs" style={{ borderColor: "var(--border)" }}>
-        Kelime kaynağı: Goethe-Institut resmî Wortliste (A1 · A2 · B1).
+        Kelime kaynağı: A1–B1 Goethe-Institut resmî Wortliste; B2–C1 konu bazlı hazırlanmış set.
       </footer>
     </div>
   );

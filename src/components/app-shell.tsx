@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
+import { InstallPrompt } from "./install-prompt";
 import { CardsIcon, ChartIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark } from "./icons";
 
 const NAV = [
@@ -41,12 +42,13 @@ export function AppShell({
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-6xl">
       <TopProgress />
+      <InstallPrompt />
       {/* Masaüstü kenar çubuğu */}
       <aside
         className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r p-5 md:flex"
         style={{ borderColor: "var(--border)" }}
       >
-        <Link href="/" className="mb-8 flex items-center gap-2">
+        <Link href="/learn" className="mb-8 flex items-center gap-2">
           <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
             <LogoMark size={20} />
           </span>
@@ -87,10 +89,10 @@ export function AppShell({
       <div className="flex min-w-0 flex-1 flex-col">
         {/* Mobil başlık */}
         <header
-          className="sticky top-0 z-20 flex items-center justify-between border-b px-4 py-3 backdrop-blur md:hidden"
+          className="safe-top sticky top-0 z-20 flex items-center justify-between border-b px-4 pb-3 backdrop-blur md:hidden"
           style={{ borderColor: "var(--border)", background: "color-mix(in srgb, var(--bg) 85%, transparent)" }}
         >
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/learn" className="flex items-center gap-2">
             <span className="brand-gradient flex h-8 w-8 items-center justify-center rounded-lg text-white">
               <LogoMark size={18} />
             </span>
