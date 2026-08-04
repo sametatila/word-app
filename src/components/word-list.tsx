@@ -122,26 +122,24 @@ export function WordList({
           placeholder="Almanca veya Türkçe ara…"
           className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand-400)]"
         />
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {LEVELS.map((l) => (
             <button
               key={l.id || "all"}
               onClick={() => setFilter("level", l.id)}
-              className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                query.level === l.id ? "brand-gradient text-white" : "surface-2 muted"
-              }`}
+              aria-pressed={query.level === l.id}
+              className={`chip px-3 py-1.5 text-xs ${query.level === l.id ? "chip-active" : ""}`}
             >
               {l.label}
             </button>
           ))}
-          <span className="mx-1 w-px" style={{ background: "var(--border)" }} />
+          <span className="mx-1 h-5 w-px" style={{ background: "var(--border)" }} />
           {STATUSES.map((s) => (
             <button
               key={s.id || "any"}
               onClick={() => setFilter("status", s.id)}
-              className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                query.status === s.id ? "brand-gradient text-white" : "surface-2 muted"
-              }`}
+              aria-pressed={query.status === s.id}
+              className={`chip px-3 py-1.5 text-xs ${query.status === s.id ? "chip-active" : ""}`}
             >
               {s.label}
             </button>

@@ -64,8 +64,15 @@ export function TopProgress() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-x-0 top-0 z-50 h-0.5"
-      style={{ opacity: visible ? 1 : 0, transition: "opacity .25s ease" }}
+      className="pointer-events-none fixed inset-x-0 z-50 h-[3px]"
+      style={{
+        // Ana ekrana eklenmiş uygulamada sayfanın en üstü durum çubuğunun
+        // altında kalıyor; çizgiyi güvenli alanın hemen altına indiriyoruz,
+        // yoksa hiç görünmüyor.
+        top: "env(safe-area-inset-top, 0px)",
+        opacity: visible ? 1 : 0,
+        transition: "opacity .25s ease",
+      }}
     >
       <div
         className="brand-gradient h-full"

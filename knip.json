@@ -1,9 +1,9 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "entry": [
-    "src/app/**/{page,layout,route,error,not-found,icon}.{ts,tsx}",
+    "src/app/**/{page,layout,loading,route,error,not-found,icon}.{ts,tsx}",
     "scripts/{seed,e2e,sqlcheck,game-mix,test-db,empty-module}.ts",
-    "scripts/playtest.mjs"
+    "scripts/{playtest,icons}.mjs"
   ],
   "project": [
     "src/**/*.{ts,tsx}",
