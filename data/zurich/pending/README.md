@@ -1,38 +1,55 @@
-# Bekleyen Züritüütsch karşılıklar
+# Züritüütsch üretim hattı
 
-Almanca havuz B2/C1 genişlemesiyle 4.046'dan 7.429 maddeye çıktı. Bu dizindeki
-17 paket, **lehçe karşılığı henüz üretilmemiş 3.383 maddeyi** içerir
-(id 4047–7429, B2 1.640 · C1 1.743).
+B2/C1 genişlemesinin bekleyen 3.383 maddesi **tamamlandı** (`../chunk-18.json` …
+`../chunk-31.json`). Bu dizin artık bekleyen iş değil, Almanca havuz yeniden
+büyüdüğünde kullanılacak çalışır bir hat: girdi paketleri ve üretilen çıktılar
+birleştirildikten sonra silinir, araçlar kalır.
 
-Bu maddeler bugün Zürih kursunda **görünmez**: `seed-zurich.ts` eksikleri
-seviye bazında raporlar ve yüklemeye devam eder, hata fırlatmaz.
-
-## Dosyalar
+## Araçlar
 
 | Dosya | Ne işe yarar |
 |---|---|
-| `part-01.json` … `part-17.json` | Girdi paketleri, 200'erlik. Her madde: `id, de, artikel, tr, typ, niveau, beispiel` |
-| `SPEC-ZH.md` | Dönüşüm şartnamesi — bağlayıcı. `../style-guide.md` ile birlikte okunur |
-| `merge.js` | Çıktıları `../chunk-18.json` … biçiminde yazar, bütünlüğü denetler |
+| `SPEC-ZH.md` | Dönüşüm şartnamesi — bir üretim ajanına verilecek metin. `../style-guide.md` ile birlikte bağlayıcıdır |
+| `check.js` | Kalite kapısı. `node check.js [part-03]` |
+| `merge.js` | Çıktıları `../chunk-NN.json` olarak yazar. Önce `node merge.js --dry` |
 
-## Nasıl tamamlanır
+## Yeni bir tur nasıl yapılır
 
-1. Her paket için `SPEC-ZH.md`'ye göre çıktı üret; çıktı dosyaları
-   `<scratch>/zh-out/part-NN.json` olarak yazılır. Beklenen alanlar:
-   `{ "id": …, "gsw": "…", "artikel": "de|d|s|null", "beispiel": "…" }`
-   — madde sayısı ve sırası girdiyle birebir aynı olmalı.
-2. `node merge.js --dry` ile denetle. Denetlenenler: kaynakta olmayan id,
-   geçersiz artikel, `ß` kullanımı, boş `gsw`, cümlede kelimenin bulunmaması.
-3. `node merge.js` yeni `chunk-*.json` parçalarını yazar.
-4. `npm run db:seed:zurich` — uyarı satırı kaybolmalı, "eksik" sayısı 0 olmalı.
+1. Karşılığı olmayan maddeleri 200'erlik `part-NN.json` paketlerine böl.
+   Her madde: `id, de, artikel, tr, typ, niveau, beispiel`.
+2. Her paket için bir ajana `SPEC-ZH.md`'yi ver; çıktı `zh-out/part-NN.json`.
+3. `node check.js` — **yerelleştirme sütunu sıfır olmalı.**
+4. `node merge.js --dry`, sonra `node merge.js`.
+5. `npm run db:seed:zurich`.
+6. Tüketilen `part-*.json` ve `zh-out/` dosyalarını sil; parçalar artık kaynak.
 
-## Dikkat
+## Neden ayrı bir `check.js` var
 
-- **Yerelleştirme yok.** Almanca cümledeki yer adı, sayı ve kişi adı aynen
-  korunmalı. Türkçe çeviriler Almanca cümleden üretildiği için içerik
-  örtüşmezse çeviri o maddede boş bırakılır (bkz. `seed-zurich.ts`,
-  `translationFits`). İlk turda bu hata 374 maddeye mal olmuştu.
-- **Zorla lehçeleştirme yok.** Akademik/uluslararası kelimeler (Analyse,
-  Struktur, Prämisse) lehçede büyük ölçüde aynı kalır; yalnızca ses kuralları
-  uygulanır. B2/C1 havuzunun büyük kısmı bu türdendir.
+`merge.js` biçimsel bütünlüğü denetler: bilinmeyen id, geçersiz artikel, `ß`,
+boş `gsw`. Ama maddeleri asıl kaybettiren şey bu değil.
+
+`seed-zurich.ts` içindeki `translationFits`, Almanca ve Züritüütsch cümlenin
+**sayıları ve yer adları** örtüşmüyorsa o maddenin Türkçe çevirisini düşürür —
+çünkü çeviri Almanca cümleden üretilmiştir ve cümle yerelleştirildiyse artık
+yanlıştır. İlk turda bu sessizce 374 maddeye mal oldu; kimse paket bazında
+görmedi. `check.js` tam olarak bu ölçütü paket paket ölçer.
+
+İkinci fark: `merge.js`'in "cümlede kelime yok" uyarısı düz önek karşılaştırması
+yapar ve ayrılabilen fiilleri yanlış işaretler (`abmaane` → `abgmaant` doğrudur).
+`check.js` ayrılabilen öneki ve dönüşlü `sich`'i soyup kökü arar; son turda
+uyarı 95'ten 18'e indi, kalan 18'in de doğru olduğu görüldü (ablaut/uzatma).
+
+## Değişmeyen kurallar
+
+- **Yerelleştirme yok.** Almanca cümledeki yer adı, sayı ve kişi adı aynen korunur.
+- **Zorla lehçeleştirme yok.** Akademik/uluslararası kelimeler (Analyse, Struktur,
+  Prämisse) lehçede büyük ölçüde aynı kalır; yalnızca ses kuralları uygulanır.
+  B2/C1 havuzunun büyük kısmı bu türdendir.
 - Artikel eşlemesi belirlenimlidir: `der → de`, `die → d`, `das → s`.
+
+## Son turun sonucu
+
+3.383 madde · yerelleştirme hatası **0** · `ß` 0 · geçersiz artikel 0 ·
+bilinmeyen id 0. Yeni B2/C1 maddelerinin **tamamı** örnek cümle çevirisini
+devraldı (2.059/2.059 ve 2.178/2.178). Kalan 374 çevirisiz madde bu turdan
+önce var olan `chunk-01…17` içindedir.

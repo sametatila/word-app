@@ -39,7 +39,16 @@ if (DRY) { console.log("(kuru çalıştırma)"); process.exit(0); }
 
 const line = r => `{ "id": ${r.id}, "gsw": ${JSON.stringify(r.gsw)}, "artikel": ${JSON.stringify(r.artikel)}, "beispiel": ${JSON.stringify(r.beispiel)} }`;
 const CH = 250;
-let n = 17;   // mevcut son parça chunk-17
+// Son parça numarası diskten okunur. Sabit yazılırsa ikinci çalıştırma mevcut
+// parçaların üzerine yazar — bir kerelik bir araç gibi görünüp veri kaybettirir.
+let n = Math.max(
+  0,
+  ...fs
+    .readdirSync(path.join(ROOT, "data/zurich"))
+    .map((f) => /^chunk-(\d+)\.json$/.exec(f))
+    .filter(Boolean)
+    .map((m) => Number(m[1])),
+);
 for (let i = 0; i < rows.length; i += CH) {
   n++;
   const p = path.join(ROOT, "data/zurich", `chunk-${String(n).padStart(2, "0")}.json`);
