@@ -18,6 +18,26 @@ function compareKey(raw: string): string {
   return normalize(raw).replace(/^(der|die|das|sich)\s+/, "");
 }
 
+/**
+ * İpucu iskeleti: her kelime parçasının ilk harfi ve sonrasında her üçüncü harf
+ * açık, gerisi çizgi. "İlk harf: E" üstteki bilgiyi tekrarlıyordu; iskelet ise
+ * kelimenin omurgasını verir ve gerçekten hatırlamaya yardım eder.
+ */
+function skeleton(de: string): string {
+  let li = 0;
+  const out: string[] = [];
+  for (const ch of de) {
+    if (ch === " " || ch === "-") {
+      out.push(ch);
+      li = 0;
+      continue;
+    }
+    out.push(li % 3 === 0 ? ch : "_");
+    li++;
+  }
+  return out.join(" ");
+}
+
 export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   const { word } = round;
 
@@ -145,8 +165,11 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       </form>
 
       {hintShown ? (
-        <p className="muted mt-3 text-center text-sm">
-          İlk harf: <strong className="text-[color:var(--text)]">{firstLetter}</strong>
+        <p
+          className="mt-3 text-center font-mono text-base font-semibold tracking-wide"
+          style={{ color: "var(--text)" }}
+        >
+          {skeleton(word.de)}
         </p>
       ) : null}
 

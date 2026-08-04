@@ -36,10 +36,11 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
   }
 
   return (
+    // "Türkçe karşılığını seç" gibi bir alt bilgi yok: oyun başlığı + şıkların
+    // dili zaten görevi anlatıyor, fazladan metin ekranı yorar.
     <GameShell
       label="Doğru Anlam"
       prompt={<span className="brand-text text-2xl font-bold sm:text-3xl">{question}</span>}
-      hint={deSide ? "Türkçe karşılığını seç" : "Almanca karşılığını seç"}
     >
       <div className="grid gap-3">
         {options.map((opt, i) => {

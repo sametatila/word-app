@@ -6,6 +6,7 @@ import { GameShell } from "./game-shell";
 import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
+import { speakGerman } from "@/components/speak-button";
 
 type MatchRound = Extract<Round, { game: "match" }>;
 
@@ -79,6 +80,10 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
 
   function chooseLeft(wordId: number) {
     if (matched.has(wordId) || wrongPair) return;
+    // Almanca kelimeye dokununca telaffuzu da duyulur: eşleştirme aynı zamanda
+    // kulak eğitimidir.
+    const w = words.find((x) => x.id === wordId);
+    if (w) speakGerman(withArtikel(w));
     setSelectedLeft(wordId);
     if (selectedRightIdx != null) {
       tryMatch(wordId, selectedRightIdx);

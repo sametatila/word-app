@@ -23,6 +23,10 @@ export type SkillItem = {
 /** Sunucudan gelen (cihazlar arası senkron) tamamlanma durumu. */
 export type ServerSkillProgress = Record<string, { correct: number; total: number }>;
 
+/** Seçili seviye sekme oturumu boyunca hatırlanır: egzersizden dönünce
+ *  kullanıcı "seviyene dön" durumuna değil, baktığı seviyeye geri gelir. */
+const LEVEL_KEY = "wortspiel-skills-level";
+
 export function SkillsHub({
   items,
   activeLevel,
@@ -33,6 +37,26 @@ export function SkillsHub({
   serverProgress?: ServerSkillProgress;
 }) {
   const [level, setLevel] = useState<CefrLevel>(activeLevel);
+
+  // sessionStorage sunucu render'ında yok; hidrasyon uyuşmazlığı olmasın diye
+  // kayıtlı seçim mount sonrasında geri yüklenir.
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem(LEVEL_KEY) as CefrLevel | null;
+      if (saved && LEVEL_ORDER.includes(saved)) setLevel(saved);
+    } catch {
+      /* depolama kapalıysa aktif seviye kalır */
+    }
+  }, []);
+
+  function pickLevel(l: CefrLevel) {
+    setLevel(l);
+    try {
+      sessionStorage.setItem(LEVEL_KEY, l);
+    } catch {
+      /* depolama kapalıysa yalnızca bu ekran için geçerli olur */
+    }
+  }
   // Sunucu kaydı temel alınır; localStorage çevrimdışı tamamlamaları ekler.
   // localStorage sunucu render'ında yok; birleştirme hidrasyondan sonra yapılır.
   const [progress, setProgress] = useState<SkillProgress>(() => {
@@ -70,7 +94,7 @@ export function SkillsHub({
           <button
             key={l}
             type="button"
-            onClick={() => setLevel(l)}
+            onClick={() => pickLevel(l)}
             className={`chip relative px-3.5 py-1.5 text-sm ${level === l ? "chip-active" : ""}`}
           >
             {l}
@@ -86,7 +110,7 @@ export function SkillsHub({
         {level !== activeLevel ? (
           <button
             type="button"
-            onClick={() => setLevel(activeLevel)}
+            onClick={() => pickLevel(activeLevel)}
             className="muted text-xs font-semibold underline-offset-2 hover:underline"
           >
             Seviyene dön ({activeLevel})
