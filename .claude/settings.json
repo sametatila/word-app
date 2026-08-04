@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "PowerShell",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "Agent",
+      "WebFetch",
+      "WebSearch",
+      "TodoWrite",
+      "NotebookEdit",
+      "Skill",
+      "ScheduleWakeup",
+      "AskUserQuestion",
+      "Bash(* && rm *)",
+      "Bash(* del *)",
+      "Bash(* rm *)",
+      "Bash(del *)",
+      "Bash(del)",
+      "Bash(del:*)",
+      "Bash(git push *)",
+      "Bash(git push)",
+      "Bash(git push:*)",
+      "Bash(rm *)",
+      "Bash(rm)",
+      "Bash(rm:*)",
+      "Bash(rmdir *)",
+      "Bash(rmdir)",
+      "Bash(rmdir:*)",
+      "mcp__blender",
+      "mcp__blender2",
+      "mcp__godot-ai"
+    ]
+  }
+}
