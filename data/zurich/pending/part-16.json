@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 7047,
+  "de": "Reliquie",
+  "artikel": "die",
+  "tr": "kutsal emanet, rölik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Reliquie zog jahrhundertelang Pilger aus ganz Europa an."
+ },
+ {
+  "id": 7048,
+  "de": "Ökumene",
+  "artikel": "die",
+  "tr": "ekümenizm, kiliseler arası birlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Ökumene bemüht sich um Annäherung zwischen getrennten Kirchen."
+ },
+ {
+  "id": 7049,
+  "de": "Ehrfurcht",
+  "artikel": "die",
+  "tr": "derin saygı, huşu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Er betrat den alten Betsaal mit sichtbarer Ehrfurcht."
+ },
+ {
+  "id": 7050,
+  "de": "Gelübde",
+  "artikel": "das",
+  "tr": "adak, yemin",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Er legte ein Gelübde ab, das ihn lebenslang band."
+ },
+ {
+  "id": 7051,
+  "de": "Entzauberung",
+  "artikel": "die",
+  "tr": "büyübozumu, gizemin yitimi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Entzauberung der Welt beschreibt einen langen historischen Prozess."
+ },
+ {
+  "id": 7052,
+  "de": "Glaubenskrise",
+  "artikel": "die",
+  "tr": "inanç krizi, iman bunalımı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Nach dem Verlust geriet er in eine tiefe Glaubenskrise."
+ },
+ {
+  "id": 7053,
+  "de": "verehren",
+  "artikel": null,
+  "tr": "hürmet etmek, saygı göstermek, tapmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "In dieser Region verehrt man den Heiligen bis heute."
+ },
+ {
+  "id": 7054,
+  "de": "anbeten",
+  "artikel": null,
+  "tr": "tapmak, ibadet etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie beten dort seit Generationen dieselbe Gottheit an."
+ },
+ {
+  "id": 7055,
+  "de": "segnen",
+  "artikel": null,
+  "tr": "kutsamak, hayır dua etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Priester segnete die Versammelten am Ende der Feier."
+ },
+ {
+  "id": 7056,
+  "de": "missionieren",
+  "artikel": null,
+  "tr": "misyonerlik yapmak, din yaymak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Gemeinschaft missioniert nicht, sondern wartet auf Interessierte."
+ },
+ {
+  "id": 7057,
+  "de": "predigen",
+  "artikel": null,
+  "tr": "vaaz vermek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er predigte über Nachsicht, ohne jemanden zu belehren."
+ },
+ {
+  "id": 7058,
+  "de": "pilgern",
+  "artikel": null,
+  "tr": "hacca gitmek, ziyarete gitmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Jährlich pilgern Zehntausende zu diesem abgelegenen Bergkloster."
+ },
+ {
+  "id": 7059,
+  "de": "fasten",
+  "artikel": null,
+  "tr": "oruç tutmak, perhiz yapmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Viele fasten aus gesundheitlichen und nicht aus religiösen Gründen."
+ },
+ {
+  "id": 7060,
+  "de": "entsagen",
+  "artikel": null,
+  "tr": "vazgeçmek, el etek çekmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie entsagte dem Besitz und lebte fortan im Kloster."
+ },
+ {
+  "id": 7061,
+  "de": "tolerieren",
+  "artikel": null,
+  "tr": "hoşgörmek, tolere etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Abweichende Meinungen wurden innerhalb der Gemeinde kaum toleriert."
+ },
+ {
+  "id": 7062,
+  "de": "verketzern",
+  "artikel": null,
+  "tr": "sapkın ilan etmek, karalamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Kritische Stimmen wurden damals als abtrünnig verketzert."
+ },
+ {
+  "id": 7063,
+  "de": "weihen",
+  "artikel": null,
+  "tr": "takdis etmek, adamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die neue Kapelle wurde in einer schlichten Feier geweiht."
+ },
+ {
+  "id": 7064,
+  "de": "abschwören",
+  "artikel": null,
+  "tr": "yeminle reddetmek, dönmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Unter Druck schwor er seiner Überzeugung öffentlich ab."
+ },
+ {
+  "id": 7065,
+  "de": "konvertieren",
+  "artikel": null,
+  "tr": "din değiştirmek, geçmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie ist als Erwachsene zu einer anderen Konfession konvertiert."
+ },
+ {
+  "id": 7066,
+  "de": "praktizieren",
+  "artikel": null,
+  "tr": "uygulamak, yaşamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er praktiziert seinen Glauben eher still als demonstrativ."
+ },
+ {
+  "id": 7067,
+  "de": "sich distanzieren",
+  "artikel": null,
+  "tr": "mesafe koymak, uzak durmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Leitung distanzierte sich klar von den radikalen Äußerungen."
+ },
+ {
+  "id": 7068,
+  "de": "sich berufen",
+  "artikel": null,
+  "tr": "dayanmak, referans göstermek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Beide Seiten berufen sich auf dieselbe heilige Schrift."
+ },
+ {
+  "id": 7069,
+  "de": "weltlich",
+  "artikel": null,
+  "tr": "dünyevi, dinî olmayan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Weltliche und geistliche Macht waren hier lange verflochten."
+ },
+ {
+  "id": 7070,
+  "de": "interreligiös",
+  "artikel": null,
+  "tr": "dinler arası",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der interreligiöse Dialog kommt in der Praxis nur langsam voran."
+ },
+ {
+  "id": 7071,
+  "de": "andächtig",
+  "artikel": null,
+  "tr": "huşu içinde, dikkat kesilmiş",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Zuhörer verfolgten die Zeremonie andächtig und völlig still."
+ },
+ {
+  "id": 7072,
+  "de": "ehrwürdig",
+  "artikel": null,
+  "tr": "saygıdeğer, muhterem",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Das ehrwürdige Gebäude dient seit dem Mittelalter demselben Zweck."
+ },
+ {
+  "id": 7073,
+  "de": "pluralistisch",
+  "artikel": null,
+  "tr": "çoğulcu",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "In einer pluralistischen Gesellschaft konkurrieren viele Sinnangebote miteinander."
+ },
+ {
+  "id": 7074,
+  "de": "Bedeutungswandel",
+  "artikel": "der",
+  "tr": "anlam değişmesi, anlam kayması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Wort hat im Lauf der Jahrhunderte einen erstaunlichen Bedeutungswandel durchgemacht."
+ },
+ {
+  "id": 7075,
+  "de": "Äquivalenz",
+  "artikel": "die",
+  "tr": "eşdeğerlik, denklik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine vollständige Äquivalenz zwischen zwei Sprachen gibt es selten."
+ },
+ {
+  "id": 7076,
+  "de": "Sinngehalt",
+  "artikel": "der",
+  "tr": "anlam içeriği, öz anlam",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Übersetzung bewahrt den Sinngehalt, nicht aber den Klang des Originals."
+ },
+ {
+  "id": 7077,
+  "de": "Sprachgebrauch",
+  "artikel": "der",
+  "tr": "dil kullanımı, kullanım alışkanlığı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im heutigen Sprachgebrauch klingt dieser Ausdruck deutlich veraltet."
+ },
+ {
+  "id": 7078,
+  "de": "Sprachebene",
+  "artikel": "die",
+  "tr": "dil düzeyi, kayıt",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Redner wechselte mitten im Vortrag die Sprachebene."
+ },
+ {
+  "id": 7079,
+  "de": "Stilebene",
+  "artikel": "die",
+  "tr": "üslup düzeyi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Beide Wörter bedeuten dasselbe, gehören aber verschiedenen Stilebenen an."
+ },
+ {
+  "id": 7080,
+  "de": "Zielsprache",
+  "artikel": "die",
+  "tr": "erek dil, hedef dil",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Übersetzer muss vor allem die Zielsprache souverän beherrschen."
+ },
+ {
+  "id": 7081,
+  "de": "Ausgangssprache",
+  "artikel": "die",
+  "tr": "kaynak dil",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Manche Wortspiele der Ausgangssprache gehen bei der Übertragung verloren."
+ },
+ {
+  "id": 7082,
+  "de": "Wortfeld",
+  "artikel": "das",
+  "tr": "kelime alanı, anlam alanı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Alle diese Verben gehören zum Wortfeld der Wahrnehmung."
+ },
+ {
+  "id": 7083,
+  "de": "Sinnzusammenhang",
+  "artikel": "der",
+  "tr": "anlam bağlantısı, bağlam bütünlüğü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Aus dem Sinnzusammenhang gerissen wirkt die Aussage schlicht falsch."
+ },
+ {
+  "id": 7084,
+  "de": "Ungenauigkeit",
+  "artikel": "die",
+  "tr": "belirsizlik, kesinlik eksikliği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kleine Ungenauigkeiten in der Terminologie führen später zu großen Missverständnissen."
+ },
+ {
+  "id": 7085,
+  "de": "Abstufung",
+  "artikel": "die",
+  "tr": "derecelendirme, incelikli fark",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Höflichkeitsformen kennen im Deutschen feine Abstufungen."
+ },
+ {
+  "id": 7086,
+  "de": "Sprechakt",
+  "artikel": "der",
+  "tr": "söz edimi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine Frage kann als Sprechakt auch eine höfliche Aufforderung sein."
+ },
+ {
+  "id": 7087,
+  "de": "Äußerung",
+  "artikel": "die",
+  "tr": "söz, ifade, beyan",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jede Äußerung gewinnt ihren Sinn erst in einer bestimmten Situation."
+ },
+ {
+  "id": 7088,
+  "de": "Unübersetzbarkeit",
+  "artikel": "die",
+  "tr": "çevrilemezlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Unübersetzbarkeit mancher Begriffe ist ein altes Thema der Sprachtheorie."
+ },
+ {
+  "id": 7089,
+  "de": "Beiklang",
+  "artikel": "der",
+  "tr": "yan anlam tınısı, çağrışım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Wort trägt einen abschätzigen Beiklang, den kein Wörterbuch verzeichnet."
+ },
+ {
+  "id": 7090,
+  "de": "Nebenbedeutung",
+  "artikel": "die",
+  "tr": "yan anlam",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im Fachtext stört die spöttische Nebenbedeutung des Begriffs erheblich."
+ },
+ {
+  "id": 7091,
+  "de": "Sprachnorm",
+  "artikel": "die",
+  "tr": "dil normu, ölçünlü kullanım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Sprachnorm folgt dem Gebrauch, nicht umgekehrt."
+ },
+ {
+  "id": 7092,
+  "de": "Terminologie",
+  "artikel": "die",
+  "tr": "terminoloji, terim dizgesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne einheitliche Terminologie wird jede Fachdiskussion mühsam."
+ },
+ {
+  "id": 7093,
+  "de": "Begriffsbestimmung",
+  "artikel": "die",
+  "tr": "kavram tanımı, tanımlama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Am Anfang der Studie steht eine sorgfältige Begriffsbestimmung."
+ },
+ {
+  "id": 7094,
+  "de": "Begrifflichkeit",
+  "artikel": "die",
+  "tr": "kavram örgüsü, kavramsal çerçeve",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Autorin übernimmt die Begrifflichkeit der älteren Forschung nicht."
+ },
+ {
+  "id": 7095,
+  "de": "Bezeichnung",
+  "artikel": "die",
+  "tr": "adlandırma, terim",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Für dieselbe Sache gibt es in den Regionen ganz verschiedene Bezeichnungen."
+ },
+ {
+  "id": 7096,
+  "de": "Wortsinn",
+  "artikel": "der",
+  "tr": "sözcüğün anlamı, lafzî anlam",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im engeren Wortsinn trifft der Begriff hier gar nicht zu."
+ },
+ {
+  "id": 7097,
+  "de": "Lehnwort",
+  "artikel": "das",
+  "tr": "ödünç kelime, alıntı sözcük",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Viele Lehnwörter haben ihre ursprüngliche Bedeutung längst verloren."
+ },
+ {
+  "id": 7098,
+  "de": "Untertreibung",
+  "artikel": "die",
+  "tr": "hafife alma, olduğundan az gösterme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Von einem kleinen Problem zu sprechen war eine glatte Untertreibung."
+ },
+ {
+  "id": 7099,
+  "de": "Übertreibung",
+  "artikel": "die",
+  "tr": "abartma, mübalağa",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne Übertreibung lässt sich das Ausmaß des Wandels kaum beschreiben."
+ },
+ {
+  "id": 7100,
+  "de": "Verharmlosung",
+  "artikel": "die",
+  "tr": "önemsizleştirme, hafifletme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Solche Ausdrücke dienen der Verharmlosung eines ernsten Sachverhalts."
+ },
+ {
+  "id": 7101,
+  "de": "Herabsetzung",
+  "artikel": "die",
+  "tr": "küçümseme, aşağılama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Bemerkung enthält eine kaum verhüllte Herabsetzung der Gegenseite."
+ },
+ {
+  "id": 7102,
+  "de": "Auslassung",
+  "artikel": "die",
+  "tr": "atlama, eksiltme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Gerade die Auslassungen im Text verraten die Absicht des Verfassers."
+ },
+ {
+  "id": 7103,
+  "de": "Bezugsrahmen",
+  "artikel": "der",
+  "tr": "referans çerçevesi, bağlam çerçevesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne gemeinsamen Bezugsrahmen reden die beiden Seiten aneinander vorbei."
+ },
+ {
+  "id": 7104,
+  "de": "Sprecherabsicht",
+  "artikel": "die",
+  "tr": "konuşurun niyeti",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Satz ist nur verständlich, wenn man die Sprecherabsicht mitdenkt."
+ },
+ {
+  "id": 7105,
+  "de": "entsprechen",
+  "artikel": null,
+  "tr": "karşılık gelmek, uygun düşmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Kein türkisches Wort entspricht diesem Begriff vollständig."
+ },
+ {
+  "id": 7106,
+  "de": "abweichen",
+  "artikel": null,
+  "tr": "sapmak, ayrılmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Fassung weicht an mehreren Stellen deutlich vom Original ab."
+ },
+ {
+  "id": 7107,
+  "de": "verkürzen",
+  "artikel": null,
+  "tr": "kısaltmak, indirgemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Schlagzeile verkürzt das Argument bis zur Unkenntlichkeit."
+ },
+ {
+  "id": 7108,
+  "de": "gleichsetzen",
+  "artikel": null,
+  "tr": "eşitlemek, bir tutmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Man darf Verstehen nicht einfach mit Zustimmung gleichsetzen."
+ },
+ {
+  "id": 7109,
+  "de": "mitschwingen",
+  "artikel": null,
+  "tr": "arka planda hissedilmek, birlikte çağrışmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "In dem harmlosen Wort schwingt hier ein leiser Vorwurf mit."
+ },
+ {
+  "id": 7110,
+  "de": "versinnbildlichen",
+  "artikel": null,
+  "tr": "simgelemek, temsil etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Bild vom Netz versinnbildlicht die Verflechtung der Bedeutungen."
+ },
+ {
+  "id": 7111,
+  "de": "besagen",
+  "artikel": null,
+  "tr": "anlamına gelmek, demek olmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Regel besagt lediglich, dass der Kontext den Vorrang hat."
+ },
+ {
+  "id": 7112,
+  "de": "verwässern",
+  "artikel": null,
+  "tr": "sulandırmak, içeriğini boşaltmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der inflationäre Gebrauch hat den Begriff völlig verwässert."
+ },
+ {
+  "id": 7113,
+  "de": "entstellen",
+  "artikel": null,
+  "tr": "çarpıtmak, tahrif etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Ein einziges weggelassenes Wort kann den Sinn völlig entstellen."
+ },
+ {
+  "id": 7114,
+  "de": "benennen",
+  "artikel": null,
+  "tr": "adlandırmak, açıkça belirtmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Erst wenn wir das Phänomen benennen, können wir darüber streiten."
+ },
+ {
+  "id": 7115,
+  "de": "auffassen",
+  "artikel": null,
+  "tr": "algılamak, yorumlamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie hat die Bemerkung als versteckte Kritik aufgefasst."
+ },
+ {
+  "id": 7116,
+  "de": "explizit",
+  "artikel": null,
+  "tr": "açık, açıkça belirtilmiş",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Vertrag nennt diese Pflicht explizit im dritten Absatz."
+ },
+ {
+  "id": 7117,
+  "de": "missverständlich",
+  "artikel": null,
+  "tr": "yanlış anlaşılmaya açık",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Überschrift war missverständlich und wurde später geändert."
+ },
+ {
+  "id": 7118,
+  "de": "idiomatisch",
+  "artikel": null,
+  "tr": "deyimsel, dile özgü",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Übersetzung ist korrekt, klingt aber nicht idiomatisch."
+ },
+ {
+  "id": 7119,
+  "de": "kontextabhängig",
+  "artikel": null,
+  "tr": "bağlama bağlı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Bedeutung solcher Partikeln ist stark kontextabhängig."
+ },
+ {
+  "id": 7120,
+  "de": "abwertend",
+  "artikel": null,
+  "tr": "aşağılayıcı, olumsuz anlam yüklü",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "In diesem Zusammenhang wird das Wort eindeutig abwertend gebraucht."
+ },
+ {
+  "id": 7121,
+  "de": "Schicht",
+  "artikel": "die",
+  "tr": "toplumsal katman, sınıf",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kinder aus bildungsfernen Schichten erreichen seltener das Gymnasium."
+ },
+ {
+  "id": 7122,
+  "de": "Diaspora",
+  "artikel": "die",
+  "tr": "diaspora",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Diaspora hält den Kontakt zur Heimat über soziale Netzwerke aufrecht."
+ },
+ {
+  "id": 7123,
+  "de": "Aufstieg",
+  "artikel": "der",
+  "tr": "yükselme, sınıf atlama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der soziale Aufstieg gelingt in Deutschland seltener als früher."
+ },
+ {
+  "id": 7124,
+  "de": "Leitkultur",
+  "artikel": "die",
+  "tr": "başat kültür, referans kültür",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Begriff Leitkultur wird in der Debatte höchst unterschiedlich verwendet."
+ },
+ {
+  "id": 7125,
+  "de": "Benachteiligung",
+  "artikel": "die",
+  "tr": "dezavantaj, mağduriyet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Strukturelle Benachteiligung lässt sich statistisch inzwischen klar belegen."
+ },
+ {
+  "id": 7126,
+  "de": "Binnenmigration",
+  "artikel": "die",
+  "tr": "iç göç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Binnenmigration vom Osten in den Westen hat sich deutlich abgeschwächt."
+ },
+ {
+  "id": 7127,
+  "de": "Fremdenfeindlichkeit",
+  "artikel": "die",
+  "tr": "yabancı düşmanlığı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Offene Fremdenfeindlichkeit äußert sich häufig erst in Krisenzeiten."
+ },
+ {
+  "id": 7128,
+  "de": "Rassismus",
+  "artikel": "der",
+  "tr": "ırkçılık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Rassismus zeigt sich oft in beiläufigen Bemerkungen im Alltag."
+ },
+ {
+  "id": 7129,
+  "de": "Pluralismus",
+  "artikel": "der",
+  "tr": "çoğulculuk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Weltanschaulicher Pluralismus gilt als Kennzeichen moderner Gesellschaften."
+ },
+ {
+  "id": 7130,
+  "de": "Wertewandel",
+  "artikel": "der",
+  "tr": "değerlerin dönüşümü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Wertewandel zeigt sich besonders deutlich im Verhältnis zur Arbeit."
+ },
+ {
+  "id": 7131,
+  "de": "Prekariat",
+  "artikel": "das",
+  "tr": "güvencesizler kesimi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das neue Prekariat besteht längst nicht mehr nur aus Ungelernten."
+ },
+ {
+  "id": 7132,
+  "de": "Armutsrisiko",
+  "artikel": "das",
+  "tr": "yoksulluk riski",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Alleinerziehende tragen ein weit überdurchschnittliches Armutsrisiko."
+ },
+ {
+  "id": 7133,
+  "de": "Durchlässigkeit",
+  "artikel": "die",
+  "tr": "geçirgenlik, geçişkenlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Durchlässigkeit des Bildungssystems ist geringer als offiziell behauptet."
+ },
+ {
+  "id": 7134,
+  "de": "Elite",
+  "artikel": "die",
+  "tr": "seçkinler, elit",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die politischen Eliten rekrutieren sich noch immer aus wenigen Familien."
+ },
+ {
+  "id": 7135,
+  "de": "Bürgertum",
+  "artikel": "das",
+  "tr": "burjuvazi, kentsoylu sınıf",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das städtische Bürgertum verlor im vergangenen Jahrhundert an Einfluss."
+ },
+ {
+  "id": 7136,
+  "de": "Klassengesellschaft",
+  "artikel": "die",
+  "tr": "sınıflı toplum",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Manche Forscher sprechen von der Rückkehr der Klassengesellschaft."
+ },
+ {
+  "id": 7137,
+  "de": "Enklave",
+  "artikel": "die",
+  "tr": "enklav, kapalı yerleşim adası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wohlhabende Enklaven schotten sich immer stärker vom Umland ab."
+ },
+ {
+  "id": 7138,
+  "de": "Kluft",
+  "artikel": "die",
+  "tr": "uçurum, derin ayrım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zwischen Stadt und Land öffnet sich eine wachsende soziale Kluft."
+ },
+ {
+  "id": 7139,
+  "de": "Polarisierung",
+  "artikel": "die",
+  "tr": "kutuplaşma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Polarisierung der Debatte erschwert jede sachliche Verständigung."
+ },
+ {
+  "id": 7140,
+  "de": "Ressentiment",
+  "artikel": "das",
+  "tr": "gizli husumet, hınç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wirtschaftliche Unsicherheit nährt Ressentiments gegenüber Neuankömmlingen."
+ },
+ {
+  "id": 7141,
+  "de": "ausgrenzen",
+  "artikel": null,
+  "tr": "dışlamak, ötekileştirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer den Dialekt nicht beherrscht, wird schnell subtil ausgegrenzt."
+ },
+ {
+  "id": 7142,
+  "de": "eingliedern",
+  "artikel": null,
+  "tr": "bütüne katmak, uyum sağlatmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Betrieb hat die neuen Kollegen erstaunlich rasch eingegliedert."
+ },
+ {
+  "id": 7143,
+  "de": "bevorzugen",
+  "artikel": null,
+  "tr": "tercih etmek, kayırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Personalabteilungen bevorzugen bei gleicher Qualifikation oft vertraute Namen."
+ },
+ {
+  "id": 7144,
+  "de": "vererben",
+  "artikel": null,
+  "tr": "miras bırakmak, aktarmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Bildungschancen werden in Deutschland noch immer weitgehend vererbt."
+ },
+ {
+  "id": 7145,
+  "de": "reproduzieren",
+  "artikel": null,
+  "tr": "yeniden üretmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Schulsystem reproduziert bestehende Unterschiede statt sie abzubauen."
+ },
+ {
+  "id": 7146,
+  "de": "sich einleben",
+  "artikel": null,
+  "tr": "alışmak, yeni yere uyum sağlamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Familie hat sich im neuen Viertel überraschend schnell eingelebt."
+ },
+ {
+  "id": 7147,
+  "de": "sich niederlassen",
+  "artikel": null,
+  "tr": "yerleşmek, kalıcı olarak oturmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Viele Rückkehrer lassen sich bewusst in ihrer alten Heimatstadt nieder."
+ },
+ {
+  "id": 7148,
+  "de": "entwurzeln",
+  "artikel": null,
+  "tr": "kökünden koparmak, yurdundan etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Krieg hat eine ganze Generation entwurzelt und über Kontinente verstreut."
+ },
+ {
+  "id": 7149,
+  "de": "pauschalisieren",
+  "artikel": null,
+  "tr": "genel geçer yargıya varmak, toptancılık yapmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer so pauschalisiert, verkennt die Vielschichtigkeit des Phänomens."
+ },
+ {
+  "id": 7150,
+  "de": "erschweren",
+  "artikel": null,
+  "tr": "zorlaştırmak, güçleştirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Bürokratische Hürden erschweren den Zugang zum Arbeitsmarkt zusätzlich."
+ },
+ {
+  "id": 7151,
+  "de": "zusammenwachsen",
+  "artikel": null,
+  "tr": "kaynaşmak, birbirine bütünleşmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die beiden Stadtteile sind erst nach Jahrzehnten wirklich zusammengewachsen."
+ },
+ {
+  "id": 7152,
+  "de": "erodieren",
+  "artikel": null,
+  "tr": "aşınmak, yıpranmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Vertrauen in die Institutionen ist über Jahre langsam erodiert."
+ },
+ {
+  "id": 7153,
+  "de": "bildungsfern",
+  "artikel": null,
+  "tr": "eğitimden uzak",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Begriff bildungsfern gilt vielen Fachleuten selbst als abwertend."
+ },
+ {
+  "id": 7154,
+  "de": "ethnisch",
+  "artikel": null,
+  "tr": "etnik",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Statistik erfasst keine ethnisch definierten Kategorien."
+ },
+ {
+  "id": 7155,
+  "de": "heterogen",
+  "artikel": null,
+  "tr": "türdeş olmayan, çeşitli",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Schülerschaft ist heute weit heterogener als vor dreißig Jahren."
+ },
+ {
+  "id": 7156,
+  "de": "sesshaft",
+  "artikel": null,
+  "tr": "yerleşik",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Nach Jahren des Pendelns ist die Familie endlich sesshaft geworden."
+ },
+ {
+  "id": 7157,
+  "de": "obgleich",
+  "artikel": null,
+  "tr": "her ne kadar, -e rağmen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Obgleich die Zahlen sinken, hält sich die Angst hartnäckig."
+ },
+ {
+  "id": 7158,
+  "de": "Erhebung",
+  "artikel": "die",
+  "tr": "veri toplama, anket çalışması, araştırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Erhebung wurde in vier Bundesländern gleichzeitig durchgeführt."
+ },
+ {
+  "id": 7159,
+  "de": "Messung",
+  "artikel": "die",
+  "tr": "ölçüm",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die zweite Messung bestätigte die Werte der ersten Reihe."
+ },
+ {
+  "id": 7160,
+  "de": "Streuung",
+  "artikel": "die",
+  "tr": "dağılım genişliği, saçılım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Streuung der Einzelwerte ist deutlich größer als erwartet."
+ },
+ {
+  "id": 7161,
+  "de": "Schätzung",
+  "artikel": "die",
+  "tr": "tahmin, kestirim",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Vorsichtige Schätzungen gehen von etwa zwölf Prozent aus."
+ },
+ {
+  "id": 7162,
+  "de": "Prognose",
+  "artikel": "die",
+  "tr": "öngörü, tahmin",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Prognose beruht auf Daten der vergangenen zehn Jahre."
+ },
+ {
+  "id": 7163,
+  "de": "Merkmal",
+  "artikel": "das",
+  "tr": "özellik, nitelik, değişken özellik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Alter und Bildungsstand wurden als zentrale Merkmale erfasst."
+ },
+ {
+  "id": 7164,
+  "de": "Ausprägung",
+  "artikel": "die",
+  "tr": "görünüm biçimi, derece, değer düzeyi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Merkmal kann drei verschiedene Ausprägungen annehmen."
+ },
+ {
+  "id": 7165,
+  "de": "Datensatz",
+  "artikel": "der",
+  "tr": "veri seti, veri kaydı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Unvollständige Datensätze wurden vor der Analyse aussortiert."
+ },
+ {
+  "id": 7166,
+  "de": "Befragung",
+  "artikel": "die",
+  "tr": "anket, görüşme, soruşturma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "An der Befragung nahmen rund zweitausend Haushalte teil."
+ },
+ {
+  "id": 7167,
+  "de": "Wahrscheinlichkeit",
+  "artikel": "die",
+  "tr": "olasılık, ihtimal",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Wahrscheinlichkeit eines Zufallsbefunds liegt unter fünf Prozent."
+ },
+ {
+  "id": 7168,
+  "de": "Häufigkeit",
+  "artikel": "die",
+  "tr": "sıklık, frekans",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Häufigkeit solcher Fälle hat sich seit 2010 verdoppelt."
+ },
+ {
+  "id": 7169,
+  "de": "Verteilung",
+  "artikel": "die",
+  "tr": "dağılım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Verteilung der Einkommen ist stark nach rechts verschoben."
+ },
+ {
+  "id": 7170,
+  "de": "Mittelwert",
+  "artikel": "der",
+  "tr": "ortalama değer",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Mittelwert verdeckt hier erhebliche Unterschiede zwischen den Gruppen."
+ },
+ {
+  "id": 7171,
+  "de": "Ausreißer",
+  "artikel": "der",
+  "tr": "aykırı değer, uç değer",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein einzelner Ausreißer verschiebt den Durchschnitt spürbar nach oben."
+ },
+ {
+  "id": 7172,
+  "de": "Grundgesamtheit",
+  "artikel": "die",
+  "tr": "evren, ana kütle",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Stichprobe bildet die Grundgesamtheit nur unzureichend ab."
+ },
+ {
+  "id": 7173,
+  "de": "Gültigkeit",
+  "artikel": "die",
+  "tr": "geçerlilik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Gültigkeit des Verfahrens wurde in mehreren Studien geprüft."
+ },
+ {
+  "id": 7174,
+  "de": "Schwellenwert",
+  "artikel": "der",
+  "tr": "eşik değer",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Erst oberhalb dieses Schwellenwerts gilt der Effekt als bedeutsam."
+ },
+ {
+  "id": 7175,
+  "de": "Bezugsgröße",
+  "artikel": "die",
+  "tr": "referans büyüklük, karşılaştırma ölçütü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne klare Bezugsgröße bleibt die Prozentangabe wenig aussagekräftig."
+ },
+ {
+  "id": 7176,
+  "de": "Versuchsanordnung",
+  "artikel": "die",
+  "tr": "deney düzeneği, deney tasarımı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Versuchsanordnung erlaubt keine eindeutige Aussage über die Ursache."
+ },
+ {
+  "id": 7177,
+  "de": "Längsschnittstudie",
+  "artikel": "die",
+  "tr": "boylamsal çalışma, uzunlamasına araştırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine Längsschnittstudie begleitet dieselben Personen über viele Jahre."
+ },
+ {
+  "id": 7178,
+  "de": "Metaanalyse",
+  "artikel": "die",
+  "tr": "meta-analiz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Metaanalyse fasst die Befunde aus 34 Einzelstudien zusammen."
+ },
+ {
+  "id": 7179,
+  "de": "Störgröße",
+  "artikel": "die",
+  "tr": "karıştırıcı etken, gürültü faktörü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mögliche Störgrößen wurden im Modell statistisch herausgerechnet."
+ },
+ {
+  "id": 7180,
+  "de": "Einflussgröße",
+  "artikel": "die",
+  "tr": "etkileyen değişken, belirleyici etken",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Einkommen erweist sich als stärkste Einflussgröße im Modell."
+ },
+ {
+  "id": 7181,
+  "de": "Variable",
+  "artikel": "die",
+  "tr": "değişken",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zwei Variablen erklären zusammen fast die Hälfte der Unterschiede."
+ },
+ {
+  "id": 7182,
+  "de": "Parameter",
+  "artikel": "der",
+  "tr": "parametre, ayar değeri",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Schon kleine Änderungen der Parameter verändern das Ergebnis erheblich."
+ },
+ {
+  "id": 7183,
+  "de": "Indikator",
+  "artikel": "der",
+  "tr": "gösterge",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Arbeitslosenquote gilt als grober Indikator für die Wirtschaftslage."
+ },
+ {
+  "id": 7184,
+  "de": "Koeffizient",
+  "artikel": "der",
+  "tr": "katsayı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Koeffizient bleibt auch nach der Bereinigung deutlich positiv."
+ },
+ {
+  "id": 7185,
+  "de": "Unsicherheit",
+  "artikel": "die",
+  "tr": "belirsizlik, kesinsizlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die verbleibenden Unsicherheiten sollten offen benannt werden."
+ },
+ {
+  "id": 7186,
+  "de": "Robustheit",
+  "artikel": "die",
+  "tr": "sağlamlık, dayanıklılık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zusätzliche Tests bestätigen die Robustheit der berichteten Effekte."
+ },
+ {
+  "id": 7187,
+  "de": "Rückschluss",
+  "artikel": "der",
+  "tr": "çıkarım, sonuç çıkarma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Aus einer einzigen Erhebung lassen sich kaum Rückschlüsse ziehen."
+ },
+ {
+  "id": 7188,
+  "de": "Übertragbarkeit",
+  "artikel": "die",
+  "tr": "aktarılabilirlik, genellenebilirlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Übertragbarkeit der Ergebnisse auf andere Länder ist fraglich."
+ },
+ {
+  "id": 7189,
+  "de": "Vorgehensweise",
+  "artikel": "die",
+  "tr": "izlenen yöntem, yaklaşım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die gewählte Vorgehensweise wird im Anhang ausführlich dokumentiert."
+ },
+ {
+  "id": 7190,
+  "de": "Signifikanzniveau",
+  "artikel": "das",
+  "tr": "anlamlılık düzeyi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Effekt bleibt auf dem üblichen Signifikanzniveau nachweisbar."
+ },
+ {
+  "id": 7191,
+  "de": "Normierung",
+  "artikel": "die",
+  "tr": "normlaştırma, ölçeklendirme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne Normierung sind die Werte der beiden Skalen nicht vergleichbar."
+ },
+ {
+  "id": 7192,
+  "de": "bereinigen",
+  "artikel": null,
+  "tr": "arındırmak, düzeltmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Zahlen sind um saisonale Effekte bereinigt worden."
+ },
+ {
+  "id": 7193,
+  "de": "extrapolieren",
+  "artikel": null,
+  "tr": "dışdeğerlemek, mevcut eğilimden ileri taşımak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Man sollte den Trend nicht unbesehen in die Zukunft extrapolieren."
+ },
+ {
+  "id": 7194,
+  "de": "validieren",
+  "artikel": null,
+  "tr": "geçerliliğini sınamak, doğrulamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Modell wurde anhand unabhängiger Daten validiert."
+ },
+ {
+  "id": 7195,
+  "de": "zurückführen",
+  "artikel": null,
+  "tr": "bir nedene bağlamak, dayandırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Rückgang wird vor allem auf die Alterung der Bevölkerung zurückgeführt."
+ },
+ {
+  "id": 7196,
+  "de": "unterschätzen",
+  "artikel": null,
+  "tr": "hafife almak, olduğundan az tahmin etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Ältere Modelle haben das Tempo der Entwicklung deutlich unterschätzt."
+ },
+ {
+  "id": 7197,
+  "de": "gegenüberstellen",
+  "artikel": null,
+  "tr": "karşılaştırmalı olarak koymak, karşı karşıya getirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Tabelle stellt die Werte beider Erhebungsjahre gegenüber."
+ },
+ {
+  "id": 7198,
+  "de": "aggregieren",
+  "artikel": null,
+  "tr": "toplulaştırmak, bir araya toplamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Einzelangaben wurden auf Kreisebene aggregiert."
+ },
+ {
+  "id": 7199,
+  "de": "replizieren",
+  "artikel": null,
+  "tr": "yinelemek, aynı koşullarda tekrarlamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Bislang konnte kein Team den Effekt erfolgreich replizieren."
+ },
+ {
+  "id": 7200,
+  "de": "operationalisieren",
+  "artikel": null,
+  "tr": "ölçülebilir hale getirmek, işlevsel tanıma dökmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wie man Lebensqualität operationalisiert, bleibt umstritten."
+ },
+ {
+  "id": 7201,
+  "de": "erhärten",
+  "artikel": null,
+  "tr": "pekiştirmek, kanıtlarla güçlendirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Neuere Daten erhärten den Verdacht auf einen systematischen Fehler."
+ },
+ {
+  "id": 7202,
+  "de": "abbilden",
+  "artikel": null,
+  "tr": "yansıtmak, temsil etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Index bildet die tatsächliche Belastung nur unvollständig ab."
+ },
+ {
+  "id": 7203,
+  "de": "modellieren",
+  "artikel": null,
+  "tr": "modellemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Forscher modellieren den Verlauf unter drei verschiedenen Szenarien."
+ },
+ {
+  "id": 7204,
+  "de": "simulieren",
+  "artikel": null,
+  "tr": "benzetim yapmak, simüle etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Programm simuliert die Entwicklung über einen Zeitraum von 50 Jahren."
+ },
+ {
+  "id": 7205,
+  "de": "näherungsweise",
+  "artikel": null,
+  "tr": "yaklaşık olarak, kabaca",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Verlauf lässt sich näherungsweise durch eine Gerade beschreiben."
+ },
+ {
+  "id": 7206,
+  "de": "tendenziell",
+  "artikel": null,
+  "tr": "eğilim olarak, genel olarak",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Jüngere Befragte antworten tendenziell kritischer als ältere."
+ },
+ {
+  "id": 7207,
+  "de": "quantitativ",
+  "artikel": null,
+  "tr": "nicel, sayısal",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Arbeit verbindet quantitative Verfahren mit ausführlichen Interviews."
+ },
+ {
+  "id": 7208,
+  "de": "qualitativ",
+  "artikel": null,
+  "tr": "nitel",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Für diese Fragestellung eignet sich ein qualitativer Zugang besser."
+ },
+ {
+  "id": 7209,
+  "de": "methodisch",
+  "artikel": null,
+  "tr": "yöntemsel, yöntem açısından",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Studie weist mehrere methodische Schwächen auf."
+ },
+ {
+  "id": 7210,
+  "de": "Datenethik",
+  "artikel": "die",
+  "tr": "veri etiği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne eine belastbare Datenethik bleibt jede Digitalstrategie moralisch blind."
+ },
+ {
+  "id": 7211,
+  "de": "Überwachung",
+  "artikel": "die",
+  "tr": "gözetim, izleme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Flächendeckende Überwachung verändert das Verhalten der Menschen im öffentlichen Raum."
+ },
+ {
+  "id": 7212,
+  "de": "Datensparsamkeit",
+  "artikel": "die",
+  "tr": "veri asgariliği, az veri toplama ilkesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Datensparsamkeit gilt als Leitprinzip, wird in der Praxis aber selten eingehalten."
+ },
+ {
+  "id": 7213,
+  "de": "Nachvollziehbarkeit",
+  "artikel": "die",
+  "tr": "anlaşılabilirlik, izlenebilirlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen erheblich."
+ },
+ {
+  "id": 7214,
+  "de": "Zweckbindung",
+  "artikel": "die",
+  "tr": "amaca bağlılık ilkesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen."
+ },
+ {
+  "id": 7215,
+  "de": "Profilbildung",
+  "artikel": "die",
+  "tr": "profil çıkarma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kommerzielle Profilbildung erfasst längst auch politische Neigungen der Nutzer."
+ },
+ {
+  "id": 7216,
+  "de": "Mustererkennung",
+  "artikel": "die",
+  "tr": "örüntü tanıma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mustererkennung ersetzt kein Verständnis der zugrunde liegenden Zusammenhänge."
+ },
+ {
+  "id": 7217,
+  "de": "Lernverfahren",
+  "artikel": "das",
+  "tr": "öğrenme yöntemi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Statistische Lernverfahren liefern Korrelationen, aber keine Erklärungen."
+ },
+ {
+  "id": 7218,
+  "de": "Trainingsdaten",
+  "artikel": "die",
+  "tr": "eğitim verileri",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Woher die Trainingsdaten stammen, bleibt bei vielen Anbietern unklar."
+ },
+ {
+  "id": 7219,
+  "de": "Regulierung",
+  "artikel": "die",
+  "tr": "düzenleme, regülasyon",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine zu späte Regulierung zementiert die Vormacht der etablierten Konzerne."
+ },
+ {
+  "id": 7220,
+  "de": "Wertschöpfung",
+  "artikel": "die",
+  "tr": "katma değer yaratma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die eigentliche Wertschöpfung verlagert sich von der Hardware zur Software."
+ },
+ {
+  "id": 7221,
+  "de": "Beschäftigungsstruktur",
+  "artikel": "die",
+  "tr": "istihdam yapısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Beschäftigungsstruktur verschiebt sich zugunsten hochqualifizierter Tätigkeiten."
+ },
+ {
+  "id": 7222,
+  "de": "Sachzwang",
+  "artikel": "der",
+  "tr": "nesnel zorunluluk, kaçınılmaz koşul",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Technischer Fortschritt wird oft als Sachzwang dargestellt, nicht als politische Wahl."
+ },
+ {
+  "id": 7223,
+  "de": "Technikfolgenabschätzung",
+  "artikel": "die",
+  "tr": "teknolojinin etkilerinin değerlendirilmesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine ernsthafte Technikfolgenabschätzung müsste vor der Markteinführung stattfinden."
+ },
+ {
+  "id": 7224,
+  "de": "Fortschrittsglaube",
+  "artikel": "der",
+  "tr": "ilerleme inancı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein ungebrochener Fortschrittsglaube verstellt den Blick auf die Nebenwirkungen."
+ },
+ {
+  "id": 7225,
+  "de": "Technikskepsis",
+  "artikel": "die",
+  "tr": "teknoloji şüpheciliği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihre Technikskepsis beruht auf Erfahrung, nicht auf bloßer Angst."
+ },
+ {
+  "id": 7226,
+  "de": "Verantwortungsdiffusion",
+  "artikel": "die",
+  "tr": "sorumluluğun dağılıp kaybolması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern."
+ },
+ {
+  "id": 7227,
+  "de": "Angriffsfläche",
+  "artikel": "die",
+  "tr": "saldırıya açık yüzey, zafiyet alanı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jede zusätzliche Vernetzung vergrößert die Angriffsfläche des gesamten Systems."
+ },
+ {
+  "id": 7228,
+  "de": "Zugriffsrecht",
+  "artikel": "das",
+  "tr": "erişim hakkı, erişim yetkisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zu weit gefasste Zugriffsrechte sind eine häufige Ursache für Datenpannen."
+ },
+ {
+  "id": 7229,
+  "de": "Berechenbarkeit",
+  "artikel": "die",
+  "tr": "hesaplanabilirlik, öngörülebilirlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare erkenntnistheoretische Grenzen."
+ },
+ {
+  "id": 7230,
+  "de": "Quantifizierung",
+  "artikel": "die",
+  "tr": "sayısallaştırma, niceliğe indirgeme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt."
+ },
+ {
+  "id": 7231,
+  "de": "Selbstverpflichtung",
+  "artikel": "die",
+  "tr": "gönüllü taahhüt",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Freiwillige Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze."
+ },
+ {
+  "id": 7232,
+  "de": "Aufsichtsbehörde",
+  "artikel": "die",
+  "tr": "denetim kurumu, düzenleyici kurum",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Aufsichtsbehörde fehlt es an Fachpersonal und technischer Ausstattung."
+ },
+ {
+  "id": 7233,
+  "de": "ausspähen",
+  "artikel": null,
+  "tr": "gizlice gözetlemek, casusluk etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Dienst hat jahrelang die Kommunikation befreundeter Regierungen ausgespäht."
+ },
+ {
+  "id": 7234,
+  "de": "protokollieren",
+  "artikel": null,
+  "tr": "kayda geçirmek, tutanaklamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Jeder Zugriff auf die Datenbank wird lückenlos protokolliert."
+ },
+ {
+  "id": 7235,
+  "de": "nachbilden",
+  "artikel": null,
+  "tr": "taklit etmek, yeniden oluşturmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Maschinen bilden sprachliche Muster nach, ohne sie zu verstehen."
+ },
+ {
+  "id": 7236,
+  "de": "skalieren",
+  "artikel": null,
+  "tr": "ölçeklendirmek, büyütmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Ein Fehler, der sich beliebig skalieren lässt, wird zum Systemrisiko."
+ },
+ {
+  "id": 7237,
+  "de": "aushebeln",
+  "artikel": null,
+  "tr": "etkisiz kılmak, devre dışı bırakmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Technische Voreinstellungen hebeln bestehende Schutzrechte faktisch aus."
+ },
+ {
+  "id": 7238,
+  "de": "voraussetzen",
+  "artikel": null,
+  "tr": "önkoşul saymak, varsaymak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Diese Argumentation setzt voraus, dass Daten neutral seien."
+ },
+ {
+  "id": 7239,
+  "de": "einhegen",
+  "artikel": null,
+  "tr": "sınırlarını çizmek, denetim altına almak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen."
+ },
+ {
+  "id": 7240,
+  "de": "lernfähig",
+  "artikel": null,
+  "tr": "öğrenme yeteneği olan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ein lernfähiges System verändert sein Verhalten nach der Zulassung."
+ },
+ {
+  "id": 7241,
+  "de": "fehleranfällig",
+  "artikel": null,
+  "tr": "hataya açık, arızaya yatkın",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Gerade bei seltenen Fällen bleibt die Erkennung fehleranfällig."
+ },
+ {
+  "id": 7242,
+  "de": "datengetrieben",
+  "artikel": null,
+  "tr": "veriye dayalı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Datengetriebene Verwaltung verspricht Effizienz und riskiert zugleich Kontrollverluste."
+ },
+ {
+  "id": 7243,
+  "de": "allgegenwärtig",
+  "artikel": null,
+  "tr": "her yerde hazır, her an mevcut",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden."
+ },
+ {
+  "id": 7244,
+  "de": "personenbezogen",
+  "artikel": null,
+  "tr": "kişisel, kişiye ilişkin",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Auch scheinbar harmlose Angaben können personenbezogen sein."
+ },
+ {
+  "id": 7245,
+  "de": "zwangsläufig",
+  "artikel": null,
+  "tr": "kaçınılmaz olarak, ister istemez",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Mehr Rechenleistung führt nicht zwangsläufig zu besseren Entscheidungen."
+ },
+ {
+  "id": 7246,
+  "de": "Befugnis",
+  "artikel": "die",
+  "tr": "yetki, salahiyet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Ausschuss überschritt seine Befugnisse bei der Vergabe der Mittel."
+ }
+]

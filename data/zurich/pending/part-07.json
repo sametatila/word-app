@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 5247,
+  "de": "gestatten",
+  "artikel": null,
+  "tr": "izin vermek, müsaade etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise."
+ },
+ {
+  "id": 5248,
+  "de": "rechtswidrig",
+  "artikel": null,
+  "tr": "hukuka aykırı, kanunsuz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Gericht erklärte die Kündigung für rechtswidrig."
+ },
+ {
+  "id": 5249,
+  "de": "behördlich",
+  "artikel": null,
+  "tr": "resmî, idari, daireye ait",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für den Umbau brauchen wir eine behördliche Genehmigung."
+ },
+ {
+  "id": 5250,
+  "de": "unzulässig",
+  "artikel": null,
+  "tr": "kabul edilemez, caiz olmayan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Klage wurde als unzulässig zurückgewiesen."
+ },
+ {
+  "id": 5251,
+  "de": "gebührenpflichtig",
+  "artikel": null,
+  "tr": "ücrete tabi, harca tabi",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Ausstellung einer zweiten Bescheinigung ist gebührenpflichtig."
+ },
+ {
+  "id": 5252,
+  "de": "einschlägig",
+  "artikel": null,
+  "tr": "ilgili, konuya ilişkin",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Anwalt zitierte die einschlägigen Vorschriften des Mietrechts."
+ },
+ {
+  "id": 5253,
+  "de": "maßgeblich",
+  "artikel": null,
+  "tr": "belirleyici, esas alınan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für die Berechnung ist das Datum des Eingangs maßgeblich."
+ },
+ {
+  "id": 5254,
+  "de": "ungültig",
+  "artikel": null,
+  "tr": "geçersiz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Ohne Stempel ist das Formular leider ungültig."
+ },
+ {
+  "id": 5255,
+  "de": "gemäß",
+  "artikel": null,
+  "tr": "uyarınca, gereğince",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Gemäß dem Vertrag haften Sie für alle entstandenen Schäden."
+ },
+ {
+  "id": 5256,
+  "de": "Reiseveranstalter",
+  "artikel": "der",
+  "tr": "tur operatörü, seyahat düzenleyicisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt."
+ },
+ {
+  "id": 5257,
+  "de": "Anzahlung",
+  "artikel": "die",
+  "tr": "kapora, ön ödeme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig."
+ },
+ {
+  "id": 5258,
+  "de": "Verpflegung",
+  "artikel": "die",
+  "tr": "yeme içme, iaşe",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Preis sind Unterbringung und Verpflegung für sieben Tage enthalten."
+ },
+ {
+  "id": 5259,
+  "de": "Pauschalreise",
+  "artikel": "die",
+  "tr": "paket tur",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen."
+ },
+ {
+  "id": 5260,
+  "de": "Rundreise",
+  "artikel": "die",
+  "tr": "tur gezisi, çevre gezisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht."
+ },
+ {
+  "id": 5261,
+  "de": "Kreuzfahrt",
+  "artikel": "die",
+  "tr": "gemi turu, kruvaziyer",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Kreuzfahrt durch die Ostsee war günstiger als erwartet."
+ },
+ {
+  "id": 5262,
+  "de": "Besichtigung",
+  "artikel": "die",
+  "tr": "gezip görme, ziyaret",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich."
+ },
+ {
+  "id": 5263,
+  "de": "Fremdenverkehr",
+  "artikel": "der",
+  "tr": "turizm, turist hareketliliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein."
+ },
+ {
+  "id": 5264,
+  "de": "Hochsaison",
+  "artikel": "die",
+  "tr": "sezonun en yoğun dönemi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste."
+ },
+ {
+  "id": 5265,
+  "de": "Andrang",
+  "artikel": "der",
+  "tr": "izdiham, yığılma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen."
+ },
+ {
+  "id": 5266,
+  "de": "Zwischenlandung",
+  "artikel": "die",
+  "tr": "ara iniş, aktarma inişi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Flug nach Chile hat eine Zwischenlandung in Madrid."
+ },
+ {
+  "id": 5267,
+  "de": "Zollkontrolle",
+  "artikel": "die",
+  "tr": "gümrük kontrolü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei der Zollkontrolle wurde mein Koffer gründlich durchsucht."
+ },
+ {
+  "id": 5268,
+  "de": "Einreise",
+  "artikel": "die",
+  "tr": "ülkeye giriş",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass."
+ },
+ {
+  "id": 5269,
+  "de": "Grenzübergang",
+  "artikel": "der",
+  "tr": "sınır kapısı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am Grenzübergang stauten sich die Autos über mehrere Kilometer."
+ },
+ {
+  "id": 5270,
+  "de": "Unterbringung",
+  "artikel": "die",
+  "tr": "yerleştirme, konaklama düzeni",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet."
+ },
+ {
+  "id": 5271,
+  "de": "Herberge",
+  "artikel": "die",
+  "tr": "hostel, konukevi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am Ende der Etappe fanden die Pilger eine einfache Herberge."
+ },
+ {
+  "id": 5272,
+  "de": "Reiseroute",
+  "artikel": "die",
+  "tr": "seyahat güzergâhı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen des Unwetters mussten wir unsere Reiseroute kurzfristig ändern."
+ },
+ {
+  "id": 5273,
+  "de": "Abstecher",
+  "artikel": "der",
+  "tr": "kısa uğrayış, yol üstü gezi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem Rückweg machten wir einen kurzen Abstecher an den See."
+ },
+ {
+  "id": 5274,
+  "de": "Gipfel",
+  "artikel": "der",
+  "tr": "zirve, doruk",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer."
+ },
+ {
+  "id": 5275,
+  "de": "Schlucht",
+  "artikel": "die",
+  "tr": "boğaz, kanyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein schmaler Pfad führt durch die enge Schlucht hinunter zum Fluss."
+ },
+ {
+  "id": 5276,
+  "de": "Bucht",
+  "artikel": "die",
+  "tr": "koy, körfez",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der versteckten Bucht ankerten nur zwei kleine Segelboote."
+ },
+ {
+  "id": 5277,
+  "de": "Halbinsel",
+  "artikel": "die",
+  "tr": "yarımada",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Halbinsel ist nur über eine schmale Landbrücke erreichbar."
+ },
+ {
+  "id": 5278,
+  "de": "Gletscher",
+  "artikel": "der",
+  "tr": "buzul",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Gletscher hat sich in dreißig Jahren um einen Kilometer zurückgezogen."
+ },
+ {
+  "id": 5279,
+  "de": "Vulkan",
+  "artikel": "der",
+  "tr": "yanardağ",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt."
+ },
+ {
+  "id": 5280,
+  "de": "Wüste",
+  "artikel": "die",
+  "tr": "çöl",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nachts fallen die Temperaturen in der Wüste unter null Grad."
+ },
+ {
+  "id": 5281,
+  "de": "Mündung",
+  "artikel": "die",
+  "tr": "nehir ağzı, döküldüğü yer",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel."
+ },
+ {
+  "id": 5282,
+  "de": "Strömung",
+  "artikel": "die",
+  "tr": "akıntı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen der starken Strömung ist das Baden hier verboten."
+ },
+ {
+  "id": 5283,
+  "de": "Wildnis",
+  "artikel": "die",
+  "tr": "el değmemiş doğa, vahşi doğa",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nur wenige Kilometer weiter beginnt die echte Wildnis."
+ },
+ {
+  "id": 5284,
+  "de": "Seilbahn",
+  "artikel": "die",
+  "tr": "teleferik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein."
+ },
+ {
+  "id": 5285,
+  "de": "Massentourismus",
+  "artikel": "der",
+  "tr": "kitle turizmi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Massentourismus belastet die Wasserversorgung der Insel erheblich."
+ },
+ {
+  "id": 5286,
+  "de": "Wahrzeichen",
+  "artikel": "das",
+  "tr": "simge yapı, sembol",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens."
+ },
+ {
+  "id": 5287,
+  "de": "Anlegestelle",
+  "artikel": "die",
+  "tr": "iskele, yanaşma yeri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Ausflugsschiff verlässt die Anlegestelle jede volle Stunde."
+ },
+ {
+  "id": 5288,
+  "de": "Gastgewerbe",
+  "artikel": "das",
+  "tr": "konaklama ve yeme içme sektörü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte."
+ },
+ {
+  "id": 5289,
+  "de": "Etappe",
+  "artikel": "die",
+  "tr": "etap, aşama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die letzte Etappe des Weges war die anstrengendste von allen."
+ },
+ {
+  "id": 5290,
+  "de": "Ausblick",
+  "artikel": "der",
+  "tr": "manzara, görünüm",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Von der Terrasse hat man einen weiten Ausblick über das Tal."
+ },
+ {
+  "id": 5291,
+  "de": "umbuchen",
+  "artikel": null,
+  "tr": "rezervasyonu değiştirmek, tarihi kaydırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wir mussten den Flug wegen des Streiks kostenlos umbuchen."
+ },
+ {
+  "id": 5292,
+  "de": "aufsuchen",
+  "artikel": null,
+  "tr": "gitmek, başvurmak, uğramak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen."
+ },
+ {
+  "id": 5293,
+  "de": "anreisen",
+  "artikel": null,
+  "tr": "gelmek, varmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die meisten Gäste reisen mit dem Zug oder dem Bus an."
+ },
+ {
+  "id": 5294,
+  "de": "sich verirren",
+  "artikel": null,
+  "tr": "yolunu kaybetmek, kaybolmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt."
+ },
+ {
+  "id": 5295,
+  "de": "sich orientieren",
+  "artikel": null,
+  "tr": "yön bulmak, kendine yön vermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ohne Handy konnte er sich in der Altstadt kaum orientieren."
+ },
+ {
+  "id": 5296,
+  "de": "durchqueren",
+  "artikel": null,
+  "tr": "boydan boya geçmek, kat etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Gruppe hat die Wüste in elf Tagen durchquert."
+ },
+ {
+  "id": 5297,
+  "de": "ansteuern",
+  "artikel": null,
+  "tr": "-e yönelmek, rotasını çevirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Schiff steuerte wegen des Sturms einen geschützten Hafen an."
+ },
+ {
+  "id": 5298,
+  "de": "vermarkten",
+  "artikel": null,
+  "tr": "pazarlamak, satışa sunmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Region vermarktet sich seit Jahren als sanftes Urlaubsziel."
+ },
+ {
+  "id": 5299,
+  "de": "einschränken",
+  "artikel": null,
+  "tr": "sınırlamak, kısıtlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Stadt will die Zahl der Ferienwohnungen deutlich einschränken."
+ },
+ {
+  "id": 5300,
+  "de": "aufbrechen",
+  "artikel": null,
+  "tr": "yola çıkmak, hareket etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wir sind noch vor Sonnenaufgang zur Hütte aufgebrochen."
+ },
+ {
+  "id": 5301,
+  "de": "verzollen",
+  "artikel": null,
+  "tr": "gümrük vergisini ödemek, gümrükten geçirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Diese Waren müssen Sie bei der Einreise verzollen."
+ },
+ {
+  "id": 5302,
+  "de": "abholzen",
+  "artikel": null,
+  "tr": "ormanı kesmek, ağaçları yok etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Für die neue Hotelanlage wurde ein ganzer Hang abgeholzt."
+ },
+ {
+  "id": 5303,
+  "de": "gefährden",
+  "artikel": null,
+  "tr": "tehlikeye atmak, riske sokmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Unvorsichtige Besucher gefährden das Gleichgewicht des empfindlichen Ökosystems."
+ },
+ {
+  "id": 5304,
+  "de": "abklingen",
+  "artikel": null,
+  "tr": "hafiflemek, yatışmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Erst am Nachmittag ist der Sturm allmählich abgeklungen."
+ },
+ {
+  "id": 5305,
+  "de": "abgelegen",
+  "artikel": null,
+  "tr": "ücra, uzak, sapa",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Gehöft liegt abgelegen und ist nur über einen Feldweg erreichbar."
+ },
+ {
+  "id": 5306,
+  "de": "unberührt",
+  "artikel": null,
+  "tr": "el değmemiş, bozulmamış",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Im Norden gibt es noch weitgehend unberührte Küstenabschnitte."
+ },
+ {
+  "id": 5307,
+  "de": "malerisch",
+  "artikel": null,
+  "tr": "pitoresk, resim gibi",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das malerische Dorf zieht jedes Wochenende Hunderte Besucher an."
+ },
+ {
+  "id": 5308,
+  "de": "atemberaubend",
+  "artikel": null,
+  "tr": "nefes kesici, muhteşem",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Vom Pass aus bot sich uns ein atemberaubender Blick."
+ },
+ {
+  "id": 5309,
+  "de": "ausgebucht",
+  "artikel": null,
+  "tr": "tamamen dolu, rezervasyonu dolmuş",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Alle Zimmer am See sind für Juli bereits ausgebucht."
+ },
+ {
+  "id": 5310,
+  "de": "unwegsam",
+  "artikel": null,
+  "tr": "geçit vermez, yolu bozuk",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Gelände ist unwegsam und für Kinderwagen völlig ungeeignet."
+ },
+ {
+  "id": 5311,
+  "de": "wechselhaft",
+  "artikel": null,
+  "tr": "değişken, kararsız",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Im Frühjahr ist das Wetter in den Bergen sehr wechselhaft."
+ },
+ {
+  "id": 5312,
+  "de": "ganzjährig",
+  "artikel": null,
+  "tr": "yıl boyu, tüm yıl açık",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Berghütte ist ganzjährig geöffnet und gut ausgelastet."
+ },
+ {
+  "id": 5313,
+  "de": "Brandstiftung",
+  "artikel": "die",
+  "tr": "kundaklama, kasten yangın çıkarma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Ermittler schließen Brandstiftung inzwischen nicht mehr aus."
+ },
+ {
+  "id": 5314,
+  "de": "Rauchmelder",
+  "artikel": "der",
+  "tr": "duman dedektörü, duman alarmı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In jedem Schlafzimmer muss ein funktionierender Rauchmelder angebracht sein."
+ },
+ {
+  "id": 5315,
+  "de": "Feuerlöscher",
+  "artikel": "der",
+  "tr": "yangın söndürücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Feuerlöscher im Flur wird einmal im Jahr geprüft."
+ },
+ {
+  "id": 5316,
+  "de": "Ersthelfer",
+  "artikel": "der",
+  "tr": "ilk yardımcı, ilk müdahaleyi yapan kişi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Jeder Betrieb muss eine bestimmte Zahl ausgebildeter Ersthelfer beschäftigen."
+ },
+ {
+  "id": 5317,
+  "de": "Fluchtweg",
+  "artikel": "der",
+  "tr": "kaçış yolu, tahliye yolu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Fluchtwege dürfen unter keinen Umständen zugestellt werden."
+ },
+ {
+  "id": 5318,
+  "de": "Sicherheitsabstand",
+  "artikel": "der",
+  "tr": "güvenlik mesafesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf der Autobahn hielt kaum jemand den vorgeschriebenen Sicherheitsabstand ein."
+ },
+ {
+  "id": 5319,
+  "de": "Gefahrenquelle",
+  "artikel": "die",
+  "tr": "tehlike kaynağı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Lose Kabel sind in einer Werkstatt eine ständige Gefahrenquelle."
+ },
+ {
+  "id": 5320,
+  "de": "Unfallstelle",
+  "artikel": "die",
+  "tr": "kaza yeri, kaza mahalli",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Polizei sperrte die Unfallstelle für mehrere Stunden ab."
+ },
+ {
+  "id": 5321,
+  "de": "Anschlag",
+  "artikel": "der",
+  "tr": "saldırı, suikast",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem Anschlag wurden die Kontrollen an Bahnhöfen deutlich verschärft."
+ },
+ {
+  "id": 5322,
+  "de": "Katastrophenschutz",
+  "artikel": "der",
+  "tr": "afet yönetimi, sivil savunma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Katastrophenschutz übt zweimal jährlich den Ernstfall."
+ },
+ {
+  "id": 5323,
+  "de": "Verbrechen",
+  "artikel": "das",
+  "tr": "suç, ağır suç",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt."
+ },
+ {
+  "id": 5324,
+  "de": "Erdbeben",
+  "artikel": "das",
+  "tr": "deprem",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Erdbeben hat mehrere Brücken in der Region unbrauchbar gemacht."
+ },
+ {
+  "id": 5325,
+  "de": "Trümmer",
+  "artikel": "die",
+  "tr": "enkaz, moloz",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Unter den Trümmern des Hauses suchten Helfer die ganze Nacht."
+ },
+ {
+  "id": 5326,
+  "de": "Einsatzkraft",
+  "artikel": "die",
+  "tr": "görevli ekip elemanı, müdahale ekibi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Über zweihundert Einsatzkräfte waren die ganze Nacht im Einsatz."
+ },
+ {
+  "id": 5327,
+  "de": "Tatort",
+  "artikel": "der",
+  "tr": "olay yeri, suç mahalli",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am Tatort wurden Spuren gefunden, die zum Verdächtigen führten."
+ },
+ {
+  "id": 5328,
+  "de": "Diebstahl",
+  "artikel": "der",
+  "tr": "hırsızlık, çalma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für den Diebstahl im Lager gibt es bisher keine Zeugen."
+ },
+ {
+  "id": 5329,
+  "de": "Betrug",
+  "artikel": "der",
+  "tr": "dolandırıcılık, sahtekârlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Angeklagte wurde wegen Betrugs in mehreren Fällen verurteilt."
+ },
+ {
+  "id": 5330,
+  "de": "Raub",
+  "artikel": "der",
+  "tr": "gasp, soygun",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Raub auf die Tankstelle dauerte kaum zwei Minuten."
+ },
+ {
+  "id": 5331,
+  "de": "Erpressung",
+  "artikel": "die",
+  "tr": "şantaj, haraç kesme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Firma erstattete Anzeige wegen versuchter Erpressung."
+ },
+ {
+  "id": 5332,
+  "de": "Körperverletzung",
+  "artikel": "die",
+  "tr": "yaralama, müessir fiil",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Schlägerei ermittelt die Polizei wegen gefährlicher Körperverletzung."
+ },
+ {
+  "id": 5333,
+  "de": "Fahndung",
+  "artikel": "die",
+  "tr": "arama, aranan kişi takibi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Fahndung nach den Tätern läuft seit dem frühen Morgen."
+ },
+ {
+  "id": 5334,
+  "de": "Haftbefehl",
+  "artikel": "der",
+  "tr": "tutuklama emri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Gericht erließ noch am selben Abend einen Haftbefehl."
+ },
+ {
+  "id": 5335,
+  "de": "Polizeirevier",
+  "artikel": "das",
+  "tr": "polis karakolu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sie musste ihre Aussage auf dem Polizeirevier noch einmal wiederholen."
+ },
+ {
+  "id": 5336,
+  "de": "Abschreckung",
+  "artikel": "die",
+  "tr": "caydırıcılık, caydırma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Höhere Strafen wirken nach Ansicht vieler Fachleute kaum als Abschreckung."
+ },
+ {
+  "id": 5337,
+  "de": "Kriminalität",
+  "artikel": "die",
+  "tr": "suçluluk, suç oranı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Kriminalität im Stadtteil ist seit zwei Jahren rückläufig."
+ },
+ {
+  "id": 5338,
+  "de": "Notlage",
+  "artikel": "die",
+  "tr": "sıkıntılı durum, darda kalma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Fonds hilft Familien, die unverschuldet in eine Notlage geraten sind."
+ },
+ {
+  "id": 5339,
+  "de": "Zwischenfall",
+  "artikel": "der",
+  "tr": "olay, beklenmedik hadise",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Spiel verlief bis auf einen kleinen Zwischenfall völlig ruhig."
+ },
+ {
+  "id": 5340,
+  "de": "Warnmeldung",
+  "artikel": "die",
+  "tr": "uyarı bildirimi, uyarı mesajı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Warnmeldung erreichte alle Handys in der Region gleichzeitig."
+ },
+ {
+  "id": 5341,
+  "de": "Schutzausrüstung",
+  "artikel": "die",
+  "tr": "koruyucu ekipman, koruyucu donanım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne vollständige Schutzausrüstung darf niemand die Halle betreten."
+ },
+ {
+  "id": 5342,
+  "de": "Wiederbelebung",
+  "artikel": "die",
+  "tr": "canlandırma, resüsitasyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Wiederbelebung gelang erst nach mehreren Minuten."
+ },
+ {
+  "id": 5343,
+  "de": "Vergiftung",
+  "artikel": "die",
+  "tr": "zehirlenme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Kinder wurden mit einer leichten Vergiftung ins Krankenhaus gebracht."
+ },
+ {
+  "id": 5344,
+  "de": "Seuche",
+  "artikel": "die",
+  "tr": "salgın hastalık, salgın",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Seuche breitete sich zuerst unter den Tieren der Region aus."
+ },
+ {
+  "id": 5345,
+  "de": "Ausnahmezustand",
+  "artikel": "der",
+  "tr": "olağanüstü hal",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Regierung rief für die betroffenen Provinzen den Ausnahmezustand aus."
+ },
+ {
+  "id": 5346,
+  "de": "Absperrung",
+  "artikel": "die",
+  "tr": "bariyer, kapatma, çevirme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neugierige drängten sich bis dicht an die Absperrung heran."
+ },
+ {
+  "id": 5347,
+  "de": "Krisenstab",
+  "artikel": "der",
+  "tr": "kriz masası, kriz merkezi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Krisenstab tagte bis spät in die Nacht im Rathaus."
+ },
+ {
+  "id": 5348,
+  "de": "Notunterkunft",
+  "artikel": "die",
+  "tr": "geçici barınak, acil konaklama yeri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Turnhalle wurde über Nacht eine Notunterkunft eingerichtet."
+ },
+ {
+  "id": 5349,
+  "de": "Beweismittel",
+  "artikel": "das",
+  "tr": "delil, kanıt",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Aufnahmen der Kamera gelten als wichtigstes Beweismittel."
+ },
+ {
+  "id": 5350,
+  "de": "Vernehmung",
+  "artikel": "die",
+  "tr": "ifade alma, sorgu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei der Vernehmung verwickelte sich der Zeuge in Widersprüche."
+ },
+ {
+  "id": 5351,
+  "de": "bergen",
+  "artikel": null,
+  "tr": "kurtarmak, enkazdan çıkarmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Taucher konnten den Wagen erst am nächsten Tag bergen."
+ },
+ {
+  "id": 5352,
+  "de": "evakuieren",
+  "artikel": null,
+  "tr": "tahliye etmek, boşaltmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wegen der Bombe musste man das halbe Viertel evakuieren."
+ },
+ {
+  "id": 5353,
+  "de": "alarmieren",
+  "artikel": null,
+  "tr": "haber vermek, alarma geçirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein Passant alarmierte gegen Mitternacht die Rettungskräfte."
+ },
+ {
+  "id": 5354,
+  "de": "beseitigen",
+  "artikel": null,
+  "tr": "gidermek, ortadan kaldırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Mängel an der Anlage müssen bis Freitag beseitigt werden."
+ },
+ {
+  "id": 5355,
+  "de": "festnehmen",
+  "artikel": null,
+  "tr": "gözaltına almak, yakalamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Beamten nahmen den Mann noch in der Wohnung fest."
+ },
+ {
+  "id": 5356,
+  "de": "verdächtigen",
+  "artikel": null,
+  "tr": "şüphelenmek, zanlı görmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Man verdächtigte ihn zu Unrecht, die Papiere gefälscht zu haben."
+ },
+ {
+  "id": 5357,
+  "de": "beschlagnahmen",
+  "artikel": null,
+  "tr": "el koymak, müsadere etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Zollbeamten beschlagnahmten mehrere Kisten mit gefälschter Ware."
+ },
+ {
+  "id": 5358,
+  "de": "einstürzen",
+  "artikel": null,
+  "tr": "çökmek, yıkılmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein Teil des Dachs stürzte unter der Schneelast ein."
+ },
+ {
+  "id": 5359,
+  "de": "entkommen",
+  "artikel": null,
+  "tr": "kaçmak, kurtulmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Zwei der Täter konnten über den Hinterhof entkommen."
+ },
+ {
+  "id": 5360,
+  "de": "verunglücken",
+  "artikel": null,
+  "tr": "kaza geçirmek, kazada yaralanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bei dem Sturm sind mehrere Bergsteiger tödlich verunglückt."
+ },
+ {
+  "id": 5361,
+  "de": "auslösen",
+  "artikel": null,
+  "tr": "tetiklemek, yol açmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein defekter Toaster löste den Alarm im ganzen Haus aus."
+ },
+ {
+  "id": 5362,
+  "de": "abriegeln",
+  "artikel": null,
+  "tr": "kapatmak, çevresini kuşatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Polizei riegelte das gesamte Bahnhofsgelände weiträumig ab."
+ },
+ {
+  "id": 5363,
+  "de": "entschärfen",
+  "artikel": null,
+  "tr": "etkisiz hale getirmek, yumuşatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Sprengkörper wurde noch vor Sonnenaufgang entschärft."
+ },
+ {
+  "id": 5364,
+  "de": "verwüsten",
+  "artikel": null,
+  "tr": "harap etmek, yerle bir etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Orkan verwüstete ganze Straßenzüge im Norden der Stadt."
+ },
+ {
+  "id": 5365,
+  "de": "bekämpfen",
+  "artikel": null,
+  "tr": "mücadele etmek, savaşmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Hundert Helfer bekämpften das Feuer bis zum Morgengrauen."
+ },
+ {
+  "id": 5366,
+  "de": "verfolgen",
+  "artikel": null,
+  "tr": "takip etmek, kovuşturmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Solche Delikte werden nur auf Antrag der Betroffenen verfolgt."
+ },
+ {
+  "id": 5367,
+  "de": "fahrlässig",
+  "artikel": null,
+  "tr": "ihmalkâr, taksirli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Er hat fahrlässig gehandelt und muss dafür einstehen."
+ },
+ {
+  "id": 5368,
+  "de": "vorsätzlich",
+  "artikel": null,
+  "tr": "kasten, kasıtlı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Gericht sah die Tat als vorsätzlich begangen an."
+ },
+ {
+  "id": 5369,
+  "de": "vorsorglich",
+  "artikel": null,
+  "tr": "tedbiren, ihtiyaten",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Schule blieb vorsorglich einen weiteren Tag geschlossen."
+ },
+ {
+  "id": 5370,
+  "de": "brennbar",
+  "artikel": null,
+  "tr": "yanıcı, tutuşabilir",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Brennbare Flüssigkeiten gehören nicht in den Heizungskeller."
+ },
+ {
+  "id": 5371,
+  "de": "riskant",
+  "artikel": null,
+  "tr": "riskli, tehlikeli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Ein Überholmanöver an dieser Stelle wäre viel zu riskant."
+ },
+ {
+  "id": 5372,
+  "de": "umgehend",
+  "artikel": null,
+  "tr": "hemen, ivedilikle",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Bitte verlassen Sie das Gebäude umgehend über den Hinterausgang."
+ },
+ {
+  "id": 5373,
+  "de": "versehentlich",
+  "artikel": null,
+  "tr": "yanlışlıkla, kazara",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Kollege hat versehentlich den falschen Hebel gezogen."
+ },
+ {
+  "id": 5374,
+  "de": "bewusstlos",
+  "artikel": null,
+  "tr": "baygın, bilinci kapalı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Mann lag bewusstlos neben seinem Fahrrad im Gras."
+ },
+ {
+  "id": 5375,
+  "de": "unversehrt",
+  "artikel": null,
+  "tr": "yara almamış, sapasağlam",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Alle Insassen kamen unversehrt aus dem zerstörten Fahrzeug."
+ },
+ {
+  "id": 5376,
+  "de": "Betonung",
+  "artikel": "die",
+  "tr": "vurgu, tonlama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei diesem Wort liegt die Betonung auf der zweiten Silbe."
+ },
+ {
+  "id": 5377,
+  "de": "Redewendung",
+  "artikel": "die",
+  "tr": "deyim, kalıp ifade",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Diese Redewendung lässt sich kaum wörtlich ins Türkische übertragen."
+ },
+ {
+  "id": 5378,
+  "de": "Wortschatz",
+  "artikel": "der",
+  "tr": "kelime hazinesi, sözcük dağarcığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ihr Wortschatz reicht inzwischen für anspruchsvolle Fachtexte aus."
+ },
+ {
+  "id": 5379,
+  "de": "Umgangssprache",
+  "artikel": "die",
+  "tr": "günlük konuşma dili",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Umgangssprache wird der Genitiv häufig durch den Dativ ersetzt."
+ },
+ {
+  "id": 5380,
+  "de": "Fachsprache",
+  "artikel": "die",
+  "tr": "uzmanlık dili, teknik dil",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die medizinische Fachsprache bleibt für Laien oft völlig undurchschaubar."
+ },
+ {
+  "id": 5381,
+  "de": "Sprachgefühl",
+  "artikel": "das",
+  "tr": "dil sezgisi, dil duygusu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne ein gutes Sprachgefühl klingen selbst korrekte Sätze seltsam."
+ },
+ {
+  "id": 5382,
+  "de": "Sprachbarriere",
+  "artikel": "die",
+  "tr": "dil engeli",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Sprachbarriere erschwerte die Zusammenarbeit im internationalen Team erheblich."
+ },
+ {
+  "id": 5383,
+  "de": "Sprachkurs",
+  "artikel": "der",
+  "tr": "dil kursu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Sprachkurs findet zweimal wöchentlich am späten Abend statt."
+ },
+ {
+  "id": 5384,
+  "de": "Beurteilung",
+  "artikel": "die",
+  "tr": "değerlendirme, kanaat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Beurteilung der mündlichen Leistung fiel überraschend positiv aus."
+ },
+ {
+  "id": 5385,
+  "de": "Redebeitrag",
+  "artikel": "der",
+  "tr": "konuşma katkısı, söz alma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Jeder Redebeitrag sollte höchstens drei Minuten dauern."
+ },
+ {
+  "id": 5386,
+  "de": "Gegenargument",
+  "artikel": "das",
+  "tr": "karşı argüman, karşı görüş",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf sein Gegenargument hatte niemand eine überzeugende Antwort."
+ },
+ {
+  "id": 5387,
+  "de": "Höflichkeit",
+  "artikel": "die",
+  "tr": "nezaket, kibarlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Aus reiner Höflichkeit hörte sie dem langen Vortrag bis zum Schluss zu."
+ },
+ {
+  "id": 5388,
+  "de": "Umgangston",
+  "artikel": "der",
+  "tr": "üslup, konuşma tarzı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Umgangston in dieser Abteilung ist erstaunlich rau."
+ },
+ {
+  "id": 5389,
+  "de": "Mimik",
+  "artikel": "die",
+  "tr": "yüz ifadesi, mimik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Seine Mimik verriet mehr als jedes gesprochene Wort."
+ },
+ {
+  "id": 5390,
+  "de": "Gesprächsführung",
+  "artikel": "die",
+  "tr": "görüşme yönetimi, sohbeti yönlendirme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine ruhige Gesprächsführung hilft besonders bei schwierigen Kunden."
+ },
+ {
+  "id": 5391,
+  "de": "Deutung",
+  "artikel": "die",
+  "tr": "yorum, anlamlandırma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Diese Geste lässt mehr als eine Deutung zu."
+ },
+ {
+  "id": 5392,
+  "de": "Auslegung",
+  "artikel": "die",
+  "tr": "yorumlama, tefsir",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Auslegung des Satzes hängt stark vom Zusammenhang ab."
+ },
+ {
+  "id": 5393,
+  "de": "Zwischenfrage",
+  "artikel": "die",
+  "tr": "araya sıkıştırılan soru, ara soru",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zwischenfragen sind erlaubt, aber bitte erst nach dem zweiten Teil."
+ },
+ {
+  "id": 5394,
+  "de": "Stichwort",
+  "artikel": "das",
+  "tr": "anahtar kelime, not başlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hatte sich nur ein paar Stichwörter auf die Karte geschrieben."
+ },
+ {
+  "id": 5395,
+  "de": "Floskel",
+  "artikel": "die",
+  "tr": "klişe söz, boş kalıp",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Seine Rede bestand fast nur aus leeren Floskeln."
+ },
+ {
+  "id": 5396,
+  "de": "Fremdwort",
+  "artikel": "das",
+  "tr": "yabancı kökenli kelime",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken."
+ },
+ {
+  "id": 5397,
+  "de": "Feststellung",
+  "artikel": "die",
+  "tr": "tespit, saptama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Seine nüchterne Feststellung beendete die hitzige Diskussion."
+ },
+ {
+  "id": 5398,
+  "de": "Anmerkung",
+  "artikel": "die",
+  "tr": "not, ek açıklama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Lehrerin schrieb einige kritische Anmerkungen an den Rand."
+ },
+ {
+  "id": 5399,
+  "de": "Lob",
+  "artikel": "das",
+  "tr": "övgü, takdir",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein ehrliches Lob motiviert oft mehr als eine gute Note."
+ },
+ {
+  "id": 5400,
+  "de": "Tadel",
+  "artikel": "der",
+  "tr": "azar, kınama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sein scharfer Tadel verletzte den jungen Kollegen sehr."
+ },
+ {
+  "id": 5401,
+  "de": "Gedächtnis",
+  "artikel": "das",
+  "tr": "hafıza, bellek",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neue Vokabeln bleiben nur mit regelmäßiger Wiederholung im Gedächtnis."
+ },
+ {
+  "id": 5402,
+  "de": "Lampenfieber",
+  "artikel": "das",
+  "tr": "sahne heyecanı, sunum heyecanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vor jedem Vortrag hat sie schreckliches Lampenfieber."
+ },
+ {
+  "id": 5403,
+  "de": "Selbstvertrauen",
+  "artikel": "das",
+  "tr": "özgüven",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mit jedem gelungenen Gespräch wuchs sein Selbstvertrauen."
+ },
+ {
+  "id": 5404,
+  "de": "Schlagfertigkeit",
+  "artikel": "die",
+  "tr": "hazırcevaplık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ihre Schlagfertigkeit rettete sie in der schwierigen Diskussion."
+ },
+ {
+  "id": 5405,
+  "de": "Zusammenfassung",
+  "artikel": "die",
+  "tr": "özet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am Ende gab er eine kurze Zusammenfassung der wichtigsten Punkte."
+ },
+ {
+  "id": 5406,
+  "de": "Moderation",
+  "artikel": "die",
+  "tr": "moderatörlük, oturum yönetimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin."
+ },
+ {
+  "id": 5407,
+  "de": "Redner",
+  "artikel": "der",
+  "tr": "konuşmacı, hatip",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Redner sprach frei und ohne einen einzigen Zettel."
+ },
+ {
+  "id": 5408,
+  "de": "Sprechhemmung",
+  "artikel": "die",
+  "tr": "konuşma çekingenliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Lernende überwinden ihre Sprechhemmung erst im Ausland."
+ },
+ {
+  "id": 5409,
+  "de": "Aussagekraft",
+  "artikel": "die",
+  "tr": "anlatım gücü, kanıt değeri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Aussagekraft dieses Tests wird von Fachleuten bezweifelt."
+ },
+ {
+  "id": 5410,
+  "de": "Verbesserungsvorschlag",
+  "artikel": "der",
+  "tr": "iyileştirme önerisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Dozent notierte zu jedem Text zwei Verbesserungsvorschläge."
+ },
+ {
+  "id": 5411,
+  "de": "Taktgefühl",
+  "artikel": "das",
+  "tr": "incelik, ölçülülük",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Kritik muss man mit etwas Taktgefühl vorbringen."
+ },
+ {
+  "id": 5412,
+  "de": "Muttersprachler",
+  "artikel": "der",
+  "tr": "ana dili konuşuru",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Selbst Muttersprachler machen bei diesem Fall häufig Fehler."
+ },
+ {
+  "id": 5413,
+  "de": "nachfragen",
+  "artikel": null,
+  "tr": "sorup öğrenmek, tekrar sormak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wenn du etwas nicht verstehst, solltest du sofort nachfragen."
+ },
+ {
+  "id": 5414,
+  "de": "einwenden",
+  "artikel": null,
+  "tr": "itiraz etmek, karşı çıkmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Gegen diesen Vorschlag hatte niemand etwas einzuwenden."
+ },
+ {
+  "id": 5415,
+  "de": "stottern",
+  "artikel": null,
+  "tr": "kekelemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Vor Aufregung stotterte er bei den ersten Sätzen."
+ },
+ {
+  "id": 5416,
+  "de": "zögern",
+  "artikel": null,
+  "tr": "tereddüt etmek, duraksamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Er zögerte kurz, bevor er auf die heikle Frage antwortete."
+ },
+ {
+  "id": 5417,
+  "de": "klarstellen",
+  "artikel": null,
+  "tr": "açıklığa kavuşturmak, netleştirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ich möchte kurz klarstellen, wie meine Bemerkung gemeint war."
+ },
+ {
+  "id": 5418,
+  "de": "umformulieren",
+  "artikel": null,
+  "tr": "yeniden ifade etmek, başka türlü yazmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Diesen Satz solltest du höflicher umformulieren."
+ },
+ {
+  "id": 5419,
+  "de": "nachahmen",
+  "artikel": null,
+  "tr": "taklit etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Kinder ahmen die Aussprache ihrer Umgebung fast automatisch nach."
+ },
+ {
+  "id": 5420,
+  "de": "abschneiden",
+  "artikel": null,
+  "tr": "(sınavda) sonuç almak, derece yapmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Im mündlichen Teil hat sie deutlich besser abgeschnitten."
+ },
+ {
+  "id": 5421,
+  "de": "darlegen",
+  "artikel": null,
+  "tr": "ortaya koymak, gerekçeli anlatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "In der Einleitung legt sie ihre Sicht der Dinge dar."
+ },
+ {
+  "id": 5422,
+  "de": "zugeben",
+  "artikel": null,
+  "tr": "itiraf etmek, kabul etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Er gab offen zu, den Termin völlig vergessen zu haben."
+ },
+ {
+  "id": 5423,
+  "de": "akzentfrei",
+  "artikel": null,
+  "tr": "aksansız",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach zwanzig Jahren spricht er nahezu akzentfrei Deutsch."
+ },
+ {
+  "id": 5424,
+  "de": "gesprächig",
+  "artikel": null,
+  "tr": "konuşkan, sohbeti seven",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach dem zweiten Kaffee wurde sie erstaunlich gesprächig."
+ },
+ {
+  "id": 5425,
+  "de": "überzeugend",
+  "artikel": null,
+  "tr": "ikna edici, inandırıcı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Seine Argumente waren sachlich und ausgesprochen überzeugend."
+ },
+ {
+  "id": 5426,
+  "de": "geläufig",
+  "artikel": null,
+  "tr": "yaygın, aşina, akıcı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Dieser Ausdruck ist mir aus dem Berufsalltag durchaus geläufig."
+ },
+ {
+  "id": 5427,
+  "de": "stockend",
+  "artikel": null,
+  "tr": "duraklayarak, kesik kesik",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Am Anfang las er noch stockend, später ganz flüssig."
+ },
+ {
+  "id": 5428,
+  "de": "nachdrücklich",
+  "artikel": null,
+  "tr": "ısrarla, vurgulu biçimde",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Prüfer wies nachdrücklich auf die Zeitbegrenzung hin."
+ },
+ {
+  "id": 5429,
+  "de": "beiläufig",
+  "artikel": null,
+  "tr": "laf arasında, üstünkörü",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Sie erwähnte ganz beiläufig, dass sie kündigen werde."
+ },
+ {
+  "id": 5430,
+  "de": "treffend",
+  "artikel": null,
+  "tr": "isabetli, yerinde",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für dieses Gefühl gibt es im Deutschen kein treffendes Wort."
+ },
+ {
+  "id": 5431,
+  "de": "Datensicherheit",
+  "artikel": "die",
+  "tr": "veri güvenliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Datensicherheit hat in unserem Unternehmen oberste Priorität."
+ },
+ {
+  "id": 5432,
+  "de": "Benutzeroberfläche",
+  "artikel": "die",
+  "tr": "kullanıcı arayüzü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die neue Benutzeroberfläche wirkt deutlich übersichtlicher als die alte."
+ },
+ {
+  "id": 5433,
+  "de": "Anwendung",
+  "artikel": "die",
+  "tr": "uygulama, kullanım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Diese Anwendung läuft auch auf älteren Geräten ohne Probleme."
+ },
+ {
+  "id": 5434,
+  "de": "Zugriff",
+  "artikel": "der",
+  "tr": "erişim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Berechtigung hat niemand Zugriff auf die vertraulichen Unterlagen."
+ },
+ {
+  "id": 5435,
+  "de": "Kennwort",
+  "artikel": "das",
+  "tr": "parola, şifre",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bitte ändern Sie Ihr Kennwort mindestens alle drei Monate."
+ },
+ {
+  "id": 5436,
+  "de": "Speicherplatz",
+  "artikel": "der",
+  "tr": "depolama alanı, bellek alanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem Server ist kaum noch Speicherplatz für neue Aufnahmen."
+ },
+ {
+  "id": 5437,
+  "de": "Arbeitsspeicher",
+  "artikel": "der",
+  "tr": "çalışma belleği, RAM",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Arbeitsspeicher reicht für so ein aufwendiges Programm nicht aus."
+ },
+ {
+  "id": 5438,
+  "de": "Datenübertragung",
+  "artikel": "die",
+  "tr": "veri aktarımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Datenübertragung wurde wegen einer schlechten Verbindung mehrmals unterbrochen."
+ },
+ {
+  "id": 5439,
+  "de": "Betriebssystem",
+  "artikel": "das",
+  "tr": "işletim sistemi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Betriebssystem wird heute Nacht auf die neueste Fassung gebracht."
+ },
+ {
+  "id": 5440,
+  "de": "Quellcode",
+  "artikel": "der",
+  "tr": "kaynak kod",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Quellcode dieses Programms ist für alle frei einsehbar."
+ },
+ {
+  "id": 5441,
+  "de": "Fehlermeldung",
+  "artikel": "die",
+  "tr": "hata mesajı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beim Start erscheint jedes Mal dieselbe rätselhafte Fehlermeldung."
+ },
+ {
+  "id": 5442,
+  "de": "Systemausfall",
+  "artikel": "der",
+  "tr": "sistem arızası, sistem çökmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem Systemausfall konnten wir stundenlang keine Bestellungen bearbeiten."
+ },
+ {
+  "id": 5443,
+  "de": "Berechtigung",
+  "artikel": "die",
+  "tr": "yetki, izin",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neue Mitarbeiter erhalten erst nach der Schulung erweiterte Berechtigungen."
+ },
+ {
+  "id": 5444,
+  "de": "Nutzerkonto",
+  "artikel": "das",
+  "tr": "kullanıcı hesabı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sein Nutzerkonto wurde nach mehreren Verstößen dauerhaft gelöscht."
+ },
+ {
+  "id": 5445,
+  "de": "Sicherheitslücke",
+  "artikel": "die",
+  "tr": "güvenlik açığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Sicherheitslücke wurde zum Glück vor dem Angriff entdeckt."
+ },
+ {
+  "id": 5446,
+  "de": "Schadsoftware",
+  "artikel": "die",
+  "tr": "zararlı yazılım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Über einen Anhang gelangte Schadsoftware in das gesamte Firmennetz."
+ }
+]

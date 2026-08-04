@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 4447,
+  "de": "Fälligkeit",
+  "artikel": "die",
+  "tr": "vade, muacceliyet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei Fälligkeit der Rechnung wird der Betrag automatisch abgezogen."
+ },
+ {
+  "id": 4448,
+  "de": "Zahlungsverzug",
+  "artikel": "der",
+  "tr": "ödeme gecikmesi, temerrüt",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor."
+ },
+ {
+  "id": 4449,
+  "de": "Pfändung",
+  "artikel": "die",
+  "tr": "haciz",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem Urteil drohte ihm die Pfändung seines Gehalts."
+ },
+ {
+  "id": 4450,
+  "de": "Gläubiger",
+  "artikel": "der",
+  "tr": "alacaklı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Gläubiger stimmten dem Sanierungsplan der Firma schließlich zu."
+ },
+ {
+  "id": 4451,
+  "de": "Schuldner",
+  "artikel": "der",
+  "tr": "borçlu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Schuldner konnte die vereinbarten Raten nicht mehr aufbringen."
+ },
+ {
+  "id": 4452,
+  "de": "Bonität",
+  "artikel": "die",
+  "tr": "kredi notu, ödeme gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vor der Vergabe prüft die Bank sorgfältig die Bonität des Kunden."
+ },
+ {
+  "id": 4453,
+  "de": "Hypothek",
+  "artikel": "die",
+  "tr": "ipotek",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro."
+ },
+ {
+  "id": 4454,
+  "de": "Aktie",
+  "artikel": "die",
+  "tr": "hisse senedi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Aktien des Konzerns verloren nach der Meldung deutlich an Wert."
+ },
+ {
+  "id": 4455,
+  "de": "Wertpapier",
+  "artikel": "das",
+  "tr": "menkul kıymet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hat sein Erbe in sichere Wertpapiere investiert."
+ },
+ {
+  "id": 4456,
+  "de": "Spekulation",
+  "artikel": "die",
+  "tr": "spekülasyon, vurgunculuk",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Spekulation mit Wohnraum treibt die Mieten in die Höhe."
+ },
+ {
+  "id": 4457,
+  "de": "Kontostand",
+  "artikel": "der",
+  "tr": "hesap bakiyesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Kurz vor Monatsende sieht er lieber nicht auf den Kontostand."
+ },
+ {
+  "id": 4458,
+  "de": "Freibetrag",
+  "artikel": "der",
+  "tr": "vergiden muaf tutar, istisna tutarı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bis zu diesem Freibetrag bleiben Kapitalerträge völlig unversteuert."
+ },
+ {
+  "id": 4459,
+  "de": "Abgabe",
+  "artikel": "die",
+  "tr": "harç, resim, vergi benzeri kesinti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Von seinem Lohn gehen fast vierzig Prozent für Abgaben ab."
+ },
+ {
+  "id": 4460,
+  "de": "Einkommensteuer",
+  "artikel": "die",
+  "tr": "gelir vergisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Selbstständige zahlen die Einkommensteuer meist in vierteljährlichen Vorauszahlungen."
+ },
+ {
+  "id": 4461,
+  "de": "Finanzamt",
+  "artikel": "das",
+  "tr": "vergi dairesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Finanzamt hat seinen Einspruch gegen den Bescheid zurückgewiesen."
+ },
+ {
+  "id": 4462,
+  "de": "Steuerhinterziehung",
+  "artikel": "die",
+  "tr": "vergi kaçırma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen Steuerhinterziehung wurde der Unternehmer zu einer Geldstrafe verurteilt."
+ },
+ {
+  "id": 4463,
+  "de": "Vertragslaufzeit",
+  "artikel": "die",
+  "tr": "sözleşme süresi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Vertragslaufzeit beträgt zwei Jahre und verlängert sich automatisch."
+ },
+ {
+  "id": 4464,
+  "de": "Police",
+  "artikel": "die",
+  "tr": "poliçe, sigorta sözleşmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Police steht genau, welche Schäden ersetzt werden."
+ },
+ {
+  "id": 4465,
+  "de": "Selbstbeteiligung",
+  "artikel": "die",
+  "tr": "muafiyet tutarı, katılım payı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden."
+ },
+ {
+  "id": 4466,
+  "de": "Haftpflicht",
+  "artikel": "die",
+  "tr": "sorumluluk sigortası, mali mesuliyet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Den zerbrochenen Spiegel übernimmt zum Glück meine Haftpflicht."
+ },
+ {
+  "id": 4467,
+  "de": "Rentenversicherung",
+  "artikel": "die",
+  "tr": "emeklilik sigortası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In die gesetzliche Rentenversicherung zahlt jeder Angestellte automatisch ein."
+ },
+ {
+  "id": 4468,
+  "de": "Berufsunfähigkeit",
+  "artikel": "die",
+  "tr": "iş göremezlik, mesleğini yapamaz duruma gelme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gegen Berufsunfähigkeit sollte man sich möglichst früh versichern lassen."
+ },
+ {
+  "id": 4469,
+  "de": "Ruhestand",
+  "artikel": "der",
+  "tr": "emeklilik dönemi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach vierzig Berufsjahren geht sie im Herbst in den Ruhestand."
+ },
+ {
+  "id": 4470,
+  "de": "Zuschuss",
+  "artikel": "der",
+  "tr": "destek ödemesi, katkı payı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss."
+ },
+ {
+  "id": 4471,
+  "de": "Schadenersatz",
+  "artikel": "der",
+  "tr": "tazminat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Mieter fordert Schadenersatz für die beschädigten Möbel."
+ },
+ {
+  "id": 4472,
+  "de": "Antragsteller",
+  "artikel": "der",
+  "tr": "başvuru sahibi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Antragsteller muss seine Einkünfte der letzten drei Monate nachweisen."
+ },
+ {
+  "id": 4473,
+  "de": "Provision",
+  "artikel": "die",
+  "tr": "komisyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises."
+ },
+ {
+  "id": 4474,
+  "de": "Kapital",
+  "artikel": "das",
+  "tr": "sermaye, anapara",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für die Gründung fehlt ihm schlicht das nötige Kapital."
+ },
+ {
+  "id": 4475,
+  "de": "Vermögen",
+  "artikel": "das",
+  "tr": "servet, varlık, mal varlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sein Vermögen ist breit über mehrere Anlageformen verteilt."
+ },
+ {
+  "id": 4476,
+  "de": "Liquidität",
+  "artikel": "die",
+  "tr": "likidite, nakit gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Betrieb geriet trotz voller Auftragsbücher in Schwierigkeiten mit der Liquidität."
+ },
+ {
+  "id": 4477,
+  "de": "Kostenvoranschlag",
+  "artikel": "der",
+  "tr": "maliyet tahmini, fiyat teklifi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vor der Reparatur bat sie um einen schriftlichen Kostenvoranschlag."
+ },
+ {
+  "id": 4478,
+  "de": "Währung",
+  "artikel": "die",
+  "tr": "para birimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Währung des Landes hat innerhalb weniger Wochen stark verloren."
+ },
+ {
+  "id": 4479,
+  "de": "Etat",
+  "artikel": "der",
+  "tr": "bütçe, ödenek",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Etat für Kultur wurde in diesem Jahr erneut gekürzt."
+ },
+ {
+  "id": 4480,
+  "de": "Buchführung",
+  "artikel": "die",
+  "tr": "muhasebe, defter tutma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine ordentliche Buchführung erspart am Jahresende viel Ärger."
+ },
+ {
+  "id": 4481,
+  "de": "tilgen",
+  "artikel": null,
+  "tr": "borç ödemek, itfa etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "In zwölf Jahren hatte das Paar den gesamten Kredit getilgt."
+ },
+ {
+  "id": 4482,
+  "de": "abbuchen",
+  "artikel": null,
+  "tr": "hesaptan çekmek, hesaba borç kaydetmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Beitrag wird jeweils zum Ersten des Monats abgebucht."
+ },
+ {
+  "id": 4483,
+  "de": "aufstocken",
+  "artikel": null,
+  "tr": "artırmak, yükseltmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Regierung will die Zuschüsse für Familien deutlich aufstocken."
+ },
+ {
+  "id": 4484,
+  "de": "entwerten",
+  "artikel": null,
+  "tr": "değersizleştirmek, değerini düşürmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Eine hohe Inflation entwertet die Ersparnisse der kleinen Sparer."
+ },
+ {
+  "id": 4485,
+  "de": "aufwenden",
+  "artikel": null,
+  "tr": "harcamak, sarf etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Für die Sanierung mussten sie erhebliche Mittel aufwenden."
+ },
+ {
+  "id": 4486,
+  "de": "erstatten",
+  "artikel": null,
+  "tr": "geri ödemek, iade etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Kasse erstattet die Kosten für die Behandlung vollständig."
+ },
+ {
+  "id": 4487,
+  "de": "begleichen",
+  "artikel": null,
+  "tr": "ödemek, kapatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag."
+ },
+ {
+  "id": 4488,
+  "de": "entrichten",
+  "artikel": null,
+  "tr": "ödemek, yatırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Für den Grundbucheintrag ist eine Gebühr zu entrichten."
+ },
+ {
+  "id": 4489,
+  "de": "absetzen",
+  "artikel": null,
+  "tr": "vergiden düşmek, mahsup etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Arbeitszimmer kann sie teilweise von der Steuer absetzen."
+ },
+ {
+  "id": 4490,
+  "de": "kalkulieren",
+  "artikel": null,
+  "tr": "hesaplamak, maliyet çıkarmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Betrieb hat die Preise offenbar zu knapp kalkuliert."
+ },
+ {
+  "id": 4491,
+  "de": "verrechnen",
+  "artikel": null,
+  "tr": "mahsup etmek, karşılıklı düşmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Anzahlung wird mit der Schlussrechnung verrechnet."
+ },
+ {
+  "id": 4492,
+  "de": "streuen",
+  "artikel": null,
+  "tr": "dağıtmak, yaymak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wer sein Risiko streut, verliert bei einem Kurssturz weniger."
+ },
+ {
+  "id": 4493,
+  "de": "aufbringen",
+  "artikel": null,
+  "tr": "denkleştirmek, parayı bulmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die nötige Summe konnte die Familie nicht rechtzeitig aufbringen."
+ },
+ {
+  "id": 4494,
+  "de": "bewilligen",
+  "artikel": null,
+  "tr": "onaylamak, tahsis etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Behörde hat den Antrag auf Wohngeld schließlich bewilligt."
+ },
+ {
+  "id": 4495,
+  "de": "aufkommen",
+  "artikel": null,
+  "tr": "masrafını üstlenmek, karşılamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Für die Reparatur muss der Vermieter aufkommen."
+ },
+ {
+  "id": 4496,
+  "de": "einbehalten",
+  "artikel": null,
+  "tr": "kesmek, alıkoymak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Arbeitgeber behält die Steuern direkt vom Lohn ein."
+ },
+ {
+  "id": 4497,
+  "de": "anlegen",
+  "artikel": null,
+  "tr": "yatırım yapmak, para yatırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie hat ihr Erspartes langfristig in Fonds angelegt."
+ },
+ {
+  "id": 4498,
+  "de": "zurücklegen",
+  "artikel": null,
+  "tr": "kenara koymak, biriktirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Jeden Monat legt er hundert Euro für Notfälle zurück."
+ },
+ {
+  "id": 4499,
+  "de": "veranlagen",
+  "artikel": null,
+  "tr": "vergilendirmek, vergi tarh etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ehepaare können sich gemeinsam oder getrennt veranlagen lassen."
+ },
+ {
+  "id": 4500,
+  "de": "aufzehren",
+  "artikel": null,
+  "tr": "tüketmek, bitirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die hohen Nebenkosten zehren sein ganzes Gehalt auf."
+ },
+ {
+  "id": 4501,
+  "de": "gebührenfrei",
+  "artikel": null,
+  "tr": "ücretsiz, masrafsız",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Überweisungen innerhalb Europas sind bei dieser Bank gebührenfrei."
+ },
+ {
+  "id": 4502,
+  "de": "rückwirkend",
+  "artikel": null,
+  "tr": "geriye dönük, geçmişe etkili",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Erhöhung gilt rückwirkend ab dem ersten Januar."
+ },
+ {
+  "id": 4503,
+  "de": "vierteljährlich",
+  "artikel": null,
+  "tr": "üç ayda bir, üç aylık",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Beitrag kann monatlich oder vierteljährlich gezahlt werden."
+ },
+ {
+  "id": 4504,
+  "de": "zinslos",
+  "artikel": null,
+  "tr": "faizsiz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Betrieb gewährte ihr ein zinsloses Darlehen über zwei Jahre."
+ },
+ {
+  "id": 4505,
+  "de": "ungedeckt",
+  "artikel": null,
+  "tr": "karşılıksız, teminatsız",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Ein ungedeckter Scheck kann teure Folgen für den Aussteller haben."
+ },
+ {
+  "id": 4506,
+  "de": "kostspielig",
+  "artikel": null,
+  "tr": "masraflı, pahalıya mal olan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Rechtsstreit erwies sich als überraschend kostspielig."
+ },
+ {
+  "id": 4507,
+  "de": "unwiderruflich",
+  "artikel": null,
+  "tr": "geri alınamaz, dönülemez",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach der Bestätigung ist die Zahlung unwiderruflich."
+ },
+ {
+  "id": 4508,
+  "de": "anteilig",
+  "artikel": null,
+  "tr": "oransal, pay oranında",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Heizkosten werden anteilig nach Wohnfläche auf alle umgelegt."
+ },
+ {
+  "id": 4509,
+  "de": "bargeldlos",
+  "artikel": null,
+  "tr": "nakitsiz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "In vielen Cafés kann man inzwischen nur noch bargeldlos zahlen."
+ },
+ {
+  "id": 4510,
+  "de": "vorzeitig",
+  "artikel": null,
+  "tr": "erken, vadesinden önce",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Wer den Kredit vorzeitig ablöst, muss eine Entschädigung zahlen."
+ },
+ {
+  "id": 4511,
+  "de": "Geborgenheit",
+  "artikel": "die",
+  "tr": "güven duygusu, huzur, sıcak yuva hissi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Kinder brauchen vor allem Geborgenheit in den ersten Lebensjahren."
+ },
+ {
+  "id": 4512,
+  "de": "Fürsorge",
+  "artikel": "die",
+  "tr": "özen, ilgi, bakım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne die Fürsorge seiner Tochter könnte er nicht allein wohnen."
+ },
+ {
+  "id": 4513,
+  "de": "Partnerschaft",
+  "artikel": "die",
+  "tr": "birliktelik, ilişki, ortaklık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine gleichberechtigte Partnerschaft setzt offene Gespräche voraus."
+ },
+ {
+  "id": 4514,
+  "de": "Missverständnis",
+  "artikel": "das",
+  "tr": "yanlış anlaşılma, yanlış anlama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der ganze Streit beruhte auf einem einfachen Missverständnis."
+ },
+ {
+  "id": 4515,
+  "de": "Wertschätzung",
+  "artikel": "die",
+  "tr": "değer verme, takdir",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Pflegekräfte vermissen die Wertschätzung der Gesellschaft."
+ },
+ {
+  "id": 4516,
+  "de": "Selbstwertgefühl",
+  "artikel": "das",
+  "tr": "öz değer duygusu, kendine değer verme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ständige Kritik kann das Selbstwertgefühl eines Kindes zerstören."
+ },
+ {
+  "id": 4517,
+  "de": "Persönlichkeit",
+  "artikel": "die",
+  "tr": "kişilik, şahsiyet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Persönlichkeit eines Menschen entwickelt sich ein Leben lang."
+ },
+ {
+  "id": 4518,
+  "de": "Verhaltensweise",
+  "artikel": "die",
+  "tr": "davranış biçimi, davranış tarzı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Solche Verhaltensweisen lernen Kinder meistens von ihren Eltern."
+ },
+ {
+  "id": 4519,
+  "de": "Neigung",
+  "artikel": "die",
+  "tr": "eğilim, meyil",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hat eine Neigung dazu, Konflikte einfach zu ignorieren."
+ },
+ {
+  "id": 4520,
+  "de": "Veranlagung",
+  "artikel": "die",
+  "tr": "yatkınlık, doğuştan gelen özellik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ob Ängstlichkeit vererbt wird oder nicht, hängt auch von der Veranlagung ab."
+ },
+ {
+  "id": 4521,
+  "de": "Ungeduld",
+  "artikel": "die",
+  "tr": "sabırsızlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Seine Ungeduld gegenüber den Kindern bereut er inzwischen."
+ },
+ {
+  "id": 4522,
+  "de": "Zorn",
+  "artikel": "der",
+  "tr": "öfke, hiddet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sie ließ ihren Zorn an den falschen Menschen aus."
+ },
+ {
+  "id": 4523,
+  "de": "Schuldgefühl",
+  "artikel": "das",
+  "tr": "suçluluk duygusu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Trennung plagten sie starke Schuldgefühle."
+ },
+ {
+  "id": 4524,
+  "de": "Mitleid",
+  "artikel": "das",
+  "tr": "acıma, merhamet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er will Unterstützung, aber kein Mitleid von seinen Freunden."
+ },
+ {
+  "id": 4525,
+  "de": "Ausgrenzung",
+  "artikel": "die",
+  "tr": "dışlama, dışlanma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Jugendliche erleben Ausgrenzung schon in der Schule."
+ },
+ {
+  "id": 4526,
+  "de": "Zugehörigkeit",
+  "artikel": "die",
+  "tr": "aidiyet, mensubiyet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Gefühl der Zugehörigkeit ist für die Integration entscheidend."
+ },
+ {
+  "id": 4527,
+  "de": "Hilfsbereitschaft",
+  "artikel": "die",
+  "tr": "yardımseverlik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem Hochwasser war die Hilfsbereitschaft in der Region enorm."
+ },
+ {
+  "id": 4528,
+  "de": "Nächstenliebe",
+  "artikel": "die",
+  "tr": "insan sevgisi, hemcinse sevgi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Verein lebt von Nächstenliebe und ehrenamtlichem Einsatz."
+ },
+ {
+  "id": 4529,
+  "de": "Pflegeheim",
+  "artikel": "das",
+  "tr": "bakımevi, huzurevi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Familie konnte sich nicht auf ein Pflegeheim einigen."
+ },
+ {
+  "id": 4530,
+  "de": "Einsamkeit",
+  "artikel": "die",
+  "tr": "yalnızlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Einsamkeit im Alter gilt inzwischen als ernstes gesundheitliches Risiko."
+ },
+ {
+  "id": 4531,
+  "de": "Geburtenrate",
+  "artikel": "die",
+  "tr": "doğum oranı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Geburtenrate ist im vergangenen Jahrzehnt deutlich gesunken."
+ },
+ {
+  "id": 4532,
+  "de": "Kinderbetreuung",
+  "artikel": "die",
+  "tr": "çocuk bakımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne bezahlbare Kinderbetreuung können viele Mütter nicht arbeiten."
+ },
+ {
+  "id": 4533,
+  "de": "Erziehungsstil",
+  "artikel": "der",
+  "tr": "eğitim tarzı, çocuk yetiştirme tarzı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Eltern streiten oft über den richtigen Erziehungsstil."
+ },
+ {
+  "id": 4534,
+  "de": "Autorität",
+  "artikel": "die",
+  "tr": "otorite, saygınlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hat als Vater längst jede Autorität verloren."
+ },
+ {
+  "id": 4535,
+  "de": "Gehorsam",
+  "artikel": "der",
+  "tr": "itaat, söz dinleme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Früher galt blinder Gehorsam als wichtigste Tugend eines Kindes."
+ },
+ {
+  "id": 4536,
+  "de": "Pubertät",
+  "artikel": "die",
+  "tr": "ergenlik, buluğ çağı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Pubertät ziehen sich viele Jugendliche von den Eltern zurück."
+ },
+ {
+  "id": 4537,
+  "de": "Sorgerecht",
+  "artikel": "das",
+  "tr": "velayet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Scheidung stritten beide Eltern um das Sorgerecht."
+ },
+ {
+  "id": 4538,
+  "de": "Unterhalt",
+  "artikel": "der",
+  "tr": "nafaka, geçim masrafı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Vater zahlt monatlich Unterhalt für seine beiden Kinder."
+ },
+ {
+  "id": 4539,
+  "de": "Rollenverteilung",
+  "artikel": "die",
+  "tr": "rol dağılımı, görev paylaşımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die traditionelle Rollenverteilung im Haushalt hat sich kaum verändert."
+ },
+ {
+  "id": 4540,
+  "de": "Gleichberechtigung",
+  "artikel": "die",
+  "tr": "eşit haklılık, hak eşitliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Von echter Gleichberechtigung sind wir beim Gehalt noch weit entfernt."
+ },
+ {
+  "id": 4541,
+  "de": "Emanzipation",
+  "artikel": "die",
+  "tr": "özgürleşme, kadının kurtuluşu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Emanzipation der Frauen veränderte die Familienstrukturen grundlegend."
+ },
+ {
+  "id": 4542,
+  "de": "Überforderung",
+  "artikel": "die",
+  "tr": "aşırı yüklenme, altından kalkamama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele junge Eltern klagen über ständige Überforderung im Alltag."
+ },
+ {
+  "id": 4543,
+  "de": "Rückhalt",
+  "artikel": "der",
+  "tr": "destek, arka çıkma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Krise fand sie großen Rückhalt in ihrer Familie."
+ },
+ {
+  "id": 4544,
+  "de": "Zuwendung",
+  "artikel": "die",
+  "tr": "ilgi, şefkat, yakınlık gösterme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Alte Menschen brauchen mehr Zuwendung, als viele Angehörige glauben."
+ },
+ {
+  "id": 4545,
+  "de": "Ablehnung",
+  "artikel": "die",
+  "tr": "reddetme, kabul etmeme, olumsuz tutum",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Seine offene Ablehnung des neuen Partners belastete die Beziehung."
+ },
+ {
+  "id": 4546,
+  "de": "Bewunderung",
+  "artikel": "die",
+  "tr": "hayranlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Junge blickte mit Bewunderung zu seinem älteren Bruder auf."
+ },
+ {
+  "id": 4547,
+  "de": "Missgunst",
+  "artikel": "die",
+  "tr": "kıskançlık, çekememezlik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zwischen den Geschwistern herrschte jahrelang stille Missgunst."
+ },
+ {
+  "id": 4548,
+  "de": "Wendepunkt",
+  "artikel": "der",
+  "tr": "dönüm noktası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Geburt des ersten Kindes war ein Wendepunkt in ihrem Leben."
+ },
+ {
+  "id": 4549,
+  "de": "Freiwilligendienst",
+  "artikel": "der",
+  "tr": "gönüllü hizmet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem Abitur leistet er ein Jahr Freiwilligendienst im Altenheim."
+ },
+ {
+  "id": 4550,
+  "de": "Lebensabend",
+  "artikel": "der",
+  "tr": "ömrün son dönemi, yaşlılık günleri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sie möchte ihren Lebensabend in der Nähe der Enkel verbringen."
+ },
+ {
+  "id": 4551,
+  "de": "Vertrauensbruch",
+  "artikel": "der",
+  "tr": "güveni kötüye kullanma, güven ihlali",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für sie war die Lüge ein unverzeihlicher Vertrauensbruch."
+ },
+ {
+  "id": 4552,
+  "de": "Empathie",
+  "artikel": "die",
+  "tr": "empati, duygudaşlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Empathie lassen sich solche Konflikte kaum lösen."
+ },
+ {
+  "id": 4553,
+  "de": "Selbstbeherrschung",
+  "artikel": "die",
+  "tr": "kendine hâkim olma, öz denetim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Es kostete ihn viel Selbstbeherrschung, ruhig zu bleiben."
+ },
+ {
+  "id": 4554,
+  "de": "Willenskraft",
+  "artikel": "die",
+  "tr": "irade gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mit erstaunlicher Willenskraft hat sie ihre Sucht überwunden."
+ },
+ {
+  "id": 4555,
+  "de": "Verbundenheit",
+  "artikel": "die",
+  "tr": "bağlılık, yakınlık hissi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Trotz der Entfernung blieb eine tiefe Verbundenheit zwischen ihnen."
+ },
+ {
+  "id": 4556,
+  "de": "Zuversicht",
+  "artikel": "die",
+  "tr": "güven, iyimserlik, umut",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Trotz der Diagnose hat er seine Zuversicht nicht verloren."
+ },
+ {
+  "id": 4557,
+  "de": "Selbstverwirklichung",
+  "artikel": "die",
+  "tr": "kendini gerçekleştirme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für viele steht heute die Selbstverwirklichung über der Familienplanung."
+ },
+ {
+  "id": 4558,
+  "de": "verwöhnen",
+  "artikel": null,
+  "tr": "şımartmak, üstüne titremek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Großeltern verwöhnen die Kinder jedes Wochenende mit Geschenken."
+ },
+ {
+  "id": 4559,
+  "de": "ermutigen",
+  "artikel": null,
+  "tr": "cesaretlendirmek, yüreklendirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Lehrer ermutigte sie, sich für den Kurs zu bewerben."
+ },
+ {
+  "id": 4560,
+  "de": "trösten",
+  "artikel": null,
+  "tr": "teselli etmek, avutmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie tröstete ihre Freundin nach der schmerzhaften Trennung."
+ },
+ {
+  "id": 4561,
+  "de": "prägen",
+  "artikel": null,
+  "tr": "biçimlendirmek, iz bırakmak, damgasını vurmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Erfahrungen der Kindheit prägen uns bis ins hohe Alter."
+ },
+ {
+  "id": 4562,
+  "de": "misstrauen",
+  "artikel": null,
+  "tr": "güvenmemek, kuşku duymak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach dem Vorfall misstraute er allen Nachbarn."
+ },
+ {
+  "id": 4563,
+  "de": "bereuen",
+  "artikel": null,
+  "tr": "pişman olmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie bereut es, damals so hart mit ihrem Sohn gewesen zu sein."
+ },
+ {
+  "id": 4564,
+  "de": "sich schämen",
+  "artikel": null,
+  "tr": "utanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Junge schämte sich für das Verhalten seines Vaters."
+ },
+ {
+  "id": 4565,
+  "de": "sich anpassen",
+  "artikel": null,
+  "tr": "uyum sağlamak, ayak uydurmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nicht jeder will sich den Erwartungen der Gruppe anpassen."
+ },
+ {
+  "id": 4566,
+  "de": "respektieren",
+  "artikel": null,
+  "tr": "saygı duymak, saymak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Eltern sollten die Grenzen ihrer erwachsenen Kinder respektieren."
+ },
+ {
+  "id": 4567,
+  "de": "aushalten",
+  "artikel": null,
+  "tr": "dayanmak, katlanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Diese ständigen Vorwürfe hält auf Dauer niemand aus."
+ },
+ {
+  "id": 4568,
+  "de": "spenden",
+  "artikel": null,
+  "tr": "bağışlamak, bağışta bulunmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Gemeinde spendete für die Betreuung obdachloser Familien."
+ },
+ {
+  "id": 4569,
+  "de": "schlichten",
+  "artikel": null,
+  "tr": "arabuluculuk etmek, uzlaştırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Großmutter schlichtete den Streit zwischen den Geschwistern."
+ },
+ {
+  "id": 4570,
+  "de": "aufwachsen",
+  "artikel": null,
+  "tr": "büyümek, yetişmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie ist bei ihren Großeltern auf dem Land aufgewachsen."
+ },
+ {
+  "id": 4571,
+  "de": "altern",
+  "artikel": null,
+  "tr": "yaşlanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Bevölkerung altert schneller, als die Politik erwartet hatte."
+ },
+ {
+  "id": 4572,
+  "de": "sich zerstreiten",
+  "artikel": null,
+  "tr": "kavga edip bozuşmak, küs düşmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die beiden Brüder haben sich wegen des Erbes zerstritten."
+ },
+ {
+  "id": 4573,
+  "de": "sich aufopfern",
+  "artikel": null,
+  "tr": "kendini feda etmek, canını dişine takmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Jahrelang hat sie sich für ihre pflegebedürftige Mutter aufgeopfert."
+ },
+ {
+  "id": 4574,
+  "de": "beschützen",
+  "artikel": null,
+  "tr": "korumak, kollamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Er wollte seine kleine Schwester vor jeder Enttäuschung beschützen."
+ },
+ {
+  "id": 4575,
+  "de": "ermahnen",
+  "artikel": null,
+  "tr": "uyarmak, ikaz etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Erzieherin ermahnte die Kinder mehrmals zur Rücksicht."
+ },
+ {
+  "id": 4576,
+  "de": "sich zurückziehen",
+  "artikel": null,
+  "tr": "geri çekilmek, kendi kabuğuna çekilmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Seit dem Verlust zieht er sich immer mehr von Freunden zurück."
+ },
+ {
+  "id": 4577,
+  "de": "mitfühlen",
+  "artikel": null,
+  "tr": "duygudaşlık kurmak, aynı şeyi hissetmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Als Therapeutin kann sie mit ihren Klienten wirklich mitfühlen."
+ },
+ {
+  "id": 4578,
+  "de": "nachsichtig",
+  "artikel": null,
+  "tr": "hoşgörülü, müsamahakâr",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Bei den Enkeln ist er viel nachsichtiger als früher bei den Kindern."
+ },
+ {
+  "id": 4579,
+  "de": "eifersüchtig",
+  "artikel": null,
+  "tr": "kıskanç",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das ältere Kind reagierte eifersüchtig auf das neue Geschwisterchen."
+ },
+ {
+  "id": 4580,
+  "de": "aufgeschlossen",
+  "artikel": null,
+  "tr": "açık fikirli, yeniliğe açık",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für ihr Alter ist sie erstaunlich aufgeschlossen gegenüber neuen Ideen."
+ },
+ {
+  "id": 4581,
+  "de": "selbstbewusst",
+  "artikel": null,
+  "tr": "özgüvenli, kendine güvenen",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Lob im Elternhaus macht Kinder langfristig selbstbewusster."
+ },
+ {
+  "id": 4582,
+  "de": "alleinerziehend",
+  "artikel": null,
+  "tr": "tek başına çocuk büyüten",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Alleinerziehende Mütter sind besonders oft von Armut bedroht."
+ },
+ {
+  "id": 4583,
+  "de": "zwischenmenschlich",
+  "artikel": null,
+  "tr": "insanlar arası, kişiler arası",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die meisten Probleme im Team sind rein zwischenmenschlicher Natur."
+ },
+ {
+  "id": 4584,
+  "de": "gesellig",
+  "artikel": null,
+  "tr": "sokulgan, sohbeti seven, cana yakın",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Ihr Mann ist eher still, sie dagegen sehr gesellig."
+ },
+ {
+  "id": 4585,
+  "de": "launisch",
+  "artikel": null,
+  "tr": "kaprisli, dakikası dakikasına uymayan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "In den letzten Wochen ist er ungewöhnlich launisch geworden."
+ },
+ {
+  "id": 4586,
+  "de": "nachtragend",
+  "artikel": null,
+  "tr": "kin tutan, unutmayan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Sie ist nicht nachtragend, aber vergessen wird sie das nie."
+ },
+ {
+  "id": 4587,
+  "de": "Nebenwirkung",
+  "artikel": "die",
+  "tr": "yan etki",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Medikament hat bei vielen Patienten unangenehme Nebenwirkungen."
+ },
+ {
+  "id": 4588,
+  "de": "Impfung",
+  "artikel": "die",
+  "tr": "aşı, aşılama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Impfung gegen Grippe wird älteren Menschen dringend empfohlen."
+ },
+ {
+  "id": 4589,
+  "de": "Zuzahlung",
+  "artikel": "die",
+  "tr": "katkı payı, ek ödeme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für dieses Medikament fällt eine Zuzahlung von fünf Euro an."
+ },
+ {
+  "id": 4590,
+  "de": "Notaufnahme",
+  "artikel": "die",
+  "tr": "acil servis",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Notaufnahme mussten wir über drei Stunden warten."
+ },
+ {
+  "id": 4591,
+  "de": "Rehabilitation",
+  "artikel": "die",
+  "tr": "rehabilitasyon, iyileştirme süreci",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Operation beginnt eine mehrwöchige Rehabilitation am Meer."
+ },
+ {
+  "id": 4592,
+  "de": "Depression",
+  "artikel": "die",
+  "tr": "depresyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine Depression ist eine ernste Krankheit und keine Schwäche."
+ },
+ {
+  "id": 4593,
+  "de": "Angststörung",
+  "artikel": "die",
+  "tr": "anksiyete bozukluğu, kaygı bozukluğu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ihre Angststörung lässt sich mit Gesprächstherapie gut behandeln."
+ },
+ {
+  "id": 4594,
+  "de": "Einwilligung",
+  "artikel": "die",
+  "tr": "onay, rıza",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne schriftliche Einwilligung darf der Arzt nicht operieren."
+ },
+ {
+  "id": 4595,
+  "de": "Befund",
+  "artikel": "der",
+  "tr": "tetkik sonucu, bulgu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Befund war zum Glück völlig unauffällig."
+ },
+ {
+  "id": 4596,
+  "de": "Blutdruck",
+  "artikel": "der",
+  "tr": "tansiyon, kan basıncı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mein Vater misst seinen Blutdruck jeden Morgen vor dem Frühstück."
+ },
+ {
+  "id": 4597,
+  "de": "Bewegungsmangel",
+  "artikel": "der",
+  "tr": "hareketsizlik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bewegungsmangel im Büroalltag schadet dem Rücken auf Dauer."
+ },
+ {
+  "id": 4598,
+  "de": "Übergewicht",
+  "artikel": "das",
+  "tr": "fazla kilo, obezite",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Starkes Übergewicht erhöht das Risiko für Diabetes deutlich."
+ },
+ {
+  "id": 4599,
+  "de": "Entzug",
+  "artikel": "der",
+  "tr": "yoksunluk, bağımlılık tedavisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Entzug war hart, aber er hat es geschafft."
+ },
+ {
+  "id": 4600,
+  "de": "Erreger",
+  "artikel": "der",
+  "tr": "hastalık etkeni, patojen",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Erreger wird vor allem über die Hände weitergegeben."
+ },
+ {
+  "id": 4601,
+  "de": "Entzündung",
+  "artikel": "die",
+  "tr": "iltihap, enflamasyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Entzündung im Knie ist nach zwei Wochen zurückgegangen."
+ },
+ {
+  "id": 4602,
+  "de": "Arzneimittel",
+  "artikel": "das",
+  "tr": "ilaç",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neue Arzneimittel werden vor der Zulassung jahrelang geprüft."
+ },
+ {
+  "id": 4603,
+  "de": "Dosierung",
+  "artikel": "die",
+  "tr": "doz, dozaj",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bitte halten Sie sich genau an die vorgeschriebene Dosierung."
+ },
+ {
+  "id": 4604,
+  "de": "Packungsbeilage",
+  "artikel": "die",
+  "tr": "prospektüs, kullanma talimatı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Lesen Sie die Packungsbeilage, bevor Sie die Tabletten nehmen."
+ },
+ {
+  "id": 4605,
+  "de": "Wirkstoff",
+  "artikel": "der",
+  "tr": "etken madde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beide Tabletten enthalten denselben Wirkstoff, kosten aber unterschiedlich viel."
+ },
+ {
+  "id": 4606,
+  "de": "Allergie",
+  "artikel": "die",
+  "tr": "alerji",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Frühling macht ihm seine Allergie besonders zu schaffen."
+ },
+ {
+  "id": 4607,
+  "de": "Eingriff",
+  "artikel": "der",
+  "tr": "müdahale, ameliyat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Eingriff dauert nur zwanzig Minuten und gilt als harmlos."
+ },
+ {
+  "id": 4608,
+  "de": "Narkose",
+  "artikel": "die",
+  "tr": "anestezi, narkoz",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Narkose fühlte sie sich noch stundenlang benommen."
+ },
+ {
+  "id": 4609,
+  "de": "Ohnmacht",
+  "artikel": "die",
+  "tr": "bayılma, baygınlık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Aus der Ohnmacht erwachte er erst im Krankenwagen."
+ },
+ {
+  "id": 4610,
+  "de": "Schwindel",
+  "artikel": "der",
+  "tr": "baş dönmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beim schnellen Aufstehen bekomme ich manchmal Schwindel."
+ },
+ {
+  "id": 4611,
+  "de": "Übelkeit",
+  "artikel": "die",
+  "tr": "mide bulantısı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Übelkeit trat kurz nach der ersten Tablette auf."
+ },
+ {
+  "id": 4612,
+  "de": "Atemnot",
+  "artikel": "die",
+  "tr": "nefes darlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei plötzlicher Atemnot sollten Sie sofort den Notruf wählen."
+ },
+ {
+  "id": 4613,
+  "de": "Krankschreibung",
+  "artikel": "die",
+  "tr": "istirahat raporu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben."
+ },
+ {
+  "id": 4614,
+  "de": "Attest",
+  "artikel": "das",
+  "tr": "sağlık raporu, belge",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für den Sportunterricht braucht mein Sohn ein ärztliches Attest."
+ },
+ {
+  "id": 4615,
+  "de": "Bettruhe",
+  "artikel": "die",
+  "tr": "yatak istirahati",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Arzt verschrieb ihr eine Woche strenge Bettruhe."
+ },
+ {
+  "id": 4616,
+  "de": "Vorsorgeuntersuchung",
+  "artikel": "die",
+  "tr": "kontrol muayenesi, tarama muayenesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ab vierzig zahlt die Kasse jährlich eine Vorsorgeuntersuchung."
+ },
+ {
+  "id": 4617,
+  "de": "Früherkennung",
+  "artikel": "die",
+  "tr": "erken teşhis",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei Krebs entscheidet die Früherkennung oft über die Heilungschancen."
+ },
+ {
+  "id": 4618,
+  "de": "Hausarzt",
+  "artikel": "der",
+  "tr": "aile hekimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mein Hausarzt kennt meine Krankengeschichte seit zwanzig Jahren."
+ },
+ {
+  "id": 4619,
+  "de": "Facharzt",
+  "artikel": "der",
+  "tr": "uzman hekim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf einen Termin beim Facharzt wartet man hier ewig."
+ },
+ {
+  "id": 4620,
+  "de": "Pflegekraft",
+  "artikel": "die",
+  "tr": "bakım görevlisi, hemşire",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In vielen Kliniken fehlen ausgebildete Pflegekräfte für die Nachtschicht."
+ },
+ {
+  "id": 4621,
+  "de": "Sanitäter",
+  "artikel": "der",
+  "tr": "sağlık görevlisi, paramedik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Sanitäter waren schon nach sechs Minuten vor Ort."
+ },
+ {
+  "id": 4622,
+  "de": "Rettungsdienst",
+  "artikel": "der",
+  "tr": "acil yardım servisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Rettungsdienst wurde noch in der Nacht alarmiert."
+ },
+ {
+  "id": 4623,
+  "de": "Wartezimmer",
+  "artikel": "das",
+  "tr": "bekleme odası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Wartezimmer saßen an diesem Morgen fast zwanzig Patienten."
+ },
+ {
+  "id": 4624,
+  "de": "Selbsthilfegruppe",
+  "artikel": "die",
+  "tr": "destek grubu, dayanışma grubu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Selbsthilfegruppe spricht er offen über seine Krankheit."
+ },
+ {
+  "id": 4625,
+  "de": "Gesundheitswesen",
+  "artikel": "das",
+  "tr": "sağlık sistemi, sağlık hizmetleri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das deutsche Gesundheitswesen steht vor großen finanziellen Problemen."
+ },
+ {
+  "id": 4626,
+  "de": "Kostenübernahme",
+  "artikel": "die",
+  "tr": "masrafların karşılanması, ödeme üstlenimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Kasse hat die Kostenübernahme für die Brille abgelehnt."
+ },
+ {
+  "id": 4627,
+  "de": "Quarantäne",
+  "artikel": "die",
+  "tr": "karantina",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem positiven Test musste die ganze Familie in Quarantäne."
+ },
+ {
+  "id": 4628,
+  "de": "Pandemie",
+  "artikel": "die",
+  "tr": "pandemi, salgın",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Während der Pandemie arbeiteten viele Ärzte an der Belastungsgrenze."
+ },
+ {
+  "id": 4629,
+  "de": "Immunsystem",
+  "artikel": "das",
+  "tr": "bağışıklık sistemi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Schlafmangel schwächt das Immunsystem stärker als viele denken."
+ },
+ {
+  "id": 4630,
+  "de": "Lebenserwartung",
+  "artikel": "die",
+  "tr": "yaşam beklentisi, ortalama ömür",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Lebenserwartung ist in den letzten Jahrzehnten deutlich gestiegen."
+ },
+ {
+  "id": 4631,
+  "de": "Beruhigungsmittel",
+  "artikel": "das",
+  "tr": "sakinleştirici",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beruhigungsmittel sollte man niemals ohne ärztlichen Rat nehmen."
+ },
+ {
+  "id": 4632,
+  "de": "Schlafstörung",
+  "artikel": "die",
+  "tr": "uyku bozukluğu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Seit dem Umzug plagen ihn heftige Schlafstörungen."
+ },
+ {
+  "id": 4633,
+  "de": "heilen",
+  "artikel": null,
+  "tr": "iyileştirmek, iyileşmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Wunde ist ohne Narbe vollständig geheilt."
+ },
+ {
+  "id": 4634,
+  "de": "lindern",
+  "artikel": null,
+  "tr": "hafifletmek, dindirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Diese Salbe lindert den Juckreiz schon nach wenigen Minuten."
+ },
+ {
+  "id": 4635,
+  "de": "versorgen",
+  "artikel": null,
+  "tr": "bakmak, tedavi etmek, sağlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Ärztin versorgte die Verletzten direkt an der Unfallstelle."
+ },
+ {
+  "id": 4636,
+  "de": "einliefern",
+  "artikel": null,
+  "tr": "hastaneye kaldırmak, yatırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Patient wurde gestern Abend mit hohem Fieber eingeliefert."
+ },
+ {
+  "id": 4637,
+  "de": "verordnen",
+  "artikel": null,
+  "tr": "reçete etmek, tavsiye etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Arzt verordnete ihm sechs Wochen Krankengymnastik."
+ },
+ {
+  "id": 4638,
+  "de": "anstecken",
+  "artikel": null,
+  "tr": "bulaştırmak, hastalık geçirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ich möchte im Büro niemanden mit meiner Erkältung anstecken."
+ },
+ {
+  "id": 4639,
+  "de": "überlasten",
+  "artikel": null,
+  "tr": "aşırı yüklemek, zorlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wer den Rücken ständig überlastet, bekommt früher oder später Probleme."
+ },
+ {
+  "id": 4640,
+  "de": "ertragen",
+  "artikel": null,
+  "tr": "katlanmak, dayanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Schmerzen waren kaum noch zu ertragen."
+ },
+ {
+  "id": 4641,
+  "de": "abklären",
+  "artikel": null,
+  "tr": "araştırmak, netleştirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Solche Beschwerden sollte man unbedingt beim Arzt abklären lassen."
+ },
+ {
+  "id": 4642,
+  "de": "verweigern",
+  "artikel": null,
+  "tr": "reddetmek, kabul etmemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Patient verweigerte die Behandlung aus religiösen Gründen."
+ },
+ {
+  "id": 4643,
+  "de": "verschlimmern",
+  "artikel": null,
+  "tr": "kötüleştirmek, ağırlaştırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Durch das lange Warten hat sich sein Zustand verschlimmert."
+ },
+ {
+  "id": 4644,
+  "de": "stabilisieren",
+  "artikel": null,
+  "tr": "dengelemek, stabil hale getirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Zustand des Patienten hat sich über Nacht stabilisiert."
+ },
+ {
+  "id": 4645,
+  "de": "betäuben",
+  "artikel": null,
+  "tr": "uyuşturmak, anestezi uygulamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Zahnarzt betäubt die Stelle vor dem Bohren."
+ },
+ {
+  "id": 4646,
+  "de": "spritzen",
+  "artikel": null,
+  "tr": "iğne yapmak, enjekte etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie muss sich täglich Insulin in den Bauch spritzen."
+ }
+]

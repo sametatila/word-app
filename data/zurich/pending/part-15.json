@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 6847,
+  "de": "Einsicht",
+  "artikel": "die",
+  "tr": "kavrayış, idrak, anlayış",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Diese Einsicht kam ihm erst nach jahrelanger Beschäftigung mit dem Thema."
+ },
+ {
+  "id": 6848,
+  "de": "Weisheit",
+  "artikel": "die",
+  "tr": "bilgelik, hikmet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wissen lässt sich anhäufen, Weisheit dagegen kaum."
+ },
+ {
+  "id": 6849,
+  "de": "Besonnenheit",
+  "artikel": "die",
+  "tr": "sağduyu, temkinlilik, itidal",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In der Krise zeigte sie eine bemerkenswerte Besonnenheit."
+ },
+ {
+  "id": 6850,
+  "de": "Relativismus",
+  "artikel": "der",
+  "tr": "görecelilik, rölativizm",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein radikaler Relativismus macht jede Kritik an Unrecht unmöglich."
+ },
+ {
+  "id": 6851,
+  "de": "Maxime",
+  "artikel": "die",
+  "tr": "ilke, düstur",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Handle nur nach einer Maxime, die du allgemein wollen kannst."
+ },
+ {
+  "id": 6852,
+  "de": "Gebot",
+  "artikel": "das",
+  "tr": "buyruk, emir, ilke",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Fairness ist hier weniger ein Gesetz als ein moralisches Gebot."
+ },
+ {
+  "id": 6853,
+  "de": "Wertvorstellung",
+  "artikel": "die",
+  "tr": "değer anlayışı, değer yargısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Wertvorstellungen der Generationen driften spürbar auseinander."
+ },
+ {
+  "id": 6854,
+  "de": "Vergänglichkeit",
+  "artikel": "die",
+  "tr": "geçicilik, faniliğ",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Bewusstsein der Vergänglichkeit verändert unseren Umgang mit Zeit."
+ },
+ {
+  "id": 6855,
+  "de": "Wesenszug",
+  "artikel": "der",
+  "tr": "karakter özelliği, temel nitelik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Neugier gilt vielen als grundlegender Wesenszug des Menschen."
+ },
+ {
+  "id": 6856,
+  "de": "Triebfeder",
+  "artikel": "die",
+  "tr": "itici güç, saik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die eigentliche Triebfeder seines Engagements war schlichte Eitelkeit."
+ },
+ {
+  "id": 6857,
+  "de": "Streben",
+  "artikel": "das",
+  "tr": "çabalama, arzu, gayret",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Streben nach Glück lässt sich nicht erzwingen."
+ },
+ {
+  "id": 6858,
+  "de": "Selbsterkenntnis",
+  "artikel": "die",
+  "tr": "kendini bilme, öz farkındalık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Selbsterkenntnis gilt seit der Antike als Anfang aller Weisheit."
+ },
+ {
+  "id": 6859,
+  "de": "Selbstzweck",
+  "artikel": "der",
+  "tr": "kendi başına amaç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Mensch ist Selbstzweck und darf nie bloßes Mittel sein."
+ },
+ {
+  "id": 6860,
+  "de": "Ausweglosigkeit",
+  "artikel": "die",
+  "tr": "çıkışsızlık, umutsuzluk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Camus beschreibt die Ausweglosigkeit als Grundgefühl des modernen Menschen."
+ },
+ {
+  "id": 6861,
+  "de": "Vergebung",
+  "artikel": "die",
+  "tr": "bağışlama, affetme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Vergebung bedeutet nicht, das Geschehene für harmlos zu erklären."
+ },
+ {
+  "id": 6862,
+  "de": "Nachsicht",
+  "artikel": "die",
+  "tr": "hoşgörü, müsamaha",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mit sich selbst übt er weit mehr Nachsicht als mit anderen."
+ },
+ {
+  "id": 6863,
+  "de": "Unbestechlichkeit",
+  "artikel": "die",
+  "tr": "rüşvet kabul etmezlik, satın alınamazlık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Unbestechlichkeit der Richter ist die Grundlage jedes Rechtsstaats."
+ },
+ {
+  "id": 6864,
+  "de": "Mündigkeit",
+  "artikel": "die",
+  "tr": "erginlik, kendi aklını kullanabilme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bildung soll vor allem zur geistigen Mündigkeit führen."
+ },
+ {
+  "id": 6865,
+  "de": "Selbsttäuschung",
+  "artikel": "die",
+  "tr": "kendini kandırma, kendini aldatma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wer nur bestätigende Quellen liest, betreibt eine bequeme Selbsttäuschung."
+ },
+ {
+  "id": 6866,
+  "de": "Demut",
+  "artikel": "die",
+  "tr": "alçakgönüllülük, tevazu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Vor der Komplexität des Themas ist etwas Demut angebracht."
+ },
+ {
+  "id": 6867,
+  "de": "Hochmut",
+  "artikel": "der",
+  "tr": "kibir, gurur",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Sein Hochmut verstellte ihm den Blick für eigene Fehler."
+ },
+ {
+  "id": 6868,
+  "de": "gebieten",
+  "artikel": null,
+  "tr": "emretmek, buyurmak, gerektirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Lage gebietet Zurückhaltung statt vorschneller Urteile."
+ },
+ {
+  "id": 6869,
+  "de": "missbilligen",
+  "artikel": null,
+  "tr": "onaylamamak, hoş karşılamamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Viele Kollegen missbilligten sein Vorgehen, sagten aber nichts."
+ },
+ {
+  "id": 6870,
+  "de": "bejahen",
+  "artikel": null,
+  "tr": "olumlamak, evet demek, onaylamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Nietzsche fordert, das Leben mit all seinen Härten zu bejahen."
+ },
+ {
+  "id": 6871,
+  "de": "verneinen",
+  "artikel": null,
+  "tr": "olumsuzlamak, reddetmek, hayır demek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Frage nach einem absoluten Maßstab verneint er entschieden."
+ },
+ {
+  "id": 6872,
+  "de": "beimessen",
+  "artikel": null,
+  "tr": "önem atfetmek, değer vermek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Autor misst der Absicht mehr Gewicht bei als der Folge."
+ },
+ {
+  "id": 6873,
+  "de": "sich anmaßen",
+  "artikel": null,
+  "tr": "haddini aşarak üstlenmek, hakkı olmadan sahiplenmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Niemand sollte sich das Urteil über fremde Gewissensfragen anmaßen."
+ },
+ {
+  "id": 6874,
+  "de": "hinnehmen",
+  "artikel": null,
+  "tr": "kabullenmek, katlanmak, boyun eğmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Eine solche Ungleichheit müssen wir nicht stillschweigend hinnehmen."
+ },
+ {
+  "id": 6875,
+  "de": "sittlich",
+  "artikel": null,
+  "tr": "ahlaki, ahlaka ilişkin",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Er beurteilte die Tat nach sittlichen, nicht nach juristischen Kriterien."
+ },
+ {
+  "id": 6876,
+  "de": "skrupellos",
+  "artikel": null,
+  "tr": "vicdansız, pervasız",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Er nutzte die Notlage seiner Nachbarn völlig skrupellos aus."
+ },
+ {
+  "id": 6877,
+  "de": "einleuchtend",
+  "artikel": null,
+  "tr": "makul, inandırıcı, akla yatkın",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Seine Erklärung klang einleuchtend, hielt der Prüfung aber nicht stand."
+ },
+ {
+  "id": 6878,
+  "de": "vordergründig",
+  "artikel": null,
+  "tr": "görünüşte, yüzeysel olarak",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Vordergründig geht es um Geld, eigentlich aber um Anerkennung."
+ },
+ {
+  "id": 6879,
+  "de": "willentlich",
+  "artikel": null,
+  "tr": "bilerek, iradi olarak, kasten",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Nur willentlich herbeigeführte Folgen lassen sich moralisch zurechnen."
+ },
+ {
+  "id": 6880,
+  "de": "Verfassungsgericht",
+  "artikel": "das",
+  "tr": "anayasa mahkemesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz in Teilen für nichtig."
+ },
+ {
+  "id": 6881,
+  "de": "Verhältniswahl",
+  "artikel": "die",
+  "tr": "nispi temsil, oransal seçim sistemi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bei der Verhältniswahl spiegelt die Sitzverteilung den Stimmenanteil der Parteien wider."
+ },
+ {
+  "id": 6882,
+  "de": "Exekutive",
+  "artikel": "die",
+  "tr": "yürütme, yürütme erki",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Exekutive darf sich nicht über die Beschlüsse des Parlaments hinwegsetzen."
+ },
+ {
+  "id": 6883,
+  "de": "Legislative",
+  "artikel": "die",
+  "tr": "yasama organı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In der Debatte ging es um das Verhältnis von Legislative und Regierung."
+ },
+ {
+  "id": 6884,
+  "de": "Föderalismus",
+  "artikel": "der",
+  "tr": "federalizm",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die einzelnen Länder."
+ },
+ {
+  "id": 6885,
+  "de": "Subsidiarität",
+  "artikel": "die",
+  "tr": "yerindenlik ilkesi, subsidiyarite",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Nach dem Grundsatz der Subsidiarität entscheidet stets die kleinste geeignete Ebene."
+ },
+ {
+  "id": 6886,
+  "de": "Gebietskörperschaft",
+  "artikel": "die",
+  "tr": "yerel yönetim birimi, mahalli idare",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Städte und Landkreise sind Gebietskörperschaften mit eigener Verwaltung."
+ },
+ {
+  "id": 6887,
+  "de": "Ressort",
+  "artikel": "das",
+  "tr": "birim, görev alanı, bakanlık dairesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Für diese Frage ist ein anderes Ressort im Ministerium zuständig."
+ },
+ {
+  "id": 6888,
+  "de": "Bürokratie",
+  "artikel": "die",
+  "tr": "bürokrasi, kırtasiyecilik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kleine Betriebe klagen seit Jahren über die ausufernde Bürokratie."
+ },
+ {
+  "id": 6889,
+  "de": "Referendum",
+  "artikel": "das",
+  "tr": "referandum, halk oylaması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Über den Beitritt soll ein landesweites Referendum entscheiden."
+ },
+ {
+  "id": 6890,
+  "de": "Machtbefugnis",
+  "artikel": "die",
+  "tr": "yetki, iktidar yetkisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Präsident schöpfte seine Machtbefugnisse bis an die Grenze des Erlaubten aus."
+ },
+ {
+  "id": 6891,
+  "de": "Willensbildung",
+  "artikel": "die",
+  "tr": "irade oluşumu, karar oluşturma süreci",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Parteien sind für die politische Willensbildung des Volkes unverzichtbar."
+ },
+ {
+  "id": 6892,
+  "de": "Interessenverband",
+  "artikel": "der",
+  "tr": "çıkar grubu, meslek örgütü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mächtige Interessenverbände treten in Berlin für ihre Branche ein."
+ },
+ {
+  "id": 6893,
+  "de": "Lobbyismus",
+  "artikel": "der",
+  "tr": "lobicilik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein öffentliches Register soll den Lobbyismus im Parlament transparenter machen."
+ },
+ {
+  "id": 6894,
+  "de": "Einflussnahme",
+  "artikel": "die",
+  "tr": "etki etme, nüfuz kullanma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Aufsicht untersucht eine mögliche Einflussnahme auf die Vergabe der Aufträge."
+ },
+ {
+  "id": 6895,
+  "de": "Gewaltmonopol",
+  "artikel": "das",
+  "tr": "güç tekeli, zor kullanma tekeli",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In manchen Regionen hat der Staat sein Gewaltmonopol praktisch verloren."
+ },
+ {
+  "id": 6896,
+  "de": "Staatsräson",
+  "artikel": "die",
+  "tr": "devlet çıkarı, hikmet-i hükümet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Minister berief sich auf die Staatsräson und schwieg zu Details."
+ },
+ {
+  "id": 6897,
+  "de": "Regierungserklärung",
+  "artikel": "die",
+  "tr": "hükümet programı açıklaması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In seiner Regierungserklärung kündigte der Kanzler eine Wende in der Energiepolitik an."
+ },
+ {
+  "id": 6898,
+  "de": "Bundestag",
+  "artikel": "der",
+  "tr": "Federal Meclis",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Bundestag debattierte bis in die frühen Morgenstunden über den Haushalt."
+ },
+ {
+  "id": 6899,
+  "de": "Quorum",
+  "artikel": "das",
+  "tr": "yeter sayı, nisap",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne das nötige Quorum ist die Abstimmung von vornherein ungültig."
+ },
+ {
+  "id": 6900,
+  "de": "Geschäftsordnung",
+  "artikel": "die",
+  "tr": "içtüzük, çalışma yönetmeliği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Antrag verstieß eindeutig gegen die Geschäftsordnung des Parlaments."
+ },
+ {
+  "id": 6901,
+  "de": "Diplomatie",
+  "artikel": "die",
+  "tr": "diplomasi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Stille Diplomatie erreichte mehr als jede öffentliche Drohung."
+ },
+ {
+  "id": 6902,
+  "de": "amtieren",
+  "artikel": null,
+  "tr": "görevde olmak, görevi yürütmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er amtierte zwölf Jahre lang als Bürgermeister dieser Stadt."
+ },
+ {
+  "id": 6903,
+  "de": "nominieren",
+  "artikel": null,
+  "tr": "aday göstermek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Partei nominierte überraschend eine parteilose Kandidatin."
+ },
+ {
+  "id": 6904,
+  "de": "entmachten",
+  "artikel": null,
+  "tr": "yetkisiz bırakmak, iktidardan düşürmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Reform entmachtet die Kammer faktisch zugunsten der Regierung."
+ },
+ {
+  "id": 6905,
+  "de": "aushöhlen",
+  "artikel": null,
+  "tr": "içini boşaltmak, işlevsiz kılmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Zahlreiche Ausnahmen höhlen den Schutz der Verfassung nach und nach aus."
+ },
+ {
+  "id": 6906,
+  "de": "parlamentarisch",
+  "artikel": null,
+  "tr": "parlamenter, meclise ilişkin",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Untersuchungsausschuss ist ein scharfes parlamentarisches Kontrollinstrument."
+ },
+ {
+  "id": 6907,
+  "de": "hoheitlich",
+  "artikel": null,
+  "tr": "kamu otoritesine dayalı, egemenlik yetkisiyle",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Diese Aufgaben darf allein der Staat hoheitlich wahrnehmen."
+ },
+ {
+  "id": 6908,
+  "de": "weisungsgebunden",
+  "artikel": null,
+  "tr": "talimata bağlı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Staatsanwaltschaft ist gegenüber dem Justizministerium weisungsgebunden."
+ },
+ {
+  "id": 6909,
+  "de": "populistisch",
+  "artikel": null,
+  "tr": "popülist",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Mit populistischen Parolen lassen sich komplexe Probleme nicht lösen."
+ },
+ {
+  "id": 6910,
+  "de": "Erinnerungsvermögen",
+  "artikel": "das",
+  "tr": "hatırlama yetisi, anımsama gücü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mit zunehmendem Alter lässt das Erinnerungsvermögen allmählich nach."
+ },
+ {
+  "id": 6911,
+  "de": "Verzerrung",
+  "artikel": "die",
+  "tr": "çarpıtma, sapma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Systematische Verzerrungen im Denken lassen sich kaum vollständig vermeiden."
+ },
+ {
+  "id": 6912,
+  "de": "Voreingenommenheit",
+  "artikel": "die",
+  "tr": "peşin hüküm, taraflılık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Studie untersucht, wie Voreingenommenheit die Bewertung von Bewerbern verfälscht."
+ },
+ {
+  "id": 6913,
+  "de": "Entscheidungsfindung",
+  "artikel": "die",
+  "tr": "karar verme süreci",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Unter Zeitdruck folgt die Entscheidungsfindung eher einfachen Faustregeln."
+ },
+ {
+  "id": 6914,
+  "de": "Bewusstsein",
+  "artikel": "das",
+  "tr": "bilinç, farkındalık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wie aus neuronaler Aktivität Bewusstsein entsteht, ist bis heute ungeklärt."
+ },
+ {
+  "id": 6915,
+  "de": "Bedürfnis",
+  "artikel": "das",
+  "tr": "ihtiyaç, gereksinim",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Bedürfnis nach Anerkennung treibt viele Menschen unbemerkt an."
+ },
+ {
+  "id": 6916,
+  "de": "Reiz",
+  "artikel": "der",
+  "tr": "uyaran, uyarıcı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Gehirn filtert die meisten Reize aus, bevor sie bewusst werden."
+ },
+ {
+  "id": 6917,
+  "de": "Denkfehler",
+  "artikel": "der",
+  "tr": "düşünme hatası, akıl yürütme yanlışı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Dieser Denkfehler tritt selbst bei erfahrenen Fachleuten regelmäßig auf."
+ },
+ {
+  "id": 6918,
+  "de": "Urteilsvermögen",
+  "artikel": "das",
+  "tr": "muhakeme yetisi, yargı gücü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Starke Emotionen trüben das Urteilsvermögen mehr, als uns lieb ist."
+ },
+ {
+  "id": 6919,
+  "de": "Selbstbild",
+  "artikel": "das",
+  "tr": "benlik imgesi, kendilik algısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein."
+ },
+ {
+  "id": 6920,
+  "de": "Identität",
+  "artikel": "die",
+  "tr": "kimlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In der Jugend wird die eigene Identität immer wieder neu ausgehandelt."
+ },
+ {
+  "id": 6921,
+  "de": "Konditionierung",
+  "artikel": "die",
+  "tr": "koşullanma, şartlanma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Pawlow zeigte die Konditionierung anhand eines einfachen Glockensignals."
+ },
+ {
+  "id": 6922,
+  "de": "Verstärkung",
+  "artikel": "die",
+  "tr": "pekiştirme, takviye",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Positive Verstärkung wirkt langfristig besser als jede Form von Strafe."
+ },
+ {
+  "id": 6923,
+  "de": "Belohnungssystem",
+  "artikel": "das",
+  "tr": "ödül sistemi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Soziale Netzwerke sprechen gezielt das Belohnungssystem im Gehirn an."
+ },
+ {
+  "id": 6924,
+  "de": "Neurose",
+  "artikel": "die",
+  "tr": "nevroz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Begriff Neurose gilt in der heutigen Diagnostik als überholt."
+ },
+ {
+  "id": 6925,
+  "de": "Bewältigungsstrategie",
+  "artikel": "die",
+  "tr": "başa çıkma stratejisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Humor ist für viele eine erstaunlich wirksame Bewältigungsstrategie."
+ },
+ {
+  "id": 6926,
+  "de": "Abwehrmechanismus",
+  "artikel": "der",
+  "tr": "savunma mekanizması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Leugnen ist ein Abwehrmechanismus, der kurzfristig entlastet."
+ },
+ {
+  "id": 6927,
+  "de": "Projektion",
+  "artikel": "die",
+  "tr": "yansıtma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wer ständig Neid unterstellt, betreibt womöglich selbst eine Projektion."
+ },
+ {
+  "id": 6928,
+  "de": "Übertragung",
+  "artikel": "die",
+  "tr": "aktarım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In der Analyse richtet sich die Übertragung oft auf den Therapeuten."
+ },
+ {
+  "id": 6929,
+  "de": "Verhaltenstherapie",
+  "artikel": "die",
+  "tr": "davranış terapisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Verhaltenstherapie setzt weniger an der Kindheit als an aktuellen Mustern an."
+ },
+ {
+  "id": 6930,
+  "de": "Psychoanalyse",
+  "artikel": "die",
+  "tr": "psikanaliz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Psychoanalyse hat unser Bild vom Seelenleben nachhaltig verändert."
+ },
+ {
+  "id": 6931,
+  "de": "Krankheitsbild",
+  "artikel": "das",
+  "tr": "hastalık tablosu, klinik tablo",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Krankheitsbild äußert sich bei Kindern anders als bei Erwachsenen."
+ },
+ {
+  "id": 6932,
+  "de": "Bindungstheorie",
+  "artikel": "die",
+  "tr": "bağlanma kuramı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Bindungstheorie erklärt, warum frühe Beziehungen so prägend wirken."
+ },
+ {
+  "id": 6933,
+  "de": "Ablösung",
+  "artikel": "die",
+  "tr": "ayrışma, kopuş",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Ablösung vom Elternhaus verläuft selten ohne Konflikte."
+ },
+ {
+  "id": 6934,
+  "de": "Anpassungsfähigkeit",
+  "artikel": "die",
+  "tr": "uyum yeteneği, uyum sağlama becerisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Anpassungsfähigkeit des Menschen an neue Umgebungen ist bemerkenswert."
+ },
+ {
+  "id": 6935,
+  "de": "Widerstandsfähigkeit",
+  "artikel": "die",
+  "tr": "dayanıklılık, psikolojik sağlamlık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Stabile Beziehungen stärken die psychische Widerstandsfähigkeit erheblich."
+ },
+ {
+  "id": 6936,
+  "de": "Selbstregulation",
+  "artikel": "die",
+  "tr": "öz düzenleme, kendini düzenleme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kinder lernen Selbstregulation vor allem durch verlässliche Bezugspersonen."
+ },
+ {
+  "id": 6937,
+  "de": "Impulskontrolle",
+  "artikel": "die",
+  "tr": "dürtü kontrolü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Müdigkeit schwächt die Impulskontrolle deutlich stärker als vermutet."
+ },
+ {
+  "id": 6938,
+  "de": "Frustration",
+  "artikel": "die",
+  "tr": "hayal kırıklığı, engellenmişlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Anhaltende Frustration schlägt nicht selten in Aggression um."
+ },
+ {
+  "id": 6939,
+  "de": "Affekt",
+  "artikel": "der",
+  "tr": "duygulanım, ani duygu patlaması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im Affekt getroffene Entscheidungen bereut man meistens später."
+ },
+ {
+  "id": 6940,
+  "de": "Emotion",
+  "artikel": "die",
+  "tr": "duygu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Emotionen liefern Informationen, die dem Verstand allein entgehen."
+ },
+ {
+  "id": 6941,
+  "de": "Abneigung",
+  "artikel": "die",
+  "tr": "hoşlanmama, isteksizlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Abneigung gegen große Gruppen wurde mit den Jahren stärker."
+ },
+ {
+  "id": 6942,
+  "de": "Scham",
+  "artikel": "die",
+  "tr": "utanç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Scham hindert viele Betroffene daran, überhaupt Hilfe zu suchen."
+ },
+ {
+  "id": 6943,
+  "de": "abspeichern",
+  "artikel": null,
+  "tr": "kaydetmek, belleğe almak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Gehirn speichert vor allem emotional geladene Szenen dauerhaft ab."
+ },
+ {
+  "id": 6944,
+  "de": "ausblenden",
+  "artikel": null,
+  "tr": "görmezden gelmek, dikkate almamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Im Gespräch blenden wir störende Geräusche fast vollständig aus."
+ },
+ {
+  "id": 6945,
+  "de": "steuern",
+  "artikel": null,
+  "tr": "yönlendirmek, yönetmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Erwartungen steuern die Wahrnehmung stärker, als uns bewusst ist."
+ },
+ {
+  "id": 6946,
+  "de": "hemmen",
+  "artikel": null,
+  "tr": "engellemek, ketlemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Zu strenge Kritik hemmt die Kreativität von Schülern erheblich."
+ },
+ {
+  "id": 6947,
+  "de": "hervorrufen",
+  "artikel": null,
+  "tr": "meydana getirmek, doğurmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Widersprüchliche Botschaften rufen bei Kindern große Verunsicherung hervor."
+ },
+ {
+  "id": 6948,
+  "de": "bewirken",
+  "artikel": null,
+  "tr": "etki etmek, sağlamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Schon kleine Veränderungen im Alltag bewirken oft erstaunlich viel."
+ },
+ {
+  "id": 6949,
+  "de": "sich hineinversetzen",
+  "artikel": null,
+  "tr": "kendini birinin yerine koymak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Erst ab etwa vier Jahren können Kinder sich in andere hineinversetzen."
+ },
+ {
+  "id": 6950,
+  "de": "deuten",
+  "artikel": null,
+  "tr": "yorumlamak, anlamlandırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Dasselbe Verhalten wird je nach Erwartung völlig anders gedeutet."
+ },
+ {
+  "id": 6951,
+  "de": "überschätzen",
+  "artikel": null,
+  "tr": "olduğundan fazla değerlendirmek, abartmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Anfänger überschätzen ihr Können häufig, Fachleute eher das Gegenteil."
+ },
+ {
+  "id": 6952,
+  "de": "zwanghaft",
+  "artikel": null,
+  "tr": "takıntılı, saplantılı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sein zwanghaftes Kontrollieren der Türen kostete ihn jeden Abend Zeit."
+ },
+ {
+  "id": 6953,
+  "de": "labil",
+  "artikel": null,
+  "tr": "dengesiz, kırılgan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "In dieser Phase war sie emotional außerordentlich labil."
+ },
+ {
+  "id": 6954,
+  "de": "selektiv",
+  "artikel": null,
+  "tr": "seçici",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Unsere Erinnerung arbeitet selektiv und formt die Vergangenheit um."
+ },
+ {
+  "id": 6955,
+  "de": "voreilig",
+  "artikel": null,
+  "tr": "aceleci, düşünmeden",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Man sollte aus einem einzigen Test keine voreiligen Schlüsse ziehen."
+ },
+ {
+  "id": 6956,
+  "de": "angeboren",
+  "artikel": null,
+  "tr": "doğuştan gelen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ob Temperament angeboren ist, wird bis heute kontrovers diskutiert."
+ },
+ {
+  "id": 6957,
+  "de": "kognitiv",
+  "artikel": null,
+  "tr": "bilişsel",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Schlafmangel beeinträchtigt kognitive Leistungen schon nach wenigen Nächten."
+ },
+ {
+  "id": 6958,
+  "de": "intuitiv",
+  "artikel": null,
+  "tr": "sezgisel",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Erfahrene Ärzte urteilen oft intuitiv und liegen dabei richtig."
+ },
+ {
+  "id": 6959,
+  "de": "introvertiert",
+  "artikel": null,
+  "tr": "içe dönük",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Introvertierte Menschen brauchen nach Gesprächen mehr Zeit für sich."
+ },
+ {
+  "id": 6960,
+  "de": "unumstößlich",
+  "artikel": null,
+  "tr": "sarsılmaz, tartışılmaz, kesin",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Seine Überzeugung galt ihm als unumstößliche Wahrheit."
+ },
+ {
+  "id": 6961,
+  "de": "unbeirrt",
+  "artikel": null,
+  "tr": "yolundan sapmayan, kararlı, şaşmaz",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Trotz aller Kritik verfolgte sie ihr Ziel unbeirrt weiter."
+ },
+ {
+  "id": 6962,
+  "de": "behutsam",
+  "artikel": null,
+  "tr": "ihtiyatlı, özenli, nazik",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Das Thema muss man behutsam ansprechen, sonst verhärten sich die Fronten."
+ },
+ {
+  "id": 6963,
+  "de": "herablassend",
+  "artikel": null,
+  "tr": "tepeden bakan, küçümseyici",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sein herablassender Ton machte eine sachliche Debatte unmöglich."
+ },
+ {
+  "id": 6964,
+  "de": "abschätzig",
+  "artikel": null,
+  "tr": "aşağılayıcı, hor gören",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Über die Arbeit seiner Kollegen äußerte er sich abschätzig."
+ },
+ {
+  "id": 6965,
+  "de": "wohlwollend",
+  "artikel": null,
+  "tr": "iyi niyetli, olumlu bakan, hayırhah",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Jury nahm den Entwurf wohlwollend zur Kenntnis."
+ },
+ {
+  "id": 6966,
+  "de": "geringschätzig",
+  "artikel": null,
+  "tr": "küçümseyen, hafife alan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sie sprach geringschätzig über die Bemühungen der Kommission."
+ },
+ {
+  "id": 6967,
+  "de": "unvoreingenommen",
+  "artikel": null,
+  "tr": "önyargısız, tarafsız",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ein Gutachter sollte die Unterlagen unvoreingenommen prüfen."
+ },
+ {
+  "id": 6968,
+  "de": "verbissen",
+  "artikel": null,
+  "tr": "dişini sıkmış, inatçı, hırslı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Er verteidigte seine These mit verbissener Entschlossenheit."
+ },
+ {
+  "id": 6969,
+  "de": "umsichtig",
+  "artikel": null,
+  "tr": "basiretli, tedbirli, her yönü düşünen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Leitung hat in der Krise umsichtig gehandelt."
+ },
+ {
+  "id": 6970,
+  "de": "besonnen",
+  "artikel": null,
+  "tr": "sakin ve aklıselim, soğukkanlı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Gerade in aufgeheizten Debatten wirkt ihre besonnene Art beruhigend."
+ },
+ {
+  "id": 6971,
+  "de": "überheblich",
+  "artikel": null,
+  "tr": "kibirli, burnu büyük",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Wer andere Disziplinen überheblich abtut, verliert schnell an Glaubwürdigkeit."
+ },
+ {
+  "id": 6972,
+  "de": "anmaßend",
+  "artikel": null,
+  "tr": "haddini bilmez, küstah",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Es wäre anmaßend, über fremde Lebensentwürfe zu urteilen."
+ },
+ {
+  "id": 6973,
+  "de": "aufdringlich",
+  "artikel": null,
+  "tr": "sırnaşık, rahatsız edici ölçüde ısrarcı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Werbung im Text wirkt aufdringlich und stört den Lesefluss."
+ },
+ {
+  "id": 6974,
+  "de": "distanziert",
+  "artikel": null,
+  "tr": "mesafeli, soğuk",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Autor betrachtet seine eigene Jugend auffallend distanziert."
+ },
+ {
+  "id": 6975,
+  "de": "schroff",
+  "artikel": null,
+  "tr": "sert, ters, haşin",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Seine schroffe Antwort beendete das Gespräch abrupt."
+ },
+ {
+  "id": 6976,
+  "de": "unterschwellig",
+  "artikel": null,
+  "tr": "üstü örtülü, bilinçaltına seslenen, sezdirmeden",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "In dem Bericht schwingt unterschwellig eine Warnung mit."
+ },
+ {
+  "id": 6977,
+  "de": "latent",
+  "artikel": null,
+  "tr": "gizli, örtük, potansiyel hâlde",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Konflikt blieb jahrelang latent, bevor er offen ausbrach."
+ },
+ {
+  "id": 6978,
+  "de": "augenscheinlich",
+  "artikel": null,
+  "tr": "görünüşe göre, apaçık",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Maßnahme hat augenscheinlich nicht die erhoffte Wirkung erzielt."
+ },
+ {
+  "id": 6979,
+  "de": "vielsagend",
+  "artikel": null,
+  "tr": "çok şey anlatan, manidar",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ihr Schweigen an dieser Stelle war ausgesprochen vielsagend."
+ },
+ {
+  "id": 6980,
+  "de": "tiefgründig",
+  "artikel": null,
+  "tr": "derinlikli, derin anlamlı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Essay wirkt auf den ersten Blick schlicht, ist aber tiefgründig."
+ },
+ {
+  "id": 6981,
+  "de": "schlüssig",
+  "artikel": null,
+  "tr": "tutarlı, mantıklı, ikna edici",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Argumentation ist elegant, aber nicht in allen Punkten schlüssig."
+ },
+ {
+  "id": 6982,
+  "de": "prägnant",
+  "artikel": null,
+  "tr": "özlü, veciz, çarpıcı biçimde kısa",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "In wenigen prägnanten Sätzen fasste er die Debatte zusammen."
+ },
+ {
+  "id": 6983,
+  "de": "unerbittlich",
+  "artikel": null,
+  "tr": "acımasız, amansız, taviz tanımaz",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Zeit drängt unerbittlich, eine Entscheidung ist überfällig."
+ },
+ {
+  "id": 6984,
+  "de": "beharrlich",
+  "artikel": null,
+  "tr": "sebatlı, ısrarlı, azimli",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Beharrlich fragte die Journalistin nach den fehlenden Zahlen."
+ },
+ {
+  "id": 6985,
+  "de": "zaghaft",
+  "artikel": null,
+  "tr": "çekingen, ürkek, tereddütlü",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Reformen wurden nur zaghaft und mit großer Verspätung umgesetzt."
+ },
+ {
+  "id": 6986,
+  "de": "bedächtig",
+  "artikel": null,
+  "tr": "ölçülü, ağırdan alan, düşünerek davranan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Er wählte seine Worte bedächtig, um niemanden zu verletzen."
+ },
+ {
+  "id": 6987,
+  "de": "sich sträuben",
+  "artikel": null,
+  "tr": "direnmek, karşı koymak, yanaşmamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Viele Betriebe sträuben sich gegen die neuen Auflagen."
+ },
+ {
+  "id": 6988,
+  "de": "zurückschrecken",
+  "artikel": null,
+  "tr": "çekinmek, geri durmak, ürkmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Vor unbequemen Schlussfolgerungen schreckt die Autorin nicht zurück."
+ },
+ {
+  "id": 6989,
+  "de": "herabsetzen",
+  "artikel": null,
+  "tr": "küçük düşürmek, değerini azaltmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Niemand darf die Leistung anderer öffentlich herabsetzen."
+ },
+ {
+  "id": 6990,
+  "de": "sich fügen",
+  "artikel": null,
+  "tr": "boyun eğmek, uymak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Am Ende fügte er sich der Mehrheit, wenn auch widerwillig."
+ },
+ {
+  "id": 6991,
+  "de": "zaudern",
+  "artikel": null,
+  "tr": "duraksamak, ayak sürümek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Politik zaudert, während die Kosten weiter steigen."
+ },
+ {
+  "id": 6992,
+  "de": "absehen",
+  "artikel": null,
+  "tr": "vazgeçmek, göz ardı etmek, öngörmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Von einer Klage hat das Unternehmen vorerst abgesehen."
+ },
+ {
+  "id": 6993,
+  "de": "entgegnen",
+  "artikel": null,
+  "tr": "karşılık vermek, itiraz olarak söylemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Auf diesen Vorwurf entgegnete sie mit auffallender Ruhe."
+ },
+ {
+  "id": 6994,
+  "de": "anmuten",
+  "artikel": null,
+  "tr": "izlenimi vermek, gibi görünmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Vorschlag mutet auf den ersten Blick reichlich naiv an."
+ },
+ {
+  "id": 6995,
+  "de": "sich erweisen",
+  "artikel": null,
+  "tr": "çıkmak, olduğu anlaşılmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die anfängliche Skepsis erwies sich später als berechtigt."
+ },
+ {
+  "id": 6996,
+  "de": "überwiegen",
+  "artikel": null,
+  "tr": "ağır basmak, baskın gelmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "In der Diskussion überwogen am Ende die kritischen Stimmen."
+ },
+ {
+  "id": 6997,
+  "de": "vorherrschen",
+  "artikel": null,
+  "tr": "hâkim olmak, egemen olmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Lange Zeit herrschte in der Forschung eine ganz andere Auffassung vor."
+ },
+ {
+  "id": 6998,
+  "de": "innewohnen",
+  "artikel": null,
+  "tr": "içkin olmak, doğasında bulunmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Jeder Utopie wohnt ein Stück Selbsttäuschung inne."
+ },
+ {
+  "id": 6999,
+  "de": "verhehlen",
+  "artikel": null,
+  "tr": "gizlemek, saklamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er verhehlte seine Enttäuschung über das Ergebnis nicht."
+ },
+ {
+  "id": 7000,
+  "de": "erahnen",
+  "artikel": null,
+  "tr": "sezmek, hissetmek, kestirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Tragweite dieser Entscheidung lässt sich erst erahnen."
+ },
+ {
+  "id": 7001,
+  "de": "sich bewähren",
+  "artikel": null,
+  "tr": "kendini kanıtlamak, işe yaradığını göstermek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Verfahren hat sich auch unter schwierigen Bedingungen bewährt."
+ },
+ {
+  "id": 7002,
+  "de": "Hang",
+  "artikel": "der",
+  "tr": "düşkünlük, temayül",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Sein Hang zur Übertreibung schwächt sonst gute Argumente."
+ },
+ {
+  "id": 7003,
+  "de": "Gleichgültigkeit",
+  "artikel": "die",
+  "tr": "kayıtsızlık, umursamazlık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die größte Gefahr ist nicht der Widerspruch, sondern die Gleichgültigkeit."
+ },
+ {
+  "id": 7004,
+  "de": "Vehemenz",
+  "artikel": "die",
+  "tr": "şiddet, sertlik, hararet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mit unerwarteter Vehemenz wies er die Vorwürfe zurück."
+ },
+ {
+  "id": 7005,
+  "de": "Schattierung",
+  "artikel": "die",
+  "tr": "ince ayrım, tonlama, nüans",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Text kennt viele Schattierungen zwischen Zustimmung und Ablehnung."
+ },
+ {
+  "id": 7006,
+  "de": "Gesinnung",
+  "artikel": "die",
+  "tr": "zihniyet, dünya görüşü, tutum",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Über die politische Gesinnung des Autors sagt der Roman wenig."
+ },
+ {
+  "id": 7007,
+  "de": "Gleichmut",
+  "artikel": "der",
+  "tr": "sükûnet, istifini bozmama, dinginlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mit erstaunlichem Gleichmut nahm sie die Niederlage hin."
+ },
+ {
+  "id": 7008,
+  "de": "Abgeklärtheit",
+  "artikel": "die",
+  "tr": "olgunluk, pişkinlik, yaşanmışlıktan gelen dinginlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Abgeklärtheit des Alters ersetzt bisweilen den Ehrgeiz der Jugend."
+ },
+ {
+  "id": 7009,
+  "de": "Argwohn",
+  "artikel": "der",
+  "tr": "kuşku, şüphe, güvensizlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die plötzliche Kehrtwende weckte bei vielen Beobachtern Argwohn."
+ },
+ {
+  "id": 7010,
+  "de": "Überdruss",
+  "artikel": "der",
+  "tr": "bıkkınlık, usanç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Überdruss an leeren Versprechen wächst in der Bevölkerung."
+ },
+ {
+  "id": 7011,
+  "de": "Wehmut",
+  "artikel": "die",
+  "tr": "hüzün, buruk özlem",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mit leiser Wehmut blickte er auf die vergangenen Jahre zurück."
+ },
+ {
+  "id": 7012,
+  "de": "Aufrichtigkeit",
+  "artikel": "die",
+  "tr": "içtenlik, dürüstlük, samimiyet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "An seiner Aufrichtigkeit zweifelte im Saal niemand."
+ },
+ {
+  "id": 7013,
+  "de": "Laizismus",
+  "artikel": "der",
+  "tr": "laiklik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Laizismus verlangt eine strikte Trennung von Staat und Kirche."
+ },
+ {
+  "id": 7014,
+  "de": "Frömmigkeit",
+  "artikel": "die",
+  "tr": "dindarlık, sofuluk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihre stille Frömmigkeit war für Außenstehende kaum sichtbar."
+ },
+ {
+  "id": 7015,
+  "de": "Glaubensbekenntnis",
+  "artikel": "das",
+  "tr": "iman ikrarı, inanç bildirisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Gemeinde spricht das Glaubensbekenntnis am Ende des Gottesdienstes."
+ },
+ {
+  "id": 7016,
+  "de": "Konfession",
+  "artikel": "die",
+  "tr": "mezhep, itikat",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In dieser Stadt leben Menschen unterschiedlicher Konfessionen friedlich nebeneinander."
+ },
+ {
+  "id": 7017,
+  "de": "Gewissensfreiheit",
+  "artikel": "die",
+  "tr": "vicdan özgürlüğü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Verfassung schützt die Gewissensfreiheit jedes einzelnen Bürgers."
+ },
+ {
+  "id": 7018,
+  "de": "Religionsfreiheit",
+  "artikel": "die",
+  "tr": "din özgürlüğü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne Religionsfreiheit bleibt religiöse Vielfalt eine bloße Behauptung."
+ },
+ {
+  "id": 7019,
+  "de": "Dogma",
+  "artikel": "das",
+  "tr": "dogma, nas",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Er weigerte sich, ein überliefertes Dogma unkritisch zu übernehmen."
+ },
+ {
+  "id": 7020,
+  "de": "Orthodoxie",
+  "artikel": "die",
+  "tr": "ortodoksi, katı bağlılık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die strenge Orthodoxie ließ kaum Raum für abweichende Deutungen."
+ },
+ {
+  "id": 7021,
+  "de": "Häresie",
+  "artikel": "die",
+  "tr": "sapkınlık, heretiklik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Was früher als Häresie galt, wird heute nüchtern diskutiert."
+ },
+ {
+  "id": 7022,
+  "de": "Offenbarung",
+  "artikel": "die",
+  "tr": "vahiy, ifşa",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Schrift versteht sich selbst als Offenbarung göttlichen Willens."
+ },
+ {
+  "id": 7023,
+  "de": "Transzendenz",
+  "artikel": "die",
+  "tr": "aşkınlık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne den Bezug auf Transzendenz verliert der Begriff seinen Sinn."
+ },
+ {
+  "id": 7024,
+  "de": "Jenseits",
+  "artikel": "das",
+  "tr": "öte dünya, ahiret",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Vorstellungen vom Jenseits unterscheiden sich zwischen den Religionen erheblich."
+ },
+ {
+  "id": 7025,
+  "de": "Erlösung",
+  "artikel": "die",
+  "tr": "kurtuluş, selamet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Lehre verspricht Erlösung durch Umkehr und tätige Reue."
+ },
+ {
+  "id": 7026,
+  "de": "Gnade",
+  "artikel": "die",
+  "tr": "lütuf, merhamet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Nach dieser Auffassung ist Gnade nicht verdienbar, sondern geschenkt."
+ },
+ {
+  "id": 7027,
+  "de": "Buße",
+  "artikel": "die",
+  "tr": "tövbe, kefaret",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Buße galt als sichtbares Zeichen innerer Umkehr."
+ },
+ {
+  "id": 7028,
+  "de": "Askese",
+  "artikel": "die",
+  "tr": "çile, nefis terbiyesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Askese bedeutet hier bewussten Verzicht, nicht Verachtung des Körpers."
+ },
+ {
+  "id": 7029,
+  "de": "Mystik",
+  "artikel": "die",
+  "tr": "mistisizm, tasavvuf",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Mystik sucht die unmittelbare Erfahrung des Göttlichen."
+ },
+ {
+  "id": 7030,
+  "de": "Sakrament",
+  "artikel": "das",
+  "tr": "sakrament, kutsal ayin",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Taufe gilt in vielen Kirchen als grundlegendes Sakrament."
+ },
+ {
+  "id": 7031,
+  "de": "Liturgie",
+  "artikel": "die",
+  "tr": "ayin düzeni, litürji",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Liturgie folgt einer festen Ordnung von Gesang und Gebet."
+ },
+ {
+  "id": 7032,
+  "de": "Predigt",
+  "artikel": "die",
+  "tr": "vaaz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Predigt griff aktuelle gesellschaftliche Konflikte behutsam auf."
+ },
+ {
+  "id": 7033,
+  "de": "Seelsorge",
+  "artikel": "die",
+  "tr": "manevi rehberlik, ruhani danışmanlık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In Kliniken übernimmt die Seelsorge oft eine tröstende Aufgabe."
+ },
+ {
+  "id": 7034,
+  "de": "Geistlichkeit",
+  "artikel": "die",
+  "tr": "ruhban sınıfı, din adamları",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Geistlichkeit verlor im Zuge der Modernisierung erheblich an Autorität."
+ },
+ {
+  "id": 7035,
+  "de": "Klerus",
+  "artikel": "der",
+  "tr": "ruhban, din adamları sınıfı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Klerus wehrte sich lange gegen jede staatliche Aufsicht."
+ },
+ {
+  "id": 7036,
+  "de": "Wallfahrt",
+  "artikel": "die",
+  "tr": "hac yolculuğu, ziyaret",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jedes Frühjahr brechen Tausende zu einer Wallfahrt auf."
+ },
+ {
+  "id": 7037,
+  "de": "Fastenzeit",
+  "artikel": "die",
+  "tr": "oruç dönemi, perhiz zamanı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Während der Fastenzeit verzichten viele bewusst auf gewohnte Annehmlichkeiten."
+ },
+ {
+  "id": 7038,
+  "de": "Kirchenaustritt",
+  "artikel": "der",
+  "tr": "kiliseden ayrılma, üyelikten çıkma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Zahl der Kirchenaustritte ist in den letzten Jahren gestiegen."
+ },
+ {
+  "id": 7039,
+  "de": "Exegese",
+  "artikel": "die",
+  "tr": "metin şerhi, tefsir",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Exegese des Textes weicht von der herrschenden Lesart ab."
+ },
+ {
+  "id": 7040,
+  "de": "Fundamentalismus",
+  "artikel": "der",
+  "tr": "köktencilik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Fundamentalismus entsteht selten ohne das Gefühl kultureller Bedrohung."
+ },
+ {
+  "id": 7041,
+  "de": "Aberglaube",
+  "artikel": "der",
+  "tr": "batıl inanç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zwischen Aberglaube und gelebtem Volksglauben verläuft keine klare Grenze."
+ },
+ {
+  "id": 7042,
+  "de": "Spiritualität",
+  "artikel": "die",
+  "tr": "maneviyat, tinsellik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Viele suchen Spiritualität heute außerhalb der etablierten Institutionen."
+ },
+ {
+  "id": 7043,
+  "de": "Religionsgemeinschaft",
+  "artikel": "die",
+  "tr": "din cemaati, dinî topluluk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Staat behandelt alle Religionsgemeinschaften rechtlich gleich."
+ },
+ {
+  "id": 7044,
+  "de": "Agnostizismus",
+  "artikel": "der",
+  "tr": "agnostisizm, bilinemezcilik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Agnostizismus hält die Frage nach Gott für unentscheidbar."
+ },
+ {
+  "id": 7045,
+  "de": "Schöpfung",
+  "artikel": "die",
+  "tr": "yaratılış, kâinat",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Schöpfung wird hier als anvertrautes Gut verstanden."
+ },
+ {
+  "id": 7046,
+  "de": "Vorsehung",
+  "artikel": "die",
+  "tr": "ilahi takdir, kader",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "An eine lenkende Vorsehung glaubt heute kaum noch jemand."
+ }
+]

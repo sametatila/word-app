@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 4647,
+  "de": "desinfizieren",
+  "artikel": null,
+  "tr": "dezenfekte etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Vor jedem Eingriff werden die Hände gründlich desinfiziert."
+ },
+ {
+  "id": 4648,
+  "de": "sich bessern",
+  "artikel": null,
+  "tr": "iyileşmek, düzelmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ihr Husten hat sich nach dem Urlaub deutlich gebessert."
+ },
+ {
+  "id": 4649,
+  "de": "erkranken",
+  "artikel": null,
+  "tr": "hastalanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Jedes Jahr erkranken Tausende Menschen an dieser Infektion."
+ },
+ {
+  "id": 4650,
+  "de": "vorbeugen",
+  "artikel": null,
+  "tr": "önlemek, önlem almak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Mit Sport und guter Ernährung kann man vielen Krankheiten vorbeugen."
+ },
+ {
+  "id": 4651,
+  "de": "chronisch",
+  "artikel": null,
+  "tr": "kronik, süreğen",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Er lebt seit seiner Jugend mit einer chronischen Krankheit."
+ },
+ {
+  "id": 4652,
+  "de": "akut",
+  "artikel": null,
+  "tr": "akut, ivedi",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Bei akuten Schmerzen hilft nur der Notdienst am Wochenende."
+ },
+ {
+  "id": 4653,
+  "de": "ambulant",
+  "artikel": null,
+  "tr": "ayakta tedavi ile ilgili, poliklinik",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die meisten dieser Operationen werden heute ambulant durchgeführt."
+ },
+ {
+  "id": 4654,
+  "de": "stationär",
+  "artikel": null,
+  "tr": "yatarak tedavi ile ilgili",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach dem Sturz wurde sie zwei Wochen stationär aufgenommen."
+ },
+ {
+  "id": 4655,
+  "de": "rezeptpflichtig",
+  "artikel": null,
+  "tr": "reçeteye tabi",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Dieses starke Schlafmittel ist in Deutschland rezeptpflichtig."
+ },
+ {
+  "id": 4656,
+  "de": "psychisch",
+  "artikel": null,
+  "tr": "ruhsal, psikolojik",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Psychisch war das letzte Jahr für die Familie sehr anstrengend."
+ },
+ {
+  "id": 4657,
+  "de": "anfällig",
+  "artikel": null,
+  "tr": "hassas, yatkın",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Im Winter bin ich besonders anfällig für Erkältungen."
+ },
+ {
+  "id": 4658,
+  "de": "arbeitsunfähig",
+  "artikel": null,
+  "tr": "çalışamaz durumda, iş göremez",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig."
+ },
+ {
+  "id": 4659,
+  "de": "nüchtern",
+  "artikel": null,
+  "tr": "aç karnına, ayık",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Zur Blutabnahme müssen Sie morgen nüchtern erscheinen."
+ },
+ {
+  "id": 4660,
+  "de": "übertragbar",
+  "artikel": null,
+  "tr": "bulaşıcı, aktarılabilir",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar."
+ },
+ {
+  "id": 4661,
+  "de": "Fertigung",
+  "artikel": "die",
+  "tr": "imalat, üretim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Fertigung läuft seit Montag wieder im Zweischichtbetrieb."
+ },
+ {
+  "id": 4662,
+  "de": "Werkstoff",
+  "artikel": "der",
+  "tr": "malzeme, hammadde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für das Gehäuse haben wir einen leichteren Werkstoff gewählt."
+ },
+ {
+  "id": 4663,
+  "de": "Verschleiß",
+  "artikel": "der",
+  "tr": "aşınma, yıpranma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Verschleiß an den Lagern ist deutlich höher als erwartet."
+ },
+ {
+  "id": 4664,
+  "de": "Wartung",
+  "artikel": "die",
+  "tr": "bakım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Während der Wartung steht die gesamte Linie still."
+ },
+ {
+  "id": 4665,
+  "de": "Schweißnaht",
+  "artikel": "die",
+  "tr": "kaynak dikişi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Prüfer entdeckte einen feinen Riss in der Schweißnaht."
+ },
+ {
+  "id": 4666,
+  "de": "Schmierstoff",
+  "artikel": "der",
+  "tr": "yağlayıcı madde, madeni yağ",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei hohen Temperaturen versagt dieser Schmierstoff sehr schnell."
+ },
+ {
+  "id": 4667,
+  "de": "Legierung",
+  "artikel": "die",
+  "tr": "alaşım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die neue Legierung ist leichter und trotzdem sehr belastbar."
+ },
+ {
+  "id": 4668,
+  "de": "Vorrichtung",
+  "artikel": "die",
+  "tr": "tertibat, aparat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne diese Vorrichtung lässt sich das Bauteil kaum einspannen."
+ },
+ {
+  "id": 4669,
+  "de": "Baugruppe",
+  "artikel": "die",
+  "tr": "modül, montaj grubu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Jede Baugruppe wird vor dem Einbau einzeln getestet."
+ },
+ {
+  "id": 4670,
+  "de": "Bauteil",
+  "artikel": "das",
+  "tr": "parça, komponent",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das defekte Bauteil stammt aus einer älteren Serie."
+ },
+ {
+  "id": 4671,
+  "de": "Nacharbeit",
+  "artikel": "die",
+  "tr": "düzeltme işi, yeniden işleme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Nacharbeit kostet uns jeden Monat mehrere Tausend Euro."
+ },
+ {
+  "id": 4672,
+  "de": "Prüfstand",
+  "artikel": "der",
+  "tr": "test tezgâhı, deney düzeneği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Motor lief auf dem Prüfstand über vierzig Stunden."
+ },
+ {
+  "id": 4673,
+  "de": "Messgerät",
+  "artikel": "das",
+  "tr": "ölçüm aleti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Messgerät muss einmal im Jahr überprüft werden."
+ },
+ {
+  "id": 4674,
+  "de": "Toleranz",
+  "artikel": "die",
+  "tr": "tolerans, izin verilen sapma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Toleranz liegt bei zwei Zehntelmillimetern, nicht mehr."
+ },
+ {
+  "id": 4675,
+  "de": "Zulieferer",
+  "artikel": "der",
+  "tr": "tedarikçi, yan sanayi firması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Unser wichtigster Zulieferer sitzt keine dreißig Kilometer entfernt."
+ },
+ {
+  "id": 4676,
+  "de": "Lagerbestand",
+  "artikel": "der",
+  "tr": "stok, depo mevcudu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Lagerbestand reicht höchstens noch für zwei Wochen."
+ },
+ {
+  "id": 4677,
+  "de": "Gabelstapler",
+  "artikel": "der",
+  "tr": "forklift",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren."
+ },
+ {
+  "id": 4678,
+  "de": "Fließband",
+  "artikel": "das",
+  "tr": "montaj bandı, üretim bandı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am Fließband bleibt für jeden Handgriff nur eine Minute."
+ },
+ {
+  "id": 4679,
+  "de": "Frühschicht",
+  "artikel": "die",
+  "tr": "sabah vardiyası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Meine Frühschicht beginnt schon um halb sechs."
+ },
+ {
+  "id": 4680,
+  "de": "Durchlaufzeit",
+  "artikel": "die",
+  "tr": "üretim süresi, geçiş süresi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Durch die neue Software sank die Durchlaufzeit um ein Drittel."
+ },
+ {
+  "id": 4681,
+  "de": "Rohstoff",
+  "artikel": "der",
+  "tr": "hammadde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Preise für wichtige Rohstoffe sind erneut gestiegen."
+ },
+ {
+  "id": 4682,
+  "de": "Korrosion",
+  "artikel": "die",
+  "tr": "korozyon, paslanma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gegen Korrosion hilft nur eine ordentliche Schutzschicht."
+ },
+ {
+  "id": 4683,
+  "de": "Montage",
+  "artikel": "die",
+  "tr": "montaj, kurulum",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Montage der Anlage dauert voraussichtlich drei Tage."
+ },
+ {
+  "id": 4684,
+  "de": "Betriebsstätte",
+  "artikel": "die",
+  "tr": "işletme tesisi, üretim yeri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Unternehmen unterhält drei Betriebsstätten in Süddeutschland."
+ },
+ {
+  "id": 4685,
+  "de": "Dichtung",
+  "artikel": "die",
+  "tr": "conta, sızdırmazlık elemanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die poröse Dichtung war die Ursache für den Ölverlust."
+ },
+ {
+  "id": 4686,
+  "de": "Steuerung",
+  "artikel": "die",
+  "tr": "kumanda, kontrol sistemi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Steuerung der Presse wird nächstes Jahr komplett erneuert."
+ },
+ {
+  "id": 4687,
+  "de": "Betriebsanleitung",
+  "artikel": "die",
+  "tr": "kullanım kılavuzu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Lesen Sie die Betriebsanleitung, bevor Sie die Maschine einschalten."
+ },
+ {
+  "id": 4688,
+  "de": "Gefahrstoff",
+  "artikel": "der",
+  "tr": "tehlikeli madde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gefahrstoffe werden in einem separaten Raum aufbewahrt."
+ },
+ {
+  "id": 4689,
+  "de": "Wirkungsgrad",
+  "artikel": "der",
+  "tr": "verim, verimlilik oranı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Wirkungsgrad des alten Kessels liegt unter sechzig Prozent."
+ },
+ {
+  "id": 4690,
+  "de": "Prototyp",
+  "artikel": "der",
+  "tr": "prototip, ilk örnek",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der erste Prototyp wird im Herbst der Geschäftsleitung vorgestellt."
+ },
+ {
+  "id": 4691,
+  "de": "Ersatzteil",
+  "artikel": "das",
+  "tr": "yedek parça",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für dieses Modell gibt es kaum noch passende Ersatzteile."
+ },
+ {
+  "id": 4692,
+  "de": "Rüstzeit",
+  "artikel": "die",
+  "tr": "hazırlık süresi, ayar süresi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Kürzere Rüstzeiten machen auch kleine Serien wieder rentabel."
+ },
+ {
+  "id": 4693,
+  "de": "Stückzahl",
+  "artikel": "die",
+  "tr": "adet, üretim adedi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich."
+ },
+ {
+  "id": 4694,
+  "de": "Fehlerquote",
+  "artikel": "die",
+  "tr": "hata oranı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Schulung sank die Fehlerquote auf unter ein Prozent."
+ },
+ {
+  "id": 4695,
+  "de": "Arbeitsgang",
+  "artikel": "der",
+  "tr": "iş adımı, işlem aşaması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Dieser Arbeitsgang lässt sich mit dem nächsten zusammenlegen."
+ },
+ {
+  "id": 4696,
+  "de": "Zertifizierung",
+  "artikel": "die",
+  "tr": "belgelendirme, sertifikasyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Zertifizierung dürfen wir gar nicht erst anbieten."
+ },
+ {
+  "id": 4697,
+  "de": "Abnahme",
+  "artikel": "die",
+  "tr": "kabul, teslim kontrolü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt."
+ },
+ {
+  "id": 4698,
+  "de": "Reklamation",
+  "artikel": "die",
+  "tr": "şikâyet, iade talebi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Reklamation betraf eine ganze Charge fehlerhafter Teile."
+ },
+ {
+  "id": 4699,
+  "de": "Ausfall",
+  "artikel": "der",
+  "tr": "arıza, devre dışı kalma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm."
+ },
+ {
+  "id": 4700,
+  "de": "Gewährleistung",
+  "artikel": "die",
+  "tr": "garanti, ayıba karşı sorumluluk",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum."
+ },
+ {
+  "id": 4701,
+  "de": "Ausbeute",
+  "artikel": "die",
+  "tr": "verim, elde edilen miktar",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter."
+ },
+ {
+  "id": 4702,
+  "de": "Werkbank",
+  "artikel": "die",
+  "tr": "tezgâh, çalışma tezgâhı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile durcheinander."
+ },
+ {
+  "id": 4703,
+  "de": "fräsen",
+  "artikel": null,
+  "tr": "frezelemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Nut wird in einem Durchgang sauber gefräst."
+ },
+ {
+  "id": 4704,
+  "de": "bohren",
+  "artikel": null,
+  "tr": "delmek, delik açmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bevor du bohrst, prüfe bitte noch einmal die Maße."
+ },
+ {
+  "id": 4705,
+  "de": "schleifen",
+  "artikel": null,
+  "tr": "zımparalamak, taşlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Kanten müssen noch geschliffen werden, sonst verletzt sich jemand."
+ },
+ {
+  "id": 4706,
+  "de": "schmieden",
+  "artikel": null,
+  "tr": "dövmek, demir dövmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Früher wurden solche Beschläge von Hand geschmiedet."
+ },
+ {
+  "id": 4707,
+  "de": "einbauen",
+  "artikel": null,
+  "tr": "monte etmek, yerleştirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Techniker baut morgen einen stärkeren Motor ein."
+ },
+ {
+  "id": 4708,
+  "de": "nachrüsten",
+  "artikel": null,
+  "tr": "sonradan takmak, güncelleyip donatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die alten Pressen wurden mit einer Schutzeinrichtung nachgerüstet."
+ },
+ {
+  "id": 4709,
+  "de": "justieren",
+  "artikel": null,
+  "tr": "ayarlamak, ince ayar yapmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Anschlag muss nach jedem Werkzeugwechsel neu justiert werden."
+ },
+ {
+  "id": 4710,
+  "de": "kalibrieren",
+  "artikel": null,
+  "tr": "kalibre etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Waage wird jedes Jahr von einem externen Institut kalibriert."
+ },
+ {
+  "id": 4711,
+  "de": "sich abnutzen",
+  "artikel": null,
+  "tr": "aşınmak, yıpranmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Schneide nutzt sich bei hartem Material schnell ab."
+ },
+ {
+  "id": 4712,
+  "de": "verladen",
+  "artikel": null,
+  "tr": "yüklemek, araca yüklemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Container werden noch heute Abend auf Lastwagen verladen."
+ },
+ {
+  "id": 4713,
+  "de": "ausliefern",
+  "artikel": null,
+  "tr": "teslim etmek, sevk etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Maschinen werden erst nach der Endprüfung ausgeliefert."
+ },
+ {
+  "id": 4714,
+  "de": "zuschneiden",
+  "artikel": null,
+  "tr": "kesmek, ölçüye göre kesmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Blech wird per Laser exakt auf Maß zugeschnitten."
+ },
+ {
+  "id": 4715,
+  "de": "stanzen",
+  "artikel": null,
+  "tr": "presle delmek, kalıpla kesmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt."
+ },
+ {
+  "id": 4716,
+  "de": "härten",
+  "artikel": null,
+  "tr": "sertleştirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Zahnräder werden anschließend im Ofen gehärtet."
+ },
+ {
+  "id": 4717,
+  "de": "lackieren",
+  "artikel": null,
+  "tr": "boyamak, cilalamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Rahmen werden in zwei Schichten pulverbeschichtet lackiert."
+ },
+ {
+  "id": 4718,
+  "de": "beschichten",
+  "artikel": null,
+  "tr": "kaplamak, kaplama yapmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Oberfläche wird mit einer dünnen Keramikschicht beschichtet."
+ },
+ {
+  "id": 4719,
+  "de": "stilllegen",
+  "artikel": null,
+  "tr": "faaliyeti durdurmak, kapatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Werk wurde nach vierzig Jahren endgültig stillgelegt."
+ },
+ {
+  "id": 4720,
+  "de": "festziehen",
+  "artikel": null,
+  "tr": "sıkmak, sıkıca çekmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ziehen Sie die Schrauben über Kreuz gleichmäßig fest."
+ },
+ {
+  "id": 4721,
+  "de": "vermessen",
+  "artikel": null,
+  "tr": "ölçmek, ölçümünü yapmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Jedes zehnte Werkstück wird im Labor genau vermessen."
+ },
+ {
+  "id": 4722,
+  "de": "drosseln",
+  "artikel": null,
+  "tr": "kısmak, azaltmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wegen der hohen Energiepreise hat der Betrieb die Produktion gedrosselt."
+ },
+ {
+  "id": 4723,
+  "de": "serienreif",
+  "artikel": null,
+  "tr": "seri üretime hazır",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Verfahren ist vielversprechend, aber noch nicht serienreif."
+ },
+ {
+  "id": 4724,
+  "de": "betriebsbereit",
+  "artikel": null,
+  "tr": "çalışmaya hazır, işletmeye hazır",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach der Reparatur ist die Anlage wieder betriebsbereit."
+ },
+ {
+  "id": 4725,
+  "de": "witterungsbeständig",
+  "artikel": null,
+  "tr": "hava koşullarına dayanıklı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material."
+ },
+ {
+  "id": 4726,
+  "de": "rostfrei",
+  "artikel": null,
+  "tr": "paslanmaz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Behälter bestehen komplett aus rostfreiem Stahl."
+ },
+ {
+  "id": 4727,
+  "de": "fachgerecht",
+  "artikel": null,
+  "tr": "usulüne uygun, tekniğine uygun",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet."
+ },
+ {
+  "id": 4728,
+  "de": "handwerklich",
+  "artikel": null,
+  "tr": "el işçiliğine dayalı, zanaatla ilgili",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Tür ist handwerklich sauber gearbeitet und hält Jahrzehnte."
+ },
+ {
+  "id": 4729,
+  "de": "maschinell",
+  "artikel": null,
+  "tr": "makineyle, makine ile yapılan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Diese Naht wird maschinell gesetzt, nicht mehr von Hand."
+ },
+ {
+  "id": 4730,
+  "de": "störanfällig",
+  "artikel": null,
+  "tr": "arızaya yatkın",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die ältere Steuerung gilt als besonders störanfällig."
+ },
+ {
+  "id": 4731,
+  "de": "spröde",
+  "artikel": null,
+  "tr": "kırılgan, gevrek",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht."
+ },
+ {
+  "id": 4732,
+  "de": "Ausdauer",
+  "artikel": "die",
+  "tr": "dayanıklılık, sebat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mit regelmäßigem Training verbessert sich deine Ausdauer erstaunlich schnell."
+ },
+ {
+  "id": 4733,
+  "de": "Beweglichkeit",
+  "artikel": "die",
+  "tr": "esneklik, hareket kabiliyeti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab."
+ },
+ {
+  "id": 4734,
+  "de": "Muskelkater",
+  "artikel": "der",
+  "tr": "kas ağrısı (antrenman sonrası)",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem ersten Lauftraining hatte ich drei Tage Muskelkater."
+ },
+ {
+  "id": 4735,
+  "de": "Entlastung",
+  "artikel": "die",
+  "tr": "yükün hafifletilmesi, rahatlama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens."
+ },
+ {
+  "id": 4736,
+  "de": "Regeneration",
+  "artikel": "die",
+  "tr": "toparlanma, yenilenme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne ausreichende Regeneration bringt hartes Training gar nichts."
+ },
+ {
+  "id": 4737,
+  "de": "Gleichgewicht",
+  "artikel": "das",
+  "tr": "denge",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem schmalen Balken verlor sie kurz das Gleichgewicht."
+ },
+ {
+  "id": 4738,
+  "de": "Durchblutung",
+  "artikel": "die",
+  "tr": "kan dolaşımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine."
+ },
+ {
+  "id": 4739,
+  "de": "Atmung",
+  "artikel": "die",
+  "tr": "nefes alıp verme, solunum",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung."
+ },
+ {
+  "id": 4740,
+  "de": "Anspannung",
+  "artikel": "die",
+  "tr": "gerginlik, gerilim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Prüfung fiel die ganze Anspannung endlich von ihm ab."
+ },
+ {
+  "id": 4741,
+  "de": "Gelenk",
+  "artikel": "das",
+  "tr": "eklem",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beim Joggen auf Asphalt werden die Gelenke stark beansprucht."
+ },
+ {
+  "id": 4742,
+  "de": "Sehne",
+  "artikel": "die",
+  "tr": "kiriş, tendon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt."
+ },
+ {
+  "id": 4743,
+  "de": "Muskulatur",
+  "artikel": "die",
+  "tr": "kas yapısı, kaslar",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine kräftige Muskulatur stützt die Wirbelsäule im Alltag."
+ },
+ {
+  "id": 4744,
+  "de": "Wirbelsäule",
+  "artikel": "die",
+  "tr": "omurga",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben."
+ },
+ {
+  "id": 4745,
+  "de": "Abwehrkräfte",
+  "artikel": "die",
+  "tr": "vücut direnci, savunma gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Frische Luft und Bewegung stärken die Abwehrkräfte im Winter."
+ },
+ {
+  "id": 4746,
+  "de": "Essgewohnheit",
+  "artikel": "die",
+  "tr": "beslenme alışkanlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Alte Essgewohnheiten lassen sich nur mit viel Geduld ändern."
+ },
+ {
+  "id": 4747,
+  "de": "Verdauung",
+  "artikel": "die",
+  "tr": "sindirim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem üppigen Essen brauchte seine Verdauung eine Weile."
+ },
+ {
+  "id": 4748,
+  "de": "Heißhunger",
+  "artikel": "der",
+  "tr": "ani açlık krizi, kurt gibi acıkma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am späten Abend überfällt mich oft der Heißhunger auf Süßes."
+ },
+ {
+  "id": 4749,
+  "de": "Sättigung",
+  "artikel": "die",
+  "tr": "doyma, tokluk",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Gefühl der Sättigung setzt erst nach zwanzig Minuten ein."
+ },
+ {
+  "id": 4750,
+  "de": "Flüssigkeitszufuhr",
+  "artikel": "die",
+  "tr": "sıvı alımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "An heißen Tagen ist eine ausreichende Flüssigkeitszufuhr besonders wichtig."
+ },
+ {
+  "id": 4751,
+  "de": "Genussmittel",
+  "artikel": "das",
+  "tr": "keyif verici madde (kahve, alkol, sigara)",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung."
+ },
+ {
+  "id": 4752,
+  "de": "Abhängigkeit",
+  "artikel": "die",
+  "tr": "bağımlılık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Übergang vom Genuss zur Abhängigkeit verläuft oft unbemerkt."
+ },
+ {
+  "id": 4753,
+  "de": "Biorhythmus",
+  "artikel": "der",
+  "tr": "biyolojik ritim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nachtschichten bringen den Biorhythmus komplett durcheinander."
+ },
+ {
+  "id": 4754,
+  "de": "Nickerchen",
+  "artikel": "das",
+  "tr": "kısa uyku, şekerleme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach."
+ },
+ {
+  "id": 4755,
+  "de": "Leistungsfähigkeit",
+  "artikel": "die",
+  "tr": "performans, verim gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen."
+ },
+ {
+  "id": 4756,
+  "de": "Überlastung",
+  "artikel": "die",
+  "tr": "aşırı yüklenme, aşırı zorlanma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung."
+ },
+ {
+  "id": 4757,
+  "de": "Vorsorge",
+  "artikel": "die",
+  "tr": "koruyucu bakım, önlem",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zur Vorsorge geht sie einmal im Jahr zum Zahnarzt."
+ },
+ {
+  "id": 4758,
+  "de": "Trainingsplan",
+  "artikel": "der",
+  "tr": "antrenman programı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sein Trainingsplan sieht drei Einheiten pro Woche vor."
+ },
+ {
+  "id": 4759,
+  "de": "Zerrung",
+  "artikel": "die",
+  "tr": "kas zorlanması, incinme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung."
+ },
+ {
+  "id": 4760,
+  "de": "Prellung",
+  "artikel": "die",
+  "tr": "berelenme, ezik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Sturz endete zum Glück nur mit einer Prellung."
+ },
+ {
+  "id": 4761,
+  "de": "Heilung",
+  "artikel": "die",
+  "tr": "iyileşme, şifa",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Heilung des Bruchs dauerte länger als erwartet."
+ },
+ {
+  "id": 4762,
+  "de": "Auszeit",
+  "artikel": "die",
+  "tr": "mola, ara verme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit."
+ },
+ {
+  "id": 4763,
+  "de": "Achtsamkeit",
+  "artikel": "die",
+  "tr": "farkındalık, dikkatli olma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht."
+ },
+ {
+  "id": 4764,
+  "de": "Körperhaltung",
+  "artikel": "die",
+  "tr": "duruş, vücut duruşu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen."
+ },
+ {
+  "id": 4765,
+  "de": "Körpergefühl",
+  "artikel": "das",
+  "tr": "beden algısı, beden hissi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Tanzen hat ihr ein ganz neues Körpergefühl gegeben."
+ },
+ {
+  "id": 4766,
+  "de": "Ausgleich",
+  "artikel": "der",
+  "tr": "denge sağlama, telafi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob."
+ },
+ {
+  "id": 4767,
+  "de": "Nachtruhe",
+  "artikel": "die",
+  "tr": "gece uykusu, gece dinlenmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Lärm der Nachbarn stört regelmäßig meine Nachtruhe."
+ },
+ {
+  "id": 4768,
+  "de": "Tiefschlaf",
+  "artikel": "der",
+  "tr": "derin uyku",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Tiefschlaf erholt sich der Körper am gründlichsten."
+ },
+ {
+  "id": 4769,
+  "de": "Selbstdisziplin",
+  "artikel": "die",
+  "tr": "öz disiplin",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Frühsport verlangt am Anfang eine Menge Selbstdisziplin."
+ },
+ {
+  "id": 4770,
+  "de": "sich dehnen",
+  "artikel": null,
+  "tr": "esnemek, germe hareketi yapmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach dem Laufen solltest du dich gründlich dehnen."
+ },
+ {
+  "id": 4771,
+  "de": "sich verausgaben",
+  "artikel": null,
+  "tr": "kendini tüketmek, gücünü aşırı harcamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Er hat sich im ersten Kilometer völlig verausgabt."
+ },
+ {
+  "id": 4772,
+  "de": "ermüden",
+  "artikel": null,
+  "tr": "yorulmak, yormak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist."
+ },
+ {
+  "id": 4773,
+  "de": "sich abgewöhnen",
+  "artikel": null,
+  "tr": "bir alışkanlığı bırakmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt."
+ },
+ {
+  "id": 4774,
+  "de": "durchschlafen",
+  "artikel": null,
+  "tr": "kesintisiz uyumak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Seit Wochen kann sie nachts nicht mehr durchschlafen."
+ },
+ {
+  "id": 4775,
+  "de": "stärken",
+  "artikel": null,
+  "tr": "güçlendirmek, kuvvetlendirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Diese Übung stärkt vor allem den unteren Rücken."
+ },
+ {
+  "id": 4776,
+  "de": "verkrampfen",
+  "artikel": null,
+  "tr": "kasılmak, kramp girmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Beim Schwimmen ist ihm plötzlich die Wade verkrampft."
+ },
+ {
+  "id": 4777,
+  "de": "sich aufwärmen",
+  "artikel": null,
+  "tr": "ısınmak (spor öncesi)",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Vor dem Spiel wärmt sich die Mannschaft zwanzig Minuten auf."
+ },
+ {
+  "id": 4778,
+  "de": "zusammenbrechen",
+  "artikel": null,
+  "tr": "çökmek, yığılmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Kurz vor dem Ziel brach der Läufer erschöpft zusammen."
+ },
+ {
+  "id": 4779,
+  "de": "zügeln",
+  "artikel": null,
+  "tr": "dizginlemek, frenlemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Beim Buffet muss ich meinen Appetit wirklich zügeln."
+ },
+ {
+  "id": 4780,
+  "de": "unterdrücken",
+  "artikel": null,
+  "tr": "bastırmak, tutmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Im Meeting konnte er ein Gähnen kaum unterdrücken."
+ },
+ {
+  "id": 4781,
+  "de": "sich aufraffen",
+  "artikel": null,
+  "tr": "kendini toparlayıp harekete geçmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Abends kann ich mich kaum noch zum Sport aufraffen."
+ },
+ {
+  "id": 4782,
+  "de": "durchhalten",
+  "artikel": null,
+  "tr": "dayanmak, sürdürmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die letzten zwei Kilometer hat sie tapfer durchgehalten."
+ },
+ {
+  "id": 4783,
+  "de": "umstellen",
+  "artikel": null,
+  "tr": "değiştirmek, düzenini değiştirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt."
+ },
+ {
+  "id": 4784,
+  "de": "meiden",
+  "artikel": null,
+  "tr": "kaçınmak, uzak durmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Seit der Diät meidet sie Zucker fast vollständig."
+ },
+ {
+  "id": 4785,
+  "de": "sich gönnen",
+  "artikel": null,
+  "tr": "kendine tanımak, kendine izin vermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Am Wochenende gönnt er sich eine lange Mittagspause."
+ },
+ {
+  "id": 4786,
+  "de": "dösen",
+  "artikel": null,
+  "tr": "uyuklamak, hafif uyuklamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Im Zug döste ich zwei Stunden vor mich hin."
+ },
+ {
+  "id": 4787,
+  "de": "ankurbeln",
+  "artikel": null,
+  "tr": "hızlandırmak, canlandırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an."
+ },
+ {
+  "id": 4788,
+  "de": "humpeln",
+  "artikel": null,
+  "tr": "topallamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach dem Sturz humpelte er den ganzen Weg nach Hause."
+ },
+ {
+  "id": 4789,
+  "de": "ausgeruht",
+  "artikel": null,
+  "tr": "dinlenmiş, dinç",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht."
+ },
+ {
+  "id": 4790,
+  "de": "träge",
+  "artikel": null,
+  "tr": "ağır, uyuşuk, hantal",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach dem schweren Essen fühlte ich mich richtig träge."
+ },
+ {
+  "id": 4791,
+  "de": "munter",
+  "artikel": null,
+  "tr": "zinde, neşeli, uyanık",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach zwei Tassen Kaffee war er wieder munter."
+ },
+ {
+  "id": 4792,
+  "de": "ausgewogen",
+  "artikel": null,
+  "tr": "dengeli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Eine ausgewogene Ernährung ist wichtiger als jede Diät."
+ },
+ {
+  "id": 4793,
+  "de": "seelisch",
+  "artikel": null,
+  "tr": "ruhsal, manevi",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Dauerstress belastet den Menschen körperlich und seelisch."
+ },
+ {
+  "id": 4794,
+  "de": "ungesund",
+  "artikel": null,
+  "tr": "sağlıksız",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "So wenig zu schlafen ist auf Dauer ziemlich ungesund."
+ },
+ {
+  "id": 4795,
+  "de": "wohltuend",
+  "artikel": null,
+  "tr": "iyi gelen, rahatlatıcı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Ein warmes Bad ist nach einem langen Tag wohltuend."
+ },
+ {
+  "id": 4796,
+  "de": "aufrecht",
+  "artikel": null,
+  "tr": "dik (duruş)",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Versuch, beim Tippen aufrecht auf dem Stuhl zu sitzen."
+ },
+ {
+  "id": 4797,
+  "de": "maßvoll",
+  "artikel": null,
+  "tr": "ölçülü, aşırıya kaçmayan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Er trinkt Alkohol nur maßvoll und selten."
+ },
+ {
+  "id": 4798,
+  "de": "Kaufvertrag",
+  "artikel": "der",
+  "tr": "satış sözleşmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Mit dem Klick auf den Button kommt ein Kaufvertrag zustande."
+ },
+ {
+  "id": 4799,
+  "de": "Widerruf",
+  "artikel": "der",
+  "tr": "cayma, geri alma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden."
+ },
+ {
+  "id": 4800,
+  "de": "Rückerstattung",
+  "artikel": "die",
+  "tr": "geri ödeme, iade",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Rückerstattung des Kaufpreises dauerte fast drei Wochen."
+ },
+ {
+  "id": 4801,
+  "de": "Kaufbeleg",
+  "artikel": "der",
+  "tr": "satın alma belgesi, fiş",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Kaufbeleg nimmt der Händler die Ware nicht zurück."
+ },
+ {
+  "id": 4802,
+  "de": "Preisnachlass",
+  "artikel": "der",
+  "tr": "fiyat indirimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen des Kratzers gewährte uns der Verkäufer einen Preisnachlass."
+ },
+ {
+  "id": 4803,
+  "de": "Dienstleister",
+  "artikel": "der",
+  "tr": "hizmet sağlayıcı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Dienstleister haftet für Schäden, die seine Mitarbeiter verursachen."
+ },
+ {
+  "id": 4804,
+  "de": "Kundendienst",
+  "artikel": "der",
+  "tr": "müşteri hizmetleri, teknik servis",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Kundendienst war stundenlang telefonisch nicht zu erreichen."
+ },
+ {
+  "id": 4805,
+  "de": "Schlichtungsstelle",
+  "artikel": "die",
+  "tr": "uzlaştırma kurulu, hakem heyeti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter."
+ },
+ {
+  "id": 4806,
+  "de": "Verbraucherzentrale",
+  "artikel": "die",
+  "tr": "tüketici danışma merkezi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Verbraucherzentrale warnt vor unseriösen Anrufen angeblicher Gewinnspiele."
+ },
+ {
+  "id": 4807,
+  "de": "Preisvergleich",
+  "artikel": "der",
+  "tr": "fiyat karşılaştırması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro."
+ },
+ {
+  "id": 4808,
+  "de": "Versandkosten",
+  "artikel": "die",
+  "tr": "kargo ücreti, gönderim masrafı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten."
+ },
+ {
+  "id": 4809,
+  "de": "Gutschrift",
+  "artikel": "die",
+  "tr": "alacak kaydı, hesaba geçirme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro."
+ },
+ {
+  "id": 4810,
+  "de": "Gutschein",
+  "artikel": "der",
+  "tr": "hediye çeki, kupon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Gutschein ist drei Jahre lang in allen Filialen gültig."
+ },
+ {
+  "id": 4811,
+  "de": "Haltbarkeit",
+  "artikel": "die",
+  "tr": "dayanıklılık, raf ömrü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Haltbarkeit des Produkts steht klein auf der Rückseite."
+ },
+ {
+  "id": 4812,
+  "de": "Sonderangebot",
+  "artikel": "das",
+  "tr": "özel teklif, kampanyalı ürün",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Sonderangebot gilt nur solange der Vorrat reicht."
+ },
+ {
+  "id": 4813,
+  "de": "Kundenbindung",
+  "artikel": "die",
+  "tr": "müşteri bağlılığı sağlama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung."
+ },
+ {
+  "id": 4814,
+  "de": "Tarif",
+  "artikel": "der",
+  "tr": "tarife, ücret planı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wir haben in einen günstigeren Tarif ohne Mindestlaufzeit gewechselt."
+ },
+ {
+  "id": 4815,
+  "de": "Grundgebühr",
+  "artikel": "die",
+  "tr": "sabit ücret, abonelik bedeli",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neben der Grundgebühr zahlen Sie für jede Minute extra."
+ },
+ {
+  "id": 4816,
+  "de": "Kulanz",
+  "artikel": "die",
+  "tr": "iyi niyet gösterme, esneklik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenfrei."
+ },
+ {
+  "id": 4817,
+  "de": "Versicherungsschutz",
+  "artikel": "der",
+  "tr": "sigorta teminatı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Versicherungsschutz erlischt, wenn Sie die Prämie nicht zahlen."
+ },
+ {
+  "id": 4818,
+  "de": "Auftraggeber",
+  "artikel": "der",
+  "tr": "iş veren taraf, sipariş veren",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Auftraggeber muss die Arbeiten innerhalb einer Woche abnehmen."
+ },
+ {
+  "id": 4819,
+  "de": "Ansprechpartner",
+  "artikel": "der",
+  "tr": "muhatap, ilgili kişi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für Beschwerden ist Frau Krüger die zuständige Ansprechpartnerin."
+ },
+ {
+  "id": 4820,
+  "de": "Filiale",
+  "artikel": "die",
+  "tr": "şube",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Online gekaufte Kleidung können Sie in jeder Filiale zurückgeben."
+ },
+ {
+  "id": 4821,
+  "de": "Einzelhandel",
+  "artikel": "der",
+  "tr": "perakende ticaret",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der stationäre Einzelhandel leidet seit Jahren unter dem Onlinegeschäft."
+ },
+ {
+  "id": 4822,
+  "de": "Warenkorb",
+  "artikel": "der",
+  "tr": "alışveriş sepeti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Kunden brechen den Kauf mit vollem Warenkorb ab."
+ },
+ {
+  "id": 4823,
+  "de": "Sortiment",
+  "artikel": "das",
+  "tr": "ürün yelpazesi, çeşit",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Discounter hat sein Sortiment um regionale Produkte erweitert."
+ },
+ {
+  "id": 4824,
+  "de": "Nutzungsbedingungen",
+  "artikel": "die",
+  "tr": "kullanım koşulları",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Kaum jemand liest die Nutzungsbedingungen vor der Anmeldung durch."
+ },
+ {
+  "id": 4825,
+  "de": "Vertragspartner",
+  "artikel": "der",
+  "tr": "sözleşme tarafı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ihr Vertragspartner ist nicht der Hersteller, sondern der Händler."
+ },
+ {
+  "id": 4826,
+  "de": "Rückgaberecht",
+  "artikel": "das",
+  "tr": "iade hakkı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Laden besteht kein gesetzliches Rückgaberecht für einwandfreie Ware."
+ },
+ {
+  "id": 4827,
+  "de": "Rücktritt",
+  "artikel": "der",
+  "tr": "sözleşmeden dönme, vazgeçme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Rücktritt vom Vertrag kostet je nach Zeitpunkt unterschiedlich viel."
+ },
+ {
+  "id": 4828,
+  "de": "Treueprogramm",
+  "artikel": "das",
+  "tr": "sadakat programı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Treueprogramm sammeln Kunden Punkte für spätere Einkäufe."
+ },
+ {
+  "id": 4829,
+  "de": "reklamieren",
+  "artikel": null,
+  "tr": "şikâyet etmek, arızalı ürünü bildirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ich habe die defekte Kaffeemaschine sofort beim Händler reklamiert."
+ },
+ {
+  "id": 4830,
+  "de": "nachbessern",
+  "artikel": null,
+  "tr": "düzeltmek, sonradan iyileştirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Handwerker musste die schiefe Fliesenreihe kostenlos nachbessern."
+ },
+ {
+  "id": 4831,
+  "de": "mahnen",
+  "artikel": null,
+  "tr": "ihtar etmek, uyarı göndermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Verlag mahnte den Kunden wegen zweier offener Beträge."
+ },
+ {
+  "id": 4832,
+  "de": "abraten",
+  "artikel": null,
+  "tr": "vazgeçirmeye çalışmak, tavsiye etmemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab."
+ },
+ {
+  "id": 4833,
+  "de": "einlösen",
+  "artikel": null,
+  "tr": "bozdurmak, kullanmak, yerine getirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Den Gutschein kann man auch in mehreren Teilbeträgen einlösen."
+ },
+ {
+  "id": 4834,
+  "de": "verpflichten",
+  "artikel": null,
+  "tr": "yükümlü kılmak, zorunda bırakmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Gesetz verpflichtet Händler zu einer verständlichen Preisauszeichnung."
+ },
+ {
+  "id": 4835,
+  "de": "täuschen",
+  "artikel": null,
+  "tr": "aldatmak, yanıltmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Mit der halb leeren Packung täuscht der Hersteller die Käufer."
+ },
+ {
+  "id": 4836,
+  "de": "beheben",
+  "artikel": null,
+  "tr": "gidermek, ortadan kaldırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Techniker konnte die Störung erst nach zwei Besuchen beheben."
+ },
+ {
+  "id": 4837,
+  "de": "werben",
+  "artikel": null,
+  "tr": "reklam yapmak, tanıtmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Kette wirbt seit Wochen mit angeblich unschlagbaren Preisen."
+ },
+ {
+  "id": 4838,
+  "de": "zusichern",
+  "artikel": null,
+  "tr": "taahhüt etmek, güvence vermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert."
+ },
+ {
+  "id": 4839,
+  "de": "abrechnen",
+  "artikel": null,
+  "tr": "hesabı kapatmak, faturalandırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet."
+ },
+ {
+  "id": 4840,
+  "de": "zurücksenden",
+  "artikel": null,
+  "tr": "geri göndermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bitte senden Sie die Ware in der Originalverpackung zurück."
+ },
+ {
+  "id": 4841,
+  "de": "anpreisen",
+  "artikel": null,
+  "tr": "övmek, pazarlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Im Fernsehen wird das Mittel als Wunderkur angepriesen."
+ },
+ {
+  "id": 4842,
+  "de": "kostenpflichtig",
+  "artikel": null,
+  "tr": "ücretli, ücrete tabi",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig."
+ },
+ {
+  "id": 4843,
+  "de": "unverbindlich",
+  "artikel": null,
+  "tr": "bağlayıcı olmayan, taahhütsüz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Lassen Sie sich zunächst unverbindlich ein Angebot erstellen."
+ },
+ {
+  "id": 4844,
+  "de": "irreführend",
+  "artikel": null,
+  "tr": "yanıltıcı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Gericht hielt die Bezeichnung für irreführend und verbot sie."
+ },
+ {
+  "id": 4845,
+  "de": "hochwertig",
+  "artikel": null,
+  "tr": "kaliteli, nitelikli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für hochwertige Materialien zahlen viele Kunden gern etwas mehr."
+ },
+ {
+  "id": 4846,
+  "de": "überteuert",
+  "artikel": null,
+  "tr": "fahiş fiyatlı, aşırı pahalı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Ersatzteile des Herstellers sind im Vergleich deutlich überteuert."
+ }
+]

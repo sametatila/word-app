@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 6447,
+  "de": "Kriminalitätsfurcht",
+  "artikel": "die",
+  "tr": "suç korkusu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kriminalitätsfurcht älterer Menschen übersteigt ihr tatsächliches Risiko."
+ },
+ {
+  "id": 6448,
+  "de": "Verrohung",
+  "artikel": "die",
+  "tr": "kabalaşma, vahşileşme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Manche beklagen eine allgemeine Verrohung des öffentlichen Umgangs."
+ },
+ {
+  "id": 6449,
+  "de": "einsperren",
+  "artikel": null,
+  "tr": "hapsetmek, kapatmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer Menschen jahrelang einsperrt, muss auch an ihre Rückkehr denken."
+ },
+ {
+  "id": 6450,
+  "de": "büßen",
+  "artikel": null,
+  "tr": "bedelini ödemek, cezasını çekmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er musste für einen einzigen Abend jahrelang büßen."
+ },
+ {
+  "id": 6451,
+  "de": "abgleiten",
+  "artikel": null,
+  "tr": "kaymak, sürüklenmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Nach dem Jobverlust glitt er allmählich in die Illegalität ab."
+ },
+ {
+  "id": 6452,
+  "de": "straucheln",
+  "artikel": null,
+  "tr": "yoldan çıkmak, tökezlemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer einmal gestrauchelt ist, verdient eine zweite Chance."
+ },
+ {
+  "id": 6453,
+  "de": "abrutschen",
+  "artikel": null,
+  "tr": "düşmek, aşağı kaymak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Ohne Betreuung rutschen viele Jugendliche in kriminelle Gruppen ab."
+ },
+ {
+  "id": 6454,
+  "de": "unterbringen",
+  "artikel": null,
+  "tr": "yerleştirmek, barındırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Junge Gefangene werden getrennt von Erwachsenen untergebracht."
+ },
+ {
+  "id": 6455,
+  "de": "verbüßen",
+  "artikel": null,
+  "tr": "cezasını çekmek, infaz etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei."
+ },
+ {
+  "id": 6456,
+  "de": "bewachen",
+  "artikel": null,
+  "tr": "gözetlemek, nöbet tutmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Nachts bewachen nur wenige Beamte den gesamten Trakt."
+ },
+ {
+  "id": 6457,
+  "de": "isolieren",
+  "artikel": null,
+  "tr": "tecrit etmek, yalıtmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer Gefangene isoliert, zerstört genau die Bindungen, die sie halten."
+ },
+ {
+  "id": 6458,
+  "de": "aufarbeiten",
+  "artikel": null,
+  "tr": "yüzleşmek, gözden geçirip işlemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "In der Therapie arbeitet er seine Tat Schritt für Schritt auf."
+ },
+ {
+  "id": 6459,
+  "de": "deeskalieren",
+  "artikel": null,
+  "tr": "gerginliği azaltmak, yatıştırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Geschulte Beamte deeskalieren Konflikte, bevor Gewalt entsteht."
+ },
+ {
+  "id": 6460,
+  "de": "abschotten",
+  "artikel": null,
+  "tr": "dış dünyaya kapatmak, yalıtmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Anstalt schottet ihre Insassen fast vollständig von außen ab."
+ },
+ {
+  "id": 6461,
+  "de": "rehabilitieren",
+  "artikel": null,
+  "tr": "itibarını iade etmek, topluma kazandırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Staat sollte Straffällige nicht nur bestrafen, sondern auch rehabilitieren."
+ },
+ {
+  "id": 6462,
+  "de": "entgleisen",
+  "artikel": null,
+  "tr": "kontrolden çıkmak, çığırından çıkmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Auseinandersetzung entgleiste innerhalb weniger Minuten völlig."
+ },
+ {
+  "id": 6463,
+  "de": "schikanieren",
+  "artikel": null,
+  "tr": "eziyet etmek, kasten zorluk çıkarmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Mitgefangene schikanierten ihn systematisch wegen seines Delikts."
+ },
+ {
+  "id": 6464,
+  "de": "straffällig",
+  "artikel": null,
+  "tr": "suç işlemiş, suça bulaşmış",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die meisten straffällig gewordenen Jugendlichen bleiben nicht dauerhaft auffällig."
+ },
+ {
+  "id": 6465,
+  "de": "rückfällig",
+  "artikel": null,
+  "tr": "tekrar suç işleyen, nüksetmiş",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Fast die Hälfte der Entlassenen wird binnen drei Jahren rückfällig."
+ },
+ {
+  "id": 6466,
+  "de": "gewaltbereit",
+  "artikel": null,
+  "tr": "şiddete eğilimli",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Nur eine kleine, gewaltbereite Minderheit prägt das öffentliche Bild."
+ },
+ {
+  "id": 6467,
+  "de": "vorbestraft",
+  "artikel": null,
+  "tr": "sabıkalı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Wer vorbestraft ist, findet auf dem Arbeitsmarkt kaum eine Chance."
+ },
+ {
+  "id": 6468,
+  "de": "milieubedingt",
+  "artikel": null,
+  "tr": "çevre kaynaklı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Solche Konflikte sind eher milieubedingt als persönlich verschuldet."
+ },
+ {
+  "id": 6469,
+  "de": "kriminogen",
+  "artikel": null,
+  "tr": "suça yol açan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Beengter Wohnraum und Armut wirken zusammen kriminogen."
+ },
+ {
+  "id": 6470,
+  "de": "zwangsweise",
+  "artikel": null,
+  "tr": "zorla, cebren",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Niemand darf zwangsweise an einer Therapie teilnehmen müssen."
+ },
+ {
+  "id": 6471,
+  "de": "präventiv",
+  "artikel": null,
+  "tr": "önleyici",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sozialarbeit in Brennpunkten wirkt präventiv und spart langfristig Kosten."
+ },
+ {
+  "id": 6472,
+  "de": "Bühnenbild",
+  "artikel": "das",
+  "tr": "sahne tasarımı, dekor",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache."
+ },
+ {
+  "id": 6473,
+  "de": "Uraufführung",
+  "artikel": "die",
+  "tr": "dünya prömiyeri, ilk gösterim",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Uraufführung wurde vom Publikum zwiespältig aufgenommen."
+ },
+ {
+  "id": 6474,
+  "de": "Dramaturgie",
+  "artikel": "die",
+  "tr": "dramaturji, kurgu düzeni",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Dramaturgie des Abends wirkt streckenweise überladen."
+ },
+ {
+  "id": 6475,
+  "de": "Kunstkritik",
+  "artikel": "die",
+  "tr": "sanat eleştirisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen."
+ },
+ {
+  "id": 6476,
+  "de": "Kulturpolitik",
+  "artikel": "die",
+  "tr": "kültür politikası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kulturpolitik der Stadt bevorzugt seit Jahren große Häuser."
+ },
+ {
+  "id": 6477,
+  "de": "Zuschauerschaft",
+  "artikel": "die",
+  "tr": "izleyici kitlesi, seyirciler",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Zuschauerschaft des Hauses ist deutlich jünger geworden."
+ },
+ {
+  "id": 6478,
+  "de": "Bildsprache",
+  "artikel": "die",
+  "tr": "görsel dil, imge dili",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihre Bildsprache schöpft aus mittelalterlichen Vorlagen."
+ },
+ {
+  "id": 6479,
+  "de": "Gattung",
+  "artikel": "die",
+  "tr": "tür, janr",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen."
+ },
+ {
+  "id": 6480,
+  "de": "Stilrichtung",
+  "artikel": "die",
+  "tr": "üslup akımı, stil yönelimi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Maler lässt sich keiner einzigen Stilrichtung zuordnen."
+ },
+ {
+  "id": 6481,
+  "de": "Kunstgriff",
+  "artikel": "der",
+  "tr": "sanatsal hile, ustalık numarası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mit einem einfachen Kunstgriff verdoppelt der Regisseur die Hauptfigur."
+ },
+ {
+  "id": 6482,
+  "de": "Virtuosität",
+  "artikel": "die",
+  "tr": "virtüözlük, teknik ustalık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation."
+ },
+ {
+  "id": 6483,
+  "de": "Improvisation",
+  "artikel": "die",
+  "tr": "doğaçlama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der zweite Teil des Konzerts besteht fast nur aus Improvisation."
+ },
+ {
+  "id": 6484,
+  "de": "Lesart",
+  "artikel": "die",
+  "tr": "okuma biçimi, yorum",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend."
+ },
+ {
+  "id": 6485,
+  "de": "Werkbegriff",
+  "artikel": "der",
+  "tr": "yapıt kavramı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Installation stellt den traditionellen Werkbegriff radikal infrage."
+ },
+ {
+  "id": 6486,
+  "de": "Autorschaft",
+  "artikel": "die",
+  "tr": "yazarlık, eser sahipliği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bei kollektiven Projekten verschwimmt die Frage der Autorschaft."
+ },
+ {
+  "id": 6487,
+  "de": "Originalität",
+  "artikel": "die",
+  "tr": "özgünlük",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Jury fehlte in diesem Entwurf jede Originalität."
+ },
+ {
+  "id": 6488,
+  "de": "Verfremdung",
+  "artikel": "die",
+  "tr": "yabancılaştırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Verfremdung hindert das Publikum am bequemen Mitfühlen."
+ },
+ {
+  "id": 6489,
+  "de": "Tabubruch",
+  "artikel": "der",
+  "tr": "tabuyu yıkma, tabu ihlali",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Tabubruch allein macht noch keine gute Kunst."
+ },
+ {
+  "id": 6490,
+  "de": "Rezeptionsgeschichte",
+  "artikel": "die",
+  "tr": "alımlanma tarihi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Rezeptionsgeschichte des Romans verlief äußerst wechselhaft."
+ },
+ {
+  "id": 6491,
+  "de": "Geschmacksurteil",
+  "artikel": "das",
+  "tr": "beğeni yargısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein Geschmacksurteil lässt sich selten zwingend begründen."
+ },
+ {
+  "id": 6492,
+  "de": "Kennerschaft",
+  "artikel": "die",
+  "tr": "uzmanlık, erbaplık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Kennerschaft der Barockmalerei ist im Fach unbestritten."
+ },
+ {
+  "id": 6493,
+  "de": "Mäzen",
+  "artikel": "der",
+  "tr": "sanat hamisi, mesen",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden."
+ },
+ {
+  "id": 6494,
+  "de": "Kulturbetrieb",
+  "artikel": "der",
+  "tr": "kültür sektörü, sanat camiası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent."
+ },
+ {
+  "id": 6495,
+  "de": "Kunstmarkt",
+  "artikel": "der",
+  "tr": "sanat piyasası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Kunstmarkt reagiert empfindlich auf jede Krise."
+ },
+ {
+  "id": 6496,
+  "de": "Retrospektive",
+  "artikel": "die",
+  "tr": "retrospektif, geriye dönük sergi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Museum widmet der Fotografin eine große Retrospektive."
+ },
+ {
+  "id": 6497,
+  "de": "Vernissage",
+  "artikel": "die",
+  "tr": "sergi açılışı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zur Vernissage kamen mehr Journalisten als erwartet."
+ },
+ {
+  "id": 6498,
+  "de": "Denkmalpflege",
+  "artikel": "die",
+  "tr": "anıt koruma, tarihi eser bakımı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt."
+ },
+ {
+  "id": 6499,
+  "de": "Dissonanz",
+  "artikel": "die",
+  "tr": "uyumsuzluk, disonans",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer."
+ },
+ {
+  "id": 6500,
+  "de": "Partitur",
+  "artikel": "die",
+  "tr": "partisyon, nota metni",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Dirigent kennt die Partitur bis in jede Nebenstimme."
+ },
+ {
+  "id": 6501,
+  "de": "Komposition",
+  "artikel": "die",
+  "tr": "beste, kompozisyon",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Komposition des Bildes folgt einer strengen Diagonale."
+ },
+ {
+  "id": 6502,
+  "de": "Adaption",
+  "artikel": "die",
+  "tr": "uyarlama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die filmische Adaption bleibt hinter der Vorlage zurück."
+ },
+ {
+  "id": 6503,
+  "de": "Repertoire",
+  "artikel": "das",
+  "tr": "repertuvar, dağarcık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Repertoire des Hauses umfasst kaum zeitgenössische Stücke."
+ },
+ {
+  "id": 6504,
+  "de": "Spannungsbogen",
+  "artikel": "der",
+  "tr": "gerilim yayı, gerilim eğrisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im dritten Akt bricht der Spannungsbogen völlig zusammen."
+ },
+ {
+  "id": 6505,
+  "de": "Katharsis",
+  "artikel": "die",
+  "tr": "katarsis, arınma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Stück verweigert dem Publikum jede tröstliche Katharsis."
+ },
+ {
+  "id": 6506,
+  "de": "Pathos",
+  "artikel": "das",
+  "tr": "patos, coşkulu duygu yükü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Pathos der Schlussszene wirkt heute unfreiwillig komisch."
+ },
+ {
+  "id": 6507,
+  "de": "Groteske",
+  "artikel": "die",
+  "tr": "grotesk, gülünç-ürkütücü olan",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Tragödie kippt im letzten Bild in eine Groteske."
+ },
+ {
+  "id": 6508,
+  "de": "Persiflage",
+  "artikel": "die",
+  "tr": "alaycı taklit, hicivli öykünme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Film ist eine bissige Persiflage auf den Kunstbetrieb."
+ },
+ {
+  "id": 6509,
+  "de": "Abstraktion",
+  "artikel": "die",
+  "tr": "soyutlama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Weg zur Abstraktion vollzog sich bei ihm allmählich."
+ },
+ {
+  "id": 6510,
+  "de": "Hochkultur",
+  "artikel": "die",
+  "tr": "yüksek kültür",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Trennung von Hochkultur und Unterhaltung erodiert zusehends."
+ },
+ {
+  "id": 6511,
+  "de": "Kunstfreiheit",
+  "artikel": "die",
+  "tr": "sanat özgürlüğü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kunstfreiheit endet dort nicht, wo jemand sich ärgert."
+ },
+ {
+  "id": 6512,
+  "de": "darbieten",
+  "artikel": null,
+  "tr": "sunmak, icra etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Quartett bot die späten Streichquartette hinreißend dar."
+ },
+ {
+  "id": 6513,
+  "de": "einstudieren",
+  "artikel": null,
+  "tr": "çalışıp hazırlamak, prova ederek öğrenmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Chor studiert das Requiem seit Monaten ein."
+ },
+ {
+  "id": 6514,
+  "de": "entschlüsseln",
+  "artikel": null,
+  "tr": "çözmek, deşifre etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Symbolik des Altarbildes lässt sich kaum vollständig entschlüsseln."
+ },
+ {
+  "id": 6515,
+  "de": "nachempfinden",
+  "artikel": null,
+  "tr": "içten duyumsamak, hissederek anlamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Zuschauer soll die Verzweiflung der Figur nachempfinden."
+ },
+ {
+  "id": 6516,
+  "de": "überhöhen",
+  "artikel": null,
+  "tr": "yüceltmek, abartarak büyütmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Regie überhöht den Alltag zum antiken Ritual."
+ },
+ {
+  "id": 6517,
+  "de": "skizzieren",
+  "artikel": null,
+  "tr": "taslağını çizmek, ana hatlarıyla anlatmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Kurator skizzierte den Aufbau der Schau in wenigen Sätzen."
+ },
+ {
+  "id": 6518,
+  "de": "vertonen",
+  "artikel": null,
+  "tr": "bestelemek, müziğe uyarlamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er hat mehrere Gedichte der Romantik neu vertont."
+ },
+ {
+  "id": 6519,
+  "de": "rezitieren",
+  "artikel": null,
+  "tr": "ezberden okumak, şiir okumak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Schauspielerin rezitierte den Monolog ohne jedes Pathos."
+ },
+ {
+  "id": 6520,
+  "de": "kuratieren",
+  "artikel": null,
+  "tr": "küratörlüğünü yapmak, seçkiyi düzenlemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie kuratiert die Biennale zum zweiten Mal."
+ },
+ {
+  "id": 6521,
+  "de": "versteigern",
+  "artikel": null,
+  "tr": "açık artırmayla satmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Nachlass des Malers wird im Herbst versteigert."
+ },
+ {
+  "id": 6522,
+  "de": "provozieren",
+  "artikel": null,
+  "tr": "kışkırtmak, tepki uyandırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Installation provoziert bewusst den bürgerlichen Kunstgeschmack."
+ },
+ {
+  "id": 6523,
+  "de": "irritieren",
+  "artikel": null,
+  "tr": "şaşırtmak, kafa karıştırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der abrupte Stilwechsel irritierte selbst wohlwollende Kritiker."
+ },
+ {
+  "id": 6524,
+  "de": "ergreifen",
+  "artikel": null,
+  "tr": "derinden etkilemek, sarsmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die schlichte Schlussarie ergriff das ganze Haus."
+ },
+ {
+  "id": 6525,
+  "de": "karikieren",
+  "artikel": null,
+  "tr": "karikatürize etmek, abartarak alay etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Aufführung karikiert den Kunstbetrieb bis zur Kenntlichkeit."
+ },
+ {
+  "id": 6526,
+  "de": "rezensieren",
+  "artikel": null,
+  "tr": "eleştiri yazmak, değerlendirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie rezensiert seit Jahren Ausstellungen für eine Wochenzeitung."
+ },
+ {
+  "id": 6527,
+  "de": "experimentell",
+  "artikel": null,
+  "tr": "deneysel",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Das Festival zeigt vor allem experimentelles Musiktheater."
+ },
+ {
+  "id": 6528,
+  "de": "epigonal",
+  "artikel": null,
+  "tr": "öykünmeci, ardıl nitelikte",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Seine frühen Bilder wirken noch reichlich epigonal."
+ },
+ {
+  "id": 6529,
+  "de": "subtil",
+  "artikel": null,
+  "tr": "ince, sezdirmeden işleyen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Kritik an der Institution ist hier sehr subtil formuliert."
+ },
+ {
+  "id": 6530,
+  "de": "doppelbödig",
+  "artikel": null,
+  "tr": "iki anlamlı, çift katmanlı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der scheinbar harmlose Text ist zutiefst doppelbödig."
+ },
+ {
+  "id": 6531,
+  "de": "hintergründig",
+  "artikel": null,
+  "tr": "derin anlamlı, alt metinli",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ihr Humor ist leise und hintergründig statt laut."
+ },
+ {
+  "id": 6532,
+  "de": "opulent",
+  "artikel": null,
+  "tr": "görkemli, bol ve gösterişli",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die opulente Ausstattung erdrückt den schmalen Text."
+ },
+ {
+  "id": 6533,
+  "de": "eindringlich",
+  "artikel": null,
+  "tr": "etkileyici, akılda kalıcı biçimde güçlü",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Dokumentarfilm schildert das Milieu eindringlich und ohne Kitsch."
+ },
+ {
+  "id": 6534,
+  "de": "sperrig",
+  "artikel": null,
+  "tr": "zor lokma, kolay tüketilmeyen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sein sperriges Spätwerk fand erst posthum Anerkennung."
+ },
+ {
+  "id": 6535,
+  "de": "elitär",
+  "artikel": null,
+  "tr": "seçkinci, elitist",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Dem Haus wird seit Langem ein elitäres Programm vorgeworfen."
+ },
+ {
+  "id": 6536,
+  "de": "Erzähler",
+  "artikel": "der",
+  "tr": "anlatıcı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Erzähler bleibt in diesem Roman auffallend distanziert."
+ },
+ {
+  "id": 6537,
+  "de": "Handlungsstrang",
+  "artikel": "der",
+  "tr": "olay örgüsü kolu, yan olay dizisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die beiden Handlungsstränge laufen erst im letzten Kapitel zusammen."
+ },
+ {
+  "id": 6538,
+  "de": "Stilmittel",
+  "artikel": "das",
+  "tr": "üslup aracı, söz sanatı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Wiederholung ist hier ein bewusst eingesetztes Stilmittel."
+ },
+ {
+  "id": 6539,
+  "de": "Metapher",
+  "artikel": "die",
+  "tr": "metafor, eğretileme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Metaphern wirken auf mich etwas abgenutzt."
+ },
+ {
+  "id": 6540,
+  "de": "Gleichnis",
+  "artikel": "das",
+  "tr": "kıssa, benzetme öyküsü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Prediger erklärte den Gedanken anhand eines alten Gleichnisses."
+ },
+ {
+  "id": 6541,
+  "de": "Nachwort",
+  "artikel": "das",
+  "tr": "sonsöz, son söz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im Nachwort beschreibt die Übersetzerin ihre wichtigsten Entscheidungen."
+ },
+ {
+  "id": 6542,
+  "de": "Fußnote",
+  "artikel": "die",
+  "tr": "dipnot",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die entscheidende Quelle versteckt sich in einer knappen Fußnote."
+ },
+ {
+  "id": 6543,
+  "de": "Manuskript",
+  "artikel": "das",
+  "tr": "müsvedde, el yazması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Manuskript lag jahrzehntelang unbeachtet im Archiv."
+ },
+ {
+  "id": 6544,
+  "de": "Urheber",
+  "artikel": "der",
+  "tr": "eser sahibi, yaratıcı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Urheber des Textes blieb über Jahrzehnte unbekannt."
+ },
+ {
+  "id": 6545,
+  "de": "Wortlaut",
+  "artikel": "der",
+  "tr": "metnin tam ifadesi, lafız",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der genaue Wortlaut des Briefes lässt sich nicht mehr feststellen."
+ },
+ {
+  "id": 6546,
+  "de": "Sprachwandel",
+  "artikel": "der",
+  "tr": "dil değişimi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Sprachwandel vollzieht sich langsam und meist unbemerkt."
+ },
+ {
+  "id": 6547,
+  "de": "Mundart",
+  "artikel": "die",
+  "tr": "yöresel ağız, şive",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In seinen Gedichten mischt er Hochdeutsch und heimatliche Mundart."
+ },
+ {
+  "id": 6548,
+  "de": "Chronik",
+  "artikel": "die",
+  "tr": "vakayiname, kronik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Chronik des Klosters reicht bis ins zwölfte Jahrhundert zurück."
+ },
+ {
+  "id": 6549,
+  "de": "Nachruf",
+  "artikel": "der",
+  "tr": "anma yazısı, ölüm yazısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Nachruf würdigt vor allem ihre späten Gedichte."
+ },
+ {
+  "id": 6550,
+  "de": "Sprichwort",
+  "artikel": "das",
+  "tr": "atasözü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Sprichwort trifft die Lage besser als jede Erklärung."
+ },
+ {
+  "id": 6551,
+  "de": "Mehrdeutigkeit",
+  "artikel": "die",
+  "tr": "çok anlamlılık, muğlaklık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Mehrdeutigkeit des Schlusses hat die Kritik lange beschäftigt."
+ },
+ {
+  "id": 6552,
+  "de": "Reim",
+  "artikel": "der",
+  "tr": "kafiye, uyak",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Dichter verzichtet in seinen späten Texten auf Reime."
+ },
+ {
+  "id": 6553,
+  "de": "Vers",
+  "artikel": "der",
+  "tr": "dize, mısra",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die letzten beiden Verse bleiben bewusst unvollendet."
+ },
+ {
+  "id": 6554,
+  "de": "Strophe",
+  "artikel": "die",
+  "tr": "kıta, bent",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jede Strophe endet mit demselben ruhigen Bild."
+ },
+ {
+  "id": 6555,
+  "de": "Prosa",
+  "artikel": "die",
+  "tr": "düzyazı, nesir",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihre Prosa ist nüchtern und kommt ohne Schmuck aus."
+ },
+ {
+  "id": 6556,
+  "de": "Lyrik",
+  "artikel": "die",
+  "tr": "şiir sanatı, lirik şiir",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Moderne Lyrik verlangt vom Leser eine hohe Aufmerksamkeit."
+ },
+ {
+  "id": 6557,
+  "de": "Abhandlung",
+  "artikel": "die",
+  "tr": "inceleme, bilimsel makale",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Er hat eine trockene Abhandlung über Satzzeichen geschrieben."
+ },
+ {
+  "id": 6558,
+  "de": "Leitmotiv",
+  "artikel": "das",
+  "tr": "ana motif, temel izlek",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Meer bildet in ihrem Werk ein wiederkehrendes Leitmotiv."
+ },
+ {
+  "id": 6559,
+  "de": "Streitschrift",
+  "artikel": "die",
+  "tr": "polemik yazısı, kavga metni",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Streitschrift gegen die Akademie erschien zunächst anonym."
+ },
+ {
+  "id": 6560,
+  "de": "Zitat",
+  "artikel": "das",
+  "tr": "alıntı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Zitat ist im Original deutlich schärfer formuliert."
+ },
+ {
+  "id": 6561,
+  "de": "Leserschaft",
+  "artikel": "die",
+  "tr": "okur kitlesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Zeitschrift hat eine kleine, aber treue Leserschaft."
+ },
+ {
+  "id": 6562,
+  "de": "Wortspiel",
+  "artikel": "das",
+  "tr": "kelime oyunu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Wortspiel im Titel lässt sich kaum übersetzen."
+ },
+ {
+  "id": 6563,
+  "de": "Sprachbild",
+  "artikel": "das",
+  "tr": "dil imgesi, mecaz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihre Sprachbilder stammen fast alle aus der Landwirtschaft."
+ },
+ {
+  "id": 6564,
+  "de": "Rahmenhandlung",
+  "artikel": "die",
+  "tr": "çerçeve öykü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Rahmenhandlung spielt in einem verschneiten Gasthaus."
+ },
+ {
+  "id": 6565,
+  "de": "Rückblende",
+  "artikel": "die",
+  "tr": "geriye dönüş",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kindheit der Figur wird nur in Rückblenden gezeigt."
+ },
+ {
+  "id": 6566,
+  "de": "Fabel",
+  "artikel": "die",
+  "tr": "fabl",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Fabel endet mit einer knappen moralischen Lehre."
+ },
+ {
+  "id": 6567,
+  "de": "Stilbruch",
+  "artikel": "der",
+  "tr": "üslup kopukluğu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der plötzliche Wechsel in die Amtssprache wirkt wie ein Stilbruch."
+ },
+ {
+  "id": 6568,
+  "de": "Klappentext",
+  "artikel": "der",
+  "tr": "arka kapak yazısı, tanıtım yazısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Klappentext verspricht mehr, als das Buch einlöst."
+ },
+ {
+  "id": 6569,
+  "de": "anspielen",
+  "artikel": null,
+  "tr": "ima etmek, göndermede bulunmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Titel spielt auf ein bekanntes Volkslied an."
+ },
+ {
+  "id": 6570,
+  "de": "zuspitzen",
+  "artikel": null,
+  "tr": "keskinleştirmek, uca taşımak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Essayist spitzt seine These bewusst zu."
+ },
+ {
+  "id": 6571,
+  "de": "entlehnen",
+  "artikel": null,
+  "tr": "ödünç almak, alıntılamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Wort wurde im Mittelalter aus dem Latein entlehnt."
+ },
+ {
+  "id": 6572,
+  "de": "überliefern",
+  "artikel": null,
+  "tr": "kuşaktan kuşağa aktarmak, nakletmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Sage wurde jahrhundertelang nur mündlich überliefert."
+ },
+ {
+  "id": 6573,
+  "de": "abwandeln",
+  "artikel": null,
+  "tr": "değiştirerek uyarlamak, başkalaştırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie wandelt das alte Motiv nur leicht ab."
+ },
+ {
+  "id": 6574,
+  "de": "verweisen",
+  "artikel": null,
+  "tr": "atıfta bulunmak, yollamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Autorin verweist im Anhang auf ältere Untersuchungen."
+ },
+ {
+  "id": 6575,
+  "de": "parodieren",
+  "artikel": null,
+  "tr": "parodisini yapmak, taklit ederek alay etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der junge Autor parodiert den Stil seines Lehrers."
+ },
+ {
+  "id": 6576,
+  "de": "ausschmücken",
+  "artikel": null,
+  "tr": "süslemek, abartarak anlatmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Er schmückt jede Anekdote ein wenig aus."
+ },
+ {
+  "id": 6577,
+  "de": "hervorgehen",
+  "artikel": null,
+  "tr": "ortaya çıkmak, anlaşılmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Aus dem Briefwechsel geht ihre tiefe Freundschaft hervor."
+ },
+ {
+  "id": 6578,
+  "de": "einflechten",
+  "artikel": null,
+  "tr": "araya serpiştirmek, katmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie flicht immer wieder kleine Beobachtungen in die Handlung ein."
+ },
+ {
+  "id": 6579,
+  "de": "abschweifen",
+  "artikel": null,
+  "tr": "konudan sapmak, dağılmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Redner schweift ständig vom eigentlichen Thema ab."
+ },
+ {
+  "id": 6580,
+  "de": "bildhaft",
+  "artikel": null,
+  "tr": "imgesel, resmedici",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ihre Sprache ist ungewöhnlich bildhaft und zugleich konkret."
+ },
+ {
+  "id": 6581,
+  "de": "unmissverständlich",
+  "artikel": null,
+  "tr": "açık seçik, yanlış anlaşılmaya yer bırakmayan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Kritiker äußert seine Ablehnung unmissverständlich."
+ },
+ {
+  "id": 6582,
+  "de": "lakonisch",
+  "artikel": null,
+  "tr": "lakonik, az ve öz",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sein Stil bleibt bis zum letzten Satz lakonisch."
+ },
+ {
+  "id": 6583,
+  "de": "gleichsam",
+  "artikel": null,
+  "tr": "adeta, sanki",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Wiederholung wirkt gleichsam wie ein musikalisches Motiv."
+ },
+ {
+  "id": 6584,
+  "de": "Verlagswesen",
+  "artikel": "das",
+  "tr": "yayıncılık sektörü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das gesamte Verlagswesen steht durch schwindende Anzeigenerlöse unter Druck."
+ },
+ {
+  "id": 6585,
+  "de": "Propaganda",
+  "artikel": "die",
+  "tr": "propaganda",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wirksame Propaganda arbeitet selten mit Lügen, sondern mit gezielten Auslassungen."
+ },
+ {
+  "id": 6586,
+  "de": "Quellenschutz",
+  "artikel": "der",
+  "tr": "kaynak koruma, kaynağın gizliliği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne konsequenten Quellenschutz würde kaum ein Insider mit Journalisten sprechen."
+ },
+ {
+  "id": 6587,
+  "de": "Informant",
+  "artikel": "der",
+  "tr": "muhbir, bilgi kaynağı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Informant übergab die Unterlagen nur unter der Zusicherung völliger Anonymität."
+ },
+ {
+  "id": 6588,
+  "de": "Enthüllung",
+  "artikel": "die",
+  "tr": "ifşa, açığa çıkarma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Enthüllung des Verlagsdeals brachte den Aufsichtsrat erheblich in Erklärungsnot."
+ },
+ {
+  "id": 6589,
+  "de": "Boulevardpresse",
+  "artikel": "die",
+  "tr": "magazin basını, bulvar basını",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Boulevardpresse lebt von Empörung, nicht von der geduldigen Einordnung der Fakten."
+ },
+ {
+  "id": 6590,
+  "de": "Leitmedium",
+  "artikel": "das",
+  "tr": "yönlendirici medya, referans yayın organı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Was die Leitmedien aufgreifen, bestimmt oft die Tagesordnung der übrigen Redaktionen."
+ },
+ {
+  "id": 6591,
+  "de": "Meinungsbildung",
+  "artikel": "die",
+  "tr": "kanaat oluşumu, fikir oluşturma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Algorithmen greifen tiefer in die politische Meinungsbildung ein, als viele annehmen."
+ },
+ {
+  "id": 6592,
+  "de": "Meinungsvielfalt",
+  "artikel": "die",
+  "tr": "görüş çeşitliliği, çoğulculuk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Gesetzgeber soll die Meinungsvielfalt sichern, ohne einzelne Inhalte zu bewerten."
+ },
+ {
+  "id": 6593,
+  "de": "Wahrhaftigkeit",
+  "artikel": "die",
+  "tr": "doğruluk, dürüstlük",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wahrhaftigkeit verlangt mehr als formale Richtigkeit einzelner Angaben."
+ },
+ {
+  "id": 6594,
+  "de": "Persönlichkeitsrecht",
+  "artikel": "das",
+  "tr": "kişilik hakkı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Persönlichkeitsrecht der Betroffenen wiegt hier schwerer als das Informationsinteresse."
+ },
+ {
+  "id": 6595,
+  "de": "Aufmerksamkeitsökonomie",
+  "artikel": "die",
+  "tr": "dikkat ekonomisi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In der Aufmerksamkeitsökonomie wird die knappe Ressource nicht Information, sondern Zuwendung."
+ },
+ {
+  "id": 6596,
+  "de": "Rundfunkbeitrag",
+  "artikel": "der",
+  "tr": "yayın katkı payı, radyo-televizyon aidatı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Rundfunkbeitrag soll Programme unabhängig von Werbeeinnahmen und Quoten finanzieren."
+ },
+ {
+  "id": 6597,
+  "de": "Medienkonzentration",
+  "artikel": "die",
+  "tr": "medya yoğunlaşması, medya tekelleşmesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die wachsende Medienkonzentration verringert die Zahl wirklich unabhängiger Stimmen."
+ },
+ {
+  "id": 6598,
+  "de": "Pressekodex",
+  "artikel": "der",
+  "tr": "basın meslek ilkeleri",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Pressekodex untersagt es, Opfer ohne Not identifizierbar zu machen."
+ },
+ {
+  "id": 6599,
+  "de": "Redaktionsgeheimnis",
+  "artikel": "das",
+  "tr": "yayın kurulu gizliliği, redaksiyon sırrı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Durchsuchung verletzte nach Ansicht des Gerichts das Redaktionsgeheimnis."
+ },
+ {
+  "id": 6600,
+  "de": "Zeugnisverweigerungsrecht",
+  "artikel": "das",
+  "tr": "tanıklıktan çekinme hakkı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Journalisten berufen sich vor Gericht auf ihr Zeugnisverweigerungsrecht."
+ },
+ {
+  "id": 6601,
+  "de": "Informationsfreiheit",
+  "artikel": "die",
+  "tr": "bilgi edinme özgürlüğü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Informationsfreiheit gibt jedem Bürger Zugang zu amtlichen Unterlagen."
+ },
+ {
+  "id": 6602,
+  "de": "Nachrichtenwert",
+  "artikel": "der",
+  "tr": "haber değeri",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Nähe, Konflikt und Prominenz erhöhen den Nachrichtenwert eines Ereignisses erheblich."
+ },
+ {
+  "id": 6603,
+  "de": "Stimmungsmache",
+  "artikel": "die",
+  "tr": "kışkırtma, algı yaratma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Was als Analyse angekündigt war, entpuppte sich als plumpe Stimmungsmache."
+ },
+ {
+  "id": 6604,
+  "de": "Pamphlet",
+  "artikel": "das",
+  "tr": "hiciv broşürü, taşlama yazısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Sein Buch ist weniger Studie als politisches Pamphlet gegen die Regierung."
+ },
+ {
+  "id": 6605,
+  "de": "Glosse",
+  "artikel": "die",
+  "tr": "köşe taşlaması, mizahi yorum yazısı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Glosse spitzt zu und darf gerade deshalb nicht wörtlich gelesen werden."
+ },
+ {
+  "id": 6606,
+  "de": "Feuilleton",
+  "artikel": "das",
+  "tr": "kültür sanat eki, feuilleton",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Im Feuilleton wird seit Wochen über den Begriff der Cancel-Kultur gestritten."
+ },
+ {
+  "id": 6607,
+  "de": "Anonymisierung",
+  "artikel": "die",
+  "tr": "kimliğin gizlenmesi, anonimleştirme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Erst nach sorgfältiger Anonymisierung durfte das Interview gesendet werden."
+ },
+ {
+  "id": 6608,
+  "de": "Indiskretion",
+  "artikel": "die",
+  "tr": "sır ifşası, boşboğazlık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Gezielte Indiskretionen aus dem Ministerium prägten die Debatte tagelang."
+ },
+ {
+  "id": 6609,
+  "de": "Sprachregelung",
+  "artikel": "die",
+  "tr": "resmî söylem kalıbı, dil talimatı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Alle Sprecher hielten sich auffällig genau an dieselbe Sprachregelung."
+ },
+ {
+  "id": 6610,
+  "de": "Verleumdung",
+  "artikel": "die",
+  "tr": "iftira",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Vorwurf erfüllt den Tatbestand der Verleumdung, wenn er wider besseres Wissen erhoben wird."
+ },
+ {
+  "id": 6611,
+  "de": "Unterlassungserklärung",
+  "artikel": "die",
+  "tr": "ihlali tekrarlamama taahhüdü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Magazin unterschrieb eine Unterlassungserklärung und nahm den Beitrag offline."
+ },
+ {
+  "id": 6612,
+  "de": "Selbstzensur",
+  "artikel": "die",
+  "tr": "otosansür",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wo Klagen drohen, beginnt die Selbstzensur lange vor jedem Verbot."
+ },
+ {
+  "id": 6613,
+  "de": "Rezipient",
+  "artikel": "der",
+  "tr": "alımlayıcı, izleyici-okur",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Rezipient ist längst kein passiver Empfänger fertiger Botschaften mehr."
+ },
+ {
+  "id": 6614,
+  "de": "Emotionalisierung",
+  "artikel": "die",
+  "tr": "duygusallaştırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Emotionalisierung komplexer Themen erhöht die Reichweite und senkt das Verständnis."
+ },
+ {
+  "id": 6615,
+  "de": "Kommerzialisierung",
+  "artikel": "die",
+  "tr": "ticarileşme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kommerzialisierung des Journalismus verschiebt die Auswahl der Themen unmerklich."
+ },
+ {
+  "id": 6616,
+  "de": "Bezahlschranke",
+  "artikel": "die",
+  "tr": "ödeme duvarı, paralı erişim engeli",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Hinter der Bezahlschranke steht die Recherche, davor bleibt der Alarmruf."
+ },
+ {
+  "id": 6617,
+  "de": "Wächteramt",
+  "artikel": "das",
+  "tr": "bekçilik görevi, denetleyici rol",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Presse nimmt gegenüber der Macht ein Wächteramt wahr."
+ },
+ {
+  "id": 6618,
+  "de": "Vertrauensverlust",
+  "artikel": "der",
+  "tr": "güven kaybı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein einziger gefälschter Beitrag löste einen dauerhaften Vertrauensverlust aus."
+ },
+ {
+  "id": 6619,
+  "de": "Diskreditierung",
+  "artikel": "die",
+  "tr": "itibarsızlaştırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Statt Argumenten folgte die systematische Diskreditierung der Kritikerin."
+ },
+ {
+  "id": 6620,
+  "de": "Transparenzgebot",
+  "artikel": "das",
+  "tr": "şeffaflık ilkesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Aus dem Transparenzgebot folgt, dass bezahlte Beiträge klar gekennzeichnet werden."
+ },
+ {
+  "id": 6621,
+  "de": "Massenmedium",
+  "artikel": "das",
+  "tr": "kitle iletişim aracı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kein Massenmedium erreicht heute noch das gesamte Publikum gleichzeitig."
+ },
+ {
+  "id": 6622,
+  "de": "Schweigespirale",
+  "artikel": "die",
+  "tr": "suskunluk sarmalı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wer sich in der Minderheit wähnt, schweigt und verstärkt so die Schweigespirale."
+ },
+ {
+  "id": 6623,
+  "de": "lancieren",
+  "artikel": null,
+  "tr": "piyasaya sürmek, gündeme sokmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Geschichte wurde kurz vor der Abstimmung gezielt lanciert."
+ },
+ {
+  "id": 6624,
+  "de": "richtigstellen",
+  "artikel": null,
+  "tr": "düzeltmek, tashih etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Redaktion stellte die falsche Zahl erst nach drei Tagen richtig."
+ },
+ {
+  "id": 6625,
+  "de": "insinuieren",
+  "artikel": null,
+  "tr": "ima etmek, üstü kapalı sezdirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Beitrag insinuiert einen Zusammenhang, den er nirgends belegt."
+ },
+ {
+  "id": 6626,
+  "de": "unterstellen",
+  "artikel": null,
+  "tr": "isnat etmek, atfetmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Man unterstellte ihr Absicht, obwohl der Fehler technisch bedingt war."
+ },
+ {
+  "id": 6627,
+  "de": "bloßstellen",
+  "artikel": null,
+  "tr": "rezil etmek, teşhir etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Eine Kamera darf niemanden vor Millionen Zuschauern bloßstellen."
+ },
+ {
+  "id": 6628,
+  "de": "vertuschen",
+  "artikel": null,
+  "tr": "örtbas etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet."
+ },
+ {
+  "id": 6629,
+  "de": "aufbauschen",
+  "artikel": null,
+  "tr": "abartmak, şişirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Ein Randthema wurde wochenlang zur Staatskrise aufgebauscht."
+ },
+ {
+  "id": 6630,
+  "de": "kolportieren",
+  "artikel": null,
+  "tr": "dedikodu gibi yaymak, dolaşıma sokmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Zahl wird seit Jahren kolportiert, ohne je überprüft worden zu sein."
+ },
+ {
+  "id": 6631,
+  "de": "offenlegen",
+  "artikel": null,
+  "tr": "açıklamak, aleni hâle getirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen."
+ },
+ {
+  "id": 6632,
+  "de": "preisgeben",
+  "artikel": null,
+  "tr": "ele vermek, ifşa etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Kein seriöser Journalist gibt die Identität seiner Quelle preis."
+ },
+ {
+  "id": 6633,
+  "de": "abwiegeln",
+  "artikel": null,
+  "tr": "yatıştırmaya çalışmak, önemsizleştirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Behörde wiegelte ab, statt die offenen Fragen zu beantworten."
+ },
+ {
+  "id": 6634,
+  "de": "mobilisieren",
+  "artikel": null,
+  "tr": "harekete geçirmek, seferber etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Ein einziger Hinweis mobilisierte binnen Stunden Tausende von Unterstützern."
+ },
+ {
+  "id": 6635,
+  "de": "kommentieren",
+  "artikel": null,
+  "tr": "yorumlamak, değerlendirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer Nachrichten macht, sollte sie nicht im selben Text kommentieren."
+ },
+ {
+  "id": 6636,
+  "de": "publizistisch",
+  "artikel": null,
+  "tr": "yayıncılıkla ilgili, basın-yayına dair",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Fusion hätte erhebliche publizistische Folgen für die Region."
+ },
+ {
+  "id": 6637,
+  "de": "medial",
+  "artikel": null,
+  "tr": "medyaya ilişkin, medyatik",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Prozess wurde medial begleitet wie ein sportliches Großereignis."
+ },
+ {
+  "id": 6638,
+  "de": "unparteiisch",
+  "artikel": null,
+  "tr": "tarafsız",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Von einer Aufsichtsbehörde erwartet man unparteiische Entscheidungen."
+ },
+ {
+  "id": 6639,
+  "de": "investigativ",
+  "artikel": null,
+  "tr": "araştırmacı (gazetecilik)",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Investigative Arbeit braucht Zeit, Geld und einen langen Atem."
+ },
+ {
+  "id": 6640,
+  "de": "plakativ",
+  "artikel": null,
+  "tr": "afişvari, çarpıcı ama yüzeysel",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Seine Thesen sind plakativ formuliert und halten der Prüfung kaum stand."
+ },
+ {
+  "id": 6641,
+  "de": "suggestiv",
+  "artikel": null,
+  "tr": "telkin edici, yönlendirici",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Suggestive Fragen erzeugen genau die Antworten, die man hören will."
+ },
+ {
+  "id": 6642,
+  "de": "unbelegt",
+  "artikel": null,
+  "tr": "kanıtsız, dayanaksız",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Vorwurf blieb bis zum Schluss unbelegt und wurde dennoch wiederholt."
+ },
+ {
+  "id": 6643,
+  "de": "staatsfern",
+  "artikel": null,
+  "tr": "devletten bağımsız, devlete mesafeli",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Aufsicht über den Rundfunk muss staatsfern organisiert sein."
+ },
+ {
+  "id": 6644,
+  "de": "Aufklärungspflicht",
+  "artikel": "die",
+  "tr": "aydınlatma yükümlülüğü, bilgilendirme borcu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Ärztin verletzte ihre Aufklärungspflicht über mögliche Spätfolgen."
+ },
+ {
+  "id": 6645,
+  "de": "Selbstbestimmung",
+  "artikel": "die",
+  "tr": "kendi kaderini tayin, özerklik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Selbstbestimmung des Kranken wiegt schwerer als ärztliche Fürsorge."
+ },
+ {
+  "id": 6646,
+  "de": "Sterbehilfe",
+  "artikel": "die",
+  "tr": "ötanazi, ölüme yardım",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Über die Zulässigkeit aktiver Sterbehilfe wird seit Jahrzehnten gestritten."
+ }
+]

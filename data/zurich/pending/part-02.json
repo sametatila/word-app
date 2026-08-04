@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 4247,
+  "de": "Prüfungsangst",
+  "artikel": "die",
+  "tr": "sınav kaygısı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gegen ihre Prüfungsangst hilft ihr eine einfache Atemübung."
+ },
+ {
+  "id": 4248,
+  "de": "Promotion",
+  "artikel": "die",
+  "tr": "doktora",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Promotion arbeitete sie in der Forschung weiter."
+ },
+ {
+  "id": 4249,
+  "de": "Absolvent",
+  "artikel": "der",
+  "tr": "mezun",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die meisten Absolventen finden innerhalb eines Jahres eine Stelle."
+ },
+ {
+  "id": 4250,
+  "de": "Dozent",
+  "artikel": "der",
+  "tr": "öğretim görevlisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Dozent verschob das Seminar auf nächsten Dienstag."
+ },
+ {
+  "id": 4251,
+  "de": "sich einprägen",
+  "artikel": null,
+  "tr": "aklına kazımak, ezberlemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Formeln muss man sich vor der Klausur einprägen."
+ },
+ {
+  "id": 4252,
+  "de": "nachholen",
+  "artikel": null,
+  "tr": "telafi etmek, sonradan tamamlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Den verpassten Stoff holt sie am Wochenende nach."
+ },
+ {
+  "id": 4253,
+  "de": "abfragen",
+  "artikel": null,
+  "tr": "sorarak yoklamak, sözlü sormak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Vater fragt seinen Sohn jeden Abend die Vokabeln ab."
+ },
+ {
+  "id": 4254,
+  "de": "vermitteln",
+  "artikel": null,
+  "tr": "aktarmak, kazandırmak, aracılık etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Kurs vermittelt die Grundlagen des wissenschaftlichen Arbeitens."
+ },
+ {
+  "id": 4255,
+  "de": "sich spezialisieren",
+  "artikel": null,
+  "tr": "uzmanlaşmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach dem Studium hat er sich auf Steuerrecht spezialisiert."
+ },
+ {
+  "id": 4256,
+  "de": "nachweisen",
+  "artikel": null,
+  "tr": "belgelemek, kanıtlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Alle Bewerber müssen ausreichende Deutschkenntnisse durch ein Zertifikat nachweisen."
+ },
+ {
+  "id": 4257,
+  "de": "erlernen",
+  "artikel": null,
+  "tr": "öğrenmek, meslek edinmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie hat ihren Beruf in einem kleinen Betrieb erlernt."
+ },
+ {
+  "id": 4258,
+  "de": "festigen",
+  "artikel": null,
+  "tr": "pekiştirmek, sağlamlaştırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Regelmäßige Übungen festigen das Gelernte dauerhaft."
+ },
+ {
+  "id": 4259,
+  "de": "begreifen",
+  "artikel": null,
+  "tr": "kavramak, anlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Erst im dritten Anlauf begriff er die Aufgabe."
+ },
+ {
+  "id": 4260,
+  "de": "erläutern",
+  "artikel": null,
+  "tr": "açıklamak, izah etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bitte erläutern Sie Ihre Methode in wenigen Sätzen."
+ },
+ {
+  "id": 4261,
+  "de": "schwänzen",
+  "artikel": null,
+  "tr": "dersi asmak, kırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Er hat den ganzen Monat den Sportunterricht geschwänzt."
+ },
+ {
+  "id": 4262,
+  "de": "scheitern",
+  "artikel": null,
+  "tr": "başarısız olmak, suya düşmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sein Versuch, das Studium abzuschließen, ist zweimal gescheitert."
+ },
+ {
+  "id": 4263,
+  "de": "abbrechen",
+  "artikel": null,
+  "tr": "yarıda bırakmak, kesmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Aus finanziellen Gründen brach sie das Studium ab."
+ },
+ {
+  "id": 4264,
+  "de": "aufholen",
+  "artikel": null,
+  "tr": "açığı kapatmak, yetişmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach der Krankheit holte er den Stoff schnell auf."
+ },
+ {
+  "id": 4265,
+  "de": "referieren",
+  "artikel": null,
+  "tr": "sunum yapmak, bildiri sunmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Morgen referiert sie über die Reformen im Bildungswesen."
+ },
+ {
+  "id": 4266,
+  "de": "vortragen",
+  "artikel": null,
+  "tr": "sunmak, anlatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Jede Gruppe trägt ihre Ergebnisse in zehn Minuten vor."
+ },
+ {
+  "id": 4267,
+  "de": "anrechnen",
+  "artikel": null,
+  "tr": "saymak, mahsup etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Hochschule rechnet ihm die bisherigen Leistungen an."
+ },
+ {
+  "id": 4268,
+  "de": "auswerten",
+  "artikel": null,
+  "tr": "değerlendirmek, çözümlemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Ergebnisse der Umfrage werden im Seminar ausgewertet."
+ },
+ {
+  "id": 4269,
+  "de": "büffeln",
+  "artikel": null,
+  "tr": "ineklemek, sıkı çalışmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Vor dem Examen büffelte er wochenlang Vokabeln."
+ },
+ {
+  "id": 4270,
+  "de": "anleiten",
+  "artikel": null,
+  "tr": "yönlendirmek, yol göstermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Erfahrene Kollegen leiten die neuen Auszubildenden geduldig an."
+ },
+ {
+  "id": 4271,
+  "de": "einüben",
+  "artikel": null,
+  "tr": "alıştırma yaparak öğrenmek, çalışmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Klasse übt den Dialog für die Prüfung ein."
+ },
+ {
+  "id": 4272,
+  "de": "schulisch",
+  "artikel": null,
+  "tr": "okulla ilgili, okuldaki",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Seine schulischen Leistungen haben sich deutlich verbessert."
+ },
+ {
+  "id": 4273,
+  "de": "akademisch",
+  "artikel": null,
+  "tr": "akademik",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für die Stelle wird ein akademischer Abschluss vorausgesetzt."
+ },
+ {
+  "id": 4274,
+  "de": "praxisnah",
+  "artikel": null,
+  "tr": "uygulamaya dönük, pratiğe yakın",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Unterricht ist praxisnah und arbeitet mit echten Fällen."
+ },
+ {
+  "id": 4275,
+  "de": "lernbereit",
+  "artikel": null,
+  "tr": "öğrenmeye istekli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Betrieb sucht lernbereite junge Leute ohne Vorkenntnisse."
+ },
+ {
+  "id": 4276,
+  "de": "wissbegierig",
+  "artikel": null,
+  "tr": "bilgiye meraklı, öğrenme hevesli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Wissbegierige Kinder stellen den ganzen Tag Fragen."
+ },
+ {
+  "id": 4277,
+  "de": "anspruchsvoll",
+  "artikel": null,
+  "tr": "zorlu, iddialı, seçici",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Kurs ist anspruchsvoll und verlangt tägliche Vorbereitung."
+ },
+ {
+  "id": 4278,
+  "de": "berufsbegleitend",
+  "artikel": null,
+  "tr": "çalışırken yapılan, işle birlikte yürütülen",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Sie macht einen berufsbegleitenden Master in Betriebswirtschaft."
+ },
+ {
+  "id": 4279,
+  "de": "fortgeschritten",
+  "artikel": null,
+  "tr": "ileri düzey, ilerlemiş",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Kurs richtet sich an fortgeschrittene Teilnehmer."
+ },
+ {
+  "id": 4280,
+  "de": "zielstrebig",
+  "artikel": null,
+  "tr": "azimli, hedefe kilitlenmiş",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Zielstrebig arbeitete sie auf ihren Abschluss hin."
+ },
+ {
+  "id": 4281,
+  "de": "Tagesordnung",
+  "artikel": "die",
+  "tr": "gündem",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Tagesordnung wird eine Woche vor der Sitzung verschickt."
+ },
+ {
+  "id": 4282,
+  "de": "Protokoll",
+  "artikel": "das",
+  "tr": "tutanak, protokol",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wer schreibt heute das Protokoll der Besprechung?"
+ },
+ {
+  "id": 4283,
+  "de": "Wortmeldung",
+  "artikel": "die",
+  "tr": "söz talebi, söz isteme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gibt es zu diesem Punkt noch weitere Wortmeldungen?"
+ },
+ {
+  "id": 4284,
+  "de": "Sitzungsleitung",
+  "artikel": "die",
+  "tr": "toplantı yönetimi, oturum başkanlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Sitzungsleitung übernimmt in dieser Woche der Abteilungsleiter."
+ },
+ {
+  "id": 4285,
+  "de": "Fristverlängerung",
+  "artikel": "die",
+  "tr": "süre uzatımı, mühlet uzatma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wir haben beim Kunden eine Fristverlängerung um zwei Wochen erreicht."
+ },
+ {
+  "id": 4286,
+  "de": "Meilenstein",
+  "artikel": "der",
+  "tr": "kilometre taşı, dönüm noktası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der erste Meilenstein des Projekts ist termingerecht erreicht worden."
+ },
+ {
+  "id": 4287,
+  "de": "Projektauftrag",
+  "artikel": "der",
+  "tr": "proje görevi, proje sözleşmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Projektauftrag stehen Ziele, Budget und Verantwortlichkeiten."
+ },
+ {
+  "id": 4288,
+  "de": "Arbeitspaket",
+  "artikel": "das",
+  "tr": "iş paketi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Jedes Arbeitspaket hat einen festen Verantwortlichen im Team."
+ },
+ {
+  "id": 4289,
+  "de": "Zwischenbericht",
+  "artikel": "der",
+  "tr": "ara rapor",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Zwischenbericht liegt der Geschäftsführung seit Montag vor."
+ },
+ {
+  "id": 4290,
+  "de": "Sachstand",
+  "artikel": "der",
+  "tr": "mevcut durum, güncel durum",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bitte informieren Sie mich kurz über den aktuellen Sachstand."
+ },
+ {
+  "id": 4291,
+  "de": "Vorgang",
+  "artikel": "der",
+  "tr": "işlem, dosya, süreç",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Vorgang wurde an die zuständige Kollegin abgegeben."
+ },
+ {
+  "id": 4292,
+  "de": "Ablage",
+  "artikel": "die",
+  "tr": "dosyalama, evrak yeri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die digitale Ablage ist inzwischen übersichtlicher als der Aktenschrank."
+ },
+ {
+  "id": 4293,
+  "de": "Registratur",
+  "artikel": "die",
+  "tr": "arşiv birimi, kayıt bürosu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Alte Akten lagern seit Jahren unten in der Registratur."
+ },
+ {
+  "id": 4294,
+  "de": "Posteingang",
+  "artikel": "der",
+  "tr": "gelen evrak, gelen kutusu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Jeden Morgen sortiert sie zuerst den Posteingang der Abteilung."
+ },
+ {
+  "id": 4295,
+  "de": "Verteiler",
+  "artikel": "der",
+  "tr": "dağıtım listesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Setzen Sie die Rechtsabteilung bitte mit auf den Verteiler."
+ },
+ {
+  "id": 4296,
+  "de": "Rundschreiben",
+  "artikel": "das",
+  "tr": "genelge, sirküler",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im letzten Rundschreiben ging es um die neuen Arbeitszeiten."
+ },
+ {
+  "id": 4297,
+  "de": "Aktennotiz",
+  "artikel": "die",
+  "tr": "dosya notu, not tutanağı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zu dem Telefonat habe ich eine kurze Aktennotiz verfasst."
+ },
+ {
+  "id": 4298,
+  "de": "Zuarbeit",
+  "artikel": "die",
+  "tr": "hazırlık katkısı, destek çalışması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne die Zuarbeit der Fachbereiche wird der Bericht nicht fertig."
+ },
+ {
+  "id": 4299,
+  "de": "Absprache",
+  "artikel": "die",
+  "tr": "anlaşma, mutabakat, kararlaştırma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach Absprache mit dem Kunden verschieben wir den Liefertermin."
+ },
+ {
+  "id": 4300,
+  "de": "Handlungsbedarf",
+  "artikel": "der",
+  "tr": "harekete geçme gereği, müdahale ihtiyacı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei den Lieferzeiten sehen wir dringenden Handlungsbedarf."
+ },
+ {
+  "id": 4301,
+  "de": "Klärungsbedarf",
+  "artikel": "der",
+  "tr": "açıklığa kavuşturma ihtiyacı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zu den Kosten besteht noch erheblicher Klärungsbedarf."
+ },
+ {
+  "id": 4302,
+  "de": "Engpass",
+  "artikel": "der",
+  "tr": "darboğaz, sıkışıklık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Sommer gibt es regelmäßig personelle Engpässe."
+ },
+ {
+  "id": 4303,
+  "de": "Zeitfenster",
+  "artikel": "das",
+  "tr": "zaman aralığı, uygun zaman dilimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für die Umstellung bleibt uns nur ein enges Zeitfenster."
+ },
+ {
+  "id": 4304,
+  "de": "Pufferzeit",
+  "artikel": "die",
+  "tr": "yedek süre, tampon zaman",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Plane für die Endabnahme unbedingt etwas Pufferzeit ein."
+ },
+ {
+  "id": 4305,
+  "de": "Priorisierung",
+  "artikel": "die",
+  "tr": "önceliklendirme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne klare Priorisierung verzetteln wir uns in Kleinigkeiten."
+ },
+ {
+  "id": 4306,
+  "de": "Dringlichkeit",
+  "artikel": "die",
+  "tr": "aciliyet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Aufgaben werden nach ihrer Dringlichkeit sortiert."
+ },
+ {
+  "id": 4307,
+  "de": "Arbeitsablauf",
+  "artikel": "der",
+  "tr": "iş akışı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die neuen Formulare haben unsere Arbeitsabläufe deutlich vereinfacht."
+ },
+ {
+  "id": 4308,
+  "de": "Geschäftsprozess",
+  "artikel": "der",
+  "tr": "iş süreci",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Alle Geschäftsprozesse werden derzeit auf Papierverzicht geprüft."
+ },
+ {
+  "id": 4309,
+  "de": "Verantwortungsbereich",
+  "artikel": "der",
+  "tr": "sorumluluk alanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Budgetplanung fällt nicht in meinen Verantwortungsbereich."
+ },
+ {
+  "id": 4310,
+  "de": "Stellvertretung",
+  "artikel": "die",
+  "tr": "vekâlet, yerine bakma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung."
+ },
+ {
+  "id": 4311,
+  "de": "Aufgabenverteilung",
+  "artikel": "die",
+  "tr": "görev dağılımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Über die Aufgabenverteilung im Team gab es einige Diskussionen."
+ },
+ {
+  "id": 4312,
+  "de": "Weisung",
+  "artikel": "die",
+  "tr": "talimat, emir",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hat die Unterlagen auf Weisung der Leitung vernichtet."
+ },
+ {
+  "id": 4313,
+  "de": "Vorgabe",
+  "artikel": "die",
+  "tr": "şart, belirlenen ölçüt, hedef",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die zeitlichen Vorgaben der Zentrale sind kaum zu schaffen."
+ },
+ {
+  "id": 4314,
+  "de": "Richtlinie",
+  "artikel": "die",
+  "tr": "yönerge, kılavuz ilke",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für Dienstreisen gelten seit Januar strengere Richtlinien."
+ },
+ {
+  "id": 4315,
+  "de": "Formblatt",
+  "artikel": "das",
+  "tr": "matbu form, standart form",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Den Antrag reichen Sie bitte auf dem beiliegenden Formblatt ein."
+ },
+ {
+  "id": 4316,
+  "de": "Entwurf",
+  "artikel": "der",
+  "tr": "taslak",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der erste Entwurf des Vertrags geht morgen an die Rechtsabteilung."
+ },
+ {
+  "id": 4317,
+  "de": "Fassung",
+  "artikel": "die",
+  "tr": "sürüm, versiyon, metin hâli",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bitte arbeiten Sie nur mit der aktuellen Fassung des Handbuchs."
+ },
+ {
+  "id": 4318,
+  "de": "Freigabe",
+  "artikel": "die",
+  "tr": "onay, serbest bırakma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne die Freigabe des Vorstands drucken wir nichts."
+ },
+ {
+  "id": 4319,
+  "de": "Rückmeldung",
+  "artikel": "die",
+  "tr": "geri bildirim, dönüş",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ich warte noch auf die Rückmeldung aus dem Einkauf."
+ },
+ {
+  "id": 4320,
+  "de": "Abweichung",
+  "artikel": "die",
+  "tr": "sapma, farklılık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Jede Abweichung vom Zeitplan muss schriftlich begründet werden."
+ },
+ {
+  "id": 4321,
+  "de": "Kennzahl",
+  "artikel": "die",
+  "tr": "gösterge, performans rakamı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die wichtigsten Kennzahlen stehen auf der ersten Seite des Berichts."
+ },
+ {
+  "id": 4322,
+  "de": "Dokumentation",
+  "artikel": "die",
+  "tr": "belgeleme, dokümantasyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine saubere Dokumentation spart bei Rückfragen viel Zeit."
+ },
+ {
+  "id": 4323,
+  "de": "Konsens",
+  "artikel": "der",
+  "tr": "uzlaşı, görüş birliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach langer Diskussion fanden die Abteilungen endlich einen Konsens."
+ },
+ {
+  "id": 4324,
+  "de": "Vorbehalt",
+  "artikel": "der",
+  "tr": "çekince, şerh",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wir stimmen dem Angebot unter Vorbehalt der Prüfung zu."
+ },
+ {
+  "id": 4325,
+  "de": "Auslastung",
+  "artikel": "die",
+  "tr": "iş yoğunluğu, kapasite kullanımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Auslastung des Teams liegt seit Wochen bei hundert Prozent."
+ },
+ {
+  "id": 4326,
+  "de": "Kapazität",
+  "artikel": "die",
+  "tr": "kapasite, iş gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für zusätzliche Aufgaben haben wir derzeit keine freien Kapazitäten."
+ },
+ {
+  "id": 4327,
+  "de": "Terminüberschneidung",
+  "artikel": "die",
+  "tr": "randevu çakışması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen einer Terminüberschneidung kann ich erst später dazukommen."
+ },
+ {
+  "id": 4328,
+  "de": "einberufen",
+  "artikel": null,
+  "tr": "toplantıya çağırmak, toplamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Betriebsrat hat für Freitag eine Versammlung einberufen."
+ },
+ {
+  "id": 4329,
+  "de": "beauftragen",
+  "artikel": null,
+  "tr": "görevlendirmek, sipariş vermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Man hat eine externe Firma mit der Auswertung beauftragt."
+ },
+ {
+  "id": 4330,
+  "de": "abarbeiten",
+  "artikel": null,
+  "tr": "sırayla bitirmek, tamamlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bis Mittag hat sie die halbe Liste abgearbeitet."
+ },
+ {
+  "id": 4331,
+  "de": "terminieren",
+  "artikel": null,
+  "tr": "tarih belirlemek, zamana bağlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Abnahme ist auf den zweiten Mai terminiert."
+ },
+ {
+  "id": 4332,
+  "de": "strukturieren",
+  "artikel": null,
+  "tr": "düzenlemek, yapılandırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wir müssen die Besprechungen besser strukturieren."
+ },
+ {
+  "id": 4333,
+  "de": "bündeln",
+  "artikel": null,
+  "tr": "birleştirmek, tek elde toplamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wir bündeln alle Anfragen in einem gemeinsamen Postfach."
+ },
+ {
+  "id": 4334,
+  "de": "weiterleiten",
+  "artikel": null,
+  "tr": "iletmek, yönlendirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ich habe deine Anfrage an die Fachabteilung weitergeleitet."
+ },
+ {
+  "id": 4335,
+  "de": "archivieren",
+  "artikel": null,
+  "tr": "arşivlemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Abgeschlossene Vorgänge werden nach einem Jahr archiviert."
+ },
+ {
+  "id": 4336,
+  "de": "absegnen",
+  "artikel": null,
+  "tr": "onaylamak, imzasını vermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Leitung muss das Konzept noch absegnen."
+ },
+ {
+  "id": 4337,
+  "de": "nachhaken",
+  "artikel": null,
+  "tr": "üstelemek, üzerine gitmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wenn niemand antwortet, hake ich morgen noch einmal nach."
+ },
+ {
+  "id": 4338,
+  "de": "nachfassen",
+  "artikel": null,
+  "tr": "takibini yapmak, tekrar sormak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Beim Kunden sollten wir nächste Woche höflich nachfassen."
+ },
+ {
+  "id": 4339,
+  "de": "anmahnen",
+  "artikel": null,
+  "tr": "ihtar etmek, hatırlatarak istemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Zentrale hat die fehlenden Berichte bereits zweimal angemahnt."
+ },
+ {
+  "id": 4340,
+  "de": "überziehen",
+  "artikel": null,
+  "tr": "aşmak, süreyi geçirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Referent hat seine Redezeit um zehn Minuten überzogen."
+ },
+ {
+  "id": 4341,
+  "de": "aufschieben",
+  "artikel": null,
+  "tr": "ertelemek, sonraya bırakmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Unangenehme Aufgaben schiebt er gern bis Freitag auf."
+ },
+ {
+  "id": 4342,
+  "de": "entlasten",
+  "artikel": null,
+  "tr": "yükünü hafifletmek, rahatlatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Eine zusätzliche Kraft würde das ganze Sekretariat entlasten."
+ },
+ {
+  "id": 4343,
+  "de": "beschleunigen",
+  "artikel": null,
+  "tr": "hızlandırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die digitale Ablage hat die Bearbeitung spürbar beschleunigt."
+ },
+ {
+  "id": 4344,
+  "de": "umsetzen",
+  "artikel": null,
+  "tr": "hayata geçirmek, uygulamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Vorschläge aus der Sitzung wollen wir bis Herbst umsetzen."
+ },
+ {
+  "id": 4345,
+  "de": "durchführen",
+  "artikel": null,
+  "tr": "gerçekleştirmek, yürütmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Schulung wird in zwei Gruppen durchgeführt."
+ },
+ {
+  "id": 4346,
+  "de": "überwachen",
+  "artikel": null,
+  "tr": "denetlemek, izlemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein Kollege überwacht laufend die Einhaltung der Fristen."
+ },
+ {
+  "id": 4347,
+  "de": "unverzüglich",
+  "artikel": null,
+  "tr": "derhâl, gecikmeksizin",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Änderungen sind der Personalabteilung unverzüglich mitzuteilen."
+ },
+ {
+  "id": 4348,
+  "de": "federführend",
+  "artikel": null,
+  "tr": "baş sorumlu olarak, öncülük eden",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Unsere Abteilung ist bei diesem Projekt federführend."
+ },
+ {
+  "id": 4349,
+  "de": "zeitnah",
+  "artikel": null,
+  "tr": "kısa süre içinde, vakit geçirmeden",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Bitte beantworten Sie die Anfrage möglichst zeitnah."
+ },
+ {
+  "id": 4350,
+  "de": "kurzfristig",
+  "artikel": null,
+  "tr": "kısa vadeli, son anda",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Termin wurde kurzfristig auf Donnerstag verlegt."
+ },
+ {
+  "id": 4351,
+  "de": "zügig",
+  "artikel": null,
+  "tr": "hızlıca, aksatmadan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Wenn alle mitziehen, kommen wir zügig voran."
+ },
+ {
+  "id": 4352,
+  "de": "lückenlos",
+  "artikel": null,
+  "tr": "eksiksiz, kesintisiz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Bearbeitung jedes Vorgangs muss lückenlos dokumentiert sein."
+ },
+ {
+  "id": 4353,
+  "de": "reibungslos",
+  "artikel": null,
+  "tr": "sorunsuz, pürüzsüz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Übergabe an das neue Team verlief reibungslos."
+ },
+ {
+  "id": 4354,
+  "de": "vorrangig",
+  "artikel": null,
+  "tr": "öncelikli, öncelikle",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Beschwerden von Kunden werden vorrangig bearbeitet."
+ },
+ {
+  "id": 4355,
+  "de": "abteilungsübergreifend",
+  "artikel": null,
+  "tr": "bölümler arası, birimler üstü",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Für solche Fragen brauchen wir eine abteilungsübergreifende Arbeitsgruppe."
+ },
+ {
+  "id": 4356,
+  "de": "termingerecht",
+  "artikel": null,
+  "tr": "zamanında, tarihine uygun",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Unterlagen gingen termingerecht bei der Behörde ein."
+ },
+ {
+  "id": 4357,
+  "de": "Anbau",
+  "artikel": "der",
+  "tr": "yetiştirme, ekim, tarım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch."
+ },
+ {
+  "id": 4358,
+  "de": "Viehzucht",
+  "artikel": "die",
+  "tr": "hayvancılık, besicilik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In dieser Region lebt fast jeder zweite Betrieb von der Viehzucht."
+ },
+ {
+  "id": 4359,
+  "de": "Nutztier",
+  "artikel": "das",
+  "tr": "çiftlik hayvanı, besi hayvanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für Nutztiere gelten strengere Vorschriften als für Haustiere."
+ },
+ {
+  "id": 4360,
+  "de": "Dünger",
+  "artikel": "der",
+  "tr": "gübre",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zu viel Dünger belastet das Grundwasser in der ganzen Gegend."
+ },
+ {
+  "id": 4361,
+  "de": "Nährstoff",
+  "artikel": "der",
+  "tr": "besin maddesi, besleyici madde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beim langen Kochen gehen viele Nährstoffe verloren."
+ },
+ {
+  "id": 4362,
+  "de": "Ballaststoff",
+  "artikel": "der",
+  "tr": "lif, posa",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vollkornbrot enthält deutlich mehr Ballaststoffe als Weißbrot."
+ },
+ {
+  "id": 4363,
+  "de": "Eiweiß",
+  "artikel": "das",
+  "tr": "protein, yumurta akı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Linsen sind eine günstige Quelle für pflanzliches Eiweiß."
+ },
+ {
+  "id": 4364,
+  "de": "Getreide",
+  "artikel": "das",
+  "tr": "tahıl, hububat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Getreide wurde wegen des Regens zu spät geerntet."
+ },
+ {
+  "id": 4365,
+  "de": "Hülsenfrucht",
+  "artikel": "die",
+  "tr": "baklagil",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Hülsenfrüchte verbessern nebenbei die Qualität des Bodens."
+ },
+ {
+  "id": 4366,
+  "de": "Erzeuger",
+  "artikel": "der",
+  "tr": "üretici",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vom Endpreis bleibt dem Erzeuger oft nur ein kleiner Teil."
+ },
+ {
+  "id": 4367,
+  "de": "Verpackung",
+  "artikel": "die",
+  "tr": "ambalaj, paketleme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die neue Verpackung besteht vollständig aus recyceltem Papier."
+ },
+ {
+  "id": 4368,
+  "de": "Kennzeichnung",
+  "artikel": "die",
+  "tr": "işaretleme, etiketleme, tanımlama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine klare Kennzeichnung der Herkunft ist seit Januar Pflicht."
+ },
+ {
+  "id": 4369,
+  "de": "Etikett",
+  "artikel": "das",
+  "tr": "etiket",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem Etikett stehen alle Zutaten in absteigender Menge."
+ },
+ {
+  "id": 4370,
+  "de": "Mindesthaltbarkeitsdatum",
+  "artikel": "das",
+  "tr": "son tüketim tarihi, tavsiye edilen tüketim tarihi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Joghurts sind nach dem Mindesthaltbarkeitsdatum noch genießbar."
+ },
+ {
+  "id": 4371,
+  "de": "Verbraucherschutz",
+  "artikel": "der",
+  "tr": "tüketicinin korunması, tüketici hakları",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Verbraucherschutz fordert strengere Regeln für Werbung mit Kindern."
+ },
+ {
+  "id": 4372,
+  "de": "Sorte",
+  "artikel": "die",
+  "tr": "çeşit, tür, cins",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Alte Sorten sind robuster, bringen aber weniger Ernte."
+ },
+ {
+  "id": 4373,
+  "de": "Genossenschaft",
+  "artikel": "die",
+  "tr": "kooperatif, birlik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Milchbauern haben sich zu einer Genossenschaft zusammengeschlossen."
+ },
+ {
+  "id": 4374,
+  "de": "Zwischenhändler",
+  "artikel": "der",
+  "tr": "aracı, komisyoncu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Zwischenhändler bleibt den Bauern ein höherer Anteil."
+ },
+ {
+  "id": 4375,
+  "de": "Vermarktung",
+  "artikel": "die",
+  "tr": "pazarlama, satışa sunma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Vermarktung regionaler Produkte läuft inzwischen über eine eigene Plattform."
+ },
+ {
+  "id": 4376,
+  "de": "Absatz",
+  "artikel": "der",
+  "tr": "satış, sürüm",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Absatz von Hafermilch ist im letzten Jahr stark gestiegen."
+ },
+ {
+  "id": 4377,
+  "de": "Lebensmittelverschwendung",
+  "artikel": "die",
+  "tr": "gıda israfı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt."
+ },
+ {
+  "id": 4378,
+  "de": "Entsorgung",
+  "artikel": "die",
+  "tr": "bertaraf, atıkların yok edilmesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Entsorgung der abgelaufenen Ware kostet den Supermarkt viel Geld."
+ },
+ {
+  "id": 4379,
+  "de": "Landwirt",
+  "artikel": "der",
+  "tr": "çiftçi, tarım üreticisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Immer weniger Landwirte finden einen Nachfolger für ihren Hof."
+ },
+ {
+  "id": 4380,
+  "de": "Siegel",
+  "artikel": "das",
+  "tr": "mühür, damga, sertifika işareti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus."
+ },
+ {
+  "id": 4381,
+  "de": "Rückstand",
+  "artikel": "der",
+  "tr": "kalıntı, artık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In den Proben fanden die Prüfer keine Rückstände von Pestiziden."
+ },
+ {
+  "id": 4382,
+  "de": "Pestizid",
+  "artikel": "das",
+  "tr": "tarım ilacı, pestisit",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Einsatz bestimmter Pestizide ist in der EU inzwischen verboten."
+ },
+ {
+  "id": 4383,
+  "de": "Pflanzenschutzmittel",
+  "artikel": "das",
+  "tr": "bitki koruma ilacı, zirai ilaç",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neue Pflanzenschutzmittel müssen ein langes Zulassungsverfahren durchlaufen."
+ },
+ {
+  "id": 4384,
+  "de": "Schädling",
+  "artikel": "der",
+  "tr": "zararlı, haşere",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein einziger Schädling kann die halbe Ernte vernichten."
+ },
+ {
+  "id": 4385,
+  "de": "Unkraut",
+  "artikel": "das",
+  "tr": "yabani ot",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem Bioacker wird das Unkraut mechanisch entfernt."
+ },
+ {
+  "id": 4386,
+  "de": "Bewässerung",
+  "artikel": "die",
+  "tr": "sulama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne künstliche Bewässerung wäre hier kein Gemüseanbau möglich."
+ },
+ {
+  "id": 4387,
+  "de": "Missernte",
+  "artikel": "die",
+  "tr": "ürün kıtlığı, kötü hasat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der zweiten Missernte in Folge gab der Betrieb auf."
+ },
+ {
+  "id": 4388,
+  "de": "Fruchtfolge",
+  "artikel": "die",
+  "tr": "ekim nöbeti, münavebe",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine durchdachte Fruchtfolge hält den Acker über Jahre fruchtbar."
+ },
+ {
+  "id": 4389,
+  "de": "Monokultur",
+  "artikel": "die",
+  "tr": "tek ürün tarımı, monokültür",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Monokulturen sind besonders anfällig für Krankheiten und Insekten."
+ },
+ {
+  "id": 4390,
+  "de": "Erosion",
+  "artikel": "die",
+  "tr": "erozyon, aşınma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Hecken am Feldrand schützen die Hänge vor Erosion."
+ },
+ {
+  "id": 4391,
+  "de": "Weide",
+  "artikel": "die",
+  "tr": "mera, otlak",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Sommer stehen die Kühe den ganzen Tag auf der Weide."
+ },
+ {
+  "id": 4392,
+  "de": "Tierwohl",
+  "artikel": "das",
+  "tr": "hayvan refahı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für mehr Tierwohl wären viele Kunden bereit, mehr zu zahlen."
+ },
+ {
+  "id": 4393,
+  "de": "Massentierhaltung",
+  "artikel": "die",
+  "tr": "endüstriyel hayvancılık, fabrika tipi hayvancılık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Film zeigt schonungslos die Zustände in der Massentierhaltung."
+ },
+ {
+  "id": 4394,
+  "de": "Molkerei",
+  "artikel": "die",
+  "tr": "mandıra, süt fabrikası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Molkerei holt die Milch jeden zweiten Tag vom Hof ab."
+ },
+ {
+  "id": 4395,
+  "de": "Lagerung",
+  "artikel": "die",
+  "tr": "depolama, saklama",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei falscher Lagerung verlieren Äpfel schnell ihren Geschmack."
+ },
+ {
+  "id": 4396,
+  "de": "Kühlkette",
+  "artikel": "die",
+  "tr": "soğuk zincir",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wird die Kühlkette unterbrochen, ist die Ware nicht mehr sicher."
+ },
+ {
+  "id": 4397,
+  "de": "Zusatzstoff",
+  "artikel": "der",
+  "tr": "katkı maddesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Produkt kommt ganz ohne künstliche Zusatzstoffe aus."
+ },
+ {
+  "id": 4398,
+  "de": "Rückruf",
+  "artikel": "der",
+  "tr": "geri çağırma, ürün toplatma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Hersteller startete einen Rückruf für mehrere Chargen Käse."
+ },
+ {
+  "id": 4399,
+  "de": "Geschmacksverstärker",
+  "artikel": "der",
+  "tr": "tat arttırıcı, lezzet arttırıcı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Fertigsuppe stecken gleich mehrere Geschmacksverstärker."
+ },
+ {
+  "id": 4400,
+  "de": "Mangelernährung",
+  "artikel": "die",
+  "tr": "yetersiz beslenme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auch in reichen Ländern leiden alte Menschen an Mangelernährung."
+ },
+ {
+  "id": 4401,
+  "de": "Unverträglichkeit",
+  "artikel": "die",
+  "tr": "intolerans, tahammülsüzlük",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei einer Unverträglichkeit muss man die Zutatenliste genau lesen."
+ },
+ {
+  "id": 4402,
+  "de": "Allergen",
+  "artikel": "das",
+  "tr": "alerjen",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die vierzehn wichtigsten Allergene müssen auf der Karte stehen."
+ },
+ {
+  "id": 4403,
+  "de": "Ertrag",
+  "artikel": "der",
+  "tr": "verim, ürün miktarı, getiri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Trotz der Trockenheit lag der Ertrag über dem Durchschnitt."
+ },
+ {
+  "id": 4404,
+  "de": "Saatgut",
+  "artikel": "das",
+  "tr": "tohumluk, tohum",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Saatgut stammt aus einer regionalen Vermehrung."
+ },
+ {
+  "id": 4405,
+  "de": "schlachten",
+  "artikel": null,
+  "tr": "kesmek, boğazlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Tiere werden erst in einem Betrieb weiter weg geschlachtet."
+ },
+ {
+  "id": 4406,
+  "de": "melken",
+  "artikel": null,
+  "tr": "sağmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Heute werden die Kühe von einem Roboter gemolken."
+ },
+ {
+  "id": 4407,
+  "de": "verarbeiten",
+  "artikel": null,
+  "tr": "işlemek, işleyip ürüne dönüştürmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Hof verarbeitet die Milch selbst zu Käse und Joghurt."
+ },
+ {
+  "id": 4408,
+  "de": "konservieren",
+  "artikel": null,
+  "tr": "muhafaza etmek, konserve yapmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Früher konservierte man Gemüse vor allem mit Salz."
+ },
+ {
+  "id": 4409,
+  "de": "verderben",
+  "artikel": null,
+  "tr": "bozulmak, çürümek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Bei dieser Hitze verdirbt das Fleisch innerhalb weniger Stunden."
+ },
+ {
+  "id": 4410,
+  "de": "wegwerfen",
+  "artikel": null,
+  "tr": "atmak, çöpe atmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Jeder Haushalt wirft im Jahr rund achtzig Kilo Essen weg."
+ },
+ {
+  "id": 4411,
+  "de": "beliefern",
+  "artikel": null,
+  "tr": "mal sağlamak, tedarik etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Betrieb beliefert mehrere Kantinen in der Stadt."
+ },
+ {
+  "id": 4412,
+  "de": "zertifizieren",
+  "artikel": null,
+  "tr": "belgelendirmek, sertifikalandırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Hof ist seit drei Jahren als ökologischer Betrieb zertifiziert."
+ },
+ {
+  "id": 4413,
+  "de": "subventionieren",
+  "artikel": null,
+  "tr": "sübvanse etmek, desteklemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Staat subventioniert kleine Höfe in benachteiligten Regionen."
+ },
+ {
+  "id": 4414,
+  "de": "bewirtschaften",
+  "artikel": null,
+  "tr": "işlemek, tarımını yapmak, idare etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Familie bewirtschaftet knapp vierzig Hektar Ackerland."
+ },
+ {
+  "id": 4415,
+  "de": "pflügen",
+  "artikel": null,
+  "tr": "sürmek, çift sürmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Im Herbst wird das Feld ein letztes Mal gepflügt."
+ },
+ {
+  "id": 4416,
+  "de": "säen",
+  "artikel": null,
+  "tr": "ekmek, tohum atmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wer zu früh sät, riskiert Verluste durch späten Frost."
+ },
+ {
+  "id": 4417,
+  "de": "verfüttern",
+  "artikel": null,
+  "tr": "yem olarak vermek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein Teil des Getreides wird direkt an die Schweine verfüttert."
+ },
+ {
+  "id": 4418,
+  "de": "mästen",
+  "artikel": null,
+  "tr": "besiye çekmek, semirtmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Kälber werden nur wenige Monate lang gemästet."
+ },
+ {
+  "id": 4419,
+  "de": "keimen",
+  "artikel": null,
+  "tr": "çimlenmek, filizlenmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Kartoffeln haben im warmen Keller schon gekeimt."
+ },
+ {
+  "id": 4420,
+  "de": "schimmeln",
+  "artikel": null,
+  "tr": "küflenmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Brot schimmelt in der Plastiktüte schneller als im Topf."
+ },
+ {
+  "id": 4421,
+  "de": "gären",
+  "artikel": null,
+  "tr": "mayalanmak, fermente olmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Kohl muss mehrere Wochen im Fass gären."
+ },
+ {
+  "id": 4422,
+  "de": "pasteurisieren",
+  "artikel": null,
+  "tr": "pastörize etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Milch wird kurz erhitzt und damit pasteurisiert."
+ },
+ {
+  "id": 4423,
+  "de": "abfüllen",
+  "artikel": null,
+  "tr": "doldurmak, şişelemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Saft wird noch am selben Tag in Flaschen abgefüllt."
+ },
+ {
+  "id": 4424,
+  "de": "aussortieren",
+  "artikel": null,
+  "tr": "ayıklamak, ayırıp çıkarmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Krumme Gurken werden schon im Betrieb aussortiert."
+ },
+ {
+  "id": 4425,
+  "de": "sättigen",
+  "artikel": null,
+  "tr": "doyurmak, tok tutmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Haferflocken sättigen länger als ein süßes Frühstück."
+ },
+ {
+  "id": 4426,
+  "de": "erwirtschaften",
+  "artikel": null,
+  "tr": "kazanmak, elde etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Hof erwirtschaftet den größten Teil seines Umsatzes im Hofladen."
+ },
+ {
+  "id": 4427,
+  "de": "ökologisch",
+  "artikel": null,
+  "tr": "ekolojik, organik",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Betrieb arbeitet seit der Umstellung vollständig ökologisch."
+ },
+ {
+  "id": 4428,
+  "de": "konventionell",
+  "artikel": null,
+  "tr": "geleneksel, klasik yöntemle yapılan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Konventionell angebaute Ware ist im Schnitt deutlich billiger."
+ },
+ {
+  "id": 4429,
+  "de": "saisonal",
+  "artikel": null,
+  "tr": "mevsimlik, mevsimine göre",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Wer saisonal einkauft, spart Geld und schont das Klima."
+ },
+ {
+  "id": 4430,
+  "de": "artgerecht",
+  "artikel": null,
+  "tr": "türüne uygun",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Eine artgerechte Haltung braucht mehr Platz und mehr Personal."
+ },
+ {
+  "id": 4431,
+  "de": "fettarm",
+  "artikel": null,
+  "tr": "az yağlı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Arzt hat ihr eine fettarme Kost empfohlen."
+ },
+ {
+  "id": 4432,
+  "de": "gentechnikfrei",
+  "artikel": null,
+  "tr": "gen teknolojisi içermeyen, GDO'suz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Futter für diese Hühner ist nachweislich gentechnikfrei."
+ },
+ {
+  "id": 4433,
+  "de": "zuckerhaltig",
+  "artikel": null,
+  "tr": "şeker içeren, şekerli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Zuckerhaltige Getränke sollen in Schulen künftig verschwinden."
+ },
+ {
+  "id": 4434,
+  "de": "ranzig",
+  "artikel": null,
+  "tr": "acılaşmış, ekşimiş",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Nüsse schmecken ranzig und gehören in den Müll."
+ },
+ {
+  "id": 4435,
+  "de": "reichlich",
+  "artikel": null,
+  "tr": "bol, bolca, epeyce",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "In diesem Jahr gab es reichlich Obst aus der Region."
+ },
+ {
+  "id": 4436,
+  "de": "Darlehen",
+  "artikel": "das",
+  "tr": "kredi, borç para",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Bank hat uns ein zinsgünstiges Darlehen für den Hausbau gewährt."
+ },
+ {
+  "id": 4437,
+  "de": "Ratenzahlung",
+  "artikel": "die",
+  "tr": "taksitle ödeme, taksit",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei Ratenzahlung fallen zusätzliche Kosten von acht Prozent an."
+ },
+ {
+  "id": 4438,
+  "de": "Bürgschaft",
+  "artikel": "die",
+  "tr": "kefalet, kefillik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne die Bürgschaft der Eltern hätte er keine Wohnung bekommen."
+ },
+ {
+  "id": 4439,
+  "de": "Kontoauszug",
+  "artikel": "der",
+  "tr": "hesap ekstresi, hesap dökümü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem letzten Kontoauszug entdeckte sie eine unbekannte Abbuchung."
+ },
+ {
+  "id": 4440,
+  "de": "Lastschrift",
+  "artikel": "die",
+  "tr": "otomatik ödeme talimatı, hesaptan tahsilat",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Miete wird jeden Monat per Lastschrift eingezogen."
+ },
+ {
+  "id": 4441,
+  "de": "Dauerauftrag",
+  "artikel": "der",
+  "tr": "düzenli ödeme talimatı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für die Versicherung habe ich einen Dauerauftrag eingerichtet."
+ },
+ {
+  "id": 4442,
+  "de": "Guthaben",
+  "artikel": "das",
+  "tr": "bakiye, alacak",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der Rückerstattung besteht auf deinem Konto ein kleines Guthaben."
+ },
+ {
+  "id": 4443,
+  "de": "Ersparnis",
+  "artikel": "die",
+  "tr": "tasarruf, birikim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Familie hat ihre Ersparnisse in die Renovierung gesteckt."
+ },
+ {
+  "id": 4444,
+  "de": "Haushaltsplan",
+  "artikel": "der",
+  "tr": "bütçe planı, bütçe",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Stadtrat verabschiedet den Haushaltsplan für das kommende Jahr."
+ },
+ {
+  "id": 4445,
+  "de": "Mahngebühr",
+  "artikel": "die",
+  "tr": "gecikme ihtar ücreti, ihtarname bedeli",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wer zu spät zahlt, muss mit einer Mahngebühr rechnen."
+ },
+ {
+  "id": 4446,
+  "de": "Zahlungsfrist",
+  "artikel": "die",
+  "tr": "ödeme süresi, vade",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Zahlungsfrist läuft am Ende des Monats ab."
+ }
+]

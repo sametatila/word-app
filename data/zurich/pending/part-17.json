@@ -1,0 +1,1649 @@
+[
+ {
+  "id": 7247,
+  "de": "Bewilligung",
+  "artikel": "die",
+  "tr": "onay, tahsis, izin",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne die Bewilligung der Fördermittel kann das Projekt nicht starten."
+ },
+ {
+  "id": 7248,
+  "de": "Bürokratieabbau",
+  "artikel": "der",
+  "tr": "bürokrasinin azaltılması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der versprochene Bürokratieabbau blieb bislang weitgehend folgenlos."
+ },
+ {
+  "id": 7249,
+  "de": "Dienstweg",
+  "artikel": "der",
+  "tr": "resmî prosedür, hiyerarşik yol",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Beschwerden müssen zunächst auf dem üblichen Dienstweg eingereicht werden."
+ },
+ {
+  "id": 7250,
+  "de": "Kontrollinstanz",
+  "artikel": "die",
+  "tr": "denetim mercii",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung."
+ },
+ {
+  "id": 7251,
+  "de": "Ombudsstelle",
+  "artikel": "die",
+  "tr": "kamu denetçiliği birimi, arabulucu makam",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bürger können sich bei Konflikten mit Ämtern an die Ombudsstelle wenden."
+ },
+ {
+  "id": 7252,
+  "de": "Regelwerk",
+  "artikel": "das",
+  "tr": "kurallar bütünü, mevzuat",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Regelwerk ist über die Jahre unübersichtlich und widersprüchlich geworden."
+ },
+ {
+  "id": 7253,
+  "de": "Satzung",
+  "artikel": "die",
+  "tr": "tüzük, ana sözleşme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Satzung des Vereins wurde auf der Mitgliederversammlung grundlegend geändert."
+ },
+ {
+  "id": 7254,
+  "de": "Verantwortlichkeit",
+  "artikel": "die",
+  "tr": "sorumluluk, mesuliyet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Verantwortlichkeiten zwischen Bund und Ländern sind kaum klar abgegrenzt."
+ },
+ {
+  "id": 7255,
+  "de": "Verwaltungsapparat",
+  "artikel": "der",
+  "tr": "yönetim aygıtı, bürokratik yapı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil der Haushaltsmittel."
+ },
+ {
+  "id": 7256,
+  "de": "Verwaltungsreform",
+  "artikel": "die",
+  "tr": "kamu yönetimi reformu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die angekündigte Verwaltungsreform scheiterte am Widerstand der Ministerien."
+ },
+ {
+  "id": 7257,
+  "de": "Zuständigkeitsbereich",
+  "artikel": "der",
+  "tr": "yetki alanı, görev sahası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Diese Frage liegt außerhalb des Zuständigkeitsbereichs unserer Abteilung."
+ },
+ {
+  "id": 7258,
+  "de": "Amtsschimmel",
+  "artikel": "der",
+  "tr": "bürokratik hantallık, kırtasiyecilik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bei jedem Formular wiehert wieder der Amtsschimmel."
+ },
+ {
+  "id": 7259,
+  "de": "Beamtentum",
+  "artikel": "das",
+  "tr": "memurluk kurumu, memur sınıfı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das preußische Beamtentum galt lange als Vorbild an Pflichttreue."
+ },
+ {
+  "id": 7260,
+  "de": "Auskunftspflicht",
+  "artikel": "die",
+  "tr": "bilgi verme yükümlülüğü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Gegenüber dem Untersuchungsausschuss besteht eine umfassende Auskunftspflicht."
+ },
+ {
+  "id": 7261,
+  "de": "Dezentralisierung",
+  "artikel": "die",
+  "tr": "yerelleşme, yetki dağıtımı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Dezentralisierung der Zuständigkeiten hat die Verfahren spürbar beschleunigt."
+ },
+ {
+  "id": 7262,
+  "de": "Vertraulichkeit",
+  "artikel": "die",
+  "tr": "gizlilik, mahremiyet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Vertraulichkeit der Personalakten muss unbedingt gewahrt bleiben."
+ },
+ {
+  "id": 7263,
+  "de": "Amtshilfe",
+  "artikel": "die",
+  "tr": "kurumlar arası yardım, idari destek",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe."
+ },
+ {
+  "id": 7264,
+  "de": "Prüfbericht",
+  "artikel": "der",
+  "tr": "denetim raporu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Prüfbericht deckte erhebliche Mängel in der Mittelverwendung auf."
+ },
+ {
+  "id": 7265,
+  "de": "Rechnungshof",
+  "artikel": "der",
+  "tr": "sayıştay",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Landesbehörden."
+ },
+ {
+  "id": 7266,
+  "de": "verfügen",
+  "artikel": null,
+  "tr": "hükmetmek, resmen karar vermek, sahip olmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Behörde verfügte die sofortige Schließung des Betriebs."
+ },
+ {
+  "id": 7267,
+  "de": "einschreiten",
+  "artikel": null,
+  "tr": "müdahale etmek, işe karışmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Aufsicht schritt erst ein, als der Schaden längst entstanden war."
+ },
+ {
+  "id": 7268,
+  "de": "anberaumen",
+  "artikel": null,
+  "tr": "belirlemek, gün tayin etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Für kommende Woche wurde eine außerordentliche Sitzung anberaumt."
+ },
+ {
+  "id": 7269,
+  "de": "zuwiderhandeln",
+  "artikel": null,
+  "tr": "aykırı davranmak, ihlal etmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Wer den Auflagen zuwiderhandelt, muss mit einem Bußgeld rechnen."
+ },
+ {
+  "id": 7270,
+  "de": "erwirken",
+  "artikel": null,
+  "tr": "elde etmek, çıkarttırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Initiative erwirkte einen Baustopp für das umstrittene Gelände."
+ },
+ {
+  "id": 7271,
+  "de": "formell",
+  "artikel": null,
+  "tr": "biçimsel, resmî",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Formell war alles korrekt, inhaltlich blieb die Entscheidung fragwürdig."
+ },
+ {
+  "id": 7272,
+  "de": "schwerfällig",
+  "artikel": null,
+  "tr": "hantal, ağır işleyen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Apparat reagiert auf neue Anforderungen ausgesprochen schwerfällig."
+ },
+ {
+  "id": 7273,
+  "de": "antragsberechtigt",
+  "artikel": null,
+  "tr": "başvuru hakkı olan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Antragsberechtigt sind nur Einrichtungen mit Sitz im Inland."
+ },
+ {
+  "id": 7274,
+  "de": "seitens",
+  "artikel": null,
+  "tr": "tarafından, cihetinden",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Seitens der Verwaltung gab es bislang keine belastbare Stellungnahme."
+ },
+ {
+  "id": 7275,
+  "de": "mangels",
+  "artikel": null,
+  "tr": "yokluğundan dolayı, bulunmaması nedeniyle",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Das Verfahren wurde mangels hinreichender Beweise eingestellt."
+ },
+ {
+  "id": 7276,
+  "de": "Deflation",
+  "artikel": "die",
+  "tr": "deflasyon, fiyatların genel düşüşü",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine anhaltende Deflation kann die Konjunktur stärker lähmen als moderate Preissteigerungen."
+ },
+ {
+  "id": 7277,
+  "de": "Stagnation",
+  "artikel": "die",
+  "tr": "durgunluk, duraklama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft endlich wieder leicht."
+ },
+ {
+  "id": 7278,
+  "de": "Fiskalpolitik",
+  "artikel": "die",
+  "tr": "maliye politikası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Über die richtige Fiskalpolitik streiten Ökonomen seit der letzten Rezession."
+ },
+ {
+  "id": 7279,
+  "de": "Anleihe",
+  "artikel": "die",
+  "tr": "tahvil, borçlanma senedi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Notenbank kauft Anleihen auf, um die langfristigen Zinsen zu senken."
+ },
+ {
+  "id": 7280,
+  "de": "Kapitalmarkt",
+  "artikel": "der",
+  "tr": "sermaye piyasası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kapitalmärkte reagierten nervös auf die überraschende Zinsentscheidung."
+ },
+ {
+  "id": 7281,
+  "de": "Haushaltsdefizit",
+  "artikel": "das",
+  "tr": "bütçe açığı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Haushaltsdefizit stieg im vergangenen Jahr auf vier Prozent der Wirtschaftsleistung."
+ },
+ {
+  "id": 7282,
+  "de": "Konjunkturzyklus",
+  "artikel": "der",
+  "tr": "konjonktür döngüsü, ekonomik çevrim",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jeder Konjunkturzyklus durchläuft Phasen des Aufschwungs und der Abkühlung."
+ },
+ {
+  "id": 7283,
+  "de": "Produktivität",
+  "artikel": "die",
+  "tr": "verimlilik, üretkenlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne Investitionen in Bildung stagniert die Produktivität einer Volkswirtschaft."
+ },
+ {
+  "id": 7284,
+  "de": "Preisstabilität",
+  "artikel": "die",
+  "tr": "fiyat istikrarı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das oberste Ziel der Notenbank bleibt die Preisstabilität im Euroraum."
+ },
+ {
+  "id": 7285,
+  "de": "Sozialtransfer",
+  "artikel": "der",
+  "tr": "sosyal transfer, sosyal yardım ödemesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne staatliche Sozialtransfers läge die Armutsquote deutlich höher."
+ },
+ {
+  "id": 7286,
+  "de": "Finanzaufsicht",
+  "artikel": "die",
+  "tr": "mali denetim kurumu, finansal denetim",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Finanzaufsicht prüft, ob die Institute genügend Rücklagen bilden."
+ },
+ {
+  "id": 7287,
+  "de": "Zahlungsfähigkeit",
+  "artikel": "die",
+  "tr": "ödeme gücü, borcunu ödeyebilme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zweifel an der Zahlungsfähigkeit des Staates trieben die Zinsen nach oben."
+ },
+ {
+  "id": 7288,
+  "de": "Spekulationsblase",
+  "artikel": "die",
+  "tr": "spekülasyon balonu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kurz vor dem Platzen einer Spekulationsblase wirkt der Markt besonders euphorisch."
+ },
+ {
+  "id": 7289,
+  "de": "Finanzkrise",
+  "artikel": "die",
+  "tr": "finansal kriz",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Finanzkrise von 2008 erschütterte das Vertrauen in die Banken dauerhaft."
+ },
+ {
+  "id": 7290,
+  "de": "Systemrisiko",
+  "artikel": "das",
+  "tr": "sistemik risk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Sehr große Institute bergen ein Systemrisiko für die gesamte Volkswirtschaft."
+ },
+ {
+  "id": 7291,
+  "de": "Rettungspaket",
+  "artikel": "das",
+  "tr": "kurtarma paketi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Parlament billigte ein Rettungspaket in Höhe von zwanzig Milliarden Euro."
+ },
+ {
+  "id": 7292,
+  "de": "Notenbank",
+  "artikel": "die",
+  "tr": "merkez bankası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Notenbank handelt formal unabhängig von den Wünschen der Regierung."
+ },
+ {
+  "id": 7293,
+  "de": "Geldmenge",
+  "artikel": "die",
+  "tr": "para arzı, para miktarı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine rasch wachsende Geldmenge gilt vielen Ökonomen als Warnsignal."
+ },
+ {
+  "id": 7294,
+  "de": "Abwertung",
+  "artikel": "die",
+  "tr": "değer kaybı, devalüasyon",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Abwertung der Landeswährung verteuerte sämtliche Importe schlagartig."
+ },
+ {
+  "id": 7295,
+  "de": "Handelsbilanz",
+  "artikel": "die",
+  "tr": "dış ticaret dengesi, ticaret bilançosu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Land weist seit Jahren eine deutlich positive Handelsbilanz auf."
+ },
+ {
+  "id": 7296,
+  "de": "Freihandel",
+  "artikel": "der",
+  "tr": "serbest ticaret",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Befürworter des Freihandels versprechen niedrigere Preise für alle Verbraucher."
+ },
+ {
+  "id": 7297,
+  "de": "Grenznutzen",
+  "artikel": "der",
+  "tr": "marjinal fayda",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Grenznutzen jedes weiteren Glases Wasser nimmt rasch ab."
+ },
+ {
+  "id": 7298,
+  "de": "Opportunitätskosten",
+  "artikel": "die",
+  "tr": "fırsat maliyeti",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne."
+ },
+ {
+  "id": 7299,
+  "de": "Marktversagen",
+  "artikel": "das",
+  "tr": "piyasa başarısızlığı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Umweltschäden gelten in der Theorie als klassisches Beispiel für Marktversagen."
+ },
+ {
+  "id": 7300,
+  "de": "Allokation",
+  "artikel": "die",
+  "tr": "tahsis, kaynakların dağılımı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Preis sorgt in der Theorie für eine effiziente Allokation knapper Güter."
+ },
+ {
+  "id": 7301,
+  "de": "Sparquote",
+  "artikel": "die",
+  "tr": "tasarruf oranı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Sparquote der privaten Haushalte ist auf ein Rekordhoch geklettert."
+ },
+ {
+  "id": 7302,
+  "de": "Gewinnmarge",
+  "artikel": "die",
+  "tr": "kâr marjı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Steigende Rohstoffpreise drücken die Gewinnmargen der Hersteller."
+ },
+ {
+  "id": 7303,
+  "de": "Vermögenswert",
+  "artikel": "der",
+  "tr": "varlık, mal varlığı unsuru",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In unsicheren Zeiten flüchten Anleger in reale Vermögenswerte."
+ },
+ {
+  "id": 7304,
+  "de": "Realwirtschaft",
+  "artikel": "die",
+  "tr": "reel ekonomi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Krise sprang schnell vom Finanzsektor auf die Realwirtschaft über."
+ },
+ {
+  "id": 7305,
+  "de": "Abschwung",
+  "artikel": "der",
+  "tr": "gerileme, daralma dönemi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Abschwung traf die exportorientierte Industrie besonders hart."
+ },
+ {
+  "id": 7306,
+  "de": "Arbeitslosenquote",
+  "artikel": "die",
+  "tr": "işsizlik oranı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Trotz des Wachstums sank die Arbeitslosenquote nur geringfügig."
+ },
+ {
+  "id": 7307,
+  "de": "Tarifabschluss",
+  "artikel": "der",
+  "tr": "toplu sözleşme anlaşması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Tarifabschluss sieht Lohnerhöhungen in zwei Stufen vor."
+ },
+ {
+  "id": 7308,
+  "de": "Teuerung",
+  "artikel": "die",
+  "tr": "hayat pahalılığı, fiyat artışı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Vor allem Mieten und Lebensmittel treiben die Teuerung derzeit an."
+ },
+ {
+  "id": 7309,
+  "de": "besteuern",
+  "artikel": null,
+  "tr": "vergilendirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Kapitalerträge werden in vielen Ländern niedriger besteuert als Arbeitseinkommen."
+ },
+ {
+  "id": 7310,
+  "de": "dämpfen",
+  "artikel": null,
+  "tr": "frenlemek, hafifletmek, yavaşlatmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Höhere Zinsen dämpfen den Konsum der privaten Haushalte."
+ },
+ {
+  "id": 7311,
+  "de": "verzinsen",
+  "artikel": null,
+  "tr": "faiz işletmek, faiz ödemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Guthaben wird mit knapp zwei Prozent jährlich verzinst."
+ },
+ {
+  "id": 7312,
+  "de": "horten",
+  "artikel": null,
+  "tr": "istiflemek, biriktirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Aus Angst vor der Krise horteten viele Haushalte Bargeld."
+ },
+ {
+  "id": 7313,
+  "de": "ausschütten",
+  "artikel": null,
+  "tr": "kâr dağıtmak, ödeme yapmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Vorstand will einen größeren Teil des Gewinns ausschütten."
+ },
+ {
+  "id": 7314,
+  "de": "verzerren",
+  "artikel": null,
+  "tr": "çarpıtmak, bozmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren."
+ },
+ {
+  "id": 7315,
+  "de": "monetär",
+  "artikel": null,
+  "tr": "parasal",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Rein monetäre Erklärungen greifen bei dieser Krise deutlich zu kurz."
+ },
+ {
+  "id": 7316,
+  "de": "marktwirtschaftlich",
+  "artikel": null,
+  "tr": "piyasa ekonomisine dayalı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Er verteidigt marktwirtschaftliche Lösungen auch im Gesundheitswesen."
+ },
+ {
+  "id": 7317,
+  "de": "volatil",
+  "artikel": null,
+  "tr": "oynak, dalgalı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Rohstoffmärkte blieben über das ganze Jahr hinweg volatil."
+ },
+ {
+  "id": 7318,
+  "de": "antizyklisch",
+  "artikel": null,
+  "tr": "konjonktüre ters yönde, antisiklik",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Staat sollte antizyklisch investieren, also gerade in schlechten Zeiten."
+ },
+ {
+  "id": 7319,
+  "de": "solvent",
+  "artikel": null,
+  "tr": "ödeme gücü olan, borcunu ödeyebilen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Nur solvente Kunden erhalten von der Bank größere Kredite."
+ },
+ {
+  "id": 7320,
+  "de": "nominal",
+  "artikel": null,
+  "tr": "nominal, itibari",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum."
+ },
+ {
+  "id": 7321,
+  "de": "expansiv",
+  "artikel": null,
+  "tr": "genişletici, yayılmacı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Eine expansive Geldpolitik verbilligt Kredite für Unternehmen und Haushalte."
+ },
+ {
+  "id": 7322,
+  "de": "restriktiv",
+  "artikel": null,
+  "tr": "sıkı, kısıtlayıcı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Zentralbank verfolgt seit Monaten einen ausgesprochen restriktiven Kurs."
+ },
+ {
+  "id": 7323,
+  "de": "überschuldet",
+  "artikel": null,
+  "tr": "aşırı borçlu, borç batağında",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Überschuldete Haushalte finden nur schwer aus der Zinsfalle heraus."
+ },
+ {
+  "id": 7324,
+  "de": "Vetternwirtschaft",
+  "artikel": "die",
+  "tr": "kayırmacılık, adam kayırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bei der Vergabe der Posten herrschte offenkundig Vetternwirtschaft."
+ },
+ {
+  "id": 7325,
+  "de": "Hinweisgeber",
+  "artikel": "der",
+  "tr": "ihbarcı, bilgi uçuran kişi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Hinweisgeber machte die Bestechungszahlungen der Tochterfirma öffentlich."
+ },
+ {
+  "id": 7326,
+  "de": "Fehlverhalten",
+  "artikel": "das",
+  "tr": "usulsüz davranış, kusurlu davranış",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Systematisches Fehlverhalten im Einkauf blieb jahrelang unentdeckt."
+ },
+ {
+  "id": 7327,
+  "de": "Schmiergeld",
+  "artikel": "das",
+  "tr": "rüşvet parası",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Über Beraterverträge flossen jahrelang Schmiergelder an lokale Beamte."
+ },
+ {
+  "id": 7328,
+  "de": "Vorteilsnahme",
+  "artikel": "die",
+  "tr": "çıkar sağlama, menfaat temini",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Gegen den Abteilungsleiter wird wegen Vorteilsnahme im Amt ermittelt."
+ },
+ {
+  "id": 7329,
+  "de": "Machtmissbrauch",
+  "artikel": "der",
+  "tr": "yetki kötüye kullanımı, güç suistimali",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Untersuchung ergab klare Hinweise auf Machtmissbrauch in der Personalabteilung."
+ },
+ {
+  "id": 7330,
+  "de": "Seilschaft",
+  "artikel": "die",
+  "tr": "çıkar ağı, klik, dayanışma grubu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Alte Seilschaften bestimmten weiterhin, wer in den Aufsichtsrat einzog."
+ },
+ {
+  "id": 7331,
+  "de": "Intransparenz",
+  "artikel": "die",
+  "tr": "şeffaflıksızlık, kapalılık",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Intransparenz der Zahlungsströme erschwerte jede unabhängige Prüfung erheblich."
+ },
+ {
+  "id": 7332,
+  "de": "Offenlegung",
+  "artikel": "die",
+  "tr": "açıklama, ifşa etme, kamuya duyurma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die vollständige Offenlegung der Nebeneinkünfte ist inzwischen verpflichtend."
+ },
+ {
+  "id": 7333,
+  "de": "Nachhaltigkeitsbericht",
+  "artikel": "der",
+  "tr": "sürdürülebilirlik raporu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Nachhaltigkeitsbericht nennt beeindruckende Zahlen ohne überprüfbare Grundlage."
+ },
+ {
+  "id": 7334,
+  "de": "Grünfärberei",
+  "artikel": "die",
+  "tr": "yeşil aklama, çevreci gösterme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Kritiker werfen dem Konzern reine Grünfärberei ohne echte Emissionsminderung vor."
+ },
+ {
+  "id": 7335,
+  "de": "Etikettenschwindel",
+  "artikel": "der",
+  "tr": "etiket aldatmacası, göz boyama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das angeblich klimaneutrale Produkt entpuppte sich als reiner Etikettenschwindel."
+ },
+ {
+  "id": 7336,
+  "de": "Doppelmoral",
+  "artikel": "die",
+  "tr": "çifte standart, ikiyüzlü ahlak",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wer Menschenrechte predigt und Zulieferer presst, betreibt Doppelmoral."
+ },
+ {
+  "id": 7337,
+  "de": "Reputationsrisiko",
+  "artikel": "das",
+  "tr": "itibar riski",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Reputationsrisiko wog am Ende schwerer als der erwartete Gewinn."
+ },
+ {
+  "id": 7338,
+  "de": "Grauzone",
+  "artikel": "die",
+  "tr": "gri alan, belirsiz alan",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Solche Geschenke bewegen sich in einer rechtlichen Grauzone."
+ },
+ {
+  "id": 7339,
+  "de": "Verantwortungsbewusstsein",
+  "artikel": "das",
+  "tr": "sorumluluk bilinci",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihm fehlte jedes Verantwortungsbewusstsein für die Folgen seiner Entscheidungen."
+ },
+ {
+  "id": 7340,
+  "de": "Insidergeschäft",
+  "artikel": "das",
+  "tr": "içeriden öğrenenlerin ticareti",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung."
+ },
+ {
+  "id": 7341,
+  "de": "Bilanzfälschung",
+  "artikel": "die",
+  "tr": "bilanço tahrifatı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die jahrelange Bilanzfälschung flog erst durch einen internen Hinweis auf."
+ },
+ {
+  "id": 7342,
+  "de": "Veruntreuung",
+  "artikel": "die",
+  "tr": "zimmete geçirme, emniyeti suistimal",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Wegen Veruntreuung von Fördermitteln wurde die Geschäftsführerin entlassen."
+ },
+ {
+  "id": 7343,
+  "de": "Geldwäsche",
+  "artikel": "die",
+  "tr": "kara para aklama",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Bank verschärfte ihre Kontrollen gegen Geldwäsche erheblich."
+ },
+ {
+  "id": 7344,
+  "de": "Anspruchsgruppe",
+  "artikel": "die",
+  "tr": "menfaat sahibi grup, paydaş",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Strategie berücksichtigt die Erwartungen aller relevanten Anspruchsgruppen."
+ },
+ {
+  "id": 7345,
+  "de": "Rechtfertigung",
+  "artikel": "die",
+  "tr": "gerekçe, haklı çıkarma, mazeret",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Wettbewerbsdruck taugt nicht als Rechtfertigung für gefälschte Prüfberichte."
+ },
+ {
+  "id": 7346,
+  "de": "Meldestelle",
+  "artikel": "die",
+  "tr": "bildirim birimi, ihbar merkezi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Verdachtsfälle können anonym an die interne Meldestelle gerichtet werden."
+ },
+ {
+  "id": 7347,
+  "de": "Nebentätigkeit",
+  "artikel": "die",
+  "tr": "yan iş, ek görev",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jede bezahlte Nebentätigkeit muss der Compliance-Abteilung angezeigt werden."
+ },
+ {
+  "id": 7348,
+  "de": "Gegenleistung",
+  "artikel": "die",
+  "tr": "karşılık, edim karşılığı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Für die Spende wurde offenbar eine politische Gegenleistung erwartet."
+ },
+ {
+  "id": 7349,
+  "de": "Preisabsprache",
+  "artikel": "die",
+  "tr": "fiyat anlaşması, danışıklı fiyatlandırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Preisabsprachen kosteten die Verbraucher jährlich Millionenbeträge."
+ },
+ {
+  "id": 7350,
+  "de": "Monopolstellung",
+  "artikel": "die",
+  "tr": "tekel konumu",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Anbieter nutzte seine Monopolstellung zulasten kleinerer Händler aus."
+ },
+ {
+  "id": 7351,
+  "de": "Deckmantel",
+  "artikel": "der",
+  "tr": "kılıf, perde, bahane",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Unter dem Deckmantel der Forschung wurden Werbekampagnen finanziert."
+ },
+ {
+  "id": 7352,
+  "de": "bestechen",
+  "artikel": null,
+  "tr": "rüşvet vermek, satın almak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Vertriebsleiter soll mehrere Zollbeamte bestochen haben."
+ },
+ {
+  "id": 7353,
+  "de": "durchleuchten",
+  "artikel": null,
+  "tr": "didik didik incelemek, mercek altına almak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Eine externe Kanzlei durchleuchtete sämtliche Beraterverträge der letzten Jahre."
+ },
+ {
+  "id": 7354,
+  "de": "schädigen",
+  "artikel": null,
+  "tr": "zarar vermek, zedelemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Skandal hat das Ansehen der ganzen Branche nachhaltig geschädigt."
+ },
+ {
+  "id": 7355,
+  "de": "billigen",
+  "artikel": null,
+  "tr": "onaylamak, hoş görmek, uygun bulmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Aufsichtsrat billigte die fragwürdige Praxis über Jahre stillschweigend."
+ },
+ {
+  "id": 7356,
+  "de": "unterschlagen",
+  "artikel": null,
+  "tr": "zimmetine geçirmek, gizlemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der Kassenwart hat über Jahre erhebliche Summen unterschlagen."
+ },
+ {
+  "id": 7357,
+  "de": "vortäuschen",
+  "artikel": null,
+  "tr": "-mış gibi göstermek, numara yapmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Mit geschönten Kennzahlen täuschte die Firma wirtschaftliche Stabilität vor."
+ },
+ {
+  "id": 7358,
+  "de": "sich bereichern",
+  "artikel": null,
+  "tr": "haksız kazanç sağlamak, sırtından geçinmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Einzelne Manager bereicherten sich auf Kosten der Belegschaft."
+ },
+ {
+  "id": 7359,
+  "de": "auferlegen",
+  "artikel": null,
+  "tr": "yüklemek, dayatmak, zorunlu kılmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Gericht erlegte dem Konzern umfangreiche Berichtspflichten auf."
+ },
+ {
+  "id": 7360,
+  "de": "integer",
+  "artikel": null,
+  "tr": "dürüst, lekesiz, güvenilir",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Man hielt sie für eine integre und unbestechliche Vorgesetzte."
+ },
+ {
+  "id": 7361,
+  "de": "unlauter",
+  "artikel": null,
+  "tr": "haksız, dürüst olmayan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Irreführende Umweltversprechen gelten als unlauterer Wettbewerb."
+ },
+ {
+  "id": 7362,
+  "de": "vertretbar",
+  "artikel": null,
+  "tr": "savunulabilir, kabul edilebilir",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ethisch vertretbar ist diese Preisgestaltung auf Dauer nicht."
+ },
+ {
+  "id": 7363,
+  "de": "ethisch",
+  "artikel": null,
+  "tr": "etik, ahlaki",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Die Entscheidung wirft grundlegende ethische Fragen auf."
+ },
+ {
+  "id": 7364,
+  "de": "wissentlich",
+  "artikel": null,
+  "tr": "bilerek, bilinçli olarak",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Sie hat die falschen Angaben wissentlich weitergeleitet."
+ },
+ {
+  "id": 7365,
+  "de": "gutgläubig",
+  "artikel": null,
+  "tr": "iyi niyetli, saf",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Viele Anleger vertrauten gutgläubig auf die testierten Zahlen."
+ },
+ {
+  "id": 7366,
+  "de": "Genauigkeit",
+  "artikel": "die",
+  "tr": "kesinlik, hassasiyet, doğruluk",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Genauigkeit der Messgeräte begrenzt die möglichen Schlüsse."
+ },
+ {
+  "id": 7367,
+  "de": "Näherung",
+  "artikel": "die",
+  "tr": "yaklaşıklık, yaklaşık değer",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Modell liefert nur eine grobe Näherung an die Wirklichkeit."
+ },
+ {
+  "id": 7368,
+  "de": "Beweisführung",
+  "artikel": "die",
+  "tr": "kanıtlama, ispat yöntemi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Beweisführung wirkt elegant, hält der Prüfung aber nicht stand."
+ },
+ {
+  "id": 7369,
+  "de": "Wiederholbarkeit",
+  "artikel": "die",
+  "tr": "tekrarlanabilirlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Wiederholbarkeit von Experimenten gilt als Kern wissenschaftlicher Arbeit."
+ },
+ {
+  "id": 7370,
+  "de": "Fehlerquelle",
+  "artikel": "die",
+  "tr": "hata kaynağı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Mögliche Fehlerquellen werden im letzten Abschnitt offen benannt."
+ },
+ {
+  "id": 7371,
+  "de": "Sichtweise",
+  "artikel": "die",
+  "tr": "bakış açısı, görüş",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Seine Sichtweise setzte sich erst Jahrzehnte später durch."
+ },
+ {
+  "id": 7372,
+  "de": "Denkschule",
+  "artikel": "die",
+  "tr": "düşünce okulu, ekol",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Beide Denkschulen streiten seit Langem über denselben Grundbegriff."
+ },
+ {
+  "id": 7373,
+  "de": "Anwendungsbezug",
+  "artikel": "der",
+  "tr": "uygulamayla bağ, pratiğe dönüklük",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Dem Projekt fehlt bislang jeder erkennbare Anwendungsbezug."
+ },
+ {
+  "id": 7374,
+  "de": "Erkenntnisgewinn",
+  "artikel": "der",
+  "tr": "bilgi kazanımı, yeni bilgi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Erkenntnisgewinn rechtfertigt den enormen Aufwand kaum."
+ },
+ {
+  "id": 7375,
+  "de": "Aufsatz",
+  "artikel": "der",
+  "tr": "makale, deneme",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ihr Aufsatz gilt inzwischen als Standardtext des Fachs."
+ },
+ {
+  "id": 7376,
+  "de": "Literaturverzeichnis",
+  "artikel": "das",
+  "tr": "kaynakça",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Literaturverzeichnis umfasst über dreihundert einzelne Titel."
+ },
+ {
+  "id": 7377,
+  "de": "Begutachtung",
+  "artikel": "die",
+  "tr": "değerlendirme, hakem incelemesi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die anonyme Begutachtung durch Fachleute dauerte mehrere Monate."
+ },
+ {
+  "id": 7378,
+  "de": "Fachkollege",
+  "artikel": "der",
+  "tr": "meslektaş, alandan meslektaş",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Zwei Fachkollegen bestätigten die Ergebnisse in einem eigenen Versuch."
+ },
+ {
+  "id": 7379,
+  "de": "Fachgebiet",
+  "artikel": "das",
+  "tr": "uzmanlık alanı, disiplin",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "In ihrem Fachgebiet gilt sie als führende Stimme."
+ },
+ {
+  "id": 7380,
+  "de": "Antragstellung",
+  "artikel": "die",
+  "tr": "başvuru yapma, başvuru süreci",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Antragstellung kostet oft mehr Zeit als die eigentliche Arbeit."
+ },
+ {
+  "id": 7381,
+  "de": "Tagung",
+  "artikel": "die",
+  "tr": "konferans, bilimsel toplantı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Auf der Tagung stellte sie erste vorläufige Ergebnisse vor."
+ },
+ {
+  "id": 7382,
+  "de": "Fachdebatte",
+  "artikel": "die",
+  "tr": "alan içi tartışma, uzmanlık tartışması",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Fachdebatte über diesen Begriff dauert nun schon Jahrzehnte."
+ },
+ {
+  "id": 7383,
+  "de": "Streitfrage",
+  "artikel": "die",
+  "tr": "tartışmalı konu, ihtilaflı soru",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Diese Streitfrage spaltet die Forschung bis heute."
+ },
+ {
+  "id": 7384,
+  "de": "Lehrmeinung",
+  "artikel": "die",
+  "tr": "yerleşik görüş, hâkim öğreti",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die herrschende Lehrmeinung geriet durch neue Funde ins Wanken."
+ },
+ {
+  "id": 7385,
+  "de": "stützen",
+  "artikel": null,
+  "tr": "desteklemek, dayanak oluşturmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die neuen Funde stützen die These nur teilweise."
+ },
+ {
+  "id": 7386,
+  "de": "erproben",
+  "artikel": null,
+  "tr": "denemek, sınamak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Das Verfahren wurde zunächst an kleinen Gruppen erprobt."
+ },
+ {
+  "id": 7387,
+  "de": "aufzeigen",
+  "artikel": null,
+  "tr": "göstermek, ortaya koymak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Untersuchung zeigt deutliche Lücken im bisherigen Wissen auf."
+ },
+ {
+  "id": 7388,
+  "de": "promovieren",
+  "artikel": null,
+  "tr": "doktora yapmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Sie promovierte mit einer Arbeit über frühneuzeitliche Briefe."
+ },
+ {
+  "id": 7389,
+  "de": "wegweisend",
+  "artikel": null,
+  "tr": "yol gösterici, çığır açıcı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Aufsatz gilt heute als wegweisend für die gesamte Disziplin."
+ },
+ {
+  "id": 7390,
+  "de": "strittig",
+  "artikel": null,
+  "tr": "tartışmalı, ihtilaflı",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ob der Effekt überhaupt existiert, bleibt weiterhin strittig."
+ },
+ {
+  "id": 7391,
+  "de": "mehrdeutig",
+  "artikel": null,
+  "tr": "çok anlamlı, muğlak",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der Begriff wird in der Literatur auffallend mehrdeutig verwendet."
+ },
+ {
+  "id": 7392,
+  "de": "Unumkehrbarkeit",
+  "artikel": "die",
+  "tr": "geri dönülmezlik, tersine çevrilemezlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Unumkehrbarkeit dieser Entwicklung macht rasches Handeln nötig."
+ },
+ {
+  "id": 7393,
+  "de": "Eintrittswahrscheinlichkeit",
+  "artikel": "die",
+  "tr": "gerçekleşme olasılığı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Eintrittswahrscheinlichkeit des Ereignisses lässt sich kaum seriös angeben."
+ },
+ {
+  "id": 7394,
+  "de": "Gefahrenpotenzial",
+  "artikel": "das",
+  "tr": "tehlike potansiyeli, risk barındırma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Fachleute streiten über das Gefahrenpotenzial der neuen Technologie."
+ },
+ {
+  "id": 7395,
+  "de": "Frühwarnsystem",
+  "artikel": "das",
+  "tr": "erken uyarı sistemi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein gutes Frühwarnsystem meldet Auffälligkeiten, bevor der Schaden entsteht."
+ },
+ {
+  "id": 7396,
+  "de": "Ungewissheit",
+  "artikel": "die",
+  "tr": "bilinmezlik, kesinsizlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Planung unter Ungewissheit verlangt Demut gegenüber den eigenen Zahlen."
+ },
+ {
+  "id": 7397,
+  "de": "Zeithorizont",
+  "artikel": "der",
+  "tr": "zaman ufku, öngörü süresi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Jenseits eines Zeithorizonts von zwanzig Jahren wird jede Aussage vage."
+ },
+ {
+  "id": 7398,
+  "de": "Datenlage",
+  "artikel": "die",
+  "tr": "veri durumu, eldeki veriler",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Bei dieser dünnen Datenlage sind belastbare Aussagen kaum möglich."
+ },
+ {
+  "id": 7399,
+  "de": "Richtwert",
+  "artikel": "der",
+  "tr": "referans değer, yönlendirici değer",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der genannte Richtwert ist eine Orientierung, keine verbindliche Vorgabe."
+ },
+ {
+  "id": 7400,
+  "de": "Folgenabschätzung",
+  "artikel": "die",
+  "tr": "etki değerlendirmesi, sonuç analizi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Vor der Einführung wurde eine ausführliche Folgenabschätzung vorgelegt."
+ },
+ {
+  "id": 7401,
+  "de": "Kollateralschaden",
+  "artikel": "der",
+  "tr": "yan hasar, dolaylı zarar",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kollateralschäden dieser Sparpolitik zeigen sich erst Jahre später."
+ },
+ {
+  "id": 7402,
+  "de": "Verwundbarkeit",
+  "artikel": "die",
+  "tr": "kırılganlık, zarar görebilirlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Pandemie hat die Verwundbarkeit globaler Lieferketten offengelegt."
+ },
+ {
+  "id": 7403,
+  "de": "Notfallplan",
+  "artikel": "der",
+  "tr": "acil durum planı",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ein Notfallplan nützt wenig, wenn ihn niemand je geprobt hat."
+ },
+ {
+  "id": 7404,
+  "de": "Beharrungsvermögen",
+  "artikel": "das",
+  "tr": "direnç, değişime kapalılık, atalet",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Beharrungsvermögen der Institutionen bremst jede angekündigte Reform."
+ },
+ {
+  "id": 7405,
+  "de": "Erschütterung",
+  "artikel": "die",
+  "tr": "sarsıntı, sarsılma",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Das Vertrauen der Anleger hat eine schwere Erschütterung erlitten."
+ },
+ {
+  "id": 7406,
+  "de": "Verwerfung",
+  "artikel": "die",
+  "tr": "çarpıklık, kırılma, dengesizlik",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Umbau der Wirtschaft führt zu sozialen Verwerfungen in ganzen Regionen."
+ },
+ {
+  "id": 7407,
+  "de": "Risikoscheu",
+  "artikel": "die",
+  "tr": "riskten kaçınma eğilimi",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Übertriebene Risikoscheu kann selbst zu einem erheblichen Risiko werden."
+ },
+ {
+  "id": 7408,
+  "de": "Erwartungshaltung",
+  "artikel": "die",
+  "tr": "beklenti tutumu, beklenti",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Erwartungshaltung der Öffentlichkeit beeinflusst die Prognosen der Fachleute."
+ },
+ {
+  "id": 7409,
+  "de": "Leitbild",
+  "artikel": "das",
+  "tr": "ideal model, yol gösterici tasavvur",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Ohne ein überzeugendes Leitbild bleibt jede Reform Stückwerk."
+ },
+ {
+  "id": 7410,
+  "de": "Dystopie",
+  "artikel": "die",
+  "tr": "distopya, karanlık gelecek tasavvuru",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Roman zeichnet eine Dystopie, die unangenehm plausibel wirkt."
+ },
+ {
+  "id": 7411,
+  "de": "Langzeitfolge",
+  "artikel": "die",
+  "tr": "uzun vadeli sonuç",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Über die Langzeitfolgen dieses Eingriffs weiß man bisher wenig."
+ },
+ {
+  "id": 7412,
+  "de": "Vorkehrung",
+  "artikel": "die",
+  "tr": "önlem, tedbir",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die Kommune hat für den Ernstfall umfangreiche Vorkehrungen getroffen."
+ },
+ {
+  "id": 7413,
+  "de": "Dominoeffekt",
+  "artikel": "der",
+  "tr": "domino etkisi, zincirleme etki",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Der Ausfall eines Zulieferers löste einen Dominoeffekt in der Branche aus."
+ },
+ {
+  "id": 7414,
+  "de": "Kurskorrektur",
+  "artikel": "die",
+  "tr": "rota düzeltmesi, yön değişikliği",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Eine frühe Kurskorrektur wäre billiger gewesen als die späte Rettung."
+ },
+ {
+  "id": 7415,
+  "de": "Erblast",
+  "artikel": "die",
+  "tr": "geçmişten devralınan yük, miras kalan sorun",
+  "typ": "Nomen",
+  "niveau": "C1",
+  "beispiel": "Die kommende Regierung übernimmt eine schwere finanzielle Erblast."
+ },
+ {
+  "id": 7416,
+  "de": "antizipieren",
+  "artikel": null,
+  "tr": "önceden sezmek, öngörmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Gute Planung antizipiert Widerstände, statt sie später zu beklagen."
+ },
+ {
+  "id": 7417,
+  "de": "ausloten",
+  "artikel": null,
+  "tr": "yoklamak, sınırlarını araştırmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Kommission lotet aus, welche Maßnahmen politisch überhaupt durchsetzbar sind."
+ },
+ {
+  "id": 7418,
+  "de": "durchspielen",
+  "artikel": null,
+  "tr": "baştan sona düşünmek, senaryolarını denemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Im Krisenstab wurden alle denkbaren Verläufe einmal durchgespielt."
+ },
+ {
+  "id": 7419,
+  "de": "ausbleiben",
+  "artikel": null,
+  "tr": "gerçekleşmemek, gelmemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Der erhoffte Aufschwung ist auch in diesem Jahr ausgeblieben."
+ },
+ {
+  "id": 7420,
+  "de": "umschlagen",
+  "artikel": null,
+  "tr": "birdenbire tersine dönmek, aniden değişmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die anfängliche Begeisterung ist rasch in Ernüchterung umgeschlagen."
+ },
+ {
+  "id": 7421,
+  "de": "einkalkulieren",
+  "artikel": null,
+  "tr": "hesaba katmak, göz önünde bulundurmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Rückschläge sind in diesem Zeitplan bereits einkalkuliert."
+ },
+ {
+  "id": 7422,
+  "de": "herbeiführen",
+  "artikel": null,
+  "tr": "yol açmak, meydana getirmek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Eine Entscheidung sollte man herbeiführen, bevor die Lage kippt."
+ },
+ {
+  "id": 7423,
+  "de": "veranschlagen",
+  "artikel": null,
+  "tr": "öngörmek, tahmini olarak belirlemek",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Für den Umbau sind fünf Jahre veranschlagt, realistisch sind acht."
+ },
+ {
+  "id": 7424,
+  "de": "sich wappnen",
+  "artikel": null,
+  "tr": "hazırlıklı olmak, kendini donatmak",
+  "typ": "Verb",
+  "niveau": "C1",
+  "beispiel": "Die Städte wappnen sich gegen immer längere Hitzeperioden."
+ },
+ {
+  "id": 7425,
+  "de": "unabsehbar",
+  "artikel": null,
+  "tr": "kestirilemez, öngörülemez",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Ein Ausstieg hätte Folgen von unabsehbarer Tragweite."
+ },
+ {
+  "id": 7426,
+  "de": "vorausschauend",
+  "artikel": null,
+  "tr": "ileriyi gören, öngörülü",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Vorausschauendes Handeln kostet heute Geld und spart morgen viel mehr."
+ },
+ {
+  "id": 7427,
+  "de": "hypothetisch",
+  "artikel": null,
+  "tr": "varsayımsal, farazi",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Diese Zahlen sind rein hypothetisch und ersetzen keine Messung."
+ },
+ {
+  "id": 7428,
+  "de": "schleichend",
+  "artikel": null,
+  "tr": "sinsi, yavaş yavaş ilerleyen",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Der schleichende Verlust an Vertrauen fällt zunächst kaum auf."
+ },
+ {
+  "id": 7429,
+  "de": "verhängnisvoll",
+  "artikel": null,
+  "tr": "vahim, uğursuz sonuçlara yol açan",
+  "typ": "Sonstiges",
+  "niveau": "C1",
+  "beispiel": "Das Zögern in den ersten Wochen erwies sich als verhängnisvoll."
+ }
+]

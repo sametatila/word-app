@@ -1,0 +1,1802 @@
+[
+ {
+  "id": 5447,
+  "de": "Angreifer",
+  "artikel": "der",
+  "tr": "saldırgan",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Angreifer verschafften sich über gestohlene Zugangsdaten Eintritt ins System."
+ },
+ {
+  "id": 5448,
+  "de": "Datenmissbrauch",
+  "artikel": "der",
+  "tr": "veri kötüye kullanımı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs."
+ },
+ {
+  "id": 5449,
+  "de": "Datenverlust",
+  "artikel": "der",
+  "tr": "veri kaybı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine regelmäßige Sicherung schützt am besten vor plötzlichem Datenverlust."
+ },
+ {
+  "id": 5450,
+  "de": "Verfügbarkeit",
+  "artikel": "die",
+  "tr": "erişilebilirlik, kullanılabilirlik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu."
+ },
+ {
+  "id": 5451,
+  "de": "Rechenleistung",
+  "artikel": "die",
+  "tr": "işlem gücü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für diese Auswertung brauchen wir deutlich mehr Rechenleistung als bisher."
+ },
+ {
+  "id": 5452,
+  "de": "Endgerät",
+  "artikel": "das",
+  "tr": "uç cihaz, son kullanıcı cihazı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Seite passt sich an jedes Endgerät automatisch an."
+ },
+ {
+  "id": 5453,
+  "de": "Sensor",
+  "artikel": "der",
+  "tr": "sensör, algılayıcı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein Sensor an der Tür meldet jede unbefugte Bewegung."
+ },
+ {
+  "id": 5454,
+  "de": "Fernsteuerung",
+  "artikel": "die",
+  "tr": "uzaktan kumanda, uzaktan kontrol",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Heizung lässt sich per Fernsteuerung vom Handy aus regeln."
+ },
+ {
+  "id": 5455,
+  "de": "Roboter",
+  "artikel": "der",
+  "tr": "robot",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Halle übernehmen Roboter inzwischen die schwersten Arbeitsschritte."
+ },
+ {
+  "id": 5456,
+  "de": "Entwickler",
+  "artikel": "der",
+  "tr": "geliştirici",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Entwickler arbeiten seit Wochen an einer stabileren Fassung."
+ },
+ {
+  "id": 5457,
+  "de": "Neuerung",
+  "artikel": "die",
+  "tr": "yenilik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten."
+ },
+ {
+  "id": 5458,
+  "de": "Ablauf",
+  "artikel": "der",
+  "tr": "işleyiş, süreç, akış",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der gesamte Ablauf der Bestellung wird nun vom Rechner gesteuert."
+ },
+ {
+  "id": 5459,
+  "de": "Ladegerät",
+  "artikel": "das",
+  "tr": "şarj cihazı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ich habe mein Ladegerät im Zug liegen lassen."
+ },
+ {
+  "id": 5460,
+  "de": "Datenbank",
+  "artikel": "die",
+  "tr": "veri tabanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Datenbank stehen die Angaben von mehreren Millionen Kunden."
+ },
+ {
+  "id": 5461,
+  "de": "Suchmaschine",
+  "artikel": "die",
+  "tr": "arama motoru",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Suchmaschine zeigt Werbung immer vor den eigentlichen Ergebnissen."
+ },
+ {
+  "id": 5462,
+  "de": "Dateiformat",
+  "artikel": "das",
+  "tr": "dosya biçimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bitte schicken Sie den Bericht in einem gängigen Dateiformat."
+ },
+ {
+  "id": 5463,
+  "de": "Virenschutz",
+  "artikel": "der",
+  "tr": "virüs koruması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen."
+ },
+ {
+  "id": 5464,
+  "de": "Netzbetreiber",
+  "artikel": "der",
+  "tr": "şebeke işletmecisi, operatör",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Netzbetreiber hat die Störung nach zwei Tagen endlich behoben."
+ },
+ {
+  "id": 5465,
+  "de": "Dienstleistung",
+  "artikel": "die",
+  "tr": "hizmet",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Dienstleistungen der Behörde lassen sich inzwischen im Netz erledigen."
+ },
+ {
+  "id": 5466,
+  "de": "Elektronik",
+  "artikel": "die",
+  "tr": "elektronik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei dem Unfall wurde vor allem die Elektronik des Wagens beschädigt."
+ },
+ {
+  "id": 5467,
+  "de": "Stromversorgung",
+  "artikel": "die",
+  "tr": "elektrik beslemesi, güç kaynağı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine unterbrochene Stromversorgung kann den ganzen Betrieb lahmlegen."
+ },
+ {
+  "id": 5468,
+  "de": "Handhabung",
+  "artikel": "die",
+  "tr": "kullanım, kullanış",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Handhabung des Programms ist auch für Ungeübte leicht."
+ },
+ {
+  "id": 5469,
+  "de": "Funkverbindung",
+  "artikel": "die",
+  "tr": "telsiz bağlantısı, kablosuz bağlantı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Tunnel brach die Funkverbindung zum Fahrzeug plötzlich ab."
+ },
+ {
+  "id": 5470,
+  "de": "Signal",
+  "artikel": "das",
+  "tr": "sinyal, işaret",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Signal wird auf dem Land oft von Bäumen abgeschwächt."
+ },
+ {
+  "id": 5471,
+  "de": "Simulation",
+  "artikel": "die",
+  "tr": "simülasyon, benzetim",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Simulation hielt die Brücke auch starkem Wind stand."
+ },
+ {
+  "id": 5472,
+  "de": "Warnhinweis",
+  "artikel": "der",
+  "tr": "uyarı, uyarı notu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die meisten Leute klicken den Warnhinweis einfach weg."
+ },
+ {
+  "id": 5473,
+  "de": "Bildschirmauflösung",
+  "artikel": "die",
+  "tr": "ekran çözünürlüğü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei dieser Bildschirmauflösung ist die Schrift kaum noch lesbar."
+ },
+ {
+  "id": 5474,
+  "de": "Testlauf",
+  "artikel": "der",
+  "tr": "deneme çalışması, test sürüşü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Vor der Einführung gab es mehrere Testläufe mit echten Kunden."
+ },
+ {
+  "id": 5475,
+  "de": "verschlüsseln",
+  "artikel": null,
+  "tr": "şifrelemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Alle Nachrichten werden bereits auf dem Gerät verschlüsselt."
+ },
+ {
+  "id": 5476,
+  "de": "aktualisieren",
+  "artikel": null,
+  "tr": "güncellemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wir aktualisieren die Angaben auf der Seite jeden Morgen."
+ },
+ {
+  "id": 5477,
+  "de": "programmieren",
+  "artikel": null,
+  "tr": "programlamak, kodlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Sie hat die Steuerung der Maschine selbst programmiert."
+ },
+ {
+  "id": 5478,
+  "de": "abstürzen",
+  "artikel": null,
+  "tr": "çökmek (program), donmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Programm ist mitten in der Bearbeitung wieder abgestürzt."
+ },
+ {
+  "id": 5479,
+  "de": "ausführen",
+  "artikel": null,
+  "tr": "yürütmek, çalıştırmak, uygulamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Rechner führt den Befehl erst nach der Bestätigung aus."
+ },
+ {
+  "id": 5480,
+  "de": "wiederherstellen",
+  "artikel": null,
+  "tr": "geri yüklemek, eski hâline getirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Zum Glück konnten wir die gelöschten Unterlagen wiederherstellen."
+ },
+ {
+  "id": 5481,
+  "de": "erfassen",
+  "artikel": null,
+  "tr": "kaydetmek, saptamak, kavramak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Gerät erfasst den Verbrauch jeder einzelnen Wohnung."
+ },
+ {
+  "id": 5482,
+  "de": "eingeben",
+  "artikel": null,
+  "tr": "girmek (veri), yazmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein."
+ },
+ {
+  "id": 5483,
+  "de": "sperren",
+  "artikel": null,
+  "tr": "engellemek, bloke etmek, kapatmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt."
+ },
+ {
+  "id": 5484,
+  "de": "freischalten",
+  "artikel": null,
+  "tr": "etkinleştirmek, açmak, aktive etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Funktion wird erst nach der Bezahlung freigeschaltet."
+ },
+ {
+  "id": 5485,
+  "de": "abrufen",
+  "artikel": null,
+  "tr": "çağırmak, erişip almak, sorgulamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Den Kontostand kann man jederzeit vom Handy abrufen."
+ },
+ {
+  "id": 5486,
+  "de": "blockieren",
+  "artikel": null,
+  "tr": "engellemek, bloke etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Programm blockiert Werbung und unerwünschte Verbindungen zuverlässig."
+ },
+ {
+  "id": 5487,
+  "de": "filtern",
+  "artikel": null,
+  "tr": "süzmek, filtrelemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Dienst filtert verdächtige Nachrichten schon vor der Zustellung."
+ },
+ {
+  "id": 5488,
+  "de": "verknüpfen",
+  "artikel": null,
+  "tr": "bağlamak, ilişkilendirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die App verknüpft deinen Kalender mit dem des Teams."
+ },
+ {
+  "id": 5489,
+  "de": "kabellos",
+  "artikel": null,
+  "tr": "kablosuz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Kopfhörer verbinden sich kabellos mit jedem Gerät im Raum."
+ },
+ {
+  "id": 5490,
+  "de": "kompatibel",
+  "artikel": null,
+  "tr": "uyumlu",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Drucker ist leider nicht mit unserem System kompatibel."
+ },
+ {
+  "id": 5491,
+  "de": "veraltet",
+  "artikel": null,
+  "tr": "eskimiş, güncelliğini yitirmiş",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Ausstattung im Labor ist inzwischen hoffnungslos veraltet."
+ },
+ {
+  "id": 5492,
+  "de": "standardmäßig",
+  "artikel": null,
+  "tr": "standart olarak, varsayılan olarak",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Ortung ist bei diesem Gerät standardmäßig ausgeschaltet."
+ },
+ {
+  "id": 5493,
+  "de": "aufwendig",
+  "artikel": null,
+  "tr": "zahmetli, masraflı, çok emek isteyen",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Umstellung war aufwendiger, als wir zunächst gedacht hatten."
+ },
+ {
+  "id": 5494,
+  "de": "zeitgemäß",
+  "artikel": null,
+  "tr": "çağdaş, güncel, çağa uygun",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Eine zeitgemäße Ausrüstung gehört heute zu jedem Arbeitsplatz."
+ },
+ {
+  "id": 5495,
+  "de": "unbefugt",
+  "artikel": null,
+  "tr": "yetkisiz, izinsiz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Unbefugte Zugriffe werden vom System sofort gemeldet."
+ },
+ {
+  "id": 5496,
+  "de": "manuell",
+  "artikel": null,
+  "tr": "elle, manuel",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Diesen Schritt muss man leider immer noch manuell erledigen."
+ },
+ {
+  "id": 5497,
+  "de": "Klimaschutz",
+  "artikel": "der",
+  "tr": "iklim koruma, iklim koruması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Regierung investiert jährlich Milliarden in den Klimaschutz."
+ },
+ {
+  "id": 5498,
+  "de": "Treibhausgas",
+  "artikel": "das",
+  "tr": "sera gazı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Verkehr verursacht rund ein Fünftel aller Treibhausgase."
+ },
+ {
+  "id": 5499,
+  "de": "Kohlendioxid",
+  "artikel": "das",
+  "tr": "karbondioksit",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wälder nehmen große Mengen Kohlendioxid aus der Luft auf."
+ },
+ {
+  "id": 5500,
+  "de": "Luftverschmutzung",
+  "artikel": "die",
+  "tr": "hava kirliliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In vielen Großstädten ist die Luftverschmutzung deutlich gestiegen."
+ },
+ {
+  "id": 5501,
+  "de": "Feinstaub",
+  "artikel": "der",
+  "tr": "ince toz, partikül madde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Feinstaub in der Innenstadt gefährdet vor allem ältere Menschen."
+ },
+ {
+  "id": 5502,
+  "de": "Abgas",
+  "artikel": "das",
+  "tr": "egzoz gazı, atık gaz",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Moderne Filter reinigen die Abgase der Fabrik weitgehend."
+ },
+ {
+  "id": 5503,
+  "de": "Schadstoff",
+  "artikel": "der",
+  "tr": "zararlı madde, kirletici madde",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Boden wurden gefährliche Schadstoffe aus der alten Fabrik gefunden."
+ },
+ {
+  "id": 5504,
+  "de": "Mülltrennung",
+  "artikel": "die",
+  "tr": "çöp ayrıştırma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In deutschen Haushalten ist die Mülltrennung längst selbstverständlich."
+ },
+ {
+  "id": 5505,
+  "de": "Pfandflasche",
+  "artikel": "die",
+  "tr": "depozitolu şişe",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er bringt die Pfandflaschen jeden Samstag zum Supermarkt zurück."
+ },
+ {
+  "id": 5506,
+  "de": "Energieverbrauch",
+  "artikel": "der",
+  "tr": "enerji tüketimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Durch neue Fenster sank der Energieverbrauch des Hauses erheblich."
+ },
+ {
+  "id": 5507,
+  "de": "Windrad",
+  "artikel": "das",
+  "tr": "rüzgâr türbini",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Hinter dem Dorf drehen sich seit einem Jahr drei Windräder."
+ },
+ {
+  "id": 5508,
+  "de": "Solaranlage",
+  "artikel": "die",
+  "tr": "güneş enerjisi tesisi, güneş paneli sistemi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Solaranlage auf dem Dach deckt fast den halben Strombedarf."
+ },
+ {
+  "id": 5509,
+  "de": "Braunkohle",
+  "artikel": "die",
+  "tr": "linyit",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Ausstieg aus der Braunkohle ist politisch umstritten."
+ },
+ {
+  "id": 5510,
+  "de": "Erdöl",
+  "artikel": "das",
+  "tr": "petrol",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein großer Teil der Kunststoffe wird aus Erdöl hergestellt."
+ },
+ {
+  "id": 5511,
+  "de": "Energiewende",
+  "artikel": "die",
+  "tr": "enerji dönüşümü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Energiewende kommt langsamer voran als ursprünglich geplant."
+ },
+ {
+  "id": 5512,
+  "de": "Verbrennungsmotor",
+  "artikel": "der",
+  "tr": "içten yanmalı motor",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ab 2035 sollen kaum noch Verbrennungsmotoren verkauft werden."
+ },
+ {
+  "id": 5513,
+  "de": "Grenzwert",
+  "artikel": "der",
+  "tr": "sınır değer, limit değeri",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der gesetzliche Grenzwert für Stickoxide wurde mehrfach überschritten."
+ },
+ {
+  "id": 5514,
+  "de": "Klimaziel",
+  "artikel": "das",
+  "tr": "iklim hedefi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne strengere Vorgaben werden die Klimaziele klar verfehlt."
+ },
+ {
+  "id": 5515,
+  "de": "Klimaneutralität",
+  "artikel": "die",
+  "tr": "iklim nötrlüğü, karbon nötrlüğü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Konzern will bis 2040 vollständige Klimaneutralität erreichen."
+ },
+ {
+  "id": 5516,
+  "de": "Artensterben",
+  "artikel": "das",
+  "tr": "türlerin yok oluşu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das weltweite Artensterben schreitet schneller voran als befürchtet."
+ },
+ {
+  "id": 5517,
+  "de": "Regenwald",
+  "artikel": "der",
+  "tr": "yağmur ormanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Für Weideflächen wird jedes Jahr viel Regenwald vernichtet."
+ },
+ {
+  "id": 5518,
+  "de": "Abholzung",
+  "artikel": "die",
+  "tr": "ormansızlaştırma, ağaç kesimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Abholzung im Amazonasgebiet hat wieder zugenommen."
+ },
+ {
+  "id": 5519,
+  "de": "Meeresspiegel",
+  "artikel": "der",
+  "tr": "deniz seviyesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein steigender Meeresspiegel bedroht viele flache Küstenregionen."
+ },
+ {
+  "id": 5520,
+  "de": "Trinkwasser",
+  "artikel": "das",
+  "tr": "içme suyu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In manchen Regionen wird sauberes Trinkwasser immer teurer."
+ },
+ {
+  "id": 5521,
+  "de": "Abwasser",
+  "artikel": "das",
+  "tr": "atık su, kanalizasyon suyu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Abwasser der Fabrik floss jahrelang ungeklärt in den Fluss."
+ },
+ {
+  "id": 5522,
+  "de": "Kläranlage",
+  "artikel": "die",
+  "tr": "arıtma tesisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die neue Kläranlage reinigt das Wasser von tausend Haushalten."
+ },
+ {
+  "id": 5523,
+  "de": "Wasserknappheit",
+  "artikel": "die",
+  "tr": "su kıtlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Sommer führt die Wasserknappheit oft zu strengen Auflagen."
+ },
+ {
+  "id": 5524,
+  "de": "Düngemittel",
+  "artikel": "das",
+  "tr": "gübre",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Zu viele Düngemittel belasten das Grundwasser der Region."
+ },
+ {
+  "id": 5525,
+  "de": "Umweltkatastrophe",
+  "artikel": "die",
+  "tr": "çevre felaketi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Unfall im Chemiewerk gilt als schwere Umweltkatastrophe."
+ },
+ {
+  "id": 5526,
+  "de": "Lärmbelästigung",
+  "artikel": "die",
+  "tr": "gürültü rahatsızlığı, gürültü kirliliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Anwohner klagen über die Lärmbelästigung durch den Flughafen."
+ },
+ {
+  "id": 5527,
+  "de": "Ozonschicht",
+  "artikel": "die",
+  "tr": "ozon tabakası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Ozonschicht erholt sich langsam von den früheren Schäden."
+ },
+ {
+  "id": 5528,
+  "de": "Deponie",
+  "artikel": "die",
+  "tr": "çöp depolama alanı, düzenli depolama sahası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf der Deponie am Stadtrand wird kaum noch Restmüll gelagert."
+ },
+ {
+  "id": 5529,
+  "de": "Umweltpolitik",
+  "artikel": "die",
+  "tr": "çevre politikası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Umweltpolitik der Regierung wird von Fachleuten scharf kritisiert."
+ },
+ {
+  "id": 5530,
+  "de": "Emissionshandel",
+  "artikel": "der",
+  "tr": "emisyon ticareti",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der europäische Emissionshandel macht Kohlestrom deutlich teurer."
+ },
+ {
+  "id": 5531,
+  "de": "Konsumverhalten",
+  "artikel": "das",
+  "tr": "tüketim davranışı, tüketim alışkanlığı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne verändertes Konsumverhalten sind die Ziele nicht zu schaffen."
+ },
+ {
+  "id": 5532,
+  "de": "Wegwerfgesellschaft",
+  "artikel": "die",
+  "tr": "kullan-at toplumu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Reparieren statt kaufen ist eine Antwort auf die Wegwerfgesellschaft."
+ },
+ {
+  "id": 5533,
+  "de": "Mikroplastik",
+  "artikel": "die",
+  "tr": "mikroplastik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Selbst in abgelegenen Seen findet man inzwischen Mikroplastik."
+ },
+ {
+  "id": 5534,
+  "de": "Ökostrom",
+  "artikel": "der",
+  "tr": "yeşil elektrik, temiz enerji elektriği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wir beziehen seit letztem Jahr ausschließlich Ökostrom."
+ },
+ {
+  "id": 5535,
+  "de": "Wärmepumpe",
+  "artikel": "die",
+  "tr": "ısı pompası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Wärmepumpe ersetzt in vielen Neubauten die alte Gasheizung."
+ },
+ {
+  "id": 5536,
+  "de": "belasten",
+  "artikel": null,
+  "tr": "kirletmek, yük bindirmek, zorlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Schwerverkehr belastet die Luft in der Innenstadt stark."
+ },
+ {
+  "id": 5537,
+  "de": "einsparen",
+  "artikel": null,
+  "tr": "tasarruf etmek, kısmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Mit der neuen Anlage lassen sich jährlich tausend Tonnen einsparen."
+ },
+ {
+  "id": 5538,
+  "de": "erzeugen",
+  "artikel": null,
+  "tr": "üretmek, meydana getirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Kraftwerk erzeugt Strom fast ausschließlich aus Wasserkraft."
+ },
+ {
+  "id": 5539,
+  "de": "ausstoßen",
+  "artikel": null,
+  "tr": "salmak, yaymak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ein Flug nach New York stößt mehrere Tonnen Kohlendioxid aus."
+ },
+ {
+  "id": 5540,
+  "de": "bewahren",
+  "artikel": null,
+  "tr": "korumak, muhafaza etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wir müssen diese Landschaft für die nächsten Generationen bewahren."
+ },
+ {
+  "id": 5541,
+  "de": "aufbereiten",
+  "artikel": null,
+  "tr": "arıtmak, işlemden geçirmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Das Werk bereitet gebrauchtes Wasser für die Industrie auf."
+ },
+ {
+  "id": 5542,
+  "de": "dämmen",
+  "artikel": null,
+  "tr": "yalıtmak, izole etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Wer sein Dach gut dämmt, spart im Winter viel Heizöl."
+ },
+ {
+  "id": 5543,
+  "de": "austrocknen",
+  "artikel": null,
+  "tr": "kurumak, kuruyup gitmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der kleine Bach ist im vergangenen Sommer völlig ausgetrocknet."
+ },
+ {
+  "id": 5544,
+  "de": "ansteigen",
+  "artikel": null,
+  "tr": "yükselmek, artmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Durchschnittstemperatur ist seit 1900 deutlich angestiegen."
+ },
+ {
+  "id": 5545,
+  "de": "verseuchen",
+  "artikel": null,
+  "tr": "zehirlemek, bulaştırmak, kirletmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Auslaufendes Öl hat den Boden auf Jahre hinaus verseucht."
+ },
+ {
+  "id": 5546,
+  "de": "kompostieren",
+  "artikel": null,
+  "tr": "kompost yapmak, gübreye dönüştürmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Küchenreste kompostieren wir im Garten hinter dem Haus."
+ },
+ {
+  "id": 5547,
+  "de": "verwerten",
+  "artikel": null,
+  "tr": "değerlendirmek, geri kazanmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Fast neunzig Prozent des Altpapiers werden erneut verwertet."
+ },
+ {
+  "id": 5548,
+  "de": "zurückgewinnen",
+  "artikel": null,
+  "tr": "geri kazanmak, geri elde etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Aus alten Handys lassen sich wertvolle Metalle zurückgewinnen."
+ },
+ {
+  "id": 5549,
+  "de": "abbauen",
+  "artikel": null,
+  "tr": "çıkarmak, ayrışmak, azaltmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "In dieser Gegend wird seit hundert Jahren Kohle abgebaut."
+ },
+ {
+  "id": 5550,
+  "de": "umweltschädlich",
+  "artikel": null,
+  "tr": "çevreye zararlı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Diese Reinigungsmittel gelten als besonders umweltschädlich."
+ },
+ {
+  "id": 5551,
+  "de": "fossil",
+  "artikel": null,
+  "tr": "fosil (yakıt)",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Ausstieg aus fossilen Brennstoffen dauert länger als erhofft."
+ },
+ {
+  "id": 5552,
+  "de": "energieeffizient",
+  "artikel": null,
+  "tr": "enerji verimli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Bürogebäude wurde besonders energieeffizient geplant."
+ },
+ {
+  "id": 5553,
+  "de": "wiederverwendbar",
+  "artikel": null,
+  "tr": "yeniden kullanılabilir",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Im Café gibt es Kaffee nur noch in wiederverwendbaren Bechern."
+ },
+ {
+  "id": 5554,
+  "de": "verschwenderisch",
+  "artikel": null,
+  "tr": "savurgan, israfçı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Wir gehen mit Wasser und Energie noch immer verschwenderisch um."
+ },
+ {
+  "id": 5555,
+  "de": "verheerend",
+  "artikel": null,
+  "tr": "yıkıcı, felaket boyutunda",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Sturm hatte für die Küstendörfer verheerende Folgen."
+ },
+ {
+  "id": 5556,
+  "de": "sortenrein",
+  "artikel": null,
+  "tr": "türüne göre ayrılmış, karışımsız",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Nur sortenrein gesammelte Kunststoffe lassen sich gut wiederverwerten."
+ },
+ {
+  "id": 5557,
+  "de": "klimafreundlich",
+  "artikel": null,
+  "tr": "iklim dostu",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Mit dem Zug zu reisen ist deutlich klimafreundlicher als zu fliegen."
+ },
+ {
+  "id": 5558,
+  "de": "Mieterhöhung",
+  "artikel": "die",
+  "tr": "kira artışı, kira zammı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Vermieter muss die Mieterhöhung schriftlich begründen."
+ },
+ {
+  "id": 5559,
+  "de": "Mietminderung",
+  "artikel": "die",
+  "tr": "kira indirimi, kirada indirim talebi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wegen des Schimmels im Bad verlangt sie eine Mietminderung."
+ },
+ {
+  "id": 5560,
+  "de": "Nachmieter",
+  "artikel": "der",
+  "tr": "sonraki kiracı, devralan kiracı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag."
+ },
+ {
+  "id": 5561,
+  "de": "Widerrufsrecht",
+  "artikel": "das",
+  "tr": "cayma hakkı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei Bestellungen im Internet haben Sie ein Widerrufsrecht von vierzehn Tagen."
+ },
+ {
+  "id": 5562,
+  "de": "Restbetrag",
+  "artikel": "der",
+  "tr": "kalan tutar, bakiye",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Den Restbetrag überweisen Sie bitte innerhalb von zehn Tagen."
+ },
+ {
+  "id": 5563,
+  "de": "Inkasso",
+  "artikel": "das",
+  "tr": "alacak tahsili, tahsilat takibi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach der dritten Mahnung übergibt die Firma die Forderung dem Inkasso."
+ },
+ {
+  "id": 5564,
+  "de": "Hausordnung",
+  "artikel": "die",
+  "tr": "bina yönetim kuralları, apartman yönetmeliği",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Hausordnung verbietet lautes Musizieren nach zweiundzwanzig Uhr."
+ },
+ {
+  "id": 5565,
+  "de": "Ruhestörung",
+  "artikel": "die",
+  "tr": "huzur bozma, gürültüyle rahatsız etme",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Nachbarn meldeten die nächtliche Ruhestörung der Polizei."
+ },
+ {
+  "id": 5566,
+  "de": "Vertragsstrafe",
+  "artikel": "die",
+  "tr": "cezai şart",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wer zu spät liefert, muss eine Vertragsstrafe zahlen."
+ },
+ {
+  "id": 5567,
+  "de": "Beweislast",
+  "artikel": "die",
+  "tr": "ispat yükü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im ersten Jahr nach dem Kauf liegt die Beweislast beim Verkäufer."
+ },
+ {
+  "id": 5568,
+  "de": "Streitfall",
+  "artikel": "der",
+  "tr": "uyuşmazlık, ihtilaf",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Streitfall entscheidet das Gericht am Sitz des Anbieters."
+ },
+ {
+  "id": 5569,
+  "de": "Geschäftsbedingungen",
+  "artikel": "die",
+  "tr": "genel işlem şartları, sözleşme koşulları",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die allgemeinen Geschäftsbedingungen stehen klein gedruckt auf der Rückseite."
+ },
+ {
+  "id": 5570,
+  "de": "Rechtsanspruch",
+  "artikel": "der",
+  "tr": "yasal hak, hukuki talep hakkı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf eine kostenlose Reparatur besteht in diesem Fall kein Rechtsanspruch."
+ },
+ {
+  "id": 5571,
+  "de": "Betriebskostenabrechnung",
+  "artikel": "die",
+  "tr": "işletme giderleri dökümü, aidat hesabı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Betriebskostenabrechnung kam erst ein Jahr später ins Haus."
+ },
+ {
+  "id": 5572,
+  "de": "Eigenbedarf",
+  "artikel": "der",
+  "tr": "kendi ihtiyacı (için tahliye)",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Vermieter kündigte die Wohnung wegen Eigenbedarf."
+ },
+ {
+  "id": 5573,
+  "de": "Übergabeprotokoll",
+  "artikel": "das",
+  "tr": "teslim tutanağı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Beim Auszug haben wir jeden Kratzer im Übergabeprotokoll vermerkt."
+ },
+ {
+  "id": 5574,
+  "de": "Zusatzvereinbarung",
+  "artikel": "die",
+  "tr": "ek anlaşma, ek protokol",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Haltung von Haustieren regelt eine gesonderte Zusatzvereinbarung."
+ },
+ {
+  "id": 5575,
+  "de": "Preisanpassung",
+  "artikel": "die",
+  "tr": "fiyat güncellemesi, zam",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Anbieter kündigte eine Preisanpassung zum Jahreswechsel an."
+ },
+ {
+  "id": 5576,
+  "de": "Willenserklärung",
+  "artikel": "die",
+  "tr": "irade beyanı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen."
+ },
+ {
+  "id": 5577,
+  "de": "pfänden",
+  "artikel": null,
+  "tr": "haczetmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Gerichtsvollzieher darf einen Teil des Lohns pfänden."
+ },
+ {
+  "id": 5578,
+  "de": "räumen",
+  "artikel": null,
+  "tr": "tahliye etmek, boşaltmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Mieter muss die Wohnung bis Monatsende räumen."
+ },
+ {
+  "id": 5579,
+  "de": "beurkunden",
+  "artikel": null,
+  "tr": "resmî olarak tasdik etmek, noterde düzenlemek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Kaufvertrag wird im Beisein beider Parteien beurkundet."
+ },
+ {
+  "id": 5580,
+  "de": "bestreiten",
+  "artikel": null,
+  "tr": "reddetmek, karşı çıkmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Firma bestreitet, den Schaden verursacht zu haben."
+ },
+ {
+  "id": 5581,
+  "de": "abtreten",
+  "artikel": null,
+  "tr": "devretmek, temlik etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Er hat seine Forderung an ein anderes Unternehmen abgetreten."
+ },
+ {
+  "id": 5582,
+  "de": "hinterlegen",
+  "artikel": null,
+  "tr": "depozito olarak bırakmak, tevdi etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Kaution wird auf einem gesonderten Konto hinterlegt."
+ },
+ {
+  "id": 5583,
+  "de": "zustehen",
+  "artikel": null,
+  "tr": "hakkı olmak, hakkı doğmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Ihnen steht in diesem Fall eine volle Rückzahlung zu."
+ },
+ {
+  "id": 5584,
+  "de": "gutschreiben",
+  "artikel": null,
+  "tr": "hesaba alacak kaydetmek, iade tutarını yazmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Betrag wird Ihrem Konto in zwei Tagen gutgeschrieben."
+ },
+ {
+  "id": 5585,
+  "de": "vertraglich",
+  "artikel": null,
+  "tr": "sözleşmeye dayalı, akde ilişkin",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Reinigung des Treppenhauses ist vertraglich klar geregelt."
+ },
+ {
+  "id": 5586,
+  "de": "unwirksam",
+  "artikel": null,
+  "tr": "geçersiz, hükümsüz",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Eine solche Klausel ist nach ständiger Rechtsprechung unwirksam."
+ },
+ {
+  "id": 5587,
+  "de": "rechtskräftig",
+  "artikel": null,
+  "tr": "kesinleşmiş, kesin hüküm hâline gelmiş",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Urteil ist seit letzter Woche rechtskräftig."
+ },
+ {
+  "id": 5588,
+  "de": "stillschweigend",
+  "artikel": null,
+  "tr": "zımnen, sessizce",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr."
+ },
+ {
+  "id": 5589,
+  "de": "gesetzlich",
+  "artikel": null,
+  "tr": "yasal, kanuni",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die gesetzliche Frist für die Rückgabe beträgt vierzehn Tage."
+ },
+ {
+  "id": 5590,
+  "de": "einvernehmlich",
+  "artikel": null,
+  "tr": "karşılıklı rızayla, mutabakatla",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Beide Seiten haben den Vertrag einvernehmlich aufgehoben."
+ },
+ {
+  "id": 5591,
+  "de": "Marge",
+  "artikel": "die",
+  "tr": "kâr marjı, marj",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Bei diesem Produkt ist die Marge erschreckend gering."
+ },
+ {
+  "id": 5592,
+  "de": "Vertrieb",
+  "artikel": "der",
+  "tr": "satış, dağıtım, satış bölümü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Vertrieb meldet steigende Bestellungen aus Osteuropa."
+ },
+ {
+  "id": 5593,
+  "de": "Großhandel",
+  "artikel": "der",
+  "tr": "toptan ticaret, toptancılık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wir beziehen unsere Waren direkt aus dem Großhandel."
+ },
+ {
+  "id": 5594,
+  "de": "Ausschreibung",
+  "artikel": "die",
+  "tr": "ihale, ilan",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Firma hat sich an der öffentlichen Ausschreibung beteiligt."
+ },
+ {
+  "id": 5595,
+  "de": "Ausfuhr",
+  "artikel": "die",
+  "tr": "ihracat, dışsatım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen."
+ },
+ {
+  "id": 5596,
+  "de": "Einfuhr",
+  "artikel": "die",
+  "tr": "ithalat, dışalım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Einfuhr frischer Lebensmittel wurde vorübergehend untersagt."
+ },
+ {
+  "id": 5597,
+  "de": "Umsatzsteuer",
+  "artikel": "die",
+  "tr": "KDV, satış vergisi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen."
+ },
+ {
+  "id": 5598,
+  "de": "Existenzgründung",
+  "artikel": "die",
+  "tr": "iş kurma, girişim kurma",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Stadt berät junge Leute bei der Existenzgründung kostenfrei."
+ },
+ {
+  "id": 5599,
+  "de": "Beteiligung",
+  "artikel": "die",
+  "tr": "hisse, pay, katılım",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent."
+ },
+ {
+  "id": 5600,
+  "de": "Börse",
+  "artikel": "die",
+  "tr": "borsa",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "An der Börse reagierten die Anleger nervös auf die neuen Zahlen."
+ },
+ {
+  "id": 5601,
+  "de": "Preisgestaltung",
+  "artikel": "die",
+  "tr": "fiyatlandırma, fiyat politikası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die aggressive Preisgestaltung des Anbieters ärgert die ganze Branche."
+ },
+ {
+  "id": 5602,
+  "de": "Beschaffung",
+  "artikel": "die",
+  "tr": "tedarik, temin",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Beschaffung der Ersatzteile dauert länger als geplant."
+ },
+ {
+  "id": 5603,
+  "de": "Qualitätssicherung",
+  "artikel": "die",
+  "tr": "kalite güvencesi, kalite kontrol",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Qualitätssicherung wird jedes zehnte Teil genau geprüft."
+ },
+ {
+  "id": 5604,
+  "de": "Effizienz",
+  "artikel": "die",
+  "tr": "verimlilik, etkinlik",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Neue Maschinen sollen die Effizienz der gesamten Produktion erhöhen."
+ },
+ {
+  "id": 5605,
+  "de": "Sanierung",
+  "artikel": "die",
+  "tr": "mali yeniden yapılandırma, ıslah",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Sanierung des Unternehmens dauerte fast drei Jahre."
+ },
+ {
+  "id": 5606,
+  "de": "Gewerbe",
+  "artikel": "das",
+  "tr": "ticari işletme, esnaflık, meslek",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Wer ein Gewerbe anmeldet, braucht am Anfang wenig Kapital."
+ },
+ {
+  "id": 5607,
+  "de": "Monopol",
+  "artikel": "das",
+  "tr": "tekel",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Anbieter besitzt in dieser Region praktisch ein Monopol."
+ },
+ {
+  "id": 5608,
+  "de": "Kartell",
+  "artikel": "das",
+  "tr": "kartel",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Kartell hatte die Preise über Jahre künstlich hochgehalten."
+ },
+ {
+  "id": 5609,
+  "de": "Lieferengpass",
+  "artikel": "der",
+  "tr": "tedarik darboğazı, sevkiyat sıkıntısı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ein Lieferengpass bei Chips bremst die gesamte Branche."
+ },
+ {
+  "id": 5610,
+  "de": "Eigenkapital",
+  "artikel": "das",
+  "tr": "öz sermaye, öz kaynak",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne ausreichendes Eigenkapital gewährt die Bank keinen Kredit."
+ },
+ {
+  "id": 5611,
+  "de": "erzielen",
+  "artikel": null,
+  "tr": "elde etmek, sağlamak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Mit dem neuen Modell erzielte die Firma hohe Verkaufszahlen."
+ },
+ {
+  "id": 5612,
+  "de": "konkurrieren",
+  "artikel": null,
+  "tr": "rekabet etmek, yarışmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Kleine Läden können mit den großen Ketten kaum konkurrieren."
+ },
+ {
+  "id": 5613,
+  "de": "exportieren",
+  "artikel": null,
+  "tr": "ihraç etmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Die Region exportiert vor allem Maschinen und Fahrzeugteile."
+ },
+ {
+  "id": 5614,
+  "de": "verlagern",
+  "artikel": null,
+  "tr": "kaydırmak, başka yere taşımak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Hersteller hat die Fertigung nach Osteuropa verlagert."
+ },
+ {
+  "id": 5615,
+  "de": "florieren",
+  "artikel": null,
+  "tr": "iyi gitmek, gelişmek",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Trotz der Krise floriert der Handel mit Gebrauchtwagen."
+ },
+ {
+  "id": 5616,
+  "de": "veräußern",
+  "artikel": null,
+  "tr": "elden çıkarmak, satmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Konzern veräußerte seine Anteile an dem kleinen Zulieferer."
+ },
+ {
+  "id": 5617,
+  "de": "unterbieten",
+  "artikel": null,
+  "tr": "altına inmek, fiyat kırmak",
+  "typ": "Verb",
+  "niveau": "B2",
+  "beispiel": "Der Wettbewerber hat unser Angebot deutlich unterboten."
+ },
+ {
+  "id": 5618,
+  "de": "wirtschaftlich",
+  "artikel": null,
+  "tr": "ekonomik, iktisadi, verimli",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt."
+ },
+ {
+  "id": 5619,
+  "de": "marktführend",
+  "artikel": null,
+  "tr": "pazar lideri olan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Bei Sicherheitstechnik ist die Firma in Europa marktführend."
+ },
+ {
+  "id": 5620,
+  "de": "rückläufig",
+  "artikel": null,
+  "tr": "gerileyen, azalan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Bestellungen aus dem Ausland sind seit Monaten rückläufig."
+ },
+ {
+  "id": 5621,
+  "de": "geschäftlich",
+  "artikel": null,
+  "tr": "ticari, iş ile ilgili",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Er ist diese Woche geschäftlich in Mailand unterwegs."
+ },
+ {
+  "id": 5622,
+  "de": "serienmäßig",
+  "artikel": null,
+  "tr": "standart olarak, seri üretimde bulunan",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut."
+ },
+ {
+  "id": 5623,
+  "de": "mittelständisch",
+  "artikel": null,
+  "tr": "orta ölçekli, KOBİ niteliğinde",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Die Region lebt vor allem von mittelständischen Betrieben."
+ },
+ {
+  "id": 5624,
+  "de": "einträglich",
+  "artikel": null,
+  "tr": "kazançlı, kârlı",
+  "typ": "Sonstiges",
+  "niveau": "B2",
+  "beispiel": "Der Handel mit Ersatzteilen ist erstaunlich einträglich geworden."
+ },
+ {
+  "id": 5625,
+  "de": "Untermiete",
+  "artikel": "die",
+  "tr": "alt kira, alt kiracılık",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er wohnt zur Untermiete in einem Zimmer bei einer Familie."
+ },
+ {
+  "id": 5626,
+  "de": "Mietspiegel",
+  "artikel": "der",
+  "tr": "kira endeksi, resmî kira barometresi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Laut Mietspiegel ist die geforderte Miete deutlich zu hoch."
+ },
+ {
+  "id": 5627,
+  "de": "Mietpreisbremse",
+  "artikel": "die",
+  "tr": "kira artış freni, kira tavanı düzenlemesi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Mietpreisbremse soll den Anstieg der Mieten in Großstädten dämpfen."
+ },
+ {
+  "id": 5628,
+  "de": "Hausverwaltung",
+  "artikel": "die",
+  "tr": "bina yönetimi, apartman yönetimi",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Hausverwaltung reagiert seit Wochen nicht auf unsere Beschwerden."
+ },
+ {
+  "id": 5629,
+  "de": "Zwangsräumung",
+  "artikel": "die",
+  "tr": "zorla tahliye, icra yoluyla tahliye",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Nach monatelangem Streit kam es zur Zwangsräumung der Wohnung."
+ },
+ {
+  "id": 5630,
+  "de": "Schimmel",
+  "artikel": "der",
+  "tr": "küf",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Hinter dem Schrank hat sich im Winter Schimmel gebildet."
+ },
+ {
+  "id": 5631,
+  "de": "Immobilie",
+  "artikel": "die",
+  "tr": "gayrimenkul, taşınmaz",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Er hat sein Geld in Immobilien statt in Aktien angelegt."
+ },
+ {
+  "id": 5632,
+  "de": "Makler",
+  "artikel": "der",
+  "tr": "emlakçı, komisyoncu",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Makler verlangt eine Provision von zwei Monatsmieten."
+ },
+ {
+  "id": 5633,
+  "de": "Eigentumswohnung",
+  "artikel": "die",
+  "tr": "mülkiyeti kendine ait daire, kat mülkiyetli daire",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Sie haben eine kleine Eigentumswohnung am Stadtrand gekauft."
+ },
+ {
+  "id": 5634,
+  "de": "Wertsteigerung",
+  "artikel": "die",
+  "tr": "değer artışı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der neue Bahnhof sorgte für eine deutliche Wertsteigerung der Grundstücke."
+ },
+ {
+  "id": 5635,
+  "de": "Wohnungsmarkt",
+  "artikel": "der",
+  "tr": "konut piyasası",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Wohnungsmarkt in der Hauptstadt ist seit Jahren angespannt."
+ },
+ {
+  "id": 5636,
+  "de": "Leerstand",
+  "artikel": "der",
+  "tr": "boş durma, atıl konut ya da dükkan",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "In der Altstadt nimmt der Leerstand von Ladenlokalen zu."
+ },
+ {
+  "id": 5637,
+  "de": "Dämmung",
+  "artikel": "die",
+  "tr": "yalıtım, izolasyon",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Eine bessere Dämmung senkt die Heizkosten spürbar."
+ },
+ {
+  "id": 5638,
+  "de": "Fassade",
+  "artikel": "die",
+  "tr": "cephe, bina yüzü",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Fassade des Gebäudes wird im Frühjahr neu gestrichen."
+ },
+ {
+  "id": 5639,
+  "de": "Grundriss",
+  "artikel": "der",
+  "tr": "kat planı, plan",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Auf dem Grundriss erkennt man drei Zimmer und einen Balkon."
+ },
+ {
+  "id": 5640,
+  "de": "Dachgeschoss",
+  "artikel": "das",
+  "tr": "çatı katı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Im Dachgeschoss ist es im Sommer unerträglich heiß."
+ },
+ {
+  "id": 5641,
+  "de": "Altbau",
+  "artikel": "der",
+  "tr": "eski yapı, tarihi bina",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Viele Studenten wohnen gern in einem Altbau mit hohen Decken."
+ },
+ {
+  "id": 5642,
+  "de": "Neubau",
+  "artikel": "der",
+  "tr": "yeni yapı, yeni bina",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der Neubau am Fluss bietet Platz für achtzig Familien."
+ },
+ {
+  "id": 5643,
+  "de": "Baugenehmigung",
+  "artikel": "die",
+  "tr": "yapı ruhsatı, inşaat izni",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Ohne Baugenehmigung darf hier nicht gebaut werden."
+ },
+ {
+  "id": 5644,
+  "de": "Bebauungsplan",
+  "artikel": "der",
+  "tr": "imar planı",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Der neue Bebauungsplan sieht deutlich mehr Grünflächen vor."
+ },
+ {
+  "id": 5645,
+  "de": "Stadtentwicklung",
+  "artikel": "die",
+  "tr": "kentsel gelişim, şehir planlaması",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Die Stadtentwicklung orientiert sich künftig stärker am Klimaschutz."
+ },
+ {
+  "id": 5646,
+  "de": "Stadtviertel",
+  "artikel": "das",
+  "tr": "semt, mahalle",
+  "typ": "Nomen",
+  "niveau": "B2",
+  "beispiel": "Das Stadtviertel hat sich in zehn Jahren völlig verändert."
+ }
+]
