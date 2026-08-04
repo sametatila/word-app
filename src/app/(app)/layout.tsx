@@ -1,13 +1,13 @@
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
-import { getUserInfo, stackEnabled } from "@/lib/auth";
+import { getUserInfo, authEnabled } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await getUserInfo();
-  if (!user) redirect(stackEnabled ? "/handler/sign-in" : "/");
+  if (!user) redirect(authEnabled ? "/giris" : "/");
 
   let streak = 0;
   let xp = 0;

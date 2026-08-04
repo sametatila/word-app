@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { authClient } from "@/lib/auth/client";
 
 type Initial = {
   displayName: string;
@@ -33,7 +34,9 @@ export function ProfileForm({
   const [dailyGoal, setDailyGoal] = useState(initial.dailyGoal);
   const [newPerDay, setNewPerDay] = useState(initial.newPerDay);
   const [level, setLevel] = useState(initial.level);
+  const router = useRouter();
   const [saving, setSaving] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
   const [saved, setSaved] = useState(false);
 
   async function save() {
@@ -150,13 +153,27 @@ export function ProfileForm({
       <section className="card p-5">
         <h2 className="mb-3 font-bold">Hesap</h2>
         {authEnabled ? (
-          <div className="flex flex-wrap gap-3">
-            <Link href="/handler/account-settings" className="btn btn-ghost px-4 py-2.5 text-sm">
-              Hesap ayarları
-            </Link>
-            <Link href="/handler/sign-out" className="btn btn-ghost px-4 py-2.5 text-sm">
-              Çıkış yap
-            </Link>
+          <div className="space-y-3">
+            <p className="muted text-sm">
+              {accountName ? `${accountName} olarak giriş yaptın.` : "Giriş yaptın."} İlerlemen tüm
+              cihazlarında senkron.
+            </p>
+            <button
+              onClick={async () => {
+                setSigningOut(true);
+                try {
+                  await authClient.signOut();
+                } catch {
+                  /* yine de ana sayfaya dön */
+                }
+                router.push("/");
+                router.refresh();
+              }}
+              disabled={signingOut}
+              className="btn btn-ghost px-4 py-2.5 text-sm disabled:opacity-60"
+            >
+              {signingOut ? "Çıkılıyor…" : "Çıkış yap"}
+            </button>
           </div>
         ) : (
           <p className="muted text-sm">

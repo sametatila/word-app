@@ -1,7 +1,7 @@
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
-import { getUserId } from "@/lib/auth";
+import { getUserId } from "@/lib/auth/server";
 import { WordList, type WordRow } from "@/components/word-list";
 
 export const dynamic = "force-dynamic";

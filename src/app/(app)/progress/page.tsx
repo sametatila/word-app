@@ -1,4 +1,4 @@
-import { getUserId } from "@/lib/auth";
+import { getUserId } from "@/lib/auth/server";
 import { getProgress } from "@/lib/session";
 import { ProgressView } from "@/components/progress-view";
 

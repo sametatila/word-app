@@ -1,6 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackServerApp } from "@/stack";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,20 +29,12 @@ try {
 `;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const content = (
+  return (
     <html lang="tr" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-dvh antialiased">{children}</body>
     </html>
-  );
-
-  if (!stackServerApp) return content;
-
-  return (
-    <StackProvider app={stackServerApp}>
-      <StackTheme>{content}</StackTheme>
-    </StackProvider>
   );
 }

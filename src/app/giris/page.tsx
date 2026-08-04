@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { StackHandler } from "@stackframe/stack";
-import { stackServerApp } from "@/stack";
+import { redirect } from "next/navigation";
+import { authEnabled, getUserId } from "@/lib/auth/server";
+import { AuthForm } from "@/components/auth-form";
 
-export default function Handler(props: unknown) {
-  if (!stackServerApp) {
+export const dynamic = "force-dynamic";
+
+export default async function GirisPage() {
+  if (!authEnabled) {
     return (
       <div className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 p-6 text-center">
         <h1 className="text-xl font-bold">Giriş kapalı</h1>
@@ -16,5 +19,9 @@ export default function Handler(props: unknown) {
       </div>
     );
   }
-  return <StackHandler fullPage app={stackServerApp} routeProps={props} />;
+
+  const userId = await getUserId();
+  if (userId) redirect("/learn");
+
+  return <AuthForm />;
 }

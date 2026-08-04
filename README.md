@@ -31,14 +31,16 @@ npm run db:seed                 # 3.192 kelimeyi yükle
 npm run dev                     # http://localhost:3000
 ```
 
-`.env` içeriği en az şu olmalı:
+`.env` içeriği:
 
 ```bash
 DATABASE_URL="postgresql://user:pass@ep-xxx-pooler.<region>.aws.neon.tech/neondb?sslmode=require"
+NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
+NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 ```
 
-Neon Auth anahtarları boş bırakılırsa uygulama **demo modunda** tek kullanıcıyla çalışır —
-veritabanı bağlıysa tüm oyunlar, ilerleme ve streak çalışır. Anahtarlar eklenince giriş/kayıt
+`NEON_AUTH_*` boş bırakılırsa uygulama **demo modunda** tek kullanıcıyla çalışır — veritabanı
+bağlıysa tüm oyunlar, ilerleme ve streak çalışır. İki değer eklenince giriş/kayıt (`/giris`)
 kendiliğinden devreye girer.
 
 Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi · `/progress` ilerleme ·
@@ -51,7 +53,6 @@ Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi �
 3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
    Editor'a sırayla yapıştırabilirsin).
 4. `npm run db:seed` → `data/app/words.json` içindeki 3.192 kelime yüklenir.
-5. **Auth** sekmesinden Neon Auth'u aç, üç anahtarı `.env` ve Vercel'e ekle.
 
 ## 3. Vercel'e deploy
 
@@ -59,13 +60,13 @@ Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi �
 npm i -g vercel
 vercel link
 vercel env add DATABASE_URL production                     # ve preview/development
-vercel env add NEXT_PUBLIC_STACK_PROJECT_ID production
-vercel env add NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY production
-vercel env add STACK_SECRET_SERVER_KEY production
+vercel env add NEON_AUTH_BASE_URL production
+vercel env add NEON_AUTH_COOKIE_SECRET production
 vercel --prod
 ```
 
-Neon Auth kullanıyorsan Neon Console → Auth → **Domains** kısmına Vercel alan adını ekle.
+Deploy sonrası Neon Console → Auth → Configuration → **Domains** kısmına Vercel alan adını ekle
+(önizleme dağıtımları için `https://*-<takım>.vercel.app` gibi joker desen de kabul edilir).
 
 ## 4. Testler
 
@@ -101,8 +102,10 @@ src/
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
     api/words/known         "bunu zaten biliyorum" işaretlemesi
-    handler/[...stack]      Neon Auth ekranları
+    api/auth/[...path]      Neon Auth proxy (giriş, kayıt, oturum)
+    giris                   giriş / kayıt ekranı
   lib/
+    auth/                   Neon Auth sunucu + istemci sarmalayıcıları
     srs.ts                  tekrar motoru (saf fonksiyonlar)
     session.ts              kuyruk kurgusu, cevap işleme, ilerleme sorguları
     db/schema.ts            words · profiles · user_words · reviews · daily_stats

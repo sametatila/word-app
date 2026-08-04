@@ -1,4 +1,4 @@
-import { getUserInfo, stackEnabled } from "@/lib/auth";
+import { getUserInfo, authEnabled } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
 
@@ -12,7 +12,7 @@ export default async function ProfilePage() {
     const profile = await ensureProfile(user.id, user.name);
     return (
       <ProfileForm
-        authEnabled={stackEnabled}
+        authEnabled={authEnabled}
         accountName={user.name}
         initial={{
           displayName: profile.displayName ?? "",
