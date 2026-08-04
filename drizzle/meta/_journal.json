@@ -29,6 +29,13 @@
       "when": 1785850876347,
       "tag": "0003_furry_mauler",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1785853989826,
+      "tag": "0004_common_kabuki",
+      "breakpoints": true
     }
   ]
 }

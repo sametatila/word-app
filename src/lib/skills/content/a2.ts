@@ -1,0 +1,867 @@
+import type { SkillExercise } from "../types";
+
+/** A2 — okuma, dinleme ve yazma egzersizleri. */
+export const a2: SkillExercise[] = [
+  // ---------------------------------------------------------------- OKUMA
+  {
+    id: "a2-r1",
+    level: "A2",
+    skill: "reading",
+    title: "Grüße aus Hamburg",
+    genre: "E-posta",
+    intro: "Arkadaşın Merve, Hamburg tatilinden sana yazıyor — planlarını ve gördüklerini yakala.",
+    gloss: [
+      { de: "die Hafenrundfahrt", tr: "liman turu" },
+      { de: "dauern", tr: "sürmek" },
+      { de: "die Sonne scheint", tr: "güneş açıyor" },
+      { de: "bekannt für", tr: "-iyle ünlü" },
+      { de: "der Fischmarkt", tr: "balık pazarı" },
+      { de: "bleiben", tr: "kalmak" },
+      { de: "besuchen", tr: "ziyaret etmek" },
+    ],
+    minutes: 3,
+    text:
+      "Liebe Elif,\n\n" +
+      "viele Grüße aus Hamburg! Ich bin seit Montag hier und bleibe noch bis Sonntag. Das Wetter war am Anfang schlecht, aber seit gestern scheint die Sonne. Gestern habe ich eine Hafenrundfahrt gemacht, das war toll! Die Fahrt hat 90 Minuten gedauert und nur 18 Euro gekostet.\n\n" +
+      "Morgen will ich das Miniatur Wunderland besuchen, weil meine Schwester sagt, dass es dort sehr schön ist. Am Samstag treffe ich einen alten Freund. Wir wollen zusammen Fisch essen, denn Hamburg ist bekannt für seinen Fischmarkt.\n\n" +
+      "Und du? Wie geht es dir? Schreib mir bald!\n\n" +
+      "Liebe Grüße\nMerve",
+    questions: [
+      {
+        text: "Wie lange bleibt Merve in Hamburg?",
+        options: ["Bis Samstag", "Bis Sonntag", "Bis Montag"],
+        answer: 1,
+        explain: "Merve „bleibe noch bis Sonntag“ yazıyor. Pazartesi geliş günü, cumartesi ise arkadaşıyla buluşma günü — ikisi de çeldirici.",
+      },
+      {
+        text: "Das Wetter war die ganze Woche schön.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: „Das Wetter war am Anfang schlecht“ diyor; güneş ancak dünden beri açıyor.",
+      },
+      {
+        text: "Was hat die Hafenrundfahrt gekostet?",
+        options: ["8 Euro", "18 Euro", "90 Euro"],
+        answer: 1,
+        explain: "Metinde „nur 18 Euro gekostet“ yazıyor. 90 tur ücreti değil, turun dakika olarak süresi.",
+      },
+      {
+        text: "Was will Merve morgen machen?",
+        options: ["Fisch essen", "Eine Hafenrundfahrt machen", "Das Miniatur Wunderland besuchen"],
+        answer: 2,
+        explain: "„Morgen will ich das Miniatur Wunderland besuchen“ diyor. Balık yemek cumartesi planı, liman turunu ise dün yapmış.",
+      },
+    ],
+  },
+  {
+    id: "a2-r2",
+    level: "A2",
+    skill: "reading",
+    title: "Neues Schwimmbad öffnet am Wochenende",
+    genre: "Haber",
+    intro: "Yerel gazeteden kısa bir haber: Leipzig'de yeni bir yüzme havuzu açılıyor.",
+    gloss: [
+      { de: "das Schwimmbad", tr: "yüzme havuzu" },
+      { de: "die Bauzeit", tr: "inşaat süresi" },
+      { de: "das Dach", tr: "çatı" },
+      { de: "das Becken", tr: "havuz (bölümü)" },
+      { de: "der Eintritt", tr: "giriş (ücreti)" },
+      { de: "der Erwachsene", tr: "yetişkin" },
+      { de: "geschlossen", tr: "kapalı" },
+      { de: "täglich", tr: "her gün" },
+    ],
+    minutes: 3,
+    text:
+      "Leipzig. Nach zwei Jahren Bauzeit öffnet am Samstag das neue Schwimmbad im Stadtteil Gohlis. Das alte Bad war seit 2023 geschlossen, weil das Dach kaputt war. Das neue Gebäude hat drei Becken: ein Sportbecken, ein Kinderbecken und ein Außenbecken für den Sommer.\n\n" +
+      "Am Eröffnungstag ist der Eintritt frei. Ab Sonntag kostet eine Karte für Erwachsene 5 Euro, Kinder bis 14 Jahre zahlen 2,50 Euro. Das Bad ist täglich von 7 bis 22 Uhr geöffnet, nur montags bleibt es geschlossen. Die Stadt hofft, dass viele Familien kommen.",
+    questions: [
+      {
+        text: "Warum war das alte Schwimmbad geschlossen?",
+        options: ["Es war zu klein.", "Das Dach war kaputt.", "Es war zu teuer."],
+        answer: 1,
+        explain: "Haberde nedeni açıkça veriliyor: „weil das Dach kaputt war“.",
+      },
+      {
+        text: "Was kostet der Eintritt am Samstag?",
+        options: ["5 Euro", "2,50 Euro", "Nichts"],
+        answer: 2,
+        explain: "Cumartesi açılış günü ve „Am Eröffnungstag ist der Eintritt frei“ — yani ücretsiz. 5 ve 2,50 Euro pazardan itibaren geçerli fiyatlar.",
+      },
+      {
+        text: "Das Schwimmbad ist jeden Tag geöffnet.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: „nur montags bleibt es geschlossen“ — pazartesileri kapalı.",
+      },
+      {
+        text: "Wie viele Becken hat das neue Bad?",
+        options: ["Zwei", "Drei", "Vier"],
+        answer: 1,
+        explain: "„Das neue Gebäude hat drei Becken“: spor, çocuk ve yazlık açık havuz.",
+      },
+    ],
+  },
+  {
+    id: "a2-r3",
+    level: "A2",
+    skill: "reading",
+    title: "2-Zimmer-Wohnung in der Südstadt",
+    genre: "İlan",
+    intro: "Nürnberg'de kiralık daire arıyorsun — bu ilandaki detayları dikkatle oku.",
+    gloss: [
+      { de: "die Miete", tr: "kira" },
+      { de: "die Nebenkosten", tr: "yan giderler (aidat vb.)" },
+      { de: "der Keller", tr: "bodrum, kiler" },
+      { de: "nach Absprache", tr: "anlaşmaya bağlı" },
+      { de: "erlaubt", tr: "izinli, serbest" },
+      { de: "die Besichtigung", tr: "daireyi gezme, görme" },
+      { de: "der Ausweis", tr: "kimlik" },
+      { de: "entfernt", tr: "uzaklıkta" },
+    ],
+    minutes: 3,
+    text:
+      "2-Zimmer-Wohnung in Nürnberg-Südstadt\n\n" +
+      "Helle Wohnung im 3. Stock, 54 Quadratmeter, mit Balkon und neuer Küche. Die Miete beträgt 680 Euro plus 120 Euro Nebenkosten. Ein Keller gehört zur Wohnung, eine Garage leider nicht. Haustiere sind nach Absprache erlaubt.\n\n" +
+      "Die U-Bahn-Station Aufseßplatz ist nur fünf Minuten zu Fuß entfernt, ein Supermarkt liegt direkt gegenüber. Die Wohnung ist ab dem 1. Oktober frei.\n\n" +
+      "Besichtigung: Samstag, den 20. September, von 10 bis 13 Uhr. Bitte melden Sie sich vorher per E-Mail bei Frau Weber: wohnung-weber@mailbox.de. Bringen Sie zur Besichtigung bitte einen Ausweis mit.",
+    questions: [
+      {
+        text: "Wie viel kostet die Wohnung mit Nebenkosten im Monat?",
+        options: ["680 Euro", "800 Euro", "120 Euro"],
+        answer: 1,
+        explain: "Kira 680 Euro, yan giderler 120 Euro: toplam 800 Euro. Şıklardaki 680 ve 120 tek başına eksik kalıyor.",
+      },
+      {
+        text: "Zur Wohnung gehört eine Garage.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: „Ein Keller gehört zur Wohnung, eine Garage leider nicht“ — bodrum var ama garaj yok.",
+      },
+      {
+        text: "Ab wann ist die Wohnung frei?",
+        options: ["Ab sofort", "Ab dem 20. September", "Ab dem 1. Oktober"],
+        answer: 2,
+        explain: "„Die Wohnung ist ab dem 1. Oktober frei.“ 20 Eylül daireyi gezme (Besichtigung) tarihi, taşınma tarihi değil.",
+      },
+      {
+        text: "Was soll man zur Besichtigung mitbringen?",
+        options: ["Einen Ausweis", "Einen Mietvertrag", "Ein Foto"],
+        answer: 0,
+        explain: "İlanın son cümlesi: „Bringen Sie zur Besichtigung bitte einen Ausweis mit.“",
+      },
+    ],
+  },
+  {
+    id: "a2-r4",
+    level: "A2",
+    skill: "reading",
+    title: "Sommerfest im Stadtpark",
+    genre: "Program",
+    intro: "Şehir parkındaki yaz festivalinin programını incele — saatler ve yerler önemli.",
+    gloss: [
+      { de: "die Eröffnung", tr: "açılış" },
+      { de: "der Bürgermeister", tr: "belediye başkanı" },
+      { de: "die Bühne", tr: "sahne" },
+      { de: "das Turnier", tr: "turnuva" },
+      { de: "die Anmeldung", tr: "kayıt" },
+      { de: "das Feuerwerk", tr: "havai fişek" },
+      { de: "ausfallen", tr: "iptal olmak" },
+      { de: "der Stand", tr: "stant" },
+    ],
+    minutes: 4,
+    text:
+      "Sommerfest im Stadtpark — Programm für Samstag\n\n" +
+      "11 Uhr: Eröffnung mit dem Bürgermeister auf der Hauptbühne.\n\n" +
+      "12 bis 15 Uhr: Kinderprogramm mit Spielen und Schminken auf der Wiese am See. Die Teilnahme ist kostenlos.\n\n" +
+      "15 Uhr: Fußballturnier der Stadtteile am Sportplatz. Anmeldung bis 14 Uhr am Infostand.\n\n" +
+      "17 Uhr: Konzert der Band „Nachtzug“ auf der Hauptbühne. Karten kosten 8 Euro, Kinder unter 12 Jahren sind frei.\n\n" +
+      "22 Uhr: Feuerwerk über dem See.\n\n" +
+      "Essen und Getränke gibt es an über 20 Ständen. Bitte kommen Sie mit Bus oder Fahrrad, denn es gibt nur wenige Parkplätze. Bei Regen fällt das Feuerwerk aus.",
+    questions: [
+      {
+        text: "Wo ist das Kinderprogramm?",
+        options: ["Auf der Hauptbühne", "Auf der Wiese am See", "Am Sportplatz"],
+        answer: 1,
+        explain: "Programda çocuk etkinliği „auf der Wiese am See“ olarak veriliyor. Ana sahne açılış ve konser, spor sahası ise turnuva için.",
+      },
+      {
+        text: "Was kostet das Konzert für Erwachsene?",
+        options: ["8 Euro", "12 Euro", "Es ist kostenlos."],
+        answer: 0,
+        explain: "„Karten kosten 8 Euro“ — 12 sayısı fiyat değil, ücretsiz giren çocukların yaş sınırı.",
+      },
+      {
+        text: "Bei Regen gibt es kein Feuerwerk.",
+        options: ["Richtig", "Falsch"],
+        answer: 0,
+        explain: "Doğru: son cümlede „Bei Regen fällt das Feuerwerk aus“ deniyor, yani yağmurda iptal.",
+      },
+      {
+        text: "Wie soll man zum Fest kommen?",
+        options: ["Mit dem Auto", "Mit dem Zug", "Mit Bus oder Fahrrad"],
+        answer: 2,
+        explain: "„Bitte kommen Sie mit Bus oder Fahrrad“ — çünkü park yeri az. Araba bu yüzden yanlış.",
+      },
+    ],
+  },
+  {
+    id: "a2-r5",
+    level: "A2",
+    skill: "reading",
+    title: "Mein erster Monat in der neuen Arbeit",
+    genre: "Blog",
+    intro: "Bir blog yazarı yeni işindeki ilk ayını anlatıyor — nelerin değiştiğine dikkat et.",
+    gloss: [
+      { de: "die Buchhandlung", tr: "kitapçı" },
+      { de: "die Verkäuferin", tr: "satış elemanı (kadın)" },
+      { de: "langweilig", tr: "sıkıcı" },
+      { de: "der Kontakt", tr: "iletişim, temas" },
+      { de: "müde", tr: "yorgun" },
+      { de: "der Kollege", tr: "iş arkadaşı" },
+      { de: "frei haben", tr: "izinli olmak" },
+      { de: "dafür", tr: "buna karşılık" },
+    ],
+    minutes: 3,
+    text:
+      "Seit vier Wochen arbeite ich als Verkäuferin in einer Buchhandlung in Köln. Früher habe ich in einem Büro gearbeitet, aber die Arbeit dort war mir zu langweilig. Jetzt habe ich jeden Tag Kontakt mit Menschen, und das gefällt mir viel besser.\n\n" +
+      "Mein Arbeitstag beginnt um 9 Uhr und endet um 18 Uhr. Am Anfang war ich abends sehr müde, weil ich den ganzen Tag stehen muss. Aber meine Kollegen sind nett und helfen mir, wenn ich Fragen habe.\n\n" +
+      "Nur eine Sache finde ich schwierig: Ich muss auch am Samstag arbeiten. Dafür habe ich montags frei.",
+    questions: [
+      {
+        text: "Wo arbeitet die Bloggerin jetzt?",
+        options: ["In einem Büro", "In einer Buchhandlung", "In einer Bibliothek"],
+        answer: 1,
+        explain: "İlk cümle: „arbeite ich als Verkäuferin in einer Buchhandlung“. Büro eski işi — çeldirici oradan geliyor.",
+      },
+      {
+        text: "Warum hat sie die alte Arbeit nicht gemocht?",
+        options: ["Sie war zu langweilig.", "Die Kollegen waren nicht nett.", "Sie musste am Samstag arbeiten."],
+        answer: 0,
+        explain: "„die Arbeit dort war mir zu langweilig“ — sıkıcı bulmuş. Cumartesi çalışması ise yeni işinin dezavantajı.",
+      },
+      {
+        text: "Am Anfang war sie abends oft müde.",
+        options: ["Richtig", "Falsch"],
+        answer: 0,
+        explain: "Doğru: „Am Anfang war ich abends sehr müde, weil ich den ganzen Tag stehen muss.“",
+      },
+      {
+        text: "An welchem Tag hat sie frei?",
+        options: ["Am Samstag", "Am Sonntag", "Am Montag"],
+        answer: 2,
+        explain: "Son cümle: „Dafür habe ich montags frei.“ Cumartesi tam tersine çalıştığı gün.",
+      },
+    ],
+  },
+  {
+    id: "a2-r6",
+    level: "A2",
+    skill: "reading",
+    title: "Einladung zum Grillfest",
+    genre: "Davetiye",
+    intro: "Komşun Frau Schmidt apartmana bir davetiye asmış — kim, neyi, ne zaman kutluyor?",
+    gloss: [
+      { de: "einladen", tr: "davet etmek" },
+      { de: "das Grillfest", tr: "mangal partisi" },
+      { de: "der Hof", tr: "avlu" },
+      { de: "sorgen für", tr: "-i üstlenmek, sağlamak" },
+      { de: "der Nachtisch", tr: "tatlı" },
+      { de: "der Enkel", tr: "erkek torun" },
+      { de: "Bescheid sagen", tr: "haber vermek" },
+      { de: "erreichen", tr: "ulaşmak" },
+    ],
+    minutes: 3,
+    text:
+      "Liebe Nachbarinnen und Nachbarn,\n\n" +
+      "am Samstag, den 14. Juni, werde ich 60 Jahre alt. Das möchte ich gern mit Ihnen feiern! Ich lade Sie herzlich zu einem Grillfest in unserem Hof ein. Wir beginnen um 16 Uhr, das Ende ist offen.\n\n" +
+      "Für Fleisch, Würstchen und Getränke sorge ich. Es wäre schön, wenn Sie einen Salat oder einen Nachtisch mitbringen. Wer ein Instrument spielt, kann es gern mitbringen — mein Enkel spielt Gitarre.\n\n" +
+      "Bitte sagen Sie mir bis zum 10. Juni Bescheid, ob Sie kommen. Sie erreichen mich unter der Nummer 0176 4532218 oder einfach an der Wohnungstür Nummer 12.\n\n" +
+      "Herzliche Grüße\nHannelore Schmidt",
+    questions: [
+      {
+        text: "Warum feiert Frau Schmidt?",
+        options: ["Sie hat eine neue Wohnung.", "Sie wird 60 Jahre alt.", "Ihr Enkel hat Geburtstag."],
+        answer: 1,
+        explain: "„am Samstag, den 14. Juni, werde ich 60 Jahre alt“ — 60. yaş gününü kutluyor. Torun sadece gitar çalacak kişi.",
+      },
+      {
+        text: "Was sollen die Gäste mitbringen?",
+        options: ["Fleisch und Getränke", "Einen Salat oder einen Nachtisch", "Nichts"],
+        answer: 1,
+        explain: "Et ve içecekleri Frau Schmidt üstleniyor („sorge ich“); misafirlerden salata veya tatlı rica ediyor.",
+      },
+      {
+        text: "Das Fest endet um 22 Uhr.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: „das Ende ist offen“ — bitiş saati belli değil, sadece başlangıç 16 Uhr.",
+      },
+      {
+        text: "Bis wann soll man Bescheid sagen?",
+        options: ["Bis zum 10. Juni", "Bis zum 12. Juni", "Bis zum 14. Juni"],
+        answer: 0,
+        explain: "„Bitte sagen Sie mir bis zum 10. Juni Bescheid.“ 14 Haziran partinin tarihi, 12 ise kapı numarası.",
+      },
+    ],
+  },
+
+  // -------------------------------------------------------------- DİNLEME
+  {
+    id: "a2-l1",
+    level: "A2",
+    skill: "listening",
+    title: "Ein Termin beim Arzt",
+    genre: "Diyalog",
+    intro: "Frau Kaya doktor muayenehanesini arıyor — randevunun gününe ve saatine kulak ver.",
+    gloss: [
+      { de: "die Halsschmerzen", tr: "boğaz ağrısı" },
+      { de: "das Fieber", tr: "ateş" },
+      { de: "der Termin", tr: "randevu" },
+      { de: "die Sprechstundenhilfe", tr: "muayenehane asistanı" },
+      { de: "die Versichertenkarte", tr: "sağlık sigortası kartı" },
+      { de: "passen", tr: "uymak, uygun olmak" },
+      { de: "voll", tr: "dolu" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Frau Kaya", text: "Guten Morgen, Praxis Doktor Lehmann? Mein Name ist Kaya. Ich habe seit zwei Tagen starke Halsschmerzen und Fieber. Kann ich heute noch einen Termin bekommen?" },
+      { speaker: "Sprechstundenhilfe", text: "Guten Morgen, Frau Kaya. Heute ist es leider sehr voll. Ich kann Ihnen aber morgen früh um 8 Uhr 30 einen Termin geben." },
+      { speaker: "Frau Kaya", text: "Hmm, morgen früh muss ich arbeiten. Geht es auch am Nachmittag?" },
+      { speaker: "Sprechstundenhilfe", text: "Einen Moment bitte. Ja, morgen um 15 Uhr 15 ist noch etwas frei." },
+      { speaker: "Frau Kaya", text: "Das passt gut. Muss ich etwas mitbringen?" },
+      { speaker: "Sprechstundenhilfe", text: "Bitte bringen Sie Ihre Versichertenkarte mit. Und wenn das Fieber heute noch höher wird, rufen Sie bitte sofort wieder an." },
+      { speaker: "Frau Kaya", text: "Das mache ich. Vielen Dank, auf Wiederhören!" },
+    ],
+    questions: [
+      {
+        text: "Warum ruft Frau Kaya an?",
+        options: ["Sie hat Halsschmerzen und Fieber.", "Sie braucht ein Rezept.", "Sie will einen Termin absagen."],
+        answer: 0,
+        explain: "İlk cümlesinde söylüyor: „Ich habe seit zwei Tagen starke Halsschmerzen und Fieber.“",
+      },
+      {
+        text: "Wann ist der Termin?",
+        options: ["Heute um 15 Uhr 15", "Morgen um 8 Uhr 30", "Morgen um 15 Uhr 15"],
+        answer: 2,
+        explain: "Sabah 8.30 teklif edildi ama Frau Kaya çalıştığı için olmadı; anlaşılan randevu „morgen um 15 Uhr 15“.",
+      },
+      {
+        text: "Warum passt der Termin am Morgen nicht?",
+        options: ["Sie muss arbeiten.", "Sie ist nicht in der Stadt.", "Die Praxis ist dann geschlossen."],
+        answer: 0,
+        explain: "„Morgen früh muss ich arbeiten“ diyor — bu yüzden öğleden sonrayı istiyor.",
+      },
+      {
+        text: "Frau Kaya soll ihre Versichertenkarte mitbringen.",
+        options: ["Richtig", "Falsch"],
+        answer: 0,
+        explain: "Doğru: asistan „Bitte bringen Sie Ihre Versichertenkarte mit“ diyor.",
+      },
+    ],
+  },
+  {
+    id: "a2-l2",
+    level: "A2",
+    skill: "listening",
+    title: "Nachricht auf dem Anrufbeantworter",
+    genre: "Telesekreter",
+    intro: "Jonas, arkadaşı Deniz'in telesekreterine mesaj bırakıyor — ondan ne istiyor?",
+    gloss: [
+      { de: "umziehen", tr: "taşınmak" },
+      { de: "der Umzug", tr: "taşınma" },
+      { de: "absagen", tr: "iptal etmek, vazgeçmek" },
+      { de: "der Transporter", tr: "nakliye aracı" },
+      { de: "der Schrank", tr: "dolap" },
+      { de: "die Einweihungsparty", tr: "yeni ev partisi" },
+      { de: "zurückrufen", tr: "geri aramak" },
+    ],
+    minutes: 2,
+    segments: [
+      { text: "Hallo Deniz, hier ist Jonas. Du weißt ja, ich ziehe am Samstag in meine neue Wohnung in der Gartenstraße um. Leider hat mein Bruder jetzt abgesagt, weil er krank ist. Kannst du mir vielleicht beim Umzug helfen?" },
+      { text: "Wir wollen um 9 Uhr anfangen, der Transporter kommt schon um halb 9. Es gibt nicht so viele Möbel, nur das Sofa und der Schrank sind schwer." },
+      { text: "Als Dankeschön bestelle ich für alle Pizza, und am Abend machen wir eine kleine Einweihungsparty. Ruf mich bitte bis Donnerstag zurück, meine Nummer hast du ja. Danke dir, tschüss!" },
+    ],
+    questions: [
+      {
+        text: "Warum ruft Jonas an?",
+        options: ["Er braucht Hilfe beim Umzug.", "Er will Deniz zum Essen einladen.", "Er ist krank."],
+        answer: 0,
+        explain: "Asıl sorusu: „Kannst du mir vielleicht beim Umzug helfen?“ Hasta olan Jonas değil, kardeşi; pizza ise sadece teşekkür.",
+      },
+      {
+        text: "Warum kann der Bruder nicht helfen?",
+        options: ["Er muss arbeiten.", "Er ist krank.", "Er ist im Urlaub."],
+        answer: 1,
+        explain: "„Leider hat mein Bruder jetzt abgesagt, weil er krank ist.“",
+      },
+      {
+        text: "Um wie viel Uhr wollen sie mit dem Umzug anfangen?",
+        options: ["Um halb 9", "Um 9 Uhr", "Um 10 Uhr"],
+        answer: 1,
+        explain: "„Wir wollen um 9 Uhr anfangen“ — halb 9 ise nakliye aracının geliş saati.",
+      },
+      {
+        text: "Deniz soll bis Donnerstag zurückrufen.",
+        options: ["Richtig", "Falsch"],
+        answer: 0,
+        explain: "Doğru: mesajın sonunda „Ruf mich bitte bis Donnerstag zurück“ deniyor.",
+      },
+    ],
+  },
+  {
+    id: "a2-l3",
+    level: "A2",
+    skill: "listening",
+    title: "Familientag im Technikmuseum",
+    genre: "Radyo duyurusu",
+    intro: "Radyoda hafta sonu için bir etkinlik önerisi var — fiyatlara ve ulaşım bilgisine dikkat.",
+    gloss: [
+      { de: "stattfinden", tr: "gerçekleşmek, yapılmak" },
+      { de: "die Führung", tr: "rehberli tur" },
+      { de: "der Eintritt", tr: "giriş ücreti" },
+      { de: "das Parkhaus", tr: "katlı otopark" },
+      { de: "zurzeit", tr: "şu anda" },
+      { de: "die Straßenbahn", tr: "tramvay" },
+      { de: "halten", tr: "durmak (araç)" },
+    ],
+    minutes: 2,
+    segments: [
+      { text: "Und hier noch ein Tipp für das Wochenende: Am Sonntag findet im Museum für Technik der große Familientag statt. Von 10 bis 17 Uhr können Kinder und Erwachsene alte Autos, Flugzeuge und Roboter ansehen." },
+      { text: "Um 11 Uhr und um 14 Uhr gibt es eine Führung für Kinder ab 6 Jahren. Der Eintritt kostet für Erwachsene 7 Euro, Kinder zahlen an diesem Tag nichts." },
+      { text: "Achtung: Das Parkhaus am Museum ist zurzeit geschlossen. Kommen Sie deshalb am besten mit der Straßenbahn, die Linien 3 und 7 halten direkt vor dem Museum. Alle Informationen finden Sie auch im Internet." },
+    ],
+    questions: [
+      {
+        text: "Wann ist der Familientag?",
+        options: ["Am Samstag", "Am Sonntag", "Am Freitag"],
+        answer: 1,
+        explain: "Duyurunun başında: „Am Sonntag findet im Museum für Technik der große Familientag statt.“",
+      },
+      {
+        text: "Was zahlen Kinder an diesem Tag?",
+        options: ["7 Euro", "3 Euro", "Nichts"],
+        answer: 2,
+        explain: "„Kinder zahlen an diesem Tag nichts“ — 7 Euro yetişkin ücreti, 3 ise tramvay hattının numarası.",
+      },
+      {
+        text: "Um wie viel Uhr gibt es Führungen für Kinder?",
+        options: ["Um 10 und um 17 Uhr", "Um 11 und um 14 Uhr", "Nur um 14 Uhr"],
+        answer: 1,
+        explain: "„Um 11 Uhr und um 14 Uhr gibt es eine Führung“ — 10 ve 17 ise müzenin açılış-kapanış saatleri.",
+      },
+      {
+        text: "Man soll am besten mit dem Auto zum Museum kommen.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: otopark kapalı olduğu için tramvay öneriliyor („Kommen Sie deshalb am besten mit der Straßenbahn“).",
+      },
+    ],
+  },
+  {
+    id: "a2-l4",
+    level: "A2",
+    skill: "listening",
+    title: "Jeden Morgen im Park",
+    genre: "Röportaj",
+    intro: "Bir muhabir, her sabah koşan Herr Öztürk ile konuşuyor — bu alışkanlık nasıl başlamış?",
+    gloss: [
+      { de: "laufen", tr: "koşmak" },
+      { de: "ungefähr", tr: "yaklaşık" },
+      { de: "schneien", tr: "kar yağmak" },
+      { de: "das Gewitter", tr: "fırtına, gök gürültülü sağanak" },
+      { de: "das Ziel", tr: "hedef" },
+      { de: "mitmachen", tr: "katılmak" },
+      { de: "der Stadtlauf", tr: "şehir koşusu" },
+      { de: "schneller als", tr: "-den daha hızlı" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Reporterin", text: "Herr Öztürk, Sie laufen jeden Morgen hier im Park. Seit wann machen Sie das?" },
+      { speaker: "Herr Öztürk", text: "Seit ungefähr drei Jahren. Mein Arzt hat gesagt, dass ich mehr Sport machen soll. Am Anfang bin ich nur zehn Minuten gelaufen, heute laufe ich jeden Morgen eine halbe Stunde." },
+      { speaker: "Reporterin", text: "Laufen Sie auch im Winter?" },
+      { speaker: "Herr Öztürk", text: "Ja, natürlich. Wenn es schneit, laufe ich langsamer, aber ich bleibe nicht zu Hause. Nur bei Gewitter mache ich Pause." },
+      { speaker: "Reporterin", text: "Und was ist Ihr nächstes Ziel?" },
+      { speaker: "Herr Öztürk", text: "Im Oktober möchte ich beim Stadtlauf mitmachen, das sind zehn Kilometer. Mein Sohn läuft auch mit, er ist schneller als ich." },
+    ],
+    questions: [
+      {
+        text: "Warum hat Herr Öztürk mit dem Laufen angefangen?",
+        options: ["Sein Arzt hat es gesagt.", "Sein Sohn wollte es.", "Er wollte beim Stadtlauf mitmachen."],
+        answer: 0,
+        explain: "„Mein Arzt hat gesagt, dass ich mehr Sport machen soll.“ Stadtlauf ise gelecekteki hedefi, başlama nedeni değil.",
+      },
+      {
+        text: "Wie lange läuft er heute jeden Morgen?",
+        options: ["Zehn Minuten", "Eine halbe Stunde", "Eine Stunde"],
+        answer: 1,
+        explain: "„heute laufe ich jeden Morgen eine halbe Stunde“ — on dakika sadece başlangıçtaki süresiydi.",
+      },
+      {
+        text: "Wann macht er eine Pause?",
+        options: ["Wenn es schneit", "Im Winter", "Bei Gewitter"],
+        answer: 2,
+        explain: "„Nur bei Gewitter mache ich Pause“ — kar yağınca sadece yavaşlıyor, evde kalmıyor.",
+      },
+      {
+        text: "Sein Sohn läuft schneller als er.",
+        options: ["Richtig", "Falsch"],
+        answer: 0,
+        explain: "Doğru: son cümlede „er ist schneller als ich“ diyor.",
+      },
+    ],
+  },
+  {
+    id: "a2-l5",
+    level: "A2",
+    skill: "listening",
+    title: "Probleme mit dem neuen Handy",
+    genre: "Diyalog",
+    intro: "Bir müşteri yeni aldığı telefonu şikayet için mağazaya getiriyor — çözüm ne olacak?",
+    gloss: [
+      { de: "der Akku", tr: "batarya" },
+      { de: "leer", tr: "boş, bitmiş" },
+      { de: "das Gerät", tr: "cihaz" },
+      { de: "die Rechnung", tr: "fatura, fiş" },
+      { de: "die Werkstatt", tr: "tamir atölyesi, servis" },
+      { de: "das Leihgerät", tr: "ödünç cihaz" },
+      { de: "dauern", tr: "sürmek" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Kundin", text: "Guten Tag. Ich habe dieses Handy vor zwei Wochen bei Ihnen gekauft, aber der Akku ist immer schon am Nachmittag leer." },
+      { speaker: "Verkäufer", text: "Das tut mir leid. Haben Sie viele Apps geöffnet? Manchmal ist das das Problem." },
+      { speaker: "Kundin", text: "Nein, ich benutze nur wenige Apps. Ich telefoniere und schreibe Nachrichten, das ist alles." },
+      { speaker: "Verkäufer", text: "Dann schauen wir uns das Gerät genauer an. Haben Sie die Rechnung dabei?" },
+      { speaker: "Kundin", text: "Ja, hier bitte." },
+      { speaker: "Verkäufer", text: "Danke. Wir schicken das Handy in die Werkstatt, das dauert ungefähr eine Woche. Wenn der Akku kaputt ist, bekommen Sie ein neues Gerät. Das kostet dann natürlich nichts." },
+      { speaker: "Kundin", text: "Und kann ich so lange ein anderes Handy haben?" },
+      { speaker: "Verkäufer", text: "Ja, wir geben Ihnen gern ein Leihgerät mit." },
+    ],
+    questions: [
+      {
+        text: "Was ist das Problem mit dem Handy?",
+        options: ["Das Display ist kaputt.", "Der Akku ist schnell leer.", "Das Handy ist zu langsam."],
+        answer: 1,
+        explain: "Müşteri sorunu ilk cümlede söylüyor: „der Akku ist immer schon am Nachmittag leer“.",
+      },
+      {
+        text: "Wann hat die Kundin das Handy gekauft?",
+        options: ["Vor zwei Tagen", "Vor einer Woche", "Vor zwei Wochen"],
+        answer: 2,
+        explain: "„Ich habe dieses Handy vor zwei Wochen bei Ihnen gekauft.“ Bir hafta ise tamirin süresi.",
+      },
+      {
+        text: "Wie lange dauert die Reparatur ungefähr?",
+        options: ["Einen Tag", "Eine Woche", "Zwei Wochen"],
+        answer: 1,
+        explain: "Satıcı „das dauert ungefähr eine Woche“ diyor.",
+      },
+      {
+        text: "Die Kundin bekommt für diese Zeit ein Leihgerät.",
+        options: ["Richtig", "Falsch"],
+        answer: 0,
+        explain: "Doğru: „wir geben Ihnen gern ein Leihgerät mit“ — tamir süresince ödünç telefon veriliyor.",
+      },
+    ],
+  },
+  {
+    id: "a2-l6",
+    level: "A2",
+    skill: "listening",
+    title: "Durchsage am Bahnhof",
+    genre: "Anons",
+    intro: "Gardaki anonsu dinle: München treniyle ilgili önemli değişiklikler var.",
+    gloss: [
+      { de: "die Verspätung", tr: "rötar, gecikme" },
+      { de: "die Abfahrt", tr: "kalkış" },
+      { de: "das Gleis", tr: "peron, ray" },
+      { de: "der Grund", tr: "sebep" },
+      { de: "gelten", tr: "geçerli olmak" },
+      { de: "das Bordrestaurant", tr: "tren restoranı" },
+      { de: "die Reisenden", tr: "yolcular" },
+      { de: "technischer Defekt", tr: "teknik arıza" },
+    ],
+    minutes: 2,
+    segments: [
+      { text: "Achtung, eine wichtige Information für Reisende nach München: Der Intercity 512 nach München, planmäßige Abfahrt 14 Uhr 20, hat heute ungefähr 30 Minuten Verspätung. Der Grund ist ein technischer Defekt." },
+      { text: "Der Zug fährt heute von Gleis 9 ab, nicht von Gleis 5. Reisende mit dem Ziel Augsburg können auch den Regionalzug um 14 Uhr 35 von Gleis 2 nehmen. Ihr Ticket gilt auch in diesem Zug." },
+      { text: "Im Intercity ist heute leider kein Bordrestaurant geöffnet. Getränke bekommen Sie am Kiosk in der Bahnhofshalle. Wir bitten um Entschuldigung und wünschen Ihnen eine gute Reise." },
+    ],
+    questions: [
+      {
+        text: "Wie viel Verspätung hat der Intercity?",
+        options: ["Ungefähr 20 Minuten", "Ungefähr 30 Minuten", "Ungefähr 35 Minuten"],
+        answer: 1,
+        explain: "„hat heute ungefähr 30 Minuten Verspätung“ — 20 kalkış saatinin dakikası, 35 ise bölgesel trenin saati.",
+      },
+      {
+        text: "Von welchem Gleis fährt der Intercity heute ab?",
+        options: ["Von Gleis 5", "Von Gleis 2", "Von Gleis 9"],
+        answer: 2,
+        explain: "„Der Zug fährt heute von Gleis 9 ab, nicht von Gleis 5.“ Peron 2, Augsburg'a giden bölgesel trenin peronu.",
+      },
+      {
+        text: "Was können Reisende nach Augsburg machen?",
+        options: ["Den Regionalzug um 14 Uhr 35 nehmen", "Ein neues Ticket kaufen", "Auf den nächsten Intercity warten"],
+        answer: 0,
+        explain: "Augsburg yolcularına 14.35'teki bölgesel tren öneriliyor; „Ihr Ticket gilt auch in diesem Zug“ — yeni bilet gerekmez.",
+      },
+      {
+        text: "Das Bordrestaurant im Intercity ist heute geöffnet.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: „Im Intercity ist heute leider kein Bordrestaurant geöffnet“ — içecekler gar içindeki büfeden alınacak.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- YAZMA
+  {
+    id: "a2-w1",
+    level: "A2",
+    skill: "writing",
+    title: "Eine Einladung beantworten",
+    genre: "E-posta",
+    intro: "Bir doğum günü davetine nazikçe cevap yazmayı çalışıyorsun: teşekkür, durum, öneri.",
+    gloss: [
+      { de: "die Einladung", tr: "davet" },
+      { de: "feiern", tr: "kutlamak" },
+      { de: "mitbringen", tr: "yanında getirmek" },
+      { de: "leider", tr: "maalesef" },
+      { de: "sich treffen", tr: "buluşmak" },
+      { de: "sich freuen auf", tr: "-i iple çekmek" },
+    ],
+    minutes: 8,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Davetin için çok teşekkür ederim.",
+        answer: "Vielen Dank für deine Einladung.",
+        hint: "für edatı Akkusativ ister: für deine Einladung.",
+      },
+      {
+        kind: "build",
+        tr: "Maalesef cumartesi gelemiyorum, çünkü çalışmak zorundayım.",
+        answer: "Leider kann ich am Samstag nicht kommen, weil ich arbeiten muss.",
+        alternatives: ["Ich kann leider am Samstag nicht kommen, weil ich arbeiten muss."],
+        hint: "weil bağlacından sonra çekimli fiil (muss) cümlenin sonuna gider.",
+      },
+      {
+        kind: "build",
+        tr: "Belki gelecek hafta buluşabiliriz.",
+        answer: "Vielleicht können wir uns nächste Woche treffen.",
+        alternatives: ["Wir können uns vielleicht nächste Woche treffen."],
+        hint: "Cümle vielleicht ile başlarsa çekimli fiil yine ikinci sırada kalır.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Lena'nın davetine kısa bir e-posta ile cevap ver: davet için teşekkür et, gelip gelemeyeceğini ve saat kaçta geleceğini söyle, yanında ne getireceğini yaz.",
+        stimulus:
+          "Hallo!\n\nIch feiere am Samstag meinen Geburtstag und mache eine kleine Party bei mir zu Hause. Wir fangen um 18 Uhr an. Kommst du auch? Kannst du vielleicht etwas zu essen mitbringen?\n\nViele Grüße\nLena",
+        checklist: [
+          "Davet için teşekkür ettin mi?",
+          "Gelip gelemeyeceğini ve saatini yazdın mı?",
+          "Ne getireceğini söyledin mi?",
+          "Selamlama ve kapanış cümlen var mı?",
+        ],
+        minWords: 30,
+        phrases: [
+          { de: "Vielen Dank für die Einladung.", tr: "Davet için çok teşekkürler." },
+          { de: "Ich komme gern.", tr: "Seve seve gelirim." },
+          { de: "Leider kann ich erst um ... kommen.", tr: "Maalesef ancak saat ...'te gelebilirim." },
+          { de: "Ich bringe ... mit.", tr: "Yanımda ... getiririm." },
+          { de: "Ich freue mich schon auf die Party.", tr: "Partiyi şimdiden iple çekiyorum." },
+          { de: "Bis Samstag!", tr: "Cumartesi görüşürüz!" },
+        ],
+        sample:
+          "Hallo Lena,\n\nvielen Dank für die Einladung! Ich komme sehr gern zu deiner Party. Leider muss ich am Samstag bis 18 Uhr arbeiten, deshalb komme ich erst um 19 Uhr. Ich bringe einen Nudelsalat und etwas zu trinken mit. Ich freue mich schon auf die Party!\n\nViele Grüße\nDeniz",
+      },
+    ],
+  },
+  {
+    id: "a2-w2",
+    level: "A2",
+    skill: "writing",
+    title: "E-Mail an die Vermieterin",
+    genre: "Resmi e-posta",
+    intro: "Beğendiğin bir kiralık daire ilanına resmi bir e-posta ile başvuruyorsun.",
+    gloss: [
+      { de: "die Anzeige", tr: "ilan" },
+      { de: "die Miete", tr: "kira" },
+      { de: "die Nebenkosten", tr: "yan giderler" },
+      { de: "besichtigen", tr: "gezip görmek" },
+      { de: "erlaubt", tr: "izinli" },
+      { de: "sich interessieren für", tr: "-e ilgi duymak" },
+      { de: "die Vermieterin", tr: "ev sahibi (kadın)" },
+    ],
+    minutes: 8,
+    tasks: [
+      {
+        kind: "build",
+        tr: "İlanınızı internette okudum.",
+        answer: "Ich habe Ihre Anzeige im Internet gelesen.",
+        hint: "Perfekt: habe + Partizip 2 (gelesen) cümlenin sonunda.",
+      },
+      {
+        kind: "build",
+        tr: "Daire hâlâ boş mu?",
+        answer: "Ist die Wohnung noch frei?",
+        hint: "Evet-hayır sorusunda çekimli fiil (ist) başa gelir.",
+      },
+      {
+        kind: "build",
+        tr: "Daireyi seve seve gezip görmek istiyorum.",
+        answer: "Ich möchte die Wohnung gern besichtigen.",
+        alternatives: ["Ich möchte gern die Wohnung besichtigen."],
+        hint: "möchte ikinci sırada, asıl fiil (besichtigen) mastar halinde sonda.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "İlan sahibi Frau Weber'e resmi bir e-posta yaz: kendini kısaca tanıt, daireyle ilgilendiğini söyle, en az bir soru sor (ör. evcil hayvan, park yeri) ve daireyi görmek için randevu iste.",
+        stimulus:
+          "2-Zimmer-Wohnung in der Südstadt, 54 Quadratmeter, mit Balkon. 680 Euro plus Nebenkosten, frei ab dem 1. Oktober. Kontakt: Frau Weber, wohnung-weber@mailbox.de",
+        checklist: [
+          "Kendini tanıttın mı (isim, meslek veya aile durumu)?",
+          "Daireyle ilgilendiğini açıkça yazdın mı?",
+          "En az bir soru sordun mu?",
+          "Resmi hitap (Sie) ve resmi kapanış kullandın mı?",
+        ],
+        minWords: 35,
+        phrases: [
+          { de: "Sehr geehrte Frau Weber, ...", tr: "Sayın Bayan Weber, ... (resmi hitap)" },
+          { de: "Ich interessiere mich für die Wohnung.", tr: "Daireyle ilgileniyorum." },
+          { de: "Ich arbeite als ...", tr: "... olarak çalışıyorum." },
+          { de: "Ich habe noch eine Frage: ...", tr: "Bir sorum daha var: ..." },
+          { de: "Sind Haustiere erlaubt?", tr: "Evcil hayvan serbest mi?" },
+          { de: "Kann ich die Wohnung besichtigen?", tr: "Daireyi gezebilir miyim?" },
+          { de: "Mit freundlichen Grüßen", tr: "Saygılarımla (resmi kapanış)" },
+        ],
+        sample:
+          "Sehr geehrte Frau Weber,\n\nich habe Ihre Anzeige im Internet gelesen und interessiere mich sehr für die Wohnung. Ich heiße Emre Aydın, ich bin 29 Jahre alt und arbeite als Krankenpfleger in Nürnberg. Ich habe noch eine Frage: Sind Haustiere erlaubt? Ich habe eine kleine Katze. Kann ich die Wohnung am Samstag besichtigen?\n\nMit freundlichen Grüßen\nEmre Aydın",
+      },
+    ],
+  },
+  {
+    id: "a2-w3",
+    level: "A2",
+    skill: "writing",
+    title: "Krankmeldung an den Chef",
+    genre: "Resmi e-posta",
+    intro: "Hastasın ve işe gidemiyorsun — şefine kısa, resmi bir bildirim yazacaksın.",
+    gloss: [
+      { de: "krank", tr: "hasta" },
+      { de: "das Fieber", tr: "ateş" },
+      { de: "die Kopfschmerzen", tr: "baş ağrısı" },
+      { de: "die Krankmeldung", tr: "hastalık raporu" },
+      { de: "der Arzt", tr: "doktor" },
+      { de: "zu Hause bleiben", tr: "evde kalmak" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bugün maalesef işe gelemiyorum.",
+        answer: "Ich kann heute leider nicht zur Arbeit kommen.",
+        alternatives: ["Leider kann ich heute nicht zur Arbeit kommen."],
+        hint: "Modal fiil (kann) ikinci sırada, asıl fiil (kommen) sonda.",
+      },
+      {
+        kind: "build",
+        tr: "Dün akşamdan beri ateşim var.",
+        answer: "Ich habe seit gestern Abend Fieber.",
+        hint: "seit + zaman ifadesi: seit gestern Abend.",
+      },
+      {
+        kind: "build",
+        tr: "Doktor, evde kalmam gerektiğini söyledi.",
+        answer: "Der Arzt hat gesagt, dass ich zu Hause bleiben soll.",
+        hint: "dass cümlesinde fiiller sona gider: bleiben soll.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Şefin Herr Krause'ye kısa ve resmi bir e-posta yaz: hasta olduğunu ve bugün işe gelemeyeceğini bildir, doktora gideceğini söyle ve ne zaman dönebileceğini tahmin et.",
+        checklist: [
+          "Hasta olduğunu ve bugün gelemeyeceğini yazdın mı?",
+          "Doktordan veya rapordan bahsettin mi?",
+          "Ne zaman dönebileceğini yazdın mı?",
+          "Resmi hitap ve resmi kapanış kullandın mı?",
+        ],
+        minWords: 25,
+        phrases: [
+          { de: "Sehr geehrter Herr Krause, ...", tr: "Sayın Bay Krause, ... (resmi hitap)" },
+          { de: "Ich bin leider krank.", tr: "Maalesef hastayım." },
+          { de: "Ich kann heute nicht zur Arbeit kommen.", tr: "Bugün işe gelemiyorum." },
+          { de: "Ich gehe heute zum Arzt.", tr: "Bugün doktora gidiyorum." },
+          { de: "Die Krankmeldung schicke ich Ihnen morgen.", tr: "Raporu size yarın gönderirim." },
+          { de: "Mit freundlichen Grüßen", tr: "Saygılarımla" },
+        ],
+        sample:
+          "Sehr geehrter Herr Krause,\n\nich bin leider krank und kann heute nicht zur Arbeit kommen. Ich habe Fieber und starke Kopfschmerzen. Heute Vormittag gehe ich zum Arzt. Ich glaube, dass ich am Donnerstag wieder arbeiten kann. Die Krankmeldung schicke ich Ihnen morgen per E-Mail.\n\nMit freundlichen Grüßen\nSelin Arslan",
+      },
+    ],
+  },
+  {
+    id: "a2-w4",
+    level: "A2",
+    skill: "writing",
+    title: "E-Mail aus dem Urlaub",
+    genre: "E-posta",
+    intro: "Tatilden döndün ve Alman arkadaşına neler yaşadığını Perfekt ile anlatacaksın.",
+    gloss: [
+      { de: "der Urlaub", tr: "tatil" },
+      { de: "das Meer", tr: "deniz" },
+      { de: "baden", tr: "denize girmek, yüzmek" },
+      { de: "die Altstadt", tr: "eski şehir" },
+      { de: "der Ausflug", tr: "gezi, tur" },
+      { de: "gefallen", tr: "hoşuna gitmek" },
+      { de: "das Wetter", tr: "hava durumu" },
+    ],
+    minutes: 8,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Geçen hafta ailemle Antalya'daydım.",
+        answer: "Letzte Woche war ich mit meiner Familie in Antalya.",
+        alternatives: ["Ich war letzte Woche mit meiner Familie in Antalya."],
+        hint: "Präteritum: war. Zaman ifadesi başa gelirse fiil yine ikinci sırada.",
+      },
+      {
+        kind: "build",
+        tr: "Hava her gün güneşli ve sıcaktı.",
+        answer: "Das Wetter war jeden Tag sonnig und warm.",
+        hint: "jeden Tag kalıbı Akkusativ ile kurulur ve zaman bildirir.",
+      },
+      {
+        kind: "build",
+        tr: "Denize girdik ve eski şehri gezdik.",
+        answer: "Wir haben im Meer gebadet und die Altstadt besichtigt.",
+        hint: "Perfekt: haben ... gebadet / besichtigt — iki Partizip da sonda.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Alman arkadaşın Paul'a tatilini anlatan kısa bir e-posta yaz: nerede ve ne kadar süre kaldığını, orada neler yaptığını ve en çok neyi sevdiğini anlat.",
+        checklist: [
+          "Nerede ve ne kadar süre tatil yaptığını yazdın mı?",
+          "En az iki aktiviteyi Perfekt ile anlattın mı?",
+          "En çok neyi sevdiğini söyledin mi?",
+          "Selamlama ve kapanış cümlen var mı?",
+        ],
+        minWords: 35,
+        phrases: [
+          { de: "Ich war eine Woche in ...", tr: "Bir hafta ...'deydim." },
+          { de: "Das Wetter war super.", tr: "Hava harikaydı." },
+          { de: "Wir haben ... besucht.", tr: "...'i ziyaret ettik." },
+          { de: "Am besten hat mir ... gefallen.", tr: "En çok ... hoşuma gitti." },
+          { de: "Ich habe viele Fotos gemacht.", tr: "Bir sürü fotoğraf çektim." },
+          { de: "Nächstes Jahr möchte ich wieder dorthin.", tr: "Gelecek yıl yine oraya gitmek istiyorum." },
+        ],
+        sample:
+          "Lieber Paul,\n\nwie geht es dir? Ich war zwei Wochen mit meiner Familie in Izmir. Das Wetter war super, fast jeden Tag Sonne! Wir haben im Meer gebadet und einen Ausflug nach Ephesos gemacht. Am besten hat mir das Essen gefallen, frischer Fisch direkt am Hafen. Ich habe viele Fotos gemacht und zeige sie dir bald.\n\nViele Grüße\nBaran",
+      },
+    ],
+  },
+];

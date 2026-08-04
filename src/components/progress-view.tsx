@@ -53,14 +53,8 @@ export function ProgressView({
   const byDay = new Map(days.map((d) => [d.day, d]));
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold">İlerlemen</h1>
-        <p className="muted mt-1 text-sm">
-          Tekrarları uygulama planlıyor — sen sadece oynamaya devam et.
-        </p>
-      </header>
-
+    // Başlığı üstteki profil sayfası verir; burada yalnızca istatistikler var.
+    <div className="space-y-6">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame-500)" Icon={FlameIcon} />
         <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand-500)" Icon={TrophyIcon} />

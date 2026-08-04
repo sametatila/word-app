@@ -1,0 +1,32 @@
+import { getUserInfo } from "@/lib/auth/server";
+import { ensureProfile } from "@/lib/session";
+import { listExerciseMeta } from "@/lib/skills";
+import type { CefrLevel } from "@/lib/skills/types";
+import { SkillsHub } from "@/components/skills/skills-hub";
+
+export const dynamic = "force-dynamic";
+
+/**
+ * Beceriler ana ekranı. Egzersizlerin tam içeriği buraya inmez; yalnızca
+ * liste bilgisi gider. Varsayılan seviye, kelime oyunlarının performansa göre
+ * belirlediği aktif CEFR seviyesidir — beceri içeriği de seviyeyle birlikte yürür.
+ */
+export default async function SkillsPage() {
+  const user = await getUserInfo();
+  if (!user) return null;
+
+  let activeLevel: CefrLevel = "A1";
+  try {
+    const profile = await ensureProfile(user.id, user.name);
+    const lv = profile.activeLevel as CefrLevel;
+    if (["A1", "A2", "B1", "B2", "C1"].includes(lv)) activeLevel = lv;
+  } catch (err) {
+    // Veritabanına ulaşılamazsa içerik yine açılır; seviye A1'den başlar.
+    console.error("[skills] profil okunamadı", err);
+  }
+
+  // İçerik veritabanından gelir; ulaşılamazsa gömülü kopya kullanılır.
+  const items = await listExerciseMeta();
+
+  return <SkillsHub items={items} activeLevel={activeLevel} />;
+}

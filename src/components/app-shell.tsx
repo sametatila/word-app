@@ -7,12 +7,12 @@ import { useEffect, useState, type ReactNode } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
 import { InstallPrompt } from "./install-prompt";
-import { CardsIcon, ChartIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark } from "./icons";
+import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark } from "./icons";
 
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon },
+  { href: "/skills", label: "Beceriler", Icon: CompassIcon },
   { href: "/words", label: "Kelimeler", Icon: ListIcon },
-  { href: "/progress", label: "İlerleme", Icon: ChartIcon },
   { href: "/profile", label: "Profil", Icon: UserIcon },
 ];
 

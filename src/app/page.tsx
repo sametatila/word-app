@@ -90,8 +90,8 @@ export default function Home() {
               <Link href="/learn" className="btn btn-primary w-full px-7 py-4 text-base sm:w-auto">
                 Hemen başla — ücretsiz
               </Link>
-              <Link href="/progress" className="btn btn-ghost w-full px-7 py-4 text-base sm:w-auto">
-                İlerleme ekranını gör
+              <Link href="/skills" className="btn btn-ghost w-full px-7 py-4 text-base sm:w-auto">
+                Okuma · Dinleme · Yazma
               </Link>
             </div>
           </Reveal>

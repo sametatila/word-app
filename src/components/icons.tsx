@@ -92,11 +92,28 @@ export const ListIcon = (p: IconProps) => (
   </Svg>
 );
 
-/** İlerleme sekmesi — sütun grafiği */
-export const ChartIcon = (p: IconProps) => (
+/** Beceriler sekmesi — pusula */
+export const CompassIcon = (p: IconProps) => (
   <Svg {...p}>
-    <path d="M4 20h16" />
-    <path d="M7.5 20v-5.5M12 20V8.5M16.5 20v-8" />
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M15.5 8.5 13.6 13.6 8.5 15.5 10.4 10.4z" />
+  </Svg>
+);
+
+/** Okuma becerisi — açık kitap */
+export const BookOpenIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 6.5C10.7 5.2 8.9 4.5 6.9 4.5H4v13h2.9c2 0 3.8.7 5.1 2 1.3-1.3 3.1-2 5.1-2H20v-13h-2.9c-2 0-3.8.7-5.1 2z" />
+    <path d="M12 6.5v13" />
+  </Svg>
+);
+
+/** Dinleme becerisi — kulaklık */
+export const HeadphonesIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4.5 17v-4a7.5 7.5 0 0 1 15 0v4" />
+    <rect x="3.5" y="14" width="4" height="6" rx="1.6" />
+    <rect x="16.5" y="14" width="4" height="6" rx="1.6" />
   </Svg>
 );
 
@@ -195,6 +212,13 @@ export const InfoIcon = (p: IconProps) => (
   <Svg {...p}>
     <circle cx="12" cy="12" r="8.5" />
     <path d="M12 11v5M12 8v.01" />
+  </Svg>
+);
+
+/** Geri */
+export const ArrowLeftIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M19.5 12h-15M10.5 6 4.5 12l6 6" />
   </Svg>
 );
 

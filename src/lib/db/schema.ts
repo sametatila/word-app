@@ -10,6 +10,7 @@ import {
   index,
   uniqueIndex,
   primaryKey,
+  jsonb,
 } from "drizzle-orm/pg-core";
 
 /** Goethe kelime havuzu (seed ile doldurulur, kullanıcıdan bağımsız) */
@@ -108,6 +109,29 @@ export const dailyStats = pgTable(
     primaryKey({ columns: [t.userId, t.day] }),
     uniqueIndex("daily_stats_user_day_idx").on(t.userId, t.day),
   ],
+);
+
+/**
+ * Beceri egzersizleri (okuma / dinleme / yazma).
+ * İçerik repoda yazılır, `npm run db:seed:skills` ile buraya yüklenir ve
+ * çalışma zamanında buradan servis edilir. `data` egzersizin tamamıdır
+ * (sorular, ses bölümleri, yazma görevleri); liste kolonları hub ekranının
+ * jsonb açmadan hızlı listelenmesi içindir.
+ */
+export const skillExercises = pgTable(
+  "skill_exercises",
+  {
+    id: text("id").primaryKey(), // "a1-r1" gibi kalıcı kimlik
+    skill: text("skill").notNull(), // reading | listening | writing
+    level: text("level").notNull(), // A1 | A2 | B1 | B2 | C1
+    title: text("title").notNull(),
+    genre: text("genre").notNull(),
+    minutes: integer("minutes").notNull(),
+    items: integer("items").notNull(), // soru/görev sayısı (liste rozetleri için)
+    position: integer("position").notNull().default(0),
+    data: jsonb("data").notNull(),
+  },
+  (t) => [index("skill_exercises_level_idx").on(t.level, t.skill, t.position)],
 );
 
 export type Word = typeof words.$inferSelect;
