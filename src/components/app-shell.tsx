@@ -40,7 +40,9 @@ export function AppShell({
   }, []);
 
   return (
-    <div className="mx-auto flex min-h-dvh w-full max-w-6xl">
+    // h-dvh + iç kaydırma: sayfa gövdesi kaymaz, yalnızca içerik alanı kayar.
+    // Böylece oyun ekranları kalan alanı tam olarak bilir ve taşma olmaz.
+    <div className="mx-auto flex h-dvh w-full max-w-6xl overflow-hidden">
       <TopProgress />
       <InstallPrompt />
       {/* Masaüstü kenar çubuğu */}
@@ -104,7 +106,11 @@ export function AppShell({
           </div>
         </header>
 
-        <main className="flex flex-1 flex-col px-4 pb-24 pt-4 md:px-8 md:pb-8 md:pt-8">{children}</main>
+        {/* Kaydırma yalnızca burada olur: uzun listeler kayar, oyun ekranları
+            kalan alanı tam olarak bilir ve taşmaz. */}
+        <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pb-24 pt-4 md:px-8 md:pb-8 md:pt-8">
+          {children}
+        </main>
 
         {/* Mobil alt gezinme */}
         <nav

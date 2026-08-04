@@ -40,7 +40,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="card mx-auto w-full max-w-md p-6 text-center"
+        className="card mx-auto w-full max-w-md p-5 text-center"
       >
         {word.artikel ? (
           <span
@@ -63,7 +63,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           initial={{ opacity: 0 }}
           animate={{ opacity: revealed ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="mt-5 text-xl font-semibold text-[color:var(--color-brand-500)]"
+          className="mt-4 text-xl font-semibold text-[color:var(--color-brand-500)]"
         >
           {word.tr}
         </motion.p>
@@ -73,7 +73,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
             initial={{ opacity: 0 }}
             animate={{ opacity: revealed ? 1 : 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="muted mt-4 border-t pt-4 text-sm italic"
+            className="muted mt-3 border-t pt-3 text-sm italic"
             style={{ borderColor: "var(--border)" }}
           >
             <span className="inline-flex items-center gap-1">
@@ -84,7 +84,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         ) : null}
       </motion.div>
 
-      <div className="mx-auto mt-6 w-full max-w-md space-y-2">
+      <div className="mx-auto mt-4 w-full max-w-md space-y-2">
         <button
           onClick={() =>
             onDone([
@@ -96,7 +96,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
               },
             ])
           }
-          className="btn btn-primary w-full px-6 py-3.5 text-base"
+          className="btn btn-primary w-full px-6 py-3 text-base"
         >
           {withArtikel(word)} — anladım
         </button>

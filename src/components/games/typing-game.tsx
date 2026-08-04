@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { normalize, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
 
 type TypingRound = Extract<Round, { game: "typing" }>;
 
@@ -48,10 +49,9 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     const correct = accepted.includes(typed);
     setStatus(correct ? "correct" : "wrong");
     const latencyMs = Date.now() - started.current;
-    setTimeout(
-      () => onDone([{ wordId: word.id, correct, latencyMs, hintUsed }]),
-      correct ? 700 : 1500,
-    );
+    const wait = correct ? 750 : 1500;
+    fx(correct ? "correct" : "wrong", wait);
+    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs, hintUsed }]), wait);
   }
 
   function insertChar(char: string) {

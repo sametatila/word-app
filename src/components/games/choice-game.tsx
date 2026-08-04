@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
+import { CheckIcon, XIcon } from "@/components/icons";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
 
@@ -27,7 +29,10 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     setPicked(opt);
     const correct = opt === answer;
     const latencyMs = Date.now() - started.current;
-    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), correct ? 550 : 1150);
+    const wait = correct ? 620 : 1200;
+    // Titreşim + geçiş çizgisi: dokunuşun kaydedildiği anında belli olur.
+    fx(correct ? "correct" : "wrong", wait);
+    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), wait);
   }
 
   return (
@@ -49,11 +54,17 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}
-              className={`option px-4 py-4 text-left text-base font-medium ${state} ${
+              className={`option flex items-center justify-between gap-3 px-4 py-3.5 text-left text-base font-medium ${state} ${
                 picked === opt && !isAnswer ? "animate-shake" : ""
-              }`}
+              } ${picked === opt && isAnswer ? "animate-glow" : ""}`}
             >
-              {opt}
+              <span>{opt}</span>
+              {/* Seçim sonucu simgeyle de anlatılır: renk körlüğünde de okunur. */}
+              {picked != null && isAnswer ? (
+                <CheckIcon size={18} className="shrink-0 text-[color:var(--color-mint-500)]" />
+              ) : picked === opt ? (
+                <XIcon size={18} className="shrink-0 text-[color:var(--color-rose-500)]" />
+              ) : null}
             </motion.button>
           );
         })}

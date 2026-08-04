@@ -115,11 +115,23 @@
     border: 1.5px solid var(--border);
     background: var(--surface);
     border-radius: 1rem;
-    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease;
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease,
+      box-shadow 0.15s ease;
   }
   .option:hover:not(:disabled) {
     border-color: var(--color-brand-400);
     transform: translateY(-1px);
+  }
+  /* Dokunulduğu an tepki ver: kullanıcı seçiminin algılandığını hemen görsün. */
+  .option:active:not(:disabled) {
+    transform: scale(0.985);
+    border-color: var(--color-brand-500);
+    background: color-mix(in srgb, var(--color-brand-500) 8%, var(--surface));
+  }
+  /* Seçilen ama henüz sonucu belli olmayan şık */
+  .option-picked {
+    border-color: var(--color-brand-500);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand-500) 18%, transparent);
   }
   .option-correct {
     border-color: var(--color-mint-500);
@@ -152,6 +164,36 @@
 }
 .animate-shake {
   animation: shake 0.32s ease-in-out;
+}
+
+/* Cevap sonrası geçiş çizgisi (AnswerPulse) */
+@keyframes pulse-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Doğru cevapta kısa bir yeşil hâle — dikkat dağıtmadan onaylar. */
+@keyframes glow-correct {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-mint-500) 45%, transparent); }
+  100% { box-shadow: 0 0 0 14px transparent; }
+}
+.animate-glow {
+  animation: glow-correct 0.6s ease-out;
+}
+
+/* Hareketi azalt tercihi: kutlamalar sessizleşir, arayüz çalışmaya devam eder. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pop,
+  .animate-shake,
+  .animate-glow {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Mobil güvenli alan */

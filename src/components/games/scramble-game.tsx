@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { shuffle, normalize, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -67,9 +68,11 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     const isCorrect = normalize(placed.map((t) => t.char).join("")) === compareTarget;
     const latencyMs = Date.now() - started.current;
     setStatus(isCorrect ? "correct" : "wrong");
+    const wait = isCorrect ? 700 : 1500;
+    fx(isCorrect ? "correct" : "wrong", wait);
     timeoutRef.current = setTimeout(
       () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
-      isCorrect ? 650 : 1500,
+      wait,
     );
   }, [placed, status, targetLetters.length, compareTarget, word.id, hintUsed]);
 

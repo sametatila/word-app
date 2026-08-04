@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
 
@@ -34,7 +35,9 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     setPicked(opt);
     const correct = opt === answer;
     const latencyMs = Date.now() - started.current;
-    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), correct ? 550 : 1150);
+    const wait = correct ? 620 : 1200;
+    fx(correct ? "correct" : "wrong", wait);
+    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), wait);
   }
 
   return (

@@ -10,6 +10,8 @@ import { GameSwitch } from "@/components/game-switch";
 import { LevelBadge } from "@/components/level-badge";
 import { ChallengePlayer } from "@/components/challenge-player";
 import { Confetti, CountUp, LevelUpOverlay } from "@/components/celebrate";
+import { FitBox } from "@/components/fit-box";
+import { AnswerPulse } from "@/components/answer-pulse";
 import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
 type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error" | "challenge";
@@ -329,11 +331,15 @@ export function SessionPlayer() {
             transition={{ type: "spring", stiffness: 180, damping: 26 }}
           />
         </div>
+        {/* Cevap verildiği an dolan çizgi: "seçimin alındı, geçiliyor" sinyali. */}
+        <div className="mt-1">
+          <AnswerPulse />
+        </div>
       </div>
 
       {saveWarning ? (
         <div
-          className="mb-4 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+          className="mb-3 flex shrink-0 items-center gap-2 rounded-xl px-3 py-2 text-sm"
           style={{
             background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
             color: "var(--color-flame-500)",
@@ -344,10 +350,20 @@ export function SessionPlayer() {
         </div>
       ) : null}
 
+      {/* Turlar arası kısa kayma + solma: kullanıcı "yeni soruya geçtim" der. */}
       <AnimatePresence mode="wait">
-        <div key={round.id} className="flex flex-1 flex-col justify-center pb-8">
-          <GameSwitch round={round} onDone={(res) => void handleDone(round, res)} />
-        </div>
+        <motion.div
+          key={round.id}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.18, ease: "easeOut" }}
+          className="flex min-h-0 flex-1 flex-col"
+        >
+          <FitBox>
+            <GameSwitch round={round} onDone={(res) => void handleDone(round, res)} />
+          </FitBox>
+        </motion.div>
       </AnimatePresence>
     </div>
   );

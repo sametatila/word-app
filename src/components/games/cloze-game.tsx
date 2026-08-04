@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
 
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
@@ -27,10 +28,9 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     setPicked(opt);
     const isCorrect = opt === answer;
     const latencyMs = Date.now() - started.current;
-    setTimeout(
-      () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]),
-      isCorrect ? 700 : 1400,
-    );
+    const wait = isCorrect ? 750 : 1400;
+    fx(isCorrect ? "correct" : "wrong", wait);
+    setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), wait);
   }
 
   return (

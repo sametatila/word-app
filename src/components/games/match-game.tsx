@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
 
 type MatchRound = Extract<Round, { game: "match" }>;
 
@@ -58,9 +59,13 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
 
       if (next.size === words.length && !doneRef.current) {
         doneRef.current = true;
+        fx("correct", 500);
         setTimeout(() => onDone(resultsRef.current), 500);
+      } else {
+        fx("correct");
       }
     } else {
+      fx("wrong");
       wrongBeforeRef.current.add(leftId);
       wrongBeforeRef.current.add(rightItem.wordId);
       setWrongPair({ left: leftId, rightIdx });
