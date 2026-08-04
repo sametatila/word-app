@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { GAME_LABELS, type GameId } from "@/lib/types";
+import { BookIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
+import type { ComponentType, SVGProps } from "react";
 
 type LevelRow = {
   niveau: string;
@@ -56,10 +58,10 @@ export function ProgressView({
       </header>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame-500)" icon="🔥" />
-        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand-500)" icon="🏅" />
-        <KpiCard label="Toplam XP" value={String(totalXp)} tone="var(--color-violet-400)" icon="✦" />
-        <KpiCard label="Öğrenilen" value={`${totalMastered}`} tone="var(--color-mint-500)" icon="✓" />
+        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame-500)" Icon={FlameIcon} />
+        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand-500)" Icon={TrophyIcon} />
+        <KpiCard label="Toplam XP" value={String(totalXp)} tone="var(--color-violet-400)" Icon={SparkIcon} />
+        <KpiCard label="Öğrenilen" value={`${totalMastered}`} tone="var(--color-mint-500)" Icon={BookIcon} />
       </div>
 
       {/* CEFR seviyeleri */}
@@ -172,12 +174,12 @@ function KpiCard({
   label,
   value,
   tone,
-  icon,
+  Icon,
 }: {
   label: string;
   value: string;
   tone: string;
-  icon: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
 }) {
   return (
     <motion.div
@@ -185,8 +187,8 @@ function KpiCard({
       animate={{ opacity: 1, y: 0 }}
       className="card p-4"
     >
-      <div className="text-lg" style={{ color: tone }}>
-        {icon}
+      <div style={{ color: tone }}>
+        <Icon size={20} />
       </div>
       <div className="mt-1 text-xl font-bold">{value}</div>
       <div className="muted text-xs">{label}</div>

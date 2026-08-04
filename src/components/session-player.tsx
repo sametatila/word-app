@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { Answer, AnswerResult, Round, SessionPayload } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
@@ -12,8 +13,10 @@ import { ArtikelGame } from "@/components/games/artikel-game";
 import { ScrambleGame } from "@/components/games/scramble-game";
 import { TypingGame } from "@/components/games/typing-game";
 import { ClozeGame } from "@/components/games/cloze-game";
+import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
 type Status = "loading" | "playing" | "done" | "empty" | "error";
+type ErrorKind = "auth" | "db" | "network";
 
 function localDay(): string {
   const d = new Date();
@@ -29,6 +32,8 @@ export function SessionPlayer() {
   const [index, setIndex] = useState(0);
   const [tally, setTally] = useState({ correct: 0, total: 0, xp: 0 });
   const [result, setResult] = useState<AnswerResult | null>(null);
+  const [errorKind, setErrorKind] = useState<ErrorKind>("db");
+  const [saveWarning, setSaveWarning] = useState(false);
   const startedAt = useRef(Date.now());
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
@@ -46,12 +51,22 @@ export function SessionPlayer() {
       const res = await fetch(`/api/session?day=${localDay()}${extra ? "&extra=1" : ""}`, {
         cache: "no-store",
       });
-      if (!res.ok) throw new Error(String(res.status));
+      if (res.status === 401) {
+        setErrorKind("auth");
+        setStatus("error");
+        return;
+      }
+      if (!res.ok) {
+        setErrorKind("db");
+        setStatus("error");
+        return;
+      }
       const data = (await res.json()) as SessionPayload;
       setSession(data);
       startedAt.current = Date.now();
       setStatus(data.rounds.length ? "playing" : "empty");
     } catch {
+      setErrorKind("network");
       setStatus("error");
     }
   }, []);
@@ -71,7 +86,12 @@ export function SessionPlayer() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ answers: batch, day: localDay(), seconds: final ? seconds : 0 }),
       });
-      if (!res.ok) return null;
+      if (!res.ok) {
+        pending.current = [...batch, ...pending.current]; // kaybetme, sonraki turda tekrar dene
+        setSaveWarning(true);
+        return null;
+      }
+      setSaveWarning(false);
       const data = (await res.json()) as AnswerResult;
       sessionXp.current += data.xpGained;
       // üst bardaki seri/XP rozetlerini anında güncelle
@@ -82,6 +102,8 @@ export function SessionPlayer() {
       );
       return data;
     } catch {
+      pending.current = [...batch, ...pending.current];
+      setSaveWarning(true);
       return null;
     }
   }, []);
@@ -138,7 +160,7 @@ export function SessionPlayer() {
   }, []);
 
   if (status === "loading") return <LoadingCard />;
-  if (status === "error") return <ErrorCard onRetry={() => void load()} />;
+  if (status === "error") return <ErrorCard kind={errorKind} onRetry={() => void load()} />;
   if (status === "empty")
     return <EmptyCard meta={session?.meta} onExtra={() => void load(true)} />;
   if (status === "done")
@@ -177,6 +199,19 @@ export function SessionPlayer() {
           />
         </div>
       </div>
+
+      {saveWarning ? (
+        <div
+          className="mb-4 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+          style={{
+            background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
+            color: "var(--color-flame-500)",
+          }}
+        >
+          <AlertIcon size={16} />
+          Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek.
+        </div>
+      ) : null}
 
       <AnimatePresence mode="wait">
         <div key={round.id} className="flex flex-1 flex-col justify-center pb-8">
@@ -221,18 +256,52 @@ function LoadingCard() {
   );
 }
 
-function ErrorCard({ onRetry }: { onRetry: () => void }) {
+function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) {
+  const content = {
+    auth: {
+      title: "Oturumun sona ermiş",
+      body: "Güvenlik için oturumun kapandı. İlerlemen kayıtlı — tekrar giriş yaptığında kaldığın yerden devam edersin.",
+      action: (
+        <Link href="/giris" className="btn btn-primary mt-5 w-full px-5 py-3.5">
+          Giriş yap
+        </Link>
+      ),
+    },
+    db: {
+      title: "Kelimeler yüklenemedi",
+      body: "Sunucuya ulaşıldı ama veriler alınamadı. Birkaç saniye sonra tekrar denemen genelde yeterli olur.",
+      action: (
+        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
+          <RefreshIcon size={18} /> Tekrar dene
+        </button>
+      ),
+    },
+    network: {
+      title: "İnternet bağlantısı yok",
+      body: "Cihazının bağlantısı kesilmiş görünüyor. Bağlantını kontrol edip tekrar dene.",
+      action: (
+        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
+          <RefreshIcon size={18} /> Tekrar dene
+        </button>
+      ),
+    },
+  }[kind];
+
   return (
     <div className="mx-auto w-full max-w-md">
       <div className="card p-6 text-center">
-        <h2 className="text-lg font-bold">Bağlantı kurulamadı</h2>
-        <p className="muted mt-2 text-sm">
-          Veritabanına ulaşılamıyor. <code>DATABASE_URL</code> tanımlı mı ve tablolar oluşturuldu mu
-          (<code>npm run db:push &amp;&amp; npm run db:seed</code>) kontrol et.
-        </p>
-        <button onClick={onRetry} className="btn btn-primary mt-5 w-full px-5 py-3">
-          Tekrar dene
-        </button>
+        <div
+          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl"
+          style={{
+            background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
+            color: "var(--color-flame-500)",
+          }}
+        >
+          <AlertIcon size={22} />
+        </div>
+        <h2 className="text-lg font-bold">{content.title}</h2>
+        <p className="muted mt-2 text-sm">{content.body}</p>
+        {content.action}
       </div>
     </div>
   );
@@ -252,8 +321,8 @@ function EmptyCard({
       className="mx-auto w-full max-w-md"
     >
       <div className="card p-8 text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl brand-gradient text-3xl">
-          ✓
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl brand-gradient text-white">
+          <CheckIcon size={30} />
         </div>
         <h2 className="text-xl font-bold">Günlük hedefini tamamladın</h2>
         <p className="muted mt-2 text-sm">
@@ -299,9 +368,9 @@ function SummaryCard({
             initial={{ scale: 0.5, rotate: -12 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 14 }}
-            className="text-5xl"
+            className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20"
           >
-            {accuracy >= 80 ? "🎉" : accuracy >= 50 ? "👏" : "💪"}
+            <ConfettiIcon size={30} />
           </motion.div>
           <h2 className="mt-3 text-2xl font-bold">Tur tamamlandı</h2>
           <p className="mt-1 text-sm opacity-90">+{xp} XP kazandın</p>
@@ -333,8 +402,8 @@ function SummaryCard({
               />
             </div>
             {result.goalReached ? (
-              <p className="mt-2 text-center text-sm font-semibold text-[color:var(--color-mint-500)]">
-                Günlük hedefi tamamladın 🔥
+              <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-sm font-semibold text-[color:var(--color-mint-500)]">
+                <FlameIcon size={16} /> Günlük hedefi tamamladın
               </p>
             ) : null}
           </div>

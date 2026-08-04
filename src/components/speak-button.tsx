@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { SpeakerIcon } from "./icons";
 
 /** Tarayıcının konuşma sentezi ile Almanca telaffuz. Desteklenmiyorsa hiç görünmez. */
 export function speakGerman(text: string) {
@@ -56,7 +57,7 @@ export function SpeakButton({
       title="Telaffuzu dinle"
       className={`btn btn-ghost shrink-0 ${dim} ${className}`}
     >
-      🔊
+      <SpeakerIcon size={size === "sm" ? 15 : 18} />
     </motion.button>
   );
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { translateAuthError } from "@/lib/auth/errors";
+import { isEmailNotVerified, runAuth, translateAuthError } from "@/lib/auth/errors";
 
 type Mode = "signin" | "signup";
 
@@ -23,11 +23,16 @@ export function AuthForm() {
     if (busy) return;
     setBusy(true);
     setError(null);
+
     try {
       if (mode === "signin") {
-        const res = await authClient.signIn.email({ email, password });
-        if (res?.error) {
-          setError(translateAuthError(res.error));
+        const res = await runAuth(() => authClient.signIn.email({ email, password }));
+        if (!res.ok) {
+          if (isEmailNotVerified(res.err)) {
+            router.push(`/eposta-dogrula?email=${encodeURIComponent(email)}&durum=dogrulanmadi`);
+            return;
+          }
+          setError(translateAuthError(res.err));
           return;
         }
         router.push("/learn");
@@ -35,26 +40,23 @@ export function AuthForm() {
         return;
       }
 
-      const res = await authClient.signUp.email({
-        email,
-        password,
-        name: name.trim() || email.split("@")[0],
-      });
-      if (res?.error) {
-        setError(translateAuthError(res.error));
+      const res = await runAuth(() =>
+        authClient.signUp.email({ email, password, name: name.trim() || email.split("@")[0] }),
+      );
+      if (!res.ok) {
+        setError(translateAuthError(res.err));
         return;
       }
 
-      // E-posta doğrulaması zorunluysa oturum açılmaz; kullanıcıyı bilgilendir.
-      const { data: session } = await authClient.getSession();
-      if (session?.user) {
+      // Doğrulama zorunluysa oturum açılmaz; kullanıcıyı bilgilendirme ekranına al.
+      const session = await runAuth(() => authClient.getSession());
+      const user = session.ok ? (session.data as { data?: { user?: unknown } })?.data?.user : null;
+      if (user) {
         router.push("/learn");
         router.refresh();
       } else {
-        router.push(`/eposta-dogrula?email=${encodeURIComponent(email)}`);
+        router.push(`/eposta-dogrula?email=${encodeURIComponent(email)}&durum=yeni`);
       }
-    } catch {
-      setError("Bağlantı kurulamadı. Tekrar dene.");
     } finally {
       setBusy(false);
     }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { LogoMark } from "./icons";
 
 /** Giriş, kayıt, parola sıfırlama ve doğrulama ekranlarının ortak çerçevesi. */
 export function AuthShell({
@@ -19,8 +20,8 @@ export function AuthShell({
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col justify-center px-5 py-10">
       <Link href="/" className="mb-8 flex items-center justify-center gap-2">
-        <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl text-lg font-black text-white">
-          W
+        <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl text-white">
+          <LogoMark size={22} />
         </span>
         <span className="text-lg font-bold">Wortspiel</span>
       </Link>

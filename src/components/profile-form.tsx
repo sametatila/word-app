@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { authClient } from "@/lib/auth/client";
+import { AlertIcon, CheckIcon } from "@/components/icons";
 
 type Initial = {
   displayName: string;
@@ -38,10 +39,12 @@ export function ProfileForm({
   const [saving, setSaving] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   async function save() {
     setSaving(true);
     setSaved(false);
+    setSaveError(null);
     try {
       const res = await fetch("/api/profile", {
         method: "POST",
@@ -51,7 +54,13 @@ export function ProfileForm({
       if (res.ok) {
         setSaved(true);
         setTimeout(() => setSaved(false), 2200);
+      } else if (res.status === 401) {
+        setSaveError("Oturumun sona ermiş. Tekrar giriş yapman gerekiyor.");
+      } else {
+        setSaveError("Ayarlar kaydedilemedi. Birazdan tekrar dene.");
       }
+    } catch {
+      setSaveError("İnternet bağlantısı kurulamadı. Bağlantını kontrol et.");
     } finally {
       setSaving(false);
     }
@@ -132,12 +141,23 @@ export function ProfileForm({
             <motion.span
               initial={{ opacity: 0, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-sm font-semibold text-[color:var(--color-mint-500)]"
+              className="flex items-center gap-1 text-sm font-semibold text-[color:var(--color-mint-500)]"
             >
-              Kaydedildi ✓
+              <CheckIcon size={16} /> Kaydedildi
             </motion.span>
           ) : null}
         </div>
+        {saveError ? (
+          <p
+            className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+            style={{
+              background: "color-mix(in srgb, var(--color-rose-500) 12%, transparent)",
+              color: "var(--color-rose-500)",
+            }}
+          >
+            <AlertIcon size={16} /> {saveError}
+          </p>
+        ) : null}
       </section>
 
       <section className="card p-5">

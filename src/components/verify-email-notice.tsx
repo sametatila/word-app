@@ -4,9 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell } from "@/components/auth-shell";
-import { translateAuthError } from "@/lib/auth/errors";
+import { runAuth, translateAuthError } from "@/lib/auth/errors";
 
-export function VerifyEmailNotice({ email }: { email: string | null }) {
+export function VerifyEmailNotice({
+  email,
+  reason = "new",
+}: {
+  email: string | null;
+  reason?: "new" | "blocked";
+}) {
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,30 +22,31 @@ export function VerifyEmailNotice({ email }: { email: string | null }) {
     setBusy(true);
     setError(null);
     setSent(false);
-    try {
-      const res = await authClient.sendVerificationEmail({
+    const res = await runAuth(() =>
+      authClient.sendVerificationEmail({
         email,
         callbackURL: `${window.location.origin}/learn`,
-      });
-      if (res?.error) {
-        setError(translateAuthError(res.error));
-        return;
-      }
-      setSent(true);
-    } catch {
-      setError("Bağlantı kurulamadı. Tekrar dene.");
-    } finally {
-      setBusy(false);
+      }),
+    );
+    setBusy(false);
+    if (!res.ok) {
+      setError(translateAuthError(res.err));
+      return;
     }
+    setSent(true);
   }
 
   return (
     <AuthShell
-      title="E-postanı doğrula"
+      title={reason === "blocked" ? "Önce e-postanı doğrula" : "E-postanı doğrula"}
       subtitle={
-        email
-          ? `${email} adresine bir doğrulama bağlantısı gönderdik.`
-          : "Kayıt sırasında verdiğin adrese bir doğrulama bağlantısı gönderdik."
+        reason === "blocked"
+          ? email
+            ? `${email} hesabı henüz doğrulanmadı. Giriş yapabilmek için gelen kutundaki bağlantıya tıklaman gerekiyor.`
+            : "Hesabın henüz doğrulanmadı. Giriş yapabilmek için gelen kutundaki bağlantıya tıklaman gerekiyor."
+          : email
+            ? `${email} adresine bir doğrulama bağlantısı gönderdik.`
+            : "Kayıt sırasında verdiğin adrese bir doğrulama bağlantısı gönderdik."
       }
       footer={
         <Link href="/giris" className="underline-offset-4 hover:underline">

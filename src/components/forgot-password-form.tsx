@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { translateAuthError } from "@/lib/auth/errors";
+import { runAuth, translateAuthError } from "@/lib/auth/errors";
 
 export function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -17,21 +17,18 @@ export function ForgotPasswordForm() {
     if (busy) return;
     setBusy(true);
     setError(null);
-    try {
-      const res = await authClient.requestPasswordReset({
+    const res = await runAuth(() =>
+      authClient.requestPasswordReset({
         email,
         redirectTo: `${window.location.origin}/sifre-sifirla`,
-      });
-      if (res?.error) {
-        setError(translateAuthError(res.error));
-        return;
-      }
-      setSent(true);
-    } catch {
-      setError("Bağlantı kurulamadı. Tekrar dene.");
-    } finally {
-      setBusy(false);
+      }),
+    );
+    setBusy(false);
+    if (!res.ok) {
+      setError(translateAuthError(res.err));
+      return;
     }
+    setSent(true);
   }
 
   return (

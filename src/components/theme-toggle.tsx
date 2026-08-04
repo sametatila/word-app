@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { MoonIcon, SunIcon } from "./icons";
 
 export function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -24,9 +25,9 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={dark ? "Açık temaya geç" : "Koyu temaya geç"}
-      className="btn btn-ghost h-10 w-10 text-lg"
+      className="btn btn-ghost h-10 w-10"
     >
-      {dark ? "☀" : "☾"}
+      {dark ? <SunIcon size={18} /> : <MoonIcon size={18} />}
     </button>
   );
 }

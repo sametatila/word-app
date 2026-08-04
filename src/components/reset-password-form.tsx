@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { translateAuthError } from "@/lib/auth/errors";
+import { runAuth, translateAuthError } from "@/lib/auth/errors";
 
 export function ResetPasswordForm({ token }: { token: string | null }) {
   const router = useRouter();
@@ -24,19 +24,14 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
     }
     setBusy(true);
     setError(null);
-    try {
-      const res = await authClient.resetPassword({ newPassword: password, token });
-      if (res?.error) {
-        setError(translateAuthError(res.error));
-        return;
-      }
-      setDone(true);
-      setTimeout(() => router.push("/giris"), 1800);
-    } catch {
-      setError("Bağlantı kurulamadı. Tekrar dene.");
-    } finally {
-      setBusy(false);
+    const res = await runAuth(() => authClient.resetPassword({ newPassword: password, token }));
+    setBusy(false);
+    if (!res.ok) {
+      setError(translateAuthError(res.err));
+      return;
     }
+    setDone(true);
+    setTimeout(() => router.push("/giris"), 1800);
   }
 
   if (!token) {

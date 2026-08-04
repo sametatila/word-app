@@ -5,12 +5,13 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
 import { ThemeToggle } from "./theme-toggle";
+import { CardsIcon, ChartIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark } from "./icons";
 
 const NAV = [
-  { href: "/learn", label: "Öğren", icon: "◆" },
-  { href: "/words", label: "Kelimeler", icon: "▤" },
-  { href: "/progress", label: "İlerleme", icon: "▲" },
-  { href: "/profile", label: "Profil", icon: "●" },
+  { href: "/learn", label: "Öğren", Icon: CardsIcon },
+  { href: "/words", label: "Kelimeler", Icon: ListIcon },
+  { href: "/progress", label: "İlerleme", Icon: ChartIcon },
+  { href: "/profile", label: "Profil", Icon: UserIcon },
 ];
 
 export function AppShell({
@@ -44,8 +45,8 @@ export function AppShell({
         style={{ borderColor: "var(--border)" }}
       >
         <Link href="/" className="mb-8 flex items-center gap-2">
-          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-lg font-black text-white">
-            W
+          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
+            <LogoMark size={20} />
           </span>
           <span className="text-lg font-bold">Wortspiel</span>
         </Link>
@@ -68,7 +69,7 @@ export function AppShell({
                     transition={{ type: "spring", stiffness: 400, damping: 32 }}
                   />
                 )}
-                <span className="relative">{item.icon}</span>
+                <item.Icon size={18} className="relative" />
                 <span className="relative">{item.label}</span>
               </Link>
             );
@@ -88,8 +89,8 @@ export function AppShell({
           style={{ borderColor: "var(--border)", background: "color-mix(in srgb, var(--bg) 85%, transparent)" }}
         >
           <Link href="/" className="flex items-center gap-2">
-            <span className="brand-gradient flex h-8 w-8 items-center justify-center rounded-lg font-black text-white">
-              W
+            <span className="brand-gradient flex h-8 w-8 items-center justify-center rounded-lg text-white">
+              <LogoMark size={18} />
             </span>
             <span className="font-bold">Wortspiel</span>
           </Link>
@@ -118,7 +119,7 @@ export function AppShell({
                 className="relative flex flex-1 flex-col items-center gap-0.5 pt-2.5 text-xs font-semibold"
                 style={{ color: active ? "var(--color-brand-500)" : "var(--text-muted)" }}
               >
-                <span className="text-base">{item.icon}</span>
+                <item.Icon size={20} />
                 {item.label}
                 {active && (
                   <motion.span
@@ -142,13 +143,13 @@ function StatPills({ streak, xp }: { streak: number; xp: number }) {
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
         style={{ background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)", color: "var(--color-flame-500)" }}
       >
-        🔥 {streak}
+        <FlameIcon size={15} /> {streak}
       </span>
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
         style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand-500)" }}
       >
-        ✦ {xp}
+        <SparkIcon size={15} /> {xp}
       </span>
     </div>
   );

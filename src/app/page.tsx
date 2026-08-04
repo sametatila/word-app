@@ -1,14 +1,23 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Reveal } from "@/components/reveal";
+import {
+  KeyboardIcon,
+  LinkIcon,
+  LogoMark,
+  PenIcon,
+  PuzzleIcon,
+  TagIcon,
+  TargetIcon,
+} from "@/components/icons";
 
 const GAMES = [
-  { icon: "🔗", name: "Eşleştirme", desc: "Almanca–Türkçe çiftleri hızlıca eşle" },
-  { icon: "🎯", name: "Doğru Anlam", desc: "Dört şık arasından doğru karşılığı seç" },
-  { icon: "🎨", name: "Artikel Yarışı", desc: "der / die / das refleksini geliştir" },
-  { icon: "🧩", name: "Harf Bulmacası", desc: "Karışık harflerden kelimeyi kur" },
-  { icon: "📝", name: "Cümleyi Tamamla", desc: "Gerçek örnek cümledeki boşluğu doldur" },
-  { icon: "⌨️", name: "Yazarak Hatırla", desc: "Kelimeyi sıfırdan yazarak pekiştir" },
+  { Icon: LinkIcon, name: "Eşleştirme", desc: "Almanca–Türkçe çiftleri hızlıca eşle" },
+  { Icon: TargetIcon, name: "Doğru Anlam", desc: "Dört şık arasından doğru karşılığı seç" },
+  { Icon: TagIcon, name: "Artikel Yarışı", desc: "der / die / das refleksini geliştir" },
+  { Icon: PuzzleIcon, name: "Harf Bulmacası", desc: "Karışık harflerden kelimeyi kur" },
+  { Icon: PenIcon, name: "Cümleyi Tamamla", desc: "Gerçek örnek cümledeki boşluğu doldur" },
+  { Icon: KeyboardIcon, name: "Yazarak Hatırla", desc: "Kelimeyi sıfırdan yazarak pekiştir" },
 ];
 
 const FEATURES = [
@@ -37,8 +46,8 @@ export default function Home() {
 
       <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <div className="flex items-center gap-2">
-          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-lg font-black text-white">
-            W
+          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
+            <LogoMark size={20} />
           </span>
           <span className="text-lg font-bold">Wortspiel</span>
         </div>
@@ -103,8 +112,8 @@ export default function Home() {
             {GAMES.map((g, i) => (
               <Reveal key={g.name} delay={i * 0.06}>
                 <div className="card flex h-full items-start gap-4 p-5">
-                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl">
-                    {g.icon}
+                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[color:var(--color-brand-500)]">
+                    <g.Icon size={22} />
                   </span>
                   <div>
                     <h3 className="font-semibold">{g.name}</h3>

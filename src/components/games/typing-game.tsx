@@ -156,7 +156,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           animate={{ opacity: 1, scale: 1 }}
           className="animate-pop mt-4 text-center text-lg font-semibold text-[color:var(--color-mint-500)]"
         >
-          Harika! Doğru cevap 🎉
+          Harika! Doğru cevap
         </motion.p>
       ) : null}
 
