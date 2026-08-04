@@ -14,26 +14,33 @@ const TONE: Record<string, string> = {
 
 /**
  * Güncel CEFR seviyesi ve bir sonraki seviyeye ilerleme.
- * Seviye puanı -8 ile 10 arasında; 10'a ulaşınca terfi, -6'ya düşünce geri iner.
- * Amaç: öğrencinin yükselişi/düşüşü anlık olarak görmesi.
+ *
+ * Seviyeyi performans belirler: profildeki seçim yalnızca başlangıç noktasıdır,
+ * tavan değildir. Puan -8 ile 10 arasında; 10'a ulaşınca terfi, -6'ya düşünce
+ * bir alt seviyeye iniş olur. Amaç öğrencinin yükselişini/düşüşünü anlık görmesi.
  */
 export function LevelBadge({
   level,
   score,
-  ceiling,
   compact = false,
+  calibrating = false,
 }: {
   level: string;
   score: number;
-  ceiling: string;
   compact?: boolean;
+  calibrating?: boolean;
 }) {
   const idx = Math.max(0, LEVELS.indexOf(level));
-  const ceilIdx = Math.max(0, LEVELS.indexOf(ceiling));
-  const atCeiling = idx >= ceilIdx;
-  const next = atCeiling ? null : LEVELS[idx + 1];
+  const next = idx < LEVELS.length - 1 ? LEVELS[idx + 1] : null;
+  const prev = idx > 0 ? LEVELS[idx - 1] : null;
   const pct = Math.max(0, Math.min(100, ((score + 8) / 18) * 100));
   const tone = TONE[level] ?? "var(--color-brand-500)";
+
+  const label = calibrating
+    ? "seviyeni yeniden ölçüyoruz"
+    : next
+      ? `${next} seviyesine ilerliyorsun`
+      : "en üst seviyedesin";
 
   return (
     <div className={compact ? "flex items-center gap-2" : "space-y-1.5"}>
@@ -49,19 +56,15 @@ export function LevelBadge({
           >
             {level}
           </motion.span>
-          {!compact ? (
-            <span className="muted text-xs font-semibold">
-              {next ? `${next} seviyesine ilerliyorsun` : "en üst seviyendesin"}
-            </span>
-          ) : null}
+          {!compact ? <span className="muted text-xs font-semibold">{label}</span> : null}
         </div>
-        {!compact && next ? (
-          <span className="muted text-xs font-semibold">{next}</span>
+        {!compact ? (
+          <span className="muted text-xs font-semibold">{next ?? "C1"}</span>
         ) : null}
       </div>
 
       {!compact ? (
-        <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
+        <div className="relative h-1.5 w-full overflow-hidden rounded-full surface-2">
           <motion.div
             className="h-full rounded-full"
             style={{ background: tone }}
@@ -69,35 +72,15 @@ export function LevelBadge({
             animate={{ width: `${pct}%` }}
             transition={{ type: "spring", stiffness: 140, damping: 24 }}
           />
+          {/* Düşüş eşiği: puan buranın altına inerse bir alt seviyeye dönülür. */}
+          {prev ? (
+            <span
+              className="absolute inset-y-0 w-px opacity-50"
+              style={{ left: `${((-6 + 8) / 18) * 100}%`, background: "var(--color-rose-500)" }}
+            />
+          ) : null}
         </div>
       ) : null}
     </div>
-  );
-}
-
-/** Seviye değişimi duyurusu — oturum özetinde gösterilir. */
-export function LevelChangeBanner({ up, down }: { up: string | null; down: string | null }) {
-  if (!up && !down) return null;
-  const isUp = Boolean(up);
-  const level = (up ?? down)!;
-  const tone = isUp ? "var(--color-mint-500)" : "var(--color-flame-500)";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10, scale: 0.96 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ type: "spring", stiffness: 260, damping: 18 }}
-      className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
-      style={{ background: `color-mix(in srgb, ${tone} 14%, transparent)` }}
-    >
-      <p className="text-sm font-bold" style={{ color: tone }}>
-        {isUp ? `${level} seviyesine yükseldin` : `${level} seviyesine döndük`}
-      </p>
-      <p className="muted mt-1 text-xs">
-        {isUp
-          ? "Doğruluk oranın yüksek — bundan sonra daha zorlu kelimeler gelecek."
-          : "Son turlar zorlandı; temeli sağlamlaştırıp yeniden yükseleceksin."}
-      </p>
-    </motion.div>
   );
 }

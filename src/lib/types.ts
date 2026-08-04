@@ -60,7 +60,10 @@ export type SessionPayload = {
     accuracy: number | null;
     activeLevel: string;
     levelScore: number;
-    levelCeiling: string;
+    /** Profilde seçilen başlangıç seviyesi — tavan değil, yalnızca çıkış noktası. */
+    levelStart: string;
+    /** Seviye yeni değiştiyse sistem zorluğu yeniden ölçüyor demektir. */
+    calibrating: boolean;
   };
 };
 

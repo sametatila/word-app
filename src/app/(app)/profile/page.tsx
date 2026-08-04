@@ -1,15 +1,28 @@
 import { getUserInfo, authEnabled } from "@/lib/auth/server";
-import { ensureProfile } from "@/lib/session";
+import { ensureProfile, getProgress } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
+import { ProgressView } from "@/components/progress-view";
 
 export const dynamic = "force-dynamic";
 
+function localDayFallback() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+/**
+ * Profil sayfası: kimlik + ilerleme + ayarlar tek yerde.
+ * Eski /progress sayfasının tüm içeriği başlığın hemen altında yaşar;
+ * ayarlar ve hesap bölümleri onun altındadır.
+ */
 export default async function ProfilePage() {
   const user = await getUserInfo();
   if (!user) return null;
 
   try {
     const profile = await ensureProfile(user.id, user.name);
+    const today = localDayFallback();
+    const data = await getProgress(user.id, today);
+
     return (
       <ProfileForm
         authEnabled={authEnabled}
@@ -19,11 +32,30 @@ export default async function ProfilePage() {
           dailyGoal: profile.dailyGoal,
           newPerDay: profile.newPerDay,
           level: profile.level,
+          activeLevel: profile.activeLevel,
           currentStreak: profile.currentStreak,
           longestStreak: profile.longestStreak,
           totalXp: profile.totalXp,
         }}
-      />
+      >
+        <ProgressView
+          levels={data.levels}
+          days={data.days.map((d) => ({
+            day: String(d.day),
+            reviews: d.reviews,
+            correct: d.correct,
+            xp: d.xp,
+          }))}
+          dueNow={data.dueNow}
+          upcoming={data.upcoming}
+          games={data.games}
+          seconds={data.seconds}
+          leeches={data.leeches}
+          streak={data.profile.currentStreak}
+          longest={data.profile.longestStreak}
+          today={today}
+        />
+      </ProfileForm>
     );
   } catch (err) {
     console.error("[profile page]", err);

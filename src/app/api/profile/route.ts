@@ -28,7 +28,18 @@ export async function POST(req: Request) {
   if (!Object.keys(patch).length) return NextResponse.json({ error: "empty" }, { status: 400 });
 
   try {
-    await ensureProfile(userId);
+    const current = await ensureProfile(userId);
+
+    // Seviye değiştiyse sistem yeni duruma anında uyum sağlar: çalışma seviyesi
+    // seçilen yere taşınır, terfi/düşüş puanı sıfırlanır ve zorluk ölçümü
+    // baştan başlar. Böylece B1 diyen öğrenci A1'de beklemez, seviyesini
+    // düşüren de eski başarısının zorluğuyla karşılaşmaz.
+    if (patch.level && patch.level !== current?.activeLevel) {
+      patch.activeLevel = patch.level;
+      patch.levelScore = 0;
+      patch.levelChangedAt = new Date();
+    }
+
     const [updated] = await db
       .update(profiles)
       .set(patch)

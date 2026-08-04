@@ -1,0 +1,1 @@
+ALTER TABLE "profiles" ADD COLUMN "level_changed_at" timestamp with time zone;

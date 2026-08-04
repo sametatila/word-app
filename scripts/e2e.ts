@@ -73,10 +73,17 @@ async function main() {
   check("birden fazla oyun türü", games.size >= 2, `(${[...games].join(", ")})`);
   const allWords = s1.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
   check("tüm kelimeler A1", allWords.every((w) => w.niveau === "A1"));
+  // tr-de yönünde doğru şık artikeliyle birlikte yazılır: "die Apotheke".
   check("choice şıkları 4 adet ve doğru cevabı içeriyor",
     s1.rounds.filter((r) => r.game === "choice").every((r) =>
       r.game === "choice" && r.options.length === 4 &&
-      r.options.includes(r.direction === "de-tr" ? r.word.tr : r.word.de)));
+      r.options.includes(
+        r.direction === "de-tr"
+          ? r.word.tr
+          : r.word.artikel
+            ? `${r.word.artikel} ${r.word.de}`
+            : r.word.de,
+      )));
 
   console.log("\n3) Cevapların kaydı ve SRS");
   const a1 = answersFor(s1.rounds, 1);
@@ -236,7 +243,35 @@ async function main() {
     challenge.rounds.every((r) => r.game !== "intro"),
   );
 
-  console.log("\n11) SRS saf fonksiyon davranışı");
+  console.log("\n11) Seviye seçimi adaptif: A1/A2 zorunlu geçit değil");
+  await reset();
+  await ensureProfile(USER, "E2E");
+  // Kullanıcı profilden B1 seçiyor: sistem doğrudan B1'e taşınmalı.
+  await db
+    .update(profiles)
+    .set({ level: "B1", activeLevel: "B1", levelScore: 0, levelChangedAt: new Date() })
+    .where(eq(profiles.userId, USER));
+
+  const sB1 = await buildSession(USER, day1);
+  const wordsB1 = sB1.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
+  const levelsSeen = new Set(wordsB1.map((w) => w.niveau));
+  check("B1 seçen kullanıcı A1'de tutulmuyor", !levelsSeen.has("A1"), `(${[...levelsSeen]})`);
+  const b1Share = wordsB1.filter((w) => w.niveau === "B1").length / Math.max(1, wordsB1.length);
+  check("kelimelerin çoğu B1'den", b1Share >= 0.5, `(%${Math.round(b1Share * 100)})`);
+  check("aktif seviye B1 raporlanıyor", sB1.meta.activeLevel === "B1");
+  check("seviye değişince zorluk yeniden ölçülüyor", sB1.meta.calibrating === true);
+
+  // Tavan yok: B1'den başlayan öğrenci performansıyla B2'ye çıkabilmeli.
+  let aboveStart = false;
+  for (let i = 0; i < 10 && !aboveStart; i++) {
+    const s = await buildSession(USER, day1);
+    if (!s.rounds.length) break;
+    const r = await submitAnswers(USER, answersFor(s.rounds, 1), day1, 60);
+    if (r.activeLevel === "B2") aboveStart = true;
+  }
+  check("profil seçimi tavan değil (B1 → B2 mümkün)", aboveStart);
+
+  console.log("\n12) SRS saf fonksiyon davranışı");
   let st: SrsState = {
     state: 0, ease: 2.5, intervalDays: 0, reps: 0, lapses: 0,
     correctStreak: 0, leech: false, dueAt: new Date(),

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { authApi } from "@/lib/auth/api";
@@ -11,6 +11,7 @@ type Initial = {
   dailyGoal: number;
   newPerDay: number;
   level: string;
+  activeLevel: string;
   currentStreak: number;
   longestStreak: number;
   totalXp: number;
@@ -28,10 +29,13 @@ export function ProfileForm({
   initial,
   accountName,
   authEnabled,
+  children,
 }: {
   initial: Initial;
   accountName: string | null;
   authEnabled: boolean;
+  /** Başlık ile ayarlar arasına giren bölüm — ilerleme istatistikleri. */
+  children?: ReactNode;
 }) {
   const [displayName, setDisplayName] = useState(initial.displayName);
   const [dailyGoal, setDailyGoal] = useState(initial.dailyGoal);
@@ -69,7 +73,7 @@ export function ProfileForm({
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-6">
+    <div className="mx-auto w-full max-w-3xl space-y-6">
       <header className="flex items-center gap-4">
         <div className="brand-gradient flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-black text-white">
           {(displayName || accountName || "W").slice(0, 1).toUpperCase()}
@@ -81,6 +85,8 @@ export function ProfileForm({
           </p>
         </div>
       </header>
+
+      {children}
 
       <section className="card space-y-5 p-5">
         <h2 className="font-bold">Ayarlar</h2>
@@ -113,9 +119,24 @@ export function ProfileForm({
             ))}
           </div>
           <p className="muted mt-1.5 text-xs">
-            {LEVELS.find((l) => l.id === level)?.desc}. Seçtiğin seviyeye <strong>kadar</strong> olan
-            tüm kelimeler havuza girer — A1 ve A2 atlanmaz, sıra yine en yaygın kelimelerden başlar.
+            {LEVELS.find((l) => l.id === level)?.desc}. Bu bir <strong>başlangıç noktası</strong>,
+            tavan değil: doğrudan buradan başlarsın, alt seviyeleri baştan geçmen gerekmez.
+            Kelimelerin çoğu bu seviyeden, bir kısmı boşlukları kapatmak için bir alt seviyeden gelir.
+            İyi gittikçe sistem seni yukarı taşır, zorlandığında bir alt seviyeye indirir.
           </p>
+          {level !== initial.activeLevel ? (
+            <p
+              className="mt-2 rounded-xl px-3 py-2 text-xs"
+              style={{
+                background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)",
+                color: "var(--color-brand-500)",
+              }}
+            >
+              Kaydedince çalışma seviyen {initial.activeLevel} → {level} olacak; zorluk ölçümü
+              sıfırlanıp yeni seviyene göre baştan başlayacak. Öğrendiğin kelimelerin tekrar planı
+              olduğu gibi korunur.
+            </p>
+          ) : null}
         </div>
 
         <Slider

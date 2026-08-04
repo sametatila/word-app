@@ -10,6 +10,62 @@ const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
 type Difficulty = "easy" | "normal" | "hard";
 const ROUNDS_PER_SESSION = 14;
 
+/**
+ * Adaptif seviye modeli.
+ *
+ * Profildeki seçim bir **başlangıç noktasıdır**, tavan değil. A1 ve A2 zorunlu
+ * bir geçit değildir: B1 diyen öğrenci doğrudan B1 kelimeleriyle başlar, iyi
+ * giderse B2/C1'e yükselir, zorlanırsa sistem onu aşağı indirir. Gerçek seviyeyi
+ * her zaman performans belirler.
+ *
+ * Kelimeler tek bir seviyeden değil, aktif seviyenin çevresinden gelir:
+ * çoğunluk aktif seviyeden, bir kısmı bir alt seviyeden (boşluk doldurma).
+ */
+function levelBand(activeLevel: string) {
+  const idx = Math.max(0, Math.min(LEVEL_ORDER.length - 1, LEVEL_ORDER.indexOf(activeLevel)));
+  const level = LEVEL_ORDER[idx];
+  const below = idx > 0 ? LEVEL_ORDER[idx - 1] : null;
+  const above = idx < LEVEL_ORDER.length - 1 ? LEVEL_ORDER[idx + 1] : null;
+  return {
+    idx,
+    level,
+    below,
+    above,
+    /** Şık havuzu: yakın seviyeler kafa karıştırıcı çeldirici üretir. */
+    pool: [below, level, above].filter((l): l is string => l !== null),
+  };
+}
+
+/**
+ * Yeni kelime seçimi: %70 aktif seviye, kalanı bir alt seviyeden.
+ * Aktif seviyede görülmemiş kelime kalmadıysa üst seviyeden devam edilir —
+ * öğrenci hiçbir zaman "bitti" duvarına toslamaz.
+ */
+function pickNewWords(
+  candidates: (typeof words.$inferSelect)[],
+  band: ReturnType<typeof levelBand>,
+  limit: number,
+) {
+  if (limit <= 0) return [];
+  const at = (lv: string | null) => (lv ? candidates.filter((w) => w.niveau === lv) : []);
+  const primary = mixByType(at(band.level), Math.ceil(limit * 0.7));
+  const chosen = [...primary];
+  const taken = new Set(chosen.map((w) => w.id));
+  // Sıra önemli: önce bir alt seviyeden boşluk doldurma, sonra aktif seviyenin
+  // kalanı. Üst seviye yalnızca aktif seviye tükendiğinde devreye girer —
+  // yoksa A1'deki öğrenciye durduk yere A2 kelimesi gelir.
+  for (const group of [at(band.below), at(band.level), at(band.above), candidates]) {
+    if (chosen.length >= limit) break;
+    for (const w of mixByType(group, limit)) {
+      if (chosen.length >= limit) break;
+      if (taken.has(w.id)) continue;
+      taken.add(w.id);
+      chosen.push(w);
+    }
+  }
+  return chosen.slice(0, limit);
+}
+
 export async function ensureProfile(userId: string, name?: string | null) {
   const [existing] = await db.select().from(profiles).where(eq(profiles.userId, userId));
   if (existing) return existing;
@@ -94,10 +150,8 @@ export async function buildSession(
 
   // 2) Kalan kontenjan kadar yeni kelime
   const newBudget = extra ? 10 : Math.max(0, profile.newPerDay - newToday);
-  // Aktif seviye performansa göre değişir; kullanıcının profildeki seçimi tavandır.
-  const ceilingIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.level));
-  const activeIdx = Math.min(ceilingIdx, Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel)));
-  const levelsUpTo = LEVEL_ORDER.slice(0, activeIdx + 1);
+  // Seviyeyi performans belirler; profildeki seçim yalnızca başlangıç noktasıdır.
+  const band = levelBand(profile.activeLevel);
 
   // Günlük kota bir hız ayarıdır, duvar değil: tekrar kuyruğu zayıfsa oturumu
   // dolduracak kadar yeni kelime her hâlükârda gelir (tek turluk oturum olmaz).
@@ -107,12 +161,12 @@ export async function buildSession(
   // Henüz hiç görülmemiş kelimeler: id listesini taşımak yerine NOT EXISTS.
   let newRows: (typeof words.$inferSelect)[] = [];
   if (newLimit > 0) {
-    newRows = await db
+    const candidates = await db
       .select()
       .from(words)
       .where(
         and(
-          inArray(words.niveau, levelsUpTo),
+          inArray(words.niveau, band.pool),
           sql`not exists (
             select 1 from ${userWords}
             where ${userWords.wordId} = ${words.id} and ${userWords.userId} = ${userId}
@@ -120,18 +174,21 @@ export async function buildSession(
         ),
       )
       // Seviye içinde en yaygın kelimeler önce gelir (sıklık sırası).
-      .orderBy(asc(words.niveau), sql`${words.rank} asc nulls last`, asc(words.id))
-      .limit(newLimit * 5);
-    newRows = mixByType(newRows, newLimit);
+      .orderBy(sql`${words.rank} asc nulls last`, asc(words.id))
+      .limit(newLimit * 12);
+    newRows = pickNewWords(candidates, band, newLimit);
   }
 
-  // 3) Şıklar için havuz
+  // 3) Şıklar için havuz — aktif seviyenin çevresi ve tekrar edilen kelimelerin
+  //    seviyeleri. Yakın seviyeden çeldirici, uzak seviyeden gelene göre çok
+  //    daha kafa karıştırıcıdır.
+  const poolLevels = [...new Set([...band.pool, ...dueRows.map((r) => r.w.niveau)])];
   const pool = await db
     .select()
     .from(words)
-    .where(inArray(words.niveau, levelsUpTo))
+    .where(inArray(words.niveau, poolLevels))
     .orderBy(sql`random()`)
-    .limit(120);
+    .limit(140);
 
   const dueWords = dueRows.map((r) => ({ word: toRoundWord(r.w, false), state: r.uw.state }));
   const newWords = newRows.map((r) => ({ word: toRoundWord(r, true), state: 0 }));
@@ -160,6 +217,9 @@ export async function buildSession(
 
   // Son cevaplara bakarak zorluğu ayarla: iyi gidiyorsa üretim ağırlıklı,
   // zorlanıyorsa tanıma ağırlıklı oyunlar seçilir.
+  // Seviye elle değiştirildiyse ölçüm o andan itibaren yapılır: eski seviyedeki
+  // başarı, yeni seviyedeki zorluğu belirlememeli.
+  const since = profile.levelChangedAt;
   const [recent] = await db
     .select({
       total: sql<number>`count(*)::int`,
@@ -169,12 +229,18 @@ export async function buildSession(
       db
         .select({ correct: reviews.correct })
         .from(reviews)
-        .where(eq(reviews.userId, userId))
+        .where(
+          since
+            ? and(eq(reviews.userId, userId), gt(reviews.createdAt, since))
+            : eq(reviews.userId, userId),
+        )
         .orderBy(desc(reviews.createdAt))
         .limit(50)
         .as("son"),
     );
   const accuracy = recent && recent.total >= 12 ? recent.correct / recent.total : null;
+  // Seviye yeni değiştiyse kullanıcıya "sistem seni yeniden ölçüyor" denecek.
+  const calibrating = Boolean(since) && (recent?.total ?? 0) < 12;
   const difficulty: Difficulty =
     accuracy === null ? "normal" : accuracy >= 0.85 ? "hard" : accuracy <= 0.6 ? "easy" : "normal";
 
@@ -209,9 +275,10 @@ export async function buildSession(
       displayName: profile.displayName,
       difficulty,
       accuracy: accuracy === null ? null : Math.round(accuracy * 100),
-      activeLevel: LEVEL_ORDER[activeIdx],
+      activeLevel: band.level,
       levelScore: profile.levelScore,
-      levelCeiling: LEVEL_ORDER[ceilingIdx],
+      levelStart: profile.level,
+      calibrating,
     },
   };
 }
@@ -579,13 +646,14 @@ export async function submitAnswers(
   const sessionAccuracy = answers.length ? correctCount / answers.length : 0;
   const delta =
     sessionAccuracy >= 0.85 ? 2 : sessionAccuracy >= 0.7 ? 1 : sessionAccuracy >= 0.5 ? 0 : -2;
-  const ceilingIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.level));
-  let activeIdx = Math.min(ceilingIdx, Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel)));
+  // Profildeki seçim tavan değildir: iyi giden öğrenci C1'e kadar yükselebilir,
+  // zorlanan A1'e kadar inebilir. Seviyeyi yalnızca performans belirler.
+  let activeIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel));
   let levelScore = Math.max(-8, Math.min(10, profile.levelScore + delta));
   let levelUp: string | null = null;
   let levelDown: string | null = null;
 
-  if (levelScore >= 10 && activeIdx < ceilingIdx) {
+  if (levelScore >= 10 && activeIdx < LEVEL_ORDER.length - 1) {
     activeIdx += 1;
     levelScore = 4;
     levelUp = LEVEL_ORDER[activeIdx];

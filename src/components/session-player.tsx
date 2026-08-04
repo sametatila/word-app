@@ -7,8 +7,9 @@ import { useRouter } from "next/navigation";
 import type { Answer, AnswerResult, Round, SessionPayload } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
-import { LevelBadge, LevelChangeBanner } from "@/components/level-badge";
+import { LevelBadge } from "@/components/level-badge";
 import { ChallengePlayer } from "@/components/challenge-player";
+import { Confetti, CountUp, LevelUpOverlay } from "@/components/celebrate";
 import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
 type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error" | "challenge";
@@ -286,16 +287,16 @@ export function SessionPlayer() {
   const progress = ((index + 1) / session!.rounds.length) * 100;
 
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
-      <div className="mb-4">
+    <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
+      <div className="mb-2 shrink-0">
         <LevelBadge
           level={session!.meta.activeLevel}
           score={session!.meta.levelScore}
-          ceiling={session!.meta.levelCeiling}
+          calibrating={session!.meta.calibrating}
         />
       </div>
-      <div className="mb-6">
-        <div className="mb-2 flex items-center justify-between text-xs font-semibold">
+      <div className="mb-3 shrink-0">
+        <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
           <span className="muted flex items-center gap-2">
             {index + 1} / {session!.rounds.length}
             {(() => {
@@ -381,7 +382,7 @@ function StartCard({
         <div className="brand-gradient px-6 py-7 text-white">
           <p className="text-sm opacity-90">
             {meta.currentStreak > 0
-              ? `${meta.currentStreak} günlük serideysin`
+              ? `${meta.currentStreak} günlük seridesin`
               : "Bugün serini başlat"}
           </p>
           <div className="mt-1 flex items-center gap-2">
@@ -420,6 +421,29 @@ function StartCard({
         </div>
 
         <div className="px-6 pb-6 pt-4">
+          {meta.calibrating ? (
+            <div
+              className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
+              style={{ background: "var(--surface-2)" }}
+            >
+              <strong style={{ color: "var(--color-brand-500)" }}>
+                {meta.activeLevel} seviyesinden başlıyorsun
+              </strong>
+              <p className="muted mt-1 text-xs">
+                Seviyeni değiştirdin: kelimeler ve zorluk bu seviyeye göre yeniden ayarlandı.
+                Birkaç tur sonra sistem seni ölçüp gerekirse yukarı ya da aşağı taşıyacak.
+              </p>
+            </div>
+          ) : meta.activeLevel !== meta.levelStart ? (
+            <div
+              className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
+              style={{ background: "var(--surface-2)" }}
+            >
+              <span className="muted">Başlangıcın {meta.levelStart} idi, şu an </span>
+              <strong style={{ color: "var(--color-brand-500)" }}>{meta.activeLevel}</strong>
+              <span className="muted"> seviyesinde çalışıyorsun.</span>
+            </div>
+          ) : null}
           {meta.accuracy !== null ? (
             <div
               className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
@@ -596,12 +620,30 @@ function SummaryCard({
 }) {
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const xp = result?.xpGained ?? tally.xp;
+  // Seviye değişimi ekranı kaplasın: kullanıcı bunu kaçırmamalı.
+  const [levelMoment, setLevelMoment] = useState<{ level: string; dir: "up" | "down" } | null>(
+    result?.levelUp
+      ? { level: result.levelUp, dir: "up" }
+      : result?.levelDown
+        ? { level: result.levelDown, dir: "down" }
+        : null,
+  );
+  // Konfeti yalnızca gerçekten iyi bir tur sonunda: her seferinde patlarsa değersizleşir.
+  const deserved = accuracy >= 80 && tally.total >= 4;
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="mx-auto w-full max-w-md"
+      className="relative mx-auto w-full max-w-md"
     >
+      <LevelUpOverlay
+        level={levelMoment?.level ?? null}
+        direction={levelMoment?.dir ?? "up"}
+        onClose={() => setLevelMoment(null)}
+      />
+      <Confetti fire={deserved && !levelMoment ? 1 : 0} />
+
       <div className="card overflow-hidden">
         <div className="brand-gradient p-8 text-center text-white">
           <motion.div
@@ -613,7 +655,9 @@ function SummaryCard({
             <ConfettiIcon size={30} />
           </motion.div>
           <h2 className="mt-3 text-2xl font-bold">Tur tamamlandı</h2>
-          <p className="mt-1 text-sm opacity-90">+{xp} XP kazandın</p>
+          <p className="mt-1 text-sm opacity-90">
+            +<CountUp value={xp} /> XP kazandın
+          </p>
         </div>
 
         <div className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
@@ -649,7 +693,27 @@ function SummaryCard({
           </div>
         ) : null}
 
-        <LevelChangeBanner up={result?.levelUp ?? null} down={result?.levelDown ?? null} />
+        {result?.levelUp || result?.levelDown ? (
+          <button
+            onClick={() =>
+              setLevelMoment({
+                level: (result.levelUp ?? result.levelDown)!,
+                dir: result.levelUp ? "up" : "down",
+              })
+            }
+            className="mx-6 mt-4 w-[calc(100%-3rem)] rounded-2xl px-4 py-3 text-center text-sm font-bold"
+            style={{
+              background: `color-mix(in srgb, ${
+                result.levelUp ? "var(--color-mint-500)" : "var(--color-flame-500)"
+              } 14%, transparent)`,
+              color: result.levelUp ? "var(--color-mint-500)" : "var(--color-flame-500)",
+            }}
+          >
+            {result.levelUp
+              ? `${result.levelUp} seviyesine yükseldin`
+              : `${result.levelDown} seviyesine döndük`}
+          </button>
+        ) : null}
 
         <p className="muted px-6 pt-4 text-center text-xs">
           Bu turdaki kelimeler tekrar planına alındı; unutmaya başlayacağın gün
