@@ -1,11 +1,23 @@
 # Wortspiel — Almanca Kelime Uygulaması
 
-A1'den C1'e 4.046 kelimeyle çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan** Almanca
-kelime uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana eklenince
+A1'den C1'e, **iki kursla** çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan** Almanca
+uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana eklenince
 uygulama gibi tam ekran açılır (PWA).
 
-- **A1–C1 · 4.046 kelime** (A1 858 · A2 481 · B1 1.853 · B2 419 · C1 435)
+- **İki kurs, tek uygulama:**
+  - **Almanca (Hochdeutsch)** — A1–C1, 4.046 kelime (A1 858 · A2 481 · B1 1.853 · B2 419 · C1 435)
+  - **Zürih Almancası (Züritüütsch)** — aynı 4.046 maddenin lehçe karşılığı, Hochdeutsch köprüsüyle
+    (`formen` alanında "HD: …") ve Zürihçe örnek cümlelerle
+
+  Kurs ilk girişte seçilir (`/kurs-sec`), sonradan profilden değiştirilebilir. Kelime havuzu,
+  tekrar kuyruğu, beceri içeriği ve ilerleme sayıları aktif kursa bağlıdır; kurs değiştirince
+  diğer kursun ilerlemesi **silinmez**, beklemeye geçer.
 - **6 kelime oyunu:** Eşleştirme, Doğru Anlam, Artikel Yarışı, Harf Bulmacası, Cümleyi Tamamla, Yazarak Hatırla
+- **Beceriler bölümü (`/skills`):** her kursta A1–C1 için okuma, dinleme ve yazma alıştırmaları —
+  metin, sözlükçe (gloss), çoktan seçmeli sorular ve gerekçeli açıklamalar; yazmada önce cümle
+  kurma, sonra kontrol listeli serbest yazı ve örnek çözüm.
+- **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
+  kelime listesinde ve Cümleyi Tamamla oyununda görünür.
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
   çevrilir, kelimenin bir sonraki gösterim zamanı SM-2 türevi bir motorla hesaplanır ve kelime
   oyunun akışına kendiliğinden karışır. Aynı gün içindeki tekrarlar aralığı şişirmez, son 30 dakikada
@@ -14,7 +26,7 @@ uygulama gibi tam ekran açılır (PWA).
   (ich, sie, du, nicht…) ve isim/fiil/diğer olarak serpiştirilir.
 - **Dinamik CEFR seviyesi:** aktif seviye performansa göre yükselir ve düşer. Öğren ekranının
   üstünde seviye rozeti ve bir sonraki seviyeye ilerleme çubuğu görünür; oturum sonunda terfi/düşüş
-  duyurulur. Profildeki seçim tavanı belirler.
+  duyurulur. Profildeki seçim **tavan değil, başlangıç noktasıdır**.
 - **Adaptif zorluk:** son 50 cevabın doğruluğu %85'in üstündeyse üretim oyunları (yazma, harf
   bulmacası), %60'ın altındaysa tanıma oyunları öne çıkar. Kullanıcıya ekranda açıklanır.
 - **60 saniye meydan okuma:** oturum sonunda, öğrenilenlerden rastgele ve karışık oyun türleriyle
@@ -38,7 +50,9 @@ uygulama gibi tam ekran açılır (PWA).
 npm install
 cp .env.example .env            # DATABASE_URL'i Neon'dan yapıştır
 npm run db:push                 # tabloları oluştur
-npm run db:seed                 # 4.046 kelimeyi yükle
+npm run db:seed                 # Almanca kursu: 4.046 kelime + örnek cümle çevirileri
+npm run db:seed:zurich          # Zürih kursu: 4.046 Züritüütsch madde
+npm run db:seed:skills          # beceri alıştırmaları (iki kurs, A1–C1)
 npm run dev                     # http://localhost:3000
 ```
 
@@ -54,8 +68,9 @@ NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 bağlıysa tüm oyunlar, ilerleme ve streak çalışır. İki değer eklenince giriş/kayıt (`/giris`)
 kendiliğinden devreye girer.
 
-Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi · `/progress` ilerleme ·
-`/profile` ayarlar · `/demo-games` altı oyunun tek sayfada önizlemesi.
+Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi · `/learn` oturum ·
+`/words` kelime listesi · `/skills` okuma-dinleme-yazma · `/profile` ayarlar + ilerleme ·
+`/demo-games` altı oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
 
 ## 2. Neon kurulumu (Postgres 18)
 
@@ -63,7 +78,11 @@ Faydalı adresler: `/` tanıtım · `/learn` oturum · `/words` kelime listesi �
 2. **Connection string** → *Pooled connection* olanı kopyala, `DATABASE_URL` yap.
 3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
    Editor'a sırayla yapıştırabilirsin).
-4. `npm run db:seed` → `data/app/words.json` içindeki 4.046 kelime yüklenir.
+4. `npm run db:seed` → `data/app/words.json` içindeki 4.046 kelime + `data/app/beispiel-tr.json`
+   içindeki örnek cümle çevirileri yüklenir.
+5. `npm run db:seed:zurich` → `data/zurich/chunk-*.json` içindeki 4.046 Züritüütsch madde
+   `course='gsw-zh'` olarak yüklenir (kimlik: 100000 + kaynak id).
+6. `npm run db:seed:skills` → `src/lib/skills/content/*` içindeki beceri alıştırmaları yüklenir.
 
 ## 3. Vercel'e deploy
 
@@ -110,7 +129,8 @@ node scripts/playtest.mjs 330
 src/
   app/
     page.tsx                tanıtım sayfası
-    (app)/learn|words|progress|profile
+    kurs-sec                ilk giriş: kurs + başlangıç seviyesi
+    (app)/learn|words|skills|profile
     api/session             oturum kuyruğunu üretir
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
@@ -124,12 +144,19 @@ src/
     auth/                   Neon Auth sunucu + istemci sarmalayıcıları
     srs.ts                  tekrar motoru (saf fonksiyonlar)
     session.ts              kuyruk kurgusu, cevap işleme, ilerleme sorguları
-    db/schema.ts            words · profiles · user_words · reviews · daily_stats
+    example.ts              örnek cümle ayıklama (numaralı liste + kısaltma farkındalığı)
+    skills/                 beceri içeriği: types · meta · content/{a1..c1, zh-a1..zh-c1}
+    db/schema.ts            words · profiles · user_words · reviews · daily_stats ·
+                            skill_exercises · user_skills
   components/
     session-player.tsx      oyun akışını yöneten oynatıcı
     games/*.tsx             altı oyun + ortak çerçeve
+    skills/*.tsx            beceri hub'ı, okuma/dinleme/yazma çalıştırıcıları
 data/
-  app/words.json            tohumlama kaynağı (4.046 kelime, A1–C1)
+  app/words.json            Almanca tohumlama kaynağı (4.046 kelime, A1–C1)
+  app/beispiel-tr.json      örnek cümlelerin Türkçe çevirileri (4.043 cümle)
+  zurich/chunk-*.json       Züritüütsch karşılıklar (4.046 madde)
+  zurich/style-guide.md     lehçe yazım kuralları — içerik üretiminde bağlayıcı
 ```
 
 ### Tekrar mantığı özet
@@ -156,11 +183,20 @@ harf bulmacası). Aynı oyun arka arkaya gelmez.
 | %70–85 | +1 |
 | %50–70 | 0 |
 | < %50 | −2 |
-| Puan 10'a ulaşır | **bir üst seviyeye terfi**, puan 4'e döner |
-| Puan −6'ya iner | **bir alt seviyeye iniş**, puan 4'e döner |
 
-Aktif seviye asla profilde seçilen tavanı aşmaz. Yeni kelimeler aktif seviyeye kadar olan
-havuzdan, sıklık sırasıyla gelir.
+Terfi iki vitesli çalışır:
+
+| Aşama | Terfi | İniş |
+|---|---|---|
+| **Kalibrasyon** (seviyedeki ilk 80 cevap) | puan ≥ 10 **ve** oturum doğruluğu ≥ %90 | puan ≤ −6 |
+| **Sonrası** | puan ≥ 24 | puan ≤ −10 |
+
+Kalibrasyon penceresi, yanlış başlangıç seviyesi seçen öğrenciyi hızla kendi seviyesine yaklaştırır;
+pencere kapandıktan sonra terfi seviyede gerçekten çalışılmış hacim ister. Seviye her değiştiğinde
+puan 4'e döner ve hacim sayacı sıfırlanır.
+
+Profildeki seçim tavan değildir: aktif seviye C1'e kadar yükselebilir, A1'e kadar inebilir.
+Yeni kelimeler aktif seviyenin çevresinden (bir alt, aktif, bir üst), sıklık sırasıyla gelir.
 
 ## 7. E-posta akışları (parola sıfırlama, kayıt onayı)
 
@@ -198,3 +234,39 @@ eklenmiş ve doğrulanmıştır (ayrıntı: `data/README.md`).
 **B2 ve C1** için Goethe resmî bir liste yayınlamadığından bu seviyeler konu bazlı olarak
 üretilmiştir (iş, toplum, akademik dil, hukuk, kültür, ileri fiil/sıfat…); her madde artikel,
 çoğul/çekim, Türkçe karşılık ve örnek cümle içerir, A1–B1 ile çakışanlar ayıklanmıştır.
+
+**Örnek cümle çevirileri** `data/app/beispiel-tr.json` dosyasındadır (4.043 cümle). Kaynak
+listedeki 497 madde "1. … 2. …" biçiminde numaralı bir derleme olduğu için ayıklama
+`src/lib/example.ts` üzerinden yapılır; bu yardımcı numaralandırmayı ve "ca. / z. B. / Dr."
+gibi kısaltmaları tanır.
+
+### Züritüütsch (gsw-zh) verisi
+
+`data/zurich/style-guide.md` dönüşümün **bağlayıcı** kuralıdır: söz başı K→Ch, mastar -en→-e,
+uzun ünlüler çift (Ziit, Huus, Lüüt), iç seste -st-→-scht-, küçültme -li, ß hiç kullanılmaz,
+artikeller de/d/s, Präteritum ve Genitiv yok, ilgi cümlesi "wo". Helvetizmler çevrilmez,
+karşılığı konur (Fahrrad→Velo, Fahrkarte→Billett, Frühstück→Zmorge).
+
+Zürihçe örnek cümleler çoğu yerde yerelleştirilmiştir (Berlin→Züri, Mainz→Winterthur). Bu
+maddelerde Almancadan devralınan Türkçe çeviri yanlış olacağından `scripts/seed-zurich.ts`
+cümledeki sayıları ve yer adlarını karşılaştırır; örtüşmeyen ~374 maddede çeviri boş bırakılır.
+
+## 9. Beceri içeriği (okuma · dinleme · yazma)
+
+İçerik repoda TypeScript olarak yazılır (`src/lib/skills/content/`), `npm run db:seed:skills`
+ile `skill_exercises` tablosuna yüklenir ve çalışma zamanında oradan servis edilir. Veritabanına
+ulaşılamazsa gömülü kopya devreye girer — ekran hiçbir durumda boş kalmaz.
+
+| | Almanca (de) | Zürih (gsw-zh) |
+|---|---|---|
+| Seviye başına | 6 okuma · 6 dinleme · 4 yazma | 6 okuma · 6 dinleme · 4 yazma |
+| A1–C1 toplam | 80 alıştırma | 80 alıştırma |
+
+- **Okuma/dinleme:** başlık, tür, Türkçe yönerge, sözlükçe, metin veya konuşmacıya bölünmüş
+  ses bölümleri, çoktan seçmeli sorular ve her soru için gerekçeli açıklama.
+- **Dinleme:** cihazın konuşma sentezi kullanılır; bir bölümde `audio` alanı varsa önce
+  gerçek kayıt çalınır. Zürih kursunda de-CH sesi tercih edilir.
+- **Yazma:** önce Türkçeden hedef dile cümle kurma (ipuçlu, alternatif cevaplı), sonra
+  kontrol listesi + kalıp desteği + örnek çözümle serbest yazı görevi.
+- **XP:** ilk tamamlamada tam verilir; tekrar çözümlerde yalnızca en iyi skorun farkı eklenir.
+  Sonuçlar sunucuda (`user_skills`) tutulur, cihazlar arasında senkrondur.

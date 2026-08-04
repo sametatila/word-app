@@ -20,18 +20,31 @@ const GAMES = [
   { Icon: KeyboardIcon, name: "Yazarak Hatırla", desc: "Kelimeyi sıfırdan yazarak pekiştir" },
 ];
 
+const COURSES = [
+  {
+    name: "Almanca",
+    sub: "Hochdeutsch",
+    body: "A1–B1 resmî Goethe listelerinden, B2–C1 konu bazlı hazırlanmış 4.046 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
+  },
+  {
+    name: "Zürih Almancası",
+    sub: "Züritüütsch",
+    body: "Aynı 4.046 maddenin Zürih lehçesindeki karşılığı — de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",
+  },
+];
+
 const FEATURES = [
   {
     title: "Tekrarı sen planlamıyorsun",
     body: "Ayrı bir “tekrar” bölümü yok. Her cevabın hızı ve doğruluğu ölçülür; kelime tam unutulmadan önce oyunun içinde tekrar karşına çıkar.",
   },
   {
-    title: "A1'den C1'e kadar",
-    body: "A1–B1 resmî Goethe listelerinden, B2–C1 konu bazlı hazırlanmış 4.046 kelime; her biri artikel, çoğul ve örnek cümleyle.",
+    title: "Okuma, dinleme, yazma",
+    body: "Kelimenin yanında beceri bölümü: her kursta A1–C1 için mesajdan köşe yazısına, anonstan panele uzanan alıştırmalar. Yazmada önce cümle kurar, sonra kendi metnini yazarsın.",
   },
   {
     title: "Seviyen canlı değişir",
-    body: "Doğru bildikçe bir üst CEFR seviyesine yükselirsin, zorlandıkça bir alt seviyeye inersin. Zorluk da doğruluk oranına göre kendini ayarlar.",
+    body: "Profildeki seçim tavan değil, başlangıç noktası. İyi gittikçe bir üst CEFR seviyesine çıkarsın; terfi tek güzel oturumla değil, seviyede biriken çalışmayla gelir.",
   },
   {
     title: "Sıkılmadan devam",
@@ -40,6 +53,10 @@ const FEATURES = [
   {
     title: "60 saniye meydan okuma",
     body: "Tur sonunda öğrendiklerinden rastgele sorular, karışık oyunlarla süreye karşı. Skorunu kırmaya çalışırsın.",
+  },
+  {
+    title: "İki kurs, tek ilerleme",
+    body: "Kursu istediğin zaman değiştirirsin; diğerindeki ilerlemen silinmez, beklemeye geçer. Geri döndüğünde kaldığın yerden devam edersin.",
   },
 ];
 
@@ -71,7 +88,7 @@ export default function Home() {
         <section className="py-14 text-center sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
-              A1 → C1 · 4.046 kelime · 6 oyun
+              2 kurs · A1 → C1 · 8.092 kelime · 6 oyun
             </span>
           </Reveal>
           <Reveal delay={0.06}>
@@ -81,8 +98,8 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="muted mx-auto mt-5 max-w-xl text-base sm:text-lg">
-              Altı farklı kelime oyunu, tek bir akış. Neyi ne zaman tekrar edeceğine uygulama karar
-              verir; sen sadece günde birkaç dakika oyna.
+              Hochdeutsch ya da Zürih Almancası — kursunu seç, altı kelime oyunu ve beceri
+              alıştırmaları tek akışta gelsin. Neyi ne zaman tekrar edeceğine uygulama karar verir.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
@@ -95,6 +112,22 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
+        </section>
+
+        <section className="mb-12 grid gap-4 sm:grid-cols-2">
+          {COURSES.map((c, i) => (
+            <Reveal key={c.name} delay={i * 0.08}>
+              <div className="card h-full p-6">
+                <div className="flex items-baseline gap-2">
+                  <h3 className="text-lg font-bold">{c.name}</h3>
+                  <span className="text-xs font-semibold text-[color:var(--color-brand-500)]">
+                    {c.sub}
+                  </span>
+                </div>
+                <p className="muted mt-2 text-sm leading-relaxed">{c.body}</p>
+              </div>
+            </Reveal>
+          ))}
         </section>
 
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -153,6 +186,8 @@ export default function Home() {
 
       <footer className="muted border-t px-5 py-8 text-center text-xs" style={{ borderColor: "var(--border)" }}>
         Kelime kaynağı: A1–B1 Goethe-Institut resmî Wortliste; B2–C1 konu bazlı hazırlanmış set.
+        <br />
+        Zürih kursu, aynı listenin Züritüütsch karşılığıdır (Dieth temelli sadeleştirilmiş yazım).
       </footer>
     </div>
   );
