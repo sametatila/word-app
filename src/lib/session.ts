@@ -339,7 +339,8 @@ function pickRound(
   word: RoundWord,
   state: number,
   pool: (typeof words.$inferSelect)[],
-  lastGame: string,
+  /** Kaçınılacak oyun türleri — arka arkaya (ya da aynı kelimede) tekrar etmesin. */
+  avoid: string | string[],
   nextId: () => string,
   difficulty: Difficulty = "normal",
 ): Round | null {
@@ -371,7 +372,8 @@ function pickRound(
         ? [...candidates.filter((g) => !PRODUCTION.includes(g)), ...candidates]
         : candidates;
 
-  const usable = tuned.filter((g) => g !== lastGame);
+  const banned = new Set(Array.isArray(avoid) ? avoid : [avoid]);
+  const usable = tuned.filter((g) => !banned.has(g));
   const order = usable.length ? usable : tuned;
 
   for (const game of shuffle(order)) {
@@ -732,46 +734,97 @@ export function shiftDay(day: string, delta: number) {
 }
 
 /**
- * Meydan okuma turu: öğrenilmiş kelimelerden rastgele seçip karışık oyun
- * türleriyle süreye karşı kısa bir tur kurar. Tanıtım kartı yoktur; amaç
- * hız ve hatırlama, öğretim değil.
+ * Meydan okuma turu.
+ *
+ * Rastgele bir kelime yığını değil, kademeli olarak sertleşen üç dalga:
+ *   1. Isınma  — en sağlam bildiği kelimeler, tanıma oyunları. Kombo kurulur.
+ *   2. Baskı   — orta güçteki kelimeler, üretim ve tanıma karışık.
+ *   3. Kriz    — en zayıf kelimeler (leech, çok unutulan, düşük ease) ve
+ *                yazma/harf dizme gibi üretim oyunları.
+ *
+ * Kelime sayısı azsa aynı kelime ileri dalgalarda **farklı bir oyun türüyle**
+ * yeniden sorulur; ezber değil gerçek hatırlama ölçülür.
  */
-export async function buildChallenge(userId: string): Promise<{ rounds: Round[]; pool: number }> {
+export async function buildChallenge(
+  userId: string,
+): Promise<{ rounds: Round[]; tiers: number[]; pool: number; weak: number }> {
   const profile = await ensureProfile(userId);
-  // Aktif seviye performansa göre değişir; kullanıcının profildeki seçimi tavandır.
-  const ceilingIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.level));
-  const activeIdx = Math.min(ceilingIdx, Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel)));
-  const levelsUpTo = LEVEL_ORDER.slice(0, activeIdx + 1);
+  const band = levelBand(profile.activeLevel);
 
   const learned = await db
     .select({ w: words, uw: userWords })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
     .where(and(eq(userWords.userId, userId), gt(userWords.reps, 0)))
-    .orderBy(sql`random()`)
-    .limit(14);
+    .limit(160);
 
+  if (learned.length < 3) return { rounds: [], tiers: [], pool: learned.length, weak: 0 };
+
+  // Kırılganlık puanı: yüksek olan kelime öğrenci için gerçek bir tehdittir.
+  const fragility = (uw: typeof userWords.$inferSelect) =>
+    (uw.leech ? 4 : 0) +
+    uw.lapses * 1.5 +
+    Math.max(0, 2.5 - uw.ease) * 2 +
+    Math.max(0, 3 - uw.correctStreak) * 0.6;
+
+  const ranked = learned
+    .map((row) => ({ ...row, risk: fragility(row.uw) }))
+    .sort((a, b) => b.risk - a.risk);
+  const weak = ranked.filter((r) => r.risk >= 3).length;
+
+  const half = Math.ceil(ranked.length / 2);
+  const fragile = shuffle(ranked.slice(0, half)); // riskli yarı
+  const solid = shuffle(ranked.slice(half)); // sağlam yarı
+
+  const poolLevels = [...new Set([...band.pool, ...learned.map((r) => r.w.niveau)])];
   const pool = await db
     .select()
     .from(words)
-    .where(inArray(words.niveau, levelsUpTo))
+    .where(inArray(words.niveau, poolLevels))
     .orderBy(sql`random()`)
-    .limit(120);
+    .limit(140);
 
   let seq = 0;
   const nextId = () => `c${++seq}`;
   const rounds: Round[] = [];
+  const tiers: number[] = [];
   let lastGame = "";
-  for (const row of learned) {
-    const word = toRoundWord(row.w, false);
-    // Meydan okumada hep üretim/tanıma karışık, tanıtım yok.
-    const round = pickRound(word, Math.max(1, row.uw.state), pool, lastGame, nextId, "hard");
-    if (!round) continue;
-    rounds.push(round);
-    lastGame = round.game;
-  }
+  const usedGames = new Map<number, Set<string>>();
 
-  return { rounds, pool: learned.length };
+  /** Bir dalgayı kur; kaynak biterse başa dönülür ama oyun türü tekrarlanmaz. */
+  const wave = (
+    source: typeof ranked,
+    count: number,
+    tier: number,
+    difficulty: Difficulty,
+  ) => {
+    for (let i = 0; i < count && source.length; i++) {
+      const row = source[i % source.length];
+      const word = toRoundWord(row.w, false);
+      const seen = usedGames.get(row.w.id) ?? new Set<string>();
+      // Aynı kelime tekrar gelirse mutlaka başka bir oyunla sorulur.
+      const round = pickRound(
+        word,
+        Math.max(1, row.uw.state),
+        pool,
+        [...seen, lastGame],
+        nextId,
+        difficulty,
+      );
+      if (!round) continue;
+      seen.add(round.game);
+      usedGames.set(row.w.id, seen);
+      rounds.push(round);
+      tiers.push(tier);
+      lastGame = round.game;
+    }
+  };
+
+  wave(solid, 6, 1, "easy"); // ısınma: hız kazan, kombo kur
+  wave(shuffle(ranked), 9, 2, "normal"); // baskı: karışık
+  wave(fragile, 12, 3, "hard"); // kriz: en zayıflar, üretim ağırlıklı
+
+  return { rounds, tiers, pool: learned.length, weak };
 }
 
 /** İlerleme ekranı verileri */

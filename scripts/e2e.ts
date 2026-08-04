@@ -242,6 +242,12 @@ async function main() {
     "meydan okumada tanıtım kartı yok",
     challenge.rounds.every((r) => r.game !== "intro"),
   );
+  check(
+    "meydan okuma dalgaları kademeli sertleşiyor",
+    challenge.tiers.length === challenge.rounds.length &&
+      challenge.tiers[challenge.tiers.length - 1] >= challenge.tiers[0],
+    `(${challenge.tiers.slice(0, 3).join("")}…${challenge.tiers.slice(-3).join("")})`,
+  );
 
   console.log("\n11) Seviye seçimi adaptif: A1/A2 zorunlu geçit değil");
   await reset();
