@@ -454,6 +454,447 @@ export const zhB2: SkillExercise[] = [
     ],
   },
 
+  // ── Hikâye dizisi: Amina Lehrstell suecht. B2'nin yeni alıştırmalarında
+  //    Schnupperlehr → Bewärbig → Absaag → Vertrag sırası izlenir.
+  {
+    id: "zh-b2-r7",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "reading",
+    title: "De Schnupperbricht",
+    genre: "Rapor",
+    intro:
+      "İsviçre'de çıraklık öncesi deneme haftası (Schnupperlehre) zorunlu bir adımdır. Amina'nın raporunu okuyacaksın.",
+    gloss: [
+      { de: "d Schnupperlehr", tr: "deneme stajı" },
+      { de: "de Bricht", tr: "rapor" },
+      { de: "de Betrieb", tr: "işletme" },
+      { de: "d Erwartig", tr: "beklenti" },
+      { de: "sich vorstelle", tr: "hayal etmek" },
+      { de: "d Rückmäldig", tr: "geri bildirim" },
+      { de: "iiteile", tr: "görevlendirmek, ayırmak" },
+      { de: "überrascht", tr: "şaşırmış" },
+      { de: "d Belaschtig", tr: "zorlanma, yük" },
+    ],
+    minutes: 7,
+    text:
+      "Schnupperbricht — Amina Bekele, 3. Sek B\nBetrieb: Apotheke am Limmatplatz · 3 Täg\n\nMini Erwartig vorher\n\nIch han dänkt, i de Apothek bediene me Chunde und suecht Medikamänt usem Gstell. Ich han mich uf de Kontakt mit Lüüt gfröit und Angscht gha vor de Chemie.\n\nWas ich gmacht han\n\nAm erschte Tag han ich zuegluegt und Ware iigruumt. Am zwäite Tag han ich sälber Chunde begrüesst und Rezäpt entgäge gnoo. Am dritte Tag han ich im Labor gsee, wie e Salbe agrüehrt wird.\n\nWas anders gsii isch als dänkt\n\nDrei Sache händ mich überrascht. Erschtens: De grössere Täil vo de Arbet isch Beratig, nöd Verchauf. Zwäitens: Me mues sehr genau schriibe und rächne — es Fähler bim Dosiere isch kä chline Fähler. Drittens: Es isch körperlich aaschtrengender, als ich dänkt han; me staat de ganz Tag.\n\nD Rückmäldig vom Betrieb\n\nD Frau Kern hät gsäit, ich seig fründlich mit de Chunde gsii und heig guet zueglost. Verbessere mues ich s Tempo bim Iigrüume und s Fachvokabular.\n\nMis Fazit\n\nIch wott die Lehr mache. Nöd wäge em Verchauf, sondern wäge de Beratig. Was ich no abklärä mues: öb ich mit de Verantwortig bim Dosiere umgaa cha — das isch de Punkt, wo ich am mäischte Respäkt han.",
+    questions: [
+      {
+        text: "Was hät d Amina vorher erwartet?",
+        options: [
+          "Chunde bediene und Medikamänt sueche",
+          "Im Labor schaffe",
+          "Vor allem beraate",
+        ],
+        answer: 0,
+        explain: "Beklentisi satış ağırlıklıydı; kimyadan ise korkuyordu.",
+      },
+      {
+        text: "Welli Überraschig nennt si zerscht?",
+        options: [
+          "De grössere Täil isch Beratig, nöd Verchauf",
+          "S Tempo isch hööch",
+          "D Chunde sind unfründlich",
+        ],
+        answer: 0,
+        explain: "Üç sürprizin ilki bu.",
+      },
+      {
+        text: "Warum isch s Rächne so wichtig?",
+        options: [
+          "Es Fähler bim Dosiere isch kä chline Fähler",
+          "Well me d Kasse mues füehre",
+          "Wäge de Stüüre",
+        ],
+        answer: 0,
+        explain: "Metin bunu doğrudan söylüyor.",
+      },
+      {
+        text: "Was mues si laut Rückmäldig verbessere?",
+        options: [
+          "S Tempo bim Iigrüume und s Fachvokabular",
+          "De Umgang mit Chunde",
+          "S Zuelose",
+        ],
+        answer: 0,
+        explain: "İlk ikisi övülüyor, bu ikisi geliştirilecek olarak veriliyor.",
+      },
+      {
+        text: "Was isch ihre grösst Zwiifel?",
+        options: [
+          "Öb si mit de Verantwortig bim Dosiere umgaa cha",
+          "Öb si gnueg verdient",
+          "Öb de Wäg z wiit isch",
+        ],
+        answer: 0,
+        explain: "„das isch de Punkt, wo ich am mäischte Respäkt han.“",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-r8",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "reading",
+    title: "D Loonabrächnig verstaa",
+    genre: "Rehber",
+    intro:
+      "Brüt maaşla banka hesabına düşen tutar arasındaki fark nereye gidiyor? İsviçre bordrosunun kısaltmaları.",
+    gloss: [
+      { de: "d Loonabrächnig", tr: "maaş bordrosu" },
+      { de: "de Bruttoloon", tr: "brüt maaş" },
+      { de: "de Nettoloon", tr: "net maaş" },
+      { de: "d AHV", tr: "yaşlılık ve dul sigortası (1. sütun)" },
+      { de: "d ALV", tr: "işsizlik sigortası" },
+      { de: "d Pensionskasse", tr: "emeklilik kasası (2. sütun)" },
+      { de: "de Koordinationsabzug", tr: "koordinasyon indirimi" },
+      { de: "d Quellestüür", tr: "kaynakta kesilen vergi" },
+      { de: "obligatorisch", tr: "zorunlu" },
+    ],
+    minutes: 8,
+    text:
+      "Uf de erschte Loonabrächnig staat es Dutzend Abkürzige, und di mäischte Lüüt frooged nie nach. Das lohnt sich aber, well zwo devo direkt beeinflussbar sind.\n\nAHV/IV/EO: 5,3 Prozänt vom Bruttoloon. De Arbetgeber zaalt gliich vill dezue. Das isch di erschti Süüle, also d staatlichi Rente. Si isch für alli gliich uufbaut und nöd verhandelbar.\n\nALV: 1,1 Prozänt für d Arbetslosigkäitsversicherig. Au hier zaalt de Arbetgeber d Hälfti.\n\nBVG (Pensionskasse): Das isch di zwäiti Süüle, und do wird s interessant. De Biitrag hänkt vom Alter ab und schtiigt mit de Jaar. Wichtig isch de Koordinationsabzug: Nöd de ganz Loon isch versicheret, sondern nur de Täil über öppe 26'000 Franke. Wär Tiilzitt schafft, verlüürt drum überproportional — vill Firme händ das underdesse gänderet, aber nöd alli. Do lohnt sich frooge.\n\nNBU: Nicht-Berufsunfall. Zaalt de Arbetnehmer sälber, öppe 1 bis 2 Prozänt.\n\nQuellestüür: Nur bi gwüsse Bewilligige. Si ersetzt d Stüürerklärig — bis zu eme Iikomme vo 120'000. Drüber mues me trotzdem e Erklärig mache.\n\nDe zwäit Punkt, wo me beeinflusse cha, isch di dritti Süüle (3a): freiwillig, mit Stüürabzug. Wär ihn nöd nutzt, verschänkt jedes Jaar Gäld — bi eme mittlere Iikomme öppe 1'500 bis 2'000 Franke Stüüre.",
+    questions: [
+      {
+        text: "Wär zaalt d AHV?",
+        options: [
+          "Arbetnehmer und Arbetgeber je 5,3 Prozänt",
+          "Nur de Arbetnehmer",
+          "Nur de Arbetgeber",
+        ],
+        answer: 0,
+        explain: "İşveren aynı tutarı ekliyor.",
+      },
+      {
+        text: "Was isch de Koordinationsabzug?",
+        options: [
+          "Nur de Loonteil über öppe 26'000 isch versicheret",
+          "En Abzug für Verhiirati",
+          "E Gebüür vo de Pensionskasse",
+        ],
+        answer: 0,
+        explain: "Bu yüzden yarı zamanlı çalışan orantısız kaybediyor.",
+      },
+      {
+        text: "Wär verlüürt bim Koordinationsabzug am mäischte?",
+        options: ["Wär Tiilzitt schafft", "Wär vill verdient", "Ältere Aagschtellti"],
+        answer: 0,
+        explain: "Metin ayrıca sormaya değer olduğunu söylüyor — bazı firmalar düzeltmiş.",
+      },
+      {
+        text: "Bis zu welem Iikomme ersetzt d Quellestüür d Stüürerklärig?",
+        options: ["120'000", "26'000", "Immer"],
+        answer: 0,
+        explain: "Üzerinde beyanname yine gerekiyor.",
+      },
+      {
+        text: "Warum isch di dritti Süüle wichtig?",
+        options: [
+          "Si isch freiwillig, aber spart jedes Jaar Stüüre",
+          "Si isch obligatorisch",
+          "Si ersetzt d AHV",
+        ],
+        answer: 0,
+        explain: "Orta gelirde yılda yaklaşık 1.500–2.000 frank vergi tasarrufu.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-r9",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "reading",
+    title: "D Schwiiz und Europa",
+    genre: "Açıklayıcı yazı",
+    intro:
+      "İsviçre AB üyesi değil ama tam ortasında. Bu ilişkinin neden bu kadar karmaşık olduğunu anlatan bir yazı.",
+    gloss: [
+      { de: "de Biilaterale Wäg", tr: "ikili anlaşmalar yolu" },
+      { de: "de Bertrag", tr: "anlaşma" },
+      { de: "de Binnemärt", tr: "iç pazar" },
+      { de: "d Persoonefreizügigkäit", tr: "serbest dolaşım" },
+      { de: "d Guillotine-Klausel", tr: "giyotin maddesi (biri düşerse hepsi düşer)" },
+      { de: "d Souveränität", tr: "egemenlik" },
+      { de: "nachvollzieh", tr: "sonradan uyum sağlamak" },
+      { de: "d Sackgass", tr: "çıkmaz" },
+      { de: "d Unsicherheit", tr: "belirsizlik" },
+    ],
+    minutes: 8,
+    text:
+      "D Schwiiz isch nöd i de EU — und trotzdem enger mit ere verbunde als mängs Mitgliedsland. Das tönt widersprüchlich und isch s au.\n\nS System heisst biilaterale Wäg. Statt eme Beitritt git s über hundert einzelni Verträg: Persoonefreizügigkäit, Landverchehr, Forschig, technischi Handelshemmnis. Zäme gänd si de Schwiizer Firme fascht de gliich Zuegang zum Binnemärt wie eme Mitglied.\n\nDe Priis isch weniger sichtbar. Erschtens git s d Guillotine-Klausel: Wär äine vo de sibe Verträg vo 1999 kündigt, bringt automatisch alli zum Falle. Das schränkt de politisch Spielruum stark ii — au wänn s Volch e einzelni Frag anders entschäidet.\n\nZwäitens mues d Schwiiz vill EU-Recht nachvollzieh, ohni bim Uusarbeite debii z sii. Kritiker nänned das „Recht übernää ohni mitzredde“. Befürworter antwortet: Genau das isch de Priis vom Zuegang, und er isch günschtiger als Isolation.\n\nSiit Jaare stoot d Verhandlig über es institutionells Abkomme im Zäntrum. D EU wott klari Regle, wie nöis Recht übernoo und Streit entschide wird. Für vill Schwiizer berüehrt das d Souveränität; für vill Firme isch d Unsicherheit s grösser Problem als jede Kompromiss.\n\nDe Text will kä Antwort gää. Er will nur zäige, warum d Debatte nöd zwüsche „defür“ und „degäge“ verlauft, sondern zwüsche verschiidene Vorstellige devo, was Unabhängigkäit i me chliine Land überhaupt häisst.",
+    questions: [
+      {
+        text: "Was isch de biilaterale Wäg?",
+        options: [
+          "Statt eme Beitritt über hundert einzelni Verträg",
+          "E Mitgliedschaft zwäiter Klass",
+          "En Vertrag mit Tüütschland",
+        ],
+        answer: 0,
+        explain: "Sonuç: iç pazara neredeyse üye gibi erişim.",
+      },
+      {
+        text: "Was bewirkt d Guillotine-Klausel?",
+        options: [
+          "Wär äine Vertrag kündigt, bringt alli zum Falle",
+          "Si erlaubt schnelli Kündigung",
+          "Si schützt d Landwirtschaft",
+        ],
+        answer: 0,
+        explain: "Siyasi hareket alanını ciddi biçimde daraltıyor.",
+      },
+      {
+        text: "Was meined d Kritiker mit „Recht übernää ohni mitzredde“?",
+        options: [
+          "D Schwiiz mues EU-Recht nachvollzieh, ohni bim Uusarbeite debii z sii",
+          "D EU beschliesst Schwiizer Gsetz",
+          "D Schwiiz darf nöd abschtimme",
+        ],
+        answer: 0,
+        explain: "Savunucular bunun erişimin bedeli olduğunu söylüyor.",
+      },
+      {
+        text: "Was wott d EU im institutionelle Abkomme?",
+        options: [
+          "Klari Regle für d Übernaam vo nöiem Recht und für Streitfäll",
+          "En Beitritt vo de Schwiiz",
+          "Höcheri Zöll",
+        ],
+        answer: 0,
+        explain: "İsviçre tarafında bu egemenlik tartışmasına dönüşüyor.",
+      },
+      {
+        text: "Was isch s Ziel vom Text?",
+        options: [
+          "Zäige, warum d Debatte nöd zwüsche defür und degäge verlauft",
+          "Für en Beitritt argumentiere",
+          "Gäge d Verträg argumentiere",
+        ],
+        answer: 0,
+        explain: "Son paragraf bunu açıkça söylüyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-r10",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "reading",
+    title: "Vier Meinige zum Dienschtjaar",
+    genre: "Sınav formatı",
+    intro:
+      "Aynı konuda dört görüş — kısmen örtüşüyorlar. Kimin neyi kabul edip neyi reddettiğini ayır.",
+    gloss: [
+      { de: "s Dienschtjaar", tr: "hizmet yılı" },
+      { de: "de Zivildienscht", tr: "sivil hizmet" },
+      { de: "d Pflicht", tr: "zorunluluk" },
+      { de: "freiwillig", tr: "gönüllü" },
+      { de: "de Zämehalt", tr: "toplumsal bağ" },
+      { de: "d Belaschtig", tr: "yük" },
+      { de: "d Grächtigkäit", tr: "adalet" },
+      { de: "iischränke", tr: "kısıtlamak" },
+    ],
+    minutes: 6,
+    text:
+      "Thema: Sölled alli — Fraue und Männer — es Dienschtjaar leischte?\n\nNORA (Studentin): Ich bi defür, aber nöd us militärische Gründ. Mir händ es Problem mit em Zämehalt: Mir wohned neb enand und rededed nöd mitenand. Es Jaar, wo alli öppis für d Gsellschaft mached, wär s einzige Ort, wo sich Lüüt begägned, wo sich susch nie träffed. Militär oder Pflege isch mir egal.\n\nMARKUS (Unternehmer): Ich bi degäge, und zwar wäge de Choschte. Es ganzes Jaar us em Arbetsmärt — für e ganzi Generation. Mir händ scho hüt z wenig Fachlüüt. Wär das fordered, mues au säge, wär s zaalt.\n\nSELIN (Pflegefachfrau): Ich bi teilwiis defür. Aber ich warne devor, d Pflege als Lückebüesser z bruuche. Junge Lüüt, wo es Jaar bliibed und käi Uusbildig händ, entlaschted üs nöd — si bruuched Betreuig. Wänn me s macht, denn richtig: mit Uusbildig und Bezaalig.\n\nTOBIAS (Rekrutierigsoffizier): Ich bi skeptisch. S Militär bruucht nöd meh Lüüt, es bruucht di richtige. E Pflicht für alli produziert Lüüt, wo nöd wänd — und die kosted meh, als si bringed. Freiwilligkäit funktioniert bi eus besser, als di mäischte dänked.",
+    questions: [
+      {
+        text: "Wär begründet d Zueschtimmig mit em gsellschaftliche Zämehalt?",
+        options: ["Nora", "Selin", "Tobias"],
+        answer: 0,
+        explain: "Askerî gerekçeyi açıkça reddediyor.",
+      },
+      {
+        text: "Welles Argumänt bringt de Markus?",
+        options: [
+          "D wirtschaftliche Choschte und de Fachchräftemangel",
+          "D Ungrächtigkäit",
+          "D Qualität vo de Uusbildig",
+        ],
+        answer: 0,
+        explain: "„Wär das fordered, mues au säge, wär s zaalt.“",
+      },
+      {
+        text: "Wovor warnt d Selin?",
+        options: [
+          "D Pflege als Lückebüesser z bruuche",
+          "Vor z wenig Freiwillige",
+          "Vor de Choschte",
+        ],
+        answer: 0,
+        explain: "Eğitimsiz gençler yük hafifletmiyor, bakım gerektiriyor.",
+      },
+      {
+        text: "Wär isch teilwiis defür, aber mit Bedingige?",
+        options: ["Selin", "Markus", "Tobias"],
+        answer: 0,
+        explain: "„Wänn me s macht, denn richtig: mit Uusbildig und Bezaalig.“",
+      },
+      {
+        text: "Wie argumentiert de Tobias?",
+        options: [
+          "S Militär bruucht di richtige Lüüt, nöd meh Lüüt",
+          "S Militär bruucht dringend meh Lüüt",
+          "D Pflicht isch verfassigswidrig",
+        ],
+        answer: 0,
+        explain: "İstemeyenler getirdiğinden fazlasına mal oluyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-r11",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "reading",
+    title: "D Absaag — und was drin staat",
+    genre: "Yazışma",
+    intro:
+      "Hikâyenin devamı: Amina yedi ret aldı. Bu ikisi arasındaki fark, iş arayan herkesin bilmesi gerekeni gösteriyor.",
+    gloss: [
+      { de: "d Absaag", tr: "ret" },
+      { de: "d Bewärbig", tr: "başvuru" },
+      { de: "de Iidruck", tr: "izlenim" },
+      { de: "d Rückmäldig", tr: "geri bildirim" },
+      { de: "d Dossierprüefig", tr: "dosya incelemesi" },
+      { de: "konkret", tr: "somut" },
+      { de: "d Empfehlig", tr: "tavsiye" },
+      { de: "sich mälde", tr: "haber vermek" },
+    ],
+    minutes: 7,
+    text:
+      "ABSAAG 1 — Drogerie Wettstein\n\nGuete Tag Frau Bekele\n\nBesten Dank für Ihri Bewärbig als Drogistin EFZ. Mir händ üs für e anderi Kandidatin entschide.\n\nMir wünsched Ine für d Zuekunft alles Guete.\n\nFründlichi Grüess\nPersonaldienscht\n\n\nABSAAG 2 — Apotheke am Limmatplatz\n\nGuete Tag Frau Bekele\n\nMir händ Ihri Bewärbig sorgfältig aagluegt und üs schwer taa. Am Schluss händ mir e Kandidatin gnoo, wo scho es Jaar i de Branche gschafft hät.\n\nWil Si üs bi de Schnupperlehr uufgfalle sind, schriib ich Ine meh als üblich:\n\nIhri Stärchi isch de Umgang mit Lüüt. D Frau Kern hät gsäit, Si heiged Chunde zuegloost, wo süsch niemert zuelost. Das cha me nöd lerne.\n\nWas Ihri Bewärbig schwächt: S Motivationsschriibe isch sehr allgemäin. Si schriibed, Si «intressiered sich für Gsundheit» — das schriibed alli. Ihres Erläbnis mit em Dosiere, wo Si im Schnupperbricht beschriibed, chunt im Schriibe gar nöd vor. Genau das wär interessant gsii.\n\nMir händ im Auguscht wider e Lehrstell offe. Ich würd mich fröie, wänn Si sich nomal mälded — und ich stand für e Frag zur Verfüegig.\n\nFründlichi Grüess\nB. Kern",
+    questions: [
+      {
+        text: "Was isch de formal Underschid zwüsche de zwo Absääge?",
+        options: [
+          "Di zwäit git konkreti Rückmäldig",
+          "Di erschti isch persönlicher",
+          "Di zwäit isch churzer",
+        ],
+        answer: 0,
+        explain: "Birincisi standart bir ret, ikincisi gerekçeli.",
+      },
+      {
+        text: "Warum hät d Apotheke e anderi Kandidatin gnoo?",
+        options: [
+          "Si hät scho es Jaar Branchenerfaarig",
+          "Si isch günschtiger",
+          "Amina hät s Gspröch verpasst",
+        ],
+        answer: 0,
+        explain: "Karar zor olmuş ama deneyim belirleyici.",
+      },
+      {
+        text: "Welli Stärchi wird gnennt?",
+        options: [
+          "De Umgang mit Lüüt — si lost zue",
+          "S Fachvokabular",
+          "S Tempo",
+        ],
+        answer: 0,
+        explain: "„Das cha me nöd lerne.“",
+      },
+      {
+        text: "Was kritisiert d Frau Kern am Motivationsschriibe?",
+        options: [
+          "Es isch allgemäin — s Persönliche fählt",
+          "Es isch z lang",
+          "Es hät Fähler",
+        ],
+        answer: 0,
+        explain: "Herkesin yazdığı cümleler var; asıl ilginç deneyim yazıya girmemiş.",
+      },
+      {
+        text: "Was büütet si aa?",
+        options: [
+          "E nöii Lehrstell im Auguscht und Bereitschaft für Frage",
+          "En Praktikumsplatz",
+          "E Empfehlig a e anderi Apothek",
+        ],
+        answer: 0,
+        explain: "„Ich würd mich fröie, wänn Si sich nomal mälded.“",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-r12",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "reading",
+    title: "Di drei Süüle",
+    genre: "Rehber",
+    intro:
+      "İsviçre emeklilik sistemi üç sütun üzerine kuruludur — ve üçüncüsü kimsenin anlatmadığı vergi avantajıdır.",
+    gloss: [
+      { de: "d Vorsorg", tr: "emeklilik/geleceğe hazırlık" },
+      { de: "d Süüle", tr: "sütun" },
+      { de: "d Existänzsicherig", tr: "asgari geçim güvencesi" },
+      { de: "d Lebensschtandard", tr: "yaşam standardı" },
+      { de: "de Bezug", tr: "çekim, ödeme alma" },
+      { de: "s Wohneigentum", tr: "konut mülkiyeti" },
+      { de: "de Stüürabzug", tr: "vergi indirimi" },
+      { de: "sperre", tr: "bloke etmek" },
+      { de: "d Lücke", tr: "boşluk, açık" },
+    ],
+    minutes: 8,
+    text:
+      "Di erschti Süüle (AHV) isch staatlich und obligatorisch. Si söll d Existänz sichere — nöd meh. E maximali AHV-Rente lit bi öppe 2'520 Franke im Monet. Wär nur die hät, chunt z Züri nöd dure.\n\nDi zwäiti Süüle (Pensionskasse, BVG) isch obligatorisch ab eme Jaresloon vo 22'680 Franke. Zäme mit de AHV söll si öppe 60 Prozänt vom letschte Loon erreiche. S Gäld ghört eim, aber me chunt normalerwiis nöd dra — mit zwo Uusnaame: Wär Wohneigentum chauft oder sich sälbständig macht, cha s vorbezieh.\n\nDi dritti Süüle (3a) isch freiwillig und stüürlich privilegiert. Wär aagschtellt isch, cha 2025 bis 7'258 Franke im Jaar iizaale und dää Betrag vom stüürbare Iikomme abzieh. S Gäld isch bis füf Jaar vor de Pensionierig gsperrt.\n\nBsunders wichtig isch das für zwo Gruppe. Erschtens für Lüüt mit Lücke i de zwäite Süüle: Wär e Ziit im Uusland gschafft hät oder Tiilzitt arbetet, hät automatisch weniger. Zwäitens für Fraue: Underbrüch wäge Chind wirked sich direkt uf d Rente uus, und de Koordinationsabzug trifft tiefi Pänsum zuesätzlich.\n\nEs praktischs Detail, wo vill nöd wüssed: Es lohnt sich, meh als äi 3a-Konto z haa. Bim Bezug wird jedes Konto einzeln bestüüret, und well de Stüürsatz progressiv isch, zaalt me mit drei chliinere Konte deutlich weniger als mit eme grosse.",
+    questions: [
+      {
+        text: "Was isch s Ziel vo de erschte Süüle?",
+        options: [
+          "D Existänz sichere, nöd meh",
+          "De Lebensschtandard erhalte",
+          "Wohneigentum ermögliche",
+        ],
+        answer: 0,
+        explain: "Azami emekli aylığı yaklaşık 2.520 frank — Zürih'te yetmiyor.",
+      },
+      {
+        text: "Wänn cha me d zwäiti Süüle vorbezieh?",
+        options: [
+          "Bi Wohneigentum oder Sälbständigkäit",
+          "Jederziit",
+          "Nur bi Uuswanderig",
+        ],
+        answer: 0,
+        explain: "Metin bu iki istisnayı veriyor.",
+      },
+      {
+        text: "Was isch de Vortäil vo de dritte Süüle?",
+        options: [
+          "Iizaalige chan me vom stüürbare Iikomme abzieh",
+          "Si isch obligatorisch",
+          "Me chunt jederziit dra",
+        ],
+        answer: 0,
+        explain: "Para emeklilikten beş yıl öncesine kadar bloke.",
+      },
+      {
+        text: "Warum trifft s Fraue bsunders?",
+        options: [
+          "Underbrüch und tiefi Pänsum senked d Rente direkt",
+          "Si zaaled höcheri Biiträg",
+          "Si dörfed käi 3a haa",
+        ],
+        answer: 0,
+        explain: "Koordinasyon indirimi düşük çalışma oranını ayrıca vuruyor.",
+      },
+      {
+        text: "Warum lohnt sich meh als äi 3a-Konto?",
+        options: [
+          "Jedes Konto wird einzeln bestüüret und de Satz isch progressiv",
+          "Well d Zinse höcher sind",
+          "Well me schnäller dra chunt",
+        ],
+        answer: 0,
+        explain: "Üç küçük hesap tek büyük hesaptan belirgin biçimde az vergi doğuruyor.",
+      },
+    ],
+  },
+
   {
     id: "zh-b2-l1",
     course: "gsw-zh",
@@ -1108,6 +1549,625 @@ export const zhB2: SkillExercise[] = [
   },
 
   {
+    id: "zh-b2-l7",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "listening",
+    title: "S Gspröch für d Lehrstell",
+    genre: "İş görüşmesi",
+    intro:
+      "Hikâyenin devamı: Amina ikinci kez başvurdu ve görüşmeye çağrıldı. Geri bildirimi nasıl kullandığına dikkat et.",
+    gloss: [
+      { de: "s Bewärbigsgspröch", tr: "iş görüşmesi" },
+      { de: "d Motivation", tr: "motivasyon" },
+      { de: "d Verantwortig", tr: "sorumluluk" },
+      { de: "de Respäkt", tr: "saygı, çekince" },
+      { de: "iischtiige", tr: "başlamak" },
+      { de: "d Berufsschuel", tr: "meslek okulu" },
+      { de: "d Probeziit", tr: "deneme süresi" },
+      { de: "sich mälde", tr: "haber vermek" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Frau Kern",
+        text: "Frau Bekele, schön sind Si wider da. Si händ sich s zwäite Mal beworbe — was isch anders?",
+      },
+      {
+        speaker: "Amina",
+        text: "S Schriibe. Si händ mer gsäit, s seig z allgemäin gsii. Ich han s neu gschriibe und drin verzellt, was mich bim Schnuppere würkli bewegt hät.",
+      },
+      { speaker: "Frau Kern", text: "Nämli?" },
+      {
+        speaker: "Amina",
+        text: "S Dosiere. Ich han Respäkt devor gha — und genau drum wott ich s lerne. Ich han gmerkt, dass mir Sache mit Verantwortig meh gäbed als Sache ohni.",
+      },
+      {
+        speaker: "Frau Kern",
+        text: "Das isch e gueti Antwort. Jetz e unaagnämi Frag: Ihri Note i de Mathematik sind mittelmässig. I dem Bruef rächne mir jede Tag.",
+      },
+      {
+        speaker: "Amina",
+        text: "Das schtimmt. Ich han im letschte Jaar e Vier-fünf gha. Ich han sitdem Nachhilf gnoo und im letschte Zügnis e Füüfi. Ich cha Ine s Zügnis zäige.",
+      },
+      { speaker: "Frau Kern", text: "Das interessiert mich meh als di erschti Note. Warum?" },
+      {
+        speaker: "Amina",
+        text: "Well me dra gschaffet hät. Es zäigt, öb öpper e Schwächi aaluegt oder nöd.",
+      },
+      {
+        speaker: "Frau Kern",
+        text: "Genau. Letschti Frag: D Berufsschuel isch äi Tag i de Wuche, und im erschte Jaar isch s vill. Was mached Si, wänn Si merked, dass Si nöd hinderher chömed?",
+      },
+      {
+        speaker: "Amina",
+        text: "Sofort säge. Nöd am Schluss vom Semeschter, wänn s scho z spaat isch.",
+      },
+      {
+        speaker: "Frau Kern",
+        text: "Si überchömed vo mir bis am Friitig Bschäid. Und unabhängig devo: Das Gspröch isch deutlich besser gsii als di erschti Bewärbig.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was hät d Amina bi de zwäite Bewärbig gänderet?",
+        options: [
+          "S Motivationsschriibe — konkret statt allgemäin",
+          "D Schuel",
+          "S Berufsziel",
+        ],
+        answer: 0,
+        explain: "Geri bildirimi doğrudan uygulamış.",
+      },
+      {
+        text: "Wie begründet si ihres Interässe am Dosiere?",
+        options: [
+          "Sache mit Verantwortig gäbed ihre meh",
+          "Es isch äifach",
+          "Es isch guet bezaalt",
+        ],
+        answer: 0,
+        explain: "Çekindiği şeyi öğrenme gerekçesine dönüştürüyor.",
+      },
+      {
+        text: "Wie gaat si mit de Frag zu de Mathematik-Note um?",
+        options: [
+          "Si gitt s zue und zäigt d Verbesserig",
+          "Si widerspricht",
+          "Si wächslet s Thema",
+        ],
+        answer: 0,
+        explain: "4,5'ten 5'e; karneyi göstermeyi öneriyor.",
+      },
+      {
+        text: "Was interessiert d Frau Kern am mäischte?",
+        options: [
+          "Dass si a de Schwächi gschaffet hät",
+          "Di erschti Note",
+          "D Nachhilf-Firma",
+        ],
+        answer: 0,
+        explain: "„Es zäigt, öb öpper e Schwächi aaluegt oder nöd.“",
+      },
+      {
+        text: "Was säit d Amina zur Belaschtig i de Berufsschuel?",
+        options: [
+          "Si würd s sofort säge, nöd am Ändi vom Semeschter",
+          "Si würd meh lerne",
+          "Si würd d Schuel wächsle",
+        ],
+        answer: 0,
+        explain: "„wänn s scho z spaat isch.“",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-l8",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "listening",
+    title: "Bim Berufsberater",
+    genre: "Danışma",
+    intro:
+      "İsviçre'de ücretsiz bir hizmet: meslek danışmanlığı. Danışmanın nasıl soru sorduğuna dikkat et.",
+    gloss: [
+      { de: "d Berufsberatig", tr: "meslek danışmanlığı" },
+      { de: "de Zwüscheweg", tr: "ara yol" },
+      { de: "s Brückeaagebot", tr: "geçiş yılı programı" },
+      { de: "d Alternative", tr: "alternatif" },
+      { de: "de Notfallplan", tr: "acil durum planı" },
+      { de: "d Durchlässigkäit", tr: "geçişkenlik" },
+      { de: "abklääre", tr: "netleştirmek" },
+      { de: "d Frischt", tr: "süre" },
+    ],
+    minutes: 6,
+    segments: [
+      { speaker: "Berater", text: "Sibe Absääge. Wie gaat s Ine demit?" },
+      { speaker: "Amina", text: "Schlächt. Ich han underdesse s Gfüel, es lit a mir." },
+      {
+        speaker: "Berater",
+        text: "Verständlich. Trotzdem: Uf e Lehrstell i de Apothek chömed im Kanton Züri öppe zwölf Bewärbige. Bi sibe Absääge sind Si statistisch no ganz normal underwägs.",
+      },
+      { speaker: "Amina", text: "Das hilft mer ehrlich gsäit nöd sehr." },
+      {
+        speaker: "Berater",
+        text: "Verstand ich. Reded mer über de Plan B — nöd well de Plan A gschtorbe isch, sondern damit Si nöd unter Druck entschäided.",
+      },
+      { speaker: "Amina", text: "Welli Möglichkäite han ich?" },
+      {
+        speaker: "Berater",
+        text: "Drei. Erschtens: es Brückeaagebot, es Jaar mit Schuel und Praktikum. Zwäitens: e verwandti Lehr — Drogerie, Fachfrau Gsundheit. Drittens: es Zwüschejaar mit Arbet, aber das würd ich nur mit eme klare Ziel mache.",
+      },
+      { speaker: "Amina", text: "Isch es Brückeaagebot nöd es verlorenes Jaar?" },
+      {
+        speaker: "Berater",
+        text: "Das isch di häufigscht Angscht, und d Zaale säged s Gägetäil: Öppe achtzg Prozänt finded danach e Lehrstell. Betriib gsend, dass öpper dra bliibe isch.",
+      },
+      { speaker: "Amina", text: "Und wänn ich im Auguscht doch e Zuesaag überchume?" },
+      {
+        speaker: "Berater",
+        text: "Denn nämed Si si und sääged s Brückeaagebot ab. Das isch kä Problem — melde Si sich äifach früeh. Wichtig isch nur, dass Si sich jetz aamälded: D Frischt isch Ändi Februar.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie reagiert de Berater uf ihres Gfüel?",
+        options: [
+          "Er nimmt s ernscht und stellt d Zaale dernäbe",
+          "Er säit, si söll positiv dänke",
+          "Er widerspricht ere",
+        ],
+        answer: 0,
+        explain: "Aynı zamanda „das hilft mer nöd sehr“ cevabını da kabul ediyor.",
+      },
+      {
+        text: "Warum wott er über de Plan B rede?",
+        options: [
+          "Damit si nöd unter Druck entschäidet",
+          "Well de Plan A gschtorbe isch",
+          "Well d Frischt abglaufe isch",
+        ],
+        answer: 0,
+        explain: "Bunu açıkça ayırıyor.",
+      },
+      {
+        text: "Welli drei Möglichkäite nennt er?",
+        options: [
+          "Brückeaagebot, verwandti Lehr, Zwüschejaar mit Ziel",
+          "Gymi, Praktikum, Uusland",
+          "Warte, jobbe, nomal bewärbe",
+        ],
+        answer: 0,
+        explain: "Üçüncüsünü yalnızca net bir hedefle öneriyor.",
+      },
+      {
+        text: "Was säit er zur Angscht vor eme verlorene Jaar?",
+        options: [
+          "Öppe 80 Prozänt finded danach e Lehrstell",
+          "Si isch berächtigt",
+          "S hänkt vom Betrieb ab",
+        ],
+        answer: 0,
+        explain: "İşletmeler kişinin pes etmediğini görüyor.",
+      },
+      {
+        text: "Was mues si jetz mache?",
+        options: [
+          "Sich bis Ändi Februar für s Brückeaagebot aamälde",
+          "Uf d Zuesaag warte",
+          "D Bewärbige stoppe",
+        ],
+        answer: 0,
+        explain: "Sonradan iptal etmek sorun değil.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-l9",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "listening",
+    title: "Vortrag: Warum mir Nachrichte miided",
+    genre: "Sınav formatı",
+    intro:
+      "Uzun format: bir konuşma ve içerik soruları. Not alarak dinlemeyi dene.",
+    gloss: [
+      { de: "d Nachrichtevermiidig", tr: "haberden kaçınma" },
+      { de: "de Aateil", tr: "oran" },
+      { de: "d Oomacht", tr: "çaresizlik" },
+      { de: "d Wiederholig", tr: "tekrar" },
+      { de: "d Iiordnig", tr: "bağlama oturtma" },
+      { de: "s Handligswüsse", tr: "ne yapılabileceği bilgisi" },
+      { de: "d Iischränkig", tr: "sınırlama, çekince" },
+      { de: "überinterpretiere", tr: "aşırı yorumlamak" },
+    ],
+    minutes: 7,
+    segments: [
+      {
+        speaker: "Referentin",
+        text: "Ich fang mit ere Zaal aa: I de Schwiiz säit underdesse öppe es Drittel vo de Befragte, si gäng de Nachrichte bewusst us em Wäg. Vor zää Jaar isch s halb so vill gsii.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Di naheliegendi Erklärig wär Desinterässe. Si isch falsch. D Gruppe, wo am stärchschte miidet, isch nöd di uninteressierti, sondern di belaschteti: Lüüt mit wenig Ziit, wenig Gäld und wenig Kontrolle über ihri Lag.",
+      },
+      {
+        speaker: "Referentin",
+        text: "I de Interviews chunt immer wider s gliiche Wort: Oomacht. Nöd „Ich verstaan s nöd“, sondern „Ich cha sowiso nüüt mache“.",
+      },
+      {
+        speaker: "Referentin",
+        text: "De zwäit Grund isch d Wiederholig. Wär de gliich Konflikt jede Tag i de gliiche Form gseet, ohni dass sich d Information ändert, lernt nüüt dezue — er gspürt nur wider s Gliiche. S Hirn nennt das Belaschtig, nöd Wüsse.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Was hilft, isch guet undersuecht und wird sälte gmacht. Erschtens Iiordnig: nöd nur was passiert isch, sondern warum und was drus folgt. Zwäitens Handligswüsse: Was chönd Betroffeni konkret tue? Drittens, und das isch unbequem: weniger, aber vollständiger berichte.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Ich säg uusdrücklich nöd: nur gueti Nachrichte. Das isch di schlächtischti Antwort uf es ächts Problem. D Lüüt miided Nachrichte nöd, will si schlächt sind, sondern will si folgelos wirked.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Und e Iischränkig: Üsi Date chömed us Befragige. Was d Lüüt über ihres Verhalte säged, isch nöd immer das, wo si mached. D Richtig isch stabil, di genaui Höchi würd ich vorsichtig zitiere.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie hät sich d Nachrichtevermiidig entwicklet?",
+        options: [
+          "Si hät sich i zää Jaar öppe verdopplet",
+          "Si isch gliich bliibe",
+          "Si isch gsunke",
+        ],
+        answer: 0,
+        explain: "Bugün üçte bir; on yıl önce yarısı kadardı.",
+      },
+      {
+        text: "Welli Erklärig wiist d Referentin zrugg?",
+        options: ["Desinterässe", "Ziitmangel", "Oomacht"],
+        answer: 0,
+        explain: "En çok kaçınan grup ilgisizler değil, yükü ağır olanlar.",
+      },
+      {
+        text: "Was isch s Problem a de Wiederholig?",
+        options: [
+          "Ohni nöii Information entstaat Belaschtig statt Wüsse",
+          "D Biiträg sind z lang",
+          "D Theme sind z schwiirig",
+        ],
+        answer: 0,
+        explain: "Metin bunu doğrudan söylüyor.",
+      },
+      {
+        text: "Was lehnt si uusdrücklich ab?",
+        options: [
+          "Nur gueti Nachrichte z berichte",
+          "Weniger z berichte",
+          "Handligswüsse z gää",
+        ],
+        answer: 0,
+        explain: "„di schlächtischti Antwort uf es ächts Problem.“",
+      },
+      {
+        text: "Welli Iischränkig nennt si sälber?",
+        options: [
+          "Befragigsdate bilded s Verhalte nöd exakt ab",
+          "D Stichprob isch z chlii",
+          "D Studie isch alt",
+        ],
+        answer: 0,
+        explain: "Yön istikrarlı ama kesin oranı alıntılamakta temkinli.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-l10",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "listening",
+    title: "Podium: Isch d Lehr no zäitgemäss?",
+    genre: "Panel",
+    intro:
+      "İsviçre'nin en çok gurur duyduğu sistem tartışılıyor. Kimin nerede taviz verdiğini izle.",
+    gloss: [
+      { de: "zäitgemäss", tr: "çağa uygun" },
+      { de: "d Akademisierig", tr: "akademikleşme" },
+      { de: "d Durchlässigkäit", tr: "geçişkenlik" },
+      { de: "de Abschluss", tr: "diploma" },
+      { de: "d Automatisierig", tr: "otomasyon" },
+      { de: "s Vorurtäil", tr: "önyargı" },
+      { de: "iiraume", tr: "kabul etmek" },
+      { de: "de Handligsbedarf", tr: "yapılması gereken" },
+    ],
+    minutes: 7,
+    segments: [
+      {
+        speaker: "Moderator",
+        text: "Frau Blattner, Si fordered, dass meh Jugendlichi as Gymi gönd. Warum?",
+      },
+      {
+        speaker: "Blattner",
+        text: "Well d Arbetswelt sich schnäller ändert als es Berufsbild. Wär mit fufzäh en Bruef wählt, wählt villicht öppis, wo s i zwänzg Jaar nüme git. E breiti Bildig schützt besser.",
+      },
+      { speaker: "Moderator", text: "Herr Nussbaumer?" },
+      {
+        speaker: "Nussbaumer",
+        text: "Das Argumänt tönt guet und isch empirisch schwach. D Lehr isch nöd es Bruefsurtäil uf Läbesziit — vierzig Prozänt vo de Lehrabgänger schaffed zää Jaar spöter i me andere Feld. Was bliibt, isch d Fähigkäit z schaffe: Termine, Chunde, Verantwortig. Das lernt me im Gymi nöd.",
+      },
+      {
+        speaker: "Blattner",
+        text: "Dää Punkt raum ich ii. Was ich nöd iiraume, isch di soziali Sälektion. Chind vo Akademiker gönd bi gliiche Note deutlich hüüfiger as Gymi. Das isch nöd Talänt, das isch Herkunft.",
+      },
+      {
+        speaker: "Nussbaumer",
+        text: "Und do bin ich bi Ine. Das isch de gröscht Handligsbedarf, wo mir händ. Aber d Antwort isch nöd, d Lehr abzwerte — sondern d Durchlässigkäit ernscht z nää. Berufsmatur mues gliichwertig sii, nöd es Trostpreis.",
+      },
+      { speaker: "Moderator", text: "Und d Automatisierig?" },
+      {
+        speaker: "Nussbaumer",
+        text: "Trifft bäidi Wäg. Es git kä Uusbildig, wo dervor schützt.",
+      },
+      {
+        speaker: "Blattner",
+        text: "Do sind mir üs einig. Villicht isch d Frag falsch gstellt: Nöd Lehr oder Gymi, sondern öb öpper mit zwänzg no cha wächsle, ohni vo vorne aazfange.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie begründet d Blattner meh Gymi?",
+        options: [
+          "D Arbetswelt ändert schnäller als es Berufsbild",
+          "S Gymi seig günschtiger",
+          "D Lehr seig z schwierig",
+        ],
+        answer: 0,
+        explain: "Geniş eğitimin daha iyi koruduğunu savunuyor.",
+      },
+      {
+        text: "Wie kontert de Nussbaumer?",
+        options: [
+          "Vierzig Prozänt vo de Lehrabgänger wächsled s Feld — d Lehr isch käi Urtäil uf Läbesziit",
+          "D Zaale seiged falsch",
+          "S Gymi seig z theoretisch",
+        ],
+        answer: 0,
+        explain: "Kalanın çalışma becerisi olduğunu söylüyor.",
+      },
+      {
+        text: "Welle Punkt raumt d Blattner ii?",
+        options: [
+          "Dass d Lehr d Fähigkäit z schaffe vermittlet",
+          "Dass s Gymi überflüssig isch",
+          "Dass d Sälektion käi Problem isch",
+        ],
+        answer: 0,
+        explain: "„Dää Punkt raum ich ii.“",
+      },
+      {
+        text: "Worin sind sich bäidi einig?",
+        options: [
+          "Bi de soziale Sälektion und bi de Automatisierig",
+          "Bi de Abschaffig vom Gymi",
+          "Bi de Löön",
+        ],
+        answer: 0,
+        explain: "Nussbaumer „do bin ich bi Ine“ diyor; otomasyonda da hemfikirler.",
+      },
+      {
+        text: "Wie formuliert d Blattner am Schluss d Frag nöi?",
+        options: [
+          "Öb öpper mit zwänzg no cha wächsle, ohni vo vorne aazfange",
+          "Öb s Gymi gratis sii söll",
+          "Öb d Lehr chürzer wärde söll",
+        ],
+        answer: 0,
+        explain: "Tartışmayı „Lehr mi Gymi mi“ ikileminden çıkarıyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-l11",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "listening",
+    title: "Es Konfliktgspröch im Betrieb",
+    genre: "Diyalog",
+    intro:
+      "İş yerinde bir çatışma nasıl konuşulur? İsviçre'de doğrudan olacaksın, ama karşındakini köşeye sıkıştırmadan.",
+    gloss: [
+      { de: "de Konflikt", tr: "çatışma" },
+      { de: "de Vorwurf", tr: "suçlama" },
+      { de: "sich aagriffe fühle", tr: "saldırıya uğramış hissetmek" },
+      { de: "d Absicht", tr: "niyet" },
+      { de: "aaschpräche", tr: "konuyu açmak" },
+      { de: "klääre", tr: "açıklığa kavuşturmak" },
+      { de: "zuegää", tr: "kabul etmek" },
+      { de: "abmache", tr: "kararlaştırmak" },
+    ],
+    minutes: 6,
+    segments: [
+      { speaker: "Lea", text: "Jonas, häsch churz Ziit? Ich wett öppis aaschpräche." },
+      { speaker: "Jonas", text: "Klar. Tönt ernscht." },
+      {
+        speaker: "Lea",
+        text: "Gestern a de Sitzig häsch gsäit, de Bricht seig „irgendwie unvollständig“. Ich han drü Täg dra gschaffet.",
+      },
+      { speaker: "Jonas", text: "Oh. Ich han di nöd wölle kritisiere." },
+      {
+        speaker: "Lea",
+        text: "Das glaub ich der. Aber vor sibe Lüüt wirkt so en Satz anders als under üs.",
+      },
+      {
+        speaker: "Jonas",
+        text: "Do häsch rächt. Ich han a d Zaale usem Lager dänkt — die fähled ja würkli. Aber die häsch du gar nie übercho, oder?",
+      },
+      { speaker: "Lea", text: "Genau. Ich han zwäimal gfrogt und käi Antwort übercho." },
+      {
+        speaker: "Jonas",
+        text: "Denn isch min Satz äifach falsch gsii. Ich säg das morn i de Rundi — churz, ohni Drama, aber ich säg s.",
+      },
+      { speaker: "Lea", text: "Merci. Und wänn der öppis uffallt, säg s mer gärn vorher." },
+      { speaker: "Jonas", text: "Mached mer so. Ich schriib der denn äifach direkt." },
+    ],
+    questions: [
+      {
+        text: "Warum schpricht d Lea de Jonas aa?",
+        options: [
+          "Wäge ere Bemerkig a de Sitzig",
+          "Wäge eme verpasste Termin",
+          "Wäge de Ferieplanig",
+        ],
+        answer: 0,
+        explain: "„irgendwie unvollständig“ cümlesi rahatsız etmiş.",
+      },
+      {
+        text: "Was schtört si genau?",
+        options: [
+          "Dass er s vor sibe Lüüt gsäit hät",
+          "Dass er s überhaupt gsäit hät",
+          "Dass er nöd ghulfe hät",
+        ],
+        answer: 0,
+        explain: "„vor sibe Lüüt wirkt so en Satz anders als under üs.“",
+      },
+      {
+        text: "Was schtellt sich uus?",
+        options: [
+          "D Lea hät d fählende Zaale nie übercho",
+          "Si hät si vergässe",
+          "D Zaale sind falsch gsii",
+        ],
+        answer: 0,
+        explain: "İki kez sormuş, cevap gelmemiş.",
+      },
+      {
+        text: "Wie reagiert de Jonas?",
+        options: [
+          "Er gitt de Fähler zue und wott en öffentlich korrigiere",
+          "Er verteidigt sich",
+          "Er entschuldigt sich nur privat",
+        ],
+        answer: 0,
+        explain: "„churz, ohni Drama, aber ich säg s.“",
+      },
+      {
+        text: "Was mached si für d Zuekunft ab?",
+        options: [
+          "Kritik zerscht direkt, nöd i de Rundi",
+          "Käi Kritik meh",
+          "Alles schriftlich",
+        ],
+        answer: 0,
+        explain: "„säg s mer gärn vorher.“",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-l12",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "listening",
+    title: "De Vertrag isch da",
+    genre: "Telefon",
+    intro:
+      "Hikâyenin sonu: Amina'nın telefonu çalıyor — ve konuşma beklediği yerde bitmiyor.",
+    gloss: [
+      { de: "d Zuesaag", tr: "olumlu cevap" },
+      { de: "de Lehrvertrag", tr: "çıraklık sözleşmesi" },
+      { de: "s Amt für Berufsbildig", tr: "meslek eğitimi dairesi" },
+      { de: "unterschriibe", tr: "imzalamak" },
+      { de: "d Probeziit", tr: "deneme süresi" },
+      { de: "de Loon", tr: "ücret" },
+      { de: "d Erwartig", tr: "beklenti" },
+      { de: "sich fröie", tr: "sevinmek" },
+    ],
+    minutes: 6,
+    segments: [
+      { speaker: "Frau Kern", text: "Frau Bekele? Kern, Apotheke am Limmatplatz. Händ Si churz Ziit?" },
+      { speaker: "Amina", text: "Ja … ja, sicher." },
+      {
+        speaker: "Frau Kern",
+        text: "Mir wänd Ine d Lehrstell aabüüte. Ab em 1. Auguscht, Pharma-Assistentin EFZ, drei Jaar.",
+      },
+      { speaker: "Amina", text: "Würkli? Merci. Merci vilmal." },
+      {
+        speaker: "Frau Kern",
+        text: "Gärn. Ich säg Ine aber au, warum — das isch mir wichtig. Nöd wäge de Note. Wäge de Antwort uf d Frag mit de Berufsschuel.",
+      },
+      { speaker: "Amina", text: "Wäge däm, dass ich s sofort säge würd?" },
+      {
+        speaker: "Frau Kern",
+        text: "Genau. Mir händ scho Lehrlig gha, wo im Juni gsäit händ, si chömed siit Oktober nöd hinderher. Das isch s Problem, nöd d Note.",
+      },
+      { speaker: "Amina", text: "Wie gaat s jetz wiiter?" },
+      {
+        speaker: "Frau Kern",
+        text: "Ich schick Ine de Lehrvertrag. Dää unterschriibed Si, Ihri Eltere au, well Si na nöd achzäh sind. Denn gaat er as Amt für Berufsbildig — ohni die Bewilligung isch er nöd gültig.",
+      },
+      { speaker: "Amina", text: "Und d Probeziit?" },
+      {
+        speaker: "Frau Kern",
+        text: "Drei Mönet. Die isch für bäidi Siite da — au für Si. Wänn Si im Oktober merked, das isch nüt für Si, denn säged Si s. Das isch käi Katastrofe, sondern de Sinn vo de Probeziit.",
+      },
+      { speaker: "Amina", text: "Das han ich no nie so ghört." },
+      { speaker: "Frau Kern", text: "Denn han ich hüt scho öppis Nützlichs gmacht. Bis im Auguscht!" },
+    ],
+    questions: [
+      {
+        text: "Was büütet d Frau Kern aa?",
+        options: [
+          "E Lehrstell als Pharma-Assistentin, drei Jaar",
+          "Es Praktikum",
+          "En Schnuppertag",
+        ],
+        answer: 0,
+        explain: "1 Ağustos'tan itibaren, EFZ.",
+      },
+      {
+        text: "Warum hät si sich für d Amina entschide?",
+        options: [
+          "Wäge de Antwort zur Berufsschuel",
+          "Wäge de Note",
+          "Wäge em Schnupperbricht",
+        ],
+        answer: 0,
+        explain: "Sorunu geç söyleyen çıraklarla tecrübeleri olmuş.",
+      },
+      {
+        text: "Wär mues de Vertrag unterschriibe?",
+        options: [
+          "Amina und ihri Eltere",
+          "Nur Amina",
+          "Nur de Betrieb",
+        ],
+        answer: 0,
+        explain: "Henüz 18 yaşında değil.",
+      },
+      {
+        text: "Warum mues de Vertrag as Amt?",
+        options: [
+          "Ohni Bewilligung isch er nöd gültig",
+          "Wäge de Stüüre",
+          "Für d Versicherig",
+        ],
+        answer: 0,
+        explain: "Meslek eğitimi dairesinin onayı şart.",
+      },
+      {
+        text: "Wie erklärt d Frau Kern d Probeziit?",
+        options: [
+          "Si isch für bäidi Siite — au Amina darf abbräche",
+          "Si isch nur für de Betrieb",
+          "Si duuret es Jaar",
+        ],
+        answer: 0,
+        explain: "„sondern de Sinn vo de Probeziit.“",
+      },
+    ],
+  },
+
+  {
     id: "zh-b2-w1",
     course: "gsw-zh",
     level: "B2",
@@ -1360,6 +2420,262 @@ export const zhB2: SkillExercise[] = [
         ],
         sample:
           "De Text handlet vo de Folge vom Wachstum vo de Stadt Züri. Er zäigt zerscht d Zaale: vierehundertdriissgtuusig Iiwohner hüt, öppe füfhunderttuusig bis zwäitusigvierzg.\n\nAls Grund nennt de Autor nöd de Zuezug us em Uusland — dää sig stabil. Wichtiger seiged zwäi anderi Entwicklige: D Lüüt bliibed lenger i de Stadt, und jedi Person bruucht meh Wonflächi als früener.\n\nAls Folg dervo mues d Stadt verdichte. Laut em Autor isch d Flächi pro Person s eigentlich Problem, wil me nöd gliichziitig meh Lüüt und meh Platz pro Person cha haa. Wo nöi bout wird, schtiiged aber d Miete, und di alte Bewohner müend furt.\n\nWiiter wird gsäit, dass au d Infrastruktur under Druck chunt: Bis zwäituusigfüfedrissg bruucht d Stadt sibe nöii Schuelhüüser, hät aber fascht käis Bouland meh.\n\nZum Schluss chunt de Text zum Schluss, dass käini Massnaam elleige gnueget — aber au, dass e Stadt nöd cha beschliesse, nöd z wachse.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-w5",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "writing",
+    title: "S Motivationsschriibe",
+    genre: "Başvuru",
+    intro:
+      "zh-b2-r11'deki geri bildirimin dersi: genel cümleler değil, tek somut deneyim. Onu yazacaksın.",
+    gloss: [
+      { de: "s Motivationsschriibe", tr: "motivasyon mektubu" },
+      { de: "d Stärchi", tr: "güçlü yön" },
+      { de: "konkret", tr: "somut" },
+      { de: "s Erläbnis", tr: "yaşantı" },
+      { de: "belege", tr: "belgelemek, örneklemek" },
+      { de: "d Verantwortig", tr: "sorumluluk" },
+      { de: "s Ziel", tr: "hedef" },
+      { de: "d Iischränkig", tr: "sınır, çekince" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Deneme stajı sırasında beni en çok etkileyen şey doz hesabıydı.",
+        answer: "Was mich bi de Schnupperlehr am mäischte bewegt hät, isch s Dosiere gsii.",
+        hint: "„Was …, isch … gsii“ vurgulu bir kalıptır; Präteritum yerine Perfekt.",
+      },
+      {
+        kind: "build",
+        tr: "Sorumluluk olan işler bana daha çok şey veriyor.",
+        answer: "Sache mit Verantwortig gänd mer meh als Sache ohni.",
+        hint: "geben → gää: si gänd; mir → mer.",
+      },
+      {
+        kind: "build",
+        tr: "Bunu iddia etmiyorum, örnekle gösteriyorum.",
+        answer: "Ich behaupte das nöd, ich beleg s mit eme Biispil.",
+        hint: "Motivasyon mektubunun tüm mantığı bu cümlede.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir çıraklık, staj ya da iş için motivasyon mektubu yaz. Beş noktaya değin: hangi pozisyon için yazdığın, seni bu işe çeken tek somut deneyim (bir an, bir görev — genel cümle değil), bu deneyimin ne gösterdiği, zayıf gördüğün bir yön ve onunla ne yaptığın, kapanış. „Beni ilgilendiriyor“ cümlesini kullanma.",
+        checklist: [
+          "Hangi pozisyon için yazdığını ilk cümlede belirttin mi?",
+          "Tek bir somut deneyim anlattın mı?",
+          "Bu deneyimin ne gösterdiğini yazdın mı?",
+          "Bir zayıf yönü dürüstçe ele aldın mı?",
+          "Genel cümlelerden („ich interessiere mich für …“) kaçındın mı?",
+          "Metin bir sayfayı geçmiyor mu?",
+        ],
+        minWords: 130,
+        phrases: [
+          { de: "Ich bewirb mich um d Lehrstell als …", tr: "… çıraklık yeri için başvuruyorum." },
+          { de: "Was mich am mäischte bewegt hät, isch …", tr: "Beni en çok etkileyen …" },
+          { de: "Das hät mer zäigt, dass …", tr: "Bu bana … olduğunu gösterdi." },
+          { de: "E Schwächi vo mir isch …", tr: "Bir zayıflığım …" },
+          { de: "Dra han ich gschaffet, indem …", tr: "Bunun üzerinde … yaparak çalıştım." },
+          { de: "Gärn zäig ich Ine das i me Gspröch.", tr: "Bunu bir görüşmede göstermek isterim." },
+        ],
+        sample:
+          "Sehr geehrti Frau Kern\n\nIch bewirb mich um d Lehrstell als Pharma-Assistentin EFZ ab Auguscht.\n\nWas mich bi de Schnupperlehr am mäischte bewegt hät, isch nöd de Verchauf gsii, sondern s Dosiere. Am dritte Tag han ich gseh, wie Si e Salbe agrüehrt händ und zwäimal nachegrächnet händ, obwohl Si das siit Jaare mached. Ich han gmerkt, dass mich das nöd abschreckt, sondern zieht: Sache mit Verantwortig gänd mer meh als Sache ohni.\n\nDas hät mer au zäigt, warum d Beratig de grösser Täil vo dere Arbet isch. Ich han bi Ine Chunde ghört, wo eigentlich nöd s Medikamänt gsuecht händ, sondern öpper, wo zuelost.\n\nE Schwächi vo mir isch d Mathematik gsii — im vorletschte Zügnis han ich e 4,5 gha. Dra han ich gschaffet, indem ich es halbs Jaar Nachhilf gnoo han; im letschte Zügnis staat e 5. Ich schriib das, well i dem Bruef Rächne käi Näbesach isch.\n\nGärn zäig ich Ine i me Gspröch, was ich siit em Schnuppere dezuegleert han.\n\nFründlichi Grüess\nAmina Bekele",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-w6",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "writing",
+    title: "Erörterig: Pro und Kontra",
+    genre: "Sınav formatı",
+    intro:
+      "Sınavın ana görevi: bir konuyu iki yönüyle tartıp kendi sonucuna varmak. Yapı, içerik kadar puan getirir.",
+    gloss: [
+      { de: "d Erörterig", tr: "tartışma yazısı" },
+      { de: "d These", tr: "tez" },
+      { de: "abwäge", tr: "tartmak" },
+      { de: "entchräfte", tr: "çürütmek" },
+      { de: "zum äine … zum andere", tr: "bir yandan … öte yandan" },
+      { de: "letschtlich", tr: "nihayetinde" },
+      { de: "d Schlussfolgerig", tr: "sonuç" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bu konu yıllardır tartışılıyor.",
+        answer: "Über das Thema wird siit Jaare diskutiert.",
+        hint: "Öznesiz edilgen: „Über … wird … diskutiert.“",
+      },
+      {
+        kind: "build",
+        tr: "Bu argümanın haklı bir çekirdeği var, ama fazlası değil.",
+        answer: "Das Argumänt hät en berächtigte Kärn, aber nöd meh.",
+        hint: "Karşı görüşü kabul edip sınırlandırmak B2'de puan getirir.",
+      },
+      {
+        kind: "build",
+        tr: "Her şeyi tarttıktan sonra ikinci görüşe katılıyorum.",
+        answer: "Nach em Abwäge vo allne Punkt schliess ich mich de zwäite Poschtion aa.",
+        hint: "sich anschliessen Dativ ister: de Poschtion.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Şu konuda tartışma yazısı yaz: „Sölled alli Jugendliche zerscht e Lehr mache, bevor si as Gymi chönd?“ Yapı: kısa giriş, lehte iki argüman, aleyhte iki argüman, en güçlü karşı argümanı ele alışın, kendi sonucun. Sonucun girişte belli olmasın.",
+        checklist: [
+          "Giriş konuyu bağlama oturtuyor mu?",
+          "İki lehte, iki aleyhte argüman var mı?",
+          "Her argümanı bir örnekle destekledin mi?",
+          "En güçlü karşı argümanı ciddiye alıp yanıtladın mı?",
+          "Sonuç argümanlardan çıkıyor mu?",
+          "Bağlaçlarla akış kurdun mu?",
+        ],
+        minWords: 180,
+        phrases: [
+          { de: "Über das Thema wird siit Jaare diskutiert.", tr: "Bu konu yıllardır tartışılıyor." },
+          { de: "Für … schpricht zerscht, dass …", tr: "…'in lehine önce şu var: …" },
+          { de: "Es wiiters Argumänt isch …", tr: "Bir diğer argüman …" },
+          { de: "Degäge wird iigwändet, dass …", tr: "Buna karşı … itirazı yapılıyor." },
+          { de: "Das Argumänt hät en berächtigte Kärn, aber …", tr: "Bu argümanın haklı bir çekirdeği var ama …" },
+          { de: "Nach em Abwäge vo allne Punkt …", tr: "Her şeyi tarttıktan sonra …" },
+        ],
+        sample:
+          "Über d Frag, öb alli Jugendliche zerscht e Lehr mache sötted, wird siit Jaare diskutiert — mäistens denn, wänn d Betriib z wenig Lehrlig finded.\n\nFür so es Modäll schpricht zerscht d Erfaarig: Wär drü Jaar imene Betrieb gschaffet hät, kennt Termine, Chunde und Verantwortig. Das lernt me im Gymi nöd, und es hilft spöter au im Studium. Es wiiters Argumänt isch d Orientierig: Mit fufzäh weiss fascht niemert, was er will. Wär zerscht schafft, entschäidet mit zwänzg besser.\n\nDegäge wird iigwändet, dass me domit e ganzi Generation drü Jaar später as Studium laat. I de Medizin oder de Forschig, wo d Uusbildig sowiso lang isch, isch das käi Chliinigkäit. Zudem würd es Zwangsmodäll genau das zerstöre, was d Lehr uszäichnet: dass si freiwillig gwählt wird.\n\nDää zwäit Iiwand hät en berächtigte Kärn, aber er trifft nöd d Idee, sondern d Form. E Pflicht wär falsch — es Aagebot nöd. Vill Gymischüeler händ nie es Praktikum gmacht, nöd will si nöd wänd, sondern will s niemert vorgseh hät.\n\nNach em Abwäge vo allne Punkt bin ich gäge e Pflicht, aber defür, dass jedi Mittelschuel es obligatorischs Praxisjahr aabüütet — bezaalt und aagrächnet. Nöd zum d Lehr uufwerte, sondern zum d Wahl ehrlicher z mache.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-w7",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "writing",
+    title: "Kommentar: D Schwiiz und Europa",
+    genre: "Köşe yazısı",
+    intro:
+      "zh-b2-r9'daki konuyu bir köşe yazısına dönüştüreceksin: kendi bakışın, en güçlü itiraz ve bir sonuç.",
+    gloss: [
+      { de: "de Kommentar", tr: "köşe yazısı" },
+      { de: "d Haltig", tr: "duruş" },
+      { de: "d Souveränität", tr: "egemenlik" },
+      { de: "de Priis", tr: "bedel" },
+      { de: "d Iischränkig", tr: "kısıtlama" },
+      { de: "verkürze", tr: "basitleştirmek" },
+      { de: "d Abhängigkäit", tr: "bağımlılık" },
+      { de: "s Fazit", tr: "sonuç" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bağımsızlık küçük bir ülkede farklı bir anlama gelir.",
+        answer: "Unabhängigkäit häisst imene chliine Land öppis anders.",
+        hint: "heissen → häisse; „öppis anders“ = başka bir şey.",
+      },
+      {
+        kind: "build",
+        tr: "Bu tartışmayı basitleştiren, cevabı da kaçırır.",
+        answer: "Wär die Debatte verkürzt, verfehlt au d Antwort.",
+        hint: "„Wär …, …“ genel özne yapısı; ana cümlede fiil başta.",
+      },
+      {
+        kind: "build",
+        tr: "Sonuç olarak mesele üyelik değil, kimin karar verdiğidir.",
+        answer: "Letschtlich gaat s nöd um de Beitritt, sondern drum, wär entschäidet.",
+        hint: "„es gaat um“ + Akkusativ; „drum, wär …“ yan cümle.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "İsviçre-Avrupa ilişkisi üzerine bir köşe yazısı yaz. Beş noktaya değin: somut bir gözlem ya da örnekle başla, kendi tezin, en güçlü karşı argümanı ciddiye alman, onu neden yine de yeterli bulmadığın, kendi sonucun. Slogan yazma — tek somut ayrıntı on soyut cümleden güçlüdür.",
+        checklist: [
+          "Somut bir gözlemle başladın mı?",
+          "Tezini net kurdun mu?",
+          "Karşı argümanı zayıflatmadan aktardın mı?",
+          "Onu bir gerekçeyle yanıtladın mı?",
+          "Sonucun tezden ayırt edilebiliyor mu?",
+          "Ton ölçülü mü?",
+        ],
+        minWords: 160,
+        phrases: [
+          { de: "Wär emal … erläbt hät, weiss, dass …", tr: "Bir kez … yaşayan bilir ki …" },
+          { de: "Mini These isch: …", tr: "Tezim şu: …" },
+          { de: "S stärchschte Gägenargumänt lautet: …", tr: "En güçlü karşı argüman şudur: …" },
+          { de: "Dää Iiwand nimm ich ernscht, wil …", tr: "Bu itirazı ciddiye alıyorum çünkü …" },
+          { de: "Trotzdem übergseet er, dass …", tr: "Yine de … gözden kaçıyor." },
+          { de: "Mis Fazit isch drum …", tr: "Dolayısıyla sonucum …" },
+        ],
+        sample:
+          "Wär emal e Maschine us Tüütschland importiert hät, weiss, wie üsi Beziehig zu Europa würkli uusgseet: käi Zollformular, käi zwäiti Prüefig, dräi Täg Lieferziit. Das isch nöd Zuefall, sondern es Abkomme über technischi Handelshemmnis — es Dokumänt, wo niemert liest und alli bruuched.\n\nMini These isch: D Debatte über d Souveränität wird gführt, als hätted mir d Wahl zwüsche Abhängigkäit und Unabhängigkäit. Die Wahl hämmer nöd. Mir händ nur d Wahl, öb mir bi de Regle, wo für üs sowiso gälted, mitredde oder nöd.\n\nS stärchschte Gägenargumänt lautet: Wär automatisch Recht übernimmt, gitt s Läzte uuf, wo en chliine Staat hät — d Kontrolle über d äigene Gsetz. Dää Iiwand nimm ich ernscht, wil er nöd theoretisch isch: Es Volch, wo abstimmt und denn ghört, es seig nöd zueständig, verlüürt s Vertraue in s ganze System.\n\nTrotzdem übergseet er öppis. Mir übernämed hüt scho fascht alles — nur ohni am Tisch z sitze. D Frag isch nöd, öb mir Regle übernämed, sondern öb mir si mitschriibed.\n\nMis Fazit isch drum weniger dramatisch, als d Debatte tönt: Nöd de Beitritt isch d Frag, sondern d Ehrlichkäit. Wär vo Unabhängigkäit redt und gliichziitig vo de Liefertermin profitiert, mues säge, wie beides zäme gaat.",
+      },
+    ],
+  },
+  {
+    id: "zh-b2-w8",
+    course: "gsw-zh",
+    level: "B2",
+    skill: "writing",
+    title: "S Mail a de Berufsberater",
+    genre: "İş yazışması",
+    intro:
+      "Hikâyenin son parçası: Amina'nın yerine geçip danışmanına haber vereceksin — ve bir şeyi iptal edeceksin.",
+    gloss: [
+      { de: "d Zuesaag", tr: "olumlu cevap" },
+      { de: "absäge", tr: "iptal etmek" },
+      { de: "de Platz freigää", tr: "yeri boşaltmak" },
+      { de: "sich bedanke", tr: "teşekkür etmek" },
+      { de: "d Underschtützig", tr: "destek" },
+      { de: "rächtziitig", tr: "zamanında" },
+      { de: "de Rat", tr: "tavsiye" },
+    ],
+    minutes: 10,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bir çıraklık yeri buldum.",
+        answer: "Ich han e Lehrstell übercho.",
+        hint: "bekommen → überchoo; Perfekt: han … übercho.",
+      },
+      {
+        kind: "build",
+        tr: "Bu yüzden geçiş yılı programını iptal etmek istiyorum.",
+        answer: "Drum möcht ich s Brückeaagebot absäge.",
+        hint: "absagen ayrılabilir ama mastar hâlde sonda kalır.",
+      },
+      {
+        kind: "build",
+        tr: "Yeri erkenden boşaltmak istiyorum ki başkası alsın.",
+        answer: "Ich wott de Platz früeh freigää, damit en öpper anders überchunt.",
+        hint: "„damit“ yan cümlesinde fiil sonda.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Meslek danışmanına bir e-posta yaz. Beş noktaya değin: iyi haberi, hangi işletme ve ne zaman başlayacağın, geçiş yılı programını iptal etmen ve neden erken haber verdiğin, danışmanlığın hangi somut kısmının işe yaradığı, teşekkür. Genel bir teşekkür yazma — neyin yardımcı olduğunu somut söyle.",
+        checklist: [
+          "Haberi ilk cümlede verdin mi?",
+          "İşletme ve tarih var mı?",
+          "İptali ve gerekçesini yazdın mı?",
+          "Somut olarak neyin yardımcı olduğunu yazdın mı?",
+          "Kapanış kibar ve kısa mı?",
+        ],
+        minWords: 110,
+        phrases: [
+          { de: "Ich han e Lehrstell übercho.", tr: "Bir çıraklık yeri buldum." },
+          { de: "Ich fang am … a.", tr: "…'de başlıyorum." },
+          { de: "Drum möcht ich … absäge.", tr: "Bu yüzden …'i iptal etmek istiyorum." },
+          { de: "Gholfe hät mir vor allem …", tr: "Bana en çok … yardımcı oldu." },
+          { de: "Merci vilmal für Ihri Underschtützig.", tr: "Desteğiniz için çok teşekkürler." },
+        ],
+        sample:
+          "Guete Tag Herr Baumann\n\nIch han e Lehrstell übercho — i de Apotheke am Limmatplatz, als Pharma-Assistentin EFZ. Ich fang am 1. Auguscht aa.\n\nDrum möcht ich s Brückeaagebot absäge, wo ich im Februar aagmäldet han. Ich schriib Ine hüt und nöd im Juli, damit de Platz früeh frei wird und en öpper anders überchunt.\n\nGholfe hät mir vor allem zwäi Sache us üsem Gspröch. Erschtens de Satz, dass ich bi sibe Absääge statistisch normal underwägs seig — ich han vorher dänkt, es lieg a mir. Zwäitens de Plan B: Well ich gwüsst han, dass es en git, bin ich is zwäite Gspröch ganz anders gange. Ich han nöd s Gfüel gha, es hängt alles a dere äine Stund.\n\nMerci vilmal für Ihri Underschtützig. Wänn Si emal öpper händ, wo scho vill Absääge übercho hät: Ich verzell gärn, wie s bi mir gloffe isch.\n\nFründlichi Grüess\nAmina Bekele",
       },
     ],
   },
