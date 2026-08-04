@@ -104,6 +104,9 @@ src/
     api/words/known         "bunu zaten biliyorum" işaretlemesi
     api/auth/[...path]      Neon Auth proxy (giriş, kayıt, oturum)
     giris                   giriş / kayıt ekranı
+    sifremi-unuttum         parola sıfırlama isteği
+    sifre-sifirla           e-postadaki bağlantıdan yeni parola
+    eposta-dogrula          kayıt sonrası doğrulama bilgilendirmesi
   lib/
     auth/                   Neon Auth sunucu + istemci sarmalayıcıları
     srs.ts                  tekrar motoru (saf fonksiyonlar)
@@ -132,7 +135,35 @@ Oyun türü kelimenin durumuna göre seçilir: yeni/öğrenilen kelimelerde tan�
 (çoktan seçmeli, eşleştirme, artikel), pekişenlerde üretim ağırlıklı (yazma, cümle tamamlama,
 harf bulmacası). Aynı oyun arka arkaya gelmez.
 
-## 6. Kelime verisi
+## 6. E-posta akışları (parola sıfırlama, kayıt onayı)
+
+Doğrulama ve sıfırlama e-postalarını **Neon Auth sunucusu** gönderir; uygulama yalnızca
+akışı tetikler ve ekranları gösterir:
+
+| Ekran | Ne yapar |
+|---|---|
+| `/sifremi-unuttum` | `requestPasswordReset` → e-postaya sıfırlama bağlantısı |
+| `/sifre-sifirla?token=…` | `resetPassword` → yeni parolayı kaydeder |
+| `/eposta-dogrula?email=…` | `sendVerificationEmail` ile doğrulama e-postasını yeniden yollar |
+
+Kayıt sonrası oturum açılmadıysa (Neon Auth'ta "require email verification" açıksa)
+kullanıcı otomatik olarak `/eposta-dogrula` ekranına yönlenir.
+
+**Gönderen adresi:** Varsayılan olarak Neon'un paylaşımlı sunucusu kullanılır
+(`noreply@stackframe.co`). Kendi alan adından göndermek için Neon Console → Auth →
+Configuration → **Email server → Custom SMTP** kısmına Resend SMTP bilgilerini gir:
+
+```
+Host: smtp.resend.com
+Port: 587            (veya 465 / 2465)
+User: resend
+Pass: <Resend API key>
+From: Wortspiel <noreply@exfe.me>
+```
+
+Resend tarafında `exfe.me` alan adını doğrulaman (DKIM/SPF kayıtları) gerekir.
+
+## 7. Kelime verisi
 
 `data/` klasöründeki CSV/JSON dosyaları Goethe-Institut'un resmî Wortliste PDF'lerinden
 çıkarılmış, Türkçe karşılıkları eklenmiş ve doğrulanmıştır. Ayrıntı: `data/README.md`.
