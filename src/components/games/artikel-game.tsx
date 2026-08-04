@@ -9,20 +9,17 @@ import { fx } from "@/lib/fx";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
 
-const ARTIKEL_OPTIONS = ["der", "die", "das"] as const;
-type Artikel = (typeof ARTIKEL_OPTIONS)[number];
-
-const ARTIKEL_COLORS: Record<Artikel, string> = {
-  der: "var(--color-sky-400)",
-  die: "var(--color-rose-400)",
-  das: "var(--color-mint-400)",
-};
+/** Kurs setleri: Hochdeutsch der/die/das, Züritüütsch de/d/s. Cevaptan türetilir. */
+const HD_OPTIONS = ["der", "die", "das"];
+const GSW_OPTIONS = ["de", "d", "s"];
+const OPTION_COLORS = ["var(--color-sky-400)", "var(--color-rose-400)", "var(--color-mint-400)"];
 
 export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
   const { word } = round;
   const answer = word.artikel;
+  const options = GSW_OPTIONS.includes(answer ?? "") ? GSW_OPTIONS : HD_OPTIONS;
 
-  const [picked, setPicked] = useState<Artikel | null>(null);
+  const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
 
   useEffect(() => {
@@ -30,7 +27,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     setPicked(null);
   }, [round.id]);
 
-  function choose(opt: Artikel) {
+  function choose(opt: string) {
     if (picked) return;
     setPicked(opt);
     const correct = opt === answer;
@@ -47,7 +44,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
       hint="Doğru artikeli seç"
     >
       <div className="grid grid-cols-3 gap-3">
-        {ARTIKEL_OPTIONS.map((opt, i) => {
+        {options.map((opt, i) => {
           const isAnswer = opt === answer;
           const state =
             picked == null ? "" : isAnswer ? "option-correct" : opt === picked ? "option-wrong" : "";
@@ -59,12 +56,12 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}
-              style={picked == null ? { borderColor: ARTIKEL_COLORS[opt] } : undefined}
+              style={picked == null ? { borderColor: OPTION_COLORS[i] } : undefined}
               className={`option min-h-16 px-4 py-4 text-center text-xl font-bold ${state} ${
                 picked === opt && !isAnswer ? "animate-shake" : ""
               }`}
             >
-              <span style={picked == null ? { color: ARTIKEL_COLORS[opt] } : undefined}>{opt}</span>
+              <span style={picked == null ? { color: OPTION_COLORS[i] } : undefined}>{opt}</span>
             </motion.button>
           );
         })}

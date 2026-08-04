@@ -12,10 +12,16 @@ type Initial = {
   newPerDay: number;
   level: string;
   activeLevel: string;
+  course: string;
   currentStreak: number;
   longestStreak: number;
   totalXp: number;
 };
+
+const COURSES = [
+  { id: "de", label: "Almanca", sub: "Hochdeutsch" },
+  { id: "gsw-zh", label: "Zürih Almancası", sub: "Züritüütsch" },
+];
 
 const LEVELS = [
   { id: "A1", label: "A1", desc: "Yeni başlıyorum" },
@@ -41,6 +47,7 @@ export function ProfileForm({
   const [dailyGoal, setDailyGoal] = useState(initial.dailyGoal);
   const [newPerDay, setNewPerDay] = useState(initial.newPerDay);
   const [level, setLevel] = useState(initial.level);
+  const [course, setCourse] = useState(initial.course);
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
@@ -55,7 +62,7 @@ export function ProfileForm({
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ displayName, dailyGoal, newPerDay, level }),
+        body: JSON.stringify({ displayName, dailyGoal, newPerDay, level, course }),
       });
       if (res.ok) {
         setSaved(true);
@@ -90,6 +97,34 @@ export function ProfileForm({
 
       <section className="card space-y-5 p-5">
         <h2 className="font-bold">Ayarlar</h2>
+
+        <div>
+          <span className="muted mb-1.5 block text-sm font-semibold">Kursun</span>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {COURSES.map((c) => (
+              <button
+                key={c.id}
+                onClick={() => setCourse(c.id)}
+                className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
+              >
+                <span className="block text-sm font-bold">{c.label}</span>
+                <span className="muted block text-xs">{c.sub}</span>
+              </button>
+            ))}
+          </div>
+          {course !== initial.course ? (
+            <p
+              className="mt-2 rounded-xl px-3 py-2 text-xs"
+              style={{
+                background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)",
+                color: "var(--color-brand-500)",
+              }}
+            >
+              Kaydedince kelimeler, beceriler ve tekrar kuyruğun yeni kursa geçer. Diğer kurstaki
+              ilerlemen silinmez — geri dönünce kaldığın yerden devam edersin.
+            </p>
+          ) : null}
+        </div>
 
         <label className="block">
           <span className="muted mb-1.5 block text-sm font-semibold">Görünen ad</span>

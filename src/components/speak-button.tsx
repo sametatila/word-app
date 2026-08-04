@@ -4,7 +4,13 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SpeakerIcon } from "./icons";
 
-/** Tarayıcının konuşma sentezi ile Almanca telaffuz. Desteklenmiyorsa hiç görünmez. */
+/**
+ * Tarayıcının konuşma sentezi ile telaffuz. Desteklenmiyorsa hiç görünmez.
+ *
+ * Zürih kursunda (gsw-zh) de-CH sesi tercih edilir: Dieth yazımı fonetik
+ * olduğu için İsviçre aksanlı ses, lehçe metnini şaşırtıcı ölçüde doğru okur.
+ * Gerçek Mundart kayıtları dinleme egzersizlerinde ayrıca sunulur.
+ */
 export function speakGerman(text: string) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   const clean = text
@@ -13,10 +19,22 @@ export function speakGerman(text: string) {
     .replace(/\s+/g, " ")
     .trim();
   if (!clean) return;
+
+  let course = "de";
+  try {
+    course = localStorage.getItem("wortspiel-course") ?? "de";
+  } catch {
+    /* varsayılan kalır */
+  }
+  const gsw = course === "gsw-zh";
+
   const u = new SpeechSynthesisUtterance(clean);
-  u.lang = "de-DE";
-  u.rate = 0.92;
-  const voice = window.speechSynthesis.getVoices().find((v) => v.lang.startsWith("de"));
+  u.lang = gsw ? "de-CH" : "de-DE";
+  u.rate = gsw ? 0.88 : 0.92;
+  const voices = window.speechSynthesis.getVoices();
+  const voice = gsw
+    ? (voices.find((v) => v.lang === "de-CH") ?? voices.find((v) => v.lang.startsWith("de")))
+    : voices.find((v) => v.lang.startsWith("de"));
   if (voice) u.voice = voice;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);

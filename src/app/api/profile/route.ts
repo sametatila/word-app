@@ -27,6 +27,8 @@ export async function POST(req: Request) {
   if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, 0, 40);
   if (typeof body.level === "string" && ["A1", "A2", "B1", "B2", "C1"].includes(body.level))
     patch.level = body.level;
+  if (typeof body.course === "string" && ["de", "gsw-zh"].includes(body.course))
+    patch.course = body.course;
 
   if (!Object.keys(patch).length) return NextResponse.json({ error: "empty" }, { status: 400 });
 
@@ -41,6 +43,17 @@ export async function POST(req: Request) {
       patch.activeLevel = patch.level;
       patch.levelScore = 0;
       patch.levelChangedAt = new Date();
+    }
+
+    // Kurs seçimi (onboarding ya da profil): ilk seçim kaydedilir; kurs
+    // değişiminde zorluk ölçümü sıfırlanır — yeni dilde eski başarı geçmez.
+    if (patch.course) {
+      if (!current?.courseChosenAt) patch.courseChosenAt = new Date();
+      if (patch.course !== current?.course) {
+        patch.courseChosenAt = new Date();
+        patch.levelScore = 0;
+        patch.levelChangedAt = new Date();
+      }
     }
 
     const [updated] = await db

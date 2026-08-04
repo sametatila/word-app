@@ -20,16 +20,27 @@ export function AppShell({
   children,
   streak,
   xp,
+  course = "de",
 }: {
   children: ReactNode;
   streak: number;
   xp: number;
+  course?: string;
 }) {
   const pathname = usePathname();
   const [stats, setStats] = useState({ streak, xp });
 
   // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
   useEffect(() => setStats({ streak, xp }), [streak, xp]);
+
+  // Telaffuz (TTS) doğru sesi seçebilsin diye aktif kurs cihazda tutulur.
+  useEffect(() => {
+    try {
+      localStorage.setItem("wortspiel-course", course);
+    } catch {
+      /* depolama kapalıysa varsayılan ses kullanılır */
+    }
+  }, [course]);
   useEffect(() => {
     const onStats = (e: Event) => {
       const detail = (e as CustomEvent<{ xp: number; streak: number }>).detail;

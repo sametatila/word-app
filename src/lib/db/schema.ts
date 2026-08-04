@@ -13,24 +13,26 @@ import {
   jsonb,
 } from "drizzle-orm/pg-core";
 
-/** Goethe kelime havuzu (seed ile doldurulur, kullanıcıdan bağımsız) */
+/** Kelime havuzu (seed ile doldurulur, kullanıcıdan bağımsız). Kurs bazlıdır. */
 export const words = pgTable(
   "words",
   {
     id: integer("id").primaryKey(),
-    de: text("de").notNull(),
-    artikel: text("artikel"),
+    de: text("de").notNull(), // kursun hedef dilindeki biçim (gsw kursunda Züritüütsch)
+    artikel: text("artikel"), // de kursunda der/die/das, gsw kursunda de/d/s
     tr: text("tr").notNull(),
-    formen: text("formen"),
+    formen: text("formen"), // gsw kursunda Hochdeutsch köprüsü ("HD: …")
     typ: text("typ").notNull(), // Nomen | Verb | Sonstiges
-    niveau: text("niveau").notNull(), // A1 | A2 | B1
+    niveau: text("niveau").notNull(), // A1 | A2 | B1 | B2 | C1
     beispiel: text("beispiel"),
-    rank: integer("rank"), // Almanca sıklık sırası (küçük = daha yaygın)
+    rank: integer("rank"), // sıklık sırası (küçük = daha yaygın)
+    course: text("course").notNull().default("de"), // de | gsw-zh
   },
   (t) => [
     index("words_niveau_idx").on(t.niveau),
     index("words_typ_idx").on(t.typ),
     index("words_rank_idx").on(t.niveau, t.rank),
+    index("words_course_rank_idx").on(t.course, t.niveau, t.rank),
   ],
 );
 
@@ -42,6 +44,9 @@ export const profiles = pgTable("profiles", {
   newPerDay: integer("new_per_day").notNull().default(15), // gün başına yeni kelime
   level: text("level").notNull().default("A1"), // kullanıcının seçtiği başlangıç seviyesi
   activeLevel: text("active_level").notNull().default("A1"), // performansa göre güncel seviye
+  course: text("course").notNull().default("de"), // de | gsw-zh — çalışılan kurs
+  // İlk girişte kurs/seviye soruldu mu? Null ise onboarding gösterilir.
+  courseChosenAt: timestamp("course_chosen_at", { withTimezone: true }),
   levelScore: integer("level_score").notNull().default(0), // terfi/düşüş göstergesi (-8..10)
   // Seviye elle değiştirildiğinde zorluk ölçümü sıfırdan başlasın diye tutulur.
   levelChangedAt: timestamp("level_changed_at", { withTimezone: true }),
@@ -121,9 +126,10 @@ export const dailyStats = pgTable(
 export const skillExercises = pgTable(
   "skill_exercises",
   {
-    id: text("id").primaryKey(), // "a1-r1" gibi kalıcı kimlik
+    id: text("id").primaryKey(), // "a1-r1", "zh-a1-r1" gibi kalıcı kimlik
     skill: text("skill").notNull(), // reading | listening | writing
     level: text("level").notNull(), // A1 | A2 | B1 | B2 | C1
+    course: text("course").notNull().default("de"), // de | gsw-zh
     title: text("title").notNull(),
     genre: text("genre").notNull(),
     minutes: integer("minutes").notNull(),

@@ -43,6 +43,13 @@
       "when": 1785855064332,
       "tag": "0005_true_paladin",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1785856113992,
+      "tag": "0006_tranquil_spectrum",
+      "breakpoints": true
     }
   ]
 }

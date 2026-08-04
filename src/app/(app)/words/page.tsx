@@ -2,6 +2,7 @@ import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
+import { ensureProfile } from "@/lib/session";
 import { WordList, type WordRow } from "@/components/word-list";
 
 export const dynamic = "force-dynamic";
@@ -27,6 +28,13 @@ export default async function WordsPage({
   const page = Math.max(0, Number(sp.page ?? 0) || 0);
 
   const filters: SQL[] = [];
+  // Liste yalnızca aktif kursun kelimelerini gösterir (de ↔ gsw-zh).
+  try {
+    const profile = await ensureProfile(userId);
+    filters.push(eq(words.course, profile.course));
+  } catch {
+    filters.push(eq(words.course, "de"));
+  }
   if (q) {
     const like = `%${q}%`;
     const cond = or(ilike(words.de, like), ilike(words.tr, like));

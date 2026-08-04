@@ -11,17 +11,23 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   let streak = 0;
   let xp = 0;
+  let course = "de";
+  let needsOnboarding = false;
   try {
     const profile = await ensureProfile(user.id, user.name);
     streak = profile?.currentStreak ?? 0;
     xp = profile?.totalXp ?? 0;
+    course = profile?.course ?? "de";
+    // Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
+    needsOnboarding = Boolean(profile) && !profile.courseChosenAt;
   } catch (err) {
     // Veritabanı henüz kurulmadıysa arayüz yine de açılsın.
     console.error("[layout] profil okunamadı", err);
   }
+  if (needsOnboarding) redirect("/kurs-sec");
 
   return (
-    <AppShell streak={streak} xp={xp}>
+    <AppShell streak={streak} xp={xp} course={course}>
       {children}
     </AppShell>
   );

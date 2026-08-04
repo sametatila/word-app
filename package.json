@@ -11,6 +11,7 @@
     "db:generate": "drizzle-kit generate",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
+    "db:seed:zurich": "tsx scripts/seed-zurich.ts",
     "test:e2e": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/e2e.ts",
     "test:sql": "tsx scripts/sqlcheck.ts",
     "test:playtest": "node scripts/playtest.mjs 330",

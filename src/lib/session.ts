@@ -134,19 +134,24 @@ export async function buildSession(
   const newToday = stat?.newWords ?? 0;
   const reviewsToday = stat?.reviews ?? 0;
 
+  // Tüm kelime sorguları aktif kursa bağlıdır: kurs değiştirince diğer kursun
+  // tekrarları beklemeye geçer, geri dönünce kaldığı yerden sürer.
+  const course = profile.course;
+
   // 1) Zamanı gelen tekrarlar
   const dueRows = await db
     .select({ w: words, uw: userWords })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
-    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, now)))
+    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, now), eq(words.course, course)))
     .orderBy(asc(userWords.dueAt))
     .limit(ROUNDS_PER_SESSION * 2);
 
   const [{ count: dueCount }] = await db
     .select({ count: sql<number>`count(*)::int` })
     .from(userWords)
-    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, now)));
+    .innerJoin(words, eq(words.id, userWords.wordId))
+    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, now), eq(words.course, course)));
 
   // 2) Kalan kontenjan kadar yeni kelime
   const newBudget = extra ? 10 : Math.max(0, profile.newPerDay - newToday);
@@ -166,6 +171,7 @@ export async function buildSession(
       .from(words)
       .where(
         and(
+          eq(words.course, course),
           inArray(words.niveau, band.pool),
           sql`not exists (
             select 1 from ${userWords}
@@ -186,7 +192,7 @@ export async function buildSession(
   const pool = await db
     .select()
     .from(words)
-    .where(inArray(words.niveau, poolLevels))
+    .where(and(eq(words.course, course), inArray(words.niveau, poolLevels)))
     .orderBy(sql`random()`)
     .limit(140);
 
@@ -205,6 +211,7 @@ export async function buildSession(
         and(
           eq(userWords.userId, userId),
           gt(userWords.dueAt, now),
+          eq(words.course, course),
           sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
         ),
       )
@@ -253,7 +260,7 @@ export async function buildSession(
     const synonyms = await db
       .select({ de: words.de, tr: words.tr })
       .from(words)
-      .where(inArray(words.tr, [...new Set(typingTrs)]));
+      .where(and(eq(words.course, course), inArray(words.tr, [...new Set(typingTrs)])));
     for (const r of rounds) {
       if (r.game !== "typing") continue;
       r.alternatives = synonyms
@@ -755,7 +762,9 @@ export async function buildChallenge(
     .select({ w: words, uw: userWords })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
-    .where(and(eq(userWords.userId, userId), gt(userWords.reps, 0)))
+    .where(
+      and(eq(userWords.userId, userId), gt(userWords.reps, 0), eq(words.course, profile.course)),
+    )
     .limit(160);
 
   if (learned.length < 3) return { rounds: [], tiers: [], pool: learned.length, weak: 0 };
@@ -780,7 +789,7 @@ export async function buildChallenge(
   const pool = await db
     .select()
     .from(words)
-    .where(inArray(words.niveau, poolLevels))
+    .where(and(eq(words.course, profile.course), inArray(words.niveau, poolLevels)))
     .orderBy(sql`random()`)
     .limit(140);
 
@@ -845,6 +854,7 @@ export async function getProgress(userId: string, today: string) {
       userWords,
       and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)),
     )
+    .where(eq(words.course, profile.course))
     .groupBy(words.niveau)
     .orderBy(asc(words.niveau));
 
@@ -858,12 +868,26 @@ export async function getProgress(userId: string, today: string) {
   const [{ dueNow }] = await db
     .select({ dueNow: sql<number>`count(*)::int` })
     .from(userWords)
-    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, new Date())));
+    .innerJoin(words, eq(words.id, userWords.wordId))
+    .where(
+      and(
+        eq(userWords.userId, userId),
+        lte(userWords.dueAt, new Date()),
+        eq(words.course, profile.course),
+      ),
+    );
 
   const [{ upcoming }] = await db
     .select({ upcoming: sql<number>`count(*)::int` })
     .from(userWords)
-    .where(and(eq(userWords.userId, userId), gt(userWords.dueAt, new Date())));
+    .innerJoin(words, eq(words.id, userWords.wordId))
+    .where(
+      and(
+        eq(userWords.userId, userId),
+        gt(userWords.dueAt, new Date()),
+        eq(words.course, profile.course),
+      ),
+    );
 
   const games = await db
     .select({
