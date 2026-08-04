@@ -5,6 +5,7 @@ import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { and, eq, notInArray, sql } from "drizzle-orm";
 import { words } from "../src/lib/db/schema";
+import { firstExample } from "../src/lib/example";
 
 /**
  * Züritüütsch kelime havuzunu Neon'a yükler.
@@ -41,6 +42,25 @@ function cleanDe(de: string) {
 const inferTyp = (r: SrcRow) =>
   r.typ === "Sonstiges" && /(mek|mak)(\s*,|$)/.test(r.tr) ? "Verb" : r.typ;
 
+/** Zürihçe cümlelerde geçen yerler yerelleştirildi: Berlin→Züri, Mainz→Winterthur… */
+const PLACES =
+  /\b(Berlin|München|Münche|Hamburg|Köln|Frankfurt|Wien|Dresden|Leipzig|Stuttgart|Bonn|Bremen|Mainz|Heidelberg|Zürich|Züri|Winterthur|Basel|Bern|Luzern|Genf|Chur|Thun)\b/g;
+
+/**
+ * Türkçe çeviri Almanca cümleden üretildi; Zürihçe karşılık ise çoğu yerde
+ * yerelleştirildi ("Ich wohne in Berlin" → "Ich wohne z Züri") ya da baştan
+ * yazıldı. Bu maddelerde devralınan çeviri yanlış olur — yanlış çeviri
+ * göstermektense hiç göstermemek doğrudur.
+ *
+ * Ölçüt: cümledeki sayılar ve yer adları örtüşüyorsa çeviri devralınır.
+ */
+function translationFits(de: string, gsw: string): boolean {
+  const digits = (s: string) => (s.match(/\d+/g) ?? []).sort().join(",");
+  const places = (s: string) =>
+    [...new Set((s.match(PLACES) ?? []).map((p) => (p === "Zürich" ? "Züri" : p)))].sort().join(",");
+  return digits(de) === digits(gsw) && places(de) === places(gsw);
+}
+
 async function main() {
   if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL tanımlı değil");
 
@@ -49,8 +69,9 @@ async function main() {
   ) as SrcRow[];
   const srcById = new Map(srcRows.map((r) => [r.id, r]));
 
-  // Örnek cümle çevirileri kaynak id ile eşleşir: gsw beispiel'i Almanca
-  // cümlenin doğal çevirisi olduğundan Türkçe karşılık iki kursta da aynıdır.
+  // Örnek cümle çevirileri kaynak id ile eşleşir: gsw beispiel'i çoğu maddede
+  // Almanca cümlenin doğal karşılığıdır, o yüzden Türkçesi devralınabilir.
+  // Yerelleştirilen/yeniden yazılan maddeler translationFits ile elenir.
   let beispielTr = new Map<number, string>();
   try {
     const trRows = JSON.parse(
@@ -85,9 +106,17 @@ async function main() {
     if (m) throw new Error(`Mojibake: id ${g.id} → "${m[0]}"`);
   }
 
+  let droppedTr = 0;
   const values = gswRows.map((g) => {
     const src = srcById.get(g.id);
     if (!src) throw new Error(`Kaynakta olmayan id: ${g.id}`);
+    const gswSentence = g.beispiel?.trim() || null;
+    const deSentence = firstExample(src.beispiel);
+    let tr = gswSentence ? (beispielTr.get(g.id) ?? null) : null;
+    if (tr && deSentence && !translationFits(deSentence, gswSentence!)) {
+      tr = null;
+      droppedTr++;
+    }
     return {
       id: ID_OFFSET + g.id,
       de: g.gsw.trim(),
@@ -96,8 +125,8 @@ async function main() {
       formen: `HD: ${cleanDe(src.de)}`,
       typ: inferTyp(src),
       niveau: src.niveau.startsWith("A1") ? "A1" : src.niveau,
-      beispiel: g.beispiel?.trim() || null,
-      beispielTr: g.beispiel?.trim() ? (beispielTr.get(g.id) ?? null) : null,
+      beispiel: gswSentence,
+      beispielTr: tr,
       rank: src.rank ?? null,
       course: "gsw-zh",
     };
@@ -134,7 +163,11 @@ async function main() {
     .returning({ id: words.id });
   if (removed.length) console.log(`Silinen eski gsw kelime: ${removed.length}`);
 
-  console.log(`Züritüütsch havuzu yüklendi: ${values.length} kelime.`);
+  console.log(
+    `Züritüütsch havuzu yüklendi: ${values.length} kelime ` +
+      `(${values.filter((v) => v.beispielTr).length} örnek cümle çevirisi, ` +
+      `${droppedTr} madde yerelleştirildiği için çevirisiz).`,
+  );
 }
 
 main().catch((err) => {
