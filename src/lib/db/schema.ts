@@ -134,6 +134,24 @@ export const skillExercises = pgTable(
   (t) => [index("skill_exercises_level_idx").on(t.level, t.skill, t.position)],
 );
 
+/**
+ * Kullanıcının beceri egzersizi sonuçları — cihazlar arası senkron ve XP
+ * bütünlüğü için sunucuda tutulur. XP ilk tamamlamada tam verilir; tekrar
+ * çözümlerde yalnızca en iyi skor iyileşirse aradaki fark eklenir.
+ */
+export const userSkills = pgTable(
+  "user_skills",
+  {
+    userId: text("user_id").notNull(),
+    exerciseId: text("exercise_id").notNull(),
+    correct: integer("correct").notNull().default(0), // en iyi skor
+    total: integer("total").notNull(),
+    attempts: integer("attempts").notNull().default(1),
+    lastAt: timestamp("last_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.exerciseId] })],
+);
+
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;

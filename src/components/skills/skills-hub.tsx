@@ -20,19 +20,38 @@ export type SkillItem = {
   items: number;
 };
 
+/** Sunucudan gelen (cihazlar arası senkron) tamamlanma durumu. */
+export type ServerSkillProgress = Record<string, { correct: number; total: number }>;
+
 export function SkillsHub({
   items,
   activeLevel,
+  serverProgress = {},
 }: {
   items: SkillItem[];
   activeLevel: CefrLevel;
+  serverProgress?: ServerSkillProgress;
 }) {
   const [level, setLevel] = useState<CefrLevel>(activeLevel);
-  // localStorage sunucuda yok; tamamlanma işaretleri hidrasyondan sonra dolar.
-  const [progress, setProgress] = useState<SkillProgress>({});
+  // Sunucu kaydı temel alınır; localStorage çevrimdışı tamamlamaları ekler.
+  // localStorage sunucu render'ında yok; birleştirme hidrasyondan sonra yapılır.
+  const [progress, setProgress] = useState<SkillProgress>(() => {
+    const merged: SkillProgress = {};
+    for (const [id, rec] of Object.entries(serverProgress)) {
+      merged[id] = { correct: rec.correct, total: rec.total, at: "" };
+    }
+    return merged;
+  });
 
   useEffect(() => {
-    setProgress(readSkillProgress());
+    setProgress((prev) => {
+      const merged = { ...prev };
+      for (const [id, rec] of Object.entries(readSkillProgress())) {
+        const cur = merged[id];
+        if (!cur || rec.correct > cur.correct) merged[id] = rec;
+      }
+      return merged;
+    });
   }, []);
 
   const atLevel = items.filter((i) => i.level === level);

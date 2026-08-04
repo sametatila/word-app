@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useCallback, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { SKILL_LABELS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
@@ -19,7 +19,7 @@ function localDay() {
 type FinishState =
   | { phase: "idle" }
   | { phase: "saving" }
-  | { phase: "saved"; xpGained: number; currentStreak: number }
+  | { phase: "saved"; xpGained: number; currentStreak: number; repeat: boolean }
   | { phase: "offline" };
 
 /**
@@ -54,13 +54,19 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
           xpGained: number;
           totalXp: number;
           currentStreak: number;
+          repeat?: boolean;
         };
         window.dispatchEvent(
           new CustomEvent("wortspiel:stats", {
             detail: { xp: data.totalXp, streak: data.currentStreak },
           }),
         );
-        setState({ phase: "saved", xpGained: data.xpGained, currentStreak: data.currentStreak });
+        setState({
+          phase: "saved",
+          xpGained: data.xpGained,
+          currentStreak: data.currentStreak,
+          repeat: data.repeat === true,
+        });
       } catch {
         setState({ phase: "offline" });
       }
@@ -68,7 +74,14 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
     [exercise.id, total],
   );
 
-  return { finish, state };
+  /** "Tekrar dene" için: aynı egzersiz yeniden çözülebilir hâle gelir. */
+  const reset = useCallback(() => {
+    sent.current = false;
+    startedAt.current = Date.now();
+    setState({ phase: "idle" });
+  }, []);
+
+  return { finish, state, reset };
 }
 
 /** Egzersiz sayfalarının ortak çerçevesi: geri dönüş, seviye, tür ve başlık. */
@@ -111,16 +124,25 @@ export function ResultCard({
   total,
   state,
   noun = "soru",
+  onRetry,
 }: {
   correct: number;
   total: number;
   state: FinishState;
   noun?: "soru" | "görev";
+  onRetry?: () => void;
 }) {
-  if (state.phase === "idle") return null;
+  const ref = useRef<HTMLElement>(null);
+  const visible = state.phase !== "idle";
+  // Sonuç sayfanın en altına eklenir; öğrenci görmeden kaçırmasın.
+  useEffect(() => {
+    if (visible) ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [visible]);
+  if (!visible) return null;
   const perfect = correct === total;
   return (
     <motion.section
+      ref={ref}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200, damping: 22 }}
@@ -140,14 +162,21 @@ export function ResultCard({
           : `${total} ${noun === "görev" ? "görevden" : "sorudan"} ${correct} doğru`}
       </h2>
       {state.phase === "saved" ? (
-        <p className="mt-2 flex items-center justify-center gap-3 text-sm font-bold">
-          <span className="flex items-center gap-1" style={{ color: "var(--color-brand-500)" }}>
-            <SparkIcon size={16} /> +{state.xpGained} XP
-          </span>
-          <span className="flex items-center gap-1" style={{ color: "var(--color-flame-500)" }}>
-            <FlameIcon size={16} /> {state.currentStreak} gün
-          </span>
-        </p>
+        <>
+          <p className="mt-2 flex items-center justify-center gap-3 text-sm font-bold">
+            <span className="flex items-center gap-1" style={{ color: "var(--color-brand-500)" }}>
+              <SparkIcon size={16} /> +{state.xpGained} XP
+            </span>
+            <span className="flex items-center gap-1" style={{ color: "var(--color-flame-500)" }}>
+              <FlameIcon size={16} /> {state.currentStreak} gün
+            </span>
+          </p>
+          {state.repeat && state.xpGained === 0 ? (
+            <p className="muted mt-1.5 text-xs">
+              Bu egzersizi daha önce tamamlamıştın — XP yalnızca en iyi skorunu geçince eklenir.
+            </p>
+          ) : null}
+        </>
       ) : state.phase === "offline" ? (
         <p className="muted mt-2 text-sm">
           Sonuç bu cihaza kaydedildi; internete bağlanınca XP&#39;n işlenecek.
@@ -155,9 +184,16 @@ export function ResultCard({
       ) : (
         <p className="muted mt-2 text-sm">Kaydediliyor…</p>
       )}
-      <Link href="/skills" className="btn btn-primary mt-4 px-6 py-3">
-        Becerilere dön
-      </Link>
+      <div className="mt-4 flex items-center justify-center gap-3">
+        <Link href="/skills" className="btn btn-primary px-6 py-3">
+          Becerilere dön
+        </Link>
+        {onRetry && !perfect ? (
+          <button type="button" onClick={onRetry} className="btn btn-ghost px-5 py-3">
+            Tekrar dene
+          </button>
+        ) : null}
+      </div>
     </motion.section>
   );
 }

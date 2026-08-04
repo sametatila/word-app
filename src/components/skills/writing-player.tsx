@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
@@ -15,8 +15,9 @@ type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
  */
 export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
   const total = exercise.tasks.length;
-  const { finish, state } = useSkillFinish(exercise, total);
+  const { finish, state, reset } = useSkillFinish(exercise, total);
   const [step, setStep] = useState(0);
+  const [round, setRound] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const active = step < total ? exercise.tasks[step] : null;
 
@@ -50,13 +51,29 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
 
       {active ? (
         active.kind === "build" ? (
-          <BuildTask key={step} task={active} onDone={completeTask} />
+          <BuildTask key={`${round}-${step}`} task={active} onDone={completeTask} />
         ) : (
-          <FreeTask key={step} task={active} onDone={completeTask} />
+          <FreeTask
+            key={`${round}-${step}`}
+            task={active}
+            draftKey={`wortspiel-draft-${exercise.id}-${step}`}
+            onDone={completeTask}
+          />
         )
       ) : null}
 
-      <ResultCard correct={correctCount} total={total} noun="görev" state={state} />
+      <ResultCard
+        correct={correctCount}
+        total={total}
+        noun="görev"
+        state={state}
+        onRetry={() => {
+          reset();
+          setCorrectCount(0);
+          setStep(0);
+          setRound((r) => r + 1);
+        }}
+      />
     </PlayerShell>
   );
 }
@@ -211,11 +228,52 @@ function BuildTask({ task, onDone }: { task: BuildTaskData; onDone: (ok: boolean
 const UMLAUTS = ["ä", "ö", "ü", "ß", "Ä", "Ö", "Ü"];
 
 /** Serbest yazma — kelime sayısı ve öz denetim listesi tamamlanınca biter. */
-function FreeTask({ task, onDone }: { task: FreeTaskData; onDone: (ok: boolean) => void }) {
+function FreeTask({
+  task,
+  draftKey,
+  onDone,
+}: {
+  task: FreeTaskData;
+  draftKey: string;
+  onDone: (ok: boolean) => void;
+}) {
+  // Taslak cihazda saklanır: sayfadan çıkıp dönen öğrenci yazdığını kaybetmez.
+  // localStorage yalnızca istemcide var; hidrasyon uyuşmazlığı olmasın diye
+  // taslak mount sonrasında yüklenir ve yüklenene kadar kayıt yapılmaz.
   const [text, setText] = useState("");
+  const loaded = useRef(false);
   const [checks, setChecks] = useState<boolean[]>(() => task.checklist.map(() => false));
   const [showSample, setShowSample] = useState(false);
   const areaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    try {
+      const draft = localStorage.getItem(draftKey);
+      if (draft) setText(draft);
+    } catch {
+      /* depolama kapalıysa taslak yok */
+    }
+    loaded.current = true;
+  }, [draftKey]);
+
+  useEffect(() => {
+    if (!loaded.current) return;
+    try {
+      if (text) localStorage.setItem(draftKey, text);
+      else localStorage.removeItem(draftKey);
+    } catch {
+      /* depolama kapalıysa taslak tutulmaz */
+    }
+  }, [draftKey, text]);
+
+  function done(ok: boolean) {
+    try {
+      localStorage.removeItem(draftKey);
+    } catch {
+      /* yok say */
+    }
+    onDone(ok);
+  }
 
   const words = text.trim().split(/\s+/).filter(Boolean).length;
   const enough = words >= task.minWords;
@@ -309,12 +367,15 @@ function FreeTask({ task, onDone }: { task: FreeTaskData; onDone: (ok: boolean) 
 
       <div className="mt-4 space-y-2">
         {task.checklist.map((item, i) => (
-          <label key={i} className="flex cursor-pointer items-start gap-2.5 text-sm">
-            <button
-              type="button"
-              role="checkbox"
-              aria-checked={checks[i]}
-              onClick={() => setChecks(checks.map((c, ci) => (ci === i ? !c : c)))}
+          <button
+            key={i}
+            type="button"
+            role="checkbox"
+            aria-checked={checks[i]}
+            onClick={() => setChecks(checks.map((c, ci) => (ci === i ? !c : c)))}
+            className="flex w-full items-start gap-2.5 text-left text-sm"
+          >
+            <span
               className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border text-white"
               style={{
                 borderColor: checks[i] ? "var(--color-mint-500)" : "var(--border)",
@@ -322,9 +383,9 @@ function FreeTask({ task, onDone }: { task: FreeTaskData; onDone: (ok: boolean) 
               }}
             >
               {checks[i] ? <CheckIcon size={13} /> : null}
-            </button>
+            </span>
             <span className={checks[i] ? "" : "muted"}>{item}</span>
-          </label>
+          </button>
         ))}
       </div>
 
@@ -351,14 +412,14 @@ function FreeTask({ task, onDone }: { task: FreeTaskData; onDone: (ok: boolean) 
         <button
           type="button"
           disabled={!ready}
-          onClick={() => onDone(true)}
+          onClick={() => done(true)}
           className="btn btn-primary px-6 py-2.5 disabled:opacity-50"
         >
           Bitirdim
         </button>
         <button
           type="button"
-          onClick={() => onDone(false)}
+          onClick={() => done(false)}
           className="btn btn-ghost px-4 py-2.5 text-sm"
         >
           Bu görevi atla

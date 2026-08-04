@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, profiles } from "@/lib/db/schema";
+import { dailyStats, profiles, userSkills } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, shiftDay } from "@/lib/session";
 import { getExercise, itemCount, xpFor } from "@/lib/skills";
@@ -11,10 +11,11 @@ export const dynamic = "force-dynamic";
 /**
  * Beceri egzersizi tamamlandığında XP ve seri işler.
  *
- * XP istemciden gelmez: egzersiz derlemeye gömülü içerikten bulunur, doğru
- * sayısı madde sayısıyla sınırlanır ve puan sunucuda hesaplanır. Kelime SRS'i
- * ile karışmaması için yalnızca XP/süre/seri güncellenir; günlük tekrar
- * hedefi (reviews) kelime oyunlarına aittir.
+ * XP istemciden gelmez: egzersiz veritabanından bulunur, doğru sayısı madde
+ * sayısıyla sınırlanır ve puan sunucuda hesaplanır. Aynı egzersizi tekrar
+ * çözmek XP kasmaya izin vermez: user_skills'teki en iyi skora göre yalnızca
+ * iyileşme farkı eklenir. Kelime SRS'i ile karışmaması için günlük tekrar
+ * hedefi (reviews) kelime oyunlarına aittir; burada XP/süre/seri güncellenir.
  */
 export async function POST(req: Request) {
   const userId = await getUserId();
@@ -33,12 +34,34 @@ export async function POST(req: Request) {
   const exercise = await getExercise(parsed.id);
   if (!exercise) return NextResponse.json({ error: "unknown_exercise" }, { status: 400 });
 
-  const correct = Math.min(itemCount(exercise), parsed.correct);
-  const xpGained = xpFor(exercise, correct);
+  const total = itemCount(exercise);
+  const correct = Math.min(total, parsed.correct);
 
   try {
     const profile = await ensureProfile(userId);
     const today = parsed.day;
+
+    // En iyi skoru oku: XP yalnızca ilk tamamlamada ya da skor iyileşince eklenir.
+    const [prev] = await db
+      .select()
+      .from(userSkills)
+      .where(and(eq(userSkills.userId, userId), eq(userSkills.exerciseId, exercise.id)));
+    const prevBest = prev ? Math.min(prev.correct, total) : null;
+    const best = Math.max(correct, prevBest ?? 0);
+    const xpGained = Math.max(0, xpFor(exercise, best) - (prevBest === null ? 0 : xpFor(exercise, prevBest)));
+
+    await db
+      .insert(userSkills)
+      .values({ userId, exerciseId: exercise.id, correct: best, total, attempts: 1 })
+      .onConflictDoUpdate({
+        target: [userSkills.userId, userSkills.exerciseId],
+        set: {
+          correct: best,
+          total,
+          attempts: sql`${userSkills.attempts} + 1`,
+          lastAt: new Date(),
+        },
+      });
 
     await db
       .insert(dailyStats)
@@ -72,6 +95,9 @@ export async function POST(req: Request) {
       totalXp: profile.totalXp + xpGained,
       currentStreak,
       longestStreak,
+      bestCorrect: best,
+      total,
+      repeat: prevBest !== null,
     });
   } catch (err) {
     console.error("[skills]", err);

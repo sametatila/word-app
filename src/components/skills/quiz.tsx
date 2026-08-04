@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
+import { speakGerman } from "@/components/speak-button";
 import { CheckIcon, InfoIcon, XIcon } from "@/components/icons";
 
 /**
@@ -110,15 +111,24 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
         <span className="muted text-xs font-semibold">{open ? "Gizle" : "Göster"}</span>
       </button>
       {open ? (
-        <div className="mt-3 flex flex-wrap gap-2">
-          {gloss.map((g) => (
-            <span key={g.de} className="chip px-3 py-1.5 text-xs">
-              <strong className="text-[color:var(--text)]">{g.de}</strong>
-              <span className="mx-1 opacity-50">·</span>
-              {g.tr}
-            </span>
-          ))}
-        </div>
+        <>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {gloss.map((g) => (
+              <button
+                key={g.de}
+                type="button"
+                onClick={() => speakGerman(g.de)}
+                title="Telaffuzu dinle"
+                className="chip px-3 py-1.5 text-xs"
+              >
+                <strong className="text-[color:var(--text)]">{g.de}</strong>
+                <span className="mx-1 opacity-50">·</span>
+                {g.tr}
+              </button>
+            ))}
+          </div>
+          <p className="muted mt-2 text-[11px]">Kelimeye dokununca telaffuzunu duyarsın.</p>
+        </>
       ) : null}
     </section>
   );

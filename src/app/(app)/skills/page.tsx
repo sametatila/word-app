@@ -1,8 +1,11 @@
+import { eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { userSkills } from "@/lib/db/schema";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
-import { SkillsHub } from "@/components/skills/skills-hub";
+import { SkillsHub, type ServerSkillProgress } from "@/components/skills/skills-hub";
 
 export const dynamic = "force-dynamic";
 
@@ -28,5 +31,22 @@ export default async function SkillsPage() {
   // İçerik veritabanından gelir; ulaşılamazsa gömülü kopya kullanılır.
   const items = await listExerciseMeta();
 
-  return <SkillsHub items={items} activeLevel={activeLevel} />;
+  // Tamamlanma durumu sunucudan gelir ki cihazlar arasında senkron olsun;
+  // istemci bunu localStorage'daki (çevrimdışı) kayıtlarla birleştirir.
+  const serverProgress: ServerSkillProgress = {};
+  try {
+    const rows = await db
+      .select({
+        exerciseId: userSkills.exerciseId,
+        correct: userSkills.correct,
+        total: userSkills.total,
+      })
+      .from(userSkills)
+      .where(eq(userSkills.userId, user.id));
+    for (const r of rows) serverProgress[r.exerciseId] = { correct: r.correct, total: r.total };
+  } catch (err) {
+    console.error("[skills] kullanıcı ilerlemesi okunamadı", err);
+  }
+
+  return <SkillsHub items={items} activeLevel={activeLevel} serverProgress={serverProgress} />;
 }

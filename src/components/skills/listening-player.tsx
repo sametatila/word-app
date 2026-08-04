@@ -25,27 +25,46 @@ const PITCHES = [1, 1.16, 0.88, 1.3];
  * ayrışır; istenirse yavaş mod ve (önce dinlemeyi teşvik eden) metin açma vardır.
  */
 export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
-  const { finish, state } = useSkillFinish(exercise, exercise.questions.length);
+  const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
+  const [round, setRound] = useState(0);
   const [available, setAvailable] = useState<boolean | null>(null);
   const [playing, setPlaying] = useState(false);
   const [segIdx, setSegIdx] = useState(-1);
   const [playCount, setPlayCount] = useState(0);
   const [slow, setSlow] = useState(false);
   const [showText, setShowText] = useState(false);
-  const slowRef = useRef(slow);
-  slowRef.current = slow;
 
   const speakers = [...new Set(exercise.segments.map((s) => s.speaker ?? ""))];
 
   useEffect(() => {
     const ok = typeof window !== "undefined" && "speechSynthesis" in window;
     setAvailable(ok);
-    if (!ok) setShowText(true); // ses yoksa egzersiz okumaya dönüşür, duvara toslamaz
+    if (!ok) {
+      setShowText(true); // ses yoksa egzersiz okumaya dönüşür, duvara toslamaz
+      return;
+    }
+    // Ses listesi tembel yüklenir; şimdiden iste ki ilk çalmada Almanca ses hazır olsun.
+    const synth = window.speechSynthesis;
+    synth.getVoices();
+    const warm = () => synth.getVoices();
+    synth.addEventListener?.("voiceschanged", warm);
     return () => {
-      if (ok) window.speechSynthesis.cancel();
+      synth.removeEventListener?.("voiceschanged", warm);
+      synth.cancel();
     };
   }, []);
+
+  function makeUtterance(text: string, speaker: string | undefined, slowNow: boolean) {
+    const synth = window.speechSynthesis;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "de-DE";
+    const voice = synth.getVoices().find((v) => v.lang.startsWith("de")) ?? null;
+    if (voice) u.voice = voice;
+    u.rate = BASE_RATE[exercise.level] * (slowNow ? 0.78 : 1);
+    u.pitch = PITCHES[speakers.indexOf(speaker ?? "") % PITCHES.length];
+    return u;
+  }
 
   function stop() {
     window.speechSynthesis.cancel();
@@ -53,19 +72,12 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
     setSegIdx(-1);
   }
 
-  function play() {
+  function play(slowNow: boolean = slow) {
     const synth = window.speechSynthesis;
     synth.cancel();
     setPlaying(true);
-    const voice = synth.getVoices().find((v) => v.lang.startsWith("de")) ?? null;
-    const rate = BASE_RATE[exercise.level] * (slowRef.current ? 0.78 : 1);
-
     exercise.segments.forEach((seg, i) => {
-      const u = new SpeechSynthesisUtterance(seg.text);
-      u.lang = "de-DE";
-      if (voice) u.voice = voice;
-      u.rate = rate;
-      u.pitch = PITCHES[speakers.indexOf(seg.speaker ?? "") % PITCHES.length];
+      const u = makeUtterance(seg.text, seg.speaker, slowNow);
       u.onstart = () => setSegIdx(i);
       if (i === exercise.segments.length - 1) {
         u.onend = () => {
@@ -80,6 +92,33 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
       };
       synth.speak(u);
     });
+  }
+
+  /** Transkript satırına dokununca yalnızca o bölümü tekrar dinlet. */
+  function playSegment(i: number) {
+    if (available === false) return;
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    setPlaying(true);
+    setSegIdx(i);
+    const seg = exercise.segments[i];
+    const u = makeUtterance(seg.text, seg.speaker, slow);
+    u.onend = () => {
+      setPlaying(false);
+      setSegIdx(-1);
+    };
+    u.onerror = () => {
+      setPlaying(false);
+      setSegIdx(-1);
+    };
+    synth.speak(u);
+  }
+
+  function toggleSlow() {
+    const next = !slow;
+    setSlow(next);
+    // Çalma sırasında değiştirilirse baştan yeni hızla başlat — düğme "ölü" hissettirmesin.
+    if (playing) play(next);
   }
 
   return (
@@ -127,7 +166,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <button
             type="button"
-            onClick={() => setSlow((v) => !v)}
+            onClick={toggleSlow}
             className={`chip px-3 py-1.5 text-xs ${slow ? "chip-active" : ""}`}
           >
             Yavaş mod
@@ -158,29 +197,37 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
       </section>
 
       {showText ? (
-        <section className="card mt-4 space-y-2.5 p-5">
-          {exercise.segments.map((seg, i) => (
-            <p
-              key={i}
-              lang="de"
-              className={`rounded-lg px-2 py-1 text-[15px] leading-relaxed transition-colors ${
-                playing && i === segIdx ? "surface-2" : ""
-              }`}
-            >
-              {seg.speaker ? (
-                <strong className="mr-1.5 text-[color:var(--color-brand-500)]">
-                  {seg.speaker}:
-                </strong>
-              ) : null}
-              {seg.text}
-            </p>
-          ))}
+        <section className="card mt-4 select-text p-5">
+          {available ? (
+            <p className="muted mb-2 text-[11px]">Bir satıra dokununca yalnızca o bölüm çalar.</p>
+          ) : null}
+          <div className="space-y-2.5">
+            {exercise.segments.map((seg, i) => (
+              <p
+                key={i}
+                lang="de"
+                onClick={() => playSegment(i)}
+                role={available ? "button" : undefined}
+                className={`rounded-lg px-2 py-1 text-[15px] leading-relaxed transition-colors ${
+                  playing && i === segIdx ? "surface-2" : ""
+                } ${available ? "cursor-pointer hover:bg-[color:var(--surface-2)]" : ""}`}
+              >
+                {seg.speaker ? (
+                  <strong className="mr-1.5 text-[color:var(--color-brand-500)]">
+                    {seg.speaker}:
+                  </strong>
+                ) : null}
+                {seg.text}
+              </p>
+            ))}
+          </div>
         </section>
       ) : null}
 
       <GlossPanel gloss={exercise.gloss} />
 
       <QuestionList
+        key={round}
         questions={exercise.questions}
         onAllAnswered={(c) => {
           setCorrect(c);
@@ -189,7 +236,17 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
         }}
       />
 
-      <ResultCard correct={correct} total={exercise.questions.length} state={state} />
+      <ResultCard
+        correct={correct}
+        total={exercise.questions.length}
+        state={state}
+        onRetry={() => {
+          stop();
+          reset();
+          setCorrect(0);
+          setRound((r) => r + 1);
+        }}
+      />
     </PlayerShell>
   );
 }

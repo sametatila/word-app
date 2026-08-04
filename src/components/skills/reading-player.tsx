@@ -7,14 +7,16 @@ import { GlossPanel, QuestionList } from "./quiz";
 
 /** Okuma egzersizi: metin + sözlükçe + anlama soruları. */
 export function ReadingPlayer({ exercise }: { exercise: ReadingExercise }) {
-  const { finish, state } = useSkillFinish(exercise, exercise.questions.length);
+  const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
+  const [round, setRound] = useState(0);
 
   return (
     <PlayerShell exercise={exercise}>
       <p className="muted px-1 text-sm">{exercise.intro}</p>
 
-      <article className="card mt-3 p-5">
+      {/* select-text: öğrenci kelime kopyalayıp sözlüğe bakabilsin. */}
+      <article className="card mt-3 select-text p-5">
         {exercise.text.split("\n\n").map((para, i) => (
           <p
             key={i}
@@ -29,6 +31,7 @@ export function ReadingPlayer({ exercise }: { exercise: ReadingExercise }) {
       <GlossPanel gloss={exercise.gloss} />
 
       <QuestionList
+        key={round}
         questions={exercise.questions}
         onAllAnswered={(c) => {
           setCorrect(c);
@@ -36,7 +39,16 @@ export function ReadingPlayer({ exercise }: { exercise: ReadingExercise }) {
         }}
       />
 
-      <ResultCard correct={correct} total={exercise.questions.length} state={state} />
+      <ResultCard
+        correct={correct}
+        total={exercise.questions.length}
+        state={state}
+        onRetry={() => {
+          reset();
+          setCorrect(0);
+          setRound((r) => r + 1);
+        }}
+      />
     </PlayerShell>
   );
 }
