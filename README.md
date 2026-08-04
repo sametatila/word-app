@@ -5,9 +5,11 @@ uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana e
 uygulama gibi tam ekran açılır (PWA).
 
 - **İki kurs, tek uygulama:**
-  - **Almanca (Hochdeutsch)** — A1–C1, 4.046 kelime (A1 858 · A2 481 · B1 1.853 · B2 419 · C1 435)
-  - **Zürih Almancası (Züritüütsch)** — aynı 4.046 maddenin lehçe karşılığı, Hochdeutsch köprüsüyle
-    (`formen` alanında "HD: …") ve Zürihçe örnek cümlelerle
+  - **Almanca (Hochdeutsch)** — A1–C1, 7.429 kelime (A1 858 · A2 481 · B1 1.853 · B2 2.059 · C1 2.178)
+  - **Zürih Almancası (Züritüütsch)** — listenin ilk 4.046 maddesinin lehçe karşılığı, Hochdeutsch
+    köprüsüyle (`formen` alanında "HD: …") ve Zürihçe örnek cümlelerle. B2/C1 genişlemesinin
+    lehçe karşılıkları henüz üretilmedi; karşılığı olmayan madde Zürih kursunda görünmez
+    (`seed-zurich.ts` eksikleri seviye bazında raporlar, yükleme durmaz).
 
   Kurs ilk girişte seçilir (`/kurs-sec`), sonradan profilden değiştirilebilir. Kelime havuzu,
   tekrar kuyruğu, beceri içeriği ve ilerleme sayıları aktif kursa bağlıdır; kurs değiştirince
@@ -35,7 +37,7 @@ uygulama gibi tam ekran açılır (PWA).
   kelimeler kullanılır (aufhören / aufheben / aufräumen).
 - **Telaffuz:** her Almanca kelime ve örnek cümle tek dokunuşla sesli okunur (tarayıcı konuşma sentezi).
 - **"Bunu zaten biliyorum":** bildiğin kelimeyi tek dokunuşla pekişmiş işaretleyip atlarsın.
-- **Kelimelerim ekranı:** 4.046 kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
+- **Kelimelerim ekranı:** binlerce kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
   ve bir sonraki tekrar tarihi.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
   ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
@@ -50,8 +52,8 @@ uygulama gibi tam ekran açılır (PWA).
 npm install
 cp .env.example .env            # DATABASE_URL'i Neon'dan yapıştır
 npm run db:push                 # tabloları oluştur
-npm run db:seed                 # Almanca kursu: 4.046 kelime + örnek cümle çevirileri
-npm run db:seed:zurich          # Zürih kursu: 4.046 Züritüütsch madde
+npm run db:seed                 # Almanca kursu: 7.429 kelime + örnek cümle çevirileri
+npm run db:seed:zurich          # Zürih kursu: 4.046 Züritüütsch madde (karşılığı olanlar)
 npm run db:seed:skills          # beceri alıştırmaları (iki kurs, A1–C1)
 npm run dev                     # http://localhost:3000
 ```
@@ -78,7 +80,7 @@ Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi �
 2. **Connection string** → *Pooled connection* olanı kopyala, `DATABASE_URL` yap.
 3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
    Editor'a sırayla yapıştırabilirsin).
-4. `npm run db:seed` → `data/app/words.json` içindeki 4.046 kelime + `data/app/beispiel-tr.json`
+4. `npm run db:seed` → `data/app/words.json` içindeki 7.429 kelime + `data/app/beispiel-tr.json`
    içindeki örnek cümle çevirileri yüklenir.
 5. `npm run db:seed:zurich` → `data/zurich/chunk-*.json` içindeki 4.046 Züritüütsch madde
    `course='gsw-zh'` olarak yüklenir (kimlik: 100000 + kaynak id).
@@ -153,9 +155,9 @@ src/
     games/*.tsx             altı oyun + ortak çerçeve
     skills/*.tsx            beceri hub'ı, okuma/dinleme/yazma çalıştırıcıları
 data/
-  app/words.json            Almanca tohumlama kaynağı (4.046 kelime, A1–C1)
-  app/beispiel-tr.json      örnek cümlelerin Türkçe çevirileri (4.043 cümle)
-  zurich/chunk-*.json       Züritüütsch karşılıklar (4.046 madde)
+  app/words.json            Almanca tohumlama kaynağı (7.429 kelime, A1–C1)
+  app/beispiel-tr.json      örnek cümlelerin Türkçe çevirileri (7.426 cümle)
+  zurich/chunk-*.json       Züritüütsch karşılıklar (4.046 madde — B2/C1 genişlemesi bekliyor)
   zurich/style-guide.md     lehçe yazım kuralları — içerik üretiminde bağlayıcı
 ```
 

@@ -91,11 +91,30 @@ async function main() {
   );
 
   console.log(`${chunkFiles.length} parça, ${gswRows.length} gsw madde okundu.`);
-  if (gswRows.length !== srcRows.length) {
-    const have = new Set(gswRows.map((g) => g.id));
-    const missing = srcRows.filter((r) => !have.has(r.id)).length;
+
+  // Almanca havuz Zürih havuzundan hızlı büyüyebilir (B2/C1 genişlemesi). Eksik
+  // karşılık artık yüklemeyi durdurmaz: Zürih kursu elindeki maddelerle çalışır,
+  // eksikler seviye bazında raporlanır. Fazlalık ise gerçek bir hatadır —
+  // kaynakta olmayan bir id, yanlış üretilmiş parça demektir.
+  const srcIds = new Set(srcRows.map((r) => r.id));
+  const orphan = gswRows.filter((g) => !srcIds.has(g.id));
+  if (orphan.length) {
     throw new Error(
-      `Eksik madde: kaynak ${srcRows.length}, gsw ${gswRows.length} (eksik ${missing}). Tüm parçalar üretilmeden yükleme yapılmaz.`,
+      `Kaynakta olmayan ${orphan.length} gsw id (ör. ${orphan.slice(0, 5).map((g) => g.id).join(", ")}).`,
+    );
+  }
+  const have = new Set(gswRows.map((g) => g.id));
+  const missing = srcRows.filter((r) => !have.has(r.id));
+  if (missing.length) {
+    const byLevel = missing.reduce<Record<string, number>>((a, r) => {
+      const lv = r.niveau.startsWith("A1") ? "A1" : r.niveau;
+      a[lv] = (a[lv] ?? 0) + 1;
+      return a;
+    }, {});
+    console.warn(
+      `UYARI: ${missing.length} kaynak maddenin Züritüütsch karşılığı yok ` +
+        `(${Object.entries(byLevel).map(([k, v]) => `${k}: ${v}`).join(", ")}). ` +
+        `Bu maddeler Zürih kursunda görünmez.`,
     );
   }
 

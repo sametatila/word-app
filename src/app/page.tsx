@@ -24,12 +24,12 @@ const COURSES = [
   {
     name: "Almanca",
     sub: "Hochdeutsch",
-    body: "A1–B1 resmî Goethe listelerinden, B2–C1 konu bazlı hazırlanmış 4.046 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
+    body: "A1–B1 resmî Goethe listelerinden, B2–C1 alan bazlı hazırlanmış 7.429 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
   },
   {
     name: "Zürih Almancası",
     sub: "Züritüütsch",
-    body: "Aynı 4.046 maddenin Zürih lehçesindeki karşılığı — de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",
+    body: "4.046 maddenin Zürih lehçesindeki karşılığı — de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function Home() {
         <section className="py-14 text-center sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
-              2 kurs · A1 → C1 · 8.092 kelime · 6 oyun
+              2 kurs · A1 → C1 · 11.475 kelime · 6 oyun
             </span>
           </Reveal>
           <Reveal delay={0.06}>
