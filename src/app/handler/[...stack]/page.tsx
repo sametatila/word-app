@@ -1,0 +1,20 @@
+import Link from "next/link";
+import { StackHandler } from "@stackframe/stack";
+import { stackServerApp } from "@/stack";
+
+export default function Handler(props: unknown) {
+  if (!stackServerApp) {
+    return (
+      <div className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 p-6 text-center">
+        <h1 className="text-xl font-bold">Giriş kapalı</h1>
+        <p className="muted text-sm">
+          Neon Auth anahtarları tanımlı değil. Uygulama şu an demo modunda çalışıyor.
+        </p>
+        <Link href="/learn" className="btn btn-primary px-5 py-3">
+          Demo ile devam et
+        </Link>
+      </div>
+    );
+  }
+  return <StackHandler fullPage app={stackServerApp} routeProps={props} />;
+}

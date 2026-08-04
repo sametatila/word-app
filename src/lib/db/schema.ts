@@ -1,0 +1,106 @@
+import {
+  pgTable,
+  serial,
+  text,
+  integer,
+  real,
+  timestamp,
+  date,
+  boolean,
+  index,
+  uniqueIndex,
+  primaryKey,
+} from "drizzle-orm/pg-core";
+
+/** Goethe kelime havuzu (seed ile doldurulur, kullanıcıdan bağımsız) */
+export const words = pgTable(
+  "words",
+  {
+    id: integer("id").primaryKey(),
+    de: text("de").notNull(),
+    artikel: text("artikel"),
+    tr: text("tr").notNull(),
+    formen: text("formen"),
+    typ: text("typ").notNull(), // Nomen | Verb | Sonstiges
+    niveau: text("niveau").notNull(), // A1 | A2 | B1
+    beispiel: text("beispiel"),
+  },
+  (t) => [index("words_niveau_idx").on(t.niveau), index("words_typ_idx").on(t.typ)],
+);
+
+/** Kullanıcı profili + streak durumu */
+export const profiles = pgTable("profiles", {
+  userId: text("user_id").primaryKey(),
+  displayName: text("display_name"),
+  dailyGoal: integer("daily_goal").notNull().default(20), // gün başına hedef tekrar
+  newPerDay: integer("new_per_day").notNull().default(15), // gün başına yeni kelime
+  level: text("level").notNull().default("A1"), // başlangıç CEFR seviyesi
+  currentStreak: integer("current_streak").notNull().default(0),
+  longestStreak: integer("longest_streak").notNull().default(0),
+  lastActiveDay: date("last_active_day"),
+  totalXp: integer("total_xp").notNull().default(0),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** Kelime başına adaptif tekrar durumu (SM-2 türevi) */
+export const userWords = pgTable(
+  "user_words",
+  {
+    userId: text("user_id").notNull(),
+    wordId: integer("word_id")
+      .notNull()
+      .references(() => words.id, { onDelete: "cascade" }),
+    state: integer("state").notNull().default(0), // 0 yeni, 1 öğreniliyor, 2 tekrar
+    ease: real("ease").notNull().default(2.5),
+    intervalDays: real("interval_days").notNull().default(0),
+    dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
+    reps: integer("reps").notNull().default(0),
+    lapses: integer("lapses").notNull().default(0),
+    correctStreak: integer("correct_streak").notNull().default(0),
+    leech: boolean("leech").notNull().default(false),
+    lastReviewedAt: timestamp("last_reviewed_at", { withTimezone: true }),
+  },
+  (t) => [
+    primaryKey({ columns: [t.userId, t.wordId] }),
+    index("user_words_due_idx").on(t.userId, t.dueAt),
+    index("user_words_state_idx").on(t.userId, t.state),
+  ],
+);
+
+/** Tek tek cevaplar — analiz ve oyun dengesi için */
+export const reviews = pgTable(
+  "reviews",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    wordId: integer("word_id").notNull(),
+    game: text("game").notNull(),
+    correct: boolean("correct").notNull(),
+    quality: integer("quality").notNull(), // 0-5
+    latencyMs: integer("latency_ms").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("reviews_user_idx").on(t.userId, t.createdAt)],
+);
+
+/** Günlük özet — streak, grafik ve hedef takibi */
+export const dailyStats = pgTable(
+  "daily_stats",
+  {
+    userId: text("user_id").notNull(),
+    day: date("day").notNull(),
+    reviews: integer("reviews").notNull().default(0),
+    correct: integer("correct").notNull().default(0),
+    newWords: integer("new_words").notNull().default(0),
+    xp: integer("xp").notNull().default(0),
+    seconds: integer("seconds").notNull().default(0),
+  },
+  (t) => [
+    primaryKey({ columns: [t.userId, t.day] }),
+    uniqueIndex("daily_stats_user_day_idx").on(t.userId, t.day),
+  ],
+);
+
+export type Word = typeof words.$inferSelect;
+export type UserWord = typeof userWords.$inferSelect;
+export type Profile = typeof profiles.$inferSelect;

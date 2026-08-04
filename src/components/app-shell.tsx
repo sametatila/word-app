@@ -1,0 +1,154 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { useEffect, useState, type ReactNode } from "react";
+import { ThemeToggle } from "./theme-toggle";
+
+const NAV = [
+  { href: "/learn", label: "Öğren", icon: "◆" },
+  { href: "/progress", label: "İlerleme", icon: "▲" },
+  { href: "/profile", label: "Profil", icon: "●" },
+];
+
+export function AppShell({
+  children,
+  streak,
+  xp,
+}: {
+  children: ReactNode;
+  streak: number;
+  xp: number;
+}) {
+  const pathname = usePathname();
+  const [stats, setStats] = useState({ streak, xp });
+
+  // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
+  useEffect(() => setStats({ streak, xp }), [streak, xp]);
+  useEffect(() => {
+    const onStats = (e: Event) => {
+      const detail = (e as CustomEvent<{ xp: number; streak: number }>).detail;
+      if (detail) setStats({ streak: detail.streak, xp: detail.xp });
+    };
+    window.addEventListener("wortspiel:stats", onStats);
+    return () => window.removeEventListener("wortspiel:stats", onStats);
+  }, []);
+
+  return (
+    <div className="mx-auto flex min-h-dvh w-full max-w-6xl">
+      {/* Masaüstü kenar çubuğu */}
+      <aside
+        className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r p-5 md:flex"
+        style={{ borderColor: "var(--border)" }}
+      >
+        <Link href="/" className="mb-8 flex items-center gap-2">
+          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-lg font-black text-white">
+            W
+          </span>
+          <span className="text-lg font-bold">Wortspiel</span>
+        </Link>
+
+        <nav className="flex flex-col gap-1">
+          {NAV.map((item) => {
+            const active = pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
+                  active ? "text-white" : "muted hover:text-[color:var(--text)]"
+                }`}
+              >
+                {active && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="brand-gradient absolute inset-0 rounded-xl"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  />
+                )}
+                <span className="relative">{item.icon}</span>
+                <span className="relative">{item.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="mt-auto flex items-center justify-between">
+          <StatPills streak={stats.streak} xp={stats.xp} />
+          <ThemeToggle />
+        </div>
+      </aside>
+
+      <div className="flex min-w-0 flex-1 flex-col">
+        {/* Mobil başlık */}
+        <header
+          className="sticky top-0 z-20 flex items-center justify-between border-b px-4 py-3 backdrop-blur md:hidden"
+          style={{ borderColor: "var(--border)", background: "color-mix(in srgb, var(--bg) 85%, transparent)" }}
+        >
+          <Link href="/" className="flex items-center gap-2">
+            <span className="brand-gradient flex h-8 w-8 items-center justify-center rounded-lg font-black text-white">
+              W
+            </span>
+            <span className="font-bold">Wortspiel</span>
+          </Link>
+          <div className="flex items-center gap-2">
+            <StatPills streak={stats.streak} xp={stats.xp} />
+            <ThemeToggle />
+          </div>
+        </header>
+
+        <main className="flex flex-1 flex-col px-4 pb-24 pt-4 md:px-8 md:pb-8 md:pt-8">{children}</main>
+
+        {/* Mobil alt gezinme */}
+        <nav
+          className="safe-bottom fixed inset-x-0 bottom-0 z-30 flex border-t backdrop-blur md:hidden"
+          style={{
+            borderColor: "var(--border)",
+            background: "color-mix(in srgb, var(--bg) 92%, transparent)",
+          }}
+        >
+          {NAV.map((item) => {
+            const active = pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative flex flex-1 flex-col items-center gap-0.5 pt-2.5 text-xs font-semibold"
+                style={{ color: active ? "var(--color-brand-500)" : "var(--text-muted)" }}
+              >
+                <span className="text-base">{item.icon}</span>
+                {item.label}
+                {active && (
+                  <motion.span
+                    layoutId="tab-active"
+                    className="brand-gradient absolute -top-px h-0.5 w-10 rounded-full"
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </div>
+  );
+}
+
+function StatPills({ streak, xp }: { streak: number; xp: number }) {
+  return (
+    <div className="flex items-center gap-2 text-sm font-bold">
+      <span
+        className="flex items-center gap-1 rounded-full px-2.5 py-1"
+        style={{ background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)", color: "var(--color-flame-500)" }}
+      >
+        🔥 {streak}
+      </span>
+      <span
+        className="flex items-center gap-1 rounded-full px-2.5 py-1"
+        style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand-500)" }}
+      >
+        ✦ {xp}
+      </span>
+    </div>
+  );
+}

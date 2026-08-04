@@ -1,0 +1,46 @@
+import { NextResponse } from "next/server";
+import { eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { profiles } from "@/lib/db/schema";
+import { getUserId } from "@/lib/auth";
+import { ensureProfile } from "@/lib/session";
+
+export const dynamic = "force-dynamic";
+
+export async function POST(req: Request) {
+  const userId = await getUserId();
+  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  let body: Record<string, unknown>;
+  try {
+    body = (await req.json()) as Record<string, unknown>;
+  } catch {
+    return NextResponse.json({ error: "bad_json" }, { status: 400 });
+  }
+
+  const patch: Partial<typeof profiles.$inferInsert> = {};
+  if (typeof body.displayName === "string") patch.displayName = body.displayName.slice(0, 60);
+  if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, 5, 120);
+  if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, 0, 40);
+  if (typeof body.level === "string" && ["A1", "A2", "B1"].includes(body.level))
+    patch.level = body.level;
+
+  if (!Object.keys(patch).length) return NextResponse.json({ error: "empty" }, { status: 400 });
+
+  try {
+    await ensureProfile(userId);
+    const [updated] = await db
+      .update(profiles)
+      .set(patch)
+      .where(eq(profiles.userId, userId))
+      .returning();
+    return NextResponse.json(updated);
+  } catch (err) {
+    console.error("[profile]", err);
+    return NextResponse.json({ error: "database" }, { status: 500 });
+  }
+}
+
+function clampInt(v: number, lo: number, hi: number) {
+  return Math.max(lo, Math.min(hi, Math.round(v)));
+}
