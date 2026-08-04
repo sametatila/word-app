@@ -410,6 +410,511 @@ export const c1: SkillExercise[] = [
   },
 
   // -------------------------------------------------------------- DİNLEME
+  // ── Hikâye dizisi: Çevirmen Miriam tartışmalı bir kitabı çeviriyor.
+  //    C1'in yeni alıştırmalarında iş → tartışma → açık mektup → ödül konuşması.
+  {
+    id: "c1-r7",
+    level: "C1",
+    skill: "reading",
+    title: "Der Auftrag",
+    genre: "Deneme",
+    intro:
+      "Çevirmen Miriam, zor bir kitabı üstlenip üstlenmemeyi düşünüyor. Kendi mesleği üzerine yazdığı bu deneme, C1'de takip edeceğin hikâyenin başlangıcı.",
+    gloss: [
+      { de: "die Übersetzung", tr: "çeviri" },
+      { de: "der Auftrag", tr: "iş, sipariş" },
+      { de: "die Vorlage", tr: "asıl metin, kaynak" },
+      { de: "die Treue", tr: "sadakat" },
+      { de: "der Klang", tr: "tını" },
+      { de: "die Zumutung", tr: "katlanılması güç şey" },
+      { de: "sich anmaßen", tr: "haddini aşmak" },
+      { de: "der Widerhall", tr: "yankı" },
+      { de: "abwägen", tr: "tartmak" },
+    ],
+    minutes: 8,
+    text:
+      "Der Verlag hat angerufen. Es geht um einen Roman aus dem Libanon, 340 Seiten, drei Monate Zeit, und die Autorin ist tot.\n\nMan hält das für einen Vorteil. Niemand widerspricht, niemand ruft nachts an und fragt, warum ein Satz jetzt anders klingt. In Wahrheit ist es das Gegenteil: Wo keine Autorin mehr antwortet, entscheidet die Übersetzerin allein, und diese Freiheit ist eine Zumutung.\n\nDenn die alte Frage — Treue oder Klang — ist falsch gestellt. Es gibt keine treue Übersetzung, die nicht klingt, weil ein Satz, der im Deutschen hölzern steht, im Arabischen eben nicht hölzern gestanden hat. Wer wörtlich überträgt, überträgt gerade nicht das, was da war: Er überträgt die Wörter und verliert den Ton. Und wer nur den Ton sucht, schreibt am Ende sein eigenes Buch.\n\nDazu kommt ein zweites Problem, über das öffentlich selten gesprochen wird. Dieser Roman spielt in einem Krieg, den ich nicht erlebt habe, in einer Stadt, in der ich zwei Wochen war. Ich kann die Sprache. Ob ich den Widerhall höre, den ein bestimmter Straßenname bei einer Leserin in Beirut auslöst, weiß ich nicht — und ich werde es nicht wissen.\n\nMan könnte daraus schließen, dass ich absagen sollte. Ich glaube, das wäre die bequemste und die falscheste Antwort. Nicht zu übersetzen heißt nicht, den Text zu schützen; es heißt, ihn unlesbar zu lassen. Jede Übersetzung ist ein Eingriff. Die Frage ist nicht, ob man sich etwas anmaßt, sondern ob man weiß, dass man es tut.\n\nIch sage zu. Und ich werde im Nachwort schreiben, was ich nicht wissen konnte.",
+    questions: [
+      {
+        text: "Warum hält Miriam den Tod der Autorin nicht für einen Vorteil?",
+        options: [
+          "Weil die Übersetzerin dann allein entscheidet",
+          "Weil der Verlag weniger zahlt",
+          "Weil die Rechte unklar sind",
+        ],
+        answer: 0,
+        explain: "„diese Freiheit ist eine Zumutung“ — kimse itiraz etmiyorsa yük tamamen ondadır.",
+      },
+      {
+        text: "Warum hält sie die Frage „Treue oder Klang“ für falsch gestellt?",
+        options: [
+          "Weil wörtliche Übertragung den Ton verliert und damit gerade untreu ist",
+          "Weil Klang immer wichtiger ist",
+          "Weil beide Begriffe veraltet sind",
+        ],
+        answer: 0,
+        explain:
+          "Almancada tahta gibi duran bir cümle, Arapçada öyle durmuyordu — kelimeyi taşıyan tonu kaybediyor.",
+      },
+      {
+        text: "Welches zweite Problem nennt sie?",
+        options: [
+          "Sie kennt den Widerhall bestimmter Orte für dortige Leser nicht",
+          "Ihr Arabisch reicht nicht",
+          "Die Frist ist zu kurz",
+        ],
+        answer: 0,
+        explain: "Dili biliyor; bilmediği, bir sokak adının Beyrut'ta ne uyandırdığı.",
+      },
+      {
+        text: "Warum lehnt sie den Auftrag trotzdem nicht ab?",
+        options: [
+          "Nicht zu übersetzen schützt den Text nicht, sondern lässt ihn unlesbar",
+          "Sie braucht das Geld",
+          "Der Verlag hat sie überzeugt",
+        ],
+        answer: 0,
+        explain: "„Das wäre die bequemste und die falscheste Antwort.“",
+      },
+      {
+        text: "Worin liegt für sie die entscheidende Frage?",
+        options: [
+          "Nicht ob man sich etwas anmaßt, sondern ob man es weiß",
+          "Ob man die Sprache perfekt beherrscht",
+          "Ob die Autorin zustimmt",
+        ],
+        answer: 0,
+        explain: "Her çeviri bir müdahaledir; mesele bunun farkında olmaktır.",
+      },
+      {
+        text: "Was kündigt sie am Ende an?",
+        options: [
+          "Ein Nachwort über das, was sie nicht wissen konnte",
+          "Eine Reise nach Beirut",
+          "Eine zweite Übersetzerin",
+        ],
+        answer: 0,
+        explain: "Son cümle: bilemediğini yazıya geçirecek.",
+      },
+    ],
+  },
+  {
+    id: "c1-r8",
+    level: "C1",
+    skill: "reading",
+    title: "Freiberuflich in Deutschland: die Fallen im Vertrag",
+    genre: "Rehber",
+    intro:
+      "Serbest çalışanların sözleşmelerinde kritik olan maddeler. Almanya'da bağımsız çalışmanın hukuki gerçekliği.",
+    gloss: [
+      { de: "freiberuflich", tr: "serbest meslek olarak" },
+      { de: "die Scheinselbstständigkeit", tr: "sahte bağımsızlık" },
+      { de: "das Nutzungsrecht", tr: "kullanım hakkı" },
+      { de: "einräumen", tr: "tanımak (hak)" },
+      { de: "die Haftung", tr: "sorumluluk" },
+      { de: "der Verzug", tr: "temerrüt, gecikme" },
+      { de: "abtreten", tr: "devretmek" },
+      { de: "unwirksam", tr: "geçersiz" },
+      { de: "die Vergütung", tr: "ücretlendirme" },
+    ],
+    minutes: 8,
+    text:
+      "Wer in Deutschland freiberuflich arbeitet, unterschreibt oft Verträge, die von großen Auftraggebern formuliert wurden. Vier Punkte lohnen dabei besondere Aufmerksamkeit.\n\nErstens die Nutzungsrechte. Üblich ist die Formulierung, man räume „sämtliche Nutzungsrechte zeitlich, räumlich und inhaltlich unbeschränkt“ ein. Das bedeutet: Der Auftraggeber darf das Werk beliebig verwenden, verändern und weiterverkaufen, ohne erneut zu zahlen. Für eine einmalige Vergütung ist das oft unangemessen — verhandelbar ist es fast immer, wenn man es anspricht.\n\nZweitens die Haftung. Klauseln, die eine unbegrenzte Haftung vorsehen, sind in vorformulierten Verträgen häufig unwirksam, weil sie den Vertragspartner unangemessen benachteiligen. Verlassen sollte man sich darauf nicht: Ein Prozess über die Wirksamkeit kostet Zeit und Geld, die Freiberufler selten haben.\n\nDrittens der Zahlungsverzug. Ohne besondere Vereinbarung gilt gesetzlich eine Frist von 30 Tagen; danach dürfen Verzugszinsen berechnet werden. Viele Verträge verlängern diese Frist auf 60 oder 90 Tage — legal, aber ein erheblicher Nachteil bei der Liquidität.\n\nViertens, und am wichtigsten: die Scheinselbstständigkeit. Wer über längere Zeit fast nur für einen Auftraggeber arbeitet, feste Arbeitszeiten hat und in dessen Organisation eingebunden ist, gilt sozialversicherungsrechtlich möglicherweise als Angestellter — unabhängig davon, was im Vertrag steht. Die Nachzahlungen treffen zwar zuerst den Auftraggeber, aber das Ende der Zusammenarbeit trifft den Auftragnehmer.\n\nWer unsicher ist, kann bei der Deutschen Rentenversicherung ein Statusfeststellungsverfahren beantragen. Es dauert einige Monate und schafft Rechtssicherheit — auch wenn viele es meiden, weil das Ergebnis unbequem sein könnte.",
+    questions: [
+      {
+        text: "Was bedeutet die übliche Nutzungsrechte-Klausel?",
+        options: [
+          "Der Auftraggeber darf das Werk beliebig nutzen und weiterverkaufen",
+          "Der Auftraggeber darf es einmal nutzen",
+          "Die Rechte bleiben beim Urheber",
+        ],
+        answer: 0,
+        explain: "Zaman, mekân ve içerik bakımından sınırsız devir — tek bir ödeme karşılığında.",
+      },
+      {
+        text: "Warum sollte man sich nicht auf die Unwirksamkeit von Haftungsklauseln verlassen?",
+        options: [
+          "Ein Prozess darüber kostet Zeit und Geld",
+          "Sie sind immer wirksam",
+          "Gerichte entscheiden nie darüber",
+        ],
+        answer: 0,
+        explain: "Geçersiz olabilir ama bunu ispat süreci serbest çalışanın taşıyamayacağı yüktür.",
+      },
+      {
+        text: "Welche gesetzliche Zahlungsfrist gilt ohne besondere Vereinbarung?",
+        options: ["30 Tage", "60 Tage", "90 Tage"],
+        answer: 0,
+        explain: "60 ve 90 gün sözleşmeyle uzatılabilen sürelerdir.",
+      },
+      {
+        text: "Wovon hängt Scheinselbstständigkeit ab?",
+        options: [
+          "Von der tatsächlichen Arbeitsweise, nicht vom Vertragstext",
+          "Nur vom Vertrag",
+          "Von der Höhe des Honorars",
+        ],
+        answer: 0,
+        explain: "„unabhängig davon, was im Vertrag steht.“",
+      },
+      {
+        text: "Wen trifft am Ende das größere Risiko?",
+        options: [
+          "Den Auftragnehmer — durch das Ende der Zusammenarbeit",
+          "Den Auftraggeber",
+          "Beide gleich",
+        ],
+        answer: 0,
+        explain:
+          "Geriye dönük primler önce işverene çıkar; ama iş ilişkisinin bitmesi serbest çalışanı vurur.",
+      },
+      {
+        text: "Warum meiden viele das Statusfeststellungsverfahren?",
+        options: [
+          "Weil das Ergebnis unbequem sein könnte",
+          "Weil es zu teuer ist",
+          "Weil es nicht rechtsverbindlich ist",
+        ],
+        answer: 0,
+        explain: "Hukuki güvenlik sağlıyor ama sonucu istenmeyen tarafta çıkabilir.",
+      },
+    ],
+  },
+  {
+    id: "c1-r9",
+    level: "C1",
+    skill: "reading",
+    title: "Der deutsche Wald",
+    genre: "Kültür denemesi",
+    intro:
+      "Neden Almanya'da orman bir doğa parçası değil de bir duygu meselesidir? Kültürel bir deneme.",
+    gloss: [
+      { de: "die Sehnsucht", tr: "özlem" },
+      { de: "die Romantik", tr: "Romantizm" },
+      { de: "das Waldsterben", tr: "orman ölümü (1980'ler)" },
+      { de: "die Monokultur", tr: "tek tür ekim" },
+      { de: "der Nutzwald", tr: "üretim ormanı" },
+      { de: "aufforsten", tr: "ağaçlandırmak" },
+      { de: "die Projektion", tr: "yansıtma" },
+      { de: "ernüchternd", tr: "ayıltıcı, hayal kırıklığı yaratan" },
+    ],
+    minutes: 8,
+    text:
+      "Kaum ein Wort ist im Deutschen so aufgeladen wie „Wald“. Es taucht in Volksliedern auf, in Märchen, in politischen Debatten, und es lässt sich in andere Sprachen nur schwer mit derselben Temperatur übersetzen. Der englische „forest“ ist ein Ort; der deutsche Wald ist eine Stimmung.\n\nHistorisch ist das erklärbar. Die Romantik des 19. Jahrhunderts machte den Wald zum Gegenbild der Stadt: dunkel, alt, echt — alles, was die Industrialisierung nicht war. Diese Verbindung überlebte politische Systeme, die sie sehr unterschiedlich benutzten, und sie wurde in den 1980er Jahren noch einmal aktiviert. Das Waldsterben war eine ökologische Krise, aber die Heftigkeit der Reaktion erklärt sich nicht allein aus Bodenwerten und Nadelverlust: Es starb nicht irgendein Ökosystem, es starb ein Selbstbild.\n\nErnüchternd ist der Blick auf das, was tatsächlich wächst. Rund die Hälfte des deutschen Waldes besteht aus Fichten und Kiefern, die hier über weite Strecken nie heimisch waren. Sie wurden gepflanzt, weil sie schnell wachsen und gerade sind — Nutzwald, kein Märchenwald. Ausgerechnet diese Monokulturen sind es, die Dürre und Borkenkäfer am wenigsten aushalten. Der Wald, um den getrauert wird, ist in weiten Teilen ein forstwirtschaftliches Produkt des 19. Jahrhunderts.\n\nDaraus folgt kein Grund zum Spott. Die Projektion hat etwas bewirkt: Deutschland hat eine im internationalen Vergleich strenge Forstgesetzgebung und mehr Waldfläche als vor hundert Jahren. Ein Land, das seine Wälder emotional besetzt, schützt sie besser als eines, das sie nur bilanziert.\n\nInteressant wird es dort, wo beides zusammenkommt. Der Umbau zu Mischwäldern dauert Jahrzehnte und sieht in den ersten Jahren nicht nach Sehnsucht aus, sondern nach Baustelle. Wer den Wald liebt, muss ihn eine Zeit lang hässlich ertragen.",
+    questions: [
+      {
+        text: "Welchen Unterschied nennt der Text zwischen „forest“ und „Wald“?",
+        options: [
+          "Ein Ort gegenüber einer Stimmung",
+          "Groß gegenüber klein",
+          "Privat gegenüber öffentlich",
+        ],
+        answer: 0,
+        explain: "Aynı sıcaklıkta çevrilemiyor: biri yer, öteki hâl.",
+      },
+      {
+        text: "Wie erklärt der Text die Heftigkeit der Waldsterben-Debatte?",
+        options: [
+          "Es starb nicht nur ein Ökosystem, sondern ein Selbstbild",
+          "Die Schäden waren größer als anderswo",
+          "Die Medien übertrieben",
+        ],
+        answer: 0,
+        explain: "Tepkinin şiddeti yalnızca ekolojik verilerle açıklanmıyor.",
+      },
+      {
+        text: "Was ist an der Zusammensetzung des Waldes ernüchternd?",
+        options: [
+          "Etwa die Hälfte sind gepflanzte, nicht heimische Nadelbäume",
+          "Der Wald schrumpft seit hundert Jahren",
+          "Es gibt kaum noch alte Bäume",
+        ],
+        answer: 0,
+        explain: "Ladin ve çam hızlı ve düz büyüdüğü için dikilmiş — üretim ormanı.",
+      },
+      {
+        text: "Welche Ironie beschreibt der Text?",
+        options: [
+          "Gerade die Monokulturen halten Dürre und Käfer am schlechtesten aus",
+          "Der Wald wächst schneller als geplant",
+          "Die Romantik half der Forstwirtschaft",
+        ],
+        answer: 0,
+        explain: "Yasla anılan orman, aslında 19. yüzyıl ormancılığının ürünü.",
+      },
+      {
+        text: "Wie bewertet der Autor die emotionale Besetzung des Waldes?",
+        options: [
+          "Sie hat den Schutz tatsächlich verbessert",
+          "Sie ist reiner Kitsch",
+          "Sie hat den Umbau verhindert",
+        ],
+        answer: 0,
+        explain: "Duygusal bağ, yalnızca bilanço tutan bir ülkeden daha iyi koruma sağlamış.",
+      },
+      {
+        text: "Was meint der Schlusssatz?",
+        options: [
+          "Der ökologische Umbau sieht jahrelang unschön aus und muss ausgehalten werden",
+          "Mischwälder sind hässlicher als Nadelwälder",
+          "Man sollte den Wald nicht mehr betreten",
+        ],
+        answer: 0,
+        explain: "Karışık ormana geçiş onlarca yıl sürer ve başta şantiyeye benzer.",
+      },
+    ],
+  },
+  {
+    id: "c1-r10",
+    level: "C1",
+    skill: "reading",
+    title: "Was der Text nicht sagt",
+    genre: "Sınav formatı",
+    intro:
+      "C1 okuma sınavının asıl zorluğu: metnin söylediğiyle ima ettiğini ayırmak. Yoğun bir metin ve çıkarım soruları.",
+    gloss: [
+      { de: "die Aussage", tr: "ifade, önerme" },
+      { de: "implizit", tr: "örtük" },
+      { de: "einschränken", tr: "sınırlandırmak" },
+      { de: "der Befund", tr: "bulgu" },
+      { de: "nahelegen", tr: "düşündürmek, ima etmek" },
+      { de: "ausschließen", tr: "dışlamak" },
+      { de: "die Korrelation", tr: "ilişki, bağıntı" },
+      { de: "vorschnell", tr: "aceleci" },
+    ],
+    minutes: 7,
+    text:
+      "Eine vielzitierte Untersuchung zum Homeoffice kommt zu einem klaren Befund: Beschäftigte, die überwiegend zu Hause arbeiten, werden seltener befördert als solche, die überwiegend im Büro sind. Der Unterschied ist erheblich und bleibt bestehen, wenn man Alter, Position und Betriebszugehörigkeit berücksichtigt.\n\nDie Studie zieht daraus jedoch nicht den Schluss, den viele Schlagzeilen daraus gezogen haben. Sie stellt ausdrücklich fest, dass sie die Richtung des Zusammenhangs nicht bestimmen kann. Es ist ebenso möglich, dass Menschen, die ohnehin weniger auf Aufstieg hin arbeiten, häufiger Homeoffice wählen, wie dass Homeoffice den Aufstieg behindert.\n\nZwei Beobachtungen sprechen dennoch für einen Effekt der Sichtbarkeit. Erstens ist der Nachteil in Unternehmen ohne strukturierte Leistungsbeurteilung deutlich größer als in solchen mit klaren Kriterien. Zweitens verschwindet er fast vollständig dort, wo auch die Führungskraft überwiegend remote arbeitet.\n\nDie Autorinnen warnen ausdrücklich vor der Empfehlung, die aus ihrer Arbeit am häufigsten abgeleitet wird — Beschäftigte sollten öfter ins Büro kommen. Diese Empfehlung behandle ein organisatorisches Problem als individuelles. Wenn Beförderung von Anwesenheit abhängt, sei das ein Befund über die Beurteilungspraxis, nicht über die Beschäftigten.",
+    questions: [
+      {
+        text: "Welche Aussage entspricht dem Text?",
+        options: [
+          "Der Zusammenhang bleibt auch nach Kontrolle von Alter und Position bestehen",
+          "Der Unterschied verschwindet, wenn man das Alter berücksichtigt",
+          "Die Studie fand keinen Unterschied",
+        ],
+        answer: 0,
+        explain: "„bleibt bestehen, wenn man Alter, Position und Betriebszugehörigkeit berücksichtigt.“",
+      },
+      {
+        text: "Was sagt die Studie über die Richtung des Zusammenhangs?",
+        options: [
+          "Sie kann sie nicht bestimmen",
+          "Homeoffice verhindert Beförderung",
+          "Beförderungswünsche führen zu Büroarbeit",
+        ],
+        answer: 0,
+        explain: "Her iki yön de mümkün — çalışma bunu ayırt edemiyor.",
+      },
+      {
+        text: "Welche Beobachtung stützt die Sichtbarkeits-These?",
+        options: [
+          "Der Nachteil verschwindet, wenn die Führungskraft selbst remote arbeitet",
+          "Ältere Beschäftigte sind stärker betroffen",
+          "Der Nachteil ist in großen Firmen größer",
+        ],
+        answer: 0,
+        explain: "İkinci gözlem tam olarak bu.",
+      },
+      {
+        text: "Was legt der Befund zu Unternehmen ohne Leistungsbeurteilung nahe?",
+        options: [
+          "Ohne klare Kriterien wirkt Anwesenheit stärker",
+          "Beurteilungssysteme sind nutzlos",
+          "Kleine Firmen befördern seltener",
+        ],
+        answer: 0,
+        explain: "Kriter yoksa görünürlük boşluğu dolduruyor.",
+      },
+      {
+        text: "Wogegen wenden sich die Autorinnen?",
+        options: [
+          "Gegen die Empfehlung, Beschäftigte sollten öfter ins Büro kommen",
+          "Gegen das Homeoffice generell",
+          "Gegen strukturierte Leistungsbeurteilung",
+        ],
+        answer: 0,
+        explain: "Örgütsel bir sorunu bireysel bir soruna çeviriyor diye reddediyorlar.",
+      },
+      {
+        text: "Welche Aussage wird vom Text NICHT gestützt?",
+        options: [
+          "Homeoffice senkt nachweislich die Aufstiegschancen",
+          "Die Beurteilungspraxis ist Teil des Problems",
+          "Der Effekt hängt vom Verhalten der Führungskraft ab",
+        ],
+        answer: 0,
+        explain:
+          "„nachweislich“ tam da metnin reddettiği çıkarımdır: nedensellik gösterilemiyor.",
+      },
+    ],
+  },
+  {
+    id: "c1-r11",
+    level: "C1",
+    skill: "reading",
+    title: "Der offene Brief",
+    genre: "Açık mektup",
+    intro:
+      "Hikâyenin devamı: Miriam'ın çevirisi tartışma yarattı — „bu kitabı o çevirmemeliydi“. Yanıtı bir açık mektup.",
+    gloss: [
+      { de: "der offene Brief", tr: "açık mektup" },
+      { de: "die Legitimation", tr: "meşruiyet" },
+      { de: "die Erfahrung", tr: "deneyim" },
+      { de: "die Zuständigkeit", tr: "yetki alanı" },
+      { de: "der Einwand", tr: "itiraz" },
+      { de: "verkürzen", tr: "kısaltmak, basitleştirmek" },
+      { de: "die Aneignung", tr: "sahiplenme, temellük" },
+      { de: "sich entziehen", tr: "kaçınmak, sıyrılmak" },
+      { de: "die Redlichkeit", tr: "dürüstlük" },
+    ],
+    minutes: 8,
+    text:
+      "Liebe Kolleginnen und Kollegen,\n\nseit zwei Wochen wird über meine Übersetzung diskutiert, und ich habe geschwiegen, weil ich zuerst zuhören wollte. Jetzt möchte ich antworten — nicht, um recht zu behalten, sondern um zwei Dinge zu trennen, die in der Debatte ständig zusammenfallen.\n\nDer erste Einwand lautet, ich hätte diesen Roman nicht übersetzen sollen, weil mir die Erfahrung fehle, aus der er geschrieben ist. Diesen Einwand halte ich für ernst und für falsch. Ernst, weil er auf ein reales Ungleichgewicht zeigt: Wer übersetzt wen, wer wird gefragt, wer bekommt Aufträge? Falsch, weil er Übersetzung mit Vertretung verwechselt. Eine Übersetzerin spricht nicht für die Autorin. Sie stellt her, dass die Autorin selbst gehört werden kann — in einer Sprache, die sie nicht hatte.\n\nWürde man den Einwand konsequent zu Ende denken, ergäbe sich ein absurder Zustand: Übersetzt werden dürfte nur, was man selbst erlebt hat. Literatur wäre auf Herkunft verteilt statt auf Können, und die Bücher, die uns am fremdesten sind, blieben unübersetzt — also gerade jene, für die Übersetzung überhaupt existiert.\n\nDer zweite Einwand ist konkreter und trifft mich härter: Ich hätte an mehreren Stellen geglättet. Das stimmt. In drei Kapiteln habe ich Sätze verkürzt, die im Original absichtlich lang und atemlos sind. Ich habe geglaubt, deutsche Leser würden abbrechen. Das war eine Entscheidung über den Text hinweg, und sie war falsch. Die zweite Auflage wird an diesen Stellen korrigiert; die Liste der Änderungen liegt beim Verlag und wird veröffentlicht.\n\nIch schreibe das, weil ich glaube, dass die Debatte nur dann etwas wert ist, wenn man in ihr auch verlieren kann. Wer sich jedem Einwand entzieht, führt kein Gespräch. Wer jedem nachgibt, auch nicht.\n\nMiriam Falk",
+    questions: [
+      {
+        text: "Warum hat Miriam zunächst geschwiegen?",
+        options: [
+          "Sie wollte zuerst zuhören",
+          "Der Verlag hatte es verlangt",
+          "Sie hatte keine Antwort",
+        ],
+        answer: 0,
+        explain: "İlk cümlelerde bunu açıkça söylüyor.",
+      },
+      {
+        text: "Wie bewertet sie den ersten Einwand?",
+        options: [
+          "Als ernst, aber falsch",
+          "Als unwichtig",
+          "Als vollständig berechtigt",
+        ],
+        answer: 0,
+        explain: "Gerçek bir dengesizliğe işaret ettiği için ciddi, ama kavramları karıştırdığı için yanlış.",
+      },
+      {
+        text: "Womit verwechselt der Einwand die Übersetzung, laut Miriam?",
+        options: ["Mit Vertretung", "Mit Kritik", "Mit Nacherzählung"],
+        answer: 0,
+        explain: "„Eine Übersetzerin spricht nicht für die Autorin.“",
+      },
+      {
+        text: "Welche Folge hätte der Einwand zu Ende gedacht?",
+        options: [
+          "Nur Selbsterlebtes dürfte übersetzt werden — das Fremdeste bliebe unübersetzt",
+          "Alle Bücher müssten neu übersetzt werden",
+          "Verlage dürften keine Aufträge mehr vergeben",
+        ],
+        answer: 0,
+        explain: "Edebiyat yetenek yerine köken üzerinden dağıtılırdı.",
+      },
+      {
+        text: "Was räumt sie ein?",
+        options: [
+          "Sie hat in drei Kapiteln absichtlich lange Sätze verkürzt",
+          "Sie hat Passagen ausgelassen",
+          "Sie hat die Sprache nicht ausreichend beherrscht",
+        ],
+        answer: 0,
+        explain: "Alman okurun bırakacağını düşünmüş — bunu yanlış bir karar olarak niteliyor.",
+      },
+      {
+        text: "Was ist ihre Haltung zur Debatte insgesamt?",
+        options: [
+          "Sie ist nur etwas wert, wenn man in ihr auch verlieren kann",
+          "Sie sollte beendet werden",
+          "Sie schadet der Literatur",
+        ],
+        answer: 0,
+        explain: "„Wer sich jedem Einwand entzieht, führt kein Gespräch. Wer jedem nachgibt, auch nicht.“",
+      },
+    ],
+  },
+  {
+    id: "c1-r12",
+    level: "C1",
+    skill: "reading",
+    title: "Krankenversicherung für Selbstständige",
+    genre: "Rehber",
+    intro:
+      "Serbest çalışanlar için Almanya'nın en pahalı kararı: hangi sağlık sigortası? Geri dönüşü olmayan bir seçim.",
+    gloss: [
+      { de: "gesetzlich versichert", tr: "kamu sigortalı" },
+      { de: "privat versichert", tr: "özel sigortalı" },
+      { de: "der Beitragssatz", tr: "prim oranı" },
+      { de: "die Bemessungsgrundlage", tr: "hesaplama tabanı" },
+      { de: "der Mindestbeitrag", tr: "asgari prim" },
+      { de: "die Rückkehr", tr: "geri dönüş" },
+      { de: "die Altersrückstellung", tr: "yaşlılık karşılığı" },
+      { de: "in Kauf nehmen", tr: "göze almak" },
+    ],
+    minutes: 8,
+    text:
+      "Für Angestellte ist die Sache einfach: Der Beitrag hängt vom Einkommen ab und wird geteilt. Selbstständige stehen vor einer Entscheidung, die sie meist nur einmal treffen können.\n\nIn der gesetzlichen Krankenversicherung richtet sich der Beitrag nach dem Gewinn, mit einem Mindestbeitrag, der auch dann fällig wird, wenn kaum etwas verdient wurde. In schlechten Jahren ist das eine erhebliche Belastung; in guten Jahren begrenzt eine Beitragsbemessungsgrenze die Zahlung nach oben. Familienangehörige ohne eigenes Einkommen sind beitragsfrei mitversichert — bei drei Kindern ein Unterschied von mehreren hundert Euro monatlich.\n\nIn der privaten Versicherung richtet sich der Beitrag nicht nach dem Einkommen, sondern nach Alter, Gesundheitszustand und gewähltem Leistungsumfang. Wer jung, gesund und kinderlos ist, zahlt oft deutlich weniger. Der Vergleich in diesem Moment ist jedoch irreführend: Beiträge steigen mit dem Alter und mit den Kosten des Gesundheitssystems, und jedes Familienmitglied kostet extra.\n\nEntscheidend ist die Rückkehr. Sie ist nach dem 55. Lebensjahr praktisch ausgeschlossen. Wer sich mit dreißig privat versichert, trifft damit eine Entscheidung für die Zeit, in der die Beiträge am höchsten und das Einkommen möglicherweise niedriger sein wird.\n\nDaraus folgt keine allgemeine Empfehlung, wohl aber eine Faustregel: Wer Familie plant, ein schwankendes Einkommen hat oder die eigene gesundheitliche Zukunft nicht einschätzen kann, fährt mit der gesetzlichen Versicherung meist besser — auch wenn er in den ersten Jahren mehr zahlt. Der höhere Beitrag ist der Preis für die Möglichkeit, sich zu irren.",
+    questions: [
+      {
+        text: "Wonach richtet sich der gesetzliche Beitrag?",
+        options: [
+          "Nach dem Gewinn, mit Mindestbeitrag und Obergrenze",
+          "Nach Alter und Gesundheit",
+          "Nach der Zahl der Kinder",
+        ],
+        answer: 0,
+        explain: "Kazanca göre; alt sınır kötü yıllarda da ödenir, üst sınır iyi yıllarda korur.",
+      },
+      {
+        text: "Welcher Vorteil der gesetzlichen Versicherung wird für Familien genannt?",
+        options: [
+          "Angehörige ohne Einkommen sind beitragsfrei mitversichert",
+          "Der Beitrag sinkt pro Kind",
+          "Kinder sind privat billiger",
+        ],
+        answer: 0,
+        explain: "Üç çocukta aylık birkaç yüz euro fark.",
+      },
+      {
+        text: "Warum ist der Beitragsvergleich beim Einstieg irreführend?",
+        options: [
+          "Private Beiträge steigen mit Alter und Gesundheitskosten",
+          "Gesetzliche Beiträge sind immer niedriger",
+          "Die Leistungen sind identisch",
+        ],
+        answer: 0,
+        explain: "Genç ve sağlıklıyken ucuz görünür; her aile üyesi ayrıca maliyet doğurur.",
+      },
+      {
+        text: "Was gilt für die Rückkehr in die gesetzliche Versicherung?",
+        options: [
+          "Nach dem 55. Lebensjahr praktisch ausgeschlossen",
+          "Jederzeit möglich",
+          "Nur mit ärztlichem Attest",
+        ],
+        answer: 0,
+        explain: "Bu yüzden otuzundaki karar, primlerin en yüksek olacağı dönemi de bağlıyor.",
+      },
+      {
+        text: "Für wen ist laut Text die gesetzliche Versicherung meist besser?",
+        options: [
+          "Für Menschen mit Familienplanung oder schwankendem Einkommen",
+          "Für alle Selbstständigen",
+          "Für junge, gesunde Selbstständige",
+        ],
+        answer: 0,
+        explain: "Ayrıca sağlık geleceğini kestiremeyenler için.",
+      },
+      {
+        text: "Wie ist der Schlusssatz zu verstehen?",
+        options: [
+          "Der höhere Beitrag kauft die Möglichkeit, eine Fehlentscheidung zu korrigieren",
+          "Fehler sind in der Versicherung nicht möglich",
+          "Wer sich irrt, zahlt später weniger",
+        ],
+        answer: 0,
+        explain: "„Der Preis für die Möglichkeit, sich zu irren.“",
+      },
+    ],
+  },
+
   {
     id: "c1-l1",
     level: "C1",
@@ -966,6 +1471,665 @@ export const c1: SkillExercise[] = [
 
   // --------------------------------------------------------------- YAZMA
   {
+    id: "c1-l7",
+    level: "C1",
+    skill: "listening",
+    title: "Redaktionsgespräch",
+    genre: "Toplantı",
+    intro:
+      "Hikâyenin devamı: yayınevinde çeviri tartışması masaya yatırılıyor. Kimin hangi çıkarı savunduğunu izle.",
+    gloss: [
+      { de: "die Auflage", tr: "baskı" },
+      { de: "die Erwiderung", tr: "yanıt, karşılık" },
+      { de: "die Deutungshoheit", tr: "yorum tekeli" },
+      { de: "eskalieren", tr: "tırmandırmak" },
+      { de: "die Fußnote", tr: "dipnot" },
+      { de: "aussitzen", tr: "oturup geçmesini beklemek" },
+      { de: "der Imageschaden", tr: "itibar zararı" },
+      { de: "einlenken", tr: "geri adım atmak" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Programmleiter",
+        text: "Wir haben drei Optionen: schweigen, eine kurze Erwiderung, oder Miriam schreibt selbst. Ich bin für Option eins. In vier Wochen redet niemand mehr darüber.",
+      },
+      {
+        speaker: "Presse",
+        text: "Das halte ich für falsch. Aussitzen funktioniert, wenn niemand nachlegt. Hier legen drei Feuilletons nach, und zwei davon haben Miriam gar nicht gelesen — die zitieren einander.",
+      },
+      { speaker: "Miriam", text: "Und einer von ihnen hat recht." },
+      { speaker: "Programmleiter", text: "In welchem Punkt?" },
+      {
+        speaker: "Miriam",
+        text: "Bei den Kürzungen. Ich habe in drei Kapiteln lange Sätze zerlegt. Das war eine Entscheidung über den Text hinweg, und sie war falsch.",
+      },
+      {
+        speaker: "Programmleiter",
+        text: "Wenn wir das zugeben, ist die Schlagzeile morgen: „Verlag räumt Fehler ein.“",
+      },
+      {
+        speaker: "Presse",
+        text: "Und wenn wir es nicht zugeben, ist die Schlagzeile in drei Wochen: „Verlag wusste davon.“ Die zweite ist teurer.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Mir geht es nicht um die Schlagzeile. Wenn die zweite Auflage die Stellen korrigiert und wir die Liste veröffentlichen, ist es kein Eingeständnis, sondern Arbeit. So lesen es die Leute, die den Text kennen.",
+      },
+      {
+        speaker: "Programmleiter",
+        text: "Und der andere Vorwurf? Dass Sie das Buch nicht hätten übersetzen sollen?",
+      },
+      {
+        speaker: "Miriam",
+        text: "Dem widerspreche ich, und zwar öffentlich. Aber getrennt. Wenn ich beides in einem Text verteidige, klingt das Zugeständnis wie eine Taktik.",
+      },
+      { speaker: "Presse", text: "Damit kann ich arbeiten." },
+      { speaker: "Programmleiter", text: "Gut. Dann Option drei — aber der Text geht vorher über meinen Tisch." },
+    ],
+    questions: [
+      {
+        text: "Welche Option bevorzugt der Programmleiter zunächst?",
+        options: ["Schweigen", "Eine kurze Erwiderung", "Miriams eigenen Text"],
+        answer: 0,
+        explain: "„In vier Wochen redet niemand mehr darüber.“",
+      },
+      {
+        text: "Womit begründet die Pressestelle ihren Widerspruch?",
+        options: [
+          "Drei Feuilletons legen nach und zitieren einander",
+          "Der Verlag hat versprochen zu antworten",
+          "Die Autorin verlangt es",
+        ],
+        answer: 0,
+        explain: "Aussitzen ancak kimse üstüne gitmiyorsa işe yarar.",
+      },
+      {
+        text: "In welchem Punkt gibt Miriam der Kritik recht?",
+        options: [
+          "Bei den Kürzungen langer Sätze",
+          "Bei der Wahl des Buches",
+          "Bei der Übersetzung des Titels",
+        ],
+        answer: 0,
+        explain: "Üç bölümde uzun cümleleri parçalamış.",
+      },
+      {
+        text: "Welches Argument der Pressestelle überzeugt am Ende?",
+        options: [
+          "Die spätere Schlagzeile wäre teurer als die heutige",
+          "Der Verlag würde verklagt",
+          "Die Buchhandlungen drohen",
+        ],
+        answer: 0,
+        explain: "„Verlag wusste davon“ manşeti, „Verlag räumt Fehler ein“den pahalı.",
+      },
+      {
+        text: "Warum will Miriam beide Punkte getrennt behandeln?",
+        options: [
+          "Sonst klingt das Zugeständnis wie eine Taktik",
+          "Der Verlag verlangt es",
+          "Zwei Texte bringen mehr Aufmerksamkeit",
+        ],
+        answer: 0,
+        explain: "Kabul ile itirazı aynı metinde birleştirmek ikisini de zayıflatır.",
+      },
+    ],
+  },
+  {
+    id: "c1-l8",
+    level: "C1",
+    skill: "listening",
+    title: "Vortrag: Warum Übersetzungen altern",
+    genre: "Konferans",
+    intro:
+      "Neden orijinal eskimezken çevirisi eskir? Edebiyat üzerine bir konuşma — tezin nasıl kurulduğuna dikkat et.",
+    gloss: [
+      { de: "altern", tr: "eskimek, yaşlanmak" },
+      { de: "die Norm", tr: "norm" },
+      { de: "der Zeitgeschmack", tr: "dönemin beğenisi" },
+      { de: "die Vorlage", tr: "kaynak metin" },
+      { de: "die Instanz", tr: "merci, otorite" },
+      { de: "verankert", tr: "yerleşik, sabitlenmiş" },
+      { de: "die Neuübersetzung", tr: "yeni çeviri" },
+      { de: "unweigerlich", tr: "kaçınılmaz olarak" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Referent",
+        text: "Es gibt eine Beobachtung, die jede Leserin gemacht hat und die trotzdem selten erklärt wird: Originale altern langsamer als ihre Übersetzungen. Ein Roman von 1890 wirkt alt, aber stimmig. Seine Übersetzung von 1955 wirkt oft einfach falsch.",
+      },
+      {
+        speaker: "Referent",
+        text: "Die übliche Erklärung lautet: Sprache verändert sich. Das ist richtig und erklärt zu wenig. Denn die Sprache des Originals verändert sich ebenso — nur hat das Original eine Instanz, die die Übersetzung nicht hat: Es ist selbst der Maßstab. Ein alter Satz von Fontane ist nicht veraltet, er ist Fontane.",
+      },
+      {
+        speaker: "Referent",
+        text: "Eine Übersetzung dagegen ist immer auch ein Dokument ihrer eigenen Zeit. Sie enthält nicht nur den fremden Text, sondern die Vorstellung ihrer Epoche davon, wie Literatur zu klingen hat. Die Nachkriegsübersetzungen sind glatter, höflicher, moralisch eindeutiger als ihre Originale — nicht aus Unfähigkeit, sondern weil der Zeitgeschmack im Text verankert wurde.",
+      },
+      {
+        speaker: "Referent",
+        text: "Daraus folgt, dass jede Übersetzung zwei Alterungsprozesse durchläuft: den der Sprache und den der Normen. Der zweite ist der schnellere.",
+      },
+      {
+        speaker: "Referent",
+        text: "Das erklärt auch, warum Neuübersetzungen selten „genauer“ sind, wie oft behauptet wird. Sie sind anders falsch — nach unseren Maßstäben besser, für spätere Leser genauso datiert. Wer eine Neuübersetzung als endgültig verkauft, hat den eigenen Befund nicht verstanden.",
+      },
+      {
+        speaker: "Referent",
+        text: "Ich schließe mit einer Einschränkung. Alles Gesagte gilt für Prosa. Bei Lyrik verhält es sich anders, und bei Gebrauchstexten gar nicht — eine Bedienungsanleitung altert nicht, sie wird ungültig. Wer meine These prüfen will, prüfe sie am Roman.",
+      },
+    ],
+    questions: [
+      {
+        text: "Welche Beobachtung steht am Anfang?",
+        options: [
+          "Originale altern langsamer als ihre Übersetzungen",
+          "Alte Bücher werden weniger gelesen",
+          "Übersetzungen sind ungenauer geworden",
+        ],
+        answer: 0,
+        explain: "1890 romanı eski ama tutarlı; 1955 çevirisi çoğu zaman yanlış hissettirir.",
+      },
+      {
+        text: "Warum reicht „Sprache verändert sich“ als Erklärung nicht?",
+        options: [
+          "Das Original ist selbst der Maßstab",
+          "Sprache verändert sich kaum",
+          "Übersetzungen werden öfter überarbeitet",
+        ],
+        answer: 0,
+        explain: "„Ein alter Satz von Fontane ist nicht veraltet, er ist Fontane.“",
+      },
+      {
+        text: "Was enthält eine Übersetzung laut Vortrag zusätzlich?",
+        options: [
+          "Die Vorstellung ihrer Epoche davon, wie Literatur klingen soll",
+          "Die Biografie der Übersetzerin",
+          "Die Fehler des Originals",
+        ],
+        answer: 0,
+        explain: "Savaş sonrası çeviriler daha pürüzsüz ve ahlaken daha netti.",
+      },
+      {
+        text: "Welcher der beiden Alterungsprozesse ist schneller?",
+        options: ["Der der Normen", "Der der Sprache", "Beide gleich"],
+        answer: 0,
+        explain: "Metin bunu açıkça söylüyor.",
+      },
+      {
+        text: "Was folgt daraus für Neuübersetzungen?",
+        options: [
+          "Sie sind anders falsch, nicht endgültig genauer",
+          "Sie sind objektiv genauer",
+          "Sie sind überflüssig",
+        ],
+        answer: 0,
+        explain: "Sonraki okurlar için onlar da tarihli olacak.",
+      },
+      {
+        text: "Welche Einschränkung nennt der Referent?",
+        options: [
+          "Die These gilt für Prosa, nicht für Lyrik oder Gebrauchstexte",
+          "Sie gilt nur für das Deutsche",
+          "Sie gilt nur bis 1960",
+        ],
+        answer: 0,
+        explain: "„eine Bedienungsanleitung altert nicht, sie wird ungültig.“",
+      },
+    ],
+  },
+  {
+    id: "c1-l9",
+    level: "C1",
+    skill: "listening",
+    title: "Podiumsdiskussion: Wem gehört die Stadt?",
+    genre: "Sınav formatı",
+    intro:
+      "C1 dinleme sınavının uzun formatı: üç konuşmacı, kısmen örtüşen görüşler. Kimin neyi kabul edip neyi reddettiğini ayır.",
+    gloss: [
+      { de: "der Leerstand", tr: "boş duran konut" },
+      { de: "die Enteignung", tr: "kamulaştırma" },
+      { de: "die Rendite", tr: "getiri" },
+      { de: "der Bestand", tr: "mevcut stok" },
+      { de: "die Nachverdichtung", tr: "mevcut alanda yoğunlaştırma" },
+      { de: "der Anreiz", tr: "teşvik" },
+      { de: "regulieren", tr: "düzenlemek" },
+      { de: "die Umsetzung", tr: "uygulama" },
+    ],
+    minutes: 7,
+    segments: [
+      {
+        speaker: "Moderatorin",
+        text: "Frau Kowal, Sie fordern strengere Regeln für Vermieter. Was genau?",
+      },
+      {
+        speaker: "Kowal",
+        text: "Zwei Dinge. Erstens ein wirksames Verbot von Leerstand über sechs Monate — mit Bußgeldern, die weh tun. Zweitens eine Obergrenze bei Neuvermietung, nicht nur bei bestehenden Verträgen. Ohne das zweite ist das erste wirkungslos.",
+      },
+      { speaker: "Moderatorin", text: "Herr Brandt?" },
+      {
+        speaker: "Brandt",
+        text: "Beim Leerstand bin ich sofort dabei. Wer eine Wohnung jahrelang leer stehen lässt, spekuliert, und dafür gibt es kein Argument. Bei der Obergrenze halte ich es für einen Fehler: Sie senkt die Rendite genau dort, wo wir Investitionen brauchen, nämlich im Bestand.",
+      },
+      {
+        speaker: "Kowal",
+        text: "Das ist das Standardargument, und es wird seit fünfzehn Jahren durch die Praxis nicht bestätigt. Saniert wird dort, wo man die Kosten weitergeben kann — nicht dort, wo es nötig ist.",
+      },
+      {
+        speaker: "Moderatorin",
+        text: "Frau Demir, Sie forschen dazu. Wer hat recht?",
+      },
+      {
+        speaker: "Demir",
+        text: "Beide teilweise, was unbefriedigend klingt, aber der Datenlage entspricht. Mietobergrenzen wirken kurzfristig und zuverlässig für die, die drin wohnen. Sie senken mittelfristig die Zahl der angebotenen Wohnungen, und zwar messbar. Die eigentliche Frage ist deshalb nicht ob, sondern wie lange und mit welcher Begleitmaßnahme.",
+      },
+      { speaker: "Brandt", text: "Das ist der Punkt: Es wird nie eine Begleitmaßnahme beschlossen." },
+      {
+        speaker: "Demir",
+        text: "Da stimme ich Ihnen zu. In fast allen Fällen, die ich untersucht habe, wurde reguliert und nicht gebaut. Das ist aber ein politisches Versäumnis, kein ökonomisches Gesetz.",
+      },
+      {
+        speaker: "Kowal",
+        text: "Damit kann ich leben. Regulierung plus Neubau — nur eben nicht Neubau als Ausrede, um zwanzig Jahre nichts zu tun.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was fordert Frau Kowal?",
+        options: [
+          "Leerstandsverbot und Obergrenze auch bei Neuvermietung",
+          "Nur ein Leerstandsverbot",
+          "Enteignung großer Vermieter",
+        ],
+        answer: 0,
+        explain: "İkincisi olmadan birincinin etkisiz kalacağını söylüyor.",
+      },
+      {
+        text: "Worin stimmt Herr Brandt ihr zu?",
+        options: ["Beim Leerstand", "Bei der Obergrenze", "In nichts"],
+        answer: 0,
+        explain: "„Wer eine Wohnung jahrelang leer stehen lässt, spekuliert.“",
+      },
+      {
+        text: "Wie kontert Kowal sein Renditeargument?",
+        options: [
+          "Saniert werde dort, wo man Kosten weitergeben kann — nicht wo es nötig ist",
+          "Renditen seien unwichtig",
+          "Investoren zahlten zu wenig Steuern",
+        ],
+        answer: 0,
+        explain: "On beş yıllık pratiğin argümanı doğrulamadığını söylüyor.",
+      },
+      {
+        text: "Was sagt die Forscherin zur Wirkung von Obergrenzen?",
+        options: [
+          "Kurzfristig wirksam für Mieter, mittelfristig weniger Angebot",
+          "Sie wirken gar nicht",
+          "Sie wirken dauerhaft positiv",
+        ],
+        answer: 0,
+        explain: "Bu yüzden soru „olsun mu“ değil, „ne kadar süreyle ve neyle birlikte“.",
+      },
+      {
+        text: "Worin sind sich Demir und Brandt einig?",
+        options: [
+          "Begleitmaßnahmen werden praktisch nie beschlossen",
+          "Obergrenzen sind ökonomisch falsch",
+          "Der Neubau ist Nebensache",
+        ],
+        answer: 0,
+        explain: "Demir bunu „politisches Versäumnis, kein ökonomisches Gesetz“ diye niteliyor.",
+      },
+      {
+        text: "Wie endet Kowals Beitrag?",
+        options: [
+          "Regulierung plus Neubau — Neubau aber nicht als Ausrede",
+          "Sie zieht ihre Forderung zurück",
+          "Sie fordert Enteignung",
+        ],
+        answer: 0,
+        explain: "Kısmi bir uzlaşma ama uyarısıyla birlikte.",
+      },
+    ],
+  },
+  {
+    id: "c1-l10",
+    level: "C1",
+    skill: "listening",
+    title: "Verhandlung mit dem Verlag",
+    genre: "Görüşme",
+    intro:
+      "Serbest çalışanın en zor konuşması: telif ve koşullar. Miriam sonraki kitap için pazarlık ediyor.",
+    gloss: [
+      { de: "das Honorar", tr: "telif ücreti" },
+      { de: "die Beteiligung", tr: "pay, hasılat payı" },
+      { de: "die Normseite", tr: "standart sayfa (çeviri birimi)" },
+      { de: "die Nennung", tr: "adının anılması" },
+      { de: "der Vorschuss", tr: "avans" },
+      { de: "die Klausel", tr: "madde" },
+      { de: "nachverhandeln", tr: "yeniden pazarlık etmek" },
+      { de: "das Zugeständnis", tr: "taviz" },
+    ],
+    minutes: 6,
+    segments: [
+      { speaker: "Verlag", text: "Wir bieten 24 Euro pro Normseite. Das ist unser Standard." },
+      {
+        speaker: "Miriam",
+        text: "Für einen Text dieser Schwierigkeit ist das zu wenig. 28 wären angemessen. Und ich möchte über die Beteiligung sprechen.",
+      },
+      { speaker: "Verlag", text: "Eine Beteiligung geben wir erst ab 5.000 verkauften Exemplaren." },
+      {
+        speaker: "Miriam",
+        text: "Das letzte Buch hat 9.000 verkauft. Die Schwelle ist also nicht das Problem — die Frage ist der Satz danach.",
+      },
+      { speaker: "Verlag", text: "0,5 Prozent." },
+      {
+        speaker: "Miriam",
+        text: "Üblich ist ein Prozent, und bei diesem Titel bringe ich die Debatte mit. Das ist Aufmerksamkeit, für die Sie sonst zahlen müssten.",
+      },
+      { speaker: "Verlag", text: "Die Debatte war nicht ausschließlich angenehm." },
+      {
+        speaker: "Miriam",
+        text: "Nein. Aber Sie haben die zweite Auflage verkauft, nicht trotz ihr.",
+      },
+      {
+        speaker: "Verlag",
+        text: "Ich kann 26 und 0,75 Prozent. Beim Vorschuss bleiben wir bei der Hälfte bei Vertragsschluss.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Einverstanden — unter einer Bedingung: Mein Name kommt aufs Cover, nicht nur ins Impressum. Das kostet Sie nichts.",
+      },
+      {
+        speaker: "Verlag",
+        text: "Es kostet uns eine Diskussion mit der Gestaltung. Aber gut. Aufs Cover.",
+      },
+      { speaker: "Miriam", text: "Dann sind wir uns einig." },
+    ],
+    questions: [
+      {
+        text: "Was fordert Miriam beim Seitenhonorar?",
+        options: ["28 statt 24 Euro", "24 statt 28 Euro", "30 Euro"],
+        answer: 0,
+        explain: "Metnin zorluk derecesini gerekçe gösteriyor.",
+      },
+      {
+        text: "Warum ist die Schwelle von 5.000 Exemplaren für sie kein Problem?",
+        options: [
+          "Das letzte Buch verkaufte 9.000",
+          "Die Schwelle gilt nicht für Übersetzungen",
+          "Der Verlag hat sie gestrichen",
+        ],
+        answer: 0,
+        explain: "Asıl mesele eşik değil, sonrasındaki oran.",
+      },
+      {
+        text: "Wie argumentiert sie für einen höheren Satz?",
+        options: [
+          "Sie bringt Aufmerksamkeit mit, für die der Verlag sonst zahlen müsste",
+          "Andere Verlage zahlen mehr",
+          "Sie hat wenig Zeit",
+        ],
+        answer: 0,
+        explain: "Tartışmanın kendisini bir değer olarak öne sürüyor.",
+      },
+      {
+        text: "Wie kontert sie den Einwand zur Debatte?",
+        options: [
+          "Die zweite Auflage wurde nicht trotz ihr verkauft",
+          "Die Debatte sei vorbei",
+          "Der Verlag habe sie verursacht",
+        ],
+        answer: 0,
+        explain: "Tek cümlelik ve etkili bir karşılık.",
+      },
+      {
+        text: "Worauf einigen sie sich?",
+        options: [
+          "26 Euro, 0,75 Prozent, Name auf dem Cover",
+          "28 Euro und ein Prozent",
+          "24 Euro und Cover-Nennung",
+        ],
+        answer: 0,
+        explain: "Avans koşulu değişmiyor.",
+      },
+      {
+        text: "Warum ist die Cover-Forderung verhandlungstaktisch klug?",
+        options: [
+          "Sie kostet den Verlag kein Geld",
+          "Sie ist gesetzlich vorgeschrieben",
+          "Sie ersetzt die Beteiligung",
+        ],
+        answer: 0,
+        explain: "„Das kostet Sie nichts“ — parasal olmayan taviz kolay verilir.",
+      },
+    ],
+  },
+  {
+    id: "c1-l11",
+    level: "C1",
+    skill: "listening",
+    title: "Podcast: Humor auf Deutsch",
+    genre: "Podcast",
+    intro:
+      "„Almanların mizah anlayışı yok“ klişesi. Bir dilbilimci bunun neden bir çeviri sorunu olduğunu anlatıyor.",
+    gloss: [
+      { de: "der Humor", tr: "mizah" },
+      { de: "die Ironie", tr: "ironi" },
+      { de: "die Untertreibung", tr: "küçümseyerek anlatma" },
+      { de: "das Wortspiel", tr: "kelime oyunu" },
+      { de: "eindeutig", tr: "tek anlamlı" },
+      { de: "die Pointe", tr: "espri noktası" },
+      { de: "die Verzögerung", tr: "gecikme" },
+      { de: "das Vorurteil", tr: "önyargı" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Host",
+        text: "Das Klischee ist international: Deutsche haben keinen Humor. Woher kommt das?",
+      },
+      {
+        speaker: "Linguistin",
+        text: "Zum großen Teil aus der Struktur der Sprache — und aus dem Englischen als Vergleichsmaßstab. Britischer Humor lebt von Untertreibung und davon, dass man am Ende eines Satzes noch nicht weiß, wohin er läuft. Das Deutsche stellt das Verb oft ans Ende oder trennt es. Der Satz ist erst spät entschieden, aber wenn er entschieden ist, ist er eindeutig.",
+      },
+      { speaker: "Host", text: "Das klingt eher nach einem Vorteil für Pointen." },
+      {
+        speaker: "Linguistin",
+        text: "Für die Pointe ja. Für die Ironie nein. Ironie braucht Mehrdeutigkeit, die stehen bleibt. Ein deutscher Satz erzwingt Klarheit — deshalb wird Ironie im Deutschen häufiger markiert, durch Ton, durch Partikeln, notfalls durch ein „ironisch gemeint“. Was markiert ist, wirkt weniger elegant.",
+      },
+      {
+        speaker: "Host",
+        text: "Und die Partikeln? „doch“, „mal“, „eben“ …",
+      },
+      {
+        speaker: "Linguistin",
+        text: "Das ist das eigentlich Komische am Klischee. Das Deutsche hat eines der feinsten Systeme, um Haltung in einen Satz zu legen — genau das, was Humor braucht. „Das hast du ja toll gemacht“ ist ohne „ja“ ein Lob. Nur überlebt das keine Übersetzung. Wer Deutsche auf Englisch erlebt, erlebt sie ohne ihre Werkzeuge.",
+      },
+      {
+        speaker: "Host",
+        text: "Also ein Übersetzungsproblem, kein Charakterproblem.",
+      },
+      {
+        speaker: "Linguistin",
+        text: "Weitgehend, ja. Wobei ich eine Sache einräume: Es gibt eine Vorliebe für Wortspiele, die anderswo als schwach gilt. Kalauer haben hier eine Toleranz, die ich selbst nicht ganz erklären kann.",
+      },
+    ],
+    questions: [
+      {
+        text: "Woraus erklärt die Linguistin das Klischee?",
+        options: [
+          "Aus der Satzstruktur und aus dem Englischen als Maßstab",
+          "Aus der Geschichte",
+          "Aus dem Bildungssystem",
+        ],
+        answer: 0,
+        explain: "İki nedeni birlikte veriyor.",
+      },
+      {
+        text: "Was ist am deutschen Satzbau günstig für Pointen?",
+        options: [
+          "Der Satz entscheidet sich spät",
+          "Der Satz ist immer kurz",
+          "Das Verb steht vorn",
+        ],
+        answer: 0,
+        explain: "Fiilin sonda olması ya da ayrılması gecikmeyi sağlıyor.",
+      },
+      {
+        text: "Warum ist derselbe Zug für Ironie ungünstig?",
+        options: [
+          "Ironie braucht bleibende Mehrdeutigkeit, das Deutsche erzwingt Klarheit",
+          "Ironie ist im Deutschen verboten",
+          "Es gibt keine ironischen Wörter",
+        ],
+        answer: 0,
+        explain: "Bu yüzden ironi işaretlenmek zorunda kalıyor ve zarafetini yitiriyor.",
+      },
+      {
+        text: "Was nennt sie das eigentlich Komische am Klischee?",
+        options: [
+          "Das Deutsche hat mit Partikeln ein besonders feines Werkzeug für Haltung",
+          "Deutsche lachen mehr als andere",
+          "Das Klischee stammt aus Deutschland selbst",
+        ],
+        answer: 0,
+        explain: "„Das hast du ja toll gemacht“ örneği bunu gösteriyor.",
+      },
+      {
+        text: "Was passiert bei der Übersetzung ins Englische?",
+        options: [
+          "Die Werkzeuge gehen verloren",
+          "Der Humor wird verstärkt",
+          "Die Pointen werden klarer",
+        ],
+        answer: 0,
+        explain: "„Wer Deutsche auf Englisch erlebt, erlebt sie ohne ihre Werkzeuge.“",
+      },
+      {
+        text: "Was räumt sie am Ende ein?",
+        options: [
+          "Eine schwer erklärbare Toleranz für Kalauer",
+          "Dass das Klischee ganz stimmt",
+          "Dass Ironie hier fehlt",
+        ],
+        answer: 0,
+        explain: "Kendi de tam açıklayamadığını söylüyor — dürüst bir sınır.",
+      },
+    ],
+  },
+  {
+    id: "c1-l12",
+    level: "C1",
+    skill: "listening",
+    title: "Die Preisrede",
+    genre: "Konuşma",
+    intro:
+      "Hikâyenin sonu: Miriam çeviri ödülü alıyor. Bir teşekkür konuşmasının nasıl kurulduğunu ve nerede risk aldığını dinle.",
+    gloss: [
+      { de: "die Preisrede", tr: "ödül konuşması" },
+      { de: "die Jury", tr: "jüri" },
+      { de: "verdanken", tr: "borçlu olmak" },
+      { de: "die Sichtbarkeit", tr: "görünürlük" },
+      { de: "die Zumutung", tr: "külfet, katlanılası şey" },
+      { de: "der Anlass", tr: "vesile" },
+      { de: "beharren", tr: "ısrar etmek" },
+      { de: "die Genugtuung", tr: "tatmin, hakkın teslimi" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Miriam",
+        text: "Vielen Dank. Ich habe lange überlegt, ob ich diesen Preis annehmen kann, und ich will offen sagen, warum.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Vor einem Jahr wurde mir öffentlich vorgeworfen, dieses Buch nicht übersetzen zu dürfen. Ein Teil dieser Kritik war unfair, und ein Teil war richtig. Wenn ich heute hier stehe und nur den fairen Teil erwähne, mache ich es mir zu leicht.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Der richtige Teil lautete: Ich habe an drei Stellen geglättet, weil ich dem deutschen Publikum weniger zugetraut habe, als es verdient. Das ist ein Fehler, den man nicht mit Können erklären kann, sondern nur mit Vorsicht. Ich habe ihn korrigiert, und die Liste der Korrekturen ist veröffentlicht. Ich sage das hier, weil ein Preis der schlechteste Moment ist, um so etwas zu verschweigen.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Der unfaire Teil lautete: Wer bestimmte Erfahrungen nicht gemacht hat, soll schweigen. Dem widerspreche ich weiterhin. Übersetzung ist keine Vertretung. Sie ist der Versuch, jemanden hörbar zu machen, der ohne sie nicht gehört würde — und dieser Versuch ist immer ein Eingriff. Wer das nicht aushält, sollte keine Bücher übersetzen. Wer es nicht bemerkt, erst recht nicht.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Ich danke der Jury dafür, dass sie ein Buch ausgezeichnet hat, über das gestritten wurde. Das ist mutiger, als es klingt: Es wäre leichter gewesen, einen unstrittigen Titel zu wählen.",
+      },
+      {
+        speaker: "Miriam",
+        text: "Und ich danke einer Person, die heute nicht hier sein kann, weil sie 2019 gestorben ist. Sie hat den Roman geschrieben, für den ich hier stehe. Der Preis gehört ihr. Ich habe ihn nur ins Deutsche gebracht.",
+      },
+    ],
+    questions: [
+      {
+        text: "Warum hat Miriam überlegt, ob sie den Preis annehmen kann?",
+        options: [
+          "Wegen der öffentlichen Kritik am Buch",
+          "Wegen des Preisgeldes",
+          "Wegen der Jury",
+        ],
+        answer: 0,
+        explain: "Konuşmayı bu soruyla açıyor.",
+      },
+      {
+        text: "Wie teilt sie die Kritik auf?",
+        options: [
+          "In einen fairen und einen unfairen Teil",
+          "In eine literarische und eine politische",
+          "In eine alte und eine neue",
+        ],
+        answer: 0,
+        explain: "Ve yalnızca birine değinmenin işi kolaylaştırmak olacağını söylüyor.",
+      },
+      {
+        text: "Womit erklärt sie ihren Fehler?",
+        options: [
+          "Mit Vorsicht, nicht mit fehlendem Können",
+          "Mit Zeitdruck",
+          "Mit dem Verlag",
+        ],
+        answer: 0,
+        explain: "Alman okura hak ettiğinden azını yakıştırmış.",
+      },
+      {
+        text: "Warum sagt sie das ausgerechnet bei der Preisverleihung?",
+        options: [
+          "Ein Preis ist der schlechteste Moment, so etwas zu verschweigen",
+          "Die Jury hat es verlangt",
+          "Der Verlag wollte es",
+        ],
+        answer: 0,
+        explain: "Cümleyi kendisi böyle gerekçelendiriyor.",
+      },
+      {
+        text: "Woran hält sie fest?",
+        options: [
+          "Übersetzung ist keine Vertretung",
+          "Kritik schadet der Literatur",
+          "Nur Muttersprachler sollten übersetzen",
+        ],
+        answer: 0,
+        explain: "Adaletsiz bulduğu bölüme karşı çıkışını sürdürüyor.",
+      },
+      {
+        text: "Wem widmet sie den Preis?",
+        options: [
+          "Der 2019 gestorbenen Autorin",
+          "Der Jury",
+          "Ihrem Verlag",
+        ],
+        answer: 0,
+        explain: "„Der Preis gehört ihr. Ich habe ihn nur ins Deutsche gebracht.“",
+      },
+    ],
+  },
+
+  {
     id: "c1-w1",
     level: "C1",
     skill: "writing",
@@ -1214,6 +2378,262 @@ export const c1: SkillExercise[] = [
           { de: "über eine positive Rückmeldung würde ich mich sehr freuen", tr: "olumlu bir dönüş beni çok sevindirir" },
         ],
         sample: "Sehr geehrte Damen und Herren,\n\nmit großem Interesse habe ich Ihre Ausschreibung gelesen und bewerbe mich hiermit um eines der Teilstipendien für ein Austauschsemester zum kommenden Wintersemester.\n\nIch studiere im fünften Semester Wirtschaftsinformatik an der Universität Istanbul und beschäftige mich in meiner Studienarbeit mit dem Einsatz künstlicher Intelligenz in der öffentlichen Verwaltung. Mein Studienvorhaben besteht darin, an der Universität Leipzig die dort angebotenen Module zur Datenethik zu belegen – ein Schwerpunkt, den es in dieser Form an meiner Heimatuniversität nicht gibt. Ein Semester in Deutschland würde daher nicht nur wesentlich zur Vertiefung meiner sprachlichen Kompetenzen beitragen, sondern meinem Studienprofil eine fachliche Richtung geben, die mir sonst verschlossen bliebe.\n\nMeine Deutschkenntnisse habe ich zuletzt durch das Goethe-Zertifikat B2 mit der Note „sehr gut“ nachgewiesen; derzeit bereite ich mich auf die C1-Prüfung vor. Darüber hinaus bringe ich Erfahrung in der Beratung mit: Seit zwei Jahren betreue ich an meiner Fakultät Erstsemester als Mentorin. Umso mehr freue ich mich auf die Möglichkeit, nach meiner Rückkehr ehrenamtlich in der Studienberatung Ihrer Stiftung mitzuwirken und meine Erfahrungen an künftige Bewerberinnen und Bewerber weiterzugeben.\n\nFür ein persönliches Gespräch stehe ich jederzeit zur Verfügung. Über eine positive Rückmeldung würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nZeynep Kaya",
+      },
+    ],
+  },
+  {
+    id: "c1-w5",
+    level: "C1",
+    skill: "writing",
+    title: "Ein Angebot schreiben",
+    genre: "İş yazışması",
+    intro:
+      "Serbest çalışan olarak teklif yazmak: fiyatı savunmak değil, kapsamı tanımlamak. Asıl beceri neyin dahil olmadığını yazmaktır.",
+    gloss: [
+      { de: "das Angebot", tr: "teklif" },
+      { de: "der Leistungsumfang", tr: "kapsam" },
+      { de: "die Korrekturschleife", tr: "revizyon turu" },
+      { de: "die Nutzungsrechte", tr: "kullanım hakları" },
+      { de: "die Gültigkeit", tr: "geçerlilik" },
+      { de: "zuzüglich", tr: "hariç, ilaveten" },
+      { de: "der Zeitplan", tr: "zaman planı" },
+      { de: "die Mitwirkung", tr: "katkı, iş birliği (müşterinin)" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Teklif iki revizyon turunu kapsar.",
+        answer: "Das Angebot umfasst zwei Korrekturschleifen.",
+        hint: "„umfassen“ Akkusativ ister; kapsamı tanımlayan standart fiil.",
+      },
+      {
+        kind: "build",
+        tr: "Fiyatlara KDV dahil değildir.",
+        answer: "Die Preise verstehen sich zuzüglich Mehrwertsteuer.",
+        hint: "„sich verstehen zuzüglich“ ticari yazışmanın kalıbıdır.",
+      },
+      {
+        kind: "build",
+        tr: "Bu teklif dört hafta geçerlidir.",
+        answer: "Dieses Angebot ist vier Wochen gültig.",
+        hint: "Süre Akkusativ olarak verilir: vier Wochen.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir müşteriye teklif yaz (çeviri, tasarım, danışmanlık — kendin seç). Altı noktaya değin: neyi kapsadığı, neyi kapsamadığı, zaman planı ve müşterinin ne zaman ne yapması gerektiği, fiyat ve ödeme koşulları, kullanım hakları, teklifin geçerlilik süresi. Fiyatı savunma; kapsamı tanımla.",
+        checklist: [
+          "Kapsamı somut kalemlerle yazdın mı?",
+          "Kapsam dışını açıkça belirttin mi?",
+          "Müşteriden beklenen katkıyı (tarih dahil) yazdın mı?",
+          "Ödeme koşulları ve KDV net mi?",
+          "Kullanım haklarını tanımladın mı?",
+          "Geçerlilik süresi var mı?",
+        ],
+        minWords: 150,
+        phrases: [
+          { de: "vielen Dank für Ihre Anfrage vom …", tr: "…tarihli talebiniz için teşekkürler." },
+          { de: "Das Angebot umfasst: …", tr: "Teklif şunları kapsar: …" },
+          { de: "Nicht enthalten sind …", tr: "Şunlar dahil değildir: …" },
+          { de: "Voraussetzung für den Zeitplan ist, dass …", tr: "Zaman planının koşulu, …" },
+          { de: "Die Preise verstehen sich zuzüglich …", tr: "Fiyatlara … dahil değildir." },
+          { de: "Dieses Angebot ist … gültig.", tr: "Bu teklif … geçerlidir." },
+        ],
+        sample:
+          "Sehr geehrte Frau Lorenz,\n\nvielen Dank für Ihre Anfrage vom 12. April. Gern unterbreite ich Ihnen folgendes Angebot.\n\nLeistungsumfang: Übersetzung Ihres Geschäftsberichts (ca. 78 Normseiten) aus dem Deutschen ins Türkische, einschließlich Terminologieliste und zwei Korrekturschleifen nach Ihrer Rückmeldung.\n\nNicht enthalten sind: Satz und Layout, die Übersetzung der Grafiken sowie kurzfristige Ergänzungen nach Abgabe. Diese rechne ich nach Aufwand ab (75 Euro pro Stunde).\n\nZeitplan: Lieferung sechs Wochen nach Auftragserteilung. Voraussetzung dafür ist, dass mir die finale Fassung bis zum 2. Mai vorliegt und Rückfragen innerhalb von drei Arbeitstagen beantwortet werden. Bei späterem Erhalt verschiebt sich der Termin entsprechend.\n\nHonorar: 26 Euro pro Normseite, insgesamt rund 2.030 Euro. Die Preise verstehen sich zuzüglich Mehrwertsteuer. Zahlbar sind 50 Prozent bei Auftragserteilung, der Rest 14 Tage nach Lieferung.\n\nNutzungsrechte: Sie erhalten das unbeschränkte Recht zur Nutzung der Übersetzung für Ihre Unternehmenskommunikation. Eine Weitergabe an Dritte zur Weiterverwertung ist gesondert zu vereinbaren.\n\nDieses Angebot ist vier Wochen gültig. Für Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\nMiriam Falk",
+      },
+    ],
+  },
+  {
+    id: "c1-w6",
+    level: "C1",
+    skill: "writing",
+    title: "Stellungnahme mit Daten",
+    genre: "Sınav formatı",
+    intro:
+      "C1 yazma görevinin en zoru: bir veriyi doğru okuyup üzerine görüş kurmak. Veriyi abartmadan, ama arkasına da saklanmadan.",
+    gloss: [
+      { de: "die Erhebung", tr: "araştırma, veri toplama" },
+      { de: "der Anteil", tr: "oran" },
+      { de: "hervorgehen aus", tr: "…den anlaşılmak" },
+      { de: "relativieren", tr: "görecelileştirmek" },
+      { de: "die Aussagekraft", tr: "açıklayıcılık gücü" },
+      { de: "zurückhaltend", tr: "temkinli" },
+      { de: "die Schlussfolgerung", tr: "çıkarım" },
+      { de: "überinterpretieren", tr: "aşırı yorumlamak" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Araştırmadan, oranın %31'e yükseldiği anlaşılıyor.",
+        answer: "Aus der Erhebung geht hervor, dass der Anteil auf 31 Prozent gestiegen ist.",
+        hint: "„hervorgehen aus“ + dass yan cümlesi; fiil sonda.",
+      },
+      {
+        kind: "build",
+        tr: "Bu rakam ilk bakışta göründüğünden daha az şey söylüyor.",
+        answer: "Diese Zahl sagt weniger aus, als es auf den ersten Blick scheint.",
+        hint: "„als“ karşılaştırma cümlesinde fiil sonda.",
+      },
+      {
+        kind: "build",
+        tr: "Buna rağmen eğilim göz ardı edilemez.",
+        answer: "Dennoch lässt sich die Tendenz nicht ignorieren.",
+        hint: "„sich lassen“ + mastar; „dennoch“ başta olunca fiil ikinci sırada.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Şu veriye dayanarak bir görüş yazısı yaz: „Bir ülkede 18–29 yaş arasında haberden aktif olarak kaçınanların oranı on yılda %16'dan %31'e çıktı. Aynı dönemde bu grubun sosyal medyada haber tüketimi iki katına çıktı.“ Beş noktaya değin: veriyi doğru aktar, en az bir alternatif açıklama sun, verinin ne söylemediğini belirt, kendi değerlendirmen, somut bir öneri.",
+        checklist: [
+          "Veriyi çarpıtmadan aktardın mı?",
+          "En az bir alternatif açıklama sundun mu?",
+          "Verinin sınırını (ne söylemediğini) yazdın mı?",
+          "Kendi değerlendirmen veriden ayırt edilebiliyor mu?",
+          "Önerin veriden çıkıyor mu?",
+          "Aşırı yorumdan kaçındın mı?",
+        ],
+        minWords: 180,
+        phrases: [
+          { de: "Aus der Erhebung geht hervor, dass …", tr: "Araştırmadan … anlaşılıyor." },
+          { de: "Bemerkenswert ist dabei weniger …, sondern …", tr: "Burada dikkat çeken … değil, …" },
+          { de: "Denkbar wäre allerdings auch, dass …", tr: "Ancak … olması da düşünülebilir." },
+          { de: "Was die Zahlen nicht zeigen, ist …", tr: "Rakamların göstermediği şey …" },
+          { de: "Ich halte es daher für verfehlt, …", tr: "Bu nedenle …'i yanlış buluyorum." },
+          { de: "Sinnvoller erscheint mir …", tr: "Bana daha mantıklı gelen …" },
+        ],
+        sample:
+          "Aus der Erhebung geht hervor, dass der Anteil junger Erwachsener, die Nachrichten aktiv meiden, binnen zehn Jahren von 16 auf 31 Prozent gestiegen ist. Bemerkenswert ist dabei weniger die Höhe als die Gleichzeitigkeit: Im selben Zeitraum hat sich der Nachrichtenkonsum dieser Gruppe über soziale Medien verdoppelt.\n\nDie naheliegende Deutung — junge Menschen interessierten sich nicht mehr für Politik — lässt sich damit kaum halten. Wer Nachrichten meidet und gleichzeitig doppelt so viele über andere Kanäle aufnimmt, wendet sich nicht vom Thema ab, sondern vom Format.\n\nDenkbar wäre allerdings auch, dass sich schlicht die Definition verschoben hat. Wer Inhalte auf einer Plattform sieht, bezeichnet das möglicherweise selbst nicht als „Nachrichten“ und antwortet im Fragebogen entsprechend. Ein Teil des Anstiegs könnte damit ein Messeffekt sein.\n\nWas die Zahlen nicht zeigen, ist die Richtung. Sie sagen nichts darüber, ob das Format die Abwendung verursacht oder ob Menschen, die sich ohnehin belastet fühlen, das kürzere Format wählen.\n\nIch halte es daher für verfehlt, aus diesen Daten eine Krise des Journalismus abzuleiten — und ebenso verfehlt, sie zu beruhigen. Sinnvoller erscheint mir, die Erhebung um eine einfache Frage zu erweitern: Was genau meiden die Befragten? Solange wir das nicht wissen, diskutieren wir über eine Zahl, deren Gegenstand unklar ist.",
+      },
+    ],
+  },
+  {
+    id: "c1-w7",
+    level: "C1",
+    skill: "writing",
+    title: "Eine Rezension schreiben",
+    genre: "Eleştiri",
+    intro:
+      "Eleştiri, beğeni bildirmek değildir: bir ölçüt kurup metni ona göre tartmaktır. Ölçütünü görünür kılacaksın.",
+    gloss: [
+      { de: "die Rezension", tr: "eleştiri" },
+      { de: "der Maßstab", tr: "ölçüt" },
+      { de: "die Erzählperspektive", tr: "anlatıcı bakışı" },
+      { de: "der Aufbau", tr: "kurgu, yapı" },
+      { de: "überzeugen", tr: "ikna etmek" },
+      { de: "die Schwäche", tr: "zayıflık" },
+      { de: "streckenweise", tr: "yer yer" },
+      { de: "das Urteil", tr: "hüküm, karar" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Kitap kendine yüksek bir ölçüt koyuyor.",
+        answer: "Das Buch legt sich selbst einen hohen Maßstab an.",
+        hint: "„sich einen Maßstab anlegen“ — refleksif Dativ.",
+      },
+      {
+        kind: "build",
+        tr: "Anlatıcı bakışı yer yer tutarsız.",
+        answer: "Die Erzählperspektive ist streckenweise inkonsequent.",
+        hint: "„streckenweise“ eleştiri dilinin sık kullandığı zarftır.",
+      },
+      {
+        kind: "build",
+        tr: "Bu itiraza rağmen kitabı öneriyorum.",
+        answer: "Trotz dieses Einwands empfehle ich das Buch.",
+        hint: "„trotz“ + Genitiv; başta olunca fiil ikinci sırada.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Okuduğun bir kitap, izlediğin bir film ya da dizi hakkında eleştiri yaz. Beş noktaya değin: eserin ne yapmaya çalıştığı (ölçütün), bunu nerede başardığı, nerede başaramadığı — somut bir örnekle, kimin için olduğu, kendi hükmün. Özet yazma; hüküm ile gerekçe arasında bağ kur.",
+        checklist: [
+          "Ölçütünü görünür kıldın mı (eser ne yapmaya çalışıyor)?",
+          "En az bir somut örnek verdin mi?",
+          "Zayıf yönü de yazdın mı?",
+          "Kimin için olduğunu söyledin mi?",
+          "Hüküm gerekçelerden çıkıyor mu?",
+          "Olay örgüsünü ele vermekten kaçındın mı?",
+        ],
+        minWords: 170,
+        phrases: [
+          { de: "… will mehr sein als …", tr: "… şundan fazlası olmak istiyor: …" },
+          { de: "Das gelingt vor allem dort, wo …", tr: "Bu özellikle … olduğu yerde başarılı." },
+          { de: "Schwächer wird der Text, sobald …", tr: "Metin, … olduğu anda zayıflıyor." },
+          { de: "Ein Beispiel: …", tr: "Bir örnek: …" },
+          { de: "Wer … erwartet, wird enttäuscht.", tr: "… bekleyen hayal kırıklığına uğrar." },
+          { de: "Trotz dieses Einwands …", tr: "Bu itiraza rağmen …" },
+        ],
+        sample:
+          "Dieser Roman will mehr sein als eine Familiengeschichte: Er will zeigen, wie politische Gewalt in eine Sprache eindringt, die davon gar nicht sprechen will. An diesem Maßstab muss er sich messen lassen.\n\nDas gelingt vor allem dort, wo die Erzählerin schweigt. Die stärksten Passagen sind die, in denen zwei Figuren über etwas völlig Nebensächliches reden — über eine kaputte Waschmaschine, über den Preis von Tomaten — und der Leser mitliest, was nicht gesagt wird. Ein Beispiel: das Kapitel, in dem der Vater dreimal denselben Satz über den Weg zur Arbeit sagt. Nach dem dritten Mal ist klar, worüber er nicht spricht, ohne dass es je benannt wird.\n\nSchwächer wird der Text, sobald er dem eigenen Verfahren misstraut. Im letzten Drittel erklärt eine Nebenfigur auf zwei Seiten, was der Roman zuvor über zweihundert Seiten gezeigt hat. Die Erzählperspektive ist hier streckenweise inkonsequent — plötzlich weiß die Erzählerin Dinge, die sie vorher nicht wissen konnte.\n\nWer eine klare Auflösung erwartet, wird enttäuscht; das Buch verweigert sie bewusst und, wie ich finde, zu Recht.\n\nTrotz dieses Einwands empfehle ich den Roman — vor allem jenen, die glauben, über dieses Thema sei alles gesagt. Es ist nicht alles gesagt. Es ist nur meistens zu laut gesagt worden.",
+      },
+    ],
+  },
+  {
+    id: "c1-w8",
+    level: "C1",
+    skill: "writing",
+    title: "Die Dankesrede",
+    genre: "Konuşma metni",
+    intro:
+      "Hikâyenin son parçası: Miriam'ın yerine geçip ödül konuşmasını yazacaksın. C1'de asıl sınav, teşekkürün içine bir düşünce ve bir risk koymaktır.",
+    gloss: [
+      { de: "die Dankesrede", tr: "teşekkür konuşması" },
+      { de: "die Selbstgerechtigkeit", tr: "kendini haklı görme" },
+      { de: "einräumen", tr: "kabul etmek" },
+      { de: "verschweigen", tr: "gizlemek, söylememek" },
+      { de: "sich rechtfertigen", tr: "kendini savunmak" },
+      { de: "der Anlass", tr: "vesile" },
+      { de: "widmen", tr: "ithaf etmek" },
+      { de: "beharren auf", tr: "…de ısrar etmek" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bir ödül, bunu susmak için en kötü andır.",
+        answer: "Ein Preis ist der schlechteste Moment, um so etwas zu verschweigen.",
+        hint: "„um … zu“ mastar cümlesi.",
+      },
+      {
+        kind: "build",
+        tr: "Eleştirinin bir kısmı haklıydı, bir kısmı değil.",
+        answer: "Ein Teil der Kritik war berechtigt, ein Teil nicht.",
+        hint: "İkinci bölümde fiil tekrar edilmez — konuşma dilinde doğal olan budur.",
+      },
+      {
+        kind: "build",
+        tr: "Bu ödülü, bugün burada olamayan birine ithaf ediyorum.",
+        answer: "Ich widme diesen Preis jemandem, der heute nicht hier sein kann.",
+        hint: "„widmen“ Dativ ister: jemandem.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir ödül, mezuniyet ya da veda konuşması yaz (konuyu kendin seç). Beş noktaya değin: neden bu konuşmanın kolay olmadığı, hakkını teslim ettiğin bir eleştiri, ısrar ettiğin bir nokta, konuyu kendinden büyük bir şeye bağlaman, bir kişiye teşekkür. Kendini haklı çıkarma; ama her şeye de boyun eğme.",
+        checklist: [
+          "Konuşma bir zorlukla açılıyor mu (klişe teşekkürle değil)?",
+          "Gerçekten bir şeyi kabul ettin mi?",
+          "Bir noktada ısrar ettin mi?",
+          "Konu kendinden büyük bir şeye bağlandı mı?",
+          "Somut bir kişiye teşekkür var mı?",
+          "Ton ölçülü mü (ne mağdur ne kibirli)?",
+        ],
+        minWords: 170,
+        phrases: [
+          { de: "Ich habe lange überlegt, ob …", tr: "… olup olmayacağını uzun düşündüm." },
+          { de: "Ein Teil der Kritik war berechtigt.", tr: "Eleştirinin bir kısmı haklıydı." },
+          { de: "Daran halte ich fest.", tr: "Bunda ısrarlıyım." },
+          { de: "Es geht dabei nicht um mich, sondern um …", tr: "Mesele ben değilim, …" },
+          { de: "Ich danke … dafür, dass …", tr: "…'e … için teşekkür ederim." },
+          { de: "Ich widme diesen Preis …", tr: "Bu ödülü …'e ithaf ediyorum." },
+        ],
+        sample:
+          "Vielen Dank. Ich habe lange überlegt, ob ich diesen Preis annehmen kann, und ich möchte offen sagen, warum.\n\nVor einem Jahr wurde öffentlich bestritten, dass ich dieses Buch übersetzen durfte. Ein Teil der Kritik war berechtigt, ein Teil nicht. Wenn ich heute nur den unberechtigten Teil erwähne, mache ich es mir zu leicht — und ein Preis ist der schlechteste Moment, um so etwas zu verschweigen.\n\nBerechtigt war: Ich habe an drei Stellen geglättet, weil ich den Leserinnen weniger zugetraut habe, als sie verdienen. Das ist kein Fehler des Könnens, sondern der Vorsicht. Er ist korrigiert, die Liste ist veröffentlicht.\n\nUnberechtigt war der Satz, wer bestimmte Erfahrungen nicht gemacht habe, solle schweigen. Daran halte ich fest: Übersetzung ist keine Vertretung. Sie macht jemanden hörbar, der sonst nicht gehört würde, und sie ist dabei immer ein Eingriff. Wer das nicht aushält, sollte nicht übersetzen — wer es nicht bemerkt, erst recht nicht.\n\nEs geht dabei nicht um mich, sondern um die Frage, welche Bücher überhaupt bei uns ankommen. In diesem Jahr sind aus dem gesamten arabischen Sprachraum weniger Romane erschienen als aus Schweden.\n\nIch danke der Jury dafür, dass sie ein umstrittenes Buch ausgezeichnet hat. Und ich widme diesen Preis der Autorin, die 2019 gestorben ist. Er gehört ihr. Ich habe ihn nur ins Deutsche gebracht.",
       },
     ],
   },
