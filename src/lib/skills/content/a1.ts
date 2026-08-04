@@ -302,6 +302,323 @@ export const a1: SkillExercise[] = [
     ],
   },
 
+  // ── Hikâye dizisi: Amir yeni taşındı, komşusu Frau Wagner ve kapıcı Herr Klose
+  //    A1'in yeni alıştırmalarında bu üç kişi tekrar tekrar karşına çıkar.
+  {
+    id: "a1-r7",
+    level: "A1",
+    skill: "reading",
+    title: "Der erste Tag",
+    genre: "Mesaj",
+    intro:
+      "Amir yeni şehrine taşındı ve kardeşine yazıyor. Bu, A1'de takip edeceğin hikâyenin ilk bölümü.",
+    gloss: [
+      { de: "umziehen", tr: "taşınmak" },
+      { de: "der Karton", tr: "koli" },
+      { de: "das Bett", tr: "yatak" },
+      { de: "der Nachbar / die Nachbarin", tr: "komşu" },
+      { de: "klingeln", tr: "zile basmak" },
+      { de: "der Kuchen", tr: "kek, pasta" },
+      { de: "müde", tr: "yorgun" },
+    ],
+    minutes: 3,
+    text:
+      "Hallo Karim!\n\nIch bin da. Die Wohnung ist klein, aber hell. Ich habe noch keinen Tisch und kein Sofa — nur zwölf Kartons und ein Bett.\n\nHeute Morgen hat es geklingelt. Eine Nachbarin, Frau Wagner. Sie wohnt unter mir. Sie hatte einen Kuchen dabei und hat gesagt: „Willkommen im Haus.“ Ich war so überrascht, ich habe nur „danke“ gesagt.\n\nMorgen gehe ich zum Bürgeramt. Ich muss mich anmelden.\n\nIch bin sehr müde, aber es geht mir gut.\n\nDein Amir",
+    questions: [
+      {
+        text: "Wie ist die Wohnung?",
+        options: ["Klein, aber hell", "Groß und dunkel", "Klein und dunkel"],
+        answer: 0,
+        explain: "„Die Wohnung ist klein, aber hell.“ — küçük ama aydınlık.",
+      },
+      {
+        text: "Was hat Amir noch nicht?",
+        options: ["Einen Tisch und ein Sofa", "Ein Bett", "Kartons"],
+        answer: 0,
+        explain: "„Ich habe noch keinen Tisch und kein Sofa“ — yatağı ve kolileri var.",
+      },
+      {
+        text: "Wer ist Frau Wagner?",
+        options: ["Die Nachbarin unter ihm", "Seine Schwester", "Eine Kollegin"],
+        answer: 0,
+        explain: "„Eine Nachbarin, Frau Wagner. Sie wohnt unter mir.“",
+      },
+      {
+        text: "Was macht Amir morgen?",
+        options: ["Er geht zum Bürgeramt", "Er kauft ein Sofa", "Er besucht Frau Wagner"],
+        answer: 0,
+        explain: "„Morgen gehe ich zum Bürgeramt. Ich muss mich anmelden.“",
+      },
+    ],
+  },
+  {
+    id: "a1-r8",
+    level: "A1",
+    skill: "reading",
+    title: "Ihr Termin beim Bürgeramt",
+    genre: "Resmî yazı",
+    intro:
+      "Almanya'ya taşınan herkesin ilk yazısı: ikamet kaydı randevu onayı. Amir'in aldığı belgeyi okuyacaksın.",
+    gloss: [
+      { de: "der Termin", tr: "randevu" },
+      { de: "die Anmeldung", tr: "ikamet kaydı" },
+      { de: "der Ausweis", tr: "kimlik" },
+      { de: "der Mietvertrag", tr: "kira sözleşmesi" },
+      { de: "mitbringen", tr: "yanında getirmek" },
+      { de: "pünktlich", tr: "dakik, zamanında" },
+      { de: "absagen", tr: "iptal etmek" },
+    ],
+    minutes: 3,
+    text:
+      "Stadt Bremen — Bürgeramt Mitte\n\nIhr Termin: Dienstag, 14. Mai, 10:20 Uhr\nZimmer 214, 2. Stock\nGrund: Anmeldung\n\nBitte bringen Sie mit:\n• Ihren Pass oder Personalausweis\n• Den Mietvertrag\n• Das Formular „Wohnungsgeberbestätigung“ von Ihrem Vermieter\n\nBitte kommen Sie pünktlich. Nach 10 Minuten ist Ihr Termin nicht mehr gültig.\n\nSie können nicht kommen? Bitte sagen Sie online ab: www.bremen.de/termine\n\nDie Anmeldung ist kostenlos.",
+    questions: [
+      {
+        text: "Wann ist der Termin?",
+        options: ["Am Dienstag um 10:20 Uhr", "Am Dienstag um 14 Uhr", "Am 10. Mai"],
+        answer: 0,
+        explain: "„Dienstag, 14. Mai, 10:20 Uhr“ — 14 tarih, 10:20 saat.",
+      },
+      {
+        text: "Was muss Amir nicht mitbringen?",
+        options: ["Ein Foto", "Den Mietvertrag", "Den Pass"],
+        answer: 0,
+        explain: "Listede pasaport, kira sözleşmesi ve ev sahibi belgesi var — fotoğraf yok.",
+      },
+      {
+        text: "Was passiert, wenn er 15 Minuten zu spät kommt?",
+        options: [
+          "Der Termin ist nicht mehr gültig",
+          "Er muss 10 Euro zahlen",
+          "Er wartet eine Stunde",
+        ],
+        answer: 0,
+        explain: "„Nach 10 Minuten ist Ihr Termin nicht mehr gültig.“",
+      },
+      {
+        text: "Richtig oder falsch? Die Anmeldung kostet Geld.",
+        options: ["Richtig", "Falsch"],
+        answer: 1,
+        explain: "Yanlış: son satır „Die Anmeldung ist kostenlos.“",
+      },
+    ],
+  },
+  {
+    id: "a1-r9",
+    level: "A1",
+    skill: "reading",
+    title: "Flohmarkt im Stadtpark",
+    genre: "Duyuru",
+    intro:
+      "Almanya'nın en sevilen hafta sonu geleneklerinden biri: bit pazarı. Parktaki duyuruyu okuyacaksın.",
+    gloss: [
+      { de: "der Flohmarkt", tr: "bit pazarı" },
+      { de: "verkaufen", tr: "satmak" },
+      { de: "der Stand", tr: "tezgâh" },
+      { de: "anmelden", tr: "kaydettirmek" },
+      { de: "gebraucht", tr: "kullanılmış, ikinci el" },
+      { de: "die Kasse", tr: "kasa" },
+      { de: "bei Regen", tr: "yağmur olursa" },
+    ],
+    minutes: 3,
+    text:
+      "FLOHMARKT IM STADTPARK\nSamstag, 8. Juni, 9–16 Uhr\n\nAlles ist gebraucht: Bücher, Kleidung, Fahrräder, Spielzeug, Geschirr.\n\nSie möchten selbst verkaufen? Ein Stand kostet 15 Euro (3 Meter). Bitte bis Mittwoch anmelden: flohmarkt@stadtpark-verein.de\n\nWichtig: Kein Verkauf von neuen Waren. Bitte bringen Sie Ihren eigenen Tisch mit.\n\nFür Kinder unter 14 ist der Stand kostenlos.\n\nEssen und Kaffee gibt es am Eingang Nord.\n\nBei Regen: Der Flohmarkt ist am Sonntag.",
+    questions: [
+      {
+        text: "Was kann man dort kaufen?",
+        options: ["Gebrauchte Sachen", "Nur neue Kleidung", "Nur Bücher"],
+        answer: 0,
+        explain: "„Alles ist gebraucht: Bücher, Kleidung, Fahrräder, Spielzeug, Geschirr.“",
+      },
+      {
+        text: "Was kostet ein Stand für ein Kind von 12 Jahren?",
+        options: ["Nichts", "15 Euro", "3 Euro"],
+        answer: 0,
+        explain: "„Für Kinder unter 14 ist der Stand kostenlos.“",
+      },
+      {
+        text: "Was muss man selbst mitbringen?",
+        options: ["Einen Tisch", "Einen Stuhl", "Eine Kasse"],
+        answer: 0,
+        explain: "„Bitte bringen Sie Ihren eigenen Tisch mit.“",
+      },
+      {
+        text: "Was passiert bei Regen?",
+        options: [
+          "Der Flohmarkt ist am Sonntag",
+          "Der Flohmarkt fällt aus",
+          "Der Flohmarkt ist in der Halle",
+        ],
+        answer: 0,
+        explain: "Son satır: „Bei Regen: Der Flohmarkt ist am Sonntag.“",
+      },
+    ],
+  },
+  {
+    id: "a1-r10",
+    level: "A1",
+    skill: "reading",
+    title: "Vier Anzeigen — wer passt?",
+    genre: "Sınav formatı",
+    intro:
+      "Goethe A1 sınavındaki klasik görev: kısa ilanları okuyup kimin neye ihtiyacı olduğunu eşleştirmek. Önce ilanları oku, sonra soruları çöz.",
+    gloss: [
+      { de: "die Anzeige", tr: "ilan" },
+      { de: "suchen", tr: "aramak" },
+      { de: "der Unterricht", tr: "ders" },
+      { de: "abholen", tr: "gidip almak" },
+      { de: "die Stunde", tr: "saat, ders saati" },
+      { de: "günstig", tr: "uygun fiyatlı" },
+      { de: "melden", tr: "haber vermek, ulaşmak" },
+    ],
+    minutes: 4,
+    text:
+      "A) Deutsch lernen? Ich bin Studentin und gebe Unterricht. 12 Euro pro Stunde. Nur am Wochenende. Tel. 0176 555 12 12\n\nB) Fahrrad zu verkaufen, blau, 3 Jahre alt, fährt gut. 60 Euro. Nur Abholung, kein Versand. Tel. 0171 888 40 40\n\nC) Wir suchen eine Person für den Garten. Samstag, 4 Stunden, 15 Euro pro Stunde. Bitte bei Familie Roth melden: 0421 55 66 77\n\nD) Kinderbetreuung: Ich passe montags und mittwochs nachmittags auf Ihr Kind auf. Ich habe Erfahrung. Tel. 0160 222 33 44",
+    questions: [
+      {
+        text: "Selin arbeitet Montag bis Freitag und will Deutsch lernen. Welche Anzeige passt?",
+        options: ["A", "C", "D"],
+        answer: 0,
+        explain:
+          "A ilanı Almanca dersi veriyor ve „nur am Wochenende“ — Selin hafta içi çalıştığı için tam uygun.",
+      },
+      {
+        text: "Herr Yildiz möchte am Samstag Geld verdienen. Welche Anzeige passt?",
+        options: ["C", "B", "A"],
+        answer: 0,
+        explain: "C ilanı cumartesi 4 saatlik bahçe işi için kişi arıyor, saati 15 euro.",
+      },
+      {
+        text: "Anna hat kein Auto. Kann sie das Fahrrad aus Anzeige B kaufen?",
+        options: [
+          "Ja, aber sie muss es selbst abholen",
+          "Ja, es wird geschickt",
+          "Nein, es ist verkauft",
+        ],
+        answer: 0,
+        explain: "„Nur Abholung, kein Versand“ — kargo yok, gelip almak gerekiyor.",
+      },
+      {
+        text: "Familie Braun braucht mittwochs jemanden für ihren Sohn. Welche Nummer ruft sie an?",
+        options: ["0160 222 33 44", "0421 55 66 77", "0176 555 12 12"],
+        answer: 0,
+        explain: "D ilanı pazartesi ve çarşamba öğleden sonra çocuk bakıyor.",
+      },
+    ],
+  },
+  {
+    id: "a1-r11",
+    level: "A1",
+    skill: "reading",
+    title: "Ein Zettel von Frau Wagner",
+    genre: "Not",
+    intro:
+      "Hikâyenin ikinci bölümü: Amir eve gelince kapısında bir not buluyor.",
+    gloss: [
+      { de: "der Zettel", tr: "not kâğıdı" },
+      { de: "das Paket", tr: "paket, kargo" },
+      { de: "annehmen", tr: "teslim almak" },
+      { de: "vorbeikommen", tr: "uğramak" },
+      { de: "die Tasse", tr: "fincan" },
+      { de: "leihen", tr: "ödünç vermek" },
+      { de: "der Schlüssel", tr: "anahtar" },
+    ],
+    minutes: 3,
+    text:
+      "Lieber Herr Amir,\n\nheute war der Postbote da. Sie waren nicht zu Hause, also habe ich Ihr Paket angenommen. Es ist bei mir.\n\nIch bin ab 17 Uhr da. Klingeln Sie einfach — zweimal, dann weiß ich, dass Sie es sind.\n\nUnd noch etwas: Sie haben doch keinen Tisch, oder? Mein Sohn hat einen kleinen Tisch im Keller. Er braucht ihn nicht mehr. Wenn Sie wollen, gehört er Ihnen.\n\nTrinken Sie Tee? Ich habe immer welchen da.\n\nIhre Nachbarin\nH. Wagner (Wohnung 3)",
+    questions: [
+      {
+        text: "Warum hat Frau Wagner das Paket?",
+        options: [
+          "Amir war nicht zu Hause",
+          "Das Paket ist für sie",
+          "Der Postbote war krank",
+        ],
+        answer: 0,
+        explain: "„Sie waren nicht zu Hause, also habe ich Ihr Paket angenommen.“",
+      },
+      {
+        text: "Wann soll Amir kommen?",
+        options: ["Ab 17 Uhr", "Vor 17 Uhr", "Am Wochenende"],
+        answer: 0,
+        explain: "„Ich bin ab 17 Uhr da.“",
+      },
+      {
+        text: "Was bietet Frau Wagner ihm an?",
+        options: ["Einen Tisch", "Ein Bett", "Einen Schlüssel"],
+        answer: 0,
+        explain: "Oğlunun bodrumdaki küçük masası: „Wenn Sie wollen, gehört er Ihnen.“",
+      },
+      {
+        text: "Wie soll Amir klingeln?",
+        options: ["Zweimal", "Einmal", "Dreimal"],
+        answer: 0,
+        explain: "„Klingeln Sie einfach — zweimal, dann weiß ich, dass Sie es sind.“",
+      },
+    ],
+  },
+  {
+    id: "a1-r12",
+    level: "A1",
+    skill: "reading",
+    title: "Die Hausordnung",
+    genre: "Kurallar",
+    intro:
+      "Almanya'da her binada asılı olan metin: ev kuralları. Amir'in binasındaki listeyi okuyacaksın.",
+    gloss: [
+      { de: "die Hausordnung", tr: "bina kuralları" },
+      { de: "die Ruhezeit", tr: "sessizlik saatleri" },
+      { de: "der Müll", tr: "çöp" },
+      { de: "trennen", tr: "ayırmak" },
+      { de: "die Waschküche", tr: "çamaşırhane" },
+      { de: "der Keller", tr: "bodrum" },
+      { de: "erlaubt", tr: "izinli" },
+      { de: "verboten", tr: "yasak" },
+    ],
+    minutes: 4,
+    text:
+      "HAUSORDNUNG — Lindenstraße 8\n\n1. Ruhezeiten: 22–7 Uhr und sonntags den ganzen Tag. Bitte keine Waschmaschine und keine laute Musik.\n\n2. Müll: Bitte trennen! Gelber Sack (Plastik), blaue Tonne (Papier), braune Tonne (Bio), graue Tonne (Rest). Glas kommt in den Container an der Ecke.\n\n3. Waschküche: Jede Wohnung hat einen Tag. Der Plan hängt an der Tür. Bitte die Maschine nach dem Waschen sauber machen.\n\n4. Fahrräder: nur im Keller, nicht im Treppenhaus.\n\n5. Grillen auf dem Balkon ist verboten. Im Garten ist es erlaubt — bitte vorher bei den Nachbarn Bescheid sagen.\n\n6. Fragen? Hausmeister Klose, Wohnung 1, oder 0421 33 44 55.",
+    questions: [
+      {
+        text: "Wann darf man nicht waschen?",
+        options: [
+          "Nach 22 Uhr und am Sonntag",
+          "Nur nach 22 Uhr",
+          "Nur am Samstag",
+        ],
+        answer: 0,
+        explain: "Sessizlik saatleri 22–7 ve pazar günü tüm gün; makine de buna dahil.",
+      },
+      {
+        text: "Wohin kommt eine leere Flasche aus Glas?",
+        options: ["In den Container an der Ecke", "In die blaue Tonne", "In den gelben Sack"],
+        answer: 0,
+        explain: "„Glas kommt in den Container an der Ecke.“",
+      },
+      {
+        text: "Wo darf das Fahrrad stehen?",
+        options: ["Im Keller", "Im Treppenhaus", "Auf dem Balkon"],
+        answer: 0,
+        explain: "„Fahrräder: nur im Keller, nicht im Treppenhaus.“",
+      },
+      {
+        text: "Darf Amir auf dem Balkon grillen?",
+        options: [
+          "Nein, aber im Garten ist es erlaubt",
+          "Ja, immer",
+          "Ja, aber nur am Wochenende",
+        ],
+        answer: 0,
+        explain: "Balkonda yasak; bahçede serbest ama önceden komşulara haber verilmeli.",
+      },
+      {
+        text: "Wer ist Herr Klose?",
+        options: ["Der Hausmeister", "Der Vermieter", "Ein Nachbar aus Wohnung 3"],
+        answer: 0,
+        explain: "„Hausmeister Klose, Wohnung 1“ — 3 numaralı daire Frau Wagner'in.",
+      },
+    ],
+  },
+
   // ─────────────────────────── DİNLEME ───────────────────────────
   {
     id: "a1-l1",
@@ -636,6 +953,401 @@ export const a1: SkillExercise[] = [
     ],
   },
 
+  {
+    id: "a1-l7",
+    level: "A1",
+    skill: "listening",
+    title: "Herr Klose erklärt den Müll",
+    genre: "Diyalog",
+    intro:
+      "Hikâyenin üçüncü bölümü: Amir çöpü yanlış kovaya atmış, kapıcı Herr Klose açıklıyor.",
+    gloss: [
+      { de: "der Hausmeister", tr: "kapıcı, bina görevlisi" },
+      { de: "die Tonne", tr: "çöp konteyneri" },
+      { de: "der Joghurtbecher", tr: "yoğurt kabı" },
+      { de: "wegwerfen", tr: "atmak" },
+      { de: "falsch", tr: "yanlış" },
+      { de: "die Strafe", tr: "ceza" },
+      { de: "kein Problem", tr: "sorun değil" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Herr Klose", text: "Guten Morgen! Sie sind der neue Nachbar, oder?" },
+      { speaker: "Amir", text: "Ja, guten Morgen. Amir. Ich wohne oben, im dritten Stock." },
+      {
+        speaker: "Herr Klose",
+        text: "Klose, Hausmeister. Sagen Sie mal — war das Ihr Müll gestern? Die Joghurtbecher in der braunen Tonne?",
+      },
+      { speaker: "Amir", text: "Oh. Ja, vielleicht. Ist das falsch?" },
+      {
+        speaker: "Herr Klose",
+        text: "Ja, aber kein Problem. Braun ist für Bio: Essen, Obst, Gemüse. Plastik kommt in den gelben Sack.",
+      },
+      { speaker: "Amir", text: "Und Papier?" },
+      {
+        speaker: "Herr Klose",
+        text: "Blaue Tonne. Und Glas nicht ins Haus — der Container ist an der Ecke, neben der Bäckerei.",
+      },
+      { speaker: "Amir", text: "Das sind viele Farben." },
+      {
+        speaker: "Herr Klose",
+        text: "Ja. Aber Sie lernen das schnell. Und wenn Sie fragen wollen: Wohnung 1, ich bin fast immer da.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was war falsch?",
+        options: [
+          "Joghurtbecher in der braunen Tonne",
+          "Papier im gelben Sack",
+          "Glas in der blauen Tonne",
+        ],
+        answer: 0,
+        explain: "Kahverengi kova biyoatık için; yoğurt kabı plastik.",
+      },
+      {
+        text: "Wohin kommt Plastik?",
+        options: ["In den gelben Sack", "In die braune Tonne", "In die blaue Tonne"],
+        answer: 0,
+        explain: "„Plastik kommt in den gelben Sack.“",
+      },
+      {
+        text: "Wo ist der Glascontainer?",
+        options: ["An der Ecke neben der Bäckerei", "Im Keller", "Im Hof"],
+        answer: 0,
+        explain: "„Der Container ist an der Ecke, neben der Bäckerei.“",
+      },
+      {
+        text: "Wie reagiert Herr Klose?",
+        options: ["Freundlich — kein Problem", "Er ist sehr böse", "Er will eine Strafe"],
+        answer: 0,
+        explain: "„Ja, aber kein Problem.“ Sonunda soru sormaya da davet ediyor.",
+      },
+    ],
+  },
+  {
+    id: "a1-l8",
+    level: "A1",
+    skill: "listening",
+    title: "Beim Bäcker",
+    genre: "Diyalog",
+    intro: "Fırında sipariş: Almanya'da günün en sık tekrarlanan konuşmalarından biri.",
+    gloss: [
+      { de: "das Brötchen", tr: "küçük ekmek" },
+      { de: "das Vollkornbrot", tr: "tam buğday ekmeği" },
+      { de: "die Scheibe", tr: "dilim" },
+      { de: "geschnitten", tr: "dilimlenmiş" },
+      { de: "sonst noch etwas?", tr: "başka bir şey?" },
+      { de: "das macht …", tr: "tutarı … eder" },
+      { de: "das Kleingeld", tr: "bozuk para" },
+    ],
+    minutes: 2,
+    segments: [
+      { speaker: "Verkäuferin", text: "Guten Morgen! Was darf es sein?" },
+      { speaker: "Amir", text: "Guten Morgen. Vier Brötchen, bitte." },
+      { speaker: "Verkäuferin", text: "Gerne. Sonst noch etwas?" },
+      { speaker: "Amir", text: "Ja, ein Vollkornbrot. Können Sie es schneiden?" },
+      { speaker: "Verkäuferin", text: "Natürlich. Dicke oder dünne Scheiben?" },
+      { speaker: "Amir", text: "Dünne, bitte." },
+      { speaker: "Verkäuferin", text: "So. Das macht sechs Euro achtzig." },
+      { speaker: "Amir", text: "Ich habe leider nur einen Zwanziger." },
+      { speaker: "Verkäuferin", text: "Kein Problem. Dreizehn Euro zwanzig zurück. Schönen Tag!" },
+    ],
+    questions: [
+      {
+        text: "Was kauft Amir?",
+        options: [
+          "Vier Brötchen und ein Vollkornbrot",
+          "Nur Brötchen",
+          "Ein Brot und einen Kuchen",
+        ],
+        answer: 0,
+        explain: "Önce dört küçük ekmek, sonra bir tam buğday ekmeği.",
+      },
+      {
+        text: "Wie soll das Brot geschnitten werden?",
+        options: ["In dünne Scheiben", "In dicke Scheiben", "Gar nicht"],
+        answer: 0,
+        explain: "„Dünne, bitte.“",
+      },
+      {
+        text: "Wie viel kostet alles?",
+        options: ["6,80 Euro", "13,20 Euro", "20 Euro"],
+        answer: 0,
+        explain: "„Das macht sechs Euro achtzig.“ 13,20 para üstü, 20 verdiği banknot.",
+      },
+    ],
+  },
+  {
+    id: "a1-l9",
+    level: "A1",
+    skill: "listening",
+    title: "Drei Ansagen",
+    genre: "Sınav formatı",
+    intro:
+      "Goethe A1 dinleme bölümünün klasik görevi: üç kısa anons, her birine bir soru. Her anonsu ayrı dinleyebilirsin.",
+    gloss: [
+      { de: "die Ansage", tr: "anons" },
+      { de: "der Gleis", tr: "peron" },
+      { de: "die Verspätung", tr: "gecikme" },
+      { de: "geschlossen", tr: "kapalı" },
+      { de: "das Angebot", tr: "kampanya, indirim" },
+      { de: "die Kasse", tr: "kasa" },
+      { de: "der Ausgang", tr: "çıkış" },
+    ],
+    minutes: 3,
+    segments: [
+      {
+        speaker: "Ansage 1",
+        text: "Achtung auf Gleis 5: Der Zug nach Hamburg, Abfahrt 14:12 Uhr, hat heute etwa zehn Minuten Verspätung.",
+      },
+      {
+        speaker: "Ansage 2",
+        text: "Liebe Kunden, unser Markt schließt heute um 18 Uhr, nicht um 20 Uhr. Bitte kommen Sie zur Kasse. Morgen sind wir wieder normal für Sie da.",
+      },
+      {
+        speaker: "Ansage 3",
+        text: "Information für unsere Gäste: Das Schwimmbad ist heute nur bis 15 Uhr geöffnet. Der Grund ist ein Kinderfest. Der Eintritt ist ab 13 Uhr frei.",
+      },
+    ],
+    questions: [
+      {
+        text: "Ansage 1: Wann fährt der Zug ungefähr?",
+        options: ["Um 14:22 Uhr", "Um 14:12 Uhr", "Um 15 Uhr"],
+        answer: 0,
+        explain: "14:12 + yaklaşık 10 dakika gecikme = yaklaşık 14:22.",
+      },
+      {
+        text: "Ansage 2: Was ist heute anders?",
+        options: [
+          "Der Markt schließt zwei Stunden früher",
+          "Der Markt ist geschlossen",
+          "Der Markt schließt später",
+        ],
+        answer: 0,
+        explain: "„heute um 18 Uhr, nicht um 20 Uhr“ — iki saat erken.",
+      },
+      {
+        text: "Ansage 3: Was kostet der Eintritt um 14 Uhr?",
+        options: ["Nichts", "Den normalen Preis", "Die Hälfte"],
+        answer: 0,
+        explain: "„Der Eintritt ist ab 13 Uhr frei“ — saat 14'te ücretsiz.",
+      },
+    ],
+  },
+  {
+    id: "a1-l10",
+    level: "A1",
+    skill: "listening",
+    title: "Was ist ein Adventskalender?",
+    genre: "Kültür",
+    intro:
+      "Aralık ayında her Alman evinde görünen şey: Advent takvimi. Kısa bir açıklama dinleyeceksin.",
+    gloss: [
+      { de: "der Advent", tr: "Noel öncesi dört hafta" },
+      { de: "der Kalender", tr: "takvim" },
+      { de: "das Türchen", tr: "küçük kapak" },
+      { de: "aufmachen", tr: "açmak" },
+      { de: "die Schokolade", tr: "çikolata" },
+      { de: "basteln", tr: "el işi yapmak" },
+      { de: "sich freuen", tr: "sevinmek" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Lena", text: "Amir, hast du schon einen Adventskalender?" },
+      { speaker: "Amir", text: "Einen was? Ein Kalender für Dezember?" },
+      {
+        speaker: "Lena",
+        text: "Fast. Er hat 24 kleine Türchen. Vom 1. bis zum 24. Dezember machst du jeden Tag ein Türchen auf.",
+      },
+      { speaker: "Amir", text: "Und was ist drin?" },
+      {
+        speaker: "Lena",
+        text: "Meistens Schokolade. Für Kinder oft ein kleines Spielzeug. Manche Familien basteln ihn selbst und schreiben kleine Texte hinein.",
+      },
+      { speaker: "Amir", text: "Auch für Erwachsene?" },
+      {
+        speaker: "Lena",
+        text: "Klar! Mein Mann hat einen mit Kaffee, jeden Tag eine andere Sorte. Meine Mutter macht einen mit Tee.",
+      },
+      { speaker: "Amir", text: "Und wenn man zwei Türchen an einem Tag aufmacht?" },
+      { speaker: "Lena", text: "Dann sagen die Kinder, du hast betrogen. Das ist eine ernste Sache." },
+    ],
+    questions: [
+      {
+        text: "Wie viele Türchen hat ein Adventskalender?",
+        options: ["24", "31", "12"],
+        answer: 0,
+        explain: "„Er hat 24 kleine Türchen“ — 1'den 24 Aralık'a kadar.",
+      },
+      {
+        text: "Was ist meistens drin?",
+        options: ["Schokolade", "Geld", "Bücher"],
+        answer: 0,
+        explain: "„Meistens Schokolade“, çocuklarda küçük oyuncak.",
+      },
+      {
+        text: "Was hat Lenas Mann?",
+        options: [
+          "Einen Kalender mit Kaffee",
+          "Einen Kalender mit Tee",
+          "Keinen Kalender",
+        ],
+        answer: 0,
+        explain: "Kocasınınki kahve, annesininki çay.",
+      },
+      {
+        text: "Was sagt Lena am Ende?",
+        options: [
+          "Zwei Türchen an einem Tag gilt als Betrug",
+          "Man darf alle Türchen aufmachen",
+          "Kinder mögen den Kalender nicht",
+        ],
+        answer: 0,
+        explain: "„Dann sagen die Kinder, du hast betrogen. Das ist eine ernste Sache.“ — şakayla karışık.",
+      },
+    ],
+  },
+  {
+    id: "a1-l11",
+    level: "A1",
+    skill: "listening",
+    title: "Einen Termin absagen",
+    genre: "Telefon",
+    intro: "Amir doktor randevusunu iptal ediyor. Telefon konuşmasını dinleyeceksin.",
+    gloss: [
+      { de: "die Praxis", tr: "muayenehane" },
+      { de: "absagen", tr: "iptal etmek" },
+      { de: "verschieben", tr: "ertelemek" },
+      { de: "der Geburtstag", tr: "doğum tarihi / doğum günü" },
+      { de: "frei", tr: "boş (randevu)" },
+      { de: "passen", tr: "uymak" },
+      { de: "die Versichertenkarte", tr: "sigorta kartı" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Praxis", text: "Praxis Dr. Neumann, Schmidt am Apparat. Guten Tag." },
+      {
+        speaker: "Amir",
+        text: "Guten Tag. Hier ist Amir Haddad. Ich habe morgen um 9 Uhr einen Termin. Leider kann ich nicht kommen.",
+      },
+      { speaker: "Praxis", text: "Kein Problem. Wie ist Ihr Geburtsdatum, bitte?" },
+      { speaker: "Amir", text: "Der zwölfte Vierte, neunzehnhundertsechsundneunzig." },
+      { speaker: "Praxis", text: "Danke. Möchten Sie den Termin verschieben?" },
+      { speaker: "Amir", text: "Ja, gerne. Haben Sie etwas am Nachmittag?" },
+      {
+        speaker: "Praxis",
+        text: "Am Donnerstag um 15:30 Uhr wäre frei. Oder Freitag um 16 Uhr.",
+      },
+      { speaker: "Amir", text: "Donnerstag passt besser." },
+      {
+        speaker: "Praxis",
+        text: "Gut, Donnerstag 15:30 Uhr. Bringen Sie bitte Ihre Versichertenkarte mit.",
+      },
+    ],
+    questions: [
+      {
+        text: "Warum ruft Amir an?",
+        options: [
+          "Er kann morgen nicht kommen",
+          "Er ist krank und braucht schnell einen Termin",
+          "Er sucht eine neue Praxis",
+        ],
+        answer: 0,
+        explain: "„Leider kann ich nicht kommen“ — randevuyu iptal ediyor.",
+      },
+      {
+        text: "Was fragt die Praxis zuerst?",
+        options: ["Sein Geburtsdatum", "Seine Adresse", "Seine Telefonnummer"],
+        answer: 0,
+        explain: "„Wie ist Ihr Geburtsdatum, bitte?“ — Almanya'da standart kimlik doğrulaması.",
+      },
+      {
+        text: "Wann ist der neue Termin?",
+        options: ["Donnerstag um 15:30 Uhr", "Freitag um 16 Uhr", "Morgen um 9 Uhr"],
+        answer: 0,
+        explain: "İki seçenekten „Donnerstag passt besser“ diyor.",
+      },
+      {
+        text: "Was soll er mitbringen?",
+        options: ["Die Versichertenkarte", "Ein Rezept", "Geld"],
+        answer: 0,
+        explain: "„Bringen Sie bitte Ihre Versichertenkarte mit.“",
+      },
+    ],
+  },
+  {
+    id: "a1-l12",
+    level: "A1",
+    skill: "listening",
+    title: "Amir lädt ein",
+    genre: "Sesli mesaj",
+    intro:
+      "Hikâyenin dördüncü bölümü: Amir yerleşti ve komşularını davet ediyor. Sesli mesajı dinleyeceksin.",
+    gloss: [
+      { de: "einladen", tr: "davet etmek" },
+      { de: "endlich", tr: "nihayet" },
+      { de: "fertig", tr: "hazır, bitmiş" },
+      { de: "kochen", tr: "yemek pişirmek" },
+      { de: "scharf", tr: "acı (yemek)" },
+      { de: "Bescheid sagen", tr: "haber vermek" },
+      { de: "gegen", tr: "…e doğru (saat)" },
+    ],
+    minutes: 3,
+    segments: [
+      { speaker: "Amir", text: "Hallo Frau Wagner, hier ist Amir aus dem dritten Stock." },
+      {
+        speaker: "Amir",
+        text: "Die Wohnung ist endlich fertig. Der Tisch von Ihrem Sohn steht jetzt in der Küche — er ist perfekt, vielen Dank noch einmal.",
+      },
+      {
+        speaker: "Amir",
+        text: "Ich möchte Sie am Samstag zum Essen einladen, gegen 18 Uhr. Ich koche etwas aus Syrien. Nicht scharf, keine Sorge.",
+      },
+      {
+        speaker: "Amir",
+        text: "Herrn Klose habe ich auch gefragt. Er kommt, glaube ich — er hat gesagt: „Mal sehen.“",
+      },
+      { speaker: "Amir", text: "Sagen Sie mir bis Donnerstag Bescheid? Bis bald!" },
+    ],
+    questions: [
+      {
+        text: "Warum ruft Amir an?",
+        options: [
+          "Er lädt Frau Wagner zum Essen ein",
+          "Er braucht wieder Hilfe",
+          "Er sucht ein Paket",
+        ],
+        answer: 0,
+        explain: "„Ich möchte Sie am Samstag zum Essen einladen.“",
+      },
+      {
+        text: "Wo steht jetzt der Tisch?",
+        options: ["In der Küche", "Im Keller", "Im Wohnzimmer"],
+        answer: 0,
+        explain: "„Der Tisch von Ihrem Sohn steht jetzt in der Küche.“",
+      },
+      {
+        text: "Was sagt er über das Essen?",
+        options: ["Es ist nicht scharf", "Es ist sehr scharf", "Es gibt nur Salat"],
+        answer: 0,
+        explain: "„Nicht scharf, keine Sorge.“",
+      },
+      {
+        text: "Was hat Herr Klose gesagt?",
+        options: ["„Mal sehen“", "„Ja, gerne“", "„Nein, danke“"],
+        answer: 0,
+        explain: "Kesin bir cevap vermemiş — Amir de „er kommt, glaube ich“ diyor.",
+      },
+      {
+        text: "Bis wann soll Frau Wagner antworten?",
+        options: ["Bis Donnerstag", "Bis Samstag", "Bis 18 Uhr"],
+        answer: 0,
+        explain: "„Sagen Sie mir bis Donnerstag Bescheid?“",
+      },
+    ],
+  },
+
   // ─────────────────────────── YAZMA ───────────────────────────
   {
     id: "a1-w1",
@@ -879,6 +1591,253 @@ export const a1: SkillExercise[] = [
         ],
         sample:
           "Hallo Tom, ich habe eine neue Wohnung in München! Sie hat zwei Zimmer, eine Küche und einen kleinen Balkon. Die Wohnung ist hell und liegt im Zentrum. Willst du mich besuchen? Du kannst am Samstag kommen. Viele Grüße, Deniz",
+      },
+    ],
+  },
+  {
+    id: "a1-w5",
+    level: "A1",
+    skill: "writing",
+    title: "Eine Entschuldigung für die Schule",
+    genre: "Resmî yazı",
+    intro:
+      "Almanya'da çocuğu okula gitmeyen her veli bunu yazar: kısa, resmî bir mazeret notu.",
+    gloss: [
+      { de: "die Entschuldigung", tr: "mazeret yazısı" },
+      { de: "krank", tr: "hasta" },
+      { de: "das Fieber", tr: "ateş" },
+      { de: "der Unterricht", tr: "ders" },
+      { de: "fehlen", tr: "devamsızlık yapmak" },
+      { de: "die Unterschrift", tr: "imza" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Oğlum Karim bugün hasta.",
+        answer: "Mein Sohn Karim ist heute krank.",
+        hint: "Fiil ikinci pozisyonda: Mein Sohn Karim ist …",
+      },
+      {
+        kind: "build",
+        tr: "Ateşi var ve okula gelemiyor.",
+        answer: "Er hat Fieber und kann nicht in die Schule kommen.",
+        hint: "„Fieber haben“ artikelsiz; kann + nicht + kommen sırası.",
+      },
+      {
+        kind: "build",
+        tr: "Lütfen bugünkü devamsızlığını mazur görün.",
+        answer: "Bitte entschuldigen Sie sein Fehlen heute.",
+        alternatives: ["Bitte entschuldigen Sie, dass er heute fehlt."],
+        hint: "Resmî yazıda „Bitte entschuldigen Sie …“ standart kalıptır.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Sınıf öğretmenine kısa bir mazeret yazısı yaz. Dört noktaya değin: hitap, çocuğun adı ve sınıfı, neden gelmediği ve hangi gün(ler), kapanış ve imza.",
+        checklist: [
+          "Resmî hitapla başladın mı? (Sehr geehrte Frau …)",
+          "Çocuğun adını ve sınıfını yazdın mı?",
+          "Nedeni ve tarihi yazdın mı?",
+          "„Sie“ ile yazdın mı (du değil)?",
+          "İsim ve tarihle bitirdin mi?",
+        ],
+        minWords: 25,
+        phrases: [
+          { de: "Sehr geehrte Frau …,", tr: "Sayın … Hanım," },
+          { de: "mein Sohn / meine Tochter …", tr: "oğlum / kızım …" },
+          { de: "ist seit … krank", tr: "… beri hasta" },
+          { de: "Bitte entschuldigen Sie …", tr: "Lütfen … mazur görün." },
+          { de: "Mit freundlichen Grüßen", tr: "Saygılarımla" },
+        ],
+        sample:
+          "Sehr geehrte Frau Berger,\n\nmein Sohn Karim Haddad aus der Klasse 3b ist seit gestern krank. Er hat Fieber und kann heute und morgen nicht in die Schule kommen. Bitte entschuldigen Sie sein Fehlen.\n\nAm Donnerstag ist er hoffentlich wieder da.\n\nMit freundlichen Grüßen\nAmir Haddad\n14. Mai",
+      },
+    ],
+  },
+  {
+    id: "a1-w6",
+    level: "A1",
+    skill: "writing",
+    title: "Formular und kurze Nachricht",
+    genre: "Sınav formatı",
+    intro:
+      "Goethe A1 yazma bölümünün iki görevi: kısa bilgi alanlarını doldurmak ve üç noktaya değinen kısa bir mesaj yazmak. İkisini de burada çalışacaksın.",
+    gloss: [
+      { de: "das Formular", tr: "form" },
+      { de: "der Familienname", tr: "soyadı" },
+      { de: "der Vorname", tr: "ad" },
+      { de: "die Staatsangehörigkeit", tr: "uyruk" },
+      { de: "der Kurs", tr: "kurs" },
+      { de: "anmelden", tr: "kaydolmak" },
+      { de: "die Uhrzeit", tr: "saat" },
+    ],
+    minutes: 8,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bir Almanca kursuna kaydolmak istiyorum.",
+        answer: "Ich möchte mich für einen Deutschkurs anmelden.",
+        hint: "„sich anmelden für“ — dönüşlü fiil, „mich“ ikinci sırada gelir.",
+      },
+      {
+        kind: "build",
+        tr: "Akşamları saat altıdan sonra vaktim var.",
+        answer: "Ich habe abends nach 18 Uhr Zeit.",
+        alternatives: ["Abends nach 18 Uhr habe ich Zeit."],
+        hint: "„abends“ zaman zarfı; fiil yine ikinci pozisyonda.",
+      },
+      {
+        kind: "build",
+        tr: "Lütfen bana fiyatı yazın.",
+        answer: "Bitte schreiben Sie mir den Preis.",
+        hint: "Emir kipi „Sie“ ile: fiil başta, „Sie“ hemen arkasında.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir dil okuluna kısa bir e-posta yaz. Üç noktaya değin (sınav görevi tam olarak böyle sorar): hangi kursa kaydolmak istediğin, hangi gün ve saatlerde vaktin olduğu, öğrenmek istediğin bir bilgi (fiyat, süre veya başlangıç tarihi).",
+        checklist: [
+          "Selamlama ve kapanış var mı?",
+          "Üç noktanın hepsine değindin mi?",
+          "Bir soru sordun mu?",
+          "Fiiller ikinci pozisyonda mı?",
+          "Adını yazdın mı?",
+        ],
+        minWords: 30,
+        phrases: [
+          { de: "Guten Tag,", tr: "İyi günler," },
+          { de: "Ich möchte mich für … anmelden.", tr: "… için kaydolmak istiyorum." },
+          { de: "Ich habe am … Zeit.", tr: "… günü vaktim var." },
+          { de: "Wie viel kostet der Kurs?", tr: "Kurs ne kadar?" },
+          { de: "Wann beginnt der Kurs?", tr: "Kurs ne zaman başlıyor?" },
+          { de: "Vielen Dank und viele Grüße", tr: "Teşekkürler, selamlar" },
+        ],
+        sample:
+          "Guten Tag,\n\nich möchte mich für einen Deutschkurs A2 anmelden. Ich arbeite bis 17 Uhr, deshalb habe ich nur abends nach 18 Uhr Zeit — am besten am Montag und Mittwoch.\n\nWie viel kostet der Kurs und wann beginnt er? Bitte schreiben Sie mir auch, wie lange er dauert.\n\nVielen Dank und viele Grüße\nAmir Haddad",
+      },
+    ],
+  },
+  {
+    id: "a1-w7",
+    level: "A1",
+    skill: "writing",
+    title: "Eine Postkarte",
+    genre: "Kültür",
+    intro:
+      "Almanya'da hâlâ yaşayan bir gelenek: tatilden kartpostal yollamak. Kısa, sıcak ve birkaç cümlelik.",
+    gloss: [
+      { de: "die Postkarte", tr: "kartpostal" },
+      { de: "der Urlaub", tr: "tatil" },
+      { de: "das Wetter", tr: "hava" },
+      { de: "die Ostsee", tr: "Baltık Denizi" },
+      { de: "wandern", tr: "doğa yürüyüşü yapmak" },
+      { de: "die Grüße", tr: "selamlar" },
+      { de: "schicken", tr: "göndermek" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bir haftadır Baltık Denizi'ndeyiz.",
+        answer: "Wir sind seit einer Woche an der Ostsee.",
+        hint: "„seit“ + Dativ: seit einer Woche. „an der Ostsee“ = deniz kenarında.",
+      },
+      {
+        kind: "build",
+        tr: "Hava harika ve her gün yüzüyoruz.",
+        answer: "Das Wetter ist super und wir schwimmen jeden Tag.",
+        hint: "„jeden Tag“ Akkusativ kalıbıdır.",
+      },
+      {
+        kind: "build",
+        tr: "Cumartesi günü eve dönüyoruz.",
+        answer: "Am Samstag fahren wir nach Hause.",
+        hint: "„nach Hause“ = eve doğru; „zu Hause“ = evde.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Tatilden bir arkadaşına kartpostal yaz. Dört noktaya değin: nerede olduğun ve ne zamandır, hava, en çok ne yaptığın, ne zaman döneceğin. Kartpostal kısa olur — uzun tutma.",
+        checklist: [
+          "Selamlama ile başladın mı? (Liebe/Lieber …)",
+          "Nerede olduğunu ve ne zamandır orada olduğunu yazdın mı?",
+          "Havadan söz ettin mi?",
+          "Ne yaptığını yazdın mı?",
+          "Dönüş gününü yazdın mı ve selamla bitirdin mi?",
+        ],
+        minWords: 25,
+        phrases: [
+          { de: "Liebe Grüße aus …", tr: "…'den sevgiler" },
+          { de: "Wir sind seit … hier.", tr: "…'dir buradayız." },
+          { de: "Das Wetter ist …", tr: "Hava …" },
+          { de: "Wir gehen jeden Tag …", tr: "Her gün … gidiyoruz." },
+          { de: "Am … kommen wir zurück.", tr: "… günü dönüyoruz." },
+          { de: "Bis bald!", tr: "Yakında görüşürüz!" },
+        ],
+        sample:
+          "Liebe Sofia,\n\nliebe Grüße aus Rügen! Wir sind seit einer Woche an der Ostsee. Das Wetter ist super — nur am Montag hat es geregnet. Wir schwimmen jeden Tag und gestern sind wir vier Stunden gewandert.\n\nAm Samstag fahren wir nach Hause. Dann erzähle ich alles.\n\nBis bald!\nAmir",
+      },
+    ],
+  },
+  {
+    id: "a1-w8",
+    level: "A1",
+    skill: "writing",
+    title: "Antwort an Frau Wagner",
+    genre: "Mesaj",
+    intro:
+      "Hikâyenin son bölümü: Frau Wagner'in notuna (a1-r11) cevap yazacaksın. Teşekkür, kabul ve bir soru.",
+    gloss: [
+      { de: "sich bedanken", tr: "teşekkür etmek" },
+      { de: "annehmen", tr: "kabul etmek" },
+      { de: "gern", tr: "memnuniyetle" },
+      { de: "passen", tr: "uymak" },
+      { de: "abholen", tr: "gidip almak" },
+      { de: "wirklich", tr: "gerçekten" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Paket için çok teşekkür ederim.",
+        answer: "Vielen Dank für das Paket.",
+        hint: "„danken für“ + Akkusativ: für das Paket.",
+      },
+      {
+        kind: "build",
+        tr: "Masayı memnuniyetle alırım.",
+        answer: "Den Tisch nehme ich gern.",
+        alternatives: ["Ich nehme den Tisch gern."],
+        hint: "Nesneyi öne alırsan fiil yine ikinci sırada kalır: Den Tisch nehme ich …",
+      },
+      {
+        kind: "build",
+        tr: "Bu akşam saat altıda size uygun mu?",
+        answer: "Passt es Ihnen heute Abend um 18 Uhr?",
+        hint: "„Passt es Ihnen …?“ — kibar soru kalıbı, Ihnen Dativ.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Frau Wagner'e kısa bir not yaz. Dört noktaya değin: paket için teşekkür, masa teklifine cevap, ne zaman uğrayacağın, kendinden küçük bir şey (çay içer misin sorusuna cevap gibi). Komşuna yazıyorsun — kibar ama sıcak.",
+        checklist: [
+          "Hitapla başladın mı? (Liebe Frau Wagner)",
+          "Teşekkür ettin mi?",
+          "Masa teklifine net cevap verdin mi?",
+          "Bir saat/gün önerdin mi?",
+          "„Sie“ ile yazdın mı ve imzaladın mı?",
+        ],
+        minWords: 30,
+        phrases: [
+          { de: "Vielen Dank für …", tr: "… için çok teşekkürler." },
+          { de: "Das ist sehr nett von Ihnen.", tr: "Bu çok nazik bir davranış." },
+          { de: "Den Tisch nehme ich gern.", tr: "Masayı memnuniyetle alırım." },
+          { de: "Ich komme heute um … vorbei.", tr: "Bugün saat …'de uğrarım." },
+          { de: "Bis später!", tr: "Sonra görüşürüz!" },
+        ],
+        sample:
+          "Liebe Frau Wagner,\n\nvielen Dank für das Paket! Das ist sehr nett von Ihnen.\n\nDen Tisch nehme ich gern — ich habe wirklich noch keinen. Passt es Ihnen heute Abend um 18 Uhr? Dann hole ich beides ab.\n\nUnd ja, ich trinke sehr gern Tee. In Syrien trinken wir ihn süß und stark.\n\nBis später!\nAmir (Wohnung 7)",
       },
     ],
   },
