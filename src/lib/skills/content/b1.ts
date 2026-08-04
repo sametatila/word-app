@@ -401,6 +401,427 @@ export const b1: SkillExercise[] = [
   },
 
   // ── Dinleme ────────────────────────────────────────────────────────────
+  // ── Hikâye dizisi: Tarek küçük bir kafe açıyor. B1'in yeni alıştırmalarında
+  //    fikir → resmî işlem → banka → açılış sırası takip edilir.
+  {
+    id: "b1-r7",
+    level: "B1",
+    skill: "reading",
+    title: "Tareks Plan",
+    genre: "Forum",
+    intro:
+      "Tarek küçük bir kafe açmak istiyor ve bir girişimci forumunda akıl danışıyor. Soru ve iki cevabı okuyacaksın.",
+    gloss: [
+      { de: "sich selbstständig machen", tr: "kendi işini kurmak" },
+      { de: "die Ersparnisse", tr: "birikim" },
+      { de: "der Kredit", tr: "kredi" },
+      { de: "die Miete", tr: "kira" },
+      { de: "sich lohnen", tr: "değmek, kâr etmek" },
+      { de: "die Konkurrenz", tr: "rekabet" },
+      { de: "abraten", tr: "vazgeçirmeye çalışmak" },
+      { de: "die Genehmigung", tr: "izin, ruhsat" },
+    ],
+    minutes: 5,
+    text:
+      "TAREK_87: Ich arbeite seit sechs Jahren als Koch, immer für andere. Jetzt will ich mich selbstständig machen — ein kleines Café mit syrischem Frühstück, 20 Plätze. Ich habe 18.000 Euro Ersparnisse. Ein Laden im Viertel kostet 1.400 Euro Miete. Ist das verrückt?\n\nMARIE_G: Verrückt nicht, aber knapp. Rechne nicht nur mit der Miete: Kaution (meistens drei Monatsmieten), Umbau, Küche, Versicherung, Steuerberater. Bei mir war der Umbau doppelt so teuer wie geplant — das ist fast immer so. Und die ersten sechs Monate verdienst du nichts. Plane Geld zum Leben ein, sonst arbeitest du unter Druck und triffst schlechte Entscheidungen.\n\nHASSAN_K: Ich rate dir nicht ab, im Gegenteil. Aber mach zwei Dinge, bevor du unterschreibst. Erstens: Steh eine Woche lang zu verschiedenen Zeiten vor dem Laden und zähle, wie viele Menschen vorbeigehen. Zweitens: Frag beim Gewerbeamt, welche Genehmigungen du brauchst — bei Essen sind es mehr, als du denkst. Ich habe drei Monate verloren, weil ich das erst hinterher gemacht habe.\n\nTAREK_87: Danke euch. Ich glaube, ich zähle erst mal Menschen.",
+    questions: [
+      {
+        text: "Was ist Tareks Plan?",
+        options: [
+          "Ein kleines Café mit syrischem Frühstück",
+          "Ein Restaurant mit 100 Plätzen",
+          "Ein Lieferdienst",
+        ],
+        answer: 0,
+        explain: "„ein kleines Café mit syrischem Frühstück, 20 Plätze“.",
+      },
+      {
+        text: "Wovor warnt Marie?",
+        options: [
+          "Die Nebenkosten und die ersten Monate ohne Verdienst",
+          "Der Standort ist schlecht",
+          "Syrisches Essen verkauft sich nicht",
+        ],
+        answer: 0,
+        explain:
+          "Depozito, tadilat, mutfak, sigorta, mali müşavir ve ilk altı ay gelirsizlik.",
+      },
+      {
+        text: "Was sagt Marie über den Umbau?",
+        options: [
+          "Er war doppelt so teuer wie geplant",
+          "Er war günstiger als geplant",
+          "Sie hat ihn selbst gemacht",
+        ],
+        answer: 0,
+        explain: "„Bei mir war der Umbau doppelt so teuer wie geplant — das ist fast immer so.“",
+      },
+      {
+        text: "Was rät Hassan als Erstes?",
+        options: [
+          "Eine Woche lang zählen, wie viele Menschen vorbeigehen",
+          "Sofort den Vertrag unterschreiben",
+          "Einen Kredit aufnehmen",
+        ],
+        answer: 0,
+        explain: "Farklı saatlerde dükkânın önünde durup geçen insanları saymasını öneriyor.",
+      },
+      {
+        text: "Warum hat Hassan drei Monate verloren?",
+        options: [
+          "Er hat sich zu spät um Genehmigungen gekümmert",
+          "Er hat den falschen Laden gemietet",
+          "Er hatte keinen Kredit",
+        ],
+        answer: 0,
+        explain: "„Ich habe drei Monate verloren, weil ich das erst hinterher gemacht habe.“",
+      },
+    ],
+  },
+  {
+    id: "b1-r8",
+    level: "B1",
+    skill: "reading",
+    title: "Gewerbeanmeldung: Was Sie brauchen",
+    genre: "Rehber",
+    intro:
+      "Almanya'da iş kurmanın ilk adımı. Belediyenin bilgilendirme sayfasını okuyacaksın.",
+    gloss: [
+      { de: "das Gewerbe", tr: "ticari faaliyet" },
+      { de: "anmelden", tr: "kaydettirmek" },
+      { de: "die Gebühr", tr: "harç" },
+      { de: "das Führungszeugnis", tr: "adli sicil belgesi" },
+      { de: "die Erlaubnis", tr: "izin" },
+      { de: "das Finanzamt", tr: "vergi dairesi" },
+      { de: "die Steuernummer", tr: "vergi numarası" },
+      { de: "automatisch", tr: "otomatik olarak" },
+    ],
+    minutes: 5,
+    text:
+      "Wer in Deutschland ein Gewerbe betreibt, muss es anmelden — vor dem ersten Arbeitstag, nicht danach.\n\nSie brauchen: Personalausweis oder Pass, das ausgefüllte Formular und 26 Euro Gebühr. Bei Gastronomie kommen zwei Dinge dazu: ein Führungszeugnis und die Gaststättenerlaubnis. Wenn Sie Lebensmittel zubereiten, brauchen Sie außerdem eine Belehrung vom Gesundheitsamt — die dauert etwa eine Stunde und gilt lebenslang.\n\nWas viele überrascht: Sie müssen sich nicht selbst beim Finanzamt melden. Das Gewerbeamt informiert es automatisch. Danach schickt Ihnen das Finanzamt einen Fragebogen, in dem Sie Ihren erwarteten Gewinn schätzen. Nehmen Sie diese Schätzung ernst: Sie bestimmt, wie viel Steuer Sie im Voraus zahlen.\n\nDie Anmeldung selbst dauert 15 Minuten. Die Erlaubnis für Gastronomie dagegen kann sechs bis zwölf Wochen brauchen. Planen Sie diese Zeit ein, bevor Sie einen Mietvertrag unterschreiben.\n\nTipp: Die meisten Städte bieten eine kostenlose Erstberatung für Gründerinnen und Gründer an. Sie dauert eine Stunde und spart oft mehrere Wochen.",
+    questions: [
+      {
+        text: "Wann muss man das Gewerbe anmelden?",
+        options: [
+          "Vor dem ersten Arbeitstag",
+          "Im ersten Monat",
+          "Am Ende des Jahres",
+        ],
+        answer: 0,
+        explain: "„vor dem ersten Arbeitstag, nicht danach.“",
+      },
+      {
+        text: "Was braucht man zusätzlich in der Gastronomie?",
+        options: [
+          "Führungszeugnis und Gaststättenerlaubnis",
+          "Nur einen Pass",
+          "Einen Kredit",
+        ],
+        answer: 0,
+        explain: "Ayrıca gıda hazırlanıyorsa sağlık müdürlüğünden eğitim belgesi.",
+      },
+      {
+        text: "Wie kommt man an die Steuernummer?",
+        options: [
+          "Das Gewerbeamt informiert das Finanzamt automatisch",
+          "Man muss selbst hingehen",
+          "Man bekommt keine",
+        ],
+        answer: 0,
+        explain: "„Sie müssen sich nicht selbst beim Finanzamt melden.“",
+      },
+      {
+        text: "Warum ist die Gewinnschätzung wichtig?",
+        options: [
+          "Sie bestimmt die Steuervorauszahlung",
+          "Sie entscheidet über die Erlaubnis",
+          "Sie ist nur eine Formalität",
+        ],
+        answer: 0,
+        explain: "„Sie bestimmt, wie viel Steuer Sie im Voraus zahlen.“",
+      },
+      {
+        text: "Was dauert am längsten?",
+        options: [
+          "Die Gaststättenerlaubnis",
+          "Die Gewerbeanmeldung",
+          "Die Belehrung vom Gesundheitsamt",
+        ],
+        answer: 0,
+        explain: "Kayıt 15 dakika, sağlık eğitimi bir saat; işletme izni 6–12 hafta.",
+      },
+    ],
+  },
+  {
+    id: "b1-r9",
+    level: "B1",
+    skill: "reading",
+    title: "Duzen oder siezen?",
+    genre: "Kültür",
+    intro:
+      "Almanca öğrenen herkesin en çok tereddüt ettiği konu: „du“ mu „Sie“ mi? Bu yazı kuralın nasıl değiştiğini anlatıyor.",
+    gloss: [
+      { de: "duzen", tr: "„du“ diye hitap etmek" },
+      { de: "siezen", tr: "„Sie“ diye hitap etmek" },
+      { de: "anbieten", tr: "teklif etmek" },
+      { de: "die Anrede", tr: "hitap" },
+      { de: "unhöflich", tr: "kaba" },
+      { de: "die Branche", tr: "sektör" },
+      { de: "zurücknehmen", tr: "geri almak" },
+      { de: "die Faustregel", tr: "genel kural" },
+    ],
+    minutes: 5,
+    text:
+      "Für Deutschlernende ist es eine der schwersten Fragen — und für viele Deutsche inzwischen auch.\n\nDie alte Regel war einfach: Erwachsene, die man nicht kennt, siezt man. Geduzt wurde in der Familie, unter Freunden und unter Kindern. Wer wechseln wollte, musste warten: Das „du“ bietet die ältere Person an, im Beruf die höhere Position.\n\nDiese Regel gilt noch — aber nicht überall. In der IT-Branche, in Start-ups, in Sportgeschäften und bei IKEA werden alle geduzt, vom Praktikanten bis zur Chefin. In einer Bank, bei einer Behörde oder beim Arzt wäre das dagegen ein Fehler.\n\nDas Problem: Ein „du“ kann man nicht mehr zurücknehmen. Wer zu früh duzt, wirkt schnell zu vertraulich. Wer zu lange siezt, wirkt kalt — aber das ist der kleinere Fehler und leicht zu korrigieren.\n\nDie Faustregel lautet deshalb: Siezen Sie, bis Ihnen das „du“ angeboten wird. Und wenn Sie unsicher sind, hilft ein einfacher Satz: „Sagen wir du oder Sie?“ Fast niemand findet diese Frage unhöflich — im Gegenteil, sie zeigt, dass Sie aufmerksam sind.",
+    questions: [
+      {
+        text: "Wer bietet nach der alten Regel das „du“ an?",
+        options: [
+          "Die ältere Person oder die höhere Position",
+          "Die jüngere Person",
+          "Beide gleichzeitig",
+        ],
+        answer: 0,
+        explain: "„Das „du“ bietet die ältere Person an, im Beruf die höhere Position.“",
+      },
+      {
+        text: "Wo wird heute fast immer geduzt?",
+        options: [
+          "In Start-ups, in der IT, bei IKEA",
+          "Bei Behörden",
+          "Beim Arzt",
+        ],
+        answer: 0,
+        explain: "Metin bu sektörleri sayıyor; banka, resmî kurum ve doktorda tersi geçerli.",
+      },
+      {
+        text: "Warum ist zu frühes Duzen ein Problem?",
+        options: [
+          "Man kann ein „du“ nicht zurücknehmen",
+          "Es ist verboten",
+          "Es ist zu formell",
+        ],
+        answer: 0,
+        explain: "„Ein „du“ kann man nicht mehr zurücknehmen.“",
+      },
+      {
+        text: "Welcher Fehler ist laut Text kleiner?",
+        options: [
+          "Zu lange siezen",
+          "Zu früh duzen",
+          "Beide sind gleich schlimm",
+        ],
+        answer: 0,
+        explain: "Soğuk görünmek, fazla senli benli olmaktan daha kolay düzeltilir.",
+      },
+      {
+        text: "Was empfiehlt der Text bei Unsicherheit?",
+        options: [
+          "Direkt fragen: „Sagen wir du oder Sie?“",
+          "Immer duzen",
+          "Die Anrede vermeiden",
+        ],
+        answer: 0,
+        explain: "„Fast niemand findet diese Frage unhöflich.“",
+      },
+    ],
+  },
+  {
+    id: "b1-r10",
+    level: "B1",
+    skill: "reading",
+    title: "Überschriften zuordnen",
+    genre: "Sınav formatı",
+    intro:
+      "B1 sınavının klasik görevi: kısa metinlere doğru başlığı bulmak. Beş kısa haber, altı başlık — biri fazla.",
+    gloss: [
+      { de: "die Überschrift", tr: "başlık" },
+      { de: "zuordnen", tr: "eşleştirmek" },
+      { de: "die Spende", tr: "bağış" },
+      { de: "die Baustelle", tr: "şantiye" },
+      { de: "die Umfrage", tr: "anket" },
+      { de: "sinken", tr: "düşmek" },
+      { de: "der Antrag", tr: "başvuru" },
+    ],
+    minutes: 5,
+    text:
+      "TEXT 1: Ab September fährt die Linie 4 auch am Wochenende alle zehn Minuten. Die Stadt reagiert damit auf viele Beschwerden aus den Außenbezirken.\n\nTEXT 2: Nach drei Jahren ist die Sanierung der Grundschule Nord fertig. Die Klassen ziehen in den Ferien zurück, der Unterricht beginnt wie geplant.\n\nTEXT 3: Die Zahl der Fahrraddiebstähle ist im letzten Jahr um 18 Prozent gesunken. Die Polizei erklärt das mit den neuen Abstellplätzen am Bahnhof.\n\nTEXT 4: Beim Stadtfest sind 12.400 Euro zusammengekommen. Das Geld geht an das Frauenhaus, das seit Jahren zu wenig Platz hat.\n\nTEXT 5: Wer Hilfe beim Heizen braucht, kann bis Ende Oktober einen Antrag stellen. Formulare gibt es online und im Rathaus.\n\nÜBERSCHRIFTEN:\na) Weniger Fahrräder gestohlen\nb) Mehr Busse am Wochenende\nc) Schule wieder offen\nd) Fest bringt Geld für den guten Zweck\ne) Neue Baustelle am Bahnhof\nf) Unterstützung beantragen — Frist läuft",
+    questions: [
+      {
+        text: "Welche Überschrift passt zu Text 1?",
+        options: ["b", "e", "c"],
+        answer: 0,
+        explain: "4 numaralı hat hafta sonu on dakikada bir — yani daha sık sefer.",
+      },
+      {
+        text: "Welche Überschrift passt zu Text 3?",
+        options: ["a", "e", "f"],
+        answer: 0,
+        explain: "Bisiklet hırsızlığı %18 azalmış.",
+      },
+      {
+        text: "Welche Überschrift passt zu Text 4?",
+        options: ["d", "f", "b"],
+        answer: 0,
+        explain: "Şenlikte toplanan 12.400 euro kadın sığınmaevine gidiyor.",
+      },
+      {
+        text: "Welche Überschrift passt zu Text 5?",
+        options: ["f", "d", "a"],
+        answer: 0,
+        explain: "Ekim sonuna kadar ısınma desteği başvurusu — süre vurgusu var.",
+      },
+      {
+        text: "Welche Überschrift bleibt übrig?",
+        options: ["e", "c", "b"],
+        answer: 0,
+        explain:
+          "„Neue Baustelle am Bahnhof“ hiçbir metne uymuyor: 3. metinde gardan söz ediliyor ama şantiye yok.",
+      },
+    ],
+  },
+  {
+    id: "b1-r11",
+    level: "B1",
+    skill: "reading",
+    title: "Die Antwort von der Bank",
+    genre: "Resmî yazı",
+    intro:
+      "Hikâyenin devamı: Tarek kredi başvurusu yaptı. Bankanın cevabını okuyacaksın — tam bir „evet“ değil.",
+    gloss: [
+      { de: "der Kreditantrag", tr: "kredi başvurusu" },
+      { de: "bewilligen", tr: "onaylamak" },
+      { de: "die Sicherheit", tr: "teminat" },
+      { de: "die Bürgschaft", tr: "kefalet" },
+      { de: "die Laufzeit", tr: "vade" },
+      { de: "der Zinssatz", tr: "faiz oranı" },
+      { de: "die Tilgung", tr: "anapara ödemesi" },
+      { de: "die Voraussetzung", tr: "koşul, önşart" },
+    ],
+    minutes: 5,
+    text:
+      "Sehr geehrter Herr Haddad,\n\nvielen Dank für Ihren Kreditantrag vom 4. April und für das ausführliche Gespräch.\n\nIhr Konzept hat uns überzeugt: Der Standort ist gut gewählt, und Ihre Zahlen sind vorsichtig gerechnet — das sehen wir selten. Trotzdem können wir den Antrag nicht in voller Höhe bewilligen.\n\nBeantragt: 45.000 Euro. Wir bieten Ihnen 30.000 Euro an.\n\nDer Grund ist Ihre Sicherheit. Sie bringen 18.000 Euro eigenes Geld mit, das ist gut. Sie haben aber keine weiteren Sicherheiten. Für die vollen 45.000 Euro bräuchten wir entweder eine Bürgschaft oder eine Zusage der Förderbank, die Gründungen in der Gastronomie unterstützt.\n\nKonditionen für die 30.000 Euro: Laufzeit 7 Jahre, Zinssatz 5,4 Prozent, tilgungsfrei in den ersten sechs Monaten.\n\nMein Rat: Sprechen Sie mit der Förderbank, bevor Sie unterschreiben. Das Verfahren dauert etwa vier Wochen, und die Konditionen sind besser als unsere.\n\nUnser Angebot gilt bis zum 30. Juni.\n\nMit freundlichen Grüßen\nS. Lorenz, Firmenkunden",
+    questions: [
+      {
+        text: "Was hat die Bank überzeugt?",
+        options: [
+          "Der Standort und die vorsichtige Kalkulation",
+          "Die Höhe der Ersparnisse",
+          "Die Erfahrung als Koch",
+        ],
+        answer: 0,
+        explain: "„Der Standort ist gut gewählt, und Ihre Zahlen sind vorsichtig gerechnet.“",
+      },
+      {
+        text: "Wie viel bekommt Tarek?",
+        options: ["30.000 Euro", "45.000 Euro", "18.000 Euro"],
+        answer: 0,
+        explain: "45.000 istedi, banka 30.000 teklif ediyor; 18.000 kendi parası.",
+      },
+      {
+        text: "Warum nicht mehr?",
+        options: [
+          "Er hat keine weiteren Sicherheiten",
+          "Sein Konzept ist zu riskant",
+          "Er ist zu jung",
+        ],
+        answer: 0,
+        explain: "Tam tutar için kefalet ya da kalkınma bankası onayı gerekiyor.",
+      },
+      {
+        text: "Was bedeutet „tilgungsfrei in den ersten sechs Monaten“?",
+        options: [
+          "Er zahlt am Anfang noch nicht zurück",
+          "Er zahlt keine Zinsen",
+          "Der Kredit ist sechs Monate gültig",
+        ],
+        answer: 0,
+        explain: "İlk altı ay anapara ödemesi yok — açılış dönemi için nefes alanı.",
+      },
+      {
+        text: "Was rät die Beraterin?",
+        options: [
+          "Zuerst mit der Förderbank sprechen",
+          "Sofort unterschreiben",
+          "Einen neuen Antrag stellen",
+        ],
+        answer: 0,
+        explain:
+          "„Das Verfahren dauert etwa vier Wochen, und die Konditionen sind besser als unsere.“",
+      },
+    ],
+  },
+  {
+    id: "b1-r12",
+    level: "B1",
+    skill: "reading",
+    title: "Ein Arbeitszeugnis lesen",
+    genre: "Rehber",
+    intro:
+      "Alman iş referanslarının gizli dili: her şey olumlu görünür, ama kelimeler not anlamına gelir. Bu yazı kodu çözüyor.",
+    gloss: [
+      { de: "das Arbeitszeugnis", tr: "iş referans belgesi" },
+      { de: "die Formulierung", tr: "ifade biçimi" },
+      { de: "stets", tr: "her zaman" },
+      { de: "zur vollen Zufriedenheit", tr: "tam memnuniyetle" },
+      { de: "bemüht sein", tr: "gayret göstermek" },
+      { de: "der Code", tr: "şifre, gizli dil" },
+      { de: "wohlwollend", tr: "iyi niyetli" },
+      { de: "das Recht", tr: "hak" },
+    ],
+    minutes: 6,
+    text:
+      "In Deutschland hat jede Arbeitnehmerin das Recht auf ein Arbeitszeugnis — und dieses Zeugnis muss wohlwollend formuliert sein. Negative Sätze sind also praktisch verboten. Genau deshalb hat sich ein Code entwickelt, den man kennen muss.\n\nDie wichtigste Formel steht fast immer am Ende und beschreibt die Leistung. Sie funktioniert wie eine Note:\n\n„… stets zur vollsten Zufriedenheit“ = sehr gut\n„… stets zur vollen Zufriedenheit“ = gut\n„… zur vollen Zufriedenheit“ = befriedigend\n„… zur Zufriedenheit“ = ausreichend\n„… insgesamt zur Zufriedenheit“ = mangelhaft\n\nEin einziges Wort — „stets“ oder „vollsten“ — entscheidet also über zwei Noten.\n\nGefährlich sind Sätze, die freundlich klingen und es nicht sind. „Er war stets bemüht“ heißt: Er hat sich Mühe gegeben, aber es hat nicht gereicht. „Sie war gesellig und trug zur Verbesserung des Betriebsklimas bei“ kann bedeuten, dass jemand mehr geredet als gearbeitet hat.\n\nAuch das Fehlen zählt: Wenn am Ende der übliche Dank und die guten Wünsche für die Zukunft fehlen, lesen Personalabteilungen das als deutliches Signal.\n\nWenn Sie ein Zeugnis bekommen, lesen Sie es also zweimal — und fragen Sie im Zweifel nach einer Korrektur. Sie haben ein Recht darauf.",
+    questions: [
+      {
+        text: "Warum gibt es diesen Code überhaupt?",
+        options: [
+          "Weil das Zeugnis wohlwollend sein muss",
+          "Weil Arbeitgeber Zeit sparen wollen",
+          "Weil es ein Gesetz von 1950 ist",
+        ],
+        answer: 0,
+        explain: "Olumsuz cümle yasak olduğu için gizli bir dil gelişmiş.",
+      },
+      {
+        text: "Was bedeutet „stets zur vollen Zufriedenheit“?",
+        options: ["Gut", "Sehr gut", "Ausreichend"],
+        answer: 0,
+        explain: "„vollsten“ = sehr gut, „stets zur vollen“ = gut.",
+      },
+      {
+        text: "Was heißt „Er war stets bemüht“?",
+        options: [
+          "Seine Leistung hat nicht gereicht",
+          "Er hat sehr gut gearbeitet",
+          "Er war oft krank",
+        ],
+        answer: 0,
+        explain: "Kibar görünen ama olumsuz olan klasik ifade.",
+      },
+      {
+        text: "Was ist ein schlechtes Zeichen am Ende des Zeugnisses?",
+        options: [
+          "Wenn Dank und gute Wünsche fehlen",
+          "Wenn das Datum fehlt",
+          "Wenn es zu lang ist",
+        ],
+        answer: 0,
+        explain: "İK bunu net bir sinyal olarak okuyor.",
+      },
+      {
+        text: "Was kann man tun, wenn das Zeugnis schlecht formuliert ist?",
+        options: [
+          "Eine Korrektur verlangen",
+          "Nichts, es ist endgültig",
+          "Ein neues bei der Agentur beantragen",
+        ],
+        answer: 0,
+        explain: "„fragen Sie im Zweifel nach einer Korrektur. Sie haben ein Recht darauf.“",
+      },
+    ],
+  },
+
   {
     id: "b1-l1",
     level: "B1",
@@ -908,6 +1329,602 @@ export const b1: SkillExercise[] = [
 
   // ── Yazma ──────────────────────────────────────────────────────────────
   {
+    id: "b1-l7",
+    level: "B1",
+    skill: "listening",
+    title: "Beim Steuerberater",
+    genre: "Danışma",
+    intro:
+      "Hikâyenin devamı: Tarek mali müşavire gidiyor. Kendi işini kuran herkesin oturduğu masa.",
+    gloss: [
+      { de: "der Steuerberater", tr: "mali müşavir" },
+      { de: "die Umsatzsteuer", tr: "KDV" },
+      { de: "der Gewinn", tr: "kâr" },
+      { de: "die Kleinunternehmerregelung", tr: "küçük işletme muafiyeti" },
+      { de: "die Belege", tr: "belgeler, fişler" },
+      { de: "aufbewahren", tr: "saklamak" },
+      { de: "die Rücklage", tr: "kenara ayrılan para" },
+      { de: "monatlich", tr: "aylık" },
+    ],
+    minutes: 5,
+    segments: [
+      { speaker: "Frau Petrova", text: "Herr Haddad, Sie eröffnen im September. Was ist Ihre größte Sorge?" },
+      {
+        speaker: "Tarek",
+        text: "Ehrlich? Die Steuern. Ich verstehe nicht, wie viel ich am Ende wirklich habe.",
+      },
+      {
+        speaker: "Frau Petrova",
+        text: "Gute Frage. Fangen wir mit der Umsatzsteuer an. Bei Essen im Café sind das 19 Prozent, zum Mitnehmen 7. Diese Steuer gehört nie Ihnen — Sie sammeln sie nur für den Staat.",
+      },
+      { speaker: "Tarek", text: "Das habe ich gehört. Aber es liegt doch auf meinem Konto." },
+      {
+        speaker: "Frau Petrova",
+        text: "Genau das ist die Falle. Die meisten geben es aus und haben im Quartal ein Problem. Machen Sie ein zweites Konto und überweisen Sie das Geld sofort dorthin.",
+      },
+      { speaker: "Tarek", text: "Und die Kleinunternehmerregelung?" },
+      {
+        speaker: "Frau Petrova",
+        text: "Bei Ihnen nicht sinnvoll. Die gilt bis 22.000 Euro Umsatz im Jahr. Sie planen mit 90.000.",
+      },
+      { speaker: "Tarek", text: "Was muss ich sonst noch tun?" },
+      {
+        speaker: "Frau Petrova",
+        text: "Alle Belege aufbewahren — zehn Jahre. Fotografieren reicht, wenn Sie sie geordnet ablegen. Und legen Sie jeden Monat 25 Prozent vom Gewinn zurück, nicht vom Umsatz.",
+      },
+      { speaker: "Tarek", text: "Und wenn ich einen Fehler mache?" },
+      {
+        speaker: "Frau Petrova",
+        text: "Dann korrigieren wir ihn. Das Finanzamt ist nicht Ihr Feind — es wird nur ungemütlich, wenn man sich nicht meldet.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie viel Umsatzsteuer gilt für Essen zum Mitnehmen?",
+        options: ["7 Prozent", "19 Prozent", "25 Prozent"],
+        answer: 0,
+        explain: "Kafede yemek %19, paket %7.",
+      },
+      {
+        text: "Warum ist die Umsatzsteuer eine Falle?",
+        options: [
+          "Sie liegt auf dem Konto, gehört aber dem Staat",
+          "Sie ist zu hoch",
+          "Man muss sie zweimal zahlen",
+        ],
+        answer: 0,
+        explain: "„Diese Steuer gehört nie Ihnen — Sie sammeln sie nur für den Staat.“",
+      },
+      {
+        text: "Was empfiehlt die Beraterin dagegen?",
+        options: [
+          "Ein zweites Konto und das Geld sofort überweisen",
+          "Weniger Umsatz machen",
+          "Monatlich statt quartalsweise zahlen",
+        ],
+        answer: 0,
+        explain: "İkinci hesap açıp KDV'yi hemen oraya aktarmak.",
+      },
+      {
+        text: "Warum passt die Kleinunternehmerregelung nicht?",
+        options: [
+          "Sein geplanter Umsatz ist viel zu hoch",
+          "Er hat Mitarbeiter",
+          "Er ist noch nicht angemeldet",
+        ],
+        answer: 0,
+        explain: "Muafiyet 22.000 euroya kadar; Tarek 90.000 planlıyor.",
+      },
+      {
+        text: "Wie viel soll er monatlich zurücklegen?",
+        options: [
+          "25 Prozent vom Gewinn",
+          "25 Prozent vom Umsatz",
+          "19 Prozent vom Umsatz",
+        ],
+        answer: 0,
+        explain: "„vom Gewinn, nicht vom Umsatz“ — bu ayrım kritik.",
+      },
+    ],
+  },
+  {
+    id: "b1-l8",
+    level: "B1",
+    skill: "listening",
+    title: "Handwerker am Telefon",
+    genre: "Telefon",
+    intro:
+      "Almanya'da usta bulmak kendi başına bir sınavdır. Tarek kafenin elektriği için arıyor.",
+    gloss: [
+      { de: "der Handwerker", tr: "usta, zanaatkâr" },
+      { de: "der Termin", tr: "randevu" },
+      { de: "der Kostenvoranschlag", tr: "keşif, fiyat teklifi" },
+      { de: "die Anfahrt", tr: "yol ücreti" },
+      { de: "der Notfall", tr: "acil durum" },
+      { de: "ausgebucht", tr: "dolu, yeri yok" },
+      { de: "der Auftrag", tr: "iş, sipariş" },
+      { de: "verbindlich", tr: "bağlayıcı" },
+    ],
+    minutes: 4,
+    segments: [
+      { speaker: "Elektro Kranz", text: "Elektro Kranz, Weber." },
+      {
+        speaker: "Tarek",
+        text: "Guten Tag. Ich eröffne im September ein Café und brauche neue Leitungen für die Küche. Wann könnten Sie kommen?",
+      },
+      {
+        speaker: "Weber",
+        text: "September … Da muss ich Sie enttäuschen. Wir sind bis Mitte Oktober ausgebucht.",
+      },
+      { speaker: "Tarek", text: "Das ist zu spät. Gibt es gar keine Möglichkeit?" },
+      {
+        speaker: "Weber",
+        text: "Moment. Wie groß ist der Auftrag? Wenn es zwei Tage sind, kann ich vielleicht etwas schieben. Bei einer Woche nicht.",
+      },
+      { speaker: "Tarek", text: "Ich schätze zwei bis drei Tage. Küche und ein neuer Sicherungskasten." },
+      {
+        speaker: "Weber",
+        text: "Dann komme ich nächste Woche vorbei und schaue es mir an. Das kostet nichts. Danach bekommen Sie einen schriftlichen Kostenvoranschlag.",
+      },
+      { speaker: "Tarek", text: "Und ist der Preis dann fest?" },
+      {
+        speaker: "Weber",
+        text: "Der Voranschlag ist nicht verbindlich, aber bei mir weicht er selten mehr als zehn Prozent ab. Wenn während der Arbeit etwas Größeres auftaucht, rufe ich Sie an, bevor ich weitermache.",
+      },
+      { speaker: "Tarek", text: "Das ist mir wichtig. Dann bis nächste Woche." },
+    ],
+    questions: [
+      {
+        text: "Was ist das erste Problem?",
+        options: [
+          "Die Firma ist bis Mitte Oktober ausgebucht",
+          "Der Auftrag ist zu klein",
+          "Der Preis ist zu hoch",
+        ],
+        answer: 0,
+        explain: "Eylül için yer yok, ekim ortasına kadar doluymuş.",
+      },
+      {
+        text: "Wovon hängt es ab, ob Herr Weber etwas schieben kann?",
+        options: [
+          "Von der Größe des Auftrags",
+          "Vom Preis",
+          "Vom Ort",
+        ],
+        answer: 0,
+        explain: "„Wenn es zwei Tage sind, kann ich vielleicht etwas schieben. Bei einer Woche nicht.“",
+      },
+      {
+        text: "Was kostet der erste Besuch?",
+        options: ["Nichts", "Die Anfahrt", "Zehn Prozent"],
+        answer: 0,
+        explain: "„Das kostet nichts. Danach bekommen Sie einen schriftlichen Kostenvoranschlag.“",
+      },
+      {
+        text: "Ist der Kostenvoranschlag verbindlich?",
+        options: [
+          "Nein, aber er weicht selten mehr als 10 % ab",
+          "Ja, immer",
+          "Nur schriftlich",
+        ],
+        answer: 0,
+        explain: "Yasal olarak bağlayıcı değil ama usta kendi pratiğini anlatıyor.",
+      },
+      {
+        text: "Was macht Herr Weber, wenn etwas Größeres auftaucht?",
+        options: [
+          "Er ruft an, bevor er weitermacht",
+          "Er macht weiter und rechnet ab",
+          "Er stoppt die Arbeit",
+        ],
+        answer: 0,
+        explain: "„rufe ich Sie an, bevor ich weitermache.“",
+      },
+    ],
+  },
+  {
+    id: "b1-l9",
+    level: "B1",
+    skill: "listening",
+    title: "Radiobeitrag: Weniger Autos in der Stadt",
+    genre: "Sınav formatı",
+    intro:
+      "B1 dinleme bölümünün ikinci kısmı gibi: bir radyo haberi, ardından içerik soruları. Bir kez baştan sona dinlemeyi dene.",
+    gloss: [
+      { de: "der Beitrag", tr: "haber, program parçası" },
+      { de: "der Versuch", tr: "deneme, pilot uygulama" },
+      { de: "die Sperrung", tr: "kapatma" },
+      { de: "der Umsatz", tr: "ciro" },
+      { de: "befürchten", tr: "endişe etmek" },
+      { de: "die Auswertung", tr: "değerlendirme" },
+      { de: "vorläufig", tr: "geçici" },
+      { de: "die Verlängerung", tr: "uzatma" },
+    ],
+    minutes: 5,
+    segments: [
+      {
+        speaker: "Moderator",
+        text: "Seit drei Monaten ist die Königstraße für Autos gesperrt — als Versuch. Nächste Woche entscheidet der Stadtrat, ob es dabei bleibt. Nina Färber hat sich umgehört.",
+      },
+      {
+        speaker: "Reporterin",
+        text: "Am Anfang war die Empörung groß. Vierzig Geschäfte hatten unterschrieben, sie befürchteten weniger Kundschaft. Heute klingt es anders.",
+      },
+      {
+        speaker: "Ladenbesitzerin",
+        text: "Ich war dagegen, ganz klar. Ich habe gedacht, ohne Parkplätze kommt niemand mehr. Aber mein Umsatz ist um sieben Prozent gestiegen. Die Leute bleiben einfach länger.",
+      },
+      {
+        speaker: "Reporterin",
+        text: "Nicht alle sind zufrieden. Wer schwere Waren verkauft — Möbel, Getränke —, klagt über Probleme bei der Lieferung.",
+      },
+      {
+        speaker: "Händler",
+        text: "Für mich ist es schlechter geworden. Meine Kunden kaufen Kästen, keine Blumen. Die kann man nicht tragen.",
+      },
+      {
+        speaker: "Reporterin",
+        text: "Die vorläufige Auswertung der Stadt zeigt: Der Umsatz im gesamten Bereich ist um vier Prozent gestiegen, die Zahl der Besucher um elf. Gleichzeitig gibt es 30 Prozent mehr Beschwerden über Lieferverkehr in den Nebenstraßen.",
+      },
+      {
+        speaker: "Moderator",
+        text: "Und die Entscheidung?",
+      },
+      {
+        speaker: "Reporterin",
+        text: "Wahrscheinlich eine Verlängerung um ein Jahr — mit festen Lieferzeiten am Morgen. Eine endgültige Sperrung will im Moment niemand beschließen.",
+      },
+    ],
+    questions: [
+      {
+        text: "Worum geht es in dem Beitrag?",
+        options: [
+          "Um eine Straßensperrung als Versuch",
+          "Um neue Parkhäuser",
+          "Um höhere Mieten",
+        ],
+        answer: 0,
+        explain: "Königstraße üç aydır deneme amaçlı araç trafiğine kapalı.",
+      },
+      {
+        text: "Wie hat sich die Meinung der Ladenbesitzerin geändert?",
+        options: [
+          "Sie war dagegen, jetzt hat sie mehr Umsatz",
+          "Sie war dafür und ist es geblieben",
+          "Sie ist weiterhin dagegen",
+        ],
+        answer: 0,
+        explain: "„Ich war dagegen, ganz klar … Aber mein Umsatz ist um sieben Prozent gestiegen.“",
+      },
+      {
+        text: "Wer hat Probleme?",
+        options: [
+          "Händler mit schweren Waren",
+          "Cafés und Restaurants",
+          "Die Anwohner",
+        ],
+        answer: 0,
+        explain: "Mobilya, içecek gibi ağır ürün satanlar teslimatta zorlanıyor.",
+      },
+      {
+        text: "Was zeigt die Auswertung der Stadt?",
+        options: [
+          "Mehr Umsatz und mehr Besucher, aber mehr Beschwerden über Lieferverkehr",
+          "Weniger Umsatz insgesamt",
+          "Keine Veränderung",
+        ],
+        answer: 0,
+        explain: "Ciro +%4, ziyaretçi +%11, teslimat şikâyetleri +%30.",
+      },
+      {
+        text: "Was wird wahrscheinlich entschieden?",
+        options: [
+          "Eine Verlängerung um ein Jahr mit festen Lieferzeiten",
+          "Eine endgültige Sperrung",
+          "Das Ende des Versuchs",
+        ],
+        answer: 0,
+        explain: "„Eine endgültige Sperrung will im Moment niemand beschließen.“",
+      },
+    ],
+  },
+  {
+    id: "b1-l10",
+    level: "B1",
+    skill: "listening",
+    title: "Podcast: Pünktlichkeit",
+    genre: "Kültür",
+    intro:
+      "Almanya ile ilgili en bilinen klişe. Bu podcast bölümü klişenin ne kadar doğru olduğunu tartışıyor.",
+    gloss: [
+      { de: "die Pünktlichkeit", tr: "dakiklik" },
+      { de: "das Klischee", tr: "klişe" },
+      { de: "die Verabredung", tr: "randevu, buluşma" },
+      { de: "akademisches Viertel", tr: "üniversitede 15 dk gecikme geleneği" },
+      { de: "unhöflich", tr: "kaba" },
+      { de: "die Ausrede", tr: "bahane" },
+      { de: "der Unterschied", tr: "fark" },
+      { de: "entschuldigen", tr: "özür dilemek" },
+    ],
+    minutes: 5,
+    segments: [
+      {
+        speaker: "Host",
+        text: "Heute: Sind die Deutschen wirklich so pünktlich? Zu Gast ist die Soziologin Dr. Karin Sander.",
+      },
+      {
+        speaker: "Sander",
+        text: "Teils. Im Beruf und bei Terminen mit Institutionen: ja, sehr. Im Privaten ist es viel lockerer, als das Klischee sagt.",
+      },
+      { speaker: "Host", text: "Also darf ich zu spät zur Party kommen?" },
+      {
+        speaker: "Sander",
+        text: "Zu einer Party sogar sehr gern — kommen Sie nicht als Erster, das gilt fast als unangenehm. Aber zum Abendessen bei jemandem zu Hause: pünktlich. Da steht das Essen auf dem Tisch.",
+      },
+      { speaker: "Host", text: "Wo ist die Grenze?" },
+      {
+        speaker: "Sander",
+        text: "Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem.",
+      },
+      { speaker: "Host", text: "Und wenn ich mich verspäte?" },
+      {
+        speaker: "Sander",
+        text: "Dann ist eine kurze Nachricht wichtiger als die Verspätung selbst. Das ist der eigentliche Punkt: Nicht die Zeit ist heilig, sondern die Information. Wer sich meldet, verletzt keine Regel.",
+      },
+      {
+        speaker: "Sander",
+        text: "Interessant ist übrigens die Universität. Da beginnt eine Vorlesung um zehn und heißt trotzdem „zehn Uhr“ — angefangen wird um Viertel nach. Das nennt sich akademisches Viertel und ist mehrere hundert Jahre alt.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wo sind Deutsche laut Dr. Sander wirklich pünktlich?",
+        options: [
+          "Im Beruf und bei Terminen mit Institutionen",
+          "Überall",
+          "Nur bei Partys",
+        ],
+        answer: 0,
+        explain: "Özel hayatta klişenin dediğinden çok daha rahat.",
+      },
+      {
+        text: "Was gilt bei einer Party?",
+        options: [
+          "Nicht als Erster kommen",
+          "Genau pünktlich sein",
+          "Eine Stunde später kommen",
+        ],
+        answer: 0,
+        explain: "İlk gelen olmak neredeyse rahatsız edici sayılıyor.",
+      },
+      {
+        text: "Was ist die Faustregel?",
+        options: [
+          "Wenn jemand etwas vorbereitet hat, pünktlich sein",
+          "Immer 15 Minuten später",
+          "Immer pünktlich",
+        ],
+        answer: 0,
+        explain: "Biri sizin için bir şey hazırladıysa dakik olun.",
+      },
+      {
+        text: "Was ist bei einer Verspätung am wichtigsten?",
+        options: [
+          "Eine kurze Nachricht",
+          "Eine gute Ausrede",
+          "Ein Geschenk",
+        ],
+        answer: 0,
+        explain: "„Nicht die Zeit ist heilig, sondern die Information.“",
+      },
+      {
+        text: "Was ist das „akademische Viertel“?",
+        options: [
+          "Vorlesungen beginnen 15 Minuten später als angekündigt",
+          "Ein Stadtteil mit Universitäten",
+          "Eine Pause zwischen zwei Vorlesungen",
+        ],
+        answer: 0,
+        explain: "Saat onda denilen ders on beş geçe başlar — yüzlerce yıllık gelenek.",
+      },
+    ],
+  },
+  {
+    id: "b1-l11",
+    level: "B1",
+    skill: "listening",
+    title: "Ein Missverständnis im Team",
+    genre: "Diyalog",
+    intro:
+      "İş yerinde yanlış anlaşılma nasıl konuşulur? Doğrudan ama kırmadan — Almanca iletişimin zor kısmı.",
+    gloss: [
+      { de: "das Missverständnis", tr: "yanlış anlaşılma" },
+      { de: "der Vorwurf", tr: "suçlama" },
+      { de: "sich angegriffen fühlen", tr: "saldırıya uğramış hissetmek" },
+      { de: "die Absicht", tr: "niyet" },
+      { de: "ansprechen", tr: "konuyu açmak" },
+      { de: "klären", tr: "açıklığa kavuşturmak" },
+      { de: "zugeben", tr: "kabul etmek" },
+      { de: "abmachen", tr: "kararlaştırmak" },
+    ],
+    minutes: 5,
+    segments: [
+      { speaker: "Lea", text: "Jonas, hast du kurz Zeit? Ich möchte etwas ansprechen." },
+      { speaker: "Jonas", text: "Klar. Klingt ernst." },
+      {
+        speaker: "Lea",
+        text: "Gestern in der Besprechung hast du gesagt, der Bericht sei „irgendwie unvollständig“. Ich habe drei Tage daran gearbeitet.",
+      },
+      { speaker: "Jonas", text: "Oh. Ich wollte dich nicht kritisieren." },
+      {
+        speaker: "Lea",
+        text: "Das glaube ich dir. Aber vor sieben Leuten wirkt so ein Satz anders als unter uns.",
+      },
+      {
+        speaker: "Jonas",
+        text: "Da hast du recht. Ich habe an die Zahlen aus dem Lager gedacht — die fehlen ja wirklich. Aber die hast du gar nicht bekommen, oder?",
+      },
+      { speaker: "Lea", text: "Genau. Ich habe zweimal gefragt und keine Antwort bekommen." },
+      {
+        speaker: "Jonas",
+        text: "Dann war mein Satz einfach falsch. Ich sage das morgen in der Runde — kurz, ohne Drama, aber ich sage es.",
+      },
+      { speaker: "Lea", text: "Danke. Und wenn dir etwas auffällt, sag es mir gern vorher." },
+      { speaker: "Jonas", text: "Machen wir so. Ich schreibe dir dann einfach direkt." },
+    ],
+    questions: [
+      {
+        text: "Warum spricht Lea Jonas an?",
+        options: [
+          "Wegen einer Bemerkung in der Besprechung",
+          "Wegen einer verpassten Frist",
+          "Wegen des Urlaubsplans",
+        ],
+        answer: 0,
+        explain: "„der Bericht sei irgendwie unvollständig“ cümlesi rahatsız etmiş.",
+      },
+      {
+        text: "Was stört sie genau?",
+        options: [
+          "Dass er es vor sieben Leuten gesagt hat",
+          "Dass er es überhaupt gesagt hat",
+          "Dass er nicht geholfen hat",
+        ],
+        answer: 0,
+        explain: "„vor sieben Leuten wirkt so ein Satz anders als unter uns.“",
+      },
+      {
+        text: "Was stellt sich heraus?",
+        options: [
+          "Lea hat die fehlenden Zahlen nie bekommen",
+          "Lea hat sie vergessen",
+          "Die Zahlen waren falsch",
+        ],
+        answer: 0,
+        explain: "İki kez sormuş, cevap gelmemiş.",
+      },
+      {
+        text: "Wie reagiert Jonas?",
+        options: [
+          "Er gibt den Fehler zu und will es öffentlich korrigieren",
+          "Er verteidigt sich",
+          "Er entschuldigt sich nur privat",
+        ],
+        answer: 0,
+        explain: "„Ich sage das morgen in der Runde — kurz, ohne Drama, aber ich sage es.“",
+      },
+      {
+        text: "Was machen sie für die Zukunft ab?",
+        options: [
+          "Kritik zuerst direkt, nicht in der Runde",
+          "Keine Kritik mehr",
+          "Alles schriftlich",
+        ],
+        answer: 0,
+        explain: "„wenn dir etwas auffällt, sag es mir gern vorher.“",
+      },
+    ],
+  },
+  {
+    id: "b1-l12",
+    level: "B1",
+    skill: "listening",
+    title: "Die Eröffnung",
+    genre: "Röportaj",
+    intro:
+      "Hikâyenin sonu: yerel radyo, kafesinin açılış gününde Tarek ile konuşuyor.",
+    gloss: [
+      { de: "die Eröffnung", tr: "açılış" },
+      { de: "der Andrang", tr: "yoğunluk, kalabalık" },
+      { de: "die Vorbereitung", tr: "hazırlık" },
+      { de: "sich lohnen", tr: "değmek" },
+      { de: "die Schlange", tr: "kuyruk" },
+      { de: "aufgeben", tr: "vazgeçmek" },
+      { de: "der Zweifel", tr: "şüphe" },
+      { de: "dankbar", tr: "minnettar" },
+    ],
+    minutes: 5,
+    segments: [
+      {
+        speaker: "Reporterin",
+        text: "Herr Haddad, seit heute Morgen um sieben steht hier eine Schlange. Haben Sie damit gerechnet?",
+      },
+      {
+        speaker: "Tarek",
+        text: "Überhaupt nicht. Ich habe für vierzig Frühstücke eingekauft. Um halb elf war alles weg.",
+      },
+      { speaker: "Reporterin", text: "Wie lange hat der Weg bis hierher gedauert?" },
+      {
+        speaker: "Tarek",
+        text: "Vierzehn Monate. Neun davon nur Papier: Gewerbe, Erlaubnis, Bank, Gesundheitsamt. Gekocht habe ich in dieser Zeit fast nie.",
+      },
+      { speaker: "Reporterin", text: "Gab es einen Moment, in dem Sie aufgeben wollten?" },
+      {
+        speaker: "Tarek",
+        text: "Ja, im Februar. Die Bank hat mir weniger gegeben, als ich wollte, und der Elektriker hatte keine Zeit. Ich habe drei Tage nicht geschlafen und gedacht: Das war's.",
+      },
+      { speaker: "Reporterin", text: "Was hat geholfen?" },
+      {
+        speaker: "Tarek",
+        text: "Ein Mann aus einem Forum, Hassan. Wir kannten uns nicht. Er hat gesagt: „Ruf die Förderbank an, bevor du unterschreibst.“ Dieser eine Satz hat mir 15.000 Euro gespart.",
+      },
+      { speaker: "Reporterin", text: "Und was wünschen Sie sich für das erste Jahr?" },
+      {
+        speaker: "Tarek",
+        text: "Dass ich in einem Jahr noch hier stehe. Und ehrlich gesagt: einen freien Sonntag.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was hat Tarek überrascht?",
+        options: [
+          "Der große Andrang am ersten Tag",
+          "Die hohen Kosten",
+          "Das schlechte Wetter",
+        ],
+        answer: 0,
+        explain: "Kırk kahvaltılık alışveriş yapmış, 10:30'da her şey bitmiş.",
+      },
+      {
+        text: "Wie lange hat der ganze Weg gedauert?",
+        options: ["14 Monate", "9 Monate", "3 Monate"],
+        answer: 0,
+        explain: "„Vierzehn Monate. Neun davon nur Papier.“",
+      },
+      {
+        text: "Wann wollte er aufgeben?",
+        options: [
+          "Im Februar, nach der Bank und dem Elektriker",
+          "Ganz am Anfang",
+          "Am Tag vor der Eröffnung",
+        ],
+        answer: 0,
+        explain: "Banka az verdi, elektrikçinin vakti yoktu; üç gece uyuyamamış.",
+      },
+      {
+        text: "Wer hat ihm geholfen?",
+        options: [
+          "Ein Unbekannter aus einem Forum",
+          "Seine Bank",
+          "Ein Freund aus der Küche",
+        ],
+        answer: 0,
+        explain: "Hassan'ın tek cümlesi ona 15.000 euro kazandırmış.",
+      },
+      {
+        text: "Was wünscht er sich?",
+        options: [
+          "In einem Jahr noch da zu sein — und einen freien Sonntag",
+          "Ein zweites Café",
+          "Mehr Personal",
+        ],
+        answer: 0,
+        explain: "Son cevabı tam olarak bu.",
+      },
+    ],
+  },
+
+  {
     id: "b1-w1",
     level: "B1",
     skill: "writing",
@@ -1128,6 +2145,253 @@ export const b1: SkillExercise[] = [
           { de: "So hätte jeder eine gute Alternative.", tr: "Böylece herkesin iyi bir alternatifi olurdu." },
         ],
         sample: "In meiner Heimatstadt gibt es seit einem Jahr einen autofreien Sonntag pro Monat, und ich finde diese Idee großartig. Meiner Meinung nach sollten noch mehr Städte das ausprobieren.\n\nDer wichtigste Grund ist für mich die Luftqualität. Außerdem ist es viel angenehmer, durch die Stadt zu laufen, wenn keine Autos fahren. Kinder können sicher mit dem Rad fahren, und die Cafés stellen ihre Tische auf die Straße.\n\nNatürlich brauchen manche Menschen das Auto, zum Beispiel Handwerker oder Familien mit kleinen Kindern. Deshalb schlage ich vor, dass Busse und Bahnen an diesen Tagen kostenlos fahren. So hätte jeder eine gute Alternative.",
+      },
+    ],
+  },
+  {
+    id: "b1-w5",
+    level: "B1",
+    skill: "writing",
+    title: "Beschwerde an den Vermieter",
+    genre: "Resmî yazı",
+    intro:
+      "Almanya'da kiracı hakkını yazıyla arar. Somut, tarihli ve süre veren bir şikâyet mektubu yazacaksın.",
+    gloss: [
+      { de: "der Mangel", tr: "kusur, arıza" },
+      { de: "beheben", tr: "gidermek" },
+      { de: "die Frist setzen", tr: "süre vermek" },
+      { de: "die Mietminderung", tr: "kira indirimi" },
+      { de: "mehrfach", tr: "birçok kez" },
+      { de: "der Nachweis", tr: "kanıt" },
+      { de: "auffordern", tr: "talep etmek, çağrıda bulunmak" },
+    ],
+    minutes: 10,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Kalorifer 3 Ocak'tan beri çalışmıyor.",
+        answer: "Die Heizung funktioniert seit dem 3. Januar nicht.",
+        hint: "„seit“ + Dativ ve tarih: seit dem 3. Januar.",
+      },
+      {
+        kind: "build",
+        tr: "Size bunu iki kez telefonla bildirdim.",
+        answer: "Ich habe Ihnen das zweimal telefonisch mitgeteilt.",
+        hint: "mitteilen Dativ ister: Ihnen. Perfekt: habe … mitgeteilt.",
+      },
+      {
+        kind: "build",
+        tr: "Size 15 Ocak'a kadar süre veriyorum.",
+        answer: "Ich setze Ihnen eine Frist bis zum 15. Januar.",
+        hint: "„eine Frist setzen“ kalıp; bis zum + tarih.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Ev sahibine bir şikâyet mektubu yaz. Beş noktaya değin: sorun tam olarak nedir ve ne zamandır sürüyor, daha önce ne yaptın, sorunun sana etkisi, net bir talep ve süre, kibar ama kararlı kapanış. Duygusal değil, tarihli ve somut yaz.",
+        checklist: [
+          "Sorunu ve başlangıç tarihini yazdın mı?",
+          "Önceki bildirimlerini (tarihleriyle) belirttin mi?",
+          "Etkisini somut anlattın mı?",
+          "Net bir talep ve süre verdin mi?",
+          "Ton kararlı ama kibar mı?",
+        ],
+        minWords: 90,
+        phrases: [
+          { de: "hiermit möchte ich Sie darauf hinweisen, dass …", tr: "bu vesileyle … olduğunu bildirmek isterim." },
+          { de: "Ich habe Sie bereits am … informiert.", tr: "Sizi … tarihinde zaten bilgilendirmiştim." },
+          { de: "Die Wohnung ist dadurch …", tr: "Bu nedenle daire …" },
+          { de: "Ich fordere Sie auf, … zu beheben.", tr: "…'i gidermenizi talep ediyorum." },
+          { de: "Ich setze Ihnen eine Frist bis zum …", tr: "Size …'e kadar süre veriyorum." },
+          { de: "Mit freundlichen Grüßen", tr: "Saygılarımla" },
+        ],
+        sample:
+          "Sehr geehrter Herr Bach,\n\nhiermit möchte ich Sie darauf hinweisen, dass die Heizung in meiner Wohnung seit dem 3. Januar nicht funktioniert. In den Zimmern sind es morgens nur 15 Grad.\n\nIch habe Sie bereits am 4. und am 9. Januar telefonisch informiert. Beide Male wurde mir ein Termin mit dem Hausmeister zugesagt, der bisher nicht stattgefunden hat.\n\nDie Wohnung ist dadurch kaum nutzbar. Mein Sohn ist sechs Jahre alt und war letzte Woche erkältet.\n\nIch fordere Sie auf, den Mangel zu beheben, und setze Ihnen eine Frist bis zum 15. Januar. Sollte bis dahin nichts geschehen, werde ich die Miete entsprechend mindern.\n\nÜber eine kurze Rückmeldung würde ich mich freuen.\n\nMit freundlichen Grüßen\nTarek Haddad",
+      },
+    ],
+  },
+  {
+    id: "b1-w6",
+    level: "B1",
+    skill: "writing",
+    title: "Forumsbeitrag mit Meinung",
+    genre: "Sınav formatı",
+    intro:
+      "B1 sınavının klasik yazma görevi: bir forum yazısına kendi görüşünle cevap ver — görüş, gerekçe, örnek ve öneri.",
+    gloss: [
+      { de: "der Beitrag", tr: "gönderi" },
+      { de: "die Meinung", tr: "görüş" },
+      { de: "der Vorteil", tr: "avantaj" },
+      { de: "der Nachteil", tr: "dezavantaj" },
+      { de: "meiner Meinung nach", tr: "bence" },
+      { de: "einerseits … andererseits", tr: "bir yandan … öte yandan" },
+      { de: "vorschlagen", tr: "önermek" },
+    ],
+    minutes: 10,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bence okullar cep telefonlarını yasaklamamalı.",
+        answer: "Meiner Meinung nach sollten Schulen Handys nicht verbieten.",
+        hint: "„Meiner Meinung nach“ ile başlayınca fiil hemen arkasından gelir.",
+      },
+      {
+        kind: "build",
+        tr: "Bir yandan bu dikkat dağıtıyor, öte yandan öğrenmeye de yardım ediyor.",
+        answer: "Einerseits lenkt das ab, andererseits hilft es auch beim Lernen.",
+        hint: "İki bölümün de fiili ikinci sırada olmalı.",
+      },
+      {
+        kind: "build",
+        tr: "Bu yüzden net kuralların olmasını öneriyorum.",
+        answer: "Deshalb schlage ich vor, dass es klare Regeln gibt.",
+        hint: "„vorschlagen“ ayrılabilir; dass yan cümlesinde fiil sonda.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir forumda şu soru tartışılıyor: „Ev ödevi kaldırılmalı mı?“ Kendi görüşünle bir yorum yaz. Dört noktaya değin: görüşün, en az iki gerekçe, kendi hayatından bir örnek, somut bir öneri.",
+        checklist: [
+          "Görüşünü ilk cümlelerde net söyledin mi?",
+          "En az iki gerekçe verdin mi?",
+          "Kişisel bir örnek verdin mi?",
+          "Karşı görüşe bir cümleyle değindin mi?",
+          "Somut bir öneriyle bitirdin mi?",
+        ],
+        minWords: 90,
+        phrases: [
+          { de: "Ich habe den Beitrag von … gelesen.", tr: "…'in yazısını okudum." },
+          { de: "Meiner Meinung nach …", tr: "Bence …" },
+          { de: "Der wichtigste Grund ist …", tr: "En önemli neden …" },
+          { de: "Bei mir war es so, dass …", tr: "Bende şöyle oldu: …" },
+          { de: "Natürlich gibt es auch …", tr: "Elbette … de var." },
+          { de: "Deshalb schlage ich vor, dass …", tr: "Bu yüzden … öneriyorum." },
+        ],
+        sample:
+          "Ich habe den Beitrag von Lisa93 gelesen und finde die Frage sehr interessant.\n\nMeiner Meinung nach sollten Hausaufgaben nicht abgeschafft, aber deutlich reduziert werden. Der wichtigste Grund ist die Zeit: Viele Kinder sind bis 16 Uhr in der Schule und danach noch zwei Stunden am Schreibtisch. Der zweite Grund ist die Ungerechtigkeit — wer Eltern hat, die helfen können, ist klar im Vorteil.\n\nBei mir war es so, dass ich in Mathematik nie Hilfe bekommen habe. Meine Eltern hatten die Themen selbst nie gelernt. Ich habe die Aufgaben trotzdem gemacht, aber oft falsch, und niemand hat es gemerkt.\n\nNatürlich gibt es auch gute Gründe für Hausaufgaben: Man wiederholt den Stoff und lernt, selbstständig zu arbeiten.\n\nDeshalb schlage ich vor, dass es zwei- bis dreimal pro Woche kleine Aufgaben gibt und dafür in der Schule eine feste Lernstunde. So hätten alle Kinder die gleiche Chance.",
+      },
+    ],
+  },
+  {
+    id: "b1-w7",
+    level: "B1",
+    skill: "writing",
+    title: "Duzen oder siezen — deine Erfahrung",
+    genre: "Kültür",
+    intro:
+      "b1-r9'daki konuyu kendi deneyiminle yazacaksın: bir yanlış anlaşılma, ne öğrendiğin ve bir tavsiye.",
+    gloss: [
+      { de: "die Erfahrung", tr: "deneyim" },
+      { de: "peinlich", tr: "utandırıcı" },
+      { de: "reagieren", tr: "tepki vermek" },
+      { de: "der Rat", tr: "tavsiye" },
+      { de: "sich unsicher fühlen", tr: "kendini emin hissetmemek" },
+      { de: "auffallen", tr: "dikkat çekmek" },
+      { de: "inzwischen", tr: "bu arada, artık" },
+    ],
+    minutes: 9,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Başlangıçta herkese „du“ diyordum.",
+        answer: "Am Anfang habe ich alle geduzt.",
+        hint: "„duzen“ Akkusativ ister: alle geduzt.",
+      },
+      {
+        kind: "build",
+        tr: "Kimse bir şey söylemedi ama bir şeyi fark ettim.",
+        answer: "Niemand hat etwas gesagt, aber mir ist etwas aufgefallen.",
+        hint: "„auffallen“ Dativ ile: mir ist … aufgefallen.",
+      },
+      {
+        kind: "build",
+        tr: "Artık emin olmadığımda soruyorum.",
+        answer: "Inzwischen frage ich, wenn ich unsicher bin.",
+        hint: "„Inzwischen“ başta, fiil ikinci sırada; yan cümlede fiil sonda.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "„du“ ve „Sie“ ile ilgili kendi deneyimini anlat. Dört noktaya değin: bir durum (nerede, kiminle), ne yaptın ve ne oldu, o an ne hissettin, bugün ne yapıyorsun ve yeni gelen birine tavsiyen. Anlatıyla başla, açıklamayla değil.",
+        checklist: [
+          "Somut bir sahneyle başladın mı?",
+          "Ne olduğunu geçmiş zamanla anlattın mı?",
+          "Duyguyu adlandırdın mı?",
+          "Bugünle karşılaştırdın mı?",
+          "Net bir tavsiyeyle bitirdin mi?",
+        ],
+        minWords: 90,
+        phrases: [
+          { de: "Als ich neu hier war, …", tr: "Buraya yeni geldiğimde …" },
+          { de: "Ich wusste nicht, ob …", tr: "… olup olmadığını bilmiyordum." },
+          { de: "Das war mir sehr peinlich.", tr: "Çok utandım." },
+          { de: "Zum Glück hat … freundlich reagiert.", tr: "Neyse ki … kibar davrandı." },
+          { de: "Inzwischen mache ich es so: …", tr: "Artık şöyle yapıyorum: …" },
+          { de: "Mein Rat wäre: …", tr: "Tavsiyem şu olurdu: …" },
+        ],
+        sample:
+          "Als ich neu hier war, habe ich in meinem ersten Job alle geduzt — auch den Chef. Im Lager haben das alle so gemacht, und ich dachte, das ist überall gleich.\n\nDann kam ein Termin mit einer Kundin, einer älteren Frau. Ich habe gesagt: „Kannst du mir kurz die Nummer geben?“ Sie hat einen Moment nichts gesagt. Danach hat sie sehr betont „Sie“ zu mir gesagt, in jedem Satz.\n\nDas war mir sehr peinlich. Ich habe mich den ganzen Tag schlecht gefühlt, obwohl niemand mich kritisiert hat.\n\nSpäter hat mir eine Kollegin erklärt, dass es nicht am Alter liegt, sondern an der Situation: intern anders als mit Kunden. Zum Glück hat sie freundlich reagiert und nicht gelacht.\n\nInzwischen mache ich es so: Ich sieze, bis mir das „du“ angeboten wird. Wenn ich unsicher bin, frage ich einfach.\n\nMein Rat wäre: Fragen ist nie peinlich. Falsch duzen kann man nicht zurücknehmen.",
+      },
+    ],
+  },
+  {
+    id: "b1-w8",
+    level: "B1",
+    skill: "writing",
+    title: "Einladung zur Eröffnung",
+    genre: "Duyuru",
+    intro:
+      "Hikâyenin son parçası: Tarek'in yerine geçip kafenin açılış davetini yazacaksın — mahalleye asılacak bir metin.",
+    gloss: [
+      { de: "die Eröffnung", tr: "açılış" },
+      { de: "herzlich einladen", tr: "içtenlikle davet etmek" },
+      { de: "der Anlass", tr: "vesile" },
+      { de: "kosten (probieren)", tr: "tatmak" },
+      { de: "die Nachbarschaft", tr: "mahalle, komşuluk" },
+      { de: "sich freuen auf", tr: "dört gözle beklemek" },
+      { de: "vorbeikommen", tr: "uğramak" },
+    ],
+    minutes: 9,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Sizi açılışıma içtenlikle davet ediyorum.",
+        answer: "Ich lade Sie herzlich zu meiner Eröffnung ein.",
+        hint: "„einladen zu“ + Dativ; fiil ayrılabilir: lade … ein.",
+      },
+      {
+        kind: "build",
+        tr: "Bütün gün ücretsiz çay ve tatlı ikram edilecek.",
+        answer: "Den ganzen Tag gibt es kostenlos Tee und Süßigkeiten.",
+        hint: "„es gibt“ + Akkusativ; zaman ifadesi başa alınabilir.",
+      },
+      {
+        kind: "build",
+        tr: "Gelemezseniz de bir başka gün uğrayın.",
+        answer: "Wenn Sie nicht kommen können, kommen Sie gern an einem anderen Tag vorbei.",
+        hint: "Yan cümleyle başlayınca ana cümle fiille başlar.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Mahalleye asılacak bir açılış daveti yaz. Beş noktaya değin: kim olduğun ve ne açtığın, ne zaman ve nerede, o gün ne olacak (ikram, müzik, indirim), neden bu mahalleyi seçtiğin (bir cümlelik kişisel not), sıcak bir kapanış. Duyuru kısa ve davetkâr olmalı.",
+        checklist: [
+          "Ne, nerede, ne zaman — üçü de var mı?",
+          "O gün ne olacağını yazdın mı?",
+          "Kişisel bir cümle koydun mu (sadece bilgi değil)?",
+          "Gelemeyenlere de bir cümle var mı?",
+          "Metin bir duyuru olarak kısa mı?",
+        ],
+        minWords: 80,
+        phrases: [
+          { de: "Ab dem … gibt es …", tr: "…'den itibaren … var." },
+          { de: "Ich lade Sie herzlich ein.", tr: "Sizi içtenlikle davet ediyorum." },
+          { de: "An diesem Tag …", tr: "O gün …" },
+          { de: "Ich freue mich darauf, Sie kennenzulernen.", tr: "Sizinle tanışmayı dört gözle bekliyorum." },
+          { de: "Kommen Sie gern vorbei.", tr: "Buyurun, uğrayın." },
+        ],
+        sample:
+          "Liebe Nachbarinnen und Nachbarn,\n\nmein Name ist Tarek Haddad, und ab dem 12. September gibt es in der Lindenstraße 6 etwas Neues: das Café Sahar, mit syrischem Frühstück.\n\nZur Eröffnung am Samstag lade ich Sie herzlich ein. An diesem Tag gibt es den ganzen Tag kostenlos Tee und Süßigkeiten, und ab 15 Uhr spielt eine kleine Band aus dem Viertel.\n\nIch koche seit sechs Jahren in dieser Stadt, aber immer in fremden Küchen. Jetzt endlich in meiner eigenen — und zwar in dem Viertel, in dem ich selbst wohne.\n\nWenn Sie am Samstag keine Zeit haben, kommen Sie gern an einem anderen Tag vorbei. Wir haben von Dienstag bis Sonntag ab 8 Uhr geöffnet.\n\nIch freue mich darauf, Sie kennenzulernen.\n\nTarek Haddad",
       },
     ],
   },
