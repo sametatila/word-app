@@ -428,6 +428,436 @@ export const zhB1: SkillExercise[] = [
     ],
   },
 
+  // ── Hikâye dizisi: Yusuf daireden çıkıyor. B1'in yeni alıştırmalarında
+  //    fesih → teslim → tutanak → depozito sırası izlenir.
+  {
+    id: "zh-b1-r7",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "reading",
+    title: "S Kündigungsschriibe",
+    genre: "Resmî yazı",
+    intro:
+      "Yusuf dairesinden çıkıyor. Fesih mektubu ve yönetimin cevabı — İsviçre kira hukukunun en pratik köşesi.",
+    gloss: [
+      { de: "kündige", tr: "sözleşmeyi feshetmek" },
+      { de: "de Kündigungstermin", tr: "fesih tarihi" },
+      { de: "d Frischt", tr: "süre" },
+      { de: "iigschriibe", tr: "iadeli taahhütlü" },
+      { de: "de Nachmieter", tr: "devralacak kiracı" },
+      { de: "zumuetbar", tr: "kabul edilebilir" },
+      { de: "vorziitig", tr: "erken, vadesinden önce" },
+      { de: "hafte", tr: "sorumlu olmak" },
+    ],
+    minutes: 6,
+    text:
+      "SCHRIIBE VOM YUSUF — 20. Mai\n\nSehr geehrti Frau Bächtold\n\nHiermit kündige ich d 3-Zimmer-Wonig a de Bertastrass 9, 2. Schtock, uf de nächschtmögliche Termin, also uf de 30. Septämber.\n\nIch würd aber gärn scho im Juli uszüge. Wänn ich Ine Nachmieter vorschlaa, wo zumuetbar sind, würd ich gärn vorziitig us em Vertrag.\n\nFründlichi Grüess\nYusuf Demir\n\n\nANTWORT — 26. Mai\n\nGuete Tag Herr Demir\n\nMir bestätiged Ihri Kündigung uf de 30. Septämber. Bitte beachted Si: Kündigunge müend iigschriibe verschickt wärde — mir akzeptiered Ihres Mail als Vorabinformation, s Original erwarted mir bis am 31. Mai.\n\nZum vorziitige Uszug: Si chönd üs Nachmieter vorschlaa. Zumuetbar häisst, dass si zaalungsfähig sind und de Vertrag zu de gliiche Konditione übernämed. Mir prüefed jede Vorschlag innerhalb vo zää Täg.\n\nWichtig: Bis en zumuetbare Nachmieter da isch, haftet Si für d Miete. Es git kä automatischi Befreiig, nur will Si früener uszüged.\n\nFründlichi Grüess\nR. Bächtold",
+    questions: [
+      {
+        text: "Uf wänn hät de Yusuf kündet?",
+        options: ["Uf de 30. Septämber", "Uf de 31. Mai", "Uf de Juli"],
+        answer: 0,
+        explain: "Bir sonraki mümkün fesih tarihi 30 Eylül.",
+      },
+      {
+        text: "Was fählt a sinere Kündigung?",
+        options: [
+          "S Original per iigschriibene Brief",
+          "D Unterschrift",
+          "S Datum",
+        ],
+        answer: 0,
+        explain: "E-posta yalnızca ön bilgi sayılıyor; asıl belge 31 Mayıs'a kadar bekleniyor.",
+      },
+      {
+        text: "Was häisst „zumuetbar“ bi de Nachmieter?",
+        options: [
+          "Zaalungsfähig und bereit, di gliiche Konditione z übernää",
+          "Sympathisch und ruhig",
+          "Us em gliiche Quartier",
+        ],
+        answer: 0,
+        explain: "Yönetim iki ölçüt veriyor.",
+      },
+      {
+        text: "Wie lang prüeft d Verwaltig en Vorschlag?",
+        options: ["Innerhalb vo zää Täg", "Innerhalb vo eme Monet", "Es isch nöd gsäit"],
+        answer: 0,
+        explain: "„Mir prüefed jede Vorschlag innerhalb vo zää Täg.“",
+      },
+      {
+        text: "Was passiert, bis en Nachmieter gfunde isch?",
+        options: [
+          "De Yusuf haftet wiiter für d Miete",
+          "D Miete wird halbiert",
+          "De Vertrag ändet automatisch",
+        ],
+        answer: 0,
+        explain: "„Es git kä automatischi Befreiig, nur will Si früener uszüged.“",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-r8",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "reading",
+    title: "D Wonigsabgab",
+    genre: "Rehber",
+    intro:
+      "İsviçre'de daireyi teslim etmek bir tören gibidir: liste, kontrol, tutanak. Ne kontrol edildiğini anlatan rehber.",
+    gloss: [
+      { de: "d Abgab", tr: "teslim" },
+      { de: "s Protokoll", tr: "tutanak" },
+      { de: "de Mangel", tr: "kusur, hasar" },
+      { de: "d Abnutzig", tr: "normal yıpranma" },
+      { de: "d Läbensduur", tr: "kullanım ömrü" },
+      { de: "hafte für", tr: "…den sorumlu olmak" },
+      { de: "d Endreinigung", tr: "son temizlik" },
+      { de: "de Abzug", tr: "kesinti" },
+    ],
+    minutes: 7,
+    text:
+      "Bi de Abgab lauft d Verwaltig mit ere Lischte dur d Wonig und schriibt es Protokoll. Was drin staat, entschäidet, wie vill vo de Kaution zruggchunt.\n\nDe wichtigscht Underschid isch: normali Abnutzig gäge Schade. Für normali Abnutzig haftet me nöd. E Wand, wo nach acht Jaar nöd meh wiiss isch, isch normal. Es Loch i de Wand isch es nöd.\n\nDezue git s d Läbensduurtabälle. Jedes Täil hät e erwarteti Läbensduur: Teppich zää Jaar, Farbe a de Wand ächt Jaar, Chuchiabdeckig zwänzg. Wär nach sibe Jaar en Teppich beschädigt, zaalt nöd de ganz Teppich, sondern nur s letschte Jaar — also en Zäänteil.\n\nD Endreinigung mues «bsenraini» sii. Was das genau häisst, staat mängisch im Vertrag: Bode gwüsche, Chuchi und Bad putzt, Backofe suuber, Fänschter gputzt, Silikonfugen ohni Schimmel.\n\nVill Lüüt nämed e Putzfirma mit Abnaamegarantie. Die choschtet öppe 600 bis 900 Franke für e 3-Zimmer-Wonig — und die Firma chunt nomal, wänn d Verwaltig öppis reklamiert. Ohni Garantie isch s billiger, aber s Risiko lit bi eu.\n\nUnterschriibed Si s Protokoll nur, wänn Si iiverstande sind. Si dörfed „mit Vorbehalt“ dezueschriibe — das schadet nöd und ghaltet Ihri Rächt offe.",
+    questions: [
+      {
+        text: "Was entschäidet über d Kaution?",
+        options: [
+          "Was im Protokoll staat",
+          "Wie lang me gwohnt hät",
+          "Wie höch d Miete gsii isch",
+        ],
+        answer: 0,
+        explain: "Yönetim listeyle geziyor ve tutanağa yazıyor.",
+      },
+      {
+        text: "Welles Biispil isch normali Abnutzig?",
+        options: [
+          "E Wand, wo nach acht Jaar nöd meh wiiss isch",
+          "Es Loch i de Wand",
+          "En brochne Fänschtergriff",
+        ],
+        answer: 0,
+        explain: "Normal yıpranmadan sorumlu olunmuyor.",
+      },
+      {
+        text: "Wie vill zaalt me für en Teppich, wo nach sibe Jaar kaputt gaat?",
+        options: [
+          "Öppe en Zäänteil",
+          "De ganz Priis",
+          "D Hälfti",
+        ],
+        answer: 0,
+        explain: "Halı ömrü on yıl; kalan bir yıl hesaplanıyor.",
+      },
+      {
+        text: "Was isch de Vortäil vo ere Abnaamegarantie?",
+        options: [
+          "D Firma chunt nomal, wänn d Verwaltig reklamiert",
+          "Si isch günschtiger",
+          "Me mues s Protokoll nöd unterschriibe",
+        ],
+        answer: 0,
+        explain: "600–900 frank; garantisiz seçenek ucuz ama risk kiracıda.",
+      },
+      {
+        text: "Was cha me tue, wänn me mit em Protokoll nöd iiverstande isch?",
+        options: [
+          "„Mit Vorbehalt“ dezueschriibe",
+          "Nöd unterschriibe und gaa",
+          "S Protokoll spöter ändere",
+        ],
+        answer: 0,
+        explain: "Bu, hakları açık tutuyor ve zarar vermiyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-r9",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "reading",
+    title: "Es Land, vier Sprooche",
+    genre: "Kültür",
+    intro:
+      "İsviçre'nin dört resmî dili var — ama günlük hayatta bu nasıl işliyor? „Röstigraben“ ne demek?",
+    gloss: [
+      { de: "d Amtssprooch", tr: "resmî dil" },
+      { de: "de Röstigrabe", tr: "Almanca-Fransızca kültürel sınır" },
+      { de: "s Rätoromanisch", tr: "Romanşça" },
+      { de: "d Minderheit", tr: "azınlık" },
+      { de: "s Territorialprinzip", tr: "bölgesellik ilkesi" },
+      { de: "d Abstimmig", tr: "referandum" },
+      { de: "übersetze", tr: "çevirmek" },
+      { de: "s Verständnis", tr: "anlayış" },
+    ],
+    minutes: 6,
+    text:
+      "D Schwiiz hät vier Amtssprooche: Tüütsch, Französisch, Italienisch und Rätoromanisch. Öppe 62 Prozänt reded Tüütsch, 23 Französisch, 8 Italienisch — und weniger als äi Prozänt Rätoromanisch.\n\nWichtig isch s Territorialprinzip: Nöd d Person hät e Sprooch, sondern de Ort. Wär vo Züri uf Losanne zieht, chunt in e französischi Gmeind — d Schuel, s Amt und d Strassenäme wächsled, nöd d Lüüt.\n\nDe Uusdruck «Röstigrabe» beschriibt di kulturelli Gränze zwüsche de tüütsch- und französischsprachige Schwiiz. Er chunt vom Rösti, wo im Oschte gässe wird. Sichtbar wird er bi Abstimmige: D Welschschwiiz stimmt hüüfiger für meh Staat und für Europa, di Tüütschschwiiz zruckhaltender. Bi öppe jedere zwänzgschte Vorlag entschäided di zwei Landestäil verschiide.\n\nIm Alltag isch d Mehrsprachigkäit weniger romantisch, als me dänkt. Vill Tüütschschwiizer reded besser Änglisch als Französisch, und umgekehrt. A Sitzige mit gmischte Team wird drum hüüfig Änglisch gredt — was offiziell niemert gärn zuegit.\n\nS Rätoromanisch isch de schwierigscht Fall. Es hät fünf Idiome und öppe 40'000 Schprächer. Ohni staatlichi Unterstützig wär s wahrschiinlich scho verschwunde. Genau das isch aber au s Argumänt für d Unterstützig: E Sprooch mit 40'000 Lüüt cha sich nöd sälber trage.",
+    questions: [
+      {
+        text: "Was säit s Territorialprinzip?",
+        options: [
+          "D Sprooch ghört zum Ort, nöd zur Person",
+          "Jede darf sini Sprooch bruuche",
+          "Alli Sprooche sind gliich verbreitet",
+        ],
+        answer: 0,
+        explain: "Lozan'a taşınan kişi Fransızca bir belediyeye girer.",
+      },
+      {
+        text: "Wohär chunt de Uusdruck „Röstigrabe“?",
+        options: [
+          "Vom Rösti, wo im Oschte gässe wird",
+          "Vo eme Fluss",
+          "Vo eme Politiker",
+        ],
+        answer: 0,
+        explain: "Kültürel sınırı anlatan yemek metaforu.",
+      },
+      {
+        text: "Wie hüüfig entschäided di zwei Landestäil verschiide?",
+        options: [
+          "Öppe bi jedere zwänzgschte Vorlag",
+          "Bi jedere Vorlag",
+          "Fascht nie",
+        ],
+        answer: 0,
+        explain: "Metin bu oranı veriyor.",
+      },
+      {
+        text: "Was passiert a Sitzige mit gmischte Team?",
+        options: [
+          "Es wird hüüfig Änglisch gredt",
+          "Jede redt sini Sprooch",
+          "Es wird übersetzt",
+        ],
+        answer: 0,
+        explain: "„was offiziell niemert gärn zuegit.“",
+      },
+      {
+        text: "Welles Argumänt nennt de Text für d Unterstützig vom Rätoromanisch?",
+        options: [
+          "E Sprooch mit 40'000 Lüüt cha sich nöd sälber trage",
+          "Es isch di elteschti Sprooch",
+          "Es bringt Tourischte",
+        ],
+        answer: 0,
+        explain: "Zayıflığın kendisi destek gerekçesi hâline geliyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-r10",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "reading",
+    title: "Überschrifte zueordne",
+    genre: "Sınav formatı",
+    intro:
+      "Beş kısa haber, altı başlık — biri fazla. Sınavın klasik eşleştirme görevi.",
+    gloss: [
+      { de: "d Überschrift", tr: "başlık" },
+      { de: "zueordne", tr: "eşleştirmek" },
+      { de: "d Spänd", tr: "bağış" },
+      { de: "d Sanierig", tr: "yenileme" },
+      { de: "sinke", tr: "düşmek" },
+      { de: "de Aatrag", tr: "başvuru" },
+      { de: "d Frischt", tr: "süre" },
+    ],
+    minutes: 5,
+    text:
+      "TEXT 1: Ab Septämber fahrt s Tram Nummere 8 au am Wuchenänd alli zää Minute. D Stadt reagiert damit uf vill Reklamatione us de Ussequartier.\n\nTEXT 2: Nach drüü Jaar isch d Sanierig vom Schuelhuus Nord fertig. D Klasse zügled i de Ferie zrugg, de Underricht fangt wie planet aa.\n\nTEXT 3: D Zaal vo de Velodiebstähl isch im letschte Jaar um achtzää Prozänt gsunke. D Polizei erklärt das mit de nöie Veloparkplätz am Bahnhof.\n\nTEXT 4: Am Quartierfäscht sind 12'400 Franke zämecho. S Gäld gaat as Fraueshuus, wo siit Jaare z wenig Platz hät.\n\nTEXT 5: Wär Hilf bim Heize bruucht, cha bis Ändi Oktober en Aatrag stelle. Formular git s online und im Chräiszbüro.\n\nÜBERSCHRIFTE:\na) Weniger Velo gschtole\nb) Meh Tram am Wuchenänd\nc) Schuelhuus wider offe\nd) Fescht bringt Gäld für en guete Zwäck\ne) Nöii Bauschtell am Bahnhof\nf) Underschtützig beaatrage — d Frischt lauft",
+    questions: [
+      {
+        text: "Welli Überschrift passt zu Text 1?",
+        options: ["b", "e", "c"],
+        answer: 0,
+        explain: "Hafta sonu on dakikada bir — daha sık sefer.",
+      },
+      {
+        text: "Welli Überschrift passt zu Text 3?",
+        options: ["a", "e", "f"],
+        answer: 0,
+        explain: "Bisiklet hırsızlığı %18 azalmış.",
+      },
+      {
+        text: "Welli Überschrift passt zu Text 4?",
+        options: ["d", "f", "b"],
+        answer: 0,
+        explain: "Şenlikte toplanan para kadın sığınmaevine gidiyor.",
+      },
+      {
+        text: "Welli Überschrift passt zu Text 5?",
+        options: ["f", "d", "a"],
+        answer: 0,
+        explain: "Süre vurgusu var: ekim sonuna kadar.",
+      },
+      {
+        text: "Welli Überschrift bliibt übrig?",
+        options: ["e", "c", "b"],
+        answer: 0,
+        explain: "Üçüncü metinde gardan söz ediliyor ama şantiye yok.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-r11",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "reading",
+    title: "S Protokoll vo de Abgab",
+    genre: "Tutanak",
+    intro:
+      "Hikâyenin devamı: teslim yapıldı. Tutanağı ve Yusuf'un eklediği notu okuyacaksın.",
+    gloss: [
+      { de: "de Mangel", tr: "kusur" },
+      { de: "de Chratzer", tr: "çizik" },
+      { de: "de Schimmel", tr: "küf" },
+      { de: "d Silikonfuge", tr: "silikon derz" },
+      { de: "zulaschte vo", tr: "…in hesabına" },
+      { de: "de Vorbehalt", tr: "ihtirazi kayıt" },
+      { de: "d Bestätigung", tr: "onay" },
+      { de: "de Ersatz", tr: "yenisiyle değiştirme" },
+    ],
+    minutes: 6,
+    text:
+      "ABGABEPROTOKOLL — Bertastrass 9, 2. Schtock — 28. Juli\n\nAawesend: R. Bächtold (Verwaltig), Y. Demir (Mieter)\n\nChuchi: i Ornig. Backofe suuber.\nBad: Silikonfuge bi de Dusche mit Schimmel → Ersatz, zulaschte vom Mieter: 180 Fr.\nZimmer 1: Chratzer im Parkett, öppe 30 cm, nöd im Iizugsprotokoll → zulaschte vom Mieter: 450 Fr.\nZimmer 2: i Ornig.\nWohnzimmer: Wand mit zwäi Löcher (Regal) → gspachtlet, in Ornig.\nFänschter: gputzt.\nTeppich Gang: stark abgnutzt, Alter 9 Jaar → normali Abnutzig, käi Abzug.\n\nTotal zulaschte vom Mieter: 630 Fr.\nKaution: 5'280 Fr. Uszaalig nach Abzug: 4'650 Fr.\n\nBEMERKIG VOM MIETER (mit Vorbehalt unterschriibe):\nDe Chratzer im Parkett isch bim Iizug scho da gsii. Im Iizugsprotokoll staat er nöd, das schtimmt — ich han damals nüüt bemerkt. Ich han aber es Foti vom Iizugstag, wo me d Stell gseet. Ich schick s bis am 4. Auguscht und bitte um e neui Prüefig vo dem Punkt. Mit em Rest bin ich iiverstande.\n\nY. Demir",
+    questions: [
+      {
+        text: "Was chunt zulaschte vom Mieter?",
+        options: [
+          "D Silikonfuge und de Chratzer im Parkett",
+          "Au de Teppich",
+          "Nur d Silikonfuge",
+        ],
+        answer: 0,
+        explain: "180 + 450 = 630 frank.",
+      },
+      {
+        text: "Warum git s für de Teppich käin Abzug?",
+        options: [
+          "Nüün Jaar gilt als normali Abnutzig",
+          "Er isch nöd im Protokoll",
+          "De Mieter hät en ersetzt",
+        ],
+        answer: 0,
+        explain: "Halının beklenen ömrü on yıl.",
+      },
+      {
+        text: "Was isch mit de Löcher i de Wand?",
+        options: [
+          "Si sind gspachtlet und in Ornig",
+          "Si choschted 180 Franke",
+          "Si sind im Vorbehalt",
+        ],
+        answer: 0,
+        explain: "Sıvanmış, itiraz konusu değil.",
+      },
+      {
+        text: "Wie argumentiert de Yusuf bim Chratzer?",
+        options: [
+          "Er hät es Foti vom Iizugstag",
+          "De Chratzer isch z chlii",
+          "S Parkett isch alt",
+        ],
+        answer: 0,
+        explain: "Giriş tutanağında yok — bunu kabul ediyor ama fotoğrafı var.",
+      },
+      {
+        text: "Wie stellt er sich zum Rest vom Protokoll?",
+        options: [
+          "Er isch iiverstande",
+          "Er lehnt alles ab",
+          "Er wott e neui Abgab",
+        ],
+        answer: 0,
+        explain: "„Mit em Rest bin ich iiverstande.“ — itirazı tek bir noktada.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-r12",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "reading",
+    title: "D Stüürerklärig",
+    genre: "Rehber",
+    intro:
+      "İsviçre'de vergi beyannamesi kendin doldurulur — ve çoğu kişi hakkı olan indirimleri bilmez.",
+    gloss: [
+      { de: "d Stüürerklärig", tr: "vergi beyannamesi" },
+      { de: "de Abzug", tr: "indirim" },
+      { de: "d Quellestüür", tr: "kaynakta kesilen vergi" },
+      { de: "s Vermöge", tr: "servet" },
+      { de: "d Frischt verlängere", tr: "süre uzatmak" },
+      { de: "d Beleg", tr: "belge" },
+      { de: "provisorisch", tr: "geçici" },
+      { de: "nachzaale", tr: "ek ödeme yapmak" },
+    ],
+    minutes: 7,
+    text:
+      "D Stüüre wärded i de Schwiiz uf drei Ebene zaalt: Bund, Kanton und Gmeind. Wie vill me zaalt, hänkt drum stark devo ab, wo me wohnt — zwüsche zwo Nachbargmeinde chan de Underschid zwänzg Prozänt betrage.\n\nWär e Uufenthaltsbewilligung B hät, zaalt mäistens Quellestüür: De Arbetgeber zieht d Stüür direkt vom Loon ab. Vill dänked, denn seiged si fertig. Das stimmt nöd immer: Ab eme gwüsse Iikomme (im Kanton Züri 120'000 Franke) mues me trotzdem e Stüürerklärig mache — und wär Abzüg gältend mache wott, cha das freiwillig verlange.\n\nDenn nämli chunt de wichtig Täil: d Abzüg. Hüüfig vergässe wärded Fahrchoschte zur Arbet, Uuswärtsverpflegig, Wiiterbildige, Chinderbetreuig, Spändä und Chrankechoschte über eme Sälbstbehalt. Au d Prämie vo de Chrankekasse cha me abzüge — bis zu eme Maximum.\n\nWichtig für alli: D Frischt isch mäistens de 31. März. Me cha si aber ganz äifach verlängere, online und ohni Begründig, mäistens bis im Septämber. Das choschtet nüüt und isch nöd verdächtig.\n\nWär öppis nöd sicher weiss, schriibt es dezue statt es wägzloo. E falschi Zaal wird korrigiert; e verschwiegeni Iinaam isch es Problem.",
+    questions: [
+      {
+        text: "Wovo hänkt d Stüürhöchi stark ab?",
+        options: [
+          "Wo me wohnt",
+          "Wie alt me isch",
+          "Wie lang me scho da isch",
+        ],
+        answer: 0,
+        explain: "Komşu iki belediye arasında %20 fark olabiliyor.",
+      },
+      {
+        text: "Was gilt bi de Quellestüür?",
+        options: [
+          "De Arbetgeber zieht si direkt vom Loon ab",
+          "Me zaalt si am Jaresändi",
+          "Si gilt nur für Schwiizer",
+        ],
+        answer: 0,
+        explain: "Bu yüzden çoğu kişi iş bitti sanıyor.",
+      },
+      {
+        text: "Ab welem Iikomme mues me im Kanton Züri e Erklärig mache?",
+        options: ["Ab 120'000 Franke", "Ab 80'000 Franke", "Immer"],
+        answer: 0,
+        explain: "Ayrıca indirim talep etmek isteyen gönüllü olarak isteyebiliyor.",
+      },
+      {
+        text: "Welle Abzug wird laut Text hüüfig vergässe?",
+        options: [
+          "Fahrchoschte und Wiiterbildige",
+          "D Miete",
+          "S Ässe dihäi",
+        ],
+        answer: 0,
+        explain: "Ayrıca çocuk bakımı, bağış ve sağlık masrafları.",
+      },
+      {
+        text: "Was säit de Text über d Frischt?",
+        options: [
+          "Me cha si online ohni Begründig verlängere",
+          "Si isch fescht und nöd verhandelbar",
+          "Verlängerig choschtet 50 Franke",
+        ],
+        answer: 0,
+        explain: "„Das choschtet nüüt und isch nöd verdächtig.“",
+      },
+      {
+        text: "Was ratet de Text bi Unsicherheit?",
+        options: [
+          "Es dezueschriibe statt wägzloo",
+          "Es wägloo",
+          "En Trüehänder nää",
+        ],
+        answer: 0,
+        explain: "Yanlış rakam düzeltilir; gizlenen gelir sorun olur.",
+      },
+    ],
+  },
+
   {
     id: "zh-b1-l1",
     course: "gsw-zh",
@@ -932,6 +1362,586 @@ export const zhB1: SkillExercise[] = [
   },
 
   {
+    id: "zh-b1-l7",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "listening",
+    title: "Mit de Putzfirma verhandle",
+    genre: "Telefon",
+    intro:
+      "Hikâyenin devamı: Yusuf teslim temizliği için teklif alıyor. Garantinin ne anlama geldiğine dikkat et.",
+    gloss: [
+      { de: "d Endreinigung", tr: "teslim temizliği" },
+      { de: "d Abnaamegarantie", tr: "teslim garantisi" },
+      { de: "d Offerte", tr: "teklif" },
+      { de: "de Quadratmeter", tr: "metrekare" },
+      { de: "de Zueschlag", tr: "ek ücret" },
+      { de: "d Nachbesserig", tr: "düzeltme" },
+      { de: "verbindlich", tr: "bağlayıcı" },
+    ],
+    minutes: 5,
+    segments: [
+      { speaker: "Firma", text: "Reinigung Sauber, grüezi." },
+      {
+        speaker: "Yusuf",
+        text: "Grüezi. Ich bruuch e Endreinigung für e 3-Zimmer-Wonig, 78 Quadratmeter, Abgab am 28. Juli.",
+      },
+      { speaker: "Firma", text: "Mit oder ohni Abnaamegarantie?" },
+      { speaker: "Yusuf", text: "Was isch de Underschid genau?" },
+      {
+        speaker: "Firma",
+        text: "Mit Garantie chömed mir nomal, wänn d Verwaltig öppis reklamiert — so oft, bis si abnimmt. Ohni Garantie putzed mir äimal; wänn d Verwaltig denn öppis findet, isch das Ihres Problem.",
+      },
+      { speaker: "Yusuf", text: "Und de Priis?" },
+      {
+        speaker: "Firma",
+        text: "Ohni Garantie 640 Franke, mit Garantie 820. Fänschter sind bi bäidem drin, de Backofe au.",
+      },
+      { speaker: "Yusuf", text: "Und wänn s Silikon Schimmel hät?" },
+      {
+        speaker: "Firma",
+        text: "Putze chömer s, ersetze nöd. Neus Silikon isch en Zueschlag vo 150 pro Bad — das mached aber d Verwaltige mängisch sälber und ziehnd s ab.",
+      },
+      { speaker: "Yusuf", text: "Denn nimm ich mit Garantie. Und s Silikon lass ich uf mich zuecho." },
+      {
+        speaker: "Firma",
+        text: "Vernünftig. Ich schick Ine d Offerte schriftlich — die isch verbindlich, wänn Si bis am Friitig bestätiged.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was bedüütet d Abnaamegarantie?",
+        options: [
+          "D Firma chunt nomal, bis d Verwaltig abnimmt",
+          "Me zaalt erscht nach de Abgab",
+          "D Firma haftet für Schade",
+        ],
+        answer: 0,
+        explain: "Garantisiz seçenekte tek seferlik temizlik yapılıyor.",
+      },
+      {
+        text: "Wie gross isch de Priisunderschid?",
+        options: ["180 Franke", "150 Franke", "640 Franke"],
+        answer: 0,
+        explain: "820 − 640 = 180.",
+      },
+      {
+        text: "Was isch bi bäidne Aagebot inbegriffe?",
+        options: ["Fänschter und Backofe", "S Silikon", "D Nachbesserig"],
+        answer: 0,
+        explain: "„Fänschter sind bi bäidem drin, de Backofe au.“",
+      },
+      {
+        text: "Was macht d Firma mit em Schimmel im Silikon?",
+        options: [
+          "Nur putze, nöd ersetze",
+          "Ersetze für 150 Franke",
+          "Gar nüüt",
+        ],
+        answer: 0,
+        explain: "Değişim ek ücret; yönetim çoğu zaman kendi yaptırıp kesiyor.",
+      },
+      {
+        text: "Wänn isch d Offerte verbindlich?",
+        options: [
+          "Wänn er bis am Friitig bestätigt",
+          "Sofort",
+          "Nach de Abgab",
+        ],
+        answer: 0,
+        explain: "Yazılı teklif cumaya kadar onaylanırsa bağlayıcı.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-l8",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "listening",
+    title: "Bi de Schlichtigsbehörde",
+    genre: "Danışma",
+    intro:
+      "Depozito anlaşmazlığında İsviçre'nin sessiz ama çok işlevli kurumu: uzlaştırma makamı. Ücretsizdir.",
+    gloss: [
+      { de: "d Schlichtigsbehörde", tr: "kira uzlaştırma makamı" },
+      { de: "s Verfaare", tr: "usul, süreç" },
+      { de: "koschtelos", tr: "ücretsiz" },
+      { de: "d Iigab", tr: "başvuru" },
+      { de: "d Verjährung", tr: "zamanaşımı" },
+      { de: "d Einigung", tr: "uzlaşma" },
+      { de: "d Fritig", tr: "süre" },
+      { de: "s Bewiismittel", tr: "delil" },
+    ],
+    minutes: 5,
+    segments: [
+      { speaker: "Beraterin", text: "Erzeeled Si churz — worum gaat s?" },
+      {
+        speaker: "Yusuf",
+        text: "D Verwaltig ziet 450 Franke ab für en Chratzer im Parkett. De isch aber scho bim Iizug da gsii.",
+      },
+      { speaker: "Beraterin", text: "Staat er im Iizugsprotokoll?" },
+      { speaker: "Yusuf", text: "Nei. Ich han damals nüüt bemerkt." },
+      { speaker: "Beraterin", text: "Und was händ Si als Bewiis?" },
+      {
+        speaker: "Yusuf",
+        text: "Es Foti vom Iizugstag. Me gseet d Stell, und s Datum isch im Bild gspeicheret.",
+      },
+      {
+        speaker: "Beraterin",
+        text: "Das isch besser als nüüt, aber nöd sicher. S Foti zäigt, dass en Chratzer da gsii isch — nöd unbedingt, dass es de gliich isch. Trotzdem: Mit eme Foti isch Ihri Poschtion deutlich stercher.",
+      },
+      { speaker: "Yusuf", text: "Was chan ich mache?" },
+      {
+        speaker: "Beraterin",
+        text: "Schriibed Si zerscht de Verwaltig und setzed Si e Frischt vo zää Täg. Wänn si nöd iiglenkt, chömed Si zu üs — d Iigab isch koschtelos.",
+      },
+      { speaker: "Yusuf", text: "Und wie lang duuret das?" },
+      {
+        speaker: "Beraterin",
+        text: "Bi eus im Schnitt zwäi bis drüü Mönet bis zur Verhandlig. Öppe siebzg Prozänt vo de Fäll ändet mit ere Einigung — mängisch scho, will me überhaupt schriibt.",
+      },
+      { speaker: "Yusuf", text: "Und wänn nöd?" },
+      {
+        speaker: "Beraterin",
+        text: "Denn chönd Si vor Gricht. Für 450 Franke ratet ich Ine das nöd. Aber sowiit chunt s sälte.",
+      },
+    ],
+    questions: [
+      {
+        text: "Worum gaat s bim Yusuf?",
+        options: [
+          "Um en Abzug vo 450 Franke für en Chratzer",
+          "Um e Kündigung",
+          "Um d Nebechoschte",
+        ],
+        answer: 0,
+        explain: "Çiziğin girişte var olduğunu iddia ediyor.",
+      },
+      {
+        text: "Wie bewertet d Beraterin s Foti?",
+        options: [
+          "Besser als nüüt, aber nöd sicher",
+          "Als vollständige Bewiis",
+          "Als wärtlos",
+        ],
+        answer: 0,
+        explain: "Aynı çizik olduğunu kanıtlamıyor ama pozisyonu güçlendiriyor.",
+      },
+      {
+        text: "Was söll er zerscht mache?",
+        options: [
+          "De Verwaltig schriibe und e Frischt setze",
+          "Direkt zur Behörde",
+          "Vor Gricht gaa",
+        ],
+        answer: 0,
+        explain: "On günlük süre verilerek yazılıyor.",
+      },
+      {
+        text: "Was choschtet d Iigab bi de Schlichtigsbehörde?",
+        options: ["Nüüt", "450 Franke", "Es hänkt vom Fall ab"],
+        answer: 0,
+        explain: "„d Iigab isch koschtelos.“",
+      },
+      {
+        text: "Wie hüüfig ändet s mit ere Einigung?",
+        options: ["Öppe siebzg Prozänt", "Öppe zwänzg Prozänt", "Fascht nie"],
+        answer: 0,
+        explain: "Bazen sırf yazıldığı için çözülüyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-l9",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "listening",
+    title: "Radio: Weniger Auto i de Stadt",
+    genre: "Sınav formatı",
+    intro:
+      "Bir radyo haberi ve içerik soruları. Bir kez baştan sona dinlemeyi dene, sonra soruları çöz.",
+    gloss: [
+      { de: "de Versuech", tr: "pilot uygulama" },
+      { de: "d Sperrig", tr: "kapatma" },
+      { de: "de Umsatz", tr: "ciro" },
+      { de: "befürchte", tr: "endişe etmek" },
+      { de: "d Uuswertig", tr: "değerlendirme" },
+      { de: "vorläufig", tr: "geçici" },
+      { de: "d Verlängerig", tr: "uzatma" },
+      { de: "d Lieferziit", tr: "teslimat saati" },
+    ],
+    minutes: 5,
+    segments: [
+      {
+        speaker: "Moderator",
+        text: "Siit drüü Mönet isch d Chäsergass für Auto gsperrt — als Versuech. Nächschti Wuche entschäidet de Gmeinderaat, öb s so bliibt.",
+      },
+      {
+        speaker: "Reporterin",
+        text: "Am Aafang isch d Uufregig gross gsii. Vierzg Gschäft händ underschriibe, si händ weniger Chundschaft befürchtet. Hüt tönt s anders.",
+      },
+      {
+        speaker: "Ladebsitzerin",
+        text: "Ich bi degäge gsii, ganz klar. Ich han dänkt, ohni Parkplätz chunt niemert meh. Aber min Umsatz isch um siebe Prozänt gschtiige. D Lüüt bliibed äifach lenger.",
+      },
+      {
+        speaker: "Reporterin",
+        text: "Nöd alli sind zfriede. Wär schweri Ware verchauft — Möbel, Getränk —, klagt über d Lieferige.",
+      },
+      {
+        speaker: "Händler",
+        text: "Für mich isch s schlächter worde. Mini Chunde chaufed Chäschte, nöd Blueme. Die cha me nöd trage.",
+      },
+      {
+        speaker: "Reporterin",
+        text: "D vorläufigi Uuswertig vo de Stadt zäigt: De Umsatz im ganze Bereich isch um vier Prozänt gschtiige, d Zaal vo de Bsuecher um elf. Gliichziitig git s driissg Prozänt meh Reklamatione über de Lieferverchehr i de Näbestrasse.",
+      },
+      { speaker: "Moderator", text: "Und de Entschäid?" },
+      {
+        speaker: "Reporterin",
+        text: "Wahrschiinlich e Verlängerig um es Jaar — mit feschte Lieferziite am Morge. E definitivi Sperrig wott im Momänt niemert beschliesse.",
+      },
+    ],
+    questions: [
+      {
+        text: "Worum gaat s im Biitrag?",
+        options: [
+          "Um e Strasseperrig als Versuech",
+          "Um nöii Parkhüüser",
+          "Um höcheri Miete",
+        ],
+        answer: 0,
+        explain: "Chäsergass üç aydır deneme olarak kapalı.",
+      },
+      {
+        text: "Wie hät sich d Meinig vo de Ladebsitzerin gänderet?",
+        options: [
+          "Si isch degäge gsii, jetz hät si meh Umsatz",
+          "Si isch immer defür gsii",
+          "Si isch witer degäge",
+        ],
+        answer: 0,
+        explain: "„min Umsatz isch um siebe Prozänt gschtiige.“",
+      },
+      {
+        text: "Wär hät Probleem?",
+        options: [
+          "Händler mit schwere Ware",
+          "Kafis und Reschtorant",
+          "D Aawohner",
+        ],
+        answer: 0,
+        explain: "Sandık taşınamıyor.",
+      },
+      {
+        text: "Was zäigt d Uuswertig?",
+        options: [
+          "Meh Umsatz und Bsuecher, aber meh Reklamatione bim Lieferverchehr",
+          "Weniger Umsatz insgesamt",
+          "Käi Veränderig",
+        ],
+        answer: 0,
+        explain: "+%4 ciro, +%11 ziyaretçi, +%30 şikâyet.",
+      },
+      {
+        text: "Was wird wahrschiinlich beschlosse?",
+        options: [
+          "E Verlängerig um es Jaar mit feschte Lieferziite",
+          "E definitivi Sperrig",
+          "S Ändi vom Versuech",
+        ],
+        answer: 0,
+        explain: "Kimse şimdilik kalıcı karar almak istemiyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-l10",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "listening",
+    title: "Warum mir so vill abschtimmed",
+    genre: "Podcast",
+    intro:
+      "Yılda dört kez oy pusulası. İsviçre'de yaşayan herkesin merak ettiği sistem, kısa bir sohbette.",
+    gloss: [
+      { de: "d Abstimmig", tr: "referandum" },
+      { de: "d Initiative", tr: "halk girişimi" },
+      { de: "s Referändum", tr: "yasaya karşı referandum" },
+      { de: "d Unterschrift", tr: "imza" },
+      { de: "d Stimmbetäiligung", tr: "katılım oranı" },
+      { de: "s Couvert", tr: "zarf" },
+      { de: "s Abstimmigsbüechli", tr: "resmî bilgi kitapçığı" },
+      { de: "sich informiere", tr: "bilgi edinmek" },
+    ],
+    minutes: 5,
+    segments: [
+      { speaker: "Host", text: "Vier Mal im Jaar chunt s Couvert. Warum eigentlich so oft?" },
+      {
+        speaker: "Politologin",
+        text: "Well s zwäi Instrumänt git. Mit ere Initiative chan s Volch öppis Nöis verlange — dezue bruucht s 100'000 Unterschrifte. Mit em Referändum cha me es Gsetz vom Parlamänt stoppe — dezue bruucht s 50'000.",
+      },
+      { speaker: "Host", text: "Und wie vill Lüüt gönd würkli abschtimme?" },
+      {
+        speaker: "Politologin",
+        text: "Im Schnitt öppe 45 Prozänt. Das tönt tüüf, isch aber irreführend: Über es ganzes Jaar gseh beteiliged sich viel meh Lüüt — nur nöd immer di gliiche. Jede wählt d Theme uus, wo en betreffed.",
+      },
+      { speaker: "Host", text: "Wie informiert me sich?" },
+      {
+        speaker: "Politologin",
+        text: "Im Couvert isch s Abstimmigsbüechli. Dört staat d Vorlag, d Meinig vom Bundesrat und — das isch s Interessante — au d Meinig vom Komitee degäge, im Originalton.",
+      },
+      { speaker: "Host", text: "Also schriibt de Staat d Gägenargumänt sälber ab?" },
+      {
+        speaker: "Politologin",
+        text: "Er druckt si. Er darf si nöd ändere. Das isch e Regle, wo vill Länder nöd händ.",
+      },
+      { speaker: "Host", text: "Und wänn me e Vorlag nöd verstaat?" },
+      {
+        speaker: "Politologin",
+        text: "Denn cha me läär iileere — das isch legitim. Vill Lüüt schtimmed bewusst nur bi dem ab, wo si sich sicher fühled.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie vill Unterschrifte bruucht e Initiative?",
+        options: ["100'000", "50'000", "45'000"],
+        answer: 0,
+        explain: "Referandum için 50.000 yeterli.",
+      },
+      {
+        text: "Was cha me mit em Referändum mache?",
+        options: [
+          "Es Gsetz vom Parlamänt stoppe",
+          "Öppis Nöis verlange",
+          "En Politiker abwähle",
+        ],
+        answer: 0,
+        explain: "İki aracın farkı tam burada.",
+      },
+      {
+        text: "Warum isch d Zaal vo 45 Prozänt irreführend?",
+        options: [
+          "Über s Jaar gseh beteiliged sich meh Lüüt, nur nöd immer di gliiche",
+          "Si isch falsch gmässe",
+          "Si gilt nur für d Stadt",
+        ],
+        answer: 0,
+        explain: "Herkes kendini ilgilendiren konuyu seçiyor.",
+      },
+      {
+        text: "Was isch bsunders am Abstimmigsbüechli?",
+        options: [
+          "D Gägenargumänt stönd im Originalton drin",
+          "Es chunt nur uf Tüütsch",
+          "Es isch freiwillig",
+        ],
+        answer: 0,
+        explain: "Devlet karşı komitenin metnini basar ve değiştiremez.",
+      },
+      {
+        text: "Was cha me mache, wänn me e Vorlag nöd verstaat?",
+        options: [
+          "Läär iileere — das isch legitim",
+          "Nöd abschtimme dörfe",
+          "Es Formular uusfülle",
+        ],
+        answer: 0,
+        explain: "Birçok kişi yalnızca emin olduğu konuda oy veriyor.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-l11",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "listening",
+    title: "Es Gspröch über de Lärm",
+    genre: "Diyalog",
+    intro:
+      "Komşuyla gürültü konuşmak — İsviçre'de doğrudan ama kırmadan yapılması gereken konuşma.",
+    gloss: [
+      { de: "de Lärm", tr: "gürültü" },
+      { de: "d Ruhezyt", tr: "sessizlik saatleri" },
+      { de: "sich beklage", tr: "şikâyet etmek" },
+      { de: "d Rücksicht", tr: "saygı, dikkat" },
+      { de: "aaschprääche", tr: "konuyu açmak" },
+      { de: "d Verwaltig iischalte", tr: "yönetimi devreye sokmak" },
+      { de: "s Verständnis", tr: "anlayış" },
+      { de: "abmache", tr: "kararlaştırmak" },
+    ],
+    minutes: 5,
+    segments: [
+      { speaker: "Frau Britschgi", text: "Herr Demir, händ Si churz Ziit? Ich wett öppis aaschpräche." },
+      { speaker: "Yusuf", text: "Sicher. Isch öppis?" },
+      {
+        speaker: "Frau Britschgi",
+        text: "Am Sunntig am zäni am Aabig händ Si Musik gha. Ich mues am Määndig am füfi uf.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Das tuet mer läid. Ich han nöd dänkt, dass me s ghört — s isch nöd luut gsii.",
+      },
+      {
+        speaker: "Frau Britschgi",
+        text: "S Huus isch hellhörig. Ich ghöre s Bass, nöd d Musik. Und am Sunntig isch de ganz Tag Ruhezyt.",
+      },
+      { speaker: "Yusuf", text: "De ganz Tag? Das han ich würkli nöd gwüsst." },
+      {
+        speaker: "Frau Britschgi",
+        text: "Staat i de Huusornig. Under de Wuche isch s ab zäni, am Sunntig immer.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Guet, ich pass uuf. Und wänn ich emal Bsuech han und s spöter wird — söll ich Ine Bschäid gää?",
+      },
+      {
+        speaker: "Frau Britschgi",
+        text: "Das wär mir am liebschte. Denn weiss ich, dass s äimalig isch. Ich bi nöd d Polizei, ich mues nur schlaafe.",
+      },
+      { speaker: "Yusuf", text: "Abgmacht. Und merci, dass Si direkt zu mir cho sind." },
+      {
+        speaker: "Frau Britschgi",
+        text: "Ich gaa immer zerscht sälber. D Verwaltig iischalte cha me nachhär immer no.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was isch s Problem?",
+        options: [
+          "Musik am Sunntig am zäni am Aabig",
+          "Es Fescht i de Nacht",
+          "En kaputte Boden",
+        ],
+        answer: 0,
+        explain: "Komşusu pazartesi beşte kalkıyor.",
+      },
+      {
+        text: "Was ghört d Nachbarin genau?",
+        options: ["S Bass, nöd d Musik", "D Stimme", "De Fernseh"],
+        answer: 0,
+        explain: "„S Huus isch hellhörig.“",
+      },
+      {
+        text: "Wänn isch am Sunntig Ruhezyt?",
+        options: ["De ganz Tag", "Ab zäni", "Ab achti"],
+        answer: 0,
+        explain: "Hafta içi saat 22'den itibaren, pazar tüm gün.",
+      },
+      {
+        text: "Was schlaat de Yusuf vor?",
+        options: [
+          "Bschäid z gää, wänn s emal spöter wird",
+          "Nie meh Musik z ghöre",
+          "En Teppich z chaufe",
+        ],
+        answer: 0,
+        explain: "Komşusu bunu tercih ediyor: tek seferlik olduğunu bilmek.",
+      },
+      {
+        text: "Warum isch si zerscht direkt zu ihm cho?",
+        options: [
+          "Si gaat immer zerscht sälber — d Verwaltig cha me nachhär iischalte",
+          "Si kennt d Verwaltig nöd",
+          "Si hät Angscht vor eme Streit",
+        ],
+        answer: 0,
+        explain: "„Ich bi nöd d Polizei, ich mues nur schlaafe.“",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-l12",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "listening",
+    title: "D Kaution isch zrugg",
+    genre: "Sesli mesaj",
+    intro: "Hikâyenin sonu: Yusuf sonucu anlatıyor.",
+    gloss: [
+      { de: "d Kaution", tr: "depozito" },
+      { de: "iiglenkt", tr: "geri adım atmış" },
+      { de: "de Abzug", tr: "kesinti" },
+      { de: "s Foti", tr: "fotoğraf" },
+      { de: "sich luune", tr: "değmek, kârlı olmak" },
+      { de: "d Antwort", tr: "cevap" },
+      { de: "erledigt", tr: "hallolmuş" },
+    ],
+    minutes: 4,
+    segments: [
+      { speaker: "Yusuf", text: "Du, es isch erledigt. D Kaution isch geschter cho." },
+      {
+        speaker: "Yusuf",
+        text: "Ich han de Verwaltig gschriibe, mit em Foti im Aahang, und e Frischt vo zää Täg gsetzt. Ganz sachlich, käi Emotion.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Nach acht Täg isch d Antwort cho: Si strichet de Abzug für de Chratzer. Nöd will si zuegänd, dass er scho da gsii isch — si schriibed „im Sinne einer Kulanz“. Isch mir egal, wie si s nänned.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Also 180 statt 630. S Silikon zaal ich, das isch fair — de Schimmel isch vo mir cho.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Und weisch was s Verruckte isch? Zur Schlichtigsbehörde han ich gar nie müesse. Es hät greicht, dass ich gwüsst han, dass es si git.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Also: Fotiered eui Wonig am Iizugstag. Alli Zimmer, au wänn s blöd tönt. Das isch de bescht Rat, wo ich der cha gää.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie hät de Yusuf gschriibe?",
+        options: [
+          "Sachlich, mit Foti und ere Frischt",
+          "Mit Vorwürf",
+          "Über en Aawalt",
+        ],
+        answer: 0,
+        explain: "„Ganz sachlich, käi Emotion.“",
+      },
+      {
+        text: "Wie hät d Verwaltig reagiert?",
+        options: [
+          "Si hät de Abzug gstriche, ohni de Fähler zuezgää",
+          "Si hät alles bezaalt",
+          "Si hät nöd gantwortet",
+        ],
+        answer: 0,
+        explain: "„im Sinne einer Kulanz“ — jest olarak sunuyorlar.",
+      },
+      {
+        text: "Wie vill wird jetz abzoge?",
+        options: ["180 Franke", "630 Franke", "450 Franke"],
+        answer: 0,
+        explain: "Sadece silikon kalıyor — küf ondan kaynaklanmış.",
+      },
+      {
+        text: "Isch er zur Schlichtigsbehörde?",
+        options: [
+          "Nei — es hät greicht, dass er gwüsst hät, dass es si git",
+          "Ja, mit Erfolg",
+          "Ja, aber ohni Erfolg",
+        ],
+        answer: 0,
+        explain: "Kurumun varlığını bilmek yetmiş.",
+      },
+      {
+        text: "Welle Rat git er am Schluss?",
+        options: [
+          "D Wonig am Iizugstag fotiere",
+          "Immer e Putzfirma nää",
+          "S Protokoll nöd unterschriibe",
+        ],
+        answer: 0,
+        explain: "„Alli Zimmer, au wänn s blöd tönt.“",
+      },
+    ],
+  },
+
+  {
     id: "zh-b1-w1",
     course: "gsw-zh",
     level: "B1",
@@ -1174,6 +2184,259 @@ export const zhB1: SkillExercise[] = [
         ],
         sample:
           "Ich bi im Auguscht z Züri aacho, mit zwäi Koffere und käim einzige Bekannte. Am Aafang isch mer alles sehr tüür vorcho — de erscht Iichauf im Coop han ich fascht nöd glaubt.\n\nAm schwiirigschte isch d Sprach gsii. Ich han Hochdüütsch glernt, aber i de Migros händ d Lüüt Mundart gredt, und ich han nume Bahnhof verstande. Zwäi Wuche lang han ich am Aabig Häimweh gha.\n\nDenn isch mer öppis uufgfalle: Wänn ich gfrögt han, händ alli gärn ghulfe — nume vo sich uus säit niemert öppis. Und ich han gschtuunet, wie pünktlich s Tram chunt. Uf d Sekunde.\n\nUnderdesse han ich mi iiglebt. Ich kenne mini Nochbere, ich verstaan im Gschäft s mäischte, und hüt fühl ich mi da vill wooler als am Aafang.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-w5",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "writing",
+    title: "D Kündigung schriibe",
+    genre: "Resmî yazı",
+    intro:
+      "Kira sözleşmesini feshetmek: kısa, tarihli ve biçime uygun olmalı — yoksa geçersiz sayılır.",
+    gloss: [
+      { de: "kündige", tr: "feshetmek" },
+      { de: "de Kündigungstermin", tr: "fesih tarihi" },
+      { de: "iigschriibe", tr: "iadeli taahhütlü" },
+      { de: "de Nachmieter", tr: "devralacak kiracı" },
+      { de: "d Bestätigung", tr: "onay" },
+      { de: "d Abgab", tr: "teslim" },
+      { de: "vorziitig", tr: "erken" },
+    ],
+    minutes: 10,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Daireyi bir sonraki mümkün tarihe feshediyorum.",
+        answer: "Ich kündige d Wonig uf de nächschtmöglich Termin.",
+        hint: "kündigen → kündige; auf → uf + Akkusativ tarih.",
+      },
+      {
+        kind: "build",
+        tr: "Bunun onayını rica ediyorum.",
+        answer: "Ich bitte Si um e Bestätigung.",
+        hint: "bitten um + Akkusativ; nezaket biçimi Si.",
+      },
+      {
+        kind: "build",
+        tr: "Erken çıkabilmek için kiracı önerebilirim.",
+        answer: "Ich chan Ine Nachmieter vorschlaa, zum vorziitig uszüge.",
+        hint: "vorschlagen → vorschlaa; „zum … “ + mastar amaç bildirir.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Ev sahibine/yönetime fesih mektubu yaz. Beş noktaya değin: hangi daireyi (tam adres ve kat), hangi tarihe feshettiğin, onay talebin, erken çıkma isteğin varsa bunu ve kiracı önerme teklifin, teslim için müsait olduğun tarihler. Kısa ve nesnel olsun.",
+        checklist: [
+          "Daireyi tam tanımladın mı (adres, kat)?",
+          "Fesih tarihini net yazdın mı?",
+          "Onay talep ettin mi?",
+          "Erken çıkma konusunda öneri sundun mu?",
+          "Teslim için müsaitliğini yazdın mı?",
+          "Tarih ve imza var mı?",
+        ],
+        minWords: 70,
+        phrases: [
+          { de: "Hiermit kündige ich …", tr: "İşbu yazıyla …'i feshediyorum." },
+          { de: "uf de nächschtmöglich Termin, also uf de …", tr: "bir sonraki mümkün tarihe, yani …'e" },
+          { de: "Ich bitte Si um e schriftlichi Bestätigung.", tr: "Yazılı onay rica ediyorum." },
+          { de: "Gärn schlaa ich Ine Nachmieter vor.", tr: "Memnuniyetle kiracı önerebilirim." },
+          { de: "Für d Abgab bin ich ab em … verfüegbar.", tr: "Teslim için …'den itibaren müsaitim." },
+          { de: "Fründlichi Grüess", tr: "Saygılarımla" },
+        ],
+        sample:
+          "Sehr geehrti Frau Bächtold\n\nHiermit kündige ich d 3-Zimmer-Wonig a de Bertastrass 9, 2. Schtock, links, uf de nächschtmöglich Termin, also uf de 30. Septämber.\n\nIch bitte Si um e schriftlichi Bestätigung vo dere Kündigung.\n\nGärn würd ich scho früener uszüge. Wänn Si iiverstande sind, schlaa ich Ine Nachmieter vor, wo zaalungsfähig sind und de Vertrag zu de gliiche Konditione übernämed.\n\nFür d Wonigsabgab bin ich ab Mitti Juli verfüegbar, am liebschte am Vormittag. Bitte gänd Si mer rächtziitig Bschäid, damit ich d Endreinigung cha organisiere.\n\nFründlichi Grüess\nYusuf Demir\n\nZüri, 20. Mai",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-w6",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "writing",
+    title: "Forumsbiitrag mit Meinig",
+    genre: "Sınav formatı",
+    intro:
+      "Sınavın klasik yazma görevi: bir forum yazısına kendi görüşünle cevap ver — görüş, gerekçe, örnek, öneri.",
+    gloss: [
+      { de: "de Biitrag", tr: "gönderi" },
+      { de: "d Meinig", tr: "görüş" },
+      { de: "de Vortäil", tr: "avantaj" },
+      { de: "de Nachtäil", tr: "dezavantaj" },
+      { de: "einersiits … anderersiits", tr: "bir yandan … öte yandan" },
+      { de: "vorschlaa", tr: "önermek" },
+      { de: "d Erfaarig", tr: "deneyim" },
+    ],
+    minutes: 10,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bence okullar cep telefonlarını yasaklamamalı.",
+        answer: "Miner Meinig nach sötted d Schuele d Händy nöd verbüüte.",
+        hint: "sollten → sötted; verbieten → verbüüte.",
+      },
+      {
+        kind: "build",
+        tr: "Bir yandan bu dikkat dağıtıyor, öte yandan öğrenmeye de yardım ediyor.",
+        answer: "Einersiits lenkt das ab, anderersiits hilft s au bim Lerne.",
+        hint: "İki bölümde de fiil ikinci sırada kalır.",
+      },
+      {
+        kind: "build",
+        tr: "Bu yüzden net kuralların olmasını öneriyorum.",
+        answer: "Drum schlaa ich vor, dass es klari Regle git.",
+        hint: "vorschlagen ayrılabilir; dass yan cümlesinde fiil sonda.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir forumda şu tartışılıyor: „Sötted alli Chind i de Schuel Mundart rede oder Hochdüütsch?“ Kendi görüşünle bir yorum yaz. Dört noktaya değin: görüşün, en az iki gerekçe, kendi hayatından bir örnek, somut bir öneri.",
+        checklist: [
+          "Görüşünü ilk cümlelerde net söyledin mi?",
+          "En az iki gerekçe verdin mi?",
+          "Kişisel bir örnek verdin mi?",
+          "Karşı görüşe bir cümleyle değindin mi?",
+          "Somut bir öneriyle bitirdin mi?",
+        ],
+        minWords: 90,
+        phrases: [
+          { de: "Ich han de Biitrag vo … gläse.", tr: "…'in yazısını okudum." },
+          { de: "Miner Meinig nach …", tr: "Bence …" },
+          { de: "De wichtigscht Grund isch …", tr: "En önemli neden …" },
+          { de: "Bi mir isch s so gsii, dass …", tr: "Bende şöyle oldu: …" },
+          { de: "Natürli git s au …", tr: "Elbette … de var." },
+          { de: "Drum schlaa ich vor, dass …", tr: "Bu yüzden … öneriyorum." },
+        ],
+        sample:
+          "Ich han de Biitrag vo lehrer_zh gläse und find d Frag würkli spannend.\n\nMiner Meinig nach söll im Underricht Hochdüütsch gredt wärde, in de Pause aber Mundart. De wichtigscht Grund isch s Schriibe: D Chind schriibed später Hochdüütsch, und wär s nie ghört, hät en Nachtäil. De zwäit Grund isch d Grächtigkäit — Chind, wo dihäi käi Mundart ghöred, sind susch doppelt im Rückschtand.\n\nBi mir isch s so gsii, dass ich Hochdüütsch us de Schuel kennt han und Mundart erscht uf em Pauseplatz glernt han. Das hät funktioniert, aber d Pause isch entschäidend gsii — dört isch d Sprooch würkli passiert.\n\nNatürli git s au s Argumänt, dass Mundart zur Identität ghört. Das stimmt, und drum wär s falsch, si us de Schuel z verbanne.\n\nDrum schlaa ich vor, dass es klari Regle git: Underricht uf Hochdüütsch, Pause und Turne uf Mundart. So lerned alli bäides — und niemert mues sich für sini Sprooch schäme.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-w7",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "writing",
+    title: "Mehrsprachigkäit: dini Erfaarig",
+    genre: "Kültür",
+    intro:
+      "zh-b1-r9'daki konuyu kendi deneyiminle yazacaksın: diller arasında yaşamak nasıl bir şey?",
+    gloss: [
+      { de: "d Mehrsprachigkäit", tr: "çok dillilik" },
+      { de: "sich schäme", tr: "utanmak" },
+      { de: "de Akzent", tr: "aksan" },
+      { de: "wächsle", tr: "geçmek, değiştirmek" },
+      { de: "sich verbessere", tr: "gelişmek" },
+      { de: "s Selbstvertraue", tr: "özgüven" },
+      { de: "de Rat", tr: "tavsiye" },
+    ],
+    minutes: 9,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Başlangıçta konuşmaya utanıyordum.",
+        answer: "Am Aafang han ich mich gschämt z rede.",
+        hint: "sich schämen → sich schäme; Perfekt: han mich gschämt.",
+      },
+      {
+        kind: "build",
+        tr: "İnsanlar hemen Hochdeutsch'a geçiyordu.",
+        answer: "D Lüüt sind sofort uf Hochdüütsch gwächslet.",
+        hint: "wechseln → wächsle, Perfekt sein ile: sind … gwächslet.",
+      },
+      {
+        kind: "build",
+        tr: "Bugün aksanımı bir sorun olarak görmüyorum.",
+        answer: "Hüt gseh ich min Akzent nöd als Problem.",
+        hint: "sehen → gseh; „als“ ile yüklem tümleci.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Diller arasında yaşamakla ilgili kendi deneyimini yaz. Dört noktaya değin: bir durum (nerede, kiminle), o an ne hissettiğin, o zamandan bugüne ne değiştiği, yeni gelen birine tavsiyen. Sahneyle başla, açıklamayla değil.",
+        checklist: [
+          "Somut bir sahneyle başladın mı?",
+          "Duyguyu adlandırdın mı?",
+          "Bugünle geçmişi karşılaştırdın mı?",
+          "Net bir tavsiyeyle bitirdin mi?",
+          "Perfekt kullandın mı?",
+        ],
+        minWords: 90,
+        phrases: [
+          { de: "Als ich nöi da gsii bi, …", tr: "Buraya yeni geldiğimde …" },
+          { de: "Ich han mich gschämt, …", tr: "… konusunda utandım." },
+          { de: "D Lüüt sind sofort uf … gwächslet.", tr: "İnsanlar hemen …'a geçti." },
+          { de: "Underdesse …", tr: "Bu arada …" },
+          { de: "Min Rat wär: …", tr: "Tavsiyem şu olurdu: …" },
+        ],
+        sample:
+          "Als ich nöi da gsii bi, han ich im Gschäft en Satz uf Mundart probiert. Ich han gsäit: „Chunsch au go Mittag ässe?“ Di Kollegin hät gnickt — und denn uf Hochdüütsch gantwortet.\n\nDas isch nöd bös gmeint gsii. Aber ich han mich gschämt und han drei Wuche nüüt meh probiert. D Lüüt sind sowieso sofort uf Hochdüütsch gwächslet, sobald si min Akzent ghört händ, und ich han gläbt, wie i eme Zimmer, wo alli höflich sind und niemert eim rediglaat.\n\nGänderet hät s en Kollege us em Lager. Er hät äifach wiiter Mundart gredt, au wänn ich uf Hochdüütsch gantwortet han. Nach zwäi Mönet han ich gmerkt, dass ich alles verstaan. Nach sächs Mönet han ich gantwortet.\n\nUnderdesse redt ich Mundart mit em halbe Team. Hüt gseh ich min Akzent nöd als Problem — er säit nur, wo ich härchume.\n\nMin Rat wär: Säged de Lüüt, si sölled Mundart wiiterrede. Di mäischte fröied sich sogar — si wüssed nur nöd, öb si dörfed.",
+      },
+    ],
+  },
+  {
+    id: "zh-b1-w8",
+    course: "gsw-zh",
+    level: "B1",
+    skill: "writing",
+    title: "S Schriibe wäge de Kaution",
+    genre: "Şikâyet",
+    intro:
+      "Hikâyenin son parçası: Yusuf'un yerine geçip depozito kesintisine itiraz mektubunu yazacaksın. Nesnel kal — bu mektup işe yarayanı gösteriyor.",
+    gloss: [
+      { de: "de Abzug", tr: "kesinti" },
+      { de: "s Iizugsprotokoll", tr: "giriş tutanağı" },
+      { de: "de Nachwiis", tr: "kanıt" },
+      { de: "d Frischt setze", tr: "süre vermek" },
+      { de: "d Uszaalig", tr: "ödeme, iade" },
+      { de: "d Schlichtigsbehörde", tr: "uzlaştırma makamı" },
+      { de: "iiverstande", tr: "hemfikir" },
+    ],
+    minutes: 10,
+    tasks: [
+      {
+        kind: "build",
+        tr: "450 franklık kesintiye itiraz ediyorum.",
+        answer: "Ich bin mit em Abzug vo 450 Franke nöd iiverstande.",
+        hint: "„nöd iiverstande sii mit“ + Dativ — nesnel itiraz kalıbı.",
+      },
+      {
+        kind: "build",
+        tr: "Çizik giriş günü zaten oradaydı.",
+        answer: "De Chratzer isch am Iizugstag scho da gsii.",
+        hint: "Perfekt: isch … gsii (war yerine).",
+      },
+      {
+        kind: "build",
+        tr: "Size 10 Ağustos'a kadar süre veriyorum.",
+        answer: "Ich setze Ine e Frischt bis am 10. Auguscht.",
+        hint: "„e Frischt setze“ + Dativ (Ine).",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Yönetime depozito kesintisine itiraz mektubu yaz. Beş noktaya değin: hangi kesintiye itiraz ettiğin, gerekçen ve kanıtın, kabul ettiğin kalemler, net talebin ve süre, sonraki adım (uzlaştırma makamı) — tehdit gibi değil, bilgi olarak. Duygusal cümle kurma.",
+        checklist: [
+          "İtiraz ettiğin kalemi ve tutarı net yazdın mı?",
+          "Kanıtını belirttin mi?",
+          "Kabul ettiğin kalemleri de yazdın mı?",
+          "Net bir talep ve süre verdin mi?",
+          "Sonraki adımı nesnel biçimde belirttin mi?",
+          "Ton sakin mi?",
+        ],
+        minWords: 100,
+        phrases: [
+          { de: "Ich beziehe mich uf s Abgabeprotokoll vom …", tr: "…tarihli teslim tutanağına atıfla" },
+          { de: "Mit em Abzug vo … bin ich nöd iiverstande.", tr: "… kesintisine katılmıyorum." },
+          { de: "Als Nachwiis lege ich … bii.", tr: "Kanıt olarak … ekliyorum." },
+          { de: "Mit de andere Punkt bin ich iiverstande.", tr: "Diğer kalemlere itirazım yok." },
+          { de: "Ich bitte Si, … uszzaale.", tr: "…'i ödemenizi rica ediyorum." },
+          { de: "Andernfalls wärd ich d Schlichtigsbehörde aarüefe.", tr: "Aksi hâlde uzlaştırma makamına başvuracağım." },
+        ],
+        sample:
+          "Sehr geehrti Frau Bächtold\n\nIch beziehe mich uf s Abgabeprotokoll vom 28. Juli, wo ich mit Vorbehalt unterschriibe han.\n\nMit em Abzug vo 450 Franke für de Chratzer im Parkett bin ich nöd iiverstande. De Chratzer isch am Iizugstag scho da gsii. Im Iizugsprotokoll staat er nöd — das schtimmt, ich han en damals nöd bemerkt. Als Nachwiis lege ich es Foti bii, wo am 1. April 2022 uufgnoo worde isch; s Datum isch i de Bilddatei gspeicheret und d Stell isch klar erkennbar.\n\nMit de andere Punkt im Protokoll bin ich iiverstande. De Abzug vo 180 Franke für s Silikon im Bad akzeptier ich.\n\nIch bitte Si drum, mir vo de Kaution vo 5'280 Franke insgesamt 5'100 Franke uszzaale, und setze Ine e Frischt bis am 10. Auguscht.\n\nSötted mir üs nöd einig wärde, wärd ich d Schlichtigsbehörde in Mietsache aarüefe. Ich gaa aber devo uus, dass mir das nöd bruuched.\n\nFründlichi Grüess\nYusuf Demir",
       },
     ],
   },
