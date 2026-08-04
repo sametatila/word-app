@@ -26,6 +26,8 @@ export type ServerSkillProgress = Record<string, { correct: number; total: numbe
 /** Seçili seviye sekme oturumu boyunca hatırlanır: egzersizden dönünce
  *  kullanıcı "seviyene dön" durumuna değil, baktığı seviyeye geri gelir. */
 const LEVEL_KEY = "wortspiel-skills-level";
+/** Seçili beceri süzgeci de hatırlanır: alıştırma sayısı arttıkça liste uzuyor. */
+const SKILL_KEY = "wortspiel-skills-skill";
 
 export function SkillsHub({
   items,
@@ -37,6 +39,7 @@ export function SkillsHub({
   serverProgress?: ServerSkillProgress;
 }) {
   const [level, setLevel] = useState<CefrLevel>(activeLevel);
+  const [skillFilter, setSkillFilter] = useState<SkillId | "all">("all");
 
   // sessionStorage sunucu render'ında yok; hidrasyon uyuşmazlığı olmasın diye
   // kayıtlı seçim mount sonrasında geri yüklenir.
@@ -44,6 +47,8 @@ export function SkillsHub({
     try {
       const saved = sessionStorage.getItem(LEVEL_KEY) as CefrLevel | null;
       if (saved && LEVEL_ORDER.includes(saved)) setLevel(saved);
+      const savedSkill = sessionStorage.getItem(SKILL_KEY) as SkillId | null;
+      if (savedSkill && SKILL_ORDER.includes(savedSkill)) setSkillFilter(savedSkill);
     } catch {
       /* depolama kapalıysa aktif seviye kalır */
     }
@@ -78,7 +83,18 @@ export function SkillsHub({
     });
   }, []);
 
+  function pickSkill(s: SkillId | "all") {
+    setSkillFilter(s);
+    try {
+      if (s === "all") sessionStorage.removeItem(SKILL_KEY);
+      else sessionStorage.setItem(SKILL_KEY, s);
+    } catch {
+      /* depolama kapalıysa yalnızca bu ekran için geçerli olur */
+    }
+  }
+
   const atLevel = items.filter((i) => i.level === level);
+  const shown = SKILL_ORDER.filter((s) => skillFilter === "all" || s === skillFilter);
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-5 pb-8">
@@ -120,7 +136,38 @@ export function SkillsHub({
         )}
       </div>
 
-      {SKILL_ORDER.map((skill, si) => {
+      {/* Beceri süzgeci: içerik büyüdükçe tek beceriye odaklanmak şart oluyor. */}
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          onClick={() => pickSkill("all")}
+          className={`chip px-3.5 py-1.5 text-sm ${skillFilter === "all" ? "chip-active" : ""}`}
+        >
+          Tümü
+          <span className="muted ml-1.5 text-xs font-semibold">{atLevel.length}</span>
+        </button>
+        {SKILL_ORDER.map((s) => {
+          const count = atLevel.filter((i) => i.skill === s).length;
+          if (!count) return null;
+          const Icon = SKILL_ICON[s];
+          return (
+            <button
+              key={s}
+              type="button"
+              onClick={() => pickSkill(s)}
+              className={`chip flex items-center gap-1.5 px-3.5 py-1.5 text-sm ${
+                skillFilter === s ? "chip-active" : ""
+              }`}
+            >
+              <Icon size={14} />
+              {SKILL_LABELS[s]}
+              <span className="muted text-xs font-semibold">{count}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {shown.map((skill, si) => {
         const list = atLevel.filter((i) => i.skill === skill);
         if (!list.length) return null;
         const doneCount = list.filter((i) => progress[i.id]).length;

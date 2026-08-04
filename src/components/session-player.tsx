@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -58,7 +58,7 @@ function clearSaved() {
   }
 }
 
-export function SessionPlayer() {
+export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -266,6 +266,7 @@ export function SessionPlayer() {
         resumable={resumable}
         onStart={startFresh}
         onResume={resume}
+        leaderboard={leaderboard}
       />
     );
   if (status === "error") return <ErrorCard kind={errorKind} onRetry={() => void load()} />;
@@ -375,12 +376,15 @@ function StartCard({
   resumable,
   onStart,
   onResume,
+  leaderboard,
 }: {
   meta: SessionPayload["meta"];
   rounds: Round[];
   resumable: Saved | null;
   onStart: () => void;
   onResume: () => void;
+  /** Sunucuda hazırlanan sıralama tablosu — yalnızca bu kartta görünür. */
+  leaderboard?: ReactNode;
 }) {
   const words = rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
   const newCount = new Set(words.filter((w) => w.isNew).map((w) => w.id)).size;
@@ -515,6 +519,7 @@ function StartCard({
           )}
         </div>
       </div>
+      {leaderboard}
     </motion.div>
   );
 }

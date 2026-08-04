@@ -881,6 +881,64 @@ export async function buildChallenge(
 }
 
 /** İlerleme ekranı verileri */
+export type LeaderboardRow = {
+  rank: number;
+  name: string | null;
+  xp: number;
+  streak: number;
+  isMe: boolean;
+};
+
+/**
+ * Öğren ekranındaki sıralama: ilk 10 kişi, önce XP'ye sonra seriye göre.
+ *
+ * XP birincil ölçüt çünkü toplam emeği gösterir; seri yalnızca eşitlik bozar.
+ * Kullanıcı ilk 10'da değilse kendi satırı sona eklenir — listede kendini
+ * göremeyen kişi için tablo anlamsızlaşır. Hiç çalışmamış profiller (XP 0)
+ * listeye girmez, yoksa yeni kayıtlar sıralamayı doldurur.
+ */
+export async function getLeaderboard(userId: string, limit = 10): Promise<LeaderboardRow[]> {
+  const top = await db
+    .select({
+      userId: profiles.userId,
+      name: profiles.displayName,
+      xp: profiles.totalXp,
+      streak: profiles.currentStreak,
+    })
+    .from(profiles)
+    .where(gt(profiles.totalXp, 0))
+    .orderBy(desc(profiles.totalXp), desc(profiles.currentStreak), asc(profiles.createdAt))
+    .limit(limit);
+
+  const rows: LeaderboardRow[] = top.map((r, i) => ({
+    rank: i + 1,
+    name: r.name,
+    xp: r.xp,
+    streak: r.streak,
+    isMe: r.userId === userId,
+  }));
+  if (rows.some((r) => r.isMe)) return rows;
+
+  // Kendi sırası: aynı ölçütle önünde kaç kişi var.
+  const [me] = await db.select().from(profiles).where(eq(profiles.userId, userId));
+  if (!me) return rows;
+  const [{ ahead }] = await db
+    .select({ ahead: sql<number>`count(*)::int` })
+    .from(profiles)
+    .where(
+      sql`${profiles.totalXp} > ${me.totalXp}
+        or (${profiles.totalXp} = ${me.totalXp} and ${profiles.currentStreak} > ${me.currentStreak})`,
+    );
+  rows.push({
+    rank: ahead + 1,
+    name: me.displayName,
+    xp: me.totalXp,
+    streak: me.currentStreak,
+    isMe: true,
+  });
+  return rows;
+}
+
 export async function getProgress(userId: string, today: string) {
   const profile = await ensureProfile(userId);
 
