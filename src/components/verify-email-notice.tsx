@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth/client";
 import { AuthNotice, AuthShell } from "@/components/auth-shell";
 import { runAuth, translateAuthError } from "@/lib/auth/errors";
+import { InfoIcon } from "@/components/icons";
+
+const RESEND_COOLDOWN = 60;
 
 export function VerifyEmailNotice({
   email,
@@ -16,9 +19,17 @@ export function VerifyEmailNotice({
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [cooldown, setCooldown] = useState(0);
+
+  // Arka arkaya gönderim hız sınırına takılmasın diye geri sayım.
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const t = setTimeout(() => setCooldown((c) => c - 1), 1000);
+    return () => clearTimeout(t);
+  }, [cooldown]);
 
   async function resend() {
-    if (busy || !email) return;
+    if (busy || cooldown > 0 || !email) return;
     setBusy(true);
     setError(null);
     setSent(false);
@@ -34,6 +45,7 @@ export function VerifyEmailNotice({
       return;
     }
     setSent(true);
+    setCooldown(RESEND_COOLDOWN);
   }
 
   return (
@@ -55,10 +67,20 @@ export function VerifyEmailNotice({
       }
     >
       <div className="space-y-3">
-        <p className="muted text-sm">
-          Bağlantıya tıkladığında hesabın aktifleşir ve doğrudan öğrenmeye başlarsın. E-posta
-          gelmediyse spam klasörünü kontrol et.
-        </p>
+        <div
+          className="flex gap-2 rounded-xl px-3 py-2.5 text-sm"
+          style={{ background: "var(--surface-2)" }}
+        >
+          <span className="mt-0.5 shrink-0 text-[color:var(--color-brand-500)]">
+            <InfoIcon size={16} />
+          </span>
+          <div className="muted space-y-1">
+            <p>E-posta birkaç dakika içinde gelmezse:</p>
+            <p>· <strong>Spam / Gereksiz</strong> klasörünü kontrol et</p>
+            <p>· Gönderen adresini kişilerine ekle, sonraki e-postalar doğrudan gelsin</p>
+            <p>· Adresi yanlış yazdıysan yeni bir hesapla kaydolabilirsin</p>
+          </div>
+        </div>
 
         {sent ? <AuthNotice tone="success">Doğrulama e-postası yeniden gönderildi.</AuthNotice> : null}
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
@@ -66,10 +88,14 @@ export function VerifyEmailNotice({
         {email ? (
           <button
             onClick={() => void resend()}
-            disabled={busy}
+            disabled={busy || cooldown > 0}
             className="btn btn-ghost w-full px-5 py-3 disabled:opacity-60"
           >
-            {busy ? "Gönderiliyor…" : "Tekrar gönder"}
+            {busy
+              ? "Gönderiliyor…"
+              : cooldown > 0
+                ? `Tekrar gönder (${cooldown} sn)`
+                : "Tekrar gönder"}
           </button>
         ) : null}
 
