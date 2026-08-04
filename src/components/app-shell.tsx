@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
 import { ThemeToggle } from "./theme-toggle";
+import { TopProgress } from "./top-progress";
 import { CardsIcon, ChartIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark } from "./icons";
 
 const NAV = [
@@ -39,6 +40,7 @@ export function AppShell({
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-6xl">
+      <TopProgress />
       {/* Masaüstü kenar çubuğu */}
       <aside
         className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r p-5 md:flex"

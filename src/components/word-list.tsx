@@ -192,7 +192,7 @@ export function WordList({
                       <SpeakButton
                         text={r.artikel ? `${r.artikel} ${r.de}` : r.de}
                         size="sm"
-                        className="!h-9 !w-9"
+                        
                       />
                       <span className="muted">
                         {typLabel(r.typ, r.tr)}

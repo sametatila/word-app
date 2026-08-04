@@ -15,7 +15,19 @@ import { TypingGame } from "@/components/games/typing-game";
 import { ClozeGame } from "@/components/games/cloze-game";
 import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
-type Status = "loading" | "playing" | "done" | "empty" | "error";
+type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error";
+
+const STORE_KEY = "wortspiel:session";
+
+type Saved = {
+  day: string;
+  rounds: Round[];
+  meta: SessionPayload["meta"];
+  index: number;
+  tally: { correct: number; total: number; xp: number };
+  xp: number;
+  missed: { id: number; de: string; tr: string }[];
+};
 type ErrorKind = "auth" | "db" | "network";
 
 function localDay(): string {
@@ -23,6 +35,28 @@ function localDay(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
     d.getDate(),
   ).padStart(2, "0")}`;
+}
+
+function readSaved(): Saved | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (!raw) return null;
+    const s = JSON.parse(raw) as Saved;
+    if (s.day !== localDay() || !Array.isArray(s.rounds)) return null;
+    if (s.index >= s.rounds.length) return null;
+    return s;
+  } catch {
+    return null;
+  }
+}
+
+function clearSaved() {
+  try {
+    localStorage.removeItem(STORE_KEY);
+  } catch {
+    /* depolama kapalıysa sorun değil */
+  }
 }
 
 export function SessionPlayer() {
@@ -38,6 +72,31 @@ export function SessionPlayer() {
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
   const missed = useRef<{ id: number; de: string; tr: string }[]>([]);
+  const [resumable, setResumable] = useState<Saved | null>(null);
+
+  // Yarım kalan oturumu her turda sakla ki sayfadan çıkılsa da kaybolmasın.
+  const persist = useCallback(
+    (i: number, t: { correct: number; total: number; xp: number }) => {
+      if (!session) return;
+      try {
+        localStorage.setItem(
+          STORE_KEY,
+          JSON.stringify({
+            day: localDay(),
+            rounds: session.rounds,
+            meta: session.meta,
+            index: i,
+            tally: t,
+            xp: sessionXp.current,
+            missed: missed.current,
+          } satisfies Saved),
+        );
+      } catch {
+        /* depolama kapalıysa yalnızca devam etme özelliği çalışmaz */
+      }
+    },
+    [session],
+  );
 
   const load = useCallback(async (extra = false) => {
     setStatus("loading");
@@ -64,7 +123,7 @@ export function SessionPlayer() {
       const data = (await res.json()) as SessionPayload;
       setSession(data);
       startedAt.current = Date.now();
-      setStatus(data.rounds.length ? "playing" : "empty");
+      setStatus(data.rounds.length ? "ready" : "empty");
     } catch {
       setErrorKind("network");
       setStatus("error");
@@ -72,8 +131,33 @@ export function SessionPlayer() {
   }, []);
 
   useEffect(() => {
+    setResumable(readSaved());
     void load();
   }, [load]);
+
+  /** Kaldığı yerden devam: kayıtlı turlarla oynatmayı sürdürür. */
+  function resume() {
+    const saved = resumable;
+    if (!saved) return;
+    setSession({ rounds: saved.rounds, meta: saved.meta });
+    setIndex(saved.index);
+    setTally(saved.tally);
+    sessionXp.current = saved.xp ?? 0;
+    missed.current = saved.missed ?? [];
+    startedAt.current = Date.now();
+    setStatus("playing");
+  }
+
+  function startFresh() {
+    clearSaved();
+    setResumable(null);
+    setIndex(0);
+    setTally({ correct: 0, total: 0, xp: 0 });
+    sessionXp.current = 0;
+    missed.current = [];
+    startedAt.current = Date.now();
+    setStatus("playing");
+  }
 
   const flush = useCallback(async (final: boolean) => {
     const batch = pending.current;
@@ -133,10 +217,16 @@ export function SessionPlayer() {
       const isLast = index >= (session?.rounds.length ?? 0) - 1;
       if (isLast) {
         const res = await flush(true);
+        clearSaved();
         setResult(res ? { ...res, xpGained: sessionXp.current } : null);
         setStatus("done");
       } else {
-        setIndex((i) => i + 1);
+        const next = index + 1;
+        setIndex(next);
+        setTally((t) => {
+          persist(next, t);
+          return t;
+        });
         if (pending.current.length >= 3) void flush(false);
       }
     },
@@ -160,6 +250,16 @@ export function SessionPlayer() {
   }, []);
 
   if (status === "loading") return <LoadingCard />;
+  if (status === "ready" && session)
+    return (
+      <StartCard
+        meta={session.meta}
+        rounds={session.rounds}
+        resumable={resumable}
+        onStart={startFresh}
+        onResume={resume}
+      />
+    );
   if (status === "error") return <ErrorCard kind={errorKind} onRetry={() => void load()} />;
   if (status === "empty")
     return <EmptyCard meta={session?.meta} onExtra={() => void load(true)} />;
@@ -183,8 +283,25 @@ export function SessionPlayer() {
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between text-xs font-semibold">
-          <span className="muted">
+          <span className="muted flex items-center gap-2">
             {index + 1} / {session!.rounds.length}
+            {(() => {
+              const ws = round.game === "match" ? round.words : [round.word];
+              const isNew = ws.every((w) => w.isNew);
+              return (
+                <span
+                  className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wide"
+                  style={{
+                    background: isNew
+                      ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)"
+                      : "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
+                    color: isNew ? "var(--color-brand-500)" : "var(--color-flame-500)",
+                  }}
+                >
+                  {isNew ? "yeni" : "tekrar"}
+                </span>
+              );
+            })()}
           </span>
           <span className="muted">
             {tally.total > 0 ? `%${Math.round((tally.correct / tally.total) * 100)} doğru` : "Hadi başlayalım"}
@@ -239,6 +356,97 @@ function GameSwitch({ round, onDone }: { round: Round; onDone: (r: GameResult[])
     case "cloze":
       return <ClozeGame round={round} onDone={onDone} />;
   }
+}
+
+function StartCard({
+  meta,
+  rounds,
+  resumable,
+  onStart,
+  onResume,
+}: {
+  meta: SessionPayload["meta"];
+  rounds: Round[];
+  resumable: Saved | null;
+  onStart: () => void;
+  onResume: () => void;
+}) {
+  const words = rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
+  const newCount = new Set(words.filter((w) => w.isNew).map((w) => w.id)).size;
+  const reviewCount = new Set(words.filter((w) => !w.isNew).map((w) => w.id)).size;
+  const goalPct = Math.min(100, Math.round((meta.reviewsToday / Math.max(1, meta.dailyGoal)) * 100));
+  const name = meta.displayName?.split(" ")[0];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="mx-auto w-full max-w-md"
+    >
+      <div className="card overflow-hidden">
+        <div className="brand-gradient px-6 py-7 text-white">
+          <p className="text-sm opacity-90">
+            {meta.currentStreak > 0
+              ? `${meta.currentStreak} günlük serideysin`
+              : "Bugün serini başlat"}
+          </p>
+          <h1 className="mt-1 text-2xl font-bold">
+            {name ? `Hoş geldin, ${name}` : "Hoş geldin"}
+          </h1>
+          <div className="mt-4">
+            <div className="mb-1.5 flex justify-between text-xs font-semibold opacity-90">
+              <span>Günlük hedef</span>
+              <span>
+                {meta.reviewsToday} / {meta.dailyGoal}
+              </span>
+            </div>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-white/25">
+              <motion.div
+                className="h-full rounded-full bg-white"
+                initial={{ width: 0 }}
+                animate={{ width: `${goalPct}%` }}
+                transition={{ type: "spring", stiffness: 150, damping: 24 }}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
+          <div className="px-4 py-4 text-center">
+            <div className="text-xl font-bold text-[color:var(--color-flame-500)]">{reviewCount}</div>
+            <div className="muted text-xs">tekrar sırası gelen</div>
+          </div>
+          <div className="px-4 py-4 text-center">
+            <div className="text-xl font-bold text-[color:var(--color-brand-500)]">{newCount}</div>
+            <div className="muted text-xs">yeni kelime</div>
+          </div>
+        </div>
+
+        <div className="px-6 pb-6 pt-4">
+          <p className="muted mb-4 text-center text-sm">
+            {reviewCount > 0
+              ? "Tekrar zamanı gelen kelimeler bu turda kendiliğinden karşına çıkacak — ayrıca bir şey yapman gerekmiyor."
+              : "Bu tur yeni kelimelerle başlıyor. Öğrendiklerin, unutmaya başladığın anda kendiliğinden geri gelecek."}
+          </p>
+
+          {resumable ? (
+            <div className="space-y-2">
+              <button onClick={onResume} className="btn btn-primary w-full px-5 py-3.5">
+                Kaldığın yerden devam et ({resumable.index + 1}. tur)
+              </button>
+              <button onClick={onStart} className="btn btn-ghost w-full px-5 py-3">
+                Yeni tura başla
+              </button>
+            </div>
+          ) : (
+            <button onClick={onStart} className="btn btn-primary w-full px-5 py-3.5 text-base">
+              {rounds.length} turluk oturuma başla
+            </button>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
 }
 
 function LoadingCard() {
@@ -408,6 +616,11 @@ function SummaryCard({
             ) : null}
           </div>
         ) : null}
+
+        <p className="muted px-6 pt-4 text-center text-xs">
+          Bu turdaki kelimeler tekrar planına alındı; unutmaya başlayacağın gün
+          kendiliğinden karşına çıkacaklar.
+        </p>
 
         {missed.length ? (
           <div className="px-6 pt-4">

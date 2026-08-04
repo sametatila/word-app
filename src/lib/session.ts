@@ -21,6 +21,26 @@ export async function ensureProfile(userId: string, name?: string | null) {
   return again;
 }
 
+/**
+ * Sıklık sırasını koruyarak kelime türlerini serpiştirir: aksi hâlde öğrenci
+ * arka arkaya yirmi zamir/bağlaç görüyor. Aday havuzu sıralıdır; buradan
+ * sırayla isim / fiil / diğer alınarak dengeli bir grup kurulur.
+ */
+function mixByType(candidates: (typeof words.$inferSelect)[], limit: number) {
+  const buckets: Record<string, (typeof words.$inferSelect)[]> = { Nomen: [], Verb: [], Sonstiges: [] };
+  for (const w of candidates) (buckets[w.typ] ?? buckets.Sonstiges).push(w);
+  const order = ["Nomen", "Verb", "Sonstiges"];
+  const out: (typeof words.$inferSelect)[] = [];
+  let i = 0;
+  while (out.length < limit && order.some((k) => buckets[k].length)) {
+    const bucket = buckets[order[i % order.length]];
+    const next = bucket.shift();
+    if (next) out.push(next);
+    i++;
+  }
+  return out.length ? out : candidates.slice(0, limit);
+}
+
 function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): RoundWord {
   return {
     id: w.id,
@@ -96,7 +116,8 @@ export async function buildSession(
       )
       // Seviye içinde en yaygın kelimeler önce gelir (sıklık sırası).
       .orderBy(asc(words.niveau), sql`${words.rank} asc nulls last`, asc(words.id))
-      .limit(newLimit);
+      .limit(newLimit * 5);
+    newRows = mixByType(newRows, newLimit);
   }
 
   // 3) Şıklar için havuz

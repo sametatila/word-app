@@ -47,7 +47,7 @@ export function SpeakButton({
   const available = useSpeechAvailable();
   const speak = useCallback(() => speakGerman(text), [text]);
   if (!available) return null;
-  const dim = size === "sm" ? "h-9 w-9 text-base" : "h-11 w-11 text-lg";
+  const dim = size === "sm" ? "h-7 w-7" : "h-9 w-9";
   return (
     <motion.button
       type="button"
@@ -57,7 +57,7 @@ export function SpeakButton({
       title="Telaffuzu dinle"
       className={`btn btn-ghost shrink-0 ${dim} ${className}`}
     >
-      <SpeakerIcon size={size === "sm" ? 15 : 18} />
+      <SpeakerIcon size={size === "sm" ? 13 : 16} />
     </motion.button>
   );
 }
