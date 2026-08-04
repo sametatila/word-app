@@ -17,6 +17,7 @@ const w = (id: number, de: string, artikel: string | null, tr: string): RoundWor
   typ: artikel ? "Nomen" : "Verb",
   niveau: "A1",
   beispiel: `Ich sehe ${de} jeden Tag.`,
+  beispielTr: `Her gün ${tr} görüyorum.`,
   formen: artikel ? "-e" : "hat gemacht",
   isNew: false,
 });
@@ -49,6 +50,7 @@ const ROUNDS: Round[] = [
     game: "cloze",
     word: w(11, "Zug", "der", "tren"),
     sentence: "Der _____ fährt um acht Uhr ab.",
+    sentenceTr: "Tren saat sekizde kalkıyor.",
     answer: "Zug",
     options: ["Zug", "Hund", "Tisch", "Baum"],
   },

@@ -3,6 +3,7 @@ import { and, asc, desc, eq, gt, inArray, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles, reviews, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
+import { firstExample } from "@/lib/example";
 import type { Answer, AnswerResult, Round, RoundWord, SessionPayload } from "@/lib/types";
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
@@ -108,6 +109,7 @@ function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): RoundWord {
     typ: w.typ,
     niveau: w.niveau,
     beispiel: w.beispiel,
+    beispielTr: w.beispielTr,
     formen: w.formen,
     isNew,
   };
@@ -423,6 +425,8 @@ function makeRound(
         game: "cloze",
         word,
         sentence: cloze.sentence,
+        // Cümle ilk örnekten kurulduğu için çeviri de ilk parçadan alınır.
+        sentenceTr: firstExample(word.beispielTr),
         answer: cloze.answer,
         options: shuffle([
           cloze.answer,
@@ -437,7 +441,7 @@ function makeRound(
 
 /** Örnek cümlede kelimeyi boşlukla değiştirir; uygun cümle yoksa null döner. */
 function buildCloze(word: RoundWord): { sentence: string; answer: string } | null {
-  const raw = word.beispiel?.split(/(?<=[.!?])\s+/)[0]?.trim();
+  const raw = firstExample(word.beispiel);
   if (!raw || raw.length < 12 || raw.length > 110) return null;
   const stem = word.de.replace(/^sich\s+/, "");
   if (stem.length < 3) return null;

@@ -25,6 +25,8 @@ export type RoundWord = {
   typ: string;
   niveau: string;
   beispiel: string | null;
+  /** Örnek cümlenin doğal Türkçe çevirisi (varsa). */
+  beispielTr: string | null;
   formen: string | null;
   isNew: boolean;
 };
@@ -34,7 +36,16 @@ export type Round =
   | { id: string; game: "match"; words: RoundWord[] }
   | { id: string; game: "choice"; word: RoundWord; options: string[]; direction: "de-tr" | "tr-de" }
   | { id: string; game: "artikel"; word: RoundWord }
-  | { id: string; game: "cloze"; word: RoundWord; sentence: string; answer: string; options: string[] }
+  | {
+      id: string;
+      game: "cloze";
+      word: RoundWord;
+      sentence: string;
+      /** Cümlenin Türkçe çevirisi — seçim yaparken bağlamı anlamayı kolaylaştırır. */
+      sentenceTr: string | null;
+      answer: string;
+      options: string[];
+    }
   | { id: string; game: "scramble"; word: RoundWord }
   | { id: string; game: "typing"; word: RoundWord; alternatives: string[] };
 

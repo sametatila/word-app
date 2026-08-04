@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { grammarNote, typLabel, withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { firstExample } from "@/lib/example";
 import { SpeakButton, speakGerman } from "@/components/speak-button";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
@@ -21,6 +22,8 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   const [revealed, setRevealed] = useState(false);
   const [skipping, setSkipping] = useState(false);
   const started = useRef(Date.now());
+  const example = firstExample(word.beispiel);
+  const exampleTr = firstExample(word.beispielTr);
 
   useEffect(() => {
     started.current = Date.now();
@@ -68,7 +71,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           {word.tr}
         </motion.p>
 
-        {word.beispiel ? (
+        {example ? (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: revealed ? 1 : 0 }}
@@ -77,9 +80,12 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
             style={{ borderColor: "var(--border)" }}
           >
             <span className="inline-flex items-center gap-1">
-              {word.beispiel.split(/(?<=[.!?])\s+/)[0]}
-              <SpeakButton text={word.beispiel.split(/(?<=[.!?])\s+/)[0]} size="sm" />
+              {example}
+              <SpeakButton text={example} size="sm" />
             </span>
+            {exampleTr ? (
+              <span className="mt-1 block not-italic opacity-80">{exampleTr}</span>
+            ) : null}
           </motion.p>
         ) : null}
       </motion.div>

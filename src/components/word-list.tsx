@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { SpeakButton } from "@/components/speak-button";
 import { grammarNote, typLabel } from "@/components/games/types";
+import { firstExample } from "@/lib/example";
 
 export type WordRow = {
   id: number;
@@ -14,6 +15,7 @@ export type WordRow = {
   typ: string;
   niveau: string;
   beispiel: string | null;
+  beispielTr: string | null;
   formen: string | null;
   intervalDays: number | null;
   dueAt: string | null;
@@ -156,6 +158,9 @@ export function WordList({
           {rows.map((r, i) => {
             const st = statusOf(r);
             const isOpen = open === r.id;
+            const note = grammarNote({ ...r, isNew: false });
+            const example = firstExample(r.beispiel);
+            const exampleTr = firstExample(r.beispielTr);
             return (
               <motion.li
                 key={r.id}
@@ -191,40 +196,17 @@ export function WordList({
                     style={{ borderColor: "var(--border)" }}
                   >
                     <div className="flex items-center gap-2">
-                      <SpeakButton
-                        text={r.artikel ? `${r.artikel} ${r.de}` : r.de}
-                        size="sm"
-                        
-                      />
+                      <SpeakButton text={r.artikel ? `${r.artikel} ${r.de}` : r.de} size="sm" />
                       <span className="muted">
                         {typLabel(r.typ, r.tr)}
-                        {grammarNote({
-                          id: r.id,
-                          de: r.de,
-                          artikel: r.artikel,
-                          tr: r.tr,
-                          typ: r.typ,
-                          niveau: r.niveau,
-                          beispiel: r.beispiel,
-                          formen: r.formen,
-                          isNew: false,
-                        })
-                          ? ` · ${grammarNote({
-                              id: r.id,
-                              de: r.de,
-                              artikel: r.artikel,
-                              tr: r.tr,
-                              typ: r.typ,
-                              niveau: r.niveau,
-                              beispiel: r.beispiel,
-                              formen: r.formen,
-                              isNew: false,
-                            })}`
-                          : ""}
+                        {note ? ` · ${note}` : ""}
                       </span>
                     </div>
-                    {r.beispiel ? (
-                      <p className="muted mt-2 italic">{r.beispiel.split(/(?<=[.!?])\s+/)[0]}</p>
+                    {example ? (
+                      <>
+                        <p className="muted mt-2 italic">{example}</p>
+                        {exampleTr ? <p className="muted mt-0.5 text-sm">{exampleTr}</p> : null}
+                      </>
                     ) : null}
                     <p className="muted mt-2 text-xs">
                       {dueLabel(r.dueAt) ?? "henüz çalışılmadı"}

@@ -26,6 +26,19 @@ async function main() {
   const rows = JSON.parse(readFileSync(file, "utf8")) as Row[];
   console.log(`${rows.length} kelime okundu.`);
 
+  // Örnek cümlelerin doğal Türkçe çevirileri (id → çeviri). Dosya yoksa
+  // kelimeler çevirisiz yüklenir; oyunlar çeviriyi ancak varsa gösterir.
+  let beispielTr = new Map<number, string>();
+  try {
+    const trRows = JSON.parse(
+      readFileSync(path.join(process.cwd(), "data", "app", "beispiel-tr.json"), "utf8"),
+    ) as { id: number; tr: string }[];
+    beispielTr = new Map(trRows.map((r) => [r.id, r.tr]));
+    console.log(`${beispielTr.size} örnek cümle çevirisi okundu.`);
+  } catch {
+    console.warn("beispiel-tr.json bulunamadı — örnek cümle çevirileri boş kalacak.");
+  }
+
   // Türkçe karşılığı -mek/-mak ile bitiyorsa kelime fiildir; PDF'ten gelen
   // "Sonstiges" etiketi 200'den fazla fiili yanlış sınıflandırıyordu.
   const inferTyp = (r: Row) =>
@@ -52,6 +65,7 @@ async function main() {
     typ: inferTyp(r),
     niveau: r.niveau.startsWith("A1") ? "A1" : r.niveau,
     beispiel: r.beispiel || null,
+    beispielTr: beispielTr.get(r.id) ?? null,
     rank: r.rank ?? null,
   }));
 
@@ -71,6 +85,7 @@ async function main() {
           typ: sql`excluded.typ`,
           niveau: sql`excluded.niveau`,
           beispiel: sql`excluded.beispiel`,
+          beispielTr: sql`excluded.beispiel_tr`,
           rank: sql`excluded.rank`,
         },
       });

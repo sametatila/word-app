@@ -1,0 +1,1 @@
+ALTER TABLE "words" ADD COLUMN "beispiel_tr" text;

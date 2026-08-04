@@ -50,6 +50,13 @@
       "when": 1785856113992,
       "tag": "0006_tranquil_spectrum",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1785861110168,
+      "tag": "0007_fixed_luke_cage",
+      "breakpoints": true
     }
   ]
 }

@@ -10,7 +10,7 @@ import { fx } from "@/lib/fx";
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
 export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
-  const { word, sentence, answer, options } = round;
+  const { word, sentence, sentenceTr, answer, options } = round;
   const [before, after] = sentence.split("_____");
 
   const [picked, setPicked] = useState<string | null>(null);
@@ -28,7 +28,9 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     setPicked(opt);
     const isCorrect = opt === answer;
     const latencyMs = Date.now() - started.current;
-    const wait = isCorrect ? 750 : 1400;
+    // Cümle oyunlarında geçiş acele etmez: öğrenci tamamlanan cümleyi ve
+    // çevirisini okuyup sindirebilmeli.
+    const wait = isCorrect ? 1800 : 2800;
     fx(isCorrect ? "correct" : "wrong", wait);
     setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), wait);
   }
@@ -67,7 +69,8 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
           {after}
         </span>
       }
-      hint="Boşluğu doğru kelimeyle tamamla"
+      /* Cümlenin çevirisi baştan gösterilir: bağlamı anlamak seçimi kolaylaştırır. */
+      hint={sentenceTr ? <span className="italic">{sentenceTr}</span> : undefined}
     >
       <div className="grid grid-cols-2 gap-3">
         {options.map((opt, i) => {

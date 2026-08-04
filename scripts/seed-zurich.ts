@@ -49,6 +49,18 @@ async function main() {
   ) as SrcRow[];
   const srcById = new Map(srcRows.map((r) => [r.id, r]));
 
+  // Örnek cümle çevirileri kaynak id ile eşleşir: gsw beispiel'i Almanca
+  // cümlenin doğal çevirisi olduğundan Türkçe karşılık iki kursta da aynıdır.
+  let beispielTr = new Map<number, string>();
+  try {
+    const trRows = JSON.parse(
+      readFileSync(path.join(process.cwd(), "data", "app", "beispiel-tr.json"), "utf8"),
+    ) as { id: number; tr: string }[];
+    beispielTr = new Map(trRows.map((r) => [r.id, r.tr]));
+  } catch {
+    console.warn("beispiel-tr.json bulunamadı — örnek cümle çevirileri boş kalacak.");
+  }
+
   const dir = path.join(process.cwd(), "data", "zurich");
   const chunkFiles = readdirSync(dir)
     .filter((f) => /^chunk-\d+\.json$/.test(f))
@@ -85,6 +97,7 @@ async function main() {
       typ: inferTyp(src),
       niveau: src.niveau.startsWith("A1") ? "A1" : src.niveau,
       beispiel: g.beispiel?.trim() || null,
+      beispielTr: g.beispiel?.trim() ? (beispielTr.get(g.id) ?? null) : null,
       rank: src.rank ?? null,
       course: "gsw-zh",
     };
@@ -107,6 +120,7 @@ async function main() {
           typ: sql`excluded.typ`,
           niveau: sql`excluded.niveau`,
           beispiel: sql`excluded.beispiel`,
+          beispielTr: sql`excluded.beispiel_tr`,
           rank: sql`excluded.rank`,
           course: sql`excluded.course`,
         },

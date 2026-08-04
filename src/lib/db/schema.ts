@@ -25,6 +25,7 @@ export const words = pgTable(
     typ: text("typ").notNull(), // Nomen | Verb | Sonstiges
     niveau: text("niveau").notNull(), // A1 | A2 | B1 | B2 | C1
     beispiel: text("beispiel"),
+    beispielTr: text("beispiel_tr"), // örnek cümlenin doğal Türkçe çevirisi
     rank: integer("rank"), // sıklık sırası (küçük = daha yaygın)
     course: text("course").notNull().default("de"), // de | gsw-zh
   },
