@@ -460,7 +460,14 @@ function buildCloze(word: RoundWord): { sentence: string; answer: string } | nul
   if (!raw || raw.length < 12 || raw.length > 110) return null;
   const stem = word.de.replace(/^sich\s+/, "");
   if (stem.length < 3) return null;
-  const re = new RegExp(`\\b${escapeRegExp(stem)}\\w{0,4}\\b`, "i");
+  // Sınır olarak \b kullanılamaz: JS'te \w ASCII'dir, bu yüzden "Überstunde" gibi
+  // umlaut ile başlayan kelimeler hiç eşleşmiyordu (53 kelime, 38'i örnek cümlesi
+  // olduğu hâlde hiç boşluk doldurma turu üretmiyordu). Unicode harf sınıfıyla
+  // kurulan bakış ifadeleri hem umlaut hem ß için doğru çalışır.
+  const re = new RegExp(
+    `(?<![\\p{L}\\p{N}])${escapeRegExp(stem)}\\p{L}{0,4}(?![\\p{L}\\p{N}])`,
+    "iu",
+  );
   const match = raw.match(re);
   if (!match) return null;
   return { sentence: raw.replace(re, "_____"), answer: match[0] };
