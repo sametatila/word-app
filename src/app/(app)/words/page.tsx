@@ -20,7 +20,9 @@ export default async function WordsPage({
   if (!userId) return null;
 
   const q = (sp.q ?? "").trim().slice(0, 40);
-  const level = ["A1", "A2", "B1"].includes(sp.level ?? "") ? sp.level! : "";
+  // B2 ve C1 listeye eklendiğinde bu beyaz liste güncellenmemişti: o iki çipe
+  // basınca filtre sessizce yok sayılıyor, tüm kelimeler geliyordu.
+  const level = ["A1", "A2", "B1", "B2", "C1"].includes(sp.level ?? "") ? sp.level! : "";
   const status = ["new", "learning", "mastered"].includes(sp.status ?? "") ? sp.status! : "";
   const page = Math.max(0, Number(sp.page ?? 0) || 0);
 
