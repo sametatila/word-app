@@ -12,6 +12,21 @@ type Difficulty = "easy" | "normal" | "hard";
 const ROUNDS_PER_SESSION = 14;
 
 /**
+ * Adaptif seviye ayarı — iki vitesli.
+ *
+ * Kalibrasyon penceresi (seviyedeki ilk CAL_WINDOW cevap): %90+ doğruluk,
+ * öğrencinin gerçek seviyesinin yukarıda olduğunun işaretidir; sistem onu
+ * hızlıca kendi seviyesine yaklaştırır. Pencere kapandıktan sonra terfi uzun
+ * vadeli birikim ister: seviyede yeterli hacim + istikrarlı yüksek doğruluk.
+ * (Eski model 5 iyi oturumda C1'e çıkarıyordu — bu kasıtlı olarak yavaşlatıldı.)
+ */
+const CAL_WINDOW = 80; // cevap sayısı
+const PROMOTE_SCORE = 24; // kalibrasyon dışında terfi eşiği
+const DEMOTE_SCORE = -10; // kalibrasyon dışında iniş eşiği
+const SCORE_MIN = -12;
+const SCORE_AFTER_CHANGE = 4; // seviye değişiminde puan ortaya yakın başlar
+
+/**
  * Adaptif seviye modeli.
  *
  * Profildeki seçim bir **başlangıç noktasıdır**, tavan değil. A1 ve A2 zorunlu
@@ -655,25 +670,49 @@ export async function submitAnswers(
     })
     .returning();
 
-  // Seviye puanı: oturum doğruluğuna göre artar/azalır, eşikte seviye değişir.
+  // Seviye puanı: oturum doğruluğuna göre artar/azalır.
   const sessionAccuracy = answers.length ? correctCount / answers.length : 0;
   const delta =
     sessionAccuracy >= 0.85 ? 2 : sessionAccuracy >= 0.7 ? 1 : sessionAccuracy >= 0.5 ? 0 : -2;
+
+  // Bu seviyede verilen cevap hacmi (bu oturum dahil): terfi tek güzel oturumla
+  // değil, seviyede gerçekten çalışılmış hacimle kazanılır.
+  const sinceLevel = profile.levelChangedAt;
+  const [{ atLevel }] = await db
+    .select({ atLevel: sql<number>`count(*)::int` })
+    .from(reviews)
+    .where(
+      sinceLevel
+        ? and(eq(reviews.userId, userId), gt(reviews.createdAt, sinceLevel))
+        : eq(reviews.userId, userId),
+    );
+
   // Profildeki seçim tavan değildir: iyi giden öğrenci C1'e kadar yükselebilir,
   // zorlanan A1'e kadar inebilir. Seviyeyi yalnızca performans belirler.
   let activeIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel));
-  let levelScore = Math.max(-8, Math.min(10, profile.levelScore + delta));
+  let levelScore = Math.max(SCORE_MIN, Math.min(PROMOTE_SCORE, profile.levelScore + delta));
   let levelUp: string | null = null;
   let levelDown: string | null = null;
+  let levelChangedAt: Date | null = null;
 
-  if (levelScore >= 10 && activeIdx < LEVEL_ORDER.length - 1) {
+  // Kalibrasyon penceresinde hızlı yaklaşma, sonrasında uzun vadeli birikim.
+  const inCalibration = atLevel < CAL_WINDOW;
+  const canPromote =
+    activeIdx < LEVEL_ORDER.length - 1 &&
+    (inCalibration ? levelScore >= 10 && sessionAccuracy >= 0.9 : levelScore >= PROMOTE_SCORE);
+  const canDemote = activeIdx > 0 && levelScore <= (inCalibration ? -6 : DEMOTE_SCORE);
+
+  if (canPromote) {
     activeIdx += 1;
-    levelScore = 4;
     levelUp = LEVEL_ORDER[activeIdx];
-  } else if (levelScore <= -6 && activeIdx > 0) {
+  } else if (canDemote) {
     activeIdx -= 1;
-    levelScore = 4;
     levelDown = LEVEL_ORDER[activeIdx];
+  }
+  if (levelUp || levelDown) {
+    // Yeni seviyede ölçüm sıfırdan: puan ortaya yakın, doğruluk penceresi bu andan.
+    levelScore = SCORE_AFTER_CHANGE;
+    levelChangedAt = now;
   }
 
   // Streak: bugün ilk kez aktifse güncellenir.
@@ -693,6 +732,7 @@ export async function submitAnswers(
       totalXp: profile.totalXp + xpGained,
       activeLevel: LEVEL_ORDER[activeIdx],
       levelScore,
+      ...(levelChangedAt ? { levelChangedAt } : {}),
     })
     .where(eq(profiles.userId, userId));
 

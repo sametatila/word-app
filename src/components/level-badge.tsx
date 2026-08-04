@@ -16,8 +16,9 @@ const TONE: Record<string, string> = {
  * Güncel CEFR seviyesi ve bir sonraki seviyeye ilerleme.
  *
  * Seviyeyi performans belirler: profildeki seçim yalnızca başlangıç noktasıdır,
- * tavan değildir. Puan -8 ile 10 arasında; 10'a ulaşınca terfi, -6'ya düşünce
- * bir alt seviyeye iniş olur. Amaç öğrencinin yükselişini/düşüşünü anlık görmesi.
+ * tavan değildir. Puan -12 ile 24 arasında; 24'e ulaşınca terfi (yeni seviyenin
+ * kalibrasyon penceresinde daha erken), -10'a düşünce bir alt seviyeye iniş
+ * olur. Amaç öğrencinin yükselişini/düşüşünü anlık görmesi.
  */
 export function LevelBadge({
   level,
@@ -33,7 +34,7 @@ export function LevelBadge({
   const idx = Math.max(0, LEVELS.indexOf(level));
   const next = idx < LEVELS.length - 1 ? LEVELS[idx + 1] : null;
   const prev = idx > 0 ? LEVELS[idx - 1] : null;
-  const pct = Math.max(0, Math.min(100, ((score + 8) / 18) * 100));
+  const pct = Math.max(0, Math.min(100, ((score + 12) / 36) * 100));
   const tone = TONE[level] ?? "var(--color-brand-500)";
 
   const label = calibrating

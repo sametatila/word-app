@@ -48,7 +48,7 @@ export const profiles = pgTable("profiles", {
   course: text("course").notNull().default("de"), // de | gsw-zh — çalışılan kurs
   // İlk girişte kurs/seviye soruldu mu? Null ise onboarding gösterilir.
   courseChosenAt: timestamp("course_chosen_at", { withTimezone: true }),
-  levelScore: integer("level_score").notNull().default(0), // terfi/düşüş göstergesi (-8..10)
+  levelScore: integer("level_score").notNull().default(0), // terfi/düşüş göstergesi (-12..24)
   // Seviye elle değiştirildiğinde zorluk ölçümü sıfırdan başlasın diye tutulur.
   levelChangedAt: timestamp("level_changed_at", { withTimezone: true }),
   currentStreak: integer("current_streak").notNull().default(0),
