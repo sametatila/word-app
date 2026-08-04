@@ -449,6 +449,438 @@ export const b2: SkillExercise[] = [
   },
 
   // -------------------------------------------------------------- DİNLEME
+  // ── Hikâye dizisi: Gazeteci Nora bir ihbarı araştırıyor. B2'nin yeni
+  //    alıştırmalarında ihbar → görüşme → şirketin cevabı → yazı sırası izlenir.
+  {
+    id: "b2-r7",
+    level: "B2",
+    skill: "reading",
+    title: "Ein anonymer Hinweis",
+    genre: "E-posta",
+    intro:
+      "Bir yerel gazetenin haber merkezine gelen isimsiz ihbar. Gazeteci Nora'nın araştırması buradan başlıyor.",
+    gloss: [
+      { de: "der Hinweis", tr: "ihbar, ipucu" },
+      { de: "anonym", tr: "isimsiz" },
+      { de: "die Leiharbeit", tr: "ödünç/taşeron işçilik" },
+      { de: "die Schicht", tr: "vardiya" },
+      { de: "die Pause", tr: "mola" },
+      { de: "der Vorwurf", tr: "iddia, suçlama" },
+      { de: "belegen", tr: "belgelemek" },
+      { de: "die Kündigung", tr: "işten çıkarma" },
+      { de: "sich melden", tr: "iletişime geçmek" },
+    ],
+    minutes: 6,
+    text:
+      "Betreff: Bitte lesen Sie das\n\nSehr geehrte Frau Weiß,\n\nich schreibe Ihnen anonym und ich weiß, dass das den Wert meiner Aussage senkt. Bitte lesen Sie trotzdem weiter.\n\nIch arbeite seit vier Jahren im Logistikzentrum Nordkamp, über eine Leihfirma. Offiziell haben wir dieselben Rechte wie die Festangestellten. In der Praxis läuft es anders.\n\nUnsere Schichten werden mit 7,5 Stunden geplant, aber die Zeit zum Umziehen und zum Weg zur Halle zählt nicht — das sind täglich rund 25 Minuten, die niemand bezahlt. Wer sich beschwert, bekommt im nächsten Monat weniger Schichten. Nicht null, nur weniger. Das lässt sich nie beweisen, aber jeder kennt zwei, drei Namen, bei denen es passiert ist.\n\nIch kann Ihnen Schichtpläne von sechs Monaten schicken. Namen sind darauf, deshalb müsste ich sie vorher schwärzen. Was ich nicht kann: mit Ihnen unter meinem Namen sprechen. Ich habe zwei Kinder, und meine Verlängerung wird im März entschieden.\n\nWenn Sie das für zu dünn halten, verstehe ich es. Aber vielleicht fragen Sie einmal nach, wie viele Leiharbeiter dort im letzten Jahr keine Verlängerung bekommen haben — und wann sie sich vorher beschwert haben.\n\nMit freundlichen Grüßen\nEine Mitarbeiterin",
+    questions: [
+      {
+        text: "Was ist der zentrale Vorwurf?",
+        options: [
+          "Umkleide- und Wegzeiten werden nicht bezahlt",
+          "Die Löhne sind zu niedrig",
+          "Die Hallen sind zu kalt",
+        ],
+        answer: 0,
+        explain: "Günde yaklaşık 25 dakika üstünü değiştirme ve yürüme süresi ödenmiyor.",
+      },
+      {
+        text: "Was passiert laut Schreiben mit Menschen, die sich beschweren?",
+        options: [
+          "Sie bekommen weniger Schichten, nicht null",
+          "Sie werden sofort gekündigt",
+          "Sie werden versetzt",
+        ],
+        answer: 0,
+        explain:
+          "„Nicht null, nur weniger. Das lässt sich nie beweisen“ — kanıtlanamaz olması iddianın parçası.",
+      },
+      {
+        text: "Warum schreibt die Person anonym?",
+        options: [
+          "Ihre Verlängerung wird im März entschieden",
+          "Sie kennt die Journalistin nicht",
+          "Sie hat keine Beweise",
+        ],
+        answer: 0,
+        explain: "İki çocuğu var ve sözleşme uzatması mart ayında karara bağlanacak.",
+      },
+      {
+        text: "Was bietet sie an?",
+        options: [
+          "Schichtpläne von sechs Monaten, mit geschwärzten Namen",
+          "Ein Interview mit Namen",
+          "Fotos aus der Halle",
+        ],
+        answer: 0,
+        explain: "İsimleri karartarak altı aylık vardiya planlarını gönderebiliyor.",
+      },
+      {
+        text: "Welche Recherche schlägt sie vor?",
+        options: [
+          "Wie viele Leiharbeiter keine Verlängerung bekamen — und wann sie sich beschwert hatten",
+          "Die Löhne mit anderen Firmen zu vergleichen",
+          "Die Halle zu besichtigen",
+        ],
+        answer: 0,
+        explain: "İki veriyi yan yana koymayı öneriyor: uzatılmayanlar ve şikâyet tarihleri.",
+      },
+    ],
+  },
+  {
+    id: "b2-r8",
+    level: "B2",
+    skill: "reading",
+    title: "Kündigung: Was wirklich gilt",
+    genre: "Rehber",
+    intro:
+      "Almanya'da iş güvencesinin nasıl işlediğini anlatan bir rehber yazı — çoğu kişinin yanlış bildiği konu.",
+    gloss: [
+      { de: "der Kündigungsschutz", tr: "iş güvencesi" },
+      { de: "die Abmahnung", tr: "yazılı uyarı" },
+      { de: "betriebsbedingt", tr: "işletme gereği" },
+      { de: "verhaltensbedingt", tr: "davranış nedeniyle" },
+      { de: "die Sozialauswahl", tr: "sosyal kriter seçimi" },
+      { de: "die Klage", tr: "dava" },
+      { de: "die Abfindung", tr: "tazminat" },
+      { de: "die Frist", tr: "süre" },
+    ],
+    minutes: 7,
+    text:
+      "Der wichtigste Satz zuerst: In Betrieben mit mehr als zehn Beschäftigten und nach sechs Monaten im Job gilt der Kündigungsschutz. Ein Arbeitgeber kann dann nicht einfach kündigen, weil ihm jemand nicht passt — er braucht einen Grund, den ein Gericht akzeptiert.\n\nEs gibt drei zulässige Gründe. Personenbedingt heißt meist längere Krankheit. Verhaltensbedingt bedeutet, dass jemand Regeln verletzt — hier ist fast immer eine Abmahnung nötig, und zwar für genau dasselbe Verhalten. Betriebsbedingt heißt, dass der Arbeitsplatz wegfällt. In diesem Fall muss der Arbeitgeber eine Sozialauswahl treffen: Alter, Betriebszugehörigkeit, Unterhaltspflichten und Schwerbehinderung entscheiden, wer bleibt — nicht die Leistung.\n\nDer zweite wichtige Punkt ist die Frist. Wer gegen eine Kündigung vorgehen will, hat dafür drei Wochen ab Zugang des Schreibens. Diese Frist ist hart: Danach gilt die Kündigung als wirksam, auch wenn sie rechtswidrig war.\n\nEin verbreiteter Irrtum betrifft die Abfindung. Es gibt keinen allgemeinen Anspruch darauf. In der Praxis wird sie trotzdem oft gezahlt — nicht aus Freundlichkeit, sondern weil ein Prozess für den Arbeitgeber teuer und unsicher ist. Deshalb ist die Klage in vielen Fällen weniger ein Kampf um den Arbeitsplatz als eine Verhandlung über Geld.\n\nWer eine Kündigung erhält, sollte zwei Dinge sofort tun: sich innerhalb von drei Tagen bei der Agentur für Arbeit melden und die Frist im Kalender markieren. Alles andere kann warten.",
+    questions: [
+      {
+        text: "Wann gilt der Kündigungsschutz?",
+        options: [
+          "Ab elf Beschäftigten und nach sechs Monaten",
+          "Immer, ab dem ersten Tag",
+          "Nur bei unbefristeten Verträgen",
+        ],
+        answer: 0,
+        explain: "„mehr als zehn Beschäftigten und nach sechs Monaten im Job“.",
+      },
+      {
+        text: "Was ist bei einer verhaltensbedingten Kündigung fast immer nötig?",
+        options: [
+          "Eine Abmahnung für dasselbe Verhalten",
+          "Eine Sozialauswahl",
+          "Eine Abfindung",
+        ],
+        answer: 0,
+        explain: "Uyarı, aynı davranış için verilmiş olmalı.",
+      },
+      {
+        text: "Was entscheidet bei einer betriebsbedingten Kündigung, wer geht?",
+        options: [
+          "Alter, Betriebszugehörigkeit, Unterhaltspflichten, Schwerbehinderung",
+          "Die Leistung",
+          "Das Gehalt",
+        ],
+        answer: 0,
+        explain: "Sosyal kriterler belirleyici — performans değil.",
+      },
+      {
+        text: "Was passiert nach Ablauf der Drei-Wochen-Frist?",
+        options: [
+          "Die Kündigung gilt, auch wenn sie rechtswidrig war",
+          "Die Frist verlängert sich automatisch",
+          "Man bekommt eine Abfindung",
+        ],
+        answer: 0,
+        explain: "Metin bu süreyi „hart“ diye niteliyor.",
+      },
+      {
+        text: "Warum wird trotzdem oft eine Abfindung gezahlt?",
+        options: [
+          "Weil ein Prozess für den Arbeitgeber teuer und unsicher ist",
+          "Weil das Gesetz es verlangt",
+          "Weil die Gewerkschaft es fordert",
+        ],
+        answer: 0,
+        explain: "Genel bir tazminat hakkı yok; ödeme pratik bir hesaptan doğuyor.",
+      },
+    ],
+  },
+  {
+    id: "b2-r9",
+    level: "B2",
+    skill: "reading",
+    title: "Stolpersteine",
+    genre: "Kültür",
+    intro:
+      "Alman şehirlerinde kaldırımlara gömülü küçük pirinç taşlar. Bu yazı, dünyanın en büyük anıtının neden merkezde değil ayaklarınızın altında olduğunu anlatıyor.",
+    gloss: [
+      { de: "der Stolperstein", tr: "tökezleme taşı (anıt)" },
+      { de: "das Denkmal", tr: "anıt" },
+      { de: "die Erinnerung", tr: "hatıra, anma" },
+      { de: "verschleppen", tr: "sürüklemek, zorla götürmek" },
+      { de: "die Messingplatte", tr: "pirinç levha" },
+      { de: "sich bücken", tr: "eğilmek" },
+      { de: "der Widerstand", tr: "direniş, karşı çıkış" },
+      { de: "die Verlegung", tr: "döşeme, yerleştirme" },
+    ],
+    minutes: 7,
+    text:
+      "Wer in einer deutschen Stadt auf den Boden schaut, findet sie irgendwann: kleine Messingplatten im Gehweg, zehn mal zehn Zentimeter. Darauf steht „Hier wohnte“, ein Name, ein Geburtsjahr — und was mit diesem Menschen geschah.\n\nDie Stolpersteine sind das größte dezentrale Denkmal der Welt. Über 100.000 liegen inzwischen in mehr als 30 Ländern. Der Künstler Gunter Demnig verlegt sie seit 1992, meist selbst, meist vor dem letzten frei gewählten Wohnort der Opfer des Nationalsozialismus.\n\nDie Idee dahinter ist genau durchdacht. Ein zentrales Denkmal besucht man — man fährt hin, steht davor, geht wieder. Ein Stolperstein dagegen liegt auf dem Weg zur Arbeit. Man begegnet ihm ohne Absicht. Und wer den Namen lesen will, muss sich bücken. Diese Geste ist Teil des Werks.\n\nEs gibt auch Widerstand. München erlaubt bis heute keine Verlegung auf öffentlichem Grund; die Israelitische Kultusgemeinde dort argumentiert, dass Namen von Ermordeten nicht mit Füßen getreten werden sollten. Andere kritisieren, dass Hausbesitzer die Verlegung verhindern können, weil sie Wertverlust fürchten.\n\nGerade dieser Streit gehört zum Denkmal. Es fragt nicht nur, wer damals verschwunden ist, sondern auch, wie eine Gesellschaft heute mit dieser Abwesenheit umgehen will — an ihrer eigenen Haustür.",
+    questions: [
+      {
+        text: "Was steht auf einem Stolperstein?",
+        options: [
+          "„Hier wohnte“, Name, Geburtsjahr und das Schicksal der Person",
+          "Nur ein Datum",
+          "Ein Zitat des Künstlers",
+        ],
+        answer: 0,
+        explain: "Metin bunu doğrudan sayıyor.",
+      },
+      {
+        text: "Was ist der wichtigste Unterschied zu einem zentralen Denkmal?",
+        options: [
+          "Man begegnet ihm ohne Absicht, im Alltag",
+          "Es ist größer",
+          "Es ist teurer",
+        ],
+        answer: 0,
+        explain: "Merkezî anıt ziyaret edilir; taş yolun üstündedir.",
+      },
+      {
+        text: "Warum ist das Bücken Teil des Werks?",
+        options: [
+          "Wer den Namen lesen will, muss sich beugen",
+          "Die Platte ist zu klein",
+          "Es ist eine religiöse Regel",
+        ],
+        answer: 0,
+        explain: "„Diese Geste ist Teil des Werks.“",
+      },
+      {
+        text: "Wie argumentiert die Kritik aus München?",
+        options: [
+          "Namen von Ermordeten sollten nicht mit Füßen getreten werden",
+          "Die Steine sind zu teuer",
+          "Sie stören den Verkehr",
+        ],
+        answer: 0,
+        explain: "Bu yüzden Münih kamusal alanda döşemeye izin vermiyor.",
+      },
+      {
+        text: "Wie bewertet der Text den Streit?",
+        options: [
+          "Er gehört zum Denkmal selbst",
+          "Er schadet dem Projekt",
+          "Er ist unwichtig",
+        ],
+        answer: 0,
+        explain:
+          "Anıt yalnızca kimin kaybolduğunu değil, bugün bu yoklukla nasıl yaşandığını da soruyor.",
+      },
+    ],
+  },
+  {
+    id: "b2-r10",
+    level: "B2",
+    skill: "reading",
+    title: "Vier Meinungen zuordnen",
+    genre: "Sınav formatı",
+    intro:
+      "B2 sınavının tipik görevi: aynı konuda dört görüş, sonra „kim ne diyor?“ soruları. Görüşler kısmen örtüşür — fark ayrıntıda.",
+    gloss: [
+      { de: "die Vier-Tage-Woche", tr: "dört günlük çalışma haftası" },
+      { de: "die Produktivität", tr: "verimlilik" },
+      { de: "die Belastung", tr: "yük, baskı" },
+      { de: "der Ausgleich", tr: "denge, telafi" },
+      { de: "skeptisch", tr: "şüpheci" },
+      { de: "die Branche", tr: "sektör" },
+      { de: "verdichten", tr: "sıkıştırmak (iş yükünü)" },
+    ],
+    minutes: 6,
+    text:
+      "Thema: Sollte die Vier-Tage-Woche zum Standard werden?\n\nANNIKA (Softwareentwicklerin): Wir haben es zwei Jahre gemacht, bei vollem Lohn. Die Produktivität ist nicht gefallen — sie ist leicht gestiegen. Der Grund ist banal: Wir haben aufgehört, sinnlose Meetings zu machen. Aber ich sage bewusst „wir“. Ich sitze am Rechner. In der Pflege ist meine Erfahrung wertlos.\n\nBERND (Pflegedienstleiter): Genau das ist mein Punkt. Bei uns kann man Arbeit nicht verdichten — ein Mensch braucht die Zeit, die er braucht. Vier Tage würden bedeuten: mehr Personal. Das gibt der Markt nicht her. Ich bin nicht dagegen, ich halte es bei uns schlicht für unmöglich.\n\nCLAUDIA (Unternehmerin, Handwerk): Ich bin skeptisch, aber aus einem anderen Grund. Meine Leute wollen das Geld, nicht den Tag. Als ich vier Tage angeboten habe, wollten drei von elf. Wir reden hier oft über die Wünsche von Akademikern und nennen das dann „die Beschäftigten“.\n\nDANIEL (Arbeitsforscher): Die Datenlage ist besser, als viele denken, aber sie ist eng. Fast alle Studien kommen aus Bürojobs und aus Betrieben, die freiwillig teilgenommen haben. Was wir sehen: weniger Krankmeldungen, gleiche Leistung. Was wir nicht wissen: ob das auch gilt, wenn ein Betrieb es nicht will.",
+    questions: [
+      {
+        text: "Wer nennt einen konkreten Grund, warum die Produktivität nicht fiel?",
+        options: ["Annika", "Bernd", "Daniel"],
+        answer: 0,
+        explain: "„Wir haben aufgehört, sinnlose Meetings zu machen.“",
+      },
+      {
+        text: "Wer sagt, dass das Modell in seiner Branche nicht funktionieren kann?",
+        options: ["Bernd", "Claudia", "Annika"],
+        answer: 0,
+        explain: "Bakım sektöründe iş sıkıştırılamaz — daha fazla personel gerekir.",
+      },
+      {
+        text: "Wer kritisiert, über wen in dieser Debatte gesprochen wird?",
+        options: ["Claudia", "Daniel", "Bernd"],
+        answer: 0,
+        explain:
+          "„Wir reden hier oft über die Wünsche von Akademikern und nennen das dann ‚die Beschäftigten‘.“",
+      },
+      {
+        text: "Wer weist auf eine methodische Grenze der Studien hin?",
+        options: ["Daniel", "Annika", "Claudia"],
+        answer: 0,
+        explain: "Araştırmalar büro işlerinden ve gönüllü katılan işletmelerden geliyor.",
+      },
+      {
+        text: "Wer ist ausdrücklich nicht grundsätzlich dagegen?",
+        options: ["Bernd", "Claudia", "Niemand"],
+        answer: 0,
+        explain: "„Ich bin nicht dagegen, ich halte es bei uns schlicht für unmöglich.“",
+      },
+    ],
+  },
+  {
+    id: "b2-r11",
+    level: "B2",
+    skill: "reading",
+    title: "Die Stellungnahme der Firma",
+    genre: "Basın açıklaması",
+    intro:
+      "Hikâyenin devamı: Nora sorularını gönderdi, şirket yazılı cevap verdi. Kurumsal dilin ne söylediğine ve neyi söylemediğine dikkat et.",
+    gloss: [
+      { de: "die Stellungnahme", tr: "açıklama, görüş bildirme" },
+      { de: "die Unterstellung", tr: "asılsız isnat" },
+      { de: "entschieden zurückweisen", tr: "kesinlikle reddetmek" },
+      { de: "die Rahmenbedingungen", tr: "genel koşullar" },
+      { de: "der Dienstleister", tr: "hizmet sağlayıcı" },
+      { de: "gesetzeskonform", tr: "yasaya uygun" },
+      { de: "unabhängig", tr: "bağımsız" },
+      { de: "die Fluktuation", tr: "personel devri" },
+    ],
+    minutes: 6,
+    text:
+      "Stellungnahme der Nordkamp Logistik GmbH\n\nSehr geehrte Frau Weiß,\n\nzu Ihren Fragen nehmen wir wie folgt Stellung.\n\nDie Nordkamp Logistik GmbH hält sich an geltendes Recht. Sämtliche Arbeitszeiten werden gesetzeskonform erfasst und vergütet. Den Vorwurf, Mitarbeitende würden wegen einer Beschwerde benachteiligt, weisen wir entschieden zurück. Für derartige Unterstellungen liegen uns keine Belege vor.\n\nZur Frage nach den Umkleidezeiten: Die Rahmenbedingungen für Beschäftigte externer Dienstleister werden zwischen dem jeweiligen Dienstleister und seinen Mitarbeitenden geregelt. Diese Unternehmen sind eigenständige Arbeitgeber. Für deren Vertragsgestaltung sind wir nicht verantwortlich.\n\nZur Frage nach Vertragsverlängerungen: Über den Einsatz von Beschäftigten der Dienstleister entscheiden diese eigenständig, unter Berücksichtigung des jeweiligen Bedarfs. Zahlen zur Fluktuation externer Kräfte liegen uns nicht vor.\n\nWir bitten um Verständnis, dass wir zu einzelnen Personen grundsätzlich keine Auskunft geben.\n\nFür Rückfragen stehen wir gern zur Verfügung.\n\nMit freundlichen Grüßen\nUnternehmenskommunikation",
+    questions: [
+      {
+        text: "Wie reagiert die Firma auf den Vorwurf der Benachteiligung?",
+        options: [
+          "Sie weist ihn zurück und verweist auf fehlende Belege",
+          "Sie gibt ihn teilweise zu",
+          "Sie kündigt eine Untersuchung an",
+        ],
+        answer: 0,
+        explain: "„weisen wir entschieden zurück … liegen uns keine Belege vor.“",
+      },
+      {
+        text: "Wie beantwortet sie die Frage nach den Umkleidezeiten?",
+        options: [
+          "Sie erklärt sich für nicht zuständig — das regeln die Dienstleister",
+          "Sie bestätigt, dass die Zeit nicht bezahlt wird",
+          "Sie sagt, die Zeit werde bezahlt",
+        ],
+        answer: 0,
+        explain:
+          "Sorunun kendisine değil, sorumluluğun kimde olduğuna cevap veriyor.",
+      },
+      {
+        text: "Was sagt die Firma über Zahlen zur Fluktuation?",
+        options: [
+          "Sie lägen ihr nicht vor",
+          "Sie seien normal",
+          "Sie seien gesunken",
+        ],
+        answer: 0,
+        explain: "„Zahlen zur Fluktuation externer Kräfte liegen uns nicht vor.“",
+      },
+      {
+        text: "Welche Frage bleibt sachlich unbeantwortet?",
+        options: [
+          "Ob die Umkleidezeit tatsächlich bezahlt wird",
+          "Wer die Stellungnahme geschrieben hat",
+          "Ob es Leiharbeit gibt",
+        ],
+        answer: 0,
+        explain:
+          "Şirket „gesetzeskonform“ diyor ama söz konusu sürenin ödenip ödenmediğini söylemiyor.",
+      },
+      {
+        text: "Was ist die Funktion des Satzes über einzelne Personen?",
+        options: [
+          "Er schließt Nachfragen zu konkreten Fällen aus",
+          "Er schützt die Hinweisgeberin",
+          "Er kündigt Transparenz an",
+        ],
+        answer: 0,
+        explain: "Somut vakalara dair her soruyu peşinen kapatıyor.",
+      },
+    ],
+  },
+  {
+    id: "b2-r12",
+    level: "B2",
+    skill: "reading",
+    title: "Datenschutz am Arbeitsplatz",
+    genre: "Rehber",
+    intro:
+      "İşveren neyi izleyebilir, neyi izleyemez? Çalışan haklarının en çok merak edilen alanı.",
+    gloss: [
+      { de: "der Datenschutz", tr: "veri koruma" },
+      { de: "die Überwachung", tr: "gözetim" },
+      { de: "die Einwilligung", tr: "rıza" },
+      { de: "verhältnismäßig", tr: "ölçülü" },
+      { de: "der Betriebsrat", tr: "işyeri temsilciliği" },
+      { de: "protokollieren", tr: "kayıt altına almak" },
+      { de: "der Verdacht", tr: "şüphe" },
+      { de: "unzulässig", tr: "hukuka aykırı" },
+    ],
+    minutes: 6,
+    text:
+      "Darf der Arbeitgeber die E-Mails lesen? Die Antwort lautet fast immer: es kommt darauf an — und zwar auf drei Dinge.\n\nErstens auf den Zweck. Eine Maßnahme muss einem legitimen Ziel dienen, etwa der Sicherheit der IT-Systeme. „Wir wollen wissen, wie fleißig jemand ist“ ist kein solches Ziel.\n\nZweitens auf die Verhältnismäßigkeit. Selbst bei einem legitimen Zweck muss die Maßnahme das mildeste geeignete Mittel sein. Eine dauerhafte Videoüberwachung des Arbeitsplatzes ist deshalb praktisch immer unzulässig, eine Kamera am Wareneingang dagegen oft erlaubt. Bei einem konkreten Verdacht auf eine Straftat gelten andere Regeln — aber eben nur dann.\n\nDrittens auf die Beteiligung. Wo ein Betriebsrat existiert, muss er technischen Einrichtungen zustimmen, die Verhalten oder Leistung überwachen können. Das gilt auch für Software, die das nur nebenbei tut: Ein Projektmanagement-Tool, das jede Bearbeitungszeit protokolliert, fällt darunter.\n\nEin verbreiteter Irrtum betrifft die Einwilligung. Viele Arbeitgeber lassen sich eine Unterschrift geben und halten das Thema damit für erledigt. Im Arbeitsverhältnis ist eine Einwilligung aber nur wirksam, wenn sie wirklich freiwillig ist — und Freiwilligkeit setzt voraus, dass ein Nein keine Nachteile hat. Genau das lässt sich selten belegen.\n\nWer unsicher ist, kann sich an den Betriebsrat oder an die Datenschutzaufsicht des Bundeslandes wenden. Diese Beratung ist kostenlos und anonym möglich.",
+    questions: [
+      {
+        text: "Welche drei Kriterien nennt der Text?",
+        options: [
+          "Zweck, Verhältnismäßigkeit, Beteiligung",
+          "Kosten, Technik, Zeit",
+          "Vertrag, Gesetz, Gericht",
+        ],
+        answer: 0,
+        explain: "Metin bu üç başlığı sırayla açıyor.",
+      },
+      {
+        text: "Warum ist dauerhafte Videoüberwachung fast immer unzulässig?",
+        options: [
+          "Sie ist nicht das mildeste geeignete Mittel",
+          "Kameras sind zu teuer",
+          "Sie ist technisch unmöglich",
+        ],
+        answer: 0,
+        explain: "Ölçülülük ilkesi: en hafif uygun araç seçilmeli.",
+      },
+      {
+        text: "Welche Software fällt unter die Mitbestimmung?",
+        options: [
+          "Auch Software, die Verhalten nur nebenbei protokolliert",
+          "Nur reine Überwachungssoftware",
+          "Keine Software",
+        ],
+        answer: 0,
+        explain: "Her işlem süresini kaydeden proje aracı da buna dahil.",
+      },
+      {
+        text: "Warum ist eine Unterschrift oft nicht genug?",
+        options: [
+          "Eine Einwilligung muss freiwillig sein — ein Nein darf keine Nachteile haben",
+          "Sie muss notariell sein",
+          "Sie gilt nur ein Jahr",
+        ],
+        answer: 0,
+        explain: "İş ilişkisinde gönüllülük nadiren kanıtlanabiliyor.",
+      },
+      {
+        text: "An wen kann man sich wenden?",
+        options: [
+          "Betriebsrat oder Datenschutzaufsicht des Bundeslandes",
+          "Nur an einen Anwalt",
+          "An das Arbeitsgericht",
+        ],
+        answer: 0,
+        explain: "Danışma ücretsiz ve anonim olarak mümkün.",
+      },
+    ],
+  },
+
   {
     id: "b2-l1",
     level: "B2",
@@ -1024,6 +1456,631 @@ export const b2: SkillExercise[] = [
 
   // ---------------------------------------------------------------- YAZMA
   {
+    id: "b2-l7",
+    level: "B2",
+    skill: "listening",
+    title: "Das Interview",
+    genre: "Röportaj",
+    intro:
+      "Hikâyenin devamı: Nora, ihbarı yazan kişiyle konuşuyor. Gazetecinin nasıl soru sorduğuna ve neyi söz verdiğine dikkat et.",
+    gloss: [
+      { de: "der Quellenschutz", tr: "kaynak koruma" },
+      { de: "die Zusage", tr: "söz, taahhüt" },
+      { de: "nachvollziehbar", tr: "anlaşılır, izlenebilir" },
+      { de: "die Aussage", tr: "ifade" },
+      { de: "belastbar", tr: "sağlam, dayanıklı (kanıt)" },
+      { de: "abwägen", tr: "tartmak" },
+      { de: "das Risiko", tr: "risk" },
+      { de: "veröffentlichen", tr: "yayımlamak" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Nora",
+        text: "Danke, dass Sie gekommen sind. Bevor wir anfangen: Was Sie mir sagen, schützt der Quellenschutz. Ich nenne Ihren Namen nicht — auch nicht meiner Redaktion gegenüber, wenn Sie das wollen.",
+      },
+      { speaker: "Quelle", text: "Das will ich. Meine Chefin liest jede Zeile über die Firma." },
+      {
+        speaker: "Nora",
+        text: "Verstanden. Dann zu den Schichtplänen. Ich sehe hier bei vier Personen einen deutlichen Rückgang ab November. Können Sie mir sagen, was diese vier gemeinsam haben?",
+      },
+      {
+        speaker: "Quelle",
+        text: "Alle vier waren im Oktober bei der Betriebsversammlung und haben etwas gesagt. Zwei zur Pausenregelung, zwei zu den Umkleidezeiten.",
+      },
+      { speaker: "Nora", text: "Waren Sie selbst dabei?" },
+      { speaker: "Quelle", text: "Ja. Ich habe nichts gesagt. Deshalb habe ich noch meine Schichten." },
+      {
+        speaker: "Nora",
+        text: "Das ist ein starker Satz. Ich muss trotzdem ehrlich sein: Vier Fälle sind ein Muster, aber kein Beweis. Es könnte auch am Bedarf liegen.",
+      },
+      {
+        speaker: "Quelle",
+        text: "Das sagt die Firma sicher auch. Aber im November wurden gleichzeitig sechs neue Leute eingestellt. Wenn der Bedarf fällt, stellt man nicht ein.",
+      },
+      {
+        speaker: "Nora",
+        text: "Das ist der Punkt, an dem die Geschichte belastbar wird. Können Sie das belegen?",
+      },
+      { speaker: "Quelle", text: "Die Einstellungen standen im internen Newsletter. Den habe ich." },
+      {
+        speaker: "Nora",
+        text: "Gut. Dann sage ich Ihnen, wie es weitergeht: Ich frage die Firma schriftlich, und ich gebe ihr Zeit zu antworten. Erst danach entscheide ich, ob ich veröffentliche. Das kann drei Wochen dauern.",
+      },
+      { speaker: "Quelle", text: "Und wenn die Firma merkt, wer geredet hat?" },
+      {
+        speaker: "Nora",
+        text: "Deshalb frage ich nach Dingen, die viele wissen — nicht nach Details, die nur Sie kennen können. Das Risiko wird dadurch kleiner. Null wird es nicht.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was sagt Nora am Anfang zu?",
+        options: [
+          "Quellenschutz — auch gegenüber der eigenen Redaktion",
+          "Eine Bezahlung",
+          "Eine schnelle Veröffentlichung",
+        ],
+        answer: 0,
+        explain: "„Ich nenne Ihren Namen nicht — auch nicht meiner Redaktion gegenüber.“",
+      },
+      {
+        text: "Was haben die vier Personen gemeinsam?",
+        options: [
+          "Sie haben bei der Betriebsversammlung etwas gesagt",
+          "Sie sind neu in der Firma",
+          "Sie arbeiten in derselben Halle",
+        ],
+        answer: 0,
+        explain: "İkisi mola düzeni, ikisi üstünü değiştirme süresi hakkında konuşmuş.",
+      },
+      {
+        text: "Warum reichen die vier Fälle Nora nicht?",
+        options: [
+          "Ein Muster ist noch kein Beweis — es könnte am Bedarf liegen",
+          "Sie glaubt der Quelle nicht",
+          "Vier ist eine zu kleine Zahl für die Redaktion",
+        ],
+        answer: 0,
+        explain: "Gazeteci alternatif açıklamayı kendisi dile getiriyor.",
+      },
+      {
+        text: "Welches Argument macht die Geschichte belastbar?",
+        options: [
+          "Gleichzeitig wurden sechs neue Leute eingestellt",
+          "Die Quelle war selbst dabei",
+          "Die Schichtpläne sind vollständig",
+        ],
+        answer: 0,
+        explain: "İhtiyaç düşüyorsa yeni işe alım yapılmaz — bu, „Bedarf“ savunmasını zayıflatıyor.",
+      },
+      {
+        text: "Wie will Nora das Risiko für die Quelle senken?",
+        options: [
+          "Sie fragt nach Dingen, die viele wissen",
+          "Sie veröffentlicht sofort",
+          "Sie nennt keine Zahlen",
+        ],
+        answer: 0,
+        explain: "Yalnızca kaynağın bilebileceği ayrıntıları sormayarak — ama riski sıfırlamadan.",
+      },
+    ],
+  },
+  {
+    id: "b2-l8",
+    level: "B2",
+    skill: "listening",
+    title: "Gehaltsverhandlung",
+    genre: "Görüşme",
+    intro:
+      "Maaş görüşmesi Almanca'nın en zor konuşmalarından biri: doğrudan olacaksın ama sertleşmeyeceksin.",
+    gloss: [
+      { de: "die Gehaltsverhandlung", tr: "maaş görüşmesi" },
+      { de: "das Argument", tr: "argüman" },
+      { de: "der Verantwortungsbereich", tr: "sorumluluk alanı" },
+      { de: "die Marktüblichkeit", tr: "piyasa ortalaması" },
+      { de: "das Budget", tr: "bütçe" },
+      { de: "die Perspektive", tr: "gelecek beklentisi" },
+      { de: "einen Schritt zugehen", tr: "adım atmak, yaklaşmak" },
+      { de: "verbindlich", tr: "bağlayıcı" },
+    ],
+    minutes: 6,
+    segments: [
+      { speaker: "Frau Reuter", text: "Sie wollten über Ihr Gehalt sprechen. Schießen Sie los." },
+      {
+        speaker: "Yusuf",
+        text: "Gern. Ich bin seit zwei Jahren hier. In der Zeit ist mein Bereich von zwei auf fünf Projekte gewachsen, und seit Januar bilde ich die neuen Kolleginnen ein. Mein Gehalt ist seit dem Eintritt unverändert.",
+      },
+      { speaker: "Frau Reuter", text: "Das stimmt. An welche Zahl denken Sie?" },
+      {
+        speaker: "Yusuf",
+        text: "58.000. Marktüblich sind für diese Rolle 55 bis 62, und ich mache die Einarbeitung zusätzlich.",
+      },
+      {
+        speaker: "Frau Reuter",
+        text: "Ich sage Ihnen offen: 58 kann ich in diesem Jahr nicht zusagen. Das Budget ist bis März verteilt.",
+      },
+      { speaker: "Yusuf", text: "Was können Sie zusagen?" },
+      {
+        speaker: "Frau Reuter",
+        text: "54.500 ab Juli. Und ich kann Ihnen etwas anderes anbieten: die Zertifizierung, über die wir im Herbst gesprochen haben. Die kostet 4.000 und zwei Wochen Arbeitszeit.",
+      },
+      {
+        speaker: "Yusuf",
+        text: "Die Zertifizierung interessiert mich, aber sie ersetzt kein Gehalt. Kann ich beides bekommen — 54.500 jetzt und eine feste Zusage für die 58 im nächsten Zyklus?",
+      },
+      {
+        speaker: "Frau Reuter",
+        text: "Eine feste Zusage über ein Jahr hinaus darf ich nicht geben. Was ich kann: Wir setzen im Januar einen Termin an, und ich halte im Protokoll fest, dass 58.000 das Ziel ist, wenn die Einarbeitung bei Ihnen bleibt.",
+      },
+      { speaker: "Yusuf", text: "Schriftlich?" },
+      { speaker: "Frau Reuter", text: "Schriftlich. Das ist keine Garantie, aber es verschwindet nicht." },
+      { speaker: "Yusuf", text: "Dann machen wir das so." },
+    ],
+    questions: [
+      {
+        text: "Womit begründet Yusuf seine Forderung?",
+        options: [
+          "Gewachsener Bereich und zusätzliche Einarbeitung",
+          "Die Inflation",
+          "Ein Angebot einer anderen Firma",
+        ],
+        answer: 0,
+        explain: "İki projeden beşe çıkan alan ve ocaktan beri yeni çalışanları yetiştirmesi.",
+      },
+      {
+        text: "Warum lehnt Frau Reuter die 58.000 ab?",
+        options: [
+          "Das Budget ist bis März verteilt",
+          "Sie findet die Leistung zu schwach",
+          "Die Rolle ist anders bewertet",
+        ],
+        answer: 0,
+        explain: "Gerekçesi bütçe takvimi, performans değil.",
+      },
+      {
+        text: "Was bietet sie zusätzlich an?",
+        options: [
+          "Eine Zertifizierung im Wert von 4.000 Euro",
+          "Zwei Wochen Urlaub",
+          "Einen Firmenwagen",
+        ],
+        answer: 0,
+        explain: "„Die kostet 4.000 und zwei Wochen Arbeitszeit.“",
+      },
+      {
+        text: "Wie reagiert Yusuf auf das Angebot?",
+        options: [
+          "Er nimmt es an, besteht aber auf einer Perspektive für das Gehalt",
+          "Er lehnt es ab",
+          "Er akzeptiert es statt der Erhöhung",
+        ],
+        answer: 0,
+        explain: "„sie ersetzt kein Gehalt“ — ikisini birden istiyor.",
+      },
+      {
+        text: "Worauf einigen sie sich am Ende?",
+        options: [
+          "54.500 ab Juli und ein schriftlich protokolliertes Ziel von 58.000",
+          "58.000 ab Juli",
+          "Nur die Zertifizierung",
+        ],
+        answer: 0,
+        explain: "„Das ist keine Garantie, aber es verschwindet nicht.“",
+      },
+    ],
+  },
+  {
+    id: "b2-l9",
+    level: "B2",
+    skill: "listening",
+    title: "Vortrag: Warum wir Nachrichten meiden",
+    genre: "Sınav formatı",
+    intro:
+      "B2 dinleme bölümünün uzun formatı: bir konferans konuşması ve içerik soruları. Not alarak dinlemeyi dene.",
+    gloss: [
+      { de: "die Nachrichtenvermeidung", tr: "haberden kaçınma" },
+      { de: "der Anteil", tr: "oran, pay" },
+      { de: "die Ohnmacht", tr: "çaresizlik" },
+      { de: "die Wiederholung", tr: "tekrar" },
+      { de: "das Gegenmittel", tr: "panzehir, çözüm" },
+      { de: "die Einordnung", tr: "bağlama oturtma" },
+      { de: "der Ausweg", tr: "çıkış yolu" },
+      { de: "die Zielgruppe", tr: "hedef kitle" },
+    ],
+    minutes: 7,
+    segments: [
+      {
+        speaker: "Referentin",
+        text: "Ich fange mit einer Zahl an: In Deutschland sagt inzwischen etwa ein Drittel der Befragten, dass es Nachrichten aktiv aus dem Weg geht. Vor zehn Jahren war es halb so viel.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Die naheliegende Erklärung wäre Desinteresse. Sie ist falsch. Die Gruppe, die am stärksten meidet, ist nicht die uninteressierte, sondern die belastete: Menschen mit wenig Zeit, wenig Geld und wenig Kontrolle über die eigene Lage.",
+      },
+      {
+        speaker: "Referentin",
+        text: "In den Interviews taucht immer wieder dasselbe Wort auf: Ohnmacht. Nicht „Ich verstehe es nicht“, sondern „Ich kann sowieso nichts tun“.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Der zweite Grund ist die Wiederholung. Wer denselben Konflikt jeden Tag in derselben Form sieht, ohne dass sich die Information verändert, lernt nichts dazu — er spürt nur wieder dasselbe. Das Gehirn nennt das Belastung, nicht Wissen.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Was hilft, ist gut untersucht und wird selten gemacht. Erstens Einordnung: nicht nur, was passiert ist, sondern warum es passiert und was daraus folgt. Zweitens Handlungswissen: Was können Betroffene konkret tun? Drittens, und das ist unbequem: weniger, aber vollständiger berichten.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Ich sage ausdrücklich nicht: nur gute Nachrichten. Das ist die schlechteste Antwort auf ein echtes Problem. Menschen meiden Nachrichten nicht, weil sie schlecht sind, sondern weil sie folgenlos wirken.",
+      },
+      {
+        speaker: "Referentin",
+        text: "Und eine Einschränkung: Unsere Daten stammen aus Befragungen. Was Menschen über ihr Verhalten sagen, ist nicht immer das, was sie tun. Die Richtung ist stabil, die genaue Höhe wäre ich vorsichtig zu zitieren.",
+      },
+    ],
+    questions: [
+      {
+        text: "Wie hat sich die Nachrichtenvermeidung entwickelt?",
+        options: [
+          "Sie hat sich in zehn Jahren etwa verdoppelt",
+          "Sie ist gleich geblieben",
+          "Sie ist gesunken",
+        ],
+        answer: 0,
+        explain: "Bugün üçte bir; on yıl önce yarısı kadardı.",
+      },
+      {
+        text: "Welche Erklärung weist die Referentin zurück?",
+        options: ["Desinteresse", "Zeitmangel", "Ohnmacht"],
+        answer: 0,
+        explain: "„Sie ist falsch“ — en çok kaçınan grup ilgisizler değil, yükü ağır olanlar.",
+      },
+      {
+        text: "Welches Wort taucht in den Interviews immer wieder auf?",
+        options: ["Ohnmacht", "Angst", "Wut"],
+        answer: 0,
+        explain: "„Ich kann sowieso nichts tun.“",
+      },
+      {
+        text: "Was ist am Problem der Wiederholung entscheidend?",
+        options: [
+          "Ohne neue Information entsteht Belastung statt Wissen",
+          "Die Berichte sind zu lang",
+          "Die Themen sind zu schwierig",
+        ],
+        answer: 0,
+        explain: "„Das Gehirn nennt das Belastung, nicht Wissen.“",
+      },
+      {
+        text: "Was lehnt sie ausdrücklich ab?",
+        options: [
+          "Nur gute Nachrichten zu berichten",
+          "Weniger zu berichten",
+          "Handlungswissen zu geben",
+        ],
+        answer: 0,
+        explain: "„Das ist die schlechteste Antwort auf ein echtes Problem.“",
+      },
+      {
+        text: "Welche Einschränkung nennt sie selbst?",
+        options: [
+          "Befragungsdaten bilden Verhalten nicht exakt ab",
+          "Die Stichprobe war zu klein",
+          "Die Studie ist zehn Jahre alt",
+        ],
+        answer: 0,
+        explain: "Yön istikrarlı ama kesin oranı alıntılamakta temkinli.",
+      },
+    ],
+  },
+  {
+    id: "b2-l10",
+    level: "B2",
+    skill: "listening",
+    title: "Streitgespräch: Gendern",
+    genre: "Tartışma",
+    intro:
+      "Almanya'da yıllardır süren dil tartışması. İki taraf da klişe değil — kimin nerede taviz verdiğine dikkat et.",
+    gloss: [
+      { de: "gendern", tr: "dili cinsiyet açısından kapsayıcı kullanmak" },
+      { de: "die Sprachpflege", tr: "dil bakımı, dili koruma" },
+      { de: "der Sprachwandel", tr: "dilin değişimi" },
+      { de: "die Vorschrift", tr: "zorunluluk, kural" },
+      { de: "die Sichtbarkeit", tr: "görünürlük" },
+      { de: "die Ablehnung", tr: "reddediş" },
+      { de: "das Amtsdeutsch", tr: "resmî kurum dili" },
+      { de: "sich durchsetzen", tr: "yerleşmek, kabul görmek" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Moderatorin",
+        text: "Frau Adam, Sie sind für das Gendern in Behörden. Warum sollte der Staat das vorschreiben?",
+      },
+      {
+        speaker: "Adam",
+        text: "Ich bin nicht für Vorschriften, ich bin für Klarheit. Wenn in einem Formular „der Antragsteller“ steht, denken Menschen an einen Mann — das ist gemessen, nicht gefühlt. In der Verwaltung geht es um Rechte. Da darf Sprache nicht mehrdeutig sein.",
+      },
+      {
+        speaker: "Moderatorin",
+        text: "Herr Volkmann, Sie halten dagegen.",
+      },
+      {
+        speaker: "Volkmann",
+        text: "Ich halte gegen die Methode, nicht gegen das Ziel. Sprachwandel funktioniert von unten. „Studierende“ hat sich durchgesetzt, weil es praktisch war — niemand musste es anordnen. Sternchen und Doppelpunkte dagegen sind Schrift, keine Sprache. Man kann sie nicht sprechen.",
+      },
+      { speaker: "Adam", text: "Man kann. Mit einer kurzen Pause. Das machen Nachrichtensprecher längst." },
+      {
+        speaker: "Volkmann",
+        text: "Und ein großer Teil der Bevölkerung lehnt es ab. Wenn eine Maßnahme für Gleichheit dazu führt, dass Gleichheit unbeliebt wird, hat sie ihr Ziel verfehlt.",
+      },
+      {
+        speaker: "Adam",
+        text: "Das Argument nehme ich ernst, ehrlich. Aber die Ablehnung war bei jeder sprachlichen Änderung groß. „Frau Doktor“ war einmal lächerlich.",
+      },
+      {
+        speaker: "Volkmann",
+        text: "Richtig. Und ich sage nicht, dass es so bleiben muss. Ich sage: Lasst es wachsen, statt es zu verordnen. In Formularen bin ich sogar bei Ihnen — dort geht es um Recht, nicht um Stil.",
+      },
+      { speaker: "Moderatorin", text: "Also Einigkeit bei Formularen?" },
+      { speaker: "Volkmann", text: "Bei Formularen ja." },
+      { speaker: "Adam", text: "Dann haben wir mehr gemeinsam, als das Publikum erwartet hat." },
+    ],
+    questions: [
+      {
+        text: "Wie begründet Frau Adam ihre Position?",
+        options: [
+          "In der Verwaltung geht es um Rechte, Sprache darf nicht mehrdeutig sein",
+          "Sprache muss schön sein",
+          "Andere Länder machen es auch",
+        ],
+        answer: 0,
+        explain: "„der Antragsteller“ okunduğunda insanlar erkek düşünüyor — bu ölçülmüş.",
+      },
+      {
+        text: "Wogegen wendet sich Herr Volkmann genau?",
+        options: [
+          "Gegen die Methode, nicht gegen das Ziel",
+          "Gegen die Gleichberechtigung",
+          "Gegen die Verwaltung",
+        ],
+        answer: 0,
+        explain: "„Ich halte gegen die Methode, nicht gegen das Ziel.“",
+      },
+      {
+        text: "Welches Beispiel nennt er für gelungenen Sprachwandel?",
+        options: ["„Studierende“", "„Frau Doktor“", "Das Sternchen"],
+        answer: 0,
+        explain: "Pratik olduğu için kendiliğinden yerleşmiş.",
+      },
+      {
+        text: "Wie kontert Frau Adam sein Ablehnungs-Argument?",
+        options: [
+          "Jede sprachliche Änderung war anfangs unbeliebt",
+          "Die Umfragen seien falsch",
+          "Ablehnung sei unwichtig",
+        ],
+        answer: 0,
+        explain: "„„Frau Doktor“ war einmal lächerlich.“ Ayrıca argümanı ciddiye aldığını söylüyor.",
+      },
+      {
+        text: "Worin sind sich beide am Ende einig?",
+        options: [
+          "Bei Formularen",
+          "Bei Nachrichtensendungen",
+          "In gar nichts",
+        ],
+        answer: 0,
+        explain: "„dort geht es um Recht, nicht um Stil.“",
+      },
+    ],
+  },
+  {
+    id: "b2-l11",
+    level: "B2",
+    skill: "listening",
+    title: "Beim Betriebsrat",
+    genre: "Danışma",
+    intro:
+      "Almanya'da çalışanın en güçlü aracı: işyeri temsilciliği. Bir danışma görüşmesini dinleyeceksin.",
+    gloss: [
+      { de: "der Betriebsrat", tr: "işyeri temsilciliği" },
+      { de: "die Mitbestimmung", tr: "ortak karar hakkı" },
+      { de: "die Versetzung", tr: "görev yeri değişikliği" },
+      { de: "anhören", tr: "görüşünü almak" },
+      { de: "die Zustimmung", tr: "onay" },
+      { de: "die Schweigepflicht", tr: "gizlilik yükümlülüğü" },
+      { de: "das Protokoll", tr: "tutanak" },
+      { de: "eskalieren", tr: "büyütmek, üst mercie taşımak" },
+    ],
+    minutes: 6,
+    segments: [
+      { speaker: "Betriebsrat", text: "Setzen Sie sich. Und vorweg: Alles hier unterliegt der Schweigepflicht." },
+      {
+        speaker: "Mitarbeiterin",
+        text: "Danke. Mir wurde gestern gesagt, dass ich ab Mai in die Nachtschicht wechsle. Ohne Gespräch, per Mail.",
+      },
+      { speaker: "Betriebsrat", text: "Dauerhaft oder befristet?" },
+      { speaker: "Mitarbeiterin", text: "Dauerhaft. Ich habe zwei Kinder, sieben und zehn." },
+      {
+        speaker: "Betriebsrat",
+        text: "Dann sind wir mitten in der Mitbestimmung. Eine dauerhafte Versetzung in die Nachtschicht ist keine Kleinigkeit — der Arbeitgeber muss uns vorher anhören, und wir müssen zustimmen.",
+      },
+      { speaker: "Mitarbeiterin", text: "Haben Sie zugestimmt?" },
+      {
+        speaker: "Betriebsrat",
+        text: "Wir wurden gar nicht gefragt. Das heißt: Die Anordnung ist so nicht wirksam. Sie müssen im Mai nicht in die Nachtschicht.",
+      },
+      { speaker: "Mitarbeiterin", text: "Und wenn ich einfach nicht komme?" },
+      {
+        speaker: "Betriebsrat",
+        text: "Das rate ich Ihnen nicht. Wir schreiben stattdessen heute ein Schreiben: Wir weisen darauf hin, dass die Beteiligung fehlt, und bitten um ein Gespräch zu dritt. In neun von zehn Fällen ist die Sache damit erledigt.",
+      },
+      { speaker: "Mitarbeiterin", text: "Und im zehnten?" },
+      {
+        speaker: "Betriebsrat",
+        text: "Dann geht es zur Einigungsstelle. Das dauert, ist aber keine Katastrophe. Wichtig ist jetzt nur eins: Antworten Sie auf die Mail sachlich und schriftlich — kein Streit per Telefon, nichts, was später niemand belegen kann.",
+      },
+    ],
+    questions: [
+      {
+        text: "Was ist das Problem der Mitarbeiterin?",
+        options: [
+          "Dauerhafte Versetzung in die Nachtschicht, angeordnet per Mail",
+          "Eine Kündigung",
+          "Eine Gehaltskürzung",
+        ],
+        answer: 0,
+        explain: "Görüşme yapılmadan, e-postayla bildirilmiş.",
+      },
+      {
+        text: "Warum ist die Anordnung nicht wirksam?",
+        options: [
+          "Der Betriebsrat wurde nicht beteiligt",
+          "Sie kam per Mail",
+          "Sie hat Kinder",
+        ],
+        answer: 0,
+        explain: "Kalıcı vardiya değişikliğinde temsilciliğin görüşü ve onayı gerekiyor.",
+      },
+      {
+        text: "Was rät der Betriebsrat ihr nicht zu tun?",
+        options: [
+          "Einfach nicht zu erscheinen",
+          "Ein Schreiben zu senden",
+          "Ein Gespräch zu führen",
+        ],
+        answer: 0,
+        explain: "„Das rate ich Ihnen nicht.“",
+      },
+      {
+        text: "Was passiert in den meisten Fällen?",
+        options: [
+          "Die Sache klärt sich nach dem Schreiben und einem Gespräch",
+          "Es geht vor Gericht",
+          "Der Arbeitgeber kündigt",
+        ],
+        answer: 0,
+        explain: "„In neun von zehn Fällen ist die Sache damit erledigt.“",
+      },
+      {
+        text: "Welchen praktischen Rat gibt er zum Schluss?",
+        options: [
+          "Sachlich und schriftlich antworten",
+          "Sofort einen Anwalt nehmen",
+          "Mit Kollegen sprechen",
+        ],
+        answer: 0,
+        explain: "„nichts, was später niemand belegen kann.“",
+      },
+    ],
+  },
+  {
+    id: "b2-l12",
+    level: "B2",
+    skill: "listening",
+    title: "Die Pressekonferenz",
+    genre: "Basın toplantısı",
+    intro:
+      "Hikâyenin sonu: yazı çıktı. Şirket basın toplantısı düzenliyor ve Nora salonda.",
+    gloss: [
+      { de: "die Pressekonferenz", tr: "basın toplantısı" },
+      { de: "die Berichterstattung", tr: "haberler, yayın" },
+      { de: "einräumen", tr: "kabul etmek" },
+      { de: "die Konsequenz", tr: "sonuç, alınan tedbir" },
+      { de: "die Prüfung", tr: "inceleme" },
+      { de: "extern", tr: "dışarıdan, bağımsız" },
+      { de: "rückwirkend", tr: "geriye dönük" },
+      { de: "der Einzelfall", tr: "münferit olay" },
+    ],
+    minutes: 6,
+    segments: [
+      {
+        speaker: "Sprecher",
+        text: "Guten Tag. Die Berichterstattung der letzten Woche hat uns Anlass gegeben, unsere Prozesse zu überprüfen. Ich sage vorweg: Nicht alles, was berichtet wurde, teilen wir.",
+      },
+      {
+        speaker: "Sprecher",
+        text: "Wir räumen allerdings ein, dass die Regelung zu den Umkleidezeiten bei unseren Dienstleistern uneinheitlich war. Diese Zeiten werden ab dem 1. des kommenden Monats einheitlich vergütet, und zwar rückwirkend für zwölf Monate.",
+      },
+      {
+        speaker: "Sprecher",
+        text: "Den Vorwurf, dass Beschäftigte wegen einer Beschwerde weniger Schichten erhalten haben, halten wir weiterhin für nicht belegt. Eine externe Kanzlei prüft die Vorgänge; das Ergebnis werden wir veröffentlichen.",
+      },
+      { speaker: "Journalist 1", text: "Warum die Rückzahlung, wenn nichts falsch war?" },
+      {
+        speaker: "Sprecher",
+        text: "Weil uneinheitlich nicht gleich rechtswidrig ist. Wir wollen die Frage nicht über Jahre vor Gericht klären, sondern sie beenden.",
+      },
+      { speaker: "Nora", text: "Wie viele Beschäftigte betrifft die Rückzahlung, und wie hoch ist sie?" },
+      { speaker: "Sprecher", text: "Etwa 380 Personen. Zur Summe sage ich heute nichts." },
+      { speaker: "Nora", text: "Und die sechs Einstellungen im November — waren die dem Vorstand bekannt?" },
+      {
+        speaker: "Sprecher",
+        text: "Das ist Gegenstand der Prüfung. Ich bitte um Verständnis, dass ich dem nicht vorgreife.",
+      },
+      {
+        speaker: "Journalist 2",
+        text: "Gibt es personelle Konsequenzen?",
+      },
+      { speaker: "Sprecher", text: "Heute nicht. Wir warten das Ergebnis ab." },
+    ],
+    questions: [
+      {
+        text: "Was räumt die Firma ein?",
+        options: [
+          "Die Regelung zu den Umkleidezeiten war uneinheitlich",
+          "Beschäftigte wurden benachteiligt",
+          "Der Vorstand war informiert",
+        ],
+        answer: 0,
+        explain: "Tam olarak bu nokta kabul ediliyor — daha fazlası değil.",
+      },
+      {
+        text: "Was passiert mit den Umkleidezeiten?",
+        options: [
+          "Sie werden vergütet, rückwirkend für zwölf Monate",
+          "Sie werden abgeschafft",
+          "Sie bleiben Sache der Dienstleister",
+        ],
+        answer: 0,
+        explain: "Gelecek ayın 1'inden itibaren, on iki ay geriye dönük.",
+      },
+      {
+        text: "Wie begründet der Sprecher die Rückzahlung trotz Zurückweisung?",
+        options: [
+          "„Uneinheitlich ist nicht gleich rechtswidrig“ — man will die Frage beenden",
+          "Man habe einen Fehler gemacht",
+          "Ein Gericht habe es angeordnet",
+        ],
+        answer: 0,
+        explain: "Hukuki kabul olmadan konuyu kapatma stratejisi.",
+      },
+      {
+        text: "Welche Frage von Nora bleibt offen?",
+        options: [
+          "Ob der Vorstand von den sechs Einstellungen wusste",
+          "Wie viele Personen betroffen sind",
+          "Wann gezahlt wird",
+        ],
+        answer: 0,
+        explain: "„Das ist Gegenstand der Prüfung“ — cevap verilmiyor.",
+      },
+      {
+        text: "Was sagt der Sprecher zu personellen Konsequenzen?",
+        options: [
+          "Heute keine — man wartet das Prüfergebnis ab",
+          "Zwei Führungskräfte gehen",
+          "Es wird keine geben",
+        ],
+        answer: 0,
+        explain: "„Heute nicht. Wir warten das Ergebnis ab.“",
+      },
+    ],
+  },
+
+  {
     id: "b2-w1",
     level: "B2",
     skill: "writing",
@@ -1296,6 +2353,256 @@ export const b2: SkillExercise[] = [
         ],
         sample:
           "Diese Frage beschäftigt unser Team seit Monaten, deshalb möchte ich meine Erfahrungen teilen. Ich arbeite seit drei Jahren überwiegend im Homeoffice und möchte die Vorteile nicht mehr missen: Der Wegfall des Pendelns spart mir täglich fast zwei Stunden, und konzentrierte Aufgaben erledige ich zu Hause deutlich schneller, weil ich seltener unterbrochen werde.\n\nAllerdings hat die Sache auch Schattenseiten. Der spontane Austausch mit den Kolleginnen und Kollegen fehlt mir, und gerade neue Teammitglieder tun sich schwer, Anschluss zu finden. Hinzu kommt die Gefahr, dass Arbeit und Freizeit ineinander übergehen – anfangs habe ich abends deutlich zu lange am Schreibtisch gesessen.\n\nAus meiner Sicht liegt die Lösung in einer klugen Mischung: zwei feste Bürotage für Besprechungen und Teamarbeit, der Rest flexibel von zu Hause. Wichtig ist dabei, klare Regeln zu vereinbaren, damit niemand rund um die Uhr erreichbar sein muss.",
+      },
+    ],
+  },
+  {
+    id: "b2-w5",
+    level: "B2",
+    skill: "writing",
+    title: "Widerspruch gegen einen Bescheid",
+    genre: "Resmî yazı",
+    intro:
+      "Almanya'da resmî karara itiraz etmenin biçimi bellidir: süre, gerekçe, talep. Bunu yazacaksın.",
+    gloss: [
+      { de: "der Bescheid", tr: "resmî karar" },
+      { de: "der Widerspruch", tr: "itiraz" },
+      { de: "das Aktenzeichen", tr: "dosya numarası" },
+      { de: "die Begründung", tr: "gerekçe" },
+      { de: "beifügen", tr: "eklemek" },
+      { de: "die Berechnung", tr: "hesaplama" },
+      { de: "berücksichtigen", tr: "dikkate almak" },
+      { de: "die Aufhebung", tr: "iptal" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "8 Mart tarihli karara itiraz ediyorum.",
+        answer: "Hiermit lege ich Widerspruch gegen den Bescheid vom 8. März ein.",
+        hint: "„Widerspruch einlegen gegen“ — ayrılabilir fiil, „ein“ sona gider.",
+      },
+      {
+        kind: "build",
+        tr: "Hesaplamada Ocak ayındaki gelirim dikkate alınmamış.",
+        answer: "In der Berechnung wurde mein Einkommen aus dem Januar nicht berücksichtigt.",
+        hint: "Edilgen geçmiş: wurde … berücksichtigt.",
+      },
+      {
+        kind: "build",
+        tr: "Bu nedenle kararın iptalini talep ediyorum.",
+        answer: "Ich beantrage daher die Aufhebung des Bescheids.",
+        hint: "„beantragen“ + Akkusativ; burada Genitiv tamlaması doğaldır.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Bir resmî karara itiraz mektubu yaz (kira yardımı, ehliyet, sigorta ödemesi — kendin seç). Beş noktaya değin: hangi karara ve hangi tarihliye itiraz ettiğin (dosya numarasıyla), neyin yanlış olduğu, bunu neyle kanıtladığın, net talebin, kapanış. Duygusal cümle kurma; her iddianın yanında bir belge olsun.",
+        checklist: [
+          "İtiraz cümlesi ilk satırda mı, dosya numarası var mı?",
+          "Yanlışı somut ve tek tek anlattın mı?",
+          "Ekleri saydın mı?",
+          "Net bir talep yazdın mı?",
+          "Ton nesnel mi (öfke yok)?",
+        ],
+        minWords: 120,
+        phrases: [
+          { de: "Hiermit lege ich Widerspruch gegen … ein.", tr: "…'e itiraz ediyorum." },
+          { de: "Aktenzeichen: …", tr: "Dosya no: …" },
+          { de: "Zur Begründung führe ich aus:", tr: "Gerekçe olarak şunu belirtirim:" },
+          { de: "Als Nachweis füge ich … bei.", tr: "Kanıt olarak … ekliyorum." },
+          { de: "Ich beantrage daher …", tr: "Bu nedenle … talep ediyorum." },
+          { de: "Für Rückfragen stehe ich zur Verfügung.", tr: "Sorularınız için müsaitim." },
+        ],
+        sample:
+          "Sehr geehrte Damen und Herren,\n\nhiermit lege ich Widerspruch gegen den Bescheid vom 8. März ein.\nAktenzeichen: WG-2026-114-7739\n\nZur Begründung führe ich aus:\n\nIn der Berechnung wurde mein Einkommen aus dem Januar nicht berücksichtigt, sondern das aus dem Dezember. Im Dezember habe ich eine einmalige Nachzahlung meines früheren Arbeitgebers erhalten, die im Bescheid als laufendes Einkommen behandelt wird. Dadurch liegt das angenommene Monatseinkommen um 640 Euro über dem tatsächlichen.\n\nAußerdem sind die Heizkosten mit 78 Euro angesetzt. Laut Nebenkostenabrechnung meines Vermieters betragen sie 121 Euro monatlich.\n\nAls Nachweis füge ich bei: die Lohnabrechnungen für Dezember und Januar, das Schreiben des früheren Arbeitgebers zur Nachzahlung sowie die Nebenkostenabrechnung 2025.\n\nIch beantrage daher die Aufhebung des Bescheids und eine neue Berechnung auf Grundlage der beigefügten Unterlagen.\n\nFür Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\nNora Weiß",
+      },
+    ],
+  },
+  {
+    id: "b2-w6",
+    level: "B2",
+    skill: "writing",
+    title: "Erörterung: Pro und Kontra",
+    genre: "Sınav formatı",
+    intro:
+      "B2 yazma bölümünün ana görevi: bir konuyu iki yönüyle tartışıp kendi sonucuna varmak. Yapı burada içerik kadar önemlidir.",
+    gloss: [
+      { de: "die Erörterung", tr: "tartışma yazısı" },
+      { de: "die These", tr: "tez" },
+      { de: "abwägen", tr: "tartmak" },
+      { de: "das Argument entkräften", tr: "argümanı çürütmek" },
+      { de: "zum einen … zum anderen", tr: "bir yandan … diğer yandan" },
+      { de: "letztlich", tr: "nihayetinde" },
+      { de: "die Schlussfolgerung", tr: "sonuç" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Bu konu yıllardır tartışılıyor.",
+        answer: "Über dieses Thema wird seit Jahren diskutiert.",
+        hint: "Öznesiz edilgen: „Über … wird diskutiert.“",
+      },
+      {
+        kind: "build",
+        tr: "Bu argümanın haklı bir çekirdeği var, ama tamamı değil.",
+        answer: "Dieses Argument hat einen berechtigten Kern, aber nicht mehr.",
+        hint: "Karşı görüşü kabul edip sınırlandırmak, B2'de puan getiren harekettir.",
+      },
+      {
+        kind: "build",
+        tr: "Her şeyi tarttıktan sonra ikinci görüşe katılıyorum.",
+        answer: "Nach Abwägung aller Punkte schließe ich mich der zweiten Position an.",
+        hint: "„sich anschließen“ Dativ ister: der Position.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Şu konuda bir tartışma yazısı yaz: „Üniversite eğitimi herkes için ücretsiz mi olmalı, yoksa katkı payı alınmalı mı?“ Yapı: kısa giriş (konu neden gündemde), lehte iki argüman, aleyhte iki argüman, en güçlü karşı argümanı ele alışın, kendi sonucun. Sonucun girişte belli olmasın.",
+        checklist: [
+          "Giriş konuyu bağlama oturtuyor mu?",
+          "İki lehte, iki aleyhte argüman var mı?",
+          "Her argümanı bir örnek ya da veriyle destekledin mi?",
+          "En güçlü karşı argümanı ciddiye alıp yanıtladın mı?",
+          "Sonuç argümanlardan çıkıyor mu, başta ilan edilmiş mi?",
+          "Bağlaçlarla akış kurdun mu?",
+        ],
+        minWords: 180,
+        phrases: [
+          { de: "Über dieses Thema wird seit Jahren diskutiert.", tr: "Bu konu yıllardır tartışılıyor." },
+          { de: "Für … spricht zunächst, dass …", tr: "…'in lehine önce şu var: …" },
+          { de: "Ein weiteres Argument ist …", tr: "Bir diğer argüman …" },
+          { de: "Dagegen wird eingewendet, dass …", tr: "Buna karşı … itirazı yapılıyor." },
+          { de: "Dieses Argument hat einen berechtigten Kern, aber …", tr: "Bu argümanın haklı bir çekirdeği var ama …" },
+          { de: "Nach Abwägung aller Punkte …", tr: "Her şeyi tarttıktan sonra …" },
+        ],
+        sample:
+          "Über die Frage, ob ein Studium kostenlos sein soll, wird in Deutschland seit Jahren diskutiert — meist dann, wenn die Haushalte der Länder knapp werden.\n\nFür ein gebührenfreies Studium spricht zunächst der Zugang. Wer aus einer Familie ohne akademischen Hintergrund kommt, entscheidet sich schon bei geringen Kosten häufiger gegen ein Studium; das ist gut belegt. Ein weiteres Argument ist volkswirtschaftlich: Ein Staat, der Ausbildung finanziert, holt das Geld später über Steuern zurück.\n\nDagegen wird eingewendet, dass gerade das gebührenfreie System sozial ungerecht sei. Es wird von allen bezahlt, genutzt aber überdurchschnittlich von Kindern gut verdienender Eltern. Hinzu kommt die Finanzierungslage: Hörsäle, Bibliotheken und Personal sind vielerorts überlastet.\n\nDieses zweite Argument hat einen berechtigten Kern, aber es trifft nicht die Gebührenfrage, sondern die Schulpolitik. Wer die soziale Auswahl vor dem Studium nicht ändert, verschiebt mit Gebühren nur die Hürde und macht sie zusätzlich sichtbar.\n\nNach Abwägung aller Punkte halte ich Gebühren für den falschen Hebel. Sinnvoller wäre, die Hochschulen besser zu finanzieren und gleichzeitig das BAföG so zu erhöhen, dass es die tatsächlichen Lebenshaltungskosten deckt. Das Problem liegt selten in den Studiengebühren — es liegt in der Miete.",
+      },
+    ],
+  },
+  {
+    id: "b2-w7",
+    level: "B2",
+    skill: "writing",
+    title: "Kommentar zur Erinnerungskultur",
+    genre: "Köşe yazısı",
+    intro:
+      "b2-r9'daki konuyu bir köşe yazısına dönüştüreceksin: kendi bakışın, bir itiraz ve bir sonuç. Bu konuda ton önemlidir — büyük laf değil, düşünülmüş cümle.",
+    gloss: [
+      { de: "die Erinnerungskultur", tr: "anma kültürü" },
+      { de: "die Haltung", tr: "tutum, duruş" },
+      { de: "die Geste", tr: "jest" },
+      { de: "beiläufig", tr: "yan yollu, farkında olmadan" },
+      { de: "das Ritual", tr: "ritüel" },
+      { de: "hohl", tr: "içi boş" },
+      { de: "angemessen", tr: "yerinde, uygun" },
+      { de: "die Gegenwart", tr: "bugün, şimdiki zaman" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Anma, bir ritüele dönüştüğü anda içini kaybeder.",
+        answer: "Erinnerung verliert ihren Inhalt in dem Moment, in dem sie zum Ritual wird.",
+        hint: "„in dem Moment, in dem …“ — zaman bildiren ilgi cümlesi.",
+      },
+      {
+        kind: "build",
+        tr: "Bu itirazı ciddiye almak gerekir.",
+        answer: "Diesen Einwand muss man ernst nehmen.",
+        hint: "Nesne başa alınınca fiil yine ikinci sırada kalır.",
+      },
+      {
+        kind: "build",
+        tr: "Soru geçmişe değil, bugüne yöneliktir.",
+        answer: "Die Frage richtet sich nicht an die Vergangenheit, sondern an die Gegenwart.",
+        hint: "„sich richten an“ + Akkusativ.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Anma kültürü üzerine kısa bir köşe yazısı yaz. Dört noktaya değin: somut bir gözlem ya da sahneyle başla, buradan bir düşünceye geç, en güçlü karşı görüşü ciddiye al, kendi sonucunu yaz. Büyük genellemelerden kaçın; tek bir somut ayrıntı, on soyut cümleden güçlüdür.",
+        checklist: [
+          "Somut bir gözlemle başladın mı?",
+          "Gözlemden düşünceye geçiş net mi?",
+          "Karşı görüşü zayıflatmadan aktardın mı?",
+          "Kendi sonucun karşı görüşten ayırt edilebiliyor mu?",
+          "Ton ölçülü mü (patetik değil)?",
+        ],
+        minWords: 160,
+        phrases: [
+          { de: "Vor meiner Haustür liegt …", tr: "Kapımın önünde … var." },
+          { de: "Man könnte einwenden, dass …", tr: "…diye itiraz edilebilir." },
+          { de: "Genau darin liegt der Punkt.", tr: "İşin özü tam burada." },
+          { de: "Es geht nicht um …, sondern um …", tr: "Mesele … değil, …" },
+          { de: "Am Ende bleibt die Frage: …", tr: "Sonunda geriye şu soru kalıyor: …" },
+        ],
+        sample:
+          "Vor meiner Haustür liegt ein Stolperstein. Ich gehe seit vier Jahren täglich darüber, und ich habe den Namen erst im dritten Jahr gelesen — an einem Morgen, an dem mein Bus nicht kam und ich zehn Minuten stehen musste.\n\nDas klingt nach einem Versäumnis, und das ist es auch. Aber es sagt zugleich etwas über die Idee dieses Denkmals. Es verlangt nichts. Es steht nicht auf einem Platz, zu dem man fährt, sondern liegt im Weg — und man begegnet ihm irgendwann, ohne es geplant zu haben.\n\nMan könnte einwenden, dass genau das zu wenig ist. Ein Stein, über den alle laufen, wird zur Möblierung; Erinnerung verliert ihren Inhalt in dem Moment, in dem sie zum Ritual wird. Diesen Einwand muss man ernst nehmen, denn er beschreibt etwas Richtiges: In vielen deutschen Städten gibt es inzwischen mehr Gedenkformate als Menschen, die sie besuchen.\n\nGenau darin liegt aber auch der Unterschied. Ein Ritual hat einen Termin. Ein Stein im Gehweg hat keinen. Er wirkt nicht, weil man ihn ehrt, sondern weil er einen an einem beliebigen Dienstag erwischt.\n\nEs geht nicht um die Frage, ob wir genug erinnern, sondern wann. Am Ende bleibt die Frage, ob ein Name, den man beim Warten auf den Bus liest, mehr auslöst als eine Rede, die man erwartet hat. Ich glaube inzwischen: ja.",
+      },
+    ],
+  },
+  {
+    id: "b2-w8",
+    level: "B2",
+    skill: "writing",
+    title: "Der Artikel",
+    genre: "Haber yazısı",
+    intro:
+      "Hikâyenin son parçası: Nora'nın yerine geçip haberi yazacaksın. Gazetecilikte kural nettir — iddia ile kanıt ayrılır, karşı taraf konuşturulur.",
+    gloss: [
+      { de: "der Vorwurf", tr: "iddia" },
+      { de: "recherchieren", tr: "araştırmak" },
+      { de: "vorliegen", tr: "elde bulunmak" },
+      { de: "bestätigen", tr: "doğrulamak" },
+      { de: "dementieren", tr: "yalanlamak" },
+      { de: "die Quelle", tr: "kaynak" },
+      { de: "der Zusammenhang", tr: "bağlantı" },
+      { de: "nachweisen", tr: "kanıtlamak" },
+    ],
+    minutes: 12,
+    tasks: [
+      {
+        kind: "build",
+        tr: "Gazetemize altı aylık vardiya planları ulaştı.",
+        answer: "Unserer Redaktion liegen Schichtpläne aus sechs Monaten vor.",
+        hint: "„vorliegen“ Dativ ile: Unserer Redaktion liegen … vor.",
+      },
+      {
+        kind: "build",
+        tr: "Şirket bu iddiayı reddediyor.",
+        answer: "Das Unternehmen weist diesen Vorwurf zurück.",
+        hint: "„zurückweisen“ ayrılabilir.",
+      },
+      {
+        kind: "build",
+        tr: "Bir bağlantı kanıtlanamıyor.",
+        answer: "Ein Zusammenhang lässt sich nicht nachweisen.",
+        hint: "„sich lassen“ + mastar = edilgen imkân ifadesi.",
+      },
+      {
+        kind: "free",
+        prompt:
+          "Haberi yaz. Beş noktaya değin: ne olduğunu özetleyen bir giriş cümlesi, elindeki kanıt ve kaynağın kim olduğu (isimsiz kaynak nasıl tanımlanır), şirketin cevabı, kanıtlanamayanın açıkça kanıtlanamadığını söylemen, sonuç. Kanıtlayamadığın hiçbir şeyi iddia etme.",
+        checklist: [
+          "İlk cümle olayı özetliyor mu?",
+          "Kanıtın ne olduğunu ve nereden geldiğini yazdın mı?",
+          "Şirketin görüşünü aktardın mı?",
+          "Kanıtlanamayan noktayı açıkça belirttin mi?",
+          "Kaynağı koruyacak biçimde yazdın mı?",
+        ],
+        minWords: 160,
+        phrases: [
+          { de: "Nach Informationen unserer Redaktion …", tr: "Gazetemizin edindiği bilgilere göre …" },
+          { de: "Das geht aus … hervor, die uns vorliegen.", tr: "Bu, elimizdeki …'den anlaşılıyor." },
+          { de: "Eine Mitarbeiterin, deren Name der Redaktion bekannt ist, sagt: …", tr: "Adı gazetemizce bilinen bir çalışan şöyle diyor: …" },
+          { de: "Das Unternehmen weist die Vorwürfe zurück.", tr: "Şirket iddiaları reddediyor." },
+          { de: "Ein kausaler Zusammenhang lässt sich nicht nachweisen.", tr: "Nedensel bir bağlantı kanıtlanamıyor." },
+        ],
+        sample:
+          "Vier Beschäftigte eines Logistikzentrums in Nordkamp haben nach kritischen Wortmeldungen deutlich weniger Schichten erhalten. Das geht aus Schichtplänen von sechs Monaten hervor, die unserer Redaktion vorliegen.\n\nDie vier hatten im Oktober auf einer Betriebsversammlung Kritik geäußert — zwei an der Pausenregelung, zwei an unbezahlten Umkleidezeiten. Ab November sank ihre Zahl der Schichten um durchschnittlich 38 Prozent. Im selben Monat stellte der Betrieb laut internem Newsletter sechs neue Kräfte ein.\n\nEine Mitarbeiterin, deren Name der Redaktion bekannt ist, sagt: „Jeder kennt zwei, drei Namen, bei denen es passiert ist.“ Sie wollte nicht namentlich auftreten; über ihre Vertragsverlängerung wird im März entschieden.\n\nDas Unternehmen weist die Vorwürfe zurück. Arbeitszeiten würden „gesetzeskonform erfasst und vergütet“; für eine Benachteiligung lägen keine Belege vor. Für die Verträge der Leihkräfte seien die Dienstleister zuständig, Zahlen zur Fluktuation lägen nicht vor.\n\nEin kausaler Zusammenhang zwischen den Wortmeldungen und den Schichtplänen lässt sich mit den vorliegenden Unterlagen nicht nachweisen. Auffällig bleibt die zeitliche Nähe — und die gleichzeitige Einstellung neuer Beschäftigter.",
       },
     ],
   },
