@@ -791,4 +791,65 @@ export const speaking: SpeakingDrillExercise[] = [
       },
     ],
   },
+
+  // ─────────── B2 · kelime sonu sertleşmesi ───────────
+  //
+  // Almancada kelime sonundaki b, d, g sertleşir: Tag = TAAK, Hund = HUNT,
+  // gelb = GELP. Türkçede de benzer bir sertleşme var (kitab → kitap), o
+  // yüzden kural tanıdık. Asıl tuzak tersi durumda: kelime çekimlenip ünlü
+  // eklenince ses geri yumuşuyor — Tag → Tage'de g yine g, Hund → Hunde'de
+  // d yine d. Türkçe konuşan sertleşmiş biçimi ezberleyip her yerde
+  // kullanıyor ve „Taake“ diyor.
+  //
+  // Bu, tek tek kelime değil **çift** çalışmayı gerektiriyor: aynı kelimenin
+  // iki hâli yan yana söylenmeli.
+  {
+    id: "b2-s2",
+    level: "B2",
+    skill: "speaking",
+    title: "Auslautverhärtung",
+    genre: "Ses çalışması",
+    intro:
+      "Kelime sonundaki b, d, g sertleşir (Tag = TAAK). Ama çekimlenip ünlü eklenince yumuşak hâline döner (Tage = TAA-ge). Kuralın kolay kısmı ilki, zor kısmı ikincisi.",
+    gloss: [
+      { de: "der Tag / die Tage", tr: "gün / günler" },
+      { de: "der Hund / die Hunde", tr: "köpek / köpekler" },
+      { de: "gelb / gelbe", tr: "sarı / sarı (çekimli)" },
+      { de: "das Kind / die Kinder", tr: "çocuk / çocuklar" },
+      { de: "der Berg / die Berge", tr: "dağ / dağlar" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        de: "Der Tag war lang, aber die Tage davor waren kurz.",
+        tr: "Gün uzundu ama ondan önceki günler kısaydı.",
+        hint:
+          "„Tag“ = TAAK (sert), „Tage“ = TAA-ge (yumuşak). Aynı cümlede ikisi de var; farkı duyur.",
+      },
+      {
+        de: "Der Hund bellt, die Hunde schlafen.",
+        tr: "Köpek havlıyor, köpekler uyuyor.",
+        hint:
+          "„Hund“ = HUNT, „Hunde“ = HUN-de. Sonuna ünlü gelince d geri geliyor.",
+      },
+      {
+        de: "Das Kind spielt mit den anderen Kindern.",
+        tr: "Çocuk diğer çocuklarla oynuyor.",
+        hint:
+          "„Kind“ = KİNT, „Kindern“ = KİN-dern. Çoğulda d yumuşak.",
+      },
+      {
+        de: "Der Berg ist hoch, die Berge sind höher.",
+        tr: "Dağ yüksek, dağlar daha yüksek.",
+        hint:
+          "„Berg“ = BERK, „Berge“ = BER-ge. „höher“de ise h okunmaz, ö uzar.",
+      },
+      {
+        de: "Das Auto ist gelb, ich mag gelbe Autos.",
+        tr: "Araba sarı, sarı arabaları severim.",
+        hint:
+          "„gelb“ = GELP, „gelbe“ = GEL-be. Sıfat çekimlenince b geri dönüyor.",
+      },
+    ],
+  },
 ];
