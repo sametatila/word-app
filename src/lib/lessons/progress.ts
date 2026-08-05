@@ -1,5 +1,5 @@
 import "server-only";
-import { and, eq, lte, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userLessons } from "@/lib/db/schema";
 import { LESSONS, lessonsFor } from "./index";
@@ -144,18 +144,34 @@ export async function recordLesson(
 }
 
 /**
- * Zayıf kurallar — tekrarı gelmiş ve son denemede geçilememiş dersler.
+ * Oturmamış kurallar.
  *
- * Sohbet düzeltmelerinin ürettiği kural etiketleriyle aynı uzayda olması
- * bilerek: ileride düzeltmeler doğrudan bu kuyruğu besleyebilir.
+ * Ölçü **saklanan skor değil**, merdivenin bulunduğu basamak. Sebebi bir
+ * hatayı düzeltirken görüldü: `correct` alanı en iyi denemeyi tutuyor (ki
+ * ilerleme göstermek için doğru), ama zayıflık son denemenin işi. En iyi
+ * skora bakan bir ölçü, bir kez başarmış sonra üst üste kaybetmiş öğrenciyi
+ * "iyi durumda" sayıyordu.
+ *
+ * Merdiven bunu doğrudan söylüyor: geçilemeyen ders ilk basamağa düşüyor.
+ * Dolayısıyla "birden fazla kez denenmiş ama hâlâ ilk basamakta" olan kural,
+ * tanımı gereği oturmamış olandır.
+ *
+ * İlk deneme dışarıda: ilk seferde takılmak zayıflık değil, yeni olmaktır.
+ *
+ * Kural kimlikleri rol yapma düzeltmelerinin ürettiği etiketlerle aynı uzayda
+ * (V2-Regel, Akkusativ) — ileride düzeltmeler doğrudan bu kuyruğu besleyebilir.
  */
 export async function weakRules(userId: string, limit = 3): Promise<string[]> {
   const rows = await db
-    .select({ ruleId: userLessons.ruleId, correct: userLessons.correct, total: userLessons.total })
+    .select({
+      ruleId: userLessons.ruleId,
+      intervalDays: userLessons.intervalDays,
+      attempts: userLessons.attempts,
+    })
     .from(userLessons)
-    .where(and(eq(userLessons.userId, userId), lte(userLessons.dueAt, new Date())));
+    .where(eq(userLessons.userId, userId));
   const weak = rows
-    .filter((r) => r.total > 0 && r.correct / r.total < PASS_RATIO)
+    .filter((r) => r.attempts >= 2 && r.intervalDays <= LADDER[0])
     .map((r) => r.ruleId);
   return [...new Set(weak)].slice(0, limit);
 }

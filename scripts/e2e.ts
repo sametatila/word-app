@@ -5,7 +5,7 @@
  */
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, profiles, reviews, sessionState, userSkills, userWords, words } from "../src/lib/db/schema";
+import { dailyStats, profiles, reviews, sessionState, userLessons, userSkills, userWords, words } from "../src/lib/db/schema";
 import {
   buildChallenge,
   buildSession,
@@ -38,6 +38,7 @@ import { derivedConfusions } from "../src/lib/speech-rules";
 import { weakSpeechTopics } from "../src/lib/speech-progress";
 import { germanLexicon } from "../src/lib/speech-lexicon";
 import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
+import { lessonBoard, nextLesson, recordLesson, weakRules } from "../src/lib/lessons/progress";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
@@ -80,6 +81,7 @@ async function reset() {
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
   await db.delete(sessionState).where(eq(sessionState.userId, USER));
   await db.delete(userSkills).where(eq(userSkills.userId, USER));
+  await db.delete(userLessons).where(eq(userLessons.userId, USER));
   await db.delete(profiles).where(eq(profiles.userId, USER));
 }
 
@@ -692,6 +694,59 @@ async function main() {
       lessonsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
     check("ders kimlikle bulunuyor", findLesson(LESSONS[0].id)?.id === LESSONS[0].id);
     check("bilinmeyen kimlik bulunamıyor", findLesson("yok-boyle-bir-ders") === undefined);
+  }
+
+  console.log("\n11r1) Ders ilerlemesi ve tekrar merdiveni");
+  {
+    const lesson = LESSONS[0];
+    const full = lesson.checks.length;
+
+    // Rol yapma tamamlanmadıysa ders geçilmiş sayılmıyor: alıştırmaları doğru
+    // yapıp konuşmadan çıkmak dersin asıl parçasını atlamak demek.
+    const skipped = await recordLesson(USER, lesson, full, false);
+    check("konuşmasız ders geçilmiş sayılmıyor", skipped.passed === false);
+    check("geçilmeyen ders ertesi güne planlanıyor", skipped.nextDays === 1);
+
+    // Geçilince merdiven yukarı çıkıyor.
+    const first = await recordLesson(USER, lesson, full, true);
+    check("konuşmayla birlikte ders geçiliyor", first.passed === true);
+    const second = await recordLesson(USER, lesson, full, true);
+    check("aralık büyüyor", second.nextDays > first.nextDays,
+      `(${first.nextDays} → ${second.nextDays})`);
+
+    // Başarısızlık merdiveni başa alıyor — kural oturmadıysa uzun aralık
+    // öğrenciyi kaybettirir.
+    const failed = await recordLesson(USER, lesson, 0, true);
+    check("başarısızlık merdiveni sıfırlıyor", failed.nextDays === 1 && !failed.passed);
+
+    // En iyi skor korunuyor: bir kez doğru yapılanı sonraki denemede
+    // kaybetmek ilerlemeyi geri almamalı.
+    const board = await lessonBoard(USER, lesson.course);
+    const card = board.find((c) => c.lesson.id === lesson.id)!;
+    check("en iyi skor korunuyor", card.state?.correct === full, `(${card.state?.correct})`);
+    check("rol yapma bayrağı kalıcı", card.state?.roleplayDone === true);
+    check("deneme sayısı artıyor", (card.state?.attempts ?? 0) >= 4);
+
+    // Sıradaki ders: yarına planlanan ders bugün "tekrarı gelmiş" değil, o
+    // yüzden açılmamış ilk ders öneriliyor.
+    const upcoming = await nextLesson(USER, lesson.course);
+    check("planlanmış ders bugün önerilmiyor", upcoming?.lesson.id !== lesson.id,
+      `(${upcoming?.lesson.id})`);
+
+    // Zamanı geldiğinde ise yeni dersin önüne geçiyor: tekrar borcu varken
+    // yeni konu açmak öğrenciyi ilerliyormuş gibi hissettirip geride bırakır.
+    await db
+      .update(userLessons)
+      .set({ dueAt: sql`now() - interval '1 day'` })
+      .where(and(eq(userLessons.userId, USER), eq(userLessons.lessonId, lesson.id)));
+    const due = await nextLesson(USER, lesson.course);
+    check("tekrarı gelen ders yeni dersin önüne geçiyor", due?.lesson.id === lesson.id,
+      `(${due?.lesson.id})`);
+    check("tekrarı gelen ders due işaretli", due?.due === true);
+
+    // Zayıf kural: tekrarı gelmiş ve son denemede geçilememiş olan.
+    const weak = await weakRules(USER);
+    check("oturmamış kural listeleniyor", weak.includes(lesson.ruleId), `(${weak.join(", ")})`);
   }
 
   console.log("\n11r2) Rol yapma istemi derse bağlı");
