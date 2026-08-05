@@ -6,6 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
+import { speakGerman } from "@/components/speak-button";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
 
@@ -32,7 +33,13 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     setPicked(opt);
     const correct = opt === answer;
     const latencyMs = Date.now() - started.current;
-    const wait = correct ? 620 : 1200;
+    // Kelime her zaman DOĞRU artikeliyle okunuyor, seçilenle değil: artikel
+    // kelimeyle birlikte ezberleniyor ve yanlış seçimi sesli pekiştirmek
+    // öğrenmenin tersine çalışırdı.
+    speakGerman(`${answer} ${word.de}`);
+    // Doğru cevapta bekleme uzatıldı: ses bitmeden sıradaki oyuna geçilirse
+    // okuma yarıda kesiliyordu ve asıl kazanç kayboluyordu.
+    const wait = correct ? 1500 : 2000;
     fx(correct ? "correct" : "wrong", wait);
     setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), wait);
   }
