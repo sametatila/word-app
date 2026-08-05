@@ -5,17 +5,7 @@ import { notInArray, sql } from "drizzle-orm";
 import { skillExercises } from "../src/lib/db/schema";
 import { itemCount } from "../src/lib/skills/meta";
 import type { SkillExercise } from "../src/lib/skills/types";
-import { a1 } from "../src/lib/skills/content/a1";
-import { a2 } from "../src/lib/skills/content/a2";
-import { b1 } from "../src/lib/skills/content/b1";
-import { b2 } from "../src/lib/skills/content/b2";
-import { c1 } from "../src/lib/skills/content/c1";
-import { zhA1 } from "../src/lib/skills/content/zh-a1";
-import { zhA2 } from "../src/lib/skills/content/zh-a2";
-import { zhB1 } from "../src/lib/skills/content/zh-b1";
-import { zhB2 } from "../src/lib/skills/content/zh-b2";
-import { zhC1 } from "../src/lib/skills/content/zh-c1";
-import { speaking } from "../src/lib/skills/content/speaking";
+import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 /**
  * Beceri içeriğini (okuma/dinleme/yazma) Neon'a yükler.
@@ -27,19 +17,9 @@ import { speaking } from "../src/lib/skills/content/speaking";
  */
 
 // Almanca kurs + Zürih kursu birlikte yüklenir; ayrım `course` alanındadır.
-const ALL: SkillExercise[] = [
-  ...a1,
-  ...a2,
-  ...b1,
-  ...b2,
-  ...c1,
-  ...zhA1,
-  ...zhA2,
-  ...zhB1,
-  ...zhB2,
-  ...zhC1,
-  ...speaking,
-];
+// Liste bundled.ts'te: aynı içerik hem çalışma zamanı hem bu script tarafından
+// okunuyor, iki yerde tutulursa biri eksik kalıyor.
+const ALL: SkillExercise[] = BUNDLED_EXERCISES;
 
 /** UTF-8 bozulması (mojibake) kontrolü: Türkçe/Almanca karakterler bozuksa hiç yükleme. */
 function checkEncoding() {

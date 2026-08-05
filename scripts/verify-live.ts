@@ -82,7 +82,9 @@ async function checkZurich() {
 }
 
 async function checkSkills() {
-  const { BUNDLED_EXERCISES } = (await import("../src/lib/skills/index")) as {
+  // index.ts `server-only` taşır ve Node script'inden içe aktarılamaz; içerik
+  // listesi bu yüzden bundled.ts'ten okunur.
+  const { BUNDLED_EXERCISES } = (await import("../src/lib/skills/bundled")) as {
     BUNDLED_EXERCISES: { id: string; title: string; skill: string; level: string }[];
   };
   const live = (await sql`select id, title, skill, level from skill_exercises`) as {
