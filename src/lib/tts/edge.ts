@@ -22,17 +22,55 @@ import { escapeXml } from "./ssml";
 
 const TRUSTED_TOKEN = "6A5AA1D4EAFF4E9FB37E23D68491D6F4";
 
-/** Kırılırsa değişecek tek yer. Edge'in sürümüyle birlikte ilerliyor. */
-const SEC_VERSION = "1-143.0.3650.75";
-const CHROME_VERSION = "143.0.0.0";
-
 /** 24 kHz mono MP3: konuşma için fazlasıyla yeterli, cümle başına ~25 KB. */
 const OUTPUT_FORMAT = "audio-24khz-48kbitrate-mono-mp3";
 
 const SYNTH_TIMEOUT_MS = 15_000;
 
-/** Tek seferde sentezlenecek metnin üst sınırı — bizim en uzun örneğimiz bunun çok altında. */
+/** Tek seferde sentezlenecek metnin üst sınırı — en uzun örneğimiz bunun çok altında. */
 export const MAX_TEXT = 600;
+
+/**
+ * Tarayıcı sürümü — bu yolun tek kırılgan noktası ve ölçülerek bulundu.
+ *
+ * Kurulum sırasında uç 403 döndürüyordu ve sebebini önce güvenlik jetonunun
+ * sürüm dizgesine yormuştum. Yanlıştı. Değişkenleri tek tek ayırınca ortaya
+ * çıkan tablo şu:
+ *
+ *   User-Agent Edg/130 + sürüm 130 → 403
+ *   User-Agent Edg/130 + sürüm 143 → 403
+ *   User-Agent Edg/143 + sürüm 130 → çalışıyor
+ *   User-Agent Edg/143 + sürüm yok → 403
+ *
+ * Yani kapıyı tutan şey `User-Agent`'taki tarayıcı sürümü. `Sec-MS-GEC-Version`
+ * parametresinin **var olması** gerekiyor ama değeri denetlenmiyor.
+ *
+ * Belirleyici olan ikinci ölçüm: Microsoft yalnızca bir **alt sınır**
+ * uyguluyor. Edg/145, 150, 200, hatta 999 sorunsuz bağlanıyor. Dolayısıyla
+ * doğru savunma eski sürümleri denemek değil (ilk tasarımım tam ters yöne
+ * gidiyordu) — sınırın hep önünde durmak.
+ *
+ * Sürüm bu yüzden tarihten türetiliyor: Edge kabaca dört haftada bir yeni ana
+ * sürüm çıkarıyor, buna birkaç sürümlük pay ekleniyor. Böylece sayı hem
+ * gerçekçi kalıyor hem de alt sınır yükseldikçe kendiliğinden önde kalıyor,
+ * kimsenin bir şey güncellemesi gerekmiyor.
+ */
+
+/** Ölçümün yapıldığı an: 2026-08 başında güncel ana sürüm 143'tü. */
+const BASE_VERSION = 143;
+const BASE_DATE = Date.UTC(2026, 7, 1);
+const RELEASE_DAYS = 28;
+/** Alt sınırın önünde durmak için pay — birkaç sürümlük tampon. */
+const VERSION_MARGIN = 3;
+
+function browserVersion(): number {
+  const override = Number(process.env.EDGE_TTS_BROWSER_VERSION);
+  // Ortam değişkeni son çare: ölçüm yanılırsa Vercel'de tek değer değiştirip
+  // redeploy etmek yetsin, yeni kod beklemeye gerek kalmasın.
+  if (Number.isFinite(override) && override > 0) return Math.floor(override);
+  const elapsed = Math.max(0, Date.now() - BASE_DATE);
+  return BASE_VERSION + Math.floor(elapsed / (RELEASE_DAYS * 86_400_000)) + VERSION_MARGIN;
+}
 
 /**
  * Sec-MS-GEC jetonu.
@@ -47,11 +85,12 @@ function securityToken(): string {
   return createHash("sha256").update(`${ticks}${TRUSTED_TOKEN}`).digest("hex").toUpperCase();
 }
 
-function endpoint(): string {
+function endpoint(version: number): string {
   const params = new URLSearchParams({
     TrustedClientToken: TRUSTED_TOKEN,
     "Sec-MS-GEC": securityToken(),
-    "Sec-MS-GEC-Version": SEC_VERSION,
+    // Değeri denetlenmiyor ama parametrenin bulunması şart.
+    "Sec-MS-GEC-Version": `1-${version}.0.0.0`,
   });
   return `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?${params}`;
 }
@@ -82,6 +121,14 @@ export function cleanForSpeech(text: string): string {
  * yolu da aynı metni almalı, yoksa yedeğe düşünce önbellek anahtarı tutmaz.
  */
 export async function synthesizeEdge(clean: string, voice: VoiceId): Promise<Buffer> {
+  return connectAndSynthesize(clean, voice, browserVersion());
+}
+
+function connectAndSynthesize(
+  clean: string,
+  voice: VoiceId,
+  version: number,
+): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
     // Yerleşik WebSocket (undici) `headers` seçeneğini kabul ediyor; uç
     // bunlar olmadan 403 dönüyor. Ek bir paket gerekmemesinin sebebi bu.
@@ -92,9 +139,9 @@ export async function synthesizeEdge(clean: string, voice: VoiceId): Promise<Buf
       options: { headers: Record<string, string> },
     ) => WebSocket;
 
-    const ws = new Ctor(endpoint(), {
+    const ws = new Ctor(endpoint(version), {
       headers: {
-        "User-Agent": `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${CHROME_VERSION} Safari/537.36 Edg/${CHROME_VERSION}`,
+        "User-Agent": `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${version}.0.0.0 Safari/537.36 Edg/${version}.0.0.0`,
         Origin: "chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold",
       },
     });
