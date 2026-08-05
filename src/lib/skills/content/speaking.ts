@@ -26,96 +26,111 @@ import type { SpeakingDrillExercise } from "../types";
  * içeriği"): yazdığın her sapma judgeSpeech'ten geçmezse test düşer.
  */
 export const speaking: SpeakingDrillExercise[] = [
-  // ─────────────────────── A1 · ö ve ü ───────────────────────
+  // ─────────────────── A1 · uzun ve kısa ünlü ───────────────────
+  //
+  // Bu egzersiz önce „Ö und Ü“ idi ve yanlış varsayıma dayanıyordu: Türkçede
+  // ö ve ü zaten var, dolayısıyla Türkçe konuşan biri „schön“ yerine „schon“
+  // demez — o, İngilizce konuşanın hatası. Kendi ipucu da bunu itiraf
+  // ediyordu („Türkçe ö ile aynı“), yani egzersiz kendi öncülüyle çelişiyordu.
+  //
+  // Kontrastif fonetiğin işaret ettiği gerçek zorluk ünlü **uzunluğu**:
+  // Türkçede ünlü uzunluğu anlam ayırmaz, Almancada ayırır. Türkçe konuşanlar
+  // uzun ünlüleri kısaltıp kısa olanları uzatma eğiliminde.
+  //
+  // fühlen/füllen ve Höhle/Hölle çiftleri bunu kanıtlıyor: ses kalitesi aynı
+  // (ü ü, ö ö), değişen tek şey uzunluk — ve kelime bambaşka oluyor.
   {
     id: "a1-s1",
     level: "A1",
     skill: "speaking",
-    title: "Ö und Ü",
+    title: "Lange und kurze Vokale",
     genre: "Ses çalışması",
     intro:
-      "Türkçede ö ve ü var, ama Almancada bu sesler kelimenin anlamını değiştirir. Dudaklarını yuvarlayarak söyle.",
+      "Türkçede ünlünün uzunluğu anlamı değiştirmez; Almancada değiştirir. Aynı ünlü kısa ya da uzun olduğunda karşına bambaşka bir kelime çıkar.",
     gloss: [
-      { de: "schön", tr: "güzel" },
-      { de: "hören", tr: "duymak" },
-      { de: "müde", tr: "yorgun" },
-      { de: "über", tr: "üzerinde, hakkında" },
-      { de: "können", tr: "-ebilmek" },
+      { de: "die Stadt / der Staat", tr: "şehir / devlet" },
+      { de: "in / ihn", tr: "içinde / onu" },
+      { de: "offen / der Ofen", tr: "açık / fırın" },
+      { de: "füllen / fühlen", tr: "doldurmak / hissetmek" },
+      { de: "die Hölle / die Höhle", tr: "cehennem / mağara" },
     ],
-    minutes: 5,
+    minutes: 6,
     tasks: [
       {
-        de: "schön",
-        tr: "güzel",
-        hint: "Dudaklar yuvarlak ve öne doğru — Türkçe „ö“ ile aynı.",
+        de: "Ich wohne in der Stadt.",
+        tr: "Şehirde oturuyorum.",
+        hint: "„Stadt“ta a KISA: ŞTAT. Uzatırsan „Staat“ (devlet) olur.",
         confusions: [
           {
-            heard: ["schon"],
-            fix: "Dudakların yuvarlanmadı: „schon“ (zaten) dedin, „schön“ (güzel) değil. İki ayrı kelime.",
-            expected: "schön",
+            heard: ["Staat", "Staate", "Staaten"],
+            fix: "„Stadt“taki a'yı uzattın ve „Staat“ (devlet) duyuldu. Sesi kısa kes: ŞTAT.",
+            expected: "Stadt",
           },
         ],
       },
       {
-        de: "Ich kann gut hören.",
-        tr: "İyi duyabiliyorum.",
+        de: "Der Staat zahlt das.",
+        tr: "Bunu devlet ödüyor.",
+        hint: "Burada tam tersi: „Staat“ta a UZUN — ŞTAAT. İki a'yı da duy.",
         confusions: [
           {
-            heard: ["Ohren", "Horn"],
-            fix: "„hören“deki ö kısa ve düz kaldı. Dudakları yuvarlak tutup uzat: HÖÖ-ren.",
-            expected: "hören",
+            heard: ["Stadt", "Statt", "stad"],
+            fix: "„Staat“taki a kısa kaldı ve „Stadt“ (şehir) duyuldu. Sesi iki katı kadar tut.",
+            expected: "Staat",
           },
         ],
       },
       {
-        de: "Ich bin müde.",
-        tr: "Yorgunum.",
+        de: "Ich kenne ihn gut.",
+        tr: "Onu iyi tanıyorum.",
+        hint: "„ihn“de i UZUN: İİN. „in“ ise kısacıktır.",
         confusions: [
           {
-            heard: ["Mode", "Made"],
-            fix: "„müde“deki ü, Türkçedeki ü ile aynı — u ya da o değil. Dil önde, dudak yuvarlak.",
-            expected: "müde",
+            heard: ["in", "im", "Inn"],
+            fix: "„ihn“ (onu) yerine „in“ (içinde) duyuldu — ikisi arasındaki tek fark i'nin uzunluğu.",
+            expected: "ihn",
           },
         ],
       },
       {
-        de: "über die Straße",
-        tr: "caddenin karşısına",
+        de: "Das Fenster ist offen.",
+        tr: "Pencere açık.",
+        hint: "„offen“de o KISA ve ardından çift f gelir: OF-fen.",
         confusions: [
           {
-            heard: ["aber", "Ober", "Uber"],
-            fix: "„über“ ü ile başlar. Dudakları yuvarlayıp öne al; „aber“ bambaşka bir kelime.",
-            expected: "über",
+            heard: ["Ofen", "oben", "hoffen"],
+            fix: "„offen“ (açık) yerine „Ofen“ (fırın) duyuldu. Çift ünsüz, önündeki ünlünün kısa olduğunu gösterir.",
+            expected: "offen",
           },
         ],
       },
       {
-        de: "Können Sie mir helfen?",
-        tr: "Bana yardım edebilir misiniz?",
-        hint: "En sık kullanacağın kalıplardan biri — ö'yü net söyle.",
+        de: "Ich fühle mich gut.",
+        tr: "Kendimi iyi hissediyorum.",
+        hint: "Buradaki ü Türkçedeki ü ile aynı — tek fark UZUN olması: FÜÜ-le.",
         confusions: [
           {
-            heard: ["kommen", "Kannen"],
-            fix: "„können“ (-ebilmek) yerine „kommen“ (gelmek) duyuldu. ö sesini yuvarlayarak ayır.",
-            expected: "können",
+            heard: ["fülle", "füllen", "Fülle"],
+            fix: "„fühle“ (hissetmek) yerine „fülle“ (doldurmak) duyuldu. Ses doğruydu, uzunluk kısa kaldı — „h“ o ünlüyü uzatır.",
+            expected: "fühle",
           },
         ],
       },
       {
-        de: "Ich möchte einen Kaffee, bitte.",
-        tr: "Bir kahve istiyorum, lütfen.",
+        de: "Wir haben eine Höhle gefunden.",
+        tr: "Bir mağara bulduk.",
+        hint: "„Höhle“de ö uzun (HÖÖ-le); „Hölle“de kısa. Ö sesi ikisinde de aynı.",
         confusions: [
           {
-            heard: ["machte", "mache"],
-            fix: "„möchte“deki ö düştü. „machte“ (yaptı) istekle ilgisi olmayan bir kelime.",
-            expected: "möchte",
+            heard: ["Hölle", "helle", "holen"],
+            fix: "„Höhle“ (mağara) yerine „Hölle“ (cehennem) duyuldu — ö'yü uzat, „h“ bunun işareti.",
+            expected: "Höhle",
           },
         ],
       },
     ],
   },
 
-  // ─────────────────────── A1 · w, v ve z ───────────────────────
   {
     id: "a1-s2",
     level: "A1",
