@@ -79,9 +79,11 @@ async function main() {
   console.log("\n2) İlk oturum (sıfırdan kullanıcı)");
   const s1 = await buildSession(USER, day1);
   check("tur üretildi", s1.rounds.length > 0, `(${s1.rounds.length})`);
+  // On oyun türü varken tur da uzun olmalı, yoksa çoğu tür hiç çıkmıyor.
+  check("ilk oturum 20 tur", s1.rounds.length === 20, `(${s1.rounds.length})`);
   check("ilk tur tanıtım kartı", s1.rounds[0]?.game === "intro");
   const introCount = s1.rounds.filter((r) => r.game === "intro").length;
-  check("yeni kelime kotası aşılmadı", introCount <= 8, `(${introCount})`);
+  check("yeni kelime kotası aşılmadı", introCount <= 10, `(${introCount})`);
   const games = new Set(s1.rounds.map((r) => r.game));
   check("birden fazla oyun türü", games.size >= 2, `(${[...games].join(", ")})`);
   const allWords = s1.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
@@ -115,7 +117,7 @@ async function main() {
   const s2 = await buildSession(USER, day1);
   check("oturum boş kalmıyor", s2.rounds.length >= 6, `(${s2.rounds.length})`);
   const introCount2 = s2.rounds.filter((r) => r.game === "intro").length;
-  check("tek oturumda yeni kelime tavanı aşılmıyor", introCount2 <= 8, `(${introCount2})`);
+  check("tek oturumda yeni kelime tavanı aşılmıyor", introCount2 <= 10, `(${introCount2})`);
   await submitAnswers(USER, answersFor(s2.rounds, 1), day1, 60);
 
   const [statDay1] = await db
@@ -349,6 +351,43 @@ async function main() {
     "yanlış yazım kabul edilmiyor",
     !new Set(acceptedForms("sich setzen")).has("sitzen"),
   );
+
+  // Harfi harfine yazmak şart değil: klavyede Almanca karakter olmayabilir ve
+  // "ss" İsviçre'de zaten doğru yazımdır.
+  const tolerant: [string, string, boolean][] = [
+    ["die Tür", "tür", true],
+    ["die Tür", "TÜR", true],
+    ["die Tür", "  tür  ", true],
+    ["Tür", "die Tür", true],
+    ["groß", "gross", true],
+    ["die Straße", "Strasse", true],
+    ["die Tür", "Tuer", true],
+    ["schön", "schoen", true],
+    ["müssen", "muessen", true],
+    ["sich setzen", "setzen", true],
+    ["heraus/raus", "raus", true],
+    ["zum Beispiel/z. B.", "z.B.", true],
+    // Yanlış cevap yanlış kalmalı: umlaut düz sesliye indirgenmiyor.
+    ["die Tür", "Tor", false],
+    ["sich setzen", "sitzen", false],
+    ["schön", "schon", false],
+    ["groß", "gro", false],
+  ];
+  for (const [head, typed, want] of tolerant) {
+    check(`"${head}" ← "${typed}" ${want ? "kabul" : "ret"}`, matchesAnswer(typed, [head]) === want);
+  }
+
+  // Katlama farklı kelimeleri birbirine karıştırmamalı; yalnızca büyük/küçük
+  // harf farkı olanlar çakışabilir (Arm/arm gibi, zaten ayrı maddeler).
+  const folded = new Map<string, Set<string>>();
+  for (const w of await db.select({ de: words.de }).from(words).where(eq(words.course, "de"))) {
+    const k = foldSpelling(w.de);
+    if (!folded.has(k)) folded.set(k, new Set());
+    folded.get(k)!.add(w.de.toLocaleLowerCase("de-DE").replace(/[.,!?;:]/g, "").trim());
+  }
+  const realCollisions = [...folded.values()].filter((v) => v.size > 1);
+  check("yazım toleransı farklı kelimeleri karıştırmıyor", realCollisions.length === 0,
+    `(${realCollisions.slice(0, 3).map((v) => [...v].join("/")).join(", ")})`);
 
   // Havuzdaki her başlık kendi normalize edilmiş hâliyle eşleşmeli.
   const headwords = await db.select({ id: words.id, de: words.de }).from(words);

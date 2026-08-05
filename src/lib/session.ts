@@ -17,7 +17,9 @@ import type {
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
 
-const ROUNDS_PER_SESSION = 14;
+// Oyun türü sayısı arttıkça tur da uzamalı: 14 turda on oyunun çoğu hiç
+// çıkmıyordu. 20 tur, tekrar + yeni karışımında her türe yer bırakıyor.
+const ROUNDS_PER_SESSION = 20;
 /**
  * Aynı oyun kaç tur boyunca tekrar edilmez.
  *
@@ -266,8 +268,9 @@ export async function buildSession(
 
   // Günlük kota bir hız ayarıdır, duvar değil: tekrar kuyruğu zayıfsa oturumu
   // dolduracak kadar yeni kelime her hâlükârda gelir (tek turluk oturum olmaz).
-  const deficit = Math.max(0, 6 - dueRows.length);
-  const newLimit = Math.min(8, Math.max(newBudget, deficit));
+  const deficit = Math.max(0, 8 - dueRows.length);
+  // Her yeni kelime iki tur üretir (tanıtım + oyun), 10 tanesi 20 turu doldurur.
+  const newLimit = Math.min(10, Math.max(newBudget, deficit));
 
   // Henüz hiç görülmemiş kelimeler: id listesini taşımak yerine NOT EXISTS.
   let newRows: (typeof words.$inferSelect)[] = [];
