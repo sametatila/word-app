@@ -3,6 +3,7 @@ import { getExercise } from "@/lib/skills";
 import { ReadingPlayer } from "@/components/skills/reading-player";
 import { ListeningPlayer } from "@/components/skills/listening-player";
 import { WritingPlayer } from "@/components/skills/writing-player";
+import { SpeakingPlayer } from "@/components/skills/speaking-player";
 
 export const dynamic = "force-dynamic";
 
@@ -23,5 +24,7 @@ export default async function SkillExercisePage({
       return <ListeningPlayer exercise={exercise} />;
     case "writing":
       return <WritingPlayer exercise={exercise} />;
+    case "speaking":
+      return <SpeakingPlayer exercise={exercise} />;
   }
 }

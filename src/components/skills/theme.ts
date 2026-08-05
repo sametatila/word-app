@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import type { SkillId } from "@/lib/skills/types";
-import { BookOpenIcon, HeadphonesIcon, PenIcon } from "@/components/icons";
+import { BookOpenIcon, HeadphonesIcon, PenIcon, SpeakerIcon } from "@/components/icons";
 
 /** CEFR seviye renkleri — level-badge ve ilerleme çubuklarıyla aynı ton dili. */
 export const LEVEL_TONE: Record<string, string> = {
@@ -18,4 +18,5 @@ export const SKILL_ICON: Record<
   reading: BookOpenIcon,
   listening: HeadphonesIcon,
   writing: PenIcon,
+  speaking: SpeakerIcon,
 };

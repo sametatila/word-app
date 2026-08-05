@@ -209,7 +209,9 @@ export function SkillsHub({
                       </p>
                       <p className="muted mt-0.5 text-xs">
                         {item.genre} · {item.minutes} dk ·{" "}
-                        {skill === "writing" ? `${item.items} görev` : `${item.items} soru`}
+                        {skill === "writing" || skill === "speaking"
+                          ? `${item.items} görev`
+                          : `${item.items} soru`}
                       </p>
                     </div>
                     {rec ? (
