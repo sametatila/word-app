@@ -28,7 +28,7 @@ uygulama gibi tam ekran açılır (PWA).
   dokunulabilir öneriler, mikrofonla sesli cevap ve umlaut tuşları var. **Eller serbest**
   anahtarı açıkken tek bir döngü kurulur — cevap sesli okunur, okuma biter bitmez mikrofon
   kendiliğinden açılır, söylediğin doğrudan gönderilir; telefona hiç dokunmazsın. GitHub Models'in ücretsiz
-  Gemini (ücretsiz), Anthropic ya da GitHub Models üzerinden çalışır; anahtarı olan ilk
+  Cerebras, Groq ya da Mistral'in ücretsiz katmanı üzerinden çalışır; anahtarı olan ilk
   sağlayıcı seçilir, düşerse yedeğe geçilir. Anahtar yoksa sayfa çökmez, ne yapılacağını söyler.
 - **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
   kelime listesinde ve Cümleyi Tamamla oyununda görünür.
@@ -84,15 +84,16 @@ DATABASE_URL="postgresql://user:pass@ep-xxx-pooler.<region>.aws.neon.tech/neondb
 NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
 NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 
-# Sohbet (/sohbet) — üçünden biri yeter. Sıra: gemini → anthropic → github.
-GEMINI_API_KEY="..."            # önerilen: AI Studio ücretsiz katmanı
-# ANTHROPIC_API_KEY="..."       # ücretli, kural takibi en iyi olan
-# GITHUB_MODELS_API_KEY="..."   # ücretsiz, Llama-3.3-70B
+# Sohbet (/sohbet) — üçünden biri yeter. Sıra: cerebras → groq → mistral.
+CEREBRAS_API_KEY="..."          # önerilen: ücretsizlerin en hızlısı, 1M token/gün
+# GROQ_API_KEY="..."            # ~500K token/gün, ilk yedek
+# MISTRAL_API_KEY="..."         # 1B token/ay ama ~2 RPM — taşma yedeği
 ```
 
-Sohbet üç sağlayıcıyı da destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
-Gemini → Anthropic → GitHub Models). Birden fazlası tanımlıysa birincil düşünce diğerine
-geçilir — akış başlamadan önce; başladıktan sonra yarım cümlenin üstüne başka modelin
+Sohbet üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
+Cerebras → Groq → Mistral). Üçü de OpenAI uyumlu olduğu için tek istemci yetiyor; sıra
+hıza göre kurulu, çünkü sohbette gecikme her şeyden önemli. Birincil düşerse yedeğe
+geçilir — **akış başlamadan önce**; başladıktan sonra yarım cümlenin üstüne başka modelin
 cevabını eklemek doğru olmazdı. Sırayı `CHAT_PROVIDER` ile ezebilirsin. Hiçbiri yoksa yalnızca
 `/sohbet` kapalı görünür, uygulamanın geri kalanı etkilenmez.
 
@@ -128,7 +129,7 @@ vercel link
 vercel env add DATABASE_URL production                     # ve preview/development
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
-vercel env add GEMINI_API_KEY production                    # /sohbet için; yoksa yalnızca o sayfa kapalı
+vercel env add CEREBRAS_API_KEY production                  # /sohbet için; yoksa yalnızca o sayfa kapalı
 vercel --prod
 ```
 
