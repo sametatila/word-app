@@ -25,7 +25,9 @@ uygulama gibi tam ekran açılır (PWA).
 - **Sohbet (`/sohbet`):** seviyene göre konuşan Almanca partner. Her istekte tekrar kuyruğundan
   18 kelime sistem istemine girer, konuşma onların etrafında döner — sohbet SRS'in üstüne biner.
   Hatalar konuşmayı bölmeden tek satırda düzeltilir. Yazmak son çare: her cevabın altında
-  dokunulabilir öneriler, mikrofonla sesli cevap ve umlaut tuşları var. GitHub Models'in ücretsiz
+  dokunulabilir öneriler, mikrofonla sesli cevap ve umlaut tuşları var. **Eller serbest**
+  anahtarı açıkken tek bir döngü kurulur — cevap sesli okunur, okuma biter bitmez mikrofon
+  kendiliğinden açılır, söylediğin doğrudan gönderilir; telefona hiç dokunmazsın. GitHub Models'in ücretsiz
   katmanında çalışır (Llama-3.3-70B-Instruct); anahtar yoksa sayfa çökmez, ne yapılacağını söyler.
 - **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
   kelime listesinde ve Cümleyi Tamamla oyununda görünür.

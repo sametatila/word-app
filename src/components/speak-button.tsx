@@ -11,14 +11,28 @@ import { SpeakerIcon } from "./icons";
  * olduğu için İsviçre aksanlı ses, lehçe metnini şaşırtıcı ölçüde doğru okur.
  * Gerçek Mundart kayıtları dinleme egzersizlerinde ayrıca sunulur.
  */
-export function speakGerman(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+/**
+ * Almanca metni sesli okur.
+ *
+ * `onEnd` okuma bittiğinde çağrılır — eller serbest sohbette mikrofonun
+ * kendiliğinden açılması buna bağlı. Ses hiç çalınamadığı durumlarda da
+ * (tarayıcı desteklemiyor, metin boş, sentez hatası) çağrılır: yoksa çağıran
+ * taraf hiç gelmeyecek bir bitişi bekler ve döngü orada kilitlenir.
+ */
+export function speakGerman(text: string, onEnd?: () => void) {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+    onEnd?.();
+    return;
+  }
   const clean = text
     .replace(/\(.*?\)/g, "")
     .replace(/[/–—]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-  if (!clean) return;
+  if (!clean) {
+    onEnd?.();
+    return;
+  }
 
   let course = "de";
   try {
@@ -36,6 +50,13 @@ export function speakGerman(text: string) {
     ? (voices.find((v) => v.lang === "de-CH") ?? voices.find((v) => v.lang.startsWith("de")))
     : voices.find((v) => v.lang.startsWith("de"));
   if (voice) u.voice = voice;
+  if (onEnd) {
+    u.onend = () => onEnd();
+    // Hata da bir bitiştir: sentez çuvallarsa döngü asılı kalmasın.
+    u.onerror = () => onEnd();
+  }
+  // cancel() bekleyen konuşmanın onend'ini de tetikler; çağıran taraf hangi
+  // okumanın bittiğini ayırt edebilmeli (bkz. chat-player, konuşma jetonu).
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }

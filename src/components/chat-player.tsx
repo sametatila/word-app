@@ -34,7 +34,7 @@ const STARTERS = [
 ];
 
 const UMLAUTS = ["ä", "ö", "ü", "ß", "Ä", "Ö", "Ü"];
-const AUTOPLAY_KEY = "wortspiel-chat-autoplay";
+const HANDSFREE_KEY = "wortspiel-chat-handsfree";
 
 export function ChatPlayer({ configured, level }: { configured: boolean; level: string }) {
   const [turns, setTurns] = useState<Turn[]>([]);
@@ -42,7 +42,7 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
   const [busy, setBusy] = useState(false);
   const [listening, setListening] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [autoplay, setAutoplay] = useState(false);
+  const [handsFree, setHandsFree] = useState(false);
 
   const ttsAvailable = useSpeechAvailable();
   const [asrAvailable, setAsrAvailable] = useState(false);
@@ -53,28 +53,72 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
   const recognition = useRef<Recognition | null>(null);
   /** Seslendirilmiş son cevap — akış sürerken tekrar tekrar okunmasın. */
   const spoken = useRef<number>(-1);
+  /** Okuma bittiğinde çalışan geri çağrı eski değeri görmesin diye. */
+  const handsFreeRef = useRef(false);
+  const draftRef = useRef("");
+  /** Hangi okumanın bittiğini ayırt eden jeton — cancel() eski onend'i tetikliyor. */
+  const speechToken = useRef(0);
+  /** listen() içinden çağrılır; send her turda değiştiği için ref üzerinden. */
+  const sendRef = useRef<(text: string) => Promise<void>>(async () => {});
 
-  // Sesli okuma cihaz tercihidir (kulaklık var mı, ortam sessiz mi) — bu yüzden
-  // sunucuda değil cihazda saklanıyor, tema tercihiyle aynı mantık.
+  // Eller serbest cihaz tercihidir (kulaklık var mı, ortam sessiz mi, mikrofon
+  // uygun mu) — sunucuda değil cihazda saklanıyor, tema tercihiyle aynı mantık.
   useEffect(() => {
     try {
-      setAutoplay(localStorage.getItem(AUTOPLAY_KEY) !== "0");
+      const on = localStorage.getItem(HANDSFREE_KEY) === "1";
+      setHandsFree(on);
+      handsFreeRef.current = on;
     } catch {
-      setAutoplay(true);
+      /* depolama kapalıysa kapalı başlar */
     }
   }, []);
 
-  function toggleAutoplay() {
-    setAutoplay((on) => {
-      const next = !on;
+  useEffect(() => {
+    handsFreeRef.current = handsFree;
+  }, [handsFree]);
+  useEffect(() => {
+    draftRef.current = draft;
+  }, [draft]);
+
+  /**
+   * Eller serbest anahtarı.
+   *
+   * Açılırken mikrofon izni **burada** isteniyor: bu bir kullanıcı dokunuşu,
+   * yani tarayıcı istemi gösterebiliyor. Sonraki otomatik dinlemeler okuma
+   * bitişinde tetikleniyor ve orada dokunuş yok — izin o an istenirse
+   * tarayıcı sessizce reddedebilir.
+   */
+  async function toggleHandsFree() {
+    if (handsFree) {
+      setHandsFree(false);
+      handsFreeRef.current = false;
+      speechToken.current++;
+      window.speechSynthesis?.cancel();
+      recognition.current?.abort();
+      setListening(false);
       try {
-        localStorage.setItem(AUTOPLAY_KEY, next ? "1" : "0");
+        localStorage.setItem(HANDSFREE_KEY, "0");
       } catch {
-        /* depolama kapalıysa yalnızca tercih hatırlanmaz */
+        /* tercih hatırlanmaz, işlev etkilenmez */
       }
-      if (!next) window.speechSynthesis?.cancel();
-      return next;
-    });
+      return;
+    }
+
+    setError(null);
+    if (asrAvailable) {
+      const permission = await requestMicrophone();
+      if (permission === "denied") {
+        setError("Eller serbest için mikrofon izni gerekiyor. Ayarlardan izin verip tekrar dene.");
+        return;
+      }
+    }
+    setHandsFree(true);
+    handsFreeRef.current = true;
+    try {
+      localStorage.setItem(HANDSFREE_KEY, "1");
+    } catch {
+      /* tercih hatırlanmaz, işlev etkilenmez */
+    }
   }
 
   useEffect(() => {
@@ -133,21 +177,21 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
     [turns, busy],
   );
 
+  useEffect(() => {
+    sendRef.current = send;
+  }, [send]);
+
   // Cevap tamamlanınca bir kez seslendir — akış sürerken değil, yoksa
   // her parçada baştan okumaya başlardı.
-  useEffect(() => {
-    if (busy || !autoplay || !ttsAvailable) return;
-    const last = turns.length - 1;
-    if (last < 0 || turns[last].role !== "assistant") return;
-    if (spoken.current === last) return;
-    const { body } = parseReply(turns[last].content);
-    if (!body) return;
-    spoken.current = last;
-    speakGerman(body);
-  }, [turns, busy, autoplay, ttsAvailable]);
-
-  /** Sesle cevap: tanınan metin taslağa düşer, gönderilmeden önce düzeltilebilir. */
-  const listen = useCallback(async () => {
+  /**
+   * Sesle cevap.
+   *
+   * Elle başlatıldığında tanınan metin taslağa düşer ve gönderilmeden önce
+   * düzeltilebilir. Eller serbest döngüsünde ise doğrudan gönderilir: her turda
+   * "Gönder"e uzanmak zaten döngünün amacını ortadan kaldırır, yanlış tanınan
+   * bir cümleyi de konuşmanın kendisi onarır — insan sohbeti de böyle yürür.
+   */
+  const listen = useCallback(async (autoSend = false) => {
     const Ctor = recognitionCtor();
     if (!Ctor) return;
     setError(null);
@@ -164,14 +208,15 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
     rec.continuous = false;
     rec.maxAlternatives = 1;
     rec.onresult = (event) => {
-      const heard = event.results[0]?.[0]?.transcript ?? "";
+      const heard = (event.results[0]?.[0]?.transcript ?? "").trim();
       setListening(false);
-      // Otomatik göndermiyoruz: tanıyıcı yanılabilir, öğrenci görüp
-      // düzeltebilmeli. Metin taslağa düşer, imleç sonuna gider.
-      if (heard) {
-        setDraft((d) => (d ? `${d} ${heard}` : heard));
-        input.current?.focus();
+      if (!heard) return;
+      if (autoSend) {
+        void sendRef.current(heard);
+        return;
       }
+      setDraft((d) => (d ? `${d} ${heard}` : heard));
+      input.current?.focus();
     };
     rec.onerror = (e) => {
       setListening(false);
@@ -192,6 +237,27 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
       setListening(false);
     }
   }, []);
+
+  useEffect(() => {
+    if (busy || !handsFree) return;
+    const last = turns.length - 1;
+    if (last < 0 || turns[last].role !== "assistant") return;
+    if (spoken.current === last) return;
+    const { body } = parseReply(turns[last].content);
+    if (!body) return;
+    spoken.current = last;
+
+    const token = ++speechToken.current;
+    speakGerman(body, () => {
+      // Okuma bitti → mikrofon kendiliğinden açılır. Döngüyü kapatan üç durum:
+      // anahtar kapatıldı, araya yeni bir okuma girdi, ya da kullanıcı yazmaya
+      // başladı (o zaman sözü ondadır, mikrofon karışmaz).
+      if (speechToken.current !== token) return;
+      if (!handsFreeRef.current) return;
+      if (draftRef.current.trim()) return;
+      void listen(true);
+    });
+  }, [turns, busy, handsFree, listen]);
 
   function insertUmlaut(ch: string) {
     const el = input.current;
@@ -240,21 +306,21 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <div className="card flex min-h-0 flex-1 flex-col overflow-hidden">
-        {/* Sesli okuma anahtarı — konuşma partnerinde duymak işin yarısı. */}
-        {ttsAvailable ? (
+        {/* Tek anahtar, tam döngü: okur → mikrofonu açar → cevabı gönderir. */}
+        {ttsAvailable || asrAvailable ? (
           <div
             className="flex shrink-0 items-center justify-end border-b px-3 py-1.5"
             style={{ borderColor: "var(--border)" }}
           >
             <button
               type="button"
-              onClick={toggleAutoplay}
-              aria-pressed={autoplay}
+              onClick={() => void toggleHandsFree()}
+              aria-pressed={handsFree}
               className="btn btn-ghost flex items-center gap-1.5 px-2 py-1 text-xs"
-              style={{ color: autoplay ? "var(--color-brand-500)" : undefined }}
+              style={{ color: handsFree ? "var(--color-brand-500)" : undefined }}
             >
               <SpeakerIcon size={13} />
-              {autoplay ? "Sesli okuma açık" : "Sesli okuma kapalı"}
+              {handsFree ? "Eller serbest: açık" : "Eller serbest"}
             </button>
           </div>
         ) : null}
@@ -268,7 +334,8 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
               <p className="text-sm font-semibold">Almanca sohbet edelim</p>
               <p className="muted mx-auto mt-1 max-w-sm text-xs">
                 {level} seviyesinde konuşuyorum. Aşağıdakilerden birine dokun, mikrofonla
-                konuş ya da yaz — takıldığın yerde Türkçe de yazabilirsin.
+                konuş ya da yaz. Üstteki “Eller serbest” anahtarını açarsan cevabımı
+                okuduktan sonra mikrofon kendiliğinden açılır — telefona hiç dokunmazsın.
               </p>
               <div className="mt-4 flex flex-col items-center gap-2">
                 {STARTERS.map((s) => (
@@ -374,7 +441,7 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
             <motion.button
               type="button"
               whileTap={{ scale: 0.94 }}
-              onClick={() => (listening ? recognition.current?.stop() : void listen())}
+              onClick={() => (listening ? recognition.current?.stop() : void listen(false))}
               disabled={busy}
               aria-label={listening ? "Kaydı bitir" : "Konuşarak yaz"}
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white disabled:opacity-40"
@@ -407,7 +474,13 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
                 void send(draft);
               }
             }}
-            placeholder={listening ? "Dinliyorum…" : "Yaz ya da mikrofona dokun"}
+            placeholder={
+              listening
+                ? "Dinliyorum… konuşunca gönderilir"
+                : handsFree
+                  ? "Eller serbest — cevabı bekleyip konuş"
+                  : "Yaz ya da mikrofona dokun"
+            }
             className="max-h-32 flex-1 resize-none rounded-xl px-3 py-2.5 text-sm outline-none surface-2"
             style={{ color: "var(--text)" }}
           />
