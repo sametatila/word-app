@@ -252,3 +252,34 @@ export function SpeakButton({
     </motion.button>
   );
 }
+
+/**
+ * Metni okur ve okuma **bittiğinde** `done` çağırır.
+ *
+ * Oyunlarda sabit bir bekleme süresi kullanılıyordu ve yanlıştı: ses
+ * önbellekte yoksa sunucudan gelmesi yarım ile bir buçuk saniye sürüyor, yani
+ * tur çoğu zaman okuma başlamadan kapanıyordu. Süreyi tahmin etmek yerine
+ * gerçek bitişi beklemek tek doğru çözüm.
+ *
+ * `maxWaitMs` emniyet kemeri: ses hiç çalmaz, ağ takılır ya da tarayıcı
+ * bitişi hiç bildirmezse tur sonsuza kadar açık kalmamalı. Normal akışta
+ * devreye girmiyor.
+ *
+ * Dönen işlev bekleyişi iptal ediyor — bileşen sökülürse geç gelen bitiş
+ * kapanmış bir turu ilerletmesin.
+ */
+export function speakThen(text: string, done: () => void, maxWaitMs = 6000): () => void {
+  let finished = false;
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    clearTimeout(guard);
+    done();
+  };
+  const guard = setTimeout(finish, maxWaitMs);
+  speakGerman(text, finish);
+  return () => {
+    finished = true;
+    clearTimeout(guard);
+  };
+}

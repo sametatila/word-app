@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
-import { speakGerman } from "@/components/speak-button";
+import { speakGerman, speakThen } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
@@ -39,12 +39,17 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // Türkçeden Almancaya yönde Almanca olan taraf cevaptır; seçim yapılınca
     // her zaman DOĞRU karşılık okunuyor, seçilen değil — yanlış cevabı sesli
     // pekiştirmek öğrenmenin tersine çalışırdı.
-    if (!deSide) speakGerman(answer);
-    // Ses eklenen yönde geçiş uzatıldı, yoksa okuma yarıda kesiliyor.
-    const wait = deSide ? (correct ? 620 : 1200) : correct ? 1500 : 2000;
     // Titreşim + geçiş çizgisi: dokunuşun kaydedildiği anında belli olur.
-    fx(correct ? "correct" : "wrong", wait);
-    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), wait);
+    fx(correct ? "correct" : "wrong", deSide ? (correct ? 620 : 1200) : correct ? 1500 : 2200);
+    const finish = () => onDone([{ wordId: word.id, correct, latencyMs }]);
+    if (deSide) {
+      // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok.
+      setTimeout(finish, correct ? 620 : 1200);
+      return;
+    }
+    // Sabit süre yerine okumanın bitişi bekleniyor: ses önbellekte yoksa
+    // sunucudan gelmesi bir saniyeyi bulabiliyor.
+    speakThen(answer, () => setTimeout(finish, correct ? 250 : 900));
   }
 
   return (

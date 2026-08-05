@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
-import { speakGerman, SpeakButton } from "@/components/speak-button";
+import { speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -69,15 +69,15 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     // yerleştirilirken duyulmuştu ama cümlenin ritmi ancak bütün okunduğunda
     // çıkıyor — asıl öğrenilen şey o.
     const full = [...answer, tail].filter(Boolean).join(" ");
-    speakGerman(full);
-    // Bütün cümlenin okunmasına yetecek süre; yanlışta doğrusunu görüp
-    // duyacak zaman da kalsın.
-    const wait = isCorrect ? 3200 : 4200;
-    fx(isCorrect ? "correct" : "wrong", wait);
-    timer.current = setTimeout(
-      () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
-      wait,
-    );
+    fx(isCorrect ? "correct" : "wrong", isCorrect ? 3200 : 4200);
+    // Cümle uzun olduğu için okuma süresi kelimeden çok daha değişken;
+    // sabit bekleme burada özellikle kırılgandı. Bitiş bekleniyor.
+    speakThen(full, () => {
+      timer.current = setTimeout(
+        () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
+        isCorrect ? 300 : 1400,
+      );
+    }, 9000);
   }, [placed, status, answer, tail, word.id, hintUsed]);
 
   const usedIds = new Set(placed.map((t) => t.id));

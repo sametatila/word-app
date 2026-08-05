@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import { shuffle, normalize, withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
-import { speakGerman } from "@/components/speak-button";
+import { speakThen } from "@/components/speak-button";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -72,15 +72,13 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     // Harfler tamamlanınca kelime okunuyor: bulmaca yazımı çalıştırıyor ama
     // yazımı bilip nasıl okunduğunu bilmemek sık rastlanan bir boşluk.
     // Her zaman doğru biçim okunuyor, dizilen değil.
-    speakGerman(withArtikel(word));
-    // Sesin bitmesine yetecek süre; yanlışta doğrusunu okuyup görecek zaman da
-    // kalsın.
-    const wait = isCorrect ? 1800 : 2600;
-    fx(isCorrect ? "correct" : "wrong", wait);
-    timeoutRef.current = setTimeout(
-      () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
-      wait,
-    );
+    fx(isCorrect ? "correct" : "wrong", isCorrect ? 1800 : 2600);
+    speakThen(withArtikel(word), () => {
+      timeoutRef.current = setTimeout(
+        () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
+        isCorrect ? 250 : 1100,
+      );
+    });
   }, [placed, status, targetLetters.length, compareTarget, word, hintUsed]);
 
   const usedIds = new Set(placed.map((t) => t.id));

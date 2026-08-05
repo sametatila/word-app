@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
-import { speakGerman } from "@/components/speak-button";
+import { speakThen } from "@/components/speak-button";
 
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
@@ -31,14 +31,22 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     // kelimenin cümledeki hâli ve onu duymadan seçim sessiz bir tıklama
     // olarak kalıyordu. Yanlış seçimde de okunuyor — öğrenci neyi seçtiğini
     // duyup doğrusuyla karşılaştırabilmeli.
-    speakGerman(opt);
     const isCorrect = opt === answer;
     const latencyMs = Date.now() - started.current;
     // Cümle oyunlarında geçiş acele etmez: öğrenci tamamlanan cümleyi ve
     // çevirisini okuyup sindirebilmeli.
-    const wait = isCorrect ? 1800 : 2800;
-    fx(isCorrect ? "correct" : "wrong", wait);
-    setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), wait);
+    fx(isCorrect ? "correct" : "wrong", isCorrect ? 1800 : 2800);
+    // Önce seçilen kelime okunuyor: öğrenci neyi seçtiğini duyuyor. Yanlışsa
+    // ardından doğrusu da okunuyor, böylece ikisi arka arkaya karşılaştırılıyor.
+    // Geçiş sabit süreyle değil okuma bitince yapılıyor — ses önbellekte yoksa
+    // sunucudan gelmesi bir saniyeyi bulabiliyor ve sabit bekleme turu okuma
+    // başlamadan kapatıyordu.
+    const finish = () =>
+      setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), 900);
+    speakThen(opt, () => {
+      if (isCorrect) finish();
+      else setTimeout(() => speakThen(answer, finish), 400);
+    });
   }
 
   return (
