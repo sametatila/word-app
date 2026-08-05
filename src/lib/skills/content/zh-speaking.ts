@@ -257,4 +257,66 @@ export const zhSpeaking: SpeakingDrillExercise[] = [
       },
     ],
   },
+
+  // ─────────── B1 · cümle ritmi ve sık kalıplar ───────────
+  //
+  // A1 ve A2 tek tek sesleri çalıştırıyor; lehçeyi asıl lehçe yapan şey ise
+  // cümlenin akışı. Züritüütsch'te kelimeler birbirine bağlanıyor ve sık
+  // kalıplar neredeyse tek kelime gibi söyleniyor („gäll?“, „oder?“,
+  // „chum emal“). Tek tek doğru ses çıkarıp cümleyi Hochdeutsch ritminde
+  // söylemek hâlâ yabancı duyuluyor.
+  //
+  // Bu seviyede model sesi (Leni) daha da önemli: hedef tek tek kelimeler
+  // değil, onun cümleyi nereye bağladığı.
+  {
+    id: "zh-b1-s1",
+    level: "B1",
+    skill: "speaking",
+    course: "gsw-zh",
+    judge: "self",
+    title: "Satzrhythmus",
+    genre: "Ses çalışması",
+    intro:
+      "Doğru sesleri çıkarmak yetmiyor: lehçeyi lehçe yapan cümlenin akışı. Kelimeler birbirine bağlanır, sık kalıplar tek kelime gibi söylenir. Leni'yi dinle ve nereye bağladığına dikkat et.",
+    gloss: [
+      { de: "gäll?", tr: "değil mi? (nicht wahr?)" },
+      { de: "chum emal", tr: "gel hele (komm mal)" },
+      { de: "es git", tr: "var (es gibt)" },
+      { de: "i weiss nöd", tr: "bilmiyorum (ich weiß nicht)" },
+      { de: "das gaht scho", tr: "olur, tamam (das geht schon)" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        de: "Das isch schön, gäll?",
+        tr: "Güzel, değil mi?",
+        hint:
+          "„gäll“ cümlenin sonuna yapışır ve tonu yukarı çıkar. Ayrı bir kelime gibi değil, cümlenin kuyruğu gibi söylenir.",
+      },
+      {
+        de: "Chum emal do ane!",
+        tr: "Gel hele buraya!",
+        hint:
+          "Üç kelime tek akışta: CHUM-e-mal-DO-ane. „emal“ kendi başına vurgusuz, „chum“ ve „do“ taşıyor.",
+      },
+      {
+        de: "I weiss nöd, öb er chunt.",
+        tr: "Gelip gelmeyeceğini bilmiyorum.",
+        hint:
+          "„I weiss nöd“ neredeyse tek kelime: İ-VAYS-nöd. Virgülden sonra kısa bir duraklama var.",
+      },
+      {
+        de: "Es git no vill z tue.",
+        tr: "Yapılacak çok şey var.",
+        hint:
+          "„z tue“ = „zu tun“; „z“ kendi başına bir hece değil, sonraki kelimeye yapışır: ts-TUE.",
+      },
+      {
+        de: "Das gaht scho, mach dir kei Sorge.",
+        tr: "Olur, merak etme.",
+        hint:
+          "İki parçalı: teselli eden ilk kısım düşen tonda, ikinci kısım yumuşak. Lehçenin en sık günlük kalıplarından.",
+      },
+    ],
+  },
 ];

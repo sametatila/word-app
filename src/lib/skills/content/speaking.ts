@@ -723,4 +723,72 @@ export const speaking: SpeakingDrillExercise[] = [
       },
     ],
   },
+
+  // ─────────── C1 · Türkçeye de girmiş kelimeler ───────────
+  //
+  // Bu egzersiz Türkçe konuşana özel bir tuzağı çalıştırıyor ve havuzdaki
+  // diğerlerinden farklı bir mekanizması var: sorun kelimeyi bilmemek değil,
+  // **fazla iyi bilmek**. Universität, Restaurant, Ingenieur, Journalist —
+  // hepsi Türkçede de var (üniversite, restoran, mühendis, jurnalist) çünkü
+  // ikisi de Fransızcadan almış. Öğrenci kelimeyi tanıyor ve Türkçe
+  // alışkanlığıyla okuyor.
+  //
+  // İki fark birden var: sesler (j = Fransızca j, ch = ş) ve vurgu. Almancada
+  // yerli kelimelerde vurgu ilk hecededir ama bu alıntılarda SON hecededir —
+  // yani öğrencinin öğrendiği kural burada tersine dönüyor.
+  {
+    id: "c1-s1",
+    level: "C1",
+    skill: "speaking",
+    title: "Fremdwörter",
+    genre: "Ses çalışması",
+    intro:
+      "Bu kelimeler Türkçede de var, çünkü iki dil de Fransızcadan almış. Tuzak da orada: tanıdık geldikleri için Türkçe alışkanlığıyla okunuyorlar. Vurguları da yerli Almanca kelimelerin tersine son hecede.",
+    gloss: [
+      { de: "die Universität", tr: "üniversite" },
+      { de: "das Restaurant", tr: "restoran" },
+      { de: "der Ingenieur", tr: "mühendis" },
+      { de: "der Journalist", tr: "gazeteci" },
+      { de: "die Garage", tr: "garaj" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        de: "Ich studiere an der Universität.",
+        tr: "Üniversitede okuyorum.",
+        hint:
+          "Vurgu SON hecede: uni-ver-zi-TÄT. Türkçedeki „üniversite“ gibi ortaya vurma, ve „v“ burada v okunur (alıntı olduğu için f değil).",
+      },
+      {
+        de: "Wir essen heute im Restaurant.",
+        tr: "Bugün restoranda yiyoruz.",
+        hint:
+          "Res-to-RANG. Sondaki „nt“ Fransızcadaki gibi genizden ve neredeyse yutulur; Türkçedeki „restoran“dan farkı bu.",
+      },
+      {
+        de: "Mein Bruder ist Ingenieur.",
+        tr: "Kardeşim mühendis.",
+        hint:
+          "In-je-NİÖR. Baştaki „In“ genizden, „g“ Fransız j'si gibi. Türkçedeki „mühendis“ hiç yardımcı olmuyor, kelime tamamen başka.",
+      },
+      {
+        de: "Sie arbeitet als Journalistin.",
+        tr: "O gazeteci olarak çalışıyor.",
+        hint:
+          "Jur-na-LİS-tin. Baştaki „J“ burada Almanca y sesi değil, Fransız j'si — Türkçedeki „jurnal“ ile aynı ses.",
+      },
+      {
+        de: "Das Auto steht in der Garage.",
+        tr: "Araba garajda.",
+        hint:
+          "Ga-RAA-je. Sondaki „ge“ yine Fransız j'si; Türkçedeki „garaj“a yakın ama sonu açık kalır.",
+      },
+      {
+        de: "Der Chef hat den Termin verschoben.",
+        tr: "Patron randevuyu erteledi.",
+        hint:
+          "ŞEF — Almancada „Ch“ burada ş okunur, „ch“ sesi değil. „Termin“de vurgu ise son hecede: ter-MİİN.",
+      },
+    ],
+  },
 ];
