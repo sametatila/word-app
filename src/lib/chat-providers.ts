@@ -9,22 +9,28 @@ import "server-only";
  * `baseUrl` + anahtar değişimiyle aralarında dönülebiliyor. Limiti dolan
  * sağlayıcı atlanır, 429/5xx'te sıradakine düşülür.
  *
- * Sıra **sohbete göre** kuruluyor, toplu işe göre değil — asıl fark burada:
+ * Sıra **dakikadaki istek hakkına** göre kuruluyor, günlük token hakkına
+ * göre değil. Ölçüm bunu tersine çevirdi: sohbette darboğaz token değil,
+ * eşzamanlı istek. Cerebras günde 1M token veriyor ama dakikada yalnızca
+ * 5 istek — iki kişi aynı anda yazışırsa hemen 429 geliyor. Bu yüzden en
+ * cömert görünen sağlayıcı birincil değil.
  *
- *   cerebras — 1M token/gün, ücretsizler arasında en hızlısı. Sohbette
- *              gecikme her şeyden önemli olduğu için birincil bu.
- *   groq     — ~500K token/gün, yine çok hızlı. İlk yedek.
- *   mistral  — ayda 1 milyar token, ücretsiz katmanın en cömerti; ama
- *              ~2 RPM. Sohbette tek başına kullanılamaz (bir tur atıp yarım
- *              dakika beklemek gerekirdi), diğerleri tükendiğinde taşma
- *              yedeği olarak anlamlı.
+ * Limitler ve gecikmeler `npm run test:chat` ile ölçüldü (yanıt başlıkları
+ * + 8 turluk A2 senaryosu, bkz. scripts/chat-eval.ts).
  *
  * Anahtarı olmayan sağlayıcı listeye hiç girmez; birini kullanmak için tek
- * yapılacak şey anahtarını tanımlamak.
+ * yapılacak şey anahtarını tanımlamak. Zincir uzadıkça toplam dakikalık
+ * kapasite toplanır — 20 kullanıcı hedefi tek sağlayıcıyla tutmuyor.
  */
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
-export type ProviderName = "cerebras" | "groq" | "mistral";
+export type ProviderName =
+  | "mistral"
+  | "nvidia"
+  | "groq"
+  | "cerebras"
+  | "gemini"
+  | "openrouter";
 
 type ProviderConfig = {
   baseUrl: string;
@@ -35,32 +41,64 @@ type ProviderConfig = {
   freeTier: string;
 };
 
-/** Hızlı ücretsizler önce, cömert ama yavaş olan taşma yedeği olarak sonda. */
 const CATALOG: Record<ProviderName, ProviderConfig> = {
-  cerebras: {
-    baseUrl: "https://api.cerebras.ai/v1",
-    envKey: "CEREBRAS_API_KEY",
-    envModel: "CEREBRAS_MODEL",
-    defaultModel: "gpt-oss-120b",
-    freeTier: "1M token/gün",
-  },
-  groq: {
-    baseUrl: "https://api.groq.com/openai/v1",
-    envKey: "GROQ_API_KEY",
-    envModel: "GROQ_MODEL",
-    defaultModel: "llama-3.3-70b-versatile",
-    freeTier: "~500K token/gün",
-  },
   mistral: {
+    // Ölçüm: 50 istek/dk, 25K token/dk, ayda 1 milyar token. Dakikalık hak
+    // bakımından en genişi, o yüzden birincil. 3/3 hatayı yakaladı.
     baseUrl: "https://api.mistral.ai/v1",
     envKey: "MISTRAL_API_KEY",
     envModel: "MISTRAL_MODEL",
     defaultModel: "mistral-medium-latest",
-    freeTier: "1B token/ay (~2 RPM)",
+    freeTier: "50 istek/dk · 1B token/ay",
+  },
+  nvidia: {
+    // NVIDIA'nın kendi NIM ucu: 40 istek/dk, kredi kartı istemiyor.
+    baseUrl: "https://integrate.api.nvidia.com/v1",
+    envKey: "NVIDIA_API_KEY",
+    envModel: "NVIDIA_MODEL",
+    defaultModel: "meta/llama-3.3-70b-instruct",
+    freeTier: "40 istek/dk",
+  },
+  groq: {
+    // Ölçüm: en hızlısı (~191ms ilk parça) ama 12K token/dk — bir sohbet turu
+    // ~1.7K token olduğu için pratikte ~7 istek/dk'ya denk geliyor.
+    baseUrl: "https://api.groq.com/openai/v1",
+    envKey: "GROQ_API_KEY",
+    envModel: "GROQ_MODEL",
+    defaultModel: "llama-3.3-70b-versatile",
+    freeTier: "12K token/dk · 1000 istek/gün",
+  },
+  cerebras: {
+    // Ölçüm: kalite ve hız iyi, ama dakikada 5 istek. Günlük 1M token bu
+    // tavanın arkasında erişilemez kalıyor; zincirde ancak taze dakika
+    // yakalayan bir yedek olarak anlamlı.
+    baseUrl: "https://api.cerebras.ai/v1",
+    envKey: "CEREBRAS_API_KEY",
+    envModel: "CEREBRAS_MODEL",
+    defaultModel: "gpt-oss-120b",
+    freeTier: "5 istek/dk · 1M token/gün",
+  },
+  gemini: {
+    // Google'ın OpenAI uyumlu ucu — katalogda özel dal gerekmiyor.
+    baseUrl: "https://generativelanguage.googleapis.com/v1beta/openai",
+    envKey: "GEMINI_API_KEY",
+    envModel: "GEMINI_MODEL",
+    defaultModel: "gemini-2.0-flash",
+    freeTier: "istek/gün tabanlı (token değil)",
+  },
+  openrouter: {
+    // Toplayıcı. Ücretsiz katmanı günde 50 istekle sınırlı olduğu için zincirin
+    // en sonunda: ancak diğer dördü aynı anda tükendiğinde işe yarar.
+    baseUrl: "https://openrouter.ai/api/v1",
+    envKey: "OPENROUTER_API_KEY",
+    envModel: "OPENROUTER_MODEL",
+    defaultModel: "google/gemma-4-31b-it:free",
+    freeTier: "50 istek/gün",
   },
 };
 
-const ORDER: ProviderName[] = ["cerebras", "groq", "mistral"];
+/** Dakikalık hakkı geniş olanlar önce, günlük kotayla sınırlı olan en sonda. */
+const ORDER: ProviderName[] = ["mistral", "nvidia", "groq", "cerebras", "gemini", "openrouter"];
 
 export type Provider = {
   name: ProviderName;
