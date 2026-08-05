@@ -49,7 +49,7 @@ export async function POST(req: Request) {
       if (!target || !heard.length) {
         return NextResponse.json({ error: "bad_request" }, { status: 400 });
       }
-      const hint = await coachSpeech(target, heard, list(b.missing));
+      const hint = await coachSpeech(target, heard, list(b.missing), text(b.hint));
       return NextResponse.json({ text: hint.text });
     }
 

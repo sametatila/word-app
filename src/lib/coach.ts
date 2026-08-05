@@ -37,6 +37,8 @@ export async function coachSpeech(
   target: string,
   heard: string[],
   missing: string[],
+  /** Görevin kendi telaffuz ipucu — egzersizin hangi sesi çalıştırdığını söyler. */
+  hint = "",
 ): Promise<CoachHint> {
   const candidates = heard.filter(Boolean).slice(0, 3);
   if (!candidates.length) return { text: "" };
@@ -48,6 +50,9 @@ export async function coachSpeech(
         `Hedef cümle: ${target}`,
         `Tanıyıcının duydukları: ${candidates.map((c) => `"${c}"`).join(", ")}`,
         missing.length ? `Tanınmayan kelimeler: ${missing.join(", ")}` : "",
+        // Egzersizin odağı verilirse teşhis oraya yönelir; verilmezse model
+        // kural listesinden kendi arar.
+        hint ? `Bu görevin çalıştırdığı ses: ${hint}` : "",
         "Farkı tek cümlede Türkçe açıkla.",
       ]
         .filter(Boolean)

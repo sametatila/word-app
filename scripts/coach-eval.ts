@@ -67,6 +67,41 @@ Farkı tek cümlede Türkçe açıkla.`,
     expect: ["über", "ü"],
   },
   {
+    // Bu üçü kural motorunun YAKALAYAMADIĞI durumlar: hata gerçek bir kelimeye
+    // denk düşmüyor, dolayısıyla sapma listesinde karşılığı yok. Koçun kural
+    // listesiyle akıl yürütmesi gereken yer tam olarak burası.
+    label: "kural · sp/st şp/şt okunmamış",
+    system: SPEECH_SYSTEM,
+    user: `Hedef cümle: Ich spreche ein bisschen Deutsch.
+Tanıyıcının duydukları: "ich sprehe ein bisschen deutsch", "ich sprache ein bisschen deutsch"
+Tanınmayan kelimeler: spreche
+Bu görevin çalıştırdığı ses: Kelime başındaki „sp“ = şp
+Farkı tek cümlede Türkçe açıkla.`,
+    expect: ["şp", "sp"],
+  },
+  {
+    label: "kural · vurgu sona kaymış",
+    system: SPEECH_SYSTEM,
+    user: `Hedef cümle: Mein Vater ist Lehrer.
+Tanıyıcının duydukları: "mein fater ist lehrer", "mein water ist lehrer"
+Tanınmayan kelimeler: Vater
+Farkı tek cümlede Türkçe açıkla.`,
+    expect: ["v", "f"],
+  },
+  {
+    // En önemli sınav: model varsayılan olarak ö/ü'yü suçlamamalı. Türkçede
+    // bu sesler var; öğrenciye bilmediği bir hatayı söylemek güven kırıyor.
+    label: "kural · ö/ü suçlanmamalı, uzunluk suçlanmalı",
+    system: SPEECH_SYSTEM,
+    user: `Hedef cümle: Ich fühle mich gut.
+Tanıyıcının duydukları: "ich fülle mich gut", "ich fuelle mich gut"
+Tanınmayan kelimeler: fühle
+Bu görevin çalıştırdığı ses: uzun ü
+Farkı tek cümlede Türkçe açıkla.`,
+    expect: ["uzun", "uzat", "h"],
+    reject: ["yuvarla", "dudak"],
+  },
+  {
     label: "diyalog · geçerli ama senaryoda yazılmamış cevap",
     system: DIALOGUE_SYSTEM,
     user: `Uygulamanın sorusu (Almanca): Was möchten Sie trinken?

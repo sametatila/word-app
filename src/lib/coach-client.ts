@@ -12,6 +12,8 @@ type SpeakingAsk = {
   target: string;
   heard: string[];
   missing: string[];
+  /** Görevin telaffuz ipucu — koç teşhisi buna göre daraltıyor. */
+  hint?: string;
 };
 
 type DialogueAsk = {

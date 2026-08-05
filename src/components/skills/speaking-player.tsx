@@ -122,6 +122,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
         target: task.de,
         heard: heard.slice(0, 3),
         missing: outcome.missing,
+        hint: task.hint ?? "",
       }).then((text) => {
         // Bu arada yeniden denenmiş ya da göreve geçilmiş olabilir; geç gelen
         // cevap yeni ekranın üstüne düşmesin.
