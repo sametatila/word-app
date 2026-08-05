@@ -26,12 +26,14 @@ export const deB1: Lesson[] = [
     ],
     checks: [
       {
+        kind: "fill",
         prompt: "„Ich komme nicht, weil ich krank ___.“",
         options: ["bin", "ist", "sein"],
         answer: "bin",
         why: "Yan cümlede fiil sona gider ve özne „ich“ olduğu için „bin“.",
       },
       {
+        kind: "pick",
         prompt: "Hangisi doğru?",
         options: [
           "Ich denke, dass er kommt morgen.",
@@ -42,10 +44,22 @@ export const deB1: Lesson[] = [
         why: "„dass“ yan cümle açar; fiil („kommt“) en sona gider.",
       },
       {
+        kind: "fill",
         prompt: "„Wenn es regnet, ___ ich zu Hause.“",
         options: ["ich bleibe", "bleibe", "bleiben"],
         answer: "bleibe",
         why: "Yan cümle başta olduğu için birinci öğe sayılır; ana cümlenin fiili hemen arkasından gelir.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Ich bleibe hier, weil es regnet.",
+          "Ich glaube, dass sie kommt morgen.",
+          "Wenn du willst, gehen wir.",
+        ],
+        answer: "Ich glaube, dass sie kommt morgen.",
+        why: "„dass“ yan cümle açar; fiil sona gitmeli: „dass sie morgen kommt“.",
       },
     ],
     roleplay: {
@@ -74,18 +88,21 @@ export const deB1: Lesson[] = [
     ],
     checks: [
       {
+        kind: "fill",
         prompt: "„Das ist die Frau, ___ Deutsch unterrichtet.“",
         options: ["der", "die", "das"],
         answer: "die",
         why: "„Frau“ dişil olduğu için bağlayıcı „die“.",
       },
       {
+        kind: "fill",
         prompt: "„Ich kenne den Mann, ___ dort steht.“",
         options: ["der", "den", "dem"],
         answer: "der",
         why: "İlgi cümlesinde bağlayıcı, o cümledeki görevine göre çekilir; burada özne olduğu için „der“.",
       },
       {
+        kind: "pick",
         prompt: "Hangisi doğru?",
         options: [
           "Das Auto, das ist rot, gehört mir.",
@@ -94,6 +111,17 @@ export const deB1: Lesson[] = [
         ],
         answer: "Das Auto, das rot ist, gehört mir.",
         why: "İlgi cümlesi yan cümledir; fiil („ist“) sona gider.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Das ist der Mann, der dort wohnt.",
+          "Ich habe ein Buch, das ich mag.",
+          "Das ist die Frau, der hier arbeitet.",
+        ],
+        answer: "Das ist die Frau, der hier arbeitet.",
+        why: "„Frau“ dişil; bağlayıcı „die“ olmalı.",
       },
     ],
     roleplay: {

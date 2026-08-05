@@ -25,8 +25,24 @@ import type { CefrLevel } from "../skills/types";
  * konuşmayı bitirmiyor.
  */
 
-/** Dersin sınadığı hızlı soru. */
+/**
+ * Dersin sınadığı hızlı soru.
+ *
+ * `kind` sorunun ne tür bir bilgi ölçtüğünü söylüyor ve arayüz buna göre
+ * biçim değiştiriyor. Tek tip soru sormak öğrenciyi kalıba alıştırıyor:
+ * üçüncü soruda artık kuralı değil şık desenini okuyor. Üç ayrı tür bunun
+ * önüne geçiyor ve her biri farklı bir şeyi ölçüyor.
+ */
+export type LessonCheckKind =
+  /** Boşluk doldurma — kuralı üretebiliyor mu. */
+  | "fill"
+  /** Doğru cümleyi seçme — kuralı tanıyabiliyor mu. */
+  | "pick"
+  /** Hatalı cümleyi bulma — kuralın ihlalini görebiliyor mu. */
+  | "spot";
+
 export type LessonCheck = {
+  kind: LessonCheckKind;
   /** Soru metni — Türkçe yönlendirme ya da boşluklu Almanca cümle. */
   prompt: string;
   /** Şıklar; biri doğru. */

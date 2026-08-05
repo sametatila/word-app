@@ -28,22 +28,36 @@ export const zhLessons: Lesson[] = [
     ],
     checks: [
       {
+        kind: "pick",
         prompt: "Hochdeutsch „Das ist gut“ lehçede nasıl?",
         options: ["Das ist guet.", "Das isch guet.", "Das hät guet."],
         answer: "Das isch guet.",
         why: "„ist“ lehçede „isch“ olur; „st“ her yerde şt okunur.",
       },
         {
+        kind: "pick",
         prompt: "„Er hat Zeit“ lehçede?",
         options: ["Er hät Ziit.", "Er hat Ziit.", "Er isch Ziit."],
         answer: "Er hät Ziit.",
         why: "„hat“ → „hät“ ve „Zeit“ → „Ziit“ (ikili ünlü tek sese iner).",
       },
       {
+        kind: "pick",
         prompt: "„Wann kommt sie?“ lehçede?",
         options: ["Wänn chunt si?", "Wänn kommt si?", "Wänn gaht si?"],
         answer: "Wänn chunt si?",
         why: "„kommt“ → „chunt“; baştaki Ch lehçenin imza sesi.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangisi Züritüütsch DEĞİL?",
+        options: [
+          "Das isch guet.",
+          "Er hät Ziit.",
+          "Er hat Zeit.",
+        ],
+        answer: "Er hat Zeit.",
+        why: "Bu Hochdeutsch; lehçede „Er hät Ziit.“ olur.",
       },
     ],
     roleplay: {
@@ -72,22 +86,36 @@ export const zhLessons: Lesson[] = [
     ],
     checks: [
       {
+        kind: "pick",
         prompt: "Hochdeutsch „Ich war müde“ lehçede?",
         options: ["Ich war müed.", "Ich bi müed gsi.", "Ich ha müed gsi."],
         answer: "Ich bi müed gsi.",
         why: "Präteritum yok; „war“ yerine „bi … gsi“ (bin … gewesen) kurulur.",
       },
       {
+        kind: "pick",
         prompt: "„Wir hatten Glück“ lehçede?",
         options: ["Mir hend Glück gha.", "Mir hatten Glück.", "Mir sind Glück gsi."],
         answer: "Mir hend Glück gha.",
         why: "„hatten“ → „hend … gha“; yardımcı fiil „haben“, Partizip „gha“.",
       },
       {
+        kind: "pick",
         prompt: "„gesehen“ lehçede nasıl kısalır?",
         options: ["gseh", "gsehen", "seh"],
         answer: "gseh",
         why: "„ge-“ öneki tek g'ye iner ve sonundaki -en düşer.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangisi lehçede kullanılmaz?",
+        options: [
+          "Ich bi dihei gsi.",
+          "Ich war dihei.",
+          "Mir hend gschaffet.",
+        ],
+        answer: "Ich war dihei.",
+        why: "Lehçede Präteritum yok; „Ich bi dihei gsi.“ denir.",
       },
     ],
     roleplay: {

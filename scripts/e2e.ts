@@ -680,6 +680,18 @@ async function main() {
     check("her cevabın gerekçesi var",
       LESSONS.every((l) => l.checks.every((c) => c.why.trim().length > 10)));
 
+    // Soru türü çeşitliliği: tek tip soru sormak öğrenciyi kalıba alıştırıyor,
+    // üçüncü soruda artık kuralı değil şık desenini okuyor. Her ders en az iki
+    // farklı tür sormalı ve „hatayı bul“ her derste bulunmalı — kuralın
+    // ihlalini görmek, kuralı tanımaktan farklı ve daha zor bir iş.
+    check("her derste en az iki soru türü var",
+      LESSONS.every((l) => new Set(l.checks.map((c) => c.kind)).size >= 2));
+    check("her derste hata bulma sorusu var",
+      LESSONS.every((l) => l.checks.some((c) => c.kind === "spot")),
+      `(${LESSONS.filter((l) => !l.checks.some((c) => c.kind === "spot")).map((l) => l.id).join(", ")})`);
+    check("her derste en az dört alıştırma var",
+      LESSONS.every((l) => l.checks.length >= 4));
+
     // Rol yapma dersin asıl parçası: sahne, rol ve açılış repliği olmadan
     // öğrenci boş ekranla karşılaşır — serbest sohbetin en pahalı sorunu buydu.
     check("her derste sahne var", LESSONS.every((l) => l.roleplay.scene.trim().length > 20));

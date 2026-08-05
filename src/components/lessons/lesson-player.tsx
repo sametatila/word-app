@@ -315,9 +315,20 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
             exit={{ opacity: 0 }}
             className="card p-5"
           >
-            <p className="muted text-xs font-semibold">
-              {checkIndex + 1} / {lesson.checks.length}
-            </p>
+            <div className="flex items-center justify-between">
+              <p className="muted text-xs font-semibold">
+                {checkIndex + 1} / {lesson.checks.length}
+              </p>
+              {/* Sorunun ne ölçtüğünü söylemek öğrenciye ne yapacağını da
+                  söylüyor: doldurmak, tanımak, hatayı bulmak ayrı işler. */}
+              <span className="chip px-2 py-0.5 text-[11px] font-semibold">
+                {check.kind === "fill"
+                  ? "Boşluğu doldur"
+                  : check.kind === "spot"
+                    ? "Hatayı bul"
+                    : "Doğruyu seç"}
+              </span>
+            </div>
             <p className="mt-2 text-base font-semibold">{check.prompt}</p>
 
             <div className="mt-4 grid gap-2">

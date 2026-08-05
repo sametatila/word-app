@@ -26,22 +26,36 @@ export const deA1: Lesson[] = [
     ],
     checks: [
       {
+        kind: "pick",
         prompt: "Hangisi doğru?",
         options: ["Morgen ich komme.", "Morgen komme ich.", "Morgen ich komme nicht."],
         answer: "Morgen komme ich.",
         why: "„Morgen“ birinci öğe; fiil („komme“) ikinci sıraya, özne („ich“) arkasına geçer.",
       },
       {
+        kind: "fill",
         prompt: "„Heute ___ ich müde.“ boşluğa ne gelir?",
         options: ["bin", "ist", "sein"],
         answer: "bin",
         why: "Fiil ikinci sırada ve özne „ich“ olduğu için çekim „bin“dir.",
       },
       {
+        kind: "pick",
         prompt: "Cümlenin başına „In Istanbul“ eklenirse „Ich wohne“ nasıl olur?",
         options: ["In Istanbul ich wohne.", "In Istanbul wohne ich.", "Wohne in Istanbul ich."],
         answer: "In Istanbul wohne ich.",
         why: "Başa gelen öğe birinci sayılır; fiil ikinci sırayı korur.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Am Abend lese ich ein Buch.",
+          "Heute ich gehe zur Arbeit.",
+          "Morgen kommt mein Bruder.",
+        ],
+        answer: "Heute ich gehe zur Arbeit.",
+        why: "Başta „Heute“ varken fiil ikinci sırada olmalı: „Heute gehe ich zur Arbeit.“",
       },
     ],
     roleplay: {
@@ -71,22 +85,36 @@ export const deA1: Lesson[] = [
     ],
     checks: [
       {
+        kind: "fill",
         prompt: "„Ich habe ___ Hund.“ (der Hund)",
         options: ["ein", "einen", "eine"],
         answer: "einen",
         why: "„Hund“ eril ve burada nesne; „ein“ belirtme hâlinde „einen“ olur.",
       },
       {
+        kind: "fill",
         prompt: "„Ich trinke ___ Milch.“ (die Milch)",
         options: ["die", "den", "das"],
         answer: "die",
         why: "Dişil kelimeler belirtme hâlinde değişmez.",
       },
       {
+        kind: "pick",
         prompt: "Hangisi doğru?",
         options: ["Ich sehe der Mann.", "Ich sehe den Mann.", "Ich sehe dem Mann."],
         answer: "Ich sehe den Mann.",
         why: "Eril nesne „den“ alır; „dem“ yönelme hâlidir (Dativ), burada değil.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Ich sehe einen Film.",
+          "Ich kaufe ein Auto.",
+          "Ich habe ein Hund.",
+        ],
+        answer: "Ich habe ein Hund.",
+        why: "„Hund“ eril ve nesne; „ein“ değil „einen“ olmalı.",
       },
     ],
     roleplay: {
@@ -115,22 +143,36 @@ export const deA1: Lesson[] = [
     ],
     checks: [
       {
+        kind: "fill",
         prompt: "„aufstehen“ ile: „Ich ___ um acht ___.“",
         options: ["stehe … auf", "aufstehe … —", "auf … stehe"],
         answer: "stehe … auf",
         why: "Fiil ikinci sırada, önek cümlenin sonunda.",
       },
       {
+        kind: "pick",
         prompt: "Hangisi doğru?",
         options: ["Wir einkaufen heute.", "Wir kaufen heute ein.", "Wir kaufen ein heute."],
         answer: "Wir kaufen heute ein.",
         why: "Önek en sona gider; zaman ifadesi fiil ile önek arasında kalır.",
       },
       {
+        kind: "fill",
         prompt: "„anrufen“ ile soru: „___ du mich ___?“",
         options: ["Rufst … an", "Anrufst … —", "Ruf … an du"],
         answer: "Rufst … an",
         why: "Soruda fiil başa geçer ama önek yine sonda kalır.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Ich rufe dich später an.",
+          "Wir kaufen morgen ein.",
+          "Ich aufstehe um sieben.",
+        ],
+        answer: "Ich aufstehe um sieben.",
+        why: "Önek fiile yapışık kalmış; doğrusu „Ich stehe um sieben auf.“",
       },
     ],
     roleplay: {

@@ -26,18 +26,21 @@ export const deA2: Lesson[] = [
     ],
     checks: [
       {
+        kind: "fill",
         prompt: "„Ich ___ einen Film ___.“ (sehen)",
         options: ["habe … gesehen", "bin … gesehen", "habe … sehen"],
         answer: "habe … gesehen",
         why: "„sehen“ hareket bildirmez, „haben“ alır; Partizip biçimi „gesehen“ ve sona gider.",
       },
       {
+        kind: "fill",
         prompt: "„Wir ___ ins Kino ___.“ (gehen)",
         options: ["haben … gegangen", "sind … gegangen", "sind … gehen"],
         answer: "sind … gegangen",
         why: "„gehen“ yer değişikliği bildirir, yardımcı fiili „sein“dir.",
       },
       {
+        kind: "pick",
         prompt: "Hangisi doğru?",
         options: [
           "Ich habe gestern gearbeitet.",
@@ -46,6 +49,17 @@ export const deA2: Lesson[] = [
         ],
         answer: "Ich habe gestern gearbeitet.",
         why: "Yardımcı fiil ikinci, Partizip en sonda; zaman ifadesi ikisinin arasında.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Ich habe viel gelernt.",
+          "Wir sind spät gekommen.",
+          "Ich bin einen Film gesehen.",
+        ],
+        answer: "Ich bin einen Film gesehen.",
+        why: "„sehen“ hareket bildirmez, „haben“ alır: „Ich habe einen Film gesehen.“",
       },
     ],
     roleplay: {
@@ -75,22 +89,36 @@ export const deA2: Lesson[] = [
     ],
     checks: [
       {
+        kind: "fill",
         prompt: "„Ich fahre ___ die Schweiz.“",
         options: ["in", "in der", "in die"],
         answer: "in die",
         why: "Hareket var („fahre“), yani Akkusativ: „in die Schweiz“.",
       },
       {
+        kind: "fill",
         prompt: "„Wir wohnen ___ Berlin.“",
         options: ["in", "in die", "nach"],
         answer: "in",
         why: "Şehir adlarında „wohnen“ ile yalın „in“ kullanılır; hareket yok.",
       },
       {
+        kind: "fill",
         prompt: "„Der Schlüssel liegt ___ Tisch.“",
         options: ["auf den", "auf dem", "auf das"],
         answer: "auf dem",
         why: "„liegen“ durum bildirir, hareket yok → Dativ: „auf dem Tisch“.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümlede hata var?",
+        options: [
+          "Ich gehe in die Küche.",
+          "Das Glas steht auf den Tisch.",
+          "Wir sind im Garten.",
+        ],
+        answer: "Das Glas steht auf den Tisch.",
+        why: "„stehen“ durum bildirir, hareket yok → Dativ: „auf dem Tisch“.",
       },
     ],
     roleplay: {
@@ -119,22 +147,36 @@ export const deA2: Lesson[] = [
     ],
     checks: [
       {
+        kind: "pick",
         prompt: "Bir restoranda en uygunu hangisi?",
         options: ["Ich will ein Bier.", "Ich möchte ein Bier, bitte.", "Gib mir ein Bier."],
         answer: "Ich möchte ein Bier, bitte.",
         why: "„will“ ve emir kipi kaba durur; „möchte“ + „bitte“ nötr ve kibar.",
       },
       {
+        kind: "pick",
         prompt: "Yardım isterken hangisi kibar?",
         options: ["Helfen Sie mir!", "Können Sie mir helfen?", "Könnten Sie mir helfen?"],
         answer: "Könnten Sie mir helfen?",
         why: "„könnten“ „können“in kibar biçimi; ikisi de olur ama „könnten“ daha yumuşak.",
       },
       {
+        kind: "pick",
         prompt: "„Ich ___ gern einen Tisch für zwei.“",
         options: ["habe", "hätte", "will"],
         answer: "hätte",
         why: "„hätte gern“ kalıp hâlinde kibar istek bildirir.",
+      },
+      {
+        kind: "spot",
+        prompt: "Hangi cümle bir restoranda kaba durur?",
+        options: [
+          "Ich hätte gern die Karte.",
+          "Ich will die Karte.",
+          "Könnten Sie mir die Karte bringen?",
+        ],
+        answer: "Ich will die Karte.",
+        why: "„will“ doğrudan istek bildirir ve kaba durur; „möchte“ ya da „hätte gern“ kullanılır.",
       },
     ],
     roleplay: {
