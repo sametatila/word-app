@@ -208,11 +208,20 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
         >
           <AlertIcon size={16} className="mt-0.5 shrink-0" />
           <span>
+            {/* Gerekçe egzersize göre değişiyor ve doğru olmak zorunda: lehçede
+                tanıyıcı yanlış dili tanıyor, Almanca prozodi alıştırmalarında
+                ise farkı hiç duyamıyor. İkisine aynı cümleyi yazmak
+                kullanıcıya yanlış sebep söylemek olurdu. */}
             {!asrJudged
-              ? "Bu alıştırmada otomatik değerlendirme yok: konuşma tanıyıcıları " +
-                "Züritüütsch'ü değil İsviçre standart Almancasını tanıyor, " +
-                "doğru söylediğinde bile yanlış diyebilirdi. Modeli dinle, yüksek " +
-                "sesle tekrarla ve kendin değerlendir."
+              ? exercise.course === "gsw-zh"
+                ? "Bu alıştırmada otomatik değerlendirme yok: konuşma tanıyıcıları " +
+                  "Züritüütsch'ü değil İsviçre standart Almancasını tanıyor, " +
+                  "doğru söylediğinde bile yanlış diyebilirdi. Modeli dinle, yüksek " +
+                  "sesle tekrarla ve kendin değerlendir."
+                : "Bu alıştırmada otomatik değerlendirme yok: buradaki fark (vurgu, " +
+                  "ünlü uzunluğu, sondaki sesin sertliği) yazıya aynı geçtiği için " +
+                  "tanıyıcı ayırt edemiyor — yanlış söylediğinde bile doğru derdi. " +
+                  "Modeli dinle, yavaş tekrarla ve kendin değerlendir."
               : "Bu tarayıcı konuşma tanımayı desteklemiyor (Firefox'ta yok). Alıştırma yine " +
                 "yapılabilir: modeli dinle, yüksek sesle tekrarla ve kendin değerlendir. " +
                 "Chrome, Edge ya da Safari'de otomatik değerlendirme açılır."}
