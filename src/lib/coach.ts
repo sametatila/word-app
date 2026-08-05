@@ -20,8 +20,19 @@ import { SPEECH_SYSTEM, DIALOGUE_SYSTEM } from "@/lib/coach-prompts";
  * gösterir. Yani model bir katman, bağımlılık değil.
  */
 
-/** Tek cümlelik düzeltme istiyoruz; uzun cevap hem yavaş hem konuyu dağıtıyor. */
-const MAX_TOKENS = 120;
+/**
+ * Tek cümlelik düzeltme istiyoruz; uzun cevap hem yavaş hem konuyu dağıtıyor.
+ *
+ * Yine de 120 değil 200: akıl yürütme modellerinde (Cerebras/gpt-oss) düşünme
+ * de bu bütçeden düşüyor ve 120 jetonla cevaba yer kalmadan `finish_reason:
+ * "length"` gelip **boş içerik** dönüyordu. `reasoning_effort: "low"` bunun
+ * çoğunu çözdü ama uzun istemlerde (diyalog koçu) hâlâ dardı.
+ *
+ * Cevabın kendisi zaten 300 karakterde kırpılıyor (bkz. coach-format.ts),
+ * yani fazladan bütçe uzun cevap üretmiyor — sadece kısa cevabın çıkmasına
+ * yer açıyor.
+ */
+const MAX_TOKENS = 200;
 
 /** Modelden gelen metnin kullanıcıya gösterilecek hâli. */
 export type CoachHint = { text: string };

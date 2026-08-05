@@ -2,6 +2,7 @@
  * Koç kalite testi — `npm run test:coach`
  *
  *   MISTRAL_API_KEY=... npm run test:coach
+ *   CHAT_PROVIDER=groq GROQ_API_KEY=... npm run test:coach   (tek sağlayıcıyı sına)
  *
  * Sohbet testinden (chat-eval.ts) ayrı, çünkü ölçtüğü şey farklı: sohbette
  * konuşmanın akışı ve düzeltme dengesi ölçülüyor, burada **tek bir teşhisin
@@ -22,11 +23,21 @@
  * kırpılmayla bozulduğu böyle görüldü.
  */
 
+import { completeChat, chatProviders } from "../src/lib/chat-providers";
 import { tidy } from "../src/lib/coach-format";
 import { SPEECH_SYSTEM, DIALOGUE_SYSTEM } from "../src/lib/coach-prompts";
 
-const MISTRAL_KEY = process.env.MISTRAL_API_KEY;
-const MODEL = process.env.MISTRAL_MODEL || "mistral-medium-latest";
+/**
+ * Sağlayıcı seçimi üretimdekiyle aynı zincirden geliyor.
+ *
+ * Önce Mistral'a sabitlenmişti ve bu bir boşluk bırakıyordu: zincirde Mistral
+ * dolunca Groq ve Cerebras devreye giriyor, yani gerçek kullanıcıların bir
+ * kısmı hiç ölçülmemiş bir modelle konuşuyordu. Kural seti tek modele göre
+ * ayarlanmış olabilirdi.
+ *
+ * Artık `completeChat` kullanılıyor — üretimin çağırdığı işlevin ta kendisi.
+ * `CHAT_PROVIDER` ile tek tek sağlayıcı sınanabiliyor.
+ */
 
 type Case = {
   label: string;
@@ -144,34 +155,23 @@ Tek cümlede Türkçe olarak ne yapması gerektiğini söyle.`,
 const MARKDOWN = /\*\*|__|^[-*•]\s/;
 
 async function ask(system: string, user: string): Promise<string> {
-  const res = await fetch("https://api.mistral.ai/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      authorization: `Bearer ${MISTRAL_KEY}`,
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      max_tokens: 120,
-      temperature: 0.3,
-      messages: [
-        { role: "system", content: system },
-        { role: "user", content: user },
-      ],
-    }),
-  });
-  if (!res.ok) throw new Error(`${res.status}: ${(await res.text()).slice(0, 160)}`);
-  const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
-  return data.choices?.[0]?.message?.content?.trim() ?? "";
+  return completeChat(system, [{ role: "user", content: user }], 120);
 }
 
 async function main() {
-  if (!MISTRAL_KEY) {
-    console.error("MISTRAL_API_KEY tanımlı değil.");
+  const providers = chatProviders();
+  if (!providers.length) {
+    console.error(
+      "Hiç sağlayıcı anahtarı tanımlı değil (MISTRAL_API_KEY, GROQ_API_KEY, CEREBRAS_API_KEY).",
+    );
     process.exit(1);
   }
 
-  console.log(`Koç testi · ${CASES.length} senaryo · ${MODEL}\n`);
+  console.log(
+    `Koç testi · ${CASES.length} senaryo · ${providers[0].name} (${providers[0].model})` +
+      (providers.length > 1 ? ` · yedek: ${providers.slice(1).map((p) => p.name).join(", ")}` : "") +
+      "\n",
+  );
   let failed = 0;
 
   for (const c of CASES) {
@@ -186,7 +186,14 @@ async function main() {
 
     // Ölçülen şey kullanıcının gördüğü metin: ham çıktı değil, tidy'den geçmişi.
     const shown = tidy(raw);
-    const lower = shown.toLocaleLowerCase("tr-TR");
+    // Anahtar araması tırnaklardan arındırılmış metinde yapılıyor: modeller
+    // kelimeleri tırnağa alıyor („f“ sesi) ve düz eşleşme bunu kaçırıyordu —
+    // Groq'un doğru cevabı bu yüzden hatalı sayılmıştı. Aranan içerik, yazım
+    // süsü değil.
+    const lower = shown
+      .toLocaleLowerCase("tr-TR")
+      .replace(/["“”„'`´]/g, "")
+      .replace(/\s+/g, " ");
     const problems: string[] = [];
 
     if (!shown) problems.push("boş cevap");

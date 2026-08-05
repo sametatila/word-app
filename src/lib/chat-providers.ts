@@ -43,6 +43,23 @@ type ProviderConfig = {
   defaultModel: string;
   /** Ücretsiz katman sınırı — kullanıcıya durum anlatırken işe yarıyor. */
   freeTier: string;
+  /**
+   * Akıl yürütme modelleri için düşünme bütçesi.
+   *
+   * Ölçülerek eklendi. gpt-oss-120b varsayılan ayarda cevaptan önce uzun bir
+   * akıl yürütme üretiyor ve bu jeton bütçesinden düşüyor: max_tokens=120 ile
+   * yapılan istek `finish_reason: "length"` ve **boş içerik** dönüyordu, yani
+   * koç Cerebras'tan hiçbir zaman cevap alamıyordu.
+   *
+   *   120 jeton, varsayılan → içerik 0, akıl yürütme 418 karakter
+   *   120 jeton, "low"      → içerik 191 karakter ✓
+   *   400 jeton, varsayılan → çalışıyor ama 873 karakter boşa gidiyor
+   *
+   * "low" hem hatayı kapatıyor hem dakikalık jeton limitini koruyor. Yalnızca
+   * bu alanı tanıyan sağlayıcıya gönderiliyor: bilinmeyen alan diğerlerinde
+   * isteği reddettirebilir.
+   */
+  reasoningEffort?: string;
 };
 
 const CATALOG: Record<ProviderName, ProviderConfig> = {
@@ -73,6 +90,7 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     envModel: "CEREBRAS_MODEL",
     defaultModel: "gpt-oss-120b",
     freeTier: "5 istek/dk · 1M token/gün",
+    reasoningEffort: "low",
   },
   gemini: {
     // Google'ın OpenAI uyumlu ucu — katalogda özel dal gerekmiyor.
@@ -176,6 +194,7 @@ async function post(
         stream,
         max_tokens: maxTokens,
         temperature: TEMPERATURE,
+        ...(cfg.reasoningEffort ? { reasoning_effort: cfg.reasoningEffort } : {}),
         messages: [{ role: "system", content: system }, ...messages],
       }),
     });
