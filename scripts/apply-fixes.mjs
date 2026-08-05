@@ -41,6 +41,7 @@ for (const [key, fix] of Object.entries(fixes)) {
   if (fix.tr !== undefined) row.tr = fix.tr;
   if (fix.artikel !== undefined) row.artikel = fix.artikel;
   if (fix.formen !== undefined) row.formen = fix.formen;
+  if (fix.typ !== undefined) row.typ = fix.typ;
 
   if (before.de !== row.de || before.tr !== row.tr) {
     changed++;

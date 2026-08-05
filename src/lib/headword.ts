@@ -36,14 +36,19 @@ const SEPARABLE =
  * doğru maddeleri eledi — bu yüzden tek yerde duruyor.
  */
 export function sentenceContainsWord(word: string, sentence: string): boolean {
-  const w = String(word ?? "")
-    .toLowerCase()
+  // Yalnızca kapsama tespitinde umlaut düz sesliye indirilir: Almanca çekim
+  // gövde ünlüsünü değiştirir (fahren → fährt, Arzt → Ärztin) ve düz arama
+  // bunları kaçırır. Cevap değerlendirmesinde bu yapılmaz — orada "schon" ile
+  // "schön" ayrımı korunmalıdır (bkz. foldSpelling).
+  const flat = (t: string) =>
+    t.toLowerCase().replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "ss");
+  const w = flat(String(word ?? ""))
     .replace(/^(der|die|das)\s+/, "")
     .replace(/^sich\s+/, "")
     .trim()
     .split(" ")[0];
   if (w.length < 3) return true;
-  const hay = String(sentence ?? "").toLowerCase();
+  const hay = flat(String(sentence ?? ""));
   const roots = [w, w.replace(SEPARABLE, "")].filter((r) => r.length >= 3);
   return roots.some((r) => hay.includes(r.slice(0, Math.min(4, r.length))));
 }
