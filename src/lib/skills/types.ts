@@ -1,3 +1,5 @@
+import type { DialogueTurn } from "@/lib/dialogue";
+
 /**
  * Beceri egzersizleri (okuma / dinleme / yazma) içerik modeli.
  *
@@ -123,10 +125,29 @@ export type SpeakingTask = {
   confusions?: SpeechConfusion[];
 };
 
-export type SpeakingExercise = ExerciseBase & {
+/** Tek tek söyleyiş çalışması: her görev bağımsız bir cümle. */
+export type SpeakingDrillExercise = ExerciseBase & {
   skill: "speaking";
   tasks: SpeakingTask[];
 };
+
+/**
+ * Karşılıklı konuşma: uygulama sorar, öğrenci konuşur, cevaba göre dal seçilir.
+ *
+ * Açık uçlu bir muhatap değil (o dil modeli ister, ücretsiz değil); sınırlı bir
+ * tema içinde önceden yazılmış dallar arasında niyet eşleştirmesi yapılır —
+ * bkz. lib/dialogue.ts. Kapalı bir temada (kafede sipariş) bu, gerçek bir
+ * konuşma hissi verecek kadar iyi çalışır.
+ */
+export type SpeakingDialogueExercise = ExerciseBase & {
+  skill: "speaking";
+  /** Konuşmanın turları; ilki `start` ile işaretlenen turdur. */
+  dialogue: DialogueTurn[];
+  /** Bu temanın pekiştirmek istediği kalıplar — sonunda özetlenir. */
+  targets: Gloss[];
+};
+
+export type SpeakingExercise = SpeakingDrillExercise | SpeakingDialogueExercise;
 
 export type SkillExercise =
   | ReadingExercise

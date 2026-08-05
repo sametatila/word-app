@@ -1,4 +1,4 @@
-import type { SpeakingExercise } from "../types";
+import type { SpeakingDrillExercise } from "../types";
 
 /**
  * Konuşma alıştırmaları — Almanca kursu.
@@ -25,7 +25,7 @@ import type { SpeakingExercise } from "../types";
  * Üç kuralı da e2e mekanik olarak doğruluyor (bkz. "Konuşma alıştırmaları
  * içeriği"): yazdığın her sapma judgeSpeech'ten geçmezse test düşer.
  */
-export const speaking: SpeakingExercise[] = [
+export const speaking: SpeakingDrillExercise[] = [
   // ─────────────────────── A1 · ö ve ü ───────────────────────
   {
     id: "a1-s1",

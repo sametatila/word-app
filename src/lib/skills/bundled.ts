@@ -10,6 +10,7 @@ import { zhB1 } from "./content/zh-b1";
 import { zhB2 } from "./content/zh-b2";
 import { zhC1 } from "./content/zh-c1";
 import { speaking } from "./content/speaking";
+import { dialogues } from "./content/dialogue";
 
 /**
  * Repoda yazılan beceri içeriğinin tamamı — tek liste.
@@ -36,4 +37,5 @@ export const BUNDLED_EXERCISES: SkillExercise[] = [
   ...zhB2,
   ...zhC1,
   ...speaking,
+  ...dialogues,
 ];
