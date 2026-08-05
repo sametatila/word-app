@@ -100,11 +100,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   }
 
   return (
-    <GameShell
-      label="Eşleştirme"
-      prompt="Almanca kelimeleri Türkçe karşılıklarıyla eşleştir"
-      hint="Soldan bir kelime, sağdan karşılığını seç"
-    >
+    <GameShell label="Eşleştirme">
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col gap-3">
           {words.map((w, i) => {
@@ -167,9 +163,6 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
           })}
         </div>
       </div>
-      <p className="muted mt-4 text-center text-sm">
-        {matched.size} / {words.length} eşleşti
-      </p>
     </GameShell>
   );
 }
