@@ -39,12 +39,14 @@ function localDay(): string {
 }
 
 type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error";
-type Payload = { rounds: Round[]; tiers: number[]; pool: number; weak: number };
+type Payload = { rounds: Round[]; tiers: number[]; pool: number; weak: number; best: number };
+/** Sunucunun tur sonunda döndürdüğü rekor durumu: `previous` tur öncesindeki rekor. */
+type Outcome = { best: number; previous: number };
 
 /**
  * Süreye karşı meydan okuma.
  *
- * Basit bir "60 saniyede kaç doğru" turu değil: süre doğru cevapla kazanılır,
+ * Sabit süreli bir "kaç doğru yaparsın" turu değil: süre doğru cevapla kazanılır,
  * yanlışta kaybedilir; üst üste doğrular puan çarpanını büyütür ve sorular üç
  * dalgada sertleşir. Böylece iyi oynayan uzun süre hayatta kalır, acele eden
  * ya da bilmeyen erken biter.

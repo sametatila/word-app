@@ -31,8 +31,11 @@ uygulama gibi tam ekran açılır (PWA).
   duyurulur. Profildeki seçim **tavan değil, başlangıç noktasıdır**.
 - **Adaptif zorluk:** son 50 cevabın doğruluğu %85'in üstündeyse üretim oyunları (yazma, harf
   bulmacası), %60'ın altındaysa tanıma oyunları öne çıkar. Kullanıcıya ekranda açıklanır.
-- **60 saniye meydan okuma:** oturum sonunda, öğrenilenlerden rastgele ve karışık oyun türleriyle
-  süreye karşı tur.
+- **Hayatta kalma turu:** oturum sonunda, öğrenilenlerden karışık oyun türleriyle süreye karşı tur.
+  Sabit süre yok: 40 saniyeyle başlar, doğru cevap +2 sn (hızlıysan +3,5 sn), yanlış −4 sn, tavan
+  75 sn. Üst üste doğrular puanı 3 katına kadar çıkarır; sorular üç dalgada sertleşir (ısınma →
+  baskı → kriz) ve son dalga en çok unuttuğun kelimelerle gelir. Rekor hesapta tutulur, her
+  cihazda aynı görünür.
 - **Zorlayıcı çeldiriciler:** çoktan seçmelide rastgele kelime yerine Almanca biçimi hedefe benzeyen
   kelimeler kullanılır (aufhören / aufheben / aufräumen).
 - **Telaffuz:** her Almanca kelime ve örnek cümle tek dokunuşla sesli okunur (tarayıcı konuşma sentezi).

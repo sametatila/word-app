@@ -51,8 +51,8 @@ const FEATURES = [
     body: "Oyun türü kelimenin ne kadar oturduğuna göre değişir. Yeni kelimede tanıma, pekişende yazma — aynı ekran arka arkaya gelmez.",
   },
   {
-    title: "60 saniye meydan okuma",
-    body: "Tur sonunda öğrendiklerinden rastgele sorular, karışık oyunlarla süreye karşı. Skorunu kırmaya çalışırsın.",
+    title: "Hayatta kalma turu",
+    body: "Tur sonunda süreye karşı oynarsın: 40 saniyeyle başlar, her doğru sana süre kazandırır, her yanlış yakar. Üst üste doğrular puanı üç katına çıkarır, sorular üç dalgada sertleşir.",
   },
   {
     title: "İki kurs, tek ilerleme",

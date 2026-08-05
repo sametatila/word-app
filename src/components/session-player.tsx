@@ -720,7 +720,7 @@ function SummaryCard({
             Devam et
           </button>
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
-            60 saniye meydan okuma
+            Hayatta kalma turu
           </button>
         </div>
       </div>
