@@ -101,6 +101,8 @@ export type Provider = {
   model: string;
   freeTier: string;
   stream: (system: string, messages: ChatMessage[]) => AsyncGenerator<string>;
+  /** Akışsız tek atış — koç düzeltmeleri gibi kısa, bölünmesi anlamsız işler. */
+  complete: (system: string, messages: ChatMessage[], maxTokens?: number) => Promise<string>;
 };
 
 /** Kısa sohbet turu: uzun cevap istemiyoruz, bekleme konuşmayı bozuyor. */
@@ -108,20 +110,53 @@ const MAX_TOKENS = 400;
 const TEMPERATURE = 0.3;
 const TIMEOUT_MS = 30_000;
 
+/** 429'da başlık yoksa varsayılan bekleme: dakikalık limitler dakika başı sıfırlanıyor. */
+const DEFAULT_COOLDOWN_MS = 60_000;
+/** Ağ/5xx hatası limit değil, ama art arda denemek de anlamsız. */
+const ERROR_COOLDOWN_MS = 15_000;
+
+/**
+ * Limiti dolan sağlayıcının ne zaman tekrar denenebileceği.
+ *
+ * Soğuma olmadan zincir işe yaramıyor: limiti dolmuş bir birincil her istekte
+ * baştan deneniyor, her seferinde bir gidiş-dönüş ve 429 harcanıyor, kullanıcı
+ * da o gecikmeyi bekliyor. Soğumayla dolan sağlayıcı sıradan çıkıyor ve süre
+ * dolunca kendiliğinden geri geliyor.
+ *
+ * Bu bellek süreç başına: Vercel'de her örnek kendi tablosunu tutar, yani
+ * paylaşımlı bir sayaç değil. Yine de işe yarıyor — art arda gelen istekler
+ * çoğunlukla aynı örneğe düşüyor — ve ücretsiz kalmanın bedeli bu.
+ */
+const cooldownUntil = new Map<ProviderName, number>();
+
+function coolDown(name: ProviderName, ms: number): void {
+  cooldownUntil.set(name, Date.now() + ms);
+}
+
+/** `Retry-After` saniye ya da HTTP tarihi olabilir; ikisi de destekleniyor. */
+function retryAfterMs(res: Response): number {
+  const raw = res.headers.get("retry-after");
+  if (!raw) return DEFAULT_COOLDOWN_MS;
+  const seconds = Number(raw);
+  if (Number.isFinite(seconds) && seconds >= 0) return Math.min(seconds * 1000, 15 * 60_000);
+  const at = Date.parse(raw);
+  if (Number.isFinite(at)) return Math.min(Math.max(at - Date.now(), 0), 15 * 60_000);
+  return DEFAULT_COOLDOWN_MS;
+}
+
 function modelFor(name: ProviderName): string {
   const cfg = CATALOG[name];
   return process.env[cfg.envModel] || cfg.defaultModel;
 }
 
-/**
- * OpenAI uyumlu akış — üç sağlayıcı da aynı gövdeyi ve aynı SSE biçimini
- * kullandığı için tek gövde yetiyor.
- */
-async function* streamOpenAiCompatible(
+/** İstek gövdesi ve başlıklar akışlı/akışsız iki yolda da aynı. */
+async function post(
   name: ProviderName,
   system: string,
   messages: ChatMessage[],
-): AsyncGenerator<string> {
+  stream: boolean,
+  maxTokens: number,
+): Promise<Response> {
   const cfg = CATALOG[name];
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -134,24 +169,69 @@ async function* streamOpenAiCompatible(
       headers: {
         authorization: `Bearer ${process.env[cfg.envKey]}`,
         "content-type": "application/json",
-        accept: "text/event-stream",
+        accept: stream ? "text/event-stream" : "application/json",
       },
       body: JSON.stringify({
         model: modelFor(name),
-        stream: true,
-        max_tokens: MAX_TOKENS,
+        stream,
+        max_tokens: maxTokens,
         temperature: TEMPERATURE,
         messages: [{ role: "system", content: system }, ...messages],
       }),
     });
+  } catch (err) {
+    coolDown(name, ERROR_COOLDOWN_MS);
+    throw err;
   } finally {
     clearTimeout(timer);
   }
 
-  if (!res.ok || !res.body) {
+  if (!res.ok) {
+    // 429 ve 5xx geçici: sağlayıcıyı sıradan çıkar. 4xx kalıcı bir yapılandırma
+    // hatası (yanlış anahtar, yanlış model) — onu soğutmak sorunu gizlerdi.
+    if (res.status === 429) coolDown(name, retryAfterMs(res));
+    else if (res.status >= 500) coolDown(name, ERROR_COOLDOWN_MS);
     const detail = await res.text().catch(() => "");
     throw new Error(`${name} ${res.status}: ${detail.slice(0, 200)}`);
   }
+  return res;
+}
+
+/**
+ * OpenAI uyumlu akış — üç sağlayıcı da aynı gövdeyi ve aynı SSE biçimini
+ * kullandığı için tek gövde yetiyor.
+ */
+type StreamFrame = {
+  choices?: { delta?: { content?: string } }[];
+  error?: { message?: string };
+};
+
+/**
+ * Tek bir SSE satırını çözer.
+ *
+ * Ayrıştırma bilerek ayrı bir işlevde: bozuk çerçeveyi atlayan `catch`
+ * gövdenin içinde olsaydı, hata çerçevesi için atılan istisnayı da yutardı.
+ * Burada `catch` yalnızca `JSON.parse`'ı sarıyor.
+ */
+function parseFrame(line: string): StreamFrame | null {
+  const trimmed = line.trim();
+  if (!trimmed.startsWith("data:")) return null;
+  const payload = trimmed.slice(5).trim();
+  if (!payload || payload === "[DONE]") return null;
+  try {
+    return JSON.parse(payload) as StreamFrame;
+  } catch {
+    return null; // yarım ya da bozuk çerçeve — akış sürsün
+  }
+}
+
+async function* streamOpenAiCompatible(
+  name: ProviderName,
+  system: string,
+  messages: ChatMessage[],
+): AsyncGenerator<string> {
+  const res = await post(name, system, messages, true, MAX_TOKENS);
+  if (!res.body) throw new Error(`${name}: gövdesiz yanıt`);
 
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
@@ -166,30 +246,42 @@ async function* streamOpenAiCompatible(
     buffer = lines.pop() ?? "";
 
     for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed.startsWith("data:")) continue;
-      const payload = trimmed.slice(5).trim();
-      if (!payload || payload === "[DONE]") continue;
-      try {
-        const parsed = JSON.parse(payload) as {
-          choices?: { delta?: { content?: string } }[];
-          error?: { message?: string };
-        };
-        // Kapasite hatası her zaman HTTP durumuyla gelmiyor: bazı sağlayıcılar
-        // 200 döndürüp hatayı akışın içine koyuyor. Yakalamazsak akış sessizce
-        // boş biter ve yedek sağlayıcıya hiç geçilmez.
-        if (parsed.error) {
-          throw new Error(`${name}: ${parsed.error.message ?? "akış içi hata"}`);
-        }
-        // Yalnızca `content` alınıyor: gpt-oss-120b bir akıl yürütme modeli ve
-        // ayrı bir `reasoning` alanı gönderebiliyor — o kullanıcıya gitmemeli.
-        const delta = parsed.choices?.[0]?.delta?.content;
-        if (delta) yield delta;
-      } catch {
-        /* yarım ya da bozuk çerçeve — atla, akış sürsün */
+      const frame = parseFrame(line);
+      if (!frame) continue;
+      // Kapasite hatası her zaman HTTP durumuyla gelmiyor: bazı sağlayıcılar
+      // 200 döndürüp hatayı akışın içine koyuyor. Yakalamazsak akış sessizce
+      // boş biter ve yedek sağlayıcıya hiç geçilmez.
+      if (frame.error) {
+        coolDown(name, ERROR_COOLDOWN_MS);
+        throw new Error(`${name}: ${frame.error.message ?? "akış içi hata"}`);
       }
+      // Yalnızca `content` alınıyor: gpt-oss-120b bir akıl yürütme modeli ve
+      // ayrı bir `reasoning` alanı gönderebiliyor — o kullanıcıya gitmemeli.
+      const delta = frame.choices?.[0]?.delta?.content;
+      if (delta) yield delta;
     }
   }
+}
+
+/** Akışsız tek atış: kısa ve bütün olarak anlamlı cevaplar için. */
+async function completeOpenAiCompatible(
+  name: ProviderName,
+  system: string,
+  messages: ChatMessage[],
+  maxTokens: number,
+): Promise<string> {
+  const res = await post(name, system, messages, false, maxTokens);
+  const data = (await res.json()) as {
+    choices?: { message?: { content?: string } }[];
+    error?: { message?: string };
+  };
+  if (data.error) {
+    coolDown(name, ERROR_COOLDOWN_MS);
+    throw new Error(`${name}: ${data.error.message ?? "yanıt içi hata"}`);
+  }
+  const text = data.choices?.[0]?.message?.content?.trim();
+  if (!text) throw new Error(`${name}: boş yanıt`);
+  return text;
 }
 
 function hasKey(name: ProviderName): boolean {
@@ -202,11 +294,18 @@ function build(name: ProviderName): Provider {
     model: modelFor(name),
     freeTier: CATALOG[name].freeTier,
     stream: (system, messages) => streamOpenAiCompatible(name, system, messages),
+    complete: (system, messages, maxTokens = MAX_TOKENS) =>
+      completeOpenAiCompatible(name, system, messages, maxTokens),
   };
 }
 
 /**
  * Denenecek sağlayıcılar: birincil önce, kalanlar yedek.
+ *
+ * Soğumadaki sağlayıcılar sıranın sonuna atılır, listeden çıkarılmaz. Çıkarmak
+ * şu riski taşırdı: hepsi aynı anda soğumadaysa sohbet tamamen kapanırdı.
+ * Sona atmak ise "önce taze olanı dene, gerekirse yine de dolmuşu dene"
+ * demek — soğuma tahmini yanlışsa bile en kötü ihtimalle bir 429 harcanır.
  *
  * `CHAT_PROVIDER` verilmişse o başa alınır; anahtarı yoksa ya da tanınmıyorsa
  * yok sayılır — yanlış yazılmış bir değişken sohbeti tamamen kapatmasın.
@@ -214,12 +313,44 @@ function build(name: ProviderName): Provider {
 export function chatProviders(): Provider[] {
   const available = ORDER.filter(hasKey);
   const preferred = process.env.CHAT_PROVIDER as ProviderName | undefined;
-  if (preferred && available.includes(preferred)) {
-    return [preferred, ...available.filter((n) => n !== preferred)].map(build);
-  }
-  return available.map(build);
+  const ordered =
+    preferred && available.includes(preferred)
+      ? [preferred, ...available.filter((n) => n !== preferred)]
+      : available;
+
+  const now = Date.now();
+  const ready = ordered.filter((n) => (cooldownUntil.get(n) ?? 0) <= now);
+  const cooling = ordered.filter((n) => (cooldownUntil.get(n) ?? 0) > now);
+  return [...ready, ...cooling].map(build);
 }
 
 export function chatConfigured(): boolean {
   return chatProviders().length > 0;
+}
+
+/**
+ * Zincirdeki ilk çalışan sağlayıcıdan akışsız cevap.
+ *
+ * Sohbetteki akış döngüsünün karşılığı: sırayla denenir, düşen atlanır, hepsi
+ * düşerse hata. Akışta "ilk parçadan sonra sağlayıcı değiştirme" kuralı vardı;
+ * burada öyle bir kısıt yok — cevap bütün hâlinde geldiği için son ana kadar
+ * yedeğe geçilebiliyor.
+ */
+export async function completeChat(
+  system: string,
+  messages: ChatMessage[],
+  maxTokens?: number,
+): Promise<string> {
+  const providers = chatProviders();
+  if (!providers.length) throw new Error("Sohbet sağlayıcısı tanımlı değil");
+
+  const failures: string[] = [];
+  for (const provider of providers) {
+    try {
+      return await provider.complete(system, messages, maxTokens);
+    } catch (err) {
+      failures.push(`${provider.name}: ${(err as Error).message}`);
+    }
+  }
+  throw new Error(`Tüm sağlayıcılar başarısız — ${failures.join(" | ")}`);
 }
