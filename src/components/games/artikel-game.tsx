@@ -48,7 +48,6 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     <GameShell
       label="Artikel Yarışı"
       prompt={<span className="brand-text text-3xl font-bold sm:text-4xl">{word.de}</span>}
-      hint="Doğru artikeli seç"
     >
       <div className="grid grid-cols-3 gap-3">
         {options.map((opt, i) => {
