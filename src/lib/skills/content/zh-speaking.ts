@@ -139,4 +139,122 @@ export const zhSpeaking: SpeakingDrillExercise[] = [
       },
     ],
   },
+
+  // ─────────────────── A2 · -li eki ───────────────────
+  //
+  // Lehçenin ikinci imzası. İki ayrı işi var ve ikisi de çok sık:
+  // Hochdeutsch'un -chen/-lein küçültmesi lehçede -li oluyor (Stück → Stückli),
+  // ve -lich ile biten sıfatlar -li'ye kısalıyor (wirklich → würkli).
+  //
+  // Türkçe konuşan için tuzak, ekin sonundaki i'yi uzatmak: Türkçede vurgu
+  // sona kayar, oysa burada vurgu kökte kalır ve -li hafifçe söylenir.
+  {
+    id: "zh-a2-s1",
+    level: "A2",
+    skill: "speaking",
+    course: "gsw-zh",
+    judge: "self",
+    title: "S -li am Ändi",
+    genre: "Ses çalışması",
+    intro:
+      "„-li“ eki lehçede iki iş yapar: küçültme (Stück → Stückli) ve -lich sonlarının kısalması (wirklich → würkli). Vurgu kökte kalır, ek hafifçe söylenir.",
+    gloss: [
+      { de: "s Stückli", tr: "parçacık (das Stückchen)" },
+      { de: "s Meitli", tr: "kız (das Mädchen)" },
+      { de: "s Chäschtli", tr: "dolapçık (das Kästchen)" },
+      { de: "würkli", tr: "gerçekten (wirklich)" },
+      { de: "fründli", tr: "cana yakın (freundlich)" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        de: "Nimm no es Stückli.",
+        tr: "Bir parça daha al.",
+        hint:
+          "Vurgu ŞTÜK'te; „-li“ arkadan hafifçe gelir. Türkçedeki gibi sona vurgu yaparsan yabancı duyulur.",
+      },
+      {
+        de: "S Meitli isch scho i de Schuel.",
+        tr: "Kız çoktan okulda.",
+        hint:
+          "„Meitli“ = Mädchen. „isch“ = ist, „Schuel“ = Schule — ikisinde de lehçenin tek ünlü kuralı işliyor.",
+      },
+      {
+        de: "Das isch würkli guet.",
+        tr: "Bu gerçekten iyi.",
+        hint:
+          "„würkli“ = wirklich. Sonundaki -lich tamamen -li'ye iniyor; ch sesi burada yok.",
+      },
+      {
+        de: "Si isch en fründlichi Frau.",
+        tr: "O cana yakın bir kadın.",
+        hint:
+          "„fründli“ = freundlich, ama sıfat çekimlenince „fründlichi“ oluyor — ek geri geliyor.",
+      },
+      {
+        de: "Häsch s Chäschtli gseh?",
+        tr: "Dolapçığı gördün mü?",
+        hint:
+          "Baştaki Ch (A1'deki ses) ve sondaki -li aynı kelimede. „gseh“ = gesehen; lehçe ge- ekini de kısaltıyor.",
+      },
+    ],
+  },
+
+  // ─────────────── A2 · en sık fiiller ───────────────
+  //
+  // Lehçeyi anlaşılır kılan şey kelime dağarcığından çok bu birkaç fiilin
+  // sesi: Hochdeutsch bilen biri „ist, hat, geht, kommt“ bekliyor ve karşısına
+  // „isch, hät, gaht, chunt“ çıkıyor. Bunlar her cümlede geçtiği için önce
+  // bunlar oturmalı — gerisi arkasından geliyor.
+  {
+    id: "zh-a2-s2",
+    level: "A2",
+    skill: "speaking",
+    course: "gsw-zh",
+    judge: "self",
+    title: "Die wichtigschte Verbe",
+    genre: "Ses çalışması",
+    intro:
+      "Bu birkaç fiil her cümlede geçiyor ve Hochdeutsch'tan en çok ayrılan yerler bunlar. Önce bunlar oturursa lehçenin geri kalanı çok daha kolay geliyor.",
+    gloss: [
+      { de: "isch", tr: "-dir (ist)" },
+      { de: "hät", tr: "sahip (hat)" },
+      { de: "gaht", tr: "gidiyor (geht)" },
+      { de: "chunt", tr: "geliyor (kommt)" },
+      { de: "wott", tr: "istiyor (will)" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        de: "Das isch mis Huus.",
+        tr: "Bu benim evim.",
+        hint:
+          "„isch“ = ist. Lehçede „st“ her yerde şt okunur, sonda bile: İŞ.",
+      },
+      {
+        de: "Er hät kei Ziit.",
+        tr: "Onun vakti yok.",
+        hint:
+          "„hät“ = hat, ama a değil ä: HÄT. „kei“ = kein, „Ziit“ = Zeit.",
+      },
+      {
+        de: "Wohi gaht si?",
+        tr: "O nereye gidiyor?",
+        hint:
+          "„gaht“ = geht; e yerine uzun a var: GAAT. „wohi“ = wohin.",
+      },
+      {
+        de: "Wänn chunt de Zug?",
+        tr: "Tren ne zaman geliyor?",
+        hint:
+          "„chunt“ = kommt ve A1'deki Ch sesiyle başlıyor. „wänn“ = wann.",
+      },
+      {
+        de: "Ich wott es Kafi, bitte.",
+        tr: "Bir kahve istiyorum, lütfen.",
+        hint:
+          "„wott“ = will. Çift t kısa ve sert biter. „es“ = ein, „Kafi“ = Kaffee.",
+      },
+    ],
+  },
 ];
