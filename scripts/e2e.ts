@@ -35,6 +35,7 @@ import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { summarize } from "../src/lib/chat-summary";
 import { derivedConfusions } from "../src/lib/speech-rules";
+import { weakSpeechTopics } from "../src/lib/speech-progress";
 import { germanLexicon } from "../src/lib/speech-lexicon";
 import { systemPrompt } from "../src/lib/chat";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
@@ -503,6 +504,29 @@ async function main() {
   check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "cerebras");
 
   setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
+
+  console.log("\n11t) Zorlanılan ses konuları");
+  {
+    const meta = [
+      { id: "sp1", skill: "speaking", level: "A1", title: "Ch sesi" },
+      { id: "sp2", skill: "speaking", level: "A2", title: "Uzunluk" },
+      { id: "sp3", skill: "speaking", level: "A1", title: "Hiç denenmedi" },
+      { id: "rd1", skill: "reading", level: "A1", title: "Okuma" },
+    ];
+    const rows = [
+      { exerciseId: "sp1", correct: 1, total: 6, attempts: 5 },
+      { exerciseId: "sp2", correct: 3, total: 6, attempts: 1 },
+      { exerciseId: "rd1", correct: 0, total: 5, attempts: 3 },
+    ];
+    const weak = weakSpeechTopics(meta, rows);
+    check("yalnızca telaffuz konuları listeleniyor", weak.every((t) => t.exerciseId.startsWith("sp")));
+    check("en zayıf konu başta", weak[0]?.exerciseId === "sp1", `(${weak[0]?.exerciseId})`);
+    // Hiç denenmemiş konu "zorlandığın" değil "gelmediğin" — ikisi karışmamalı.
+    check("denenmemiş konu listeye girmiyor", !weak.some((t) => t.exerciseId === "sp3"));
+    const strong = weakSpeechTopics(meta, [{ exerciseId: "sp1", correct: 6, total: 6, attempts: 2 }]);
+    check("iyi bilinen konu zorlanılan sayılmıyor", strong.length === 0);
+    check("deneme sayısı taşınıyor", weak[0]?.attempts === 5);
+  }
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");
   {

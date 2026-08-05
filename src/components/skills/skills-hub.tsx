@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { readSkillProgress, type SkillProgress } from "@/lib/skills/progress";
+import type { SpeechTopic } from "@/lib/speech-progress";
 import { CheckIcon } from "@/components/icons";
 import { LEVEL_TONE, SKILL_ICON } from "./theme";
 
@@ -33,10 +34,13 @@ export function SkillsHub({
   items,
   activeLevel,
   serverProgress = {},
+  weakSounds = [],
 }: {
   items: SkillItem[];
   activeLevel: CefrLevel;
   serverProgress?: ServerSkillProgress;
+  /** Telaffuzda zorlanılan ses konuları — sunucuda hesaplanıyor. */
+  weakSounds?: SpeechTopic[];
 }) {
   const [level, setLevel] = useState<CefrLevel>(activeLevel);
   const [skillFilter, setSkillFilter] = useState<SkillId | "all">("all");
@@ -104,6 +108,36 @@ export function SkillsHub({
           Gerçek hayat Almancasıyla okuma, dinleme ve yazma pratiği — seviyene göre.
         </p>
       </header>
+
+      {/* Telaffuzda zorlanılan sesler.
+          Kelimeler için tekrar algoritması hangi kelimeye dönüleceğini
+          söylüyordu; seslerde böyle bir şey yoktu ve öğrenci hangi sesi
+          ısrarla kaçırdığını hiç görmüyordu. Aynı veri zaten kayıtlıydı —
+          eksik olan onu bu gözle okumaktı. */}
+      {weakSounds.length ? (
+        <section
+          className="rounded-2xl px-4 py-3.5"
+          style={{
+            background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
+          }}
+        >
+          <p className="text-sm font-bold" style={{ color: "var(--color-flame-500)" }}>
+            Telaffuzda zorlandıkların
+          </p>
+          <ul className="mt-2 space-y-1.5">
+            {weakSounds.map((t) => (
+              <li key={t.exerciseId} className="flex items-center justify-between gap-3">
+                <Link href={`/skills/${t.exerciseId}`} className="text-sm font-semibold underline">
+                  {t.title}
+                </Link>
+                <span className="muted shrink-0 text-xs tabular-nums">
+                  {t.correct}/{t.total} · {t.attempts} deneme
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <div className="flex flex-wrap items-center gap-2">
         {LEVEL_ORDER.map((l) => (
