@@ -253,7 +253,10 @@ const PLAYERS = {
 
 async function setLevel(page, level) {
   await page.goto(`${BASE}/profile`, { waitUntil: "domcontentloaded" });
-  await page.getByRole("button", { name: new RegExp(`^${level} —`) }).click();
+  // Düğmenin erişilebilir adı yalnızca seviye kodu ("A2"); açıklama `title`
+  // içinde ve metin içeriği onun önüne geçiyor. Eskiden etiket
+  // "A2 — Temel seviyeyi biliyorum" tek parçaydı, bölününce seçici kalmış.
+  await page.getByRole("button", { name: new RegExp(`^${level}$`) }).click();
   await page.getByRole("button", { name: /^Kaydet$/ }).click();
   await sleep(900);
   say(`— seviye ${level} olarak ayarlandı —`);
