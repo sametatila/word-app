@@ -124,7 +124,6 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     <GameShell
       label="Harf Bulmacası"
       prompt={<span className="brand-text text-2xl font-bold sm:text-3xl">{word.tr}</span>}
-      hint={`Harfleri sırayla diz (${targetLetters.length} harf)`}
     >
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-7">
         {/* Cevap yuvaları — sayısı ve konumu sabit */}
