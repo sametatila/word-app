@@ -460,4 +460,130 @@ export const dialogues: SpeakingDialogueExercise[] = [
       },
     ],
   },
+
+  // ─────────────────── B1 · doktorda ───────────────────
+  //
+  // Kapalı tema kuralına uyan ama gerçekten lazım olan bir durum: şikâyetini
+  // anlatmak, süreyi söylemek, tavsiyeyi anlamak. Söylenebileceklerin listesi
+  // kısa (birkaç organ, birkaç süre ifadesi) ama kelimeler bilinmediğinde
+  // insan gerçekten çaresiz kalıyor — bu yüzden ezberlenmesi değil,
+  // söylenebilmesi önemli.
+  {
+    id: "b1-d1",
+    level: "B1",
+    skill: "speaking",
+    title: "Beim Arzt",
+    genre: "Diyalog",
+    intro:
+      "Doktordasın. Şikâyetini yüksek sesle Almanca anlat — ne dediğine göre doktor farklı sorular soruyor.",
+    minutes: 7,
+    gloss: [
+      { de: "die Schmerzen", tr: "ağrılar" },
+      { de: "der Hals", tr: "boğaz, boyun" },
+      { de: "das Fieber", tr: "ateş" },
+      { de: "das Rezept", tr: "reçete" },
+      { de: "sich ausruhen", tr: "dinlenmek" },
+    ],
+    targets: [
+      { de: "Ich habe … schmerzen.", tr: "…m ağrıyor." },
+      { de: "Seit … Tagen.", tr: "… gündür." },
+      { de: "Ich habe Fieber.", tr: "Ateşim var." },
+      { de: "Brauche ich ein Rezept?", tr: "Reçeteye ihtiyacım var mı?" },
+    ],
+    dialogue: [
+      {
+        id: "start",
+        ask: "Guten Tag! Was fehlt Ihnen denn?",
+        askTr: "İyi günler! Şikâyetiniz nedir?",
+        cue: "Neren ağrıyor söyle: „Ich habe Halsschmerzen.“ ya da „Mein Kopf tut weh.“",
+        replies: [
+          {
+            match: ["hals", "schluck", "rachen"],
+            say: "Halsschmerzen also. Seit wann haben Sie das?",
+            sayTr: "Boğaz ağrısı demek. Ne zamandır böyle?",
+            next: "since",
+            uses: ["Ich habe … schmerzen."],
+          },
+          {
+            match: ["kopf", "migräne"],
+            say: "Kopfschmerzen. Seit wann geht das schon so?",
+            sayTr: "Baş ağrısı. Ne zamandır sürüyor?",
+            next: "since",
+            uses: ["Ich habe … schmerzen."],
+          },
+          {
+            match: ["bauch", "magen", "übel"],
+            say: "Bauchschmerzen. Und seit wann?",
+            sayTr: "Karın ağrısı. Peki ne zamandır?",
+            next: "since",
+            uses: ["Ich habe … schmerzen."],
+          },
+        ],
+        fallback: {
+          say: "Entschuldigung, wo genau haben Sie Schmerzen?",
+          sayTr: "Pardon, tam olarak neresi ağrıyor?",
+          example: "Ich habe Halsschmerzen.",
+        },
+      },
+      {
+        id: "since",
+        ask: "Und haben Sie auch Fieber gemessen?",
+        askTr: "Ateşinizi ölçtünüz mü?",
+        cue: "Süreyi ya da ateşi söyle: „Seit drei Tagen.“ / „Ja, ich habe Fieber.“",
+        replies: [
+          {
+            match: ["fieber", "temperatur", "grad"],
+            say: "Fieber, verstehe. Dann sollten Sie sich ausruhen.",
+            sayTr: "Ateş var, anlıyorum. O zaman dinlenmelisiniz.",
+            next: "advice",
+            uses: ["Ich habe Fieber."],
+          },
+          {
+            match: ["seit", "tage", "tagen", "woche", "gestern"],
+            say: "Alles klar. Das klingt nach einer Erkältung.",
+            sayTr: "Anlaşıldı. Bu bir soğuk algınlığına benziyor.",
+            next: "advice",
+            uses: ["Seit … Tagen."],
+          },
+          {
+            match: ["nein", "nicht gemessen", "kein"],
+            say: "Kein Fieber, gut. Dann ist es wohl harmlos.",
+            sayTr: "Ateş yok, iyi. O zaman muhtemelen ciddi değil.",
+            next: "advice",
+            uses: ["Ich habe Fieber."],
+          },
+        ],
+        fallback: {
+          say: "Sagen Sie mir bitte, seit wann Sie das haben.",
+          sayTr: "Ne zamandır olduğunu söyler misiniz?",
+          example: "Seit drei Tagen.",
+        },
+      },
+      {
+        id: "advice",
+        ask: "Ich verschreibe Ihnen etwas. Haben Sie noch Fragen?",
+        askTr: "Size bir şey yazacağım. Sorunuz var mı?",
+        cue: "Reçeteyi sor ya da teşekkür et: „Brauche ich ein Rezept?“",
+        replies: [
+          {
+            match: ["rezept", "medikament", "tablette", "apotheke"],
+            say: "Ja, hier ist das Rezept. Gehen Sie damit in die Apotheke.",
+            sayTr: "Evet, reçete burada. Bununla eczaneye gidin.",
+            uses: ["Brauche ich ein Rezept?"],
+          },
+          {
+            match: ["danke", "dank", "nein"],
+            say: "Gute Besserung! Und ruhen Sie sich aus.",
+            sayTr: "Geçmiş olsun! Ve dinlenin.",
+            uses: ["Brauche ich ein Rezept?"],
+          },
+        ],
+        fallback: {
+          say: "Gute Besserung! Melden Sie sich, wenn es schlimmer wird.",
+          sayTr: "Geçmiş olsun! Kötüleşirse haber verin.",
+          example: "Brauche ich ein Rezept?",
+        },
+      },
+    ],
+  },
 ];
