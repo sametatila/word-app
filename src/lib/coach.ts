@@ -1,5 +1,7 @@
 import "server-only";
 import { completeChat, type ChatMessage } from "@/lib/chat-providers";
+import { tidy } from "@/lib/coach-format";
+import { SPEECH_SYSTEM, DIALOGUE_SYSTEM } from "@/lib/coach-prompts";
 
 /**
  * Konuşma koçu — çevrimdışı teşhis tükendiğinde devreye giren düzeltme.
@@ -23,35 +25,6 @@ const MAX_TOKENS = 120;
 
 /** Modelden gelen metnin kullanıcıya gösterilecek hâli. */
 export type CoachHint = { text: string };
-
-/**
- * Cevabın tek satıra indirilmesi.
- *
- * Küçük modeller istenmese de sık sık madde işareti, tırnak ya da "Tabii!"
- * gibi bir giriş cümlesi ekliyor. Bunları istemde yasaklamak yetmiyor —
- * çıktıda temizlemek daha güvenilir.
- */
-function tidy(raw: string): string {
-  const line = raw
-    .split("\n")
-    .map((l) => l.replace(/^[-*•\d.)\s]+/, "").trim())
-    .find((l) => l.length > 0);
-  if (!line) return "";
-  return line.replace(/^["“”'`]+|["“”'`]+$/g, "").slice(0, 300);
-}
-
-const SYSTEM = `Sen Almanca öğrenen bir Türk'ün konuşma koçusun.
-Öğrenci sesli konuştu, konuşma tanıyıcı ne duyduğunu yazıya döktü.
-
-Görevin: söylenenle hedef arasındaki farkı TEK CÜMLEDE, Türkçe açıkla.
-
-KURALLAR
-- Tek cümle yaz. Giriş cümlesi, selamlama, madde işareti, tırnak kullanma.
-- Farkın ne olduğunu somut söyle: hangi ses, hangi ek, hangi kelime.
-- Tanıyıcının duyduğu metin gerçekte söylenenin yaklaşık bir yazımıdır;
-  yazım hatası gibi değil, telaffuz ipucu gibi yorumla.
-- Öğrenci tamamen başka bir şey söylediyse önce bunu belirt, sonra doğrusunu yaz.
-- Suçlayıcı olma; ne yapması gerektiğini söyle.`;
 
 /**
  * Telaffuz koçu.
@@ -82,22 +55,8 @@ export async function coachSpeech(
     },
   ];
 
-  return { text: tidy(await completeChat(SYSTEM, messages, MAX_TOKENS)) };
+  return { text: tidy(await completeChat(SPEECH_SYSTEM, messages, MAX_TOKENS)) };
 }
-
-const DIALOGUE_SYSTEM = `Sen Almanca öğrenen bir Türk'ün konuşma koçusun.
-Senaryolu bir diyalogda uygulama bir soru sordu, öğrenci sesli cevap verdi,
-ama cevap senaryodaki dallardan hiçbirine uymadı.
-
-Görevin: TEK CÜMLEDE, Türkçe olarak öğrenciye ne yapacağını söyle.
-
-KURALLAR
-- Tek cümle yaz. Giriş cümlesi, madde işareti, numara kullanma.
-- Söylediği şey soruya uyan geçerli bir cevapsa: bunu onayla ve varsa
-  dilbilgisi hatasını düzelt.
-- Soruya uymuyorsa: neyin sorulduğunu hatırlat ve söyleyebileceği somut bir
-  Almanca cümle ver.
-- Verdiğin Almanca cümle kısa olsun ve öğrencinin seviyesini aşmasın.`;
 
 /**
  * Diyalog koçu.
