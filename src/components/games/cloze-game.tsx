@@ -6,6 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
+import { speakGerman } from "@/components/speak-button";
 
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
@@ -26,6 +27,11 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   function choose(opt: string) {
     if (picked) return;
     setPicked(opt);
+    // Seçilen kelime hemen okunuyor: boşluğu doldururken asıl öğrenilen şey
+    // kelimenin cümledeki hâli ve onu duymadan seçim sessiz bir tıklama
+    // olarak kalıyordu. Yanlış seçimde de okunuyor — öğrenci neyi seçtiğini
+    // duyup doğrusuyla karşılaştırabilmeli.
+    speakGerman(opt);
     const isCorrect = opt === answer;
     const latencyMs = Date.now() - started.current;
     // Cümle oyunlarında geçiş acele etmez: öğrenci tamamlanan cümleyi ve

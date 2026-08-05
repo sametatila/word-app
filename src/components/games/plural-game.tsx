@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import type { GameProps } from "./types";
+import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
-import { SpeakButton } from "@/components/speak-button";
+import { speakGerman, SpeakButton } from "@/components/speak-button";
 
 type PluralRound = Extract<Round, { game: "plural" }>;
 
@@ -30,6 +30,11 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
+    // Kelime kendiliğinden okunuyor: soru "çoğulu ne?" ve öğrenci çoğulu
+    // sesten hatırlıyor. Düğmeye basmayı beklemek o ipucunu geciktiriyordu.
+    // Küçük gecikme kart yerine otururken sesin başlamaması için.
+    const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
+    return () => clearTimeout(s);
   }, [round.id]);
 
   function choose(option: string) {

@@ -7,7 +7,7 @@ import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
-import { SpeakButton } from "@/components/speak-button";
+import { speakGerman, SpeakButton } from "@/components/speak-button";
 
 type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
 
@@ -31,6 +31,10 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   useEffect(() => {
     started.current = Date.now();
     setAnswered(null);
+    // Kelime kendiliğinden okunuyor: karar verirken telaffuzu duymak
+    // eşleştirmeyi kolaylaştırıyor ve düğmeye basma adımını ortadan kaldırıyor.
+    const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
+    return () => clearTimeout(s);
   }, [round.id]);
 
   function decide(said: boolean) {
