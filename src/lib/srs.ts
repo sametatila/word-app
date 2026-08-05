@@ -28,6 +28,8 @@ const GAME_TIME_BUDGET: Record<string, number> = {
   cloze: 14000,
   scramble: 20000,
   typing: 18000,
+  // Cümle dizmek okumayı da içerir: bütçe kelime turlarından geniş.
+  order: 26000,
 };
 
 /**

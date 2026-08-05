@@ -5,7 +5,8 @@ export type GameId =
   | "artikel"
   | "cloze"
   | "scramble"
-  | "typing";
+  | "typing"
+  | "order";
 
 export const GAME_LABELS: Record<GameId, string> = {
   intro: "Yeni Kelime",
@@ -15,6 +16,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   cloze: "Cümleyi Tamamla",
   scramble: "Harf Bulmacası",
   typing: "Yazarak Hatırla",
+  order: "Cümleyi Diz",
 };
 
 export type RoundWord = {
@@ -47,7 +49,19 @@ export type Round =
       options: string[];
     }
   | { id: string; game: "scramble"; word: RoundWord }
-  | { id: string; game: "typing"; word: RoundWord; alternatives: string[] };
+  | { id: string; game: "typing"; word: RoundWord; alternatives: string[] }
+  | {
+      id: string;
+      game: "order";
+      word: RoundWord;
+      /** Karıştırılmış kelimeler — öğrenci bunları sıraya dizer. */
+      tokens: string[];
+      /** Doğru sıra. Karşılaştırma diziyi birleştirerek yapılır. */
+      answer: string[];
+      /** Cümle sonundaki noktalama ayrı durur: son kelimeyi ele vermesin. */
+      tail: string;
+      sentenceTr: string | null;
+    };
 
 export type Answer = {
   wordId: number;

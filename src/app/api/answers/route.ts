@@ -7,7 +7,16 @@ import type { Answer, GameId } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
-const GAMES: GameId[] = ["intro", "match", "choice", "artikel", "cloze", "scramble", "typing"];
+const GAMES: GameId[] = [
+  "intro",
+  "match",
+  "choice",
+  "artikel",
+  "cloze",
+  "scramble",
+  "typing",
+  "order",
+];
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });

@@ -8,6 +8,7 @@ import { ArtikelGame } from "@/components/games/artikel-game";
 import { ScrambleGame } from "@/components/games/scramble-game";
 import { TypingGame } from "@/components/games/typing-game";
 import { ClozeGame } from "@/components/games/cloze-game";
+import { OrderGame } from "@/components/games/order-game";
 
 const w = (id: number, de: string, artikel: string | null, tr: string): RoundWord => ({
   id,
@@ -54,6 +55,15 @@ const ROUNDS: Round[] = [
     answer: "Zug",
     options: ["Zug", "Hund", "Tisch", "Baum"],
   },
+  {
+    id: "d8",
+    game: "order",
+    word: w(12, "Bahnhof", "der", "tren istasyonu"),
+    tokens: ["am", "Ich", "dich", "hole", "Bahnhof"],
+    answer: ["Ich", "hole", "dich", "am", "Bahnhof"],
+    tail: ".",
+    sentenceTr: "Seni tren istasyonundan alacağım.",
+  },
 ];
 
 /** Yalnızca geliştirme kontrolü için: tüm oyunları tek sayfada render eder. */
@@ -70,6 +80,7 @@ export default function DemoGames() {
           {round.game === "scramble" && <ScrambleGame round={round} onDone={() => {}} />}
           {round.game === "typing" && <TypingGame round={round} onDone={() => {}} />}
           {round.game === "cloze" && <ClozeGame round={round} onDone={() => {}} />}
+          {round.game === "order" && <OrderGame round={round} onDone={() => {}} />}
         </section>
       ))}
     </div>

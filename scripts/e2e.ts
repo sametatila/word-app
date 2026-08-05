@@ -352,6 +352,45 @@ async function main() {
   check("her madde kendi yazımıyla eşleşiyor", unmatched.length === 0,
     `(${unmatched.slice(0, 3).map((w) => w.de).join(", ")})`);
 
+  console.log("\n11d) Cümleyi Diz turu");
+  // Örnek cümlesi olan pekişmiş kelimelerle çok sayıda tur kurup ilk çıkan
+  // dizme turunu incele: bu oyun kelimeye değil cümleye bağlı olduğu için
+  // ayrıca doğrulanmalı.
+  await reset();
+  await ensureProfile(USER);
+  await db.update(profiles).set({ newPerDay: 0 }).where(eq(profiles.userId, USER));
+  const orderPool = await db.select().from(words).where(eq(words.course, "de")).limit(60);
+  const long = new Date(Date.now() - 60_000);
+  await db.insert(userWords).values(
+    orderPool.map((w) => ({
+      userId: USER, wordId: w.id, state: 2, ease: 2.6, intervalDays: 30,
+      dueAt: long, reps: 9, lapses: 0, correctStreak: 7, leech: false, lastReviewedAt: long,
+    })),
+  );
+  let orderRound: Extract<Round, { game: "order" }> | null = null;
+  const seenGames = new Set<string>();
+  for (let i = 0; i < 25 && !orderRound; i++) {
+    const s = await buildSession(USER, day1);
+    for (const r of s.rounds) {
+      seenGames.add(r.game);
+      if (r.game === "order" && !orderRound) orderRound = r;
+    }
+  }
+  check("dizme turu üretiliyor", orderRound !== null);
+  if (orderRound) {
+    check("kelime sayısı sınırlar içinde",
+      orderRound.answer.length >= 4 && orderRound.answer.length <= 9,
+      `(${orderRound.answer.length})`);
+    check("karışık dizi doğru sırayla aynı değil",
+      orderRound.tokens.join(" ") !== orderRound.answer.join(" "));
+    check("karışık dizi doğru cevabın permütasyonu",
+      [...orderRound.tokens].sort().join("|") === [...orderRound.answer].sort().join("|"));
+    check("cümle sonu noktalaması kutulardan ayrı",
+      orderRound.tokens.every((t) => !/[.!?]$/.test(t)),
+      `(${orderRound.tokens.join(" ")})`);
+    check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
+  }
+
   console.log("\n12) SRS saf fonksiyon davranışı");
   let st: SrsState = {
     state: 0, ease: 2.5, intervalDays: 0, reps: 0, lapses: 0,

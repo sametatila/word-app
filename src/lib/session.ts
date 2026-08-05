@@ -539,16 +539,18 @@ function pickRound(
     candidates.push("choice", "cloze");
     if (word.artikel) candidates.push("artikel");
   } else if (strength === "solid") {
-    candidates.push("choice", "cloze");
+    candidates.push("choice", "cloze", "order");
     if (word.artikel) candidates.push("artikel");
     if (word.de.length <= 12) candidates.push("scramble");
   } else {
-    candidates.push("typing", "cloze", "choice");
+    candidates.push("typing", "cloze", "choice", "order");
     if (word.artikel) candidates.push("artikel");
     if (word.de.length <= 12) candidates.push("scramble");
   }
 
-  const PRODUCTION: Round["game"][] = ["typing", "scramble"];
+  // Parçaları ekranda olsa da bu oyunlar öğrenciden bir şey **kurmasını**
+  // ister; tanıma oyunlarında ise doğru cevap zaten şıklardan biridir.
+  const PRODUCTION: Round["game"][] = ["typing", "scramble", "order"];
   const tuned =
     bias === "production"
       ? [...candidates.filter((g) => PRODUCTION.includes(g)), ...candidates]
@@ -598,6 +600,19 @@ function makeRound(
         : null;
     case "typing":
       return { id: nextId(), game: "typing", word, alternatives: [] };
+    case "order": {
+      const built = buildOrder(word);
+      if (!built) return null;
+      return {
+        id: nextId(),
+        game: "order",
+        word,
+        tokens: built.tokens,
+        answer: built.answer,
+        tail: built.tail,
+        sentenceTr: firstExample(word.beispielTr),
+      };
+    }
     case "cloze": {
       const cloze = buildCloze(word);
       if (!cloze) return null;
@@ -618,6 +633,44 @@ function makeRound(
     default:
       return null;
   }
+}
+
+/**
+ * Örnek cümleyi karışık kelimelere böler — "Cümleyi Diz" turunun malzemesi.
+ *
+ * Almancada anlamı taşıyan şey büyük ölçüde sıradır (fiil ikinci sırada,
+ * ayrılabilir ön ek sonda, yan cümlede fiil en sonda). Kelimeyi bilmek bu
+ * sırayı bilmek değildir; bu tur onu ayrı ayrı ölçer.
+ *
+ * Cümle sonundaki noktalama ayrılır: "Ferien." kutusu son kelimenin hangisi
+ * olduğunu ele verirdi. Cümle içindeki virgül kelimede kalır — o bir ipucu
+ * değil, yan cümlenin gerçek sınırıdır.
+ */
+function buildOrder(
+  word: RoundWord,
+): { tokens: string[]; answer: string[]; tail: string } | null {
+  const raw = firstExample(word.beispiel)?.trim();
+  if (!raw) return null;
+
+  const tailMatch = raw.match(/[.!?…]+$/);
+  const tail = tailMatch ? tailMatch[0] : "";
+  const body = tail ? raw.slice(0, -tail.length).trim() : raw;
+
+  const answer = body.split(/\s+/).filter(Boolean);
+  // Üçten kısa cümlede dizecek bir şey yok; dokuzdan uzunu telefonda tek
+  // ekrana sığmıyor ve turu bulmacaya çeviriyor.
+  if (answer.length < 4 || answer.length > 9) return null;
+  if (answer.some((t) => t.length > 20)) return null;
+
+  // Karışık dizilim doğru sırayla aynı çıkarsa tur kendiliğinden çözülmüş
+  // olurdu. Tekrar eden kelimeler yüzünden eşitlik metin üzerinden ölçülür.
+  let tokens = shuffle(answer);
+  for (let i = 0; i < 6 && tokens.join(" ") === answer.join(" "); i++) {
+    tokens = shuffle(answer);
+  }
+  if (tokens.join(" ") === answer.join(" ")) return null;
+
+  return { tokens, answer, tail };
 }
 
 /** Örnek cümlede kelimeyi boşlukla değiştirir; uygun cümle yoksa null döner. */

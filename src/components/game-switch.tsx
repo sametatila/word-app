@@ -9,6 +9,7 @@ import { ArtikelGame } from "@/components/games/artikel-game";
 import { ScrambleGame } from "@/components/games/scramble-game";
 import { TypingGame } from "@/components/games/typing-game";
 import { ClozeGame } from "@/components/games/cloze-game";
+import { OrderGame } from "@/components/games/order-game";
 
 /** Tur tipine göre doğru oyunu render eder — hem normal turda hem meydan okumada. */
 export function GameSwitch({
@@ -33,5 +34,7 @@ export function GameSwitch({
       return <TypingGame round={round} onDone={onDone} />;
     case "cloze":
       return <ClozeGame round={round} onDone={onDone} />;
+    case "order":
+      return <OrderGame round={round} onDone={onDone} />;
   }
 }
