@@ -40,13 +40,18 @@ type Case = {
 
 const CASES: Case[] = [
   {
-    label: "telaffuz · ö sesi o'ya kaymış",
+    // Bu senaryo eskiden „ö sesi o'ya kaydı“ idi ve Türkçe konuşan için
+    // gerçekçi değildi: Türkçede ö var. Gerçek hata uzunluk — „schön“de ö
+    // uzun, „können“de kısa. Senaryo da ona çevrildi.
+    label: "telaffuz · ö'nün uzunluğu",
     system: SPEECH_SYSTEM,
     user: `Hedef cümle: Ich finde das Buch sehr schön.
-Tanıyıcının duydukları: "ich finde das buch sehr schon", "ich finde das buch sehr schonen"
+Tanıyıcının duydukları: "ich finde das buch sehr schonen", "ich finde das buch sehr können"
 Tanınmayan kelimeler: schön
+Bu görevin çalıştırdığı ses: uzun ö
 Farkı tek cümlede Türkçe açıkla.`,
-    expect: ["schön", "ö"],
+    expect: ["uzun", "uzat", "schön"],
+    reject: ["yuvarla", "dudak"],
   },
   {
     label: "telaffuz · tamamen başka cümle",
@@ -80,13 +85,23 @@ Farkı tek cümlede Türkçe açıkla.`,
     expect: ["şp", "sp"],
   },
   {
-    label: "kural · vurgu sona kaymış",
+    // Etiket önce "vurgu" diyordu ama senaryo aslında v/f karışması — düzeltildi.
+    // Asıl önemlisi `reject` listesi: model bu vakada bir kez kuralı ters
+    // çevirip „w harfi v gibi okunmamalı“ yazdı, ki bu düpedüz yanlış
+    // (Almancada w = v). Anahtar kelime eşleşmesi bunu kaçırmıştı; hatalı
+    // ifadeler artık açıkça reddediliyor.
+    label: "kural · v harfi f okunmalı",
     system: SPEECH_SYSTEM,
     user: `Hedef cümle: Mein Vater ist Lehrer.
 Tanıyıcının duydukları: "mein fater ist lehrer", "mein water ist lehrer"
 Tanınmayan kelimeler: Vater
 Farkı tek cümlede Türkçe açıkla.`,
-    expect: ["v", "f"],
+    // Beklenen: v'nin f okunduğunu söylemesi. Reddedilen: w kuralını ters
+    // çevirmesi — model bunu bir çalıştırmada gerçekten yaptı ve anahtar
+    // kelime eşleşmesi kaçırmıştı. Çıktı kararlı değil, o yüzden bu satır
+    // kalıcı bir bekçi.
+    expect: ["f gibi", "f olarak", "f sesi"],
+    reject: ["v gibi okunmamalı", "v gibi okunmaz", "v olarak okunmamalı"],
   },
   {
     // En önemli sınav: model varsayılan olarak ö/ü'yü suçlamamalı. Türkçede

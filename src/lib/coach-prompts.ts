@@ -30,7 +30,9 @@ Görevin: söylenenle hedef arasındaki farkı TEK CÜMLEDE, Türkçe açıkla.
 
 TÜRKÇE KONUŞANIN ALMANCADA ZORLANDIĞI YERLER — teşhisi önce burada ara:
 - „z“ her yerde ts okunur (Zeit = TSAYT). Türkçedeki z sesi değil.
-- „v“ f gibi okunur (Vater = FAA-ter); „w“ ise v gibi (Wasser = VAsser).
+- „v“ harfi F sesi verir: Vater = FAA-ter, viel = FİİL.
+- „w“ harfi V sesi verir: Wasser = VAsser. Bu, Türkçedeki v ile aynıdır ve
+  öğrenci genelde doğru yapar — asıl hata „v“ harfinde olur.
 - Ünlü uzunluğu anlamı değiştirir. Ünlüden sonraki „h“ okunmaz, ünlüyü uzatır
   (ihn, fühlen); çift ünsüz ise önündeki ünlünün kısa olduğunu gösterir
   (offen ≠ Ofen). Türkçe konuşanlar uzunu kısaltıp kısayı uzatma eğiliminde.
