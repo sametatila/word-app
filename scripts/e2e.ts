@@ -30,6 +30,7 @@ import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
 import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech";
 import { speaking } from "../src/lib/skills/content/speaking";
+import { zhSpeaking } from "../src/lib/skills/content/zh-speaking";
 import { dialogues } from "../src/lib/skills/content/dialogue";
 import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
@@ -551,6 +552,37 @@ async function main() {
       all.every((c) => c.heard[0].toLowerCase() !== (c.expected ?? "").toLowerCase()));
     check("türev doğru biçimi içermiyor",
       all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
+  }
+
+  console.log("\n11w) Kendi değerlendiren egzersizlerin kuralları");
+  {
+    const drills = [...speaking, ...zhSpeaking];
+    const selfJudged = drills.filter((e) => e.judge === "self");
+    check("kendi değerlendiren egzersiz var", selfJudged.length > 0, `(${selfJudged.length})`);
+
+    // Tanıyıcı hiç çalışmadığı için sapma yazmak ölü içerik olurdu: yazılan
+    // satır asla tetiklenmez ama bakımı gerekir ve doğru sanılır.
+    const withConfusions = selfJudged.filter((e) =>
+      e.tasks.some((t) => (t.confusions ?? []).length > 0),
+    );
+    check("kendi değerlendirende sapma yazılmamış", withConfusions.length === 0,
+      `(${withConfusions.map((e) => e.id).join(", ")})`);
+
+    // Öğretme yükünü ipuçları taşıyor; ipucusuz görev orada sessiz kalır.
+    const noHint = selfJudged.flatMap((e) =>
+      e.tasks.filter((t) => !t.hint?.trim()).map(() => e.id),
+    );
+    check("kendi değerlendirende her görevin ipucu var", noHint.length === 0,
+      `(${[...new Set(noHint)].join(", ")})`);
+
+    // Tersi de geçerli olmalı: tanıyıcıyla değerlendirilen egzersizlerde en az
+    // bir sapma bulunmalı, yoksa tanıyıcı açık ama teşhis yok demektir.
+    const asrJudged = drills.filter((e) => e.judge !== "self");
+    const noConfusion = asrJudged.filter(
+      (e) => !e.tasks.some((t) => (t.confusions ?? []).length > 0),
+    );
+    check("tanıyıcılı egzersizlerde teşhis var", noConfusion.length === 0,
+      `(${noConfusion.map((e) => e.id).join(", ")})`);
   }
 
   console.log("\n11v) Diyalog eşleştirmesi gerçekçi girdilerde");

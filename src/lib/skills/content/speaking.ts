@@ -681,6 +681,11 @@ export const speaking: SpeakingDrillExercise[] = [
   // sapma yazılmadı — çalışma dinle-tekrarla üzerinden yürüyor.
   {
     id: "b1-s2",
+    // Vurgusuz „-er“ farkını tanıyıcı ayırt edemiyor: „Vater“ hangi
+    // biçimde söylenirse söylensin aynı yazılıyor. Tanıyıcıyı açık bırakmak,
+    // hatalı söyleyene „Anlaşıldı“ demek olurdu — egzersizin öğrettiği şeyin
+    // tam tersi.
+    judge: "self",
     level: "B1",
     skill: "speaking",
     title: "Das unbetonte „-er“",
@@ -738,6 +743,9 @@ export const speaking: SpeakingDrillExercise[] = [
   // yani öğrencinin öğrendiği kural burada tersine dönüyor.
   {
     id: "c1-s1",
+    // Alıntı kelimelerde ölçülen şey vurgu ve Fransızca sesler; tanıyıcı
+    // kelimeyi tanısa bile vurgunun doğru olup olmadığını söyleyemiyor.
+    judge: "self",
     level: "C1",
     skill: "speaking",
     title: "Fremdwörter",
@@ -805,6 +813,9 @@ export const speaking: SpeakingDrillExercise[] = [
   // iki hâli yan yana söylenmeli.
   {
     id: "b2-s2",
+    // Sertleşme farkı da tanıyıcıya görünmüyor: „Tage“ ile „Taake“ aynı
+    // yazıya düşüyor. Değerlendirme öğrencide.
+    judge: "self",
     level: "B2",
     skill: "speaking",
     title: "Auslautverhärtung",
