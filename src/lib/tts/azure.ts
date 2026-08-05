@@ -5,7 +5,7 @@ import { escapeXml } from "./ssml";
 /**
  * Azure Speech ile seslendirme — Edge yolunun resmî yedeği.
  *
- * Sesler **birebir aynı**: Seraphina, Florian, Leni, Jan. Yedeğe düşmek
+ * Sesler **birebir aynı**: Katja, Conrad, Leni, Jan. Yedeğe düşmek
  * kaliteyi düşürmüyor, kullanıcı farkı duymuyor. Zaten bu yüzden seçildi;
  * başka bir sağlayıcıya düşmek sesin ortasında kimlik değiştirmek olurdu.
  *

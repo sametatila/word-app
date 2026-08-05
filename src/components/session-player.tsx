@@ -15,6 +15,7 @@ import type {
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { LevelBadge } from "@/components/level-badge";
+import { prefetchGerman } from "@/components/speak-button";
 import { ChallengePlayer } from "@/components/challenge-player";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { FitBox } from "@/components/fit-box";
@@ -216,6 +217,24 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
 
   // Sekme kapanırsa gönderilememiş cevapları kaydetmeyi dene. Her tur zaten
   // gönderiliyor; buraya yalnızca bir istek başarısız olduysa iş düşer.
+  /**
+   * Sıradaki turun sesini önceden indirir.
+   *
+   * Gecikmenin asıl kaynağı sentez değil, önbellek ıskalaması: daha önce hiç
+   * duyulmamış bir kelime sunucuya gidip geliyor ve oyun sesi beklerken
+   * duruyor. Öğrenci bu turu cevaplarken sıradakinin sesi indiriliyor, sıra
+   * geldiğinde ağa hiç çıkılmıyor.
+   *
+   * Eşleştirme turunda birden çok kelime var; hepsi indiriliyor çünkü hangisine
+   * dokunulacağı belli değil.
+   */
+  useEffect(() => {
+    const next = session?.rounds[index + 1];
+    if (!next) return;
+    const words = next.game === "match" ? next.words : [next.word];
+    for (const w of words) prefetchGerman(w.artikel ? `${w.artikel} ${w.de}` : w.de);
+  }, [session, index]);
+
   useEffect(() => {
     const onHide = () => {
       if (!pending.current.length) return;

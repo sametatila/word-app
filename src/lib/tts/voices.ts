@@ -12,8 +12,8 @@
  */
 
 export type VoiceId =
-  | "de-DE-SeraphinaMultilingualNeural"
-  | "de-DE-FlorianMultilingualNeural"
+  | "de-DE-KatjaNeural"
+  | "de-DE-ConradNeural"
   | "de-CH-LeniNeural"
   | "de-CH-JanNeural";
 
@@ -28,20 +28,23 @@ export type Voice = {
 };
 
 export const VOICES: Voice[] = [
+  // Almanca sesler çok dilli olanlardan (Seraphina, Florian) bunlara geçirildi.
+  // Sebep hız: çok dilli modeller daha büyük ve ilk ses belirgin biçimde geç
+  // geliyordu (ölçümde 1.2-1.6 saniyeye karşı 0.4 saniye). Karşılığında
+  // kaybedilen şey Türkçe okuyabilmeleriydi ama uygulama Türkçeyi hiç sesli
+  // okumuyor — kullanılmayan bir yetenek için gecikme ödeniyordu.
   {
-    id: "de-DE-SeraphinaMultilingualNeural",
-    label: "Seraphina",
+    id: "de-DE-KatjaNeural",
+    label: "Katja",
     gender: "kadın",
-    // Çok dilli sesler Türkçeyi de doğru okuyor — ileride karışık metin
-    // (Almanca cümle + Türkçe açıklama) tek seste okunabilir.
-    note: "Yumuşak ve net; Türkçeyi de doğru okur",
+    note: "Net ve anlaşılır; en hızlı gelen kadın ses",
     course: "de",
   },
   {
-    id: "de-DE-FlorianMultilingualNeural",
-    label: "Florian",
+    id: "de-DE-ConradNeural",
+    label: "Conrad",
     gender: "erkek",
-    note: "Sakin ve tok; Türkçeyi de doğru okur",
+    note: "Tok ve sakin; en hızlı gelen erkek ses",
     course: "de",
   },
   {
@@ -72,16 +75,14 @@ export function voicesFor(course: string): Voice[] {
 
 /** Kursun varsayılanı: her ikisinde de kadın ses (de-CH'de lehçeye en yakın olan). */
 export function defaultVoice(course: string): VoiceId {
-  return course === "gsw-zh"
-    ? "de-CH-LeniNeural"
-    : "de-DE-SeraphinaMultilingualNeural";
+  return course === "gsw-zh" ? "de-CH-LeniNeural" : "de-DE-KatjaNeural";
 }
 
 /**
  * Seçilen sesi doğrular ve kursa uygun hâle getirir.
  *
  * Kurs değiştiğinde eski kursun sesi profilde kalabiliyor (Almanca'dan
- * Zürih'e geçen birinde Seraphina). Onu olduğu gibi kullanmak Dieth metnini
+ * Zürih'e geçen birinde Katja). Onu olduğu gibi kullanmak Dieth metnini
  * Alman aksanıyla okumak olurdu — tam da kaçındığımız şey.
  */
 export function resolveVoice(course: string, voice: string | null | undefined): VoiceId {

@@ -915,29 +915,29 @@ async function main() {
       [{ heard: ["mode"], fix: "ü kısaldı", expected: "müde" }]).kind === "confusion");
 
   console.log("\n11p) Seslendirme sesi kursa bağlı");
-  check("Almanca kursunun varsayılanı Seraphina",
-    defaultVoice("de") === "de-DE-SeraphinaMultilingualNeural");
+  check("Almanca kursunun varsayılanı Katja",
+    defaultVoice("de") === "de-DE-KatjaNeural");
   check("Zürih kursunun varsayılanı Leni",
     defaultVoice("gsw-zh") === "de-CH-LeniNeural");
   check("her kursta iki ses", voicesFor("de").length === 2 && voicesFor("gsw-zh").length === 2);
   check("seçilen ses korunuyor",
-    resolveVoice("de", "de-DE-FlorianMultilingualNeural") === "de-DE-FlorianMultilingualNeural");
+    resolveVoice("de", "de-DE-ConradNeural") === "de-DE-ConradNeural");
   // Asıl korunan davranış: kurs değişince yanlış kursun sesi taşınmamalı.
   // Aksi hâlde Zürih'e geçen biri Dieth metnini Alman aksanıyla dinlerdi.
   check("başka kursun sesi kursun varsayılanına düşüyor",
-    resolveVoice("gsw-zh", "de-DE-SeraphinaMultilingualNeural") === "de-CH-LeniNeural",
-    `(${resolveVoice("gsw-zh", "de-DE-SeraphinaMultilingualNeural")})`);
+    resolveVoice("gsw-zh", "de-DE-KatjaNeural") === "de-CH-LeniNeural",
+    `(${resolveVoice("gsw-zh", "de-DE-KatjaNeural")})`);
   check("bilinmeyen ses varsayılana düşüyor",
-    resolveVoice("de", "uydurma-ses") === "de-DE-SeraphinaMultilingualNeural");
+    resolveVoice("de", "uydurma-ses") === "de-DE-KatjaNeural");
   check("ses seçilmemişse varsayılan", resolveVoice("gsw-zh", null) === "de-CH-LeniNeural");
   // Lehçe daha yavaş okunuyor; hız sesin kendisinden türetiliyor, ayrı bir
   // yerde ikinci kez tanımlanmıyor.
-  check("lehçe daha yavaş okunuyor", rateFor("de-CH-LeniNeural") === "-12%" && rateFor("de-DE-SeraphinaMultilingualNeural") === "-8%");
+  check("lehçe daha yavaş okunuyor", rateFor("de-CH-LeniNeural") === "-12%" && rateFor("de-DE-KatjaNeural") === "-8%");
   // Yavaş dinleme telaffuz çalışmasının yöntemi; iki hız da ayrı önbellek
   // girdisi olduğu için seçenek sayısı bilerek ikiyle sınırlı.
   check("yavaş okuma normalden yavaş",
-    parseInt(rateFor("de-DE-SeraphinaMultilingualNeural", true)) <
-      parseInt(rateFor("de-DE-SeraphinaMultilingualNeural")));
+    parseInt(rateFor("de-DE-KatjaNeural", true)) <
+      parseInt(rateFor("de-DE-KatjaNeural")));
   check("lehçede de yavaş seçeneği var",
     rateFor("de-CH-LeniNeural", true) !== rateFor("de-CH-LeniNeural"));
   // Parantezli Hochdeutsch karşılığı sesli okunduğunda cümleyi bozuyor.

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { SpeakButton, speakGerman, useSpeechAvailable } from "@/components/speak-button";
+import { SpeakButton, prefetchGerman, speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { AlertIcon, CheckIcon, SparkIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
@@ -70,6 +70,18 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     bottom.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [turns, phase]);
 
+  /**
+   * Dersin bütün seslerini baştan indirir.
+   *
+   * Ders kısa ve hangi cümlelerin okunacağı baştan belli: örnekler ve rol
+   * yapmanın açılış repliği. Öğrenci kuralı okurken bunlar iniyor, böylece
+   * hoparlöre basıldığında ya da rol yapma başladığında ağa hiç çıkılmıyor.
+   */
+  useEffect(() => {
+    for (const ex of lesson.examples) prefetchGerman(ex.de);
+    prefetchGerman(lesson.roleplay.opening);
+  }, [lesson]);
+
   useEffect(() => {
     try {
       setHandsFree(localStorage.getItem(HANDSFREE_KEY) === "1");
@@ -92,13 +104,20 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     const isCorrect = option === check.answer;
     if (isCorrect) setCorrectCount((n) => n + 1);
     fx(isCorrect ? "correct" : "wrong", 900);
+    // Doğru cevapta kendiliğinden ilerliyor: gerekçe kısa bir an görünüyor ve
+    // geçiliyor. Yanlışta duruluyor — orada okunacak bir şey var ve öğrencinin
+    // kendi hızında okuması gerekiyor. Her cevapta düğmeye bastırmak, doğru
+    // bilen öğrenciye gereksiz bir adım yüklüyordu.
+    if (isCorrect) setTimeout(() => advance(), 1400);
   }
 
-  function nextCheck() {
+  function advance() {
     setPicked(null);
-    if (checkIndex + 1 < lesson.checks.length) setCheckIndex(checkIndex + 1);
+    if (checkIndex + 1 < lesson.checks.length) setCheckIndex((i) => i + 1);
     else startRoleplay();
   }
+
+
 
   // ─────────────────────────── rol yapma ───────────────────────────
 
@@ -328,13 +347,15 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
             {picked ? (
               <>
                 <p className="muted mt-3 text-sm leading-relaxed">{check.why}</p>
-                <button
-                  type="button"
-                  onClick={nextCheck}
-                  className="btn btn-primary mt-4 w-full py-3 text-sm"
-                >
-                  {checkIndex + 1 < lesson.checks.length ? "Sıradaki" : "Rol yapmaya geç"}
-                </button>
+                {picked !== check.answer ? (
+                  <button
+                    type="button"
+                    onClick={advance}
+                    className="btn btn-primary mt-4 w-full py-3 text-sm"
+                  >
+                    {checkIndex + 1 < lesson.checks.length ? "Anladım, devam" : "Rol yapmaya geç"}
+                  </button>
+                ) : null}
               </>
             ) : null}
           </motion.section>

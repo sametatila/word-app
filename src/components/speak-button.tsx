@@ -133,6 +133,33 @@ export function speakWithVoice(text: string, voice: VoiceId) {
   if (clean) play(clean, voice, voice.startsWith("de-CH") ? "gsw-zh" : "de");
 }
 
+/**
+ * Sesi önceden indirir ama çalmaz.
+ *
+ * Gecikmenin asıl kaynağı sentez değil, önbellek ıskalaması: daha önce hiç
+ * duyulmamış bir metin sunucuya gidip geliyor. Öğrenci bir turu cevaplarken
+ * sıradaki turun sesini indirmek, o gidiş-dönüşü tamamen görünmez yapıyor —
+ * sıra geldiğinde ses zaten tarayıcı önbelleğinde.
+ *
+ * `fetch` yeterli: cevap `immutable` ile bir yıl önbelleklendiği için `Audio`
+ * aynı URL'yi istediğinde ağa hiç çıkmıyor. Ses öğesi kullanmak yerine fetch
+ * seçilmesinin sebebi de bu — indirme çalmayla karışmıyor.
+ *
+ * Hata sessizce yutuluyor: önden indirme bir iyileştirme, garanti değil.
+ */
+export function prefetchGerman(text: string) {
+  const clean = cleanForSpeech(text);
+  if (!clean || typeof fetch === "undefined") return;
+  const course = readLocal(COURSE_KEY) ?? "de";
+  const voice = resolveVoice(course, readLocal(VOICE_KEY));
+  void fetch(`/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`, {
+    // Öncelik düşük: açık bir isteğin önüne geçmemeli.
+    priority: "low",
+  } as RequestInit).catch(() => {
+    /* önden indirme başarısızsa normal akış zaten çalışıyor */
+  });
+}
+
 /** Telaffuz çalışması için yavaş okuma — önce heceleri ayırt et, sonra tekrarla. */
 export function speakSlowly(text: string, onEnd?: () => void) {
   speakGerman(text, onEnd, true);
