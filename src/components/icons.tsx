@@ -207,6 +207,13 @@ export const AlertIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Sohbet balonu */
+export const ChatIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M20 12.5c0 3.6-3.6 6.5-8 6.5-1 0-2-.15-2.9-.42L4 20l1.2-3.3C4.15 15.5 3.5 14.06 3.5 12.5 3.5 8.9 7.1 6 12 6s8 2.9 8 6.5Z" />
+  </Svg>
+);
+
 /** Bilgi */
 export const InfoIcon = (p: IconProps) => (
   <Svg {...p}>

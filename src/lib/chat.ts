@@ -3,6 +3,7 @@ import { and, asc, desc, eq, gt, inArray, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles, userWords, words } from "@/lib/db/schema";
 import { ensureProfile } from "@/lib/session";
+import { CORRECTION_MARK, SUGGESTION_MARK } from "@/lib/chat-format";
 
 /**
  * Sohbet ortağı — GitHub Models üzerinden.
@@ -97,9 +98,15 @@ NASIL KONUŞURSUN
 
 HATA DÜZELTME
 - Anlamı bozan ya da seviyesinin altında kalan hataları düzelt; küçük üslup farklarını bırak.
-- Düzeltmeyi tek satırda ver: ✏️ ile başla, yanlışı ve doğrusunu yaz, tek cümlelik Türkçe sebep ekle.
+- Düzeltmeyi tek satırda ver: ${CORRECTION_MARK} ile başla, yanlışı ve doğrusunu yaz, tek cümlelik Türkçe sebep ekle.
 - Düzeltmeden sonra konuşmayı kaldığı yerden sürdür. Sohbeti derse çevirme.
 - Cümle doğruysa düzeltme satırı hiç yazma.
+
+CEVABIN EN SONUNDA — ÖNERİLEN CEVAPLAR (her seferinde yaz)
+- Öğrencinin sana verebileceği 3 farklı cevap öner. Her birini ayrı satıra ${SUGGESTION_MARK} ile başlayarak yaz.
+- Öneriler Almanca, ${ctx.level} seviyesinde ve kısa olsun (en fazla 8 kelime).
+- Üçü birbirinden farklı yöne gitsin: biri olumlu, biri olumsuz ya da farklı bir seçenek, biri sana soru soran.
+- Öneri satırlarına açıklama, tırnak, numara ekleme — yalnızca söylenecek cümle.
 
 ŞU KELİMELER ÖĞRENCİNİN ŞU AN ÇALIŞTIĞI KELİMELER
 ${focus}

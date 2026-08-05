@@ -32,6 +32,8 @@ import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech
 import { speaking } from "../src/lib/skills/content/speaking";
 import { dialogues } from "../src/lib/skills/content/dialogue";
 import { matchReply, usedTargets } from "../src/lib/dialogue";
+import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
+import { systemPrompt } from "../src/lib/chat";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
@@ -441,6 +443,38 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11n) Sohbet cevabının biçimi");
+  // İşaretler sistem isteminde ve ayrıştırıcıda ayrı yazılsaydı biri
+  // değiştiğinde öneriler hatasız biçimde kaybolurdu — ekranda eksilen bir
+  // şey olmaz, sadece bir daha hiç görünmezdi.
+  const reply = parseReply(
+    [
+      "Guten Tag! Wie geht es dir heute?",
+      `${CORRECTION_MARK} "Ich bin gut" → "Mir geht es gut" — bu kalıpta datif kullanılır.`,
+      `${SUGGESTION_MARK} Mir geht es gut, danke.`,
+      `${SUGGESTION_MARK} "Nicht so gut."`,
+      `${SUGGESTION_MARK} 1) Und dir?`,
+    ].join("\n"),
+  );
+  check("gövde ayrılıyor", reply.body === "Guten Tag! Wie geht es dir heute?", `(${reply.body})`);
+  check("düzeltme ayrılıyor", reply.corrections.length === 1);
+  check("düzeltme işareti metinden çıkarılıyor", !reply.corrections[0].includes(CORRECTION_MARK));
+  check("üç öneri okunuyor", reply.suggestions.length === 3, `(${reply.suggestions.length})`);
+  check("öneriden tırnak temizleniyor", reply.suggestions[1] === "Nicht so gut.",
+    `(${reply.suggestions[1]})`);
+  check("öneriden numara temizleniyor", reply.suggestions[2] === "Und dir?",
+    `(${reply.suggestions[2]})`);
+  const plain = parseReply("Alles klar. Was machst du?");
+  check("işaretsiz cevapta düzeltme/öneri yok",
+    plain.corrections.length === 0 && plain.suggestions.length === 0);
+  check("işaretsiz cevabın gövdesi bozulmuyor", plain.body === "Alles klar. Was machst du?");
+  // Sistem istemi ile ayrıştırıcı aynı işaretleri kullanmalı.
+  const prompt = systemPrompt({ level: "A2", course: "de", focus: [{ de: "das Haus", tr: "ev" }] });
+  check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
+  check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
+  check("istem seviyeyi taşıyor", prompt.includes("A2"));
+  check("istem çalışılan kelimeyi taşıyor", prompt.includes("das Haus"));
 
   console.log("\n11m) Karşılıklı konuşma (diyalog)");
   const cafe = dialogues[0];
