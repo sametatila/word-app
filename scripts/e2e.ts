@@ -392,6 +392,33 @@ async function main() {
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
 
+  console.log("\n11g) Kulaktan Tanı turu");
+  // Ses turunda şıklar Türkçe olmalı: Almanca şık verilseydi kelime yazıyla
+  // görünür ve tur dinlemeyi değil okumayı ölçerdi.
+  await reset();
+  await ensureProfile(USER);
+  await db.update(profiles).set({ newPerDay: 0 }).where(eq(profiles.userId, USER));
+  const listenPool = await db.select().from(words).where(eq(words.course, "de")).limit(60);
+  await db.insert(userWords).values(
+    listenPool.map((w) => ({
+      userId: USER, wordId: w.id, state: 2, ease: 2.6, intervalDays: 30,
+      dueAt: long, reps: 9, lapses: 0, correctStreak: 7, leech: false, lastReviewedAt: long,
+    })),
+  );
+  let listenRound: Extract<Round, { game: "listen" }> | null = null;
+  for (let i = 0; i < 25 && !listenRound; i++) {
+    const s = await buildSession(USER, day1);
+    for (const r of s.rounds) if (r.game === "listen" && !listenRound) listenRound = r;
+  }
+  check("ses turu üretiliyor", listenRound !== null);
+  if (listenRound) {
+    check("dört şık var", listenRound.options.length === 4, `(${listenRound.options.length})`);
+    check("doğru karşılık şıklarda", listenRound.options.includes(listenRound.word.tr));
+    check("şıklar Türkçe (Almanca biçim sızmıyor)",
+      !listenRound.options.includes(listenRound.word.de),
+      `(${listenRound.options.join(", ")})`);
+  }
+
   console.log("\n11f) Çoğul Bilmece turu");
   check("Arzt → Ärzte", pluralChoices("Arzt", "Ä, -e", 3)?.answer === "Ärzte");
   check("Apfel → Äpfel (ek yok, yalnız umlaut)", pluralChoices("Apfel", "Ä, -", 3)?.answer === "Äpfel");

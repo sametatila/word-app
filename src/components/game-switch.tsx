@@ -11,6 +11,7 @@ import { TypingGame } from "@/components/games/typing-game";
 import { ClozeGame } from "@/components/games/cloze-game";
 import { OrderGame } from "@/components/games/order-game";
 import { PluralGame } from "@/components/games/plural-game";
+import { ListenGame } from "@/components/games/listen-game";
 
 /** Tur tipine göre doğru oyunu render eder — hem normal turda hem meydan okumada. */
 export function GameSwitch({
@@ -39,5 +40,7 @@ export function GameSwitch({
       return <OrderGame round={round} onDone={onDone} />;
     case "plural":
       return <PluralGame round={round} onDone={onDone} />;
+    case "listen":
+      return <ListenGame round={round} onDone={onDone} />;
   }
 }

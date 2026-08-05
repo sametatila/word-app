@@ -7,7 +7,8 @@ export type GameId =
   | "scramble"
   | "typing"
   | "order"
-  | "plural";
+  | "plural"
+  | "listen";
 
 export const GAME_LABELS: Record<GameId, string> = {
   intro: "Yeni Kelime",
@@ -19,6 +20,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   typing: "Yazarak Hatırla",
   order: "Cümleyi Diz",
   plural: "Çoğul Bilmece",
+  listen: "Kulaktan Tanı",
 };
 
 export type RoundWord = {
@@ -70,6 +72,13 @@ export type Round =
       word: RoundWord;
       /** Doğru çoğul biçim, artikelsiz ("Ärzte"). */
       answer: string;
+      options: string[];
+    }
+  | {
+      id: string;
+      game: "listen";
+      word: RoundWord;
+      /** Türkçe şıklar; doğru cevap kelimenin kendi karşılığıdır. */
       options: string[];
     };
 

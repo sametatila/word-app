@@ -10,6 +10,7 @@ import { TypingGame } from "@/components/games/typing-game";
 import { ClozeGame } from "@/components/games/cloze-game";
 import { OrderGame } from "@/components/games/order-game";
 import { PluralGame } from "@/components/games/plural-game";
+import { ListenGame } from "@/components/games/listen-game";
 
 const w = (id: number, de: string, artikel: string | null, tr: string): RoundWord => ({
   id,
@@ -72,6 +73,12 @@ const ROUNDS: Round[] = [
     answer: "Ärzte",
     options: ["Ärzte", "Ärzten", "Arzt", "Ärzter"],
   },
+  {
+    id: "d10",
+    game: "listen",
+    word: w(14, "Schlüssel", "der", "anahtar"),
+    options: ["anahtar", "kapı", "pencere", "masa"],
+  },
 ];
 
 /** Yalnızca geliştirme kontrolü için: tüm oyunları tek sayfada render eder. */
@@ -90,6 +97,7 @@ export default function DemoGames() {
           {round.game === "cloze" && <ClozeGame round={round} onDone={() => {}} />}
           {round.game === "order" && <OrderGame round={round} onDone={() => {}} />}
           {round.game === "plural" && <PluralGame round={round} onDone={() => {}} />}
+          {round.game === "listen" && <ListenGame round={round} onDone={() => {}} />}
         </section>
       ))}
     </div>

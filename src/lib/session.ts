@@ -537,14 +537,14 @@ function pickRound(
   if (strength === "fresh" || strength === "shaky") {
     // Yeni ya da takılan kelime: cevabın ekranda olduğu tanıma oyunları.
     // Boş sayfaya yazdırmak bu aşamada öğretmez, yalnızca yıldırır.
-    candidates.push("choice", "cloze");
+    candidates.push("choice", "cloze", "listen");
     if (word.artikel) candidates.push("artikel");
   } else if (strength === "solid") {
-    candidates.push("choice", "cloze", "order");
+    candidates.push("choice", "cloze", "order", "listen");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   } else {
-    candidates.push("typing", "cloze", "choice", "order");
+    candidates.push("typing", "cloze", "choice", "order", "listen");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   }
@@ -601,6 +601,9 @@ function makeRound(
         : null;
     case "typing":
       return { id: nextId(), game: "typing", word, alternatives: [] };
+    case "listen":
+      // Şıklar Türkçe: sorulan şey yazım değil, sesin hangi anlama geldiği.
+      return { id: nextId(), game: "listen", word, options: optionsFor(word, pool, "de-tr") };
     case "plural": {
       // Yalnızca isimler ve yalnızca çoğul kuralı okunabilen maddeler.
       const choices = word.artikel ? pluralChoices(word.de, word.formen, 3) : null;

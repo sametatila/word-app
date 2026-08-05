@@ -31,6 +31,8 @@ const GAME_TIME_BUDGET: Record<string, number> = {
   // Cümle dizmek okumayı da içerir: bütçe kelime turlarından geniş.
   order: 26000,
   plural: 9000,
+  // Sesi dinlemek zaman alır; sabırsız bir bütçe herkesi yavaş gösterirdi.
+  listen: 12000,
 };
 
 /**

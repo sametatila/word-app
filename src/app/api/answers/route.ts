@@ -17,6 +17,7 @@ const GAMES: GameId[] = [
   "typing",
   "order",
   "plural",
+  "listen",
 ];
 
 export async function POST(req: Request) {
