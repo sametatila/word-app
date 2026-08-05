@@ -42,8 +42,13 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     setPicked(option);
     const isCorrect = option === answer;
     const latencyMs = Date.now() - started.current;
-    // Yanlışta doğru biçimi okuyacak kadar süre kalsın.
-    const wait = isCorrect ? 1100 : 2400;
+    // Doğru çoğul her zaman okunuyor, seçilen değil: çoğul biçim sesle
+    // ezberleniyor ve yanlış olanı sesli pekiştirmek öğrenmenin tersine
+    // çalışırdı. Çoğul artikeli hep „die“.
+    speakGerman(`die ${answer}`);
+    // Sesin bitmesine yetecek süre; yanlışta okumaya ek olarak doğru biçimi
+    // okuyup sindirecek zaman da kalsın.
+    const wait = isCorrect ? 1800 : 2800;
     fx(isCorrect ? "correct" : "wrong", wait);
     setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), wait);
   }
