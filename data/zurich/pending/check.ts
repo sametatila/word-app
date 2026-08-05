@@ -10,42 +10,22 @@
  *   node check.js            → tüm paketler
  *   node check.js part-03    → tek paket
  */
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { sentenceContainsWord as containsWord } from "../../../src/lib/headword";
 
-const ROOT = "/mnt/windows/Users/LinkinqArk/Desktop/Workspace/word-app";
-const IN = __dirname;
-const OUT = path.join(__dirname, "zh-out");
+const IN = path.dirname(fileURLToPath(import.meta.url));
+const OUT = path.join(IN, "zh-out");
 
 // seed-zurich.ts ile birebir aynı ölçüt.
 const PLACES =
   /\b(Berlin|München|Münche|Hamburg|Köln|Frankfurt|Wien|Dresden|Leipzig|Stuttgart|Bonn|Bremen|Mainz|Heidelberg|Zürich|Züri|Winterthur|Basel|Bern|Luzern|Genf|Chur|Thun)\b/g;
-const digits = (s) => (s.match(/\d+/g) ?? []).sort().join(",");
-const places = (s) =>
+const digits = (s: string) => (s.match(/\d+/g) ?? []).sort().join(",");
+const places = (s: string) =>
   [...new Set((s.match(PLACES) ?? []).map((p) => (p === "Zürich" ? "Züri" : p)))].sort().join(",");
-const fits = (de, gsw) => digits(de) === digits(gsw) && places(de) === places(gsw);
+const fits = (de: string, gsw: string) => digits(de) === digits(gsw) && places(de) === places(gsw);
 
-/** Züritüütsch'te sık ayrılan/öne gelen ekler — çekimde kökten kopabiliyor. */
-const PREFIXES = /^(abe|ufe|ine|use|wiiter|zäme|voraa|naa|vor|zue|uus|us|uf|aa|ii|ab|an|mit|frei|über|unter|durch|um|ver|be|ent|er|ge)/;
-
-/**
- * Cümle kelimenin kökünü taşıyor mu?
- *
- * Düz önek karşılaştırması işe yaramıyor: "abmaane" cümlede "abgmaant",
- * "heile" ise "gheilt" olarak geçiyor ve ikisi de doğru. Bu yüzden ayrılabilen
- * önek soyulup kalan kök aranır; kısa kelimelerde eşik üç harfe iner.
- */
-function containsWord(gsw, sentence) {
-  // Artikel ve dönüşlü "sich" kelimenin parçası değil, cümlede ayrı durur.
-  const w = String(gsw || "")
-    .replace(/^(de|d|s)\s+/, "")
-    .replace(/^sich\s+/, "")
-    .toLowerCase();
-  if (w.length < 3) return true;
-  const hay = sentence.toLowerCase();
-  const roots = [w, w.replace(PREFIXES, "")].filter((r) => r.length >= 3);
-  return roots.some((r) => hay.includes(r.slice(0, Math.min(4, r.length))));
-}
 
 const only = process.argv[2];
 const parts = fs
@@ -63,33 +43,33 @@ for (const f of parts) {
     console.log(`${f.padEnd(14)} —  çıktı yok`);
     continue;
   }
-  const src = JSON.parse(fs.readFileSync(path.join(IN, f), "utf8"));
-  let out;
+  const src = JSON.parse(fs.readFileSync(path.join(IN, f), "utf8")) as { id: number; beispiel?: string }[];
+  let out: Record<string, unknown>[];
   try {
     out = JSON.parse(fs.readFileSync(outPath, "utf8"));
-  } catch (e) {
-    console.log(`${f.padEnd(14)} ✗  JSON bozuk: ${e.message}`);
+  } catch (e: unknown) {
+    console.log(`${f.padEnd(14)} ✗  JSON bozuk: ${(e as Error).message}`);
     totalBad++;
     continue;
   }
 
-  const srcById = new Map(src.map((r) => [r.id, r]));
-  const problems = { sayi: [], id: [], artikel: [], sz: [], bos: [], kelime: [], yerel: [] };
+  const srcById = new Map((src as { id: number; beispiel?: string }[]).map((r) => [r.id, r]));
+  const problems: Record<string, string[]> = { sayi: [], id: [], artikel: [], sz: [], bos: [], kelime: [], yerel: [] };
 
   if (out.length !== src.length) problems.sayi.push(`${out.length} ≠ ${src.length}`);
 
-  for (const g of out) {
+  for (const g of out as { id: number; gsw?: string; artikel?: string | null; beispiel?: string }[]) {
     const s = srcById.get(g.id);
     if (!s) {
-      problems.id.push(g.id);
+      problems.id.push(String(g.id));
       continue;
     }
-    if (!g.gsw || !String(g.gsw).trim()) problems.bos.push(g.id);
+    if (!g.gsw || !String(g.gsw).trim()) problems.bos.push(String(g.id));
     if (g.artikel != null && !["de", "d", "s"].includes(g.artikel))
       problems.artikel.push(`${g.id}:${g.artikel}`);
-    if (/ß/.test(JSON.stringify(g))) problems.sz.push(g.id);
+    if (/ß/.test(JSON.stringify(g))) problems.sz.push(String(g.id));
 
-    if (g.beispiel && !containsWord(g.gsw, g.beispiel))
+    if (g.beispiel && !containsWord(g.gsw ?? "", g.beispiel))
       problems.kelime.push(`${g.gsw} → ${g.beispiel}`);
 
     // Asıl kapı: çeviri devralınabilecek mi?
