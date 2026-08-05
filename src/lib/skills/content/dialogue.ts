@@ -335,4 +335,129 @@ export const dialogues: SpeakingDialogueExercise[] = [
       },
     ],
   },
+
+  // ─────────────────── Zürih · dükkânda ───────────────────
+  //
+  // Lehçede diyalog, telaffuz alıştırmalarının aksine **çalışıyor**. Sebep
+  // eşleştirmenin biçimi: `matchReply` tam cümle değil kök arıyor, dolayısıyla
+  // tanıyıcı lehçeyi standart Almancaya çevirse bile içerik kelimesi çoğu
+  // zaman tanınabilir kalıyor.
+  //
+  // Yine de köklere Hochdeutsch karşılığı da yazılıyor ("chäs" yanına "käse"):
+  // tanıyıcı de-CH modeliyle standart biçimi üretme eğiliminde ve yalnızca
+  // lehçe kökü yazmak, doğru konuşan öğrencinin cevabını kaçırmak olurdu.
+  // Fazladan kök yanlış eşleşme riski taşımıyor — ikisi de aynı dala gidiyor.
+  {
+    id: "zh-a2-d1",
+    level: "A2",
+    skill: "speaking",
+    course: "gsw-zh",
+    title: "Im Lade",
+    genre: "Diyalog",
+    intro:
+      "Dükkânda alışveriş yapıyorsun. Züritüütsch konuş — Hochdeutsch söylersen de anlaşılır, ama lehçeyi dene.",
+    minutes: 6,
+    gloss: [
+      { de: "de Lade", tr: "dükkân (der Laden)" },
+      { de: "de Chäs", tr: "peynir (der Käse)" },
+      { de: "s Brot", tr: "ekmek" },
+      { de: "wieviel", tr: "ne kadar" },
+      { de: "zäme", tr: "toplam, birlikte (zusammen)" },
+    ],
+    targets: [
+      { de: "Ich hätt gern …", tr: "… istiyorum" },
+      { de: "Wieviel choschtet das?", tr: "Bu ne kadar?" },
+      { de: "Das isch alles.", tr: "Hepsi bu." },
+      { de: "Merci vilmal.", tr: "Çok teşekkürler." },
+    ],
+    dialogue: [
+      {
+        id: "start",
+        ask: "Grüezi! Was chan ich für Sie tue?",
+        askTr: "Merhaba! Sizin için ne yapabilirim?",
+        cue: "Ne istediğini söyle: „Ich hätt gern es Brot.“ ya da „Ich hätt gern Chäs.“",
+        replies: [
+          {
+            // Lehçe kökü ve tanıyıcının üretebileceği Hochdeutsch biçimi birlikte.
+            match: ["brot", "broot"],
+            say: "Es Brot, gern. Suscht no öppis?",
+            sayTr: "Bir ekmek, tabii. Başka bir şey?",
+            next: "more",
+            uses: ["Ich hätt gern …"],
+          },
+          {
+            match: ["chäs", "käse", "chaes"],
+            say: "Chäs, sehr gern. Wieviel möchtet Sie?",
+            sayTr: "Peynir, memnuniyetle. Ne kadar istersiniz?",
+            next: "more",
+            uses: ["Ich hätt gern …"],
+          },
+          {
+            match: ["milch", "joghurt"],
+            say: "Milch han ich do. Suscht no öppis?",
+            sayTr: "Süt burada. Başka bir şey?",
+            next: "more",
+            uses: ["Ich hätt gern …"],
+          },
+        ],
+        fallback: {
+          say: "Entschuldigung, das han ich nöd verstande. Was hättet Sie gern?",
+          sayTr: "Pardon, anlamadım. Ne istersiniz?",
+          example: "Ich hätt gern es Brot.",
+        },
+      },
+      {
+        id: "more",
+        ask: "Suscht no öppis, oder isch das alles?",
+        askTr: "Başka bir şey mi, yoksa hepsi bu mu?",
+        cue: "Fiyatı sor ya da bittiğini söyle: „Das isch alles.“",
+        replies: [
+          {
+            match: ["wieviel", "wie viel", "choschtet", "kostet", "priis", "preis"],
+            say: "Das macht achti Franke zäme.",
+            sayTr: "Toplam sekiz frank.",
+            next: "pay",
+            uses: ["Wieviel choschtet das?"],
+          },
+          {
+            match: ["alles", "das isch", "nüt me", "fertig"],
+            say: "Guet, denn machts achti Franke.",
+            sayTr: "Tamam, o zaman sekiz frank.",
+            next: "pay",
+            uses: ["Das isch alles."],
+          },
+        ],
+        fallback: {
+          say: "Also guet. Wottet Sie no öppis?",
+          sayTr: "Peki. Başka bir şey ister misiniz?",
+          example: "Das isch alles.",
+        },
+      },
+      {
+        id: "pay",
+        ask: "Zahlet Sie bar oder mit Charte?",
+        askTr: "Nakit mi kartla mı ödeyeceksiniz?",
+        cue: "Nasıl ödeyeceğini söyle: „bar“ ya da „mit Charte“.",
+        replies: [
+          {
+            match: ["bar", "baar", "cash"],
+            say: "Bar, guet. Merci vilmal und en schöne Tag!",
+            sayTr: "Nakit, tamam. Çok teşekkürler ve iyi günler!",
+            uses: ["Merci vilmal."],
+          },
+          {
+            match: ["charte", "karte", "kart"],
+            say: "Mit Charte, gern. Merci vilmal!",
+            sayTr: "Kartla, tabii. Çok teşekkürler!",
+            uses: ["Merci vilmal."],
+          },
+        ],
+        fallback: {
+          say: "Kei Problem. Bar oder mit Charte?",
+          sayTr: "Sorun değil. Nakit mi kartla mı?",
+          example: "Ich zahle bar.",
+        },
+      },
+    ],
+  },
 ];
