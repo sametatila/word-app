@@ -9,6 +9,10 @@ import {
   PuzzleIcon,
   TagIcon,
   TargetIcon,
+  HeadphonesIcon,
+  ListIcon,
+  BookIcon,
+  CheckIcon,
 } from "@/components/icons";
 
 const GAMES = [
@@ -18,6 +22,10 @@ const GAMES = [
   { Icon: PuzzleIcon, name: "Harf Bulmacası", desc: "Karışık harflerden kelimeyi kur" },
   { Icon: PenIcon, name: "Cümleyi Tamamla", desc: "Gerçek örnek cümledeki boşluğu doldur" },
   { Icon: KeyboardIcon, name: "Yazarak Hatırla", desc: "Kelimeyi sıfırdan yazarak pekiştir" },
+  { Icon: HeadphonesIcon, name: "Kulaktan Tanı", desc: "Sesli okunan kelimeyi duyarak bul" },
+  { Icon: ListIcon, name: "Cümleyi Diz", desc: "Karışık kelimelerden cümleyi kur" },
+  { Icon: BookIcon, name: "Çoğul Bilmece", desc: "İsmin çoğul biçimini hatırla" },
+  { Icon: CheckIcon, name: "Doğru mu Yanlış mı", desc: "Verilen karşılık doğru mu, hızlıca karar ver" },
 ];
 
 const COURSES = [
@@ -88,7 +96,7 @@ export default function Home() {
         <section className="py-14 text-center sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
-              2 kurs · A1 → C1 · 14.784 kelime · 6 oyun
+              2 kurs · A1 → C1 · 14.784 kelime · 10 oyun
             </span>
           </Reveal>
           <Reveal delay={0.06}>
@@ -98,7 +106,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="muted mx-auto mt-5 max-w-xl text-base sm:text-lg">
-              Hochdeutsch ya da Zürih Almancası — kursunu seç, altı kelime oyunu ve beceri
+              Hochdeutsch ya da Zürih Almancası — kursunu seç, on kelime oyunu ve beceri
               alıştırmaları tek akışta gelsin. Neyi ne zaman tekrar edeceğine uygulama karar verir.
             </p>
           </Reveal>
@@ -144,9 +152,9 @@ export default function Home() {
 
         <section className="mt-20">
           <Reveal>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">Altı oyun, tek akış</h2>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">On oyun, tek akış</h2>
             <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
-              Kelimenin ne kadar oturduğuna ve doğruluk oranına göre oyun otomatik seçilir.
+              Kelimenin ne kadar oturduğuna göre oyun otomatik seçilir.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

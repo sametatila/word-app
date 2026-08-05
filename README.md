@@ -79,7 +79,7 @@ kendiliğinden devreye girer.
 
 Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi · `/learn` oturum ·
 `/words` kelime listesi · `/skills` okuma-dinleme-yazma · `/profile` ayarlar + ilerleme ·
-`/demo-games` altı oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
+`/demo-games` on oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
 
 ## 2. Neon kurulumu (Postgres 18)
 
@@ -159,7 +159,7 @@ src/
                             skill_exercises · user_skills
   components/
     session-player.tsx      oyun akışını yöneten oynatıcı
-    games/*.tsx             altı oyun + ortak çerçeve
+    games/*.tsx             on oyun + ortak çerçeve
     skills/*.tsx            beceri hub'ı, okuma/dinleme/yazma çalıştırıcıları
 data/
   app/words.json            Almanca tohumlama kaynağı (7.392 kelime, A1–C1)
