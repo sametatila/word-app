@@ -15,6 +15,7 @@ import { zhA2 } from "../src/lib/skills/content/zh-a2";
 import { zhB1 } from "../src/lib/skills/content/zh-b1";
 import { zhB2 } from "../src/lib/skills/content/zh-b2";
 import { zhC1 } from "../src/lib/skills/content/zh-c1";
+import { speaking } from "../src/lib/skills/content/speaking";
 
 /**
  * Beceri içeriğini (okuma/dinleme/yazma) Neon'a yükler.
@@ -37,6 +38,7 @@ const ALL: SkillExercise[] = [
   ...zhB1,
   ...zhB2,
   ...zhC1,
+  ...speaking,
 ];
 
 /** UTF-8 bozulması (mojibake) kontrolü: Türkçe/Almanca karakterler bozuksa hiç yükleme. */

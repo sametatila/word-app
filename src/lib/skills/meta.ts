@@ -10,14 +10,17 @@ export const SKILL_LABELS: Record<SkillId, string> = {
   reading: "Okuma",
   listening: "Dinleme",
   writing: "Yazma",
+  speaking: "Konuşma",
 };
 
-export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing"];
+export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing", "speaking"];
 export const LEVEL_ORDER: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /** Puanlanabilir madde sayısı: soru ya da yazma görevi. */
 export function itemCount(ex: SkillExercise): number {
-  return ex.skill === "writing" ? ex.tasks.length : ex.questions.length;
+  return ex.skill === "writing" || ex.skill === "speaking"
+    ? ex.tasks.length
+    : ex.questions.length;
 }
 
 /**
@@ -27,7 +30,9 @@ export function itemCount(ex: SkillExercise): number {
 export function xpFor(ex: SkillExercise, correct: number): number {
   const items = itemCount(ex);
   const capped = Math.max(0, Math.min(items, Math.round(correct)));
-  const perItem = ex.skill === "writing" ? 10 : 6;
+  // Konuşma yazmadan hafif ama okuma/dinlemeden ağır: mikrofonla yüksek sesle
+  // konuşmak, şık işaretlemekten daha çok cesaret ister.
+  const perItem = ex.skill === "writing" ? 10 : ex.skill === "speaking" ? 8 : 6;
   const bonus = capped === items ? 10 : 0;
   return capped * perItem + bonus;
 }

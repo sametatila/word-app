@@ -14,6 +14,7 @@ import { zhA2 } from "./content/zh-a2";
 import { zhB1 } from "./content/zh-b1";
 import { zhB2 } from "./content/zh-b2";
 import { zhC1 } from "./content/zh-c1";
+import { speaking } from "./content/speaking";
 
 export { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER, itemCount, xpFor } from "./meta";
 
@@ -37,6 +38,7 @@ export const BUNDLED_EXERCISES: SkillExercise[] = [
   ...zhB1,
   ...zhB2,
   ...zhC1,
+  ...speaking,
 ];
 
 const bundledById = new Map(BUNDLED_EXERCISES.map((e) => [e.id, e]));

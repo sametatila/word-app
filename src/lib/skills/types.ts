@@ -6,7 +6,7 @@
  * sorular Goethe sınav geleneğine uygun olarak Almanca sorulur.
  */
 
-export type SkillId = "reading" | "listening" | "writing";
+export type SkillId = "reading" | "listening" | "writing" | "speaking";
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
 /** Egzersize özel küçük sözlükçe: metindeki kilit kelimeler. */
@@ -93,4 +93,43 @@ export type WritingExercise = ExerciseBase & {
   tasks: WritingTask[];
 };
 
-export type SkillExercise = ReadingExercise | ListeningExercise | WritingExercise;
+/**
+ * Konuşma görevi.
+ *
+ * Değerlendirme tarayıcının konuşma tanıyıcısıyla yapılır (bkz. lib/speech.ts):
+ * elimizde bir tanıyıcı var, puanlayıcı yok. Bu yüzden hedefli düzeltme
+ * akustikten değil **buradan** gelir — `confusions` alanına Türkçe konuşan
+ * birinin o maddede yapacağı bilinen sapma önceden yazılır.
+ *
+ * Liste kısa ve tahmin edilebilir: ö/o, ü/u, ch, r, z=ts, w=v, s=z, sp/st,
+ * eu=oy, ei=ay, ie=uzun i, uzun/kısa ünlü.
+ */
+export type SpeechConfusion = {
+  /** Tanıyıcıdan çıkması beklenen yanlış biçim(ler). */
+  heard: string[];
+  /** Ne olduğu ve nasıl düzeltileceği — Türkçe, tek cümle. */
+  fix: string;
+  /** Doğrusu; sesli örnek bunun üzerinden çalınır. */
+  expected?: string;
+};
+
+export type SpeakingTask = {
+  /** Söylenecek Almanca metin. */
+  de: string;
+  /** Türkçe karşılığı — uyaran olarak önce bu gösterilir. */
+  tr: string;
+  /** Türkçe telaffuz ipucu (isteğe bağlı). */
+  hint?: string;
+  confusions?: SpeechConfusion[];
+};
+
+export type SpeakingExercise = ExerciseBase & {
+  skill: "speaking";
+  tasks: SpeakingTask[];
+};
+
+export type SkillExercise =
+  | ReadingExercise
+  | ListeningExercise
+  | WritingExercise
+  | SpeakingExercise;

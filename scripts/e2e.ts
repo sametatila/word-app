@@ -29,6 +29,8 @@ import {
 import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
 import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech";
+import { speaking } from "../src/lib/skills/content/speaking";
+import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
 const USER = "e2e-user";
@@ -437,6 +439,54 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11l) Konuşma alıştırmaları içeriği");
+  check("konuşma havuzu var", speaking.length > 0, `(${speaking.length})`);
+  check("kimlikler benzersiz", new Set(speaking.map((e) => e.id)).size === speaking.length);
+  check("her egzersizde görev var", speaking.every((e) => e.tasks.length > 0));
+  check("her görevde Almanca ve Türkçe metin var",
+    speaking.every((e) => e.tasks.every((t) => t.de.trim() && t.tr.trim())));
+  // Karışma kümesi işe yarasın: yanlış biçim hedefin kendisi olamaz, yoksa
+  // doğru söyleyen öğrenci "hata yaptın" uyarısı alırdı.
+  const selfConfusing = speaking.flatMap((e) =>
+    e.tasks.flatMap((t) =>
+      (t.confusions ?? []).flatMap((c) =>
+        c.heard.filter((h) => normalizeSpoken(h) === normalizeSpoken(t.de)).map((h) => `${e.id}: ${h}`),
+      ),
+    ),
+  );
+  check("yanlış biçim hedefin kendisi değil", selfConfusing.length === 0, `(${selfConfusing.join(", ")})`);
+  // `expected` hedef metinde geçmeli, yoksa "doğrusu" başka bir şey gösterir.
+  const strayExpected = speaking.flatMap((e) =>
+    e.tasks.flatMap((t) =>
+      (t.confusions ?? [])
+        .filter((c) => c.expected && !normalizeSpoken(t.de).includes(normalizeSpoken(c.expected)))
+        .map((c) => `${e.id}: ${c.expected}`),
+    ),
+  );
+  check("düzeltilen kelime hedef metinde geçiyor", strayExpected.length === 0,
+    `(${strayExpected.join(", ")})`);
+  // Her karışma gerçekten yakalanmalı: yazılan sapma judgeSpeech'ten geçmiyorsa
+  // içerik ölü demektir.
+  const deadConfusions: string[] = [];
+  for (const ex of speaking) {
+    for (const t of ex.tasks) {
+      for (const c of t.confusions ?? []) {
+        for (const heard of c.heard) {
+          const v = judgeSpeech(t.de, [heard], t.confusions ?? []);
+          if (v.kind !== "confusion") deadConfusions.push(`${ex.id} "${heard}" → ${v.kind}`);
+        }
+      }
+    }
+  }
+  check("yazılan her sapma yakalanıyor", deadConfusions.length === 0,
+    `(${deadConfusions.slice(0, 3).join(" · ")})`);
+  check("doğru söyleyiş her görevde kabul ediliyor",
+    speaking.every((e) =>
+      e.tasks.every((t) => judgeSpeech(t.de, [t.de], t.confusions ?? []).kind === "correct")));
+  check("konuşma XP'si görev başına 8", xpFor(speaking[0], 0) === 0 &&
+    xpFor(speaking[0], 1) === 8);
+  check("madde sayısı görev sayısı", itemCount(speaking[0]) === speaking[0].tasks.length);
 
   console.log("\n11k) Konuşma değerlendirmesi");
   const SCHOEN = [
