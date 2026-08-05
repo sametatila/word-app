@@ -17,7 +17,8 @@ export function GameShell({
   footer,
 }: {
   label: string;
-  prompt: ReactNode;
+  /** Sorunun kendisi. Oyunun içeriği zaten yeterince açıksa boş bırakılabilir. */
+  prompt?: ReactNode;
   hint?: ReactNode;
   children: ReactNode;
   footer?: ReactNode;
@@ -28,7 +29,7 @@ export function GameShell({
         <span className="brand-gradient inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
           {label}
         </span>
-        <div className="mt-2.5 text-lg font-medium sm:text-xl">{prompt}</div>
+        {prompt ? <div className="mt-2.5 text-lg font-medium sm:text-xl">{prompt}</div> : null}
         {hint ? <div className="muted mt-1 text-sm">{hint}</div> : null}
       </div>
       <div className="mt-5">{children}</div>

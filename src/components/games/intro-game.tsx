@@ -39,12 +39,23 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   }, [round.id]);
 
   return (
-    <GameShell label="Yeni Kelime" prompt="Bunu bugün öğreniyorsun" hint={word.niveau}>
+    <GameShell label="Yeni Kelime">
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="card mx-auto w-full max-w-md p-5 text-center"
+        className="card relative mx-auto w-full max-w-md p-5 text-center"
       >
+        {/* Seviye rozeti kartın içinde durur: kelimeyle birlikte okunur, başlığın
+            altında ayrı bir satır tüketmez. */}
+        <span
+          className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-[11px] font-bold tracking-wide"
+          style={{
+            background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+            color: "var(--color-brand-500)",
+          }}
+        >
+          {word.niveau}
+        </span>
         {word.artikel ? (
           <span
             className="mb-2 inline-block rounded-full px-3 py-1 text-sm font-bold text-white"
