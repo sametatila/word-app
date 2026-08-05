@@ -22,6 +22,11 @@ uygulama gibi tam ekran açılır (PWA).
 - **Beceriler bölümü (`/skills`):** her kursta A1–C1 için okuma, dinleme ve yazma alıştırmaları —
   metin, sözlükçe (gloss), çoktan seçmeli sorular ve gerekçeli açıklamalar; yazmada önce cümle
   kurma, sonra kontrol listeli serbest yazı ve örnek çözüm.
+- **Sohbet (`/sohbet`):** seviyene göre konuşan Almanca partner. Her istekte tekrar kuyruğundan
+  18 kelime sistem istemine girer, konuşma onların etrafında döner — sohbet SRS'in üstüne biner.
+  Hatalar konuşmayı bölmeden tek satırda düzeltilir. Yazmak son çare: her cevabın altında
+  dokunulabilir öneriler, mikrofonla sesli cevap ve umlaut tuşları var. GitHub Models'in ücretsiz
+  katmanında çalışır (Llama-3.3-70B-Instruct); anahtar yoksa sayfa çökmez, ne yapılacağını söyler.
 - **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
   kelime listesinde ve Cümleyi Tamamla oyununda görünür.
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
@@ -75,14 +80,22 @@ npm run dev                     # http://localhost:3000
 DATABASE_URL="postgresql://user:pass@ep-xxx-pooler.<region>.aws.neon.tech/neondb?sslmode=require"
 NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
 NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
+
+# Sohbet (/sohbet) — GitHub Models ücretsiz katmanı. models:read yetkili GitHub PAT yeter.
+GITHUB_MODELS_API_KEY="github_pat_..."
 ```
+
+`GITHUB_MODELS_API_KEY` boş bırakılırsa yalnızca `/sohbet` kapalı görünür; uygulamanın geri
+kalanı etkilenmez. Anahtar **koda gömülmez** — bu depo GitHub'a push ediliyor ve GitHub kendi
+token biçimini tarayıp bulduğu anda iptal ediyor.
 
 `NEON_AUTH_*` boş bırakılırsa uygulama **demo modunda** tek kullanıcıyla çalışır — veritabanı
 bağlıysa tüm oyunlar, ilerleme ve streak çalışır. İki değer eklenince giriş/kayıt (`/giris`)
 kendiliğinden devreye girer.
 
 Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi · `/learn` oturum ·
-`/words` kelime listesi · `/skills` okuma-dinleme-yazma · `/profile` ayarlar + ilerleme ·
+`/words` kelime listesi · `/skills` okuma-dinleme-yazma-konuşma · `/sohbet` serbest sohbet ·
+`/profile` ayarlar + ilerleme ·
 `/demo-games` on oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
 
 ## 2. Neon kurulumu (Postgres 18)
@@ -105,6 +118,7 @@ vercel link
 vercel env add DATABASE_URL production                     # ve preview/development
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
+vercel env add GITHUB_MODELS_API_KEY production   # /sohbet için; yoksa yalnızca o sayfa kapalı
 vercel --prod
 ```
 
@@ -127,7 +141,7 @@ done
 TEST_DATABASE_URL="postgres://postgres:test@localhost:55432/wa" npm run test:e2e
 ```
 
-E2E testi (143 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (196 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını ve ilerleme
 sorgularını gerçek PostgreSQL üzerinde doğrular.
 
@@ -143,8 +157,9 @@ src/
   app/
     page.tsx                tanıtım sayfası
     kurs-sec                ilk giriş: kurs + başlangıç seviyesi
-    (app)/learn|words|skills|profile
+    (app)/learn|words|skills|sohbet|profile
     api/session             oturum kuyruğunu üretir
+    api/chat                sohbet partneri (GitHub Models, akışlı)
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
     api/words/known         "bunu zaten biliyorum" işaretlemesi
