@@ -32,7 +32,6 @@ export default async function ProfilePage() {
           dailyGoal: profile.dailyGoal,
           newPerDay: profile.newPerDay,
           level: profile.level,
-          activeLevel: profile.activeLevel,
           course: profile.course,
           currentStreak: profile.currentStreak,
           longestStreak: profile.longestStreak,

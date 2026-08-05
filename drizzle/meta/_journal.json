@@ -57,6 +57,13 @@
       "when": 1785861110168,
       "tag": "0007_fixed_luke_cage",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1785925546775,
+      "tag": "0008_eager_stryfe",
+      "breakpoints": true
     }
   ]
 }

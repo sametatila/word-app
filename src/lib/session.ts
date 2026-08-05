@@ -8,37 +8,48 @@ import type { Answer, AnswerResult, Round, RoundWord, SessionPayload } from "@/l
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
 
-type Difficulty = "easy" | "normal" | "hard";
 const ROUNDS_PER_SESSION = 14;
+/** Bu aralığa ulaşan kelime "pekişmiş" sayılır (kelime listesiyle aynı ölçüt). */
+const MASTERED_DAYS = 21;
 
 /**
- * Adaptif seviye ayarı — iki vitesli.
+ * Kelimenin öğrencide ne kadar oturduğu.
  *
- * Kalibrasyon penceresi (seviyedeki ilk CAL_WINDOW cevap): %90+ doğruluk,
- * öğrencinin gerçek seviyesinin yukarıda olduğunun işaretidir; sistem onu
- * hızlıca kendi seviyesine yaklaştırır. Pencere kapandıktan sonra terfi uzun
- * vadeli birikim ister: seviyede yeterli hacim + istikrarlı yüksek doğruluk.
- * (Eski model 5 iyi oturumda C1'e çıkarıyordu — bu kasıtlı olarak yavaşlatıldı.)
+ * Zorluk kararı **buna** bakar, kullanıcının genel başarısına değil.
+ *
+ * Neden: bir SRS oturumu bilerek karışık kurulur — hiç görülmemiş kelimeler
+ * (tanım gereği bilinemez), öğrenilmekte olanlar ve oturmuş tekrarlar bir arada.
+ * Bu yüzden oturum doğruluğu yetkinliği değil, **kuyruğun bileşimini** ölçer:
+ * yeni kelime almaya cesaret eden düşük, sadece kolay tekrar yapan yüksek
+ * doğruluk alır. Kişiyi o sayıyla derecelendirmek öğrenmeyi cezalandırır.
+ *
+ * Kelime bazında ise ölçüm dürüsttür: bu kelimeyi kaç kez üst üste bildin,
+ * kaç kez unuttun, aralık ne kadar açıldı. Zorluk buradan gelir.
  */
-const CAL_WINDOW = 80; // cevap sayısı
-const PROMOTE_SCORE = 24; // kalibrasyon dışında terfi eşiği
-const DEMOTE_SCORE = -10; // kalibrasyon dışında iniş eşiği
-const SCORE_MIN = -12;
-const SCORE_AFTER_CHANGE = 4; // seviye değişiminde puan ortaya yakın başlar
+type Strength = "fresh" | "shaky" | "solid" | "strong";
+
+/** Tanıtım kartı bir güç seviyesi değil, kuyruktaki özel bir adımdır. */
+type QueueItem = { word: RoundWord; strength: Strength; intro?: boolean };
+
+function wordStrength(uw: typeof userWords.$inferSelect | null | undefined): Strength {
+  if (!uw || uw.reps === 0) return "fresh";
+  // Takılan, sık unutulan ya da az önce yanlış bilinen kelime destek ister.
+  if (uw.leech || uw.lapses >= 2 || uw.ease < 2.1 || uw.correctStreak === 0) return "shaky";
+  if (uw.correctStreak >= 4 && uw.intervalDays >= 7 && uw.ease >= 2.3) return "strong";
+  if (uw.correctStreak >= 2 && uw.intervalDays >= 1) return "solid";
+  return "fresh";
+}
 
 /**
- * Adaptif seviye modeli.
+ * Çalışılacak seviyeler.
  *
- * Profildeki seçim bir **başlangıç noktasıdır**, tavan değil. A1 ve A2 zorunlu
- * bir geçit değildir: B1 diyen öğrenci doğrudan B1 kelimeleriyle başlar, iyi
- * giderse B2/C1'e yükselir, zorlanırsa sistem onu aşağı indirir. Gerçek seviyeyi
- * her zaman performans belirler.
- *
- * Kelimeler tek bir seviyeden değil, aktif seviyenin çevresinden gelir:
- * çoğunluk aktif seviyeden, bir kısmı bir alt seviyeden (boşluk doldurma).
+ * Kullanıcının profilde seçtiği seviye tek belirleyicidir; sistem bunu kendi
+ * kararıyla değiştirmez. Kelimelerin çoğunluğu seçilen seviyeden, bir kısmı
+ * bir alt seviyeden gelir (boşluk doldurma); seçilen seviyede görülmemiş
+ * kelime kalmazsa bir üst seviye devreye girer ki öğrenme durmasın.
  */
-function levelBand(activeLevel: string) {
-  const idx = Math.max(0, Math.min(LEVEL_ORDER.length - 1, LEVEL_ORDER.indexOf(activeLevel)));
+function levelBand(chosenLevel: string) {
+  const idx = Math.max(0, Math.min(LEVEL_ORDER.length - 1, LEVEL_ORDER.indexOf(chosenLevel)));
   const level = LEVEL_ORDER[idx];
   const below = idx > 0 ? LEVEL_ORDER[idx - 1] : null;
   const above = idx < LEVEL_ORDER.length - 1 ? LEVEL_ORDER[idx + 1] : null;
@@ -164,16 +175,42 @@ export async function buildSession(
     .orderBy(asc(userWords.dueAt))
     .limit(ROUNDS_PER_SESSION * 2);
 
-  const [{ count: dueCount }] = await db
-    .select({ count: sql<number>`count(*)::int` })
+  // Koleksiyonun sağlığı: birikmiş tekrar ve takılan kelime sayısı. Günlük yük
+  // buna göre ayarlanır — bu bir not değil, tempo kararıdır.
+  const [health] = await db
+    .select({
+      due: sql<number>`count(*) filter (where ${userWords.dueAt} <= now())::int`,
+      seen: sql<number>`count(*)::int`,
+      leeches: sql<number>`count(*) filter (where ${userWords.leech})::int`,
+      mastered: sql<number>`count(*) filter (where ${userWords.intervalDays} >= ${MASTERED_DAYS})::int`,
+    })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
-    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, now), eq(words.course, course)));
+    .where(and(eq(userWords.userId, userId), eq(words.course, course)));
+  const dueCount = health?.due ?? 0;
 
   // 2) Kalan kontenjan kadar yeni kelime
-  const newBudget = extra ? 10 : Math.max(0, profile.newPerDay - newToday);
-  // Seviyeyi performans belirler; profildeki seçim yalnızca başlangıç noktasıdır.
-  const band = levelBand(profile.activeLevel);
+  const band = levelBand(profile.level);
+
+  /**
+   * Tempo: yeni kelime alımı koleksiyonun taşıyabileceği kadar.
+   *
+   * Tekrar borcu günlük hedefin iki katını aştıysa ya da takılan kelime oranı
+   * yükseldiyse yeni kelime almak yalnızca borcu büyütür. Bu, kullanıcının
+   * başarısıyla ilgili bir yargı değil; sırt çantasının ağırlığıyla ilgili.
+   */
+  const leechRatio = health && health.seen >= 20 ? health.leeches / health.seen : 0;
+  const pacing: "normal" | "light" | "review" =
+    dueCount >= profile.dailyGoal * 2 ? "review" : leechRatio > 0.15 ? "light" : "normal";
+
+  const quota = extra
+    ? 10
+    : pacing === "review"
+      ? 0
+      : pacing === "light"
+        ? Math.ceil(profile.newPerDay / 2)
+        : profile.newPerDay;
+  const newBudget = extra ? quota : Math.max(0, quota - newToday);
 
   // Günlük kota bir hız ayarıdır, duvar değil: tekrar kuyruğu zayıfsa oturumu
   // dolduracak kadar yeni kelime her hâlükârda gelir (tek turluk oturum olmaz).
@@ -213,8 +250,15 @@ export async function buildSession(
     .orderBy(sql`random()`)
     .limit(140);
 
-  const dueWords = dueRows.map((r) => ({ word: toRoundWord(r.w, false), state: r.uw.state }));
-  const newWords = newRows.map((r) => ({ word: toRoundWord(r, true), state: 0 }));
+  // Zorluk kelimenin kendi geçmişinden çıkar, kullanıcının genel notundan değil.
+  const dueWords: QueueItem[] = dueRows.map((r) => ({
+    word: toRoundWord(r.w, false),
+    strength: wordStrength(r.uw),
+  }));
+  const newWords: QueueItem[] = newRows.map((r) => ({
+    word: toRoundWord(r, true),
+    strength: "fresh" as const,
+  }));
 
   // Kuyruk zayıfsa yakın zamanda gelecek tekrarları öne çek: oturum asla boş kalmaz.
   // Son 30 dakikada zaten sorulmuş kelimeler dışarıda bırakılır — aynı kelimeyi
@@ -235,40 +279,25 @@ export async function buildSession(
       .orderBy(asc(userWords.dueAt))
       .limit(10 - dueWords.length - newWords.length);
     for (const r of early) {
-      dueWords.push({ word: toRoundWord(r.w, false), state: r.uw.state });
+      dueWords.push({ word: toRoundWord(r.w, false), strength: wordStrength(r.uw) });
     }
   }
 
-  // Son cevaplara bakarak zorluğu ayarla: iyi gidiyorsa üretim ağırlıklı,
-  // zorlanıyorsa tanıma ağırlıklı oyunlar seçilir.
-  // Seviye elle değiştirildiyse ölçüm o andan itibaren yapılır: eski seviyedeki
-  // başarı, yeni seviyedeki zorluğu belirlememeli.
-  const since = profile.levelChangedAt;
-  const [recent] = await db
+  const rounds = composeRounds(dueWords, newWords, pool);
+
+  // Kapsam: seçilen seviyenin ne kadarı pekişti. Yalnızca artan bir ölçü —
+  // öğrenciyi derecelendirmez, biriktirdiğini gösterir.
+  const [cov] = await db
     .select({
       total: sql<number>`count(*)::int`,
-      correct: sql<number>`count(*) filter (where ${reviews.correct})::int`,
+      mastered: sql<number>`count(*) filter (where ${userWords.intervalDays} >= ${MASTERED_DAYS})::int`,
     })
-    .from(
-      db
-        .select({ correct: reviews.correct })
-        .from(reviews)
-        .where(
-          since
-            ? and(eq(reviews.userId, userId), gt(reviews.createdAt, since))
-            : eq(reviews.userId, userId),
-        )
-        .orderBy(desc(reviews.createdAt))
-        .limit(50)
-        .as("son"),
-    );
-  const accuracy = recent && recent.total >= 12 ? recent.correct / recent.total : null;
-  // Seviye yeni değiştiyse kullanıcıya "sistem seni yeniden ölçüyor" denecek.
-  const calibrating = Boolean(since) && (recent?.total ?? 0) < 12;
-  const difficulty: Difficulty =
-    accuracy === null ? "normal" : accuracy >= 0.85 ? "hard" : accuracy <= 0.6 ? "easy" : "normal";
-
-  const rounds = composeRounds(dueWords, newWords, pool, difficulty);
+    .from(words)
+    .leftJoin(
+      userWords,
+      and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)),
+    )
+    .where(and(eq(words.course, course), eq(words.niveau, band.level)));
 
   // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
@@ -297,12 +326,10 @@ export async function buildSession(
       currentStreak: profile.currentStreak,
       totalXp: profile.totalXp,
       displayName: profile.displayName,
-      difficulty,
-      accuracy: accuracy === null ? null : Math.round(accuracy * 100),
-      activeLevel: band.level,
-      levelScore: profile.levelScore,
-      levelStart: profile.level,
-      calibrating,
+      level: band.level,
+      coverage: { mastered: cov?.mastered ?? 0, total: cov?.total ?? 0 },
+      pacing,
+      leeches: health?.leeches ?? 0,
     },
   };
 }
@@ -312,23 +339,22 @@ export async function buildSession(
  * arka arkaya tekrarlanmasını engelleyerek monotonluğu kırar.
  */
 function composeRounds(
-  due: { word: RoundWord; state: number }[],
-  fresh: { word: RoundWord; state: number }[],
+  due: QueueItem[],
+  fresh: QueueItem[],
   pool: (typeof words.$inferSelect)[],
-  difficulty: Difficulty = "normal",
 ): Round[] {
   const rounds: Round[] = [];
   let seq = 0;
   const nextId = () => `r${++seq}`;
 
   // Yeni kelimeler önce tanıtım kartı, ardından tanıma oyunu olarak girer.
-  const queue: { word: RoundWord; state: number }[] = [];
+  const queue: QueueItem[] = [];
   for (const item of fresh) {
-    queue.push({ ...item, state: -1 }); // -1 => intro
+    queue.push({ ...item, intro: true });
     queue.push(item);
   }
   // Tekrarları araya serpiştir
-  const merged: { word: RoundWord; state: number }[] = [];
+  const merged: QueueItem[] = [];
   const a = [...due];
   const b = [...queue];
   while (a.length || b.length) {
@@ -340,13 +366,15 @@ function composeRounds(
   // Eşleştirme turu: tanıtımı yapılan kelimeler de aday olur, böylece oyun
   // ilk günden itibaren çıkar. Tur oturumun sonuna konur — o noktada tüm
   // kelimeler tanıtılmış olur.
-  const matchCandidates = merged.filter((m) => m.state >= 0).slice(0, 5);
+  const matchCandidates = merged.filter((m) => !m.intro).slice(0, 5);
   const useMatch = matchCandidates.length === 5;
 
   let lastGame = "";
   for (const item of merged) {
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
-    const round = pickRound(item.word, item.state, pool, lastGame, nextId, difficulty);
+    const round = item.intro
+      ? ({ id: nextId(), game: "intro", word: item.word } as Round)
+      : pickRound(item.word, item.strength, pool, lastGame, nextId);
     if (!round) continue;
     rounds.push(round);
     lastGame = round.game;
@@ -359,26 +387,34 @@ function composeRounds(
   return rounds;
 }
 
+/**
+ * Kelimeye uygun oyunu seçer.
+ *
+ * Zorluk merdiveni kelimenin gücünden çıkar:
+ *   fresh/shaky → tanıma (şıklı) — cevap ekranda, hatırlama desteklenir
+ *   solid       → tanıma + harf dizme
+ *   strong      → üretim (yazma) — destek yok, sıfırdan hatırlama
+ *
+ * `bias` yalnızca meydan okuma turu içindir: orada zorluk kelimeden değil,
+ * dalganın kendisinden gelir (ısınma → kriz).
+ */
 function pickRound(
   word: RoundWord,
-  state: number,
+  strength: Strength,
   pool: (typeof words.$inferSelect)[],
   /** Kaçınılacak oyun türleri — arka arkaya (ya da aynı kelimede) tekrar etmesin. */
   avoid: string | string[],
   nextId: () => string,
-  difficulty: Difficulty = "normal",
+  bias?: "recognition" | "production",
 ): Round | null {
-  if (state === -1) return { id: nextId(), game: "intro", word };
-
   const candidates: Round["game"][] = [];
-  if (state === 0) {
-    // Kelimeyi ilk kez gördü: tanıma temelli oyunlar (üretim daha sonra).
-    // Cümle tamamlama da şıklı olduğu için bu aşamada uygundur ve örnek cümle
-    // tanıtım kartında zaten gösterilmiştir.
+  if (strength === "fresh" || strength === "shaky") {
+    // Yeni ya da takılan kelime: cevabın ekranda olduğu tanıma oyunları.
+    // Boş sayfaya yazdırmak bu aşamada öğretmez, yalnızca yıldırır.
     candidates.push("choice", "cloze");
     if (word.artikel) candidates.push("artikel");
-  } else if (state === 1) {
-    candidates.push("choice");
+  } else if (strength === "solid") {
+    candidates.push("choice", "cloze");
     if (word.artikel) candidates.push("artikel");
     if (word.de.length <= 12) candidates.push("scramble");
   } else {
@@ -387,12 +423,11 @@ function pickRound(
     if (word.de.length <= 12) candidates.push("scramble");
   }
 
-  // Zorluk ayarı: iyi gidene üretim (yazma/harf), zorlanana tanıma (şıklı) oyunu.
   const PRODUCTION: Round["game"][] = ["typing", "scramble"];
   const tuned =
-    difficulty === "hard"
+    bias === "production"
       ? [...candidates.filter((g) => PRODUCTION.includes(g)), ...candidates]
-      : difficulty === "easy"
+      : bias === "recognition"
         ? [...candidates.filter((g) => !PRODUCTION.includes(g)), ...candidates]
         : candidates;
 
@@ -401,7 +436,7 @@ function pickRound(
   const order = usable.length ? usable : tuned;
 
   for (const game of shuffle(order)) {
-    const round = makeRound(game, word, pool, nextId);
+    const round = makeRound(game, word, pool, nextId, strength);
     if (round) return round;
   }
   return { id: nextId(), game: "choice", word, options: optionsFor(word, pool), direction: "de-tr" };
@@ -412,10 +447,16 @@ function makeRound(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
   nextId: () => string,
+  strength: Strength = "solid",
 ): Round | null {
   switch (game) {
     case "choice": {
-      const direction = Math.random() < 0.35 ? "tr-de" : "de-tr";
+      // Yön de kelimenin gücüne bağlı bir zorluk kademesidir: Almanca→Türkçe
+      // tanımaktır, Türkçe→Almanca üretime yakındır. Yeni ve takılan
+      // kelimelerde hep tanıma yönü sorulur.
+      const trDeChance =
+        strength === "fresh" || strength === "shaky" ? 0 : strength === "solid" ? 0.35 : 0.6;
+      const direction = Math.random() < trDeChance ? "tr-de" : "de-tr";
       return {
         id: nextId(),
         game: "choice",
@@ -574,6 +615,8 @@ export async function submitAnswers(
   let newCount = 0;
   const reviewRows: (typeof reviews.$inferInsert)[] = [];
   const upserts: (typeof userWords.$inferInsert)[] = [];
+  /** Aralığın cevap öncesi/sonrası hâli — pekişme eşiğini geçenleri saymak için. */
+  const updates: { before: number; after: number }[] = [];
 
   for (const ans of answers) {
     const prevRow = byId.get(ans.wordId);
@@ -606,6 +649,7 @@ export async function submitAnswers(
 
     xpGained += xpForQuality(q);
     if (ans.correct) correctCount += 1;
+    updates.push({ before: prev.intervalDays, after: next.intervalDays });
 
     reviewRows.push({
       userId,
@@ -677,50 +721,16 @@ export async function submitAnswers(
     })
     .returning();
 
-  // Seviye puanı: oturum doğruluğuna göre artar/azalır.
-  const sessionAccuracy = answers.length ? correctCount / answers.length : 0;
-  const delta =
-    sessionAccuracy >= 0.85 ? 2 : sessionAccuracy >= 0.7 ? 1 : sessionAccuracy >= 0.5 ? 0 : -2;
+  // Seviye burada değişmez. Kullanıcının CEFR seviyesi kendi beyanıdır ve
+  // yalnızca profilden değiştirilir: oturum doğruluğu bir yetkinlik ölçüsü
+  // değil, kuyruğun bileşiminin ölçüsüdür (bkz. Strength). Onunla insan
+  // derecelendirmek, yeni kelime almayı cezalandıran ters bir teşvik kurar.
 
-  // Bu seviyede verilen cevap hacmi (bu oturum dahil): terfi tek güzel oturumla
-  // değil, seviyede gerçekten çalışılmış hacimle kazanılır.
-  const sinceLevel = profile.levelChangedAt;
-  const [{ atLevel }] = await db
-    .select({ atLevel: sql<number>`count(*)::int` })
-    .from(reviews)
-    .where(
-      sinceLevel
-        ? and(eq(reviews.userId, userId), gt(reviews.createdAt, sinceLevel))
-        : eq(reviews.userId, userId),
-    );
-
-  // Profildeki seçim tavan değildir: iyi giden öğrenci C1'e kadar yükselebilir,
-  // zorlanan A1'e kadar inebilir. Seviyeyi yalnızca performans belirler.
-  let activeIdx = Math.max(0, LEVEL_ORDER.indexOf(profile.activeLevel));
-  let levelScore = Math.max(SCORE_MIN, Math.min(PROMOTE_SCORE, profile.levelScore + delta));
-  let levelUp: string | null = null;
-  let levelDown: string | null = null;
-  let levelChangedAt: Date | null = null;
-
-  // Kalibrasyon penceresinde hızlı yaklaşma, sonrasında uzun vadeli birikim.
-  const inCalibration = atLevel < CAL_WINDOW;
-  const canPromote =
-    activeIdx < LEVEL_ORDER.length - 1 &&
-    (inCalibration ? levelScore >= 10 && sessionAccuracy >= 0.9 : levelScore >= PROMOTE_SCORE);
-  const canDemote = activeIdx > 0 && levelScore <= (inCalibration ? -6 : DEMOTE_SCORE);
-
-  if (canPromote) {
-    activeIdx += 1;
-    levelUp = LEVEL_ORDER[activeIdx];
-  } else if (canDemote) {
-    activeIdx -= 1;
-    levelDown = LEVEL_ORDER[activeIdx];
-  }
-  if (levelUp || levelDown) {
-    // Yeni seviyede ölçüm sıfırdan: puan ortaya yakın, doğruluk penceresi bu andan.
-    levelScore = SCORE_AFTER_CHANGE;
-    levelChangedAt = now;
-  }
+  // Bu turda pekişme eşiğini geçen kelimeler — özet ekranında gösterilecek
+  // olumlu, dürüst sinyal.
+  const newlyMastered = updates.filter(
+    (u) => u.before < MASTERED_DAYS && u.after >= MASTERED_DAYS,
+  ).length;
 
   // Streak: bugün ilk kez aktifse güncellenir.
   let { currentStreak, longestStreak } = profile;
@@ -737,17 +747,11 @@ export async function submitAnswers(
       longestStreak,
       lastActiveDay: today,
       totalXp: profile.totalXp + xpGained,
-      activeLevel: LEVEL_ORDER[activeIdx],
-      levelScore,
-      ...(levelChangedAt ? { levelChangedAt } : {}),
     })
     .where(eq(profiles.userId, userId));
 
   return {
-    levelUp,
-    levelDown,
-    activeLevel: LEVEL_ORDER[activeIdx],
-    levelScore,
+    newlyMastered,
     xpGained,
     totalXp: profile.totalXp + xpGained,
     currentStreak,
@@ -807,7 +811,7 @@ export async function buildChallenge(
   userId: string,
 ): Promise<{ rounds: Round[]; tiers: number[]; pool: number; weak: number }> {
   const profile = await ensureProfile(userId);
-  const band = levelBand(profile.activeLevel);
+  const band = levelBand(profile.level);
 
   const learned = await db
     .select({ w: words, uw: userWords })
@@ -856,7 +860,7 @@ export async function buildChallenge(
     source: typeof ranked,
     count: number,
     tier: number,
-    difficulty: Difficulty,
+    bias: "recognition" | "production" | undefined,
   ) => {
     for (let i = 0; i < count && source.length; i++) {
       const row = source[i % source.length];
@@ -865,11 +869,11 @@ export async function buildChallenge(
       // Aynı kelime tekrar gelirse mutlaka başka bir oyunla sorulur.
       const round = pickRound(
         word,
-        Math.max(1, row.uw.state),
+        wordStrength(row.uw),
         pool,
         [...seen, lastGame],
         nextId,
-        difficulty,
+        bias,
       );
       if (!round) continue;
       seen.add(round.game);
@@ -880,9 +884,11 @@ export async function buildChallenge(
     }
   };
 
-  wave(solid, 6, 1, "easy"); // ısınma: hız kazan, kombo kur
-  wave(shuffle(ranked), 9, 2, "normal"); // baskı: karışık
-  wave(fragile, 12, 3, "hard"); // kriz: en zayıflar, üretim ağırlıklı
+  // Meydan okumada zorluk kelimeden değil dalgadan gelir: bilerek kurulmuş bir
+  // tırmanış. Normal turlarda böyle bir küresel ayar yok.
+  wave(solid, 6, 1, "recognition"); // ısınma: hız kazan, kombo kur
+  wave(shuffle(ranked), 9, 2, undefined); // baskı: karışık
+  wave(fragile, 12, 3, "production"); // kriz: en zayıflar, üretim ağırlıklı
 
   return { rounds, tiers, pool: learned.length, weak };
 }

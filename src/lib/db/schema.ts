@@ -43,14 +43,12 @@ export const profiles = pgTable("profiles", {
   displayName: text("display_name"),
   dailyGoal: integer("daily_goal").notNull().default(20), // gün başına hedef tekrar
   newPerDay: integer("new_per_day").notNull().default(15), // gün başına yeni kelime
-  level: text("level").notNull().default("A1"), // kullanıcının seçtiği başlangıç seviyesi
-  activeLevel: text("active_level").notNull().default("A1"), // performansa göre güncel seviye
+  // Kullanıcının seçtiği CEFR seviyesi. Yalnızca kullanıcı değiştirir; sistem
+  // performansa bakarak terfi/düşüş yapmaz (bkz. lib/session.ts, Strength).
+  level: text("level").notNull().default("A1"),
   course: text("course").notNull().default("de"), // de | gsw-zh — çalışılan kurs
   // İlk girişte kurs/seviye soruldu mu? Null ise onboarding gösterilir.
   courseChosenAt: timestamp("course_chosen_at", { withTimezone: true }),
-  levelScore: integer("level_score").notNull().default(0), // terfi/düşüş göstergesi (-12..24)
-  // Seviye elle değiştirildiğinde zorluk ölçümü sıfırdan başlasın diye tutulur.
-  levelChangedAt: timestamp("level_changed_at", { withTimezone: true }),
   currentStreak: integer("current_streak").notNull().default(0),
   longestStreak: integer("longest_streak").notNull().default(0),
   lastActiveDay: date("last_active_day"),

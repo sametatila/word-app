@@ -22,7 +22,7 @@ export default async function SkillsPage() {
   let course = "de";
   try {
     const profile = await ensureProfile(user.id, user.name);
-    const lv = profile.activeLevel as CefrLevel;
+    const lv = profile.level as CefrLevel;
     if (["A1", "A2", "B1", "B2", "C1"].includes(lv)) activeLevel = lv;
     course = profile.course;
   } catch (err) {

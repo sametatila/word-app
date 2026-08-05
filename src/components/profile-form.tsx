@@ -11,7 +11,6 @@ type Initial = {
   dailyGoal: number;
   newPerDay: number;
   level: string;
-  activeLevel: string;
   course: string;
   currentStreak: number;
   longestStreak: number;
@@ -138,7 +137,7 @@ export function ProfileForm({
         </label>
 
         <div>
-          <span className="muted mb-1.5 block text-sm font-semibold">Başlangıç seviyen</span>
+          <span className="muted mb-1.5 block text-sm font-semibold">Seviyen</span>
           <div className="grid gap-2 sm:grid-cols-5">
             {LEVELS.map((l) => (
               <button
@@ -154,24 +153,11 @@ export function ProfileForm({
             ))}
           </div>
           <p className="muted mt-1.5 text-xs">
-            {LEVELS.find((l) => l.id === level)?.desc}. Bu bir <strong>başlangıç noktası</strong>,
-            tavan değil: doğrudan buradan başlarsın, alt seviyeleri baştan geçmen gerekmez.
-            Kelimelerin çoğu bu seviyeden, bir kısmı boşlukları kapatmak için bir alt seviyeden gelir.
-            İyi gittikçe sistem seni yukarı taşır, zorlandığında bir alt seviyeye indirir.
+            {LEVELS.find((l) => l.id === level)?.desc}. Seviyeni <strong>yalnızca sen</strong>{" "}
+            değiştirirsin — sistem seni sınayıp yukarı taşımaz ya da aşağı indirmez. Kelimelerin
+            çoğu bu seviyeden, bir kısmı boşlukları kapatmak için bir alt seviyeden gelir; bu
+            seviyede görülmemiş kelime kalmazsa bir üst seviye devreye girer.
           </p>
-          {level !== initial.activeLevel ? (
-            <p
-              className="mt-2 rounded-xl px-3 py-2 text-xs"
-              style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)",
-                color: "var(--color-brand-500)",
-              }}
-            >
-              Kaydedince çalışma seviyen {initial.activeLevel} → {level} olacak; zorluk ölçümü
-              sıfırlanıp yeni seviyene göre baştan başlayacak. Öğrendiğin kelimelerin tekrar planı
-              olduğu gibi korunur.
-            </p>
-          ) : null}
         </div>
 
         <Slider

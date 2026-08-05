@@ -9,7 +9,7 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { LevelBadge } from "@/components/level-badge";
 import { ChallengePlayer } from "@/components/challenge-player";
-import { Confetti, CountUp, LevelUpOverlay } from "@/components/celebrate";
+import { Confetti, CountUp } from "@/components/celebrate";
 import { FitBox } from "@/components/fit-box";
 import { AnswerPulse } from "@/components/answer-pulse";
 import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
@@ -293,9 +293,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
       <div className="mb-2 shrink-0">
         <LevelBadge
-          level={session!.meta.activeLevel}
-          score={session!.meta.levelScore}
-          calibrating={session!.meta.calibrating}
+          level={session!.meta.level}
+          mastered={session!.meta.coverage.mastered}
+          total={session!.meta.coverage.total}
         />
       </div>
       <div className="mb-3 shrink-0">
@@ -408,7 +408,7 @@ function StartCard({
           <div className="mt-1 flex items-center gap-2">
             <h1 className="text-2xl font-bold">{name ? `Hoş geldin, ${name}` : "Hoş geldin"}</h1>
             <span className="rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
-              {meta.activeLevel}
+              {meta.level}
             </span>
           </div>
           <div className="mt-4">
@@ -441,59 +441,40 @@ function StartCard({
         </div>
 
         <div className="px-6 pb-6 pt-4">
-          {meta.calibrating ? (
+          {/* Tempo bilgisi — bir başarı notu değil, bugün ne kadar yük alındığı.
+              Eski "zorluk yükseltildi / hafifletildi" metni oturum doğruluğunu
+              yetkinlik sanıyordu; o ölçü kuyruğun bileşimini ölçüyordu. */}
+          {meta.pacing !== "normal" ? (
             <div
               className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
               style={{ background: "var(--surface-2)" }}
             >
-              <strong style={{ color: "var(--color-brand-500)" }}>
-                {meta.activeLevel} seviyesinden başlıyorsun
+              <strong style={{ color: "var(--color-flame-500)" }}>
+                {meta.pacing === "review" ? "Bugün tekrar günü" : "Bugün tempo biraz düşük"}
               </strong>
               <p className="muted mt-1 text-xs">
-                Seviyeni değiştirdin: kelimeler ve zorluk bu seviyeye göre yeniden ayarlandı.
-                Birkaç tur sonra sistem seni ölçüp gerekirse yukarı ya da aşağı taşıyacak.
+                {meta.pacing === "review"
+                  ? `${meta.dueCount} kelimenin tekrarı birikmiş. Yeni kelime almak yalnızca borcu büyütürdü; bugün onları kapatıyoruz.`
+                  : `${meta.leeches} kelimede takılıyorsun. Yeni kelime sayısı yarıya indirildi ki bunlara yer kalsın.`}
               </p>
             </div>
-          ) : meta.activeLevel !== meta.levelStart ? (
-            <div
-              className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
-              style={{ background: "var(--surface-2)" }}
-            >
-              <span className="muted">Başlangıcın {meta.levelStart} idi, şu an </span>
-              <strong style={{ color: "var(--color-brand-500)" }}>{meta.activeLevel}</strong>
-              <span className="muted"> seviyesinde çalışıyorsun.</span>
-            </div>
           ) : null}
-          {meta.accuracy !== null ? (
+          {meta.coverage.total > 0 ? (
             <div
               className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
               style={{ background: "var(--surface-2)" }}
             >
-              <span className="muted">Son 50 cevapta </span>
-              <strong>%{meta.accuracy}</strong>
-              <span className="muted"> doğruluk — </span>
-              <strong
-                style={{
-                  color:
-                    meta.difficulty === "hard"
-                      ? "var(--color-mint-500)"
-                      : meta.difficulty === "easy"
-                        ? "var(--color-flame-500)"
-                        : "var(--color-brand-500)",
-                }}
-              >
-                {meta.difficulty === "hard"
-                  ? "zorluk yükseltildi"
-                  : meta.difficulty === "easy"
-                    ? "zorluk hafifletildi"
-                    : "normal zorluk"}
+              <span className="muted">{meta.level} havuzunda </span>
+              <strong style={{ color: "var(--color-mint-500)" }}>
+                {meta.coverage.mastered.toLocaleString("tr-TR")}
               </strong>
+              <span className="muted">
+                {" / "}
+                {meta.coverage.total.toLocaleString("tr-TR")} kelime pekişti
+              </span>
               <p className="muted mt-1 text-xs">
-                {meta.difficulty === "hard"
-                  ? "İyi gidiyorsun: yazma ve harf bulmacası gibi üretim oyunları öne çıkıyor."
-                  : meta.difficulty === "easy"
-                    ? "Zorlandığın görülüyor: şıklı tanıma oyunları öne çıkıyor, hız kazanınca yükselecek."
-                    : "Doğruluk oranın değiştikçe oyun türleri kendiliğinden zorlaşır ya da hafifler."}
+                Her sorunun zorluğu o kelimeyi ne kadar bildiğine göre seçilir: yeni kelimede
+                şıklı tanıma, oturmuş kelimede yazma. Seviyeni yalnızca sen değiştirirsin.
               </p>
             </div>
           ) : null}
@@ -641,16 +622,11 @@ function SummaryCard({
 }) {
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const xp = result?.xpGained ?? tally.xp;
-  // Seviye değişimi ekranı kaplasın: kullanıcı bunu kaçırmamalı.
-  const [levelMoment, setLevelMoment] = useState<{ level: string; dir: "up" | "down" } | null>(
-    result?.levelUp
-      ? { level: result.levelUp, dir: "up" }
-      : result?.levelDown
-        ? { level: result.levelDown, dir: "down" }
-        : null,
-  );
-  // Konfeti yalnızca gerçekten iyi bir tur sonunda: her seferinde patlarsa değersizleşir.
-  const deserved = accuracy >= 80 && tally.total >= 4;
+  const mastered = result?.newlyMastered ?? 0;
+  // Konfeti yalnızca gerçekten iyi bir tur sonunda: her seferinde patlarsa
+  // değersizleşir. Kelime pekiştirmek de kutlanmayı hak eder — o, oturum
+  // doğruluğunun aksine gerçekten kazanılmış bir şey.
+  const deserved = mastered > 0 || (accuracy >= 80 && tally.total >= 4);
 
   return (
     <motion.div
@@ -658,12 +634,7 @@ function SummaryCard({
       animate={{ opacity: 1, scale: 1 }}
       className="relative mx-auto w-full max-w-md"
     >
-      <LevelUpOverlay
-        level={levelMoment?.level ?? null}
-        direction={levelMoment?.dir ?? "up"}
-        onClose={() => setLevelMoment(null)}
-      />
-      <Confetti fire={deserved && !levelMoment ? 1 : 0} />
+      <Confetti fire={deserved ? 1 : 0} />
 
       <div className="card overflow-hidden">
         <div className="brand-gradient p-8 text-center text-white">
@@ -714,26 +685,20 @@ function SummaryCard({
           </div>
         ) : null}
 
-        {result?.levelUp || result?.levelDown ? (
-          <button
-            onClick={() =>
-              setLevelMoment({
-                level: (result.levelUp ?? result.levelDown)!,
-                dir: result.levelUp ? "up" : "down",
-              })
-            }
-            className="mx-6 mt-4 w-[calc(100%-3rem)] rounded-2xl px-4 py-3 text-center text-sm font-bold"
-            style={{
-              background: `color-mix(in srgb, ${
-                result.levelUp ? "var(--color-mint-500)" : "var(--color-flame-500)"
-              } 14%, transparent)`,
-              color: result.levelUp ? "var(--color-mint-500)" : "var(--color-flame-500)",
-            }}
+        {/* Seviye rozeti yerine gerçekten kazanılmış olan şey: pekişen kelime.
+            Bu ölçü yalnızca ileri gider, kimseyi geri düşürmez. */}
+        {mastered > 0 ? (
+          <div
+            className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
+            style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" }}
           >
-            {result.levelUp
-              ? `${result.levelUp} seviyesine yükseldin`
-              : `${result.levelDown} seviyesine döndük`}
-          </button>
+            <p className="text-sm font-bold" style={{ color: "var(--color-mint-500)" }}>
+              {mastered} kelime pekişti
+            </p>
+            <p className="muted mt-1 text-xs">
+              Bu kelimeler artık üç haftadan seyrek soruluyor — yer yeni kelimelere kalıyor.
+            </p>
+          </div>
         ) : null}
 
         <p className="muted px-6 pt-4 text-center text-xs">

@@ -67,22 +67,25 @@ export type SessionPayload = {
     currentStreak: number;
     totalXp: number;
     displayName: string | null;
-    difficulty: "easy" | "normal" | "hard";
-    accuracy: number | null;
-    activeLevel: string;
-    levelScore: number;
-    /** Profilde seçilen başlangıç seviyesi — tavan değil, yalnızca çıkış noktası. */
-    levelStart: string;
-    /** Seviye yeni değiştiyse sistem zorluğu yeniden ölçüyor demektir. */
-    calibrating: boolean;
+    /** Kullanıcının profilde seçtiği CEFR seviyesi. Sistem bunu değiştirmez. */
+    level: string;
+    /** Seçilen seviyenin pekişme durumu — yalnızca artan bir ölçü. */
+    coverage: { mastered: number; total: number };
+    /**
+     * Günlük yük kararı. Bir başarı notu değil, tempo:
+     *   review — tekrar borcu birikmiş, bugün yeni kelime yok
+     *   light  — takılan kelime oranı yüksek, yeni kelime yarıya iner
+     *   normal — her şey yolunda
+     */
+    pacing: "normal" | "light" | "review";
+    /** Takılan (leech) kelime sayısı — tempo kararının gerekçesi. */
+    leeches: number;
   };
 };
 
 export type AnswerResult = {
-  levelUp: string | null;
-  levelDown: string | null;
-  activeLevel: string;
-  levelScore: number;
+  /** Bu turda pekişme eşiğini (21 gün) geçen kelime sayısı. */
+  newlyMastered: number;
   xpGained: number;
   totalXp: number;
   currentStreak: number;

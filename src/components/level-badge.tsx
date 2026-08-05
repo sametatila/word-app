@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 
-const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
-
 const TONE: Record<string, string> = {
   A1: "var(--color-mint-500)",
   A2: "var(--color-sky-400)",
@@ -13,35 +11,26 @@ const TONE: Record<string, string> = {
 };
 
 /**
- * Güncel CEFR seviyesi ve bir sonraki seviyeye ilerleme.
+ * Seçilen CEFR seviyesi ve o seviyenin pekişme durumu.
  *
- * Seviyeyi performans belirler: profildeki seçim yalnızca başlangıç noktasıdır,
- * tavan değildir. Puan -12 ile 24 arasında; 24'e ulaşınca terfi (yeni seviyenin
- * kalibrasyon penceresinde daha erken), -10'a düşünce bir alt seviyeye iniş
- * olur. Amaç öğrencinin yükselişini/düşüşünü anlık görmesi.
+ * Burada bilerek bir rütbe yok. Seviye kullanıcının kendi beyanıdır ve yalnızca
+ * profilden değişir; gösterilen şey biriktirdiği kelimedir. Ölçü yalnızca artar
+ * — kimseye "geriye gittin" denmez, çünkü bir oturumun doğruluk oranı zaten
+ * yetkinliği değil kuyruğun bileşimini ölçer.
  */
 export function LevelBadge({
   level,
-  score,
+  mastered,
+  total,
   compact = false,
-  calibrating = false,
 }: {
   level: string;
-  score: number;
+  mastered: number;
+  total: number;
   compact?: boolean;
-  calibrating?: boolean;
 }) {
-  const idx = Math.max(0, LEVELS.indexOf(level));
-  const next = idx < LEVELS.length - 1 ? LEVELS[idx + 1] : null;
-  const prev = idx > 0 ? LEVELS[idx - 1] : null;
-  const pct = Math.max(0, Math.min(100, ((score + 12) / 36) * 100));
   const tone = TONE[level] ?? "var(--color-brand-500)";
-
-  const label = calibrating
-    ? "seviyeni yeniden ölçüyoruz"
-    : next
-      ? `${next} seviyesine ilerliyorsun`
-      : "en üst seviyedesin";
+  const pct = total > 0 ? Math.min(100, (mastered / total) * 100) : 0;
 
   return (
     <div className={compact ? "flex items-center gap-2" : "space-y-1.5"}>
@@ -57,29 +46,30 @@ export function LevelBadge({
           >
             {level}
           </motion.span>
-          {!compact ? <span className="muted text-xs font-semibold">{label}</span> : null}
+          {!compact ? (
+            <span className="muted text-xs font-semibold">
+              {mastered > 0
+                ? `${mastered.toLocaleString("tr-TR")} kelime pekişti`
+                : "kelimeler pekiştikçe burada birikecek"}
+            </span>
+          ) : null}
         </div>
-        {!compact ? (
-          <span className="muted text-xs font-semibold">{next ?? "C1"}</span>
+        {!compact && total > 0 ? (
+          <span className="muted text-xs font-semibold tabular-nums">
+            %{pct < 1 && mastered > 0 ? "<1" : Math.round(pct)}
+          </span>
         ) : null}
       </div>
 
       {!compact ? (
-        <div className="relative h-1.5 w-full overflow-hidden rounded-full surface-2">
+        <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
           <motion.div
             className="h-full rounded-full"
             style={{ background: tone }}
             initial={{ width: 0 }}
-            animate={{ width: `${pct}%` }}
+            animate={{ width: `${Math.max(pct, mastered > 0 ? 1.5 : 0)}%` }}
             transition={{ type: "spring", stiffness: 140, damping: 24 }}
           />
-          {/* Düşüş eşiği: puan buranın altına inerse bir alt seviyeye dönülür. */}
-          {prev ? (
-            <span
-              className="absolute inset-y-0 w-px opacity-50"
-              style={{ left: `${((-6 + 8) / 18) * 100}%`, background: "var(--color-rose-500)" }}
-            />
-          ) : null}
         </div>
       ) : null}
     </div>

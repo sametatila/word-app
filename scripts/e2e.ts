@@ -210,31 +210,96 @@ async function main() {
     !afterSkip.rounds.some((r) => r.game === "intro" && r.word.id === skipWord.id),
   );
 
-  console.log("\n10) Seviye ilerlemesi ve meydan okuma");
+  console.log("\n10) Seviye kullanıcıya aittir: sistem terfi/düşüş yapmaz");
   await reset();
-  await ensureProfile(USER); // önce profil oluşsun, sonra tavan yükseltilsin
+  await ensureProfile(USER);
   await db.update(profiles).set({ level: "B1" }).where(eq(profiles.userId, USER));
-  let lastLevel = "A1";
-  let sawLevelUp = false;
-  for (let i = 0; i < 8 && !sawLevelUp; i++) {
+
+  // Sürekli doğru: eskiden bu seviye atlatıyordu.
+  for (let i = 0; i < 8; i++) {
     const s = await buildSession(USER, day1);
     if (!s.rounds.length) break;
-    const r = await submitAnswers(USER, answersFor(s.rounds, 1), day1, 60);
-    lastLevel = r.activeLevel;
-    if (r.levelUp) sawLevelUp = true;
+    await submitAnswers(USER, answersFor(s.rounds, 1), day1, 60);
   }
-  check("hep doğru cevaplayınca seviye yükseliyor", sawLevelUp, `(son seviye: ${lastLevel})`);
+  const [afterGood] = await db.select().from(profiles).where(eq(profiles.userId, USER));
+  check("hep doğru cevaplamak seviyeyi değiştirmiyor", afterGood.level === "B1", `(${afterGood.level})`);
 
-  const beforeDown = lastLevel;
-  let sawLevelDown = false;
-  for (let i = 0; i < 8 && !sawLevelDown; i++) {
+  // Sürekli yanlış: eskiden bu seviye düşürüyordu — asıl şikâyet buydu.
+  for (let i = 0; i < 8; i++) {
     const s = await buildSession(USER, day1);
     if (!s.rounds.length) break;
     const wrong = answersFor(s.rounds, 1).map((a) => ({ ...a, correct: false }));
-    const r = await submitAnswers(USER, wrong, day1, 60);
-    if (r.levelDown) sawLevelDown = true;
+    await submitAnswers(USER, wrong, day1, 60);
   }
-  check("sürekli yanlışta seviye düşüyor", sawLevelDown, `(başlangıç: ${beforeDown})`);
+  const [afterBad] = await db.select().from(profiles).where(eq(profiles.userId, USER));
+  check("sürekli yanlış cevaplamak seviyeyi düşürmüyor", afterBad.level === "B1", `(${afterBad.level})`);
+
+  const sLevel = await buildSession(USER, day1);
+  check("oturum seçilen seviyeyi raporluyor", sLevel.meta.level === "B1");
+  const wordsB1 = sLevel.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
+  const levelsSeen = new Set(wordsB1.map((w) => w.niveau));
+  check("B1 seçen kullanıcı A1'de tutulmuyor", !levelsSeen.has("A1"), `(${[...levelsSeen]})`);
+  check(
+    "kapsam ölçüsü seçilen seviyeden geliyor",
+    sLevel.meta.coverage.total > 800,
+    `(${sLevel.meta.coverage.total})`,
+  );
+
+  console.log("\n11) Zorluk kelimenin durumundan geliyor");
+  await reset();
+  await ensureProfile(USER);
+  // Bir kelime pekişmiş, bir kelime takılmış olsun.
+  const [strongW, shakyW] = await db.select().from(words).where(eq(words.course, "de")).limit(2);
+  const soon = new Date(Date.now() - 60_000);
+  await db.insert(userWords).values([
+    { userId: USER, wordId: strongW.id, state: 2, ease: 2.6, intervalDays: 30,
+      dueAt: soon, reps: 9, lapses: 0, correctStreak: 7, leech: false, lastReviewedAt: soon },
+    { userId: USER, wordId: shakyW.id, state: 2, ease: 1.9, intervalDays: 1,
+      dueAt: soon, reps: 8, lapses: 5, correctStreak: 0, leech: true, lastReviewedAt: soon },
+  ]);
+  await db.update(profiles).set({ newPerDay: 0 }).where(eq(profiles.userId, USER));
+
+  // Aynı kelimeler defalarca sorulduğunda hangi oyunların çıktığına bak.
+  const gamesFor = new Map<number, Set<string>>([[strongW.id, new Set()], [shakyW.id, new Set()]]);
+  for (let i = 0; i < 25; i++) {
+    const s = await buildSession(USER, day1);
+    for (const r of s.rounds) {
+      if (r.game === "match" || r.game === "intro") continue;
+      const set = gamesFor.get(r.word.id);
+      if (set) set.add(r.game);
+    }
+  }
+  const strongGames = gamesFor.get(strongW.id)!;
+  const shakyGames = gamesFor.get(shakyW.id)!;
+  check(
+    "pekişmiş kelimede üretim oyunu çıkıyor",
+    strongGames.has("typing") || strongGames.has("scramble"),
+    `(${[...strongGames].join(", ")})`,
+  );
+  check(
+    "takılan kelimede yazma sorulmuyor",
+    !shakyGames.has("typing"),
+    `(${[...shakyGames].join(", ")})`,
+  );
+
+  console.log("\n11b) Tempo: tekrar borcu birikince yeni kelime durur");
+  await reset();
+  await ensureProfile(USER);
+  await db.update(profiles).set({ dailyGoal: 5, newPerDay: 10 }).where(eq(profiles.userId, USER));
+  const backlog = await db.select().from(words).where(eq(words.course, "de")).limit(40);
+  const past = new Date(Date.now() - 86_400_000);
+  await db.insert(userWords).values(
+    backlog.map((w) => ({
+      userId: USER, wordId: w.id, state: 2, ease: 2.5, intervalDays: 3,
+      dueAt: past, reps: 3, lapses: 0, correctStreak: 2, leech: false, lastReviewedAt: past,
+    })),
+  );
+  const sBacklog = await buildSession(USER, day1);
+  check("borç birikince tempo 'review'", sBacklog.meta.pacing === "review", `(${sBacklog.meta.pacing})`);
+  check(
+    "tekrar gününde yeni kelime gelmiyor",
+    !sBacklog.rounds.some((r) => r.game === "intro"),
+  );
 
   const challenge = await buildChallenge(USER);
   check("meydan okuma turu kuruluyor", challenge.rounds.length > 0, `(${challenge.rounds.length})`);
@@ -248,34 +313,6 @@ async function main() {
       challenge.tiers[challenge.tiers.length - 1] >= challenge.tiers[0],
     `(${challenge.tiers.slice(0, 3).join("")}…${challenge.tiers.slice(-3).join("")})`,
   );
-
-  console.log("\n11) Seviye seçimi adaptif: A1/A2 zorunlu geçit değil");
-  await reset();
-  await ensureProfile(USER, "E2E");
-  // Kullanıcı profilden B1 seçiyor: sistem doğrudan B1'e taşınmalı.
-  await db
-    .update(profiles)
-    .set({ level: "B1", activeLevel: "B1", levelScore: 0, levelChangedAt: new Date() })
-    .where(eq(profiles.userId, USER));
-
-  const sB1 = await buildSession(USER, day1);
-  const wordsB1 = sB1.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
-  const levelsSeen = new Set(wordsB1.map((w) => w.niveau));
-  check("B1 seçen kullanıcı A1'de tutulmuyor", !levelsSeen.has("A1"), `(${[...levelsSeen]})`);
-  const b1Share = wordsB1.filter((w) => w.niveau === "B1").length / Math.max(1, wordsB1.length);
-  check("kelimelerin çoğu B1'den", b1Share >= 0.5, `(%${Math.round(b1Share * 100)})`);
-  check("aktif seviye B1 raporlanıyor", sB1.meta.activeLevel === "B1");
-  check("seviye değişince zorluk yeniden ölçülüyor", sB1.meta.calibrating === true);
-
-  // Tavan yok: B1'den başlayan öğrenci performansıyla B2'ye çıkabilmeli.
-  let aboveStart = false;
-  for (let i = 0; i < 10 && !aboveStart; i++) {
-    const s = await buildSession(USER, day1);
-    if (!s.rounds.length) break;
-    const r = await submitAnswers(USER, answersFor(s.rounds, 1), day1, 60);
-    if (r.activeLevel === "B2") aboveStart = true;
-  }
-  check("profil seçimi tavan değil (B1 → B2 mümkün)", aboveStart);
 
   console.log("\n12) SRS saf fonksiyon davranışı");
   let st: SrsState = {
