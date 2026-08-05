@@ -26,10 +26,11 @@ async function main() {
   }
 
   const problems: string[] = [];
+  // Şemadan tabloları ayıkla. Drizzle tablo nesneleri "drizzle:Name" simgesini
+  // taşır; tip tarafı jenerik olduğu için burada dar tipe zorlamıyoruz.
   const tables = Object.values(schema).filter(
-    (v): v is Parameters<typeof getTableConfig>[0] =>
-      typeof v === "object" && v !== null && Symbol.for("drizzle:Name") in v,
-  );
+    (v) => typeof v === "object" && v !== null && Symbol.for("drizzle:Name") in v,
+  ) as Parameters<typeof getTableConfig>[0][];
 
   for (const table of tables) {
     const { name, columns } = getTableConfig(table);
