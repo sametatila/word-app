@@ -18,6 +18,11 @@ import "server-only";
  * Limitler ve gecikmeler `npm run test:chat` ile ölçüldü (yanıt başlıkları
  * + 8 turluk A2 senaryosu, bkz. scripts/chat-eval.ts).
  *
+ * NVIDIA NIM denendi ve elendi: ilan edilen 40 istek/dk kâğıt üzerinde kalıyor,
+ * çünkü ücretsiz katman paylaşımlı bir işçi havuzunda kuyruğa giriyor. Ölçümde
+ * ilk bayt tutarlı biçimde 25-29 saniye sürdü ve çoğu istek
+ * "Worker local total request limit reached" ile döndü — sohbet için kullanılamaz.
+ *
  * Anahtarı olmayan sağlayıcı listeye hiç girmez; birini kullanmak için tek
  * yapılacak şey anahtarını tanımlamak. Zincir uzadıkça toplam dakikalık
  * kapasite toplanır — 20 kullanıcı hedefi tek sağlayıcıyla tutmuyor.
@@ -26,7 +31,6 @@ import "server-only";
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 export type ProviderName =
   | "mistral"
-  | "nvidia"
   | "groq"
   | "cerebras"
   | "gemini"
@@ -50,14 +54,6 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     envModel: "MISTRAL_MODEL",
     defaultModel: "mistral-medium-latest",
     freeTier: "50 istek/dk · 1B token/ay",
-  },
-  nvidia: {
-    // NVIDIA'nın kendi NIM ucu: 40 istek/dk, kredi kartı istemiyor.
-    baseUrl: "https://integrate.api.nvidia.com/v1",
-    envKey: "NVIDIA_API_KEY",
-    envModel: "NVIDIA_MODEL",
-    defaultModel: "meta/llama-3.3-70b-instruct",
-    freeTier: "40 istek/dk",
   },
   groq: {
     // Ölçüm: en hızlısı (~191ms ilk parça) ama 12K token/dk — bir sohbet turu
@@ -98,7 +94,7 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
 };
 
 /** Dakikalık hakkı geniş olanlar önce, günlük kotayla sınırlı olan en sonda. */
-const ORDER: ProviderName[] = ["mistral", "nvidia", "groq", "cerebras", "gemini", "openrouter"];
+const ORDER: ProviderName[] = ["mistral", "groq", "cerebras", "gemini", "openrouter"];
 
 export type Provider = {
   name: ProviderName;
@@ -177,7 +173,14 @@ async function* streamOpenAiCompatible(
       try {
         const parsed = JSON.parse(payload) as {
           choices?: { delta?: { content?: string } }[];
+          error?: { message?: string };
         };
+        // Kapasite hatası her zaman HTTP durumuyla gelmiyor: bazı sağlayıcılar
+        // 200 döndürüp hatayı akışın içine koyuyor. Yakalamazsak akış sessizce
+        // boş biter ve yedek sağlayıcıya hiç geçilmez.
+        if (parsed.error) {
+          throw new Error(`${name}: ${parsed.error.message ?? "akış içi hata"}`);
+        }
         // Yalnızca `content` alınıyor: gpt-oss-120b bir akıl yürütme modeli ve
         // ayrı bir `reasoning` alanı gönderebiliyor — o kullanıcıya gitmemeli.
         const delta = parsed.choices?.[0]?.delta?.content;

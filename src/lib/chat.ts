@@ -132,6 +132,10 @@ export async function* streamChat(
         started = true;
         yield delta;
       }
+      // Hiç parça gelmemesi de bir başarısızlık: bazı sağlayıcılar kapasite
+      // hatasını HTTP 200 ile, akışın içinde bildiriyor. Bunu "başarılı ama
+      // boş" saymak kullanıcıya boş baloncuk gösterirdi.
+      if (!started) throw new Error("boş akış");
       return;
     } catch (err) {
       if (started) throw err;
