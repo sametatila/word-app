@@ -5,6 +5,7 @@ import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { and, eq, notInArray, sql } from "drizzle-orm";
 import { words } from "../src/lib/db/schema";
+import { cleanHeadword } from "../src/lib/headword";
 
 type Row = {
   id: number;
@@ -44,21 +45,10 @@ async function main() {
   const inferTyp = (r: Row) =>
     r.typ === "Sonstiges" && /(mek|mak)(\s*,|$)/.test(r.tr) ? "Verb" : r.typ;
 
-  /**
-   * Madde başını oyunlarda gösterilebilir hâle getirir: PDF'ten sızan bölgesel
-   * çapraz göndermeler ("Abitur (D)→A") ve yarım kalan parantezler temizlenir.
-   */
-  const cleanDe = (de: string) => {
-    let s = de.split("→")[0];
-    s = s.replace(/\s*\((D|A|CH)(,\s*(D|A|CH))*\)\s*$/g, "");
-    s = s.replace(/\s*\((Sg|Pl)\.\)\s*$/gi, "");
-    if ((s.match(/\(/g)?.length ?? 0) > (s.match(/\)/g)?.length ?? 0)) s = s.split("(")[0];
-    return s.replace(/\s+/g, " ").replace(/[\s,;/-]+$/, "").trim() || de;
-  };
-
+  
   const values = rows.map((r) => ({
     id: r.id,
-    de: cleanDe(r.de),
+    de: cleanHeadword(r.de),
     artikel: r.artikel || null,
     tr: r.tr,
     formen: r.formen || null,

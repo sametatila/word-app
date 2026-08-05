@@ -4,6 +4,7 @@ import path from "node:path";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { and, eq, notInArray, sql } from "drizzle-orm";
+import { cleanHeadword } from "../src/lib/headword";
 import { words } from "../src/lib/db/schema";
 import { firstExample } from "../src/lib/example";
 
@@ -31,13 +32,6 @@ type SrcRow = {
 type GswRow = { id: number; gsw: string; artikel: string | null; beispiel: string };
 
 /** seed.ts ile aynı temizlik: bölgesel işaretler ve yarım parantezler ayıklanır. */
-function cleanDe(de: string) {
-  let s = de.split("→")[0];
-  s = s.replace(/\s*\((D|A|CH)(,\s*(D|A|CH))*\)\s*$/g, "");
-  s = s.replace(/\s*\((Sg|Pl)\.\)\s*$/gi, "");
-  if ((s.match(/\(/g)?.length ?? 0) > (s.match(/\)/g)?.length ?? 0)) s = s.split("(")[0];
-  return s.replace(/\s+/g, " ").replace(/[\s,;/-]+$/, "").trim() || de;
-}
 
 const inferTyp = (r: SrcRow) =>
   r.typ === "Sonstiges" && /(mek|mak)(\s*,|$)/.test(r.tr) ? "Verb" : r.typ;
@@ -138,10 +132,13 @@ async function main() {
     }
     return {
       id: ID_OFFSET + g.id,
-      de: g.gsw.trim(),
+      // Almanca tarafıyla aynı temizlik: tire bir ek işareti, kelimenin
+      // parçası değil. İki kursta farklı davranmak öğrenciye aynı kavramı iki
+      // biçimde gösteriyordu.
+      de: cleanHeadword(g.gsw),
       artikel: g.artikel || null,
       tr: src.tr,
-      formen: `HD: ${cleanDe(src.de)}`,
+      formen: `HD: ${cleanHeadword(src.de)}`,
       typ: inferTyp(src),
       niveau: src.niveau.startsWith("A1") ? "A1" : src.niveau,
       beispiel: gswSentence,
