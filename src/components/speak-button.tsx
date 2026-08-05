@@ -39,8 +39,61 @@ function cleanForSpeech(text: string): string {
     .trim();
 }
 
-/** Aynı anda tek ses: yeni okuma öncekini keser (eski `speechSynthesis.cancel()` gibi). */
-let current: HTMLAudioElement | null = null;
+/**
+ * Tek bir ses öğesi — her okuma için yenisi yaratılmıyor.
+ *
+ * Sebebi iOS: kullanıcı hareketi olmadan `play()` engelleniyor ve uygulamada
+ * kendiliğinden konuşan yerler var (yeni kelime kartı, dinleme oyunu, diyalog,
+ * sohbet cevabı). Bir kez kullanıcı hareketiyle çalmış öğe sonrasında serbest
+ * kalıyor, bu yüzden aynı öğe yeniden kullanılıyor ve ilk dokunuşta sessiz bir
+ * kayıtla hazırlanıyor.
+ *
+ * Yan kazanç: aynı anda tek ses çalıyor — yeni okuma öncekini kesiyor, eski
+ * `speechSynthesis.cancel()` davranışıyla aynı.
+ */
+let element: HTMLAudioElement | null = null;
+/** Bitişi hangi okumaya ait olduğunu ayırt etmek için — öğe paylaşıldığı için gerekli. */
+let token = 0;
+
+function audioElement(): HTMLAudioElement | null {
+  if (typeof Audio === "undefined") return null;
+  if (!element) element = new Audio();
+  return element;
+}
+
+/**
+ * İlk kullanıcı hareketinde ses öğesini serbest bırakır.
+ *
+ * Sessiz ve çok kısa bir kayıt çalınıyor; amaç ses çıkarmak değil, tarayıcının
+ * "bu öğeyi kullanıcı başlattı" saymasını sağlamak. Bir kez çalışıp dinleyiciyi
+ * kaldırıyor.
+ */
+function primeOnFirstGesture() {
+  if (typeof window === "undefined") return;
+  const unlock = () => {
+    const el = audioElement();
+    if (el) {
+      el.src =
+        "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjI5LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAACAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD//////////////////////////////////////8AAAAATGF2YzU4LjU0AAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA";
+      el.volume = 0;
+      void el.play().then(
+        () => {
+          el.pause();
+          el.volume = 1;
+        },
+        () => {
+          el.volume = 1;
+        },
+      );
+    }
+    window.removeEventListener("pointerdown", unlock);
+    window.removeEventListener("keydown", unlock);
+  };
+  window.addEventListener("pointerdown", unlock, { once: true });
+  window.addEventListener("keydown", unlock, { once: true });
+}
+
+if (typeof window !== "undefined") primeOnFirstGesture();
 
 /**
  * Almanca metni sesli okur.
@@ -81,30 +134,37 @@ export function speakWithVoice(text: string, voice: VoiceId) {
 }
 
 function play(clean: string, voice: VoiceId, course: string, onEnd?: () => void) {
-  current?.pause();
-  current = null;
+  const audio = audioElement();
+  if (!audio) {
+    speakWithBrowser(clean, course, onEnd);
+    return;
+  }
 
-  const audio = new Audio(`/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`);
-  current = audio;
+  // Bu okumanın kimliği: öğe paylaşıldığı için, kesilen okumanın geç gelen
+  // olayı yenisinin bitişi sanılmamalı.
+  const mine = ++token;
   let done = false;
+
   const finish = () => {
-    if (done) return;
+    if (done || token !== mine) return;
     done = true;
-    if (current === audio) current = null;
     onEnd?.();
   };
-
-  audio.onended = finish;
-  // Uç düşmüş, ağ yok ya da tarayıcı mp3'ü çalamıyor: eski davranışa dön.
-  audio.onerror = () => {
-    if (done) return;
+  const fallback = () => {
+    if (done || token !== mine) return;
     done = true;
-    if (current === audio) current = null;
+    // Uç düşmüş, ağ yok ya da tarayıcı mp3'ü çalamıyor: eski davranışa dön.
     speakWithBrowser(clean, course, onEnd);
   };
 
-  // play() reddedilirse (otomatik oynatma engeli) de aynı yedeğe düşülür.
-  void audio.play().catch(() => audio.onerror?.(new Event("error")));
+  audio.pause();
+  audio.onended = finish;
+  audio.onerror = fallback;
+  audio.src = `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`;
+  audio.currentTime = 0;
+  // play() reddedilirse (otomatik oynatma engeli, yüklenemeyen kaynak) de
+  // aynı yedeğe düşülür.
+  void audio.play().catch(fallback);
 }
 
 /**
