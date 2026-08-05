@@ -48,11 +48,17 @@ function stripEmphasis(line: string): string {
  */
 function isSectionHeader(line: string): boolean {
   if (!line) return false;
+  const dashed = /^[—–-]+\s*/.test(line);
   const bare = line.replace(/^[—–-]+\s*/, "").replace(/[:：]\s*$/, "").trim();
   if (!bare) return false;
   // Başlıklar kısa, tamamı büyük harf ve noktalama taşımıyor.
   if (bare.length > 40) return false;
   if (/[.!?]/.test(bare)) return false;
+  // Tek kelime başlık sayılmıyor: model kısa ve vurgulu bir cevap verebilir
+  // („JA“, „SUPER“) ve onu silmek mesajı yok etmek olurdu. Gözlenen sızıntı
+  // hep çok kelimeliydi („— ÖNERİLEN CEVAPLAR“); tire ile başlıyorsa tek
+  // kelime de başlık sayılıyor, çünkü cevap tire ile başlamaz.
+  if (!dashed && !bare.includes(" ")) return false;
   return bare === bare.toLocaleUpperCase("tr-TR") && /[A-ZÇĞİÖŞÜ]/.test(bare);
 }
 

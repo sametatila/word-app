@@ -634,6 +634,12 @@ async function main() {
     // Tamamı büyük harf olsa da noktalama taşıyan satır cümledir, başlık değil.
     check("büyük harfli ünlem cümlesi korunuyor",
       parseReply("SUPER!").body.includes("SUPER"));
+    // Tek kelimelik vurgulu cevap silinmemeli: süzgeç fazla geniş olsaydı
+    // mesajın tamamı kaybolurdu.
+    check("tek kelimelik büyük harfli cevap korunuyor",
+      parseReply("SUPER").body.includes("SUPER"), `(${parseReply("SUPER").body})`);
+    check("tire ile başlayan tek kelimelik başlık süzülüyor",
+      !parseReply("— ÖNERİLER").body.includes("ÖNERİLER"));
     // Model düzenli olarak markdown yazıyor; arayüz düz metin gösterdiği için
     // yıldızlar ekrana çıkıyordu. Koçta temizleniyordu, sohbette atlanmıştı.
     const md = parseReply(
