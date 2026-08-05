@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { synthesize, MAX_TEXT } from "@/lib/tts/edge";
+import { MAX_TEXT } from "@/lib/tts/edge";
+import { synthesizeSpeech } from "@/lib/tts/synth";
 import { VOICES, type VoiceId } from "@/lib/tts/voices";
 
 /**
@@ -13,7 +14,7 @@ import { VOICES, type VoiceId } from "@/lib/tts/voices";
  *   1. Tarayıcı önbelleği — aynı cihazda ikinci dinleme hiç ağa çıkmıyor.
  *   2. Vercel CDN — bir kelimeyi ilk dinleyen kişi onu herkes için ısıtıyor;
  *      isabet hâlinde bu fonksiyon hiç çalışmıyor.
- *   3. Edge TTS — yalnızca gerçek ıskalamada.
+ *   3. Sentez zinciri (Edge → Azure) — yalnızca gerçek ıskalamada.
  *
  * Bunun çalışması için Vercel'in kuralları harfiyen uygulanıyor, aksi hâlde
  * önbellek **sessizce hiç devreye girmez**:
@@ -57,11 +58,14 @@ export async function GET(req: Request) {
   }
 
   try {
-    const audio = await synthesize(text, voice as VoiceId);
+    const { audio, source } = await synthesizeSpeech(text, voice as VoiceId);
     return new Response(new Uint8Array(audio), {
       headers: {
         "content-type": "audio/mpeg",
         "content-length": String(audio.length),
+        // Hangi yoldan geldiği yalnızca teşhis için: Edge kırılırsa bu
+        // başlıktan görülüyor, kullanıcı için bir farkı yok.
+        "x-tts-source": source,
         // Tarayıcı için: `immutable` sayesinde sayfa yenilense bile yeniden
         // doğrulama isteği bile gitmiyor.
         "cache-control": `public, max-age=${MAX_AGE}, immutable`,

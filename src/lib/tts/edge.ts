@@ -1,6 +1,7 @@
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { rateFor, type VoiceId } from "./voices";
+import { escapeXml } from "./ssml";
 
 /**
  * Microsoft Edge'in okuma servisiyle konuşma sentezi.
@@ -55,16 +56,6 @@ function endpoint(): string {
   return `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?${params}`;
 }
 
-/** SSML'e gömülecek metin — açılı ayraç ve & kaçırılmazsa belge bozulur. */
-function escapeXml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-}
-
 /**
  * Okunacak metnin sadeleştirilmesi.
  *
@@ -81,16 +72,16 @@ export function cleanForSpeech(text: string): string {
 }
 
 /**
- * Metni seslendirir ve MP3 baytlarını döndürür.
+ * Sadeleştirilmiş metni seslendirir ve MP3 baytlarını döndürür.
  *
  * Parça parça değil bütün hâlinde dönüyor: çağıran uç bunu uzun ömürlü olarak
  * önbelleğe alacak, dolayısıyla akıtmanın kazancı yok — kazanç ikinci
  * dinlemede zaten ağa hiç çıkılmamasından geliyor.
+ *
+ * Metnin sadeleştirilmesi burada değil `synth.ts`'te yapılıyor: iki sentez
+ * yolu da aynı metni almalı, yoksa yedeğe düşünce önbellek anahtarı tutmaz.
  */
-export async function synthesize(text: string, voice: VoiceId): Promise<Buffer> {
-  const clean = cleanForSpeech(text).slice(0, MAX_TEXT);
-  if (!clean) throw new Error("boş metin");
-
+export async function synthesizeEdge(clean: string, voice: VoiceId): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
     // Yerleşik WebSocket (undici) `headers` seçeneğini kabul ediyor; uç
     // bunlar olmadan 403 dönüyor. Ek bir paket gerekmemesinin sebebi bu.
