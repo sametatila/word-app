@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { dailyStats, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { firstExample } from "@/lib/example";
+import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
   AnswerResult,
@@ -540,11 +541,11 @@ function pickRound(
     if (word.artikel) candidates.push("artikel");
   } else if (strength === "solid") {
     candidates.push("choice", "cloze", "order");
-    if (word.artikel) candidates.push("artikel");
+    if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   } else {
     candidates.push("typing", "cloze", "choice", "order");
-    if (word.artikel) candidates.push("artikel");
+    if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   }
 
@@ -600,6 +601,18 @@ function makeRound(
         : null;
     case "typing":
       return { id: nextId(), game: "typing", word, alternatives: [] };
+    case "plural": {
+      // Yalnızca isimler ve yalnızca çoğul kuralı okunabilen maddeler.
+      const choices = word.artikel ? pluralChoices(word.de, word.formen, 3) : null;
+      if (!choices) return null;
+      return {
+        id: nextId(),
+        game: "plural",
+        word,
+        answer: choices.answer,
+        options: shuffle([choices.answer, ...choices.distractors]),
+      };
+    }
     case "order": {
       const built = buildOrder(word);
       if (!built) return null;

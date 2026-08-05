@@ -6,7 +6,8 @@ export type GameId =
   | "cloze"
   | "scramble"
   | "typing"
-  | "order";
+  | "order"
+  | "plural";
 
 export const GAME_LABELS: Record<GameId, string> = {
   intro: "Yeni Kelime",
@@ -17,6 +18,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   scramble: "Harf Bulmacası",
   typing: "Yazarak Hatırla",
   order: "Cümleyi Diz",
+  plural: "Çoğul Bilmece",
 };
 
 export type RoundWord = {
@@ -61,6 +63,14 @@ export type Round =
       /** Cümle sonundaki noktalama ayrı durur: son kelimeyi ele vermesin. */
       tail: string;
       sentenceTr: string | null;
+    }
+  | {
+      id: string;
+      game: "plural";
+      word: RoundWord;
+      /** Doğru çoğul biçim, artikelsiz ("Ärzte"). */
+      answer: string;
+      options: string[];
     };
 
 export type Answer = {

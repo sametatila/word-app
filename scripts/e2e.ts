@@ -21,7 +21,7 @@ import {
 } from "../src/lib/session";
 import { schedule, grade, type SrsState } from "../src/lib/srs";
 import { acceptedForms, normalize } from "../src/components/games/types";
-import { umlautStem } from "../src/lib/german";
+import { pluralChoices, umlautStem } from "../src/lib/german";
 import type { Answer, Round } from "../src/lib/types";
 
 const USER = "e2e-user";
@@ -391,6 +391,23 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11f) Çoğul Bilmece turu");
+  check("Arzt → Ärzte", pluralChoices("Arzt", "Ä, -e", 3)?.answer === "Ärzte");
+  check("Apfel → Äpfel (ek yok, yalnız umlaut)", pluralChoices("Apfel", "Ä, -", 3)?.answer === "Äpfel");
+  check("Straße → Straßen (ek kaynaşıyor)", pluralChoices("Straße", "-n", 3)?.answer === "Straßen");
+  check("Auto → Autos", pluralChoices("Auto", "-s", 3)?.answer === "Autos");
+  check("Fenster → Fenster (değişmez)", pluralChoices("Fenster", "-", 3)?.answer === "Fenster");
+  check("çoğulu olmayan madde tur üretmiyor", pluralChoices("Milch", "(Sg.)", 3) === null);
+  check("fiil çekimi tur üretmiyor", pluralChoices("gehen", "ist gegangen", 3) === null);
+  const arzt = pluralChoices("Arzt", "Ä, -e", 3)!;
+  check("çeldirici sayısı yeterli", arzt.distractors.length === 3);
+  check("çeldiriciler doğru cevabı tekrarlamıyor", !arzt.distractors.includes(arzt.answer));
+  check("çeldiriciler aynı kelimeden türüyor",
+    arzt.distractors.every((f) => f.startsWith("Arzt") || f.startsWith("Ärzt")),
+    `(${arzt.distractors.join(", ")})`);
+  check("olmayan biçim üretilmiyor (-n ünsüzden sonra)",
+    !pluralChoices("Arm", "-e", 3)!.distractors.includes("Armn"));
 
   console.log("\n11e) Umlautlu çoğul kökleri");
   // Almanca isimler büyük harfle başlar; ünlüsü yalnızca baştaki harf olan
