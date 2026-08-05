@@ -28,6 +28,7 @@ import {
 } from "../src/components/games/types";
 import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
+import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
 const USER = "e2e-user";
@@ -436,6 +437,38 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11k) Konuşma değerlendirmesi");
+  const SCHOEN = [
+    { heard: ["schon"], fix: "ö'yü o gibi söyledin — dudakların yuvarlak kalmalı.", expected: "schön" },
+  ];
+  check("birebir söyleyiş doğru", judgeSpeech("Das ist schön.", ["Das ist schön."]).kind === "correct");
+  check("noktalama ve büyük harf farkı önemsiz",
+    judgeSpeech("Das ist schön.", ["das ist schön"]).kind === "correct");
+  check("bilinen sapma yakalanıyor",
+    judgeSpeech("Das ist schön.", ["Das ist schon"], SCHOEN).kind === "confusion");
+  const fix = judgeSpeech("Das ist schön.", ["Das ist schon"], SCHOEN);
+  check("sapmada düzeltme metni taşınıyor", fix.kind === "confusion" && fix.fix.includes("ö"));
+  check("doğru biçim de duyulduysa sapma sayılmıyor",
+    judgeSpeech("Das ist schön.", ["Das ist schön schon"], SCHOEN).kind !== "confusion");
+  // Umlaut katlanmamalı: bu turun ölçtüğü tek fark o.
+  check("ö ile o ayrı tutuluyor",
+    normalizeSpoken("schön") !== normalizeSpoken("schon"));
+  check("tamamen başka bir şey ayırt ediliyor",
+    judgeSpeech("Ich möchte einen Kaffee.", ["Wo ist der Bahnhof"]).kind === "different");
+  const partial = judgeSpeech("Ich möchte einen Kaffee bitte.", ["Ich möchte einen Kaffee"]);
+  check("az eksikte 'partial'", partial.kind === "partial", `(${partial.kind})`);
+  check("eksik kelime bildiriliyor",
+    partial.kind === "partial" && partial.missing.includes("bitte"));
+  check("hiç ses tanınmadıysa 'unheard'", judgeSpeech("Guten Tag", []).kind === "unheard");
+  check("boş metin de tanınmamış sayılıyor",
+    judgeSpeech("Guten Tag", ["", "   "]).kind === "unheard");
+  // n-best listesi: doğru biçim ikinci sırada olsa da kabul edilir.
+  check("n-best listesindeki doğru aday kabul ediliyor",
+    judgeSpeech("Ich bin müde.", ["Ich bin Mode", "Ich bin müde"]).kind === "correct");
+  check("yalnızca tam tanınma doğru sayılıyor",
+    isSpeechCorrect(partial) === false &&
+      isSpeechCorrect(judgeSpeech("Guten Tag", ["Guten Tag"])) === true);
 
   console.log("\n11j) Oyun çeşitliliği");
   await reset();
