@@ -110,7 +110,7 @@ if (typeof window !== "undefined") primeOnFirstGesture();
  * Eller serbest sohbette mikrofonun kendiliğinden açılması buna bağlı; hiç
  * gelmeyecek bir bitiş döngüyü kilitlerdi.
  */
-export function speakGerman(text: string, onEnd?: () => void) {
+export function speakGerman(text: string, onEnd?: () => void, slow = false) {
   const clean = cleanForSpeech(text);
   if (!clean) {
     onEnd?.();
@@ -119,7 +119,7 @@ export function speakGerman(text: string, onEnd?: () => void) {
 
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
-  play(clean, voice, course, onEnd);
+  play(clean, voice, course, onEnd, slow);
 }
 
 /**
@@ -133,10 +133,21 @@ export function speakWithVoice(text: string, voice: VoiceId) {
   if (clean) play(clean, voice, voice.startsWith("de-CH") ? "gsw-zh" : "de");
 }
 
-function play(clean: string, voice: VoiceId, course: string, onEnd?: () => void) {
+/** Telaffuz çalışması için yavaş okuma — önce heceleri ayırt et, sonra tekrarla. */
+export function speakSlowly(text: string, onEnd?: () => void) {
+  speakGerman(text, onEnd, true);
+}
+
+function play(
+  clean: string,
+  voice: VoiceId,
+  course: string,
+  onEnd?: () => void,
+  slow = false,
+) {
   const audio = audioElement();
   if (!audio) {
-    speakWithBrowser(clean, course, onEnd);
+    speakWithBrowser(clean, course, onEnd, slow);
     return;
   }
 
@@ -154,13 +165,13 @@ function play(clean: string, voice: VoiceId, course: string, onEnd?: () => void)
     if (done || token !== mine) return;
     done = true;
     // Uç düşmüş, ağ yok ya da tarayıcı mp3'ü çalamıyor: eski davranışa dön.
-    speakWithBrowser(clean, course, onEnd);
+    speakWithBrowser(clean, course, onEnd, slow);
   };
 
   audio.pause();
   audio.onended = finish;
   audio.onerror = fallback;
-  audio.src = `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`;
+  audio.src = `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${slow ? "&r=slow" : ""}`;
   audio.currentTime = 0;
   // play() reddedilirse (otomatik oynatma engeli, yüklenemeyen kaynak) de
   // aynı yedeğe düşülür.
@@ -174,7 +185,7 @@ function play(clean: string, voice: VoiceId, course: string, onEnd?: () => void)
  * tercih edilir, yoksa herhangi bir Almanca ses. Cihazda de-CH bulunmaması
  * zaten bu değişikliğin sebeplerinden biriydi.
  */
-function speakWithBrowser(clean: string, course: string, onEnd?: () => void) {
+function speakWithBrowser(clean: string, course: string, onEnd?: () => void, slow = false) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
     onEnd?.();
     return;
@@ -182,7 +193,7 @@ function speakWithBrowser(clean: string, course: string, onEnd?: () => void) {
   const gsw = course === "gsw-zh";
   const u = new SpeechSynthesisUtterance(clean);
   u.lang = gsw ? "de-CH" : "de-DE";
-  u.rate = gsw ? 0.88 : 0.92;
+  u.rate = slow ? (gsw ? 0.55 : 0.6) : gsw ? 0.88 : 0.92;
   const voices = window.speechSynthesis.getVoices();
   const picked = gsw
     ? (voices.find((v) => v.lang === "de-CH") ?? voices.find((v) => v.lang.startsWith("de")))

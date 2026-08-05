@@ -623,6 +623,13 @@ async function main() {
   // Lehçe daha yavaş okunuyor; hız sesin kendisinden türetiliyor, ayrı bir
   // yerde ikinci kez tanımlanmıyor.
   check("lehçe daha yavaş okunuyor", rateFor("de-CH-LeniNeural") === "-12%" && rateFor("de-DE-SeraphinaMultilingualNeural") === "-8%");
+  // Yavaş dinleme telaffuz çalışmasının yöntemi; iki hız da ayrı önbellek
+  // girdisi olduğu için seçenek sayısı bilerek ikiyle sınırlı.
+  check("yavaş okuma normalden yavaş",
+    parseInt(rateFor("de-DE-SeraphinaMultilingualNeural", true)) <
+      parseInt(rateFor("de-DE-SeraphinaMultilingualNeural")));
+  check("lehçede de yavaş seçeneği var",
+    rateFor("de-CH-LeniNeural", true) !== rateFor("de-CH-LeniNeural"));
   // Parantezli Hochdeutsch karşılığı sesli okunduğunda cümleyi bozuyor.
   check("okuma metni sadeleşiyor",
     cleanForSpeech("Bschäftigte (Beschäftigte) vo/de Branche") === "Bschäftigte vo de Branche",

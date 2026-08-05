@@ -30,7 +30,7 @@ export function azureConfigured(): boolean {
   return Boolean(process.env.AZURE_SPEECH_KEY && process.env.AZURE_SPEECH_REGION);
 }
 
-export async function synthesizeAzure(clean: string, voice: VoiceId): Promise<Buffer> {
+export async function synthesizeAzure(clean: string, voice: VoiceId, slow = false): Promise<Buffer> {
   const key = process.env.AZURE_SPEECH_KEY;
   const region = process.env.AZURE_SPEECH_REGION;
   if (!key || !region) throw new Error("azure yapılandırılmadı");
@@ -38,7 +38,7 @@ export async function synthesizeAzure(clean: string, voice: VoiceId): Promise<Bu
   const lang = voice.slice(0, 5);
   const ssml =
     `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='${lang}'>` +
-    `<voice name='${voice}'><prosody rate='${rateFor(voice)}' pitch='+0Hz'>` +
+    `<voice name='${voice}'><prosody rate='${rateFor(voice, slow)}' pitch='+0Hz'>` +
     `${escapeXml(clean)}</prosody></voice></speak>`;
 
   const controller = new AbortController();

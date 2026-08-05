@@ -46,6 +46,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const text = (url.searchParams.get("t") ?? "").trim();
   const voice = url.searchParams.get("v") ?? "";
+  // Hız yalnızca iki değer alıyor. Serbest bir sayı olsaydı her farklı hız
+  // ayrı bir önbellek girdisi açar ve isabet oranı düşerdi.
+  const slow = url.searchParams.get("r") === "slow";
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });
@@ -58,7 +61,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const { audio, source } = await synthesizeSpeech(text, voice as VoiceId);
+    const { audio, source } = await synthesizeSpeech(text, voice as VoiceId, slow);
     return new Response(new Uint8Array(audio), {
       headers: {
         "content-type": "audio/mpeg",

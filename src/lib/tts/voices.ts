@@ -93,7 +93,13 @@ export function resolveVoice(course: string, voice: string | null | undefined): 
 /**
  * Okuma hızı. Lehçe daha yavaş okunuyor: Züritüütsch öğrenen kişi
  * standart Almanca'dakinden daha az tanıdık bir ses örüntüsü çözüyor.
+ *
+ * `slow` telaffuz çalışması için: shadowing'in yöntemi önce yavaş duyup
+ * heceleri ayırt etmek, sonra normal hızda tekrarlamak. Bu yüzden iki
+ * seçenek var, sürekli bir hız ayarı değil — ikisi de ayrı birer önbellek
+ * girdisi ve seçenek sayısı arttıkça önbellek isabeti düşerdi.
  */
-export function rateFor(voice: VoiceId): string {
+export function rateFor(voice: VoiceId, slow = false): string {
+  if (slow) return voice.startsWith("de-CH") ? "-40%" : "-35%";
   return voice.startsWith("de-CH") ? "-12%" : "-8%";
 }

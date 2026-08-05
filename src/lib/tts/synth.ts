@@ -26,6 +26,7 @@ export type SynthResult = { audio: Buffer; source: "edge" | "azure" };
 export async function synthesizeSpeech(
   text: string,
   voice: VoiceId,
+  slow = false,
 ): Promise<SynthResult> {
   // Sadeleştirme tek yerde: iki yol da birebir aynı metni seslendirmeli.
   const clean = cleanForSpeech(text).slice(0, MAX_TEXT);
@@ -33,14 +34,14 @@ export async function synthesizeSpeech(
 
   const problems: string[] = [];
   try {
-    return { audio: await synthesizeEdge(clean, voice), source: "edge" };
+    return { audio: await synthesizeEdge(clean, voice, slow), source: "edge" };
   } catch (err) {
     problems.push(`edge: ${(err as Error).message}`);
   }
 
   if (azureConfigured()) {
     try {
-      return { audio: await synthesizeAzure(clean, voice), source: "azure" };
+      return { audio: await synthesizeAzure(clean, voice, slow), source: "azure" };
     } catch (err) {
       problems.push(`azure: ${(err as Error).message}`);
     }

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
 import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
 import { askCoach } from "@/lib/coach-client";
-import { speakGerman, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
+import { speakGerman, speakSlowly, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
@@ -234,6 +234,19 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
           <div className="mt-2 flex items-center justify-center gap-2">
             <p className="brand-text text-center text-xl font-bold sm:text-2xl">{task.de}</p>
             <SpeakButton text={task.de} />
+            {/* Shadowing'in yöntemi: önce yavaş duyup heceleri ayırt et, sonra
+                normal hızda tekrarla. Ayrı bir düğme çünkü ikisi ayrı iş —
+                yavaş dinleme çözümleme, normal dinleme model alma. */}
+            {ttsAvailable ? (
+              <button
+                type="button"
+                onClick={() => speakSlowly(task.de)}
+                className="btn btn-ghost h-7 shrink-0 px-2 text-xs"
+                title="Yavaş dinle"
+              >
+                Yavaş
+              </button>
+            ) : null}
           </div>
           {task.hint ? <p className="muted mt-2 text-center text-xs">{task.hint}</p> : null}
 

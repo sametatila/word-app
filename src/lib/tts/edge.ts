@@ -120,14 +120,15 @@ export function cleanForSpeech(text: string): string {
  * Metnin sadeleştirilmesi burada değil `synth.ts`'te yapılıyor: iki sentez
  * yolu da aynı metni almalı, yoksa yedeğe düşünce önbellek anahtarı tutmaz.
  */
-export async function synthesizeEdge(clean: string, voice: VoiceId): Promise<Buffer> {
-  return connectAndSynthesize(clean, voice, browserVersion());
+export async function synthesizeEdge(clean: string, voice: VoiceId, slow = false): Promise<Buffer> {
+  return connectAndSynthesize(clean, voice, browserVersion(), slow);
 }
 
 function connectAndSynthesize(
   clean: string,
   voice: VoiceId,
   version: number,
+  slow: boolean,
 ): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
     // Yerleşik WebSocket (undici) `headers` seçeneğini kabul ediyor; uç
@@ -192,7 +193,7 @@ function connectAndSynthesize(
       const lang = voice.slice(0, 5);
       const ssml =
         `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='${lang}'>` +
-        `<voice name='${voice}'><prosody rate='${rateFor(voice)}' pitch='+0Hz'>` +
+        `<voice name='${voice}'><prosody rate='${rateFor(voice, slow)}' pitch='+0Hz'>` +
         `${escapeXml(clean)}</prosody></voice></speak>`;
 
       ws.send(
