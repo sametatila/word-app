@@ -1,0 +1,1827 @@
+[
+ {
+  "id": "a1-r6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die U-Bahn-Linie\""
+ },
+ {
+  "id": "a1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"umziehen\""
+ },
+ {
+  "id": "a1-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Kasse\""
+ },
+ {
+  "id": "a1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Anzeige\""
+ },
+ {
+  "id": "a1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"günstig\""
+ },
+ {
+  "id": "a1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Zettel\""
+ },
+ {
+  "id": "a1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"annehmen\""
+ },
+ {
+  "id": "a1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorbeikommen\""
+ },
+ {
+  "id": "a1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Tasse\""
+ },
+ {
+  "id": "a1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"leihen\""
+ },
+ {
+  "id": "a1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Schlüssel\""
+ },
+ {
+  "id": "a1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"wegwerfen\""
+ },
+ {
+  "id": "a1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Strafe\""
+ },
+ {
+  "id": "a1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Kleingeld\""
+ },
+ {
+  "id": "a1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Ansage\""
+ },
+ {
+  "id": "a1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Angebot\""
+ },
+ {
+  "id": "a1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Ausgang\""
+ },
+ {
+  "id": "a1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich freuen\""
+ },
+ {
+  "id": "a1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"absagen\""
+ },
+ {
+  "id": "a1-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorschlagen\""
+ },
+ {
+  "id": "a1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Schlafzimmer\""
+ },
+ {
+  "id": "a1-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Unterricht\""
+ },
+ {
+  "id": "a1-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Unterschrift\""
+ },
+ {
+  "id": "a1-w5",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 3: \"Bitte entschuldigen Sie, dass er heute fehlt.\""
+ },
+ {
+  "id": "a1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Formular\""
+ },
+ {
+  "id": "a1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Familienname\""
+ },
+ {
+  "id": "a1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Vorname\""
+ },
+ {
+  "id": "a1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Staatsangehörigkeit\""
+ },
+ {
+  "id": "a1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Uhrzeit\""
+ },
+ {
+  "id": "a1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Postkarte\""
+ },
+ {
+  "id": "a1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Urlaub\""
+ },
+ {
+  "id": "a1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"schicken\""
+ },
+ {
+  "id": "a2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich bewerben\""
+ },
+ {
+  "id": "a2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vielleicht\""
+ },
+ {
+  "id": "a2-r8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Krankenkasse\""
+ },
+ {
+  "id": "a2-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gemeinsam\""
+ },
+ {
+  "id": "a2-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Anfrage\""
+ },
+ {
+  "id": "a2-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Feiertag\""
+ },
+ {
+  "id": "a2-r12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Ankunft\""
+ },
+ {
+  "id": "a2-r12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Ermäßigung\""
+ },
+ {
+  "id": "a2-l1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Sprechstundenhilfe\""
+ },
+ {
+  "id": "a2-l2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"absagen\""
+ },
+ {
+  "id": "a2-l6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gelten\""
+ },
+ {
+  "id": "a2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Vorstellungsgespräch\""
+ },
+ {
+  "id": "a2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Unterlagen\""
+ },
+ {
+  "id": "a2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich melden\""
+ },
+ {
+  "id": "a2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Nebenkosten\""
+ },
+ {
+  "id": "a2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Vermieter\""
+ },
+ {
+  "id": "a2-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Gespräch\""
+ },
+ {
+  "id": "a2-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"geschlossen\""
+ },
+ {
+  "id": "a2-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich gewöhnen an\""
+ },
+ {
+  "id": "a2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Lieferung\""
+ },
+ {
+  "id": "a2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Liefertermin\""
+ },
+ {
+  "id": "a2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verspäten\""
+ },
+ {
+  "id": "a2-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich merken\""
+ },
+ {
+  "id": "a2-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Feierabend\""
+ },
+ {
+  "id": "a2-w1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"feiern\""
+ },
+ {
+  "id": "a2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Miete\""
+ },
+ {
+  "id": "a2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Nebenkosten\""
+ },
+ {
+  "id": "a2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Vermieterin\""
+ },
+ {
+  "id": "a2-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Urlaub\""
+ },
+ {
+  "id": "a2-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"einreichen\""
+ },
+ {
+  "id": "a2-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Rückmeldung\""
+ },
+ {
+  "id": "a2-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"überweisen\""
+ },
+ {
+  "id": "a2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"absagen\""
+ },
+ {
+  "id": "a2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zusagen\""
+ },
+ {
+  "id": "a2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Vorschlag\""
+ },
+ {
+  "id": "a2-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Brauch\""
+ },
+ {
+  "id": "a2-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Unterschied\""
+ },
+ {
+  "id": "a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich vorstellen\""
+ },
+ {
+  "id": "a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"helfen\""
+ },
+ {
+  "id": "a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich freuen\""
+ },
+ {
+  "id": "b1-r2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"erfahren von\""
+ },
+ {
+  "id": "b1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Kredit\""
+ },
+ {
+  "id": "b1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich lohnen\""
+ },
+ {
+  "id": "b1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Konkurrenz\""
+ },
+ {
+  "id": "b1-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"duzen\""
+ },
+ {
+  "id": "b1-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Anrede\""
+ },
+ {
+  "id": "b1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zuordnen\""
+ },
+ {
+  "id": "b1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Spende\""
+ },
+ {
+  "id": "b1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Umfrage\""
+ },
+ {
+  "id": "b1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sinken\""
+ },
+ {
+  "id": "b1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Voraussetzung\""
+ },
+ {
+  "id": "b1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Handwerker\""
+ },
+ {
+  "id": "b1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Anfahrt\""
+ },
+ {
+  "id": "b1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Notfall\""
+ },
+ {
+  "id": "b1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Verabredung\""
+ },
+ {
+  "id": "b1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unhöflich\""
+ },
+ {
+  "id": "b1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Ausrede\""
+ },
+ {
+  "id": "b1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Unterschied\""
+ },
+ {
+  "id": "b1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"entschuldigen\""
+ },
+ {
+  "id": "b1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Missverständnis\""
+ },
+ {
+  "id": "b1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Vorwurf\""
+ },
+ {
+  "id": "b1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich angegriffen fühlen\""
+ },
+ {
+  "id": "b1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Absicht\""
+ },
+ {
+  "id": "b1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zugeben\""
+ },
+ {
+  "id": "b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Eröffnung\""
+ },
+ {
+  "id": "b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Andrang\""
+ },
+ {
+  "id": "b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Vorbereitung\""
+ },
+ {
+  "id": "b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich lohnen\""
+ },
+ {
+  "id": "b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Zweifel\""
+ },
+ {
+  "id": "b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"dankbar\""
+ },
+ {
+  "id": "b1-w1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Hausverwaltung\""
+ },
+ {
+  "id": "b1-w1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Erlaubnis\""
+ },
+ {
+  "id": "b1-w3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"absagen\""
+ },
+ {
+  "id": "b1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"öffentliche Verkehrsmittel\""
+ },
+ {
+  "id": "b1-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"mehrfach\""
+ },
+ {
+  "id": "b1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Erfahrung\""
+ },
+ {
+  "id": "b1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Anlass\""
+ },
+ {
+  "id": "b2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Pause\""
+ },
+ {
+  "id": "b2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Vorwurf\""
+ },
+ {
+  "id": "b2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"belegen\""
+ },
+ {
+  "id": "b2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Kündigung\""
+ },
+ {
+  "id": "b2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich melden\""
+ },
+ {
+  "id": "b2-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Erinnerung\""
+ },
+ {
+  "id": "b2-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Belastung\""
+ },
+ {
+  "id": "b2-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Branche\""
+ },
+ {
+  "id": "b2-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unabhängig\""
+ },
+ {
+  "id": "b2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Zusage\""
+ },
+ {
+  "id": "b2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abwägen\""
+ },
+ {
+  "id": "b2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Argument\""
+ },
+ {
+  "id": "b2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Perspektive\""
+ },
+ {
+  "id": "b2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verbindlich\""
+ },
+ {
+  "id": "b2-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Anteil\""
+ },
+ {
+  "id": "b2-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Gegenmittel\""
+ },
+ {
+  "id": "b2-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Zielgruppe\""
+ },
+ {
+  "id": "b2-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Amtsdeutsch\""
+ },
+ {
+  "id": "b2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Betriebsrat\""
+ },
+ {
+  "id": "b2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Protokoll\""
+ },
+ {
+  "id": "b2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"eskalieren\""
+ },
+ {
+  "id": "b2-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Pressekonferenz\""
+ },
+ {
+  "id": "b2-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Einzelfall\""
+ },
+ {
+  "id": "b2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zusichern\""
+ },
+ {
+  "id": "b2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Frist\""
+ },
+ {
+  "id": "b2-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich bewähren\""
+ },
+ {
+  "id": "b2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die These\""
+ },
+ {
+  "id": "b2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zum einen … zum anderen\""
+ },
+ {
+  "id": "b2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"letztlich\""
+ },
+ {
+  "id": "b2-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"hohl\""
+ },
+ {
+  "id": "b2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"recherchieren\""
+ },
+ {
+  "id": "b2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"bestätigen\""
+ },
+ {
+  "id": "b2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"dementieren\""
+ },
+ {
+  "id": "b2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Quelle\""
+ },
+ {
+  "id": "c1-r1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"jemandem etwas zurechnen\""
+ },
+ {
+  "id": "c1-r1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas fortschreiben\""
+ },
+ {
+  "id": "c1-r1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas revidieren\""
+ },
+ {
+  "id": "c1-r2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aufholen\""
+ },
+ {
+  "id": "c1-r4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Defizit\""
+ },
+ {
+  "id": "c1-r4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas belegen\""
+ },
+ {
+  "id": "c1-r4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas verkennen\""
+ },
+ {
+  "id": "c1-r5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas bespielen\""
+ },
+ {
+  "id": "c1-r5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Kontemplation\""
+ },
+ {
+  "id": "c1-r5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas preisgeben\""
+ },
+ {
+  "id": "c1-r6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"stagnieren\""
+ },
+ {
+  "id": "c1-r6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas diversifizieren\""
+ },
+ {
+  "id": "c1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Vorlage\""
+ },
+ {
+  "id": "c1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abwägen\""
+ },
+ {
+  "id": "c1-r8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abtreten\""
+ },
+ {
+  "id": "c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Aussage\""
+ },
+ {
+  "id": "c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"implizit\""
+ },
+ {
+  "id": "c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"einschränken\""
+ },
+ {
+  "id": "c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"nahelegen\""
+ },
+ {
+  "id": "c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Korrelation\""
+ },
+ {
+  "id": "c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorschnell\""
+ },
+ {
+  "id": "c1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Aneignung\""
+ },
+ {
+  "id": "c1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Redlichkeit\""
+ },
+ {
+  "id": "c1-l2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Zielkonflikt\""
+ },
+ {
+  "id": "c1-l3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas übersehen\""
+ },
+ {
+  "id": "c1-l3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas hinterfragen\""
+ },
+ {
+  "id": "c1-l4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Überalterung\""
+ },
+ {
+  "id": "c1-l4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Rückkehrer\""
+ },
+ {
+  "id": "c1-l5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas verkümmern lassen\""
+ },
+ {
+  "id": "c1-l5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Steuerzahler\""
+ },
+ {
+  "id": "c1-l6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas verstauben\""
+ },
+ {
+  "id": "c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Deutungshoheit\""
+ },
+ {
+  "id": "c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"eskalieren\""
+ },
+ {
+  "id": "c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Fußnote\""
+ },
+ {
+  "id": "c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Imageschaden\""
+ },
+ {
+  "id": "c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"einlenken\""
+ },
+ {
+  "id": "c1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Vorlage\""
+ },
+ {
+  "id": "c1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unweigerlich\""
+ },
+ {
+  "id": "c1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Enteignung\""
+ },
+ {
+  "id": "c1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Nachverdichtung\""
+ },
+ {
+  "id": "c1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Anreiz\""
+ },
+ {
+  "id": "c1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Honorar\""
+ },
+ {
+  "id": "c1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Nennung\""
+ },
+ {
+  "id": "c1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Klausel\""
+ },
+ {
+  "id": "c1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Zugeständnis\""
+ },
+ {
+  "id": "c1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Verzögerung\""
+ },
+ {
+  "id": "c1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Vorurteil\""
+ },
+ {
+  "id": "c1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Zumutung\""
+ },
+ {
+  "id": "c1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Anlass\""
+ },
+ {
+  "id": "c1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"beharren\""
+ },
+ {
+  "id": "c1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Genugtuung\""
+ },
+ {
+  "id": "c1-w1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich belaufen auf\""
+ },
+ {
+  "id": "c1-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas aufheben\""
+ },
+ {
+  "id": "c1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"etwas nachweisen\""
+ },
+ {
+  "id": "c1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Förderung\""
+ },
+ {
+  "id": "c1-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Mitwirkung\""
+ },
+ {
+  "id": "c1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"relativieren\""
+ },
+ {
+  "id": "c1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zurückhaltend\""
+ },
+ {
+  "id": "c1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Rezension\""
+ },
+ {
+  "id": "c1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Aufbau\""
+ },
+ {
+  "id": "c1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Urteil\""
+ },
+ {
+  "id": "c1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Selbstgerechtigkeit\""
+ },
+ {
+  "id": "c1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Anlass\""
+ },
+ {
+  "id": "c1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"beharren auf\""
+ },
+ {
+  "id": "zh-a1-r2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aalüte\""
+ },
+ {
+  "id": "zh-a1-r6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gälte\""
+ },
+ {
+  "id": "zh-a1-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abgää\""
+ },
+ {
+  "id": "zh-a1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sueche\""
+ },
+ {
+  "id": "zh-a1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gratis\""
+ },
+ {
+  "id": "zh-a1-r12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gälte\""
+ },
+ {
+  "id": "zh-a1-r12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"kontrolliere\""
+ },
+ {
+  "id": "zh-a1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich melde\""
+ },
+ {
+  "id": "zh-a1-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iipacke\""
+ },
+ {
+  "id": "zh-a1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zue\""
+ },
+ {
+  "id": "zh-a1-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verlore\""
+ },
+ {
+  "id": "zh-a1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aastoosse\""
+ },
+ {
+  "id": "zh-a1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"stoo\""
+ },
+ {
+  "id": "zh-a1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"nachhär\""
+ },
+ {
+  "id": "zh-a1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"dringend\""
+ },
+ {
+  "id": "zh-a1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorbiicho\""
+ },
+ {
+  "id": "zh-a1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"mitcho\""
+ },
+ {
+  "id": "zh-a1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich fröie\""
+ },
+ {
+  "id": "zh-a1-w1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"choo us\""
+ },
+ {
+  "id": "zh-a1-w2",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 2: \"Häsch du morn Namitag Ziit?\""
+ },
+ {
+  "id": "zh-a1-w3",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 2: \"Zum Zmorge iss ich meischtens Brot mit Chääs.\""
+ },
+ {
+  "id": "zh-a1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"läse\""
+ },
+ {
+  "id": "zh-a1-w4",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 2: \"Am Morge schtaa ich am viertel ab sibni uf.\""
+ },
+ {
+  "id": "zh-a1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"erkläre\""
+ },
+ {
+  "id": "zh-a1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"anders\""
+ },
+ {
+  "id": "zh-a1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"dra dänke\""
+ },
+ {
+  "id": "zh-a2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"uufgää\""
+ },
+ {
+  "id": "zh-a2-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"leider\""
+ },
+ {
+  "id": "zh-a2-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unterschriibe\""
+ },
+ {
+  "id": "zh-a2-l1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aalüte\""
+ },
+ {
+  "id": "zh-a2-l2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gälte\""
+ },
+ {
+  "id": "zh-a2-l6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abhole\""
+ },
+ {
+  "id": "zh-a2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sperre\""
+ },
+ {
+  "id": "zh-a2-l9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"reserviere\""
+ },
+ {
+  "id": "zh-a2-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aabüüte\""
+ },
+ {
+  "id": "zh-a2-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gnaut\""
+ },
+ {
+  "id": "zh-a2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"handle\""
+ },
+ {
+  "id": "zh-a2-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"endlich\""
+ },
+ {
+  "id": "zh-a2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"kaputt\""
+ },
+ {
+  "id": "zh-a2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorbiicho\""
+ },
+ {
+  "id": "zh-a2-w2",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 1: \"Üsi Heizig funktioniert sit zwäi Täg nöd meh.\""
+ },
+ {
+  "id": "zh-a2-w3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gsee\""
+ },
+ {
+  "id": "zh-a2-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich intressiere für\""
+ },
+ {
+  "id": "zh-a2-w4",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 2: \"Ich han zwäi Jaar i eme Café gschaffet.\""
+ },
+ {
+  "id": "zh-a2-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich vorstelle\""
+ },
+ {
+  "id": "zh-a2-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"ruhig\""
+ },
+ {
+  "id": "zh-a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iizoge\""
+ },
+ {
+  "id": "zh-a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich vorstelle\""
+ },
+ {
+  "id": "zh-a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorbiicho\""
+ },
+ {
+  "id": "zh-a2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"Bschäid gää\""
+ },
+ {
+  "id": "zh-a2-w8",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 2: \"Mir laded Si uf es Glas ii.\""
+ },
+ {
+  "id": "zh-b1-r3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"gälte\""
+ },
+ {
+  "id": "zh-b1-r4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"erooberä\""
+ },
+ {
+  "id": "zh-b1-r5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abgää\""
+ },
+ {
+  "id": "zh-b1-r6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich gwöhne a\""
+ },
+ {
+  "id": "zh-b1-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"übersetze\""
+ },
+ {
+  "id": "zh-b1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zueordne\""
+ },
+ {
+  "id": "zh-b1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sinke\""
+ },
+ {
+  "id": "zh-b1-r12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"provisorisch\""
+ },
+ {
+  "id": "zh-b1-l2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aazünde\""
+ },
+ {
+  "id": "zh-b1-l3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"schniide\""
+ },
+ {
+  "id": "zh-b1-l3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zwäg mache\""
+ },
+ {
+  "id": "zh-b1-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich beklage\""
+ },
+ {
+  "id": "zh-b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iiglenkt\""
+ },
+ {
+  "id": "zh-b1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich luune\""
+ },
+ {
+  "id": "zh-b1-w3",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 1: \"Miner Meinig nach bruucht d Stadt meh Bäum.\""
+ },
+ {
+  "id": "zh-b1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich gwöhne\""
+ },
+ {
+  "id": "zh-b1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"ungwont\""
+ },
+ {
+  "id": "zh-b1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich iiläbe\""
+ },
+ {
+  "id": "zh-b1-w4",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 3: \"Hüt fühl ich mi da vill besser.\""
+ },
+ {
+  "id": "zh-b1-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iigschriibe\""
+ },
+ {
+  "id": "zh-b1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich verbessere\""
+ },
+ {
+  "id": "zh-b2-r7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iiteile\""
+ },
+ {
+  "id": "zh-b2-r8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"obligatorisch\""
+ },
+ {
+  "id": "zh-b2-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iischränke\""
+ },
+ {
+  "id": "zh-b2-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"konkret\""
+ },
+ {
+  "id": "zh-b2-l2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich öppis läischte\""
+ },
+ {
+  "id": "zh-b2-l4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"uufhole\""
+ },
+ {
+  "id": "zh-b2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iischtiige\""
+ },
+ {
+  "id": "zh-b2-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich mälde\""
+ },
+ {
+  "id": "zh-b2-l8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"abklääre\""
+ },
+ {
+  "id": "zh-b2-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zäitgemäss\""
+ },
+ {
+  "id": "zh-b2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich aagriffe fühle\""
+ },
+ {
+  "id": "zh-b2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"klääre\""
+ },
+ {
+  "id": "zh-b2-l11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zuegää\""
+ },
+ {
+  "id": "zh-b2-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich fröie\""
+ },
+ {
+  "id": "zh-b2-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iiraume\""
+ },
+ {
+  "id": "zh-b2-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"wiedergää\""
+ },
+ {
+  "id": "zh-b2-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sachlich\""
+ },
+ {
+  "id": "zh-b2-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"wäggloo\""
+ },
+ {
+  "id": "zh-b2-w4",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 1: \"De Text gaat um d Folge vom Wachstum vo de Stadt.\""
+ },
+ {
+  "id": "zh-b2-w5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"konkret\""
+ },
+ {
+  "id": "zh-b2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"entchräfte\""
+ },
+ {
+  "id": "zh-b2-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"letschtlich\""
+ },
+ {
+  "id": "zh-b2-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"rächtziitig\""
+ },
+ {
+  "id": "zh-c1-r1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"uufnää\""
+ },
+ {
+  "id": "zh-c1-r3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unverbindlich\""
+ },
+ {
+  "id": "zh-c1-r3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"härzlich\""
+ },
+ {
+  "id": "zh-c1-r4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verzögere\""
+ },
+ {
+  "id": "zh-c1-r5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unsichtbar\""
+ },
+ {
+  "id": "zh-c1-r5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich lohne\""
+ },
+ {
+  "id": "zh-c1-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"belege\""
+ },
+ {
+  "id": "zh-c1-r9",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vereinnahme\""
+ },
+ {
+  "id": "zh-c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"implizit\""
+ },
+ {
+  "id": "zh-c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iischränke\""
+ },
+ {
+  "id": "zh-c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"nahelege\""
+ },
+ {
+  "id": "zh-c1-r10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorschnäll\""
+ },
+ {
+  "id": "zh-c1-r11",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sachlich\""
+ },
+ {
+  "id": "zh-c1-r12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"hinterlege\""
+ },
+ {
+  "id": "zh-c1-l2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich aagliiche\""
+ },
+ {
+  "id": "zh-c1-l4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"überschätze\""
+ },
+ {
+  "id": "zh-c1-l4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"vorsichtig\""
+ },
+ {
+  "id": "zh-c1-l5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verschiebe\""
+ },
+ {
+  "id": "zh-c1-l5",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich beruhige\""
+ },
+ {
+  "id": "zh-c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sich berüefe uf\""
+ },
+ {
+  "id": "zh-c1-l7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"eskaliere\""
+ },
+ {
+  "id": "zh-c1-l10",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"beurkunde\""
+ },
+ {
+  "id": "zh-c1-l12",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"aapasse\""
+ },
+ {
+  "id": "zh-c1-w1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"liifere\""
+ },
+ {
+  "id": "zh-c1-w1",
+  "kural": "alternatif farklı kelimeler",
+  "detay": "görev 2: \"D Ladebsitzer händ Angscht vor weniger Umsatz, aber d Schtudie zäiged, dass d Fuessgänger meh poschte.\""
+ },
+ {
+  "id": "zh-c1-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"entchräfte\""
+ },
+ {
+  "id": "zh-c1-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"unterstelle\""
+ },
+ {
+  "id": "zh-c1-w2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"differenziere\""
+ },
+ {
+  "id": "zh-c1-w3",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"objektiv\""
+ },
+ {
+  "id": "zh-c1-w4",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verallgemeinere\""
+ },
+ {
+  "id": "zh-c1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"relativiere\""
+ },
+ {
+  "id": "zh-c1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zruckhaltend\""
+ },
+ {
+  "id": "zh-c1-w6",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"überinterpretiere\""
+ },
+ {
+  "id": "zh-c1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"verallgemeinere\""
+ },
+ {
+  "id": "zh-c1-w7",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"beiläufig\""
+ },
+ {
+  "id": "zh-c1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"beharre uf\""
+ },
+ {
+  "id": "zh-c1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"iiraume\""
+ },
+ {
+  "id": "zh-c1-w8",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"widme\""
+ },
+ {
+  "id": "a1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"schön\""
+ },
+ {
+  "id": "a1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"hören\""
+ },
+ {
+  "id": "a1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"müde\""
+ },
+ {
+  "id": "a1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"über\""
+ },
+ {
+  "id": "a1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"können\""
+ },
+ {
+  "id": "a1-s2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Wasser\""
+ },
+ {
+  "id": "a1-s2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"wohnen\""
+ },
+ {
+  "id": "a1-s2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Vater\""
+ },
+ {
+  "id": "a1-s2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Zeit\""
+ },
+ {
+  "id": "a1-s2",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"zwei\""
+ },
+ {
+  "id": "a2-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"nicht\""
+ },
+ {
+  "id": "a2-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Milch\""
+ },
+ {
+  "id": "a2-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"auch\""
+ },
+ {
+  "id": "a2-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"das Buch\""
+ },
+ {
+  "id": "a2-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Küche\""
+ },
+ {
+  "id": "b1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Stadt\""
+ },
+ {
+  "id": "b1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Staat\""
+ },
+ {
+  "id": "b1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"sprechen\""
+ },
+ {
+  "id": "b1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Sport\""
+ },
+ {
+  "id": "b1-s1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"spät\""
+ },
+ {
+  "id": "a2-d1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"bestellen\""
+ },
+ {
+  "id": "a2-d1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"die Rechnung\""
+ },
+ {
+  "id": "a2-d1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"bar zahlen\""
+ },
+ {
+  "id": "a2-d1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"mit Karte\""
+ },
+ {
+  "id": "a2-d1",
+  "kural": "sözlükçe metinde geçmiyor",
+  "detay": "\"der Kuchen\""
+ }
+]
