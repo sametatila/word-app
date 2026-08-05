@@ -11,6 +11,7 @@ import { ClozeGame } from "@/components/games/cloze-game";
 import { OrderGame } from "@/components/games/order-game";
 import { PluralGame } from "@/components/games/plural-game";
 import { ListenGame } from "@/components/games/listen-game";
+import { TrueFalseGame } from "@/components/games/truefalse-game";
 
 const w = (id: number, de: string, artikel: string | null, tr: string): RoundWord => ({
   id,
@@ -79,6 +80,13 @@ const ROUNDS: Round[] = [
     word: w(14, "Schlüssel", "der", "anahtar"),
     options: ["anahtar", "kapı", "pencere", "masa"],
   },
+  {
+    id: "d11",
+    game: "truefalse",
+    word: w(15, "Fenster", "das", "pencere"),
+    claim: "kapı",
+    isTrue: false,
+  },
 ];
 
 /** Yalnızca geliştirme kontrolü için: tüm oyunları tek sayfada render eder. */
@@ -98,6 +106,7 @@ export default function DemoGames() {
           {round.game === "order" && <OrderGame round={round} onDone={() => {}} />}
           {round.game === "plural" && <PluralGame round={round} onDone={() => {}} />}
           {round.game === "listen" && <ListenGame round={round} onDone={() => {}} />}
+          {round.game === "truefalse" && <TrueFalseGame round={round} onDone={() => {}} />}
         </section>
       ))}
     </div>

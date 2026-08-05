@@ -18,6 +18,7 @@ const GAMES: GameId[] = [
   "order",
   "plural",
   "listen",
+  "truefalse",
 ];
 
 export async function POST(req: Request) {

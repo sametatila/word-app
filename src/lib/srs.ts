@@ -33,6 +33,8 @@ const GAME_TIME_BUDGET: Record<string, number> = {
   plural: 9000,
   // Sesi dinlemek zaman alır; sabırsız bir bütçe herkesi yavaş gösterirdi.
   listen: 12000,
+  // İkili karar: düşünmek değil tanımak isteniyor, bütçe dar.
+  truefalse: 5000,
 };
 
 /**

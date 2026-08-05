@@ -392,6 +392,39 @@ async function main() {
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
 
+  console.log("\n11h) Doğru mu Yanlış mı turu");
+  await reset();
+  await ensureProfile(USER);
+  await db.update(profiles).set({ newPerDay: 0 }).where(eq(profiles.userId, USER));
+  const tfPool = await db.select().from(words).where(eq(words.course, "de")).limit(60);
+  await db.insert(userWords).values(
+    tfPool.map((w) => ({
+      userId: USER, wordId: w.id, state: 2, ease: 2.6, intervalDays: 30,
+      dueAt: long, reps: 9, lapses: 0, correctStreak: 7, leech: false, lastReviewedAt: long,
+    })),
+  );
+  const tfRounds: Extract<Round, { game: "truefalse" }>[] = [];
+  for (let i = 0; i < 30; i++) {
+    const s = await buildSession(USER, day1);
+    for (const r of s.rounds) if (r.game === "truefalse") tfRounds.push(r);
+  }
+  check("ikili karar turu üretiliyor", tfRounds.length > 0, `(${tfRounds.length})`);
+  check("doğru iddia kelimenin kendi karşılığı",
+    tfRounds.filter((r) => r.isTrue).every((r) => r.claim === r.word.tr));
+  // Asıl adalet kuralı: yanlış iddia, kelimenin geçerli bir anlamı olmamalı.
+  const meaningsOf = (tr: string) =>
+    new Set(tr.split(",").map((m) => m.trim().toLocaleLowerCase("tr-TR")).filter(Boolean));
+  check(
+    "yanlış iddia kelimenin başka bir anlamı değil",
+    tfRounds
+      .filter((r) => !r.isTrue)
+      .every((r) => ![...meaningsOf(r.claim)].some((m) => meaningsOf(r.word.tr).has(m))),
+  );
+  const trueCount = tfRounds.filter((r) => r.isTrue).length;
+  check("doğru ve yanlış iddialar karışık geliyor",
+    tfRounds.length < 8 || (trueCount > 0 && trueCount < tfRounds.length),
+    `(${trueCount}/${tfRounds.length} doğru)`);
+
   console.log("\n11g) Kulaktan Tanı turu");
   // Ses turunda şıklar Türkçe olmalı: Almanca şık verilseydi kelime yazıyla
   // görünür ve tur dinlemeyi değil okumayı ölçerdi.

@@ -537,14 +537,14 @@ function pickRound(
   if (strength === "fresh" || strength === "shaky") {
     // Yeni ya da takılan kelime: cevabın ekranda olduğu tanıma oyunları.
     // Boş sayfaya yazdırmak bu aşamada öğretmez, yalnızca yıldırır.
-    candidates.push("choice", "cloze", "listen");
+    candidates.push("choice", "cloze", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel");
   } else if (strength === "solid") {
-    candidates.push("choice", "cloze", "order", "listen");
+    candidates.push("choice", "cloze", "order", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   } else {
-    candidates.push("typing", "cloze", "choice", "order", "listen");
+    candidates.push("typing", "cloze", "choice", "order", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   }
@@ -601,6 +601,13 @@ function makeRound(
         : null;
     case "typing":
       return { id: nextId(), game: "typing", word, alternatives: [] };
+    case "truefalse": {
+      // Yarı yarıya doğru/yanlış: ne "hep doğru" ne "hep yanlış" ezberi kurulsun.
+      const isTrue = Math.random() < 0.5;
+      const claim = isTrue ? word.tr : pickFalseClaim(word, pool);
+      if (!claim) return null;
+      return { id: nextId(), game: "truefalse", word, claim, isTrue };
+    }
     case "listen":
       // Şıklar Türkçe: sorulan şey yazım değil, sesin hangi anlama geldiği.
       return { id: nextId(), game: "listen", word, options: optionsFor(word, pool, "de-tr") };
@@ -758,6 +765,50 @@ function pickDistractors(
   return shuffle(scored.slice(0, Math.max(count, 10)))
     .slice(0, count)
     .map((c) => c.text);
+}
+
+/** Bir maddenin virgülle ayrılmış anlamları, karşılaştırılabilir hâlde. */
+function meanings(tr: string): Set<string> {
+  return new Set(
+    tr
+      .split(",")
+      .map((m) => m.trim().toLocaleLowerCase("tr-TR"))
+      .filter(Boolean),
+  );
+}
+
+/**
+ * "Doğru mu Yanlış mı" turunun yanlış iddiası.
+ *
+ * Burada çeldirici seçimi diğer oyunlardan **daha katı** olmak zorunda: cevap
+ * ikili olduğu için, öne sürülen anlam kelimenin gerçekten geçerli bir başka
+ * karşılığıysa öğrenci "doğru" der ve haksız yere yanlış sayılır. Çoktan
+ * seçmelide bu risk yoktur, orada doğru şık zaten listededir ve en iyi eşleşme
+ * seçilir.
+ *
+ * Bu yüzden aday, hedefin anlamlarından **hiçbirini** paylaşmamalı; Almanca
+ * biçim benzerliği ise istenen şey — asıl karışıklık orada.
+ */
+function pickFalseClaim(
+  word: RoundWord,
+  pool: (typeof words.$inferSelect)[],
+): string | null {
+  const own = meanings(word.tr);
+  const scored: { text: string; score: number }[] = [];
+  const seen = new Set<string>([word.tr]);
+
+  for (const p of pool) {
+    if (p.id === word.id || seen.has(p.tr)) continue;
+    const other = meanings(p.tr);
+    if ([...other].some((m) => own.has(m))) continue; // ortak anlam varsa iddia yanlış sayılamaz
+    seen.add(p.tr);
+    const typBonus = p.typ === word.typ ? 6 : 0;
+    scored.push({ text: p.tr, score: similarity(p.de, word.de) + typBonus });
+  }
+  if (!scored.length) return null;
+
+  scored.sort((a, b) => b.score - a.score);
+  return shuffle(scored.slice(0, 12))[0]?.text ?? null;
 }
 
 /** Şıklar sorunun yönüne göre Türkçe ya da Almanca üretilir. */

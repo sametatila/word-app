@@ -8,7 +8,8 @@ export type GameId =
   | "typing"
   | "order"
   | "plural"
-  | "listen";
+  | "listen"
+  | "truefalse";
 
 export const GAME_LABELS: Record<GameId, string> = {
   intro: "Yeni Kelime",
@@ -21,6 +22,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   order: "Cümleyi Diz",
   plural: "Çoğul Bilmece",
   listen: "Kulaktan Tanı",
+  truefalse: "Doğru mu Yanlış mı",
 };
 
 export type RoundWord = {
@@ -80,6 +82,14 @@ export type Round =
       word: RoundWord;
       /** Türkçe şıklar; doğru cevap kelimenin kendi karşılığıdır. */
       options: string[];
+    }
+  | {
+      id: string;
+      game: "truefalse";
+      word: RoundWord;
+      /** Öne sürülen anlam — kelimenin kendi karşılığı ya da başka bir kelimenin. */
+      claim: string;
+      isTrue: boolean;
     };
 
 export type Answer = {

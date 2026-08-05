@@ -1,0 +1,115 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { GameShell } from "./game-shell";
+import { withArtikel, type GameProps } from "./types";
+import type { Round } from "@/lib/types";
+import { fx } from "@/lib/fx";
+import { CheckIcon, XIcon } from "@/components/icons";
+import { SpeakButton } from "@/components/speak-button";
+
+type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
+
+/**
+ * Doğru mu Yanlış mı.
+ *
+ * Diğer turlar "hangisi?" diye sorar ve öğrenci şıklar arasında gezinir. Bu tur
+ * "öyle mi?" diye sorar: tek bir eşleşme gösterilir, karar ikilidir ve hızlıdır.
+ * Ölçtüğü şey de farklı — aranan cevabı üretmek değil, önüne konan bir eşleşmeyi
+ * yargılamak. Meydan okumanın hızlı dalgalarında tempoyu değiştiren tur budur.
+ *
+ * Yanlış iddialar, hedefin anlamlarından hiçbirini paylaşmayan kelimelerden
+ * seçilir (bkz. pickFalseClaim): ikili kararda "aslında bu da doğru" diyecek
+ * bir eşleşme göstermek öğrenciyi haksız yere yanıltır.
+ */
+export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
+  const { word, claim, isTrue } = round;
+  const [answered, setAnswered] = useState<boolean | null>(null);
+  const started = useRef(Date.now());
+
+  useEffect(() => {
+    started.current = Date.now();
+    setAnswered(null);
+  }, [round.id]);
+
+  function decide(said: boolean) {
+    if (answered !== null) return;
+    setAnswered(said);
+    const isCorrect = said === isTrue;
+    const latencyMs = Date.now() - started.current;
+    // Yanlış eşleşmede gerçek karşılığı okumaya vakit gerekir.
+    const wait = isCorrect ? 900 : 2400;
+    fx(isCorrect ? "correct" : "wrong", wait);
+    setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), wait);
+  }
+
+  const settled = answered !== null;
+  const wasRight = settled && answered === isTrue;
+
+  return (
+    <GameShell label="Doğru mu Yanlış mı" prompt={<span className="muted text-base">Bu eşleşme doğru mu?</span>}>
+      <motion.div
+        key={round.id}
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className={`card mx-auto w-full max-w-md p-6 text-center ${
+          settled && !wasRight ? "animate-shake" : ""
+        }`}
+        style={{
+          borderColor: settled
+            ? wasRight
+              ? "var(--color-mint-500)"
+              : "var(--color-rose-500)"
+            : undefined,
+        }}
+      >
+        <div className="flex items-center justify-center gap-2">
+          <span className="brand-text text-2xl font-bold sm:text-3xl">{withArtikel(word)}</span>
+          <SpeakButton text={withArtikel(word)} size="sm" />
+        </div>
+        <div className="my-3 flex items-center justify-center gap-3">
+          <span className="h-px w-10" style={{ background: "var(--border)" }} />
+          <span className="muted text-xs uppercase tracking-wide">demek</span>
+          <span className="h-px w-10" style={{ background: "var(--border)" }} />
+        </div>
+        <p className="text-xl font-semibold sm:text-2xl">{claim}</p>
+      </motion.div>
+
+      <div className="mx-auto mt-6 grid w-full max-w-md grid-cols-2 gap-3">
+        <motion.button
+          type="button"
+          whileTap={{ scale: 0.96 }}
+          disabled={settled}
+          onClick={() => decide(true)}
+          className={`option flex min-h-16 items-center justify-center gap-2 text-lg font-bold ${
+            settled && isTrue ? "option-correct" : settled && answered === true ? "option-wrong" : ""
+          }`}
+        >
+          <CheckIcon size={20} /> Doğru
+        </motion.button>
+        <motion.button
+          type="button"
+          whileTap={{ scale: 0.96 }}
+          disabled={settled}
+          onClick={() => decide(false)}
+          className={`option flex min-h-16 items-center justify-center gap-2 text-lg font-bold ${
+            settled && !isTrue ? "option-correct" : settled && answered === false ? "option-wrong" : ""
+          }`}
+        >
+          <XIcon size={20} /> Yanlış
+        </motion.button>
+      </div>
+
+      {/* Yanlış iddiada gerçek karşılık gösterilir: tur bir şey öğretmeden kapanmasın. */}
+      <div className="mt-4 min-h-10 text-center text-sm">
+        {settled && !isTrue ? (
+          <p className="muted">
+            {withArtikel(word)} ={" "}
+            <strong className="text-[color:var(--color-mint-500)]">{word.tr}</strong>
+          </p>
+        ) : null}
+      </div>
+    </GameShell>
+  );
+}
