@@ -34,6 +34,8 @@ import { dialogues } from "../src/lib/skills/content/dialogue";
 import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { summarize } from "../src/lib/chat-summary";
+import { derivedConfusions } from "../src/lib/speech-rules";
+import { germanLexicon } from "../src/lib/speech-lexicon";
 import { systemPrompt } from "../src/lib/chat";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
@@ -501,6 +503,31 @@ async function main() {
   check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "cerebras");
 
   setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
+
+  console.log("\n11s) Sapmalar kuraldan da türetiliyor");
+  {
+    const lex = germanLexicon();
+    const pairs = (sentence: string) =>
+      derivedConfusions(sentence, lex).map((c) => c.heard[0].toLowerCase());
+
+    check("z → s türetiliyor", pairs("Die Pause war viel zu kurz.").includes("kurs"));
+    check("uzatma h'si düşüyor", pairs("Ich kenne ihn gut.").includes("in"));
+    check("çift ünsüz tekleşiyor", pairs("Das Fenster ist offen.").includes("ofen"));
+    check("ie ↔ ei yer değiştiriyor", pairs("Der Riese war sehr groß.").includes("reise"));
+    // Sözlükte olmayan biçim üretilmemeli: tanıyıcı onu hiç yazamaz.
+    check("uydurma biçim üretilmiyor",
+      derivedConfusions("Ich trinke Kaffee.", lex).every((c) => lex.has(c.heard[0].toLowerCase())));
+    // Aynı cümlede geçen kelime sapma olamaz — doğru biçim zaten oradadır.
+    check("cümlede geçen kelime sapma sayılmıyor",
+      !pairs("Der Kurs war sehr kurz.").includes("kurs"),
+      `(${pairs("Der Kurs war sehr kurz.").join(", ")})`);
+    // Türetilenler de elle yazılanlarla aynı üç kuraldan geçmeli.
+    const all = derivedConfusions("Ich kenne ihn gut.", lex);
+    check("türev hedefin kendisi değil",
+      all.every((c) => c.heard[0].toLowerCase() !== (c.expected ?? "").toLowerCase()));
+    check("türev doğru biçimi içermiyor",
+      all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
+  }
 
   console.log("\n11r) Konuşma özeti ölçülen veriden kuruluyor");
   {

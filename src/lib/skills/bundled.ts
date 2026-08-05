@@ -12,6 +12,8 @@ import { zhC1 } from "./content/zh-c1";
 import { speaking } from "./content/speaking";
 import { zhSpeaking } from "./content/zh-speaking";
 import { dialogues } from "./content/dialogue";
+import { derivedConfusions } from "../speech-rules";
+import { germanLexicon } from "../speech-lexicon";
 
 /**
  * Repoda yazılan beceri içeriğinin tamamı — tek liste.
@@ -26,6 +28,41 @@ import { dialogues } from "./content/dialogue";
  * o sınır index.ts'in server-only olmasıyla korunur — istemci bileşenleri
  * yalnızca meta.ts'ten sabit alır.
  */
+/**
+ * Almanca telaffuz görevlerine kuraldan türetilmiş sapmaları ekler.
+ *
+ * Elle yazılanlar önde kalıyor: onların açıklaması hedefli ve her zaman daha
+ * iyi, bu yüzden `judgeSpeech` sırayla bakarken önce onları deniyor. Türetilen
+ * satırlar arkadan gelip elle yazılmamış durumları karşılıyor.
+ *
+ * Türev üretilmesi tek koşula bağlı: sonucun gerçek bir Almanca kelime olması.
+ * Bu yüzden ürettiği satır sayısı sınırlı — Almancada Türkçe konuşanın
+ * hatasının başka bir kelimeye denk düştüğü durumlar sanıldığı kadar çok
+ * değil (8.000 kelimede ~50 çift). Yine de bedava ve içerik büyüdükçe
+ * kendiliğinden ölçekleniyor.
+ *
+ * Züritüütsch egzersizleri dışarıda: orada tanıyıcı hiç çalışmıyor
+ * (bkz. zh-speaking.ts), dolayısıyla sapma yazmanın anlamı yok.
+ */
+function withDerived<T extends SkillExercise>(list: T[]): T[] {
+  const lexicon = germanLexicon();
+  return list.map((ex) => {
+    if (ex.skill !== "speaking" || !("tasks" in ex) || ex.judge === "self") return ex;
+    return {
+      ...ex,
+      tasks: ex.tasks.map((task) => {
+        const derived = derivedConfusions(task.de, lexicon);
+        if (!derived.length) return task;
+        const written = task.confusions ?? [];
+        // Elle yazılmış bir sapma aynı biçimi zaten kapsıyorsa türev eklenmez.
+        const covered = new Set(written.flatMap((c) => c.heard.map((h) => h.toLowerCase())));
+        const extra = derived.filter((c) => !covered.has(c.heard[0].toLowerCase()));
+        return extra.length ? { ...task, confusions: [...written, ...extra] } : task;
+      }),
+    };
+  });
+}
+
 export const BUNDLED_EXERCISES: SkillExercise[] = [
   ...a1,
   ...a2,
@@ -37,7 +74,7 @@ export const BUNDLED_EXERCISES: SkillExercise[] = [
   ...zhB1,
   ...zhB2,
   ...zhC1,
-  ...speaking,
+  ...withDerived(speaking),
   ...zhSpeaking,
   ...dialogues,
 ];
