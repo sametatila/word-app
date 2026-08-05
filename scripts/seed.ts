@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
-import { sql } from "drizzle-orm";
+import { and, eq, notInArray, sql } from "drizzle-orm";
 import { words } from "../src/lib/db/schema";
 
 type Row = {
@@ -91,6 +91,23 @@ async function main() {
       });
     console.log(`  ${Math.min(i + CHUNK, values.length)}/${values.length}`);
   }
+  // Kaynaktan çıkarılan maddeler veritabanında kalmamalı: yalnızca upsert
+  // yapılırsa silinen yinelenen kayıtlar Neon'da sonsuza kadar yaşar ve
+  // öğrenciye aynı kelime iki kez gelmeye devam eder.
+  const removed = await db
+    .delete(words)
+    .where(
+      and(
+        eq(words.course, "de"),
+        notInArray(
+          words.id,
+          values.map((v) => v.id),
+        ),
+      ),
+    )
+    .returning({ id: words.id });
+  if (removed.length) console.log(`Silinen eski kelime: ${removed.length}`);
+
   console.log("Tohumlama tamam.");
 }
 
