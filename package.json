@@ -17,7 +17,8 @@
     "test:playtest": "node scripts/playtest.mjs 330",
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",
-    "db:check": "tsx scripts/schema-check.ts"
+    "db:check": "tsx scripts/schema-check.ts",
+    "db:verify": "tsx scripts/verify-live.ts"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.4.2-beta",
