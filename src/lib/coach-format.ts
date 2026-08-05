@@ -39,7 +39,7 @@ export function tidy(raw: string): string {
  * kırpma cümleyi bozar. Bu yüzden yalnızca metinde tam iki tırnak varsa ve
  * ikisi de uçlardaysa kaldırılıyor; kelime tırnakları olduğu gibi kalıyor.
  */
-export function unwrap(line: string): string {
+function unwrap(line: string): string {
   const quotes = line.match(WRAP_QUOTES);
   if (!quotes || quotes.length !== 2) return line;
   if (!/^["“]/.test(line) || !/["”]$/.test(line)) return line;

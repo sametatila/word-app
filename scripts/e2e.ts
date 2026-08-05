@@ -553,6 +553,42 @@ async function main() {
       all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
   }
 
+  console.log("\n11v) Diyalog eşleştirmesi gerçekçi girdilerde");
+  {
+    const find = (id: string) => dialogues.find((d) => d.id === id)!;
+    const turn = (id: string, tid: string) => find(id).dialogue.find((t) => t.id === tid)!;
+    const said = (id: string, tid: string, text: string) =>
+      matchReply(text, turn(id, tid).replies)?.reply.say ?? null;
+
+    // Almanca: aynı niyetin farklı kuruluşları aynı dala gitmeli.
+    check("kısa cevap tutuyor", said("a1-d1", "start", "Bahnhof") !== null);
+    check("tam cümle tutuyor",
+      said("a1-d1", "start", "Entschuldigung, wo ist der Bahnhof bitte?") !== null);
+    check("aynı niyet aynı dala gidiyor",
+      said("a1-d1", "start", "Bahnhof") === said("a1-d1", "start", "Ich suche den Bahnhof."));
+
+    // Zürih: asıl sınav. Tanıyıcı lehçeyi standart Almanca yazma eğiliminde,
+    // o yüzden köklere Hochdeutsch karşılıkları da yazılmıştı. Bu kontrol o
+    // iddiayı doğruluyor — ikisi de aynı dalı seçmeli.
+    const zhDialect = said("zh-a2-d1", "start", "Ich hätt gern Chäs.");
+    const zhStandard = said("zh-a2-d1", "start", "Ich hätte gern Käse.");
+    check("lehçe biçimi tutuyor", zhDialect !== null, `(${zhDialect})`);
+    check("tanıyıcının yazacağı standart biçim de tutuyor", zhStandard !== null,
+      `(${zhStandard})`);
+    check("ikisi aynı dala gidiyor", zhDialect === zhStandard);
+
+    const zhVerb = said("zh-a1-d1", "from", "Ich chume vo de Türkei.");
+    const zhVerbStd = said("zh-a1-d1", "from", "Ich komme aus der Türkei.");
+    check("lehçe fiili tutuyor", zhVerb !== null, `(${zhVerb})`);
+    check("standart fiil de tutuyor", zhVerbStd !== null, `(${zhVerbStd})`);
+
+    // Konu dışı cevap hiçbir dala uymamalı; uyarsa öğrenci yanlış yönlendirilir.
+    check("konu dışı cevap eşleşmiyor",
+      said("zh-a2-d1", "start", "Wie spät ist es?") === null,
+      `(${said("zh-a2-d1", "start", "Wie spät ist es?")})`);
+    check("boş cevap eşleşmiyor", said("b1-d1", "start", "   ") === null);
+  }
+
   console.log("\n11u) İstem başlığı cevaba sızmıyor");
   {
     const leaked = parseReply(
