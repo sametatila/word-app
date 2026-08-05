@@ -19,7 +19,8 @@
     "icons": "node scripts/icons.mjs",
     "db:check": "tsx scripts/schema-check.ts",
     "db:verify": "tsx scripts/verify-live.ts",
-    "test:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-eval.ts"
+    "test:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-eval.ts",
+    "test:coach": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/coach-eval.ts"
   },
   "dependencies": {
     "@neondatabase/auth": "^0.4.2-beta",
