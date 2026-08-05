@@ -101,7 +101,7 @@ export function SkillsHub({
   const shown = SKILL_ORDER.filter((s) => skillFilter === "all" || s === skillFilter);
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-5 pb-8">
+    <div className="mx-auto w-full max-w-2xl space-y-5">
       <header>
         <h1 className="text-2xl font-bold">Beceriler</h1>
         <p className="muted mt-1 text-sm">

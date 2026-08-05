@@ -93,7 +93,7 @@ export function PlayerShell({
   children: ReactNode;
 }) {
   return (
-    <div className="mx-auto w-full max-w-2xl pb-8">
+    <div className="mx-auto w-full max-w-2xl">
       <div className="mb-5 flex items-center gap-3">
         <Link href="/skills" aria-label="Becerilere dön" className="btn btn-ghost h-9 w-9 shrink-0">
           <ArrowLeftIcon size={18} />

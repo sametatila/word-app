@@ -39,7 +39,7 @@ export function LessonHub({
   const doneCards = cards.filter((c) => c.done && !c.due);
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-5 pb-8">
+    <div className="mx-auto w-full max-w-2xl space-y-5">
       <header>
         <h1 className="text-2xl font-bold">Dersler</h1>
         <p className="muted mt-1 text-sm">

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode, useRef } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
 import { InstallPrompt } from "./install-prompt";
@@ -31,6 +31,8 @@ export function AppShell({
   voice?: string | null;
 }) {
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
+  const shellRef = useRef<HTMLDivElement>(null);
   const [stats, setStats] = useState({ streak, xp });
 
   // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
@@ -48,6 +50,29 @@ export function AppShell({
       /* depolama kapalıysa kursun varsayılan sesi kullanılır */
     }
   }, [course, voice]);
+  /**
+   * İçerik alanının alt boşluğu, alt gezinmenin GERÇEK yüksekliğinden geliyor.
+   *
+   * Önce sabit bir değer (pb-24) kullanılıyordu ve iki ayrı şikâyet üretiyordu:
+   * gezinme o değerden yüksek olan telefonlarda içerik altında kalıyor, alçak
+   * olanlarda ise fazladan boşluk kalıp sayfayı gereksiz yere kaydırılabilir
+   * yapıyordu. Yükseklik sabit değil — cihazın alt güvenli alanı ve
+   * kullanıcının yazı tipi ölçeği onu değiştiriyor.
+   *
+   * Ölçüm `ResizeObserver` ile: yazı tipi ölçeği ya da yönlendirme değişince
+   * kendiliğinden güncelleniyor.
+   */
+  useEffect(() => {
+    const nav = navRef.current;
+    const shell = shellRef.current;
+    if (!nav || !shell) return;
+    const apply = () => shell.style.setProperty("--nav-h", `${nav.offsetHeight}px`);
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(nav);
+    return () => ro.disconnect();
+  }, []);
+
   useEffect(() => {
     const onStats = (e: Event) => {
       const detail = (e as CustomEvent<{ xp: number; streak: number }>).detail;
@@ -60,7 +85,7 @@ export function AppShell({
   return (
     // h-dvh + iç kaydırma: sayfa gövdesi kaymaz, yalnızca içerik alanı kayar.
     // Böylece oyun ekranları kalan alanı tam olarak bilir ve taşma olmaz.
-    <div className="mx-auto flex h-dvh w-full max-w-6xl overflow-hidden">
+    <div ref={shellRef} className="mx-auto flex h-dvh w-full max-w-6xl overflow-hidden">
       <TopProgress />
       <InstallPrompt />
       {/* Masaüstü kenar çubuğu */}
@@ -126,12 +151,20 @@ export function AppShell({
 
         {/* Kaydırma yalnızca burada olur: uzun listeler kayar, oyun ekranları
             kalan alanı tam olarak bilir ve taşmaz. */}
-        <main className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 pb-24 pt-4 md:px-8 md:pb-8 md:pt-8">
+        {/* Alt boşluk ölçülen gezinme yüksekliğinden; masaüstünde gezinme gizli
+            olduğu için değişken 0 kalıyor ve md: kuralı devralıyor.
+            `overscroll-contain` elastik kaydırmanın sayfa gövdesine zincirlenip
+            kaymıyormuş gibi durmasını engelliyor. */}
+        <main
+          className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 pt-4 md:px-8 md:pb-8 md:pt-8"
+          style={{ paddingBottom: "var(--nav-h, 6rem)" }}
+        >
           {children}
         </main>
 
         {/* Mobil alt gezinme */}
         <nav
+          ref={navRef}
           className="safe-bottom fixed inset-x-0 bottom-0 z-30 flex border-t backdrop-blur md:hidden"
           style={{
             borderColor: "var(--border)",

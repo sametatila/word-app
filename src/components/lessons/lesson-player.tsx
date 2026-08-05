@@ -265,7 +265,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       : [];
 
   return (
-    <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4 pb-8">
+    <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4">
       <Steps phase={phase} />
 
       <AnimatePresence mode="wait">

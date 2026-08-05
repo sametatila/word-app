@@ -402,19 +402,19 @@ function StartCard({
       className="mx-auto w-full max-w-md"
     >
       <div className="card overflow-hidden">
-        <div className="brand-gradient px-6 py-7 text-white">
+        <div className="brand-gradient px-6 py-5 text-white sm:py-7">
           <p className="text-sm opacity-90">
             {meta.currentStreak > 0
               ? `${meta.currentStreak} günlük seridesin`
               : "Bugün serini başlat"}
           </p>
           <div className="mt-1 flex items-center gap-2">
-            <h1 className="text-2xl font-bold">{name ? `Hoş geldin, ${name}` : "Hoş geldin"}</h1>
+            <h1 className="text-xl font-bold sm:text-2xl">{name ? `Hoş geldin, ${name}` : "Hoş geldin"}</h1>
             <span className="rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
               {meta.level}
             </span>
           </div>
-          <div className="mt-4">
+          <div className="mt-3 sm:mt-4">
             <div className="mb-1.5 flex justify-between text-xs font-semibold opacity-90">
               <span>Günlük hedef</span>
               <span>
@@ -433,17 +433,17 @@ function StartCard({
         </div>
 
         <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
-          <div className="px-4 py-4 text-center">
+          <div className="px-4 py-3 text-center sm:py-4">
             <div className="text-xl font-bold text-[color:var(--color-flame-500)]">{reviewCount}</div>
             <div className="muted text-xs">tekrar sırası gelen</div>
           </div>
-          <div className="px-4 py-4 text-center">
+          <div className="px-4 py-3 text-center sm:py-4">
             <div className="text-xl font-bold text-[color:var(--color-brand-500)]">{newCount}</div>
             <div className="muted text-xs">yeni kelime</div>
           </div>
         </div>
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-6 pb-5 pt-3 sm:pb-6 sm:pt-4">
           {/* Tempo bilgisi — bir başarı notu değil, bugün ne kadar yük alındığı.
               Eski "zorluk yükseltildi / hafifletildi" metni oturum doğruluğunu
               yetkinlik sanıyordu; o ölçü kuyruğun bileşimini ölçüyordu. */}
@@ -462,6 +462,32 @@ function StartCard({
               </p>
             </div>
           ) : null}
+
+          {resumable ? (
+            <div className="space-y-2">
+              <button onClick={onResume} className="btn btn-primary w-full px-5 py-3.5">
+                Kaldığın yerden devam et ({resumable.index + 1}. tur)
+              </button>
+              <button onClick={onStart} className="btn btn-ghost w-full px-5 py-3">
+                Yeni tura başla
+              </button>
+            </div>
+          ) : (
+            <button onClick={onStart} className="btn btn-primary w-full px-5 py-3.5 text-base">
+              {rounds.length} turluk oturuma başla
+            </button>
+          )}
+
+          {/* Açıklayıcı metinler eylemin ALTINA alındı.
+              Küçük telefonlarda bu iki paragraf başlat düğmesini katlanın
+              altına itiyordu: kullanıcı başlamak için önce kaydırmak zorunda
+              kalıyordu. Bilgi değerli ama eylemi engellememeli. */}
+          <div className="mt-4 space-y-3">
+          <p className="muted text-center text-sm">
+            {reviewCount > 0
+              ? "Tekrar zamanı gelen kelimeler bu turda kendiliğinden karşına çıkacak — ayrıca bir şey yapman gerekmiyor."
+              : "Bu tur yeni kelimelerle başlıyor. Öğrendiklerin, unutmaya başladığın anda kendiliğinden geri gelecek."}
+          </p>
           {meta.coverage.total > 0 ? (
             <div
               className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
@@ -481,26 +507,7 @@ function StartCard({
               </p>
             </div>
           ) : null}
-          <p className="muted mb-4 text-center text-sm">
-            {reviewCount > 0
-              ? "Tekrar zamanı gelen kelimeler bu turda kendiliğinden karşına çıkacak — ayrıca bir şey yapman gerekmiyor."
-              : "Bu tur yeni kelimelerle başlıyor. Öğrendiklerin, unutmaya başladığın anda kendiliğinden geri gelecek."}
-          </p>
-
-          {resumable ? (
-            <div className="space-y-2">
-              <button onClick={onResume} className="btn btn-primary w-full px-5 py-3.5">
-                Kaldığın yerden devam et ({resumable.index + 1}. tur)
-              </button>
-              <button onClick={onStart} className="btn btn-ghost w-full px-5 py-3">
-                Yeni tura başla
-              </button>
-            </div>
-          ) : (
-            <button onClick={onStart} className="btn btn-primary w-full px-5 py-3.5 text-base">
-              {rounds.length} turluk oturuma başla
-            </button>
-          )}
+          </div>
         </div>
       </div>
       {leaderboard}
