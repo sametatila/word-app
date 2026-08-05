@@ -129,6 +129,20 @@ export type SpeakingTask = {
 export type SpeakingDrillExercise = ExerciseBase & {
   skill: "speaking";
   tasks: SpeakingTask[];
+  /**
+   * Değerlendirmeyi kim yapıyor.
+   *
+   * `"asr"` (varsayılan) tarayıcının tanıyıcısını kullanır. `"self"` ise
+   * tanıyıcıyı hiç çalıştırmaz ve öğrenci kendi değerlendirir.
+   *
+   * İkincisi Züritüütsch için gerekiyor: tarayıcının de-CH tanıyıcısı İsviçre
+   * **standart** Almancasını tanıyor, lehçeyi değil. Lehçe tanıma bugün hâlâ
+   * çözülmemiş bir problem (bu iş için özel eğitilmiş modellerde bile hata
+   * oranı %25 civarında). Böyle bir tanıyıcıya lehçe cümlesi söyletmek yanlış
+   * onay değil, daha kötüsünü üretirdi: doğru söyleyen öğrenciye "yanlış"
+   * demek. Kapatmak, güvenilmez bir yargıdan iyidir.
+   */
+  judge?: "asr" | "self";
 };
 
 /**

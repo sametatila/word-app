@@ -39,8 +39,12 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
   const [coaching, setCoaching] = useState(false);
 
   const ttsAvailable = useSpeechAvailable();
-  const [asrAvailable, setAsrAvailable] = useState(false);
-  useEffect(() => setAsrAvailable(recognitionCtor() !== null), []);
+  const [asrSupported, setAsrSupported] = useState(false);
+  useEffect(() => setAsrSupported(recognitionCtor() !== null), []);
+  // İçerik tanıyıcıyla değerlendirilmek istemiyorsa (lehçe) tarayıcı destekliyor
+  // olsa bile çalıştırmıyoruz — bkz. skills/types.ts, `judge`.
+  const asrJudged = exercise.judge !== "self";
+  const asrAvailable = asrSupported && asrJudged;
 
   const recognition = useRef<Recognition | null>(null);
   /** Geç gelen koç cevabı yeni görevin üstüne düşmesin diye. */
@@ -203,9 +207,14 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
         >
           <AlertIcon size={16} className="mt-0.5 shrink-0" />
           <span>
-            Bu tarayıcı konuşma tanımayı desteklemiyor (Firefox'ta yok). Alıştırma yine
-            yapılabilir: modeli dinle, yüksek sesle tekrarla ve kendin değerlendir. Chrome, Edge
-            ya da Safari'de otomatik değerlendirme açılır.
+            {!asrJudged
+              ? "Bu alıştırmada otomatik değerlendirme yok: konuşma tanıyıcıları " +
+                "Züritüütsch'ü değil İsviçre standart Almancasını tanıyor, " +
+                "doğru söylediğinde bile yanlış diyebilirdi. Modeli dinle, yüksek " +
+                "sesle tekrarla ve kendin değerlendir."
+              : "Bu tarayıcı konuşma tanımayı desteklemiyor (Firefox'ta yok). Alıştırma yine " +
+                "yapılabilir: modeli dinle, yüksek sesle tekrarla ve kendin değerlendir. " +
+                "Chrome, Edge ya da Safari'de otomatik değerlendirme açılır."}
           </span>
         </div>
       ) : null}
