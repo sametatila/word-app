@@ -221,6 +221,108 @@ export const speaking: SpeakingDrillExercise[] = [
     ],
   },
 
+  // ─────────────────── A2 · „ie“ ve „ei“ ───────────────────
+  //
+  // Bu bir telaffuz değil **okuma** sorunu ve Türkçe konuşanda özellikle
+  // inatçı: Türkçede harfler tek tek okunduğu için „ie“ ve „ei“ ikilileri
+  // beklenen sesi vermiyor. Kural basit — ikilinin İKİNCİ harfi sesi söyler:
+  // „ie“ uzun i, „ei“ ise ay.
+  //
+  // Seçilen çiftlerin hepsi gerçek kelime ve tek farkları bu iki harfin
+  // sırası; yani yanlış okuma sessizce geçmiyor, karşına başka bir kelime
+  // çıkarıyor.
+  {
+    id: "a2-s2",
+    level: "A2",
+    skill: "speaking",
+    title: "„ie“ und „ei“",
+    genre: "Ses çalışması",
+    intro:
+      "İkilinin ikinci harfi sesi belirler: „ie“ uzun i, „ei“ ise ay. Harfleri tek tek okursan kelime değişir — hepsi gerçek kelime olduğu için hata fark edilmeden geçer.",
+    gloss: [
+      { de: "die Reise / der Riese", tr: "yolculuk / dev" },
+      { de: "die Wiese / die Weise", tr: "çayır / biçim" },
+      { de: "sie / sei", tr: "o, onlar / ol (emir)" },
+      { de: "bieten", tr: "sunmak" },
+      { de: "beide", tr: "her ikisi" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        de: "Die Reise war sehr schön.",
+        tr: "Yolculuk çok güzeldi.",
+        hint: "„Reise“de „ei“ var → RAY-ze. „Riese“ (dev) ise Rİİ-ze.",
+        confusions: [
+          {
+            heard: ["Riese", "Riesen", "riesig"],
+            fix: "„Reise“ (yolculuk) yerine „Riese“ (dev) duyuldu. „ei“ ay diye okunur: RAY-ze.",
+            expected: "Reise",
+          },
+        ],
+      },
+      {
+        de: "Der Riese war sehr groß.",
+        tr: "Dev çok büyüktü.",
+        hint: "Şimdi tersi: „Riese“de „ie“ var → Rİİ-ze, uzun i.",
+        confusions: [
+          {
+            heard: ["Reise", "reise", "Reisen"],
+            fix: "„Riese“ (dev) yerine „Reise“ (yolculuk) duyuldu. „ie“ uzun i'dir, ay değil.",
+            expected: "Riese",
+          },
+        ],
+      },
+      {
+        de: "Die Kühe stehen auf der Wiese.",
+        tr: "İnekler çayırda duruyor.",
+        hint: "„Wiese“ = Vİİ-ze. „Weise“ (biçim, yol) ise VAY-ze.",
+        confusions: [
+          {
+            heard: ["Weise", "weise", "Weisen"],
+            fix: "„Wiese“ (çayır) yerine „Weise“ (biçim) duyuldu — „ie“ uzun i.",
+            expected: "Wiese",
+          },
+        ],
+      },
+      {
+        de: "Auf diese Weise geht es schneller.",
+        tr: "Bu şekilde daha hızlı oluyor.",
+        hint: "„Weise“de „ei“ → VAY-ze. Aynı cümledeki „diese“ ise Dİİ-ze.",
+        confusions: [
+          {
+            heard: ["Wiese", "Wiesen", "weiß"],
+            fix: "„Weise“ (biçim) yerine „Wiese“ (çayır) duyuldu. „ei“ ay okunur.",
+            expected: "Weise",
+          },
+        ],
+      },
+      {
+        de: "Sie bieten uns einen guten Preis.",
+        tr: "Bize iyi bir fiyat sunuyorlar.",
+        hint: "„bieten“ = Bİİ-ten. „beide“ (her ikisi) ile karıştırma: BAY-de.",
+        confusions: [
+          {
+            heard: ["beide", "beiden", "betten"],
+            fix: "„bieten“ (sunmak) yerine „beide“ (her ikisi) duyuldu — „ie“ uzun i, „ei“ ay.",
+            expected: "bieten",
+          },
+        ],
+      },
+      {
+        de: "Beide Kinder sind hier.",
+        tr: "Her iki çocuk da burada.",
+        hint: "„beide“ = BAY-de. Aynı cümlede „hier“ ise HİİR — iki kural yan yana.",
+        confusions: [
+          {
+            heard: ["bieten", "biete", "Biene"],
+            fix: "„beide“ (her ikisi) yerine „bieten“ duyuldu. „ei“ ay diye okunur.",
+            expected: "beide",
+          },
+        ],
+      },
+    ],
+  },
+
   // ─────────────────────── A2 · ch sesleri ───────────────────────
   {
     id: "a2-s1",
@@ -395,6 +497,110 @@ export const speaking: SpeakingDrillExercise[] = [
             heard: ["versehen", "bestehen"],
             fix: "„verstehen“ fer-ŞTEE-en. Sondaki „mich“in ch'si de yumuşak kalmalı.",
             expected: "verstehen",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────── B2 · kelime başı dışında „z“ ───────────
+  //
+  // A1'deki „W, V und Z“ z'yi kelime başında çalıştırıyor (Zeit, zwei). Asıl
+  // inatçı olan yer ise ortada ve sonda: orada Türkçe konuşan „z“yi kendi
+  // dilindeki gibi [z] söylüyor ve karşısına gerçek ama başka bir kelime
+  // çıkıyor. Yanlış sessizce geçmiyor, yanlış anlaşılıyor — bu yüzden B2'de
+  // bile ayrı bir çalışmayı hak ediyor.
+  //
+  // Seçilen çiftlerin tamamı yalnızca bu tek sesle ayrılıyor.
+  {
+    id: "b2-s1",
+    level: "B2",
+    skill: "speaking",
+    title: "„z“ in der Wortmitte und am Ende",
+    genre: "Ses çalışması",
+    intro:
+      "Almanca „z“ her yerde ts'dir — kelime başında da, ortasında da, sonunda da. Türkçedeki gibi z söylersen karşındaki başka bir kelime duyar.",
+    gloss: [
+      { de: "heizen / heißen", tr: "ısıtmak / adı olmak" },
+      { de: "reizen / reisen", tr: "tahriş etmek / seyahat etmek" },
+      { de: "ganz / die Gans", tr: "tamamen / kaz" },
+      { de: "kurz / der Kurs", tr: "kısa / kurs" },
+      { de: "die Zahl / der Saal", tr: "sayı / salon" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        de: "Wir heizen im Winter mit Gas.",
+        tr: "Kışın gazla ısıtıyoruz.",
+        hint: "„heizen“ = HAY-tsen. Dilin ucu dişlere değip t ve s birlikte çıkar.",
+        confusions: [
+          {
+            heard: ["heißen", "heiße", "heißt"],
+            fix: "„heizen“ (ısıtmak) yerine „heißen“ (adı olmak) duyuldu. „z“ ts'dir, sadece s değil.",
+            expected: "heizen",
+          },
+        ],
+      },
+      {
+        de: "Wir reisen jedes Jahr nach Italien.",
+        tr: "Her yıl İtalya'ya seyahat ediyoruz.",
+        hint: "Burada „s“ var, ts değil: RAY-zen. „reizen“ ise RAY-tsen.",
+        confusions: [
+          {
+            heard: ["reizen", "reizt", "reize"],
+            fix: "„reisen“ (seyahat etmek) yerine „reizen“ (tahriş etmek) duyuldu — burada ts yok, yumuşak z sesi var.",
+            expected: "reisen",
+          },
+        ],
+      },
+      {
+        de: "Das ist ganz einfach.",
+        tr: "Bu gayet basit.",
+        hint: "„ganz“ın sonu ts: GANTS. Sadece z dersen „Gans“ (kaz) olur.",
+        confusions: [
+          {
+            heard: ["Gans", "Gänse", "gans"],
+            fix: "„ganz“ (tamamen) yerine „Gans“ (kaz) duyuldu. Kelime sonundaki z de ts okunur.",
+            expected: "ganz",
+          },
+        ],
+      },
+      // İki kelime bilerek ayrı cümlelere konuldu. Tek cümlede ikisi birden
+      // geçseydi hangisinin yanlış söylendiği ayırt edilemezdi: doğru biçim
+      // zaten cümlenin içinde olurdu ve sapma hiç tetiklenmezdi.
+      {
+        de: "Die Pause war viel zu kurz.",
+        tr: "Mola çok kısaydı.",
+        hint: "„kurz“un sonu ts: KURTS. Sadece s dersen „Kurs“ (kurs) olur.",
+        confusions: [
+          {
+            heard: ["Kurs", "Kurse", "Kursen"],
+            fix: "„kurz“ (kısa) yerine „Kurs“ (kurs) duyuldu. Kelime sonundaki z de ts okunur.",
+            expected: "kurz",
+          },
+        ],
+      },
+      {
+        de: "Der Kurs beginnt am Montag.",
+        tr: "Kurs pazartesi başlıyor.",
+        hint: "Şimdi tersi: „Kurs“ta ts yok, düz s var — KURS.",
+        confusions: [
+          {
+            heard: ["kurz", "kurze", "kurzen"],
+            fix: "„Kurs“ (kurs) yerine „kurz“ (kısa) duyuldu. Burada z yok, yalnızca s.",
+            expected: "Kurs",
+          },
+        ],
+      },
+      {
+        de: "Bitte nennen Sie mir die Zahl.",
+        tr: "Lütfen bana sayıyı söyleyin.",
+        hint: "„Zahl“ = TSAAL, uzun a ile. „Saal“ (salon) ise ZAAL.",
+        confusions: [
+          {
+            heard: ["Saal", "Sahl", "Säle"],
+            fix: "„Zahl“ (sayı) yerine „Saal“ (salon) duyuldu. Baştaki z ts'dir.",
+            expected: "Zahl",
           },
         ],
       },
