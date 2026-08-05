@@ -10,7 +10,10 @@ import { mkdirSync, writeFileSync, appendFileSync } from "node:fs";
 
 const OUT = process.env.PLAYTEST_OUT ?? "/tmp/playtest";
 const TOTAL_SECONDS = Number(process.argv[2] ?? 330);
-const BASE = "http://localhost:3000";
+// Adres dışarıdan verilebiliyor: bu test demo modunda (Neon Auth kapalı) bir
+// sunucu gerektiriyor, o da geliştirme sunucusundan ayrı bir portta açılıyor.
+// Auth açıkken playtest giriş ekranında takılıyor — giriş adımı yok.
+const BASE = process.env.PLAYTEST_BASE ?? "http://localhost:3000";
 
 mkdirSync(OUT, { recursive: true });
 mkdirSync(`${OUT}/shots`, { recursive: true });
