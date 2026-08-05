@@ -57,8 +57,22 @@ export type Answer = {
   hintUsed?: boolean;
 };
 
+/** Oturumun sunucuda tutulan ilerlemesi — yarım kalan tur her cihazda aynı yerden sürer. */
+export type SessionProgress = {
+  index: number;
+  correct: number;
+  total: number;
+  xp: number;
+  missed: MissedWord[];
+};
+
+/** Oturum özetinde gösterilen, o turda yanlış bilinen kelime. */
+export type MissedWord = { id: number; de: string; tr: string };
+
 export type SessionPayload = {
   rounds: Round[];
+  /** Yarım kalan oturum varsa nerede kalındığı; yeni kurulan turda null. */
+  resume: SessionProgress | null;
   meta: {
     dueCount: number;
     newToday: number;

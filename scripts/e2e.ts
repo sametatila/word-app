@@ -5,10 +5,13 @@
  */
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, profiles, reviews, userWords, words } from "../src/lib/db/schema";
+import { dailyStats, profiles, reviews, sessionState, userWords, words } from "../src/lib/db/schema";
 import {
   buildChallenge,
   buildSession,
+  clearSessionState,
+  loadSession,
+  saveSessionProgress,
   submitAnswers,
   getProgress,
   ensureProfile,
@@ -51,6 +54,7 @@ async function reset() {
   await db.delete(reviews).where(eq(reviews.userId, USER));
   await db.delete(userWords).where(eq(userWords.userId, USER));
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
+  await db.delete(sessionState).where(eq(sessionState.userId, USER));
   await db.delete(profiles).where(eq(profiles.userId, USER));
 }
 
@@ -331,6 +335,62 @@ async function main() {
   check("yanlış cevap 3'ten küçük", grade("choice", false, 3000) < 3);
   const relapsed = schedule({ ...st, state: 2 }, 0, new Date());
   check("hata sonrası öğrenme adımına döner", relapsed.state === 1 && relapsed.intervalDays === 0);
+
+  console.log("\n13) Oturum sunucuda tutuluyor — iki cihaz aynı turu görür");
+  await reset();
+  const dayS = "2026-05-01";
+  // "Telefon" turu açar.
+  const phone = await loadSession(USER, dayS);
+  check("ilk istekte tur kuruluyor", phone.rounds.length > 0, `(${phone.rounds.length})`);
+  check("yeni turda devam bilgisi yok", phone.resume === null);
+
+  // "Bilgisayar" aynı hesapla girer: yeni kelimeleri baştan almamalı.
+  const browser = await loadSession(USER, dayS);
+  check(
+    "ikinci cihaz aynı turu alıyor",
+    browser.rounds.map((r) => r.id).join(",") === phone.rounds.map((r) => r.id).join(","),
+  );
+  check("ikinci cihaz devam bilgisi alıyor", browser.resume?.index === 0);
+
+  // Telefon üç tur oynar; ilerleme sunucuya yazılır.
+  await saveSessionProgress(USER, dayS, {
+    index: 3,
+    correct: 2,
+    total: 3,
+    xp: 26,
+    missed: [{ id: 1, de: "das Haus", tr: "ev" }],
+  });
+  const browser2 = await loadSession(USER, dayS);
+  check("diğer cihaz kaldığı turdan devam ediyor", browser2.resume?.index === 3);
+  check("doğru sayısı taşınıyor", browser2.resume?.correct === 2);
+  check("zorlandıkların listesi taşınıyor", browser2.resume?.missed.length === 1);
+  check("devam eden turda başlık sayıları taze", typeof browser2.meta.dueCount === "number");
+
+  // İlerleme geri sarmaz: geç ulaşan bir istek turu başa döndürmemeli.
+  await saveSessionProgress(USER, dayS, { index: 1, correct: 2, total: 3, xp: 26, missed: [] });
+  const browser3 = await loadSession(USER, dayS);
+  check("geç gelen ilerleme turu geri sarmıyor", browser3.resume?.index === 3);
+
+  // Tur bitince bir sonraki istek yeni kuyruk kurar.
+  await saveSessionProgress(USER, dayS, {
+    index: phone.rounds.length,
+    correct: 9,
+    total: 12,
+    xp: 100,
+    missed: [],
+  });
+  const afterDone = await loadSession(USER, dayS);
+  check("biten turdan sonra yeni tur kuruluyor", afterDone.resume === null);
+
+  // Gün değişince tur yenilenir.
+  await loadSession(USER, dayS);
+  const nextDay = await loadSession(USER, shiftDay(dayS, 1));
+  check("gün değişince tur yenileniyor", nextDay.resume === null);
+
+  // "Yeni tura başla" kayıtlı turu atar.
+  await clearSessionState(USER);
+  const cleared = await loadSession(USER, shiftDay(dayS, 1));
+  check("kayıtlı tur silinince yeniden kuruluyor", cleared.resume === null);
 
   await reset();
   await pool.end();

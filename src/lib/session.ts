@@ -1,10 +1,18 @@
 import "server-only";
 import { and, asc, desc, eq, gt, inArray, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, profiles, reviews, userWords, words } from "@/lib/db/schema";
+import { dailyStats, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { firstExample } from "@/lib/example";
-import type { Answer, AnswerResult, Round, RoundWord, SessionPayload } from "@/lib/types";
+import type {
+  Answer,
+  AnswerResult,
+  MissedWord,
+  Round,
+  RoundWord,
+  SessionPayload,
+  SessionProgress,
+} from "@/lib/types";
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
 
@@ -150,6 +158,14 @@ export async function buildSession(
   userId: string,
   today: string,
   extra = false,
+  /**
+   * Yalnızca başlık sayıları istendiğinde kuyruk kurulmaz.
+   *
+   * Yarım kalan bir tur sunucudan olduğu gibi geri verilirken turun kendisi
+   * kayıtlıdır ama seri, XP ve günlük hedef gün içinde değişmeye devam eder;
+   * bu yüzden sayılar tazelenir, kelime seçimi tekrarlanmaz.
+   */
+  metaOnly = false,
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
   const now = new Date();
@@ -202,6 +218,33 @@ export async function buildSession(
   const leechRatio = health && health.seen >= 20 ? health.leeches / health.seen : 0;
   const pacing: "normal" | "light" | "review" =
     dueCount >= profile.dailyGoal * 2 ? "review" : leechRatio > 0.15 ? "light" : "normal";
+
+  // Kapsam: seçilen seviyenin ne kadarı pekişti. Yalnızca artan bir ölçü —
+  // öğrenciyi derecelendirmez, biriktirdiğini gösterir.
+  const [cov] = await db
+    .select({
+      total: sql<number>`count(*)::int`,
+      mastered: sql<number>`count(*) filter (where ${userWords.intervalDays} >= ${MASTERED_DAYS})::int`,
+    })
+    .from(words)
+    .leftJoin(userWords, and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)))
+    .where(and(eq(words.course, course), eq(words.niveau, band.level)));
+
+  const meta: SessionPayload["meta"] = {
+    dueCount,
+    newToday,
+    reviewsToday,
+    dailyGoal: profile.dailyGoal,
+    currentStreak: profile.currentStreak,
+    totalXp: profile.totalXp,
+    displayName: profile.displayName,
+    level: band.level,
+    coverage: { mastered: cov?.mastered ?? 0, total: cov?.total ?? 0 },
+    pacing,
+    leeches: health?.leeches ?? 0,
+  };
+
+  if (metaOnly) return { rounds: [], resume: null, meta };
 
   const quota = extra
     ? 10
@@ -285,20 +328,6 @@ export async function buildSession(
 
   const rounds = composeRounds(dueWords, newWords, pool);
 
-  // Kapsam: seçilen seviyenin ne kadarı pekişti. Yalnızca artan bir ölçü —
-  // öğrenciyi derecelendirmez, biriktirdiğini gösterir.
-  const [cov] = await db
-    .select({
-      total: sql<number>`count(*)::int`,
-      mastered: sql<number>`count(*) filter (where ${userWords.intervalDays} >= ${MASTERED_DAYS})::int`,
-    })
-    .from(words)
-    .leftJoin(
-      userWords,
-      and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)),
-    )
-    .where(and(eq(words.course, course), eq(words.niveau, band.level)));
-
   // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
   const typingTrs = rounds.filter((r) => r.game === "typing").map((r) => r.word.tr);
@@ -316,22 +345,118 @@ export async function buildSession(
     }
   }
 
-  return {
-    rounds,
-    meta: {
-      dueCount,
-      newToday,
-      reviewsToday,
-      dailyGoal: profile.dailyGoal,
-      currentStreak: profile.currentStreak,
-      totalXp: profile.totalXp,
-      displayName: profile.displayName,
-      level: band.level,
-      coverage: { mastered: cov?.mastered ?? 0, total: cov?.total ?? 0 },
-      pacing,
-      leeches: health?.leeches ?? 0,
-    },
-  };
+  return { rounds, resume: null, meta };
+}
+
+/**
+ * Oturumu getirir: yarım kalan tur varsa **onu**, yoksa yenisini kurar.
+ *
+ * Tur ve nerede kalındığı sunucuda tutulur (`session_state`). Bu daha önce
+ * cihazın localStorage'ındaydı ve her cihaz kendi turunu kuruyordu: telefonda
+ * tanıtılan yeni kelime bilgisayarda bir kez daha "yeni" olarak çıkıyordu.
+ * Tur hesabın verisi olduğu için artık iki cihaz aynı kuyruğu, aynı sıradan
+ * görür.
+ *
+ * Kayıtlı tur şu üç durumda geçersizdir ve yenisi kurulur: gün değişmişse,
+ * kurs değişmişse ya da tur zaten bitmişse (`index >= rounds.length`).
+ */
+export async function loadSession(
+  userId: string,
+  today: string,
+  extra = false,
+): Promise<SessionPayload> {
+  const profile = await ensureProfile(userId);
+
+  // "Yeni kelimelerle devam et" bilerek yeni bir tur ister; kayıtlıyı ezer.
+  if (!extra) {
+    const [saved] = await db
+      .select()
+      .from(sessionState)
+      .where(eq(sessionState.userId, userId));
+    const rounds = saved?.rounds as Round[] | undefined;
+    if (
+      saved &&
+      saved.day === today &&
+      saved.course === profile.course &&
+      Array.isArray(rounds) &&
+      saved.index < rounds.length
+    ) {
+      const { meta } = await buildSession(userId, today, false, true);
+      return {
+        rounds,
+        meta,
+        resume: {
+          index: saved.index,
+          correct: saved.correct,
+          total: saved.total,
+          xp: saved.xp,
+          missed: (saved.missed as MissedWord[] | null) ?? [],
+        },
+      };
+    }
+  }
+
+  const built = await buildSession(userId, today, extra);
+  await db
+    .insert(sessionState)
+    .values({
+      userId,
+      day: today,
+      course: profile.course,
+      rounds: built.rounds,
+      index: 0,
+      correct: 0,
+      total: 0,
+      xp: 0,
+      missed: [],
+      updatedAt: new Date(),
+    })
+    .onConflictDoUpdate({
+      target: sessionState.userId,
+      set: {
+        day: today,
+        course: profile.course,
+        rounds: built.rounds,
+        index: 0,
+        correct: 0,
+        total: 0,
+        xp: 0,
+        missed: [],
+        updatedAt: new Date(),
+      },
+    });
+  return built;
+}
+
+/**
+ * Turun nerede kalındığını kaydeder — her turdan sonra, cevaplarla birlikte.
+ *
+ * Yalnızca güncelleme yapar: kayıtlı tur yoksa (ya da gün değiştiyse) yazacak
+ * bir şey yoktur, çünkü ilerleme kurulmamış bir tura ait olamaz. `index`
+ * geriye alınmaz — iki cihaz aynı anda oynuyorsa ileride olan kazanır, aksi
+ * hâlde geç ulaşan bir istek turu başa sardırırdı.
+ */
+export async function saveSessionProgress(
+  userId: string,
+  today: string,
+  progress: SessionProgress,
+) {
+  await db
+    .update(sessionState)
+    .set({
+      index: sql`greatest(${sessionState.index}, ${progress.index})`,
+      correct: progress.correct,
+      total: progress.total,
+      xp: progress.xp,
+      missed: progress.missed,
+      updatedAt: new Date(),
+    })
+    .where(and(eq(sessionState.userId, userId), eq(sessionState.day, today)));
+}
+
+/** Kayıtlı turu siler: "yeni tura başla" dendiğinde kuyruk sıfırdan kurulur. */
+export async function clearSessionState(userId: string) {
+  await db.delete(sessionState).where(eq(sessionState.userId, userId));
 }
 
 /**

@@ -157,6 +157,31 @@ export const userSkills = pgTable(
   (t) => [primaryKey({ columns: [t.userId, t.exerciseId] })],
 );
 
+/**
+ * Yarım kalan oturum — sunucuda, kullanıcı başına tek satır.
+ *
+ * Bu daha önce cihazın localStorage'ında duruyordu ve her cihaz kendi turunu
+ * kuruyordu: telefonda tanıtılan yeni kelime, cevaplar sunucuya ulaşana kadar
+ * bilgisayarda hâlâ "görülmemiş" sayıldığı için aynı kelime iki kez yeni
+ * olarak geliyordu. Turun kendisi (hangi kelimeler, hangi oyunlar) ve nerede
+ * kalındığı hesabın verisidir; cihazın değil.
+ *
+ * `index >= rounds` ise oturum bitmiştir: bir sonraki istek yeni tur kurar.
+ */
+export const sessionState = pgTable("session_state", {
+  userId: text("user_id").primaryKey(),
+  day: date("day").notNull(), // kullanıcının yerel günü — ertesi gün tur yenilenir
+  course: text("course").notNull().default("de"), // kurs değişirse tur da değişmeli
+  rounds: jsonb("rounds").notNull(), // Round[] — tur kuyruğunun tamamı
+  index: integer("index").notNull().default(0), // kaçıncı turda kalındı
+  correct: integer("correct").notNull().default(0),
+  total: integer("total").notNull().default(0),
+  xp: integer("xp").notNull().default(0),
+  missed: jsonb("missed").notNull().default([]), // özet ekranındaki "zorlandıkların"
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;

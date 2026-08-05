@@ -64,6 +64,13 @@
       "when": 1785925546775,
       "tag": "0008_eager_stryfe",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1785926564764,
+      "tag": "0009_session_state",
+      "breakpoints": true
     }
   ]
 }

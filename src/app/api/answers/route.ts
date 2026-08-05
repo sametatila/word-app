@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { submitAnswers } from "@/lib/session";
+import { saveSessionProgress, submitAnswers } from "@/lib/session";
+import { parseProgress } from "@/lib/progress";
 import type { Answer, GameId } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -26,6 +27,9 @@ export async function POST(req: Request) {
 
   try {
     const result = await submitAnswers(userId, parsed.answers, parsed.day, parsed.seconds);
+    // Turun nerede kalındığı cevaplarla aynı istekte gider: her turda iki ayrı
+    // ağ isteği yapmak mobilde gereksiz bir gecikme olurdu.
+    if (parsed.progress) await saveSessionProgress(userId, parsed.day, parsed.progress);
     return NextResponse.json(result);
   } catch (err) {
     console.error("[answers]", err);
@@ -59,5 +63,7 @@ function parseBody(body: unknown) {
       ? b.day
       : new Date().toISOString().slice(0, 10);
   const seconds = typeof b.seconds === "number" ? Math.max(0, Math.round(b.seconds)) : 0;
-  return { answers, day, seconds };
+  // İlerleme isteğe bağlıdır: meydan okuma turu cevap gönderir ama kayıtlı bir
+  // oturuma ait değildir.
+  return { answers, day, seconds, progress: parseProgress(b.progress) };
 }

@@ -4,7 +4,14 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { Answer, AnswerResult, Round, SessionPayload } from "@/lib/types";
+import type {
+  Answer,
+  AnswerResult,
+  MissedWord,
+  Round,
+  SessionPayload,
+  SessionProgress,
+} from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { LevelBadge } from "@/components/level-badge";
@@ -16,17 +23,6 @@ import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/co
 
 type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error" | "challenge";
 
-const STORE_KEY = "wortspiel:session";
-
-type Saved = {
-  day: string;
-  rounds: Round[];
-  meta: SessionPayload["meta"];
-  index: number;
-  tally: { correct: number; total: number; xp: number };
-  xp: number;
-  missed: { id: number; de: string; tr: string }[];
-};
 type ErrorKind = "auth" | "db" | "network";
 
 function localDay(): string {
@@ -34,28 +30,6 @@ function localDay(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
     d.getDate(),
   ).padStart(2, "0")}`;
-}
-
-function readSaved(): Saved | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(STORE_KEY);
-    if (!raw) return null;
-    const s = JSON.parse(raw) as Saved;
-    if (s.day !== localDay() || !Array.isArray(s.rounds)) return null;
-    if (s.index >= s.rounds.length) return null;
-    return s;
-  } catch {
-    return null;
-  }
-}
-
-function clearSaved() {
-  try {
-    localStorage.removeItem(STORE_KEY);
-  } catch {
-    /* depolama kapalıysa sorun değil */
-  }
 }
 
 export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
@@ -70,86 +44,69 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const startedAt = useRef(Date.now());
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
-  const missed = useRef<{ id: number; de: string; tr: string }[]>([]);
-  const [resumable, setResumable] = useState<Saved | null>(null);
+  const missed = useRef<MissedWord[]>([]);
+  // Yarım kalan tur artık sunucudan gelir; cihazda hiçbir şey saklanmaz.
+  const [resumable, setResumable] = useState<SessionProgress | null>(null);
 
-  // Yarım kalan oturumu her turda sakla ki sayfadan çıkılsa da kaybolmasın.
-  const persist = useCallback(
-    (i: number, t: { correct: number; total: number; xp: number }) => {
-      if (!session) return;
-      try {
-        localStorage.setItem(
-          STORE_KEY,
-          JSON.stringify({
-            day: localDay(),
-            rounds: session.rounds,
-            meta: session.meta,
-            index: i,
-            tally: t,
-            xp: sessionXp.current,
-            missed: missed.current,
-          } satisfies Saved),
-        );
-      } catch {
-        /* depolama kapalıysa yalnızca devam etme özelliği çalışmaz */
-      }
-    },
-    [session],
-  );
-
-  const load = useCallback(async (extra = false) => {
+  const load = useCallback(async (opts: { extra?: boolean; fresh?: boolean } = {}) => {
     setStatus("loading");
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
     setResult(null);
+    setResumable(null);
     pending.current = [];
     sessionXp.current = 0;
     missed.current = [];
     try {
-      const res = await fetch(`/api/session?day=${localDay()}${extra ? "&extra=1" : ""}`, {
+      // "Yeni tura başla" önce kayıtlı turu atar, sonra yenisini ister.
+      if (opts.fresh) await fetch("/api/session", { method: "DELETE" });
+      const res = await fetch(`/api/session?day=${localDay()}${opts.extra ? "&extra=1" : ""}`, {
         cache: "no-store",
       });
       if (res.status === 401) {
         setErrorKind("auth");
         setStatus("error");
-        return;
+        return null;
       }
       if (!res.ok) {
         setErrorKind("db");
         setStatus("error");
-        return;
+        return null;
       }
       const data = (await res.json()) as SessionPayload;
       setSession(data);
+      setResumable(data.resume);
       startedAt.current = Date.now();
       setStatus(data.rounds.length ? "ready" : "empty");
+      return data;
     } catch {
       setErrorKind("network");
       setStatus("error");
+      return null;
     }
   }, []);
 
   useEffect(() => {
-    setResumable(readSaved());
     void load();
   }, [load]);
 
-  /** Kaldığı yerden devam: kayıtlı turlarla oynatmayı sürdürür. */
+  /** Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar. */
   function resume() {
-    const saved = resumable;
-    if (!saved) return;
-    setSession({ rounds: saved.rounds, meta: saved.meta });
-    setIndex(saved.index);
-    setTally(saved.tally);
-    sessionXp.current = saved.xp ?? 0;
-    missed.current = saved.missed ?? [];
+    if (!resumable) return;
+    setIndex(resumable.index);
+    setTally({ correct: resumable.correct, total: resumable.total, xp: resumable.xp });
+    sessionXp.current = resumable.xp;
+    missed.current = resumable.missed;
     startedAt.current = Date.now();
     setStatus("playing");
   }
 
-  function startFresh() {
-    clearSaved();
-    setResumable(null);
+  /** Yeni tur: kayıtlı tur atılır ve sunucudan taze bir kuyruk istenir. */
+  async function startFresh() {
+    if (resumable) {
+      const data = await load({ fresh: true });
+      if (!data?.rounds.length) return; // load hata/boş durumunu zaten gösterdi
+    }
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
     sessionXp.current = 0;
@@ -158,16 +115,40 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     setStatus("playing");
   }
 
-  const flush = useCallback(async (final: boolean) => {
+  /**
+   * Bekleyen cevapları ve turun nerede kalındığını gönderir.
+   *
+   * İlerleme cevaplarla aynı isteğe binerse tur başına tek ağ gidişi kalır.
+   * Cevap üretmeyen adımlarda ("bunu zaten biliyorum") ilerleme tek başına
+   * gider — yoksa diğer cihaz o turu bir kez daha sorar.
+   */
+  const flush = useCallback(async (final: boolean, progress: SessionProgress | null) => {
     const batch = pending.current;
-    if (!batch.length) return null;
+    if (!batch.length) {
+      if (progress) {
+        void fetch("/api/session", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ day: localDay(), progress }),
+          keepalive: true,
+        }).catch(() => {
+          /* ilerleme bir sonraki turda yeniden gönderilir */
+        });
+      }
+      return null;
+    }
     pending.current = [];
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     try {
       const res = await fetch("/api/answers", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ answers: batch, day: localDay(), seconds: final ? seconds : 0 }),
+        body: JSON.stringify({
+          answers: batch,
+          day: localDay(),
+          seconds: final ? seconds : 0,
+          progress,
+        }),
       });
       if (!res.ok) {
         pending.current = [...batch, ...pending.current]; // kaybetme, sonraki turda tekrar dene
@@ -207,32 +188,34 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         }
       }
 
-      setTally((t) => ({
-        correct: t.correct + results.filter((r) => r.correct).length,
-        total: t.total + results.length,
-        xp: t.xp + results.reduce((s, r) => s + (r.correct ? 10 : 3), 0),
-      }));
+      const next = {
+        correct: tally.correct + results.filter((r) => r.correct).length,
+        total: tally.total + results.length,
+        xp: tally.xp + results.reduce((s, r) => s + (r.correct ? 10 : 3), 0),
+      };
+      setTally(next);
 
-      const isLast = index >= (session?.rounds.length ?? 0) - 1;
+      const rounds = session?.rounds.length ?? 0;
+      const isLast = index >= rounds - 1;
+      const nextIndex = isLast ? rounds : index + 1;
+      // Bittiğinde `index` tur sayısına eşitlenir: sunucu bunu "bu tur kapandı"
+      // diye okur ve bir sonraki istekte yeni kuyruk kurar.
+      const progress: SessionProgress = { ...next, index: nextIndex, missed: missed.current };
+
       if (isLast) {
-        const res = await flush(true);
-        clearSaved();
+        const res = await flush(true, progress);
         setResult(res ? { ...res, xpGained: sessionXp.current } : null);
         setStatus("done");
       } else {
-        const next = index + 1;
-        setIndex(next);
-        setTally((t) => {
-          persist(next, t);
-          return t;
-        });
-        if (pending.current.length >= 3) void flush(false);
+        setIndex(nextIndex);
+        void flush(false, progress);
       }
     },
-    [flush, index, session],
+    [flush, index, session, tally],
   );
 
-  // Sekme kapanırsa bekleyen cevapları kaydetmeyi dene.
+  // Sekme kapanırsa gönderilememiş cevapları kaydetmeyi dene. Her tur zaten
+  // gönderiliyor; buraya yalnızca bir istek başarısız olduysa iş düşer.
   useEffect(() => {
     const onHide = () => {
       if (!pending.current.length) return;
@@ -264,14 +247,14 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         meta={session.meta}
         rounds={session.rounds}
         resumable={resumable}
-        onStart={startFresh}
+        onStart={() => void startFresh()}
         onResume={resume}
         leaderboard={leaderboard}
       />
     );
   if (status === "error") return <ErrorCard kind={errorKind} onRetry={() => void load()} />;
   if (status === "empty")
-    return <EmptyCard meta={session?.meta} onExtra={() => void load(true)} />;
+    return <EmptyCard meta={session?.meta} onExtra={() => void load({ extra: true })} />;
   if (status === "done")
     return (
       <SummaryCard
@@ -380,7 +363,8 @@ function StartCard({
 }: {
   meta: SessionPayload["meta"];
   rounds: Round[];
-  resumable: Saved | null;
+  /** Sunucudaki yarım kalan tur — varsa "kaldığın yerden devam" gösterilir. */
+  resumable: SessionProgress | null;
   onStart: () => void;
   onResume: () => void;
   /** Sunucuda hazırlanan sıralama tablosu — yalnızca bu kartta görünür. */
@@ -616,7 +600,7 @@ function SummaryCard({
 }: {
   tally: { correct: number; total: number; xp: number };
   result: AnswerResult | null;
-  missed: { id: number; de: string; tr: string }[];
+  missed: MissedWord[];
   onContinue: () => void;
   onChallenge: () => void;
 }) {
