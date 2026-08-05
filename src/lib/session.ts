@@ -18,6 +18,14 @@ import type {
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
 
 const ROUNDS_PER_SESSION = 14;
+/**
+ * Aynı oyun kaç tur boyunca tekrar edilmez.
+ *
+ * Oyun sayısını artırmak tekdüzeliği tek başına çözmez: seçim her turda
+ * bağımsız yapıldığı sürece aynı türün kısa aralıklarla kümelenmesi olağandır.
+ * Bu pencere kümelenmeyi doğrudan engeller.
+ */
+const RECENT_GAME_WINDOW = 3;
 /** Bu aralığa ulaşan kelime "pekişmiş" sayılır (kelime listesiyle aynı ölçüt). */
 const MASTERED_DAYS = 21;
 
@@ -495,15 +503,23 @@ function composeRounds(
   const matchCandidates = merged.filter((m) => !m.intro).slice(0, 5);
   const useMatch = matchCandidates.length === 5;
 
-  let lastGame = "";
+  // Yalnızca bir önceki oyunu dışlamak yetmiyordu: "A B A B A" dizilimi kuralı
+  // hiç çiğnemeden aynı iki oyunu üst üste getiriyor ve oturum tekdüze
+  // hissettiriyordu. Pencere üç tura çıkarıldı; ayrıca hangi oyunun kaç kez
+  // çıktığı sayılıp az çıkan öne alınıyor.
+  const recent: string[] = [];
+  const usage = new Map<string, number>();
+
   for (const item of merged) {
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
     const round = item.intro
       ? ({ id: nextId(), game: "intro", word: item.word } as Round)
-      : pickRound(item.word, item.strength, pool, lastGame, nextId);
+      : pickRound(item.word, item.strength, pool, recent, nextId, undefined, usage);
     if (!round) continue;
     rounds.push(round);
-    lastGame = round.game;
+    usage.set(round.game, (usage.get(round.game) ?? 0) + 1);
+    recent.push(round.game);
+    if (recent.length > RECENT_GAME_WINDOW) recent.shift();
   }
 
   if (useMatch) {
@@ -532,6 +548,8 @@ function pickRound(
   avoid: string | string[],
   nextId: () => string,
   bias?: "recognition" | "production",
+  /** Oturumda her oyunun kaç kez çıktığı; az çıkan öne alınır. */
+  usage?: Map<string, number>,
 ): Round | null {
   const candidates: Round["game"][] = [];
   if (strength === "fresh" || strength === "shaky") {
@@ -563,7 +581,21 @@ function pickRound(
   const usable = tuned.filter((g) => !banned.has(g));
   const order = usable.length ? usable : tuned;
 
-  for (const game of shuffle(order)) {
+  // Sıralama iki aşamalı ve ikisi de gerekli:
+  //
+  //   1. Karıştırma — `tuned` içinde eğilimli oyunlar iki kez geçer, bu yüzden
+  //      karıştırma onları öne çıkarma **olasılığını** taşır (meydan okumanın
+  //      dalga eğilimi böyle çalışır).
+  //   2. Kullanım sayısına göre kararlı sıralama — oturumda az çıkmış oyun öne
+  //      geçer. Yalnızca karıştırma yapılsaydı 14 turluk bir oturumda aynı iki
+  //      oyunun arka arkaya kümelenmesi tamamen olağan olurdu; oyun sayısını
+  //      artırmak tek başına bunu çözmez.
+  //
+  // Array.sort kararlı olduğu için eşit kullanımdaki oyunlarda karıştırmanın
+  // (ve eğilimin) sonucu korunur.
+  const ranked = shuffle(order).sort((a, b) => (usage?.get(a) ?? 0) - (usage?.get(b) ?? 0));
+
+  for (const game of ranked) {
     const round = makeRound(game, word, pool, nextId, strength);
     if (round) return round;
   }
@@ -1098,7 +1130,8 @@ export async function buildChallenge(
   const nextId = () => `c${++seq}`;
   const rounds: Round[] = [];
   const tiers: number[] = [];
-  let lastGame = "";
+  const recent: string[] = [];
+  const usage = new Map<string, number>();
   const usedGames = new Map<number, Set<string>>();
 
   /** Bir dalgayı kur; kaynak biterse başa dönülür ama oyun türü tekrarlanmaz. */
@@ -1112,21 +1145,26 @@ export async function buildChallenge(
       const row = source[i % source.length];
       const word = toRoundWord(row.w, false);
       const seen = usedGames.get(row.w.id) ?? new Set<string>();
-      // Aynı kelime tekrar gelirse mutlaka başka bir oyunla sorulur.
+      // Aynı kelime tekrar gelirse mutlaka başka bir oyunla sorulur; ayrıca
+      // son turlarda çıkan oyunlar da dışarıda kalır. Meydan okuma 27 tur
+      // sürüyor — tekdüzelik burada normal turdan daha çabuk hissediliyor.
       const round = pickRound(
         word,
         wordStrength(row.uw),
         pool,
-        [...seen, lastGame],
+        [...seen, ...recent],
         nextId,
         bias,
+        usage,
       );
       if (!round) continue;
       seen.add(round.game);
       usedGames.set(row.w.id, seen);
       rounds.push(round);
       tiers.push(tier);
-      lastGame = round.game;
+      usage.set(round.game, (usage.get(round.game) ?? 0) + 1);
+      recent.push(round.game);
+      if (recent.length > RECENT_GAME_WINDOW) recent.shift();
     }
   };
 

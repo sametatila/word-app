@@ -20,10 +20,15 @@ import {
   shiftDay,
 } from "../src/lib/session";
 import { schedule, grade, type SrsState } from "../src/lib/srs";
-import { acceptedForms, normalize } from "../src/components/games/types";
+import {
+  acceptedForms,
+  foldSpelling,
+  matchesAnswer,
+  normalize,
+} from "../src/components/games/types";
 import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
-import type { Answer, Round } from "../src/lib/types";
+import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
 const USER = "e2e-user";
 let failures = 0;
@@ -392,6 +397,46 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11j) Oyun çeşitliliği");
+  await reset();
+  await ensureProfile(USER);
+  await db.update(profiles).set({ newPerDay: 0 }).where(eq(profiles.userId, USER));
+  // Çeşitliliği ölçebilmek için her oyuna uygun kelimeler gerekiyor: örnek
+  // cümlesi ve çoğul kuralı olan isimler tüm oyun türlerine aday olur.
+  const varietyPool = await db
+    .select()
+    .from(words)
+    .where(and(eq(words.course, "de"), eq(words.typ, "Nomen")))
+    .limit(60);
+  await db.insert(userWords).values(
+    varietyPool.map((w) => ({
+      userId: USER, wordId: w.id, state: 2, ease: 2.6, intervalDays: 30,
+      dueAt: long, reps: 9, lapses: 0, correctStreak: 7, leech: false, lastReviewedAt: long,
+    })),
+  );
+
+  let backToBack = 0;
+  let withinWindow = 0;
+  const distinctPerSession: number[] = [];
+  for (let i = 0; i < 20; i++) {
+    const s = await buildSession(USER, day1);
+    const gs = s.rounds.map((r) => r.game);
+    distinctPerSession.push(new Set(gs).size);
+    for (let j = 1; j < gs.length; j++) {
+      if (gs[j] === gs[j - 1]) backToBack++;
+      // Eşleştirme turu bilerek oturumun sonuna konuyor; pencere kuralı onu
+      // kapsamaz.
+      if (gs[j] === "match") continue;
+      if (gs.slice(Math.max(0, j - 3), j).includes(gs[j])) withinWindow++;
+    }
+  }
+  check("aynı oyun arka arkaya gelmiyor", backToBack === 0, `(${backToBack})`);
+  check("aynı oyun üç tur içinde tekrarlanmıyor", withinWindow === 0, `(${withinWindow})`);
+  const avgDistinct = distinctPerSession.reduce((a, b) => a + b, 0) / distinctPerSession.length;
+  check("oturum başına en az 6 farklı oyun", avgDistinct >= 6, `(ortalama ${avgDistinct.toFixed(1)})`);
+  check("on oyun tanımlı", Object.keys(GAME_LABELS).length === 11, // + tanıtım kartı
+    `(${Object.keys(GAME_LABELS).length})`);
 
   console.log("\n11i) Eğik çizgiyle ayrılmış örnek cümleler");
   check(
