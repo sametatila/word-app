@@ -1,4 +1,5 @@
 import type { Round, RoundWord } from "@/lib/types";
+import { umlautStem } from "@/lib/german";
 
 export type GameResult = {
   wordId: number;
@@ -40,17 +41,6 @@ export function typLabel(typ: string, tr: string): string {
   return "diğer";
 }
 
-/** Almanca çoğul eki kuralını gerçek çoğul biçimine çevirir: "der Arzt" + "¨-e" → "die Ärzte". */
-function umlaut(stem: string): string {
-  const au = stem.lastIndexOf("au");
-  if (au >= 0) return `${stem.slice(0, au)}äu${stem.slice(au + 2)}`;
-  const matches = [...stem.matchAll(/[aou]/g)];
-  const last = matches[matches.length - 1];
-  if (!last || last.index === undefined) return stem;
-  const map: Record<string, string> = { a: "ä", o: "ö", u: "ü" };
-  return stem.slice(0, last.index) + map[last[0]] + stem.slice(last.index + 1);
-}
-
 /**
  * Ekranda gösterilecek dilbilgisi notu.
  * Ham PDF gösterimi ("¨-e", "(Sg.)") yerine öğrencinin okuyabileceği bir metin döner.
@@ -64,7 +54,7 @@ export function grammarNote(word: RoundWord): string | null {
   if (word.artikel) {
     const m = raw.match(/^(¨)?-?\s*(\w*)$/);
     if (m) {
-      const stem = m[1] ? umlaut(word.de) : word.de;
+      const stem = m[1] ? umlautStem(word.de) : word.de;
       const suffix = m[2] ?? "";
       return `çoğul: die ${stem}${suffix}`;
     }

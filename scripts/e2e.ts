@@ -21,6 +21,7 @@ import {
 } from "../src/lib/session";
 import { schedule, grade, type SrsState } from "../src/lib/srs";
 import { acceptedForms, normalize } from "../src/components/games/types";
+import { umlautStem } from "../src/lib/german";
 import type { Answer, Round } from "../src/lib/types";
 
 const USER = "e2e-user";
@@ -390,6 +391,17 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11e) Umlautlu çoğul kökleri");
+  // Almanca isimler büyük harfle başlar; ünlüsü yalnızca baştaki harf olan
+  // kelimelerde (Amt, Angst, Apfel, Arzt) umlaut hiç uygulanmıyordu.
+  check("baştaki büyük ünlü umlautlanıyor", umlautStem("Arzt") === "Ärzt", `(${umlautStem("Arzt")})`);
+  check("Apfel → Äpfel kökü", umlautStem("Apfel") === "Äpfel", `(${umlautStem("Apfel")})`);
+  check("Amt → Ämt kökü", umlautStem("Amt") === "Ämt", `(${umlautStem("Amt")})`);
+  check("küçük harfli kök bozulmadı", umlautStem("Anfang") === "Anfäng", `(${umlautStem("Anfang")})`);
+  check("au ikilisi tek parça", umlautStem("Haus") === "Häus", `(${umlautStem("Haus")})`);
+  check("baştaki Au ikilisi", umlautStem("Auge") === "Äuge", `(${umlautStem("Auge")})`);
+  check("umlautlanacak ünlü yoksa değişmiyor", umlautStem("Bett") === "Bett");
 
   console.log("\n12) SRS saf fonksiyon davranışı");
   let st: SrsState = {
