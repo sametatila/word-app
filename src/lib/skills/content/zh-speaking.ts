@@ -319,4 +319,128 @@ export const zhSpeaking: SpeakingDrillExercise[] = [
       },
     ],
   },
+
+  // ─────────── B2 · geçmiş zamanın g- sesleri ───────────
+  //
+  // Züritüütsch'te geçmiş zaman yalnızca Perfekt ile kuruluyor ve
+  // Hochdeutsch'un „ge-“ öneki tek bir g'ye iniyor: gewesen → gsi,
+  // gehabt → gha, gesehen → gseh. Ortaya çıkan g+ünsüz kümesi ne Türkçede
+  // ne standart Almancada kelime başında var — „gsi“yi söyleyebilmek bu
+  // seviyenin asıl sınavı.
+  //
+  // Türkçe konuşanın refleksi araya bir ünlü sıkıştırmak („gisi“); kelime o
+  // zaman iki heceli oluyor ve lehçenin ritmi bozuluyor.
+  {
+    id: "zh-b2-s1",
+    level: "B2",
+    skill: "speaking",
+    course: "gsw-zh",
+    judge: "self",
+    title: "S Perfekt: gsi, gha, gseh",
+    genre: "Ses çalışması",
+    intro:
+      "Lehçede geçmiş zaman hep Perfekt ve „ge-“ öneki tek bir g'ye iniyor: gewesen → gsi. Araya ünlü koymadan söylemek gerekiyor — asıl zorluk bu.",
+    gloss: [
+      { de: "gsi", tr: "olmuş (gewesen)" },
+      { de: "gha", tr: "sahip olmuş (gehabt)" },
+      { de: "gseh", tr: "görmüş (gesehen)" },
+      { de: "gnoh", tr: "almış (genommen)" },
+      { de: "gwüsst", tr: "bilmiş (gewusst)" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        de: "Ich bi geschter dihei gsi.",
+        tr: "Dün evdeydim.",
+        hint:
+          "„gsi“ tek hecedir: KSİ. Araya ünlü koyup „gisi“ dersen iki hece olur ve ritim bozulur.",
+      },
+      {
+        de: "Mir hend kei Ziit gha.",
+        tr: "Vaktimiz olmadı.",
+        hint:
+          "„gha“ = KHAA, tek akışta. „hend“ = haben; lehçe onu da kısaltıyor.",
+      },
+      {
+        de: "Häsch das au gseh?",
+        tr: "Sen de gördün mü?",
+        hint:
+          "„gseh“ = KSEE. „Häsch“ ise „hast du“nun kaynaşmış hâli — iki kelime tek kelime olmuş.",
+      },
+      {
+        de: "Ich han de Zug gnoh.",
+        tr: "Treni aldım.",
+        hint:
+          "„gnoh“ = KNOO. g ve n arka arkaya; ikisini ayırmadan söyle.",
+      },
+      {
+        de: "Das han ich nöd gwüsst.",
+        tr: "Bunu bilmiyordum.",
+        hint:
+          "„gwüsst“ = KVÜST — üç ünsüz baştan: g, w(v), ü hemen arkasından. En zorlu olanı bu.",
+      },
+    ],
+  },
+
+  // ─────────── C1 · hızlı konuşmada kaynaşma ───────────
+  //
+  // Bu seviyede tek tek kelimeler zaten oturmuş; eksik olan, günlük hızda
+  // konuşulduğunda kelimelerin birbirine yapışması. Lehçede fiil ile zamir
+  // düzenli olarak kaynaşıyor: „hast du“ → „häsch“, „kommst du“ → „chunnsch“.
+  // Bunu bilmeyen biri lehçeyi okuyabilir ama konuşulduğunda anlamaz — ve
+  // kendi konuştuğunda hep bir tık yavaş kalır.
+  //
+  // Ölçülebilir bir hedef değil, o yüzden burada da değerlendirme kendinde:
+  // Leni'yi dinleyip aynı hızda söyleyebiliyor musun?
+  {
+    id: "zh-c1-s1",
+    level: "C1",
+    skill: "speaking",
+    course: "gsw-zh",
+    judge: "self",
+    title: "Schnälls Rede",
+    genre: "Ses çalışması",
+    intro:
+      "Günlük hızda fiil ve zamir birbirine yapışır: „hast du“ → „häsch“, „kommst du“ → „chunnsch“. Bunu bilmeden lehçe okunabilir ama konuşulduğunda anlaşılmaz.",
+    gloss: [
+      { de: "häsch", tr: "sende var mı / -dın mı (hast du)" },
+      { de: "chunnsch", tr: "geliyor musun (kommst du)" },
+      { de: "wottsch", tr: "istiyor musun (willst du)" },
+      { de: "chasch", tr: "yapabilir misin (kannst du)" },
+      { de: "weisch", tr: "biliyor musun (weißt du)" },
+    ],
+    minutes: 7,
+    tasks: [
+      {
+        de: "Häsch scho gässe?",
+        tr: "Yemek yedin mi?",
+        hint:
+          "„Häsch“ tek kelime — „hast du“ değil. Soru tonu sonda yükselir, kelime uzamaz.",
+      },
+      {
+        de: "Chunnsch au mit?",
+        tr: "Sen de geliyor musun?",
+        hint:
+          "„Chunnsch“ = kommst du, ve baştaki Ch A1'deki gırtlak sesi. Üç şey aynı kelimede.",
+      },
+      {
+        de: "Wottsch no e Kafi?",
+        tr: "Bir kahve daha ister misin?",
+        hint:
+          "„Wottsch“ = willst du. Sondaki „-sch“ yumuşak değil, net bir ş.",
+      },
+      {
+        de: "Chasch mir schnäll hälfe?",
+        tr: "Bana hızlıca yardım edebilir misin?",
+        hint:
+          "„Chasch“ = kannst du. Cümlenin tamamı tek nefeste söylenir; „schnäll“ vurguyu taşır.",
+      },
+      {
+        de: "Weisch, ich han das nöd gwüsst.",
+        tr: "Biliyor musun, bunu bilmiyordum.",
+        hint:
+          "„Weisch“ burada gerçek soru değil, cümle başlatan bir kalıp — hızlı ve vurgusuz geçilir. „gwüsst“ ise B2'den tanıdık.",
+      },
+    ],
+  },
 ];
