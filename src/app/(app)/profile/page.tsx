@@ -33,6 +33,7 @@ export default async function ProfilePage() {
           newPerDay: profile.newPerDay,
           level: profile.level,
           course: profile.course,
+          voice: profile.voice ?? null,
           currentStreak: profile.currentStreak,
           longestStreak: profile.longestStreak,
           totalXp: profile.totalXp,

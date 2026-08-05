@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { authApi } from "@/lib/auth/api";
 import { AlertIcon, CheckIcon } from "@/components/icons";
+import { VoicePicker } from "@/components/voice-picker";
+import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 
 type Initial = {
   displayName: string;
@@ -12,6 +14,7 @@ type Initial = {
   newPerDay: number;
   level: string;
   course: string;
+  voice: string | null;
   currentStreak: number;
   longestStreak: number;
   totalXp: number;
@@ -47,6 +50,7 @@ export function ProfileForm({
   const [newPerDay, setNewPerDay] = useState(initial.newPerDay);
   const [level, setLevel] = useState(initial.level);
   const [course, setCourse] = useState(initial.course);
+  const [voice, setVoice] = useState<string | null>(initial.voice);
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
@@ -61,7 +65,7 @@ export function ProfileForm({
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ displayName, dailyGoal, newPerDay, level, course }),
+        body: JSON.stringify({ displayName, dailyGoal, newPerDay, level, course, voice }),
       });
       if (res.ok) {
         setSaved(true);
@@ -103,7 +107,12 @@ export function ProfileForm({
             {COURSES.map((c) => (
               <button
                 key={c.id}
-                onClick={() => setCourse(c.id)}
+                onClick={() => {
+                  setCourse(c.id);
+                  // Ses kursa bağlı: Zürih metnini Almanca sesle okutmak
+                  // bu değişikliğin çözdüğü sorunun ta kendisiydi.
+                  setVoice(defaultVoice(c.id));
+                }}
                 className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
               >
                 <span className="block text-sm font-bold">{c.label}</span>
@@ -123,6 +132,15 @@ export function ProfileForm({
               ilerlemen silinmez — geri dönünce kaldığın yerden devam edersin.
             </p>
           ) : null}
+        </div>
+
+        <div>
+          <span className="muted mb-1.5 block text-sm font-semibold">Seslendirme</span>
+          <VoicePicker
+            course={course}
+            value={voice}
+            onChange={(v: VoiceId) => setVoice(v)}
+          />
         </div>
 
         <label className="block">

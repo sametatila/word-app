@@ -12,12 +12,14 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   let streak = 0;
   let xp = 0;
   let course = "de";
+  let voice: string | null = null;
   let needsOnboarding = false;
   try {
     const profile = await ensureProfile(user.id, user.name);
     streak = profile?.currentStreak ?? 0;
     xp = profile?.totalXp ?? 0;
     course = profile?.course ?? "de";
+    voice = profile?.voice ?? null;
     // Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
     needsOnboarding = Boolean(profile) && !profile.courseChosenAt;
   } catch (err) {
@@ -27,7 +29,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (needsOnboarding) redirect("/kurs-sec");
 
   return (
-    <AppShell streak={streak} xp={xp} course={course}>
+    <AppShell streak={streak} xp={xp} course={course} voice={voice}>
       {children}
     </AppShell>
   );

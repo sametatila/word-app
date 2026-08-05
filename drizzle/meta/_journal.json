@@ -78,6 +78,13 @@
       "when": 1785926565411,
       "tag": "0010_challenge_best",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1785945047399,
+      "tag": "0011_tiny_lifeguard",
+      "breakpoints": true
     }
   ]
 }

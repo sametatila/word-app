@@ -47,6 +47,10 @@ export const profiles = pgTable("profiles", {
   // performansa bakarak terfi/düşüş yapmaz (bkz. lib/session.ts, Strength).
   level: text("level").notNull().default("A1"),
   course: text("course").notNull().default("de"), // de | gsw-zh — çalışılan kurs
+  // Seslendirme sesi. Null ise kursun varsayılanı kullanılır — mevcut
+  // hesaplar için göç gerekmemesinin ve kurs değişince sesin kendiliğinden
+  // doğru olana dönmesinin sebebi bu (bkz. lib/tts/voices.ts, resolveVoice).
+  voice: text("voice"),
   // İlk girişte kurs/seviye soruldu mu? Null ise onboarding gösterilir.
   courseChosenAt: timestamp("course_chosen_at", { withTimezone: true }),
   currentStreak: integer("current_streak").notNull().default(0),

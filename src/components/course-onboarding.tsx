@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { VoicePicker } from "@/components/voice-picker";
+import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { AlertIcon, CheckIcon, LogoMark } from "@/components/icons";
@@ -32,6 +34,7 @@ const LEVELS = [
 export function CourseOnboarding() {
   const router = useRouter();
   const [course, setCourse] = useState("de");
+  const [voice, setVoice] = useState<VoiceId>(defaultVoice("de"));
   const [level, setLevel] = useState("A1");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,7 +46,7 @@ export function CourseOnboarding() {
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ course, level }),
+        body: JSON.stringify({ course, level, voice }),
       });
       if (!res.ok) throw new Error(String(res.status));
       router.push("/learn");
@@ -75,7 +78,11 @@ export function CourseOnboarding() {
               <button
                 key={c.id}
                 type="button"
-                onClick={() => setCourse(c.id)}
+                onClick={() => {
+                  setCourse(c.id);
+                  // Ses kursa bağlı: Zürih'e geçince Almanca ses anlamsız kalır.
+                  setVoice(defaultVoice(c.id));
+                }}
                 className={`option relative p-4 text-left ${active ? "option-picked" : ""}`}
               >
                 {active ? (
@@ -95,6 +102,9 @@ export function CourseOnboarding() {
             );
           })}
         </div>
+
+        <h2 className="mb-2 mt-6 font-bold">Hangi sesi dinlemek istersin?</h2>
+        <VoicePicker course={course} value={voice} onChange={setVoice} />
 
         <h2 className="mb-2 mt-6 font-bold">Seviyen ne?</h2>
         <div className="grid gap-2 sm:grid-cols-5">

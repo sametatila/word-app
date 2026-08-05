@@ -35,6 +35,8 @@ import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { systemPrompt } from "../src/lib/chat";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
+import { cleanForSpeech } from "../src/lib/tts/edge";
+import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
@@ -498,6 +500,30 @@ async function main() {
   check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "cerebras");
 
   setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
+
+  console.log("\n11p) Seslendirme sesi kursa bağlı");
+  check("Almanca kursunun varsayılanı Seraphina",
+    defaultVoice("de") === "de-DE-SeraphinaMultilingualNeural");
+  check("Zürih kursunun varsayılanı Leni",
+    defaultVoice("gsw-zh") === "de-CH-LeniNeural");
+  check("her kursta iki ses", voicesFor("de").length === 2 && voicesFor("gsw-zh").length === 2);
+  check("seçilen ses korunuyor",
+    resolveVoice("de", "de-DE-FlorianMultilingualNeural") === "de-DE-FlorianMultilingualNeural");
+  // Asıl korunan davranış: kurs değişince yanlış kursun sesi taşınmamalı.
+  // Aksi hâlde Zürih'e geçen biri Dieth metnini Alman aksanıyla dinlerdi.
+  check("başka kursun sesi kursun varsayılanına düşüyor",
+    resolveVoice("gsw-zh", "de-DE-SeraphinaMultilingualNeural") === "de-CH-LeniNeural",
+    `(${resolveVoice("gsw-zh", "de-DE-SeraphinaMultilingualNeural")})`);
+  check("bilinmeyen ses varsayılana düşüyor",
+    resolveVoice("de", "uydurma-ses") === "de-DE-SeraphinaMultilingualNeural");
+  check("ses seçilmemişse varsayılan", resolveVoice("gsw-zh", null) === "de-CH-LeniNeural");
+  // Lehçe daha yavaş okunuyor; hız sesin kendisinden türetiliyor, ayrı bir
+  // yerde ikinci kez tanımlanmıyor.
+  check("lehçe daha yavaş okunuyor", rateFor("de-CH-LeniNeural") === "-12%" && rateFor("de-DE-SeraphinaMultilingualNeural") === "-8%");
+  // Parantezli Hochdeutsch karşılığı sesli okunduğunda cümleyi bozuyor.
+  check("okuma metni sadeleşiyor",
+    cleanForSpeech("Bschäftigte (Beschäftigte) vo/de Branche") === "Bschäftigte vo de Branche",
+    `(${cleanForSpeech("Bschäftigte (Beschäftigte) vo/de Branche")})`);
 
   console.log("\n11n) Sohbet cevabının biçimi");
   // İşaretler sistem isteminde ve ayrıştırıcıda ayrı yazılsaydı biri

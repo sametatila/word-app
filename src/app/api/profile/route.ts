@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { resolveVoice } from "@/lib/tts/voices";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
@@ -29,6 +30,13 @@ export async function POST(req: Request) {
     patch.level = body.level;
   if (typeof body.course === "string" && ["de", "gsw-zh"].includes(body.course))
     patch.course = body.course;
+  // Ses, gideceği kursa göre doğrulanıyor: kurs ve ses aynı istekte
+  // geliyorsa yeni kurs, gelmiyorsa kayıtlı kurs ölçü alınıyor. Aksi hâlde
+  // Zürih'e geçen biri Almanca sesle kalabilirdi.
+  if (typeof body.voice === "string") {
+    const target = patch.course ?? (await currentCourse(userId));
+    patch.voice = resolveVoice(target, body.voice);
+  }
 
   if (!Object.keys(patch).length) return NextResponse.json({ error: "empty" }, { status: 400 });
 
@@ -49,4 +57,14 @@ export async function POST(req: Request) {
 
 function clampInt(v: number, lo: number, hi: number) {
   return Math.max(lo, Math.min(hi, Math.round(v)));
+}
+
+/** Ses doğrulanırken ölçü alınan kurs — istekte kurs yoksa kayıtlı olan. */
+async function currentCourse(userId: string): Promise<string> {
+  const [row] = await db
+    .select({ course: profiles.course })
+    .from(profiles)
+    .where(eq(profiles.userId, userId))
+    .limit(1);
+  return row?.course ?? "de";
 }

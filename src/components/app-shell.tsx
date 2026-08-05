@@ -22,11 +22,13 @@ export function AppShell({
   streak,
   xp,
   course = "de",
+  voice = null,
 }: {
   children: ReactNode;
   streak: number;
   xp: number;
   course?: string;
+  voice?: string | null;
 }) {
   const pathname = usePathname();
   const [stats, setStats] = useState({ streak, xp });
@@ -34,14 +36,18 @@ export function AppShell({
   // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
   useEffect(() => setStats({ streak, xp }), [streak, xp]);
 
-  // Telaffuz (TTS) doğru sesi seçebilsin diye aktif kurs cihazda tutulur.
+  // Telaffuz doğru sesi seçebilsin diye kurs ve ses cihazda tutulur.
+  // Kaynak yine veritabanı; buradaki yalnızca bir ayna. Gerekçesi zamanlama:
+  // ses çalınacağı anda eşzamanlı okunabilmeli, o an sunucuya sorulamaz.
   useEffect(() => {
     try {
       localStorage.setItem("wortspiel-course", course);
+      if (voice) localStorage.setItem("wortspiel-voice", voice);
+      else localStorage.removeItem("wortspiel-voice");
     } catch {
-      /* depolama kapalıysa varsayılan ses kullanılır */
+      /* depolama kapalıysa kursun varsayılan sesi kullanılır */
     }
-  }, [course]);
+  }, [course, voice]);
   useEffect(() => {
     const onStats = (e: Event) => {
       const detail = (e as CustomEvent<{ xp: number; streak: number }>).detail;
