@@ -843,4 +843,129 @@ export const dialogues: SpeakingDialogueExercise[] = [
       },
     ],
   },
+
+  // ─────────────── C1 · fikir belirtme ve karşı çıkma ───────────────
+  //
+  // C1'de eksik olan kelime değil, **ton**. Öğrenci fikrini söyleyebiliyor
+  // ama katılmadığında ya çok sert ("Nein, das ist falsch") ya da hiç
+  // söyleyemiyor. Almancada karşı çıkmanın kalıpları var ve bunlar
+  // öğrenilmediğinde insan ya kaba ya sessiz kalıyor.
+  //
+  // Dallar bilerek "katılıyorum / kısmen / katılmıyorum" ekseninde: aynı
+  // soruya üç farklı tonda cevap verilebiliyor ve karşılık da ona göre
+  // değişiyor. Öğrenilen şey içerik değil, nasıl söylendiği.
+  {
+    id: "c1-d1",
+    level: "C1",
+    skill: "speaking",
+    title: "Eine Meinung äußern",
+    genre: "Diyalog",
+    intro:
+      "Bir tartışmadasın. Katılabilir, kısmen katılabilir ya da karşı çıkabilirsin — önemli olan bunu Almancada nasıl söylediğin.",
+    minutes: 8,
+    gloss: [
+      { de: "meiner Meinung nach", tr: "bence, bana göre" },
+      { de: "das sehe ich anders", tr: "ben farklı görüyorum" },
+      { de: "einerseits … andererseits", tr: "bir yandan … öte yandan" },
+      { de: "da haben Sie recht", tr: "bu konuda haklısınız" },
+      { de: "ich bezweifle, dass …", tr: "… olduğundan şüpheliyim" },
+    ],
+    targets: [
+      { de: "Meiner Meinung nach …", tr: "Bence …" },
+      { de: "Das sehe ich anders.", tr: "Ben farklı görüyorum." },
+      { de: "Einerseits …, andererseits …", tr: "Bir yandan …, öte yandan …" },
+      { de: "Da haben Sie recht, aber …", tr: "Haklısınız, ama …" },
+    ],
+    dialogue: [
+      {
+        id: "start",
+        ask: "Homeoffice macht Teams weniger produktiv. Wie sehen Sie das?",
+        askTr: "Evden çalışma ekipleri daha verimsiz yapıyor. Siz nasıl görüyorsunuz?",
+        cue: "Fikrini söyle: „Meiner Meinung nach …“ ya da „Das sehe ich anders.“",
+        replies: [
+          {
+            match: ["sehe ich anders", "anders", "bezweifle", "stimme nicht", "widersprechen"],
+            say: "Interessant. Woran machen Sie das fest?",
+            sayTr: "İlginç. Bunu neye dayandırıyorsunuz?",
+            next: "why",
+            uses: ["Das sehe ich anders."],
+          },
+          {
+            match: ["einerseits", "andererseits", "teilweise", "kommt darauf an"],
+            say: "Ein differenzierter Blick. Wo genau liegt für Sie die Grenze?",
+            sayTr: "Ayrıntılı bir bakış. Sizce sınır tam olarak nerede?",
+            next: "why",
+            uses: ["Einerseits …, andererseits …"],
+          },
+          {
+            match: ["recht", "stimme zu", "genau", "sehe ich auch"],
+            say: "Da sind wir uns einig. Aber gibt es keine Gegenargumente?",
+            sayTr: "Bu konuda hemfikiriz. Ama karşı argüman yok mu?",
+            next: "why",
+            uses: ["Da haben Sie recht, aber …"],
+          },
+        ],
+        fallback: {
+          say: "Sagen Sie mir ruhig, was Sie davon halten.",
+          sayTr: "Bu konuda ne düşündüğünüzü rahatça söyleyin.",
+          // Örnek cümle bir dala uymak zorunda: uymazsa öğrenciye çalışmayan
+          // bir çıkış yolu gösterilir. „Meiner Meinung nach…“ nötr olduğu için
+          // hiçbir dalı seçmiyordu; yerine tonu belli olan kalıp konuldu.
+          example: "Das sehe ich anders.",
+        },
+      },
+      {
+        id: "why",
+        ask: "Können Sie das begründen?",
+        askTr: "Bunu gerekçelendirebilir misiniz?",
+        cue: "Gerekçeni söyle ya da bir örnek ver: „In meinem Team war es so, dass …“",
+        replies: [
+          {
+            match: ["team", "erfahrung", "beispiel", "beobachtet", "arbeite"],
+            say: "Ein konkretes Beispiel — das überzeugt. Und langfristig?",
+            sayTr: "Somut bir örnek — bu ikna edici. Peki uzun vadede?",
+            next: "close",
+            uses: ["Meiner Meinung nach …"],
+          },
+          {
+            match: ["studie", "zahlen", "untersuchung", "statistik"],
+            say: "Zahlen sind ein starkes Argument. Und langfristig gesehen?",
+            sayTr: "Rakamlar güçlü bir argüman. Uzun vadede peki?",
+            next: "close",
+            uses: ["Meiner Meinung nach …"],
+          },
+        ],
+        fallback: {
+          say: "Haben Sie ein Beispiel dafür?",
+          sayTr: "Buna bir örnek verebilir misiniz?",
+          example: "In meinem Team war es so, dass wir produktiver waren.",
+        },
+      },
+      {
+        id: "close",
+        ask: "Also, worauf kommt es Ihrer Meinung nach am Ende an?",
+        askTr: "Peki sizce sonuçta önemli olan ne?",
+        cue: "Toparla: „Am Ende kommt es darauf an, dass …“",
+        replies: [
+          {
+            match: ["kommt es darauf an", "wichtig", "entscheidend", "am ende", "letztlich"],
+            say: "Gut zusammengefasst. Danke für den Austausch!",
+            sayTr: "İyi toparladınız. Fikir alışverişi için teşekkürler!",
+            uses: ["Meiner Meinung nach …"],
+          },
+          {
+            match: ["recht", "einig", "zustimmen", "unterschiedlich"],
+            say: "Dann sind wir uns zumindest teilweise einig. Danke!",
+            sayTr: "O zaman en azından kısmen hemfikiriz. Teşekkürler!",
+            uses: ["Da haben Sie recht, aber …"],
+          },
+        ],
+        fallback: {
+          say: "Danke für das Gespräch — das war aufschlussreich.",
+          sayTr: "Sohbet için teşekkürler — aydınlatıcıydı.",
+          example: "Am Ende kommt es darauf an, wie das Team arbeitet.",
+        },
+      },
+    ],
+  },
 ];
