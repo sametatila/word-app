@@ -586,4 +586,118 @@ export const dialogues: SpeakingDialogueExercise[] = [
       },
     ],
   },
+
+  // ─────────────── Zürih · yeni biriyle tanışma ───────────────
+  //
+  // Zürih havuzunda tek diyalog vardı (dükkân) ve o A2. Tanışma teması hem
+  // daha erken bir seviyeye uyuyor hem de lehçenin en sık kalıplarını bir
+  // arada çalıştırıyor: Grüezi, wie gaht's, ich chume vo, ich schaffe als.
+  //
+  // Köklere burada da Hochdeutsch karşılıkları yazıldı — de-CH tanıyıcısı
+  // lehçeyi standart biçimde yazma eğiliminde (bkz. zh-a2-d1).
+  {
+    id: "zh-a1-d1",
+    level: "A1",
+    skill: "speaking",
+    course: "gsw-zh",
+    title: "Sich vorstelle",
+    genre: "Diyalog",
+    intro:
+      "Biriyle yeni tanışıyorsun. Züritüütsch cevap ver — Hochdeutsch de anlaşılır ama lehçeyi dene.",
+    minutes: 5,
+    gloss: [
+      { de: "Grüezi", tr: "merhaba (resmî)" },
+      { de: "Wie gaht's?", tr: "Nasılsın? (Wie geht es?)" },
+      { de: "ich chume vo", tr: "…-dan geliyorum (ich komme aus)" },
+      { de: "ich schaffe", tr: "çalışıyorum (ich arbeite)" },
+      { de: "Freut mi", tr: "Memnun oldum (Freut mich)" },
+    ],
+    targets: [
+      { de: "Ich heisse …", tr: "Adım …" },
+      { de: "Ich chume vo …", tr: "…-danım." },
+      { de: "Ich schaffe als …", tr: "… olarak çalışıyorum." },
+      { de: "Freut mi!", tr: "Memnun oldum!" },
+    ],
+    dialogue: [
+      {
+        id: "start",
+        ask: "Grüezi! Ich heisse Anna. Und Sie?",
+        askTr: "Merhaba! Benim adım Anna. Ya siz?",
+        cue: "Adını söyle: „Ich heisse …“ ya da „Min Name isch …“",
+        replies: [
+          {
+            match: ["heisse", "heiße", "name", "bi de", "bin"],
+            say: "Freut mi! Und wo chömed Sie her?",
+            sayTr: "Memnun oldum! Peki nereden geliyorsunuz?",
+            next: "from",
+            uses: ["Ich heisse …"],
+          },
+          {
+            match: ["grüezi", "salü", "hallo", "guete"],
+            say: "Grüezi mitenand! Wie heissed Sie denn?",
+            sayTr: "Herkese merhaba! Peki adınız ne?",
+            next: "from",
+            uses: ["Ich heisse …"],
+          },
+        ],
+        fallback: {
+          say: "Entschuldigung, wie heissed Sie?",
+          sayTr: "Pardon, adınız neydi?",
+          example: "Ich heisse Samet.",
+        },
+      },
+      {
+        id: "from",
+        ask: "Und wo chömed Sie her?",
+        askTr: "Peki nereden geliyorsunuz?",
+        cue: "Nereli olduğunu söyle: „Ich chume vo de Türkei.“",
+        replies: [
+          {
+            match: ["türkei", "turkei", "istanbul", "ankara"],
+            say: "Vo de Türkei! Schön. Und was mached Sie beruflich?",
+            sayTr: "Türkiye'den! Güzel. Peki mesleğiniz ne?",
+            next: "work",
+            uses: ["Ich chume vo …"],
+          },
+          {
+            match: ["chume", "komme", "wohne", "läbe"],
+            say: "Aha, verstande. Und was mached Sie beruflich?",
+            sayTr: "Anladım. Peki mesleğiniz ne?",
+            next: "work",
+            uses: ["Ich chume vo …"],
+          },
+        ],
+        fallback: {
+          say: "Vo wo chömed Sie? Vo de Schwiiz oder vo uswärts?",
+          sayTr: "Nereden geliyorsunuz? İsviçre'den mi, dışarıdan mı?",
+          example: "Ich chume vo de Türkei.",
+        },
+      },
+      {
+        id: "work",
+        ask: "Und was mached Sie beruflich?",
+        askTr: "Peki mesleğiniz ne?",
+        cue: "İşini söyle: „Ich schaffe als …“",
+        replies: [
+          {
+            match: ["schaffe", "arbeite", "bi", "student", "ingenieur", "lehrer"],
+            say: "Spannend! Es het mi gfreut, Sie kenne z lerne.",
+            sayTr: "İlginç! Sizinle tanışmak beni sevindirdi.",
+            uses: ["Ich schaffe als …"],
+          },
+          {
+            match: ["freut", "gfreut", "au"],
+            say: "Mich au! En schöne Tag no.",
+            sayTr: "Ben de! İyi günler.",
+            uses: ["Freut mi!"],
+          },
+        ],
+        fallback: {
+          say: "Was isch Ihres Bruef?",
+          sayTr: "Mesleğiniz nedir?",
+          example: "Ich schaffe als Ingenieur.",
+        },
+      },
+    ],
+  },
 ];
