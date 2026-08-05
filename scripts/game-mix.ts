@@ -16,10 +16,22 @@ function answersFor(rounds: Round[]): Answer[] {
   return out;
 }
 
-async function main() {
+/**
+ * Test kullanıcısının izini siler.
+ *
+ * Hem başta hem sonda çağrılıyor. Başta: önceki çalıştırmadan kalan veri
+ * sonucu bozmasın. Sonda: test hesabı veritabanında birikmesin — bu betiğin
+ * bıraktığı "mix-user" gerçek hesapların arasında isimsiz bir kayıt olarak
+ * duruyordu.
+ */
+async function cleanup() {
   for (const t of [reviews, userWords, dailyStats, profiles]) {
     await db.delete(t).where(eq((t as typeof profiles).userId, USER));
   }
+}
+
+async function main() {
+  await cleanup();
   let day = "2026-04-01";
   const seen = new Set<string>();
   for (let d = 1; d <= 6; d++) {
@@ -37,6 +49,7 @@ async function main() {
   }
   console.log("\nGÖRÜLEN OYUNLAR:", [...seen].join(", "));
   console.log("EKSİK:", ["intro","choice","artikel","scramble","cloze","typing","match"].filter((g) => !seen.has(g)).join(", ") || "yok");
+  await cleanup();
   await pool.end();
 }
 main().catch(async (e) => { console.error(e); await pool.end(); process.exit(1); });

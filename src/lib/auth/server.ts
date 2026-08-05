@@ -11,19 +11,29 @@ export const authEnabled = Boolean(
 );
 
 /**
- * Demo modu yalnızca geliştirmede geçerlidir.
+ * Demo modu artık **açıkça istenmeden** açılmıyor.
  *
- * Aksi hâlde üretimde tek bir ortam değişkeninin eksilmesi (yanlış yazım, yeni
- * ortama kopyalanmaması) uygulamayı sessizce kimlik doğrulamasız hâle getirir:
- * her ziyaretçi aynı "demo-user" hesabına giriş yapmış sayılır ve o hesabın
- * verilerini okuyup yazabilir. Ortam değişkenleri eksikse üretimde kimse
- * oturum açmış sayılmaz — bozuk davranmak, sessizce açık olmaktan iyidir.
+ * Önceden yalnızca `NODE_ENV !== "production"` koşuluna bakıyordu, yani her
+ * geliştirme ortamı kendiliğinden "demo-user" hesabı üretiyordu. Bu hesap
+ * gerçek veritabanına yazıyor ve kullanıcı listesinde gerçek hesapların
+ * arasında duruyordu — kimsenin açmadığı, kimsenin sahiplenmediği bir kayıt.
+ *
+ * Artık `ALLOW_DEMO_USER=1` gerekiyor. Tek kullanım yeri tarayıcı testi
+ * (scripts/playtest.mjs): o testin giriş adımı yok ve auth'suz bir sunucuya
+ * ihtiyaç duyuyor. Onun dışında hiçbir yerde açılmıyor.
+ *
+ * Üretimde kapalı olması ayrıca güvenlik meselesi: tek bir ortam değişkeninin
+ * eksilmesi (yanlış yazım, yeni ortama kopyalanmaması) uygulamayı sessizce
+ * kimlik doğrulamasız hâle getirirdi ve her ziyaretçi aynı hesabın verilerini
+ * okuyup yazabilirdi. Bozuk davranmak, sessizce açık olmaktan iyidir.
  */
-const demoAllowed = process.env.NODE_ENV !== "production";
+const demoAllowed =
+  process.env.ALLOW_DEMO_USER === "1" && process.env.NODE_ENV !== "production";
 
 if (!authEnabled && !demoAllowed) {
   console.error(
-    "[auth] NEON_AUTH_BASE_URL / NEON_AUTH_COOKIE_SECRET tanımsız — üretimde demo moduna düşülmez, tüm istekler oturumsuz sayılacak.",
+    "[auth] NEON_AUTH_BASE_URL / NEON_AUTH_COOKIE_SECRET tanımsız — tüm istekler oturumsuz sayılacak. " +
+      "Tarayıcı testi için demo hesabı gerekiyorsa ALLOW_DEMO_USER=1 verin.",
   );
 }
 

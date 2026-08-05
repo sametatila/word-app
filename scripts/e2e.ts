@@ -5,7 +5,7 @@
  */
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, profiles, reviews, sessionState, userWords, words } from "../src/lib/db/schema";
+import { dailyStats, profiles, reviews, sessionState, userSkills, userWords, words } from "../src/lib/db/schema";
 import {
   buildChallenge,
   buildSession,
@@ -79,6 +79,7 @@ async function reset() {
   await db.delete(userWords).where(eq(userWords.userId, USER));
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
   await db.delete(sessionState).where(eq(sessionState.userId, USER));
+  await db.delete(userSkills).where(eq(userSkills.userId, USER));
   await db.delete(profiles).where(eq(profiles.userId, USER));
 }
 
