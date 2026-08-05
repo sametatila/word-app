@@ -33,6 +33,7 @@ import { speaking } from "../src/lib/skills/content/speaking";
 import { dialogues } from "../src/lib/skills/content/dialogue";
 import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
+import { summarize } from "../src/lib/chat-summary";
 import { systemPrompt } from "../src/lib/chat";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
@@ -500,6 +501,33 @@ async function main() {
   check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "cerebras");
 
   setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
+
+  console.log("\n11r) Konuşma özeti ölçülen veriden kuruluyor");
+  {
+    const focus = [{ de: "die Arbeit", tr: "iş" }, { de: "spielen", tr: "oynamak" }];
+    const conv = [
+      { role: "user" as const, content: "Ich gehe zur Arbeit." },
+      { role: "assistant" as const,
+        content: `Schön!\n${CORRECTION_MARK} „zur Arbeit“ doğru.\n${SUGGESTION_MARK} Und du?` },
+      { role: "user" as const, content: "Ich arbeite viel." },
+      { role: "assistant" as const, content: `Gut.\n${SUGGESTION_MARK} Weiter?` },
+    ];
+    const sum = summarize(conv, focus);
+    check("yalnızca öğrencinin turları sayılıyor", sum.turns === 2, `(${sum.turns})`);
+    check("düzeltmeler toplanıyor", sum.corrections.length === 1, `(${sum.corrections.length})`);
+    // Çekimli kullanım da sayılmalı: "arbeite" içinde "arbeit" geçiyor.
+    check("artikel atılıp kök eşleşiyor", sum.usedFocus.includes("die Arbeit"));
+    check("kullanılmayan kelime hedefe kalıyor", sum.unusedFocus.includes("spielen"));
+    // Modelin kullandığı kelime öğrencinin kullandığı sayılmaz — tam tersine,
+    // model kullandığı için öğrenci hiç kullanmamış olabilir.
+    const modelOnly = summarize(
+      [{ role: "user" as const, content: "Hallo." },
+       { role: "assistant" as const, content: "Magst du spielen?" }],
+      focus,
+    );
+    check("modelin kelimesi öğrencininki sayılmıyor",
+      modelOnly.unusedFocus.includes("spielen"));
+  }
 
   console.log("\n11q) Telaffuz değerlendirmesi yanlış onay vermiyor");
   // Kategorinin imza hatası: rakip uygulamalarda bilerek yanlış söylenen

@@ -6,6 +6,7 @@ import { SpeakButton, speakGerman, useSpeechAvailable } from "@/components/speak
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { AlertIcon, SparkIcon, SpeakerIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
+import { summarize } from "@/lib/chat-summary";
 
 /**
  * Almanca konuşma partneri.
@@ -36,7 +37,17 @@ const STARTERS = [
 const UMLAUTS = ["ä", "ö", "ü", "ß", "Ä", "Ö", "Ü"];
 const HANDSFREE_KEY = "wortspiel-chat-handsfree";
 
-export function ChatPlayer({ configured, level }: { configured: boolean; level: string }) {
+export function ChatPlayer({
+  configured,
+  level,
+  focus = [],
+}: {
+  configured: boolean;
+  level: string;
+  /** Öğrencinin çalıştığı kelimeler — konuşma sonundaki özet bunları sayıyor. */
+  focus?: { de: string; tr: string }[];
+}) {
+  const [showSummary, setShowSummary] = useState(false);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
@@ -325,6 +336,26 @@ export function ChatPlayer({ configured, level }: { configured: boolean; level: 
           </div>
         ) : null}
 
+        {/* Özet ancak konuşulacak bir şey olduğunda anlamlı. */}
+        {turns.some((t) => t.role === "user") ? (
+          <div
+            className="flex shrink-0 items-center justify-end border-b px-3 py-1.5"
+            style={{ borderColor: "var(--border)" }}
+          >
+            <button
+              type="button"
+              onClick={() => setShowSummary((v) => !v)}
+              aria-pressed={showSummary}
+              className="btn btn-ghost px-2 py-1 text-xs"
+              style={{ color: showSummary ? "var(--color-brand-500)" : undefined }}
+            >
+              {showSummary ? "Özeti kapat" : "Konuşmayı özetle"}
+            </button>
+          </div>
+        ) : null}
+
+        {showSummary ? <Summary turns={turns} focus={focus} /> : null}
+
         <div className="flex-1 space-y-3 overflow-y-auto p-4">
           {turns.length === 0 ? (
             <div className="py-6 text-center">
@@ -527,6 +558,73 @@ function Reply({ text, pending }: { text: string; pending: boolean }) {
           {line}
         </div>
       ))}
+    </div>
+  );
+}
+
+/**
+ * Konuşma özeti.
+ *
+ * Rakip uygulamaların ortak eksiği buydu: konuşma bitiyor ve öğrenci ne
+ * olduğunu bilmeden kapatıyor. Düzeltmeler akış içinde tek tek geçiyor ama
+ * okunup unutuluyorlar; toplu görüldüğünde örüntü ortaya çıkıyor.
+ *
+ * Gösterilen her şey sayılan veri: kaç tur konuşuldu, model hangi düzeltmeleri
+ * yazdı, çalışılan kelimelerden hangileri fiilen kullanıldı. Puan ya da
+ * "akıcılığın arttı" gibi bir değerlendirme yok — onlar doğrulanamaz ve
+ * telaffuz notunda kaçındığımız şeyin aynısı olurdu.
+ */
+function Summary({
+  turns,
+  focus,
+}: {
+  turns: Turn[];
+  focus: { de: string; tr: string }[];
+}) {
+  const s = summarize(turns, focus);
+
+  return (
+    <div
+      className="shrink-0 border-b px-4 py-3.5"
+      style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
+    >
+      <p className="text-sm font-bold">Bu konuşmada</p>
+      <p className="muted mt-1 text-xs">
+        {s.turns} kez söz aldın · {s.corrections.length} düzeltme
+      </p>
+
+      {s.corrections.length ? (
+        <div className="mt-3">
+          <p className="muted text-xs font-semibold">Düzeltmeler</p>
+          <ul className="mt-1 space-y-1">
+            {s.corrections.map((line, i) => (
+              <li key={i} className="text-xs leading-relaxed">
+                {line}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p className="mt-3 text-xs" style={{ color: "var(--color-mint-500)" }}>
+          Hiç düzeltme gerekmedi.
+        </p>
+      )}
+
+      {s.usedFocus.length ? (
+        <div className="mt-3">
+          <p className="muted text-xs font-semibold">Çalıştığın kelimelerden kullandıkların</p>
+          <p className="mt-1 text-xs">{s.usedFocus.join(", ")}</p>
+        </div>
+      ) : null}
+
+      {/* Bir sonraki konuşmanın somut hedefi — "daha çok pratik yap" gibi
+          boş bir öğütten iyi. Uzun liste bunaltıyor, ilk beşi yeter. */}
+      {s.unusedFocus.length ? (
+        <div className="mt-3">
+          <p className="muted text-xs font-semibold">Sıradaki konuşmada dene</p>
+          <p className="mt-1 text-xs">{s.unusedFocus.slice(0, 5).join(", ")}</p>
+        </div>
+      ) : null}
     </div>
   );
 }

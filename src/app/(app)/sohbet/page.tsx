@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { chatConfigured } from "@/lib/chat-providers";
+import { buildChatContext } from "@/lib/chat";
 import { ChatPlayer } from "@/components/chat-player";
 
 export const dynamic = "force-dynamic";
@@ -11,6 +12,10 @@ export default async function ChatPage() {
   const userId = await getUserId();
   if (!userId) redirect("/giris");
   const profile = await ensureProfile(userId);
+  // Odak kelimeler istemciye de veriliyor: konuşma sonundaki özet, bunlardan
+  // hangilerinin fiilen kullanıldığını sayıyor. Sunucuda kalsalardı özet için
+  // ikinci bir istek gerekirdi.
+  const { focus } = await buildChatContext(userId);
 
   return (
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
@@ -21,7 +26,7 @@ export default async function ChatPage() {
           konuşmaya kendiliğinden katar.
         </p>
       </div>
-      <ChatPlayer configured={chatConfigured()} level={profile.level} />
+      <ChatPlayer configured={chatConfigured()} level={profile.level} focus={focus} />
     </div>
   );
 }
