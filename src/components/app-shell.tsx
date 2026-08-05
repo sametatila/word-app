@@ -12,7 +12,7 @@ import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoM
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon },
   { href: "/skills", label: "Beceriler", Icon: CompassIcon },
-  { href: "/sohbet", label: "Sohbet", Icon: ChatIcon },
+  { href: "/dersler", label: "Dersler", Icon: ChatIcon },
   { href: "/words", label: "Kelimeler", Icon: ListIcon },
   { href: "/profile", label: "Profil", Icon: UserIcon },
 ];

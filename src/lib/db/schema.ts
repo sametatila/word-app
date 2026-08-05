@@ -192,3 +192,35 @@ export const sessionState = pgTable("session_state", {
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
+
+/**
+ * Ders ilerlemesi ve kuralların tekrar kuyruğu.
+ *
+ * Kelimelerin tekrarı vardı ama dilbilgisinin yoktu: öğrenci aynı kuralı
+ * defalarca yanlış yapıp bunu hiç görmüyordu. Ders bitince kuralın durumu
+ * buraya yazılıyor ve zamanı gelince ders tekrar öneriliyor.
+ *
+ * Kelime tablosundan ayrı duruyor çünkü ölçüsü farklı: kelime "hatırladın mı",
+ * kural "kurabildin mi". İkisini aynı tabloya sıkıştırmak ikisinin de
+ * zamanlamasını bozardı.
+ */
+export const userLessons = pgTable(
+  "user_lessons",
+  {
+    userId: text("user_id").notNull(),
+    lessonId: text("lesson_id").notNull(),
+    /** Kuralın kimliği — aynı kural birden çok derste geçebilir. */
+    ruleId: text("rule_id").notNull(),
+    /** Alıştırmalarda doğru sayısı (en iyi deneme). */
+    correct: integer("correct").notNull().default(0),
+    total: integer("total").notNull(),
+    /** Rol yapma tamamlandı mı — dersin asıl parçası o. */
+    roleplayDone: boolean("roleplay_done").notNull().default(false),
+    attempts: integer("attempts").notNull().default(1),
+    /** Bir sonraki tekrar; kelimelerdeki gibi artan aralıklarla uzuyor. */
+    dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
+    intervalDays: integer("interval_days").notNull().default(0),
+    lastAt: timestamp("last_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.lessonId] })],
+);

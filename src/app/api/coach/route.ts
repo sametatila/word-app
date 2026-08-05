@@ -13,7 +13,7 @@ const MAX_LIST = 8;
 /**
  * Konuşma koçu ucu.
  *
- * Sohbetten ayrı bir rota çünkü işleri farklı: sohbet akıyor ve konuşmayı
+ * Rol yapmadan ayrı bir rota çünkü işleri farklı: rol yapma akıyor ve konuşmayı
  * sürdürüyor, koç tek cümlelik bir teşhis dönüp susuyor. Akışsız olması
  * istemciyi de basitleştiriyor — tek `fetch`, tek cevap.
  *

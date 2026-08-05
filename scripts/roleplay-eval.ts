@@ -25,8 +25,10 @@
  */
 import { readFileSync } from "node:fs";
 import { chatProviders, type ChatMessage, type Provider } from "../src/lib/chat-providers";
-import { systemPrompt, type ChatContext } from "../src/lib/chat";
+
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
+import { findLesson } from "../src/lib/lessons";
+import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 
 /* ─────────────── Senaryo ─────────────── */
 
@@ -55,17 +57,14 @@ const SCRIPT: Step[] = [
   { say: "Ich möchte besser Deutsch sprechen.", expectClean: true },
 ];
 
-const CTX: ChatContext = {
-  level: "A2",
-  course: "de",
-  focus: [
-    { de: "der Ingenieur", tr: "mühendis" },
-    { de: "das Kino", tr: "sinema" },
-    { de: "der Bruder", tr: "erkek kardeş" },
-    { de: "arbeiten", tr: "çalışmak" },
-    { de: "wohnen", tr: "oturmak" },
-  ],
-};
+/**
+ * Ölçüm dersi.
+ *
+ * Senaryonun gömülü hataları bu dersin kuralıyla kesişiyor (V2: „Am Wochenende
+ * ich gehe“), yani test yalnızca genel dilbilgisini değil **dersin kendi
+ * kuralını** yakalayıp yakalamadığını da ölçüyor.
+ */
+const LESSON = findLesson("de-a1-l1")!;
 
 /* ─────────────── Ölçütler ─────────────── */
 
@@ -133,7 +132,7 @@ type Score = {
 };
 
 async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>): Promise<Score> {
-  const system = systemPrompt(CTX);
+  const system = roleplayPrompt(LESSON);
   const history: ChatMessage[] = [];
   const s: Score = {
     provider: provider.name,

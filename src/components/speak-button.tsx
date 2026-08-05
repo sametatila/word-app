@@ -44,7 +44,7 @@ function cleanForSpeech(text: string): string {
  *
  * Sebebi iOS: kullanıcı hareketi olmadan `play()` engelleniyor ve uygulamada
  * kendiliğinden konuşan yerler var (yeni kelime kartı, dinleme oyunu, diyalog,
- * sohbet cevabı). Bir kez kullanıcı hareketiyle çalmış öğe sonrasında serbest
+ * rol yapma cevabı). Bir kez kullanıcı hareketiyle çalmış öğe sonrasında serbest
  * kalıyor, bu yüzden aynı öğe yeniden kullanılıyor ve ilk dokunuşta sessiz bir
  * kayıtla hazırlanıyor.
  *
@@ -107,7 +107,7 @@ if (typeof window !== "undefined") primeOnFirstGesture();
  *      sessiz kalmasın.
  *
  * `onEnd` her durumda çağrılır — ses çalındığında da, hiç çalınamadığında da.
- * Eller serbest sohbette mikrofonun kendiliğinden açılması buna bağlı; hiç
+ * Eller serbest rol yapmada mikrofonun kendiliğinden açılması buna bağlı; hiç
  * gelmeyecek bir bitiş döngüyü kilitlerdi.
  */
 export function speakGerman(text: string, onEnd?: () => void, slow = false) {
@@ -205,7 +205,7 @@ function speakWithBrowser(clean: string, course: string, onEnd?: () => void, slo
     u.onerror = () => onEnd();
   }
   // cancel() bekleyen konuşmanın onend'ini de tetikler; çağıran taraf hangi
-  // okumanın bittiğini ayırt edebilmeli (bkz. chat-player, konuşma jetonu).
+  // okumanın bittiğini ayırt edebilmeli (bkz. lesson-player, konuşma jetonu).
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }

@@ -19,7 +19,7 @@
     "icons": "node scripts/icons.mjs",
     "db:check": "tsx scripts/schema-check.ts",
     "db:verify": "tsx scripts/verify-live.ts",
-    "test:chat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/chat-eval.ts",
+    "test:roleplay": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/roleplay-eval.ts",
     "test:coach": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/coach-eval.ts",
     "audit": "tsx scripts/audit-quality.ts",
     "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts"

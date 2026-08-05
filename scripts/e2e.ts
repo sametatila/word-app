@@ -34,11 +34,11 @@ import { zhSpeaking } from "../src/lib/skills/content/zh-speaking";
 import { dialogues } from "../src/lib/skills/content/dialogue";
 import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
-import { summarize } from "../src/lib/chat-summary";
 import { derivedConfusions } from "../src/lib/speech-rules";
 import { weakSpeechTopics } from "../src/lib/speech-progress";
 import { germanLexicon } from "../src/lib/speech-lexicon";
-import { systemPrompt } from "../src/lib/chat";
+import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
+import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
@@ -654,46 +654,186 @@ async function main() {
       `(${md.suggestions[0]})`);
   }
 
-  console.log("\n11r) Konuşma özeti ölçülen veriden kuruluyor");
+  console.log("\n11r) Ders içeriği ve kural kuyruğu");
   {
-    const focus = [{ de: "die Arbeit", tr: "iş" }, { de: "spielen", tr: "oynamak" }];
-    const conv = [
-      { role: "user" as const, content: "Ich gehe zur Arbeit." },
-      { role: "assistant" as const,
-        content: `Schön!\n${CORRECTION_MARK} „zur Arbeit“ doğru.\n${SUGGESTION_MARK} Und du?` },
-      { role: "user" as const, content: "Ich arbeite viel." },
-      { role: "assistant" as const, content: `Gut.\n${SUGGESTION_MARK} Weiter?` },
-    ];
-    const sum = summarize(conv, focus);
-    check("yalnızca öğrencinin turları sayılıyor", sum.turns === 2, `(${sum.turns})`);
-    check("düzeltmeler toplanıyor", sum.corrections.length === 1, `(${sum.corrections.length})`);
-    // Çekimli kullanım da sayılmalı: "arbeite" içinde "arbeit" geçiyor.
-    check("artikel atılıp kök eşleşiyor", sum.usedFocus.includes("die Arbeit"));
-    check("kullanılmayan kelime hedefe kalıyor", sum.unusedFocus.includes("spielen"));
-    // Modelin kullandığı kelime öğrencinin kullandığı sayılmaz — tam tersine,
-    // model kullandığı için öğrenci hiç kullanmamış olabilir.
-    const modelOnly = summarize(
-      [{ role: "user" as const, content: "Hallo." },
-       { role: "assistant" as const, content: "Magst du spielen?" }],
-      focus,
+    check("ders havuzu var", LESSONS.length > 0, `(${LESSONS.length})`);
+    const ids = new Set(LESSONS.map((l) => l.id));
+    check("ders kimlikleri benzersiz", ids.size === LESSONS.length);
+
+    // Ders bir konu değil TEK bir kural öğretiyor; kural kimliği tekrar
+    // kuyruğunun anahtarı olduğu için boş olamaz.
+    check("her dersin kural kimliği var", LESSONS.every((l) => l.ruleId.trim().length > 0));
+    check("her derste kural metni var", LESSONS.every((l) => l.rule.trim().length > 20));
+    check("her derste örnek var", LESSONS.every((l) => l.examples.length >= 2));
+    check("her derste alıştırma var", LESSONS.every((l) => l.checks.length >= 2));
+
+    // Doğru cevap şıklar arasında olmalı, yoksa soru çözülemez.
+    const badAnswer = LESSONS.flatMap((l) =>
+      l.checks.filter((c) => !c.options.includes(c.answer)).map(() => l.id),
     );
-    check("modelin kelimesi öğrencininki sayılmıyor",
-      modelOnly.unusedFocus.includes("spielen"));
-    // Kök kelime başında aranmalı: düz alt dize araması "Art"ı "Karte" içinde
-    // bulur ve özet, ölçülen veriye dayandığını iddia ederken uydurma sayı
-    // üretirdi.
-    const inside = summarize(
-      [{ role: "user" as const, content: "Ich habe eine Karte gekauft." }],
-      [{ de: "die Art", tr: "tür" }],
-    );
-    check("kök kelimenin ortasında aranmıyor", inside.unusedFocus.includes("die Art"),
-      `(${inside.usedFocus.join(", ")})`);
-    const inflected = summarize(
-      [{ role: "user" as const, content: "Wir arbeiten zusammen." }],
-      [{ de: "die Arbeit", tr: "iş" }],
-    );
-    check("çekimli biçim sayılıyor", inflected.usedFocus.includes("die Arbeit"));
+    check("doğru cevap şıklar arasında", badAnswer.length === 0,
+      `(${[...new Set(badAnswer)].join(", ")})`);
+    check("şıklar benzersiz",
+      LESSONS.every((l) => l.checks.every((c) => new Set(c.options).size === c.options.length)));
+    check("her cevabın gerekçesi var",
+      LESSONS.every((l) => l.checks.every((c) => c.why.trim().length > 10)));
+
+    // Rol yapma dersin asıl parçası: sahne, rol ve açılış repliği olmadan
+    // öğrenci boş ekranla karşılaşır — serbest sohbetin en pahalı sorunu buydu.
+    check("her derste sahne var", LESSONS.every((l) => l.roleplay.scene.trim().length > 20));
+    check("her derste açılış repliği var",
+      LESSONS.every((l) => l.roleplay.opening.trim().length > 0 && l.roleplay.openingTr.trim().length > 0));
+    check("rol yapmanın alt sınırı makul",
+      LESSONS.every((l) => l.roleplay.minTurns >= 3 && l.roleplay.minTurns <= 8));
+
+    check("iki kursta da ders var",
+      lessonsFor("de").length > 0 && lessonsFor("gsw-zh").length > 0);
+    check("kurs süzgeci karıştırmıyor",
+      lessonsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
+    check("ders kimlikle bulunuyor", findLesson(LESSONS[0].id)?.id === LESSONS[0].id);
+    check("bilinmeyen kimlik bulunamıyor", findLesson("yok-boyle-bir-ders") === undefined);
   }
+
+  console.log("\n11r2) Rol yapma istemi derse bağlı");
+  {
+    const lesson = LESSONS[0];
+    const prompt = roleplayPrompt(lesson);
+    // İstem dersin kuralını taşımak zorunda: düzeltmenin „bu dersin kuralına
+    // göre“ yapılmasını sağlayan tek şey bu.
+    check("istem dersin kuralını taşıyor", prompt.includes(lesson.rule.slice(0, 40)));
+    check("istem sahneyi taşıyor", prompt.includes(lesson.roleplay.scene.slice(0, 30)));
+    check("istem seviyeyi taşıyor", prompt.includes(lesson.level));
+    check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
+    check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
+    const zh = LESSONS.find((l) => l.course === "gsw-zh")!;
+    check("lehçe dersinde istem lehçeyi söylüyor",
+      roleplayPrompt(zh).includes("Züritüütsch"));
+  }
+
+  console.log("\n11s) Sapmalar kuraldan da türetiliyor");
+  {
+    const lex = germanLexicon();
+    const pairs = (sentence: string) =>
+      derivedConfusions(sentence, lex).map((c) => c.heard[0].toLowerCase());
+
+    check("z → s türetiliyor", pairs("Die Pause war viel zu kurz.").includes("kurs"));
+    check("uzatma h'si düşüyor", pairs("Ich kenne ihn gut.").includes("in"));
+    check("çift ünsüz tekleşiyor", pairs("Das Fenster ist offen.").includes("ofen"));
+    check("ie ↔ ei yer değiştiriyor", pairs("Der Riese war sehr groß.").includes("reise"));
+    // Sözlükte olmayan biçim üretilmemeli: tanıyıcı onu hiç yazamaz.
+    check("uydurma biçim üretilmiyor",
+      derivedConfusions("Ich trinke Kaffee.", lex).every((c) => lex.has(c.heard[0].toLowerCase())));
+    // Aynı cümlede geçen kelime sapma olamaz — doğru biçim zaten oradadır.
+    check("cümlede geçen kelime sapma sayılmıyor",
+      !pairs("Der Kurs war sehr kurz.").includes("kurs"),
+      `(${pairs("Der Kurs war sehr kurz.").join(", ")})`);
+    // Türetilenler de elle yazılanlarla aynı üç kuraldan geçmeli.
+    const all = derivedConfusions("Ich kenne ihn gut.", lex);
+    check("türev hedefin kendisi değil",
+      all.every((c) => c.heard[0].toLowerCase() !== (c.expected ?? "").toLowerCase()));
+    check("türev doğru biçimi içermiyor",
+      all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
+  }
+
+  console.log("\n11w) Kendi değerlendiren egzersizlerin kuralları");
+  {
+    const drills = [...speaking, ...zhSpeaking];
+    const selfJudged = drills.filter((e) => e.judge === "self");
+    check("kendi değerlendiren egzersiz var", selfJudged.length > 0, `(${selfJudged.length})`);
+
+    // Tanıyıcı hiç çalışmadığı için sapma yazmak ölü içerik olurdu: yazılan
+    // satır asla tetiklenmez ama bakımı gerekir ve doğru sanılır.
+    const withConfusions = selfJudged.filter((e) =>
+      e.tasks.some((t) => (t.confusions ?? []).length > 0),
+    );
+    check("kendi değerlendirende sapma yazılmamış", withConfusions.length === 0,
+      `(${withConfusions.map((e) => e.id).join(", ")})`);
+
+    // Öğretme yükünü ipuçları taşıyor; ipucusuz görev orada sessiz kalır.
+    const noHint = selfJudged.flatMap((e) =>
+      e.tasks.filter((t) => !t.hint?.trim()).map(() => e.id),
+    );
+    check("kendi değerlendirende her görevin ipucu var", noHint.length === 0,
+      `(${[...new Set(noHint)].join(", ")})`);
+
+    // Tersi de geçerli olmalı: tanıyıcıyla değerlendirilen egzersizlerde en az
+    // bir sapma bulunmalı, yoksa tanıyıcı açık ama teşhis yok demektir.
+    const asrJudged = drills.filter((e) => e.judge !== "self");
+    const noConfusion = asrJudged.filter(
+      (e) => !e.tasks.some((t) => (t.confusions ?? []).length > 0),
+    );
+    check("tanıyıcılı egzersizlerde teşhis var", noConfusion.length === 0,
+      `(${noConfusion.map((e) => e.id).join(", ")})`);
+  }
+
+  console.log("\n11v) Diyalog eşleştirmesi gerçekçi girdilerde");
+  {
+    const find = (id: string) => dialogues.find((d) => d.id === id)!;
+    const turn = (id: string, tid: string) => find(id).dialogue.find((t) => t.id === tid)!;
+    const said = (id: string, tid: string, text: string) =>
+      matchReply(text, turn(id, tid).replies)?.reply.say ?? null;
+
+    // Almanca: aynı niyetin farklı kuruluşları aynı dala gitmeli.
+    check("kısa cevap tutuyor", said("a1-d1", "start", "Bahnhof") !== null);
+    check("tam cümle tutuyor",
+      said("a1-d1", "start", "Entschuldigung, wo ist der Bahnhof bitte?") !== null);
+    check("aynı niyet aynı dala gidiyor",
+      said("a1-d1", "start", "Bahnhof") === said("a1-d1", "start", "Ich suche den Bahnhof."));
+
+    // Zürih: asıl sınav. Tanıyıcı lehçeyi standart Almanca yazma eğiliminde,
+    // o yüzden köklere Hochdeutsch karşılıkları da yazılmıştı. Bu kontrol o
+    // iddiayı doğruluyor — ikisi de aynı dalı seçmeli.
+    const zhDialect = said("zh-a2-d1", "start", "Ich hätt gern Chäs.");
+    const zhStandard = said("zh-a2-d1", "start", "Ich hätte gern Käse.");
+    check("lehçe biçimi tutuyor", zhDialect !== null, `(${zhDialect})`);
+    check("tanıyıcının yazacağı standart biçim de tutuyor", zhStandard !== null,
+      `(${zhStandard})`);
+    check("ikisi aynı dala gidiyor", zhDialect === zhStandard);
+
+    const zhVerb = said("zh-a1-d1", "from", "Ich chume vo de Türkei.");
+    const zhVerbStd = said("zh-a1-d1", "from", "Ich komme aus der Türkei.");
+    check("lehçe fiili tutuyor", zhVerb !== null, `(${zhVerb})`);
+    check("standart fiil de tutuyor", zhVerbStd !== null, `(${zhVerbStd})`);
+
+    // Konu dışı cevap hiçbir dala uymamalı; uyarsa öğrenci yanlış yönlendirilir.
+    check("konu dışı cevap eşleşmiyor",
+      said("zh-a2-d1", "start", "Wie spät ist es?") === null,
+      `(${said("zh-a2-d1", "start", "Wie spät ist es?")})`);
+    check("boş cevap eşleşmiyor", said("b1-d1", "start", "   ") === null);
+  }
+
+  console.log("\n11u) İstem başlığı cevaba sızmıyor");
+  {
+    const leaked = parseReply(
+      `Hallo!\n\n— ÖNERİLEN CEVAPLAR\n${SUGGESTION_MARK} Mir geht es gut.`,
+    );
+    check("kaçak başlık gövdeye girmiyor", !leaked.body.includes("ÖNERİLEN"),
+      `(${leaked.body.trim()})`);
+    check("başlık süzülürken öneri korunuyor", leaked.suggestions.length === 1);
+    check("normal cümle süzülmüyor",
+      parseReply("Das Kino ist toll!").body.includes("Kino"));
+    // Tamamı büyük harf olsa da noktalama taşıyan satır cümledir, başlık değil.
+    check("büyük harfli ünlem cümlesi korunuyor",
+      parseReply("SUPER!").body.includes("SUPER"));
+    // Tek kelimelik vurgulu cevap silinmemeli: süzgeç fazla geniş olsaydı
+    // mesajın tamamı kaybolurdu.
+    check("tek kelimelik büyük harfli cevap korunuyor",
+      parseReply("SUPER").body.includes("SUPER"), `(${parseReply("SUPER").body})`);
+    check("tire ile başlayan tek kelimelik başlık süzülüyor",
+      !parseReply("— ÖNERİLER").body.includes("ÖNERİLER"));
+    // Model düzenli olarak markdown yazıyor; arayüz düz metin gösterdiği için
+    // yıldızlar ekrana çıkıyordu. Koçta temizleniyordu, sohbette atlanmıştı.
+    const md = parseReply(
+      `Cümle **özneden sonra** gelir.\n${CORRECTION_MARK} *ich gehe* → *gehe ich* (V2)\n` +
+        `${SUGGESTION_MARK} **Ja, gern.**`,
+    );
+    check("gövdede yıldız kalmıyor", !md.body.includes("*"), `(${md.body.trim()})`);
+    check("düzeltmede yıldız kalmıyor", !md.corrections[0]?.includes("*"),
+      `(${md.corrections[0]})`);
+    check("öneride yıldız kalmıyor", md.suggestions[0] === "Ja, gern.",
+      `(${md.suggestions[0]})`);
+  }
+
 
   console.log("\n11q) Telaffuz değerlendirmesi yanlış onay vermiyor");
   // Kategorinin imza hatası: rakip uygulamalarda bilerek yanlış söylenen
@@ -775,12 +915,6 @@ async function main() {
   check("işaretsiz cevapta düzeltme/öneri yok",
     plain.corrections.length === 0 && plain.suggestions.length === 0);
   check("işaretsiz cevabın gövdesi bozulmuyor", plain.body === "Alles klar. Was machst du?");
-  // Sistem istemi ile ayrıştırıcı aynı işaretleri kullanmalı.
-  const prompt = systemPrompt({ level: "A2", course: "de", focus: [{ de: "das Haus", tr: "ev" }] });
-  check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
-  check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
-  check("istem seviyeyi taşıyor", prompt.includes("A2"));
-  check("istem çalışılan kelimeyi taşıyor", prompt.includes("das Haus"));
 
   console.log("\n11m) Karşılıklı konuşma (diyalog)");
   const cafe = dialogues[0];
