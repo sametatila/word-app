@@ -474,12 +474,16 @@ async function main() {
   check("tek anahtar varsa o seçilir", names() === "mistral", `(${names()})`);
   check("tek anahtarla sohbet açık", chatConfigured() === true);
 
-  // Sohbette gecikme her şeyden önemli: en hızlı ücretsiz olan başta,
-  // cömert ama ~2 RPM olan Mistral taşma yedeği olarak sonda.
+  // Sıra dakikalık istek hakkına göre, günlük token cömertliğine göre değil:
+  // ölçüm sohbette darboğazın token değil eşzamanlı istek olduğunu gösterdi.
+  // Cerebras günde 1M token veriyor ama dakikada 5 istek — iki kişi aynı anda
+  // yazışınca günlük kotanın binde biri harcanmadan 429 geliyor. Mistral 50,
+  // Groq token tavanı yüzünden pratikte ~7 istek/dk.
   setKeys("cb", "gq", "ms");
-  check("sıra hızlıdan yavaşa", names() === "cerebras,groq,mistral", `(${names()})`);
-  check("birincil Cerebras", chatProviders()[0]?.name === "cerebras");
-  check("Cerebras modeli gpt-oss-120b", chatProviders()[0]?.model === "gpt-oss-120b",
+  check("sıra dakikalık hakka göre", names() === "mistral,groq,cerebras", `(${names()})`);
+  check("birincil Mistral", chatProviders()[0]?.name === "mistral");
+  check("Mistral modeli mistral-medium-latest",
+    chatProviders()[0]?.model === "mistral-medium-latest",
     `(${chatProviders()[0]?.model})`);
 
   setKeys("cb", "gq", "ms", "groq");
