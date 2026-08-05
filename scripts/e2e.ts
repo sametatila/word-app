@@ -30,6 +30,8 @@ import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
 import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech";
 import { speaking } from "../src/lib/skills/content/speaking";
+import { dialogues } from "../src/lib/skills/content/dialogue";
+import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
@@ -439,6 +441,64 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11m) Karşılıklı konuşma (diyalog)");
+  const cafe = dialogues[0];
+  check("diyalog havuzu var", dialogues.length > 0);
+  const turnIds = new Set(cafe.dialogue.map((t) => t.id));
+  check("tur kimlikleri benzersiz", turnIds.size === cafe.dialogue.length);
+  // Kırık bağlantı konuşmayı ortada bırakır: her `next` var olan bir tura gitmeli.
+  const brokenLinks = cafe.dialogue.flatMap((t) =>
+    t.replies.filter((r) => r.next && !turnIds.has(r.next)).map((r) => `${t.id} → ${r.next}`),
+  );
+  check("bütün dallar var olan bir tura gidiyor", brokenLinks.length === 0, `(${brokenLinks.join(", ")})`);
+  // Ulaşılamayan tur ölü içeriktir.
+  const reachable = new Set([cafe.dialogue[0].id]);
+  let grew = true;
+  while (grew) {
+    grew = false;
+    for (const t of cafe.dialogue) {
+      if (!reachable.has(t.id)) continue;
+      for (const r of t.replies) {
+        if (r.next && !reachable.has(r.next)) {
+          reachable.add(r.next);
+          grew = true;
+        }
+      }
+    }
+  }
+  const orphan = cafe.dialogue.filter((t) => !reachable.has(t.id)).map((t) => t.id);
+  check("ulaşılamayan tur yok", orphan.length === 0, `(${orphan.join(", ")})`);
+  check("her turda geri dönüş örneği var",
+    cafe.dialogue.every((t) => t.fallback.example.trim().length > 0));
+
+  // Asıl işlev: söylenen şeye göre farklı dal seçilmeli.
+  const start = cafe.dialogue[0];
+  const coffee = matchReply("Ich hätte gern einen Kaffee", start.replies);
+  const tea = matchReply("Einen Tee bitte", start.replies);
+  check("kahve dalı seçiliyor", coffee?.reply.say.includes("Kaffee") === true);
+  check("çay dalı seçiliyor", tea?.reply.say.includes("Tee") === true);
+  check("aynı soru farklı cevaba farklı karşılık veriyor", coffee?.reply.say !== tea?.reply.say);
+  check("alakasız cevap eşleşmiyor", matchReply("Wo ist der Bahnhof", start.replies) === null);
+  check("boş cevap eşleşmiyor", matchReply("   ", start.replies) === null);
+
+  // Kısa kökler tam kelime aranmalı: "ja" kökü "Januar" içinde bulunmamalı.
+  const milk = cafe.dialogue.find((t) => t.id === "milk")!;
+  const negative = matchReply("Nein, ohne Zucker", milk.replies);
+  check("olumsuz cevap olumsuz dala gidiyor",
+    negative?.reply.say.includes("ohne") === true, `(${negative?.reply.say})`);
+  check("kısa kök parça olarak eşleşmiyor",
+    matchReply("Januar", [{ match: ["ja"], say: "x", sayTr: "x" }]) === null);
+  check("uzun kök parça olarak eşleşiyor",
+    matchReply("Ich möchte einen Kaffee", [{ match: ["möcht"], say: "x", sayTr: "x" }]) !== null);
+
+  // Pekiştirme ölçüsü gerçek olmalı: yalnızca tutan dalların kalıpları sayılır.
+  const path = [coffee!.reply, negative!.reply];
+  const used = usedTargets(path);
+  check("kullanılan kalıplar toplanıyor", used.length > 0, `(${used.join(", ")})`);
+  check("kullanılan kalıplar temanın hedefleri arasında",
+    used.every((u) => cafe.targets.some((t) => t.de === u)), `(${used.join(", ")})`);
+  check("diyalogda madde sayısı tur sayısı", itemCount(cafe) === cafe.dialogue.length);
 
   console.log("\n11l) Konuşma alıştırmaları içeriği");
   check("konuşma havuzu var", speaking.length > 0, `(${speaking.length})`);
