@@ -5,8 +5,8 @@ uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana e
 uygulama gibi tam ekran açılır (PWA).
 
 - **İki kurs, tek uygulama:**
-  - **Almanca (Hochdeutsch)** — A1–C1, 7.429 kelime (A1 858 · A2 481 · B1 1.853 · B2 2.059 · C1 2.178)
-  - **Zürih Almancası (Züritüütsch)** — listenin ilk 4.046 maddesinin lehçe karşılığı, Hochdeutsch
+  - **Almanca (Hochdeutsch)** — A1–C1, 7.392 kelime (A1 851 · A2 477 · B1 1.827 · B2 2.059 · C1 2.178)
+  - **Zürih Almancası (Züritüütsch)** — listenin tamamının (7.392 madde) lehçe karşılığı, Hochdeutsch
     köprüsüyle (`formen` alanında "HD: …") ve Zürihçe örnek cümlelerle. B2/C1 genişlemesinin
     lehçe karşılıkları henüz üretilmedi; karşılığı olmayan madde Zürih kursunda görünmez
     (`seed-zurich.ts` eksikleri seviye bazında raporlar, yükleme durmaz).
@@ -26,11 +26,15 @@ uygulama gibi tam ekran açılır (PWA).
   sorulan kelime yeniden sıraya girmez.
 - **Sıklık sırası ve tür karışımı:** yeni kelimeler alfabetik değil, kullanım sıklığına göre gelir
   (ich, sie, du, nicht…) ve isim/fiil/diğer olarak serpiştirilir.
-- **Dinamik CEFR seviyesi:** aktif seviye performansa göre yükselir ve düşer. Öğren ekranının
-  üstünde seviye rozeti ve bir sonraki seviyeye ilerleme çubuğu görünür; oturum sonunda terfi/düşüş
-  duyurulur. Profildeki seçim **tavan değil, başlangıç noktasıdır**.
-- **Adaptif zorluk:** son 50 cevabın doğruluğu %85'in üstündeyse üretim oyunları (yazma, harf
-  bulmacası), %60'ın altındaysa tanıma oyunları öne çıkar. Kullanıcıya ekranda açıklanır.
+- **CEFR seviyesi kullanıcınındır:** profilden seçilir ve orada kalır; sistem terfi/düşüş yapmaz.
+  Öğren ekranının üstünde rütbe değil **kapsam** görünür: o seviyenin kaç kelimesi pekişti.
+  Yalnızca artan bir ölçü.
+- **Adaptif zorluk kelimeye bakar:** yeni ya da takılan kelimede şıklı tanıma, oturmuş kelimede
+  yazma sorulur. Şık yönü de buna bağlı (Almanca→Türkçe tanıma, Türkçe→Almanca üretime yakın).
+  Kullanıcının genel doğruluk oranı zorluğu belirlemez — o oran yetkinliği değil, kuyruğun
+  bileşimini ölçer.
+- **Tempo koleksiyona bakar:** tekrar borcu günlük hedefin iki katını aşarsa yeni kelime durur,
+  takılan kelime oranı yükselirse yarıya iner. Bu bir not değil, yük kararı.
 - **Hayatta kalma turu:** oturum sonunda, öğrenilenlerden karışık oyun türleriyle süreye karşı tur.
   Sabit süre yok: 40 saniyeyle başlar, doğru cevap +2 sn (hızlıysan +3,5 sn), yanlış −4 sn, tavan
   75 sn. Üst üste doğrular puanı 3 katına kadar çıkarır; sorular üç dalgada sertleşir (ısınma →
@@ -55,8 +59,8 @@ uygulama gibi tam ekran açılır (PWA).
 npm install
 cp .env.example .env            # DATABASE_URL'i Neon'dan yapıştır
 npm run db:push                 # tabloları oluştur
-npm run db:seed                 # Almanca kursu: 7.429 kelime + örnek cümle çevirileri
-npm run db:seed:zurich          # Zürih kursu: 4.046 Züritüütsch madde (karşılığı olanlar)
+npm run db:seed                 # Almanca kursu: 7.392 kelime + örnek cümle çevirileri
+npm run db:seed:zurich          # Zürih kursu: 7.392 Züritüütsch madde
 npm run db:seed:skills          # beceri alıştırmaları (iki kurs, A1–C1)
 npm run dev                     # http://localhost:3000
 ```
@@ -83,9 +87,9 @@ Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi �
 2. **Connection string** → *Pooled connection* olanı kopyala, `DATABASE_URL` yap.
 3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
    Editor'a sırayla yapıştırabilirsin).
-4. `npm run db:seed` → `data/app/words.json` içindeki 7.429 kelime + `data/app/beispiel-tr.json`
+4. `npm run db:seed` → `data/app/words.json` içindeki 7.392 kelime + `data/app/beispiel-tr.json`
    içindeki örnek cümle çevirileri yüklenir.
-5. `npm run db:seed:zurich` → `data/zurich/chunk-*.json` içindeki 4.046 Züritüütsch madde
+5. `npm run db:seed:zurich` → `data/zurich/chunk-*.json` içindeki 7.392 Züritüütsch madde
    `course='gsw-zh'` olarak yüklenir (kimlik: 100000 + kaynak id).
 6. `npm run db:seed:skills` → `src/lib/skills/content/*` içindeki beceri alıştırmaları yüklenir.
 
@@ -158,9 +162,9 @@ src/
     games/*.tsx             altı oyun + ortak çerçeve
     skills/*.tsx            beceri hub'ı, okuma/dinleme/yazma çalıştırıcıları
 data/
-  app/words.json            Almanca tohumlama kaynağı (7.429 kelime, A1–C1)
+  app/words.json            Almanca tohumlama kaynağı (7.392 kelime, A1–C1)
   app/beispiel-tr.json      örnek cümlelerin Türkçe çevirileri (7.426 cümle)
-  zurich/chunk-*.json       Züritüütsch karşılıklar (4.046 madde — B2/C1 genişlemesi bekliyor)
+  zurich/chunk-*.json       Züritüütsch karşılıklar (7.392 madde, A1–C1 tam)
   zurich/style-guide.md     lehçe yazım kuralları — içerik üretiminde bağlayıcı
 ```
 
@@ -191,17 +195,21 @@ harf bulmacası). Aynı oyun arka arkaya gelmez.
 
 Terfi iki vitesli çalışır:
 
-| Aşama | Terfi | İniş |
-|---|---|---|
-| **Kalibrasyon** (seviyedeki ilk 80 cevap) | puan ≥ 10 **ve** oturum doğruluğu ≥ %90 | puan ≤ −6 |
-| **Sonrası** | puan ≥ 24 | puan ≤ −10 |
+Seviye **yalnızca kullanıcı** değiştirir. Önceki sürümde oturum doğruluğuna göre otomatik
+terfi/düşüş vardı; kaldırıldı. Sebebi: bir SRS oturumu bilerek karışık kurulur (hiç görülmemiş
+kelimeler, öğrenilmekte olanlar, oturmuş tekrarlar bir arada), bu yüzden oturum doğruluğu
+yetkinliği değil kuyruğun bileşimini ölçer. Yeni kelime almaya cesaret eden düşük, yalnızca kolay
+tekrar yapan yüksek doğruluk alıyordu — yani sistem öğrenmeyi cezalandırıyordu.
 
-Kalibrasyon penceresi, yanlış başlangıç seviyesi seçen öğrenciyi hızla kendi seviyesine yaklaştırır;
-pencere kapandıktan sonra terfi seviyede gerçekten çalışılmış hacim ister. Seviye her değiştiğinde
-puan 4'e döner ve hacim sayacı sıfırlanır.
+Yerine geçen üç ayrı mekanizma:
 
-Profildeki seçim tavan değildir: aktif seviye C1'e kadar yükselebilir, A1'e kadar inebilir.
-Yeni kelimeler aktif seviyenin çevresinden (bir alt, aktif, bir üst), sıklık sırasıyla gelir.
+| Soru | Neye bakar |
+|---|---|
+| Hangi kelimeler geliyor? | Kullanıcının seçtiği seviye (%70) + bir alt seviye (boşluk doldurma) |
+| Her soru ne kadar zor? | O kelimenin kendi geçmişi: üst üste doğru sayısı, unutma sayısı, kolaylık faktörü, aralık |
+| Bugün ne kadar yük? | Tekrar borcu ve takılan kelime oranı |
+
+Seçilen seviyede görülmemiş kelime kalmazsa bir üst seviye devreye girer; öğrenme durmaz.
 
 ## 7. E-posta akışları (parola sıfırlama, kayıt onayı)
 

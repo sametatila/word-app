@@ -24,12 +24,12 @@ const COURSES = [
   {
     name: "Almanca",
     sub: "Hochdeutsch",
-    body: "A1–B1 resmî Goethe listelerinden, B2–C1 alan bazlı hazırlanmış 7.429 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
+    body: "A1–B1 resmî Goethe listelerinden, B2–C1 alan bazlı hazırlanmış 7.392 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
   },
   {
     name: "Zürih Almancası",
     sub: "Züritüütsch",
-    body: "4.046 maddenin Zürih lehçesindeki karşılığı — de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",
+    body: "Listenin tamamının Zürih lehçesindeki karşılığı: 7.392 madde, de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",
   },
 ];
 
@@ -43,8 +43,8 @@ const FEATURES = [
     body: "Kelimenin yanında beceri bölümü: her kursta A1–C1 için mesajdan köşe yazısına, anonstan panele uzanan alıştırmalar. Yazmada önce cümle kurar, sonra kendi metnini yazarsın.",
   },
   {
-    title: "Seviyen canlı değişir",
-    body: "Profildeki seçim tavan değil, başlangıç noktası. İyi gittikçe bir üst CEFR seviyesine çıkarsın; terfi tek güzel oturumla değil, seviyede biriken çalışmayla gelir.",
+    title: "Seviyeni sen seçersin",
+    body: "CEFR seviyeni profilden belirlersin ve orada kalırsın — sistem seni sınayıp yukarı taşımaz, aşağı da indirmez. Gösterilen tek ölçü, o seviyenin kaç kelimesini pekiştirdiğin.",
   },
   {
     title: "Sıkılmadan devam",
@@ -88,7 +88,7 @@ export default function Home() {
         <section className="py-14 text-center sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
-              2 kurs · A1 → C1 · 11.475 kelime · 6 oyun
+              2 kurs · A1 → C1 · 14.784 kelime · 6 oyun
             </span>
           </Reveal>
           <Reveal delay={0.06}>

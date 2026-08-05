@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Wortspiel — Almanca Kelime",
   description:
-    "A1'den C1'e 7.429 kelime, altı oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması.",
+    "A1'den C1'e 7.392 kelime, altı oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması.",
   applicationName: "Wortspiel",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "Wortspiel", statusBarStyle: "black-translucent" },
