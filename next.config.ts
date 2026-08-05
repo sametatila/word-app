@@ -22,8 +22,17 @@ const SECURITY_HEADERS = [
   },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  // Uygulamanın kullanmadığı güçlü aygıt izinleri baştan kapatılır.
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
+  // Güçlü aygıt izinleri kapalı; mikrofon yalnızca kendi origin'imize açık.
+  //
+  // `microphone=()` her origin'i — kendimiz dahil — engeller ve tarayıcı izin
+  // istemini hiç göstermez. Konuşma alıştırmaları eklenene kadar bu doğruydu,
+  // sonrasında özelliği sessizce çalışmaz hâle getirdi: kullanıcı mikrofona
+  // dokunuyor, hiçbir şey olmuyordu. `self` yalnızca bu siteye izin verir,
+  // üçüncü taraf çerçevelere değil.
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(self), geolocation=(), payment=()",
+  },
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
 ];
 
