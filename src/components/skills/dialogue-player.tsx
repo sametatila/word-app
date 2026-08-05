@@ -7,7 +7,7 @@ import { matchReply, usedTargets, type DialogueReply, type DialogueTurn } from "
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, SpeakerIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
-import { recognitionCtor, requestMicrophone, type Recognition } from "./microphone";
+import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 
 /**
  * Karşılıklı konuşma oynatıcısı.

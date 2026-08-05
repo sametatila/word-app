@@ -1,8 +1,9 @@
 /**
- * Mikrofon ve tarayıcı konuşma tanıyıcısı — iki konuşma oynatıcısının ortak yüzeyi.
+ * Mikrofon ve tarayıcı konuşma tanıyıcısı — sesle konuşan her ekranın ortak yüzeyi.
  *
- * Telaffuz turu (speaking-player) ve karşılıklı konuşma (dialogue-player) aynı
- * izin akışını ve aynı tanıyıcıyı kullanıyor; iki kopya er geç ayrışırdı.
+ * Telaffuz turu (speaking-player), karşılıklı diyalog (dialogue-player) ve
+ * serbest sohbet (chat-player) aynı izin akışını ve aynı tanıyıcıyı kullanıyor;
+ * üç kopya er geç ayrışırdı.
  */
 
 /** Tanıyıcının tipleri lib.dom'da güvenilir biçimde yok; asgari yüzey. */

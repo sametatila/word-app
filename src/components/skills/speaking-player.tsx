@@ -7,7 +7,7 @@ import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
 import { speakGerman, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
-import { recognitionCtor, requestMicrophone, type Recognition } from "./microphone";
+import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 
 /**
  * Konuşma oynatıcısı — iki katmanlı ve bozulmadan düşen bir tasarım.
