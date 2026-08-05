@@ -934,9 +934,10 @@ export function shiftDay(day: string, delta: number) {
  */
 export async function buildChallenge(
   userId: string,
-): Promise<{ rounds: Round[]; tiers: number[]; pool: number; weak: number }> {
+): Promise<{ rounds: Round[]; tiers: number[]; pool: number; weak: number; best: number }> {
   const profile = await ensureProfile(userId);
   const band = levelBand(profile.level);
+  const best = profile.challengeBest;
 
   const learned = await db
     .select({ w: words, uw: userWords })
@@ -947,7 +948,7 @@ export async function buildChallenge(
     )
     .limit(160);
 
-  if (learned.length < 3) return { rounds: [], tiers: [], pool: learned.length, weak: 0 };
+  if (learned.length < 3) return { rounds: [], tiers: [], pool: learned.length, weak: 0, best };
 
   // Kırılganlık puanı: yüksek olan kelime öğrenci için gerçek bir tehdittir.
   const fragility = (uw: typeof userWords.$inferSelect) =>
@@ -1015,7 +1016,31 @@ export async function buildChallenge(
   wave(shuffle(ranked), 9, 2, undefined); // baskı: karışık
   wave(fragile, 12, 3, "production"); // kriz: en zayıflar, üretim ağırlıklı
 
-  return { rounds, tiers, pool: learned.length, weak };
+  return { rounds, tiers, pool: learned.length, weak, best };
+}
+
+/**
+ * Hayatta kalma turunun skorunu işler ve rekoru günceller.
+ *
+ * Rekor cihazda değil profilde durur: aynı hesabın telefondaki ve tarayıcıdaki
+ * rekoru aynı olmalı. Skorun kendisi zaten cevaplarla birlikte kaydedilir;
+ * burada yalnızca "en iyi" değeri taşınır.
+ *
+ * Dönen `previous`, bu tur oynanmadan önceki rekordur — "yeni rekor, önceki X"
+ * mesajı buna dayanır.
+ */
+export async function recordChallengeScore(
+  userId: string,
+  score: number,
+): Promise<{ best: number; previous: number }> {
+  const profile = await ensureProfile(userId);
+  const previous = profile.challengeBest;
+  if (score <= previous) return { best: previous, previous };
+  await db
+    .update(profiles)
+    .set({ challengeBest: score })
+    .where(eq(profiles.userId, userId));
+  return { best: score, previous };
 }
 
 /** İlerleme ekranı verileri */

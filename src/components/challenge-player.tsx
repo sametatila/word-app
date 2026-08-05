@@ -20,8 +20,6 @@ const PENALTY_MS = 4000; // yanlış cevap
 const FAST_LIMIT_MS = 3500;
 const MAX_SECONDS = 75; // süre sonsuza uzamasın
 
-const RECORD_KEY = "wortspiel:challenge-record";
-
 /** Üst üste doğrularda puan çarpanı — asıl heyecan burada. */
 function multiplier(combo: number): number {
   if (combo >= 10) return 3;
@@ -61,11 +59,16 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   const [tally, setTally] = useState({ correct: 0, total: 0 });
   const [left, setLeft] = useState(START_SECONDS);
   const [flash, setFlash] = useState({ fire: 0, text: "", tone: "flame" as "flame" | "mint" });
+  // Rekor sunucudan gelir: cihaza yazılsaydı telefonda kırılan rekor
+  // tarayıcıda 0 görünürdü.
   const [record, setRecord] = useState(0);
+  const [outcome, setOutcome] = useState<Outcome | null>(null);
 
   const deadline = useRef(0);
   const pending = useRef<Answer[]>([]);
   const finished = useRef(false);
+  /** Bitiş geri sayımdan da tetiklenebildiği için puan ref'ten okunur. */
+  const scoreRef = useRef(0);
 
   useEffect(() => {
     (async () => {
@@ -77,22 +80,19 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         }
         const payload = (await res.json()) as Payload;
         setData(payload);
+        setRecord(payload.best ?? 0);
         setStatus(payload.rounds.length >= 3 ? "ready" : "empty");
       } catch {
         setStatus("error");
       }
     })();
-    try {
-      setRecord(Number(localStorage.getItem(RECORD_KEY) ?? 0));
-    } catch {
-      /* depolama kapalı olabilir */
-    }
   }, []);
 
   const finish = useCallback(async () => {
     if (finished.current) return;
     finished.current = true;
     setStatus("done");
+    const score = scoreRef.current;
     const batch = pending.current;
     pending.current = [];
     if (batch.length) {
@@ -106,6 +106,17 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       } catch {
         /* çevrimdışıysa sonuç yine gösterilir */
       }
+    }
+    try {
+      const res = await fetch("/api/challenge", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ score }),
+        keepalive: true,
+      });
+      if (res.ok) setOutcome((await res.json()) as Outcome);
+    } catch {
+      /* çevrimdışıysa rekor bir sonraki turda güncellenir */
     }
   }, []);
 
@@ -126,6 +137,10 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     finished.current = false;
     deadline.current = Date.now() + START_SECONDS * 1000;
     setLeft(START_SECONDS);
+    // Bir önceki turun rekoru artık "mevcut rekor" olur.
+    if (outcome) setRecord(outcome.best);
+    setOutcome(null);
+    scoreRef.current = 0;
     setScore(0);
     setCombo(0);
     setBestCombo(0);
@@ -161,7 +176,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       deadline.current + deltaMs,
     );
 
-    setScore((s) => s + gained);
+    scoreRef.current = score + gained;
+    setScore(scoreRef.current);
     setCombo(nextCombo);
     setBestCombo((b) => Math.max(b, nextCombo));
     setTally((t) => ({
@@ -259,18 +275,14 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     );
 
   if (status === "done") {
-    const isRecord = score > record;
-    if (isRecord && score > 0) {
-      try {
-        localStorage.setItem(RECORD_KEY, String(score));
-      } catch {
-        /* yoksay */
-      }
-    }
+    // Rekor kararı sunucunun: `previous` bu tur oynanmadan önceki değerdir.
+    // Yanıt gelene kadar elimizdeki en iyi bilgi turdan önce okunan rekordur.
+    const previous = outcome?.previous ?? record;
+    const isRecord = score > previous && score > 0;
     const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
     return (
       <Frame>
-        <Confetti fire={isRecord && score > 0 ? 1 : 0} count={40} />
+        <Confetti fire={isRecord ? 1 : 0} count={40} />
         <div className="text-center">
           <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl text-white">
             <TrophyIcon size={26} />
@@ -278,12 +290,12 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           <h2 className="text-3xl font-black">
             <CountUp value={score} /> <span className="text-lg font-bold">puan</span>
           </h2>
-          {isRecord && score > 0 ? (
+          {isRecord ? (
             <p className="mt-1 text-sm font-bold text-[color:var(--color-mint-500)]">
-              Yeni rekor! Önceki: {record}
+              Yeni rekor! Önceki: {previous}
             </p>
           ) : (
-            <p className="muted mt-1 text-sm">Rekorun: {Math.max(record, score)}</p>
+            <p className="muted mt-1 text-sm">Rekorun: {outcome?.best ?? Math.max(record, score)}</p>
           )}
 
           <div className="mt-5 grid grid-cols-3 gap-2 text-center">

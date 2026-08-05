@@ -1,0 +1,1 @@
+ALTER TABLE "profiles" ADD COLUMN "challenge_best" integer DEFAULT 0 NOT NULL;

@@ -77,7 +77,110 @@ export function grammarNote(word: RoundWord): string | null {
 export function normalize(s: string): string {
   return s
     .toLocaleLowerCase("de-DE")
+    .replace(/[.,!?;:]/g, " ")
+    // Boşluk sadeleştirmesi noktalama temizliğinden SONRA gelmeli: "entweder ...
+    // oder" önce yapıldığında çift boşukla kalıyor ve hiçbir yazımla eşleşmiyordu.
     .replace(/\s+/g, " ")
-    .replace(/[.,!?;:]/g, "")
     .trim();
+}
+
+/**
+ * Bir madde başlığı için kabul edilebilir yazımların tamamı.
+ *
+ * Sözlük başlığı ile öğrencinin yazacağı şey aynı değildir. Başlık, birden çok
+ * bilgiyi tek satıra sıkıştırır:
+ *
+ *   "sich setzen"      dönüşlü zamir fiilin parçası ama tek başına "setzen" de doğrudur
+ *   "setzen (sich)"    aynı şey, parantezle
+ *   "der/die Bekannte" iki artikel, tek kelime
+ *   "heraus/raus"      iki ayrı geçerli biçim — birini bilmek yeter
+ *   "Zeug"             sözlükte "-zeug" olarak da geçebilir, tire ek işaretidir
+ *
+ * Öğrenciden bu satırı harfi harfine kopyalamasını beklemek yazımı değil,
+ * sözlük biçimini ezberlemeyi ölçer. Burada başlıktan bütün makul yazımlar
+ * üretilir; herhangi biri doğru sayılır.
+ */
+export function acceptedForms(raw: string): string[] {
+  const out = new Set<string>();
+
+  const add = (value: string) => {
+    const base = normalize(value).replace(/[()]/g, " ").replace(/\s+/g, " ").trim();
+    if (!base) return;
+    out.add(base);
+    // Artikel isteğe bağlı: "die Bekannte" de "Bekannte" de kabul.
+    const noArticle = base.replace(/^(der|die|das)\s+/, "");
+    out.add(noArticle);
+    // Dönüşlü zamir isteğe bağlı ve yeri serbest: sözlükte "setzen (sich)"
+    // yazsa da öğrenci "sich setzen" ya da yalnızca "setzen" yazabilmeli.
+    const withoutSich = noArticle.replace(/\bsich\b/g, " ").replace(/\s+/g, " ").trim();
+    if (withoutSich && withoutSich !== noArticle) {
+      out.add(withoutSich);
+      out.add(`sich ${withoutSich}`);
+    }
+  };
+
+  for (const variant of parenVariants(raw)) {
+    for (const alt of splitAlternatives(variant)) add(alt);
+  }
+  return [...out];
+}
+
+/**
+ * Parantezli kısım hem varken hem yokken geçerlidir.
+ * "(Schlag-)Sahne" → "Schlagsahne" ve "Sahne"; "setzen (sich)" → "setzen sich" ve "setzen".
+ */
+function parenVariants(raw: string): string[] {
+  if (!raw.includes("(")) return [raw];
+  return [
+    raw.replace(/\(([^)]*)\)\s*/g, (_, inner: string) => inner.replace(/-+$/, "")), // birleşik
+    raw.replace(/\([^)]*\)/g, " "), // parantezsiz
+  ];
+}
+
+/** Sözlükteki kısa artikel yazımları. */
+const ARTICLE_SHORT: Record<string, string> = { r: "der", e: "die", s: "das" };
+
+/**
+ * Eğik çizgiyle ayrılmış başlığı gerçek kelimelere açar.
+ *
+ * Çizgi iki ayrı iş görüyor ve ikisi farklı davranır:
+ *   "heraus/raus"      → iki tam kelime, ikisi de geçerli
+ *   "der/die Bekannte" → yalnızca artikel değişiyor, kelime ortak
+ *
+ * Bileşik tahmini bilerek yapılmaz: "Nord-/Ostsee" yazımından "Nordsee"yi
+ * çıkarmak, bileşiğin nerede bölündüğünü bilmeyi gerektirir ve büyük/küçük
+ * harften türetilemez. Böyle maddeler veride açık yazılır ("Nordsee/Ostsee");
+ * burada tahmin etmek sessiz yanlışlar üretirdi.
+ */
+function splitAlternatives(raw: string): string[] {
+  const parts = raw
+    .split("/")
+    .map((p) => p.trim().replace(/^-+|-+$/g, "").trim())
+    .filter(Boolean);
+  if (parts.length <= 1) return [parts[0] ?? ""];
+
+  // Her parça artikel ve gövdesine ayrılır. Artikel parçanın tamamı olabilir
+  // ("der/die Bekannte") ya da gövdeyle aynı parçada durabilir ("r/e Erwachsene").
+  const parsed = parts.map((p) => {
+    const withBody = p.match(/^(der|die|das|[res])\s+(.+)$/i);
+    if (withBody) return { article: expandArticle(withBody[1]), body: withBody[2] };
+    if (/^(der|die|das|[res])$/i.test(p)) return { article: expandArticle(p), body: null };
+    return { article: null, body: p };
+  });
+
+  // Yalnız artikelden ibaret parçalar gövdeyi kardeşlerinden alır.
+  const shared = [...parsed].reverse().find((x) => x.body)?.body ?? "";
+
+  const out: string[] = [];
+  for (const part of parsed) {
+    const body = part.body ?? shared;
+    if (!body) continue;
+    out.push(part.article ? `${part.article} ${body}` : body);
+  }
+  return out;
+}
+
+function expandArticle(a: string): string {
+  const key = a.toLowerCase();
+  return ARTICLE_SHORT[key] ?? key;
 }

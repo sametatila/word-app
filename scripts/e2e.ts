@@ -11,6 +11,7 @@ import {
   buildSession,
   clearSessionState,
   loadSession,
+  recordChallengeScore,
   saveSessionProgress,
   submitAnswers,
   getProgress,
@@ -19,6 +20,7 @@ import {
   shiftDay,
 } from "../src/lib/session";
 import { schedule, grade, type SrsState } from "../src/lib/srs";
+import { acceptedForms, normalize } from "../src/components/games/types";
 import type { Answer, Round } from "../src/lib/types";
 
 const USER = "e2e-user";
@@ -318,6 +320,38 @@ async function main() {
     `(${challenge.tiers.slice(0, 3).join("")}…${challenge.tiers.slice(-3).join("")})`,
   );
 
+  console.log("\n11c) Yazma oyununda kabul edilen yazımlar");
+  // Sözlük başlığı öğrencinin yazacağı şey değildir; başlıktan üretilen bütün
+  // makul yazımlar kabul edilmeli.
+  const accept: [string, string[]][] = [
+    ["setzen (sich)", ["setzen", "sich setzen"]],
+    ["sich setzen", ["setzen", "sich setzen"]],
+    ["der/die Bekannte", ["bekannte", "der bekannte", "die bekannte"]],
+    ["r/e Erwachsene", ["erwachsene", "der erwachsene", "die erwachsene"]],
+    ["heraus/raus", ["heraus", "raus"]],
+    ["hin/hin-/-hin", ["hin"]],
+    ["(Schlag-)Sahne", ["sahne", "schlagsahne"]],
+    ["gern/gerne", ["gern", "gerne"]],
+  ];
+  for (const [head, forms] of accept) {
+    const set = new Set(acceptedForms(head));
+    check(`"${head}" → ${forms.join(" / ")}`, forms.every((f) => set.has(f)),
+      `(${[...set].join(" | ")})`);
+  }
+  check(
+    "yanlış yazım kabul edilmiyor",
+    !new Set(acceptedForms("sich setzen")).has("sitzen"),
+  );
+
+  // Havuzdaki her başlık kendi normalize edilmiş hâliyle eşleşmeli.
+  const headwords = await db.select({ id: words.id, de: words.de }).from(words);
+  const unmatched = headwords.filter((w) => {
+    const forms = new Set(acceptedForms(w.de));
+    return !forms.has(normalize(w.de)) && !/[/()-]/.test(w.de);
+  });
+  check("her madde kendi yazımıyla eşleşiyor", unmatched.length === 0,
+    `(${unmatched.slice(0, 3).map((w) => w.de).join(", ")})`);
+
   console.log("\n12) SRS saf fonksiyon davranışı");
   let st: SrsState = {
     state: 0, ease: 2.5, intervalDays: 0, reps: 0, lapses: 0,
@@ -391,6 +425,16 @@ async function main() {
   await clearSessionState(USER);
   const cleared = await loadSession(USER, shiftDay(dayS, 1));
   check("kayıtlı tur silinince yeniden kuruluyor", cleared.resume === null);
+
+  console.log("\n14) Meydan okuma rekoru hesapta tutuluyor");
+  const first = await recordChallengeScore(USER, 120);
+  check("ilk rekor kaydediliyor", first.best === 120 && first.previous === 0);
+  const worse = await recordChallengeScore(USER, 80);
+  check("düşük skor rekoru bozmuyor", worse.best === 120 && worse.previous === 120);
+  const better = await recordChallengeScore(USER, 200);
+  check("yeni rekor önceki değerle birlikte dönüyor", better.best === 200 && better.previous === 120);
+  const chal = await buildChallenge(USER);
+  check("rekor meydan okuma verisiyle geliyor", chal.best === 200, `(${chal.best})`);
 
   await reset();
   await pool.end();

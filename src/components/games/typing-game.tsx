@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { normalize, withArtikel, type GameProps, typLabel } from "./types";
+import { acceptedForms, normalize, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
 
@@ -13,10 +13,6 @@ type Status = "idle" | "correct" | "wrong";
 
 const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
 
-/** Karşılaştırmadan önce baştaki artikel (der/die/das) ya da "sich" kaldırılır. */
-function compareKey(raw: string): string {
-  return normalize(raw).replace(/^(der|die|das|sich)\s+/, "");
-}
 
 /**
  * İpucu iskeleti: her kelime parçasının ilk harfi ve sonrasında her üçüncü harf
@@ -63,10 +59,14 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   function submit() {
     if (status !== "idle") return;
-    // Aynı Türkçe anlama sahip başka bir Almanca kelime yazıldıysa da doğru sayılır.
-    const typed = compareKey(value);
-    const accepted = [word.de, ...(round.alternatives ?? [])].map(compareKey);
-    const correct = accepted.includes(typed);
+    // Kabul edilen yazımlar: madde başlığının bütün makul biçimleri (artikelsiz,
+    // sich'siz, eğik çizgiyle ayrılanların her biri) ve aynı Türkçe anlama sahip
+    // diğer Almanca kelimeler.
+    const typed = normalize(value);
+    const accepted = new Set(
+      [word.de, ...(round.alternatives ?? [])].flatMap((w) => acceptedForms(w)),
+    );
+    const correct = accepted.has(typed);
     setStatus(correct ? "correct" : "wrong");
     const latencyMs = Date.now() - started.current;
     const wait = correct ? 750 : 1500;

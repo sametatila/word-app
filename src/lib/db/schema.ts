@@ -53,6 +53,9 @@ export const profiles = pgTable("profiles", {
   longestStreak: integer("longest_streak").notNull().default(0),
   lastActiveDay: date("last_active_day"),
   totalXp: integer("total_xp").notNull().default(0),
+  // Hayatta kalma turunun en iyi skoru. Cihazda değil burada durur: rekor
+  // hesaba aittir, telefonda kırılan rekor tarayıcıda da görünmelidir.
+  challengeBest: integer("challenge_best").notNull().default(0),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
