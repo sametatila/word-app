@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
-import { SpeakButton } from "@/components/speak-button";
+import { speakGerman, SpeakButton } from "@/components/speak-button";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -65,19 +65,28 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     const isCorrect = placed.map((t) => t.text).join(" ") === answer.join(" ");
     const latencyMs = Date.now() - started.current;
     setStatus(isCorrect ? "correct" : "wrong");
-    // Yanlışta doğru cümleyi okumaya vakit gerekir; cümle turları acele etmez.
-    const wait = isCorrect ? 1400 : 3000;
+    // Cümle tamamlanınca DOĞRU hâli bütün olarak okunuyor. Tek tek kelimeler
+    // yerleştirilirken duyulmuştu ama cümlenin ritmi ancak bütün okunduğunda
+    // çıkıyor — asıl öğrenilen şey o.
+    const full = [...answer, tail].filter(Boolean).join(" ");
+    speakGerman(full);
+    // Bütün cümlenin okunmasına yetecek süre; yanlışta doğrusunu görüp
+    // duyacak zaman da kalsın.
+    const wait = isCorrect ? 3200 : 4200;
     fx(isCorrect ? "correct" : "wrong", wait);
     timer.current = setTimeout(
       () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
       wait,
     );
-  }, [placed, status, answer, word.id, hintUsed]);
+  }, [placed, status, answer, tail, word.id, hintUsed]);
 
   const usedIds = new Set(placed.map((t) => t.id));
 
   function add(token: Token) {
     if (status !== "playing" || usedIds.has(token.id)) return;
+    // Her yerleştirilen kelime tek tek okunuyor: cümle kurulurken sırayı
+    // sesle takip etmek, Almanca sözcük dizilişini kulakla öğrenmenin yolu.
+    speakGerman(token.text);
     setPlaced((prev) => (prev.length >= answer.length ? prev : [...prev, token]));
   }
 
