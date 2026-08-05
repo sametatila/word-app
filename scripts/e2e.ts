@@ -612,32 +612,64 @@ async function main() {
   console.log("\n11m) Karşılıklı konuşma (diyalog)");
   const cafe = dialogues[0];
   check("diyalog havuzu var", dialogues.length > 0);
-  const turnIds = new Set(cafe.dialogue.map((t) => t.id));
-  check("tur kimlikleri benzersiz", turnIds.size === cafe.dialogue.length);
-  // Kırık bağlantı konuşmayı ortada bırakır: her `next` var olan bir tura gitmeli.
-  const brokenLinks = cafe.dialogue.flatMap((t) =>
-    t.replies.filter((r) => r.next && !turnIds.has(r.next)).map((r) => `${t.id} → ${r.next}`),
-  );
-  check("bütün dallar var olan bir tura gidiyor", brokenLinks.length === 0, `(${brokenLinks.join(", ")})`);
-  // Ulaşılamayan tur ölü içeriktir.
-  const reachable = new Set([cafe.dialogue[0].id]);
-  let grew = true;
-  while (grew) {
-    grew = false;
-    for (const t of cafe.dialogue) {
-      if (!reachable.has(t.id)) continue;
-      for (const r of t.replies) {
-        if (r.next && !reachable.has(r.next)) {
-          reachable.add(r.next);
-          grew = true;
+
+  // Yapısal kontroller **her** diyaloğa uygulanıyor. Eskiden yalnızca ilk
+  // diyaloğa bakılıyordu; havuza ikinci bir diyalog eklendiğinde kırık bir
+  // bağlantı ya da ölü bir tur sessizce yayına çıkardı.
+  for (const d of dialogues) {
+    const ids = new Set(d.dialogue.map((t) => t.id));
+    check(`[${d.id}] tur kimlikleri benzersiz`, ids.size === d.dialogue.length);
+
+    // Kırık bağlantı konuşmayı ortada bırakır: her `next` var olan bir tura gitmeli.
+    const broken = d.dialogue.flatMap((t) =>
+      t.replies.filter((r) => r.next && !ids.has(r.next)).map((r) => `${t.id} → ${r.next}`),
+    );
+    check(`[${d.id}] bütün dallar var olan bir tura gidiyor`, broken.length === 0,
+      `(${broken.join(", ")})`);
+
+    // Ulaşılamayan tur ölü içeriktir.
+    const seen = new Set([d.dialogue[0].id]);
+    let grew = true;
+    while (grew) {
+      grew = false;
+      for (const t of d.dialogue) {
+        if (!seen.has(t.id)) continue;
+        for (const r of t.replies) {
+          if (r.next && !seen.has(r.next)) {
+            seen.add(r.next);
+            grew = true;
+          }
         }
       }
     }
+    const orphans = d.dialogue.filter((t) => !seen.has(t.id)).map((t) => t.id);
+    check(`[${d.id}] ulaşılamayan tur yok`, orphans.length === 0, `(${orphans.join(", ")})`);
+
+    check(`[${d.id}] her turda geri dönüş örneği var`,
+      d.dialogue.every((t) => t.fallback.example.trim().length > 0));
+    check(`[${d.id}] her turda en az bir dal var`,
+      d.dialogue.every((t) => t.replies.length > 0));
+    check(`[${d.id}] her turda yönlendirme yazılı`,
+      d.dialogue.every((t) => t.cue.trim().length > 0));
+
+    // `uses` konuşma sonunda özetleniyor; tanımsız bir kalıba işaret etmesi
+    // özeti sessizce yanlış yapardı.
+    const targets = new Set(d.targets.map((t) => t.de));
+    const unknown = d.dialogue.flatMap((t) =>
+      t.replies.flatMap((r) => (r.uses ?? []).filter((u) => !targets.has(u))),
+    );
+    check(`[${d.id}] kullanılan kalıplar hedeflerde tanımlı`, unknown.length === 0,
+      `(${[...new Set(unknown)].join(", ")})`);
+
+    // Geri dönüş örneği, hiçbir dalın tutmadığı durumda gösteriliyor. Örnek
+    // cümlenin kendisi bir dala uymuyorsa öğrenciye çalışmayan bir çıkış yolu
+    // gösterilmiş olur.
+    const deadEnds = d.dialogue
+      .filter((t) => matchReply(t.fallback.example, t.replies) === null)
+      .map((t) => t.id);
+    check(`[${d.id}] geri dönüş örneği bir dala uyuyor`, deadEnds.length === 0,
+      `(${deadEnds.join(", ")})`);
   }
-  const orphan = cafe.dialogue.filter((t) => !reachable.has(t.id)).map((t) => t.id);
-  check("ulaşılamayan tur yok", orphan.length === 0, `(${orphan.join(", ")})`);
-  check("her turda geri dönüş örneği var",
-    cafe.dialogue.every((t) => t.fallback.example.trim().length > 0));
 
   // Asıl işlev: söylenen şeye göre farklı dal seçilmeli.
   const start = cafe.dialogue[0];

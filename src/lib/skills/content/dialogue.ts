@@ -211,4 +211,128 @@ export const dialogues: SpeakingDialogueExercise[] = [
       },
     ],
   },
+
+  // ─────────────────── A1 · yol sormak ───────────────────
+  //
+  // Kafe diyaloğu A2; havuzda başlangıç seviyesi yoktu. Yol sormak bunun için
+  // iyi bir tema: kelime dağarcığı dar, kalıplar sayılı ve gerçekten ilk
+  // günden lazım olan şey.
+  {
+    id: "a1-d1",
+    level: "A1",
+    skill: "speaking",
+    title: "Nach dem Weg fragen",
+    genre: "Diyalog",
+    intro:
+      "Sokakta birine yol soruyorsun. Yüksek sesle Almanca cevap ver — ne dediğine göre konuşma değişir.",
+    minutes: 5,
+    gloss: [
+      { de: "der Bahnhof", tr: "tren istasyonu" },
+      { de: "die Apotheke", tr: "eczane" },
+      { de: "geradeaus", tr: "dümdüz" },
+      { de: "links / rechts", tr: "sol / sağ" },
+      { de: "zu Fuß", tr: "yürüyerek" },
+    ],
+    targets: [
+      { de: "Entschuldigung, wo ist …?", tr: "Affedersiniz, … nerede?" },
+      { de: "Wie komme ich zum …?", tr: "…'a nasıl giderim?" },
+      { de: "Ist es weit?", tr: "Uzak mı?" },
+      { de: "Vielen Dank!", tr: "Çok teşekkürler!" },
+    ],
+    dialogue: [
+      {
+        id: "start",
+        ask: "Entschuldigung, kann ich Ihnen helfen? Sie sehen verloren aus.",
+        askTr: "Affedersiniz, yardım edebilir miyim? Kaybolmuş görünüyorsunuz.",
+        cue: "Nereye gitmek istediğini söyle: „Wo ist der Bahnhof?“ ya da „Ich suche die Apotheke.“",
+        replies: [
+          {
+            match: ["bahnhof", "zug", "bahn"],
+            say: "Der Bahnhof? Gehen Sie geradeaus, dann links.",
+            sayTr: "İstasyon mu? Dümdüz gidin, sonra sola.",
+            next: "far",
+            uses: ["Entschuldigung, wo ist …?"],
+          },
+          {
+            match: ["apotheke", "medikament"],
+            say: "Die Apotheke ist gleich um die Ecke, rechts.",
+            sayTr: "Eczane hemen köşeyi dönünce, sağda.",
+            next: "far",
+            uses: ["Entschuldigung, wo ist …?"],
+          },
+          {
+            match: ["supermarkt", "einkaufen", "laden"],
+            say: "Der Supermarkt ist dort drüben, neben der Bank.",
+            sayTr: "Süpermarket şurada, bankanın yanında.",
+            next: "far",
+            uses: ["Wie komme ich zum …?"],
+          },
+        ],
+        fallback: {
+          say: "Entschuldigung, das habe ich nicht verstanden. Wohin möchten Sie?",
+          sayTr: "Pardon, anlayamadım. Nereye gitmek istiyorsunuz?",
+          example: "Wo ist der Bahnhof?",
+        },
+      },
+      {
+        id: "far",
+        ask: "Möchten Sie noch etwas wissen? Ist es weit für Sie?",
+        askTr: "Başka bir şey öğrenmek ister misiniz? Sizin için uzak mı?",
+        cue: "Uzak olup olmadığını sor ya da yürüyerek mi gideceğini söyle.",
+        replies: [
+          {
+            match: ["weit", "wie lang", "wie weit", "minuten"],
+            say: "Nein, nur fünf Minuten zu Fuß.",
+            sayTr: "Hayır, yürüyerek sadece beş dakika.",
+            next: "thanks",
+            uses: ["Ist es weit?"],
+          },
+          {
+            match: ["fuss", "fuß", "laufen", "gehen"],
+            say: "Ja, zu Fuß ist es sehr einfach.",
+            sayTr: "Evet, yürüyerek çok kolay.",
+            next: "thanks",
+            uses: ["Ist es weit?"],
+          },
+          {
+            match: ["bus", "tram", "taxi"],
+            say: "Mit dem Bus geht es auch — Linie 4.",
+            sayTr: "Otobüsle de olur — 4 numaralı hat.",
+            next: "thanks",
+            uses: ["Wie komme ich zum …?"],
+          },
+        ],
+        fallback: {
+          say: "Es ist nicht weit. Haben Sie noch eine Frage?",
+          sayTr: "Uzak değil. Başka sorunuz var mı?",
+          example: "Ist es weit von hier?",
+        },
+      },
+      {
+        id: "thanks",
+        ask: "Gern geschehen. Alles klar?",
+        askTr: "Rica ederim. Her şey tamam mı?",
+        cue: "Teşekkür et: „Vielen Dank!“",
+        replies: [
+          {
+            match: ["danke", "dank", "vielen"],
+            say: "Bitte schön. Einen schönen Tag noch!",
+            sayTr: "Rica ederim. İyi günler!",
+            uses: ["Vielen Dank!"],
+          },
+          {
+            match: ["ja", "alles klar", "klar", "gut"],
+            say: "Sehr gut. Viel Erfolg!",
+            sayTr: "Çok iyi. Başarılar!",
+            uses: ["Vielen Dank!"],
+          },
+        ],
+        fallback: {
+          say: "Schönen Tag noch!",
+          sayTr: "İyi günler!",
+          example: "Vielen Dank!",
+        },
+      },
+    ],
+  },
 ];
