@@ -34,6 +34,7 @@ import { dialogues } from "../src/lib/skills/content/dialogue";
 import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { systemPrompt } from "../src/lib/chat";
+import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 
@@ -443,6 +444,55 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11o) Sohbet sağlayıcı seçimi");
+  // Anahtarları test boyunca kendimiz kuruyoruz; sonunda eski hâline dönüyor.
+  const envBackup = {
+    gemini: process.env.GEMINI_API_KEY,
+    anthropic: process.env.ANTHROPIC_API_KEY,
+    github: process.env.GITHUB_MODELS_API_KEY,
+    preferred: process.env.CHAT_PROVIDER,
+  };
+  const setKeys = (gemini?: string, anthropic?: string, github?: string, preferred?: string) => {
+    for (const [k, v] of Object.entries({
+      GEMINI_API_KEY: gemini,
+      ANTHROPIC_API_KEY: anthropic,
+      GITHUB_MODELS_API_KEY: github,
+      CHAT_PROVIDER: preferred,
+    })) {
+      if (v) process.env[k] = v;
+      else delete process.env[k];
+    }
+  };
+
+  setKeys();
+  check("anahtar yoksa sohbet kapalı", chatConfigured() === false);
+  check("anahtar yoksa denenecek sağlayıcı yok", chatProviders().length === 0);
+
+  setKeys(undefined, undefined, "gh");
+  check("tek anahtar varsa o seçilir", chatProviders()[0]?.name === "github");
+  check("tek anahtarla sohbet açık", chatConfigured() === true);
+
+  // Ücretsiz ve kaliteli olan başta: üçü de varken Gemini önde olmalı.
+  setKeys("gm", "an", "gh");
+  check("varsayılan sıra Gemini ile başlıyor", chatProviders()[0]?.name === "gemini",
+    `(${chatProviders()[0]?.name})`);
+  check("yedekler de sırada", chatProviders().map((p) => p.name).join(",") === "gemini,anthropic,github",
+    `(${chatProviders().map((p) => p.name).join(",")})`);
+
+  setKeys("gm", "an", "gh", "anthropic");
+  check("CHAT_PROVIDER seçimi öne alıyor", chatProviders()[0]?.name === "anthropic");
+  check("öne alınan sağlayıcı listede tekrarlanmıyor",
+    new Set(chatProviders().map((p) => p.name)).size === chatProviders().length);
+
+  // Yanlış yazılmış bir değişken sohbeti tamamen kapatmamalı.
+  setKeys("gm", undefined, undefined, "anthropic");
+  check("anahtarsız CHAT_PROVIDER yok sayılıyor", chatProviders()[0]?.name === "gemini",
+    `(${chatProviders()[0]?.name})`);
+  setKeys("gm", undefined, undefined, "bilinmeyen");
+  check("tanınmayan CHAT_PROVIDER sohbeti kapatmıyor", chatProviders()[0]?.name === "gemini");
+
+  setKeys(envBackup.gemini, envBackup.anthropic, envBackup.github, envBackup.preferred);
 
   console.log("\n11n) Sohbet cevabının biçimi");
   // İşaretler sistem isteminde ve ayrıştırıcıda ayrı yazılsaydı biri

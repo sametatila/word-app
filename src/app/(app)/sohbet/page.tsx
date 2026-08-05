@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { chatConfigured } from "@/lib/chat";
+import { chatConfigured } from "@/lib/chat-providers";
 import { ChatPlayer } from "@/components/chat-player";
 
 export const dynamic = "force-dynamic";

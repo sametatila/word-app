@@ -28,7 +28,8 @@ uygulama gibi tam ekran açılır (PWA).
   dokunulabilir öneriler, mikrofonla sesli cevap ve umlaut tuşları var. **Eller serbest**
   anahtarı açıkken tek bir döngü kurulur — cevap sesli okunur, okuma biter bitmez mikrofon
   kendiliğinden açılır, söylediğin doğrudan gönderilir; telefona hiç dokunmazsın. GitHub Models'in ücretsiz
-  katmanında çalışır (Llama-3.3-70B-Instruct); anahtar yoksa sayfa çökmez, ne yapılacağını söyler.
+  Gemini (ücretsiz), Anthropic ya da GitHub Models üzerinden çalışır; anahtarı olan ilk
+  sağlayıcı seçilir, düşerse yedeğe geçilir. Anahtar yoksa sayfa çökmez, ne yapılacağını söyler.
 - **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
   kelime listesinde ve Cümleyi Tamamla oyununda görünür.
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
@@ -83,13 +84,20 @@ DATABASE_URL="postgresql://user:pass@ep-xxx-pooler.<region>.aws.neon.tech/neondb
 NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
 NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 
-# Sohbet (/sohbet) — GitHub Models ücretsiz katmanı. models:read yetkili GitHub PAT yeter.
-GITHUB_MODELS_API_KEY="github_pat_..."
+# Sohbet (/sohbet) — üçünden biri yeter. Sıra: gemini → anthropic → github.
+GEMINI_API_KEY="..."            # önerilen: AI Studio ücretsiz katmanı
+# ANTHROPIC_API_KEY="..."       # ücretli, kural takibi en iyi olan
+# GITHUB_MODELS_API_KEY="..."   # ücretsiz, Llama-3.3-70B
 ```
 
-`GITHUB_MODELS_API_KEY` boş bırakılırsa yalnızca `/sohbet` kapalı görünür; uygulamanın geri
-kalanı etkilenmez. Anahtar **koda gömülmez** — bu depo GitHub'a push ediliyor ve GitHub kendi
-token biçimini tarayıp bulduğu anda iptal ediyor.
+Sohbet üç sağlayıcıyı da destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
+Gemini → Anthropic → GitHub Models). Birden fazlası tanımlıysa birincil düşünce diğerine
+geçilir — akış başlamadan önce; başladıktan sonra yarım cümlenin üstüne başka modelin
+cevabını eklemek doğru olmazdı. Sırayı `CHAT_PROVIDER` ile ezebilirsin. Hiçbiri yoksa yalnızca
+`/sohbet` kapalı görünür, uygulamanın geri kalanı etkilenmez.
+
+Anahtarlar **koda gömülmez** — bu depo GitHub'a push ediliyor ve GitHub kendi token biçimini
+tarayıp bulduğu anda iptal ediyor.
 
 `NEON_AUTH_*` boş bırakılırsa uygulama **demo modunda** tek kullanıcıyla çalışır — veritabanı
 bağlıysa tüm oyunlar, ilerleme ve streak çalışır. İki değer eklenince giriş/kayıt (`/giris`)
@@ -120,7 +128,7 @@ vercel link
 vercel env add DATABASE_URL production                     # ve preview/development
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
-vercel env add GITHUB_MODELS_API_KEY production   # /sohbet için; yoksa yalnızca o sayfa kapalı
+vercel env add GEMINI_API_KEY production                    # /sohbet için; yoksa yalnızca o sayfa kapalı
 vercel --prod
 ```
 
@@ -161,7 +169,7 @@ src/
     kurs-sec                ilk giriş: kurs + başlangıç seviyesi
     (app)/learn|words|skills|sohbet|profile
     api/session             oturum kuyruğunu üretir
-    api/chat                sohbet partneri (GitHub Models, akışlı)
+    api/chat                sohbet partneri (akışlı; sağlayıcı seçimi chat-providers.ts)
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
     api/words/known         "bunu zaten biliyorum" işaretlemesi

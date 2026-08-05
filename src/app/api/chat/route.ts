@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { buildChatContext, chatConfigured, streamChat, type ChatMessage } from "@/lib/chat";
+import { buildChatContext, streamChat, type ChatMessage } from "@/lib/chat";
+import { chatConfigured } from "@/lib/chat-providers";
 
 export const dynamic = "force-dynamic";
 

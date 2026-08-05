@@ -4,27 +4,21 @@ import { db } from "@/lib/db";
 import { profiles, userWords, words } from "@/lib/db/schema";
 import { ensureProfile } from "@/lib/session";
 import { CORRECTION_MARK, SUGGESTION_MARK } from "@/lib/chat-format";
+import { chatProviders, type ChatMessage } from "@/lib/chat-providers";
 
 /**
- * Sohbet ortağı — GitHub Models üzerinden.
+ * Sohbet ortağı.
  *
- * Sağlayıcı EğitimKit'in satış danışmanı botuyla aynı: GitHub Models
- * çıkarım uçları (OpenAI uyumlu, SSE akışı) ve Llama-3.3-70B-Instruct.
- * Ücretsiz katmanda çalışır — konuşma alıştırmalarında "açık uçlu muhatap
- * için dil modeli gerekir ve o paralı" dediğim sınır bu sayede kalkıyor.
+ * Sağlayıcı seçimi ve akış chat-providers.ts'te; burada konuşmanın zemini
+ * (seviye, kurs, çalışılan kelimeler) ve sistem istemi kuruluyor.
  *
- * Anahtar koda gömülmez. Bu depo GitHub'a push ediliyor ve GitHub kendi
+ * Anahtarlar koda gömülmez. Bu depo GitHub'a push ediliyor ve GitHub kendi
  * token biçimini tarayıp bulduğu anda iptal ediyor; gömülen anahtar hem
  * burada hem EğitimKit'te birkaç dakika içinde ölürdü. `.env` zaten
- * .gitignore'da, Vercel'e taşımak da tek satır.
+ * .gitignore'da, Vercel'e taşımak da tek değişken.
  */
 
-const ENDPOINT = "https://models.github.ai/inference/chat/completions";
-const MODEL = process.env.GITHUB_MODELS_MODEL || "Llama-3.3-70B-Instruct";
-/** İlk chunk'a kadar beklenecek süre; ağ takılırsa kullanıcı sonsuza kadar beklemesin. */
-const TIMEOUT_MS = 30_000;
-
-export type ChatMessage = { role: "user" | "assistant"; content: string };
+export type { ChatMessage };
 
 /** Sohbetin hangi seviyede ve hangi kelimelerle yürüyeceği. */
 export type ChatContext = {
@@ -33,10 +27,6 @@ export type ChatContext = {
   /** Öğrencinin şu sıralar çalıştığı kelimeler — konuşmaya bunlar dokunur. */
   focus: { de: string; tr: string }[];
 };
-
-export function chatConfigured(): boolean {
-  return Boolean(process.env.GITHUB_MODELS_API_KEY);
-}
 
 /**
  * Konuşmanın zeminini kurar: seviye, kurs ve öğrencinin o an çalıştığı kelimeler.
@@ -116,78 +106,38 @@ Karakter bütünlüğüne dikkat et: Almanca (ä ö ü ß) ve Türkçe (ç ğ ı
 }
 
 /**
- * Yanıtı parça parça akıtır.
+ * Yanıtı parça parça akıtır; birincil sağlayıcı düşerse yedeğe geçer.
  *
  * Akış tercih ediliyor çünkü bekleme süresi konuşma hissini bozuyor: cevabın
  * tamamı gelene kadar boş ekrana bakmak yerine kelimeler belirdikçe okunuyor.
+ *
+ * Yedeğe **yalnızca tek bir parça bile gönderilmeden önce** geçiliyor. Akış
+ * başladıktan sonra sağlayıcı değiştirmek yarım cümlenin üstüne başka bir
+ * modelin cevabını eklemek olurdu; o noktadan sonra hata kullanıcıya bildirilir.
  */
 export async function* streamChat(
   messages: ChatMessage[],
   ctx: ChatContext,
 ): AsyncGenerator<string> {
-  const apiKey = process.env.GITHUB_MODELS_API_KEY;
-  if (!apiKey) throw new Error("GITHUB_MODELS_API_KEY tanımsız");
+  const providers = chatProviders();
+  if (!providers.length) throw new Error("Sohbet sağlayıcısı tanımlı değil");
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const system = systemPrompt(ctx);
+  const failures: string[] = [];
 
-  let response: Response;
-  try {
-    response = await fetch(ENDPOINT, {
-      method: "POST",
-      signal: controller.signal,
-      headers: {
-        authorization: `Bearer ${apiKey}`,
-        "content-type": "application/json",
-        accept: "text/event-stream",
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        stream: true,
-        max_tokens: 400,
-        // Düşük sıcaklık: küçük modellerde Türkçe/Almanca harf bozulmasını
-        // ve kural kaçırmayı azaltıyor (satış botunda da aynı sebeple 0.2).
-        temperature: 0.3,
-        messages: [{ role: "system", content: systemPrompt(ctx) }, ...messages],
-      }),
-    });
-  } finally {
-    clearTimeout(timeout);
-  }
-
-  if (!response.ok || !response.body) {
-    const detail = await response.text().catch(() => "");
-    throw new Error(`GitHub Models ${response.status}: ${detail.slice(0, 300)}`);
-  }
-
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = "";
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-
-    // SSE çerçeveleri satır satır gelir ama chunk sınırı satırın ortasına
-    // düşebilir; son yarım satır tamponda bekletilir.
-    const lines = buffer.split("\n");
-    buffer = lines.pop() ?? "";
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed.startsWith("data:")) continue;
-      const payload = trimmed.slice(5).trim();
-      if (!payload || payload === "[DONE]") continue;
-      try {
-        const parsed = JSON.parse(payload) as {
-          choices?: { delta?: { content?: string } }[];
-        };
-        const delta = parsed.choices?.[0]?.delta?.content;
-        if (delta) yield delta;
-      } catch {
-        /* yarım ya da bozuk çerçeve — atla, akış sürsün */
+  for (const provider of providers) {
+    let started = false;
+    try {
+      for await (const delta of provider.stream(system, messages)) {
+        started = true;
+        yield delta;
       }
+      return;
+    } catch (err) {
+      if (started) throw err;
+      failures.push(`${provider.name}: ${(err as Error).message}`);
     }
   }
+
+  throw new Error(`Tüm sağlayıcılar başarısız — ${failures.join(" | ")}`);
 }

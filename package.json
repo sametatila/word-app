@@ -21,6 +21,7 @@
     "db:verify": "tsx scripts/verify-live.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
     "@neondatabase/auth": "^0.4.2-beta",
     "@neondatabase/serverless": "^1.0.1",
     "drizzle-orm": "^0.45.2",
