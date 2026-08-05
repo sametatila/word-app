@@ -7,7 +7,17 @@
  */
 
 /** Tanıyıcının tipleri lib.dom'da güvenilir biçimde yok; asgari yüzey. */
-export type RecognitionAlternative = { transcript: string };
+export type RecognitionAlternative = {
+  transcript: string;
+  /**
+   * Tanıyıcının bu adaya güveni (0-1).
+   *
+   * Her tarayıcı doldurmuyor — Chrome ilk adayda veriyor, sonrakilerde
+   * çoğunlukla 0 bırakıyor; Safari hiç vermeyebiliyor. Bu yüzden değerlendirme
+   * buna **bağlı olamaz**, yalnızca varsa dikkate alınır (bkz. lib/speech.ts).
+   */
+  confidence?: number;
+};
 export type RecognitionResult = { length: number; [i: number]: RecognitionAlternative };
 export type RecognitionEvent = {
   results: { length: number; [i: number]: RecognitionResult };

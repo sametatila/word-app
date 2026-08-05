@@ -91,12 +91,16 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
 
     rec.onresult = (event) => {
       const heard: string[] = [];
+      const scores: number[] = [];
       for (let i = 0; i < event.results.length; i++) {
         const result = event.results[i];
-        for (let j = 0; j < result.length; j++) heard.push(result[j].transcript);
+        for (let j = 0; j < result.length; j++) {
+          heard.push(result[j].transcript);
+          scores.push(result[j].confidence ?? 0);
+        }
       }
       setPhase("judging");
-      const outcome = judgeSpeech(task.de, heard, task.confusions ?? []);
+      const outcome = judgeSpeech(task.de, heard, task.confusions ?? [], scores);
       setVerdict(outcome);
       setPhase("done");
 
@@ -360,7 +364,7 @@ function Feedback({
   const tone =
     verdict.kind === "correct"
       ? "var(--color-mint-500)"
-      : verdict.kind === "partial"
+      : verdict.kind === "partial" || verdict.kind === "uncertain"
         ? "var(--color-flame-500)"
         : "var(--color-rose-500)";
 
@@ -376,6 +380,22 @@ function Feedback({
         <p className="flex items-center justify-center gap-2 text-sm font-bold" style={{ color: tone }}>
           <CheckIcon size={16} /> Anlaşıldı
         </p>
+      ) : verdict.kind === "uncertain" ? (
+        // Emin olmadığımızda emin numarası yapmıyoruz. Rakip uygulamaların
+        // en sık şikâyet edilen davranışı bunun tersi: tanıyıcı zorlanınca
+        // "doğru" deyip geçiyorlar ve öğrenci yanlışını hiç öğrenmiyor.
+        <div>
+          <p className="flex items-center gap-2 text-sm font-bold" style={{ color: tone }}>
+            <AlertIcon size={15} /> Tam net duyulmadı
+          </p>
+          <p className="muted mt-2 text-sm">
+            Duyulan: <span className="font-semibold">“{verdict.heard}”</span>
+          </p>
+          <p className="muted mt-2 text-sm">
+            Doğru söylemiş olabilirsin ama tanıyıcı emin değil. Biraz daha yüksek
+            sesle ve heceleri ayırarak bir kez daha söyle.
+          </p>
+        </div>
       ) : verdict.kind === "unheard" ? (
         <p className="muted text-center text-sm">
           Hiçbir şey duyulmadı. Mikrofona yaklaş ve biraz daha yüksek sesle söyle.

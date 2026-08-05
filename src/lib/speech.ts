@@ -36,11 +36,28 @@ export type SpeechVerdict =
   | { kind: "partial"; heard: string; missing: string[] }
   /** Büyük ölçüde başka bir şey duyuldu. */
   | { kind: "different"; heard: string; missing: string[] }
+  /**
+   * Hedef duyulmuş olabilir ama tanıyıcı bundan emin değil.
+   *
+   * Ayrı bir durum olarak duruyor çünkü "doğru" demek yanlış olurdu ve
+   * "yanlış" demek de haksız. Öğrenciye olan biteni olduğu gibi söyleyip
+   * tekrar denemesini istemek dürüst olan.
+   */
+  | { kind: "uncertain"; heard: string }
   /** Hiçbir şey tanınmadı (sessizlik, gürültü, mikrofon sorunu). */
   | { kind: "unheard" };
 
 /** Bu orana kadar eksik kelime "az kaldı" sayılır. */
 const PARTIAL_TOLERANCE = 1 / 3;
+
+/**
+ * En iyi adayın onaylanması için gereken asgari güven.
+ *
+ * Tarayıcılar bu değeri tutarlı doldurmuyor, o yüzden eşik yalnızca gerçekten
+ * bir sayı geldiğinde uygulanıyor. Amaç düşük güvenli bir tanımayı "doğru"
+ * diye geçirmemek; güven bildirmeyen tarayıcıda davranış değişmiyor.
+ */
+const MIN_CONFIDENCE = 0.6;
 
 const PUNCTUATION = /[.,!?;:„“”"'`´()[\]…]/g;
 
@@ -82,15 +99,30 @@ function missingFrom(goal: string[], heard: string[]): string[] {
 /**
  * Söylenenle hedefi karşılaştırır.
  *
- * `alternatives` tanıyıcının n-best listesidir (SpeechRecognition
- * `maxAlternatives`). Birden fazla aday istemek karışma kümesini yakalama
- * şansını artırır: tanıyıcı ilk sırada dil modeliyle "düzeltilmiş" hâli
- * verirken, ikinci sırada gerçekte duyduğu biçimi taşıyabilir.
+ * `alternatives` tanıyıcının n-best listesidir; **sıra anlamlıdır** ve ilk
+ * sıradaki tanıyıcının en iyi tahminidir.
+ *
+ * Buradaki en önemli karar hangi adayın "doğru" saymaya yeteceği. Önceden
+ * beş adaydan **herhangi biri** tutunca doğru deniyordu ve bu, bu ürün
+ * kategorisinin imza hatasını taşıyordu: rakip uygulamalarda bilerek yanlış
+ * telaffuz edilen kelimeye "doğru" denmesinin mekanizması tam olarak bu.
+ * Beş tahmin isteyip birinin tutmasını beklemek, kötü telaffuzu ödüllendiren
+ * bir piyango kurmak demek — aday sayısı arttıkça yanlış onay olasılığı da
+ * artıyor.
+ *
+ * Yeni kural: doğruluk yalnızca **en iyi adaydan** kabul ediliyor. Hedef
+ * ancak alt sıralarda göründüyse bu "tanındın" değil "belki" demek; o durum
+ * `uncertain` olarak dönüyor ve öğrenciye dürüstçe tekrar sorulabiliyor.
+ *
+ * Alt adaylar yine de okunuyor ama başka bir iş için: karışma kümesini
+ * yakalamak. Tanıyıcı ilk sırada dil modeliyle "düzeltilmiş" hâli verirken
+ * ikinci sırada gerçekte duyduğu biçimi taşıyabiliyor — teşhis oradan çıkıyor.
  */
 export function judgeSpeech(
   target: string,
   alternatives: string[],
   confusions: SpeechConfusion[] = [],
+  confidences: number[] = [],
 ): SpeechVerdict {
   const heardList = alternatives.map(normalizeSpoken).filter(Boolean);
   if (!heardList.length) return { kind: "unheard" };
@@ -98,13 +130,23 @@ export function judgeSpeech(
   const goal = normalizeSpoken(target);
   const goalWords = wordsOf(target);
 
-  // 1) Adaylardan biri hedefi birebir ya da kelime kelime karşılıyorsa doğru.
-  //    Tanıyıcı noktalamayı ve büyük harfi kendi kurallarıyla yazdığı için
-  //    kelime kümesi karşılaştırması metin eşitliğinden daha güvenilir.
-  for (const heard of heardList) {
-    if (heard === goal) return { kind: "correct", heard };
-    if (missingFrom(goalWords, wordsOf(heard)).length === 0) return { kind: "correct", heard };
+  // 1) Doğruluk yalnızca en iyi adaydan kabul edilir.
+  const best = heardList[0];
+  const bestConfidence = confidences[0];
+  if (matchesGoal(best, goal, goalWords)) {
+    // Tanıyıcı güvenini bildirdiyse ve düşükse onaylamıyoruz. Bildirmeyen
+    // tarayıcılar var (Safari) ve orada eskisi gibi davranılıyor: güven
+    // yokluğu bir suçlama sebebi değil.
+    if (typeof bestConfidence === "number" && bestConfidence > 0 && bestConfidence < MIN_CONFIDENCE) {
+      return { kind: "uncertain", heard: best };
+    }
+    return { kind: "correct", heard: best };
   }
+
+  // Hedef yalnızca alt sıralarda geçiyorsa: tanıyıcı bunu ilk tahmini yapmadı.
+  // Söylenen muhtemelen hedefe yakın ama net değil — dürüst cevap "emin değilim".
+  const lowerHit = heardList.slice(1).find((heard) => matchesGoal(heard, goal, goalWords));
+  if (lowerHit) return { kind: "uncertain", heard: heardList[0] };
 
   // 2) Bilinen sapmalar. "Farklı bir şey söyledin"den ÖNCE bakılır: elimizde
   //    hedefli bir açıklama varsa genel bir uyarı vermek onu israf etmek olur.
@@ -124,20 +166,28 @@ export function judgeSpeech(
   }
 
   // 3) Ne kadarı tuttu? En çok kelimeyi yakalayan aday üzerinden konuşulur.
-  let best = heardList[0];
-  let missing = missingFrom(goalWords, wordsOf(best));
+  let closest = heardList[0];
+  let missing = missingFrom(goalWords, wordsOf(closest));
   for (const heard of heardList.slice(1)) {
     const candidate = missingFrom(goalWords, wordsOf(heard));
     if (candidate.length < missing.length) {
-      best = heard;
+      closest = heard;
       missing = candidate;
     }
   }
 
   const ratio = goalWords.length ? missing.length / goalWords.length : 1;
   return ratio <= PARTIAL_TOLERANCE
-    ? { kind: "partial", heard: best, missing }
-    : { kind: "different", heard: best, missing };
+    ? { kind: "partial", heard: closest, missing }
+    : { kind: "different", heard: closest, missing };
+}
+
+/** Bir adayın hedefi karşılayıp karşılamadığı — metin ve kelime kümesi. */
+function matchesGoal(heard: string, goal: string, goalWords: string[]): boolean {
+  if (heard === goal) return true;
+  // Tanıyıcı noktalamayı ve büyük harfi kendi kurallarıyla yazdığı için
+  // kelime kümesi karşılaştırması metin eşitliğinden daha güvenilir.
+  return missingFrom(goalWords, wordsOf(heard)).length === 0;
 }
 
 /** Görev sayılırken yalnızca tam tanınma "doğru" kabul edilir. */

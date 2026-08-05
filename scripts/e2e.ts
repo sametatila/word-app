@@ -501,6 +501,30 @@ async function main() {
 
   setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
 
+  console.log("\n11q) Telaffuz değerlendirmesi yanlış onay vermiyor");
+  // Kategorinin imza hatası: rakip uygulamalarda bilerek yanlış söylenen
+  // kelimeye "doğru" deniyor. Mekanizma, n-best listesindeki herhangi bir
+  // adayın tutmasını yeterli saymak. Aşağıdaki kontroller o kapıyı kapatıyor.
+  check("en iyi aday tutarsa doğru",
+    judgeSpeech("Ich bin müde.", ["ich bin müde", "ich bin mude"]).kind === "correct");
+  check("hedef yalnızca alt sırada ise doğru sayılmıyor",
+    judgeSpeech("Ich bin müde.", ["ich bin mode", "ich bin müde"]).kind === "uncertain",
+    `(${judgeSpeech("Ich bin müde.", ["ich bin mode", "ich bin müde"]).kind})`);
+  check("düşük güvenli en iyi aday onaylanmıyor",
+    judgeSpeech("Ich bin müde.", ["ich bin müde"], [], [0.3]).kind === "uncertain");
+  check("yüksek güvenli en iyi aday onaylanıyor",
+    judgeSpeech("Ich bin müde.", ["ich bin müde"], [], [0.9]).kind === "correct");
+  // Safari güven bildirmiyor; orada eski davranış sürmeli, yoksa o tarayıcıda
+  // hiçbir cevap onaylanmazdı.
+  check("güven bildirilmemişse onay veriliyor",
+    judgeSpeech("Ich bin müde.", ["ich bin müde"], [], [0]).kind === "correct");
+  check("emin olunmayan durum doğru sayılmıyor",
+    isSpeechCorrect({ kind: "uncertain", heard: "ich bin mude" }) === false);
+  // Alt adaylar hâlâ teşhis için okunuyor: karışma kümesi orada yakalanıyor.
+  check("karışma alt sıradan da yakalanıyor",
+    judgeSpeech("Ich bin müde.", ["etwas anderes", "ich bin mode"],
+      [{ heard: ["mode"], fix: "ü kısaldı", expected: "müde" }]).kind === "confusion");
+
   console.log("\n11p) Seslendirme sesi kursa bağlı");
   check("Almanca kursunun varsayılanı Seraphina",
     defaultVoice("de") === "de-DE-SeraphinaMultilingualNeural");
@@ -688,9 +712,14 @@ async function main() {
   check("hiç ses tanınmadıysa 'unheard'", judgeSpeech("Guten Tag", []).kind === "unheard");
   check("boş metin de tanınmamış sayılıyor",
     judgeSpeech("Guten Tag", ["", "   "]).kind === "unheard");
-  // n-best listesi: doğru biçim ikinci sırada olsa da kabul edilir.
-  check("n-best listesindeki doğru aday kabul ediliyor",
-    judgeSpeech("Ich bin müde.", ["Ich bin Mode", "Ich bin müde"]).kind === "correct");
+  // Bu kontrol eskiden tersini doğruluyordu: "doğru biçim ikinci sırada olsa
+  // da kabul edilir". O davranış bilerek kaldırıldı — beş adaydan birinin
+  // tutmasını yeterli saymak, kötü telaffuzu onaylayan bir piyangoydu ve bu
+  // ürün kategorisinin en sık şikâyet edilen hatasının mekanizmasıydı.
+  // Geri alınmasın diye beklenti burada açıkça yazılı.
+  check("doğru biçim yalnızca alt sıradaysa onaylanmıyor",
+    judgeSpeech("Ich bin müde.", ["Ich bin Mode", "Ich bin müde"]).kind === "uncertain",
+    `(${judgeSpeech("Ich bin müde.", ["Ich bin Mode", "Ich bin müde"]).kind})`);
   check("yalnızca tam tanınma doğru sayılıyor",
     isSpeechCorrect(partial) === false &&
       isSpeechCorrect(judgeSpeech("Guten Tag", ["Guten Tag"])) === true);
