@@ -22,6 +22,7 @@ import {
 import { schedule, grade, type SrsState } from "../src/lib/srs";
 import { acceptedForms, normalize } from "../src/components/games/types";
 import { pluralChoices, umlautStem } from "../src/lib/german";
+import { firstExample } from "../src/lib/example";
 import type { Answer, Round } from "../src/lib/types";
 
 const USER = "e2e-user";
@@ -391,6 +392,46 @@ async function main() {
       `(${orderRound.tokens.join(" ")})`);
     check("noktalama ayrıca taşınıyor", /^[.!?…]*$/.test(orderRound.tail), `(${orderRound.tail})`);
   }
+
+  console.log("\n11i) Eğik çizgiyle ayrılmış örnek cümleler");
+  check(
+    "noktalamadan sonraki çizgi cümleyi bitiriyor",
+    firstExample("Die Zeitung ist auf dem Tisch./ Auf dem Foto bin ich mit meiner Schwester.") ===
+      "Die Zeitung ist auf dem Tisch.",
+  );
+  check(
+    "boşluklu çizgi de sınır",
+    firstExample("Gefällt dir die Jacke? / Nein, die andere finde ich schöner.") ===
+      "Gefällt dir die Jacke?",
+  );
+  check(
+    "çizgiden önce boşluk yokken de bölünüyor",
+    firstExample("Wann kommt ihr aus der Schule?/ Ich komme aus Deutschland.") ===
+      "Wann kommt ihr aus der Schule?",
+  );
+  // Cümle içindeki alternatif çizgiler tek bir ifadedir, bölünmemeli.
+  check(
+    "cümle içi alternatif bölünmüyor",
+    firstExample("Ist das Ihr Hund/Ihre Katze?") === "Ist das Ihr Hund/Ihre Katze?",
+  );
+  check(
+    "noktalamasız çizgi listesi bozulmuyor",
+    firstExample("Am Sonntag/am Abend/am Meer") === "Am Sonntag/am Abend/am Meer",
+  );
+  check(
+    "Türkçe karşılık aynı kuralla ilk cümleyi veriyor",
+    firstExample("Gazete masanın üstünde. / Fotoğrafta kız kardeşimle birlikteyim.") ===
+      "Gazete masanın üstünde.",
+  );
+  check("kısaltma cümleyi bitirmiyor",
+    firstExample("Das war vor ca. 6000 Jahren üblich.") === "Das war vor ca. 6000 Jahren üblich.");
+  // Veride tek bir madde bile çok cümleli kalmamalı.
+  const multi = await db.select().from(words).where(eq(words.course, "de"));
+  const leftovers = multi.filter((w) => {
+    const first = firstExample(w.beispiel);
+    return first !== null && /[.!?]\s*\//.test(first);
+  });
+  check("veride çok cümleli örnek kalmadı", leftovers.length === 0, `(${leftovers.length})`);
 
   console.log("\n11h) Doğru mu Yanlış mı turu");
   await reset();

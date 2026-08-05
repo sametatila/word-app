@@ -52,6 +52,16 @@ export function firstExample(text: string | null | undefined): string | null {
   const body = text
     .replace(/^\s*-\s*/, "") // kaynakta bazı maddeler tire ile başlıyor
     .replace(/^\s*\d+\.\s*/, "") // "1. " madde numarası
+    // Kaynakta 53 maddede cümleler eğik çizgiyle ayrılmış ve çizgiden önce
+    // boşluk yok: "Die Zeitung ist auf dem Tisch./ Auf dem Foto…". Cümle sonu
+    // aranırken noktalamadan sonra boşluk beklendiği için bu maddelerde hiç
+    // sınır bulunamıyor, üç cümlelik blok tek "örnek cümle" sayılıyordu —
+    // boşluk doldurma turu da bu bloğu olduğu gibi ekrana basıyordu.
+    //
+    // Yalnızca noktalamanın hemen ardından gelen çizgi sınır sayılır. Cümle
+    // **içindeki** alternatif çizgileri ("Ist das Ihr Hund/Ihre Katze?",
+    // "Am Sonntag/am Abend") bölmek yanlış olurdu: onlar tek bir ifadedir.
+    .replace(/([.!?])\s*\/\s*/g, "$1 ")
     .trim();
   // Sonraki madde numarası ("2. ") de cümle sonu sayılır.
   const item = body.split(/\s+\d+\.\s+/)[0];
