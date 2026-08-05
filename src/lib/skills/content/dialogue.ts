@@ -700,4 +700,147 @@ export const dialogues: SpeakingDialogueExercise[] = [
       },
     ],
   },
+
+  // ─────────────── B2 · iş görüşmesi ───────────────
+  //
+  // Havuzdaki en zor tema ve kapalı tema kuralını zorlayan yer: iş görüşmesi
+  // aslında açık uçlu. Yine de çalışıyor, çünkü **soruları uygulama soruyor**
+  // ve bunlar sayılı: deneyim, güçlü yön, ücret beklentisi, soru var mı.
+  // Öğrencinin cevabı serbest ama hangi dala gideceği birkaç anahtar kelimeyle
+  // belirleniyor.
+  //
+  // Serbest sohbetle farkı bu: orada model her şeye cevap verir ama konuşma
+  // dağılır; burada tema dar ve öğrenci gerçek bir görüşmenin sırasını
+  // yaşıyor.
+  {
+    id: "b2-d1",
+    level: "B2",
+    skill: "speaking",
+    title: "Vorstellungsgespräch",
+    genre: "Diyalog",
+    intro:
+      "Bir iş görüşmesindesin. Sorulara yüksek sesle Almanca cevap ver — gerçek bir görüşmenin sırasıyla ilerliyor.",
+    minutes: 8,
+    gloss: [
+      { de: "die Erfahrung", tr: "deneyim" },
+      { de: "die Stärke", tr: "güçlü yön" },
+      { de: "das Gehalt", tr: "maaş" },
+      { de: "die Stelle", tr: "pozisyon, iş" },
+      { de: "sich bewerben", tr: "başvurmak" },
+    ],
+    targets: [
+      { de: "Ich habe … Jahre Erfahrung.", tr: "… yıllık deneyimim var." },
+      { de: "Meine Stärke ist …", tr: "Güçlü yönüm …" },
+      { de: "Ich stelle mir … vor.", tr: "… düşünüyorum (beklenti)." },
+      { de: "Ich hätte eine Frage.", tr: "Bir sorum olacak." },
+    ],
+    dialogue: [
+      {
+        id: "start",
+        ask: "Schön, dass Sie da sind. Erzählen Sie kurz von Ihrer Erfahrung.",
+        askTr: "Geldiğiniz için teşekkürler. Kısaca deneyiminizden bahsedin.",
+        cue: "Kaç yıllık deneyimin olduğunu söyle: „Ich habe fünf Jahre Erfahrung als …“",
+        replies: [
+          {
+            match: ["jahre", "jahr", "erfahrung", "gearbeitet"],
+            say: "Das klingt solide. Was würden Sie als Ihre Stärke bezeichnen?",
+            sayTr: "Sağlam görünüyor. Güçlü yönünüz nedir?",
+            next: "strength",
+            uses: ["Ich habe … Jahre Erfahrung."],
+          },
+          {
+            match: ["studiert", "studium", "abschluss", "universität"],
+            say: "Eine gute Ausbildung. Und was ist Ihre Stärke?",
+            sayTr: "İyi bir eğitim. Peki güçlü yönünüz nedir?",
+            next: "strength",
+            uses: ["Ich habe … Jahre Erfahrung."],
+          },
+        ],
+        fallback: {
+          say: "Erzählen Sie mir bitte, wo Sie bisher gearbeitet haben.",
+          sayTr: "Şimdiye kadar nerede çalıştığınızı anlatır mısınız?",
+          example: "Ich habe fünf Jahre Erfahrung.",
+        },
+      },
+      {
+        id: "strength",
+        ask: "Was ist Ihre größte Stärke?",
+        askTr: "En güçlü yönünüz nedir?",
+        cue: "Bir güçlü yön söyle: „Meine Stärke ist Teamarbeit.“",
+        replies: [
+          {
+            match: ["stärke", "team", "kommunikation", "organisiert", "lerne"],
+            say: "Verstehe. Und welches Gehalt stellen Sie sich vor?",
+            sayTr: "Anlıyorum. Peki nasıl bir maaş düşünüyorsunuz?",
+            next: "salary",
+            uses: ["Meine Stärke ist …"],
+          },
+          {
+            match: ["schwäche", "schwierig", "problem"],
+            say: "Ehrlich, das schätze ich. Und Ihre Gehaltsvorstellung?",
+            sayTr: "Dürüst, bunu takdir ederim. Peki maaş beklentiniz?",
+            next: "salary",
+            uses: ["Meine Stärke ist …"],
+          },
+        ],
+        fallback: {
+          say: "Nennen Sie mir bitte eine Stärke von Ihnen.",
+          sayTr: "Bana güçlü bir yönünüzü söyleyin lütfen.",
+          example: "Meine Stärke ist Teamarbeit.",
+        },
+      },
+      {
+        id: "salary",
+        ask: "Welche Gehaltsvorstellung haben Sie?",
+        askTr: "Maaş beklentiniz nedir?",
+        cue: "Bir rakam söyle ya da soruyu geri çevir: „Was bieten Sie denn an?“",
+        replies: [
+          {
+            match: ["stelle mir", "vorstellung", "euro", "franken", "brutto"],
+            say: "Das liegt im Rahmen. Haben Sie noch Fragen an uns?",
+            sayTr: "Bu makul bir aralıkta. Bize sorunuz var mı?",
+            next: "questions",
+            uses: ["Ich stelle mir … vor."],
+          },
+          {
+            match: ["bieten", "budget", "rahmen", "verhandel"],
+            say: "Gute Frage. Wir haben einen festen Rahmen. Noch Fragen?",
+            sayTr: "İyi soru. Belirli bir aralığımız var. Başka sorunuz?",
+            next: "questions",
+            uses: ["Ich stelle mir … vor."],
+          },
+        ],
+        fallback: {
+          say: "Sagen Sie mir ruhig eine Zahl oder eine Spanne.",
+          sayTr: "Rahatça bir rakam ya da aralık söyleyebilirsiniz.",
+          example: "Ich stelle mir 60.000 Euro vor.",
+        },
+      },
+      {
+        id: "questions",
+        ask: "Haben Sie noch Fragen an uns?",
+        askTr: "Bize sorunuz var mı?",
+        cue: "Bir soru sor ya da kapat: „Ich hätte eine Frage zum Team.“",
+        replies: [
+          {
+            match: ["frage", "team", "wann", "homeoffice", "urlaub"],
+            say: "Gerne. Wir melden uns bis Ende der Woche bei Ihnen.",
+            sayTr: "Memnuniyetle. Hafta sonuna kadar size döneceğiz.",
+            uses: ["Ich hätte eine Frage."],
+          },
+          {
+            match: ["nein", "danke", "alles klar"],
+            say: "Dann danke ich Ihnen für das Gespräch. Auf Wiedersehen!",
+            sayTr: "O zaman görüşme için teşekkür ederim. Hoşça kalın!",
+            uses: ["Ich hätte eine Frage."],
+          },
+        ],
+        fallback: {
+          say: "Wir melden uns bald. Vielen Dank für Ihre Zeit!",
+          sayTr: "Yakında size döneceğiz. Vaktiniz için teşekkürler!",
+          example: "Ich hätte eine Frage zum Team.",
+        },
+      },
+    ],
+  },
 ];
