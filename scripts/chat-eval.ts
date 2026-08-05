@@ -26,7 +26,7 @@
 import { readFileSync } from "node:fs";
 import { chatProviders, type ChatMessage, type Provider } from "../src/lib/chat-providers";
 import { systemPrompt, type ChatContext } from "../src/lib/chat";
-import { parseReply } from "../src/lib/chat-format";
+import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 
 /* ─────────────── Senaryo ─────────────── */
 
@@ -205,6 +205,19 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
     if (step.expectTurkish) s.turkishOk = TURKISH_MARKERS.test(body);
 
     s.overLevel.push(...overLevel(body, pools));
+
+    // EVAL_SHOW=1 ile cevapların kendisi basılıyor.
+    //
+    // Bunun gerekli olduğu koç testinde öğrenildi: orada sayılar 8/8 verirken
+    // çıktılardan biri düpedüz yanlıştı („w harfi v gibi okunmamalı“) ve
+    // anahtar kelime eşleşmesi bunu kaçırmıştı. Sayı, içeriğin doğru olduğunu
+    // göstermiyor — metni gözle okumak gerekiyor.
+    if (process.env.EVAL_SHOW) {
+      console.log(`\n  ${s.turns}. tur — öğrenci: ${step.say}`);
+      console.log(`     ${body.replace(/\n/g, "\n     ")}`);
+      for (const c of corrections) console.log(`     ${CORRECTION_MARK} ${c}`);
+      for (const g of suggestions) console.log(`     ${SUGGESTION_MARK} ${g}`);
+    }
     // Dakikalık istek limitinin altında kalacak aralık (varsayılan ~4.6/dk).
     await new Promise((r) => setTimeout(r, Number(process.env.EVAL_DELAY_MS) || 13_000));
   }

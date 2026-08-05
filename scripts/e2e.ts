@@ -553,6 +553,32 @@ async function main() {
       all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
   }
 
+  console.log("\n11u) İstem başlığı cevaba sızmıyor");
+  {
+    const leaked = parseReply(
+      `Hallo!\n\n— ÖNERİLEN CEVAPLAR\n${SUGGESTION_MARK} Mir geht es gut.`,
+    );
+    check("kaçak başlık gövdeye girmiyor", !leaked.body.includes("ÖNERİLEN"),
+      `(${leaked.body.trim()})`);
+    check("başlık süzülürken öneri korunuyor", leaked.suggestions.length === 1);
+    check("normal cümle süzülmüyor",
+      parseReply("Das Kino ist toll!").body.includes("Kino"));
+    // Tamamı büyük harf olsa da noktalama taşıyan satır cümledir, başlık değil.
+    check("büyük harfli ünlem cümlesi korunuyor",
+      parseReply("SUPER!").body.includes("SUPER"));
+    // Model düzenli olarak markdown yazıyor; arayüz düz metin gösterdiği için
+    // yıldızlar ekrana çıkıyordu. Koçta temizleniyordu, sohbette atlanmıştı.
+    const md = parseReply(
+      `Cümle **özneden sonra** gelir.\n${CORRECTION_MARK} *ich gehe* → *gehe ich* (V2)\n` +
+        `${SUGGESTION_MARK} **Ja, gern.**`,
+    );
+    check("gövdede yıldız kalmıyor", !md.body.includes("*"), `(${md.body.trim()})`);
+    check("düzeltmede yıldız kalmıyor", !md.corrections[0]?.includes("*"),
+      `(${md.corrections[0]})`);
+    check("öneride yıldız kalmıyor", md.suggestions[0] === "Ja, gern.",
+      `(${md.suggestions[0]})`);
+  }
+
   console.log("\n11r) Konuşma özeti ölçülen veriden kuruluyor");
   {
     const focus = [{ de: "die Arbeit", tr: "iş" }, { de: "spielen", tr: "oynamak" }];
