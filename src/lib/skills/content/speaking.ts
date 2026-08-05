@@ -606,4 +606,121 @@ export const speaking: SpeakingDrillExercise[] = [
       },
     ],
   },
+
+  // ─────────── A2 · uzatma „h“si ───────────
+  //
+  // Türkçede „h“ her yerde okunur; Almancada ünlüden sonra gelen h okunmaz,
+  // önündeki ünlüyü uzatır. Türkçe konuşan bu h'yi söylemeye çalışıp hem
+  // fazladan bir ses ekliyor hem de ünlüyü kısaltıyor. Yazıda görünüp seste
+  // görünmeyen bir işaret olduğu için ayrı bir çalışmayı hak ediyor.
+  {
+    id: "a2-s3",
+    level: "A2",
+    skill: "speaking",
+    title: "Das stumme „h“",
+    genre: "Ses çalışması",
+    intro:
+      "Ünlüden sonraki „h“ okunmaz — önündeki ünlüyü uzatır. Türkçede h her zaman söylenir, bu yüzden en sık atlanan kurallardan biri.",
+    gloss: [
+      { de: "gehen", tr: "gitmek" },
+      { de: "sehen", tr: "görmek" },
+      { de: "die Uhr", tr: "saat" },
+      { de: "wahr", tr: "doğru, gerçek" },
+      { de: "ihn", tr: "onu" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        de: "Wir gehen nach Hause.",
+        tr: "Eve gidiyoruz.",
+        hint: "„gehen“ = GEE-en. Ortadaki h söylenmez, e uzar. Baştaki „Hause“daki h ise okunur.",
+      },
+      {
+        de: "Ich kann dich sehen.",
+        tr: "Seni görebiliyorum.",
+        hint: "„sehen“ = ZEE-en. h yok, uzun e var. Baştaki s ise z gibi okunur.",
+        confusions: [
+          {
+            heard: ["Seen", "sehnen", "Sehne"],
+            fix: "„sehen“ SEE-en değil ZEE-en; baştaki „s“ ünlüden önce z gibi okunur ve h söylenmez.",
+            expected: "sehen",
+          },
+        ],
+      },
+      {
+        de: "Wie spät ist es auf deiner Uhr?",
+        tr: "Saatinde saat kaç?",
+        hint: "„Uhr“ = UUR, tek uzun u. h'yi söylemeye çalışma.",
+      },
+      {
+        de: "Das ist nicht wahr.",
+        tr: "Bu doğru değil.",
+        hint: "„wahr“ = VAAR. h okunmaz, a uzar — „war“ (idi) ile aynı duyulur ama yazımı farklı.",
+      },
+      {
+        de: "Ich habe ihn gestern gesehen.",
+        tr: "Onu dün gördüm.",
+        hint: "„ihn“ = İİN, uzun i. „in“ (içinde) ise kısacık — fark yalnızca uzunlukta.",
+        confusions: [
+          {
+            heard: ["in", "im", "ihm"],
+            fix: "„ihn“deki i uzun; „h“ okunmaz ama onu uzatır. Kısa söylersen „in“ (içinde) oluyor.",
+            expected: "ihn",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────── B1 · vurgusuz „-er“ sonu ───────────
+  //
+  // Almanca kelime sonundaki vurgusuz „-er“ neredeyse „a“ gibi okunur
+  // (Vater = FAA-ta). Türkçe konuşan her heceyi tam söylediği için buraya
+  // belirgin bir „er“ koyuyor; anlaşılırlığı bozmuyor ama aksanı ele veren
+  // en belirgin işaretlerden biri. Tanıyıcı bunu ayırt edemiyor, o yüzden
+  // sapma yazılmadı — çalışma dinle-tekrarla üzerinden yürüyor.
+  {
+    id: "b1-s2",
+    level: "B1",
+    skill: "speaking",
+    title: "Das unbetonte „-er“",
+    genre: "Ses çalışması",
+    intro:
+      "Kelime sonundaki vurgusuz „-er“ belirgin bir „er“ değil, neredeyse „a“dır: Vater = FAA-ta. Aksanı en çok ele veren ayrıntı bu.",
+    gloss: [
+      { de: "der Vater", tr: "baba" },
+      { de: "die Mutter", tr: "anne" },
+      { de: "die Schwester", tr: "kız kardeş" },
+      { de: "besser", tr: "daha iyi" },
+      { de: "immer", tr: "her zaman" },
+    ],
+    minutes: 6,
+    tasks: [
+      {
+        de: "Mein Vater und meine Mutter wohnen hier.",
+        tr: "Babam ve annem burada oturuyor.",
+        hint: "FAA-ta ve MU-ta. Sonlardaki r'yi yuvarlama, ağzın gevşesin.",
+      },
+      {
+        de: "Meine Schwester ist Lehrerin.",
+        tr: "Kız kardeşim öğretmen.",
+        hint: "ŞVES-ta. „Lehrerin“de ise vurgu LEE'de ve ortadaki -er- yine hafif.",
+      },
+      {
+        de: "Heute geht es mir besser.",
+        tr: "Bugün daha iyiyim.",
+        hint: "BES-sa. Çift s ünlüyü kısaltıyor, sondaki -er ise neredeyse a.",
+      },
+      {
+        de: "Er kommt immer zu spät.",
+        tr: "O her zaman geç geliyor.",
+        hint: "İ-ma. Cümledeki „Er“ ise vurgulu ve tam okunur — aynı harfler, farklı ses.",
+      },
+      {
+        de: "Der Winter war dieses Jahr sehr kalt.",
+        tr: "Bu yıl kış çok soğuktu.",
+        hint: "VİN-ta. „Der“ de hafif: DEA gibi. Üç ayrı -er sesi var, üçü de kısa.",
+      },
+    ],
+  },
 ];
