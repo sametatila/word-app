@@ -4,6 +4,7 @@ import { ReadingPlayer } from "@/components/skills/reading-player";
 import { ListeningPlayer } from "@/components/skills/listening-player";
 import { WritingPlayer } from "@/components/skills/writing-player";
 import { SpeakingPlayer } from "@/components/skills/speaking-player";
+import { DialoguePlayer } from "@/components/skills/dialogue-player";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,12 @@ export default async function SkillExercisePage({
     case "writing":
       return <WritingPlayer exercise={exercise} />;
     case "speaking":
-      return <SpeakingPlayer exercise={exercise} />;
+      // Konuşma iki biçimde gelir: tek tek söyleyiş çalışması ya da karşılıklı
+      // diyalog. Ayrım içerikte: diyalogda `dialogue` alanı vardır.
+      return "dialogue" in exercise ? (
+        <DialoguePlayer exercise={exercise} />
+      ) : (
+        <SpeakingPlayer exercise={exercise} />
+      );
   }
 }

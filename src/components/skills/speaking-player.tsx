@@ -2,11 +2,12 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import type { SpeakingExercise, SpeakingTask } from "@/lib/skills/types";
+import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
 import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
 import { speakGerman, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
+import { recognitionCtor, requestMicrophone, type Recognition } from "./microphone";
 
 /**
  * Konuşma oynatıcısı — iki katmanlı ve bozulmadan düşen bir tasarım.
@@ -21,59 +22,11 @@ import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
  * "anlaşıldın mı", telaffuz notu değil (bkz. lib/speech.ts).
  */
 
-/** Tarayıcı tanıyıcısının tipleri lib.dom'da güvenilir biçimde yok; asgari yüzey. */
-type RecognitionAlternative = { transcript: string };
-type RecognitionResult = { length: number; [i: number]: RecognitionAlternative };
-type RecognitionEvent = { results: { length: number; [i: number]: RecognitionResult } };
-type Recognition = {
-  lang: string;
-  interimResults: boolean;
-  maxAlternatives: number;
-  continuous: boolean;
-  start: () => void;
-  stop: () => void;
-  abort: () => void;
-  onresult: ((e: RecognitionEvent) => void) | null;
-  onerror: ((e: { error: string }) => void) | null;
-  onend: (() => void) | null;
-};
 
-function recognitionCtor(): (new () => Recognition) | null {
-  if (typeof window === "undefined") return null;
-  const w = window as unknown as {
-    SpeechRecognition?: new () => Recognition;
-    webkitSpeechRecognition?: new () => Recognition;
-  };
-  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
-}
-
-/**
- * Mikrofon iznini **açıkça** ister.
- *
- * `SpeechRecognition.start()` tarayıcı sekmesinde izni kendiliğinden sorar ama
- * ana ekrana eklenmiş PWA'da bu istem güvenilir biçimde çıkmıyor: tanıma
- * sessizce `not-allowed` ile düşüyor ve kullanıcı hiçbir şey olmadığını
- * görüyor. `getUserMedia` istemi her iki durumda da gösterir.
- *
- * Akış hemen bırakılır; tanıyıcı kendi akışını açar, bizimkini tutmak
- * mikrofonu boşuna meşgul eder (bazı cihazlarda kayıt göstergesi yanılı kalır).
- */
-async function requestMicrophone(): Promise<"granted" | "denied" | "unavailable"> {
-  if (typeof navigator === "undefined" || !navigator.mediaDevices?.getUserMedia) {
-    return "unavailable";
-  }
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    for (const track of stream.getTracks()) track.stop();
-    return "granted";
-  } catch {
-    return "denied";
-  }
-}
 
 type Phase = "idle" | "asking" | "listening" | "judging" | "done";
 
-export function SpeakingPlayer({ exercise }: { exercise: SpeakingExercise }) {
+export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }) {
   const tasks = exercise.tasks;
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("idle");
