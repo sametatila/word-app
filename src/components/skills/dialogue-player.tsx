@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { matchReply, usedTargets, type DialogueReply, type DialogueTurn } from "@/lib/dialogue";
+import { askCoach } from "@/lib/coach-client";
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, SpeakerIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
@@ -36,6 +37,8 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
   const [phase, setPhase] = useState<"idle" | "asking" | "listening" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
   const [hint, setHint] = useState<string | null>(null);
+  const [coachHint, setCoachHint] = useState("");
+  const [coaching, setCoaching] = useState(false);
   const [understoodCount, setUnderstoodCount] = useState(0);
   const [finished, setFinished] = useState(false);
 
@@ -45,6 +48,8 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
 
   const recognition = useRef<Recognition | null>(null);
   const bottom = useRef<HTMLDivElement>(null);
+  /** Geç gelen koç cevabı sonraki tura taşınmasın. */
+  const coachToken = useRef(0);
   const turn: DialogueTurn | undefined = byId.get(turnId);
   const { finish, state, reset } = useSkillFinish(exercise, turns.length);
 
@@ -63,6 +68,13 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
     bottom.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [bubbles]);
 
+  /** Bekleyen koç cevabını geçersiz kılar; yoksa eski ipucu sonraki turda kalır. */
+  const clearCoach = useCallback(() => {
+    coachToken.current++;
+    setCoachHint("");
+    setCoaching(false);
+  }, []);
+
   /** Cevabı işler: dal tutarsa ilerle, tutmazsa aynı turda kal ve örnek göster. */
   const handleTranscript = useCallback(
     (heard: string) => {
@@ -78,9 +90,31 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
         setHint(turn.fallback.example);
         speakGerman(turn.fallback.say);
         setPhase("idle");
+
+        // Senaryo dalları anahtar kök arıyor; aynı anlamı başka türlü kuran
+        // tamamen geçerli bir cevap da tutmuyor. Sabit örnek cümle o durumda
+        // yanlış geri bildirim oluyor — doğru söyleyip "anlaşılmadı" duymak
+        // öğreticinin yapabileceği en can sıkıcı şey. Koç burada ikisini
+        // ayırt ediyor: cevap geçerliyse onaylıyor, değilse ne diyeceğini
+        // söylüyor. Yalnızca dal tutmadığında çağrılıyor, yani limit doğru
+        // ilerleyen konuşmalara harcanmıyor.
+        const token = ++coachToken.current;
+        setCoaching(true);
+        void askCoach({
+          kind: "dialogue",
+          ask: turn.ask,
+          cue: turn.cue,
+          heard,
+          expected: turn.replies.flatMap((r) => r.match).slice(0, 8),
+        }).then((text) => {
+          if (coachToken.current !== token) return;
+          setCoachHint(text);
+          setCoaching(false);
+        });
         return;
       }
 
+      clearCoach();
       setHint(null);
       setUnderstoodCount((n) => n + 1);
       setPath((prev) => [...prev, match.reply]);
@@ -169,6 +203,7 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
     setPath([]);
     setUnderstoodCount(0);
     setHint(null);
+    clearCoach();
     setError(null);
     setPhase("idle");
     setFinished(false);
@@ -292,6 +327,14 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
                   >
                     Dinle
                   </button>
+                ) : null}
+                {/* Sabit örnek hemen çıkar, koç sonradan altına eklenir:
+                    konuşma modelin cevabını beklemez. Koç gelmezse örnek
+                    tek başına zaten çalışan bir çıkış yolu. */}
+                {coaching ? (
+                  <p className="muted mt-2 text-xs">Cevabına bakılıyor…</p>
+                ) : coachHint ? (
+                  <p className="mt-2 text-left text-sm">{coachHint}</p>
                 ) : null}
               </div>
             ) : null}

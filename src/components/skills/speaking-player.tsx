@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
 import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
+import { askCoach } from "@/lib/coach-client";
 import { speakGerman, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
@@ -34,12 +35,16 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<boolean[]>([]);
   const [attempts, setAttempts] = useState(0);
+  const [coachHint, setCoachHint] = useState("");
+  const [coaching, setCoaching] = useState(false);
 
   const ttsAvailable = useSpeechAvailable();
   const [asrAvailable, setAsrAvailable] = useState(false);
   useEffect(() => setAsrAvailable(recognitionCtor() !== null), []);
 
   const recognition = useRef<Recognition | null>(null);
+  /** Geç gelen koç cevabı yeni görevin üstüne düşmesin diye. */
+  const coachToken = useRef(0);
   const task: SpeakingTask | undefined = tasks[index];
   const { finish, state, reset } = useSkillFinish(exercise, tasks.length);
 
@@ -48,11 +53,19 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
     return () => recognition.current?.abort();
   }, []);
 
+  /** Bekleyen koç cevabını da geçersiz kılar; yoksa eski ipucu yeni turda kalır. */
+  const clearCoach = useCallback(() => {
+    coachToken.current++;
+    setCoachHint("");
+    setCoaching(false);
+  }, []);
+
   const listen = useCallback(async () => {
     const Ctor = recognitionCtor();
     if (!Ctor || !task) return;
     setError(null);
     setVerdict(null);
+    clearCoach();
 
     // İzin önce ve açıkça istenir; yüklü PWA'da tanıyıcı bunu kendisi yapmıyor.
     setPhase("asking");
@@ -86,6 +99,28 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
       const outcome = judgeSpeech(task.de, heard, task.confusions ?? []);
       setVerdict(outcome);
       setPhase("done");
+
+      // Koç yalnızca çevrimdışı teşhisin diyecek sözü kalmadığında çağrılıyor.
+      // "correct" için gerek yok; "confusion" zaten hedefli bir açıklama taşıyor
+      // ve o bedava, anında ve limitsiz — üstüne model çağırmak hem yavaşlatır
+      // hem dakikalık hakkı boşa harcar. Geriye kalan iki durumda ise
+      // çevrimdışı mantığın söyleyebildiği tek şey "şunlar tanınmadı" idi.
+      if (outcome.kind !== "partial" && outcome.kind !== "different") return;
+
+      const token = ++coachToken.current;
+      setCoaching(true);
+      void askCoach({
+        kind: "speaking",
+        target: task.de,
+        heard: heard.slice(0, 3),
+        missing: outcome.missing,
+      }).then((text) => {
+        // Bu arada yeniden denenmiş ya da göreve geçilmiş olabilir; geç gelen
+        // cevap yeni ekranın üstüne düşmesin.
+        if (coachToken.current !== token) return;
+        setCoachHint(text);
+        setCoaching(false);
+      });
     };
     rec.onerror = (e) => {
       setPhase("idle");
@@ -110,7 +145,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
       setPhase("idle");
       setError("Mikrofon başlatılamadı.");
     }
-  }, [task]);
+  }, [task, clearCoach]);
 
   function stopListening() {
     recognition.current?.stop();
@@ -122,6 +157,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
     setResults(next);
     setVerdict(null);
     setError(null);
+    clearCoach();
     setAttempts(0);
     setPhase("idle");
     if (index + 1 < tasks.length) setIndex(index + 1);
@@ -131,6 +167,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
   function retry() {
     setVerdict(null);
     setError(null);
+    clearCoach();
     setAttempts((n) => n + 1);
     setPhase("idle");
   }
@@ -140,6 +177,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
     setIndex(0);
     setVerdict(null);
     setError(null);
+    clearCoach();
     setAttempts(0);
     setPhase("idle");
     reset();
@@ -233,6 +271,8 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
                 verdict={verdict}
                 task={task}
                 ttsAvailable={ttsAvailable}
+                coachHint={coachHint}
+                coaching={coaching}
               />
             ) : null}
           </AnimatePresence>
@@ -307,10 +347,15 @@ function Feedback({
   verdict,
   task,
   ttsAvailable,
+  coachHint,
+  coaching,
 }: {
   verdict: SpeechVerdict;
   task: SpeakingTask;
   ttsAvailable: boolean;
+  /** Çevrimdışı teşhis yetmediğinde modelden gelen açıklama; gelmeyebilir. */
+  coachHint: string;
+  coaching: boolean;
 }) {
   const tone =
     verdict.kind === "correct"
@@ -358,6 +403,15 @@ function Feedback({
             <p className="muted mt-2 text-sm">
               Tanınmayan: <span className="font-semibold">{verdict.missing.join(", ")}</span>
             </p>
+          ) : null}
+
+          {/* Koç yalnızca bu iki durumda çağrılıyor ve gecikmesi kartı bekletmiyor:
+              kart hemen çıkar, açıklama hazır olunca altına eklenir. Gelmezse
+              (limit, kesinti) hiçbir şey görünmez — kartın kendisi zaten yeterli. */}
+          {coaching ? (
+            <p className="muted mt-2 text-sm">Ne olduğuna bakılıyor…</p>
+          ) : coachHint ? (
+            <p className="mt-2 text-sm">{coachHint}</p>
           ) : null}
 
           <div className="mt-3 flex items-center gap-2">
