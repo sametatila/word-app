@@ -47,7 +47,31 @@ function recognitionCtor(): (new () => Recognition) | null {
   return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
 }
 
-type Phase = "idle" | "listening" | "judging" | "done";
+/**
+ * Mikrofon iznini **açıkça** ister.
+ *
+ * `SpeechRecognition.start()` tarayıcı sekmesinde izni kendiliğinden sorar ama
+ * ana ekrana eklenmiş PWA'da bu istem güvenilir biçimde çıkmıyor: tanıma
+ * sessizce `not-allowed` ile düşüyor ve kullanıcı hiçbir şey olmadığını
+ * görüyor. `getUserMedia` istemi her iki durumda da gösterir.
+ *
+ * Akış hemen bırakılır; tanıyıcı kendi akışını açar, bizimkini tutmak
+ * mikrofonu boşuna meşgul eder (bazı cihazlarda kayıt göstergesi yanılı kalır).
+ */
+async function requestMicrophone(): Promise<"granted" | "denied" | "unavailable"> {
+  if (typeof navigator === "undefined" || !navigator.mediaDevices?.getUserMedia) {
+    return "unavailable";
+  }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    for (const track of stream.getTracks()) track.stop();
+    return "granted";
+  } catch {
+    return "denied";
+  }
+}
+
+type Phase = "idle" | "asking" | "listening" | "judging" | "done";
 
 export function SpeakingPlayer({ exercise }: { exercise: SpeakingExercise }) {
   const tasks = exercise.tasks;
@@ -71,11 +95,23 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingExercise }) {
     return () => recognition.current?.abort();
   }, []);
 
-  const listen = useCallback(() => {
+  const listen = useCallback(async () => {
     const Ctor = recognitionCtor();
     if (!Ctor || !task) return;
     setError(null);
     setVerdict(null);
+
+    // İzin önce ve açıkça istenir; yüklü PWA'da tanıyıcı bunu kendisi yapmıyor.
+    setPhase("asking");
+    const permission = await requestMicrophone();
+    if (permission === "denied") {
+      setPhase("idle");
+      setError(
+        "Mikrofon izni verilmedi. Uygulama ayarlarından mikrofona izin verip tekrar dene — " +
+          "izin vermeden de „Doğru söyledim / Zorlandım“ ile devam edebilirsin.",
+      );
+      return;
+    }
 
     const rec = new Ctor();
     recognition.current = rec;
@@ -101,11 +137,13 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingExercise }) {
     rec.onerror = (e) => {
       setPhase("idle");
       setError(
-        e.error === "not-allowed"
-          ? "Mikrofon izni verilmedi. Tarayıcı ayarlarından izin verip tekrar dene."
+        e.error === "not-allowed" || e.error === "service-not-allowed"
+          ? "Tanıma servisi mikrofona erişemedi. Uygulama ayarlarından mikrofon iznini kontrol et."
           : e.error === "no-speech"
             ? "Ses duyulmadı. Mikrofona biraz daha yakın ve yüksek sesle söyle."
-            : "Tanıma başlatılamadı. Bağlantını kontrol edip tekrar dene.",
+            : e.error === "network"
+              ? "Tanıma için internet gerekiyor; bağlantın kesik görünüyor."
+              : "Tanıma başlatılamadı. Tekrar dene.",
       );
     };
     rec.onend = () => {
@@ -199,8 +237,8 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingExercise }) {
               <motion.button
                 type="button"
                 whileTap={{ scale: 0.94 }}
-                onClick={phase === "listening" ? stopListening : listen}
-                disabled={phase === "judging"}
+                onClick={() => (phase === "listening" ? stopListening() : void listen())}
+                disabled={phase === "judging" || phase === "asking"}
                 aria-label={phase === "listening" ? "Kaydı bitir" : "Konuşmaya başla"}
                 className="flex h-20 w-20 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-60"
                 style={{
@@ -217,13 +255,15 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingExercise }) {
               </motion.button>
             ) : null}
             <span className="muted text-xs">
-              {phase === "listening"
-                ? "Dinliyorum… söyleyince dokun"
-                : phase === "judging"
-                  ? "Değerlendiriliyor…"
-                  : asrAvailable
-                    ? "Mikrofona dokun ve yüksek sesle söyle"
-                    : "Modeli dinle, yüksek sesle tekrarla"}
+              {phase === "asking"
+                ? "Mikrofon izni bekleniyor…"
+                : phase === "listening"
+                  ? "Dinliyorum… söyleyince dokun"
+                  : phase === "judging"
+                    ? "Değerlendiriliyor…"
+                    : asrAvailable
+                      ? "Mikrofona dokun ve yüksek sesle söyle"
+                      : "Modeli dinle, yüksek sesle tekrarla"}
             </span>
           </div>
 
