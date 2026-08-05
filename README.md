@@ -14,7 +14,11 @@ uygulama gibi tam ekran açılır (PWA).
   Kurs ilk girişte seçilir (`/kurs-sec`), sonradan profilden değiştirilebilir. Kelime havuzu,
   tekrar kuyruğu, beceri içeriği ve ilerleme sayıları aktif kursa bağlıdır; kurs değiştirince
   diğer kursun ilerlemesi **silinmez**, beklemeye geçer.
-- **6 kelime oyunu:** Eşleştirme, Doğru Anlam, Artikel Yarışı, Harf Bulmacası, Cümleyi Tamamla, Yazarak Hatırla
+- **10 kelime oyunu:** Eşleştirme, Doğru Anlam, Artikel Yarışı, Harf Bulmacası, Cümleyi Tamamla,
+  Yazarak Hatırla, Cümleyi Diz, Çoğul Bilmece, Kulaktan Tanı, Doğru mu Yanlış mı. Her oyun farklı
+  bir şey ölçer: tanıma, üretim, söz dizimi (Cümleyi Diz), çoğul biçim (Çoğul Bilmece), dinleme
+  (Kulaktan Tanı) ve hızlı ikili karar (Doğru mu Yanlış mı). Aynı oyun üç tur boyunca tekrarlanmaz
+  ve oturumda az çıkan oyun öne alınır.
 - **Beceriler bölümü (`/skills`):** her kursta A1–C1 için okuma, dinleme ve yazma alıştırmaları —
   metin, sözlükçe (gloss), çoktan seçmeli sorular ve gerekçeli açıklamalar; yazmada önce cümle
   kurma, sonra kontrol listeli serbest yazı ve örnek çözüm.
@@ -123,7 +127,7 @@ done
 TEST_DATABASE_URL="postgres://postgres:test@localhost:55432/wa" npm run test:e2e
 ```
 
-E2E testi (45 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (143 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını ve ilerleme
 sorgularını gerçek PostgreSQL üzerinde doğrular.
 
@@ -182,7 +186,7 @@ data/
 
 Oyun türü kelimenin durumuna göre seçilir: yeni/öğrenilen kelimelerde tanıma ağırlıklı
 (çoktan seçmeli, eşleştirme, artikel), pekişenlerde üretim ağırlıklı (yazma, cümle tamamlama,
-harf bulmacası). Aynı oyun arka arkaya gelmez.
+harf bulmacası). Aynı oyun üç tur boyunca tekrarlanmaz.
 
 ## 6. Seviye ve zorluk mantığı
 
