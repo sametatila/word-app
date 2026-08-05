@@ -678,6 +678,20 @@ async function main() {
     );
     check("modelin kelimesi öğrencininki sayılmıyor",
       modelOnly.unusedFocus.includes("spielen"));
+    // Kök kelime başında aranmalı: düz alt dize araması "Art"ı "Karte" içinde
+    // bulur ve özet, ölçülen veriye dayandığını iddia ederken uydurma sayı
+    // üretirdi.
+    const inside = summarize(
+      [{ role: "user" as const, content: "Ich habe eine Karte gekauft." }],
+      [{ de: "die Art", tr: "tür" }],
+    );
+    check("kök kelimenin ortasında aranmıyor", inside.unusedFocus.includes("die Art"),
+      `(${inside.usedFocus.join(", ")})`);
+    const inflected = summarize(
+      [{ role: "user" as const, content: "Wir arbeiten zusammen." }],
+      [{ de: "die Arbeit", tr: "iş" }],
+    );
+    check("çekimli biçim sayılıyor", inflected.usedFocus.includes("die Arbeit"));
   }
 
   console.log("\n11q) Telaffuz değerlendirmesi yanlış onay vermiyor");

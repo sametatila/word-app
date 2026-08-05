@@ -44,14 +44,19 @@ function fold(text: string): string {
  * Bir hedef kelimenin konuşmada geçip geçmediği.
  *
  * Artikel atılıyor ("die Arbeit" → "arbeit") çünkü öğrenci kelimeyi cümle
- * içinde çekimli ve artikelsiz kullanmış olabilir. Kök eşleşmesi tam kelime
- * eşleşmesinden iyi: "arbeiten" içinde "arbeit" geçiyor ve öğrenci kelimeyi
- * kullanmış sayılmalı.
+ * içinde çekimli ve artikelsiz kullanmış olabilir; kök eşleşmesi gerekiyor ki
+ * "arbeite" ve "arbeiten" de sayılsın.
+ *
+ * Ama kök **kelime başında** aranıyor, alt dize olarak değil. Düz alt dize
+ * araması "Art" kökünü "Karte" içinde bulur ve öğrenciyi kullanmadığı bir
+ * kelimeyi kullanmış sayardı — özet ölçülen veriye dayandığını iddia ederken
+ * uydurma sayı üretmiş olurdu. Almancada çekim sona ek getirdiği için başa
+ * bakmak doğru olan: "arbeiten" sayılır, "bearbeiten" sayılmaz.
  */
 function mentions(haystack: string, word: string): boolean {
   const stem = fold(word).replace(/^(der|die|das)\s+/, "");
   if (stem.length < 3) return false;
-  return haystack.includes(stem);
+  return haystack.split(" ").some((token) => token.startsWith(stem));
 }
 
 /**
