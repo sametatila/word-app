@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { resolveVoice } from "@/lib/tts/voices";
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
@@ -42,6 +42,20 @@ export async function POST(req: Request) {
 
   try {
     await ensureProfile(userId);
+
+    // Onboarding'in bittiğinin işareti.
+    //
+    // Bu satır bir refactor sırasında düşmüş ve ortaya sessiz bir döngü
+    // çıkmıştı: kullanıcı kursu ve seviyeyi seçiyor, seçimler kaydediliyor,
+    // ama işaret konmadığı için düzen onu tekrar onboarding'e gönderiyordu.
+    // Form her açılışta varsayılanlarla başladığı için bu, dışarıdan
+    // "seçimlerim sıfırlandı" gibi görünüyordu.
+    //
+    // `coalesce` ile yalnızca ilk kez yazılıyor: sonradan profilden kurs
+    // değiştiren biri onboarding'e geri düşmemeli.
+    if (patch.course) {
+      patch.courseChosenAt = sql`coalesce(${profiles.courseChosenAt}, now())` as never;
+    }
 
     const [updated] = await db
       .update(profiles)

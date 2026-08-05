@@ -926,6 +926,41 @@ async function main() {
     judgeSpeech("Ich bin müde.", ["etwas anderes", "ich bin mode"],
       [{ heard: ["mode"], fix: "ü kısaldı", expected: "müde" }]).kind === "confusion");
 
+  console.log("\n11o2) Onboarding bir kez tamamlanıyor");
+  {
+    // Bu kontrol sessiz bir döngü yüzünden var: onboarding'in bittiğini
+    // işaretleyen satır bir refactor sırasında düşmüş, kullanıcı seçimlerini
+    // yapıyor ama tekrar onboarding'e gönderiliyordu. Form varsayılanlarla
+    // açıldığı için dışarıdan "seçimlerim sıfırlandı" gibi görünüyordu.
+    await db
+      .update(profiles)
+      .set({ courseChosenAt: null })
+      .where(eq(profiles.userId, USER));
+
+    const before = await ensureProfile(USER);
+    check("başlangıçta onboarding gerekiyor", before.courseChosenAt === null);
+
+    // Profil ucunun yaptığı işin aynısı: kurs yazılınca işaret konuyor.
+    await db
+      .update(profiles)
+      .set({ course: "de", courseChosenAt: sql`coalesce(${profiles.courseChosenAt}, now())` })
+      .where(eq(profiles.userId, USER));
+    const after = await ensureProfile(USER);
+    check("kurs seçilince onboarding tamamlanmış sayılıyor", after.courseChosenAt !== null);
+
+    // İkinci kez yazılmamalı: profilden kurs değiştiren biri onboarding'e
+    // geri düşmemeli ve ilk seçim tarihi korunmalı.
+    const stamp = after.courseChosenAt!.getTime();
+    await db
+      .update(profiles)
+      .set({ course: "gsw-zh", courseChosenAt: sql`coalesce(${profiles.courseChosenAt}, now())` })
+      .where(eq(profiles.userId, USER));
+    const later = await ensureProfile(USER);
+    check("sonraki kurs değişimi işareti bozmuyor",
+      later.courseChosenAt?.getTime() === stamp);
+    await db.update(profiles).set({ course: "de" }).where(eq(profiles.userId, USER));
+  }
+
   console.log("\n11p) Seslendirme sesi kursa bağlı");
   check("Almanca kursunun varsayılanı Katja",
     defaultVoice("de") === "de-DE-KatjaNeural");
