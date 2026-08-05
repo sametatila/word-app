@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { acceptedForms, normalize, withArtikel, type GameProps, typLabel } from "./types";
+import { matchesAnswer, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
 import { fx } from "@/lib/fx";
 
@@ -62,11 +62,12 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     // Kabul edilen yazımlar: madde başlığının bütün makul biçimleri (artikelsiz,
     // sich'siz, eğik çizgiyle ayrılanların her biri) ve aynı Türkçe anlama sahip
     // diğer Almanca kelimeler.
-    const typed = normalize(value);
-    const accepted = new Set(
-      [word.de, ...(round.alternatives ?? [])].flatMap((w) => acceptedForms(w)),
-    );
-    const correct = accepted.has(typed);
+    // Artikelli hâl de aday: kelime artikelsiz saklansa bile "die Tür" doğrudur.
+    const correct = matchesAnswer(value, [
+      withArtikel(word),
+      word.de,
+      ...(round.alternatives ?? []),
+    ]);
     setStatus(correct ? "correct" : "wrong");
     const latencyMs = Date.now() - started.current;
     const wait = correct ? 750 : 1500;

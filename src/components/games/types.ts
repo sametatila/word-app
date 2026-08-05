@@ -75,6 +75,39 @@ export function normalize(s: string): string {
 }
 
 /**
+ * Yazım farklarını eşitleyen katlama.
+ *
+ * Almanca klavyesi olmayan biri ä/ö/ü/ß yazamaz; standart karşılıkları
+ * ae/oe/ue/ss'tir. Üstelik `ss` İsviçre'de yanlış değil **doğru** yazımdır —
+ * bu uygulamada Züritüütsch kursu da var ve orada ß hiç kullanılmaz. Bu yüzden
+ * ikisi de kabul edilir.
+ *
+ * Umlaut düz sesliye indirgenmez (ö → oe, ö → o değil): aksi hâlde "schon" ile
+ * "schön" ya da "Bar" ile "Bär" birbirine karışır ve gerçekten yanlış cevap
+ * doğru sayılırdı.
+ *
+ * Artikel her iki tarafta da isteğe bağlıdır: kelime "Tür" diye saklanıp
+ * artikeli ayrı sütunda dursa bile "die Tür" yazan haklıdır.
+ */
+export function foldSpelling(s: string): string {
+  return normalize(s)
+    .replace(/^(der|die|das)\s+/, "")
+    .replace(/ß/g, "ss")
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue");
+}
+
+/** Yazılan cevap, verilen başlıklardan herhangi biriyle eşleşiyor mu? */
+export function matchesAnswer(typed: string, candidates: string[]): boolean {
+  const target = foldSpelling(typed);
+  if (!target) return false;
+  return candidates
+    .flatMap((c) => acceptedForms(c))
+    .some((form) => foldSpelling(form) === target);
+}
+
+/**
  * Bir madde başlığı için kabul edilebilir yazımların tamamı.
  *
  * Sözlük başlığı ile öğrencinin yazacağı şey aynı değildir. Başlık, birden çok
