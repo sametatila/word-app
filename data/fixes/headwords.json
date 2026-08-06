@@ -1,5 +1,548 @@
 {
- "_": "Madde başlığı düzeltmeleri. Anahtar: kelime id'si. 'de' yeni başlık, 'tr' yeni anlam (yalnızca gerekliyse). Her satırın gerekçesi 'not' alanında.",
+ "5": {
+  "tr": "gidip almak, karşılamak",
+  "not": "A1 çeviri gözden geçirmesi: abholen birini/bir şeyi gidip alıp getirmektir; yalın \"almak\" bekommen/nehmen ile karışıyor"
+ },
+ "6": {
+  "tr": "dikkat; saygı",
+  "not": "A1 çeviri gözden geçirmesi: Achtung ayrıca saygı demektir; yalın \"dikkat\" Vorsicht ile ayrışmıyor"
+ },
+ "9": {
+  "tr": "hepsi, herkes; tüm, bütün",
+  "not": "A1 gözden geçirmesi: düşürülen 535 \"all-\" maddesinin \"tüm, bütün\" anlamı buraya taşındı"
+ },
+ "10": {
+  "tr": "tek başına, yalnız",
+  "not": "A1 çeviri gözden geçirmesi: allein durum bildirir; yalın \"yalnız\" duygu bildiren einsam ile karışıyor"
+ },
+ "15": {
+  "de": "andere",
+  "not": "A1 gözden geçirmesi: ander- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "38": {
+  "tr": "açmak (kapı, pencere, dükkân)",
+  "not": "A1 çeviri gözden geçirmesi: anmachen/öffnen/eröffnen ile aynı karşılığı taşıyordu"
+ },
+ "41": {
+  "tr": "açık olmak (dükkân, kapı)",
+  "not": "A1 çeviri gözden geçirmesi: an sein de \"açık olmak\"; auf sein dükkân/kapı içindir"
+ },
+ "101": {
+  "tr": "düşünmek, sanmak",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Ich denke, ...\" kanaat bildirir; nachdenken ile ayrışması gerekiyor"
+ },
+ "125": {
+  "tr": "son, bitiş",
+  "not": "A1 çeviri gözden geçirmesi: letzt- de \"son\"; das Ende bitiş noktasıdır"
+ },
+ "127": {
+  "tr": "affetmek, mazur görmek; özür dilemek (sich entschuldigen)",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Entschuldigen Sie!\" affedersiniz demek; özür dileme anlamı dönüşlü biçimde doğar"
+ },
+ "131": {
+  "drop": 637,
+  "not": "A1 gözden geçirmesi: r/e Erwachsene — 637 \"der Erwachsene\" ile aynı madde, başlık PDF artığı"
+ },
+ "134": {
+  "tr": "yemek, yemek yemek",
+  "not": "das Essen (135) ile aynı yazım; bu fiil, anlam ayırt edilmiyordu"
+ },
+ "135": {
+  "tr": "yemek, öğün",
+  "not": "essen (134) fiiliyle aynı yazım; bu isim"
+ },
+ "136": {
+  "tr": "bir şey, biraz",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki ve en yaygın anlam \"bir şey\", başta olmalı"
+ },
+ "140": {
+  "tr": "bilet (toplu taşıma)",
+  "not": "A1 çeviri gözden geçirmesi: Ticket ile aynı karşılığı taşıyordu; Fahrkarte toplu taşıma biletidir"
+ },
+ "149": {
+  "tr": "televizyon (yayın, kurum)",
+  "not": "A1 çeviri gözden geçirmesi: der Fernseher cihaz, das Fernsehen yayın/kurumdur"
+ },
+ "167": {
+  "tr": "arkadaş (kadın), kız arkadaş",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"viele Freundinnen\" kadın arkadaşlar demek, sevgili değil"
+ },
+ "168": {
+  "tr": "güler yüzlü, nazik, cana yakın",
+  "not": "A1 çeviri gözden geçirmesi: freundlich nazik olmaktır; \"arkadaş canlısı\" gesellig karşılığı ve örnekteki okul müdürü için doğal değil"
+ },
+ "169": {
+  "tr": "sevinçli, memnun",
+  "not": "A1 çeviri gözden geçirmesi: glücklich zaten \"mutlu\"; froh anlık sevinç bildirir"
+ },
+ "188": {
+  "tr": "dümdüz, dosdoğru (ileri)",
+  "not": "A1 çeviri gözden geçirmesi: yalın \"doğru\" yön değil \"yanlış olmayan\" diye okunuyor; yol tarifinde Türkçesi \"dümdüz\""
+ },
+ "195": {
+  "tr": "kazanmak (oyun, ödül, yarışma)",
+  "not": "A1 çeviri gözden geçirmesi: verdienen de \"kazanmak\"; gewinnen para değil oyun/ödül kazanmaktır"
+ },
+ "210": {
+  "tr": "boğaz, boyun",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Mein Hals tut so weh\" boğaz ağrısıdır"
+ },
+ "234": {
+  "tr": "sizin (nazik hitap, Sie)",
+  "not": "A1 çeviri gözden geçirmesi: euer de \"sizin\"; Ihr resmî hitabın iyelik biçimidir"
+ },
+ "237": {
+  "tr": "bilgi (haber, veri)",
+  "not": "A1 çeviri gözden geçirmesi: Wissen de \"bilgi\"; Information tek tek edinilen haber/veridir"
+ },
+ "246": {
+  "drop": 696,
+  "not": "A1 gözden geçirmesi: r/e Jugendliche — 696 \"der Jugendliche\" ile aynı madde, başlık PDF artığı"
+ },
+ "264": {
+  "tr": "büfe, gazete bayii",
+  "not": "A1 çeviri gözden geçirmesi: Kiosk gazete-içecek satılan büfedir; \"kulübe\" (Hütte) örnekle uyuşmuyor"
+ },
+ "273": {
+  "tr": "-ebilmek, bilmek",
+  "not": "A1 çeviri gözden geçirmesi: können genel yeterlilik kipidir; \"yapabilmek\" onu tun können ile sınırlıyor"
+ },
+ "275": {
+  "tr": "tutmak, fiyatı olmak",
+  "not": "A1 çeviri gözden geçirmesi: örnek fiyat sorusudur; günlük Türkçede \"ne kadar tutuyor\" denir"
+ },
+ "295": {
+  "tr": "üzgün (es tut mir leid: kusura bakmayın)",
+  "not": "A1 çeviri gözden geçirmesi: leid tek başına sıfat değil, leidtun kalıbında yaşar; yalın \"üzgün\" traurig ile çakışıyor"
+ },
+ "309": {
+  "drop": 631,
+  "not": "A1 gözden geçirmesi: Mail — 631 \"E-Mail\" ile aynı madde, kısa konuşma dili biçimi"
+ },
+ "311": {
+  "tr": "(belirsiz özne) insan, herkes",
+  "not": "A1 çeviri gözden geçirmesi: man isim değil belirsiz öznedir; yalın \"insan\" der Mensch ile çakışıyor"
+ },
+ "334": {
+  "tr": "-e/-a (yön), -den sonra",
+  "not": "A1 çeviri gözden geçirmesi: \"nach Berlin\" Türkçede \"Berlin'e\"dir; \"-e doğru\" varış bildiren kullanımı yanlış aktarıyor"
+ },
+ "348": {
+  "tr": "not (okul notu)",
+  "not": "A1 çeviri gözden geçirmesi: die Notiz de \"not\"; Note okul değerlendirme notudur"
+ },
+ "374": {
+  "drop": 142,
+  "not": "A1 gözden geçirmesi: (s Fahrrad) — 142 \"das Fahrrad\" ile aynı madde, örnek cümlesi de yok"
+ },
+ "384": {
+  "tr": "ata binmek",
+  "not": "A1 çeviri gözden geçirmesi: \"at binmek\" bozuk; doğrusu yönelme hâliyle \"ata binmek\""
+ },
+ "390": {
+  "tr": "sakin, sessiz",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Seid bitte ruhig!\" susmak anlamındadır"
+ },
+ "404": {
+  "tr": "çoktan, bile, artık",
+  "not": "A1 çeviri gözden geçirmesi: \"zaten\" sowieso karşılığıdır; schon tamamlanmışlık bildirir"
+ },
+ "412": {
+  "tr": "çok (derece), pek",
+  "not": "A1 çeviri gözden geçirmesi: viel ile birebir aynı karşılık vardı; sehr derece bildirir, miktar değil"
+ },
+ "428": {
+  "tr": "dil, lisan",
+  "not": "A1 çeviri gözden geçirmesi: die Zunge de \"dil\"; organdan ayrılması gerekiyor"
+ },
+ "437": {
+  "tr": "tatlı (şekerli), şirin",
+  "not": "A1 çeviri gözden geçirmesi: Dessert de \"tatlı\"; süß ayrıca \"şirin\" demektir"
+ },
+ "463": {
+  "tr": "üzerinden, karşıdan karşıya; hakkında",
+  "not": "A1 çeviri gözden geçirmesi: edatın \"hakkında\" temel anlamı eksikti"
+ },
+ "471": {
+  "tr": "kazanmak (para), hak etmek",
+  "not": "A1 çeviri gözden geçirmesi: gewinnen de \"kazanmak\"; verdienen emekle para kazanmaktır"
+ },
+ "475": {
+  "tr": "çok (miktar), birçok",
+  "not": "A1 çeviri gözden geçirmesi: sehr ile birebir aynı karşılık vardı; viel miktar bildirir"
+ },
+ "480": {
+  "tr": "tanıtmak, takdim etmek",
+  "beispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
+  "not": "A1 gözden geçirmesi: vorstellen dönüşsüz hâlde \"birini tanıtmak\"tır; \"kendini tanıtmak\" 842 sich vorstellen maddesidir ve örnek cümle de dönüşlüydü"
+ },
+ "494": {
+  "tr": "daha ileri, devam ederek",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"fährt nicht weiter\" devam etmemektir; yalın \"daha\" karşılamıyor"
+ },
+ "495": {
+  "de": "welche",
+  "not": "A1 gözden geçirmesi: welch- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "497": {
+  "formen": "wen, wem",
+  "not": "1316'daki hâl biçimleri buraya alındı"
+ },
+ "529": {
+  "tr": "kapatmak (kapı, pencere)",
+  "not": "A1 çeviri gözden geçirmesi: ausmachen cihaz kapatmaktır; zumachen kapı/pencere kapamaktır"
+ },
+ "531": {
+  "tr": "kapalı olmak (günlük dil)",
+  "not": "A1 çeviri gözden geçirmesi: geschlossen sein ile aynı karşılığı taşıyordu; zu sein konuşma dilidir"
+ },
+ "534": {
+  "drop": 6,
+  "not": "Achtung — 6 ile aynı (A1, artikelli)"
+ },
+ "535": {
+  "drop": 9,
+  "not": "A1 gözden geçirmesi: all- — 9 \"alle\" ile aynı madde, sözlük gövde yazımı"
+ },
+ "537": {
+  "tr": "indirim, kampanya; teklif",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"im Angebot\" indirimde demektir"
+ },
+ "541": {
+  "tr": "çalıştırmak, açmak (cihaz, ışık)",
+  "not": "A1 çeviri gözden geçirmesi: anmachen cihaz çalıştırmaktır; yalın \"açmak\" öffnen ile karışıyor"
+ },
+ "545": {
+  "drop": 21,
+  "not": "Anruf- — 21 ile aynı isim, tire bileşik işareti"
+ },
+ "546": {
+  "drop": 22,
+  "not": "A1 gözden geçirmesi: beantworter — 22 \"der Anrufbeantworter\" başlığının kesilmiş hâli"
+ },
+ "549": {
+  "tr": "açık olmak (cihaz, ışık)",
+  "not": "A1 çeviri gözden geçirmesi: auf sein dükkân/kapı için; an sein cihaz içindir"
+ },
+ "554": {
+  "tr": "bitmek, sona ermek; (bir şeyi) bırakmak",
+  "not": "A1 çeviri gözden geçirmesi: enden ile farkı: aufhören ayrıca bir işi bırakmak demektir"
+ },
+ "556": {
+  "tr": "doldurmak (form, belge)",
+  "not": "A1 çeviri gözden geçirmesi: füllen kap doldurmaktır; ausfüllen form/belge doldurmaktır"
+ },
+ "559": {
+  "tr": "yabancı (kişi), yabancı uyruklu",
+  "not": "A1 çeviri gözden geçirmesi: isimdir; sıfat ausländisch ve fremd ile aynı karşılığı taşıyordu"
+ },
+ "560": {
+  "tr": "yabancı (ülkeye ait)",
+  "not": "A1 çeviri gözden geçirmesi: sıfattır; örnekteki \"ausländisches Geld\" yabancı paradır"
+ },
+ "561": {
+  "tr": "kapatmak (cihaz, ışık), söndürmek",
+  "not": "A1 çeviri gözden geçirmesi: ausmachen cihaz kapatmaktır; yalın \"kapatmak\" zumachen/schließen ile karışıyor"
+ },
+ "564": {
+  "tr": "soyunmak, (giysi, ayakkabı) çıkarmak",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Zieh die Schuhe aus\" çıkarmak anlamındadır"
+ },
+ "567": {
+  "tr": "fırın, ekmek fırını",
+  "not": "A1 çeviri gözden geçirmesi: pastane Konditorei'dır; Bäckerei ekmek fırınıdır"
+ },
+ "577": {
+  "drop": 528,
+  "not": "A1 gözden geçirmesi: zum Beispiel/z. B. — 528 ile aynı madde, kısaltma varyantı"
+ },
+ "579": {
+  "de": "Bekannte",
+  "artikel": "der",
+  "typ": "Nomen",
+  "not": "A1 çeviri gözden geçirmesi: \"der/die Bekannte\" başlığındaki eğik çizgi yazma oyunlarında iki ayrı seçenek gibi bölünüyordu"
+ },
+ "582": {
+  "drop": 72,
+  "not": "A1 gözden geçirmesi: best- — 72 \"beste\" ile aynı madde, sözlük gövde yazımı"
+ },
+ "600": {
+  "tr": "patron, müdür, amir",
+  "not": "A1 çeviri gözden geçirmesi: Türkçede \"şef\" önce aşçı/orkestra şefi diye anlaşılır"
+ },
+ "607": {
+  "drop": 100,
+  "not": "dein- — 100 ile aynı iyelik sıfatı, tire çekim eki işareti"
+ },
+ "610": {
+  "de": "diese",
+  "not": "A1 gözden geçirmesi: dies- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "619": {
+  "tr": "anons (hoparlörden duyuru)",
+  "not": "A1 çeviri gözden geçirmesi: Ansage ile aynı karşılığı taşıyordu; Durchsage hoparlör anonsudur"
+ },
+ "621": {
+  "drop": 112,
+  "not": "A1 gözden geçirmesi: sich duschen — duschen dönüşlü değil; 112 ile aynı madde"
+ },
+ "624": {
+  "tr": "eş, hanım",
+  "not": "A1 çeviri gözden geçirmesi: \"karı\" kaba algılanır, oysa Ehefrau nötr bir sözcüktür"
+ },
+ "626": {
+  "tr": "acele, acelesi olan",
+  "not": "A1 çeviri gözden geçirmesi: \"ivedi\" resmî yazı dilinde kalmış, konuşmada kullanılmıyor"
+ },
+ "627": {
+  "drop": 114,
+  "not": "ein- — 114 ile aynı belirsiz artikel"
+ },
+ "643": {
+  "drop": 972,
+  "not": "Feier- — 972 ile aynı isim; anlamı da yanlıştı (bayram/tatil aslında Feiertag)"
+ },
+ "645": {
+  "tr": "eksik olmak, gelmemek (devamsız olmak)",
+  "not": "A1 çeviri gözden geçirmesi: \"yok olmak\" Türkçede kaybolmaktır; fehlen eksik/orada olmamaktır"
+ },
+ "647": {
+  "tr": "ateş, yangın",
+  "not": "A1 çeviri gözden geçirmesi: Fieber ile birebir aynı karşılık vardı; Feuer yangın/alevdir"
+ },
+ "648": {
+  "tr": "ateş (hastalıkta)",
+  "not": "A1 çeviri gözden geçirmesi: Feuer ile birebir aynı karşılık vardı; Fieber vücut ateşidir"
+ },
+ "652": {
+  "tr": "form, başvuru formu",
+  "not": "A1 çeviri gözden geçirmesi: \"formüler\" Türkçede kullanılmıyor, birebir aktarma"
+ },
+ "654": {
+  "tr": "yabancı, tanımadık",
+  "not": "A1 çeviri gözden geçirmesi: Ausländer/ausländisch ile aynı karşılığı taşıyordu; fremd \"tanımadık\" demektir"
+ },
+ "663": {
+  "tr": "severek, seve seve, memnuniyetle",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki anlam \"gitmeyi severim\"; \"seve seve\" yalnızca rica cevabına uyar"
+ },
+ "680": {
+  "tr": "salon (fuar, spor)",
+  "not": "A1 çeviri gözden geçirmesi: Türkçede \"hol\" evin girişidir (Flur/Diele); Halle büyük salondur"
+ },
+ "692": {
+  "tr": "ona (ihr/ihm), onu (ihn)",
+  "not": "A1 çeviri gözden geçirmesi: tek maddede üç zamir vardı ve hangi biçimin hangi hâl olduğu belirsizdi"
+ },
+ "694": {
+  "drop": 244,
+  "not": "A1 gözden geçirmesi: jed- — 244 \"jeder\" ile aynı madde, sözlük gövde yazımı"
+ },
+ "696": {
+  "tr": "genç, delikanlı (erkek)",
+  "not": "der/die Jugendliche çifti aynı anlamı gösteriyordu; artikel farkı görünür oldu"
+ },
+ "697": {
+  "de": "Kreditkarte",
+  "artikel": "die",
+  "typ": "Nomen",
+  "formen": "-n",
+  "tr": "kredi kartı",
+  "beispiel": "Kann ich mit Kreditkarte bezahlen?",
+  "not": "A1 gözden geçirmesi: \"(Kredit)-Karte\" bozuk başlıktı ve 254 \"die Karte\" ile örtüşüyordu; ayrı madde olarak Kreditkarte yapıldı; Zürih karşılığı da \"(Kredit-)Charte\" artığını taşıyordu",
+  "gsw": "Kreditcharte",
+  "gswBeispiel": "Chan ich mit de Kreditcharte zale?"
+ },
+ "704": {
+  "tr": "almak, elde etmek (günlük dil)",
+  "not": "A1 çeviri gözden geçirmesi: bekommen ile aynı karşılığı taşıyordu; kriegen konuşma dilidir"
+ },
+ "711": {
+  "drop": 1070,
+  "not": "A1 gözden geçirmesi: die Lebens- — \"Lebensmittel\" satır sonundan bölünmüş; 1070 tam hâli"
+ },
+ "712": {
+  "drop": 1070,
+  "not": "A1 gözden geçirmesi: mittel — \"Lebensmittel\" satır sonundan bölünmüş; 1070 tam hâli"
+ },
+ "714": {
+  "tr": "koymak (yatırarak), yatırmak",
+  "not": "A1 çeviri gözden geçirmesi: stellen ile aynı karşılığı taşıyordu; legen yatay koymaktır"
+ },
+ "717": {
+  "de": "letzte",
+  "tr": "son, sonuncu, geçen (letzte Woche)",
+  "not": "A1 gözden geçirmesi: letzt- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "719": {
+  "drop": 300,
+  "not": "lieb- — 300 ile aynı"
+ },
+ "728": {
+  "de": "meiste",
+  "not": "A1 gözden geçirmesi: meist- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "734": {
+  "tr": "istemek (kibar), arzu etmek",
+  "not": "A1 çeviri gözden geçirmesi: möchten wollen ile aynı karşılığı taşıyordu; möchten kibar dilek biçimidir"
+ },
+ "735": {
+  "tr": "an, dakika",
+  "not": "A1 çeviri gözden geçirmesi: \"moment\" Türkçede kullanılmıyor; \"Moment bitte\" = \"bir dakika\""
+ },
+ "738": {
+  "drop": 336,
+  "not": "A1 gözden geçirmesi: nächst- — 336 \"nächste\" ile aynı madde, sözlük gövde yazımı"
+ },
+ "740": {
+  "tr": "açmak (kapı, dükkân)",
+  "not": "A1 çeviri gözden geçirmesi: anmachen da \"açmak\" diye geçiyordu; öffnen cihaz açmak değildir"
+ },
+ "742": {
+  "tr": "yağ (sıvı)",
+  "not": "A1 çeviri gözden geçirmesi: das Fett de \"yağ\"; Öl sıvı yağdır"
+ },
+ "743": {
+  "tr": "büyükanne, nine (samimi)",
+  "not": "A1 çeviri gözden geçirmesi: Großmutter ile aynı karşılığı taşıyordu; Oma samimi hitaptır"
+ },
+ "744": {
+  "tr": "büyükbaba, dede (samimi)",
+  "not": "A1 çeviri gözden geçirmesi: Großvater ile aynı karşılığı taşıyordu; Opa samimi hitaptır"
+ },
+ "748": {
+  "tr": "partner, eş (erkek)",
+  "not": "A1 çeviri gözden geçirmesi: Partnerin ile birebir aynı karşılık vardı, cinsiyet ayrımı yoktu"
+ },
+ "749": {
+  "tr": "partner, eş (kadın)",
+  "not": "A1 çeviri gözden geçirmesi: Partner ile birebir aynı karşılık vardı, cinsiyet ayrımı yoktu"
+ },
+ "754": {
+  "drop": 1136,
+  "not": "A1 gözden geçirmesi: die Pommes frites (pl.) Die — 1136 ile aynı madde, başlıkta çift artikel artığı"
+ },
+ "771": {
+  "tr": "kokmak, koklamak",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Dieser Wein riecht gut\" kokmak anlamında; yaygın anlam başta olmalı"
+ },
+ "773": {
+  "artikel": "der",
+  "formen": "¨-e",
+  "not": "Satz — artikel eksik, çoğul eki bozuktu ('-ä, e'); 1171'den alındı"
+ },
+ "774": {
+  "formen": "-en",
+  "not": "S-Bahn — çoğul eki eksikti, 1486'dan alındı"
+ },
+ "780": {
+  "tr": "kapatmak (kapı, dükkân)",
+  "not": "A1 çeviri gözden geçirmesi: ausmachen da \"kapatmak\" diye geçiyordu; schließen cihaz kapatmak değildir"
+ },
+ "792": {
+  "tr": "kendi işinin sahibi, serbest çalışan",
+  "not": "A1 çeviri gözden geçirmesi: örnekteki \"Er ist selbstständig\" serbest çalışmaktır; \"bağımsız\" yanıltıcı"
+ },
+ "802": {
+  "tr": "koymak (dik olarak), yerleştirmek",
+  "not": "A1 çeviri gözden geçirmesi: legen ile aynı karşılığı taşıyordu; stellen dik koymaktır"
+ },
+ "810": {
+  "tr": "parça, bölüm (bütünün bir parçası)",
+  "not": "das Teil (2836) ile aynı yazım, farklı kelime: der Teil bütünün payı"
+ },
+ "815": {
+  "tr": "bilet (uçak, etkinlik)",
+  "not": "A1 çeviri gözden geçirmesi: Fahrkarte ile aynı karşılığı taşıyordu; Ticket toplu taşıma bileti dışında kullanılır"
+ },
+ "820": {
+  "tr": "merdiven (binada, basamaklı)",
+  "not": "A1 çeviri gözden geçirmesi: die Leiter de \"merdiven\"; Treppe binadaki basamaklı merdivendir"
+ },
+ "826": {
+  "drop": 469,
+  "not": "unser- — 469 ile aynı"
+ },
+ "840": {
+  "tr": "akraba (erkek)",
+  "not": "der/die Verwandte çifti ayırt edilmiyordu"
+ },
+ "850": {
+  "tr": "hoşça kalın (telefonda vedalaşma)",
+  "not": "A1 çeviri gözden geçirmesi: \"duyuşmak üzere\" diye bir Türkçe ifade yok"
+ },
+ "872": {
+  "drop": 1431,
+  "not": "ärgern (sich) — sich ärgern ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "874": {
+  "de": "auf jeden Fall/auf keinen Fall",
+  "not": "auf jeden/ keinen Fall — iki zıt kalıp, ikisi de tam yazıldı"
+ },
+ "880": {
+  "drop": 1471,
+  "not": "ausruhen (sich) — sich ausruhen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "892": {
+  "drop": 1500,
+  "not": "bedanken (sich) — sich bedanken ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "893": {
+  "drop": 1506,
+  "not": "beeilen (sich) — sich beeilen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "896": {
+  "drop": 578,
+  "not": "bekannt — 578 ile aynı sıfat; isim hâli 579'da ayrıca var"
+ },
+ "905": {
+  "drop": 1553,
+  "not": "beschweren (sich) — sich beschweren ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "909": {
+  "drop": 1579,
+  "not": "bewerben (sich) — sich bewerben ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "926": {
+  "drop": 94,
+  "not": "A1 gözden geçirmesi: der/das Comic — 94 ile aynı madde, artikelsiz Sonstiges kaydı"
+ },
+ "943": {
+  "drop": 621,
+  "not": "duschen (sich) — sich duschen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "951": {
+  "de": "sich eintragen",
+  "not": "eintragen (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+ },
+ "954": {
+  "drop": 631,
+  "not": "A1 gözden geçirmesi: (E-)Mail — 631 ile aynı madde, başlıkta parantez artığı"
+ },
+ "956": {
+  "de": "sich entschuldigen",
+  "not": "entschuldigen (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+ },
+ "959": {
+  "de": "sich erinnern",
+  "not": "erinnern (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+ },
+ "965": {
+  "drop": 3,
+  "not": "A1 gözden geçirmesi: (ab)fahren — 3 \"abfahren\" ile aynı madde, başlıkta parantez artığı"
+ },
+ "966": {
+  "drop": 142,
+  "not": "A1 gözden geçirmesi: (Fahr)Rad — 142 \"das Fahrrad\" ile aynı madde, başlıkta parantez artığı"
+ },
+ "987": {
+  "drop": 7973,
+  "not": "fühlen (sich) — sich fühlen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "995": {
+  "tr": "sayın, saygıdeğer",
+  "not": "1957'nin daha eksiksiz anlamı buraya alındı"
+ },
  "1022": {
   "de": "her",
   "not": "her/her-/-her — aynı kelimenin üç yazımı; tire ek işareti, kelimenin parçası değil"
@@ -8,110 +551,125 @@
   "de": "hin",
   "not": "hin/hin-/-hin — aynı kelime"
  },
+ "1033": {
+  "de": "sich informieren (über)",
+  "not": "informieren (sich) (über) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+ },
+ "1037": {
+  "de": "sich interessieren",
+  "not": "interessieren (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+ },
+ "1042": {
+  "drop": 696,
+  "not": "A1 gözden geçirmesi: der/die Jugendliche — 696 ile aynı madde, artikelsiz Sonstiges kaydı"
+ },
+ "1065": {
+  "drop": 706,
+  "not": "kümmern (sich) — sich kümmern ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1081": {
+  "drop": 310,
+  "not": "Mal — 'mal / das Mal' sadeleştirilince 310 ile aynı oldu; zarf 'mal' 2314'te ayrı duruyor"
+ },
+ "1171": {
+  "drop": 773,
+  "not": "Satz — 773 ile aynı; iyi olan alanları 773'e taşındı"
+ },
+ "1185": {
+  "drop": 2644,
+  "not": "schneiden (sich) — sich schneiden ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1198": {
+  "formen": "setzt, setzte, hat gesetzt",
+  "not": "sich setzen — Präteritum eksikti, 2689'dan alındı"
+ },
+ "1222": {
+  "drop": 2792,
+  "not": "streiten (sich) — sich streiten ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1250": {
+  "drop": 456,
+  "not": "A1 gözden geçirmesi: trifft — başlık değil, treffen fiilinin çekimli hâli (456)"
+ },
+ "1252": {
+  "drop": 821,
+  "not": "A1 gözden geçirmesi: tschüs — 821 \"tschüss\" ile aynı madde, yazım varyantı"
+ },
+ "1263": {
+  "drop": 2932,
+  "not": "unterhalten (sich) — sich unterhalten ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1276": {
+  "drop": 2992,
+  "not": "verletzen (sich) — sich verletzen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1277": {
+  "drop": 2994,
+  "not": "verlieben (sich) — sich verlieben ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1296": {
+  "drop": 842,
+  "not": "vorstellen (sich) — sich vorstellen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1303": {
+  "drop": 845,
+  "not": "waschen (sich) — sich waschen ile aynı fiil, parantezli yazım kopyaydı"
+ },
  "1306": {
   "de": "weg",
   "not": "weg/weg- — aynı kelime"
  },
- "1927": {
-  "drop": 656,
-  "not": "früher — 656 ile aynı (A1)"
+ "1313": {
+  "drop": 495,
+  "not": "A1 gözden geçirmesi: welcher — 495 \"welche\" ile aynı madde, çekim varyantı"
  },
- "1984": {
-  "de": "gesamt-",
-  "not": "gesamt-/Gesamt- — yalnız büyük harf farkı; önek olduğu için tire korunur"
- },
- "2062": {
-  "drop": 1022,
-  "not": "her — 1022 ile aynı (A2)"
- },
- "2073": {
-  "drop": 223,
-  "not": "hier — 223 ile aynı (A1)"
- },
- "2076": {
-  "drop": 1029,
-  "not": "hinter — 1029 ile aynı (A2)"
- },
- "2305": {
-  "de": "los",
-  "not": "los/los- — aynı kelime"
- },
- "2367": {
-  "de": "mobil",
-  "not": "mobil/mobil- — aynı kelime"
- },
- "2406": {
-  "de": "national",
-  "not": "national/national- — aynı kelime"
- },
- "2543": {
-  "de": "rauf",
-  "not": "rauf/rauf- — aynı kelime"
- },
- "2544": {
-  "de": "raus",
-  "not": "raus/raus- — aynı kelime"
- },
- "2723": {
-  "de": "Speise",
-  "not": "Speise-/-speise — Speise başlı başına isim; tireler bileşik işareti"
- },
- "2796": {
-  "drop": 433,
-  "not": "Stück — 433 ile aynı (A1)"
- },
- "3052": {
-  "drop": 1289,
-  "not": "vorbei — 1289 ile aynı (A2)"
- },
- "3086": {
-  "drop": 494,
-  "not": "weiter — 'weiter/weiter-' sadeleştirilince 494 ile aynı oldu"
- },
- "3104": {
-  "drop": 501,
-  "not": "wieder — 501 ile aynı (A1)"
- },
- "3148": {
-  "de": "Zeug",
-  "not": "Zeug/-zeug — aynı kelime"
- },
- "3171": {
-  "drop": 857,
-  "not": "zurück — 857 ile aynı (A1)"
- },
- "3173": {
-  "drop": 530,
-  "not": "zusammen — 530 ile aynı (A1)"
- },
- "2670": {
-  "de": "Nordsee/Ostsee",
-  "tr": "Kuzey Denizi / Baltık Denizi",
-  "not": "Nord-/Ostsee — bileşik kısaltması açıldı; 'deniz' anlamı yanlıştı, ikisi de özel ad"
- },
- "3137": {
-  "de": "Zahncreme/Zahnpasta",
-  "not": "Zahncreme/-pasta — sonek kısaltması açıldı"
+ "1316": {
+  "drop": 497,
+  "not": "wer (wen — bozuk çıkarma, 497 ile aynı; hâl biçimleri 497'ye taşındı"
  },
  "1331": {
   "de": "anziehen/ausziehen",
   "not": "(an-)/(aus)ziehen — iki ayrı fiil, parantezli kısaltma açıldı"
  },
- "2507": {
-  "de": "Portemonnaie/Portmonee",
-  "not": "Portemonnaie/Port- → monee — satır sonu kırılması onarıldı"
- },
  "1350": {
   "de": "Abitur",
   "not": "Abitur (D)→A — çapraz gönderme artığı; (D) varsayılan olduğu için gereksiz"
+ },
+ "1479": {
+  "de": "sich etwas aussuchen",
+  "not": "sich etwas) aussuchen — kaçak kapanış parantezi"
+ },
+ "1486": {
+  "drop": 774,
+  "not": "S-Bahn — 774 ile aynı; çoğul eki 774'e taşındı"
+ },
+ "1526": {
+  "tr": "tanıdık (erkek)",
+  "not": "der/die Bekannte çifti ayırt edilmiyordu"
+ },
+ "1527": {
+  "tr": "tanıdık (kadın)",
+  "not": "1526 ile çift"
+ },
+ "1590": {
+  "drop": 79,
+  "not": "A1 gözden geçirmesi: ein bisschen — 79 \"bisschen\" ile aynı madde, örnek cümlesi de kesik"
  },
  "1695": {
   "de": "EC-Karte",
   "not": "ec-Karte/EC-Karte → A: Bankomat-Karte — çapraz gönderme artığı"
  },
+ "1744": {
+  "drop": 952,
+  "not": "Einzel- — 952 ile aynı önek"
+ },
  "1747": {
   "drop": 123,
   "not": "Eis — 123 ile aynı (A1)"
+ },
+ "1783": {
+  "de": "Erdgeschoss/Erdgeschoß",
+  "not": "Erdgeschoss/ Ergeschoß — ikinci biçimde 'd' düşmüş"
  },
  "1852": {
   "drop": 640,
@@ -134,17 +692,97 @@
   "de": "Früchte (CH)",
   "not": "Früchte (CH) → D — çapraz gönderme artığı"
  },
+ "1927": {
+  "drop": 656,
+  "not": "früher — 656 ile aynı (A1)"
+ },
+ "1957": {
+  "drop": 995,
+  "not": "geehrt — 995 ile aynı; daha zengin anlamı 995'e taşındı"
+ },
  "1969": {
   "de": "Gehsteig",
   "not": "Gehsteig (D — kapanmamış parantez"
+ },
+ "1984": {
+  "de": "gesamt-",
+  "not": "gesamt-/Gesamt- — yalnız büyük harf farkı; önek olduğu için tire korunur"
  },
  "2030": {
   "de": "Hackfleisch",
   "not": "Hackfleisch (D — kapanmamış parantez"
  },
+ "2033": {
+  "drop": 678,
+  "not": "A1 gözden geçirmesi: Hähnchen/Hühnchen — 678 ile aynı madde, eğik çizgili varyant"
+ },
+ "2050": {
+  "de": "Hausfrau/Hausmann",
+  "not": "Hausfrau/der Hausmann — artikel ikinci biçime yapışmış"
+ },
+ "2062": {
+  "drop": 1022,
+  "not": "her — 1022 ile aynı (A2)"
+ },
+ "2063": {
+  "typ": "Sonstiges",
+  "not": "heraus- — zarf/önek, fiil olarak işaretliydi"
+ },
+ "2068": {
+  "typ": "Sonstiges",
+  "not": "herunter- — zarf/önek, fiil olarak işaretliydi"
+ },
+ "2073": {
+  "drop": 223,
+  "not": "hier — 223 ile aynı (A1)"
+ },
+ "2076": {
+  "drop": 1029,
+  "not": "hinter — 1029 ile aynı (A2)"
+ },
+ "2144": {
+  "tr": "genç kız, genç (kadın)",
+  "not": "696 ile çift"
+ },
+ "2166": {
+  "de": "sich etwas kaufen",
+  "not": "sich etwas) kaufen — kaçak kapanış parantezi"
+ },
+ "2170": {
+  "drop": 259,
+  "not": "kein- — 259 ile aynı"
+ },
+ "2230": {
+  "tr": "hasta (erkek)",
+  "not": "der/die Kranke çifti ayırt edilmiyordu"
+ },
+ "2231": {
+  "tr": "hasta (kadın)",
+  "not": "2230 ile çift"
+ },
+ "2236": {
+  "drop": 697,
+  "not": "A1 gözden geçirmesi: Kreditkarte — 697 ile aynı madde"
+ },
+ "2305": {
+  "de": "los",
+  "not": "los/los- — aynı kelime"
+ },
  "2324": {
   "de": "Matura (A)",
   "not": "Matura (A — kapanmamış parantez, bölge bilgisi korundu"
+ },
+ "2365": {
+  "drop": 733,
+  "not": "Möbel — 733 ile aynı (A1)"
+ },
+ "2367": {
+  "de": "mobil",
+  "not": "mobil/mobil- — aynı kelime"
+ },
+ "2406": {
+  "de": "national",
+  "not": "national/national- — aynı kelime"
  },
  "2436": {
   "de": "Obers (A)",
@@ -155,6 +793,14 @@
   "drop": 351,
   "not": "Obst — 351 ile aynı (A1)"
  },
+ "2459": {
+  "tr": "orijinal, asıl nüsha",
+  "not": "original (2460) sıfatıyla aynı yazım; bu isim"
+ },
+ "2460": {
+  "tr": "orijinal, özgün (sıfat)",
+  "not": "das Original (2459) ismiyle aynı yazım; bu sıfat"
+ },
  "2477": {
   "de": "in Pension gehen",
   "not": "in Pension gehen/sein (D — kapanmamış parantez; 'sein' ayrı madde 2478'de"
@@ -163,14 +809,30 @@
   "de": "pensioniert werden",
   "not": "pensioniert werden/sein (D — kapanmamış parantez"
  },
+ "2507": {
+  "de": "Portemonnaie/Portmonee",
+  "not": "Portemonnaie/Port- → monee — satır sonu kırılması onarıldı"
+ },
  "2536": {
   "de": "Rahm (CH)",
   "tr": "krema, kaymak (İsviçre)",
   "not": "(Schlag-)Rahm (CH) → D: (Schlag-)Sahne — çapraz gönderme artığı"
  },
+ "2543": {
+  "de": "rauf",
+  "not": "rauf/rauf- — aynı kelime"
+ },
+ "2544": {
+  "de": "raus",
+  "not": "raus/raus- — aynı kelime"
+ },
  "2578": {
   "de": "in Rente gehen",
   "not": "in Rente gehen/sein (D) → D — artık temizlendi"
+ },
+ "2584": {
+  "drop": 770,
+  "not": "A1 gözden geçirmesi: Rezeption/Reception — 770 ile aynı madde, eğik çizgili varyant"
  },
  "2604": {
   "de": "Sahne",
@@ -180,9 +842,94 @@
   "drop": 2436,
   "not": "Obers — 2436 ile aynı madde, iki kez çıkarılmış"
  },
+ "2670": {
+  "de": "Nordsee/Ostsee",
+  "tr": "Kuzey Denizi / Baltık Denizi",
+  "not": "Nord-/Ostsee — bileşik kısaltması açıldı; 'deniz' anlamı yanlıştı, ikisi de özel ad"
+ },
+ "2689": {
+  "drop": 1198,
+  "not": "sich setzen — 1198 ile aynı; çekim bilgisi 1198'e taşındı"
+ },
+ "2716": {
+  "de": "so viel",
+  "not": "so viel/so viel wie — ikincisi aynı kalıbın genişlemişi"
+ },
+ "2723": {
+  "de": "Speise",
+  "not": "Speise-/-speise — Speise başlı başına isim; tireler bileşik işareti"
+ },
  "2779": {
   "drop": 803,
   "not": "Stock — 803 ile aynı (A1)"
+ },
+ "2796": {
+  "drop": 433,
+  "not": "Stück — 433 ile aynı (A1)"
+ },
+ "2799": {
+  "tr": "öğrenci (erkek)",
+  "not": "der/die Studierende çifti ayırt edilmiyordu"
+ },
+ "2800": {
+  "tr": "öğrenci (kadın)",
+  "not": "2799 ile çift"
+ },
+ "2836": {
+  "tr": "parça (tek tek nesne, yedek parça)",
+  "not": "der Teil (810) ile aynı yazım, farklı kelime: das Teil somut nesne"
+ },
+ "2856": {
+  "tr": "ölü, ölen kişi (erkek)",
+  "not": "der/die Tote çifti ayırt edilmiyordu"
+ },
+ "2857": {
+  "tr": "ölü, ölen kişi (kadın)",
+  "not": "2856 ile çift"
+ },
+ "2866": {
+  "drop": 1248,
+  "not": "Traum- — 1248 ile aynı isim"
+ },
+ "2930": {
+  "drop": 828,
+  "not": "unter- — 828 ile aynı"
+ },
+ "3030": {
+  "tr": "akraba (kadın)",
+  "not": "840 ile çift"
+ },
+ "3045": {
+  "drop": 1288,
+  "not": "Volleyball — 1288 ile aynı (A2, artikelli)"
+ },
+ "3052": {
+  "drop": 1289,
+  "not": "vorbei — 1289 ile aynı (A2)"
+ },
+ "3081": {
+  "drop": 844,
+  "not": "was für ein- — 844 ile aynı kalıp"
+ },
+ "3086": {
+  "drop": 494,
+  "not": "weiter — 'weiter/weiter-' sadeleştirilince 494 ile aynı oldu"
+ },
+ "3090": {
+  "drop": 496,
+  "not": "A1 gözden geçirmesi: wenig/wenige — 496 \"wenig\" ile aynı madde, çekim varyantı"
+ },
+ "3104": {
+  "drop": 501,
+  "not": "wieder — 501 ile aynı (A1)"
+ },
+ "3137": {
+  "de": "Zahncreme/Zahnpasta",
+  "not": "Zahncreme/-pasta — sonek kısaltması açıldı"
+ },
+ "3148": {
+  "de": "Zeug",
+  "not": "Zeug/-zeug — aynı kelime"
  },
  "3154": {
   "de": "Zivilstand (CH)",
@@ -193,301 +940,21 @@
   "tr": "kibrit (Avusturya)",
   "not": "Zünder (A) (Pl.) → Streichholz — çapraz gönderme artığı"
  },
- "1479": {
-  "de": "sich etwas aussuchen",
-  "not": "sich etwas) aussuchen — kaçak kapanış parantezi"
+ "3171": {
+  "drop": 857,
+  "not": "zurück — 857 ile aynı (A1)"
  },
- "2166": {
-  "de": "sich etwas kaufen",
-  "not": "sich etwas) kaufen — kaçak kapanış parantezi"
+ "3173": {
+  "drop": 530,
+  "not": "zusammen — 530 ile aynı (A1)"
  },
- "1198": {
-  "formen": "setzt, setzte, hat gesetzt",
-  "not": "sich setzen — Präteritum eksikti, 2689'dan alındı"
- },
- "874": {
-  "de": "auf jeden Fall/auf keinen Fall",
-  "not": "auf jeden/ keinen Fall — iki zıt kalıp, ikisi de tam yazıldı"
- },
- "896": {
-  "drop": 578,
-  "not": "bekannt — 578 ile aynı sıfat; isim hâli 579'da ayrıca var"
- },
- "1783": {
-  "de": "Erdgeschoss/Erdgeschoß",
-  "not": "Erdgeschoss/ Ergeschoß — ikinci biçimde 'd' düşmüş"
- },
- "2050": {
-  "de": "Hausfrau/Hausmann",
-  "not": "Hausfrau/der Hausmann — artikel ikinci biçime yapışmış"
- },
- "1081": {
-  "drop": 310,
-  "not": "Mal — 'mal / das Mal' sadeleştirilince 310 ile aynı oldu; zarf 'mal' 2314'te ayrı duruyor"
- },
- "2716": {
-  "de": "so viel",
-  "not": "so viel/so viel wie — ikincisi aynı kalıbın genişlemişi"
- },
- "134": {
-  "tr": "yemek, yemek yemek",
-  "not": "das Essen (135) ile aynı yazım; bu fiil, anlam ayırt edilmiyordu"
- },
- "135": {
-  "tr": "yemek, öğün",
-  "not": "essen (134) fiiliyle aynı yazım; bu isim"
- },
- "810": {
-  "tr": "parça, bölüm (bütünün bir parçası)",
-  "not": "das Teil (2836) ile aynı yazım, farklı kelime: der Teil bütünün payı"
- },
- "2836": {
-  "tr": "parça (tek tek nesne, yedek parça)",
-  "not": "der Teil (810) ile aynı yazım, farklı kelime: das Teil somut nesne"
- },
- "2459": {
-  "tr": "orijinal, asıl nüsha",
-  "not": "original (2460) sıfatıyla aynı yazım; bu isim"
- },
- "2460": {
-  "tr": "orijinal, özgün (sıfat)",
-  "not": "das Original (2459) ismiyle aynı yazım; bu sıfat"
- },
- "773": {
-  "artikel": "der",
-  "formen": "¨-e",
-  "not": "Satz — artikel eksik, çoğul eki bozuktu ('-ä, e'); 1171'den alındı"
- },
- "774": {
-  "formen": "-en",
-  "not": "S-Bahn — çoğul eki eksikti, 1486'dan alındı"
- },
- "_drop": "Aşağıdakiler aynı kelimenin ikinci kaydı. Goethe listeleri üst üste biniyor: A1/A2'de geçen kelime B1 listesinde tekrar ediyor. Öğrencinin ilk karşılaşması gereken yer düşük seviye olduğu için orada olan korunur.",
- "534": {
-  "drop": 6,
-  "not": "Achtung — 6 ile aynı (A1, artikelli)"
- },
- "2365": {
-  "drop": 733,
-  "not": "Möbel — 733 ile aynı (A1)"
- },
- "1171": {
-  "drop": 773,
-  "not": "Satz — 773 ile aynı; iyi olan alanları 773'e taşındı"
- },
- "1486": {
-  "drop": 774,
-  "not": "S-Bahn — 774 ile aynı; çoğul eki 774'e taşındı"
- },
- "2689": {
-  "drop": 1198,
-  "not": "sich setzen — 1198 ile aynı; çekim bilgisi 1198'e taşındı"
- },
- "3045": {
-  "drop": 1288,
-  "not": "Volleyball — 1288 ile aynı (A2, artikelli)"
- },
- "_pass2": "İkinci tur: ilk düzeltmelerden sonra ortaya çıkan tekrarlar ve der/die çiftlerinde ayırt edilmeyen anlamlar.",
- "1744": {
-  "drop": 952,
-  "not": "Einzel- — 952 ile aynı önek"
- },
- "696": {
-  "tr": "genç, delikanlı (erkek)",
-  "not": "der/die Jugendliche çifti aynı anlamı gösteriyordu; artikel farkı görünür oldu"
- },
- "2144": {
-  "tr": "genç kız, genç (kadın)",
-  "not": "696 ile çift"
- },
- "840": {
-  "tr": "akraba (erkek)",
-  "not": "der/die Verwandte çifti ayırt edilmiyordu"
- },
- "3030": {
-  "tr": "akraba (kadın)",
-  "not": "840 ile çift"
- },
- "1526": {
-  "tr": "tanıdık (erkek)",
-  "not": "der/die Bekannte çifti ayırt edilmiyordu"
- },
- "1527": {
-  "tr": "tanıdık (kadın)",
-  "not": "1526 ile çift"
- },
- "2230": {
-  "tr": "hasta (erkek)",
-  "not": "der/die Kranke çifti ayırt edilmiyordu"
- },
- "2231": {
-  "tr": "hasta (kadın)",
-  "not": "2230 ile çift"
- },
- "2799": {
-  "tr": "öğrenci (erkek)",
-  "not": "der/die Studierende çifti ayırt edilmiyordu"
- },
- "2800": {
-  "tr": "öğrenci (kadın)",
-  "not": "2799 ile çift"
- },
- "2856": {
-  "tr": "ölü, ölen kişi (erkek)",
-  "not": "der/die Tote çifti ayırt edilmiyordu"
- },
- "2857": {
-  "tr": "ölü, ölen kişi (kadın)",
-  "not": "2856 ile çift"
- },
- "_pass3": "Üçüncü tur: tireli kök maddeler tohumlamada tire kırpılınca düz kelimeyle çakışıyordu. Yalnızca gerçekten aynı kelime olanlar düşürüldü; erst-/erst (sıra sayısı ↔ 'ancak'), ober-/Ober (üst ↔ garson), recht-/recht (sağ ↔ haklı), link-/Link (sol ↔ bağlantı) ve Groß- (bağlı önek) farklı kelimeler olduğu için korundu.",
- "607": {
-  "drop": 100,
-  "not": "dein- — 100 ile aynı iyelik sıfatı, tire çekim eki işareti"
- },
- "826": {
-  "drop": 469,
-  "not": "unser- — 469 ile aynı"
- },
- "2170": {
-  "drop": 259,
-  "not": "kein- — 259 ile aynı"
- },
- "719": {
-  "drop": 300,
-  "not": "lieb- — 300 ile aynı"
- },
- "627": {
-  "drop": 114,
-  "not": "ein- — 114 ile aynı belirsiz artikel"
- },
- "3081": {
-  "drop": 844,
-  "not": "was für ein- — 844 ile aynı kalıp"
- },
- "545": {
-  "drop": 21,
-  "not": "Anruf- — 21 ile aynı isim, tire bileşik işareti"
- },
- "2866": {
-  "drop": 1248,
-  "not": "Traum- — 1248 ile aynı isim"
- },
- "2930": {
-  "drop": 828,
-  "not": "unter- — 828 ile aynı"
- },
- "643": {
-  "drop": 972,
-  "not": "Feier- — 972 ile aynı isim; anlamı da yanlıştı (bayram/tatil aslında Feiertag)"
- },
- "1957": {
-  "drop": 995,
-  "not": "geehrt — 995 ile aynı; daha zengin anlamı 995'e taşındı"
- },
- "1316": {
-  "drop": 497,
-  "not": "wer (wen — bozuk çıkarma, 497 ile aynı; hâl biçimleri 497'ye taşındı"
- },
- "995": {
-  "tr": "sayın, saygıdeğer",
-  "not": "1957'nin daha eksiksiz anlamı buraya alındı"
- },
- "497": {
-  "formen": "wen, wem",
-  "not": "1316'daki hâl biçimleri buraya alındı"
- },
- "_pass4": "Denetim turu: 'X (sich)' biçimindeki dönüşlü fiiller. 16'sı zaten 'sich X' olarak havuzda vardı — öğrenci aynı fiili iki kez görüyordu. Kalan 5'i tutarlı biçime getirildi.",
- "872": {
-  "drop": 1431,
-  "not": "ärgern (sich) — sich ärgern ile aynı fiil, parantezli yazım kopyaydı"
- },
- "880": {
-  "drop": 1471,
-  "not": "ausruhen (sich) — sich ausruhen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "892": {
-  "drop": 1500,
-  "not": "bedanken (sich) — sich bedanken ile aynı fiil, parantezli yazım kopyaydı"
- },
- "893": {
-  "drop": 1506,
-  "not": "beeilen (sich) — sich beeilen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "905": {
-  "drop": 1553,
-  "not": "beschweren (sich) — sich beschweren ile aynı fiil, parantezli yazım kopyaydı"
- },
- "909": {
-  "drop": 1579,
-  "not": "bewerben (sich) — sich bewerben ile aynı fiil, parantezli yazım kopyaydı"
- },
- "943": {
-  "drop": 621,
-  "not": "duschen (sich) — sich duschen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "951": {
-  "de": "sich eintragen",
-  "not": "eintragen (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
- },
- "956": {
-  "de": "sich entschuldigen",
-  "not": "entschuldigen (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
- },
- "959": {
-  "de": "sich erinnern",
-  "not": "erinnern (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
- },
- "987": {
-  "drop": 7973,
-  "not": "fühlen (sich) — sich fühlen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1033": {
-  "de": "sich informieren (über)",
-  "not": "informieren (sich) (über) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
- },
- "1037": {
-  "de": "sich interessieren",
-  "not": "interessieren (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
- },
- "1065": {
+ "3784": {
   "drop": 706,
-  "not": "kümmern (sich) — sich kümmern ile aynı fiil, parantezli yazım kopyaydı"
+  "not": "A1 gözden geçirmesi: sich kümmern um — 706 ile aynı madde, edatlı yazımı"
  },
- "1185": {
-  "drop": 2644,
-  "not": "schneiden (sich) — sich schneiden ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1222": {
-  "drop": 2792,
-  "not": "streiten (sich) — sich streiten ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1263": {
-  "drop": 2932,
-  "not": "unterhalten (sich) — sich unterhalten ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1276": {
-  "drop": 2992,
-  "not": "verletzen (sich) — sich verletzen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1277": {
-  "drop": 2994,
-  "not": "verlieben (sich) — sich verlieben ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1296": {
-  "drop": 842,
-  "not": "vorstellen (sich) — sich vorstellen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "1303": {
-  "drop": 845,
-  "not": "waschen (sich) — sich waschen ile aynı fiil, parantezli yazım kopyaydı"
- },
- "2063": {
-  "typ": "Sonstiges",
-  "not": "heraus- — zarf/önek, fiil olarak işaretliydi"
- },
- "2068": {
-  "typ": "Sonstiges",
-  "not": "herunter- — zarf/önek, fiil olarak işaretliydi"
- }
+ "_": "Madde başlığı düzeltmeleri. Anahtar: kelime id'si. 'de' yeni başlık, 'tr' yeni anlam (yalnızca gerekliyse). Her satırın gerekçesi 'not' alanında.",
+ "_drop": "Aşağıdakiler aynı kelimenin ikinci kaydı. Goethe listeleri üst üste biniyor: A1/A2'de geçen kelime B1 listesinde tekrar ediyor. Öğrencinin ilk karşılaşması gereken yer düşük seviye olduğu için orada olan korunur.",
+ "_pass2": "İkinci tur: ilk düzeltmelerden sonra ortaya çıkan tekrarlar ve der/die çiftlerinde ayırt edilmeyen anlamlar.",
+ "_pass3": "Üçüncü tur: tireli kök maddeler tohumlamada tire kırpılınca düz kelimeyle çakışıyordu. Yalnızca gerçekten aynı kelime olanlar düşürüldü; erst-/erst (sıra sayısı ↔ 'ancak'), ober-/Ober (üst ↔ garson), recht-/recht (sağ ↔ haklı), link-/Link (sol ↔ bağlantı) ve Groß- (bağlı önek) farklı kelimeler olduğu için korundu.",
+ "_pass4": "Denetim turu: 'X (sich)' biçimindeki dönüşlü fiiller. 16'sı zaten 'sich X' olarak havuzda vardı — öğrenci aynı fiili iki kez görüyordu. Kalan 5'i tutarlı biçime getirildi."
 }

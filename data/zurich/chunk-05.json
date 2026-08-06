@@ -40,7 +40,6 @@
 { "id": 1039, "gsw": "öpper", "artikel": null, "beispiel": "Hät öpper min Schtift? Hallo, isch öpper da?" },
 { "id": 1040, "gsw": "jogge", "artikel": null, "beispiel": "Ich gaa gärn im Park go jogge." },
 { "id": 1041, "gsw": "Jugendherbärg", "artikel": "d", "beispiel": "Mir übernachted i de Jugendherbärg." },
-{ "id": 1042, "gsw": "Jugendlichi", "artikel": null, "beispiel": "Vili Jugendlichi losed de ganz Tag Musig. De Iitritt für Chind und Jugendlichi bis sächzää isch gratis." },
 { "id": 1043, "gsw": "Kaländer", "artikel": "de", "beispiel": "Händ Si am Määntig Ziit? – En Momänt, ich lueg i min Kaländer. Ich schriibe alli Termin i min Kaländer." },
 { "id": 1044, "gsw": "Warehuus", "artikel": "s", "beispiel": "Mini Pullover chauf ich immer im Warehuus." },
 { "id": 1045, "gsw": "Chäller", "artikel": "de", "beispiel": "Bitte bring d Härdöpfel i de Chäller! D Wöschmaschine sind im Chäller." },
@@ -242,6 +241,5 @@
 { "id": 1246, "gsw": "trainiere", "artikel": null, "beispiel": "Mir trainiered äimal pro Wuche im Schportveräin." },
 { "id": 1247, "gsw": "Training", "artikel": "s", "beispiel": "S Training isch immer am Ziischtig. Ich gaa jedi Wuche is Training." },
 { "id": 1248, "gsw": "Traum", "artikel": "de", "beispiel": "Ich möcht e äigeni Firma, das isch min Traum." },
-{ "id": 1249, "gsw": "tröime", "artikel": null, "beispiel": "Ich ha schlächt tröimt. Ich tröime vo mene groosse Huus mit Garte." },
-{ "id": 1250, "gsw": "träffe (sich)", "artikel": null, "beispiel": "Mir träffed öis immer am Friitig." }
+{ "id": 1249, "gsw": "tröime", "artikel": null, "beispiel": "Ich ha schlächt tröimt. Ich tröime vo mene groosse Huus mit Garte." }
 ]

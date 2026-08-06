@@ -1,6 +1,5 @@
 [
 { "id": 1251, "gsw": "troche", "artikel": null, "beispiel": "D Wösch isch bald troche." },
-{ "id": 1252, "gsw": "Ade", "artikel": null, "beispiel": "Ade, bis morn!" },
 { "id": 1253, "gsw": "typisch", "artikel": null, "beispiel": "Die Musig isch typisch für das Land. Typisch Anna, si chunt natüürli wider z schpaat." },
 { "id": 1254, "gsw": "übermorn", "artikel": null, "beispiel": "Morn han ich frei. Ich chume übermorn wider is Büro." },
 { "id": 1255, "gsw": "übersetze", "artikel": null, "beispiel": "Chönd Si mer de Brief bitte übersetze?" },
@@ -56,7 +55,6 @@
 { "id": 1310, "gsw": "wäich", "artikel": null, "beispiel": "Ich hett gern zum Zmorge es wäichs Äi. S Bett im Hotel isch z wäich gsii." },
 { "id": 1311, "gsw": "wil", "artikel": null, "beispiel": "Ich cha nöd choo, wil ich schaffe mues." },
 { "id": 1312, "gsw": "brüele", "artikel": null, "beispiel": "Warum brüelet s Baby? Brüel bitte nöd!" },
-{ "id": 1313, "gsw": "wele", "artikel": null, "beispiel": "Wele Taag isch hüt? Wele Kurs wotsch mache? Weli Bluse nämed Si? Weles Buech suechsch?" },
 { "id": 1314, "gsw": "wenigschtens", "artikel": null, "beispiel": "Ich ha kän Hunger. – Ach, ässed Si wenigschtens es Schtück Chueche." },
 { "id": 1315, "gsw": "wänn", "artikel": null, "beispiel": "Wänn ich nöd schaffe mues, chume ich." },
 { "id": 1317, "gsw": "Wärkschtatt", "artikel": "d", "beispiel": "Mis Auto isch kaputt. Es isch i de Wärkschtatt." },
