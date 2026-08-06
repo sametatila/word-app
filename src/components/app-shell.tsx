@@ -150,16 +150,28 @@ export function AppShell({
         </header>
 
         {/* Kaydırma yalnızca burada olur: uzun listeler kayar, oyun ekranları
-            kalan alanı tam olarak bilir ve taşmaz. */}
-        {/* Alt boşluk ölçülen gezinme yüksekliğinden; masaüstünde gezinme gizli
-            olduğu için değişken 0 kalıyor ve md: kuralı devralıyor.
+            kalan alanı tam olarak bilir ve taşmaz.
             `overscroll-contain` elastik kaydırmanın sayfa gövdesine zincirlenip
             kaymıyormuş gibi durmasını engelliyor. */}
-        <main
-          className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 pt-4 md:px-8 md:pb-8 md:pt-8"
-          style={{ paddingBottom: "var(--nav-h, 6rem)" }}
-        >
+        <main className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 pt-4 md:px-8 md:pb-8 md:pt-8">
           {children}
+          {/* Gezinmenin altında kalan boşluk bir DOLGU değil, akıştaki gerçek
+              bir öğe.
+              Önce `main` üzerinde `padding-bottom` olarak duruyordu ve bir
+              telefonda içerik gezinmenin altında kalıyordu: bir kaydırma
+              kutusunun alt dolgusu, içindeki bir öğe TAŞTIĞINDA kaydırma
+              alanına eklenmiyor. Ölçüldü — dört telefon profilinde de içeriğin
+              son 96 pikseli kaydırma sonuna gelindiğinde bile gezinmenin
+              altında kalıyordu. Akıştaki bir öğe ise her zaman sayılıyor.
+
+              Yükseklik gezinmenin GERÇEK yüksekliğinden: sabit bir değer,
+              cihazın alt güvenli alanı ve kullanıcının yazı tipi ölçeği
+              yüzünden bazı telefonlarda az, bazılarında fazla kalıyordu. */}
+          <div
+            aria-hidden
+            className="shrink-0 md:hidden"
+            style={{ height: "var(--nav-h, 6rem)" }}
+          />
         </main>
 
         {/* Mobil alt gezinme */}

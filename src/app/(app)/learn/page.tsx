@@ -17,11 +17,8 @@ export default async function LearnPage() {
     console.error("[learn] sıralama okunamadı", err);
   }
 
-  // min-h-0 şart: olmazsa flex çocuk kendi içeriği kadar büyür ve oyun alanı
-  // kalan yüksekliği bilemeyip taşar.
-  return (
-    <div className="flex min-h-0 flex-1 flex-col">
-      <SessionPlayer leaderboard={rows.length ? <Leaderboard rows={rows} /> : null} />
-    </div>
-  );
+  // Sarmalayıcı artık burada değil: kalan alana çakılmak mı yoksa içerikle
+  // birlikte büyümek mi gerektiği ekrana göre değişiyor ve bunu yalnızca
+  // oynatıcı biliyor.
+  return <SessionPlayer leaderboard={rows.length ? <Leaderboard rows={rows} /> : null} />;
 }

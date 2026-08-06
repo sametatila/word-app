@@ -252,46 +252,67 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
 
   if (status === "challenge")
     return (
-      <ChallengePlayer
-        onExit={() => {
-          router.refresh();
-          void load();
-        }}
-      />
+      <Screen fills>
+        <ChallengePlayer
+          onExit={() => {
+            router.refresh();
+            void load();
+          }}
+        />
+      </Screen>
     );
-  if (status === "loading") return <LoadingCard />;
+  if (status === "loading")
+    return (
+      <Screen fills>
+        <LoadingCard />
+      </Screen>
+    );
   if (status === "ready" && session)
     return (
-      <StartCard
-        meta={session.meta}
-        rounds={session.rounds}
-        resumable={resumable}
-        onStart={() => void startFresh()}
-        onResume={resume}
-        leaderboard={leaderboard}
-      />
+      <Screen>
+        <StartCard
+          meta={session.meta}
+          rounds={session.rounds}
+          resumable={resumable}
+          onStart={() => void startFresh()}
+          onResume={resume}
+          leaderboard={leaderboard}
+        />
+      </Screen>
     );
-  if (status === "error") return <ErrorCard kind={errorKind} onRetry={() => void load()} />;
+  if (status === "error")
+    return (
+      <Screen>
+        <ErrorCard kind={errorKind} onRetry={() => void load()} />
+      </Screen>
+    );
   if (status === "empty")
-    return <EmptyCard meta={session?.meta} onExtra={() => void load({ extra: true })} />;
+    return (
+      <Screen>
+        <EmptyCard meta={session?.meta} onExtra={() => void load({ extra: true })} />
+      </Screen>
+    );
   if (status === "done")
     return (
-      <SummaryCard
-        tally={tally}
-        result={result}
-        missed={missed.current}
-        onContinue={() => {
-          router.refresh();
-          void load();
-        }}
-        onChallenge={() => setStatus("challenge")}
-      />
+      <Screen>
+        <SummaryCard
+          tally={tally}
+          result={result}
+          missed={missed.current}
+          onContinue={() => {
+            router.refresh();
+            void load();
+          }}
+          onChallenge={() => setStatus("challenge")}
+        />
+      </Screen>
     );
 
   const round = session!.rounds[index];
   const progress = ((index + 1) / session!.rounds.length) * 100;
 
   return (
+    <Screen fills>
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
       <div className="mb-2 shrink-0">
         <LevelBadge
@@ -369,7 +390,24 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         </motion.div>
       </AnimatePresence>
     </div>
+    </Screen>
   );
+}
+
+/**
+ * Ekran sarmalayıcısı — iki farklı davranış gerekiyor ve ikisi aynı anda olamaz.
+ *
+ * `fills`: oyun ekranı kalan alana ÇAKILIR. FitBox içeriği ancak sınırlı bir
+ * yüksekliği ölçebildiğinde küçültebiliyor; sarmalayıcı içerikle büyürse ölçüm
+ * her zaman "sığıyor" der ve içerik taşar.
+ *
+ * `fills` yok: başlangıç, özet ve hata ekranları birer belge. İçerikle birlikte
+ * BÜYÜMELERİ gerekiyor. Önce bunlar da kalan alana çakılıyordu ve taşan kısım
+ * — sıralama tablosunun altı — kaydırma sonuna gelindiğinde bile gezinmenin
+ * altında kalıyordu.
+ */
+function Screen({ fills, children }: { fills?: boolean; children: ReactNode }) {
+  return <div className={fills ? "flex min-h-0 flex-1 flex-col" : "flex flex-col"}>{children}</div>;
 }
 
 function StartCard({
