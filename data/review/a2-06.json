@@ -1,0 +1,998 @@
+[
+ {
+  "id": 7587,
+  "de": "tagelang",
+  "typ": "Sonstiges",
+  "tr": "günlerce",
+  "formen": "",
+  "beispiel": "Es hat tagelang geregnet."
+ },
+ {
+  "id": 7588,
+  "de": "monatelang",
+  "typ": "Sonstiges",
+  "tr": "aylarca",
+  "formen": "",
+  "beispiel": "Sie hat monatelang eine Wohnung gesucht."
+ },
+ {
+  "id": 7589,
+  "de": "morgens",
+  "typ": "Sonstiges",
+  "tr": "sabahları",
+  "formen": "",
+  "beispiel": "Morgens trinke ich immer einen Tee."
+ },
+ {
+  "id": 7590,
+  "de": "abends",
+  "typ": "Sonstiges",
+  "tr": "akşamları",
+  "formen": "",
+  "beispiel": "Abends bin ich meistens zu müde zum Kochen."
+ },
+ {
+  "id": 7591,
+  "de": "mittags",
+  "typ": "Sonstiges",
+  "tr": "öğlenleri",
+  "formen": "",
+  "beispiel": "Mittags esse ich in der Kantine."
+ },
+ {
+  "id": 7592,
+  "de": "nachts",
+  "typ": "Sonstiges",
+  "tr": "geceleri",
+  "formen": "",
+  "beispiel": "Nachts ist es hier sehr ruhig."
+ },
+ {
+  "id": 7593,
+  "de": "sonntags",
+  "typ": "Sonstiges",
+  "tr": "pazarları, pazar günleri",
+  "formen": "",
+  "beispiel": "Sonntags haben die Geschäfte geschlossen."
+ },
+ {
+  "id": 7594,
+  "de": "gelegentlich",
+  "typ": "Sonstiges",
+  "tr": "ara sıra, fırsat buldukça",
+  "formen": "",
+  "beispiel": "Gelegentlich gehen wir zusammen schwimmen."
+ },
+ {
+  "id": 7595,
+  "de": "mehrmals",
+  "typ": "Sonstiges",
+  "tr": "birkaç kez, defalarca",
+  "formen": "",
+  "beispiel": "Ich habe dich mehrmals angerufen."
+ },
+ {
+  "id": 7596,
+  "de": "mehrfach",
+  "typ": "Sonstiges",
+  "tr": "birden çok kez, tekrar tekrar",
+  "formen": "",
+  "beispiel": "Das Formular wurde mehrfach kontrolliert."
+ },
+ {
+  "id": 7597,
+  "de": "wiederholt",
+  "typ": "Sonstiges",
+  "tr": "tekrarlanan biçimde, üst üste",
+  "formen": "",
+  "beispiel": "Der Nachbar hat sich wiederholt über den Lärm beschwert."
+ },
+ {
+  "id": 7598,
+  "de": "stets",
+  "typ": "Sonstiges",
+  "tr": "daima, her zaman",
+  "formen": "",
+  "beispiel": "Der Chef ist stets freundlich zu den Kunden."
+ },
+ {
+  "id": 7599,
+  "de": "andauernd",
+  "typ": "Sonstiges",
+  "tr": "sürekli, ha bire",
+  "formen": "",
+  "beispiel": "Mein Handy klingelt andauernd."
+ },
+ {
+  "id": 7600,
+  "de": "ausnahmsweise",
+  "typ": "Sonstiges",
+  "tr": "istisna olarak, bir kereliğine",
+  "formen": "",
+  "beispiel": "Heute darfst du ausnahmsweise länger fernsehen."
+ },
+ {
+  "id": 7601,
+  "de": "vollkommen",
+  "typ": "Sonstiges",
+  "tr": "tamamen, büsbütün",
+  "formen": "",
+  "beispiel": "Nach dem Umzug war ich vollkommen erschöpft."
+ },
+ {
+  "id": 7602,
+  "de": "äußerst",
+  "typ": "Sonstiges",
+  "tr": "son derece, aşırı",
+  "formen": "",
+  "beispiel": "Die Prüfung war äußerst schwer."
+ },
+ {
+  "id": 7603,
+  "de": "einigermaßen",
+  "typ": "Sonstiges",
+  "tr": "az çok, idare eder ölçüde",
+  "formen": "",
+  "beispiel": "Ich spreche einigermaßen gut Deutsch."
+ },
+ {
+  "id": 7604,
+  "de": "genügend",
+  "typ": "Sonstiges",
+  "tr": "yeterince, kâfi miktarda",
+  "formen": "",
+  "beispiel": "Wir haben genügend Stühle für alle Gäste."
+ },
+ {
+  "id": 7605,
+  "de": "teilweise",
+  "typ": "Sonstiges",
+  "tr": "kısmen, bir kısmı",
+  "formen": "",
+  "beispiel": "Die Rechnung wurde nur teilweise bezahlt."
+ },
+ {
+  "id": 7606,
+  "de": "halbwegs",
+  "typ": "Sonstiges",
+  "tr": "yarı yarıya, şöyle böyle",
+  "formen": "",
+  "beispiel": "Das Zimmer ist jetzt halbwegs sauber."
+ },
+ {
+  "id": 7607,
+  "de": "größtenteils",
+  "typ": "Sonstiges",
+  "tr": "büyük ölçüde, çoğunlukla",
+  "formen": "",
+  "beispiel": "Die Arbeit ist größtenteils fertig."
+ },
+ {
+  "id": 7608,
+  "de": "etliche",
+  "typ": "Sonstiges",
+  "tr": "epeyce, birçok",
+  "formen": "",
+  "beispiel": "Auf dem Markt gab es etliche gute Angebote."
+ },
+ {
+  "id": 7609,
+  "de": "hauptsächlich",
+  "typ": "Sonstiges",
+  "tr": "başlıca, esas olarak",
+  "formen": "",
+  "beispiel": "Ich esse hauptsächlich Gemüse und Obst."
+ },
+ {
+  "id": 7610,
+  "de": "insbesondere",
+  "typ": "Sonstiges",
+  "tr": "özellikle, bilhassa",
+  "formen": "",
+  "beispiel": "Der Kurs hilft insbesondere den Anfängern."
+ },
+ {
+  "id": 7611,
+  "de": "erstens",
+  "typ": "Sonstiges",
+  "tr": "birincisi, önce şu var ki",
+  "formen": "",
+  "beispiel": "Erstens ist die Wohnung zu teuer, zweitens ist sie zu klein."
+ },
+ {
+  "id": 7612,
+  "de": "zweitens",
+  "typ": "Sonstiges",
+  "tr": "ikincisi",
+  "formen": "",
+  "beispiel": "Zweitens brauchen wir noch einen Tisch für die Küche."
+ },
+ {
+  "id": 7613,
+  "de": "drittens",
+  "typ": "Sonstiges",
+  "tr": "üçüncüsü",
+  "formen": "",
+  "beispiel": "Drittens sollten wir früher losfahren."
+ },
+ {
+  "id": 7614,
+  "de": "daraufhin",
+  "typ": "Sonstiges",
+  "tr": "bunun üzerine",
+  "formen": "",
+  "beispiel": "Ich habe mich beschwert, daraufhin hat die Firma das Geld zurückgezahlt."
+ },
+ {
+  "id": 7615,
+  "de": "letztlich",
+  "typ": "Sonstiges",
+  "tr": "sonuçta, nihayetinde",
+  "formen": "",
+  "beispiel": "Letztlich haben wir uns für das kleine Auto entschieden."
+ },
+ {
+  "id": 7616,
+  "de": "nochmal",
+  "typ": "Sonstiges",
+  "tr": "bir daha, tekrar",
+  "formen": "",
+  "beispiel": "Kannst du das bitte nochmal erklären?",
+  "ayniAnlam": [
+   "noch mal (B1)"
+  ]
+ },
+ {
+  "id": 7617,
+  "de": "erneut",
+  "typ": "Sonstiges",
+  "tr": "yeniden, tekrardan",
+  "formen": "",
+  "beispiel": "Der Bus hatte erneut Verspätung."
+ },
+ {
+  "id": 7618,
+  "de": "irgendwo",
+  "typ": "Sonstiges",
+  "tr": "bir yerde, herhangi bir yerde",
+  "formen": "",
+  "beispiel": "Mein Schlüssel muss irgendwo in der Tasche sein."
+ },
+ {
+  "id": 7619,
+  "de": "irgendwie",
+  "typ": "Sonstiges",
+  "tr": "bir şekilde, nasılsa",
+  "formen": "",
+  "beispiel": "Wir schaffen das irgendwie bis Freitag."
+ },
+ {
+  "id": 7620,
+  "de": "entweder",
+  "typ": "Sonstiges",
+  "tr": "ya (… ya da)",
+  "formen": "",
+  "beispiel": "Wir fahren entweder mit dem Zug oder mit dem Bus."
+ },
+ {
+  "id": 7621,
+  "de": "weder",
+  "typ": "Sonstiges",
+  "tr": "ne (… ne de)",
+  "formen": "",
+  "beispiel": "Ich habe weder Zeit noch Lust."
+ },
+ {
+  "id": 7622,
+  "de": "sowohl",
+  "typ": "Sonstiges",
+  "tr": "hem (… hem de)",
+  "formen": "",
+  "beispiel": "Sie spricht sowohl Türkisch als auch Deutsch."
+ },
+ {
+  "id": 7623,
+  "de": "sowie",
+  "typ": "Sonstiges",
+  "tr": "ve ayrıca, ile birlikte",
+  "formen": "",
+  "beispiel": "Bitte bringen Sie Ihren Ausweis sowie ein Foto mit."
+ },
+ {
+  "id": 7624,
+  "de": "beziehungsweise",
+  "typ": "Sonstiges",
+  "tr": "ya da, daha doğrusu",
+  "formen": "",
+  "beispiel": "Der Kurs kostet 80 beziehungsweise 60 Euro für Studenten."
+ },
+ {
+  "id": 7625,
+  "de": "anstatt",
+  "typ": "Sonstiges",
+  "tr": "yerine",
+  "formen": "",
+  "beispiel": "Anstatt zu lernen, hat er den ganzen Tag gespielt.",
+  "ayniAnlam": [
+   "statt (B1)"
+  ]
+ },
+ {
+  "id": 7626,
+  "de": "desto",
+  "typ": "Sonstiges",
+  "tr": "o kadar (je … desto: ne kadar … o kadar)",
+  "formen": "",
+  "beispiel": "Je früher wir losfahren, desto weniger Verkehr haben wir."
+ },
+ {
+  "id": 7627,
+  "de": "oberhalb",
+  "typ": "Sonstiges",
+  "tr": "üstünde, yukarısında",
+  "formen": "",
+  "beispiel": "Das Restaurant liegt oberhalb des Sees."
+ },
+ {
+  "id": 7628,
+  "de": "unterhalb",
+  "typ": "Sonstiges",
+  "tr": "altında, aşağısında",
+  "formen": "",
+  "beispiel": "Unterhalb der Brücke gibt es einen Parkplatz."
+ },
+ {
+  "id": 7629,
+  "de": "aufgrund",
+  "typ": "Sonstiges",
+  "tr": "nedeniyle, dolayısıyla",
+  "formen": "",
+  "beispiel": "Aufgrund des Schnees fällt der Unterricht aus."
+ },
+ {
+  "id": 7630,
+  "de": "mithilfe",
+  "typ": "Sonstiges",
+  "tr": "yardımıyla, sayesinde",
+  "formen": "",
+  "beispiel": "Mithilfe einer App finde ich jede Adresse."
+ },
+ {
+  "id": 7631,
+  "de": "zudem",
+  "typ": "Sonstiges",
+  "tr": "ayrıca, üstelik",
+  "formen": "",
+  "beispiel": "Die Wohnung ist günstig, zudem liegt sie sehr zentral."
+ },
+ {
+  "id": 7632,
+  "de": "darum",
+  "typ": "Sonstiges",
+  "tr": "bu yüzden, onun için",
+  "formen": "",
+  "beispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt."
+ },
+ {
+  "id": 7633,
+  "de": "stattdessen",
+  "typ": "Sonstiges",
+  "tr": "onun yerine",
+  "formen": "",
+  "beispiel": "Der Kuchen war aus, stattdessen habe ich ein Eis genommen."
+ },
+ {
+  "id": 7634,
+  "de": "somit",
+  "typ": "Sonstiges",
+  "tr": "böylece, dolayısıyla",
+  "formen": "",
+  "beispiel": "Der Vertrag ist unterschrieben und somit gültig."
+ },
+ {
+  "id": 7635,
+  "de": "immerhin",
+  "typ": "Sonstiges",
+  "tr": "yine de, hiç yoktan",
+  "formen": "",
+  "beispiel": "Der Zug war spät, aber immerhin hatte ich einen Sitzplatz."
+ },
+ {
+  "id": 7636,
+  "de": "jedenfalls",
+  "typ": "Sonstiges",
+  "tr": "her hâlükârda, ne olursa olsun",
+  "formen": "",
+  "beispiel": "Ich weiß nicht, ob er kommt, ich warte jedenfalls bis acht."
+ },
+ {
+  "id": 7637,
+  "de": "beispielsweise",
+  "typ": "Sonstiges",
+  "tr": "örneğin, söz gelimi",
+  "formen": "",
+  "beispiel": "Du kannst beispielsweise am Wochenende vorbeikommen."
+ },
+ {
+  "id": 7638,
+  "de": "ansonsten",
+  "typ": "Sonstiges",
+  "tr": "aksi takdirde, onun dışında",
+  "formen": "",
+  "beispiel": "Ruf mich bitte an, ansonsten warte ich umsonst."
+ },
+ {
+  "id": 7639,
+  "de": "notfalls",
+  "typ": "Sonstiges",
+  "tr": "gerekirse, icabında",
+  "formen": "",
+  "beispiel": "Notfalls nehmen wir ein Taxi zum Bahnhof."
+ },
+ {
+  "id": 7640,
+  "de": "der Bäcker",
+  "typ": "Nomen",
+  "tr": "fırıncı",
+  "formen": "-",
+  "beispiel": "Mein Vater ist Bäcker und steht jeden Morgen um drei Uhr auf."
+ },
+ {
+  "id": 7641,
+  "de": "der Kassierer",
+  "typ": "Nomen",
+  "tr": "kasiyer",
+  "formen": "-",
+  "beispiel": "Der Kassierer im Supermarkt war heute sehr freundlich."
+ },
+ {
+  "id": 7642,
+  "de": "der Elektriker",
+  "typ": "Nomen",
+  "tr": "elektrikçi",
+  "formen": "-",
+  "beispiel": "Wir haben einen Elektriker gerufen, weil das Licht nicht geht."
+ },
+ {
+  "id": 7643,
+  "de": "der Klempner",
+  "typ": "Nomen",
+  "tr": "tesisatçı",
+  "formen": "-",
+  "beispiel": "Der Klempner repariert morgen unsere Dusche."
+ },
+ {
+  "id": 7644,
+  "de": "der Tischler",
+  "typ": "Nomen",
+  "tr": "marangoz",
+  "formen": "-",
+  "beispiel": "Der Tischler baut mir einen neuen Schrank aus Holz."
+ },
+ {
+  "id": 7645,
+  "de": "der Gärtner",
+  "typ": "Nomen",
+  "tr": "bahçıvan",
+  "formen": "-",
+  "beispiel": "Der Gärtner arbeitet im Sommer oft von früh bis spät."
+ },
+ {
+  "id": 7646,
+  "de": "der Busfahrer",
+  "typ": "Nomen",
+  "tr": "otobüs şoförü",
+  "formen": "-",
+  "beispiel": "Der Busfahrer hat mir gesagt, wo ich aussteigen muss."
+ },
+ {
+  "id": 7647,
+  "de": "der Taxifahrer",
+  "typ": "Nomen",
+  "tr": "taksi şoförü",
+  "formen": "-",
+  "beispiel": "Mein Bruder arbeitet seit zwei Jahren als Taxifahrer."
+ },
+ {
+  "id": 7648,
+  "de": "der Apotheker",
+  "typ": "Nomen",
+  "tr": "eczacı",
+  "formen": "-",
+  "beispiel": "Der Apotheker hat mir eine gute Salbe empfohlen."
+ },
+ {
+  "id": 7649,
+  "de": "der Zahnarzt",
+  "typ": "Nomen",
+  "tr": "diş hekimi, dişçi",
+  "formen": "¨-e",
+  "beispiel": "Ich habe am Montag einen Termin beim Zahnarzt."
+ },
+ {
+  "id": 7650,
+  "de": "der Tierarzt",
+  "typ": "Nomen",
+  "tr": "veteriner",
+  "formen": "¨-e",
+  "beispiel": "Unsere Katze ist krank, wir gehen zum Tierarzt."
+ },
+ {
+  "id": 7651,
+  "de": "der Feuerwehrmann",
+  "typ": "Nomen",
+  "tr": "itfaiyeci",
+  "formen": "-leute",
+  "beispiel": "Mein Sohn möchte später Feuerwehrmann werden."
+ },
+ {
+  "id": 7652,
+  "de": "der Postbote",
+  "typ": "Nomen",
+  "tr": "postacı",
+  "formen": "-n",
+  "beispiel": "Der Postbote bringt die Pakete meistens am Vormittag.",
+  "ayniAnlam": [
+   "der Briefträger (B1)",
+   "der Pöstler (B1)"
+  ]
+ },
+ {
+  "id": 7653,
+  "de": "der Bauarbeiter",
+  "typ": "Nomen",
+  "tr": "inşaat işçisi",
+  "formen": "-",
+  "beispiel": "Die Bauarbeiter machen um zwölf Uhr Pause."
+ },
+ {
+  "id": 7654,
+  "de": "die Putzfrau",
+  "typ": "Nomen",
+  "tr": "temizlikçi kadın",
+  "formen": "-en",
+  "beispiel": "Die Putzfrau kommt zweimal in der Woche ins Büro."
+ },
+ {
+  "id": 7655,
+  "de": "der Maurer",
+  "typ": "Nomen",
+  "tr": "duvarcı",
+  "formen": "-",
+  "beispiel": "Als Maurer muss man den ganzen Tag schwer arbeiten."
+ },
+ {
+  "id": 7656,
+  "de": "der Programmierer",
+  "typ": "Nomen",
+  "tr": "yazılımcı, programcı",
+  "formen": "-",
+  "beispiel": "Als Programmierer sitze ich den ganzen Tag am Computer."
+ },
+ {
+  "id": 7657,
+  "de": "der Erzieher",
+  "typ": "Nomen",
+  "tr": "anaokulu öğretmeni, eğitmen",
+  "formen": "-",
+  "beispiel": "Im Kindergarten arbeiten drei Erzieher und zwei Erzieherinnen."
+ },
+ {
+  "id": 7658,
+  "de": "der Pilot",
+  "typ": "Nomen",
+  "tr": "pilot",
+  "formen": "-en",
+  "beispiel": "Der Pilot hat uns gesagt, dass wir pünktlich landen."
+ },
+ {
+  "id": 7659,
+  "de": "der Buchhalter",
+  "typ": "Nomen",
+  "tr": "muhasebeci",
+  "formen": "-",
+  "beispiel": "Unser Buchhalter kontrolliert jeden Monat alle Rechnungen."
+ },
+ {
+  "id": 7660,
+  "de": "der Filialleiter",
+  "typ": "Nomen",
+  "tr": "şube müdürü",
+  "formen": "-",
+  "beispiel": "Der Filialleiter hat mir am Freitag frei gegeben."
+ },
+ {
+  "id": 7661,
+  "de": "das Bewerbungsgespräch",
+  "typ": "Nomen",
+  "tr": "iş görüşmesi, mülakat",
+  "formen": "-e",
+  "beispiel": "Ich habe morgen um zehn Uhr ein Bewerbungsgespräch.",
+  "ayniAnlam": [
+   "das Vorstellungsgespräch (B1)"
+  ]
+ },
+ {
+  "id": 7662,
+  "de": "die Beförderung",
+  "typ": "Nomen",
+  "tr": "terfi",
+  "formen": "-en",
+  "beispiel": "Nach der Beförderung verdient sie viel mehr Geld."
+ },
+ {
+  "id": 7663,
+  "de": "das Arbeitsamt",
+  "typ": "Nomen",
+  "tr": "iş bulma kurumu",
+  "formen": "¨-er",
+  "beispiel": "Er sucht beim Arbeitsamt nach einer neuen Stelle."
+ },
+ {
+  "id": 7664,
+  "de": "der Nebenjob",
+  "typ": "Nomen",
+  "tr": "ek iş, yan iş",
+  "formen": "-s",
+  "beispiel": "Am Wochenende habe ich einen Nebenjob in einem Café."
+ },
+ {
+  "id": 7665,
+  "de": "der Schreibtisch",
+  "typ": "Nomen",
+  "tr": "yazı masası, çalışma masası",
+  "formen": "-e",
+  "beispiel": "Auf meinem Schreibtisch liegen zu viele Papiere."
+ },
+ {
+  "id": 7666,
+  "de": "das Arbeitszimmer",
+  "typ": "Nomen",
+  "tr": "çalışma odası",
+  "formen": "-",
+  "beispiel": "Mein Mann arbeitet oft im Arbeitszimmer zu Hause."
+ },
+ {
+  "id": 7667,
+  "de": "der Aktenschrank",
+  "typ": "Nomen",
+  "tr": "dosya dolabı",
+  "formen": "¨-e",
+  "beispiel": "Die alten Verträge sind im Aktenschrank."
+ },
+ {
+  "id": 7668,
+  "de": "die Büroklammer",
+  "typ": "Nomen",
+  "tr": "ataç",
+  "formen": "-n",
+  "beispiel": "Kannst du mir bitte eine Büroklammer geben?"
+ },
+ {
+  "id": 7669,
+  "de": "der Notizblock",
+  "typ": "Nomen",
+  "tr": "not bloknotu",
+  "formen": "¨-e",
+  "beispiel": "Ich schreibe die Telefonnummer in meinen Notizblock."
+ },
+ {
+  "id": 7670,
+  "de": "die Lagerhalle",
+  "typ": "Nomen",
+  "tr": "depo, ambar",
+  "formen": "-n",
+  "beispiel": "In der Lagerhalle ist es im Winter sehr kalt.",
+  "ayniAnlam": [
+   "das Lager (B1)"
+  ]
+ },
+ {
+  "id": 7671,
+  "de": "die Metzgerei",
+  "typ": "Nomen",
+  "tr": "kasap dükkânı",
+  "formen": "-en",
+  "beispiel": "Meine Tante arbeitet in einer Metzgerei am Markt."
+ },
+ {
+  "id": 7672,
+  "de": "der Friseursalon",
+  "typ": "Nomen",
+  "tr": "kuaför salonu",
+  "formen": "-s",
+  "beispiel": "Der Friseursalon ist montags immer geschlossen."
+ },
+ {
+  "id": 7673,
+  "de": "die Arztpraxis",
+  "typ": "Nomen",
+  "tr": "muayenehane",
+  "formen": "-praxen",
+  "beispiel": "Sie arbeitet als Sekretärin in einer Arztpraxis.",
+  "ayniAnlam": [
+   "die Praxis (A1)",
+   "die Ordination (B1)"
+  ]
+ },
+ {
+  "id": 7674,
+  "de": "die Mittagspause",
+  "typ": "Nomen",
+  "tr": "öğle molası",
+  "formen": "-n",
+  "beispiel": "In der Mittagspause esse ich meistens in der Kantine."
+ },
+ {
+  "id": 7675,
+  "de": "die Kaffeepause",
+  "typ": "Nomen",
+  "tr": "kahve molası",
+  "formen": "-n",
+  "beispiel": "Wir machen um halb vier eine kurze Kaffeepause."
+ },
+ {
+  "id": 7676,
+  "de": "die Nachtschicht",
+  "typ": "Nomen",
+  "tr": "gece vardiyası",
+  "formen": "-en",
+  "beispiel": "Diese Woche habe ich Nachtschicht im Krankenhaus."
+ },
+ {
+  "id": 7677,
+  "de": "die Spätschicht",
+  "typ": "Nomen",
+  "tr": "akşam vardiyası",
+  "formen": "-en",
+  "beispiel": "Nach der Spätschicht komme ich erst um elf nach Hause."
+ },
+ {
+  "id": 7678,
+  "de": "der Arbeitstag",
+  "typ": "Nomen",
+  "tr": "iş günü, çalışma günü",
+  "formen": "-e",
+  "beispiel": "Heute war ein langer und schwerer Arbeitstag."
+ },
+ {
+  "id": 7679,
+  "de": "das Wochenende",
+  "typ": "Nomen",
+  "tr": "hafta sonu",
+  "formen": "-n",
+  "beispiel": "Am Wochenende muss ich zum Glück nicht arbeiten."
+ },
+ {
+  "id": 7680,
+  "de": "der Dienstplan",
+  "typ": "Nomen",
+  "tr": "vardiya çizelgesi, çalışma planı",
+  "formen": "¨-e",
+  "beispiel": "Der neue Dienstplan hängt schon an der Tür."
+ },
+ {
+  "id": 7681,
+  "de": "der Urlaubstag",
+  "typ": "Nomen",
+  "tr": "izin günü",
+  "formen": "-e",
+  "beispiel": "Ich habe dieses Jahr noch fünf Urlaubstage."
+ },
+ {
+  "id": 7682,
+  "de": "der Verdienst",
+  "typ": "Nomen",
+  "tr": "kazanç, gelir",
+  "formen": "-e",
+  "beispiel": "Der Verdienst ist klein, aber die Arbeit macht Spaß."
+ },
+ {
+  "id": 7683,
+  "de": "der Bonus",
+  "typ": "Nomen",
+  "tr": "prim, bonus",
+  "formen": "-se",
+  "beispiel": "Im Dezember bekommen alle Mitarbeiter einen Bonus."
+ },
+ {
+  "id": 7684,
+  "de": "das Weihnachtsgeld",
+  "typ": "Nomen",
+  "tr": "yılbaşı ikramiyesi",
+  "formen": "(Sg.)",
+  "beispiel": "Von meinem Weihnachtsgeld kaufe ich eine neue Waschmaschine."
+ },
+ {
+  "id": 7685,
+  "de": "die Kontonummer",
+  "typ": "Nomen",
+  "tr": "hesap numarası",
+  "formen": "-n",
+  "beispiel": "Bitte schreiben Sie Ihre Kontonummer auf das Formular."
+ },
+ {
+  "id": 7686,
+  "de": "der Arbeitskollege",
+  "typ": "Nomen",
+  "tr": "iş arkadaşı",
+  "formen": "-n",
+  "beispiel": "Mein Arbeitskollege hilft mir immer bei schweren Aufgaben."
+ },
+ {
+  "id": 7687,
+  "de": "der Geschäftsführer",
+  "typ": "Nomen",
+  "tr": "genel müdür, işletme müdürü",
+  "formen": "-",
+  "beispiel": "Der Geschäftsführer kommt morgen in unsere Abteilung."
+ },
+ {
+  "id": 7688,
+  "de": "der Berater",
+  "typ": "Nomen",
+  "tr": "danışman",
+  "formen": "-",
+  "beispiel": "Der Berater von der Bank hat uns alles genau erklärt."
+ },
+ {
+  "id": 7689,
+  "de": "der Arbeitsweg",
+  "typ": "Nomen",
+  "tr": "işe gidiş yolu",
+  "formen": "-e",
+  "beispiel": "Mein Arbeitsweg dauert jeden Morgen fast eine Stunde."
+ },
+ {
+  "id": 7690,
+  "de": "der Firmenwagen",
+  "typ": "Nomen",
+  "tr": "şirket arabası",
+  "formen": "-",
+  "beispiel": "Mit dem Firmenwagen fahre ich zu den Kunden."
+ },
+ {
+  "id": 7691,
+  "de": "der Dienstwagen",
+  "typ": "Nomen",
+  "tr": "hizmet aracı, makam arabası",
+  "formen": "-",
+  "beispiel": "Mein Chef hat einen großen Dienstwagen bekommen."
+ },
+ {
+  "id": 7692,
+  "de": "die Geschäftsreise",
+  "typ": "Nomen",
+  "tr": "iş seyahati",
+  "formen": "-n",
+  "beispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien."
+ },
+ {
+  "id": 7693,
+  "de": "die Dienstreise",
+  "typ": "Nomen",
+  "tr": "görev seyahati, iş gezisi",
+  "formen": "-n",
+  "beispiel": "Die Firma bezahlt das Hotel auf der Dienstreise."
+ },
+ {
+  "id": 7694,
+  "de": "die Schulung",
+  "typ": "Nomen",
+  "tr": "eğitim, kurs",
+  "formen": "-en",
+  "beispiel": "Am Dienstag habe ich eine Schulung für das neue Programm."
+ },
+ {
+  "id": 7695,
+  "de": "der Geselle",
+  "typ": "Nomen",
+  "tr": "kalfa",
+  "formen": "-n",
+  "beispiel": "Nach der Ausbildung arbeitet er als Geselle in einer Werkstatt."
+ },
+ {
+  "id": 7696,
+  "de": "die Teamarbeit",
+  "typ": "Nomen",
+  "tr": "takım çalışması, ekip çalışması",
+  "formen": "(Sg.)",
+  "beispiel": "In unserem Büro ist Teamarbeit sehr wichtig."
+ },
+ {
+  "id": 7697,
+  "de": "die Arbeitskleidung",
+  "typ": "Nomen",
+  "tr": "iş kıyafeti",
+  "formen": "(Sg.)",
+  "beispiel": "Die Arbeitskleidung bekommen wir von der Firma."
+ },
+ {
+  "id": 7698,
+  "de": "der Handschuh",
+  "typ": "Nomen",
+  "tr": "eldiven",
+  "formen": "-e",
+  "beispiel": "Bei dieser Arbeit musst du immer Handschuhe tragen."
+ },
+ {
+  "id": 7699,
+  "de": "die Schutzbrille",
+  "typ": "Nomen",
+  "tr": "koruyucu gözlük",
+  "formen": "-n",
+  "beispiel": "In der Werkstatt trägt jeder eine Schutzbrille."
+ },
+ {
+  "id": 7700,
+  "de": "die Grundschule",
+  "typ": "Nomen",
+  "tr": "ilkokul",
+  "formen": "-n",
+  "beispiel": "Meine Tochter geht seit einem Jahr in die Grundschule."
+ },
+ {
+  "id": 7701,
+  "de": "das Gymnasium",
+  "typ": "Nomen",
+  "tr": "lise",
+  "formen": "-ien",
+  "beispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium."
+ },
+ {
+  "id": 7702,
+  "de": "die Realschule",
+  "typ": "Nomen",
+  "tr": "ortaokul",
+  "formen": "-n",
+  "beispiel": "Ich habe die Realschule mit guten Noten beendet."
+ },
+ {
+  "id": 7703,
+  "de": "das Klassenzimmer",
+  "typ": "Nomen",
+  "tr": "sınıf, derslik",
+  "formen": "-",
+  "beispiel": "Das Klassenzimmer ist hell und hat große Fenster."
+ },
+ {
+  "id": 7704,
+  "de": "der Schulhof",
+  "typ": "Nomen",
+  "tr": "okul bahçesi",
+  "formen": "¨-e",
+  "beispiel": "In der Pause spielen die Kinder auf dem Schulhof."
+ },
+ {
+  "id": 7705,
+  "de": "die Schultasche",
+  "typ": "Nomen",
+  "tr": "okul çantası",
+  "formen": "-n",
+  "beispiel": "Meine Schultasche ist heute sehr schwer."
+ },
+ {
+  "id": 7706,
+  "de": "das Schulbuch",
+  "typ": "Nomen",
+  "tr": "ders kitabı",
+  "formen": "¨-er",
+  "beispiel": "Ich habe mein Schulbuch zu Hause vergessen."
+ },
+ {
+  "id": 7707,
+  "de": "das Schuljahr",
+  "typ": "Nomen",
+  "tr": "öğretim yılı",
+  "formen": "-e",
+  "beispiel": "Das neue Schuljahr beginnt im September."
+ },
+ {
+  "id": 7708,
+  "de": "der Mitschüler",
+  "typ": "Nomen",
+  "tr": "sınıf arkadaşı",
+  "formen": "-",
+  "beispiel": "Mein Mitschüler hilft mir bei den Hausaufgaben."
+ }
+]

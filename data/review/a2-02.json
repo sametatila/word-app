@@ -1,0 +1,1026 @@
+[
+ {
+  "id": 994,
+  "de": "Geburts- (jahr",
+  "typ": "Verb",
+  "tr": "doğum-",
+  "formen": "ort, tag), (-e, -e, -e)",
+  "beispiel": "Das Geburtsjahr Ihres Sohnes, bitte? Bitte tragen Sie Ihren Geburtsort noch ein. Herzlichen Glückwunsch zum Geburtstag!"
+ },
+ {
+  "id": 995,
+  "de": "geehrt-",
+  "typ": "Sonstiges",
+  "tr": "sayın, saygıdeğer",
+  "formen": "",
+  "beispiel": "Sehr geehrte Damen und Herren,"
+ },
+ {
+  "id": 996,
+  "de": "gefährlich",
+  "typ": "Sonstiges",
+  "tr": "tehlikeli",
+  "formen": "",
+  "beispiel": "Du darfst nicht bei Rot über die Straße gehen. Das ist gefährlich."
+ },
+ {
+  "id": 997,
+  "de": "das Gegenteil",
+  "typ": "Nomen",
+  "tr": "zıt anlam, karşıt",
+  "formen": "-e",
+  "beispiel": "Das Gegenteil von „klein“ ist „groß“."
+ },
+ {
+  "id": 998,
+  "de": "gegenüber",
+  "typ": "Sonstiges",
+  "tr": "karşısında, karşı",
+  "formen": "",
+  "beispiel": "Die Post ist gegenüber vom Bahnhof. Die Hausnummer 84 ist gleich gegenüber."
+ },
+ {
+  "id": 999,
+  "de": "das Gehalt",
+  "typ": "Nomen",
+  "tr": "maaş",
+  "formen": "¨-er",
+  "beispiel": "Sie ist mit ihrem Gehalt zufrieden."
+ },
+ {
+  "id": 1000,
+  "de": "die Geldbörse",
+  "typ": "Nomen",
+  "tr": "cüzdan",
+  "formen": "-n",
+  "beispiel": "Sie hat ihre Geldbörse verloren.",
+  "ayniAnlam": [
+   "die Brieftasche (B1)",
+   "das Portemonnaie/Portmonee (B1)"
+  ]
+ },
+ {
+  "id": 1001,
+  "de": "genau",
+  "typ": "Sonstiges",
+  "tr": "tam olarak, kesinlikle, doğru",
+  "formen": "",
+  "beispiel": "Sind Sie sicher, dass die Prüfung am 15. Juni ist? - Ja, das weiß ich genau. Die Uhr geht genau. Es ist genau acht Uhr."
+ },
+ {
+  "id": 1002,
+  "de": "das Gerät",
+  "typ": "Nomen",
+  "tr": "cihaz, alet",
+  "formen": "-e",
+  "beispiel": "Elektrogeräte finden Sie im dritten Stock."
+ },
+ {
+  "id": 1003,
+  "de": "das Gericht",
+  "typ": "Nomen",
+  "tr": "yemek",
+  "formen": "-e",
+  "beispiel": "Mein Lieblingsgericht ist Pizza.",
+  "ayniAnlam": [
+   "Speise (B1)"
+  ]
+ },
+ {
+  "id": 1004,
+  "de": "das Geschirr",
+  "typ": "Nomen",
+  "tr": "bulaşık, tabak çanak",
+  "formen": "(Sg.)",
+  "beispiel": "Stellst du bitte das Geschirr in den Schrank?"
+ },
+ {
+  "id": 1005,
+  "de": "das Gesicht",
+  "typ": "Nomen",
+  "tr": "yüz",
+  "formen": "-er",
+  "beispiel": "Wasch dir bitte das Gesicht. Sie hat ein freundliches Gesicht."
+ },
+ {
+  "id": 1006,
+  "de": "gesund",
+  "typ": "Sonstiges",
+  "tr": "sağlıklı",
+  "formen": "",
+  "beispiel": "Ich hatte Grippe. Jetzt bin ich wieder gesund."
+ },
+ {
+  "id": 1007,
+  "de": "die Gesundheit",
+  "typ": "Nomen",
+  "tr": "sağlık",
+  "formen": "(Sg.)",
+  "beispiel": "Gesundheit! Sind Sie erkältet?"
+ },
+ {
+  "id": 1008,
+  "de": "das Gewitter",
+  "typ": "Nomen",
+  "tr": "fırtına, gök gürültülü fırtına",
+  "formen": "-",
+  "beispiel": "Ich glaube, es gibt heute ein Gewitter."
+ },
+ {
+  "id": 1009,
+  "de": "die Gitarre",
+  "typ": "Nomen",
+  "tr": "gitar",
+  "formen": "-n",
+  "beispiel": "Er kann gut Gitarre spielen."
+ },
+ {
+  "id": 1010,
+  "de": "die Grippe",
+  "typ": "Nomen",
+  "tr": "grip",
+  "formen": "(Sg.)",
+  "beispiel": "Ich habe eine Grippe und kann leider nicht kommen."
+ },
+ {
+  "id": 1011,
+  "de": "gültig sein",
+  "typ": "Verb",
+  "tr": "geçerli olmak",
+  "formen": "ist gültig, war gültig, ist gültig gewesen",
+  "beispiel": "Der Pass ist nicht mehr gültig.",
+  "ayniAnlam": [
+   "gelten (B1)"
+  ]
+ },
+ {
+  "id": 1012,
+  "de": "der Hamburger",
+  "typ": "Nomen",
+  "tr": "hamburger",
+  "formen": "-",
+  "beispiel": "Einen Hamburger ohne Salat, bitte."
+ },
+ {
+  "id": 1013,
+  "de": "das Handtuch",
+  "typ": "Nomen",
+  "tr": "havlu",
+  "formen": "¨-er",
+  "beispiel": "Gibst du mir bitte ein frisches Handtuch?"
+ },
+ {
+  "id": 1014,
+  "de": "hängen",
+  "typ": "Verb",
+  "tr": "asılı olmak, asmak",
+  "formen": "hängt, hat gehangen/ gehängt",
+  "beispiel": "Im Museum hängen moderne Bilder. Warum hast du das Bild noch nicht an die Wand gehängt? Das Bild von meiner Tochter hat "
+ },
+ {
+  "id": 1015,
+  "de": "hart",
+  "typ": "Sonstiges",
+  "tr": "sert",
+  "formen": "",
+  "beispiel": "Ich finde das Bett zu hart. Die Brötchen sind ja ganz hart."
+ },
+ {
+  "id": 1016,
+  "de": "hässlich",
+  "typ": "Sonstiges",
+  "tr": "çirkin",
+  "formen": "",
+  "beispiel": "Ich finde das Kleid hässlich. Es gefällt mir nicht."
+ },
+ {
+  "id": 1017,
+  "de": "die Hauptstadt",
+  "typ": "Nomen",
+  "tr": "başkent",
+  "formen": "¨-e",
+  "beispiel": "Berlin ist die Hauptstadt von Deutschland.",
+  "ayniAnlam": [
+   "Hauptdie Hauptstadt (B1)"
+  ]
+ },
+ {
+  "id": 1018,
+  "de": "der Haushalt",
+  "typ": "Nomen",
+  "tr": "ev işleri, hane halkı",
+  "formen": "-e",
+  "beispiel": "Wer macht bei euch den Haushalt? - Meine Frau und ich machen den Haushalt zusammen: Ich wasche die Wäsche und sie putzt "
+ },
+ {
+  "id": 1019,
+  "de": "heiß",
+  "typ": "Sonstiges",
+  "tr": "sıcak",
+  "formen": "",
+  "beispiel": "Vorsicht, der Tee ist heiß! Mir ist heiß. Kannst du das Fenster öffnen?"
+ },
+ {
+  "id": 1020,
+  "de": "die Heizung",
+  "typ": "Nomen",
+  "tr": "kalorifer, ısıtma",
+  "formen": "-en",
+  "beispiel": "Es ist kalt. Ist die Heizung kaputt?"
+ },
+ {
+  "id": 1021,
+  "de": "das Hemd",
+  "typ": "Nomen",
+  "tr": "gömlek",
+  "formen": "-en",
+  "beispiel": "Nick trägt heute ein neues Hemd."
+ },
+ {
+  "id": 1022,
+  "de": "her",
+  "typ": "Sonstiges",
+  "tr": "buraya, bu yana",
+  "formen": "",
+  "beispiel": "Komm bitte mal her! Herein! Die Tür ist offen. Woher kommen Sie?"
+ },
+ {
+  "id": 1023,
+  "de": "heraus/raus",
+  "typ": "Sonstiges",
+  "tr": "dışarı",
+  "formen": "",
+  "beispiel": "Möchtet ihr nicht rauskommen? Das Wetter ist so schön. Kannst du bitte den Müll rausbringen?",
+  "ayniAnlam": [
+   "heraus- (B1)",
+   "raus (B1)"
+  ]
+ },
+ {
+  "id": 1024,
+  "de": "herein/rein",
+  "typ": "Sonstiges",
+  "tr": "içeri",
+  "formen": "",
+  "beispiel": "Herein! Die Tür ist offen. Möchtest du nicht reinkommen? Ich kann uns einen Tee machen.",
+  "ayniAnlam": [
+   "herein- (B1)"
+  ]
+ },
+ {
+  "id": 1025,
+  "de": "herstellen",
+  "typ": "Verb",
+  "tr": "üretmek",
+  "formen": "stellt her, hat hergestellt",
+  "beispiel": "In unserer Firma stellen wir Möbel her.",
+  "ayniAnlam": [
+   "produzieren (B1)"
+  ]
+ },
+ {
+  "id": 1026,
+  "de": "herunterladen",
+  "typ": "Verb",
+  "tr": "indirmek",
+  "formen": "lädt herunter, hat heruntergeladen",
+  "beispiel": "Er lädt die Musik aus dem Internet herunter."
+ },
+ {
+  "id": 1027,
+  "de": "der Himmel",
+  "typ": "Nomen",
+  "tr": "gökyüzü",
+  "formen": "(Sg.)",
+  "beispiel": "Heute ist so tolles Wetter: Der Himmel ist blau und es gibt keine Wolken."
+ },
+ {
+  "id": 1028,
+  "de": "hin",
+  "typ": "Sonstiges",
+  "tr": "oraya, o yöne",
+  "formen": "",
+  "beispiel": "Wo gehst du hin?/Wohin gehst du? Wohin ist Paul gegangen? – Ich glaube dorthin. Er geht in den Garten hinaus. Wir gehen "
+ },
+ {
+  "id": 1029,
+  "de": "hinter",
+  "typ": "Sonstiges",
+  "tr": "arkasında",
+  "formen": "",
+  "beispiel": "Hinter dem Haus haben wir einen Garten."
+ },
+ {
+  "id": 1030,
+  "de": "die Homepage",
+  "typ": "Nomen",
+  "tr": "web sitesi, ana sayfa",
+  "formen": "-s",
+  "beispiel": "Auf der Homepage von Freiburg gibt es alle wichtigen Informationen über die Stadt. Kennst du eine Homepage mit Deutschüb"
+ },
+ {
+  "id": 1031,
+  "de": "die Hose",
+  "typ": "Nomen",
+  "tr": "pantolon",
+  "formen": "-n",
+  "beispiel": "Kann ich die Hose waschen?"
+ },
+ {
+  "id": 1032,
+  "de": "husten",
+  "typ": "Verb",
+  "tr": "öksürmek",
+  "formen": "hustet, hat gehustet",
+  "beispiel": "Sie hustet seit zwei Tagen. Sie ist krank."
+ },
+ {
+  "id": 1033,
+  "de": "sich informieren (über)",
+  "typ": "Verb",
+  "tr": "bilgi almak, bilgilendirmek",
+  "formen": "informiert, hat informiert",
+  "beispiel": "Ich möchte mich vor der Reise über das Land informieren. Hast du dich über die Prüfung informiert?"
+ },
+ {
+  "id": 1034,
+  "de": "das Instrument",
+  "typ": "Nomen",
+  "tr": "enstrüman, çalgı",
+  "formen": "-e",
+  "beispiel": "Ich spiele Klavier. Spielen Sie auch ein Instrument?"
+ },
+ {
+  "id": 1035,
+  "de": "intelligent",
+  "typ": "Sonstiges",
+  "tr": "zeki, akıllı",
+  "formen": "",
+  "beispiel": "Einstein war sehr intelligent."
+ },
+ {
+  "id": 1036,
+  "de": "das Interesse",
+  "typ": "Nomen",
+  "tr": "ilgi",
+  "formen": "-n",
+  "beispiel": "Ich habe viele Interessen: Sport, Lesen, Kultur, Reisen."
+ },
+ {
+  "id": 1037,
+  "de": "sich interessieren",
+  "typ": "Verb",
+  "tr": "ilgilenmek",
+  "formen": "interessiert, hat interessiert interessant",
+  "beispiel": "Ich interessiere mich für Fußball. Den Artikel über Brasilien finde ich sehr interessant. Ich lese gerade ein interessan",
+  "ayniAnlam": [
+   "sich interessieren für (B2)"
+  ]
+ },
+ {
+  "id": 1038,
+  "de": "das Interview",
+  "typ": "Nomen",
+  "tr": "röportaj",
+  "formen": "-s",
+  "beispiel": "Komm schnell! Im Radio kommt ein Interview mit deinem Lieblingssänger."
+ },
+ {
+  "id": 1039,
+  "de": "jemand",
+  "typ": "Sonstiges",
+  "tr": "biri, birisi",
+  "formen": "",
+  "beispiel": "Hat jemand meinen Stift? Hallo, ist jemand da?"
+ },
+ {
+  "id": 1040,
+  "de": "joggen",
+  "typ": "Verb",
+  "tr": "koşu yapmak",
+  "formen": "joggt, ist/hat gejoggt",
+  "beispiel": "Ich jogge gern im Park."
+ },
+ {
+  "id": 1041,
+  "de": "die Jugendherberge",
+  "typ": "Nomen",
+  "tr": "gençlik yurdu",
+  "formen": "-n",
+  "beispiel": "Wir übernachten in einer Jugendherberge."
+ },
+ {
+  "id": 1043,
+  "de": "der Kalender",
+  "typ": "Nomen",
+  "tr": "takvim",
+  "formen": "-",
+  "beispiel": "Haben Sie am Montag Zeit? - Einen Moment, ich schaue in meinem Kalender. Ich schreibe alle Termine in meinen Kalender."
+ },
+ {
+  "id": 1044,
+  "de": "das Kaufhaus",
+  "typ": "Nomen",
+  "tr": "mağaza, alışveriş merkezi",
+  "formen": "-¨er",
+  "beispiel": "Meine Pullover kaufe ich immer im Kaufhaus Hertie."
+ },
+ {
+  "id": 1045,
+  "de": "der Keller",
+  "typ": "Nomen",
+  "tr": "bodrum",
+  "formen": "-",
+  "beispiel": "Bitte bring die Kartoffeln in den Keller! Die Waschmaschinen sind im Keller."
+ },
+ {
+  "id": 1046,
+  "de": "die Kenntnisse",
+  "typ": "Nomen",
+  "tr": "bilgi birikimi, bilgi",
+  "formen": "(Pl.)",
+  "beispiel": "Deine Deutschkenntnisse sind sehr gut! Ich möchte meine Computerkenntnisse verbessern."
+ },
+ {
+  "id": 1047,
+  "de": "die Kette",
+  "typ": "Nomen",
+  "tr": "kolye, zincir",
+  "formen": "-n",
+  "beispiel": "Meine Mutter bekommt eine schöne Kette zum Geburtstag."
+ },
+ {
+  "id": 1048,
+  "de": "die Kirche",
+  "typ": "Nomen",
+  "tr": "kilise",
+  "formen": "-n",
+  "beispiel": "Diese Kirche ist fast 800 Jahre alt."
+ },
+ {
+  "id": 1049,
+  "de": "klappen",
+  "typ": "Verb",
+  "tr": "yolunda gitmek, işe yaramak",
+  "formen": "klappt, hat geklappt",
+  "beispiel": "Können wir uns heute Mittag treffen? – Ja, das klappt. Wie war die Reise? - Gut, es hat alles super geklappt."
+ },
+ {
+  "id": 1050,
+  "de": "klug",
+  "typ": "Sonstiges",
+  "tr": "akıllı, zeki",
+  "formen": "",
+  "beispiel": "Molly ist ein kluges Mädchen. Lisa ist sehr klug. Sie bekommt immer gute Noten. Das ist klug von dir."
+ },
+ {
+  "id": 1051,
+  "de": "komisch",
+  "typ": "Sonstiges",
+  "tr": "komik, garip, tuhaf",
+  "formen": "",
+  "beispiel": "Der Film war sehr komisch. Wir haben viel gelacht. Eine grüne Hose und gelbe Schuhe? Das sieht komisch aus. Das Essen sc"
+ },
+ {
+  "id": 1052,
+  "de": "der Kontakt",
+  "typ": "Nomen",
+  "tr": "iletişim, bağlantı",
+  "formen": "-e",
+  "beispiel": "Ich habe wenig Kontakt zu meinen Kollegen. Bitte schicken Sie mir Ihre Kontaktdaten!"
+ },
+ {
+  "id": 1053,
+  "de": "kontrollieren",
+  "typ": "Verb",
+  "tr": "kontrol etmek",
+  "formen": "kontrolliert, hat kontrolliert",
+  "beispiel": "Können Sie bei meinem Auto bitte das Öl kontrollieren? Bitte öffnen Sie Ihren Koffer, wir müssen Ihr Gepäck kontrolliere"
+ },
+ {
+  "id": 1054,
+  "de": "das Konzert",
+  "typ": "Nomen",
+  "tr": "konser",
+  "formen": "-e",
+  "beispiel": "Für das Konzert am Sonntag gibt es noch Karten."
+ },
+ {
+  "id": 1055,
+  "de": "der Körper",
+  "typ": "Nomen",
+  "tr": "vücut, beden",
+  "formen": "-",
+  "beispiel": "Der Arzt sagt, ich muss etwas für meinen Körper tun, z. B. schwimmen oder Fahrrad fahren."
+ },
+ {
+  "id": 1056,
+  "de": "die Kosmetik",
+  "typ": "Nomen",
+  "tr": "kozmetik",
+  "formen": "(Sg.)",
+  "beispiel": "Kosmetik können Sie im Erdgeschoss kaufen."
+ },
+ {
+  "id": 1057,
+  "de": "kostenlos",
+  "typ": "Sonstiges",
+  "tr": "ücretsiz, bedava",
+  "formen": "",
+  "beispiel": "Diese Zeitschrift kostet nichts. Sie ist kostenlos."
+ },
+ {
+  "id": 1058,
+  "de": "die Krankenkasse",
+  "typ": "Nomen",
+  "tr": "sağlık sigortası",
+  "formen": "-n",
+  "beispiel": "Bei welcher Krankenkasse sind Sie?",
+  "ayniAnlam": [
+   "die Krankenversicherung (B2)"
+  ]
+ },
+ {
+  "id": 1059,
+  "de": "die Krankheit",
+  "typ": "Nomen",
+  "tr": "hastalık",
+  "formen": "-en",
+  "beispiel": "Welche Krankheit hat Herr Brandner?"
+ },
+ {
+  "id": 1060,
+  "de": "der Kredit",
+  "typ": "Nomen",
+  "tr": "kredi",
+  "formen": "-e",
+  "beispiel": "Ich brauche einen Kredit von der Bank. Bezahlen Sie mit Kreditkarte?"
+ },
+ {
+  "id": 1061,
+  "de": "die Kreuzung",
+  "typ": "Nomen",
+  "tr": "kavşak",
+  "formen": "-en",
+  "beispiel": "Fahren Sie an der nächsten Kreuzung rechts."
+ },
+ {
+  "id": 1062,
+  "de": "der Krimi",
+  "typ": "Nomen",
+  "tr": "polisiye",
+  "formen": "-s",
+  "beispiel": "Miriam liest gern spannende Krimis. Schauen wir am Sonntag zusammen den Tatort? – Nein, ich mag keine Krimis."
+ },
+ {
+  "id": 1063,
+  "de": "kühl",
+  "typ": "Sonstiges",
+  "tr": "serin",
+  "formen": "",
+  "beispiel": "Es ist kühl draußen. Zieh dir eine Jacke an."
+ },
+ {
+  "id": 1064,
+  "de": "die Kultur",
+  "typ": "Nomen",
+  "tr": "kültür",
+  "formen": "-en",
+  "beispiel": "Ich finde fremde Länder und Kulturen sehr interessant. Jana interessiert sich sehr für Kultur. Sie geht jede Woche ins T"
+ },
+ {
+  "id": 1066,
+  "de": "kündigen",
+  "typ": "Verb",
+  "tr": "istifa etmek, feshetmek",
+  "formen": "kündigt, hat gekündigt",
+  "beispiel": "Meine Arbeit gefällt mir nicht mehr. Ich habe heute gekündigt."
+ },
+ {
+  "id": 1067,
+  "de": "die Kunst",
+  "typ": "Nomen",
+  "tr": "sanat",
+  "formen": "¨-e",
+  "beispiel": "Ich verstehe nichts von moderner Kunst. Kunst war mein Lieblingsfach in der Schule."
+ },
+ {
+  "id": 1068,
+  "de": "die Landschaft",
+  "typ": "Nomen",
+  "tr": "manzara, doğa",
+  "formen": "-en",
+  "beispiel": "Die Landschaft ist sehr schön."
+ },
+ {
+  "id": 1069,
+  "de": "der/das Laptop",
+  "typ": "Sonstiges",
+  "tr": "dizüstü bilgisayar",
+  "formen": "-s",
+  "beispiel": "Ich brauche einen neuen Laptop.",
+  "ayniAnlam": [
+   "der Laptop (A2)"
+  ]
+ },
+ {
+  "id": 1070,
+  "de": "die Lebensmittel",
+  "typ": "Nomen",
+  "tr": "gıda, yiyecek maddeleri",
+  "formen": "(Pl.)",
+  "beispiel": "Lebensmittel bekommen Sie im Supermarkt."
+ },
+ {
+  "id": 1071,
+  "de": "leer",
+  "typ": "Sonstiges",
+  "tr": "boş",
+  "formen": "",
+  "beispiel": "Die Kanne ist fast leer. Ich mache neuen Tee."
+ },
+ {
+  "id": 1072,
+  "de": "leidtun/leid tun",
+  "typ": "Verb",
+  "tr": "üzülmek",
+  "formen": "tut leid, hat leidgetan",
+  "beispiel": "Es tut mir leid, dass ich nicht kommen kann."
+ },
+ {
+  "id": 1073,
+  "de": "leihen",
+  "typ": "Verb",
+  "tr": "ödünç vermek, ödünç almak",
+  "formen": "leiht, hat geliehen",
+  "beispiel": "Kannst du mir fünf Euro leihen?"
+ },
+ {
+  "id": 1074,
+  "de": "liefern",
+  "typ": "Verb",
+  "tr": "teslim etmek",
+  "formen": "liefert, hat geliefert",
+  "beispiel": "Wir liefern Ihnen den Schrank nach Hause."
+ },
+ {
+  "id": 1075,
+  "de": "der Link",
+  "typ": "Nomen",
+  "tr": "bağlantı, link",
+  "formen": "-s",
+  "beispiel": "Ich schicke dir einen Link zu Deutschübungen."
+ },
+ {
+  "id": 1076,
+  "de": "der Löffel",
+  "typ": "Nomen",
+  "tr": "kaşık",
+  "formen": "-",
+  "beispiel": "Bitte bringen Sie mir einen Löffel."
+ },
+ {
+  "id": 1077,
+  "de": "die Lüge",
+  "typ": "Nomen",
+  "tr": "yalan",
+  "formen": "-n",
+  "beispiel": "Das stimmt nicht! Das ist eine Lüge!"
+ },
+ {
+  "id": 1078,
+  "de": "lügen",
+  "typ": "Verb",
+  "tr": "yalan söylemek",
+  "formen": "lügt, hat gelogen",
+  "beispiel": "Du sollst nicht lügen. Glaub ihm nicht, er lügt."
+ },
+ {
+  "id": 1079,
+  "de": "der Magen",
+  "typ": "Nomen",
+  "tr": "mide",
+  "formen": "¨-",
+  "beispiel": "Mit tut der Magen weh. Ich habe Magenschmerzen."
+ },
+ {
+  "id": 1080,
+  "de": "die Mailbox",
+  "typ": "Nomen",
+  "tr": "sesli mesaj kutusu, telesekreter",
+  "formen": "-en",
+  "beispiel": "Hier ist die Mailbox von Susanne König. Ich habe dir auf die Mailbox gesprochen."
+ },
+ {
+  "id": 1082,
+  "de": "malen",
+  "typ": "Verb",
+  "tr": "resim yapmak, boyamak",
+  "formen": "malt, hat gemalt",
+  "beispiel": "Mein Sohn kann gut malen."
+ },
+ {
+  "id": 1083,
+  "de": "manch-",
+  "typ": "Sonstiges",
+  "tr": "bazı, kimi",
+  "formen": "",
+  "beispiel": "Manche Nachbarn sind unfreundlich."
+ },
+ {
+  "id": 1084,
+  "de": "die Mannschaft",
+  "typ": "Nomen",
+  "tr": "takım",
+  "formen": "-en",
+  "beispiel": "Meine Lieblingsmannschaft hat 1:0 verloren."
+ },
+ {
+  "id": 1085,
+  "de": "das Medikament",
+  "typ": "Nomen",
+  "tr": "ilaç",
+  "formen": "-e",
+  "beispiel": "Nehmen Sie dieses Medikament dreimal pro Tag!",
+  "ayniAnlam": [
+   "das Arzneimittel (B2)"
+  ]
+ },
+ {
+  "id": 1086,
+  "de": "meinen",
+  "typ": "Verb",
+  "tr": "demek istemek, kastetmek, düşünmek",
+  "formen": "meint, hat gemeint",
+  "beispiel": "Wie meinst du das? Erklär mir das bitte genauer! Der Film ist gut. Was meinst du?"
+ },
+ {
+  "id": 1087,
+  "de": "die Meinung",
+  "typ": "Nomen",
+  "tr": "fikir, görüş, düşünce",
+  "formen": "-en",
+  "beispiel": "Meine Meinung zu dem Thema ist: … Was ist deine Meinung dazu? Ich habe meine Meinung geändert."
+ },
+ {
+  "id": 1088,
+  "de": "meistens",
+  "typ": "Sonstiges",
+  "tr": "çoğunlukla, genellikle",
+  "formen": "",
+  "beispiel": "Meistens trinke ich zum Frühstück nur einen Kaffee.",
+  "ayniAnlam": [
+   "meist(ens) (B1)"
+  ]
+ },
+ {
+  "id": 1089,
+  "de": "die Menge",
+  "typ": "Nomen",
+  "tr": "miktar, çokluk; kalabalık",
+  "formen": "-n",
+  "beispiel": "Wir haben noch eine Menge Zeit. Ich kenne eine Menge Leute in dieser Stadt."
+ },
+ {
+  "id": 1090,
+  "de": "merken",
+  "typ": "Verb",
+  "tr": "fark etmek; aklında tutmak, hatırlamak",
+  "formen": "merkt, hat gemerkt",
+  "beispiel": "Ich kann mir keine Zahlen merken. Ich vergesse sie sofort. Merkst du, dass es wärmer wird?"
+ },
+ {
+  "id": 1091,
+  "de": "die Messe",
+  "typ": "Nomen",
+  "tr": "fuar",
+  "formen": "-n",
+  "beispiel": "Kommst du mit zur Buchmesse nach Frankfurt?"
+ },
+ {
+  "id": 1092,
+  "de": "das Messer",
+  "typ": "Nomen",
+  "tr": "bıçak",
+  "formen": "-",
+  "beispiel": "Das Messer schneidet nicht gut. Ich habe nur ein Messer. Kannst du mir bitte noch eine Gabel bringen?"
+ },
+ {
+  "id": 1093,
+  "de": "der Mitarbeiter",
+  "typ": "Nomen",
+  "tr": "çalışan, personel",
+  "formen": "-",
+  "beispiel": "Unsere Firma hat sieben Mitarbeiter."
+ },
+ {
+  "id": 1094,
+  "de": "das Mittagessen",
+  "typ": "Nomen",
+  "tr": "öğle yemeği",
+  "formen": "-",
+  "beispiel": "Um zwölf Uhr gibt es Mittagessen."
+ },
+ {
+  "id": 1095,
+  "de": "das Mittel",
+  "typ": "Nomen",
+  "tr": "çare, ilaç; araç",
+  "formen": "-",
+  "beispiel": "Haben Sie ein Mittel gegen Magenschmerzen? Das neue Waschmittel ist sehr gut."
+ },
+ {
+  "id": 1096,
+  "de": "das Mobiltelefon",
+  "typ": "Nomen",
+  "tr": "cep telefonu",
+  "formen": "-e",
+  "beispiel": "Wie kann ich Sie erreichen? Haben Sie ein Mobiltelefon?",
+  "ayniAnlam": [
+   "das Handy (A1)"
+  ]
+ },
+ {
+  "id": 1097,
+  "de": "die Mode",
+  "typ": "Nomen",
+  "tr": "moda",
+  "formen": "-n",
+  "beispiel": "Wie findest du die neue Mode?"
+ },
+ {
+  "id": 1098,
+  "de": "modern",
+  "typ": "Sonstiges",
+  "tr": "modern",
+  "formen": "",
+  "beispiel": "Das Stadtzentrum von Frankfurt ist sehr modern."
+ },
+ {
+  "id": 1099,
+  "de": "der Motor",
+  "typ": "Nomen",
+  "tr": "motor",
+  "formen": "-en",
+  "beispiel": "Der Motor ist kaputt. Das Auto fährt nicht mehr."
+ },
+ {
+  "id": 1100,
+  "de": "der Motorroller",
+  "typ": "Nomen",
+  "tr": "moped, skuter",
+  "formen": "-",
+  "beispiel": "Oskar fährt mit dem Motorroller zur Arbeit."
+ },
+ {
+  "id": 1101,
+  "de": "der Müll",
+  "typ": "Nomen",
+  "tr": "çöp",
+  "formen": "(Sg.)",
+  "beispiel": "Bringst du bitte den Müll raus? Kann ich die Zeitungen wegwerfen? - Ja, sie sind alt. Bring/Wirf sie bitte in den Müll!"
+ },
+ {
+  "id": 1102,
+  "de": "das Museum",
+  "typ": "Nomen",
+  "tr": "müze",
+  "formen": "-een",
+  "beispiel": "Im Kunstmuseum gibt es eine neue Ausstellung."
+ },
+ {
+  "id": 1103,
+  "de": "die Mütze",
+  "typ": "Nomen",
+  "tr": "bere, kasket",
+  "formen": "-n",
+  "beispiel": "Haben Sie rote Mützen?"
+ },
+ {
+  "id": 1104,
+  "de": "der Nachbar",
+  "typ": "Nomen",
+  "tr": "komşu",
+  "formen": "-n, die Nachbarin,-nen",
+  "beispiel": "Mein Nachbar kommt aus Brasilien und meine Nachbarin ist Italienerin. Die neuen Nachbarn sind sehr nett."
+ },
+ {
+  "id": 1105,
+  "de": "die Nähe",
+  "typ": "Nomen",
+  "tr": "yakın yer, civar",
+  "formen": "(Sg.)",
+  "beispiel": "Die Post ist in der Nähe vom Bahnhof."
+ },
+ {
+  "id": 1106,
+  "de": "nass",
+  "typ": "Sonstiges",
+  "tr": "ıslak",
+  "formen": "",
+  "beispiel": "Geh nicht mit den nassen Schuhen ins Wohnzimmer! Du bist ja ganz nass. Hast du den Regenschirm vergessen?"
+ },
+ {
+  "id": 1107,
+  "de": "die Natur",
+  "typ": "Nomen",
+  "tr": "doğa",
+  "formen": "(Sg.)",
+  "beispiel": "Ich bin gern draußen in der Natur."
+ },
+ {
+  "id": 1108,
+  "de": "natürlich",
+  "typ": "Sonstiges",
+  "tr": "doğal olarak; tabii, elbette",
+  "formen": "",
+  "beispiel": "Natürlich helfen wir dir. Kommst du zu meiner Party? – Natürlich."
+ },
+ {
+  "id": 1109,
+  "de": "neben",
+  "typ": "Sonstiges",
+  "tr": "yanında, yanına",
+  "formen": "",
+  "beispiel": "Neben mir ist noch ein Platz frei. Die Apotheke ist neben der Post."
+ },
+ {
+  "id": 1110,
+  "de": "nebenan",
+  "typ": "Sonstiges",
+  "tr": "yan tarafta, bitişikte",
+  "formen": "",
+  "beispiel": "Das ist José. Er wohnt nebenan."
+ },
+ {
+  "id": 1111,
+  "de": "neblig",
+  "typ": "Sonstiges",
+  "tr": "sisli",
+  "formen": "",
+  "beispiel": "Fahr vorsichtig! Es ist neblig."
+ },
+ {
+  "id": 1112,
+  "de": "nennen",
+  "typ": "Verb",
+  "tr": "adlandırmak, çağırmak",
+  "formen": "nennt, hat genannt",
+  "beispiel": "Mein Freund heißt Alexander, aber alle nennen ihn Alex."
+ },
+ {
+  "id": 1113,
+  "de": "nervös",
+  "typ": "Sonstiges",
+  "tr": "gergin, sinirli",
+  "formen": "",
+  "beispiel": "Bei Prüfungen bin ich immer sehr nervös."
+ },
+ {
+  "id": 1114,
+  "de": "nirgends",
+  "typ": "Sonstiges",
+  "tr": "hiçbir yerde",
+  "formen": "",
+  "beispiel": "Hier kann man nirgends parken. Wo ist Stefan? Ich kann ihn nirgends sehen.",
+  "ayniAnlam": [
+   "nirgendwo (B1)"
+  ]
+ },
+ {
+  "id": 1115,
+  "de": "notieren",
+  "typ": "Verb",
+  "tr": "not almak, kaydetmek",
+  "formen": "notiert, hat notiert",
+  "beispiel": "Notieren Sie bitte alle wichtigen Informationen."
+ },
+ {
+  "id": 1116,
+  "de": "die Notiz",
+  "typ": "Nomen",
+  "tr": "not",
+  "formen": "-en",
+  "beispiel": "Schreib mir bitte eine Notiz. Haben Sie einen Notizzettel für mich?"
+ },
+ {
+  "id": 1117,
+  "de": "notwendig",
+  "typ": "Sonstiges",
+  "tr": "gerekli",
+  "formen": "",
+  "beispiel": "Muss ich noch einmal kommen? – Nein, das ist nicht notwendig.",
+  "ayniAnlam": [
+   "erforderlich (B1)",
+   "nötig (B1)"
+  ]
+ },
+ {
+  "id": 1118,
+  "de": "die Nudel",
+  "typ": "Nomen",
+  "tr": "makarna, erişte",
+  "formen": "-n",
+  "beispiel": "Möchten Sie lieber Reis oder Nudeln? – Lieber Nudeln, bitte."
+ }
+]

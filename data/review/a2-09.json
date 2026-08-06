@@ -1,0 +1,995 @@
+[
+ {
+  "id": 7953,
+  "de": "der Chirurg",
+  "typ": "Nomen",
+  "tr": "cerrah",
+  "formen": "-en",
+  "beispiel": "Der Chirurg hat meinen Vater am Knie operiert."
+ },
+ {
+  "id": 7954,
+  "de": "die Behandlung",
+  "typ": "Nomen",
+  "tr": "tedavi",
+  "formen": "-en",
+  "beispiel": "Die Behandlung dauert drei Wochen."
+ },
+ {
+  "id": 7955,
+  "de": "die Blutprobe",
+  "typ": "Nomen",
+  "tr": "kan tahlili, kan örneği",
+  "formen": "-n",
+  "beispiel": "Vor der Untersuchung nimmt die Schwester eine Blutprobe."
+ },
+ {
+  "id": 7956,
+  "de": "der Hustensaft",
+  "typ": "Nomen",
+  "tr": "öksürük şurubu",
+  "formen": "¨-e",
+  "beispiel": "Nimm abends einen Löffel Hustensaft."
+ },
+ {
+  "id": 7957,
+  "de": "die Augentropfen",
+  "typ": "Nomen",
+  "tr": "göz damlası",
+  "formen": "(Pl.)",
+  "beispiel": "Die Augentropfen bekomme ich ohne Rezept in der Apotheke."
+ },
+ {
+  "id": 7958,
+  "de": "die Schlaftablette",
+  "typ": "Nomen",
+  "tr": "uyku hapı",
+  "formen": "-n",
+  "beispiel": "Ohne Schlaftablette kann er kaum einschlafen."
+ },
+ {
+  "id": 7959,
+  "de": "die Krücke",
+  "typ": "Nomen",
+  "tr": "koltuk değneği",
+  "formen": "-n",
+  "beispiel": "Nach der Operation läuft sie mit Krücken."
+ },
+ {
+  "id": 7960,
+  "de": "der Rollstuhl",
+  "typ": "Nomen",
+  "tr": "tekerlekli sandalye",
+  "formen": "¨-e",
+  "beispiel": "Mein Nachbar sitzt seit dem Unfall im Rollstuhl."
+ },
+ {
+  "id": 7961,
+  "de": "der Gips",
+  "typ": "Nomen",
+  "tr": "alçı",
+  "formen": "(Sg.)",
+  "beispiel": "Mein Arm ist gebrochen und jetzt im Gips."
+ },
+ {
+  "id": 7962,
+  "de": "der Impfstoff",
+  "typ": "Nomen",
+  "tr": "aşı",
+  "formen": "-e",
+  "beispiel": "In der Praxis gibt es einen neuen Impfstoff gegen Grippe."
+ },
+ {
+  "id": 7963,
+  "de": "die Kontaktlinse",
+  "typ": "Nomen",
+  "tr": "kontakt lens",
+  "formen": "-n",
+  "beispiel": "Ich trage lieber Kontaktlinsen als eine Brille."
+ },
+ {
+  "id": 7964,
+  "de": "der Blutzucker",
+  "typ": "Nomen",
+  "tr": "kan şekeri",
+  "formen": "(Sg.)",
+  "beispiel": "Mein Opa misst jeden Morgen seinen Blutzucker."
+ },
+ {
+  "id": 7965,
+  "de": "die Massage",
+  "typ": "Nomen",
+  "tr": "masaj",
+  "formen": "-n",
+  "beispiel": "Gegen die Schmerzen im Rücken hilft eine Massage."
+ },
+ {
+  "id": 7966,
+  "de": "der Puls",
+  "typ": "Nomen",
+  "tr": "nabız",
+  "formen": "-e",
+  "beispiel": "Die Ärztin misst zuerst meinen Puls."
+ },
+ {
+  "id": 7967,
+  "de": "die Erste Hilfe",
+  "typ": "Nomen",
+  "tr": "ilk yardım",
+  "formen": "(Sg.)",
+  "beispiel": "Auf der Straße hat er Erste Hilfe geleistet."
+ },
+ {
+  "id": 7968,
+  "de": "niesen",
+  "typ": "Verb",
+  "tr": "hapşırmak",
+  "formen": "niest, hat geniest",
+  "beispiel": "Ich muss die ganze Zeit niesen."
+ },
+ {
+  "id": 7969,
+  "de": "zittern",
+  "typ": "Verb",
+  "tr": "titremek",
+  "formen": "zittert, hat gezittert",
+  "beispiel": "Meine Hände zittern, weil ich Fieber habe."
+ },
+ {
+  "id": 7970,
+  "de": "impfen",
+  "typ": "Verb",
+  "tr": "aşılamak, aşı yapmak",
+  "formen": "impft, hat geimpft",
+  "beispiel": "Morgen lasse ich mich gegen Grippe impfen."
+ },
+ {
+  "id": 7971,
+  "de": "röntgen",
+  "typ": "Verb",
+  "tr": "röntgen çekmek",
+  "formen": "röntgt, hat geröntgt",
+  "beispiel": "Im Krankenhaus haben sie meinen Fuß geröntgt."
+ },
+ {
+  "id": 7972,
+  "de": "sich anstecken",
+  "typ": "Verb",
+  "tr": "hastalık kapmak, bulaşmak",
+  "formen": "steckt sich an, hat sich angesteckt",
+  "beispiel": "Bleib zu Hause, ich möchte mich nicht anstecken."
+ },
+ {
+  "id": 7973,
+  "de": "sich fühlen",
+  "typ": "Verb",
+  "tr": "kendini hissetmek",
+  "formen": "fühlt sich, hat sich gefühlt",
+  "beispiel": "Heute fühle ich mich schon viel besser."
+ },
+ {
+  "id": 7974,
+  "de": "schlucken",
+  "typ": "Verb",
+  "tr": "yutmak",
+  "formen": "schluckt, hat geschluckt",
+  "beispiel": "Mein Hals tut weh und ich kann kaum schlucken."
+ },
+ {
+  "id": 7975,
+  "de": "kühlen",
+  "typ": "Verb",
+  "tr": "soğutmak, buz koymak",
+  "formen": "kühlt, hat gekühlt",
+  "beispiel": "Kühle das Knie mit Eis, dann wird es besser."
+ },
+ {
+  "id": 7976,
+  "de": "sich ausschlafen",
+  "typ": "Verb",
+  "tr": "iyice uyumak, uykusunu almak",
+  "formen": "schläft sich aus, hat sich ausgeschlafen",
+  "beispiel": "Am Wochenende möchte ich mich endlich ausschlafen."
+ },
+ {
+  "id": 7977,
+  "de": "schwindlig",
+  "typ": "Sonstiges",
+  "tr": "başı dönen",
+  "formen": "",
+  "beispiel": "Wenn ich zu schnell aufstehe, wird mir schwindlig."
+ },
+ {
+  "id": 7978,
+  "de": "heiser",
+  "typ": "Sonstiges",
+  "tr": "sesi kısık, boğuk sesli",
+  "formen": "",
+  "beispiel": "Nach dem Konzert war ich ganz heiser."
+ },
+ {
+  "id": 7979,
+  "de": "geschwollen",
+  "typ": "Sonstiges",
+  "tr": "şişmiş, şiş",
+  "formen": "",
+  "beispiel": "Mein Fuß ist dick und geschwollen."
+ },
+ {
+  "id": 7980,
+  "de": "verletzt",
+  "typ": "Sonstiges",
+  "tr": "yaralı, sakatlanmış",
+  "formen": "",
+  "beispiel": "Bei dem Unfall wurde zum Glück niemand verletzt."
+ },
+ {
+  "id": 7981,
+  "de": "übel",
+  "typ": "Sonstiges",
+  "tr": "midesi bulanan, kötü",
+  "formen": "",
+  "beispiel": "Im Bus ist mir immer übel."
+ },
+ {
+  "id": 7982,
+  "de": "schmerzhaft",
+  "typ": "Sonstiges",
+  "tr": "acı veren, ağrılı",
+  "formen": "",
+  "beispiel": "Die Spritze war kurz, aber schmerzhaft."
+ },
+ {
+  "id": 7983,
+  "de": "ansteckend",
+  "typ": "Sonstiges",
+  "tr": "bulaşıcı",
+  "formen": "",
+  "beispiel": "Eine Grippe ist sehr ansteckend."
+ },
+ {
+  "id": 7984,
+  "de": "ohnmächtig",
+  "typ": "Sonstiges",
+  "tr": "baygın",
+  "formen": "",
+  "beispiel": "In der Hitze wurde die alte Frau ohnmächtig."
+ },
+ {
+  "id": 7985,
+  "de": "die Telefonnummer",
+  "typ": "Nomen",
+  "tr": "telefon numarası",
+  "formen": "-n",
+  "beispiel": "Kannst du mir bitte deine Telefonnummer geben?",
+  "ayniAnlam": [
+   "die Rufnummer (B1)"
+  ]
+ },
+ {
+  "id": 7986,
+  "de": "die Handynummer",
+  "typ": "Nomen",
+  "tr": "cep telefonu numarası",
+  "formen": "-n",
+  "beispiel": "Meine Handynummer hat sich letzte Woche geändert."
+ },
+ {
+  "id": 7987,
+  "de": "das Telefonat",
+  "typ": "Nomen",
+  "tr": "telefon görüşmesi",
+  "formen": "-e",
+  "beispiel": "Das Telefonat mit meinem Chef hat nur fünf Minuten gedauert."
+ },
+ {
+  "id": 7988,
+  "de": "das Telefongespräch",
+  "typ": "Nomen",
+  "tr": "telefon konuşması",
+  "formen": "-e",
+  "beispiel": "Nach dem Telefongespräch war meine Mutter viel ruhiger."
+ },
+ {
+  "id": 7989,
+  "de": "das Telefonbuch",
+  "typ": "Nomen",
+  "tr": "telefon rehberi",
+  "formen": "¨-er",
+  "beispiel": "Die Nummer der Praxis steht im Telefonbuch."
+ },
+ {
+  "id": 7990,
+  "de": "die SMS",
+  "typ": "Nomen",
+  "tr": "kısa mesaj, SMS",
+  "formen": "-",
+  "beispiel": "Ich schreibe dir später eine SMS."
+ },
+ {
+  "id": 7991,
+  "de": "die Sprachnachricht",
+  "typ": "Nomen",
+  "tr": "sesli mesaj",
+  "formen": "-en",
+  "beispiel": "Meine Oma schickt lieber eine Sprachnachricht als eine SMS."
+ },
+ {
+  "id": 7992,
+  "de": "der Klingelton",
+  "typ": "Nomen",
+  "tr": "zil sesi",
+  "formen": "¨-e",
+  "beispiel": "Dein Klingelton ist wirklich sehr laut."
+ },
+ {
+  "id": 7993,
+  "de": "auflegen",
+  "typ": "Verb",
+  "tr": "telefonu kapatmak",
+  "formen": "legt auf, hat aufgelegt",
+  "beispiel": "Bitte leg nicht auf, ich bin gleich zurück."
+ },
+ {
+  "id": 7994,
+  "de": "zurückrufen",
+  "typ": "Verb",
+  "tr": "geri aramak",
+  "formen": "ruft zurück, hat zurückgerufen",
+  "beispiel": "Ich rufe dich heute Abend zurück."
+ },
+ {
+  "id": 7995,
+  "de": "das Smartphone",
+  "typ": "Nomen",
+  "tr": "akıllı telefon",
+  "formen": "-s",
+  "beispiel": "Mein neues Smartphone hat eine sehr gute Kamera."
+ },
+ {
+  "id": 7996,
+  "de": "der Akku",
+  "typ": "Nomen",
+  "tr": "şarj, batarya",
+  "formen": "-s",
+  "beispiel": "Mein Akku ist fast leer."
+ },
+ {
+  "id": 7997,
+  "de": "das Ladekabel",
+  "typ": "Nomen",
+  "tr": "şarj kablosu",
+  "formen": "-",
+  "beispiel": "Hast du ein Ladekabel für mein Handy?"
+ },
+ {
+  "id": 7998,
+  "de": "der Laptop",
+  "typ": "Nomen",
+  "tr": "dizüstü bilgisayar",
+  "formen": "-s",
+  "beispiel": "Ich nehme meinen Laptop mit ins Büro.",
+  "ayniAnlam": [
+   "der/das Laptop (A2)"
+  ]
+ },
+ {
+  "id": 7999,
+  "de": "die Maus",
+  "typ": "Nomen",
+  "tr": "fare (bilgisayar), fare",
+  "formen": "¨-e",
+  "beispiel": "Die Maus von meinem Computer funktioniert nicht mehr."
+ },
+ {
+  "id": 8000,
+  "de": "der Kopfhörer",
+  "typ": "Nomen",
+  "tr": "kulaklık",
+  "formen": "-",
+  "beispiel": "Im Zug höre ich Musik mit Kopfhörern."
+ },
+ {
+  "id": 8001,
+  "de": "das Mikrofon",
+  "typ": "Nomen",
+  "tr": "mikrofon",
+  "formen": "-e",
+  "beispiel": "Dein Mikrofon ist aus, ich höre dich nicht."
+ },
+ {
+  "id": 8002,
+  "de": "die Webcam",
+  "typ": "Nomen",
+  "tr": "web kamerası",
+  "formen": "-s",
+  "beispiel": "Für das Videogespräch brauchst du eine Webcam."
+ },
+ {
+  "id": 8003,
+  "de": "der Scanner",
+  "typ": "Nomen",
+  "tr": "tarayıcı (cihaz)",
+  "formen": "-",
+  "beispiel": "Der Scanner steht neben dem Drucker."
+ },
+ {
+  "id": 8004,
+  "de": "scannen",
+  "typ": "Verb",
+  "tr": "taramak",
+  "formen": "scannt, hat gescannt",
+  "beispiel": "Bitte scannen Sie den Vertrag und schicken Sie ihn mir."
+ },
+ {
+  "id": 8005,
+  "de": "der Router",
+  "typ": "Nomen",
+  "tr": "modem, yönlendirici",
+  "formen": "-",
+  "beispiel": "Der Router im Wohnzimmer ist kaputt."
+ },
+ {
+  "id": 8006,
+  "de": "das WLAN",
+  "typ": "Nomen",
+  "tr": "kablosuz internet, wifi",
+  "formen": "-s",
+  "beispiel": "Gibt es hier im Café ein kostenloses WLAN?"
+ },
+ {
+  "id": 8007,
+  "de": "die Software",
+  "typ": "Nomen",
+  "tr": "yazılım",
+  "formen": "-s",
+  "beispiel": "Die neue Software ist einfach zu bedienen."
+ },
+ {
+  "id": 8008,
+  "de": "der Speicher",
+  "typ": "Nomen",
+  "tr": "bellek, hafıza",
+  "formen": "-",
+  "beispiel": "Der Speicher von meinem Handy ist voll."
+ },
+ {
+  "id": 8009,
+  "de": "die App",
+  "typ": "Nomen",
+  "tr": "uygulama",
+  "formen": "-s",
+  "beispiel": "Ich habe eine neue App zum Deutschlernen."
+ },
+ {
+  "id": 8010,
+  "de": "das Update",
+  "typ": "Nomen",
+  "tr": "güncelleme",
+  "formen": "-s",
+  "beispiel": "Das Update dauert ungefähr zehn Minuten."
+ },
+ {
+  "id": 8011,
+  "de": "die Website",
+  "typ": "Nomen",
+  "tr": "internet sitesi",
+  "formen": "-s",
+  "beispiel": "Auf der Website der Schule findest du alle Termine."
+ },
+ {
+  "id": 8012,
+  "de": "der Benutzer",
+  "typ": "Nomen",
+  "tr": "kullanıcı",
+  "formen": "-",
+  "beispiel": "Jeder Benutzer bekommt ein eigenes Passwort.",
+  "ayniAnlam": [
+   "der Nutzer (B2)"
+  ]
+ },
+ {
+  "id": 8013,
+  "de": "der Benutzername",
+  "typ": "Nomen",
+  "tr": "kullanıcı adı",
+  "formen": "-n",
+  "beispiel": "Ich habe meinen Benutzernamen vergessen."
+ },
+ {
+  "id": 8014,
+  "de": "sich abmelden",
+  "typ": "Verb",
+  "tr": "çıkış yapmak, kaydını sildirmek",
+  "formen": "meldet sich ab, hat sich abgemeldet",
+  "beispiel": "Vergiss nicht, dich am Computer abzumelden."
+ },
+ {
+  "id": 8015,
+  "de": "offline",
+  "typ": "Sonstiges",
+  "tr": "çevrimdışı",
+  "formen": "",
+  "beispiel": "Mein Bruder war den ganzen Tag offline."
+ },
+ {
+  "id": 8016,
+  "de": "der Chat",
+  "typ": "Nomen",
+  "tr": "sohbet (yazışma)",
+  "formen": "-s",
+  "beispiel": "In unserem Chat schreiben wir jeden Tag."
+ },
+ {
+  "id": 8017,
+  "de": "das Profil",
+  "typ": "Nomen",
+  "tr": "profil",
+  "formen": "-e",
+  "beispiel": "Auf meinem Profil ist ein Foto vom Urlaub."
+ },
+ {
+  "id": 8018,
+  "de": "das Selfie",
+  "typ": "Nomen",
+  "tr": "özçekim, selfie",
+  "formen": "-s",
+  "beispiel": "Wir haben vor dem Museum ein Selfie gemacht."
+ },
+ {
+  "id": 8019,
+  "de": "der Anhang",
+  "typ": "Nomen",
+  "tr": "ek (e-postada), ilave",
+  "formen": "¨-e",
+  "beispiel": "Die Rechnung ist im Anhang."
+ },
+ {
+  "id": 8020,
+  "de": "der Betreff",
+  "typ": "Nomen",
+  "tr": "konu (yazışmada)",
+  "formen": "-e",
+  "beispiel": "Schreib bitte einen kurzen Betreff in die E-Mail."
+ },
+ {
+  "id": 8021,
+  "de": "der Spam",
+  "typ": "Nomen",
+  "tr": "istenmeyen posta, spam",
+  "formen": "(Sg.)",
+  "beispiel": "Diese Nachricht war leider Spam."
+ },
+ {
+  "id": 8022,
+  "de": "abschicken",
+  "typ": "Verb",
+  "tr": "göndermek, yollamak",
+  "formen": "schickt ab, hat abgeschickt",
+  "beispiel": "Ich habe das Formular gestern abgeschickt.",
+  "ayniAnlam": [
+   "verschicken (A2)"
+  ]
+ },
+ {
+  "id": 8023,
+  "de": "der Umschlag",
+  "typ": "Nomen",
+  "tr": "zarf",
+  "formen": "¨-e",
+  "beispiel": "Der Brief liegt in einem weißen Umschlag.",
+  "ayniAnlam": [
+   "der Briefumschlag (B1)",
+   "das Couvert (B1)",
+   "das Kuvert (B1)"
+  ]
+ },
+ {
+  "id": 8024,
+  "de": "das Briefpapier",
+  "typ": "Nomen",
+  "tr": "mektup kâğıdı",
+  "formen": "(Sg.)",
+  "beispiel": "Meine Tante schreibt immer auf schönem Briefpapier."
+ },
+ {
+  "id": 8025,
+  "de": "das Päckchen",
+  "typ": "Nomen",
+  "tr": "küçük paket, koli",
+  "formen": "-",
+  "beispiel": "Für meine Schwester ist ein Päckchen gekommen."
+ },
+ {
+  "id": 8026,
+  "de": "das Porto",
+  "typ": "Nomen",
+  "tr": "posta ücreti",
+  "formen": "-s",
+  "beispiel": "Das Porto für den Brief kostet einen Euro."
+ },
+ {
+  "id": 8027,
+  "de": "das Postamt",
+  "typ": "Nomen",
+  "tr": "postane",
+  "formen": "¨-er",
+  "beispiel": "Das Postamt ist samstags nur bis zwölf Uhr offen."
+ },
+ {
+  "id": 8028,
+  "de": "das Postfach",
+  "typ": "Nomen",
+  "tr": "posta kutusu (abone kutusu)",
+  "formen": "¨-er",
+  "beispiel": "Schicken Sie den Brief bitte an unser Postfach."
+ },
+ {
+  "id": 8029,
+  "de": "die Hausnummer",
+  "typ": "Nomen",
+  "tr": "kapı numarası, bina numarası",
+  "formen": "-n",
+  "beispiel": "Du hast die Hausnummer im Formular vergessen."
+ },
+ {
+  "id": 8030,
+  "de": "der Zeitungsartikel",
+  "typ": "Nomen",
+  "tr": "gazete yazısı, gazete haberi",
+  "formen": "-",
+  "beispiel": "Der Zeitungsartikel über unsere Stadt war sehr interessant."
+ },
+ {
+  "id": 8031,
+  "de": "die Tageszeitung",
+  "typ": "Nomen",
+  "tr": "günlük gazete",
+  "formen": "-en",
+  "beispiel": "Mein Vater liest jeden Morgen die Tageszeitung."
+ },
+ {
+  "id": 8032,
+  "de": "das Fernsehprogramm",
+  "typ": "Nomen",
+  "tr": "televizyon programı (yayın akışı)",
+  "formen": "-e",
+  "beispiel": "Heute ist das Fernsehprogramm wirklich langweilig."
+ },
+ {
+  "id": 8033,
+  "de": "die Fernsehsendung",
+  "typ": "Nomen",
+  "tr": "televizyon programı, yayın",
+  "formen": "-en",
+  "beispiel": "Diese Fernsehsendung läuft immer am Sonntagabend."
+ },
+ {
+  "id": 8034,
+  "de": "der Radiosender",
+  "typ": "Nomen",
+  "tr": "radyo istasyonu, radyo kanalı",
+  "formen": "-",
+  "beispiel": "Im Auto höre ich immer denselben Radiosender."
+ },
+ {
+  "id": 8035,
+  "de": "der Podcast",
+  "typ": "Nomen",
+  "tr": "podcast",
+  "formen": "-s",
+  "beispiel": "Beim Kochen höre ich gern einen Podcast."
+ },
+ {
+  "id": 8036,
+  "de": "die Lautstärke",
+  "typ": "Nomen",
+  "tr": "ses seviyesi, ses yüksekliği",
+  "formen": "-n",
+  "beispiel": "Kannst du bitte die Lautstärke leiser machen?"
+ },
+ {
+  "id": 8037,
+  "de": "umschalten",
+  "typ": "Verb",
+  "tr": "kanal değiştirmek",
+  "formen": "schaltet um, hat umgeschaltet",
+  "beispiel": "Bitte schalte auf einen anderen Sender um."
+ },
+ {
+  "id": 8038,
+  "de": "ausschalten",
+  "typ": "Verb",
+  "tr": "kapatmak (cihaz)",
+  "formen": "schaltet aus, hat ausgeschaltet",
+  "beispiel": "Schalte bitte den Fernseher aus, ich möchte schlafen."
+ },
+ {
+  "id": 8039,
+  "de": "die Zusage",
+  "typ": "Nomen",
+  "tr": "olumlu cevap, kabul",
+  "formen": "-n",
+  "beispiel": "Wir warten noch auf deine Zusage für die Hochzeit."
+ },
+ {
+  "id": 8040,
+  "de": "die Absage",
+  "typ": "Nomen",
+  "tr": "olumsuz cevap, iptal",
+  "formen": "-n",
+  "beispiel": "Leider habe ich eine Absage von der Firma bekommen."
+ },
+ {
+  "id": 8041,
+  "de": "sich absprechen",
+  "typ": "Verb",
+  "tr": "sözleşmek, aralarında anlaşmak",
+  "formen": "spricht sich ab, hat sich abgesprochen",
+  "beispiel": "Wir müssen uns wegen des Termins noch absprechen."
+ },
+ {
+  "id": 8042,
+  "de": "die Vereinbarung",
+  "typ": "Nomen",
+  "tr": "anlaşma, mutabakat",
+  "formen": "-en",
+  "beispiel": "Wir haben eine Vereinbarung über die Miete getroffen."
+ },
+ {
+  "id": 8043,
+  "de": "das Anmeldeformular",
+  "typ": "Nomen",
+  "tr": "kayıt formu, başvuru formu",
+  "formen": "-e",
+  "beispiel": "Bitte füllen Sie das Anmeldeformular in Druckbuchstaben aus."
+ },
+ {
+  "id": 8044,
+  "de": "der Fahrschein",
+  "typ": "Nomen",
+  "tr": "bilet, yol bileti",
+  "formen": "-e",
+  "beispiel": "Ich habe meinen Fahrschein am Automaten gekauft."
+ },
+ {
+  "id": 8045,
+  "de": "das Abteil",
+  "typ": "Nomen",
+  "tr": "kompartıman",
+  "formen": "-e",
+  "beispiel": "In unserem Abteil sitzen noch zwei Personen."
+ },
+ {
+  "id": 8046,
+  "de": "der Schaffner",
+  "typ": "Nomen",
+  "tr": "kondüktör, biletçi",
+  "formen": "-",
+  "beispiel": "Der Schaffner möchte unsere Tickets sehen."
+ },
+ {
+  "id": 8047,
+  "de": "die Bushaltestelle",
+  "typ": "Nomen",
+  "tr": "otobüs durağı",
+  "formen": "-n",
+  "beispiel": "Die Bushaltestelle ist gleich vor dem Supermarkt."
+ },
+ {
+  "id": 8048,
+  "de": "der Busbahnhof",
+  "typ": "Nomen",
+  "tr": "otogar",
+  "formen": "¨-e",
+  "beispiel": "Der Bus nach Hamburg fährt am Busbahnhof ab."
+ },
+ {
+  "id": 8049,
+  "de": "die Endstation",
+  "typ": "Nomen",
+  "tr": "son durak",
+  "formen": "-en",
+  "beispiel": "Wir müssen bis zur Endstation fahren."
+ },
+ {
+  "id": 8050,
+  "de": "die Ankunftszeit",
+  "typ": "Nomen",
+  "tr": "varış saati",
+  "formen": "-en",
+  "beispiel": "Weißt du die Ankunftszeit von dem Zug?"
+ },
+ {
+  "id": 8051,
+  "de": "der Sitzplatz",
+  "typ": "Nomen",
+  "tr": "oturma yeri, koltuk",
+  "formen": "¨-e",
+  "beispiel": "Im Bus war kein Sitzplatz mehr frei."
+ },
+ {
+  "id": 8052,
+  "de": "die Zugfahrt",
+  "typ": "Nomen",
+  "tr": "tren yolculuğu",
+  "formen": "-en",
+  "beispiel": "Die Zugfahrt nach München dauert vier Stunden."
+ },
+ {
+  "id": 8053,
+  "de": "der Lokführer",
+  "typ": "Nomen",
+  "tr": "tren makinisti",
+  "formen": "-",
+  "beispiel": "Mein Onkel arbeitet als Lokführer."
+ },
+ {
+  "id": 8054,
+  "de": "der Flugbegleiter",
+  "typ": "Nomen",
+  "tr": "kabin görevlisi",
+  "formen": "-",
+  "beispiel": "Der Flugbegleiter bringt uns Wasser."
+ },
+ {
+  "id": 8055,
+  "de": "die Bordkarte",
+  "typ": "Nomen",
+  "tr": "biniş kartı",
+  "formen": "-n",
+  "beispiel": "Bitte zeigen Sie mir Ihre Bordkarte."
+ },
+ {
+  "id": 8056,
+  "de": "das Handgepäck",
+  "typ": "Nomen",
+  "tr": "el bagajı",
+  "formen": "(Sg.)",
+  "beispiel": "Ich nehme nur Handgepäck mit."
+ },
+ {
+  "id": 8057,
+  "de": "der Rückflug",
+  "typ": "Nomen",
+  "tr": "dönüş uçuşu",
+  "formen": "¨-e",
+  "beispiel": "Unser Rückflug ist am Sonntagabend."
+ },
+ {
+  "id": 8058,
+  "de": "der Zwischenstopp",
+  "typ": "Nomen",
+  "tr": "ara duraklama, aktarma molası",
+  "formen": "-s",
+  "beispiel": "Wir haben einen Zwischenstopp in Wien."
+ },
+ {
+  "id": 8059,
+  "de": "einchecken",
+  "typ": "Verb",
+  "tr": "check-in yapmak",
+  "formen": "checkt ein, hat eingecheckt",
+  "beispiel": "Wir müssen zwei Stunden vor dem Flug einchecken."
+ },
+ {
+  "id": 8060,
+  "de": "auschecken",
+  "typ": "Verb",
+  "tr": "otelden çıkış yapmak",
+  "formen": "checkt aus, hat ausgecheckt",
+  "beispiel": "Im Hotel muss man bis elf Uhr auschecken."
+ },
+ {
+  "id": 8061,
+  "de": "die Sicherheitskontrolle",
+  "typ": "Nomen",
+  "tr": "güvenlik kontrolü",
+  "formen": "-n",
+  "beispiel": "An der Sicherheitskontrolle war eine lange Schlange."
+ },
+ {
+  "id": 8062,
+  "de": "die Ausreise",
+  "typ": "Nomen",
+  "tr": "ülkeden çıkış",
+  "formen": "-n",
+  "beispiel": "Bei der Ausreise braucht man einen gültigen Pass."
+ },
+ {
+  "id": 8063,
+  "de": "die Passkontrolle",
+  "typ": "Nomen",
+  "tr": "pasaport kontrolü",
+  "formen": "-n",
+  "beispiel": "An der Grenze gab es eine kurze Passkontrolle."
+ },
+ {
+  "id": 8064,
+  "de": "das Hotelzimmer",
+  "typ": "Nomen",
+  "tr": "otel odası",
+  "formen": "-",
+  "beispiel": "Unser Hotelzimmer liegt im dritten Stock."
+ },
+ {
+  "id": 8065,
+  "de": "der Zimmerschlüssel",
+  "typ": "Nomen",
+  "tr": "oda anahtarı",
+  "formen": "-",
+  "beispiel": "Ich habe den Zimmerschlüssel an der Rezeption abgegeben."
+ },
+ {
+  "id": 8066,
+  "de": "der Gastgeber",
+  "typ": "Nomen",
+  "tr": "ev sahibi",
+  "formen": "-",
+  "beispiel": "Unser Gastgeber hat uns die Stadt gezeigt."
+ },
+ {
+  "id": 8067,
+  "de": "der Campingplatz",
+  "typ": "Nomen",
+  "tr": "kamp alanı",
+  "formen": "¨-e",
+  "beispiel": "Wir schlafen eine Woche auf dem Campingplatz."
+ },
+ {
+  "id": 8068,
+  "de": "der Zeltplatz",
+  "typ": "Nomen",
+  "tr": "çadır yeri",
+  "formen": "¨-e",
+  "beispiel": "Am See haben wir einen schönen Zeltplatz gefunden."
+ },
+ {
+  "id": 8069,
+  "de": "das Ferienhaus",
+  "typ": "Nomen",
+  "tr": "yazlık ev, tatil evi",
+  "formen": "¨-er",
+  "beispiel": "Wir haben ein kleines Ferienhaus am Meer gemietet."
+ },
+ {
+  "id": 8070,
+  "de": "die Anreise",
+  "typ": "Nomen",
+  "tr": "gidiş, varış yolculuğu",
+  "formen": "-n",
+  "beispiel": "Die Anreise mit dem Auto dauert fünf Stunden."
+ },
+ {
+  "id": 8071,
+  "de": "die Abreise",
+  "typ": "Nomen",
+  "tr": "hareket, yola çıkış",
+  "formen": "-n",
+  "beispiel": "Vor der Abreise räumen wir das Zimmer auf."
+ },
+ {
+  "id": 8072,
+  "de": "abreisen",
+  "typ": "Verb",
+  "tr": "yola çıkmak, ayrılmak",
+  "formen": "reist ab, ist abgereist",
+  "beispiel": "Wir reisen morgen früh ab."
+ },
+ {
+  "id": 8073,
+  "de": "die Wegbeschreibung",
+  "typ": "Nomen",
+  "tr": "yol tarifi",
+  "formen": "-en",
+  "beispiel": "Kannst du mir eine kurze Wegbeschreibung schicken?"
+ },
+ {
+  "id": 8074,
+  "de": "die Landkarte",
+  "typ": "Nomen",
+  "tr": "harita",
+  "formen": "-n",
+  "beispiel": "Opa sucht den Weg lieber auf einer Landkarte."
+ }
+]

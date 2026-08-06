@@ -1,0 +1,993 @@
+[
+ {
+  "id": 8197,
+  "de": "einschlafen",
+  "typ": "Verb",
+  "tr": "uykuya dalmak",
+  "formen": "schläft ein, ist eingeschlafen",
+  "beispiel": "Gestern bin ich vor dem Fernseher eingeschlafen."
+ },
+ {
+  "id": 8198,
+  "de": "ausschlafen",
+  "typ": "Verb",
+  "tr": "uykusunu almak, doya doya uyumak",
+  "formen": "schläft aus, hat ausgeschlafen",
+  "beispiel": "Am Sonntag schlafe ich endlich einmal richtig aus."
+ },
+ {
+  "id": 8199,
+  "de": "verschlafen",
+  "typ": "Verb",
+  "tr": "uyuyakalmak, geç kalkmak",
+  "formen": "verschläft, hat verschlafen",
+  "beispiel": "Heute Morgen habe ich verschlafen und den Bus verpasst."
+ },
+ {
+  "id": 8200,
+  "de": "aufwecken",
+  "typ": "Verb",
+  "tr": "uyandırmak",
+  "formen": "weckt auf, hat aufgeweckt",
+  "beispiel": "Jeden Morgen wecke ich meine Kinder um sieben Uhr auf.",
+  "ayniAnlam": [
+   "wecken (A1)"
+  ]
+ },
+ {
+  "id": 8201,
+  "de": "aufbleiben",
+  "typ": "Verb",
+  "tr": "(geç saate kadar) uyumamak, ayakta kalmak",
+  "formen": "bleibt auf, ist aufgeblieben",
+  "beispiel": "Am Wochenende bleiben die Kinder eine Stunde länger auf."
+ },
+ {
+  "id": 8202,
+  "de": "sich strecken",
+  "typ": "Verb",
+  "tr": "gerinmek, uzanıp esnemek",
+  "formen": "streckt sich, hat sich gestreckt",
+  "beispiel": "Nach dem Aufstehen strecke ich mich am offenen Fenster."
+ },
+ {
+  "id": 8203,
+  "de": "sich kämmen",
+  "typ": "Verb",
+  "tr": "saçını taramak",
+  "formen": "kämmt sich, hat sich gekämmt",
+  "beispiel": "Jeden Morgen kämme ich mich vor dem Spiegel im Bad."
+ },
+ {
+  "id": 8204,
+  "de": "föhnen",
+  "typ": "Verb",
+  "tr": "fön çekmek, saç kurutmak",
+  "formen": "föhnt, hat geföhnt",
+  "beispiel": "Nach dem Duschen föhne ich meine Haare im Bad."
+ },
+ {
+  "id": 8205,
+  "de": "bürsten",
+  "typ": "Verb",
+  "tr": "fırçalamak",
+  "formen": "bürstet, hat gebürstet",
+  "beispiel": "Vor der Arbeit bürste ich meine schwarzen Schuhe."
+ },
+ {
+  "id": 8206,
+  "de": "anprobieren",
+  "typ": "Verb",
+  "tr": "denemek (kıyafet), üstünde denemek",
+  "formen": "probiert an, hat anprobiert",
+  "beispiel": "Im Geschäft probiere ich zuerst die blaue Jacke an."
+ },
+ {
+  "id": 8207,
+  "de": "kassieren",
+  "typ": "Verb",
+  "tr": "tahsil etmek, para almak",
+  "formen": "kassiert, hat kassiert",
+  "beispiel": "An der Kasse kassiert heute eine junge Frau."
+ },
+ {
+  "id": 8208,
+  "de": "auffüllen",
+  "typ": "Verb",
+  "tr": "doldurmak, eksiğini tamamlamak",
+  "formen": "füllt auf, hat aufgefüllt",
+  "beispiel": "Bitte fülle das Waschmittel im Schrank auf."
+ },
+ {
+  "id": 8209,
+  "de": "nachfüllen",
+  "typ": "Verb",
+  "tr": "tazelemek, üstüne eklemek",
+  "formen": "füllt nach, hat nachgefüllt",
+  "beispiel": "Füll bitte das Salz nach, die Dose ist fast leer."
+ },
+ {
+  "id": 8210,
+  "de": "einschenken",
+  "typ": "Verb",
+  "tr": "(içecek) doldurmak, koymak",
+  "formen": "schenkt ein, hat eingeschenkt",
+  "beispiel": "Meine Mutter schenkt uns nach dem Essen Tee ein."
+ },
+ {
+  "id": 8211,
+  "de": "aufbewahren",
+  "typ": "Verb",
+  "tr": "saklamak, muhafaza etmek",
+  "formen": "bewahrt auf, hat aufbewahrt",
+  "beispiel": "Wir bewahren die Kartoffeln im kühlen Keller auf."
+ },
+ {
+  "id": 8212,
+  "de": "abräumen",
+  "typ": "Verb",
+  "tr": "(masayı) toplamak, kaldırmak",
+  "formen": "räumt ab, hat abgeräumt",
+  "beispiel": "Nach dem Essen räume ich den Tisch schnell ab."
+ },
+ {
+  "id": 8213,
+  "de": "anrichten",
+  "typ": "Verb",
+  "tr": "(yemeği) tabağa koyup sunmak",
+  "formen": "richtet an, hat angerichtet",
+  "beispiel": "Meine Frau richtet den Salat auf einem großen Teller an."
+ },
+ {
+  "id": 8214,
+  "de": "auftragen",
+  "typ": "Verb",
+  "tr": "sürmek (krem, boya)",
+  "formen": "trägt auf, hat aufgetragen",
+  "beispiel": "Jeden Abend trage ich eine Creme auf die Hände auf."
+ },
+ {
+  "id": 8215,
+  "de": "naschen",
+  "typ": "Verb",
+  "tr": "atıştırmak (tatlı), gizlice yemek",
+  "formen": "nascht, hat genascht",
+  "beispiel": "Die Kinder naschen heimlich von der Schokolade."
+ },
+ {
+  "id": 8216,
+  "de": "aufschneiden",
+  "typ": "Verb",
+  "tr": "dilimlemek, kesip açmak",
+  "formen": "schneidet auf, hat aufgeschnitten",
+  "beispiel": "Meine Mutter schneidet den Kuchen in der Küche auf."
+ },
+ {
+  "id": 8217,
+  "de": "verschließen",
+  "typ": "Verb",
+  "tr": "sıkıca kapatmak, kilitlemek",
+  "formen": "verschließt, hat verschlossen",
+  "beispiel": "Verschließ bitte die Marmelade gut, sonst wird sie schlecht."
+ },
+ {
+  "id": 8218,
+  "de": "zudecken",
+  "typ": "Verb",
+  "tr": "üstünü örtmek",
+  "formen": "deckt zu, hat zugedeckt",
+  "beispiel": "Abends decke ich meinen Sohn im Bett warm zu."
+ },
+ {
+  "id": 8219,
+  "de": "beziehen",
+  "typ": "Verb",
+  "tr": "(yatağa) çarşaf geçirmek, kaplamak",
+  "formen": "bezieht, hat bezogen",
+  "beispiel": "Am Samstag beziehe ich alle Betten in der Wohnung neu."
+ },
+ {
+  "id": 8220,
+  "de": "polieren",
+  "typ": "Verb",
+  "tr": "parlatmak, cilalamak",
+  "formen": "poliert, hat poliert",
+  "beispiel": "Vor dem Besuch poliere ich die Gläser mit einem Tuch."
+ },
+ {
+  "id": 8221,
+  "de": "montieren",
+  "typ": "Verb",
+  "tr": "monte etmek, kurmak",
+  "formen": "montiert, hat montiert",
+  "beispiel": "Der Handwerker montiert heute die neue Küche.",
+  "ayniAnlam": [
+   "zusammenbauen (A2)"
+  ]
+ },
+ {
+  "id": 8222,
+  "de": "ausbessern",
+  "typ": "Verb",
+  "tr": "onarmak, düzeltmek",
+  "formen": "bessert aus, hat ausgebessert",
+  "beispiel": "Ich bessere die kleine Stelle an der Wand mit Farbe aus."
+ },
+ {
+  "id": 8223,
+  "de": "schaufeln",
+  "typ": "Verb",
+  "tr": "kürekle temizlemek, küremek",
+  "formen": "schaufelt, hat geschaufelt",
+  "beispiel": "Im Winter schaufeln wir den Schnee vor der Haustür."
+ },
+ {
+  "id": 8224,
+  "de": "mithelfen",
+  "typ": "Verb",
+  "tr": "yardım etmek, el atmak",
+  "formen": "hilft mit, hat mitgeholfen",
+  "beispiel": "Meine Kinder helfen im Haushalt jeden Tag mit."
+ },
+ {
+  "id": 8225,
+  "de": "sich abwechseln",
+  "typ": "Verb",
+  "tr": "sırayla yapmak, nöbetleşmek",
+  "formen": "wechselt sich ab, hat sich abgewechselt",
+  "beispiel": "Beim Kochen wechseln wir uns in der Familie ab."
+ },
+ {
+  "id": 8226,
+  "de": "losgehen",
+  "typ": "Verb",
+  "tr": "yola çıkmak, başlamak",
+  "formen": "geht los, ist losgegangen",
+  "beispiel": "Wir gehen um sieben Uhr los."
+ },
+ {
+  "id": 8227,
+  "de": "weggehen",
+  "typ": "Verb",
+  "tr": "gitmek, uzaklaşmak",
+  "formen": "geht weg, ist weggegangen",
+  "beispiel": "Meine Kollegin geht heute früher weg."
+ },
+ {
+  "id": 8228,
+  "de": "weglaufen",
+  "typ": "Verb",
+  "tr": "kaçmak, koşarak uzaklaşmak",
+  "formen": "läuft weg, ist weggelaufen",
+  "beispiel": "Der Hund ist im Park weggelaufen."
+ },
+ {
+  "id": 8229,
+  "de": "zurückkommen",
+  "typ": "Verb",
+  "tr": "geri gelmek, dönmek",
+  "formen": "kommt zurück, ist zurückgekommen",
+  "beispiel": "Mein Vater kommt am Freitag aus Hamburg zurück."
+ },
+ {
+  "id": 8230,
+  "de": "hingehen",
+  "typ": "Verb",
+  "tr": "oraya gitmek",
+  "formen": "geht hin, ist hingegangen",
+  "beispiel": "Das Konzert ist billig, wir gehen zusammen hin."
+ },
+ {
+  "id": 8231,
+  "de": "herkommen",
+  "typ": "Verb",
+  "tr": "buraya gelmek",
+  "formen": "kommt her, ist hergekommen",
+  "beispiel": "Komm bitte kurz her, ich brauche deine Hilfe."
+ },
+ {
+  "id": 8232,
+  "de": "reinkommen",
+  "typ": "Verb",
+  "tr": "içeri girmek",
+  "formen": "kommt rein, ist reingekommen",
+  "beispiel": "Der Chef kommt gleich ins Büro rein."
+ },
+ {
+  "id": 8233,
+  "de": "rausgehen",
+  "typ": "Verb",
+  "tr": "dışarı çıkmak",
+  "formen": "geht raus, ist rausgegangen",
+  "beispiel": "In der Pause gehe ich kurz raus."
+ },
+ {
+  "id": 8234,
+  "de": "vorbeikommen",
+  "typ": "Verb",
+  "tr": "uğramak, uğrayıp geçmek",
+  "formen": "kommt vorbei, ist vorbeigekommen",
+  "beispiel": "Der Techniker kommt morgen bei uns vorbei."
+ },
+ {
+  "id": 8235,
+  "de": "umkehren",
+  "typ": "Verb",
+  "tr": "geri dönmek, geldiği yoldan dönmek",
+  "formen": "kehrt um, ist umgekehrt",
+  "beispiel": "Es hat stark geregnet, deshalb sind wir umgekehrt."
+ },
+ {
+  "id": 8236,
+  "de": "anhalten",
+  "typ": "Verb",
+  "tr": "durmak, durdurmak",
+  "formen": "hält an, hat angehalten",
+  "beispiel": "Der Bus hält vor der Schule an."
+ },
+ {
+  "id": 8237,
+  "de": "stehenbleiben",
+  "typ": "Verb",
+  "tr": "durup kalmak, olduğu yerde durmak",
+  "formen": "bleibt stehen, ist stehen geblieben",
+  "beispiel": "Meine Uhr ist heute Nacht stehen geblieben."
+ },
+ {
+  "id": 8238,
+  "de": "betreten",
+  "typ": "Verb",
+  "tr": "girmek, ayak basmak",
+  "formen": "betritt, hat betreten",
+  "beispiel": "Man darf den Rasen im Park nicht betreten."
+ },
+ {
+  "id": 8239,
+  "de": "durchgehen",
+  "typ": "Verb",
+  "tr": "içinden geçmek, gözden geçirmek",
+  "formen": "geht durch, ist durchgegangen",
+  "beispiel": "Wir gehen die Liste noch einmal zusammen durch."
+ },
+ {
+  "id": 8240,
+  "de": "rollen",
+  "typ": "Verb",
+  "tr": "yuvarlanmak, tekerlek üstünde gitmek",
+  "formen": "rollt, ist gerollt",
+  "beispiel": "Der Ball ist unter das Auto gerollt."
+ },
+ {
+  "id": 8241,
+  "de": "rutschen",
+  "typ": "Verb",
+  "tr": "kaymak",
+  "formen": "rutscht, ist gerutscht",
+  "beispiel": "Im Winter rutschen die Autos oft auf der Straße."
+ },
+ {
+  "id": 8242,
+  "de": "hüpfen",
+  "typ": "Verb",
+  "tr": "zıplamak, sekmek",
+  "formen": "hüpft, ist gehüpft",
+  "beispiel": "Die Kinder hüpfen im Garten herum."
+ },
+ {
+  "id": 8243,
+  "de": "hinfahren",
+  "typ": "Verb",
+  "tr": "oraya gitmek (araçla)",
+  "formen": "fährt hin, ist hingefahren",
+  "beispiel": "Der Markt ist weit, wir fahren mit dem Bus hin."
+ },
+ {
+  "id": 8244,
+  "de": "zurückfahren",
+  "typ": "Verb",
+  "tr": "geri dönmek (araçla)",
+  "formen": "fährt zurück, ist zurückgefahren",
+  "beispiel": "Am Sonntag fahre ich nach München zurück."
+ },
+ {
+  "id": 8245,
+  "de": "wegfahren",
+  "typ": "Verb",
+  "tr": "arabayla gitmek, uzaklaşmak",
+  "formen": "fährt weg, ist weggefahren",
+  "beispiel": "Der Lkw ist gerade vom Hof weggefahren."
+ },
+ {
+  "id": 8246,
+  "de": "lenken",
+  "typ": "Verb",
+  "tr": "yönlendirmek, direksiyon kullanmak",
+  "formen": "lenkt, hat gelenkt",
+  "beispiel": "Mein Onkel lenkt den Bus sehr ruhig."
+ },
+ {
+  "id": 8247,
+  "de": "transportieren",
+  "typ": "Verb",
+  "tr": "taşımak, nakletmek",
+  "formen": "transportiert, hat transportiert",
+  "beispiel": "Die Firma transportiert die Möbel in die neue Wohnung."
+ },
+ {
+  "id": 8248,
+  "de": "eintreffen",
+  "typ": "Verb",
+  "tr": "varmak, ulaşmak",
+  "formen": "trifft ein, ist eingetroffen",
+  "beispiel": "Das Paket ist gestern im Lager eingetroffen."
+ },
+ {
+  "id": 8249,
+  "de": "wegbringen",
+  "typ": "Verb",
+  "tr": "götürmek, başka yere götürmek",
+  "formen": "bringt weg, hat weggebracht",
+  "beispiel": "Ich bringe den Müll schnell weg."
+ },
+ {
+  "id": 8250,
+  "de": "zurückbringen",
+  "typ": "Verb",
+  "tr": "geri götürmek, iade etmek",
+  "formen": "bringt zurück, hat zurückgebracht",
+  "beispiel": "Bringst du die Bücher heute in die Bibliothek zurück?"
+ },
+ {
+  "id": 8251,
+  "de": "wegschicken",
+  "typ": "Verb",
+  "tr": "geri çevirmek, başka yere yollamak",
+  "formen": "schickt weg, hat weggeschickt",
+  "beispiel": "Der Kellner hat den Gast ohne Reservierung weggeschickt."
+ },
+ {
+  "id": 8252,
+  "de": "sich verspäten",
+  "typ": "Verb",
+  "tr": "gecikmek, geç kalmak",
+  "formen": "verspätet sich, hat sich verspätet",
+  "beispiel": "Der Zug nach Köln verspätet sich um zwanzig Minuten."
+ },
+ {
+  "id": 8253,
+  "de": "weitermachen",
+  "typ": "Verb",
+  "tr": "devam etmek, sürdürmek",
+  "formen": "macht weiter, hat weitergemacht",
+  "beispiel": "Nach der Pause machen wir mit der Arbeit weiter."
+ },
+ {
+  "id": 8254,
+  "de": "zusammenarbeiten",
+  "typ": "Verb",
+  "tr": "birlikte çalışmak, iş birliği yapmak",
+  "formen": "arbeitet zusammen, hat zusammengearbeitet",
+  "beispiel": "Unser Team arbeitet gut mit der Technik zusammen."
+ },
+ {
+  "id": 8255,
+  "de": "aushelfen",
+  "typ": "Verb",
+  "tr": "yardıma koşmak, geçici yardım etmek",
+  "formen": "hilft aus, hat ausgeholfen",
+  "beispiel": "Am Samstag helfe ich im Laden aus."
+ },
+ {
+  "id": 8256,
+  "de": "aufteilen",
+  "typ": "Verb",
+  "tr": "paylaştırmak, bölüştürmek",
+  "formen": "teilt auf, hat aufgeteilt",
+  "beispiel": "Wir teilen die Arbeit unter drei Kollegen auf."
+ },
+ {
+  "id": 8257,
+  "de": "sortieren",
+  "typ": "Verb",
+  "tr": "ayıklamak, sıraya dizmek",
+  "formen": "sortiert, hat sortiert",
+  "beispiel": "Ich sortiere die Rechnungen nach Datum."
+ },
+ {
+  "id": 8258,
+  "de": "stapeln",
+  "typ": "Verb",
+  "tr": "üst üste yığmak, istiflemek",
+  "formen": "stapelt, hat gestapelt",
+  "beispiel": "Der Praktikant stapelt die Kisten im Lager."
+ },
+ {
+  "id": 8259,
+  "de": "schrauben",
+  "typ": "Verb",
+  "tr": "vidalamak",
+  "formen": "schraubt, hat geschraubt",
+  "beispiel": "Mein Bruder schraubt das Regal an die Wand."
+ },
+ {
+  "id": 8260,
+  "de": "hämmern",
+  "typ": "Verb",
+  "tr": "çekiçlemek",
+  "formen": "hämmert, hat gehämmert",
+  "beispiel": "Der Nachbar hämmert seit einer Stunde in der Garage."
+ },
+ {
+  "id": 8261,
+  "de": "befestigen",
+  "typ": "Verb",
+  "tr": "sabitlemek, tutturmak",
+  "formen": "befestigt, hat befestigt",
+  "beispiel": "Wir befestigen die Lampe über dem Tisch."
+ },
+ {
+  "id": 8262,
+  "de": "aufbauen",
+  "typ": "Verb",
+  "tr": "kurmak, monte etmek",
+  "formen": "baut auf, hat aufgebaut",
+  "beispiel": "Die Kollegen bauen das Zelt für das Fest auf."
+ },
+ {
+  "id": 8263,
+  "de": "aufstellen",
+  "typ": "Verb",
+  "tr": "dikmek, yerleştirmek",
+  "formen": "stellt auf, hat aufgestellt",
+  "beispiel": "Der Hausmeister stellt die Stühle im Saal auf."
+ },
+ {
+  "id": 8264,
+  "de": "aufhängen",
+  "typ": "Verb",
+  "tr": "asmak",
+  "formen": "hängt auf, hat aufgehängt",
+  "beispiel": "Meine Mutter hängt die Wäsche auf dem Balkon auf."
+ },
+ {
+  "id": 8265,
+  "de": "graben",
+  "typ": "Verb",
+  "tr": "kazmak",
+  "formen": "gräbt, hat gegraben",
+  "beispiel": "Die Arbeiter graben ein Loch für den neuen Baum."
+ },
+ {
+  "id": 8266,
+  "de": "fegen",
+  "typ": "Verb",
+  "tr": "süpürmek",
+  "formen": "fegt, hat gefegt",
+  "beispiel": "Jeden Morgen fegt er den Hof vor dem Laden."
+ },
+ {
+  "id": 8267,
+  "de": "abwischen",
+  "typ": "Verb",
+  "tr": "silmek, silip temizlemek",
+  "formen": "wischt ab, hat abgewischt",
+  "beispiel": "Der Kellner wischt den Tisch schnell ab."
+ },
+ {
+  "id": 8268,
+  "de": "falten",
+  "typ": "Verb",
+  "tr": "katlamak",
+  "formen": "faltet, hat gefaltet",
+  "beispiel": "Sie faltet die Handtücher und legt sie in den Schrank."
+ },
+ {
+  "id": 8269,
+  "de": "loslassen",
+  "typ": "Verb",
+  "tr": "bırakmak, elinden bırakmak",
+  "formen": "lässt los, hat losgelassen",
+  "beispiel": "Lass das Seil bitte nicht los!"
+ },
+ {
+  "id": 8270,
+  "de": "schleppen",
+  "typ": "Verb",
+  "tr": "sürüklemek, güçlükle taşımak",
+  "formen": "schleppt, hat geschleppt",
+  "beispiel": "Wir schleppen die schweren Koffer in den dritten Stock."
+ },
+ {
+  "id": 8271,
+  "de": "anheben",
+  "typ": "Verb",
+  "tr": "kaldırmak, yükseltmek",
+  "formen": "hebt an, hat angehoben",
+  "beispiel": "Hebst du den Tisch kurz an, bitte?"
+ },
+ {
+  "id": 8272,
+  "de": "hochheben",
+  "typ": "Verb",
+  "tr": "yukarı kaldırmak",
+  "formen": "hebt hoch, hat hochgehoben",
+  "beispiel": "Der Vater hebt seine Tochter hoch."
+ },
+ {
+  "id": 8273,
+  "de": "sich hinlegen",
+  "typ": "Verb",
+  "tr": "uzanmak, yatmak",
+  "formen": "legt sich hin, hat sich hingelegt",
+  "beispiel": "Nach der Schicht lege ich mich eine Stunde hin."
+ },
+ {
+  "id": 8274,
+  "de": "sich hinsetzen",
+  "typ": "Verb",
+  "tr": "oturmak, oturuvermek",
+  "formen": "setzt sich hin, hat sich hingesetzt",
+  "beispiel": "Setz dich bitte hier hin, der Arzt kommt gleich."
+ },
+ {
+  "id": 8275,
+  "de": "hinstellen",
+  "typ": "Verb",
+  "tr": "koymak, oraya bırakmak",
+  "formen": "stellt hin, hat hingestellt",
+  "beispiel": "Stell die Kiste bitte neben die Tür hin."
+ },
+ {
+  "id": 8276,
+  "de": "lagern",
+  "typ": "Verb",
+  "tr": "depolamak, saklamak",
+  "formen": "lagert, hat gelagert",
+  "beispiel": "Wir lagern die Getränke im Keller."
+ },
+ {
+  "id": 8277,
+  "de": "verstauen",
+  "typ": "Verb",
+  "tr": "yerleştirmek, istifleyip koymak",
+  "formen": "verstaut, hat verstaut",
+  "beispiel": "Der Fahrer verstaut die Taschen im Kofferraum."
+ },
+ {
+  "id": 8278,
+  "de": "abladen",
+  "typ": "Verb",
+  "tr": "boşaltmak, indirmek",
+  "formen": "lädt ab, hat abgeladen",
+  "beispiel": "Die Männer laden die Möbel vor dem Haus ab."
+ },
+ {
+  "id": 8279,
+  "de": "beladen",
+  "typ": "Verb",
+  "tr": "yüklemek, doldurmak",
+  "formen": "belädt, hat beladen",
+  "beispiel": "Wir beladen den Wagen mit Kisten."
+ },
+ {
+  "id": 8280,
+  "de": "einsammeln",
+  "typ": "Verb",
+  "tr": "toplamak, toplayıp almak",
+  "formen": "sammelt ein, hat eingesammelt",
+  "beispiel": "Der Lehrer sammelt die Hefte am Ende der Stunde ein."
+ },
+ {
+  "id": 8281,
+  "de": "wegräumen",
+  "typ": "Verb",
+  "tr": "kaldırmak, ortadan kaldırıp yerine koymak",
+  "formen": "räumt weg, hat weggeräumt",
+  "beispiel": "Räum bitte die Werkzeuge nach der Arbeit weg."
+ },
+ {
+  "id": 8282,
+  "de": "füllen",
+  "typ": "Verb",
+  "tr": "doldurmak",
+  "formen": "füllt, hat gefüllt",
+  "beispiel": "Sie füllt die Flasche mit kaltem Wasser."
+ },
+ {
+  "id": 8283,
+  "de": "leeren",
+  "typ": "Verb",
+  "tr": "boşaltmak",
+  "formen": "leert, hat geleert",
+  "beispiel": "Der Hausmeister leert die Mülltonnen am Dienstag.",
+  "ayniAnlam": [
+   "ausleeren (A2)"
+  ]
+ },
+ {
+  "id": 8284,
+  "de": "kippen",
+  "typ": "Verb",
+  "tr": "yana yatırmak, devirmek",
+  "formen": "kippt, hat gekippt",
+  "beispiel": "Im Büro kippen wir das Fenster für frische Luft."
+ },
+ {
+  "id": 8285,
+  "de": "verringern",
+  "typ": "Verb",
+  "tr": "azaltmak, düşürmek",
+  "formen": "verringert, hat verringert",
+  "beispiel": "Die Firma verringert die Kosten für Papier."
+ },
+ {
+  "id": 8286,
+  "de": "schaukeln",
+  "typ": "Verb",
+  "tr": "sallanmak, salıncakta sallanmak",
+  "formen": "schaukelt, hat geschaukelt",
+  "beispiel": "Das Kind schaukelt gern auf dem Spielplatz."
+ },
+ {
+  "id": 8287,
+  "de": "spazieren",
+  "typ": "Verb",
+  "tr": "gezinmek, yürüyüş yapmak",
+  "formen": "spaziert, ist spaziert",
+  "beispiel": "Am Sonntag spazieren wir durch den Park."
+ },
+ {
+  "id": 8288,
+  "de": "betonen",
+  "typ": "Verb",
+  "tr": "vurgulamak, altını çizmek",
+  "formen": "betont, hat betont",
+  "beispiel": "Der Lehrer betont, dass die Hausaufgabe wichtig ist."
+ },
+ {
+  "id": 8289,
+  "de": "erwähnen",
+  "typ": "Verb",
+  "tr": "bahsetmek, söz etmek",
+  "formen": "erwähnt, hat erwähnt",
+  "beispiel": "Sie erwähnt den neuen Termin mit keinem Wort."
+ },
+ {
+  "id": 8290,
+  "de": "quatschen",
+  "typ": "Verb",
+  "tr": "laflamak, gevezelik etmek",
+  "formen": "quatscht, hat gequatscht",
+  "beispiel": "Die Kinder quatschen im Unterricht viel zu laut."
+ },
+ {
+  "id": 8291,
+  "de": "flüstern",
+  "typ": "Verb",
+  "tr": "fısıldamak",
+  "formen": "flüstert, hat geflüstert",
+  "beispiel": "Meine Freundin flüstert mir die Antwort ins Ohr."
+ },
+ {
+  "id": 8292,
+  "de": "benachrichtigen",
+  "typ": "Verb",
+  "tr": "haber vermek, bilgilendirmek",
+  "formen": "benachrichtigt, hat benachrichtigt",
+  "beispiel": "Der Arzt benachrichtigt uns, sobald das Ergebnis da ist."
+ },
+ {
+  "id": 8293,
+  "de": "herausfinden",
+  "typ": "Verb",
+  "tr": "öğrenmek, bulmak",
+  "formen": "findet heraus, hat herausgefunden",
+  "beispiel": "Ich finde morgen heraus, wie viel die Reparatur kostet."
+ },
+ {
+  "id": 8294,
+  "de": "seufzen",
+  "typ": "Verb",
+  "tr": "iç çekmek",
+  "formen": "seufzt, hat geseufzt",
+  "beispiel": "Meine Mutter seufzt, wenn sie die Rechnung sieht."
+ },
+ {
+  "id": 8295,
+  "de": "bedauern",
+  "typ": "Verb",
+  "tr": "üzülmek, pişman olmak",
+  "formen": "bedauert, hat bedauert",
+  "beispiel": "Ich bedauere sehr, dass ich am Samstag nicht kommen kann."
+ },
+ {
+  "id": 8296,
+  "de": "staunen",
+  "typ": "Verb",
+  "tr": "şaşırmak, hayret etmek",
+  "formen": "staunt, hat gestaunt",
+  "beispiel": "Die Kinder staunen über die große Torte."
+ },
+ {
+  "id": 8297,
+  "de": "sich vertragen",
+  "typ": "Verb",
+  "tr": "iyi geçinmek, anlaşmak",
+  "formen": "verträgt sich, hat sich vertragen",
+  "beispiel": "Meine zwei Brüder vertragen sich endlich wieder."
+ },
+ {
+  "id": 8298,
+  "de": "sich verloben",
+  "typ": "Verb",
+  "tr": "nişanlanmak",
+  "formen": "verlobt sich, hat sich verlobt",
+  "beispiel": "Anna und Tom verloben sich im Sommer."
+ },
+ {
+  "id": 8299,
+  "de": "mailen",
+  "typ": "Verb",
+  "tr": "e-posta atmak",
+  "formen": "mailt, hat gemailt",
+  "beispiel": "Ich maile dir die Adresse heute Abend."
+ },
+ {
+  "id": 8300,
+  "de": "drohen",
+  "typ": "Verb",
+  "tr": "tehdit etmek, gözdağı vermek",
+  "formen": "droht, hat gedroht",
+  "beispiel": "Der Nachbar droht uns wegen des Lärms mit der Polizei."
+ },
+ {
+  "id": 8301,
+  "de": "vorwerfen",
+  "typ": "Verb",
+  "tr": "suçlamak, başa kakmak",
+  "formen": "wirft vor, hat vorgeworfen",
+  "beispiel": "Er wirft mir jeden Tag meine Unordnung vor."
+ },
+ {
+  "id": 8302,
+  "de": "durchkommen",
+  "typ": "Verb",
+  "tr": "ulaşmak, hat bağlantısı kurmak",
+  "formen": "kommt durch, ist durchgekommen",
+  "beispiel": "Ich komme bei der Hotline einfach nicht durch."
+ },
+ {
+  "id": 8303,
+  "de": "ansagen",
+  "typ": "Verb",
+  "tr": "duyurmak, bildirmek",
+  "formen": "sagt an, hat angesagt",
+  "beispiel": "Die Lehrerin sagt den Test für Freitag an.",
+  "ayniAnlam": [
+   "bekannt geben (B1)"
+  ]
+ },
+ {
+  "id": 8304,
+  "de": "zurückschreiben",
+  "typ": "Verb",
+  "tr": "cevap yazmak",
+  "formen": "schreibt zurück, hat zurückgeschrieben",
+  "beispiel": "Mein Bruder schreibt mir nie zurück."
+ },
+ {
+  "id": 8305,
+  "de": "sich verwählen",
+  "typ": "Verb",
+  "tr": "yanlış numara çevirmek",
+  "formen": "verwählt sich, hat sich verwählt",
+  "beispiel": "Entschuldigung, ich habe mich verwählt."
+ },
+ {
+  "id": 8306,
+  "de": "dranbleiben",
+  "typ": "Verb",
+  "tr": "hatta kalmak, beklemede kalmak",
+  "formen": "bleibt dran, ist drangeblieben",
+  "beispiel": "Bleiben Sie bitte kurz dran, ich frage nach."
+ },
+ {
+  "id": 8307,
+  "de": "auslachen",
+  "typ": "Verb",
+  "tr": "alay etmek, birine gülmek",
+  "formen": "lacht aus, hat ausgelacht",
+  "beispiel": "Keiner lacht dich hier wegen deiner Fehler aus."
+ },
+ {
+  "id": 8308,
+  "de": "anschreien",
+  "typ": "Verb",
+  "tr": "birine bağırmak",
+  "formen": "schreit an, hat angeschrien",
+  "beispiel": "Der Chef schreit seine Mitarbeiter nie an."
+ },
+ {
+  "id": 8309,
+  "de": "ausreden",
+  "typ": "Verb",
+  "tr": "sözünü bitirmek, lafını tamamlamak",
+  "formen": "redet aus, hat ausgeredet",
+  "beispiel": "Ich rede zuerst aus, dann bist du dran."
+ },
+ {
+  "id": 8310,
+  "de": "sich ausdrücken",
+  "typ": "Verb",
+  "tr": "kendini ifade etmek",
+  "formen": "drückt sich aus, hat sich ausgedrückt",
+  "beispiel": "Auf Deutsch drücke ich mich noch sehr langsam aus."
+ },
+ {
+  "id": 8311,
+  "de": "nerven",
+  "typ": "Verb",
+  "tr": "sinir etmek, rahatsız etmek",
+  "formen": "nervt, hat genervt",
+  "beispiel": "Der laute Nachbar nervt mich jeden Abend."
+ },
+ {
+  "id": 8312,
+  "de": "sich anfreunden",
+  "typ": "Verb",
+  "tr": "arkadaş olmak, dost olmak",
+  "formen": "freundet sich an, hat sich angefreundet",
+  "beispiel": "Im Kurs freundet sie sich schnell mit allen an."
+ },
+ {
+  "id": 8313,
+  "de": "kontaktieren",
+  "typ": "Verb",
+  "tr": "iletişime geçmek, temasa geçmek",
+  "formen": "kontaktiert, hat kontaktiert",
+  "beispiel": "Bitte kontaktieren Sie uns per E-Mail."
+ },
+ {
+  "id": 8314,
+  "de": "posten",
+  "typ": "Verb",
+  "tr": "paylaşmak, paylaşım yapmak",
+  "formen": "postet, hat gepostet",
+  "beispiel": "Meine Schwester postet jeden Tag ein Foto."
+ },
+ {
+  "id": 8315,
+  "de": "liken",
+  "typ": "Verb",
+  "tr": "beğenmek, beğeni bırakmak",
+  "formen": "likt, hat gelikt",
+  "beispiel": "Mein Bruder likt alle meine Bilder sofort."
+ },
+ {
+  "id": 8316,
+  "de": "verschicken",
+  "typ": "Verb",
+  "tr": "göndermek, yollamak",
+  "formen": "verschickt, hat verschickt",
+  "beispiel": "Ich verschicke die Einladungen morgen früh.",
+  "ayniAnlam": [
+   "abschicken (A2)"
+  ]
+ },
+ {
+  "id": 8317,
+  "de": "zuschicken",
+  "typ": "Verb",
+  "tr": "göndermek, postayla yollamak",
+  "formen": "schickt zu, hat zugeschickt",
+  "beispiel": "Die Firma schickt mir den Vertrag heute zu."
+ },
+ {
+  "id": 8318,
+  "de": "vorführen",
+  "typ": "Verb",
+  "tr": "göstermek, tanıtmak",
+  "formen": "führt vor, hat vorgeführt",
+  "beispiel": "Der Verkäufer führt uns das neue Handy vor."
+ }
+]

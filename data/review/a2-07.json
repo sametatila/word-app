@@ -1,0 +1,1012 @@
+[
+ {
+  "id": 7709,
+  "de": "das Schulfach",
+  "typ": "Nomen",
+  "tr": "ders, branş",
+  "formen": "¨-er",
+  "beispiel": "Mein liebstes Schulfach ist Musik."
+ },
+ {
+  "id": 7710,
+  "de": "die Mathematik",
+  "typ": "Nomen",
+  "tr": "matematik",
+  "formen": "(Sg.)",
+  "beispiel": "In Mathematik habe ich eine Zwei bekommen."
+ },
+ {
+  "id": 7711,
+  "de": "die Physik",
+  "typ": "Nomen",
+  "tr": "fizik",
+  "formen": "(Sg.)",
+  "beispiel": "Am Montag haben wir zwei Stunden Physik."
+ },
+ {
+  "id": 7712,
+  "de": "die Chemie",
+  "typ": "Nomen",
+  "tr": "kimya",
+  "formen": "(Sg.)",
+  "beispiel": "In Chemie machen wir heute ein Experiment."
+ },
+ {
+  "id": 7713,
+  "de": "die Sporthalle",
+  "typ": "Nomen",
+  "tr": "spor salonu",
+  "formen": "-n",
+  "beispiel": "Der Sportunterricht findet in der Sporthalle statt."
+ },
+ {
+  "id": 7714,
+  "de": "die Grammatik",
+  "typ": "Nomen",
+  "tr": "dil bilgisi",
+  "formen": "-en",
+  "beispiel": "Die deutsche Grammatik ist am Anfang schwer."
+ },
+ {
+  "id": 7715,
+  "de": "die Vokabel",
+  "typ": "Nomen",
+  "tr": "kelime, sözcük",
+  "formen": "-n",
+  "beispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
+  "ayniAnlam": [
+   "das Wort (A1)"
+  ]
+ },
+ {
+  "id": 7716,
+  "de": "das Lineal",
+  "typ": "Nomen",
+  "tr": "cetvel",
+  "formen": "-e",
+  "beispiel": "Zeichne die Linie bitte mit einem Lineal."
+ },
+ {
+  "id": 7717,
+  "de": "der Stundenplan",
+  "typ": "Nomen",
+  "tr": "ders programı",
+  "formen": "¨-e",
+  "beispiel": "Unser neuer Stundenplan hängt an der Tür."
+ },
+ {
+  "id": 7718,
+  "de": "der Klassenlehrer",
+  "typ": "Nomen",
+  "tr": "sınıf öğretmeni",
+  "formen": "-",
+  "beispiel": "Unser Klassenlehrer ist sehr nett."
+ },
+ {
+  "id": 7719,
+  "de": "der Elternabend",
+  "typ": "Nomen",
+  "tr": "veli toplantısı",
+  "formen": "-e",
+  "beispiel": "Am Donnerstag ist in der Schule ein Elternabend."
+ },
+ {
+  "id": 7720,
+  "de": "die Fachhochschule",
+  "typ": "Nomen",
+  "tr": "uygulamalı bilimler yüksekokulu",
+  "formen": "-n",
+  "beispiel": "Sie studiert Informatik an einer Fachhochschule."
+ },
+ {
+  "id": 7721,
+  "de": "der Azubi",
+  "typ": "Nomen",
+  "tr": "çırak, stajyer",
+  "formen": "-s",
+  "beispiel": "Unser neuer Azubi lernt schnell."
+ },
+ {
+  "id": 7722,
+  "de": "versetzen",
+  "typ": "Verb",
+  "tr": "sınıf geçirmek, nakletmek",
+  "formen": "versetzt, hat versetzt",
+  "beispiel": "Die Lehrerin hat ihn in die nächste Klasse versetzt."
+ },
+ {
+  "id": 7723,
+  "de": "abhören",
+  "typ": "Verb",
+  "tr": "(ders/kelime) sözlü sormak",
+  "formen": "hört ab, hat abgehört",
+  "beispiel": "Meine Mutter hört mich jeden Abend die Vokabeln ab."
+ },
+ {
+  "id": 7724,
+  "de": "mithalten",
+  "typ": "Verb",
+  "tr": "ayak uydurmak, yetişmek",
+  "formen": "hält mit, hat mitgehalten",
+  "beispiel": "In diesem Kurs kann ich gut mithalten."
+ },
+ {
+  "id": 7725,
+  "de": "beibringen",
+  "typ": "Verb",
+  "tr": "öğretmek",
+  "formen": "bringt bei, hat beigebracht",
+  "beispiel": "Meine Oma hat mir das Lesen beigebracht."
+ },
+ {
+  "id": 7726,
+  "de": "verbessern",
+  "typ": "Verb",
+  "tr": "geliştirmek, düzeltmek",
+  "formen": "verbessert, hat verbessert",
+  "beispiel": "Ich möchte mein Deutsch im Kurs verbessern."
+ },
+ {
+  "id": 7727,
+  "de": "bewerten",
+  "typ": "Verb",
+  "tr": "değerlendirmek, notlandırmak",
+  "formen": "bewertet, hat bewertet",
+  "beispiel": "Die Lehrerin bewertet unsere Aufsätze am Wochenende."
+ },
+ {
+  "id": 7728,
+  "de": "lehren",
+  "typ": "Verb",
+  "tr": "ders vermek, öğretmek",
+  "formen": "lehrt, hat gelehrt",
+  "beispiel": "Er lehrt seit zehn Jahren an einer Schule.",
+  "ayniAnlam": [
+   "unterrichten (B1)"
+  ]
+ },
+ {
+  "id": 7729,
+  "de": "ausbilden",
+  "typ": "Verb",
+  "tr": "yetiştirmek, meslek eğitimi vermek",
+  "formen": "bildet aus, hat ausgebildet",
+  "beispiel": "Die Firma bildet jedes Jahr fünf junge Leute aus."
+ },
+ {
+  "id": 7730,
+  "de": "ablegen",
+  "typ": "Verb",
+  "tr": "(sınava) girmek, vermek",
+  "formen": "legt ab, hat abgelegt",
+  "beispiel": "Nächste Woche lege ich meine mündliche Prüfung ab."
+ },
+ {
+  "id": 7731,
+  "de": "zuordnen",
+  "typ": "Verb",
+  "tr": "eşleştirmek, ait olduğu yere koymak",
+  "formen": "ordnet zu, hat zugeordnet",
+  "beispiel": "Ordne die Wörter den richtigen Bildern zu!"
+ },
+ {
+  "id": 7732,
+  "de": "austeilen",
+  "typ": "Verb",
+  "tr": "dağıtmak",
+  "formen": "teilt aus, hat ausgeteilt",
+  "beispiel": "Der Lehrer teilt die Blätter für den Test aus.",
+  "ayniAnlam": [
+   "austragen (A2)",
+   "verteilen (B1)"
+  ]
+ },
+ {
+  "id": 7733,
+  "de": "weiterkommen",
+  "typ": "Verb",
+  "tr": "ilerlemek, yol almak",
+  "formen": "kommt weiter, ist weitergekommen",
+  "beispiel": "Im Deutschkurs komme ich langsam weiter."
+ },
+ {
+  "id": 7734,
+  "de": "nachhelfen",
+  "typ": "Verb",
+  "tr": "takviye yardım etmek, özel ders vermek",
+  "formen": "hilft nach, hat nachgeholfen",
+  "beispiel": "Meine Schwester hilft mir in Englisch nach."
+ },
+ {
+  "id": 7735,
+  "de": "nachmachen",
+  "typ": "Verb",
+  "tr": "taklit etmek, aynısını yapmak",
+  "formen": "macht nach, hat nachgemacht",
+  "beispiel": "Die Kinder machen alles nach, was der Lehrer zeigt."
+ },
+ {
+  "id": 7736,
+  "de": "durchlesen",
+  "typ": "Verb",
+  "tr": "baştan sona okumak",
+  "formen": "liest durch, hat durchgelesen",
+  "beispiel": "Lies die Aufgabe in Ruhe durch!"
+ },
+ {
+  "id": 7737,
+  "de": "mitschreiben",
+  "typ": "Verb",
+  "tr": "not tutmak",
+  "formen": "schreibt mit, hat mitgeschrieben",
+  "beispiel": "Im Unterricht schreibe ich immer mit."
+ },
+ {
+  "id": 7738,
+  "de": "nachsitzen",
+  "typ": "Verb",
+  "tr": "okulda cezalı kalmak",
+  "formen": "sitzt nach, hat nachgesessen",
+  "beispiel": "Weil er zu spät kam, musste er nachsitzen."
+ },
+ {
+  "id": 7739,
+  "de": "vormachen",
+  "typ": "Verb",
+  "tr": "göstermek, yaparak göstermek",
+  "formen": "macht vor, hat vorgemacht",
+  "beispiel": "Der Lehrer macht uns die Übung erst vor."
+ },
+ {
+  "id": 7740,
+  "de": "aufsagen",
+  "typ": "Verb",
+  "tr": "ezbere okumak",
+  "formen": "sagt auf, hat aufgesagt",
+  "beispiel": "Jedes Kind muss ein Gedicht aufsagen."
+ },
+ {
+  "id": 7741,
+  "de": "aufschlagen",
+  "typ": "Verb",
+  "tr": "(kitabı) açmak",
+  "formen": "schlägt auf, hat aufgeschlagen",
+  "beispiel": "Schlagt bitte das Buch auf Seite zwölf auf!"
+ },
+ {
+  "id": 7742,
+  "de": "nachlesen",
+  "typ": "Verb",
+  "tr": "okuyup bakmak, kaynaktan okumak",
+  "formen": "liest nach, hat nachgelesen",
+  "beispiel": "Die Regel kannst du im Buch nachlesen."
+ },
+ {
+  "id": 7743,
+  "de": "durchnehmen",
+  "typ": "Verb",
+  "tr": "(konuyu) işlemek",
+  "formen": "nimmt durch, hat durchgenommen",
+  "beispiel": "Wir nehmen im Unterricht gerade die Vergangenheit durch."
+ },
+ {
+  "id": 7744,
+  "de": "konzentriert",
+  "typ": "Sonstiges",
+  "tr": "odaklanmış, konsantre",
+  "formen": "",
+  "beispiel": "Nach der Pause arbeiten wir wieder konzentriert."
+ },
+ {
+  "id": 7745,
+  "de": "sorgfältig",
+  "typ": "Sonstiges",
+  "tr": "özenli, dikkatli",
+  "formen": "",
+  "beispiel": "Sie macht ihre Hausaufgaben immer sorgfältig."
+ },
+ {
+  "id": 7746,
+  "de": "unverständlich",
+  "typ": "Sonstiges",
+  "tr": "anlaşılmaz",
+  "formen": "",
+  "beispiel": "Die Frage war für mich völlig unverständlich."
+ },
+ {
+  "id": 7747,
+  "de": "machbar",
+  "typ": "Sonstiges",
+  "tr": "yapılabilir, üstesinden gelinebilir",
+  "formen": "",
+  "beispiel": "Die Prüfung war schwer, aber machbar."
+ },
+ {
+  "id": 7748,
+  "de": "lehrreich",
+  "typ": "Sonstiges",
+  "tr": "öğretici",
+  "formen": "",
+  "beispiel": "Der Ausflug ins Museum war sehr lehrreich."
+ },
+ {
+  "id": 7749,
+  "de": "leserlich",
+  "typ": "Sonstiges",
+  "tr": "okunaklı",
+  "formen": "",
+  "beispiel": "Bitte schreib deinen Namen leserlich!"
+ },
+ {
+  "id": 7750,
+  "de": "fehlerhaft",
+  "typ": "Sonstiges",
+  "tr": "hatalı, yanlışlarla dolu",
+  "formen": "",
+  "beispiel": "Meine Übersetzung war leider fehlerhaft."
+ },
+ {
+  "id": 7751,
+  "de": "eifrig",
+  "typ": "Sonstiges",
+  "tr": "hevesli, gayretli",
+  "formen": "",
+  "beispiel": "Die Kinder üben eifrig für das Diktat."
+ },
+ {
+  "id": 7752,
+  "de": "fehlerfrei",
+  "typ": "Sonstiges",
+  "tr": "hatasız",
+  "formen": "",
+  "beispiel": "Sein Diktat war fehlerfrei."
+ },
+ {
+  "id": 7753,
+  "de": "jährlich",
+  "typ": "Sonstiges",
+  "tr": "yıllık, her yıl",
+  "formen": "",
+  "beispiel": "Die Schule macht jährlich einen Ausflug."
+ },
+ {
+  "id": 7754,
+  "de": "unruhig",
+  "typ": "Sonstiges",
+  "tr": "huzursuz, yerinde duramayan",
+  "formen": "",
+  "beispiel": "Die Klasse war heute sehr unruhig."
+ },
+ {
+  "id": 7755,
+  "de": "vormittags",
+  "typ": "Sonstiges",
+  "tr": "öğleden önce",
+  "formen": "",
+  "beispiel": "Der Kurs findet vormittags statt."
+ },
+ {
+  "id": 7756,
+  "de": "verständnisvoll",
+  "typ": "Sonstiges",
+  "tr": "anlayışlı",
+  "formen": "",
+  "beispiel": "Der Direktor war sehr verständnisvoll."
+ },
+ {
+  "id": 7757,
+  "de": "staatlich",
+  "typ": "Sonstiges",
+  "tr": "devlete ait, resmî",
+  "formen": "",
+  "beispiel": "Meine Kinder gehen auf eine staatliche Schule."
+ },
+ {
+  "id": 7758,
+  "de": "auswendig",
+  "typ": "Sonstiges",
+  "tr": "ezbere",
+  "formen": "",
+  "beispiel": "Ich kann das Gedicht schon auswendig."
+ },
+ {
+  "id": 7759,
+  "de": "sprachlich",
+  "typ": "Sonstiges",
+  "tr": "dilsel, dil açısından",
+  "formen": "",
+  "beispiel": "Sprachlich hat er sich sehr verbessert."
+ },
+ {
+  "id": 7760,
+  "de": "der Wochenmarkt",
+  "typ": "Nomen",
+  "tr": "haftalık pazar, semt pazarı",
+  "formen": "¨-e",
+  "beispiel": "Am Samstag kaufe ich Obst auf dem Wochenmarkt."
+ },
+ {
+  "id": 7761,
+  "de": "die Konditorei",
+  "typ": "Nomen",
+  "tr": "pastane",
+  "formen": "-en",
+  "beispiel": "Die Torte kommt aus einer kleinen Konditorei."
+ },
+ {
+  "id": 7762,
+  "de": "das Schuhgeschäft",
+  "typ": "Nomen",
+  "tr": "ayakkabı mağazası",
+  "formen": "-e",
+  "beispiel": "Das Schuhgeschäft hat heute bis 20 Uhr offen."
+ },
+ {
+  "id": 7763,
+  "de": "das Warenhaus",
+  "typ": "Nomen",
+  "tr": "büyük mağaza",
+  "formen": "¨-er",
+  "beispiel": "Im Warenhaus gibt es alles von Kleidung bis Küchenmöbel."
+ },
+ {
+  "id": 7764,
+  "de": "der Einkaufswagen",
+  "typ": "Nomen",
+  "tr": "alışveriş arabası",
+  "formen": "-",
+  "beispiel": "Mein Einkaufswagen ist schon ganz voll."
+ },
+ {
+  "id": 7765,
+  "de": "die Einkaufsliste",
+  "typ": "Nomen",
+  "tr": "alışveriş listesi",
+  "formen": "-n",
+  "beispiel": "Ohne Einkaufsliste vergesse ich immer etwas."
+ },
+ {
+  "id": 7766,
+  "de": "der Korb",
+  "typ": "Nomen",
+  "tr": "sepet",
+  "formen": "¨-e",
+  "beispiel": "Leg die Äpfel bitte in den Korb."
+ },
+ {
+  "id": 7767,
+  "de": "der Stammkunde",
+  "typ": "Nomen",
+  "tr": "sürekli müşteri, devamlı müşteri",
+  "formen": "-n",
+  "beispiel": "Als Stammkunde bekomme ich in dem Laden zehn Prozent Rabatt."
+ },
+ {
+  "id": 7768,
+  "de": "die Warteschlange",
+  "typ": "Nomen",
+  "tr": "kuyruk, sıra",
+  "formen": "-n",
+  "beispiel": "An der Kasse war eine lange Warteschlange."
+ },
+ {
+  "id": 7769,
+  "de": "anstehen",
+  "typ": "Verb",
+  "tr": "sıraya girmek, kuyrukta beklemek",
+  "formen": "steht an, hat angestanden",
+  "beispiel": "Wir mussten zwanzig Minuten an der Kasse anstehen."
+ },
+ {
+  "id": 7770,
+  "de": "das Preisschild",
+  "typ": "Nomen",
+  "tr": "fiyat etiketi",
+  "formen": "-er",
+  "beispiel": "Auf dem Preisschild steht 4,99 Euro."
+ },
+ {
+  "id": 7771,
+  "de": "der Schlussverkauf",
+  "typ": "Nomen",
+  "tr": "sezon sonu indirimi",
+  "formen": "¨-e",
+  "beispiel": "Im Schlussverkauf habe ich eine Jacke für 20 Euro gekauft."
+ },
+ {
+  "id": 7772,
+  "de": "der Sonderpreis",
+  "typ": "Nomen",
+  "tr": "özel fiyat, indirimli fiyat",
+  "formen": "-e",
+  "beispiel": "Diese Woche gibt es Kaffee zum Sonderpreis."
+ },
+ {
+  "id": 7773,
+  "de": "das Kleingeld",
+  "typ": "Nomen",
+  "tr": "bozuk para",
+  "formen": "(Sg.)",
+  "beispiel": "Hast du Kleingeld für den Einkaufswagen?"
+ },
+ {
+  "id": 7774,
+  "de": "der Geldschein",
+  "typ": "Nomen",
+  "tr": "banknot, kâğıt para",
+  "formen": "-e",
+  "beispiel": "Ich habe nur einen Geldschein von 50 Euro dabei."
+ },
+ {
+  "id": 7775,
+  "de": "das Wechselgeld",
+  "typ": "Nomen",
+  "tr": "para üstü",
+  "formen": "(Sg.)",
+  "beispiel": "Die Verkäuferin hat mir das Wechselgeld gegeben."
+ },
+ {
+  "id": 7776,
+  "de": "der Kassenzettel",
+  "typ": "Nomen",
+  "tr": "kasa fişi",
+  "formen": "-",
+  "beispiel": "Ohne Kassenzettel kann ich die Hose nicht zurückbringen.",
+  "ayniAnlam": [
+   "der Kassenbon (B2)"
+  ]
+ },
+ {
+  "id": 7777,
+  "de": "die Kassiererin",
+  "typ": "Nomen",
+  "tr": "kasiyer (kadın)",
+  "formen": "-nen",
+  "beispiel": "Die Kassiererin war sehr freundlich zu mir."
+ },
+ {
+  "id": 7778,
+  "de": "der Joghurt",
+  "typ": "Nomen",
+  "tr": "yoğurt",
+  "formen": "-s",
+  "beispiel": "Zum Frühstück esse ich Joghurt mit Obst."
+ },
+ {
+  "id": 7779,
+  "de": "der Senf",
+  "typ": "Nomen",
+  "tr": "hardal",
+  "formen": "(Sg.)",
+  "beispiel": "Möchtest du Senf oder Ketchup zur Wurst?"
+ },
+ {
+  "id": 7780,
+  "de": "das Rindfleisch",
+  "typ": "Nomen",
+  "tr": "sığır eti, dana eti",
+  "formen": "(Sg.)",
+  "beispiel": "Für die Suppe brauche ich ein halbes Kilo Rindfleisch."
+ },
+ {
+  "id": 7781,
+  "de": "knusprig",
+  "typ": "Sonstiges",
+  "tr": "çıtır, gevrek",
+  "formen": "",
+  "beispiel": "Das Brot vom Bäcker ist heute schön knusprig."
+ },
+ {
+  "id": 7782,
+  "de": "der Vorrat",
+  "typ": "Nomen",
+  "tr": "stok, erzak",
+  "formen": "¨-e",
+  "beispiel": "Wir haben noch einen Vorrat an Reis und Mehl."
+ },
+ {
+  "id": 7783,
+  "de": "der Teig",
+  "typ": "Nomen",
+  "tr": "hamur",
+  "formen": "-e",
+  "beispiel": "Der Teig muss eine Stunde ruhen."
+ },
+ {
+  "id": 7784,
+  "de": "die Pommes",
+  "typ": "Nomen",
+  "tr": "patates kızartması",
+  "formen": "(Pl.)",
+  "beispiel": "Mein Sohn isst am liebsten Pommes mit Ketchup.",
+  "ayniAnlam": [
+   "die Pommes frites (Pl.) (A2)"
+  ]
+ },
+ {
+  "id": 7785,
+  "de": "das Hauptgericht",
+  "typ": "Nomen",
+  "tr": "ana yemek",
+  "formen": "-e",
+  "beispiel": "Als Hauptgericht nehme ich Fisch mit Kartoffeln.",
+  "ayniAnlam": [
+   "der Hauptgang (B2)"
+  ]
+ },
+ {
+  "id": 7786,
+  "de": "das Tagesgericht",
+  "typ": "Nomen",
+  "tr": "günün yemeği",
+  "formen": "-e",
+  "beispiel": "Das Tagesgericht kostet heute nur 8 Euro."
+ },
+ {
+  "id": 7787,
+  "de": "die Beilage",
+  "typ": "Nomen",
+  "tr": "garnitür, yan yemek",
+  "formen": "-n",
+  "beispiel": "Als Beilage gibt es Reis oder Salat."
+ },
+ {
+  "id": 7788,
+  "de": "die Getränkekarte",
+  "typ": "Nomen",
+  "tr": "içecek menüsü",
+  "formen": "-n",
+  "beispiel": "Der Kellner bringt uns gleich die Getränkekarte."
+ },
+ {
+  "id": 7789,
+  "de": "die Serviette",
+  "typ": "Nomen",
+  "tr": "peçete",
+  "formen": "-n",
+  "beispiel": "Können Sie mir bitte noch eine Serviette bringen?"
+ },
+ {
+  "id": 7790,
+  "de": "das Tablett",
+  "typ": "Nomen",
+  "tr": "tepsi",
+  "formen": "-s",
+  "beispiel": "Sie trägt vier Gläser auf einem Tablett."
+ },
+ {
+  "id": 7791,
+  "de": "die Selbstbedienung",
+  "typ": "Nomen",
+  "tr": "self servis",
+  "formen": "(Sg.)",
+  "beispiel": "Hier ist Selbstbedienung, das Essen holt man an der Theke."
+ },
+ {
+  "id": 7792,
+  "de": "die Bestellung",
+  "typ": "Nomen",
+  "tr": "sipariş",
+  "formen": "-en",
+  "beispiel": "Meine Bestellung kommt morgen mit der Post."
+ },
+ {
+  "id": 7793,
+  "de": "schneiden",
+  "typ": "Verb",
+  "tr": "kesmek, doğramak",
+  "formen": "schneidet, hat geschnitten",
+  "beispiel": "Bitte schneide das Brot in dünne Scheiben."
+ },
+ {
+  "id": 7794,
+  "de": "schälen",
+  "typ": "Verb",
+  "tr": "soymak (kabuğunu)",
+  "formen": "schält, hat geschält",
+  "beispiel": "Ich schäle die Kartoffeln für das Abendessen."
+ },
+ {
+  "id": 7795,
+  "de": "rühren",
+  "typ": "Verb",
+  "tr": "karıştırmak",
+  "formen": "rührt, hat gerührt",
+  "beispiel": "Rühr die Soße, damit sie nicht anbrennt.",
+  "ayniAnlam": [
+   "mischen (B1)",
+   "verwechseln (B1)",
+   "umrühren (A2)"
+  ]
+ },
+ {
+  "id": 7796,
+  "de": "aufwärmen",
+  "typ": "Verb",
+  "tr": "ısıtmak (yemeği)",
+  "formen": "wärmt auf, hat aufgewärmt",
+  "beispiel": "Ich wärme die Suppe von gestern auf."
+ },
+ {
+  "id": 7797,
+  "de": "abtrocknen",
+  "typ": "Verb",
+  "tr": "kurulamak",
+  "formen": "trocknet ab, hat abgetrocknet",
+  "beispiel": "Du wäschst ab und ich trockne die Teller ab."
+ },
+ {
+  "id": 7798,
+  "de": "decken",
+  "typ": "Verb",
+  "tr": "kurmak (sofra), örtmek",
+  "formen": "deckt, hat gedeckt",
+  "beispiel": "Kannst du bitte den Tisch für vier Personen decken?"
+ },
+ {
+  "id": 7799,
+  "de": "der Deckel",
+  "typ": "Nomen",
+  "tr": "kapak",
+  "formen": "-",
+  "beispiel": "Mach bitte den Deckel auf den Topf."
+ },
+ {
+  "id": 7800,
+  "de": "die Mikrowelle",
+  "typ": "Nomen",
+  "tr": "mikrodalga fırın",
+  "formen": "-n",
+  "beispiel": "Stell das Essen zwei Minuten in die Mikrowelle."
+ },
+ {
+  "id": 7801,
+  "de": "das Kochbuch",
+  "typ": "Nomen",
+  "tr": "yemek kitabı",
+  "formen": "¨-er",
+  "beispiel": "Meine Mutter hat mir ein Kochbuch geschenkt."
+ },
+ {
+  "id": 7802,
+  "de": "das Gramm",
+  "typ": "Nomen",
+  "tr": "gram",
+  "formen": "-",
+  "beispiel": "Ich brauche 200 Gramm Käse."
+ },
+ {
+  "id": 7803,
+  "de": "der Liter",
+  "typ": "Nomen",
+  "tr": "litre",
+  "formen": "-",
+  "beispiel": "Bring bitte zwei Liter Milch mit."
+ },
+ {
+  "id": 7804,
+  "de": "das Kilo",
+  "typ": "Nomen",
+  "tr": "kilo",
+  "formen": "-s",
+  "beispiel": "Ein Kilo Tomaten kostet hier zwei Euro."
+ },
+ {
+  "id": 7805,
+  "de": "die Packung",
+  "typ": "Nomen",
+  "tr": "paket, ambalaj",
+  "formen": "-en",
+  "beispiel": "In der Packung sind zehn Teebeutel."
+ },
+ {
+  "id": 7806,
+  "de": "der Becher",
+  "typ": "Nomen",
+  "tr": "kap, bardak (kulpsuz)",
+  "formen": "-",
+  "beispiel": "Ich kaufe einen Becher Sahne für den Kuchen."
+ },
+ {
+  "id": 7807,
+  "de": "der Karton",
+  "typ": "Nomen",
+  "tr": "karton kutu",
+  "formen": "-s",
+  "beispiel": "Die Flaschen sind in einem großen Karton."
+ },
+ {
+  "id": 7808,
+  "de": "die Waage",
+  "typ": "Nomen",
+  "tr": "terazi, tartı",
+  "formen": "-n",
+  "beispiel": "Leg das Obst bitte auf die Waage."
+ },
+ {
+  "id": 7809,
+  "de": "die Tube",
+  "typ": "Nomen",
+  "tr": "tüp (ambalaj)",
+  "formen": "-n",
+  "beispiel": "Wir brauchen noch eine Tube Zahnpasta."
+ },
+ {
+  "id": 7810,
+  "de": "die Sparkasse",
+  "typ": "Nomen",
+  "tr": "tasarruf bankası",
+  "formen": "-n",
+  "beispiel": "Mein Konto ist bei der Sparkasse."
+ },
+ {
+  "id": 7811,
+  "de": "das Sparbuch",
+  "typ": "Nomen",
+  "tr": "tasarruf hesabı cüzdanı",
+  "formen": "¨-er",
+  "beispiel": "Für meine Tochter habe ich ein Sparbuch eröffnet."
+ },
+ {
+  "id": 7812,
+  "de": "der Geldbeutel",
+  "typ": "Nomen",
+  "tr": "cüzdan, para kesesi",
+  "formen": "-",
+  "beispiel": "Mein Geldbeutel ist im Bus liegen geblieben."
+ },
+ {
+  "id": 7813,
+  "de": "die Rückgabe",
+  "typ": "Nomen",
+  "tr": "iade",
+  "formen": "-n",
+  "beispiel": "Die Rückgabe ist nur mit Kassenzettel möglich."
+ },
+ {
+  "id": 7814,
+  "de": "zurückgeben",
+  "typ": "Verb",
+  "tr": "geri vermek, iade etmek",
+  "formen": "gibt zurück, hat zurückgegeben",
+  "beispiel": "Ich möchte diese Schuhe zurückgeben, sie sind zu klein."
+ },
+ {
+  "id": 7815,
+  "de": "zurückschicken",
+  "typ": "Verb",
+  "tr": "geri göndermek",
+  "formen": "schickt zurück, hat zurückgeschickt",
+  "beispiel": "Die Jacke passt nicht, ich schicke sie zurück.",
+  "ayniAnlam": [
+   "zurücksenden (B2)"
+  ]
+ },
+ {
+  "id": 7816,
+  "de": "das Pfand",
+  "typ": "Nomen",
+  "tr": "depozito",
+  "formen": "¨-er",
+  "beispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
+  "ayniAnlam": [
+   "die Kaution (B2)"
+  ]
+ },
+ {
+  "id": 7817,
+  "de": "die Schwiegermutter",
+  "typ": "Nomen",
+  "tr": "kayınvalide",
+  "formen": "¨-",
+  "beispiel": "Meine Schwiegermutter kocht jeden Sonntag für die ganze Familie."
+ },
+ {
+  "id": 7818,
+  "de": "der Schwiegervater",
+  "typ": "Nomen",
+  "tr": "kayınpeder",
+  "formen": "¨-",
+  "beispiel": "Mein Schwiegervater hat mir im Garten geholfen."
+ },
+ {
+  "id": 7819,
+  "de": "der Schwiegersohn",
+  "typ": "Nomen",
+  "tr": "damat (kızın kocası)",
+  "formen": "¨-e",
+  "beispiel": "Ihr Schwiegersohn arbeitet als Lehrer."
+ },
+ {
+  "id": 7820,
+  "de": "die Schwiegertochter",
+  "typ": "Nomen",
+  "tr": "gelin (oğlun eşi)",
+  "formen": "¨-",
+  "beispiel": "Seine Schwiegertochter bringt immer Kuchen mit."
+ },
+ {
+  "id": 7821,
+  "de": "das Enkelkind",
+  "typ": "Nomen",
+  "tr": "torun",
+  "formen": "-er",
+  "beispiel": "Meine Großeltern haben fünf Enkelkinder.",
+  "ayniAnlam": [
+   "der Enkel (B1)",
+   "die Enkelin (B1)"
+  ]
+ },
+ {
+  "id": 7822,
+  "de": "die Verlobung",
+  "typ": "Nomen",
+  "tr": "nişan",
+  "formen": "-en",
+  "beispiel": "Wir feiern unsere Verlobung im Garten."
+ },
+ {
+  "id": 7823,
+  "de": "die Braut",
+  "typ": "Nomen",
+  "tr": "gelin",
+  "formen": "¨-e",
+  "beispiel": "Die Braut trägt ein weißes Kleid."
+ },
+ {
+  "id": 7824,
+  "de": "der Bräutigam",
+  "typ": "Nomen",
+  "tr": "damat, güvey",
+  "formen": "-e",
+  "beispiel": "Der Bräutigam wartet nervös vor der Kirche."
+ },
+ {
+  "id": 7825,
+  "de": "der Trauzeuge",
+  "typ": "Nomen",
+  "tr": "nikâh şahidi",
+  "formen": "-n",
+  "beispiel": "Mein bester Freund ist mein Trauzeuge."
+ },
+ {
+  "id": 7826,
+  "de": "die Beerdigung",
+  "typ": "Nomen",
+  "tr": "cenaze töreni",
+  "formen": "-en",
+  "beispiel": "Die Beerdigung ist am Freitag um zehn Uhr."
+ },
+ {
+  "id": 7827,
+  "de": "die Familienfeier",
+  "typ": "Nomen",
+  "tr": "aile kutlaması",
+  "formen": "-n",
+  "beispiel": "Am Wochenende haben wir eine große Familienfeier."
+ },
+ {
+  "id": 7828,
+  "de": "der Blumenstrauß",
+  "typ": "Nomen",
+  "tr": "çiçek buketi",
+  "formen": "¨-e",
+  "beispiel": "Ich bringe der Gastgeberin einen Blumenstrauß mit."
+ },
+ {
+  "id": 7829,
+  "de": "der Weihnachtsbaum",
+  "typ": "Nomen",
+  "tr": "Noel ağacı",
+  "formen": "¨-e",
+  "beispiel": "Der Weihnachtsbaum steht dieses Jahr im Wohnzimmer."
+ },
+ {
+  "id": 7830,
+  "de": "die Umarmung",
+  "typ": "Nomen",
+  "tr": "kucaklama, sarılma",
+  "formen": "-en",
+  "beispiel": "Nach der langen Reise bekam ich von meiner Mutter eine herzliche Umarmung."
+ }
+]

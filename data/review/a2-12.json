@@ -1,0 +1,701 @@
+[
+ {
+  "id": 8319,
+  "de": "mitbekommen",
+  "typ": "Verb",
+  "tr": "fark etmek, kulak misafiri olmak",
+  "formen": "bekommt mit, hat mitbekommen",
+  "beispiel": "Bekommst du das Gespräch am Nebentisch mit?"
+ },
+ {
+  "id": 8320,
+  "de": "kapieren",
+  "typ": "Verb",
+  "tr": "anlamak, kavramak",
+  "formen": "kapiert, hat kapiert",
+  "beispiel": "Jetzt kapiere ich die Regel endlich."
+ },
+ {
+  "id": 8321,
+  "de": "verwirren",
+  "typ": "Verb",
+  "tr": "kafasını karıştırmak, şaşırtmak",
+  "formen": "verwirrt, hat verwirrt",
+  "beispiel": "Die vielen Formulare verwirren mich total."
+ },
+ {
+  "id": 8322,
+  "de": "erraten",
+  "typ": "Verb",
+  "tr": "tahmin etmek, bilmek",
+  "formen": "errät, hat erraten",
+  "beispiel": "Er errät meine Antwort fast immer sofort."
+ },
+ {
+  "id": 8323,
+  "de": "ahnen",
+  "typ": "Verb",
+  "tr": "sezmek, önceden hissetmek",
+  "formen": "ahnt, hat geahnt",
+  "beispiel": "Ich ahne schon, dass sie bald umzieht."
+ },
+ {
+  "id": 8324,
+  "de": "sich trauen",
+  "typ": "Verb",
+  "tr": "cesaret etmek, göze almak",
+  "formen": "traut sich, hat sich getraut",
+  "beispiel": "Sie traut sich nicht, den Chef nach Urlaub zu fragen."
+ },
+ {
+  "id": 8325,
+  "de": "tratschen",
+  "typ": "Verb",
+  "tr": "dedikodu yapmak, çene çalmak",
+  "formen": "tratscht, hat getratscht",
+  "beispiel": "Die Nachbarinnen tratschen jeden Morgen im Hof."
+ },
+ {
+  "id": 8326,
+  "de": "vorziehen",
+  "typ": "Verb",
+  "tr": "tercih etmek, yeğlemek",
+  "formen": "zieht vor, hat vorgezogen",
+  "beispiel": "Am Abend ziehe ich Tee dem Kaffee vor."
+ },
+ {
+  "id": 8327,
+  "de": "einsehen",
+  "typ": "Verb",
+  "tr": "kabullenmek, anlamak",
+  "formen": "sieht ein, hat eingesehen",
+  "beispiel": "Er sieht seinen Fehler endlich ein."
+ },
+ {
+  "id": 8328,
+  "de": "gestehen",
+  "typ": "Verb",
+  "tr": "itiraf etmek",
+  "formen": "gesteht, hat gestanden",
+  "beispiel": "Sie gesteht, dass sie das Buch vergessen hat."
+ },
+ {
+  "id": 8329,
+  "de": "befürchten",
+  "typ": "Verb",
+  "tr": "endişe etmek, korkmak",
+  "formen": "befürchtet, hat befürchtet",
+  "beispiel": "Ich befürchte, dass wir zu spät zum Bahnhof kommen."
+ },
+ {
+  "id": 8330,
+  "de": "aufmuntern",
+  "typ": "Verb",
+  "tr": "neşelendirmek, moral vermek",
+  "formen": "muntert auf, hat aufgemuntert",
+  "beispiel": "Ein Anruf von dir muntert mich sofort auf."
+ },
+ {
+  "id": 8331,
+  "de": "motivieren",
+  "typ": "Verb",
+  "tr": "motive etmek, isteklendirmek",
+  "formen": "motiviert, hat motiviert",
+  "beispiel": "Meine Lehrerin motiviert uns jeden Tag neu."
+ },
+ {
+  "id": 8332,
+  "de": "flirten",
+  "typ": "Verb",
+  "tr": "flört etmek",
+  "formen": "flirtet, hat geflirtet",
+  "beispiel": "Auf der Party flirtet er mit allen Gästen."
+ },
+ {
+  "id": 8333,
+  "de": "anvertrauen",
+  "typ": "Verb",
+  "tr": "içini dökmek, emanet etmek",
+  "formen": "vertraut an, hat anvertraut",
+  "beispiel": "Sie vertraut mir ihr größtes Problem an."
+ },
+ {
+  "id": 8334,
+  "de": "nicken",
+  "typ": "Verb",
+  "tr": "başıyla onaylamak, baş sallamak",
+  "formen": "nickt, hat genickt",
+  "beispiel": "Sie nickt nur und sagt kein Wort."
+ },
+ {
+  "id": 8335,
+  "de": "grinsen",
+  "typ": "Verb",
+  "tr": "sırıtmak",
+  "formen": "grinst, hat gegrinst",
+  "beispiel": "Warum grinst du die ganze Zeit so?"
+ },
+ {
+  "id": 8336,
+  "de": "brüllen",
+  "typ": "Verb",
+  "tr": "haykırmak, avaz avaz bağırmak",
+  "formen": "brüllt, hat gebrüllt",
+  "beispiel": "Der Trainer brüllt über den ganzen Platz."
+ },
+ {
+  "id": 8337,
+  "de": "meckern",
+  "typ": "Verb",
+  "tr": "söylenmek, dırdır etmek",
+  "formen": "meckert, hat gemeckert",
+  "beispiel": "Mein Kollege meckert über jedes Essen in der Kantine."
+ },
+ {
+  "id": 8338,
+  "de": "jammern",
+  "typ": "Verb",
+  "tr": "sızlanmak, yakınmak",
+  "formen": "jammert, hat gejammert",
+  "beispiel": "Er jammert den ganzen Tag über die Hitze."
+ },
+ {
+  "id": 8339,
+  "de": "sich beklagen",
+  "typ": "Verb",
+  "tr": "şikâyet etmek, yakınmak",
+  "formen": "beklagt sich, hat sich beklagt",
+  "beispiel": "Die Gäste beklagen sich über den Lärm im Hotel."
+ },
+ {
+  "id": 8340,
+  "de": "sich zanken",
+  "typ": "Verb",
+  "tr": "atışmak, çekişmek",
+  "formen": "zankt sich, hat sich gezankt",
+  "beispiel": "Die Kinder zanken sich um das neue Spielzeug."
+ },
+ {
+  "id": 8341,
+  "de": "schwören",
+  "typ": "Verb",
+  "tr": "yemin etmek",
+  "formen": "schwört, hat geschworen",
+  "beispiel": "Ich schwöre dir, ich habe nichts davon gewusst."
+ },
+ {
+  "id": 8342,
+  "de": "beschimpfen",
+  "typ": "Verb",
+  "tr": "sövmek, ağır sözler söylemek",
+  "formen": "beschimpft, hat beschimpft",
+  "beispiel": "Im Bus beschimpft ein Mann den Fahrer."
+ },
+ {
+  "id": 8343,
+  "de": "mitreden",
+  "typ": "Verb",
+  "tr": "söz sahibi olmak, konuşmaya katılmak",
+  "formen": "redet mit, hat mitgeredet",
+  "beispiel": "Bei diesem Thema rede ich gern mit."
+ },
+ {
+  "id": 8344,
+  "de": "zwinkern",
+  "typ": "Verb",
+  "tr": "göz kırpmak",
+  "formen": "zwinkert, hat gezwinkert",
+  "beispiel": "Mein Opa zwinkert mir über den Tisch zu."
+ },
+ {
+  "id": 8345,
+  "de": "begeistern",
+  "typ": "Verb",
+  "tr": "hayran bırakmak, coşturmak",
+  "formen": "begeistert, hat begeistert",
+  "beispiel": "Der neue Film begeistert meine ganze Familie."
+ },
+ {
+  "id": 8346,
+  "de": "weitersagen",
+  "typ": "Verb",
+  "tr": "başkasına söylemek, yaymak",
+  "formen": "sagt weiter, hat weitergesagt",
+  "beispiel": "Sag das bitte nicht weiter, es ist ein Geheimnis!"
+ },
+ {
+  "id": 8347,
+  "de": "weiterhelfen",
+  "typ": "Verb",
+  "tr": "yardımcı olmak, yol göstermek",
+  "formen": "hilft weiter, hat weitergeholfen",
+  "beispiel": "Die Frau am Schalter hilft mir immer weiter."
+ },
+ {
+  "id": 8348,
+  "de": "anlügen",
+  "typ": "Verb",
+  "tr": "yalan söylemek (birine)",
+  "formen": "lügt an, hat angelogen",
+  "beispiel": "Warum lügst du deine Eltern so oft an?"
+ },
+ {
+  "id": 8349,
+  "de": "verärgern",
+  "typ": "Verb",
+  "tr": "kızdırmak, canını sıkmak",
+  "formen": "verärgert, hat verärgert",
+  "beispiel": "Seine Antwort verärgert die ganze Gruppe."
+ },
+ {
+  "id": 8350,
+  "de": "das Badezimmer",
+  "typ": "Nomen",
+  "tr": "banyo",
+  "formen": "-",
+  "beispiel": "Das Badezimmer ist klein, aber sehr hell.",
+  "ayniAnlam": [
+   "das Bad (A1)"
+  ]
+ },
+ {
+  "id": 8351,
+  "de": "der Eimer",
+  "typ": "Nomen",
+  "tr": "kova",
+  "formen": "-",
+  "beispiel": "Ich hole einen Eimer mit warmem Wasser."
+ },
+ {
+  "id": 8352,
+  "de": "der Ofen",
+  "typ": "Nomen",
+  "tr": "soba, fırın",
+  "formen": "¨-",
+  "beispiel": "Im Winter machen wir jeden Abend den Ofen an."
+ },
+ {
+  "id": 8353,
+  "de": "streichen",
+  "typ": "Verb",
+  "tr": "boyamak (duvar)",
+  "formen": "streicht, hat gestrichen",
+  "beispiel": "Wir wollen die Wände im Wohnzimmer weiß streichen."
+ },
+ {
+  "id": 8354,
+  "de": "die Schublade",
+  "typ": "Nomen",
+  "tr": "çekmece",
+  "formen": "-n",
+  "beispiel": "Die Löffel sind in der oberen Schublade."
+ },
+ {
+  "id": 8355,
+  "de": "der Kamin",
+  "typ": "Nomen",
+  "tr": "şömine",
+  "formen": "-e",
+  "beispiel": "Im Wohnzimmer gibt es einen alten Kamin."
+ },
+ {
+  "id": 8356,
+  "de": "die Türklingel",
+  "typ": "Nomen",
+  "tr": "kapı zili",
+  "formen": "-n",
+  "beispiel": "Unsere Türklingel ist kaputt, bitte klopfen Sie."
+ },
+ {
+  "id": 8357,
+  "de": "der Dachboden",
+  "typ": "Nomen",
+  "tr": "çatı katı, tavan arası",
+  "formen": "¨-",
+  "beispiel": "Die alten Koffer stehen auf dem Dachboden."
+ },
+ {
+  "id": 8358,
+  "de": "die Haustür",
+  "typ": "Nomen",
+  "tr": "sokak kapısı, bina kapısı",
+  "formen": "-en",
+  "beispiel": "Bitte mach die Haustür abends zu."
+ },
+ {
+  "id": 8359,
+  "de": "die Matratze",
+  "typ": "Nomen",
+  "tr": "şilte, yatak minderi",
+  "formen": "-n",
+  "beispiel": "Die neue Matratze ist viel bequemer."
+ },
+ {
+  "id": 8360,
+  "de": "der Besen",
+  "typ": "Nomen",
+  "tr": "süpürge",
+  "formen": "-",
+  "beispiel": "Der Besen steht hinter der Tür in der Küche."
+ },
+ {
+  "id": 8361,
+  "de": "das Gästezimmer",
+  "typ": "Nomen",
+  "tr": "misafir odası",
+  "formen": "-",
+  "beispiel": "Meine Schwester schläft im Gästezimmer."
+ },
+ {
+  "id": 8362,
+  "de": "der Fußboden",
+  "typ": "Nomen",
+  "tr": "yer, döşeme",
+  "formen": "¨-",
+  "beispiel": "Der Fußboden im Flur ist aus Holz."
+ },
+ {
+  "id": 8363,
+  "de": "der Staubsauger",
+  "typ": "Nomen",
+  "tr": "elektrikli süpürge",
+  "formen": "-",
+  "beispiel": "Der Staubsauger ist leider kaputt."
+ },
+ {
+  "id": 8364,
+  "de": "die Waschmaschine",
+  "typ": "Nomen",
+  "tr": "çamaşır makinesi",
+  "formen": "-n",
+  "beispiel": "Die Waschmaschine steht im Keller."
+ },
+ {
+  "id": 8365,
+  "de": "der Mülleimer",
+  "typ": "Nomen",
+  "tr": "çöp kovası",
+  "formen": "-",
+  "beispiel": "Kannst du bitte den Mülleimer leeren?"
+ },
+ {
+  "id": 8366,
+  "de": "das Kinderzimmer",
+  "typ": "Nomen",
+  "tr": "çocuk odası",
+  "formen": "-",
+  "beispiel": "Im Kinderzimmer liegen überall Spielsachen."
+ },
+ {
+  "id": 8367,
+  "de": "wischen",
+  "typ": "Verb",
+  "tr": "silmek, paspaslamak",
+  "formen": "wischt, hat gewischt",
+  "beispiel": "Am Samstag wische ich den Boden in der Küche."
+ },
+ {
+  "id": 8368,
+  "de": "das Esszimmer",
+  "typ": "Nomen",
+  "tr": "yemek odası",
+  "formen": "-",
+  "beispiel": "Sonntags essen wir alle zusammen im Esszimmer."
+ },
+ {
+  "id": 8369,
+  "de": "das Waschbecken",
+  "typ": "Nomen",
+  "tr": "lavabo",
+  "formen": "-",
+  "beispiel": "Das Waschbecken im Bad ist verstopft."
+ },
+ {
+  "id": 8370,
+  "de": "die Spüle",
+  "typ": "Nomen",
+  "tr": "mutfak evyesi",
+  "formen": "-n",
+  "beispiel": "In der Spüle steht noch schmutziges Geschirr."
+ },
+ {
+  "id": 8371,
+  "de": "die Schraube",
+  "typ": "Nomen",
+  "tr": "vida",
+  "formen": "-n",
+  "beispiel": "Ich brauche noch eine kleine Schraube für das Regal."
+ },
+ {
+  "id": 8372,
+  "de": "die Kommode",
+  "typ": "Nomen",
+  "tr": "konsol, çekmeceli dolap",
+  "formen": "-n",
+  "beispiel": "Meine Socken sind in der Kommode im Schlafzimmer."
+ },
+ {
+  "id": 8373,
+  "de": "der Schraubenzieher",
+  "typ": "Nomen",
+  "tr": "tornavida",
+  "formen": "-",
+  "beispiel": "Hast du einen Schraubenzieher für mich?"
+ },
+ {
+  "id": 8374,
+  "de": "der Trockner",
+  "typ": "Nomen",
+  "tr": "kurutma makinesi",
+  "formen": "-",
+  "beispiel": "Die Handtücher sind noch im Trockner."
+ },
+ {
+  "id": 8375,
+  "de": "der Kleiderschrank",
+  "typ": "Nomen",
+  "tr": "gardırop, elbise dolabı",
+  "formen": "¨-e",
+  "beispiel": "Der Kleiderschrank ist zu klein für zwei Personen."
+ },
+ {
+  "id": 8376,
+  "de": "lüften",
+  "typ": "Verb",
+  "tr": "havalandırmak",
+  "formen": "lüftet, hat gelüftet",
+  "beispiel": "Du musst das Zimmer jeden Morgen kurz lüften."
+ },
+ {
+  "id": 8377,
+  "de": "bügeln",
+  "typ": "Verb",
+  "tr": "ütülemek",
+  "formen": "bügelt, hat gebügelt",
+  "beispiel": "Ich bügele am Abend meine Hemden."
+ },
+ {
+  "id": 8378,
+  "de": "der Hocker",
+  "typ": "Nomen",
+  "tr": "tabure",
+  "formen": "-",
+  "beispiel": "Setz dich bitte auf den Hocker neben dem Tisch."
+ },
+ {
+  "id": 8379,
+  "de": "die Glühbirne",
+  "typ": "Nomen",
+  "tr": "ampul",
+  "formen": "-n",
+  "beispiel": "Im Flur ist die Glühbirne kaputt."
+ },
+ {
+  "id": 8380,
+  "de": "der Ventilator",
+  "typ": "Nomen",
+  "tr": "vantilatör",
+  "formen": "-en",
+  "beispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator."
+ },
+ {
+  "id": 8381,
+  "de": "der Nachttisch",
+  "typ": "Nomen",
+  "tr": "komodin",
+  "formen": "-e",
+  "beispiel": "Meine Brille liegt auf dem Nachttisch."
+ },
+ {
+  "id": 8382,
+  "de": "der Wasserhahn",
+  "typ": "Nomen",
+  "tr": "musluk",
+  "formen": "¨-e",
+  "beispiel": "Der Wasserhahn in der Küche tropft schon wieder."
+ },
+ {
+  "id": 8383,
+  "de": "aufschließen",
+  "typ": "Verb",
+  "tr": "kilidi açmak, açmak",
+  "formen": "schließt auf, hat aufgeschlossen",
+  "beispiel": "Kannst du bitte die Wohnungstür aufschließen?"
+ },
+ {
+  "id": 8384,
+  "de": "die Bettwäsche",
+  "typ": "Nomen",
+  "tr": "nevresim takımı",
+  "formen": "(Sg.)",
+  "beispiel": "Ich wechsle jeden Samstag die Bettwäsche."
+ },
+ {
+  "id": 8385,
+  "de": "der Quadratmeter",
+  "typ": "Nomen",
+  "tr": "metrekare",
+  "formen": "-",
+  "beispiel": "Unsere Wohnung hat 65 Quadratmeter."
+ },
+ {
+  "id": 8386,
+  "de": "die Tapete",
+  "typ": "Nomen",
+  "tr": "duvar kâğıdı",
+  "formen": "-n",
+  "beispiel": "Die alte Tapete gefällt mir überhaupt nicht."
+ },
+ {
+  "id": 8387,
+  "de": "die Kaffeemaschine",
+  "typ": "Nomen",
+  "tr": "kahve makinesi",
+  "formen": "-n",
+  "beispiel": "Die Kaffeemaschine steht neben dem Kühlschrank."
+ },
+ {
+  "id": 8388,
+  "de": "der Lichtschalter",
+  "typ": "Nomen",
+  "tr": "ışık düğmesi",
+  "formen": "-",
+  "beispiel": "Der Lichtschalter ist links neben der Tür."
+ },
+ {
+  "id": 8389,
+  "de": "das Obergeschoss",
+  "typ": "Nomen",
+  "tr": "üst kat",
+  "formen": "-e",
+  "beispiel": "Die Schlafzimmer sind im Obergeschoss."
+ },
+ {
+  "id": 8390,
+  "de": "der Untermieter",
+  "typ": "Nomen",
+  "tr": "kiracının kiracısı, oda kiracısı",
+  "formen": "-",
+  "beispiel": "Wir suchen einen Untermieter für das kleine Zimmer."
+ },
+ {
+  "id": 8391,
+  "de": "der Gefrierschrank",
+  "typ": "Nomen",
+  "tr": "derin dondurucu",
+  "formen": "¨-e",
+  "beispiel": "Das Brot liegt im Gefrierschrank."
+ },
+ {
+  "id": 8392,
+  "de": "die Bettdecke",
+  "typ": "Nomen",
+  "tr": "yorgan",
+  "formen": "-n",
+  "beispiel": "Im Winter brauche ich eine dicke Bettdecke."
+ },
+ {
+  "id": 8393,
+  "de": "der Ersatzschlüssel",
+  "typ": "Nomen",
+  "tr": "yedek anahtar",
+  "formen": "-",
+  "beispiel": "Der Ersatzschlüssel liegt bei meiner Nachbarin."
+ },
+ {
+  "id": 8394,
+  "de": "das Bügeleisen",
+  "typ": "Nomen",
+  "tr": "ütü",
+  "formen": "-",
+  "beispiel": "Vorsicht, das Bügeleisen ist noch heiß!"
+ },
+ {
+  "id": 8395,
+  "de": "das Bücherregal",
+  "typ": "Nomen",
+  "tr": "kitaplık",
+  "formen": "-e",
+  "beispiel": "Das Bücherregal ist schon wieder voll."
+ },
+ {
+  "id": 8396,
+  "de": "der Esstisch",
+  "typ": "Nomen",
+  "tr": "yemek masası",
+  "formen": "-e",
+  "beispiel": "Am Esstisch haben sechs Personen Platz."
+ },
+ {
+  "id": 8397,
+  "de": "die Stromrechnung",
+  "typ": "Nomen",
+  "tr": "elektrik faturası",
+  "formen": "-en",
+  "beispiel": "Die Stromrechnung ist dieses Jahr sehr hoch."
+ },
+ {
+  "id": 8398,
+  "de": "der Geschirrspüler",
+  "typ": "Nomen",
+  "tr": "bulaşık makinesi",
+  "formen": "-",
+  "beispiel": "Stell die Teller bitte in den Geschirrspüler."
+ },
+ {
+  "id": 8399,
+  "de": "das Doppelbett",
+  "typ": "Nomen",
+  "tr": "çift kişilik yatak",
+  "formen": "-en",
+  "beispiel": "Im Schlafzimmer steht ein großes Doppelbett."
+ },
+ {
+  "id": 8400,
+  "de": "der Heizkörper",
+  "typ": "Nomen",
+  "tr": "radyatör, petek",
+  "formen": "-",
+  "beispiel": "Der Heizkörper im Bad wird nicht warm."
+ },
+ {
+  "id": 8401,
+  "de": "der Couchtisch",
+  "typ": "Nomen",
+  "tr": "sehpa, orta sehpa",
+  "formen": "-e",
+  "beispiel": "Die Zeitung liegt auf dem Couchtisch."
+ },
+ {
+  "id": 8402,
+  "de": "das Putzmittel",
+  "typ": "Nomen",
+  "tr": "temizlik malzemesi",
+  "formen": "-",
+  "beispiel": "Die Putzmittel stehen unter der Spüle."
+ },
+ {
+  "id": 8403,
+  "de": "der Abstellraum",
+  "typ": "Nomen",
+  "tr": "depo odası, kiler",
+  "formen": "¨-e",
+  "beispiel": "Das Fahrrad steht im Abstellraum."
+ },
+ {
+  "id": 8404,
+  "de": "die Wohnungssuche",
+  "typ": "Nomen",
+  "tr": "ev arama, konut arayışı",
+  "formen": "(Sg.)",
+  "beispiel": "Die Wohnungssuche in der Stadt ist sehr schwer."
+ },
+ {
+  "id": 8405,
+  "de": "das Reihenhaus",
+  "typ": "Nomen",
+  "tr": "sıra ev, bitişik nizam ev",
+  "formen": "¨-er",
+  "beispiel": "Meine Eltern wohnen in einem kleinen Reihenhaus."
+ }
+]

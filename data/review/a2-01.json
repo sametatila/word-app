@@ -1,0 +1,1034 @@
+[
+ {
+  "id": 859,
+  "de": "abschließen",
+  "typ": "Sonstiges",
+  "tr": "kilitlemek, tamamlamak",
+  "formen": "",
+  "beispiel": "Hast du die Tür abgeschlossen?"
+ },
+ {
+  "id": 860,
+  "de": "schließt ab",
+  "typ": "Verb",
+  "tr": "tamamlamak, bitirmek, mezun olmak",
+  "formen": "hat abgeschlossen",
+  "beispiel": "Ich schließe dieses Jahr mein Studium/ meine Ausbildung ab."
+ },
+ {
+  "id": 861,
+  "de": "aktiv",
+  "typ": "Sonstiges",
+  "tr": "aktif",
+  "formen": "",
+  "beispiel": "Peter ist sehr aktiv und macht viel Sport."
+ },
+ {
+  "id": 862,
+  "de": "aktuell",
+  "typ": "Sonstiges",
+  "tr": "güncel",
+  "formen": "",
+  "beispiel": "Das ist das aktuelle Kinoprogramm."
+ },
+ {
+  "id": 863,
+  "de": "als",
+  "typ": "Sonstiges",
+  "tr": "-den daha, olarak, iken",
+  "formen": "",
+  "beispiel": "Hector ist jünger als seine Schwester. Sie arbeitet als Krankenschwester."
+ },
+ {
+  "id": 864,
+  "de": "die Ampel",
+  "typ": "Nomen",
+  "tr": "trafik ışığı",
+  "formen": "-n",
+  "beispiel": "Du kannst fahren, die Ampel ist grün. Nach der Ampel musst du nach links fahren."
+ },
+ {
+  "id": 865,
+  "de": "ändern",
+  "typ": "Verb",
+  "tr": "değiştirmek",
+  "formen": "ändert, hat geändert",
+  "beispiel": "Das Wetter hat sich geändert. Wie kann ich mein Passwort ändern?",
+  "ayniAnlam": [
+   "umtauschen (B1)"
+  ]
+ },
+ {
+  "id": 866,
+  "de": "anders",
+  "typ": "Sonstiges",
+  "tr": "başka, farklı",
+  "formen": "",
+  "beispiel": "Anders geht das leider nicht. Oliver ist anders als seine Freunde."
+ },
+ {
+  "id": 867,
+  "de": "anmelden",
+  "typ": "Sonstiges",
+  "tr": "kaydolmak, kayıt yaptırmak",
+  "formen": "(sich)",
+  "beispiel": "Wo kann ich mich anmelden?"
+ },
+ {
+  "id": 868,
+  "de": "meldet an",
+  "typ": "Verb",
+  "tr": "kaydetmek, kayıt yaptırmak",
+  "formen": "hat angemeldet",
+  "beispiel": "Eine Anmeldung für diesen Kurs ist nicht mehr möglich."
+ },
+ {
+  "id": 869,
+  "de": "ansehen",
+  "typ": "Verb",
+  "tr": "izlemek, bakmak, seyretmek",
+  "formen": "sieht an, hat angesehen",
+  "beispiel": "Darf ich eure Urlaubsfotos ansehen? Ich sehe (mir) diese Sendung jeden Tag an."
+ },
+ {
+  "id": 870,
+  "de": "der Anzug",
+  "typ": "Nomen",
+  "tr": "takım elbise",
+  "formen": "¨-e",
+  "beispiel": "Mein Mann muss sich einen neuen Anzug kaufen."
+ },
+ {
+  "id": 871,
+  "de": "der Apparat",
+  "typ": "Nomen",
+  "tr": "cihaz, aygıt",
+  "formen": "-e",
+  "beispiel": "Was machen wir mit deinem alten Apparat? Ich habe einen neuen Fotoapparat."
+ },
+ {
+  "id": 873,
+  "de": "arm",
+  "typ": "Sonstiges",
+  "tr": "fakir, yoksul",
+  "formen": "",
+  "beispiel": "Sie haben nicht viel Geld, sie sind arm."
+ },
+ {
+  "id": 874,
+  "de": "auf jeden Fall/auf keinen Fall",
+  "typ": "Sonstiges",
+  "tr": "kesinlikle, her hâlükârda",
+  "formen": "",
+  "beispiel": "Ich möchte auf jeden Fall den neuen James-Bond- Film sehen. - Wirklich? Ich finde James-Bond-Filme langweilig. Ich sehe "
+ },
+ {
+  "id": 875,
+  "de": "aufregend",
+  "typ": "Sonstiges",
+  "tr": "heyecan verici",
+  "formen": "",
+  "beispiel": "Die letzte Woche war sehr aufregend. Der Film ist nicht besonders aufregend."
+ },
+ {
+  "id": 876,
+  "de": "die Ausbildung",
+  "typ": "Nomen",
+  "tr": "meslek eğitimi, staj",
+  "formen": "-en",
+  "beispiel": "Ich möchte eine Ausbildung zum Krankenpfleger machen."
+ },
+ {
+  "id": 877,
+  "de": "ausgeben",
+  "typ": "Verb",
+  "tr": "harcamak",
+  "formen": "gibt aus, hat ausgegeben",
+  "beispiel": "Agata gibt viel Geld für Bücher aus. Ich möchte nicht so viel Geld ausgeben."
+ },
+ {
+  "id": 878,
+  "de": "ausgehen",
+  "typ": "Verb",
+  "tr": "dışarı çıkmak, sönmek",
+  "formen": "geht aus, ist ausgegangen",
+  "beispiel": "Gehen wir am Freitag zusammen aus? Plötzlich ist das Licht ausgegangen."
+ },
+ {
+  "id": 879,
+  "de": "auspacken",
+  "typ": "Verb",
+  "tr": "paketten çıkarmak, açmak",
+  "formen": "packt aus, hat ausgepackt",
+  "beispiel": "Packst du bitte den Koffer aus?"
+ },
+ {
+  "id": 881,
+  "de": "außer",
+  "typ": "Sonstiges",
+  "tr": "dışında, hariç",
+  "formen": "",
+  "beispiel": "Außer Lisa möchte niemand den Film sehen. Wir haben täglich außer Samstag geöffnet."
+ },
+ {
+  "id": 882,
+  "de": "außerdem",
+  "typ": "Sonstiges",
+  "tr": "ayrıca, bunun yanında",
+  "formen": "",
+  "beispiel": "Vier Brötchen, möchten Sie außerdem noch etwas?"
+ },
+ {
+  "id": 883,
+  "de": "außerhalb",
+  "typ": "Sonstiges",
+  "tr": "dışında",
+  "formen": "",
+  "beispiel": "Die Wohnung ist nicht in der Stadt, sie liegt etwas außerhalb."
+ },
+ {
+  "id": 884,
+  "de": "aussprechen",
+  "typ": "Verb",
+  "tr": "telaffuz etmek",
+  "formen": "spricht aus, hat ausgesprochen",
+  "beispiel": "Wie spricht man das Wort aus?"
+ },
+ {
+  "id": 885,
+  "de": "die Ausstellung",
+  "typ": "Nomen",
+  "tr": "sergi",
+  "formen": "-en",
+  "beispiel": "Gehen wir morgen zusammen in die Ausstellung?"
+ },
+ {
+  "id": 886,
+  "de": "austragen",
+  "typ": "Verb",
+  "tr": "dağıtmak",
+  "formen": "trägt aus, hat ausgetragen",
+  "beispiel": "Er trägt jeden Morgen die Zeitung aus.",
+  "ayniAnlam": [
+   "verteilen (B1)",
+   "austeilen (A2)"
+  ]
+ },
+ {
+  "id": 887,
+  "de": "der Babysitter",
+  "typ": "Nomen",
+  "tr": "bebek bakıcısı",
+  "formen": "-",
+  "beispiel": "Meine Tochter arbeitet als Babysitter bei einer Familie mit vier Kindern."
+ },
+ {
+  "id": 888,
+  "de": "backen",
+  "typ": "Verb",
+  "tr": "pişirmek, fırınlamak",
+  "formen": "bäckt/backt, hat gebacken",
+  "beispiel": "Wenn du kommst, backe ich einen Kuchen."
+ },
+ {
+  "id": 889,
+  "de": "bauen",
+  "typ": "Verb",
+  "tr": "inşa etmek, yapmak",
+  "formen": "baut, hat gebaut",
+  "beispiel": "Unsere Nachbarn bauen ein neues Haus."
+ },
+ {
+  "id": 890,
+  "de": "die Baustelle",
+  "typ": "Nomen",
+  "tr": "inşaat alanı, şantiye",
+  "formen": "-n",
+  "beispiel": "Vor unserem Haus ist eine große Baustelle."
+ },
+ {
+  "id": 891,
+  "de": "beantworten",
+  "typ": "Verb",
+  "tr": "cevaplamak, yanıtlamak",
+  "formen": "beantwortet, hat beantwortet",
+  "beispiel": "Können Sie meine Frage bitte beantworten? Hast du die Mail schon beantwortet?"
+ },
+ {
+  "id": 894,
+  "de": "beenden",
+  "typ": "Verb",
+  "tr": "bitirmek, sona erdirmek",
+  "formen": "beendet, hat beendet",
+  "beispiel": "Du musst deine Ausbildung auf jeden Fall beenden."
+ },
+ {
+  "id": 895,
+  "de": "begründen",
+  "typ": "Verb",
+  "tr": "gerekçelendirmek, açıklamak",
+  "formen": "begründet, hat begründet",
+  "beispiel": "Bitte begründen Sie Ihre Meinung."
+ },
+ {
+  "id": 897,
+  "de": "beliebt",
+  "typ": "Sonstiges",
+  "tr": "sevilen, popüler",
+  "formen": "",
+  "beispiel": "Fußball ist bei vielen Menschen beliebt."
+ },
+ {
+  "id": 898,
+  "de": "bequem",
+  "typ": "Sonstiges",
+  "tr": "rahat",
+  "formen": "",
+  "beispiel": "Das Sofa ist sehr bequem. Meine Kinder ziehen am liebsten bequeme Schuhe an."
+ },
+ {
+  "id": 899,
+  "de": "beraten",
+  "typ": "Verb",
+  "tr": "danışmanlık yapmak, tavsiye vermek",
+  "formen": "berät, hat beraten",
+  "beispiel": "Unsere Sekretärin berät Sie gern, wenn Sie Fragen haben."
+ },
+ {
+  "id": 900,
+  "de": "der Berg",
+  "typ": "Nomen",
+  "tr": "dağ",
+  "formen": "-e",
+  "beispiel": "Die Zugspitze ist der höchste Berg in Deutschland. Wir fahren am Wochenende in die Berge."
+ },
+ {
+  "id": 901,
+  "de": "berichten",
+  "typ": "Verb",
+  "tr": "bildirmek, haber vermek",
+  "formen": "berichtet, hat berichtet",
+  "beispiel": "Alle Zeitungen berichten von dem Unfall.",
+  "ayniAnlam": [
+   "melden (B1)",
+   "mitteilen (B1)"
+  ]
+ },
+ {
+  "id": 902,
+  "de": "berühmt",
+  "typ": "Sonstiges",
+  "tr": "ünlü, meşhur",
+  "formen": "",
+  "beispiel": "Thomas Müller ist ein berühmter Fußballspieler."
+ },
+ {
+  "id": 903,
+  "de": "der Bescheid",
+  "typ": "Nomen",
+  "tr": "haber, bilgi",
+  "formen": "(bekommen/ geben/sagen)",
+  "beispiel": "Kann Lisa in Heidelberg studieren? - Sie weiß es noch nicht. Sie bekommt erst nächste Woche Bescheid. Kannst du mir bis "
+ },
+ {
+  "id": 904,
+  "de": "beschreiben",
+  "typ": "Verb",
+  "tr": "tarif etmek, tanımlamak",
+  "formen": "beschreibt, hat beschrieben",
+  "beispiel": "Kannst du mir den Weg zum Bahnhof beschreiben?"
+ },
+ {
+  "id": 906,
+  "de": "bestätigen",
+  "typ": "Verb",
+  "tr": "onaylamak, doğrulamak",
+  "formen": "bestätigt, hat bestätigt",
+  "beispiel": "Ich kann bestätigen, dass er hier war."
+ },
+ {
+  "id": 907,
+  "de": "bestehen",
+  "typ": "Verb",
+  "tr": "geçmek, oluşmak",
+  "formen": "besteht, hat bestanden",
+  "beispiel": "Ich habe die Prüfung bestanden! Die Prüfung besteht aus vier Teilen: Hören, Lesen, Schreiben und Sprechen."
+ },
+ {
+  "id": 908,
+  "de": "der Besuch",
+  "typ": "Nomen",
+  "tr": "ziyaret",
+  "formen": "-e",
+  "beispiel": "Wir bekommen am Wochenende Besuch. Ich mache einen Besuch im Krankenhaus."
+ },
+ {
+  "id": 910,
+  "de": "die Bewerbung",
+  "typ": "Nomen",
+  "tr": "başvuru",
+  "formen": "-en",
+  "beispiel": "Ich möchte mich um diese Stelle bewerben. Kannst du mir bei meiner Bewerbung helfen?"
+ },
+ {
+  "id": 911,
+  "de": "bewölkt",
+  "typ": "Sonstiges",
+  "tr": "bulutlu",
+  "formen": "",
+  "beispiel": "Heute ist es bewölkt. Es gibt viele Wolken am Himmel."
+ },
+ {
+  "id": 912,
+  "de": "die Wolke",
+  "typ": "Nomen",
+  "tr": "bulut",
+  "formen": "-n",
+  "beispiel": "Heute ist es bewölkt. Es gibt viele Wolken am Himmel."
+ },
+ {
+  "id": 913,
+  "de": "das Blatt",
+  "typ": "Nomen",
+  "tr": "yaprak, kağıt yaprağı",
+  "formen": "¨-er",
+  "beispiel": "Haben Sie ein Blatt Papier für mich? Die Bäume haben schon gelbe Blätter."
+ },
+ {
+  "id": 914,
+  "de": "der/das Blog",
+  "typ": "Sonstiges",
+  "tr": "blog",
+  "formen": "-s",
+  "beispiel": "Ich schreibe einen Blog über Mode."
+ },
+ {
+  "id": 915,
+  "de": "blond",
+  "typ": "Sonstiges",
+  "tr": "sarışın",
+  "formen": "",
+  "beispiel": "Lisa hat blonde Haare."
+ },
+ {
+  "id": 916,
+  "de": "die Bohne",
+  "typ": "Nomen",
+  "tr": "fasulye",
+  "formen": "-n",
+  "beispiel": "Hans isst nicht gern Bohnen."
+ },
+ {
+  "id": 917,
+  "de": "braten",
+  "typ": "Verb",
+  "tr": "kızartmak, kavurmak",
+  "formen": "brät, hat gebraten",
+  "beispiel": "Braten Sie das Fleisch in etwas Öl ! Der Fisch brät in der Pfanne.",
+  "ayniAnlam": [
+   "rösten (A2)"
+  ]
+ },
+ {
+  "id": 918,
+  "de": "die Brille",
+  "typ": "Nomen",
+  "tr": "gözlük",
+  "formen": "-n",
+  "beispiel": "Wo ist meine Brille? Mit dieser Brille kann ich nicht mehr gut sehen."
+ },
+ {
+  "id": 919,
+  "de": "die Brücke",
+  "typ": "Nomen",
+  "tr": "köprü",
+  "formen": "-n",
+  "beispiel": "Fahren Sie über die nächste Brücke und dann nach links."
+ },
+ {
+  "id": 920,
+  "de": "buchen",
+  "typ": "Verb",
+  "tr": "rezervasyon yapmak, ayırtmak",
+  "formen": "bucht, hat gebucht",
+  "beispiel": "Morgen buche ich unsere Urlaubsreise.",
+  "ayniAnlam": [
+   "reservieren (A2)"
+  ]
+ },
+ {
+  "id": 921,
+  "de": "bunt",
+  "typ": "Sonstiges",
+  "tr": "renkli",
+  "formen": "",
+  "beispiel": "Anna trägt gern bunte Kleider. Meine Wohnung ist sehr bunt: Das Wohnzimmer ist rot, die Küche grün und das Bad blau.",
+  "ayniAnlam": [
+   "farbig (B1)"
+  ]
+ },
+ {
+  "id": 922,
+  "de": "das Büro",
+  "typ": "Nomen",
+  "tr": "ofis, büro",
+  "formen": "-s",
+  "beispiel": "Ich arbeite in einem Büro. Unser Büro ist bis Dienstag geschlossen."
+ },
+ {
+  "id": 923,
+  "de": "die Cafeteria",
+  "typ": "Nomen",
+  "tr": "kafeterya",
+  "formen": "-s",
+  "beispiel": "Ich gehe jetzt in die Cafeteria. Soll ich dir etwas mitbringen?"
+ },
+ {
+  "id": 924,
+  "de": "chatten",
+  "typ": "Verb",
+  "tr": "sohbet etmek, yazışmak",
+  "formen": "chattet, hat gechattet",
+  "beispiel": "Luis chattet gern mit seinen Freunden im Internet."
+ },
+ {
+  "id": 925,
+  "de": "der Club",
+  "typ": "Nomen",
+  "tr": "kulüp",
+  "formen": "-s / Klub, -s",
+  "beispiel": "Gibt es hier einen Tennis-Club/Klub? Ich möchte gern tanzen gehen. Wo gibt es hier einen Club/Klub mit guter Musik?"
+ },
+ {
+  "id": 927,
+  "de": "die Creme",
+  "typ": "Nomen",
+  "tr": "krem",
+  "formen": "-s/-n",
+  "beispiel": "Ich suche eine Creme für die Hände. Der Kuchen schmeckt super! Was ist in der Creme? – Das ist eine Buttercreme mit viel"
+ },
+ {
+  "id": 928,
+  "de": "da(r) (Bsp. darauf",
+  "typ": "Sonstiges",
+  "tr": "ona, onun hakkında",
+  "formen": "darüber)",
+  "beispiel": "Darauf fällt mir keine Antwort ein. Darüber spreche ich nicht gern."
+ },
+ {
+  "id": 929,
+  "de": "dabei (sein)",
+  "typ": "Verb",
+  "tr": "orada olmak, katılmak",
+  "formen": "ist dabei, war dabei, ist dabei gewesen",
+  "beispiel": "Hast du einen Stift dabei? Schön, dass du da bist. Ist deine Familie auch dabei?"
+ },
+ {
+  "id": 930,
+  "de": "dafür/dagegen sein",
+  "typ": "Verb",
+  "tr": "lehinde/aleyhinde olmak, taraftar olmak",
+  "formen": "ist dafür/dagegen, war dafür/dagegen, ist dafür/ dagegen gewesen",
+  "beispiel": "Ich bin dafür/dagegen."
+ },
+ {
+  "id": 931,
+  "de": "damals",
+  "typ": "Sonstiges",
+  "tr": "o zamanlar, o dönemde",
+  "formen": "",
+  "beispiel": "Als Student hatte ich viel Zeit und wollte reisen. Aber damals hatte ich kein Geld."
+ },
+ {
+  "id": 932,
+  "de": "dass",
+  "typ": "Sonstiges",
+  "tr": "-dığı, ki",
+  "formen": "",
+  "beispiel": "Rico hat gesagt, dass er auch zur Party kommt. Ich finde es super, dass du mich besuchst."
+ },
+ {
+  "id": 933,
+  "de": "die Datei",
+  "typ": "Nomen",
+  "tr": "dosya",
+  "formen": "-en",
+  "beispiel": "Wo hast du die Datei gespeichert? Kannst du die Datei bitte öffnen?"
+ },
+ {
+  "id": 934,
+  "de": "deutlich",
+  "typ": "Sonstiges",
+  "tr": "açık, net",
+  "formen": "",
+  "beispiel": "Sprechen Sie bitte deutlich! Können Sie das bitte deutlicher schreiben? Ich kann das nicht lesen."
+ },
+ {
+  "id": 935,
+  "de": "das Ding",
+  "typ": "Nomen",
+  "tr": "şey, nesne",
+  "formen": "-e",
+  "beispiel": "Gib mir bitte mal das Ding da drüben! Was macht man mit diesem Ding? - Damit kann man Flaschen öffnen."
+ },
+ {
+  "id": 936,
+  "de": "direkt",
+  "typ": "Sonstiges",
+  "tr": "doğrudan",
+  "formen": "",
+  "beispiel": "Wir wohnen direkt über dem Café. Gibt es keinen direkten Zug nach Hamburg? - Nein, Sie müssen immer umsteigen. Ich möcht"
+ },
+ {
+  "id": 937,
+  "de": "diskutieren",
+  "typ": "Verb",
+  "tr": "tartışmak",
+  "formen": "diskutiert, hat diskutiert",
+  "beispiel": "Ich möchte das mit meinen Kollegen diskutieren."
+ },
+ {
+  "id": 938,
+  "de": "dringend",
+  "typ": "Sonstiges",
+  "tr": "acil",
+  "formen": "",
+  "beispiel": "Bitte kommen Sie schnell. Es ist dringend."
+ },
+ {
+  "id": 939,
+  "de": "drinnen",
+  "typ": "Sonstiges",
+  "tr": "içeride",
+  "formen": "",
+  "beispiel": "Wollen Sie drinnen oder draußen sitzen? Hier drinnen ist es sehr warm.",
+  "ayniAnlam": [
+   "drin (B1)"
+  ]
+ },
+ {
+  "id": 940,
+  "de": "drüben",
+  "typ": "Sonstiges",
+  "tr": "karşıda, öte tarafta",
+  "formen": "",
+  "beispiel": "Da drüben ist die Haltestelle."
+ },
+ {
+  "id": 941,
+  "de": "dunkel",
+  "typ": "Sonstiges",
+  "tr": "karanlık, koyu",
+  "formen": "",
+  "beispiel": "Um sechs Uhr ist es schon dunkel. Meine Schwester hat dunkle Haare. Ich will eine dunkelblaue Bluse kaufen."
+ },
+ {
+  "id": 942,
+  "de": "dünn",
+  "typ": "Sonstiges",
+  "tr": "ince, zayıf",
+  "formen": "",
+  "beispiel": "Das Buch ist sehr dünn. Es hat nur 40 Seiten. Mein Bruder ist 1,80 Meter groß und 62 Kilo schwer, er ist zu dünn.",
+  "ayniAnlam": [
+   "schlank (B1)"
+  ]
+ },
+ {
+  "id": 944,
+  "de": "das E-Book",
+  "typ": "Nomen",
+  "tr": "e-kitap",
+  "formen": "-s",
+  "beispiel": "Liest du lieber E-Books oder Bücher aus Papier? Entschuldigung, kann man hier E-Books kaufen?"
+ },
+ {
+  "id": 945,
+  "de": "echt",
+  "typ": "Sonstiges",
+  "tr": "gerçek, hakiki",
+  "formen": "",
+  "beispiel": "Ist das Bild ein echter Picasso? Der Film ist echt gut."
+ },
+ {
+  "id": 946,
+  "de": "egal",
+  "typ": "Sonstiges",
+  "tr": "fark etmez, önemli değil",
+  "formen": "",
+  "beispiel": "Das ist mir egal. Willst du Tee oder Kaffee trinken? – Egal."
+ },
+ {
+  "id": 947,
+  "de": "eigeneigentlich",
+  "typ": "Sonstiges",
+  "tr": "kendi, öz, aslında",
+  "formen": "",
+  "beispiel": "Nicht alle Kinder haben ein eigenes Zimmer. Wir wollten eigentlich Freunde besuchen, aber dann sind wir doch zu Hause ge"
+ },
+ {
+  "id": 948,
+  "de": "einig-",
+  "typ": "Sonstiges",
+  "tr": "bazı, birkaç",
+  "formen": "",
+  "beispiel": "In diesem Text sind einige Fehler. Das dauert noch einige Zeit, bis das Essen fertig ist."
+ },
+ {
+  "id": 949,
+  "de": "das Einkaufszentrum",
+  "typ": "Nomen",
+  "tr": "alışveriş merkezi",
+  "formen": "-en",
+  "beispiel": "Kommst du morgen mit ins Einkaufszentrum?"
+ },
+ {
+  "id": 950,
+  "de": "einpacken",
+  "typ": "Verb",
+  "tr": "paketlemek, sarmak",
+  "formen": "packt ein, hat eingepackt",
+  "beispiel": "Pack bitte die Handtücher ein ! Soll ich Ihnen das als Geschenk einpacken?"
+ },
+ {
+  "id": 951,
+  "de": "sich eintragen",
+  "typ": "Verb",
+  "tr": "kaydetmek, yazmak",
+  "formen": "trägt ein, hat eingetragen",
+  "beispiel": "Tragen Sie sich bitte in diese Liste ein ! Sie müssen Ihren Namen und Ihre Adresse eintragen.",
+  "ayniAnlam": [
+   "eintragen (B1)"
+  ]
+ },
+ {
+  "id": 952,
+  "de": "einzel-",
+  "typ": "Sonstiges",
+  "tr": "tek, ayrı, tekli",
+  "formen": "",
+  "beispiel": "Nicht alle zusammen. Könnt ihr bitte einzeln sprechen? Florian ist ein Einzelkind. Er hat keine Geschwister. Ein Einzelz"
+ },
+ {
+  "id": 953,
+  "de": "einziehen",
+  "typ": "Verb",
+  "tr": "taşınmak, içeri girmek",
+  "formen": "zieht ein, ist eingezogen",
+  "beispiel": "Im Juni ziehen unsere neuen Nachbarn ein. Wann können wir in die Wohnung einziehen?"
+ },
+ {
+  "id": 955,
+  "de": "eng",
+  "typ": "Sonstiges",
+  "tr": "dar",
+  "formen": "",
+  "beispiel": "Diese Hose ist zu eng. Gibt es sie auch eine Nummer größer?",
+  "ayniAnlam": [
+   "schmal (B1)"
+  ]
+ },
+ {
+  "id": 956,
+  "de": "sich entschuldigen",
+  "typ": "Verb",
+  "tr": "özür dilemek",
+  "formen": "entschuldigt, hat entschuldigt",
+  "beispiel": "Entschuldigen Sie bitte! Ich möchte mich bei dir entschuldigen."
+ },
+ {
+  "id": 957,
+  "de": "das Erdgeschoss",
+  "typ": "Nomen",
+  "tr": "zemin kat",
+  "formen": "-e",
+  "beispiel": "Ich wohne im Erdgeschoss.",
+  "ayniAnlam": [
+   "das Erdgeschoss/Erdgeschoß (B1)"
+  ]
+ },
+ {
+  "id": 958,
+  "de": "die Erfahrung",
+  "typ": "Nomen",
+  "tr": "deneyim, tecrübe",
+  "formen": "-en",
+  "beispiel": "Ich habe zehn Jahre Erfahrung in diesem Beruf."
+ },
+ {
+  "id": 959,
+  "de": "sich erinnern",
+  "typ": "Verb",
+  "tr": "hatırlamak",
+  "formen": "erinnert, hat erinnert",
+  "beispiel": "Erinnerst du dich an José? - Nein, ich erinnere mich nicht an ihn, tut mir leid. Kannst du mich morgen bitte an meinen A"
+ },
+ {
+  "id": 960,
+  "de": "erkältet sein",
+  "typ": "Verb",
+  "tr": "nezle olmak, üşütmüş olmak",
+  "formen": "ist erkältet, war erkältet, ist erkältet gewesen",
+  "beispiel": "Lisa ist erkältet. Sie kann heute nicht zur Schule gehen."
+ },
+ {
+  "id": 961,
+  "de": "die Erlaubnis",
+  "typ": "Nomen",
+  "tr": "izin",
+  "formen": "(Sg.)",
+  "beispiel": "Haben Sie eine Arbeitserlaubnis?"
+ },
+ {
+  "id": 962,
+  "de": "die Ermäßigung",
+  "typ": "Nomen",
+  "tr": "indirim",
+  "formen": "-en",
+  "beispiel": "Für Schüler, Studenten und Rentner gibt es eine Ermäßigung.",
+  "ayniAnlam": [
+   "der Rabatt (B1)"
+  ]
+ },
+ {
+  "id": 963,
+  "de": "erreichen",
+  "typ": "Verb",
+  "tr": "ulaşmak, yetişmek, varmak",
+  "formen": "erreicht, hat erreicht",
+  "beispiel": "Wenn wir uns beeilen, erreichen wir noch den Zug um acht Uhr. Bis 18 Uhr können Sie mich im Büro erreichen."
+ },
+ {
+  "id": 964,
+  "de": "erst",
+  "typ": "Sonstiges",
+  "tr": "ancak, henüz, daha yeni",
+  "formen": "",
+  "beispiel": "Wir können erst morgen kommen. Dina ist keine 18, sie ist erst 16 Jahre alt."
+ },
+ {
+  "id": 967,
+  "de": "fallen",
+  "typ": "Verb",
+  "tr": "düşmek",
+  "formen": "fällt, ist gefallen",
+  "beispiel": "Pass auf, das Glas fällt gleich vom Tisch.",
+  "ayniAnlam": [
+   "stürzen (B1)"
+  ]
+ },
+ {
+  "id": 968,
+  "de": "der Fan",
+  "typ": "Nomen",
+  "tr": "hayran",
+  "formen": "-s",
+  "beispiel": "Er ist ein großer Fußballfan. Bella ist ein Fan von Rammstein."
+ },
+ {
+  "id": 969,
+  "de": "fantastisch",
+  "typ": "Sonstiges",
+  "tr": "harika, muhteşem",
+  "formen": "",
+  "beispiel": "Dein neues Kleid sieht fantastisch aus! Das Buch ist fantastisch. Du musst es unbedingt lesen!",
+  "ayniAnlam": [
+   "toll (A1)"
+  ]
+ },
+ {
+  "id": 970,
+  "de": "fast",
+  "typ": "Sonstiges",
+  "tr": "neredeyse, hemen hemen",
+  "formen": "",
+  "beispiel": "Der Film ist fast zu Ende. Ich habe fast alles verstanden.",
+  "ayniAnlam": [
+   "nahezu (B2)"
+  ]
+ },
+ {
+  "id": 971,
+  "de": "faul",
+  "typ": "Sonstiges",
+  "tr": "tembel",
+  "formen": "",
+  "beispiel": "Heute sind wir faul: Wir machen keine Hausaufgaben und arbeiten nicht."
+ },
+ {
+  "id": 972,
+  "de": "die Feier",
+  "typ": "Nomen",
+  "tr": "kutlama",
+  "formen": "-n (z. B. Feierabend, Feiertag)",
+  "beispiel": "Wann hast du Feierabend? Am ersten Mai ist ein Feiertag."
+ },
+ {
+  "id": 973,
+  "de": "der Fernseher",
+  "typ": "Nomen",
+  "tr": "televizyon",
+  "formen": "-",
+  "beispiel": "Der Fernseher ist kaputt."
+ },
+ {
+  "id": 974,
+  "de": "das Fest",
+  "typ": "Nomen",
+  "tr": "bayram, şenlik",
+  "formen": "-e",
+  "beispiel": "Frohes Fest! Am Wochenende feiern wir ein Fest. Meine Tochter hat Geburtstag."
+ },
+ {
+  "id": 975,
+  "de": "das Festival",
+  "typ": "Nomen",
+  "tr": "festival",
+  "formen": "-s",
+  "beispiel": "Am Wochenende ist in der Stadt ein Musik-Festival."
+ },
+ {
+  "id": 976,
+  "de": "fett",
+  "typ": "Sonstiges",
+  "tr": "yağlı",
+  "formen": "",
+  "beispiel": "Die Wurst ist mir zu fett."
+ },
+ {
+  "id": 977,
+  "de": "fit sein",
+  "typ": "Verb",
+  "tr": "formda olmak",
+  "formen": "ist fit, war fit, ist fit gewesen",
+  "beispiel": "Tom will fit sein. Er geht jeden Tag ins Fitnessstudio."
+ },
+ {
+  "id": 978,
+  "de": "fleißig",
+  "typ": "Sonstiges",
+  "tr": "çalışkan",
+  "formen": "",
+  "beispiel": "Ibrahim ist sehr fleißig. Er macht immer seine Hausaufgaben."
+ },
+ {
+  "id": 979,
+  "de": "(ab)fliegen",
+  "typ": "Verb",
+  "tr": "uçmak, kalkmak",
+  "formen": "fliegt (ab), ist (ab)geflogen",
+  "beispiel": "Ich fliege nicht gern; ich fahre lieber mit dem Zug. Ich fliege in den Ferien nach Spanien. Wann fliegst du ab?"
+ },
+ {
+  "id": 980,
+  "de": "der Flohmarkt",
+  "typ": "Nomen",
+  "tr": "bit pazarı",
+  "formen": "¨-e",
+  "beispiel": "Ich gehe gern auf den Flohmarkt. Diesen Hut habe ich auf dem Flohmarkt gekauft."
+ },
+ {
+  "id": 981,
+  "de": "der Flug",
+  "typ": "Nomen",
+  "tr": "uçuş",
+  "formen": "¨-e",
+  "beispiel": "Ich möchte einen Flug nach Kanada buchen. Der Flug LH123 von München nach Frankfurt ist um 21:00 Uhr."
+ },
+ {
+  "id": 982,
+  "de": "fotografieren",
+  "typ": "Verb",
+  "tr": "fotoğraf çekmek",
+  "formen": "fotografiert, hat fotografiert",
+  "beispiel": "Ich fotografiere gern."
+ },
+ {
+  "id": 983,
+  "de": "freiwillig",
+  "typ": "Sonstiges",
+  "tr": "gönüllü olarak, isteyerek",
+  "formen": "",
+  "beispiel": "Manchmal bleibe ich freiwillig länger im Büro."
+ },
+ {
+  "id": 984,
+  "de": "freuen",
+  "typ": "Sonstiges",
+  "tr": "sevinmek, memnun olmak",
+  "formen": "(sich)",
+  "beispiel": "Zum Geburtstag habe ich ein interessantes Buch bekommen. Ich freue mich sehr über das Geschenk.",
+  "ayniAnlam": [
+   "sich freuen über (B2)"
+  ]
+ },
+ {
+  "id": 985,
+  "de": "freut",
+  "typ": "Verb",
+  "tr": "sevinmek",
+  "formen": "hat gefreut",
+  "beispiel": "Die Kinder freuen sich schon auf die Ferien. Ich freue mich, weil ich heute mit meinen Freunden Fußball spiele. Es/Das f"
+ },
+ {
+  "id": 986,
+  "de": "frisch",
+  "typ": "Sonstiges",
+  "tr": "taze",
+  "formen": "",
+  "beispiel": "Das Brot ist noch ganz frisch. Ich habe es gerade gekauft."
+ },
+ {
+  "id": 988,
+  "de": "der Führerschein",
+  "typ": "Nomen",
+  "tr": "ehliyet",
+  "formen": "-e",
+  "beispiel": "Hast du den Führerschein? Sie hat die Führerscheinprüfung bestanden.",
+  "ayniAnlam": [
+   "der Führerausweis (B1)"
+  ]
+ },
+ {
+  "id": 989,
+  "de": "die Fundsachen",
+  "typ": "Nomen",
+  "tr": "kayıp eşyalar",
+  "formen": "(Pl.)",
+  "beispiel": "Haben Sie meinen Schirm gefunden? - Sie können dort bei den Fundsachen schauen."
+ },
+ {
+  "id": 990,
+  "de": "furchtbar",
+  "typ": "Sonstiges",
+  "tr": "korkunç, berbat",
+  "formen": "",
+  "beispiel": "Er hat furchtbare Schmerzen. Die Hose sieht ja furchtbar aus. So kannst du nicht zur Arbeit gehen!",
+  "ayniAnlam": [
+   "schrecklich (A2)"
+  ]
+ },
+ {
+  "id": 991,
+  "de": "die Gabel",
+  "typ": "Nomen",
+  "tr": "çatal",
+  "formen": "-n",
+  "beispiel": "Kann ich bitte eine Gabel haben?"
+ },
+ {
+  "id": 992,
+  "de": "ganz",
+  "typ": "Sonstiges",
+  "tr": "tam, bütün, sağlam",
+  "formen": "",
+  "beispiel": "Oh nein! Was ist passiert? Ist deine Brille jetzt kaputt? - Nein, zum Glück ist sie noch ganz! Morgen haben wir den ganz"
+ },
+ {
+  "id": 993,
+  "de": "die Garage",
+  "typ": "Nomen",
+  "tr": "garaj",
+  "formen": "-n",
+  "beispiel": "Hier ist eine Garage für dein Auto."
+ }
+]

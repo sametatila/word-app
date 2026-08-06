@@ -1,0 +1,981 @@
+[
+ {
+  "id": 7831,
+  "de": "der Zwilling",
+  "typ": "Nomen",
+  "tr": "ikiz",
+  "formen": "-e",
+  "beispiel": "Mein Bruder und ich sind Zwillinge."
+ },
+ {
+  "id": 7832,
+  "de": "die Stiefmutter",
+  "typ": "Nomen",
+  "tr": "üvey anne",
+  "formen": "¨-",
+  "beispiel": "Seine Stiefmutter ist sehr nett zu ihm."
+ },
+ {
+  "id": 7833,
+  "de": "der Kinderwagen",
+  "typ": "Nomen",
+  "tr": "bebek arabası",
+  "formen": "-",
+  "beispiel": "Der Kinderwagen passt nicht in den Aufzug."
+ },
+ {
+  "id": 7834,
+  "de": "die Windel",
+  "typ": "Nomen",
+  "tr": "bebek bezi",
+  "formen": "-n",
+  "beispiel": "Der Kleine braucht eine frische Windel."
+ },
+ {
+  "id": 7835,
+  "de": "die Witwe",
+  "typ": "Nomen",
+  "tr": "dul kadın",
+  "formen": "-n",
+  "beispiel": "Meine Nachbarin ist seit drei Jahren Witwe."
+ },
+ {
+  "id": 7836,
+  "de": "der Hochzeitstag",
+  "typ": "Nomen",
+  "tr": "evlilik yıldönümü, düğün günü",
+  "formen": "-e",
+  "beispiel": "Zum Hochzeitstag schenkt mein Mann mir immer Rosen."
+ },
+ {
+  "id": 7837,
+  "de": "das Patenkind",
+  "typ": "Nomen",
+  "tr": "vaftiz çocuğu",
+  "formen": "-er",
+  "beispiel": "Mein Patenkind wird morgen sechs Jahre alt."
+ },
+ {
+  "id": 7838,
+  "de": "großziehen",
+  "typ": "Verb",
+  "tr": "büyütmek, yetiştirmek",
+  "formen": "zieht groß, hat großgezogen",
+  "beispiel": "Sie hat drei Kinder allein großgezogen."
+ },
+ {
+  "id": 7839,
+  "de": "adoptieren",
+  "typ": "Verb",
+  "tr": "evlat edinmek",
+  "formen": "adoptiert, hat adoptiert",
+  "beispiel": "Das Paar möchte ein Kind adoptieren."
+ },
+ {
+  "id": 7840,
+  "de": "vergeben",
+  "typ": "Verb",
+  "tr": "affetmek, bağışlamak",
+  "formen": "vergibt, hat vergeben",
+  "beispiel": "Nach dem Streit hat sie ihrem Bruder vergeben."
+ },
+ {
+  "id": 7841,
+  "de": "zusammenkommen",
+  "typ": "Verb",
+  "tr": "bir araya gelmek, toplanmak",
+  "formen": "kommt zusammen, ist zusammengekommen",
+  "beispiel": "An Weihnachten kommt die ganze Familie zusammen."
+ },
+ {
+  "id": 7842,
+  "de": "erben",
+  "typ": "Verb",
+  "tr": "miras almak",
+  "formen": "erbt, hat geerbt",
+  "beispiel": "Er hat von seiner Tante ein altes Haus geerbt."
+ },
+ {
+  "id": 7843,
+  "de": "bewundern",
+  "typ": "Verb",
+  "tr": "hayran olmak",
+  "formen": "bewundert, hat bewundert",
+  "beispiel": "Ich bewundere meine Großmutter sehr."
+ },
+ {
+  "id": 7844,
+  "de": "belohnen",
+  "typ": "Verb",
+  "tr": "ödüllendirmek",
+  "formen": "belohnt, hat belohnt",
+  "beispiel": "Die Eltern belohnen ihre Kinder für gute Noten."
+ },
+ {
+  "id": 7845,
+  "de": "wickeln",
+  "typ": "Verb",
+  "tr": "(bebeğin) altını değiştirmek, sarmak",
+  "formen": "wickelt, hat gewickelt",
+  "beispiel": "Kannst du das Baby wickeln?"
+ },
+ {
+  "id": 7846,
+  "de": "anstoßen",
+  "typ": "Verb",
+  "tr": "kadeh kaldırmak, kadeh tokuşturmak",
+  "formen": "stößt an, hat angestoßen",
+  "beispiel": "Wir stoßen auf das junge Paar an."
+ },
+ {
+  "id": 7847,
+  "de": "schmücken",
+  "typ": "Verb",
+  "tr": "süslemek",
+  "formen": "schmückt, hat geschmückt",
+  "beispiel": "Die Kinder schmücken den Saal für die Feier."
+ },
+ {
+  "id": 7848,
+  "de": "ähneln",
+  "typ": "Verb",
+  "tr": "benzemek",
+  "formen": "ähnelt, hat geähnelt",
+  "beispiel": "Meine Tochter ähnelt ihrer Oma sehr."
+ },
+ {
+  "id": 7849,
+  "de": "zusammenhalten",
+  "typ": "Verb",
+  "tr": "birlik olmak, kenetlenmek",
+  "formen": "hält zusammen, hat zusammengehalten",
+  "beispiel": "In schweren Zeiten hält unsere Familie zusammen."
+ },
+ {
+  "id": 7850,
+  "de": "taufen",
+  "typ": "Verb",
+  "tr": "vaftiz etmek",
+  "formen": "tauft, hat getauft",
+  "beispiel": "Das Baby wird am Sonntag getauft."
+ },
+ {
+  "id": 7851,
+  "de": "kuscheln",
+  "typ": "Verb",
+  "tr": "sarılıp yatmak, sokulmak",
+  "formen": "kuschelt, hat gekuschelt",
+  "beispiel": "Abends kuscheln wir auf dem Sofa."
+ },
+ {
+  "id": 7852,
+  "de": "trauern",
+  "typ": "Verb",
+  "tr": "yas tutmak",
+  "formen": "trauert, hat getrauert",
+  "beispiel": "Die Familie trauert um den Großvater."
+ },
+ {
+  "id": 7853,
+  "de": "überreichen",
+  "typ": "Verb",
+  "tr": "takdim etmek, elden vermek",
+  "formen": "überreicht, hat überreicht",
+  "beispiel": "Am Ende der Feier überreicht er den Gästen kleine Geschenke."
+ },
+ {
+  "id": 7854,
+  "de": "bewirten",
+  "typ": "Verb",
+  "tr": "ağırlamak, ikram etmek",
+  "formen": "bewirtet, hat bewirtet",
+  "beispiel": "Sie bewirtet ihre Gäste mit Kuchen und Tee."
+ },
+ {
+  "id": 7855,
+  "de": "hüten",
+  "typ": "Verb",
+  "tr": "bakmak, göz kulak olmak",
+  "formen": "hütet, hat gehütet",
+  "beispiel": "Am Samstag hüte ich die Kinder meiner Schwester."
+ },
+ {
+  "id": 7856,
+  "de": "vorbeischauen",
+  "typ": "Verb",
+  "tr": "uğramak, şöyle bir uğrayıp bakmak",
+  "formen": "schaut vorbei, hat vorbeigeschaut",
+  "beispiel": "Schau doch am Sonntag bei uns vorbei!"
+ },
+ {
+  "id": 7857,
+  "de": "auskommen",
+  "typ": "Verb",
+  "tr": "geçinmek (biriyle), anlaşmak",
+  "formen": "kommt aus, ist ausgekommen",
+  "beispiel": "Ich komme mit meinen Nachbarn gut aus."
+ },
+ {
+  "id": 7858,
+  "de": "zusammenleben",
+  "typ": "Verb",
+  "tr": "birlikte yaşamak",
+  "formen": "lebt zusammen, hat zusammengelebt",
+  "beispiel": "In diesem Haus leben drei Generationen zusammen."
+ },
+ {
+  "id": 7859,
+  "de": "stillen",
+  "typ": "Verb",
+  "tr": "emzirmek",
+  "formen": "stillt, hat gestillt",
+  "beispiel": "Die Mutter stillt ihr Baby noch."
+ },
+ {
+  "id": 7860,
+  "de": "beistehen",
+  "typ": "Verb",
+  "tr": "yanında olmak, destek olmak",
+  "formen": "steht bei, hat beigestanden",
+  "beispiel": "Meine Freunde stehen mir immer bei."
+ },
+ {
+  "id": 7861,
+  "de": "kinderlos",
+  "typ": "Sonstiges",
+  "tr": "çocuksuz",
+  "formen": "",
+  "beispiel": "Das Ehepaar ist seit zehn Jahren kinderlos."
+ },
+ {
+  "id": 7862,
+  "de": "getrennt",
+  "typ": "Sonstiges",
+  "tr": "ayrı, ayrılmış",
+  "formen": "",
+  "beispiel": "Meine Eltern leben seit einem Jahr getrennt."
+ },
+ {
+  "id": 7863,
+  "de": "gegenseitig",
+  "typ": "Sonstiges",
+  "tr": "karşılıklı",
+  "formen": "",
+  "beispiel": "In einer Familie ist gegenseitige Hilfe wichtig.",
+  "ayniAnlam": [
+   "wechselseitig (C1)"
+  ]
+ },
+ {
+  "id": 7864,
+  "de": "festlich",
+  "typ": "Sonstiges",
+  "tr": "bayramlık, şenlikli",
+  "formen": "",
+  "beispiel": "Alle Gäste sind festlich gekleidet."
+ },
+ {
+  "id": 7865,
+  "de": "feierlich",
+  "typ": "Sonstiges",
+  "tr": "törensel, ağırbaşlı",
+  "formen": "",
+  "beispiel": "Die Rede des Vaters war sehr feierlich."
+ },
+ {
+  "id": 7866,
+  "de": "häuslich",
+  "typ": "Sonstiges",
+  "tr": "eve düşkün, ev işlerine yatkın",
+  "formen": "",
+  "beispiel": "Mein Bruder ist sehr häuslich und kocht jeden Abend."
+ },
+ {
+  "id": 7867,
+  "de": "artig",
+  "typ": "Sonstiges",
+  "tr": "uslu, terbiyeli",
+  "formen": "",
+  "beispiel": "Die Kinder waren beim Besuch sehr artig."
+ },
+ {
+  "id": 7868,
+  "de": "ungezogen",
+  "typ": "Sonstiges",
+  "tr": "yaramaz, terbiyesiz",
+  "formen": "",
+  "beispiel": "Sei nicht so ungezogen zu deiner Oma!"
+ },
+ {
+  "id": 7869,
+  "de": "nervig",
+  "typ": "Sonstiges",
+  "tr": "sinir bozucu",
+  "formen": "",
+  "beispiel": "Mein kleiner Bruder ist manchmal richtig nervig."
+ },
+ {
+  "id": 7870,
+  "de": "unverheiratet",
+  "typ": "Sonstiges",
+  "tr": "evli olmayan, bekâr",
+  "formen": "",
+  "beispiel": "Meine Tante ist immer noch unverheiratet."
+ },
+ {
+  "id": 7871,
+  "de": "untereinander",
+  "typ": "Sonstiges",
+  "tr": "kendi aralarında, birbirleriyle",
+  "formen": "",
+  "beispiel": "Die Geschwister helfen sich untereinander."
+ },
+ {
+  "id": 7872,
+  "de": "füreinander",
+  "typ": "Sonstiges",
+  "tr": "birbiri için",
+  "formen": "",
+  "beispiel": "Gute Freunde sind immer füreinander da."
+ },
+ {
+  "id": 7873,
+  "de": "stur",
+  "typ": "Sonstiges",
+  "tr": "inatçı, dik kafalı",
+  "formen": "",
+  "beispiel": "Mein Opa ist manchmal sehr stur."
+ },
+ {
+  "id": 7874,
+  "de": "verwöhnt",
+  "typ": "Sonstiges",
+  "tr": "şımarık",
+  "formen": "",
+  "beispiel": "Das Kind ist von seinen Großeltern ziemlich verwöhnt."
+ },
+ {
+  "id": 7875,
+  "de": "alleinstehend",
+  "typ": "Sonstiges",
+  "tr": "bekâr, yalnız yaşayan",
+  "formen": "",
+  "beispiel": "Sie ist alleinstehend und wohnt mit ihrer Katze."
+ },
+ {
+  "id": 7876,
+  "de": "fürsorglich",
+  "typ": "Sonstiges",
+  "tr": "şefkatli, ilgili",
+  "formen": "",
+  "beispiel": "Meine Mutter ist sehr fürsorglich."
+ },
+ {
+  "id": 7877,
+  "de": "sich entspannen",
+  "typ": "Verb",
+  "tr": "rahatlamak, gevşemek",
+  "formen": "entspannt sich, hat sich entspannt",
+  "beispiel": "Nach der Arbeit entspanne ich mich am liebsten mit Musik."
+ },
+ {
+  "id": 7878,
+  "de": "angeln",
+  "typ": "Verb",
+  "tr": "balık tutmak",
+  "formen": "angelt, hat geangelt",
+  "beispiel": "Mein Opa angelt jeden Sonntag am See."
+ },
+ {
+  "id": 7879,
+  "de": "turnen",
+  "typ": "Verb",
+  "tr": "jimnastik yapmak, cimnastik yapmak",
+  "formen": "turnt, hat geturnt",
+  "beispiel": "Die Kinder turnen zweimal pro Woche in der Schule."
+ },
+ {
+  "id": 7880,
+  "de": "segeln",
+  "typ": "Verb",
+  "tr": "yelken yapmak, yelkenle gitmek",
+  "formen": "segelt, ist gesegelt",
+  "beispiel": "Im Sommer segeln wir oft auf dem Bodensee."
+ },
+ {
+  "id": 7881,
+  "de": "würfeln",
+  "typ": "Verb",
+  "tr": "zar atmak",
+  "formen": "würfelt, hat gewürfelt",
+  "beispiel": "Du bist dran, jetzt musst du würfeln."
+ },
+ {
+  "id": 7882,
+  "de": "stricken",
+  "typ": "Verb",
+  "tr": "örgü örmek",
+  "formen": "strickt, hat gestrickt",
+  "beispiel": "Meine Mutter strickt mir einen warmen Pullover."
+ },
+ {
+  "id": 7883,
+  "de": "mitspielen",
+  "typ": "Verb",
+  "tr": "birlikte oynamak, oyuna katılmak",
+  "formen": "spielt mit, hat mitgespielt",
+  "beispiel": "Darf ich bei eurem Spiel mitspielen?"
+ },
+ {
+  "id": 7884,
+  "de": "veranstalten",
+  "typ": "Verb",
+  "tr": "düzenlemek, tertip etmek",
+  "formen": "veranstaltet, hat veranstaltet",
+  "beispiel": "Unser Verein veranstaltet im Juni ein großes Sommerfest."
+ },
+ {
+  "id": 7885,
+  "de": "abschalten",
+  "typ": "Verb",
+  "tr": "kafa dağıtmak, kapatmak",
+  "formen": "schaltet ab, hat abgeschaltet",
+  "beispiel": "Beim Wandern kann ich richtig gut abschalten."
+ },
+ {
+  "id": 7886,
+  "de": "rudern",
+  "typ": "Verb",
+  "tr": "kürek çekmek",
+  "formen": "rudert, ist gerudert",
+  "beispiel": "Wir sind mit dem Boot bis zur kleinen Insel gerudert."
+ },
+ {
+  "id": 7887,
+  "de": "boxen",
+  "typ": "Verb",
+  "tr": "boks yapmak",
+  "formen": "boxt, hat geboxt",
+  "beispiel": "Mein Bruder boxt seit drei Jahren in einem Club."
+ },
+ {
+  "id": 7888,
+  "de": "musizieren",
+  "typ": "Verb",
+  "tr": "müzik yapmak, çalgı çalmak",
+  "formen": "musiziert, hat musiziert",
+  "beispiel": "Am Wochenende musizieren wir zusammen im Wohnzimmer."
+ },
+ {
+  "id": 7889,
+  "de": "trommeln",
+  "typ": "Verb",
+  "tr": "davul çalmak, trampet çalmak",
+  "formen": "trommelt, hat getrommelt",
+  "beispiel": "Der Junge trommelt laut auf einem alten Eimer."
+ },
+ {
+  "id": 7890,
+  "de": "blättern",
+  "typ": "Verb",
+  "tr": "sayfa çevirmek, karıştırmak (kitap)",
+  "formen": "blättert, hat geblättert",
+  "beispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift."
+ },
+ {
+  "id": 7891,
+  "de": "ausleihen",
+  "typ": "Verb",
+  "tr": "ödünç almak, kiralamak",
+  "formen": "leiht aus, hat ausgeliehen",
+  "beispiel": "Ich möchte drei Bücher für zwei Wochen ausleihen."
+ },
+ {
+  "id": 7892,
+  "de": "jubeln",
+  "typ": "Verb",
+  "tr": "sevinç çığlığı atmak, tezahürat yapmak",
+  "formen": "jubelt, hat gejubelt",
+  "beispiel": "Nach dem letzten Tor jubelten alle im Stadion."
+ },
+ {
+  "id": 7893,
+  "de": "klatschen",
+  "typ": "Verb",
+  "tr": "alkışlamak, el çırpmak",
+  "formen": "klatscht, hat geklatscht",
+  "beispiel": "Am Ende des Konzerts klatschte das Publikum sehr lange."
+ },
+ {
+  "id": 7894,
+  "de": "pfeifen",
+  "typ": "Verb",
+  "tr": "ıslık çalmak, düdük çalmak",
+  "formen": "pfeift, hat gepfiffen",
+  "beispiel": "Der Schiedsrichter pfeift und das Spiel ist zu Ende."
+ },
+ {
+  "id": 7895,
+  "de": "plaudern",
+  "typ": "Verb",
+  "tr": "sohbet etmek, çene çalmak",
+  "formen": "plaudert, hat geplaudert",
+  "beispiel": "Nach dem Kurs plaudern wir noch eine halbe Stunde im Café."
+ },
+ {
+  "id": 7896,
+  "de": "bummeln",
+  "typ": "Verb",
+  "tr": "gezinmek, dolaşmak (vitrin gezmek)",
+  "formen": "bummelt, ist gebummelt",
+  "beispiel": "Am Samstag bummeln wir gern durch die Altstadt."
+ },
+ {
+  "id": 7897,
+  "de": "ausprobieren",
+  "typ": "Verb",
+  "tr": "denemek, tecrübe etmek",
+  "formen": "probiert aus, hat ausprobiert",
+  "beispiel": "Ich möchte dieses Jahr eine neue Sportart ausprobieren."
+ },
+ {
+  "id": 7898,
+  "de": "anschauen",
+  "typ": "Verb",
+  "tr": "izlemek, bakmak",
+  "formen": "schaut an, hat angeschaut",
+  "beispiel": "Heute Abend schauen wir einen alten Film an."
+ },
+ {
+  "id": 7899,
+  "de": "dehnen",
+  "typ": "Verb",
+  "tr": "germek, esnetmek",
+  "formen": "dehnt, hat gedehnt",
+  "beispiel": "Nach dem Laufen dehne ich immer meine Beine."
+ },
+ {
+  "id": 7900,
+  "de": "athletisch",
+  "typ": "Sonstiges",
+  "tr": "atletik",
+  "formen": "",
+  "beispiel": "Sein Bruder ist groß und sehr athletisch."
+ },
+ {
+  "id": 7901,
+  "de": "einfallsreich",
+  "typ": "Sonstiges",
+  "tr": "yaratıcı, buluşçu",
+  "formen": "",
+  "beispiel": "Deine Geschenkidee ist wirklich einfallsreich."
+ },
+ {
+  "id": 7902,
+  "de": "wöchentlich",
+  "typ": "Sonstiges",
+  "tr": "haftalık, haftada bir",
+  "formen": "",
+  "beispiel": "Der Chor trifft sich wöchentlich am Mittwochabend."
+ },
+ {
+  "id": 7903,
+  "de": "täglich",
+  "typ": "Sonstiges",
+  "tr": "günlük, her gün",
+  "formen": "",
+  "beispiel": "Er spielt täglich eine Stunde Gitarre."
+ },
+ {
+  "id": 7904,
+  "de": "nachmittags",
+  "typ": "Sonstiges",
+  "tr": "öğleden sonraları",
+  "formen": "",
+  "beispiel": "Nachmittags gehe ich mit den Kindern auf den Sportplatz."
+ },
+ {
+  "id": 7905,
+  "de": "fit",
+  "typ": "Sonstiges",
+  "tr": "formda, zinde",
+  "formen": "",
+  "beispiel": "Mit dem Rad zur Arbeit zu fahren hält mich fit."
+ },
+ {
+  "id": 7906,
+  "de": "verspielt",
+  "typ": "Sonstiges",
+  "tr": "oyuncu, oyunbaz",
+  "formen": "",
+  "beispiel": "Unser junger Hund ist noch sehr verspielt."
+ },
+ {
+  "id": 7907,
+  "de": "der Sportverein",
+  "typ": "Nomen",
+  "tr": "spor kulübü",
+  "formen": "-e",
+  "beispiel": "Mein Sohn ist seit einem Jahr in einem Sportverein."
+ },
+ {
+  "id": 7908,
+  "de": "die Turnhalle",
+  "typ": "Nomen",
+  "tr": "spor salonu (okul)",
+  "formen": "-n",
+  "beispiel": "Bei Regen findet das Training in der Turnhalle statt."
+ },
+ {
+  "id": 7909,
+  "de": "das Fitnessstudio",
+  "typ": "Nomen",
+  "tr": "spor salonu, fitness merkezi",
+  "formen": "-s",
+  "beispiel": "Ich gehe dreimal pro Woche ins Fitnessstudio."
+ },
+ {
+  "id": 7910,
+  "de": "die Trainerin",
+  "typ": "Nomen",
+  "tr": "antrenör (kadın)",
+  "formen": "-nen",
+  "beispiel": "Unsere Trainerin erklärt die Übung noch einmal."
+ },
+ {
+  "id": 7911,
+  "de": "die Eintrittskarte",
+  "typ": "Nomen",
+  "tr": "giriş bileti",
+  "formen": "-n",
+  "beispiel": "Die Eintrittskarte für das Konzert kostet zwanzig Euro."
+ },
+ {
+  "id": 7912,
+  "de": "die Geige",
+  "typ": "Nomen",
+  "tr": "keman",
+  "formen": "-n",
+  "beispiel": "Meine Tochter lernt seit zwei Jahren Geige."
+ },
+ {
+  "id": 7913,
+  "de": "das Schlagzeug",
+  "typ": "Nomen",
+  "tr": "bateri, davul takımı",
+  "formen": "-e",
+  "beispiel": "Sein Schlagzeug steht im Keller, weil es so laut ist."
+ },
+ {
+  "id": 7914,
+  "de": "der Chor",
+  "typ": "Nomen",
+  "tr": "koro",
+  "formen": "¨-e",
+  "beispiel": "Sie singt seit fünf Jahren in einem kleinen Chor."
+ },
+ {
+  "id": 7915,
+  "de": "das Brettspiel",
+  "typ": "Nomen",
+  "tr": "kutu oyunu, masa oyunu",
+  "formen": "-e",
+  "beispiel": "Am Abend spielen wir oft ein Brettspiel mit den Kindern."
+ },
+ {
+  "id": 7916,
+  "de": "das Schach",
+  "typ": "Nomen",
+  "tr": "satranç",
+  "formen": "(Sg.)",
+  "beispiel": "Mein Großvater hat mir Schach beigebracht."
+ },
+ {
+  "id": 7917,
+  "de": "das Puzzle",
+  "typ": "Nomen",
+  "tr": "yapboz, puzzle",
+  "formen": "-s",
+  "beispiel": "Das Puzzle hat tausend Teile und ist ziemlich schwer."
+ },
+ {
+  "id": 7918,
+  "de": "der Würfel",
+  "typ": "Nomen",
+  "tr": "zar, küp",
+  "formen": "-",
+  "beispiel": "Ein Würfel fehlt, wir können nicht anfangen."
+ },
+ {
+  "id": 7919,
+  "de": "der Freizeitpark",
+  "typ": "Nomen",
+  "tr": "lunapark, eğlence parkı",
+  "formen": "-s",
+  "beispiel": "Im Sommer fahren wir mit der Klasse in einen Freizeitpark."
+ },
+ {
+  "id": 7920,
+  "de": "das Lagerfeuer",
+  "typ": "Nomen",
+  "tr": "kamp ateşi",
+  "formen": "-",
+  "beispiel": "Am Lagerfeuer haben wir bis Mitternacht Lieder gesungen."
+ },
+ {
+  "id": 7921,
+  "de": "der Pinsel",
+  "typ": "Nomen",
+  "tr": "fırça (boya)",
+  "formen": "-",
+  "beispiel": "Wasch bitte den Pinsel nach dem Malen aus."
+ },
+ {
+  "id": 7922,
+  "de": "der Turnschuh",
+  "typ": "Nomen",
+  "tr": "spor ayakkabısı",
+  "formen": "-e",
+  "beispiel": "Für den Kurs brauchst du saubere Turnschuhe."
+ },
+ {
+  "id": 7923,
+  "de": "das Trikot",
+  "typ": "Nomen",
+  "tr": "forma",
+  "formen": "-s",
+  "beispiel": "Er trägt das rote Trikot mit der Nummer neun."
+ },
+ {
+  "id": 7924,
+  "de": "der Torwart",
+  "typ": "Nomen",
+  "tr": "kaleci",
+  "formen": "-e",
+  "beispiel": "Unser Torwart hat heute sehr gut gespielt."
+ },
+ {
+  "id": 7925,
+  "de": "die Halbzeit",
+  "typ": "Nomen",
+  "tr": "devre, devre arası",
+  "formen": "-en",
+  "beispiel": "In der zweiten Halbzeit fielen drei Tore."
+ },
+ {
+  "id": 7926,
+  "de": "das Kartenspiel",
+  "typ": "Nomen",
+  "tr": "kâğıt oyunu, iskambil oyunu",
+  "formen": "-e",
+  "beispiel": "Kennst du ein einfaches Kartenspiel für vier Personen?"
+ },
+ {
+  "id": 7927,
+  "de": "die Zunge",
+  "typ": "Nomen",
+  "tr": "dil",
+  "formen": "-n",
+  "beispiel": "Der Arzt sagt: Bitte zeigen Sie mir Ihre Zunge!"
+ },
+ {
+  "id": 7928,
+  "de": "der Daumen",
+  "typ": "Nomen",
+  "tr": "başparmak",
+  "formen": "-",
+  "beispiel": "Beim Kochen habe ich mir den Daumen verletzt."
+ },
+ {
+  "id": 7929,
+  "de": "das Kinn",
+  "typ": "Nomen",
+  "tr": "çene",
+  "formen": "-e",
+  "beispiel": "Er ist gefallen und hat jetzt eine Wunde am Kinn."
+ },
+ {
+  "id": 7930,
+  "de": "die Stirn",
+  "typ": "Nomen",
+  "tr": "alın",
+  "formen": "-en",
+  "beispiel": "Die Mutter legt dem Kind die Hand auf die Stirn."
+ },
+ {
+  "id": 7931,
+  "de": "die Wange",
+  "typ": "Nomen",
+  "tr": "yanak",
+  "formen": "-n",
+  "beispiel": "Nach dem Sport sind seine Wangen ganz rot."
+ },
+ {
+  "id": 7932,
+  "de": "der Zeh",
+  "typ": "Nomen",
+  "tr": "ayak parmağı",
+  "formen": "-en",
+  "beispiel": "Ich bin gegen den Tisch gelaufen, jetzt tut mein Zeh weh."
+ },
+ {
+  "id": 7933,
+  "de": "der Ellenbogen",
+  "typ": "Nomen",
+  "tr": "dirsek",
+  "formen": "-",
+  "beispiel": "Beim Fahrradfahren ist er gestürzt und hat sich den Ellenbogen aufgeschlagen."
+ },
+ {
+  "id": 7934,
+  "de": "der Nacken",
+  "typ": "Nomen",
+  "tr": "ense, boyun arkası",
+  "formen": "-",
+  "beispiel": "Nach der Arbeit am Computer tut mir der Nacken weh."
+ },
+ {
+  "id": 7935,
+  "de": "die Hüfte",
+  "typ": "Nomen",
+  "tr": "kalça",
+  "formen": "-n",
+  "beispiel": "Meine Oma hat Schmerzen in der Hüfte."
+ },
+ {
+  "id": 7936,
+  "de": "die Lunge",
+  "typ": "Nomen",
+  "tr": "akciğer",
+  "formen": "-n",
+  "beispiel": "Rauchen ist schlecht für die Lunge."
+ },
+ {
+  "id": 7937,
+  "de": "die Leber",
+  "typ": "Nomen",
+  "tr": "karaciğer",
+  "formen": "-n",
+  "beispiel": "Zu viel Alkohol schadet der Leber."
+ },
+ {
+  "id": 7938,
+  "de": "der Knöchel",
+  "typ": "Nomen",
+  "tr": "ayak bileği",
+  "formen": "-",
+  "beispiel": "Beim Fußball habe ich mir den Knöchel verletzt."
+ },
+ {
+  "id": 7939,
+  "de": "das Handgelenk",
+  "typ": "Nomen",
+  "tr": "el bileği",
+  "formen": "-e",
+  "beispiel": "Mein Handgelenk tut weh, wenn ich schreibe."
+ },
+ {
+  "id": 7940,
+  "de": "das Gehirn",
+  "typ": "Nomen",
+  "tr": "beyin",
+  "formen": "-e",
+  "beispiel": "Schlaf ist wichtig für das Gehirn."
+ },
+ {
+  "id": 7941,
+  "de": "die Kopfschmerzen",
+  "typ": "Nomen",
+  "tr": "baş ağrısı",
+  "formen": "(Pl.)",
+  "beispiel": "Ich habe seit gestern Kopfschmerzen und nehme eine Tablette."
+ },
+ {
+  "id": 7942,
+  "de": "die Halsschmerzen",
+  "typ": "Nomen",
+  "tr": "boğaz ağrısı",
+  "formen": "(Pl.)",
+  "beispiel": "Bei Halsschmerzen trinke ich immer Tee mit Honig."
+ },
+ {
+  "id": 7943,
+  "de": "die Zahnschmerzen",
+  "typ": "Nomen",
+  "tr": "diş ağrısı",
+  "formen": "(Pl.)",
+  "beispiel": "Wegen der Zahnschmerzen konnte ich nachts nicht schlafen."
+ },
+ {
+  "id": 7944,
+  "de": "die Rückenschmerzen",
+  "typ": "Nomen",
+  "tr": "sırt ağrısı, bel ağrısı",
+  "formen": "(Pl.)",
+  "beispiel": "Viele Menschen im Büro haben Rückenschmerzen."
+ },
+ {
+  "id": 7945,
+  "de": "der Durchfall",
+  "typ": "Nomen",
+  "tr": "ishal",
+  "formen": "(Sg.)",
+  "beispiel": "Nach dem Essen im Urlaub hatte ich Durchfall."
+ },
+ {
+  "id": 7946,
+  "de": "die Migräne",
+  "typ": "Nomen",
+  "tr": "migren",
+  "formen": "-n",
+  "beispiel": "Meine Schwester hat oft Migräne und braucht dann Ruhe."
+ },
+ {
+  "id": 7947,
+  "de": "das Nasenbluten",
+  "typ": "Nomen",
+  "tr": "burun kanaması",
+  "formen": "(Sg.)",
+  "beispiel": "Das Kind hat Nasenbluten, hol bitte ein Taschentuch."
+ },
+ {
+  "id": 7948,
+  "de": "der Rettungswagen",
+  "typ": "Nomen",
+  "tr": "ambulans, cankurtaran",
+  "formen": "-",
+  "beispiel": "Der Rettungswagen bringt den Mann ins Krankenhaus."
+ },
+ {
+  "id": 7949,
+  "de": "der Augenarzt",
+  "typ": "Nomen",
+  "tr": "göz doktoru",
+  "formen": "¨-e",
+  "beispiel": "Der Augenarzt hat gesagt, ich brauche eine neue Brille."
+ },
+ {
+  "id": 7950,
+  "de": "der Kinderarzt",
+  "typ": "Nomen",
+  "tr": "çocuk doktoru",
+  "formen": "¨-e",
+  "beispiel": "Wir haben morgen einen Termin beim Kinderarzt."
+ },
+ {
+  "id": 7951,
+  "de": "das Krankenzimmer",
+  "typ": "Nomen",
+  "tr": "hasta odası",
+  "formen": "-",
+  "beispiel": "Im Krankenzimmer liegen zwei Patienten."
+ },
+ {
+  "id": 7952,
+  "de": "der Notarzt",
+  "typ": "Nomen",
+  "tr": "acil doktoru",
+  "formen": "¨-e",
+  "beispiel": "Nach dem Unfall kam der Notarzt sehr schnell."
+ }
+]

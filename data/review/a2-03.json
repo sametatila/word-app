@@ -1,0 +1,1037 @@
+[
+ {
+  "id": 1119,
+  "de": "nützlich",
+  "typ": "Sonstiges",
+  "tr": "yararlı, faydalı",
+  "formen": "",
+  "beispiel": "Danke für den Tipp. Er war sehr nützlich."
+ },
+ {
+  "id": 1120,
+  "de": "das Ohr",
+  "typ": "Nomen",
+  "tr": "kulak",
+  "formen": "-en",
+  "beispiel": "Ich habe Ohrenschmerzen."
+ },
+ {
+  "id": 1121,
+  "de": "online",
+  "typ": "Sonstiges",
+  "tr": "çevrimiçi",
+  "formen": "",
+  "beispiel": "Wann bist du wieder online? Ich habe hier kein Internet. Ich bin erst heute Abend wieder online. Sie können das Geld auc"
+ },
+ {
+  "id": 1122,
+  "de": "die Orange",
+  "typ": "Nomen",
+  "tr": "portakal",
+  "formen": "-n",
+  "beispiel": "Ich esse gern Orangen."
+ },
+ {
+  "id": 1123,
+  "de": "organisieren",
+  "typ": "Verb",
+  "tr": "organize etmek, düzenlemek",
+  "formen": "organisiert, hat organisiert",
+  "beispiel": "Frau Gomez organisiert unseren Ausflug. Hast du schon alles für deinen Urlaub organisiert?"
+ },
+ {
+  "id": 1124,
+  "de": "das Paar",
+  "typ": "Nomen",
+  "tr": "çift",
+  "formen": "-e",
+  "beispiel": "Romeo und Julia sind ein Paar. Ich brauche ein Paar Schuhe.",
+  "ayniAnlam": [
+   "Doppel- (B1)"
+  ]
+ },
+ {
+  "id": 1125,
+  "de": "ein paar",
+  "typ": "Sonstiges",
+  "tr": "birkaç",
+  "formen": "",
+  "beispiel": "Wir fahren ein paar Tage ans Meer. Hast du ein paar Minuten Zeit?",
+  "ayniAnlam": [
+   "(ein) paar (B1)"
+  ]
+ },
+ {
+  "id": 1126,
+  "de": "packen",
+  "typ": "Verb",
+  "tr": "paketlemek, (bavul) toplamak",
+  "formen": "packt, hat gepackt",
+  "beispiel": "Ich muss noch meinen Koffer packen."
+ },
+ {
+  "id": 1127,
+  "de": "das Parfüm",
+  "typ": "Nomen",
+  "tr": "parfüm",
+  "formen": "-s",
+  "beispiel": "Ich suche ein Parfum als Geschenk für meine Frau."
+ },
+ {
+  "id": 1128,
+  "de": "parken",
+  "typ": "Verb",
+  "tr": "park etmek",
+  "formen": "parkt, hat geparkt",
+  "beispiel": "Darf ich hier parken? Hier ist Parken verboten."
+ },
+ {
+  "id": 1129,
+  "de": "passen",
+  "typ": "Verb",
+  "tr": "uymak, uygun olmak",
+  "formen": "passt, hat gepasst",
+  "beispiel": "Die Bluse passt mir nicht. Welches Wort passt? Wählen Sie."
+ },
+ {
+  "id": 1130,
+  "de": "das Passwort",
+  "typ": "Nomen",
+  "tr": "şifre, parola",
+  "formen": "¨-er",
+  "beispiel": "Bitte schreiben Sie Ihr Passwort. Sie brauchen ein Passwort. Ich habe mein Passwort vergessen."
+ },
+ {
+  "id": 1131,
+  "de": "die Person",
+  "typ": "Nomen",
+  "tr": "kişi, şahıs",
+  "formen": "-en",
+  "beispiel": "Eintritt pro Person: 5 Euro."
+ },
+ {
+  "id": 1132,
+  "de": "die Pflanze",
+  "typ": "Nomen",
+  "tr": "bitki",
+  "formen": "-n",
+  "beispiel": "Können Sie sich bitte um unsere Pflanzen kümmern? Wir sind nächste Woche im Urlaub."
+ },
+ {
+  "id": 1133,
+  "de": "das Plakat",
+  "typ": "Nomen",
+  "tr": "afiş, poster",
+  "formen": "-e",
+  "beispiel": "Wir machen im Unterricht ein Plakat zum Thema „Essen und Trinken“."
+ },
+ {
+  "id": 1134,
+  "de": "planen",
+  "typ": "Verb",
+  "tr": "planlamak",
+  "formen": "plant, hat geplant",
+  "beispiel": "Wir sollen zusammen eine Klassenparty planen. Morgen schwimmen ... ist ein guter Plan."
+ },
+ {
+  "id": 1135,
+  "de": "plötzlich",
+  "typ": "Sonstiges",
+  "tr": "aniden, birdenbire",
+  "formen": "",
+  "beispiel": "Plötzlich war das Licht aus."
+ },
+ {
+  "id": 1136,
+  "de": "die Pommes frites (Pl.)",
+  "typ": "Nomen",
+  "tr": "patates kızartması",
+  "formen": "",
+  "beispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
+  "ayniAnlam": [
+   "die Pommes (A2)"
+  ]
+ },
+ {
+  "id": 1137,
+  "de": "die Portion",
+  "typ": "Nomen",
+  "tr": "porsiyon",
+  "formen": "-en",
+  "beispiel": "Ich nehme eine kleine Portion Eis."
+ },
+ {
+  "id": 1138,
+  "de": "praktisch",
+  "typ": "Sonstiges",
+  "tr": "pratik, kullanışlı",
+  "formen": "",
+  "beispiel": "Mit meinem neuen Handy kann ich auch im Internet surfen und Fotos machen. Das finde ich sehr praktisch."
+ },
+ {
+  "id": 1139,
+  "de": "preiswert",
+  "typ": "Sonstiges",
+  "tr": "uygun fiyatlı, ucuz",
+  "formen": "",
+  "beispiel": "Die Jacke ist sehr preiswert. Sie kostet nur 15 Euro.",
+  "ayniAnlam": [
+   "günstig (A1)"
+  ]
+ },
+ {
+  "id": 1140,
+  "de": "privat",
+  "typ": "Sonstiges",
+  "tr": "özel",
+  "formen": "",
+  "beispiel": "Das ist meine Nummer im Büro und das ist meine private Handynummer. Dieser Strand ist privat. Wir dürfen hier nicht schw",
+  "ayniAnlam": [
+   "speziell (B1)"
+  ]
+ },
+ {
+  "id": 1141,
+  "de": "pro",
+  "typ": "Sonstiges",
+  "tr": "başına, her biri için",
+  "formen": "",
+  "beispiel": "Das Zimmer kostet 100 Euro pro Nacht."
+ },
+ {
+  "id": 1142,
+  "de": "probieren",
+  "typ": "Verb",
+  "tr": "denemek, tatmak",
+  "formen": "probiert, hat probiert",
+  "beispiel": "Möchten Sie den Käse probieren? Die Tür geht schwer auf. Probier mal!"
+ },
+ {
+  "id": 1143,
+  "de": "das Produkt",
+  "typ": "Nomen",
+  "tr": "ürün",
+  "formen": "-e",
+  "beispiel": "Unsere Produkte haben eine sehr hohe Qualität."
+ },
+ {
+  "id": 1144,
+  "de": "das Programm",
+  "typ": "Nomen",
+  "tr": "program",
+  "formen": "-e",
+  "beispiel": "Dieses Programm im Radio interessiert mich nicht. Was kommt heute im Kino? Hast du das Programm hier?"
+ },
+ {
+  "id": 1145,
+  "de": "das Projekt",
+  "typ": "Nomen",
+  "tr": "proje",
+  "formen": "-e",
+  "beispiel": "Wir machen ein Projekt über Sehenswürdigkeiten in unserer Stadt."
+ },
+ {
+  "id": 1146,
+  "de": "prüfen",
+  "typ": "Verb",
+  "tr": "kontrol etmek, incelemek",
+  "formen": "prüft, hat geprüft",
+  "beispiel": "Bitte prüfen Sie die Rechnung sofort."
+ },
+ {
+  "id": 1147,
+  "de": "putzen",
+  "typ": "Verb",
+  "tr": "temizlemek",
+  "formen": "putzt, hat geputzt",
+  "beispiel": "Ich muss heute noch das Bad putzen.",
+  "ayniAnlam": [
+   "reinigen (B1)",
+   "säubern (A2)"
+  ]
+ },
+ {
+  "id": 1148,
+  "de": "die Qualität",
+  "typ": "Nomen",
+  "tr": "kalite",
+  "formen": "-en",
+  "beispiel": "Dieser Fernseher hat eine gute Qualität. Ich finde die Qualität wichtiger als den Preis."
+ },
+ {
+  "id": 1149,
+  "de": "das Rathaus",
+  "typ": "Nomen",
+  "tr": "belediye binası, belediye",
+  "formen": "¨-er",
+  "beispiel": "Das Formular bekommen Sie im Rathaus. Sie müssen sich im Rathaus anmelden."
+ },
+ {
+  "id": 1150,
+  "de": "rechnen",
+  "typ": "Verb",
+  "tr": "hesaplamak",
+  "formen": "rechnet, hat gerechnet",
+  "beispiel": "Sarah kann gut rechnen.",
+  "ayniAnlam": [
+   "berechnen (B1)"
+  ]
+ },
+ {
+  "id": 1151,
+  "de": "reden",
+  "typ": "Verb",
+  "tr": "konuşmak",
+  "formen": "redet, hat geredet",
+  "beispiel": "Mit meiner Freundin kann ich über alles reden. Rede nicht so viel!",
+  "ayniAnlam": [
+   "sprechen (A1)"
+  ]
+ },
+ {
+  "id": 1152,
+  "de": "reich",
+  "typ": "Sonstiges",
+  "tr": "zengin",
+  "formen": "",
+  "beispiel": "Lotte ist reich. Sie hat sehr viel Geld."
+ },
+ {
+  "id": 1153,
+  "de": "der Reifen",
+  "typ": "Nomen",
+  "tr": "lastik",
+  "formen": "-",
+  "beispiel": "Ich brauche neue Reifen für mein Auto."
+ },
+ {
+  "id": 1154,
+  "de": "die Reihe",
+  "typ": "Nomen",
+  "tr": "sıra",
+  "formen": "-n",
+  "beispiel": "Ich habe Karten für das Konzert. Wir sitzen in der dritten Reihe. Wer ist jetzt an der Reihe?"
+ },
+ {
+  "id": 1155,
+  "de": "die Reinigung",
+  "typ": "Nomen",
+  "tr": "kuru temizleme; temizlik",
+  "formen": "-en",
+  "beispiel": "Bringst du bitte die Bluse in die Reinigung? Man darf sie nicht in der Waschmaschine waschen."
+ },
+ {
+  "id": 1156,
+  "de": "renovieren",
+  "typ": "Verb",
+  "tr": "yenilemek, tadilat yapmak",
+  "formen": "renoviert, hat renoviert",
+  "beispiel": "Wir renovieren das ganze Haus."
+ },
+ {
+  "id": 1157,
+  "de": "der Rentner",
+  "typ": "Nomen",
+  "tr": "emekli",
+  "formen": "- / die Rentnerin, -nen",
+  "beispiel": "Mein Onkel arbeitet nicht mehr. Er ist Rentner.",
+  "ayniAnlam": [
+   "der Pensionist (B1)",
+   "pensioniert (A2)"
+  ]
+ },
+ {
+  "id": 1158,
+  "de": "reservieren",
+  "typ": "Verb",
+  "tr": "rezervasyon yapmak, ayırtmak",
+  "formen": "reserviert, reservierte, hat reserviert",
+  "beispiel": "Reservieren Sie bitte ein Doppelzimmer. Ich möchte gern einen Tisch für fünf Personen reservieren.",
+  "ayniAnlam": [
+   "buchen (A2)"
+  ]
+ },
+ {
+  "id": 1159,
+  "de": "der Rest",
+  "typ": "Nomen",
+  "tr": "geri kalan, kalan kısım, artık",
+  "formen": "-e",
+  "beispiel": "Hier sind 50 Euro. Den Rest gebe ich dir später. Es ist noch ein Rest Suppe da. Möchtest du noch?"
+ },
+ {
+  "id": 1160,
+  "de": "das Rezept",
+  "typ": "Nomen",
+  "tr": "tarif; reçete",
+  "formen": "-e",
+  "beispiel": "Dieser Kuchen schmeckt super! Kannst du mir bitte das Rezept geben? Dieses Medikament gibt es nur auf Rezept."
+ },
+ {
+  "id": 1161,
+  "de": "das Rind",
+  "typ": "Nomen",
+  "tr": "sığır, sığır eti",
+  "formen": "",
+  "beispiel": "Ich esse nur Fleisch vom Rind."
+ },
+ {
+  "id": 1162,
+  "de": "der Rock",
+  "typ": "Nomen",
+  "tr": "etek",
+  "formen": "¨-e",
+  "beispiel": "Der Rock ist zu eng."
+ },
+ {
+  "id": 1163,
+  "de": "romantisch",
+  "typ": "Sonstiges",
+  "tr": "romantik",
+  "formen": "",
+  "beispiel": "Dieser Film ist sehr romantisch. Meine Freundin ist total romantisch."
+ },
+ {
+  "id": 1164,
+  "de": "die Rose",
+  "typ": "Nomen",
+  "tr": "gül",
+  "formen": "-n",
+  "beispiel": "Er schenkt seiner Freundin rote Rosen zum Geburtstag."
+ },
+ {
+  "id": 1165,
+  "de": "der Rücken",
+  "typ": "Nomen",
+  "tr": "sırt",
+  "formen": "-",
+  "beispiel": "Mein Rücken tut mir weh."
+ },
+ {
+  "id": 1166,
+  "de": "rufen",
+  "typ": "Verb",
+  "tr": "çağırmak, seslenmek",
+  "formen": "ruft, hat gerufen",
+  "beispiel": "Rufst du bitte die Kinder. Das Essen ist fertig. Wir müssen einen Arzt rufen."
+ },
+ {
+  "id": 1167,
+  "de": "die Ruhe",
+  "typ": "Nomen",
+  "tr": "sessizlik, huzur, dinlenme",
+  "formen": "(Sg.)",
+  "beispiel": "Ruhe, bitte! Hier in der Bibliothek darf man nicht laut sprechen. Meine Großmutter ist krank. Sie braucht viel Ruhe."
+ },
+ {
+  "id": 1168,
+  "de": "rund",
+  "typ": "Sonstiges",
+  "tr": "yuvarlak; yaklaşık",
+  "formen": "",
+  "beispiel": "Unser Wohnzimmertisch ist rund. Bis Berlin sind es noch rund 80 Kilometer."
+ },
+ {
+  "id": 1169,
+  "de": "der Rundgang",
+  "typ": "Nomen",
+  "tr": "tur, gezinti",
+  "formen": "¨-e",
+  "beispiel": "Der Rundgang durch das Schloss beginnt in wenigen Minuten."
+ },
+ {
+  "id": 1170,
+  "de": "sammeln",
+  "typ": "Verb",
+  "tr": "toplamak, biriktirmek",
+  "formen": "sammelt, hat gesammelt",
+  "beispiel": "Peter sammelt Briefmarken. Im Herbst sammeln wir im Wald bunte Blätter."
+ },
+ {
+  "id": 1172,
+  "de": "sauber",
+  "typ": "Sonstiges",
+  "tr": "temiz",
+  "formen": "",
+  "beispiel": "Bringen Sie mir bitte ein sauberes Glas!"
+ },
+ {
+  "id": 1173,
+  "de": "sauer",
+  "typ": "Sonstiges",
+  "tr": "ekşi; kızgın, sinirli",
+  "formen": "",
+  "beispiel": "Zitronen sind mir zu sauer. Was ist los? – Ich bin sauer. Ich muss am Wochenende zu Hause bleiben und darf nicht mit mei"
+ },
+ {
+  "id": 1174,
+  "de": "schädlich",
+  "typ": "Sonstiges",
+  "tr": "zararlı",
+  "formen": "",
+  "beispiel": "Rauchen ist schädlich für die Gesundheit."
+ },
+ {
+  "id": 1175,
+  "de": "schaffen",
+  "typ": "Verb",
+  "tr": "başarmak, becermek",
+  "formen": "schafft, hat geschafft",
+  "beispiel": "Kannst du mir bitte helfen? Ich schaffe das nicht alleine. Geschafft! Das Projekt ist endlich fertig."
+ },
+ {
+  "id": 1176,
+  "de": "scharf",
+  "typ": "Sonstiges",
+  "tr": "acı (baharatlı); keskin",
+  "formen": "",
+  "beispiel": "Die Suppe ist mir zu scharf. Pass auf! Das Messer ist sehr scharf."
+ },
+ {
+  "id": 1177,
+  "de": "die Schere",
+  "typ": "Nomen",
+  "tr": "makas",
+  "formen": "-n",
+  "beispiel": "Die Schere schneidet nicht gut. Hast du eine andere?"
+ },
+ {
+  "id": 1178,
+  "de": "schimpfen",
+  "typ": "Verb",
+  "tr": "yakınmak, söylenmek; azarlamak",
+  "formen": "schimpft, hat geschimpft",
+  "beispiel": "Warum schimpfst du denn so laut? – Ich ärgere mich über mein Auto. Alle schimpfen über/auf das Wetter."
+ },
+ {
+  "id": 1179,
+  "de": "der Schirm",
+  "typ": "Nomen",
+  "tr": "şemsiye",
+  "formen": "",
+  "beispiel": "Nimm den Schirm mit, es regnet."
+ },
+ {
+  "id": 1180,
+  "de": "das Schlafzimmer",
+  "typ": "Nomen",
+  "tr": "yatak odası",
+  "formen": "",
+  "beispiel": "- Hier ist das Schlafzimmer."
+ },
+ {
+  "id": 1181,
+  "de": "schlimm",
+  "typ": "Sonstiges",
+  "tr": "kötü, ciddi",
+  "formen": "",
+  "beispiel": "Kein Problem, das ist nicht so schlimm."
+ },
+ {
+  "id": 1182,
+  "de": "das Schloss",
+  "typ": "Nomen",
+  "tr": "şato, kale; kilit",
+  "formen": "¨-er",
+  "beispiel": "Am Wochenende besichtigen wir Schloss Neuschwanstein. An unserer Tür ist das Schloss kaputt."
+ },
+ {
+  "id": 1183,
+  "de": "schmutzig",
+  "typ": "Sonstiges",
+  "tr": "kirli",
+  "formen": "",
+  "beispiel": "Das Handtuch ist schmutzig."
+ },
+ {
+  "id": 1184,
+  "de": "der Schnee",
+  "typ": "Nomen",
+  "tr": "kar",
+  "formen": "(Sg.)",
+  "beispiel": "In den Bergen liegt viel Schnee."
+ },
+ {
+  "id": 1186,
+  "de": "schneien",
+  "typ": "Verb",
+  "tr": "kar yağmak",
+  "formen": "schneit, hat geschneit",
+  "beispiel": "Heute Nacht hat es geschneit."
+ },
+ {
+  "id": 1187,
+  "de": "schrecklich",
+  "typ": "Sonstiges",
+  "tr": "korkunç, berbat",
+  "formen": "",
+  "beispiel": "Ich finde ihren Rock schrecklich. Er sieht furchtbar aus! Ich finde den Film schrecklich. Er macht mir Angst.",
+  "ayniAnlam": [
+   "furchtbar (A2)"
+  ]
+ },
+ {
+  "id": 1188,
+  "de": "schriftlich",
+  "typ": "Sonstiges",
+  "tr": "yazılı",
+  "formen": "",
+  "beispiel": "Sie müssen sich schriftlich anmelden. Die schriftliche Prüfung dauert 70 Minuten."
+ },
+ {
+  "id": 1189,
+  "de": "schwach",
+  "typ": "Sonstiges",
+  "tr": "zayıf, güçsüz",
+  "formen": "",
+  "beispiel": "Er ist krank und schwach. Ich fühle mich sehr schwach. Die Tabletten sind zu schwach. Sie helfen nicht."
+ },
+ {
+  "id": 1190,
+  "de": "schwanger",
+  "typ": "Sonstiges",
+  "tr": "hamile",
+  "formen": "",
+  "beispiel": "Lena ist schwanger. Sie bekommt im Juli ein Kind."
+ },
+ {
+  "id": 1191,
+  "de": "das Schwein",
+  "typ": "Nomen",
+  "tr": "domuz",
+  "formen": "-e",
+  "beispiel": "Ich esse kein Schweinefleisch."
+ },
+ {
+  "id": 1192,
+  "de": "schwierig",
+  "typ": "Sonstiges",
+  "tr": "zor",
+  "formen": "",
+  "beispiel": "Die Prüfung war nicht schwierig."
+ },
+ {
+  "id": 1193,
+  "de": "die See",
+  "typ": "Nomen",
+  "tr": "deniz",
+  "formen": "(Sg)",
+  "beispiel": "Die See ist heute ruhig. Wir machen Urlaub an der Nordsee.",
+  "ayniAnlam": [
+   "das Meer (A1)"
+  ]
+ },
+ {
+  "id": 1194,
+  "de": "die Seife",
+  "typ": "Nomen",
+  "tr": "sabun",
+  "formen": "-n",
+  "beispiel": "Hier gibt es keine Seife."
+ },
+ {
+  "id": 1195,
+  "de": "selbst",
+  "typ": "Sonstiges",
+  "tr": "kendisi, kendi",
+  "formen": "",
+  "beispiel": "Du musst mir nicht helfen, ich mache das selbst."
+ },
+ {
+  "id": 1196,
+  "de": "die Sendung",
+  "typ": "Nomen",
+  "tr": "yayın, program",
+  "formen": "-en",
+  "beispiel": "Welche Sendungen schaust du gern an? – Ich mag Sportsendungen. Diese Sendung ist nicht für Jugendliche unter 18 Jahren."
+ },
+ {
+  "id": 1197,
+  "de": "der Service",
+  "typ": "Nomen",
+  "tr": "hizmet, servis",
+  "formen": "(Sg.)",
+  "beispiel": "Ich bin mit dem Service in der Werkstatt sehr zufrieden. Rufst du beim Pizza-Service an?"
+ },
+ {
+  "id": 1198,
+  "de": "sich setzen",
+  "typ": "Verb",
+  "tr": "oturmak, kendini oturtmak",
+  "formen": "setzt, setzte, hat gesetzt",
+  "beispiel": "Setz dich doch!"
+ },
+ {
+  "id": 1199,
+  "de": "singen",
+  "typ": "Verb",
+  "tr": "şarkı söylemek",
+  "formen": "singt, hat gesungen",
+  "beispiel": "1. Ich singe gern. 2. Ich kann heute nicht singen, ich bin erkältet."
+ },
+ {
+  "id": 1200,
+  "de": "die Situation",
+  "typ": "Nomen",
+  "tr": "durum",
+  "formen": "-en",
+  "beispiel": "Ich bin in einer schwierigen Situation. Ich weiß nicht, was ich tun soll. Lesen Sie die Anzeigen und die Aufgaben 11-15."
+ },
+ {
+  "id": 1201,
+  "de": "der Ski",
+  "typ": "Nomen",
+  "tr": "kayak",
+  "formen": "-, -er",
+  "beispiel": "Gehen wir am Wochenende Ski fahren? Er kauft sich neue Ski.",
+  "ayniAnlam": [
+   "der Ski/Schi (B1)"
+  ]
+ },
+ {
+  "id": 1202,
+  "de": "sogar",
+  "typ": "Sonstiges",
+  "tr": "hatta",
+  "formen": "",
+  "beispiel": "Heute ist es sehr kalt. In den Bergen schneit es sogar. Zu meiner Hochzeit kommen viele Gäste. Sogar meine Tante aus Kan"
+ },
+ {
+  "id": 1203,
+  "de": "sonnig",
+  "typ": "Sonstiges",
+  "tr": "güneşli",
+  "formen": "",
+  "beispiel": "Morgen ist das Wetter wieder warm und sonnig."
+ },
+ {
+  "id": 1204,
+  "de": "sonst",
+  "typ": "Sonstiges",
+  "tr": "yoksa, aksi takdirde",
+  "formen": "",
+  "beispiel": "Haben Sie sonst noch einen Wunsch? – Nein danke, das ist alles. Beeil dich, sonst kommen wir zu spät!"
+ },
+ {
+  "id": 1205,
+  "de": "spannend",
+  "typ": "Sonstiges",
+  "tr": "heyecanlı, gerilimli",
+  "formen": "",
+  "beispiel": "Ich finde den Film sehr spannend."
+ },
+ {
+  "id": 1206,
+  "de": "sparen",
+  "typ": "Verb",
+  "tr": "tasarruf etmek, biriktirmek",
+  "formen": "spart, hat gespart",
+  "beispiel": "Ein neues Auto ist sehr teuer. Ich muss sparen."
+ },
+ {
+  "id": 1207,
+  "de": "der Spaziergang",
+  "typ": "Nomen",
+  "tr": "yürüyüş",
+  "formen": "¨-e",
+  "beispiel": "Abends mache ich immer einen Spaziergang."
+ },
+ {
+  "id": 1208,
+  "de": "speichern",
+  "typ": "Verb",
+  "tr": "kaydetmek",
+  "formen": "speichert, hat gespeichert",
+  "beispiel": "Sie müssen die Datei speichern."
+ },
+ {
+  "id": 1209,
+  "de": "sportlich",
+  "typ": "Sonstiges",
+  "tr": "sportif",
+  "formen": "",
+  "beispiel": "Tom ist sehr sportlich."
+ },
+ {
+  "id": 1210,
+  "de": "der Sportplatz",
+  "typ": "Nomen",
+  "tr": "spor sahası",
+  "formen": "¨-e",
+  "beispiel": "Das Fußballtraining ist um 17 Uhr auf dem Sportplatz."
+ },
+ {
+  "id": 1211,
+  "de": "die Sprechstunde",
+  "typ": "Nomen",
+  "tr": "muayene saati, görüşme saati",
+  "formen": "-n",
+  "beispiel": "Frau Doktor Weiß hat von 9:00 bis 12:30 Uhr Sprechstunde."
+ },
+ {
+  "id": 1212,
+  "de": "der Stadtplan",
+  "typ": "Nomen",
+  "tr": "şehir planı, şehir haritası",
+  "formen": "¨-e",
+  "beispiel": "Haben Sie einen Stadtplan von Salzburg?"
+ },
+ {
+  "id": 1213,
+  "de": "der Star",
+  "typ": "Nomen",
+  "tr": "yıldız, ünlü",
+  "formen": "-s",
+  "beispiel": "Diese Sängerin ist ein Star in Deutschland."
+ },
+ {
+  "id": 1214,
+  "de": "stark",
+  "typ": "Sonstiges",
+  "tr": "güçlü, kuvvetli, şiddetli",
+  "formen": "",
+  "beispiel": "Ich habe starke Kopfschmerzen. Es regnet stark. Der Kaffee ist sehr stark."
+ },
+ {
+  "id": 1215,
+  "de": "stattfinden",
+  "typ": "Verb",
+  "tr": "gerçekleşmek, yapılmak",
+  "formen": "findet statt, hat stattgefunden",
+  "beispiel": "Das Spiel findet auch bei Regen statt."
+ },
+ {
+  "id": 1216,
+  "de": "sterben",
+  "typ": "Verb",
+  "tr": "ölmek",
+  "formen": "stirbt, ist gestorben",
+  "beispiel": "Herr Müller kommt heute nicht. Sein Vater ist gestern gestorben."
+ },
+ {
+  "id": 1217,
+  "de": "der Stiefel",
+  "typ": "Nomen",
+  "tr": "çizme",
+  "formen": "-",
+  "beispiel": "Wie viel kosten die roten Stiefel?"
+ },
+ {
+  "id": 1218,
+  "de": "der Stift",
+  "typ": "Nomen",
+  "tr": "kalem",
+  "formen": "-e",
+  "beispiel": "Kannst du mir bitte einen Stift geben? - Was brauchst du? Einen Farbstift oder einen Bleistift oder einen Kugelschreiber"
+ },
+ {
+  "id": 1219,
+  "de": "das Stipendium",
+  "typ": "Nomen",
+  "tr": "burs",
+  "formen": "-en",
+  "beispiel": "Wenn ich ein gutes Zeugnis habe, bekomme ich ein Stipendium."
+ },
+ {
+  "id": 1220,
+  "de": "das Stockwerk",
+  "typ": "Nomen",
+  "tr": "kat",
+  "formen": "-e",
+  "beispiel": "Das Gebäude hat zwanzig Stockwerke.",
+  "ayniAnlam": [
+   "der Stock (A1)",
+   "die Etage (B1)"
+  ]
+ },
+ {
+  "id": 1221,
+  "de": "stören",
+  "typ": "Verb",
+  "tr": "rahatsız etmek",
+  "formen": "stört, hat gestört",
+  "beispiel": "Störe ich? Darf ich Sie kurz stören? Mach die Musik leiser! Sie stört mich."
+ },
+ {
+  "id": 1223,
+  "de": "streng",
+  "typ": "Sonstiges",
+  "tr": "sert, katı",
+  "formen": "",
+  "beispiel": "Der Lehrer von meiner Tochter ist sehr streng.",
+  "ayniAnlam": [
+   "steif (A2)"
+  ]
+ },
+ {
+  "id": 1224,
+  "de": "der Stress",
+  "typ": "Nomen",
+  "tr": "stres",
+  "formen": "(Sg.)",
+  "beispiel": "Ich habe bei der Arbeit viel Stress."
+ },
+ {
+  "id": 1225,
+  "de": "stressig",
+  "typ": "Sonstiges",
+  "tr": "stresli, yorucu",
+  "formen": "",
+  "beispiel": "Meine Arbeit ist stressig."
+ },
+ {
+  "id": 1226,
+  "de": "der Stuhl",
+  "typ": "Nomen",
+  "tr": "sandalye",
+  "formen": "¨-e",
+  "beispiel": "Da hinten ist noch ein Stuhl frei."
+ },
+ {
+  "id": 1227,
+  "de": "super",
+  "typ": "Sonstiges",
+  "tr": "harika, süper",
+  "formen": "",
+  "beispiel": "Der Film ist super. Er kann super tanzen.",
+  "ayniAnlam": [
+   "klasse (B1)"
+  ]
+ },
+ {
+  "id": 1228,
+  "de": "surfen",
+  "typ": "Verb",
+  "tr": "sörf yapmak, internette gezinmek",
+  "formen": "surft, hat/ist gesurft",
+  "beispiel": "Ich möchte gern surfen lernen. Surfst du oft im Internet?"
+ },
+ {
+  "id": 1229,
+  "de": "das Tablet",
+  "typ": "Nomen",
+  "tr": "tablet",
+  "formen": "-s",
+  "beispiel": "Hast du ein Tablet? - Nein, ich habe einen Laptop und ein Handy."
+ },
+ {
+  "id": 1230,
+  "de": "die Tablette",
+  "typ": "Nomen",
+  "tr": "hap",
+  "formen": "-n",
+  "beispiel": "Du sollst am Abend zwei Tabletten nehmen.",
+  "ayniAnlam": [
+   "die Pille (B1)"
+  ]
+ },
+ {
+  "id": 1231,
+  "de": "die Tafel",
+  "typ": "Nomen",
+  "tr": "tahta, levha",
+  "formen": "-n (z. B. Infotafel)",
+  "beispiel": "Der Lehrer schreibt das neue Wort an die Tafel. Am Eingang gibt es Tafeln mit Informationen. Die Infotafel ist am Eingan"
+ },
+ {
+  "id": 1232,
+  "de": "(aus)tauschen",
+  "typ": "Verb",
+  "tr": "değiştirmek, değiş tokuş etmek",
+  "formen": "tauscht (aus), hat (aus)getauscht",
+  "beispiel": "Können wir bitte die Plätze tauschen? Können wir unsere Adressen austauschen?"
+ },
+ {
+  "id": 1233,
+  "de": "das Team",
+  "typ": "Nomen",
+  "tr": "takım, ekip",
+  "formen": "-s",
+  "beispiel": "Ich arbeite gern in einem Team. Welches Fußballteam findest du am besten?"
+ },
+ {
+  "id": 1234,
+  "de": "teilen",
+  "typ": "Sonstiges",
+  "tr": "paylaşmak, bölmek",
+  "formen": "teilt hat geteilt",
+  "beispiel": "Wollen wir die Pizza teilen? Mein Mann und ich teilen uns die Arbeit."
+ },
+ {
+  "id": 1235,
+  "de": "teilnehmen",
+  "typ": "Verb",
+  "tr": "katılmak",
+  "formen": "nimmt teil, hat teilgenommen",
+  "beispiel": "Ich möchte an dem Tanzkurs teilnehmen.",
+  "ayniAnlam": [
+   "mitmachen (A1)",
+   "sich beteiligen (B1)",
+   "teilnehmen an (B2)"
+  ]
+ },
+ {
+  "id": 1236,
+  "de": "der Teller",
+  "typ": "Nomen",
+  "tr": "tabak",
+  "formen": "-",
+  "beispiel": "Stell die Teller bitte auf den Tisch! Möchtest du noch einen Teller Suppe?"
+ },
+ {
+  "id": 1237,
+  "de": "das Tennis",
+  "typ": "Nomen",
+  "tr": "tenis",
+  "formen": "(Sg.)",
+  "beispiel": "Steffi spielt sehr gut Tennis."
+ },
+ {
+  "id": 1238,
+  "de": "tief",
+  "typ": "Sonstiges",
+  "tr": "derin",
+  "formen": "",
+  "beispiel": "Vorsicht, das Wasser ist tief!"
+ },
+ {
+  "id": 1239,
+  "de": "der Tipp",
+  "typ": "Nomen",
+  "tr": "tavsiye, ipucu",
+  "formen": "-s",
+  "beispiel": "Kannst du mir einen guten Tipp geben?"
+ },
+ {
+  "id": 1240,
+  "de": "der Titel",
+  "typ": "Nomen",
+  "tr": "başlık, unvan",
+  "formen": "-",
+  "beispiel": "Wie heißt der Film? - Ich weiß den Titel nicht mehr."
+ },
+ {
+  "id": 1241,
+  "de": "der Topf",
+  "typ": "Nomen",
+  "tr": "tencere",
+  "formen": "¨-e",
+  "beispiel": "Hast du keinen größeren Topf? Ich möchte Kartoffeln kochen."
+ },
+ {
+  "id": 1242,
+  "de": "die Torte",
+  "typ": "Nomen",
+  "tr": "pasta, turta",
+  "formen": "-n",
+  "beispiel": "Zum Geburtstag backe ich dir eine Torte."
+ },
+ {
+  "id": 1243,
+  "de": "total",
+  "typ": "Sonstiges",
+  "tr": "tamamen, son derece",
+  "formen": "",
+  "beispiel": "Der Film ist total langweilig."
+ }
+]

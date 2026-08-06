@@ -39,6 +39,13 @@ düzeltme öneriyorsan büyük ihtimalle üslup tercihini hata sanıyorsun.
 6. **Bozuk başlık.** `de` alanında `(s Fahrrad)`, `(Fahr)Rad` gibi artık varsa
    `deDuzeltme` alanıyla temiz biçimi öner.
 
+7. **Yinelenen kayıt.** Kaynak PDF satır sonlarından ve kısaltmalarından
+   bozuk kopyalar üretti: `"die Lebens-"` + `"mittel"` aynı kelimenin iki
+   parçası, `"trifft"` ise `treffen`'in çekimli hâli. `ayniAnlam` listesinde
+   **aynı kelimenin başka bir yazımı** duruyorsa bu bir çeviri sorunu değil,
+   fazladan kayıttır: `"yinelenen": true` de ve **başlığı düzeltmeye çalışma**
+   — düzeltmek ikinci bir kopya yaratır, karar merkezde verilir.
+
 ## Neyi hata SAYMAYACAKSIN
 
 - Edat ve bağlaçların uzun karşılıkları (`ab → "-den itibaren, -den beri"`)

@@ -1,0 +1,1017 @@
+[
+ {
+  "id": 1244,
+  "de": "die Tour",
+  "typ": "Nomen",
+  "tr": "tur, gezi",
+  "formen": "-en",
+  "beispiel": "Wo kann ich eine Stadttour buchen? Wir gehen am Wochenende wandern. Ich kenne eine schöne Tour in den Bergen.",
+  "ayniAnlam": [
+   "die Rundfahrt (B1)"
+  ]
+ },
+ {
+  "id": 1245,
+  "de": "der Tourist",
+  "typ": "Nomen",
+  "tr": "turist",
+  "formen": "-en, die Touristin, -nen",
+  "beispiel": "Im Sommer kommen viele Touristen in diese Stadt."
+ },
+ {
+  "id": 1246,
+  "de": "trainieren",
+  "typ": "Verb",
+  "tr": "antrenman yapmak, çalışmak",
+  "formen": "trainiert, hat trainiert",
+  "beispiel": "Wir trainieren einmal pro Woche im Sportverein."
+ },
+ {
+  "id": 1247,
+  "de": "das Training",
+  "typ": "Nomen",
+  "tr": "antrenman",
+  "formen": "-s",
+  "beispiel": "Das Training ist immer dienstags. Ich gehe jede Woche zum Training."
+ },
+ {
+  "id": 1248,
+  "de": "der Traum",
+  "typ": "Nomen",
+  "tr": "hayal, rüya",
+  "formen": "¨-e",
+  "beispiel": "Ich möchte eine eigene Firma, das ist mein Traum."
+ },
+ {
+  "id": 1249,
+  "de": "träumen",
+  "typ": "Verb",
+  "tr": "hayal kurmak, rüya görmek",
+  "formen": "träumt, hat geträumt",
+  "beispiel": "Ich habe schlecht geträumt. Ich träume von einem großen Haus mit Garten."
+ },
+ {
+  "id": 1251,
+  "de": "trocken",
+  "typ": "Sonstiges",
+  "tr": "kuru",
+  "formen": "",
+  "beispiel": "Die Wäsche ist bald trocken."
+ },
+ {
+  "id": 1253,
+  "de": "typisch",
+  "typ": "Sonstiges",
+  "tr": "tipik",
+  "formen": "",
+  "beispiel": "Diese Musik ist typisch für dieses Land. Typisch Anna, sie kommt natürlich wieder zu spät."
+ },
+ {
+  "id": 1254,
+  "de": "übermorgen",
+  "typ": "Sonstiges",
+  "tr": "öbür gün, yarından sonraki gün",
+  "formen": "",
+  "beispiel": "Morgen habe ich frei. Ich komme übermorgen wieder ins Büro."
+ },
+ {
+  "id": 1255,
+  "de": "übersetzen",
+  "typ": "Verb",
+  "tr": "tercüme etmek, çevirmek",
+  "formen": "übersetzt, hat übersetzt",
+  "beispiel": "Können Sie mir den Brief bitte übersetzen?"
+ },
+ {
+  "id": 1256,
+  "de": "die Übersetzung",
+  "typ": "Nomen",
+  "tr": "tercüme, çeviri",
+  "formen": "-en",
+  "beispiel": "Ich brauche eine Übersetzung von meinem Zeugnis."
+ },
+ {
+  "id": 1257,
+  "de": "umsteigen",
+  "typ": "Verb",
+  "tr": "aktarma yapmak",
+  "formen": "steigt um, ist umgestiegen",
+  "beispiel": "Sie müssen in Mannheim umsteigen."
+ },
+ {
+  "id": 1258,
+  "de": "sich umziehen",
+  "typ": "Verb",
+  "tr": "üstünü değiştirmek, kıyafet değiştirmek",
+  "formen": "zieht sich um, zog sich um, hat sich umgezogen",
+  "beispiel": "Warte bitte, ich muss mich noch umziehen."
+ },
+ {
+  "id": 1259,
+  "de": "der Umzug",
+  "typ": "Nomen",
+  "tr": "taşınma",
+  "formen": "¨-e",
+  "beispiel": "Der Umzug ist nächste Woche."
+ },
+ {
+  "id": 1260,
+  "de": "unbedingt",
+  "typ": "Sonstiges",
+  "tr": "mutlaka, kesinlikle",
+  "formen": "",
+  "beispiel": "Ich muss unbedingt mit dir sprechen."
+ },
+ {
+  "id": 1261,
+  "de": "der Unfall",
+  "typ": "Nomen",
+  "tr": "kaza",
+  "formen": "¨-e",
+  "beispiel": "Ich hatte gestern einen Unfall. Wie ist der Unfall passiert?"
+ },
+ {
+  "id": 1262,
+  "de": "die Universität",
+  "typ": "Nomen",
+  "tr": "üniversite",
+  "formen": "-en",
+  "beispiel": "Er studiert an der Universität Freiburg."
+ },
+ {
+  "id": 1264,
+  "de": "die Unterkunft",
+  "typ": "Nomen",
+  "tr": "konaklama yeri, kalacak yer",
+  "formen": "¨-e",
+  "beispiel": "Ich suche noch eine Unterkunft in Basel. Kennst du ein günstiges Hotel?"
+ },
+ {
+  "id": 1265,
+  "de": "unternehmen",
+  "typ": "Verb",
+  "tr": "bir şey yapmak, girişimde bulunmak",
+  "formen": "unternimmt, hat unternommen",
+  "beispiel": "Wollen wir heute Abend etwas unternehmen?"
+ },
+ {
+  "id": 1266,
+  "de": "der Unterschied",
+  "typ": "Nomen",
+  "tr": "fark",
+  "formen": "-e",
+  "beispiel": "Was ist der Unterschied zwischen den beiden Kursen? - Die Kurse sind gleich. Es gibt keinen Unterschied."
+ },
+ {
+  "id": 1267,
+  "de": "untersuchen",
+  "typ": "Verb",
+  "tr": "muayene etmek, incelemek",
+  "formen": "untersucht, hat untersucht",
+  "beispiel": "Der Arzt hat mich untersucht. Der Arzt muss dein Bein untersuchen."
+ },
+ {
+  "id": 1268,
+  "de": "unterwegs sein",
+  "typ": "Verb",
+  "tr": "yolda olmak",
+  "formen": "ist unterwegs, war unterwegs, ist unterwegs gewesen",
+  "beispiel": "Warte bitte auf mich. Ich bin unterwegs und komme gleich."
+ },
+ {
+  "id": 1269,
+  "de": "verabredet sein",
+  "typ": "Verb",
+  "tr": "sözleşmiş olmak, buluşacak olmak",
+  "formen": "ist verabredet, war verabredet, ist verabredet gewesen",
+  "beispiel": "Ich bin mit meiner Freundin verabredet."
+ },
+ {
+  "id": 1270,
+  "de": "die Veranstaltung",
+  "typ": "Nomen",
+  "tr": "etkinlik",
+  "formen": "-en",
+  "beispiel": "Am Samstag ist unser Restaurant geschlossen. Wir haben eine Veranstaltung."
+ },
+ {
+  "id": 1271,
+  "de": "verbieten / verboten sein",
+  "typ": "Sonstiges",
+  "tr": "yasaklamak, yasak olmak",
+  "formen": "",
+  "beispiel": "Hier ist Rauchen verboten."
+ },
+ {
+  "id": 1272,
+  "de": "vereinbaren",
+  "typ": "Verb",
+  "tr": "kararlaştırmak, anlaşmak",
+  "formen": "vereinbart, hat vereinbart",
+  "beispiel": "Können wir einen Termin vereinbaren?",
+  "ayniAnlam": [
+   "abmachen (B1)"
+  ]
+ },
+ {
+  "id": 1273,
+  "de": "vergleichen",
+  "typ": "Verb",
+  "tr": "karşılaştırmak",
+  "formen": "vergleicht, hat verglichen",
+  "beispiel": "Vergleichen Sie die Angebote! Können wir die Antworten vergleichen?"
+ },
+ {
+  "id": 1274,
+  "de": "der Verkehr",
+  "typ": "Nomen",
+  "tr": "trafik",
+  "formen": "(Sg.)",
+  "beispiel": "Morgens gibt es hier immer viel Verkehr."
+ },
+ {
+  "id": 1275,
+  "de": "das Verkehrsmittel",
+  "typ": "Nomen",
+  "tr": "ulaşım aracı",
+  "formen": "-",
+  "beispiel": "Welche Verkehrsmittel benutzen Sie oft?"
+ },
+ {
+  "id": 1278,
+  "de": "verlieren",
+  "typ": "Verb",
+  "tr": "kaybetmek",
+  "formen": "verliert, hat verloren",
+  "beispiel": "Ich habe meinen Schlüssel verloren. Michael hat seine Arbeit verloren. Wir haben das Fußballspiel verloren."
+ },
+ {
+  "id": 1279,
+  "de": "verpassen",
+  "typ": "Verb",
+  "tr": "kaçırmak",
+  "formen": "verpasst, hat verpasst",
+  "beispiel": "Ich habe den Zug verpasst."
+ },
+ {
+  "id": 1280,
+  "de": "verreisen",
+  "typ": "Verb",
+  "tr": "seyahate çıkmak",
+  "formen": "verreist, ist verreist",
+  "beispiel": "Verreist ihr in den Ferien? Frau Doktor Müller ist zur Zeit verreist. Sie kommt erst nächste Woche zurück."
+ },
+ {
+  "id": 1281,
+  "de": "verschieben",
+  "typ": "Verb",
+  "tr": "ertelemek",
+  "formen": "verschiebt, hat verschoben",
+  "beispiel": "Leider muss ich den Termin verschieben.",
+  "ayniAnlam": [
+   "vertagen (C1)"
+  ]
+ },
+ {
+  "id": 1282,
+  "de": "verschieden",
+  "typ": "Sonstiges",
+  "tr": "farklı, çeşitli",
+  "formen": "",
+  "beispiel": "Unsere beiden Kinder sind sehr verschieden. Ich habe diese Schuhe in verschiedenen Farben."
+ },
+ {
+  "id": 1283,
+  "de": "die Verspätung",
+  "typ": "Nomen",
+  "tr": "gecikme",
+  "formen": "-en",
+  "beispiel": "Unser Zug hat leider 15 Minuten Verspätung."
+ },
+ {
+  "id": 1284,
+  "de": "versuchen",
+  "typ": "Verb",
+  "tr": "denemek",
+  "formen": "versucht, hat versucht",
+  "beispiel": "Kann ich es auch einmal versuchen? Haben Sie es schon einmal mit diesem Mittel versucht?"
+ },
+ {
+  "id": 1285,
+  "de": "der Vertrag",
+  "typ": "Nomen",
+  "tr": "sözleşme",
+  "formen": "¨-e",
+  "beispiel": "Ich muss den Vertrag noch unterschreiben."
+ },
+ {
+  "id": 1286,
+  "de": "der Vogel",
+  "typ": "Nomen",
+  "tr": "kuş",
+  "formen": "¨-",
+  "beispiel": "Nadine mag Vögel. Morgens singen die Vögel immer laut."
+ },
+ {
+  "id": 1287,
+  "de": "voll",
+  "typ": "Sonstiges",
+  "tr": "dolu",
+  "formen": "",
+  "beispiel": "Morgens und abends sind die Züge immer sehr voll. Die Flasche ist noch ganz voll.",
+  "ayniAnlam": [
+   "der Hagel (B2)"
+  ]
+ },
+ {
+  "id": 1288,
+  "de": "der Volleyball",
+  "typ": "Nomen",
+  "tr": "voleybol",
+  "formen": "¨-e",
+  "beispiel": "Ich spiele gern Volleyball."
+ },
+ {
+  "id": 1289,
+  "de": "vorbei",
+  "typ": "Sonstiges",
+  "tr": "geçmiş, bitmiş",
+  "formen": "",
+  "beispiel": "Die Linie 8 fährt am Krankenhaus vorbei. Kommst du morgen bei mir vorbei?"
+ },
+ {
+  "id": 1290,
+  "de": "vorbereiten",
+  "typ": "Verb",
+  "tr": "hazırlamak",
+  "formen": "bereitet vor, hat vorbereitet",
+  "beispiel": "Morgen mache ich eine Party. Ich muss noch viel dafür vorbereiten. Ich muss mich auf meine Prüfung vorbereiten.",
+  "ayniAnlam": [
+   "zubereiten (B1)"
+  ]
+ },
+ {
+  "id": 1291,
+  "de": "vorgestern",
+  "typ": "Sonstiges",
+  "tr": "önceki gün, evvelsi gün",
+  "formen": "",
+  "beispiel": "Er hat mich vorgestern angerufen."
+ },
+ {
+  "id": 1292,
+  "de": "vorher",
+  "typ": "Sonstiges",
+  "tr": "önce, daha önce",
+  "formen": "",
+  "beispiel": "Ich komme mit ins Café. Vorher muss ich aber noch zur Bank."
+ },
+ {
+  "id": 1293,
+  "de": "vorn(e)",
+  "typ": "Sonstiges",
+  "tr": "önde, öne",
+  "formen": "",
+  "beispiel": "Bitte vorn(e) einsteigen!"
+ },
+ {
+  "id": 1294,
+  "de": "der Vorschlag",
+  "typ": "Nomen",
+  "tr": "öneri, teklif",
+  "formen": "¨-e (haben/machen)",
+  "beispiel": "Was machen wir am Wochenende? Hast du einen guten Vorschlag? - Wir können ins Kino gehen. Was schenken wir Christina zur"
+ },
+ {
+  "id": 1295,
+  "de": "vorsichtig",
+  "typ": "Sonstiges",
+  "tr": "dikkatli",
+  "formen": "",
+  "beispiel": "Sei vorsichtig! Du musst vorsichtig fahren, es ist neblig.",
+  "ayniAnlam": [
+   "aufmerksam (B1)"
+  ]
+ },
+ {
+  "id": 1297,
+  "de": "vorwärts",
+  "typ": "Sonstiges",
+  "tr": "ileri",
+  "formen": "",
+  "beispiel": "Fahren Sie bitte noch ein Stück vorwärts."
+ },
+ {
+  "id": 1298,
+  "de": "wach",
+  "typ": "Sonstiges",
+  "tr": "uyanık",
+  "formen": "",
+  "beispiel": "Bist du schon lange wach? Ich bin noch nicht ganz wach."
+ },
+ {
+  "id": 1299,
+  "de": "der Wagen",
+  "typ": "Nomen",
+  "tr": "araba, vagon",
+  "formen": "–",
+  "beispiel": "Wo steht Ihr Wagen? Im zweiten Wagen ist unser Zugrestaurant."
+ },
+ {
+  "id": 1300,
+  "de": "wählen",
+  "typ": "Verb",
+  "tr": "seçmek, çevirmek",
+  "formen": "wählt, hat gewählt",
+  "beispiel": "Sie müssen erst eine Null wählen. Wählen Sie bitte ein Getränk."
+ },
+ {
+  "id": 1301,
+  "de": "wahrscheinlich",
+  "typ": "Sonstiges",
+  "tr": "muhtemelen",
+  "formen": "",
+  "beispiel": "Wahrscheinlich mache ich im Herbst einen Deutschkurs. Er kommt wahrscheinlich nicht."
+ },
+ {
+  "id": 1302,
+  "de": "die Wäsche",
+  "typ": "Nomen",
+  "tr": "çamaşır",
+  "formen": "-n",
+  "beispiel": "Ich muss noch Wäsche waschen."
+ },
+ {
+  "id": 1304,
+  "de": "die Webseite",
+  "typ": "Nomen",
+  "tr": "web sitesi",
+  "formen": "-n",
+  "beispiel": "Es gibt viele Webseiten mit Grammatikübungen."
+ },
+ {
+  "id": 1305,
+  "de": "wechseln",
+  "typ": "Verb",
+  "tr": "değiştirmek, bozdurmak",
+  "formen": "wechselt, hat gewechselt",
+  "beispiel": "Wir müssen den Reifen wechseln. Können Sie mir zehn Dollar wechseln?"
+ },
+ {
+  "id": 1306,
+  "de": "weg",
+  "typ": "Sonstiges",
+  "tr": "kayıp, yok olmuş",
+  "formen": "(wegbringen/ -fahren/-gehen/ -laufen/-machen/ -nehmen/-werfen)",
+  "beispiel": "Meine Brille ist weg. Ich finde sie nicht mehr. Bringst du bitte den Müll weg? Können Sie Ihr Auto bitte wegfahren? Ich "
+ },
+ {
+  "id": 1307,
+  "de": "der Weg",
+  "typ": "Nomen",
+  "tr": "yol",
+  "formen": "-e",
+  "beispiel": "Das ist der kürzeste Weg. Können Sie mir bitte den Weg zum Flughafen beschreiben?"
+ },
+ {
+  "id": 1308,
+  "de": "wegen",
+  "typ": "Sonstiges",
+  "tr": "yüzünden, nedeniyle",
+  "formen": "",
+  "beispiel": "Wegen seiner Arbeit kann er leider nicht kommen. Ich rufe wegen meiner Tochter an."
+ },
+ {
+  "id": 1309,
+  "de": "wehtun",
+  "typ": "Verb",
+  "tr": "acımak, canını yakmak",
+  "formen": "tut weh, hat wehgetan",
+  "beispiel": "Wo tut es weh? Ich will dir nicht wehtun."
+ },
+ {
+  "id": 1310,
+  "de": "weich",
+  "typ": "Sonstiges",
+  "tr": "yumuşak",
+  "formen": "",
+  "beispiel": "Ich möchte zum Frühstück ein weiches Ei. Das Bett im Hotel war zu weich."
+ },
+ {
+  "id": 1311,
+  "de": "weil",
+  "typ": "Sonstiges",
+  "tr": "çünkü",
+  "formen": "",
+  "beispiel": "Ich kann nicht kommen, weil ich arbeiten muss.",
+  "ayniAnlam": [
+   "denn (A1)"
+  ]
+ },
+ {
+  "id": 1312,
+  "de": "weinen",
+  "typ": "Verb",
+  "tr": "ağlamak",
+  "formen": "weint, hat geweint",
+  "beispiel": "Warum weint das Baby? Weine bitte nicht!"
+ },
+ {
+  "id": 1314,
+  "de": "wenigstens",
+  "typ": "Sonstiges",
+  "tr": "en azından",
+  "formen": "",
+  "beispiel": "Ich habe keinen Hunger. - Ach, essen Sie wenigstens ein Stück Kuchen.",
+  "ayniAnlam": [
+   "zumindest (B1)"
+  ]
+ },
+ {
+  "id": 1315,
+  "de": "wenn",
+  "typ": "Sonstiges",
+  "tr": "eğer",
+  "formen": "",
+  "beispiel": "Wenn ich nicht arbeiten muss, komme ich."
+ },
+ {
+  "id": 1317,
+  "de": "die Werkstatt",
+  "typ": "Nomen",
+  "tr": "tamirhane, atölye",
+  "formen": "¨-en",
+  "beispiel": "Mein Auto ist kaputt. Es ist in der Werkstatt."
+ },
+ {
+  "id": 1318,
+  "de": "der Wettbewerb",
+  "typ": "Nomen",
+  "tr": "yarışma",
+  "formen": "-e",
+  "beispiel": "Mein Sohn hat bei einem Wettbewerb gewonnen."
+ },
+ {
+  "id": 1319,
+  "de": "windig",
+  "typ": "Sonstiges",
+  "tr": "rüzgârlı",
+  "formen": "",
+  "beispiel": "Heute ist es sehr windig."
+ },
+ {
+  "id": 1320,
+  "de": "der Witz",
+  "typ": "Nomen",
+  "tr": "şaka, fıkra",
+  "formen": "-e",
+  "beispiel": "Wir haben Witze erzählt und viel gelacht."
+ },
+ {
+  "id": 1321,
+  "de": "witzig",
+  "typ": "Sonstiges",
+  "tr": "komik, eğlenceli",
+  "formen": "",
+  "beispiel": "Warum lachst du? Ich finde das nicht witzig.",
+  "ayniAnlam": [
+   "lustig (A1)"
+  ]
+ },
+ {
+  "id": 1322,
+  "de": "der Workshop",
+  "typ": "Nomen",
+  "tr": "çalıştay, seminer",
+  "formen": "-s",
+  "beispiel": "Das war ein toller Workshop. Ich habe viel gelernt. Am Freitag gibt es einen Computer-Workshop in meiner Firma."
+ },
+ {
+  "id": 1323,
+  "de": "der Wunsch",
+  "typ": "Nomen",
+  "tr": "dilek, istek",
+  "formen": "¨-e",
+  "beispiel": "Ich wünsche Ihnen alles Gute! Sie wünschen? – Ich möchte ein halbes Kilo Äpfel, bitte. Haben Sie noch einen Wunsch? Was "
+ },
+ {
+  "id": 1324,
+  "de": "die Zahl",
+  "typ": "Nomen",
+  "tr": "sayı, rakam",
+  "formen": "-en",
+  "beispiel": "Können Sie die Zahl bitte wiederholen?"
+ },
+ {
+  "id": 1325,
+  "de": "zeichnen",
+  "typ": "Verb",
+  "tr": "çizmek, resim yapmak",
+  "formen": "zeichnet, hat gezeichnet",
+  "beispiel": "Caterina kann gut zeichnen. Sieh mal das Bild hier."
+ },
+ {
+  "id": 1326,
+  "de": "die Zeitschrift",
+  "typ": "Nomen",
+  "tr": "dergi",
+  "formen": "-en",
+  "beispiel": "Diese Zeitschrift kauft Andrea jede Woche.",
+  "ayniAnlam": [
+   "das Magazin (B1)"
+  ]
+ },
+ {
+  "id": 1327,
+  "de": "das Zelt",
+  "typ": "Nomen",
+  "tr": "çadır",
+  "formen": "-e",
+  "beispiel": "Im Sommer schlafen wir manchmal im Zelt."
+ },
+ {
+  "id": 1328,
+  "de": "das Zentrum",
+  "typ": "Nomen",
+  "tr": "merkez",
+  "formen": "-en",
+  "beispiel": "Der Bahnhof ist im Stadtzentrum. Wohnst du im Zentrum? - Nein, ich wohne nicht direkt in der Stadt."
+ },
+ {
+  "id": 1329,
+  "de": "der Zettel",
+  "typ": "Nomen",
+  "tr": "kâğıt parçası, not kâğıdı",
+  "formen": "-",
+  "beispiel": "Hast du einen Zettel für mich? Ich muss etwas notieren. Schreiben Sie Ihre Telefonnummer bitte auf den Zettel."
+ },
+ {
+  "id": 1330,
+  "de": "das Zeugnis",
+  "typ": "Nomen",
+  "tr": "karne, tanıklık belgesi",
+  "formen": "-se",
+  "beispiel": "Morgen bekommen die Kinder ihr Zeugnis."
+ },
+ {
+  "id": 1331,
+  "de": "anziehen/ausziehen",
+  "typ": "Verb",
+  "tr": "giymek, giyinmek / çıkarmak, soymak",
+  "formen": "zieht (an/aus), hat/ist (an/aus)gezogen",
+  "beispiel": "Ich ziehe (mir) eine Jacke an. Er hat sein T-Shirt ausgezogen und ein Hemd angezogen. Die Nachbarn sind am Wochenende au"
+ },
+ {
+  "id": 1332,
+  "de": "das Ziel",
+  "typ": "Nomen",
+  "tr": "hedef, amaç, varış noktası",
+  "formen": "-e",
+  "beispiel": "John läuft sehr schnell. Er war als erster am Ziel. Was ist dein Ziel im Leben?"
+ },
+ {
+  "id": 1333,
+  "de": "der Zirkus",
+  "typ": "Nomen",
+  "tr": "sirk",
+  "formen": "-se",
+  "beispiel": "Heute gehen wir mit den Kindern in den Zirkus."
+ },
+ {
+  "id": 1334,
+  "de": "die Zitrone",
+  "typ": "Nomen",
+  "tr": "limon",
+  "formen": "-n",
+  "beispiel": "Ich trinke den Tee mit Zitrone. Lucia mag Zitroneneis."
+ },
+ {
+  "id": 1335,
+  "de": "der Zoo",
+  "typ": "Nomen",
+  "tr": "hayvanat bahçesi",
+  "formen": "-s",
+  "beispiel": "Am Sonntag gehen wir in den Zoo.",
+  "ayniAnlam": [
+   "der Tierpark (B1)"
+  ]
+ },
+ {
+  "id": 1336,
+  "de": "der Zucker",
+  "typ": "Nomen",
+  "tr": "şeker",
+  "formen": "(Sg.)",
+  "beispiel": "Trinken Sie den Tee mit oder ohne Zucker?"
+ },
+ {
+  "id": 1337,
+  "de": "zuhören",
+  "typ": "Verb",
+  "tr": "dinlemek, kulak vermek",
+  "formen": "hört zu, hat zugehört",
+  "beispiel": "Hör mir doch mal zu! Ich rede mit dir."
+ },
+ {
+  "id": 1338,
+  "de": "zuletzt",
+  "typ": "Sonstiges",
+  "tr": "en son, sonunda",
+  "formen": "",
+  "beispiel": "Wir haben uns vor drei Jahren zuletzt gesehen. Diese Aufgabe machen wir zuletzt."
+ },
+ {
+  "id": 1339,
+  "de": "zurück- (fahren",
+  "typ": "Verb",
+  "tr": "geri- (dönmek, vermek, gitmek, gelmek, koşmak)",
+  "formen": "geben, gehen, kommen, laufen)",
+  "beispiel": "Fahrt ihr nach der Party zurück nach Hause? Wann muss ich das Buch zurückgeben? Wir gehen wieder zurück. Wann kommst du "
+ },
+ {
+  "id": 7430,
+  "de": "winzig",
+  "typ": "Sonstiges",
+  "tr": "minicik, çok küçük",
+  "formen": "",
+  "beispiel": "Unsere erste Wohnung war winzig."
+ },
+ {
+  "id": 7431,
+  "de": "gigantisch",
+  "typ": "Sonstiges",
+  "tr": "devasa, kocaman",
+  "formen": "",
+  "beispiel": "Vor dem Bahnhof steht eine gigantische Uhr.",
+  "ayniAnlam": [
+   "riesig (B1)"
+  ]
+ },
+ {
+  "id": 7432,
+  "de": "oval",
+  "typ": "Sonstiges",
+  "tr": "oval",
+  "formen": "",
+  "beispiel": "Der Spiegel im Flur ist oval."
+ },
+ {
+  "id": 7433,
+  "de": "massiv",
+  "typ": "Sonstiges",
+  "tr": "masif, som",
+  "formen": "",
+  "beispiel": "Der Tisch ist aus massivem Holz."
+ },
+ {
+  "id": 7434,
+  "de": "zart",
+  "typ": "Sonstiges",
+  "tr": "yumuşacık, ince",
+  "formen": "",
+  "beispiel": "Das Fleisch ist heute besonders zart."
+ },
+ {
+  "id": 7435,
+  "de": "grob",
+  "typ": "Sonstiges",
+  "tr": "kaba, iri taneli",
+  "formen": "",
+  "beispiel": "Das Salz ist zu grob für den Salat."
+ },
+ {
+  "id": 7436,
+  "de": "steif",
+  "typ": "Sonstiges",
+  "tr": "sert, katı",
+  "formen": "",
+  "beispiel": "Der neue Lederschuh ist noch sehr steif.",
+  "ayniAnlam": [
+   "streng (A2)"
+  ]
+ },
+ {
+  "id": 7437,
+  "de": "rau",
+  "typ": "Sonstiges",
+  "tr": "pürüzlü, kaba",
+  "formen": "",
+  "beispiel": "Die Wand ist rau und nicht gestrichen."
+ },
+ {
+  "id": 7438,
+  "de": "klebrig",
+  "typ": "Sonstiges",
+  "tr": "yapış yapış, yapışkan",
+  "formen": "",
+  "beispiel": "Der Tisch ist noch klebrig vom Saft."
+ },
+ {
+  "id": 7439,
+  "de": "staubig",
+  "typ": "Sonstiges",
+  "tr": "tozlu",
+  "formen": "",
+  "beispiel": "Die Bücher im Keller sind sehr staubig."
+ },
+ {
+  "id": 7440,
+  "de": "glänzend",
+  "typ": "Sonstiges",
+  "tr": "parlak",
+  "formen": "",
+  "beispiel": "Nach dem Putzen ist der Boden richtig glänzend."
+ },
+ {
+  "id": 7441,
+  "de": "matt",
+  "typ": "Sonstiges",
+  "tr": "mat",
+  "formen": "",
+  "beispiel": "Wir haben die Wände in einem matten Weiß gestrichen."
+ },
+ {
+  "id": 7442,
+  "de": "hölzern",
+  "typ": "Sonstiges",
+  "tr": "ahşap, tahtadan",
+  "formen": "",
+  "beispiel": "Auf dem Balkon steht ein hölzerner Stuhl."
+ },
+ {
+  "id": 7443,
+  "de": "metallisch",
+  "typ": "Sonstiges",
+  "tr": "metalik, madensi",
+  "formen": "",
+  "beispiel": "Das Wasser hier schmeckt etwas metallisch."
+ },
+ {
+  "id": 7444,
+  "de": "wasserdicht",
+  "typ": "Sonstiges",
+  "tr": "su geçirmez",
+  "formen": "",
+  "beispiel": "Meine neue Jacke ist zum Glück wasserdicht."
+ },
+ {
+  "id": 7445,
+  "de": "hellblau",
+  "typ": "Sonstiges",
+  "tr": "açık mavi",
+  "formen": "",
+  "beispiel": "Sie trägt ein hellblaues Hemd."
+ },
+ {
+  "id": 7446,
+  "de": "dunkelblau",
+  "typ": "Sonstiges",
+  "tr": "koyu mavi, lacivert",
+  "formen": "",
+  "beispiel": "Der Koffer ist dunkelblau und ziemlich groß."
+ },
+ {
+  "id": 7447,
+  "de": "bläulich",
+  "typ": "Sonstiges",
+  "tr": "mavimsi",
+  "formen": "",
+  "beispiel": "Am Abend wird der Schnee bläulich."
+ },
+ {
+  "id": 7448,
+  "de": "rötlich",
+  "typ": "Sonstiges",
+  "tr": "kırmızımsı",
+  "formen": "",
+  "beispiel": "Ihre Haare sind rötlich, fast orange."
+ },
+ {
+  "id": 7449,
+  "de": "gelblich",
+  "typ": "Sonstiges",
+  "tr": "sarımsı",
+  "formen": "",
+  "beispiel": "Die alte Tischdecke ist schon gelblich."
+ },
+ {
+  "id": 7450,
+  "de": "golden",
+  "typ": "Sonstiges",
+  "tr": "altın rengi, altından",
+  "formen": "",
+  "beispiel": "Meine Oma trägt einen goldenen Ring."
+ },
+ {
+  "id": 7451,
+  "de": "silbern",
+  "typ": "Sonstiges",
+  "tr": "gümüş rengi, gümüşten",
+  "formen": "",
+  "beispiel": "Auf dem Tisch liegen silberne Löffel."
+ },
+ {
+  "id": 7452,
+  "de": "einfarbig",
+  "typ": "Sonstiges",
+  "tr": "tek renkli, düz renk",
+  "formen": "",
+  "beispiel": "Für das Büro kaufe ich lieber einfarbige Hemden."
+ },
+ {
+  "id": 7453,
+  "de": "gestreift",
+  "typ": "Sonstiges",
+  "tr": "çizgili",
+  "formen": "",
+  "beispiel": "Er hat einen gestreiften Pullover an."
+ },
+ {
+  "id": 7454,
+  "de": "kariert",
+  "typ": "Sonstiges",
+  "tr": "kareli, ekose",
+  "formen": "",
+  "beispiel": "Auf dem Tisch liegt eine karierte Decke."
+ },
+ {
+  "id": 7455,
+  "de": "defekt",
+  "typ": "Sonstiges",
+  "tr": "arızalı, bozuk",
+  "formen": "",
+  "beispiel": "Der Aufzug ist seit Montag defekt."
+ },
+ {
+  "id": 7456,
+  "de": "beschädigt",
+  "typ": "Sonstiges",
+  "tr": "hasarlı, zarar görmüş",
+  "formen": "",
+  "beispiel": "Das Paket kam beschädigt bei mir an."
+ },
+ {
+  "id": 7457,
+  "de": "zerbrochen",
+  "typ": "Sonstiges",
+  "tr": "kırık, kırılmış",
+  "formen": "",
+  "beispiel": "Im Karton lagen zwei zerbrochene Teller."
+ },
+ {
+  "id": 7458,
+  "de": "heil",
+  "typ": "Sonstiges",
+  "tr": "sağlam, bütün",
+  "formen": "",
+  "beispiel": "Zum Glück sind alle Gläser heil geblieben."
+ },
+ {
+  "id": 7459,
+  "de": "gebraucht",
+  "typ": "Sonstiges",
+  "tr": "ikinci el, kullanılmış",
+  "formen": "",
+  "beispiel": "Wir haben eine gebrauchte Waschmaschine gekauft."
+ },
+ {
+  "id": 7460,
+  "de": "abgenutzt",
+  "typ": "Sonstiges",
+  "tr": "yıpranmış, eskimiş",
+  "formen": "",
+  "beispiel": "Der Teppich im Wohnzimmer ist schon abgenutzt."
+ },
+ {
+  "id": 7461,
+  "de": "rostig",
+  "typ": "Sonstiges",
+  "tr": "paslı",
+  "formen": "",
+  "beispiel": "Im Garten steht ein rostiges Fahrrad."
+ },
+ {
+  "id": 7462,
+  "de": "wackelig",
+  "typ": "Sonstiges",
+  "tr": "sallanan, oynak",
+  "formen": "",
+  "beispiel": "Setz dich nicht auf den Stuhl, er ist wackelig."
+ },
+ {
+  "id": 7463,
+  "de": "zerbrechlich",
+  "typ": "Sonstiges",
+  "tr": "kırılgan, kolay kırılır",
+  "formen": "",
+  "beispiel": "Vorsicht, die Vase ist sehr zerbrechlich."
+ },
+ {
+  "id": 7464,
+  "de": "stabil",
+  "typ": "Sonstiges",
+  "tr": "sağlam, dayanıklı",
+  "formen": "",
+  "beispiel": "Das Regal ist stabil und trägt viele Bücher."
+ }
+]

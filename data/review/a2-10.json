@@ -1,0 +1,1009 @@
+[
+ {
+  "id": 8075,
+  "de": "der Wegweiser",
+  "typ": "Nomen",
+  "tr": "yön levhası",
+  "formen": "-",
+  "beispiel": "Am Wegweiser gehen wir nach links."
+ },
+ {
+  "id": 8076,
+  "de": "die Abkürzung",
+  "typ": "Nomen",
+  "tr": "kestirme yol, kısaltma",
+  "formen": "-en",
+  "beispiel": "Durch den Park gibt es eine Abkürzung zum Bahnhof."
+ },
+ {
+  "id": 8077,
+  "de": "der Rückweg",
+  "typ": "Nomen",
+  "tr": "dönüş yolu",
+  "formen": "-e",
+  "beispiel": "Auf dem Rückweg kaufen wir noch Brot."
+ },
+ {
+  "id": 8078,
+  "de": "der Hinweg",
+  "typ": "Nomen",
+  "tr": "gidiş yolu",
+  "formen": "-e",
+  "beispiel": "Auf dem Hinweg hat es die ganze Zeit geregnet."
+ },
+ {
+  "id": 8079,
+  "de": "der Heimweg",
+  "typ": "Nomen",
+  "tr": "eve dönüş yolu",
+  "formen": "-e",
+  "beispiel": "Auf dem Heimweg habe ich meine Nachbarin getroffen."
+ },
+ {
+  "id": 8080,
+  "de": "die Reisetasche",
+  "typ": "Nomen",
+  "tr": "seyahat çantası",
+  "formen": "-n",
+  "beispiel": "Meine Reisetasche ist schon fast voll."
+ },
+ {
+  "id": 8081,
+  "de": "der Reiseplan",
+  "typ": "Nomen",
+  "tr": "seyahat planı",
+  "formen": "¨-e",
+  "beispiel": "Wir haben unseren Reiseplan noch einmal geändert."
+ },
+ {
+  "id": 8082,
+  "de": "der Parkplatz",
+  "typ": "Nomen",
+  "tr": "otopark, park yeri",
+  "formen": "¨-e",
+  "beispiel": "Vor dem Hotel gibt es einen großen Parkplatz."
+ },
+ {
+  "id": 8083,
+  "de": "der Kofferraum",
+  "typ": "Nomen",
+  "tr": "bagaj (araba)",
+  "formen": "¨-e",
+  "beispiel": "Die Koffer passen alle in den Kofferraum."
+ },
+ {
+  "id": 8084,
+  "de": "der Sicherheitsgurt",
+  "typ": "Nomen",
+  "tr": "emniyet kemeri",
+  "formen": "-e",
+  "beispiel": "Bitte legen Sie den Sicherheitsgurt an."
+ },
+ {
+  "id": 8085,
+  "de": "das Lenkrad",
+  "typ": "Nomen",
+  "tr": "direksiyon",
+  "formen": "¨-er",
+  "beispiel": "Halt das Lenkrad mit beiden Händen!"
+ },
+ {
+  "id": 8086,
+  "de": "die Hupe",
+  "typ": "Nomen",
+  "tr": "korna",
+  "formen": "-n",
+  "beispiel": "Die Hupe an meinem Auto ist kaputt."
+ },
+ {
+  "id": 8087,
+  "de": "der Mietwagen",
+  "typ": "Nomen",
+  "tr": "kiralık araba",
+  "formen": "-",
+  "beispiel": "Am Flughafen holen wir den Mietwagen ab."
+ },
+ {
+  "id": 8088,
+  "de": "der Beifahrer",
+  "typ": "Nomen",
+  "tr": "ön koltuktaki yolcu",
+  "formen": "-",
+  "beispiel": "Als Beifahrer lese ich die Karte."
+ },
+ {
+  "id": 8089,
+  "de": "der Autofahrer",
+  "typ": "Nomen",
+  "tr": "araba sürücüsü",
+  "formen": "-",
+  "beispiel": "Der Autofahrer hat vor der Ampel gebremst."
+ },
+ {
+  "id": 8090,
+  "de": "der Bürgersteig",
+  "typ": "Nomen",
+  "tr": "kaldırım",
+  "formen": "-e",
+  "beispiel": "Auf dem Bürgersteig darf man nicht parken.",
+  "ayniAnlam": [
+   "der Gehsteig (B1)",
+   "das Trottoir (B1)"
+  ]
+ },
+ {
+  "id": 8091,
+  "de": "abschleppen",
+  "typ": "Verb",
+  "tr": "çekmek, çekiciyle götürmek",
+  "formen": "schleppt ab, hat abgeschleppt",
+  "beispiel": "Die Polizei lässt das Auto abschleppen."
+ },
+ {
+  "id": 8092,
+  "de": "die Raststätte",
+  "typ": "Nomen",
+  "tr": "dinlenme tesisi",
+  "formen": "-n",
+  "beispiel": "An der nächsten Raststätte machen wir eine Pause."
+ },
+ {
+  "id": 8093,
+  "de": "das Wohnmobil",
+  "typ": "Nomen",
+  "tr": "karavan",
+  "formen": "-e",
+  "beispiel": "Meine Eltern reisen im Sommer mit dem Wohnmobil."
+ },
+ {
+  "id": 8094,
+  "de": "mitfahren",
+  "typ": "Verb",
+  "tr": "birlikte gitmek, arabasına binmek",
+  "formen": "fährt mit, ist mitgefahren",
+  "beispiel": "Darf ich bis zum Bahnhof mitfahren?"
+ },
+ {
+  "id": 8095,
+  "de": "das Andenken",
+  "typ": "Nomen",
+  "tr": "hatıra eşyası",
+  "formen": "-",
+  "beispiel": "Ich habe meiner Schwester ein kleines Andenken gekauft."
+ },
+ {
+  "id": 8096,
+  "de": "die Badehose",
+  "typ": "Nomen",
+  "tr": "mayo (erkek), deniz şortu",
+  "formen": "-n",
+  "beispiel": "Hast du deine Badehose eingepackt?"
+ },
+ {
+  "id": 8097,
+  "de": "die Bootsfahrt",
+  "typ": "Nomen",
+  "tr": "tekne gezisi",
+  "formen": "-en",
+  "beispiel": "Am Nachmittag machen wir eine Bootsfahrt auf dem See."
+ },
+ {
+  "id": 8098,
+  "de": "die Weltreise",
+  "typ": "Nomen",
+  "tr": "dünya turu",
+  "formen": "-n",
+  "beispiel": "Mein Bruder träumt von einer Weltreise."
+ },
+ {
+  "id": 8099,
+  "de": "der Sonnenschirm",
+  "typ": "Nomen",
+  "tr": "güneş şemsiyesi",
+  "formen": "-e",
+  "beispiel": "Am Strand liegen wir unter dem Sonnenschirm."
+ },
+ {
+  "id": 8100,
+  "de": "die Klassenfahrt",
+  "typ": "Nomen",
+  "tr": "okul gezisi",
+  "formen": "-en",
+  "beispiel": "Meine Tochter fährt nächste Woche auf Klassenfahrt."
+ },
+ {
+  "id": 8101,
+  "de": "der Frühling",
+  "typ": "Nomen",
+  "tr": "ilkbahar",
+  "formen": "-e",
+  "beispiel": "Im Frühling blühen die Bäume im Park."
+ },
+ {
+  "id": 8102,
+  "de": "der Sommer",
+  "typ": "Nomen",
+  "tr": "yaz",
+  "formen": "-",
+  "beispiel": "Im Sommer gehen wir jeden Tag an den See."
+ },
+ {
+  "id": 8103,
+  "de": "der Herbst",
+  "typ": "Nomen",
+  "tr": "sonbahar",
+  "formen": "-e",
+  "beispiel": "Im Herbst fallen die Blätter von den Bäumen."
+ },
+ {
+  "id": 8104,
+  "de": "der Winter",
+  "typ": "Nomen",
+  "tr": "kış",
+  "formen": "-",
+  "beispiel": "Der Winter war dieses Jahr sehr kalt."
+ },
+ {
+  "id": 8105,
+  "de": "die Jahreszeit",
+  "typ": "Nomen",
+  "tr": "mevsim",
+  "formen": "-en",
+  "beispiel": "Welche Jahreszeit magst du am liebsten?"
+ },
+ {
+  "id": 8106,
+  "de": "der Stadtteil",
+  "typ": "Nomen",
+  "tr": "semt, şehrin bir bölgesi",
+  "formen": "-e",
+  "beispiel": "Wir wohnen in einem ruhigen Stadtteil im Norden."
+ },
+ {
+  "id": 8107,
+  "de": "der Gehweg",
+  "typ": "Nomen",
+  "tr": "kaldırım, yaya yolu",
+  "formen": "-e",
+  "beispiel": "Auf dem Gehweg darf man nicht parken."
+ },
+ {
+  "id": 8108,
+  "de": "die Laterne",
+  "typ": "Nomen",
+  "tr": "sokak lambası, fener",
+  "formen": "-n",
+  "beispiel": "Vor unserem Haus steht eine alte Laterne."
+ },
+ {
+  "id": 8109,
+  "de": "der Brunnen",
+  "typ": "Nomen",
+  "tr": "çeşme, kuyu",
+  "formen": "-",
+  "beispiel": "Auf dem Marktplatz gibt es einen schönen Brunnen."
+ },
+ {
+  "id": 8110,
+  "de": "der Bach",
+  "typ": "Nomen",
+  "tr": "dere, çay",
+  "formen": "¨-e",
+  "beispiel": "Hinter dem Dorf fließt ein kleiner Bach."
+ },
+ {
+  "id": 8111,
+  "de": "der Teich",
+  "typ": "Nomen",
+  "tr": "gölet, havuz",
+  "formen": "-e",
+  "beispiel": "Im Teich schwimmen viele Enten."
+ },
+ {
+  "id": 8112,
+  "de": "der Zweig",
+  "typ": "Nomen",
+  "tr": "dal",
+  "formen": "-e",
+  "beispiel": "Ein Vogel sitzt auf dem Zweig vor dem Fenster."
+ },
+ {
+  "id": 8113,
+  "de": "die Wurzel",
+  "typ": "Nomen",
+  "tr": "kök",
+  "formen": "-n",
+  "beispiel": "Die Wurzeln des Baumes sind sehr tief."
+ },
+ {
+  "id": 8114,
+  "de": "die Biene",
+  "typ": "Nomen",
+  "tr": "arı",
+  "formen": "-n",
+  "beispiel": "Eine Biene sitzt auf der gelben Blume."
+ },
+ {
+  "id": 8115,
+  "de": "der Frosch",
+  "typ": "Nomen",
+  "tr": "kurbağa",
+  "formen": "¨-e",
+  "beispiel": "Am Teich haben wir einen grünen Frosch gesehen."
+ },
+ {
+  "id": 8116,
+  "de": "das Schaf",
+  "typ": "Nomen",
+  "tr": "koyun",
+  "formen": "-e",
+  "beispiel": "Auf der Weide stehen zwanzig Schafe."
+ },
+ {
+  "id": 8117,
+  "de": "der Papierkorb",
+  "typ": "Nomen",
+  "tr": "çöp sepeti, kâğıt sepeti",
+  "formen": "¨-e",
+  "beispiel": "Wirf das Papier bitte in den Papierkorb."
+ },
+ {
+  "id": 8118,
+  "de": "der Sonnenschein",
+  "typ": "Nomen",
+  "tr": "güneş ışığı",
+  "formen": "(Sg.)",
+  "beispiel": "Nach dem Regen kam endlich der Sonnenschein."
+ },
+ {
+  "id": 8119,
+  "de": "die Meldebescheinigung",
+  "typ": "Nomen",
+  "tr": "ikametgâh belgesi",
+  "formen": "-en",
+  "beispiel": "Der Vermieter möchte eine Meldebescheinigung von mir sehen."
+ },
+ {
+  "id": 8120,
+  "de": "die Streife",
+  "typ": "Nomen",
+  "tr": "devriye",
+  "formen": "-n",
+  "beispiel": "Die Polizei fährt jede Nacht Streife in unserem Viertel."
+ },
+ {
+  "id": 8121,
+  "de": "sich ausweisen",
+  "typ": "Verb",
+  "tr": "kimliğini göstermek",
+  "formen": "weist sich aus, hat sich ausgewiesen",
+  "beispiel": "Bei der Kontrolle musst du dich mit dem Pass ausweisen."
+ },
+ {
+  "id": 8122,
+  "de": "sich informieren",
+  "typ": "Verb",
+  "tr": "bilgi almak, bilgi edinmek",
+  "formen": "informiert sich, hat sich informiert",
+  "beispiel": "Ich habe mich beim Amt über die Anmeldung informiert."
+ },
+ {
+  "id": 8123,
+  "de": "wehen",
+  "typ": "Verb",
+  "tr": "esmek",
+  "formen": "weht, hat geweht",
+  "beispiel": "Am Meer weht heute ein starker Wind."
+ },
+ {
+  "id": 8124,
+  "de": "untergehen",
+  "typ": "Verb",
+  "tr": "batmak (güneş)",
+  "formen": "geht unter, ist untergegangen",
+  "beispiel": "Am Meer ist die Sonne gerade untergegangen."
+ },
+ {
+  "id": 8125,
+  "de": "stempeln",
+  "typ": "Verb",
+  "tr": "mühürlemek, damgalamak",
+  "formen": "stempelt, hat gestempelt",
+  "beispiel": "Die Frau am Schalter hat mein Formular gestempelt."
+ },
+ {
+  "id": 8126,
+  "de": "durchsuchen",
+  "typ": "Verb",
+  "tr": "aramak, arama yapmak",
+  "formen": "durchsucht, hat durchsucht",
+  "beispiel": "Die Polizei hat den ganzen Park durchsucht."
+ },
+ {
+  "id": 8127,
+  "de": "ausgraben",
+  "typ": "Verb",
+  "tr": "kazıp çıkarmak",
+  "formen": "gräbt aus, hat ausgegraben",
+  "beispiel": "Der Hund hat im Garten einen Knochen ausgegraben."
+ },
+ {
+  "id": 8128,
+  "de": "ernten",
+  "typ": "Verb",
+  "tr": "hasat etmek, toplamak",
+  "formen": "erntet, hat geerntet",
+  "beispiel": "Im Herbst ernten die Bauern die Äpfel."
+ },
+ {
+  "id": 8129,
+  "de": "absperren",
+  "typ": "Verb",
+  "tr": "kapatmak, kordona almak",
+  "formen": "sperrt ab, hat abgesperrt",
+  "beispiel": "Die Polizei hat die Straße nach dem Unfall abgesperrt."
+ },
+ {
+  "id": 8130,
+  "de": "pflücken",
+  "typ": "Verb",
+  "tr": "koparmak, toplamak (çiçek, meyve)",
+  "formen": "pflückt, hat gepflückt",
+  "beispiel": "Die Kinder pflücken Blumen auf der Wiese."
+ },
+ {
+  "id": 8131,
+  "de": "bellen",
+  "typ": "Verb",
+  "tr": "havlamak",
+  "formen": "bellt, hat gebellt",
+  "beispiel": "Der Hund des Nachbarn bellt die ganze Nacht."
+ },
+ {
+  "id": 8132,
+  "de": "jagen",
+  "typ": "Verb",
+  "tr": "avlamak, kovalamak",
+  "formen": "jagt, hat gejagt",
+  "beispiel": "Der Fuchs jagt nachts kleine Tiere."
+ },
+ {
+  "id": 8133,
+  "de": "verbrennen",
+  "typ": "Verb",
+  "tr": "yakmak",
+  "formen": "verbrennt, hat verbrannt",
+  "beispiel": "Im Garten darf man kein Laub verbrennen."
+ },
+ {
+  "id": 8134,
+  "de": "säubern",
+  "typ": "Verb",
+  "tr": "temizlemek",
+  "formen": "säubert, hat gesäubert",
+  "beispiel": "Wir säubern den Strand von Plastik und Papier.",
+  "ayniAnlam": [
+   "putzen (A2)",
+   "reinigen (B1)"
+  ]
+ },
+ {
+  "id": 8135,
+  "de": "vorhersagen",
+  "typ": "Verb",
+  "tr": "tahmin etmek, önceden bildirmek",
+  "formen": "sagt vorher, hat vorhergesagt",
+  "beispiel": "Für morgen sagt man Regen vorher."
+ },
+ {
+  "id": 8136,
+  "de": "kriechen",
+  "typ": "Verb",
+  "tr": "sürünmek, emeklemek",
+  "formen": "kriecht, ist gekrochen",
+  "beispiel": "Eine Schnecke kriecht langsam über den Weg."
+ },
+ {
+  "id": 8137,
+  "de": "streiten",
+  "typ": "Verb",
+  "tr": "tartışmak, kavga etmek",
+  "formen": "streitet, hat gestritten",
+  "beispiel": "Die Nachbarn streiten oft über den Lärm.",
+  "ayniAnlam": [
+   "sich streiten über (B2)"
+  ]
+ },
+ {
+  "id": 8138,
+  "de": "verletzen",
+  "typ": "Verb",
+  "tr": "yaralamak",
+  "formen": "verletzt, hat verletzt",
+  "beispiel": "Bei dem Unfall hat sich niemand verletzt."
+ },
+ {
+  "id": 8139,
+  "de": "fällen",
+  "typ": "Verb",
+  "tr": "kesmek (ağaç), devirmek",
+  "formen": "fällt, hat gefällt",
+  "beispiel": "Im Winter haben sie den kranken Baum gefällt."
+ },
+ {
+  "id": 8140,
+  "de": "aufgehen",
+  "typ": "Verb",
+  "tr": "doğmak (güneş), açılmak",
+  "formen": "geht auf, ist aufgegangen",
+  "beispiel": "Im Sommer geht die Sonne schon um fünf Uhr auf."
+ },
+ {
+  "id": 8141,
+  "de": "erfrieren",
+  "typ": "Verb",
+  "tr": "donmak, soğuktan ölmek",
+  "formen": "erfriert, ist erfroren",
+  "beispiel": "Bei diesem Frost können die Blumen erfrieren."
+ },
+ {
+  "id": 8142,
+  "de": "summen",
+  "typ": "Verb",
+  "tr": "vızıldamak, mırıldanmak",
+  "formen": "summt, hat gesummt",
+  "beispiel": "Die Bienen summen den ganzen Tag im Garten."
+ },
+ {
+  "id": 8143,
+  "de": "grün",
+  "typ": "Sonstiges",
+  "tr": "yeşil",
+  "formen": "",
+  "beispiel": "Im Frühling wird die Wiese wieder ganz grün."
+ },
+ {
+  "id": 8144,
+  "de": "lebendig",
+  "typ": "Sonstiges",
+  "tr": "canlı, hareketli",
+  "formen": "",
+  "beispiel": "Abends ist die Innenstadt sehr lebendig.",
+  "ayniAnlam": [
+   "lebhaft (A2)"
+  ]
+ },
+ {
+  "id": 8145,
+  "de": "erlaubt",
+  "typ": "Sonstiges",
+  "tr": "izinli, serbest",
+  "formen": "",
+  "beispiel": "Hier ist das Parken nur eine Stunde erlaubt."
+ },
+ {
+  "id": 8146,
+  "de": "zahm",
+  "typ": "Sonstiges",
+  "tr": "uysal, evcil",
+  "formen": "",
+  "beispiel": "Die Ziegen auf dem Bauernhof sind ganz zahm."
+ },
+ {
+  "id": 8147,
+  "de": "heftig",
+  "typ": "Sonstiges",
+  "tr": "şiddetli, sert",
+  "formen": "",
+  "beispiel": "Gestern hat es den ganzen Tag heftig geregnet."
+ },
+ {
+  "id": 8148,
+  "de": "harmlos",
+  "typ": "Sonstiges",
+  "tr": "zararsız",
+  "formen": "",
+  "beispiel": "Keine Angst, diese Spinne ist ganz harmlos."
+ },
+ {
+  "id": 8149,
+  "de": "belebt",
+  "typ": "Sonstiges",
+  "tr": "hareketli, kalabalık",
+  "formen": "",
+  "beispiel": "Die Straße vor dem Bahnhof ist immer belebt."
+ },
+ {
+  "id": 8150,
+  "de": "rutschig",
+  "typ": "Sonstiges",
+  "tr": "kaygan",
+  "formen": "",
+  "beispiel": "Nach dem Regen ist der Weg sehr rutschig."
+ },
+ {
+  "id": 8151,
+  "de": "wachsam",
+  "typ": "Sonstiges",
+  "tr": "tetikte, uyanık",
+  "formen": "",
+  "beispiel": "Der Hund ist nachts sehr wachsam."
+ },
+ {
+  "id": 8152,
+  "de": "essbar",
+  "typ": "Sonstiges",
+  "tr": "yenilebilir",
+  "formen": "",
+  "beispiel": "Nicht jeder Pilz im Wald ist essbar."
+ },
+ {
+  "id": 8153,
+  "de": "biologisch",
+  "typ": "Sonstiges",
+  "tr": "organik, biyolojik",
+  "formen": "",
+  "beispiel": "Dieses Gemüse kommt aus biologischem Anbau.",
+  "ayniAnlam": [
+   "bio(logisch) (B1)"
+  ]
+ },
+ {
+  "id": 8154,
+  "de": "örtlich",
+  "typ": "Sonstiges",
+  "tr": "yerel",
+  "formen": "",
+  "beispiel": "Die örtliche Polizei hat uns sofort geholfen."
+ },
+ {
+  "id": 8155,
+  "de": "grau",
+  "typ": "Sonstiges",
+  "tr": "gri",
+  "formen": "",
+  "beispiel": "Der Himmel ist heute den ganzen Tag grau."
+ },
+ {
+  "id": 8156,
+  "de": "scheu",
+  "typ": "Sonstiges",
+  "tr": "ürkek, çekingen",
+  "formen": "",
+  "beispiel": "Rehe sind sehr scheu und laufen schnell weg."
+ },
+ {
+  "id": 8157,
+  "de": "verschmutzt",
+  "typ": "Sonstiges",
+  "tr": "kirlenmiş, kirli",
+  "formen": "",
+  "beispiel": "Der Fluss ist an dieser Stelle stark verschmutzt."
+ },
+ {
+  "id": 8158,
+  "de": "unangenehm",
+  "typ": "Sonstiges",
+  "tr": "rahatsız edici, nahoş",
+  "formen": "",
+  "beispiel": "Der kalte Wind am Bahnhof war sehr unangenehm."
+ },
+ {
+  "id": 8159,
+  "de": "vollständig",
+  "typ": "Sonstiges",
+  "tr": "eksiksiz, tam",
+  "formen": "",
+  "beispiel": "Bitte füllen Sie das Formular vollständig aus."
+ },
+ {
+  "id": 8160,
+  "de": "berechtigt",
+  "typ": "Sonstiges",
+  "tr": "yetkili, hakkı olan",
+  "formen": "",
+  "beispiel": "Nur Anwohner sind berechtigt, hier zu parken."
+ },
+ {
+  "id": 8161,
+  "de": "glätten",
+  "typ": "Verb",
+  "tr": "düzeltmek, düzleştirmek",
+  "formen": "glättet, hat geglättet",
+  "beispiel": "Vor dem Essen glätte ich die Tischdecke mit der Hand."
+ },
+ {
+  "id": 8162,
+  "de": "abstauben",
+  "typ": "Verb",
+  "tr": "tozunu almak",
+  "formen": "staubt ab, hat abgestaubt",
+  "beispiel": "Am Wochenende staube ich die Regale im Wohnzimmer ab."
+ },
+ {
+  "id": 8163,
+  "de": "schrubben",
+  "typ": "Verb",
+  "tr": "ovalamak, fırçalayarak temizlemek",
+  "formen": "schrubbt, hat geschrubbt",
+  "beispiel": "Ich schrubbe den Boden im Bad mit einer harten Bürste."
+ },
+ {
+  "id": 8164,
+  "de": "aufwischen",
+  "typ": "Verb",
+  "tr": "(dökülen şeyi) silmek, paspaslamak",
+  "formen": "wischt auf, hat aufgewischt",
+  "beispiel": "Das Kind hat Milch verschüttet, ich wische sie schnell auf."
+ },
+ {
+  "id": 8165,
+  "de": "saugen",
+  "typ": "Verb",
+  "tr": "elektrikli süpürgeyle süpürmek, emmek",
+  "formen": "saugt, hat gesaugt",
+  "beispiel": "Ich sauge jeden Freitag den Teppich im Wohnzimmer."
+ },
+ {
+  "id": 8166,
+  "de": "ausräumen",
+  "typ": "Verb",
+  "tr": "boşaltmak, içindekileri çıkarmak",
+  "formen": "räumt aus, hat ausgeräumt",
+  "beispiel": "Nach dem Frühstück räume ich die Spülmaschine aus."
+ },
+ {
+  "id": 8167,
+  "de": "ausmisten",
+  "typ": "Verb",
+  "tr": "ayıklamak, gereksizleri atmak",
+  "formen": "mistet aus, hat ausgemistet",
+  "beispiel": "Einmal im Jahr miste ich den Kleiderschrank aus."
+ },
+ {
+  "id": 8168,
+  "de": "ausleeren",
+  "typ": "Verb",
+  "tr": "boşaltmak",
+  "formen": "leert aus, hat ausgeleert",
+  "beispiel": "Am Morgen leere ich den Briefkasten aus.",
+  "ayniAnlam": [
+   "leeren (A2)"
+  ]
+ },
+ {
+  "id": 8169,
+  "de": "umrühren",
+  "typ": "Verb",
+  "tr": "karıştırmak",
+  "formen": "rührt um, hat umgerührt",
+  "beispiel": "Ich rühre die Suppe mit einem Löffel langsam um.",
+  "ayniAnlam": [
+   "mischen (B1)",
+   "verwechseln (B1)",
+   "rühren (A2)"
+  ]
+ },
+ {
+  "id": 8170,
+  "de": "rösten",
+  "typ": "Verb",
+  "tr": "kızartmak, kavurmak",
+  "formen": "röstet, hat geröstet",
+  "beispiel": "Ich röste das Brot in der Pfanne, bis es braun ist.",
+  "ayniAnlam": [
+   "braten (A2)"
+  ]
+ },
+ {
+  "id": 8171,
+  "de": "aufessen",
+  "typ": "Verb",
+  "tr": "hepsini yemek, tabağını bitirmek",
+  "formen": "isst auf, hat aufgegessen",
+  "beispiel": "Mein Sohn isst seinen Teller zum Glück immer ganz auf."
+ },
+ {
+  "id": 8172,
+  "de": "hacken",
+  "typ": "Verb",
+  "tr": "doğramak, kıymak",
+  "formen": "hackt, hat gehackt",
+  "beispiel": "Für die Soße hacke ich die Zwiebeln ganz klein."
+ },
+ {
+  "id": 8173,
+  "de": "reiben",
+  "typ": "Verb",
+  "tr": "rendelemek, ovmak",
+  "formen": "reibt, hat gerieben",
+  "beispiel": "Für die Nudeln reibe ich noch etwas Käse."
+ },
+ {
+  "id": 8174,
+  "de": "kneten",
+  "typ": "Verb",
+  "tr": "yoğurmak",
+  "formen": "knetet, hat geknetet",
+  "beispiel": "Für das Brot knete ich den Teig mit den Händen."
+ },
+ {
+  "id": 8175,
+  "de": "pressen",
+  "typ": "Verb",
+  "tr": "sıkmak, preslemek",
+  "formen": "presst, hat gepresst",
+  "beispiel": "Zum Frühstück presse ich eine frische Orange."
+ },
+ {
+  "id": 8176,
+  "de": "auftauen",
+  "typ": "Verb",
+  "tr": "buzunu çözmek, çözülmek",
+  "formen": "taut auf, hat aufgetaut",
+  "beispiel": "Ich taue das Fleisch über Nacht im Kühlschrank auf."
+ },
+ {
+  "id": 8177,
+  "de": "einfrieren",
+  "typ": "Verb",
+  "tr": "dondurmak, derin dondurucuya koymak",
+  "formen": "friert ein, hat eingefroren",
+  "beispiel": "Wir frieren das restliche Brot für später ein."
+ },
+ {
+  "id": 8178,
+  "de": "einweichen",
+  "typ": "Verb",
+  "tr": "suda bekletmek, ıslatmak",
+  "formen": "weicht ein, hat eingeweicht",
+  "beispiel": "Die Bohnen weiche ich über Nacht in kaltem Wasser ein."
+ },
+ {
+  "id": 8179,
+  "de": "aufsetzen",
+  "typ": "Verb",
+  "tr": "(su, kahve) ocağa koymak, takmak",
+  "formen": "setzt auf, hat aufgesetzt",
+  "beispiel": "Ich setze schnell Wasser für den Tee auf."
+ },
+ {
+  "id": 8180,
+  "de": "abspülen",
+  "typ": "Verb",
+  "tr": "bulaşık yıkamak, durulamak",
+  "formen": "spült ab, hat abgespült",
+  "beispiel": "Nach dem Abendessen spüle ich das Geschirr von Hand ab."
+ },
+ {
+  "id": 8181,
+  "de": "zusammenlegen",
+  "typ": "Verb",
+  "tr": "katlamak, üst üste katlamak",
+  "formen": "legt zusammen, hat zusammengelegt",
+  "beispiel": "Meine Tochter legt die T-Shirts ordentlich zusammen."
+ },
+ {
+  "id": 8182,
+  "de": "flicken",
+  "typ": "Verb",
+  "tr": "yamamak, onarmak",
+  "formen": "flickt, hat geflickt",
+  "beispiel": "Meine Oma flickt meine alte Hose mit Nadel und Faden."
+ },
+ {
+  "id": 8183,
+  "de": "stopfen",
+  "typ": "Verb",
+  "tr": "yamamak (çorap), tıkmak",
+  "formen": "stopft, hat gestopft",
+  "beispiel": "Meine Oma stopft die Löcher in meinen Socken."
+ },
+ {
+  "id": 8184,
+  "de": "austrinken",
+  "typ": "Verb",
+  "tr": "içip bitirmek",
+  "formen": "trinkt aus, hat ausgetrunken",
+  "beispiel": "Trink bitte deinen Kaffee aus, wir müssen gleich los."
+ },
+ {
+  "id": 8185,
+  "de": "nageln",
+  "typ": "Verb",
+  "tr": "çivilemek",
+  "formen": "nagelt, hat genagelt",
+  "beispiel": "Er nagelt ein kleines Brett über die Tür."
+ },
+ {
+  "id": 8186,
+  "de": "sägen",
+  "typ": "Verb",
+  "tr": "testereyle kesmek",
+  "formen": "sägt, hat gesägt",
+  "beispiel": "Meine Eltern sägen im Garten Holz für den Ofen."
+ },
+ {
+  "id": 8187,
+  "de": "ölen",
+  "typ": "Verb",
+  "tr": "yağlamak",
+  "formen": "ölt, hat geölt",
+  "beispiel": "Einmal im Jahr ölen wir die Türen in der Wohnung."
+ },
+ {
+  "id": 8188,
+  "de": "schmieren",
+  "typ": "Verb",
+  "tr": "sürmek (tereyağı vb.), yağlamak",
+  "formen": "schmiert, hat geschmiert",
+  "beispiel": "Morgens schmiere ich Butter und Marmelade auf mein Brot."
+ },
+ {
+  "id": 8189,
+  "de": "abkratzen",
+  "typ": "Verb",
+  "tr": "kazımak, kazıyarak çıkarmak",
+  "formen": "kratzt ab, hat abgekratzt",
+  "beispiel": "Im Winter kratze ich morgens das Eis vom Auto ab."
+ },
+ {
+  "id": 8190,
+  "de": "zusammenbauen",
+  "typ": "Verb",
+  "tr": "monte etmek, kurmak",
+  "formen": "baut zusammen, hat zusammengebaut",
+  "beispiel": "Wir bauen das neue Regal am Wochenende zusammen.",
+  "ayniAnlam": [
+   "montieren (A2)"
+  ]
+ },
+ {
+  "id": 8191,
+  "de": "anbringen",
+  "typ": "Verb",
+  "tr": "takmak, monte etmek",
+  "formen": "bringt an, hat angebracht",
+  "beispiel": "Der Hausmeister bringt eine neue Lampe im Flur an."
+ },
+ {
+  "id": 8192,
+  "de": "beschriften",
+  "typ": "Verb",
+  "tr": "üzerine yazmak, etiketlemek",
+  "formen": "beschriftet, hat beschriftet",
+  "beispiel": "Ich beschrifte die Dosen im Küchenschrank mit einem Stift."
+ },
+ {
+  "id": 8193,
+  "de": "anschalten",
+  "typ": "Verb",
+  "tr": "açmak (cihaz)",
+  "formen": "schaltet an, hat angeschaltet",
+  "beispiel": "Am Abend schalte ich die Lampe im Wohnzimmer an."
+ },
+ {
+  "id": 8194,
+  "de": "abdecken",
+  "typ": "Verb",
+  "tr": "üstünü örtmek, üstünü kapatmak",
+  "formen": "deckt ab, hat abgedeckt",
+  "beispiel": "Beim Streichen decke ich den Boden mit einer Folie ab."
+ },
+ {
+  "id": 8195,
+  "de": "warmhalten",
+  "typ": "Verb",
+  "tr": "sıcak tutmak",
+  "formen": "hält warm, hat warmgehalten",
+  "beispiel": "Ich halte das Essen im Ofen für meinen Mann warm."
+ },
+ {
+  "id": 8196,
+  "de": "knoten",
+  "typ": "Verb",
+  "tr": "düğümlemek, düğüm atmak",
+  "formen": "knotet, hat geknotet",
+  "beispiel": "Ich knote den vollen Müllsack fest zu."
+ }
+]
