@@ -359,15 +359,15 @@ export const deA1B07: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das ist die Küche."),
+          de("Das ist das Wohnzimmer."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das ist die Küche.",
+          statement: "Das ist das Wohnzimmer.",
           answer: true,
           why: [
-            tr("Doğru. Mutfak kelimesi dişildir ve doğru artikeli almış."),
+            tr("Doğru. Oda ile biten kelimeler artikellerini son parçadan alır, o yüzden bu kelime de aynı artikeli taşır."),
           ],
         },
       },
@@ -715,15 +715,15 @@ export const deA1B07: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Wir sind neu hier."),
+          de("Das ist meine Nachbarin."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Wir sind neu hier.",
+          statement: "Das ist meine Nachbarin.",
           answer: true,
           why: [
-            tr("Doğru. Birden fazla kişi için fiil bu biçimi alır ve cümle tam olarak buraya yeni taşındığını anlatır."),
+            tr("Doğru. Kadın komşu için kelimenin sonuna ek gelir ve kelime dişil olduğu için iyelik de dişil biçimini alır."),
           ],
         },
       },
@@ -1110,8 +1110,8 @@ export const deA1B07: Lesson[] = [
       scene:
         "Bir daireye bakmaya gittin ve ev sahibiyle konuşuyorsun. Kirayı sor, aidatın dahil olup olmadığını öğren ve fiyatı doğru anladığından emin ol.",
       partner: "işini bilen, doğrudan konuşan bir ev sahibi",
-      opening: "Guten Tag! Haben Sie noch Fragen zur Wohnung?",
-      openingTr: "İyi günler! Daireyle ilgili sormak istediğiniz bir şey var mı?",
+      opening: "Na, wie gefällt Ihnen die Wohnung?",
+      openingTr: "Ee, daire nasıl, beğendiniz mi?",
       minTurns: 4,
     },
   },
@@ -1294,6 +1294,562 @@ export const deA1B07: Lesson[] = [
       partner: "ev işlerinden pek hoşlanmayan bir ev arkadaşı",
       opening: "Also, wer räumt heute die Küche auf?",
       openingTr: "Peki, bugün mutfağı kim toplayacak?",
+      minTurns: 4,
+    },
+  },
+  {
+    id: "de-a1-umzug",
+    icon: "key",
+    level: "A1",
+    course: "de",
+    title: "Der Umzug",
+    titleTr: "Taşınma",
+    summary: "Yardım istemeyi ve taşınma gününü konuşmayı öğretir.",
+    minutes: 9,
+    focusId: "Modalverb-können",
+    vocab: [
+      { de: "der Umzug", tr: "taşınma" },
+      { de: "helfen", tr: "yardım etmek" },
+      { de: "packen", tr: "paketlemek" },
+      { de: "schwer", tr: "ağır" },
+      { de: "der Karton", tr: "koli" },
+    ],
+    patterns: [
+      { de: "Kannst du …?", tr: "birinden bir şey yapmasını isterken kullanılır" },
+      { de: "Wir tragen …", tr: "birlikte ne taşıdığınızı söyler" },
+      { de: "Vorsicht, schwer!", tr: "bir şeyin ağır olduğunu uyarır" },
+    ],
+    lecture: [
+      {
+        say: [
+          tr(
+            "Bugün taşınma gününü konuşacağız. En çok işine yarayacak şey yardım istemek olacak; bunun için tek bir fiil yetiyor. Hazır mısın?",
+          ),
+        ],
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Yardım isterken Türkçede soruyu tonla yumuşatırız. Almancada da soru kalıbı yeterince kibar; ayrıca bir şey eklemene gerek yok. Önce kelimeleri öğrenelim.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("der Umzug"),
+          tr("Türkçesi 'taşınma' demek. Lütfen"),
+          de("der Umzug"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Umzug" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("helfen"),
+          tr("Türkçesi 'yardım etmek' demek. Lütfen"),
+          de("helfen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "helfen" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("packen"),
+          tr("Türkçesi 'paketlemek, bavul hazırlamak' demek. Lütfen"),
+          de("packen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "packen" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("schwer"),
+          tr("Türkçesi 'ağır' demek. Lütfen"),
+          de("schwer"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "schwer" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Karton"),
+          tr("Türkçesi 'koli, karton kutu' demek. Lütfen"),
+          de("der Karton"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Karton" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız:"),
+          de("Kannst du …?"),
+          tr(
+            "'Yapabilir misin' demek. Dikkat çekici bir şey var: bu kalıpla kullandığın asıl fiil çekilmez, olduğu gibi kalır ve cümlenin en sonuna gider.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Bana yardım edebilir misin?' Almancası:"),
+          de("Kannst du mir helfen?"),
+          tr("Lütfen"),
+          de("Kannst du mir helfen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Kannst du mir helfen" },
+      },
+      {
+        say: [tr("Sıra sende: 'Koliyi taşıyabilir misin?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Kannst du den Karton tragen",
+          hint: [
+            tr("Asıl fiil çekilmeden en sona gider:"),
+            de("Kannst du den Karton tragen?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız birlikte iş yapmayı anlatır:"),
+          de("Wir tragen das Sofa."),
+          tr("'Koltuğu birlikte taşıyoruz' demek. Lütfen"),
+          de("Wir tragen das Sofa"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Wir tragen das Sofa" },
+      },
+      {
+        say: [tr("Şimdi sen: 'Dolabı taşıyoruz.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wir tragen den Schrank",
+          hint: [
+            tr("Dolap burada nesne olduğu için artikeli değişir:"),
+            de("Wir tragen den Schrank."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son kalıbımız bir uyarı:"),
+          de("Vorsicht, schwer!"),
+          tr("'Dikkat, ağır!' demek. Taşınma gününde en çok duyacağın cümle. Lütfen"),
+          de("Vorsicht, schwer"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Vorsicht, schwer" },
+      },
+      {
+        say: [
+          tr("Taşınmadan önceki iş de bir cümleyle anlatılır:"),
+          de("Ich packe die Kartons."),
+          tr("'Kolileri hazırlıyorum' demek. Lütfen"),
+          de("Ich packe die Kartons"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich packe die Kartons" },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Kannst du mir beim Umzug helfen?"),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Kannst du mir beim Umzug helfen?",
+          answer: true,
+          why: [
+            tr("Doğru. Soruda çekimli fiil başta duruyor, asıl fiil ise çekilmeden en sona gitmiş."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Artık yardım isteyebilirsin. Şimdi taşınma günündesin ve bir arkadaşın yardıma geldi.",
+          ),
+        ],
+      },
+    ],
+    roleplay: {
+      scene:
+        "Taşınma günü ve bir arkadaşın yardıma geldi. Neyi nereye taşıyacağınızı söyle, ondan yardım iste ve ağır eşyalar için onu uyar.",
+      partner: "yardıma koşan ama biraz aceleci bir arkadaş",
+      opening: "So, ich bin da! Was soll ich zuerst tragen?",
+      openingTr: "İşte geldim! Önce neyi taşıyayım?",
+      minTurns: 4,
+    },
+  },
+  {
+    id: "de-a1-garten",
+    icon: "flower",
+    level: "A1",
+    course: "de",
+    title: "Auf dem Balkon",
+    titleTr: "Balkon ve bahçe",
+    summary: "Balkonda ve bahçede neler olduğunu anlatmayı öğretir.",
+    minutes: 8,
+    focusId: "Es-gibt",
+    vocab: [
+      { de: "der Balkon", tr: "balkon" },
+      { de: "der Garten", tr: "bahçe" },
+      { de: "die Blume", tr: "çiçek" },
+      { de: "gießen", tr: "sulamak" },
+      { de: "der Stuhl", tr: "sandalye" },
+    ],
+    patterns: [
+      { de: "Auf dem Balkon gibt es …", tr: "balkonda ne olduğunu söyler" },
+      { de: "Ich gieße …", tr: "neyi suladığını söyler" },
+      { de: "Ich sitze gern …", tr: "nerede oturmayı sevdiğini söyler" },
+    ],
+    lecture: [
+      {
+        say: [
+          tr(
+            "Bugün balkonu ve bahçeyi anlatmayı öğreneceğiz. 'Var' kalıbını hatırlıyorsun; bu sefer başına bir yer ekleyeceğiz. Hazır mısın?",
+          ),
+        ],
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Almanya'da balkon ve bahçe küçük sohbetlerin en sevilen konusu. Önce kelimeleri öğrenelim.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("der Balkon"),
+          tr("Türkçesi 'balkon' demek. Lütfen"),
+          de("der Balkon"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Balkon" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("der Garten"),
+          tr("Türkçesi 'bahçe' demek. Lütfen"),
+          de("der Garten"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Garten" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("die Blume"),
+          tr("Türkçesi 'çiçek' demek. Lütfen"),
+          de("die Blume"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Blume" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("gießen"),
+          tr("Türkçesi 'sulamak' demek. Lütfen"),
+          de("gießen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "gießen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Stuhl"),
+          tr("Türkçesi 'sandalye' demek. Lütfen"),
+          de("der Stuhl"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Stuhl" },
+      },
+      {
+        say: [
+          tr(
+            "İlk kalıbımızda 'var' kalıbının başına yeri koyuyoruz. Yer başa gelince fiil hemen arkasından geliyor — bu kuralı artık biliyorsun.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Balkonda iki sandalye var.' Almancası:"),
+          de("Auf dem Balkon gibt es zwei Stühle."),
+          tr("Lütfen"),
+          de("Auf dem Balkon gibt es zwei Stühle"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Auf dem Balkon gibt es zwei Stühle" },
+      },
+      {
+        say: [tr("Sıra sende: 'Bahçede çiçekler var.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Im Garten gibt es Blumen",
+          hint: [
+            tr("Bahçe için yer bildiren biçim kısalır ve tek kelimeye iner:"),
+            de("Im Garten gibt es Blumen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Ich gieße die Blumen."),
+          tr("'Çiçekleri suluyorum' demek. Lütfen"),
+          de("Ich gieße die Blumen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich gieße die Blumen" },
+      },
+      {
+        say: [
+          tr("Son kalıbımız tercihini söyler:"),
+          de("Ich sitze gern auf dem Balkon."),
+          tr("'Balkonda oturmayı seviyorum' demek. Lütfen"),
+          de("Ich sitze gern auf dem Balkon"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich sitze gern auf dem Balkon" },
+      },
+      {
+        say: [tr("Şimdi sen: 'Bahçede oturmayı seviyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich sitze gern im Garten",
+          hint: [
+            tr("Bahçe için yer bildiren biçim yine kısalıyor:"),
+            de("Ich sitze gern im Garten."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Auf dem Balkon gibt es zwei Stuhl."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Auf dem Balkon gibt es zwei Stuhl.",
+          answer: false,
+          why: [
+            tr("İkiden fazlası varsa kelime çoğul olmalı ve bu kelimenin çoğulunda ortadaki ses de değişir. Doğrusu"),
+            de("Auf dem Balkon gibt es zwei Stühle."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Artık balkonunu ve bahçeni anlatabilirsin. Şimdi komşunla balkonda küçük bir sohbet edeceksin.",
+          ),
+        ],
+      },
+    ],
+    roleplay: {
+      scene:
+        "Komşun balkonda seni görüp sohbete başlıyor. Balkonunda neler olduğunu anlat, çiçeklerinden söz et ve orada oturmayı sevip sevmediğini söyle.",
+      partner: "çiçek yetiştirmeye meraklı bir komşu",
+      opening: "Ihre Blumen sehen richtig schön aus! Gießen Sie die jeden Tag?",
+      openingTr: "Çiçekleriniz gerçekten güzel görünüyor! Her gün mü suluyorsunuz?",
+      minTurns: 4,
+    },
+  },
+  {
+    id: "de-a1-kaputt",
+    icon: "repair",
+    level: "A1",
+    course: "de",
+    title: "Die Lampe ist kaputt",
+    titleTr: "Arıza bildirme",
+    summary: "Evde bozulan bir şeyi bildirmeyi ve tamir için yardım istemeyi öğretir.",
+    minutes: 9,
+    focusId: "Sein-Haben",
+    vocab: [
+      { de: "kaputt", tr: "bozuk" },
+      { de: "funktionieren", tr: "çalışmak" },
+      { de: "die Lampe", tr: "lamba" },
+      { de: "das Licht", tr: "ışık" },
+      { de: "der Hausmeister", tr: "apartman görevlisi" },
+    ],
+    patterns: [
+      { de: "… ist kaputt.", tr: "bir şeyin bozuk olduğunu söyler" },
+      { de: "… funktioniert nicht.", tr: "bir şeyin çalışmadığını söyler" },
+      { de: "Können Sie kommen?", tr: "birinden gelmesini rica eder" },
+    ],
+    lecture: [
+      {
+        say: [
+          tr(
+            "Bugün evde bir şey bozulduğunda ne diyeceğini öğreneceğiz. İki farklı anlatım var ve ikisi de çok kullanılıyor. Hazır mısın?",
+          ),
+        ],
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Bir arızayı bildirmek kirayla ilgili haklarının bir parçası; net söylemek işini kolaylaştırıyor. Önce kelimeleri öğrenelim.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("kaputt"),
+          tr("Türkçesi 'bozuk' demek. Lütfen"),
+          de("kaputt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "kaputt" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("funktionieren"),
+          tr("Türkçesi 'çalışmak, işlemek' demek — makineler için. Lütfen"),
+          de("funktionieren"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "funktionieren" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("die Lampe"),
+          tr("Türkçesi 'lamba' demek. Lütfen"),
+          de("die Lampe"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Lampe" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("das Licht"),
+          tr("Türkçesi 'ışık' demek. Lütfen"),
+          de("das Licht"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Licht" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Hausmeister"),
+          tr("Türkçesi 'apartman görevlisi' demek — binanın tamir işlerine bakan kişi. Lütfen"),
+          de("der Hausmeister"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Hausmeister" },
+      },
+      {
+        say: [
+          tr(
+            "İlk kalıbımız en kısa yol: eşyanın adını söylüyorsun, sonra bozuk olduğunu. Türkçedeki 'lamba bozuk' ile birebir aynı sıra.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Lamba bozuk.' Almancası:"),
+          de("Die Lampe ist kaputt."),
+          tr("Lütfen"),
+          de("Die Lampe ist kaputt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Die Lampe ist kaputt" },
+      },
+      {
+        say: [tr("Sıra sende: 'Elektrikli süpürge bozuk.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Der Staubsauger ist kaputt",
+          hint: [
+            tr("Önce eşyanın adı, sonra fiil, sonra bozuk kelimesi:"),
+            de("Der Staubsauger ist kaputt."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız aynı şeyi başka türlü söyler:"),
+          de("Das Licht funktioniert nicht."),
+          tr("'Işık çalışmıyor' demek. Lütfen"),
+          de("Das Licht funktioniert nicht"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Das Licht funktioniert nicht" },
+      },
+      {
+        say: [tr("Şimdi sen: 'Lamba çalışmıyor.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Die Lampe funktioniert nicht",
+          hint: [
+            tr("Olumsuzluk kelimesi fiilden sonra, cümlenin sonuna gelir:"),
+            de("Die Lampe funktioniert nicht."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son kalıbımız yardım çağırır:"),
+          de("Können Sie kommen?"),
+          tr("'Gelebilir misiniz?' demek ve resmî konuşurken kullanılır. Lütfen"),
+          de("Können Sie kommen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Können Sie kommen" },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Das Licht funktioniert nicht."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Das Licht funktioniert nicht.",
+          answer: true,
+          why: [
+            tr("Doğru. Fiil ikinci sırada ve olumsuzluk kelimesi cümlenin sonunda duruyor."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Artık bir arızayı bildirebilirsin. Şimdi apartman görevlisini arayacaksın: evde bir şey bozuldu.",
+          ),
+        ],
+      },
+    ],
+    roleplay: {
+      scene:
+        "Evde bir şey bozuldu ve apartman görevlisini aradın. Neyin bozuk olduğunu söyle, ne zamandır böyle olduğunu anlat ve gelmesini rica et.",
+      partner: "işi başından aşkın ama çözüm bulan bir apartman görevlisi",
+      opening: "Hausmeister Berger, guten Tag. Was kann ich für Sie tun?",
+      openingTr: "Apartman görevlisi Berger, iyi günler. Sizin için ne yapabilirim?",
       minTurns: 4,
     },
   },

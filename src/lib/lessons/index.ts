@@ -4,6 +4,7 @@ import { deA1B02 } from "./content/de-a1-b02";
 import { deA1B03 } from "./content/de-a1-b03";
 import { deA1B04 } from "./content/de-a1-b04";
 import { deA1B05 } from "./content/de-a1-b05";
+import { deA1B07 } from "./content/de-a1-b07";
 import { deA2 } from "./content/de-a2";
 import { deB1 } from "./content/de-b1";
 
@@ -25,6 +26,7 @@ export const LESSONS: Lesson[] = [
   ...deA1B03,
   ...deA1B04,
   ...deA1B05,
+  ...deA1B07,
   ...deA2,
   ...deB1,
 ];

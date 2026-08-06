@@ -817,7 +817,7 @@ export const deA1B04: Lesson[] = [
       { de: "morgen", tr: "yarın" },
       { de: "das Wochenende", tr: "hafta sonu" },
       { de: "lernen", tr: "öğrenmek" },
-      { de: "oft", tr: "sık sık" },
+      { de: "manchmal", tr: "bazen" },
     ],
     patterns: [
       { de: "Heute lerne ich …", tr: "bugün ne yaptığını söyler" },
@@ -883,12 +883,12 @@ export const deA1B04: Lesson[] = [
       {
         say: [
           tr("Son kelimemiz:"),
-          de("oft"),
-          tr("Türkçesi 'sık sık' demek. Lütfen"),
-          de("oft"),
+          de("manchmal"),
+          tr("Türkçesi 'bazen' demek. Lütfen"),
+          de("manchmal"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "oft" },
+        expect: { kind: "repeat", target: "manchmal" },
       },
       {
         say: [
@@ -930,13 +930,13 @@ export const deA1B04: Lesson[] = [
         expect: { kind: "repeat", target: "Morgen arbeite ich nicht" },
       },
       {
-        say: [tr("Şimdi sen: 'Hafta sonu sık sık çalışıyorum.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Hafta sonu bazen çalışıyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Am Wochenende arbeite ich oft",
+          target: "Am Wochenende arbeite ich manchmal",
           hint: [
             tr("Hafta sonu başta, fiil hemen arkasında:"),
-            de("Am Wochenende arbeite ich oft."),
+            de("Am Wochenende arbeite ich manchmal."),
             tr("Tekrar dene."),
           ],
         },
@@ -1734,9 +1734,9 @@ export const deA1B04: Lesson[] = [
     minutes: 9,
     focusId: "Temporal-am-um",
     vocab: [
-      { de: "die Zeit", tr: "vakit" },
+      { de: "das Treffen", tr: "buluşma" },
       { de: "passen", tr: "uymak" },
-      { de: "leider", tr: "maalesef" },
+      { de: "absagen", tr: "iptal etmek" },
       { de: "der Vormittag", tr: "öğleden önce" },
       { de: "der Nachmittag", tr: "öğleden sonra" },
     ],
@@ -1764,12 +1764,12 @@ export const deA1B04: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Zeit"),
-          tr("Türkçesi 'vakit, zaman' demek. Lütfen"),
-          de("die Zeit"),
+          de("das Treffen"),
+          tr("Türkçesi 'buluşma' demek. Lütfen"),
+          de("das Treffen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Zeit" },
+        expect: { kind: "repeat", target: "das Treffen" },
       },
       {
         say: [
@@ -1784,12 +1784,12 @@ export const deA1B04: Lesson[] = [
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("leider"),
-          tr("Türkçesi 'maalesef' demek. Lütfen"),
-          de("leider"),
+          de("absagen"),
+          tr("Türkçesi 'iptal etmek' demek. Bu da ikiye bölünen fiillerden. Lütfen"),
+          de("absagen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "leider" },
+        expect: { kind: "repeat", target: "absagen" },
       },
       {
         say: [
@@ -1873,6 +1873,16 @@ export const deA1B04: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Leider kann ich nicht" },
+      },
+      {
+        say: [
+          tr("Gelemeyeceksen buluşmayı iptal edersin. Bunun cümlesi de ikiye bölünen fiillerden:"),
+          de("Ich sage das Treffen ab."),
+          tr("Lütfen"),
+          de("Ich sage das Treffen ab"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich sage das Treffen ab" },
       },
       {
         say: [
