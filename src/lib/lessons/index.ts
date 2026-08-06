@@ -1,5 +1,9 @@
 import type { Lesson } from "./types";
-import { deA1 } from "./content/de-a1";
+import { deA1B01 } from "./content/de-a1-b01";
+import { deA1B02 } from "./content/de-a1-b02";
+import { deA1B03 } from "./content/de-a1-b03";
+import { deA1B04 } from "./content/de-a1-b04";
+import { deA1B05 } from "./content/de-a1-b05";
 import { deA2 } from "./content/de-a2";
 import { deB1 } from "./content/de-b1";
 
@@ -15,7 +19,15 @@ import { deB1 } from "./content/de-b1";
  * yeni geçti ve önce bu yapının oturması gerekiyor. Zürih dersleri aynı iskelet
  * doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
-export const LESSONS: Lesson[] = [...deA1, ...deA2, ...deB1];
+export const LESSONS: Lesson[] = [
+  ...deA1B01,
+  ...deA1B02,
+  ...deA1B03,
+  ...deA1B04,
+  ...deA1B05,
+  ...deA2,
+  ...deB1,
+];
 
 export const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;
 
