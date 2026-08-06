@@ -1045,6 +1045,10 @@
   "tr": "geri (dönmek, vermek, gitmek)",
   "not": "A2 çeviri gözden geçirmesi: başlık \"zurück- (fahren\" olarak kesilmişti"
  },
+ "1344": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede artikel düşmüş, Züritüütsch'te akkusatif eril 'i de Abfallchübel' olmalı",
+  "gswBeispiel": "Wirf das bitte i de Abfallchübel!"
+ },
  "1345": {
   "tr": "atık gaz, egzoz gazı",
   "not": "B1 çeviri gözden geçirmesi: örnekteki gazlar sanayi ve evlerden çıkıyor; Türkçede 'egzoz gazı' yalnızca taşıtlar için kullanılır, genel karşılık 'atık gaz'dır"
@@ -1052,6 +1056,18 @@
  "1350": {
   "de": "Abitur",
   "not": "Abitur (D)→A — çapraz gönderme artığı; (D) varsayılan olduğu için gereksiz"
+ },
+ "1360": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Entschuldigung' kalmış, Züritüütsch'te 'Exgüsi' denir",
+  "gswBeispiel": "Exgüsi, mini Tochter hät das nöd mit Absicht gmacht. Häsch d Absicht z schtudiere?"
+ },
+ "1364": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Schrank' kalmış, Züritüütsch'te 'Chaschte' denir",
+  "gswBeispiel": "De Abwart hät mer ghulfe, de Chaschte i d Wonig z träge."
+ },
+ "1365": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Schrank' kalmış, Züritüütsch'te 'Chaschte' denir",
+  "gswBeispiel": "D Abwartin hät mer ghulfe, de Chaschte i d Wonig z träge."
  },
  "1372": {
   "tr": "kampanya, etkinlik, eylem",
@@ -1065,17 +1081,39 @@
   "tr": "alternatif",
   "not": "B1 çeviri gözden geçirmesi: örnekteki 'alternative Energien'de kelime sıfattır; 'alternatif olarak' zarf karşılığı örnekteki kullanımı vermiyor"
  },
+ "1389": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "A däm Fäscht händ mir üs sehr guet amüsiert."
+ },
  "1404": {
   "tr": "sistem, düzenek (müzik, ısıtma) / ek (e-posta)",
   "not": "B1 çeviri gözden geçirmesi: iki örnek de 'sistem' ve 'ek' anlamındadır, 'tesis' ilk sırada olduğu için örneklerle uyuşmuyor"
  },
+ "1405": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "I de Aaläitig schtaat, dass bi däm Schpiil de Eltischt aafangt."
+ },
+ "1408": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neui' kalmış, Züritüütsch'te 'nöii' olmalı",
+  "gswBeispiel": "Mir händ üs nöii Möbel aagschafft."
+ },
  "1411": {
   "tr": "biriyle konuşmaya başlamak, seslenmek",
-  "not": "B1 çeviri gözden geçirmesi: 'söz atmak' Türkçede taciz anlamına gelir; ansprechen tanımadığı birine yaklaşıp konuşmaya başlamaktır"
+  "not": "B1 çeviri gözden geçirmesi: 'söz atmak' Türkçede taciz anlamına gelir; ansprechen tanımadığı birine yaklaşıp konuşmaya başlamaktır | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neui' kalmış, Züritüütsch'te 'nöii' olmalı",
+  "gswBeispiel": "Geschter hät mi üsi nöii Nachberin im Schtägehuus aagredt."
  },
  "1413": {
   "tr": "çalıştırmak, açmak (cihaz) / işe almak",
   "not": "B1 çeviri gözden geçirmesi: örnekteki 'die Heizung anstellen' cihaz çalıştırmaktır; başta duran 'açmak' öffnen ile karışıyor"
+ },
+ "1420": {
+  "not": "Züritüütsch B1 gözden geçirmesi: an- öneki Züritüütsch'te aa- olur (paketteki Aatraag, Aawalt, aawände ile aynı kural)",
+  "gsw": "aawäsend",
+  "gswBeispiel": "Bim Träffe sind alli Mitglider aawäsend gsii."
+ },
+ "1428": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neui' kalmış, Züritüütsch'te 'nöii' olmalı",
+  "gswBeispiel": "Mini Frau hät e nöii Schtell gfunde."
  },
  "1432": {
   "tr": "sıkıntı, dert, sorun / öfke, kızgınlık",
@@ -1083,15 +1121,28 @@
  },
  "1444": {
   "tr": "alıkoymak, oyalamak, tutmak / (sich) bulunmak, kalmak",
-  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'Wo hält er sich gerade auf?' dönüşlü 'bulunmak' anlamındadır ve karşılıkta hiç yok"
+  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'Wo hält er sich gerade auf?' dönüşlü 'bulunmak' anlamındadır ve karşılıkta hiç yok | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Entschuldigung' kalmış, Züritüütsch'te 'Exgüsi' denir",
+  "gswBeispiel": "Törf ich Ihne d Tür ufhalte? Exgüsi für d Verschpöötig, ich bi ufghalte worde."
  },
  "1454": {
   "tr": "sahneye çıkma, performans",
   "not": "B1 çeviri gözden geçirmesi: 'sahne çıkışı' Türkçede sahneden ayrılmak gibi okunuyor; Auftritt sanatçının sahneye çıkıp gösteri yapmasıdır"
  },
+ "1457": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "En Augeblick, bitte! Genau i däm Augeblick isch en Wage us de Usfahrt choo."
+ },
  "1472": {
   "tr": "hariç tutmak, ihtimal dışı bırakmak",
   "not": "B1 çeviri gözden geçirmesi: ausschließen 'imkânsız kılmak' değildir; örnekteki anlam bir olasılığı ihtimal dışı bırakmaktır"
+ },
+ "1476": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "Vo däm Turm us hät me e tolli Ussicht. Mit mehrere Frömdschpraache hät me gueti Ussichte im Bruef."
+ },
+ "1478": {
+  "not": "Züritüütsch B1 gözden geçirmesi: havuzun tercihi 'Fäischter', bileşikte de 'Schaufäischter' olmalı",
+  "gswBeispiel": "Mir wänd d Winterschue im Schaufäischter usschtele. S Zügnis wird bis nächscht Wuche usgschtellt."
  },
  "1479": {
   "de": "sich etwas aussuchen",
@@ -1099,15 +1150,21 @@
  },
  "1483": {
   "tr": "yazar (erkek)",
-  "not": "B1 çeviri gözden geçirmesi: die Autorin ile birebir aynı karşılık veriliyor, öğrenci ikisini ayırt edemiyor"
+  "not": "B1 çeviri gözden geçirmesi: die Autorin ile birebir aynı karşılık veriliyor, öğrenci ikisini ayırt edemiyor | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "De Autor hät i däm Jaar scho zwäi Büecher gschribe."
  },
  "1484": {
   "tr": "yazar (kadın)",
-  "not": "B1 çeviri gözden geçirmesi: der Autor ile birebir aynı karşılık veriliyor, dişil biçim belirtilmeli"
+  "not": "B1 çeviri gözden geçirmesi: der Autor ile birebir aynı karşılık veriliyor, dişil biçim belirtilmeli | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "Die Autorin hät i däm Jaar scho zwäi Büecher gschribe."
  },
  "1486": {
   "drop": 774,
   "not": "S-Bahn — 774 ile aynı; çoğul eki 774'e taşındı"
+ },
+ "1495": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neue' kalmış, Züritüütsch'te 'nöie' olmalı",
+  "gswBeispiel": "De Bau vom nöie Schuelhuus gaat na es Jaar."
  },
  "1498": {
   "tr": "memur (kadın)",
@@ -1115,7 +1172,12 @@
  },
  "1499": {
   "tr": "başvurmak, talep etmek (resmi belge, izin)",
-  "not": "B1 çeviri gözden geçirmesi: sich bewerben ile aynı 'başvurmak' karşılığını taşıyor ama beantragen resmi belge/izin talebidir, iş başvurusu değil"
+  "not": "B1 çeviri gözden geçirmesi: sich bewerben ile aynı 'başvurmak' karşılığını taşıyor ama beantragen resmi belge/izin talebidir, iş başvurusu değil | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neue' kalmış, Züritüütsch'te 'nöie' olmalı",
+  "gswBeispiel": "Häsch scho en nöie Pass beantragt?"
+ },
+ "1501": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "A däm Produkt git s en groosse Bedarf."
  },
  "1502": {
   "tr": "anlam, önem",
@@ -1133,9 +1195,17 @@
   "tr": "tanıdık (kadın)",
   "not": "1526 ile çift"
  },
+ "1531": {
+  "not": "Züritüütsch B1 gözden geçirmesi: havuzun tercihi 'Fäischter', cümlede 'Fänschter' biçimi kalmış",
+  "gswBeispiel": "Ich ha nöd gmerkt, dass s Fäischter offe isch."
+ },
  "1540": {
   "tr": "çoktan, şimdiden, bile",
   "not": "B1 çeviri gözden geçirmesi: bereits 'schon' demektir; 'zaten' (ohnehin/sowieso) anlamı yanıltıcı ve ilk sırada"
+ },
+ "1544": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'Soon' kalmış, Züritüütsch'te 'Sohn' karşılığı 'Suhn' olmalı",
+  "gswBeispiel": "1. Beruiged Si sich bitte. Es isch alles in Ornig. 2. Ich cha Si beruige. Irem Suhn isch nüüt passiert."
  },
  "1554": {
   "tr": "yer tutmak, doldurmak; dolu/meşgul olmak",
@@ -1143,7 +1213,13 @@
  },
  "1555": {
   "de": "besondere",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var, temiz biçim 'bsunder' olmalı",
+  "gsw": "bsunder"
+ },
+ "1557": {
+  "not": "Züritüütsch B1 gözden geçirmesi: söz kökündeki sp- Züritüütsch'te schp- olur (verschpräche, verschtaa ile aynı kural)",
+  "gsw": "beschpräche",
+  "gswBeispiel": "Mir müend na gnau beschpräche, wänn mer losfaared und was mer mitnämed."
  },
  "1561": {
   "tr": "kesinlikle, mutlaka; belirli, belli",
@@ -1156,6 +1232,18 @@
  "1567": {
   "tr": "bakım (kişi, çocuk)",
   "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Wartung makine bakımıdır; Betreuung kişi bakımı olarak ayırt edilmeli"
+ },
+ "1568": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. I däm Betriib schaffed zää Lüüt. 2. Churz vor Wienachte isch i de Gschäft immer viil Betriib."
+ },
+ "1569": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'die neue' kalmış, Züritüütsch'te 'di nöie' olmalı",
+  "gswBeispiel": "De Betriibsraat informiert Si über di nöie Arbetsziite."
+ },
+ "1570": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'die neue' kalmış, Züritüütsch'te 'di nöie' olmalı",
+  "gswBeispiel": "D Betriibsräätin informiert Si über di nöie Arbetsziite."
  },
  "1575": {
   "tr": "hareket ettirmek, kımıldatmak; (sich) hareket etmek",
@@ -1173,6 +1261,26 @@
   "drop": 79,
   "not": "A1 gözden geçirmesi: ein bisschen — 79 \"bisschen\" ile aynı madde, örnek cümlesi de kesik"
  },
+ "1599": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. D Büecher sind alli am Bode gläge. 2. Uf däm Bode wachst s Gmües bsunders guet."
+ },
+ "1600": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "A däm See cha mer Bööt miete."
+ },
+ "1605": {
+  "not": "Züritüütsch B1 gözden geçirmesi: söz başındaki st- havuzun yazımında scht- olur, 'Schtraass' olmalı",
+  "gswBeispiel": "De Maa isch ganz plötzli über d Schtraass gloffe. Ich ha müese fescht bremse."
+ },
+ "1607": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. I däm Huus hät s letscht Jaar brännt. 2. D Chärze brännt na. Lösch si bitte."
+ },
+ "1612": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neuschte' kalmış, Züritüütsch'te 'nöischte' olmalı",
+  "gswBeispiel": "I de Broschüre finded Si di nöischte Informatione."
+ },
  "1619": {
   "tr": "sahne (tiyatro, konser)",
   "not": "B1 çeviri gözden geçirmesi: die Szene ile aynı 'sahne' karşılığını taşıyor; Bühne fiziksel tiyatro sahnesidir, Szene ise oyun/film içindeki bölümdür"
@@ -1185,13 +1293,26 @@
   "tr": "vatandaş (kadın)",
   "not": "B1 çeviri gözden geçirmesi: der Bürger ile birebir aynı karşılık veriliyor, dişil biçim belirtilmeli"
  },
+ "1624": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neui' kalmış, Züritüütsch'te 'nöii' olmalı",
+  "gswBeispiel": "Ich bruuche e nöii Zaabürschte."
+ },
+ "1630": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neui' iki kez kalmış, Züritüütsch'te 'nöii' olmalı",
+  "gswBeispiel": "Mir händ üüs e nöii Couch und zwäi nöii Fauteuils kauft."
+ },
+ "1640": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. Mach schnäll, demit mer nöd z schpaat chömed. 2. Was macht mer mit däm Ding? – Demit cha mer Büchse ufmache."
+ },
  "1643": {
   "tr": "tasvir etmek, ortaya koymak, canlandırmak",
   "not": "B1 çeviri gözden geçirmesi: 'göstermek' zeigen ile karışıyor; örnekteki anlam sorunu anlatıp ortaya koymaktır"
  },
  "1659": {
   "tr": "sızdırmaz, sıkı kapanan; yoğun, sık",
-  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam pencerenin sızdırmazlığıdır, tek başına 'sıkı' bu anlamı vermiyor"
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam pencerenin sızdırmazlığıdır, tek başına 'sıkı' bu anlamı vermiyor | Züritüütsch B1 gözden geçirmesi: havuzun tercih ettiği biçim 'Fäischter', örnek cümlede 'Fänschter' kalmış",
+  "gswBeispiel": "Üüsi Fäischter sind nöd dicht. Es zieet immer."
  },
  "1666": {
   "tr": "müdür (erkek)",
@@ -1205,9 +1326,17 @@
   "tr": "doktor (kadın)",
   "not": "B1 çeviri gözden geçirmesi: der Doktor ile aynı karşılığı taşıyor, dişil biçim ayırt edilmeli"
  },
+ "1673": {
+  "not": "Züritüütsch B1 gözden geçirmesi: bileşiğin ikinci öğesindeki st- de scht- olmalı: 'Landschtraass'",
+  "gswBeispiel": "1. Ghöörsch es donnere? S Gwitter chunt nööcher. 2. De Laschtwage donneret über d Landschtraass."
+ },
  "1676": {
   "tr": "çift, iki kişilik",
   "not": "B1 çeviri gözden geçirmesi: das Paar ile aynı 'çift' karşılığını taşıyor; Doppel- ön eki örneklerdeki gibi 'iki kişilik/çift kişilik' demektir, 'bir çift' değil"
+ },
+ "1679": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümledeki 'Fänschter' Züritüütsch'te 'Fäischter' olmalı",
+  "gswBeispiel": "1. Iss de Öpfel nöd! De isch im Dräck gläge. 2. Vor luuter Dräck am Fäischter han ich nüüt gsee."
  },
  "1681": {
   "drop": 939,
@@ -1227,11 +1356,17 @@
  },
  "1702": {
   "de": "eigene",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var, havuzdaki temiz biçim 'äige'",
+  "gsw": "äige"
  },
  "1705": {
   "tr": "acelesi olmak, acil olmak; acele etmek",
   "not": "B1 çeviri gözden geçirmesi: örnekteki 'Es eilt sehr' bir işin acil olmasıdır; 'acele etmek' sich beeilen'in karşılığı ve ikisi ayrışmıyor"
+ },
+ "1707": {
+  "not": "Züritüütsch B1 gözden geçirmesi: bileşiğin ikinci öğesindeki st- Züritüütsch'te scht- olur (Schtraass)",
+  "gsw": "Äibaanschtraass",
+  "gswBeispiel": "D Goetheschtraass isch jetz en Äibaanschtraass."
  },
  "1708": {
   "tr": "zorla girmek, (hırsız) girmek",
@@ -1241,6 +1376,10 @@
   "tr": "ev soyguncusu, (eve giren) hırsız",
   "not": "B1 çeviri gözden geçirmesi: Einbrecher kapı/pencere kırıp giren soyguncudur, düz 'hırsız' der Dieb ile birebir çakışıyor (aynı anlam: der Dieb)"
  },
+ "1712": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'Straass' Hochdeutsch kalmış, söz başındaki st- scht- olmalı",
+  "gswBeispiel": "Ich finde d Lüüt uf de Schtraass zimli unfründlich. Was isch din Iidruck?"
+ },
  "1717": {
   "tr": "etki, nüfuz",
   "not": "B1 çeviri gözden geçirmesi: Einfluss birine/bir şeye yön verme gücüdür; düz 'etki' die Wirkung (ortaya çıkan sonuç) ile ayırt edilemiyor (aynı anlam: die Wirkung)"
@@ -1248,6 +1387,10 @@
  "1719": {
   "tr": "yapıştırmak, eklemek",
   "not": "B1 çeviri gözden geçirmesi: örnek cümle kopyala-yapıştır işlemidir ('kopieren drücken und dann einfügen'), bu yüzden 'yapıştırmak' başta olmalı"
+ },
+ "1720": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'neus' Hochdeutsch kalmış, Züritüütsch biçimi 'nöis'",
+  "gswBeispiel": "1. Törfed mer die Ware is Land iifüere? 2. Mir händ letscht Jaar es nöis Syschtem iigfüert."
  },
  "1726": {
   "tr": "almak, içmek (ilaç)",
@@ -1260,6 +1403,10 @@
  "1731": {
   "tr": "açmak, çalıştırmak (cihaz)",
   "not": "B1 çeviri gözden geçirmesi: einschalten cihaz çalıştırmaktır (Heizung, Fernseher); işaretsiz 'açmak' eröffnen ile birebir çakışıyor (aynı anlam: eröffnen)"
+ },
+ "1735": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'neui' Hochdeutsch kalmış, Züritüütsch biçimi 'nöii'",
+  "gswBeispiel": "1. D Firma schtellt das Jaar drüü nöii Lüüt ii. 2. S Grät isch nöd richtig iigschtellt."
  },
  "1736": {
   "drop": 951,
@@ -1275,7 +1422,8 @@
  },
  "1746": {
   "de": "einzige",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var, temiz biçim 'äinzig'",
+  "gsw": "äinzig"
  },
  "1747": {
   "drop": 123,
@@ -1297,6 +1445,22 @@
   "tr": "karşıdan gelmek, kolaylık göstermek",
   "not": "B1 çeviri gözden geçirmesi: örnek 1'de komşu karşı yönden geliyor; 'karşılamak' (empfangen/abholen) yanlış anlam veriyor"
  },
+ "1765": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'Straass' Hochdeutsch kalmış, söz başındaki st- scht- olmalı",
+  "gswBeispiel": "Gönd Si die Schtraass entlang, dänn chömed Si diräkt zum Bahnhof."
+ },
+ "1775": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'neus' Hochdeutsch kalmış, Züritüütsch biçimi 'nöis'",
+  "gswBeispiel": "1. Da entschtaat es nöis Iichaufszentrum. 2. Susch entschtönd käi wiitere Chöschte."
+ },
+ "1779": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'Sohn' ve 'neus' Hochdeutsch kalmış, Züritüütsch biçimleri 'Suhn' ve 'nöis'",
+  "gswBeispiel": "1. Euse Suhn entwicklet sich guet i de Schuel. 2. D Firma hät es nöis Produkt entwicklet."
+ },
+ "1781": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'neui' ve 'Sohn' Hochdeutsch kalmış, Züritüütsch biçimleri 'nöii' ve 'Suhn'",
+  "gswBeispiel": "1. D Pflanze bruuched nöii Ärde. 2. Min Suhn hät s Glas uf d Ärde gheie laa."
+ },
  "1782": {
   "tr": "patates (Avusturya)",
   "not": "B1 çeviri gözden geçirmesi: Erdapfel Avusturya kullanımıdır, işaretsiz 'patates' die Kartoffel ile ayırt edilemiyor (aynı anlam: die Kartoffel)"
@@ -1309,17 +1473,28 @@
   "tr": "açmak (dükkân, hesap), açılışını yapmak",
   "not": "B1 çeviri gözden geçirmesi: eröffnen yeni bir yer/hesap açmaktır; işaretsiz 'açmak' einschalten ile çakışıyor (aynı anlam: einschalten)"
  },
+ "1818": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neue' kalmış, Züritüütsch'te 'nöie' olmalı",
+  "gswBeispiel": "D Eröffnig vo de nöie Oper isch am 1. Juni."
+ },
  "1823": {
   "de": "erste",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var, temiz biçim 'erscht' olmalı",
+  "gsw": "erscht"
+ },
+ "1834": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neue' kalmış, Züritüütsch'te 'nöie' olmalı",
+  "gswBeispiel": "Ich warte scho ewig uf mis nöie Auto!"
  },
  "1835": {
   "tr": "uzman, bilirkişi",
-  "not": "B1 çeviri gözden geçirmesi: der Spezialist ile aynı karşılığı taşıyordu; Experte görüşüne başvurulan kişidir"
+  "not": "B1 çeviri gözden geçirmesi: der Spezialist ile aynı karşılığı taşıyordu; Experte görüşüne başvurulan kişidir | Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'kein' kalmış, Züritüütsch'te 'kei' olmalı",
+  "gswBeispiel": "Ich verschtaa chli öppis vo Computer. Aber ich bi kei Expert."
  },
  "1849": {
   "tr": "durum, vaka (söz konusu koşul, olay)",
-  "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Zustand da 'durum' olarak veriliyor; Fall bir koşul/vakadır, Zustand nesnenin içinde bulunduğu hâldir"
+  "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Zustand da 'durum' olarak veriliyor; Fall bir koşul/vakadır, Zustand nesnenin içinde bulunduğu hâldir | Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. Was würded Si i däm Fall mache? 2. Lüüted Si uf jede Fall vorhär namal aa."
  },
  "1852": {
   "drop": 640,
@@ -1328,7 +1503,8 @@
  "1854": {
   "de": "Fantasie/Phantasie",
   "tr": "hayal gücü, fantezi",
-  "not": "B1 çeviri gözden geçirmesi: \"fantazi\" yazım hatasıydı"
+  "not": "B1 çeviri gözden geçirmesi: \"fantazi\" yazım hatasıydı | Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'Sohn' kalmış, Züritüütsch'te 'Suhn' olmalı",
+  "gswBeispiel": "Min Suhn maalt sehr guet. Er hät vil Fantasii."
  },
  "1856": {
   "de": "Faschiertes",
@@ -1345,17 +1521,37 @@
   "tr": "yakalamak, tutmak; (karar) almak",
   "not": "B1 çeviri gözden geçirmesi: ilk örnek 'den Dieb gefasst' yakalamaktır ve tek başına 'almak' yanıltıcı, yalnızca 'einen Entschluss fassen' kalıbında geçerli"
  },
+ "1864": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "Uf däm Fäld wachst Gmües."
+ },
  "1865": {
   "drop": 147,
   "not": "Ferien (CH) — 147 ile aynı; bölge notu tohumlamada kırpıldığı için ayırt edici değil"
+ },
+ "1867": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neu' kalmış, Züritüütsch'te 'nöi' olmalı",
+  "gswBeispiel": "Min Kolleg glaubt fescht dra, dass er die nöi Schtell überchunnt."
  },
  "1871": {
   "de": "festnehmen",
   "not": "B1 çeviri gözden geçirmesi: başlığa çekimli hâl (\"nimmt fest\") yapışmıştı"
  },
+ "1877": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neu' kalmış, Züritüütsch'te 'nöi' olmalı",
+  "gswBeispiel": "Isch s Füürzüüg nöi?"
+ },
+ "1879": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. De Lars hät e gueti Figur. 2. Bi däm Schpiil hät jede Schpiler vier Figure."
+ },
  "1904": {
   "tr": "araştırma (bilimsel)",
   "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Recherche de 'araştırma'dır; Forschung bilimsel araştırmadır, Recherche bilgi/kaynak taramasıdır"
+ },
+ "1909": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış; Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "Ich mälde mich hüt bi däm Forum aa."
  },
  "1925": {
   "tr": "meyve, yemiş (tek tek meyve)",
@@ -1370,6 +1566,10 @@
   "drop": 656,
   "not": "früher — 656 ile aynı (A1)"
  },
+ "1938": {
+  "not": "Züritüütsch B1 gözden geçirmesi: 'in dritte Gang' Hochdeutsch 'in den dritten Gang'ın yarım çevrilmiş hâli; Züritüütsch 'i de dritt Gang'",
+  "gswBeispiel": "1. Mir warted dusse im Gang. 2. Schalted Si jetz bitte i de dritt Gang."
+ },
  "1939": {
   "tr": "pişmiş; (gar nicht/gar kein) hiç",
   "not": "B1 çeviri gözden geçirmesi: ikinci örnekteki 'gar nicht' anlamı karşılıkta hiç yok, oysa gar'ın en yaygın kullanımı budur"
@@ -1377,6 +1577,26 @@
  "1944": {
   "tr": "lokanta, birahane",
   "not": "B1 çeviri gözden geçirmesi: 'han' yanıltıcı ve ilk sırada; Gasthaus konaklama yeri değil, örnekteki gibi yemek-içki içilen yerdir"
+ },
+ "1946": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış; Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "I däm Gebäud häts nur Büros."
+ },
+ "1948": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede iki kez Hochdeutsch 'dem' kalmış; Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "1. I däm Gebiet gits chuum Induschtrii. 2. D Ziitschrift brichtet regelmässig über Furtschritt uf däm Gebiet."
+ },
+ "1950": {
+  "not": "Züritüütsch B1 gözden geçirmesi: yardımcı fiil Hochdeutsch 'werde' kalmış; Züritüütsch 'wärde' (pakette 1920/1921'de de böyle)",
+  "gsw": "gebore wärde"
+ },
+ "1951": {
+  "not": "Züritüütsch B1 gözden geçirmesi: 'kauft' Hochdeutsch kalmış; Züritüütsch'te k- → ch-, yani 'chauft'",
+  "gswBeispiel": "1. Mir chönd die Möbel guet bruuche. 2. Ich ha s Auto als Occasion chauft."
+ },
+ "1954": {
+  "not": "Züritüütsch B1 gözden geçirmesi: 'eurem' Hochdeutsch datif iyelik biçimi; Züritüütsch 'euem'",
+  "gswBeispiel": "Mir gratuliered zu de Geburt vo euem Chind!"
  },
  "1957": {
   "drop": 995,
@@ -1386,6 +1606,10 @@
   "tr": "kaldırım (Avusturya, Güney Almanya)",
   "not": "B1 çeviri gözden geçirmesi: Trottoir ve Bürgersteig ile aynı karşılığı taşıyordu"
  },
+ "1978": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış; Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "I däm Huus woned drüü Generatione zäme."
+ },
  "1983": {
   "drop": 663,
   "not": "B1 gözden geçirmesi: \"gern/gerne\" — 663 gern(e) ile aynı madde"
@@ -1393,6 +1617,14 @@
  "1984": {
   "de": "gesamt-",
   "not": "gesamt-/Gesamt- — yalnız büyük harf farkı; önek olduğu için tire korunur"
+ },
+ "1992": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neu' kalmış; Züritüütsch 'nöi', yani 'es nöis Gsetz'",
+  "gswBeispiel": "S Parlamänt hät es nöis Gsetz beschlosse."
+ },
+ "1993": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış; Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "Ich bi gschpannt, wer bi däm Schpiil gwünnt."
  },
  "2003": {
   "tr": "sulamak (çiçek, bahçe)",
@@ -1402,6 +1634,10 @@
   "tr": "kurmak (şirket, dernek)",
   "not": "B1 çeviri gözden geçirmesi: installieren ile aynı karşılığı taşıyor; gründen kuruluş kurmaktır, installieren cihaz/yazılım kurmaktır (aynı anlam: installieren)"
  },
+ "2024": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'kein' kalmış, Züritüütsch biçimi 'kei'",
+  "gswBeispiel": "1. Si händ Iri Schtell kündet. Us welem Grund? 2. Si händ kei Grund, sich z beschwäre."
+ },
  "2030": {
   "de": "Hackfleisch",
   "not": "Hackfleisch (D — kapanmamış parantez"
@@ -1409,6 +1645,10 @@
  "2033": {
   "drop": 678,
   "not": "A1 gözden geçirmesi: Hähnchen/Hühnchen — 678 ile aynı madde, eğik çizgili varyant"
+ },
+ "2042": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neui' kalmış, Züritüütsch biçimi 'nöii'",
+  "gswBeispiel": "Morn sind bi eus d Handwärcher. Mir überchömed e nöii Badwanne."
  },
  "2048": {
   "drop": 1017,
@@ -1444,11 +1684,16 @@
  },
  "2072": {
   "de": "heutige",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var; Almanca tarafı çekimli 'heutige' olduğu için lehçe tarafı da tiresiz olmalı",
+  "gsw": "hüttig"
  },
  "2073": {
   "drop": 223,
   "not": "hier — 223 ile aynı (A1)"
+ },
+ "2074": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'dem' kalmış, Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "Ich chume oft dahäre. I däm Kafi git s guete Chueche."
  },
  "2076": {
   "drop": 1029,
@@ -1483,9 +1728,22 @@
   "tr": "dinleyici (bir konuşmayı dinleyen)",
   "not": "B1 çeviri gözden geçirmesi: Hörer ile aynı karşılığı taşıyor; Zuhörer konuşan birini dinleyen kişidir, yayın dinleyicisi değil (aynı anlam: der Hörer)"
  },
+ "2095": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'dem' kalmış, Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "Uf däm Hügel mached mir e Pause."
+ },
+ "2096": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'dem' kalmış, Züritüütsch biçimi 'däm'",
+  "gswBeispiel": "1. Mir möged de Paul, wil er so vil Humor hät. 2. De Humor vo däm Komiker verschtaan ich nöd."
+ },
+ "2110": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neue' kalmış, Züritüütsch biçimi 'nöie'",
+  "gswBeispiel": "Mir informiered Si rächtziitig über di nöie Prüefigstermin."
+ },
  "2115": {
   "de": "innere",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var; Almanca tarafı çekimli 'innere' olduğu için lehçe tarafı da tiresiz olmalı",
+  "gsw": "inner"
  },
  "2119": {
   "tr": "kurmak, yüklemek (program, cihaz)",
@@ -1499,6 +1757,14 @@
   "de": "irgendein",
   "not": "B1 çeviri gözden geçirmesi: \"irgendirgendein\" — önek kendini yinelemişti"
  },
+ "2132": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümle anlamı kaydırmış ('Du irrst dich' yerine 'orada yanılıyor olmalısın' demiş)",
+  "gswBeispiel": "Du irrsch di. S Auto isch nöd grüen, sondern root gsii."
+ },
+ "2139": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "Häsch du jemals vo däm Problem ghöört? – Näi, nie."
+ },
  "2144": {
   "tr": "genç kız, genç (kadın)",
   "not": "696 ile çift"
@@ -1511,9 +1777,17 @@
   "tr": "yemekhane, kantin",
   "not": "B1 çeviri gözden geçirmesi: örnekteki gibi Kantine ucuz yemek yenen işyeri/okul yemekhanesidir; Türkçe \"kantin\" atıştırmalık satan büfeyi çağrıştırdığı için başta olmamalı"
  },
+ "2156": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. Pass uf mit däm Glaas, es cha liecht kaputtgaa. 2. De Fernseer isch geschter kaputtggange."
+ },
  "2166": {
   "de": "sich etwas kaufen",
   "not": "sich etwas) kaufen — kaçak kapanış parantezi"
+ },
+ "2167": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neu' kalmış, Züritüütsch'te 'nöi' olmalı",
+  "gswBeispiel": "De nöi Esstisch isch en guete Chauf gsii."
  },
  "2170": {
   "drop": 259,
@@ -1527,6 +1801,10 @@
   "tr": "kulağa gelmek, ses vermek",
   "not": "B1 çeviri gözden geçirmesi: \"çalmak\" klingeln'in anlamıdır ve onunla karışıyor; klingen ses vermek / kulağa ... gelmektir"
  },
+ "2191": {
+  "not": "Züritüütsch B1 gözden geçirmesi: Zürih biçimi 'Fäischter'dir, 'Fänschter' başka lehçelere ait",
+  "gswBeispiel": "1. Da chlopft öpper as Fäischter. 2. Bitte chlopfed Si aa."
+ },
  "2192": {
   "tr": "hamur topu, hamur köftesi",
   "not": "B1 çeviri gözden geçirmesi: Türkçede \"köfte\" et köftesini çağrıştırır, oysa Kloß patates/ekmek hamurundan yapılan etsiz bir garnitürdür"
@@ -1535,9 +1813,17 @@
   "tr": "hamur topu, patates köftesi",
   "not": "B1 çeviri gözden geçirmesi: Türkçede \"köfte\" et köftesini çağrıştırır, oysa Knödel patates/ekmek hamurundan yapılan etsiz bir garnitürdür"
  },
+ "2201": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'neu' kalmış, Züritüütsch'te 'nöi' olmalı",
+  "gswBeispiel": "Mini nöi Kollegin isch sehr nätt."
+ },
  "2221": {
   "tr": "doğru, kurallara uygun",
   "not": "B1 çeviri gözden geçirmesi: korrekt 'kusursuz/kurallara uygun' demektir; Türkçede 'doğru dürüst' çoğunlukla olumsuz cümlede 'adam akıllı' anlamında kullanılır ve burada yanıltıcı"
+ },
+ "2225": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "I däm Film träged d Lüüt bunti Koschtüm."
  },
  "2230": {
   "tr": "hasta (erkek, genel)",
@@ -1559,14 +1845,33 @@
   "drop": 697,
   "not": "A1 gözden geçirmesi: Kreditkarte — 697 ile aynı madde"
  },
+ "2239": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. Es isch immer no Chrieg i däm Land. 2. De Leerer redt über de Zwäit Wältchrieg."
+ },
  "2240": {
   "de": "Kriminalpolizei",
   "artikel": "die",
-  "not": "B1 çeviri gözden geçirmesi: \"Kriminaldie Kriminalpolizei\" — artikel gövdeye yapışmıştı"
+  "not": "B1 çeviri gözden geçirmesi: \"Kriminaldie Kriminalpolizei\" — artikel gövdeye yapışmıştı | Züritüütsch B1 gözden geçirmesi: die Kriminalpolizei dişil bir isim, artikel alanı boş bırakılmış; 'd' olmalı",
+  "gswArtikel": "d"
+ },
+ "2248": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "I däm Quartier woned vil Künschtler und Künschtlerinne."
  },
  "2256": {
   "tr": "deniz kıyısı, sahil",
   "not": "B1 çeviri gözden geçirmesi: Küste yalnızca deniz kıyısıdır; das Ufer (nehir/göl kenarı) ile karşılığı ayırt edilemiyor"
+ },
+ "2272": {
+  "not": "Züritüütsch B1 gözden geçirmesi: bileşiğin ikinci öğesindeki söz başı sp- Züritüütsch'te schp- olur, 'Luutschprächer'",
+  "gsw": "Luutschprächer",
+  "gswBeispiel": "Bitte achted Si au uf d Luutschprächer-Durchsage am Baanhof."
+ },
+ "2277": {
+  "not": "Züritüütsch B1 gözden geçirmesi: bileşiğin ikinci öğesindeki söz başı st- Züritüütsch'te scht- olur (havuzdaki Bauschtell, Beratigsschtell gibi)",
+  "gsw": "Leerschtell",
+  "gswBeispiel": "Es sind na vil Leerschtelle frii."
  },
  "2280": {
   "tr": "üzgün olmak, acımak (birine)",
@@ -1578,7 +1883,8 @@
  },
  "2287": {
   "tr": "el merdiveni, portatif merdiven",
-  "not": "B1 çeviri gözden geçirmesi: die Leiter taşınabilir el merdivenidir; basamaklı bina merdiveni olan Stiege/Treppe ile karışıyor"
+  "not": "B1 çeviri gözden geçirmesi: die Leiter taşınabilir el merdivenidir; basamaklı bina merdiveni olan Stiege/Treppe ile karışıyor | Züritüütsch B1 gözden geçirmesi: havuzun tercih ettiği Züritüütsch biçim 'Fäischter'",
+  "gswBeispiel": "Händ Si e Läitere für mich? Ich wott d Fäischter putze."
  },
  "2294": {
   "tr": "gazoz, meşrubat",
@@ -1590,15 +1896,32 @@
  },
  "2305": {
   "de": "los",
-  "not": "los/los- — aynı kelime"
+  "not": "los/los- — aynı kelime | Züritüütsch B1 gözden geçirmesi: 'Gibt es' karşılığı yanlış çevrilmiş; 'gaat s' (geht es) değil 'git s' olmalı",
+  "gswBeispiel": "Los! Pressiered! Git s es Problem? Was isch dänn los?"
  },
  "2306": {
   "tr": "yola çıkmak (araçla), hareket etmek",
   "not": "B1 çeviri gözden geçirmesi: losfahren araçla yola çıkmaktır; genel anlamda yola koyulan aufbrechen ile ayrımı yok"
  },
+ "2309": {
+  "not": "Züritüütsch B1 gözden geçirmesi: havuzun tercih ettiği Züritüütsch biçim 'Fäischter'",
+  "gswBeispiel": "Mach bitte s Fäischter uf. Ich bruuche frischi Luft."
+ },
+ "2315": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede söz başı str- lehçeleştirilmemiş, Züritüütsch'te 'schtriiche' olmalı",
+  "gswBeispiel": "Mir händ d Maaler im Huus. Mir lönd d Wänd nöi schtriiche."
+ },
+ "2319": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'käin' biçimi yanlış, Züritüütsch'te eril tekil önünde 'kei' olmalı",
+  "gswBeispiel": "Mini Frau isst nu Margarine und kei Anke."
+ },
  "2321": {
   "tr": "marka, pul (posta)",
   "not": "B1 çeviri gözden geçirmesi: Marke'nin yaygın anlamı markadır, 'pul' anlamı Briefmarke kısalmasından gelir; sıra ters ve Briefmarke ile karışıyor"
+ },
+ "2323": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Schrank' kalmış, Züritüütsch'te 'Chaschte' denir",
+  "gswBeispiel": "Us welem Material isch de Chaschte? – Us Holz."
  },
  "2324": {
   "de": "Matura",
@@ -1608,6 +1931,14 @@
  "2325": {
   "tr": "duvar (dış duvar, taş/tuğla)",
   "not": "B1 çeviri gözden geçirmesi: Mauer taş/tuğla dış duvardır, die Wand iç duvardır; ikisinin karşılığı ayırt edilemiyor"
+ },
+ "2330": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Sohn' kalmış, Züritüütsch'te 'Suhn' olmalı",
+  "gswBeispiel": "Du muesch na dini Medizin nää. Min Suhn wott Medizin schtudiere."
+ },
+ "2334": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "D Mehrwärtschtüür bi däm Produkt macht 8,1 Prozänt us."
  },
  "2335": {
   "tr": "bana uyar, benim açımdan sorun değil",
@@ -1623,7 +1954,8 @@
  },
  "2339": {
   "tr": "haber, bildirim",
-  "not": "B1 çeviri gözden geçirmesi: Türkçede 'bildiri' beyanname/tebliğ demektir; Meldung bir haber/bildirimdir (radyo haberi örneğiyle uyuşmuyor)"
+  "not": "B1 çeviri gözden geçirmesi: Türkçede 'bildiri' beyanname/tebliğ demektir; Meldung bir haber/bildirimdir (radyo haberi örneğiyle uyuşmuyor) | Züritüütsch B1 gözden geçirmesi: cümlede söz başı st- lehçeleştirilmemiş, Züritüütsch'te 'schtarche' olmalı",
+  "gswBeispiel": "Häsch d Mäldig im Radio ghöört? Es git en schtarche Schturm."
  },
  "2341": {
   "tr": "insana özgü, insanca",
@@ -1657,9 +1989,23 @@
   "de": "mobil",
   "not": "mobil/mobil- — aynı kelime"
  },
+ "2369": {
+  "not": "Züritüütsch B1 gözden geçirmesi: özne tekil bir mastar öbeği olduğu için fiil çoğul -ed değil tekil -et olmalı, ayrıca havuzun scht-/schp- yazımına uygun 'Schpraache' gerekiyor",
+  "gswBeispiel": "Schpraache leere förderet d Mobilität."
+ },
  "2382": {
   "tr": "müziğe yetenekli, müzikal",
-  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'Sie ist sehr musikalisch' yetenek anlamında; en yaygın anlam başta olmalı"
+  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'Sie ist sehr musikalisch' yetenek anlamında; en yaygın anlam başta olmalı | Züritüütsch B1 gözden geçirmesi: cümlede sp- Hochdeutsch kalmış, Züritüütsch'te 'schpilt' okunur ve havuzun geri kalanı scht-/schp- yazıyor",
+  "gswBeispiel": "Si isch sehr musikalisch: Si schpilt Klavier, Flööte und Giige."
+ },
+ "2389": {
+  "not": "Züritüütsch B1 gözden geçirmesi: bağlaç Hochdeutsch 'nachdem' kalmış, Züritüütsch biçimi 'nachdäm'; cümledeki 'spaziere' de schp- olmalı",
+  "gsw": "nachdäm",
+  "gswBeispiel": "Nachdäm mir gässe händ, sind mir go schpaziere."
+ },
+ "2391": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "D Naafraag nach däm Produkt isch grooss."
  },
  "2406": {
   "de": "national",
@@ -1673,6 +2019,10 @@
   "de": "Notaufnahme",
   "artikel": "die",
   "not": "B1 çeviri gözden geçirmesi: \"Notdie Notaufnahme\" — artikel gövdeye yapışmıştı"
+ },
+ "2431": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede sp- Hochdeutsch kalmış, Züritüütsch'te 'schpaziere' olmalı",
+  "gswBeispiel": "Ich möcht s schöne Wätter nutze und go schpaziere."
  },
  "2434": {
   "de": "obere",
@@ -1690,6 +2040,10 @@
  "2445": {
   "drop": 354,
   "not": "B1 gözden geçirmesi: \"oft/öfter\" — 354 oft ile aynı madde, karşılaştırma biçimi ayrı madde değil"
+ },
+ "2453": {
+  "not": "Züritüütsch B1 gözden geçirmesi: aynı cümlede 'Orcheschter' scht- yazılmışken 'gspilt' Hochdeutsch kalmış, 'gschpilt' olmalı",
+  "gswBeispiel": "A öisere Hochziit hät es chliises Orcheschter gschpilt."
  },
  "2454": {
   "tr": "tertipli, düzenli (dağınık olmayan)",
@@ -1725,7 +2079,8 @@
  },
  "2479": {
   "tr": "emekli (Avusturya)",
-  "not": "A2 çeviri gözden geçirmesi: der Rentner ile aynı karşılığı taşıyordu; Pensionist Avusturya kullanımıdır"
+  "not": "A2 çeviri gözden geçirmesi: der Rentner ile aynı karşılığı taşıyordu; Pensionist Avusturya kullanımıdır | Züritüütsch B1 gözden geçirmesi: dişil biçim yanlış kurulmuş: -i eki yalnızca -er ile biten fail adlarına gelir (Pfleger → Pflegeri), Pensionär'in dişili Züritüütsch'te 'Pensionärin'dir",
+  "gswBeispiel": "Mini Groossmueter schaffet nüme. Si isch Pensionärin."
  },
  "2482": {
   "tr": "peron (İsviçre)",
@@ -1740,9 +2095,17 @@
   "tr": "tencere (İsviçre), tava",
   "not": "B1 çeviri gözden geçirmesi: madde İsviçre kullanımıdır ve orada Pfanne = Topf'tur; örnekteki 'Kartoffeln kochen' tencere ister, 'tava' anlamı yanıltıyor"
  },
+ "2491": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Zürih dışı 'na' biçimi kalmış, Züritüütsch 'no' der",
+  "gswBeispiel": "Ich isse gärn Zwätschge und no lieber Zwätschgechueche."
+ },
  "2495": {
   "drop": 1854,
   "not": "B1 gözden geçirmesi: \"Phantasie/Fantasie\" — 1854 ile aynı madde, yalnızca eğik çizginin iki yanı yer değiştirmiş"
+ },
+ "2500": {
+  "not": "Züritüütsch B1 gözden geçirmesi: kelime başındaki sp- lehçeleştirilmemiş, Züritüütsch'te 'Schpilzüüg' olmalı",
+  "gswBeispiel": "Was für es Schpilzüüg wänd Si? Us Plastik oder us Holz?"
  },
  "2507": {
   "de": "Portemonnaie/Portmonee",
@@ -1786,24 +2149,48 @@
  },
  "2555": {
   "de": "rechte",
-  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var; Almanca tarafı çekimli 'rechte' olduğu için lehçe başlığı da tiresiz 'rächt' olmalı",
+  "gsw": "rächt"
+ },
+ "2559": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch artikel ve sıfat çekimi kalmış ('das interessante'), Züritüütsch'te 's interessant' olur",
+  "gswBeispiel": "Merci vilmal für s interessant Referaat."
  },
  "2563": {
   "tr": "düzenli (belirli aralıklarla)",
   "not": "B1 çeviri gözden geçirmesi: ordentlich ile aynı karşılığı taşıyor; regelmäßig zaman aralığıyla ilgilidir, ordentlich derli topluluktur (aynı anlam: ordentlich)"
  },
+ "2576": {
+  "not": "Züritüütsch B1 gözden geçirmesi: kelime başındaki sp- lehçeleştirilmemiş, Züritüütsch'te 'schpringe' söylenir",
+  "gsw": "schpringe",
+  "gswBeispiel": "Ich ha müese schpringe, aber de Bus isch scho wäg gsii."
+ },
  "2578": {
   "de": "in Rente gehen",
   "not": "in Rente gehen/sein (D) → D — artık temizlendi"
+ },
+ "2582": {
+  "not": "Züritüütsch B1 gözden geçirmesi: sp- Züritüütsch'te schp- olur, alıntı kelimelerde de (havuzdaki Aschpäkt, Semeschter, Induschtrii ile aynı kural)",
+  "gsw": "Reschpäkt",
+  "gswBeispiel": "Ich ha grosse Reschpäkt vor mim Lehrer."
  },
  "2584": {
   "drop": 770,
   "not": "A1 gözden geçirmesi: Rezeption/Reception — 770 ile aynı madde, eğik çizgili varyant"
  },
+ "2585": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'gsproche' Hochdeutsch kalmış, sp- schp- olur: 'gschproche' (havuzdaki Gschpröch, beschpräche ile aynı kural)",
+  "gswBeispiel": "De Richter hät no käis Urtäil gschproche."
+ },
+ "2586": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'gsproche' Hochdeutsch kalmış, sp- schp- olur: 'gschproche' (havuzdaki Gschpröch, beschpräche ile aynı kural)",
+  "gswBeispiel": "D Richterin hät no käis Urtäil gschproche."
+ },
  "2594": {
   "de": "Rückfahrt",
   "artikel": "die",
-  "not": "B1 çeviri gözden geçirmesi: \"rückdie Rückfahrt\" — artikel gövdeye yapışmıştı"
+  "not": "B1 çeviri gözden geçirmesi: \"rückdie Rückfahrt\" — artikel gövdeye yapışmıştı | Züritüütsch B1 gözden geçirmesi: die Rückfahrt dişil bir isim, artikel alanı boş bırakılmış; 'd' olmalı",
+  "gswArtikel": "d"
  },
  "2600": {
   "tr": "tur; (bir arada oturan) grup",
@@ -1823,7 +2210,8 @@
  },
  "2636": {
   "tr": "ince, fit (vücut için)",
-  "not": "B1 çeviri gözden geçirmesi: dünn ile birebir aynı karşılık kalıyor; schlank olumlu anlamda vücut inceliğidir, dünn ise nesne/kişi için 'ince, sıska'"
+  "not": "B1 çeviri gözden geçirmesi: dünn ile birebir aynı karşılık kalıyor; schlank olumlu anlamda vücut inceliğidir, dünn ise nesne/kişi için 'ince, sıska' | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "I däm Chläid gseesch sehr schlank us."
  },
  "2638": {
   "tr": "dar (genişliği az), ince",
@@ -1831,11 +2219,16 @@
  },
  "2644": {
   "tr": "(bir yerini) kesmek, kesmek",
-  "not": "B1 çeviri gözden geçirmesi: 'kendini kesmek' Türkçede kendine zarar verme anlamına geliyor; kastedilen 'elimi kestim' türü kazadır"
+  "not": "B1 çeviri gözden geçirmesi: 'kendini kesmek' Türkçede kendine zarar verme anlamına geliyor; kastedilen 'elimi kestim' türü kazadır | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "Pass uf! Mit däm schaarfe Mässer cha me sich schniide."
  },
  "2652": {
   "tr": "yazar (edebiyat)",
   "not": "B1 çeviri gözden geçirmesi: der Autor ile aynı karşılığı taşıyordu; Schriftsteller edebiyat yazarıdır"
+ },
+ "2658": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'Soon' kalmış, havuzun Züritüütsch biçimi 'Suhn'",
+  "gswBeispiel": "Min Suhn schriibt i de Prüefige immer gueti Note."
  },
  "2670": {
   "de": "Nordsee/Ostsee",
@@ -1853,6 +2246,10 @@
  "2674": {
   "drop": 1652,
   "not": "B1 gözden geçirmesi: selb- — 1652 derselbe ile aynı madde, sözlük gövde yazımı"
+ },
+ "2682": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Unterlaage' kalmış, Züritüütsch'te nt → nd olur: 'Underlaage' (aynı pakette 2692'de 'undersueche' yazılmış)",
+  "gswBeispiel": "Bitte schicked Sii üs d Underlaage per E-Mail."
  },
  "2689": {
   "drop": 1198,
@@ -1885,7 +2282,12 @@
  "2709": {
   "de": "Sonderangebot",
   "artikel": "das",
-  "not": "B1 çeviri gözden geçirmesi: \"Sonderdas Sonderangebot\" — artikel gövdeye yapışmıştı"
+  "not": "B1 çeviri gözden geçirmesi: \"Sonderdas Sonderangebot\" — artikel gövdeye yapışmıştı | Züritüütsch B1 gözden geçirmesi: isim maddesinde artikel boş kalmış; Züritüütsch'te 'Aktion' dişildir ve örnek cümledeki 'e Aktion' da bunu gösteriyor",
+  "gswArtikel": "d"
+ },
+ "2712": {
+  "not": "Züritüütsch B1 gözden geçirmesi: dönüşlü zamir yanlış: Züritüütsch'te nezaket biçiminde 'Ine' değil 'sich' kullanılır",
+  "gswBeispiel": "Um Iri Zuekunft müend Sii sich käi Sorge mache."
  },
  "2715": {
   "tr": "-diği kadarıyla (soviel ich weiß: bildiğim kadarıyla)",
@@ -1897,7 +2299,8 @@
  },
  "2723": {
   "tr": "yemek, yiyecek",
-  "not": "B1 çeviri gözden geçirmesi: das Gericht ile aynı karşılığı taşıyordu; Speise tabaktaki yiyecektir"
+  "not": "B1 çeviri gözden geçirmesi: das Gericht ile aynı karşılığı taşıyordu; Speise tabaktaki yiyecektir | Züritüütsch B1 gözden geçirmesi: başlıkta sondaki tire artığı var, temiz biçim 'Schpiis' olmalı",
+  "gsw": "Schpiis"
  },
  "2725": {
   "tr": "uzman (erkek)",
@@ -1906,6 +2309,10 @@
  "2726": {
   "tr": "uzman (kadın)",
   "not": "B1 çeviri gözden geçirmesi: der Spezialist ile birebir aynı karşılık verilmiş, cinsiyet ayrımı belirtilmeli (aynı anlam: der Spezialist)"
+ },
+ "2730": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümledeki 'Zu Wienachte' Hochdeutsch kalıbı; Züritüütsch'te 'a Wienachte' denir",
+  "gswBeispiel": "A Wienachte wünsched sich d Chind vor allem Schpilzüüg."
  },
  "2739": {
   "tr": "yıkamak (bulaşık), çalkalamak",
@@ -2003,6 +2410,10 @@
   "tr": "kaldırım (İsviçre)",
   "not": "B1 çeviri gözden geçirmesi: das Trottoir İsviçre kullanımıdır, işaretsiz \"kaldırım\" Gehsteig/Bürgersteig ile ayırt edilemiyor (aynı anlam: der Gehsteig, der Bürgersteig)"
  },
+ "2881": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'Schrank' kalmış, Züritüütsch'te 'Chaschte' denir",
+  "gswBeispiel": "1. Wo häsch das schöön Tuech gchauft? 2. D Handtüecher sind zoberscht im Chaschte."
+ },
  "2896": {
   "tr": "ikna etmek (dil dökerek razı etmek)",
   "not": "B1 çeviri gözden geçirmesi: überzeugen ile birebir aynı karşılığı taşıyor; überreden karşısındakini konuşarak razı etmektir, überzeugen ise gerekçeyle inandırmaktır (aynı anlam: überzeugen)"
@@ -2031,6 +2442,10 @@
   "tr": "(satın alınan malın) değiştirilmesi",
   "not": "B1 çeviri gözden geçirmesi: Türkçede \"iade\" parayı geri almaktır (Rückgabe); Umtausch yalnızca ürünün başkasıyla değiştirilmesidir"
  },
+ "2921": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede 'mehr' karşılığı 'meh' olmalı; 'me' Züritüütsch'te 'man' demektir ve cümlenin anlamını bozuyor",
+  "gswBeispiel": "S Land mues meh Gäld für de Umwältschutz uusgää."
+ },
  "2930": {
   "drop": 828,
   "not": "unter- — 828 ile aynı"
@@ -2055,17 +2470,42 @@
   "tr": "kiraya verme, kiralama",
   "not": "B1 çeviri gözden geçirmesi: Vermietung kiraya veren tarafın işidir; 'kiralama' başta olunca mieten ile karışıyor"
  },
+ "3006": {
+  "not": "Züritüütsch B1 gözden geçirmesi: 'werded' Hochdeutsch kalmış; Züritüütsch'te 'wärde' fiili 'wärded' olarak çekilir",
+  "gswBeispiel": "Mir wärded da mit em Ässe sehr guet verpflääget."
+ },
+ "3008": {
+  "not": "Züritüütsch B1 gözden geçirmesi: soru zamiri Hochdeutsch 'Wer' kalmış, Züritüütsch'te 'Wär' olmalı",
+  "gswBeispiel": "1. Wär hät der s Ghäimnis verraate? 2. Sin Blick hät mer verraate, dass er verletzt isch."
+ },
  "3009": {
   "tr": "toplantı, toplanma",
   "not": "B1 çeviri gözden geçirmesi: 'meclis' Türkçede parlamentoyu çağrıştırıyor, Versammlung ise örnekteki gibi bir toplantıdır"
  },
  "3011": {
   "tr": "reçete yazmak, ilaç yazmak",
-  "not": "B1 çeviri gözden geçirmesi: 'reçete etmek' Türkçede kullanılmaz; doktor için doğal olan 'reçete/ilaç yazmak'tır"
+  "not": "B1 çeviri gözden geçirmesi: 'reçete etmek' Türkçede kullanılmaz; doktor için doğal olan 'reçete/ilaç yazmak'tır | Züritüütsch B1 gözden geçirmesi: araya giren 'müese' hem anlamı kaydırıyor hem de nesneyi fiil öbeğinin içine alan Hochdeutsch söz dizimi doğuruyor",
+  "gswBeispiel": "D Ärztin hät mer Tablette verschriibe."
  },
  "3019": {
   "drop": 474,
   "not": "B1 çeviri gözden geçirmesi: sich verstehen — örnek cümlesi geçişli \"verstehen\"; 474 ile aynı madde"
+ },
+ "3020": {
+  "not": "Züritüütsch B1 gözden geçirmesi: 'werded' Hochdeutsch kalmış; Züritüütsch'te 'wärded' olmalı",
+  "gswBeispiel": "1. I de Forschig wärded vill Versüech gmacht. 2. Min Versuech, öppis z ändere, hät nüt bracht."
+ },
+ "3024": {
+  "not": "Züritüütsch B1 gözden geçirmesi: soru zamiri Hochdeutsch 'Wer' kalmış, Züritüütsch'te 'Wär' olmalı",
+  "gswBeispiel": "Wär söll Si verträtte, wänn Si i de Ferie sind?"
+ },
+ "3025": {
+  "not": "Züritüütsch B1 gözden geçirmesi: bileşik kelime 'Elteverträtter' bozuk; Züritüütsch'te çoğul 'Eltere' ile 'Eltereverträtter' olmalı",
+  "gswBeispiel": "1. Wo de Herr Dokter Müller i de Ferie gsii isch, bin ich zu sinere Verträtterin ggange. 2. D Eltereverträtter träffed sich morn."
+ },
+ "3026": {
+  "not": "Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch 'mich' kalmış, Züritüütsch'te 'mi' olmalı",
+  "gswBeispiel": "De Herr Dokter Meyer macht für mi d Verträttig."
  },
  "3030": {
   "tr": "akraba (kadın)",
@@ -2127,21 +2567,29 @@
   "drop": 501,
   "not": "wieder — 501 ile aynı (A1)"
  },
+ "3108": {
+  "not": "Züritüütsch B1 gözden geçirmesi: \"Matte\" bernce/mittelland biçimi; Züritüütsch'te çayır \"d Wise\" denir",
+  "gsw": "Wise",
+  "gswBeispiel": "Vor üsem Huus isch e Wise mit Bäum."
+ },
  "3113": {
   "tr": "etki, tesir (bir şeyin yol açtığı sonuç)",
   "not": "B1 çeviri gözden geçirmesi: Einfluss da 'etki' olarak veriliyor; Wirkung bir şeyin (ilacın, önlemin) doğurduğu sonuçtur, Einfluss ise nüfuz/yönlendirmedir (aynı anlam: der Einfluss)"
  },
  "3115": {
   "tr": "lokantacı, işletmeci (lokanta, meyhane)",
-  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'ev sahibi' başta olunca Gastgeber/Vermieter ile karışıyor"
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'ev sahibi' başta olunca Gastgeber/Vermieter ile karışıyor | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch \"dem\" kalmış, Züritüütsch datif biçimi \"däm\" olmalı",
+  "gswBeispiel": "Ich känne de Wirt vo däm Lokal. Er isch sehr nätt."
  },
  "3116": {
   "tr": "lokantacı, işletmeci (kadın)",
-  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'kadın ev sahibi' yanıltıcı"
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'kadın ev sahibi' yanıltıcı | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch \"dem\" kalmış, Züritüütsch datif biçimi \"däm\" olmalı",
+  "gswBeispiel": "Ich känne d Wirtin vo däm Lokal. Si isch sehr nätt."
  },
  "3137": {
   "de": "Zahncreme/Zahnpasta",
-  "not": "Zahncreme/-pasta — sonek kısaltması açıldı"
+  "not": "Zahncreme/-pasta — sonek kısaltması açıldı | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch \"neu\" kalmış, Züritüütsch'te \"nöi\" olmalı",
+  "gswBeispiel": "Di nöi Zaanpaschta schmöckt sehr guet."
  },
  "3143": {
   "tr": "zaman, an",
@@ -2172,6 +2620,14 @@
   "tr": "hazırlamak (yemek)",
   "not": "B1 çeviri gözden geçirmesi: zubereiten yalnızca yiyecek hazırlamaktır; yalın 'hazırlamak' vorbereiten ile karışıyor"
  },
+ "3159": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "De Zuegang zu däm Huus isch schwirig. 2. Häsch Zuegang zum Internet?"
+ },
+ "3163": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede 'mehr' karşılığı 'me' diye kesilmiş, Züritüütsch'te 'meh' olmalı",
+  "gswBeispiel": "1. Du muesch meh für d Schuel leere. Dänk a d Zuekunft. 2. I Zuekunft bin ich vorsichtiger."
+ },
  "3167": {
   "de": "Zünder",
   "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı"
@@ -2183,6 +2639,14 @@
  "3173": {
   "drop": 530,
   "not": "zusammen — 530 ile aynı (A1)"
+ },
+ "3174": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch 'neu' kalmış, Züritüütsch'te 'nöi' olmalı",
+  "gswBeispiel": "Si sind de nöi Kolleeg? Uf e gueti Zämenarbet!"
+ },
+ "3176": {
+  "not": "Züritüütsch B1 gözden geçirmesi: örnek cümlede Hochdeutsch datif 'dem' kalmış, Züritüütsch'te 'däm' olmalı",
+  "gswBeispiel": "1. I däm Zämehang möcht ich Si uf zwäi Büecher ufmerksam mache. 2. Was isch de Zämehang zwüsched dene zwäi Sache?"
  },
  "3180": {
   "tr": "durum, hâl (bir şeyin, bir yerin içinde bulunduğu hâl)",
@@ -2199,7 +2663,8 @@
  "3192": {
   "de": "zwingen",
   "tr": "zorlamak",
-  "not": "B1 çeviri gözden geçirmesi: örnek cümle geçişli kullanımdı, başlık dönüşlüydü"
+  "not": "B1 çeviri gözden geçirmesi: örnek cümle geçişli kullanımdı, başlık dönüşlüydü | Züritüütsch B1 gözden geçirmesi: Almanca madde dönüşsüz 'zwingen', başlıktaki 'sich' fazla; örnek cümleler de dönüşsüz kullanım",
+  "gsw": "zwinge"
  },
  "3213": {
   "tr": "tazminat, işten ayrılma tazminatı",

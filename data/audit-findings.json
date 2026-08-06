@@ -408,12 +408,6 @@
   "detay": "\"Wiederhören\" → \"Wir müssen jetzt Schluss machen.\""
  },
  {
-  "id": 860,
-  "de": "schließt ab",
-  "kural": "fiil mastar değil",
-  "detay": "\"schließt ab\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 877,
   "de": "ausgeben",
   "kural": "cümle kelimeyi taşımıyor",
@@ -426,28 +420,28 @@
   "detay": "\"aussprechen\" → \"Wie spricht man das Wort aus?\""
  },
  {
+  "id": 886,
+  "de": "austragen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"austragen\" → \"dağıtmak (gazete\""
+ },
+ {
   "id": 903,
   "de": "Bescheid",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Bescheid\" → \"Kann Lisa in Heidelberg studieren?\""
  },
  {
-  "id": 914,
-  "de": "der/das Blog",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"der/das Blog\" → \"Ich schreibe einen Blog über Mode.\""
+  "id": 917,
+  "de": "braten",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"braten\" → \"kızartmak (tavada\""
  },
  {
-  "id": 928,
-  "de": "da(r) (Bsp. darauf",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"da(r) (Bsp. darauf\" → \"Darauf fällt mir keine Antwort ein.\""
- },
- {
-  "id": 929,
-  "de": "dabei (sein)",
-  "kural": "fiil mastar değil",
-  "detay": "\"dabei (sein)\" fiil olarak işaretli ama mastar eki yok"
+  "id": 920,
+  "de": "buchen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"buchen\" → \"rezervasyon yaptırmak (uçuş\""
  },
  {
   "id": 931,
@@ -463,9 +457,9 @@
  },
  {
   "id": 952,
-  "de": "einzel-",
+  "de": "einzeln",
   "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"einzel-\" → \"Nicht alle zusammen.\""
+  "detay": "\"einzeln\" → \"Nicht alle zusammen.\""
  },
  {
   "id": 974,
@@ -474,22 +468,10 @@
   "detay": "\"Frohes Fest!\""
  },
  {
-  "id": 979,
-  "de": "(ab)fliegen",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(ab)fliegen\" → \"Ich fliege nicht gern; ich fahre lieber mit dem Zug.\""
- },
- {
   "id": 984,
   "de": "freuen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"freuen\" → \"Zum Geburtstag habe ich ein interessantes Buch bekommen.\""
- },
- {
-  "id": 985,
-  "de": "freut",
-  "kural": "fiil mastar değil",
-  "detay": "\"freut\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 992,
@@ -504,20 +486,8 @@
   "detay": "\"ganz\" → \"Oh nein!\""
  },
  {
-  "id": 994,
-  "de": "Geburts- (jahr",
-  "kural": "fiil mastar değil",
-  "detay": "\"Geburts- (jahr\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 994,
-  "de": "Geburts- (jahr",
-  "kural": "fiil çevirisi mastar değil",
-  "detay": "\"Geburts- (jahr\" → \"doğum-\""
- },
- {
   "id": 995,
-  "de": "geehrt-",
+  "de": "geehrte",
   "kural": "cümle noktalamasız",
   "detay": "\"Sehr geehrte Damen und Herren,\""
  },
@@ -558,22 +528,10 @@
   "detay": "\"Heizung\" → \"Es ist kalt.\""
  },
  {
-  "id": 1023,
-  "de": "heraus/raus",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"heraus/raus\" → \"Möchtet ihr nicht rauskommen?\""
- },
- {
   "id": 1024,
-  "de": "herein/rein",
+  "de": "herein",
   "kural": "cümle çok kısa",
   "detay": "\"Herein!\""
- },
- {
-  "id": 1033,
-  "de": "sich informieren (über)",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich informieren (über)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1034,
@@ -610,12 +568,6 @@
   "de": "kündigen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"kündigen\" → \"Meine Arbeit gefällt mir nicht mehr.\""
- },
- {
-  "id": 1069,
-  "de": "der/das Laptop",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"der/das Laptop\" → \"Ich brauche einen neuen Laptop.\""
  },
  {
   "id": 1070,
@@ -664,6 +616,12 @@
   "de": "nützlich",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"nützlich\" → \"Danke für den Tipp.\""
+ },
+ {
+  "id": 1126,
+  "de": "packen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"packen\" → \"(bavul\""
  },
  {
   "id": 1138,
@@ -738,10 +696,10 @@
   "detay": "\"Störe ich?\""
  },
  {
-  "id": 1232,
-  "de": "(aus)tauschen",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(aus)tauschen\" → \"Können wir bitte die Plätze tauschen?\""
+  "id": 1235,
+  "de": "teilnehmen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"teilnehmen\" → \"katılmak (kursa\""
  },
  {
   "id": 1240,
@@ -826,6 +784,12 @@
   "de": "zuhören",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"zuhören\" → \"Hör mir doch mal zu!\""
+ },
+ {
+  "id": 1339,
+  "de": "zurück-",
+  "kural": "fiil mastar değil",
+  "detay": "\"zurück-\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1348,
@@ -986,6 +950,12 @@
  {
   "id": 1579,
   "de": "sich bewerben",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"sich bewerben\" → \"başvurmak (iş\""
+ },
+ {
+  "id": 1579,
+  "de": "sich bewerben",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"sich bewerben\" → \"Ich habe mich um diese Stelle beworben.\""
  },
@@ -1000,12 +970,6 @@
   "de": "Bio-",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Bio-\" → \"Ich kaufe nur noch Biogemüse.\""
- },
- {
-  "id": 1588,
-  "de": "bio(logisch)",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"bio(logisch)\" → \"Biologische Lebensmittel gibt es jetzt auch im Supermarkt.\""
  },
  {
   "id": 1593,
@@ -1114,12 +1078,6 @@
   "de": "Dreck",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Dreck\" → \"Iss den Apfel nicht!\""
- },
- {
-  "id": 1681,
-  "de": "drin",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"drin\" → \"Wo wollt ihr sitzen?\""
  },
  {
   "id": 1689,
@@ -1272,6 +1230,12 @@
   "detay": "\"erledigen\" → \"Diese zwei Pakete müssen zur Post.\""
  },
  {
+  "id": 1817,
+  "de": "eröffnen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"eröffnen\" → \"açmak (dükkân\""
+ },
+ {
   "id": 1818,
   "de": "Eröffnung",
   "kural": "cümle noktalamasız",
@@ -1312,12 +1276,6 @@
   "de": "festlegen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"festlegen\" → \"Ich weiß noch nicht, ob ich das mache.\""
- },
- {
-  "id": 1871,
-  "de": "festnehmen nimmt fest",
-  "kural": "fiil mastar değil",
-  "detay": "\"festnehmen nimmt fest\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1878,
@@ -1424,6 +1382,12 @@
  {
   "id": 2003,
   "de": "gießen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"gießen\" → \"sulamak (çiçek\""
+ },
+ {
+  "id": 2003,
+  "de": "gießen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"gießen\" → \"Es hat nicht geregnet.\""
  },
@@ -1468,6 +1432,12 @@
   "de": "Groß-",
   "kural": "cümle noktalamasız",
   "detay": "\"z.B. die Großeltern, die Großmutter, der Großvater\""
+ },
+ {
+  "id": 2023,
+  "de": "gründen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"gründen\" → \"kurmak (şirket\""
  },
  {
   "id": 2024,
@@ -1518,12 +1488,6 @@
   "detay": "\"heben\" → \"Kannst du mir helfen?\""
  },
  {
-  "id": 2063,
-  "de": "heraus-",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"heraus-\" → \"Hast du schon rausgefunden, wann und wo man sich für den Kur\""
- },
- {
   "id": 2067,
   "de": "Hersteller",
   "kural": "cümle kelimeyi taşımıyor",
@@ -1542,16 +1506,16 @@
   "detay": "\"Herz\" → \"Ich bin ganz nervös.\""
  },
  {
-  "id": 2071,
-  "de": "herzlich heute",
-  "kural": "cümle çok kısa",
-  "detay": "\"Herzlichen Glückwunsch!\""
- },
- {
   "id": 2075,
   "de": "(hinunter) runterwerfen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"(hinunter) runterwerfen\" → \"Kannst du mir bitte den Schlüssel runterwerfen?\""
+ },
+ {
+  "id": 2077,
+  "de": "hinterlassen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"hinterlassen\" → \"geride bırakmak (mesaj\""
  },
  {
   "id": 2078,
@@ -1579,9 +1543,9 @@
  },
  {
   "id": 2115,
-  "de": "inner-",
+  "de": "innere",
   "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"inner-\" → \"Wir müssen Sie untersuchen.\""
+  "detay": "\"innere\" → \"Wir müssen Sie untersuchen.\""
  },
  {
   "id": 2127,
@@ -1597,9 +1561,9 @@
  },
  {
   "id": 2130,
-  "de": "irgendirgendein",
+  "de": "irgendein",
   "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"irgendirgendein\" → \"Was für einen Saft möchten Sie?\""
+  "detay": "\"irgendein\" → \"Was für einen Saft möchten Sie?\""
  },
  {
   "id": 2132,
@@ -1672,6 +1636,12 @@
   "de": "korrekt",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"korrekt\" → \"Ich habe die Rechnung geprüft.\""
+ },
+ {
+  "id": 2240,
+  "de": "Kriminalpolizei",
+  "kural": "gereksiz artikel",
+  "detay": "\"Kriminalpolizei\" isim değil ama artikeli var: die"
  },
  {
   "id": 2244,
@@ -1867,9 +1837,9 @@
  },
  {
   "id": 2425,
-  "de": "Notdie Notaufnahme",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"Notdie Notaufnahme\" → \"Die Notaufnahme ist gleich hier links.\""
+  "de": "Notaufnahme",
+  "kural": "gereksiz artikel",
+  "detay": "\"Notaufnahme\" isim değil ama artikeli var: die"
  },
  {
   "id": 2430,
@@ -1884,16 +1854,16 @@
   "detay": "\"nützen\" → \"Ich habe jeden Tag eine Tablette genommen.\""
  },
  {
+  "id": 2436,
+  "de": "Obers",
+  "kural": "gereksiz artikel",
+  "detay": "\"Obers\" isim değil ama artikeli var: das"
+ },
+ {
   "id": 2439,
   "de": "(Back-)Ofen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"(Back-)Ofen\" → \"Ich habe gerade eine Pizza gemacht.\""
- },
- {
-  "id": 2445,
-  "de": "oft/öfter",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"oft/öfter\" → \"Ich treffe mich oft mit meiner Freundin.\""
  },
  {
   "id": 2446,
@@ -1918,12 +1888,6 @@
   "de": "Ordination",
   "kural": "cümle noktalamasız",
   "detay": "\"Die Ordination bleibt bis zum\""
- },
- {
-  "id": 2464,
-  "de": "(ein) paar",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(ein) paar\" → \"Ich komme gleich.\""
  },
  {
   "id": 2474,
@@ -1966,12 +1930,6 @@
   "de": "Pflicht",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Pflicht\" → \"Als Autofahrer müssen Sie eine Versicherung haben.\""
- },
- {
-  "id": 2495,
-  "de": "Phantasie/Fantasie",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"Phantasie/Fantasie\" → \"Mein Sohn malt sehr gut.\""
  },
  {
   "id": 2497,
@@ -2098,6 +2056,12 @@
   "de": "(Back-)Rohr",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"(Back-)Rohr\" → \"Ich habe gerade eine Pizza gemacht.\""
+ },
+ {
+  "id": 2594,
+  "de": "Rückfahrt",
+  "kural": "gereksiz artikel",
+  "detay": "\"Rückfahrt\" isim değil ama artikeli var: die"
  },
  {
   "id": 2599,
@@ -2238,10 +2202,10 @@
   "detay": "\"sinnvoll\" → \"Es funktioniert einfach nicht.\""
  },
  {
-  "id": 2702,
-  "de": "Ski/Schi",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"Ski/Schi\" → \"Gehen wir am Wochenende Ski laufen?\""
+  "id": 2709,
+  "de": "Sonderangebot",
+  "kural": "gereksiz artikel",
+  "detay": "\"Sonderangebot\" isim değil ama artikeli var: das"
  },
  {
   "id": 2717,
@@ -2359,9 +2323,9 @@
  },
  {
   "id": 2900,
-  "de": "überübertreiben",
+  "de": "übertreiben",
   "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"überübertreiben\" → \"Ein bisschen Sport ist gesund.\""
+  "detay": "\"übertreiben\" → \"Ein bisschen Sport ist gesund.\""
  },
  {
   "id": 2917,
@@ -2676,16 +2640,22 @@
   "detay": "\"anfechten\" → \"Der Kläger focht den Bescheid vor Gericht an.\""
  },
  {
+  "id": 3686,
+  "de": "vertagen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"vertagen\" → \"ertelemek (toplantı\""
+ },
+ {
   "id": 3688,
   "de": "sich abheben",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"sich abheben\" → \"Das Produkt hebt sich deutlich von der Konkurrenz ab.\""
  },
  {
-  "id": 3735,
-  "de": "verzichten auf",
-  "kural": "fiil mastar değil",
-  "detay": "\"verzichten auf\" fiil olarak işaretli ama mastar eki yok"
+  "id": 3698,
+  "de": "auslegen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"auslegen\" → \"yorumlamak (yasa\""
  },
  {
   "id": 3738,
@@ -2712,28 +2682,10 @@
   "detay": "\"sich auseinandersetzen mit\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 3779,
-  "de": "beruhen auf",
-  "kural": "fiil mastar değil",
-  "detay": "\"beruhen auf\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 3780,
   "de": "bestehen aus",
   "kural": "fiil mastar değil",
   "detay": "\"bestehen aus\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 3781,
-  "de": "sich freuen über",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich freuen über\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 3782,
-  "de": "sich beschweren über",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich beschweren über\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 3783,
@@ -2746,12 +2698,6 @@
   "de": "sich bewerben um",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"sich bewerben um\" → \"Sie bewirbt sich um ein Stipendium im Ausland.\""
- },
- {
-  "id": 3785,
-  "de": "sich einigen auf",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich einigen auf\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 3786,
@@ -2802,22 +2748,10 @@
   "detay": "\"verfügen über\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 3801,
-  "de": "sich interessieren für",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich interessieren für\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 3802,
   "de": "sich entscheiden für",
   "kural": "fiil mastar değil",
   "detay": "\"sich entscheiden für\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 3803,
-  "de": "sich streiten über",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich streiten über\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 3804,
@@ -2832,12 +2766,6 @@
   "detay": "\"sich konzentrieren auf\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 3806,
-  "de": "sich vorbereiten auf",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich vorbereiten auf\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 3816,
   "de": "sich abfinden mit",
   "kural": "fiil mastar değil",
@@ -2848,6 +2776,18 @@
   "de": "erwerben",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"erwerben\" → \"Im Kurs erwirbt man wichtige Grammatikkenntnisse.\""
+ },
+ {
+  "id": 3989,
+  "de": "kaschieren",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"kaschieren\" → \"(kusuru\""
+ },
+ {
+  "id": 4028,
+  "de": "verankern",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"verankern\" → \"(yasada\""
  },
  {
   "id": 4030,
@@ -2928,6 +2868,12 @@
   "detay": "\"säen\" → \"Wer zu früh sät, riskiert Verluste durch späten Frost.\""
  },
  {
+  "id": 4483,
+  "de": "aufstocken",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"aufstocken\" → \"artırmak (bütçe\""
+ },
+ {
   "id": 4497,
   "de": "anlegen",
   "kural": "cümle kelimeyi taşımıyor",
@@ -2950,6 +2896,18 @@
   "de": "dösen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"dösen\" → \"Im Zug döste ich zwei Stunden vor mich hin.\""
+ },
+ {
+  "id": 4833,
+  "de": "einlösen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"einlösen\" → \"kullanmak (kupon\""
+ },
+ {
+  "id": 4836,
+  "de": "beheben",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"beheben\" → \"gidermek (arıza\""
  },
  {
   "id": 4837,
@@ -2980,6 +2938,12 @@
   "de": "mitreißen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"mitreißen\" → \"Der Schlusschor riss selbst die skeptischen Zuhörer mit.\""
+ },
+ {
+  "id": 4967,
+  "de": "übertragen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"übertragen\" → \"yayınlamak (radyo\""
  },
  {
   "id": 4984,
@@ -3048,6 +3012,12 @@
   "detay": "\"zugeben\" → \"Er gab offen zu, den Termin völlig vergessen zu haben.\""
  },
  {
+  "id": 5533,
+  "de": "Mikroplastik",
+  "kural": "artikel sonekle çelişiyor",
+  "detay": "\"Mikroplastik\" → das, oysa -ung/-heit/-keit/-tion ailesi die diyor"
+ },
+ {
   "id": 5544,
   "de": "ansteigen",
   "kural": "cümle kelimeyi taşımıyor",
@@ -3112,6 +3082,12 @@
   "de": "vorbringen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"vorbringen\" → \"Gegen diesen Vorschlag hat bislang niemand ernsthafte Bedenk\""
+ },
+ {
+  "id": 6237,
+  "de": "überbrücken",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"überbrücken\" → \"(dönemi\""
  },
  {
   "id": 6401,
@@ -3222,6 +3198,12 @@
   "detay": "\"zuordnen\" → \"Ordne die Wörter den richtigen Bildern zu!\""
  },
  {
+  "id": 7732,
+  "de": "austeilen",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"austeilen\" → \"dağıtmak (elden\""
+ },
+ {
   "id": 7842,
   "de": "erben",
   "kural": "cümle kelimeyi taşımıyor",
@@ -3262,6 +3244,12 @@
   "de": "aufgehen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"aufgehen\" → \"Im Sommer geht die Sonne schon um fünf Uhr auf.\""
+ },
+ {
+  "id": 8169,
+  "de": "umrühren",
+  "kural": "fiil çevirisi mastar değil",
+  "detay": "\"umrühren\" → \"karıştırmak (kaşıkla\""
  },
  {
   "id": 8171,
