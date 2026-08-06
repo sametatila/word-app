@@ -1,0 +1,1048 @@
+[
+ {
+  "id": 739,
+  "de": "oben",
+  "typ": "Sonstiges",
+  "tr": "yukarıda",
+  "formen": "",
+  "beispiel": "Ich wohne oben im 4. Stock."
+ },
+ {
+  "id": 740,
+  "de": "öffnen",
+  "typ": "Sonstiges",
+  "tr": "açmak",
+  "formen": "",
+  "beispiel": "Ich öffne die Tür. Der Laden ist samstags bis 16.00 Uhr geöffnet.",
+  "ayniAnlam": [
+   "aufmachen (A1)",
+   "anmachen (A1)",
+   "einschalten (B1)",
+   "eröffnen (B1)"
+  ]
+ },
+ {
+  "id": 741,
+  "de": "geöffnet",
+  "typ": "Sonstiges",
+  "tr": "açık",
+  "formen": "",
+  "beispiel": "Der Laden ist samstags bis 16.00 Uhr geöffnet.",
+  "ayniAnlam": [
+   "offen (A1)"
+  ]
+ },
+ {
+  "id": 742,
+  "de": "das Öl",
+  "typ": "Nomen",
+  "tr": "yağ",
+  "formen": "",
+  "beispiel": "Den Salat machen wir ohne Öl.",
+  "ayniAnlam": [
+   "das Fett (B1)"
+  ]
+ },
+ {
+  "id": 743,
+  "de": "die Oma",
+  "typ": "Nomen",
+  "tr": "büyükanne",
+  "formen": "-s",
+  "beispiel": "Meine Oma ist schon tot.",
+  "ayniAnlam": [
+   "die Großmutter (A1)"
+  ]
+ },
+ {
+  "id": 744,
+  "de": "der Opa",
+  "typ": "Nomen",
+  "tr": "büyükbaba",
+  "formen": "-s",
+  "beispiel": "Mein Opa heißt Hans.",
+  "ayniAnlam": [
+   "der Großvater (A1)"
+  ]
+ },
+ {
+  "id": 745,
+  "de": "der Ort",
+  "typ": "Nomen",
+  "tr": "yer, mekân",
+  "formen": "-e",
+  "beispiel": "Der Ort liegt am Meer."
+ },
+ {
+  "id": 746,
+  "de": "das Papier",
+  "typ": "Nomen",
+  "tr": "kağıt",
+  "formen": "",
+  "beispiel": "Hier sind Papier und Bleistift."
+ },
+ {
+  "id": 747,
+  "de": "die Papiere",
+  "typ": "Nomen",
+  "tr": "belgeler, evraklar",
+  "formen": "(pl.)",
+  "beispiel": "Haben Sie Ihre Papiere dabei?",
+  "ayniAnlam": [
+   "die Unterlagen (B1)"
+  ]
+ },
+ {
+  "id": 748,
+  "de": "der Partner",
+  "typ": "Nomen",
+  "tr": "partner, eş",
+  "formen": "-/",
+  "beispiel": "Veronika ist meine Partnerin.",
+  "ayniAnlam": [
+   "die Partnerin (A1)"
+  ]
+ },
+ {
+  "id": 749,
+  "de": "die Partnerin",
+  "typ": "Nomen",
+  "tr": "partner, eş",
+  "formen": "-nen",
+  "beispiel": "Sie ist meine Partnerin.",
+  "ayniAnlam": [
+   "der Partner (A1)"
+  ]
+ },
+ {
+  "id": 750,
+  "de": "die Party",
+  "typ": "Nomen",
+  "tr": "parti",
+  "formen": "",
+  "beispiel": "Heute Abend machen wir eine Party."
+ },
+ {
+  "id": 751,
+  "de": "der Pass",
+  "typ": "Nomen",
+  "tr": "pasaport",
+  "formen": "-ä, e",
+  "beispiel": "Im Hotel brauchst du deinen Pass.",
+  "ayniAnlam": [
+   "der Reisepass (B2)"
+  ]
+ },
+ {
+  "id": 752,
+  "de": "der Plan",
+  "typ": "Nomen",
+  "tr": "plan",
+  "formen": "-ä, e",
+  "beispiel": "Ich kaufe mir einen Stadtplan."
+ },
+ {
+  "id": 753,
+  "de": "die Polizei",
+  "typ": "Nomen",
+  "tr": "polis",
+  "formen": "",
+  "beispiel": "Holen Sie die Polizei!"
+ },
+ {
+  "id": 754,
+  "de": "die Pommes frites (pl.) Die",
+  "typ": "Nomen",
+  "tr": "patates kızartması",
+  "formen": "",
+  "beispiel": "Kinder essen Hähnchen mit Pommes frites.",
+  "ayniAnlam": [
+   "die Pommes frites (Pl.) (A2)",
+   "die Pommes (A2)"
+  ]
+ },
+ {
+  "id": 755,
+  "de": "die Postleitzahl",
+  "typ": "Nomen",
+  "tr": "posta kodu",
+  "formen": "",
+  "beispiel": "Wie ist Ihre Postleitzahl?"
+ },
+ {
+  "id": 756,
+  "de": "das Praktikum",
+  "typ": "Nomen",
+  "tr": "staj",
+  "formen": "",
+  "beispiel": "Ich mache ein Praktikum bei Siemens."
+ },
+ {
+  "id": 757,
+  "de": "die Praxis",
+  "typ": "Nomen",
+  "tr": "muayenehane",
+  "formen": "",
+  "beispiel": "Die Praxis ist ab acht Uhr geöffnet.",
+  "ayniAnlam": [
+   "die Ordination (B1)",
+   "die Arztpraxis (A2)"
+  ]
+ },
+ {
+  "id": 758,
+  "de": "der Preis",
+  "typ": "Nomen",
+  "tr": "fiyat",
+  "formen": "-e",
+  "beispiel": "Die Preise sind hoch."
+ },
+ {
+  "id": 759,
+  "de": "der Prospekt",
+  "typ": "Nomen",
+  "tr": "broşür, katalog",
+  "formen": "-e",
+  "beispiel": "Bitte schicken Sie mir einen Prospekt von Ihrem Hotel."
+ },
+ {
+  "id": 760,
+  "de": "die Prüfung",
+  "typ": "Nomen",
+  "tr": "sınav",
+  "formen": "",
+  "beispiel": "Die Prüfung ist am Montag um 8.00 Uhr."
+ },
+ {
+  "id": 761,
+  "de": "Rad fahren",
+  "typ": "Sonstiges",
+  "tr": "bisiklete binmek",
+  "formen": "",
+  "beispiel": "Das Kind kann schon Rad fahren."
+ },
+ {
+  "id": 762,
+  "de": "rauchen",
+  "typ": "Sonstiges",
+  "tr": "sigara içmek",
+  "formen": "",
+  "beispiel": "Stört es Sie, wenn ich rauche? Rauchen ist hier verboten!"
+ },
+ {
+  "id": 763,
+  "de": "der Raum",
+  "typ": "Nomen",
+  "tr": "oda, mekân",
+  "formen": "-ä, e",
+  "beispiel": "Der Unterricht ist in Raum 332."
+ },
+ {
+  "id": 764,
+  "de": "die Rechnung",
+  "typ": "Nomen",
+  "tr": "hesap, fatura",
+  "formen": "-en",
+  "beispiel": "Die Rechnung, bitte."
+ },
+ {
+  "id": 765,
+  "de": "der Reis",
+  "typ": "Nomen",
+  "tr": "pirinç",
+  "formen": "",
+  "beispiel": "Ich esse gern Reis mit Gemüse und Fisch."
+ },
+ {
+  "id": 766,
+  "de": "reisen",
+  "typ": "Sonstiges",
+  "tr": "seyahat etmek",
+  "formen": "",
+  "beispiel": "Ich reise gern nach Spanien."
+ },
+ {
+  "id": 767,
+  "de": "das Reisebüro",
+  "typ": "Nomen",
+  "tr": "seyahat acentesi",
+  "formen": "-s",
+  "beispiel": "Mein Mann arbeitet im Reisebüro."
+ },
+ {
+  "id": 768,
+  "de": "der Reiseführer",
+  "typ": "Nomen",
+  "tr": "rehber, seyahat rehberi",
+  "formen": "",
+  "beispiel": "Ich kaufe mir einen Reiseführer von Berlin. Unser Reiseführer heißt Peter."
+ },
+ {
+  "id": 769,
+  "de": "die Reparatur",
+  "typ": "Nomen",
+  "tr": "tamir, onarım",
+  "formen": "",
+  "beispiel": "Die Reparatur ist sehr teuer."
+ },
+ {
+  "id": 770,
+  "de": "die Rezeption",
+  "typ": "Nomen",
+  "tr": "resepsiyon",
+  "formen": "",
+  "beispiel": "Fragen Sie bitte im Hotel an der Rezeption.",
+  "ayniAnlam": [
+   "die Rezeption/Reception (B1)"
+  ]
+ },
+ {
+  "id": 771,
+  "de": "riechen",
+  "typ": "Sonstiges",
+  "tr": "koklamak, kokmak",
+  "formen": "",
+  "beispiel": "Dieser Wein riecht gut."
+ },
+ {
+  "id": 772,
+  "de": "das Salz",
+  "typ": "Nomen",
+  "tr": "tuz",
+  "formen": "",
+  "beispiel": "Herr Ober, kann ich bitte Salz haben?"
+ },
+ {
+  "id": 773,
+  "de": "der Satz",
+  "typ": "Sonstiges",
+  "tr": "cümle",
+  "formen": "¨-e",
+  "beispiel": "Dieser Satz ist sehr einfach."
+ },
+ {
+  "id": 774,
+  "de": "die S-Bahn",
+  "typ": "Nomen",
+  "tr": "banliyö treni",
+  "formen": "-en",
+  "beispiel": "Ich nehme lieber die S-Bahn."
+ },
+ {
+  "id": 775,
+  "de": "der Schalter",
+  "typ": "Nomen",
+  "tr": "gişe",
+  "formen": "",
+  "beispiel": "Gehen Sie bitte zum Schalter drei!"
+ },
+ {
+  "id": 776,
+  "de": "scheinen",
+  "typ": "Sonstiges",
+  "tr": "parlamak, görünmek",
+  "formen": "",
+  "beispiel": "1. Gestern hat es geregnet. Heute scheint wieder die Sonne. 2. Mein Kollege scheint krank zu sein. Er war heute nicht im"
+ },
+ {
+  "id": 777,
+  "de": "schicken",
+  "typ": "Sonstiges",
+  "tr": "göndermek",
+  "formen": "",
+  "beispiel": "Bitte schicken Sie mir eine E-Mail.",
+  "ayniAnlam": [
+   "senden (B1)"
+  ]
+ },
+ {
+  "id": 778,
+  "de": "das Schild",
+  "typ": "Nomen",
+  "tr": "tabela, levha",
+  "formen": "-er",
+  "beispiel": "Haben Sie nicht das Schild gesehen?"
+ },
+ {
+  "id": 779,
+  "de": "der Schinken",
+  "typ": "Nomen",
+  "tr": "jambon",
+  "formen": "–",
+  "beispiel": "Ich möchte gern ein Schinkenbrot."
+ },
+ {
+  "id": 780,
+  "de": "schließen",
+  "typ": "Sonstiges",
+  "tr": "kapatmak",
+  "formen": "",
+  "beispiel": "Bitte, schließen Sie die Tür.",
+  "ayniAnlam": [
+   "zumachen (A1)",
+   "ausmachen (A1)"
+  ]
+ },
+ {
+  "id": 781,
+  "de": "geschlossen",
+  "typ": "Sonstiges",
+  "tr": "kapalı",
+  "formen": "",
+  "beispiel": "Die Bank hat am Samstag geschlossen."
+ },
+ {
+  "id": 782,
+  "de": "der Schluss",
+  "typ": "Nomen",
+  "tr": "son, bitiş",
+  "formen": "",
+  "beispiel": "Ich muss jetzt Schluss machen. Zum Schluss gibt er uns allen die Hand."
+ },
+ {
+  "id": 783,
+  "de": "der Schlüssel",
+  "typ": "Nomen",
+  "tr": "anahtar",
+  "formen": "–",
+  "beispiel": "Ich gebe Ihnen noch den Zimmerschlüssel."
+ },
+ {
+  "id": 784,
+  "de": "der Schrank",
+  "typ": "Nomen",
+  "tr": "dolap",
+  "formen": "-ä, e",
+  "beispiel": "Die Gläser stehen im Schrank."
+ },
+ {
+  "id": 785,
+  "de": "der Schuh",
+  "typ": "Nomen",
+  "tr": "ayakkabı",
+  "formen": "-e",
+  "beispiel": "Zieh die Schuhe aus!"
+ },
+ {
+  "id": 786,
+  "de": "die Schule",
+  "typ": "Nomen",
+  "tr": "okul",
+  "formen": "",
+  "beispiel": "Meine Tochter geht schon in die Schule. Die Schule ist gleich hier um die Ecke."
+ },
+ {
+  "id": 787,
+  "de": "der Schüler",
+  "typ": "Nomen",
+  "tr": "öğrenci",
+  "formen": "–",
+  "beispiel": "In meinem Kurs sind acht Schülerinnen und fünf Schüler."
+ },
+ {
+  "id": 788,
+  "de": "die Schwester",
+  "typ": "Nomen",
+  "tr": "kız kardeş",
+  "formen": "-n",
+  "beispiel": "Meine Schwester kommt am Dienstag."
+ },
+ {
+  "id": 789,
+  "de": "die Sehenswürdigkeit",
+  "typ": "Nomen",
+  "tr": "görülmeye değer yer, turistik yer",
+  "formen": "",
+  "beispiel": "-en Welche Sehenswürdigkeiten gibt es in Frankfurt?"
+ },
+ {
+  "id": 790,
+  "de": "weg sein",
+  "typ": "Sonstiges",
+  "tr": "gitmiş olmak",
+  "formen": "",
+  "beispiel": "Herr Meier ist schon weg."
+ },
+ {
+  "id": 791,
+  "de": "seit",
+  "typ": "Sonstiges",
+  "tr": "-den beri",
+  "formen": "",
+  "beispiel": "Ich wohne seit drei Jahren in Köln."
+ },
+ {
+  "id": 792,
+  "de": "selbstständig",
+  "typ": "Sonstiges",
+  "tr": "bağımsız, serbest meslek sahibi",
+  "formen": "",
+  "beispiel": "Er ist selbstständig."
+ },
+ {
+  "id": 793,
+  "de": "sich",
+  "typ": "Sonstiges",
+  "tr": "kendini, kendine",
+  "formen": "",
+  "beispiel": "Sie müssen sich erst anmelden."
+ },
+ {
+  "id": 794,
+  "de": "sitzen",
+  "typ": "Sonstiges",
+  "tr": "oturmak",
+  "formen": "",
+  "beispiel": "Wo möchten Sie sitzen? – Bitte ganz hinten."
+ },
+ {
+  "id": 795,
+  "de": "das Sofa",
+  "typ": "Nomen",
+  "tr": "kanepe",
+  "formen": "",
+  "beispiel": "Das Sofa ist bequem.",
+  "ayniAnlam": [
+   "die Couch (B1)"
+  ]
+ },
+ {
+  "id": 796,
+  "de": "der Sohn",
+  "typ": "Nomen",
+  "tr": "oğul",
+  "formen": "-ö, e",
+  "beispiel": "Das ist Hans, mein Sohn."
+ },
+ {
+  "id": 797,
+  "de": "sollen",
+  "typ": "Sonstiges",
+  "tr": "gerekmek, -meli",
+  "formen": "",
+  "beispiel": "Soll ich kommen? Was soll ich mitbringen?"
+ },
+ {
+  "id": 798,
+  "de": "die Sonne",
+  "typ": "Nomen",
+  "tr": "güneş",
+  "formen": "",
+  "beispiel": "1. Das Wetter ist schön. Die Sonne scheint. 2. Ich habe zu lange in der Sonne gelegen."
+ },
+ {
+  "id": 799,
+  "de": "die Speisekarte",
+  "typ": "Nomen",
+  "tr": "yemek listesi, menü",
+  "formen": "",
+  "beispiel": "Bringen Sie mir die Speisekarte, bitte."
+ },
+ {
+  "id": 800,
+  "de": "stehen",
+  "typ": "Sonstiges",
+  "tr": "durmak, yazılı olmak",
+  "formen": "",
+  "beispiel": "Ich glaube es nicht, aber es steht in der Zeitung. Der Bus steht schon an der Haltestelle."
+ },
+ {
+  "id": 801,
+  "de": "die Stelle",
+  "typ": "Nomen",
+  "tr": "iş, mevki",
+  "formen": "-n",
+  "beispiel": "Ich habe eine neue Stelle."
+ },
+ {
+  "id": 802,
+  "de": "stellen",
+  "typ": "Sonstiges",
+  "tr": "koymak, yerleştirmek",
+  "formen": "",
+  "beispiel": "Stell die Tasche rechts in die Ecke!",
+  "ayniAnlam": [
+   "legen (A1)"
+  ]
+ },
+ {
+  "id": 803,
+  "de": "der Stock",
+  "typ": "Nomen",
+  "tr": "kat",
+  "formen": "",
+  "beispiel": "Unsere Wohnung liegt im ersten Stock.",
+  "ayniAnlam": [
+   "das Stockwerk (A2)",
+   "die Etage (B1)"
+  ]
+ },
+ {
+  "id": 804,
+  "de": "die Straßenbahn",
+  "typ": "Nomen",
+  "tr": "tramvay",
+  "formen": "",
+  "beispiel": "Wo fährt die Straßenbahn ab?",
+  "ayniAnlam": [
+   "das Tram (B1)"
+  ]
+ },
+ {
+  "id": 805,
+  "de": "studieren",
+  "typ": "Sonstiges",
+  "tr": "üniversitede okumak, öğrenim görmek",
+  "formen": "",
+  "beispiel": "Ich studiere in Mainz."
+ },
+ {
+  "id": 806,
+  "de": "das Studium",
+  "typ": "Nomen",
+  "tr": "üniversite eğitimi, öğrenim",
+  "formen": "",
+  "beispiel": "Das Studium beginnt im Oktober."
+ },
+ {
+  "id": 807,
+  "de": "der Student",
+  "typ": "Nomen",
+  "tr": "üniversite öğrencisi",
+  "formen": "-en",
+  "beispiel": "Schüler und Studenten zahlen die Hälfte."
+ },
+ {
+  "id": 808,
+  "de": "die Stunde",
+  "typ": "Nomen",
+  "tr": "saat, ders saati",
+  "formen": "-n",
+  "beispiel": "Ich bin in einer Stunde zurück."
+ },
+ {
+  "id": 809,
+  "de": "das Taxi",
+  "typ": "Nomen",
+  "tr": "taksi",
+  "formen": "-s",
+  "beispiel": "Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi."
+ },
+ {
+  "id": 810,
+  "de": "der Teil",
+  "typ": "Nomen",
+  "tr": "parça, bölüm (bütünün bir parçası)",
+  "formen": "-e",
+  "beispiel": "Lies bitte auch den zweiten Teil."
+ },
+ {
+  "id": 811,
+  "de": "das Telefon",
+  "typ": "Nomen",
+  "tr": "telefon",
+  "formen": "",
+  "beispiel": "Darf ich bitte Ihr Telefon benutzen?"
+ },
+ {
+  "id": 812,
+  "de": "der Termin",
+  "typ": "Nomen",
+  "tr": "randevu",
+  "formen": "-e",
+  "beispiel": "Am besten machen wir sofort einen Termin."
+ },
+ {
+  "id": 813,
+  "de": "der Test",
+  "typ": "Nomen",
+  "tr": "test, sınav",
+  "formen": "",
+  "beispiel": "Der Test war einfach."
+ },
+ {
+  "id": 814,
+  "de": "der Text",
+  "typ": "Nomen",
+  "tr": "metin",
+  "formen": "-e",
+  "beispiel": "Lesen Sie bitte diesen Text."
+ },
+ {
+  "id": 815,
+  "de": "das Ticket",
+  "typ": "Nomen",
+  "tr": "bilet",
+  "formen": "-s",
+  "beispiel": "Wie viel kostet das Ticket?",
+  "ayniAnlam": [
+   "die Fahrkarte (A1)",
+   "das Billett (B1)"
+  ]
+ },
+ {
+  "id": 816,
+  "de": "die Tochter",
+  "typ": "Nomen",
+  "tr": "kız evlat",
+  "formen": "-ö",
+  "beispiel": "Das ist meine Tochter Katharina."
+ },
+ {
+  "id": 817,
+  "de": "die Tomate",
+  "typ": "Nomen",
+  "tr": "domates",
+  "formen": "-n",
+  "beispiel": "Die Tomate ist noch grün.",
+  "ayniAnlam": [
+   "der Paradeiser (B1)"
+  ]
+ },
+ {
+  "id": 818,
+  "de": "tot",
+  "typ": "Sonstiges",
+  "tr": "ölü",
+  "formen": "",
+  "beispiel": "Sein Vater ist schon lange tot."
+ },
+ {
+  "id": 819,
+  "de": "sich treffen",
+  "typ": "Sonstiges",
+  "tr": "buluşmak",
+  "formen": "",
+  "beispiel": "Ich treffe in der Stadt einen Kollegen. Wir treffen uns immer freitags."
+ },
+ {
+  "id": 820,
+  "de": "die Treppe",
+  "typ": "Nomen",
+  "tr": "merdiven",
+  "formen": "-n",
+  "beispiel": "Die Toilette? Die Treppe hoch und dann links.",
+  "ayniAnlam": [
+   "die Leiter (B1)",
+   "die Stiege (B1)"
+  ]
+ },
+ {
+  "id": 821,
+  "de": "tschüss",
+  "typ": "Sonstiges",
+  "tr": "hoşça kal, güle güle",
+  "formen": "",
+  "beispiel": "Junge Leute sagen meistens „tschüss!“ und nicht „auf Wiedersehen“.",
+  "ayniAnlam": [
+   "tschüs (A2)"
+  ]
+ },
+ {
+  "id": 822,
+  "de": "tun",
+  "typ": "Sonstiges",
+  "tr": "yapmak",
+  "formen": "",
+  "beispiel": "Ich habe noch etwas zu tun. Was tut Ihr Mann?",
+  "ayniAnlam": [
+   "machen (A1)"
+  ]
+ },
+ {
+  "id": 823,
+  "de": "übernachten",
+  "typ": "Sonstiges",
+  "tr": "gecelemek, konaklamak",
+  "formen": "",
+  "beispiel": "Du kannst bei mir übernachten."
+ },
+ {
+  "id": 824,
+  "de": "überweisen",
+  "typ": "Sonstiges",
+  "tr": "havale etmek",
+  "formen": "",
+  "beispiel": "Sie können das Geld auch überweisen."
+ },
+ {
+  "id": 825,
+  "de": "umziehen",
+  "typ": "Sonstiges",
+  "tr": "taşınmak",
+  "formen": "",
+  "beispiel": "Nächsten Monat ziehen wir um."
+ },
+ {
+  "id": 827,
+  "de": "unten",
+  "typ": "Sonstiges",
+  "tr": "aşağıda",
+  "formen": "",
+  "beispiel": "Er wohnt ganz unten im Haus."
+ },
+ {
+  "id": 828,
+  "de": "unter",
+  "typ": "Sonstiges",
+  "tr": "altında",
+  "formen": "",
+  "beispiel": "Unter uns wohnt eine Familie mit drei Kindern."
+ },
+ {
+  "id": 829,
+  "de": "unterschreiben",
+  "typ": "Sonstiges",
+  "tr": "imzalamak",
+  "formen": "",
+  "beispiel": "Wo muss ich unterschreiben?",
+  "ayniAnlam": [
+   "unterzeichnen (B2)"
+  ]
+ },
+ {
+  "id": 830,
+  "de": "die Unterschrift",
+  "typ": "Nomen",
+  "tr": "imza",
+  "formen": "",
+  "beispiel": "Hier fehlt noch Ihre Unterschrift."
+ },
+ {
+  "id": 831,
+  "de": "der Urlaub",
+  "typ": "Nomen",
+  "tr": "tatil, izin",
+  "formen": "",
+  "beispiel": "Ich nehme im September Urlaub."
+ },
+ {
+  "id": 832,
+  "de": "der Vater",
+  "typ": "Nomen",
+  "tr": "baba",
+  "formen": "-ä",
+  "beispiel": "Mein Vater ist Arbeiter."
+ },
+ {
+  "id": 833,
+  "de": "verboten",
+  "typ": "Sonstiges",
+  "tr": "yasak",
+  "formen": "",
+  "beispiel": "Hier ist Rauchen verboten.",
+  "ayniAnlam": [
+   "untersagt (B1)",
+   "das Verbot (B1)"
+  ]
+ },
+ {
+  "id": 834,
+  "de": "der Verein",
+  "typ": "Nomen",
+  "tr": "dernek, kulüp",
+  "formen": "",
+  "beispiel": "Es gibt einen neuen Sportverein in der Stadt."
+ },
+ {
+  "id": 835,
+  "de": "verheiratet",
+  "typ": "Sonstiges",
+  "tr": "evli",
+  "formen": "",
+  "beispiel": "Ich bin verheiratet und habe drei Kinder."
+ },
+ {
+  "id": 836,
+  "de": "verkaufen",
+  "typ": "Sonstiges",
+  "tr": "satmak",
+  "formen": "",
+  "beispiel": "Er verkauft sein altes Auto."
+ },
+ {
+  "id": 837,
+  "de": "der Verkäufer",
+  "typ": "Nomen",
+  "tr": "satıcı",
+  "formen": "–",
+  "beispiel": "Meine Mutter ist Verkäuferin im Kaufhaus."
+ },
+ {
+  "id": 838,
+  "de": "vermieten",
+  "typ": "Sonstiges",
+  "tr": "kiraya vermek",
+  "formen": "",
+  "beispiel": "Die Wohnung ist schon vermietet."
+ },
+ {
+  "id": 839,
+  "de": "der Vermieter",
+  "typ": "Nomen",
+  "tr": "ev sahibi, kiraya veren",
+  "formen": "",
+  "beispiel": "Unser Vermieter heißt Huber. Er wohnt auch hier."
+ },
+ {
+  "id": 840,
+  "de": "der Verwandte",
+  "typ": "Nomen",
+  "tr": "akraba (erkek)",
+  "formen": "-n",
+  "beispiel": "Peter besucht seine Verwandten in Polen."
+ },
+ {
+  "id": 841,
+  "de": "die Vorsicht",
+  "typ": "Nomen",
+  "tr": "dikkat",
+  "formen": "",
+  "beispiel": "Vorsicht! Da kommt ein Auto.",
+  "ayniAnlam": [
+   "die Achtung (A1)"
+  ]
+ },
+ {
+  "id": 842,
+  "de": "sich vorstellen",
+  "typ": "Sonstiges",
+  "tr": "kendini tanıtmak",
+  "formen": "",
+  "beispiel": "Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?",
+  "ayniAnlam": [
+   "vorstellen (A1)"
+  ]
+ },
+ {
+  "id": 843,
+  "de": "die Vorwahl",
+  "typ": "Nomen",
+  "tr": "alan kodu",
+  "formen": "",
+  "beispiel": "Wie ist die Vorwahl von München?"
+ },
+ {
+  "id": 844,
+  "de": "was für ein",
+  "typ": "Sonstiges",
+  "tr": "ne tür bir, nasıl bir",
+  "formen": "",
+  "beispiel": "Was für eine Farbe möchten Sie?"
+ },
+ {
+  "id": 845,
+  "de": "sich waschen",
+  "typ": "Sonstiges",
+  "tr": "yıkanmak",
+  "formen": "",
+  "beispiel": "Wo kann ich mir die Hände waschen? Ich muss morgen waschen."
+ },
+ {
+  "id": 846,
+  "de": "weiblich",
+  "typ": "Sonstiges",
+  "tr": "kadın, dişi",
+  "formen": "",
+  "beispiel": "Kreuzen Sie bitte an: „weiblich“ oder „männlich“."
+ },
+ {
+  "id": 847,
+  "de": "der Wein",
+  "typ": "Nomen",
+  "tr": "şarap",
+  "formen": "",
+  "beispiel": "Nein danke, ich möchte keinen Wein."
+ },
+ {
+  "id": 848,
+  "de": "die Welt",
+  "typ": "Nomen",
+  "tr": "dünya",
+  "formen": "",
+  "beispiel": "Es gibt viele Probleme auf der Welt."
+ },
+ {
+  "id": 849,
+  "de": "das Wetter",
+  "typ": "Nomen",
+  "tr": "hava, hava durumu",
+  "formen": "",
+  "beispiel": "Wir hatten schlechtes Wetter."
+ },
+ {
+  "id": 850,
+  "de": "das Wiederhören",
+  "typ": "Nomen",
+  "tr": "duyuşmak üzere",
+  "formen": "",
+  "beispiel": "Wir müssen jetzt Schluss machen. Also auf Wiederhören!"
+ },
+ {
+  "id": 851,
+  "de": "der Wind",
+  "typ": "Nomen",
+  "tr": "rüzgar",
+  "formen": "",
+  "beispiel": "Der Wind kommt aus Osten."
+ },
+ {
+  "id": 852,
+  "de": "zahlen",
+  "typ": "Sonstiges",
+  "tr": "ödemek",
+  "formen": "",
+  "beispiel": "Entschuldigung, zahlen bitte!",
+  "ayniAnlam": [
+   "bezahlen (A1)"
+  ]
+ },
+ {
+  "id": 853,
+  "de": "zurzeit",
+  "typ": "Sonstiges",
+  "tr": "şu anda, şu sırada",
+  "formen": "",
+  "beispiel": "Zurzeit habe ich sehr viel zu tun."
+ },
+ {
+  "id": 854,
+  "de": "die Zigarette",
+  "typ": "Nomen",
+  "tr": "sigara",
+  "formen": "-n",
+  "beispiel": "Wie teuer sind die Zigaretten?"
+ },
+ {
+  "id": 855,
+  "de": "der Zoll",
+  "typ": "Nomen",
+  "tr": "gümrük",
+  "formen": "",
+  "beispiel": "Wir müssen noch durch den Zoll."
+ },
+ {
+  "id": 856,
+  "de": "zufrieden",
+  "typ": "Sonstiges",
+  "tr": "memnun",
+  "formen": "",
+  "beispiel": "Ich bin mit der Wohnung zufrieden."
+ },
+ {
+  "id": 857,
+  "de": "zurück",
+  "typ": "Sonstiges",
+  "tr": "geri",
+  "formen": "",
+  "beispiel": "Einmal Frankfurt und zurück. Wann kommst du zurück?"
+ },
+ {
+  "id": 858,
+  "de": "zwischen",
+  "typ": "Sonstiges",
+  "tr": "arasında",
+  "formen": "",
+  "beispiel": "Heidelberg liegt zwischen Frankfurt und Stuttgart. Zwischen 8 und 10 Uhr bin ich zu Hause."
+ }
+]

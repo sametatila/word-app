@@ -1,0 +1,1024 @@
+[
+ {
+  "id": 367,
+  "de": "die Postkarte",
+  "typ": "Nomen",
+  "tr": "kartpostal",
+  "formen": "-n",
+  "beispiel": "Wir schreiben ihm eine Postkarte."
+ },
+ {
+  "id": 368,
+  "de": "das Problem",
+  "typ": "Nomen",
+  "tr": "sorun, problem",
+  "formen": "-e",
+  "beispiel": "Mein Problem ist die Sprache."
+ },
+ {
+  "id": 369,
+  "de": "der Pullover",
+  "typ": "Nomen",
+  "tr": "kazak",
+  "formen": "-",
+  "beispiel": "Du brauchst keinen Pullover, es ist warm."
+ },
+ {
+  "id": 370,
+  "de": "pünktlich",
+  "typ": "Sonstiges",
+  "tr": "dakik, tam zamanında",
+  "formen": "",
+  "beispiel": "Kommt bitte pünktlich!"
+ },
+ {
+  "id": 371,
+  "de": "der Quatsch",
+  "typ": "Nomen",
+  "tr": "saçmalık",
+  "formen": "(Sg.)",
+  "beispiel": "Ich finde, das ist Quatsch!"
+ },
+ {
+  "id": 372,
+  "de": "das Quiz",
+  "typ": "Nomen",
+  "tr": "bilgi yarışması",
+  "formen": "(Sg.)",
+  "beispiel": "Das ist ein Quiz für Kinder."
+ },
+ {
+  "id": 373,
+  "de": "das Rad",
+  "typ": "Nomen",
+  "tr": "bisiklet, tekerlek",
+  "formen": "ä, -er",
+  "beispiel": "Ich fahre mit dem Rad in die Schule."
+ },
+ {
+  "id": 374,
+  "de": "(s Fahrrad)",
+  "typ": "Sonstiges",
+  "tr": "bisiklet",
+  "formen": "",
+  "beispiel": "",
+  "ayniAnlam": [
+   "das Fahrrad (A1)",
+   "das (Fahr)Rad (A2)",
+   "das Velo (B1)"
+  ]
+ },
+ {
+  "id": 375,
+  "de": "der Radiergummi",
+  "typ": "Nomen",
+  "tr": "silgi",
+  "formen": "-s",
+  "beispiel": "Gibst du mir deinen Radiergummi?"
+ },
+ {
+  "id": 376,
+  "de": "das Radio",
+  "typ": "Nomen",
+  "tr": "radyo",
+  "formen": "-s",
+  "beispiel": "Ich habe ein neues Radio."
+ },
+ {
+  "id": 377,
+  "de": "raten",
+  "typ": "Sonstiges",
+  "tr": "tahmin etmek",
+  "formen": "",
+  "beispiel": "Das ist ein Spiel, man muss die Städte raten."
+ },
+ {
+  "id": 378,
+  "de": "das Rätsel",
+  "typ": "Nomen",
+  "tr": "bilmece",
+  "formen": "-",
+  "beispiel": "Ich finde das Rätsel zu schwer."
+ },
+ {
+  "id": 379,
+  "de": "recht haben",
+  "typ": "Sonstiges",
+  "tr": "haklı olmak",
+  "formen": "",
+  "beispiel": "Du hast (nicht) recht."
+ },
+ {
+  "id": 380,
+  "de": "rechts",
+  "typ": "Sonstiges",
+  "tr": "sağda, sağa",
+  "formen": "",
+  "beispiel": "Hier rechts ist unsere Schule."
+ },
+ {
+  "id": 381,
+  "de": "der Regen",
+  "typ": "Nomen",
+  "tr": "yağmur",
+  "formen": "(Sg.)",
+  "beispiel": "Ich mag den Regen nicht."
+ },
+ {
+  "id": 382,
+  "de": "regnen",
+  "typ": "Sonstiges",
+  "tr": "yağmur yağmak",
+  "formen": "",
+  "beispiel": "Es regnet oft bei uns."
+ },
+ {
+  "id": 383,
+  "de": "die Reise",
+  "typ": "Nomen",
+  "tr": "yolculuk, seyahat",
+  "formen": "-n",
+  "beispiel": "Wir machen eine Reise."
+ },
+ {
+  "id": 384,
+  "de": "reiten",
+  "typ": "Sonstiges",
+  "tr": "at binmek",
+  "formen": "",
+  "beispiel": "Reiten ist mein Hobby."
+ },
+ {
+  "id": 385,
+  "de": "reparieren",
+  "typ": "Sonstiges",
+  "tr": "tamir etmek, onarmak",
+  "formen": "",
+  "beispiel": "Mein Vater kann das Fahrrad reparieren."
+ },
+ {
+  "id": 386,
+  "de": "das Restaurant",
+  "typ": "Nomen",
+  "tr": "restoran",
+  "formen": "s",
+  "beispiel": "Wir essen heute im Restaurant."
+ },
+ {
+  "id": 387,
+  "de": "richtig",
+  "typ": "Sonstiges",
+  "tr": "doğru",
+  "formen": "",
+  "beispiel": "Die Antwort ist nicht richtig."
+ },
+ {
+  "id": 388,
+  "de": "der Ring",
+  "typ": "Nomen",
+  "tr": "yüzük",
+  "formen": "-e",
+  "beispiel": "Sie trägt viele Ringe."
+ },
+ {
+  "id": 389,
+  "de": "der Rucksack",
+  "typ": "Nomen",
+  "tr": "sırt çantası",
+  "formen": "ä, -e",
+  "beispiel": "Der Rucksack für die Schule ist fertig."
+ },
+ {
+  "id": 390,
+  "de": "ruhig",
+  "typ": "Sonstiges",
+  "tr": "sakin",
+  "formen": "",
+  "beispiel": "Seid jetzt bitte ruhig!",
+  "ayniAnlam": [
+   "die Einwohnerin (B1)"
+  ]
+ },
+ {
+  "id": 391,
+  "de": "die Sache",
+  "typ": "Nomen",
+  "tr": "şey, eşya",
+  "formen": "-n",
+  "beispiel": "Wo sind meine Schulsachen?/Das ist eine tolle Sache."
+ },
+ {
+  "id": 392,
+  "de": "der Saft",
+  "typ": "Nomen",
+  "tr": "meyve suyu",
+  "formen": "ä, -e",
+  "beispiel": "Möchtest du Wasser oder Saft?"
+ },
+ {
+  "id": 393,
+  "de": "sagen",
+  "typ": "Sonstiges",
+  "tr": "söylemek, demek",
+  "formen": "",
+  "beispiel": "Eva sagt, sie kommt heute nicht."
+ },
+ {
+  "id": 394,
+  "de": "der Salat",
+  "typ": "Nomen",
+  "tr": "salata",
+  "formen": "-e",
+  "beispiel": "Am Abend gibt es immer Salat."
+ },
+ {
+  "id": 395,
+  "de": "schade",
+  "typ": "Sonstiges",
+  "tr": "yazık",
+  "formen": "",
+  "beispiel": "Du kannst nicht kommen? Das ist schade!"
+ },
+ {
+  "id": 396,
+  "de": "schenken",
+  "typ": "Sonstiges",
+  "tr": "hediye etmek",
+  "formen": "",
+  "beispiel": "Ich möchte Anna einen Pullover schenken."
+ },
+ {
+  "id": 397,
+  "de": "das Schiff",
+  "typ": "Nomen",
+  "tr": "gemi",
+  "formen": "-e",
+  "beispiel": "Sie fahren mit dem Schiff."
+ },
+ {
+  "id": 398,
+  "de": "schlafen",
+  "typ": "Sonstiges",
+  "tr": "uyumak",
+  "formen": "",
+  "beispiel": "Wo kann ich schlafen?"
+ },
+ {
+  "id": 399,
+  "de": "schlecht",
+  "typ": "Sonstiges",
+  "tr": "kötü, fena",
+  "formen": "",
+  "beispiel": "Mir ist so schlecht./Das Essen hier ist nicht schlecht."
+ },
+ {
+  "id": 400,
+  "de": "schmecken",
+  "typ": "Sonstiges",
+  "tr": "tadı olmak, lezzetli olmak",
+  "formen": "",
+  "beispiel": "Wie schmeckt der Hamburger?"
+ },
+ {
+  "id": 401,
+  "de": "der Schmerz",
+  "typ": "Nomen",
+  "tr": "ağrı, acı",
+  "formen": "-en",
+  "beispiel": "Ich habe Bauchschmerzen."
+ },
+ {
+  "id": 402,
+  "de": "schnell",
+  "typ": "Sonstiges",
+  "tr": "hızlı, çabuk",
+  "formen": "",
+  "beispiel": "Warum fährst du so schnell?"
+ },
+ {
+  "id": 403,
+  "de": "die Schokolade",
+  "typ": "Nomen",
+  "tr": "çikolata",
+  "formen": "(Sg.)",
+  "beispiel": "Ich esse keine Schokolade."
+ },
+ {
+  "id": 404,
+  "de": "schon",
+  "typ": "Sonstiges",
+  "tr": "zaten, bile",
+  "formen": "",
+  "beispiel": "Ich habe schon sechs Computerspiele."
+ },
+ {
+  "id": 405,
+  "de": "schön",
+  "typ": "Sonstiges",
+  "tr": "güzel",
+  "formen": "",
+  "beispiel": "Mein Zimmer ist sehr schön und gemütlich."
+ },
+ {
+  "id": 406,
+  "de": "schreiben",
+  "typ": "Sonstiges",
+  "tr": "yazmak",
+  "formen": "",
+  "beispiel": "Erika schreibt mir jeden Tag."
+ },
+ {
+  "id": 407,
+  "de": "schwer",
+  "typ": "Sonstiges",
+  "tr": "zor, ağır",
+  "formen": "",
+  "beispiel": "Ich finde die Hausaufgaben sehr schwer."
+ },
+ {
+  "id": 408,
+  "de": "das Schwimmbad",
+  "typ": "Nomen",
+  "tr": "yüzme havuzu",
+  "formen": "ä, -er",
+  "beispiel": "Im Sommer gehen wir oft ins Schwimmbad."
+ },
+ {
+  "id": 409,
+  "de": "schwimmen",
+  "typ": "Sonstiges",
+  "tr": "yüzmek",
+  "formen": "",
+  "beispiel": "Ich kann gut schwimmen."
+ },
+ {
+  "id": 410,
+  "de": "der See",
+  "typ": "Nomen",
+  "tr": "göl",
+  "formen": "-n",
+  "beispiel": "Der See ist sehr groß./Wir wohnen am See./ Wir fahren zum Ammersee."
+ },
+ {
+  "id": 411,
+  "de": "sehen",
+  "typ": "Sonstiges",
+  "tr": "görmek",
+  "formen": "",
+  "beispiel": "Siehst du das große Haus? Da wohne ich."
+ },
+ {
+  "id": 412,
+  "de": "sehr",
+  "typ": "Sonstiges",
+  "tr": "çok",
+  "formen": "",
+  "beispiel": "Ich liebe ihn sehr./Das ist sehr wichtig.",
+  "ayniAnlam": [
+   "viel (A1)",
+   "viel/viele (B1)"
+  ]
+ },
+ {
+  "id": 413,
+  "de": "sein",
+  "typ": "Sonstiges",
+  "tr": "olmak",
+  "formen": "",
+  "beispiel": "Ich bin 13 Jahre alt./Das ist mein Bruder./ Er ist Student./ Die Kinder sind im Garten."
+ },
+ {
+  "id": 414,
+  "de": "die Seite",
+  "typ": "Nomen",
+  "tr": "sayfa",
+  "formen": "-n",
+  "beispiel": "Das steht auf Seite 3."
+ },
+ {
+  "id": 415,
+  "de": "sicher",
+  "typ": "Sonstiges",
+  "tr": "emin, kesin, güvenli",
+  "formen": "",
+  "beispiel": "Du bist sicher gut in der Schule."
+ },
+ {
+  "id": 416,
+  "de": "sie",
+  "typ": "Sonstiges",
+  "tr": "o, onlar",
+  "formen": "",
+  "beispiel": "Das ist Frau Meyer, sie wohnt hier."
+ },
+ {
+  "id": 417,
+  "de": "Sie",
+  "typ": "Sonstiges",
+  "tr": "siz",
+  "formen": "",
+  "beispiel": "Sind Sie der neue Lehrer?/Wie geht es Ihnen? (vergl. Grammatik)"
+ },
+ {
+  "id": 418,
+  "de": "so",
+  "typ": "Sonstiges",
+  "tr": "böyle, bu kadar, o kadar",
+  "formen": "",
+  "beispiel": "Ich mache das nicht so./Das schmeckt so gut./ Sie ist so alt wie ich."
+ },
+ {
+  "id": 419,
+  "de": "sofort",
+  "typ": "Sonstiges",
+  "tr": "hemen, derhal",
+  "formen": "",
+  "beispiel": "Warte, ich komme sofort!"
+ },
+ {
+  "id": 420,
+  "de": "der Spaß",
+  "typ": "Nomen",
+  "tr": "eğlence, zevk",
+  "formen": "(Sg.)",
+  "beispiel": "Wir haben immer viel Spaß zusammen./Viel Spaß!"
+ },
+ {
+  "id": 421,
+  "de": "spät",
+  "typ": "Sonstiges",
+  "tr": "geç",
+  "formen": "",
+  "beispiel": "Mach schnell, es ist spät!/Ich komme zu spät./ Wie spät ist es?"
+ },
+ {
+  "id": 422,
+  "de": "später",
+  "typ": "Sonstiges",
+  "tr": "daha sonra",
+  "formen": "",
+  "beispiel": "Ich mache die Hausaufgaben später."
+ },
+ {
+  "id": 423,
+  "de": "spazieren gehen",
+  "typ": "Sonstiges",
+  "tr": "yürüyüşe çıkmak",
+  "formen": "",
+  "beispiel": "Wollen wir spazieren gehen?"
+ },
+ {
+  "id": 424,
+  "de": "das Spiel",
+  "typ": "Nomen",
+  "tr": "oyun",
+  "formen": "-e",
+  "beispiel": "Ich kenne ein neues Spiel."
+ },
+ {
+  "id": 425,
+  "de": "spielen",
+  "typ": "Sonstiges",
+  "tr": "oynamak",
+  "formen": "",
+  "beispiel": "Willst du mit uns spielen?"
+ },
+ {
+  "id": 426,
+  "de": "der Spielplatz",
+  "typ": "Nomen",
+  "tr": "oyun alanı, oyun parkı",
+  "formen": "ä, -e",
+  "beispiel": "Sie ist mit Ben auf dem Spielplatz."
+ },
+ {
+  "id": 427,
+  "de": "der Sport",
+  "typ": "Nomen",
+  "tr": "spor",
+  "formen": "(Sg.)",
+  "beispiel": "Sport ist mein Hobby."
+ },
+ {
+  "id": 428,
+  "de": "die Sprache",
+  "typ": "Nomen",
+  "tr": "dil",
+  "formen": "-n",
+  "beispiel": "Er spricht fünf Sprachen.",
+  "ayniAnlam": [
+   "die Zunge (A2)"
+  ]
+ },
+ {
+  "id": 429,
+  "de": "sprechen",
+  "typ": "Sonstiges",
+  "tr": "konuşmak",
+  "formen": "",
+  "beispiel": "Sie spricht mit dem Lehrer.",
+  "ayniAnlam": [
+   "reden (A2)"
+  ]
+ },
+ {
+  "id": 430,
+  "de": "die Stadt",
+  "typ": "Nomen",
+  "tr": "şehir, kent",
+  "formen": "ä, -e",
+  "beispiel": "Unsere Stadt ist nicht so groß."
+ },
+ {
+  "id": 431,
+  "de": "der Strand",
+  "typ": "Nomen",
+  "tr": "plaj, kumsal",
+  "formen": "ä, -e",
+  "beispiel": "Wir spielen am Strand."
+ },
+ {
+  "id": 432,
+  "de": "die Straße",
+  "typ": "Nomen",
+  "tr": "sokak, cadde",
+  "formen": "-n",
+  "beispiel": "Wir wohnen in der Goethe-Straße."
+ },
+ {
+  "id": 433,
+  "de": "das Stück",
+  "typ": "Nomen",
+  "tr": "parça",
+  "formen": "-e",
+  "beispiel": "Willst du noch ein Stück Kuchen?"
+ },
+ {
+  "id": 434,
+  "de": "suchen",
+  "typ": "Sonstiges",
+  "tr": "aramak",
+  "formen": "",
+  "beispiel": "Ich suche meinen Kugelschreiber."
+ },
+ {
+  "id": 435,
+  "de": "der Supermarkt",
+  "typ": "Nomen",
+  "tr": "süpermarket",
+  "formen": "ä, -e",
+  "beispiel": "Wir kaufen immer im Supermarkt ein."
+ },
+ {
+  "id": 436,
+  "de": "die Suppe",
+  "typ": "Nomen",
+  "tr": "çorba",
+  "formen": "-n",
+  "beispiel": "Ich kann auch Suppe kochen."
+ },
+ {
+  "id": 437,
+  "de": "süß",
+  "typ": "Sonstiges",
+  "tr": "tatlı",
+  "formen": "",
+  "beispiel": "Der Kaffee ist zu süß./Der neue Tennislehrer ist wirklich süß!",
+  "ayniAnlam": [
+   "das Dessert (B1)"
+  ]
+ },
+ {
+  "id": 438,
+  "de": "die Süßigkeiten",
+  "typ": "Nomen",
+  "tr": "tatlılar, şekerlemeler",
+  "formen": "(Pl.)",
+  "beispiel": "Am liebsten esse ich Süßigkeiten."
+ },
+ {
+  "id": 439,
+  "de": "sympathisch",
+  "typ": "Sonstiges",
+  "tr": "sempatik, sevimli",
+  "formen": "",
+  "beispiel": "Ich finde ihn sehr sympathisch."
+ },
+ {
+  "id": 440,
+  "de": "tanzen",
+  "typ": "Sonstiges",
+  "tr": "dans etmek",
+  "formen": "",
+  "beispiel": "Leider kann er nicht gut tanzen."
+ },
+ {
+  "id": 441,
+  "de": "die Tasche",
+  "typ": "Nomen",
+  "tr": "çanta",
+  "formen": "-n",
+  "beispiel": "Die Tasche ist sehr schwer."
+ },
+ {
+  "id": 442,
+  "de": "das Taschengeld",
+  "typ": "Nomen",
+  "tr": "harçlık",
+  "formen": "(Sg.)",
+  "beispiel": "Wie viel Taschengeld bekommst du?"
+ },
+ {
+  "id": 443,
+  "de": "die Tasse",
+  "typ": "Nomen",
+  "tr": "fincan",
+  "formen": "-n",
+  "beispiel": "Ich möchte eine Tasse Kakao."
+ },
+ {
+  "id": 444,
+  "de": "der Tee",
+  "typ": "Nomen",
+  "tr": "çay",
+  "formen": "-s",
+  "beispiel": "Am Abend trinken wir Tee."
+ },
+ {
+  "id": 445,
+  "de": "telefonieren",
+  "typ": "Sonstiges",
+  "tr": "telefonla konuşmak",
+  "formen": "",
+  "beispiel": "Ich telefoniere oft mit meiner Freundin in Frankfurt."
+ },
+ {
+  "id": 446,
+  "de": "Tennis spielen",
+  "typ": "Sonstiges",
+  "tr": "tenis oynamak",
+  "formen": "",
+  "beispiel": "Er spielt gut Tennis."
+ },
+ {
+  "id": 447,
+  "de": "teuer",
+  "typ": "Sonstiges",
+  "tr": "pahalı",
+  "formen": "",
+  "beispiel": "Mein neues Kleid war sehr teuer, aber es ist wunderbar."
+ },
+ {
+  "id": 448,
+  "de": "das Theater",
+  "typ": "Nomen",
+  "tr": "tiyatro",
+  "formen": "-",
+  "beispiel": "Am Sonntag waren wir im Theater."
+ },
+ {
+  "id": 449,
+  "de": "das Thema",
+  "typ": "Nomen",
+  "tr": "konu",
+  "formen": "Themen",
+  "beispiel": "Wie heißt das Thema des Buchs?"
+ },
+ {
+  "id": 450,
+  "de": "das Tier",
+  "typ": "Nomen",
+  "tr": "hayvan",
+  "formen": "-e",
+  "beispiel": "Ich möchte ein Tier haben: eine Katze oder einen Hund."
+ },
+ {
+  "id": 451,
+  "de": "der Tisch",
+  "typ": "Nomen",
+  "tr": "masa",
+  "formen": "-e",
+  "beispiel": "Am Fenster ist ein Tisch."
+ },
+ {
+  "id": 452,
+  "de": "die Toilette",
+  "typ": "Nomen",
+  "tr": "tuvalet",
+  "formen": "-n",
+  "beispiel": "Wo ist die Toilette?"
+ },
+ {
+  "id": 453,
+  "de": "toll",
+  "typ": "Sonstiges",
+  "tr": "harika, muhteşem",
+  "formen": "",
+  "beispiel": "In den Ferien war es toll.",
+  "ayniAnlam": [
+   "fantastisch (A2)"
+  ]
+ },
+ {
+  "id": 454,
+  "de": "tragen",
+  "typ": "Sonstiges",
+  "tr": "taşımak, giymek",
+  "formen": "",
+  "beispiel": "Ich kann den Koffer nicht tragen, er ist zu schwer. Er trägt heute einen blauen Anzug."
+ },
+ {
+  "id": 455,
+  "de": "traurig",
+  "typ": "Sonstiges",
+  "tr": "üzgün",
+  "formen": "",
+  "beispiel": "Ich bin oft traurig.",
+  "ayniAnlam": [
+   "leid (A1)"
+  ]
+ },
+ {
+  "id": 456,
+  "de": "treffen",
+  "typ": "Sonstiges",
+  "tr": "buluşmak, karşılaşmak",
+  "formen": "",
+  "beispiel": "Am Nachmittag treffe ich meine Freunde.",
+  "ayniAnlam": [
+   "trifft (A2)"
+  ]
+ },
+ {
+  "id": 457,
+  "de": "trinken",
+  "typ": "Sonstiges",
+  "tr": "içmek",
+  "formen": "",
+  "beispiel": "Wir trinken gern Saft."
+ },
+ {
+  "id": 458,
+  "de": "das T-Shirt",
+  "typ": "Nomen",
+  "tr": "tişört",
+  "formen": "-s",
+  "beispiel": "Wie gefällt dir mein neues T-Shirt?"
+ },
+ {
+  "id": 459,
+  "de": "tschüss!",
+  "typ": "Sonstiges",
+  "tr": "hoşça kal!",
+  "formen": "",
+  "beispiel": "Also bis bald - tschüss!"
+ },
+ {
+  "id": 460,
+  "de": "die Tür",
+  "typ": "Nomen",
+  "tr": "kapı",
+  "formen": "-en",
+  "beispiel": "Mach bitte die Tür zu!"
+ },
+ {
+  "id": 461,
+  "de": "die U-Bahn",
+  "typ": "Nomen",
+  "tr": "metro",
+  "formen": "-en",
+  "beispiel": "Wir nehmen die U-Bahn."
+ },
+ {
+  "id": 462,
+  "de": "üben",
+  "typ": "Sonstiges",
+  "tr": "alıştırma yapmak, çalışmak",
+  "formen": "",
+  "beispiel": "Ich muss jeden Tag Klavier üben."
+ },
+ {
+  "id": 463,
+  "de": "über",
+  "typ": "Sonstiges",
+  "tr": "üzerinden, karşıdan karşıya",
+  "formen": "",
+  "beispiel": "Jetzt gehen wir über die Straße."
+ },
+ {
+  "id": 464,
+  "de": "überall",
+  "typ": "Sonstiges",
+  "tr": "her yerde",
+  "formen": "",
+  "beispiel": "In der Altstadt gibt es überall kleine Cafés."
+ },
+ {
+  "id": 465,
+  "de": "die Uhr",
+  "typ": "Nomen",
+  "tr": "saat",
+  "formen": "-en",
+  "beispiel": "Hast du keine Uhr?/Wie viel Uhr ist es?"
+ },
+ {
+  "id": 466,
+  "de": "um",
+  "typ": "Sonstiges",
+  "tr": "saat ...'de, etrafında, çevresinde",
+  "formen": "",
+  "beispiel": "Um 7.30 Uhr kommt der Zug."
+ },
+ {
+  "id": 467,
+  "de": "und",
+  "typ": "Sonstiges",
+  "tr": "ve",
+  "formen": "",
+  "beispiel": "Karl und Susanne kommen auch."
+ },
+ {
+  "id": 468,
+  "de": "und so weiter",
+  "typ": "Sonstiges",
+  "tr": "ve saire, vesaire",
+  "formen": "",
+  "beispiel": "usw."
+ },
+ {
+  "id": 469,
+  "de": "unser",
+  "typ": "Sonstiges",
+  "tr": "bizim",
+  "formen": "-e",
+  "beispiel": "Das ist unser neues Auto. (vergl. Grammatik)"
+ },
+ {
+  "id": 470,
+  "de": "der Unterricht",
+  "typ": "Nomen",
+  "tr": "ders",
+  "formen": "(Sg.)",
+  "beispiel": "Der Unterricht macht mir Spaß."
+ },
+ {
+  "id": 471,
+  "de": "verdienen",
+  "typ": "Sonstiges",
+  "tr": "kazanmak",
+  "formen": "",
+  "beispiel": "In den Ferien möchte ich ein bisschen Geld verdienen.",
+  "ayniAnlam": [
+   "gewinnen (A1)"
+  ]
+ },
+ {
+  "id": 472,
+  "de": "vergessen",
+  "typ": "Sonstiges",
+  "tr": "unutmak",
+  "formen": "",
+  "beispiel": "Ich vergesse oft die Vokabeln."
+ },
+ {
+  "id": 473,
+  "de": "verrückt",
+  "typ": "Sonstiges",
+  "tr": "çılgın, deli",
+  "formen": "",
+  "beispiel": "Ich finde die Idee verrückt. Sie trägt so verrückte Kleider."
+ },
+ {
+  "id": 474,
+  "de": "verstehen",
+  "typ": "Sonstiges",
+  "tr": "anlamak",
+  "formen": "",
+  "beispiel": "Ich verstehe dich nicht.",
+  "ayniAnlam": [
+   "sich verstehen (B1)"
+  ]
+ },
+ {
+  "id": 475,
+  "de": "viel",
+  "typ": "Sonstiges",
+  "tr": "çok",
+  "formen": "-e",
+  "beispiel": "Hast du viele Freunde?",
+  "ayniAnlam": [
+   "sehr (A1)",
+   "viel/viele (B1)"
+  ]
+ },
+ {
+  "id": 476,
+  "de": "vielleicht",
+  "typ": "Sonstiges",
+  "tr": "belki",
+  "formen": "",
+  "beispiel": "Kannst du mir vielleicht helfen?/Vielleicht kommt er."
+ },
+ {
+  "id": 477,
+  "de": "von",
+  "typ": "Sonstiges",
+  "tr": "-den/-dan, tarafından",
+  "formen": "",
+  "beispiel": "Der Computer ist ein Geschenk von meinem Onkel./ Sie arbeitet von sieben bis neun./Er kommt von der Arbeit."
+ },
+ {
+  "id": 478,
+  "de": "vor",
+  "typ": "Sonstiges",
+  "tr": "önünde, önce",
+  "formen": "",
+  "beispiel": "Ich treffe Peter vor dem Kino./Vor dem Frühstück."
+ },
+ {
+  "id": 479,
+  "de": "der Vorname",
+  "typ": "Nomen",
+  "tr": "ad, isim",
+  "formen": "-n",
+  "beispiel": "Wie ist dein Vorname?"
+ },
+ {
+  "id": 480,
+  "de": "vorstellen",
+  "typ": "Sonstiges",
+  "tr": "kendini tanıtmak",
+  "formen": "(sich)",
+  "beispiel": "Stell dich bitte vor!",
+  "ayniAnlam": [
+   "sich vorstellen (A1)"
+  ]
+ },
+ {
+  "id": 481,
+  "de": "wahr",
+  "typ": "Sonstiges",
+  "tr": "doğru, gerçek",
+  "formen": "",
+  "beispiel": "Das ist sicher nicht wahr./Das schmeckt gut, nicht wahr?"
+ },
+ {
+  "id": 482,
+  "de": "der Wald",
+  "typ": "Nomen",
+  "tr": "orman",
+  "formen": "ä, -er",
+  "beispiel": "In Thüringen gibt es sehr viel Wald."
+ },
+ {
+  "id": 483,
+  "de": "wandern",
+  "typ": "Sonstiges",
+  "tr": "yürüyüş yapmak, doğa yürüyüşüne çıkmak",
+  "formen": "",
+  "beispiel": "Am Wochenende wandern wir zum Tüngelsee."
+ },
+ {
+  "id": 484,
+  "de": "wann",
+  "typ": "Sonstiges",
+  "tr": "ne zaman",
+  "formen": "",
+  "beispiel": "Wann hast du Geburtstag?"
+ },
+ {
+  "id": 485,
+  "de": "warm",
+  "typ": "Sonstiges",
+  "tr": "sıcak, ılık",
+  "formen": "",
+  "beispiel": "Gestern war es hier schon sehr warm."
+ },
+ {
+  "id": 486,
+  "de": "warten",
+  "typ": "Sonstiges",
+  "tr": "beklemek",
+  "formen": "",
+  "beispiel": "Wartest du schon lange?"
+ },
+ {
+  "id": 487,
+  "de": "warum",
+  "typ": "Sonstiges",
+  "tr": "neden, niçin",
+  "formen": "",
+  "beispiel": "Warum antwortest du nicht?",
+  "ayniAnlam": [
+   "wieso (B1)"
+  ]
+ },
+ {
+  "id": 488,
+  "de": "was",
+  "typ": "Sonstiges",
+  "tr": "ne",
+  "formen": "",
+  "beispiel": "Was kann man hier kaufen?"
+ }
+]
