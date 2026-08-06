@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Reveal } from "@/components/reveal";
+import { InstallGuide } from "@/components/install-guide";
 import {
   KeyboardIcon,
   LinkIcon,
@@ -172,6 +173,24 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </section>
+
+        {/* Kurulum adımları giriş yapılmadan da görünüyor: tarayıcının kendi
+            önerisi bir kez çıkıyor ve reddedilirse bir daha gelmiyor, iOS'ta
+            ise hiç gelmiyor. Uygulamayı telefonuna almak isteyen birinin önce
+            hesap açması gerekmemeli. */}
+        <section className="mt-20">
+          <Reveal>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">Telefonuna kur</h2>
+            <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
+              Mağazaya gerek yok — tarayıcıdan ana ekrana eklenir, tam ekran açılır.
+            </p>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <div className="mx-auto mt-8 max-w-xl">
+              <InstallGuide />
+            </div>
+          </Reveal>
         </section>
 
         <section className="mt-20">

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { authApi } from "@/lib/auth/api";
 import { AlertIcon, CheckIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
+import { InstallGuide } from "@/components/install-guide";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 
 type Initial = {
@@ -232,6 +233,14 @@ export function ProfileForm({
           giderek daha seyrek karşına çıkar. Oyun türü de kelimenin ne kadar oturduğuna göre
           otomatik seçilir.
         </p>
+      </section>
+
+      {/* Kurulum burada kalıcı olarak duruyor: tarayıcının kendi önerisi bir
+          kez çıkıyor ve reddedilirse bir daha görünmüyor. Kullanıcı o noktadan
+          sonra uygulamayı nasıl kuracağını öğrenebileceği bir yer bulamıyordu. */}
+      <section className="card p-5">
+        <h2 className="mb-3 font-bold">Uygulama olarak kur</h2>
+        <InstallGuide tone="plain" />
       </section>
 
       <section className="card p-5">

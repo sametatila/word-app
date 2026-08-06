@@ -12,6 +12,16 @@ type InstallEvent = Event & {
 const DISMISS_KEY = "wortspiel:install-dismissed";
 
 /**
+ * Kapatmanın ömrü.
+ *
+ * Önce süresizdi: bir kez "hayır" diyen kullanıcı öneriyi bir daha hiç
+ * görmüyordu ve uygulamayı elle nasıl kuracağını da bilmiyordu. Artık öneri
+ * bir süre sonra geri geliyor; ayrıca adımlar ana sayfada ve profilde kalıcı
+ * olarak duruyor (bkz. install-guide.tsx), yani bu bildirim tek yol değil.
+ */
+const DISMISS_DAYS = 21;
+
+/**
  * "Ana ekrana ekle" önerisi.
  * Android/Chrome'da tarayıcının kendi kurulum akışını tetikler; iOS'ta tarayıcı
  * böyle bir API sunmadığı için adımlar yazıyla anlatılır. Zaten uygulama olarak
@@ -28,7 +38,10 @@ export function InstallPrompt() {
       (window.navigator as { standalone?: boolean }).standalone === true;
     let dismissed = false;
     try {
-      dismissed = localStorage.getItem(DISMISS_KEY) === "1";
+      const raw = localStorage.getItem(DISMISS_KEY);
+      // Eski sürüm "1" yazıyordu; o kayıt da süresi dolmuş sayılıyor.
+      const at = raw && raw !== "1" ? Number(raw) : 0;
+      dismissed = raw === "1" ? false : at > Date.now() - DISMISS_DAYS * 86400000;
     } catch {
       /* depolama kapalı olabilir */
     }
@@ -60,7 +73,7 @@ export function InstallPrompt() {
   function close() {
     setVisible(false);
     try {
-      localStorage.setItem(DISMISS_KEY, "1");
+      localStorage.setItem(DISMISS_KEY, String(Date.now()));
     } catch {
       /* yoksay */
     }
@@ -92,6 +105,9 @@ export function InstallPrompt() {
                 {iosHint
                   ? "Paylaş düğmesine dokun, ardından “Ana Ekrana Ekle”yi seç."
                   : "Uygulama gibi tam ekran açılır, tek dokunuşla girersin."}
+              </p>
+              <p className="muted mt-1 text-[11px]">
+                Adımların tamamı Profil → “Uygulama olarak kur” altında duruyor.
               </p>
               {!iosHint ? (
                 <button onClick={() => void install()} className="btn btn-primary mt-2.5 px-4 py-2 text-xs">
