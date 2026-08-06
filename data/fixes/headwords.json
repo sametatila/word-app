@@ -31,6 +31,11 @@
   "tr": "düşünmek, sanmak",
   "not": "A1 çeviri gözden geçirmesi: örnekteki \"Ich denke, ...\" kanaat bildirir; nachdenken ile ayrışması gerekiyor"
  },
+ "120": {
+  "not": "Züritüütsch A1 gözden geçirmesi: die Eins dişil olduğu için Züritüütsch artikeli 'd' olmalı; cümledeki belirsiz artikel de dişilin ünlü öncesi biçimi 'en' olur.",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Änglisch han ich en Äis überchoo."
+ },
  "125": {
   "tr": "son, bitiş",
   "not": "A1 çeviri gözden geçirmesi: letzt- de \"son\"; das Ende bitiş noktasıdır"
@@ -38,6 +43,11 @@
  "127": {
   "tr": "affetmek, mazur görmek; özür dilemek (sich entschuldigen)",
   "not": "A1 çeviri gözden geçirmesi: örnekteki \"Entschuldigen Sie!\" affedersiniz demek; özür dileme anlamı dönüşlü biçimde doğar"
+ },
+ "128": {
+  "not": "Züritüütsch A1 gözden geçirmesi: Züritüütsch'te -ung eki düzenli olarak -ig olur (Iiladig, Üebig, Prüefig), bu madde Hochdeutsch biçiminde kalmış.",
+  "gsw": "Entschuldigig",
+  "gswBeispiel": "Entschuldigig! – Scho guet."
  },
  "131": {
   "drop": 637,
@@ -79,6 +89,10 @@
   "tr": "dümdüz, dosdoğru (ileri)",
   "not": "A1 çeviri gözden geçirmesi: yalın \"doğru\" yön değil \"yanlış olmayan\" diye okunuyor; yol tarifinde Türkçesi \"dümdüz\""
  },
+ "192": {
+  "not": "Züritüütsch A1 gözden geçirmesi: Züritüütsch'te 'kennen' fiili 'chänne' olduğu için cümlede 'Kännsch' değil 'Chännsch' denir.",
+  "gswBeispiel": "Chännsch die Gschicht scho?"
+ },
  "195": {
   "tr": "kazanmak (oyun, ödül, yarışma)",
   "not": "A1 çeviri gözden geçirmesi: verdienen de \"kazanmak\"; gewinnen para değil oyun/ödül kazanmaktır"
@@ -86,6 +100,11 @@
  "210": {
   "tr": "boğaz, boyun",
   "not": "A1 çeviri gözden geçirmesi: örnekteki \"Mein Hals tut so weh\" boğaz ağrısıdır"
+ },
+ "228": {
+  "not": "Züritüütsch A1 gözden geçirmesi: 'lose' sadece 'zuhören/dinlemek' demek; 'hören' (duymak) karşılığı Züritüütsch'te 'ghööre' olmalı ve örnek cümle de bu kelimeyi taşımalı",
+  "gsw": "ghööre",
+  "gswBeispiel": "Ghörsch du gärn Musig?"
  },
  "234": {
   "tr": "sizin (nazik hitap, Sie)",
@@ -135,9 +154,25 @@
   "tr": "not (okul notu)",
   "not": "A1 çeviri gözden geçirmesi: die Notiz de \"not\"; Note okul değerlendirme notudur"
  },
+ "351": {
+  "not": "Züritüütsch A1 gözden geçirmesi: das Obst nötr olduğu için artikel 's' olmalı ve 'Frücht' zaten 'Früchte' maddesinin karşılığı; Züritüütsch'te Obst için 'Obscht' denir (krş. Obschtboum)",
+  "gsw": "Obscht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir ässed immer viil Obscht."
+ },
+ "358": {
+  "not": "Züritüütsch A1 gözden geçirmesi: 'Päckli' zaten Päckchen maddesinin karşılığı; büyük gönderi için Zürih'te de 'Paket' kullanılır",
+  "gsw": "Paket",
+  "gswBeispiel": "Isch das Paket für mich?"
+ },
  "374": {
   "drop": 142,
   "not": "A1 gözden geçirmesi: (s Fahrrad) — 142 \"das Fahrrad\" ile aynı madde, örnek cümlesi de yok"
+ },
+ "376": {
+  "not": "Züritüütsch A1 gözden geçirmesi: das Radio nötr, Züritüütsch artikeli 's' olmalı; örnek cümle de buna uydurulmalı",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha es nöis Radio."
  },
  "384": {
   "tr": "ata binmek",
@@ -151,13 +186,29 @@
   "tr": "çoktan, bile, artık",
   "not": "A1 çeviri gözden geçirmesi: \"zaten\" sowieso karşılığıdır; schon tamamlanmışlık bildirir"
  },
+ "411": {
+  "not": "Züritüütsch A1 gözden geçirmesi: belirtili artikelden sonra sıfat Züritüütsch'te çekimsizdir, 'groosse' Hochdeutsch kalıntısı",
+  "gswBeispiel": "Gseesch das grooss Huus? Deet wohn ich."
+ },
  "412": {
   "tr": "çok (derece), pek",
   "not": "A1 çeviri gözden geçirmesi: viel ile birebir aynı karşılık vardı; sehr derece bildirir, miktar değil"
  },
  "428": {
   "tr": "dil, lisan",
-  "not": "A1 çeviri gözden geçirmesi: die Zunge de \"dil\"; organdan ayrılması gerekiyor"
+  "not": "A1 çeviri gözden geçirmesi: die Zunge de \"dil\"; organdan ayrılması gerekiyor | Züritüütsch A1 gözden geçirmesi: Zürih'te söz başındaki sp- 'schp-' olarak söylenir ve havuzun geri kalanı da (Schpiil, Schport, Schpass) böyle yazılmış",
+  "gsw": "Schpraach",
+  "gswBeispiel": "Er redt föif Schpraache."
+ },
+ "431": {
+  "not": "Züritüütsch A1 gözden geçirmesi: Zürih'te söz başındaki st- 'scht-' olur; 'Strand' yazımı Hochdeutsch kalıntısı",
+  "gsw": "Schtrand",
+  "gswBeispiel": "Mir schpiled am Schtrand."
+ },
+ "432": {
+  "not": "Züritüütsch A1 gözden geçirmesi: Zürih'te söz başındaki st- 'scht-' olur, aynı havuzdaki 'Schtadt' ve 'Schtück' ile tutarlı olmalı",
+  "gsw": "Schtraass",
+  "gswBeispiel": "Mir wohned a de Goetheschtraass."
  },
  "437": {
   "tr": "tatlı (şekerli), şirin",
@@ -171,6 +222,10 @@
   "tr": "kazanmak (para), hak etmek",
   "not": "A1 çeviri gözden geçirmesi: gewinnen de \"kazanmak\"; verdienen emekle para kazanmaktır"
  },
+ "473": {
+  "not": "Züritüütsch A1 gözden geçirmesi: cümlenin ilk yarısında Hochdeutsch artikel 'die Idee' kalmış; Züritüütsch'te 'd Idee' olur",
+  "gswBeispiel": "Ich finde d Idee verruckt. Si träit so verruckti Chläider."
+ },
  "475": {
   "tr": "çok (miktar), birçok",
   "not": "A1 çeviri gözden geçirmesi: sehr ile birebir aynı karşılık vardı; viel miktar bildirir"
@@ -180,6 +235,10 @@
   "beispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
   "not": "A1 gözden geçirmesi: vorstellen dönüşsüz hâlde \"birini tanıtmak\"tır; \"kendini tanıtmak\" 842 sich vorstellen maddesidir ve örnek cümle de dönüşlüydü",
   "beispielTr": "Size meslektaşımı tanıtabilir miyim?"
+ },
+ "481": {
+  "not": "Züritüütsch A1 gözden geçirmesi: 'schmeckt' Hochdeutsch biçim; Zürihli 'schmöckt' der",
+  "gswBeispiel": "Das isch sicher nöd waar./Das schmöckt guet, oder?"
  },
  "494": {
   "tr": "daha ileri, devam ederek",
@@ -192,6 +251,10 @@
  "497": {
   "formen": "wen, wem",
   "not": "1316'daki hâl biçimleri buraya alındı"
+ },
+ "515": {
+  "not": "Züritüütsch A1 gözden geçirmesi: wollen fiilinin Züritüütsch mastarı 'wöle'; 'wele' soru sözcüğü 'welche'nin biçimi (madde 495)",
+  "gsw": "wöle"
  },
  "529": {
   "tr": "kapatmak (kapı, pencere)",
@@ -213,6 +276,10 @@
   "tr": "indirim, kampanya; teklif",
   "not": "A1 çeviri gözden geçirmesi: örnekteki \"im Angebot\" indirimde demektir"
  },
+ "539": {
+  "not": "Züritüütsch A1 gözden geçirmesi: 'dem' Hochdeutsch datif; Züritüütsch'te işaret zamiri 'däm' olmalı",
+  "gswBeispiel": "Uf däm Plan schtaat nu d Aakunft vo de Züüg."
+ },
  "541": {
   "tr": "çalıştırmak, açmak (cihaz, ışık)",
   "not": "A1 çeviri gözden geçirmesi: anmachen cihaz çalıştırmaktır; yalın \"açmak\" öffnen ile karışıyor"
@@ -232,6 +299,10 @@
  "554": {
   "tr": "bitmek, sona ermek; (bir şeyi) bırakmak",
   "not": "A1 çeviri gözden geçirmesi: enden ile farkı: aufhören ayrıca bir işi bırakmak demektir"
+ },
+ "555": {
+  "not": "Züritüütsch A1 gözden geçirmesi: 'dem' Hochdeutsch datif; Züritüütsch'te 'däm' olmalı ve 'git s' bitişik 'gits' yazılır",
+  "gswBeispiel": "I däm Huus gits kän Lift."
  },
  "556": {
   "tr": "doldurmak (form, belge)",
@@ -255,7 +326,10 @@
  },
  "567": {
   "tr": "fırın, ekmek fırını",
-  "not": "A1 çeviri gözden geçirmesi: pastane Konditorei'dır; Bäckerei ekmek fırınıdır"
+  "not": "A1 çeviri gözden geçirmesi: pastane Konditorei'dır; Bäckerei ekmek fırınıdır | Züritüütsch A1 gözden geçirmesi: «Beck» Züritüütsch'te fırıncının kendisidir (ayniLehce zaten «Bäcker» ile çakışmayı gösteriyor); dükkân «d Beckerei»dir ve dişil artikel alır",
+  "gsw": "Beckerei",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich gang schnäll i d Beckerei."
  },
  "577": {
   "drop": 528,
@@ -265,11 +339,17 @@
   "de": "Bekannte",
   "artikel": "der",
   "typ": "Nomen",
-  "not": "A1 çeviri gözden geçirmesi: \"der/die Bekannte\" başlığındaki eğik çizgi yazma oyunlarında iki ayrı seçenek gibi bölünüyordu"
+  "not": "A1 çeviri gözden geçirmesi: \"der/die Bekannte\" başlığındaki eğik çizgi yazma oyunlarında iki ayrı seçenek gibi bölünüyordu | Züritüütsch A1 gözden geçirmesi: başlığa artikel «de/d» yapıştırılmış ve kelime kesilmiş; temiz biçim «Bekannte», eril madde olduğu için artikel «de»",
+  "gsw": "Bekannte",
+  "gswArtikel": "de"
  },
  "582": {
   "drop": 72,
   "not": "A1 gözden geçirmesi: best- — 72 \"beste\" ile aynı madde, sözlük gövde yazımı"
+ },
+ "588": {
+  "not": "Züritüütsch A1 gözden geçirmesi: cümledeki «Darf» Hochdeutsch kalmış, Züritüütsch'te «dörf» denir",
+  "gswBeispiel": "Dörf ich Si um öppis bitte?"
  },
  "600": {
   "tr": "patron, müdür, amir",
@@ -291,9 +371,18 @@
   "tr": "anons (hoparlörden duyuru)",
   "not": "A1 çeviri gözden geçirmesi: Ansage ile aynı karşılığı taşıyordu; Durchsage hoparlör anonsudur"
  },
+ "620": {
+  "not": "Züritüütsch A1 gözden geçirmesi: ikinci cümlede «Darf ich» Hochdeutsch kalmış, maddenin kendi biçimiyle «Dörf ich» olmalı",
+  "gswBeispiel": "Si dörfed da nöd rauche. Dörf ich Si uf en Kafi iilade? Es dörf nöd me als füfzä Franke choschte."
+ },
  "621": {
   "drop": 112,
   "not": "A1 gözden geçirmesi: sich duschen — duschen dönüşlü değil; 112 ile aynı madde"
+ },
+ "623": {
+  "not": "Züritüütsch A1 gözden geçirmesi: «Egge» Züritüütsch'te dişildir (die Ecke → d), dolayısıyla örnek de «a de nöchschte Egge» olmalı",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de nöchschte Egge links."
  },
  "624": {
   "tr": "eş, hanım",
@@ -306,6 +395,10 @@
  "627": {
   "drop": 114,
   "not": "ein- — 114 ile aynı belirsiz artikel"
+ },
+ "628": {
+  "not": "Züritüütsch A1 gözden geçirmesi: «Egge» dişil olduğu için «um de Egge» yanlış; Zürih'te «um d Egge ume» denir",
+  "gswBeispiel": "De Iigang isch grad um d Egge ume."
  },
  "643": {
   "drop": 972,
@@ -331,9 +424,14 @@
   "tr": "yabancı, tanımadık",
   "not": "A1 çeviri gözden geçirmesi: Ausländer/ausländisch ile aynı karşılığı taşıyordu; fremd \"tanımadık\" demektir"
  },
+ "661": {
+  "not": "Züritüütsch A1 gözden geçirmesi: «gäge» ile soru zamiri akkusatif olur; Züritüütsch'te «gäge wä», «gäge wer» değil",
+  "gswBeispiel": "Faar nöd gäge de Baum! Ich bi gäge die Lösig. Wer schpilt gäge wä?"
+ },
  "663": {
   "tr": "severek, seve seve, memnuniyetle",
-  "not": "A1 çeviri gözden geçirmesi: örnekteki anlam \"gitmeyi severim\"; \"seve seve\" yalnızca rica cevabına uyar"
+  "not": "A1 çeviri gözden geçirmesi: örnekteki anlam \"gitmeyi severim\"; \"seve seve\" yalnızca rica cevabına uyar | Züritüütsch A1 gözden geçirmesi: Züritüütsch'te «gaa» fiilinin 1. tekil biçimi «ich gang»dır, «ich gaa» Zürih biçimi değil",
+  "gswBeispiel": "Ich gang gern go poschte."
  },
  "680": {
   "tr": "salon (fuar, spor)",
@@ -358,14 +456,19 @@
   "formen": "-n",
   "tr": "kredi kartı",
   "beispiel": "Kann ich mit Kreditkarte bezahlen?",
-  "not": "A1 gözden geçirmesi: \"(Kredit)-Karte\" bozuk başlıktı ve 254 \"die Karte\" ile örtüşüyordu; ayrı madde olarak Kreditkarte yapıldı; Zürih karşılığı da \"(Kredit-)Charte\" artığını taşıyordu",
+  "not": "A1 gözden geçirmesi: \"(Kredit)-Karte\" bozuk başlıktı ve 254 \"die Karte\" ile örtüşüyordu; ayrı madde olarak Kreditkarte yapıldı; Zürih karşılığı da \"(Kredit-)Charte\" artığını taşıyordu | Züritüütsch A1 gözden geçirmesi: die Kreditkarte dişil bir isim, artikel alanı boş bırakılmış; Züritüütsch'te 'd Kreditcharte' olmalı",
   "gsw": "Kreditcharte",
   "gswBeispiel": "Chan ich mit de Kreditcharte zale?",
-  "beispielTr": "Kredi kartıyla ödeyebilir miyim?"
+  "beispielTr": "Kredi kartıyla ödeyebilir miyim?",
+  "gswArtikel": "d"
  },
  "704": {
   "tr": "almak, elde etmek (günlük dil)",
   "not": "A1 çeviri gözden geçirmesi: bekommen ile aynı karşılığı taşıyordu; kriegen konuşma dilidir"
+ },
+ "705": {
+  "not": "Züritüütsch A1 gözden geçirmesi: Züritüütsch'te 'gaa' fiilinin birinci tekil biçimi 'ich gang'tır, 'ich gaa' Zürih biçimi değil",
+  "gswBeispiel": "Ich bi kulturell interessiert. Ich gang oft is Museum."
  },
  "711": {
   "drop": 1070,
@@ -382,15 +485,22 @@
  "717": {
   "de": "letzte",
   "tr": "son, sonuncu, geçen (letzte Woche)",
-  "not": "A1 gözden geçirmesi: letzt- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "A1 gözden geçirmesi: letzt- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch A1 gözden geçirmesi: başlıkta sondaki tire artığı var, Almanca taraf 'letzte' olarak çekimli verildiği için lehçe tarafı 'letscht' olmalı",
+  "gsw": "letscht"
  },
  "719": {
   "drop": 300,
   "not": "lieb- — 300 ile aynı"
  },
+ "722": {
+  "not": "Züritüütsch A1 gözden geçirmesi: Zürihli biri kamyona 'Camion' der, 'Laschtwage' Almancadan devşirme bir biçim",
+  "gsw": "Camion",
+  "gswBeispiel": "Dä Camion isch sehr grooss."
+ },
  "728": {
   "de": "meiste",
-  "not": "A1 gözden geçirmesi: meist- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı"
+  "not": "A1 gözden geçirmesi: meist- — sözlük gövde yazımı; oyunlarda yazılabilir bir biçim olmalı | Züritüütsch A1 gözden geçirmesi: başlıkta sondaki tire artığı var, temiz biçim 'mäischt' olmalı",
+  "gsw": "mäischt"
  },
  "734": {
   "tr": "istemek (kibar), arzu etmek",
@@ -448,6 +558,10 @@
  "780": {
   "tr": "kapatmak (kapı, dükkân)",
   "not": "A1 çeviri gözden geçirmesi: ausmachen da \"kapatmak\" diye geçiyordu; schließen cihaz kapatmak değildir"
+ },
+ "783": {
+  "not": "Züritüütsch A1 gözden geçirmesi: 'noch' Züritüütsch'te 'no'dur, 'na' doğu İsviçre biçimidir",
+  "gswBeispiel": "Ich gib Ine no de Zimmerschlüssel."
  },
  "792": {
   "tr": "kendi işinin sahibi, serbest çalışan",

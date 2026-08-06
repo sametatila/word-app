@@ -62,7 +62,8 @@ const survivors = words.filter((w) => !dropped.has(w.id));
 const gswFixes = new Map();
 for (const [key, fix] of Object.entries(fixes)) {
   if (key.startsWith("_") || fix.drop !== undefined) continue;
-  if (fix.gsw !== undefined || fix.gswBeispiel !== undefined) gswFixes.set(Number(key), fix);
+  if (fix.gsw !== undefined || fix.gswBeispiel !== undefined || fix.gswArtikel !== undefined)
+    gswFixes.set(Number(key), fix);
 }
 let gswRemoved = 0;
 let gswChanged = 0;
@@ -79,6 +80,7 @@ for (const file of zurichFiles) {
     const fix = gswFixes.get(r.id);
     if (!fix) continue;
     if (fix.gsw !== undefined) r.gsw = fix.gsw;
+    if (fix.gswArtikel !== undefined) r.artikel = fix.gswArtikel;
     if (fix.gswBeispiel !== undefined) r.beispiel = fix.gswBeispiel;
     gswFixes.delete(r.id);
     touched = true;
