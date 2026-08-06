@@ -18,6 +18,7 @@ import { deA2B06 } from "./content/de-a2-b06";
 import { deA2B07 } from "./content/de-a2-b07";
 import { deA2B08 } from "./content/de-a2-b08";
 import { deA2B09 } from "./content/de-a2-b09";
+import { deA2B10 } from "./content/de-a2-b10";
 import { deB1 } from "./content/de-b1";
 
 /**
@@ -52,6 +53,7 @@ export const LESSONS: Lesson[] = [
   ...deA2B07,
   ...deA2B08,
   ...deA2B09,
+  ...deA2B10,
   ...deB1,
 ];
 
