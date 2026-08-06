@@ -19,9 +19,9 @@
  },
  {
   "id": 15,
-  "de": "ander-",
+  "de": "andere",
   "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"ander-\" → \"Gefällt dir die Jacke?\""
+  "detay": "\"andere\" → \"Gefällt dir die Jacke?\""
  },
  {
   "id": 27,
@@ -90,12 +90,6 @@
   "detay": "\"Entschuldigung!\""
  },
  {
-  "id": 131,
-  "de": "r/e Erwachsene",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"r/e Erwachsene\" → \"Dieser Film ist nur für Erwachsene.\""
- },
- {
   "id": 200,
   "de": "Glück",
   "kural": "cümle çok kısa",
@@ -130,12 +124,6 @@
   "de": "in",
   "kural": "cümle değil: kalıp yığını",
   "detay": "\"In Spanien/in der Stadt/ins Schwimmbad/ in den Wald/in den Ferien/im S…\""
- },
- {
-  "id": 246,
-  "de": "r/e Jugendliche",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"r/e Jugendliche\" → \"Ist das ein Film für Jugendliche?\""
  },
  {
   "id": 265,
@@ -190,12 +178,6 @@
   "de": "nein",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"nein\" → \"Kommst du mit?\""
- },
- {
-  "id": 374,
-  "de": "(s Fahrrad)",
-  "kural": "örnek cümle yok",
-  "detay": "(s Fahrrad)"
  },
  {
   "id": 393,
@@ -282,24 +264,6 @@
   "detay": "\"zumachen\" → \"Machst du bitte das Fenster zu?\""
  },
  {
-  "id": 535,
-  "de": "all-",
-  "kural": "cümle çok kısa",
-  "detay": "\"Alles Gute!\""
- },
- {
-  "id": 535,
-  "de": "all-",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"all-\" → \"Alles Gute!\""
- },
- {
-  "id": 546,
-  "de": "beantworter",
-  "kural": "cümle çok kısa",
-  "detay": "\"den Anrufbeantworter.\""
- },
- {
   "id": 554,
   "de": "aufhören",
   "kural": "cümle kelimeyi taşımıyor",
@@ -310,18 +274,6 @@
   "de": "automatisch",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"automatisch\" → \"Du musst nichts machen.\""
- },
- {
-  "id": 577,
-  "de": "zum Beispiel/z. B.",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"zum Beispiel/z. B.\" → \"Viele meiner Verwandten, z. B. meine beiden Brüder, arbeiten\""
- },
- {
-  "id": 579,
-  "de": "der/die Bekannte",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"der/die Bekannte\" → \"Ein Bekannter von mir heißt Klaus.\""
  },
  {
   "id": 603,
@@ -372,28 +324,10 @@
   "detay": "\"Hilfe!\""
  },
  {
-  "id": 694,
-  "de": "jed-",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"jed-\" → \"Blumen kannst du in jedem Bahnhof kaufen.\""
- },
- {
-  "id": 697,
-  "de": "(Kredit)-Karte",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(Kredit)-Karte\" → \"Kann ich auch mit Karte (be-) zahlen?\""
- },
- {
   "id": 707,
   "de": "Kunde",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Kunde\" → \"Einen Moment, bitte.\""
- },
- {
-  "id": 711,
-  "de": "Lebens-",
-  "kural": "örnek cümle yok",
-  "detay": "Lebens-"
  },
  {
   "id": 713,
@@ -480,28 +414,10 @@
   "detay": "\"schließt ab\" fiil olarak işaretli ama mastar eki yok"
  },
  {
-  "id": 872,
-  "de": "ärgern (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"ärgern (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 877,
   "de": "ausgeben",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"ausgeben\" → \"Agata gibt viel Geld für Bücher aus.\""
- },
- {
-  "id": 880,
-  "de": "ausruhen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"ausruhen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 880,
-  "de": "ausruhen (sich)",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"ausruhen (sich)\" → \"Ruh dich erst mal aus!\""
  },
  {
   "id": 884,
@@ -510,52 +426,16 @@
   "detay": "\"aussprechen\" → \"Wie spricht man das Wort aus?\""
  },
  {
-  "id": 892,
-  "de": "bedanken (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"bedanken (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 893,
-  "de": "beeilen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"beeilen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 903,
   "de": "Bescheid",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Bescheid\" → \"Kann Lisa in Heidelberg studieren?\""
  },
  {
-  "id": 905,
-  "de": "beschweren (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"beschweren (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 905,
-  "de": "beschweren (sich)",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"beschweren (sich)\" → \"Hier ist es zu laut.\""
- },
- {
-  "id": 909,
-  "de": "bewerben (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"bewerben (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 914,
   "de": "der/das Blog",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"der/das Blog\" → \"Ich schreibe einen Blog über Mode.\""
- },
- {
-  "id": 926,
-  "de": "der/das Comic",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"der/das Comic\" → \"Mein Sohn liest immer nur Comics.\""
  },
  {
   "id": 928,
@@ -582,52 +462,10 @@
   "detay": "\"dringend\" → \"Bitte kommen Sie schnell.\""
  },
  {
-  "id": 943,
-  "de": "duschen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"duschen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 951,
-  "de": "eintragen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"eintragen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 952,
   "de": "einzel-",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"einzel-\" → \"Nicht alle zusammen.\""
- },
- {
-  "id": 954,
-  "de": "(E-)Mail",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(E-)Mail\" → \"Ich schreibe Ihnen/dir eine E-Mail.\""
- },
- {
-  "id": 956,
-  "de": "entschuldigen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"entschuldigen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 959,
-  "de": "erinnern (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"erinnern (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 965,
-  "de": "(ab)fahren",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(ab)fahren\" → \"Ich fahre mit dem Auto zur Arbeit.\""
- },
- {
-  "id": 966,
-  "de": "(Fahr)Rad",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"(Fahr)Rad\" → \"Wenn es nicht regnet, fahre ich mit dem Fahrrad.\""
  },
  {
   "id": 974,
@@ -652,12 +490,6 @@
   "de": "freut",
   "kural": "fiil mastar değil",
   "detay": "\"freut\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 987,
-  "de": "fühlen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"fühlen (sich)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 992,
@@ -739,21 +571,15 @@
  },
  {
   "id": 1033,
-  "de": "informieren (sich) (über)",
+  "de": "sich informieren (über)",
   "kural": "fiil mastar değil",
-  "detay": "\"informieren (sich) (über)\" fiil olarak işaretli ama mastar eki yok"
+  "detay": "\"sich informieren (über)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1034,
   "de": "Instrument",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Instrument\" → \"Ich spiele Klavier.\""
- },
- {
-  "id": 1037,
-  "de": "interessieren (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"interessieren (sich)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1038,
@@ -768,12 +594,6 @@
   "detay": "\"Interview\" → \"Komm schnell!\""
  },
  {
-  "id": 1042,
-  "de": "der/die Jugendliche",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"der/die Jugendliche\" → \"Viele Jugendliche hören den ganzen Tag Musik.\""
- },
- {
   "id": 1043,
   "de": "Kalender",
   "kural": "cümle kelimeyi taşımıyor",
@@ -784,18 +604,6 @@
   "de": "klappen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"klappen\" → \"Können wir uns heute Mittag treffen?\""
- },
- {
-  "id": 1065,
-  "de": "kümmern (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"kümmern (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 1065,
-  "de": "kümmern (sich)",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"kümmern (sich)\" → \"Sonja kann nicht arbeiten.\""
  },
  {
   "id": 1066,
@@ -906,12 +714,6 @@
   "detay": "\"schaffen\" → \"Kannst du mir bitte helfen?\""
  },
  {
-  "id": 1185,
-  "de": "schneiden (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"schneiden (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 1202,
   "de": "sogar",
   "kural": "cümle kelimeyi taşımıyor",
@@ -936,12 +738,6 @@
   "detay": "\"Störe ich?\""
  },
  {
-  "id": 1222,
-  "de": "streiten (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"streiten (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
   "id": 1232,
   "de": "(aus)tauschen",
   "kural": "cümle kelimeyi taşımıyor",
@@ -954,28 +750,10 @@
   "detay": "\"Titel\" → \"Wie heißt der Film?\""
  },
  {
-  "id": 1250,
-  "de": "trifft",
-  "kural": "fiil mastar değil",
-  "detay": "\"trifft\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 1250,
-  "de": "trifft",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"trifft\" → \"Wir treffen uns immer freitags.\""
- },
- {
   "id": 1254,
   "de": "übermorgen",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"übermorgen\" → \"Morgen habe ich frei.\""
- },
- {
-  "id": 1263,
-  "de": "unterhalten (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"unterhalten (sich)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1268,
@@ -988,18 +766,6 @@
   "de": "Veranstaltung",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Veranstaltung\" → \"Am Samstag ist unser Restaurant geschlossen.\""
- },
- {
-  "id": 1276,
-  "de": "verletzen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"verletzen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 1277,
-  "de": "verlieben (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"verlieben (sich)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1290,
@@ -1024,24 +790,6 @@
   "de": "vorsichtig",
   "kural": "cümle çok kısa",
   "detay": "\"Sei vorsichtig!\""
- },
- {
-  "id": 1296,
-  "de": "vorstellen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"vorstellen (sich)\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 1296,
-  "de": "vorstellen (sich)",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"vorstellen (sich)\" → \"Wir wollen uns kennenlernen.\""
- },
- {
-  "id": 1303,
-  "de": "waschen (sich)",
-  "kural": "fiil mastar değil",
-  "detay": "\"waschen (sich)\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 1309,
@@ -1728,12 +1476,6 @@
   "detay": "\"Grund\" → \"Sie haben Ihre Stelle gekündigt.\""
  },
  {
-  "id": 2033,
-  "de": "Hähnchen/Hühnchen",
-  "kural": "cümle kelimeyi taşımıyor",
-  "detay": "\"Hähnchen/Hühnchen\" → \"Zum Mittagessen gibt es Hühnchen mit Reis.\""
- },
- {
   "id": 2035,
   "de": "halbtags",
   "kural": "cümle kelimeyi taşımıyor",
@@ -1778,18 +1520,6 @@
  {
   "id": 2063,
   "de": "heraus-",
-  "kural": "fiil mastar değil",
-  "detay": "\"heraus-\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 2063,
-  "de": "heraus-",
-  "kural": "fiil çevirisi mastar değil",
-  "detay": "\"heraus-\" → \"dışarı\""
- },
- {
-  "id": 2063,
-  "de": "heraus-",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"heraus-\" → \"Hast du schon rausgefunden, wann und wo man sich für den Kur\""
  },
@@ -1798,18 +1528,6 @@
   "de": "Hersteller",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"Hersteller\" → \"Ihr Handy ist kaputt?\""
- },
- {
-  "id": 2068,
-  "de": "herunter-",
-  "kural": "fiil mastar değil",
-  "detay": "\"herunter-\" fiil olarak işaretli ama mastar eki yok"
- },
- {
-  "id": 2068,
-  "de": "herunter-",
-  "kural": "fiil çevirisi mastar değil",
-  "detay": "\"herunter-\" → \"aşağı\""
  },
  {
   "id": 2069,
@@ -3028,12 +2746,6 @@
   "de": "sich bewerben um",
   "kural": "cümle kelimeyi taşımıyor",
   "detay": "\"sich bewerben um\" → \"Sie bewirbt sich um ein Stipendium im Ausland.\""
- },
- {
-  "id": 3784,
-  "de": "sich kümmern um",
-  "kural": "fiil mastar değil",
-  "detay": "\"sich kümmern um\" fiil olarak işaretli ama mastar eki yok"
  },
  {
   "id": 3785,
