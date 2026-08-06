@@ -372,11 +372,22 @@ function speechRuns(buf: AudioBuffer): SpeechRun[] {
  */
 function playGapless(
   urls: string[],
-  opts: { mine: number; onEnd?: () => void; onFail: (index: number) => void },
+  opts: {
+    mine: number;
+    onEnd?: () => void;
+    onFail: (index: number) => void;
+    /**
+     * İlk ses planlandığı anda, çalmaya başlamadan ~150 ms ÖNCE çağrılır.
+     * Arayüz bunu metni açığa çıkarmak için kullanıyor: baloncuk önce
+     * "yazıyor" animasyonu gösteriyor, metin sesten bir nefes önce geliyor —
+     * indirme/çözme gecikmesi kullanıcıya hiç görünmüyor.
+     */
+    onStart?: () => void;
+  },
 ): (() => void) | null {
   const ctx = sharedAudioContext();
   if (!ctx || ctx.state !== "running") return null;
-  const { mine, onEnd, onFail } = opts;
+  const { mine, onEnd, onFail, onStart } = opts;
 
   const sources: AudioBufferSourceNode[] = [];
   let cancelled = false;
@@ -415,7 +426,10 @@ function playGapless(
         return;
       }
 
-      let at = Math.max(tail + (i ? SEGMENT_GAP : 0), ctx.currentTime + 0.03);
+      // İlk parça bilerek 150 ms ileriye planlanıyor: `onStart` şimdi
+      // çağrılınca metin sesten önce ekranda oluyor.
+      if (i === 0) onStart?.();
+      let at = Math.max(tail + (i ? SEGMENT_GAP : 0), ctx.currentTime + (i ? 0.03 : 0.15));
       for (const run of speechRuns(buf)) {
         const src = ctx.createBufferSource();
         src.buffer = buf;
@@ -464,9 +478,14 @@ function chainWithElements(
   startIndex: number,
   onEnd: (() => void) | undefined,
   mine: number,
+  onStart?: () => void,
 ) {
   const a = audioElement();
   const b = extraElement();
+  // Bu yolda sesin gerçek başlangıcı bilinemiyor (yükleme öğenin içinde);
+  // metin ilk çalma girişiminden hemen önce açılıyor — ses birkaç yüz
+  // milisaniye arkadan geliyor, istenen sıra korunuyor.
+  onStart?.();
 
   // Ses öğesi yoksa (sunucu, çok eski ortam) tarayıcı sentezine sırayla düş.
   if (!a || !b) {
@@ -533,9 +552,15 @@ function chainWithElements(
  * duraklamaları sıkıştırılmış); bağlam hazır değilse ya da bir dosya
  * alınamazsa ses öğesi zincirine düşülüyor.
  */
-export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): () => void {
+export function speakSegments(
+  segments: SpeechSegment[],
+  onEnd?: () => void,
+  /** Metnin açığa çıkma anı — ses başlamadan bir nefes önce, bir kez. */
+  onStart?: () => void,
+): () => void {
   const queue = mergeForSpeech(segments);
   if (!queue.length) {
+    onStart?.();
     onEnd?.();
     return () => {};
   }
@@ -545,14 +570,22 @@ export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): ()
   element?.pause();
   extra?.pause();
 
+  let started = false;
+  const startOnce = () => {
+    if (started) return;
+    started = true;
+    onStart?.();
+  };
+
   const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text));
   const cancel = playGapless(urls, {
     mine,
     onEnd,
-    onFail: (i) => chainWithElements(queue, i, onEnd, mine),
+    onStart: startOnce,
+    onFail: (i) => chainWithElements(queue, i, onEnd, mine, startOnce),
   });
   if (cancel) activeChainStop = cancel;
-  else chainWithElements(queue, 0, onEnd, mine);
+  else chainWithElements(queue, 0, onEnd, mine, startOnce);
 
   return () => {
     if (token !== mine) return;

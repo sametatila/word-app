@@ -14,7 +14,8 @@ import {
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { AlertIcon, CheckIcon, MicIcon, SparkIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
-import { fx } from "@/lib/fx";
+import { Confetti } from "@/components/celebrate";
+import { fx, reducedMotion } from "@/lib/fx";
 import { cueListen, startThinking } from "@/lib/lessons/cues";
 import { judgeSpeech } from "@/lib/speech";
 import { tr as trSeg, type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
@@ -37,10 +38,18 @@ import { tr as trSeg, type Expectation, type Lesson, type Segment } from "@/lib/
 type Phase = "lecture" | "roleplay" | "summary";
 type Turn = { role: "user" | "assistant"; content: string };
 
-/** Anlatım akışındaki bir baloncuk. */
+/**
+ * Anlatım akışındaki bir baloncuk.
+ *
+ * `pending` baloncuğun "yazıyor" hâli: içerik hazır ama ses henüz
+ * hazırlanıyor. Metin, ses başlamadan bir nefes önce açılıyor — indirme ve
+ * çözme gecikmesi kullanıcıya boş bir bekleme olarak değil, karşı tarafın
+ * yazması olarak görünüyor. `id` çizim anahtarı: dizin anahtarıyla liste
+ * güncellemeleri giriş animasyonlarını şaşırtabiliyordu.
+ */
 type FeedItem =
-  | { role: "assistant"; segments: Segment[]; tone?: "hint" }
-  | { role: "user"; text: string };
+  | { id: number; role: "assistant"; segments: Segment[]; tone?: "hint"; pending?: boolean }
+  | { id: number; role: "user"; text: string };
 
 const HANDSFREE_KEY = "wortspiel-lesson-handsfree";
 
@@ -120,6 +129,11 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
 
   // ── Anlatım durumu ──
   const [feed, setFeed] = useState<FeedItem[]>([]);
+  const feedSeq = useRef(0);
+  /** Şu an sesli okunan baloncuk — yanında canlı ses çubukları görünüyor. */
+  const [speakingId, setSpeakingId] = useState<number | null>(null);
+  /** Konuşma fazında okunan tur — aynı işaret orada da var. */
+  const [speakingTurn, setSpeakingTurn] = useState<number | null>(null);
   const [stepIndex, setStepIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
@@ -410,12 +424,27 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       setAwaiting(false);
       setStepIndex(index);
       setTyping(false);
+      setSpeakingId(null);
       const segments = [...(prefix ?? []), ...s.say];
-      setFeed((f) => [...f, { role: "assistant", segments }]);
+      const id = ++feedSeq.current;
+      // Baloncuk "yazıyor" olarak doğuyor; metin sesten bir nefes önce
+      // açılıyor (speakSegments onStart). Öncekilerden askıda kalan varsa
+      // (atlama, mikrofona dokunma) burada açığa çıkarılıyor — yazıyor
+      // görünümünde donmuş baloncuk kalmamalı.
+      setFeed((f) => [
+        ...f.map((it) => ("pending" in it && it.pending ? { ...it, pending: false } : it)),
+        { id, role: "assistant", segments, pending: ttsAvailable },
+      ]);
       const token = ++speechToken.current;
       cancelSpeech.current?.();
+      const reveal = () => {
+        if (speechToken.current !== token) return;
+        setFeed((f) => f.map((it) => (it.id === id ? { ...it, pending: false } : it)));
+        setSpeakingId(id);
+      };
       const after = () => {
         if (speechToken.current !== token) return;
+        setSpeakingId(null);
         if (s.expect) {
           setAwaiting(true);
           if (handsFreeRef.current && asrAvailable) {
@@ -425,7 +454,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
           runStepRef.current(index + 1);
         }
       };
-      if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after);
+      if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after, reveal);
       else after();
     },
     // startRoleplay aşağıda tanımlı; ref üzerinden çağrılıyor.
@@ -441,14 +470,25 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const interject = useCallback(
     (segments: Segment[], then?: () => void, tone: "hint" | undefined = "hint") => {
       setAwaiting(false);
-      setFeed((f) => [...f, { role: "assistant", segments, tone }]);
+      setSpeakingId(null);
+      const id = ++feedSeq.current;
+      setFeed((f) => [
+        ...f.map((it) => ("pending" in it && it.pending ? { ...it, pending: false } : it)),
+        { id, role: "assistant", segments, tone, pending: ttsAvailable },
+      ]);
       const token = ++speechToken.current;
       cancelSpeech.current?.();
+      const reveal = () => {
+        if (speechToken.current !== token) return;
+        setFeed((f) => f.map((it) => (it.id === id ? { ...it, pending: false } : it)));
+        setSpeakingId(id);
+      };
       const after = () => {
         if (speechToken.current !== token) return;
+        setSpeakingId(null);
         then?.();
       };
-      if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after);
+      if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after, reveal);
       else after();
     },
     [ttsAvailable],
@@ -484,7 +524,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       if (!e) return;
       const said = alternatives[0] ?? "";
       if (!said.trim()) return;
-      setFeed((f) => [...f, { role: "user", text: said }]);
+      setFeed((f) => [...f, { id: ++feedSeq.current, role: "user", text: said }]);
       const praise = trSeg(PRAISE[stepIndexRef.current % PRAISE.length]);
       const next = () => runStepRef.current(stepIndexRef.current + 1, [praise]);
       const isFirstTry = attempts.current === 0;
@@ -611,13 +651,15 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     if (turns.length) return; // kayıttan dönüldü, konuşma zaten kurulu
     setTurns([{ role: "assistant", content: lesson.roleplay.opening }]);
     const token = ++speechToken.current;
-    if (ttsAvailable)
+    if (ttsAvailable) {
+      setSpeakingTurn(0);
       speakGerman(lesson.roleplay.opening, () => {
         if (speechToken.current !== token) return;
+        setSpeakingTurn(null);
         if (!handsFreeRef.current) return;
         void listenRoleplay();
       });
-    else if (handsFreeRef.current) void listenRoleplay();
+    } else if (handsFreeRef.current) void listenRoleplay();
   }
 
   const send = useCallback(
@@ -665,8 +707,10 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
         const { body } = parseReply(acc);
         if (ttsAvailable && body.trim()) {
           const token = ++speechToken.current;
+          setSpeakingTurn(next.length);
           speakGerman(body, () => {
             if (speechToken.current !== token) return;
+            setSpeakingTurn(null);
             if (closing) {
               void finishRef.current();
               return;
@@ -746,6 +790,8 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     recognition.current?.abort();
     cancelSpeech.current?.();
     stopSpeaking();
+    setSpeakingId(null);
+    setSpeakingTurn(null);
     setPhase("summary");
     try {
       const res = await fetch("/api/lesson", {
@@ -867,8 +913,13 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
 
             <div ref={scroller} className="flex-1 space-y-3 overflow-y-auto p-4">
               <AsrNote visible={!asrAvailable} />
-              {feed.map((item, i) => (
-                <LectureBubble key={i} item={item} ttsAvailable={ttsAvailable} />
+              {feed.map((item) => (
+                <LectureBubble
+                  key={item.id}
+                  item={item}
+                  ttsAvailable={ttsAvailable}
+                  speaking={speakingId === item.id}
+                />
               ))}
             </div>
 
@@ -941,6 +992,10 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                       // Dokunmak okumayı bekletmez: ses kesilir, dinleme başlar.
                       cancelSpeech.current?.();
                       stopSpeaking();
+                      setSpeakingId(null);
+                      setFeed((f) =>
+                        f.map((it) => ("pending" in it && it.pending ? { ...it, pending: false } : it)),
+                      );
                       setAwaiting(true);
                       void capture(langFor(expect), (a) => evaluate(a), false);
                     }}
@@ -1077,6 +1132,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                   key={i}
                   turn={turn}
                   pending={busy && i === turns.length - 1}
+                  speaking={speakingTurn === i && turn.role === "assistant"}
                   ttsAvailable={ttsAvailable}
                 />
               ))}
@@ -1125,6 +1181,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                         return;
                       }
                       stopSpeaking();
+                      setSpeakingTurn(null);
                       void listenRoleplay();
                     }}
                     disabled={busy}
@@ -1210,8 +1267,11 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
             key="summary"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="card p-5"
+            className="card relative p-5"
           >
+            {/* Geçilen ders küçük bir kutlamayı hak ediyor — sonuç sunucudan
+                dönünce patlıyor, kalan her durumda hiç çizilmiyor. */}
+            <Confetti fire={saved?.passed ? 1 : 0} />
             <div className="flex items-center gap-2">
               <span
                 className="flex h-9 w-9 items-center justify-center rounded-xl text-white"
@@ -1368,29 +1428,93 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok
   );
 }
 
+/** Baloncukların ortak giriş animasyonu — hareket azaltma tercihine saygılı. */
+function bubbleEntrance() {
+  return reducedMotion()
+    ? {}
+    : {
+        initial: { opacity: 0, y: 10, scale: 0.97 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        transition: { type: "spring" as const, stiffness: 360, damping: 26 },
+      };
+}
+
+/**
+ * "Yazıyor" animasyonu — ses hazırlanırken baloncuğu dolduran üç nokta.
+ *
+ * Amacı estetik değil algı: indirme/çözme gecikmesi boş bir bekleme olarak
+ * değil, karşı tarafın yazması olarak görünüyor. Metin, ses başlamadan bir
+ * nefes önce bu noktaların yerine geçiyor.
+ */
+function TypingDots() {
+  const still = reducedMotion();
+  return (
+    <span className="flex items-center gap-1 px-0.5 py-1.5" aria-label="hazırlanıyor">
+      {[0, 1, 2].map((i) => (
+        <motion.span
+          key={i}
+          className="h-1.5 w-1.5 rounded-full"
+          style={{ background: "var(--text-muted)", opacity: 0.6 }}
+          animate={still ? undefined : { y: [0, -3, 0], opacity: [0.35, 1, 0.35] }}
+          transition={{ repeat: Infinity, duration: 0.9, delay: i * 0.14, ease: "easeInOut" }}
+        />
+      ))}
+    </span>
+  );
+}
+
+/** Okunmakta olan baloncuğun canlı ses çubukları — hoparlör simgesinin yerine. */
+function SpeakingBars({ inline = false }: { inline?: boolean }) {
+  const still = reducedMotion();
+  return (
+    <span
+      className={`${inline ? "ml-1 inline-flex align-middle" : "flex"} h-7 w-7 shrink-0 items-center justify-center gap-0.5`}
+      aria-label="okunuyor"
+    >
+      {[0, 1, 2].map((i) => (
+        <motion.span
+          key={i}
+          className="w-0.5 rounded-full"
+          style={{ background: "var(--color-brand-500)", height: 11, originY: 0.5 }}
+          animate={still ? undefined : { scaleY: [0.35, 1, 0.5, 0.85, 0.35] }}
+          transition={{ repeat: Infinity, duration: 1, delay: i * 0.16, ease: "easeInOut" }}
+        />
+      ))}
+    </span>
+  );
+}
+
 /**
  * Anlatım baloncuğu.
  *
  * Almanca parçalar görsel olarak da ayrı: öğrenci hedefi cümlenin içinde
- * aramamalı. Hoparlör düğmesi baloncuğun tamamını yeniden okuyor — her parça
- * kendi diliyle.
+ * aramamalı. Okunurken hoparlör düğmesinin yerinde canlı ses çubukları
+ * duruyor; okuma bitince düğme geri geliyor ve baloncuğu yeniden okutuyor.
  */
-function LectureBubble({ item, ttsAvailable }: { item: FeedItem; ttsAvailable: boolean }) {
+function LectureBubble({
+  item,
+  ttsAvailable,
+  speaking,
+}: {
+  item: FeedItem;
+  ttsAvailable: boolean;
+  speaking: boolean;
+}) {
   if (item.role === "user") {
     return (
-      <div className="flex justify-end">
+      <motion.div {...bubbleEntrance()} className="flex justify-end">
         <p
           className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
           style={{ background: "var(--color-brand-500)" }}
         >
           {item.text}
         </p>
-      </div>
+      </motion.div>
     );
   }
   const hint = item.tone === "hint";
   return (
-    <div className="flex items-end gap-1.5">
+    <motion.div {...bubbleEntrance()} className="flex items-end gap-1.5">
       <div
         className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm leading-relaxed"
         style={{
@@ -1399,18 +1523,35 @@ function LectureBubble({ item, ttsAvailable }: { item: FeedItem; ttsAvailable: b
             : "var(--surface-2)",
         }}
       >
-        {item.segments.map((seg, i) => (
-          <span key={i}>
-            {seg.lang === "de" ? (
-              <span className="brand-text font-bold">{seg.text}</span>
-            ) : (
-              seg.text
-            )}
-            {i < item.segments.length - 1 ? " " : null}
-          </span>
-        ))}
+        {item.pending ? (
+          <TypingDots />
+        ) : (
+          <motion.span
+            className="inline"
+            {...(reducedMotion()
+              ? {}
+              : {
+                  initial: { opacity: 0, y: 4 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.22, ease: "easeOut" as const },
+                })}
+          >
+            {item.segments.map((seg, i) => (
+              <span key={i}>
+                {seg.lang === "de" ? (
+                  <span className="brand-text font-bold">{seg.text}</span>
+                ) : (
+                  seg.text
+                )}
+                {i < item.segments.length - 1 ? " " : null}
+              </span>
+            ))}
+          </motion.span>
+        )}
       </div>
-      {ttsAvailable ? (
+      {item.pending ? null : speaking ? (
+        <SpeakingBars />
+      ) : ttsAvailable ? (
         <motion.button
           type="button"
           whileTap={{ scale: 0.9 }}
@@ -1421,7 +1562,7 @@ function LectureBubble({ item, ttsAvailable }: { item: FeedItem; ttsAvailable: b
           <SpeakerIcon size={13} />
         </motion.button>
       ) : null}
-    </div>
+    </motion.div>
   );
 }
 
@@ -1429,43 +1570,49 @@ function LectureBubble({ item, ttsAvailable }: { item: FeedItem; ttsAvailable: b
 function Bubble({
   turn,
   pending,
+  speaking,
   ttsAvailable,
 }: {
   turn: Turn;
   pending: boolean;
+  speaking: boolean;
   ttsAvailable: boolean;
 }) {
   if (turn.role === "user") {
     return (
-      <div className="flex justify-end">
+      <motion.div {...bubbleEntrance()} className="flex justify-end">
         <p
           className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
           style={{ background: "var(--color-brand-500)" }}
         >
           {turn.content}
         </p>
-      </div>
+      </motion.div>
     );
   }
 
   const { body, corrections } = parseReply(turn.content);
   return (
-    <div className="flex flex-col items-start gap-1.5">
+    <motion.div {...bubbleEntrance()} className="flex flex-col items-start gap-1.5">
       <div
         className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm"
         style={{ background: "var(--surface-2)" }}
       >
-        {body.trim() || (pending ? "…" : "")}
+        {body.trim() ? body : pending ? <TypingDots /> : ""}
         {ttsAvailable && body.trim() ? (
-          <motion.button
-            type="button"
-            whileTap={{ scale: 0.9 }}
-            onClick={() => speakGerman(body)}
-            aria-label="Yeniden dinle"
-            className="btn btn-ghost ml-1 h-7 w-7 shrink-0 align-middle"
-          >
-            <SpeakerIcon size={13} />
-          </motion.button>
+          speaking ? (
+            <SpeakingBars inline />
+          ) : (
+            <motion.button
+              type="button"
+              whileTap={{ scale: 0.9 }}
+              onClick={() => speakGerman(body)}
+              aria-label="Yeniden dinle"
+              className="btn btn-ghost ml-1 h-7 w-7 shrink-0 align-middle"
+            >
+              <SpeakerIcon size={13} />
+            </motion.button>
+          )
         ) : null}
       </div>
       {corrections.map((c, i) => (
@@ -1481,7 +1628,7 @@ function Bubble({
           <span>{c}</span>
         </p>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
