@@ -21,7 +21,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     course = profile?.course ?? "de";
     voice = profile?.voice ?? null;
     // Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
-    needsOnboarding = Boolean(profile) && !profile.courseChosenAt;
+    // İsmi olmayan hesaplar da buraya düşer: sıralamada "İsimsiz öğrenci"
+    // olarak görünmek yerine bir kez isim sorulur.
+    needsOnboarding = Boolean(profile) && (!profile.courseChosenAt || !profile.displayName);
   } catch (err) {
     // Veritabanı henüz kurulmadıysa arayüz yine de açılsın.
     console.error("[layout] profil okunamadı", err);

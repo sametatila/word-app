@@ -23,7 +23,15 @@ export async function POST(req: Request) {
   }
 
   const patch: Partial<typeof profiles.$inferInsert> = {};
-  if (typeof body.displayName === "string") patch.displayName = body.displayName.slice(0, 60);
+  // İsim boş bırakılamaz. Zorlama burada duruyor çünkü tek geçit burası:
+  // hem ilk giriş ekranı hem profil formu bu uca yazıyor, dolayısıyla
+  // arayüz atlansa bile isimsiz bir profil oluşamıyor. Sıralamada "İsimsiz
+  // öğrenci" diye görünen kayıtların kaynağı buydu.
+  if (typeof body.displayName === "string") {
+    const name = body.displayName.trim().replace(/\s+/g, " ");
+    if (name.length < 2) return NextResponse.json({ error: "name_required" }, { status: 400 });
+    patch.displayName = name.slice(0, 60);
+  }
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, 5, 120);
   if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, 0, 40);
   if (typeof body.level === "string" && ["A1", "A2", "B1", "B2", "C1"].includes(body.level))
@@ -53,7 +61,9 @@ export async function POST(req: Request) {
     //
     // `coalesce` ile yalnızca ilk kez yazılıyor: sonradan profilden kurs
     // değiştiren biri onboarding'e geri düşmemeli.
-    if (patch.course) {
+    // Onboarding yalnızca isim de verildiyse bitmiş sayılıyor: aksi hâlde
+    // kursu seçip ismi atlayan biri işareti alıp bir daha sorulmuyordu.
+    if (patch.course && patch.displayName) {
       patch.courseChosenAt = sql`coalesce(${profiles.courseChosenAt}, now())` as never;
     }
 

@@ -58,7 +58,16 @@ export function ProfileForm({
   const [saved, setSaved] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
 
+  // İsim boş bırakılamıyor (bkz. api/profile): sunucu zaten reddediyor, burada
+  // kaydet düğmesini kapatmak kullanıcıya sebebini önceden gösteriyor.
+  const cleanName = displayName.trim().replace(/\s+/g, " ");
+  const nameOk = cleanName.length >= 2;
+
   async function save() {
+    if (!nameOk) {
+      setSaveError("Görünen ad boş bırakılamaz.");
+      return;
+    }
     setSaving(true);
     setSaved(false);
     setSaveError(null);
@@ -66,7 +75,7 @@ export function ProfileForm({
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ displayName, dailyGoal, newPerDay, level, course, voice }),
+        body: JSON.stringify({ displayName: cleanName, dailyGoal, newPerDay, level, course, voice }),
       });
       if (res.ok) {
         setSaved(true);
@@ -199,7 +208,11 @@ export function ProfileForm({
         />
 
         <div className="flex items-center gap-3">
-          <button onClick={() => void save()} disabled={saving} className="btn btn-primary px-6 py-3">
+          <button
+            onClick={() => void save()}
+            disabled={saving || !nameOk}
+            className="btn btn-primary px-6 py-3 disabled:opacity-60"
+          >
             {saving ? "Kaydediliyor…" : "Kaydet"}
           </button>
           {saved ? (

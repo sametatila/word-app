@@ -15,14 +15,20 @@ export default async function CourseSelectPage() {
   if (!user) redirect(authEnabled ? "/login" : "/");
 
   let alreadyChosen = false;
+  let knownName = "";
   try {
     const profile = await ensureProfile(user.id, user.name);
-    alreadyChosen = Boolean(profile?.courseChosenAt);
+    // Kurs seçilmiş olsa bile ismi olmayan hesap buraya gelir; ikisi birden
+    // tamamlanmadan uygulamaya geçilmiyor.
+    alreadyChosen = Boolean(profile?.courseChosenAt) && Boolean(profile?.displayName);
+    // Kimlik sağlayıcısından ad geldiyse alan dolu başlasın — kullanıcı
+    // bildiğimiz bir şeyi yeniden yazmak zorunda kalmamalı.
+    knownName = profile?.displayName ?? user.name ?? "";
   } catch {
     // Veritabanına ulaşılamıyorsa da ekran açılır; kayıt sonrasında yapılır.
   }
   // redirect() try içinde çağrılmaz: fırlattığı NEXT_REDIRECT catch'e takılır.
   if (alreadyChosen) redirect("/learn");
 
-  return <CourseOnboarding />;
+  return <CourseOnboarding initialName={knownName} />;
 }

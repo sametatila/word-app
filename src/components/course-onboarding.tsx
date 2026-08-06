@@ -30,23 +30,37 @@ const LEVELS = [
   { id: "C1", desc: "Akademik ve soyut dile hâkimim" },
 ];
 
-/** İlk giriş: kurs + başlangıç seviyesi. Sonradan profilden değiştirilebilir. */
-export function CourseOnboarding() {
+/**
+ * İlk giriş: isim + kurs + başlangıç seviyesi. Sonradan profilden değiştirilebilir.
+ *
+ * İsim zorunlu ve ilk sırada: sıralamada herkesin bir adı olmalı. Kimlik
+ * sağlayıcısından ad gelmişse (Google gibi) alan dolu başlar, yalnızca
+ * onaylanır.
+ */
+export function CourseOnboarding({ initialName = "" }: { initialName?: string }) {
   const router = useRouter();
+  const [name, setName] = useState(initialName);
   const [course, setCourse] = useState("de");
   const [voice, setVoice] = useState<VoiceId>(defaultVoice("de"));
   const [level, setLevel] = useState("A1");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const cleanName = name.trim().replace(/\s+/g, " ");
+  const nameOk = cleanName.length >= 2;
+
   async function start() {
+    if (!nameOk) {
+      setError("Sana nasıl sesleneceğimizi yaz — sıralamada bu isim görünecek.");
+      return;
+    }
     setSaving(true);
     setError(null);
     try {
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ course, level, voice }),
+        body: JSON.stringify({ displayName: cleanName, course, level, voice }),
       });
       if (!res.ok) throw new Error(String(res.status));
       router.push("/learn");
@@ -66,11 +80,23 @@ export function CourseOnboarding() {
           </span>
           <div>
             <h1 className="text-xl font-bold">Hoş geldin!</h1>
-            <p className="muted text-sm">İki soruyla başlayalım — sonra profilden değiştirebilirsin.</p>
+            <p className="muted text-sm">Birkaç soruyla başlayalım — sonra profilden değiştirebilirsin.</p>
           </div>
         </div>
 
-        <h2 className="mb-2 font-bold">Hangi dili öğrenmek istiyorsun?</h2>
+        <h2 className="mb-2 font-bold">Sana nasıl seslenelim?</h2>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          maxLength={60}
+          autoComplete="given-name"
+          placeholder="Adın"
+          aria-label="Adın"
+          className="option w-full px-4 py-3 text-base"
+        />
+        <p className="muted mt-1.5 text-xs">Sıralamada bu isim görünecek.</p>
+
+        <h2 className="mb-2 mt-6 font-bold">Hangi dili öğrenmek istiyorsun?</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {COURSES.map((c) => {
             const active = course === c.id;
@@ -127,7 +153,7 @@ export function CourseOnboarding() {
         <button
           type="button"
           onClick={() => void start()}
-          disabled={saving}
+          disabled={saving || !nameOk}
           className="btn btn-primary mt-7 w-full px-6 py-3.5 text-base disabled:opacity-60"
         >
           {saving ? "Hazırlanıyor…" : "Öğrenmeye başla"}
