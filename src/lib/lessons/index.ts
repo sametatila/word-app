@@ -17,7 +17,13 @@ import { deB1 } from "./content/de-b1";
  */
 export const LESSONS: Lesson[] = [...deA1, ...deA2, ...deB1];
 
-const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;
+export const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;
+
+/** Seviyenin sıradaki dizini — karşılaştırma için. Bilinmeyen seviye 0 sayılır. */
+export function levelIndex(level: string): number {
+  const at = LEVEL_ORDER.indexOf(level as (typeof LEVEL_ORDER)[number]);
+  return at < 0 ? 0 : at;
+}
 
 export function lessonsFor(course: string): Lesson[] {
   const key = course === "gsw-zh" ? "gsw-zh" : "de";

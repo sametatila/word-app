@@ -2,7 +2,7 @@ import "server-only";
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userLessons } from "@/lib/db/schema";
-import { LESSONS, lessonsFor } from "./index";
+import { LESSONS, lessonsFor, levelIndex } from "./index";
 import { scoredSteps, type Lesson } from "./types";
 
 /**
@@ -75,8 +75,18 @@ export async function lessonBoard(userId: string, course: string): Promise<Lesso
  * ölçtüğü şey: yeni konu eklemek kolay, eskisini tutmak zor. Tekrar borcu
  * varken yeni ders açmak öğrenciyi ilerliyormuş gibi hissettirip aslında
  * geride bırakıyor.
+ *
+ * Yeni ders seçilirken kullanıcının SEÇTİĞİ seviye başlangıç sayılıyor:
+ * kayıtta B1 diyen birine A1'in ilk dersini önermek, onu bildiği şeye geri
+ * çağırmak olur. Alt seviyeler haritada açık duruyor (isteyen döner) ama
+ * öneri kullanıcının seviyesinden başlıyor; o seviyeden yukarısı bittiyse
+ * alttaki eksiklere dönülüyor.
  */
-export async function nextLesson(userId: string, course: string): Promise<LessonCard | null> {
+export async function nextLesson(
+  userId: string,
+  course: string,
+  level = "A1",
+): Promise<LessonCard | null> {
   const board = await lessonBoard(userId, course);
   const due = board.filter((c) => c.due);
   if (due.length) {
@@ -84,7 +94,12 @@ export async function nextLesson(userId: string, course: string): Promise<Lesson
     due.sort((a, b) => (a.state!.dueAt.getTime() - b.state!.dueAt.getTime()));
     return due[0];
   }
-  return board.find((c) => c.fresh) ?? null;
+  const from = levelIndex(level);
+  return (
+    board.find((c) => c.fresh && levelIndex(c.lesson.level) >= from) ??
+    board.find((c) => c.fresh) ??
+    null
+  );
 }
 
 /**

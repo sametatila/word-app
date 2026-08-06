@@ -19,7 +19,7 @@ export default async function LessonsPage() {
   const profile = await ensureProfile(userId);
 
   const board = await lessonBoard(userId, profile.course);
-  const next = await nextLesson(userId, profile.course);
+  const next = await nextLesson(userId, profile.course, profile.level);
   const weak = await weakRules(userId);
 
   const cards: HubCard[] = board.map((c) => ({
@@ -44,6 +44,7 @@ export default async function LessonsPage() {
       next={next?.lesson.id ?? null}
       weak={weak}
       total={lessonCount(profile.course)}
+      userLevel={profile.level}
     />
   );
 }

@@ -1,18 +1,78 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
+  ArtIcon,
+  BabyIcon,
+  BedIcon,
+  BikeIcon,
+  BookIcon,
+  BreadIcon,
   BriefcaseIcon,
+  BusIcon,
+  CakeIcon,
+  CalendarIcon,
+  CameraIcon,
+  CarIcon,
+  CartIcon,
+  ChartIcon,
   ChatIcon,
   CheckIcon,
+  CityIcon,
+  ClockIcon,
   CoffeeIcon,
+  DogIcon,
+  FamilyIcon,
+  FilmIcon,
+  FlagIcon,
+  FlowerIcon,
+  FoodIcon,
+  GiftIcon,
+  GlobeIcon,
+  HandshakeIcon,
+  HeartIcon,
   HomeIcon,
+  IdeaIcon,
+  KeyIcon,
+  LawIcon,
   LockIcon,
+  MailIcon,
+  MapIcon,
+  MediaIcon,
+  MoneyIcon,
+  MountainIcon,
+  MusicIcon,
+  NatureIcon,
+  OfficeIcon,
+  PartyIcon,
+  PenIcon,
+  PhoneIcon,
+  PillIcon,
+  PlaneIcon,
+  QuestionIcon,
+  RainIcon,
+  RecycleIcon,
   RefreshIcon,
+  RingIcon,
+  RunIcon,
+  SchoolIcon,
+  ShirtIcon,
+  SnowIcon,
+  SportIcon,
+  StarIcon,
   StethoscopeIcon,
+  SuitcaseIcon,
+  SunIcon,
+  TechIcon,
+  TicketIcon,
+  ToothIcon,
+  TrainIcon,
   UmbrellaIcon,
   WaveIcon,
+  WeatherIcon,
+  WrenchIcon,
 } from "@/components/icons";
 import { reducedMotion } from "@/lib/fx";
 import type { Lesson, LessonIcon } from "@/lib/lessons/types";
@@ -53,6 +113,65 @@ const ICONS: Record<LessonIcon, (p: { size?: number }) => React.ReactNode> = {
   vacation: UmbrellaIcon,
   job: BriefcaseIcon,
   home: HomeIcon,
+  shopping: CartIcon,
+  transport: BusIcon,
+  family: FamilyIcon,
+  phone: PhoneIcon,
+  school: SchoolIcon,
+  food: FoodIcon,
+  weather: WeatherIcon,
+  money: MoneyIcon,
+  calendar: CalendarIcon,
+  sport: SportIcon,
+  nature: NatureIcon,
+  city: CityIcon,
+  media: MediaIcon,
+  feelings: HeartIcon,
+  culture: GlobeIcon,
+  repair: WrenchIcon,
+  office: OfficeIcon,
+  music: MusicIcon,
+  mail: MailIcon,
+  party: PartyIcon,
+  tech: TechIcon,
+  clock: ClockIcon,
+  bed: BedIcon,
+  car: CarIcon,
+  train: TrainIcon,
+  plane: PlaneIcon,
+  map: MapIcon,
+  camera: CameraIcon,
+  book: BookIcon,
+  pen: PenIcon,
+  gift: GiftIcon,
+  cake: CakeIcon,
+  ring: RingIcon,
+  baby: BabyIcon,
+  dog: DogIcon,
+  flower: FlowerIcon,
+  sun: SunIcon,
+  snow: SnowIcon,
+  rain: RainIcon,
+  tooth: ToothIcon,
+  pill: PillIcon,
+  run: RunIcon,
+  bike: BikeIcon,
+  film: FilmIcon,
+  art: ArtIcon,
+  law: LawIcon,
+  flag: FlagIcon,
+  suitcase: SuitcaseIcon,
+  ticket: TicketIcon,
+  chart: ChartIcon,
+  idea: IdeaIcon,
+  handshake: HandshakeIcon,
+  recycle: RecycleIcon,
+  shirt: ShirtIcon,
+  bread: BreadIcon,
+  mountain: MountainIcon,
+  star: StarIcon,
+  question: QuestionIcon,
+  key: KeyIcon,
 };
 
 const LEVEL_LABELS: Record<string, string> = {
@@ -78,25 +197,37 @@ function positionOf(i: number): { x: number; y: number } {
   return { x: XS[p], y: TOP + row * ROW };
 }
 
+const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
+const levelIdx = (l: string) => Math.max(0, LEVEL_ORDER.indexOf(l));
+
 export function LessonHub({
   cards,
   next,
   weak,
   total,
+  userLevel,
 }: {
   cards: HubCard[];
   next: string | null;
   /** Tekrarı gelmiş ve son denemede geçilememiş kurallar. */
   weak: string[];
   total: number;
+  /** Kullanıcının seçtiği seviye — yolun başlangıç noktası. */
+  userLevel: string;
 }) {
   const doneCount = cards.filter((c) => c.done).length;
   const pct = total ? Math.round((doneCount / total) * 100) : 0;
 
-  // Sıradakinden ilerideki dokunulmamış dersler kilit görünümünde. Ölçü ilk
-  // taze ders: tekrarı gelen bir ders "sıradaki" olsa bile ilk taze ders açık
-  // kalıyor — daha önce ulaşılabilir olan bir şey geri kilitlenmez.
-  const firstFresh = cards.findIndex((c) => !c.done && !c.started && !c.due);
+  /**
+   * Kilit, kullanıcının SEVİYESİNDEN başlayan zincire göre hesaplanıyor:
+   * B1 seçen biri için A1-A2 düğümleri kilitli değil "açık" — isteğe bağlı
+   * geri dönüş. Kendi seviyesindeki ilk taze dersten sonrası kilit
+   * görünümünde. Tekrarı gelen ya da başlanmış ders hiçbir zaman kilitlenmez.
+   */
+  const startIdx = cards.findIndex((c) => levelIdx(c.lesson.level) >= levelIdx(userLevel));
+  const firstFresh = cards.findIndex(
+    (c, i) => i >= Math.max(0, startIdx) && !c.done && !c.started && !c.due,
+  );
   const stateOf = (card: HubCard, index: number): NodeState => {
     if (card.lesson.id === next) return "next";
     if (card.due) return "due";
@@ -104,6 +235,22 @@ export function LessonHub({
     if (card.started) return "started";
     return firstFresh >= 0 && index > firstFresh ? "locked" : "open";
   };
+
+  /**
+   * Harita açılınca göz aktif düğümde başlamalı: 500 derslik yolda B1
+   * kullanıcısına A1'in tepesini göstermek, her girişte elle kaydırma
+   * borcu yüklerdi. Kaydırma animasyonsuz — sayfa "orada açılmış" hissi
+   * vermeli, göz önünde yolculuk yapmamalı.
+   */
+  useEffect(() => {
+    if (!next) return;
+    const el = document.getElementById(`lesson-node-${next}`);
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    // Zaten görünürdeyse dokunma: sayfayı boşuna oynatmak dikkat dağıtır.
+    if (r.top >= 0 && r.bottom <= window.innerHeight) return;
+    el.scrollIntoView({ block: "center", behavior: "auto" });
+  }, [next]);
 
   const levels = [...new Set(cards.map((c) => c.lesson.level))];
 
@@ -273,6 +420,7 @@ function LessonNode({
 
   return (
     <Link
+      id={`lesson-node-${card.lesson.id}`}
       href={`/lessons/${card.lesson.id}`}
       className="absolute z-10 flex w-[128px] -translate-x-1/2 flex-col items-center"
       style={{ left: `${at.x}%`, top: at.y - NODE / 2 }}
@@ -290,15 +438,22 @@ function LessonNode({
             : circle),
         }}
       >
-        {/* Sıradaki düğüm nefes alıyor: haritada gözün ilk bulacağı yer. */}
+        {/* Sıradaki düğüm nefes alıyor: haritada gözün ilk bulacağı yer.
+            İki halka yarım tur arayla — radar hissi, tek halkanın yeniden
+            başlama sıçraması duyulmuyor. Animasyon saf CSS (bkz. globals). */}
         {state === "next" && !still ? (
-          <motion.span
-            aria-hidden
-            className="absolute -inset-1.5 rounded-full"
-            style={{ border: "2px solid var(--color-brand-500)" }}
-            animate={{ scale: [1, 1.22], opacity: [0.55, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeOut" }}
-          />
+          <>
+            <span
+              aria-hidden
+              className="lesson-ping absolute -inset-1.5 rounded-full"
+              style={{ border: "2px solid var(--color-brand-500)" }}
+            />
+            <span
+              aria-hidden
+              className="lesson-ping absolute -inset-1.5 rounded-full"
+              style={{ border: "2px solid var(--color-brand-500)", animationDelay: "1s" }}
+            />
+          </>
         ) : null}
         <span style={state === "locked" ? { opacity: 0.55 } : undefined}>
           <Icon size={30} />

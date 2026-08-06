@@ -250,3 +250,32 @@
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* Yol haritasında sıradaki dersin nabız halkası.
+   Framer yerine saf CSS: yalnızca transform+opacity animasyonu kompozitör
+   katmanında çalışır ve React yeniden çizimlerinde takılmaz — JS ana iş
+   parçacığı meşgulken bile halka akıcı kalır. */
+@keyframes lesson-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  75% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+.lesson-ping {
+  animation: lesson-ping 2s cubic-bezier(0.2, 0.55, 0.4, 1) infinite;
+  will-change: transform, opacity;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-ping {
+    animation: none;
+    opacity: 0;
+  }
+}

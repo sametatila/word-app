@@ -112,8 +112,79 @@ export type LessonRoleplay = {
   minTurns: number;
 };
 
-/** Yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor. */
-export type LessonIcon = "greet" | "cafe" | "doctor" | "vacation" | "job" | "home";
+/**
+ * Yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor.
+ *
+ * Küme bilerek kapalı ve önden geniş: 500 derslik müfredatın bütün konu
+ * aileleri için birer simge var (bkz. data/lessons-plan/SPEC.md). İçerik
+ * üreten ajan bu listeden seçiyor ve ikon dosyalarına hiç dokunmuyor.
+ */
+export type LessonIcon =
+  | "greet"
+  | "cafe"
+  | "doctor"
+  | "vacation"
+  | "job"
+  | "home"
+  | "shopping"
+  | "transport"
+  | "family"
+  | "phone"
+  | "school"
+  | "food"
+  | "weather"
+  | "money"
+  | "calendar"
+  | "sport"
+  | "nature"
+  | "city"
+  | "media"
+  | "feelings"
+  | "culture"
+  | "repair"
+  | "office"
+  | "music"
+  | "mail"
+  | "party"
+  | "tech"
+  | "clock"
+  | "bed"
+  | "car"
+  | "train"
+  | "plane"
+  | "map"
+  | "camera"
+  | "book"
+  | "pen"
+  | "gift"
+  | "cake"
+  | "ring"
+  | "baby"
+  | "dog"
+  | "flower"
+  | "sun"
+  | "snow"
+  | "rain"
+  | "tooth"
+  | "pill"
+  | "run"
+  | "bike"
+  | "film"
+  | "art"
+  | "law"
+  | "flag"
+  | "suitcase"
+  | "ticket"
+  | "chart"
+  | "idea"
+  | "handshake"
+  | "recycle"
+  | "shirt"
+  | "bread"
+  | "mountain"
+  | "star"
+  | "question"
+  | "key";
 
 export type Lesson = {
   id: string;
