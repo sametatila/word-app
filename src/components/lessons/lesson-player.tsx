@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { SpeakButton, prefetchGerman, speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { AlertIcon, CheckIcon, SparkIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, MicIcon, SparkIcon, XIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
 import { fx } from "@/lib/fx";
 import type { Lesson } from "@/lib/lessons/types";
@@ -28,6 +28,20 @@ type Turn = { role: "user" | "assistant"; content: string };
 
 const HANDSFREE_KEY = "wortspiel-lesson-handsfree";
 
+/**
+ * Eller serbestken mikrofonun boşuna açık kalabileceği süre.
+ *
+ * Tanıyıcı hiç ses duymazsa kendiliğinden kapanmıyor; öğrenci ekranda
+ * "Dinliyorum" yazısıyla baş başa kalıyor ve ne beklendiğini anlamıyor. Süre
+ * dolunca normale dönülüyor: mikrofon kapanıyor, düğme yeniden dokunulabilir
+ * hâle geliyor ve ne yapılacağı yazılıyor.
+ *
+ * On iki saniye ölçüyle değil gözlemle seçildi: bir cümle kurmayı düşünmek
+ * birkaç saniye sürüyor, ama on saniyeyi geçen sessizlik artık düşünme değil
+ * takılma oluyor.
+ */
+const SILENCE_MS = 12000;
+
 export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("rule");
@@ -43,6 +57,8 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [listening, setListening] = useState(false);
+  /** Yönlendirme metni — hata değil, ne yapılacağını söyleyen bir satır. */
+  const [hint, setHint] = useState<string | null>(null);
   const [handsFree, setHandsFree] = useState(true);
   /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
   const [typing, setTyping] = useState(false);
@@ -54,6 +70,8 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   useEffect(() => setAsrAvailable(recognitionCtor() !== null), []);
 
   const recognition = useRef<Recognition | null>(null);
+  /** Eller serbestken sessizliği ölçen zamanlayıcı. */
+  const silence = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bottom = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
   const handsFreeRef = useRef(false);
@@ -67,7 +85,13 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   useEffect(() => {
     handsFreeRef.current = handsFree;
   }, [handsFree]);
-  useEffect(() => () => recognition.current?.abort(), []);
+  useEffect(
+    () => () => {
+      recognition.current?.abort();
+      if (silence.current) clearTimeout(silence.current);
+    },
+    [],
+  );
   useEffect(() => {
     bottom.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [turns, phase]);
@@ -136,7 +160,18 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     // Açılış repliği içerikte yazılı: konuşma boş ekranla başlamıyor ve model
     // ilk turu üretmek için beklenmiyor.
     setTurns([{ role: "assistant", content: lesson.roleplay.opening }]);
-    if (ttsAvailable) speakGerman(lesson.roleplay.opening);
+    // Açılış repliği bitince mikrofon kendiliğinden açılıyor.
+    // Önce geri çağrısız okunuyordu: eller serbest açık olsa bile konuşma
+    // mikrofon kapalı başlıyordu ve öğrencinin ayrıca düğmeye dokunması
+    // gerekiyordu — yani "eller serbest" ilk turda hiç çalışmıyordu.
+    const token = ++speechToken.current;
+    if (ttsAvailable)
+      speakGerman(lesson.roleplay.opening, () => {
+        if (speechToken.current !== token) return;
+        if (!handsFreeRef.current) return;
+        void listen(true);
+      });
+    else if (handsFreeRef.current) void listen(true);
   }
 
   const send = useCallback(
@@ -215,18 +250,42 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     rec.interimResults = false;
     rec.continuous = false;
     rec.maxAlternatives = 1;
+    const clearSilence = () => {
+      if (silence.current) clearTimeout(silence.current);
+      silence.current = null;
+    };
     rec.onresult = (e) => {
+      clearSilence();
       const said = e.results[0]?.[0]?.transcript?.trim() ?? "";
       if (!said) return;
+      setHint(null);
       if (autoSend) sendRef.current(said);
       else setDraft((d) => (d ? `${d} ${said}` : said));
     };
-    rec.onerror = () => setListening(false);
-    rec.onend = () => setListening(false);
+    rec.onerror = () => {
+      clearSilence();
+      setListening(false);
+    };
+    rec.onend = () => {
+      clearSilence();
+      setListening(false);
+    };
     setListening(true);
+    setHint(null);
     try {
       rec.start();
+      // Sessizlik sayacı yalnızca kendiliğinden açılan mikrofon için: kullanıcı
+      // kendi dokunduysa ne yaptığını biliyor, altından zemini çekmek yanlış.
+      if (autoSend) {
+        clearSilence();
+        silence.current = setTimeout(() => {
+          rec.stop();
+          setListening(false);
+          setHint("Sesini duyamadım. Hazır olunca mikrofona dokun ya da yazarak devam et.");
+        }, SILENCE_MS);
+      }
     } catch {
+      clearSilence();
       setListening(false);
     }
   }, [lesson.course]);
@@ -246,7 +305,17 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     }
     // İzin kullanıcı hareketiyle isteniyor; yüklü PWA'da tanıyıcı bunu
     // kendiliğinden yapmıyor.
-    if (next) await requestMicrophone();
+    if (!next) {
+      // Kapatılınca dinleme de bitmeli: aksi hâlde "kapalı" yazarken mikrofon
+      // açık kalıyordu.
+      stopListening();
+      return;
+    }
+    await requestMicrophone();
+    // Açmak, mikrofona dokunmakla aynı şey. Önce yalnızca bir tercih
+    // kaydediliyordu ve etkisi ancak BİR SONRAKİ model cevabından sonra
+    // görülüyordu; kullanıcı açıp bir de mikrofona dokunmak zorunda kalıyordu.
+    if (!busy && !listening) void listen(true);
   }
 
   // ─────────────────────────── bitiş ───────────────────────────
@@ -413,7 +482,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                     className="btn btn-ghost flex items-center gap-1.5 px-2 py-1 text-xs"
                     style={{ color: handsFree ? "var(--color-brand-500)" : undefined }}
                   >
-                    <SpeakerIcon size={13} />
+                    <MicIcon size={13} />
                     {handsFree ? "Eller serbest: açık" : "Eller serbest"}
                   </button>
                 ) : null}
@@ -486,15 +555,18 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                       animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
                       transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
                     >
-                      <SpeakerIcon size={24} />
+                      <MicIcon size={24} />
                     </motion.span>
                   </motion.button>
-                  <p className="muted text-xs">
+                  <p
+                    className="text-center text-xs"
+                    style={{ color: hint && !listening && !busy ? "var(--color-flame-500)" : "var(--text-muted)" }}
+                  >
                     {busy
                       ? "Cevap geliyor…"
                       : listening
                         ? "Dinliyorum — bitince dokun"
-                        : "Konuşmak için dokun"}
+                        : (hint ?? "Konuşmak için dokun")}
                   </p>
                   {/* Yazmak kapalı değil ama öne çıkmıyor: takılan öğrencinin
                       çıkışı olmalı, varsayılan yolu değil. */}
