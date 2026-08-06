@@ -603,6 +603,12 @@
   "drop": 859,
   "not": "A2 çeviri gözden geçirmesi: \"schließt ab\" başlık değil, abschließen fiilinin çekimli hâli"
  },
+ "864": {
+  "not": "Züritüütsch A2 gözden geçirmesi: «Ampel» Hochdeutsch; Zürihli trafik lambasına «s Rotliecht» der, bu yüzden artikel de nötr «s» olur",
+  "gsw": "Rotliecht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Du chasch faare, s Rotliecht isch grüen."
+ },
  "868": {
   "drop": 867,
   "not": "A2 çeviri gözden geçirmesi: \"meldet an\" başlık değil, anmelden fiilinin çekimli hâli"
@@ -698,6 +704,11 @@
   "drop": 1636,
   "not": "A2 çeviri gözden geçirmesi: \"dafür/dagegen sein\" tek maddede iki zıt kalıptı; dafür (1636) ve dagegen (1637) ayrı maddeler"
  },
+ "940": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te «drüben» karşılığı «äne»dir (havuzun kendisi de 935'te «da äne» kullanıyor); «däne» Zürih'te «weg/fort» anlamına gelir",
+  "gsw": "äne",
+  "gswBeispiel": "Da äne isch d Halteschtell."
+ },
  "943": {
   "drop": 621,
   "not": "duschen (sich) — sich duschen ile aynı fiil, parantezli yazım kopyaydı"
@@ -716,7 +727,8 @@
  },
  "952": {
   "de": "einzeln",
-  "not": "A2 çeviri gözden geçirmesi: \"einzel-\" sözlük gövde yazımıydı"
+  "not": "A2 çeviri gözden geçirmesi: \"einzel-\" sözlük gövde yazımıydı | Züritüütsch A2 gözden geçirmesi: Almanca taraf çekimsiz «einzeln» olduğu için lehçe başlıkta sondaki tire artık; örnek cümledeki gibi «äinzeln» olmalı",
+  "gsw": "äinzeln"
  },
  "953": {
   "tr": "(yeni eve) taşınmak",
@@ -742,9 +754,27 @@
   "drop": 142,
   "not": "A1 gözden geçirmesi: (Fahr)Rad — 142 \"das Fahrrad\" ile aynı madde, başlıkta parantez artığı"
  },
+ "971": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Zürih'te ev ödevine «d Ufzgi» denir; «Husi» Zürih biçimi değil",
+  "gswBeispiel": "Hüt simer fuul: Mir mached käi Ufzgi und schaffed nöd."
+ },
+ "973": {
+  "not": "Züritüütsch A2 gözden geçirmesi: «Fernseher» Hochdeutsch yazım; Züritüütsch'te cihaz «de Fernseh» olarak geçer",
+  "gsw": "Fernseh",
+  "gswBeispiel": "De Fernseh isch kaputt."
+ },
+ "978": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Zürih'te ev ödevine «d Ufzgi» denir; «Husi» Zürih biçimi değil",
+  "gswBeispiel": "De Ibrahim isch sehr fliissig. Er macht immer sini Ufzgi."
+ },
  "979": {
   "drop": 156,
   "not": "A2 çeviri gözden geçirmesi: \"(ab)fliegen\" iki fiili birden taşıyordu; fliegen (156) ve abfliegen (650) ayrı maddeler"
+ },
+ "984": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te «sich freuen» fiili «fröie»dir («Ich fröie mi»), «freue» Hochdeutsch kalmış",
+  "gsw": "fröie",
+  "gswBeispiel": "Ich fröie mi sehr über s Gschänk."
  },
  "985": {
   "drop": 655,
@@ -754,6 +784,10 @@
   "drop": 7973,
   "not": "fühlen (sich) — sich fühlen ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "990": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'zur Arbet' Hochdeutsch büzüşmesi; Züritüütsch'te 'i d Arbet gaa' denir",
+  "gswBeispiel": "D Hose gseet ja furchtbar us. So chasch nöd i d Arbet gaa!"
+ },
  "994": {
   "de": "Geburts-",
   "typ": "Sonstiges",
@@ -762,7 +796,12 @@
  },
  "995": {
   "de": "geehrte",
-  "not": "A2 çeviri gözden geçirmesi: \"geehrt-\" sözlük gövde yazımıydı"
+  "not": "A2 çeviri gözden geçirmesi: \"geehrt-\" sözlük gövde yazımıydı | Züritüütsch A2 gözden geçirmesi: Almanca taraf çekimli ('geehrte') olduğu için lehçe tarafı da çekimli olmalı, sondaki tire artığı kalkmalı",
+  "gsw": "geehrti"
+ },
+ "996": {
+  "not": "Züritüütsch A2 gözden geçirmesi: modal fiilden sonra ana fiil ('gaa') düşmüş, cümle yarım kalmış",
+  "gswBeispiel": "Du dörfsch nöd bi Rot über d Schtraass gaa. Das isch gföörlich."
  },
  "997": {
   "tr": "tersi, zıttı, karşıtı",
@@ -775,6 +814,10 @@
  "1008": {
   "tr": "gök gürültülü fırtına",
   "not": "A2 çeviri gözden geçirmesi: Gewitter gök gürültülü fırtınadır; ilk sıradaki yalın 'fırtına' Sturm ile karışıyor"
+ },
+ "1013": {
+  "not": "Züritüütsch A2 gözden geçirmesi: nötr sıfat eki Hochdeutsch kalmış; Züritüütsch'te 'es früschs Handtuech' olur",
+  "gswBeispiel": "Gisch mer bitte es früschs Handtuech?"
  },
  "1022": {
   "de": "her",
@@ -827,7 +870,8 @@
  },
  "1083": {
   "de": "manche",
-  "not": "A2 çeviri gözden geçirmesi: \"manch-\" sözlük gövde yazımıydı"
+  "not": "A2 çeviri gözden geçirmesi: \"manch-\" sözlük gövde yazımıydı | Züritüütsch A2 gözden geçirmesi: Almanca taraf çekimli ('manche') olduğu için lehçe tarafı da çekimli olmalı, sondaki tire artığı kalkmalı",
+  "gsw": "mängi"
  },
  "1100": {
   "tr": "skuter, motorlu skuter",
@@ -858,6 +902,10 @@
   "drop": 773,
   "not": "Satz — 773 ile aynı; iyi olan alanları 773'e taşındı"
  },
+ "1178": {
+  "not": "Züritüütsch A2 gözden geçirmesi: «Werum» Bern/Aargau biçimi; Züritüütsch'te «warum» (ya da «wiso») denir",
+  "gswBeispiel": "Warum schimpfsch so luut? – Ich ärgere mich über mis Auto. Alli schimpfed über s Wätter."
+ },
  "1185": {
   "drop": 2644,
   "not": "schneiden (sich) — sich schneiden ile aynı fiil, parantezli yazım kopyaydı"
@@ -865,6 +913,10 @@
  "1198": {
   "tr": "oturmak (bir yere geçip)",
   "not": "A2 çeviri gözden geçirmesi: 'kendini oturtmak' Türkçede kimsenin kullanmadığı sözlük çevirisi"
+ },
+ "1201": {
+  "not": "Züritüütsch A2 gözden geçirmesi: «Göme mer» diye bir biçim yok; Zürih'te «gaa» fiilinin 1. çoğul soru biçimi «gömmer»dir",
+  "gswBeispiel": "Gömmer am Wuchenänd go Schii fahre? Er chauft sich nöii Schii."
  },
  "1204": {
   "tr": "başka; yoksa, aksi takdirde",
@@ -883,11 +935,17 @@
   "tr": "değiş tokuş etmek, paylaşmak",
   "beispiel": "Können wir unsere Adressen austauschen?",
   "beispielTr": "Adreslerimizi paylaşabilir miyiz?",
-  "not": "A2 çeviri gözden geçirmesi: \"(aus)tauschen\" iki fiili birden taşıyordu; tauschen ayrı madde olarak duruyor"
+  "not": "A2 çeviri gözden geçirmesi: \"(aus)tauschen\" iki fiili birden taşıyordu; tauschen ayrı madde olarak duruyor | Züritüütsch A2 gözden geçirmesi: Almanca madde 'austauschen', başlıkta önek düşmüş ve 'tauschen' ile aynı biçime inmiş; örnek cümlede zaten 'uustuusche' geçiyor",
+  "gsw": "uustuusche"
  },
  "1235": {
   "tr": "katılmak (kursa, etkinliğe)",
   "not": "A2 çeviri gözden geçirmesi: mitmachen ve sich beteiligen ile aynı karşılığı taşıyordu"
+ },
+ "1238": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te 'tief' karşılığı 'tüüf'tür, 'töif' diye bir biçim yok",
+  "gsw": "tüüf",
+  "gswBeispiel": "Achtung, s Wasser isch tüüf!"
  },
  "1249": {
   "tr": "rüya görmek, hayal kurmak",
@@ -978,7 +1036,9 @@
   "tr": "giymek, (giysi) giydirmek",
   "beispiel": "Ich ziehe mir eine Jacke an.",
   "beispielTr": "Bir ceket giyiyorum.",
-  "not": "A2 çeviri gözden geçirmesi: \"anziehen/ausziehen\" tek maddede iki zıt fiildi; ausziehen ayrı madde olarak duruyor"
+  "not": "A2 çeviri gözden geçirmesi: \"anziehen/ausziehen\" tek maddede iki zıt fiildi; ausziehen ayrı madde olarak duruyor | Züritüütsch A2 gözden geçirmesi: başlıkta iki ayrı fiil ('anziehen' ve 'ausziehen') birleştirilmiş, madde yalnızca 'anziehen' olmalı",
+  "gsw": "aazie",
+  "gswBeispiel": "Ich mues mer na e Jagge aazie. Er hät sis Hemp aazoge."
  },
  "1339": {
   "de": "zurück-",
@@ -3670,9 +3730,30 @@
   "tr": "sağlamak, gerçekleştirmek, yol açmak",
   "not": "C1 çeviri gözden geçirmesi: herbeiführen bilinçli olarak bir sonucu getirmektir; örnekteki 'eine Entscheidung herbeiführen' 'yol açmak' ile uyuşmuyor"
  },
+ "7431": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki st- lehçede scht- olur, 'staat' Hochdeutsch kalmış: schtaat",
+  "gswBeispiel": "Vor em Bahnhof schtaat e gigantischi Uhr."
+ },
  "7436": {
   "tr": "sert, katı (esnemeyen, bükülmeyen)",
   "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki streng de 'sert, katı' (kural/kişi için); steif fiziksel olarak bükülmezliktir, ayrım yok"
+ },
+ "7440": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te bu sıfat -ig ekiyle 'glänzig'tir, 'glänzend' Hochdeutsch biçimdir",
+  "gsw": "glänzig",
+  "gswBeispiel": "Nach em Putze isch de Bode richtig glänzig."
+ },
+ "7442": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki st- lehçede scht- olur, 'staat' Hochdeutsch kalmış: schtaat",
+  "gswBeispiel": "Uf em Balkon schtaat en hölzige Schtuel."
+ },
+ "7461": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki st- lehçede scht- olur, 'staat' Hochdeutsch kalmış: schtaat",
+  "gswBeispiel": "Im Garte schtaat es roschtigs Velo."
+ },
+ "7463": {
+  "not": "Züritüütsch A2 gözden geçirmesi: -ung eki Züritüütsch'te -ig olur, 'Achtung' Hochdeutsch kalmış",
+  "gswBeispiel": "Achtig, d Vase isch sehr zerbrächlich."
  },
  "7479": {
   "tr": "kullanışlı, taşıması kolay",
@@ -3694,9 +3775,17 @@
   "tr": "agresif, saldırgan (davranış)",
   "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki der Angreifer 'saldırgan (saldıran kişi)' adıyla birebir çakışıyor; aggressiv sıfattır ve günlük Türkçede 'agresif' denir"
  },
+ "7522": {
+  "not": "Züritüütsch A2 gözden geçirmesi: örnek cümlede Hochdeutsch 'fühl' kalmış, Züritüütsch biçim 'füehle'dir",
+  "gswBeispiel": "Ohni mini Brille füehl ich mich völlig hilflos."
+ },
  "7525": {
   "tr": "akıllı, zeki, kurnaz",
   "not": "A2 çeviri gözden geçirmesi: örnekteki 'schlaue Idee' akıllıca fikir demek; en yaygın anlam olan 'akıllı' başta olmalı, 'kurnaz' ise olumsuz yan anlam"
+ },
+ "7530": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki sp- lehçede schp- olur, 'spaat' Hochdeutsch kalmış: schpaat",
+  "gswBeispiel": "Er isch immer unpünktlich und chunt z schpaat."
  },
  "7533": {
   "tr": "hareketli, canlı (kişi, huy)",
@@ -3710,9 +3799,26 @@
   "tr": "şefkatli, nazik (dokunuş, ses)",
   "not": "A2 çeviri gözden geçirmesi: liebevoll ile neredeyse birebir aynı karşılığı taşıyor ve 'müşfik' bugünkü Türkçede kullanılmıyor; zärtlich dokunuştaki naziklikle ayrılır"
  },
+ "7550": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki sp- lehçede schp- olur, 'spaat' Hochdeutsch kalmış",
+  "gswBeispiel": "De Kund isch über di schpaat Lieferig verärgeret gsii."
+ },
+ "7562": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'kein' kalmış, Züritüütsch'te 'kei' denir",
+  "gswBeispiel": "Minderjäärigi Chind dörfed kei Alkohol chaufe."
+ },
  "7566": {
   "tr": "emekli olmuş, emekliye ayrılmış",
   "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki der Rentner / der Pensionist adları da 'emekli' diye çevrilmiş; pensioniert sıfat olduğu için ayırt edici gerekiyor"
+ },
+ "7572": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'bislang' yazı dili Almancası, Zürihli 'bishär' der (aynı pakette 'seither → sithär' gibi)",
+  "gsw": "bishär",
+  "gswBeispiel": "Bishär han ich kei Antwort überchoo."
+ },
+ "7575": {
+  "not": "Züritüütsch A2 gözden geçirmesi: fiil öneki an- lehçede aa- olur, cümledeki 'anschliessend' Hochdeutsch kalmış",
+  "gswBeispiel": "Mir ässed zerscht, aaschliessend gönd mir is Kino."
  },
  "7597": {
   "tr": "defalarca, üst üste",
@@ -3734,6 +3840,15 @@
   "de": "noch mal",
   "not": "A2 çeviri gözden geçirmesi: Duden yazımı ayrık; düşürülen 2422 ile aynı maddeydi"
  },
+ "7633": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki st- lehçede scht- olur (bkz. aynı pakette 'anschtatt')",
+  "gsw": "schtatt däm",
+  "gswBeispiel": "De Chueche isch uus gsi, schtatt däm han ich e Glace gnaa."
+ },
+ "7644": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'neue' kalmış, Züritüütsch'te 'nöie' olmalı",
+  "gswBeispiel": "De Schriiner bout mer en nöie Chaschte us Holz."
+ },
  "7669": {
   "tr": "bloknot, not defteri",
   "not": "A2 çeviri gözden geçirmesi: 'not bloknotu' Türkçede kullanılmaz; bloknot zaten not için olan defterdir"
@@ -3741,6 +3856,16 @@
  "7670": {
   "tr": "depo binası, ambar",
   "not": "A2 çeviri gözden geçirmesi: Lagerhalle deponun bulunduğu bina/hangardır; sadece 'depo' denince das Lager'den ayırt edilemiyor"
+ },
+ "7703": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Zürihli 'Klassezimmer' demez, derslik için kullanılan biçim 'Schuelzimmer'dir",
+  "gsw": "Schuelzimmer",
+  "gswBeispiel": "S Schuelzimmer isch hell und hät groossi Fäischter."
+ },
+ "7704": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'Schuelhof' Almanca biçimin lehçeleştirilmişi; Zürih'te okul bahçesine 'Pauseplatz' denir",
+  "gsw": "Pauseplatz",
+  "gswBeispiel": "I de Pause schpiled d Chind uf em Pauseplatz."
  },
  "7715": {
   "tr": "kelime (yabancı dilde öğrenilen), sözcük",
@@ -3758,6 +3883,16 @@
   "tr": "(derste) yardım etmek, takviye ders vermek",
   "not": "A2 çeviri gözden geçirmesi: 'takviye yardım etmek' Türkçede kullanılmayan, sözlük kokan bir kalıp"
  },
+ "7755": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te '-s' ekli zaman zarfı kullanılmaz (vgl. abends → am Aabig), doğru biçim 'am Vormittag'.",
+  "gsw": "am Vormittag",
+  "gswBeispiel": "De Kurs findet am Vormittag schtatt."
+ },
+ "7768": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'Warteschlange' Hochdeutsch kalmış; Zürihli kasada 'e langi Schlange' der.",
+  "gsw": "Schlange",
+  "gswBeispiel": "A de Kasse isch e langi Schlange gsi."
+ },
  "7769": {
   "tr": "kuyrukta beklemek, sıraya girmek",
   "not": "A2 çeviri gözden geçirmesi: örnek cümle 'zwanzig Minuten anstehen' beklemeyi anlatıyor, sıraya girme anını değil; en yaygın anlam başta olmalı"
@@ -3774,13 +3909,19 @@
   "tr": "depozito (şişe, kap)",
   "not": "A2 çeviri gözden geçirmesi: Kaution kira/teminat depozitosudur, Pfand ise şişe-kap depozitosu; ikisi de 'depozito' olunca ayırt edilemiyor (aynı anlam: die Kaution)"
  },
+ "7848": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'ähnle' Hochdeutsch'tan uydurma bir biçim; Züritüütsch'te benzemek 'gliiche'dir.",
+  "gsw": "gliiche",
+  "gswBeispiel": "Mini Tochter gliicht irer Grossmueter sehr."
+ },
  "7864": {
   "tr": "şık (özel gün için), şenlikli",
   "not": "A2 çeviri gözden geçirmesi: 'bayramlık' Türkçede yalnızca giysi için kullanılan bir isimdir, festlich ise ortam/yemek/kıyafet için kullanılan bir sıfattır"
  },
  "7868": {
   "tr": "terbiyesiz, yaramaz",
-  "not": "A2 çeviri gözden geçirmesi: ungezogen 'kötü yetiştirilmiş, terbiyesiz' demektir ve örnek cümle büyükanneye karşı kabalığı anlatıyor, 'yaramaz' bu anlamı zayıflatıyor"
+  "not": "A2 çeviri gözden geçirmesi: ungezogen 'kötü yetiştirilmiş, terbiyesiz' demektir ve örnek cümle büyükanneye karşı kabalığı anlatıyor, 'yaramaz' bu anlamı zayıflatıyor | Züritüütsch A2 gözden geçirmesi: Züritüütsch'te 'sii' fiilinin emir kipi 'Bis'tir; 'Sig' Konjunktiv biçimi olduğu için cümlede yanlış duruyor.",
+  "gswBeispiel": "Bis nöd eso ungezoge zu dinere Grossmueter!"
  },
  "7879": {
   "tr": "jimnastik yapmak",
@@ -3794,9 +3935,36 @@
   "tr": "ödünç almak, ödünç vermek",
   "not": "A2 çeviri gözden geçirmesi: ausleihen ücretsiz ödünç alıp vermektir, 'kiralamak' mieten anlamına kayıyor"
  },
+ "7895": {
+  "not": "Züritüütsch A2 gözden geçirmesi: çoğul özne 'mir' ile fiil eki -ed olmalı ('plaudered'), 'plauderet' tekil biçimdir.",
+  "gswBeispiel": "Nach em Kurs plaudered mir no e halbi Schtund im Café."
+ },
+ "7899": {
+  "not": "Züritüütsch A2 gözden geçirmesi: söz başındaki sp- lehçede schp- olur: 'Springe' değil 'Schpringe'.",
+  "gswBeispiel": "Nach em Schpringe dehne ich immer mini Bäi."
+ },
+ "7909": {
+  "not": "Züritüütsch A2 gözden geçirmesi: bileşiğin ikinci öğesi st- ile başladığı için lehçede scht- olur (paketteki 'Schtadion', 'Schportplatz' ile aynı kural).",
+  "gsw": "Fitnessschtudio",
+  "gswBeispiel": "Ich gang drümal pro Wuche is Fitnessschtudio."
+ },
  "7955": {
   "tr": "kan örneği, kan tahlili",
   "not": "A2 çeviri gözden geçirmesi: Blutprobe alınan numunedir; örnek cümledeki 'nimmt eine Blutprobe' için doğal karşılık 'kan örneği'dir, 'kan tahlili' ise Bluttest/Blutuntersuchung anlamına kaydığı için başta olmamalı"
+ },
+ "7969": {
+  "not": "Züritüütsch A2 gözden geçirmesi: çoğul özne 'Mini Händ' ile fiil 'zittered' olmalı, 'zitteret' tekil biçimdir.",
+  "gswBeispiel": "Mini Händ zittered, wil ich Fieber han."
+ },
+ "7972": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'aa-' önekinden sonra gelen st- lehçede scht- olur: 'aaschtecke'.",
+  "gsw": "sich aaschtecke",
+  "gswBeispiel": "Blib dihäi, ich wett mich nöd aaschtecke."
+ },
+ "7983": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te 'stecke' hece başında 'schtecke' olur, dolayısıyla 'aaschteckend' yazılır",
+  "gsw": "aaschteckend",
+  "gswBeispiel": "E Grippe isch sehr aaschteckend."
  },
  "7996": {
   "tr": "batarya, pil",
@@ -3806,9 +3974,19 @@
   "tr": "fare (bilgisayar), fare (hayvan)",
   "not": "A2 çeviri gözden geçirmesi: karşılık aynı kelimeyi iki kez sıralıyor; ikinci anlamın ayırt edicisi eksik kalmış"
  },
+ "8058": {
+  "not": "Züritüütsch A2 gözden geçirmesi: bileşiğin ikinci öğesi söz başı st- taşıyor, Züritüütsch'te 'Schtopp' olur",
+  "gsw": "Zwüscheschtopp",
+  "gswBeispiel": "Mir händ en Zwüscheschtopp z Wien."
+ },
  "8070": {
   "tr": "gidiş yolculuğu, gidiş",
   "not": "A2 çeviri gözden geçirmesi: 'varış yolculuğu' Türkçede kullanılmayan bir tamlama; Anreise, örnek cümledeki gibi yere ulaşana kadarki gidiş yolculuğudur"
+ },
+ "8119": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'Schein' Züritüütsch'te 'Schiin' olur (aynı dosyada 8118 'Sunneschiin'), yani 'beschäinig-' değil 'beschiinig-' olmalı",
+  "gsw": "Mäldebeschiinigig",
+  "gswBeispiel": "De Vermieter wett e Mäldebeschiinigig vo mir gsee."
  },
  "8144": {
   "tr": "canlı, yaşayan",
@@ -3832,15 +4010,44 @@
  },
  "8190": {
   "tr": "kurmak (parçaları birleştirerek), monte etmek",
-  "not": "A2 çeviri gözden geçirmesi: montieren de 'monte etmek' olduğundan ayrım yok; zusammenbauen parçaları birleştirip kurmaktır"
+  "not": "A2 çeviri gözden geçirmesi: montieren de 'monte etmek' olduğundan ayrım yok; zusammenbauen parçaları birleştirip kurmaktır | Züritüütsch A2 gözden geçirmesi: 'neu' Hochdeutsch kalmış; Züritüütsch'te 'nöi' (dosyanın kendi 'Böim', 'tröimt', 'öisem' biçimleriyle de tutarlı)",
+  "gswBeispiel": "Mir tüend s nöi Regal am Wuchenend zämebaue."
+ },
+ "8191": {
+  "not": "Züritüütsch A2 gözden geçirmesi: 'neui' Hochdeutsch kalmış; Züritüütsch'te 'nöii Lampe' olmalı",
+  "gswBeispiel": "De Abwart tuet e nöii Lampe im Gang aabringe."
  },
  "8201": {
   "tr": "(geç saate kadar) uyanık kalmak, yatmamak",
   "not": "A2 çeviri gözden geçirmesi: aufbleiben yatmayıp uyanık kalmaktır; 'ayakta kalmak' Türkçede 'oturmayıp dikilmek' anlamına gelir ve yanıltıcıdır"
  },
+ "8202": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te Fenster 'Fäischter'tir, 'Fänschter' Bern biçimidir (aynı paketteki 8284 de 'Fäischter' kullanıyor)",
+  "gswBeispiel": "Nach em Uufschtaa schtrecke ich mich am offene Fäischter."
+ },
+ "8208": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'Schrank' kalmış, Züritüütsch karşılığı 'Chaschte'",
+  "gswBeispiel": "Chasch bitte s Waschmittel im Chaschte uuffülle."
+ },
  "8209": {
   "tr": "yeniden doldurmak, üstüne eklemek",
   "not": "A2 çeviri gözden geçirmesi: nachfüllen biten bir şeyi ikmal etmektir; örnekteki tuz için 'tazelemek' uymuyor ve ilk anlam olmamalı"
+ },
+ "8218": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'Sohn' kalmış, Züritüütsch biçimi 'Suhn'",
+  "gswBeispiel": "Am Aabig tue ich min Suhn im Bett warm zuedecke."
+ },
+ "8219": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'neu' kalmış, lehçede 'nöi' olmalı",
+  "gswBeispiel": "Am Samschtig beziehe ich alli Bette i de Wohnig nöi."
+ },
+ "8221": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'neu' kalmış, lehçede 'nöi' olmalı",
+  "gswBeispiel": "De Handwärcher montiert hüt di nöi Chuchi."
+ },
+ "8223": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch birinci çoğul şahıs eki -ed'dir, 'schuufle mir' yerine 'schuufled mir' olmalı",
+  "gswBeispiel": "Im Winter schuufled mir de Schnee vor de Huustür."
  },
  "8239": {
   "tr": "gözden geçirmek, içinden geçmek",
@@ -3848,7 +4055,8 @@
  },
  "8245": {
   "tr": "(araçla) ayrılmak, çekip gitmek",
-  "not": "A2 çeviri gözden geçirmesi: wegfahren bir yerden araçla uzaklaşmaktır; 'arabayla gitmek' Auto fahren ile karışıyor ve ayrılma anlamını vermiyor"
+  "not": "A2 çeviri gözden geçirmesi: wegfahren bir yerden araçla uzaklaşmaktır; 'arabayla gitmek' Auto fahren ile karışıyor ve ayrılma anlamını vermiyor | Züritüütsch A2 gözden geçirmesi: 'isch' ile geçmiş zaman kurulduğu için sıfat-fiil g- öneki almalı ('wäggfahre'), mastar biçimi 'wägfahre' değil",
+  "gswBeispiel": "De Laschtwage isch grad vom Hof wäggfahre."
  },
  "8246": {
   "tr": "(aracı) kullanmak, yönlendirmek",
@@ -3874,6 +4082,10 @@
   "tr": "(telefonda) ulaşabilmek, bağlanmak",
   "not": "A2 çeviri gözden geçirmesi: 'hat bağlantısı kurmak' kimsenin kullanmadığı sözlük dilidir; örnekteki anlam telefonda karşı tarafa ulaşabilmektir"
  },
+ "8305": {
+  "not": "Züritüütsch A2 gözden geçirmesi: cümlede Hochdeutsch 'Entschuldigung' kalmış; Züritüütsch'te özür sözü 'Exgüsi'dir (ayrıca -ung eki lehçede -ig olur).",
+  "gswBeispiel": "Exgüsi, ich ha mich verwäält."
+ },
  "8359": {
   "tr": "yatak, şilte",
   "not": "A2 çeviri gözden geçirmesi: Matratze için Türkçede günlük karşılık 'yatak'tır; 'yatak minderi' kimsenin kullanmadığı bir tabir"
@@ -3881,6 +4093,10 @@
  "8372": {
   "tr": "şifonyer, çekmeceli dolap",
   "not": "A2 çeviri gözden geçirmesi: Kommode Türkçede 'şifonyer'dir; 'konsol' çekmecesiz duvar kenarı masasını (konsol masa) çağrıştırıyor"
+ },
+ "8377": {
+  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te 'Hemp' tekildir, çoğulu 'Hemper' olmalı.",
+  "gswBeispiel": "Ich glätte am Aabig mini Hemper."
  },
  "8390": {
   "tr": "alt kiracı, kiracının kiracısı",
