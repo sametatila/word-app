@@ -44,9 +44,10 @@ export const deA2B03: Lesson[] = [
       },
       {
         say: [
+          tr("Bugünün fiili"),
           de("sollen"),
           tr(
-            "fiili, birinin yapması gereken şeyi söyler. Doktor sana, sen kendine — bu ders boyunca hep onu kullanacağız. Önce kelimeleri öğrenelim.",
+            "ve birinin yapması gereken şeyi söyler. Doktor sana, sen kendine — bu ders boyunca hep onu kullanacağız. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -369,12 +370,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe mich erkältet."),
+          de("Meine Tochter hat sich erkältet."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe mich erkältet.",
+          statement: "Meine Tochter hat sich erkältet.",
           answer: true,
           why: [
             tr("Doğru. Bu fiil küçük zamirini almış, zamir yardımcı fiilin hemen arkasına oturmuş ve ortaç sonda kalmış."),
@@ -1296,12 +1297,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das übernimmt die Kasse."),
+          de("Das bezahlt die Kasse."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das übernimmt die Kasse.",
+          statement: "Das bezahlt die Kasse.",
           answer: true,
           why: [
             tr("Doğru. Nesne başa alınmış ama fiil ikinci sırada kalmış; asıl özne fiilin arkasına geçmiş. Almancada bu sıra son derece olağan."),
@@ -1670,12 +1671,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich kann mich nicht konzentrieren."),
+          de("Ich kann mich nicht ausruhen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich kann mich nicht konzentrieren.",
+          statement: "Ich kann mich nicht ausruhen.",
           answer: true,
           why: [
             tr("Doğru. Küçük zamir kip fiilinin hemen arkasına, olumsuzluk kelimesinin önüne oturmuş; asıl fiil de sonda kalmış."),
@@ -1862,12 +1863,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Man soll regelmäßig zum Arzt gehen."),
+          de("Man soll jedes Jahr zum Zahnarzt gehen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Man soll regelmäßig zum Arzt gehen.",
+          statement: "Man soll jedes Jahr zum Zahnarzt gehen.",
           answer: true,
           why: [
             tr("Doğru. Genel özne tekil sayıldığı için fiil tekil biçimde kalmış ve asıl fiil cümlenin sonuna gitmiş."),

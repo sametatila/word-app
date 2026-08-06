@@ -908,16 +908,16 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Nicht zu kurz, bitte."),
+          de("Nicht zu lang, bitte."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Nicht zu kurz, bitte.",
+          statement: "Nicht zu lang, bitte.",
           answer: true,
           why: [
             tr("Doğru. Burada sıfatın kendisi kullanılıyor, çünkü karşılaştırma değil sınır koyma var:"),
-            de("nicht zu kurz"),
+            de("nicht zu lang"),
           ],
         },
       },

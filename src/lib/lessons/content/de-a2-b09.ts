@@ -88,6 +88,16 @@ export const deA2B09: Lesson[] = [
       },
       {
         say: [
+          tr("Üç küçük kelime koşul cümlesinin etrafında dolanır. Alışkanlık için:"),
+          de("Normalerweise trinke ich Tee."),
+          tr("Çoğunlukla için:"),
+          de("Meistens habe ich am Abend Zeit."),
+          tr("Ve uyarı için:"),
+          de("Komm pünktlich, sonst warten wir nicht."),
+        ],
+      },
+      {
+        say: [
           tr("Dördüncü kelimemiz:"),
           de("die Gelegenheit"),
           tr("Türkçesi 'fırsat' demek. Lütfen"),
@@ -351,16 +361,16 @@ export const deA2B09: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich schaue weiter, wenn eine Folge endet."),
+          de("Ich freue mich, wenn eine Staffel beginnt."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich schaue weiter, wenn eine Folge endet.",
+          statement: "Ich freue mich, wenn eine Staffel beginnt.",
           answer: true,
           why: [
             tr("Doğru. Ana cümle önde bozulmadan duruyor ve bağlaçtan sonra fiil sona gitmiş:"),
-            de("Ich schaue weiter, wenn eine Folge endet."),
+            de("Ich freue mich, wenn eine Staffel beginnt."),
           ],
         },
       },
@@ -448,6 +458,12 @@ export const deA2B09: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "berichten" },
+      },
+      {
+        say: [
+          tr("Gazetecilerin fiili de bu:"),
+          de("Die Zeitung berichtet über das Wetter."),
+        ],
       },
       {
         say: [
@@ -556,8 +572,8 @@ export const deA2B09: Lesson[] = [
       scene:
         "Komşun sana duyduğu bir haberi anlatıyor. Haberi dinle, inanıp inanmadığını söyle, kaynağını sor ve kendi duyduğun bir haberi de aktar.",
       partner: "her duyduğuna hemen inanan, heyecanlı bir komşu",
-      opening: "Haben Sie das schon gehört? Es steht heute in allen Zeitungen!",
-      openingTr: "Duydunuz mu? Bugün bütün gazetelerde var!",
+      opening: "Es steht heute in allen Zeitungen! Haben Sie das schon gehört?",
+      openingTr: "Bugün bütün gazetelerde var! Duydunuz mu?",
       minTurns: 4,
     },
   },
@@ -719,16 +735,16 @@ export const deA2B09: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Wenn ich das Handy weglege, kann ich besser arbeiten."),
+          de("Wenn der Bildschirm aus ist, kann ich besser schlafen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Wenn ich das Handy weglege, kann ich besser arbeiten.",
+          statement: "Wenn der Bildschirm aus ist, kann ich besser schlafen.",
           answer: true,
           why: [
             tr("Doğru. Koşul yarısında fiil sonda, ana yarıda kip fiili öne geçmiş ve asıl fiil sonda kalmış:"),
-            de("Wenn ich das Handy weglege, kann ich besser arbeiten."),
+            de("Wenn der Bildschirm aus ist, kann ich besser schlafen."),
           ],
         },
       },
@@ -1270,16 +1286,16 @@ export const deA2B09: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Die Aussicht war am schönsten."),
+          de("Der Abend war am lustigsten."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Die Aussicht war am schönsten.",
+          statement: "Der Abend war am lustigsten.",
           answer: true,
           why: [
             tr("Doğru. Sıfat cümlenin sonunda yalnız durduğu için bu biçimi aldı:"),
-            de("Die Aussicht war am schönsten."),
+            de("Der Abend war am lustigsten."),
           ],
         },
       },
@@ -1644,16 +1660,16 @@ export const deA2B09: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Wenn die Verbindung schlecht ist, rufe ich Sie an."),
+          de("Wenn das Mikrofon aus ist, hört man Sie nicht."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Wenn die Verbindung schlecht ist, rufe ich Sie an.",
+          statement: "Wenn das Mikrofon aus ist, hört man Sie nicht.",
           answer: true,
           why: [
             tr("Doğru. Koşul yarısında fiil sonda, ana yarıda fiil öne geçmiş durumda:"),
-            de("Wenn die Verbindung schlecht ist, rufe ich Sie an."),
+            de("Wenn das Mikrofon aus ist, hört man Sie nicht."),
           ],
         },
       },
@@ -1669,8 +1685,8 @@ export const deA2B09: Lesson[] = [
       scene:
         "Resmî bir kurumla görüntülü randevun başladı ama teknik sorunlar var. Sesin gelmediğini kibarca söyle, kamerayı açmasını rica et, bağlantı kopmasına karşı bir plan öner ve görüşmeyi sürdür.",
       partner: "teknikle arası pek iyi olmayan, resmî konuşan bir görevli",
-      opening: "Guten Tag, können Sie mich sehen? Ich glaube, es gibt ein Problem.",
-      openingTr: "İyi günler, beni görebiliyor musunuz? Sanırım bir sorun var.",
+      opening: "Guten Tag! Ich glaube, es gibt ein Problem. Können Sie mich sehen?",
+      openingTr: "İyi günler! Sanırım bir sorun var. Beni görebiliyor musunuz?",
       minTurns: 4,
     },
   },
@@ -1826,16 +1842,16 @@ export const deA2B09: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Zuerst war es komisch."),
+          de("Am Anfang war es schwer."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Zuerst war es komisch.",
+          statement: "Am Anfang war es schwer.",
           answer: true,
           why: [
             tr("Doğru. Duygu ve durum anlatılırken tek parçalı geçmiş biçimi kullanılır:"),
-            de("Zuerst war es komisch."),
+            de("Am Anfang war es schwer."),
           ],
         },
       },

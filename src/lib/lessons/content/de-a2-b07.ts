@@ -469,6 +469,12 @@ export const deA2B07: Lesson[] = [
       },
       {
         say: [
+          tr("Hedefin hep aynı:"),
+          de("Der Koffer soll leicht bleiben."),
+        ],
+      },
+      {
+        say: [
           tr(
             "Şimdi kural. Bu fiilin geçmiş biçiminde işaret başa değil, baştaki parçanın hemen arkasına geliyor. Yani kelime içeriden büyüyor.",
           ),
@@ -648,6 +654,12 @@ export const deA2B07: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "landen" },
+      },
+      {
+        say: [
+          tr("Yolculuğun iki ucu iki fiil: kalkış check-in ile, varış şu cümleyle biter:"),
+          de("Wir landen um acht Uhr."),
+        ],
       },
       {
         say: [
@@ -918,7 +930,7 @@ export const deA2B07: Lesson[] = [
     title: "Der Tagesausflug",
     titleTr: "Günübirlik gezi",
     summary: "Koşullu plan kurmayı öğretir: hava güzelse ne yaparız.",
-    minutes: 10,
+    minutes: 9,
     focusId: "Nebensatz-wenn",
     vocab: [
       { de: "der Ausflug", tr: "gezi" },
@@ -1628,7 +1640,7 @@ export const deA2B07: Lesson[] = [
     title: "Der Flug ist gestrichen",
     titleTr: "Seyahat aksiliği",
     summary: "Seyahatte çıkan bir aksiliği bildirmeyi ve yardım istemeyi öğretir.",
-    minutes: 10,
+    minutes: 9,
     focusId: "Perfekt-unregelmäßig",
     vocab: [
       { de: "streichen", tr: "iptal etmek" },

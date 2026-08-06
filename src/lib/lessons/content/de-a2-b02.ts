@@ -113,6 +113,14 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
+          tr("İki yeni kelime hikâyenin girişinde hemen iş görür:"),
+          de("Wir sind vor zehn Jahren ausgewandert."),
+          tr("ve o günleri anlatırken:"),
+          de("Die erste Zeit war aufregend."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız yaşını söyler:"),
           de("Ich war zwanzig Jahre alt."),
           tr("'Yirmi yaşındaydım' demek. Lütfen"),
@@ -206,7 +214,7 @@ export const deA2B02: Lesson[] = [
     title: "Ich wollte Pilot werden",
     titleTr: "Çocukluk hayalleri",
     summary: "Geçmişteki isteği, yapamamayı ve zorunluluğu anlatmayı öğretir.",
-    minutes: 10,
+    minutes: 9,
     focusId: "Präteritum-Modal",
     vocab: [
       { de: "wollte", tr: "istiyordum" },
@@ -823,8 +831,9 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Şimdi kural. Bu fiillerle cümle kurarken zamir fiilin hemen arkasına gelir. Geçmiş zamanda da aynı yerde durur; geçmiş biçim yine cümlenin sonundadır.",
+            "Şimdi kural. Bu fiillerle cümle kurarken zamir fiilin hemen arkasına gelir. Geçmiş zamanda da aynı yerde durur; geçmiş biçim yine cümlenin sonundadır. Tesadüfse şöyle söylenir:",
           ),
+          de("Wir haben uns zufällig getroffen."),
         ],
       },
       {
@@ -922,7 +931,7 @@ export const deA2B02: Lesson[] = [
     title: "Seit drei Jahren",
     titleTr: "Süre ve zaman noktası",
     summary: "Hâlâ süren bir zamanı ve geçmişte kalmış bir noktayı ayırmayı öğretir.",
-    minutes: 10,
+    minutes: 9,
     focusId: "Dativ-Präpositionen",
     vocab: [
       { de: "seit", tr: "…-den beri" },
@@ -1005,8 +1014,11 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "İkisinin ortak bir yanı var: arkalarından gelen kelime hâl değiştirir. Bir yıl derken 'bir' kelimesi biçim değiştiriyor, iki ay derken 'ay' kelimesi çoğulda ek alıyor.",
+            "İkisinin ortak bir yanı var: arkalarından gelen kelime hâl değiştirir. Bir yıl derken 'bir' kelimesi biçim değiştiriyor, iki ay derken 'ay' kelimesi çoğulda ek alıyor. Diğer iki kelime ise cümleye olduğu gibi girer:",
           ),
+          de("Inzwischen spreche ich besser Deutsch."),
+          tr("ve"),
+          de("Das war vor ungefähr zwei Jahren."),
         ],
       },
       {
@@ -1186,6 +1198,12 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
+          tr("Değişim bazen ağırdan gelir; o zaman şöyle dersin:"),
+          de("Es geht langsam, aber es geht."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız:"),
           de("Vieles hat sich verändert."),
           tr("'Çok şey değişti' demek. Zamir yardımcı fiilin hemen arkasında. Lütfen"),
@@ -1360,6 +1378,12 @@ export const deA2B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "riechen" },
+      },
+      {
+        say: [
+          tr("Kokuyla fırın hep yan yana anılır:"),
+          de("Meine Oma hat jeden Sonntag Kuchen gebacken."),
+        ],
       },
       {
         say: [

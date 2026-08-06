@@ -161,12 +161,12 @@ export const deA2B10: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich möchte mich anmelden."),
+          de("Meine Frau möchte sich auch anmelden."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich möchte mich anmelden.",
+          statement: "Meine Frau möchte sich auch anmelden.",
           answer: true,
           why: [
             tr("Doğru. Küçük zamir kip fiilinin hemen arkasına oturmuş ve asıl fiil cümlenin sonunda kalmış; iki kural da yerinde."),
@@ -1071,13 +1071,13 @@ export const deA2B10: Lesson[] = [
         expect: { kind: "repeat", target: "Das ist mein größter Wunsch" },
       },
       {
-        say: [tr("Bir üretim daha: 'Gelecek yıl taşınacağım.' nasıl dersin?")],
+        say: [tr("Bir üretim daha: 'Gelecek yıl daha çok Almanca konuşacağım.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Nächstes Jahr werde ich umziehen",
+          target: "Nächstes Jahr werde ich mehr Deutsch sprechen",
           hint: [
             tr("Zaman ifadesi başta, yardımcı fiil hemen arkasında, asıl fiil en sonda:"),
-            de("Nächstes Jahr werde ich umziehen."),
+            de("Nächstes Jahr werde ich mehr Deutsch sprechen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1206,6 +1206,12 @@ export const deA2B10: Lesson[] = [
       },
       {
         say: [
+          tr("Hayal kurarken ayakları yerde tutan cümle de hazır olsun:"),
+          de("Der Plan muss realistisch sein."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız hem isteği hem sebebi verir:"),
           de("Ich will Lehrerin werden, weil ich gern mit Kindern arbeite."),
           tr(
@@ -1274,15 +1280,15 @@ export const deA2B10: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich will Ärztin werden, weil ich Menschen helfen will."),
+          de("Ich will Lehrer werden, weil ich Kinder mag."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich will Ärztin werden, weil ich Menschen helfen will.",
+          statement: "Ich will Lehrer werden, weil ich Kinder mag.",
           answer: true,
           why: [
-            tr("Doğru. Sebep cümlesindeki iki fiil de sona yığılmış ve doğru sırada: önce mastar, sonra kip fiili."),
+            tr("Doğru. Sebep cümlesinde çekimli fiil en sona gitmiş; ana cümlede ise asıl fiil sonda duruyor."),
           ],
         },
       },
@@ -1381,6 +1387,12 @@ export const deA2B10: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "üblich" },
+      },
+      {
+        say: [
+          tr("Gözlem anlatırken en çok işine yarayacak cümle şu:"),
+          de("Das ist hier so üblich."),
+        ],
       },
       {
         say: [

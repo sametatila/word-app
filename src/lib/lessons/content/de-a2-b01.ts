@@ -555,9 +555,11 @@ export const deA2B01: Lesson[] = [
       },
       {
         say: [
-          tr("Aynı kural bütün ayrılabilenlerde işliyor. Üçünü arka arkaya duy:"),
+          tr("Aynı kural bütün ayrılabilenlerde işliyor. İlki:"),
           de("Ich habe meinen Sohn mitgenommen."),
+          tr("İkincisi:"),
           de("Ich bin bei dir vorbeigekommen."),
+          tr("Ve üçüncüsü:"),
           de("Ich habe das Buch zurückgebracht."),
           tr("Ek her seferinde aynı yere girdi: öneğin hemen arkasına."),
         ],
@@ -576,12 +578,12 @@ export const deA2B01: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe im Supermarkt eingekauft."),
+          de("Ich habe meine Schwester angerufen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe im Supermarkt eingekauft.",
+          statement: "Ich habe meine Schwester angerufen.",
           answer: true,
           why: [
             tr("Doğru. Ek öneğin arkasına, gövdenin önüne girmiş ve hepsi tek kelime yazılmış; kural tam uygulanmış."),
@@ -960,12 +962,12 @@ export const deA2B01: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe verschlafen."),
+          de("Ich habe den Termin vergessen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe verschlafen.",
+          statement: "Ich habe den Termin vergessen.",
           answer: true,
           why: [
             tr("Doğru. Bu önekle başlayan fiiller ortaçta ek almaz, o yüzden ortaç mastarla aynı görünür; cümle kusursuz."),
@@ -1696,12 +1698,12 @@ export const deA2B01: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Zum Glück habe ich alles geschafft."),
+          de("Zum Glück habe ich nichts vergessen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Zum Glück habe ich alles geschafft.",
+          statement: "Zum Glück habe ich nichts vergessen.",
           answer: true,
           why: [
             tr("Doğru. Baştaki ifadeden sonra yardımcı fiil gelmiş, özne üçüncü sıraya düşmüş ve ortaç sonda kalmış."),

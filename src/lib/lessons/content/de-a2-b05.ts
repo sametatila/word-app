@@ -565,8 +565,8 @@ export const deA2B05: Lesson[] = [
       scene:
         "Yolda trafiğe takıldın ve işe geç kalacaksın. Ekip arkadaşını ara, geç kalacağını söyle, sebebini iki farklı bağlaçla anlat ve ne zaman orada olacağını bildir.",
       partner: "sabahları biraz gergin ama anlayışlı bir ekip arkadaşı",
-      opening: "Guten Morgen! Wo bist du denn? Die Schicht hat schon angefangen.",
-      openingTr: "Günaydın! Neredesin? Vardiya çoktan başladı.",
+      opening: "Guten Morgen! Die Schicht hat schon angefangen. Wo bist du denn?",
+      openingTr: "Günaydın! Vardiya çoktan başladı. Neredesin?",
       minTurns: 4,
     },
   },

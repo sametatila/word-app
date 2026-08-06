@@ -653,6 +653,13 @@ export const deA2B04: Lesson[] = [
       },
       {
         say: [
+          tr("Bu fiil duvar işlerinin fiili:"),
+          de("Ich hänge das Bild an die Wand."),
+          tr("Hareket var, o yüzden duvar burada belirtme hâlinde."),
+        ],
+      },
+      {
+        say: [
           tr("Dördüncü kelimemiz:"),
           de("das Regal"),
           tr("Türkçesi 'raf' demek. Lütfen"),
@@ -815,6 +822,13 @@ export const deA2B04: Lesson[] = [
       },
       {
         say: [
+          tr("Fiilin kendisi ayrılabilenlerden:"),
+          de("Wir richten heute das Wohnzimmer ein."),
+          tr("Önek yine cümlenin sonuna düştü."),
+        ],
+      },
+      {
+        say: [
           tr("İkinci kelimemiz:"),
           de("das Bild"),
           tr("Türkçesi 'tablo, resim' demek. Lütfen"),
@@ -917,16 +931,16 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das Bild hängt über dem Sofa."),
+          de("Die Lampe hängt über dem Tisch."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das Bild hängt über dem Sofa.",
+          statement: "Die Lampe hängt über dem Tisch.",
           answer: true,
           why: [
-            tr("Doğru. Tablo asılı duruyor, hareket yok; o yüzden kanepe bu biçimde kaldı:"),
-            de("Das Bild hängt über dem Sofa."),
+            tr("Doğru. Lamba asılı duruyor, hareket yok; o yüzden masa bu biçimde kaldı:"),
+            de("Die Lampe hängt über dem Tisch."),
           ],
         },
       },
@@ -1095,16 +1109,16 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich wohne neben dem Park."),
+          de("Ich wohne neben der Schule."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich wohne neben dem Park.",
+          statement: "Ich wohne neben der Schule.",
           answer: true,
           why: [
-            tr("Doğru. Oturmak bir yer bildirir, hareket değil; o yüzden park bu biçimde kaldı:"),
-            de("Ich wohne neben dem Park."),
+            tr("Doğru. Oturmak bir yer bildirir, hareket değil; o yüzden okul bu biçimde kaldı:"),
+            de("Ich wohne neben der Schule."),
           ],
         },
       },
@@ -1574,6 +1588,12 @@ export const deA2B04: Lesson[] = [
       },
       {
         say: [
+          tr("Bir de ton meselesi var; komşuluk bozulmasın diye şöyle denir:"),
+          de("Der Nachbar ist eigentlich sehr freundlich."),
+        ],
+      },
+      {
+        say: [
           tr("Önce basit hâliyle söyleyelim:"),
           de("Der Lärm stört mich."),
           tr(
@@ -1757,6 +1777,12 @@ export const deA2B04: Lesson[] = [
       },
       {
         say: [
+          tr("İşin sonunda olacak şey de belli:"),
+          de("Der Handwerker repariert die Heizung."),
+        ],
+      },
+      {
+        say: [
           tr("Arızayı bildirirken Almanca 'benim evimde' demez, kısa keser:"),
           de("Bei mir tropft der Wasserhahn."),
           tr(
@@ -1817,16 +1843,16 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Bei mir tropft der Wasserhahn."),
+          de("Bei mir ist die Lampe kaputt."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Bei mir tropft der Wasserhahn.",
+          statement: "Bei mir ist die Lampe kaputt.",
           answer: true,
           why: [
             tr("Doğru. Cümle 'bende' kalıbıyla başladı ve fiil hemen arkasına geçti:"),
-            de("Bei mir tropft der Wasserhahn."),
+            de("Bei mir ist die Lampe kaputt."),
           ],
         },
       },

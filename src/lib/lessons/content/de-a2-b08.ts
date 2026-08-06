@@ -255,6 +255,12 @@ export const deA2B08: Lesson[] = [
       },
       {
         say: [
+          tr("Fiil iş başında şöyle görünür:"),
+          de("Wir planen eine große Party."),
+        ],
+      },
+      {
+        say: [
           tr("İkinci kelimemiz:"),
           de("hoffen"),
           tr("Türkçesi 'ummak' demek. Lütfen"),
@@ -364,12 +370,12 @@ export const deA2B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich hoffe, dass du kommst."),
+          de("Ich hoffe, dass alle Zeit haben."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich hoffe, dass du kommst.",
+          statement: "Ich hoffe, dass alle Zeit haben.",
           answer: true,
           why: [
             tr("Doğru. Virgülden sonra önce özne geliyor, fiil ise cümlenin en sonunda duruyor; yan cümle kuralı tam uygulanmış."),
@@ -481,6 +487,12 @@ export const deA2B08: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "passend" },
+      },
+      {
+        say: [
+          tr("Hediyenin tek ölçüsü şu:"),
+          de("Das Geschenk soll passend sein."),
+        ],
       },
       {
         say: [
@@ -664,6 +676,12 @@ export const deA2B08: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "anstoßen" },
+      },
+      {
+        say: [
+          tr("Kadehler bu fiille kalkar:"),
+          de("Wir stoßen auf das Brautpaar an."),
+        ],
       },
       {
         say: [
@@ -918,12 +936,12 @@ export const deA2B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("An Weihnachten gibt es Geschenke."),
+          de("An Weihnachten gibt es viel Essen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "An Weihnachten gibt es Geschenke.",
+          statement: "An Weihnachten gibt es viel Essen.",
           answer: true,
           why: [
             tr("Doğru. Bayram adı edatla birlikte artikelsiz gelmiş ve 'var' kalıbı donuk biçimini korumuş."),
@@ -1065,7 +1083,8 @@ export const deA2B08: Lesson[] = [
         say: [
           tr("Sebebi söylemek istemiyorsan hazır bir cümle var:"),
           de("Mir ist etwas dazwischengekommen."),
-          tr("Yani 'Araya bir şey girdi.' Kimse ayrıntısını sormaz; bu bir bahane değil, kibar bir kapanıştır."),
+          tr("Yani 'Araya bir şey girdi.' Kimse ayrıntısını sormaz; bu bir bahane değil, kibar bir kapanıştır. Daha resmisi de var:"),
+          de("Ich bin leider verhindert."),
         ],
       },
       {
@@ -1223,6 +1242,12 @@ export const deA2B08: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "sich bedanken" },
+      },
+      {
+        say: [
+          tr("İltifatın işe yaramasının tek şartı var:"),
+          de("Ein Kompliment muss ehrlich sein."),
+        ],
       },
       {
         say: [
@@ -1477,12 +1502,12 @@ export const deA2B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich wollte das nicht."),
+          de("Ich konnte das nicht."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich wollte das nicht.",
+          statement: "Ich konnte das nicht.",
           answer: true,
           why: [
             tr("Doğru. Kip fiilinin geçmişi tek parçadır; ortaç aramaya gerek yok ve olumsuzluk cümlenin sonunda duruyor."),
@@ -1594,6 +1619,12 @@ export const deA2B08: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "das Heimweh" },
+      },
+      {
+        say: [
+          tr("Uzak yaşamanın özeti şu cümle:"),
+          de("Wir sehen uns leider selten."),
+        ],
       },
       {
         say: [
@@ -1861,12 +1892,12 @@ export const deA2B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Nächstes Jahr will ich mehr Sport machen."),
+          de("Nächstes Jahr will ich weniger arbeiten."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Nächstes Jahr will ich mehr Sport machen.",
+          statement: "Nächstes Jahr will ich weniger arbeiten.",
           answer: true,
           why: [
             tr("Doğru. Zaman ifadesi başa geçmiş, kip fiili hemen arkasına gelmiş, özne üçüncü sıraya düşmüş ve asıl fiil sonda kalmış."),
