@@ -30,7 +30,7 @@ export function AuthForm() {
         if (!res.ok) {
           // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
           if (isEmailNotVerified(res)) {
-            router.push(`/eposta-dogrula?email=${encodeURIComponent(email)}&durum=dogrulanmadi`);
+            router.push(`/verify-email?email=${encodeURIComponent(email)}&durum=dogrulanmadi`);
             return;
           }
           setError(translateAuthError(res));
@@ -58,7 +58,7 @@ export function AuthForm() {
         router.push("/learn");
         router.refresh();
       } else {
-        router.push(`/eposta-dogrula?email=${encodeURIComponent(email)}&durum=yeni`);
+        router.push(`/verify-email?email=${encodeURIComponent(email)}&durum=yeni`);
       }
     } finally {
       setBusy(false);
@@ -122,7 +122,7 @@ export function AuthForm() {
 
       {mode === "signin" ? (
         <Link
-          href="/sifremi-unuttum"
+          href="/forgot-password"
           className="muted mt-3 block text-center text-sm underline-offset-4 hover:underline"
         >
           Şifremi unuttum

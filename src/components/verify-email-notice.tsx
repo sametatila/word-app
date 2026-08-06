@@ -59,7 +59,7 @@ export function VerifyEmailNotice({
             : "Kayıt sırasında verdiğin adrese bir doğrulama bağlantısı gönderdik."
       }
       footer={
-        <Link href="/giris" className="underline-offset-4 hover:underline">
+        <Link href="/login" className="underline-offset-4 hover:underline">
           Girişe dön
         </Link>
       }
@@ -97,7 +97,7 @@ export function VerifyEmailNotice({
           </button>
         ) : null}
 
-        <Link href="/giris" className="btn btn-primary w-full px-5 py-3.5">
+        <Link href="/login" className="btn btn-primary w-full px-5 py-3.5">
           Doğruladım, giriş yap
         </Link>
       </div>

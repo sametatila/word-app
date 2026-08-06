@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function CourseSelectPage() {
   const user = await getUserInfo();
-  if (!user) redirect(authEnabled ? "/giris" : "/");
+  if (!user) redirect(authEnabled ? "/login" : "/");
 
   let alreadyChosen = false;
   try {

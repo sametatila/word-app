@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export default async function LessonPage({ params }: { params: Promise<{ id: string }> }) {
   const userId = await getUserId();
-  if (!userId) redirect("/giris");
+  if (!userId) redirect("/login");
   const { id } = await params;
   const lesson = findLesson(id);
   if (!lesson) notFound();

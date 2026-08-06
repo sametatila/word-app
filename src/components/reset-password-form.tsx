@@ -31,7 +31,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
       return;
     }
     setDone(true);
-    setTimeout(() => router.push("/giris"), 1800);
+    setTimeout(() => router.push("/login"), 1800);
   }
 
   if (!token) {
@@ -40,12 +40,12 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
         title="Bağlantı geçersiz"
         subtitle="Sıfırlama bağlantısı eksik ya da süresi dolmuş."
         footer={
-          <Link href="/giris" className="underline-offset-4 hover:underline">
+          <Link href="/login" className="underline-offset-4 hover:underline">
             Girişe dön
           </Link>
         }
       >
-        <Link href="/sifremi-unuttum" className="btn btn-primary w-full px-5 py-3.5">
+        <Link href="/forgot-password" className="btn btn-primary w-full px-5 py-3.5">
           Yeni bağlantı iste
         </Link>
       </AuthShell>
@@ -57,7 +57,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
       title="Yeni parola belirle"
       subtitle={done ? undefined : "En az 8 karakter olsun."}
       footer={
-        <Link href="/giris" className="underline-offset-4 hover:underline">
+        <Link href="/login" className="underline-offset-4 hover:underline">
           Girişe dön
         </Link>
       }

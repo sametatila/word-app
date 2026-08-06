@@ -536,7 +536,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       title: "Oturumun sona ermiş",
       body: "Güvenlik için oturumun kapandı. İlerlemen kayıtlı — tekrar giriş yaptığında kaldığın yerden devam edersin.",
       action: (
-        <Link href="/giris" className="btn btn-primary mt-5 w-full px-5 py-3.5">
+        <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-3.5">
           Giriş yap
         </Link>
       ),

@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function LessonsPage() {
   const userId = await getUserId();
-  if (!userId) redirect("/giris");
+  if (!userId) redirect("/login");
   const profile = await ensureProfile(userId);
 
   const board = await lessonBoard(userId, profile.course);

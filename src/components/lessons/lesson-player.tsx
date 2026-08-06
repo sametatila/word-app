@@ -43,7 +43,9 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [listening, setListening] = useState(false);
-  const [handsFree, setHandsFree] = useState(false);
+  const [handsFree, setHandsFree] = useState(true);
+  /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
+  const [typing, setTyping] = useState(false);
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
 
@@ -82,11 +84,19 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     prefetchGerman(lesson.roleplay.opening);
   }, [lesson]);
 
+  /**
+   * Eller serbest döngü **açık** başlıyor.
+   *
+   * Rol yapma konuşma tabanlı olduğu için doğal akış şu: model konuşur,
+   * bitince mikrofon kendiliğinden açılır, öğrenci cevap verir. Bunu isteğe
+   * bağlı bir seçenek yapmak, varsayılan deneyimi yazışmaya geri döndürüyordu.
+   * Kapatan kullanıcının tercihi hatırlanıyor; hiç dokunmayan için açık.
+   */
   useEffect(() => {
     try {
-      setHandsFree(localStorage.getItem(HANDSFREE_KEY) === "1");
+      setHandsFree(localStorage.getItem(HANDSFREE_KEY) !== "0");
     } catch {
-      /* depolama kapalı */
+      setHandsFree(true);
     }
   }, []);
 
@@ -220,6 +230,11 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       setListening(false);
     }
   }, [lesson.course]);
+
+  function stopListening() {
+    recognition.current?.stop();
+    setListening(false);
+  }
 
   async function toggleHandsFree() {
     const next = !handsFree;
@@ -442,43 +457,87 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
               </div>
             ) : null}
 
-            <div
-              className="flex shrink-0 items-end gap-2 border-t p-3"
-              style={{ borderColor: "var(--border)" }}
-            >
-              <textarea
-                ref={input}
-                value={draft}
-                onChange={(e) => setDraft(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    void send(draft);
-                  }
-                }}
-                rows={1}
-                placeholder="Almanca yaz ya da konuş…"
-                className="input max-h-28 flex-1 resize-none py-2 text-sm"
-              />
+            {/* Konuşma tabanlı giriş.
+                Burası önce bir yazışma kutusuydu ve dersin amacına aykırıydı:
+                rol yapmanın işi konuşturmak, yazdırmak değil. Yazarak cevap
+                veren öğrenci telaffuzunu hiç denemiyor, düşünme süresi
+                gerçek konuşmadakinden uzun oluyor ve kurduğu cümleyi gözüyle
+                kontrol ediyor — konuşurken hiçbiri olmuyor.
+
+                Mikrofon tek ve büyük: ekrandaki asıl eylem o. Yazmak yalnızca
+                tanıyıcı yoksa ya da kullanıcı açıkça isterse görünüyor. */}
+            <div className="shrink-0 border-t p-4" style={{ borderColor: "var(--border)" }}>
               {asrAvailable ? (
-                <button
-                  type="button"
-                  onClick={() => void listen()}
-                  aria-label="Konuş"
-                  className="btn btn-ghost h-10 w-10 shrink-0"
-                  style={{ color: listening ? "var(--color-rose-500)" : undefined }}
-                >
-                  <SpeakerIcon size={16} />
-                </button>
+                <div className="flex flex-col items-center gap-2">
+                  <motion.button
+                    type="button"
+                    whileTap={{ scale: 0.94 }}
+                    onClick={() => (listening ? stopListening() : void listen(true))}
+                    disabled={busy}
+                    aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
+                    className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-50"
+                    style={{
+                      background: listening
+                        ? "var(--color-rose-500)"
+                        : "var(--color-brand-500)",
+                    }}
+                  >
+                    <motion.span
+                      animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
+                      transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
+                    >
+                      <SpeakerIcon size={24} />
+                    </motion.span>
+                  </motion.button>
+                  <p className="muted text-xs">
+                    {busy
+                      ? "Cevap geliyor…"
+                      : listening
+                        ? "Dinliyorum — bitince dokun"
+                        : "Konuşmak için dokun"}
+                  </p>
+                  {/* Yazmak kapalı değil ama öne çıkmıyor: takılan öğrencinin
+                      çıkışı olmalı, varsayılan yolu değil. */}
+                  <button
+                    type="button"
+                    onClick={() => setTyping((v) => !v)}
+                    className="btn btn-ghost px-3 py-1 text-xs"
+                  >
+                    {typing ? "Yazmayı kapat" : "Yazarak cevapla"}
+                  </button>
+                </div>
+              ) : (
+                <p className="muted mb-2 text-center text-xs">
+                  Bu tarayıcı konuşma tanımayı desteklemiyor; yazarak devam et.
+                </p>
+              )}
+
+              {typing || !asrAvailable ? (
+                <div className="mt-3 flex items-end gap-2">
+                  <textarea
+                    ref={input}
+                    value={draft}
+                    onChange={(e) => setDraft(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        void send(draft);
+                      }
+                    }}
+                    rows={1}
+                    placeholder="Almanca yaz…"
+                    className="input max-h-28 flex-1 resize-none py-2 text-sm"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => void send(draft)}
+                    disabled={busy || !draft.trim()}
+                    className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
+                  >
+                    Gönder
+                  </button>
+                </div>
               ) : null}
-              <button
-                type="button"
-                onClick={() => void send(draft)}
-                disabled={busy || !draft.trim()}
-                className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
-              >
-                Gönder
-              </button>
             </div>
 
             <div className="shrink-0 border-t p-3" style={{ borderColor: "var(--border)" }}>
@@ -568,7 +627,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
               ) : null}
               <button
                 type="button"
-                onClick={() => router.push("/dersler")}
+                onClick={() => router.push("/lessons")}
                 className={`btn flex-1 py-3 text-sm ${roleplayDone ? "btn-primary" : "btn-ghost"}`}
               >
                 Derslere dön

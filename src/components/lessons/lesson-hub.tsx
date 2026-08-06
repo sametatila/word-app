@@ -68,7 +68,7 @@ export function LessonHub({
       ) : null}
 
       {next ? (
-        <Link href={`/dersler/${next}`} className="block">
+        <Link href={`/lessons/${next}`} className="block">
           <motion.div
             whileTap={{ scale: 0.99 }}
             className="brand-gradient flex items-center gap-3 rounded-2xl px-4 py-4 text-white"
@@ -104,7 +104,7 @@ function Group({ title, cards, muted }: { title: string; cards: HubCard[]; muted
       <h2 className="muted mb-2 text-xs font-bold uppercase tracking-wide">{title}</h2>
       <div className="grid gap-2">
         {cards.map((c) => (
-          <Link key={c.lesson.id} href={`/dersler/${c.lesson.id}`} className="block">
+          <Link key={c.lesson.id} href={`/lessons/${c.lesson.id}`} className="block">
             <div
               className="flex items-center gap-3 rounded-2xl px-4 py-3.5"
               style={{

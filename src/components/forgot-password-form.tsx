@@ -19,7 +19,7 @@ export function ForgotPasswordForm() {
     setError(null);
     const res = await authApi("request-password-reset", {
       email,
-      redirectTo: `${window.location.origin}/sifre-sifirla`,
+      redirectTo: `${window.location.origin}/reset-password`,
     });
     setBusy(false);
     if (!res.ok) {
@@ -38,7 +38,7 @@ export function ForgotPasswordForm() {
           : "E-posta adresini gir, sana sıfırlama bağlantısı gönderelim."
       }
       footer={
-        <Link href="/giris" className="underline-offset-4 hover:underline">
+        <Link href="/login" className="underline-offset-4 hover:underline">
           Girişe dön
         </Link>
       }

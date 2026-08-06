@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await getUserInfo();
-  if (!user) redirect(authEnabled ? "/giris" : "/");
+  if (!user) redirect(authEnabled ? "/login" : "/");
 
   let streak = 0;
   let xp = 0;
@@ -26,7 +26,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     // Veritabanı henüz kurulmadıysa arayüz yine de açılsın.
     console.error("[layout] profil okunamadı", err);
   }
-  if (needsOnboarding) redirect("/kurs-sec");
+  if (needsOnboarding) redirect("/setup");
 
   return (
     <AppShell streak={streak} xp={xp} course={course} voice={voice}>
