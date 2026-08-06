@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { speakThen } from "@/components/speak-button";
+import { prefetchGerman, speakThen } from "@/components/speak-button";
 
 /** İki okuma arasındaki nefes payı. */
 const GAP_MS = 350;
@@ -23,7 +23,11 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
-  }, [round.id]);
+    // Doğru cümlenin sesi tur açılırken iniyor. Hangi şıkkın seçileceği belli
+    // değil ama doğru cümle her hâlükârda okunuyor; önden indirmek dokunuşla
+    // sesin başlaması arasındaki boşluğu kapatıyor.
+    prefetchGerman(`${before}${answer}${after}`.trim());
+  }, [round.id, before, after, answer]);
 
   const correct = picked === answer;
 

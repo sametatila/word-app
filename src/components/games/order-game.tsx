@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman, speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -36,6 +36,12 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   const started = useRef(Date.now());
   const resolved = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cümle tamamlanınca doğru hâli okunuyor ve o metin baştan belli; en uzun
+  // ses bu oyunda olduğu için önden indirmenin kazancı da en çok burada.
+  useEffect(() => {
+    prefetchGerman([...answer, tail].filter(Boolean).join(" "));
+  }, [answer, tail]);
   const onDoneRef = useRef(onDone);
 
   useEffect(() => {

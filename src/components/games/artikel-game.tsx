@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { speakThen } from "@/components/speak-button";
+import { prefetchGerman, speakThen } from "@/components/speak-button";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
 
@@ -26,7 +26,9 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
-  }, [round.id]);
+    // Seçimden sonra okunacak metin belli: doğru artikelli kelime.
+    prefetchGerman(`${answer} ${word.de}`);
+  }, [round.id, answer, word.de]);
 
   function choose(opt: string) {
     if (picked) return;

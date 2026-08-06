@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { speakGerman, speakThen } from "@/components/speak-button";
+import { prefetchGerman, speakGerman, speakThen } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
@@ -26,10 +26,14 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // Soru Almancaysa hemen okunuyor: öğrenci anlamı ararken kelimeyi de
     // duyuyor. Soru Türkçeyse okunacak bir şey yok — Almanca olan cevap
     // şıklarında ve o, seçim yapılınca okunuyor.
-    if (!deSide) return;
+    if (!deSide) {
+      // Bu yönde Almanca olan taraf cevap; seçimden sonra o okunacak.
+      prefetchGerman(answer);
+      return;
+    }
     const s = setTimeout(() => speakGerman(question), 350);
     return () => clearTimeout(s);
-  }, [round.id, deSide, question]);
+  }, [round.id, deSide, question, answer]);
 
   function choose(opt: string) {
     if (picked) return;

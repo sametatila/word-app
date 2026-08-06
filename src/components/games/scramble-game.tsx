@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import { shuffle, normalize, withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { speakThen } from "@/components/speak-button";
+import { prefetchGerman, speakThen } from "@/components/speak-button";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -45,6 +45,9 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   useEffect(() => {
     setPool(makePool(round.word.de));
+    // Tamamlanınca okunacak metin belli; önden indirilirse dokunuşla ses
+    // arasında boşluk kalmıyor.
+    prefetchGerman(withArtikel(round.word));
     setPlaced([]);
     setStatus("playing");
     setHintUsed(false);

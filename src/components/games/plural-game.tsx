@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman, speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
 
 type PluralRound = Extract<Round, { game: "plural" }>;
 
@@ -34,8 +34,10 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // sesten hatırlıyor. Düğmeye basmayı beklemek o ipucunu geciktiriyordu.
     // Küçük gecikme kart yerine otururken sesin başlamaması için.
     const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
+    // Seçimden sonra okunacak doğru çoğul da önden iniyor.
+    prefetchGerman(`die ${answer}`);
     return () => clearTimeout(s);
-  }, [round.id]);
+  }, [round.id, answer]);
 
   function choose(option: string) {
     if (picked) return;

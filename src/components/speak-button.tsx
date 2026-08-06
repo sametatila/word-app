@@ -200,13 +200,20 @@ function play(
   audio.pause();
   audio.onended = finish;
   audio.onerror = fallback;
-  // Süre ancak üstveri inince biliniyor. Geçiş çizgisinin gerçek uzunlukta
-  // olmasını sağlayan tek yer burası; tahmin edilen sabit süreler ya erken
-  // doluyor (kullanıcı boşuna bekliyor) ya da geç.
-  audio.onloadedmetadata = () => {
-    if (onDuration && Number.isFinite(audio.duration) && audio.duration > 0) {
-      onDuration(Math.round(audio.duration * 1000));
-    }
+  // Süre, ses ÇALMAYA BAŞLADIĞI anda bildiriliyor — üstveri indiği anda değil.
+  //
+  // Fark önemli: üstveri ile çalmanın başlaması arasında tamponlama süresi
+  // var. Çizgiyi üstveride başlatmak onu sesten önce bitiriyor ve kullanıcı
+  // dolu bir çizgiye bakarak bekliyor. Bu, tam olarak "loading bitti ama hâlâ
+  // bekliyor" şikâyetinin sebebiydi.
+  //
+  // Kalan süre `duration - currentTime` ile hesaplanıyor: `playing` olayı
+  // duraklatma sonrası da geldiği için baştan başladığı varsayılamaz.
+  audio.onplaying = () => {
+    if (!onDuration) return;
+    const total = audio.duration;
+    if (!Number.isFinite(total) || total <= 0) return;
+    onDuration(Math.round((total - audio.currentTime) * 1000));
   };
   audio.src = `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${slow ? "&r=slow" : ""}`;
   audio.currentTime = 0;
