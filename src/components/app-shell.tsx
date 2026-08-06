@@ -166,11 +166,17 @@ export function AppShell({
 
               Yükseklik gezinmenin GERÇEK yüksekliğinden: sabit bir değer,
               cihazın alt güvenli alanı ve kullanıcının yazı tipi ölçeği
-              yüzünden bazı telefonlarda az, bazılarında fazla kalıyordu. */}
+              yüzünden bazı telefonlarda az, bazılarında fazla kalıyordu.
+
+              Üstüne bir nefes payı ekleniyor. Yalnızca gezinme yüksekliği
+              kadar boşluk bırakmak içeriği tam gezinmeye DEĞDİRİYOR: son kart
+              çubuğa yapışık duruyor ve sayfa bitmemiş gibi görünüyor. Pay
+              sayfanın yatay boşluğuyla aynı (`px-4`), böylece alt kenar diğer
+              üç kenarla aynı ritmi tutuyor. */}
           <div
             aria-hidden
             className="shrink-0 md:hidden"
-            style={{ height: "var(--nav-h, 6rem)" }}
+            style={{ height: "calc(var(--nav-h, 6rem) + 1rem)" }}
           />
         </main>
 
