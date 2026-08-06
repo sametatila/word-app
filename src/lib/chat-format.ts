@@ -62,6 +62,33 @@ function isSectionHeader(line: string): boolean {
   return bare === bare.toLocaleUpperCase("tr-TR") && /[A-ZÇĞİÖŞÜ]/.test(bare);
 }
 
+/**
+ * Yalnızca büyük/küçük harf ya da noktalama farkı taşıyan düzeltmeler.
+ *
+ * Öğrenci konuşarak cevap veriyor ve tanıyıcı metni büyük harf ve noktalama
+ * olmadan döndürüyor: „ich arbeite auch“. Bunu „Ich arbeite auch.“ diye
+ * düzeltmek öğrencinin YAPMADIĞI bir hatayı ona yüklemek oluyor — söylediği
+ * cümlede öyle bir hata yok, yazıya dökülürken oluşmuş bir fark var. Sesli
+ * konuşurken imla düzeltmesi almak dersin güvenilirliğini düşürüyor.
+ *
+ * İstemde „bunu yapma“ demek yardımcı oluyor ama garanti değil. Burada
+ * süzmek kesin: iki tarafı harf ve sayı olarak aynı olan satır hiç
+ * gösterilmiyor.
+ */
+function isCosmetic(correction: string): boolean {
+  const parts = correction.split(/→|->/);
+  if (parts.length < 2) return false;
+  // Sağ taraftaki kural etiketi „(V2-Regel)“ karşılaştırmaya girmemeli.
+  const bare = (t: string) =>
+    t
+      .replace(/\([^)]*\)\s*$/, "")
+      .toLocaleLowerCase("de-DE")
+      .replace(/[^\p{L}\p{N}]+/gu, "");
+  const left = bare(parts[0]);
+  const right = bare(parts.slice(1).join("→"));
+  return left.length > 0 && left === right;
+}
+
 export function parseReply(text: string): ParsedReply {
   const body: string[] = [];
   const corrections: string[] = [];
@@ -71,7 +98,7 @@ export function parseReply(text: string): ParsedReply {
     const trimmed = line.trim();
     if (trimmed.startsWith(CORRECTION_MARK)) {
       const value = stripEmphasis(trimmed.slice(CORRECTION_MARK.length).trim());
-      if (value) corrections.push(value);
+      if (value && !isCosmetic(value)) corrections.push(value);
     } else if (trimmed.startsWith(SUGGESTION_MARK)) {
       // Model bazen öneriyi tırnak içine alıyor ya da numaralandırıyor;
       // düğmeye basılacak metin bunlardan arınmış olmalı.
