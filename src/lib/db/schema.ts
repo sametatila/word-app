@@ -224,3 +224,40 @@ export const userLessons = pgTable(
   },
   (t) => [primaryKey({ columns: [t.userId, t.lessonId] })],
 );
+
+/**
+ * Rol yapma turlarının metin kaydı — geliştirme amaçlı, süre sınırlı.
+ *
+ * Neden var: konuşma kalitesindeki sorunlar ancak gerçek konuşmaya bakarak
+ * anlaşılıyor. Modelin kendini tekrar edip konuşmayı döngüye sokması ölçüm
+ * senaryolarında görünmüyor çünkü o senaryolar sekiz turda bitiyor; gerçek
+ * kullanıcı daha uzun konuşuyor ve örüntü orada çıkıyor.
+ *
+ * Neyin saklandığı bilinçli olarak dar:
+ *   - Öğrencinin **metne dökülmüş** cevabı. Ses kaydı YOK; tanıyıcı zaten
+ *     tarayıcıda çalışıyor ve ses hiçbir zaman sunucuya gelmiyor.
+ *   - Modelin cevabı, düzeltme ve öneri satırlarıyla birlikte.
+ *   - Hangi ders ve hangi tur.
+ *
+ * `expiresAt` her satırda duruyor ve yazarken hesaplanıyor: kayıt kalıcı bir
+ * birikim değil, geçici bir teşhis penceresi. Süresi geçenler her yazmada
+ * temizleniyor, yani ayrı bir zamanlanmış işe gerek yok.
+ */
+export const roleplayLogs = pgTable(
+  "roleplay_logs",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    lessonId: text("lesson_id").notNull(),
+    /** Konuşmanın kaçıncı turu — döngü aramak için sıra gerekiyor. */
+    turn: integer("turn").notNull(),
+    /** Öğrencinin söylediği (metne dökülmüş hâli). */
+    said: text("said").notNull(),
+    /** Modelin cevabı — ham, işaret satırları dâhil. */
+    reply: text("reply").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    /** Bu tarihten sonra silinir. */
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  },
+  (t) => [index("roleplay_logs_user_idx").on(t.userId, t.createdAt)],
+);

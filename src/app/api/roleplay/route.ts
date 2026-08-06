@@ -4,6 +4,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
 import { streamRoleplay, type RoleplayTurn } from "@/lib/lessons/roleplay";
+import { logRoleplayTurn } from "@/lib/lessons/log";
 
 export const dynamic = "force-dynamic";
 
@@ -48,10 +49,18 @@ export async function POST(req: Request) {
 
   try {
     const encoder = new TextEncoder();
+    // Öğrencinin son sözü ve modelin cevabı geçici olarak kaydediliyor
+    // (bkz. lib/lessons/log.ts). Kayıt akışın SONUNDA yazılıyor: akıtırken
+    // veritabanına gitmek cevabı geciktirirdi.
+    const said = messages[messages.length - 1].content;
+    const turn = messages.filter((m) => m.role === "user").length;
+    let full = "";
+
     const stream = new ReadableStream<Uint8Array>({
       async start(controller) {
         try {
           for await (const delta of streamRoleplay(lesson, messages)) {
+            full += delta;
             controller.enqueue(encoder.encode(delta));
           }
         } catch (err) {
@@ -61,6 +70,7 @@ export async function POST(req: Request) {
           controller.enqueue(encoder.encode("\n\n[Bağlantı koptu — tekrar dener misin?]"));
         } finally {
           controller.close();
+          if (full.trim()) void logRoleplayTurn(userId, lesson.id, turn, said, full);
         }
       },
     });
