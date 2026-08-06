@@ -42,6 +42,41 @@ const HANDSFREE_KEY = "wortspiel-lesson-handsfree";
  */
 const SILENCE_MS = 12000;
 
+/**
+ * Yarım kalan dersin cihazda saklanması.
+ *
+ * Ders üç bölümlü (kural → alıştırma → rol yapma) ve rol yapma en uzun
+ * bölüm. Öğrenci konuşmanın ortasında çıkarsa geri döndüğünde kuraldan
+ * başlıyordu: dört alıştırmayı yeniden yapmak, aynı açılış replikini yeniden
+ * dinlemek ve konuşmayı sıfırdan kurmak gerekiyordu. Bir dersi yarıda
+ * bırakmanın bedeli, dersin tamamını yeniden yapmak oluyordu.
+ *
+ * Sunucuda değil cihazda tutuluyor: yarım bir konuşmanın turları kalıcı bir
+ * kayıt değil ve her turda sunucuya yazmak konuşmanın akışına bir bekleme
+ * daha eklerdi. Bunun bedeli açık — başka cihazda devam edilemiyor.
+ *
+ * Süresi geçen kayıt yok sayılıyor: iki hafta önce yarım bırakılmış bir
+ * konuşmanın ortasına düşmek, baştan başlamaktan daha kafa karıştırıcı olur.
+ */
+const RESUME_KEY = "wortspiel-lesson-progress";
+const RESUME_DAYS = 3;
+
+type Saved = { phase: Phase; checkIndex: number; correctCount: number; turns: Turn[]; at: number };
+
+function readSaved(lessonId: string): Saved | null {
+  try {
+    const raw = localStorage.getItem(`${RESUME_KEY}:${lessonId}`);
+    if (!raw) return null;
+    const v = JSON.parse(raw) as Saved;
+    if (!v || typeof v.at !== "number") return null;
+    if (Date.now() - v.at > RESUME_DAYS * 86400000) return null;
+    if (v.phase !== "checks" && v.phase !== "roleplay") return null;
+    return v;
+  } catch {
+    return null;
+  }
+}
+
 export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("rule");
@@ -64,6 +99,45 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const [typing, setTyping] = useState(false);
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
+  /** Yarım kalan dersten devam edildi mi — kullanıcıya bir kez söyleniyor. */
+  const [resumed, setResumed] = useState(false);
+
+  /**
+   * İlk çizimde kayıt okunmuyor: sunucu ile tarayıcının farklı şey çizmesi
+   * hidrasyonu bozar. Kayıt yüklenene kadar bölüm "rule" kalıyor ve yükleme
+   * bittiğinde yerine geçiyor.
+   */
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const v = readSaved(lesson.id);
+    // Bayrak bir ref değil durum olmak ZORUNDA. Ref olsaydı aynı etki
+    // turunda kaydetme etkisi de çalışır ve `phase` henüz "rule" olduğu için
+    // kaydı SİLERDİ; ancak bir sonraki çizimde geri yazıldığı için tesadüfen
+    // işliyordu. Durum olunca kaydetme ancak geri yükleme uygulandıktan
+    // sonraki çizimde başlıyor.
+    setReady(true);
+    if (!v) return;
+    setCheckIndex(v.checkIndex);
+    setCorrectCount(v.correctCount);
+    setTurns(v.turns);
+    setPhase(v.phase);
+    setResumed(true);
+  }, [lesson.id]);
+
+  // Yazma sırasında kayıt yapılmıyor: taslak metin dersin ilerlemesi değil.
+  useEffect(() => {
+    if (!ready) return;
+    try {
+      if (phase === "rule" || phase === "summary") {
+        localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
+        return;
+      }
+      const v: Saved = { phase, checkIndex, correctCount, turns, at: Date.now() };
+      localStorage.setItem(`${RESUME_KEY}:${lesson.id}`, JSON.stringify(v));
+    } catch {
+      /* depolama kapalıysa devam etme özelliği yok sayılıyor */
+    }
+  }, [ready, lesson.id, phase, checkIndex, correctCount, turns]);
 
   const ttsAvailable = useSpeechAvailable();
   const [asrAvailable, setAsrAvailable] = useState(false);
@@ -351,6 +425,51 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   return (
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4">
       <Steps phase={phase} />
+
+      {/* Devam edildiği söyleniyor: kullanıcı dersin ortasına düştüğünde
+          nerede olduğunu anlamalı. Kapatılabiliyor — bilgi bir kez gerekli,
+          sonra yer kaplıyor. */}
+      {resumed && phase !== "summary" ? (
+        <div
+          className="flex items-center gap-2 rounded-xl px-3 py-2 text-xs"
+          style={{ background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)" }}
+        >
+          <span className="flex-1" style={{ color: "var(--color-brand-500)" }}>
+            {phase === "roleplay"
+              ? "Konuşmaya kaldığın yerden devam ediyorsun."
+              : "Alıştırmalara kaldığın yerden devam ediyorsun."}
+          </span>
+          <button
+            type="button"
+            onClick={() => setResumed(false)}
+            aria-label="Kapat"
+            className="muted shrink-0"
+          >
+            <XIcon size={14} />
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              // Baştan başlamak da bir seçenek olmalı: devam etmek varsayılan,
+              // dayatma değil.
+              try {
+                localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
+              } catch {
+                /* yoksay */
+              }
+              setResumed(false);
+              setTurns([]);
+              setCheckIndex(0);
+              setCorrectCount(0);
+              setPicked(null);
+              setPhase("rule");
+            }}
+            className="btn btn-ghost shrink-0 px-2 py-0.5 text-xs"
+          >
+            Baştan başla
+          </button>
+        </div>
+      ) : null}
 
       <AnimatePresence mode="wait">
         {phase === "rule" ? (
