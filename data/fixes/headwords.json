@@ -2171,9 +2171,173 @@
   "tr": "sapmak, yoldan çekilmek (çarpmamak için)",
   "not": "B2 çeviri gözden geçirmesi: örnek cümlede bisikletli yayaya çarpmamak için yön değiştiriyor; ilk sıradaki 'kaçınmak' vermeiden ile karışıyor"
  },
+ "3467": {
+  "tr": "yöntem, metodoloji",
+  "not": "C1 çeviri gözden geçirmesi: Methodik bir çalışmanın izlediği yöntemdir; 'yöntembilim' Methodologie'nin karşılığıdır ve örnek cümlede çalışmanın yöntemi eleştirilmektedir"
+ },
+ "3475": {
+  "tr": "önem, konuyla ilgililik",
+  "not": "C1 çeviri gözden geçirmesi: 'ilgi düzeyi' Türkçede kullanılmayan bir kalıptır; Relevanz bir şeyin konuyla ilgili ve önemli olmasıdır"
+ },
+ "3485": {
+  "tr": "öncül, ön kabul",
+  "not": "C1 çeviri gözden geçirmesi: Prämisse mantıkta 'öncül'dür; 'önerme' Aussage/Satz karşılığıdır ve çıkarımın dayandığı kabulü anlatmaz"
+ },
+ "3487": {
+  "tr": "korelasyon, ilinti",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra: Türkçede istatistik bağlamında yaygın kullanım 'korelasyon'dur, 'ilinti' neredeyse hiç kullanılmaz"
+ },
+ "3503": {
+  "tr": "örneklerle açıklamak, gözler önüne sermek",
+  "not": "C1 çeviri gözden geçirmesi: veranschaulichen örnek ya da görselle anlaşılır kılmaktır; 'somutlaştırmak' konkretisieren (3517) ile birebir karışıyor"
+ },
+ "3505": {
+  "tr": "kanıtlamak, belgelemek",
+  "not": "C1 çeviri gözden geçirmesi: 'tevsik etmek' bugün kimsenin kullanmadığı eskimiş bir sözcüktür, doğal karşılığı 'belgelemek'tir"
+ },
+ "3518": {
+  "tr": "kuşkuyla karşılamak, sorgulamak",
+  "not": "C1 çeviri gözden geçirmesi: anzweifeln geçişlidir ve bir şeyin doğruluğunu tartışmaya açmaktır; 'şüphe duymak' geçişsizdir ve örnek cümledeki 'die Aussagekraft anzweifeln' kullanımına oturmuyor"
+ },
+ "3524": {
+  "tr": "hele ki, özellikle de (çünkü)",
+  "not": "C1 çeviri gözden geçirmesi: zumal nedensel bir bağlaçtır; yalnız 'özellikle, hele' verilince örnek cümledeki 'çünkü büyük bir örnekleme dayanıyor' anlamı kayboluyor"
+ },
+ "3533": {
+  "tr": "ampirik, gözleme dayalı",
+  "not": "C1 çeviri gözden geçirmesi: 'deneysel' experimentell'in karşılığıdır; empirisch deneye değil gözlem ve saha verisine dayanmayı anlatır"
+ },
+ "3534": {
+  "tr": "varsayılan, tahmin edilen",
+  "not": "C1 çeviri gözden geçirmesi: 'sözde' angeblich'in karşılığıdır ve olumsuz ima taşır; mutmaßlich yalnızca 'olduğu tahmin edilen' demektir"
+ },
+ "3538": {
+  "tr": "karar (mahkeme, kurul)",
+  "not": "C1 çeviri gözden geçirmesi: Beschluss mahkeme ya da kurulun resmi kararıdır, günlük 'karar' anlamındaki Entscheidung'dan bu yönüyle ayrılır (aynı anlam: die Entscheidung)"
+ },
+ "3543": {
+  "tr": "sorumluluk (hukuki, mali)",
+  "not": "C1 çeviri gözden geçirmesi: Haftung tazmin yükümlülüğüdür; ayrım konmazsa ahlaki sorumluluk anlamındaki Verantwortung ile karışıyor (aynı anlam: die Verantwortung)"
+ },
+ "3544": {
+  "tr": "vekalet, vekaletname",
+  "not": "C1 çeviri gözden geçirmesi: Vollmacht önce verilen temsil yetkisidir; 'vekaletname' belgenin adıdır ve 'Vollmacht erteilen' örneğinde yetki verme anlamı öne çıkar"
+ },
+ "3549": {
+  "tr": "suçlama, kamu davası",
+  "not": "C1 çeviri gözden geçirmesi: Anklage savcılığın suçlamasıdır; 'iddianame' Anklageschrift yani belgenin karşılığıdır"
+ },
+ "3551": {
+  "tr": "itiraz etmek, iptalini istemek",
+  "not": "C1 çeviri gözden geçirmesi: anfechten bir işlemin geçerliliğine karşı çıkmaktır; 'dava etmek' verklagen'in karşılığıdır ve yanlış yönlendirir"
+ },
+ "3553": {
+  "tr": "genelge, kararname",
+  "not": "C1 çeviri gözden geçirmesi: 'yönetmelik' Verordnung'un (3554) karşılığıdır; Erlass bakanlık/idare genelgesi ya da kararnamesidir"
+ },
+ "3561": {
+  "tr": "idari denetim (amirin memur üzerindeki)",
+  "not": "C1 çeviri gözden geçirmesi: 'hizmet denetimi' birebir çeviri kokan, Türk idare dilinde karşılığı olmayan bir kalıptır"
+ },
+ "3576": {
+  "tr": "şekle bağlı olmayan, biçim şartı aranmayan",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra ve anlam: formlos 'resmi olmayan' (inoffiziell) değil, biçim şartına tabi olmayan demektir; örnekteki 'formloser Antrag' resmi bir başvurudur"
+ },
+ "3591": {
+  "tr": "mali, maliyeye ilişkin",
+  "not": "C1 çeviri gözden geçirmesi: 'fiskal' Türkçede kullanılan bir sıfat değil; fiskalische Disziplin 'mali disiplin' olarak söylenir"
+ },
+ "3596": {
+  "tr": "birlik, meslek örgütü",
+  "not": "C1 çeviri gözden geçirmesi: Verband bir çatı örgüt/birliktir (Branchenverband = sektör birliği); 'dernek' Verein'in karşılığı olduğu için başa konması yanıltıcı"
+ },
+ "3598": {
+  "tr": "mütevelli heyeti, yönetim kurulu",
+  "not": "C1 çeviri gözden geçirmesi: Kuratorium'un karşılığı doğrudan 'mütevelli heyeti'dir; başta duran genel 'kurul' Gremium ile karışıyor"
+ },
+ "3601": {
+  "tr": "makam sahibi, görevdeki kişi",
+  "not": "C1 çeviri gözden geçirmesi: 'görev sahibi' Türkçede kullanılmıyor; Amtsinhaber bir makamı hâlihazırda elinde tutan kişidir"
+ },
+ "3608": {
+  "tr": "avangart, öncü sanat akımı",
+  "not": "C1 çeviri gözden geçirmesi: sıfat avantgardistisch ile tr birebir aynıydı; ayrıca Türkçe yazımı TDK'ya göre 'avangart' (aynı anlam: avantgardistisch)"
+ },
+ "3629": {
+  "tr": "diyalektik (yöntem, öğreti)",
+  "not": "C1 çeviri gözden geçirmesi: sıfat dialektisch ile tr birebir aynıydı, isim olduğu parantezle ayrıldı (aynı anlam: dialektisch)"
+ },
+ "3640": {
+  "tr": "kalıntı, geçmişten kalma şey",
+  "not": "C1 çeviri gözden geçirmesi: 'miras' Erbe/Vermächtnis'in karşılığıdır; Relikt geride kalmış, çağı geçmiş bir artıktır"
+ },
+ "3641": {
+  "tr": "aktarım, sözlü gelenek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümledeki mündliche Überlieferung 'sözlü aktarım/gelenek'tir; başta duran 'rivayet' söylenti çağrıştırıyor"
+ },
+ "3654": {
+  "tr": "stilize etmek, üsluplaştırmak",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede yaygın kullanım 'stilize etmek'tir, 'üsluplaştırmak' sözlükte kalan seyrek biçim; sıra ters"
+ },
+ "3656": {
+  "tr": "algılamak, alımlamak (bir eseri)",
+  "not": "C1 çeviri gözden geçirmesi: rezipieren bir eseri alımlamak/algılamaktır; 'özümsemek' içselleştirme anlamıyla daha güçlü ve yanıltıcı"
+ },
+ "3660": {
+  "tr": "eskimeyen, çağlar üstü",
+  "not": "C1 çeviri gözden geçirmesi: Türkçe 'zamansız' vakitsiz/erken demektir (zamansız ölüm); zeitlos ise çağını aşan, eskimeyen anlamındadır"
+ },
+ "3661": {
+  "tr": "ikircikli, çelişik duygular taşıyan",
+  "not": "C1 çeviri gözden geçirmesi: ambivalent kişinin kendi içinde kararsız/ikircikli oluşudur; 'iki anlamlı' zweideutig'in karşılığı"
+ },
+ "3664": {
+  "tr": "avangart, öncü (üslup)",
+  "not": "C1 çeviri gözden geçirmesi: isim Avantgarde ile tr birebir aynıydı, sıfat olduğu belirtildi; Türkçe yazımı 'avangart' (aynı anlam: die Avantgarde)"
+ },
+ "3665": {
+  "tr": "diyalektik, diyalektiğe dayalı",
+  "not": "C1 çeviri gözden geçirmesi: isim Dialektik ile tr birebir aynıydı, sıfat olduğu ayrıldı (aynı anlam: die Dialektik)"
+ },
  "3673": {
   "drop": 3779,
   "not": "B2 çeviri gözden geçirmesi: beruhen — 3779 ile aynı madde, aynı örnek cümle"
+ },
+ "3676": {
+  "tr": "önceden dile getirmek, öne almak",
+  "not": "C1 çeviri gözden geçirmesi: 'önceden öngörmek' Türkçede gereksiz yinelemeli; vorwegnehmen bir şeyi sırası gelmeden söylemek/yapmaktır"
+ },
+ "3682": {
+  "tr": "teşhir etmek, alenen kınamak",
+  "not": "C1 çeviri gözden geçirmesi: anprangern bir kötülüğü herkesin gözü önüne sermektir; yalın 'kınamak' verurteilen'in karşılığı ve aleniyet vurgusunu kaçırıyor"
+ },
+ "3683": {
+  "tr": "olduğundan iyi göstermek, kılıfına uydurmak",
+  "not": "C1 çeviri gözden geçirmesi: 'güzellemek' bu anlamda Türkçe bir fiil değil; beschönigen hataları makul göstermeye çalışmaktır"
+ },
+ "3686": {
+  "tr": "ertelemek (toplantı, oturum)",
+  "not": "C1 çeviri gözden geçirmesi: vertagen yalnızca oturum/toplantıyı başka güne bırakmaktır, genel 'ertelemek' verschieben ile ayırt edilemiyordu (aynı anlam: verschieben)"
+ },
+ "3698": {
+  "tr": "yorumlamak (yasa, metin)",
+  "not": "C1 çeviri gözden geçirmesi: interpretieren ile tr birebir aynıydı; auslegen özellikle yasa ve metin yorumu için kullanılır (aynı anlam: interpretieren)"
+ },
+ "3701": {
+  "tr": "sebep, güdü, saik",
+  "not": "C1 çeviri gözden geçirmesi: 'saik' hukuk diline özgü, günlük Türkçede anlaşılmayan bir sözcük; başa yaygın karşılıklar alınmalı"
+ },
+ "3706": {
+  "tr": "sinsi zorluk, gizli sorun",
+  "not": "C1 çeviri gözden geçirmesi: Türkçe 'incelik' olumlu bir nitelik bildirir; Tücke ise beklenmedik anda çıkan, tuzak gibi zorluktur"
+ },
+ "3710": {
+  "tr": "sağlamlık, taşıma gücü",
+  "not": "C1 çeviri gözden geçirmesi: örnekte bir konseptin sağlamlığı/geçerliliği sorgulanıyor; 'dayanıklılık' fiziksel ömür çağrıştırdığı için ilk anlam örnekle uyuşmuyor"
+ },
+ "3724": {
+  "tr": "güvencesiz, istikrarsız",
+  "not": "C1 çeviri gözden geçirmesi: prekär bir durumun güvencesizliğini anlatır (prekäre Lage); 'endişe verici' hisseden kişiye, kelimeye değil bakıyor"
  },
  "3735": {
   "drop": 3035,
@@ -2270,6 +2434,86 @@
  "3852": {
   "tr": "öğrenim programı, bölüm",
   "not": "B2 çeviri gözden geçirmesi: Studiengang lisans, yüksek lisans fark etmeksizin her öğrenim programını kapsar; 'lisans programı' anlamı yanlış biçimde daraltıyor"
+ },
+ "3895": {
+  "tr": "pazarlık kozu, pazarlıkta verilecek şey",
+  "not": "C1 çeviri gözden geçirmesi: Verhandlungsmasse pazarlıkta öne sürülen kozdur; 'pazarlık konusu' müzakerenin gündemini anlatır, örnekteki bonusun işlevini değil"
+ },
+ "3932": {
+  "tr": "hizmet içi eğitim programı, mesleki gelişim faaliyeti",
+  "not": "C1 çeviri gözden geçirmesi: Maßnahme burada program/faaliyettir; 'önlem' Türkçede tehlikeye karşı tedbir demektir ve eğitim bağlamında yanlış çağrışım yapar"
+ },
+ "3935": {
+  "tr": "ciroda ani düşüş, satışlarda çöküş",
+  "not": "C1 çeviri gözden geçirmesi: Umsatz cirodur ve Einbruch ani sert düşüştür; 'satış düşüşü' hem kavramı hem sertliği kaçırıyor"
+ },
+ "3942": {
+  "tr": "sadeleştirmek, kısaltıp toparlamak",
+  "not": "C1 çeviri gözden geçirmesi: örnekte iç süreçlerin sadeleştirilmesi anlatılıyor; Türkçede 'süreçleri sıkılaştırmak' denmez ve ilk anlam örneğe uymuyor"
+ },
+ "3946": {
+  "tr": "magazinleşme",
+  "not": "C1 çeviri gözden geçirmesi: Türk basınında bu olgunun adı 'magazinleşme'dir; 'tabloidlaşma' sözlükten çevrilmiş, kimsenin kullanmadığı bir biçim"
+ },
+ "3955": {
+  "tr": "kendini sürekli geliştirme, öz-optimizasyon",
+  "not": "C1 çeviri gözden geçirmesi: kelimenin kendisi 'takıntı' demiyor; örnekteki 'Druck zur ständigen Selbstoptimierung' baskıyı anlatıyor, karşılığa yargı eklenmiş"
+ },
+ "3959": {
+  "tr": "sıkı denetim, güdüm altında tutma",
+  "not": "C1 çeviri gözden geçirmesi: Gängelung aşırı düzenlemeyle güdüm altında tutmadır; 'boyunduruk altına alma' esaret çağrıştırdığı için fazla ağır"
+ },
+ "3962": {
+  "tr": "kabul edilemez şey, eziyet",
+  "not": "C1 çeviri gözden geçirmesi: Zumutung insana dayatılan katlanılmaz talep/durumdur; 'haksızlık' Ungerechtigkeit'ın karşılığıdır ve örnekteki uzun bekleyişe oturmuyor"
+ },
+ "3971": {
+  "tr": "yanılsama, serap",
+  "not": "C1 çeviri gözden geçirmesi: Trugbild serap/kuruntudur; 'hayalet görüntü' ekran-televizyon artefaktı için kullanılan teknik bir terim"
+ },
+ "3972": {
+  "tr": "dünya tasavvuru, dünya algısı",
+  "not": "C1 çeviri gözden geçirmesi: Weltbild kişinin gerçeklik tasavvurudur, Weltanschauung ise ideolojik dünya görüşü; ikisi de 'dünya görüşü' olunca ayırt edilemiyor (aynı anlam: die Weltanschauung)"
+ },
+ "3976": {
+  "tr": "yetinme, tüketimi sınırlama",
+  "not": "C1 çeviri gözden geçirmesi: sürdürülebilirlik tartışmasında Suffizienz azla yetinmedir; 'yeterlilik' Türkçede beceri/ehliyet anlamına kayıyor"
+ },
+ "3989": {
+  "tr": "(kusuru, eksiği) gizlemek, üstünü örtmek",
+  "not": "C1 çeviri gözden geçirmesi: kaschieren bir kusuru fark edilmez kılmaktır; ayırt edici olmadan verschleiern (gerçekleri, niyeti perdelemek) ile birebir aynı görünüyor"
+ },
+ "3991": {
+  "tr": "adına karar vermek, vesayetçi davranmak",
+  "not": "C1 çeviri gözden geçirmesi: 'vesayet altına almak' resmî bir işlemi anlatır ve entmündigen'in (3993) karşılığıdır; bevormunden kişiyi kendi kararını vermekten alıkoymaktır"
+ },
+ "4009": {
+  "tr": "ikiyüzlü, riyakâr",
+  "not": "C1 çeviri gözden geçirmesi: 'sahte dindarlıkla' sıfat değil zarf kalıbıdır ve 'scheinheilige Kampagne' gibi kullanımlara oturmuyor"
+ },
+ "4012": {
+  "tr": "sağlam, uygulanabilir, taşıyıcı",
+  "not": "C1 çeviri gözden geçirmesi: 'sürdürülebilir' nachhaltig'in karşılığıdır; tragfähig bir kavramın yükü kaldıracak kadar sağlam ve uygulanabilir olmasıdır"
+ },
+ "4016": {
+  "tr": "açıkça göstermek, örnekle anlaşılır kılmak",
+  "not": "C1 çeviri gözden geçirmesi: verdeutlichen örnekle görünür kılmaktır ve örnek cümlede de böyle kullanılıyor; 'açıklığa kavuşturmak' aynı anlam listesindeki klarstellen'in karşılığıdır"
+ },
+ "4018": {
+  "tr": "yerine getirmek, uygulamak; (sich ~) gerçekleşmek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümle dönüşlü 'vollzieht sich' kullanımıdır ve 'gerçekleştirmek' geçişli olduğu için cümledeki anlamı vermiyor"
+ },
+ "4021": {
+  "tr": "öne çıkmak, (bir özelliğiyle) dikkat çekmek",
+  "not": "C1 çeviri gözden geçirmesi: 'temayüz etmek' bugün kimsenin kullanmadığı eskimiş bir sözcüktür"
+ },
+ "4026": {
+  "tr": "ayrıntılı kurallarla düzenlemek, kurallara bağlamak",
+  "not": "C1 çeviri gözden geçirmesi: yalnız 'düzenlemek' denince aynı anlam listesindeki regulieren ile ayırt edilemiyor; reglementieren sıkı ve ayrıntılı kural koymayı, çoğu zaman olumsuz bir tonla anlatır"
+ },
+ "4028": {
+  "tr": "(yasada, metinde) yer vermek, güvence altına almak",
+  "not": "C1 çeviri gözden geçirmesi: verankern geçişlidir; 'kök salmak' geçişsizdir ve 'im Grundgesetz verankert' örneğindeki 'anayasada güvence altına alınmış' anlamını vermiyor"
  },
  "4098": {
   "tr": "eleman temin etmek, işe çekmek",
@@ -2783,6 +3027,534 @@
  "5658": {
   "tr": "yeraltı otoparkı, kapalı otopark",
   "not": "B2 çeviri gözden geçirmesi: Tiefgarage özellikle yeraltı otoparkıdır; 'kapalı otopark' (Parkhaus) ilk anlam olunca ayrım kayboluyor"
+ },
+ "5728": {
+  "tr": "atıl durmak, boş yatmak, nadasta olmak",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra: örnek cümlede tarlalar spekülasyon yüzünden boş duruyor, planlı bir nadas söz konusu değil"
+ },
+ "5733": {
+  "tr": "(toprağın) verimini tüketmek, çoraklaştırmak",
+  "not": "C1 çeviri gözden geçirmesi: 'verimini kurutmak' Türkçede kurulmayan bir birlikteliktir; auslaugen toprağın besin ve verimini tüketmektir"
+ },
+ "5739": {
+  "tr": "azaltmak, kıt hale getirmek",
+  "not": "C1 çeviri gözden geçirmesi: 'kıtlaştırmak' Türkçede kullanılmayan uydurma bir türetmedir; örnek cümlede arzın kısılması anlatılıyor"
+ },
+ "5775": {
+  "tr": "saflık, temizlik, arılık",
+  "not": "C1 çeviri gözden geçirmesi: Reinheit'in yaygın karşılığı 'saflık/temizlik'tir; başa konan 'arılık' öz Türkçe bir terim olarak günlük dilde kullanılmıyor ve sıra yanlış."
+ },
+ "5793": {
+  "tr": "kendini algılayış, kendini tanımlama biçimi",
+  "not": "C1 çeviri gözden geçirmesi: 'öz anlayış' Türkçede kullanılan bir tamlama değil; Selbstverständnis bir topluluğun kendini nasıl tanımladığıdır."
+ },
+ "5800": {
+  "tr": "çıkarmak, çıkarsamak, türetmek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede 'keine Regel ableiten' = 'kural çıkarmak' anlamındadır, ama çeviri dilbilim/matematik anlamı olan 'türetmek' ile başlıyor."
+ },
+ "5801": {
+  "tr": "yaratmak, oluşturmak, bağışlamak",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede 'stiften Zusammengehörigkeit' = aidiyet yaratmak; çeviri ise vakıf/kurum kurma anlamı olan 'kurmak' ile başlıyor."
+ },
+ "5803": {
+  "tr": "romantikleştirmek, olduğundan güzel göstermek",
+  "not": "C1 çeviri gözden geçirmesi: 'güzellemek' Türkçede fiil olarak kullanılmıyor; kastedilen 'olduğundan güzel göstermek'tir."
+ },
+ "5807": {
+  "tr": "yeniden biçimlendirmek, başkalaştırmak",
+  "not": "C1 çeviri gözden geçirmesi: 'üzerini örtercesine dönüştürmek' kimsenin kurmadığı bir ifade; überformen bir şeyin biçimini üstten değiştirmektir."
+ },
+ "5842": {
+  "tr": "bağdaşabilirlik, birlikte yürütülebilirlik",
+  "not": "C1 çeviri gözden geçirmesi: 'uzlaşabilirlik' kişilerin anlaşmasını anlatır ve yanıltıcı; Vereinbarkeit iki alanın (iş ve aile) birlikte yürüyebilmesidir."
+ },
+ "5846": {
+  "tr": "parça başı iş, parça başı ücret usulü",
+  "not": "C1 çeviri gözden geçirmesi: 'akort usulü' yanlış: Türkçede 'akort' müzikte kullanılır, Akkord ise parça başı çalışma biçimidir."
+ },
+ "5858": {
+  "tr": "meşruiyet, meşrulaştırma",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede 'fehlte jede Legitimation' = meşruiyeti yoktu; çeviri eylem adı olan 'meşrulaştırma' ile başlayınca cümleye oturmuyor."
+ },
+ "5872": {
+  "tr": "gerçeği gizlemek, örtbas etmek",
+  "not": "C1 çeviri gözden geçirmesi: kaschieren ile birebir aynı karşılık verilmiş; verschleiern gerçekleri/verileri bilerek belirsizleştirmektir, kaschieren ise bir kusuru maskelemektir"
+ },
+ "5873": {
+  "tr": "hak iddia etmek, talep etmek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümledeki 'für sich beanspruchen' başarıyı sahiplenmektir, 'talep etmek' ilk anlam olarak cümleye oturmuyor"
+ },
+ "5880": {
+  "tr": "gayriresmî, resmî olmayan",
+  "not": "C1 çeviri gözden geçirmesi: 'kayıt dışı' Türkçede yasa dışı/kayıtsız çalışmayı çağrıştırır, oysa informell yalnızca resmî kanalların dışında olmak demektir"
+ },
+ "5931": {
+  "tr": "vurgulamak, öne çıkarmak (biçim, tasarım yoluyla)",
+  "not": "C1 çeviri gözden geçirmesi: hervorheben ile birebir aynı karşılık verilmiş; akzentuieren sözle değil biçimsel/görsel olarak vurgulamaktır (aynı anlam: hervorheben)"
+ },
+ "5940": {
+  "tr": "ölçek bakımından, ölçeğe uygun",
+  "not": "C1 çeviri gözden geçirmesi: örnekteki 'maßstäblich viel zu groß' ölçek bakımından demektir; ilk anlam olan 'ölçeğe uygun' cümlenin tam tersini söylüyor"
+ },
+ "5969": {
+  "tr": "değerlendirme, gözden geçirme",
+  "not": "C1 çeviri gözden geçirmesi: 'denetleme' Kontrolle/Prüfung karşılığıdır; Evaluierung bir kurumun ya da programın başarısını değerlendirmedir"
+ },
+ "5979": {
+  "tr": "yeniden üretilebilirlik",
+  "not": "C1 çeviri gözden geçirmesi: \"tekrarlanabilirlik\" die Wiederholbarkeit ile birebir çakışırdı; bilimde Reproduzierbarkeit sonucun yeniden üretilebilmesi, Wiederholbarkeit ise aynı ölçümün yinelenebilmesidir"
+ },
+ "5980": {
+  "tr": "araştırma amacı, bilme ilgisi",
+  "not": "C1 çeviri gözden geçirmesi: örnekte 'Erkenntnisinteresse offenlegen' araştırmanın amacını açıklamaktır; 'bilme kaygısı' yerleşik olmayan bir karşılık"
+ },
+ "5986": {
+  "tr": "alan dışından mesleğe geçiş",
+  "not": "C1 çeviri gözden geçirmesi: 'yandan giriş' Almancadan birebir çeviri, Türkçede böyle bir kullanım yok; Quereinstieg farklı bir alandan mesleğe geçmektir"
+ },
+ "6010": {
+  "tr": "doğurganlık hızı, doğurganlık oranı",
+  "not": "C1 çeviri gözden geçirmesi: Türkçe demografi terimi 'doğurganlık hızı'dır; 'doğurganlık göstergesi' belirsiz ve terim değil, başta durmamalı"
+ },
+ "6022": {
+  "tr": "dağıtım esaslı emeklilik sistemi (çalışanların primiyle ödeme)",
+  "not": "C1 çeviri gözden geçirmesi: 'yeniden dağıtım yöntemi' Umverteilung'un karşılığıyla karışıyor; Umlageverfahren kuşaklar arası değil, çalışan primiyle anlık finansman yöntemidir"
+ },
+ "6032": {
+  "tr": "çalışma ömrü, toplam çalışma süresi",
+  "not": "C1 çeviri gözden geçirmesi: 'ömür boyu çalışma süresi' Türkçede 'ölene kadar çalışmak' gibi okunuyor; kastedilen kişinin çalışma hayatının toplam uzunluğudur"
+ },
+ "6054": {
+  "tr": "nüfusça yaşlanmak, ihtiyarlamak",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede özne bir bölge (Landkreis); 'ihtiyarlamak' tek başına kişi için kullanılır, cümledeki nüfus anlamını vermiyor"
+ },
+ "6075": {
+  "tr": "müzakereci, görüşme temsilcisi",
+  "not": "C1 çeviri gözden geçirmesi: Unterhändler bir tarafın adına pazarlık eden kişidir; 'arabulucu' tarafsız üçüncü kişi demek olan Vermittler'in karşılığı, yanıltıcı"
+ },
+ "6077": {
+  "tr": "karar (uluslararası kuruluş), karar metni",
+  "not": "C1 çeviri gözden geçirmesi: 'karar tasarısı' Resolutionsentwurf demek; örnek cümlede karar zaten kabul edilmiş, tasarı değil"
+ },
+ "6098": {
+  "tr": "toprak talebi, toprak iddiası",
+  "not": "C1 çeviri gözden geçirmesi: uluslararası ilişkiler Türkçesinde 'toprak iddiası' denir; 'arazi iddiası' tapu/emlak çağrışımı yapıyor"
+ },
+ "6117": {
+  "tr": "püskürtmek, karşılık vermek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede saldırının püskürtülmesi anlatılıyor, bu yüzden 'püskürtmek' başta olmalı"
+ },
+ "6126": {
+  "tr": "hassas, çetrefilli, nazik (konu)",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede 'nazik' önce kibarlık anlamına gelir; heikel zor ve hassas demektir, örnekteki 'heikelster Punkt' de 'en hassas nokta'dır"
+ },
+ "6133": {
+  "tr": "tartıp değerlendirme, muhakeme",
+  "not": "C1 çeviri gözden geçirmesi: tek başına 'tartma' Türkçede terazide tartmayı çağrıştırıyor; Abwägung argümanları tartıp değerlendirmektir"
+ },
+ "6158": {
+  "tr": "tutarlılık, mantıksal bütünlük",
+  "not": "C1 çeviri gözden geçirmesi: 'mantıksal sıkılık' Türkçede kullanılmayan uydurma bir terim"
+ },
+ "6203": {
+  "tr": "yatırımın kendini amorti etmesi, geri ödeme süresi",
+  "not": "C1 çeviri gözden geçirmesi: Türkçe 'amortisman' muhasebedeki değer düşüş payıdır (Almancası Abschreibung); Amortisation yatırımın kendini geri ödemesidir"
+ },
+ "6208": {
+  "tr": "sonradan doğan maliyetler, ardından gelen masraflar",
+  "not": "C1 çeviri gözden geçirmesi: 'dolaylı maliyetler' başka bir kavramdır (indirekte Kosten); Folgekosten bir kararın sonradan doğurduğu maliyetlerdir"
+ },
+ "6221": {
+  "tr": "güzergâh onay kararı, proje onayı",
+  "not": "C1 çeviri gözden geçirmesi: 'imar planı onayı' Bebauungsplan'ın karşılığıdır; Planfeststellung altyapı projelerine verilen resmî onay kararıdır"
+ },
+ "6227": {
+  "tr": "paylaştırılan katkı payı, tüketiciye yansıtılan pay",
+  "not": "C1 çeviri gözden geçirmesi: 'fon kesintisi' yanıltıcı: Umlage faturadan yapılan bir kesinti değil, tüm tüketicilere paylaştırılıp faturaya eklenen paydır"
+ },
+ "6237": {
+  "tr": "(dönemi, boşluğu) geçici olarak kapatmak, idare etmek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede yedek santrallerin kritik haftaları geçici olarak idare etmesi anlatılıyor; 'köprülemek' Türkçede zaman aralığı için kullanılmaz, teknik/elektrik bağlamına aittir"
+ },
+ "6252": {
+  "tr": "dönemin tanığı, olayları yaşamış tanık",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra: 'çağdaş tanık' Türkçede yerleşik değil ve 'günümüz tanığı' gibi anlaşılıyor; yaygın karşılık 'dönemin tanığı'dır"
+ },
+ "6260": {
+  "tr": "anlatı, hâkim söylem",
+  "not": "C1 çeviri gözden geçirmesi: 'kurgusal' Narrativ'de olmayan bir 'uydurma' çağrışımı katıyor; sözcük bir toplumun kendine anlattığı hikâyeyi belirtir, doğruluğu hakkında hüküm vermez"
+ },
+ "6262": {
+  "tr": "uyarı anıtı, ibret anıtı",
+  "not": "C1 çeviri gözden geçirmesi: yalın 'anıt' Denkmal'in karşılığıdır; Mahnmal özellikle bir suçu hatırlatıp uyarmak için dikilen anıttır ve ayırt edici anlam başta olmalı"
+ },
+ "6270": {
+  "tr": "sahte (belge, eser), sahtecilik",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra: örnek cümlede günlüğün kendisi 'eine plumpe Fälschung', yani sahte nesne; eylem anlamı olan 'sahtecilik' ikinci sırada kalmalı"
+ },
+ "6282": {
+  "tr": "kalıcı etki, sonradan ortaya çıkan etki",
+  "not": "C1 çeviri gözden geçirmesi: 'sonradan etkisi' Türkçede kurulmayan bozuk bir tamlama; doğal karşılık 'kalıcı etki' ya da 'sonradan ortaya çıkan etki'dir"
+ },
+ "6288": {
+  "tr": "komplo, gizli tertip",
+  "not": "C1 çeviri gözden geçirmesi: 'suikast girişimi' Attentat'ın karşılığıdır; Verschwörung suikast içermek zorunda olmayan gizli anlaşma ve tertiptir"
+ },
+ "6303": {
+  "tr": "ayakta kalmak, günümüze ulaşmak",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra ve anlam: örnek cümlede el yazmalarının yüzyıllar boyunca varlığını koruması anlatılıyor, 'atlatmak' ise geçici bir krizi savuşturmayı çağrıştırıyor"
+ },
+ "6353": {
+  "tr": "içtihat, yargı kararları",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümle mahkeme kararlarının değişmesinden söz ediyor; 'yargı' ise Judikative/Gerichtsbarkeit karşılığı olduğu için ilk anlam 'içtihat' olmalı"
+ },
+ "6395": {
+  "tr": "reddetmek, (plan/fikirden) vazgeçmek",
+  "not": "C1 çeviri gözden geçirmesi: 'bozmak' aufheben demektir ve verwerfen'in tersi bir sonucu (kararın kaldırılması) çağrıştırdığı için yanıltıcı"
+ },
+ "6434": {
+  "tr": "sapma, normdan sapan davranış",
+  "not": "C1 çeviri gözden geçirmesi: 'sapkınlık' Türkçede ahlaki/cinsel bir yargı taşır; sosyolojideki Devianz karşılığı nötr 'sapma'dır"
+ },
+ "6439": {
+  "tr": "risk faktörü, risk etkeni",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede yerleşik kullanım 'risk faktörü'dür, 'risk etkeni' başta durunca doğal olmayan bir karşılık öne çıkıyor"
+ },
+ "6444": {
+  "tr": "hücre hapsi, tek kişilik hücrede tutulma",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede yerleşik terim 'hücre hapsi' varken tanımlayıcı bir tamlama kullanılmış"
+ },
+ "6455": {
+  "tr": "cezasını çekmek, hapis yatmak",
+  "not": "C1 çeviri gözden geçirmesi: 'infaz etmek' cezayı uygulayan devletin eylemidir; verbüßen'in öznesi ise hükümlünün kendisidir"
+ },
+ "6456": {
+  "tr": "korumak, gözetim altında tutmak, nöbet tutmak",
+  "not": "C1 çeviri gözden geçirmesi: 'gözetlemek' Türkçede gizlice izlemek (beobachten) demektir; bewachen ise korumak/gözetim altında tutmaktır"
+ },
+ "6461": {
+  "tr": "topluma yeniden kazandırmak, itibarını iade etmek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede suçluların topluma kazandırılması anlatılıyor, 'itibarını iade etmek' anlamı değil"
+ },
+ "6479": {
+  "tr": "tür (edebî, sanatsal), cins",
+  "not": "C1 çeviri gözden geçirmesi: 'janr' Türkçede yerleşmemiş bir aktarımdır; Gattung'un karşılığı edebiyat ve sanatta 'tür', biyolojide 'cins'tir"
+ },
+ "6481": {
+  "tr": "ustaca çözüm, kurnaz numara",
+  "not": "C1 çeviri gözden geçirmesi: Kunstgriff'teki 'Kunst' sanat değil beceri anlamındadır ve kelime her alanda kullanılır; 'sanatsal hile' anlamı gereksizce sanata daraltıyor"
+ },
+ "6501": {
+  "tr": "kompozisyon, düzenleniş, beste",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümle bir resmin kompozisyonundan söz ediyor, oysa çeviri 'beste' ile başlıyor"
+ },
+ "6515": {
+  "tr": "kendini yerine koyup hissetmek, duygusunu paylaşmak",
+  "not": "C1 çeviri gözden geçirmesi: 'içten duyumsamak' sözlük kokan, kimsenin kullanmadığı bir kalıptır; nachempfinden başkasının duygusunu kendi içinde yaşamaktır"
+ },
+ "6528": {
+  "tr": "öykünmeci, ustasını taklit eden",
+  "not": "C1 çeviri gözden geçirmesi: 'ardıl nitelikte' Türkçede bu anlamda kullanılmayan uydurma bir karşılıktır; epigonal bir öncüyü özgünlük katmadan izlemeyi anlatır"
+ },
+ "6541": {
+  "tr": "sonsöz",
+  "not": "C1 çeviri gözden geçirmesi: 'sonsöz, son söz' aynı kelimenin iki yazımıdır, ikinci karşılık öğrenciye ayrı bir bilgi vermiyor"
+ },
+ "6543": {
+  "tr": "el yazması, (basılmamış) metin",
+  "not": "C1 çeviri gözden geçirmesi: yanlış sıra ve anlam: 'müsvedde' karalama/taslak demektir (Entwurf), örnek cümledeki arşivde duran Manuskript ise el yazması metindir"
+ },
+ "6559": {
+  "tr": "polemik yazısı, sert eleştiri metni",
+  "not": "C1 çeviri gözden geçirmesi: 'kavga metni' Türkçede kullanılmayan birebir çeviridir; Streitschrift bir görüşe karşı yazılmış polemik metnidir"
+ },
+ "6580": {
+  "tr": "imgesel, göz önünde canlandıran",
+  "not": "C1 çeviri gözden geçirmesi: 'resmedici' Türkçede yerleşik bir sıfat değildir; bildhaft anlatımın okurun gözünde canlanmasını anlatır"
+ },
+ "6586": {
+  "tr": "haber kaynağının gizliliği, kaynağın korunması",
+  "not": "C1 çeviri gözden geçirmesi: 'kaynak koruma' Türkçede doğal kaynakların korunması gibi anlaşılıyor; gazetecilikteki yerleşik karşılık 'kaynak gizliliği'dir"
+ },
+ "6587": {
+  "tr": "bilgi kaynağı, haber kaynağı (kişi)",
+  "not": "C1 çeviri gözden geçirmesi: 'muhbir' Türkçede ihbarcı/ajan çağrışımıyla olumsuzdur; örnek cümledeki gibi gazetecilik bağlamında Informant tarafsız biçimde haber kaynağıdır"
+ },
+ "6604": {
+  "tr": "pamflet, polemik yazı",
+  "not": "C1 çeviri gözden geçirmesi: Pamphlet Almancada yergiden çok saldırgan/polemik nitelikli metindir; 'hiciv broşürü' anlamı mizaha kaydırıyor, örnekteki 'politisches Pamphlet gegen die Regierung' ile uyuşmuyor"
+ },
+ "6623": {
+  "tr": "gündeme sokmak, servis etmek, piyasaya sürmek",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümlede haberin oy öncesi bilinçli olarak dolaşıma sokulması anlatılıyor, bu yüzden 'piyasaya sürmek' değil 'gündeme sokmak' başta olmalı"
+ },
+ "6631": {
+  "tr": "açıkça beyan etmek, ifşa etmek",
+  "not": "C1 çeviri gözden geçirmesi: 'aleni hâle getirmek' kimsenin kullanmadığı sözlük Türkçesi; offenlegen gizli kalanı bilerek beyan etmektir, yalın 'açıklamak' erklären ile karışıyor"
+ },
+ "6637": {
+  "tr": "medyaya ilişkin, medya aracılığıyla",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede 'medyatik' sık sık medyada görünen kişi/olay demektir, medial ise yalnızca 'medyaya ait' anlamındadır; karşılık yanıltıcı"
+ },
+ "6640": {
+  "tr": "çarpıcı ama yüzeysel, slogan gibi",
+  "not": "C1 çeviri gözden geçirmesi: 'afişvari' Türkçede kullanılan bir kelime değil, uydurma duruyor"
+ },
+ "6645": {
+  "tr": "kendi geleceğini belirleme, özerklik",
+  "not": "C1 çeviri gözden geçirmesi: 'kendi kaderini tayin' halkların self-determinasyonu için kullanılır; örnekteki hasta bağlamında Türkçe hukuk dili 'kendi geleceğini belirleme' der"
+ },
+ "6708": {
+  "tr": "baskı, bastırma, zulüm",
+  "not": "C1 çeviri gözden geçirmesi: isim olarak 'ezme' Türkçede doğal değil; muhalefetin Unterdrückung'u 'bastırma/baskı' ile karşılanır"
+ },
+ "6711": {
+  "tr": "(hakkı olanı) ısrarla talep etmek, geri istemek",
+  "not": "C1 çeviri gözden geçirmesi: aynı anlam verilen fordern yalnızca 'istemek'tir; einfordern hak edilmiş ya da söz verilmiş bir şeyin ısrarla geri istenmesidir, ayrım eksik"
+ },
+ "6726": {
+  "tr": "radyoaktivite, radyoaktiflik",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede yaygın kullanılan biçim 'radyoaktivite'dir; 'radyoaktiflik' başta durunca doğal olmayan bir sıra oluşuyor"
+ },
+ "6756": {
+  "tr": "kalıtsal madde, genom, genetik yapı",
+  "not": "C1 çeviri gözden geçirmesi: 'kalıtım maddesi' sözlük kokan bir birleşim; Erbgut için Türkçede 'kalıtsal madde' veya 'genom' kullanılır"
+ },
+ "6771": {
+  "tr": "açığa çıkarmak, salmak",
+  "not": "C1 çeviri gözden geçirmesi: 'salıvermek' tutulan bir canlıyı bırakmayı çağrıştırır; gaz/madde için Türkçede 'salmak' denir (metan salınır)"
+ },
+ "6779": {
+  "tr": "organik (kimya, biyoloji)",
+  "not": "C1 çeviri gözden geçirmesi: aynı anlam listesindeki Bio- gıda ürünleri için kullanılır, organisch ise kimya/biyoloji terimidir; ayırt edici olmadan ikisi karışıyor"
+ },
+ "6785": {
+  "tr": "su itici, suyu iten",
+  "not": "C1 çeviri gözden geçirmesi: 'su geçirmeyen' wasserdicht'in karşılığıdır; wasserabweisend suyu iter ama su geçirmez değildir"
+ },
+ "6813": {
+  "tr": "eskime, kullanım dışı kalma",
+  "not": "C1 çeviri gözden geçirmesi: 'planlı' yalnızca geplante Obsoleszenz'de vardır; kelimenin kendisi sadece eskimeyi/kullanım dışı kalmayı anlatır"
+ },
+ "6832": {
+  "tr": "geleceğe dayanıklı, sürdürülebilir",
+  "not": "C1 çeviri gözden geçirmesi: 'geleceğe dönük' zukunftsorientiert'in karşılığıdır; zukunftsfähig geleceğe dayanacak nitelikte olmak demektir"
+ },
+ "6834": {
+  "tr": "kanıtlanmış biçimde, kanıtlarla sabit olarak",
+  "not": "C1 çeviri gözden geçirmesi: 'ispatlanabilir şekilde' ispat edilebilirliği anlatır, oysa nachweislich ispatın zaten yapılmış olduğunu söyler"
+ },
+ "6837": {
+  "tr": "kusur yeteneği, ceza sorumluluğu (akli yeterlilik)",
+  "not": "C1 çeviri gözden geçirmesi: 'temyiz kudreti' bugün 'temyiz (istinaf) yetkisi' diye yanlış okunur; ceza hukukunda karşılık 'kusur yeteneği'dir"
+ },
+ "6838": {
+  "tr": "dürüstlük, ilkelilik, bütünlük",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümle kişinin dürüstlüğünden söz ediyor; en yaygın anlam olan 'dürüstlük' başta olmalı"
+ },
+ "6854": {
+  "tr": "geçicilik, fanilik",
+  "not": "C1 çeviri gözden geçirmesi: 'faniliğ' yazım hatası, doğrusu 'fanilik'"
+ },
+ "6857": {
+  "tr": "çaba, arayış, gayret",
+  "not": "C1 çeviri gözden geçirmesi: 'çabalama' doğal Türkçe değil ve 'Streben nach Glück' örneğindeki 'arayış' anlamı eksik; 'arzu' ise Streben'i değil Wunsch'u karşılıyor"
+ },
+ "6863": {
+  "tr": "satın alınamazlık, dürüstlük (rüşvete kapalı olma)",
+  "not": "C1 çeviri gözden geçirmesi: 'rüşvet kabul etmezlik' kimsenin kullanmadığı, sözlük kokan bir kalıp"
+ },
+ "6868": {
+  "tr": "gerektirmek, emretmek, buyurmak",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümledeki anlam 'Die Lage gebietet Zurückhaltung' = gerektirmek; çeviri bu anlamla başlamalı"
+ },
+ "6873": {
+  "tr": "haddi olmadan kalkışmak, kendinde hak görmek",
+  "not": "C1 çeviri gözden geçirmesi: 'hakkı olmadan sahiplenmek' nesne el koyma çağrışımı veriyor; sich ein Urteil anmaßen bir şeye haddini aşarak kalkışmaktır"
+ },
+ "6941": {
+  "tr": "hoşlanmama, antipati, tiksinti",
+  "not": "C1 çeviri gözden geçirmesi: 'isteksizlik' Unlust'u karşılar; Abneigung bir şeye/birine karşı duyulan antipatidir"
+ },
+ "6948": {
+  "tr": "yol açmak, sağlamak, meydana getirmek",
+  "not": "C1 çeviri gözden geçirmesi: bewirken geçişlidir ve bir sonucu doğurmak demektir; 'etki etmek' wirken ile karışıyor"
+ },
+ "6951": {
+  "tr": "abartmak, olduğundan fazla görmek",
+  "not": "C1 çeviri gözden geçirmesi: 'olduğundan fazla değerlendirmek' doğal Türkçe değil, doğru kalıp 'olduğundan fazla görmek / değer biçmek'"
+ },
+ "6961": {
+  "tr": "yolundan sapmayan, kararlı, yılmadan",
+  "not": "C1 çeviri gözden geçirmesi: 'şaşmaz' Türkçede 'yanılmaz/hedefi kaçırmayan' demektir (unfehlbar), unbeirrt ise dış etkiye rağmen yoldan çıkmamaktır"
+ },
+ "6968": {
+  "tr": "inatçı, hırslı, dişini sıkmış",
+  "not": "C1 çeviri gözden geçirmesi: asıl anlam inatçılık/azgın kararlılık; 'dişini sıkmak' Türkçede zorluğa katlanmak demek olduğu için başta durunca yanıltıyor"
+ },
+ "6970": {
+  "tr": "sağduyulu, soğukkanlı, ölçülü",
+  "not": "C1 çeviri gözden geçirmesi: 'aklıselim' Türkçede isimdir, sıfat olarak 'sakin ve aklıselim biri' denmez"
+ },
+ "7002": {
+  "tr": "eğilim, düşkünlük, temayül",
+  "not": "C1 çeviri gözden geçirmesi: Hang zu ... için günlük Türkçedeki karşılık 'eğilim'dir (abartma eğilimi); listede yalnızca eskimiş 'temayül' var"
+ },
+ "7004": {
+  "tr": "sertlik, hararet, coşkunluk",
+  "not": "C1 çeviri gözden geçirmesi: başta duran 'şiddet' Gewalt ile karıştırılıyor; Vehemenz fiziksel şiddet değil, ifade/tutumun sertliği ve hararetidir"
+ },
+ "7008": {
+  "tr": "olgunluk, yaşanmışlıktan gelen dinginlik",
+  "not": "C1 çeviri gözden geçirmesi: 'pişkinlik' Türkçede olumsuzdur (utanmazlık, arlanmazlık); Abgeklärtheit olumlu bir olgunluk hâlidir"
+ },
+ "7021": {
+  "tr": "sapkınlık, dinî sapma",
+  "not": "C1 çeviri gözden geçirmesi: 'heretiklik' Türkçede kullanılan bir kelime değil"
+ },
+ "7028": {
+  "tr": "çilecilik, nefis terbiyesi",
+  "not": "C1 çeviri gözden geçirmesi: tek başına 'çile' Türkçede çekilen sıkıntı demektir; Askese bilinçli bir yoksunluk disiplinidir, yani 'çilecilik'"
+ },
+ "7047": {
+  "tr": "kutsal emanet",
+  "not": "C1 çeviri gözden geçirmesi: 'rölik' Türkçede yerleşik bir karşılık değil"
+ },
+ "7053": {
+  "tr": "saygı duymak, hürmet etmek, ululamak",
+  "not": "C1 çeviri gözden geçirmesi: 'tapmak' anbeten'in karşılığıdır; verehren tapınma değil derin saygı/ululamadır, ikisi karışıyor"
+ },
+ "7078": {
+  "tr": "dil düzeyi, dil kaydı",
+  "not": "C1 çeviri gözden geçirmesi: tek başına 'kayıt' Türkçede kayıt tutma/kaydolma anlaşılır, dilbilimdeki register anlamı için niteleme gerekir"
+ },
+ "7083": {
+  "tr": "bağlam, anlam bağlantısı",
+  "not": "C1 çeviri gözden geçirmesi: örnekteki 'aus dem Sinnzusammenhang gerissen' Türkçede 'bağlamından koparılmış' demektir, dolayısıyla ilk anlam 'bağlam' olmalı."
+ },
+ "7084": {
+  "tr": "kesinlik eksikliği, yanlışlık",
+  "not": "C1 çeviri gözden geçirmesi: Ungenauigkeit kesin/doğru olmama halidir; başa konan 'belirsizlik' Unsicherheit'in karşılığıdır ve aynı pakette 7185 ile çakışıyor."
+ },
+ "7089": {
+  "tr": "çağrışım, yan ton",
+  "not": "C1 çeviri gözden geçirmesi: 'yan anlam tınısı' Türkçede kurulan bir tamlama değil; Beiklang bir kelimenin taşıdığı çağrışım/alt tondur."
+ },
+ "7098": {
+  "tr": "olduğundan az gösterme, küçümseyerek anlatma",
+  "not": "C1 çeviri gözden geçirmesi: Untertreibung abartmanın tersi bir anlatım biçimidir; başa konan 'hafife alma' unterschätzen (7196) ile karışıyor."
+ },
+ "7108": {
+  "tr": "bir tutmak, aynı saymak",
+  "not": "C1 çeviri gözden geçirmesi: örnekteki 'Verstehen mit Zustimmung gleichsetzen' 'bir tutmak' demektir; 'eşitlemek' matematiksel işlem çağrıştırdığı için yanıltıcı."
+ },
+ "7131": {
+  "tr": "prekarya, güvencesiz çalışanlar kesimi",
+  "not": "C1 çeviri gözden geçirmesi: Türkçe sosyal bilim yazınında yerleşik terim 'prekarya'dır; 'güvencesizler kesimi' kullanılmayan bir karşılık."
+ },
+ "7142": {
+  "tr": "bünyesine katmak, kaynaştırmak",
+  "not": "C1 çeviri gözden geçirmesi: 'bütüne katmak' Türkçede kurulmayan bir ifade; örnekte işletmenin yeni çalışanları bünyesine katması/kaynaştırması anlatılıyor."
+ },
+ "7149": {
+  "tr": "toptan genelleme yapmak, toptancılık yapmak",
+  "not": "C1 çeviri gözden geçirmesi: 'genel geçer yargıya varmak' doğal olmayan bir kalıp; pauschalisieren ayrım gözetmeden genelleme yapmaktır."
+ },
+ "7151": {
+  "tr": "kaynaşmak, birbiriyle bütünleşmek",
+  "not": "C1 çeviri gözden geçirmesi: 'bütünleşmek' fiili -e değil 'ile' ekiyle kullanılır, 'birbirine bütünleşmek' bozuk bir yapı."
+ },
+ "7164": {
+  "tr": "alabileceği değer, düzey, görünüm biçimi",
+  "not": "C1 çeviri gözden geçirmesi: örnekte bir Merkmal'in üç farklı Ausprägung alması istatistikte değişkenin alabileceği değerdir; 'görünüm biçimi' ilk anlam olamaz."
+ },
+ "7166": {
+  "tr": "anket, görüşme",
+  "not": "C1 çeviri gözden geçirmesi: 'soruşturma' Türkçede adli/idari inceleme anlamına geldiği için bilimsel bir Befragung için yanıltıcı."
+ },
+ "7191": {
+  "tr": "standartlaştırma, normalleştirme",
+  "not": "C1 çeviri gözden geçirmesi: istatistikte Normierung ölçekleri karşılaştırılabilir kılmaktır ve Türkçe karşılığı 'standartlaştırma'dır; 'normlaştırma' kullanılmıyor."
+ },
+ "7193": {
+  "tr": "eğilimi ileriye taşımak, ekstrapolasyon yapmak",
+  "not": "C1 çeviri gözden geçirmesi: 'dışdeğerlemek' kimsenin kullanmadığı bir karşılık; extrapolieren mevcut eğilimi veri aralığının dışına taşımaktır."
+ },
+ "7197": {
+  "tr": "karşı karşıya koymak, karşılaştırmak",
+  "not": "C1 çeviri gözden geçirmesi: 'karşılaştırmalı olarak koymak' Türkçede kurulmayan bir ifade; gegenüberstellen iki şeyi karşı karşıya koyup karşılaştırmaktır."
+ },
+ "7212": {
+  "tr": "veri minimizasyonu, az veri toplama ilkesi",
+  "not": "C1 çeviri gözden geçirmesi: 'veri asgariliği' Türkçede kullanılmayan uydurma bir terim; KVKK/GDPR karşılığı 'veri minimizasyonu'dur"
+ },
+ "7217": {
+  "tr": "öğrenme yöntemi (teknik süreç, algoritma)",
+  "not": "C1 çeviri gözden geçirmesi: Lernmethode ile birebir aynı karşılık veriliyor; Lernverfahren örnekteki gibi teknik/istatistiksel süreçtir, Lernmethode ise kişinin ders çalışma yöntemidir (aynı anlam: die Lernmethode)"
+ },
+ "7234": {
+  "tr": "kayda geçirmek, tutanağa geçirmek",
+  "not": "C1 çeviri gözden geçirmesi: 'tutanaklamak' diye bir Türkçe fiil yok; doğru kullanım 'tutanağa geçirmek'"
+ },
+ "7238": {
+  "tr": "varsaymak, önkoşul saymak",
+  "not": "C1 çeviri gözden geçirmesi: örnek cümledeki anlam 'peşinen varsaymak'tır, bu yüzden 'varsaymak' başta olmalı"
+ },
+ "7243": {
+  "tr": "her yerde olan, her yanı sarmış",
+  "not": "C1 çeviri gözden geçirmesi: 'her yerde hazır' deyimin ('hazır ve nazır') yarısı kalmış hâli, tek başına Türkçede kurulmuyor"
+ },
+ "7266": {
+  "tr": "resmen karar vermek, emretmek; (über +A) sahip olmak",
+  "not": "C1 çeviri gözden geçirmesi: 'hükmetmek' yanıltıcı (hâkim olmak anlamına geliyor); örnekteki verfügen makamın resmî karar vermesidir ve 'sahip olmak' anlamı yalnızca über ile gelir"
+ },
+ "7268": {
+  "tr": "gün belirlemek, (toplantı, duruşma için) tarih tayin etmek",
+  "not": "C1 çeviri gözden geçirmesi: tek başına 'belirlemek' fiilin anlamını vermiyor; anberaumen yalnızca toplantı/duruşma gününü saptamak demektir"
+ },
+ "7274": {
+  "tr": "tarafından (resmî dil)",
+  "not": "C1 çeviri gözden geçirmesi: 'cihetinden' bugün kimsenin kullanmadığı eski bir sözcük"
+ },
+ "7331": {
+  "tr": "şeffaflık eksikliği, kapalılık",
+  "not": "C1 çeviri gözden geçirmesi: 'şeffaflıksızlık' Türkçede kullanılmayan uydurma bir türetme; yerleşik karşılık 'şeffaflık eksikliği'"
+ },
+ "7344": {
+  "tr": "paydaş, menfaat sahibi grup",
+  "not": "C1 çeviri gözden geçirmesi: Türkçede yerleşik ve yaygın karşılık 'paydaş'tır, önce o gelmeli"
+ },
+ "7348": {
+  "tr": "karşılık, karşı edim",
+  "not": "C1 çeviri gözden geçirmesi: 'edim karşılığı' anlamı ters çeviriyor; hukuk dilindeki doğru terim 'karşı edim'"
+ },
+ "7358": {
+  "tr": "haksız kazanç sağlamak, (başkasının sırtından) zenginleşmek",
+  "not": "C1 çeviri gözden geçirmesi: 'sırtından geçinmek' başkasının parasıyla yaşamaktır (schmarotzen); sich bereichern haksızca zenginleşmektir"
+ },
+ "7367": {
+  "tr": "yaklaşım, yaklaşık değer",
+  "not": "C1 çeviri gözden geçirmesi: 'yaklaşıklık' doğal değil; örnekteki 'grobe Näherung an die Wirklichkeit' Türkçede 'kaba bir yaklaşım'dır"
+ },
+ "7396": {
+  "tr": "belirsizlik, bilinmezlik",
+  "not": "C1 çeviri gözden geçirmesi: Ungewissheit'in olağan karşılığı 'belirsizlik'tir; 'kesinsizlik' Türkçede kullanılmıyor"
+ },
+ "7404": {
+  "tr": "atalet, değişime direnç",
+  "not": "C1 çeviri gözden geçirmesi: tek başına 'direnç' Widerstand'ı çağrıştırıyor; örnekteki kurumsal ataleti anlatan asıl karşılık 'atalet' başta olmalı"
+ },
+ "7408": {
+  "tr": "beklenti, beklenti içinde olma",
+  "not": "C1 çeviri gözden geçirmesi: 'beklenti tutumu' Türkçede kullanılmıyor ve asıl anlam olan 'beklenti' sonda kalmış"
+ },
+ "7409": {
+  "tr": "ideal model, yol gösterici ilke",
+  "not": "C1 çeviri gözden geçirmesi: 'yol gösterici tasavvur' sözlük kokan bir ifade; kurumsal bağlamda 'yol gösterici ilke' denir"
+ },
+ "7422": {
+  "tr": "sağlamak, gerçekleştirmek, yol açmak",
+  "not": "C1 çeviri gözden geçirmesi: herbeiführen bilinçli olarak bir sonucu getirmektir; örnekteki 'eine Entscheidung herbeiführen' 'yol açmak' ile uyuşmuyor"
  },
  "7436": {
   "tr": "sert, katı (esnemeyen, bükülmeyen)",
