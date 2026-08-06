@@ -11,6 +11,7 @@ import { de, tr, type Lesson } from "../types";
 export const deA2: Lesson[] = [
   {
     id: "de-a2-arzt",
+    icon: "doctor",
     level: "A2",
     course: "de",
     title: "Beim Arzt",
@@ -205,6 +206,7 @@ export const deA2: Lesson[] = [
   },
   {
     id: "de-a2-urlaub",
+    icon: "vacation",
     level: "A2",
     course: "de",
     title: "Letzter Urlaub",

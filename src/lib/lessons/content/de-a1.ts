@@ -12,6 +12,7 @@ import { de, tr, type Lesson } from "../types";
 export const deA1: Lesson[] = [
   {
     id: "de-a1-hallo",
+    icon: "greet",
     level: "A1",
     course: "de",
     title: "Hallo!",
@@ -217,6 +218,7 @@ export const deA1: Lesson[] = [
   },
   {
     id: "de-a1-cafe",
+    icon: "cafe",
     level: "A1",
     course: "de",
     title: "Im Café",

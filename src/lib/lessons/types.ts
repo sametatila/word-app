@@ -112,10 +112,15 @@ export type LessonRoleplay = {
   minTurns: number;
 };
 
+/** Yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor. */
+export type LessonIcon = "greet" | "cafe" | "doctor" | "vacation" | "job" | "home";
+
 export type Lesson = {
   id: string;
   level: CefrLevel;
   course: "de" | "gsw-zh";
+  /** Yol haritasında düğümün simgesi. */
+  icon: LessonIcon;
   /** Dersin konusu, Almanca — senaryonun adı: "Beim Arzt", "Im Café". */
   title: string;
   /** Konunun Türkçesi — listede başlığın altında duruyor. */

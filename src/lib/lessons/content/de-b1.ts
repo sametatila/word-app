@@ -11,6 +11,7 @@ import { de, tr, type Lesson } from "../types";
 export const deB1: Lesson[] = [
   {
     id: "de-b1-bewerbung",
+    icon: "job",
     level: "B1",
     course: "de",
     title: "Das Vorstellungsgespräch",
@@ -202,6 +203,7 @@ export const deB1: Lesson[] = [
   },
   {
     id: "de-b1-wohnung",
+    icon: "home",
     level: "B1",
     course: "de",
     title: "Die Wohnungssuche",

@@ -245,6 +245,67 @@ export const ArrowLeftIcon = (p: IconProps) => (
 );
 
 /** Yenile */
+/** Kilit — yol haritasında sırası gelmemiş ders. */
+export const LockIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="5.5" y="10.5" width="13" height="9" rx="2" />
+    <path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" />
+  </Svg>
+);
+
+/** Selamlaşma — el sallama. */
+export const WaveIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M7.5 11.5 6 10a1.6 1.6 0 0 0-2.3 2.3l4.6 4.9A6 6 0 0 0 18 13l-1-4.6a1.5 1.5 0 0 0-2.9.6" />
+    <path d="M14.1 9.4 11.9 5.6a1.5 1.5 0 0 0-2.6 1.5l2 3.5" />
+    <path d="M11.3 10.6 9.5 7.5a1.5 1.5 0 0 0-2.6 1.5l1.9 3.2" />
+    <path d="M18.5 4.5c1.2.4 2 1.2 2.5 2.3" />
+  </Svg>
+);
+
+/** Kafe — fincan. */
+export const CoffeeIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M5 9.5h11v5.5a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z" />
+    <path d="M16 10.5h1.5a2.25 2.25 0 0 1 0 4.5H16" />
+    <path d="M8.5 3.5c-.8 1 .8 1.7 0 2.7M12 3.5c-.8 1 .8 1.7 0 2.7" />
+  </Svg>
+);
+
+/** Sağlık — steteskop. */
+export const StethoscopeIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M6 4v4.5a4 4 0 0 0 8 0V4" />
+    <path d="M10 12.5v3a4.5 4.5 0 0 0 9 0v-1.6" />
+    <circle cx="19" cy="11.5" r="2" />
+  </Svg>
+);
+
+/** Tatil — plaj şemsiyesi. */
+export const UmbrellaIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4.5 10.5a8 8 0 0 1 15 0z" />
+    <path d="M12 4.5v-1M12 10.5 14 20M6.5 20h9" />
+  </Svg>
+);
+
+/** İş — evrak çantası. */
+export const BriefcaseIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="4" y="8" width="16" height="11" rx="2" />
+    <path d="M9 8V6.5A1.5 1.5 0 0 1 10.5 5h3A1.5 1.5 0 0 1 15 6.5V8M4 12.5h16" />
+  </Svg>
+);
+
+/** Ev — daire. */
+export const HomeIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4.5 11 12 4.5 19.5 11" />
+    <path d="M6.5 9.5V19h11V9.5" />
+    <path d="M10 19v-4.5h4V19" />
+  </Svg>
+);
+
 export const RefreshIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M19.5 12a7.5 7.5 0 0 1-13 5M4.5 12a7.5 7.5 0 0 1 13-5" />
