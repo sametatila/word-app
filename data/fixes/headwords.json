@@ -123,6 +123,10 @@
   "tr": "(belirsiz özne) insan, herkes",
   "not": "A1 çeviri gözden geçirmesi: man isim değil belirsiz öznedir; yalın \"insan\" der Mensch ile çakışıyor"
  },
+ "326": {
+  "tr": "katılmak (birlikte yapmak)",
+  "not": "A2 çeviri gözden geçirmesi: teilnehmen ile aynı karşılığı taşıyordu; mitmachen günlük dildir"
+ },
  "334": {
   "tr": "-e/-a (yön), -den sonra",
   "not": "A1 çeviri gözden geçirmesi: \"nach Berlin\" Türkçede \"Berlin'e\"dir; \"-e doğru\" varış bildiren kullanımı yanlış aktarıyor"
@@ -274,6 +278,10 @@
  "607": {
   "drop": 100,
   "not": "dein- — 100 ile aynı iyelik sıfatı, tire çekim eki işareti"
+ },
+ "608": {
+  "tr": "çünkü (ana cümle sırası korunur)",
+  "not": "A2 çeviri gözden geçirmesi: weil ile aynı karşılığı taşıyordu; ikisinin farkı tam olarak cümle sırasıdır ve öğrencinin bunu görmesi gerekiyor"
  },
  "610": {
   "de": "diese",
@@ -473,17 +481,42 @@
   "tr": "hoşça kalın (telefonda vedalaşma)",
   "not": "A1 çeviri gözden geçirmesi: \"duyuşmak üzere\" diye bir Türkçe ifade yok"
  },
+ "859": {
+  "tr": "kilitlemek; (eğitimi) tamamlamak",
+  "not": "A2 çeviri gözden geçirmesi: düşürülen 860 \"schließt ab\" maddesinin mezuniyet anlamı buraya taşındı"
+ },
+ "860": {
+  "drop": 859,
+  "not": "A2 çeviri gözden geçirmesi: \"schließt ab\" başlık değil, abschließen fiilinin çekimli hâli"
+ },
+ "868": {
+  "drop": 867,
+  "not": "A2 çeviri gözden geçirmesi: \"meldet an\" başlık değil, anmelden fiilinin çekimli hâli"
+ },
+ "869": {
+  "tr": "bakmak, izlemek, seyretmek",
+  "not": "A2 çeviri gözden geçirmesi: ilk örnek 'Urlaubsfotos ansehen' fotoğraflara bakmaktır; sıradaki ilk anlam örnekle uyuşmuyor"
+ },
  "872": {
   "drop": 1431,
   "not": "ärgern (sich) — sich ärgern ile aynı fiil, parantezli yazım kopyaydı"
  },
  "874": {
-  "de": "auf jeden Fall/auf keinen Fall",
-  "not": "auf jeden/ keinen Fall — iki zıt kalıp, ikisi de tam yazıldı"
+  "de": "auf jeden Fall",
+  "tr": "kesinlikle, mutlaka",
+  "not": "A2 çeviri gözden geçirmesi: \"auf jeden Fall/auf keinen Fall\" tek maddede iki zıt kalıptı; karşılık yalnızca olumlusunu veriyordu"
+ },
+ "876": {
+  "tr": "meslek eğitimi, mesleki öğrenim",
+  "not": "A2 çeviri gözden geçirmesi: 'staj' Praktikum'un karşılığıdır; Ausbildung yıllar süren meslek eğitimidir"
  },
  "880": {
   "drop": 1471,
   "not": "ausruhen (sich) — sich ausruhen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "886": {
+  "tr": "dağıtmak (gazete, mektup — eve teslim etmek)",
+  "not": "A2 çeviri gözden geçirmesi: yalın 'dağıtmak' aynı anlam listesindeki verteilen/austeilen ile birebir aynı; austragen eve teslim ederek dağıtmaktır"
  },
  "892": {
   "drop": 1500,
@@ -501,21 +534,79 @@
   "drop": 1553,
   "not": "beschweren (sich) — sich beschweren ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "908": {
+  "tr": "ziyaret; misafir, konuk",
+  "not": "A2 çeviri gözden geçirmesi: örnekteki 'Wir bekommen Besuch' misafir gelmesidir, Türkçede 'ziyaret alıyoruz' denmez"
+ },
  "909": {
   "drop": 1579,
   "not": "bewerben (sich) — sich bewerben ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "913": {
+  "tr": "yaprak; tabaka, sayfa (kâğıt)",
+  "not": "A2 çeviri gözden geçirmesi: 'kağıt yaprağı' Türkçede kullanılmayan bir birleşim; kâğıt için tabaka/sayfa denir"
+ },
+ "914": {
+  "de": "Blog",
+  "artikel": "der",
+  "typ": "Nomen",
+  "not": "A2 çeviri gözden geçirmesi: \"der/das Blog\" artikelsiz Sonstiges kaydıydı"
+ },
+ "917": {
+  "tr": "kızartmak (tavada, fırında)",
+  "not": "A2 çeviri gözden geçirmesi: 'kavurmak' aynı anlam listesindeki rösten'in karşılığı; braten yağda kızartmaktır"
+ },
+ "920": {
+  "tr": "rezervasyon yaptırmak (uçuş, otel, seyahat)",
+  "not": "A2 çeviri gözden geçirmesi: yalın 'rezervasyon yapmak' aynı anlam listesindeki reservieren ile ayırt edilemiyor; buchen bilet/konaklama satın alarak ayırtmaktır"
+ },
+ "921": {
+  "tr": "rengârenk, çok renkli",
+  "not": "A2 çeviri gözden geçirmesi: yalın 'renkli' farbig'in karşılığı; bunt birçok rengin bir arada olmasıdır"
  },
  "926": {
   "drop": 94,
   "not": "A1 gözden geçirmesi: der/das Comic — 94 ile aynı madde, artikelsiz Sonstiges kaydı"
  },
+ "928": {
+  "de": "darauf",
+  "tr": "ona, buna (bunun üzerine)",
+  "not": "A2 çeviri gözden geçirmesi: başlık \"da(r) (Bsp. darauf\" olarak kesilmişti"
+ },
+ "929": {
+  "de": "dabei sein",
+  "tr": "orada olmak, katılmak",
+  "beispiel": "Schön, dass du dabei bist!",
+  "beispielTr": "Aramızda olman ne güzel!",
+  "not": "A2 çeviri gözden geçirmesi: \"dabei (sein)\" parantezliydi ve örnek cümle dabei haben yapısındaydı"
+ },
+ "930": {
+  "drop": 1636,
+  "not": "A2 çeviri gözden geçirmesi: \"dafür/dagegen sein\" tek maddede iki zıt kalıptı; dafür (1636) ve dagegen (1637) ayrı maddeler"
+ },
  "943": {
   "drop": 621,
   "not": "duschen (sich) — sich duschen ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "947": {
+  "drop": 1702,
+  "not": "A2 çeviri gözden geçirmesi: \"eigeneigentlich\" iki kelimenin birleşmiş hâli; eigen- (1702) ve eigentlich (1703) ayrı maddeler"
+ },
+ "948": {
+  "de": "einige",
+  "not": "A2 çeviri gözden geçirmesi: \"einig-\" sözlük gövde yazımıydı"
+ },
  "951": {
-  "de": "sich eintragen",
-  "not": "eintragen (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+  "tr": "(listeye) kaydolmak, adını yazdırmak",
+  "not": "A2 çeviri gözden geçirmesi: dönüşlü biçimdir; düşürülen 1736 eintragen ile ayırt edilemiyordu"
+ },
+ "952": {
+  "de": "einzeln",
+  "not": "A2 çeviri gözden geçirmesi: \"einzel-\" sözlük gövde yazımıydı"
+ },
+ "953": {
+  "tr": "(yeni eve) taşınmak",
+  "not": "A2 çeviri gözden geçirmesi: 'içeri girmek' yanıltıcı, o hineingehen'dir; einziehen bir eve taşınıp yerleşmektir"
  },
  "954": {
   "drop": 631,
@@ -537,25 +628,60 @@
   "drop": 142,
   "not": "A1 gözden geçirmesi: (Fahr)Rad — 142 \"das Fahrrad\" ile aynı madde, başlıkta parantez artığı"
  },
+ "979": {
+  "drop": 156,
+  "not": "A2 çeviri gözden geçirmesi: \"(ab)fliegen\" iki fiili birden taşıyordu; fliegen (156) ve abfliegen (650) ayrı maddeler"
+ },
+ "985": {
+  "drop": 655,
+  "not": "A2 çeviri gözden geçirmesi: \"freut\" başlık değil, sich freuen fiilinin çekimli hâli"
+ },
  "987": {
   "drop": 7973,
   "not": "fühlen (sich) — sich fühlen ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "994": {
+  "de": "Geburts-",
+  "typ": "Sonstiges",
+  "tr": "doğum- (Geburtstag, Geburtsort, Geburtsjahr)",
+  "not": "A2 çeviri gözden geçirmesi: başlık \"Geburts- (jahr\" olarak kesilmişti ve fiil işaretliydi"
+ },
  "995": {
-  "tr": "sayın, saygıdeğer",
-  "not": "1957'nin daha eksiksiz anlamı buraya alındı"
+  "de": "geehrte",
+  "not": "A2 çeviri gözden geçirmesi: \"geehrt-\" sözlük gövde yazımıydı"
+ },
+ "997": {
+  "tr": "tersi, zıttı, karşıtı",
+  "not": "A2 çeviri gözden geçirmesi: 'zıt anlam' dilbilgisi terimi; das Gegenteil bir şeyin tersi/zıddı demektir"
+ },
+ "1004": {
+  "tr": "tabak çanak, mutfak takımı; bulaşık",
+  "not": "A2 çeviri gözden geçirmesi: örnekte temiz tabaklar dolaba kaldırılıyor, 'bulaşık' ise yıkanacak kirli kapları çağrıştırıyor"
+ },
+ "1008": {
+  "tr": "gök gürültülü fırtına",
+  "not": "A2 çeviri gözden geçirmesi: Gewitter gök gürültülü fırtınadır; ilk sıradaki yalın 'fırtına' Sturm ile karışıyor"
  },
  "1022": {
   "de": "her",
   "not": "her/her-/-her — aynı kelimenin üç yazımı; tire ek işareti, kelimenin parçası değil"
+ },
+ "1023": {
+  "de": "heraus",
+  "not": "A2 çeviri gözden geçirmesi: \"heraus/raus\" tek maddede iki biçimdi; raus ayrı madde olarak duruyor"
+ },
+ "1024": {
+  "de": "herein",
+  "not": "A2 çeviri gözden geçirmesi: \"herein/rein\" tek maddede iki biçimdi"
  },
  "1028": {
   "de": "hin",
   "not": "hin/hin-/-hin — aynı kelime"
  },
  "1033": {
-  "de": "sich informieren (über)",
-  "not": "informieren (sich) (über) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+  "de": "sich informieren",
+  "tr": "bilgi edinmek, bilgi almak",
+  "not": "A2 çeviri gözden geçirmesi: parantezli edat başlıktaydı; \"bilgilendirmek\" ters yönde, o jemanden informieren"
  },
  "1037": {
   "de": "sich interessieren",
@@ -565,13 +691,54 @@
   "drop": 696,
   "not": "A1 gözden geçirmesi: der/die Jugendliche — 696 ile aynı madde, artikelsiz Sonstiges kaydı"
  },
+ "1044": {
+  "tr": "büyük mağaza, çok katlı mağaza",
+  "not": "A2 çeviri gözden geçirmesi: Kaufhaus çok katlı büyük mağazadır; 'alışveriş merkezi' Einkaufszentrum'un karşılığı"
+ },
  "1065": {
   "drop": 706,
   "not": "kümmern (sich) — sich kümmern ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "1069": {
+  "drop": 7998,
+  "not": "A2 çeviri gözden geçirmesi: \"der/das Laptop\" artikelsiz Sonstiges kaydı; 7998 temiz hâli"
+ },
+ "1072": {
+  "de": "leidtun",
+  "not": "A2 çeviri gözden geçirmesi: \"leidtun/leid tun\" tek maddede iki yazımdı"
+ },
  "1081": {
   "drop": 310,
   "not": "Mal — 'mal / das Mal' sadeleştirilince 310 ile aynı oldu; zarf 'mal' 2314'te ayrı duruyor"
+ },
+ "1083": {
+  "de": "manche",
+  "not": "A2 çeviri gözden geçirmesi: \"manch-\" sözlük gövde yazımıydı"
+ },
+ "1100": {
+  "tr": "skuter, motorlu skuter",
+  "not": "A2 çeviri gözden geçirmesi: Motorroller skuterdir; moped (Moped) başka bir araç sınıfı ve ilk sıraya yanlış konmuş"
+ },
+ "1126": {
+  "tr": "(bavul, çanta) toplamak, paketlemek",
+  "not": "A2 çeviri gözden geçirmesi: örnek cümle 'Koffer packen' olduğu için ilk anlam 'toplamak' olmalı, 'paketlemek' değil"
+ },
+ "1136": {
+  "de": "Pommes frites",
+  "formen": "(Pl.)",
+  "not": "A2 çeviri gözden geçirmesi: çoğul işareti başlıktaydı, formen alanına taşındı"
+ },
+ "1140": {
+  "tr": "özel, kişisel (kamuya kapalı, işle ilgili olmayan)",
+  "not": "A2 çeviri gözden geçirmesi: tek başına 'özel' speziell ile karışıyor; privat 'kişisel/kamuya kapalı' demektir (aynı anlam: speziell)"
+ },
+ "1150": {
+  "tr": "hesap yapmak, hesaplamak",
+  "not": "A2 çeviri gözden geçirmesi: 'Sarah kann gut rechnen' cümlesinde kastedilen 'hesap yapabilmek'tir; 'hesaplamak' berechnen ile karışıyor (aynı anlam: berechnen)"
+ },
+ "1157": {
+  "tr": "emekli (Almanya)",
+  "not": "A2 çeviri gözden geçirmesi: der Pensionist (AT) ve pensioniert ile aynı karşılığı taşıyordu"
  },
  "1171": {
   "drop": 773,
@@ -582,12 +749,35 @@
   "not": "schneiden (sich) — sich schneiden ile aynı fiil, parantezli yazım kopyaydı"
  },
  "1198": {
-  "formen": "setzt, setzte, hat gesetzt",
-  "not": "sich setzen — Präteritum eksikti, 2689'dan alındı"
+  "tr": "oturmak (bir yere geçip)",
+  "not": "A2 çeviri gözden geçirmesi: 'kendini oturtmak' Türkçede kimsenin kullanmadığı sözlük çevirisi"
+ },
+ "1204": {
+  "tr": "başka; yoksa, aksi takdirde",
+  "not": "A2 çeviri gözden geçirmesi: ilk örnek 'Haben Sie sonst noch einen Wunsch?' 'başka' anlamında ama bu anlam çeviride hiç yok"
  },
  "1222": {
   "drop": 2792,
   "not": "streiten (sich) — sich streiten ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1223": {
+  "tr": "sert, disiplinli (kurallara katı)",
+  "not": "A2 çeviri gözden geçirmesi: 'katı' steif ile karışıyor; streng kişinin kurallara sıkı bağlılığıdır, sertlik/eğilmezlik değil (aynı anlam: steif)"
+ },
+ "1232": {
+  "de": "austauschen",
+  "tr": "değiş tokuş etmek, paylaşmak",
+  "beispiel": "Können wir unsere Adressen austauschen?",
+  "beispielTr": "Adreslerimizi paylaşabilir miyiz?",
+  "not": "A2 çeviri gözden geçirmesi: \"(aus)tauschen\" iki fiili birden taşıyordu; tauschen ayrı madde olarak duruyor"
+ },
+ "1235": {
+  "tr": "katılmak (kursa, etkinliğe)",
+  "not": "A2 çeviri gözden geçirmesi: mitmachen ve sich beteiligen ile aynı karşılığı taşıyordu"
+ },
+ "1249": {
+  "tr": "rüya görmek, hayal kurmak",
+  "not": "A2 çeviri gözden geçirmesi: träumen'in temel anlamı rüya görmektir ve ilk örnek cümle de ('Ich habe schlecht geträumt') bu anlamda, dolayısıyla sıra ters"
  },
  "1250": {
   "drop": 456,
@@ -601,6 +791,10 @@
   "drop": 2932,
   "not": "unterhalten (sich) — sich unterhalten ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "1271": {
+  "drop": 2963,
+  "not": "A2 çeviri gözden geçirmesi: \"verbieten / verboten sein\" tek maddede iki biçimdi; verboten (833) ve verbieten (2963) ayrı maddeler"
+ },
  "1276": {
   "drop": 2992,
   "not": "verletzen (sich) — sich verletzen ile aynı fiil, parantezli yazım kopyaydı"
@@ -609,9 +803,33 @@
   "drop": 2994,
   "not": "verlieben (sich) — sich verlieben ile aynı fiil, parantezli yazım kopyaydı"
  },
+ "1287": {
+  "tr": "dolu (boş değil), tıklım tıklım",
+  "not": "A2 çeviri gözden geçirmesi: Türkçede 'dolu' hem full hem hail demek; aynı anlam listesindeki der Hagel ile karışmaması için ayırt edici gerekiyor"
+ },
+ "1289": {
+  "tr": "yanından geçerek, uğrayarak; bitmiş, geçmiş",
+  "not": "A2 çeviri gözden geçirmesi: iki örnek cümle de 'yanından geçmek' ve 'uğramak' anlamında, oysa çeviri yalnızca 'bitmiş' anlamını veriyor"
+ },
+ "1290": {
+  "tr": "hazırlamak, hazırlanmak (etkinlik, sınav)",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki zubereiten yemek hazırlamaktır; vorbereiten'in bir işe/sınava önceden hazırlanma olduğu belirtilmeli"
+ },
+ "1293": {
+  "de": "vorne",
+  "not": "A2 çeviri gözden geçirmesi: \"vorn(e)\" parantezli varyanttı"
+ },
+ "1295": {
+  "tr": "dikkatli, tedbirli (tehlikeye karşı)",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki aufmerksam 'dikkatini veren' demek; vorsichtig ise tehlikeye karşı temkinli olmaktır, ayrım yok"
+ },
  "1296": {
   "drop": 842,
   "not": "vorstellen (sich) — sich vorstellen ile aynı fiil, parantezli yazım kopyaydı"
+ },
+ "1300": {
+  "tr": "seçmek, çevirmek (numara)",
+  "not": "A2 çeviri gözden geçirmesi: tek başına 'çevirmek' tercüme etmek sanılıyor; örnek cümledeki anlam telefonda numara çevirmek"
  },
  "1303": {
   "drop": 845,
@@ -621,6 +839,10 @@
   "de": "weg",
   "not": "weg/weg- — aynı kelime"
  },
+ "1311": {
+  "tr": "çünkü (fiil sona gider)",
+  "not": "A2 çeviri gözden geçirmesi: denn ile aynı karşılığı taşıyordu; weil yan cümle kurar ve fiili sona atar"
+ },
  "1313": {
   "drop": 495,
   "not": "A1 gözden geçirmesi: welcher — 495 \"welche\" ile aynı madde, çekim varyantı"
@@ -629,9 +851,25 @@
   "drop": 497,
   "not": "wer (wen — bozuk çıkarma, 497 ile aynı; hâl biçimleri 497'ye taşındı"
  },
+ "1321": {
+  "tr": "esprili, komik",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki lustig zaten 'komik, eğlenceli'; witzig espri/nükte içerdiği için komiktir, ayrım gerekiyor"
+ },
+ "1330": {
+  "tr": "karne, belge (diploma, bonservis)",
+  "not": "A2 çeviri gözden geçirmesi: 'tanıklık belgesi' yanıltıcı; Zeugnis okul karnesi ya da iş/öğrenim belgesidir, mahkeme tanıklığıyla ilgisi yok"
+ },
  "1331": {
-  "de": "anziehen/ausziehen",
-  "not": "(an-)/(aus)ziehen — iki ayrı fiil, parantezli kısaltma açıldı"
+  "de": "anziehen",
+  "tr": "giymek, (giysi) giydirmek",
+  "beispiel": "Ich ziehe mir eine Jacke an.",
+  "beispielTr": "Bir ceket giyiyorum.",
+  "not": "A2 çeviri gözden geçirmesi: \"anziehen/ausziehen\" tek maddede iki zıt fiildi; ausziehen ayrı madde olarak duruyor"
+ },
+ "1339": {
+  "de": "zurück-",
+  "tr": "geri (dönmek, vermek, gitmek)",
+  "not": "A2 çeviri gözden geçirmesi: başlık \"zurück- (fahren\" olarak kesilmişti"
  },
  "1350": {
   "de": "Abitur",
@@ -653,6 +891,14 @@
   "tr": "tanıdık (kadın)",
   "not": "1526 ile çift"
  },
+ "1563": {
+  "tr": "katkıda bulunmak, iştirak etmek",
+  "not": "A2 çeviri gözden geçirmesi: teilnehmen ve mitmachen ile aynı karşılığı taşıyordu"
+ },
+ "1588": {
+  "drop": 8153,
+  "not": "A2 çeviri gözden geçirmesi: \"bio(logisch)\" — 8153 ile aynı madde, parantezli varyant"
+ },
  "1590": {
   "drop": 79,
   "not": "A1 gözden geçirmesi: ein bisschen — 79 \"bisschen\" ile aynı madde, örnek cümlesi de kesik"
@@ -660,6 +906,10 @@
  "1695": {
   "de": "EC-Karte",
   "not": "ec-Karte/EC-Karte → A: Bankomat-Karte — çapraz gönderme artığı"
+ },
+ "1736": {
+  "drop": 951,
+  "not": "A2 çeviri gözden geçirmesi: eintragen — 951 sich eintragen ile aynı örnek cümleyi taşıyordu"
  },
  "1744": {
   "drop": 952,
@@ -670,8 +920,8 @@
   "not": "Eis — 123 ile aynı (A1)"
  },
  "1783": {
-  "de": "Erdgeschoss/Erdgeschoß",
-  "not": "Erdgeschoss/ Ergeschoß — ikinci biçimde 'd' düşmüş"
+  "drop": 957,
+  "not": "A2 çeviri gözden geçirmesi: \"das Erdgeschoss/Erdgeschoß\" — 957 ile aynı madde, Avusturya yazım varyantı"
  },
  "1852": {
   "drop": 640,
@@ -718,6 +968,10 @@
   "drop": 678,
   "not": "A1 gözden geçirmesi: Hähnchen/Hühnchen — 678 ile aynı madde, eğik çizgili varyant"
  },
+ "2048": {
+  "drop": 1017,
+  "not": "A2 çeviri gözden geçirmesi: \"Hauptdie Hauptstadt\" — 1017 ile aynı madde, başlık bozuk"
+ },
  "2050": {
   "de": "Hausfrau/Hausmann",
   "not": "Hausfrau/der Hausmann — artikel ikinci biçime yapışmış"
@@ -727,8 +981,12 @@
   "not": "her — 1022 ile aynı (A2)"
  },
  "2063": {
-  "typ": "Sonstiges",
-  "not": "heraus- — zarf/önek, fiil olarak işaretliydi"
+  "drop": 1023,
+  "not": "A2 çeviri gözden geçirmesi: \"heraus-\" — 1023 ile aynı madde"
+ },
+ "2065": {
+  "drop": 1024,
+  "not": "A2 çeviri gözden geçirmesi: \"herein-\" — 1024 ile aynı madde"
  },
  "2068": {
   "typ": "Sonstiges",
@@ -774,6 +1032,10 @@
   "de": "Matura (A)",
   "not": "Matura (A — kapanmamış parantez, bölge bilgisi korundu"
  },
+ "2336": {
+  "drop": 1088,
+  "not": "A2 çeviri gözden geçirmesi: \"meist(ens)\" — 1088 ile aynı madde, parantezli varyant"
+ },
  "2365": {
   "drop": 733,
   "not": "Möbel — 733 ile aynı (A1)"
@@ -785,6 +1047,10 @@
  "2406": {
   "de": "national",
   "not": "national/national- — aynı kelime"
+ },
+ "2422": {
+  "drop": 7616,
+  "not": "A2 çeviri gözden geçirmesi: \"noch mal\" — 7616 ile aynı madde"
  },
  "2436": {
   "de": "Obers (A)",
@@ -803,6 +1069,10 @@
   "tr": "orijinal, özgün (sıfat)",
   "not": "das Original (2459) ismiyle aynı yazım; bu sıfat"
  },
+ "2464": {
+  "drop": 1125,
+  "not": "A2 çeviri gözden geçirmesi: \"(ein) paar\" — 1125 ile aynı madde, parantezli varyant"
+ },
  "2477": {
   "de": "in Pension gehen",
   "not": "in Pension gehen/sein (D — kapanmamış parantez; 'sein' ayrı madde 2478'de"
@@ -810,6 +1080,10 @@
  "2478": {
   "de": "pensioniert werden",
   "not": "pensioniert werden/sein (D — kapanmamış parantez"
+ },
+ "2479": {
+  "tr": "emekli (Avusturya)",
+  "not": "A2 çeviri gözden geçirmesi: der Rentner ile aynı karşılığı taşıyordu; Pensionist Avusturya kullanımıdır"
  },
  "2507": {
   "de": "Portemonnaie/Portmonee",
@@ -853,6 +1127,10 @@
   "drop": 1198,
   "not": "sich setzen — 1198 ile aynı; çekim bilgisi 1198'e taşındı"
  },
+ "2702": {
+  "drop": 1201,
+  "not": "A2 çeviri gözden geçirmesi: \"der Ski/Schi\" — 1201 ile aynı madde, eğik çizgili varyant"
+ },
  "2716": {
   "de": "so viel",
   "not": "so viel/so viel wie — ikincisi aynı kalıbın genişlemişi"
@@ -864,6 +1142,10 @@
  "2779": {
   "drop": 803,
   "not": "Stock — 803 ile aynı (A1)"
+ },
+ "2792": {
+  "tr": "kavga etmek (birbiriyle)",
+  "not": "A2 çeviri gözden geçirmesi: streiten ile aynı karşılığı taşıyordu; dönüşlü biçim karşılıklılık bildirir"
  },
  "2796": {
   "drop": 433,
@@ -909,6 +1191,10 @@
   "drop": 1289,
   "not": "vorbei — 1289 ile aynı (A2)"
  },
+ "3062": {
+  "drop": 1293,
+  "not": "A2 çeviri gözden geçirmesi: \"vorn\" — 1293 ile aynı madde"
+ },
  "3081": {
   "drop": 844,
   "not": "was für ein- — 844 ile aynı kalıp"
@@ -953,6 +1239,234 @@
  "3784": {
   "drop": 706,
   "not": "A1 gözden geçirmesi: sich kümmern um — 706 ile aynı madde, edatlı yazımı"
+ },
+ "3791": {
+  "drop": 1235,
+  "not": "A2 çeviri gözden geçirmesi: \"teilnehmen an\" — 1235 ile aynı madde, edatlı yazımı"
+ },
+ "3801": {
+  "drop": 1037,
+  "not": "A2 çeviri gözden geçirmesi: \"sich interessieren für\" — 1037 ile aynı madde, edatlı yazımı"
+ },
+ "3803": {
+  "drop": 2792,
+  "not": "A2 çeviri gözden geçirmesi: \"sich streiten über\" — 2792 ile aynı madde, edatlı yazımı"
+ },
+ "7436": {
+  "tr": "sert, katı (esnemeyen, bükülmeyen)",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki streng de 'sert, katı' (kural/kişi için); steif fiziksel olarak bükülmezliktir, ayrım yok"
+ },
+ "7479": {
+  "tr": "kullanışlı, taşıması kolay",
+  "not": "A2 çeviri gözden geçirmesi: 'elde rahat duran' Türkçede kimsenin kurmadığı bir ifade; handlich küçük ve taşıması kolay demektir"
+ },
+ "7490": {
+  "tr": "iç açıcı olmayan, soğuk (ortam)",
+  "not": "A2 çeviri gözden geçirmesi: 'rahatsız edici' aktif olarak rahatsızlık veren şeyi anlatır; ungemütlich ortamın huzursuz ve konforsuz oluşudur"
+ },
+ "7509": {
+  "tr": "kötü niyetli, kırıcı",
+  "not": "A2 çeviri gözden geçirmesi: 'aşağılık' gemein'ın günlük kullanımına göre çok ağır bir hakaret; örnekteki 'Das war gemein von dir' kırıcı bir davranışı anlatıyor"
+ },
+ "7511": {
+  "tr": "kuşkucu, güvenmeyen",
+  "not": "A2 çeviri gözden geçirmesi: Türkçede 'güvensiz' emniyetsiz/tehlikeli anlamına gelir; misstrauisch karşısındakine güvenmeyen kişidir"
+ },
+ "7514": {
+  "tr": "agresif, saldırgan (davranış)",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki der Angreifer 'saldırgan (saldıran kişi)' adıyla birebir çakışıyor; aggressiv sıfattır ve günlük Türkçede 'agresif' denir"
+ },
+ "7525": {
+  "tr": "akıllı, zeki, kurnaz",
+  "not": "A2 çeviri gözden geçirmesi: örnekteki 'schlaue Idee' akıllıca fikir demek; en yaygın anlam olan 'akıllı' başta olmalı, 'kurnaz' ise olumsuz yan anlam"
+ },
+ "7533": {
+  "tr": "hareketli, canlı (kişi, huy)",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki lebendig 'yaşayan, canlı' demek; lebhaft kişinin hareketli mizacını anlatır ve ayırt edici gerekiyor"
+ },
+ "7535": {
+  "tr": "sevimli, cana yakın, hoş sohbet",
+  "not": "A2 çeviri gözden geçirmesi: 'çekici' bir sonraki maddedeki attraktiv'in karşılığı; charmant fiziksel çekicilik değil hoş ve nazik tavırdır"
+ },
+ "7540": {
+  "tr": "şefkatli, nazik (dokunuş, ses)",
+  "not": "A2 çeviri gözden geçirmesi: liebevoll ile neredeyse birebir aynı karşılığı taşıyor ve 'müşfik' bugünkü Türkçede kullanılmıyor; zärtlich dokunuştaki naziklikle ayrılır"
+ },
+ "7566": {
+  "tr": "emekli olmuş, emekliye ayrılmış",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki der Rentner / der Pensionist adları da 'emekli' diye çevrilmiş; pensioniert sıfat olduğu için ayırt edici gerekiyor"
+ },
+ "7597": {
+  "tr": "defalarca, üst üste",
+  "not": "A2 çeviri gözden geçirmesi: 'tekrarlanan biçimde' Türkçede kullanılmayan sözlük dili; örnek cümledeki 'hat sich wiederholt beschwert' için doğal karşılık 'defalarca'dır"
+ },
+ "7605": {
+  "tr": "kısmen",
+  "not": "A2 çeviri gözden geçirmesi: 'bir kısmı' bir isim tamlamasıdır, zarf olan teilweise'nin yerine cümlede kullanılamaz"
+ },
+ "7606": {
+  "tr": "şöyle böyle, az çok",
+  "not": "A2 çeviri gözden geçirmesi: halbwegs bir derece belirtir ('halbwegs sauber' = şöyle böyle temiz); 'yarı yarıya' nicel bölüşme anlamı verdiği için yanıltıcı"
+ },
+ "7611": {
+  "tr": "birincisi, ilk olarak",
+  "not": "A2 çeviri gözden geçirmesi: 'önce şu var ki' bir sıralama zarfı değil, doğal olmayan bir cümle parçasıdır"
+ },
+ "7616": {
+  "de": "noch mal",
+  "not": "A2 çeviri gözden geçirmesi: Duden yazımı ayrık; düşürülen 2422 ile aynı maddeydi"
+ },
+ "7669": {
+  "tr": "bloknot, not defteri",
+  "not": "A2 çeviri gözden geçirmesi: 'not bloknotu' Türkçede kullanılmaz; bloknot zaten not için olan defterdir"
+ },
+ "7670": {
+  "tr": "depo binası, ambar",
+  "not": "A2 çeviri gözden geçirmesi: Lagerhalle deponun bulunduğu bina/hangardır; sadece 'depo' denince das Lager'den ayırt edilemiyor"
+ },
+ "7715": {
+  "tr": "kelime (yabancı dilde öğrenilen), sözcük",
+  "not": "A2 çeviri gözden geçirmesi: Vokabel her kelime değil, öğrenilmek üzere ezberlenen yabancı dil kelimesidir; 'kelime, sözcük' aynen das Wort ile örtüşüyor (aynı anlam: das Wort)"
+ },
+ "7721": {
+  "tr": "çırak, meslek eğitimi gören kişi",
+  "not": "A2 çeviri gözden geçirmesi: 'stajyer' Almancada Praktikant'ın karşılığıdır; Azubi sözleşmeli meslek eğitimi (Ausbildung) görendir, bu ikisi karışıyor"
+ },
+ "7732": {
+  "tr": "dağıtmak (elden, tek tek vermek)",
+  "not": "A2 çeviri gözden geçirmesi: austragen (eve/adrese götürerek dağıtmak) ve verteilen (paylaştırarak dağıtmak) ile birebir aynı Türkçeyi paylaşıyor; austeilen orada bulunanlara elden vermektir (aynı anlam: austragen, verteilen)"
+ },
+ "7734": {
+  "tr": "(derste) yardım etmek, takviye ders vermek",
+  "not": "A2 çeviri gözden geçirmesi: 'takviye yardım etmek' Türkçede kullanılmayan, sözlük kokan bir kalıp"
+ },
+ "7769": {
+  "tr": "kuyrukta beklemek, sıraya girmek",
+  "not": "A2 çeviri gözden geçirmesi: örnek cümle 'zwanzig Minuten anstehen' beklemeyi anlatıyor, sıraya girme anını değil; en yaygın anlam başta olmalı"
+ },
+ "7784": {
+  "tr": "patates kızartması (günlük kısa hâl)",
+  "not": "A2 çeviri gözden geçirmesi: die Pommes frites ile aynı karşılığı taşıyordu"
+ },
+ "7795": {
+  "tr": "karıştırmak (kaşıkla çevirmek)",
+  "not": "A2 çeviri gözden geçirmesi: mischen (katarak karıştırmak) ve verwechseln (birbiriyle karıştırmak) ile aynı Türkçeyi paylaşıyor; rühren kapta çevirmektir (aynı anlam: mischen, verwechseln, umrühren)"
+ },
+ "7816": {
+  "tr": "depozito (şişe, kap)",
+  "not": "A2 çeviri gözden geçirmesi: Kaution kira/teminat depozitosudur, Pfand ise şişe-kap depozitosu; ikisi de 'depozito' olunca ayırt edilemiyor (aynı anlam: die Kaution)"
+ },
+ "7864": {
+  "tr": "şık (özel gün için), şenlikli",
+  "not": "A2 çeviri gözden geçirmesi: 'bayramlık' Türkçede yalnızca giysi için kullanılan bir isimdir, festlich ise ortam/yemek/kıyafet için kullanılan bir sıfattır"
+ },
+ "7868": {
+  "tr": "terbiyesiz, yaramaz",
+  "not": "A2 çeviri gözden geçirmesi: ungezogen 'kötü yetiştirilmiş, terbiyesiz' demektir ve örnek cümle büyükanneye karşı kabalığı anlatıyor, 'yaramaz' bu anlamı zayıflatıyor"
+ },
+ "7879": {
+  "tr": "jimnastik yapmak",
+  "not": "A2 çeviri gözden geçirmesi: 'cimnastik' aynı kelimenin yanlış yazımı, ikinci karşılık olarak durmamalı"
+ },
+ "7885": {
+  "tr": "kafa dağıtmak, kapatmak (cihaz)",
+  "not": "A2 çeviri gözden geçirmesi: tek başına 'kapatmak' schließen ile karışıyor, abschalten cihaz kapatmaktır"
+ },
+ "7891": {
+  "tr": "ödünç almak, ödünç vermek",
+  "not": "A2 çeviri gözden geçirmesi: ausleihen ücretsiz ödünç alıp vermektir, 'kiralamak' mieten anlamına kayıyor"
+ },
+ "7955": {
+  "tr": "kan örneği, kan tahlili",
+  "not": "A2 çeviri gözden geçirmesi: Blutprobe alınan numunedir; örnek cümledeki 'nimmt eine Blutprobe' için doğal karşılık 'kan örneği'dir, 'kan tahlili' ise Bluttest/Blutuntersuchung anlamına kaydığı için başta olmamalı"
+ },
+ "7996": {
+  "tr": "batarya, pil",
+  "not": "A2 çeviri gözden geçirmesi: Akku cihazın içindeki şarj edilebilir pildir; 'şarj' doldurma işlemini (Aufladung) anlattığı için başta olması yanıltıcı"
+ },
+ "7999": {
+  "tr": "fare (bilgisayar), fare (hayvan)",
+  "not": "A2 çeviri gözden geçirmesi: karşılık aynı kelimeyi iki kez sıralıyor; ikinci anlamın ayırt edicisi eksik kalmış"
+ },
+ "8070": {
+  "tr": "gidiş yolculuğu, gidiş",
+  "not": "A2 çeviri gözden geçirmesi: 'varış yolculuğu' Türkçede kullanılmayan bir tamlama; Anreise, örnek cümledeki gibi yere ulaşana kadarki gidiş yolculuğudur"
+ },
+ "8144": {
+  "tr": "canlı, yaşayan",
+  "not": "A2 çeviri gözden geçirmesi: lebhaft ile aynı karşılığı taşıyordu; lebendig yaşıyor olmaktır, hareketli mizaç değil"
+ },
+ "8145": {
+  "tr": "serbest, izin verilen",
+  "not": "A2 çeviri gözden geçirmesi: Türkçede bir eylem için 'izinli' denmez ('park etmek izinli' kulağa yanlış gelir); örnek cümledeki anlam 'serbest'tir"
+ },
+ "8160": {
+  "tr": "hakkı olan, yetkili",
+  "not": "A2 çeviri gözden geçirmesi: berechtigt sein 'hakkı olmak'tır; örnek cümlede sakinlerin park etme hakkı vardır, 'yetkili' (zuständig/befugt) anlamı başta olduğu için yanıltıcı"
+ },
+ "8169": {
+  "tr": "karıştırmak (kaşıkla, çorbayı)",
+  "not": "A2 çeviri gözden geçirmesi: aynı anlam listesindeki verwechseln ve mischen da 'karıştırmak' olduğu için ayrım kalmıyor; umrühren kaşıkla çevirmektir"
+ },
+ "8170": {
+  "tr": "kızartmak (yağsız: ekmek, kahve), kavurmak",
+  "not": "A2 çeviri gözden geçirmesi: braten de 'kızartmak' olduğundan ayrım yok; rösten yağsız/kuru ısıyla kızartmaktır"
+ },
+ "8190": {
+  "tr": "kurmak (parçaları birleştirerek), monte etmek",
+  "not": "A2 çeviri gözden geçirmesi: montieren de 'monte etmek' olduğundan ayrım yok; zusammenbauen parçaları birleştirip kurmaktır"
+ },
+ "8201": {
+  "tr": "(geç saate kadar) uyanık kalmak, yatmamak",
+  "not": "A2 çeviri gözden geçirmesi: aufbleiben yatmayıp uyanık kalmaktır; 'ayakta kalmak' Türkçede 'oturmayıp dikilmek' anlamına gelir ve yanıltıcıdır"
+ },
+ "8209": {
+  "tr": "yeniden doldurmak, üstüne eklemek",
+  "not": "A2 çeviri gözden geçirmesi: nachfüllen biten bir şeyi ikmal etmektir; örnekteki tuz için 'tazelemek' uymuyor ve ilk anlam olmamalı"
+ },
+ "8239": {
+  "tr": "gözden geçirmek, içinden geçmek",
+  "not": "A2 çeviri gözden geçirmesi: örnek cümle listeyi gözden geçirmekle ilgili, bu yüzden o anlam başta olmalı"
+ },
+ "8245": {
+  "tr": "(araçla) ayrılmak, çekip gitmek",
+  "not": "A2 çeviri gözden geçirmesi: wegfahren bir yerden araçla uzaklaşmaktır; 'arabayla gitmek' Auto fahren ile karışıyor ve ayrılma anlamını vermiyor"
+ },
+ "8246": {
+  "tr": "(aracı) kullanmak, yönlendirmek",
+  "not": "A2 çeviri gözden geçirmesi: örnek cümlede otobüsü kullanmak anlamı var; 'yönlendirmek' soyut anlamdır ve başta olmamalı"
+ },
+ "8255": {
+  "tr": "geçici olarak yardım etmek, yardıma gitmek",
+  "not": "A2 çeviri gözden geçirmesi: aushelfen bir işte geçici destek vermektir; 'yardıma koşmak' acil imdat çağrışımı yapıyor ve örnekteki dükkânda çalışma anlamını vermiyor"
+ },
+ "8257": {
+  "tr": "sıralamak, tasnif etmek",
+  "not": "A2 çeviri gözden geçirmesi: sortieren belli bir düzene göre ayırıp sıralamaktır; 'ayıklamak' aussortieren (işe yaramazı ayırmak) anlamına kayıyor"
+ },
+ "8263": {
+  "tr": "yerleştirmek, dizmek",
+  "not": "A2 çeviri gözden geçirmesi: örnekte salona sandalye dizmek anlamı var; 'dikmek' Türkçede ağaç/direk dikmeyi çağrıştırıyor ve başta olmamalı"
+ },
+ "8281": {
+  "tr": "toplayıp yerine kaldırmak, kaldırmak",
+  "not": "A2 çeviri gözden geçirmesi: Türkçede 'ortadan kaldırmak' yok etmek demektir; wegräumen ise eşyayı toplayıp yerine koymaktır"
+ },
+ "8302": {
+  "tr": "(telefonda) ulaşabilmek, bağlanmak",
+  "not": "A2 çeviri gözden geçirmesi: 'hat bağlantısı kurmak' kimsenin kullanmadığı sözlük dilidir; örnekteki anlam telefonda karşı tarafa ulaşabilmektir"
+ },
+ "8359": {
+  "tr": "yatak, şilte",
+  "not": "A2 çeviri gözden geçirmesi: Matratze için Türkçede günlük karşılık 'yatak'tır; 'yatak minderi' kimsenin kullanmadığı bir tabir"
+ },
+ "8372": {
+  "tr": "şifonyer, çekmeceli dolap",
+  "not": "A2 çeviri gözden geçirmesi: Kommode Türkçede 'şifonyer'dir; 'konsol' çekmecesiz duvar kenarı masasını (konsol masa) çağrıştırıyor"
+ },
+ "8390": {
+  "tr": "alt kiracı, kiracının kiracısı",
+  "not": "A2 çeviri gözden geçirmesi: Untermieter'in Türkçedeki yerleşik karşılığı 'alt kiracı'dır; 'oda kiracısı' anlamı daraltıyor"
  },
  "_": "Madde başlığı düzeltmeleri. Anahtar: kelime id'si. 'de' yeni başlık, 'tr' yeni anlam (yalnızca gerekliyse). Her satırın gerekçesi 'not' alanında.",
  "_drop": "Aşağıdakiler aynı kelimenin ikinci kaydı. Goethe listeleri üst üste biniyor: A1/A2'de geçen kelime B1 listesinde tekrar ediyor. Öğrencinin ilk karşılaşması gereken yer düşük seviye olduğu için orada olan korunur.",
