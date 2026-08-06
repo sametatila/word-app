@@ -26,9 +26,15 @@ export default async function LessonsPage() {
     // "Bitti" ölçüsü rol yapmayı da içeriyor: alıştırmaları geçip konuşmadan
     // çıkmak dersin asıl parçasını atlamak demek.
     done: Boolean(c.state?.roleplayDone),
+    // Başlanmış ama bitmemiş ders ayrı bir durum. Önce yalnızca "bitti /
+    // bitmedi" vardı ve dört alıştırmayı da doğru yapıp konuşmaya girmemiş bir
+    // ders hiç dokunulmamış derslerden ayırt edilemiyordu — öğrenci
+    // yaptıklarının hiçbir izini görmüyordu.
+    started: Boolean(c.state) && !c.state?.roleplayDone,
     due: c.due,
     correct: c.state?.correct ?? 0,
     total: c.state?.total ?? c.lesson.checks.length,
+    attempts: c.state?.attempts ?? 0,
   }));
 
   return (
