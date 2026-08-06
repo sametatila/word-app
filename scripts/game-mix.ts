@@ -43,10 +43,51 @@ async function main() {
       console.log(`gün ${d} oturum ${s}: ${mix.join(", ")}`);
       await submitAnswers(USER, answersFor(session.rounds), day, 120);
     }
-    // ertesi güne geç: tekrarların zamanı gelsin
-    await db.update(userWords).set({ dueAt: sql`now() - interval '1 hour'` }).where(eq(userWords.userId, USER));
+    // Kelimelerin olgunluk dağılımı: üretim oyunları yalnızca oturmuş
+    // kelimelerde açıldığı için, bir oyun hiç çıkmadığında suçlunun seçim
+    // mantığı mı yoksa kuyruğun bileşimi mi olduğu ancak buradan görülüyor.
+    const dist = await db
+      .select({
+        streak: userWords.correctStreak,
+        iv: userWords.intervalDays,
+        ease: userWords.ease,
+      })
+      .from(userWords)
+      .where(eq(userWords.userId, USER));
+    const strong = dist.filter((d) => d.streak >= 4 && d.iv >= 7 && d.ease >= 2.3).length;
+    const solid = dist.filter((d) => d.streak >= 2 && d.iv >= 1).length - strong;
+    console.log(`  → ${dist.length} kelime: ${strong} sağlam, ${solid} oturmuş`);
+
+    // Ertesi güne geç. `lastReviewedAt` de geri alınmak ZORUNDA: zamanlayıcı
+    // "aynı gün ikinci kez doğru bilmek aralığı büyütmez" kuralını duvar
+    // saatinden okuyor, oysa bu testte gün yalnızca bir metin olarak ilerliyor.
+    // Yalnızca `dueAt` geri alınsaydı hiçbir kelimenin aralığı 1 günün üstüne
+    // çıkamaz, hiçbir kelime sağlamlaşamaz ve üretim oyunlarının hiç çıkmaması
+    // gerçek bir kusur değil testin kendi kurgusu olurdu.
+    await db
+      .update(userWords)
+      .set({
+        dueAt: sql`now() - interval '1 hour'`,
+        lastReviewedAt: sql`now() - interval '25 hours'`,
+      })
+      .where(eq(userWords.userId, USER));
     day = shiftDay(day, 1);
   }
+  // Asıl senaryo: ilerlemiş öğrenci. Olgun kelimelerin tekrarı haftalar
+  // sonrasına planlanmış durumda, dolayısıyla kuyruk baştan sona yeni kelime.
+  // Kullanıcının bildirdiği kusur tam buydu: altı tam tur boyunca yazma ve
+  // çoğul oyunu hiç çıkmamıştı. Oturum, olgun kelimeleri biraz öne çekerek
+  // üretim oyunlarını ayakta tutmak zorunda.
+  await db
+    .update(userWords)
+    .set({ dueAt: sql`now() + interval '30 days'` })
+    .where(eq(userWords.userId, USER));
+  const ileri = await buildSession(USER, day);
+  const ileriMix = ileri.rounds.map((r) => r.game);
+  console.log(`\nİLERLEMİŞ ÖĞRENCİ (tekrarı gelen kelime yok): ${ileriMix.join(", ")}`);
+  const uretim = ileriMix.filter((g) => g === "typing" || g === "order" || g === "scramble");
+  console.log(uretim.length ? `  ✓ ${uretim.length} üretim turu var` : "  ✗ hiç üretim turu yok");
+
   console.log("\nGÖRÜLEN OYUNLAR:", [...seen].join(", "));
   console.log("EKSİK:", ["intro","choice","artikel","scramble","cloze","typing","match"].filter((g) => !seen.has(g)).join(", ") || "yok");
   await cleanup();

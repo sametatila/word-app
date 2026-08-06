@@ -28,6 +28,16 @@ const ROUNDS_PER_SESSION = 20;
  * Bu pencere kümelenmeyi doğrudan engeller.
  */
 const RECENT_GAME_WINDOW = 3;
+
+/**
+ * Bir oturumda bulunması istenen en az olgun kelime sayısı.
+ *
+ * Üretim oyunları ve çoğul yalnızca oturmuş kelimelerde açıldığı için, kuyrukta
+ * hiç olgun kelime yoksa o oyunlar hiç görünmüyor. Dört, yirmi turluk bir
+ * oturumda oyun havuzunu açık tutmaya yetiyor ve tekrar planını gözle görülür
+ * biçimde öne çekmiyor.
+ */
+const MIN_MATURE = 6;
 /** Bu aralığa ulaşan kelime "pekişmiş" sayılır (kelime listesiyle aynı ölçüt). */
 const MASTERED_DAYS = 21;
 
@@ -48,7 +58,13 @@ const MASTERED_DAYS = 21;
 type Strength = "fresh" | "shaky" | "solid" | "strong";
 
 /** Tanıtım kartı bir güç seviyesi değil, kuyruktaki özel bir adımdır. */
-type QueueItem = { word: RoundWord; strength: Strength; intro?: boolean };
+type QueueItem = {
+  word: RoundWord;
+  strength: Strength;
+  intro?: boolean;
+  /** Oyun seçiminde eğilim — yalnızca çeşitlilik için öne çekilen kelimelerde. */
+  bias?: "recognition" | "production";
+};
 
 function wordStrength(uw: typeof userWords.$inferSelect | null | undefined): Strength {
   if (!uw || uw.reps === 0) return "fresh";
@@ -315,10 +331,32 @@ export async function buildSession(
     strength: "fresh" as const,
   }));
 
-  // Kuyruk zayıfsa yakın zamanda gelecek tekrarları öne çek: oturum asla boş kalmaz.
+  // Yakın zamanda gelecek tekrarları öne çekmenin İKİ sebebi var.
+  //
+  // 1) Kuyruk zayıfsa oturum boş kalmasın.
+  //
+  // 2) Oyun çeşitliliği. Oyunlar kelimenin gücüne göre açılıyor: üretim
+  //    oyunları (yazarak hatırla, cümleyi diz, harf bulmacası) ve çoğul
+  //    yalnızca oturmuş kelimelerde çıkıyor. İlerlemiş bir öğrencide bu
+  //    kelimelerin tekrarı haftalar sonrasına planlanıyor ve günlük oturum
+  //    baştan sona yeni kelimeyle doluyor — hepsi "fresh", dolayısıyla
+  //    ekranda yalnızca tanıma oyunları görünüyor. Gerçek kullanımda
+  //    doğrulandı: bir kullanıcının 290 kelimesinin 264'ü oturmuş olmasına
+  //    rağmen tekrarı gelmiş yalnızca 2 kelimesi vardı ve ikisi de takılan
+  //    kelimeydi, yani yazma oyunu ve çoğul haftalarca hiç çıkmadı.
+  //
+  //    Olgun bir kelimeyi birkaç gün erken sormak SM-2 açısından zararsız
+  //    (aralık yine büyür), ama oyun havuzunu açık tutuyor.
+  //
   // Son 30 dakikada zaten sorulmuş kelimeler dışarıda bırakılır — aynı kelimeyi
   // arka arkaya sormak öğrenciyi yorar ve bir şey öğretmez.
-  if (dueWords.length + newWords.length < 6) {
+  const mature = (i: QueueItem) => i.strength === "solid" || i.strength === "strong";
+  const matureCount = dueWords.filter(mature).length;
+  const thin = dueWords.length + newWords.length < 6;
+  const needMature = Math.max(0, MIN_MATURE - matureCount);
+
+  if (thin || needMature > 0) {
+    const want = thin ? 10 - dueWords.length - newWords.length : needMature;
     const early = await db
       .select({ w: words, uw: userWords })
       .from(userWords)
@@ -329,12 +367,22 @@ export async function buildSession(
           gt(userWords.dueAt, now),
           eq(words.course, course),
           sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
+          // Çeşitlilik için çekiyorsak yalnızca oturmuş kelime işe yarıyor:
+          // erken çekilen bir "fresh" kelime aynı tanıma oyunlarını doğurur.
+          thin ? sql`true` : sql`${userWords.correctStreak} >= 2 and ${userWords.intervalDays} >= 1`,
         ),
       )
       .orderBy(asc(userWords.dueAt))
-      .limit(10 - dueWords.length - newWords.length);
+      .limit(Math.max(0, want));
     for (const r of early) {
-      dueWords.push({ word: toRoundWord(r.w, false), strength: wordStrength(r.uw) });
+      dueWords.push({
+        word: toRoundWord(r.w, false),
+        strength: wordStrength(r.uw),
+        // Çeşitlilik için çekilen kelime üretim eğilimiyle sorulur. Eğilim
+        // olmadan bu kelimeler de tanıma oyunlarına düşüyordu ve öne çekmenin
+        // tek amacı boşa gidiyordu.
+        bias: thin ? undefined : "production",
+      });
     }
   }
 
@@ -517,7 +565,7 @@ function composeRounds(
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
     const round = item.intro
       ? ({ id: nextId(), game: "intro", word: item.word } as Round)
-      : pickRound(item.word, item.strength, pool, recent, nextId, undefined, usage);
+      : pickRound(item.word, item.strength, pool, recent, nextId, item.bias, usage);
     if (!round) continue;
     rounds.push(round);
     usage.set(round.game, (usage.get(round.game) ?? 0) + 1);
@@ -564,6 +612,15 @@ function pickRound(
     candidates.push("choice", "cloze", "order", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
+    // Yazma oyunu önceden yalnızca "sağlam" kelimelerde açılıyordu ve pratikte
+    // hiç çıkmıyordu: sağlamlık üç koşulu birden istiyor (üst üste 4 doğru,
+    // aralık ≥ 7 gün, kolaylık ≥ 2.3) ve gerçek hesaplarda kelimelerin ancak
+    // %7'si o eşiği geçiyor — üstelik o kelimelerin tekrarı haftalar sonrasına
+    // planlandığı için oturuma da girmiyorlardı. Oturmuş bir kelimeyi yazdırmak
+    // fazla sert değil: aynı anlamı taşıyan diğer Almanca karşılıklar da kabul
+    // ediliyor. Uzun kelimeler yine dışarıda — orada ölçülen şey hatırlama
+    // değil imla oluyor.
+    if (word.de.length <= 14) candidates.push("typing");
   } else {
     candidates.push("typing", "cloze", "choice", "order", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel", "plural");
