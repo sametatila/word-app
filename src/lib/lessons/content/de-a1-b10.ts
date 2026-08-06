@@ -555,17 +555,17 @@ export const deA1B10: Lesson[] = [
       {
         say: [
           tr(
-            "Artık randevu alabilirsin. Şimdi bir muayenehaneyi arayıp randevu isteyeceksin.",
+            "Artık randevu alabilirsin. Şimdi bir kuaförü arayıp randevu isteyeceksin.",
           ),
         ],
       },
     ],
     roleplay: {
       scene:
-        "Bir muayenehaneyi aradın ve randevu almak istiyorsun. Uygun günü öner, saati konuş ve gerekirse randevuyu ertelemeyi iste.",
-      partner: "takvimi dolu ama çözüm arayan bir sekreter",
-      opening: "Praxis Dr. Wagner, guten Morgen. Möchten Sie einen Termin?",
-      openingTr: "Dr. Wagner Muayenehanesi, günaydın. Randevu mu almak istiyorsunuz?",
+        "Bir kuaför salonunu aradın ve randevu almak istiyorsun. Uygun günü öner, saati konuş ve gerekirse randevuyu ertelemeyi iste.",
+      partner: "takvimi dolu ama çözüm arayan bir kuaför",
+      opening: "Salon Schnittpunkt, guten Morgen. Möchten Sie einen Termin?",
+      openingTr: "Schnittpunkt Kuaför, günaydın. Randevu mu almak istiyorsunuz?",
       minTurns: 4,
     },
   },
@@ -763,13 +763,13 @@ export const deA1B10: Lesson[] = [
     vocab: [
       { de: "gestern", tr: "dün" },
       { de: "gemacht", tr: "yapmak fiilinin geçmiş biçimi" },
-      { de: "gekauft", tr: "almak fiilinin geçmiş biçimi" },
+      { de: "gekauft", tr: "satın almak fiilinin geçmiş biçimi" },
       { de: "gesehen", tr: "görmek fiilinin geçmiş biçimi" },
-      { de: "gehört", tr: "duymak fiilinin geçmiş biçimi" },
+      { de: "gehört", tr: "duymak, dinlemek fiillerinin geçmiş biçimi" },
     ],
     patterns: [
       { de: "Ich habe … gemacht.", tr: "geçmişte ne yaptığını söyler" },
-      { de: "Ich habe … gekauft.", tr: "geçmişte ne aldığını söyler" },
+      { de: "Ich habe … gekauft.", tr: "geçmişte ne satın aldığını söyler" },
       { de: "Hast du … gesehen?", tr: "birinin bir şeyi görüp görmediğini sorar" },
     ],
     lecture: [
@@ -810,7 +810,7 @@ export const deA1B10: Lesson[] = [
       },
       {
         say: [
-          tr("Üçüncü kelimemiz 'almak' fiilinin geçmiş biçimi:"),
+          tr("Üçüncü kelimemiz 'satın almak' fiilinin geçmiş biçimi:"),
           de("gekauft"),
           tr("Lütfen"),
           de("gekauft"),
@@ -1112,8 +1112,8 @@ export const deA1B10: Lesson[] = [
       { de: "vorgestern", tr: "evvelki gün" },
     ],
     patterns: [
-      { de: "Zuerst habe ich …", tr: "önce ne yaptığını söyler" },
-      { de: "Dann bin ich …", tr: "sonra nereye gittiğini söyler" },
+      { de: "Zuerst bin ich …", tr: "güne nasıl başladığını söyler" },
+      { de: "Dann habe ich …", tr: "sonra ne yaptığını söyler" },
       { de: "Am Abend …", tr: "akşam ne yaptığını söyler" },
     ],
     lecture: [
@@ -1604,7 +1604,9 @@ export const deA1B10: Lesson[] = [
           statement: "Mein Geburtstag ist in ersten Mai.",
           answer: false,
           why: [
-            tr("Tarihte günlerle kullandığımız edat gelir, mevsim edatı değil. Doğrusu"),
+            tr("Yanlış. Tarih söylerken edat"),
+            de("am"),
+            tr("olur. Doğrusu"),
             de("Mein Geburtstag ist am ersten Mai."),
           ],
         },

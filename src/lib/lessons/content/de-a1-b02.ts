@@ -614,7 +614,7 @@ export const deA1B02: Lesson[] = [
       {
         say: [
           tr(
-            "Almanya'da bu soru tanışmanın ilk on dakikasında gelir; köpekler her yerde. Bugün öğrendiğin nesne kuralını burada da kullanacağız. Önce kelimeleri öğrenelim.",
+            "Almanya'da bu soru tanışmanın ilk on dakikasında gelir; köpekler her yerde. Kardeşleri anlatırken öğrendiğin nesne kuralını burada da kullanacağız. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -744,17 +744,19 @@ export const deA1B02: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe einen Vogel."),
+          de("Ich habe eine Katze und einen Vogel."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe einen Vogel.",
+          statement: "Ich habe eine Katze und einen Vogel.",
           answer: true,
           why: [
-            tr("Doğru. Kuş eril bir kelime ve cümlede nesne, bu yüzden"),
+            tr("Doğru. Kedi dişil olduğu için"),
+            de("eine"),
+            tr("kuş eril olduğu için"),
             de("einen"),
-            tr("tam yerinde."),
+            tr("— ikisi de tam yerinde."),
           ],
         },
       },
@@ -789,9 +791,9 @@ export const deA1B02: Lesson[] = [
     vocab: [
       { de: "das Foto", tr: "fotoğraf" },
       { de: "wer", tr: "kim" },
-      { de: "die Oma", tr: "babaanne" },
+      { de: "die Oma", tr: "büyükanne" },
       { de: "der Opa", tr: "dede" },
-      { de: "die Tante", tr: "teyze" },
+      { de: "die Tante", tr: "teyze, hala" },
     ],
     patterns: [
       { de: "Wer ist das auf dem Foto?", tr: "fotoğraftaki kişiyi sorar" },
@@ -1552,7 +1554,7 @@ export const deA1B02: Lesson[] = [
       {
         say: [
           tr(
-            "Türkçede olumsuzluk fiilin içine girer: anlıyorum, anlamıyorum. Almancada ayrı bir kelimedir ve genellikle cümlenin sonuna atılır. Yeri şaşırdığında cümle yanlış olmaz ama tuhaf duyulur. Önce kelimeleri öğrenelim.",
+            "Türkçede olumsuzluk fiilin içine girer: anlıyorum, anlamıyorum. Almancada ayrı bir kelimedir ve genellikle cümlenin sonuna atılır. Yeri şaşarsa cümle bozulur; neyse ki kural basit. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -1724,7 +1726,7 @@ export const deA1B02: Lesson[] = [
       { de: "das Fest", tr: "kutlama" },
       { de: "feiern", tr: "kutlamak" },
       { de: "bringen", tr: "getirmek" },
-      { de: "der Onkel", tr: "amca" },
+      { de: "der Onkel", tr: "amca, dayı" },
       { de: "der Kuchen", tr: "kek" },
     ],
     patterns: [

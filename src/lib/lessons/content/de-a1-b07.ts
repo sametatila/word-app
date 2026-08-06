@@ -241,7 +241,7 @@ export const deA1B07: Lesson[] = [
       {
         say: [
           tr(
-            "Küçük bir kolaylık: içinde oda geçen kelimelerin hepsi aynı artikeli alır. Bunu fark edince yarısı kendiliğinden gelir. Önce kelimeleri öğrenelim.",
+            "Küçük bir kolaylık: sonu 'oda' kelimesiyle biten bileşik kelimelerin hepsi aynı artikeli alır. Bunu fark edince yarısı kendiliğinden gelir. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -1650,7 +1650,7 @@ export const deA1B07: Lesson[] = [
           statement: "Auf dem Balkon gibt es zwei Stuhl.",
           answer: false,
           why: [
-            tr("İkiden fazlası varsa kelime çoğul olmalı ve bu kelimenin çoğulunda ortadaki ses de değişir. Doğrusu"),
+            tr("Birden fazlaysa kelime çoğul olmalı ve bu kelimenin çoğulunda ortadaki ses de değişir. Doğrusu"),
             de("Auf dem Balkon gibt es zwei Stühle."),
           ],
         },
@@ -1824,15 +1824,18 @@ export const deA1B07: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das Licht funktioniert nicht."),
+          de("Das Licht nicht funktioniert."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das Licht funktioniert nicht.",
-          answer: true,
+          statement: "Das Licht nicht funktioniert.",
+          answer: false,
           why: [
-            tr("Doğru. Fiil ikinci sırada ve olumsuzluk kelimesi cümlenin sonunda duruyor."),
+            tr(
+              "Yanlış. Fiil ikinci sırada durmalı, olumsuzluk kelimesi cümlenin sonuna gitmeli. Doğrusu:",
+            ),
+            de("Das Licht funktioniert nicht."),
           ],
         },
       },

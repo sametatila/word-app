@@ -213,7 +213,7 @@ export const deA1B06: Lesson[] = [
       { de: "der Bus", tr: "otobüs" },
       { de: "die U-Bahn", tr: "metro" },
       { de: "die Haltestelle", tr: "durak" },
-      { de: "fahren", tr: "gitmek" },
+      { de: "fahren", tr: "araçla gitmek" },
       { de: "die Linie", tr: "hat" },
     ],
     patterns: [
@@ -949,7 +949,7 @@ export const deA1B06: Lesson[] = [
     vocab: [
       { de: "der Stadtplan", tr: "şehir haritası" },
       { de: "die Brücke", tr: "köprü" },
-      { de: "die Nähe", tr: "yakın" },
+      { de: "die Nähe", tr: "yakınlık" },
       { de: "zu Fuß", tr: "yürüyerek" },
       { de: "gegenüber", tr: "karşısında" },
     ],
@@ -998,7 +998,9 @@ export const deA1B06: Lesson[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("die Nähe"),
-          tr("Türkçesi 'yakın' demek. Lütfen"),
+          tr("Türkçesi 'yakınlık' demek; en çok"),
+          de("in der Nähe"),
+          tr("yani 'yakında' biçiminde duyarsın. Lütfen"),
           de("die Nähe"),
           tr("deyin."),
         ],
@@ -1703,7 +1705,7 @@ export const deA1B06: Lesson[] = [
     patterns: [
       { de: "Wann fährt der Zug nach …?", tr: "kalkış saatini sorarken kullanılır" },
       { de: "Muss ich umsteigen?", tr: "aktarma olup olmadığını sorarken kullanılır" },
-      { de: "Ist der Zug direkt?", tr: "trenin aktarmasız olup olmadığını sorar" },
+      { de: "Fährt der Zug direkt?", tr: "trenin aktarmasız olup olmadığını sorar" },
     ],
     lecture: [
       {
@@ -1810,13 +1812,13 @@ export const deA1B06: Lesson[] = [
         expect: { kind: "repeat", target: "Muss ich umsteigen" },
       },
       {
-        say: [tr("Şimdi sen sor: 'Tren aktarmasız mı?'")],
+        say: [tr("Şimdi sen sor: 'Tren aktarmasız mı gidiyor?'")],
         expect: {
           kind: "produce",
-          target: "Ist der Zug direkt",
+          target: "Fährt der Zug direkt",
           hint: [
             tr("Fiil başa geçince cümle soru olur:"),
-            de("Ist der Zug direkt?"),
+            de("Fährt der Zug direkt?"),
             tr("Tekrar dene."),
           ],
         },

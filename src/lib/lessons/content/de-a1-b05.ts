@@ -825,7 +825,7 @@ export const deA1B05: Lesson[] = [
       { de: "gefallen", tr: "hoşuna gitmek" },
       { de: "praktisch", tr: "kullanışlı" },
       { de: "schön", tr: "güzel" },
-      { de: "besser", tr: "daha çok" },
+      { de: "besser", tr: "daha iyi" },
       { de: "gar nicht", tr: "hiç" },
     ],
     patterns: [
@@ -1515,13 +1515,13 @@ export const deA1B05: Lesson[] = [
         expect: { kind: "repeat", target: "Was kosten die Äpfel" },
       },
       {
-        say: [tr("Sıra sende: 'Çilekler ne kadar?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Domatesler ne kadar?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Was kosten die Erdbeeren",
+          target: "Was kosten die Tomaten",
           hint: [
             tr("Sorduğun şey çoğul olduğu için fiil de çoğul olur:"),
-            de("Was kosten die Erdbeeren?"),
+            de("Was kosten die Tomaten?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1573,16 +1573,16 @@ export const deA1B05: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Die Erdbeeren sind sehr frisch."),
+          de("Die Tomaten sind sehr frisch."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Die Erdbeeren sind sehr frisch.",
+          statement: "Die Tomaten sind sehr frisch.",
           answer: true,
           why: [
-            tr("Doğru. Çilekler çoğul olduğu için fiil de çoğul kaldı:"),
-            de("Die Erdbeeren sind sehr frisch."),
+            tr("Doğru. Domatesler çoğul olduğu için fiil de çoğul kaldı:"),
+            de("Die Tomaten sind sehr frisch."),
           ],
         },
       },
@@ -1904,13 +1904,13 @@ export const deA1B05: Lesson[] = [
         expect: { kind: "repeat", target: "Ich bestelle die Jacke online" },
       },
       {
-        say: [tr("Sıra sende: 'Ayakkabıları internetten sipariş ediyorum.'")],
+        say: [tr("Sıra sende: 'Pantolonu internetten sipariş ediyorum.'")],
         expect: {
           kind: "produce",
-          target: "Ich bestelle die Schuhe online",
+          target: "Ich bestelle die Hose online",
           hint: [
             tr("Fiil ikinci sırada durur, sipariş ettiğin şey hemen arkasında:"),
-            de("Ich bestelle die Schuhe online."),
+            de("Ich bestelle die Hose online."),
             tr("Tekrar dene."),
           ],
         },

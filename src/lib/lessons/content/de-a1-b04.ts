@@ -141,8 +141,10 @@ export const deA1B04: Lesson[] = [
           tr("İkinci kalıbımız:"),
           de("Ich arbeite …"),
           tr(
-            "Almancada fiilin sonu kişiye göre değişir — tıpkı Türkçedeki gibi. 'Çalışırım' derken sona e, 'çalışırsın' derken sona st gelir.",
+            "Almancada fiilin sonu kişiye göre değişir — tıpkı Türkçedeki gibi. 'Çalışırım' derken sona e, 'çalışırsın' derken sona st gelir. Bu fiilin gövdesi t ile bittiği için araya bir e daha girer:",
           ),
+          de("arbeitest"),
+          tr("gibi."),
         ],
       },
       {
@@ -400,7 +402,7 @@ export const deA1B04: Lesson[] = [
           why: [
             tr("Doğru. Almancada yarım, gelecek saate göre söylenir:"),
             de("halb neun"),
-            tr("dokuza yarım var demek, yani sekiz otuz."),
+            tr("dokuza yarım saat var demek, yani sekiz buçuk."),
           ],
         },
       },
@@ -980,7 +982,7 @@ export const deA1B04: Lesson[] = [
         "Bir dil kursundasın ve öğretmenin ne zaman çalıştığını soruyor. Cevaplarına 'bugün', 'yarın' ve 'hafta sonu' ile başla — kuralı kullanman gereken yer tam orası.",
       partner: "meraklı ve cesaretlendiren bir dil öğretmeni",
       opening: "Schön, dass Sie da sind! Wann lernen Sie am liebsten Deutsch?",
-      openingTr: "Geldiğinize sevindim! Almancayı en çok ne zaman çalışmayı seviyorsunuz?",
+      openingTr: "Geldiğinize sevindim! Almanca çalışmayı en çok ne zaman seviyorsunuz?",
       minTurns: 4,
     },
   },
@@ -1181,7 +1183,7 @@ export const deA1B04: Lesson[] = [
     focusId: "Trennbare-Verben",
     vocab: [
       { de: "anfangen", tr: "başlamak" },
-      { de: "aufhören", tr: "bitirmek" },
+      { de: "aufhören", tr: "bırakmak, son vermek" },
       { de: "die Pause", tr: "mola" },
       { de: "der Kollege", tr: "iş arkadaşı" },
       { de: "das Büro", tr: "ofis" },
@@ -1510,15 +1512,18 @@ export const deA1B04: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Nach der Arbeit sehe ich fern."),
+          de("Nach der Arbeit ich sehe fern."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Nach der Arbeit sehe ich fern.",
-          answer: true,
+          statement: "Nach der Arbeit ich sehe fern.",
+          answer: false,
           why: [
-            tr("Doğru. Zaman ifadesi başta, fiil ikinci sırada ve ayrılan parça en sonda."),
+            tr(
+              "Yanlış. Zaman ifadesi başta olduğu için fiil hemen arkasından gelmeli. Doğrusu:",
+            ),
+            de("Nach der Arbeit sehe ich fern."),
           ],
         },
       },
@@ -1636,7 +1641,9 @@ export const deA1B04: Lesson[] = [
       },
       {
         say: [
-          tr("Örnek: 'Cuma izinliyim.' Almancası:"),
+          tr("Örnek: 'Cuma izinliyim.' Cuma, Almancada"),
+          de("der Freitag"),
+          tr("demek. Cümlenin tamamı:"),
           de("Am Freitag habe ich frei."),
           tr("Lütfen"),
           de("Am Freitag habe ich frei"),
@@ -1887,17 +1894,20 @@ export const deA1B04: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Um drei Uhr passt es mir."),
+          de("Am drei Uhr passt es mir."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Um drei Uhr passt es mir.",
-          answer: true,
+          statement: "Am drei Uhr passt es mir.",
+          answer: false,
           why: [
-            tr("Doğru. Saatlerle"),
+            tr("Yanlış. Günlerle"),
+            de("am"),
+            tr("kullanılır ama saatlerle"),
             de("um"),
-            tr("kullanılır ve zaman başta olduğu için fiil ikinci sırada duruyor."),
+            tr("gelir. Doğrusu:"),
+            de("Um drei Uhr passt es mir."),
           ],
         },
       },

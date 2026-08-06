@@ -201,7 +201,7 @@ export const deA1B09: Lesson[] = [
         "Bir ilk yardım kursundasın. Eğitmen vücut bölümlerini gösteriyor; adlarını artikelleriyle söyle ve bilmediklerinin Almancasını sor.",
       partner: "esprili ve çok sabırlı bir ilk yardım eğitmeni",
       opening: "Willkommen im Kurs! Sagen Sie mal, wie heißt das hier auf Deutsch?",
-      openingTr: "Kursa hoş geldiniz! Söyleyin bakalım, buranın Almancası ne?",
+      openingTr: "Kursa hoş geldiniz! Söyleyin bakalım, bunun Almancası ne?",
       minTurns: 4,
     },
   },
@@ -690,6 +690,7 @@ export const deA1B09: Lesson[] = [
         expect: {
           kind: "produce",
           target: "Ich muss sofort ins Bett",
+          accept: ["Ich muss sofort ins Bett gehen"],
           hint: [
             tr("Zaman kelimesi çekimli fiilden hemen sonra gelir:"),
             de("Ich muss sofort ins Bett."),
@@ -882,6 +883,7 @@ export const deA1B09: Lesson[] = [
         expect: {
           kind: "produce",
           target: "Warten Sie bitte",
+          accept: ["Bitte warten Sie"],
           hint: [
             tr("Fiil başa, kibar hitap hemen arkasına:"),
             de("Warten Sie bitte."),
@@ -1347,8 +1349,8 @@ export const deA1B09: Lesson[] = [
       scene:
         "Gribe yakalanan arkadaşını arıyorsun. Senli emir biçimiyle ona öğüt ver: ne içsin, ne yapsın, neye takılmasın.",
       partner: "kendine bakmayı hiç beceremeyen, biraz mızmız bir arkadaş",
-      opening: "Mir geht es sehr schlecht. Hast du einen Tipp für mich?",
-      openingTr: "Çok kötüyüm. Bana bir tavsiyen var mı?",
+      opening: "Ich bin so erkältet! Hast du einen Tipp für mich?",
+      openingTr: "Fena üşütmüşüm! Bana bir tavsiyen var mı?",
       minTurns: 4,
     },
   },
@@ -1459,6 +1461,7 @@ export const deA1B09: Lesson[] = [
         expect: {
           kind: "produce",
           target: "Rufen Sie bitte Hilfe",
+          accept: ["Bitte rufen Sie Hilfe"],
           hint: [
             tr("Fiil başta, kibar hitap hemen arkasında; yardım kelimesi burada artikel almaz:"),
             de("Rufen Sie bitte Hilfe!"),

@@ -127,7 +127,9 @@ export const deA1B01: Lesson[] = [
           hint: [
             tr("Kalıbımız"),
             de("Ich heiße …"),
-            tr("idi. Adı kalıbın sonuna ekle ve tekrar dene."),
+            tr("idi. Adı kalıbın sonuna ekle:"),
+            de("Ich heiße Ali."),
+            tr("Tekrar dene."),
           ],
         },
       },
@@ -539,7 +541,9 @@ export const deA1B01: Lesson[] = [
           de("heißt"),
           tr("yerine"),
           de("heißen"),
-          tr("dedik. Kibar biçimde fiil hep mastar hâlinde kalır; hatırlaması çok kolay."),
+          tr(
+            "dedik. Kibar biçimde fiil neredeyse hep mastar hâlinde kalır; tek önemli istisna 'olmak' fiili, onu birazdan göreceksin.",
+          ),
         ],
       },
       {
@@ -796,19 +800,18 @@ export const deA1B01: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Woher kommen Sie?"),
+          de("Woher Sie kommen?"),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Woher kommen Sie?",
-          answer: true,
+          statement: "Woher Sie kommen?",
+          answer: false,
           why: [
-            tr("Doğru. Kibar biçimde fiil"),
-            de("kommen"),
             tr(
-              "olarak kalır ve sıra bozulmamış: soru kelimesi başta, fiil hemen arkasında.",
+              "Yanlış. Soruda fiil, soru kelimesinin hemen arkasına gelir; kişi en sonda kalır. Doğrusu:",
             ),
+            de("Woher kommen Sie?"),
           ],
         },
       },
@@ -1230,8 +1233,8 @@ export const deA1B01: Lesson[] = [
       scene:
         "Bir spor salonuna üye oluyorsun ve kayıt masasındasın. Telefon numaranı söyle, sonra aylık ücretin ne kadar olduğunu sor.",
       partner: "hızlı konuşan ama yardımsever bir görevli",
-      opening: "Guten Tag! Ein Monat kostet fünfundzwanzig Euro. Und Ihre Telefonnummer?",
-      openingTr: "İyi günler! Aylık ücret yirmi beş euro. Peki telefon numaranız?",
+      opening: "Guten Tag! Sie möchten Mitglied werden? Wie ist Ihre Telefonnummer?",
+      openingTr: "İyi günler! Üye mi olmak istiyorsunuz? Telefon numaranız kaç?",
       minTurns: 4,
     },
   },

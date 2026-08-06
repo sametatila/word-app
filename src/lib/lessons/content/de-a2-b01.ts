@@ -123,7 +123,9 @@ export const deA2B01: Lesson[] = [
           kind: "produce",
           target: "Ich bin nach Izmir gefahren",
           hint: [
-            tr("Şehirlere 'nach' ile gidilir ve 'gefahren' sona:"),
+            tr("Şehir adlarının önüne"),
+            de("nach"),
+            tr("gelir ve ortaç en sonda durur:"),
             de("Ich bin nach Izmir gefahren."),
             tr("Tekrar dene."),
           ],
@@ -157,7 +159,9 @@ export const deA2B01: Lesson[] = [
           target: "Ich habe den Strand gesehen",
           hint: [
             de("der Strand"),
-            tr("eril ve nesne olduğu için 'den Strand' olur:"),
+            tr("eril ve nesne olduğu için artikel değişir:"),
+            de("den Strand"),
+            tr("olur:"),
             de("Ich habe den Strand gesehen."),
             tr("Tekrar dene."),
           ],
@@ -193,7 +197,7 @@ export const deA2B01: Lesson[] = [
         "Bir arkadaşınla kahve içiyorsun ve sana son tatilini soruyor. Nereye gittiğini 'Ich bin … gefahren', ne gördüğünü ve yaptığını 'Ich habe …' ile anlat.",
       partner: "tatil hikâyelerini seven bir arkadaş",
       opening: "Hallo! Du warst doch im Urlaub. Wohin bist du gefahren?",
-      openingTr: "Selam! Sen tatildeydin. Nereye gittin?",
+      openingTr: "Selam! Sen tatildeydin ya. Nereye gittin?",
       minTurns: 4,
     },
   },
@@ -203,7 +207,7 @@ export const deA2B01: Lesson[] = [
     level: "A2",
     course: "de",
     title: "Gegessen, getrunken, gelesen",
-    titleTr: "Kurallı dışı ortaçlar",
+    titleTr: "Kural dışı ortaçlar",
     summary:
       "Sık kullanılan fiillerin kuralsız ortaçlarını ve neden ezberlenmeleri gerektiğini öğretir.",
     minutes: 9,
@@ -518,7 +522,9 @@ export const deA2B01: Lesson[] = [
           kind: "produce",
           target: "Ich habe meine Tochter abgeholt",
           hint: [
-            tr("Kız evlat dişil olduğu için iyelik uzar, ek yine öneğin arkasına girer:"),
+            tr("Kız evlat dişil olduğu için iyelik"),
+            de("meine"),
+            tr("olur; ek yine öneğin arkasına girer:"),
             de("Ich habe meine Tochter abgeholt."),
             tr("Tekrar dene."),
           ],
@@ -595,7 +601,7 @@ export const deA2B01: Lesson[] = [
         "Ev arkadaşınla akşam eve döndünüz ve gün içinde kimin neyi hallettiğini konuşuyorsunuz. Yaptıklarını ayrılabilen fiillerle anlat.",
       partner: "işleri paylaşmayı önemseyen, biraz titiz bir ev arkadaşı",
       opening: "Ich habe schon angerufen und aufgeräumt. Was hast du gemacht?",
-      openingTr: "Ben aradım ve toplandım bile. Sen ne yaptın?",
+      openingTr: "Ben telefon ettim, ortalığı da topladım bile. Sen ne yaptın?",
       minTurns: 4,
     },
   },
@@ -613,7 +619,7 @@ export const deA2B01: Lesson[] = [
     vocab: [
       { de: "zuerst", tr: "önce" },
       { de: "danach", tr: "ondan sonra" },
-      { de: "einschlafen", tr: "uyuyakalmak" },
+      { de: "einschlafen", tr: "uykuya dalmak" },
       { de: "spannend", tr: "heyecan verici" },
       { de: "langweilig", tr: "sıkıcı" },
     ],
@@ -662,7 +668,7 @@ export const deA2B01: Lesson[] = [
         say: [
           tr("Üçüncü kelimemiz:"),
           de("einschlafen"),
-          tr("Türkçesi 'uyuyakalmak' demek; uyumaktan farklı, uykuya dalma anını anlatır. Lütfen"),
+          tr("Türkçesi 'uykuya dalmak' demek; uyumaktan farklı, dalma anını anlatır. Lütfen"),
           de("einschlafen"),
           tr("deyin."),
         ],
@@ -884,7 +890,7 @@ export const deA2B01: Lesson[] = [
           de("vergessen"),
           tr("ortaçta yine"),
           de("vergessen"),
-          tr("kalır. Önek vurguyu üstüne aldığı için ek girecek yer bulamıyor."),
+          tr("kalır. Önek vurgusuz olduğu için ek girecek yer bulamıyor."),
         ],
       },
       {
@@ -938,7 +944,7 @@ export const deA2B01: Lesson[] = [
           kind: "produce",
           target: "Ich habe meine Tasche verloren",
           hint: [
-            tr("Bu fiil hem kuralsız hem de önekli: ortaçta ek yok ama sonu değişiyor:"),
+            tr("Bu fiil hem kuralsız hem de önekli: ortaçta ek yok ama ortadaki sesli harf değişiyor:"),
             de("Ich habe meine Tasche verloren."),
             tr("Tekrar dene."),
           ],
@@ -1196,7 +1202,7 @@ export const deA2B01: Lesson[] = [
       {
         say: [
           tr(
-            "Geçen sefer iki fiilin tek parça geçmişini öğrenmiştin. Bugün ona bir tane daha ekleyeceğiz: 'var' demenin geçmişi. Bu kalıp donuk bir biçimdir, çekim aramana gerek yok. Önce kelimeleri öğrenelim.",
+            "Geçen sefer iki fiilin tek parça geçmişini öğrenmiştin. Bugün ona bir tane daha ekleyeceğiz: 'var' demenin geçmişi. Bu kalıplaşmış bir biçimdir, çekim aramana gerek yok. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -1286,9 +1292,9 @@ export const deA2B01: Lesson[] = [
       },
       {
         say: [
-          tr("Üçüncü kalıbımız donuk bir ikili:"),
+          tr("Üçüncü kalıbımız kalıplaşmış bir ikili:"),
           de("Es gab hier keine Autos."),
-          tr("Yani 'Burada hiç araba yoktu.' Şimdiki hâli 'var' demekti; geçmişi bu."),
+          tr("Yani 'Burada hiç araba yoktu.' Bu kalıbın şimdiki hâli 'var' demek; geçmişi işte bu."),
         ],
       },
       {
@@ -1318,7 +1324,7 @@ export const deA2B01: Lesson[] = [
           statement: "Es gab damals viele Kinder.",
           answer: true,
           why: [
-            tr("Doğru. Kalıp donuk hâlinde kalmış, zaman kelimesi araya girmiş ve arkasından gelen çoğul nesne doğru kurulmuş."),
+            tr("Doğru. Kalıp aynen kalmış, zaman kelimesi araya girmiş ve arkasından gelen çoğul nesne doğru kurulmuş."),
           ],
         },
       },
@@ -1352,7 +1358,7 @@ export const deA2B01: Lesson[] = [
     focusId: "Perfekt",
     vocab: [
       { de: "das Mal", tr: "kez" },
-      { de: "nervös", tr: "heyecanlı" },
+      { de: "nervös", tr: "gergin, heyecanlı" },
       { de: "plötzlich", tr: "birden" },
       { de: "mutig", tr: "cesur" },
       { de: "unglaublich", tr: "inanılmaz" },
@@ -1485,6 +1491,7 @@ export const deA2B01: Lesson[] = [
         expect: {
           kind: "produce",
           target: "Es hat gut geklappt",
+          accept: ["Alles hat gut geklappt"],
           hint: [
             tr("Kurallı fiilin ortacı düz ekle kurulur ve yine sonda durur:"),
             de("Es hat gut geklappt."),
@@ -1753,7 +1760,7 @@ export const deA2B01: Lesson[] = [
       {
         say: [
           tr(
-            "Kuralı iki adımda tamamlıyoruz. Vurgusuz önekle başlayan fiillerin ek almadığını biliyorsun. İkinci grup da yok: sonu belirli bir uzun ekle biten fiiller. Bu iki grubu tanıdığında Perfekt'te artık şaşırmazsın. Önce kelimeleri öğrenelim.",
+            "Kuralı iki adımda tamamlıyoruz. Vurgusuz önekle başlayan fiillerin ek almadığını biliyorsun. Ek almayan ikinci bir grup daha var: sonu belirli bir uzun ekle biten fiiller. Bu iki grubu tanıdığında Perfekt'te artık şaşırmazsın. Önce kelimeleri öğrenelim.",
           ),
         ],
       },
@@ -1848,7 +1855,9 @@ export const deA2B01: Lesson[] = [
         say: [
           tr("İkinci kalıbımız karşı taraftan gelir:"),
           de("Was ist passiert?"),
-          tr("Yani 'Ne oldu?' Bu fiil hareket bildirdiği için yardımcı fiil değişiyor, ortaçta ise ek yok."),
+          tr(
+            "Yani 'Ne oldu?' Bu fiil bir şeyin olup bitmesini anlattığı için yardımcı fiili 'olmak' — tıpkı hareket fiillerindeki gibi. Ortaçta ise ek yok.",
+          ),
         ],
       },
       {

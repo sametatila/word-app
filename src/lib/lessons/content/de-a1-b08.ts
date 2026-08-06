@@ -107,7 +107,7 @@ export const deA1B08: Lesson[] = [
         say: [
           tr("İlk kalıbımız çok kısa:"),
           de("Mein Hobby ist Musik."),
-          tr("Yani 'Hobim müzik'. Birden çok hobin varsa hepsini sıralamana gerek yok; ikisi yeter."),
+          tr("Yani 'Hobim müzik'. Birden çok hobin varsa hepsini sıralamana gerek yok; bir ikisini söylemen yeter."),
         ],
       },
       {
@@ -167,15 +167,17 @@ export const deA1B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich spiele gern Fußball."),
+          de("Ich gern spiele Fußball."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich spiele gern Fußball.",
-          answer: true,
+          statement: "Ich gern spiele Fußball.",
+          answer: false,
           why: [
-            tr("Doğru. Severek yapmayı anlatan kelime fiilin hemen arkasında duruyor:"),
+            tr(
+              "Yanlış. Severek yapmayı anlatan kelime fiilin ARKASINA gelir, önüne değil. Doğrusu:",
+            ),
             de("Ich spiele gern Fußball."),
           ],
         },
@@ -211,7 +213,7 @@ export const deA1B08: Lesson[] = [
       { de: "schwimmen", tr: "yüzmek" },
       { de: "tanzen", tr: "dans etmek" },
       { de: "singen", tr: "şarkı söylemek" },
-      { de: "üben", tr: "çalışmak" },
+      { de: "üben", tr: "alıştırma yapmak" },
       { de: "das Talent", tr: "yetenek" },
     ],
     patterns: [
@@ -723,16 +725,16 @@ export const deA1B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich höre lieber Jazz."),
+          de("Ich singe gern."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich höre lieber Jazz.",
+          statement: "Ich singe gern.",
           answer: true,
           why: [
-            tr("Doğru. Tercih bildiren biçim fiilin arkasında, dinlenen şey en sonda:"),
-            de("Ich höre lieber Jazz."),
+            tr("Doğru. Severek yapmayı anlatan kelime fiilin hemen arkasında duruyor:"),
+            de("Ich singe gern."),
           ],
         },
       },
@@ -896,9 +898,13 @@ export const deA1B08: Lesson[] = [
       },
       {
         say: [
-          tr("Arabayla gelecekseniz şu cümle çok işine yarar: 'Seni sekizde alırım.'"),
+          tr("Arabayla geleceksen şu cümle çok işine yarar: 'Seni sekizde alırım.' Almancası:"),
+          de("Ich hole dich um acht ab."),
+          tr("Çünkü"),
           de("abholen"),
-          tr("fiili ikiye bölünen fiillerden, o yüzden bir parçası cümlenin sonuna düşer."),
+          tr(
+            "ikiye bölünen fiillerden; bir parçası cümlenin sonuna düşer. Şimdi sen söyle: 'Seni sekizde alırım.'",
+          ),
         ],
         expect: {
           kind: "produce",
@@ -1273,7 +1279,7 @@ export const deA1B08: Lesson[] = [
       },
       {
         say: [
-          tr("Gölge arıyorsanız duyacağın cümle de şu:"),
+          tr("Gölge arıyorsan söyleyeceğin cümle de şu:"),
           de("Wir sitzen unter dem Baum."),
           tr("Lütfen"),
           de("Wir sitzen unter dem Baum"),
@@ -1466,15 +1472,15 @@ export const deA1B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Der Eintritt kostet fünf Euro."),
+          de("Das Eintritt kostet fünf Euro."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Der Eintritt kostet fünf Euro.",
-          answer: true,
+          statement: "Das Eintritt kostet fünf Euro.",
+          answer: false,
           why: [
-            tr("Doğru. Tek bir şeyin fiyatı söylendiği için fiil tekil kaldı:"),
+            tr("Yanlış. Giriş ücreti eril bir kelimedir. Doğrusu:"),
             de("Der Eintritt kostet fünf Euro."),
           ],
         },
@@ -1645,16 +1651,16 @@ export const deA1B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Die Sendung beginnt um acht."),
+          de("Der Film beginnt um neun."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Die Sendung beginnt um acht.",
+          statement: "Der Film beginnt um neun.",
           answer: true,
           why: [
             tr("Doğru. Saat bildiren kısım cümlenin sonunda ve fiil ikinci sırada:"),
-            de("Die Sendung beginnt um acht."),
+            de("Der Film beginnt um neun."),
           ],
         },
       },
@@ -1768,7 +1774,7 @@ export const deA1B08: Lesson[] = [
           tr("İlk kalıbımız:"),
           de("Leider kann ich nicht."),
           tr(
-            "Yani 'Maalesef gelemiyorum'. Cümleye üzüntü bildiren kelimeyle başladığın için fiil hemen arkasına geçti ve sen üçüncü sıraya düştün. Almancada fiil hep ikinci sırada durur, bu cümle bunun güzel bir örneği.",
+            "Yani 'Maalesef gelemiyorum'. Bunu randevu dersinden hatırlıyor olabilirsin; bugün asıl derinliğine iniyoruz. Cümleye üzüntü bildiren kelimeyle başladığın için fiil hemen arkasına geçti ve sen üçüncü sıraya düştün. Almancada fiil hep ikinci sırada durur, bu cümle bunun güzel bir örneği.",
           ),
         ],
       },
@@ -1827,15 +1833,17 @@ export const deA1B08: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Leider kann ich nicht."),
+          de("Leider ich kann nicht."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Leider kann ich nicht.",
-          answer: true,
+          statement: "Leider ich kann nicht.",
+          answer: false,
           why: [
-            tr("Doğru. Cümle üzüntü bildiren kelimeyle başladı ve fiil ikinci sıraya geçti:"),
+            tr(
+              "Yanlış. Üzüntü bildiren kelime başta olunca fiil hemen arkasından gelmeli. Doğrusu:",
+            ),
             de("Leider kann ich nicht."),
           ],
         },

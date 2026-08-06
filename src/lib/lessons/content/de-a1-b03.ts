@@ -117,7 +117,11 @@ export const deA1B03: Lesson[] = [
       },
       {
         say: [
-          tr("Bir püf noktası: eril kelimelerde 'ein' değil 'einen' denir."),
+          tr("Bir püf noktası: eril kelimelerde"),
+          de("ein"),
+          tr("değil"),
+          de("einen"),
+          tr("denir."),
           de("der Kaffee"),
           tr("eril olduğu için 'Bir kahve istiyorum' şöyle olur:"),
           de("Ich möchte einen Kaffee."),
@@ -138,7 +142,9 @@ export const deA1B03: Lesson[] = [
           target: "Ich möchte einen Tee",
           hint: [
             de("der Tee"),
-            tr("eril; 'ein' değil 'einen' olmalı:"),
+            tr("eril; artikel"),
+            de("einen"),
+            tr("olmalı:"),
             de("Ich möchte einen Tee."),
             tr("Tekrar dene."),
           ],
@@ -165,9 +171,13 @@ export const deA1B03: Lesson[] = [
           target: "Ich möchte einen Kaffee und ein Wasser",
           hint: [
             de("der Kaffee"),
-            tr("eril, 'einen' alır;"),
+            tr("eril,"),
+            de("einen"),
+            tr("alır;"),
             de("das Wasser"),
-            tr("nötr, 'ein' kalır:"),
+            tr("nötr,"),
+            de("ein"),
+            tr("kalır:"),
             de("Ich möchte einen Kaffee und ein Wasser."),
             tr("Tekrar dene."),
           ],
@@ -185,7 +195,9 @@ export const deA1B03: Lesson[] = [
           answer: false,
           why: [
             de("der Kaffee"),
-            tr("eril ve burada nesne; 'einen' olmalı. Doğrusu:"),
+            tr("eril ve burada nesne; artikel"),
+            de("einen"),
+            tr("olmalı. Doğrusu:"),
             de("Ich möchte einen Kaffee."),
           ],
         },
@@ -227,7 +239,7 @@ export const deA1B03: Lesson[] = [
     patterns: [
       { de: "Ich esse …", tr: "ne yediğini söylerken kullanılır" },
       { de: "Ich trinke …", tr: "ne içtiğini söylerken kullanılır" },
-      { de: "… zum Frühstück", tr: "kahvaltıda olduğunu eklerken kullanılır" },
+      { de: "… zum Frühstück", tr: "kahvaltıda dediğini eklerken kullanılır" },
     ],
     lecture: [
       {
@@ -335,7 +347,7 @@ export const deA1B03: Lesson[] = [
           tr("İkinci kalıbımız:"),
           de("Ich trinke …"),
           tr(
-            "Yani '… içiyorum'. Burada bir fark var: içecekler bardak bardak sayıldığı için önlerine artikel gelir.",
+            "Yani '… içiyorum'. Bir bardak ya da bir fincan kastediyorsan önüne artikel koyarsın; genel olarak içtiğini söylerken artikel gerekmez.",
           ),
         ],
       },
@@ -1664,7 +1676,7 @@ export const deA1B03: Lesson[] = [
     focusId: "Negation-kein",
     vocab: [
       { de: "allergisch", tr: "alerjik" },
-      { de: "die Nuss", tr: "kuruyemiş" },
+      { de: "die Nuss", tr: "sert kabuklu yemiş" },
       { de: "das Ei", tr: "yumurta" },
       { de: "ohne", tr: "olmadan" },
       { de: "vertragen", tr: "bünyesine uymak" },
@@ -1704,7 +1716,7 @@ export const deA1B03: Lesson[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("die Nuss"),
-          tr("Türkçesi 'kuruyemiş' demek; fındık da ceviz de bu kelimeye girer. Lütfen"),
+          tr("Türkçesi 'sert kabuklu yemiş' demek; fındık da ceviz de bu kelimeye girer. Lütfen"),
           de("die Nuss"),
           tr("deyin."),
         ],
@@ -1830,6 +1842,15 @@ export const deA1B03: Lesson[] = [
       },
       {
         say: [
+          tr("Küçük bir ek bilgi: dişil kelimelerde olumsuzluk kelimesi"),
+          de("keine"),
+          tr("olur. Sosis dişil olduğu için"),
+          de("keine Wurst"),
+          tr("denir."),
+        ],
+      },
+      {
+        say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich esse keine Wurst."),
           tr("cümlesi doğru mu, yanlış mı?"),
@@ -1875,7 +1896,7 @@ export const deA1B03: Lesson[] = [
     minutes: 9,
     focusId: "Modalverb-möchten",
     vocab: [
-      { de: "schmecken", tr: "tadı gelmek" },
+      { de: "schmecken", tr: "tadı güzel olmak" },
       { de: "lecker", tr: "lezzetli" },
       { de: "der Nachtisch", tr: "tatlı" },
       { de: "probieren", tr: "tatmak" },
@@ -1906,7 +1927,7 @@ export const deA1B03: Lesson[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("schmecken"),
-          tr("Türkçesi 'tadı gelmek' demek. Lütfen"),
+          tr("Türkçesi 'tadı güzel olmak' demek; yemekten söz ederken kullanılır. Lütfen"),
           de("schmecken"),
           tr("deyin."),
         ],
@@ -1976,7 +1997,7 @@ export const deA1B03: Lesson[] = [
       {
         say: [
           tr(
-            "Şimdi bir şeyi denemesini teklif edelim. Cümlede iki fiil olunca asıl fiil en sona gider; bu noktada Almanca Türkçeye benziyor, çünkü sen de 'tatmak ister misin' derken fiili sona koyuyorsun.",
+            "Şimdi bir şeyi denemesini teklif edelim. Cümlede iki fiil olunca çekimli olan başta kalır, asıl fiil mastar hâliyle en sona gider.",
           ),
         ],
       },
