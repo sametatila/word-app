@@ -339,9 +339,10 @@
   "de": "Bekannte",
   "artikel": "der",
   "typ": "Nomen",
-  "not": "A1 çeviri gözden geçirmesi: \"der/die Bekannte\" başlığındaki eğik çizgi yazma oyunlarında iki ayrı seçenek gibi bölünüyordu | Züritüütsch A1 gözden geçirmesi: başlığa artikel «de/d» yapıştırılmış ve kelime kesilmiş; temiz biçim «Bekannte», eril madde olduğu için artikel «de»",
+  "not": "A1 çeviri gözden geçirmesi: \"der/die Bekannte\" başlığındaki eğik çizgi yazma oyunlarında iki ayrı seçenek gibi bölünüyordu | Züritüütsch A1 gözden geçirmesi: başlığa artikel «de/d» yapıştırılmış ve kelime kesilmiş; temiz biçim «Bekannte», eril madde olduğu için artikel «de» | Dönüşlü/dönüşsüz yinelenmesi: dişil biçim 1527 die Bekannte olarak duruyor, cinsiyet ayrımı gerekiyor",
   "gsw": "Bekannte",
-  "gswArtikel": "de"
+  "gswArtikel": "de",
+  "tr": "tanıdık (erkek)"
  },
  "582": {
   "drop": 72,
@@ -579,6 +580,10 @@
   "tr": "bilet (uçak, etkinlik)",
   "not": "A1 çeviri gözden geçirmesi: Fahrkarte ile aynı karşılığı taşıyordu; Ticket toplu taşıma bileti dışında kullanılır"
  },
+ "819": {
+  "drop": 456,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"sich treffen\" — 456 treffen ile aynı fiil ve aynı anlam"
+ },
  "820": {
   "tr": "merdiven (binada, basamaklı)",
   "not": "A1 çeviri gözden geçirmesi: die Leiter de \"merdiven\"; Treppe binadaki basamaklı merdivendir"
@@ -608,6 +613,10 @@
   "gsw": "Rotliecht",
   "gswArtikel": "s",
   "gswBeispiel": "Du chasch faare, s Rotliecht isch grüen."
+ },
+ "867": {
+  "drop": 542,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"anmelden\" — 542 sich anmelden ile aynı madde, örnek cümlesi bile birebir aynı"
  },
  "868": {
   "drop": 867,
@@ -739,8 +748,8 @@
   "not": "A1 gözden geçirmesi: (E-)Mail — 631 ile aynı madde, başlıkta parantez artığı"
  },
  "956": {
-  "de": "sich entschuldigen",
-  "not": "entschuldigen (sich) — dönüşlü fiil havuzun geri kalanıyla aynı biçime getirildi"
+  "drop": 127,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"sich entschuldigen\" — 127 entschuldigen ile aynı fiil; 127'in karşılığı zaten dönüşlü biçimi adlandırıyor"
  },
  "959": {
   "de": "sich erinnern",
@@ -772,9 +781,8 @@
   "not": "A2 çeviri gözden geçirmesi: \"(ab)fliegen\" iki fiili birden taşıyordu; fliegen (156) ve abfliegen (650) ayrı maddeler"
  },
  "984": {
-  "not": "Züritüütsch A2 gözden geçirmesi: Züritüütsch'te «sich freuen» fiili «fröie»dir («Ich fröie mi»), «freue» Hochdeutsch kalmış",
-  "gsw": "fröie",
-  "gswBeispiel": "Ich fröie mi sehr über s Gschänk."
+  "drop": 655,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"freuen\" — 655 sich freuen ile aynı fiil; Almancada bu fiil dönüşlü kullanılır"
  },
  "985": {
   "drop": 655,
@@ -1188,8 +1196,8 @@
   "not": "B1 gözden geçirmesi: beid- — 66 beide ile aynı madde, sözlük gövde yazımı"
  },
  "1526": {
-  "tr": "tanıdık (erkek)",
-  "not": "der/die Bekannte çifti ayırt edilmiyordu"
+  "drop": 579,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"der Bekannte\" — 579 ile birebir aynı başlık; dişil biçim 1527 olarak ayrıca duruyor"
  },
  "1527": {
   "tr": "tanıdık (kadın)",
@@ -1415,6 +1423,10 @@
  "1739": {
   "tr": "sakin, bir yerde oturan kişi",
   "not": "B1 çeviri gözden geçirmesi: Einwohner bir kişidir; 'nüfus' karşılığı die Bevölkerung / die Einwohnerzahl demektir ve yanıltıcı"
+ },
+ "1743": {
+  "drop": 952,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"einzeln\" — 952 ile birebir aynı başlık, iki seviyede birden duruyordu"
  },
  "1744": {
   "drop": 952,
@@ -1748,6 +1760,10 @@
  "2119": {
   "tr": "kurmak, yüklemek (program, cihaz)",
   "not": "B1 çeviri gözden geçirmesi: gründen ile aynı \"kurmak\" karşılığına düşüyor; installieren şirket kurmak değil, program/cihaz kurup yüklemektir (aynı anlam: gründen)"
+ },
+ "2121": {
+  "tr": "entegre etmek, bütünleştirmek",
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: sich integrieren (3317) ile aynı karşılığı taşıyordu; dönüşsüz biçim başkasını entegre etmektir"
  },
  "2127": {
   "tr": "ilgilenen, ilgi duyan",
@@ -2347,8 +2363,8 @@
   "not": "B1 çeviri gözden geçirmesi: Strafzettel yalnızca park için değil, her trafik ihlali için kesilen ceza kâğıdıdır"
  },
  "2792": {
-  "tr": "kavga etmek (birbiriyle)",
-  "not": "A2 çeviri gözden geçirmesi: streiten ile aynı karşılığı taşıyordu; dönüşlü biçim karşılıklılık bildirir"
+  "drop": 8137,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"sich streiten\" — 8137 streiten ile aynı fiil ve aynı anlam"
  },
  "2795": {
   "tr": "çorap (uzun, diz üstü)",
@@ -2427,8 +2443,9 @@
   "not": "B1 çeviri gözden geçirmesi: 2. örnekteki \"eine Überweisung fürs Krankenhaus\" doktor sevkidir, bu anlam karşılıkta hiç yok"
  },
  "2902": {
-  "tr": "ikna etmek, inandırmak; emin olmak",
-  "not": "B1 çeviri gözden geçirmesi: 1. örnek \"Ihr Vorschlag überzeugt mich gar nicht\" geçişli \"ikna etmek\" anlamındadır, mevcut karşılıkta bu anlam yok"
+  "de": "überzeugen",
+  "tr": "ikna etmek, inandırmak",
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: örnek cümleleri dönüşsüz kullanımdı; dönüşlü \"sich überzeugen\" ayrı bir anlam (emin olmak) ve o karşılıkta kalmadı"
  },
  "2907": {
   "tr": "kıyı (nehir, göl)",
@@ -2465,6 +2482,12 @@
  "2969": {
   "tr": "suçlu (kadın)",
   "not": "B1 çeviri gözden geçirmesi: der Verbrecher ile birebir aynı karşılık verilmiş, cinsiyet ayrımı belirtilmeli (aynı anlam: der Verbrecher)"
+ },
+ "2970": {
+  "tr": "(bir yerini) yakmak",
+  "beispiel": "Der Herd war noch heiss. Ich habe mich verbrannt.",
+  "beispielTr": "Ocak hâlâ sıcaktı. Elimi yaktım.",
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: verbrennen (8133) ile aynı karşılığı taşıyordu ve örnek cümlesinin ilk yarısı dönüşsüz kullanımdı"
  },
  "2999": {
   "tr": "kiraya verme, kiralama",
@@ -2531,6 +2554,10 @@
   "drop": 1289,
   "not": "vorbei — 1289 ile aynı (A2)"
  },
+ "3053": {
+  "drop": 1290,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"sich vorbereiten\" — 1290 vorbereiten ile aynı fiil, karşılığı zaten iki yönü de veriyor"
+ },
  "3055": {
   "de": "vordere",
   "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
@@ -2585,6 +2612,10 @@
   "tr": "lokantacı, işletmeci (kadın)",
   "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'kadın ev sahibi' yanıltıcı | Züritüütsch B1 gözden geçirmesi: cümlede Hochdeutsch \"dem\" kalmış, Züritüütsch datif biçimi \"däm\" olmalı",
   "gswBeispiel": "Ich känne d Wirtin vo däm Lokal. Si isch sehr nätt."
+ },
+ "3131": {
+  "tr": "(kendine) istemek, arzu etmek",
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: wünschen (518) ile aynı karşılığı taşıyordu; sich wünschen kendi için bir şey istemektir"
  },
  "3137": {
   "de": "Zahncreme/Zahnpasta",
@@ -2994,6 +3025,10 @@
   "tr": "tuzlu, baharatlı (tatlının zıddı)",
   "not": "B2 çeviri gözden geçirmesi: herzhaft 'lezzetli' (lecker) demek değil; örnekte de süß'ün karşıtı olarak tuzlu-baharatlı yemekleri niteliyor"
  },
+ "3763": {
+  "drop": 7877,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"entspannen\" — 7877 sich entspannen ile aynı fiil ve aynı anlam"
+ },
  "3779": {
   "de": "beruhen",
   "not": "B2 çeviri gözden geçirmesi: edat başlıktaydı; C1'deki ikizi düşürüldü"
@@ -3061,6 +3096,10 @@
  "3807": {
   "drop": 2957,
   "not": "B1 çeviri gözden geçirmesi: sich verabschieden von — 2957 ile aynı madde, edatlı yazımı"
+ },
+ "3811": {
+  "drop": 2902,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"überzeugen\" — 2902 ile aynı fiil; 2902 dönüşsüz biçime çevrildi"
  },
  "3819": {
   "tr": "uygun, makul",
@@ -4453,6 +4492,10 @@
   "gsw": "Mäldebeschiinigig",
   "gswBeispiel": "De Vermieter wett e Mäldebeschiinigig vo mir gsee."
  },
+ "8122": {
+  "drop": 1033,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"sich informieren\" — 1033 ile birebir aynı başlık, iki kez girilmiş"
+ },
  "8144": {
   "tr": "canlı, yaşayan",
   "not": "A2 çeviri gözden geçirmesi: lebhaft ile aynı karşılığı taşıyordu; lebendig yaşıyor olmaktır, hareketli mizaç değil"
@@ -4481,6 +4524,10 @@
  "8191": {
   "not": "Züritüütsch A2 gözden geçirmesi: 'neui' Hochdeutsch kalmış; Züritüütsch'te 'nöii Lampe' olmalı",
   "gswBeispiel": "De Abwart tuet e nöii Lampe im Gang aabringe."
+ },
+ "8198": {
+  "drop": 7976,
+  "not": "Dönüşlü/dönüşsüz yinelenmesi: \"ausschlafen\" — 7976 sich ausschlafen ile aynı fiil; Almancada dönüşlü kullanılır"
  },
  "8201": {
   "tr": "(geç saate kadar) uyanık kalmak, yatmamak",
