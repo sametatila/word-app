@@ -171,6 +171,8 @@ function play(
   course: string,
   onEnd?: () => void,
   slow = false,
+  /** Ses uzunluğu öğrenilince çağrılır — geçiş çizgisi bunu kullanıyor. */
+  onDuration?: (ms: number) => void,
 ) {
   const audio = audioElement();
   if (!audio) {
@@ -198,6 +200,14 @@ function play(
   audio.pause();
   audio.onended = finish;
   audio.onerror = fallback;
+  // Süre ancak üstveri inince biliniyor. Geçiş çizgisinin gerçek uzunlukta
+  // olmasını sağlayan tek yer burası; tahmin edilen sabit süreler ya erken
+  // doluyor (kullanıcı boşuna bekliyor) ya da geç.
+  audio.onloadedmetadata = () => {
+    if (onDuration && Number.isFinite(audio.duration) && audio.duration > 0) {
+      onDuration(Math.round(audio.duration * 1000));
+    }
+  };
   audio.src = `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${slow ? "&r=slow" : ""}`;
   audio.currentTime = 0;
   // play() reddedilirse (otomatik oynatma engeli, yüklenemeyen kaynak) de
@@ -295,7 +305,24 @@ export function SpeakButton({
  * Dönen işlev bekleyişi iptal ediyor — bileşen sökülürse geç gelen bitiş
  * kapanmış bir turu ilerletmesin.
  */
-export function speakThen(text: string, done: () => void, maxWaitMs = 6000): () => void {
+export function speakThen(
+  text: string,
+  done: () => void,
+  opts: {
+    /** Ses hiç çalmazsa turun asılı kalmaması için üst sınır. */
+    maxWaitMs?: number;
+    /**
+     * Sesin gerçek uzunluğu öğrenilince çağrılır.
+     *
+     * Oyunlar geçiş çizgisini bununla başlatıyor. Sabit bir süre vermek iki
+     * yönde de yanlıştı: kısa tahmin çizgiyi erken dolduruyor ve kullanıcı
+     * dolu bir çizgiye bakarak bekliyordu, uzun tahmin ise ses bittikten
+     * sonra boşuna bekletiyordu.
+     */
+    onDuration?: (ms: number) => void;
+  } = {},
+): () => void {
+  const { maxWaitMs = 6000, onDuration } = opts;
   let finished = false;
   const finish = () => {
     if (finished) return;
@@ -304,7 +331,14 @@ export function speakThen(text: string, done: () => void, maxWaitMs = 6000): () 
     done();
   };
   const guard = setTimeout(finish, maxWaitMs);
-  speakGerman(text, finish);
+  const clean = cleanForSpeech(text);
+  if (!clean) {
+    finish();
+    return () => clearTimeout(guard);
+  }
+  const course = readLocal(COURSE_KEY) ?? "de";
+  const voice = resolveVoice(course, readLocal(VOICE_KEY));
+  play(clean, voice, course, finish, false, onDuration);
   return () => {
     finished = true;
     clearTimeout(guard);

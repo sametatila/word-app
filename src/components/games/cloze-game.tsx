@@ -5,8 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
-import { fx } from "@/lib/fx";
+import { fx, vibrate } from "@/lib/fx";
 import { speakThen } from "@/components/speak-button";
+
+/** İki okuma arasındaki nefes payı. */
+const GAP_MS = 350;
 
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
@@ -27,26 +30,40 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   function choose(opt: string) {
     if (picked) return;
     setPicked(opt);
-    // Seçilen kelime hemen okunuyor: boşluğu doldururken asıl öğrenilen şey
-    // kelimenin cümledeki hâli ve onu duymadan seçim sessiz bir tıklama
-    // olarak kalıyordu. Yanlış seçimde de okunuyor — öğrenci neyi seçtiğini
-    // duyup doğrusuyla karşılaştırabilmeli.
     const isCorrect = opt === answer;
     const latencyMs = Date.now() - started.current;
-    // Cümle oyunlarında geçiş acele etmez: öğrenci tamamlanan cümleyi ve
-    // çevirisini okuyup sindirebilmeli.
-    fx(isCorrect ? "correct" : "wrong", isCorrect ? 1800 : 2800);
-    // Önce seçilen kelime okunuyor: öğrenci neyi seçtiğini duyuyor. Yanlışsa
-    // ardından doğrusu da okunuyor, böylece ikisi arka arkaya karşılaştırılıyor.
-    // Geçiş sabit süreyle değil okuma bitince yapılıyor — ses önbellekte yoksa
-    // sunucudan gelmesi bir saniyeyi bulabiliyor ve sabit bekleme turu okuma
-    // başlamadan kapatıyordu.
-    const finish = () =>
-      setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), 900);
-    speakThen(opt, () => {
-      if (isCorrect) finish();
-      else setTimeout(() => speakThen(answer, finish), 400);
-    });
+
+    // Okunan şey KELİME değil, tamamlanmış CÜMLE. Boşluk doldurma oyununda
+    // öğrenilen şey kelimenin cümledeki hâli — tek başına kelimeyi duymak
+    // oyunun öğrettiği şeyi duyurmuyor. Yanlışsa doğru cümle de okunuyor,
+    // böylece ikisi arka arkaya karşılaştırılabiliyor.
+    const said = `${before}${opt}${after}`.trim();
+    const truth = `${before}${answer}${after}`.trim();
+
+    // Geçiş çizgisi sesin GERÇEK uzunluğunda dolduruluyor ve tur tam o bitince
+    // kapanıyor. Sabit süre iki yönde de yanlıştı: kısa tahminde çizgi dolup
+    // kullanıcı bekliyor, uzun tahminde ses bittikten sonra boşuna bekleniyordu.
+    const advance = () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]);
+
+    if (isCorrect) {
+      vibrate("correct");
+      speakThen(said, advance, { onDuration: (ms) => fx("correct", ms) });
+      return;
+    }
+
+    // Yanlışta iki okuma var ve çizgi ikisinin toplamını göstermeli. İkinci
+    // sesin uzunluğu ancak o yüklenince biliniyor — yani ilk okuma bittikten
+    // sonra — ve çizgiyi orada başlatmak onu ortadan yeniden başlatırdı.
+    //
+    // İki cümle yalnızca tek kelime farkla aynı olduğu için ikincinin süresi
+    // birinciden türetilebiliyor. Bu bir tahmin ama ölçülen bir değere
+    // dayanıyor; sabit bir sayı değil ve cümle uzadıkça o da uzuyor.
+    vibrate("wrong");
+    speakThen(
+      said,
+      () => setTimeout(() => speakThen(truth, advance), GAP_MS),
+      { onDuration: (ms) => fx("wrong", ms * 2 + GAP_MS) },
+    );
   }
 
   return (

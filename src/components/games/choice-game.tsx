@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
-import { fx } from "@/lib/fx";
+import { fx, vibrate } from "@/lib/fx";
 import { speakGerman, speakThen } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
 
@@ -39,17 +39,24 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // Türkçeden Almancaya yönde Almanca olan taraf cevaptır; seçim yapılınca
     // her zaman DOĞRU karşılık okunuyor, seçilen değil — yanlış cevabı sesli
     // pekiştirmek öğrenmenin tersine çalışırdı.
-    // Titreşim + geçiş çizgisi: dokunuşun kaydedildiği anında belli olur.
-    fx(correct ? "correct" : "wrong", deSide ? (correct ? 620 : 1200) : correct ? 1500 : 2200);
+    // Titreşim dokunuşun kaydedildiğini anında belli ediyor.
+    vibrate(correct ? "correct" : "wrong");
     const finish = () => onDone([{ wordId: word.id, correct, latencyMs }]);
+
     if (deSide) {
-      // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok.
-      setTimeout(finish, correct ? 620 : 1200);
+      // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok, dolayısıyla
+      // çizginin süresi de sesle değil okuma-anlama payıyla belirleniyor.
+      const wait = correct ? 620 : 1200;
+      fx(correct ? "correct" : "wrong", wait);
+      setTimeout(finish, wait);
       return;
     }
-    // Sabit süre yerine okumanın bitişi bekleniyor: ses önbellekte yoksa
-    // sunucudan gelmesi bir saniyeyi bulabiliyor.
-    speakThen(answer, () => setTimeout(finish, correct ? 250 : 900));
+
+    // Almanca olan taraf cevap: geçiş çizgisi okumanın gerçek uzunluğunda.
+    const tail = correct ? 0 : 900;
+    speakThen(answer, () => setTimeout(finish, tail), {
+      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
+    });
   }
 
   return (

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
-import { fx } from "@/lib/fx";
+import { fx, vibrate } from "@/lib/fx";
 import { speakThen } from "@/components/speak-button";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
@@ -36,13 +36,15 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     // Kelime her zaman DOĞRU artikeliyle okunuyor, seçilenle değil: artikel
     // kelimeyle birlikte ezberleniyor ve yanlış seçimi sesli pekiştirmek
     // öğrenmenin tersine çalışırdı.
-    // Geçiş sabit süreyle değil, okuma bitince yapılıyor: ses önbellekte
-    // yoksa sunucudan gelmesi bir saniyeyi bulabiliyor ve sabit bekleme turu
-    // okuma başlamadan kapatıyordu. Yanlışta doğrusunu görecek ek süre var.
-    fx(correct ? "correct" : "wrong", correct ? 1500 : 2200);
+    // Geçiş çizgisi sesin gerçek uzunluğunda dolduruluyor; sabit süre ya erken
+    // dolup kullanıcıyı dolu bir çizgiye baktırıyor ya da ses bitince boşuna
+    // bekletiyordu. Yanlışta doğruyu görmek için kısa bir ek süre kalıyor.
+    vibrate(correct ? "correct" : "wrong");
+    const tail = correct ? 0 : 900;
     speakThen(
       `${answer} ${word.de}`,
-      () => setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), correct ? 250 : 900),
+      () => setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), tail),
+      { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail) },
     );
   }
 

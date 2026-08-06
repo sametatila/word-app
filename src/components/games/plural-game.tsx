@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
-import { fx } from "@/lib/fx";
+import { fx, vibrate } from "@/lib/fx";
 import { speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
 
 type PluralRound = Extract<Round, { game: "plural" }>;
@@ -45,12 +45,12 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // Doğru çoğul her zaman okunuyor, seçilen değil: çoğul biçim sesle
     // ezberleniyor ve yanlış olanı sesli pekiştirmek öğrenmenin tersine
     // çalışırdı. Çoğul artikeli hep „die“.
-    fx(isCorrect ? "correct" : "wrong", isCorrect ? 1800 : 2800);
-    speakThen(`die ${answer}`, () =>
-      setTimeout(
-        () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]),
-        isCorrect ? 250 : 1200,
-      ),
+    vibrate(isCorrect ? "correct" : "wrong");
+    const tail = isCorrect ? 0 : 1200;
+    speakThen(
+      `die ${answer}`,
+      () => setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), tail),
+      { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail) },
     );
   }
 
