@@ -871,17 +871,85 @@
   "tr": "geri (dönmek, vermek, gitmek)",
   "not": "A2 çeviri gözden geçirmesi: başlık \"zurück- (fahren\" olarak kesilmişti"
  },
+ "1345": {
+  "tr": "atık gaz, egzoz gazı",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki gazlar sanayi ve evlerden çıkıyor; Türkçede 'egzoz gazı' yalnızca taşıtlar için kullanılır, genel karşılık 'atık gaz'dır"
+ },
  "1350": {
   "de": "Abitur",
   "not": "Abitur (D)→A — çapraz gönderme artığı; (D) varsayılan olduğu için gereksiz"
+ },
+ "1372": {
+  "tr": "kampanya, etkinlik, eylem",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki 'eine Aktion für Familien planen' kampanya/etkinlik demektir; Türkçede 'eylem' ilk anlamıyla protesto olarak anlaşılır"
+ },
+ "1385": {
+  "drop": 1384,
+  "not": "B1 çeviri gözden geçirmesi: das Altersheim — 1384 das Altenheim ile aynı madde, aynı örnek cümle"
+ },
+ "1386": {
+  "tr": "alternatif",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki 'alternative Energien'de kelime sıfattır; 'alternatif olarak' zarf karşılığı örnekteki kullanımı vermiyor"
+ },
+ "1404": {
+  "tr": "sistem, düzenek (müzik, ısıtma) / ek (e-posta)",
+  "not": "B1 çeviri gözden geçirmesi: iki örnek de 'sistem' ve 'ek' anlamındadır, 'tesis' ilk sırada olduğu için örneklerle uyuşmuyor"
+ },
+ "1411": {
+  "tr": "biriyle konuşmaya başlamak, seslenmek",
+  "not": "B1 çeviri gözden geçirmesi: 'söz atmak' Türkçede taciz anlamına gelir; ansprechen tanımadığı birine yaklaşıp konuşmaya başlamaktır"
+ },
+ "1413": {
+  "tr": "çalıştırmak, açmak (cihaz) / işe almak",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki 'die Heizung anstellen' cihaz çalıştırmaktır; başta duran 'açmak' öffnen ile karışıyor"
+ },
+ "1432": {
+  "tr": "sıkıntı, dert, sorun / öfke, kızgınlık",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki 'Ich hatte heute Ärger im Büro' 'başım dertteydi/sorun yaşadım' demektir, 'öfke yaşadım' denmez"
+ },
+ "1444": {
+  "tr": "alıkoymak, oyalamak, tutmak / (sich) bulunmak, kalmak",
+  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'Wo hält er sich gerade auf?' dönüşlü 'bulunmak' anlamındadır ve karşılıkta hiç yok"
+ },
+ "1454": {
+  "tr": "sahneye çıkma, performans",
+  "not": "B1 çeviri gözden geçirmesi: 'sahne çıkışı' Türkçede sahneden ayrılmak gibi okunuyor; Auftritt sanatçının sahneye çıkıp gösteri yapmasıdır"
+ },
+ "1472": {
+  "tr": "hariç tutmak, ihtimal dışı bırakmak",
+  "not": "B1 çeviri gözden geçirmesi: ausschließen 'imkânsız kılmak' değildir; örnekteki anlam bir olasılığı ihtimal dışı bırakmaktır"
  },
  "1479": {
   "de": "sich etwas aussuchen",
   "not": "sich etwas) aussuchen — kaçak kapanış parantezi"
  },
+ "1483": {
+  "tr": "yazar (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Autorin ile birebir aynı karşılık veriliyor, öğrenci ikisini ayırt edemiyor"
+ },
+ "1484": {
+  "tr": "yazar (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Autor ile birebir aynı karşılık veriliyor, dişil biçim belirtilmeli"
+ },
  "1486": {
   "drop": 774,
   "not": "S-Bahn — 774 ile aynı; çoğul eki 774'e taşındı"
+ },
+ "1498": {
+  "tr": "memur (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Beamte ile aynı karşılığı taşıyor, dişil biçim ayırt edilmeli"
+ },
+ "1499": {
+  "tr": "başvurmak, talep etmek (resmi belge, izin)",
+  "not": "B1 çeviri gözden geçirmesi: sich bewerben ile aynı 'başvurmak' karşılığını taşıyor ama beantragen resmi belge/izin talebidir, iş başvurusu değil"
+ },
+ "1502": {
+  "tr": "anlam, önem",
+  "not": "B1 çeviri gözden geçirmesi: der Sinn ile aynı karşılığı taşıyordu; Bedeutung kelime anlamı ve önemdir"
+ },
+ "1522": {
+  "drop": 66,
+  "not": "B1 gözden geçirmesi: beid- — 66 beide ile aynı madde, sözlük gövde yazımı"
  },
  "1526": {
   "tr": "tanıdık (erkek)",
@@ -891,9 +959,37 @@
   "tr": "tanıdık (kadın)",
   "not": "1526 ile çift"
  },
+ "1540": {
+  "tr": "çoktan, şimdiden, bile",
+  "not": "B1 çeviri gözden geçirmesi: bereits 'schon' demektir; 'zaten' (ohnehin/sowieso) anlamı yanıltıcı ve ilk sırada"
+ },
+ "1554": {
+  "tr": "yer tutmak, doldurmak; dolu/meşgul olmak",
+  "not": "B1 çeviri gözden geçirmesi: 'işgal etmek' askerî çağrışımlı ve örneklerdeki koltuk tutma/hattın meşgul olması anlamını vermiyor"
+ },
+ "1555": {
+  "de": "besondere",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "1561": {
+  "tr": "kesinlikle, mutlaka; belirli, belli",
+  "not": "B1 çeviri gözden geçirmesi: ilk örnekteki anlam zarf olan 'kesinlikle'dir, sıralama örnekle uyuşmuyor"
+ },
  "1563": {
-  "tr": "katkıda bulunmak, iştirak etmek",
-  "not": "A2 çeviri gözden geçirmesi: teilnehmen ve mitmachen ile aynı karşılığı taşıyordu"
+  "tr": "katılmak, katkıda bulunmak",
+  "not": "B1 çeviri gözden geçirmesi: sich beteiligen'in en yaygın karşılığı 'katılmak'tır ve örnek cümledeki anlam budur"
+ },
+ "1567": {
+  "tr": "bakım (kişi, çocuk)",
+  "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Wartung makine bakımıdır; Betreuung kişi bakımı olarak ayırt edilmeli"
+ },
+ "1575": {
+  "tr": "hareket ettirmek, kımıldatmak; (sich) hareket etmek",
+  "not": "B1 çeviri gözden geçirmesi: her iki örnek de dönüşlü kullanımdır, karşılıkta 'hareket etmek' anlamı eksik"
+ },
+ "1579": {
+  "tr": "başvurmak (iş, pozisyon)",
+  "not": "B1 çeviri gözden geçirmesi: beantragen ile aynı karşılığı taşıyor; sich bewerben iş/pozisyon başvurusudur"
  },
  "1588": {
   "drop": 8153,
@@ -903,62 +999,234 @@
   "drop": 79,
   "not": "A1 gözden geçirmesi: ein bisschen — 79 \"bisschen\" ile aynı madde, örnek cümlesi de kesik"
  },
+ "1619": {
+  "tr": "sahne (tiyatro, konser)",
+  "not": "B1 çeviri gözden geçirmesi: die Szene ile aynı 'sahne' karşılığını taşıyor; Bühne fiziksel tiyatro sahnesidir, Szene ise oyun/film içindeki bölümdür"
+ },
+ "1621": {
+  "tr": "vatandaş (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Bürgerin ile birebir aynı karşılık veriliyor, öğrenci ikisini ayırt edemiyor"
+ },
+ "1622": {
+  "tr": "vatandaş (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Bürger ile birebir aynı karşılık veriliyor, dişil biçim belirtilmeli"
+ },
+ "1643": {
+  "tr": "tasvir etmek, ortaya koymak, canlandırmak",
+  "not": "B1 çeviri gözden geçirmesi: 'göstermek' zeigen ile karışıyor; örnekteki anlam sorunu anlatıp ortaya koymaktır"
+ },
+ "1659": {
+  "tr": "sızdırmaz, sıkı kapanan; yoğun, sık",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam pencerenin sızdırmazlığıdır, tek başına 'sıkı' bu anlamı vermiyor"
+ },
+ "1666": {
+  "tr": "müdür (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Direktorin ile birebir aynı karşılık veriliyor, öğrenci ikisini ayırt edemiyor"
+ },
+ "1667": {
+  "tr": "müdür (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Direktor ile birebir aynı karşılık veriliyor, dişil biçim belirtilmeli"
+ },
+ "1671": {
+  "tr": "doktor (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Doktor ile aynı karşılığı taşıyor, dişil biçim ayırt edilmeli"
+ },
+ "1676": {
+  "tr": "çift, iki kişilik",
+  "not": "B1 çeviri gözden geçirmesi: das Paar ile aynı 'çift' karşılığını taşıyor; Doppel- ön eki örneklerdeki gibi 'iki kişilik/çift kişilik' demektir, 'bir çift' değil"
+ },
+ "1681": {
+  "drop": 939,
+  "not": "B1 çeviri gözden geçirmesi: drin — örnek cümlesi \"drinnen\" kullanıyor; 939 ile aynı madde"
+ },
+ "1683": {
+  "tr": "drogeri (kozmetik ve temizlik ürünleri mağazası)",
+  "not": "B1 çeviri gözden geçirmesi: tek başına 'drogeri' Türkçede anlaşılmıyor, ne satılan bir dükkân olduğu belirtilmeli"
+ },
  "1695": {
   "de": "EC-Karte",
   "not": "ec-Karte/EC-Karte → A: Bankomat-Karte — çapraz gönderme artığı"
+ },
+ "1700": {
+  "tr": "daha erken; daha çok, ziyade",
+  "not": "B1 çeviri gözden geçirmesi: birinci örnekteki 'eher aufstehen' zaman anlamıdır ('daha erken kalkmak'), mevcut karşılıkta bu anlam yok"
+ },
+ "1702": {
+  "de": "eigene",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "1705": {
+  "tr": "acelesi olmak, acil olmak; acele etmek",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki 'Es eilt sehr' bir işin acil olmasıdır; 'acele etmek' sich beeilen'in karşılığı ve ikisi ayrışmıyor"
+ },
+ "1708": {
+  "tr": "zorla girmek, (hırsız) girmek",
+  "not": "B1 çeviri gözden geçirmesi: 'içeri girmek' yanıltıcı, einbrechen hırsızlık amacıyla zorla girmektir"
+ },
+ "1709": {
+  "tr": "ev soyguncusu, (eve giren) hırsız",
+  "not": "B1 çeviri gözden geçirmesi: Einbrecher kapı/pencere kırıp giren soyguncudur, düz 'hırsız' der Dieb ile birebir çakışıyor (aynı anlam: der Dieb)"
+ },
+ "1717": {
+  "tr": "etki, nüfuz",
+  "not": "B1 çeviri gözden geçirmesi: Einfluss birine/bir şeye yön verme gücüdür; düz 'etki' die Wirkung (ortaya çıkan sonuç) ile ayırt edilemiyor (aynı anlam: die Wirkung)"
+ },
+ "1719": {
+  "tr": "yapıştırmak, eklemek",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümle kopyala-yapıştır işlemidir ('kopieren drücken und dann einfügen'), bu yüzden 'yapıştırmak' başta olmalı"
+ },
+ "1726": {
+  "tr": "almak, içmek (ilaç)",
+  "not": "B1 çeviri gözden geçirmesi: einnehmen örnekteki gibi ilaç/damla almaktır; işaretsiz 'almak, kullanmak' nehmen ve bekommen ile karışıyor"
+ },
+ "1729": {
+  "tr": "mobilya, dekorasyon",
+  "not": "B1 çeviri gözden geçirmesi: 'iç dizayn' Türkçede kullanılmayan bir karşılık; Einrichtung evdeki mobilya ve dekorasyondur"
+ },
+ "1731": {
+  "tr": "açmak, çalıştırmak (cihaz)",
+  "not": "B1 çeviri gözden geçirmesi: einschalten cihaz çalıştırmaktır (Heizung, Fernseher); işaretsiz 'açmak' eröffnen ile birebir çakışıyor (aynı anlam: eröffnen)"
  },
  "1736": {
   "drop": 951,
   "not": "A2 çeviri gözden geçirmesi: eintragen — 951 sich eintragen ile aynı örnek cümleyi taşıyordu"
  },
+ "1739": {
+  "tr": "sakin, bir yerde oturan kişi",
+  "not": "B1 çeviri gözden geçirmesi: Einwohner bir kişidir; 'nüfus' karşılığı die Bevölkerung / die Einwohnerzahl demektir ve yanıltıcı"
+ },
  "1744": {
   "drop": 952,
   "not": "Einzel- — 952 ile aynı önek"
+ },
+ "1746": {
+  "de": "einzige",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
  },
  "1747": {
   "drop": 123,
   "not": "Eis — 123 ile aynı (A1)"
  },
+ "1755": {
+  "tr": "tavsiye, öneri (biri için)",
+  "not": "B1 gözden geçirmesi: Ratschlag ile aynı karşılığı taşıyordu; Empfehlung birini/bir şeyi tavsiye etmektir"
+ },
+ "1758": {
+  "tr": "torun (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Enkelin ile birebir aynı karşılığa sahip, cinsiyet ayrımı gerekli (aynı anlam: die Enkelin)"
+ },
+ "1759": {
+  "tr": "torun (kız)",
+  "not": "B1 çeviri gözden geçirmesi: der Enkel ile birebir aynı karşılığa sahip, cinsiyet ayrımı gerekli (aynı anlam: der Enkel)"
+ },
+ "1763": {
+  "tr": "karşıdan gelmek, kolaylık göstermek",
+  "not": "B1 çeviri gözden geçirmesi: örnek 1'de komşu karşı yönden geliyor; 'karşılamak' (empfangen/abholen) yanlış anlam veriyor"
+ },
+ "1782": {
+  "tr": "patates (Avusturya)",
+  "not": "B1 çeviri gözden geçirmesi: Erdapfel Avusturya kullanımıdır, işaretsiz 'patates' die Kartoffel ile ayırt edilemiyor (aynı anlam: die Kartoffel)"
+ },
  "1783": {
   "drop": 957,
   "not": "A2 çeviri gözden geçirmesi: \"das Erdgeschoss/Erdgeschoß\" — 957 ile aynı madde, Avusturya yazım varyantı"
+ },
+ "1817": {
+  "tr": "açmak (dükkân, hesap), açılışını yapmak",
+  "not": "B1 çeviri gözden geçirmesi: eröffnen yeni bir yer/hesap açmaktır; işaretsiz 'açmak' einschalten ile çakışıyor (aynı anlam: einschalten)"
+ },
+ "1823": {
+  "de": "erste",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "1835": {
+  "tr": "uzman, bilirkişi",
+  "not": "B1 çeviri gözden geçirmesi: der Spezialist ile aynı karşılığı taşıyordu; Experte görüşüne başvurulan kişidir"
+ },
+ "1849": {
+  "tr": "durum, vaka (söz konusu koşul, olay)",
+  "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Zustand da 'durum' olarak veriliyor; Fall bir koşul/vakadır, Zustand nesnenin içinde bulunduğu hâldir"
  },
  "1852": {
   "drop": 640,
   "not": "Familienstand — 640 ile aynı (A1)"
  },
+ "1854": {
+  "de": "Fantasie/Phantasie",
+  "tr": "hayal gücü, fantezi",
+  "not": "B1 çeviri gözden geçirmesi: \"fantazi\" yazım hatasıydı"
+ },
  "1856": {
-  "de": "Faschiertes (A)",
+  "de": "Faschiertes",
+  "artikel": "das",
   "tr": "kıyma (Avusturya)",
-  "not": "Faschierte (A) D — kapanmamış artık; doğru biçim Faschiertes"
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı"
  },
  "1858": {
-  "de": "Fasnacht (CH)",
-  "not": "Fasnacht (CH) D — artık temizlendi, bölge bilgisi korundu"
+  "de": "Fasnacht",
+  "tr": "karnaval (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı, karşılıkta yoktu"
+ },
+ "1859": {
+  "tr": "yakalamak, tutmak; (karar) almak",
+  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'den Dieb gefasst' yakalamaktır ve tek başına 'almak' yanıltıcı, yalnızca 'einen Entschluss fassen' kalıbında geçerli"
  },
  "1865": {
   "drop": 147,
   "not": "Ferien (CH) — 147 ile aynı; bölge notu tohumlamada kırpıldığı için ayırt edici değil"
  },
+ "1871": {
+  "de": "festnehmen",
+  "not": "B1 çeviri gözden geçirmesi: başlığa çekimli hâl (\"nimmt fest\") yapışmıştı"
+ },
+ "1904": {
+  "tr": "araştırma (bilimsel)",
+  "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Recherche de 'araştırma'dır; Forschung bilimsel araştırmadır, Recherche bilgi/kaynak taramasıdır"
+ },
+ "1925": {
+  "tr": "meyve, yemiş (tek tek meyve)",
+  "not": "B1 çeviri gözden geçirmesi: aynı anlam listesindeki Obst ile birebir aynı karşılık veriliyor; Obst toplu 'meyve', Frucht tek bir meyvedir"
+ },
  "1926": {
-  "de": "Früchte (CH)",
-  "not": "Früchte (CH) → D — çapraz gönderme artığı"
+  "de": "Früchte",
+  "tr": "meyve (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı, karşılıkta yoktu"
  },
  "1927": {
   "drop": 656,
   "not": "früher — 656 ile aynı (A1)"
+ },
+ "1939": {
+  "tr": "pişmiş; (gar nicht/gar kein) hiç",
+  "not": "B1 çeviri gözden geçirmesi: ikinci örnekteki 'gar nicht' anlamı karşılıkta hiç yok, oysa gar'ın en yaygın kullanımı budur"
+ },
+ "1944": {
+  "tr": "lokanta, birahane",
+  "not": "B1 çeviri gözden geçirmesi: 'han' yanıltıcı ve ilk sırada; Gasthaus konaklama yeri değil, örnekteki gibi yemek-içki içilen yerdir"
  },
  "1957": {
   "drop": 995,
   "not": "geehrt — 995 ile aynı; daha zengin anlamı 995'e taşındı"
  },
  "1969": {
-  "de": "Gehsteig",
-  "not": "Gehsteig (D — kapanmamış parantez"
+  "tr": "kaldırım (Avusturya, Güney Almanya)",
+  "not": "B1 çeviri gözden geçirmesi: Trottoir ve Bürgersteig ile aynı karşılığı taşıyordu"
+ },
+ "1983": {
+  "drop": 663,
+  "not": "B1 gözden geçirmesi: \"gern/gerne\" — 663 gern(e) ile aynı madde"
  },
  "1984": {
   "de": "gesamt-",
   "not": "gesamt-/Gesamt- — yalnız büyük harf farkı; önek olduğu için tire korunur"
+ },
+ "2003": {
+  "tr": "sulamak (çiçek, bahçe)",
+  "not": "B1 çeviri gözden geçirmesi: bewässern ile aynı karşılığı taşıyor; gießen elle sulamaktır, bewässern tarla/arazi sulamasıdır (aynı anlam: bewässern)"
+ },
+ "2023": {
+  "tr": "kurmak (şirket, dernek)",
+  "not": "B1 çeviri gözden geçirmesi: installieren ile aynı karşılığı taşıyor; gründen kuruluş kurmaktır, installieren cihaz/yazılım kurmaktır (aynı anlam: installieren)"
  },
  "2030": {
   "de": "Hackfleisch",
@@ -976,6 +1244,10 @@
   "de": "Hausfrau/Hausmann",
   "not": "Hausfrau/der Hausmann — artikel ikinci biçime yapışmış"
  },
+ "2051": {
+  "tr": "kapıcı, bina görevlisi",
+  "not": "B1 çeviri gözden geçirmesi: Hausmeister binanın bakım işlerini yapan görevlidir; 'bina yöneticisi' idari yönetici (Hausverwalter) anlamına gelip yanıltıyor"
+ },
  "2062": {
   "drop": 1022,
   "not": "her — 1022 ile aynı (A2)"
@@ -992,6 +1264,14 @@
   "typ": "Sonstiges",
   "not": "herunter- — zarf/önek, fiil olarak işaretliydi"
  },
+ "2071": {
+  "drop": 221,
+  "not": "B1 çeviri gözden geçirmesi: \"herzlich heute\" — 221 herzlich maddesinin başlığına sonraki madde (heute, 222) yapışmış"
+ },
+ "2072": {
+  "de": "heutige",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
  "2073": {
   "drop": 223,
   "not": "hier — 223 ile aynı (A1)"
@@ -1000,9 +1280,62 @@
   "drop": 1029,
   "not": "hinter — 1029 ile aynı (A2)"
  },
+ "2077": {
+  "tr": "geride bırakmak (mesaj, iz)",
+  "not": "B1 çeviri gözden geçirmesi: lassen ile aynı karşılığı taşıyor; hinterlassen arkada iz/mesaj bırakmaktır, lassen genel 'bırakmak'tır (aynı anlam: lassen)"
+ },
+ "2079": {
+  "tr": "dikkat çekmek, belirtmek",
+  "not": "B1 çeviri gözden geçirmesi: hinweisen örnekte olduğu gibi bir şeye dikkat çekmektir; ilk sıradaki 'işaret etmek' parmakla gösterme (zeigen) anlamına kayıyor"
+ },
+ "2080": {
+  "de": "Hinweis",
+  "artikel": "der",
+  "not": "B1 çeviri gözden geçirmesi: başlıkta çoğul biçim (\"Hinweise\") vardı"
+ },
+ "2090": {
+  "tr": "tahta, ahşap, odun",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki \"Regal aus Holz\" malzeme anlamındadır; \"odun\" (yakacak) en yaygın anlam değil, başta durmamalı"
+ },
+ "2092": {
+  "tr": "dinleyici (radyo, yayın)",
+  "not": "B1 çeviri gözden geçirmesi: Zuhörer ile birebir aynı karşılığı taşıyor; Hörer yayın/radyo dinleyicisidir (aynı anlam: der Zuhörer)"
+ },
+ "2093": {
+  "tr": "kadın dinleyici (radyo, yayın)",
+  "not": "B1 çeviri gözden geçirmesi: dişil biçim olduğu belirtilmemiş, Hörer ile aynı karşılıkta kalıyor; paketteki Journalistin/Köchin/Kellnerin gibi \"kadın\" ayrımı taşımalı"
+ },
+ "2094": {
+  "tr": "dinleyici (bir konuşmayı dinleyen)",
+  "not": "B1 çeviri gözden geçirmesi: Hörer ile aynı karşılığı taşıyor; Zuhörer konuşan birini dinleyen kişidir, yayın dinleyicisi değil (aynı anlam: der Hörer)"
+ },
+ "2115": {
+  "de": "innere",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "2119": {
+  "tr": "kurmak, yüklemek (program, cihaz)",
+  "not": "B1 çeviri gözden geçirmesi: gründen ile aynı \"kurmak\" karşılığına düşüyor; installieren şirket kurmak değil, program/cihaz kurup yüklemektir (aynı anlam: gründen)"
+ },
+ "2127": {
+  "tr": "ilgilenen, ilgi duyan",
+  "not": "B1 çeviri gözden geçirmesi: Türkçede \"ilgili\" öncelikle \"ilişkin\" demektir; örnekteki \"an der Wohnung interessiert\" ilgi duyan/talip olan anlamındadır"
+ },
+ "2130": {
+  "de": "irgendein",
+  "not": "B1 çeviri gözden geçirmesi: \"irgendirgendein\" — önek kendini yinelemişti"
+ },
  "2144": {
   "tr": "genç kız, genç (kadın)",
   "not": "696 ile çift"
+ },
+ "2148": {
+  "tr": "soğuk, soğukluk",
+  "not": "B1 çeviri gözden geçirmesi: sıfat kalt ile birebir aynı karşılığı taşıyor; Kälte isimdir, \"soğukluk\" ayrımı gerekir (aynı anlam: kalt)"
+ },
+ "2154": {
+  "tr": "yemekhane, kantin",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki gibi Kantine ucuz yemek yenen işyeri/okul yemekhanesidir; Türkçe \"kantin\" atıştırmalık satan büfeyi çağrıştırdığı için başta olmamalı"
  },
  "2166": {
   "de": "sich etwas kaufen",
@@ -1012,29 +1345,135 @@
   "drop": 259,
   "not": "kein- — 259 ile aynı"
  },
+ "2181": {
+  "tr": "yapıştırmak, yapışmak",
+  "not": "B1 çeviri gözden geçirmesi: 1. örnek \"Die Briefmarke klebt nicht mehr\" geçişsiz \"yapışmak\" anlamındadır, mevcut karşılıkta bu anlam yok"
+ },
+ "2189": {
+  "tr": "kulağa gelmek, ses vermek",
+  "not": "B1 çeviri gözden geçirmesi: \"çalmak\" klingeln'in anlamıdır ve onunla karışıyor; klingen ses vermek / kulağa ... gelmektir"
+ },
+ "2192": {
+  "tr": "hamur topu, hamur köftesi",
+  "not": "B1 çeviri gözden geçirmesi: Türkçede \"köfte\" et köftesini çağrıştırır, oysa Kloß patates/ekmek hamurundan yapılan etsiz bir garnitürdür"
+ },
+ "2197": {
+  "tr": "hamur topu, patates köftesi",
+  "not": "B1 çeviri gözden geçirmesi: Türkçede \"köfte\" et köftesini çağrıştırır, oysa Knödel patates/ekmek hamurundan yapılan etsiz bir garnitürdür"
+ },
+ "2221": {
+  "tr": "doğru, kurallara uygun",
+  "not": "B1 çeviri gözden geçirmesi: korrekt 'kusursuz/kurallara uygun' demektir; Türkçede 'doğru dürüst' çoğunlukla olumsuz cümlede 'adam akıllı' anlamında kullanılır ve burada yanıltıcı"
+ },
  "2230": {
-  "tr": "hasta (erkek)",
-  "not": "der/die Kranke çifti ayırt edilmiyordu"
+  "tr": "hasta (erkek, genel)",
+  "not": "B1 çeviri gözden geçirmesi: der Patient tedavi gören/doktora giden hastadır, der Kranke ise genel olarak sağlığı bozuk kişidir; ikisinin karşılığı ayırt edilemiyor"
  },
  "2231": {
-  "tr": "hasta (kadın)",
-  "not": "2230 ile çift"
+  "tr": "hasta (kadın, genel)",
+  "not": "B1 çeviri gözden geçirmesi: die Patientin tedavi gören hastadır, die Kranke genel olarak sağlığı bozuk kadındır; ikisinin karşılığı ayırt edilemiyor"
+ },
+ "2232": {
+  "tr": "erkek hemşire, hasta bakıcı",
+  "not": "B1 çeviri gözden geçirmesi: Krankenpfleger erkek hemşiredir; Krankenschwester (kadın hemşire) ile ayrımı kayboluyor"
+ },
+ "2233": {
+  "tr": "hemşire (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Krankenpfleger erkek hemşire olarak ayrıldı, dişil biçim de belirtilmeli"
  },
  "2236": {
   "drop": 697,
   "not": "A1 gözden geçirmesi: Kreditkarte — 697 ile aynı madde"
  },
+ "2240": {
+  "de": "Kriminalpolizei",
+  "artikel": "die",
+  "not": "B1 çeviri gözden geçirmesi: \"Kriminaldie Kriminalpolizei\" — artikel gövdeye yapışmıştı"
+ },
+ "2256": {
+  "tr": "deniz kıyısı, sahil",
+  "not": "B1 çeviri gözden geçirmesi: Küste yalnızca deniz kıyısıdır; das Ufer (nehir/göl kenarı) ile karşılığı ayırt edilemiyor"
+ },
+ "2280": {
+  "tr": "üzgün olmak, acımak (birine)",
+  "not": "B1 çeviri gözden geçirmesi: 'Die Frau tut mir leid' = kadına acıyorum; yalnızca 'üzülmek' demek yapının kime acındığını anlatan anlamını gizliyor"
+ },
+ "2282": {
+  "tr": "gücü yetmek (sich leisten), yapmak, yerine getirmek",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümlenin anlamı 'sich etwas leisten können = gücü yetmek'tir, karşılık bu anlamla başlamalı"
+ },
+ "2287": {
+  "tr": "el merdiveni, portatif merdiven",
+  "not": "B1 çeviri gözden geçirmesi: die Leiter taşınabilir el merdivenidir; basamaklı bina merdiveni olan Stiege/Treppe ile karışıyor"
+ },
+ "2294": {
+  "tr": "gazoz, meşrubat",
+  "not": "B1 çeviri gözden geçirmesi: Almanca Limonade gazlı tatlı meşrubattır; 'limonata' Türkçede limon suyu içeceğidir ve yanıltıcı"
+ },
+ "2296": {
+  "de": "linke",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
  "2305": {
   "de": "los",
   "not": "los/los- — aynı kelime"
  },
+ "2306": {
+  "tr": "yola çıkmak (araçla), hareket etmek",
+  "not": "B1 çeviri gözden geçirmesi: losfahren araçla yola çıkmaktır; genel anlamda yola koyulan aufbrechen ile ayrımı yok"
+ },
+ "2321": {
+  "tr": "marka, pul (posta)",
+  "not": "B1 çeviri gözden geçirmesi: Marke'nin yaygın anlamı markadır, 'pul' anlamı Briefmarke kısalmasından gelir; sıra ters ve Briefmarke ile karışıyor"
+ },
  "2324": {
-  "de": "Matura (A)",
-  "not": "Matura (A — kapanmamış parantez, bölge bilgisi korundu"
+  "de": "Matura",
+  "tr": "lise bitirme sınavı (Avusturya)",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı, karşılıkta yoktu"
+ },
+ "2325": {
+  "tr": "duvar (dış duvar, taş/tuğla)",
+  "not": "B1 çeviri gözden geçirmesi: Mauer taş/tuğla dış duvardır, die Wand iç duvardır; ikisinin karşılığı ayırt edilemiyor"
+ },
+ "2335": {
+  "tr": "bana uyar, benim açımdan sorun değil",
+  "not": "B1 çeviri gözden geçirmesi: 'bana göre' Türkçede 'bence, kanaatimce' demektir; meinetwegen razı olmayı bildirir"
  },
  "2336": {
   "drop": 1088,
   "not": "A2 çeviri gözden geçirmesi: \"meist(ens)\" — 1088 ile aynı madde, parantezli varyant"
+ },
+ "2338": {
+  "tr": "haber vermek (resmî makama), bildirmek",
+  "not": "B1 çeviri gözden geçirmesi: mitteilen ve berichten ile aynı karşılığı taşıyordu"
+ },
+ "2339": {
+  "tr": "haber, bildirim",
+  "not": "B1 çeviri gözden geçirmesi: Türkçede 'bildiri' beyanname/tebliğ demektir; Meldung bir haber/bildirimdir (radyo haberi örneğiyle uyuşmuyor)"
+ },
+ "2341": {
+  "tr": "insana özgü, insanca",
+  "not": "B1 çeviri gözden geçirmesi: Türkçede 'insani' önce 'insani yardım' anlamını çağrıştırır; 'Fehler zu machen ist menschlich' = hata yapmak insana özgüdür"
+ },
+ "2355": {
+  "tr": "çok az, minimal",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki 'ein minimaler Unterschied' çok küçük bir farktır; 'asgari bir fark' Türkçede kullanılmaz"
+ },
+ "2356": {
+  "tr": "karıştırmak, harmanlamak",
+  "not": "B1 çeviri gözden geçirmesi: mischen katıp harmanlamaktır; tek başına 'karıştırmak' aynı anlam olarak verilen verwechseln (birbirine karıştırmak) ile ayırt edilemiyor"
+ },
+ "2357": {
+  "tr": "olumsuzluk ön eki: yanlış-, -sizlik",
+  "not": "B1 çeviri gözden geçirmesi: 'kötü-' yanıltıcı: Misserfolg 'kötü başarı' değil başarısızlık, Misstrauen güvensizliktir"
+ },
+ "2361": {
+  "tr": "iletmek, bildirmek",
+  "not": "B1 çeviri gözden geçirmesi: melden ile birebir aynı karşılık verilmiş; mitteilen birine bilgi iletmektir, melden ise (resmî makama) haber vermektir"
+ },
+ "2363": {
+  "de": "mittlere",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
  },
  "2365": {
   "drop": 733,
@@ -1044,6 +1483,10 @@
   "de": "mobil",
   "not": "mobil/mobil- — aynı kelime"
  },
+ "2382": {
+  "tr": "müziğe yetenekli, müzikal",
+  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'Sie ist sehr musikalisch' yetenek anlamında; en yaygın anlam başta olmalı"
+ },
  "2406": {
   "de": "national",
   "not": "national/national- — aynı kelime"
@@ -1052,14 +1495,31 @@
   "drop": 7616,
   "not": "A2 çeviri gözden geçirmesi: \"noch mal\" — 7616 ile aynı madde"
  },
+ "2425": {
+  "de": "Notaufnahme",
+  "artikel": "die",
+  "not": "B1 çeviri gözden geçirmesi: \"Notdie Notaufnahme\" — artikel gövdeye yapışmıştı"
+ },
+ "2434": {
+  "de": "obere",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
  "2436": {
-  "de": "Obers (A)",
-  "tr": "krema, çırpılmış krema (Avusturya)",
-  "not": "das/der (Schlag-)Obers (A) → D: (Schlag-)Sahne — çapraz gönderme artığı"
+  "de": "Obers",
+  "artikel": "das",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı"
  },
  "2437": {
   "drop": 351,
   "not": "Obst — 351 ile aynı (A1)"
+ },
+ "2445": {
+  "drop": 354,
+  "not": "B1 gözden geçirmesi: \"oft/öfter\" — 354 oft ile aynı madde, karşılaştırma biçimi ayrı madde değil"
+ },
+ "2454": {
+  "tr": "tertipli, düzenli (dağınık olmayan)",
+  "not": "B1 çeviri gözden geçirmesi: aynı anlam olarak verilen regelmäßig 'belli aralıklarla düzenli' demek; ordentlich derli toplu olmaktır, ayırt edici gerekiyor"
  },
  "2459": {
   "tr": "orijinal, asıl nüsha",
@@ -1073,6 +1533,14 @@
   "drop": 1125,
   "not": "A2 çeviri gözden geçirmesi: \"(ein) paar\" — 1125 ile aynı madde, parantezli varyant"
  },
+ "2466": {
+  "tr": "domates (Avusturya)",
+  "not": "B1 çeviri gözden geçirmesi: Tomate ile birebir aynı karşılığı taşıyor; Paradeiser yalnızca Avusturya'da kullanılır, bölge etiketi olmadan öğrenci ikisini ayırt edemiyor (aynı anlam: die Tomate)"
+ },
+ "2473": {
+  "tr": "paket hâlinde, her şey dahil; toptan",
+  "not": "B1 çeviri gözden geçirmesi: örnek 'die Reise pauschal gebucht' paket tur rezervasyonudur; 'toptan, götürü' bu cümleye oturmuyor ve ilk anlam örnekle uyuşmuyor"
+ },
  "2477": {
   "de": "in Pension gehen",
   "not": "in Pension gehen/sein (D — kapanmamış parantez; 'sein' ayrı madde 2478'de"
@@ -1085,14 +1553,50 @@
   "tr": "emekli (Avusturya)",
   "not": "A2 çeviri gözden geçirmesi: der Rentner ile aynı karşılığı taşıyordu; Pensionist Avusturya kullanımıdır"
  },
+ "2482": {
+  "tr": "peron (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: Bahnsteig ile birebir aynı karşılığı taşıyor; Perron İsviçre kullanımıdır, bölge etiketi olmadan ayırt edilemiyor (aynı anlam: der Bahnsteig)"
+ },
+ "2485": {
+  "de": "Personenstand",
+  "tr": "medeni hâl (Almanya)",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı, karşılıkta yoktu"
+ },
+ "2487": {
+  "tr": "tencere (İsviçre), tava",
+  "not": "B1 çeviri gözden geçirmesi: madde İsviçre kullanımıdır ve orada Pfanne = Topf'tur; örnekteki 'Kartoffeln kochen' tencere ister, 'tava' anlamı yanıltıyor"
+ },
+ "2495": {
+  "drop": 1854,
+  "not": "B1 gözden geçirmesi: \"Phantasie/Fantasie\" — 1854 ile aynı madde, yalnızca eğik çizginin iki yanı yer değiştirmiş"
+ },
  "2507": {
   "de": "Portemonnaie/Portmonee",
   "not": "Portemonnaie/Port- → monee — satır sonu kırılması onarıldı"
  },
+ "2509": {
+  "tr": "postacı (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: Briefträger ve Postbote ile birebir aynı karşılığı taşıyor; Pöstler İsviçre kullanımıdır (aynı anlam: der Briefträger, der Postbote)"
+ },
+ "2531": {
+  "tr": "semt, mahalle (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: Stadtviertel ile aynı karşılığı taşıyor; Quartier bu anlamda İsviçre kullanımıdır (aynı anlam: das Stadtviertel)"
+ },
+ "2532": {
+  "tr": "boydan boya, çaprazlamasına",
+  "not": "B1 çeviri gözden geçirmesi: örnek 'quer durch die Stadt' boydan boya geçmektir; ayrıca 'çaprazına' Türkçede kullanılmayan bir biçim"
+ },
  "2536": {
-  "de": "Rahm (CH)",
-  "tr": "krema, kaymak (İsviçre)",
-  "not": "(Schlag-)Rahm (CH) → D: (Schlag-)Sahne — çapraz gönderme artığı"
+  "de": "Rahm",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı"
+ },
+ "2540": {
+  "tr": "öğüt, akıl danışma",
+  "not": "B1 çeviri gözden geçirmesi: Ratschlag ile aynı karşılığı taşıyordu; Rat soyut olarak akıl/öğüttür"
+ },
+ "2541": {
+  "tr": "öğüt, nasihat",
+  "not": "B1 gözden geçirmesi: der Rat ve die Empfehlung ile aynı karşılığı taşıyordu; Ratschlag tek tek verilen öğüttür"
  },
  "2543": {
   "de": "rauf",
@@ -1102,6 +1606,18 @@
   "de": "raus",
   "not": "raus/raus- — aynı kelime"
  },
+ "2550": {
+  "tr": "araştırma (bilgi toplama, gazetecilik)",
+  "not": "B1 çeviri gözden geçirmesi: Forschung ile aynı karşılığı taşıyor; Recherche kaynak tarayıp bilgi toplamaktır, Forschung bilimsel araştırmadır (aynı anlam: die Forschung)"
+ },
+ "2555": {
+  "de": "rechte",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "2563": {
+  "tr": "düzenli (belirli aralıklarla)",
+  "not": "B1 çeviri gözden geçirmesi: ordentlich ile aynı karşılığı taşıyor; regelmäßig zaman aralığıyla ilgilidir, ordentlich derli topluluktur (aynı anlam: ordentlich)"
+ },
  "2578": {
   "de": "in Rente gehen",
   "not": "in Rente gehen/sein (D) → D — artık temizlendi"
@@ -1110,42 +1626,152 @@
   "drop": 770,
   "not": "A1 gözden geçirmesi: Rezeption/Reception — 770 ile aynı madde, eğik çizgili varyant"
  },
+ "2594": {
+  "de": "Rückfahrt",
+  "artikel": "die",
+  "not": "B1 çeviri gözden geçirmesi: \"rückdie Rückfahrt\" — artikel gövdeye yapışmıştı"
+ },
+ "2600": {
+  "tr": "tur; (bir arada oturan) grup",
+  "not": "B1 çeviri gözden geçirmesi: 'devir' Türkçede dönem/çağ demek, Runde'nin anlamı değil; örnek 2'deki anlam bir arada konuşan grup/halka"
+ },
  "2604": {
   "de": "Sahne",
   "not": "(Schlag-)Sahne (D) → A: (Schlag-)Obers — çapraz gönderme artığı; Schlagsahne yine kabul edilir"
  },
+ "2617": {
+  "tr": "(düğmeyle) açmak, kapatmak; vites değiştirmek",
+  "not": "B1 çeviri gözden geçirmesi: yalın 'açmak, kapatmak' öffnen/schließen ile karışıyor; schalten düğmeyle devreye alma ve vites değiştirmedir"
+ },
  "2634": {
   "drop": 2436,
   "not": "Obers — 2436 ile aynı madde, iki kez çıkarılmış"
+ },
+ "2636": {
+  "tr": "ince, fit (vücut için)",
+  "not": "B1 çeviri gözden geçirmesi: dünn ile birebir aynı karşılık kalıyor; schlank olumlu anlamda vücut inceliğidir, dünn ise nesne/kişi için 'ince, sıska'"
+ },
+ "2638": {
+  "tr": "dar (genişliği az), ince",
+  "not": "B1 çeviri gözden geçirmesi: eng ile birebir aynı karşılık kalıyor; schmal genişliği az olan, eng ise sıkışık/sıkı olandır"
+ },
+ "2644": {
+  "tr": "(bir yerini) kesmek, kesmek",
+  "not": "B1 çeviri gözden geçirmesi: 'kendini kesmek' Türkçede kendine zarar verme anlamına geliyor; kastedilen 'elimi kestim' türü kazadır"
+ },
+ "2652": {
+  "tr": "yazar (edebiyat)",
+  "not": "B1 çeviri gözden geçirmesi: der Autor ile aynı karşılığı taşıyordu; Schriftsteller edebiyat yazarıdır"
  },
  "2670": {
   "de": "Nordsee/Ostsee",
   "tr": "Kuzey Denizi / Baltık Denizi",
   "not": "Nord-/Ostsee — bileşik kısaltması açıldı; 'deniz' anlamı yanlıştı, ikisi de özel ad"
  },
+ "2672": {
+  "tr": "sekreter (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Sekretärin ile aynı karşılığı taşıyordu"
+ },
+ "2673": {
+  "tr": "kadın sekreter",
+  "not": "B1 çeviri gözden geçirmesi: der Sekretär ile birebir aynı karşılık kalıyor; dişil biçim ayırt edilmeli (Sängerin, Schauspielerin ile aynı düzen)"
+ },
+ "2674": {
+  "drop": 1652,
+  "not": "B1 gözden geçirmesi: selb- — 1652 derselbe ile aynı madde, sözlük gövde yazımı"
+ },
  "2689": {
   "drop": 1198,
   "not": "sich setzen — 1198 ile aynı; çekim bilgisi 1198'e taşındı"
  },
+ "2698": {
+  "tr": "anlam, mantık (bir şeyin amacı)",
+  "not": "B1 çeviri gözden geçirmesi: Bedeutung ile birebir aynı karşılık kalıyor; Sinn bir şeyin mantığı/amacı, Bedeutung ise kelime anlamı ve önemdir"
+ },
+ "2701": {
+  "tr": "koltuk, oturma yeri",
+  "not": "B1 çeviri gözden geçirmesi: 'oturak' Türkçede lazımlık anlamına gelir, araç/salon koltuğu için kullanılmaz"
+ },
  "2702": {
   "drop": 1201,
   "not": "A2 çeviri gözden geçirmesi: \"der Ski/Schi\" — 1201 ile aynı madde, eğik çizgili varyant"
+ },
+ "2704": {
+  "tr": "çorap (kısa)",
+  "not": "B1 çeviri gözden geçirmesi: Strumpf ile birebir aynı karşılık kalıyor; Socke kısa çorap, Strumpf uzun/külotlu çoraptır"
+ },
+ "2706": {
+  "de": "sogenannte",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "2708": {
+  "de": "solche",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
+ "2709": {
+  "de": "Sonderangebot",
+  "artikel": "das",
+  "not": "B1 çeviri gözden geçirmesi: \"Sonderdas Sonderangebot\" — artikel gövdeye yapışmıştı"
+ },
+ "2715": {
+  "tr": "-diği kadarıyla (soviel ich weiß: bildiğim kadarıyla)",
+  "not": "B1 çeviri gözden geçirmesi: 'bildiğim kadarıyla' anlamı 'ich weiß'ten gelir; soviel tek başına 'kadarıyla' demektir, birinci tekil şahsa bağlamak yanıltıcı"
  },
  "2716": {
   "de": "so viel",
   "not": "so viel/so viel wie — ikincisi aynı kalıbın genişlemişi"
  },
  "2723": {
-  "de": "Speise",
-  "not": "Speise-/-speise — Speise başlı başına isim; tireler bileşik işareti"
+  "tr": "yemek, yiyecek",
+  "not": "B1 çeviri gözden geçirmesi: das Gericht ile aynı karşılığı taşıyordu; Speise tabaktaki yiyecektir"
+ },
+ "2725": {
+  "tr": "uzman (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Spezialistin ile birebir aynı karşılık verilmiş, öğrenci ikisini ayırt edemiyor (aynı anlam: die Spezialistin)"
+ },
+ "2726": {
+  "tr": "uzman (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Spezialist ile birebir aynı karşılık verilmiş, cinsiyet ayrımı belirtilmeli (aynı anlam: der Spezialist)"
+ },
+ "2739": {
+  "tr": "yıkamak (bulaşık), çalkalamak",
+  "not": "B1 çeviri gözden geçirmesi: ilk örnek 'das Geschirr spülen' yani bulaşık yıkamaktır, karşılık 'çalkalamak' ile başlamamalı"
+ },
+ "2771": {
+  "tr": "üslup açısından, üslupla ilgili",
+  "not": "B1 çeviri gözden geçirmesi: 'biçemsel' günlük Türkçede kullanılmaz; örnekteki anlam 'üslup açısından güzel'dir"
+ },
+ "2773": {
+  "tr": "merdiven (binadaki basamaklar, Avusturya)",
+  "not": "B1 çeviri gözden geçirmesi: Stiege binadaki sabit merdivendir, seyyar el merdiveni olan Leiter ile aynı karşılığı taşıyamaz (aynı anlam: die Leiter)"
+ },
+ "2778": {
+  "tr": "pis kokmak, leş gibi kokmak",
+  "not": "B1 çeviri gözden geçirmesi: stinken her zaman kötü kokudur; nötr 'kokmak' riechen ile karışıyor"
  },
  "2779": {
   "drop": 803,
   "not": "Stock — 803 ile aynı (A1)"
  },
+ "2783": {
+  "tr": "rahatsızlık, rahatsız etme, arıza, kesinti",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki 'Entschuldigen Sie die Störung' rahatsız etme anlamındadır, karşılık 'arıza' ile başlamamalı"
+ },
+ "2784": {
+  "tr": "çarpmak (bir yere), vurmak",
+  "not": "B1 çeviri gözden geçirmesi: 'kendini vurmak' Türkçede silahla vurmayı çağrıştırır; sich stoßen bir yere çarpmaktır"
+ },
+ "2787": {
+  "tr": "ceza makbuzu (park/trafik cezası kâğıdı)",
+  "not": "B1 çeviri gözden geçirmesi: Strafzettel yalnızca park için değil, her trafik ihlali için kesilen ceza kâğıdıdır"
+ },
  "2792": {
   "tr": "kavga etmek (birbiriyle)",
   "not": "A2 çeviri gözden geçirmesi: streiten ile aynı karşılığı taşıyordu; dönüşlü biçim karşılıklılık bildirir"
+ },
+ "2795": {
+  "tr": "çorap (uzun, diz üstü)",
+  "not": "B1 çeviri gözden geçirmesi: Strumpf uzun çoraptır, kısa çorap olan Socke ile aynı karşılığı taşıyamaz (aynı anlam: die Socke)"
  },
  "2796": {
   "drop": 433,
@@ -1159,9 +1785,25 @@
   "tr": "öğrenci (kadın)",
   "not": "2799 ile çift"
  },
+ "2805": {
+  "tr": "düşmek (sert biçimde), yuvarlanmak",
+  "not": "B1 çeviri gözden geçirmesi: stürzen ani ve sert düşmedir, nötr fallen ile aynı karşılık öğrenciyi ayrım yapmaktan alıkoyuyor (aynı anlam: fallen)"
+ },
+ "2812": {
+  "tr": "sahne (film/oyunda bir bölüm), ortam, camia",
+  "not": "B1 çeviri gözden geçirmesi: Szene bir bölümdür ve ikinci örnekte 'ortam' anlamındadır; tiyatro platformu olan Bühne ile aynı karşılık yanıltıcı (aynı anlam: die Bühne)"
+ },
  "2836": {
   "tr": "parça (tek tek nesne, yedek parça)",
   "not": "der Teil (810) ile aynı yazım, farklı kelime: das Teil somut nesne"
+ },
+ "2851": {
+  "tr": "klavyede yazmak, tuşlamak",
+  "not": "B1 çeviri gözden geçirmesi: örnekteki \"Wie schnell kannst du tippen?\" klavye hızıdır; \"daktilo etmek\" bugün kimsenin kullanmadığı eskimiş bir karşılık"
+ },
+ "2855": {
+  "tr": "büyük kapı (giriş, avlu kapısı), gol",
+  "not": "B1 çeviri gözden geçirmesi: işaretsiz \"kapı\" die Tür ile karışıyor; das Tor bina/avlu girişindeki büyük kapıdır"
  },
  "2856": {
   "tr": "ölü, ölen kişi (erkek)",
@@ -1171,17 +1813,101 @@
   "tr": "ölü, ölen kişi (kadın)",
   "not": "2856 ile çift"
  },
+ "2863": {
+  "tr": "tramvay (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: das Tram İsviçre kullanımıdır, işaretsiz \"tramvay\" die Straßenbahn ile ayırt edilemiyor (aynı anlam: die Straßenbahn)"
+ },
  "2866": {
   "drop": 1248,
   "not": "Traum- — 1248 ile aynı isim"
+ },
+ "2868": {
+  "tr": "yapmak (spor), uğraşmak",
+  "not": "B1 çeviri gözden geçirmesi: treiben tek başına \"yapmak\" değildir, machen ile karışıyor; örnekteki gibi Sport treiben kalıbında kullanılır"
+ },
+ "2878": {
+  "tr": "kaldırım (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: das Trottoir İsviçre kullanımıdır, işaretsiz \"kaldırım\" Gehsteig/Bürgersteig ile ayırt edilemiyor (aynı anlam: der Gehsteig, der Bürgersteig)"
+ },
+ "2896": {
+  "tr": "ikna etmek (dil dökerek razı etmek)",
+  "not": "B1 çeviri gözden geçirmesi: überzeugen ile birebir aynı karşılığı taşıyor; überreden karşısındakini konuşarak razı etmektir, überzeugen ise gerekçeyle inandırmaktır (aynı anlam: überzeugen)"
+ },
+ "2900": {
+  "de": "übertreiben",
+  "not": "B1 çeviri gözden geçirmesi: \"überübertreiben\" — önek kendini yinelemişti"
+ },
+ "2901": {
+  "tr": "havale, para transferi; sevk (doktordan)",
+  "not": "B1 çeviri gözden geçirmesi: 2. örnekteki \"eine Überweisung fürs Krankenhaus\" doktor sevkidir, bu anlam karşılıkta hiç yok"
+ },
+ "2902": {
+  "tr": "ikna etmek, inandırmak; emin olmak",
+  "not": "B1 çeviri gözden geçirmesi: 1. örnek \"Ihr Vorschlag überzeugt mich gar nicht\" geçişli \"ikna etmek\" anlamındadır, mevcut karşılıkta bu anlam yok"
+ },
+ "2907": {
+  "tr": "kıyı (nehir, göl)",
+  "not": "B1 çeviri gözden geçirmesi: Küste ile aynı karşılığa düşüyor; Ufer nehir/göl kıyısıdır, \"sahil\" ise Türkçede deniz kıyısını çağrıştırır (aynı anlam: die Küste)"
+ },
+ "2918": {
+  "tr": "(satın alınanı) değiştirmek, (para) bozdurmak",
+  "not": "B1 çeviri gözden geçirmesi: ändern ile aynı \"değiştirmek\" karşılığına düşüyor; umtauschen örneklerdeki gibi malı iade edip başkasıyla değiştirmek ya da para bozdurmaktır (aynı anlam: ändern)"
+ },
+ "2919": {
+  "tr": "(satın alınan malın) değiştirilmesi",
+  "not": "B1 çeviri gözden geçirmesi: Türkçede \"iade\" parayı geri almaktır (Rückgabe); Umtausch yalnızca ürünün başkasıyla değiştirilmesidir"
  },
  "2930": {
   "drop": 828,
   "not": "unter- — 828 ile aynı"
  },
+ "2934": {
+  "tr": "belgeler, dosya evrakları (başvuru, iş belgeleri)",
+  "not": "B1 çeviri gözden geçirmesi: Papiere ile aynı karşılığı taşıyor; Unterlagen başvuru/iş dosyasındaki belgelerdir, Papiere ise kimlik ve resmi kâğıtlardır (aynı anlam: die Papiere)"
+ },
+ "2953": {
+  "tr": "bisiklet (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: das Velo İsviçre kullanımıdır, işaretsiz \"bisiklet\" das Fahrrad ile ayırt edilemiyor (aynı anlam: das Fahrrad)"
+ },
+ "2968": {
+  "tr": "suçlu (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Verbrecherin ile birebir aynı karşılık verilmiş, öğrenci ikisini ayırt edemiyor (aynı anlam: die Verbrecherin)"
+ },
+ "2969": {
+  "tr": "suçlu (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Verbrecher ile birebir aynı karşılık verilmiş, cinsiyet ayrımı belirtilmeli (aynı anlam: der Verbrecher)"
+ },
+ "2999": {
+  "tr": "kiraya verme, kiralama",
+  "not": "B1 çeviri gözden geçirmesi: Vermietung kiraya veren tarafın işidir; 'kiralama' başta olunca mieten ile karışıyor"
+ },
+ "3009": {
+  "tr": "toplantı, toplanma",
+  "not": "B1 çeviri gözden geçirmesi: 'meclis' Türkçede parlamentoyu çağrıştırıyor, Versammlung ise örnekteki gibi bir toplantıdır"
+ },
+ "3011": {
+  "tr": "reçete yazmak, ilaç yazmak",
+  "not": "B1 çeviri gözden geçirmesi: 'reçete etmek' Türkçede kullanılmaz; doktor için doğal olan 'reçete/ilaç yazmak'tır"
+ },
+ "3019": {
+  "drop": 474,
+  "not": "B1 çeviri gözden geçirmesi: sich verstehen — örnek cümlesi geçişli \"verstehen\"; 474 ile aynı madde"
+ },
  "3030": {
   "tr": "akraba (kadın)",
   "not": "840 ile çift"
+ },
+ "3031": {
+  "tr": "karıştırmak (yanlışlıkla başkası sanmak)",
+  "not": "B1 çeviri gözden geçirmesi: mischen ile birebir aynı karşılık verilmiş; verwechseln iki şeyi birbirine karıştırmaktır, harmanlamak değil (aynı anlam: mischen)"
+ },
+ "3037": {
+  "drop": 475,
+  "not": "B1 gözden geçirmesi: \"viel/viele\" — 475 viel ile aynı madde, çekim varyantı"
+ },
+ "3038": {
+  "tr": "mahalle, semt, çeyrek",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam mahalledir, çeyrek anlamı başta duruyor"
  },
  "3045": {
   "drop": 1288,
@@ -1191,9 +1917,17 @@
   "drop": 1289,
   "not": "vorbei — 1289 ile aynı (A2)"
  },
+ "3055": {
+  "de": "vordere",
+  "not": "B1 gözden geçirmesi: sözlük gövde yazımıydı; oyunlarda yazılabilir bir biçim olmalı"
+ },
  "3062": {
   "drop": 1293,
   "not": "A2 çeviri gözden geçirmesi: \"vorn\" — 1293 ile aynı madde"
+ },
+ "3076": {
+  "tr": "duvar (iç duvar)",
+  "not": "B1 çeviri gözden geçirmesi: die Mauer ile birebir aynı karşılık verilmiş; Wand oda/bina içindeki duvardır, Mauer ise dış duvardır (aynı anlam: die Mauer)"
  },
  "3081": {
   "drop": 844,
@@ -1203,30 +1937,70 @@
   "drop": 494,
   "not": "weiter — 'weiter/weiter-' sadeleştirilince 494 ile aynı oldu"
  },
+ "3087": {
+  "tr": "mesleki eğitim, kurs",
+  "not": "B1 çeviri gözden geçirmesi: 'ileri eğitim' Türkçede kullanılmayan birebir çeviri; Weiterbildung meslekte ilerlemek için alınan kurs/eğitimdir"
+ },
  "3090": {
   "drop": 496,
   "not": "A1 gözden geçirmesi: wenig/wenige — 496 \"wenig\" ile aynı madde, çekim varyantı"
+ },
+ "3093": {
+  "tr": "fabrika, tesis; eser",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümlede (das Werk besichtigen) 'fabrika' anlamı var, çeviri bu anlamla başlamalı"
  },
  "3104": {
   "drop": 501,
   "not": "wieder — 501 ile aynı (A1)"
  },
+ "3113": {
+  "tr": "etki, tesir (bir şeyin yol açtığı sonuç)",
+  "not": "B1 çeviri gözden geçirmesi: Einfluss da 'etki' olarak veriliyor; Wirkung bir şeyin (ilacın, önlemin) doğurduğu sonuçtur, Einfluss ise nüfuz/yönlendirmedir (aynı anlam: der Einfluss)"
+ },
+ "3115": {
+  "tr": "lokantacı, işletmeci (lokanta, meyhane)",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'ev sahibi' başta olunca Gastgeber/Vermieter ile karışıyor"
+ },
+ "3116": {
+  "tr": "lokantacı, işletmeci (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümledeki anlam lokanta işletmecisidir; 'kadın ev sahibi' yanıltıcı"
+ },
  "3137": {
   "de": "Zahncreme/Zahnpasta",
   "not": "Zahncreme/-pasta — sonek kısaltması açıldı"
+ },
+ "3143": {
+  "tr": "zaman, an",
+  "not": "B1 çeviri gözden geçirmesi: 'zaman noktası' sözlük çevirisi, Türkçede kimse böyle demez; örnek cümle 'iyi bir zaman değil' anlamında"
  },
  "3148": {
   "de": "Zeug",
   "not": "Zeug/-zeug — aynı kelime"
  },
+ "3149": {
+  "tr": "tanık, şahit (erkek)",
+  "not": "B1 çeviri gözden geçirmesi: die Zeugin ile aynı karşılığı taşıyordu"
+ },
+ "3150": {
+  "tr": "tanık, şahit (kadın)",
+  "not": "B1 çeviri gözden geçirmesi: der Zeuge ile birebir aynı karşılık veriliyor, dişil biçim ayırt edilmeli (aynı anlam: der Zeuge)"
+ },
  "3154": {
-  "de": "Zivilstand (CH)",
-  "not": "Zivilstand (CH) → Personenstand — çapraz gönderme artığı"
+  "de": "Zivilstand",
+  "tr": "medeni hâl (İsviçre)",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı, karşılıkta yoktu"
+ },
+ "3155": {
+  "tr": "bölge (sınırları belirlenmiş alan)",
+  "not": "B1 çeviri gözden geçirmesi: Gebiet de 'bölge, alan' olarak veriliyor; Zone yaya bölgesi/tarife bölgesi gibi sınırı çizilmiş alandır (aynı anlam: das Gebiet)"
+ },
+ "3156": {
+  "tr": "hazırlamak (yemek)",
+  "not": "B1 çeviri gözden geçirmesi: zubereiten yalnızca yiyecek hazırlamaktır; yalın 'hazırlamak' vorbereiten ile karışıyor"
  },
  "3167": {
-  "de": "Zünder (A)",
-  "tr": "kibrit (Avusturya)",
-  "not": "Zünder (A) (Pl.) → Streichholz — çapraz gönderme artığı"
+  "de": "Zünder",
+  "not": "B1 çeviri gözden geçirmesi: bölge işareti başlıktaydı"
  },
  "3171": {
   "drop": 857,
@@ -1236,13 +2010,50 @@
   "drop": 530,
   "not": "zusammen — 530 ile aynı (A1)"
  },
+ "3180": {
+  "tr": "durum, hâl (bir şeyin, bir yerin içinde bulunduğu hâl)",
+  "not": "B1 çeviri gözden geçirmesi: der Fall da 'durum' olarak veriliyor; Zustand bir nesnenin/yerin hâlidir, Fall ise olay/vaka anlamındadır (aynı anlam: der Fall)"
+ },
+ "3182": {
+  "tr": "katılmak, hemfikir olmak; onaylamak",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümle 'Ich stimme dir zu' = sana katılıyorum; en yaygın anlam olan 'katılmak' başta olmalı"
+ },
+ "3187": {
+  "tr": "gerçi, her ne kadar; (und zwar) hem de, şöyle ki",
+  "not": "B1 çeviri gözden geçirmesi: 'doğrusu' zwar'ın anlamı değil; ikinci örnekteki 'und zwar' kalıbı ayrıca belirtilmeli"
+ },
+ "3192": {
+  "de": "zwingen",
+  "tr": "zorlamak",
+  "not": "B1 çeviri gözden geçirmesi: örnek cümle geçişli kullanımdı, başlık dönüşlüydü"
+ },
+ "3735": {
+  "drop": 3035,
+  "not": "B1 gözden geçirmesi: \"verzichten auf\" — 3035 ile aynı madde, edatlı yazımı"
+ },
+ "3782": {
+  "drop": 1553,
+  "not": "B1 gözden geçirmesi: \"sich beschweren über\" — 1553 ile aynı madde, edatlı yazımı"
+ },
  "3784": {
   "drop": 706,
   "not": "A1 gözden geçirmesi: sich kümmern um — 706 ile aynı madde, edatlı yazımı"
  },
+ "3785": {
+  "drop": 1723,
+  "not": "B1 çeviri gözden geçirmesi: sich einigen auf — 1723 ile aynı madde, edatlı yazımı"
+ },
  "3791": {
   "drop": 1235,
   "not": "A2 çeviri gözden geçirmesi: \"teilnehmen an\" — 1235 ile aynı madde, edatlı yazımı"
+ },
+ "3794": {
+  "drop": 1346,
+  "not": "B1 çeviri gözden geçirmesi: abhängen von — 1346 ile aynı madde, edatlı yazımı"
+ },
+ "3799": {
+  "drop": 3189,
+  "not": "B1 çeviri gözden geçirmesi: zweifeln an — 3189 ile aynı madde, edatlı yazımı"
  },
  "3801": {
   "drop": 1037,
@@ -1251,6 +2062,26 @@
  "3803": {
   "drop": 2792,
   "not": "A2 çeviri gözden geçirmesi: \"sich streiten über\" — 2792 ile aynı madde, edatlı yazımı"
+ },
+ "3806": {
+  "drop": 3053,
+  "not": "B1 gözden geçirmesi: \"sich vorbereiten auf\" — 3053 ile aynı madde, edatlı yazımı"
+ },
+ "3807": {
+  "drop": 2957,
+  "not": "B1 çeviri gözden geçirmesi: sich verabschieden von — 2957 ile aynı madde, edatlı yazımı"
+ },
+ "4590": {
+  "drop": 2425,
+  "not": "B1 çeviri gözden geçirmesi: die Notaufnahme — 2425 ile aynı madde"
+ },
+ "4812": {
+  "drop": 2709,
+  "not": "B1 çeviri gözden geçirmesi: das Sonderangebot — 2709 ile aynı madde"
+ },
+ "5355": {
+  "drop": 1871,
+  "not": "B1 çeviri gözden geçirmesi: festnehmen — 1871 ile aynı madde"
  },
  "7436": {
   "tr": "sert, katı (esnemeyen, bükülmeyen)",
