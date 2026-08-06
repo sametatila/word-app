@@ -255,6 +255,29 @@ export const roleplayLogs = pgTable(
     said: text("said").notNull(),
     /** Modelin cevabı — ham, işaret satırları dâhil. */
     reply: text("reply").notNull(),
+    /**
+     * Cevabı hangi sağlayıcı ve model verdi.
+     *
+     * Buna ihtiyaç, hangi sağlayıcının kullanıldığını kimsenin bilmemesinden
+     * doğdu. Zincir sırayla çalışıyor ve anahtarı olmayan sağlayıcı sessizce
+     * atlanıyor; sonuç olarak uygulama sorunsuz çalışırken birincil sağlayıcı
+     * hiç çağrılmıyor olabiliyor ve bu dışarıdan görünmüyordu. Sağlayıcı
+     * panelinde kullanım sıfır görününce, sorunun anahtarda mı, panelin
+     * gecikmesinde mi, yoksa zincirin başka bir sağlayıcıya düşmesinde mi
+     * olduğu ayırt edilemiyordu.
+     *
+     * Eski satırlar için boş — sütun sonradan eklendi.
+     */
+    provider: text("provider"),
+    model: text("model"),
+    /**
+     * Sağlayıcının cevapta bildirdiği kalan hak (ham başlıklar).
+     *
+     * Limite ne kadar yaklaşıldığı ancak buradan görülüyor: 429 gelene kadar
+     * her şey normal görünüyor ve limit dolduğunda bunu ilk öğrenen kullanıcı
+     * oluyordu.
+     */
+    limits: jsonb("limits").$type<Record<string, string>>(),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     /** Bu tarihten sonra silinir. */
     expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),

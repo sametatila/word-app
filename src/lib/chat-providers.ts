@@ -118,7 +118,12 @@ export type Provider = {
   name: ProviderName;
   model: string;
   freeTier: string;
-  stream: (system: string, messages: ChatMessage[]) => AsyncGenerator<string>;
+  stream: (
+    system: string,
+    messages: ChatMessage[],
+    /** İlk parça gelmeden önce hangi sağlayıcının cevapladığını bildirir. */
+    onMeta?: (meta: ProviderMeta) => void,
+  ) => AsyncGenerator<string>;
   /** Akışsız tek atış — koç düzeltmeleri gibi kısa, bölünmesi anlamsız işler. */
   complete: (system: string, messages: ChatMessage[], maxTokens?: number) => Promise<string>;
 };
@@ -217,6 +222,29 @@ async function post(
 }
 
 /**
+ * Sağlayıcının cevabında bildirdiği kalan hak.
+ *
+ * Hepsi `x-ratelimit-…` ailesinden başlık döndürüyor ama adları birebir aynı
+ * değil, o yüzden ad listesi yerine örüntü kullanılıyor: adında "ratelimit"
+ * geçen her başlık alınıyor. Yeni bir sağlayıcı eklendiğinde ya da mevcut
+ * biri başlık adını değiştirdiğinde burada bir şey yapmak gerekmiyor.
+ */
+export type ProviderMeta = {
+  provider: ProviderName;
+  model: string;
+  /** Ham başlıklar — yorumlamadan, olduğu gibi. */
+  limits: Record<string, string>;
+};
+
+function readLimits(res: Response): Record<string, string> {
+  const out: Record<string, string> = {};
+  res.headers.forEach((value, key) => {
+    if (key.toLowerCase().includes("ratelimit")) out[key.toLowerCase()] = value;
+  });
+  return out;
+}
+
+/**
  * OpenAI uyumlu akış — üç sağlayıcı da aynı gövdeyi ve aynı SSE biçimini
  * kullandığı için tek gövde yetiyor.
  */
@@ -248,9 +276,11 @@ async function* streamOpenAiCompatible(
   name: ProviderName,
   system: string,
   messages: ChatMessage[],
+  onMeta?: (meta: ProviderMeta) => void,
 ): AsyncGenerator<string> {
   const res = await post(name, system, messages, true, MAX_TOKENS);
   if (!res.body) throw new Error(`${name}: gövdesiz yanıt`);
+  onMeta?.({ provider: name, model: modelFor(name), limits: readLimits(res) });
 
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
@@ -312,7 +342,7 @@ function build(name: ProviderName): Provider {
     name,
     model: modelFor(name),
     freeTier: CATALOG[name].freeTier,
-    stream: (system, messages) => streamOpenAiCompatible(name, system, messages),
+    stream: (system, messages, onMeta) => streamOpenAiCompatible(name, system, messages, onMeta),
     complete: (system, messages, maxTokens = MAX_TOKENS) =>
       completeOpenAiCompatible(name, system, messages, maxTokens),
   };

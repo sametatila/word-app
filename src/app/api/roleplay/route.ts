@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { chatConfigured } from "@/lib/chat-providers";
+import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
 import { streamRoleplay, type RoleplayTurn } from "@/lib/lessons/roleplay";
 import { logRoleplayTurn } from "@/lib/lessons/log";
@@ -55,11 +55,14 @@ export async function POST(req: Request) {
     const said = messages[messages.length - 1].content;
     const turn = messages.filter((m) => m.role === "user").length;
     let full = "";
+    // Hangi sağlayıcının cevapladığı akış başlarken bildiriliyor; kayıt akışın
+    // sonunda yazıldığı için o ana kadar tutuluyor.
+    let meta: ProviderMeta | undefined;
 
     const stream = new ReadableStream<Uint8Array>({
       async start(controller) {
         try {
-          for await (const delta of streamRoleplay(lesson, messages)) {
+          for await (const delta of streamRoleplay(lesson, messages, (m) => (meta = m))) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
           }
@@ -70,7 +73,7 @@ export async function POST(req: Request) {
           controller.enqueue(encoder.encode("\n\n[Bağlantı koptu — tekrar dener misin?]"));
         } finally {
           controller.close();
-          if (full.trim()) void logRoleplayTurn(userId, lesson.id, turn, said, full);
+          if (full.trim()) void logRoleplayTurn(userId, lesson.id, turn, said, full, meta);
         }
       },
     });

@@ -5,6 +5,7 @@
  *   npm run logs:roleplay -- --user Samet tek kullanıcı
  *   npm run logs:roleplay -- --loops      yalnızca kendini tekrar edenler
  *   npm run logs:roleplay -- --purge      kaydı tamamen siler
+ *   npm run logs:roleplay -- --providers  hangi sağlayıcı kaç istek aldı
  *
  * Ayrı bir arayüz yerine betik: kayıt geliştirme için tutuluyor, kullanıcıya
  * gösterilecek bir şey değil ve uygulamada ona yer açmak yanlış işaret olurdu.
@@ -45,6 +46,47 @@ async function main() {
   if (flag("purge")) {
     const r = await db.delete(roleplayLogs);
     console.log(`Kayıt silindi (${r.rowCount ?? 0} satır).`);
+    await pool.end();
+    return;
+  }
+
+  // Hangi sağlayıcının kullanıldığı, sağlayıcı panellerine bakmadan buradan
+  // öğreniliyor. İhtiyaç şuradan doğdu: zincir sırayla çalışıyor ve anahtarı
+  // olmayan sağlayıcı sessizce atlanıyor, yani uygulama sorunsuz çalışırken
+  // birincil sağlayıcı hiç çağrılmıyor olabiliyor.
+  if (flag("providers")) {
+    const rows = await db
+      .select({
+        provider: roleplayLogs.provider,
+        model: roleplayLogs.model,
+        n: sql<number>`count(*)::int`,
+        son: sql<Date>`max(${roleplayLogs.createdAt})`,
+      })
+      .from(roleplayLogs)
+      .groupBy(roleplayLogs.provider, roleplayLogs.model)
+      .orderBy(sql`count(*) desc`);
+    if (!rows.length) {
+      console.log("Kayıt yok.");
+    } else {
+      for (const r of rows) {
+        const ad = r.provider ?? "(kaydedilmemiş — sütun eklenmeden önceki satırlar)";
+        console.log(`${String(r.n).padStart(5)} istek  ${ad}${r.model ? ` · ${r.model}` : ""}  son: ${new Date(r.son).toISOString().slice(0, 16)}`);
+      }
+      // Sağlayıcının bildirdiği kalan hak: limite ne kadar yaklaşıldığı ancak
+      // buradan görülüyor, 429 gelene kadar her şey normal görünüyor.
+      const [son] = await db
+        .select({ limits: roleplayLogs.limits, provider: roleplayLogs.provider, at: roleplayLogs.createdAt })
+        .from(roleplayLogs)
+        .where(sql`${roleplayLogs.limits} is not null`)
+        .orderBy(desc(roleplayLogs.createdAt))
+        .limit(1);
+      if (son?.limits) {
+        console.log(`\nSon cevapta ${son.provider} şunu bildirdi (${new Date(son.at).toISOString().slice(0, 16)}):`);
+        for (const [k, v] of Object.entries(son.limits)) console.log(`  ${k}: ${v}`);
+      } else {
+        console.log("\nHenüz kalan hak bilgisi kaydedilmemiş.");
+      }
+    }
     await pool.end();
     return;
   }

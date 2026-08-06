@@ -35,6 +35,8 @@ export async function logRoleplayTurn(
   turn: number,
   said: string,
   reply: string,
+  /** Cevabı veren sağlayıcı ve bildirdiği kalan hak — bilinmiyorsa boş. */
+  meta?: { provider: string; model: string; limits: Record<string, string> },
 ): Promise<void> {
   try {
     await db.insert(roleplayLogs).values({
@@ -43,6 +45,9 @@ export async function logRoleplayTurn(
       turn,
       said: said.slice(0, MAX_CHARS),
       reply: reply.slice(0, MAX_CHARS),
+      provider: meta?.provider ?? null,
+      model: meta?.model ?? null,
+      limits: meta?.limits ?? null,
       expiresAt: sql`now() + (${RETENTION_DAYS} || ' days')::interval` as never,
     });
     // Temizlik yazmaya bağlı: ayrı bir zamanlanmış iş kurmadan da kayıt
