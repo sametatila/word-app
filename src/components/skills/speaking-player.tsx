@@ -6,7 +6,7 @@ import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
 import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
 import { askCoach } from "@/lib/coach-client";
 import { speakGerman, speakSlowly, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
-import { AlertIcon, CheckIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, MicIcon, XIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 
@@ -277,7 +277,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
                   animate={phase === "listening" ? { scale: [1, 1.18, 1] } : { scale: 1 }}
                   transition={{ repeat: phase === "listening" ? Infinity : 0, duration: 1.1 }}
                 >
-                  <SpeakerIcon size={32} />
+                  <MicIcon size={32} />
                 </motion.span>
               </motion.button>
             ) : null}

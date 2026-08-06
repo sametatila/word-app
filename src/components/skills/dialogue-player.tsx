@@ -6,7 +6,7 @@ import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { matchReply, usedTargets, type DialogueReply, type DialogueTurn } from "@/lib/dialogue";
 import { askCoach } from "@/lib/coach-client";
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
-import { AlertIcon, CheckIcon, SpeakerIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, MicIcon, SpeakerIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 
@@ -301,7 +301,7 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
                     animate={phase === "listening" ? { scale: [1, 1.18, 1] } : { scale: 1 }}
                     transition={{ repeat: phase === "listening" ? Infinity : 0, duration: 1.1 }}
                   >
-                    <SpeakerIcon size={26} />
+                    <MicIcon size={26} />
                   </motion.span>
                 </motion.button>
               ) : null}

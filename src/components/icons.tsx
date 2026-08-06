@@ -61,6 +61,21 @@ export const SpeakerIcon = (p: IconProps) => (
   </Svg>
 );
 
+/**
+ * Mikrofon — öğrencinin KONUŞTUĞU yerler.
+ *
+ * Hoparlörden ayrı duruyor ve ayrım kasıtlı: hoparlör "sana bir şey
+ * okunacak", mikrofon "senden bir şey bekleniyor" demek. Aynı simgeyi ikisi
+ * için de kullanmak, konuşma düğmesini dinleme düğmesi sanmaya yol açıyordu.
+ */
+export const MicIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="9" y="2.5" width="6" height="11" rx="3" />
+    <path d="M5.5 11a6.5 6.5 0 0 0 13 0" />
+    <path d="M12 17.5V21M8.5 21h7" />
+  </Svg>
+);
+
 export const SunIcon = (p: IconProps) => (
   <Svg {...p}>
     <circle cx="12" cy="12" r="4" />
