@@ -88,6 +88,34 @@ for (const file of zurichFiles) {
 }
 for (const id of gswFixes.keys()) problems.push(`id ${id} → Zürih karşılığı bulunamadı`);
 if (gswChanged) console.log(`\n${gswChanged} Zürih karşılığı düzeltildi.`);
+
+// Örnek cümle çevirileri ayrı dosyada durduğu için başlık düzeltmelerinden
+// habersiz kalıyordu: 697'nin Almanca cümlesi "Kreditkarte" olurken Türkçesi
+// hâlâ "Kartla da ödeyebilir miyim?" diyordu. Düşürülen maddelerin çevirileri
+// de dosyada birikiyordu.
+const trPath = `${ROOT}data/app/beispiel-tr.json`;
+const beispielTr = JSON.parse(readFileSync(trPath, "utf8"));
+const liveIds = new Set(survivors.map((w) => w.id));
+const keptTr = beispielTr.filter((r) => liveIds.has(r.id));
+const orphaned = beispielTr.length - keptTr.length;
+let trChanged = 0;
+for (const [key, fix] of Object.entries(fixes)) {
+  if (key.startsWith("_") || fix.beispielTr === undefined) continue;
+  const row = keptTr.find((r) => r.id === Number(key));
+  if (!row) {
+    problems.push(`id ${key} → örnek cümle çevirisi bulunamadı`);
+    continue;
+  }
+  row.tr = fix.beispielTr;
+  trChanged++;
+}
+// Almanca cümlesi elle değiştirilip Türkçesi unutulmuş madde kalmamalı.
+for (const [key, fix] of Object.entries(fixes)) {
+  if (key.startsWith("_") || fix.beispiel === undefined) continue;
+  if (fix.beispielTr === undefined) problems.push(`id ${key} → örnek cümle değişti ama çevirisi güncellenmedi`);
+}
+if (trChanged || orphaned)
+  console.log(`\nÖrnek cümle çevirisi: ${trChanged} güncellendi, ${orphaned} yetim kayıt temizlendi.`);
 if (dropped.size) {
   console.log(`\n${dropped.size} yinelenen madde düşürülüyor:`);
   for (const [id, keep] of dropped) {
@@ -123,5 +151,9 @@ if (!DRY) {
     writeFileSync(path, `[\n${rows.map(line).join(",\n")}\n]\n`);
   }
   if (zurichUpdates.length) console.log(`${zurichUpdates.length} Zürih parçası güncellendi.`);
+  if (trChanged || orphaned) {
+    writeFileSync(trPath, `[\n${keptTr.map((r) => JSON.stringify(r)).join(",\n")}\n]\n`);
+    console.log(`data/app/beispiel-tr.json yazıldı (${keptTr.length} kayıt).`);
+  }
 }
 process.exit(problems.length ? 1 : 0);

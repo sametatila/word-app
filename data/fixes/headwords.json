@@ -174,7 +174,8 @@
  "480": {
   "tr": "tanıtmak, takdim etmek",
   "beispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
-  "not": "A1 gözden geçirmesi: vorstellen dönüşsüz hâlde \"birini tanıtmak\"tır; \"kendini tanıtmak\" 842 sich vorstellen maddesidir ve örnek cümle de dönüşlüydü"
+  "not": "A1 gözden geçirmesi: vorstellen dönüşsüz hâlde \"birini tanıtmak\"tır; \"kendini tanıtmak\" 842 sich vorstellen maddesidir ve örnek cümle de dönüşlüydü",
+  "beispielTr": "Size meslektaşımı tanıtabilir miyim?"
  },
  "494": {
   "tr": "daha ileri, devam ederek",
@@ -351,7 +352,8 @@
   "beispiel": "Kann ich mit Kreditkarte bezahlen?",
   "not": "A1 gözden geçirmesi: \"(Kredit)-Karte\" bozuk başlıktı ve 254 \"die Karte\" ile örtüşüyordu; ayrı madde olarak Kreditkarte yapıldı; Zürih karşılığı da \"(Kredit-)Charte\" artığını taşıyordu",
   "gsw": "Kreditcharte",
-  "gswBeispiel": "Chan ich mit de Kreditcharte zale?"
+  "gswBeispiel": "Chan ich mit de Kreditcharte zale?",
+  "beispielTr": "Kredi kartıyla ödeyebilir miyim?"
  },
  "704": {
   "tr": "almak, elde etmek (günlük dil)",
