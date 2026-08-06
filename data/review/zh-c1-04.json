@@ -1,0 +1,995 @@
+[
+ {
+  "id": 3943,
+  "de": "der Interessenkonflikt",
+  "tr": "çıkar çatışması",
+  "deBeispiel": "Ein möglicher Interessenkonflikt wurde offen angesprochen.",
+  "gsw": "Interässekonflikt",
+  "gswArtikel": "de",
+  "gswBeispiel": "En mögliche Interässekonflikt isch offe aagsproche worde."
+ },
+ {
+  "id": 3944,
+  "de": "die Compliance",
+  "tr": "mevzuata uygunluk, uyum",
+  "deBeispiel": "Compliance ist in regulierten Branchen unverzichtbar.",
+  "gsw": "Compliance",
+  "gswArtikel": "d",
+  "gswBeispiel": "Compliance isch i regulierte Branche unverzichtbar."
+ },
+ {
+  "id": 3945,
+  "de": "die Massenmanipulation",
+  "tr": "kitle manipülasyonu",
+  "deBeispiel": "Kritiker warnen vor der Massenmanipulation durch soziale Netzwerke.",
+  "gsw": "Massemanipulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Kritiker warned vor de Massemanipulation dur soziali Netzwärch."
+ },
+ {
+  "id": 3946,
+  "de": "die Boulevardisierung",
+  "tr": "magazinleşme",
+  "deBeispiel": "Die Boulevardisierung der Nachrichten schadet der seriösen Berichterstattung.",
+  "gsw": "Boulevardisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Boulevardisierig vo de Naachrichte schadt de seriööse Berichterschtattig."
+ },
+ {
+  "id": 3947,
+  "de": "die Meinungsmache",
+  "tr": "fikir manipülasyonu, kamuoyu yönlendirme",
+  "deBeispiel": "Viele Leser durchschauen die plumpe Meinungsmache mancher Blätter nicht.",
+  "gsw": "Mäinigsmach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili Läser gseend di plump Mäinigsmach vo mängem Blatt nöd düre."
+ },
+ {
+  "id": 3948,
+  "de": "die Skandalisierung",
+  "tr": "skandallaştırma",
+  "deBeispiel": "Die Skandalisierung jeder Kleinigkeit lähmt den politischen Diskurs.",
+  "gsw": "Skandalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Skandalisierig vo jedere Chliinigkeit läämt de politisch Diskurs."
+ },
+ {
+  "id": 3949,
+  "de": "die Empörungswelle",
+  "tr": "öfke dalgası",
+  "deBeispiel": "Der Tweet löste eine Empörungswelle im Internet aus.",
+  "gsw": "Empörigswälle",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Tweet hät e Empörigswälle im Internet usglööst."
+ },
+ {
+  "id": 3950,
+  "de": "die Filterblase",
+  "tr": "filtre balonu",
+  "deBeispiel": "In seiner Filterblase begegnet er kaum abweichenden Meinungen.",
+  "gsw": "Filterblaase",
+  "gswArtikel": "d",
+  "gswBeispiel": "I sinere Filterblaase begägnet er chuum andere Mäinige."
+ },
+ {
+  "id": 3951,
+  "de": "die Echokammer",
+  "tr": "yankı odası",
+  "deBeispiel": "Soziale Medien verstärken die Wirkung von Echokammern erheblich.",
+  "gsw": "Echokammer",
+  "gswArtikel": "d",
+  "gswBeispiel": "Soziali Medie verschtärked d Wirkig vo Echokammere merklich."
+ },
+ {
+  "id": 3952,
+  "de": "die Desinformation",
+  "tr": "dezenformasyon, yanlış bilgilendirme",
+  "deBeispiel": "Gezielte Desinformation untergräbt das Vertrauen in Institutionen.",
+  "gsw": "Desinformation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gezielti Desinformation undergrabt s Vertraue i d Inschtitutione."
+ },
+ {
+  "id": 3953,
+  "de": "die Reizüberflutung",
+  "tr": "uyaran bombardımanı",
+  "deBeispiel": "Die ständige Reizüberflutung durch Bildschirme erschöpft viele Menschen.",
+  "gsw": "Räizüberfluetig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di schtändig Räizüberfluetig dur d Bildschirm macht vili Lüüt müed."
+ },
+ {
+  "id": 3954,
+  "de": "die Oberflächlichkeit",
+  "tr": "yüzeysellik",
+  "deBeispiel": "Ihm wird vorgeworfen, mit Oberflächlichkeit über komplexe Themen zu urteilen.",
+  "gsw": "Oberflächlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Me wirft im vor, mit Oberflächlichkeit über komplexi Theme z urtäile."
+ },
+ {
+  "id": 3955,
+  "de": "die Selbstoptimierung",
+  "tr": "kendini sürekli geliştirme, öz-optimizasyon",
+  "deBeispiel": "Der Druck zur ständigen Selbstoptimierung macht viele Menschen krank.",
+  "gsw": "Sälbschtoptimierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Druck zur schtändige Sälbschtoptimierig macht vili Lüüt chrank."
+ },
+ {
+  "id": 3956,
+  "de": "die Beliebigkeit",
+  "tr": "keyfilik, ilkesizlik",
+  "deBeispiel": "Die moralische Beliebigkeit mancher Debatten verwässert klare Standpunkte.",
+  "gsw": "Beliebigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D moralisch Beliebigkeit vo mänge Debatte verwässeret klaari Schtandpünkt."
+ },
+ {
+  "id": 3957,
+  "de": "die Instrumentalisierung",
+  "tr": "araçsallaştırma",
+  "deBeispiel": "Die Instrumentalisierung der Angst dient oft politischen Zwecken.",
+  "gsw": "Inschtrumentalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Inschtrumentalisierig vo de Angscht dient oft politische Zwäck."
+ },
+ {
+  "id": 3958,
+  "de": "die Bevormundung",
+  "tr": "vesayet altına alma",
+  "deBeispiel": "Viele empfinden staatliche Vorschriften als Bevormundung.",
+  "gsw": "Bevormundig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili empfinded schtaatlichi Vorschrifte als Bevormundig."
+ },
+ {
+  "id": 3959,
+  "de": "die Gängelung",
+  "tr": "sıkı denetim, güdüm altında tutma",
+  "deBeispiel": "Er kritisiert die zunehmende Gängelung der Bürger durch Vorschriften.",
+  "gsw": "Gängelig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er kritisiert di zuenämend Gängelig vo de Bürger dur Vorschrifte."
+ },
+ {
+  "id": 3960,
+  "de": "die Entmündigung",
+  "tr": "ehliyetsiz kılma, iradesizleştirme",
+  "deBeispiel": "Die schleichende Entmündigung des Individuums ist eine ethische Frage.",
+  "gsw": "Entmündigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di schliichend Entmündigig vom Äinzelne isch e ethischi Fraag."
+ },
+ {
+  "id": 3961,
+  "de": "die Ambivalenz",
+  "tr": "ikirciklilik, çelişkili duygu",
+  "deBeispiel": "Der technische Fortschritt löst bei ihr eine tiefe Ambivalenz aus.",
+  "gsw": "Ambivalänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "De tächnisch Fortschritt lööst bi ire e tüüfi Ambivalänz us."
+ },
+ {
+  "id": 3962,
+  "de": "die Zumutung",
+  "tr": "kabul edilemez şey, eziyet",
+  "deBeispiel": "Die lange Wartezeit empfand sie als reine Zumutung.",
+  "gsw": "Zuemuetig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di lang Warteziit isch für si e räini Zuemuetig gsii."
+ },
+ {
+  "id": 3963,
+  "de": "der Sündenbock",
+  "tr": "günah keçisi",
+  "deBeispiel": "Migranten dienen manchen Populisten als bequemer Sündenbock.",
+  "gsw": "Sündebock",
+  "gswArtikel": "de",
+  "gswBeispiel": "Migrante diened mänge Populischte als bequeme Sündebock."
+ },
+ {
+  "id": 3964,
+  "de": "der Machbarkeitswahn",
+  "tr": "her şeyi yapabilirlik saplantısı",
+  "deBeispiel": "Kritiker sprechen beim Geoengineering von einem gefährlichen Machbarkeitswahn.",
+  "gsw": "Machbarkeitswaan",
+  "gswArtikel": "de",
+  "gswBeispiel": "Kritiker reded bim Geoengineering vomene gföörliche Machbarkeitswaan."
+ },
+ {
+  "id": 3965,
+  "de": "der Kontrollverlust",
+  "tr": "kontrol kaybı",
+  "deBeispiel": "Viele fürchten einen völligen Kontrollverlust gegenüber der künstlichen Intelligenz.",
+  "gsw": "Kontrollverluscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili förchted en komplette Kontrollverluscht gägenüber de künschtliche Intelligänz."
+ },
+ {
+  "id": 3966,
+  "de": "der Determinismus",
+  "tr": "determinizm",
+  "deBeispiel": "Der technologische Determinismus unterschätzt die Rolle menschlicher Entscheidungen.",
+  "gsw": "Determinismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De technologisch Determinismus underschätzt d Rolle vo mänschliche Entschäidige."
+ },
+ {
+  "id": 3967,
+  "de": "die Entmenschlichung",
+  "tr": "insanlıktan çıkarma",
+  "deBeispiel": "Die Entmenschlichung durch reine Datenlogik beunruhigt viele Philosophen.",
+  "gsw": "Entmänschlichig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entmänschlichig dur di räin Datelogik beunruigt vili Philosophe."
+ },
+ {
+  "id": 3968,
+  "de": "der Datenhunger",
+  "tr": "veri açlığı",
+  "deBeispiel": "Der Datenhunger der Konzerne kennt offenbar keine Grenzen.",
+  "gsw": "Datehunger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Datehunger vo de Konzärn hät aaschiinend käi Gränze."
+ },
+ {
+  "id": 3969,
+  "de": "die Entgrenzung",
+  "tr": "sınırların ortadan kalkması",
+  "deBeispiel": "Die digitale Entgrenzung von Arbeit und Freizeit belastet viele Beschäftigte.",
+  "gsw": "Entgränzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di digital Entgränzig vo Arbet und Friiziit belaschtet vili Lüüt."
+ },
+ {
+  "id": 3970,
+  "de": "die Autonomie",
+  "tr": "özerklik, bağımsızlık",
+  "deBeispiel": "Die Autonomie des Einzelnen gerät durch algorithmische Empfehlungen unter Druck.",
+  "gsw": "Autonomii",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Autonomii vom Äinzelne chunt dur algorithmischi Empfälige under Druck."
+ },
+ {
+  "id": 3971,
+  "de": "das Trugbild",
+  "tr": "yanılsama, serap",
+  "deBeispiel": "Grenzenloses Wachstum erweist sich zunehmend als Trugbild.",
+  "gsw": "Trugbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "S gränzelose Wachstum erwiist sich immer mee als Trugbild."
+ },
+ {
+  "id": 3972,
+  "de": "das Weltbild",
+  "tr": "dünya tasavvuru, dünya algısı",
+  "deBeispiel": "Sein Weltbild geriet durch die neuen Erkenntnisse gehörig ins Wanken.",
+  "gsw": "Wältbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sis Wältbild isch dur di neue Erkenntnis is Wanke choo."
+ },
+ {
+  "id": 3973,
+  "de": "das Menschenbild",
+  "tr": "insan anlayışı, insan tasavvuru",
+  "deBeispiel": "Die Ethikkommission diskutiert das zugrunde liegende Menschenbild der KI-Forschung.",
+  "gsw": "Mänschebild",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Ethikkommission diskutiert s Mänschebild hinder de KI-Forschig."
+ },
+ {
+  "id": 3974,
+  "de": "der Kipppunkt",
+  "tr": "eşik noktası, kritik dönüm noktası",
+  "deBeispiel": "Forscher warnen, dass mehrere Kipppunkte im Klimasystem nahe sind.",
+  "gsw": "Chippunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Forscher warned, dass en wichtige Chippunkt im Klimasyschteem scho nööch isch."
+ },
+ {
+  "id": 3975,
+  "de": "die Resilienz",
+  "tr": "dayanıklılık, direnç",
+  "deBeispiel": "Die Resilienz städtischer Systeme gegenüber Extremwetter muss gestärkt werden.",
+  "gsw": "Resiliänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Resiliänz vo de Schtedt gäge Extremwätter muess gschtärkt wärde."
+ },
+ {
+  "id": 3976,
+  "de": "die Suffizienz",
+  "tr": "yetinme, tüketimi sınırlama",
+  "deBeispiel": "Suffizienz statt Wachstum lautet die Forderung mancher Ökonomen.",
+  "gsw": "Suffiziänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Suffiziänz schtatt Wachstum verlanged mängi Ökonome."
+ },
+ {
+  "id": 3977,
+  "de": "die Endlichkeit",
+  "tr": "sonluluk, sınırlılık",
+  "deBeispiel": "Die Endlichkeit der Ressourcen wird in der Wachstumsdebatte oft ausgeblendet.",
+  "gsw": "Ändlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ändlichkeit vo de Ressource wird i de Wachstumsdebatte oft usblendet."
+ },
+ {
+  "id": 3978,
+  "de": "der Generationenvertrag",
+  "tr": "nesiller arası sözleşme",
+  "deBeispiel": "Der ökologische Generationenvertrag verpflichtet uns zu Verzicht.",
+  "gsw": "Generationevertraag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De ökologisch Generationevertraag verpflichtet üüs zum Verzicht."
+ },
+ {
+  "id": 3979,
+  "de": "die Zukunftsangst",
+  "tr": "geleceğe dair kaygı",
+  "deBeispiel": "Die Zukunftsangst junger Menschen angesichts der Klimakrise wächst spürbar.",
+  "gsw": "Zuekunftsangscht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zuekunftsangscht vo de junge Lüüt wäge de Klimakrise wachst spüürbar."
+ },
+ {
+  "id": 3980,
+  "de": "der Wachstumszwang",
+  "tr": "büyüme zorunluluğu",
+  "deBeispiel": "Der ständige Wachstumszwang der Wirtschaft steht im Widerspruch zum Klimaschutz.",
+  "gsw": "Wachstumszwang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De schtändig Wachstumszwang vo de Wirtschaft schtaat im Widerschpruch zum Klimaschutz."
+ },
+ {
+  "id": 3981,
+  "de": "der Generationenkonflikt",
+  "tr": "kuşak çatışması",
+  "deBeispiel": "Der Generationenkonflikt um Klimapolitik prägt viele Familiendebatten.",
+  "gsw": "Generationekonflikt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Generationekonflikt um d Klimapolitik prägt vili Familiedebatte."
+ },
+ {
+  "id": 3982,
+  "de": "der Alarmismus",
+  "tr": "alarmcılık, abartılı kaygı yayma",
+  "deBeispiel": "Manche werfen Klimaaktivisten unberechtigten Alarmismus vor.",
+  "gsw": "Alarmismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mängi wärfed de Klimaaktivischte unberächtigte Alarmismus vor."
+ },
+ {
+  "id": 3983,
+  "de": "verrohen",
+  "tr": "vahşileşmek, kabalaşmak",
+  "deBeispiel": "Manche befürchten, die Debattenkultur verrohe zunehmend.",
+  "gsw": "verrooe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mängi förchted, d Debattekultur chönnt na mee verrooe."
+ },
+ {
+  "id": 3984,
+  "de": "instrumentalisieren",
+  "tr": "araçsallaştırmak",
+  "deBeispiel": "Populisten instrumentalisieren die Angst der Menschen für ihre Zwecke.",
+  "gsw": "inschtrumentalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Populischte inschtrumentalisiered d Angscht vo de Lüüt für iri Zwäck."
+ },
+ {
+  "id": 3985,
+  "de": "bagatellisieren",
+  "tr": "önemsizleştirmek, küçümsemek",
+  "deBeispiel": "Der Politiker bagatellisierte die Vorwürfe in der Pressekonferenz.",
+  "gsw": "bagatellisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Politiker hät d Vorwürf a de Pressekonferänz bagatellisiert."
+ },
+ {
+  "id": 3986,
+  "de": "dramatisieren",
+  "tr": "abartmak, dramatize etmek",
+  "deBeispiel": "Die Boulevardpresse dramatisiert selbst kleinste Vorfälle.",
+  "gsw": "dramatisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Boulevardpresse dramatisiert sogar di chliinschte Vorfäll."
+ },
+ {
+  "id": 3987,
+  "de": "skandalisieren",
+  "tr": "skandal haline getirmek",
+  "deBeispiel": "Die Medien skandalisierten den Vorfall, bevor die Fakten geklärt waren.",
+  "gsw": "skandalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Medie händ de Vorfall skandalisiert, bevor d Fakte klaar gsii sind."
+ },
+ {
+  "id": 3988,
+  "de": "entlarven",
+  "tr": "maskesini düşürmek, ifşa etmek",
+  "deBeispiel": "Die Recherche entlarvte das Unternehmen als Umweltsünder.",
+  "gsw": "entlarve",
+  "gswArtikel": null,
+  "gswBeispiel": "D Recherche hät s Unternääme als Umwältsünder entlarvt."
+ },
+ {
+  "id": 3989,
+  "de": "kaschieren",
+  "tr": "(kusuru, eksiği) gizlemek, üstünü örtmek",
+  "deBeispiel": "Mit warmen Worten kaschierte er das eigentliche Problem.",
+  "gsw": "kaschiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit warme Wort hät er s äigentlich Probleem kaschiert."
+ },
+ {
+  "id": 3990,
+  "de": "verharmlosen",
+  "tr": "zararsız göstermek, hafife almak",
+  "deBeispiel": "Der Konzern verharmloste jahrelang die Risiken seiner Produkte.",
+  "gsw": "verharmlose",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konzärn hät jaarelang d Risike vo sine Produkt verharmlost."
+ },
+ {
+  "id": 3991,
+  "de": "bevormunden",
+  "tr": "adına karar vermek, vesayetçi davranmak",
+  "deBeispiel": "Viele fühlen sich durch ständige Ratschläge bevormundet.",
+  "gsw": "bevormunde",
+  "gswArtikel": null,
+  "gswBeispiel": "Vili füüled sich dur schtändigi Raatschläg bevormundet."
+ },
+ {
+  "id": 3992,
+  "de": "gängeln",
+  "tr": "sıkı kontrol altında tutmak",
+  "deBeispiel": "Die Bürokratie gängelt kleine Unternehmen mit unnötigen Vorschriften.",
+  "gsw": "gängele",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bürokratii gängelet chliini Firmene mit unnötige Vorschrifte."
+ },
+ {
+  "id": 3993,
+  "de": "entmündigen",
+  "tr": "ehliyetsiz kılmak, iradesini elinden almak",
+  "deBeispiel": "Übermäßige Bevormundung entmündigt letztlich den mündigen Bürger.",
+  "gsw": "entmündige",
+  "gswArtikel": null,
+  "gswBeispiel": "Z vil Bevormundig tuet de mündig Bürger am Änd entmündige."
+ },
+ {
+  "id": 3994,
+  "de": "suggerieren",
+  "tr": "telkin etmek, ima etmek",
+  "deBeispiel": "Die Werbung suggeriert, Glück sei käuflich.",
+  "gsw": "suggeriere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wärbig suggeriert, me chönn s Glück äifach chaufe."
+ },
+ {
+  "id": 3995,
+  "de": "aufwiegeln",
+  "tr": "kışkırtmak, ayaklandırmak",
+  "deBeispiel": "Der Redner versuchte, die Menge gegen die Regierung aufzuwiegeln.",
+  "gsw": "ufwigle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Redner hät d Mängi gäge d Regierig wele ufwigle."
+ },
+ {
+  "id": 3996,
+  "de": "verunglimpfen",
+  "tr": "karalamak, itibarsızlaştırmak",
+  "deBeispiel": "In Kommentaren wurde die Wissenschaftlerin wüst verunglimpft.",
+  "gsw": "verunglimpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Kommentär isch d Wüsseschaftlerin wüescht verunglimpft worde."
+ },
+ {
+  "id": 3997,
+  "de": "diffamieren",
+  "tr": "karalamak, iftira atmak",
+  "deBeispiel": "Politische Gegner werden in sozialen Medien oft diffamiert.",
+  "gsw": "diffamiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Politischi Gägner wärded i de soziale Medie oft diffamiert."
+ },
+ {
+  "id": 3998,
+  "de": "stigmatisieren",
+  "tr": "damgalamak",
+  "deBeispiel": "Psychische Erkrankungen werden in vielen Kulturen noch immer stigmatisiert.",
+  "gsw": "schtigmatisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Psychischi Chrankheite wärded i vilne Kulture immer na schtigmatisiert."
+ },
+ {
+  "id": 3999,
+  "de": "marginalisieren",
+  "tr": "ötekileştirmek, marjinalleştirmek",
+  "deBeispiel": "Der Diskurs marginalisiert häufig die Stimmen der Betroffenen.",
+  "gsw": "marginalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Diskurs marginalisiert hüüfig d Schtimme vo de Betroffene."
+ },
+ {
+  "id": 4000,
+  "de": "brandmarken",
+  "tr": "damgalamak, kınamak",
+  "deBeispiel": "Man brandmarkte ihn öffentlich als Verräter seiner Prinzipien.",
+  "gsw": "brandmarke",
+  "gswArtikel": null,
+  "gswBeispiel": "Me hät en öffentlich als Verräter vo sine Prinzipie brandmarkt."
+ },
+ {
+  "id": 4001,
+  "de": "ausbeuten",
+  "tr": "sömürmek",
+  "deBeispiel": "Konzerne beuten die Ressourcen ärmerer Länder rücksichtslos aus.",
+  "gsw": "usbüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Konzärn büüted d Ressource vo ärmere Länder rücksichtslos us."
+ },
+ {
+  "id": 4002,
+  "de": "problematisieren",
+  "tr": "sorunsallaştırmak",
+  "deBeispiel": "Die Studie problematisiert den unkritischen Umgang mit Algorithmen.",
+  "gsw": "problematisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Studie problematisiert de unkritisch Umgang mit Algorithme."
+ },
+ {
+  "id": 4003,
+  "de": "entmenschlichen",
+  "tr": "insanlıktan çıkarmak",
+  "deBeispiel": "Kriegspropaganda entmenschlicht den Feind gezielt in der Sprache.",
+  "gsw": "entmänschliche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chriegspropaganda entmänschlicht de Fiind ganz gezielt i de Spraach."
+ },
+ {
+  "id": 4004,
+  "de": "bedenklich",
+  "tr": "endişe verici, kaygı uyandırıcı",
+  "deBeispiel": "Der Vertrauensverlust in die Presse ist eine bedenkliche Entwicklung.",
+  "gsw": "bedänklich",
+  "gswArtikel": null,
+  "gswBeispiel": "Dass d Lüüt de Presse nüme traued, isch e bedänklichi Entwicklig."
+ },
+ {
+  "id": 4005,
+  "de": "verwerflich",
+  "tr": "ahlaken kınanacak, kabul edilemez",
+  "deBeispiel": "Solche Manipulationen sind ethisch schlicht verwerflich.",
+  "gsw": "verwerflich",
+  "gswArtikel": null,
+  "gswBeispiel": "Söttigi Manipulatione sind ethisch schlicht verwerflich."
+ },
+ {
+  "id": 4006,
+  "de": "gewissenlos",
+  "tr": "vicdansız",
+  "deBeispiel": "Er handelte in dieser Angelegenheit geradezu gewissenlos.",
+  "gsw": "gwüsselos",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät i dere Sach gradezue gwüsselos ghandlet."
+ },
+ {
+  "id": 4007,
+  "de": "tugendhaft",
+  "tr": "erdemli",
+  "deBeispiel": "In ihren Reden gibt sie sich gerne besonders tugendhaft.",
+  "gsw": "tugendhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "I irne Rede git si sich gern bsunders tugendhaft."
+ },
+ {
+  "id": 4008,
+  "de": "selbstgerecht",
+  "tr": "kendini haklı gören, kibirli",
+  "deBeispiel": "Sein selbstgerechter Ton stieß bei vielen Zuhörern auf Ablehnung.",
+  "gsw": "sälbschtgerächt",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin sälbschtgerächte Ton isch bi vilne Zuelooser schlächt aachoo."
+ },
+ {
+  "id": 4009,
+  "de": "scheinheilig",
+  "tr": "ikiyüzlü, riyakâr",
+  "deBeispiel": "Kritiker nennen die Kampagne des Unternehmens schlicht scheinheilig.",
+  "gsw": "schiinhäilig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kritiker säged, d Kampagne vo de Firma sig schlicht schiinhäilig."
+ },
+ {
+  "id": 4010,
+  "de": "weitreichend",
+  "tr": "geniş kapsamlı, uzun vadeli etkili",
+  "deBeispiel": "Die Entscheidung hat weitreichende Folgen für kommende Generationen.",
+  "gsw": "wiiträichend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Entscheid hät wiiträichendi Folge für di nöchschte Generatione."
+ },
+ {
+  "id": 4011,
+  "de": "unumkehrbar",
+  "tr": "geri dönüşü olmayan",
+  "deBeispiel": "Manche Umweltschäden gelten inzwischen als unumkehrbar.",
+  "gsw": "unumcheerbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Mängi Umwältschäde gälted inzwüsche als unumcheerbar."
+ },
+ {
+  "id": 4012,
+  "de": "tragfähig",
+  "tr": "sağlam, uygulanabilir, taşıyıcı",
+  "deBeispiel": "Ein wirklich tragfähiges Konzept für die Energiewende fehlt bislang.",
+  "gsw": "tragfähig",
+  "gswArtikel": null,
+  "gswBeispiel": "Es würklich tragfähigs Konzäpt für d Energiewändi fäält bis hüt."
+ },
+ {
+  "id": 4013,
+  "de": "kurzsichtig",
+  "tr": "dar görüşlü, kısa vadeli düşünen",
+  "deBeispiel": "Eine rein kurzsichtige Klimapolitik löst keine langfristigen Probleme.",
+  "gsw": "churzsichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "E rei churzsichtigi Klimapolitik lööst käi langfrischtige Problem."
+ },
+ {
+  "id": 4014,
+  "de": "voreingenommen",
+  "tr": "önyargılı",
+  "deBeispiel": "Der Algorithmus erwies sich als überraschend voreingenommen.",
+  "gsw": "voriignoo",
+  "gswArtikel": null,
+  "gswBeispiel": "De Algorithmus hät sich als erschtuunlich voriignoo usegschtellt."
+ },
+ {
+  "id": 4015,
+  "de": "gespalten",
+  "tr": "bölünmüş, ikiye ayrılmış",
+  "deBeispiel": "In dieser Frage zeigt sich die Gesellschaft tief gespalten.",
+  "gsw": "gschpalte",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere Fraag zäigt sich d Gsellschaft tüüf gschpalte."
+ },
+ {
+  "id": 4016,
+  "de": "verdeutlichen",
+  "tr": "açıkça göstermek, örnekle anlaşılır kılmak",
+  "deBeispiel": "Das Beispiel verdeutlicht die Problematik sehr gut.",
+  "gsw": "verdüütliche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Biischpiil verdüütlicht d Problematik sehr guet."
+ },
+ {
+  "id": 4017,
+  "de": "gewährleisten",
+  "tr": "garanti etmek, güvence altına almak",
+  "deBeispiel": "Der Staat muss die Sicherheit der Bürger gewährleisten.",
+  "gsw": "gwäärläischte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat mues d Sicherheit vo de Bürger gwäärläischte."
+ },
+ {
+  "id": 4018,
+  "de": "vollziehen",
+  "tr": "yerine getirmek, uygulamak; (sich ~) gerçekleşmek",
+  "deBeispiel": "Der Wandel vollzieht sich schleichend, aber stetig.",
+  "gsw": "vollzie",
+  "gswArtikel": null,
+  "gswBeispiel": "De Wandel vollziet sich schliichend, aber schtetig."
+ },
+ {
+  "id": 4019,
+  "de": "begünstigen",
+  "tr": "kolaylaştırmak, teşvik etmek",
+  "deBeispiel": "Niedrige Zinsen begünstigen private Investitionen.",
+  "gsw": "begünschtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Tüüfi Zinse begünschtiged privati Inveschtitione."
+ },
+ {
+  "id": 4020,
+  "de": "veranlassen",
+  "tr": "-e sebep olmak, talimat vermek",
+  "deBeispiel": "Der Vorfall veranlasste eine gründliche Untersuchung.",
+  "gsw": "veraalaa",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorfall hät e gründlichi Undersuechig veraalaa."
+ },
+ {
+  "id": 4021,
+  "de": "sich auszeichnen",
+  "tr": "öne çıkmak, (bir özelliğiyle) dikkat çekmek",
+  "deBeispiel": "Die Studie zeichnet sich durch hohe Präzision aus.",
+  "gsw": "sich uszäichne",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch e Studie, wo sich dur e hoochi Präzision uszäichnet."
+ },
+ {
+  "id": 4022,
+  "de": "unterbinden",
+  "tr": "engellemek, önlemek",
+  "deBeispiel": "Neue Gesetze sollen Betrug wirksam unterbinden.",
+  "gsw": "underbinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Neui Gsetz sölled Betrug würksam underbinde."
+ },
+ {
+  "id": 4023,
+  "de": "einbüßen",
+  "tr": "kaybetmek, yitirmek",
+  "deBeispiel": "Die Partei büßte bei der Wahl deutlich an Zustimmung ein.",
+  "gsw": "iibüesse",
+  "gswArtikel": null,
+  "gswBeispiel": "D Partei hät bi de Waal düütlich a Zueschtimmig iibüesst."
+ },
+ {
+  "id": 4024,
+  "de": "konzipieren",
+  "tr": "tasarlamak, kurgulamak",
+  "deBeispiel": "Das Projekt wurde für ein internationales Publikum konzipiert.",
+  "gsw": "konzipiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Projekt isch für es internationals Publikum konzipiert worde."
+ },
+ {
+  "id": 4025,
+  "de": "verinnerlichen",
+  "tr": "içselleştirmek, benimsemek",
+  "deBeispiel": "Kinder verinnerlichen Werte vor allem durch Vorbilder.",
+  "gsw": "verinnerliche",
+  "gswArtikel": null,
+  "gswBeispiel": "Chind verinnerliched Wärt vor allem dur Vorbilder."
+ },
+ {
+  "id": 4026,
+  "de": "reglementieren",
+  "tr": "ayrıntılı kurallarla düzenlemek, kurallara bağlamak",
+  "deBeispiel": "Der Markt wird durch strenge Vorschriften reglementiert.",
+  "gsw": "reglementiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Märt wird dur schträngi Vorschrifte reglementiert."
+ },
+ {
+  "id": 4027,
+  "de": "entkräften",
+  "tr": "çürütmek, geçersiz kılmak",
+  "deBeispiel": "Die neuen Beweise entkräften das alte Argument vollständig.",
+  "gsw": "entchräfte",
+  "gswArtikel": null,
+  "gswBeispiel": "Di neue Bewiis entchräfted s alt Argumänt vollschtändig."
+ },
+ {
+  "id": 4028,
+  "de": "verankern",
+  "tr": "(yasada, metinde) yer vermek, güvence altına almak",
+  "deBeispiel": "Das Recht auf Bildung ist im Grundgesetz verankert.",
+  "gsw": "verankere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Rächt uf Bildig isch i de Bundesverfassig verankeret."
+ },
+ {
+  "id": 4029,
+  "de": "ausufern",
+  "tr": "kontrolden çıkmak, taşmak",
+  "deBeispiel": "Die Debatte drohte in einen offenen Streit auszuufern.",
+  "gsw": "usufere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Debatte hät droot, dass si in en offene Schtriit chönnt usufere."
+ },
+ {
+  "id": 4030,
+  "de": "abstreiten",
+  "tr": "inkar etmek, yadsımak",
+  "deBeispiel": "Der Zeuge stritt jede Beteiligung entschieden ab.",
+  "gsw": "abschtriite",
+  "gswArtikel": null,
+  "gswBeispiel": "De Züüge tuet jedi Betäiligung entschide abschtriite."
+ },
+ {
+  "id": 4031,
+  "de": "verschmelzen",
+  "tr": "kaynaşmak, birleşmek",
+  "deBeispiel": "Die beiden Firmen verschmolzen zu einem einzigen Konzern.",
+  "gsw": "verschmelze",
+  "gswArtikel": null,
+  "gswBeispiel": "Di bäide Firmene verschmelzed zu äim äinzige Konzärn."
+ },
+ {
+  "id": 4032,
+  "de": "nachvollziehen",
+  "tr": "anlamak, izini sürmek",
+  "deBeispiel": "Ich kann seine Entscheidung nur schwer nachvollziehen.",
+  "gsw": "naavollzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha sin Entscheid nur schwer naavollzie."
+ },
+ {
+  "id": 4033,
+  "de": "schmälern",
+  "tr": "azaltmak, değerini düşürmek",
+  "deBeispiel": "Der Skandal schmälert das Ansehen der Firma erheblich.",
+  "gsw": "schmälere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Skandal schmäleret s Aasee vo de Firma erheblich."
+ },
+ {
+  "id": 4034,
+  "de": "abwenden",
+  "tr": "önlemek, savuşturmak",
+  "deBeispiel": "Die Regierung konnte die drohende Krise gerade noch abwenden.",
+  "gsw": "abwände",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regierig hät di drohend Chrise grad no chöne abwände."
+ },
+ {
+  "id": 4035,
+  "de": "konterkarieren",
+  "tr": "boşa çıkarmak, ters etki yapmak",
+  "deBeispiel": "Die Maßnahme konterkariert am Ende das eigentliche Ziel.",
+  "gsw": "konterkariere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Massnaam konterkariert am Schluss s äigentlich Ziil."
+ },
+ {
+  "id": 4036,
+  "de": "eruieren",
+  "tr": "araştırıp bulmak, tespit etmek",
+  "deBeispiel": "Die Kommission soll die genauen Ursachen eruieren.",
+  "gsw": "eruiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kommission söll di genaue Ursache eruiere."
+ },
+ {
+  "id": 4037,
+  "de": "sich revanchieren",
+  "tr": "karşılığını vermek, teşekkür borcunu ödemek",
+  "deBeispiel": "Er will sich für die großzügige Hilfe revanchieren.",
+  "gsw": "sich revanchiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er wott sich für di groosszügig Hilf revanchiere."
+ },
+ {
+  "id": 4038,
+  "de": "facettenreich",
+  "tr": "çok yönlü, çok boyutlu",
+  "deBeispiel": "Das Thema ist überraschend facettenreich und komplex.",
+  "gsw": "facetteriich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Thema isch überraschend facetteriich und komplex."
+ },
+ {
+  "id": 4039,
+  "de": "undurchsichtig",
+  "tr": "anlaşılmaz, şeffaf olmayan",
+  "deBeispiel": "Die Finanzierung des Projekts bleibt bis heute undurchsichtig.",
+  "gsw": "undursichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Finanzierig vom Projekt bliibt bis hüt undursichtig."
+ },
+ {
+  "id": 4040,
+  "de": "akribisch",
+  "tr": "titiz, kılı kırk yaran",
+  "deBeispiel": "Sie bereitet jede Präsentation akribisch und gründlich vor.",
+  "gsw": "akribisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Si bereitet jedi Präsentation akribisch und gründlich vor."
+ },
+ {
+  "id": 4041,
+  "de": "dubios",
+  "tr": "şüpheli, güvenilmez",
+  "deBeispiel": "Das Geschäft wirkt auf mich ziemlich dubios und unseriös.",
+  "gsw": "dubios",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gschäft würkt uf mich zimli dubios und unseriös."
+ },
+ {
+  "id": 4042,
+  "de": "dennoch",
+  "tr": "yine de, buna rağmen",
+  "deBeispiel": "Es regnete stark, dennoch ging sie spazieren.",
+  "gsw": "gliich",
+  "gswArtikel": null,
+  "gswBeispiel": "Es hät starch grägnet, aber si isch gliich go schpaziere gange.",
+  "ayniLehce": [
+   "gleich (A1)"
+  ]
+ },
+ {
+  "id": 4043,
+  "de": "zunehmend",
+  "tr": "giderek artan şekilde",
+  "deBeispiel": "Die Nachfrage steigt zunehmend seit Beginn des Jahres.",
+  "gsw": "immer mee",
+  "gswArtikel": null,
+  "gswBeispiel": "D Naachfraag schtiigt sit Aafang Jaar immer mee."
+ },
+ {
+  "id": 4044,
+  "de": "gewissermaßen",
+  "tr": "bir bakıma, adeta",
+  "deBeispiel": "Er ist gewissermaßen der geistige Gründer des Projekts.",
+  "gsw": "gwüssermaasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch gwüssermaasse de geischtig Gründer vom Projekt."
+ },
+ {
+  "id": 4045,
+  "de": "unweigerlich",
+  "tr": "kaçınılmaz olarak, ister istemez",
+  "deBeispiel": "Solche Fehler führen unweigerlich zu ernsten Problemen.",
+  "gsw": "unwäigerlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Söttig Fääler füered unwäigerlich zu ärnschte Probleem."
+ },
+ {
+  "id": 4046,
+  "de": "die Auswirkung",
+  "tr": "etki, sonuç",
+  "deBeispiel": "Der Klimawandel hat spürbare Auswirkungen auf die Region.",
+  "gsw": "Uswürkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Klimawandel hät schpürbari Uswürkige uf d Region."
+ },
+ {
+  "id": 5687,
+  "de": "die Agrarsubvention",
+  "tr": "tarım sübvansiyonu, tarımsal destek",
+  "deBeispiel": "Die Agrarsubventionen fließen überwiegend an ohnehin große Betriebe.",
+  "gsw": "Agrarsubvention",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Agrarsubventione flüüssed überwiegend a sowieso grossi Betrib."
+ },
+ {
+  "id": 5688,
+  "de": "die Agrarwende",
+  "tr": "tarımsal dönüşüm, tarımda paradigma değişimi",
+  "deBeispiel": "Ohne verbindliche Ziele bleibt die Agrarwende ein leeres Versprechen.",
+  "gsw": "Agrarwändi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni verbindlichi Ziel bliibt d Agrarwändi es leers Verschpräche."
+ },
+ {
+  "id": 5689,
+  "de": "die Agrarreform",
+  "tr": "tarım reformu",
+  "deBeispiel": "Die letzte Agrarreform hat die Verteilungsfrage kaum berührt.",
+  "gsw": "Agrarreform",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di letscht Agrarreform hät d Verteiligsfraag chuum berüehrt."
+ },
+ {
+  "id": 5690,
+  "de": "die Agrarökologie",
+  "tr": "agroekoloji, tarımsal ekoloji",
+  "deBeispiel": "Die Agrarökologie versteht den Betrieb als Teil eines Ökosystems.",
+  "gsw": "Agrarökologie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Agrarökologie verschtaat de Betrib als Teil vo mene Ökosyschtem."
+ },
+ {
+  "id": 5691,
+  "de": "die Ernährungssouveränität",
+  "tr": "gıda egemenliği",
+  "deBeispiel": "Ernährungssouveränität meint das Recht, die eigene Agrarpolitik zu bestimmen.",
+  "gsw": "Ernäärigssouveränität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ernäärigssouveränität meint s Rächt, di eiget Agrarpolitik sälber z beschtimme."
+ },
+ {
+  "id": 5692,
+  "de": "das Ernährungssystem",
+  "tr": "gıda sistemi",
+  "deBeispiel": "Das globale Ernährungssystem reagiert empfindlich auf politische Krisen.",
+  "gsw": "Ernäärigssyschtem",
+  "gswArtikel": "s",
+  "gswBeispiel": "S globale Ernäärigssyschtem reagiert empfindlich uf politischi Krise."
+ }
+]

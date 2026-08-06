@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6463,
+  "de": "schikanieren",
+  "tr": "eziyet etmek, kasten zorluk çıkarmak",
+  "deBeispiel": "Mitgefangene schikanierten ihn systematisch wegen seines Delikts.",
+  "gsw": "schikaniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mitgfangeni händ en systematisch wäge sim Delikt schikaniert."
+ },
+ {
+  "id": 6464,
+  "de": "straffällig",
+  "tr": "suç işlemiş, suça bulaşmış",
+  "deBeispiel": "Die meisten straffällig gewordenen Jugendlichen bleiben nicht dauerhaft auffällig.",
+  "gsw": "schtraffällig",
+  "gswArtikel": null,
+  "gswBeispiel": "Di mäischte Jugendliche, wo schtraffällig worde sind, bliibed nöd duurhaft uffällig."
+ },
+ {
+  "id": 6465,
+  "de": "rückfällig",
+  "tr": "tekrar suç işleyen, nüksetmiş",
+  "deBeispiel": "Fast die Hälfte der Entlassenen wird binnen drei Jahren rückfällig.",
+  "gsw": "rückfällig",
+  "gswArtikel": null,
+  "gswBeispiel": "Fascht d Hälfti vo de Entlassene wird innerhalb vo drü Jaar rückfällig."
+ },
+ {
+  "id": 6466,
+  "de": "gewaltbereit",
+  "tr": "şiddete eğilimli",
+  "deBeispiel": "Nur eine kleine, gewaltbereite Minderheit prägt das öffentliche Bild.",
+  "gsw": "gwaltbereit",
+  "gswArtikel": null,
+  "gswBeispiel": "Nu e chliini, gwaltbereiti Minderheit prägt s öffentliche Bild."
+ },
+ {
+  "id": 6467,
+  "de": "vorbestraft",
+  "tr": "sabıkalı",
+  "deBeispiel": "Wer vorbestraft ist, findet auf dem Arbeitsmarkt kaum eine Chance.",
+  "gsw": "vorbeschtraaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer vorbeschtraaft isch, findt uf em Arbetsmarkt chuum e Chance."
+ },
+ {
+  "id": 6468,
+  "de": "milieubedingt",
+  "tr": "çevre kaynaklı",
+  "deBeispiel": "Solche Konflikte sind eher milieubedingt als persönlich verschuldet.",
+  "gsw": "milieubedingt",
+  "gswArtikel": null,
+  "gswBeispiel": "Sonigi Konflikt sind ehner milieubedingt als persönlich verschuldet."
+ },
+ {
+  "id": 6469,
+  "de": "kriminogen",
+  "tr": "suça yol açan",
+  "deBeispiel": "Beengter Wohnraum und Armut wirken zusammen kriminogen.",
+  "gsw": "kriminogen",
+  "gswArtikel": null,
+  "gswBeispiel": "Änge Wohnruum und Armuet wirked zäme kriminogen."
+ },
+ {
+  "id": 6470,
+  "de": "zwangsweise",
+  "tr": "zorla, cebren",
+  "deBeispiel": "Niemand darf zwangsweise an einer Therapie teilnehmen müssen.",
+  "gsw": "zwangswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "Niemer dörf zwangswiis müesse a nere Therapie teilnää."
+ },
+ {
+  "id": 6471,
+  "de": "präventiv",
+  "tr": "önleyici",
+  "deBeispiel": "Sozialarbeit in Brennpunkten wirkt präventiv und spart langfristig Kosten.",
+  "gsw": "präventiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Sozialarbet i Brännpünkt wirkt präventiv und schpaart langfrischtig Chöschte."
+ },
+ {
+  "id": 6472,
+  "de": "das Bühnenbild",
+  "tr": "sahne tasarımı, dekor",
+  "deBeispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache.",
+  "gsw": "Büenebild",
+  "gswArtikel": "s",
+  "gswBeispiel": "S charge Büenebild lenkt de Blick ganz uf d Spraach."
+ },
+ {
+  "id": 6473,
+  "de": "die Uraufführung",
+  "tr": "dünya prömiyeri, ilk gösterim",
+  "deBeispiel": "Die Uraufführung wurde vom Publikum zwiespältig aufgenommen.",
+  "gsw": "Uruffüerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uruffüerig isch vom Publikum zwiischpältig ufgnoo worde."
+ },
+ {
+  "id": 6474,
+  "de": "die Dramaturgie",
+  "tr": "dramaturji, kurgu düzeni",
+  "deBeispiel": "Die Dramaturgie des Abends wirkt streckenweise überladen.",
+  "gsw": "Dramaturgie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dramaturgie vom Aabig wirkt schtreckewiis überlade."
+ },
+ {
+  "id": 6475,
+  "de": "die Kunstkritik",
+  "tr": "sanat eleştirisi",
+  "deBeispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen.",
+  "gsw": "Chunschtkritik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chunschtkritik hät sis Früewärch lang übersee."
+ },
+ {
+  "id": 6476,
+  "de": "die Kulturpolitik",
+  "tr": "kültür politikası",
+  "deBeispiel": "Die Kulturpolitik der Stadt bevorzugt seit Jahren große Häuser.",
+  "gsw": "Kulturpolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kulturpolitik vo de Schtadt bevorzugt siit Jaare grossi Hüüser."
+ },
+ {
+  "id": 6477,
+  "de": "die Zuschauerschaft",
+  "tr": "izleyici kitlesi, seyirciler",
+  "deBeispiel": "Die Zuschauerschaft des Hauses ist deutlich jünger geworden.",
+  "gsw": "Zueschauerschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zueschauerschaft vom Huus isch düütlich jünger worde."
+ },
+ {
+  "id": 6478,
+  "de": "die Bildsprache",
+  "tr": "görsel dil, imge dili",
+  "deBeispiel": "Ihre Bildsprache schöpft aus mittelalterlichen Vorlagen.",
+  "gsw": "Bildspraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Bildspraach schöpft us mittelalterliche Vorlaage."
+ },
+ {
+  "id": 6479,
+  "de": "die Gattung",
+  "tr": "tür (edebî, sanatsal), cins",
+  "deBeispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen.",
+  "gsw": "Gattig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Schtuck schprengt d Gränze vo de klassische Gattige."
+ },
+ {
+  "id": 6480,
+  "de": "die Stilrichtung",
+  "tr": "üslup akımı, stil yönelimi",
+  "deBeispiel": "Der Maler lässt sich keiner einzigen Stilrichtung zuordnen.",
+  "gsw": "Schtilrichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Maaler laat sich käinere äinzige Schtilrichtig zuetäile."
+ },
+ {
+  "id": 6481,
+  "de": "der Kunstgriff",
+  "tr": "ustaca çözüm, kurnaz numara",
+  "deBeispiel": "Mit einem einfachen Kunstgriff verdoppelt der Regisseur die Hauptfigur.",
+  "gsw": "Chunschtgriff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mit eme äifache Chunschtgriff verdopplet de Regisseur d Hauptfigur."
+ },
+ {
+  "id": 6482,
+  "de": "die Virtuosität",
+  "tr": "virtüözlük, teknik ustalık",
+  "deBeispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation.",
+  "gsw": "Virtuosität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Virtuosität am Klavier verdeckt mängisch d Interpretation."
+ },
+ {
+  "id": 6483,
+  "de": "die Improvisation",
+  "tr": "doğaçlama",
+  "deBeispiel": "Der zweite Teil des Konzerts besteht fast nur aus Improvisation.",
+  "gsw": "Improvisation",
+  "gswArtikel": "d",
+  "gswBeispiel": "De zwäit Täil vom Konzärt bschtaat fascht nu us Improvisation."
+ },
+ {
+  "id": 6484,
+  "de": "die Lesart",
+  "tr": "okuma biçimi, yorum",
+  "deBeispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend.",
+  "gsw": "Lesart",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Lesart vom Drama isch gwaagt, aber überzügend."
+ },
+ {
+  "id": 6485,
+  "de": "der Werkbegriff",
+  "tr": "yapıt kavramı",
+  "deBeispiel": "Die Installation stellt den traditionellen Werkbegriff radikal infrage.",
+  "gsw": "Wärchbegriff",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Installation schtellt de traditionell Wärchbegriff radikal in Fraag."
+ },
+ {
+  "id": 6486,
+  "de": "die Autorschaft",
+  "tr": "yazarlık, eser sahipliği",
+  "deBeispiel": "Bei kollektiven Projekten verschwimmt die Frage der Autorschaft.",
+  "gsw": "Autorschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi kollektive Projekt verschwimmt d Fraag vo de Autorschaft."
+ },
+ {
+  "id": 6487,
+  "de": "die Originalität",
+  "tr": "özgünlük",
+  "deBeispiel": "Der Jury fehlte in diesem Entwurf jede Originalität.",
+  "gsw": "Originalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Jury hät i dem Entwurf jedi Originalität gfäält."
+ },
+ {
+  "id": 6488,
+  "de": "die Verfremdung",
+  "tr": "yabancılaştırma",
+  "deBeispiel": "Die Verfremdung hindert das Publikum am bequemen Mitfühlen.",
+  "gsw": "Verfrömdig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verfrömdig hinderet s Publikum am bequeme Mitfüele."
+ },
+ {
+  "id": 6489,
+  "de": "der Tabubruch",
+  "tr": "tabuyu yıkma, tabu ihlali",
+  "deBeispiel": "Der Tabubruch allein macht noch keine gute Kunst.",
+  "gsw": "Tabubruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Tabubruch elläi macht no kä gueti Chunscht."
+ },
+ {
+  "id": 6490,
+  "de": "die Rezeptionsgeschichte",
+  "tr": "alımlanma tarihi",
+  "deBeispiel": "Die Rezeptionsgeschichte des Romans verlief äußerst wechselhaft.",
+  "gsw": "Rezeptionsgschicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rezeptionsgschicht vom Roman isch uusserscht wächselhaft verlaufe."
+ },
+ {
+  "id": 6491,
+  "de": "das Geschmacksurteil",
+  "tr": "beğeni yargısı",
+  "deBeispiel": "Ein Geschmacksurteil lässt sich selten zwingend begründen.",
+  "gsw": "Gschmacksurtäil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es Gschmacksurtäil laat sich sälte zwingend begründe."
+ },
+ {
+  "id": 6492,
+  "de": "die Kennerschaft",
+  "tr": "uzmanlık, erbaplık",
+  "deBeispiel": "Seine Kennerschaft der Barockmalerei ist im Fach unbestritten.",
+  "gsw": "Chennerschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Chennerschaft vo de Barockmaalerei isch im Fach unbeschtritte."
+ },
+ {
+  "id": 6493,
+  "de": "der Mäzen",
+  "tr": "sanat hamisi, mesen",
+  "deBeispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden.",
+  "gsw": "Mäzen",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni privati Mäzene wär d Sammlig nie entschtande."
+ },
+ {
+  "id": 6494,
+  "de": "der Kulturbetrieb",
+  "tr": "kültür sektörü, sanat camiası",
+  "deBeispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent.",
+  "gsw": "Kulturbetrib",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Kulturbetrib zelled Netzwärch oft mee als Talänt."
+ },
+ {
+  "id": 6495,
+  "de": "der Kunstmarkt",
+  "tr": "sanat piyasası",
+  "deBeispiel": "Der Kunstmarkt reagiert empfindlich auf jede Krise.",
+  "gsw": "Chunschtmarkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Chunschtmarkt reagiert empfindlich uf jedi Krise."
+ },
+ {
+  "id": 6496,
+  "de": "die Retrospektive",
+  "tr": "retrospektif, geriye dönük sergi",
+  "deBeispiel": "Das Museum widmet der Fotografin eine große Retrospektive.",
+  "gsw": "Retrospektive",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Museum widmet de Fotografin e grossi Retrospektive."
+ },
+ {
+  "id": 6497,
+  "de": "die Vernissage",
+  "tr": "sergi açılışı",
+  "deBeispiel": "Zur Vernissage kamen mehr Journalisten als erwartet.",
+  "gsw": "Vernissage",
+  "gswArtikel": "d",
+  "gswBeispiel": "A d Vernissage sind mee Journaliste choo als erwartet."
+ },
+ {
+  "id": 6498,
+  "de": "die Denkmalpflege",
+  "tr": "anıt koruma, tarihi eser bakımı",
+  "deBeispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt.",
+  "gsw": "Dänkmaalpfläg",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dänkmaalpfläg hät de Umbau vo de Fassade verbotte."
+ },
+ {
+  "id": 6499,
+  "de": "die Dissonanz",
+  "tr": "uyumsuzluk, disonans",
+  "deBeispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer.",
+  "gsw": "Dissonanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D unufglööschti Dissonanz am Schluss verschtöört vill Zuelosere."
+ },
+ {
+  "id": 6500,
+  "de": "die Partitur",
+  "tr": "partisyon, nota metni",
+  "deBeispiel": "Der Dirigent kennt die Partitur bis in jede Nebenstimme.",
+  "gsw": "Partitur",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dirigänt chennt d Partitur bis i jedi Näbeschtimm."
+ },
+ {
+  "id": 6501,
+  "de": "die Komposition",
+  "tr": "kompozisyon, düzenleniş, beste",
+  "deBeispiel": "Die Komposition des Bildes folgt einer strengen Diagonale.",
+  "gsw": "Komposition",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Komposition vom Bild folgt ere schtränge Diagonale."
+ },
+ {
+  "id": 6502,
+  "de": "die Adaption",
+  "tr": "uyarlama",
+  "deBeispiel": "Die filmische Adaption bleibt hinter der Vorlage zurück.",
+  "gsw": "Adaption",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di filmisch Adaption blibt hinder de Vorlaag zrugg."
+ },
+ {
+  "id": 6503,
+  "de": "das Repertoire",
+  "tr": "repertuvar, dağarcık",
+  "deBeispiel": "Das Repertoire des Hauses umfasst kaum zeitgenössische Stücke.",
+  "gsw": "Repertoire",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Repertoire vom Huus umfasst chuum ziitgnössischi Schtuck."
+ },
+ {
+  "id": 6504,
+  "de": "der Spannungsbogen",
+  "tr": "gerilim yayı, gerilim eğrisi",
+  "deBeispiel": "Im dritten Akt bricht der Spannungsbogen völlig zusammen.",
+  "gsw": "Schpannigsboge",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im dritte Akt bricht de Schpannigsboge völlig zäme."
+ },
+ {
+  "id": 6505,
+  "de": "die Katharsis",
+  "tr": "katarsis, arınma",
+  "deBeispiel": "Das Stück verweigert dem Publikum jede tröstliche Katharsis.",
+  "gsw": "Katharsis",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Schtuck verwäigeret em Publikum jedi tröschtlichi Katharsis."
+ },
+ {
+  "id": 6506,
+  "de": "das Pathos",
+  "tr": "patos, coşkulu duygu yükü",
+  "deBeispiel": "Das Pathos der Schlussszene wirkt heute unfreiwillig komisch.",
+  "gsw": "Pathos",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Pathos vo de Schlusszene wirkt hüt unfreiwillig komisch."
+ },
+ {
+  "id": 6507,
+  "de": "die Groteske",
+  "tr": "grotesk, gülünç-ürkütücü olan",
+  "deBeispiel": "Die Tragödie kippt im letzten Bild in eine Groteske.",
+  "gsw": "Groteske",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tragödie chippt im letschte Bild i e Groteske."
+ },
+ {
+  "id": 6508,
+  "de": "die Persiflage",
+  "tr": "alaycı taklit, hicivli öykünme",
+  "deBeispiel": "Der Film ist eine bissige Persiflage auf den Kunstbetrieb.",
+  "gsw": "Persiflage",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Film isch e bissigi Persiflage uf de Chunschtbetrib."
+ },
+ {
+  "id": 6509,
+  "de": "die Abstraktion",
+  "tr": "soyutlama",
+  "deBeispiel": "Der Weg zur Abstraktion vollzog sich bei ihm allmählich.",
+  "gsw": "Abstraktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Wäg zur Abstraktion hät sich bi ihm allmählich vollzoge."
+ },
+ {
+  "id": 6510,
+  "de": "die Hochkultur",
+  "tr": "yüksek kültür",
+  "deBeispiel": "Die Trennung von Hochkultur und Unterhaltung erodiert zusehends.",
+  "gsw": "Hochkultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Trennig vo Hochkultur und Underhaltig erodiert zuesehends."
+ },
+ {
+  "id": 6511,
+  "de": "die Kunstfreiheit",
+  "tr": "sanat özgürlüğü",
+  "deBeispiel": "Die Kunstfreiheit endet dort nicht, wo jemand sich ärgert.",
+  "gsw": "Chunschtfreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chunschtfreiheit hört nöd dört uf, wo sich öpper ergeret."
+ },
+ {
+  "id": 6512,
+  "de": "darbieten",
+  "tr": "sunmak, icra etmek",
+  "deBeispiel": "Das Quartett bot die späten Streichquartette hinreißend dar.",
+  "gsw": "darbüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "S Quartett hät di schpaate Schtriichquartett hinriissend darbotte."
+ },
+ {
+  "id": 6513,
+  "de": "einstudieren",
+  "tr": "çalışıp hazırlamak, prova ederek öğrenmek",
+  "deBeispiel": "Der Chor studiert das Requiem seit Monaten ein.",
+  "gsw": "iischtudiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chor tuet s Requiem siit Mönet iischtudiere."
+ },
+ {
+  "id": 6514,
+  "de": "entschlüsseln",
+  "tr": "çözmek, deşifre etmek",
+  "deBeispiel": "Die Symbolik des Altarbildes lässt sich kaum vollständig entschlüsseln.",
+  "gsw": "entschlüssle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Symbolik vom Altarbild laat sich chuum vollschtändig entschlüssle."
+ },
+ {
+  "id": 6515,
+  "de": "nachempfinden",
+  "tr": "kendini yerine koyup hissetmek, duygusunu paylaşmak",
+  "deBeispiel": "Der Zuschauer soll die Verzweiflung der Figur nachempfinden.",
+  "gsw": "naachempfinde",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zueschauer söll d Verzwiiflig vo de Figur naachempfinde."
+ },
+ {
+  "id": 6516,
+  "de": "überhöhen",
+  "tr": "yüceltmek, abartarak büyütmek",
+  "deBeispiel": "Die Regie überhöht den Alltag zum antiken Ritual.",
+  "gsw": "überhööche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regie überhöcht de Alltag zum antike Ritual."
+ },
+ {
+  "id": 6517,
+  "de": "skizzieren",
+  "tr": "taslağını çizmek, ana hatlarıyla anlatmak",
+  "deBeispiel": "Der Kurator skizzierte den Aufbau der Schau in wenigen Sätzen.",
+  "gsw": "skizziere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurator hät de Ufbau vo de Schau i weneg Sätz skizziert."
+ },
+ {
+  "id": 6518,
+  "de": "vertonen",
+  "tr": "bestelemek, müziğe uyarlamak",
+  "deBeispiel": "Er hat mehrere Gedichte der Romantik neu vertont.",
+  "gsw": "vertone",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät mereri Gedicht vo de Romantik nöi vertont."
+ },
+ {
+  "id": 6519,
+  "de": "rezitieren",
+  "tr": "ezberden okumak, şiir okumak",
+  "deBeispiel": "Die Schauspielerin rezitierte den Monolog ohne jedes Pathos.",
+  "gsw": "rezitiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schauschpilerin hät de Monolog ooni jedes Pathos rezitiert."
+ },
+ {
+  "id": 6520,
+  "de": "kuratieren",
+  "tr": "küratörlüğünü yapmak, seçkiyi düzenlemek",
+  "deBeispiel": "Sie kuratiert die Biennale zum zweiten Mal.",
+  "gsw": "kuratiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sie kuratiert d Biennale zum zwöite Mal."
+ },
+ {
+  "id": 6521,
+  "de": "versteigern",
+  "tr": "açık artırmayla satmak",
+  "deBeispiel": "Der Nachlass des Malers wird im Herbst versteigert.",
+  "gsw": "verschtäigere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Naachlass vom Maaler wird im Herbscht verschtäigeret."
+ },
+ {
+  "id": 6522,
+  "de": "provozieren",
+  "tr": "kışkırtmak, tepki uyandırmak",
+  "deBeispiel": "Die Installation provoziert bewusst den bürgerlichen Kunstgeschmack.",
+  "gsw": "provoziere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Installation provoziert bewusst de bürgerlich Chunschtgschmack."
+ },
+ {
+  "id": 6523,
+  "de": "irritieren",
+  "tr": "şaşırtmak, kafa karıştırmak",
+  "deBeispiel": "Der abrupte Stilwechsel irritierte selbst wohlwollende Kritiker.",
+  "gsw": "irritiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De abrupt Schtilwächsel hät sogar wohlwollendi Kritiker irritiert."
+ },
+ {
+  "id": 6524,
+  "de": "ergreifen",
+  "tr": "derinden etkilemek, sarsmak",
+  "deBeispiel": "Die schlichte Schlussarie ergriff das ganze Haus.",
+  "gsw": "ergriife",
+  "gswArtikel": null,
+  "gswBeispiel": "Di schlichti Schlussarie hät s ganz Huus ergriffe."
+ },
+ {
+  "id": 6525,
+  "de": "karikieren",
+  "tr": "karikatürize etmek, abartarak alay etmek",
+  "deBeispiel": "Die Aufführung karikiert den Kunstbetrieb bis zur Kenntlichkeit.",
+  "gsw": "karikiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Uffüerig karikiert de Chunschtbetrib bis zur Chenntlichkeit."
+ },
+ {
+  "id": 6526,
+  "de": "rezensieren",
+  "tr": "eleştiri yazmak, değerlendirmek",
+  "deBeispiel": "Sie rezensiert seit Jahren Ausstellungen für eine Wochenzeitung.",
+  "gsw": "rezensiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sie rezensiert siit Jaare Uusschtellige für e Wuchenziitig."
+ },
+ {
+  "id": 6527,
+  "de": "experimentell",
+  "tr": "deneysel",
+  "deBeispiel": "Das Festival zeigt vor allem experimentelles Musiktheater.",
+  "gsw": "experimentell",
+  "gswArtikel": null,
+  "gswBeispiel": "S Feschtival zäigt vor allem experimentells Musigtheater."
+ },
+ {
+  "id": 6528,
+  "de": "epigonal",
+  "tr": "öykünmeci, ustasını taklit eden",
+  "deBeispiel": "Seine frühen Bilder wirken noch reichlich epigonal.",
+  "gsw": "epigonal",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini früeje Bilder wirked no rächt epigonal."
+ },
+ {
+  "id": 6529,
+  "de": "subtil",
+  "tr": "ince, sezdirmeden işleyen",
+  "deBeispiel": "Die Kritik an der Institution ist hier sehr subtil formuliert.",
+  "gsw": "subtil",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kritik a de Institution isch da sehr subtil formuliert."
+ },
+ {
+  "id": 6530,
+  "de": "doppelbödig",
+  "tr": "iki anlamlı, çift katmanlı",
+  "deBeispiel": "Der scheinbar harmlose Text ist zutiefst doppelbödig.",
+  "gsw": "doppelböödig",
+  "gswArtikel": null,
+  "gswBeispiel": "De schiinbar harmlos Täxt isch zutiefscht doppelböödig."
+ },
+ {
+  "id": 6531,
+  "de": "hintergründig",
+  "tr": "derin anlamlı, alt metinli",
+  "deBeispiel": "Ihr Humor ist leise und hintergründig statt laut.",
+  "gsw": "hindergründig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ire Humor isch liislig und hindergründig statt luut."
+ },
+ {
+  "id": 6532,
+  "de": "opulent",
+  "tr": "görkemli, bol ve gösterişli",
+  "deBeispiel": "Die opulente Ausstattung erdrückt den schmalen Text.",
+  "gsw": "opulent",
+  "gswArtikel": null,
+  "gswBeispiel": "D opulenti Uusschtattig erdruckt de schmaal Täxt."
+ },
+ {
+  "id": 6533,
+  "de": "eindringlich",
+  "tr": "etkileyici, akılda kalıcı biçimde güçlü",
+  "deBeispiel": "Der Dokumentarfilm schildert das Milieu eindringlich und ohne Kitsch.",
+  "gsw": "iidringlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokumentarfilm schilderet s Milieu iidringlich und ooni Kitsch."
+ },
+ {
+  "id": 6534,
+  "de": "sperrig",
+  "tr": "zor lokma, kolay tüketilmeyen",
+  "deBeispiel": "Sein sperriges Spätwerk fand erst posthum Anerkennung.",
+  "gsw": "schperrig",
+  "gswArtikel": null,
+  "gswBeispiel": "Sis schperrige Schpaatwärch hät ersch posthum Aaerchennig gfunde."
+ },
+ {
+  "id": 6535,
+  "de": "elitär",
+  "tr": "seçkinci, elitist",
+  "deBeispiel": "Dem Haus wird seit Langem ein elitäres Programm vorgeworfen.",
+  "gsw": "elitär",
+  "gswArtikel": null,
+  "gswBeispiel": "Em Huus wird siit langem es elitärs Programm vorgworfe."
+ },
+ {
+  "id": 6536,
+  "de": "der Erzähler",
+  "tr": "anlatıcı",
+  "deBeispiel": "Der Erzähler bleibt in diesem Roman auffallend distanziert.",
+  "gsw": "Verzeller",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verzeller blibt i dem Roman uffallend distanziert."
+ },
+ {
+  "id": 6537,
+  "de": "der Handlungsstrang",
+  "tr": "olay örgüsü kolu, yan olay dizisi",
+  "deBeispiel": "Die beiden Handlungsstränge laufen erst im letzten Kapitel zusammen.",
+  "gsw": "Handligsschtrang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di bäide Handligsschträng laufed ersch im letschte Kapitel zäme."
+ },
+ {
+  "id": 6538,
+  "de": "das Stilmittel",
+  "tr": "üslup aracı, söz sanatı",
+  "deBeispiel": "Die Wiederholung ist hier ein bewusst eingesetztes Stilmittel.",
+  "gsw": "Schtilmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Widerholig isch da es bewusst iigsetzts Schtilmittel."
+ },
+ {
+  "id": 6539,
+  "de": "die Metapher",
+  "tr": "metafor, eğretileme",
+  "deBeispiel": "Seine Metaphern wirken auf mich etwas abgenutzt.",
+  "gsw": "Metapher",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Metaphere wirked uf mich öppis abgnutzt."
+ },
+ {
+  "id": 6540,
+  "de": "das Gleichnis",
+  "tr": "kıssa, benzetme öyküsü",
+  "deBeispiel": "Der Prediger erklärte den Gedanken anhand eines alten Gleichnisses.",
+  "gsw": "Gliichnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Prediger hät de Gedanke anhand vomene alte Gliichnis erklärt."
+ },
+ {
+  "id": 6541,
+  "de": "das Nachwort",
+  "tr": "sonsöz",
+  "deBeispiel": "Im Nachwort beschreibt die Übersetzerin ihre wichtigsten Entscheidungen.",
+  "gsw": "Naachwort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Naachwort bschriibt d Übersetzerin iri wichtigschte Entschäidige."
+ },
+ {
+  "id": 6542,
+  "de": "die Fußnote",
+  "tr": "dipnot",
+  "deBeispiel": "Die entscheidende Quelle versteckt sich in einer knappen Fußnote.",
+  "gsw": "Fuessnote",
+  "gswArtikel": "d",
+  "gswBeispiel": "D entschäidend Quelle verschteckt sich i nere chnappe Fuessnote."
+ },
+ {
+  "id": 6543,
+  "de": "das Manuskript",
+  "tr": "el yazması, (basılmamış) metin",
+  "deBeispiel": "Das Manuskript lag jahrzehntelang unbeachtet im Archiv.",
+  "gsw": "Manuskript",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Manuskript isch jaarzehntelang unbeachtet im Archiv gläge."
+ },
+ {
+  "id": 6544,
+  "de": "der Urheber",
+  "tr": "eser sahibi, yaratıcı",
+  "deBeispiel": "Der Urheber des Textes blieb über Jahrzehnte unbekannt.",
+  "gsw": "Urheber",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Urheber vom Täxt isch über Jaarzehnt unbekannt bliibe."
+ },
+ {
+  "id": 6545,
+  "de": "der Wortlaut",
+  "tr": "metnin tam ifadesi, lafız",
+  "deBeispiel": "Der genaue Wortlaut des Briefes lässt sich nicht mehr feststellen.",
+  "gsw": "Wortluut",
+  "gswArtikel": "de",
+  "gswBeispiel": "De genau Wortluut vom Brief laat sich nüme feschtschtelle."
+ },
+ {
+  "id": 6546,
+  "de": "der Sprachwandel",
+  "tr": "dil değişimi",
+  "deBeispiel": "Sprachwandel vollzieht sich langsam und meist unbemerkt.",
+  "gsw": "Spraachwandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Spraachwandel vollzieht sich langsam und mäischtens unbemerkt."
+ },
+ {
+  "id": 6547,
+  "de": "die Mundart",
+  "tr": "yöresel ağız, şive",
+  "deBeispiel": "In seinen Gedichten mischt er Hochdeutsch und heimatliche Mundart.",
+  "gsw": "Mundart",
+  "gswArtikel": "d",
+  "gswBeispiel": "I sine Gedicht mischt er Hochdüütsch und heimetlichi Mundart."
+ },
+ {
+  "id": 6548,
+  "de": "die Chronik",
+  "tr": "vakayiname, kronik",
+  "deBeispiel": "Die Chronik des Klosters reicht bis ins zwölfte Jahrhundert zurück.",
+  "gsw": "Chronik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chronik vom Chloschter gaat bis is zwölft Jaarhundert zrugg."
+ },
+ {
+  "id": 6549,
+  "de": "der Nachruf",
+  "tr": "anma yazısı, ölüm yazısı",
+  "deBeispiel": "Der Nachruf würdigt vor allem ihre späten Gedichte.",
+  "gsw": "Naachruef",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Naachruef würdiget vor allem iri schpaate Gedicht."
+ },
+ {
+  "id": 6550,
+  "de": "das Sprichwort",
+  "tr": "atasözü",
+  "deBeispiel": "Das Sprichwort trifft die Lage besser als jede Erklärung.",
+  "gsw": "Schprichwort",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schprichwort trifft d Laag besser als jedi Erklärig."
+ },
+ {
+  "id": 6551,
+  "de": "die Mehrdeutigkeit",
+  "tr": "çok anlamlılık, muğlaklık",
+  "deBeispiel": "Die Mehrdeutigkeit des Schlusses hat die Kritik lange beschäftigt.",
+  "gsw": "Mehrdüütigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mehrdüütigkeit vom Schluss hät d Kritik lang bschäftiget."
+ },
+ {
+  "id": 6552,
+  "de": "der Reim",
+  "tr": "kafiye, uyak",
+  "deBeispiel": "Der Dichter verzichtet in seinen späten Texten auf Reime.",
+  "gsw": "Riim",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dichter verzichtet i sine schpaate Täxt uf Riim."
+ },
+ {
+  "id": 6553,
+  "de": "der Vers",
+  "tr": "dize, mısra",
+  "deBeispiel": "Die letzten beiden Verse bleiben bewusst unvollendet.",
+  "gsw": "Värs",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di letschte bäide Värs bliibed bewusst unvollendet."
+ },
+ {
+  "id": 6554,
+  "de": "die Strophe",
+  "tr": "kıta, bent",
+  "deBeispiel": "Jede Strophe endet mit demselben ruhigen Bild.",
+  "gsw": "Schtrophe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Schtrophe endet mit em gliiche ruehige Bild."
+ },
+ {
+  "id": 6555,
+  "de": "die Prosa",
+  "tr": "düzyazı, nesir",
+  "deBeispiel": "Ihre Prosa ist nüchtern und kommt ohne Schmuck aus.",
+  "gsw": "Prosa",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Prosa isch nüechtern und chunt ooni Schmuck uus."
+ },
+ {
+  "id": 6556,
+  "de": "die Lyrik",
+  "tr": "şiir sanatı, lirik şiir",
+  "deBeispiel": "Moderne Lyrik verlangt vom Leser eine hohe Aufmerksamkeit.",
+  "gsw": "Lyrik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Moderni Lyrik verlangt vom Läser e hochi Ufmerksamkeit."
+ },
+ {
+  "id": 6557,
+  "de": "die Abhandlung",
+  "tr": "inceleme, bilimsel makale",
+  "deBeispiel": "Er hat eine trockene Abhandlung über Satzzeichen geschrieben.",
+  "gsw": "Abhandlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät e trocheni Abhandlig über Satzzäiche gschribe."
+ },
+ {
+  "id": 6558,
+  "de": "das Leitmotiv",
+  "tr": "ana motif, temel izlek",
+  "deBeispiel": "Das Meer bildet in ihrem Werk ein wiederkehrendes Leitmotiv.",
+  "gsw": "Leitmotiv",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Meer bildet i irem Wärch es widerkeerends Leitmotiv."
+ },
+ {
+  "id": 6559,
+  "de": "die Streitschrift",
+  "tr": "polemik yazısı, sert eleştiri metni",
+  "deBeispiel": "Seine Streitschrift gegen die Akademie erschien zunächst anonym.",
+  "gsw": "Schtriitschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Schtriitschrift gäge d Akademie isch zerscht anonym erschine."
+ },
+ {
+  "id": 6560,
+  "de": "das Zitat",
+  "tr": "alıntı",
+  "deBeispiel": "Das Zitat ist im Original deutlich schärfer formuliert.",
+  "gsw": "Zitat",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Zitat isch im Original düütlich schärfer formuliert."
+ },
+ {
+  "id": 6561,
+  "de": "die Leserschaft",
+  "tr": "okur kitlesi",
+  "deBeispiel": "Die Zeitschrift hat eine kleine, aber treue Leserschaft.",
+  "gsw": "Läserschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ziitschrift hät e chliini, aber trüüi Läserschaft."
+ },
+ {
+  "id": 6562,
+  "de": "das Wortspiel",
+  "tr": "kelime oyunu",
+  "deBeispiel": "Das Wortspiel im Titel lässt sich kaum übersetzen.",
+  "gsw": "Wortschpil",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Wortschpil im Titel laat sich chuum übersetze."
+ },
+ {
+  "id": 6563,
+  "de": "das Sprachbild",
+  "tr": "dil imgesi, mecaz",
+  "deBeispiel": "Ihre Sprachbilder stammen fast alle aus der Landwirtschaft.",
+  "gsw": "Spraachbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "Iri Spraachbilder schtammed fascht alli us de Landwirtschaft."
+ },
+ {
+  "id": 6564,
+  "de": "die Rahmenhandlung",
+  "tr": "çerçeve öykü",
+  "deBeispiel": "Die Rahmenhandlung spielt in einem verschneiten Gasthaus.",
+  "gsw": "Raamehandlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Raamehandlig schpilt imene verschneite Gaschthuus."
+ },
+ {
+  "id": 6565,
+  "de": "die Rückblende",
+  "tr": "geriye dönüş",
+  "deBeispiel": "Die Kindheit der Figur wird nur in Rückblenden gezeigt.",
+  "gsw": "Rückblände",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chindheit vo de Figur wird nu i Rückblände zäigt."
+ },
+ {
+  "id": 6566,
+  "de": "die Fabel",
+  "tr": "fabl",
+  "deBeispiel": "Die Fabel endet mit einer knappen moralischen Lehre.",
+  "gsw": "Fabel",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fabel endet mit ere chnappe moralische Leer."
+ },
+ {
+  "id": 6567,
+  "de": "der Stilbruch",
+  "tr": "üslup kopukluğu",
+  "deBeispiel": "Der plötzliche Wechsel in die Amtssprache wirkt wie ein Stilbruch.",
+  "gsw": "Schtilbruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De plötzlich Wächsel i d Amtsspraach wirkt wie en Schtilbruch."
+ },
+ {
+  "id": 6568,
+  "de": "der Klappentext",
+  "tr": "arka kapak yazısı, tanıtım yazısı",
+  "deBeispiel": "Der Klappentext verspricht mehr, als das Buch einlöst.",
+  "gsw": "Klappetäxt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Klappetäxt verschpricht mee, als s Buech iilöst."
+ },
+ {
+  "id": 6569,
+  "de": "anspielen",
+  "tr": "ima etmek, göndermede bulunmak",
+  "deBeispiel": "Der Titel spielt auf ein bekanntes Volkslied an.",
+  "gsw": "aaschpile",
+  "gswArtikel": null,
+  "gswBeispiel": "De Titel tuet uf es bekannts Volkslied aaschpile."
+ },
+ {
+  "id": 6570,
+  "de": "zuspitzen",
+  "tr": "keskinleştirmek, uca taşımak",
+  "deBeispiel": "Der Essayist spitzt seine These bewusst zu.",
+  "gsw": "zuespitze",
+  "gswArtikel": null,
+  "gswBeispiel": "De Essayischt tuet sini These bewusst zuespitze."
+ },
+ {
+  "id": 6571,
+  "de": "entlehnen",
+  "tr": "ödünç almak, alıntılamak",
+  "deBeispiel": "Das Wort wurde im Mittelalter aus dem Latein entlehnt.",
+  "gsw": "entlehne",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wort isch im Mittelalter us em Latiin entlehnt worde."
+ },
+ {
+  "id": 6572,
+  "de": "überliefern",
+  "tr": "kuşaktan kuşağa aktarmak, nakletmek",
+  "deBeispiel": "Die Sage wurde jahrhundertelang nur mündlich überliefert.",
+  "gsw": "überliefere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Sag isch jaarhundertelang nu mündlich überlieferet worde."
+ }
+]

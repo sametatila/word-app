@@ -1,0 +1,995 @@
+[
+ {
+  "id": 4411,
+  "de": "beliefern",
+  "tr": "mal sağlamak, tedarik etmek",
+  "deBeispiel": "Der Betrieb beliefert mehrere Kantinen in der Stadt.",
+  "gsw": "beliefere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betrib belieferet mehreri Kantine i de Schtadt."
+ },
+ {
+  "id": 4412,
+  "de": "zertifizieren",
+  "tr": "belgelendirmek, sertifikalandırmak",
+  "deBeispiel": "Der Hof ist seit drei Jahren als ökologischer Betrieb zertifiziert.",
+  "gsw": "zertifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hof isch sit drü Jaar als ökologische Betrib zertifiziert."
+ },
+ {
+  "id": 4413,
+  "de": "subventionieren",
+  "tr": "sübvanse etmek, desteklemek",
+  "deBeispiel": "Der Staat subventioniert kleine Höfe in benachteiligten Regionen.",
+  "gsw": "subventioniere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat subventioniert chliini Höf i benachteiligte Regione."
+ },
+ {
+  "id": 4414,
+  "de": "bewirtschaften",
+  "tr": "işlemek, tarımını yapmak, idare etmek",
+  "deBeispiel": "Die Familie bewirtschaftet knapp vierzig Hektar Ackerland.",
+  "gsw": "bewirtschafte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Familie bewirtschaftet knapp vierzg Hektar Ackerland."
+ },
+ {
+  "id": 4415,
+  "de": "pflügen",
+  "tr": "çift sürmek, toprağı sürmek",
+  "deBeispiel": "Im Herbst wird das Feld ein letztes Mal gepflügt.",
+  "gsw": "pflüege",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Herbscht tuet mer s Fäld es letschts Mal pflüege."
+ },
+ {
+  "id": 4416,
+  "de": "säen",
+  "tr": "ekmek, tohum atmak",
+  "deBeispiel": "Wer zu früh sät, riskiert Verluste durch späten Frost.",
+  "gsw": "säie",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer z früe säit, riskiert Verluscht dur schpaate Froscht."
+ },
+ {
+  "id": 4417,
+  "de": "verfüttern",
+  "tr": "yem olarak vermek",
+  "deBeispiel": "Ein Teil des Getreides wird direkt an die Schweine verfüttert.",
+  "gsw": "verfuettere",
+  "gswArtikel": null,
+  "gswBeispiel": "En Teil vom Getreid wird direkt a d Schwiin verfuetteret."
+ },
+ {
+  "id": 4418,
+  "de": "mästen",
+  "tr": "besiye çekmek, semirtmek",
+  "deBeispiel": "Die Kälber werden nur wenige Monate lang gemästet.",
+  "gsw": "mäschte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chelber werded nur wenig Mönet lang gmäschtet."
+ },
+ {
+  "id": 4419,
+  "de": "keimen",
+  "tr": "çimlenmek, filizlenmek",
+  "deBeispiel": "Die Kartoffeln haben im warmen Keller schon gekeimt.",
+  "gsw": "chiime",
+  "gswArtikel": null,
+  "gswBeispiel": "D Härdöpfel händ im warme Chäller scho gchiimet."
+ },
+ {
+  "id": 4420,
+  "de": "schimmeln",
+  "tr": "küflenmek",
+  "deBeispiel": "Brot schimmelt in der Plastiktüte schneller als im Topf.",
+  "gsw": "schimmle",
+  "gswArtikel": null,
+  "gswBeispiel": "S Brot schimmlet im Plastiksack schnäller als im Hafe."
+ },
+ {
+  "id": 4421,
+  "de": "gären",
+  "tr": "mayalanmak, fermente olmak",
+  "deBeispiel": "Der Kohl muss mehrere Wochen im Fass gären.",
+  "gsw": "gäre",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kabis mues mehreri Wuche im Fass gäre."
+ },
+ {
+  "id": 4422,
+  "de": "pasteurisieren",
+  "tr": "pastörize etmek",
+  "deBeispiel": "Die Milch wird kurz erhitzt und damit pasteurisiert.",
+  "gsw": "pasteurisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Milch wird churz erhitzt und demit pasteurisiert."
+ },
+ {
+  "id": 4423,
+  "de": "abfüllen",
+  "tr": "doldurmak, şişelemek",
+  "deBeispiel": "Der Saft wird noch am selben Tag in Flaschen abgefüllt.",
+  "gsw": "abfülle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Saft tuet mer no am gliiche Tag i Flasche abfülle."
+ },
+ {
+  "id": 4424,
+  "de": "aussortieren",
+  "tr": "ayıklamak, ayırıp çıkarmak",
+  "deBeispiel": "Krumme Gurken werden schon im Betrieb aussortiert.",
+  "gsw": "ussortiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Chrummi Gurke tuet mer scho im Betrib ussortiere."
+ },
+ {
+  "id": 4425,
+  "de": "sättigen",
+  "tr": "doyurmak, tok tutmak",
+  "deBeispiel": "Haferflocken sättigen länger als ein süßes Frühstück.",
+  "gsw": "sättige",
+  "gswArtikel": null,
+  "gswBeispiel": "Haferflocke sättiged länger als es süess Zmorge."
+ },
+ {
+  "id": 4426,
+  "de": "erwirtschaften",
+  "tr": "kazanmak, elde etmek",
+  "deBeispiel": "Der Hof erwirtschaftet den größten Teil seines Umsatzes im Hofladen.",
+  "gsw": "erwirtschafte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hof erwirtschaftet de gröscht Teil vo sim Umsatz im Hoflade."
+ },
+ {
+  "id": 4427,
+  "de": "ökologisch",
+  "tr": "ekolojik, organik",
+  "deBeispiel": "Der Betrieb arbeitet seit der Umstellung vollständig ökologisch.",
+  "gsw": "ökologisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betrib schaffet sit de Umschtellig vollschtändig ökologisch."
+ },
+ {
+  "id": 4428,
+  "de": "konventionell",
+  "tr": "geleneksel, klasik yöntemle yapılan",
+  "deBeispiel": "Konventionell angebaute Ware ist im Schnitt deutlich billiger.",
+  "gsw": "konventionell",
+  "gswArtikel": null,
+  "gswBeispiel": "Konventionell aabouti Waar isch im Schnitt düütlich billiger."
+ },
+ {
+  "id": 4429,
+  "de": "saisonal",
+  "tr": "mevsimlik, mevsimine göre",
+  "deBeispiel": "Wer saisonal einkauft, spart Geld und schont das Klima.",
+  "gsw": "saisonal",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer saisonal iichauft, schpaart Gäld und schont s Klima."
+ },
+ {
+  "id": 4430,
+  "de": "artgerecht",
+  "tr": "türüne uygun",
+  "deBeispiel": "Eine artgerechte Haltung braucht mehr Platz und mehr Personal.",
+  "gsw": "artgerecht",
+  "gswArtikel": null,
+  "gswBeispiel": "E artgerechti Haltig bruucht meh Platz und meh Personal."
+ },
+ {
+  "id": 4431,
+  "de": "fettarm",
+  "tr": "az yağlı",
+  "deBeispiel": "Der Arzt hat ihr eine fettarme Kost empfohlen.",
+  "gsw": "fettarm",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokter hät ere e fettarmi Choscht empfohle."
+ },
+ {
+  "id": 4432,
+  "de": "gentechnikfrei",
+  "tr": "gen teknolojisi içermeyen, GDO'suz",
+  "deBeispiel": "Das Futter für diese Hühner ist nachweislich gentechnikfrei.",
+  "gsw": "gentechnikfrei",
+  "gswArtikel": null,
+  "gswBeispiel": "S Fueter für die Hüener isch nachwiislich gentechnikfrei."
+ },
+ {
+  "id": 4433,
+  "de": "zuckerhaltig",
+  "tr": "şeker içeren, şekerli",
+  "deBeispiel": "Zuckerhaltige Getränke sollen in Schulen künftig verschwinden.",
+  "gsw": "zuckerhaltig",
+  "gswArtikel": null,
+  "gswBeispiel": "Zuckerhaltigi Getränk sölled i de Schuele künftig verschwinde."
+ },
+ {
+  "id": 4434,
+  "de": "ranzig",
+  "tr": "acılaşmış, ekşimiş",
+  "deBeispiel": "Die Nüsse schmecken ranzig und gehören in den Müll.",
+  "gsw": "ranzig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Nüss schmöcked ranzig und ghöred i de Abfall."
+ },
+ {
+  "id": 4435,
+  "de": "reichlich",
+  "tr": "bol, bolca, epeyce",
+  "deBeispiel": "In diesem Jahr gab es reichlich Obst aus der Region.",
+  "gsw": "riichlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Jaar hät s riichlich Obscht us de Region gää."
+ },
+ {
+  "id": 4436,
+  "de": "das Darlehen",
+  "tr": "kredi, borç para",
+  "deBeispiel": "Die Bank hat uns ein zinsgünstiges Darlehen für den Hausbau gewährt.",
+  "gsw": "Darlehe",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Bank hät is es zinsgünschtigs Darlehe für de Huusbau gää."
+ },
+ {
+  "id": 4437,
+  "de": "die Ratenzahlung",
+  "tr": "taksitle ödeme, taksit",
+  "deBeispiel": "Bei Ratenzahlung fallen zusätzliche Kosten von acht Prozent an.",
+  "gsw": "Ratezalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi ere Ratezalig chömed zuesätzlichi Choschte vo acht Prozänt dezue."
+ },
+ {
+  "id": 4438,
+  "de": "die Bürgschaft",
+  "tr": "kefalet, kefillik",
+  "deBeispiel": "Ohne die Bürgschaft der Eltern hätte er keine Wohnung bekommen.",
+  "gsw": "Bürgschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni d Bürgschaft vo de Eltere hät er kei Wonig überchoo."
+ },
+ {
+  "id": 4439,
+  "de": "der Kontoauszug",
+  "tr": "hesap ekstresi, hesap dökümü",
+  "deBeispiel": "Auf dem letzten Kontoauszug entdeckte sie eine unbekannte Abbuchung.",
+  "gsw": "Kontouszug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em letschte Kontouszug hät si e unbekannti Abbuechig entdeckt."
+ },
+ {
+  "id": 4440,
+  "de": "die Lastschrift",
+  "tr": "otomatik ödeme talimatı, hesaptan tahsilat",
+  "deBeispiel": "Die Miete wird jeden Monat per Lastschrift eingezogen.",
+  "gsw": "Laschtschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Miet wird jede Monet per Laschtschrift iizoge."
+ },
+ {
+  "id": 4441,
+  "de": "der Dauerauftrag",
+  "tr": "düzenli ödeme talimatı",
+  "deBeispiel": "Für die Versicherung habe ich einen Dauerauftrag eingerichtet.",
+  "gsw": "Daueruftrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für d Versicherig han i en Daueruftrag iigrichtet."
+ },
+ {
+  "id": 4442,
+  "de": "das Guthaben",
+  "tr": "alacak, hesapta kalan artı bakiye",
+  "deBeispiel": "Nach der Rückerstattung besteht auf deinem Konto ein kleines Guthaben.",
+  "gsw": "Guethabe",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach de Rückerschtattig hät s uf dim Konto es chliises Guethabe."
+ },
+ {
+  "id": 4443,
+  "de": "die Ersparnis",
+  "tr": "tasarruf, birikim",
+  "deBeispiel": "Die Familie hat ihre Ersparnisse in die Renovierung gesteckt.",
+  "gsw": "Erschparnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Familie hät iri Erschparnis i d Renovation gschteckt."
+ },
+ {
+  "id": 4444,
+  "de": "der Haushaltsplan",
+  "tr": "bütçe planı, bütçe",
+  "deBeispiel": "Der Stadtrat verabschiedet den Haushaltsplan für das kommende Jahr.",
+  "gsw": "Huushaltsplan",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtadtrat verabschiedet de Huushaltsplan fürs choomend Jaar."
+ },
+ {
+  "id": 4445,
+  "de": "die Mahngebühr",
+  "tr": "gecikme ihtar ücreti, ihtarname bedeli",
+  "deBeispiel": "Wer zu spät zahlt, muss mit einer Mahngebühr rechnen.",
+  "gsw": "Mahngebühr",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer z schpaat zalt, mues mit ere Mahngebühr rächne."
+ },
+ {
+  "id": 4446,
+  "de": "die Zahlungsfrist",
+  "tr": "ödeme süresi, vade",
+  "deBeispiel": "Die Zahlungsfrist läuft am Ende des Monats ab.",
+  "gsw": "Zaligsfrischt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zaligsfrischt lauft am Endi vom Monet ab."
+ },
+ {
+  "id": 4447,
+  "de": "die Fälligkeit",
+  "tr": "vade, muacceliyet",
+  "deBeispiel": "Bei Fälligkeit der Rechnung wird der Betrag automatisch abgezogen.",
+  "gsw": "Fälligkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Fälligkeit vo de Rächnig wird de Betrag automatisch abzoge."
+ },
+ {
+  "id": 4448,
+  "de": "der Zahlungsverzug",
+  "tr": "ödeme gecikmesi, temerrüt",
+  "deBeispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor.",
+  "gsw": "Zaalungsverzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi Zaalungsverzug behaltet sich s Unternäme rächtlichi Schritt vor."
+ },
+ {
+  "id": 4449,
+  "de": "die Pfändung",
+  "tr": "haciz",
+  "deBeispiel": "Nach dem Urteil drohte ihm die Pfändung seines Gehalts.",
+  "gsw": "Pfändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Urteil hät em d Pfändig vo sim Loon droht."
+ },
+ {
+  "id": 4450,
+  "de": "der Gläubiger",
+  "tr": "alacaklı",
+  "deBeispiel": "Die Gläubiger stimmten dem Sanierungsplan der Firma schließlich zu.",
+  "gsw": "Gläubiger",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Gläubiger händ em Sanierigsplaan vo de Firma schliesslich zuegschtimmt."
+ },
+ {
+  "id": 4451,
+  "de": "der Schuldner",
+  "tr": "borçlu",
+  "deBeispiel": "Der Schuldner konnte die vereinbarten Raten nicht mehr aufbringen.",
+  "gsw": "Schuldner",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schuldner hät di abgmachte Rate nüme chöne uufbringe."
+ },
+ {
+  "id": 4452,
+  "de": "die Bonität",
+  "tr": "kredi notu, ödeme gücü",
+  "deBeispiel": "Vor der Vergabe prüft die Bank sorgfältig die Bonität des Kunden.",
+  "gsw": "Bonität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Vergaab prüeft d Bank sorgfältig d Bonität vom Chund."
+ },
+ {
+  "id": 4453,
+  "de": "die Hypothek",
+  "tr": "ipotek",
+  "deBeispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro.",
+  "gsw": "Hypothek",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf em Huus liit no e Hypothek vo 200.000 Euro."
+ },
+ {
+  "id": 4454,
+  "de": "die Aktie",
+  "tr": "hisse senedi",
+  "deBeispiel": "Die Aktien des Konzerns verloren nach der Meldung deutlich an Wert.",
+  "gsw": "Aktie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aktie vom Konzern händ nach de Mäldig düütlich a Wert verlore."
+ },
+ {
+  "id": 4455,
+  "de": "das Wertpapier",
+  "tr": "menkul kıymet",
+  "deBeispiel": "Er hat sein Erbe in sichere Wertpapiere investiert.",
+  "gsw": "Wertpapier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er hät sis Erb i sicheri Wertpapier inveschtiert."
+ },
+ {
+  "id": 4456,
+  "de": "die Spekulation",
+  "tr": "spekülasyon, vurgunculuk",
+  "deBeispiel": "Die Spekulation mit Wohnraum treibt die Mieten in die Höhe.",
+  "gsw": "Spekulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Spekulation mit Wohnruum tribt d Miete i d Höchi."
+ },
+ {
+  "id": 4457,
+  "de": "der Kontostand",
+  "tr": "hesap bakiyesi",
+  "deBeispiel": "Kurz vor Monatsende sieht er lieber nicht auf den Kontostand.",
+  "gsw": "Kontoschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Churz vor em Monetsänd luegt er lieber nöd uf de Kontoschtand."
+ },
+ {
+  "id": 4458,
+  "de": "der Freibetrag",
+  "tr": "vergiden muaf tutar, istisna tutarı",
+  "deBeispiel": "Bis zu diesem Freibetrag bleiben Kapitalerträge völlig unversteuert.",
+  "gsw": "Freibetrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bis zu dem Freibetrag bliibed d Kapitalerträg völlig unverschtüüret."
+ },
+ {
+  "id": 4459,
+  "de": "die Abgabe",
+  "tr": "kesinti (vergi ve primler), harç, resim",
+  "deBeispiel": "Von seinem Lohn gehen fast vierzig Prozent für Abgaben ab.",
+  "gsw": "Abgaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vo sim Loon gönd fascht vierzg Prozänt für Abgaabe ewägg."
+ },
+ {
+  "id": 4460,
+  "de": "die Einkommensteuer",
+  "tr": "gelir vergisi",
+  "deBeispiel": "Selbstständige zahlen die Einkommensteuer meist in vierteljährlichen Vorauszahlungen.",
+  "gsw": "Iikommeschtüür",
+  "gswArtikel": "d",
+  "gswBeispiel": "Selbschtändigi zaaled d Iikommeschtüür meischtens i verteljäärliche Voruszaalige."
+ },
+ {
+  "id": 4461,
+  "de": "das Finanzamt",
+  "tr": "vergi dairesi",
+  "deBeispiel": "Das Finanzamt hat seinen Einspruch gegen den Bescheid zurückgewiesen.",
+  "gsw": "Finanzamt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Finanzamt hät sin Iischpruch gäge de Bescheid zruggwise."
+ },
+ {
+  "id": 4462,
+  "de": "die Steuerhinterziehung",
+  "tr": "vergi kaçırma",
+  "deBeispiel": "Wegen Steuerhinterziehung wurde der Unternehmer zu einer Geldstrafe verurteilt.",
+  "gsw": "Schtüürhinterziehig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge Schtüürhinterziehig isch de Unternämer zunere Gäldschtraaf verurteilt worde."
+ },
+ {
+  "id": 4463,
+  "de": "die Vertragslaufzeit",
+  "tr": "sözleşme süresi",
+  "deBeispiel": "Die Vertragslaufzeit beträgt zwei Jahre und verlängert sich automatisch.",
+  "gsw": "Vertragslaufziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vertragslaufziit isch zwäi Jaar und verlängeret sich automatisch."
+ },
+ {
+  "id": 4464,
+  "de": "die Police",
+  "tr": "poliçe, sigorta sözleşmesi",
+  "deBeispiel": "In der Police steht genau, welche Schäden ersetzt werden.",
+  "gsw": "Police",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Police schtaat genau, weli Schäde ersetzt wärded."
+ },
+ {
+  "id": 4465,
+  "de": "die Selbstbeteiligung",
+  "tr": "muafiyet tutarı, katılım payı",
+  "deBeispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden.",
+  "gsw": "Selbschtbeteiligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dem Tarif liit d Selbschtbeteiligig bi 300 Euro pro Schade."
+ },
+ {
+  "id": 4466,
+  "de": "die Haftpflicht",
+  "tr": "sorumluluk sigortası, mali mesuliyet",
+  "deBeispiel": "Den zerbrochenen Spiegel übernimmt zum Glück meine Haftpflicht.",
+  "gsw": "Haftpflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "De verbrochni Schpiegel übernimmt zum Glück mini Haftpflicht."
+ },
+ {
+  "id": 4467,
+  "de": "die Rentenversicherung",
+  "tr": "emeklilik sigortası",
+  "deBeispiel": "In die gesetzliche Rentenversicherung zahlt jeder Angestellte automatisch ein.",
+  "gsw": "Räntenversicherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I d gsetzlich Räntenversicherig zaalt jede Aagschtellti automatisch ii."
+ },
+ {
+  "id": 4468,
+  "de": "die Berufsunfähigkeit",
+  "tr": "iş göremezlik, mesleğini yapamaz duruma gelme",
+  "deBeispiel": "Gegen Berufsunfähigkeit sollte man sich möglichst früh versichern lassen.",
+  "gsw": "Berüefsunfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge Berüefsunfähigkeit sött mer sich möglichscht früeh versichere laa."
+ },
+ {
+  "id": 4469,
+  "de": "der Ruhestand",
+  "tr": "emeklilik dönemi",
+  "deBeispiel": "Nach vierzig Berufsjahren geht sie im Herbst in den Ruhestand.",
+  "gsw": "Rueheschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach vierzg Berüefsjaar gaat si im Herbscht i de Rueheschtand."
+ },
+ {
+  "id": 4470,
+  "de": "der Zuschuss",
+  "tr": "destek ödemesi, hibe",
+  "deBeispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss.",
+  "gsw": "Zueschuss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für di nöi Heizig gits en schtaatliche Zueschuss."
+ },
+ {
+  "id": 4471,
+  "de": "der Schadenersatz",
+  "tr": "tazminat",
+  "deBeispiel": "Der Mieter fordert Schadenersatz für die beschädigten Möbel.",
+  "gsw": "Schadeersatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Mieter verlangt Schadeersatz für di beschädigte Möbel."
+ },
+ {
+  "id": 4472,
+  "de": "der Antragsteller",
+  "tr": "başvuru sahibi",
+  "deBeispiel": "Der Antragsteller muss seine Einkünfte der letzten drei Monate nachweisen.",
+  "gsw": "Aatragschteller",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Aatragschteller mues sini Iikünft vo de letschte drei Mönet nachwiise."
+ },
+ {
+  "id": 4473,
+  "de": "die Provision",
+  "tr": "komisyon (ücret), aracılık ücreti",
+  "deBeispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
+  "gsw": "Provision",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Makler überchunt e Provision vo drei Prozänt vom Chaufpriis."
+ },
+ {
+  "id": 4474,
+  "de": "das Kapital",
+  "tr": "sermaye, anapara",
+  "deBeispiel": "Für die Gründung fehlt ihm schlicht das nötige Kapital.",
+  "gsw": "Kapital",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für d Gründig fäält em ganz eifach s nötig Kapital."
+ },
+ {
+  "id": 4475,
+  "de": "das Vermögen",
+  "tr": "servet, varlık, mal varlığı",
+  "deBeispiel": "Sein Vermögen ist breit über mehrere Anlageformen verteilt.",
+  "gsw": "Vermöge",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sis Vermöge isch breit über mehreri Aalageforme verteilt."
+ },
+ {
+  "id": 4476,
+  "de": "die Liquidität",
+  "tr": "likidite, nakit gücü",
+  "deBeispiel": "Der Betrieb geriet trotz voller Auftragsbücher in Schwierigkeiten mit der Liquidität.",
+  "gsw": "Liquidität",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Betriib isch trotz volle Uftragsbüecher i Schwirigkeite mit de Liquidität choo."
+ },
+ {
+  "id": 4477,
+  "de": "der Kostenvoranschlag",
+  "tr": "maliyet tahmini, fiyat teklifi",
+  "deBeispiel": "Vor der Reparatur bat sie um einen schriftlichen Kostenvoranschlag.",
+  "gsw": "Koschtevoraaschlag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vor de Reparatur hät si um en schriftliche Koschtevoraaschlag bätte."
+ },
+ {
+  "id": 4478,
+  "de": "die Währung",
+  "tr": "para birimi",
+  "deBeispiel": "Die Währung des Landes hat innerhalb weniger Wochen stark verloren.",
+  "gsw": "Währig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Währig vom Land hät innerhalb vo weneme paar Wuche schtark verlore."
+ },
+ {
+  "id": 4479,
+  "de": "der Etat",
+  "tr": "bütçe, ödenek",
+  "deBeispiel": "Der Etat für Kultur wurde in diesem Jahr erneut gekürzt.",
+  "gsw": "Etat",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Etat für Kultur isch das Jaar wieder kürzt worde."
+ },
+ {
+  "id": 4480,
+  "de": "die Buchführung",
+  "tr": "muhasebe, defter tutma",
+  "deBeispiel": "Eine ordentliche Buchführung erspart am Jahresende viel Ärger.",
+  "gsw": "Buechfüerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En ordentlichi Buechfüerig erschpaart am Jaarändi vill Ärger."
+ },
+ {
+  "id": 4481,
+  "de": "tilgen",
+  "tr": "borç ödemek, itfa etmek",
+  "deBeispiel": "In zwölf Jahren hatte das Paar den gesamten Kredit getilgt.",
+  "gsw": "tilge",
+  "gswArtikel": null,
+  "gswBeispiel": "I zwölf Jaar hät s Paar de ganz Kredit tilgt."
+ },
+ {
+  "id": 4482,
+  "de": "abbuchen",
+  "tr": "hesaptan çekmek, hesaba borç kaydetmek",
+  "deBeispiel": "Der Beitrag wird jeweils zum Ersten des Monats abgebucht.",
+  "gsw": "abbueche",
+  "gswArtikel": null,
+  "gswBeispiel": "De Beitrag wird jewiils am Erschte vom Monet abbuecht."
+ },
+ {
+  "id": 4483,
+  "de": "aufstocken",
+  "tr": "artırmak (bütçe, sayı, kadro), takviye etmek",
+  "deBeispiel": "Die Regierung will die Zuschüsse für Familien deutlich aufstocken.",
+  "gsw": "ufschtocke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regierig wott d Zueschüss für Familie düütlich ufschtocke."
+ },
+ {
+  "id": 4484,
+  "de": "entwerten",
+  "tr": "değersizleştirmek, değerini düşürmek",
+  "deBeispiel": "Eine hohe Inflation entwertet die Ersparnisse der kleinen Sparer.",
+  "gsw": "entwerte",
+  "gswArtikel": null,
+  "gswBeispiel": "E hochi Inflation entwertet d Erschparniss vo de chliine Sparer."
+ },
+ {
+  "id": 4485,
+  "de": "aufwenden",
+  "tr": "harcamak, sarf etmek",
+  "deBeispiel": "Für die Sanierung mussten sie erhebliche Mittel aufwenden.",
+  "gsw": "ufwände",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Sanierig händ si erhebligi Mittel müesse ufwände."
+ },
+ {
+  "id": 4486,
+  "de": "erstatten",
+  "tr": "geri ödemek, iade etmek",
+  "deBeispiel": "Die Kasse erstattet die Kosten für die Behandlung vollständig.",
+  "gsw": "erschtatte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kasse erschtattet d Choschte für d Behandlig vollschtändig."
+ },
+ {
+  "id": 4487,
+  "de": "begleichen",
+  "tr": "ödemek, kapatmak",
+  "deBeispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag.",
+  "gsw": "begliiche",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte begliiched Si di offni Rächnig bis am nächschte Friitig."
+ },
+ {
+  "id": 4488,
+  "de": "entrichten",
+  "tr": "ödemek, yatırmak",
+  "deBeispiel": "Für den Grundbucheintrag ist eine Gebühr zu entrichten.",
+  "gsw": "entrichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Für de Grundbuecheitrag isch e Gebüür z entrichte."
+ },
+ {
+  "id": 4489,
+  "de": "absetzen",
+  "tr": "vergiden düşmek, mahsup etmek",
+  "deBeispiel": "Das Arbeitszimmer kann sie teilweise von der Steuer absetzen.",
+  "gsw": "absetze",
+  "gswArtikel": null,
+  "gswBeispiel": "S Arbetszimmer chan si teilwiis vo de Schtüür absetze."
+ },
+ {
+  "id": 4490,
+  "de": "kalkulieren",
+  "tr": "hesaplamak, maliyet çıkarmak",
+  "deBeispiel": "Der Betrieb hat die Preise offenbar zu knapp kalkuliert.",
+  "gsw": "kalkuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betriib hät d Priis offebar z chnapp kalkuliert."
+ },
+ {
+  "id": 4491,
+  "de": "verrechnen",
+  "tr": "mahsup etmek, karşılıklı düşmek",
+  "deBeispiel": "Die Anzahlung wird mit der Schlussrechnung verrechnet.",
+  "gsw": "verrächne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aazaalig wird mit de Schlussrächnig verrächnet."
+ },
+ {
+  "id": 4492,
+  "de": "streuen",
+  "tr": "dağıtmak, yaymak",
+  "deBeispiel": "Wer sein Risiko streut, verliert bei einem Kurssturz weniger.",
+  "gsw": "schtröie",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer sis Risiko schtröit, verliert bi eme Kursschturz weniger."
+ },
+ {
+  "id": 4493,
+  "de": "aufbringen",
+  "tr": "denkleştirmek, parayı bulmak",
+  "deBeispiel": "Die nötige Summe konnte die Familie nicht rechtzeitig aufbringen.",
+  "gsw": "ufbringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Di nötig Summe hät d Familie nöd rächtziitig chöne ufbringe."
+ },
+ {
+  "id": 4494,
+  "de": "bewilligen",
+  "tr": "onaylamak, tahsis etmek",
+  "deBeispiel": "Die Behörde hat den Antrag auf Wohngeld schließlich bewilligt.",
+  "gsw": "bewillige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde hät de Aatrag uf Wohngäld schliesslich bewilligt.",
+  "ayniLehce": [
+   "genehmigen (B1)"
+  ]
+ },
+ {
+  "id": 4495,
+  "de": "aufkommen",
+  "tr": "masrafını üstlenmek, karşılamak",
+  "deBeispiel": "Für die Reparatur muss der Vermieter aufkommen.",
+  "gsw": "ufchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Reparatur mues de Vermieter ufchoo."
+ },
+ {
+  "id": 4496,
+  "de": "einbehalten",
+  "tr": "kesmek, alıkoymak",
+  "deBeispiel": "Der Arbeitgeber behält die Steuern direkt vom Lohn ein.",
+  "gsw": "iibehalte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Arbetgeber tuet d Schtüüre direkt vom Loon iibehalte."
+ },
+ {
+  "id": 4497,
+  "de": "anlegen",
+  "tr": "yatırım yapmak, para yatırmak",
+  "deBeispiel": "Sie hat ihr Erspartes langfristig in Fonds angelegt.",
+  "gsw": "aaleege",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät ires Erschparts wele langfrischtig i Fonds aaleege."
+ },
+ {
+  "id": 4498,
+  "de": "zurücklegen",
+  "tr": "kenara koymak, biriktirmek",
+  "deBeispiel": "Jeden Monat legt er hundert Euro für Notfälle zurück.",
+  "gsw": "zrugglege",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Monet tuet er hundert Euro für Notfäll zrugglege."
+ },
+ {
+  "id": 4499,
+  "de": "veranlagen",
+  "tr": "vergilendirmek, vergi tarh etmek",
+  "deBeispiel": "Ehepaare können sich gemeinsam oder getrennt veranlagen lassen.",
+  "gsw": "veraalage",
+  "gswArtikel": null,
+  "gswBeispiel": "Eepaar chönd sich gmeinsam oder getrennt veraalage laa."
+ },
+ {
+  "id": 4500,
+  "de": "aufzehren",
+  "tr": "tüketmek, bitirmek",
+  "deBeispiel": "Die hohen Nebenkosten zehren sein ganzes Gehalt auf.",
+  "gsw": "ufzeere",
+  "gswArtikel": null,
+  "gswBeispiel": "Di hooche Näbechoschte tüend sin ganze Loon ufzeere."
+ },
+ {
+  "id": 4501,
+  "de": "gebührenfrei",
+  "tr": "ücretsiz, masrafsız",
+  "deBeispiel": "Überweisungen innerhalb Europas sind bei dieser Bank gebührenfrei.",
+  "gsw": "gebüürefrei",
+  "gswArtikel": null,
+  "gswBeispiel": "Überwiisige innerhalb vo Europa sind bi dere Bank gebüürefrei."
+ },
+ {
+  "id": 4502,
+  "de": "rückwirkend",
+  "tr": "geriye dönük, geçmişe etkili",
+  "deBeispiel": "Die Erhöhung gilt rückwirkend ab dem ersten Januar.",
+  "gsw": "rückwirkend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Erhöigig gilt rückwirkend ab em erschte Januar."
+ },
+ {
+  "id": 4503,
+  "de": "vierteljährlich",
+  "tr": "üç ayda bir, üç aylık",
+  "deBeispiel": "Der Beitrag kann monatlich oder vierteljährlich gezahlt werden.",
+  "gsw": "verteljäärlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Beitrag chan mer monetlich oder verteljäärlich zaale."
+ },
+ {
+  "id": 4504,
+  "de": "zinslos",
+  "tr": "faizsiz",
+  "deBeispiel": "Der Betrieb gewährte ihr ein zinsloses Darlehen über zwei Jahre.",
+  "gsw": "zinslos",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betriib hät ere es zinsloses Darlehe über zwäi Jaar gää."
+ },
+ {
+  "id": 4505,
+  "de": "ungedeckt",
+  "tr": "karşılıksız, teminatsız",
+  "deBeispiel": "Ein ungedeckter Scheck kann teure Folgen für den Aussteller haben.",
+  "gsw": "ungedeckt",
+  "gswArtikel": null,
+  "gswBeispiel": "En ungedeckte Check chan tüüri Folge für de Uussteller haa."
+ },
+ {
+  "id": 4506,
+  "de": "kostspielig",
+  "tr": "masraflı, pahalıya mal olan",
+  "deBeispiel": "Der Rechtsstreit erwies sich als überraschend kostspielig.",
+  "gsw": "koschtschpielig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Rächtsschtriit hät sich als überraschend koschtschpielig usegschtellt."
+ },
+ {
+  "id": 4507,
+  "de": "unwiderruflich",
+  "tr": "geri alınamaz, dönülemez",
+  "deBeispiel": "Nach der Bestätigung ist die Zahlung unwiderruflich.",
+  "gsw": "unwiderrueflich",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Beschtätigig isch d Zaalig unwiderrueflich."
+ },
+ {
+  "id": 4508,
+  "de": "anteilig",
+  "tr": "oransal, pay oranında",
+  "deBeispiel": "Die Heizkosten werden anteilig nach Wohnfläche auf alle umgelegt.",
+  "gsw": "aateilig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Heizchoschte wärded aateilig nach Wohnflächi uf alli umgleit."
+ },
+ {
+  "id": 4509,
+  "de": "bargeldlos",
+  "tr": "nakitsiz",
+  "deBeispiel": "In vielen Cafés kann man inzwischen nur noch bargeldlos zahlen.",
+  "gsw": "bargäldlos",
+  "gswArtikel": null,
+  "gswBeispiel": "I vile Cafés chan mer inzwüsche nur no bargäldlos zaale."
+ },
+ {
+  "id": 4510,
+  "de": "vorzeitig",
+  "tr": "erken, vadesinden önce",
+  "deBeispiel": "Wer den Kredit vorzeitig ablöst, muss eine Entschädigung zahlen.",
+  "gsw": "vorziitig",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer de Kredit vorziitig ablöst, mues en Entschädigung zaale."
+ },
+ {
+  "id": 4511,
+  "de": "die Geborgenheit",
+  "tr": "güven duygusu, huzur, sıcak yuva hissi",
+  "deBeispiel": "Kinder brauchen vor allem Geborgenheit in den ersten Lebensjahren.",
+  "gsw": "Geborgeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chind bruuched vor allem Geborgeheit i de erschte Läbensjaar."
+ },
+ {
+  "id": 4512,
+  "de": "die Fürsorge",
+  "tr": "özen, ilgi, bakım",
+  "deBeispiel": "Ohne die Fürsorge seiner Tochter könnte er nicht allein wohnen.",
+  "gsw": "Fürsorg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni d Fürsorg vo siner Tochter chönt er nöd elei wohne."
+ },
+ {
+  "id": 4513,
+  "de": "die Partnerschaft",
+  "tr": "birliktelik, ilişki, ortaklık",
+  "deBeispiel": "Eine gleichberechtigte Partnerschaft setzt offene Gespräche voraus.",
+  "gsw": "Partnerschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "E gliichberächtigti Partnerschaft setzt offni Gschpröch vorus."
+ },
+ {
+  "id": 4514,
+  "de": "das Missverständnis",
+  "tr": "yanlış anlaşılma, yanlış anlama",
+  "deBeispiel": "Der ganze Streit beruhte auf einem einfachen Missverständnis.",
+  "gsw": "Missverschtändnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "De ganz Schtriit hät uf eme eifache Missverschtändnis beruet."
+ },
+ {
+  "id": 4515,
+  "de": "die Wertschätzung",
+  "tr": "değer verme, takdir",
+  "deBeispiel": "Viele Pflegekräfte vermissen die Wertschätzung der Gesellschaft.",
+  "gsw": "Wertschätzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill Pflegechräft vermissed d Wertschätzig vo de Gsellschaft."
+ },
+ {
+  "id": 4516,
+  "de": "das Selbstwertgefühl",
+  "tr": "özsaygı, benlik saygısı",
+  "deBeispiel": "Ständige Kritik kann das Selbstwertgefühl eines Kindes zerstören.",
+  "gsw": "Selbschtwertgfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schtändigi Kritik chan s Selbschtwertgfüel vomene Chind kaputt mache."
+ },
+ {
+  "id": 4517,
+  "de": "die Persönlichkeit",
+  "tr": "kişilik, şahsiyet",
+  "deBeispiel": "Die Persönlichkeit eines Menschen entwickelt sich ein Leben lang.",
+  "gsw": "Persönlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Persönlichkeit vomene Mäntsch entwicklet sich es Läbe lang."
+ },
+ {
+  "id": 4518,
+  "de": "die Verhaltensweise",
+  "tr": "davranış biçimi, davranış tarzı",
+  "deBeispiel": "Solche Verhaltensweisen lernen Kinder meistens von ihren Eltern.",
+  "gsw": "Verhaltenswiis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sonigi Verhaltenswiise lernid d Chind meischtens vo ihrne Eltere."
+ },
+ {
+  "id": 4519,
+  "de": "die Neigung",
+  "tr": "eğilim, meyil",
+  "deBeispiel": "Er hat eine Neigung dazu, Konflikte einfach zu ignorieren.",
+  "gsw": "Neigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät e Neigig dezue, Konflikt eifach z ignoriere."
+ },
+ {
+  "id": 4520,
+  "de": "die Veranlagung",
+  "tr": "yatkınlık, doğuştan gelen özellik",
+  "deBeispiel": "Ob Ängstlichkeit vererbt wird oder nicht, hängt auch von der Veranlagung ab.",
+  "gsw": "Veraalagig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ob Ängschtlichkeit vererbt wird oder nöd, hanget au vo de Veraalagig ab."
+ }
+]

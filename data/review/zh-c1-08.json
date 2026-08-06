@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6023,
+  "de": "die Altersarmut",
+  "tr": "yaşlılıkta yoksulluk",
+  "deBeispiel": "Altersarmut trifft vor allem Frauen mit unterbrochenen Erwerbsbiografien.",
+  "gsw": "Altersarmuet",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Altersarmuet trifft vor allem Fraue mit underbrochne Erwerbsbiografie."
+ },
+ {
+  "id": 6024,
+  "de": "die Pflegebedürftigkeit",
+  "tr": "bakıma muhtaçlık",
+  "deBeispiel": "Die Zahl der Menschen mit Pflegebedürftigkeit wird sich bis 2050 verdoppeln.",
+  "gsw": "Pfläägbedürftigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zaal vo de Mänsche mit Pfläägbedürftigkeit wird sich bis 2050 verdopple."
+ },
+ {
+  "id": 6025,
+  "de": "die Kinderlosigkeit",
+  "tr": "çocuksuzluk",
+  "deBeispiel": "Gewollte Kinderlosigkeit gilt längst nicht mehr als gesellschaftlicher Makel.",
+  "gsw": "Chinderlosigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gwolti Chinderlosigkeit giltet längscht nüme als gsellschaftliche Makel."
+ },
+ {
+  "id": 6026,
+  "de": "die Familienpolitik",
+  "tr": "aile politikası",
+  "deBeispiel": "Eine wirksame Familienpolitik braucht Geld, Betreuungsplätze und flexible Arbeitszeiten.",
+  "gsw": "Familiepolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "E wirksami Familiepolitik bruucht Gäld, Betröiigsplätz und flexibli Arbetsziite."
+ },
+ {
+  "id": 6027,
+  "de": "die Daseinsvorsorge",
+  "tr": "temel kamu hizmetlerinin sağlanması",
+  "deBeispiel": "Der Staat ist auch in leeren Regionen zur Daseinsvorsorge verpflichtet.",
+  "gsw": "Daseinsvorsorg",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Schtaat isch au i leere Regione zur Daseinsvorsorg verpflichtet."
+ },
+ {
+  "id": 6028,
+  "de": "das Szenario",
+  "tr": "senaryo",
+  "deBeispiel": "Selbst im optimistischen Szenario sinkt die Einwohnerzahl nach 2040.",
+  "gsw": "Szenario",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sogar im optimistische Szenario sinkt d Iiwoonerzaal nach 2040."
+ },
+ {
+  "id": 6029,
+  "de": "die Trendwende",
+  "tr": "eğilim değişimi, gidişatın tersine dönmesi",
+  "deBeispiel": "Von einer echten Trendwende kann bei diesen Zahlen keine Rede sein.",
+  "gsw": "Trendwändi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vo ere echte Trendwändi cha bi dene Zaale kei Red sii."
+ },
+ {
+  "id": 6030,
+  "de": "die Regelaltersgrenze",
+  "tr": "yasal emeklilik yaşı",
+  "deBeispiel": "Eine Anhebung der Regelaltersgrenze stößt bei den Gewerkschaften auf Widerstand.",
+  "gsw": "Rägelaltersgränze",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Aahebig vo de Rägelaltersgränze schtoosst bi de Gwerkschafte uf Widerschtand."
+ },
+ {
+  "id": 6031,
+  "de": "die Frühverrentung",
+  "tr": "erken emeklilik",
+  "deBeispiel": "Jahrzehntelang galt Frühverrentung als bequemes Mittel gegen Arbeitslosigkeit.",
+  "gsw": "Früeverrentig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jaarzäänteland hät d Früeverrentig als bequems Mittel gäge Arbetslosigkeit gulte."
+ },
+ {
+  "id": 6032,
+  "de": "die Lebensarbeitszeit",
+  "tr": "çalışma ömrü, toplam çalışma süresi",
+  "deBeispiel": "Eine längere Lebensarbeitszeit ist rechnerisch plausibel und politisch heikel.",
+  "gsw": "Läbensarbetsziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "E längeri Läbensarbetsziit isch rächnerisch plausibel und politisch heikel."
+ },
+ {
+  "id": 6033,
+  "de": "das Solidarprinzip",
+  "tr": "dayanışma ilkesi",
+  "deBeispiel": "Das Solidarprinzip gerät unter Druck, wenn immer weniger einzahlen.",
+  "gsw": "Solidarprinzip",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Solidarprinzip chunt under Druck, wänn immer weniger iizaaled."
+ },
+ {
+  "id": 6034,
+  "de": "die Generationengerechtigkeit",
+  "tr": "kuşaklar arası adalet",
+  "deBeispiel": "Im Namen der Generationengerechtigkeit fordert er einen Umbau des Systems.",
+  "gsw": "Generationegerechtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Name vo de Generationegerechtigkeit forderet er en Umbau vom Syschtem."
+ },
+ {
+  "id": 6035,
+  "de": "die Finanzierungslücke",
+  "tr": "finansman açığı",
+  "deBeispiel": "Die Finanzierungslücke in der Pflegeversicherung wächst schneller als erwartet.",
+  "gsw": "Finanzierigslücke",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Finanzierigslücke i de Pfläägversicherig wachst schneller als erwartet."
+ },
+ {
+  "id": 6036,
+  "de": "die Bevölkerungspolitik",
+  "tr": "nüfus politikası",
+  "deBeispiel": "Jede Bevölkerungspolitik bewegt sich zwischen Anreiz und Übergriff.",
+  "gsw": "Bevölkerigspolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Bevölkerigspolitik bewegt sich zwüschet Aariiz und Übergriff."
+ },
+ {
+  "id": 6037,
+  "de": "die Reproduktion",
+  "tr": "üreme, yeniden üretim",
+  "deBeispiel": "Für die einfache Reproduktion einer Gesellschaft sind gut zwei Kinder nötig.",
+  "gsw": "Reproduktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für di eifachi Reproduktion vo ere Gsellschaft sind guet zwäi Chind nötig."
+ },
+ {
+  "id": 6038,
+  "de": "die Haushaltsgröße",
+  "tr": "hane büyüklüğü",
+  "deBeispiel": "Die durchschnittliche Haushaltsgröße ist auf unter zwei Personen gefallen.",
+  "gsw": "Huushaltsgrössi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di durschnittlichi Huushaltsgrössi isch uf under zwäi Persone gfalle."
+ },
+ {
+  "id": 6039,
+  "de": "der Mehrgenerationenhaushalt",
+  "tr": "çok kuşaklı hane",
+  "deBeispiel": "Der Mehrgenerationenhaushalt ist in Westeuropa fast vollständig verschwunden.",
+  "gsw": "Meegenerationehuushalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Meegenerationehuushalt isch i Weschteuropa fascht vollschtändig verschwunde."
+ },
+ {
+  "id": 6040,
+  "de": "der Sozialstaat",
+  "tr": "sosyal devlet",
+  "deBeispiel": "Der Sozialstaat wurde für eine junge, wachsende Bevölkerung entworfen.",
+  "gsw": "Sozialschtaat",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Sozialschtaat isch für e jungi, wachsendi Bevölkerig entworfe worde."
+ },
+ {
+  "id": 6041,
+  "de": "die Umverteilung",
+  "tr": "yeniden dağıtım",
+  "deBeispiel": "Hinter der Rentenfrage steht immer eine Umverteilung zwischen den Generationen.",
+  "gsw": "Umverteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hinder de Rentefrag schtaat immer e Umverteilig zwüschet de Generatione."
+ },
+ {
+  "id": 6042,
+  "de": "die Entvölkerung",
+  "tr": "nüfusun boşalması, ıssızlaşma",
+  "deBeispiel": "Die Entvölkerung ganzer Landstriche lässt sich kaum noch aufhalten.",
+  "gsw": "Entvölkerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entvölkerig vo ganze Landschtrich laat sich chuum no uufhalte."
+ },
+ {
+  "id": 6043,
+  "de": "die Arbeitskräftereserve",
+  "tr": "işgücü rezervi",
+  "deBeispiel": "Die letzte große Arbeitskräftereserve sind ältere Beschäftigte und Teilzeitkräfte.",
+  "gsw": "Arbetschräftereserve",
+  "gswArtikel": "d",
+  "gswBeispiel": "D letscht grooss Arbetschräftereserve sind ölteri Beschäftigti und Teilziitchräft."
+ },
+ {
+  "id": 6044,
+  "de": "die Rentenreform",
+  "tr": "emeklilik reformu",
+  "deBeispiel": "Jede Rentenreform verschiebt Lasten, ohne sie wirklich zu beseitigen.",
+  "gsw": "Rentereform",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Rentereform verschiebt Laschte, ohni si würklich z beseitige."
+ },
+ {
+  "id": 6045,
+  "de": "auswandern",
+  "tr": "göç etmek, ülkeden ayrılmak",
+  "deBeispiel": "Jährlich wandern Zehntausende gut qualifizierte Akademiker aus.",
+  "gsw": "uswandere",
+  "gswArtikel": null,
+  "gswBeispiel": "Jäärlich wanderet Zäätuusigi guet qualifizierti Akademiker us."
+ },
+ {
+  "id": 6046,
+  "de": "prognostizieren",
+  "tr": "öngörmek, tahmin etmek",
+  "deBeispiel": "Das Institut prognostiziert einen Verlust von zwei Millionen Erwerbstätigen.",
+  "gsw": "prognoschtiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Inschtitut prognoschtiziert en Verluscht vo zwäi Millione Erwerbstätige."
+ },
+ {
+  "id": 6047,
+  "de": "hochrechnen",
+  "tr": "çıkarım yaparak hesaplamak, projeksiyon yapmak",
+  "deBeispiel": "Die Forscher haben die Stichprobe auf die Gesamtbevölkerung hochgerechnet.",
+  "gsw": "hoochrächne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Forscher händ d Schtichproob uf d Gsamtbevölkerig hoochgrächnet."
+ },
+ {
+  "id": 6048,
+  "de": "fortschreiben",
+  "tr": "sürdürerek güncellemek, aynı yönde ilerletmek",
+  "deBeispiel": "Wer den heutigen Trend einfach fortschreibt, unterschätzt mögliche Brüche.",
+  "gsw": "fortschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer de hüttig Trend äifach fortschriibt, unterschätzt möglichi Brüch."
+ },
+ {
+  "id": 6049,
+  "de": "gegensteuern",
+  "tr": "karşı önlem almak, gidişata karşı koymak",
+  "deBeispiel": "Die Kommunen versuchen mit günstigem Bauland gegenzusteuern.",
+  "gsw": "gägeschtüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kommune versüechet mit günschtigem Bauland gägezschtüüre."
+ },
+ {
+  "id": 6050,
+  "de": "verjüngen",
+  "tr": "gençleştirmek",
+  "deBeispiel": "Kein Programm kann eine alternde Gesellschaft binnen weniger Jahre verjüngen.",
+  "gsw": "verjünge",
+  "gswArtikel": null,
+  "gswBeispiel": "Käis Programm cha e alterndi Gsellschaft innerhalb vo weenige Jaar verjünge."
+ },
+ {
+  "id": 6051,
+  "de": "aufrechterhalten",
+  "tr": "sürdürmek, ayakta tutmak",
+  "deBeispiel": "Das jetzige Leistungsniveau lässt sich auf Dauer kaum aufrechterhalten.",
+  "gsw": "ufrächterhalte",
+  "gswArtikel": null,
+  "gswBeispiel": "S jetzig Leischtigsniveau lat sich uf d Duur chuum ufrächterhalte."
+ },
+ {
+  "id": 6052,
+  "de": "ausbluten",
+  "tr": "kan kaybetmek, tükenmek",
+  "deBeispiel": "Ohne Arbeitsplätze bluten die kleinen Gemeinden im Osten aus.",
+  "gsw": "usbluete",
+  "gswArtikel": null,
+  "gswBeispiel": "Ooni Arbetsplätz tüend di chliine Gmeinde im Oschte usbluete."
+ },
+ {
+  "id": 6053,
+  "de": "nachrücken",
+  "tr": "yerini almak üzere gelmek, ardından gelmek",
+  "deBeispiel": "Für jeden Rentner rücken heute deutlich weniger Junge nach.",
+  "gsw": "naachrucke",
+  "gswArtikel": null,
+  "gswBeispiel": "Für jede Rentner git s hüt düütlich weniger Jungi, wo naachruckend."
+ },
+ {
+  "id": 6054,
+  "de": "vergreisen",
+  "tr": "nüfusça yaşlanmak, ihtiyarlamak",
+  "deBeispiel": "Ganze Landkreise vergreisen, während die Städte weiter wachsen.",
+  "gsw": "vergreise",
+  "gswArtikel": null,
+  "gswBeispiel": "Ganzi Landchräis vergreised, während d Schtädt wiiter wachsed."
+ },
+ {
+  "id": 6055,
+  "de": "demografisch",
+  "tr": "demografik, nüfusla ilgili",
+  "deBeispiel": "Der demografische Wandel wirkt langsam, aber er ist unerbittlich.",
+  "gsw": "demografisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De demografisch Wandel wirkt langsam, aber er isch unerbittlich."
+ },
+ {
+  "id": 6056,
+  "de": "kinderreich",
+  "tr": "çok çocuklu",
+  "deBeispiel": "Kinderreiche Familien tragen ein überdurchschnittliches Armutsrisiko.",
+  "gsw": "chinderriich",
+  "gswArtikel": null,
+  "gswBeispiel": "Chinderriichi Familie händ es überdurchschnittlichs Armuetsrisiko."
+ },
+ {
+  "id": 6057,
+  "de": "strukturschwach",
+  "tr": "yapısal olarak zayıf, geri kalmış",
+  "deBeispiel": "In strukturschwachen Regionen fehlt es an Ärzten und Busverbindungen.",
+  "gsw": "schtrukturschwach",
+  "gswArtikel": null,
+  "gswBeispiel": "I schtrukturschwache Regione fäält s a Ärzt und a Busverbindige."
+ },
+ {
+  "id": 6058,
+  "de": "hierzulande",
+  "tr": "bu ülkede, bizde",
+  "deBeispiel": "Hierzulande wird die Debatte fast ausschließlich über die Rente geführt.",
+  "gsw": "hierzland",
+  "gswArtikel": null,
+  "gswBeispiel": "Hierzland wird d Debatte fascht uusschliesslich über d Rente gfüert."
+ },
+ {
+  "id": 6059,
+  "de": "absehbar",
+  "tr": "öngörülebilir, yakın gelecekte beklenen",
+  "deBeispiel": "In absehbarer Zeit wird jede dritte Person über sechzig sein.",
+  "gsw": "abseebar",
+  "gswArtikel": null,
+  "gswBeispiel": "In abseebarer Ziit wird jedi dritti Person über sächzg sii."
+ },
+ {
+  "id": 6060,
+  "de": "vielerorts",
+  "tr": "birçok yerde",
+  "deBeispiel": "Vielerorts stehen ganze Straßenzüge seit Jahren leer.",
+  "gsw": "vilerorts",
+  "gswArtikel": null,
+  "gswBeispiel": "Vilerorts schtönd ganzi Schtraassezüüg sit Jaare leer."
+ },
+ {
+  "id": 6061,
+  "de": "langfristig",
+  "tr": "uzun vadeli, uzun vadede",
+  "deBeispiel": "Langfristig entscheidet nicht die Geburtenrate, sondern die Produktivität.",
+  "gsw": "langfrischtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Langfrischtig entschäidet nöd d Geburterate, sondern d Produktivität."
+ },
+ {
+  "id": 6062,
+  "de": "der Waffenstillstand",
+  "tr": "ateşkes",
+  "deBeispiel": "Der brüchige Waffenstillstand hielt nur wenige Wochen.",
+  "gsw": "Waffeschtillschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De brüchig Waffeschtillschtand hät nu weeni Wuche ghalte."
+ },
+ {
+  "id": 6063,
+  "de": "die Neutralität",
+  "tr": "tarafsızlık",
+  "deBeispiel": "Die Schweiz beruft sich bei solchen Konflikten auf ihre Neutralität.",
+  "gsw": "Neutralität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schwiiz berüeft sich bi settige Konflikt uf iri Neutralität."
+ },
+ {
+  "id": 6064,
+  "de": "die Souveränität",
+  "tr": "egemenlik",
+  "deBeispiel": "Der Einmarsch verletzte die Souveränität des Nachbarstaates.",
+  "gsw": "Souveränität",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Iimarsch hät d Souveränität vom Nochberschtaat verletzt."
+ },
+ {
+  "id": 6065,
+  "de": "das Völkerrecht",
+  "tr": "uluslararası hukuk, devletler hukuku",
+  "deBeispiel": "Nach geltendem Völkerrecht ist ein solcher Angriff unzulässig.",
+  "gsw": "Völcherrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach em gältende Völcherrächt isch en settige Aagriff unzuelässig."
+ },
+ {
+  "id": 6066,
+  "de": "die Deeskalation",
+  "tr": "gerilimin azaltılması, yatıştırma",
+  "deBeispiel": "Beide Seiten signalisierten erstmals Interesse an einer Deeskalation.",
+  "gsw": "Deeskalation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bäidi Siite händ zum erschte Mal Interässe an ere Deeskalation signalisiert."
+ },
+ {
+  "id": 6067,
+  "de": "die Konfliktpartei",
+  "tr": "çatışmanın tarafı, ihtilaf tarafı",
+  "deBeispiel": "Alle Konfliktparteien wurden an den Verhandlungsort geladen.",
+  "gsw": "Konfliktpartei",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alli Konfliktparteie sind an de Verhandligsort iiglade worde."
+ },
+ {
+  "id": 6068,
+  "de": "das Friedensabkommen",
+  "tr": "barış anlaşması",
+  "deBeispiel": "Das Friedensabkommen wurde nach zähen Gesprächen endlich unterschrieben.",
+  "gsw": "Fridensabkomme",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Fridensabkomme isch nach zaache Gspröch ändlich underschribe worde."
+ },
+ {
+  "id": 6069,
+  "de": "das Kriegsverbrechen",
+  "tr": "savaş suçu",
+  "deBeispiel": "Die Kommission dokumentierte mutmaßliche Kriegsverbrechen in der Region.",
+  "gsw": "Chriegsverbräche",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Kommission hät muetmassligi Chriegsverbräche i de Region dokumentiert."
+ },
+ {
+  "id": 6070,
+  "de": "die Menschenrechtsverletzung",
+  "tr": "insan hakları ihlali",
+  "deBeispiel": "Der Bericht listet systematische Menschenrechtsverletzungen im Grenzgebiet auf.",
+  "gsw": "Mäntscherächtsverletzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Bricht listet syschtematischi Mäntscherächtsverletzige im Gränzgebiet uuf."
+ },
+ {
+  "id": 6071,
+  "de": "die Schutzverantwortung",
+  "tr": "koruma sorumluluğu",
+  "deBeispiel": "Kritiker sehen in der Schutzverantwortung einen Vorwand für Interventionen.",
+  "gsw": "Schutzverantwortig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Kritiker gseend i de Schutzverantwortig en Vorwand für Interventione."
+ },
+ {
+  "id": 6072,
+  "de": "die Konfrontation",
+  "tr": "karşı karşıya gelme, çatışma",
+  "deBeispiel": "Die Rhetorik der Regierung steuert offen auf Konfrontation zu.",
+  "gsw": "Konfrontation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rhetorik vo de Regierig schtüüret offe uf e Konfrontation zue."
+ },
+ {
+  "id": 6073,
+  "de": "die Annäherung",
+  "tr": "yakınlaşma",
+  "deBeispiel": "Nach Jahren der Feindschaft kam es zu einer vorsichtigen Annäherung.",
+  "gsw": "Aanäherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach Jaare vo Fiindschaft isch es zu ere vorsichtige Aanäherig choo."
+ },
+ {
+  "id": 6074,
+  "de": "die Entspannung",
+  "tr": "yumuşama, gerginliğin azalması",
+  "deBeispiel": "Der Gefangenenaustausch gilt als Zeichen einer beginnenden Entspannung.",
+  "gsw": "Entschpannig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Gfangene-Uustuusch gilt als Zäiche vo ere aafangende Entschpannig."
+ },
+ {
+  "id": 6075,
+  "de": "der Unterhändler",
+  "tr": "müzakereci, görüşme temsilcisi",
+  "deBeispiel": "Die Unterhändler beider Lager trafen sich an einem geheimen Ort.",
+  "gsw": "Underhändler",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Underhändler vo bäide Lager händ sich an eme gheime Ort troffe."
+ },
+ {
+  "id": 6076,
+  "de": "der Schiedsspruch",
+  "tr": "hakem kararı, tahkim kararı",
+  "deBeispiel": "Der Schiedsspruch ist für beide Staaten bindend.",
+  "gsw": "Schiedsschpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schiedsschpruch isch für bäid Schtaate bindend."
+ },
+ {
+  "id": 6077,
+  "de": "die Resolution",
+  "tr": "karar (uluslararası kuruluş), karar metni",
+  "deBeispiel": "Der Sicherheitsrat verabschiedete die Resolution mit knapper Mehrheit.",
+  "gsw": "Resolution",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Sicherheitsraat hät d Resolution mit chnappe Meerheit verabschidet."
+ },
+ {
+  "id": 6078,
+  "de": "das Vetorecht",
+  "tr": "veto hakkı",
+  "deBeispiel": "Das Vetorecht der ständigen Mitglieder blockiert seit Jahren jede Entscheidung.",
+  "gsw": "Vetorächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Vetorächt vo de schtändige Mitglider blockiert sit Jaare jedi Entschäidig."
+ },
+ {
+  "id": 6079,
+  "de": "die Stimmenthaltung",
+  "tr": "çekimser oy",
+  "deBeispiel": "Drei Stimmenthaltungen verhinderten eine einstimmige Verurteilung.",
+  "gsw": "Schtimmenthaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Drei Schtimmenthaltige händ e äischtimmigi Verurteilig verhinderet."
+ },
+ {
+  "id": 6080,
+  "de": "der Vertragsbruch",
+  "tr": "anlaşma ihlali, sözleşmeyi bozma",
+  "deBeispiel": "Die Stationierung neuer Raketen wertete man als klaren Vertragsbruch.",
+  "gsw": "Vertraagsbruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Schtationierig vo neue Rakete hät mer als klaare Vertraagsbruch gwertet."
+ },
+ {
+  "id": 6081,
+  "de": "der Bündnisfall",
+  "tr": "ittifak yükümlülüğünün doğması",
+  "deBeispiel": "Zum ersten Mal in der Geschichte wurde der Bündnisfall ausgerufen.",
+  "gsw": "Bündnisfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zum erschte Mal i de Gschicht isch de Bündnisfall uusgrüefe worde."
+ },
+ {
+  "id": 6082,
+  "de": "die Beistandspflicht",
+  "tr": "yardım yükümlülüğü, destek zorunluluğu",
+  "deBeispiel": "Aus dem Vertrag ergibt sich eine gegenseitige Beistandspflicht.",
+  "gsw": "Bischtandspflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Us em Vertraag ergit sich e gägesitigi Bischtandspflicht."
+ },
+ {
+  "id": 6083,
+  "de": "die Gegenmaßnahme",
+  "tr": "karşı önlem",
+  "deBeispiel": "Als Gegenmaßnahme wurden die Handelsvergünstigungen sofort ausgesetzt.",
+  "gsw": "Gägemassnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Als Gägemassnaam sind d Handelsvergünschtigige sofort uusgsetzt worde."
+ },
+ {
+  "id": 6084,
+  "de": "die Vergeltung",
+  "tr": "misilleme, karşılık verme",
+  "deBeispiel": "Der Angriff war offenkundig als Vergeltung gedacht.",
+  "gsw": "Vergeltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aagriff isch offesichtlich als Vergeltig gmeint gsi."
+ },
+ {
+  "id": 6085,
+  "de": "die Repressalie",
+  "tr": "misilleme tedbiri, baskı önlemi",
+  "deBeispiel": "Die Zivilbevölkerung fürchtet Repressalien der Besatzer.",
+  "gsw": "Repressalie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zivilbevölkerig fürchtet Repressalie vo de Bsatzer."
+ },
+ {
+  "id": 6086,
+  "de": "die Provokation",
+  "tr": "provokasyon, kışkırtma",
+  "deBeispiel": "Das Manöver an der Grenze wurde als gezielte Provokation gewertet.",
+  "gsw": "Provokation",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Manöver a de Gränze isch als gezielti Provokation gwertet worde."
+ },
+ {
+  "id": 6087,
+  "de": "die Grenzverletzung",
+  "tr": "sınır ihlali",
+  "deBeispiel": "Die wiederholten Grenzverletzungen führten zu einer scharfen Protestnote.",
+  "gsw": "Gränzverletzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di widerhoolte Gränzverletzige händ zu ere scharfe Proteschtnote gfüert."
+ },
+ {
+  "id": 6088,
+  "de": "die Vertreibung",
+  "tr": "sürgün, yerinden etme",
+  "deBeispiel": "Die massenhafte Vertreibung der Bevölkerung erfüllt den Tatbestand eines Verbrechens.",
+  "gsw": "Vertriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di massehafti Vertriibig vo de Bevölkerig erfüllt de Tatbeschtand vo eme Verbräche."
+ },
+ {
+  "id": 6089,
+  "de": "die Abrüstung",
+  "tr": "silahsızlanma",
+  "deBeispiel": "Über die atomare Abrüstung wird seit Jahrzehnten ergebnislos verhandelt.",
+  "gsw": "Abrüschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d atomari Abrüschtig wird sit Jaarzähnt ergäbnislos verhandlet."
+ },
+ {
+  "id": 6090,
+  "de": "das Machtgleichgewicht",
+  "tr": "güç dengesi",
+  "deBeispiel": "Der Beitritt neuer Mitglieder verschob das regionale Machtgleichgewicht.",
+  "gsw": "Machtgliichgwicht",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Biitritt vo neue Mitglider hät s regionale Machtgliichgwicht verschobe."
+ },
+ {
+  "id": 6091,
+  "de": "die Einflusssphäre",
+  "tr": "nüfuz alanı, etki alanı",
+  "deBeispiel": "Beide Großmächte betrachten die Region als ihre Einflusssphäre.",
+  "gsw": "Iiflusssphäre",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bäidi Groossmächt betrachted d Region als iri Iiflusssphäre."
+ },
+ {
+  "id": 6092,
+  "de": "die Bedrohungslage",
+  "tr": "tehdit durumu",
+  "deBeispiel": "Der Geheimdienst bewertet die Bedrohungslage derzeit als erhöht.",
+  "gsw": "Bedroigslaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Gheimdienscht bewertet d Bedroigslaag momentan als erhöht."
+ },
+ {
+  "id": 6093,
+  "de": "die Sicherheitsgarantie",
+  "tr": "güvenlik garantisi",
+  "deBeispiel": "Ohne belastbare Sicherheitsgarantien wird das Land keinem Abkommen zustimmen.",
+  "gsw": "Sicherheitsgarantie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni belaschtbari Sicherheitsgarantie wird s Land käim Abkomme zuestimme."
+ },
+ {
+  "id": 6094,
+  "de": "der Truppenabzug",
+  "tr": "askerlerin çekilmesi",
+  "deBeispiel": "Der vollständige Truppenabzug soll bis zum Jahresende erfolgen.",
+  "gsw": "Truppeabzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "De vollschtändig Truppeabzug söll bis zum Jaaresändi erfolge."
+ },
+ {
+  "id": 6095,
+  "de": "die Pufferzone",
+  "tr": "tampon bölge",
+  "deBeispiel": "Zwischen den Fronten wurde eine entmilitarisierte Pufferzone eingerichtet.",
+  "gsw": "Pufferzone",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüsched de Fronte isch e entmilitarisierti Pufferzone iigrichtet worde."
+ },
+ {
+  "id": 6096,
+  "de": "die Demarkationslinie",
+  "tr": "sınır çizgisi, ayrım hattı",
+  "deBeispiel": "Beobachter überwachen die Einhaltung der Demarkationslinie rund um die Uhr.",
+  "gsw": "Demarkationslinie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Beobachter überwached d Iihaltig vo de Demarkationslinie rund um d Uur."
+ },
+ {
+  "id": 6097,
+  "de": "die Annexion",
+  "tr": "ilhak",
+  "deBeispiel": "Die Annexion der Halbinsel wurde international nicht anerkannt.",
+  "gsw": "Annexion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Annexion vo de Halbinsle isch international nöd aanerkennt worde."
+ },
+ {
+  "id": 6098,
+  "de": "der Gebietsanspruch",
+  "tr": "toprak talebi, toprak iddiası",
+  "deBeispiel": "Historische Karten dienen beiden Seiten zur Begründung ihrer Gebietsansprüche.",
+  "gsw": "Gebietsaaschpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Hischtorischi Charte dienend bäide Siite zur Begründig vo irne Gebietsaaschprüch."
+ },
+ {
+  "id": 6099,
+  "de": "das Selbstbestimmungsrecht",
+  "tr": "kendi kaderini tayin hakkı",
+  "deBeispiel": "Die Minderheit pocht auf ihr Selbstbestimmungsrecht.",
+  "gsw": "Sälbschtbeschtimmigsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Minderheit pocht uf ir Sälbschtbeschtimmigsrächt."
+ },
+ {
+  "id": 6100,
+  "de": "die Nichteinmischung",
+  "tr": "içişlerine karışmama",
+  "deBeispiel": "Der Grundsatz der Nichteinmischung wird in der Praxis oft umgangen.",
+  "gsw": "Nichtiimischig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Grundsatz vo de Nichtiimischig wird i de Praxis oft umgange."
+ },
+ {
+  "id": 6101,
+  "de": "die Schutzmacht",
+  "tr": "koruyucu devlet, himaye eden güç",
+  "deBeispiel": "Ein neutrales Land übernahm die Rolle der Schutzmacht.",
+  "gsw": "Schutzmacht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Es neutrals Land hät d Rolle vo de Schutzmacht übernaa."
+ },
+ {
+  "id": 6102,
+  "de": "die Verhandlungsführung",
+  "tr": "müzakere yönetimi, görüşmelerin yürütülmesi",
+  "deBeispiel": "Seine geschickte Verhandlungsführung rettete das Abkommen in letzter Minute.",
+  "gsw": "Verhandligsfüerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini gschickti Verhandligsfüerig hät s Abkomme i letschter Minute grettet."
+ },
+ {
+  "id": 6103,
+  "de": "die Vertrauensbildung",
+  "tr": "güven inşası, güven oluşturma",
+  "deBeispiel": "Kleine Schritte der Vertrauensbildung gehen jedem Abkommen voraus.",
+  "gsw": "Vertrauensbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chliini Schritt vo de Vertrauensbildig göönd jedem Abkomme voruus."
+ },
+ {
+  "id": 6104,
+  "de": "die Absichtserklärung",
+  "tr": "niyet beyanı",
+  "deBeispiel": "Bisher liegt nur eine unverbindliche Absichtserklärung vor.",
+  "gsw": "Absichtserklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bishär liit nu e unverbindlichi Absichtserklärig vor."
+ },
+ {
+  "id": 6105,
+  "de": "die Übereinkunft",
+  "tr": "mutabakat, uzlaşma",
+  "deBeispiel": "Nach langem Ringen erzielten die Delegationen eine tragfähige Übereinkunft.",
+  "gsw": "Übereinkunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach langem Ringe händ d Delegatione e traagfäigi Übereinkunft erziilt."
+ },
+ {
+  "id": 6106,
+  "de": "der Interventionismus",
+  "tr": "müdahalecilik",
+  "deBeispiel": "Der Autor kritisiert den humanitären Interventionismus westlicher Regierungen.",
+  "gsw": "Interventionismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Autor kritisiert de humanitär Interventionismus vo weschtliche Regierige."
+ },
+ {
+  "id": 6107,
+  "de": "das Embargo",
+  "tr": "ambargo",
+  "deBeispiel": "Das Embargo auf Rüstungsgüter gilt seit über zehn Jahren.",
+  "gsw": "Embargo",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Embargo uf Rüschtigsgüeter gilt sit über zää Jaar."
+ },
+ {
+  "id": 6108,
+  "de": "ratifizieren",
+  "tr": "onaylamak, tasdik etmek",
+  "deBeispiel": "Das Parlament ratifizierte den Vertrag erst nach heftiger Debatte.",
+  "gsw": "ratifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Parlamänt hät de Vertraag erscht nach heftiger Debatte ratifiziert."
+ },
+ {
+  "id": 6109,
+  "de": "aufkündigen",
+  "tr": "feshetmek, tek taraflı sona erdirmek",
+  "deBeispiel": "Die Regierung kündigte das Abkommen ohne Vorwarnung auf.",
+  "gsw": "ufchünde",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regierig hät s Abkomme ooni Vorwarnig ufchündet."
+ },
+ {
+  "id": 6110,
+  "de": "lockern",
+  "tr": "gevşetmek, hafifletmek",
+  "deBeispiel": "Als Geste des guten Willens lockerte man die Einreisebeschränkungen.",
+  "gsw": "lockere",
+  "gswArtikel": null,
+  "gswBeispiel": "Als Geschte vom guete Wille hät mer d Iireisebeschränkige glockeret."
+ },
+ {
+  "id": 6111,
+  "de": "einlenken",
+  "tr": "geri adım atmak, uzlaşmaya yanaşmak",
+  "deBeispiel": "Erst unter wirtschaftlichem Druck lenkte die Führung ein.",
+  "gsw": "iilänke",
+  "gswArtikel": null,
+  "gswBeispiel": "Erscht under wirtschaftlichem Druck hät d Füerig iiglänkt."
+ },
+ {
+  "id": 6112,
+  "de": "bekräftigen",
+  "tr": "teyit etmek, yinelemek",
+  "deBeispiel": "Beide Seiten bekräftigten ihren Willen zu weiteren Gesprächen.",
+  "gsw": "bechräftige",
+  "gswArtikel": null,
+  "gswBeispiel": "Bäidi Siite händ ire Wille zu wiitere Gspröch bechräftiget."
+ },
+ {
+  "id": 6113,
+  "de": "missachten",
+  "tr": "hiçe saymak, uymamak",
+  "deBeispiel": "Wer die Auflagen missachtet, muss mit weiteren Strafen rechnen.",
+  "gsw": "missachte",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer d Uuflaage missachtet, mues mit wiitere Schtroofe rächne."
+ },
+ {
+  "id": 6114,
+  "de": "eingreifen",
+  "tr": "müdahale etmek, karışmak",
+  "deBeispiel": "Die Staatengemeinschaft zögerte lange, militärisch einzugreifen.",
+  "gsw": "iigriife",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtaategmeinschaft hät lang zögeret, militärisch iizgriife."
+ },
+ {
+  "id": 6115,
+  "de": "entsenden",
+  "tr": "göndermek, sevk etmek",
+  "deBeispiel": "Die Organisation entsandte eine unabhängige Beobachtermission in das Krisengebiet.",
+  "gsw": "entsände",
+  "gswArtikel": null,
+  "gswBeispiel": "D Organisation hät e unabhängigi Beobachtermission is Kriisegebiet entsändet."
+ },
+ {
+  "id": 6116,
+  "de": "belagern",
+  "tr": "kuşatmak",
+  "deBeispiel": "Die Stadt wurde monatelang belagert und von Hilfslieferungen abgeschnitten.",
+  "gsw": "belagere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtadt isch monatelang belageret und vo Hilfsliferige abgschnitte worde."
+ },
+ {
+  "id": 6117,
+  "de": "zurückschlagen",
+  "tr": "püskürtmek, karşılık vermek",
+  "deBeispiel": "Die Verteidiger schlugen den Vorstoß an der Ostflanke zurück.",
+  "gsw": "zruggschlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "D Verteidiger händ de Vorschtooss a de Oschtflanke zruggschlage."
+ },
+ {
+  "id": 6118,
+  "de": "beitreten",
+  "tr": "katılmak, üye olmak",
+  "deBeispiel": "Das Land will dem Bündnis so rasch wie möglich beitreten.",
+  "gsw": "biitrete",
+  "gswArtikel": null,
+  "gswBeispiel": "S Land wott em Bündnis so schnäll wie möglich biitrete."
+ },
+ {
+  "id": 6119,
+  "de": "beschwichtigen",
+  "tr": "yatıştırmak, sakinleştirmek",
+  "deBeispiel": "Der Minister versuchte, die aufgebrachte Öffentlichkeit zu beschwichtigen.",
+  "gsw": "beschwichtige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Minischter hät probiert, di ufgregti Öffentlichkeit z beschwichtige."
+ },
+ {
+  "id": 6120,
+  "de": "sich solidarisieren",
+  "tr": "dayanışma göstermek, yan yana durmak",
+  "deBeispiel": "Mehrere Nachbarstaaten solidarisierten sich öffentlich mit dem angegriffenen Land.",
+  "gsw": "sich solidarisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mehreri Nochberschtaate händ sich öffentlich mit em aagriffene Land solidarisiert."
+ },
+ {
+  "id": 6121,
+  "de": "multilateral",
+  "tr": "çok taraflı",
+  "deBeispiel": "Solche Probleme lassen sich nur multilateral lösen.",
+  "gsw": "multilateral",
+  "gswArtikel": null,
+  "gswBeispiel": "Settigi Problem lönd sich nu multilateral löse."
+ },
+ {
+  "id": 6122,
+  "de": "einseitig",
+  "tr": "tek taraflı",
+  "deBeispiel": "Der einseitige Rückzug aus dem Vertrag überraschte selbst enge Partner.",
+  "gsw": "äisitig",
+  "gswArtikel": null,
+  "gswBeispiel": "De äisitig Rückzug us em Vertraag hät sogar engi Partner überrascht."
+ },
+ {
+  "id": 6123,
+  "de": "diplomatisch",
+  "tr": "diplomatik",
+  "deBeispiel": "Auf diplomatischem Weg ließ sich die Krise vorerst entschärfen.",
+  "gsw": "diplomatisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf diplomatischem Wääg hät sich d Krise vorersch entschärfe laa."
+ },
+ {
+  "id": 6124,
+  "de": "militärisch",
+  "tr": "askerî",
+  "deBeispiel": "Eine militärische Lösung schließt die Regierung bislang aus.",
+  "gsw": "militärisch",
+  "gswArtikel": null,
+  "gswBeispiel": "E militärischi Löösig schliesst d Regierig bishär uus."
+ },
+ {
+  "id": 6125,
+  "de": "humanitär",
+  "tr": "insani",
+  "deBeispiel": "Die humanitäre Lage in der belagerten Stadt verschlechtert sich täglich.",
+  "gsw": "humanitär",
+  "gswArtikel": null,
+  "gswBeispiel": "D humanitäri Laag i de belagerete Schtadt verschlächteret sich täglich."
+ },
+ {
+  "id": 6126,
+  "de": "heikel",
+  "tr": "hassas, çetrefilli, nazik (konu)",
+  "deBeispiel": "Die Frage der Grenzziehung bleibt der heikelste Punkt der Gespräche.",
+  "gsw": "heikel",
+  "gswArtikel": null,
+  "gswBeispiel": "D Froog vo de Gränzziejig bliibt de heikelscht Punkt vo de Gspröch."
+ },
+ {
+  "id": 6127,
+  "de": "angespannt",
+  "tr": "gergin",
+  "deBeispiel": "Das Verhältnis der beiden Staaten ist seit Monaten angespannt.",
+  "gsw": "aagschpannt",
+  "gswArtikel": null,
+  "gswBeispiel": "S Verhältnis vo de zwäi Schtaate isch sit Monet aagschpannt."
+ },
+ {
+  "id": 6128,
+  "de": "unnachgiebig",
+  "tr": "taviz vermeyen, katı",
+  "deBeispiel": "In der Frage der Entschädigungen blieb die Delegation unnachgiebig.",
+  "gsw": "unnaachgiebig",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Froog vo de Entschädigige isch d Delegation unnaachgiebig bliibe."
+ },
+ {
+  "id": 6129,
+  "de": "gesprächsbereit",
+  "tr": "görüşmeye açık, diyaloga hazır",
+  "deBeispiel": "Trotz aller Rückschläge zeigt sich die Gegenseite weiterhin gesprächsbereit.",
+  "gsw": "gspröchsberäit",
+  "gswArtikel": null,
+  "gswBeispiel": "Trotz allne Rückschläg zäigt sich d Gägesiite wiiterhin gspröchsberäit."
+ },
+ {
+  "id": 6130,
+  "de": "im Gegenzug",
+  "tr": "buna karşılık, karşılığında",
+  "deBeispiel": "Im Gegenzug verlangte man die Freilassung aller politischen Gefangenen.",
+  "gsw": "im Gägezug",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Gägezug hät mer d Freilaassig vo allne politische Gfangene verlangt."
+ },
+ {
+  "id": 6131,
+  "de": "das Indiz",
+  "tr": "emare, belirti, ipucu",
+  "deBeispiel": "Die Studie liefert nur Indizien, aber keinen eindeutigen Nachweis.",
+  "gsw": "Indiz",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Schtudie liferet nu Indizie, aber käi eindüütige Naachwiis."
+ },
+ {
+  "id": 6132,
+  "de": "die Entgegnung",
+  "tr": "karşılık, mukabele, cevap",
+  "deBeispiel": "Seine Entgegnung auf die Kritik wirkte souverän und gut vorbereitet.",
+  "gsw": "Entgegnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Entgegnig uf d Kritik hät souverän und guet vorbereitet gwirkt."
+ }
+]

@@ -1,0 +1,1054 @@
+[
+ {
+  "id": 2471,
+  "de": "der Patient",
+  "tr": "hasta (erkek)",
+  "deBeispiel": "Ich bin Patientin bei Dr. Hausner. Ich möchte bitte einen Termin.",
+  "gsw": "Patiänt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich bi Patiänt bim Dokter Hausner. Ich hett gärn en Termin."
+ },
+ {
+  "id": 2472,
+  "de": "die Patientin",
+  "tr": "hasta (kadın)",
+  "deBeispiel": "Ich bin Patientin bei Dr. Hausner. Ich möchte bitte einen Termin.",
+  "gsw": "Patiäntin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich bi Patiäntin bi de Frau Dokter Hausner. Ich hett gärn en Termin."
+ },
+ {
+  "id": 2473,
+  "de": "pauschal",
+  "tr": "paket hâlinde, her şey dahil; toptan",
+  "deBeispiel": "Sie haben die Reise pauschal gebucht.",
+  "gsw": "pauschal",
+  "gswArtikel": null,
+  "gswBeispiel": "Si händ d Räis pauschal buechet."
+ },
+ {
+  "id": 2474,
+  "de": "das Pech",
+  "tr": "şanssızlık, kötü şans",
+  "deBeispiel": "1. Es regnet. Unser Picknick fällt leider aus. – So ein Pech! 2. Wir hatten im Urlaub Pech mit dem Wetter.",
+  "gsw": "Päch",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es rägnet. Öises Picknick fallt läider us. – So es Päch!"
+ },
+ {
+  "id": 2475,
+  "de": "peinlich",
+  "tr": "utanç verici, mahcup edici",
+  "deBeispiel": "1. Das muss dir nicht peinlich sein. 2. Das war eine peinliche Situation.",
+  "gsw": "piinlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Das mues der nöd piinlich sii. Das isch e piinlichi Situation gsii."
+ },
+ {
+  "id": 2476,
+  "de": "die Pension",
+  "tr": "pansiyon",
+  "deBeispiel": "Im Urlaub haben wir in einer kleinen Pension gewohnt.",
+  "gsw": "Pension",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Ferie händ mir in ere chliine Pension gwont."
+ },
+ {
+  "id": 2477,
+  "de": "in Pension gehen",
+  "tr": "emekliye ayrılmak, emekli olmak",
+  "deBeispiel": "1. Ich gehe Ende des Jahres in Pension. 2. Mein Nachbar ist seit zehn Jahren in Pension.",
+  "gsw": "i d Pension gaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wott Änd Jaar i d Pension gaa.",
+  "ayniLehce": [
+   "in Rente gehen (B1)"
+  ]
+ },
+ {
+  "id": 2478,
+  "de": "pensioniert werden",
+  "tr": "emekli olmak",
+  "deBeispiel": "1. Ich werde Ende des Jahres pensioniert. 2. Mein Nachbar ist seit zehn Jahren pensioniert.",
+  "gsw": "pensioniert wärde",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Nachber wott nächschts Jaar pensioniert wärde."
+ },
+ {
+  "id": 2479,
+  "de": "der Pensionist",
+  "tr": "emekli (Avusturya)",
+  "deBeispiel": "Meine Großmutter arbeitet nicht mehr. Sie ist Pensionistin.",
+  "gsw": "Pensionär",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mini Groossmueter schaffet nüme. Si isch Pensionäri.",
+  "ayniLehce": [
+   "Rentner (A2)"
+  ]
+ },
+ {
+  "id": 2480,
+  "de": "per",
+  "tr": "ile, aracılığıyla, yoluyla",
+  "deBeispiel": "Wie kann ich mich für den Kurs anmelden? – Per Fax oder E-Mail.",
+  "gsw": "per",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie chan ich mi für de Kurs aamälde? – Per E-Mail oder per Poscht."
+ },
+ {
+  "id": 2481,
+  "de": "perfekt",
+  "tr": "mükemmel, kusursuz",
+  "deBeispiel": "Die Reiseorganisation war perfekt.",
+  "gsw": "perfäkt",
+  "gswArtikel": null,
+  "gswBeispiel": "D Organisation vo de Räis isch perfäkt gsii."
+ },
+ {
+  "id": 2482,
+  "de": "der Perron",
+  "tr": "peron (İsviçre)",
+  "deBeispiel": "Auf Hauptbahnhöfen gibt es meist viele Perrons.",
+  "gsw": "Perron",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Hauptbaanhof hät s mäischtens vil Perrons.",
+  "ayniLehce": [
+   "Bahnsteig (A1)"
+  ]
+ },
+ {
+  "id": 2483,
+  "de": "persönlich",
+  "tr": "kişisel, şahsen",
+  "deBeispiel": "1. Hier gibt es zu viele Autos. Das ist meine persönliche Meinung. 2. Ich muss Herrn Meier persönlich sprechen.",
+  "gsw": "persöönlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Daa hät s z vil Autos. Das isch mini persöönlichi Mäinig."
+ },
+ {
+  "id": 2484,
+  "de": "die Personalien",
+  "tr": "kimlik bilgileri",
+  "deBeispiel": "Mein Kollege wird Ihre Personalien aufnehmen.",
+  "gsw": "Personalie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Kolleg nimmt Iri Personalie uf."
+ },
+ {
+  "id": 2485,
+  "de": "der Personenstand",
+  "tr": "medeni hâl (Almanya)",
+  "deBeispiel": "Bei „Personenstand“ musst du „ledig“ ankreuzen.",
+  "gsw": "Zivilschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi «Zivilschtand» muesch «ledig» aachrüüze.",
+  "ayniLehce": [
+   "Zivilstand (B1)"
+  ]
+ },
+ {
+  "id": 2486,
+  "de": "das Personal",
+  "tr": "personel",
+  "deBeispiel": "Dieser Eingang ist nur für das Personal.",
+  "gsw": "Personal",
+  "gswArtikel": "s",
+  "gswBeispiel": "Dää Iigang isch nu für s Personal."
+ },
+ {
+  "id": 2487,
+  "de": "die Pfanne",
+  "tr": "tencere (İsviçre), tava",
+  "deBeispiel": "Hast du keine größere Pfanne? Ich möchte Kartoffeln kochen.",
+  "gsw": "Pfanne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch käi grösseri Pfanne? Ich wott Härdöpfel choche.",
+  "ayniLehce": [
+   "Topf (A2)"
+  ]
+ },
+ {
+  "id": 2488,
+  "de": "der Pfeffer",
+  "tr": "karabiber",
+  "deBeispiel": "Bringen Sie uns bitte Pfeffer und Salz.",
+  "gsw": "Pfäffer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bringed Si öis bitte Pfäffer und Salz."
+ },
+ {
+  "id": 2489,
+  "de": "pflanzen",
+  "tr": "dikmek (bitki)",
+  "deBeispiel": "Lass uns einen Baum pflanzen!",
+  "gsw": "pflanze",
+  "gswArtikel": null,
+  "gswBeispiel": "Chum, mir gönd en Baum go pflanze!",
+  "ayniLehce": [
+   "Pflanze (A2)"
+  ]
+ },
+ {
+  "id": 2490,
+  "de": "das Pflaster",
+  "tr": "yara bandı",
+  "deBeispiel": "Hast du ein Pflaster? Ich habe mich geschnitten.",
+  "gsw": "Pfläschterli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Häsch es Pfläschterli? Ich ha mi gschnitte."
+ },
+ {
+  "id": 2491,
+  "de": "die Pflaume",
+  "tr": "erik",
+  "deBeispiel": "Ich esse gern Pflaumen und noch lieber Pflaumenkuchen.",
+  "gsw": "Zwätschge",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich isse gärn Zwätschge und na lieber Zwätschgechueche."
+ },
+ {
+  "id": 2492,
+  "de": "pflegen",
+  "tr": "bakmak (hasta bakımı)",
+  "deBeispiel": "Meine Mutter ist sehr krank. Ich muss sie pflegen.",
+  "gsw": "pflege",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter isch sehr chrank. Ich mues si pflege."
+ },
+ {
+  "id": 2493,
+  "de": "der Pfleger",
+  "tr": "bakıcı, hemşire (erkek)",
+  "deBeispiel": "- Meine Freundin ist Pflegerin in einem Altersheim.",
+  "gsw": "Pfleger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mini Fründin isch Pflegeri in eme Altersheim."
+ },
+ {
+  "id": 2494,
+  "de": "die Pflicht",
+  "tr": "görev, yükümlülük",
+  "deBeispiel": "Als Autofahrer müssen Sie eine Versicherung haben. Das ist Pflicht.",
+  "gsw": "Pflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Als Autofaarer müend Si e Versicherig haa. Das isch Pflicht."
+ },
+ {
+  "id": 2496,
+  "de": "das Picknick",
+  "tr": "piknik",
+  "deBeispiel": "Am Sonntag machen wir ein Picknick. Der Arzt hat mir neue Pillen verschrieben.",
+  "gsw": "Picknick",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Sunntig mached mir es Picknick."
+ },
+ {
+  "id": 2497,
+  "de": "die Pille",
+  "tr": "hap",
+  "deBeispiel": "Am Sonntag machen wir ein Picknick. Der Arzt hat mir neue Pillen verschrieben.",
+  "gsw": "Pille",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dokter hät mer nöii Pille verschribe."
+ },
+ {
+  "id": 2498,
+  "de": "der Pilz",
+  "tr": "mantar",
+  "deBeispiel": "Haben Sie frische Pilze?",
+  "gsw": "Pilz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Händ Si frischi Pilz?",
+  "ayniLehce": [
+   "Schwammerl (B1)"
+  ]
+ },
+ {
+  "id": 2499,
+  "de": "die Planung",
+  "tr": "planlama",
+  "deBeispiel": "Unsere Planung für das Sommerfest steht schon lange.",
+  "gsw": "Planig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Öisi Planig für s Summerfäscht schtaat scho lang."
+ },
+ {
+  "id": 2500,
+  "de": "das Plastik",
+  "tr": "plastik",
+  "deBeispiel": "Was für ein Spielzeug möchten Sie? Aus Plastik oder aus Holz?",
+  "gsw": "Plastik",
+  "gswArtikel": "s",
+  "gswBeispiel": "Was für es Spilzüüg wänd Si? Us Plastik oder us Holz?"
+ },
+ {
+  "id": 2501,
+  "de": "die Politik",
+  "tr": "siyaset, politika",
+  "deBeispiel": "Ich interessiere mich nicht für Politik.",
+  "gsw": "Politik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich interessiere mi nöd für Politik."
+ },
+ {
+  "id": 2502,
+  "de": "der Politiker",
+  "tr": "politikacı",
+  "deBeispiel": "- Weißt du, wie dieser Politiker heißt?",
+  "gsw": "Politiker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäisch, wie dää Politiker häisst?"
+ },
+ {
+  "id": 2503,
+  "de": "politisch",
+  "tr": "siyasi, politik",
+  "deBeispiel": "1. Ich diskutiere mit meinem Mann oft über politische Probleme. 2. Die politischen Meinungen zum Thema Umwelt sind sehr ",
+  "gsw": "politisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich diskutiere mit mim Maa vil über politischi Probleem."
+ },
+ {
+  "id": 2504,
+  "de": "der Polizist",
+  "tr": "polis memuru (erkek)",
+  "deBeispiel": "Die Ampel war kaputt. Ein Polizist hat den Verkehr geregelt.",
+  "gsw": "Polizischt",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Ampele isch kaputt gsii. En Polizischt hät de Verchehr gregelt."
+ },
+ {
+  "id": 2505,
+  "de": "die Polizistin",
+  "tr": "polis memuru (kadın)",
+  "deBeispiel": "Die Ampel war kaputt. Ein Polizist hat den Verkehr geregelt.",
+  "gsw": "Polizischtin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ampele isch kaputt gsii. E Polizischtin hät de Verchehr gregelt."
+ },
+ {
+  "id": 2506,
+  "de": "populär",
+  "tr": "popüler",
+  "deBeispiel": "Diese Musik ist bei Jugendlichen populär.",
+  "gsw": "populär",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Musig isch bi de Junge populär."
+ },
+ {
+  "id": 2507,
+  "de": "das Portemonnaie/Portmonee",
+  "tr": "cüzdan",
+  "deBeispiel": "Ich habe nur Kleingeld in meinem Portemonnaie.",
+  "gsw": "Portmonee",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha nu Münz i mim Portmonee.",
+  "ayniLehce": [
+   "Geldbörse (A2)",
+   "Brieftasche (B1)"
+  ]
+ },
+ {
+  "id": 2508,
+  "de": "positiv",
+  "tr": "olumlu, pozitif",
+  "deBeispiel": "1. Wir haben eine positive Nachricht für Sie. Sie bekommen die Stelle. 2. Man muss positiv denken.",
+  "gsw": "positiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ e positivi Naachricht für Sii: Sii überchömed d Schtell."
+ },
+ {
+  "id": 2509,
+  "de": "der Pöstler",
+  "tr": "postacı (İsviçre)",
+  "deBeispiel": "War die Pöstlerin schon da?",
+  "gsw": "Pöschtler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Isch d Pöschtlerin scho daa gsii?",
+  "ayniLehce": [
+   "Briefträger (B1)",
+   "Postbote (A2)"
+  ]
+ },
+ {
+  "id": 2510,
+  "de": "das Poulet",
+  "tr": "tavuk",
+  "deBeispiel": "Zum Mittagessen gibt es Poulet mit Reis.",
+  "gsw": "Poulet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zum Zmittag git's Poulet mit Riis.",
+  "ayniLehce": [
+   "Hähnchen (A1)"
+  ]
+ },
+ {
+  "id": 2511,
+  "de": "der Praktikant",
+  "tr": "stajyer (erkek)",
+  "deBeispiel": "Bei dieser Firma habe ich zwei Jahre als Praktikantin gearbeitet.",
+  "gsw": "Praktikant",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi dere Firma han ich zwäi Jaar als Praktikant gschaffet."
+ },
+ {
+  "id": 2512,
+  "de": "die Praktikantin",
+  "tr": "stajyer (kadın)",
+  "deBeispiel": "Bei dieser Firma habe ich zwei Jahre als Praktikantin gearbeitet.",
+  "gsw": "Praktikantin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dere Firma han ich zwäi Jaar als Praktikantin gschaffet."
+ },
+ {
+  "id": 2513,
+  "de": "präsentieren",
+  "tr": "sunmak",
+  "deBeispiel": "Präsentieren Sie Ihre Ergebnisse bitte im Kurs.",
+  "gsw": "präsentiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sii müend Iri Resultaat bitte im Kurs präsentiere."
+ },
+ {
+  "id": 2514,
+  "de": "die Präsentation",
+  "tr": "sunum",
+  "deBeispiel": "Die Schülerin hat für ihre Präsentation eine gute Note bekommen.",
+  "gsw": "Präsentation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schüelerin hät für iri Präsentation e gueti Note überchoo."
+ },
+ {
+  "id": 2515,
+  "de": "die Presse",
+  "tr": "basın",
+  "deBeispiel": "Darüber konnte sich jeder in der Presse informieren.",
+  "gsw": "Presse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über daas hät sich jede i de Presse chöne informiere."
+ },
+ {
+  "id": 2516,
+  "de": "prima",
+  "tr": "harika, mükemmel",
+  "deBeispiel": "Mit diesen Leuten verstehe ich mich prima.",
+  "gsw": "prima",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit dene Lüüt verschtaan ich mi prima."
+ },
+ {
+  "id": 2517,
+  "de": "produzieren",
+  "tr": "üretmek",
+  "deBeispiel": "Unsere Firma produziert Feuerzeuge.",
+  "gsw": "produziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Üsi Firma produziert Füürzüüg."
+ },
+ {
+  "id": 2518,
+  "de": "die Produktion",
+  "tr": "üretim",
+  "deBeispiel": "Die Produktion von Käse dauert oft viele Wochen.",
+  "gsw": "Produktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Produktion vo Chäs duuret oft vil Wuche."
+ },
+ {
+  "id": 2519,
+  "de": "der Professor",
+  "tr": "profesör (erkek)",
+  "deBeispiel": "Unsere Nachbarin ist Professorin an der Universität.",
+  "gsw": "Professor",
+  "gswArtikel": "de",
+  "gswBeispiel": "Üsi Naachberin isch Professorin a de Uni."
+ },
+ {
+  "id": 2520,
+  "de": "die Professorin",
+  "tr": "profesör (kadın)",
+  "deBeispiel": "Unsere Nachbarin ist Professorin an der Universität.",
+  "gsw": "Professorin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Üsi Naachberin isch Professorin a de Uni."
+ },
+ {
+  "id": 2521,
+  "de": "der Profi",
+  "tr": "profesyonel, uzman",
+  "deBeispiel": "Keine Angst. Mein Bruder kann die Heizung bestimmt reparieren. Er ist doch ein Profi.",
+  "gsw": "Profi",
+  "gswArtikel": "de",
+  "gswBeispiel": "Käi Angscht! Min Brüeder cha d Häizig sicher flicke. Er isch doch en Profi."
+ },
+ {
+  "id": 2522,
+  "de": "der Profisportler",
+  "tr": "profesyonel sporcu",
+  "deBeispiel": "- Mein Sohn möchte Profisportler werden.",
+  "gsw": "Profischportler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Soon wett Profischportler wärde."
+ },
+ {
+  "id": 2523,
+  "de": "Prost",
+  "tr": "Şerefe!",
+  "deBeispiel": "Wir trinken auf Ihre Gesundheit! Prost!",
+  "gsw": "Proscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir trinked uf Iri Gsundhäit! Proscht!"
+ },
+ {
+  "id": 2524,
+  "de": "protestieren",
+  "tr": "protesto etmek",
+  "deBeispiel": "Wir protestieren gegen den Bau der Autobahn.",
+  "gsw": "proteschtiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir proteschtiered gäge de Bau vo de Autobaan."
+ },
+ {
+  "id": 2525,
+  "de": "der Protest",
+  "tr": "protesto",
+  "deBeispiel": "Alle Proteste haben nichts genützt.",
+  "gsw": "Protescht",
+  "gswArtikel": "de",
+  "gswBeispiel": "All die Protescht händ nüüt gnützt."
+ },
+ {
+  "id": 2526,
+  "de": "der Prozess",
+  "tr": "dava, süreç",
+  "deBeispiel": "Der Prozess wird direkt aus dem Gerichtssaal im Fernsehen übertragen.",
+  "gsw": "Prozäss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Prozäss wird diräkt us em Grichtssaal im Färnseh zäiget."
+ },
+ {
+  "id": 2527,
+  "de": "das Publikum",
+  "tr": "seyirci, izleyici",
+  "deBeispiel": "Es war ein tolles Konzert. Das Publikum war begeistert.",
+  "gsw": "Publikum",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es isch es tolls Konzärt gsii. S Publikum isch begäischteret gsii."
+ },
+ {
+  "id": 2528,
+  "de": "der Punkt",
+  "tr": "nokta, konu, madde",
+  "deBeispiel": "1. Das Konzert beginnt um Punkt 20 Uhr. 2. Beim letzten Satz fehlt der Punkt. 3. Diesen Punkt haben wir noch nicht bespr",
+  "gsw": "Punkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Dää Punkt händ mir no nöd bschproche."
+ },
+ {
+  "id": 2529,
+  "de": "die Puppe",
+  "tr": "oyuncak bebek",
+  "deBeispiel": "Unsere kleine Tochter bekommt zum Geburtstag eine Puppe.",
+  "gsw": "Puppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Üsi chlii Tochter überchunt zum Geburtstaag e Puppe."
+ },
+ {
+  "id": 2530,
+  "de": "die Qualifikation",
+  "tr": "nitelik, yeterlilik",
+  "deBeispiel": "Für diese Arbeit haben Sie gute Qualifikationen.",
+  "gsw": "Qualifikation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Arbet händ Sii gueti Qualifikatione."
+ },
+ {
+  "id": 2531,
+  "de": "das Quartier",
+  "tr": "semt, mahalle (İsviçre)",
+  "deBeispiel": "Wir wohnen in einem schönen Quartier.",
+  "gsw": "Quartier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir wohned imene schööne Quartier.",
+  "ayniLehce": [
+   "Viertel (B1)",
+   "Wohnviertel (B2)",
+   "Stadtteil (A2)"
+  ]
+ },
+ {
+  "id": 2532,
+  "de": "quer",
+  "tr": "boydan boya, çaprazlamasına",
+  "deBeispiel": "Ich muss zu meiner Arbeit quer durch die ganze Stadt fahren.",
+  "gsw": "quer",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues für d Arbet quer dur di ganz Schtadt faare."
+ },
+ {
+  "id": 2533,
+  "de": "die Quittung",
+  "tr": "fiş, makbuz",
+  "deBeispiel": "Brauchen Sie eine Quittung?",
+  "gsw": "Quittig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bruuched Sii e Quittig?"
+ },
+ {
+  "id": 2534,
+  "de": "der Rabatt",
+  "tr": "indirim",
+  "deBeispiel": "Sie bekommen zehn Prozent Rabatt.",
+  "gsw": "Rabatt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sii überchömed zää Prozänt Rabatt."
+ },
+ {
+  "id": 2535,
+  "de": "der Radfahrer",
+  "tr": "bisikletçi",
+  "deBeispiel": "- Achtung! Da kommt eine Radfahrerin.",
+  "gsw": "Velofaarer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Achtung! Dört chunt e Velofaarerin."
+ },
+ {
+  "id": 2536,
+  "de": "der Rahm",
+  "tr": "krema, kaymak (İsviçre)",
+  "deBeispiel": "Ich hätte gern ein Stück Torte mit (Schlag-)Rahm.",
+  "gsw": "Raam",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich hett gärn es Schtück Torte mit Schlagraam.",
+  "ayniLehce": [
+   "Obers (B1)"
+  ]
+ },
+ {
+  "id": 2537,
+  "de": "der Rand",
+  "tr": "kenar",
+  "deBeispiel": "Wir wohnen am Rand der Innenstadt. Dort ist es billiger und ruhiger.",
+  "gsw": "Rand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir wohned am Rand vo de Inneschtadt. Dört isch es billiger und rueiger."
+ },
+ {
+  "id": 2538,
+  "de": "der Rasen",
+  "tr": "çim, çimen",
+  "deBeispiel": "Bitte den Rasen nicht betreten!",
+  "gsw": "Rase",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bitte nöd über de Rase laufe!"
+ },
+ {
+  "id": 2539,
+  "de": "sich rasieren",
+  "tr": "tıraş olmak",
+  "deBeispiel": "Dein Bart ist aber lang! Du solltest dich mal wieder rasieren.",
+  "gsw": "sich rasiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Din Baart isch aber lang! Me sött sich rasiere, findsch nöd?"
+ },
+ {
+  "id": 2540,
+  "de": "der Rat",
+  "tr": "öğüt, akıl danışma",
+  "deBeispiel": "Was soll ich machen? Können Sie mir einen Rat geben?",
+  "gsw": "Raat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Was söll ich mache? Chönd Sii mer en Raat gää?"
+ },
+ {
+  "id": 2541,
+  "de": "Ratschlag",
+  "tr": "öğüt, nasihat",
+  "deBeispiel": "Meine Tochter nimmt meine Ratschläge nicht an.",
+  "gsw": "Raatschlaag",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Tochter nimt kän Raatschlaag vo mir aa."
+ },
+ {
+  "id": 2542,
+  "de": "der Raucher",
+  "tr": "sigara içen kişi",
+  "deBeispiel": "- 1. Gibt es hier ein Zimmer für Raucher? 2. Ich bin keine Raucherin. Ich bin Nichtraucherin.",
+  "gsw": "Raucher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Git's daa es Zimmer für Raucher?"
+ },
+ {
+  "id": 2543,
+  "de": "rauf",
+  "tr": "yukarı",
+  "deBeispiel": "1. Hier ist die Treppe, also los, schnell rauf! 2. Möchtest du nicht raufkommen?",
+  "gsw": "ufe",
+  "gswArtikel": null,
+  "gswBeispiel": "Daa isch d Schtäge, also los, schnäll ufe!"
+ },
+ {
+  "id": 2544,
+  "de": "raus",
+  "tr": "dışarı",
+  "deBeispiel": "1. Willst du rein oder raus? 2. Er ist gerade rausgelaufen.",
+  "gsw": "use",
+  "gswArtikel": null,
+  "gswBeispiel": "Wotsch ine oder use? Er isch grad usegloffe.",
+  "ayniLehce": [
+   "heraus (A2)"
+  ]
+ },
+ {
+  "id": 2545,
+  "de": "reagieren",
+  "tr": "tepki vermek",
+  "deBeispiel": "Ich habe dem Vermieter geschrieben, aber er hat noch nicht reagiert.",
+  "gsw": "reagiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha em Vermieter gschribe, aber er hät no nöd reagiert."
+ },
+ {
+  "id": 2546,
+  "de": "die Reaktion",
+  "tr": "tepki, reaksiyon",
+  "deBeispiel": "Diese Reaktion ist typisch für ihn.",
+  "gsw": "Reaktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Reaktion isch typisch für in."
+ },
+ {
+  "id": 2547,
+  "de": "realisieren",
+  "tr": "gerçekleştirmek, farkına varmak",
+  "deBeispiel": "1. Diese Pläne sind nicht zu realisieren. 2. Ich habe nicht realisiert, dass die Zeit schon um ist.",
+  "gsw": "realisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha nöd realisiert, dass d Ziit scho ume isch."
+ },
+ {
+  "id": 2548,
+  "de": "die Realität",
+  "tr": "gerçeklik, gerçek",
+  "deBeispiel": "Das gefällt dir nicht? Aber das ist die Realität.",
+  "gsw": "Realität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das gfallt der nöd? Aber das isch d Realität."
+ },
+ {
+  "id": 2549,
+  "de": "realistisch",
+  "tr": "gerçekçi",
+  "deBeispiel": "Ich glaube nicht, dass du für das Auto noch so viel Geld bekommst. Das ist nicht realistisch.",
+  "gsw": "realistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich glaub nöd, dass du für s Auto no so vil Gäld überchunsch. Das isch nöd realistisch."
+ },
+ {
+  "id": 2550,
+  "de": "die Recherche",
+  "tr": "araştırma (bilgi toplama, gazetecilik)",
+  "deBeispiel": "Für diesen Bericht waren viele Recherchen nötig.",
+  "gsw": "Recherche",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für dää Bricht sind vil Recherche nötig gsii."
+ },
+ {
+  "id": 2551,
+  "de": "der Rechner",
+  "tr": "bilgisayar, hesap makinesi",
+  "deBeispiel": "- Mein Rechner ist kaputt.",
+  "gsw": "Rächner",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Rächner isch kaputt."
+ },
+ {
+  "id": 2552,
+  "de": "das Recht",
+  "tr": "hak, hukuk",
+  "deBeispiel": "1. Nach deutschem Recht kann er dafür nicht bestraft werden. 2. Ich hatte Vorfahrt. Ich war im Recht. 3. Die Rechnung st",
+  "gsw": "Rächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha Vortritt gha. Ich bi im Rächt gsii.",
+  "ayniLehce": [
+   "recht (B1)"
+  ]
+ },
+ {
+  "id": 2553,
+  "de": "rechtlich",
+  "tr": "hukuki, yasal",
+  "deBeispiel": "Wir beraten Sie in rechtlichen Fragen.",
+  "gsw": "rächtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir beraated Sii i rächtliche Fraage."
+ },
+ {
+  "id": 2554,
+  "de": "recht",
+  "tr": "haklı, uygun",
+  "deBeispiel": "1. Ist es Ihnen recht, wenn ich morgen vorbeikomme? 2. Da haben Sie recht. 3. Da muss ich Ihnen recht geben.",
+  "gsw": "rächt",
+  "gswArtikel": null,
+  "gswBeispiel": "Isch es Ine rächt, wänn ich morn verbiichume?",
+  "ayniLehce": [
+   "Recht (B1)"
+  ]
+ },
+ {
+  "id": 2555,
+  "de": "rechte",
+  "tr": "sağ",
+  "deBeispiel": "Ich habe mir den rechten Arm gebrochen.",
+  "gsw": "rächt-",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha mer de rächt Arm broche."
+ },
+ {
+  "id": 2556,
+  "de": "rechtzeitig",
+  "tr": "zamanında, vaktinde",
+  "deBeispiel": "Bitte weck mich rechtzeitig. Ich muss pünktlich sein.",
+  "gsw": "rächtziitig",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte weck mi rächtziitig. Ich mues pünktlich sii."
+ },
+ {
+  "id": 2557,
+  "de": "die Rede",
+  "tr": "konuşma, nutuk",
+  "deBeispiel": "Der Präsident hat eine Rede gehalten.",
+  "gsw": "Red",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Präsidänt hät e Red ghalte."
+ },
+ {
+  "id": 2558,
+  "de": "reduzieren",
+  "tr": "azaltmak, indirmek",
+  "deBeispiel": "1. Wir haben jetzt unsere Preise reduziert. 2. Ist dieser Pullover auch reduziert?",
+  "gsw": "reduziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ jetz üsi Priise reduziert."
+ },
+ {
+  "id": 2559,
+  "de": "das Referat",
+  "tr": "sunum, rapor",
+  "deBeispiel": "Vielen Dank für dieses interessante Referat.",
+  "gsw": "Referaat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Merci vilmal für das interessante Referaat."
+ },
+ {
+  "id": 2560,
+  "de": "die Reform",
+  "tr": "reform",
+  "deBeispiel": "Die Regierung plant für nächstes Jahr eine Reform. Die Steuern sollen steigen.",
+  "gsw": "Reform",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Regierig plant für s nöchscht Jaar e Reform. D Schtüüre söled schtiige."
+ },
+ {
+  "id": 2561,
+  "de": "das Regal",
+  "tr": "raf",
+  "deBeispiel": "Das Buch steht im Regal oben rechts.",
+  "gsw": "Regaal",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Buech schtaat im Regaal obe rächts."
+ },
+ {
+  "id": 2562,
+  "de": "die Regel",
+  "tr": "kural",
+  "deBeispiel": "1. Im Straßenverkehr sind viele Regeln zu beachten. 2. Wie geht dieses Spiel? Kennst du die Regeln? 3. In der Regel geht",
+  "gsw": "Regle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wie gaat das Schpiil? Kennsch d Regle?",
+  "ayniLehce": [
+   "regeln (B1)"
+  ]
+ },
+ {
+  "id": 2563,
+  "de": "regelmäßig",
+  "tr": "düzenli (belirli aralıklarla)",
+  "deBeispiel": "Sie müssen die Tabletten regelmäßig nehmen.",
+  "gsw": "regelmässig",
+  "gswArtikel": null,
+  "gswBeispiel": "Sii müend d Tablette regelmässig nää."
+ },
+ {
+  "id": 2564,
+  "de": "regeln",
+  "tr": "düzenlemek, yönetmek",
+  "deBeispiel": "Die Ampel ist kaputt. Ein Polizist regelt den Verkehr.",
+  "gsw": "regle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ampele isch kaputt. En Polizischt reglet de Verchehr.",
+  "ayniLehce": [
+   "Regel (B1)"
+  ]
+ },
+ {
+  "id": 2565,
+  "de": "die Region",
+  "tr": "bölge",
+  "deBeispiel": "1. In der Rhein-Main-Region sind die Mieten sehr hoch. 2. Die Milch ist aus der Region.",
+  "gsw": "Region",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Milch isch us de Region."
+ },
+ {
+  "id": 2566,
+  "de": "regional",
+  "tr": "bölgesel",
+  "deBeispiel": "Du kannst mit einer Regionalbahn fahren. Das ist billiger.",
+  "gsw": "regional",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir chaufed s Gmües gärn regional."
+ },
+ {
+  "id": 2567,
+  "de": "reichen",
+  "tr": "yetmek, dayanmak",
+  "deBeispiel": "1. Ich nehme nur eine Suppe. Das reicht mir. 2. Wie lange reicht das Papier noch? Ich glaube, wir müssen neues bestellen",
+  "gsw": "länge",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich nime nu e Suppe. Das längt mer.",
+  "ayniLehce": [
+   "ausreichen (B1)",
+   "genügen (B1)"
+  ]
+ },
+ {
+  "id": 2568,
+  "de": "reif",
+  "tr": "olgun",
+  "deBeispiel": "Die Banane kannst du nicht essen. Sie ist noch nicht reif.",
+  "gsw": "riif",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Banane chasch nöd ässe. Si isch no nöd riif."
+ },
+ {
+  "id": 2569,
+  "de": "die Reihenfolge",
+  "tr": "sıra, sıralama",
+  "deBeispiel": "Achten Sie auf die Reihenfolge der Inhaltspunkte.",
+  "gsw": "Räiefolg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Achted Sii uf d Räiefolg vo de Pünkt."
+ },
+ {
+  "id": 2570,
+  "de": "rein",
+  "tr": "saf, temiz",
+  "deBeispiel": "1. Der Pullover ist aus reiner Wolle. 2. Es war reiner Zufall, dass ich die Uhr wiedergefunden habe. 3. Das Wasser ist s",
+  "gsw": "räin",
+  "gswArtikel": null,
+  "gswBeispiel": "De Pullover isch us räiner Wulle."
+ },
+ {
+  "id": 2571,
+  "de": "reinigen",
+  "tr": "temizlemek",
+  "deBeispiel": "Ich möchte diesen Anzug reinigen lassen.",
+  "gsw": "räinige",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wett dää Aazug räinige laa."
+ },
+ {
+  "id": 2572,
+  "de": "die Reklame",
+  "tr": "reklam",
+  "deBeispiel": "Ich möchte keine Reklame im Briefkasten.",
+  "gsw": "Reklame",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich wett käi Reklame im Briefchaschte."
+ },
+ {
+  "id": 2573,
+  "de": "der Rekord",
+  "tr": "rekor",
+  "deBeispiel": "Es gibt einen neuen Rekord im Schwimmen.",
+  "gsw": "Rekord",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es git en nöie Rekord im Schwüme."
+ },
+ {
+  "id": 2574,
+  "de": "relativ",
+  "tr": "nispeten, oldukça",
+  "deBeispiel": "Die Wohnung ist relativ groß, aber sehr teuer.",
+  "gsw": "relativ",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wonig isch relativ grooss, aber sehr tüür."
+ },
+ {
+  "id": 2575,
+  "de": "die Religion",
+  "tr": "din",
+  "deBeispiel": "Religion ist für manche Menschen sehr wichtig.",
+  "gsw": "Religion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Religion isch für mängi Lüüt sehr wichtig."
+ },
+ {
+  "id": 2576,
+  "de": "rennen",
+  "tr": "koşmak",
+  "deBeispiel": "Ich bin sehr schnell gerannt, aber der Bus war schon weg.",
+  "gsw": "springe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha müese springe, aber de Bus isch scho wäg gsii."
+ },
+ {
+  "id": 2577,
+  "de": "die Rente",
+  "tr": "emekli maaşı",
+  "deBeispiel": "Sie ist 67 und bekommt jetzt eine gute Rente.",
+  "gsw": "Ränte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si isch 67i und überchunt jetz e gueti Ränte."
+ },
+ {
+  "id": 2578,
+  "de": "in Rente gehen",
+  "tr": "emekli olmak",
+  "deBeispiel": "1. Ich gehe Ende des Jahres in Rente. 2. Mein Nachbar ist seit zehn Jahren in Rente.",
+  "gsw": "i d Pension gaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich dörf Änd Jaar i d Pension gaa.",
+  "ayniLehce": [
+   "in Pension gehen (B1)"
+  ]
+ },
+ {
+  "id": 2579,
+  "de": "die Reportage",
+  "tr": "röportaj, haber",
+  "deBeispiel": "Hast du die Reportage über Afrika gesehen?",
+  "gsw": "Reportage",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch d Reportage über Afrika gsee?"
+ },
+ {
+  "id": 2580,
+  "de": "der Reporter",
+  "tr": "muhabir",
+  "deBeispiel": "- Die Reporterin macht gerade ein Interview.",
+  "gsw": "Reporter",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Reporterin macht grad es Interview."
+ },
+ {
+  "id": 2581,
+  "de": "die Reservierung",
+  "tr": "rezervasyon",
+  "deBeispiel": "Was kostet eine Reservierung?",
+  "gsw": "Reservation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Was choschtet e Reservation?"
+ }
+]

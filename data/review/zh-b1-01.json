@@ -1,0 +1,1029 @@
+[
+ {
+  "id": 1340,
+  "de": "abbiegen",
+  "tr": "dönmek, sapmak",
+  "deBeispiel": "An der nächsten Kreuzung müssen Sie links abbiegen.",
+  "gsw": "abbüüge",
+  "gswArtikel": null,
+  "gswBeispiel": "A de nächschte Chrüüzig müend Si links abbüüge."
+ },
+ {
+  "id": 1341,
+  "de": "die Abbildung",
+  "tr": "resim, çizim, şekil",
+  "deBeispiel": "Auf der Abbildung sehen Sie, wie man das Gerät einschaltet.",
+  "gsw": "Abbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Abbildig gseend Si, wie me s Grät iischaltet."
+ },
+ {
+  "id": 1342,
+  "de": "das Abenteuer",
+  "tr": "macera",
+  "deBeispiel": "1. Unser Urlaub war ein tolles Abenteuer. 2. Die Kinder lieben Abenteuergeschichten.",
+  "gsw": "Abetüür",
+  "gswArtikel": "s",
+  "gswBeispiel": "Üsi Ferie sind es tolls Abetüür gsii. D Chind liebed Abetüürgschichte."
+ },
+ {
+  "id": 1343,
+  "de": "der Abfall",
+  "tr": "çöp, atık",
+  "deBeispiel": "Werfen Sie den Bioabfall bitte nicht zum normalen Müll.",
+  "gsw": "Abfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Werfed Si de Bioabfall bitte nöd zum normale Abfall."
+ },
+ {
+  "id": 1344,
+  "de": "der Abfalleimer",
+  "tr": "çöp kutusu",
+  "deBeispiel": "- Wirf das bitte in den Abfalleimer!",
+  "gsw": "Abfallchübel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wirf das bitte in Abfallchübel!"
+ },
+ {
+  "id": 1345,
+  "de": "Abgase",
+  "tr": "atık gaz, egzoz gazı",
+  "deBeispiel": "Abgase aus Industrie und Haushalten verschmutzen die Luft.",
+  "gsw": "Abgas",
+  "gswArtikel": null,
+  "gswBeispiel": "D Abgas vo de Induschtrii und vo de Huushalt verschmutzed d Luft.",
+  "ayniLehce": [
+   "Abgas (B2)"
+  ]
+ },
+ {
+  "id": 1346,
+  "de": "abhängen",
+  "tr": "bağlı olmak",
+  "deBeispiel": "Vielleicht bleiben wir ein paar Tage länger, das hängt vom Wetter ab.",
+  "gsw": "abhange",
+  "gswArtikel": null,
+  "gswBeispiel": "Villicht bliibed mir es paar Tääg lenger, das hangt vom Wätter ab."
+ },
+ {
+  "id": 1347,
+  "de": "abhängig",
+  "tr": "bağımlı",
+  "deBeispiel": "Gregor ist finanziell von seinen Eltern abhängig.",
+  "gsw": "abhängig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Gregor isch finanziell vo sine Eltere abhängig."
+ },
+ {
+  "id": 1348,
+  "de": "abheben",
+  "tr": "para çekmek, kaldırmak",
+  "deBeispiel": "Für die Reise habe ich 500 Euro von meinem Konto abgehoben.",
+  "gsw": "abhebe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues für d Räis na föifhundert Franke vom Konto abhebe."
+ },
+ {
+  "id": 1349,
+  "de": "abschreiben",
+  "tr": "kopya çekmek, kopyalamak",
+  "deBeispiel": "Er hat die Hausaufgaben von mir abgeschrieben.",
+  "gsw": "abschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Du sötsch d Ufzgi nöd immer vo mir abschriibe!"
+ },
+ {
+  "id": 1350,
+  "de": "das Abitur",
+  "tr": "lise diploması, mezuniyet",
+  "deBeispiel": "Meine Tochter hat gerade Abitur gemacht.",
+  "gsw": "Matur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tochter hät grad d Matur gmacht.",
+  "ayniLehce": [
+   "Matura (B1)"
+  ]
+ },
+ {
+  "id": 1351,
+  "de": "ablehnen",
+  "tr": "reddetmek",
+  "deBeispiel": "Er hat mein Angebot, ihm zu helfen, abgelehnt.",
+  "gsw": "ablehne",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät miis Aagebot, ihm z hälfe, abglehnt."
+ },
+ {
+  "id": 1352,
+  "de": "abmachen",
+  "tr": "kararlaştırmak, anlaşmak",
+  "deBeispiel": "Wir hatten doch abgemacht, dass du die Getränke besorgst.",
+  "gsw": "abmache",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ doch abgmacht, dass du d Getränk bsorgsch.",
+  "ayniLehce": [
+   "vereinbaren (A2)",
+   "sich verabreden (B1)"
+  ]
+ },
+ {
+  "id": 1353,
+  "de": "abnehmen",
+  "tr": "çıkarmak, sökmek / kilo vermek",
+  "deBeispiel": "1. Morgen können wir den Verband abnehmen. 2. Ich habe zehn Kilo abgenommen.",
+  "gsw": "abnää",
+  "gswArtikel": null,
+  "gswBeispiel": "Morn chömmer de Verband abnää. Und ich ha zää Kilo abgnaa."
+ },
+ {
+  "id": 1354,
+  "de": "abonnieren",
+  "tr": "abone olmak",
+  "deBeispiel": "Diese Zeitschrift würde ich gerne abonnieren.",
+  "gsw": "abonniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Ziitschrift wür ich gern abonniere."
+ },
+ {
+  "id": 1355,
+  "de": "das Abonnement",
+  "tr": "abonelik",
+  "deBeispiel": "Ich habe das Abonnement gekündigt.",
+  "gsw": "Abo",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha s Abo kündet."
+ },
+ {
+  "id": 1356,
+  "de": "absagen",
+  "tr": "iptal etmek, vazgeçmek",
+  "deBeispiel": "Ich muss unser Treffen leider absagen, weil ich krank geworden bin.",
+  "gsw": "absäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues üses Träffe läider absäge, wil ich chrank worde bi."
+ },
+ {
+  "id": 1357,
+  "de": "der Abschluss",
+  "tr": "mezuniyet, diploma, sonuç",
+  "deBeispiel": "Ein guter Schulabschluss ist sehr wichtig.",
+  "gsw": "Abschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "En guete Abschluss vo de Schuel isch sehr wichtig."
+ },
+ {
+  "id": 1358,
+  "de": "der Abschnitt",
+  "tr": "bölüm, kısım",
+  "deBeispiel": "Lesen Sie bitte den zweiten Abschnitt.",
+  "gsw": "Abschnitt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Läsed Si bitte de zwäit Abschnitt."
+ },
+ {
+  "id": 1359,
+  "de": "die Absenderin",
+  "tr": "gönderen (kadın)",
+  "deBeispiel": "Schicken Sie das Paket an den Absender zurück.",
+  "gsw": "Absänderin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schicked Si s Päckli a d Absänderin zrugg."
+ },
+ {
+  "id": 1360,
+  "de": "die Absicht",
+  "tr": "niyet, kasıt",
+  "deBeispiel": "1. Entschuldigen Sie bitte. Meine Tochter hat das nicht mit Absicht gemacht. 2. Hast du die Absicht zu studieren?",
+  "gsw": "Absicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Entschuldigung, mini Tochter hät das nöd mit Absicht gmacht. Häsch d Absicht z schtudiere?"
+ },
+ {
+  "id": 1361,
+  "de": "absolut",
+  "tr": "kesinlikle, tamamen, mutlak",
+  "deBeispiel": "1. Was Sie da sagen, ist absolut falsch. 2. Ich habe absolutes Vertrauen zu dir.",
+  "gsw": "absolut",
+  "gswArtikel": null,
+  "gswBeispiel": "Was Si da säged, isch absolut falsch. Ich ha absoluts Vertraue i dich."
+ },
+ {
+  "id": 1362,
+  "de": "abstimmen",
+  "tr": "oylamak, oy vermek",
+  "deBeispiel": "Lasst uns über diesen Punkt abstimmen.",
+  "gsw": "abschtime",
+  "gswArtikel": null,
+  "gswBeispiel": "Lönd üs über de Punkt abschtime."
+ },
+ {
+  "id": 1363,
+  "de": "die Abteilung",
+  "tr": "bölüm, departman",
+  "deBeispiel": "Meine Freundin arbeitet in der Abteilung von Frau Kaufmann.",
+  "gsw": "Abtäilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Fründin schaffet i de Abtäilig vo de Frau Kaufmann."
+ },
+ {
+  "id": 1364,
+  "de": "der Abwart",
+  "tr": "kapıcı, hademe (erkek)",
+  "deBeispiel": "Der Abwart hat mir geholfen, den Schrank in die Wohnung zu tragen.",
+  "gsw": "Abwart",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Abwart hät mer ghulfe, de Schrank i d Wonig z träge.",
+  "ayniLehce": [
+   "Hausmeister (B1)"
+  ]
+ },
+ {
+  "id": 1365,
+  "de": "die Abwartin",
+  "tr": "kapıcı, hademe (kadın)",
+  "deBeispiel": "Der Abwart hat mir geholfen, den Schrank in die Wohnung zu tragen.",
+  "gsw": "Abwartin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abwartin hät mer ghulfe, de Schrank i d Wonig z träge."
+ },
+ {
+  "id": 1366,
+  "de": "abwärts",
+  "tr": "aşağı doğru, aşağıya",
+  "deBeispiel": "Von dort führt der Weg abwärts ins Tal.",
+  "gsw": "abwärts",
+  "gswArtikel": null,
+  "gswBeispiel": "Vo deet füert de Wääg abwärts is Taal."
+ },
+ {
+  "id": 1367,
+  "de": "abwaschen",
+  "tr": "bulaşık yıkamak",
+  "deBeispiel": "Ich muss noch das Geschirr abwaschen.",
+  "gsw": "abwäsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues na s Gschirr abwäsche.",
+  "ayniLehce": [
+   "abspülen (A2)"
+  ]
+ },
+ {
+  "id": 1368,
+  "de": "abwesend",
+  "tr": "yok, mevcut olmayan",
+  "deBeispiel": "Herr Huber ist bis zum 25. April abwesend.",
+  "gsw": "abwäsend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Herr Huber isch bis am 25. April abwäsend."
+ },
+ {
+  "id": 1369,
+  "de": "achten",
+  "tr": "dikkat etmek",
+  "deBeispiel": "Achten Sie bitte darauf, dass Sie abschließen, wenn Sie gehen.",
+  "gsw": "achte",
+  "gswArtikel": null,
+  "gswBeispiel": "Achted Si bitte druf, dass Si abschlüüssed, wänn Si gönd."
+ },
+ {
+  "id": 1370,
+  "de": "Achtung!",
+  "tr": "Dikkat!",
+  "deBeispiel": "Achtung, hier endet die Straße!",
+  "gsw": "Achtung!",
+  "gswArtikel": null,
+  "gswBeispiel": "Achtung, da hört d Schtraass uf!"
+ },
+ {
+  "id": 1371,
+  "de": "ähnlich",
+  "tr": "benzer",
+  "deBeispiel": "1. Emilia ist in einer ganz ähnlichen Situation wie ich. 2. Oleg sieht seinem Bruder sehr ähnlich.",
+  "gsw": "äänlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Emilia isch in ere ganz äänliche Situazion wie ich. De Oleg gseet sim Brüeder sehr äänlich."
+ },
+ {
+  "id": 1372,
+  "de": "die Aktion",
+  "tr": "kampanya, etkinlik, eylem",
+  "deBeispiel": "Die Stadt sollte eine Aktion für Familien planen.",
+  "gsw": "Aktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtadt sött e Aktion für Familie plane.",
+  "ayniLehce": [
+   "Sonderangebot (B1)"
+  ]
+ },
+ {
+  "id": 1373,
+  "de": "die Aktivität",
+  "tr": "etkinlik, aktivite",
+  "deBeispiel": "In den Ferien bietet die Stadt für Kinder verschiedene Freizeitaktivitäten.",
+  "gsw": "Aktivität",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Ferie büütet d Schtadt für d Chind mängi Aktivität aa."
+ },
+ {
+  "id": 1374,
+  "de": "akzeptieren",
+  "tr": "kabul etmek",
+  "deBeispiel": "Ich kann diese Bedingungen nicht akzeptieren.",
+  "gsw": "akzeptiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha die Bedingige nöd akzeptiere."
+ },
+ {
+  "id": 1375,
+  "de": "der Alarm",
+  "tr": "alarm",
+  "deBeispiel": "Bei Feueralarm dürfen Sie die Aufzüge nicht benutzen.",
+  "gsw": "Alarm",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wänn de Alarm lütet, törfed Si de Lift nöd bruuche."
+ },
+ {
+  "id": 1376,
+  "de": "der Alkohol",
+  "tr": "alkol",
+  "deBeispiel": "1. Du musst die Wunde mit Alkohol reinigen. 2. Nein, danke! Ich trinke keinen Alkohol.",
+  "gsw": "Alkohol",
+  "gswArtikel": "de",
+  "gswBeispiel": "Du muesch d Wunde mit Alkohol putze. Näi danke, ich trinke kän Alkohol."
+ },
+ {
+  "id": 1377,
+  "de": "aller-",
+  "tr": "en- (en iyi/hepsinden çok)",
+  "deBeispiel": "1. Am allerbesten ist es, wenn du dich ins Bett legst und lange schläfst. Dann wirst du schnell wieder gesund. 2. Das is",
+  "gsw": "aller-",
+  "gswArtikel": null,
+  "gswBeispiel": "Am allerbeschte isch es, wänn du di is Bett liisch und lang schlaafsch."
+ },
+ {
+  "id": 1378,
+  "de": "allerdings",
+  "tr": "ancak, gerçi, yine de",
+  "deBeispiel": "Wir können uns morgen treffen, allerdings habe ich erst ab Mittag Zeit.",
+  "gsw": "allerdings",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir chönd üs morn träffe, allerdings han ich erscht ab em Mittag Ziit."
+ },
+ {
+  "id": 1379,
+  "de": "allgemein",
+  "tr": "genel",
+  "deBeispiel": "1. Wir haben nur über allgemeine Probleme gesprochen. 2. Es ist allgemein bekannt, dass man hier gut essen kann. 3. Im A",
+  "gsw": "allgemäin",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ nume über allgemäini Probleem gredt. Es isch allgemäin bekannt, dass me da guet ässe cha."
+ },
+ {
+  "id": 1380,
+  "de": "der Alltag",
+  "tr": "günlük yaşam",
+  "deBeispiel": "Das ist mein Alltag: putzen, waschen, kochen.",
+  "gsw": "Alltag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Das isch min Alltag: putze, wäsche, choche."
+ },
+ {
+  "id": 1381,
+  "de": "alltäglich",
+  "tr": "günlük, sıradan",
+  "deBeispiel": "1. Das alltägliche Leben ist manchmal langweilig. 2. Der Roman erzählt eine ganz alltägliche Geschichte.",
+  "gsw": "alltäglich",
+  "gswArtikel": null,
+  "gswBeispiel": "S alltägliche Läbe isch mängisch langwiilig. De Roman verzelt e ganz alltäglichi Gschicht."
+ },
+ {
+  "id": 1382,
+  "de": "das Alphabet",
+  "tr": "alfabe",
+  "deBeispiel": "Wie viele Buchstaben hat das Alphabet in Ihrer Sprache?",
+  "gsw": "Alphabet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie viil Buechschtabe hät s Alphabet i Ihrere Schpraach?"
+ },
+ {
+  "id": 1383,
+  "de": "als ob",
+  "tr": "sanki",
+  "deBeispiel": "Er tut so, als ob wir nie darüber gesprochen hätten.",
+  "gsw": "wie wänn",
+  "gswArtikel": null,
+  "gswBeispiel": "Er tuet eso, wie wänn mir nie drüber gredt hetted."
+ },
+ {
+  "id": 1384,
+  "de": "das Altenheim",
+  "tr": "huzurevi, yaşlı bakımevi",
+  "deBeispiel": "Die Großeltern unserer Nachbarn sind im Altenheim.",
+  "gsw": "Altershäim",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Groosseltere vo üsne Nachbere sind im Altershäim."
+ },
+ {
+  "id": 1386,
+  "de": "alternativ",
+  "tr": "alternatif",
+  "deBeispiel": "Wir brauchen alternative Energien.",
+  "gsw": "alternativ",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir bruuched alternativi Energie."
+ },
+ {
+  "id": 1387,
+  "de": "die Alternative",
+  "tr": "alternatif, seçenek",
+  "deBeispiel": "Auf dieser Strecke ist der Zug eine gute Alternative zum Flugzeug.",
+  "gsw": "Alternative",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf dere Schtrecki isch de Zug e gueti Alternative zum Flugzüüg."
+ },
+ {
+  "id": 1388,
+  "de": "das Amt",
+  "tr": "daire, kurum, resmi makam",
+  "deBeispiel": "Das Arbeitsamt befindet sich neben dem Busbahnhof.",
+  "gsw": "Amt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich mues morn ufs Amt, wäge mim Pass."
+ },
+ {
+  "id": 1389,
+  "de": "sich amüsieren",
+  "tr": "eğlenmek, hoşça vakit geçirmek",
+  "deBeispiel": "Bei dem Fest haben wir uns sehr gut amüsiert.",
+  "gsw": "sich amüsiere",
+  "gswArtikel": null,
+  "gswBeispiel": "A dem Fäscht händ mir üs sehr guet amüsiert."
+ },
+ {
+  "id": 1390,
+  "de": "analysieren",
+  "tr": "analiz etmek, çözümlemek",
+  "deBeispiel": "Die Politiker analysieren die Situation auf dem Arbeitsmarkt.",
+  "gsw": "analysiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Politiker analysiered d Situazion uf em Arbetsmärt."
+ },
+ {
+  "id": 1391,
+  "de": "der Anbieter",
+  "tr": "sağlayıcı",
+  "deBeispiel": "- Ist das ein privater Telefonanbieter?",
+  "gsw": "Aabüüter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wele Aabüüter häsch du für s Telefon?"
+ },
+ {
+  "id": 1392,
+  "de": "andererseits",
+  "tr": "öte yandan, diğer taraftan",
+  "deBeispiel": "Tarek möchte zwar studieren, aber andererseits möchte er auch gleich Geld verdienen.",
+  "gsw": "andersiits",
+  "gswArtikel": null,
+  "gswBeispiel": "De Tarek möcht zwaar schtudiere, aber andersiits möcht er au grad Gäld verdiene."
+ },
+ {
+  "id": 1393,
+  "de": "die Änderung",
+  "tr": "değişiklik",
+  "deBeispiel": "Es gibt eine Programmänderung.",
+  "gsw": "Änderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Es git e Änderig im Programm."
+ },
+ {
+  "id": 1394,
+  "de": "anerkennen",
+  "tr": "tanımak, kabul etmek, onaylamak",
+  "deBeispiel": "Meine Ausbildung wird hier nicht anerkannt.",
+  "gsw": "anerkenne",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Usbildig wird da nöd anerkennt."
+ },
+ {
+  "id": 1395,
+  "de": "anfangs",
+  "tr": "başlangıçta, ilk başta",
+  "deBeispiel": "Anfangs ging alles gut.",
+  "gsw": "aafangs",
+  "gswArtikel": null,
+  "gswBeispiel": "Aafangs isch alles guet gange."
+ },
+ {
+  "id": 1396,
+  "de": "angeben",
+  "tr": "belirtmek, bildirmek",
+  "deBeispiel": "Bitte geben Sie Ihre genaue Adresse an.",
+  "gsw": "aagää",
+  "gswArtikel": null,
+  "gswBeispiel": "Si müend Ihri genaui Adrässe aagää."
+ },
+ {
+  "id": 1397,
+  "de": "die Angabe",
+  "tr": "bilgi, veri",
+  "deBeispiel": "Wir brauchen von Ihnen folgende Angaben: Name, Adresse, Geburtsdatum.",
+  "gsw": "Aagaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir bruuched vo Ihne die folgende Aagaabe: Name, Adrässe, Geburtsdatum."
+ },
+ {
+  "id": 1398,
+  "de": "der Angehörige",
+  "tr": "yakın akraba (erkek)",
+  "deBeispiel": "Der Arzt darf nur Familienangehörigen Auskunft geben.",
+  "gsw": "Aaghörig",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dokter git nume de nöchschte Aaghörige Uskunft.",
+  "ayniLehce": [
+   "Angehörige (B1)"
+  ]
+ },
+ {
+  "id": 1399,
+  "de": "die Angehörige",
+  "tr": "yakın akraba (kadın)",
+  "deBeispiel": "Der Arzt darf nur Familienangehörigen Auskunft geben.",
+  "gsw": "Aaghörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dokter git nume de nöchschte Aaghörige Uskunft.",
+  "ayniLehce": [
+   "Angehörige (B1)"
+  ]
+ },
+ {
+  "id": 1400,
+  "de": "angenehm",
+  "tr": "hoş, rahat, keyifli",
+  "deBeispiel": "Wir wünschen Ihnen eine angenehme Reise.",
+  "gsw": "aagnäm",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir wünsched Ihne e aagnämi Räis."
+ },
+ {
+  "id": 1401,
+  "de": "ängstlich",
+  "tr": "endişeli, korkak",
+  "deBeispiel": "Meine Mutter ist etwas ängstlich. Sie geht nicht gern allein auf die Straße.",
+  "gsw": "ängschtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter isch chli ängschtlich. Si gaat nöd gern eläi uf d Schtraass."
+ },
+ {
+  "id": 1402,
+  "de": "anhaben",
+  "tr": "giymiş olmak, üzerinde olmak",
+  "deBeispiel": "Gestern hatte Julia ein rotes Kleid an.",
+  "gsw": "aahaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter hät d Julia es roots Chläid aaghaa."
+ },
+ {
+  "id": 1403,
+  "de": "ankündigen",
+  "tr": "haber vermek, duyurmak",
+  "deBeispiel": "Wir sollten unseren Besuch ankündigen.",
+  "gsw": "aakünde",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sotted üse Bsuech aakünde."
+ },
+ {
+  "id": 1404,
+  "de": "die Anlage",
+  "tr": "sistem, düzenek (müzik, ısıtma) / ek (e-posta)",
+  "deBeispiel": "1. Meine Musikanlage ist kaputt. 2. In der Anlage der E-Mail finden Sie meinen Lebenslauf.",
+  "gsw": "Aalaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Aalaag vo de E-Mail finded Si min Läbeslauf."
+ },
+ {
+  "id": 1405,
+  "de": "die Anleitung",
+  "tr": "kılavuz, talimat",
+  "deBeispiel": "In der Anleitung steht, dass bei diesem Spiel der Älteste beginnt.",
+  "gsw": "Aaläitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Aaläitig schtaat, dass bi dem Schpiil de Eltischt aafangt."
+ },
+ {
+  "id": 1406,
+  "de": "annehmen",
+  "tr": "kabul etmek / varsaymak",
+  "deBeispiel": "1. Ich nehme Ihre Einladung gern an. 2. Ich nehme an, dass Sie mit dem Vorschlag einverstanden sind.",
+  "gsw": "aanää",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wott Ihri Iiladig gern aanää. Und ich näme aa, dass Si mit em Vorschlaag iiverschtande sind."
+ },
+ {
+  "id": 1407,
+  "de": "die Annonce",
+  "tr": "ilan, küçük ilan",
+  "deBeispiel": "Ich habe alle Annoncen gelesen, aber die Wohnungen sind zu teuer.",
+  "gsw": "Inserat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha jedes Inserat gläse, aber d Wonige sind z tüür.",
+  "ayniLehce": [
+   "Anzeige (A1)"
+  ]
+ },
+ {
+  "id": 1408,
+  "de": "anschaffen",
+  "tr": "edinmek, satın almak",
+  "deBeispiel": "Wir haben uns neue Möbel angeschafft.",
+  "gsw": "aaschaffe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ üs neui Möbel aagschafft."
+ },
+ {
+  "id": 1409,
+  "de": "anschließen",
+  "tr": "bağlamak, takmak",
+  "deBeispiel": "Wo kann ich den Computer anschließen?",
+  "gsw": "aaschlüüsse",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo chan ich de Computer aaschlüüsse?"
+ },
+ {
+  "id": 1410,
+  "de": "anschnallen",
+  "tr": "emniyet kemerini bağlamak",
+  "deBeispiel": "Vergiss nicht, dich anzuschnallen.",
+  "gsw": "sich aagurte",
+  "gswArtikel": null,
+  "gswBeispiel": "Vergiss nöd: Im Auto muesch di immer aagurte."
+ },
+ {
+  "id": 1411,
+  "de": "ansprechen",
+  "tr": "biriyle konuşmaya başlamak, seslenmek",
+  "deBeispiel": "Gestern hat mich unsere neue Nachbarin im Treppenhaus angesprochen.",
+  "gsw": "aarede",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter hät mi üsi neui Nachberin im Schtägehuus aagredt."
+ },
+ {
+  "id": 1412,
+  "de": "der Anspruch",
+  "tr": "hak, talep",
+  "deBeispiel": "Sie wohnen im Stadtzentrum. Deshalb haben Sie keinen Anspruch auf Fahrgeld.",
+  "gsw": "Aaschpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si woned im Schtadtzentrum. Drum händ Si kän Aaschpruch uf Faargäld."
+ },
+ {
+  "id": 1413,
+  "de": "anstellen",
+  "tr": "çalıştırmak, açmak (cihaz) / işe almak",
+  "deBeispiel": "1. Können Sie bitte die Heizung anstellen? 2. Mein Schwager ist bei einer Möbelfirma angestellt. 3. Da vorne ist die Kas",
+  "gsw": "aaschtele",
+  "gswArtikel": null,
+  "gswBeispiel": "Chönd Si bitte d Häizig aaschtele? Min Schwager isch bi ere Möbelfirma aagschtellt."
+ },
+ {
+  "id": 1414,
+  "de": "der Angestellte",
+  "tr": "memur, çalışan (erkek)",
+  "deBeispiel": "Björn ist Angestellter in einem Reisebüro.",
+  "gsw": "Aagschtellte",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Björn isch en Aagschtellte in eme Räisbüro."
+ },
+ {
+  "id": 1415,
+  "de": "die Angestellte",
+  "tr": "memur, çalışan (kadın)",
+  "deBeispiel": "Björn ist Angestellter in einem Reisebüro.",
+  "gsw": "Aagschtellti",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si isch e Aagschtellti in eme Räisbüro."
+ },
+ {
+  "id": 1416,
+  "de": "sich anstrengen",
+  "tr": "çabalamak, gayret etmek",
+  "deBeispiel": "1. Diese Arbeit strengt mich sehr an. 2. Wenn du die Prüfung schaffen willst, musst du dich mehr anstrengen.",
+  "gsw": "sich aaschtränge",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Arbet schtrengt mi sehr aa. Wänn du d Prüefig schaffe wotsch, muesch di mee aaschtränge."
+ },
+ {
+  "id": 1417,
+  "de": "anstrengend",
+  "tr": "yorucu",
+  "deBeispiel": "Ich finde diese Arbeit sehr anstrengend.",
+  "gsw": "schtreng",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde die Arbet sehr schtreng."
+ },
+ {
+  "id": 1418,
+  "de": "der Antrag",
+  "tr": "başvuru, dilekçe",
+  "deBeispiel": "Haben Sie schon einen Antrag für das Wohngeld ausgefüllt?",
+  "gsw": "Aatraag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Händ Si scho en Aatraag für s Wongäld usgfüllt?"
+ },
+ {
+  "id": 1419,
+  "de": "anwenden",
+  "tr": "uygulamak",
+  "deBeispiel": "Diese Salbe muss man dreimal am Tag anwenden.",
+  "gsw": "aawände",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Salbi mues me drüümaal am Taag aawände."
+ },
+ {
+  "id": 1420,
+  "de": "anwesend",
+  "tr": "mevcut, hazır",
+  "deBeispiel": "Bei dem Treffen waren alle Mitglieder anwesend.",
+  "gsw": "anwäsend",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Träffe sind alli Mitglider anwäsend gsii."
+ },
+ {
+  "id": 1421,
+  "de": "der Anwalt",
+  "tr": "avukat (erkek)",
+  "deBeispiel": "Ich werde das nicht bezahlen. Ich möchte zuerst mit meinem Anwalt sprechen.",
+  "gsw": "Aawalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich wird das nöd zaale. Ich wott zerscht mit mim Aawalt rede."
+ },
+ {
+  "id": 1422,
+  "de": "die Anwältin",
+  "tr": "avukat (kadın)",
+  "deBeispiel": "Ich werde das nicht bezahlen. Ich möchte zuerst mit meinem Anwalt sprechen.",
+  "gsw": "Aawältin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich wird das nöd zaale. Ich wott zerscht mit minere Aawältin rede."
+ },
+ {
+  "id": 1423,
+  "de": "anzeigen",
+  "tr": "ihbar etmek, bildirmek",
+  "deBeispiel": "Wenn Sie hier parken, zeige ich Sie an.",
+  "gsw": "verzäige",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn Si da parkiered, verzäige ich Si."
+ },
+ {
+  "id": 1424,
+  "de": "die Aprikose",
+  "tr": "kayısı",
+  "deBeispiel": "Schmecken dir die Aprikosen?",
+  "gsw": "Aprikose",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schmöcked der d Aprikose?",
+  "ayniLehce": [
+   "Marille (B1)"
+  ]
+ },
+ {
+  "id": 1425,
+  "de": "der Arbeiter",
+  "tr": "işçi (erkek)",
+  "deBeispiel": "- Maria ist seit zwei Jahren Arbeiterin bei Siemens.",
+  "gsw": "Arbäiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Maria schaffet siit zwäi Jaar als Arbäiterin bi de Siemens."
+ },
+ {
+  "id": 1426,
+  "de": "die Arbeitserlaubnis",
+  "tr": "çalışma izni",
+  "deBeispiel": "Haben Sie eine Arbeitserlaubnis?",
+  "gsw": "Arbetsbewilligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Händ Si e Arbetsbewilligig?"
+ },
+ {
+  "id": 1427,
+  "de": "die Arbeitslosigkeit",
+  "tr": "işsizlik",
+  "deBeispiel": "Die Arbeitslosigkeit ist gesunken.",
+  "gsw": "Arbetslosigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Arbetslosigkäit isch gsunke."
+ },
+ {
+  "id": 1428,
+  "de": "die Arbeitsstelle",
+  "tr": "iş yeri, iş",
+  "deBeispiel": "Meine Frau hat eine neue Arbeitsstelle gefunden.",
+  "gsw": "Schtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Frau hät e neui Schtell gfunde.",
+  "ayniLehce": [
+   "Stelle (A1)"
+  ]
+ },
+ {
+  "id": 1429,
+  "de": "der Architekt",
+  "tr": "mimar (erkek)",
+  "deBeispiel": "Dieses Haus hat eine berühmte Architektin gebaut.",
+  "gsw": "Architekt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Das Huus hät en berüemte Architekt baut."
+ },
+ {
+  "id": 1430,
+  "de": "die Architektin",
+  "tr": "mimar (kadın)",
+  "deBeispiel": "Dieses Haus hat eine berühmte Architektin gebaut.",
+  "gsw": "Architektin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das Huus hät e berüemti Architektin baut."
+ },
+ {
+  "id": 1431,
+  "de": "sich ärgern",
+  "tr": "sinirlenmek, kızmak",
+  "deBeispiel": "1. Ärgern Sie sich nicht. 2. Mein Bruder hat mich schon als Kind immer geärgert.",
+  "gsw": "sich ärgere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ärgered Si sich nöd! Min Brüeder hät mi scho als Chind immer gärgeret."
+ },
+ {
+  "id": 1432,
+  "de": "der Ärger",
+  "tr": "sıkıntı, dert, sorun / öfke, kızgınlık",
+  "deBeispiel": "Ich hatte heute Ärger im Büro. Ich habe mich mit einem Kollegen gestritten.",
+  "gsw": "Ärger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha hüt Ärger ghaa im Büro. Ich ha mit eme Kolleg gschtritte."
+ },
+ {
+  "id": 1433,
+  "de": "ärgerlich",
+  "tr": "sinir bozucu, can sıkıcı",
+  "deBeispiel": "Der Zug hat schon wieder Verspätung. Das ist wirklich ärgerlich.",
+  "gsw": "ärgerlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zug hät scho wider Verschpöötig. Das isch würkli ärgerlich."
+ },
+ {
+  "id": 1434,
+  "de": "die Art",
+  "tr": "tür, çeşit, biçim",
+  "deBeispiel": "1. Im Zoo haben sie 34 verschiedene Arten von Vögeln. 2. Seine Art gefällt mir nicht. 3. Man kann auf unterschiedliche A",
+  "gsw": "Art",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Zoo häts vieredriissg verschideni Arte vo Vögel. Sini Art gfallt mer nöd."
+ },
+ {
+  "id": 1435,
+  "de": "das Asyl",
+  "tr": "sığınma, iltica",
+  "deBeispiel": "Die Menschen sind auf der Flucht und bitten um Asyl.",
+  "gsw": "Asyl",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Mäntsche sind uf de Flucht und bitted um Asyl."
+ },
+ {
+  "id": 1436,
+  "de": "atmen",
+  "tr": "nefes almak",
+  "deBeispiel": "Er hat eine Erkältung und kann nicht durch die Nase atmen.",
+  "gsw": "schnuufe",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch verchältet und cha nöd dur d Nase schnuufe."
+ },
+ {
+  "id": 1437,
+  "de": "der Atem",
+  "tr": "nefes, soluk",
+  "deBeispiel": "Bitte den Atem anhalten.",
+  "gsw": "Schnuuf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bitte de Schnuuf aahalte."
+ },
+ {
+  "id": 1438,
+  "de": "der Aufenthalt",
+  "tr": "kalış, ikamet süresi",
+  "deBeispiel": "9. Ich bin schon seit zwei Stunden auf. 10.Komm herein, die Tür ist auf. (D) (A, CH: offen) 1. Der Zug hat in München nu",
+  "gsw": "Ufenthalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Zug hät z Münche nume zää Minute Ufenthalt."
+ },
+ {
+  "id": 1439,
+  "de": "auffallen",
+  "tr": "dikkat çekmek, göze çarpmak",
+  "deBeispiel": "Mir ist aufgefallen, dass Harriett ganz blass ist.",
+  "gsw": "uffale",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir isch ufgfale, dass d Harriett ganz blass isch."
+ },
+ {
+  "id": 1440,
+  "de": "auffordern",
+  "tr": "çağırmak, talep etmek, davet etmek",
+  "deBeispiel": "1. Sie forderte mich auf, meine Meinung zu sagen. 2. Er fordert sie zum Tanz auf.",
+  "gsw": "uffordere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät mi ufgforderet, mini Mäinig z säge. Er forderet si zum Tanz uf."
+ },
+ {
+  "id": 1441,
+  "de": "die Aufforderung",
+  "tr": "çağrı, talep, bildirim",
+  "deBeispiel": "Sie erhalten eine Aufforderung, den Betrag bis Juni zu zahlen.",
+  "gsw": "Ufforderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si überchömed e Ufforderig, de Betraag bis im Juni z zaale."
+ },
+ {
+  "id": 1442,
+  "de": "aufführen",
+  "tr": "sahnelemek, oynamak",
+  "deBeispiel": "Die Kinder führen zu Weihnachten ein Theaterstück auf.",
+  "gsw": "uffüere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind wänd a de Wienachte es Theaterschtück uffüere."
+ },
+ {
+  "id": 1443,
+  "de": "aufgeben",
+  "tr": "vazgeçmek, pes etmek, postaya vermek",
+  "deBeispiel": "1. Ich habe auf der Post ein Paket aufgegeben. 2. Man darf nie aufgeben. Es gibt immer eine Hoffnung.",
+  "gsw": "ufgää",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha uf de Poscht es Päckli ufgää. Und me törf nie ufgää, es git immer e Hoffnig."
+ },
+ {
+  "id": 1444,
+  "de": "aufhalten",
+  "tr": "alıkoymak, oyalamak, tutmak / (sich) bulunmak, kalmak",
+  "deBeispiel": "1. Wo hält er sich gerade auf? – In München. 2. Darf ich Ihnen die Tür aufhalten? 3. Entschuldigen Sie die Verspätung, i",
+  "gsw": "ufhalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Törf ich Ihne d Tür ufhalte? Entschuldigung für d Verschpöötig, ich bi ufghalte worde."
+ },
+ {
+  "id": 1445,
+  "de": "aufheben",
+  "tr": "kaldırmak, saklamak",
+  "deBeispiel": "1. Lassen Sie die Papiere nur auf dem Boden liegen, ich hebe sie schon auf. 2. Die Quittung müssen Sie gut aufheben.",
+  "gsw": "ufhebe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Quittig müend Si guet ufhebe."
+ },
+ {
+  "id": 1446,
+  "de": "aufladen",
+  "tr": "şarj etmek",
+  "deBeispiel": "Ich muss mein Telefon aufladen. Die Batterie ist leer.",
+  "gsw": "uflade",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues mis Natel uflade. De Akku isch läär."
+ },
+ {
+  "id": 1447,
+  "de": "auflösen",
+  "tr": "eritmek, çözmek",
+  "deBeispiel": "Die Tablette bitte in Wasser auflösen.",
+  "gsw": "uflöse",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tablette bitte im Wasser uflöse."
+ },
+ {
+  "id": 1448,
+  "de": "aufmerksam",
+  "tr": "dikkatli",
+  "deBeispiel": "1. Die Schülerin hörte aufmerksam zu. 2. Ich mache Sie darauf aufmerksam, dass wir in einer halben Stunde schließen.",
+  "gsw": "ufmerksam",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schüelerin hät ufmerksam zueglost. Ich mache Si druf ufmerksam, dass mir in ere halbe Schtund zuemached."
+ },
+ {
+  "id": 1449,
+  "de": "aufnehmen",
+  "tr": "kabul etmek, kaydetmek",
+  "deBeispiel": "1. Wir haben Aneta in unseren Verein aufgenommen. 2. Ich habe den Film im Urlaub aufgenommen.",
+  "gsw": "ufnää",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir wänd d Aneta i üsen Veräin ufnää. Ich ha de Film i de Ferie ufgnaa.",
+  "ayniLehce": [
+   "wischen (A2)"
+  ]
+ },
+ {
+  "id": 1450,
+  "de": "die Aufnahme",
+  "tr": "kayıt",
+  "deBeispiel": "Bitte seid leise! – Ich starte die Aufnahme.",
+  "gsw": "Ufnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte sind liislig! – Ich schtarte d Ufnaam."
+ }
+]

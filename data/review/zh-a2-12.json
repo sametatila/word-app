@@ -1,0 +1,1004 @@
+[
+ {
+  "id": 8195,
+  "de": "warmhalten",
+  "tr": "sıcak tutmak",
+  "deBeispiel": "Ich halte das Essen im Ofen für meinen Mann warm.",
+  "gsw": "warmhalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue s Ässe im Ofe für min Maa warmhalte."
+ },
+ {
+  "id": 8196,
+  "de": "knoten",
+  "tr": "düğümlemek, düğüm atmak",
+  "deBeispiel": "Ich knote den vollen Müllsack fest zu.",
+  "gsw": "chnüpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich chnüpfe de voll Güselsack fescht zue."
+ },
+ {
+  "id": 8197,
+  "de": "einschlafen",
+  "tr": "uykuya dalmak",
+  "deBeispiel": "Gestern bin ich vor dem Fernseher eingeschlafen.",
+  "gsw": "iischlaafe",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter bin ich vor em Fernseh iigschlaafe."
+ },
+ {
+  "id": 8198,
+  "de": "ausschlafen",
+  "tr": "uykusunu almak, doya doya uyumak",
+  "deBeispiel": "Am Sonntag schlafe ich endlich einmal richtig aus.",
+  "gsw": "usschlaafe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Sunntig tue ich entli emal richtig usschlaafe."
+ },
+ {
+  "id": 8199,
+  "de": "verschlafen",
+  "tr": "uyuyakalmak, geç kalkmak",
+  "deBeispiel": "Heute Morgen habe ich verschlafen und den Bus verpasst.",
+  "gsw": "verschlaafe",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt Morge han ich verschlaafe und de Bus verpasst."
+ },
+ {
+  "id": 8200,
+  "de": "aufwecken",
+  "tr": "uyandırmak",
+  "deBeispiel": "Jeden Morgen wecke ich meine Kinder um sieben Uhr auf.",
+  "gsw": "uufwecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Morge tue ich mini Chind am sibni uufwecke."
+ },
+ {
+  "id": 8201,
+  "de": "aufbleiben",
+  "tr": "(geç saate kadar) uyanık kalmak, yatmamak",
+  "deBeispiel": "Am Wochenende bleiben die Kinder eine Stunde länger auf.",
+  "gsw": "uufbliibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenend tüend d Chind e Schtund länger uufbliibe."
+ },
+ {
+  "id": 8202,
+  "de": "sich strecken",
+  "tr": "gerinmek, uzanıp esnemek",
+  "deBeispiel": "Nach dem Aufstehen strecke ich mich am offenen Fenster.",
+  "gsw": "schtrecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Uufschtaa schtrecke ich mich am offene Fänschter."
+ },
+ {
+  "id": 8203,
+  "de": "sich kämmen",
+  "tr": "saçını taramak",
+  "deBeispiel": "Jeden Morgen kämme ich mich vor dem Spiegel im Bad.",
+  "gsw": "chämme",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Morge chämme ich mich vor em Schpiegel im Bad."
+ },
+ {
+  "id": 8204,
+  "de": "föhnen",
+  "tr": "fön çekmek, saç kurutmak",
+  "deBeispiel": "Nach dem Duschen föhne ich meine Haare im Bad.",
+  "gsw": "föne",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Duusche föne ich mini Haar im Bad."
+ },
+ {
+  "id": 8205,
+  "de": "bürsten",
+  "tr": "fırçalamak",
+  "deBeispiel": "Vor der Arbeit bürste ich meine schwarzen Schuhe.",
+  "gsw": "bürschte",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor de Arbet bürschte ich mini schwarze Schue.",
+  "ayniLehce": [
+   "Bürste (B1)"
+  ]
+ },
+ {
+  "id": 8206,
+  "de": "anprobieren",
+  "tr": "denemek (kıyafet), üstünde denemek",
+  "deBeispiel": "Im Geschäft probiere ich zuerst die blaue Jacke an.",
+  "gsw": "aaprobiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Gschäft tue ich zerscht di blau Jacke aaprobiere."
+ },
+ {
+  "id": 8207,
+  "de": "kassieren",
+  "tr": "tahsil etmek, para almak",
+  "deBeispiel": "An der Kasse kassiert heute eine junge Frau.",
+  "gsw": "kassiere",
+  "gswArtikel": null,
+  "gswBeispiel": "A de Kasse kassiert hüt e jungi Frau."
+ },
+ {
+  "id": 8208,
+  "de": "auffüllen",
+  "tr": "doldurmak, eksiğini tamamlamak",
+  "deBeispiel": "Bitte fülle das Waschmittel im Schrank auf.",
+  "gsw": "uuffülle",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte s Waschmittel im Schrank uuffülle."
+ },
+ {
+  "id": 8209,
+  "de": "nachfüllen",
+  "tr": "yeniden doldurmak, üstüne eklemek",
+  "deBeispiel": "Füll bitte das Salz nach, die Dose ist fast leer.",
+  "gsw": "nachefülle",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte s Salz nachefülle, d Dose isch fascht leer."
+ },
+ {
+  "id": 8210,
+  "de": "einschenken",
+  "tr": "(içecek) doldurmak, koymak",
+  "deBeispiel": "Meine Mutter schenkt uns nach dem Essen Tee ein.",
+  "gsw": "iischänke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter tuet öis nach em Ässe Tee iischänke."
+ },
+ {
+  "id": 8211,
+  "de": "aufbewahren",
+  "tr": "saklamak, muhafaza etmek",
+  "deBeispiel": "Wir bewahren die Kartoffeln im kühlen Keller auf.",
+  "gsw": "uufbewahre",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend d Härdöpfel im chüele Chäller uufbewahre."
+ },
+ {
+  "id": 8212,
+  "de": "abräumen",
+  "tr": "(masayı) toplamak, kaldırmak",
+  "deBeispiel": "Nach dem Essen räume ich den Tisch schnell ab.",
+  "gsw": "abruume",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Ässe tue ich de Tisch schnäll abruume."
+ },
+ {
+  "id": 8213,
+  "de": "anrichten",
+  "tr": "(yemeği) tabağa koyup sunmak",
+  "deBeispiel": "Meine Frau richtet den Salat auf einem großen Teller an.",
+  "gsw": "aarichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Frau tuet de Salat uf eme groosse Täller aarichte."
+ },
+ {
+  "id": 8214,
+  "de": "auftragen",
+  "tr": "sürmek (krem, boya)",
+  "deBeispiel": "Jeden Abend trage ich eine Creme auf die Hände auf.",
+  "gsw": "uuftrage",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Aabig tue ich e Creme uf d Händ uuftrage."
+ },
+ {
+  "id": 8215,
+  "de": "naschen",
+  "tr": "atıştırmak (tatlı), gizlice yemek",
+  "deBeispiel": "Die Kinder naschen heimlich von der Schokolade.",
+  "gsw": "nasche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind nasched häimli vo de Schoggi."
+ },
+ {
+  "id": 8216,
+  "de": "aufschneiden",
+  "tr": "dilimlemek, kesip açmak",
+  "deBeispiel": "Meine Mutter schneidet den Kuchen in der Küche auf.",
+  "gsw": "uufschniide",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter tuet de Chueche i de Chuchi uufschniide."
+ },
+ {
+  "id": 8217,
+  "de": "verschließen",
+  "tr": "sıkıca kapatmak, kilitlemek",
+  "deBeispiel": "Verschließ bitte die Marmelade gut, sonst wird sie schlecht.",
+  "gsw": "verschliesse",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte d Konfi guet verschliesse, susch wird si schlächt."
+ },
+ {
+  "id": 8218,
+  "de": "zudecken",
+  "tr": "üstünü örtmek",
+  "deBeispiel": "Abends decke ich meinen Sohn im Bett warm zu.",
+  "gsw": "zuedecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig tue ich min Sohn im Bett warm zuedecke."
+ },
+ {
+  "id": 8219,
+  "de": "beziehen",
+  "tr": "(yatağa) çarşaf geçirmek, kaplamak",
+  "deBeispiel": "Am Samstag beziehe ich alle Betten in der Wohnung neu.",
+  "gsw": "beziehe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Samschtig beziehe ich alli Bette i de Wohnig neu."
+ },
+ {
+  "id": 8220,
+  "de": "polieren",
+  "tr": "parlatmak, cilalamak",
+  "deBeispiel": "Vor dem Besuch poliere ich die Gläser mit einem Tuch.",
+  "gsw": "poliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Bsuech poliere ich d Glääser mit eme Tuech."
+ },
+ {
+  "id": 8221,
+  "de": "montieren",
+  "tr": "monte etmek, kurmak",
+  "deBeispiel": "Der Handwerker montiert heute die neue Küche.",
+  "gsw": "montiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Handwärcher montiert hüt di neu Chuchi."
+ },
+ {
+  "id": 8222,
+  "de": "ausbessern",
+  "tr": "onarmak, düzeltmek",
+  "deBeispiel": "Ich bessere die kleine Stelle an der Wand mit Farbe aus.",
+  "gsw": "usbessere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue di chlii Schtell a de Wand mit Farb usbessere."
+ },
+ {
+  "id": 8223,
+  "de": "schaufeln",
+  "tr": "kürekle temizlemek, küremek",
+  "deBeispiel": "Im Winter schaufeln wir den Schnee vor der Haustür.",
+  "gsw": "schuufle",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Winter schuufle mir de Schnee vor de Huustür."
+ },
+ {
+  "id": 8224,
+  "de": "mithelfen",
+  "tr": "yardım etmek, el atmak",
+  "deBeispiel": "Meine Kinder helfen im Haushalt jeden Tag mit.",
+  "gsw": "mithelfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Chind tüend im Huushalt jede Taag mithelfe."
+ },
+ {
+  "id": 8225,
+  "de": "sich abwechseln",
+  "tr": "sırayla yapmak, nöbetleşmek",
+  "deBeispiel": "Beim Kochen wechseln wir uns in der Familie ab.",
+  "gsw": "abwächsle",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Choche tüend mir öis i de Familie abwächsle."
+ },
+ {
+  "id": 8226,
+  "de": "losgehen",
+  "tr": "yola çıkmak, başlamak",
+  "deBeispiel": "Wir gehen um sieben Uhr los.",
+  "gsw": "losgaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend am sibni losgaa."
+ },
+ {
+  "id": 8227,
+  "de": "weggehen",
+  "tr": "gitmek, uzaklaşmak",
+  "deBeispiel": "Meine Kollegin geht heute früher weg.",
+  "gsw": "wäggaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Kollegin tuet hüt früener wäggaa."
+ },
+ {
+  "id": 8228,
+  "de": "weglaufen",
+  "tr": "kaçmak, koşarak uzaklaşmak",
+  "deBeispiel": "Der Hund ist im Park weggelaufen.",
+  "gsw": "wäglaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hund isch im Park wäggloffe."
+ },
+ {
+  "id": 8229,
+  "de": "zurückkommen",
+  "tr": "geri gelmek, dönmek",
+  "deBeispiel": "Mein Vater kommt am Freitag aus Hamburg zurück.",
+  "gsw": "zruggchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Vatter tuet am Friitig us Hamburg zruggchoo."
+ },
+ {
+  "id": 8230,
+  "de": "hingehen",
+  "tr": "oraya gitmek",
+  "deBeispiel": "Das Konzert ist billig, wir gehen zusammen hin.",
+  "gsw": "hiigaa",
+  "gswArtikel": null,
+  "gswBeispiel": "S Konzärt isch billig, mir wänd zäme hiigaa."
+ },
+ {
+  "id": 8231,
+  "de": "herkommen",
+  "tr": "buraya gelmek",
+  "deBeispiel": "Komm bitte kurz her, ich brauche deine Hilfe.",
+  "gsw": "härechoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Chumm bitte churz häre, ich bruuch dini Hilf."
+ },
+ {
+  "id": 8232,
+  "de": "reinkommen",
+  "tr": "içeri girmek",
+  "deBeispiel": "Der Chef kommt gleich ins Büro rein.",
+  "gsw": "inechoo",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chef wird glii is Büro inechoo."
+ },
+ {
+  "id": 8233,
+  "de": "rausgehen",
+  "tr": "dışarı çıkmak",
+  "deBeispiel": "In der Pause gehe ich kurz raus.",
+  "gsw": "usegaa",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Pause wott ich churz usegaa."
+ },
+ {
+  "id": 8234,
+  "de": "vorbeikommen",
+  "tr": "uğramak, uğrayıp geçmek",
+  "deBeispiel": "Der Techniker kommt morgen bei uns vorbei.",
+  "gsw": "verbiichoo",
+  "gswArtikel": null,
+  "gswBeispiel": "De Techniker chunt morn bi öis verbii."
+ },
+ {
+  "id": 8235,
+  "de": "umkehren",
+  "tr": "geri dönmek, geldiği yoldan dönmek",
+  "deBeispiel": "Es hat stark geregnet, deshalb sind wir umgekehrt.",
+  "gsw": "umchere",
+  "gswArtikel": null,
+  "gswBeispiel": "Es hät schtarch grägnet, drum händ mir müesse umchere."
+ },
+ {
+  "id": 8236,
+  "de": "anhalten",
+  "tr": "durmak, durdurmak",
+  "deBeispiel": "Der Bus hält vor der Schule an.",
+  "gsw": "aahalte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bus tuet vor de Schuel aahalte."
+ },
+ {
+  "id": 8237,
+  "de": "stehenbleiben",
+  "tr": "durup kalmak, olduğu yerde durmak",
+  "deBeispiel": "Meine Uhr ist heute Nacht stehen geblieben.",
+  "gsw": "schtaabliibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Uhr isch hüt Nacht schtaabliibe."
+ },
+ {
+  "id": 8238,
+  "de": "betreten",
+  "tr": "girmek, ayak basmak",
+  "deBeispiel": "Man darf den Rasen im Park nicht betreten.",
+  "gsw": "betrete",
+  "gswArtikel": null,
+  "gswBeispiel": "Me darf de Rase im Park nöd betrete."
+ },
+ {
+  "id": 8239,
+  "de": "durchgehen",
+  "tr": "gözden geçirmek, içinden geçmek",
+  "deBeispiel": "Wir gehen die Liste noch einmal zusammen durch.",
+  "gsw": "duregaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir gönd d Lischte na emaal zäme dure."
+ },
+ {
+  "id": 8240,
+  "de": "rollen",
+  "tr": "yuvarlanmak, tekerlek üstünde gitmek",
+  "deBeispiel": "Der Ball ist unter das Auto gerollt.",
+  "gsw": "rolle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Ball isch under s Auto grollt.",
+  "ayniLehce": [
+   "Rolle (B1)"
+  ]
+ },
+ {
+  "id": 8241,
+  "de": "rutschen",
+  "tr": "kaymak",
+  "deBeispiel": "Im Winter rutschen die Autos oft auf der Straße.",
+  "gsw": "rutsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Winter rutsched d Auto oft uf de Schtraass."
+ },
+ {
+  "id": 8242,
+  "de": "hüpfen",
+  "tr": "zıplamak, sekmek",
+  "deBeispiel": "Die Kinder hüpfen im Garten herum.",
+  "gsw": "gumpe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind gumped im Garte ume.",
+  "ayniLehce": [
+   "springen (B1)"
+  ]
+ },
+ {
+  "id": 8243,
+  "de": "hinfahren",
+  "tr": "oraya gitmek (araçla)",
+  "deBeispiel": "Der Markt ist weit, wir fahren mit dem Bus hin.",
+  "gsw": "hiifahre",
+  "gswArtikel": null,
+  "gswBeispiel": "De Märt isch wiit, mir wänd mit em Bus hiifahre."
+ },
+ {
+  "id": 8244,
+  "de": "zurückfahren",
+  "tr": "geri dönmek (araçla)",
+  "deBeispiel": "Am Sonntag fahre ich nach München zurück.",
+  "gsw": "zruggfahre",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Sunntig fahr ich nach München zrugg."
+ },
+ {
+  "id": 8245,
+  "de": "wegfahren",
+  "tr": "(araçla) ayrılmak, çekip gitmek",
+  "deBeispiel": "Der Lkw ist gerade vom Hof weggefahren.",
+  "gsw": "wägfahre",
+  "gswArtikel": null,
+  "gswBeispiel": "De Laschtwage isch grad vom Hof wägfahre."
+ },
+ {
+  "id": 8246,
+  "de": "lenken",
+  "tr": "(aracı) kullanmak, yönlendirmek",
+  "deBeispiel": "Mein Onkel lenkt den Bus sehr ruhig.",
+  "gsw": "lenke",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Unggle lenkt de Bus sehr ruehig."
+ },
+ {
+  "id": 8247,
+  "de": "transportieren",
+  "tr": "taşımak, nakletmek",
+  "deBeispiel": "Die Firma transportiert die Möbel in die neue Wohnung.",
+  "gsw": "transportiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma transportiert d Möbel i d nöi Wonig."
+ },
+ {
+  "id": 8248,
+  "de": "eintreffen",
+  "tr": "varmak, ulaşmak",
+  "deBeispiel": "Das Paket ist gestern im Lager eingetroffen.",
+  "gsw": "iiträffe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Paket isch geschter im Lager iitroffe."
+ },
+ {
+  "id": 8249,
+  "de": "wegbringen",
+  "tr": "götürmek, başka yere götürmek",
+  "deBeispiel": "Ich bringe den Müll schnell weg.",
+  "gsw": "wägbringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue de Güsel schnäll wägbringe."
+ },
+ {
+  "id": 8250,
+  "de": "zurückbringen",
+  "tr": "geri götürmek, iade etmek",
+  "deBeispiel": "Bringst du die Bücher heute in die Bibliothek zurück?",
+  "gsw": "zruggbringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Bringsch du d Büecher hüt i d Bibliothek zrugg?"
+ },
+ {
+  "id": 8251,
+  "de": "wegschicken",
+  "tr": "geri çevirmek, başka yere yollamak",
+  "deBeispiel": "Der Kellner hat den Gast ohne Reservierung weggeschickt.",
+  "gsw": "wägschicke",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kellner hät de Gascht ooni Reservation wägschickt."
+ },
+ {
+  "id": 8252,
+  "de": "sich verspäten",
+  "tr": "gecikmek, geç kalmak",
+  "deBeispiel": "Der Zug nach Köln verspätet sich um zwanzig Minuten.",
+  "gsw": "sich verschpäte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zug nach Köln verschpätet sich um zwänzg Minute."
+ },
+ {
+  "id": 8253,
+  "de": "weitermachen",
+  "tr": "devam etmek, sürdürmek",
+  "deBeispiel": "Nach der Pause machen wir mit der Arbeit weiter.",
+  "gsw": "wiitermache",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Pause mached mir mit de Arbet wiiter."
+ },
+ {
+  "id": 8254,
+  "de": "zusammenarbeiten",
+  "tr": "birlikte çalışmak, iş birliği yapmak",
+  "deBeispiel": "Unser Team arbeitet gut mit der Technik zusammen.",
+  "gsw": "zämeschaffe",
+  "gswArtikel": null,
+  "gswBeispiel": "Öises Team schafft guet mit de Technik zäme."
+ },
+ {
+  "id": 8255,
+  "de": "aushelfen",
+  "tr": "geçici olarak yardım etmek, yardıma gitmek",
+  "deBeispiel": "Am Samstag helfe ich im Laden aus.",
+  "gsw": "uushälfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Samschtig gang ich im Lade uushälfe."
+ },
+ {
+  "id": 8256,
+  "de": "aufteilen",
+  "tr": "paylaştırmak, bölüştürmek",
+  "deBeispiel": "Wir teilen die Arbeit unter drei Kollegen auf.",
+  "gsw": "ufteile",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir teiled d Arbet under drü Kollege uf."
+ },
+ {
+  "id": 8257,
+  "de": "sortieren",
+  "tr": "sıralamak, tasnif etmek",
+  "deBeispiel": "Ich sortiere die Rechnungen nach Datum.",
+  "gsw": "sortiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich sortiere d Rächnige nach Datum."
+ },
+ {
+  "id": 8258,
+  "de": "stapeln",
+  "tr": "üst üste yığmak, istiflemek",
+  "deBeispiel": "Der Praktikant stapelt die Kisten im Lager.",
+  "gsw": "schtaple",
+  "gswArtikel": null,
+  "gswBeispiel": "De Praktikant schtaplet d Chischte im Lager."
+ },
+ {
+  "id": 8259,
+  "de": "schrauben",
+  "tr": "vidalamak",
+  "deBeispiel": "Mein Bruder schraubt das Regal an die Wand.",
+  "gsw": "schruube",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brüeder schruubt s Gschtell a d Wand.",
+  "ayniLehce": [
+   "Schraube (A2)"
+  ]
+ },
+ {
+  "id": 8260,
+  "de": "hämmern",
+  "tr": "çekiçlemek",
+  "deBeispiel": "Der Nachbar hämmert seit einer Stunde in der Garage.",
+  "gsw": "hämmere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Nachbar hämmeret siit ere Schtund i de Garage."
+ },
+ {
+  "id": 8261,
+  "de": "befestigen",
+  "tr": "sabitlemek, tutturmak",
+  "deBeispiel": "Wir befestigen die Lampe über dem Tisch.",
+  "gsw": "befeschtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir befeschtiged d Lampe über em Tisch."
+ },
+ {
+  "id": 8262,
+  "de": "aufbauen",
+  "tr": "kurmak, monte etmek",
+  "deBeispiel": "Die Kollegen bauen das Zelt für das Fest auf.",
+  "gsw": "ufbaue",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kollege baued s Zält für s Fäscht uf."
+ },
+ {
+  "id": 8263,
+  "de": "aufstellen",
+  "tr": "yerleştirmek, dizmek",
+  "deBeispiel": "Der Hausmeister stellt die Stühle im Saal auf.",
+  "gsw": "ufschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Huuswart schtellt d Schtüel im Saal uf."
+ },
+ {
+  "id": 8264,
+  "de": "aufhängen",
+  "tr": "asmak",
+  "deBeispiel": "Meine Mutter hängt die Wäsche auf dem Balkon auf.",
+  "gsw": "ufhänke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter hänkt d Wösch uf em Balkon uf."
+ },
+ {
+  "id": 8265,
+  "de": "graben",
+  "tr": "kazmak",
+  "deBeispiel": "Die Arbeiter graben ein Loch für den neuen Baum.",
+  "gsw": "grabe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Arbeiter grabed es Loch für de nöi Boum."
+ },
+ {
+  "id": 8266,
+  "de": "fegen",
+  "tr": "süpürmek",
+  "deBeispiel": "Jeden Morgen fegt er den Hof vor dem Laden.",
+  "gsw": "wüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Morge wüscht er de Hof vor em Lade."
+ },
+ {
+  "id": 8267,
+  "de": "abwischen",
+  "tr": "silmek, silip temizlemek",
+  "deBeispiel": "Der Kellner wischt den Tisch schnell ab.",
+  "gsw": "abwüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kellner wüscht de Tisch schnäll ab."
+ },
+ {
+  "id": 8268,
+  "de": "falten",
+  "tr": "katlamak",
+  "deBeispiel": "Sie faltet die Handtücher und legt sie in den Schrank.",
+  "gsw": "falte",
+  "gswArtikel": null,
+  "gswBeispiel": "Si faltet d Handtüecher und leit si i de Chaschte."
+ },
+ {
+  "id": 8269,
+  "de": "loslassen",
+  "tr": "bırakmak, elinden bırakmak",
+  "deBeispiel": "Lass das Seil bitte nicht los!",
+  "gsw": "loslaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte s Säil nöd loslaa!"
+ },
+ {
+  "id": 8270,
+  "de": "schleppen",
+  "tr": "sürüklemek, güçlükle taşımak",
+  "deBeispiel": "Wir schleppen die schweren Koffer in den dritten Stock.",
+  "gsw": "schleppe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir schlepped di schwere Choffer i de dritt Schtock."
+ },
+ {
+  "id": 8271,
+  "de": "anheben",
+  "tr": "kaldırmak, yükseltmek",
+  "deBeispiel": "Hebst du den Tisch kurz an, bitte?",
+  "gsw": "aalupfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch de Tisch churz aalupfe, bitte?"
+ },
+ {
+  "id": 8272,
+  "de": "hochheben",
+  "tr": "yukarı kaldırmak",
+  "deBeispiel": "Der Vater hebt seine Tochter hoch.",
+  "gsw": "ufelupfe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vatter lupft sini Tochter ufe."
+ },
+ {
+  "id": 8273,
+  "de": "sich hinlegen",
+  "tr": "uzanmak, yatmak",
+  "deBeispiel": "Nach der Schicht lege ich mich eine Stunde hin.",
+  "gsw": "sich hilegge",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Schicht gang ich mich e Schtund hilegge."
+ },
+ {
+  "id": 8274,
+  "de": "sich hinsetzen",
+  "tr": "oturmak, oturuvermek",
+  "deBeispiel": "Setz dich bitte hier hin, der Arzt kommt gleich.",
+  "gsw": "sich hisetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch di bitte da hisetze, de Dokter chunt grad."
+ },
+ {
+  "id": 8275,
+  "de": "hinstellen",
+  "tr": "koymak, oraya bırakmak",
+  "deBeispiel": "Stell die Kiste bitte neben die Tür hin.",
+  "gsw": "hischtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch d Chischte bitte näbet d Tür hischtelle."
+ },
+ {
+  "id": 8276,
+  "de": "lagern",
+  "tr": "depolamak, saklamak",
+  "deBeispiel": "Wir lagern die Getränke im Keller.",
+  "gsw": "lagere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir lagered d Getränk im Chäller."
+ },
+ {
+  "id": 8277,
+  "de": "verstauen",
+  "tr": "yerleştirmek, istifleyip koymak",
+  "deBeispiel": "Der Fahrer verstaut die Taschen im Kofferraum.",
+  "gsw": "verschtaue",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chauffeur verschtaut d Täsche im Chofferruum."
+ },
+ {
+  "id": 8278,
+  "de": "abladen",
+  "tr": "boşaltmak, indirmek",
+  "deBeispiel": "Die Männer laden die Möbel vor dem Haus ab.",
+  "gsw": "ablade",
+  "gswArtikel": null,
+  "gswBeispiel": "D Manne laded d Möbel vor em Huus ab."
+ },
+ {
+  "id": 8279,
+  "de": "beladen",
+  "tr": "yüklemek, doldurmak",
+  "deBeispiel": "Wir beladen den Wagen mit Kisten.",
+  "gsw": "belade",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir beladed de Wage mit Chischte."
+ },
+ {
+  "id": 8280,
+  "de": "einsammeln",
+  "tr": "toplamak, toplayıp almak",
+  "deBeispiel": "Der Lehrer sammelt die Hefte am Ende der Stunde ein.",
+  "gsw": "iisammle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Leerer tuet d Häft am Änd vo de Schtund iisammle."
+ },
+ {
+  "id": 8281,
+  "de": "wegräumen",
+  "tr": "toplayıp yerine kaldırmak, kaldırmak",
+  "deBeispiel": "Räum bitte die Werkzeuge nach der Arbeit weg.",
+  "gsw": "wägruume",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte s Wärchzüüg nach de Arbet wägruume!"
+ },
+ {
+  "id": 8282,
+  "de": "füllen",
+  "tr": "doldurmak",
+  "deBeispiel": "Sie füllt die Flasche mit kaltem Wasser.",
+  "gsw": "fülle",
+  "gswArtikel": null,
+  "gswBeispiel": "Si füllt d Flasche mit chaltem Wasser."
+ },
+ {
+  "id": 8283,
+  "de": "leeren",
+  "tr": "boşaltmak",
+  "deBeispiel": "Der Hausmeister leert die Mülltonnen am Dienstag.",
+  "gsw": "lääre",
+  "gswArtikel": null,
+  "gswBeispiel": "De Huuswart läärt d Güselchüble am Ziischtig."
+ },
+ {
+  "id": 8284,
+  "de": "kippen",
+  "tr": "yana yatırmak, devirmek",
+  "deBeispiel": "Im Büro kippen wir das Fenster für frische Luft.",
+  "gsw": "chippe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Büro chipped mir s Fäischter für früschi Luft."
+ },
+ {
+  "id": 8285,
+  "de": "verringern",
+  "tr": "azaltmak, düşürmek",
+  "deBeispiel": "Die Firma verringert die Kosten für Papier.",
+  "gsw": "verchlinere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma verchlineret d Chöschte für s Papier."
+ },
+ {
+  "id": 8286,
+  "de": "schaukeln",
+  "tr": "sallanmak, salıncakta sallanmak",
+  "deBeispiel": "Das Kind schaukelt gern auf dem Spielplatz.",
+  "gsw": "schaukle",
+  "gswArtikel": null,
+  "gswBeispiel": "S Chind schauklet gärn uf em Schpilplatz."
+ },
+ {
+  "id": 8287,
+  "de": "spazieren",
+  "tr": "gezinmek, yürüyüş yapmak",
+  "deBeispiel": "Am Sonntag spazieren wir durch den Park.",
+  "gsw": "schpaziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Sunntig schpaziered mir dur de Park."
+ },
+ {
+  "id": 8288,
+  "de": "betonen",
+  "tr": "vurgulamak, altını çizmek",
+  "deBeispiel": "Der Lehrer betont, dass die Hausaufgabe wichtig ist.",
+  "gsw": "betone",
+  "gswArtikel": null,
+  "gswBeispiel": "De Leerer betont, dass d Huusufgab wichtig isch."
+ },
+ {
+  "id": 8289,
+  "de": "erwähnen",
+  "tr": "bahsetmek, söz etmek",
+  "deBeispiel": "Sie erwähnt den neuen Termin mit keinem Wort.",
+  "gsw": "erwääne",
+  "gswArtikel": null,
+  "gswBeispiel": "Si erwäänt de nöi Termin mit käim Wort."
+ },
+ {
+  "id": 8290,
+  "de": "quatschen",
+  "tr": "laflamak, gevezelik etmek",
+  "deBeispiel": "Die Kinder quatschen im Unterricht viel zu laut.",
+  "gsw": "schnorre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind schnorred im Underricht vil z luut."
+ },
+ {
+  "id": 8291,
+  "de": "flüstern",
+  "tr": "fısıldamak",
+  "deBeispiel": "Meine Freundin flüstert mir die Antwort ins Ohr.",
+  "gsw": "flüschtere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Fründin flüschteret mer d Antwort is Ohr."
+ },
+ {
+  "id": 8292,
+  "de": "benachrichtigen",
+  "tr": "haber vermek, bilgilendirmek",
+  "deBeispiel": "Der Arzt benachrichtigt uns, sobald das Ergebnis da ist.",
+  "gsw": "benachrichtige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokter benachrichtiget öis, sobald s Ergäbnis da isch."
+ },
+ {
+  "id": 8293,
+  "de": "herausfinden",
+  "tr": "öğrenmek, bulmak",
+  "deBeispiel": "Ich finde morgen heraus, wie viel die Reparatur kostet.",
+  "gsw": "usefinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde morn use, wie vil d Reparatur choschtet."
+ },
+ {
+  "id": 8294,
+  "de": "seufzen",
+  "tr": "iç çekmek",
+  "deBeispiel": "Meine Mutter seufzt, wenn sie die Rechnung sieht.",
+  "gsw": "süüfzge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter süüfzget, wänn si d Rächnig gseht."
+ },
+ {
+  "id": 8295,
+  "de": "bedauern",
+  "tr": "üzülmek, pişman olmak",
+  "deBeispiel": "Ich bedauere sehr, dass ich am Samstag nicht kommen kann.",
+  "gsw": "beduure",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich beduure sehr, dass ich am Samschtig nöd cha choo."
+ },
+ {
+  "id": 8296,
+  "de": "staunen",
+  "tr": "şaşırmak, hayret etmek",
+  "deBeispiel": "Die Kinder staunen über die große Torte.",
+  "gsw": "schtuune",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind schtuuned über di grooss Torte."
+ },
+ {
+  "id": 8297,
+  "de": "sich vertragen",
+  "tr": "iyi geçinmek, anlaşmak",
+  "deBeispiel": "Meine zwei Brüder vertragen sich endlich wieder.",
+  "gsw": "sich verträge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini zwee Brüeder verträged sich ändlich wider."
+ },
+ {
+  "id": 8298,
+  "de": "sich verloben",
+  "tr": "nişanlanmak",
+  "deBeispiel": "Anna und Tom verloben sich im Sommer.",
+  "gsw": "sich verlobe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Anna und de Tom verlobed sich im Summer."
+ },
+ {
+  "id": 8299,
+  "de": "mailen",
+  "tr": "e-posta atmak",
+  "deBeispiel": "Ich maile dir die Adresse heute Abend.",
+  "gsw": "maile",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich maile der d Adrässe hüt Aabig."
+ },
+ {
+  "id": 8300,
+  "de": "drohen",
+  "tr": "tehdit etmek, gözdağı vermek",
+  "deBeispiel": "Der Nachbar droht uns wegen des Lärms mit der Polizei.",
+  "gsw": "drooe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Nachbar droot öis wäge em Lärm mit de Polizei."
+ },
+ {
+  "id": 8301,
+  "de": "vorwerfen",
+  "tr": "suçlamak, başa kakmak",
+  "deBeispiel": "Er wirft mir jeden Tag meine Unordnung vor.",
+  "gsw": "vorwerfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Er tuet mer jede Tag mini Unornig vorwerfe."
+ },
+ {
+  "id": 8302,
+  "de": "durchkommen",
+  "tr": "(telefonda) ulaşabilmek, bağlanmak",
+  "deBeispiel": "Ich komme bei der Hotline einfach nicht durch.",
+  "gsw": "durechoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich chume bi de Hotline äifach nöd dure."
+ },
+ {
+  "id": 8303,
+  "de": "ansagen",
+  "tr": "duyurmak, bildirmek",
+  "deBeispiel": "Die Lehrerin sagt den Test für Freitag an.",
+  "gsw": "aasäge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Leererin tuet de Test uf de Fritig aasäge."
+ },
+ {
+  "id": 8304,
+  "de": "zurückschreiben",
+  "tr": "cevap yazmak",
+  "deBeispiel": "Mein Bruder schreibt mir nie zurück.",
+  "gsw": "zruggschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brüeder schriibt mer nie zrugg."
+ }
+]

@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6573,
+  "de": "abwandeln",
+  "tr": "değiştirerek uyarlamak, başkalaştırmak",
+  "deBeispiel": "Sie wandelt das alte Motiv nur leicht ab.",
+  "gsw": "abwandle",
+  "gswArtikel": null,
+  "gswBeispiel": "Sie tuet s alt Motiv nu liicht abwandle."
+ },
+ {
+  "id": 6574,
+  "de": "verweisen",
+  "tr": "atıfta bulunmak, yollamak",
+  "deBeispiel": "Die Autorin verweist im Anhang auf ältere Untersuchungen.",
+  "gsw": "verwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "D Autorin verwiist im Aahang uf elteri Undersuechige."
+ },
+ {
+  "id": 6575,
+  "de": "parodieren",
+  "tr": "parodisini yapmak, taklit ederek alay etmek",
+  "deBeispiel": "Der junge Autor parodiert den Stil seines Lehrers.",
+  "gsw": "parodiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De jung Autor parodiert de Schtil vo sim Leerer."
+ },
+ {
+  "id": 6576,
+  "de": "ausschmücken",
+  "tr": "süslemek, abartarak anlatmak",
+  "deBeispiel": "Er schmückt jede Anekdote ein wenig aus.",
+  "gsw": "uusschmücke",
+  "gswArtikel": null,
+  "gswBeispiel": "Er tuet jedi Anekdote es bitzeli uusschmücke."
+ },
+ {
+  "id": 6577,
+  "de": "hervorgehen",
+  "tr": "ortaya çıkmak, anlaşılmak",
+  "deBeispiel": "Aus dem Briefwechsel geht ihre tiefe Freundschaft hervor.",
+  "gsw": "hervorgaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Us em Briefwächsel gaat iri tüüfi Fründschaft hervor."
+ },
+ {
+  "id": 6578,
+  "de": "einflechten",
+  "tr": "araya serpiştirmek, katmak",
+  "deBeispiel": "Sie flicht immer wieder kleine Beobachtungen in die Handlung ein.",
+  "gsw": "iiflächte",
+  "gswArtikel": null,
+  "gswBeispiel": "Sie tuet immer wider chliini Beobachtige i d Handlig iiflächte."
+ },
+ {
+  "id": 6579,
+  "de": "abschweifen",
+  "tr": "konudan sapmak, dağılmak",
+  "deBeispiel": "Der Redner schweift ständig vom eigentlichen Thema ab.",
+  "gsw": "abschwäife",
+  "gswArtikel": null,
+  "gswBeispiel": "De Redner tuet schtändig vom eigentliche Thema abschwäife."
+ },
+ {
+  "id": 6580,
+  "de": "bildhaft",
+  "tr": "imgesel, göz önünde canlandıran",
+  "deBeispiel": "Ihre Sprache ist ungewöhnlich bildhaft und zugleich konkret.",
+  "gsw": "bildhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Iri Spraach isch ungwöndlich bildhaft und zuglich konkret."
+ },
+ {
+  "id": 6581,
+  "de": "unmissverständlich",
+  "tr": "açık seçik, yanlış anlaşılmaya yer bırakmayan",
+  "deBeispiel": "Der Kritiker äußert seine Ablehnung unmissverständlich.",
+  "gsw": "unmissverschtändlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kritiker äussert sini Ablehnig unmissverschtändlich."
+ },
+ {
+  "id": 6582,
+  "de": "lakonisch",
+  "tr": "lakonik, az ve öz",
+  "deBeispiel": "Sein Stil bleibt bis zum letzten Satz lakonisch.",
+  "gsw": "lakonisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Schtil blibt bis zum letschte Satz lakonisch."
+ },
+ {
+  "id": 6583,
+  "de": "gleichsam",
+  "tr": "adeta, sanki",
+  "deBeispiel": "Die Wiederholung wirkt gleichsam wie ein musikalisches Motiv.",
+  "gsw": "gliichsam",
+  "gswArtikel": null,
+  "gswBeispiel": "D Widerholig wirkt gliichsam wie es musikalischs Motiv."
+ },
+ {
+  "id": 6584,
+  "de": "das Verlagswesen",
+  "tr": "yayıncılık sektörü",
+  "deBeispiel": "Das gesamte Verlagswesen steht durch schwindende Anzeigenerlöse unter Druck.",
+  "gsw": "Verlagswäse",
+  "gswArtikel": "s",
+  "gswBeispiel": "S ganz Verlagswäse schtaat wäge schwindende Aazäigeerlös under Druck."
+ },
+ {
+  "id": 6585,
+  "de": "die Propaganda",
+  "tr": "propaganda",
+  "deBeispiel": "Wirksame Propaganda arbeitet selten mit Lügen, sondern mit gezielten Auslassungen.",
+  "gsw": "Propaganda",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wirksami Propaganda schafft sälte mit Lüüge, sondern mit gezielte Uuslassige."
+ },
+ {
+  "id": 6586,
+  "de": "der Quellenschutz",
+  "tr": "haber kaynağının gizliliği, kaynağın korunması",
+  "deBeispiel": "Ohne konsequenten Quellenschutz würde kaum ein Insider mit Journalisten sprechen.",
+  "gsw": "Quelleschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni konsequente Quelleschutz würd chuum en Insider mit Journaliste rede."
+ },
+ {
+  "id": 6587,
+  "de": "der Informant",
+  "tr": "bilgi kaynağı, haber kaynağı (kişi)",
+  "deBeispiel": "Der Informant übergab die Unterlagen nur unter der Zusicherung völliger Anonymität.",
+  "gsw": "Informant",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Informant hät d Underlaage nu under de Zuesicherig vo völliger Anonymität übergää."
+ },
+ {
+  "id": 6588,
+  "de": "die Enthüllung",
+  "tr": "ifşa, açığa çıkarma",
+  "deBeispiel": "Die Enthüllung des Verlagsdeals brachte den Aufsichtsrat erheblich in Erklärungsnot.",
+  "gsw": "Enthüllig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Enthüllig vom Verlagsdeal hät de Ufsichtsraat erheblich i Erklärigsnot braacht."
+ },
+ {
+  "id": 6589,
+  "de": "die Boulevardpresse",
+  "tr": "magazin basını, bulvar basını",
+  "deBeispiel": "Die Boulevardpresse lebt von Empörung, nicht von der geduldigen Einordnung der Fakten.",
+  "gsw": "Boulevardpress",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Boulevardpress läbt vo de Empöörig, nöd vo de geduldige Iiordnig vo de Fakte."
+ },
+ {
+  "id": 6590,
+  "de": "das Leitmedium",
+  "tr": "yönlendirici medya, referans yayın organı",
+  "deBeispiel": "Was die Leitmedien aufgreifen, bestimmt oft die Tagesordnung der übrigen Redaktionen.",
+  "gsw": "Leitmedium",
+  "gswArtikel": "s",
+  "gswBeispiel": "Was d Leitmedie ufgriifed, beschtimmt oft d Tagesordnig vo de übrige Redaktione."
+ },
+ {
+  "id": 6591,
+  "de": "die Meinungsbildung",
+  "tr": "kanaat oluşumu, fikir oluşturma",
+  "deBeispiel": "Algorithmen greifen tiefer in die politische Meinungsbildung ein, als viele annehmen.",
+  "gsw": "Meinigsbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Algorithme griifed tüüfer i d politisch Meinigsbildig ii, als vill aanämed."
+ },
+ {
+  "id": 6592,
+  "de": "die Meinungsvielfalt",
+  "tr": "görüş çeşitliliği, çoğulculuk",
+  "deBeispiel": "Der Gesetzgeber soll die Meinungsvielfalt sichern, ohne einzelne Inhalte zu bewerten.",
+  "gsw": "Meinigsvilfalt",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Gsetzgeber söll d Meinigsvilfalt sichere, ooni äinzelni Inhalt z bewerte."
+ },
+ {
+  "id": 6593,
+  "de": "die Wahrhaftigkeit",
+  "tr": "doğruluk, dürüstlük",
+  "deBeispiel": "Wahrhaftigkeit verlangt mehr als formale Richtigkeit einzelner Angaben.",
+  "gsw": "Waarhaftigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Waarhaftigkeit verlangt mee als formali Richtigkeit vo äinzelne Aagaabe."
+ },
+ {
+  "id": 6594,
+  "de": "das Persönlichkeitsrecht",
+  "tr": "kişilik hakkı",
+  "deBeispiel": "Das Persönlichkeitsrecht der Betroffenen wiegt hier schwerer als das Informationsinteresse.",
+  "gsw": "Persönlichkeitsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Persönlichkeitsrächt vo de Betroffene wigt da schwerer als s Informationsinteresse."
+ },
+ {
+  "id": 6595,
+  "de": "die Aufmerksamkeitsökonomie",
+  "tr": "dikkat ekonomisi",
+  "deBeispiel": "In der Aufmerksamkeitsökonomie wird die knappe Ressource nicht Information, sondern Zuwendung.",
+  "gsw": "Ufmerksamkeitsökonomie",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Ufmerksamkeitsökonomie wird di chnapp Ressource nöd d Information, sondern d Zuewändig."
+ },
+ {
+  "id": 6596,
+  "de": "der Rundfunkbeitrag",
+  "tr": "yayın katkı payı, radyo-televizyon aidatı",
+  "deBeispiel": "Der Rundfunkbeitrag soll Programme unabhängig von Werbeeinnahmen und Quoten finanzieren.",
+  "gsw": "Rundfunkbiitrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rundfunkbiitrag söll Programm unabhängig vo Wärbiiname und Quote finanziere."
+ },
+ {
+  "id": 6597,
+  "de": "die Medienkonzentration",
+  "tr": "medya yoğunlaşması, medya tekelleşmesi",
+  "deBeispiel": "Die wachsende Medienkonzentration verringert die Zahl wirklich unabhängiger Stimmen.",
+  "gsw": "Medienkonzentration",
+  "gswArtikel": "d",
+  "gswBeispiel": "D wachsend Medienkonzentration verringeret d Zaal vo würklich unabhängige Schtimme."
+ },
+ {
+  "id": 6598,
+  "de": "der Pressekodex",
+  "tr": "basın meslek ilkeleri",
+  "deBeispiel": "Der Pressekodex untersagt es, Opfer ohne Not identifizierbar zu machen.",
+  "gsw": "Pressekodex",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Pressekodex verbüttet, Opfer ooni Not identifizierbar z mache."
+ },
+ {
+  "id": 6599,
+  "de": "das Redaktionsgeheimnis",
+  "tr": "yayın kurulu gizliliği, redaksiyon sırrı",
+  "deBeispiel": "Die Durchsuchung verletzte nach Ansicht des Gerichts das Redaktionsgeheimnis.",
+  "gsw": "Redaktionsgheimnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Durchsuechig hät nach Aasicht vom Gricht s Redaktionsgheimnis verletzt."
+ },
+ {
+  "id": 6600,
+  "de": "das Zeugnisverweigerungsrecht",
+  "tr": "tanıklıktan çekinme hakkı",
+  "deBeispiel": "Journalisten berufen sich vor Gericht auf ihr Zeugnisverweigerungsrecht.",
+  "gsw": "Züügnisverwäigerigsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Journaliste berüefed sich vor Gricht uf ires Züügnisverwäigerigsrächt."
+ },
+ {
+  "id": 6601,
+  "de": "die Informationsfreiheit",
+  "tr": "bilgi edinme özgürlüğü",
+  "deBeispiel": "Die Informationsfreiheit gibt jedem Bürger Zugang zu amtlichen Unterlagen.",
+  "gsw": "Informationsfreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Informationsfreiheit git jedem Bürger Zuegang zu amtliche Underlaage."
+ },
+ {
+  "id": 6602,
+  "de": "der Nachrichtenwert",
+  "tr": "haber değeri",
+  "deBeispiel": "Nähe, Konflikt und Prominenz erhöhen den Nachrichtenwert eines Ereignisses erheblich.",
+  "gsw": "Naachrichtewärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nööchi, Konflikt und Prominänz erhööched de Naachrichtewärt vomene Eräignis erheblich."
+ },
+ {
+  "id": 6603,
+  "de": "die Stimmungsmache",
+  "tr": "kışkırtma, algı yaratma",
+  "deBeispiel": "Was als Analyse angekündigt war, entpuppte sich als plumpe Stimmungsmache.",
+  "gsw": "Schtimmigsmach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Was as Analyse aakündet worde isch, hät sich as plumpi Schtimmigsmach entpuppt."
+ },
+ {
+  "id": 6604,
+  "de": "das Pamphlet",
+  "tr": "pamflet, polemik yazı",
+  "deBeispiel": "Sein Buch ist weniger Studie als politisches Pamphlet gegen die Regierung.",
+  "gsw": "Pamphlet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sis Buech isch weniger e Schtudie als es politischs Pamphlet gäge d Regierig."
+ },
+ {
+  "id": 6605,
+  "de": "die Glosse",
+  "tr": "köşe taşlaması, mizahi yorum yazısı",
+  "deBeispiel": "Die Glosse spitzt zu und darf gerade deshalb nicht wörtlich gelesen werden.",
+  "gsw": "Glosse",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Glosse schpitzt zue und dörf grad drum nöd wörtlich gläse werde."
+ },
+ {
+  "id": 6606,
+  "de": "das Feuilleton",
+  "tr": "kültür sanat eki, feuilleton",
+  "deBeispiel": "Im Feuilleton wird seit Wochen über den Begriff der Cancel-Kultur gestritten.",
+  "gsw": "Feuilleton",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Feuilleton wird siit Wuche über de Begriff vo de Cancel-Kultur gschtritte."
+ },
+ {
+  "id": 6607,
+  "de": "die Anonymisierung",
+  "tr": "kimliğin gizlenmesi, anonimleştirme",
+  "deBeispiel": "Erst nach sorgfältiger Anonymisierung durfte das Interview gesendet werden.",
+  "gsw": "Anonymisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ersch nach sorgfältiger Anonymisierig hät s Interview dörfe gsändet werde."
+ },
+ {
+  "id": 6608,
+  "de": "die Indiskretion",
+  "tr": "sır ifşası, boşboğazlık",
+  "deBeispiel": "Gezielte Indiskretionen aus dem Ministerium prägten die Debatte tagelang.",
+  "gsw": "Indiskretion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gezielti Indiskretione us em Minischterium händ d Debatte tagelang prägt."
+ },
+ {
+  "id": 6609,
+  "de": "die Sprachregelung",
+  "tr": "resmî söylem kalıbı, dil talimatı",
+  "deBeispiel": "Alle Sprecher hielten sich auffällig genau an dieselbe Sprachregelung.",
+  "gsw": "Spraachreglig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alli Sprecher händ sich uffällig genau a di gliich Spraachreglig ghalte."
+ },
+ {
+  "id": 6610,
+  "de": "die Verleumdung",
+  "tr": "iftira",
+  "deBeispiel": "Der Vorwurf erfüllt den Tatbestand der Verleumdung, wenn er wider besseres Wissen erhoben wird.",
+  "gsw": "Verlüümdig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vorwurf erfüllt de Tatbeschtand vo de Verlüümdig, wenn er wider besseres Wüsse erhobe wird."
+ },
+ {
+  "id": 6611,
+  "de": "die Unterlassungserklärung",
+  "tr": "ihlali tekrarlamama taahhüdü",
+  "deBeispiel": "Das Magazin unterschrieb eine Unterlassungserklärung und nahm den Beitrag offline.",
+  "gsw": "Underlassigserklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Magazin hät e Underlassigserklärig underschribe und de Biitrag offline gnoo."
+ },
+ {
+  "id": 6612,
+  "de": "die Selbstzensur",
+  "tr": "otosansür",
+  "deBeispiel": "Wo Klagen drohen, beginnt die Selbstzensur lange vor jedem Verbot.",
+  "gsw": "Sälbschtzensur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wo Chlaage drohed, faat d Sälbschtzensur lang vor jedem Verbot aa."
+ },
+ {
+  "id": 6613,
+  "de": "der Rezipient",
+  "tr": "alımlayıcı, izleyici-okur",
+  "deBeispiel": "Der Rezipient ist längst kein passiver Empfänger fertiger Botschaften mehr.",
+  "gsw": "Rezipient",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rezipient isch scho lang kän passive Empfänger vo fertige Botschafte mee."
+ },
+ {
+  "id": 6614,
+  "de": "die Emotionalisierung",
+  "tr": "duygusallaştırma",
+  "deBeispiel": "Die Emotionalisierung komplexer Themen erhöht die Reichweite und senkt das Verständnis.",
+  "gsw": "Emotionalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Emotionalisierig vo komplexe Theme erhöcht d Reichwiiti und senkt s Verschtändnis."
+ },
+ {
+  "id": 6615,
+  "de": "die Kommerzialisierung",
+  "tr": "ticarileşme",
+  "deBeispiel": "Die Kommerzialisierung des Journalismus verschiebt die Auswahl der Themen unmerklich.",
+  "gsw": "Kommerzialisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kommerzialisierig vom Journalismus verschiebt d Uuswaal vo de Theme unmerklich."
+ },
+ {
+  "id": 6616,
+  "de": "die Bezahlschranke",
+  "tr": "ödeme duvarı, paralı erişim engeli",
+  "deBeispiel": "Hinter der Bezahlschranke steht die Recherche, davor bleibt der Alarmruf.",
+  "gsw": "Bezaalschranke",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hinder de Bezaalschranke schtaat d Recherche, devor blibt de Alarmruef."
+ },
+ {
+  "id": 6617,
+  "de": "das Wächteramt",
+  "tr": "bekçilik görevi, denetleyici rol",
+  "deBeispiel": "Die Presse nimmt gegenüber der Macht ein Wächteramt wahr.",
+  "gsw": "Wächteramt",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Press nimt gegenüber de Macht es Wächteramt waar."
+ },
+ {
+  "id": 6618,
+  "de": "der Vertrauensverlust",
+  "tr": "güven kaybı",
+  "deBeispiel": "Ein einziger gefälschter Beitrag löste einen dauerhaften Vertrauensverlust aus.",
+  "gsw": "Vertrauensverluscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "En äinzige gfälschte Biitrag hät en duurhafte Vertrauensverluscht uusglööst."
+ },
+ {
+  "id": 6619,
+  "de": "die Diskreditierung",
+  "tr": "itibarsızlaştırma",
+  "deBeispiel": "Statt Argumenten folgte die systematische Diskreditierung der Kritikerin.",
+  "gsw": "Diskreditierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Statt Argumänt isch di systematisch Diskreditierig vo de Kritikerin choo."
+ },
+ {
+  "id": 6620,
+  "de": "das Transparenzgebot",
+  "tr": "şeffaflık ilkesi",
+  "deBeispiel": "Aus dem Transparenzgebot folgt, dass bezahlte Beiträge klar gekennzeichnet werden.",
+  "gsw": "Transparenzgebot",
+  "gswArtikel": "s",
+  "gswBeispiel": "Us em Transparenzgebot folgt, dass bezaalti Biiträg klar gchennzäichnet werded."
+ },
+ {
+  "id": 6621,
+  "de": "das Massenmedium",
+  "tr": "kitle iletişim aracı",
+  "deBeispiel": "Kein Massenmedium erreicht heute noch das gesamte Publikum gleichzeitig.",
+  "gsw": "Massemedium",
+  "gswArtikel": "s",
+  "gswBeispiel": "Käs Massemedium erreicht hüt no s ganz Publikum gliichziitig."
+ },
+ {
+  "id": 6622,
+  "de": "die Schweigespirale",
+  "tr": "suskunluk sarmalı",
+  "deBeispiel": "Wer sich in der Minderheit wähnt, schweigt und verstärkt so die Schweigespirale.",
+  "gsw": "Schwiigeschpirale",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer sich i de Minderheit waant, schwiigt und verschtärkt so d Schwiigeschpirale."
+ },
+ {
+  "id": 6623,
+  "de": "lancieren",
+  "tr": "gündeme sokmak, servis etmek, piyasaya sürmek",
+  "deBeispiel": "Die Geschichte wurde kurz vor der Abstimmung gezielt lanciert.",
+  "gsw": "lanciere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gschicht isch churz vor de Abschtimmig gezielt lanciert worde."
+ },
+ {
+  "id": 6624,
+  "de": "richtigstellen",
+  "tr": "düzeltmek, tashih etmek",
+  "deBeispiel": "Die Redaktion stellte die falsche Zahl erst nach drei Tagen richtig.",
+  "gsw": "richtigschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Redaktion hät di falsch Zaal ersch nach drü Täg richtigschtellt."
+ },
+ {
+  "id": 6625,
+  "de": "insinuieren",
+  "tr": "ima etmek, üstü kapalı sezdirmek",
+  "deBeispiel": "Der Beitrag insinuiert einen Zusammenhang, den er nirgends belegt.",
+  "gsw": "insinuiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Biitrag insinuiert en Zämehang, wo er niene belegt."
+ },
+ {
+  "id": 6626,
+  "de": "unterstellen",
+  "tr": "isnat etmek, atfetmek",
+  "deBeispiel": "Man unterstellte ihr Absicht, obwohl der Fehler technisch bedingt war.",
+  "gsw": "underschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer hät ere Absicht underschtellt, obwohl de Fääler technisch bedingt gsi isch."
+ },
+ {
+  "id": 6627,
+  "de": "bloßstellen",
+  "tr": "rezil etmek, teşhir etmek",
+  "deBeispiel": "Eine Kamera darf niemanden vor Millionen Zuschauern bloßstellen.",
+  "gsw": "bloosschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "E Kamera dörf niemer vor Millione Zueschauer bloosschtelle."
+ },
+ {
+  "id": 6628,
+  "de": "vertuschen",
+  "tr": "örtbas etmek",
+  "deBeispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet.",
+  "gsw": "vertusche",
+  "gswArtikel": null,
+  "gswBeispiel": "Jaarelang sind d Vorfäll intern vertuscht und chliigredt worde."
+ },
+ {
+  "id": 6629,
+  "de": "aufbauschen",
+  "tr": "abartmak, şişirmek",
+  "deBeispiel": "Ein Randthema wurde wochenlang zur Staatskrise aufgebauscht.",
+  "gsw": "ufbausche",
+  "gswArtikel": null,
+  "gswBeispiel": "Es Randthema isch wuchelang zur Schtaatschrise ufbauscht worde."
+ },
+ {
+  "id": 6630,
+  "de": "kolportieren",
+  "tr": "dedikodu gibi yaymak, dolaşıma sokmak",
+  "deBeispiel": "Die Zahl wird seit Jahren kolportiert, ohne je überprüft worden zu sein.",
+  "gsw": "kolportiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zaal wird siit Jaare kolportiert, ooni dass sie je überprüeft worde isch."
+ },
+ {
+  "id": 6631,
+  "de": "offenlegen",
+  "tr": "açıkça beyan etmek, ifşa etmek",
+  "deBeispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
+  "gsw": "offelege",
+  "gswArtikel": null,
+  "gswBeispiel": "Autore müend möglichi Interessekonflikt am Täxtende offelege."
+ },
+ {
+  "id": 6632,
+  "de": "preisgeben",
+  "tr": "ele vermek, ifşa etmek",
+  "deBeispiel": "Kein seriöser Journalist gibt die Identität seiner Quelle preis.",
+  "gsw": "priisgää",
+  "gswArtikel": null,
+  "gswBeispiel": "Kän seriöse Journalischt git d Identität vo sinere Quelle priis."
+ },
+ {
+  "id": 6633,
+  "de": "abwiegeln",
+  "tr": "yatıştırmaya çalışmak, önemsizleştirmek",
+  "deBeispiel": "Die Behörde wiegelte ab, statt die offenen Fragen zu beantworten.",
+  "gsw": "abwiegle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde hät abgwieglet, statt di offene Fraage z beantworte."
+ },
+ {
+  "id": 6634,
+  "de": "mobilisieren",
+  "tr": "harekete geçirmek, seferber etmek",
+  "deBeispiel": "Ein einziger Hinweis mobilisierte binnen Stunden Tausende von Unterstützern.",
+  "gsw": "mobilisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "En äinzige Hiiwiis hät innerhalb vo Schtunde Tuusigi vo Underschtützer mobilisiert."
+ },
+ {
+  "id": 6635,
+  "de": "kommentieren",
+  "tr": "yorumlamak, değerlendirmek",
+  "deBeispiel": "Wer Nachrichten macht, sollte sie nicht im selben Text kommentieren.",
+  "gsw": "kommentiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer Naachrichte macht, sött sie nöd im gliiche Täxt kommentiere."
+ },
+ {
+  "id": 6636,
+  "de": "publizistisch",
+  "tr": "yayıncılıkla ilgili, basın-yayına dair",
+  "deBeispiel": "Die Fusion hätte erhebliche publizistische Folgen für die Region.",
+  "gsw": "publizistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fusion hett erheblichi publizistischi Folge für d Region."
+ },
+ {
+  "id": 6637,
+  "de": "medial",
+  "tr": "medyaya ilişkin, medya aracılığıyla",
+  "deBeispiel": "Der Prozess wurde medial begleitet wie ein sportliches Großereignis.",
+  "gsw": "medial",
+  "gswArtikel": null,
+  "gswBeispiel": "De Prozäss isch medial begleitet worde wie es schportlichs Grossereignis."
+ },
+ {
+  "id": 6638,
+  "de": "unparteiisch",
+  "tr": "tarafsız",
+  "deBeispiel": "Von einer Aufsichtsbehörde erwartet man unparteiische Entscheidungen.",
+  "gsw": "unparteiisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Vo nere Ufsichtsbehörde erwartet mer unparteiischi Entschäidige."
+ },
+ {
+  "id": 6639,
+  "de": "investigativ",
+  "tr": "araştırmacı (gazetecilik)",
+  "deBeispiel": "Investigative Arbeit braucht Zeit, Geld und einen langen Atem.",
+  "gsw": "investigativ",
+  "gswArtikel": null,
+  "gswBeispiel": "Investigativi Arbet bruucht Ziit, Gäld und en lange Atem."
+ },
+ {
+  "id": 6640,
+  "de": "plakativ",
+  "tr": "çarpıcı ama yüzeysel, slogan gibi",
+  "deBeispiel": "Seine Thesen sind plakativ formuliert und halten der Prüfung kaum stand.",
+  "gsw": "plakativ",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini These sind plakativ formuliert und haltet de Prüefig chuum schtand."
+ },
+ {
+  "id": 6641,
+  "de": "suggestiv",
+  "tr": "telkin edici, yönlendirici",
+  "deBeispiel": "Suggestive Fragen erzeugen genau die Antworten, die man hören will.",
+  "gsw": "suggestiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Suggestivi Fraage erzüüged genau die Antworte, wo mer will ghööre."
+ },
+ {
+  "id": 6642,
+  "de": "unbelegt",
+  "tr": "kanıtsız, dayanaksız",
+  "deBeispiel": "Der Vorwurf blieb bis zum Schluss unbelegt und wurde dennoch wiederholt.",
+  "gsw": "unbelegt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorwurf isch bis zum Schluss unbelegt bliibe und isch trotzdem widerholt worde."
+ },
+ {
+  "id": 6643,
+  "de": "staatsfern",
+  "tr": "devletten bağımsız, devlete mesafeli",
+  "deBeispiel": "Die Aufsicht über den Rundfunk muss staatsfern organisiert sein.",
+  "gsw": "schtaatsfern",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ufsicht über de Rundfunk mues schtaatsfern organisiert sii."
+ },
+ {
+  "id": 6644,
+  "de": "die Aufklärungspflicht",
+  "tr": "aydınlatma yükümlülüğü, bilgilendirme borcu",
+  "deBeispiel": "Die Ärztin verletzte ihre Aufklärungspflicht über mögliche Spätfolgen.",
+  "gsw": "Ufklärigspflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ärztin hät iri Ufklärigspflicht über möglichi Schpaatfolge verletzt."
+ },
+ {
+  "id": 6645,
+  "de": "die Selbstbestimmung",
+  "tr": "kendi geleceğini belirleme, özerklik",
+  "deBeispiel": "Die Selbstbestimmung des Kranken wiegt schwerer als ärztliche Fürsorge.",
+  "gsw": "Sälbschtbeschtimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sälbschtbeschtimmig vom Chranke wigt schwerer als d ärztlich Fürsorg."
+ },
+ {
+  "id": 6646,
+  "de": "die Sterbehilfe",
+  "tr": "ötanazi, ölüme yardım",
+  "deBeispiel": "Über die Zulässigkeit aktiver Sterbehilfe wird seit Jahrzehnten gestritten.",
+  "gsw": "Schtärbehilf",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Zuelässigkeit vo aktiver Schtärbehilf wird siit Jaarzehnt gschtritte."
+ },
+ {
+  "id": 6647,
+  "de": "die Patientenverfügung",
+  "tr": "hasta vasiyeti, tedavi talimatnamesi",
+  "deBeispiel": "In seiner Patientenverfügung hatte er künstliche Beatmung ausdrücklich abgelehnt.",
+  "gsw": "Patiänteverfüegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "In sinere Patiänteverfüegig hät er e künschtlichi Beatmig uusdrücklich abglehnt."
+ },
+ {
+  "id": 6648,
+  "de": "die Zumutbarkeit",
+  "tr": "katlanılabilirlik, makul olma",
+  "deBeispiel": "Die Zumutbarkeit einer belastenden Therapie muss im Einzelfall geprüft werden.",
+  "gsw": "Zuemuetbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zuemuetbarkeit vo nere belaschtende Therapie mues im Einzelfall prüeft werde."
+ },
+ {
+  "id": 6649,
+  "de": "die Verteilungsgerechtigkeit",
+  "tr": "dağıtım adaleti, paylaşım adaleti",
+  "deBeispiel": "Bei knappen Spenderorganen stellt sich die Frage der Verteilungsgerechtigkeit.",
+  "gsw": "Verteiligsgrächtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi chnappe Schpänderorgan schtellt sich d Frag vo de Verteiligsgrächtigkeit."
+ },
+ {
+  "id": 6650,
+  "de": "die Knappheit",
+  "tr": "kıtlık, yetersizlik",
+  "deBeispiel": "Die Knappheit an Intensivbetten zwang die Klinik zu harten Entscheidungen.",
+  "gsw": "Chnappheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chnappheit a Intensivbette hät d Klinik zu harte Entschäid zwunge."
+ },
+ {
+  "id": 6651,
+  "de": "die Rationierung",
+  "tr": "kısıtlama, tayınlama",
+  "deBeispiel": "Eine verdeckte Rationierung teurer Therapien findet längst statt.",
+  "gsw": "Rationierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E verdeckti Rationierig vo tüüre Therapie findet scho lang schtatt."
+ },
+ {
+  "id": 6652,
+  "de": "die Triage",
+  "tr": "triyaj, aciliyet sıralaması",
+  "deBeispiel": "Die Triage zwingt Ärzte, über Lebenschancen zu entscheiden.",
+  "gsw": "Triage",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Triage zwingt d Ärzt, über Läbenschance z entschäide."
+ },
+ {
+  "id": 6653,
+  "de": "der Kostenträger",
+  "tr": "masrafı üstlenen kurum, ödeyici kurum",
+  "deBeispiel": "Der Kostenträger lehnte die Übernahme der neuen Therapie ab.",
+  "gsw": "Koschteträger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Koschteträger hät d Übernaam vo de neue Therapie abglehnt."
+ },
+ {
+  "id": 6654,
+  "de": "die Erstattung",
+  "tr": "geri ödeme, masraf iadesi",
+  "deBeispiel": "Über die Erstattung des Medikaments entscheidet ein eigener Ausschuss.",
+  "gsw": "Erschtattig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Erschtattig vom Medikamänt entschäidet en äigene Uusschuss."
+ },
+ {
+  "id": 6655,
+  "de": "der Leistungskatalog",
+  "tr": "hizmet kapsamı, teminat listesi",
+  "deBeispiel": "Der Leistungskatalog der Kassen wird regelmäßig überarbeitet.",
+  "gsw": "Leischtigskatalog",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Leischtigskatalog vo de Chasse wird regelmässig überarbeitet."
+ },
+ {
+  "id": 6656,
+  "de": "die Ethikkommission",
+  "tr": "etik kurul",
+  "deBeispiel": "Die Ethikkommission gab das Studienvorhaben mit Auflagen frei.",
+  "gsw": "Ethikkommission",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ethikkommission hät s Schtudievorhabe mit Uuflaage freigää."
+ },
+ {
+  "id": 6657,
+  "de": "die Zulassungsbehörde",
+  "tr": "ruhsatlandırma kurumu, onay makamı",
+  "deBeispiel": "Die Zulassungsbehörde verlangte weitere Daten zur Langzeitsicherheit.",
+  "gsw": "Zuelassigsbehörde",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zuelassigsbehörde hät wiitri Date zur Langziitsicherheit verlangt."
+ },
+ {
+  "id": 6658,
+  "de": "die Nutzenbewertung",
+  "tr": "fayda değerlendirmesi",
+  "deBeispiel": "Die frühe Nutzenbewertung entscheidet über den Preis des Präparats.",
+  "gsw": "Nutzebewertig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D früei Nutzebewertig entschäidet über de Priis vom Präparat."
+ },
+ {
+  "id": 6659,
+  "de": "die Evidenz",
+  "tr": "kanıt, bilimsel kanıt",
+  "deBeispiel": "Für diese Behandlung fehlt bislang belastbare Evidenz.",
+  "gsw": "Evidenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Behandlig fählt bishär e belaschtbari Evidenz."
+ },
+ {
+  "id": 6660,
+  "de": "die Verblindung",
+  "tr": "körleme, kör çalışma yöntemi",
+  "deBeispiel": "Ohne Verblindung verlieren die Ergebnisse an Aussagekraft.",
+  "gsw": "Verblindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Verblindig verlüüred d Resultat a Uussagechraft."
+ },
+ {
+  "id": 6661,
+  "de": "die Kontrollgruppe",
+  "tr": "kontrol grubu",
+  "deBeispiel": "Die Kontrollgruppe erhielt lediglich ein wirkstofffreies Präparat.",
+  "gsw": "Kontrollgruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kontrollgruppe hät nu es wirkschtofffreis Präparat übercho."
+ },
+ {
+  "id": 6662,
+  "de": "die Impfpflicht",
+  "tr": "zorunlu aşı",
+  "deBeispiel": "Eine allgemeine Impfpflicht greift tief in die körperliche Integrität ein.",
+  "gsw": "Impfpflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "En allgemeini Impfpflicht griift tüüf i d körperlich Integrität ii."
+ },
+ {
+  "id": 6663,
+  "de": "die Herdenimmunität",
+  "tr": "sürü bağışıklığı, toplumsal bağışıklık",
+  "deBeispiel": "Herdenimmunität schützt vor allem jene, die sich nicht impfen lassen können.",
+  "gsw": "Herdeimmunität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Herdeimmunität schützt vor allem die, wo sich nöd chönd la impfe."
+ },
+ {
+  "id": 6664,
+  "de": "die Meldepflicht",
+  "tr": "bildirim zorunluluğu",
+  "deBeispiel": "Für bestimmte Infektionen besteht eine gesetzliche Meldepflicht.",
+  "gsw": "Mäldepflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für bestimmti Infektione bschtaat e gsetzlichi Mäldepflicht."
+ },
+ {
+  "id": 6665,
+  "de": "die Prävention",
+  "tr": "önleme, koruyucu sağlık",
+  "deBeispiel": "In der Prävention steckt mehr Potenzial als in teurer Spitzenmedizin.",
+  "gsw": "Prävention",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Prävention schteckt meh Potenzial as i de tüüre Schpitzemedizin."
+ },
+ {
+  "id": 6666,
+  "de": "die Gesundheitskompetenz",
+  "tr": "sağlık okuryazarlığı",
+  "deBeispiel": "Geringe Gesundheitskompetenz erschwert eine wirklich freie Entscheidung.",
+  "gsw": "Gsundheitskompetenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "E gringi Gsundheitskompetenz erschwert en würklich freii Entschäidig."
+ },
+ {
+  "id": 6667,
+  "de": "die Krankheitslast",
+  "tr": "hastalık yükü",
+  "deBeispiel": "Chronische Leiden tragen den größten Teil der Krankheitslast.",
+  "gsw": "Chrankheitslascht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chronischi Liide mached de gröschti Teil vo de Chrankheitslascht uus."
+ },
+ {
+  "id": 6668,
+  "de": "der Behandlungsabbruch",
+  "tr": "tedavinin sonlandırılması",
+  "deBeispiel": "Der Behandlungsabbruch entsprach dem erklärten Willen des Sterbenden.",
+  "gsw": "Behandligsabbruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Behandligsabbruch hät em erklärte Wille vom Schtärbende entsproche."
+ },
+ {
+  "id": 6669,
+  "de": "die Palliativmedizin",
+  "tr": "palyatif tıp, yatıştırıcı bakım",
+  "deBeispiel": "Die Palliativmedizin zielt nicht auf Heilung, sondern auf Linderung.",
+  "gsw": "Palliativmedizin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Palliativmedizin ziilt nöd uf Heilig, sondern uf Linderig."
+ },
+ {
+  "id": 6670,
+  "de": "der Paternalismus",
+  "tr": "paternalizm, vesayetçilik",
+  "deBeispiel": "Wohlmeinender Paternalismus bleibt ein Eingriff in fremde Lebensentwürfe.",
+  "gsw": "Paternalismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "En guetgmeinte Paternalismus bliibt en Iigriff i fremdi Läbensentwürf."
+ },
+ {
+  "id": 6671,
+  "de": "die Indikation",
+  "tr": "endikasyon, tıbbi gereklilik",
+  "deBeispiel": "Für den Eingriff bestand keine zwingende medizinische Indikation.",
+  "gsw": "Indikation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für de Iigriff hät kei zwingendi medizinischi Indikation bschtande."
+ },
+ {
+  "id": 6672,
+  "de": "die Keimbahn",
+  "tr": "germ hattı, üreme hücresi soyu",
+  "deBeispiel": "Eingriffe in die Keimbahn wirken über Generationen hinweg fort.",
+  "gsw": "Chiimbaan",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iigriff i d Chiimbaan wirked über Generatione hinweg wiiter."
+ },
+ {
+  "id": 6673,
+  "de": "die Organspende",
+  "tr": "organ bağışı",
+  "deBeispiel": "Die Bereitschaft zur Organspende hängt stark vom Rechtsmodell ab.",
+  "gsw": "Organschpände",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bereitschaft zur Organschpände hanget schtark vom Rächtsmodäll ab."
+ },
+ {
+  "id": 6674,
+  "de": "der Hirntod",
+  "tr": "beyin ölümü",
+  "deBeispiel": "Ob der Hirntod den Tod des Menschen bedeutet, ist umstritten.",
+  "gsw": "Hirntod",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öb de Hirntod de Tod vom Mäntsch bedütet, isch umschtritte."
+ },
+ {
+  "id": 6675,
+  "de": "die Widerspruchslösung",
+  "tr": "varsayılan rıza modeli, itiraz esaslı çözüm",
+  "deBeispiel": "Mit der Widerspruchslösung gilt jeder als Spender, der nicht widerspricht.",
+  "gsw": "Widerschpruchslösig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit de Widerschpruchslösig giltet jede as Schpänder, wo nöd widerschpricht."
+ },
+ {
+  "id": 6676,
+  "de": "die Fallpauschale",
+  "tr": "vaka başı sabit ödeme",
+  "deBeispiel": "Fallpauschalen belohnen kurze Liegezeiten und rasche Eingriffe.",
+  "gsw": "Fallpauschale",
+  "gswArtikel": "d",
+  "gswBeispiel": "Fallpauschale belohned churzi Ligziite und schnälli Iigriff."
+ },
+ {
+  "id": 6677,
+  "de": "die Ressourcenallokation",
+  "tr": "kaynak dağılımı, kaynak tahsisi",
+  "deBeispiel": "Jede Ressourcenallokation im Gesundheitswesen bleibt eine politische Entscheidung.",
+  "gsw": "Ressourceallokation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Ressourceallokation im Gsundheitswäse bliibt e politischi Entschäidig."
+ },
+ {
+  "id": 6678,
+  "de": "verabreichen",
+  "tr": "vermek, uygulamak",
+  "deBeispiel": "Das Mittel wurde ohne Wissen der Angehörigen verabreicht.",
+  "gsw": "verabräiche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Mittel isch ohni s Wüsse vo de Aaghörige verabräicht worde."
+ },
+ {
+  "id": 6679,
+  "de": "rechtfertigen",
+  "tr": "haklı çıkarmak, gerekçelendirmek",
+  "deBeispiel": "Kein erhoffter Nutzen rechtfertigt eine Täuschung der Teilnehmer.",
+  "gsw": "rächtfertige",
+  "gswArtikel": null,
+  "gswBeispiel": "Kein erhoffte Nutze rächtfertiget e Tüüschig vo de Teilnämer."
+ },
+ {
+  "id": 6680,
+  "de": "entnehmen",
+  "tr": "almak, çıkarmak",
+  "deBeispiel": "Gewebe darf nur mit ausdrücklicher Zustimmung entnommen werden.",
+  "gsw": "entnää",
+  "gswArtikel": null,
+  "gswBeispiel": "Gwebe dörf mer nu mit uusdrücklicher Zuestimmig entnää."
+ },
+ {
+  "id": 6681,
+  "de": "dokumentieren",
+  "tr": "belgelemek, kayda geçirmek",
+  "deBeispiel": "Jede Abweichung von der Leitlinie ist lückenlos zu dokumentieren.",
+  "gsw": "dokumentiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedi Abwiichig vo de Leitlinie mues mer lückelos dokumentiere."
+ },
+ {
+  "id": 6682,
+  "de": "einholen",
+  "tr": "almak, temin etmek",
+  "deBeispiel": "Vor dem Eingriff muss eine zweite Meinung eingeholt werden.",
+  "gsw": "iihole",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Iigriff mues mer e zweiti Meinig iihole."
+ }
+]

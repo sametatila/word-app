@@ -1,0 +1,1005 @@
+[
+ {
+  "id": 7645,
+  "de": "der Gärtner",
+  "tr": "bahçıvan",
+  "deBeispiel": "Der Gärtner arbeitet im Sommer oft von früh bis spät.",
+  "gsw": "Gärtner",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Gärtner schaffet im Summer oft vo früe bis schpaat."
+ },
+ {
+  "id": 7646,
+  "de": "der Busfahrer",
+  "tr": "otobüs şoförü",
+  "deBeispiel": "Der Busfahrer hat mir gesagt, wo ich aussteigen muss.",
+  "gsw": "Buschauffeur",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Buschauffeur hät mer gsäit, wo ich mues uusstiige."
+ },
+ {
+  "id": 7647,
+  "de": "der Taxifahrer",
+  "tr": "taksi şoförü",
+  "deBeispiel": "Mein Bruder arbeitet seit zwei Jahren als Taxifahrer.",
+  "gsw": "Taxichauffeur",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Brueder schafft sit zwäi Jaar als Taxichauffeur."
+ },
+ {
+  "id": 7648,
+  "de": "der Apotheker",
+  "tr": "eczacı",
+  "deBeispiel": "Der Apotheker hat mir eine gute Salbe empfohlen.",
+  "gsw": "Apotheker",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Apotheker hät mer e gueti Salbe empfole."
+ },
+ {
+  "id": 7649,
+  "de": "der Zahnarzt",
+  "tr": "diş hekimi, dişçi",
+  "deBeispiel": "Ich habe am Montag einen Termin beim Zahnarzt.",
+  "gsw": "Zahnarzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich han am Määntig en Termin bim Zahnarzt."
+ },
+ {
+  "id": 7650,
+  "de": "der Tierarzt",
+  "tr": "veteriner",
+  "deBeispiel": "Unsere Katze ist krank, wir gehen zum Tierarzt.",
+  "gsw": "Tierarzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Eusi Chatz isch chrank, mir gönd zum Tierarzt."
+ },
+ {
+  "id": 7651,
+  "de": "der Feuerwehrmann",
+  "tr": "itfaiyeci",
+  "deBeispiel": "Mein Sohn möchte später Feuerwehrmann werden.",
+  "gsw": "Füürwehrmaa",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Suhn wett schpöter Füürwehrmaa werde."
+ },
+ {
+  "id": 7652,
+  "de": "der Postbote",
+  "tr": "postacı",
+  "deBeispiel": "Der Postbote bringt die Pakete meistens am Vormittag.",
+  "gsw": "Pöschtler",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Pöschtler bringt d Päckli meischtens am Vormittag.",
+  "ayniLehce": [
+   "Briefträger (B1)",
+   "Pöstler (B1)"
+  ]
+ },
+ {
+  "id": 7653,
+  "de": "der Bauarbeiter",
+  "tr": "inşaat işçisi",
+  "deBeispiel": "Die Bauarbeiter machen um zwölf Uhr Pause.",
+  "gsw": "Buuarbeiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Buuarbeiter mached am zwölfi Pause."
+ },
+ {
+  "id": 7654,
+  "de": "die Putzfrau",
+  "tr": "temizlikçi kadın",
+  "deBeispiel": "Die Putzfrau kommt zweimal in der Woche ins Büro.",
+  "gsw": "Putzfrau",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Putzfrau chunt zwäimal i de Wuche is Büro."
+ },
+ {
+  "id": 7655,
+  "de": "der Maurer",
+  "tr": "duvarcı",
+  "deBeispiel": "Als Maurer muss man den ganzen Tag schwer arbeiten.",
+  "gsw": "Muurer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Als Muurer mues mer de ganz Tag schwär schaffe."
+ },
+ {
+  "id": 7656,
+  "de": "der Programmierer",
+  "tr": "yazılımcı, programcı",
+  "deBeispiel": "Als Programmierer sitze ich den ganzen Tag am Computer.",
+  "gsw": "Programmierer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Als Programmierer sitz ich de ganz Tag am Computer."
+ },
+ {
+  "id": 7657,
+  "de": "der Erzieher",
+  "tr": "anaokulu öğretmeni, eğitmen",
+  "deBeispiel": "Im Kindergarten arbeiten drei Erzieher und zwei Erzieherinnen.",
+  "gsw": "Erzieher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Chindergarte schaffed drüü Erzieher und zwäi Erzieherinne."
+ },
+ {
+  "id": 7658,
+  "de": "der Pilot",
+  "tr": "pilot",
+  "deBeispiel": "Der Pilot hat uns gesagt, dass wir pünktlich landen.",
+  "gsw": "Pilot",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Pilot hät eus gsäit, dass mer pünktlich landed."
+ },
+ {
+  "id": 7659,
+  "de": "der Buchhalter",
+  "tr": "muhasebeci",
+  "deBeispiel": "Unser Buchhalter kontrolliert jeden Monat alle Rechnungen.",
+  "gsw": "Buechhalter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Eusen Buechhalter kontrolliert jede Monet alli Rächnige."
+ },
+ {
+  "id": 7660,
+  "de": "der Filialleiter",
+  "tr": "şube müdürü",
+  "deBeispiel": "Der Filialleiter hat mir am Freitag frei gegeben.",
+  "gsw": "Filialleiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Filialleiter hät mer am Friitig frii gee."
+ },
+ {
+  "id": 7661,
+  "de": "das Bewerbungsgespräch",
+  "tr": "iş görüşmesi, mülakat",
+  "deBeispiel": "Ich habe morgen um zehn Uhr ein Bewerbungsgespräch.",
+  "gsw": "Bewerbigsgschpröch",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich han morn am zäni es Bewerbigsgschpröch."
+ },
+ {
+  "id": 7662,
+  "de": "die Beförderung",
+  "tr": "terfi",
+  "deBeispiel": "Nach der Beförderung verdient sie viel mehr Geld.",
+  "gsw": "Beförderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Beförderig verdient si vill meh Gäld."
+ },
+ {
+  "id": 7663,
+  "de": "das Arbeitsamt",
+  "tr": "iş bulma kurumu",
+  "deBeispiel": "Er sucht beim Arbeitsamt nach einer neuen Stelle.",
+  "gsw": "Arbetsamt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er suecht bim Arbetsamt e nöii Schtell."
+ },
+ {
+  "id": 7664,
+  "de": "der Nebenjob",
+  "tr": "ek iş, yan iş",
+  "deBeispiel": "Am Wochenende habe ich einen Nebenjob in einem Café.",
+  "gsw": "Näbejob",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Wucheänd han ich en Näbejob i eme Café."
+ },
+ {
+  "id": 7665,
+  "de": "der Schreibtisch",
+  "tr": "yazı masası, çalışma masası",
+  "deBeispiel": "Auf meinem Schreibtisch liegen zu viele Papiere.",
+  "gsw": "Schriibtisch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf mim Schriibtisch ligged z vill Papier."
+ },
+ {
+  "id": 7666,
+  "de": "das Arbeitszimmer",
+  "tr": "çalışma odası",
+  "deBeispiel": "Mein Mann arbeitet oft im Arbeitszimmer zu Hause.",
+  "gsw": "Arbetszimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Min Maa schaffet oft im Arbetszimmer dihäime."
+ },
+ {
+  "id": 7667,
+  "de": "der Aktenschrank",
+  "tr": "dosya dolabı",
+  "deBeispiel": "Die alten Verträge sind im Aktenschrank.",
+  "gsw": "Aktechaschte",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di alte Verträg sind im Aktechaschte."
+ },
+ {
+  "id": 7668,
+  "de": "die Büroklammer",
+  "tr": "ataç",
+  "deBeispiel": "Kannst du mir bitte eine Büroklammer geben?",
+  "gsw": "Büroklammere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chasch mer bitte e Büroklammere gää?"
+ },
+ {
+  "id": 7669,
+  "de": "der Notizblock",
+  "tr": "bloknot, not defteri",
+  "deBeispiel": "Ich schreibe die Telefonnummer in meinen Notizblock.",
+  "gsw": "Notizblock",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich schriib d Telefonnummere i min Notizblock."
+ },
+ {
+  "id": 7670,
+  "de": "die Lagerhalle",
+  "tr": "depo binası, ambar",
+  "deBeispiel": "In der Lagerhalle ist es im Winter sehr kalt.",
+  "gsw": "Lagerhalle",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Lagerhalle isch es im Winter sehr chalt."
+ },
+ {
+  "id": 7671,
+  "de": "die Metzgerei",
+  "tr": "kasap dükkânı",
+  "deBeispiel": "Meine Tante arbeitet in einer Metzgerei am Markt.",
+  "gsw": "Metzgerei",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tante schafft i ere Metzgerei am Märt."
+ },
+ {
+  "id": 7672,
+  "de": "der Friseursalon",
+  "tr": "kuaför salonu",
+  "deBeispiel": "Der Friseursalon ist montags immer geschlossen.",
+  "gsw": "Coiffeursalon",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Coiffeursalon isch am Määntig immer zue."
+ },
+ {
+  "id": 7673,
+  "de": "die Arztpraxis",
+  "tr": "muayenehane",
+  "deBeispiel": "Sie arbeitet als Sekretärin in einer Arztpraxis.",
+  "gsw": "Arztpraxis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si schafft als Sekretärin i ere Arztpraxis."
+ },
+ {
+  "id": 7674,
+  "de": "die Mittagspause",
+  "tr": "öğle molası",
+  "deBeispiel": "In der Mittagspause esse ich meistens in der Kantine.",
+  "gsw": "Mittagspause",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Mittagspause äss ich meischtens i de Kantine."
+ },
+ {
+  "id": 7675,
+  "de": "die Kaffeepause",
+  "tr": "kahve molası",
+  "deBeispiel": "Wir machen um halb vier eine kurze Kaffeepause.",
+  "gsw": "Kafipause",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir mached am halbi vieri e churzi Kafipause."
+ },
+ {
+  "id": 7676,
+  "de": "die Nachtschicht",
+  "tr": "gece vardiyası",
+  "deBeispiel": "Diese Woche habe ich Nachtschicht im Krankenhaus.",
+  "gsw": "Nachtschicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Wuche han ich Nachtschicht im Schpital."
+ },
+ {
+  "id": 7677,
+  "de": "die Spätschicht",
+  "tr": "akşam vardiyası",
+  "deBeispiel": "Nach der Spätschicht komme ich erst um elf nach Hause.",
+  "gsw": "Schpaatschicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Schpaatschicht chum ich erscht am elfi häi."
+ },
+ {
+  "id": 7678,
+  "de": "der Arbeitstag",
+  "tr": "iş günü, çalışma günü",
+  "deBeispiel": "Heute war ein langer und schwerer Arbeitstag.",
+  "gsw": "Arbetstag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Hüt isch es en lange und schwäre Arbetstag gsi."
+ },
+ {
+  "id": 7679,
+  "de": "das Wochenende",
+  "tr": "hafta sonu",
+  "deBeispiel": "Am Wochenende muss ich zum Glück nicht arbeiten.",
+  "gsw": "Wucheänd",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Wucheänd mues ich zum Glück nöd schaffe."
+ },
+ {
+  "id": 7680,
+  "de": "der Dienstplan",
+  "tr": "vardiya çizelgesi, çalışma planı",
+  "deBeispiel": "Der neue Dienstplan hängt schon an der Tür.",
+  "gsw": "Dienschtplan",
+  "gswArtikel": "de",
+  "gswBeispiel": "De nöi Dienschtplan hanget scho a de Tür."
+ },
+ {
+  "id": 7681,
+  "de": "der Urlaubstag",
+  "tr": "izin günü",
+  "deBeispiel": "Ich habe dieses Jahr noch fünf Urlaubstage.",
+  "gsw": "Ferietag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich han das Jaar no föif Ferietäg."
+ },
+ {
+  "id": 7682,
+  "de": "der Verdienst",
+  "tr": "kazanç, gelir",
+  "deBeispiel": "Der Verdienst ist klein, aber die Arbeit macht Spaß.",
+  "gsw": "Verdienscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verdienscht isch chlii, aber d Arbet macht Schpass."
+ },
+ {
+  "id": 7683,
+  "de": "der Bonus",
+  "tr": "prim, bonus",
+  "deBeispiel": "Im Dezember bekommen alle Mitarbeiter einen Bonus.",
+  "gsw": "Bonus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Dezämber überchömed alli Mitarbäiter en Bonus."
+ },
+ {
+  "id": 7684,
+  "de": "das Weihnachtsgeld",
+  "tr": "yılbaşı ikramiyesi",
+  "deBeispiel": "Von meinem Weihnachtsgeld kaufe ich eine neue Waschmaschine.",
+  "gsw": "Wiehnachtsgäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vo mim Wiehnachtsgäld chauf ich e nöii Wöschmaschine."
+ },
+ {
+  "id": 7685,
+  "de": "die Kontonummer",
+  "tr": "hesap numarası",
+  "deBeispiel": "Bitte schreiben Sie Ihre Kontonummer auf das Formular.",
+  "gsw": "Kontonummere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte schribed Si Iri Kontonummere ufs Formular."
+ },
+ {
+  "id": 7686,
+  "de": "der Arbeitskollege",
+  "tr": "iş arkadaşı",
+  "deBeispiel": "Mein Arbeitskollege hilft mir immer bei schweren Aufgaben.",
+  "gsw": "Arbetskolleg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Arbetskolleg hilft mer immer bi schwäre Ufgabe."
+ },
+ {
+  "id": 7687,
+  "de": "der Geschäftsführer",
+  "tr": "genel müdür, işletme müdürü",
+  "deBeispiel": "Der Geschäftsführer kommt morgen in unsere Abteilung.",
+  "gsw": "Gschäftsfüerer",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Gschäftsfüerer chunt morn i eusi Abteilig."
+ },
+ {
+  "id": 7688,
+  "de": "der Berater",
+  "tr": "danışman",
+  "deBeispiel": "Der Berater von der Bank hat uns alles genau erklärt.",
+  "gsw": "Berater",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Berater vo de Bank hät eus alles gnau erklärt."
+ },
+ {
+  "id": 7689,
+  "de": "der Arbeitsweg",
+  "tr": "işe gidiş yolu",
+  "deBeispiel": "Mein Arbeitsweg dauert jeden Morgen fast eine Stunde.",
+  "gsw": "Arbetswäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Arbetswäg duuret jede Morge fascht e Schtund."
+ },
+ {
+  "id": 7690,
+  "de": "der Firmenwagen",
+  "tr": "şirket arabası",
+  "deBeispiel": "Mit dem Firmenwagen fahre ich zu den Kunden.",
+  "gsw": "Firmewage",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mit em Firmewage fahr ich zu de Chunde."
+ },
+ {
+  "id": 7691,
+  "de": "der Dienstwagen",
+  "tr": "hizmet aracı, makam arabası",
+  "deBeispiel": "Mein Chef hat einen großen Dienstwagen bekommen.",
+  "gsw": "Dienschtwage",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Chef hät en groosse Dienschtwage überchoo."
+ },
+ {
+  "id": 7692,
+  "de": "die Geschäftsreise",
+  "tr": "iş seyahati",
+  "deBeispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien.",
+  "gsw": "Gschäftsreis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nöchscht Wuche macht min Vatter e Gschäftsreis uf Wien."
+ },
+ {
+  "id": 7693,
+  "de": "die Dienstreise",
+  "tr": "görev seyahati, iş gezisi",
+  "deBeispiel": "Die Firma bezahlt das Hotel auf der Dienstreise.",
+  "gsw": "Dienschtreis",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Firma zahlt s Hotel uf de Dienschtreis."
+ },
+ {
+  "id": 7694,
+  "de": "die Schulung",
+  "tr": "eğitim, kurs",
+  "deBeispiel": "Am Dienstag habe ich eine Schulung für das neue Programm.",
+  "gsw": "Schuelig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Ziischtig han ich e Schuelig für s nöi Programm."
+ },
+ {
+  "id": 7695,
+  "de": "der Geselle",
+  "tr": "kalfa",
+  "deBeispiel": "Nach der Ausbildung arbeitet er als Geselle in einer Werkstatt.",
+  "gsw": "Gsell",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de Uusbildig schafft er als Gsell i ere Wärchstatt."
+ },
+ {
+  "id": 7696,
+  "de": "die Teamarbeit",
+  "tr": "takım çalışması, ekip çalışması",
+  "deBeispiel": "In unserem Büro ist Teamarbeit sehr wichtig.",
+  "gsw": "Teamarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "I eusem Büro isch Teamarbet sehr wichtig."
+ },
+ {
+  "id": 7697,
+  "de": "die Arbeitskleidung",
+  "tr": "iş kıyafeti",
+  "deBeispiel": "Die Arbeitskleidung bekommen wir von der Firma.",
+  "gsw": "Arbetschleidig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Arbetschleidig überchömed mer vo de Firma."
+ },
+ {
+  "id": 7698,
+  "de": "der Handschuh",
+  "tr": "eldiven",
+  "deBeispiel": "Bei dieser Arbeit musst du immer Handschuhe tragen.",
+  "gsw": "Handschue",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi dere Arbet muesch immer Handschue träge."
+ },
+ {
+  "id": 7699,
+  "de": "die Schutzbrille",
+  "tr": "koruyucu gözlük",
+  "deBeispiel": "In der Werkstatt trägt jeder eine Schutzbrille.",
+  "gsw": "Schutzbrüle",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Wärchstatt trait jede e Schutzbrüle."
+ },
+ {
+  "id": 7700,
+  "de": "die Grundschule",
+  "tr": "ilkokul",
+  "deBeispiel": "Meine Tochter geht seit einem Jahr in die Grundschule.",
+  "gsw": "Primarschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tochter gaat sit eme Jaar i d Primarschuel."
+ },
+ {
+  "id": 7701,
+  "de": "das Gymnasium",
+  "tr": "lise",
+  "deBeispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
+  "gsw": "Gymi",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach de vierte Klass wächslet er is Gymi."
+ },
+ {
+  "id": 7702,
+  "de": "die Realschule",
+  "tr": "ortaokul",
+  "deBeispiel": "Ich habe die Realschule mit guten Noten beendet.",
+  "gsw": "Realschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich han d Realschuel mit guete Note abgschlosse."
+ },
+ {
+  "id": 7703,
+  "de": "das Klassenzimmer",
+  "tr": "sınıf, derslik",
+  "deBeispiel": "Das Klassenzimmer ist hell und hat große Fenster.",
+  "gsw": "Klassezimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Klassezimmer isch hell und hät groossi Fäischter."
+ },
+ {
+  "id": 7704,
+  "de": "der Schulhof",
+  "tr": "okul bahçesi",
+  "deBeispiel": "In der Pause spielen die Kinder auf dem Schulhof.",
+  "gsw": "Schuelhof",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Pause schpiled d Chind uf em Schuelhof."
+ },
+ {
+  "id": 7705,
+  "de": "die Schultasche",
+  "tr": "okul çantası",
+  "deBeispiel": "Meine Schultasche ist heute sehr schwer.",
+  "gsw": "Schueltäsche",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Schueltäsche isch hüt sehr schwär."
+ },
+ {
+  "id": 7706,
+  "de": "das Schulbuch",
+  "tr": "ders kitabı",
+  "deBeispiel": "Ich habe mein Schulbuch zu Hause vergessen.",
+  "gsw": "Schuelbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich han mis Schuelbuech dihäime vergässe."
+ },
+ {
+  "id": 7707,
+  "de": "das Schuljahr",
+  "tr": "öğretim yılı",
+  "deBeispiel": "Das neue Schuljahr beginnt im September.",
+  "gsw": "Schueljaar",
+  "gswArtikel": "s",
+  "gswBeispiel": "S nöi Schueljaar fangt im Septämber aa."
+ },
+ {
+  "id": 7708,
+  "de": "der Mitschüler",
+  "tr": "sınıf arkadaşı",
+  "deBeispiel": "Mein Mitschüler hilft mir bei den Hausaufgaben.",
+  "gsw": "Mitschüeler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Mitschüeler hilft mer bi de Ufzgi."
+ },
+ {
+  "id": 7709,
+  "de": "das Schulfach",
+  "tr": "ders, branş",
+  "deBeispiel": "Mein liebstes Schulfach ist Musik.",
+  "gsw": "Schuelfach",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mis liebschte Schuelfach isch Musig."
+ },
+ {
+  "id": 7710,
+  "de": "die Mathematik",
+  "tr": "matematik",
+  "deBeispiel": "In Mathematik habe ich eine Zwei bekommen.",
+  "gsw": "Mathematik",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Mathematik han ich e Zwäi überchoo."
+ },
+ {
+  "id": 7711,
+  "de": "die Physik",
+  "tr": "fizik",
+  "deBeispiel": "Am Montag haben wir zwei Stunden Physik.",
+  "gsw": "Physik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Määntig händ mer zwäi Schtund Physik."
+ },
+ {
+  "id": 7712,
+  "de": "die Chemie",
+  "tr": "kimya",
+  "deBeispiel": "In Chemie machen wir heute ein Experiment.",
+  "gsw": "Chemie",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Chemie mached mer hüt es Experimänt."
+ },
+ {
+  "id": 7713,
+  "de": "die Sporthalle",
+  "tr": "spor salonu",
+  "deBeispiel": "Der Sportunterricht findet in der Sporthalle statt.",
+  "gsw": "Turnhalle",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Schportunterricht findet i de Turnhalle schtatt.",
+  "ayniLehce": [
+   "Turnhalle (A2)"
+  ]
+ },
+ {
+  "id": 7714,
+  "de": "die Grammatik",
+  "tr": "dil bilgisi",
+  "deBeispiel": "Die deutsche Grammatik ist am Anfang schwer.",
+  "gsw": "Grammatik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di tüütschi Grammatik isch am Aafang schwär."
+ },
+ {
+  "id": 7715,
+  "de": "die Vokabel",
+  "tr": "kelime (yabancı dilde öğrenilen), sözcük",
+  "deBeispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
+  "gsw": "Vokable",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich lerne jede Tag zwänzg nöii Vokable."
+ },
+ {
+  "id": 7716,
+  "de": "das Lineal",
+  "tr": "cetvel",
+  "deBeispiel": "Zeichne die Linie bitte mit einem Lineal.",
+  "gsw": "Lineal",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zäichne d Linie bitte mit eme Lineal."
+ },
+ {
+  "id": 7717,
+  "de": "der Stundenplan",
+  "tr": "ders programı",
+  "deBeispiel": "Unser neuer Stundenplan hängt an der Tür.",
+  "gsw": "Schtundeplan",
+  "gswArtikel": "de",
+  "gswBeispiel": "Eusen nöie Schtundeplan hanget a de Tür."
+ },
+ {
+  "id": 7718,
+  "de": "der Klassenlehrer",
+  "tr": "sınıf öğretmeni",
+  "deBeispiel": "Unser Klassenlehrer ist sehr nett.",
+  "gsw": "Klasselehrer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Eusen Klasselehrer isch sehr nett."
+ },
+ {
+  "id": 7719,
+  "de": "der Elternabend",
+  "tr": "veli toplantısı",
+  "deBeispiel": "Am Donnerstag ist in der Schule ein Elternabend.",
+  "gsw": "Elteroobig",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Dunschtig isch i de Schuel en Elteroobig."
+ },
+ {
+  "id": 7720,
+  "de": "die Fachhochschule",
+  "tr": "uygulamalı bilimler yüksekokulu",
+  "deBeispiel": "Sie studiert Informatik an einer Fachhochschule.",
+  "gsw": "Fachhochschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si schtudiert Informatik an ere Fachhochschuel."
+ },
+ {
+  "id": 7721,
+  "de": "der Azubi",
+  "tr": "çırak, meslek eğitimi gören kişi",
+  "deBeispiel": "Unser neuer Azubi lernt schnell.",
+  "gsw": "Lehrling",
+  "gswArtikel": "de",
+  "gswBeispiel": "Eusen nöie Lehrling lernt schnäll.",
+  "ayniLehce": [
+   "Auszubildende (B2)"
+  ]
+ },
+ {
+  "id": 7722,
+  "de": "versetzen",
+  "tr": "sınıf geçirmek, nakletmek",
+  "deBeispiel": "Die Lehrerin hat ihn in die nächste Klasse versetzt.",
+  "gsw": "versetze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Lehrerin hät en i di nöchschti Klass versetzt."
+ },
+ {
+  "id": 7723,
+  "de": "abhören",
+  "tr": "(ders/kelime) sözlü sormak",
+  "deBeispiel": "Meine Mutter hört mich jeden Abend die Vokabeln ab.",
+  "gsw": "abhöre",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Muetter höört mich jede Oobig d Vokable ab."
+ },
+ {
+  "id": 7724,
+  "de": "mithalten",
+  "tr": "ayak uydurmak, yetişmek",
+  "deBeispiel": "In diesem Kurs kann ich gut mithalten.",
+  "gsw": "mithalte",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Kurs cha ich guet mithalte."
+ },
+ {
+  "id": 7725,
+  "de": "beibringen",
+  "tr": "öğretmek",
+  "deBeispiel": "Meine Oma hat mir das Lesen beigebracht.",
+  "gsw": "biibringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Grossmuetter hät mer s Läse biibrocht."
+ },
+ {
+  "id": 7726,
+  "de": "verbessern",
+  "tr": "geliştirmek, düzeltmek",
+  "deBeispiel": "Ich möchte mein Deutsch im Kurs verbessern.",
+  "gsw": "verbessere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wett mis Tüütsch im Kurs verbessere.",
+  "ayniLehce": [
+   "sich verbessern (B1)"
+  ]
+ },
+ {
+  "id": 7727,
+  "de": "bewerten",
+  "tr": "değerlendirmek, notlandırmak",
+  "deBeispiel": "Die Lehrerin bewertet unsere Aufsätze am Wochenende.",
+  "gsw": "bewerte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Lehrerin bewertet eusi Ufsätz am Wucheänd."
+ },
+ {
+  "id": 7728,
+  "de": "lehren",
+  "tr": "ders vermek, öğretmek",
+  "deBeispiel": "Er lehrt seit zehn Jahren an einer Schule.",
+  "gsw": "lehre",
+  "gswArtikel": null,
+  "gswBeispiel": "Er lehrt sit zää Jaar an ere Schuel."
+ },
+ {
+  "id": 7729,
+  "de": "ausbilden",
+  "tr": "yetiştirmek, meslek eğitimi vermek",
+  "deBeispiel": "Die Firma bildet jedes Jahr fünf junge Leute aus.",
+  "gsw": "uusbilde",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma bildet jedes Jaar föif jungi Lüüt uus."
+ },
+ {
+  "id": 7730,
+  "de": "ablegen",
+  "tr": "(sınava) girmek, vermek",
+  "deBeispiel": "Nächste Woche lege ich meine mündliche Prüfung ab.",
+  "gsw": "ablege",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöchscht Wuche lege ich mini mündlichi Prüefig ab."
+ },
+ {
+  "id": 7731,
+  "de": "zuordnen",
+  "tr": "eşleştirmek, ait olduğu yere koymak",
+  "deBeispiel": "Ordne die Wörter den richtigen Bildern zu!",
+  "gsw": "zuordne",
+  "gswArtikel": null,
+  "gswBeispiel": "Ordne d Wörter de richtige Bilder zue!"
+ },
+ {
+  "id": 7732,
+  "de": "austeilen",
+  "tr": "dağıtmak (elden, tek tek vermek)",
+  "deBeispiel": "Der Lehrer teilt die Blätter für den Test aus.",
+  "gsw": "uusteile",
+  "gswArtikel": null,
+  "gswBeispiel": "De Lehrer teilt d Blätter für de Tescht uus."
+ },
+ {
+  "id": 7733,
+  "de": "weiterkommen",
+  "tr": "ilerlemek, yol almak",
+  "deBeispiel": "Im Deutschkurs komme ich langsam weiter.",
+  "gsw": "wiiterchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Tüütschkurs chum ich langsam wiiter."
+ },
+ {
+  "id": 7734,
+  "de": "nachhelfen",
+  "tr": "(derste) yardım etmek, takviye ders vermek",
+  "deBeispiel": "Meine Schwester hilft mir in Englisch nach.",
+  "gsw": "nachhälfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Schwöschter hilft mer in Änglisch nach."
+ },
+ {
+  "id": 7735,
+  "de": "nachmachen",
+  "tr": "taklit etmek, aynısını yapmak",
+  "deBeispiel": "Die Kinder machen alles nach, was der Lehrer zeigt.",
+  "gsw": "nachmache",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind mached alles nach, was de Lehrer zäigt."
+ },
+ {
+  "id": 7736,
+  "de": "durchlesen",
+  "tr": "baştan sona okumak",
+  "deBeispiel": "Lies die Aufgabe in Ruhe durch!",
+  "gsw": "dureläse",
+  "gswArtikel": null,
+  "gswBeispiel": "Lis d Ufgab i Rue dure!"
+ },
+ {
+  "id": 7737,
+  "de": "mitschreiben",
+  "tr": "not tutmak",
+  "deBeispiel": "Im Unterricht schreibe ich immer mit.",
+  "gsw": "mitschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Unterricht schriib ich immer mit."
+ },
+ {
+  "id": 7738,
+  "de": "nachsitzen",
+  "tr": "okulda cezalı kalmak",
+  "deBeispiel": "Weil er zu spät kam, musste er nachsitzen.",
+  "gsw": "nachsitze",
+  "gswArtikel": null,
+  "gswBeispiel": "Wil er z schpaat cho isch, hät er müese nachsitze."
+ },
+ {
+  "id": 7739,
+  "de": "vormachen",
+  "tr": "göstermek, yaparak göstermek",
+  "deBeispiel": "Der Lehrer macht uns die Übung erst vor.",
+  "gsw": "vormache",
+  "gswArtikel": null,
+  "gswBeispiel": "De Lehrer macht eus d Übig zerscht vor."
+ },
+ {
+  "id": 7740,
+  "de": "aufsagen",
+  "tr": "ezbere okumak",
+  "deBeispiel": "Jedes Kind muss ein Gedicht aufsagen.",
+  "gsw": "ufsäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedes Chind mues es Gedicht ufsäge."
+ },
+ {
+  "id": 7741,
+  "de": "aufschlagen",
+  "tr": "(kitabı) açmak",
+  "deBeispiel": "Schlagt bitte das Buch auf Seite zwölf auf!",
+  "gsw": "ufschlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Schlönd bitte s Buech uf Siite zwölf uf!"
+ },
+ {
+  "id": 7742,
+  "de": "nachlesen",
+  "tr": "okuyup bakmak, kaynaktan okumak",
+  "deBeispiel": "Die Regel kannst du im Buch nachlesen.",
+  "gsw": "nachläse",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regle chasch im Buech nachläse."
+ },
+ {
+  "id": 7743,
+  "de": "durchnehmen",
+  "tr": "(konuyu) işlemek",
+  "deBeispiel": "Wir nehmen im Unterricht gerade die Vergangenheit durch.",
+  "gsw": "durenää",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir nämed im Unterricht grad d Vergangeheit dure."
+ },
+ {
+  "id": 7744,
+  "de": "konzentriert",
+  "tr": "odaklanmış, konsantre",
+  "deBeispiel": "Nach der Pause arbeiten wir wieder konzentriert.",
+  "gsw": "konzentriert",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Pause schaffed mer wider konzentriert."
+ },
+ {
+  "id": 7745,
+  "de": "sorgfältig",
+  "tr": "özenli, dikkatli",
+  "deBeispiel": "Sie macht ihre Hausaufgaben immer sorgfältig.",
+  "gsw": "sorgfältig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si macht iri Ufzgi immer sorgfältig."
+ },
+ {
+  "id": 7746,
+  "de": "unverständlich",
+  "tr": "anlaşılmaz",
+  "deBeispiel": "Die Frage war für mich völlig unverständlich.",
+  "gsw": "unverschtändlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fraag isch für mich völlig unverschtändlich gsi."
+ },
+ {
+  "id": 7747,
+  "de": "machbar",
+  "tr": "yapılabilir, üstesinden gelinebilir",
+  "deBeispiel": "Die Prüfung war schwer, aber machbar.",
+  "gsw": "machbar",
+  "gswArtikel": null,
+  "gswBeispiel": "D Prüefig isch schwär gsi, aber machbar."
+ },
+ {
+  "id": 7748,
+  "de": "lehrreich",
+  "tr": "öğretici",
+  "deBeispiel": "Der Ausflug ins Museum war sehr lehrreich.",
+  "gsw": "lehrriich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uusflug is Museum isch sehr lehrriich gsi."
+ },
+ {
+  "id": 7749,
+  "de": "leserlich",
+  "tr": "okunaklı",
+  "deBeispiel": "Bitte schreib deinen Namen leserlich!",
+  "gsw": "läserlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte schriib din Name läserlich!"
+ },
+ {
+  "id": 7750,
+  "de": "fehlerhaft",
+  "tr": "hatalı, yanlışlarla dolu",
+  "deBeispiel": "Meine Übersetzung war leider fehlerhaft.",
+  "gsw": "fählerhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Übersetzig isch läider fählerhaft gsi."
+ },
+ {
+  "id": 7751,
+  "de": "eifrig",
+  "tr": "hevesli, gayretli",
+  "deBeispiel": "Die Kinder üben eifrig für das Diktat.",
+  "gsw": "iifrig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind üebed iifrig für s Diktat."
+ },
+ {
+  "id": 7752,
+  "de": "fehlerfrei",
+  "tr": "hatasız",
+  "deBeispiel": "Sein Diktat war fehlerfrei.",
+  "gsw": "fählerfrii",
+  "gswArtikel": null,
+  "gswBeispiel": "Sis Diktat isch fählerfrii gsi."
+ },
+ {
+  "id": 7753,
+  "de": "jährlich",
+  "tr": "yıllık, her yıl",
+  "deBeispiel": "Die Schule macht jährlich einen Ausflug.",
+  "gsw": "jährlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schuel macht jährlich en Uusflug."
+ },
+ {
+  "id": 7754,
+  "de": "unruhig",
+  "tr": "huzursuz, yerinde duramayan",
+  "deBeispiel": "Die Klasse war heute sehr unruhig.",
+  "gsw": "unrueig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Klass isch hüt sehr unrueig gsi."
+ }
+]

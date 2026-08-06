@@ -1,0 +1,998 @@
+[
+ {
+  "id": 5183,
+  "de": "abschaffen",
+  "tr": "kaldırmak, ilga etmek",
+  "deBeispiel": "Die Gebühren für Kindergärten wurden im ganzen Land abgeschafft.",
+  "gsw": "abschaffe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gebüüre für d Chindergärte hät mer im ganze Land abgschafft."
+ },
+ {
+  "id": 5184,
+  "de": "reformieren",
+  "tr": "reform yapmak, yenilemek",
+  "deBeispiel": "Das Rentensystem soll bis 2030 grundlegend reformiert werden.",
+  "gsw": "reformiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Rentesyschtem söll bis 2030 grundlegend reformiert werde."
+ },
+ {
+  "id": 5185,
+  "de": "erlassen",
+  "tr": "çıkarmak, yürürlüğe koymak",
+  "deBeispiel": "Die Stadt hat ein Verbot für laute Feuerwerke erlassen.",
+  "gsw": "erlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtadt hät es Verbot für luuti Füürwärch erlaa."
+ },
+ {
+  "id": 5186,
+  "de": "unterzeichnen",
+  "tr": "imzalamak",
+  "deBeispiel": "Über 50000 Menschen haben den Aufruf bereits unterzeichnet.",
+  "gsw": "underzeichne",
+  "gswArtikel": null,
+  "gswBeispiel": "Über 50000 Mäntsche händ de Uufruef scho underzeichnet."
+ },
+ {
+  "id": 5187,
+  "de": "überstimmen",
+  "tr": "oylamada yenmek, oy çokluğuyla reddetmek",
+  "deBeispiel": "Die kleine Fraktion wurde bei der Abstimmung deutlich überstimmt.",
+  "gsw": "überschtimme",
+  "gswArtikel": null,
+  "gswBeispiel": "Di chli Fraktion isch bi de Abschtimmig düütlich überschtimmt worde."
+ },
+ {
+  "id": 5188,
+  "de": "aufrufen",
+  "tr": "çağrıda bulunmak, çağırmak",
+  "deBeispiel": "Die Gewerkschaft rief für Freitag zu einem Warnstreik auf.",
+  "gsw": "uufrüefe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gwerkschaft hät für de Friitig zumene Warnschtreik uufgrüeft."
+ },
+ {
+  "id": 5189,
+  "de": "kürzen",
+  "tr": "kısmak, azaltmak (bütçe, metin)",
+  "deBeispiel": "Die Mittel für Bibliotheken wurden erneut um zehn Prozent gekürzt.",
+  "gsw": "chürze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Mittel für d Bibliotheke sind ernöit um zää Prozänt gchürzt worde."
+ },
+ {
+  "id": 5190,
+  "de": "erheben",
+  "tr": "toplamak, tahsil etmek, ileri sürmek",
+  "deBeispiel": "Die Gemeinde erhebt seit Januar eine Gebühr für Straßenreinigung.",
+  "gsw": "erhebe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeind erhebt sit Januar e Gebüür für d Schtrassereinigung."
+ },
+ {
+  "id": 5191,
+  "de": "einbringen",
+  "tr": "sunmak, gündeme getirmek",
+  "deBeispiel": "Die Opposition brachte im Rat einen eigenen Vorschlag ein.",
+  "gsw": "iibringe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Opposition hät im Raat en eigne Vorschlag iibracht."
+ },
+ {
+  "id": 5192,
+  "de": "kommunal",
+  "tr": "belediyeye ait, yerel",
+  "deBeispiel": "Über den Bau von Radwegen wird auf kommunaler Ebene entschieden.",
+  "gsw": "kommunal",
+  "gswArtikel": null,
+  "gswBeispiel": "Über de Bau vo Velowäg wird uf kommunaler Ebeni entschide."
+ },
+ {
+  "id": 5193,
+  "de": "einstimmig",
+  "tr": "oybirliğiyle",
+  "deBeispiel": "Der Rat nahm den Vorschlag am Ende einstimmig an.",
+  "gsw": "eischtimmig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Raat hät de Vorschlag am Schluss eischtimmig aagnoo."
+ },
+ {
+  "id": 5194,
+  "de": "mehrheitlich",
+  "tr": "oy çokluğuyla, çoğunluğun oyuyla",
+  "deBeispiel": "Die Bevölkerung lehnt das Projekt mehrheitlich ab.",
+  "gsw": "mehrheitlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bevölkerig lehnt s Projekt mehrheitlich ab."
+ },
+ {
+  "id": 5195,
+  "de": "überparteilich",
+  "tr": "partiler üstü, tarafsız",
+  "deBeispiel": "Das Bündnis versteht sich als überparteilich und offen für alle.",
+  "gsw": "überparteilich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Bündnis verschtaat sich als überparteilich und offe für alli."
+ },
+ {
+  "id": 5196,
+  "de": "unabhängig",
+  "tr": "bağımsız",
+  "deBeispiel": "Ein unabhängiger Gutachter soll die Kosten noch einmal prüfen.",
+  "gsw": "unabhängig",
+  "gswArtikel": null,
+  "gswBeispiel": "En unabhängige Guetachter söll d Choschte no einisch prüefe."
+ },
+ {
+  "id": 5197,
+  "de": "bundesweit",
+  "tr": "ülke çapında, federal düzeyde",
+  "deBeispiel": "Die neue Regelung gilt ab Januar bundesweit.",
+  "gsw": "bundeswiit",
+  "gswArtikel": null,
+  "gswBeispiel": "Di nöi Regelig gilt ab Januar bundeswiit."
+ },
+ {
+  "id": 5198,
+  "de": "amtlich",
+  "tr": "resmî",
+  "deBeispiel": "Das amtliche Endergebnis liegt erst am Mittwoch vor.",
+  "gsw": "amtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "S amtlich Ändergebnis liit erscht am Mittwuch vor."
+ },
+ {
+  "id": 5199,
+  "de": "konservativ",
+  "tr": "muhafazakâr",
+  "deBeispiel": "In ländlichen Regionen wählen die Menschen eher konservativ.",
+  "gsw": "konservativ",
+  "gswArtikel": null,
+  "gswBeispiel": "I ländliche Regione wähled d Mäntsche eender konservativ."
+ },
+ {
+  "id": 5200,
+  "de": "angesichts",
+  "tr": "karşısında, göz önüne alındığında",
+  "deBeispiel": "Angesichts der leeren Kassen wurden alle Neubauten verschoben.",
+  "gsw": "aagsichts",
+  "gswArtikel": null,
+  "gswBeispiel": "Aagsichts vo de leere Chasse sind alli Nöibaute verschobe worde."
+ },
+ {
+  "id": 5201,
+  "de": "der Rechtsanwalt",
+  "tr": "avukat",
+  "deBeispiel": "Mein Rechtsanwalt rät mir, den Bescheid nicht zu akzeptieren.",
+  "gsw": "Rächtsaawalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Rächtsaawalt raat mir, de Bscheid nöd z akzeptiere."
+ },
+ {
+  "id": 5202,
+  "de": "die Auflösung",
+  "tr": "fesih, sona erdirme, dağıtma",
+  "deBeispiel": "Die Auflösung des Vertrags erfolgte im gegenseitigen Einvernehmen.",
+  "gsw": "Uuflösig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uuflösig vom Vertrag isch im gägesitige Iivernää erfolgt."
+ },
+ {
+  "id": 5203,
+  "de": "der Nachweis",
+  "tr": "belge, kanıt, ispat",
+  "deBeispiel": "Ohne Nachweis über Ihr Einkommen kann der Antrag nicht bearbeitet werden.",
+  "gsw": "Nachwiis",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ohni Nachwiis über Iires Iichoo cha de Aatrag nöd bearbeitet werde."
+ },
+ {
+  "id": 5204,
+  "de": "die Unterlage",
+  "tr": "evrak, belge",
+  "deBeispiel": "Bitte bringen Sie alle Unterlagen im Original zum Termin mit.",
+  "gsw": "Underlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte bringed Si alli Underlaage im Original a de Termin mit."
+ },
+ {
+  "id": 5205,
+  "de": "das Bußgeld",
+  "tr": "idari para cezası",
+  "deBeispiel": "Wer zu schnell fährt, muss mit einem empfindlichen Bußgeld rechnen.",
+  "gsw": "Buessgäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wer z schnäll faart, mues mit eme empfindliche Buessgäld rächne."
+ },
+ {
+  "id": 5206,
+  "de": "die Sanktion",
+  "tr": "yaptırım, müeyyide",
+  "deBeispiel": "Bei wiederholten Verstößen drohen dem Betrieb harte Sanktionen.",
+  "gsw": "Sanktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi widerholte Verschtöss drohed em Betrib harti Sanktione."
+ },
+ {
+  "id": 5207,
+  "de": "der Verstoß",
+  "tr": "ihlal, aykırılık",
+  "deBeispiel": "Ein Verstoß gegen die Auflagen führt zum Entzug der Lizenz.",
+  "gsw": "Verschtoss",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Verschtoss gäge d Uuflaage füert zum Entzug vo de Lizenz."
+ },
+ {
+  "id": 5208,
+  "de": "das Vergehen",
+  "tr": "hafif suç, kabahat",
+  "deBeispiel": "Für ein solches Vergehen sieht das Gesetz eine Geldbuße vor.",
+  "gsw": "Vergehe",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für es settigs Vergehe gseht s Gsetz e Geldbuess vor."
+ },
+ {
+  "id": 5209,
+  "de": "die Straftat",
+  "tr": "suç, cürüm",
+  "deBeispiel": "Die Zahl der angezeigten Straftaten ist im letzten Jahr gesunken.",
+  "gsw": "Schtraftat",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zaal vo de aazeigte Schtraftate isch im letschte Jaar gsunke."
+ },
+ {
+  "id": 5210,
+  "de": "die Ordnungswidrigkeit",
+  "tr": "kabahat, idari suç",
+  "deBeispiel": "Falsches Parken gilt lediglich als Ordnungswidrigkeit, nicht als Straftat.",
+  "gsw": "Ordnigswidrigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Falsch parkiere gilt lediglich als Ordnigswidrigkeit, nöd als Schtraftat."
+ },
+ {
+  "id": 5211,
+  "de": "die Rechtsgrundlage",
+  "tr": "hukuki dayanak, yasal temel",
+  "deBeispiel": "Für diese Maßnahme fehlt der Behörde jede Rechtsgrundlage.",
+  "gsw": "Rächtsgrundlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Massnaam fählt de Behörde jedi Rächtsgrundlaag."
+ },
+ {
+  "id": 5212,
+  "de": "die Entschädigung",
+  "tr": "tazminat, zarar karşılığı",
+  "deBeispiel": "Die Fluggesellschaft zahlte den Reisenden eine Entschädigung für die Verspätung.",
+  "gsw": "Entschädigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fluggsellschaft hät de Reisende e Entschädigig für d Verschpötig zalt."
+ },
+ {
+  "id": 5213,
+  "de": "die Gemeinde",
+  "tr": "belediye, köy idaresi",
+  "deBeispiel": "Die Gemeinde erhebt für die Müllabfuhr eine jährliche Gebühr.",
+  "gsw": "Gmeind",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gmeind erhebt für d Chehrichtabfuer e jäärlichi Gebüür."
+ },
+ {
+  "id": 5214,
+  "de": "die Aufenthaltserlaubnis",
+  "tr": "oturma izni",
+  "deBeispiel": "Meine Aufenthaltserlaubnis läuft am Ende des Monats ab.",
+  "gsw": "Ufenthaltserlaubnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Ufenthaltserlaubnis laufft am Änd vom Monet ab."
+ },
+ {
+  "id": 5215,
+  "de": "der Personalausweis",
+  "tr": "kimlik kartı, nüfus cüzdanı",
+  "deBeispiel": "Zur Abholung des Pakets benötigen Sie einen gültigen Personalausweis.",
+  "gsw": "Personaluswiis",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zum Abhole vom Paket bruuched Si en gültige Personaluswiis."
+ },
+ {
+  "id": 5216,
+  "de": "die Untervermietung",
+  "tr": "alt kiralama, kiradaki yeri başkasına kiraya verme",
+  "deBeispiel": "Eine Untervermietung ist nur mit Erlaubnis des Vermieters zulässig.",
+  "gsw": "Undervermietig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Undervermietig isch nu mit de Erlaubnis vom Vermieter zuelässig."
+ },
+ {
+  "id": 5217,
+  "de": "das Rechtsmittel",
+  "tr": "kanun yolu, hukuki başvuru yolu",
+  "deBeispiel": "Gegen dieses Urteil sind keine weiteren Rechtsmittel mehr möglich.",
+  "gsw": "Rächtsmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Gäge das Urteil sind kei wiitere Rächtsmittel me möglich."
+ },
+ {
+  "id": 5218,
+  "de": "das Verfahren",
+  "tr": "dava, işlem, süreç",
+  "deBeispiel": "Das Verfahren gegen den Konzern wurde nach zwei Jahren eingestellt.",
+  "gsw": "Verfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Verfaare gäge de Konzern isch nach zwäi Jaar iigschtellt worde."
+ },
+ {
+  "id": 5219,
+  "de": "die Ermittlung",
+  "tr": "soruşturma, tahkikat",
+  "deBeispiel": "Die Ermittlungen dauern noch an, erste Ergebnisse liegen aber vor.",
+  "gsw": "Ermittlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ermittlige duured no aa, erschti Ergebnis liged aber scho vor."
+ },
+ {
+  "id": 5220,
+  "de": "die Staatsanwaltschaft",
+  "tr": "savcılık",
+  "deBeispiel": "Die Staatsanwaltschaft hat Anklage wegen Betrugs erhoben.",
+  "gsw": "Schtaatsaawaltschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtaatsaawaltschaft hät Aaklaag wäg Betrug erhobe."
+ },
+ {
+  "id": 5221,
+  "de": "die Verteidigung",
+  "tr": "savunma",
+  "deBeispiel": "Die Verteidigung beantragte, weitere Zeugen zu laden.",
+  "gsw": "Verteidigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verteidigig hät beaatragt, wiiteri Züüge z lade."
+ },
+ {
+  "id": 5222,
+  "de": "der Freispruch",
+  "tr": "beraat",
+  "deBeispiel": "Nach langem Prozess endete der Fall mit einem Freispruch.",
+  "gsw": "Freischpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach eme lange Prozäss hät de Fall mit eme Freischpruch gändet."
+ },
+ {
+  "id": 5223,
+  "de": "die Bewährung",
+  "tr": "ertelenmiş ceza, denetimli serbestlik",
+  "deBeispiel": "Er erhielt eine Freiheitsstrafe von einem Jahr auf Bewährung.",
+  "gsw": "Bewährig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät e Freiheitsschtraaf vo eme Jaar uf Bewährig überchoo."
+ },
+ {
+  "id": 5224,
+  "de": "die Justiz",
+  "tr": "adalet sistemi, yargı",
+  "deBeispiel": "Die überlastete Justiz braucht dringend mehr Personal.",
+  "gsw": "Juschtiz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D überlaschtet Juschtiz bruucht dringend meh Personal."
+ },
+ {
+  "id": 5225,
+  "de": "der Schriftverkehr",
+  "tr": "yazışma",
+  "deBeispiel": "Bewahren Sie den gesamten Schriftverkehr mit dem Amt sorgfältig auf.",
+  "gsw": "Schriftverchehr",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bewahred Si de ganz Schriftverchehr mit em Amt sorgfältig uuf."
+ },
+ {
+  "id": 5226,
+  "de": "der Paragraf",
+  "tr": "madde, paragraf",
+  "deBeispiel": "Der zuständige Paragraf regelt die Kündigung von Mietverhältnissen.",
+  "gsw": "Paragraf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De zueschtändig Paragraf regelt d Chündigig vo Mietverhältnis."
+ },
+ {
+  "id": 5227,
+  "de": "die Schweigepflicht",
+  "tr": "sır saklama yükümlülüğü, gizlilik yükümlülüğü",
+  "deBeispiel": "Ärzte unterliegen gegenüber Dritten einer strengen Schweigepflicht.",
+  "gsw": "Schwiigepflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dokter underliged gägenüber Dritte ere schtränge Schwiigepflicht."
+ },
+ {
+  "id": 5228,
+  "de": "die Akte",
+  "tr": "dosya, evrak dosyası",
+  "deBeispiel": "Der Anwalt bat um Einsicht in die vollständige Akte.",
+  "gsw": "Akte",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aawalt hät Iisicht i di vollschtändig Akte verlangt."
+ },
+ {
+  "id": 5229,
+  "de": "die Zwangsvollstreckung",
+  "tr": "cebri icra",
+  "deBeispiel": "Wenn Sie nicht zahlen, droht die Zwangsvollstreckung in Ihr Vermögen.",
+  "gsw": "Zwangsvollschtreckig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wänn Si nöd zaled, droht d Zwangsvollschtreckig i Iires Vermöge."
+ },
+ {
+  "id": 5230,
+  "de": "die Vormundschaft",
+  "tr": "vesayet",
+  "deBeispiel": "Das Gericht übertrug die Vormundschaft für das Kind der Tante.",
+  "gsw": "Vormundschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gricht hät d Vormundschaft für s Chind de Tante übertreit."
+ },
+ {
+  "id": 5231,
+  "de": "die Erbschaft",
+  "tr": "miras",
+  "deBeispiel": "Er hat die Erbschaft wegen der hohen Schulden ausgeschlagen.",
+  "gsw": "Erbschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät d Erbschaft wäg de hoche Schulde uusgschlage."
+ },
+ {
+  "id": 5232,
+  "de": "das Testament",
+  "tr": "vasiyetname",
+  "deBeispiel": "Sein Testament wurde nach dem Tod beim Nachlassgericht eröffnet.",
+  "gsw": "Teschtamänt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sis Teschtamänt isch nach em Tod bim Nachlassgricht eröffnet worde."
+ },
+ {
+  "id": 5233,
+  "de": "das Grundbuch",
+  "tr": "tapu sicili",
+  "deBeispiel": "Der neue Eigentümer wird erst nach Wochen ins Grundbuch eingetragen.",
+  "gsw": "Grundbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "De nöi Eigentümer wird erscht nach Wuche is Grundbuech iitreit."
+ },
+ {
+  "id": 5234,
+  "de": "die Nebenkostenabrechnung",
+  "tr": "aidat ve giderler dökümü, yan giderler hesabı",
+  "deBeispiel": "Gegen die Nebenkostenabrechnung habe ich fristgerecht Widerspruch eingelegt.",
+  "gsw": "Näbechoschteabrächnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge d Näbechoschteabrächnig han ich frischtgrächt Widerschpruch iigleit."
+ },
+ {
+  "id": 5235,
+  "de": "verklagen",
+  "tr": "dava açmak, mahkemeye vermek",
+  "deBeispiel": "Die Mieterin will den Eigentümer wegen der Mieterhöhung verklagen.",
+  "gsw": "verchlage",
+  "gswArtikel": null,
+  "gswBeispiel": "D Mieterin wott de Eigentümer wäg de Mieterhöhig verchlage."
+ },
+ {
+  "id": 5236,
+  "de": "einlegen",
+  "tr": "itirazda bulunmak, sunmak (Widerspruch/Beschwerde einlegen)",
+  "deBeispiel": "Wir haben gegen die Entscheidung fristgerecht Beschwerde eingelegt.",
+  "gsw": "iilege",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ gäge de Entscheid frischtgrächt Beschwerd iiglegt."
+ },
+ {
+  "id": 5237,
+  "de": "verhängen",
+  "tr": "ceza vermek, uygulamak, koymak",
+  "deBeispiel": "Das Gericht verhängte gegen ihn eine hohe Geldbuße.",
+  "gsw": "verhänge",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät gäge en e hoochi Geldbuess verhängt."
+ },
+ {
+  "id": 5238,
+  "de": "ahnden",
+  "tr": "cezalandırmak, yaptırım uygulamak",
+  "deBeispiel": "Solche Verstöße werden von der Behörde konsequent geahndet.",
+  "gsw": "ahnde",
+  "gswArtikel": null,
+  "gswBeispiel": "Settigi Verschtöss werded vo de Behörde konsequänt gahndet."
+ },
+ {
+  "id": 5239,
+  "de": "widerrufen",
+  "tr": "caymak, geri almak (beyan, izin)",
+  "deBeispiel": "Sie können den Vertrag innerhalb von vierzehn Tagen widerrufen.",
+  "gsw": "widerruefe",
+  "gswArtikel": null,
+  "gswBeispiel": "Si chönd de Vertrag innerhalb vo vierzäh Täg widerruefe."
+ },
+ {
+  "id": 5240,
+  "de": "befristen",
+  "tr": "süreyle sınırlamak, süreli yapmak",
+  "deBeispiel": "Die Aufenthaltserlaubnis wurde zunächst auf ein Jahr befristet.",
+  "gsw": "befrischte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ufenthaltserlaubnis isch zerscht uf es Jaar befrischtet worde."
+ },
+ {
+  "id": 5241,
+  "de": "berechtigen",
+  "tr": "hak tanımak, yetki vermek",
+  "deBeispiel": "Diese Karte berechtigt Sie zur kostenlosen Nutzung der Bibliothek.",
+  "gsw": "berächtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Charte berächtigt Si zur choschtelose Nutzig vo de Bibliothek."
+ },
+ {
+  "id": 5242,
+  "de": "vernehmen",
+  "tr": "ifadesini almak, sorgulamak",
+  "deBeispiel": "Die Polizei vernahm den Zeugen mehr als drei Stunden lang.",
+  "gsw": "vernää",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät de Züüg meh als drei Schtund lang vernoo."
+ },
+ {
+  "id": 5243,
+  "de": "ummelden",
+  "tr": "adres değişikliğini bildirmek, kaydı nakletmek",
+  "deBeispiel": "Nach dem Umzug müssen Sie sich innerhalb von zwei Wochen ummelden.",
+  "gsw": "ummälde",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Umzug mönd Si sich innerhalb vo zwäi Wuche ummälde."
+ },
+ {
+  "id": 5244,
+  "de": "zustellen",
+  "tr": "tebliğ etmek, teslim etmek",
+  "deBeispiel": "Der Bescheid wurde ihm gestern persönlich zugestellt.",
+  "gsw": "zueschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bscheid isch em geschter persönlich zuegschtellt worde."
+ },
+ {
+  "id": 5245,
+  "de": "vorschreiben",
+  "tr": "zorunlu kılmak, öngörmek, emretmek",
+  "deBeispiel": "Die Verordnung schreibt eine schriftliche Begründung ausdrücklich vor.",
+  "gsw": "vorschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Verordnig tuet e schriftlichi Begründig uusdrücklich vorschriibe."
+ },
+ {
+  "id": 5246,
+  "de": "untersagen",
+  "tr": "yasaklamak, men etmek",
+  "deBeispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
+  "gsw": "undersäge",
+  "gswArtikel": null,
+  "gswBeispiel": "S isch de Schtadt undersait worde, s Grundschtück wiiter z bebaue."
+ },
+ {
+  "id": 5247,
+  "de": "gestatten",
+  "tr": "izin vermek, müsaade etmek",
+  "deBeispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
+  "gsw": "gestatte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vermieter gestattet d Hundehaltig nu usnaamswiis."
+ },
+ {
+  "id": 5248,
+  "de": "rechtswidrig",
+  "tr": "hukuka aykırı, kanunsuz",
+  "deBeispiel": "Das Gericht erklärte die Kündigung für rechtswidrig.",
+  "gsw": "rächtswidrig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät d Kündigig als rächtswidrig erklärt."
+ },
+ {
+  "id": 5249,
+  "de": "behördlich",
+  "tr": "resmî, idari, daireye ait",
+  "deBeispiel": "Für den Umbau brauchen wir eine behördliche Genehmigung.",
+  "gsw": "behördlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Für de Umbau bruuched mir e behördlichi Bewilligig."
+ },
+ {
+  "id": 5250,
+  "de": "unzulässig",
+  "tr": "kabul edilemez, caiz olmayan",
+  "deBeispiel": "Die Klage wurde als unzulässig zurückgewiesen.",
+  "gsw": "unzuelässig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chlaag isch als unzuelässig zrugggwise worde."
+ },
+ {
+  "id": 5251,
+  "de": "gebührenpflichtig",
+  "tr": "ücrete tabi, harca tabi",
+  "deBeispiel": "Die Ausstellung einer zweiten Bescheinigung ist gebührenpflichtig.",
+  "gsw": "gebüürepflichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Uusschtelle vo ere zwäite Bschäinigig isch gebüürepflichtig."
+ },
+ {
+  "id": 5252,
+  "de": "einschlägig",
+  "tr": "ilgili, konuya ilişkin",
+  "deBeispiel": "Der Anwalt zitierte die einschlägigen Vorschriften des Mietrechts.",
+  "gsw": "iischlägig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Aawalt hät di iischlägige Vorschrifte vom Mieträcht zitiert."
+ },
+ {
+  "id": 5253,
+  "de": "maßgeblich",
+  "tr": "belirleyici, esas alınan",
+  "deBeispiel": "Für die Berechnung ist das Datum des Eingangs maßgeblich.",
+  "gsw": "massgäblich",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Berächnig isch s Datum vom Iigang massgäblich."
+ },
+ {
+  "id": 5254,
+  "de": "ungültig",
+  "tr": "geçersiz",
+  "deBeispiel": "Ohne Stempel ist das Formular leider ungültig.",
+  "gsw": "ungültig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ooni Schtämpel isch s Formular läider ungültig."
+ },
+ {
+  "id": 5255,
+  "de": "gemäß",
+  "tr": "uyarınca, gereğince",
+  "deBeispiel": "Gemäß dem Vertrag haften Sie für alle entstandenen Schäden.",
+  "gsw": "gemäss",
+  "gswArtikel": null,
+  "gswBeispiel": "Gemäss em Vertrag hafted Sie für alli entschtandene Schäde."
+ },
+ {
+  "id": 5256,
+  "de": "der Reiseveranstalter",
+  "tr": "tur operatörü, seyahat düzenleyicisi",
+  "deBeispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt.",
+  "gsw": "Reiseveraaschtalter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Reiseveraaschtalter hät is de Uusfall vom Flug erscht geschter mitteilt."
+ },
+ {
+  "id": 5257,
+  "de": "die Anzahlung",
+  "tr": "kapora, ön ödeme",
+  "deBeispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig.",
+  "gsw": "Aazaalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Buechig wird e Aazaalig vo zwänzg Prozänt fällig."
+ },
+ {
+  "id": 5258,
+  "de": "die Verpflegung",
+  "tr": "yeme içme, iaşe",
+  "deBeispiel": "Im Preis sind Unterbringung und Verpflegung für sieben Tage enthalten.",
+  "gsw": "Verpfleegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Priis sind d Underbringig und d Verpfleegig für sibe Täg inbegriffe."
+ },
+ {
+  "id": 5259,
+  "de": "die Pauschalreise",
+  "tr": "paket tur",
+  "deBeispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen.",
+  "gsw": "Pauschalreise",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili Urlauber buechet lieber e Pauschalreise als einzelni Läischtige."
+ },
+ {
+  "id": 5260,
+  "de": "die Rundreise",
+  "tr": "tur, tur gezisi",
+  "deBeispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
+  "gsw": "Rundreise",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf üsere Rundreise dur Sizilie händ mir zwölf Ort bsuecht."
+ },
+ {
+  "id": 5261,
+  "de": "die Kreuzfahrt",
+  "tr": "gemi turu, kruvaziyer",
+  "deBeispiel": "Die Kreuzfahrt durch die Ostsee war günstiger als erwartet.",
+  "gsw": "Chrüüzfaart",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chrüüzfaart dur d Oschtsee isch günschtiger gsi als erwartet."
+ },
+ {
+  "id": 5262,
+  "de": "die Besichtigung",
+  "tr": "gezip görme, ziyaret",
+  "deBeispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich.",
+  "gsw": "Bsichtigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bsichtigig vom Dom isch nu mit ere Füehrig möglich."
+ },
+ {
+  "id": 5263,
+  "de": "der Fremdenverkehr",
+  "tr": "turizm, turist hareketliliği",
+  "deBeispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein.",
+  "gsw": "Frömdeverchehr",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Frömdeverchehr bringt de Region jedes Jaar Millione ii."
+ },
+ {
+  "id": 5264,
+  "de": "die Hochsaison",
+  "tr": "yüksek sezon, sezonun en yoğun dönemi",
+  "deBeispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste.",
+  "gsw": "Hochsaison",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Hochsaison verdopplet sich d Priis a de Küschte."
+ },
+ {
+  "id": 5265,
+  "de": "der Andrang",
+  "tr": "izdiham, yığılma",
+  "deBeispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen.",
+  "gsw": "Aadrang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäge em grosse Aadrang händ mir zwäi Schtund müesse aaschtaa."
+ },
+ {
+  "id": 5266,
+  "de": "die Zwischenlandung",
+  "tr": "ara iniş, aktarma inişi",
+  "deBeispiel": "Der Flug nach Chile hat eine Zwischenlandung in Madrid.",
+  "gsw": "Zwüschelandig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Flug uf Chile hät e Zwüschelandig z Madrid."
+ },
+ {
+  "id": 5267,
+  "de": "die Zollkontrolle",
+  "tr": "gümrük kontrolü",
+  "deBeispiel": "Bei der Zollkontrolle wurde mein Koffer gründlich durchsucht.",
+  "gsw": "Zollkontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Zollkontrolle isch min Koffer gründlich durchsuecht worde."
+ },
+ {
+  "id": 5268,
+  "de": "die Einreise",
+  "tr": "ülkeye giriş",
+  "deBeispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass.",
+  "gsw": "Iireise",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Iireise bruuchet Sie en Pass, wo no mindeschtens sächs Monet gültig isch.",
+  "ayniLehce": [
+   "einreisen (B2)"
+  ]
+ },
+ {
+  "id": 5269,
+  "de": "der Grenzübergang",
+  "tr": "sınır kapısı",
+  "deBeispiel": "Am Grenzübergang stauten sich die Autos über mehrere Kilometer.",
+  "gsw": "Gränzübergang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Gränzübergang händ sich d Auto über mehreri Kilometer gschtaut."
+ },
+ {
+  "id": 5270,
+  "de": "die Unterbringung",
+  "tr": "yerleştirme, konaklama düzeni",
+  "deBeispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet.",
+  "gsw": "Underbringig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Underbringig vo de Gruppe isch es äifachs Gäschtehuus gmietet worde."
+ },
+ {
+  "id": 5271,
+  "de": "die Herberge",
+  "tr": "hostel, konukevi",
+  "deBeispiel": "Am Ende der Etappe fanden die Pilger eine einfache Herberge.",
+  "gsw": "Herbärg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Änd vo de Etappe händ d Pilger e äifachi Herbärg gfunde."
+ },
+ {
+  "id": 5272,
+  "de": "die Reiseroute",
+  "tr": "seyahat güzergâhı",
+  "deBeispiel": "Wegen des Unwetters mussten wir unsere Reiseroute kurzfristig ändern.",
+  "gsw": "Reiseroute",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge em Unwätter händ mir üsi Reiseroute churzfrischtig müesse ändere."
+ },
+ {
+  "id": 5273,
+  "de": "der Abstecher",
+  "tr": "kısa uğrayış, yol üstü gezi",
+  "deBeispiel": "Auf dem Rückweg machten wir einen kurzen Abstecher an den See.",
+  "gsw": "Abschtächer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Rückwäg händ mir en churze Abschtächer a de See gmacht."
+ },
+ {
+  "id": 5274,
+  "de": "der Gipfel",
+  "tr": "zirve, doruk",
+  "deBeispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer.",
+  "gsw": "Gipfel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vom Gipfel us gsee mer bi klarem Wätter bis as Meer."
+ },
+ {
+  "id": 5275,
+  "de": "die Schlucht",
+  "tr": "boğaz, kanyon",
+  "deBeispiel": "Ein schmaler Pfad führt durch die enge Schlucht hinunter zum Fluss.",
+  "gsw": "Schlucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "En schmale Pfad füert dur di eng Schlucht abe zum Fluss."
+ },
+ {
+  "id": 5276,
+  "de": "die Bucht",
+  "tr": "koy, körfez",
+  "deBeispiel": "In der versteckten Bucht ankerten nur zwei kleine Segelboote.",
+  "gsw": "Bucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de verschteckte Bucht händ nu zwäi chliini Sägelboot aagleit."
+ },
+ {
+  "id": 5277,
+  "de": "die Halbinsel",
+  "tr": "yarımada",
+  "deBeispiel": "Die Halbinsel ist nur über eine schmale Landbrücke erreichbar.",
+  "gsw": "Halbinsle",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Halbinsle isch nu über e schmali Landbrugg erreichbar."
+ },
+ {
+  "id": 5278,
+  "de": "der Gletscher",
+  "tr": "buzul",
+  "deBeispiel": "Der Gletscher hat sich in dreißig Jahren um einen Kilometer zurückgezogen.",
+  "gsw": "Gletscher",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Gletscher hät sich i drissg Jaar um en Kilometer zrugzoge."
+ },
+ {
+  "id": 5279,
+  "de": "der Vulkan",
+  "tr": "yanardağ",
+  "deBeispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt.",
+  "gsw": "Vulkan",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Uufschtieg uf de Vulkan isch wäge de Äschewulche gschperrt."
+ },
+ {
+  "id": 5280,
+  "de": "die Wüste",
+  "tr": "çöl",
+  "deBeispiel": "Nachts fallen die Temperaturen in der Wüste unter null Grad.",
+  "gsw": "Wüeschti",
+  "gswArtikel": "d",
+  "gswBeispiel": "Z Nacht fallet d Temperature i de Wüeschti under null Grad."
+ },
+ {
+  "id": 5281,
+  "de": "die Mündung",
+  "tr": "nehir ağzı, döküldüğü yer",
+  "deBeispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel.",
+  "gsw": "Mündig",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Mündig vom Fluss brüeted zaalrichi seltni Vögel.",
+  "ayniLehce": [
+   "mündig (C1)"
+  ]
+ },
+ {
+  "id": 5282,
+  "de": "die Strömung",
+  "tr": "akıntı",
+  "deBeispiel": "Wegen der starken Strömung ist das Baden hier verboten.",
+  "gsw": "Schtrömig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge de schtarche Schtrömig isch s Bade da verbote."
+ },
+ {
+  "id": 5283,
+  "de": "die Wildnis",
+  "tr": "el değmemiş doğa, vahşi doğa",
+  "deBeispiel": "Nur wenige Kilometer weiter beginnt die echte Wildnis.",
+  "gsw": "Wildnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nu wenigi Kilometer wiiter faat di ächti Wildnis aa."
+ },
+ {
+  "id": 5284,
+  "de": "die Seilbahn",
+  "tr": "teleferik",
+  "deBeispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein.",
+  "gsw": "Säilbaan",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi schtarchem Wind schtellt d Säilbaan de Betrib sofort ii."
+ },
+ {
+  "id": 5285,
+  "de": "der Massentourismus",
+  "tr": "kitle turizmi",
+  "deBeispiel": "Der Massentourismus belastet die Wasserversorgung der Insel erheblich.",
+  "gsw": "Massetourismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Massetourismus belaschtet d Wasserversorgig vo de Insle erheblich."
+ },
+ {
+  "id": 5286,
+  "de": "das Wahrzeichen",
+  "tr": "simge yapı, sembol",
+  "deBeispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens.",
+  "gsw": "Waarzäiche",
+  "gswArtikel": "s",
+  "gswBeispiel": "De alt Lüüchtturm isch bis hüt s Waarzäiche vom Hafe."
+ },
+ {
+  "id": 5287,
+  "de": "die Anlegestelle",
+  "tr": "iskele, yanaşma yeri",
+  "deBeispiel": "Das Ausflugsschiff verlässt die Anlegestelle jede volle Stunde.",
+  "gsw": "Aalegschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Uusflugsschiff verlaat d Aalegschtell jedi volli Schtund."
+ },
+ {
+  "id": 5288,
+  "de": "das Gastgewerbe",
+  "tr": "konaklama ve yeme içme sektörü",
+  "deBeispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte.",
+  "gsw": "Gaschtgwärb",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Gaschtgwärb fääled sit Jaare uusbildeti Fachlüt."
+ },
+ {
+  "id": 5289,
+  "de": "die Etappe",
+  "tr": "etap, aşama",
+  "deBeispiel": "Die letzte Etappe des Weges war die anstrengendste von allen.",
+  "gsw": "Etappe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di letscht Etappe vom Wäg isch di aaschträngendscht gsi vo allne."
+ },
+ {
+  "id": 5290,
+  "de": "der Ausblick",
+  "tr": "manzara, görünüm",
+  "deBeispiel": "Von der Terrasse hat man einen weiten Ausblick über das Tal.",
+  "gsw": "Uusblick",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vo de Terrasse us hät me en wiite Uusblick über s Tal."
+ },
+ {
+  "id": 5291,
+  "de": "umbuchen",
+  "tr": "rezervasyonu değiştirmek, tarihi kaydırmak",
+  "deBeispiel": "Wir mussten den Flug wegen des Streiks kostenlos umbuchen.",
+  "gsw": "umbueche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ de Flug wäge em Schtreik gratis müesse umbueche."
+ },
+ {
+  "id": 5292,
+  "de": "aufsuchen",
+  "tr": "gitmek, başvurmak, uğramak",
+  "deBeispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen.",
+  "gsw": "uufsueche",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi Bschwerde sölled Reisendi sofort en Arzt uufsueche."
+ }
+]

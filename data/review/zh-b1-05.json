@@ -1,0 +1,1028 @@
+[
+ {
+  "id": 1790,
+  "de": "erfolgreich",
+  "tr": "başarılı",
+  "deBeispiel": "Mein Großvater war ein erfolgreicher Geschäftsmann.",
+  "gsw": "erfolgriich",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Grossvatter isch en erfolgriiche Gschäftsmaa gsii."
+ },
+ {
+  "id": 1791,
+  "de": "erforderlich",
+  "tr": "gerekli",
+  "deBeispiel": "1. Hier ist die Liste der erforderlichen Zutaten für den Kuchen. 2. Es ist erforderlich, dass man den Pass persönlich ab",
+  "gsw": "erforderlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch erforderlich, dass mer de Pass persönlich abholt."
+ },
+ {
+  "id": 1792,
+  "de": "erfordern",
+  "tr": "gerektirmek",
+  "deBeispiel": "Dieser Job erfordert viel Kraft.",
+  "gsw": "erfordere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Job erforderet vil Chraft."
+ },
+ {
+  "id": 1793,
+  "de": "erfüllen",
+  "tr": "yerine getirmek",
+  "deBeispiel": "1. Sie müssen den Vertrag in allen Punkten erfüllen. 2. Wir erfüllen Ihnen jeden Wunsch.",
+  "gsw": "erfülle",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Si müend de Vertraag i allne Pünkt erfülle. 2. Mir erfülled Ine jede Wunsch."
+ },
+ {
+  "id": 1794,
+  "de": "ergänzen",
+  "tr": "tamamlamak",
+  "deBeispiel": "Ergänzen Sie bitte die fehlenden Angaben.",
+  "gsw": "ergänze",
+  "gswArtikel": null,
+  "gswBeispiel": "Ergänzed Si bitte d Aagabe, wo fääled."
+ },
+ {
+  "id": 1795,
+  "de": "erhalten",
+  "tr": "almak, elde etmek",
+  "deBeispiel": "Ihr Schreiben vom 3. Januar haben wir erhalten.",
+  "gsw": "übercho",
+  "gswArtikel": null,
+  "gswBeispiel": "Ires Schriibe vom 3. Januar händ mir übercho."
+ },
+ {
+  "id": 1796,
+  "de": "erhöhen",
+  "tr": "artırmak, yükseltmek",
+  "deBeispiel": "1. Die Regierung wird sicher bald wieder die Steuern erhöhen.",
+  "gsw": "erhööche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regierig wird sicher bald wider d Schtüüre erhööche."
+ },
+ {
+  "id": 1797,
+  "de": "die Erhöhung",
+  "tr": "artış, zam",
+  "deBeispiel": "2. Die Zahl der Unfälle hat sich stark erhöht. Wir streiken für eine Lohnerhöhung.",
+  "gsw": "Erhööchig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir schtriiked für e Erhööchig vom Lohn."
+ },
+ {
+  "id": 1798,
+  "de": "sich erholen",
+  "tr": "dinlenmek, iyileşmek",
+  "deBeispiel": "1. Im Urlaub habe ich mich sehr gut erholt. 2. Er hat sich nach dem Unfall sehr schnell wieder erholt.",
+  "gsw": "sich erhole",
+  "gswArtikel": null,
+  "gswBeispiel": "1. I de Ferie han ich mich sehr guet erholt. 2. Er hät sich nach em Unfall ganz schnäll wider erholt.",
+  "ayniLehce": [
+   "sich ausruhen (B1)"
+  ]
+ },
+ {
+  "id": 1799,
+  "de": "die Erholung",
+  "tr": "dinlenme",
+  "deBeispiel": "Ich habe zu viel gearbeitet. Jetzt brauche ich etwas Erholung.",
+  "gsw": "Erholig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha z vil gschaffet. Jetz bruuch ich chli Erholig."
+ },
+ {
+  "id": 1800,
+  "de": "erinnern",
+  "tr": "hatırlatmak, hatırlamak",
+  "deBeispiel": "1. Bitte, erinnern Sie mich noch einmal an den Termin 2. Ich erinnere mich noch genau an Francescos Vater.",
+  "gsw": "erinnere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Bitte erinnered Si mich namal a de Termin. 2. Ich erinnere mich na genau a de Vatter vom Francesco."
+ },
+ {
+  "id": 1801,
+  "de": "die Erinnerung",
+  "tr": "anı, hatıra",
+  "deBeispiel": "An diese Zeit habe ich viele schöne Erinnerungen.",
+  "gsw": "Erinnerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "A die Ziit han ich vil schööni Erinnerige."
+ },
+ {
+  "id": 1802,
+  "de": "sich erkälten",
+  "tr": "soğuk algınlığına yakalanmak, üşütmek",
+  "deBeispiel": "Der Junge hat sich beim Baden erkältet.",
+  "gsw": "sich verchälte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bueb hät sich bim Bade verchältet."
+ },
+ {
+  "id": 1803,
+  "de": "erkältet",
+  "tr": "nezleli, soğuk algınlığı olan",
+  "deBeispiel": "Ich bin stark erkältet.",
+  "gsw": "verchältet",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi schtarch verchältet."
+ },
+ {
+  "id": 1804,
+  "de": "die Erkältung",
+  "tr": "soğuk algınlığı, nezle",
+  "deBeispiel": "Du hast eine schlimme Erkältung!",
+  "gsw": "Verchältig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Du häsch e schlimmi Verchältig!"
+ },
+ {
+  "id": 1805,
+  "de": "erkennen",
+  "tr": "tanımak, fark etmek, anlamak",
+  "deBeispiel": "1. Ich habe Roberto gleich an seiner Stimme erkannt. 2. Auf dem Foto kann man kaum etwas erkennen. 3. Ich habe erkannt, ",
+  "gsw": "erchenne",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha de Roberto grad a sinere Schtimm erchennt. 2. Uf em Foti cha mer chuum öppis erchenne."
+ },
+ {
+  "id": 1806,
+  "de": "die Erklärung",
+  "tr": "açıklama, beyanname",
+  "deBeispiel": "1. Hast du schon die Steuererklärung gemacht? 2. Die Erklärung der Lehrerin ist besser als die Erklärung im Buch.",
+  "gsw": "Erklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Häsch d Schtüürerklärig scho gmacht? 2. D Erklärig vo de Lehrerin isch besser als d Erklärig im Buech."
+ },
+ {
+  "id": 1807,
+  "de": "sich erkundigen",
+  "tr": "bilgi almak, sormak",
+  "deBeispiel": "1. Hast du dich schon nach einem Zug erkundigt? 2. Ich möchte mich erkundigen, wie es Ihnen geht.",
+  "gsw": "sich erkundige",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Häsch di scho nach eme Zug erkundiget? 2. Ich möcht mich erkundige, wie s Ine gaat."
+ },
+ {
+  "id": 1808,
+  "de": "erleben",
+  "tr": "yaşamak, tecrübe etmek",
+  "deBeispiel": "In unserem Urlaub haben wir viel Schönes erlebt.",
+  "gsw": "erläbe",
+  "gswArtikel": null,
+  "gswBeispiel": "I eusne Ferie händ mir vil Schööns erläbt."
+ },
+ {
+  "id": 1809,
+  "de": "das Erlebnis",
+  "tr": "deneyim, yaşantı",
+  "deBeispiel": "Die Reise war ein tolles Erlebnis.",
+  "gsw": "Erläbnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Räis isch es tolls Erläbnis gsii."
+ },
+ {
+  "id": 1810,
+  "de": "erledigen",
+  "tr": "halletmek, yapmak, bitirmek",
+  "deBeispiel": "Diese zwei Pakete müssen zur Post. Könntest du das für mich erledigen?",
+  "gsw": "erledige",
+  "gswArtikel": null,
+  "gswBeispiel": "Die zwäi Päckli müend uf d Poscht. Chöntsch das für mich erledige?"
+ },
+ {
+  "id": 1811,
+  "de": "erleichtern",
+  "tr": "kolaylaştırmak, rahatlatmak",
+  "deBeispiel": "1. Ich bin erleichtert, dass alles so gut geklappt hat. 2. Das Internet erleichtert mir die Arbeit sehr.",
+  "gsw": "erliechtere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich bi erliechteret, dass alles so guet klappet hät. 2. S Internet erliechteret mer d Arbet sehr."
+ },
+ {
+  "id": 1812,
+  "de": "ernähren",
+  "tr": "beslemek",
+  "deBeispiel": "1. Wie ernähre ich mich richtig? 2. Meine Eltern müssen beide arbeiten, um die Familie zu ernähren.",
+  "gsw": "ernääre",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wie ernäär ich mich richtig? 2. Mini Eltere müend bäidi schaffe, zum d Familie z ernääre."
+ },
+ {
+  "id": 1813,
+  "de": "die Ernährung",
+  "tr": "beslenme",
+  "deBeispiel": "Ich finde eine gesunde Ernährung wichtig.",
+  "gsw": "Ernäärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich finde e gsundi Ernäärig wichtig."
+ },
+ {
+  "id": 1814,
+  "de": "ernst",
+  "tr": "ciddi",
+  "deBeispiel": "Der starke Verkehr ist ein ernstes Problem.",
+  "gsw": "ernscht",
+  "gswArtikel": null,
+  "gswBeispiel": "De schtarch Verchehr isch es ernschts Problem."
+ },
+ {
+  "id": 1815,
+  "de": "ernsthaft",
+  "tr": "ciddi, ciddi bir şekilde",
+  "deBeispiel": "Ich überlege ernsthaft, ob ich in eine andere Stadt ziehen soll.",
+  "gsw": "ernschthaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich überlege mer ernschthaft, öb ich i en anderi Schtadt sött zügle."
+ },
+ {
+  "id": 1816,
+  "de": "die Ernte",
+  "tr": "hasat, ürün",
+  "deBeispiel": "Die Ernte ist dieses Jahr gut.",
+  "gsw": "Ernt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ernt isch das Jaar guet."
+ },
+ {
+  "id": 1817,
+  "de": "eröffnen",
+  "tr": "açmak (dükkân, hesap), açılışını yapmak",
+  "deBeispiel": "1. Mein Nachbar hat letzten Monat ein Geschäft eröffnet. 2. Ich möchte ein Konto eröffnen.",
+  "gsw": "eröffne",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Min Nachber hät letschte Monet es Gschäft eröffnet. 2. Ich möcht es Konto eröffne."
+ },
+ {
+  "id": 1818,
+  "de": "die Eröffnung",
+  "tr": "açılış",
+  "deBeispiel": "Die Eröffnung der neuen Oper ist am 1. Juni.",
+  "gsw": "Eröffnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Eröffnig vo de neue Oper isch am 1. Juni."
+ },
+ {
+  "id": 1819,
+  "de": "erschöpft",
+  "tr": "bitkin, tükenmiş",
+  "deBeispiel": "Nach dem Sport bin ich immer sehr erschöpft.",
+  "gsw": "erschöpft",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Schport bin ich immer sehr erschöpft."
+ },
+ {
+  "id": 1820,
+  "de": "erschrecken",
+  "tr": "korkmak, ürkmek, korkutmak",
+  "deBeispiel": "1. Du hast richtig krank ausgesehen. Ich war ganz erschrocken. 2. Hast du mich aber erschreckt! 3. Entschuldigung. Ich w",
+  "gsw": "erschrecke",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Du häsch richtig chrank uusgsee. Ich bi ganz verschrocke gsii. 2. Häsch du mich aber erschreckt!"
+ },
+ {
+  "id": 1821,
+  "de": "ersetzen",
+  "tr": "yerine koymak, değiştirmek, tazmin etmek",
+  "deBeispiel": "1. Wir ersetzen Ihnen die Kosten. 2. Peter ist krank. Jemand muss ihn ersetzen.",
+  "gsw": "ersetze",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir ersetzed Ine d Chöschte. 2. De Peter isch chrank. Öpper muess en ersetze."
+ },
+ {
+  "id": 1822,
+  "de": "der Ersatz",
+  "tr": "yedek, karşılık, tazminat",
+  "deBeispiel": "Sie bekommen von unserer Firma einen Ersatz für das kaputte Gerät.",
+  "gsw": "Ersatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si überchömed vo eusere Firma en Ersatz für s kaputte Grät."
+ },
+ {
+  "id": 1823,
+  "de": "erste",
+  "tr": "birinci, ilk",
+  "deBeispiel": "1. Ich war zum ersten Mal allein im Urlaub. 2. Ich wohne im ersten Stock. 3. An erster Stelle kommt die Schule.",
+  "gsw": "erscht-",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich bi s erschte Maal eläi i de Ferie gsii. 2. Ich wone im erschte Schtock. 3. A erschter Schtell chunt d Schuel."
+ },
+ {
+  "id": 1824,
+  "de": "erstellen",
+  "tr": "hazırlamak, oluşturmak, düzenlemek",
+  "deBeispiel": "Erstellen Sie bitte eine Liste mit allen Informationen, die Sie brauchen.",
+  "gsw": "erschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Erschtelled Si bitte e Lischte mit allne Informatione, wo Si bruuched."
+ },
+ {
+  "id": 1825,
+  "de": "erwachsen",
+  "tr": "yetişkin, büyümüş",
+  "deBeispiel": "1. Die Kinder sind schon fast erwachsen. 2. Wir haben zwei erwachsene Töchter.",
+  "gsw": "erwachse",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Chind sind scho fascht erwachse. 2. Mir händ zwäi erwachseni Töchtere."
+ },
+ {
+  "id": 1826,
+  "de": "erwarten",
+  "tr": "beklemek, ummak",
+  "deBeispiel": "1. Ich erwarte einen Anruf aus Berlin. 2. Frau Müller erwartet ein Kind. 3. Wir hatten nichts anderes erwartet. 4. Ich k",
+  "gsw": "erwarte",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich erwarte en Aaruef us Berlin. 2. D Frau Müller erwartet es Chind. 3. Mir händ nüüt anders erwartet."
+ },
+ {
+  "id": 1827,
+  "de": "die Erzählung",
+  "tr": "hikaye, öykü, anlatı",
+  "deBeispiel": "Diese Erzählung ist sehr berühmt. Du musst sie lesen.",
+  "gsw": "Verzellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Verzellig isch sehr berüemt. Du muesch si läse."
+ },
+ {
+  "id": 1828,
+  "de": "erziehen",
+  "tr": "yetiştirmek, eğitmek",
+  "deBeispiel": "Kinder zu erziehen ist nicht leicht.",
+  "gsw": "erzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Chind erzie isch nöd äifach."
+ },
+ {
+  "id": 1829,
+  "de": "die Erziehung",
+  "tr": "yetiştirme, terbiye, eğitim",
+  "deBeispiel": "Heute kümmern sich auch viele Väter um die Erziehung der Kinder.",
+  "gsw": "Erziehig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hüt kümmered sich au vil Vätter um d Erziehig vo de Chind."
+ },
+ {
+  "id": 1830,
+  "de": "der Essig",
+  "tr": "sirke",
+  "deBeispiel": "Am Salat fehlt noch etwas Essig.",
+  "gsw": "Essig",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Salat fäält na chli Essig."
+ },
+ {
+  "id": 1831,
+  "de": "die Etage",
+  "tr": "kat",
+  "deBeispiel": "Das Büro ist in der 3. Etage, Zimmer 305.",
+  "gsw": "Etage",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Büro isch i de 3. Etage, Zimmer 305."
+ },
+ {
+  "id": 1832,
+  "de": "etwa",
+  "tr": "yaklaşık, aşağı yukarı",
+  "deBeispiel": "1. Von hier sind es etwa zwanzig Kilometer.",
+  "gsw": "öppe",
+  "gswArtikel": null,
+  "gswBeispiel": "Vo da sinds öppe zwänzg Kilometer.",
+  "ayniLehce": [
+   "ungefähr (B1)"
+  ]
+ },
+ {
+  "id": 1833,
+  "de": "eventuell",
+  "tr": "belki, muhtemelen",
+  "deBeispiel": "Ich komme eventuell etwas später.",
+  "gsw": "eventuell",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich chume eventuell chli schpööter."
+ },
+ {
+  "id": 1834,
+  "de": "ewig",
+  "tr": "sonsuz, ebediyen",
+  "deBeispiel": "Ich warte schon ewig auf mein neues Auto!",
+  "gsw": "ewig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich warte scho ewig uf mis neue Auto!"
+ },
+ {
+  "id": 1835,
+  "de": "der Experte",
+  "tr": "uzman, bilirkişi",
+  "deBeispiel": "Ich verstehe ein bisschen was von Computern. Aber ich bin kein Experte.",
+  "gsw": "Expert",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich verschtaa chli öppis vo Computer. Aber ich bi kein Expert."
+ },
+ {
+  "id": 1836,
+  "de": "der Export",
+  "tr": "ihracat",
+  "deBeispiel": "1. Hier ist die Firma Schulz, Import und Export. 2. Sonja arbeitet in der Exportabteilung.",
+  "gsw": "Export",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Das isch d Firma Schulz, Import und Export. 2. D Sonja schaffet i de Exportabteilig."
+ },
+ {
+  "id": 1837,
+  "de": "extra",
+  "tr": "ayrıca, özellikle, fazladan",
+  "deBeispiel": "1. Die Getränke kosten extra. 2. Warum sind Sie nicht gekommen? Ich habe extra auf Sie gewartet.",
+  "gsw": "extra",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Getränk choschted extra. 2. Warum sind Si nöd choo? Ich ha extra uf Si gwartet."
+ },
+ {
+  "id": 1838,
+  "de": "extrem",
+  "tr": "aşırı, son derece",
+  "deBeispiel": "Die Prüfung war extrem schwer.",
+  "gsw": "extrem",
+  "gswArtikel": null,
+  "gswBeispiel": "D Prüefig isch extrem schwer gsii."
+ },
+ {
+  "id": 1839,
+  "de": "die Fabrik",
+  "tr": "fabrika",
+  "deBeispiel": "Ich arbeite in einer Autofabrik.",
+  "gsw": "Fabrik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich schaffe in ere Autofabrik."
+ },
+ {
+  "id": 1840,
+  "de": "der Fachmann",
+  "tr": "uzman, usta",
+  "deBeispiel": "Meine Schwester ist Computerfachfrau.",
+  "gsw": "Fachmaa",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Brüeder isch en Fachmaa für Computer."
+ },
+ {
+  "id": 1841,
+  "de": "die Fachfrau",
+  "tr": "kadın uzman",
+  "deBeispiel": "Meine Schwester ist Computerfachfrau.",
+  "gsw": "Fachfrau",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Schwöschter isch e Fachfrau für Computer."
+ },
+ {
+  "id": 1842,
+  "de": "die Fachleute",
+  "tr": "uzmanlar",
+  "deBeispiel": "Die suchen Fachleute für dieses Computerprogramm.",
+  "gsw": "Fachlüüt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die sueched Fachlüüt für das Computerprogramm."
+ },
+ {
+  "id": 1843,
+  "de": "die Fähigkeit",
+  "tr": "yetenek, kabiliyet",
+  "deBeispiel": "1. In seiner Position braucht man die Fähigkeit, andere zu überzeugen. 2. Ich glaube, sie hat die Fähigkeit dazu.",
+  "gsw": "Fäigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. I sinere Position bruucht mer d Fäigkäit, anderi z überzüüge. 2. Ich glaube, si hät d Fäigkäit dezue."
+ },
+ {
+  "id": 1844,
+  "de": "die Fähre",
+  "tr": "feribot",
+  "deBeispiel": "Wir nehmen die Fähre über den Bodensee.",
+  "gsw": "Fääri",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir nämed d Fääri über de Bodesee."
+ },
+ {
+  "id": 1845,
+  "de": "die Fahrbahn",
+  "tr": "taşıt yolu, yol",
+  "deBeispiel": "Fahren Sie bitte vorsichtig. Es sind Kühe auf der Fahrbahn.",
+  "gsw": "Faarbaan",
+  "gswArtikel": "d",
+  "gswBeispiel": "Faared Si bitte vorsichtig. Es hät Chüe uf de Faarbaan."
+ },
+ {
+  "id": 1846,
+  "de": "das Fahrzeug",
+  "tr": "araç, taşıt",
+  "deBeispiel": "Wem gehört das Fahrzeug?",
+  "gsw": "Faarzüüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wem ghöört das Faarzüüg?"
+ },
+ {
+  "id": 1847,
+  "de": "fair",
+  "tr": "adil, dürüst",
+  "deBeispiel": "Ich finde, unsere Mannschaft hat sehr fair gespielt.",
+  "gsw": "fair",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde, eusi Mannschaft hät sehr fair gschpilt."
+ },
+ {
+  "id": 1848,
+  "de": "der Faktor",
+  "tr": "faktör, etken",
+  "deBeispiel": "Die Creme hat einen hohen Sonnenschutzfaktor.",
+  "gsw": "Faktor",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wie hooch isch de Faktor vo dere Sunnecreme?"
+ },
+ {
+  "id": 1849,
+  "de": "der Fall",
+  "tr": "durum, vaka (söz konusu koşul, olay)",
+  "deBeispiel": "1. Was würden Sie in diesem Fall tun? 2. Rufen Sie auf jeden Fall vorher noch einmal an. 3. Für den Fall, dass meine Mut",
+  "gsw": "Fall",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Was würded Si i dem Fall mache? 2. Lüüted Si uf jede Fall vorhär namal aa."
+ },
+ {
+  "id": 1850,
+  "de": "fällig",
+  "tr": "vadesi gelmiş, ödenmesi gereken",
+  "deBeispiel": "Die Rechnung ist Énde des Monats fällig.",
+  "gsw": "fällig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Rechnig isch Änd Monet fällig."
+ },
+ {
+  "id": 1851,
+  "de": "falls",
+  "tr": "eğer, şayet",
+  "deBeispiel": "Falls es regnet, machen wir kein Picknick.",
+  "gsw": "falls",
+  "gswArtikel": null,
+  "gswBeispiel": "Falls es rägnet, mached mir kes Picknick."
+ },
+ {
+  "id": 1853,
+  "de": "fangen",
+  "tr": "yakalamak, tutmak",
+  "deBeispiel": "1. Das Kind hat den Ball gefangen. 2. Unsere Katze hat eine Maus gefangen.",
+  "gsw": "fange",
+  "gswArtikel": null,
+  "gswBeispiel": "1. S Chind hät de Ball gfange. 2. Eusi Chatz hät e Muus gfange."
+ },
+ {
+  "id": 1854,
+  "de": "die Fantasie/Phantasie",
+  "tr": "hayal gücü, fantezi",
+  "deBeispiel": "Mein Sohn malt sehr gut. Er hat viel Fantasie.",
+  "gsw": "Fantasii",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Sohn maalt sehr guet. Er hät vil Fantasii."
+ },
+ {
+  "id": 1855,
+  "de": "farbig",
+  "tr": "renkli",
+  "deBeispiel": "Ich brauche kein weißes, sondern farbiges Papier.",
+  "gsw": "farbig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bruuche nöd wiisses, sondern farbigs Papier.",
+  "ayniLehce": [
+   "bunt (A2)"
+  ]
+ },
+ {
+  "id": 1856,
+  "de": "das Faschiertes",
+  "tr": "kıyma (Avusturya)",
+  "deBeispiel": "Geben Sie mir bitte 500 g Faschiertes.",
+  "gsw": "Ghackets",
+  "gswArtikel": "s",
+  "gswBeispiel": "Gänd Si mer bitte 500 Gramm Ghackets.",
+  "ayniLehce": [
+   "Hackfleisch (B1)"
+  ]
+ },
+ {
+  "id": 1857,
+  "de": "der Fasching",
+  "tr": "karnaval",
+  "deBeispiel": "Dort hängt mein Kostüm für den Faschings(um)zug.",
+  "gsw": "Fasnacht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Deet hanget mis Koschtüm für de Fasnachtsumzug.",
+  "ayniLehce": [
+   "Fasnacht (B1)",
+   "Karneval (B1)"
+  ]
+ },
+ {
+  "id": 1858,
+  "de": "die Fasnacht",
+  "tr": "karnaval (İsviçre)",
+  "deBeispiel": "Dort hängt mein Kostüm für den Fasnachtsumzug.",
+  "gsw": "Fasnacht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Deet hanget mis Koschtüm für de Fasnachtsumzug.",
+  "ayniLehce": [
+   "Fasching (B1)",
+   "Karneval (B1)"
+  ]
+ },
+ {
+  "id": 1859,
+  "de": "fassen",
+  "tr": "yakalamak, tutmak; (karar) almak",
+  "deBeispiel": "1. Sie haben den Dieb gefasst. 2. Ich habe den Entschluss gefasst, nach Wien zu ziehen.",
+  "gsw": "fasse",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Si händ de Dieb gfasst. 2. Ich ha de Entschluss gfasst, uf Wien z zügle."
+ },
+ {
+  "id": 1860,
+  "de": "faulenzen",
+  "tr": "tembellik etmek, aylaklık etmek",
+  "deBeispiel": "Am Wochenende können wir faulenzen.",
+  "gsw": "fuulänze",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenänd chönd mir fuulänze."
+ },
+ {
+  "id": 1861,
+  "de": "der Fauteuil",
+  "tr": "koltuk",
+  "deBeispiel": "Ich hätte gern einen bequemen Fauteuil.",
+  "gsw": "Fauteuil",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich hett gern en bequeme Fauteuil.",
+  "ayniLehce": [
+   "Sessel (B1)"
+  ]
+ },
+ {
+  "id": 1862,
+  "de": "der Feierabend",
+  "tr": "iş çıkışı, mesai sonu",
+  "deBeispiel": "Einen schönen Feierabend.",
+  "gsw": "Fiiraabig",
+  "gswArtikel": "de",
+  "gswBeispiel": "En schööne Fiiraabig!"
+ },
+ {
+  "id": 1863,
+  "de": "der Feiertag",
+  "tr": "tatil günü, bayram günü",
+  "deBeispiel": "1. Am Montag ist Feiertag. 2. Schöne Feiertage.",
+  "gsw": "Fiirtig",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Am Määntig isch Fiirtig. 2. Schööni Fiirtig!"
+ },
+ {
+  "id": 1864,
+  "de": "das Feld",
+  "tr": "tarla, alan",
+  "deBeispiel": "Auf diesem Feld wächst Gemüse.",
+  "gsw": "Fäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf dem Fäld wachst Gmües."
+ },
+ {
+  "id": 1866,
+  "de": "die Fernbedienung",
+  "tr": "uzaktan kumanda",
+  "deBeispiel": "Hast du die Fernbedienung gesehen?",
+  "gsw": "Fernbedienig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch du d Fernbedienig gsee?"
+ },
+ {
+  "id": 1867,
+  "de": "fest",
+  "tr": "sağlam, sıkı, kesin",
+  "deBeispiel": "1. Mein Kollege glaubt fest daran, dass er die neue Stelle bekommt. 2. Als wir nach Hause kamen, haben die Kinder schon ",
+  "gsw": "fescht",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Kolleg glaubt fescht dra, dass er die neu Schtell überchunnt."
+ },
+ {
+  "id": 1868,
+  "de": "die Festplatte",
+  "tr": "sabit disk",
+  "deBeispiel": "Mein Computer hat eine große Festplatte.",
+  "gsw": "Harddisk",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Computer hät e groossi Harddisk."
+ },
+ {
+  "id": 1869,
+  "de": "festhalten",
+  "tr": "sıkıca tutmak, tutunmak",
+  "deBeispiel": "1. Halt dich gut fest. 2. Halt die Flasche gut fest.",
+  "gsw": "feschthäbe",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Du muesch di am Gländer guet feschthäbe. 2. Häb d Fläsche guet fescht."
+ },
+ {
+  "id": 1870,
+  "de": "festlegen",
+  "tr": "belirlemek, kararlaştırmak",
+  "deBeispiel": "1. Ich weiß noch nicht, ob ich das mache. Ich möchte mich noch nicht festlegen. 2. Habt ihr den Hochzeitstermin schon fe",
+  "gsw": "feschtlege",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich wäiss na nöd, öb ich das mache. Ich möcht mich na nöd feschtlege. 2. Händ ir de Hochziitstermin scho feschtgläit?"
+ },
+ {
+  "id": 1871,
+  "de": "festnehmen",
+  "tr": "tutuklamak, gözaltına almak",
+  "deBeispiel": "Die Polizei hat einen Mann festgenommen.",
+  "gsw": "feschtnää",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät hüt en Maa chöne feschtnää."
+ },
+ {
+  "id": 1872,
+  "de": "festsetzen",
+  "tr": "belirlemek, kararlaştırmak, tespit etmek",
+  "deBeispiel": "Die Schule hat den Termin für die Prüfung festgesetzt.",
+  "gsw": "feschtsetze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schuel wird de Termin für d Prüefig bald feschtsetze."
+ },
+ {
+  "id": 1873,
+  "de": "feststehen",
+  "tr": "kesinleşmiş olmak, belli olmak",
+  "deBeispiel": "Der Termin steht seit Langem fest.",
+  "gsw": "feschtschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Bis Änd Wuche muess de Termin ändlich feschtschtaa."
+ },
+ {
+  "id": 1874,
+  "de": "feststellen",
+  "tr": "tespit etmek, saptamak, fark etmek",
+  "deBeispiel": "1. Er hat festgestellt, dass der Absender des Briefes falsch war. 2. Der Arzt hat mich untersucht, konnte aber nichts fe",
+  "gsw": "feschtschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Er hät feschtgschtellt, dass de Absänder vom Brief falsch gsii isch. 2. De Dokter hät mich undersuecht, hät aber nüüt chöne feschtschtelle."
+ },
+ {
+  "id": 1875,
+  "de": "das Fett",
+  "tr": "yağ",
+  "deBeispiel": "Man soll nicht so viel Fett essen.",
+  "gsw": "Fett",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mer sött nöd so vil Fett ässe."
+ },
+ {
+  "id": 1876,
+  "de": "feucht",
+  "tr": "nemli, ıslak",
+  "deBeispiel": "1. Die Wäsche ist noch feucht. 2. Es ist heute feucht draußen.",
+  "gsw": "füecht",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Wösch isch na füecht. 2. Es isch hüt füecht dusse."
+ },
+ {
+  "id": 1877,
+  "de": "das Feuerzeug",
+  "tr": "çakmak",
+  "deBeispiel": "Ist das Feuerzeug neu?",
+  "gsw": "Füürzüüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Isch s Füürzüüg neu?"
+ },
+ {
+  "id": 1878,
+  "de": "die Feuerwehr",
+  "tr": "itfaiye",
+  "deBeispiel": "Schnell! Rufen Sie die Feuerwehr! Die Nummer ist: 112.",
+  "gsw": "Füürwehr",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schnäll! Lüüted Si d Füürwehr aa! D Nummere isch 118."
+ },
+ {
+  "id": 1879,
+  "de": "die Figur",
+  "tr": "vücut yapısı, figür, şekil",
+  "deBeispiel": "1. Lars hat eine gute Figur. 2. Bei diesem Spiel hat jeder Spieler vier Figuren.",
+  "gsw": "Figur",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. De Lars hät e gueti Figur. 2. Bi dem Schpiil hät jede Schpiler vier Figure."
+ },
+ {
+  "id": 1880,
+  "de": "finanzieren",
+  "tr": "finanse etmek",
+  "deBeispiel": "Ich weiß nicht, wie ich das Auto finanzieren soll.",
+  "gsw": "finanziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wäiss nöd, wien ich das Auto söll finanziere."
+ },
+ {
+  "id": 1881,
+  "de": "finanziell",
+  "tr": "mali, parasal, finansal",
+  "deBeispiel": "Finanziell geht es meinem Neffen jetzt besser.",
+  "gsw": "finanziell",
+  "gswArtikel": null,
+  "gswBeispiel": "Finanziell gaats mim Näffe jetz besser."
+ },
+ {
+  "id": 1882,
+  "de": "der Finger",
+  "tr": "parmak",
+  "deBeispiel": "Alessandro hat sich in den Finger geschnitten.",
+  "gsw": "Finger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Alessandro hät sich in Finger gschnitte."
+ },
+ {
+  "id": 1883,
+  "de": "flach",
+  "tr": "düz, sığ, basık",
+  "deBeispiel": "1. Für die Arbeit brauche ich flache Schuhe. 2. An dieser Stelle ist der See sehr flach.",
+  "gsw": "flach",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Für d Arbet bruuch ich flachi Schue. 2. A dere Schtell isch de See ganz flach."
+ },
+ {
+  "id": 1884,
+  "de": "die Fläche",
+  "tr": "yüzey, alan",
+  "deBeispiel": "Unsere Wohnung hat eine Wohnfläche von 100 m².",
+  "gsw": "Flächi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Flächi vo eusere Wonig isch 100 Quadratmeter."
+ },
+ {
+  "id": 1885,
+  "de": "der Fleck",
+  "tr": "leke",
+  "deBeispiel": "Du hast einen Fleck auf der Bluse.",
+  "gsw": "Fläck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Du häsch en Fläck uf de Bluse."
+ },
+ {
+  "id": 1886,
+  "de": "der Fleischhauer",
+  "tr": "kasap",
+  "deBeispiel": "Dieser Fleischhauer macht sehr gute Wurst.",
+  "gsw": "Metzger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Metzger da macht sehr gueti Wurscht.",
+  "ayniLehce": [
+   "Metzger (B1)"
+  ]
+ },
+ {
+  "id": 1887,
+  "de": "die Fleischhauerin",
+  "tr": "kadın kasap",
+  "deBeispiel": "Dieser Fleischhauer macht sehr gute Wurst.",
+  "gsw": "Metzgerin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Metzgerin da macht sehr gueti Wurscht."
+ },
+ {
+  "id": 1888,
+  "de": "flexibel",
+  "tr": "esnek",
+  "deBeispiel": "Meine Arbeitszeit ist flexibel.",
+  "gsw": "flexibel",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Arbetsziit isch flexibel."
+ },
+ {
+  "id": 1889,
+  "de": "fliehen",
+  "tr": "kaçmak, firar etmek",
+  "deBeispiel": "Der Einbrecher ist sofort geflohen.",
+  "gsw": "flüchte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Iibrächer isch sofort gflüchtet."
+ },
+ {
+  "id": 1890,
+  "de": "die Flucht",
+  "tr": "kaçış, firar",
+  "deBeispiel": "Der Einbrecher war schon auf der Flucht.",
+  "gsw": "Flucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Iibrächer isch scho uf de Flucht gsii."
+ },
+ {
+  "id": 1891,
+  "de": "fließen",
+  "tr": "akmak",
+  "deBeispiel": "Dieser Fluss fließt in die Nordsee.",
+  "gsw": "flüüsse",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fluss da flüüsst i d Nordsee."
+ },
+ {
+  "id": 1892,
+  "de": "fließend",
+  "tr": "akıcı, akan",
+  "deBeispiel": "1. Mein Kollege spricht fließend Deutsch. 2. Zimmer mit fließendem Wasser.",
+  "gsw": "flüssig",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Kolleg redt flüssig Tüütsch."
+ },
+ {
+  "id": 1893,
+  "de": "die Flöte",
+  "tr": "flüt",
+  "deBeispiel": "Sie spielt sehr schön Flöte.",
+  "gsw": "Flööte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si schpilt sehr schöön Flööte."
+ },
+ {
+  "id": 1894,
+  "de": "der Flur",
+  "tr": "koridor, hol",
+  "deBeispiel": "Wir warten draußen im Flur.",
+  "gsw": "Gang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir warted dusse im Gang.",
+  "ayniLehce": [
+   "Gang (B1)",
+   "Korridor (B1)"
+  ]
+ },
+ {
+  "id": 1895,
+  "de": "die Flüssigkeit",
+  "tr": "sıvı",
+  "deBeispiel": "Dieses Medikament mit viel Flüssigkeit einnehmen.",
+  "gsw": "Flüssigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das Medikamänt mit vil Flüssigkäit iinää."
+ },
+ {
+  "id": 1896,
+  "de": "folgen",
+  "tr": "takip etmek, izlemek",
+  "deBeispiel": "1. Es folgen die Nachrichten. 2. Folgen Sie der Reiseleiterin.",
+  "gsw": "folge",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Es folged d Nachrichte. 2. Folged Si de Räisläiterin.",
+  "ayniLehce": [
+   "Folge (B1)"
+  ]
+ },
+ {
+  "id": 1897,
+  "de": "die Folge",
+  "tr": "sonuç, netice",
+  "deBeispiel": "Die Folgen des Unfalls waren schlimm.",
+  "gsw": "Folge",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Folge vom Unfall sind schlimm gsii.",
+  "ayniLehce": [
+   "folgen (B1)"
+  ]
+ },
+ {
+  "id": 1898,
+  "de": "folgend",
+  "tr": "aşağıdaki, izleyen, sonraki",
+  "deBeispiel": "1. Mehr Informationen auf den folgenden Seiten. 2. Das Geschäft hat folgende Angebote: …",
+  "gsw": "folgend",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Meh Informatione uf de folgende Siite. 2. S Gschäft hät folgendi Aagebot: …"
+ },
+ {
+  "id": 1899,
+  "de": "fordern",
+  "tr": "talep etmek, istemek",
+  "deBeispiel": "Die Arbeitnehmer fordern mehr Geld.",
+  "gsw": "fordere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Arbetnämer fordered meh Gäld."
+ },
+ {
+  "id": 1900,
+  "de": "die Forderung",
+  "tr": "talep, istek",
+  "deBeispiel": "Alle Forderungen der Arbeitnehmer kann man in dieser E-Mail lesen.",
+  "gsw": "Forderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alli Forderige vo de Arbetnämer cha mer i dere E-Mail läse."
+ },
+ {
+  "id": 1901,
+  "de": "fördern",
+  "tr": "desteklemek, teşvik etmek",
+  "deBeispiel": "Die Stadt fördert viele Sportprojekte.",
+  "gsw": "fördere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtadt förderet vil Schportprojäkt."
+ }
+]

@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6793,
+  "de": "die Regenerationsfähigkeit",
+  "tr": "yenilenme yetisi, kendini onarma kapasitesi",
+  "deBeispiel": "Die Regenerationsfähigkeit der Meere wird systematisch überschätzt.",
+  "gsw": "Regenerationsfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Regenerationsfähigkeit vo de Meer wird syschtematisch überschätzt."
+ },
+ {
+  "id": 6794,
+  "de": "die Rückkopplung",
+  "tr": "geri besleme, geri bildirim döngüsü",
+  "deBeispiel": "Tauender Permafrost löst eine gefährliche Rückkopplung im Klimasystem aus.",
+  "gsw": "Rückkopplig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De uuftauend Permafroscht löst e gfährlichi Rückkopplig im Klimasyschtem uus."
+ },
+ {
+  "id": 6795,
+  "de": "die Umweltverträglichkeit",
+  "tr": "çevreyle uyumluluk, çevresel uygunluk",
+  "deBeispiel": "Vor dem Bau wird die Umweltverträglichkeit des Vorhabens sorgfältig geprüft.",
+  "gsw": "Umwältverträglichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor em Bau wird d Umwältverträglichkeit vom Vorhabe sorgfältig prüeft."
+ },
+ {
+  "id": 6796,
+  "de": "die Schadstoffbelastung",
+  "tr": "kirletici madde yükü, zararlı madde kirliliği",
+  "deBeispiel": "Die Schadstoffbelastung der Luft sinkt in den Innenstädten nur langsam.",
+  "gsw": "Schadschtoffbelaschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schadschtoffbelaschtig vo de Luft sinkt i de Innenschtedt nu langsam."
+ },
+ {
+  "id": 6797,
+  "de": "die Versiegelung",
+  "tr": "toprağın betonlaşması, geçirimsiz yüzey kaplaması",
+  "deBeispiel": "Die Versiegelung der Böden verschärft die Folgen starker Regenfälle.",
+  "gsw": "Versieglig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Versieglig vo de Böde verschärft d Folge vo schtarke Rägefäll."
+ },
+ {
+  "id": 6798,
+  "de": "die Nahrungskette",
+  "tr": "besin zinciri",
+  "deBeispiel": "Giftstoffe reichern sich am oberen Ende der Nahrungskette an.",
+  "gsw": "Naarigschetti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Giftschtoff riichered sich am obere Ändi vo de Naarigschetti aa."
+ },
+ {
+  "id": 6799,
+  "de": "der Stoffkreislauf",
+  "tr": "madde döngüsü",
+  "deBeispiel": "Der natürliche Stoffkreislauf wird durch industrielle Eingriffe empfindlich gestört.",
+  "gsw": "Schtoffchreislauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De natürlich Schtoffchreislauf wird dur induschtrielli Iigriff empfindlich gschtört."
+ },
+ {
+  "id": 6800,
+  "de": "der Bestandsrückgang",
+  "tr": "popülasyon azalması, stok gerilemesi",
+  "deBeispiel": "Der dramatische Bestandsrückgang der Insekten alarmiert inzwischen auch Landwirte.",
+  "gsw": "Beschtandsrückgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De dramatisch Beschtandsrückgang vo de Insekte alarmiert inzwüsche au d Buure."
+ },
+ {
+  "id": 6801,
+  "de": "der Transformationsprozess",
+  "tr": "dönüşüm süreci",
+  "deBeispiel": "Der ökologische Transformationsprozess verlangt tiefgreifende institutionelle Reformen.",
+  "gsw": "Transformationsprozäss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De ökologisch Transformationsprozäss verlangt tüüfgriifendi inschtitutionelli Reforme."
+ },
+ {
+  "id": 6802,
+  "de": "das Schutzgebiet",
+  "tr": "koruma alanı",
+  "deBeispiel": "Ohne wirksame Kontrolle bleibt ein Schutzgebiet bloß eine Linie auf der Karte.",
+  "gsw": "Schutzgebiet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ohni e wirksami Kontrolle bliibt es Schutzgebiet bloss e Linie uf de Charte."
+ },
+ {
+  "id": 6803,
+  "de": "die Bepreisung",
+  "tr": "fiyatlandırma",
+  "deBeispiel": "Ohne konsequente Bepreisung des Kohlendioxids bleiben Appelle wirkungslos.",
+  "gsw": "Bepriisig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni e konsequenti Bepriisig vom Choledioxid bliibed d Appell wirkigslos."
+ },
+ {
+  "id": 6804,
+  "de": "die Lenkungswirkung",
+  "tr": "yönlendirici etki",
+  "deBeispiel": "Die Abgabe entfaltet nur bei hohen Sätzen eine spürbare Lenkungswirkung.",
+  "gsw": "Lenkigswirkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abgab entfaltet nu bi hoche Sätz e schpürbari Lenkigswirkig."
+ },
+ {
+  "id": 6805,
+  "de": "das Vorsorgeprinzip",
+  "tr": "ihtiyat ilkesi, önlem alma ilkesi",
+  "deBeispiel": "Nach dem Vorsorgeprinzip genügt ein begründeter Verdacht für ein Verbot.",
+  "gsw": "Vorsorgeprinzip",
+  "gswArtikel": "s",
+  "gswBeispiel": "Noch em Vorsorgeprinzip längt en begründete Verdacht für es Verbot."
+ },
+ {
+  "id": 6806,
+  "de": "das Gemeingut",
+  "tr": "kamusal varlık, ortak mülk",
+  "deBeispiel": "Sauberes Wasser gilt vielen Ökonomen als klassisches Gemeingut.",
+  "gsw": "Gmeinguet",
+  "gswArtikel": "s",
+  "gswBeispiel": "S suubere Wasser giltet für vil Ökonome as klassischs Gmeinguet."
+ },
+ {
+  "id": 6807,
+  "de": "die Allmende",
+  "tr": "ortak kullanım alanı, müşterek",
+  "deBeispiel": "Die Tragik der Allmende beschreibt den Verfall gemeinsam genutzter Ressourcen.",
+  "gsw": "Allmend",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tragik vo de Allmend beschriibt de Verfall vo gmeinsam gnutzte Ressource."
+ },
+ {
+  "id": 6808,
+  "de": "die Wachstumskritik",
+  "tr": "büyüme eleştirisi",
+  "deBeispiel": "Die Wachstumskritik stellt das Bruttoinlandsprodukt als Wohlstandsmaß infrage.",
+  "gsw": "Wachschtumskritik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wachschtumskritik schtellt s Bruttoinlandprodukt as Wolschtandsmaass i Frag."
+ },
+ {
+  "id": 6809,
+  "de": "die Entkopplung",
+  "tr": "ayrıştırma, bağlantının koparılması",
+  "deBeispiel": "Eine absolute Entkopplung von Wachstum und Emissionen ist bislang selten gelungen.",
+  "gsw": "Entkopplig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En absoluti Entkopplig vo Wachschtum und Emissione isch bishär sälte glunge."
+ },
+ {
+  "id": 6810,
+  "de": "der Sekundärrohstoff",
+  "tr": "ikincil hammadde, geri kazanılmış hammadde",
+  "deBeispiel": "Aus Altgeräten gewonnene Sekundärrohstoffe ersetzen zunehmend importierte Metalle.",
+  "gsw": "Sekundärrohschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Us Altgrät gwunnigi Sekundärrohschtoff ersetzed zuenähmend importierti Metall."
+ },
+ {
+  "id": 6811,
+  "de": "die Abfallvermeidung",
+  "tr": "atık önleme, atığın kaynağında azaltılması",
+  "deBeispiel": "Abfallvermeidung steht in der Hierarchie noch vor jeder Verwertung.",
+  "gsw": "Abfallvermeidig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abfallvermeidig schtaat i de Hierarchie no vor jedere Verwertig."
+ },
+ {
+  "id": 6812,
+  "de": "die Langlebigkeit",
+  "tr": "uzun ömürlülük, dayanıklılık",
+  "deBeispiel": "Reparierbarkeit und Langlebigkeit müssen wieder zu Verkaufsargumenten werden.",
+  "gsw": "Langläbigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reparierbarkeit und d Langläbigkeit müend wider zu Verchaufsargumänt werde."
+ },
+ {
+  "id": 6813,
+  "de": "die Obsoleszenz",
+  "tr": "eskime, kullanım dışı kalma",
+  "deBeispiel": "Ob geplante Obsoleszenz tatsächlich existiert, ist wissenschaftlich umstritten.",
+  "gsw": "Obsoleszenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Öb es e gplanti Obsoleszenz würklich git, isch wüsseschaftlich umschtritte."
+ },
+ {
+  "id": 6814,
+  "de": "die Dekarbonisierung",
+  "tr": "karbonsuzlaşma",
+  "deBeispiel": "Die Dekarbonisierung der Schwerindustrie gilt als besonders schwierige Aufgabe.",
+  "gsw": "Dekarbonisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dekarbonisierig vo de Schwerinduschtrie giltet as bsunders schwirigi Uufgaab."
+ },
+ {
+  "id": 6815,
+  "de": "die Ökobilanz",
+  "tr": "yaşam döngüsü değerlendirmesi, çevresel bilanço",
+  "deBeispiel": "Die Ökobilanz eines Produkts fällt je nach Systemgrenze völlig anders aus.",
+  "gsw": "Ökobilanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ökobilanz vo eme Produkt fallt je noch Syschtemgränze völlig anders uus."
+ },
+ {
+  "id": 6816,
+  "de": "der Lebenszyklus",
+  "tr": "yaşam döngüsü",
+  "deBeispiel": "Bewertet wird der gesamte Lebenszyklus von der Rohstoffgewinnung bis zur Entsorgung.",
+  "gsw": "Läbenszyklus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bewertet wird de ganz Läbenszyklus vo de Rohschtoffgwinnig bis zur Entsorgig."
+ },
+ {
+  "id": 6817,
+  "de": "das Naturkapital",
+  "tr": "doğal sermaye",
+  "deBeispiel": "Wer Naturkapital verbraucht, lebt von der Substanz künftiger Generationen.",
+  "gsw": "Naturkapital",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wer s Naturkapital verbrucht, läbt vo de Substanz vo künftige Generatione."
+ },
+ {
+  "id": 6818,
+  "de": "die Umweltethik",
+  "tr": "çevre etiği",
+  "deBeispiel": "Die Umweltethik fragt, ob der Natur ein Eigenwert zukommt.",
+  "gsw": "Umwältethik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Umwältethik fragt, öb de Natur en Eigewert zuechunt."
+ },
+ {
+  "id": 6819,
+  "de": "die Klimagerechtigkeit",
+  "tr": "iklim adaleti",
+  "deBeispiel": "Klimagerechtigkeit bedeutet, historische Verantwortung bei der Lastenteilung zu berücksichtigen.",
+  "gsw": "Klimagrächtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Klimagrächtigkeit heisst, di hischtorischi Verantwortig bi de Laschteteilig z berücksichtige."
+ },
+ {
+  "id": 6820,
+  "de": "erschöpfen",
+  "tr": "tüketmek, bitirmek",
+  "deBeispiel": "Der Mensch erschöpft Vorräte, deren Neubildung Jahrtausende dauert.",
+  "gsw": "erschöpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Mäntsch erschöpft Vorrät, wo ihri Nöibildig Jaartuusigi duuret."
+ },
+ {
+  "id": 6821,
+  "de": "regulieren",
+  "tr": "düzenlemek, kurallara bağlamak",
+  "deBeispiel": "Der Staat reguliert den Zugang zu knappen Wasserrechten streng.",
+  "gsw": "reguliere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat reguliert de Zuegang zu chnappe Wasserrächt schtreng."
+ },
+ {
+  "id": 6822,
+  "de": "umdenken",
+  "tr": "düşünce biçimini değiştirmek, yeniden düşünmek",
+  "deBeispiel": "Beim Umgang mit Wasser muss die Landwirtschaft grundlegend umdenken.",
+  "gsw": "umdänke",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Umgang mit em Wasser mues d Landwirtschaft grundlegend umdänke."
+ },
+ {
+  "id": 6823,
+  "de": "umsteuern",
+  "tr": "rotayı değiştirmek, yön değiştirmek",
+  "deBeispiel": "Die Politik müsste jetzt umsteuern, um die Ziele noch zu erreichen.",
+  "gsw": "umschtüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Politik müesst jetz umschtüüre, zum d Ziel no z erreiche."
+ },
+ {
+  "id": 6824,
+  "de": "abmildern",
+  "tr": "hafifletmek, yumuşatmak",
+  "deBeispiel": "Grüne Dächer können die Hitze in dicht bebauten Vierteln abmildern.",
+  "gsw": "abmildere",
+  "gswArtikel": null,
+  "gswBeispiel": "Grüeni Dächer chönd d Hitz i dicht bebaute Quartier abmildere."
+ },
+ {
+  "id": 6825,
+  "de": "wiederverwerten",
+  "tr": "geri dönüştürmek, yeniden değerlendirmek",
+  "deBeispiel": "Bislang wird nur ein Bruchteil der Kunststoffe tatsächlich wiederverwertet.",
+  "gsw": "widerverwerte",
+  "gswArtikel": null,
+  "gswBeispiel": "Bishär wird nu en Bruchteil vo de Kunschtschtoff würklich widerverwertet."
+ },
+ {
+  "id": 6826,
+  "de": "bilanzieren",
+  "tr": "bilançosunu çıkarmak, hesabını yapmak",
+  "deBeispiel": "Unternehmen müssen ihre Emissionen künftig lückenlos bilanzieren.",
+  "gsw": "bilanziere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Unternäme müend ihri Emissione künftig lückelos bilanziere."
+ },
+ {
+  "id": 6827,
+  "de": "renaturieren",
+  "tr": "doğal hâline döndürmek",
+  "deBeispiel": "Der begradigte Fluss wird abschnittsweise wieder renaturiert.",
+  "gsw": "renaturiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De begradiget Fluss wird abschnittswiis wider renaturiert."
+ },
+ {
+  "id": 6828,
+  "de": "ressourcenschonend",
+  "tr": "kaynakları koruyan, kaynak tasarruflu",
+  "deBeispiel": "Das Verfahren gilt als besonders ressourcenschonend und energieeffizient.",
+  "gsw": "ressourceschonend",
+  "gswArtikel": null,
+  "gswBeispiel": "S Verfaare giltet as bsunders ressourceschonend und energieeffizient."
+ },
+ {
+  "id": 6829,
+  "de": "emissionsarm",
+  "tr": "düşük emisyonlu",
+  "deBeispiel": "Emissionsarme Verfahren setzen sich nur bei klaren Vorgaben durch.",
+  "gsw": "emissionsarm",
+  "gswArtikel": null,
+  "gswBeispiel": "Emissionsarmi Verfaare setzed sich nu bi klare Vorgabe dure."
+ },
+ {
+  "id": 6830,
+  "de": "irreversibel",
+  "tr": "geri döndürülemez",
+  "deBeispiel": "Manche Schäden am Korallenriff sind praktisch irreversibel.",
+  "gsw": "irreversibel",
+  "gswArtikel": null,
+  "gswBeispiel": "Mängi Schäde am Koralleriff sind praktisch irreversibel."
+ },
+ {
+  "id": 6831,
+  "de": "folgenschwer",
+  "tr": "ağır sonuçlar doğuran, vahim",
+  "deBeispiel": "Die Entscheidung über den Tagebau war folgenschwerer als erwartet.",
+  "gsw": "folgeschwer",
+  "gswArtikel": null,
+  "gswBeispiel": "D Entschäidig über de Tagbau isch folgeschwerer gsi as erwartet."
+ },
+ {
+  "id": 6832,
+  "de": "zukunftsfähig",
+  "tr": "geleceğe dayanıklı, sürdürülebilir",
+  "deBeispiel": "Ein zukunftsfähiges Wirtschaftsmodell darf nicht auf ewigem Mengenwachstum beruhen.",
+  "gsw": "zuekunftsfähig",
+  "gswArtikel": null,
+  "gswBeispiel": "Es zuekunftsfähigs Wirtschaftsmodäll dörf nöd uf eme ewige Mängewachschtum berue."
+ },
+ {
+  "id": 6833,
+  "de": "regenerativ",
+  "tr": "yenilenebilir",
+  "deBeispiel": "Regenerative Energien decken inzwischen mehr als die Hälfte des Bedarfs.",
+  "gsw": "regenerativ",
+  "gswArtikel": null,
+  "gswBeispiel": "Regenerativi Energie decked inzwüsche meh as d Helfti vom Bedarf."
+ },
+ {
+  "id": 6834,
+  "de": "nachweislich",
+  "tr": "kanıtlanmış biçimde, kanıtlarla sabit olarak",
+  "deBeispiel": "Die Maßnahme hat den Nitratgehalt nachweislich gesenkt.",
+  "gsw": "nachwiislich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Massnaam hät de Nitratghalt nachwiislich gsenkt."
+ },
+ {
+  "id": 6835,
+  "de": "die Tugend",
+  "tr": "erdem, fazilet",
+  "deBeispiel": "Für Aristoteles war Mut eine Tugend zwischen Feigheit und Tollkühnheit.",
+  "gsw": "Tugend",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für de Aristoteles isch de Muet e Tugend zwüsched Feigheit und Tollchüenheit gsi."
+ },
+ {
+  "id": 6836,
+  "de": "die Willensfreiheit",
+  "tr": "irade özgürlüğü",
+  "deBeispiel": "Die Hirnforschung stellt unsere Vorstellung von Willensfreiheit ernsthaft infrage.",
+  "gsw": "Willesfreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Hirnforschig schtellt öisi Vorschtellig vo de Willesfreiheit ernschthaft i Frag."
+ },
+ {
+  "id": 6837,
+  "de": "die Zurechnungsfähigkeit",
+  "tr": "kusur yeteneği, ceza sorumluluğu (akli yeterlilik)",
+  "deBeispiel": "Das Gericht ließ die Zurechnungsfähigkeit des Angeklagten psychiatrisch prüfen.",
+  "gsw": "Zuerächnigsfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gricht hät d Zuerächnigsfähigkeit vom Aaklagte psychiatrisch la prüefe."
+ },
+ {
+  "id": 6838,
+  "de": "die Integrität",
+  "tr": "dürüstlük, ilkelilik, bütünlük",
+  "deBeispiel": "Seine Integrität blieb selbst unter politischem Druck unbeschädigt.",
+  "gsw": "Integrität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Integrität isch sogar under politischem Druck unbeschädiget bliibe."
+ },
+ {
+  "id": 6839,
+  "de": "die Barmherzigkeit",
+  "tr": "merhamet, şefkat",
+  "deBeispiel": "Zwischen kalter Gerechtigkeit und echter Barmherzigkeit besteht eine alte Spannung.",
+  "gsw": "Barmhärzigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüsched chalter Grächtigkeit und ächter Barmhärzigkeit bschtaat en alti Schpannig."
+ },
+ {
+  "id": 6840,
+  "de": "der Egoismus",
+  "tr": "bencillik, egoizm",
+  "deBeispiel": "Manche Denker halten Egoismus für die ehrlichste Triebkraft des Handelns.",
+  "gsw": "Egoismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mängi Dänker haltet de Egoismus für di ehrlichschti Triibchraft vom Handle."
+ },
+ {
+  "id": 6841,
+  "de": "der Altruismus",
+  "tr": "özgecilik, diğerkâmlık",
+  "deBeispiel": "Ob echter Altruismus überhaupt existiert, ist bis heute umstritten.",
+  "gsw": "Altruismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öb es en ächte Altruismus überhaupt git, isch bis hüt umschtritte."
+ },
+ {
+  "id": 6842,
+  "de": "das Pflichtgefühl",
+  "tr": "görev duygusu, sorumluluk hissi",
+  "deBeispiel": "Sie blieb aus reinem Pflichtgefühl bei ihrer kranken Mutter.",
+  "gsw": "Pflichtgfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si isch us purem Pflichtgfüel bi ihrer chranke Mueter bliibe."
+ },
+ {
+  "id": 6843,
+  "de": "der Zwiespalt",
+  "tr": "iç çatışma, ikilem",
+  "deBeispiel": "Der Arzt geriet in einen tiefen Zwiespalt zwischen Schweigepflicht und Warnung.",
+  "gsw": "Zwiischpalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Arzt isch in en tüüfe Zwiischpalt zwüsched Schwiigepflicht und Warnig groote."
+ },
+ {
+  "id": 6844,
+  "de": "das Dilemma",
+  "tr": "ikilem, çıkmaz",
+  "deBeispiel": "Das klassische Dilemma lässt beide Auswege gleich schlecht erscheinen.",
+  "gsw": "Dilemma",
+  "gswArtikel": "s",
+  "gswBeispiel": "S klassische Dilemma laat beidi Uuswäg gliich schlächt schiine."
+ },
+ {
+  "id": 6845,
+  "de": "die Vernunft",
+  "tr": "akıl, mantık",
+  "deBeispiel": "Kant wollte die Grenzen der reinen Vernunft genau bestimmen.",
+  "gsw": "Vernunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Kant hät d Gränze vo de reine Vernunft genau welle beschtimme."
+ },
+ {
+  "id": 6846,
+  "de": "der Verstand",
+  "tr": "zihin, muhakeme, anlık",
+  "deBeispiel": "Der Verstand ordnet, aber er stiftet keinen Sinn.",
+  "gsw": "Verschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verschtand ordnet, aber er schtiftet kein Sinn."
+ },
+ {
+  "id": 6847,
+  "de": "die Einsicht",
+  "tr": "kavrayış, idrak, anlayış",
+  "deBeispiel": "Diese Einsicht kam ihm erst nach jahrelanger Beschäftigung mit dem Thema.",
+  "gsw": "Iisicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Iisicht isch em ersch nach jaarelanger Beschäftigung mit em Thema choo."
+ },
+ {
+  "id": 6848,
+  "de": "die Weisheit",
+  "tr": "bilgelik, hikmet",
+  "deBeispiel": "Wissen lässt sich anhäufen, Weisheit dagegen kaum.",
+  "gsw": "Wiisheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wüsse cha mer aahüüfe, Wiisheit hingäge chuum."
+ },
+ {
+  "id": 6849,
+  "de": "die Besonnenheit",
+  "tr": "sağduyu, temkinlilik, itidal",
+  "deBeispiel": "In der Krise zeigte sie eine bemerkenswerte Besonnenheit.",
+  "gsw": "Bsunneheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Chrise hät si e bemerkenswärti Bsunneheit zäigt."
+ },
+ {
+  "id": 6850,
+  "de": "der Relativismus",
+  "tr": "görecelilik, rölativizm",
+  "deBeispiel": "Ein radikaler Relativismus macht jede Kritik an Unrecht unmöglich.",
+  "gsw": "Relativismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "En radikale Relativismus macht jedi Kritik a Unrächt unmöglich."
+ },
+ {
+  "id": 6851,
+  "de": "die Maxime",
+  "tr": "ilke, düstur",
+  "deBeispiel": "Handle nur nach einer Maxime, die du allgemein wollen kannst.",
+  "gsw": "Maxime",
+  "gswArtikel": "d",
+  "gswBeispiel": "Handel nu nach ere Maxime, wo du allgemäin chasch wölle."
+ },
+ {
+  "id": 6852,
+  "de": "das Gebot",
+  "tr": "buyruk, emir, ilke",
+  "deBeispiel": "Fairness ist hier weniger ein Gesetz als ein moralisches Gebot.",
+  "gsw": "Gebot",
+  "gswArtikel": "s",
+  "gswBeispiel": "Fairness isch da weniger es Gsetz als es moralisches Gebot."
+ },
+ {
+  "id": 6853,
+  "de": "die Wertvorstellung",
+  "tr": "değer anlayışı, değer yargısı",
+  "deBeispiel": "Die Wertvorstellungen der Generationen driften spürbar auseinander.",
+  "gsw": "Wärtvorschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wärtvorschtellige vo de Generatione driftet spürbar usenand."
+ },
+ {
+  "id": 6854,
+  "de": "die Vergänglichkeit",
+  "tr": "geçicilik, fanilik",
+  "deBeispiel": "Das Bewusstsein der Vergänglichkeit verändert unseren Umgang mit Zeit.",
+  "gsw": "Vergänglichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Bewusstsii vo de Vergänglichkeit verändert öise Umgang mit de Ziit."
+ },
+ {
+  "id": 6855,
+  "de": "der Wesenszug",
+  "tr": "karakter özelliği, temel nitelik",
+  "deBeispiel": "Neugier gilt vielen als grundlegender Wesenszug des Menschen.",
+  "gsw": "Wäsenszug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nüügier gilt für vili as grundlegende Wäsenszug vom Mänsch."
+ },
+ {
+  "id": 6856,
+  "de": "die Triebfeder",
+  "tr": "itici güç, saik",
+  "deBeispiel": "Die eigentliche Triebfeder seines Engagements war schlichte Eitelkeit.",
+  "gsw": "Triibfeder",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di eigentlich Triibfeder vo sim Engagement isch schlichti Iitelkeit gsi."
+ },
+ {
+  "id": 6857,
+  "de": "das Streben",
+  "tr": "çaba, arayış, gayret",
+  "deBeispiel": "Das Streben nach Glück lässt sich nicht erzwingen.",
+  "gsw": "Schträbe",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schträbe nach em Glück laat sich nöd erzwinge."
+ },
+ {
+  "id": 6858,
+  "de": "die Selbsterkenntnis",
+  "tr": "kendini bilme, öz farkındalık",
+  "deBeispiel": "Selbsterkenntnis gilt seit der Antike als Anfang aller Weisheit.",
+  "gsw": "Sälbschterkenntnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sälbschterkenntnis gilt sit de Antike as Aafang vo aller Wiisheit."
+ },
+ {
+  "id": 6859,
+  "de": "der Selbstzweck",
+  "tr": "kendi başına amaç",
+  "deBeispiel": "Der Mensch ist Selbstzweck und darf nie bloßes Mittel sein.",
+  "gsw": "Sälbschtzweck",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Mänsch isch Sälbschtzweck und dörf nie es blosses Mittel sii."
+ },
+ {
+  "id": 6860,
+  "de": "die Ausweglosigkeit",
+  "tr": "çıkışsızlık, umutsuzluk",
+  "deBeispiel": "Camus beschreibt die Ausweglosigkeit als Grundgefühl des modernen Menschen.",
+  "gsw": "Uuswäglosigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Camus beschriibt d Uuswäglosigkeit as Grundgfüel vom modärne Mänsch."
+ },
+ {
+  "id": 6861,
+  "de": "die Vergebung",
+  "tr": "bağışlama, affetme",
+  "deBeispiel": "Vergebung bedeutet nicht, das Geschehene für harmlos zu erklären.",
+  "gsw": "Vergäbig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vergäbig häisst nöd, ass mer s Gscheene für harmlos erklärt."
+ },
+ {
+  "id": 6862,
+  "de": "die Nachsicht",
+  "tr": "hoşgörü, müsamaha",
+  "deBeispiel": "Mit sich selbst übt er weit mehr Nachsicht als mit anderen.",
+  "gsw": "Naachsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit sich sälber hät er wiit meh Naachsicht als mit andere."
+ },
+ {
+  "id": 6863,
+  "de": "die Unbestechlichkeit",
+  "tr": "satın alınamazlık, dürüstlük (rüşvete kapalı olma)",
+  "deBeispiel": "Die Unbestechlichkeit der Richter ist die Grundlage jedes Rechtsstaats.",
+  "gsw": "Unbeschtächlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Unbeschtächlichkeit vo de Richter isch d Grundlaag vo jedem Rächtsschtaat."
+ },
+ {
+  "id": 6864,
+  "de": "die Mündigkeit",
+  "tr": "erginlik, kendi aklını kullanabilme",
+  "deBeispiel": "Bildung soll vor allem zur geistigen Mündigkeit führen.",
+  "gsw": "Mündigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bildig söll vor allem zur gäischtige Mündigkeit füere."
+ },
+ {
+  "id": 6865,
+  "de": "die Selbsttäuschung",
+  "tr": "kendini kandırma, kendini aldatma",
+  "deBeispiel": "Wer nur bestätigende Quellen liest, betreibt eine bequeme Selbsttäuschung.",
+  "gsw": "Sälbschttüüschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer nu beschtätigendi Quelle liist, betriibt e bequemi Sälbschttüüschig."
+ },
+ {
+  "id": 6866,
+  "de": "die Demut",
+  "tr": "alçakgönüllülük, tevazu",
+  "deBeispiel": "Vor der Komplexität des Themas ist etwas Demut angebracht.",
+  "gsw": "Demuet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Komplexität vom Thema isch echli Demuet aabracht."
+ },
+ {
+  "id": 6867,
+  "de": "der Hochmut",
+  "tr": "kibir, gurur",
+  "deBeispiel": "Sein Hochmut verstellte ihm den Blick für eigene Fehler.",
+  "gsw": "Hochmuet",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin Hochmuet hät em de Blick für eigeni Fähler verschtellt."
+ },
+ {
+  "id": 6868,
+  "de": "gebieten",
+  "tr": "gerektirmek, emretmek, buyurmak",
+  "deBeispiel": "Die Lage gebietet Zurückhaltung statt vorschneller Urteile.",
+  "gsw": "gebiete",
+  "gswArtikel": null,
+  "gswBeispiel": "D Laag gebietet Zrugghaltig statt vorschnelli Urtäil."
+ },
+ {
+  "id": 6869,
+  "de": "missbilligen",
+  "tr": "onaylamamak, hoş karşılamamak",
+  "deBeispiel": "Viele Kollegen missbilligten sein Vorgehen, sagten aber nichts.",
+  "gsw": "missbillige",
+  "gswArtikel": null,
+  "gswBeispiel": "Vili Kollege händ sis Vorgaa missbilliget, aber nüüt gseit."
+ },
+ {
+  "id": 6870,
+  "de": "bejahen",
+  "tr": "olumlamak, evet demek, onaylamak",
+  "deBeispiel": "Nietzsche fordert, das Leben mit all seinen Härten zu bejahen.",
+  "gsw": "bejaae",
+  "gswArtikel": null,
+  "gswBeispiel": "De Nietzsche verlangt, s Läbe mit all sine Härte z bejaae."
+ },
+ {
+  "id": 6871,
+  "de": "verneinen",
+  "tr": "olumsuzlamak, reddetmek, hayır demek",
+  "deBeispiel": "Die Frage nach einem absoluten Maßstab verneint er entschieden.",
+  "gsw": "verneine",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fraag nach eme absolute Maasschtab verneint er entschide."
+ },
+ {
+  "id": 6872,
+  "de": "beimessen",
+  "tr": "önem atfetmek, değer vermek",
+  "deBeispiel": "Der Autor misst der Absicht mehr Gewicht bei als der Folge.",
+  "gsw": "biimässe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Autor tuet de Absicht meh Gwicht biimässe als de Folg."
+ },
+ {
+  "id": 6873,
+  "de": "sich anmaßen",
+  "tr": "haddi olmadan kalkışmak, kendinde hak görmek",
+  "deBeispiel": "Niemand sollte sich das Urteil über fremde Gewissensfragen anmaßen.",
+  "gsw": "sich aamaasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Niemert sött sich s Urtäil über fremdi Gwüssensfraage aamaasse."
+ },
+ {
+  "id": 6874,
+  "de": "hinnehmen",
+  "tr": "kabullenmek, katlanmak, boyun eğmek",
+  "deBeispiel": "Eine solche Ungleichheit müssen wir nicht stillschweigend hinnehmen.",
+  "gsw": "hinnää",
+  "gswArtikel": null,
+  "gswBeispiel": "So en Ugliichheit müend mer nöd schtillschwiigend hinnää."
+ },
+ {
+  "id": 6875,
+  "de": "sittlich",
+  "tr": "ahlaki, ahlaka ilişkin",
+  "deBeispiel": "Er beurteilte die Tat nach sittlichen, nicht nach juristischen Kriterien.",
+  "gsw": "sittlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät d Taat nach sittliche und nöd nach juristische Kriterie beurtäilt."
+ },
+ {
+  "id": 6876,
+  "de": "skrupellos",
+  "tr": "vicdansız, pervasız",
+  "deBeispiel": "Er nutzte die Notlage seiner Nachbarn völlig skrupellos aus.",
+  "gsw": "skrupellos",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät d Notlaag vo sine Nachbere völlig skrupellos uusgnutzt."
+ },
+ {
+  "id": 6877,
+  "de": "einleuchtend",
+  "tr": "makul, inandırıcı, akla yatkın",
+  "deBeispiel": "Seine Erklärung klang einleuchtend, hielt der Prüfung aber nicht stand.",
+  "gsw": "iilüüchtend",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Erklärig hät iilüüchtend tönt, hät aber de Prüefig nöd schtandghalte."
+ },
+ {
+  "id": 6878,
+  "de": "vordergründig",
+  "tr": "görünüşte, yüzeysel olarak",
+  "deBeispiel": "Vordergründig geht es um Geld, eigentlich aber um Anerkennung.",
+  "gsw": "vordergründig",
+  "gswArtikel": null,
+  "gswBeispiel": "Vordergründig gaat s um Gäld, eigentlich aber um Aaerkennig."
+ },
+ {
+  "id": 6879,
+  "de": "willentlich",
+  "tr": "bilerek, iradi olarak, kasten",
+  "deBeispiel": "Nur willentlich herbeigeführte Folgen lassen sich moralisch zurechnen.",
+  "gsw": "willentlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Nu willentlich herbiigfüerti Folge lönd sich moralisch zuerächne."
+ },
+ {
+  "id": 6880,
+  "de": "das Verfassungsgericht",
+  "tr": "anayasa mahkemesi",
+  "deBeispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz in Teilen für nichtig.",
+  "gsw": "Verfassigsgricht",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Verfassigsgricht hät s umschtrittne Gsetz i Täile für nichtig erklärt."
+ },
+ {
+  "id": 6881,
+  "de": "die Verhältniswahl",
+  "tr": "nispi temsil, oransal seçim sistemi",
+  "deBeispiel": "Bei der Verhältniswahl spiegelt die Sitzverteilung den Stimmenanteil der Parteien wider.",
+  "gsw": "Verhältniswaal",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Verhältniswaal schpieglet d Sitzverteilig de Schtimmenaatäil vo de Parteie wider."
+ },
+ {
+  "id": 6882,
+  "de": "die Exekutive",
+  "tr": "yürütme, yürütme erki",
+  "deBeispiel": "Die Exekutive darf sich nicht über die Beschlüsse des Parlaments hinwegsetzen.",
+  "gsw": "Exekutive",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Exekutive dörf sich nöd über d Beschlüss vom Parlamänt hinwegsetze."
+ },
+ {
+  "id": 6883,
+  "de": "die Legislative",
+  "tr": "yasama organı",
+  "deBeispiel": "In der Debatte ging es um das Verhältnis von Legislative und Regierung.",
+  "gsw": "Legislative",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Debatte isch es um s Verhältnis vo Legislative und Regierig gange."
+ },
+ {
+  "id": 6884,
+  "de": "der Föderalismus",
+  "tr": "federalizm",
+  "deBeispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die einzelnen Länder.",
+  "gsw": "Föderalismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De tüütsch Föderalismus verteilt d Bildigspolitik uf di einzelne Länder."
+ },
+ {
+  "id": 6885,
+  "de": "die Subsidiarität",
+  "tr": "yerindenlik ilkesi, subsidiyarite",
+  "deBeispiel": "Nach dem Grundsatz der Subsidiarität entscheidet stets die kleinste geeignete Ebene.",
+  "gsw": "Subsidiarität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Grundsatz vo de Subsidiarität entschäidet immer di chliinschti geeigneti Ebeni."
+ },
+ {
+  "id": 6886,
+  "de": "die Gebietskörperschaft",
+  "tr": "yerel yönetim birimi, mahalli idare",
+  "deBeispiel": "Städte und Landkreise sind Gebietskörperschaften mit eigener Verwaltung.",
+  "gsw": "Gebietschörperschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtedt und Landchräis sind Gebietschörperschafte mit eigener Verwaltig."
+ },
+ {
+  "id": 6887,
+  "de": "das Ressort",
+  "tr": "birim, görev alanı, bakanlık dairesi",
+  "deBeispiel": "Für diese Frage ist ein anderes Ressort im Ministerium zuständig.",
+  "gsw": "Ressort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für die Fraag isch es anders Ressort im Ministerium zueschtändig."
+ },
+ {
+  "id": 6888,
+  "de": "die Bürokratie",
+  "tr": "bürokrasi, kırtasiyecilik",
+  "deBeispiel": "Kleine Betriebe klagen seit Jahren über die ausufernde Bürokratie.",
+  "gsw": "Bürokratie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chliini Betrieb chlaged sit Jaare über di uusuferndi Bürokratie."
+ },
+ {
+  "id": 6889,
+  "de": "das Referendum",
+  "tr": "referandum, halk oylaması",
+  "deBeispiel": "Über den Beitritt soll ein landesweites Referendum entscheiden.",
+  "gsw": "Referendum",
+  "gswArtikel": "s",
+  "gswBeispiel": "Über de Biitritt söll es landeswiits Referendum entschäide."
+ },
+ {
+  "id": 6890,
+  "de": "die Machtbefugnis",
+  "tr": "yetki, iktidar yetkisi",
+  "deBeispiel": "Der Präsident schöpfte seine Machtbefugnisse bis an die Grenze des Erlaubten aus.",
+  "gsw": "Machtbefugnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Präsidänt hät sini Machtbefugnis bis a d Gränze vom Erlaubte uusgschöpft."
+ },
+ {
+  "id": 6891,
+  "de": "die Willensbildung",
+  "tr": "irade oluşumu, karar oluşturma süreci",
+  "deBeispiel": "Parteien sind für die politische Willensbildung des Volkes unverzichtbar.",
+  "gsw": "Willensbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Parteie sind für d politisch Willensbildig vom Volch unverzichtbar."
+ },
+ {
+  "id": 6892,
+  "de": "der Interessenverband",
+  "tr": "çıkar grubu, meslek örgütü",
+  "deBeispiel": "Mächtige Interessenverbände treten in Berlin für ihre Branche ein.",
+  "gsw": "Interessenverband",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mächtigi Interessenverbänd setzed sich z Berlin für iri Branche ii."
+ },
+ {
+  "id": 6893,
+  "de": "der Lobbyismus",
+  "tr": "lobicilik",
+  "deBeispiel": "Ein öffentliches Register soll den Lobbyismus im Parlament transparenter machen.",
+  "gsw": "Lobbyismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es öffentlichs Regischter söll de Lobbyismus im Parlamänt transparänter mache."
+ },
+ {
+  "id": 6894,
+  "de": "die Einflussnahme",
+  "tr": "etki etme, nüfuz kullanma",
+  "deBeispiel": "Die Aufsicht untersucht eine mögliche Einflussnahme auf die Vergabe der Aufträge.",
+  "gsw": "Iiflussnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uufsicht undersuecht e mögligi Iiflussnaam uf d Vergaab vo de Uufträg."
+ },
+ {
+  "id": 6895,
+  "de": "das Gewaltmonopol",
+  "tr": "güç tekeli, zor kullanma tekeli",
+  "deBeispiel": "In manchen Regionen hat der Staat sein Gewaltmonopol praktisch verloren.",
+  "gsw": "Gwaltmonopol",
+  "gswArtikel": "s",
+  "gswBeispiel": "I mängge Regione hät de Schtaat sis Gwaltmonopol praktisch verlore."
+ },
+ {
+  "id": 6896,
+  "de": "die Staatsräson",
+  "tr": "devlet çıkarı, hikmet-i hükümet",
+  "deBeispiel": "Der Minister berief sich auf die Staatsräson und schwieg zu Details.",
+  "gsw": "Schtaatsräson",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Minischter hät sich uf d Schtaatsräson berüefe und zu de Details gschwige."
+ },
+ {
+  "id": 6897,
+  "de": "die Regierungserklärung",
+  "tr": "hükümet programı açıklaması",
+  "deBeispiel": "In seiner Regierungserklärung kündigte der Kanzler eine Wende in der Energiepolitik an.",
+  "gsw": "Regierigserklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I sinere Regierigserklärig hät de Kanzler e Wändi i de Energiepolitik aakündigt."
+ },
+ {
+  "id": 6898,
+  "de": "der Bundestag",
+  "tr": "Federal Meclis",
+  "deBeispiel": "Der Bundestag debattierte bis in die frühen Morgenstunden über den Haushalt.",
+  "gsw": "Bundestag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bundestag hät bis i di früene Morgeschtunde über de Huushalt debattiert."
+ },
+ {
+  "id": 6899,
+  "de": "das Quorum",
+  "tr": "yeter sayı, nisap",
+  "deBeispiel": "Ohne das nötige Quorum ist die Abstimmung von vornherein ungültig.",
+  "gsw": "Quorum",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ohni s nötig Quorum isch d Abschtimmig vo vornerii ungültig."
+ },
+ {
+  "id": 6900,
+  "de": "die Geschäftsordnung",
+  "tr": "içtüzük, çalışma yönetmeliği",
+  "deBeispiel": "Der Antrag verstieß eindeutig gegen die Geschäftsordnung des Parlaments.",
+  "gsw": "Gschäftsordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aatrag hät eideutig gäge d Gschäftsordnig vom Parlamänt verschtoosse."
+ },
+ {
+  "id": 6901,
+  "de": "die Diplomatie",
+  "tr": "diplomasi",
+  "deBeispiel": "Stille Diplomatie erreichte mehr als jede öffentliche Drohung.",
+  "gsw": "Diplomatie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtilli Diplomatie hät meh erräicht als jedi öffentlichi Drohig."
+ },
+ {
+  "id": 6902,
+  "de": "amtieren",
+  "tr": "görevde olmak, görevi yürütmek",
+  "deBeispiel": "Er amtierte zwölf Jahre lang als Bürgermeister dieser Stadt.",
+  "gsw": "amtiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät zwölf Jaar lang as Bürgermäischter vo dere Schtadt amtiert."
+ }
+]

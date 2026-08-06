@@ -1,0 +1,1038 @@
+[
+ {
+  "id": 1902,
+  "de": "die Förderung",
+  "tr": "destek, teşvik, hibe",
+  "deBeispiel": "Für das Projekt bekommen wir eine Förderung von der Stadt.",
+  "gsw": "Förderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für s Projäkt überchömed mir e Förderig vo de Schtadt."
+ },
+ {
+  "id": 1903,
+  "de": "die Form",
+  "tr": "şekil, biçim",
+  "deBeispiel": "1. Diese Schuhe haben eine schöne Form. 2. Ich möchte für den Geburtstag einen Kuchen backen. Kannst du mir eine Backfor",
+  "gsw": "Form",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Die Schue händ e schööni Form. 2. Chasch mer e Bachform für de Chueche gää?"
+ },
+ {
+  "id": 1904,
+  "de": "die Forschung",
+  "tr": "araştırma (bilimsel)",
+  "deBeispiel": "Er arbeitet in der Forschung.",
+  "gsw": "Forschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er schaffet i de Forschig."
+ },
+ {
+  "id": 1905,
+  "de": "die Fortbildung",
+  "tr": "mesleki eğitim, ileri eğitim",
+  "deBeispiel": "Die Fortbildung, die ich machen will, ist sehr teuer.",
+  "gsw": "Wiiterbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wiiterbildig, won ich mache will, isch sehr tüür.",
+  "ayniLehce": [
+   "Weiterbildung (B1)"
+  ]
+ },
+ {
+  "id": 1906,
+  "de": "der Fortschritt",
+  "tr": "ilerleme, gelişme",
+  "deBeispiel": "Ich habe beim Deutschlernen große Fortschritte gemacht.",
+  "gsw": "Furtschritt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha bim Tüütschlerne groossi Furtschritt gmacht."
+ },
+ {
+  "id": 1907,
+  "de": "fortsetzen",
+  "tr": "devam ettirmek, sürdürmek",
+  "deBeispiel": "Wir setzen die Behandlung am nächsten Donnerstag um 11 Uhr fort.",
+  "gsw": "wiiterfüere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir wänd d Behandlig am nöchschte Dunschtig am älfi wiiterfüere."
+ },
+ {
+  "id": 1908,
+  "de": "die Fortsetzung",
+  "tr": "devam",
+  "deBeispiel": "Fortsetzung folgt.",
+  "gsw": "Furtsetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Furtsetzig folgt."
+ },
+ {
+  "id": 1909,
+  "de": "das Forum",
+  "tr": "forum",
+  "deBeispiel": "Ich melde mich heute bei diesem Forum an.",
+  "gsw": "Forum",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich mälde mich hüt bi dem Forum aa."
+ },
+ {
+  "id": 1910,
+  "de": "der Fotograf",
+  "tr": "fotoğrafçı",
+  "deBeispiel": "Die Fotografin hat sehr schöne Fotos gemacht.",
+  "gsw": "Fotograf",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Fotografin hät sehr schööni Fotene gmacht."
+ },
+ {
+  "id": 1911,
+  "de": "die Fotografie",
+  "tr": "fotoğrafçılık, fotoğraf",
+  "deBeispiel": "Ich interessiere mich für Fotografie.",
+  "gsw": "Fotografii",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich intressiere mich für Fotografii."
+ },
+ {
+  "id": 1912,
+  "de": "frech",
+  "tr": "arsız, küstah, yaramaz",
+  "deBeispiel": "Du darfst in der Schule nicht so frech sein.",
+  "gsw": "fräch",
+  "gswArtikel": null,
+  "gswBeispiel": "Du dörfsch i de Schuel nöd so fräch sii."
+ },
+ {
+  "id": 1913,
+  "de": "im Freien",
+  "tr": "açık havada",
+  "deBeispiel": "Wir wollen heute im Freien übernachten.",
+  "gsw": "im Fräie",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir wänd hüt im Fräie übernachte."
+ },
+ {
+  "id": 1914,
+  "de": "die Freiheit",
+  "tr": "özgürlük",
+  "deBeispiel": "Wir wollen die Freiheit haben, unsere Meinung sagen zu können.",
+  "gsw": "Fräihäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir wänd d Fräihäit haa, eusi Mäinig z säge."
+ },
+ {
+  "id": 1915,
+  "de": "fressen",
+  "tr": "yemek (hayvan için)",
+  "deBeispiel": "Hat der Hund schon etwas zu fressen bekommen?",
+  "gsw": "frässe",
+  "gswArtikel": null,
+  "gswBeispiel": "Hät de Hund scho öppis z frässe übercho?"
+ },
+ {
+  "id": 1916,
+  "de": "die Freude",
+  "tr": "sevinç, mutluluk",
+  "deBeispiel": "Diese Arbeit macht mir viel Freude.",
+  "gsw": "Fröid",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Arbet macht mer vil Fröid."
+ },
+ {
+  "id": 1917,
+  "de": "die Freundschaft",
+  "tr": "arkadaşlık, dostluk",
+  "deBeispiel": "Deine Freundschaft ist mir sehr wichtig.",
+  "gsw": "Fründschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dini Fründschaft isch mer sehr wichtig."
+ },
+ {
+  "id": 1918,
+  "de": "der Friede",
+  "tr": "barış",
+  "deBeispiel": "Endlich ist hier Frieden!",
+  "gsw": "Friede",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ändlich isch da Friede!"
+ },
+ {
+  "id": 1919,
+  "de": "frieren",
+  "tr": "üşümek, donmak",
+  "deBeispiel": "1. Wenn Sie frieren, mache ich das Fenster wieder zu. 2. Heute Nacht hat es gefroren.",
+  "gsw": "früüre",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wänn Si früüred, mach ich s Fäischter wider zue. 2. I de Nacht häts gfrore."
+ },
+ {
+  "id": 1920,
+  "de": "der Friseur",
+  "tr": "kuaför, berber",
+  "deBeispiel": "1. Du siehst toll aus! Wer ist dein Friseur? 2. Meine Tochter will Friseurin werden.",
+  "gsw": "Coiffeur",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Du gseesch toll uus! Wer isch din Coiffeur? 2. Mini Tochter will Coiffeuse wärde.",
+  "ayniLehce": [
+   "Coiffeur (B1)"
+  ]
+ },
+ {
+  "id": 1921,
+  "de": "die Friseurin",
+  "tr": "kadın kuaför",
+  "deBeispiel": "1. Du siehst toll aus! Wer ist dein Friseur? 2. Meine Tochter will Friseurin werden.",
+  "gsw": "Coiffeuse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tochter will Coiffeuse wärde.",
+  "ayniLehce": [
+   "Coiffeuse (B1)"
+  ]
+ },
+ {
+  "id": 1922,
+  "de": "die Frisur",
+  "tr": "saç modeli",
+  "deBeispiel": "Du hast eine tolle Frisur! Warst du beim Friseur?",
+  "gsw": "Frisur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Du häsch e tolli Frisur! Bisch bim Coiffeur gsii?"
+ },
+ {
+  "id": 1923,
+  "de": "die Frist",
+  "tr": "süre, son tarih",
+  "deBeispiel": "Die Frist für die Anmeldung zum Deutschkurs ist abgelaufen.",
+  "gsw": "Frischt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Frischt für d Aamäldig zum Tüütschkurs isch abgloffe."
+ },
+ {
+  "id": 1924,
+  "de": "fröhlich",
+  "tr": "neşeli, sevinçli",
+  "deBeispiel": "1. Die Musik klingt fröhlich. 2. Sie ist ein fröhlicher Mensch.",
+  "gsw": "fröölich",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Musig tönt fröölich. 2. Si isch en frööliche Mäntsch."
+ },
+ {
+  "id": 1925,
+  "de": "die Frucht",
+  "tr": "meyve, yemiş (tek tek meyve)",
+  "deBeispiel": "Welche Früchte kann man essen?",
+  "gsw": "Frucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Weli Frucht cha mer ässe?"
+ },
+ {
+  "id": 1926,
+  "de": "Früchte",
+  "tr": "meyve (İsviçre)",
+  "deBeispiel": "Früchte kaufe ich am liebsten auf dem Markt.",
+  "gsw": "Frücht",
+  "gswArtikel": null,
+  "gswBeispiel": "Frücht chauf ich am liebschte uf em Märt.",
+  "ayniLehce": [
+   "Obst (A1)"
+  ]
+ },
+ {
+  "id": 1928,
+  "de": "fühlen",
+  "tr": "hissetmek",
+  "deBeispiel": "1. Wie fühlen Sie sich? - Danke, ich fühle mich wohl. 2. Fühl mal, ob das Wasser nicht zu heiß ist.",
+  "gsw": "füüle",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wie füüled Si sich? – Danke, ich füül mich wol. 2. Füül mal, öb s Wasser nöd z häiss isch."
+ },
+ {
+  "id": 1929,
+  "de": "führen",
+  "tr": "yönetmek, götürmek, yol göstermek",
+  "deBeispiel": "1. Der Lehrer führt seine Schüler durch das Museum. 2. Frau Meyer führt den Betrieb schon seit zehn Jahren. 3. Nach 20 M",
+  "gsw": "füere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. De Lehrer füert sini Schüeler dur s Museum. 2. D Frau Meyer füert de Betriib scho sit zää Jaar."
+ },
+ {
+  "id": 1930,
+  "de": "der Führerausweis",
+  "tr": "ehliyet",
+  "deBeispiel": "Hast du einen Führerausweis?",
+  "gsw": "Füereruuswiis",
+  "gswArtikel": "de",
+  "gswBeispiel": "Häsch du en Füereruuswiis?"
+ },
+ {
+  "id": 1931,
+  "de": "das Fundbüro",
+  "tr": "kayıp eşya bürosu",
+  "deBeispiel": "Sie haben Ihren Schirm verloren. Da fragen Sie am besten im Fundbüro.",
+  "gsw": "Fundbüro",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si händ Ire Schirm verlore. Da frööged Si am beschte im Fundbüro."
+ },
+ {
+  "id": 1932,
+  "de": "funktionieren",
+  "tr": "çalışmak, işlemek",
+  "deBeispiel": "1. Können Sie mir bitte mal zeigen, wie der Automat funktioniert? 2. Unsere Ehe funktioniert nicht mehr.",
+  "gsw": "funktioniere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Chönd Si mer bitte mal zäige, wie de Automat funktioniert? 2. Eusi Ehe funktioniert nüme."
+ },
+ {
+  "id": 1933,
+  "de": "sich fürchten",
+  "tr": "korkmak",
+  "deBeispiel": "Sie fürchtet sich vor Schlangen.",
+  "gsw": "sich förche",
+  "gswArtikel": null,
+  "gswBeispiel": "Si förcht sich vor Schlange."
+ },
+ {
+  "id": 1934,
+  "de": "der Fußgänger",
+  "tr": "yaya",
+  "deBeispiel": "- Dieser Weg ist nur für Fußgänger.",
+  "gsw": "Fuessgänger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wääg da isch nur für Fuessgänger."
+ },
+ {
+  "id": 1935,
+  "de": "die Fußgängerzone",
+  "tr": "yaya bölgesi",
+  "deBeispiel": "Wir treffen uns um 15 Uhr in der Fußgängerzone.",
+  "gsw": "Fuessgängerzone",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir träffed eus am drüü i de Fuessgängerzone."
+ },
+ {
+  "id": 1936,
+  "de": "füttern",
+  "tr": "beslemek, yem vermek",
+  "deBeispiel": "Es ist im Zoo nicht erlaubt, die Tiere zu füttern.",
+  "gsw": "füetere",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch im Zoo nöd erlaubt, d Tier z füetere."
+ },
+ {
+  "id": 1937,
+  "de": "die Galerie",
+  "tr": "galeri",
+  "deBeispiel": "Diese Galerie ist sehr interessant.",
+  "gsw": "Galerie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Galerie isch sehr interessant."
+ },
+ {
+  "id": 1938,
+  "de": "der Gang",
+  "tr": "koridor, geçit, vites",
+  "deBeispiel": "1. Wir warten draußen im Gang. ( → D, CH: Korridor; D: Flur) 2. Schalten Sie bitte jetzt in den dritten Gang. 3. Was möc",
+  "gsw": "Gang",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Mir warted dusse im Gang. 2. Schalted Si jetz bitte in dritte Gang.",
+  "ayniLehce": [
+   "Flur (B1)",
+   "Korridor (B1)"
+  ]
+ },
+ {
+  "id": 1939,
+  "de": "gar",
+  "tr": "pişmiş; (gar nicht/gar kein) hiç",
+  "deBeispiel": "1. Die Kartoffeln sind noch nicht gar. 2. Du räumst nie dein Zimmer auf. – Das ist gar nicht wahr.",
+  "gsw": "gar",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Härdöpfel sind na nöd gar. 2. Du ruumsch dis Zimmer nie uf. – Das isch gar nöd waar."
+ },
+ {
+  "id": 1940,
+  "de": "garantieren",
+  "tr": "garanti etmek",
+  "deBeispiel": "Ich kann Ihnen nicht garantieren, dass das Gerät nächste Woche fertig ist.",
+  "gsw": "garantiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha Ine nöd garantiere, dass s Grät nöchscht Wuche fertig isch."
+ },
+ {
+  "id": 1941,
+  "de": "die Garantie",
+  "tr": "garanti",
+  "deBeispiel": "Auf die Waschmaschine haben Sie ein Jahr Garantie.",
+  "gsw": "Garantie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf d Wöschmaschine händ Si es Jaar Garantie."
+ },
+ {
+  "id": 1942,
+  "de": "die Garderobe",
+  "tr": "vestiyer",
+  "deBeispiel": "1. Die Mäntel bitte an der Garderobe abgeben.",
+  "gsw": "Garderobe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mäntel bitte a de Garderobe abgää."
+ },
+ {
+  "id": 1943,
+  "de": "das Gas",
+  "tr": "gaz",
+  "deBeispiel": "1. Wir kochen mit Gas. 2. Gib Gas! Die Ampel ist grün.",
+  "gsw": "Gas",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Mir choched mit Gas. 2. Gib Gas! D Ample isch grüen."
+ },
+ {
+  "id": 1944,
+  "de": "das Gasthaus",
+  "tr": "lokanta, birahane",
+  "deBeispiel": "Gehen wir noch in ein Gasthaus ein Bier trinken?",
+  "gsw": "Beiz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gömmer na in e Beiz go es Bier trinke?",
+  "ayniLehce": [
+   "Lokal (A1)",
+   "Kneipe (B1)"
+  ]
+ },
+ {
+  "id": 1945,
+  "de": "die Gaststätte",
+  "tr": "lokanta, restoran",
+  "deBeispiel": "Ich arbeite seit einem Monat in einer Gaststätte.",
+  "gsw": "Reschtorant",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich schaffe sit eme Monet in eme Reschtorant."
+ },
+ {
+  "id": 1946,
+  "de": "das Gebäude",
+  "tr": "bina",
+  "deBeispiel": "In diesem Gebäude sind nur Büros.",
+  "gsw": "Gebäud",
+  "gswArtikel": "s",
+  "gswBeispiel": "I dem Gebäud häts nur Büros."
+ },
+ {
+  "id": 1947,
+  "de": "das Gebäck",
+  "tr": "hamur işi, çörek",
+  "deBeispiel": "Das Gebäck ist ganz frisch.",
+  "gsw": "Gebäck",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Gebäck isch ganz frisch."
+ },
+ {
+  "id": 1948,
+  "de": "das Gebiet",
+  "tr": "bölge, alan",
+  "deBeispiel": "1. In diesem Gebiet gibt es kaum Industrie. 2. Die Zeitschrift berichtet regelmäßig über Fortschritte auf dem Gebiet der",
+  "gsw": "Gebiet",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. I dem Gebiet gits chuum Induschtrii. 2. D Ziitschrift brichtet regelmässig über Furtschritt uf dem Gebiet."
+ },
+ {
+  "id": 1949,
+  "de": "das Gebirge",
+  "tr": "dağlık bölge, sıradağlar",
+  "deBeispiel": "Wir haben unseren Urlaub im Gebirge verbracht.",
+  "gsw": "Gebirg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ eusi Ferie im Gebirg verbracht."
+ },
+ {
+  "id": 1950,
+  "de": "geboren werden",
+  "tr": "doğmak",
+  "deBeispiel": "Wann und wo sind Sie geboren?",
+  "gsw": "gebore werde",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn und wo sind Si gebore?"
+ },
+ {
+  "id": 1951,
+  "de": "gebrauchen",
+  "tr": "kullanmak",
+  "deBeispiel": "1. Wir können diese Möbel gut gebrauchen. 2. Ich habe den Wagen gebraucht gekauft. 3. Ich suche eine gebrauchte Waschmas",
+  "gsw": "bruuche",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir chönd die Möbel guet bruuche. 2. Ich ha s Auto als Occasion kauft.",
+  "ayniLehce": [
+   "brauchen (A1)",
+   "benutzen (A1)",
+   "benötigen (B1)"
+  ]
+ },
+ {
+  "id": 1952,
+  "de": "die Gebrauchsanweisung",
+  "tr": "kullanma talimatı, kullanım kılavuzu",
+  "deBeispiel": "Lesen Sie bitte zuerst die Gebrauchsanweisung.",
+  "gsw": "Gebruuchsaawiisig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Läsed Si bitte zerscht d Gebruuchsaawiisig."
+ },
+ {
+  "id": 1953,
+  "de": "die Gebühr",
+  "tr": "ücret, harç",
+  "deBeispiel": "Die Gebühr liegt bei 60 Euro.",
+  "gsw": "Gebüür",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gebüür liit bi 60 Franke."
+ },
+ {
+  "id": 1954,
+  "de": "die Geburt",
+  "tr": "doğum",
+  "deBeispiel": "Wir gratulieren zur Geburt eures Kindes!",
+  "gsw": "Geburt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir gratuliered zu de Geburt vo eurem Chind!"
+ },
+ {
+  "id": 1955,
+  "de": "das Gedicht",
+  "tr": "şiir",
+  "deBeispiel": "Kennst du ein schönes Gedicht?",
+  "gsw": "Gedicht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Kennsch es schööns Gedicht?"
+ },
+ {
+  "id": 1956,
+  "de": "die Geduld",
+  "tr": "sabır",
+  "deBeispiel": "Bitte haben Sie etwas Geduld.",
+  "gsw": "Geduld",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte händ Si na chli Geduld."
+ },
+ {
+  "id": 1958,
+  "de": "geeignet",
+  "tr": "uygun, elverişli",
+  "deBeispiel": "Dieses Spiel ist nicht für Kinder unter drei Jahren geeignet.",
+  "gsw": "gäignet",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Schpiil isch für Chind under drüü Jaar nöd gäignet."
+ },
+ {
+  "id": 1959,
+  "de": "die Gefahr",
+  "tr": "tehlike",
+  "deBeispiel": "Betreten der Baustelle auf eigene Gefahr.",
+  "gsw": "Gfaar",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Betrette vo de Bauschtell uf äigeni Gfaar."
+ },
+ {
+  "id": 1960,
+  "de": "sich etwas gefallen lassen",
+  "tr": "razı olmak, katlanmak",
+  "deBeispiel": "Das würde ich mir nicht gefallen lassen.",
+  "gsw": "sich öppis gfalle laa",
+  "gswArtikel": null,
+  "gswBeispiel": "Das würd ich mer nöd gfalle laa."
+ },
+ {
+  "id": 1961,
+  "de": "das Gefängnis",
+  "tr": "hapishane",
+  "deBeispiel": "Er wurde zu fünf Jahren Gefängnis verurteilt.",
+  "gsw": "Gfängnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er isch zu föif Jaar Gfängnis verurtäilt worde."
+ },
+ {
+  "id": 1962,
+  "de": "das Gefühl",
+  "tr": "duygu, his",
+  "deBeispiel": "Ich glaube, ich schaffe die Prüfung. Ich habe ein gutes Gefühl.",
+  "gsw": "Gfüül",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich glaube, ich schaffe d Prüefig. Ich ha es guets Gfüül."
+ },
+ {
+  "id": 1963,
+  "de": "der Gegner",
+  "tr": "rakip, muhalif",
+  "deBeispiel": "- 1. Sie ist eine Gegnerin von Tierversuchen. 2. Die Mannschaft aus Frankreich war ein sehr starker Gegner.",
+  "gsw": "Gägner",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Si isch e Gägnerin vo Tierversüech. 2. D Mannschaft us Frankriich isch en sehr schtarche Gägner gsii."
+ },
+ {
+  "id": 1964,
+  "de": "die Gegend",
+  "tr": "bölge, civar",
+  "deBeispiel": "1. Der Schwarzwald ist eine sehr schöne Gegend. 2. Die Schule muss hier in der Gegend sein.",
+  "gsw": "Gägend",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. De Schwarzwald isch e sehr schööni Gägend. 2. D Schuel muess da i de Gägend sii."
+ },
+ {
+  "id": 1965,
+  "de": "der Gegensatz",
+  "tr": "zıtlık, karşıtlık",
+  "deBeispiel": "1. Diese beiden Meinungen stehen in starkem Gegensatz zueinander. 2. Im Gegensatz zu ihm ist sein Vater ziemlich klein.",
+  "gsw": "Gägesatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Die zwäi Mäinige schtönd im schtarche Gägesatz zuenand. 2. Im Gägesatz zu im isch sin Vatter zimli chlii."
+ },
+ {
+  "id": 1966,
+  "de": "der Gegenstand",
+  "tr": "nesne, eşya",
+  "deBeispiel": "1. Ich schließe meine persönlichen Gegenstände im Schwimmbad lieber in ein Fach ein. 2. Eine Durchsage der Polizei: Auf ",
+  "gsw": "Gägeschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "E Durchsag vo de Polizei: Uf de Faarbaan liit en Gägeschtand."
+ },
+ {
+  "id": 1967,
+  "de": "das Geheimnis",
+  "tr": "sır",
+  "deBeispiel": "Das kann ich dir nicht sagen. Das ist ein Geheimnis.",
+  "gsw": "Ghäimnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Das chan ich der nöd säge. Das isch es Ghäimnis."
+ },
+ {
+  "id": 1968,
+  "de": "geheim",
+  "tr": "gizli",
+  "deBeispiel": "Das ist geheim. Du darfst es niemandem sagen.",
+  "gsw": "ghäim",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch ghäim. Du törfsch es niemertem säge."
+ },
+ {
+  "id": 1969,
+  "de": "der Gehsteig",
+  "tr": "kaldırım (Avusturya, Güney Almanya)",
+  "deBeispiel": "Das Fahrradfahren auf dem Gehsteig ist nicht erlaubt.",
+  "gsw": "Trottoir",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Velofaare uf em Trottoir isch nöd erlaubt.",
+  "ayniLehce": [
+   "Trottoir (B1)",
+   "Bürgersteig (A2)",
+   "Gehweg (A2)"
+  ]
+ },
+ {
+  "id": 1970,
+  "de": "der Geldautomat",
+  "tr": "bankamatik, ATM",
+  "deBeispiel": "Ich hole noch Geld vom Geldautomaten.",
+  "gsw": "Bankomat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich hole na Gäld am Bankomat."
+ },
+ {
+  "id": 1971,
+  "de": "die Gelegenheit",
+  "tr": "fırsat",
+  "deBeispiel": "Das Fest ist eine gute Gelegenheit, unsere Freunde zu sehen.",
+  "gsw": "Glägehäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Fäscht isch e gueti Glägehäit, zum eusi Fründe z gsee."
+ },
+ {
+  "id": 1972,
+  "de": "gelingen",
+  "tr": "başarılı olmak",
+  "deBeispiel": "Es ist mir gelungen, meinen Chef zu überzeugen.",
+  "gsw": "glinge",
+  "gswArtikel": null,
+  "gswBeispiel": "Hoffetli glingts mer, min Chef z überzüüge."
+ },
+ {
+  "id": 1973,
+  "de": "gelten",
+  "tr": "geçerli olmak",
+  "deBeispiel": "1. Mein Pass gilt noch ein Jahr. 2. Bitte diesen Zettel gut aufheben: Er gilt als Garantie.",
+  "gsw": "gälte",
+  "gswArtikel": null,
+  "gswBeispiel": "Bäidi Päss gälted na es Jaar."
+ },
+ {
+  "id": 1974,
+  "de": "gemeinsam",
+  "tr": "ortak, birlikte",
+  "deBeispiel": "1. Du musst die Wohnung renovieren? Ich helfe dir. Wir können das gemeinsam machen. 2. Wir benutzen die Garage gemeinsam",
+  "gsw": "zäme",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Du muesch d Wonig renoviere? Ich hilf der. Mir chönd das zäme mache. 2. Mir bruuched d Garage zäme.",
+  "ayniLehce": [
+   "zusammen (A1)"
+  ]
+ },
+ {
+  "id": 1975,
+  "de": "die Gemeinschaft",
+  "tr": "topluluk",
+  "deBeispiel": "Rauchen ist in den Gemeinschafts-räumen nicht erlaubt.",
+  "gsw": "Gmäinschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Rauche isch i de Gmäinschaftsrüüm nöd erlaubt."
+ },
+ {
+  "id": 1976,
+  "de": "genauso",
+  "tr": "aynen, tıpkı",
+  "deBeispiel": "Katarina sieht genauso aus wie ihre Schwester.",
+  "gsw": "genau gliich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Katarina gseet genau gliich uus wie iri Schwöschter."
+ },
+ {
+  "id": 1977,
+  "de": "genehmigen",
+  "tr": "onaylamak, izin vermek",
+  "deBeispiel": "Mein Chef hat mir sechs Wochen Urlaub genehmigt.",
+  "gsw": "bewillige",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Chef hät mer sächs Wuche Ferie bewilligt.",
+  "ayniLehce": [
+   "bewilligen (B2)"
+  ]
+ },
+ {
+  "id": 1978,
+  "de": "die Generation",
+  "tr": "nesil, kuşak",
+  "deBeispiel": "In diesem Haus wohnen drei Generationen zusammen.",
+  "gsw": "Generation",
+  "gswArtikel": "d",
+  "gswBeispiel": "I dem Huus woned drüü Generatione zäme."
+ },
+ {
+  "id": 1979,
+  "de": "genießen",
+  "tr": "tadını çıkarmak, keyfini sürmek",
+  "deBeispiel": "1. Er kann das Essen leider nicht genießen, weil es zu scharf ist. 2. Sie hat eine gute Ausbildung genossen.",
+  "gsw": "gnüüsse",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Er cha s Ässe läider nöd gnüüsse, wil s z scharf isch. 2. Si hät e gueti Uusbildig gnosse."
+ },
+ {
+  "id": 1980,
+  "de": "genügen",
+  "tr": "yetmek, kafi gelmek",
+  "deBeispiel": "Wie viele Zimmer brauchen Sie? – Mir genügt eine 2-Zimmer-Wohnung.",
+  "gsw": "länge",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie vil Zimmer bruuched Si? – Mir längt e 2-Zimmer-Wonig.",
+  "ayniLehce": [
+   "ausreichen (B1)",
+   "reichen (B1)"
+  ]
+ },
+ {
+  "id": 1981,
+  "de": "gerecht",
+  "tr": "adil",
+  "deBeispiel": "Lass uns den Kuchen gerecht verteilen.",
+  "gsw": "gerächt",
+  "gswArtikel": null,
+  "gswBeispiel": "Chum, mir täiled de Chueche gerächt uf."
+ },
+ {
+  "id": 1982,
+  "de": "gering",
+  "tr": "az, düşük",
+  "deBeispiel": "1. Unsere Mannschaft hatte nur eine geringe Chance. 2. Wenn Sie ein geringes Einkommen haben, zahlen Sie nur wenig Steue",
+  "gsw": "gring",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Eusi Mannschaft hät nur e gringi Chance ghaa. 2. Wär es grings Iikomme hät, zaalt nur wenig Schtüüre."
+ },
+ {
+  "id": 1984,
+  "de": "gesamt-",
+  "tr": "toplam, bütün",
+  "deBeispiel": "1. Ich habe meine gesamten Bücher verschenkt. 2. z. B. Gesamtgewicht, Gesamtsumme",
+  "gsw": "gsamt-",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha mini gsamte Büecher verschänkt. 2. z. B. Gsamtgwicht, Gsamtsumme"
+ },
+ {
+  "id": 1985,
+  "de": "geschehen",
+  "tr": "olmak, gerçekleşmek",
+  "deBeispiel": "Vielen Dank für Ihre Hilfe. – Gern geschehen.",
+  "gsw": "gschee",
+  "gswArtikel": null,
+  "gswBeispiel": "Vilen Dank für Iri Hilf. – Gern gschee."
+ },
+ {
+  "id": 1986,
+  "de": "geschieden",
+  "tr": "boşanmış",
+  "deBeispiel": "Ich bin seit drei Jahren geschieden.",
+  "gsw": "gschide",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi sit drüü Jaar gschide."
+ },
+ {
+  "id": 1987,
+  "de": "das Geschlecht",
+  "tr": "cinsiyet",
+  "deBeispiel": "Bitte kreuzen Sie an: „Geschlecht: weiblich/männlich“.",
+  "gsw": "Gschlächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bitte aachrüüze: «Gschlächt: wiiblich/männlich»."
+ },
+ {
+  "id": 1988,
+  "de": "der Geschmack",
+  "tr": "tat, lezzet",
+  "deBeispiel": "Ich möchte bitte Kaugummi mit Erdbeergeschmack.",
+  "gsw": "Gschmack",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Chätschgummi mit Erdbeeri hät en feine Gschmack."
+ },
+ {
+  "id": 1989,
+  "de": "die Geschwindigkeit",
+  "tr": "hız",
+  "deBeispiel": "Das Auto fuhr mit zu hoher Geschwindigkeit.",
+  "gsw": "Gschwindigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Auto isch mit vil z hoocher Gschwindigkäit gfaare."
+ },
+ {
+  "id": 1990,
+  "de": "die Geschwindigkeitsbeschränkung",
+  "tr": "hız sınırı",
+  "deBeispiel": "Bitte beachten Sie die Geschwindigkeitsbeschränkungen.",
+  "gsw": "Tempolimite",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte beachted Si d Tempolimite."
+ },
+ {
+  "id": 1991,
+  "de": "die Gesellschaft",
+  "tr": "toplum, şirket",
+  "deBeispiel": "1. Er will die Gesellschaft verändern. 2. Meine Frau arbeitet bei einer Versicherungsgesellschaft. 3. Ich fühle mich in ",
+  "gsw": "Gsellschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Er will d Gsellschaft verändere. 2. Mini Frau schaffet bin ere Versicherigsgsellschaft."
+ },
+ {
+  "id": 1992,
+  "de": "das Gesetz",
+  "tr": "kanun, yasa",
+  "deBeispiel": "Das Parlament hat ein neues Gesetz beschlossen.",
+  "gsw": "Gsetz",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Parlamänt hät es neus Gsetz beschlosse."
+ },
+ {
+  "id": 1993,
+  "de": "gespannt",
+  "tr": "meraklı, heyecanlı",
+  "deBeispiel": "Ich bin gespannt, wer bei diesem Spiel gewinnt.",
+  "gsw": "gschpannt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi gschpannt, wer bi dem Schpiil gwünnt."
+ },
+ {
+  "id": 1994,
+  "de": "die Gewalt",
+  "tr": "şiddet, zor",
+  "deBeispiel": "1. Ich mag keine Filme, in denen Gewalt vorkommt. 2. Die Tür ließ sich nur mit Gewalt öffnen.",
+  "gsw": "Gwalt",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Ich mag käi Film, wo Gwalt drin vorchunt. 2. D Tür isch nur mit Gwalt ufgange."
+ },
+ {
+  "id": 1995,
+  "de": "die Gewerkschaft",
+  "tr": "sendika",
+  "deBeispiel": "Die Gewerkschaft vertritt die Interessen der Arbeitnehmer.",
+  "gsw": "Gwerkschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gwerkschaft vertritt d Interässe vo de Arbetnämer."
+ },
+ {
+  "id": 1996,
+  "de": "der Gewinn",
+  "tr": "kazanç, kâr, ikramiye",
+  "deBeispiel": "Ich habe bei einem Ratespiel mitge - macht. Der Hauptgewinn ist ein Auto.",
+  "gsw": "Gwünn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha bin eme Raatschpiil mitgmacht. De Gwünn isch es Auto."
+ },
+ {
+  "id": 1997,
+  "de": "das Gewissen",
+  "tr": "vicdan",
+  "deBeispiel": "Ich habe deinen Geburtstag vergessen. Ich habe ein ganz schlechtes Gewissen.",
+  "gsw": "Gwüsse",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha din Geburi vergässe. Ich ha es ganz schlächts Gwüsse."
+ },
+ {
+  "id": 1998,
+  "de": "gewöhnen",
+  "tr": "alışmak, alıştırmak",
+  "deBeispiel": "1. Wir haben uns an das Leben hier gewöhnt. 2. Ich bin daran gewöhnt, früh aufzustehen.",
+  "gsw": "gwööne",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir händ eus a s Läbe da gwöönt. 2. Ich bi s gwöönt, früe ufzschtaa."
+ },
+ {
+  "id": 1999,
+  "de": "die Gewohnheit",
+  "tr": "alışkanlık",
+  "deBeispiel": "1. Er hat die Gewohnheit, morgens zuerst die Post zu erledigen. 2. Aus alter Gewohnheit treffen wir uns jeden Samstagabe",
+  "gsw": "Gwonhäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Er hät d Gwonhäit, am Morge zerscht d Poscht z erledige. 2. Us alter Gwonhäit träffed mir eus jede Samschtigaabig."
+ },
+ {
+  "id": 2000,
+  "de": "gewohnt",
+  "tr": "alışkın, alışmış",
+  "deBeispiel": "Ich bin gewohnt, früh ins Bett zu gehen.",
+  "gsw": "gwont",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi s gwont, früe is Bett z gaa."
+ },
+ {
+  "id": 2001,
+  "de": "gewöhnlich",
+  "tr": "genellikle, alışılmış",
+  "deBeispiel": "Um die Zeit ist er gewöhnlich zu Hause.",
+  "gsw": "gwöönlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Um die Ziit isch er gwöönlich dihei."
+ },
+ {
+  "id": 2002,
+  "de": "das Gewürz",
+  "tr": "baharat",
+  "deBeispiel": "Von den scharfen Gewürzen bekommt man Durst.",
+  "gsw": "Gwürz",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vo de scharfe Gwürz überchunt me Durscht."
+ },
+ {
+  "id": 2003,
+  "de": "gießen",
+  "tr": "sulamak (çiçek, bahçe)",
+  "deBeispiel": "Es hat nicht geregnet. Ich muss meine Blumen gießen.",
+  "gsw": "giesse",
+  "gswArtikel": null,
+  "gswBeispiel": "Es hät nöd grägnet. Ich mues mini Blueme giesse."
+ },
+ {
+  "id": 2004,
+  "de": "das Gift",
+  "tr": "zehir",
+  "deBeispiel": "Vorsicht, das Gift dieser Pflanze ist für Menschen gefährlich!",
+  "gsw": "Gift",
+  "gswArtikel": "s",
+  "gswBeispiel": "Achtung, s Gift vo dere Pflanze isch für Mäntsche gföörlich!"
+ },
+ {
+  "id": 2005,
+  "de": "giftig",
+  "tr": "zehirli",
+  "deBeispiel": "Vorsicht, das ist giftig!",
+  "gsw": "giftig",
+  "gswArtikel": null,
+  "gswBeispiel": "Achtung, das isch giftig!"
+ },
+ {
+  "id": 2006,
+  "de": "die/das Glace/Glacé",
+  "tr": "dondurma",
+  "deBeispiel": "Zum Dessert gibt es Schokoladenglace. 1. Vorsicht, die Kanne ist aus Glas! 2. Eine Flasche Mineralwasser und zwei Gläser",
+  "gsw": "Glace",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zum Dessert git s Schoggi-Glace.",
+  "ayniLehce": [
+   "Eis (A1)"
+  ]
+ },
+ {
+  "id": 2007,
+  "de": "glatt",
+  "tr": "kaygan, düz",
+  "deBeispiel": "Fahr vorsichtig! Es ist glatt.",
+  "gsw": "glatt",
+  "gswArtikel": null,
+  "gswBeispiel": "Faar vorsichtig! Es isch glatt."
+ },
+ {
+  "id": 2008,
+  "de": "gleichfalls",
+  "tr": "aynı şekilde, size de",
+  "deBeispiel": "Schöne Feiertage! – Danke, gleichfalls.",
+  "gsw": "gliichfalls",
+  "gswArtikel": null,
+  "gswBeispiel": "Schöni Fiirtäg! – Merci, gliichfalls.",
+  "ayniLehce": [
+   "ebenfalls (B1)"
+  ]
+ },
+ {
+  "id": 2009,
+  "de": "gleichberechtigt",
+  "tr": "eşit haklara sahip",
+  "deBeispiel": "Mann und Frau sind gleichberechtigt.",
+  "gsw": "gliichberächtigt",
+  "gswArtikel": null,
+  "gswBeispiel": "Maa und Frau sind gliichberächtigt."
+ },
+ {
+  "id": 2010,
+  "de": "gleichzeitig",
+  "tr": "aynı anda, eşzamanlı",
+  "deBeispiel": "Ich kann nicht alles gleichzeitig machen.",
+  "gsw": "gliichziitig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha nöd alles gliichziitig mache."
+ },
+ {
+  "id": 2011,
+  "de": "das Gold",
+  "tr": "altın",
+  "deBeispiel": "Ist der Ring aus Gold? Nein, der sieht nur so aus.",
+  "gsw": "Gold",
+  "gswArtikel": "s",
+  "gswBeispiel": "Isch de Ring us Gold? Näi, de gseet nu so us."
+ },
+ {
+  "id": 2012,
+  "de": "Golf",
+  "tr": "golf",
+  "deBeispiel": "Kannst du Golf spielen?",
+  "gsw": "Golf",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch du Golf schpile?"
+ },
+ {
+  "id": 2013,
+  "de": "der Gott",
+  "tr": "tanrı, Allah",
+  "deBeispiel": "1. Glaubst du an Gott? 2. Gott sei Dank ist ihm nichts passiert.",
+  "gsw": "Gott",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Glaubsch du a Gott? 2. Gott sei Dank isch em nüüt passiert."
+ },
+ {
+  "id": 2014,
+  "de": "die Grafik",
+  "tr": "grafik",
+  "deBeispiel": "Die Grafik zeigt die Temperaturen im letzten Jahr.",
+  "gsw": "Grafik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Grafik zäigt d Temperature vom letschte Jaar."
+ }
+]

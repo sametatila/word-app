@@ -1,0 +1,995 @@
+[
+ {
+  "id": 4963,
+  "de": "der Gesprächspartner",
+  "tr": "muhatap, görüşülen kişi",
+  "deBeispiel": "Mein Gesprächspartner wollte seinen Namen nicht nennen.",
+  "gsw": "Gschpröchspartner",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Gschpröchspartner hät sin Name nöd welle nänne."
+ },
+ {
+  "id": 4964,
+  "de": "die Zuspitzung",
+  "tr": "keskinleştirme, tırmandırma",
+  "deBeispiel": "Die Zuspitzung der Überschrift verzerrte den Inhalt des Berichts.",
+  "gsw": "Zueschpitzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zueschpitzig vo de Überschrift hät de Inhalt vom Bricht verzerrt."
+ },
+ {
+  "id": 4965,
+  "de": "die Vermutung",
+  "tr": "tahmin, varsayım",
+  "deBeispiel": "Bisher gibt es nur Vermutungen über die Ursache des Ausfalls.",
+  "gsw": "Vermuetig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bishär gits nur Vermuetige über d Ursach vom Uusfall."
+ },
+ {
+  "id": 4966,
+  "de": "verbreiten",
+  "tr": "yaymak, yaygınlaştırmak",
+  "deBeispiel": "Unbekannte verbreiteten das gefälschte Video über mehrere Kanäle.",
+  "gsw": "verbräite",
+  "gswArtikel": null,
+  "gswBeispiel": "Unbekannti händ s gfälschte Video über mehreri Kanäl verbräitet."
+ },
+ {
+  "id": 4967,
+  "de": "übertragen",
+  "tr": "yayınlamak (radyo, TV), aktarmak, devretmek",
+  "deBeispiel": "Das Finale wird in mehr als vierzig Länder übertragen.",
+  "gsw": "übertrage",
+  "gswArtikel": null,
+  "gswBeispiel": "S Final wird i mee als vierzg Länder übertrage."
+ },
+ {
+  "id": 4968,
+  "de": "bekanntgeben",
+  "tr": "duyurmak, açıklamak",
+  "deBeispiel": "Das Unternehmen gab die Zahlen erst nach Börsenschluss bekannt.",
+  "gsw": "bekanntgää",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternäme hät d Zaale erscht nach em Börseschluss bekanntgää."
+ },
+ {
+  "id": 4969,
+  "de": "enthüllen",
+  "tr": "ifşa etmek, ortaya çıkarmak",
+  "deBeispiel": "Zwei Reporter enthüllten die Verbindungen zwischen Firma und Behörde.",
+  "gsw": "enthülle",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwäi Reporter händ d Verbindige zwüsche Firma und Behörde chöne enthülle."
+ },
+ {
+  "id": 4970,
+  "de": "aufdecken",
+  "tr": "açığa çıkarmak, deşifre etmek",
+  "deBeispiel": "Die Recherche deckte gravierende Mängel in der Aufsicht auf.",
+  "gsw": "ufdecke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Recherche hät gravierendi Mängel i de Uufsicht chöne ufdecke."
+ },
+ {
+  "id": 4971,
+  "de": "befragen",
+  "tr": "soru sormak, görüşünü almak",
+  "deBeispiel": "Für die Studie wurden zweitausend Menschen telefonisch befragt.",
+  "gsw": "befrage",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Studie hät mer zwäitusig Mänsche telefonisch befragt."
+ },
+ {
+  "id": 4972,
+  "de": "zitieren",
+  "tr": "alıntı yapmak, aktarmak",
+  "deBeispiel": "Die Zeitung zitiert einen Mitarbeiter, der anonym bleiben möchte.",
+  "gsw": "zitiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ziitig zitiert en Mitarbeiter, wo anonym wott bliibe."
+ },
+ {
+  "id": 4973,
+  "de": "verfassen",
+  "tr": "kaleme almak, yazmak",
+  "deBeispiel": "Sie hat den Bericht über die Sitzung in zwei Stunden verfasst.",
+  "gsw": "verfasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät de Bricht über d Sitzig i zwäi Schtund verfasst."
+ },
+ {
+  "id": 4974,
+  "de": "redigieren",
+  "tr": "redakte etmek, metni düzeltmek",
+  "deBeispiel": "Der Text muss vor dem Druck noch einmal redigiert werden.",
+  "gsw": "redigiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Text mues mer vor em Druck no einisch redigiere."
+ },
+ {
+  "id": 4975,
+  "de": "verschweigen",
+  "tr": "gizlemek, söylememek",
+  "deBeispiel": "Die Behörde hat wichtige Details über den Unfall verschwiegen.",
+  "gsw": "verschwiige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde hät wichtigi Detail über de Unfall verschwige."
+ },
+ {
+  "id": 4976,
+  "de": "dementieren",
+  "tr": "yalanlamak, tekzip etmek",
+  "deBeispiel": "Der Sprecher dementierte die Meldung noch am selben Abend.",
+  "gsw": "dementiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schprächer hät d Mäldig no am gliiche Aabig dementiert."
+ },
+ {
+  "id": 4977,
+  "de": "andeuten",
+  "tr": "ima etmek, üstü kapalı belirtmek",
+  "deBeispiel": "In dem Interview deutete sie einen baldigen Wechsel an.",
+  "gsw": "aadüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Interview hät si en balde Wächsel aadüütet."
+ },
+ {
+  "id": 4978,
+  "de": "verlinken",
+  "tr": "bağlantı vermek, link vermek",
+  "deBeispiel": "Bitte verlinken Sie die Originalquelle unter dem Artikel.",
+  "gsw": "verlinke",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte tüend Sie d Originalquelle under em Artikel verlinke."
+ },
+ {
+  "id": 4979,
+  "de": "schildern",
+  "tr": "anlatmak, betimlemek",
+  "deBeispiel": "Augenzeugen schilderten den Ablauf des Abends sehr unterschiedlich.",
+  "gsw": "schildere",
+  "gswArtikel": null,
+  "gswBeispiel": "Augezüüge händ de Ablauf vom Aabig sehr underschidlich gschilderet."
+ },
+ {
+  "id": 4980,
+  "de": "wiedergeben",
+  "tr": "aktarmak, yansıtmak",
+  "deBeispiel": "Der Artikel gibt die Aussagen des Ministers nur verkürzt wieder.",
+  "gsw": "widergää",
+  "gswArtikel": null,
+  "gswBeispiel": "De Artikel tuet d Uussage vom Minischter nur verchürzt widergää."
+ },
+ {
+  "id": 4981,
+  "de": "sich austauschen",
+  "tr": "fikir alışverişinde bulunmak",
+  "deBeispiel": "In dem Forum tauschen sich Betroffene über ihre Erfahrungen aus.",
+  "gsw": "sich uustuusche",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Forum tüend sich Betroffeni über iri Erfaarige uustuusche."
+ },
+ {
+  "id": 4982,
+  "de": "sich äußern",
+  "tr": "görüş bildirmek, açıklama yapmak",
+  "deBeispiel": "Zu den Vorwürfen wollte sich der Verlag bisher nicht äußern.",
+  "gsw": "sich üssere",
+  "gswArtikel": null,
+  "gswBeispiel": "Zu de Vorwürf hät sich de Verlag bishär nöd welle üssere."
+ },
+ {
+  "id": 4983,
+  "de": "erwidern",
+  "tr": "karşılık vermek, yanıtlamak",
+  "deBeispiel": "Auf die Kritik erwiderte er nur mit einem knappen Satz.",
+  "gsw": "erwidere",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf d Kritik hät er nur mit eme knappe Satz erwideret."
+ },
+ {
+  "id": 4984,
+  "de": "aufgreifen",
+  "tr": "ele almak, gündeme taşımak",
+  "deBeispiel": "Mehrere Sender griffen das Thema am nächsten Morgen auf.",
+  "gsw": "ufgriife",
+  "gswArtikel": null,
+  "gswBeispiel": "Mehreri Sänder händ s Thema am nächschte Morge ufgriffe."
+ },
+ {
+  "id": 4985,
+  "de": "kursieren",
+  "tr": "dolaşmak, elden ele yayılmak",
+  "deBeispiel": "Seit Tagen kursiert ein Video von der Sitzung im Internet.",
+  "gsw": "kursiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Siit Täg kursiert es Video vo de Sitzig im Internet."
+ },
+ {
+  "id": 4986,
+  "de": "journalistisch",
+  "tr": "gazetecilikle ilgili, gazetecilik açısından",
+  "deBeispiel": "Der Beitrag entspricht nicht den journalistischen Standards des Hauses.",
+  "gsw": "journalistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Biitrag entschpricht nöd de journalistische Schtandards vom Huus."
+ },
+ {
+  "id": 4987,
+  "de": "sachlich",
+  "tr": "nesnel, ölçülü",
+  "deBeispiel": "Trotz der Aufregung blieb die Diskussion erstaunlich sachlich.",
+  "gsw": "sachlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Trotz de Uufregig isch d Diskussion erschtuunlich sachlich blibe."
+ },
+ {
+  "id": 4988,
+  "de": "reißerisch",
+  "tr": "abartılı, sansasyonel",
+  "deBeispiel": "Die reißerische Überschrift passte kaum zum nüchternen Inhalt.",
+  "gsw": "riisserisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Di riisserisch Überschrift hät chuum zum nüechtige Inhalt passt."
+ },
+ {
+  "id": 4989,
+  "de": "anschaulich",
+  "tr": "somut, canlı, anlaşılır",
+  "deBeispiel": "Die Grafik erklärt den Zusammenhang sehr anschaulich.",
+  "gsw": "aaschaulich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Grafik erklärt de Zämehang sehr aaschaulich."
+ },
+ {
+  "id": 4990,
+  "de": "vertraulich",
+  "tr": "gizli, mahrem",
+  "deBeispiel": "Diese Unterlagen sind vertraulich und dürfen nicht weitergegeben werden.",
+  "gsw": "vertraulich",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Underlaage sind vertraulich und dörfed nöd wiitergää werde."
+ },
+ {
+  "id": 4991,
+  "de": "anonym",
+  "tr": "isimsiz, kimliği gizli",
+  "deBeispiel": "Der Hinweis kam von einem anonym gebliebenen Mitarbeiter.",
+  "gsw": "anonym",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hiiwiis isch vo eme anonym bliibene Mitarbeiter cho."
+ },
+ {
+  "id": 4992,
+  "de": "wörtlich",
+  "tr": "kelimesi kelimesine, birebir",
+  "deBeispiel": "Die Passage wurde wörtlich aus dem Protokoll übernommen.",
+  "gsw": "wörtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Passage isch wörtlich us em Protokoll übernoo worde."
+ },
+ {
+  "id": 4993,
+  "de": "sinngemäß",
+  "tr": "anlamca, mealen",
+  "deBeispiel": "Er sagte sinngemäß, dass die Entscheidung längst gefallen sei.",
+  "gsw": "sinngmäss",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sinngmäss gsäit, dass d Entschäidig scho lang gfalle seg."
+ },
+ {
+  "id": 4994,
+  "de": "nonverbal",
+  "tr": "sözsüz, sözel olmayan",
+  "deBeispiel": "Ein großer Teil unserer Verständigung läuft nonverbal ab.",
+  "gsw": "nonverbal",
+  "gswArtikel": null,
+  "gswBeispiel": "En grosse Teil vo üsere Verschtändigig lauft nonverbal ab."
+ },
+ {
+  "id": 4995,
+  "de": "tagesaktuell",
+  "tr": "güncel, o güne ait",
+  "deBeispiel": "Die App liefert tagesaktuelle Meldungen aus der ganzen Region.",
+  "gsw": "tagesaktuell",
+  "gswArtikel": null,
+  "gswBeispiel": "D App liferet tagesaktuelli Mäldige us de ganze Region."
+ },
+ {
+  "id": 4996,
+  "de": "der Aufenthaltstitel",
+  "tr": "oturum belgesi, ikamet izni",
+  "deBeispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
+  "gsw": "Ufenthaltstitel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni gültige Ufenthaltstitel dörfsch du da nöd schaffe."
+ },
+ {
+  "id": 4997,
+  "de": "die Niederlassungserlaubnis",
+  "tr": "süresiz oturum izni, yerleşim izni",
+  "deBeispiel": "Nach fünf Jahren kann sie eine Niederlassungserlaubnis bekommen.",
+  "gsw": "Niderlassigserlaubnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach füf Jaar cha si e Niderlassigserlaubnis übercho."
+ },
+ {
+  "id": 4998,
+  "de": "die Einbürgerung",
+  "tr": "vatandaşlığa geçiş, vatandaşlığa alınma",
+  "deBeispiel": "Die Einbürgerung wurde nach acht Monaten Prüfung genehmigt.",
+  "gsw": "Iibürgerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iibürgerig isch nach acht Mönet Prüefig gnehmigt worde."
+ },
+ {
+  "id": 4999,
+  "de": "die Ausländerbehörde",
+  "tr": "yabancılar dairesi",
+  "deBeispiel": "Die Ausländerbehörde hat mir einen Termin im Mai gegeben.",
+  "gsw": "Uusländerbehörde",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uusländerbehörde hät mer en Termin im Mai gää."
+ },
+ {
+  "id": 5000,
+  "de": "der Integrationskurs",
+  "tr": "uyum kursu",
+  "deBeispiel": "Der Integrationskurs endet mit einer schriftlichen und einer mündlichen Prüfung.",
+  "gsw": "Integrationskurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Integrationskurs endet mit ere schriftliche und ere mündliche Prüefig."
+ },
+ {
+  "id": 5001,
+  "de": "die Anerkennung",
+  "tr": "tanınma, denklik",
+  "deBeispiel": "Die Anerkennung ihres Diploms dauerte fast ein Jahr.",
+  "gsw": "Aaerkennig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aaerkennig vo irem Diplom hät fascht es Jaar duuret."
+ },
+ {
+  "id": 5002,
+  "de": "die Gleichwertigkeit",
+  "tr": "denklik, eşdeğerlik",
+  "deBeispiel": "Das Amt prüft die Gleichwertigkeit des ausländischen Berufsabschlusses.",
+  "gsw": "Gliichwärtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Amt prüeft d Gliichwärtigkeit vom uusländische Bruefsabschluss."
+ },
+ {
+  "id": 5003,
+  "de": "der Familiennachzug",
+  "tr": "aile birleşimi",
+  "deBeispiel": "Beim Familiennachzug muss der Lebensunterhalt gesichert sein.",
+  "gsw": "Familienachzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim Familienachzug mues de Läbesunderhalt gsicheret sii."
+ },
+ {
+  "id": 5004,
+  "de": "der Ablehnungsbescheid",
+  "tr": "ret kararı, olumsuz karar yazısı",
+  "deBeispiel": "Gegen den Ablehnungsbescheid kann man innerhalb eines Monats klagen.",
+  "gsw": "Ablehnigsbschäid",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gäge de Ablehnigsbschäid cha mer innerhalb vomene Monet chlage."
+ },
+ {
+  "id": 5005,
+  "de": "die Sperrfrist",
+  "tr": "yasak süresi",
+  "deBeispiel": "Nach der Ausweisung gilt eine Sperrfrist von drei Jahren.",
+  "gsw": "Schperrfrischt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Uuswiisig gilt e Schperrfrischt vo drei Jaar."
+ },
+ {
+  "id": 5006,
+  "de": "die Geburtsurkunde",
+  "tr": "doğum belgesi",
+  "deBeispiel": "Bitte bringen Sie die Geburtsurkunde Ihres Kindes im Original mit.",
+  "gsw": "Geburtsurkunde",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte bringed Sie d Geburtsurkunde vo Irem Chind im Original mit."
+ },
+ {
+  "id": 5007,
+  "de": "das Führungszeugnis",
+  "tr": "adli sicil kaydı",
+  "deBeispiel": "Für die Einbürgerung wird ein aktuelles Führungszeugnis verlangt.",
+  "gsw": "Füehrigszüügnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für d Iibürgerig wird es aktuells Füehrigszüügnis verlangt."
+ },
+ {
+  "id": 5008,
+  "de": "der Lebensunterhalt",
+  "tr": "geçim, geçimini sağlama",
+  "deBeispiel": "Sie muss ihren Lebensunterhalt ohne staatliche Hilfe bestreiten.",
+  "gsw": "Läbesunderhalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si mues ire Läbesunderhalt ooni schtaatlichi Hilf beschtriite."
+ },
+ {
+  "id": 5009,
+  "de": "die Krankenversicherung",
+  "tr": "sağlık sigortası",
+  "deBeispiel": "Ohne Krankenversicherung wird der Antrag gar nicht erst geprüft.",
+  "gsw": "Chrankeversicherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Chrankeversicherig wird de Aatrag gar nöd erscht prüeft."
+ },
+ {
+  "id": 5010,
+  "de": "das Asylverfahren",
+  "tr": "iltica süreci, sığınma işlemi",
+  "deBeispiel": "Das Asylverfahren zieht sich seit mehr als zwei Jahren hin.",
+  "gsw": "Asylverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Asylverfaare zieht sich siit mee als zwäi Jaar häre."
+ },
+ {
+  "id": 5011,
+  "de": "der Flüchtling",
+  "tr": "mülteci",
+  "deBeispiel": "Die Stadt hat im vergangenen Jahr dreihundert Flüchtlinge aufgenommen.",
+  "gsw": "Flüchtling",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Schtadt hät im vergangene Jaar drüühundert Flüchtling ufgnoo."
+ },
+ {
+  "id": 5012,
+  "de": "der Hochschulabschluss",
+  "tr": "üniversite diploması, yükseköğrenim derecesi",
+  "deBeispiel": "Für dieses Visum ist ein anerkannter Hochschulabschluss Bedingung.",
+  "gsw": "Hochschuelabschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für das Visum isch en aaerkannte Hochschuelabschluss Bedingig."
+ },
+ {
+  "id": 5013,
+  "de": "die Teilhabe",
+  "tr": "katılım, pay alma",
+  "deBeispiel": "Sprache ist der Schlüssel zur gesellschaftlichen Teilhabe.",
+  "gsw": "Teilhaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schpraach isch de Schlüssel zur gsellschaftliche Teilhaab."
+ },
+ {
+  "id": 5014,
+  "de": "die Terminvergabe",
+  "tr": "randevu verme, randevu dağıtımı",
+  "deBeispiel": "Die Terminvergabe läuft inzwischen nur noch online.",
+  "gsw": "Terminvergaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Terminvergaab lauft inzwüsche nur no online."
+ },
+ {
+  "id": 5015,
+  "de": "der Reisepass",
+  "tr": "pasaport",
+  "deBeispiel": "Mein Reisepass läuft in drei Monaten ab.",
+  "gsw": "Räisepass",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Räisepass lauft i drei Mönet ab."
+ },
+ {
+  "id": 5016,
+  "de": "die Verpflichtungserklärung",
+  "tr": "taahhütname, masrafları üstlenme beyanı",
+  "deBeispiel": "Mein Onkel hat für den Besuch eine Verpflichtungserklärung unterschrieben.",
+  "gsw": "Verpflichtigserklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Unkel hät für de Bsuech e Verpflichtigserklärig underschribe."
+ },
+ {
+  "id": 5017,
+  "de": "das Bürgerbüro",
+  "tr": "vatandaş hizmetleri bürosu",
+  "deBeispiel": "Im Bürgerbüro kannst du deine neue Adresse anmelden.",
+  "gsw": "Bürgerbüro",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Bürgerbüro chasch du dini nöi Adrässe aamälde."
+ },
+ {
+  "id": 5018,
+  "de": "der Zuzug",
+  "tr": "başka yerden gelip yerleşme, göç akını",
+  "deBeispiel": "Der starke Zuzug junger Familien verändert das Viertel spürbar.",
+  "gsw": "Zuezug",
+  "gswArtikel": "de",
+  "gswBeispiel": "De schtarch Zuezug vo junge Familie veränderet s Quartier schpürbar."
+ },
+ {
+  "id": 5019,
+  "de": "die Erwerbstätigkeit",
+  "tr": "gelir getiren çalışma, iş hayatı",
+  "deBeispiel": "Eine selbstständige Erwerbstätigkeit ist mit diesem Titel nicht gestattet.",
+  "gsw": "Erwärbstätigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "E sälbschtändigi Erwärbstätigkeit isch mit dem Titel nöd erlaubt."
+ },
+ {
+  "id": 5020,
+  "de": "das Bleiberecht",
+  "tr": "kalma hakkı",
+  "deBeispiel": "Die Familie kämpft seit Jahren um ein sicheres Bleiberecht.",
+  "gsw": "Bliiberächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Familie kämpft siit Jaare um es sicheres Bliiberächt."
+ },
+ {
+  "id": 5021,
+  "de": "der Härtefall",
+  "tr": "istisnai durum, mağduriyet hâli",
+  "deBeispiel": "In einem Härtefall kann die Kommission eine Ausnahme empfehlen.",
+  "gsw": "Härtefall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Imene Härtefall cha d Kommission e Uusnaam empfäle."
+ },
+ {
+  "id": 5022,
+  "de": "die Sprachkenntnisse",
+  "tr": "dil becerileri, dil düzeyi",
+  "deBeispiel": "Ihre Sprachkenntnisse reichen für den Beruf längst aus.",
+  "gsw": "Schpraachkenntnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Schpraachkenntnis länged für de Bruef scho lang uus."
+ },
+ {
+  "id": 5023,
+  "de": "die Niveaustufe",
+  "tr": "seviye kademesi, dil düzeyi",
+  "deBeispiel": "Für die Ausbildung wird mindestens die Niveaustufe B1 verlangt.",
+  "gsw": "Niveauschtuef",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Uusbildig wird mindeschtens d Niveauschtuef B1 verlangt."
+ },
+ {
+  "id": 5024,
+  "de": "die Beratungsstelle",
+  "tr": "danışma merkezi",
+  "deBeispiel": "Die Beratungsstelle hilft kostenlos beim Ausfüllen der Formulare.",
+  "gsw": "Beratigsschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Beratigsschtell hilft gratis bim Uusfülle vo de Formular."
+ },
+ {
+  "id": 5025,
+  "de": "das Bundesamt",
+  "tr": "federal daire, federal kurum",
+  "deBeispiel": "Das zuständige Bundesamt entscheidet über den Antrag.",
+  "gsw": "Bundesamt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S zueschtändig Bundesamt entschäidet über de Aatrag."
+ },
+ {
+  "id": 5026,
+  "de": "die Herkunftssprache",
+  "tr": "köken dili, ana dil",
+  "deBeispiel": "Viele Kinder verlieren ihre Herkunftssprache schon in der Grundschule.",
+  "gsw": "Herkunftsschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili Chind verlüüred iri Herkunftsschpraach scho i de Primarschuel."
+ },
+ {
+  "id": 5027,
+  "de": "die Doppelstaatsangehörigkeit",
+  "tr": "çifte vatandaşlık",
+  "deBeispiel": "Seit der Reform ist die Doppelstaatsangehörigkeit deutlich einfacher geworden.",
+  "gsw": "Doppelschtaatsaagehörigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Siit de Reform isch d Doppelschtaatsaagehörigkeit düütlich eifacher worde."
+ },
+ {
+  "id": 5028,
+  "de": "das Aufnahmeland",
+  "tr": "kabul eden ülke, göç alan ülke",
+  "deBeispiel": "Das Aufnahmeland trägt die Kosten der ersten Unterbringung.",
+  "gsw": "Uufnaamland",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Uufnaamland trait d Chöschte vo de erschte Underbringig."
+ },
+ {
+  "id": 5029,
+  "de": "die Wartezeit",
+  "tr": "bekleme süresi",
+  "deBeispiel": "Die Wartezeit für einen Termin beträgt derzeit vier Monate.",
+  "gsw": "Wartziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wartziit für en Termin beträgt momentan vier Mönet."
+ },
+ {
+  "id": 5030,
+  "de": "die Sozialleistung",
+  "tr": "sosyal yardım, sosyal ödenek",
+  "deBeispiel": "Wer Sozialleistungen bezieht, hat es beim Familiennachzug schwerer.",
+  "gsw": "Sozialläischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer Sozialläischtige bezieht, häts bim Familienachzug schwerer."
+ },
+ {
+  "id": 5031,
+  "de": "der Arbeitsmarktzugang",
+  "tr": "iş piyasasına erişim",
+  "deBeispiel": "Nach drei Monaten bekommen sie einen freien Arbeitsmarktzugang.",
+  "gsw": "Arbetsmarktzuegang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach drei Mönet überchömed si en freie Arbetsmarktzuegang."
+ },
+ {
+  "id": 5032,
+  "de": "der Anpassungslehrgang",
+  "tr": "meslekî uyum eğitimi, tamamlama kursu",
+  "deBeispiel": "Die Ärztin muss noch einen Anpassungslehrgang im Krankenhaus machen.",
+  "gsw": "Aapassigsleergang",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Ärztin mues no en Aapassigsleergang im Schpital mache."
+ },
+ {
+  "id": 5033,
+  "de": "die Auslandsvertretung",
+  "tr": "yurt dışı temsilciliği",
+  "deBeispiel": "Den Antrag stellt man bei der deutschen Auslandsvertretung im Heimatland.",
+  "gsw": "Uuslandsverträtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aatrag schtellt mer bi de tüütsche Uuslandsverträtig im Heimatland."
+ },
+ {
+  "id": 5034,
+  "de": "die Willkommenskultur",
+  "tr": "karşılama kültürü, kucaklayıcı tutum",
+  "deBeispiel": "Von der viel gelobten Willkommenskultur ist wenig übrig geblieben.",
+  "gsw": "Willkommenskultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vo de vill globte Willkommenskultur isch weni übrigblibe."
+ },
+ {
+  "id": 5035,
+  "de": "die Parallelgesellschaft",
+  "tr": "paralel toplum",
+  "deBeispiel": "Über angebliche Parallelgesellschaften wird oft ohne Belege gestritten.",
+  "gsw": "Parallelgsellschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über aagebligi Parallelgsellschafte wird oft ooni Beleg gschtritte."
+ },
+ {
+  "id": 5036,
+  "de": "der Notar",
+  "tr": "noter",
+  "deBeispiel": "Die Vollmacht muss ein Notar bestätigen.",
+  "gsw": "Notar",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Vollmacht mues en Notar beschtätige."
+ },
+ {
+  "id": 5037,
+  "de": "die Nachqualifizierung",
+  "tr": "tamamlayıcı nitelik kazandırma, ek eğitim",
+  "deBeispiel": "Ohne Nachqualifizierung darf er den Beruf hier nicht ausüben.",
+  "gsw": "Nachqualifizierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Nachqualifizierig dörf er de Bruef da nöd uusüebe."
+ },
+ {
+  "id": 5038,
+  "de": "die Zuwanderung",
+  "tr": "göç alma, dışarıdan göç",
+  "deBeispiel": "Die Wirtschaft ist auf gezielte Zuwanderung dringend angewiesen.",
+  "gsw": "Zuewanderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wirtschaft isch uf gezielti Zuewanderig dringend aagwise."
+ },
+ {
+  "id": 5039,
+  "de": "die Prüfungsgebühr",
+  "tr": "sınav ücreti",
+  "deBeispiel": "Die Prüfungsgebühr muss vor dem Termin überwiesen werden.",
+  "gsw": "Prüefigsgebühr",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Prüefigsgebühr mues mer vor em Termin überwise."
+ },
+ {
+  "id": 5040,
+  "de": "erteilen",
+  "tr": "vermek, tanımak (izin, belge)",
+  "deBeispiel": "Die Arbeitserlaubnis wurde ihm für zwei Jahre erteilt.",
+  "gsw": "erteile",
+  "gswArtikel": null,
+  "gswBeispiel": "D Arbetserlaubnis isch em für zwäi Jaar erteilt worde."
+ },
+ {
+  "id": 5041,
+  "de": "beglaubigen",
+  "tr": "tasdik etmek, onaylamak (suret, imza)",
+  "deBeispiel": "Lass die Kopie deines Zeugnisses im Rathaus beglaubigen.",
+  "gsw": "beglaubige",
+  "gswArtikel": null,
+  "gswBeispiel": "Laa d Kopie vo dim Züügnis im Rathuus beglaubige."
+ },
+ {
+  "id": 5042,
+  "de": "bearbeiten",
+  "tr": "işleme almak, üzerinde çalışmak",
+  "deBeispiel": "Mein Antrag wird seit sechs Wochen bearbeitet.",
+  "gsw": "bearbeite",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Aatrag wird siit sechs Wuche bearbeitet."
+ },
+ {
+  "id": 5043,
+  "de": "entziehen",
+  "tr": "geri almak, elinden almak",
+  "deBeispiel": "Bei falschen Angaben kann man ihm den Titel entziehen.",
+  "gsw": "entzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi falsche Aagaabe cha mer em de Titel entzie."
+ },
+ {
+  "id": 5044,
+  "de": "nachreichen",
+  "tr": "sonradan teslim etmek, eksiği tamamlamak",
+  "deBeispiel": "Die fehlende Bescheinigung kannst du bis Freitag nachreichen.",
+  "gsw": "nachreiche",
+  "gswArtikel": null,
+  "gswBeispiel": "D fehlend Bschäinigig chasch du bis am Friitig nachreiche."
+ },
+ {
+  "id": 5045,
+  "de": "zurückweisen",
+  "tr": "geri çevirmek, reddetmek",
+  "deBeispiel": "Der Widerspruch wurde als unbegründet zurückgewiesen.",
+  "gsw": "zrugwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "De Widerschpruch isch als unbegründet zrugwise worde."
+ },
+ {
+  "id": 5046,
+  "de": "gewähren",
+  "tr": "tanımak, sağlamak (hak, izin)",
+  "deBeispiel": "Man hat der Familie vorläufigen Schutz gewährt.",
+  "gsw": "gewäre",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer hät de Familie vorläufige Schutz gewärt."
+ },
+ {
+  "id": 5047,
+  "de": "bescheinigen",
+  "tr": "belgelemek, yazılı olarak onaylamak",
+  "deBeispiel": "Der Kursträger bescheinigt dir die regelmäßige Teilnahme.",
+  "gsw": "bschiinige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kursträger bschiinigt dir di regelmässig Teilnaam."
+ },
+ {
+  "id": 5048,
+  "de": "dulden",
+  "tr": "hoş görmek, geçici olarak izin vermek",
+  "deBeispiel": "Sein Aufenthalt wird vorerst nur geduldet.",
+  "gsw": "dulde",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Ufenthalt wird vorerscht nu duldet."
+ },
+ {
+  "id": 5049,
+  "de": "vorsprechen",
+  "tr": "bizzat gitmek, kuruma başvurmak",
+  "deBeispiel": "Sie sollen nächste Woche persönlich bei uns vorsprechen.",
+  "gsw": "vorschpräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Si sölled nächscht Wuche persönlich bi eus vorschpräche."
+ },
+ {
+  "id": 5050,
+  "de": "aussetzen",
+  "tr": "askıya almak, durdurmak",
+  "deBeispiel": "Das Gericht hat die Abschiebung vorerst ausgesetzt.",
+  "gsw": "uussetze",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät d Abschiebig vorerscht uusgsetzt."
+ },
+ {
+  "id": 5051,
+  "de": "versagen",
+  "tr": "esirgemek, vermemek; başarısız olmak",
+  "deBeispiel": "Die Zustimmung wurde ihm ohne nähere Begründung versagt.",
+  "gsw": "versage",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zueschtimmig isch em ohni nöcheri Begründig versagt worde."
+ },
+ {
+  "id": 5052,
+  "de": "umschreiben",
+  "tr": "(belgeyi) değiştirmek, yenisine çevirmek; başka ada geçirmek",
+  "deBeispiel": "Den ausländischen Führerschein kann man hier umschreiben lassen.",
+  "gsw": "umschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "De uusländisch Füererusweis cha mer da umschriibe laa."
+ },
+ {
+  "id": 5053,
+  "de": "beifügen",
+  "tr": "eklemek, iliştirmek",
+  "deBeispiel": "Bitte fügen Sie dem Schreiben eine Kopie des Passes bei.",
+  "gsw": "biifüege",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte tüend Si em Schriibe e Kopie vom Pass biifüege."
+ },
+ {
+  "id": 5054,
+  "de": "abstammen",
+  "tr": "soyundan gelmek, kökeni olmak",
+  "deBeispiel": "Wer von deutschen Eltern abstammt, erwirbt die Staatsbürgerschaft automatisch.",
+  "gsw": "abschtamme",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer vo tüütsche Eltere abschtammt, überchunnt d Schtaatsbürgerschaft automatisch."
+ },
+ {
+  "id": 5055,
+  "de": "einreisen",
+  "tr": "ülkeye girmek",
+  "deBeispiel": "Mit diesem Dokument darfst du mehrmals einreisen.",
+  "gsw": "iireise",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit dem Dokumänt dörfsch du mehrmaals iireise.",
+  "ayniLehce": [
+   "Einreise (B2)"
+  ]
+ },
+ {
+  "id": 5056,
+  "de": "rechtmäßig",
+  "tr": "hukuka uygun, yasal",
+  "deBeispiel": "Sie hält sich seit sieben Jahren rechtmäßig im Land auf.",
+  "gsw": "rächtmässig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si haltet sich sit sibe Jaar rächtmässig im Land uuf."
+ },
+ {
+  "id": 5057,
+  "de": "unerlaubt",
+  "tr": "izinsiz, yasak olan",
+  "deBeispiel": "Die unerlaubte Beschäftigung kann ein hohes Bußgeld kosten.",
+  "gsw": "unerlaubt",
+  "gswArtikel": null,
+  "gswBeispiel": "Di unerlaubti Bschäftigung cha es hoochs Buessgäld choschte."
+ },
+ {
+  "id": 5058,
+  "de": "staatenlos",
+  "tr": "vatansız",
+  "deBeispiel": "Nach dem Verlust des Passes war er jahrelang staatenlos.",
+  "gsw": "schtaatelos",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Verluscht vom Pass isch er jaarelang schtaatelos gsi."
+ },
+ {
+  "id": 5059,
+  "de": "visumpflichtig",
+  "tr": "vizeye tabi",
+  "deBeispiel": "Für dieses Land sind wir weiterhin visumpflichtig.",
+  "gsw": "visumpflichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Für das Land sind mir witerhin visumpflichtig."
+ },
+ {
+  "id": 5060,
+  "de": "ordnungsgemäß",
+  "tr": "usulüne uygun, düzgün biçimde",
+  "deBeispiel": "Der Wohnsitz war von Anfang an ordnungsgemäß gemeldet.",
+  "gsw": "ordnigsgmäss",
+  "gswArtikel": null,
+  "gswBeispiel": "De Wonsitz isch vo Aafang a ordnigsgmäss gmäldet gsi."
+ },
+ {
+  "id": 5061,
+  "de": "gegebenenfalls",
+  "tr": "gerektiğinde, duruma göre",
+  "deBeispiel": "Weitere Papiere fordern wir gegebenenfalls schriftlich bei Ihnen an.",
+  "gsw": "gegebenefalls",
+  "gswArtikel": null,
+  "gswBeispiel": "Wiiteri Papier verlanged mir gegebenefalls schriftlich bi Ine."
+ },
+ {
+  "id": 5062,
+  "de": "mehrsprachig",
+  "tr": "çok dilli",
+  "deBeispiel": "Die Beratung wird mehrsprachig angeboten, unter anderem auf Türkisch.",
+  "gsw": "mehrschpraachig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Beratig wird mehrschpraachig aabote, under anderem uf Türkisch."
+ },
+ {
+  "id": 5063,
+  "de": "vorübergehend",
+  "tr": "geçici olarak, kısa süreli",
+  "deBeispiel": "Er darf vorübergehend bei seiner Schwester wohnen.",
+  "gsw": "vorüberghend",
+  "gswArtikel": null,
+  "gswBeispiel": "Er dörf vorüberghend bi siner Schwöschter wone."
+ },
+ {
+  "id": 5064,
+  "de": "der Niederschlag",
+  "tr": "yağış",
+  "deBeispiel": "Im Süden wird in den nächsten Tagen kräftiger Niederschlag erwartet.",
+  "gsw": "Niiderschlaag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Süde wird i de nöchschte Täg chräftige Niiderschlaag erwartet."
+ },
+ {
+  "id": 5065,
+  "de": "der Hagel",
+  "tr": "dolu",
+  "deBeispiel": "Der Hagel hat die jungen Pflanzen im Beet völlig zerschlagen.",
+  "gsw": "Hagel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Hagel hät di junge Pflanze im Beet völlig verschlage."
+ },
+ {
+  "id": 5066,
+  "de": "der Frost",
+  "tr": "don, ayaz",
+  "deBeispiel": "Nach dem späten Frost trugen die Obstbäume kaum Früchte.",
+  "gsw": "Froscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em schpaate Froscht händ d Obschtböim chuum Frücht treit."
+ },
+ {
+  "id": 5067,
+  "de": "das Tauwetter",
+  "tr": "karların erimesi, ılık hava",
+  "deBeispiel": "Das plötzliche Tauwetter ließ die Bäche im Tal anschwellen.",
+  "gsw": "Touwätter",
+  "gswArtikel": "s",
+  "gswBeispiel": "S plötzliche Touwätter hät d Bäch im Taal la aaschwelle."
+ },
+ {
+  "id": 5068,
+  "de": "der Windstoß",
+  "tr": "ani rüzgâr, rüzgâr hamlesi",
+  "deBeispiel": "Ein heftiger Windstoß riss den Sonnenschirm von der Terrasse.",
+  "gsw": "Windschtoss",
+  "gswArtikel": "de",
+  "gswBeispiel": "En heftige Windschtoss hät de Sunneschirm vo de Terrasse grisse."
+ },
+ {
+  "id": 5069,
+  "de": "die Luftfeuchtigkeit",
+  "tr": "nem, hava nemi",
+  "deBeispiel": "Bei hoher Luftfeuchtigkeit wirkt die Hitze noch drückender.",
+  "gsw": "Luftfüechtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi hocher Luftfüechtigkeit wirkt d Hitz no drückender."
+ },
+ {
+  "id": 5070,
+  "de": "die Temperaturschwankung",
+  "tr": "sıcaklık değişimi, ısı oynaması",
+  "deBeispiel": "Starke Temperaturschwankungen setzen den empfindlichen Wurzeln zu.",
+  "gsw": "Temperaturschwankig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtarchi Temperaturschwankige setzed de empfindliche Wurzle zue."
+ },
+ {
+  "id": 5071,
+  "de": "das Unwetter",
+  "tr": "fırtına, sağanaklı kötü hava",
+  "deBeispiel": "Das Unwetter legte am Abend den halben Bahnverkehr lahm.",
+  "gsw": "Unwätter",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Unwätter hät am Aabig de halb Baanverchehr lahmgleit."
+ },
+ {
+  "id": 5072,
+  "de": "die Überschwemmung",
+  "tr": "sel, su baskını",
+  "deBeispiel": "Nach tagelangem Regen kam es im Tal zu schweren Überschwemmungen.",
+  "gsw": "Überschwemmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach tagelangem Räge isch es im Taal zu schwäre Überschwemmige choo."
+ }
+]

@@ -1,0 +1,992 @@
+[
+ {
+  "id": 4853,
+  "de": "die Besetzung",
+  "tr": "oyuncu kadrosu, kadro",
+  "deBeispiel": "Mit dieser Besetzung hat das Theater einen echten Erfolg gelandet.",
+  "gsw": "Bsetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit dere Bsetzig hät s Theater en echte Erfolg glandet."
+ },
+ {
+  "id": 4854,
+  "de": "die Kulisse",
+  "tr": "dekor, sahne dekoru, fon",
+  "deBeispiel": "Die Kulissen für den zweiten Akt wurden in der Pause umgebaut.",
+  "gsw": "Kulisse",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kulisse für de zwäit Akt sind i de Pause umbaut worde."
+ },
+ {
+  "id": 4855,
+  "de": "die Premiere",
+  "tr": "gala, ilk gösterim, prömiyer",
+  "deBeispiel": "Zur Premiere kamen auch mehrere Kritiker aus dem Ausland.",
+  "gsw": "Premiere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zur Premiere sind au mehreri Kritiker us em Uusland cho."
+ },
+ {
+  "id": 4856,
+  "de": "der Beifall",
+  "tr": "alkış, beğeni",
+  "deBeispiel": "Nach dem letzten Lied hielt der Beifall minutenlang an.",
+  "gsw": "Bifall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em letschte Lied hät de Bifall minutelang aaghalte."
+ },
+ {
+  "id": 4857,
+  "de": "der Vorhang",
+  "tr": "perde (sahne)",
+  "deBeispiel": "Der Vorhang fiel, und das ganze Haus erhob sich.",
+  "gsw": "Vorhang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vorhang isch gfalle, und s ganz Huus isch ufgschtande."
+ },
+ {
+  "id": 4858,
+  "de": "das Gemälde",
+  "tr": "tablo, yağlıboya resim",
+  "deBeispiel": "Das Gemälde hängt seit über hundert Jahren in diesem Saal.",
+  "gsw": "Gmäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Gmäld hanget siit über hundert Jaar i dem Saal."
+ },
+ {
+  "id": 4859,
+  "de": "die Leinwand",
+  "tr": "tuval, perde (sinema)",
+  "deBeispiel": "Der Maler spannte eine neue Leinwand auf den hölzernen Rahmen.",
+  "gsw": "Liinwand",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Maaler hät e nöii Liinwand uf de hölzig Rahme gschpannt."
+ },
+ {
+  "id": 4860,
+  "de": "die Skulptur",
+  "tr": "heykel, yontu",
+  "deBeispiel": "Vor dem Rathaus steht eine Skulptur aus rostigem Stahl.",
+  "gsw": "Skulptur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor em Rathuus schtaat e Skulptur us roschtigem Schtaal."
+ },
+ {
+  "id": 4861,
+  "de": "die Sammlung",
+  "tr": "koleksiyon, derleme",
+  "deBeispiel": "Seine private Sammlung umfasst mehr als vierhundert Zeichnungen.",
+  "gsw": "Sammlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini privati Sammlig umfasst mee als vierhundert Zäichnige."
+ },
+ {
+  "id": 4862,
+  "de": "das Exponat",
+  "tr": "sergi eseri, sergilenen parça",
+  "deBeispiel": "Das wertvollste Exponat wird nur hinter Glas gezeigt.",
+  "gsw": "Exponat",
+  "gswArtikel": "s",
+  "gswBeispiel": "S wärtvollschte Exponat wird nur hinder Glaas zäigt."
+ },
+ {
+  "id": 4863,
+  "de": "das Kunstwerk",
+  "tr": "sanat eseri",
+  "deBeispiel": "Jedes Kunstwerk im Museum hat eine eigene Geschichte.",
+  "gsw": "Kunschtwärk",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jedes Kunschtwärk im Museum hät e äigeni Gschicht."
+ },
+ {
+  "id": 4864,
+  "de": "die Restaurierung",
+  "tr": "restorasyon, onarım",
+  "deBeispiel": "Die Restaurierung der alten Fresken dauert noch bis nächsten Herbst.",
+  "gsw": "Restaurierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Restaurierig vo de alte Freske duuret no bis nächschte Herbscht."
+ },
+ {
+  "id": 4865,
+  "de": "der Spielplan",
+  "tr": "oyun programı, repertuvar",
+  "deBeispiel": "Der neue Spielplan der Oper erscheint immer im Juni.",
+  "gsw": "Schpilplaan",
+  "gswArtikel": "de",
+  "gswBeispiel": "De nöi Schpilplaan vo de Oper erschiint immer im Juni."
+ },
+ {
+  "id": 4866,
+  "de": "der Komponist",
+  "tr": "besteci",
+  "deBeispiel": "Der Komponist schrieb die Musik eigens für diesen Film.",
+  "gsw": "Komponischt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Komponischt hät d Musig extra für de Film gschribe."
+ },
+ {
+  "id": 4867,
+  "de": "der Dirigent",
+  "tr": "orkestra şefi",
+  "deBeispiel": "Der Dirigent hob den Taktstock und der Saal wurde still.",
+  "gsw": "Dirigänt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dirigänt hät de Taktschtock ghobe und de Saal isch schtill worde."
+ },
+ {
+  "id": 4868,
+  "de": "die Melodie",
+  "tr": "ezgi, melodi",
+  "deBeispiel": "Diese Melodie geht mir seit gestern nicht mehr aus dem Kopf.",
+  "gsw": "Melodie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Melodie gaat mer siit geschter nüme us em Chopf."
+ },
+ {
+  "id": 4869,
+  "de": "der Rhythmus",
+  "tr": "ritim, tempo",
+  "deBeispiel": "Der Rhythmus des Stücks wechselt in der zweiten Hälfte.",
+  "gsw": "Rhythmus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rhythmus vom Schtuck wächslet i de zwäite Hälfti."
+ },
+ {
+  "id": 4870,
+  "de": "die Tournee",
+  "tr": "turne",
+  "deBeispiel": "Die Band geht im Frühjahr auf Tournee durch acht Länder.",
+  "gsw": "Tournee",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Band gaat im Früelig uf Tournee dur acht Länder."
+ },
+ {
+  "id": 4871,
+  "de": "das Theaterstück",
+  "tr": "tiyatro oyunu",
+  "deBeispiel": "Das Theaterstück behandelt den Alltag einer Familie nach dem Krieg.",
+  "gsw": "Theaterschtuck",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Theaterschtuck handlet vom Alltag vo ere Familie nach em Chrieg."
+ },
+ {
+  "id": 4872,
+  "de": "der Wettkampf",
+  "tr": "müsabaka, yarışma",
+  "deBeispiel": "Vor dem Wettkampf war sie so nervös wie nie zuvor.",
+  "gsw": "Wettkampf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vor em Wettkampf isch si so nervös gsi wie no nie."
+ },
+ {
+  "id": 4873,
+  "de": "das Turnier",
+  "tr": "turnuva",
+  "deBeispiel": "Das Turnier wird in diesem Jahr in drei Städten ausgetragen.",
+  "gsw": "Turnier",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Turnier wird das Jaar i drei Schtedt duregfüehrt."
+ },
+ {
+  "id": 4874,
+  "de": "die Meisterschaft",
+  "tr": "şampiyona, şampiyonluk",
+  "deBeispiel": "Nach zwölf Jahren hat der Klub endlich wieder die Meisterschaft geholt.",
+  "gsw": "Mäischterschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach zwölf Jaar hät de Klub ändlich wider d Mäischterschaft gholt."
+ },
+ {
+  "id": 4875,
+  "de": "die Niederlage",
+  "tr": "yenilgi, mağlubiyet",
+  "deBeispiel": "Die knappe Niederlage im Halbfinale hat alle sehr enttäuscht.",
+  "gsw": "Niderlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di knapp Niderlaag im Halbfinal hät alli sehr enttüüscht."
+ },
+ {
+  "id": 4876,
+  "de": "der Schiedsrichter",
+  "tr": "hakem",
+  "deBeispiel": "Der Schiedsrichter pfiff das Spiel drei Minuten früher ab.",
+  "gsw": "Schidsrichter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schidsrichter hät s Schpil drei Minute früener abpfiffe."
+ },
+ {
+  "id": 4877,
+  "de": "der Leistungssport",
+  "tr": "profesyonel spor, yüksek performans sporu",
+  "deBeispiel": "Im Leistungssport entscheiden oft nur wenige Hundertstelsekunden.",
+  "gsw": "Läischtigsschport",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Läischtigsschport entschäided oft nur wenigi Hundertschtelsekunde."
+ },
+ {
+  "id": 4878,
+  "de": "der Anhänger",
+  "tr": "taraftar, yandaş",
+  "deBeispiel": "Tausende Anhänger begleiteten die Mannschaft zum Auswärtsspiel.",
+  "gsw": "Aahänger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Tuusigi Aahänger händ d Mannschaft as Uuswärtsschpil begläitet."
+ },
+ {
+  "id": 4879,
+  "de": "die Tribüne",
+  "tr": "tribün",
+  "deBeispiel": "Auf der oberen Tribüne waren noch einige Plätze frei.",
+  "gsw": "Tribüne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de obere Tribüne sind no einigi Plätz frei gsi."
+ },
+ {
+  "id": 4880,
+  "de": "die Ausrüstung",
+  "tr": "donanım, ekipman, teçhizat",
+  "deBeispiel": "Ohne die richtige Ausrüstung sollte man nicht in die Berge gehen.",
+  "gsw": "Uusrüschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni di richtig Uusrüschtig sött mer nöd i d Bärg gaa."
+ },
+ {
+  "id": 4881,
+  "de": "der Brauch",
+  "tr": "gelenek, âdet",
+  "deBeispiel": "Dieser Brauch wird in der Region seit Jahrhunderten gepflegt.",
+  "gsw": "Bruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bruuch wird i de Region siit Jaarhundert pflegt."
+ },
+ {
+  "id": 4882,
+  "de": "das Volksfest",
+  "tr": "halk şenliği, panayır",
+  "deBeispiel": "Zum Volksfest im August kommen Besucher aus der ganzen Umgebung.",
+  "gsw": "Volksfäscht",
+  "gswArtikel": "s",
+  "gswBeispiel": "As Volksfäscht im Auguscht chömed Bsuecher us de ganze Umgäbig."
+ },
+ {
+  "id": 4883,
+  "de": "die Tracht",
+  "tr": "yöresel kıyafet, geleneksel giysi",
+  "deBeispiel": "Beim Umzug trugen viele Teilnehmer die Tracht ihrer Großeltern.",
+  "gsw": "Tracht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bim Umzug händ vili Teilnämer d Tracht vo ihrne Grosseltere träit."
+ },
+ {
+  "id": 4884,
+  "de": "das Reiseziel",
+  "tr": "gidilecek yer, seyahat hedefi",
+  "deBeispiel": "Als Reiseziel wählten sie diesmal eine kleine Insel im Norden.",
+  "gsw": "Räiseziil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Als Räiseziil händ si das Mal e chlini Insle im Norde uusgläse."
+ },
+ {
+  "id": 4885,
+  "de": "der Wanderweg",
+  "tr": "yürüyüş parkuru, doğa yolu",
+  "deBeispiel": "Der markierte Wanderweg führt am Fluss entlang bis zur Mühle.",
+  "gsw": "Wanderwääg",
+  "gswArtikel": "de",
+  "gswBeispiel": "De markiert Wanderwääg füehrt em Fluss naa bis zur Müli."
+ },
+ {
+  "id": 4886,
+  "de": "der Dokumentarfilm",
+  "tr": "belgesel",
+  "deBeispiel": "Der Dokumentarfilm zeigt das Leben in einem abgelegenen Bergdorf.",
+  "gsw": "Dokumentarfilm",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dokumentarfilm zäigt s Läbe imene abglägene Bärgdorf."
+ },
+ {
+  "id": 4887,
+  "de": "der Untertitel",
+  "tr": "altyazı",
+  "deBeispiel": "Den Film schauen wir lieber im Original mit deutschen Untertiteln.",
+  "gsw": "Undertitel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Film lueged mer lieber im Original mit tüütsche Undertitel."
+ },
+ {
+  "id": 4888,
+  "de": "der Kritiker",
+  "tr": "eleştirmen",
+  "deBeispiel": "Die Kritiker lobten vor allem die Kameraarbeit des jungen Regisseurs.",
+  "gsw": "Kritiker",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Kritiker händ vor allem d Kameraarbet vom junge Regisseur globt."
+ },
+ {
+  "id": 4889,
+  "de": "die Auszeichnung",
+  "tr": "ödül, nişan",
+  "deBeispiel": "Für ihr Lebenswerk erhielt sie eine besondere Auszeichnung.",
+  "gsw": "Uuszäichnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für ir Läbeswärk hät si e bsunderi Uuszäichnig übercho."
+ },
+ {
+  "id": 4890,
+  "de": "die Preisverleihung",
+  "tr": "ödül töreni",
+  "deBeispiel": "Die Preisverleihung findet in diesem Jahr im alten Opernhaus statt.",
+  "gsw": "Priisverleihig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Priisverleihig findet das Jaar im alte Opernhuus statt."
+ },
+ {
+  "id": 4891,
+  "de": "die Einschaltquote",
+  "tr": "izlenme oranı, reyting",
+  "deBeispiel": "Die Einschaltquote der Sportsendung ist am Sonntagabend am höchsten.",
+  "gsw": "Iischaltquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iischaltquote vo de Schportsändig isch am Sunntigaabig am höchschte."
+ },
+ {
+  "id": 4892,
+  "de": "der Höhepunkt",
+  "tr": "doruk noktası, zirve",
+  "deBeispiel": "Der Höhepunkt des Abends war der Auftritt des Chors.",
+  "gsw": "Höhepunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Höhepunkt vom Aabig isch de Uuftritt vom Chor gsi."
+ },
+ {
+  "id": 4893,
+  "de": "die Leidenschaft",
+  "tr": "tutku, ihtiras",
+  "deBeispiel": "Das Klettern ist für ihn keine Pflicht, sondern eine Leidenschaft.",
+  "gsw": "Liidenschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Chlettere isch für ihn kei Pflicht, sondern e Liidenschaft."
+ },
+ {
+  "id": 4894,
+  "de": "die Jury",
+  "tr": "jüri, seçici kurul",
+  "deBeispiel": "Die Jury konnte sich lange nicht auf einen Sieger einigen.",
+  "gsw": "Jury",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Jury hät sich lang nöd uf en Sieger chöne einige."
+ },
+ {
+  "id": 4895,
+  "de": "proben",
+  "tr": "prova yapmak, çalışmak",
+  "deBeispiel": "Das Ensemble probt jeden Abend bis kurz vor Mitternacht.",
+  "gsw": "probe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Ensemble probt jede Aabig bis churz vor Mitternacht."
+ },
+ {
+  "id": 4896,
+  "de": "verfilmen",
+  "tr": "filme çekmek, sinemaya uyarlamak",
+  "deBeispiel": "Der Roman wurde inzwischen zum dritten Mal verfilmt.",
+  "gsw": "verfilme",
+  "gswArtikel": null,
+  "gswBeispiel": "De Roman isch inzwüsche s dritt Mal verfilmt worde."
+ },
+ {
+  "id": 4897,
+  "de": "betrachten",
+  "tr": "seyretmek, incelemek, saymak",
+  "deBeispiel": "Er betrachtete das Bild lange, ohne ein Wort zu sagen.",
+  "gsw": "betrachte",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät s Bild lang betrachtet, ooni es Wort z säge."
+ },
+ {
+  "id": 4898,
+  "de": "gestalten",
+  "tr": "biçimlendirmek, tasarlamak, düzenlemek",
+  "deBeispiel": "Die Studierenden gestalteten das Programm des Festivals selbst.",
+  "gsw": "gschtalte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Studierende händ s Programm vom Festival sälber gschtaltet."
+ },
+ {
+  "id": 4899,
+  "de": "besteigen",
+  "tr": "tırmanmak, zirvesine çıkmak",
+  "deBeispiel": "Im Sommer wollen wir gemeinsam den höchsten Gipfel besteigen.",
+  "gsw": "beschtiige",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Summer wänd mer zäme de höchscht Gipfel beschtiige."
+ },
+ {
+  "id": 4900,
+  "de": "erkunden",
+  "tr": "keşfetmek, araştırmak",
+  "deBeispiel": "Am ersten Tag erkundeten wir die Altstadt ganz ohne Karte.",
+  "gsw": "erkunde",
+  "gswArtikel": null,
+  "gswBeispiel": "Am erschte Tag händ mer d Altschtadt ganz ooni Charte erkundet."
+ },
+ {
+  "id": 4901,
+  "de": "besiegen",
+  "tr": "yenmek, mağlup etmek",
+  "deBeispiel": "Sie besiegte die Titelverteidigerin in nur zwei Sätzen.",
+  "gsw": "bsiege",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät d Titelverteidigerin i nur zwäi Sätz bsiegt."
+ },
+ {
+  "id": 4902,
+  "de": "unterliegen",
+  "tr": "yenilmek, mağlup olmak",
+  "deBeispiel": "Im Finale unterlagen sie dem Gastgeber mit einem Tor Unterschied.",
+  "gsw": "underliige",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Final händ si em Gaschtgäber mit eim Tor Underschid müese underliige."
+ },
+ {
+  "id": 4903,
+  "de": "ausüben",
+  "tr": "yapmak, icra etmek, uygulamak",
+  "deBeispiel": "Diesen Sport übt er schon seit seiner Schulzeit aus.",
+  "gsw": "uusüebe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schport tuet er scho siit siner Schuelziit uusüebe."
+ },
+ {
+  "id": 4904,
+  "de": "sich widmen",
+  "tr": "kendini adamak, vakit ayırmak",
+  "deBeispiel": "Nach der Pensionierung widmete er sich ganz der Malerei.",
+  "gsw": "sich widme",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Pensionierig tuet er sich ganz de Maalerei widme."
+ },
+ {
+  "id": 4905,
+  "de": "ausstrahlen",
+  "tr": "yayınlamak, yaymak",
+  "deBeispiel": "Das Finale wird am Samstag live im Fernsehen ausgestrahlt.",
+  "gsw": "uusschtraale",
+  "gswArtikel": null,
+  "gswBeispiel": "S Final tüend si am Samschtig live im Fernsee uusschtraale."
+ },
+ {
+  "id": 4906,
+  "de": "moderieren",
+  "tr": "sunuculuk yapmak, yönetmek",
+  "deBeispiel": "Sie moderiert seit fünf Jahren eine Sendung über junge Musik.",
+  "gsw": "moderiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si moderiert siit füf Jaar e Sändig über jungi Musig."
+ },
+ {
+  "id": 4907,
+  "de": "mitreißen",
+  "tr": "coşturmak, sürüklemek",
+  "deBeispiel": "Der Schlusschor riss selbst die skeptischen Zuhörer mit.",
+  "gsw": "mitriisse",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schlusschor hät sogar di skeptische Zueloser chöne mitriisse."
+ },
+ {
+  "id": 4908,
+  "de": "faszinieren",
+  "tr": "büyülemek, hayran bırakmak",
+  "deBeispiel": "Alte Handschriften faszinieren ihn mehr als jedes moderne Werk.",
+  "gsw": "fasziniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Alti Handschrifte fasziniered ihn mee als jedes moderne Wärk."
+ },
+ {
+  "id": 4909,
+  "de": "beeindrucken",
+  "tr": "etkilemek, hayranlık uyandırmak",
+  "deBeispiel": "Die Lichtinstallation im Innenhof hat mich wirklich beeindruckt.",
+  "gsw": "beiidrucke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Liechtinstallation im Innehof hät mich würkli beiidruckt."
+ },
+ {
+  "id": 4910,
+  "de": "anfeuern",
+  "tr": "tezahürat yapmak, desteklemek",
+  "deBeispiel": "Die Zuschauer feuerten die Läufer auf den letzten Metern an.",
+  "gsw": "aafüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zueschauer tüend d Läufer uf de letschte Meter aafüüre."
+ },
+ {
+  "id": 4911,
+  "de": "applaudieren",
+  "tr": "alkışlamak",
+  "deBeispiel": "Das Publikum applaudierte im Stehen fast fünf Minuten lang.",
+  "gsw": "applaudiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Publikum hät im Schtaa fascht füf Minute lang applaudiert."
+ },
+ {
+  "id": 4912,
+  "de": "künstlerisch",
+  "tr": "sanatsal, sanata ilişkin",
+  "deBeispiel": "Die künstlerische Leitung des Hauses wechselt zur neuen Spielzeit.",
+  "gsw": "künschtlerisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Di künschtlerisch Läitig vom Huus wächslet uf di nöi Schpilziit."
+ },
+ {
+  "id": 4913,
+  "de": "fesselnd",
+  "tr": "sürükleyici, ilgi çekici",
+  "deBeispiel": "Der Vortrag über alte Musikinstrumente war überraschend fesselnd.",
+  "gsw": "fesslend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vortrag über alti Musiginschtrumänt isch überraschend fesslend gsi."
+ },
+ {
+  "id": 4914,
+  "de": "eintönig",
+  "tr": "tekdüze, monoton",
+  "deBeispiel": "Ohne Vereine und Feste wäre das Dorfleben ziemlich eintönig.",
+  "gsw": "iitönig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ooni Veräin und Fäscht wär s Dorfläbe zimli iitönig."
+ },
+ {
+  "id": 4915,
+  "de": "abwechslungsreich",
+  "tr": "çeşitli, renkli, monotonluktan uzak",
+  "deBeispiel": "Das Ferienprogramm für Kinder ist in diesem Jahr sehr abwechslungsreich.",
+  "gsw": "abwächsligsriich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Ferieprogramm für d Chind isch das Jaar sehr abwächsligsriich."
+ },
+ {
+  "id": 4916,
+  "de": "unterhaltsam",
+  "tr": "eğlenceli, keyifli",
+  "deBeispiel": "Der Abend war lehrreich und zugleich ausgesprochen unterhaltsam.",
+  "gsw": "underhaltsam",
+  "gswArtikel": null,
+  "gswBeispiel": "De Aabig isch leerriich und zugliich uusgsproche underhaltsam gsi."
+ },
+ {
+  "id": 4917,
+  "de": "sehenswert",
+  "tr": "görülmeye değer",
+  "deBeispiel": "Besonders sehenswert ist die Sammlung im Obergeschoss des Museums.",
+  "gsw": "sehenswärt",
+  "gswArtikel": null,
+  "gswBeispiel": "Bsunders sehenswärt isch d Sammlig im Oberschtock vom Museum."
+ },
+ {
+  "id": 4918,
+  "de": "zeitgenössisch",
+  "tr": "çağdaş, günümüze ait",
+  "deBeispiel": "Für zeitgenössische Kunst interessiert sich vor allem ein jüngeres Publikum.",
+  "gsw": "ziitgenössisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Für ziitgenössischi Kunscht interessiert sich vor allem es jüngers Publikum."
+ },
+ {
+  "id": 4919,
+  "de": "ausverkauft",
+  "tr": "biletleri tükenmiş, tükenmiş (ürün)",
+  "deBeispiel": "Beide Konzerte waren schon nach wenigen Stunden ausverkauft.",
+  "gsw": "uusverchauft",
+  "gswArtikel": null,
+  "gswBeispiel": "Bäidi Konzärt sind scho nach wenige Schtund uusverchauft gsi."
+ },
+ {
+  "id": 4920,
+  "de": "auf eigene Faust",
+  "tr": "kendi başına, kendi bildiğince (rehbersiz)",
+  "deBeispiel": "Statt einer Führung erkundeten sie die Stadt auf eigene Faust.",
+  "gsw": "uf äigeni Fuuscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Statt ere Füehrig händ si d Schtadt uf äigeni Fuuscht erkundet."
+ },
+ {
+  "id": 4921,
+  "de": "die Auflage",
+  "tr": "tiraj, baskı sayısı",
+  "deBeispiel": "Die Auflage der Zeitung ist in den letzten Jahren deutlich gesunken.",
+  "gsw": "Uflaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uflaag vo de Ziitig isch i de letschte Jaar düütlich gsunke."
+ },
+ {
+  "id": 4922,
+  "de": "die Redaktion",
+  "tr": "yazı işleri, redaksiyon",
+  "deBeispiel": "Die Redaktion entscheidet morgen über den Aufmacher der Titelseite.",
+  "gsw": "Redaktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Redaktion entschäidet morn über de Uufmacher vo de Titelsiite."
+ },
+ {
+  "id": 4923,
+  "de": "der Leitartikel",
+  "tr": "başyazı",
+  "deBeispiel": "Im Leitartikel kritisiert der Chefredakteur die Entscheidung der Regierung.",
+  "gsw": "Läitartikel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Läitartikel kritisiert de Chefredakteur d Entschäidig vo de Regierig."
+ },
+ {
+  "id": 4924,
+  "de": "der Rundfunk",
+  "tr": "radyo ve televizyon yayıncılığı",
+  "deBeispiel": "Der öffentlich-rechtliche Rundfunk finanziert sich über einen monatlichen Beitrag.",
+  "gsw": "Rundfunk",
+  "gswArtikel": "de",
+  "gswBeispiel": "De öffentlich-rächtlich Rundfunk finanziert sich über en monatliche Biitrag."
+ },
+ {
+  "id": 4925,
+  "de": "der Moderator",
+  "tr": "sunucu, program sunucusu",
+  "deBeispiel": "Der Moderator unterbrach den Gast mitten in seiner Antwort.",
+  "gsw": "Moderator",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Moderator hät de Gascht mitte i siner Antwort underbroche."
+ },
+ {
+  "id": 4926,
+  "de": "die Pressefreiheit",
+  "tr": "basın özgürlüğü",
+  "deBeispiel": "In vielen Ländern wird die Pressefreiheit systematisch eingeschränkt.",
+  "gsw": "Pressefreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "I vilne Länder wird d Pressefreiheit syschtematisch iigschränkt."
+ },
+ {
+  "id": 4927,
+  "de": "das Gerücht",
+  "tr": "söylenti, dedikodu",
+  "deBeispiel": "Über die geplante Fusion halten sich hartnäckige Gerüchte.",
+  "gsw": "Grücht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Über di plaanti Fusion halted sich hartnäckigi Grücht."
+ },
+ {
+  "id": 4928,
+  "de": "die Kampagne",
+  "tr": "kampanya",
+  "deBeispiel": "Die Kampagne gegen Lebensmittelverschwendung läuft seit drei Monaten.",
+  "gsw": "Kampagne",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kampagne gäge Läbesmittelverschwändig lauft siit drei Mönet."
+ },
+ {
+  "id": 4929,
+  "de": "der Slogan",
+  "tr": "slogan",
+  "deBeispiel": "Der neue Slogan der Marke bleibt sofort im Gedächtnis.",
+  "gsw": "Slogan",
+  "gswArtikel": "de",
+  "gswBeispiel": "De nöi Slogan vo de Marke bliibt sofort im Gedächtnis."
+ },
+ {
+  "id": 4930,
+  "de": "die Zielgruppe",
+  "tr": "hedef kitle",
+  "deBeispiel": "Die Werbung spricht vor allem eine junge Zielgruppe an.",
+  "gsw": "Ziilgruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wärbig schpricht vor allem e jungi Ziilgruppe aa."
+ },
+ {
+  "id": 4931,
+  "de": "die Reichweite",
+  "tr": "erişim, ulaşılan kitle",
+  "deBeispiel": "Der Beitrag erzielte in wenigen Stunden eine enorme Reichweite.",
+  "gsw": "Reichwiiti",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Biitrag hät i wenige Schtund e enormi Reichwiiti erziilt."
+ },
+ {
+  "id": 4932,
+  "de": "die Meinungsumfrage",
+  "tr": "kamuoyu araştırması, anket",
+  "deBeispiel": "Laut einer aktuellen Meinungsumfrage lehnt die Mehrheit den Vorschlag ab.",
+  "gsw": "Meinigsumfraag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Luut ere aktuelle Meinigsumfraag lehnt d Mehrheit de Vorschlag ab."
+ },
+ {
+  "id": 4933,
+  "de": "die Boulevardzeitung",
+  "tr": "magazin gazetesi, bulvar gazetesi",
+  "deBeispiel": "Die Boulevardzeitung machte aus dem Streit eine große Geschichte.",
+  "gsw": "Boulevardziitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Boulevardziitig hät us em Schtriit e grossi Gschicht gmacht."
+ },
+ {
+  "id": 4934,
+  "de": "die Nachrichtensendung",
+  "tr": "haber bülteni",
+  "deBeispiel": "Die Nachrichtensendung um acht Uhr erreicht Millionen Haushalte.",
+  "gsw": "Nachrichtesändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Nachrichtesändig am achti erreicht Millione Huushalt."
+ },
+ {
+  "id": 4935,
+  "de": "die Rubrik",
+  "tr": "bölüm, köşe, kategori",
+  "deBeispiel": "Den Artikel finden Sie in der Rubrik Wirtschaft.",
+  "gsw": "Rubrik",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Artikel findet Sie i de Rubrik Wirtschaft."
+ },
+ {
+  "id": 4936,
+  "de": "die Kolumne",
+  "tr": "köşe yazısı",
+  "deBeispiel": "Ihre wöchentliche Kolumne über das Stadtleben hat viele treue Leser.",
+  "gsw": "Kolumne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri wüchentlichi Kolumne über s Schtadtläbe hät vili treui Läser."
+ },
+ {
+  "id": 4937,
+  "de": "der Kommentar",
+  "tr": "yorum, değerlendirme yazısı",
+  "deBeispiel": "Unter dem Video sammelten sich innerhalb einer Stunde hundert Kommentare.",
+  "gsw": "Kommentar",
+  "gswArtikel": "de",
+  "gswBeispiel": "Under em Video sind innerhalb vo ere Schtund hundert Kommentar zämecho."
+ },
+ {
+  "id": 4938,
+  "de": "die Veröffentlichung",
+  "tr": "yayın, yayımlama",
+  "deBeispiel": "Die Veröffentlichung der Dokumente sorgte für heftige Reaktionen.",
+  "gsw": "Veröffentlichig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Veröffentlichig vo de Dokumänt hät für heftigi Reaktione gsorgt."
+ },
+ {
+  "id": 4939,
+  "de": "die Mitteilung",
+  "tr": "bildiri, duyuru",
+  "deBeispiel": "In einer kurzen Mitteilung wies das Ministerium die Vorwürfe zurück.",
+  "gsw": "Mitteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I ere churze Mitteilig hät s Minischterium d Vorwürf zruggwise."
+ },
+ {
+  "id": 4940,
+  "de": "die Ankündigung",
+  "tr": "duyuru, önceden haber verme",
+  "deBeispiel": "Nach der Ankündigung des Rücktritts stiegen die Aktien wieder.",
+  "gsw": "Aakündigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Aakündigig vom Rücktritt sind d Aktie wider gschtige."
+ },
+ {
+  "id": 4941,
+  "de": "die Behauptung",
+  "tr": "iddia",
+  "deBeispiel": "Für diese Behauptung liefert der Autor keinerlei Belege.",
+  "gsw": "Behauptig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Behauptig liferet de Autor kei einzige Beleg."
+ },
+ {
+  "id": 4942,
+  "de": "die Richtigstellung",
+  "tr": "düzeltme, tekzip",
+  "deBeispiel": "Die Zeitung druckte am nächsten Tag eine kurze Richtigstellung.",
+  "gsw": "Richtigschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ziitig hät am nächschte Tag e churzi Richtigschtellig druckt."
+ },
+ {
+  "id": 4943,
+  "de": "die Gegendarstellung",
+  "tr": "cevap hakkı yazısı, karşı açıklama",
+  "deBeispiel": "Der Politiker verlangte eine Gegendarstellung auf derselben Seite.",
+  "gsw": "Gägedarschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Politiker hät e Gägedarschtellig uf dere gliiche Siite verlangt."
+ },
+ {
+  "id": 4944,
+  "de": "die Falschmeldung",
+  "tr": "yalan haber, asılsız haber",
+  "deBeispiel": "Die Falschmeldung wurde tausendfach geteilt, bevor jemand widersprach.",
+  "gsw": "Falschmäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Falschmäldig isch tuusigfach teilt worde, bevor öpper widersproche hät."
+ },
+ {
+  "id": 4945,
+  "de": "die Verschwörungstheorie",
+  "tr": "komplo teorisi",
+  "deBeispiel": "Im Netz kursieren zahlreiche Verschwörungstheorien über den Vorfall.",
+  "gsw": "Verschwörigstheorie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Netz kursiered zahlriichi Verschwörigstheorie über de Vorfall."
+ },
+ {
+  "id": 4946,
+  "de": "das Urheberrecht",
+  "tr": "telif hakkı",
+  "deBeispiel": "Wer fremde Fotos ohne Erlaubnis nutzt, verletzt das Urheberrecht.",
+  "gsw": "Urheberrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wer fremdi Foti ooni Erlaubnis bruucht, verletzt s Urheberrächt."
+ },
+ {
+  "id": 4947,
+  "de": "das Impressum",
+  "tr": "künye, yasal bilgi sayfası",
+  "deBeispiel": "Jede deutsche Webseite braucht ein vollständiges Impressum.",
+  "gsw": "Impressum",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jedi tüütschi Webseite bruucht es vollschtändigs Impressum."
+ },
+ {
+  "id": 4948,
+  "de": "die Plattform",
+  "tr": "platform",
+  "deBeispiel": "Die Plattform löschte den Beitrag wegen verletzender Sprache.",
+  "gsw": "Plattform",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Plattform hät de Biitrag wäge verletzender Schpraach glöscht."
+ },
+ {
+  "id": 4949,
+  "de": "der Nutzer",
+  "tr": "kullanıcı",
+  "deBeispiel": "Viele Nutzer beschweren sich über die neue Datenschutzerklärung.",
+  "gsw": "Nutzer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili Nutzer beschwäred sich über di nöi Datenschutzerklärig."
+ },
+ {
+  "id": 4950,
+  "de": "die Wortwahl",
+  "tr": "sözcük seçimi, kullanılan ifadeler",
+  "deBeispiel": "Seine Wortwahl in der Debatte war für viele zu scharf.",
+  "gsw": "Wortwaal",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Wortwaal i de Debatte isch für vili z scharf gsi."
+ },
+ {
+  "id": 4951,
+  "de": "der Tonfall",
+  "tr": "ses tonu, üslup",
+  "deBeispiel": "An ihrem Tonfall merkte man sofort, dass sie verärgert war.",
+  "gsw": "Tonfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "An irem Tonfall hät mer sofort gmerkt, dass si verärgeret gsi isch."
+ },
+ {
+  "id": 4952,
+  "de": "die Podiumsdiskussion",
+  "tr": "panel tartışması, panel",
+  "deBeispiel": "Bei der Podiumsdiskussion saßen Vertreter aller Parteien auf der Bühne.",
+  "gsw": "Podiumsdiskussion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Podiumsdiskussion sind Verträter vo allne Parteie uf de Bühni gsässe."
+ },
+ {
+  "id": 4953,
+  "de": "die Ansprache",
+  "tr": "konuşma, hitap",
+  "deBeispiel": "Die Ansprache des Bürgermeisters dauerte kaum zehn Minuten.",
+  "gsw": "Aaschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aaschpraach vom Bürgermäischter hät chuum zää Minute duuret."
+ },
+ {
+  "id": 4954,
+  "de": "die Körpersprache",
+  "tr": "beden dili",
+  "deBeispiel": "Seine Körpersprache verriet mehr als seine vorsichtigen Worte.",
+  "gsw": "Körperschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Körperschpraach hät mee verraate als sini vorsichtige Wort."
+ },
+ {
+  "id": 4955,
+  "de": "der Blickkontakt",
+  "tr": "göz teması",
+  "deBeispiel": "Halten Sie während des Vorstellungsgesprächs ruhig Blickkontakt.",
+  "gsw": "Blickkontakt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Halted Sie während em Vorschtelligsgschpröch ruig Blickkontakt."
+ },
+ {
+  "id": 4956,
+  "de": "die Titelseite",
+  "tr": "kapak sayfası, birinci sayfa",
+  "deBeispiel": "Der Skandal stand tagelang auf der Titelseite aller Blätter.",
+  "gsw": "Titelsiite",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Skandal isch tagelang uf de Titelsiite vo allne Blätter gschtande."
+ },
+ {
+  "id": 4957,
+  "de": "die Medienlandschaft",
+  "tr": "medya ortamı, medya dünyası",
+  "deBeispiel": "Die digitale Medienlandschaft hat sich in zehn Jahren völlig verändert.",
+  "gsw": "Medielandschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D digitali Medielandschaft hät sich i zää Jaar völlig veränderet."
+ },
+ {
+  "id": 4958,
+  "de": "die Aufmerksamkeit",
+  "tr": "dikkat, ilgi",
+  "deBeispiel": "Mit dieser Überschrift wollte das Magazin vor allem Aufmerksamkeit erregen.",
+  "gsw": "Uufmerksamkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit dere Überschrift hät s Magazin vor allem Uufmerksamkeit welle errege."
+ },
+ {
+  "id": 4959,
+  "de": "die Empörung",
+  "tr": "öfke, infial, tepki",
+  "deBeispiel": "Die Äußerung des Ministers löste im Netz große Empörung aus.",
+  "gsw": "Empörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Üsserig vom Minischter hät im Netz grossi Empörig uusglöst."
+ },
+ {
+  "id": 4960,
+  "de": "der Leserbrief",
+  "tr": "okur mektubu",
+  "deBeispiel": "Zu dem Artikel erschienen in der nächsten Ausgabe mehrere Leserbriefe.",
+  "gsw": "Läserbrief",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zu dem Artikel sind i de nächschte Uusgaab mehreri Läserbrief erschine."
+ },
+ {
+  "id": 4961,
+  "de": "der Werbespot",
+  "tr": "reklam filmi, reklam spotu",
+  "deBeispiel": "Der Werbespot läuft jeden Abend vor den Nachrichten.",
+  "gsw": "Wärbeschpot",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wärbeschpot lauft jede Aabig vor de Nachrichte."
+ },
+ {
+  "id": 4962,
+  "de": "das Sprachrohr",
+  "tr": "sözcü, sesini duyuran araç",
+  "deBeispiel": "Die Zeitschrift gilt als Sprachrohr der jungen Generation.",
+  "gsw": "Schpraachroor",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Ziitschrift gilt als Schpraachroor vo de junge Generation."
+ }
+]

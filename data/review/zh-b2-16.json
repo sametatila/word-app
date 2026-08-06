@@ -1,0 +1,992 @@
+[
+ {
+  "id": 5293,
+  "de": "anreisen",
+  "tr": "gelmek, varmak",
+  "deBeispiel": "Die meisten Gäste reisen mit dem Zug oder dem Bus an.",
+  "gsw": "aareise",
+  "gswArtikel": null,
+  "gswBeispiel": "Di mäischte Gäscht reised mit em Zug oder mit em Bus aa."
+ },
+ {
+  "id": 5294,
+  "de": "sich verirren",
+  "tr": "yolunu kaybetmek, kaybolmak",
+  "deBeispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
+  "gsw": "sich verirre",
+  "gswArtikel": null,
+  "gswBeispiel": "Im dichte Näbel händ sich zwäi Wanderer im Gebirg verirrt."
+ },
+ {
+  "id": 5295,
+  "de": "sich orientieren",
+  "tr": "yön bulmak, kendine yön vermek",
+  "deBeispiel": "Ohne Handy konnte er sich in der Altstadt kaum orientieren.",
+  "gsw": "sich orientiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ooni Handy hät er sich i de Altschtadt chuum chöne orientiere."
+ },
+ {
+  "id": 5296,
+  "de": "durchqueren",
+  "tr": "boydan boya geçmek, kat etmek",
+  "deBeispiel": "Die Gruppe hat die Wüste in elf Tagen durchquert.",
+  "gsw": "durchquere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gruppe hät d Wüeschti in elf Täg durchquert."
+ },
+ {
+  "id": 5297,
+  "de": "ansteuern",
+  "tr": "-e yönelmek, rotasını çevirmek",
+  "deBeispiel": "Das Schiff steuerte wegen des Sturms einen geschützten Hafen an.",
+  "gsw": "aaschtüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "S Schiff hät wäge em Schturm en gschützte Hafe aagschtüüret."
+ },
+ {
+  "id": 5298,
+  "de": "vermarkten",
+  "tr": "pazarlamak, satışa sunmak",
+  "deBeispiel": "Die Region vermarktet sich seit Jahren als sanftes Urlaubsziel.",
+  "gsw": "vermarkte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Region vermarktet sich sit Jaare als sanfts Ferieziel."
+ },
+ {
+  "id": 5299,
+  "de": "einschränken",
+  "tr": "sınırlamak, kısıtlamak",
+  "deBeispiel": "Die Stadt will die Zahl der Ferienwohnungen deutlich einschränken.",
+  "gsw": "iischränke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtadt wil d Zaal vo de Feriewohnige düütlich iischränke."
+ },
+ {
+  "id": 5300,
+  "de": "aufbrechen",
+  "tr": "yola çıkmak, hareket etmek",
+  "deBeispiel": "Wir sind noch vor Sonnenaufgang zur Hütte aufgebrochen.",
+  "gsw": "uufbräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sind no vor em Sunneuufgang zu de Hütte uufbroche."
+ },
+ {
+  "id": 5301,
+  "de": "verzollen",
+  "tr": "gümrük vergisini ödemek, gümrükten geçirmek",
+  "deBeispiel": "Diese Waren müssen Sie bei der Einreise verzollen.",
+  "gsw": "verzolle",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Waare mönd Sie bi de Iireise verzolle."
+ },
+ {
+  "id": 5302,
+  "de": "abholzen",
+  "tr": "ormanı kesmek, ağaçları yok etmek",
+  "deBeispiel": "Für die neue Hotelanlage wurde ein ganzer Hang abgeholzt.",
+  "gsw": "abholze",
+  "gswArtikel": null,
+  "gswBeispiel": "Für di nöi Hotelaalag isch en ganze Hang abgholzt worde."
+ },
+ {
+  "id": 5303,
+  "de": "gefährden",
+  "tr": "tehlikeye atmak, riske sokmak",
+  "deBeispiel": "Unvorsichtige Besucher gefährden das Gleichgewicht des empfindlichen Ökosystems.",
+  "gsw": "gfäärde",
+  "gswArtikel": null,
+  "gswBeispiel": "Unvorsichtigi Bsuecher gfäärded s Gliichgwicht vom empfindliche Ökosyschtem."
+ },
+ {
+  "id": 5304,
+  "de": "abklingen",
+  "tr": "hafiflemek, yatışmak",
+  "deBeispiel": "Erst am Nachmittag ist der Sturm allmählich abgeklungen.",
+  "gsw": "abchlinge",
+  "gswArtikel": null,
+  "gswBeispiel": "Erscht am Namittag isch de Schturm allmäälich abgchlunge."
+ },
+ {
+  "id": 5305,
+  "de": "abgelegen",
+  "tr": "ücra, uzak, sapa",
+  "deBeispiel": "Das Gehöft liegt abgelegen und ist nur über einen Feldweg erreichbar.",
+  "gsw": "abgläge",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gehöft liit abgläge und isch nu über en Fäldwäg erreichbar."
+ },
+ {
+  "id": 5306,
+  "de": "unberührt",
+  "tr": "el değmemiş, bozulmamış",
+  "deBeispiel": "Im Norden gibt es noch weitgehend unberührte Küstenabschnitte.",
+  "gsw": "unberüert",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Norde git s no wiitgehend unberüerti Küschteabschnitt."
+ },
+ {
+  "id": 5307,
+  "de": "malerisch",
+  "tr": "pitoresk, resim gibi",
+  "deBeispiel": "Das malerische Dorf zieht jedes Wochenende Hunderte Besucher an.",
+  "gsw": "malerisch",
+  "gswArtikel": null,
+  "gswBeispiel": "S malerische Dorf zieht jedes Wuchenänd Hunderti Bsuecher aa."
+ },
+ {
+  "id": 5308,
+  "de": "atemberaubend",
+  "tr": "nefes kesici, muhteşem",
+  "deBeispiel": "Vom Pass aus bot sich uns ein atemberaubender Blick.",
+  "gsw": "atemberaubend",
+  "gswArtikel": null,
+  "gswBeispiel": "Vom Pass us hät sich is en atemberaubende Blick botte."
+ },
+ {
+  "id": 5309,
+  "de": "ausgebucht",
+  "tr": "tamamen dolu, rezervasyonu dolmuş",
+  "deBeispiel": "Alle Zimmer am See sind für Juli bereits ausgebucht.",
+  "gsw": "uusbuecht",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli Zimmer am See sind für de Juli scho uusbuecht."
+ },
+ {
+  "id": 5310,
+  "de": "unwegsam",
+  "tr": "geçit vermez, yolu bozuk",
+  "deBeispiel": "Das Gelände ist unwegsam und für Kinderwagen völlig ungeeignet.",
+  "gsw": "unwägsam",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gländ isch unwägsam und für Chinderwage völlig ungeeignet."
+ },
+ {
+  "id": 5311,
+  "de": "wechselhaft",
+  "tr": "değişken, kararsız",
+  "deBeispiel": "Im Frühjahr ist das Wetter in den Bergen sehr wechselhaft.",
+  "gsw": "wächselhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Früelig isch s Wätter i de Bärge sehr wächselhaft."
+ },
+ {
+  "id": 5312,
+  "de": "ganzjährig",
+  "tr": "yıl boyu, tüm yıl açık",
+  "deBeispiel": "Die Berghütte ist ganzjährig geöffnet und gut ausgelastet.",
+  "gsw": "ganzjäärig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bärghütte isch ganzjäärig offe und guet uusglaschtet."
+ },
+ {
+  "id": 5313,
+  "de": "die Brandstiftung",
+  "tr": "kundaklama, kasten yangın çıkarma",
+  "deBeispiel": "Die Ermittler schließen Brandstiftung inzwischen nicht mehr aus.",
+  "gsw": "Brandschtiftig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ermittler schliessed Brandschtiftig inzwüsche nüme us."
+ },
+ {
+  "id": 5314,
+  "de": "der Rauchmelder",
+  "tr": "duman dedektörü, duman alarmı",
+  "deBeispiel": "In jedem Schlafzimmer muss ein funktionierender Rauchmelder angebracht sein.",
+  "gsw": "Rauchmälder",
+  "gswArtikel": "de",
+  "gswBeispiel": "I jedem Schlafzimmer mues en funktionierende Rauchmälder aabracht sii."
+ },
+ {
+  "id": 5315,
+  "de": "der Feuerlöscher",
+  "tr": "yangın söndürücü",
+  "deBeispiel": "Der Feuerlöscher im Flur wird einmal im Jahr geprüft.",
+  "gsw": "Füürlöscher",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Füürlöscher im Gang wird äimal im Jaar prüeft."
+ },
+ {
+  "id": 5316,
+  "de": "der Ersthelfer",
+  "tr": "ilk yardımcı, ilk müdahaleyi yapan kişi",
+  "deBeispiel": "Jeder Betrieb muss eine bestimmte Zahl ausgebildeter Ersthelfer beschäftigen.",
+  "gsw": "Erschthälfer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Betrib mues e beschtimmti Zaal uusbildeti Erschthälfer aaschtelle."
+ },
+ {
+  "id": 5317,
+  "de": "der Fluchtweg",
+  "tr": "kaçış yolu, tahliye yolu",
+  "deBeispiel": "Die Fluchtwege dürfen unter keinen Umständen zugestellt werden.",
+  "gsw": "Fluchtwäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Fluchtwäg dörfed under keine Umschtänd zuegschtellt werde."
+ },
+ {
+  "id": 5318,
+  "de": "der Sicherheitsabstand",
+  "tr": "güvenlik mesafesi",
+  "deBeispiel": "Auf der Autobahn hielt kaum jemand den vorgeschriebenen Sicherheitsabstand ein.",
+  "gsw": "Sicherheitsabschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf de Autobaan hät chuum öpper de vorgschribe Sicherheitsabschtand iighalte."
+ },
+ {
+  "id": 5319,
+  "de": "die Gefahrenquelle",
+  "tr": "tehlike kaynağı",
+  "deBeispiel": "Lose Kabel sind in einer Werkstatt eine ständige Gefahrenquelle.",
+  "gsw": "Gfaarequelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Losi Kabel sind i ere Wärchschtatt e schtändigi Gfaarequelle."
+ },
+ {
+  "id": 5320,
+  "de": "die Unfallstelle",
+  "tr": "kaza yeri, kaza mahalli",
+  "deBeispiel": "Die Polizei sperrte die Unfallstelle für mehrere Stunden ab.",
+  "gsw": "Unfallschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Polizei hät d Unfallschtell für mehreri Schtund abgschperrt."
+ },
+ {
+  "id": 5321,
+  "de": "der Anschlag",
+  "tr": "saldırı, suikast",
+  "deBeispiel": "Nach dem Anschlag wurden die Kontrollen an Bahnhöfen deutlich verschärft.",
+  "gsw": "Aaschlag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Aaschlag sind d Kontrolle a de Baanhöf düütlich verschärft worde."
+ },
+ {
+  "id": 5322,
+  "de": "der Katastrophenschutz",
+  "tr": "afet yönetimi, sivil savunma",
+  "deBeispiel": "Der Katastrophenschutz übt zweimal jährlich den Ernstfall.",
+  "gsw": "Kataschtropheschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kataschtropheschutz üebt zwäimal im Jaar de Ärnschtfall."
+ },
+ {
+  "id": 5323,
+  "de": "das Verbrechen",
+  "tr": "suç, ağır suç",
+  "deBeispiel": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt.",
+  "gsw": "Verbräche",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Verbräche isch trotz jaarelange Ermittlige nie uufgchlärt worde."
+ },
+ {
+  "id": 5324,
+  "de": "das Erdbeben",
+  "tr": "deprem",
+  "deBeispiel": "Das Erdbeben hat mehrere Brücken in der Region unbrauchbar gemacht.",
+  "gsw": "Ärdbebe",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Ärdbebe hät mehreri Brugge i de Region unbruuchbar gmacht."
+ },
+ {
+  "id": 5325,
+  "de": "die Trümmer",
+  "tr": "enkaz, moloz",
+  "deBeispiel": "Unter den Trümmern des Hauses suchten Helfer die ganze Nacht.",
+  "gsw": "Trümmer",
+  "gswArtikel": "d",
+  "gswBeispiel": "Under de Trümmer vom Huus händ Hälfer di ganz Nacht gsuecht."
+ },
+ {
+  "id": 5326,
+  "de": "die Einsatzkraft",
+  "tr": "görevli ekip elemanı, müdahale ekibi",
+  "deBeispiel": "Über zweihundert Einsatzkräfte waren die ganze Nacht im Einsatz.",
+  "gsw": "Iisatzchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über zwäihundert Iisatzchräft sind di ganz Nacht im Iisatz gsi."
+ },
+ {
+  "id": 5327,
+  "de": "der Tatort",
+  "tr": "olay yeri, suç mahalli",
+  "deBeispiel": "Am Tatort wurden Spuren gefunden, die zum Verdächtigen führten.",
+  "gsw": "Tatort",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Tatort sind Schpure gfunde worde, wo zum Verdächtige gfüert händ."
+ },
+ {
+  "id": 5328,
+  "de": "der Diebstahl",
+  "tr": "hırsızlık, çalma",
+  "deBeispiel": "Für den Diebstahl im Lager gibt es bisher keine Zeugen.",
+  "gsw": "Diebschtaal",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für de Diebschtaal im Lager git s bishär kei Züüge."
+ },
+ {
+  "id": 5329,
+  "de": "der Betrug",
+  "tr": "dolandırıcılık, sahtekârlık",
+  "deBeispiel": "Der Angeklagte wurde wegen Betrugs in mehreren Fällen verurteilt.",
+  "gsw": "Betrug",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Aagklagt isch wäge Betrug i mehrere Fäll verurteilt worde."
+ },
+ {
+  "id": 5330,
+  "de": "der Raub",
+  "tr": "gasp, soygun",
+  "deBeispiel": "Der Raub auf die Tankstelle dauerte kaum zwei Minuten.",
+  "gsw": "Raub",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Raub uf d Tankschtell hät chuum zwäi Minute duuret."
+ },
+ {
+  "id": 5331,
+  "de": "die Erpressung",
+  "tr": "şantaj, haraç kesme",
+  "deBeispiel": "Die Firma erstattete Anzeige wegen versuchter Erpressung.",
+  "gsw": "Erpressig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Firma hät wäge versuechter Erpressig Aazäig erschtattet."
+ },
+ {
+  "id": 5332,
+  "de": "die Körperverletzung",
+  "tr": "yaralama, müessir fiil",
+  "deBeispiel": "Nach der Schlägerei ermittelt die Polizei wegen gefährlicher Körperverletzung.",
+  "gsw": "Körperverletzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Schlägerei ermittlet d Polizei wäge gfäärlicher Körperverletzig."
+ },
+ {
+  "id": 5333,
+  "de": "die Fahndung",
+  "tr": "arama, aranan kişi takibi",
+  "deBeispiel": "Die Fahndung nach den Tätern läuft seit dem frühen Morgen.",
+  "gsw": "Faandig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Faandig nach de Täter lauft sit em früene Morge."
+ },
+ {
+  "id": 5334,
+  "de": "der Haftbefehl",
+  "tr": "tutuklama emri",
+  "deBeispiel": "Das Gericht erließ noch am selben Abend einen Haftbefehl.",
+  "gsw": "Haftbefäl",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Gricht hät na am gliiche Aabig en Haftbefäl erlaa."
+ },
+ {
+  "id": 5335,
+  "de": "das Polizeirevier",
+  "tr": "polis karakolu",
+  "deBeispiel": "Sie musste ihre Aussage auf dem Polizeirevier noch einmal wiederholen.",
+  "gsw": "Polizeirevier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si hät iri Uussag uf em Polizeirevier na äimal müesse widerhole."
+ },
+ {
+  "id": 5336,
+  "de": "die Abschreckung",
+  "tr": "caydırıcılık, caydırma",
+  "deBeispiel": "Höhere Strafen wirken nach Ansicht vieler Fachleute kaum als Abschreckung.",
+  "gsw": "Abschreckig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Höcheri Schtrafe wirked nach Aasicht vo vilne Fachlüt chuum als Abschreckig."
+ },
+ {
+  "id": 5337,
+  "de": "die Kriminalität",
+  "tr": "suç oranı, suçluluk",
+  "deBeispiel": "Die Kriminalität im Stadtteil ist seit zwei Jahren rückläufig.",
+  "gsw": "Kriminalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kriminalität im Schtadtteil isch sit zwäi Jaar rückläufig."
+ },
+ {
+  "id": 5338,
+  "de": "die Notlage",
+  "tr": "sıkıntılı durum, darda kalma",
+  "deBeispiel": "Der Fonds hilft Familien, die unverschuldet in eine Notlage geraten sind.",
+  "gsw": "Notlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Fonds hilft Familie, wo unverschuldet i e Notlaag choo sind."
+ },
+ {
+  "id": 5339,
+  "de": "der Zwischenfall",
+  "tr": "olay, beklenmedik hadise",
+  "deBeispiel": "Das Spiel verlief bis auf einen kleinen Zwischenfall völlig ruhig.",
+  "gsw": "Zwüschefall",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Schpiel isch bis uf en chliine Zwüschefall völlig ruig verlaufe."
+ },
+ {
+  "id": 5340,
+  "de": "die Warnmeldung",
+  "tr": "uyarı bildirimi, uyarı mesajı",
+  "deBeispiel": "Die Warnmeldung erreichte alle Handys in der Region gleichzeitig.",
+  "gsw": "Warnmäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Warnmäldig hät alli Handys i de Region gliichziitig erreicht."
+ },
+ {
+  "id": 5341,
+  "de": "die Schutzausrüstung",
+  "tr": "koruyucu ekipman, koruyucu donanım",
+  "deBeispiel": "Ohne vollständige Schutzausrüstung darf niemand die Halle betreten.",
+  "gsw": "Schutzuusrüschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni vollschtändigi Schutzuusrüschtig dörf niemer i d Halle."
+ },
+ {
+  "id": 5342,
+  "de": "die Wiederbelebung",
+  "tr": "canlandırma, resüsitasyon",
+  "deBeispiel": "Die Wiederbelebung gelang erst nach mehreren Minuten.",
+  "gsw": "Widerbeläbig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Widerbeläbig isch erscht nach mehrere Minute glunge."
+ },
+ {
+  "id": 5343,
+  "de": "die Vergiftung",
+  "tr": "zehirlenme",
+  "deBeispiel": "Die Kinder wurden mit einer leichten Vergiftung ins Krankenhaus gebracht.",
+  "gsw": "Vergiftig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chind sind mit ere liichte Vergiftig is Schpital braacht worde."
+ },
+ {
+  "id": 5344,
+  "de": "die Seuche",
+  "tr": "salgın hastalık, salgın",
+  "deBeispiel": "Die Seuche breitete sich zuerst unter den Tieren der Region aus.",
+  "gsw": "Süüchi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Süüchi hät sich zerscht under de Tier vo de Region uusbräitet."
+ },
+ {
+  "id": 5345,
+  "de": "der Ausnahmezustand",
+  "tr": "olağanüstü hal",
+  "deBeispiel": "Die Regierung rief für die betroffenen Provinzen den Ausnahmezustand aus.",
+  "gsw": "Uusnaamszuestand",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Regierig hät für di betroffene Provinze de Uusnaamszuestand uusgrüeft."
+ },
+ {
+  "id": 5346,
+  "de": "die Absperrung",
+  "tr": "bariyer, kapatma, çevirme",
+  "deBeispiel": "Neugierige drängten sich bis dicht an die Absperrung heran.",
+  "gsw": "Abschperrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nüügierigi händ sich bis dicht a d Abschperrig ane drängt."
+ },
+ {
+  "id": 5347,
+  "de": "der Krisenstab",
+  "tr": "kriz masası, kriz merkezi",
+  "deBeispiel": "Der Krisenstab tagte bis spät in die Nacht im Rathaus.",
+  "gsw": "Krisenschtab",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Krisenschtab hät bis schpaat i d Nacht im Rathuus tagt."
+ },
+ {
+  "id": 5348,
+  "de": "die Notunterkunft",
+  "tr": "geçici barınak, acil konaklama yeri",
+  "deBeispiel": "In der Turnhalle wurde über Nacht eine Notunterkunft eingerichtet.",
+  "gsw": "Notunderkunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Turnhalle isch über Nacht e Notunderkunft iigrichtet worde."
+ },
+ {
+  "id": 5349,
+  "de": "das Beweismittel",
+  "tr": "delil, kanıt",
+  "deBeispiel": "Die Aufnahmen der Kamera gelten als wichtigstes Beweismittel.",
+  "gsw": "Bewiismittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Uufnaame vo de Kamera gälted als wichtigschts Bewiismittel."
+ },
+ {
+  "id": 5350,
+  "de": "die Vernehmung",
+  "tr": "ifade alma, sorgu",
+  "deBeispiel": "Bei der Vernehmung verwickelte sich der Zeuge in Widersprüche.",
+  "gsw": "Vernämig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Vernämig hät sich de Züüg i Widersprüch verwicklet."
+ },
+ {
+  "id": 5351,
+  "de": "bergen",
+  "tr": "kurtarmak, enkazdan çıkarmak",
+  "deBeispiel": "Taucher konnten den Wagen erst am nächsten Tag bergen.",
+  "gsw": "bärge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Taucher händ de Wage erscht am nöchschte Tag chöne bärge."
+ },
+ {
+  "id": 5352,
+  "de": "evakuieren",
+  "tr": "tahliye etmek (insanları çıkarmak)",
+  "deBeispiel": "Wegen der Bombe musste man das halbe Viertel evakuieren.",
+  "gsw": "evakuiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wäge de Bombe hät me s halb Quartier müesse evakuiere."
+ },
+ {
+  "id": 5353,
+  "de": "alarmieren",
+  "tr": "haber vermek, alarma geçirmek",
+  "deBeispiel": "Ein Passant alarmierte gegen Mitternacht die Rettungskräfte.",
+  "gsw": "alarmiere",
+  "gswArtikel": null,
+  "gswBeispiel": "En Passant hät gäge Mitternacht d Rettigschräft alarmiert."
+ },
+ {
+  "id": 5354,
+  "de": "beseitigen",
+  "tr": "gidermek, ortadan kaldırmak",
+  "deBeispiel": "Die Mängel an der Anlage müssen bis Freitag beseitigt werden.",
+  "gsw": "beseitige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Mängel a de Aalag mönd bis am Friitig beseitigt werde."
+ },
+ {
+  "id": 5356,
+  "de": "verdächtigen",
+  "tr": "şüphelenmek, zanlı görmek",
+  "deBeispiel": "Man verdächtigte ihn zu Unrecht, die Papiere gefälscht zu haben.",
+  "gsw": "verdächtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Me hät en z Unrächt verdächtigt, d Papier gfälscht z haa."
+ },
+ {
+  "id": 5357,
+  "de": "beschlagnahmen",
+  "tr": "el koymak, müsadere etmek",
+  "deBeispiel": "Die Zollbeamten beschlagnahmten mehrere Kisten mit gefälschter Ware.",
+  "gsw": "beschlagnaame",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zollbeamte händ mehreri Chischte mit gfälschter Waar beschlagnaamt."
+ },
+ {
+  "id": 5358,
+  "de": "einstürzen",
+  "tr": "çökmek, yıkılmak",
+  "deBeispiel": "Ein Teil des Dachs stürzte unter der Schneelast ein.",
+  "gsw": "iischtürze",
+  "gswArtikel": null,
+  "gswBeispiel": "En Teil vom Dach isch under de Schneelascht iigschtürzt."
+ },
+ {
+  "id": 5359,
+  "de": "entkommen",
+  "tr": "kaçmak, kurtulmak",
+  "deBeispiel": "Zwei der Täter konnten über den Hinterhof entkommen.",
+  "gsw": "entchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwäi vo de Täter sind über de Hinterhof entchoo."
+ },
+ {
+  "id": 5360,
+  "de": "verunglücken",
+  "tr": "kaza geçirmek, kazaya uğramak",
+  "deBeispiel": "Bei dem Sturm sind mehrere Bergsteiger tödlich verunglückt.",
+  "gsw": "verunglücke",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi dem Schturm sind mehreri Bärgschtiger tödlich verunglückt."
+ },
+ {
+  "id": 5361,
+  "de": "auslösen",
+  "tr": "tetiklemek, yol açmak",
+  "deBeispiel": "Ein defekter Toaster löste den Alarm im ganzen Haus aus.",
+  "gsw": "uuslöse",
+  "gswArtikel": null,
+  "gswBeispiel": "En defekte Toaster hät im ganze Huus de Alarm uusglööst."
+ },
+ {
+  "id": 5362,
+  "de": "abriegeln",
+  "tr": "çevresini kapatmak, abluka altına almak",
+  "deBeispiel": "Die Polizei riegelte das gesamte Bahnhofsgelände weiträumig ab.",
+  "gsw": "abrigle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät s ganz Baanhofsgländ wiiträumig abgriglet."
+ },
+ {
+  "id": 5363,
+  "de": "entschärfen",
+  "tr": "etkisiz hale getirmek, yumuşatmak",
+  "deBeispiel": "Der Sprengkörper wurde noch vor Sonnenaufgang entschärft.",
+  "gsw": "entschärfe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schprängchörper isch na vor em Sunneuufgang entschärft worde."
+ },
+ {
+  "id": 5364,
+  "de": "verwüsten",
+  "tr": "harap etmek, yerle bir etmek",
+  "deBeispiel": "Der Orkan verwüstete ganze Straßenzüge im Norden der Stadt.",
+  "gsw": "verwüeschte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Orkan hät ganzi Schtrasseziig im Norde vo de Schtadt verwüeschtet."
+ },
+ {
+  "id": 5365,
+  "de": "bekämpfen",
+  "tr": "(bir şeye karşı) mücadele etmek, savaşmak",
+  "deBeispiel": "Hundert Helfer bekämpften das Feuer bis zum Morgengrauen.",
+  "gsw": "bekämpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Hundert Hälfer händ s Füür bis am Morgegraue bekämpft."
+ },
+ {
+  "id": 5366,
+  "de": "verfolgen",
+  "tr": "takip etmek, kovuşturmak",
+  "deBeispiel": "Solche Delikte werden nur auf Antrag der Betroffenen verfolgt.",
+  "gsw": "verfolge",
+  "gswArtikel": null,
+  "gswBeispiel": "Settigi Delikt werded nu uf Aatrag vo de Betroffene verfolgt."
+ },
+ {
+  "id": 5367,
+  "de": "fahrlässig",
+  "tr": "ihmalkâr, taksirli",
+  "deBeispiel": "Er hat fahrlässig gehandelt und muss dafür einstehen.",
+  "gsw": "fahrlässig",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät fahrlässig ghandlet und mues drfür grad schtaa."
+ },
+ {
+  "id": 5368,
+  "de": "vorsätzlich",
+  "tr": "kasten, kasıtlı",
+  "deBeispiel": "Das Gericht sah die Tat als vorsätzlich begangen an.",
+  "gsw": "vorsätzlich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät d Tat als vorsätzlich begange aagsee."
+ },
+ {
+  "id": 5369,
+  "de": "vorsorglich",
+  "tr": "tedbiren, ihtiyaten",
+  "deBeispiel": "Die Schule blieb vorsorglich einen weiteren Tag geschlossen.",
+  "gsw": "vorsorglich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schuel isch vorsorglich en wiitere Tag zue bliebe."
+ },
+ {
+  "id": 5370,
+  "de": "brennbar",
+  "tr": "yanıcı, tutuşabilir",
+  "deBeispiel": "Brennbare Flüssigkeiten gehören nicht in den Heizungskeller.",
+  "gsw": "brännbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Brännbari Flüssigkeite ghöred nöd i de Heizigschäller."
+ },
+ {
+  "id": 5371,
+  "de": "riskant",
+  "tr": "riskli, tehlikeli",
+  "deBeispiel": "Ein Überholmanöver an dieser Stelle wäre viel zu riskant.",
+  "gsw": "riskant",
+  "gswArtikel": null,
+  "gswBeispiel": "Es Überholmanöver a dere Schtell wär vil z riskant."
+ },
+ {
+  "id": 5372,
+  "de": "umgehend",
+  "tr": "hemen, ivedilikle",
+  "deBeispiel": "Bitte verlassen Sie das Gebäude umgehend über den Hinterausgang.",
+  "gsw": "umgehend",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte verlönd Sie s Gebäude umgehend über de Hinderuusgang."
+ },
+ {
+  "id": 5373,
+  "de": "versehentlich",
+  "tr": "yanlışlıkla, kazara",
+  "deBeispiel": "Der Kollege hat versehentlich den falschen Hebel gezogen.",
+  "gsw": "versehentlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kolleg hät versehentlich de falsch Häbel zoge."
+ },
+ {
+  "id": 5374,
+  "de": "bewusstlos",
+  "tr": "baygın, bilinci kapalı",
+  "deBeispiel": "Der Mann lag bewusstlos neben seinem Fahrrad im Gras.",
+  "gsw": "bewusstlos",
+  "gswArtikel": null,
+  "gswBeispiel": "De Maa isch bewusstlos näbet sim Velo im Gras gläge."
+ },
+ {
+  "id": 5375,
+  "de": "unversehrt",
+  "tr": "yara almamış, sapasağlam",
+  "deBeispiel": "Alle Insassen kamen unversehrt aus dem zerstörten Fahrzeug.",
+  "gsw": "unversehrt",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli Insasse sind unversehrt us em zerschtörte Fahrzüüg choo."
+ },
+ {
+  "id": 5376,
+  "de": "die Betonung",
+  "tr": "vurgu, vurgulama",
+  "deBeispiel": "Bei diesem Wort liegt die Betonung auf der zweiten Silbe.",
+  "gsw": "Betonig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dem Wort liit d Betonig uf de zwäite Silbe."
+ },
+ {
+  "id": 5377,
+  "de": "die Redewendung",
+  "tr": "deyim, kalıp ifade",
+  "deBeispiel": "Diese Redewendung lässt sich kaum wörtlich ins Türkische übertragen.",
+  "gsw": "Redewändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Redewändig laat sich chuum wörtlich is Türkische übertrage."
+ },
+ {
+  "id": 5378,
+  "de": "der Wortschatz",
+  "tr": "kelime hazinesi, sözcük dağarcığı",
+  "deBeispiel": "Ihr Wortschatz reicht inzwischen für anspruchsvolle Fachtexte aus.",
+  "gsw": "Wortschatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire Wortschatz längt inzwüsche für aaschpruchsvolli Fachtäxt."
+ },
+ {
+  "id": 5379,
+  "de": "die Umgangssprache",
+  "tr": "günlük konuşma dili",
+  "deBeispiel": "In der Umgangssprache wird der Genitiv häufig durch den Dativ ersetzt.",
+  "gsw": "Umgangsschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Umgangsschpraach wird de Genitiv hüüfig dur de Dativ ersetzt."
+ },
+ {
+  "id": 5380,
+  "de": "die Fachsprache",
+  "tr": "uzmanlık dili, teknik dil",
+  "deBeispiel": "Die medizinische Fachsprache bleibt für Laien oft völlig undurchschaubar.",
+  "gsw": "Fachschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "D medizinisch Fachschpraach bliibt für Laie oft völlig undurchsichtig."
+ },
+ {
+  "id": 5381,
+  "de": "das Sprachgefühl",
+  "tr": "dil sezgisi, dil duygusu",
+  "deBeispiel": "Ohne ein gutes Sprachgefühl klingen selbst korrekte Sätze seltsam.",
+  "gsw": "Schpraachgfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ooni es guets Schpraachgfüel tönd sogar korrekti Sätz komisch."
+ },
+ {
+  "id": 5382,
+  "de": "die Sprachbarriere",
+  "tr": "dil engeli",
+  "deBeispiel": "Die Sprachbarriere erschwerte die Zusammenarbeit im internationalen Team erheblich.",
+  "gsw": "Schpraachbarriere",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schpraachbarriere hät d Zämmearbet im internationale Team erheblich erschwert."
+ },
+ {
+  "id": 5383,
+  "de": "der Sprachkurs",
+  "tr": "dil kursu",
+  "deBeispiel": "Der Sprachkurs findet zweimal wöchentlich am späten Abend statt.",
+  "gsw": "Schpraachkurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schpraachkurs findet zwäimal i de Wuche am schpaate Aabig schtatt."
+ },
+ {
+  "id": 5384,
+  "de": "die Beurteilung",
+  "tr": "değerlendirme, kanaat",
+  "deBeispiel": "Die Beurteilung der mündlichen Leistung fiel überraschend positiv aus.",
+  "gsw": "Beurteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Beurteilig vo de mündliche Läischtig isch überraschend positiv uusgfale."
+ },
+ {
+  "id": 5385,
+  "de": "der Redebeitrag",
+  "tr": "söz alma, (toplantıda) yapılan konuşma",
+  "deBeispiel": "Jeder Redebeitrag sollte höchstens drei Minuten dauern.",
+  "gsw": "Redebiitrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Redebiitrag sött höchschtens drüü Minute duure."
+ },
+ {
+  "id": 5386,
+  "de": "das Gegenargument",
+  "tr": "karşı argüman, karşı görüş",
+  "deBeispiel": "Auf sein Gegenargument hatte niemand eine überzeugende Antwort.",
+  "gsw": "Gägeargumänt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf sis Gägeargumänt hät niemer e überzüügendi Antwort ghaa."
+ },
+ {
+  "id": 5387,
+  "de": "die Höflichkeit",
+  "tr": "nezaket, kibarlık",
+  "deBeispiel": "Aus reiner Höflichkeit hörte sie dem langen Vortrag bis zum Schluss zu.",
+  "gsw": "Höflichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Us reiner Höflichkeit hät si em lange Vortrag bis zum Schluss zueglost."
+ },
+ {
+  "id": 5388,
+  "de": "der Umgangston",
+  "tr": "üslup, konuşma tarzı",
+  "deBeispiel": "Der Umgangston in dieser Abteilung ist erstaunlich rau.",
+  "gsw": "Umgangston",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Umgangston i dere Abteilig isch erschtuunlich rau."
+ },
+ {
+  "id": 5389,
+  "de": "die Mimik",
+  "tr": "yüz ifadesi, mimik",
+  "deBeispiel": "Seine Mimik verriet mehr als jedes gesprochene Wort.",
+  "gsw": "Mimik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Mimik hät mee verrate als jedes gschprochene Wort."
+ },
+ {
+  "id": 5390,
+  "de": "die Gesprächsführung",
+  "tr": "görüşme yönetimi, sohbeti yönlendirme",
+  "deBeispiel": "Eine ruhige Gesprächsführung hilft besonders bei schwierigen Kunden.",
+  "gsw": "Gschprööchsfüehrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E ruigi Gschprööchsfüehrig hilft bsunders bi schwierige Chunde."
+ },
+ {
+  "id": 5391,
+  "de": "die Deutung",
+  "tr": "yorum, anlamlandırma",
+  "deBeispiel": "Diese Geste lässt mehr als eine Deutung zu.",
+  "gsw": "Düütig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Geschte laat mee als äi Düütig zue."
+ },
+ {
+  "id": 5392,
+  "de": "die Auslegung",
+  "tr": "yorumlama, (metin veya yasa) yorumu",
+  "deBeispiel": "Die Auslegung des Satzes hängt stark vom Zusammenhang ab.",
+  "gsw": "Uuslegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uuslegig vom Satz hanget schtark vom Zämehang ab."
+ },
+ {
+  "id": 5393,
+  "de": "die Zwischenfrage",
+  "tr": "araya sıkıştırılan soru, ara soru",
+  "deBeispiel": "Zwischenfragen sind erlaubt, aber bitte erst nach dem zweiten Teil.",
+  "gsw": "Zwüschefraag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüschefrage sind erlaubt, aber bitte erscht nach em zwäite Teil."
+ },
+ {
+  "id": 5394,
+  "de": "das Stichwort",
+  "tr": "anahtar kelime, not başlığı",
+  "deBeispiel": "Er hatte sich nur ein paar Stichwörter auf die Karte geschrieben.",
+  "gsw": "Schtichwort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er hät sich nu es paar Schtichwörter uf d Charte gschribe."
+ },
+ {
+  "id": 5395,
+  "de": "die Floskel",
+  "tr": "klişe söz, boş kalıp",
+  "deBeispiel": "Seine Rede bestand fast nur aus leeren Floskeln.",
+  "gsw": "Floskle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Red hät fascht nu us leere Floskle beschtande."
+ },
+ {
+  "id": 5396,
+  "de": "das Fremdwort",
+  "tr": "yabancı kökenli kelime",
+  "deBeispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken.",
+  "gsw": "Frömdwort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er bruucht gern Frömdwörter, zum gebildet z wirke."
+ },
+ {
+  "id": 5397,
+  "de": "die Feststellung",
+  "tr": "tespit, saptama",
+  "deBeispiel": "Seine nüchterne Feststellung beendete die hitzige Diskussion.",
+  "gsw": "Fäschtschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini nüechteri Fäschtschtellig hät di hitzigi Diskussion beändet."
+ },
+ {
+  "id": 5398,
+  "de": "die Anmerkung",
+  "tr": "not, ek açıklama",
+  "deBeispiel": "Die Lehrerin schrieb einige kritische Anmerkungen an den Rand.",
+  "gsw": "Aamerkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Lehrerin hät es paar kritischi Aamerkige a de Rand gschribe."
+ },
+ {
+  "id": 5399,
+  "de": "das Lob",
+  "tr": "övgü, takdir",
+  "deBeispiel": "Ein ehrliches Lob motiviert oft mehr als eine gute Note.",
+  "gsw": "Lob",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es ehrlichs Lob motiviert oft mee als e gueti Note."
+ },
+ {
+  "id": 5400,
+  "de": "der Tadel",
+  "tr": "azar, kınama",
+  "deBeispiel": "Sein scharfer Tadel verletzte den jungen Kollegen sehr.",
+  "gsw": "Tadel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin scharf Tadel hät de jung Kolleg sehr verletzt."
+ },
+ {
+  "id": 5401,
+  "de": "das Gedächtnis",
+  "tr": "hafıza, bellek",
+  "deBeispiel": "Neue Vokabeln bleiben nur mit regelmäßiger Wiederholung im Gedächtnis.",
+  "gsw": "Gedächtnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nöii Vokable bliibed nu mit regelmässiger Widerholig im Gedächtnis."
+ },
+ {
+  "id": 5402,
+  "de": "das Lampenfieber",
+  "tr": "sahne heyecanı, sunum heyecanı",
+  "deBeispiel": "Vor jedem Vortrag hat sie schreckliches Lampenfieber.",
+  "gsw": "Lampefieber",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vor jedem Vortrag hät si schrecklichs Lampefieber."
+ },
+ {
+  "id": 5403,
+  "de": "das Selbstvertrauen",
+  "tr": "özgüven",
+  "deBeispiel": "Mit jedem gelungenen Gespräch wuchs sein Selbstvertrauen.",
+  "gsw": "Sälbschtvertraue",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mit jedem glungene Gschpröch isch sis Sälbschtvertraue gwachse."
+ }
+]

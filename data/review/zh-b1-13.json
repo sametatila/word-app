@@ -1,0 +1,1014 @@
+[
+ {
+  "id": 2696,
+  "de": "sich siezen",
+  "tr": "resmi hitap etmek, siz demek",
+  "deBeispiel": "Obwohl sie sich schon lange kennen, siezen sie sich.",
+  "gsw": "sich sieze",
+  "gswArtikel": null,
+  "gswBeispiel": "Obwohl si sich scho lang kenned, wänd si sich sieze."
+ },
+ {
+  "id": 2697,
+  "de": "sinken",
+  "tr": "batmak, düşmek, azalmak",
+  "deBeispiel": "1. Das Schiff ist vor der Küste gesunken. 2. Der Preis ist um 3 % gesunken.",
+  "gsw": "sinke",
+  "gswArtikel": null,
+  "gswBeispiel": "De Priis sinkt um drüü Prozänt."
+ },
+ {
+  "id": 2698,
+  "de": "der Sinn",
+  "tr": "anlam, mantık (bir şeyin amacı)",
+  "deBeispiel": "Es hat keinen Sinn, noch ein Spiel zu beginnen. Es ist schon spät.",
+  "gsw": "Sinn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es hät kän Sinn, no es Schpiil aazfange. Es isch scho schpaat."
+ },
+ {
+  "id": 2699,
+  "de": "sinnlos",
+  "tr": "anlamsız",
+  "deBeispiel": "So ein sinnloses Buch habe ich schon lange nicht mehr gelesen.",
+  "gsw": "sinnlos",
+  "gswArtikel": null,
+  "gswBeispiel": "So nes sinnloses Buech han ich scho lang nüme gläse."
+ },
+ {
+  "id": 2700,
+  "de": "sinnvoll",
+  "tr": "anlamlı, mantıklı",
+  "deBeispiel": "Es funktioniert einfach nicht. Es ist sinnvoll, es noch einmal zu versuchen.",
+  "gsw": "sinnvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "Es funktioniert äifach nöd. Es isch sinnvoll, s no mal z probiere."
+ },
+ {
+  "id": 2701,
+  "de": "der Sitz",
+  "tr": "koltuk, oturma yeri",
+  "deBeispiel": "Ich suche für meinen Sohn einen Sitz fürs Auto. Erst ist erst drei Jahre alt.",
+  "gsw": "Sitz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich sueche für min Soon en Sitz für s Auto. Er isch erscht drüü Jaar alt."
+ },
+ {
+  "id": 2703,
+  "de": "sobald",
+  "tr": "-er -mez, hemen",
+  "deBeispiel": "Sobald ich den Termin weiß, gebe ich Ihnen Bescheid.",
+  "gsw": "sobald",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich gib Ine Bschäid, sobald ich de Termin wäiss."
+ },
+ {
+  "id": 2704,
+  "de": "die Socke",
+  "tr": "çorap (kısa)",
+  "deBeispiel": "Im Winter brauche ich warme Socken.",
+  "gsw": "Socke",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Winter bruuche ich warmi Socke."
+ },
+ {
+  "id": 2705,
+  "de": "sodass",
+  "tr": "böylece, bu yüzden",
+  "deBeispiel": "Der Zug hatte zwei Stunden Verspätung, sodass ich erst um 23 Uhr nach Hause kam.",
+  "gsw": "sodass",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zug hät zwo Schtunde Verschpöötig gha, sodass ich erscht am Elfi häichoo bi."
+ },
+ {
+  "id": 2706,
+  "de": "sogenannte",
+  "tr": "sözde, denilen",
+  "deBeispiel": "1. Studenten, die lange studieren, sind sogenannte Langzeitstudierende. 2. Wo bleiben denn deine sogenannten Freunde?",
+  "gsw": "sogenannt",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo sind dänn dini sogenannte Fründe?"
+ },
+ {
+  "id": 2707,
+  "de": "solange",
+  "tr": "-dığı sürece",
+  "deBeispiel": "Solange Sie Fieber haben, dürfen Sie auf keinen Fall arbeiten gehen.",
+  "gsw": "solang",
+  "gswArtikel": null,
+  "gswBeispiel": "Sii dörfed nöd go schaffe, solang Sii Fieber händ."
+ },
+ {
+  "id": 2708,
+  "de": "solche",
+  "tr": "böyle, bu tür",
+  "deBeispiel": "Solche Schuhe finde ich toll.",
+  "gsw": "settig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde settigi Schue eifach toll."
+ },
+ {
+  "id": 2709,
+  "de": "das Sonderangebot",
+  "tr": "özel teklif, indirim",
+  "deBeispiel": "Das ist ein Sonderangebot: 25 % reduziert.",
+  "gsw": "Aktion",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch e Aktion: 25 Prozänt billiger.",
+  "ayniLehce": [
+   "Aktion (B1)"
+  ]
+ },
+ {
+  "id": 2710,
+  "de": "sondern",
+  "tr": "aksine, tersine",
+  "deBeispiel": "Unser Besuch kommt nicht heute, sondern morgen.",
+  "gsw": "sondern",
+  "gswArtikel": null,
+  "gswBeispiel": "Üse Bsuech chunt nöd hüt, sondern eerscht morn."
+ },
+ {
+  "id": 2711,
+  "de": "sorgen",
+  "tr": "bakmak, ilgilenmek, sağlamak",
+  "deBeispiel": "1. Wer sorgt denn für die Kinder? 2. Können Sie bitte dafür sorgen, dass die Heizung funktioniert?",
+  "gsw": "sorge",
+  "gswArtikel": null,
+  "gswBeispiel": "Wär sorgt dänn für d Chind?"
+ },
+ {
+  "id": 2712,
+  "de": "die Sorge",
+  "tr": "endişe, kaygı",
+  "deBeispiel": "Um Ihre Zukunft brauchen Sie sich keine Sorgen zu machen.",
+  "gsw": "Sorg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Um Iri Zuekunft müend Sii Ine käi Sorge mache."
+ },
+ {
+  "id": 2713,
+  "de": "die Soße/Sauce",
+  "tr": "sos",
+  "deBeispiel": "Gibst du mir bitte mal die Soße?",
+  "gsw": "Sauce",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gisch mer bitte mal d Sauce?"
+ },
+ {
+  "id": 2714,
+  "de": "das Souvenir",
+  "tr": "hediyelik eşya",
+  "deBeispiel": "Ich habe ein paar Souvenirs aus dem Urlaub mitgebracht.",
+  "gsw": "Souvenir",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha es paar Souvenirs us de Ferie mitbraacht."
+ },
+ {
+  "id": 2715,
+  "de": "soviel",
+  "tr": "-diği kadarıyla (soviel ich weiß: bildiğim kadarıyla)",
+  "deBeispiel": "Soviel ich weiß, hat dieses Restaurant heute Ruhetag.",
+  "gsw": "sovil",
+  "gswArtikel": null,
+  "gswBeispiel": "S Reschtaurant hät hüt Ruetaag, sovil ich wäiss."
+ },
+ {
+  "id": 2716,
+  "de": "so viel",
+  "tr": "o kadar çok, kadar",
+  "deBeispiel": "1. Ich habe so viel gegessen. Jetzt ist mir schlecht. 2. Ich verdiene nur halb so viel wie er.",
+  "gsw": "so vil",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha so vil gässe. Jetz isch mer schlächt."
+ },
+ {
+  "id": 2717,
+  "de": "sowieso",
+  "tr": "zaten, nasıl olsa",
+  "deBeispiel": "Willst du mir den Brief mitgeben? Ich gehe sowieso zur Post.",
+  "gsw": "sowiso",
+  "gswArtikel": null,
+  "gswBeispiel": "Wotsch mer de Brief mitgää? Ich gaa sowiso uf d Poscht."
+ },
+ {
+  "id": 2718,
+  "de": "sowohl … als auch",
+  "tr": "hem ... hem de",
+  "deBeispiel": "Sowohl Sie als auch Ihre Frau müssen unterschreiben.",
+  "gsw": "sowohl … als au",
+  "gswArtikel": null,
+  "gswBeispiel": "Sowohl Sii als au Iri Frau müend unterschriibe."
+ },
+ {
+  "id": 2719,
+  "de": "sozial",
+  "tr": "sosyal, toplumsal",
+  "deBeispiel": "1. Das System ist nicht sozial. 2. Es gibt viele soziale Probleme.",
+  "gsw": "sozial",
+  "gswArtikel": null,
+  "gswBeispiel": "Es git vil soziali Probleem."
+ },
+ {
+  "id": 2720,
+  "de": "der Sozialarbeiter",
+  "tr": "sosyal hizmet uzmanı, sosyal çalışmacı",
+  "deBeispiel": "- Die Sozialarbeiterin kommt einmal in der Woche.",
+  "gsw": "Sozialarbeiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Sozialarbeiterin chunt äimal i de Wuche."
+ },
+ {
+  "id": 2721,
+  "de": "sparsam",
+  "tr": "tutumlu, ekonomik",
+  "deBeispiel": "1. Wir haben fünf Kinder. Wir müssen sehr sparsam sein. 2. Mein Auto ist sehr sparsam. Es verbraucht nur 5 Liter auf 100",
+  "gsw": "schparsam",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ föif Chind. Mir müend sehr schparsam sii."
+ },
+ {
+  "id": 2722,
+  "de": "spätestens",
+  "tr": "en geç",
+  "deBeispiel": "Ich muss spätestens um 9 Uhr bei der Arbeit sein.",
+  "gsw": "schpöötischtens",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues schpöötischtens am Nüüni bi de Arbet sii."
+ },
+ {
+  "id": 2723,
+  "de": "Speise",
+  "tr": "yemek, yiyecek",
+  "deBeispiel": "Als Vorspeise nehme ich eine Suppe, aber dafür nehme ich keine Nachspeise. (D, A)",
+  "gsw": "Schpiis-",
+  "gswArtikel": null,
+  "gswBeispiel": "Als Vorschpiis nime ich e Suppe, aber es Dessert nime ich käis."
+ },
+ {
+  "id": 2724,
+  "de": "der Speisewagen",
+  "tr": "yemekli vagon",
+  "deBeispiel": "- Wo ist der Speisewagen? Ich brauche eine Spezialpflege für trockenes Haar.",
+  "gsw": "Schpiisewage",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wo isch de Schpiisewage?"
+ },
+ {
+  "id": 2725,
+  "de": "der Spezialist",
+  "tr": "uzman (erkek)",
+  "deBeispiel": "Mein Arzt hat mich zur Spezialistin geschickt.",
+  "gsw": "Schpezialischt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Dokter hät mi zum Schpezialischt gschickt."
+ },
+ {
+  "id": 2726,
+  "de": "die Spezialistin",
+  "tr": "uzman (kadın)",
+  "deBeispiel": "Mein Arzt hat mich zur Spezialistin geschickt.",
+  "gsw": "Schpezialischtin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Dokter hät mi zu de Schpezialischtin gschickt."
+ },
+ {
+  "id": 2727,
+  "de": "speziell",
+  "tr": "özel",
+  "deBeispiel": "Ich suche einen ganz speziellen Ring für meine Freundin.",
+  "gsw": "schpeziell",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich sueche en ganz schpezielle Ring für mini Fründin."
+ },
+ {
+  "id": 2728,
+  "de": "der Spiegel",
+  "tr": "ayna",
+  "deBeispiel": "Ich möchte gerne sehen, wie mein Kleid sitzt. Hast du einen Spiegel?",
+  "gsw": "Schpiegel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich wett gsee, wie mis Chläid sitzt. Häsch en Schpiegel?"
+ },
+ {
+  "id": 2729,
+  "de": "der Spieler",
+  "tr": "oyuncu",
+  "deBeispiel": "- 1. Für dieses Spiel braucht man zwei bis vier Spieler. 2. Beim Fußball gibt es elf Spieler.",
+  "gsw": "Schpiler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für das Schpiil bruucht me zwäi bis vier Schpiler."
+ },
+ {
+  "id": 2730,
+  "de": "das Spielzeug",
+  "tr": "oyuncak",
+  "deBeispiel": "Zu Weihnachten wünschen sich die Kinder vor allem Spielzeug.",
+  "gsw": "Schpilzüüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zu Wienachte wünsched sich d Chind vor allem Schpilzüüg."
+ },
+ {
+  "id": 2731,
+  "de": "spitz",
+  "tr": "sivri",
+  "deBeispiel": "Der Bleistift ist nicht spitz.",
+  "gsw": "schpitz",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bliischtift isch nöd schpitz."
+ },
+ {
+  "id": 2732,
+  "de": "die Sportart",
+  "tr": "spor dalı",
+  "deBeispiel": "Welche Sportart findest du am besten?",
+  "gsw": "Schportart",
+  "gswArtikel": "d",
+  "gswBeispiel": "Weli Schportart findsch am beschte?"
+ },
+ {
+  "id": 2733,
+  "de": "der Sportler",
+  "tr": "sporcu",
+  "deBeispiel": "- Sie ist eine gute Sportlerin.",
+  "gsw": "Schportler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si isch e gueti Schportlerin."
+ },
+ {
+  "id": 2734,
+  "de": "die Fremdsprache",
+  "tr": "yabancı dil",
+  "deBeispiel": "Ich spreche drei Fremdsprachen.",
+  "gsw": "Frömdschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich rede drüü Frömdschpraache."
+ },
+ {
+  "id": 2735,
+  "de": "die Muttersprache",
+  "tr": "anadil",
+  "deBeispiel": "Was ist Ihre Muttersprache?",
+  "gsw": "Mueterschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Was isch Iri Mueterschpraach?"
+ },
+ {
+  "id": 2736,
+  "de": "die Zweitsprache",
+  "tr": "ikinci dil",
+  "deBeispiel": "Deutsch ist seine Zweitsprache.",
+  "gsw": "Zwäitschpraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Tüütsch isch sini Zwäitschpraach."
+ },
+ {
+  "id": 2737,
+  "de": "springen",
+  "tr": "atlamak, sıçramak",
+  "deBeispiel": "1. Wir waren im Schwimmbad. Mein Sohn ist immer wieder ins Wasser gesprungen. 2. Wie weit bist du heute gesprungen? – 3,",
+  "gsw": "gumpe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sind i de Badi gsii. Min Soon isch immer wider is Wasser gumpet.",
+  "ayniLehce": [
+   "hüpfen (A2)"
+  ]
+ },
+ {
+  "id": 2738,
+  "de": "die Spritze",
+  "tr": "iğne, enjeksiyon",
+  "deBeispiel": "Ich habe heute vom Arzt eine Spritze gegen die Schmerzen bekommen.",
+  "gsw": "Schpritze",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha hüt vom Dokter e Schpritze gäge d Schmärze überchoo.",
+  "ayniLehce": [
+   "spritzen (B2)"
+  ]
+ },
+ {
+  "id": 2739,
+  "de": "spülen",
+  "tr": "yıkamak (bulaşık), çalkalamak",
+  "deBeispiel": "1. Hast du das Geschirr gespült? 2. Spülen Sie bitte jetzt den Mund aus.",
+  "gsw": "schpüele",
+  "gswArtikel": null,
+  "gswBeispiel": "Häsch s Gschirr gschpüelt?"
+ },
+ {
+  "id": 2740,
+  "de": "die Spur",
+  "tr": "şerit, iz",
+  "deBeispiel": "Fahren Sie bitte auf der linken Spur, wenn Sie schneller fahren.",
+  "gsw": "Schpur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Faared Sii bitte uf de lingge Schpur, wänn Sii schnäller faared."
+ },
+ {
+  "id": 2741,
+  "de": "spüren",
+  "tr": "hissetmek",
+  "deBeispiel": "Wo tut es weh? Spüren Sie das hier?",
+  "gsw": "gschpüre",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo tuet s weh? Chönd Sii das daa gschpüre?"
+ },
+ {
+  "id": 2742,
+  "de": "das Stadion",
+  "tr": "stadyum",
+  "deBeispiel": "Ich möchte am Samstag ins Stadion gehen. Da spielt meine Mannschaft.",
+  "gsw": "Schtadion",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich wett am Samschtig is Schtadion gaa. Dört schpilt mini Mannschaft."
+ },
+ {
+  "id": 2743,
+  "de": "städtisch",
+  "tr": "kentsel, belediyeye ait",
+  "deBeispiel": "Ich gehe gern in die städtische Bibliothek.",
+  "gsw": "schtädtisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich gaa gärn i di schtädtisch Bibliothek."
+ },
+ {
+  "id": 2744,
+  "de": "stammen",
+  "tr": "-den gelmek, kökeni olmak",
+  "deBeispiel": "Ich stamme aus einer kleinen Stadt an der Donau.",
+  "gsw": "schtamme",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich schtamme us ere chliine Schtadt a de Donau."
+ },
+ {
+  "id": 2745,
+  "de": "ständig",
+  "tr": "sürekli, devamlı",
+  "deBeispiel": "Ich habe schon ein paar Mal bei meiner Freundin angerufen. Es ist ständig besetzt.",
+  "gsw": "schtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha scho es paar Mal bi minere Fründin aaglüütet. Es isch schtändig bsetzt."
+ },
+ {
+  "id": 2746,
+  "de": "der Standpunkt",
+  "tr": "bakış açısı, görüş",
+  "deBeispiel": "Von seinem Standpunkt aus hat er recht.",
+  "gsw": "Schtandpunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vo sim Schtandpunkt us hät er rächt."
+ },
+ {
+  "id": 2747,
+  "de": "starten",
+  "tr": "kalkmak, başlamak",
+  "deBeispiel": "Das Flugzeug ist pünktlich gestartet.",
+  "gsw": "schtarte",
+  "gswArtikel": null,
+  "gswBeispiel": "S Flugzüüg isch pünktlich gschtartet."
+ },
+ {
+  "id": 2748,
+  "de": "der Start",
+  "tr": "kalkış, başlangıç",
+  "deBeispiel": "Bleiben Sie bitte während des Starts sitzen.",
+  "gsw": "Schtart",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bliibed Sii bitte bim Schtart sitze."
+ },
+ {
+  "id": 2749,
+  "de": "die Station",
+  "tr": "durak, istasyon, servis",
+  "deBeispiel": "1. Sie müssen an der nächsten Station aussteigen. 2. Meine Nachbarin liegt auf Station III.",
+  "gsw": "Schtation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sii müend a de nöchschte Schtation usschtiige."
+ },
+ {
+  "id": 2750,
+  "de": "die Statistik",
+  "tr": "istatistik",
+  "deBeispiel": "Die Statistik zeigt, dass jeder zweite ein Fahrrad besitzt.",
+  "gsw": "Schtatischtik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtatischtik zäigt, dass jede Zwäit es Velo hät."
+ },
+ {
+  "id": 2751,
+  "de": "statistisch",
+  "tr": "istatistiksel",
+  "deBeispiel": "Die statistischen Ergebnisse zeigen eine gute Entwicklung.",
+  "gsw": "schtatischtisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D schtatischtische Ergäbnis zäiged e gueti Entwicklig."
+ },
+ {
+  "id": 2752,
+  "de": "statt",
+  "tr": "yerine",
+  "deBeispiel": "Kann ich diese Woche statt Donnerstag am Freitag kommen?",
+  "gsw": "schtatt",
+  "gswArtikel": null,
+  "gswBeispiel": "Chan ich die Wuche schtatt am Dunschtig am Friitig choo?"
+ },
+ {
+  "id": 2753,
+  "de": "der Stau",
+  "tr": "trafik sıkışıklığı",
+  "deBeispiel": "1. Auf der A3 gibt es wegen eines Unfalls 5 km Stau. 2. Wir standen eine Stunde im Stau.",
+  "gsw": "Schtau",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf de A3 git s wäge eme Unfall 5 Kilometer Schtau."
+ },
+ {
+  "id": 2754,
+  "de": "der Staub",
+  "tr": "toz",
+  "deBeispiel": "Ich habe überall Staub gewischt.",
+  "gsw": "Schtaub",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha überall Schtaub gwüscht."
+ },
+ {
+  "id": 2755,
+  "de": "staubsaugen",
+  "tr": "elektrikli süpürgeyle temizlemek",
+  "deBeispiel": "Ich muss heute in meiner Wohnung noch staubsaugen.",
+  "gsw": "schtaubsuuge",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues hüt i miinere Wonig no schtaubsuuge."
+ },
+ {
+  "id": 2756,
+  "de": "stechen",
+  "tr": "sokmak",
+  "deBeispiel": "Stefan wird beim Zelten immer von den Mücken gestochen.",
+  "gsw": "schtäche",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Zälte tüend d Mugge de Stefan jedes Mal schtäche."
+ },
+ {
+  "id": 2757,
+  "de": "stecken",
+  "tr": "sokmak, koymak",
+  "deBeispiel": "1. Wo ist denn mein Pass? Ich hatte ihn doch in die Handtasche gesteckt. 2. Du kannst reingehen. Der Schlüssel steckt. 3",
+  "gsw": "schtecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo isch dänn miin Pass? Ich ha ne doch i d Handtäsche wele schtecke."
+ },
+ {
+  "id": 2758,
+  "de": "die Steckdose",
+  "tr": "priz",
+  "deBeispiel": "Es gibt drei Steckdosen in diesem Zimmer.",
+  "gsw": "Schteckdose",
+  "gswArtikel": "d",
+  "gswBeispiel": "In däm Zimmer hät s drüü Schteckdose."
+ },
+ {
+  "id": 2759,
+  "de": "der Stecker",
+  "tr": "fiş",
+  "deBeispiel": "Der Stecker passt nicht in diese Steckdose.",
+  "gsw": "Schtecker",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtecker passt nöd i die Schteckdose."
+ },
+ {
+  "id": 2760,
+  "de": "stehen bleiben",
+  "tr": "durmak",
+  "deBeispiel": "1. Bitte bleiben Sie stehen. 2. Meine Uhr ist stehen geblieben.",
+  "gsw": "schtaa bliibe",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Bitte bliibed Si schtaa. 2. Miini Uur isch schtaa blibe."
+ },
+ {
+  "id": 2761,
+  "de": "stehlen",
+  "tr": "çalmak",
+  "deBeispiel": "Gestern hat mir jemand im Zug meine Uhr gestohlen.",
+  "gsw": "schtäle",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter hät öpper probiert, mir im Zug d Uur z schtäle."
+ },
+ {
+  "id": 2762,
+  "de": "steigen",
+  "tr": "yükselmek, artmak, çıkmak",
+  "deBeispiel": "1. Die Preise für Milch und Gemüse sind schon wieder gestiegen. 2. Gegen Abend ist das Fieber wieder gestiegen.",
+  "gsw": "schtiige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Priise für Milch und Gmües schtiiged scho wider."
+ },
+ {
+  "id": 2763,
+  "de": "steil",
+  "tr": "dik",
+  "deBeispiel": "Die Straße zu unserem Haus ist sehr steil.",
+  "gsw": "schtäil",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtraass zu öisem Huus isch sehr schtäil."
+ },
+ {
+  "id": 2764,
+  "de": "der Stein",
+  "tr": "taş",
+  "deBeispiel": "Die Kinder werfen Steine ins Wasser.",
+  "gsw": "Schtäi",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Chind wärfed Schtäi is Wasser."
+ },
+ {
+  "id": 2765,
+  "de": "der Stempel",
+  "tr": "mühür, damga",
+  "deBeispiel": "Der Poststempel trägt das Datum von letzter Woche. Das Paket war lange unterwegs.",
+  "gsw": "Schtämpfel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Poschtschtämpfel hät s Datum vo letschter Wuche. S Päckli isch lang underwägs gsii."
+ },
+ {
+  "id": 2766,
+  "de": "der Stern",
+  "tr": "yıldız",
+  "deBeispiel": "Heute sieht man viele Sterne am Himmel.",
+  "gsw": "Schtärn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Hüt gseet me vil Schtärne am Himel."
+ },
+ {
+  "id": 2767,
+  "de": "die Steuer",
+  "tr": "vergi",
+  "deBeispiel": "Wir müssen immer mehr Steuern zahlen.",
+  "gsw": "Schtüür",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir müend immer me Schtüüre zale."
+ },
+ {
+  "id": 2768,
+  "de": "der Steward",
+  "tr": "erkek hostes, kabin memuru",
+  "deBeispiel": "Die Stewardess bringt das Mittagessen.",
+  "gsw": "Steward",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Steward bringt de Zmittag."
+ },
+ {
+  "id": 2769,
+  "de": "die Stewardess",
+  "tr": "hostes, kabin memuresi",
+  "deBeispiel": "Die Stewardess bringt das Mittagessen.",
+  "gsw": "Stewardess",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Stewardess bringt de Zmittag."
+ },
+ {
+  "id": 2770,
+  "de": "der Stil",
+  "tr": "stil, tarz",
+  "deBeispiel": "1. Ihr Stil ist sehr elegant. 2. Das Gebäude gefällt mir. Welcher Baustil ist das?",
+  "gsw": "Schtiil",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire Schtiil isch sehr elegant."
+ },
+ {
+  "id": 2771,
+  "de": "stilistisch",
+  "tr": "üslup açısından, üslupla ilgili",
+  "deBeispiel": "Der Text ist stilistisch sehr schön.",
+  "gsw": "schtilischtisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Tekscht isch schtilischtisch sehr schöön."
+ },
+ {
+  "id": 2772,
+  "de": "still",
+  "tr": "sessiz, sakin",
+  "deBeispiel": "1. Sei doch mal einen Moment still! 2. Maria kann nicht still sitzen.",
+  "gsw": "schtill",
+  "gswArtikel": null,
+  "gswBeispiel": "Bis doch mal en Momänt schtill!"
+ },
+ {
+  "id": 2773,
+  "de": "die Stiege",
+  "tr": "merdiven (binadaki basamaklar, Avusturya)",
+  "deBeispiel": "1. Wo ist die Toilette? – Die Stiege hoch und dann links. 2. Meine Oma kann nicht gut Stiegen steigen.",
+  "gsw": "Schtäge",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Wo isch s WC? – D Schtäge ue und dänn links. 2. Miini Groosmueter cha nöd guet Schtäge schtiige.",
+  "ayniLehce": [
+   "Treppe (A1)"
+  ]
+ },
+ {
+  "id": 2774,
+  "de": "das Stiegenhaus",
+  "tr": "merdiven boşluğu",
+  "deBeispiel": "Im Stiegenhaus ist kein Licht.",
+  "gsw": "Schtägehuus",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Schtägehuus hät s kei Liecht.",
+  "ayniLehce": [
+   "Treppenhaus (B1)"
+  ]
+ },
+ {
+  "id": 2775,
+  "de": "die Stimme",
+  "tr": "ses",
+  "deBeispiel": "Ich habe dich sofort an der Stimme erkannt.",
+  "gsw": "Schtimm",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha di sofort a de Schtimm erkännt."
+ },
+ {
+  "id": 2776,
+  "de": "stimmen",
+  "tr": "doğru olmak, uymak, oy vermek",
+  "deBeispiel": "1. Meine Adresse stimmt nicht mehr. 2. Das Wetter in Deutschland könnte besser sein. – Das stimmt.",
+  "gsw": "schtimme",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Miini Adrässe schtimmt nüme. 2. S Wätter chönt besser sii. – Das schtimmt."
+ },
+ {
+  "id": 2777,
+  "de": "die Stimmung",
+  "tr": "hava, ruh hali, ortam",
+  "deBeispiel": "Es war eine tolle Party. Die Stimmung war sehr gut.",
+  "gsw": "Schtimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Es isch e tolli Party gsii. D Schtimmig isch mega guet gsii."
+ },
+ {
+  "id": 2778,
+  "de": "stinken",
+  "tr": "pis kokmak, leş gibi kokmak",
+  "deBeispiel": "Was stinkt denn hier so? – Das ist der Fisch. Er ist nicht mehr frisch.",
+  "gsw": "schtinke",
+  "gswArtikel": null,
+  "gswBeispiel": "Was schtinkt dänn da eso? – Das isch de Fisch. Er isch nüme frisch."
+ },
+ {
+  "id": 2780,
+  "de": "der Stoff",
+  "tr": "kumaş, madde",
+  "deBeispiel": "1. Was für ein Stoff ist das? – Wolle. 2. In manchen Farben sind giftige Stoffe.",
+  "gsw": "Schtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Was für en Schtoff isch das? – Wule. 2. I mänge Farbe hät s giftigi Schtoff."
+ },
+ {
+  "id": 2781,
+  "de": "stolz",
+  "tr": "gururlu",
+  "deBeispiel": "Ich bin stolz auf dich. Das hast du sehr gut gemacht.",
+  "gsw": "schtolz",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi schtolz uf di. Das häsch du sehr guet gmacht."
+ },
+ {
+  "id": 2782,
+  "de": "stoppen",
+  "tr": "durdurmak",
+  "deBeispiel": "Die Polizei hat mich gestoppt, weil ich bei Rot über die Ampel gefahren bin.",
+  "gsw": "schtoppe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät mi gschtoppt, wil ich bi Root über d Ampele gfare bi."
+ },
+ {
+  "id": 2783,
+  "de": "die Störung",
+  "tr": "rahatsızlık, rahatsız etme, arıza, kesinti",
+  "deBeispiel": "Entschuldigen Sie bitte die Störung.",
+  "gsw": "Schtörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Entschuldiged Si bitte d Schtörig."
+ },
+ {
+  "id": 2784,
+  "de": "sich stoßen",
+  "tr": "çarpmak (bir yere), vurmak",
+  "deBeispiel": "Wie haben Sie sich denn verletzt? – Ich habe mich an der Autotür gestoßen.",
+  "gsw": "schtoosse",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie händ Si sich dänn verletzt? – Ich ha mi a de Autotüre gschtoosse."
+ },
+ {
+  "id": 2785,
+  "de": "die Strafe",
+  "tr": "ceza",
+  "deBeispiel": "Schwarzfahren kostet 60 Euro Strafe.",
+  "gsw": "Schtraaf",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schwarzfaare choschtet 60 Franke Schtraaf."
+ },
+ {
+  "id": 2786,
+  "de": "strafbar",
+  "tr": "cezalandırılabilir, suç teşkil eden",
+  "deBeispiel": "Was du da machst, ist strafbar.",
+  "gsw": "schtraafbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Was du da machsch, isch schtraafbar."
+ },
+ {
+  "id": 2787,
+  "de": "der Strafzettel",
+  "tr": "ceza makbuzu (park/trafik cezası kâğıdı)",
+  "deBeispiel": "- So ein Pech! Ich habe einmal falsch geparkt und sofort einen Strafzettel bekommen.",
+  "gsw": "Buessezettel",
+  "gswArtikel": "de",
+  "gswBeispiel": "So es Päch! Ich ha äimal falsch parkiert und sofort en Buessezettel übercho."
+ },
+ {
+  "id": 2788,
+  "de": "die Strecke",
+  "tr": "mesafe, yol, güzergah",
+  "deBeispiel": "1. Sind Sie die ganze Strecke zu Fuß gegangen? 2. Auf der Strecke München – Salzburg: 8 km Stau. 3. Ich möchte nach Hamb",
+  "gsw": "Schtrecki",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Sind Si di ganz Schtrecki z Fuess ggange? 2. Uf de Schtrecki Züri–Bärn: 8 Kilometer Schtau."
+ },
+ {
+  "id": 2789,
+  "de": "das Streichholz",
+  "tr": "kibrit",
+  "deBeispiel": "Ich hätte gern eine Schachtel Streichhölzer.",
+  "gsw": "Zündhölzli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich hett gärn e Schachtle Zündhölzli.",
+  "ayniLehce": [
+   "Zünder (B1)",
+   "Zündholz (B1)"
+  ]
+ },
+ {
+  "id": 2790,
+  "de": "streiken",
+  "tr": "grev yapmak",
+  "deBeispiel": "Die Arbeiter streiken für höhere Löhne.",
+  "gsw": "schtreike",
+  "gswArtikel": null,
+  "gswBeispiel": "D Büezer schtreiked für höcheri Löön."
+ },
+ {
+  "id": 2791,
+  "de": "der Streik",
+  "tr": "grev",
+  "deBeispiel": "Es gab einen Streik am Flughafen. Deshalb hatte unsere Maschine Verspätung.",
+  "gsw": "Schtreik",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Flughafe hät s en Schtreik ggää. Drum hät öises Flugzüüg Verschpöötig ghaa."
+ },
+ {
+  "id": 2792,
+  "de": "sich streiten",
+  "tr": "kavga etmek (birbiriyle)",
+  "deBeispiel": "Die Kinder streiten sich oft.",
+  "gsw": "schtriite",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind schtriited sich oft.",
+  "ayniLehce": [
+   "streiten (A2)"
+  ]
+ },
+ {
+  "id": 2793,
+  "de": "der Streit",
+  "tr": "kavga, tartışma",
+  "deBeispiel": "Ich möchte keinen Streit mit den Nachbarn.",
+  "gsw": "Schtriit",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich wott kei Schtriit mit de Nachbere."
+ },
+ {
+  "id": 2794,
+  "de": "der Strom",
+  "tr": "elektrik, akım",
+  "deBeispiel": "Wie kann ich im Haushalt Strom sparen?",
+  "gsw": "Schtrom",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wie chan ich im Huushalt Schtrom schpare?"
+ },
+ {
+  "id": 2795,
+  "de": "der Strumpf",
+  "tr": "çorap (uzun, diz üstü)",
+  "deBeispiel": "Wo sind meine roten Strümpfe?",
+  "gsw": "Schtrumpf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha nu äin rote Schtrumpf gfunde – wo isch de ander?"
+ },
+ {
+  "id": 2797,
+  "de": "die Studie",
+  "tr": "araştırma, çalışma, inceleme",
+  "deBeispiel": "1. Wir führen eine Studie über Arbeitslosigkeit durch. 2. Eine aktuelle Studie zeigt, dass die Umweltverschmutzung zunim",
+  "gsw": "Schtudie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir füered e Schtudie zur Arbetslosigkäit dure."
+ },
+ {
+  "id": 2798,
+  "de": "die Studentin",
+  "tr": "kadın öğrenci",
+  "deBeispiel": "Schüler und Studenten zahlen die Hälfte.",
+  "gsw": "Schtudäntin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schüeler und Schtudäntinne zaled d Helfti."
+ },
+ {
+  "id": 2799,
+  "de": "der Studierende",
+  "tr": "öğrenci (erkek)",
+  "deBeispiel": "Zehn Studierende besuchen das Seminar.",
+  "gsw": "Schtudierend",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zää Schtudierendi bsueched s Seminar."
+ },
+ {
+  "id": 2800,
+  "de": "die Studierende",
+  "tr": "öğrenci (kadın)",
+  "deBeispiel": "Zehn Studierende besuchen das Seminar.",
+  "gsw": "Schtudierendi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zää Schtudierendi bsueched s Seminar."
+ },
+ {
+  "id": 2801,
+  "de": "das Studio",
+  "tr": "stüdyo",
+  "deBeispiel": "Zu Gast im Studio sind heute ...",
+  "gsw": "Schtudio",
+  "gswArtikel": "s",
+  "gswBeispiel": "Z Gascht im Schtudio sind hüt ..."
+ },
+ {
+  "id": 2802,
+  "de": "die Stufe",
+  "tr": "basamak, seviye, aşama",
+  "deBeispiel": "1. Vorsicht, Stufe! 2. Die Volkshochschule bietet Sprachkurse auf verschiedenen Stufen an.",
+  "gsw": "Schtuefe",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Achtung, Schtuefe! 2. D Volkshochschuel büüt Schpraachkurse uf verschidene Schtuefe aa."
+ },
+ {
+  "id": 2803,
+  "de": "stumm",
+  "tr": "sessiz, sesi kapalı",
+  "deBeispiel": "Stell bitte dein Handy leise oder auf stumm.",
+  "gsw": "schtumm",
+  "gswArtikel": null,
+  "gswBeispiel": "Schtell dis Natel bitte uf liislig oder uf schtumm."
+ },
+ {
+  "id": 2804,
+  "de": "der Sturm",
+  "tr": "fırtına",
+  "deBeispiel": "Im Radio haben sie Regen und Sturm angesagt.",
+  "gsw": "Schturm",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Radio händ s Räge und Schturm aagsäit."
+ },
+ {
+  "id": 2805,
+  "de": "stürzen",
+  "tr": "düşmek (sert biçimde), yuvarlanmak",
+  "deBeispiel": "1. Ich bin auf der Straße gestürzt und habe mir den Fuß gebrochen. 2. Bitte pass auf der Treppe auf, dass du nicht hinun",
+  "gsw": "schtürze",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi uf de Schtraass gschtürzt und ha mir de Fuess broche."
+ },
+ {
+  "id": 2806,
+  "de": "die Sucht",
+  "tr": "bağımlılık, tutku",
+  "deBeispiel": "1. Die Sucht nach Medikamenten nimmt zu. 2. Er kämpft gegen seine Alkoholsucht. 3. Das Internet kann zur Sucht werden.",
+  "gsw": "Sucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. D Sucht nach Medikamänt nimmt zue. 2. S Internet cha zur Sucht wärde."
+ },
+ {
+  "id": 2807,
+  "de": "süchtig",
+  "tr": "bağımlı, tutkun",
+  "deBeispiel": "1. Ich bin süchtig nach Schokolade. 2. Fernsehen kann süchtig machen.",
+  "gsw": "süchtig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich bi süchtig nach Schoggi. 2. Färnsee cha süchtig mache."
+ },
+ {
+  "id": 2808,
+  "de": "das Suchtmittel",
+  "tr": "bağımlılık yapan madde",
+  "deBeispiel": "- Manche Medikamente sind auch Suchtmittel.",
+  "gsw": "Suchtmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mängi Medikamänt sind au Suchtmittel."
+ }
+]

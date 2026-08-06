@@ -1,0 +1,992 @@
+[
+ {
+  "id": 3193,
+  "de": "der Arbeitsvertrag",
+  "tr": "iş sözleşmesi",
+  "deBeispiel": "Bevor sie anfängt, muss sie den Arbeitsvertrag genau durchlesen.",
+  "gsw": "Arbetsvertraag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bevor si aafangt, mues si de Arbetsvertraag gnau dureläse."
+ },
+ {
+  "id": 3194,
+  "de": "der Vorstand",
+  "tr": "yönetim kurulu",
+  "deBeispiel": "Der Vorstand entscheidet morgen über die neue Firmenstrategie.",
+  "gsw": "Vorschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vorschtand entschäidet morn über di neu Firmeschtrategie."
+ },
+ {
+  "id": 3195,
+  "de": "die Gehaltserhöhung",
+  "tr": "maaş artışı",
+  "deBeispiel": "Nach der Beförderung bekam er eine deutliche Gehaltserhöhung.",
+  "gsw": "Lohnerhöhig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Beförderig hät er e dütlichi Lohnerhöhig überchoo."
+ },
+ {
+  "id": 3196,
+  "de": "der Umsatz",
+  "tr": "ciro",
+  "deBeispiel": "Der Umsatz ist im letzten Quartal um zehn Prozent gestiegen.",
+  "gsw": "Umsatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Umsatz isch im letschte Quartal um zää Prozänt gschtige."
+ },
+ {
+  "id": 3197,
+  "de": "die Rendite",
+  "tr": "getiri",
+  "deBeispiel": "Diese Aktie bringt eine höhere Rendite als das Sparkonto.",
+  "gsw": "Rendite",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Aktie bringt e höcheri Rendite als s Schparkonto."
+ },
+ {
+  "id": 3198,
+  "de": "der Aktienmarkt",
+  "tr": "hisse senedi piyasası",
+  "deBeispiel": "Nach der schlechten Nachricht reagierte der Aktienmarkt nervös.",
+  "gsw": "Aktiemärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de schlächte Naaricht hät de Aktiemärt nervöös reagiert."
+ },
+ {
+  "id": 3199,
+  "de": "die Insolvenz",
+  "tr": "iflas",
+  "deBeispiel": "Wegen hoher Schulden musste die Firma Insolvenz anmelden.",
+  "gsw": "Insolvenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge de hoche Schulde hät d Firma Insolvenz müese aamälde."
+ },
+ {
+  "id": 3200,
+  "de": "die Konjunktur",
+  "tr": "ekonomik konjonktür",
+  "deBeispiel": "Bei guter Konjunktur stellen viele Unternehmen neue Mitarbeiter ein.",
+  "gsw": "Konjunktur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi guete Konjunktur schtelled vill Firmene neui Lüüt ii."
+ },
+ {
+  "id": 3201,
+  "de": "der Arbeitsmarkt",
+  "tr": "iş piyasası",
+  "deBeispiel": "Der Arbeitsmarkt für IT-Fachkräfte ist zurzeit sehr angespannt.",
+  "gsw": "Arbetsmärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Arbetsmärt für IT-Fachchräft isch im Momänt sehr aagschpannt."
+ },
+ {
+  "id": 3202,
+  "de": "die Fusion",
+  "tr": "şirket birleşmesi",
+  "deBeispiel": "Die Fusion der beiden Konzerne wurde gestern offiziell bestätigt.",
+  "gsw": "Fusion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fusion vo de bäide Konzärn isch geschter offiziell beschtäätigt worde."
+ },
+ {
+  "id": 3203,
+  "de": "der Vorgesetzte",
+  "tr": "amir, üst",
+  "deBeispiel": "Sie bespricht jedes Problem zuerst mit ihrem direkten Vorgesetzten.",
+  "gsw": "Vorgsetzti",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si beschpricht jedes Problem zeerscht mit irem diräkte Vorgsetzte."
+ },
+ {
+  "id": 3204,
+  "de": "die Belegschaft",
+  "tr": "çalışanlar, personel",
+  "deBeispiel": "Die gesamte Belegschaft wurde über die Umstrukturierung informiert.",
+  "gsw": "Belegschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di ganz Belegschaft isch über d Umschtrukturierig informiert worde."
+ },
+ {
+  "id": 3205,
+  "de": "die Geschäftsführung",
+  "tr": "şirket yönetimi",
+  "deBeispiel": "Die Geschäftsführung plant, den Standort nächstes Jahr zu erweitern.",
+  "gsw": "Gschäftsläitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gschäftsläitig plant, de Schtandort nächscht Jaar z erwiitere."
+ },
+ {
+  "id": 3206,
+  "de": "der Aufsichtsrat",
+  "tr": "denetim kurulu",
+  "deBeispiel": "Der Aufsichtsrat muss der Übernahme noch zustimmen.",
+  "gsw": "Verwaltigsraat",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verwaltigsraat mue de Übernaam na zueschtime."
+ },
+ {
+  "id": 3207,
+  "de": "die Steuererklärung",
+  "tr": "vergi beyannamesi",
+  "deBeispiel": "Jedes Jahr im Mai gibt sie ihre Steuererklärung beim Finanzamt ab.",
+  "gsw": "Schtüürerchläärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedes Jaar im Mai git si iri Schtüürerchläärig bim Schtüüramt ab."
+ },
+ {
+  "id": 3208,
+  "de": "die Inflation",
+  "tr": "enflasyon",
+  "deBeispiel": "Wegen der hohen Inflation steigen die Lebenshaltungskosten stark.",
+  "gsw": "Inflation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge de hoche Inflation schtiiged d Läbenschoschte schtarch."
+ },
+ {
+  "id": 3209,
+  "de": "die Rezession",
+  "tr": "durgunluk",
+  "deBeispiel": "Viele Ökonomen erwarten für nächstes Jahr eine leichte Rezession.",
+  "gsw": "Rezession",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill Ökonome erwarted für s nächscht Jaar e liechti Rezession."
+ },
+ {
+  "id": 3210,
+  "de": "der Konkurs",
+  "tr": "iflas",
+  "deBeispiel": "Nach dem Konkurs verloren über zweihundert Mitarbeiter ihre Stelle.",
+  "gsw": "Konkurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Konkurs händ über zwäihundert Mitarbeiter iri Schtell verloore."
+ },
+ {
+  "id": 3211,
+  "de": "die Zielvereinbarung",
+  "tr": "hedef anlaşması",
+  "deBeispiel": "In der Zielvereinbarung wurde ein Umsatzziel für das Jahr festgelegt.",
+  "gsw": "Ziilveräibarig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Ziilveräibarig isch es Umsatzziil für s Jaar feschtgläit worde."
+ },
+ {
+  "id": 3212,
+  "de": "die Zuständigkeit",
+  "tr": "yetki alanı, sorumluluk",
+  "deBeispiel": "Die Zuständigkeiten der einzelnen Abteilungen sind klar geregelt.",
+  "gsw": "Zueschtändigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zueschtändigkäite vo de äinzelne Abtäilige sind klaar greglet."
+ },
+ {
+  "id": 3213,
+  "de": "die Abfindung",
+  "tr": "tazminat, işten ayrılma tazminatı",
+  "deBeispiel": "Bei der Kündigung erhielt er eine Abfindung von drei Monatsgehältern.",
+  "gsw": "Abfindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Kündigig hät er e Abfindig vo drüü Monetslöön überchoo."
+ },
+ {
+  "id": 3214,
+  "de": "der Mindestlohn",
+  "tr": "asgari ücret",
+  "deBeispiel": "Der gesetzliche Mindestlohn wurde zum Jahresanfang erhöht.",
+  "gsw": "Mindeschtlohn",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gsetzlich Mindeschtlohn isch am Jaaresaafang erhöcht worde."
+ },
+ {
+  "id": 3215,
+  "de": "die Sozialabgabe",
+  "tr": "sosyal güvenlik kesintisi",
+  "deBeispiel": "Vom Bruttolohn werden Steuern und Sozialabgaben automatisch abgezogen.",
+  "gsw": "Sozialabgaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vom Bruttolohn werded Schtüüre und Sozialabgaabe automatisch abzoge."
+ },
+ {
+  "id": 3216,
+  "de": "der Fachkräftemangel",
+  "tr": "nitelikli işgücü eksikliği",
+  "deBeispiel": "Der Fachkräftemangel trifft besonders die Pflege- und IT-Branche.",
+  "gsw": "Fachchräftemangel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Fachchräftemangel trifft bsunders d Pfläg und d IT-Branche."
+ },
+ {
+  "id": 3217,
+  "de": "die Digitalisierung",
+  "tr": "dijitalleşme",
+  "deBeispiel": "Die Digitalisierung verändert viele klassische Berufsbilder grundlegend.",
+  "gsw": "Digitalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Digitalisierig veränderet vill klassischi Berüef grundlegend."
+ },
+ {
+  "id": 3218,
+  "de": "der Standort",
+  "tr": "konum, yer (işletmenin bulunduğu yer)",
+  "deBeispiel": "Das Unternehmen eröffnet nächstes Jahr einen neuen Standort in Polen.",
+  "gsw": "Schtandort",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Unternäme eröffnet nächscht Jaar en neue Schtandort z Pole."
+ },
+ {
+  "id": 3219,
+  "de": "die Niederlassung",
+  "tr": "şube, temsilcilik (firmanın kendi birimi)",
+  "deBeispiel": "Die Firma hat inzwischen Niederlassungen in fünf verschiedenen Ländern.",
+  "gsw": "Niderlassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Firma hät inzwüsche Niderlassige i füf verschidene Länder."
+ },
+ {
+  "id": 3220,
+  "de": "der Lieferant",
+  "tr": "tedarikçi",
+  "deBeispiel": "Wegen Lieferengpässen sucht die Firma einen neuen Lieferanten.",
+  "gsw": "Lieferant",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäge Lieferengpäss suecht d Firma en neue Lieferant."
+ },
+ {
+  "id": 3221,
+  "de": "die Lieferkette",
+  "tr": "tedarik zinciri",
+  "deBeispiel": "Die globale Lieferkette wurde durch die Krise stark unterbrochen.",
+  "gsw": "Lieferchetti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D globaal Lieferchetti isch dur d Chrise schtarch underbroche worde."
+ },
+ {
+  "id": 3222,
+  "de": "der Marktanteil",
+  "tr": "pazar payı",
+  "deBeispiel": "Der Konzern konnte seinen Marktanteil im letzten Jahr deutlich ausbauen.",
+  "gsw": "Märtaatäil",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Konzärn hät sin Märtaatäil letscht Jaar dütlich chöne usbaue."
+ },
+ {
+  "id": 3223,
+  "de": "der Jahresabschluss",
+  "tr": "yıl sonu finansal tabloları, yıllık hesap kapanışı",
+  "deBeispiel": "Der Jahresabschluss wird derzeit von der Buchhaltung erstellt.",
+  "gsw": "Jaaresabschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Jaaresabschluss wird im Momänt vo de Buechhaltig gmacht."
+ },
+ {
+  "id": 3224,
+  "de": "die Bilanz",
+  "tr": "bilanço",
+  "deBeispiel": "Die Bilanz zeigt deutlich, dass die Firma profitabel arbeitet.",
+  "gsw": "Bilanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bilanz zäigt dütlich, dass d Firma profitabel schafft."
+ },
+ {
+  "id": 3225,
+  "de": "die Verschuldung",
+  "tr": "borçlanma",
+  "deBeispiel": "Die hohe Verschuldung des Unternehmens bereitet den Investoren Sorgen.",
+  "gsw": "Verschuldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di hoch Verschuldig vom Unternäme macht de Inveschtore Sorge."
+ },
+ {
+  "id": 3226,
+  "de": "die Investition",
+  "tr": "yatırım",
+  "deBeispiel": "Die Investition in neue Maschinen soll sich in zwei Jahren rentieren.",
+  "gsw": "Inveschtition",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Inveschtition i neui Maschine söll sich i zwäi Jaar rentiere."
+ },
+ {
+  "id": 3227,
+  "de": "der Investor",
+  "tr": "yatırımcı",
+  "deBeispiel": "Ein ausländischer Investor will das Start-up finanziell unterstützen.",
+  "gsw": "Inveschtor",
+  "gswArtikel": "de",
+  "gswBeispiel": "En usländische Inveschtor wott s Start-up finanziell understütze."
+ },
+ {
+  "id": 3228,
+  "de": "der Aktionär",
+  "tr": "hissedar",
+  "deBeispiel": "Die Aktionäre stimmten auf der Hauptversammlung über die Fusion ab.",
+  "gsw": "Aktionär",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Aktionär hät a de Generalversammlig über d Fusion chöne abschtime."
+ },
+ {
+  "id": 3229,
+  "de": "die Dividende",
+  "tr": "kâr payı, temettü",
+  "deBeispiel": "Am Jahresende zahlt das Unternehmen seinen Aktionären eine Dividende.",
+  "gsw": "Dividände",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Jaaresänd zaalt s Unternäme sine Aktionäär e Dividände."
+ },
+ {
+  "id": 3230,
+  "de": "der Zinssatz",
+  "tr": "faiz oranı",
+  "deBeispiel": "Die Bank hat den Zinssatz für Kredite erneut gesenkt.",
+  "gsw": "Zinssatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Bank hät de Zinssatz für Kredit scho wider gsänkt."
+ },
+ {
+  "id": 3231,
+  "de": "der Wechselkurs",
+  "tr": "döviz kuru",
+  "deBeispiel": "Der schwankende Wechselkurs erschwert die Planung im Auslandsgeschäft.",
+  "gsw": "Wächselkurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "De schwankend Wächselkurs macht d Planig im Uslandgschäft schwirig."
+ },
+ {
+  "id": 3232,
+  "de": "die Steuerlast",
+  "tr": "vergi yükü",
+  "deBeispiel": "Viele Unternehmer beklagen sich über die hohe Steuerlast in Deutschland.",
+  "gsw": "Schtüürlascht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill Unternämer beklaged sich über di hoch Schtüürlascht i de Schwiiz."
+ },
+ {
+  "id": 3233,
+  "de": "die Exportquote",
+  "tr": "ihracat oranı",
+  "deBeispiel": "Die Exportquote der deutschen Industrie liegt traditionell sehr hoch.",
+  "gsw": "Exportquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Exportquote vo de Schwiizer Induschtrie isch traditionell sehr hoch."
+ },
+ {
+  "id": 3234,
+  "de": "der Handelspartner",
+  "tr": "ticaret ortağı",
+  "deBeispiel": "China zählt seit Jahren zu den wichtigsten Handelspartnern Deutschlands.",
+  "gsw": "Handelspartner",
+  "gswArtikel": "de",
+  "gswBeispiel": "China ghöört siit Jaare zu de wichtigschte Handelspartner vo de Schwiiz."
+ },
+ {
+  "id": 3235,
+  "de": "die Wirtschaftskrise",
+  "tr": "ekonomik kriz",
+  "deBeispiel": "Während der Wirtschaftskrise mussten viele Firmen Personal abbauen.",
+  "gsw": "Wirtschaftschrise",
+  "gswArtikel": "d",
+  "gswBeispiel": "Während de Wirtschaftschrise händ vill Firmene Personal müese abbaue."
+ },
+ {
+  "id": 3236,
+  "de": "der Aufschwung",
+  "tr": "ekonomik canlanma",
+  "deBeispiel": "Nach der Krise erlebte die Branche einen überraschenden Aufschwung.",
+  "gsw": "Ufschwung",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de Chrise hät d Branche en überraschende Ufschwung erläbt."
+ },
+ {
+  "id": 3237,
+  "de": "der Verbraucher",
+  "tr": "tüketici",
+  "deBeispiel": "Steigende Preise belasten vor allem einkommensschwache Verbraucher.",
+  "gsw": "Konsumänt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schtiigendi Priise belaschted vor allem Konsumänte mit chliinem Iikomme."
+ },
+ {
+  "id": 3238,
+  "de": "verhandeln",
+  "tr": "müzakere etmek, pazarlık yapmak",
+  "deBeispiel": "Die Gewerkschaft verhandelt seit Wochen mit dem Arbeitgeber über Löhne.",
+  "gsw": "verhandle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gwerkschaft verhandlet siit Wuche mit em Arbetgäber über d Löön."
+ },
+ {
+  "id": 3239,
+  "de": "befördern",
+  "tr": "terfi ettirmek",
+  "deBeispiel": "Nach fünf Jahren wurde sie endlich zur Abteilungsleiterin befördert.",
+  "gsw": "befördere",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach füf Jaar isch si ändlich zur Abtäiligsläiterin beförderet worde."
+ },
+ {
+  "id": 3240,
+  "de": "investieren",
+  "tr": "yatırım yapmak",
+  "deBeispiel": "Das Unternehmen investiert kräftig in neue Technologien.",
+  "gsw": "inveschtiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternäme inveschtiert chräftig i neui Technologie."
+ },
+ {
+  "id": 3241,
+  "de": "expandieren",
+  "tr": "genişlemek, büyümek",
+  "deBeispiel": "Der Konzern expandiert seit Jahren erfolgreich auf internationale Märkte.",
+  "gsw": "expandiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konzärn expandiert siit Jaare erfolgriich uf internationaali Märt."
+ },
+ {
+  "id": 3242,
+  "de": "fusionieren",
+  "tr": "birleşmek (şirket)",
+  "deBeispiel": "Die beiden Banken sind letztes Jahr zu einem großen Institut fusioniert.",
+  "gsw": "fusioniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Di bäide Banke sind letscht Jaar zu äinere groosse Bank fusioniert."
+ },
+ {
+  "id": 3243,
+  "de": "sich verschulden",
+  "tr": "borçlanmak",
+  "deBeispiel": "Durch die falschen Investitionen hat sich die Firma stark verschuldet.",
+  "gsw": "sich verschulde",
+  "gswArtikel": null,
+  "gswBeispiel": "Dur di falsche Inveschtitione hät sich d Firma schtarch verschuldet."
+ },
+ {
+  "id": 3244,
+  "de": "haften",
+  "tr": "sorumlu olmak, yükümlü olmak (hukuken)",
+  "deBeispiel": "Bei Fehlern in der Buchhaltung haftet der Geschäftsführer persönlich.",
+  "gsw": "hafte",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi Fääler i de Buechhaltig haftet de Gschäftsfüerer persöönlich."
+ },
+ {
+  "id": 3245,
+  "de": "delegieren",
+  "tr": "yetki devretmek",
+  "deBeispiel": "Ein guter Chef delegiert Aufgaben und kontrolliert nicht jedes Detail.",
+  "gsw": "delegiere",
+  "gswArtikel": null,
+  "gswBeispiel": "En guete Chef delegiert Ufgaabe und kontrolliert nöd jedes Detail."
+ },
+ {
+  "id": 3246,
+  "de": "optimieren",
+  "tr": "iyileştirmek",
+  "deBeispiel": "Die Abteilung soll die internen Arbeitsabläufe deutlich optimieren.",
+  "gsw": "optimiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Abtäilig söll di interne Abläuf dütlich optimiere."
+ },
+ {
+  "id": 3247,
+  "de": "auslagern",
+  "tr": "dış kaynak kullanmak",
+  "deBeispiel": "Viele Firmen lagern ihre Produktion inzwischen ins Ausland aus.",
+  "gsw": "uslagere",
+  "gswArtikel": null,
+  "gswBeispiel": "Vill Firmene tüend iri Produktion inzwüsche is Usland uslagere."
+ },
+ {
+  "id": 3248,
+  "de": "sich qualifizieren",
+  "tr": "yeterlilik kazanmak, hak kazanmak",
+  "deBeispiel": "Durch die Weiterbildung hat er sich für die neue Position qualifiziert.",
+  "gsw": "sich qualifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Dur d Wiiterbildig hät er sich für di neu Schtell chöne qualifiziere."
+ },
+ {
+  "id": 3249,
+  "de": "abwickeln",
+  "tr": "yürütmek, sonuçlandırmak",
+  "deBeispiel": "Die Bank hat die Transaktion problemlos innerhalb eines Tages abgewickelt.",
+  "gsw": "abwickle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bank hät d Transaktion problemlos innerhalb vomene Taag chöne abwickle."
+ },
+ {
+  "id": 3250,
+  "de": "verzeichnen",
+  "tr": "kaydetmek, göstermek",
+  "deBeispiel": "Das Unternehmen verzeichnet in diesem Quartal einen deutlichen Gewinnanstieg.",
+  "gsw": "verzäichne",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternäme verzäichnet i dem Quartal en dütliche Gwünnaaschtiig."
+ },
+ {
+  "id": 3251,
+  "de": "schwanken",
+  "tr": "dalgalanmak",
+  "deBeispiel": "Der Ölpreis schwankt seit Monaten stark auf dem Weltmarkt.",
+  "gsw": "schwanke",
+  "gswArtikel": null,
+  "gswBeispiel": "De Ölpriis schwankt siit Mönet starch uf em Wältmarkt."
+ },
+ {
+  "id": 3252,
+  "de": "rentabel",
+  "tr": "kârlı",
+  "deBeispiel": "Das neue Geschäftsmodell ist inzwischen wirklich rentabel.",
+  "gsw": "rentabel",
+  "gswArtikel": null,
+  "gswBeispiel": "S neu Gschäftsmodell isch underdesse würkli rentabel."
+ },
+ {
+  "id": 3253,
+  "de": "wettbewerbsfähig",
+  "tr": "rekabetçi",
+  "deBeispiel": "Um wettbewerbsfähig zu bleiben, muss die Firma ständig innovieren.",
+  "gsw": "konkurränzfähig",
+  "gswArtikel": null,
+  "gswBeispiel": "Zum konkurränzfähig bliibe, muess d Firma di ganz Ziit neui Idee haa."
+ },
+ {
+  "id": 3254,
+  "de": "insolvent",
+  "tr": "iflas etmiş, borç ödeyemez",
+  "deBeispiel": "Nach dem Umsatzeinbruch war das Unternehmen praktisch insolvent.",
+  "gsw": "insolvent",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Umsatziibruch isch s Unternäme praktisch insolvent gsii."
+ },
+ {
+  "id": 3255,
+  "de": "konjunkturabhängig",
+  "tr": "konjonktüre bağlı",
+  "deBeispiel": "Die Baubranche ist besonders konjunkturabhängig und reagiert schnell.",
+  "gsw": "konjunkturabhängig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Baubranche isch bsunders konjunkturabhängig und reagiert schnäll."
+ },
+ {
+  "id": 3256,
+  "de": "eigenverantwortlich",
+  "tr": "kendi sorumluluğunda",
+  "deBeispiel": "In dieser Position arbeitet man sehr eigenverantwortlich und flexibel.",
+  "gsw": "äigeverantwortlich",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere Position schafft mer sehr äigeverantwortlich und flexibel."
+ },
+ {
+  "id": 3257,
+  "de": "branchenüblich",
+  "tr": "sektörde alışılmış",
+  "deBeispiel": "Das Gehalt liegt im Rahmen des branchenüblichen Durchschnitts.",
+  "gsw": "brancheüeblich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Loon liit im Raame vom brancheüebliche Durchschnitt."
+ },
+ {
+  "id": 3258,
+  "de": "befristet",
+  "tr": "süreli, geçici",
+  "deBeispiel": "Ihr erster Arbeitsvertrag war zunächst nur befristet auf ein Jahr.",
+  "gsw": "befrischtet",
+  "gswArtikel": null,
+  "gswBeispiel": "Ire erscht Arbetsvertraag isch zerscht nu uf es Jaar befrischtet gsii."
+ },
+ {
+  "id": 3259,
+  "de": "unbefristet",
+  "tr": "süresiz",
+  "deBeispiel": "Nach der Probezeit erhielt er einen unbefristeten Arbeitsvertrag.",
+  "gsw": "unbefrischtet",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Probeziit hät er en unbefrischtete Arbetsvertraag überchoo."
+ },
+ {
+  "id": 3260,
+  "de": "lukrativ",
+  "tr": "kazançlı, kârlı",
+  "deBeispiel": "Er hat ein sehr lukratives Angebot von einer anderen Firma bekommen.",
+  "gsw": "lukrativ",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät es sehr lukrativs Aagebot vo ere andere Firma überchoo."
+ },
+ {
+  "id": 3261,
+  "de": "gewinnbringend",
+  "tr": "kâr getiren",
+  "deBeispiel": "Die Firma sucht ständig nach neuen, gewinnbringenden Geschäftsideen.",
+  "gsw": "gwünnbringend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma suecht immer wider nach neue, gwünnbringende Gschäftsidee."
+ },
+ {
+  "id": 3262,
+  "de": "die Zivilgesellschaft",
+  "tr": "sivil toplum",
+  "deBeispiel": "Die Zivilgesellschaft setzt sich aktiv für Menschenrechte ein.",
+  "gsw": "Zivilgsellschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zivilgsellschaft setzt sich aktiv für d Mänscherächt ii."
+ },
+ {
+  "id": 3263,
+  "de": "die Bevölkerungsgruppe",
+  "tr": "nüfus grubu, toplumsal kesim",
+  "deBeispiel": "Verschiedene Bevölkerungsgruppen leben hier seit Jahrzehnten zusammen.",
+  "gsw": "Bevölkerigsgruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Verschideni Bevölkerigsgruppe läbed daa siit Jaarzäänt zäme."
+ },
+ {
+  "id": 3264,
+  "de": "die Ungleichheit",
+  "tr": "eşitsizlik",
+  "deBeispiel": "Die soziale Ungleichheit nimmt in vielen Ländern zu.",
+  "gsw": "Ungliichheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D sozial Ungliichheit nimmt i vilne Länder zue."
+ },
+ {
+  "id": 3265,
+  "de": "die Gerechtigkeit",
+  "tr": "adalet",
+  "deBeispiel": "Er kämpft sein ganzes Leben für mehr Gerechtigkeit.",
+  "gsw": "Grächtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er kämpft sis ganze Läbe lang für mee Grächtigkeit."
+ },
+ {
+  "id": 3266,
+  "de": "das Vorurteil",
+  "tr": "önyargı",
+  "deBeispiel": "Viele Menschen haben Vorurteile gegenüber Fremden.",
+  "gsw": "Vorurtäil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vili Lüüt händ Vorurtäil gägenüber Frömde."
+ },
+ {
+  "id": 3267,
+  "de": "die Weltoffenheit",
+  "tr": "açık görüşlülük",
+  "deBeispiel": "Weltoffenheit ist eine wichtige Voraussetzung für das Zusammenleben.",
+  "gsw": "Wältoffeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wältoffeheit isch e wichtigi Voruussetzig für s Zämeläbe."
+ },
+ {
+  "id": 3268,
+  "de": "die Eingliederung",
+  "tr": "entegrasyon, topluma uyum",
+  "deBeispiel": "Die Eingliederung von Neuankömmlingen dauert oft Jahre.",
+  "gsw": "Iigliderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iigliderig vo Neuaachömlinge duuret hüfig Jaar."
+ },
+ {
+  "id": 3269,
+  "de": "die Diskriminierung",
+  "tr": "ayrımcılık",
+  "deBeispiel": "Diskriminierung am Arbeitsplatz ist gesetzlich verboten.",
+  "gsw": "Diskriminierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Diskriminierig am Arbetsplatz isch gsetzlich verbotte."
+ },
+ {
+  "id": 3270,
+  "de": "der Zusammenhalt",
+  "tr": "birlik ve beraberlik, toplumsal bütünlük",
+  "deBeispiel": "Der gesellschaftliche Zusammenhalt ist derzeit gefährdet.",
+  "gsw": "Zämehalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gsellschaftlich Zämehalt isch im Momänt gfäärdet."
+ },
+ {
+  "id": 3271,
+  "de": "die Solidarität",
+  "tr": "dayanışma",
+  "deBeispiel": "Solidarität zeigt sich besonders in schwierigen Zeiten.",
+  "gsw": "Solidarität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Solidarität zäigt sich bsunders i schwirige Ziite."
+ },
+ {
+  "id": 3272,
+  "de": "der Wandel",
+  "tr": "değişim, dönüşüm",
+  "deBeispiel": "Der gesellschaftliche Wandel verläuft rasant.",
+  "gsw": "Wandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gsellschaftlich Wandel lauft rasant."
+ },
+ {
+  "id": 3273,
+  "de": "die Norm",
+  "tr": "norm, kural",
+  "deBeispiel": "Gesellschaftliche Normen ändern sich mit der Zeit.",
+  "gsw": "Norm",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gsellschaftlichi Norme ändered sich mit de Ziit."
+ },
+ {
+  "id": 3274,
+  "de": "das Ehrenamt",
+  "tr": "gönüllü görev, fahri görev",
+  "deBeispiel": "Viele Rentner engagieren sich im Ehrenamt.",
+  "gsw": "Ehreamt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vili Pensionierti engagiered sich im Ehreamt."
+ },
+ {
+  "id": 3275,
+  "de": "sich engagieren",
+  "tr": "kendini adamak, gönüllü çalışmak",
+  "deBeispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
+  "gsw": "sich engagiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si engagiert sich siit Jaare für de Umwältschutz."
+ },
+ {
+  "id": 3276,
+  "de": "der Wahlkampf",
+  "tr": "seçim kampanyası",
+  "deBeispiel": "Der Wahlkampf wurde in diesem Jahr besonders aggressiv geführt.",
+  "gsw": "Waalkampf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Waalkampf isch das Jaar bsunders aggressiv gfüert worde."
+ },
+ {
+  "id": 3277,
+  "de": "die Wahlbeteiligung",
+  "tr": "seçime katılım oranı",
+  "deBeispiel": "Die Wahlbeteiligung lag diesmal bei knapp sechzig Prozent.",
+  "gsw": "Waalbetäiligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Waalbetäiligig isch das Mal bi knapp sächzg Prozänt gläge."
+ },
+ {
+  "id": 3278,
+  "de": "der Wahlkreis",
+  "tr": "seçim bölgesi",
+  "deBeispiel": "Der Kandidat gewann seinen Wahlkreis nur äußerst knapp.",
+  "gsw": "Waalchräis",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kandidat hät sin Waalchräis nu ganz knapp gwunne."
+ },
+ {
+  "id": 3279,
+  "de": "das Staatsoberhaupt",
+  "tr": "devlet başkanı",
+  "deBeispiel": "Das Staatsoberhaupt hielt eine Rede zur Lage der Nation.",
+  "gsw": "Staatsoberhaupt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Staatsoberhaupt hät e Red zur Laag vo de Nation ghalte."
+ },
+ {
+  "id": 3280,
+  "de": "die Opposition",
+  "tr": "muhalefet",
+  "deBeispiel": "Die Opposition kritisiert den Gesetzentwurf scharf.",
+  "gsw": "Opposition",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Opposition kritisiert de Gsetzesentwurf scharf."
+ },
+ {
+  "id": 3281,
+  "de": "der Gesetzentwurf",
+  "tr": "kanun tasarısı",
+  "deBeispiel": "Der Gesetzentwurf wurde im Parlament kontrovers diskutiert.",
+  "gsw": "Gsetzesentwurf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Gsetzesentwurf isch im Parlamänt kontrovärs diskutiert worde."
+ },
+ {
+  "id": 3282,
+  "de": "die Koalition",
+  "tr": "koalisyon",
+  "deBeispiel": "Die Koalition einigte sich nach langen Verhandlungen.",
+  "gsw": "Koalition",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Koalition hät sich nach lange Verhandlige gäinigt."
+ },
+ {
+  "id": 3283,
+  "de": "der Abgeordnete",
+  "tr": "milletvekili",
+  "deBeispiel": "Der Abgeordnete stimmte gegen den Gesetzentwurf.",
+  "gsw": "Parlamentarier",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Parlamentarier hät gäge de Gsetzesentwurf gstimmt."
+ },
+ {
+  "id": 3284,
+  "de": "der Rechtsstaat",
+  "tr": "hukuk devleti",
+  "deBeispiel": "Ein funktionierender Rechtsstaat schützt die Bürger vor Willkür.",
+  "gsw": "Rächtsstaat",
+  "gswArtikel": "de",
+  "gswBeispiel": "En funktionierende Rächtsstaat schützt d Bürger vor Willkür."
+ },
+ {
+  "id": 3285,
+  "de": "die Verfassung",
+  "tr": "anayasa",
+  "deBeispiel": "Die Verfassung garantiert die Meinungsfreiheit.",
+  "gsw": "Verfassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verfassig garantiert d Mäinigsfriiheit."
+ },
+ {
+  "id": 3286,
+  "de": "die Debatte",
+  "tr": "tartışma, münazara (resmî, kamuya açık)",
+  "deBeispiel": "Im Parlament entbrannte eine hitzige Debatte.",
+  "gsw": "Debatte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Parlamänt isch e hitzigi Debatte usbroche."
+ },
+ {
+  "id": 3287,
+  "de": "die Kundgebung",
+  "tr": "miting, gösteri",
+  "deBeispiel": "Auf dem Marktplatz fand eine große Kundgebung statt.",
+  "gsw": "Chundgebig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf em Märtplatz hät e groossi Chundgebig stattgfunde."
+ },
+ {
+  "id": 3288,
+  "de": "demonstrieren",
+  "tr": "gösteri yapmak",
+  "deBeispiel": "Die Studenten demonstrieren gegen die Studiengebühren.",
+  "gsw": "demonstriere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Studänte demonstriered gäge d Studiegebüüre."
+ },
+ {
+  "id": 3289,
+  "de": "der Widerstand",
+  "tr": "direniş",
+  "deBeispiel": "Die Bevölkerung leistete gegen die Reform erbitterten Widerstand.",
+  "gsw": "Widerstand",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Bevölkerig hät gäge d Reform erbitterte Widerstand gläistet."
+ },
+ {
+  "id": 3290,
+  "de": "die Vertrauenskrise",
+  "tr": "güven bunalımı",
+  "deBeispiel": "Die Partei steckt nach dem Skandal in einer tiefen Vertrauenskrise.",
+  "gsw": "Vertruuenskrise",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Partei steckt nach em Skandal inere tüüfe Vertruuenskrise."
+ },
+ {
+  "id": 3291,
+  "de": "das Bündnis",
+  "tr": "ittifak",
+  "deBeispiel": "Die beiden Parteien schlossen ein Bündnis.",
+  "gsw": "Bündnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Di bäide Parteie händ es Bündnis gschlosse."
+ },
+ {
+  "id": 3292,
+  "de": "korrupt",
+  "tr": "yozlaşmış, rüşvetçi",
+  "deBeispiel": "Mehrere Beamte wurden als korrupt entlarvt.",
+  "gsw": "korrupt",
+  "gswArtikel": null,
+  "gswBeispiel": "Es paar Beamti sind als korrupt entlarvt worde."
+ },
+ {
+  "id": 3293,
+  "de": "die Korruption",
+  "tr": "yolsuzluk",
+  "deBeispiel": "Korruption untergräbt das Vertrauen in die Politik.",
+  "gsw": "Korruption",
+  "gswArtikel": "d",
+  "gswBeispiel": "Korruption undergrabt s Vertruue i d Politik."
+ },
+ {
+  "id": 3294,
+  "de": "die Berichterstattung",
+  "tr": "haber yapma, habercilik",
+  "deBeispiel": "Die Berichterstattung über den Skandal war sehr ausführlich.",
+  "gsw": "Berichterstattig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Berichterstattig über de Skandal isch sehr uusfüerlich gsii."
+ },
+ {
+  "id": 3295,
+  "de": "die Schlagzeile",
+  "tr": "manşet",
+  "deBeispiel": "Der Skandal beherrschte tagelang die Schlagzeilen.",
+  "gsw": "Schlagziile",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Skandal hät tageläng d Schlagziile beherrscht."
+ },
+ {
+  "id": 3296,
+  "de": "die Quelle",
+  "tr": "kaynak (bilgi, haber kaynağı)",
+  "deBeispiel": "Journalisten müssen ihre Quellen sorgfältig überprüfen.",
+  "gsw": "Quelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Journalischte müend iri Quelle sorgfältig überprüefe."
+ },
+ {
+  "id": 3297,
+  "de": "glaubwürdig",
+  "tr": "güvenilir, inandırıcı",
+  "deBeispiel": "Die Zeitung gilt allgemein als glaubwürdige Quelle.",
+  "gsw": "glaubwürdig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ziitig gilt allgemäin als glaubwürdigi Quelle."
+ },
+ {
+  "id": 3298,
+  "de": "die Glaubwürdigkeit",
+  "tr": "inandırıcılık, güvenilirlik (söylenene inanma)",
+  "deBeispiel": "Die Glaubwürdigkeit der Presse steht zunehmend infrage.",
+  "gsw": "Glaubwürdigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Glaubwürdigkeit vo de Presse wird immer mee aazwiiflet."
+ },
+ {
+  "id": 3299,
+  "de": "manipulieren",
+  "tr": "manipüle etmek",
+  "deBeispiel": "Bilder lassen sich heute leicht manipulieren.",
+  "gsw": "manipuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bilder lönd sich hüt liecht manipuliere."
+ },
+ {
+  "id": 3300,
+  "de": "die Manipulation",
+  "tr": "manipülasyon",
+  "deBeispiel": "Die Manipulation der Wähler ist ein ernstes Problem.",
+  "gsw": "Manipulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Manipulation vo de Wääler isch es ärnschts Problem."
+ },
+ {
+  "id": 3301,
+  "de": "die Medienkompetenz",
+  "tr": "medya okuryazarlığı",
+  "deBeispiel": "Medienkompetenz sollte schon in der Schule vermittelt werden.",
+  "gsw": "Mediekompetänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mediekompetänz sött scho i de Schuel vermittlet werde."
+ },
+ {
+  "id": 3302,
+  "de": "die Meinungsfreiheit",
+  "tr": "ifade özgürlüğü",
+  "deBeispiel": "Meinungsfreiheit ist ein grundlegendes Menschenrecht.",
+  "gsw": "Mäinigsfriiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mäinigsfriiheit isch es grundlegends Mänscherächt."
+ }
+]

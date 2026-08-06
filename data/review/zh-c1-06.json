@@ -1,0 +1,992 @@
+[
+ {
+  "id": 5803,
+  "de": "romantisieren",
+  "tr": "romantikleştirmek, olduğundan güzel göstermek",
+  "deBeispiel": "Frühe Ethnographen haben das einfache Leben stark romantisiert.",
+  "gsw": "romantisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Früeji Ethnograaphe händ s eifach Läbe schtarch romantisiert."
+ },
+ {
+  "id": 5804,
+  "de": "kontextualisieren",
+  "tr": "bağlama oturtmak, bağlamlandırmak",
+  "deBeispiel": "Man muss die Aussage historisch kontextualisieren, sonst wirkt sie absurd.",
+  "gsw": "kontextualisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer mues d Uussaag hischtorisch kontextualisiere, susch wirkt si absurd."
+ },
+ {
+  "id": 5805,
+  "de": "entziffern",
+  "tr": "deşifre etmek, çözmek",
+  "deBeispiel": "Die Zeichen auf den Grabsteinen konnte bisher niemand entziffern.",
+  "gsw": "entziffere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zeiche uf de Grabschtei hät bishär niemer chöne entziffere."
+ },
+ {
+  "id": 5806,
+  "de": "unterlaufen",
+  "tr": "boşa çıkarmak, atlatmak",
+  "deBeispiel": "Die Jüngeren unterlaufen die strengen Regeln mit stillem Spott.",
+  "gsw": "underlaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "Di Jüngere underlaufed di schtrenge Regle mit schtillem Schpott."
+ },
+ {
+  "id": 5807,
+  "de": "überformen",
+  "tr": "yeniden biçimlendirmek, başkalaştırmak",
+  "deBeispiel": "Der Tourismus hat das ganze Fest allmählich überformt.",
+  "gsw": "überforme",
+  "gswArtikel": null,
+  "gswBeispiel": "De Turismus hät s ganz Fäscht allmählich überformt."
+ },
+ {
+  "id": 5808,
+  "de": "durchdringen",
+  "tr": "nüfuz etmek, sinmek",
+  "deBeispiel": "Religiöse Vorstellungen durchdringen selbst die banalsten Handgriffe.",
+  "gsw": "durdringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Religiösi Vorschtellige durdringed sogar di banaalschte Handgriff."
+ },
+ {
+  "id": 5809,
+  "de": "angehören",
+  "tr": "mensubu olmak, ait olmak",
+  "deBeispiel": "Jeder Erwachsene gehört zugleich mehreren solcher Verbände an.",
+  "gsw": "aaghöre",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Erwachsni tuet gliichziitig mehrere sonige Verbänd aaghöre."
+ },
+ {
+  "id": 5810,
+  "de": "sich herausbilden",
+  "tr": "oluşmak, şekillenmek",
+  "deBeispiel": "Aus der Notlage hat sich eine feste Form der Nachbarschaftshilfe herausgebildet.",
+  "gsw": "sich uusebilde",
+  "gswArtikel": null,
+  "gswBeispiel": "Us de Notlaag hät sich e feschti Form vo de Nachbarschaftshilf uusebildet."
+ },
+ {
+  "id": 5811,
+  "de": "sich verfestigen",
+  "tr": "yerleşmek, kalıplaşmak",
+  "deBeispiel": "Aus einer beiläufigen Geste hat sich eine feste Regel verfestigt.",
+  "gsw": "sich verfeschtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Us ere biiläufige Geschte hät sich e feschti Regle verfeschtiget."
+ },
+ {
+  "id": 5812,
+  "de": "huldigen",
+  "tr": "saygı göstermek, tazimde bulunmak",
+  "deBeispiel": "Am Neujahrstag huldigen die Familien ihren verstorbenen Ahnen.",
+  "gsw": "huldige",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Nöijaarstag huldiged d Familie ihrne verschtorbene Ahne."
+ },
+ {
+  "id": 5813,
+  "de": "zergliedern",
+  "tr": "ayrıştırmak, parçalara ayırmak",
+  "deBeispiel": "Der Aufsatz zergliedert den Festverlauf in fünf klar getrennte Phasen.",
+  "gsw": "zergliedere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uufsatz zergliederet de Fäschtverlauf i füüf klar trännti Phase."
+ },
+ {
+  "id": 5814,
+  "de": "symbolträchtig",
+  "tr": "sembol yüklü, simge dolu",
+  "deBeispiel": "Der Ort ist für die Gemeinde ausgesprochen symbolträchtig.",
+  "gsw": "symbolträchtig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Ort isch für d Gmeind uusgschproche symbolträchtig."
+ },
+ {
+  "id": 5815,
+  "de": "normativ",
+  "tr": "normatif, kural koyucu",
+  "deBeispiel": "Die Beschreibung war nie neutral, sondern von Anfang an normativ.",
+  "gsw": "normativ",
+  "gswArtikel": null,
+  "gswBeispiel": "D Beschriibig isch nie neutral gsii, sondern vo Aafang a normativ."
+ },
+ {
+  "id": 5816,
+  "de": "profan",
+  "tr": "dünyevi, sıradan",
+  "deBeispiel": "Der Raum wird an Werktagen für ganz profane Zwecke genutzt.",
+  "gsw": "profan",
+  "gswArtikel": null,
+  "gswBeispiel": "De Ruum wird a de Werchtaag für ganz profani Zwäck bruucht."
+ },
+ {
+  "id": 5817,
+  "de": "sakral",
+  "tr": "kutsal, dinsel",
+  "deBeispiel": "Die Grenze zwischen sakralen und alltäglichen Gegenständen ist hier fließend.",
+  "gsw": "sakral",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gränze zwüsche sakrale und alltägliche Gägeschtänd isch daa fliessend."
+ },
+ {
+  "id": 5818,
+  "de": "gebräuchlich",
+  "tr": "yaygın, kullanımda olan",
+  "deBeispiel": "Diese Anrede ist nur noch in wenigen Bergdörfern gebräuchlich.",
+  "gsw": "gebrüüchlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Aaredi isch nur no i wenige Bergdörfer gebrüüchlich."
+ },
+ {
+  "id": 5819,
+  "de": "vorherrschend",
+  "tr": "hâkim, baskın",
+  "deBeispiel": "Die vorherrschende Deutung wurde erst in den Neunzigern ernsthaft bestritten.",
+  "gsw": "vorherrschend",
+  "gswArtikel": null,
+  "gswBeispiel": "Di vorherrschend Düütig isch erscht i de Nüünzger ernschthaft beschtritte worde."
+ },
+ {
+  "id": 5820,
+  "de": "wechselseitig",
+  "tr": "karşılıklı",
+  "deBeispiel": "Beide Gruppen stehen in wechselseitiger Abhängigkeit voneinander.",
+  "gsw": "wächselsiitig",
+  "gswArtikel": null,
+  "gswBeispiel": "Beidi Gruppe schtönd i wächselsiitiger Abhängigkeit vonenand."
+ },
+ {
+  "id": 5821,
+  "de": "unausgesprochen",
+  "tr": "dile getirilmemiş, örtük",
+  "deBeispiel": "Die wichtigsten Regeln bleiben in dieser Gemeinschaft unausgesprochen.",
+  "gsw": "unuusgschproche",
+  "gswArtikel": null,
+  "gswBeispiel": "Di wichtigschte Regle bliibed i dere Gmeinschaft unuusgschproche."
+ },
+ {
+  "id": 5822,
+  "de": "althergebracht",
+  "tr": "eskiden beri süregelen, kadim",
+  "deBeispiel": "Man beruft sich auf althergebrachte Rechte an den Weideflächen.",
+  "gsw": "althärbraacht",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer beruefft sich uf althärbraachti Rächt a de Weidfläche."
+ },
+ {
+  "id": 5823,
+  "de": "weltanschaulich",
+  "tr": "dünya görüşüyle ilgili, ideolojik",
+  "deBeispiel": "Der Streit ist weniger sachlich als weltanschaulich begründet.",
+  "gsw": "wältaaschaulich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtriit isch weniger sachlich als wältaaschaulich begründet."
+ },
+ {
+  "id": 5824,
+  "de": "die Hierarchie",
+  "tr": "hiyerarşi, basamaklanma",
+  "deBeispiel": "Flache Hierarchien gelten als modern, verschwinden aber selten ganz.",
+  "gsw": "Hierarchie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Flachi Hierarchie gälted als modern, verschwinded aber sälte ganz."
+ },
+ {
+  "id": 5825,
+  "de": "die Arbeitsteilung",
+  "tr": "iş bölümü",
+  "deBeispiel": "Die extreme Arbeitsteilung nimmt dem Einzelnen den Blick aufs Ganze.",
+  "gsw": "Arbetsteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di extremi Arbetsteilig nimmt em Einzelne de Blick ufs Ganze."
+ },
+ {
+  "id": 5826,
+  "de": "die Rationalisierung",
+  "tr": "rasyonelleştirme, akılcılaştırma",
+  "deBeispiel": "Jede Rationalisierung verspricht Effizienz und kostet zugleich Stellen.",
+  "gsw": "Rationalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Rationalisierig verschpricht Effiziänz und koschtet gliichziitig Schtelle."
+ },
+ {
+  "id": 5827,
+  "de": "die Bürokratisierung",
+  "tr": "bürokratikleşme",
+  "deBeispiel": "Die zunehmende Bürokratisierung erstickt gerade die kreativen Abteilungen.",
+  "gsw": "Bürokratisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di zuenähmendi Bürokratisierig verschtickt grad di kreative Abteilige."
+ },
+ {
+  "id": 5828,
+  "de": "die Arbeitsverdichtung",
+  "tr": "iş yoğunlaşması",
+  "deBeispiel": "Nach dem Stellenabbau folgte für die Verbliebenen eine spürbare Arbeitsverdichtung.",
+  "gsw": "Arbetsverdichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Schtellenabbau isch für di Verbliibne e schpürbari Arbetsverdichtig cho."
+ },
+ {
+  "id": 5829,
+  "de": "die Prekarisierung",
+  "tr": "güvencesizleşme",
+  "deBeispiel": "Die Prekarisierung betrifft längst auch akademisch ausgebildete Berufsgruppen.",
+  "gsw": "Prekarisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Prekarisierig betrifft längscht au akademisch uusbildeti Berufsgruppe."
+ },
+ {
+  "id": 5830,
+  "de": "die Selbstausbeutung",
+  "tr": "kendini sömürme",
+  "deBeispiel": "Wo niemand mehr kontrolliert, beginnt oft die stille Selbstausbeutung.",
+  "gsw": "Sälbschtuusbüütig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wo niemer meh kontrolliert, faat oft di schtilli Sälbschtuusbüütig aa."
+ },
+ {
+  "id": 5831,
+  "de": "die Unternehmenskultur",
+  "tr": "kurum kültürü, şirket kültürü",
+  "deBeispiel": "Eine Unternehmenskultur lässt sich nicht per Leitbild verordnen.",
+  "gsw": "Unternämeskultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Unternämeskultur laat sich nöd per Leitbild verordne."
+ },
+ {
+  "id": 5832,
+  "de": "das Machtgefälle",
+  "tr": "güç dengesizliği, iktidar farkı",
+  "deBeispiel": "Trotz der Duzkultur bleibt das Machtgefälle zwischen den Ebenen bestehen.",
+  "gsw": "Machtgfäll",
+  "gswArtikel": "s",
+  "gswBeispiel": "Trotz de Duzkultur bliibt s Machtgfäll zwüsche de Ebene beschtaa."
+ },
+ {
+  "id": 5833,
+  "de": "die Weisungsbefugnis",
+  "tr": "talimat verme yetkisi",
+  "deBeispiel": "Ohne klare Weisungsbefugnis entstehen in Projektteams ständig Reibungen.",
+  "gsw": "Wiisigsbefugnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni klari Wiisigsbefugnis entschtönd i Projektteams schtändig Riibige."
+ },
+ {
+  "id": 5834,
+  "de": "der Rollenkonflikt",
+  "tr": "rol çatışması",
+  "deBeispiel": "Als Teamleiterin und Kollegin zugleich geriet sie in einen Rollenkonflikt.",
+  "gsw": "Rollekonflikt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Als Teamleiterin und Kollegin zugliich isch si in en Rollekonflikt cho."
+ },
+ {
+  "id": 5835,
+  "de": "die Subordination",
+  "tr": "astlık, boyun eğme",
+  "deBeispiel": "Der Vortrag beschrieb Subordination als eingeübte, nicht als natürliche Haltung.",
+  "gsw": "Subordination",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vortrag hät Subordination als iigüebti und nöd als natürlichi Haltig beschribe."
+ },
+ {
+  "id": 5836,
+  "de": "die Delegation",
+  "tr": "yetki devri",
+  "deBeispiel": "Echte Delegation bedeutet, auch die Entscheidung abzugeben.",
+  "gsw": "Delegation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Echti Delegation heisst, au d Entscheidig abzgää."
+ },
+ {
+  "id": 5837,
+  "de": "der Handlungsspielraum",
+  "tr": "hareket alanı, inisiyatif alanı",
+  "deBeispiel": "Mit dem Handlungsspielraum wächst auch die Zufriedenheit am Arbeitsplatz.",
+  "gsw": "Handligsschpilruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mit em Handligsschpilruum wachst au d Zfridenheit am Arbetsplatz."
+ },
+ {
+  "id": 5838,
+  "de": "die Tarifautonomie",
+  "tr": "toplu sözleşme özerkliği",
+  "deBeispiel": "Die Tarifautonomie hält den Staat aus der Lohnfindung heraus.",
+  "gsw": "Tarifautonomie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tarifautonomie haltet de Schtaat us de Loonfindig uuse."
+ },
+ {
+  "id": 5839,
+  "de": "die Gratifikation",
+  "tr": "ödüllendirme, karşılık",
+  "deBeispiel": "Krank macht nicht die Mühe allein, sondern die ausbleibende Gratifikation.",
+  "gsw": "Gratifikation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chrank macht nöd d Müe elei, sondern di uusbliibendi Gratifikation."
+ },
+ {
+  "id": 5840,
+  "de": "die Identifikation",
+  "tr": "özdeşleşme, kendini ait hissetme",
+  "deBeispiel": "Zu starke Identifikation mit der Firma macht Kritik fast unmöglich.",
+  "gsw": "Identifikation",
+  "gswArtikel": "d",
+  "gswBeispiel": "E z schtarchi Identifikation mit de Firma macht Kritik fascht unmöglich."
+ },
+ {
+  "id": 5841,
+  "de": "die Loyalität",
+  "tr": "sadakat, bağlılık",
+  "deBeispiel": "Loyalität wird erwartet, aber immer seltener erwidert.",
+  "gsw": "Loyalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Loyalität wird erwartet, aber immer sältener erwideret."
+ },
+ {
+  "id": 5842,
+  "de": "die Vereinbarkeit",
+  "tr": "bağdaşabilirlik, birlikte yürütülebilirlik",
+  "deBeispiel": "Über die Vereinbarkeit von Beruf und Familie wird viel geredet.",
+  "gsw": "Vereinbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Vereinbarkeit vo Beruef und Familie wird vill gredt."
+ },
+ {
+  "id": 5843,
+  "de": "die Flexibilisierung",
+  "tr": "esnekleştirme",
+  "deBeispiel": "Die Flexibilisierung der Arbeitszeit nützt nicht immer den Beschäftigten.",
+  "gsw": "Flexibilisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Flexibilisierig vo de Arbetsziit nützt nöd immer de Beschäftigte."
+ },
+ {
+  "id": 5844,
+  "de": "die Standardisierung",
+  "tr": "standartlaştırma",
+  "deBeispiel": "Die Standardisierung der Abläufe raubt dem Handwerk seinen Eigensinn.",
+  "gsw": "Schtandardisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtandardisierig vo de Abläuf nimmt em Handwerch sin Eigesinn."
+ },
+ {
+  "id": 5845,
+  "de": "die Taktung",
+  "tr": "tempo düzeni, ritim ayarı",
+  "deBeispiel": "Die enge Taktung der Schichten lässt kaum Raum für Gespräche.",
+  "gsw": "Taktig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D äng Taktig vo de Schichte laat chuum Ruum für Gschpröch."
+ },
+ {
+  "id": 5846,
+  "de": "der Akkord",
+  "tr": "parça başı iş, parça başı ücret usulü",
+  "deBeispiel": "Im Akkord zu arbeiten erhöht den Lohn und den Verschleiß.",
+  "gsw": "Akkord",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Akkord z schaffe erhöcht de Loon und de Verschliiss."
+ },
+ {
+  "id": 5847,
+  "de": "die Dequalifizierung",
+  "tr": "vasıfsızlaşma, niteliksizleşme",
+  "deBeispiel": "Automatisierung führt in manchen Bereichen zur Dequalifizierung ganzer Berufsgruppen.",
+  "gsw": "Dequalifizierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Automatisierig füert i mänche Beriich zu de Dequalifizierig vo ganze Berufsgruppe."
+ },
+ {
+  "id": 5848,
+  "de": "die Professionalisierung",
+  "tr": "profesyonelleşme, meslekleşme",
+  "deBeispiel": "Die Professionalisierung der Pflege blieb lange hinter den Ansprüchen zurück.",
+  "gsw": "Professionalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Professionalisierig vo de Pflääg isch lang hinder de Aasprüch zrugg blibe."
+ },
+ {
+  "id": 5849,
+  "de": "das Berufsethos",
+  "tr": "meslek ahlakı, mesleki duruş",
+  "deBeispiel": "Ihr Berufsethos verbot ihr, die Zahlen schöner darzustellen.",
+  "gsw": "Berufsethos",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ires Berufsethos hät ere verbote, d Zaale schööner darzschtelle."
+ },
+ {
+  "id": 5850,
+  "de": "die Erwerbsarbeit",
+  "tr": "gelir getiren iş, ücretli çalışma",
+  "deBeispiel": "Erwerbsarbeit strukturiert den Tag stärker als jede andere Tätigkeit.",
+  "gsw": "Erwerbsarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erwerbsarbet schtrukturiert de Tag schtercher als jedi anderi Tätigkeit."
+ },
+ {
+  "id": 5851,
+  "de": "die Reproduktionsarbeit",
+  "tr": "yeniden üretim emeği, ev içi emek",
+  "deBeispiel": "Reproduktionsarbeit taucht in keiner Bilanz auf und trägt trotzdem alles.",
+  "gsw": "Reproduktionsarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reproduktionsarbet tuucht i kener Bilanz uf und träit trotzdem alles."
+ },
+ {
+  "id": 5852,
+  "de": "die Wissensarbeit",
+  "tr": "bilgi emeği",
+  "deBeispiel": "Wissensarbeit lässt sich schwer in Stunden und Stückzahlen messen.",
+  "gsw": "Wüssensarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wüssensarbet laat sich schwär i Schtunde und Schtückzaale mässe."
+ },
+ {
+  "id": 5853,
+  "de": "die Kollegialität",
+  "tr": "meslektaş dayanışması, iş arkadaşlığı",
+  "deBeispiel": "Unter dem Wettbewerb der Abteilungen leidet zuerst die Kollegialität.",
+  "gsw": "Kollegialität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Under em Wettbewerb vo de Abtäilige liidet zerscht d Kollegialität."
+ },
+ {
+  "id": 5854,
+  "de": "der Konkurrenzdruck",
+  "tr": "rekabet baskısı",
+  "deBeispiel": "Interner Konkurrenzdruck verwandelt Kollegen unmerklich in Gegner.",
+  "gsw": "Konkurrenzdruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Interne Konkurrenzdruck verwandlet Kollege unmerklich i Gägner."
+ },
+ {
+  "id": 5855,
+  "de": "die Segmentierung",
+  "tr": "bölümlenme, katmanlaşma",
+  "deBeispiel": "Die Segmentierung des Arbeitsmarktes hält Randgruppen dauerhaft draußen.",
+  "gsw": "Segmentierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Segmentierig vom Arbetsmarkt haltet Randgruppe duurhaft usse."
+ },
+ {
+  "id": 5856,
+  "de": "die Marginalisierung",
+  "tr": "kenara itilme, ötekileştirme",
+  "deBeispiel": "Befristungen fördern die Marginalisierung junger Wissenschaftlerinnen.",
+  "gsw": "Marginalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Befrischtige förderet d Marginalisierig vo junge Wüsseschaftlerinne."
+ },
+ {
+  "id": 5857,
+  "de": "die Disziplinierung",
+  "tr": "disipline etme, hizaya sokma",
+  "deBeispiel": "Ständige Erreichbarkeit wirkt als subtile Form der Disziplinierung.",
+  "gsw": "Disziplinierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtändigi Erräichbarkeit wirkt als subtili Form vo de Disziplinierig."
+ },
+ {
+  "id": 5858,
+  "de": "die Legitimation",
+  "tr": "meşruiyet, meşrulaştırma",
+  "deBeispiel": "Der Führung fehlte jede Legitimation für diesen einsamen Beschluss.",
+  "gsw": "Legitimation",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Füerig hät jedi Legitimation für dää äisami Beschluss gfäält."
+ },
+ {
+  "id": 5859,
+  "de": "die Partizipation",
+  "tr": "katılım, söz sahibi olma",
+  "deBeispiel": "Partizipation ohne Entscheidungsmacht bleibt eine freundliche Geste.",
+  "gsw": "Partizipation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Partizipation ohni Entschäidigsmacht bliibt e fründlichi Geste."
+ },
+ {
+  "id": 5860,
+  "de": "die Aushandlung",
+  "tr": "müzakere, uzlaşarak belirleme",
+  "deBeispiel": "Regeln entstehen hier durch tägliche Aushandlung, nicht durch Erlass.",
+  "gsw": "Ushandlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Regle entschtönd da dur tägligi Ushandlig, nöd dur en Erlass."
+ },
+ {
+  "id": 5861,
+  "de": "die Konsensfindung",
+  "tr": "uzlaşıya varma",
+  "deBeispiel": "Die Konsensfindung dauerte länger, trug die Entscheidung aber besser.",
+  "gsw": "Konsensfindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Konsensfindig hät länger duuret, aber d Entschäidig besser träit."
+ },
+ {
+  "id": 5862,
+  "de": "die Statusunsicherheit",
+  "tr": "statü belirsizliği",
+  "deBeispiel": "Statusunsicherheit macht Menschen anfällig für autoritäre Versprechen.",
+  "gsw": "Statusunsicherheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Statusunsicherheit macht d Lüüt aafällig für autoritäri Verschpräche."
+ },
+ {
+  "id": 5863,
+  "de": "untergraben",
+  "tr": "temelini sarsmak, baltalamak",
+  "deBeispiel": "Willkürliche Ausnahmen untergraben das Vertrauen in jede Regel.",
+  "gsw": "undergrabe",
+  "gswArtikel": null,
+  "gswBeispiel": "Willküürlichi Usnaame undergrabed s Vertraue i jedi Regle."
+ },
+ {
+  "id": 5864,
+  "de": "sich unterordnen",
+  "tr": "boyun eğmek, tabi olmak",
+  "deBeispiel": "Er weigerte sich, dem Kalkül der Zentrale unterzuordnen.",
+  "gsw": "sich underordne",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sich gwäigeret, sich em Kalkül vo de Zentrale z underordne."
+ },
+ {
+  "id": 5865,
+  "de": "einbinden",
+  "tr": "dahil etmek, sürece katmak",
+  "deBeispiel": "Wer Veränderungen will, muss die Betroffenen früh einbinden.",
+  "gsw": "iibinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer Veränderige wott, mues d Betroffene früe iibinde."
+ },
+ {
+  "id": 5866,
+  "de": "befähigen",
+  "tr": "muktedir kılmak, yetkin hâle getirmek",
+  "deBeispiel": "Gute Führung soll Mitarbeitende befähigen, nicht bevormunden.",
+  "gsw": "befäähige",
+  "gswArtikel": null,
+  "gswBeispiel": "Gueti Füerig söll d Mitarbeitende befäähige und nöd bevormunde."
+ },
+ {
+  "id": 5867,
+  "de": "ermächtigen",
+  "tr": "yetkilendirmek, güç vermek",
+  "deBeispiel": "Der Vorstand ermächtigte die Abteilung zu eigenständigen Entscheidungen.",
+  "gsw": "ermächtige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorschtand hät d Abtäilig zu äigeschtändige Entschäidige ermächtiget."
+ },
+ {
+  "id": 5868,
+  "de": "honorieren",
+  "tr": "karşılığını vermek, ödüllendirmek",
+  "deBeispiel": "Der Einsatz am Wochenende wurde von niemandem honoriert.",
+  "gsw": "honoriere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Iisatz am Wuchenend isch vo niemertem honoriert worde."
+ },
+ {
+  "id": 5869,
+  "de": "abwälzen",
+  "tr": "üstünden atmak, başkasına yıkmak",
+  "deBeispiel": "Das Risiko wird konsequent auf die Soloselbstständigen abgewälzt.",
+  "gsw": "abwälze",
+  "gswArtikel": null,
+  "gswBeispiel": "S Risiko wird konsequänt uf d Soloselbschtändige abgwälzt."
+ },
+ {
+  "id": 5870,
+  "de": "vorenthalten",
+  "tr": "esirgemek, vermemek",
+  "deBeispiel": "Der Belegschaft wurden wesentliche Zahlen bis zuletzt vorenthalten.",
+  "gsw": "vorenthalte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Belegschaft sind wäsentlichi Zaale bis zletscht vorenthalte worde."
+ },
+ {
+  "id": 5871,
+  "de": "sich abgrenzen",
+  "tr": "sınır koymak, kendini ayırmak",
+  "deBeispiel": "Wer sich nicht abgrenzt, arbeitet irgendwann rund um die Uhr.",
+  "gsw": "sich abgränze",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer sich nöd abgränzt, schaffet irgendwenn rund um d Uhr."
+ },
+ {
+  "id": 5872,
+  "de": "verschleiern",
+  "tr": "gerçeği gizlemek, örtbas etmek",
+  "deBeispiel": "Schöne Kennziffern verschleiern häufig die Lage in den Werkstätten.",
+  "gsw": "verschläiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Schööni Kennziffere verschläieret hüüfig d Laag i de Wärchschtätte."
+ },
+ {
+  "id": 5873,
+  "de": "beanspruchen",
+  "tr": "hak iddia etmek, talep etmek",
+  "deBeispiel": "Beide Abteilungen beanspruchten den Erfolg des Projekts für sich.",
+  "gsw": "beaaschpruche",
+  "gswArtikel": null,
+  "gswBeispiel": "Beidi Abtäilige händ de Erfolg vom Projäkt für sich beaaschprucht."
+ },
+ {
+  "id": 5874,
+  "de": "entfalten",
+  "tr": "geliştirmek, açığa çıkarmak",
+  "deBeispiel": "Erst im kleinen Team konnte sie ihre Fähigkeiten entfalten.",
+  "gsw": "entfalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Erscht im chliine Team hät si iri Fäähigkeite chöne entfalte."
+ },
+ {
+  "id": 5875,
+  "de": "verstetigen",
+  "tr": "kalıcılaştırmak, sürekli hâle getirmek",
+  "deBeispiel": "Aus der Notlösung wurde eine verstetigte Form der Zusammenarbeit.",
+  "gsw": "verschtetige",
+  "gswArtikel": null,
+  "gswBeispiel": "Us de Notlösig isch e verschtetigti Form vo de Zämenarbet worde."
+ },
+ {
+  "id": 5876,
+  "de": "ausgliedern",
+  "tr": "dışarıya devretmek, bünyeden ayırmak",
+  "deBeispiel": "Die Reinigung wurde ausgegliedert, die Löhne fielen sofort.",
+  "gsw": "usgliedere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Räinigig isch usgliederet worde, d Löön sind sofort gfalle."
+ },
+ {
+  "id": 5877,
+  "de": "betriebsintern",
+  "tr": "şirket içi, kurum içi",
+  "deBeispiel": "Die Studie wurde betriebsintern erstellt und nie veröffentlicht.",
+  "gsw": "betriibsintern",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtudie isch betriibsintern erschtellt und nie veröffentlicht worde."
+ },
+ {
+  "id": 5878,
+  "de": "zermürbend",
+  "tr": "yıpratıcı, insanı bitiren",
+  "deBeispiel": "Nicht die Aufgaben, sondern die zermürbenden Abstimmungsrunden kosten Kraft.",
+  "gsw": "zermürbend",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöd d Uufgabe, sondern di zermürbende Abschtimmigsrunde koschtet Chraft."
+ },
+ {
+  "id": 5879,
+  "de": "unbezahlt",
+  "tr": "ücretsiz, karşılığı ödenmeyen",
+  "deBeispiel": "Ein großer Teil der geleisteten Arbeit bleibt schlicht unbezahlt.",
+  "gsw": "unbezaalt",
+  "gswArtikel": null,
+  "gswBeispiel": "En groosse Täil vo de gläischtete Arbet bliibt schlicht unbezaalt."
+ },
+ {
+  "id": 5880,
+  "de": "informell",
+  "tr": "gayriresmî, resmî olmayan",
+  "deBeispiel": "Wichtige Entscheidungen fallen oft informell in der Kaffeeküche.",
+  "gsw": "informell",
+  "gswArtikel": null,
+  "gswBeispiel": "Wichtigi Entschäidige falled oft informell i de Kaffichuchi."
+ },
+ {
+  "id": 5881,
+  "de": "strukturell",
+  "tr": "yapısal",
+  "deBeispiel": "Das Problem ist strukturell und nicht durch Motivation zu lösen.",
+  "gsw": "schtrukturell",
+  "gswArtikel": null,
+  "gswBeispiel": "S Problem isch schtrukturell und nöd dur Motivation z löse."
+ },
+ {
+  "id": 5882,
+  "de": "kollektiv",
+  "tr": "kolektif, ortaklaşa",
+  "deBeispiel": "Nur kollektiv organisiert konnten sie überhaupt etwas durchsetzen.",
+  "gsw": "kollektiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Nur kollektiv organisiert händ si überhaupt öppis chöne durchsetze."
+ },
+ {
+  "id": 5883,
+  "de": "durchlässig",
+  "tr": "geçirgen, geçiş imkânı olan",
+  "deBeispiel": "Der Aufstieg ist theoretisch durchlässig, praktisch bleibt er verschlossen.",
+  "gsw": "durlässig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uufschtig isch theoretisch durlässig, praktisch bliibt er verschlosse."
+ },
+ {
+  "id": 5884,
+  "de": "starr",
+  "tr": "katı, esnemeyen",
+  "deBeispiel": "Starre Zuständigkeiten verhindern, dass jemand über den Rand blickt.",
+  "gsw": "schtarr",
+  "gswArtikel": null,
+  "gswBeispiel": "Schtarri Zueschtändigkeite verhinderet, das öpper über de Rand uselueget."
+ },
+ {
+  "id": 5885,
+  "de": "fremdbestimmt",
+  "tr": "başkası tarafından belirlenen, iradesi dışında",
+  "deBeispiel": "Wer fremdbestimmt arbeitet, erlebt seinen Tag als fremdes Programm.",
+  "gsw": "frömdbeschtimmt",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer frömdbeschtimmt schaffet, erläbt sin Tag als es frömds Programm."
+ },
+ {
+  "id": 5886,
+  "de": "zweckrational",
+  "tr": "amaca yönelik akılcı, araçsal akılcı",
+  "deBeispiel": "Rein zweckrational betrachtet lohnt sich Rücksicht auf Menschen nie.",
+  "gsw": "zweckrational",
+  "gswArtikel": null,
+  "gswBeispiel": "Räin zweckrational betrachtet loont sich Rücksicht uf Mänsche nie."
+ },
+ {
+  "id": 5887,
+  "de": "die Zersiedelung",
+  "tr": "düzensiz yayılma, kırsalın yapılaşması",
+  "deBeispiel": "Die ungebremste Zersiedelung der Landschaft gilt als planerisches Versagen.",
+  "gsw": "Zersiedlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D ungebrämsti Zersiedlig vo de Landschaft giltet als planerischs Versaage."
+ },
+ {
+  "id": 5888,
+  "de": "das Bauvorhaben",
+  "tr": "yapı projesi, inşaat girişimi",
+  "deBeispiel": "Das umstrittene Bauvorhaben am Hafen wurde vorerst zurückgestellt.",
+  "gsw": "Buuvorhabe",
+  "gswArtikel": "s",
+  "gswBeispiel": "S umschtrittene Buuvorhabe am Hafe isch vorerscht zrugggschtellt worde."
+ },
+ {
+  "id": 5889,
+  "de": "der Denkmalschutz",
+  "tr": "tarihî eser koruma, koruma statüsü",
+  "deBeispiel": "Die alte Markthalle steht seit 1994 unter Denkmalschutz.",
+  "gsw": "Denkmalschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "D alt Markthalle schtaat sit 1994 under Denkmalschutz."
+ },
+ {
+  "id": 5890,
+  "de": "die Baukultur",
+  "tr": "yapı kültürü, mimarlık kültürü",
+  "deBeispiel": "Eine hohe Baukultur zeigt sich weniger im Prunk als im Alltäglichen.",
+  "gsw": "Buukultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "E hochi Buukultur zäigt sich weniger im Prunk als im Alltäglige."
+ },
+ {
+  "id": 5891,
+  "de": "die Bausubstanz",
+  "tr": "yapı dokusu, mevcut yapı stoku",
+  "deBeispiel": "Die Bausubstanz der Siedlung ist trotz ihres Alters erstaunlich solide.",
+  "gsw": "Buusubschtanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Buusubschtanz vo de Siedlig isch trotz em Alter erschtuunlich solid."
+ },
+ {
+  "id": 5892,
+  "de": "der Bauträger",
+  "tr": "yapı yatırımcısı, müteahhit firma",
+  "deBeispiel": "Der Bauträger hatte bezahlbare Wohnungen versprochen und teure Eigentumswohnungen gebaut.",
+  "gsw": "Buuträger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Buuträger hät bezaalbari Wonige verschproche und tüüri Eigetumswonige boue."
+ },
+ {
+  "id": 5893,
+  "de": "die Brachfläche",
+  "tr": "atıl arazi, boş kalmış alan",
+  "deBeispiel": "Auf der Brachfläche hinter dem Bahnhof entsteht ein neues Wohnviertel.",
+  "gsw": "Brachflächi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Brachflächi hinder em Baanhof entschtaat es nöis Wonviertel."
+ },
+ {
+  "id": 5894,
+  "de": "die Flächenversiegelung",
+  "tr": "zeminin geçirimsizleştirilmesi, yüzeyin betonlaşması",
+  "deBeispiel": "Die zunehmende Flächenversiegelung verschärft die Hochwassergefahr in den Städten.",
+  "gsw": "Flächeversieglig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di zuenämendi Flächeversieglig verschärft d Hochwassergfaar i de Schtedt."
+ },
+ {
+  "id": 5895,
+  "de": "das Ensemble",
+  "tr": "yapı bütünü, birlikte korunan yapı grubu",
+  "deBeispiel": "Das barocke Ensemble am Marktplatz darf nicht verändert werden.",
+  "gsw": "Ensemble",
+  "gswArtikel": "s",
+  "gswBeispiel": "S barocke Ensemble am Marktplatz dörf nöd veränderet werde."
+ },
+ {
+  "id": 5896,
+  "de": "die Zwischennutzung",
+  "tr": "geçici kullanım, ara kullanım",
+  "deBeispiel": "Die Zwischennutzung der Halle als Atelier läuft bis zum Abriss.",
+  "gsw": "Zwüschenutzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zwüschenutzig vo de Halle als Atelier laufft bis zum Abriss."
+ },
+ {
+  "id": 5897,
+  "de": "die Aufwertung",
+  "tr": "değer kazandırma, iyileştirme",
+  "deBeispiel": "Die Aufwertung des Viertels hat die Mieten binnen fünf Jahren verdoppelt.",
+  "gsw": "Uufwertig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uufwertig vom Viertel hät d Mietzins innerhalb vo füüf Jaar verdopplet."
+ },
+ {
+  "id": 5898,
+  "de": "die Segregation",
+  "tr": "ayrışma, mekânsal ayrışma",
+  "deBeispiel": "Soziale Segregation lässt sich an den Schulbezirken deutlich ablesen.",
+  "gsw": "Segregation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Soziali Segregation laat sich a de Schuelbezirk düütlich ablääse."
+ },
+ {
+  "id": 5899,
+  "de": "die Peripherie",
+  "tr": "çeper, kent çevresi",
+  "deBeispiel": "An der Peripherie wächst die Stadt schneller als im Zentrum.",
+  "gsw": "Peripherie",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Peripherie wachst d Schtadt schneller als im Zentrum."
+ },
+ {
+  "id": 5900,
+  "de": "die Trabantenstadt",
+  "tr": "uydu kent",
+  "deBeispiel": "Die Trabantenstadt der Sechzigerjahre kämpft bis heute mit ihrem Ruf.",
+  "gsw": "Trabanteschtadt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Trabanteschtadt vo de Sächzgerjaar kämpft bis hüt mit irem Ruef."
+ },
+ {
+  "id": 5901,
+  "de": "die Erschließung",
+  "tr": "altyapıya bağlama, imara açma",
+  "deBeispiel": "Die Erschließung des Baugebiets kostet die Gemeinde mehrere Millionen.",
+  "gsw": "Erschliessig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erschliessig vom Buugebiet koschtet d Gmeind meereri Millione."
+ },
+ {
+  "id": 5902,
+  "de": "das Stadtbild",
+  "tr": "kent görünümü, kentin genel dokusu",
+  "deBeispiel": "Der Turm fügt sich nur schwer in das gewachsene Stadtbild ein.",
+  "gsw": "Schtadtbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Turm füegt sich nur schwär is gwachsene Schtadtbild ii."
+ },
+ {
+  "id": 5903,
+  "de": "die Sichtachse",
+  "tr": "görüş aksı, bakış ekseni",
+  "deBeispiel": "Der Neubau verstellt die historische Sichtachse zum Dom.",
+  "gsw": "Sichtachse",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Nöibau verschtellt d historisch Sichtachse zum Dom."
+ },
+ {
+  "id": 5904,
+  "de": "die Monumentalität",
+  "tr": "anıtsallık, heybet",
+  "deBeispiel": "Die Monumentalität des Baus wirkt heute eher einschüchternd als erhaben.",
+  "gsw": "Monumentalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Monumentalität vom Buu wirkt hüt ehner iischüchternd als erhabe."
+ },
+ {
+  "id": 5905,
+  "de": "der Funktionalismus",
+  "tr": "işlevselcilik",
+  "deBeispiel": "Der strenge Funktionalismus der Nachkriegszeit übersah das Bedürfnis nach Schönheit.",
+  "gsw": "Funktionalismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De schtreng Funktionalismus vo de Naachkriegsziit hät s Bedürfnis nach Schöönheit übersee."
+ },
+ {
+  "id": 5906,
+  "de": "die Postmoderne",
+  "tr": "postmodernizm, postmodern dönem",
+  "deBeispiel": "In der Postmoderne kehrten Farbe und Ironie an die Fassaden zurück.",
+  "gsw": "Postmoderne",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Postmoderne sind Farb und Ironie a d Fassade zruggchoo."
+ },
+ {
+  "id": 5907,
+  "de": "die Materialität",
+  "tr": "malzeme niteliği, malzemesellik",
+  "deBeispiel": "Die raue Materialität des Betons prägt den ganzen Raum.",
+  "gsw": "Materialität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di rauhi Materialität vom Beton präägt de ganz Ruum."
+ },
+ {
+  "id": 5908,
+  "de": "die Aufenthaltsqualität",
+  "tr": "mekânda vakit geçirme niteliği, yaşanabilirlik",
+  "deBeispiel": "Ohne Schatten und Bänke fehlt dem Platz jede Aufenthaltsqualität.",
+  "gsw": "Uufenthaltsqualität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Schatte und Bänk fäält em Platz jedi Uufenthaltsqualität."
+ },
+ {
+  "id": 5909,
+  "de": "die Barrierefreiheit",
+  "tr": "engelsiz erişim, erişilebilirlik",
+  "deBeispiel": "Barrierefreiheit wurde beim Umbau des Bahnhofs endlich mitgedacht.",
+  "gsw": "Barrierefreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Barrierefreiheit isch bim Umbau vom Baanhof ändlich mitdänkt worde."
+ },
+ {
+  "id": 5910,
+  "de": "das Moratorium",
+  "tr": "moratoryum, geçici durdurma kararı",
+  "deBeispiel": "Der Stadtrat verhängte ein Moratorium für weitere Hochhäuser.",
+  "gsw": "Moratorium",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Schtadtraat hät es Moratorium für wiitere Hochhüüser verhängt."
+ },
+ {
+  "id": 5911,
+  "de": "der Baustopp",
+  "tr": "inşaatın durdurulması",
+  "deBeispiel": "Ein Fund aus der Römerzeit führte zum sofortigen Baustopp.",
+  "gsw": "Buuschtopp",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Fund us de Römerziit hät zum sofortige Buuschtopp gfüert."
+ },
+ {
+  "id": 5912,
+  "de": "die Urbanität",
+  "tr": "kentlilik, kentsel nitelik",
+  "deBeispiel": "Echte Urbanität entsteht nicht allein durch bauliche Dichte.",
+  "gsw": "Urbanität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Echti Urbanität entschtaat nöd elläi dur bauligi Dichti."
+ }
+]

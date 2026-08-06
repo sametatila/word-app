@@ -1,0 +1,995 @@
+[
+ {
+  "id": 5404,
+  "de": "die Schlagfertigkeit",
+  "tr": "hazırcevaplık",
+  "deBeispiel": "Ihre Schlagfertigkeit rettete sie in der schwierigen Diskussion.",
+  "gsw": "Schlagfertigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Schlagfertigkeit hät si i de schwierige Diskussion grettet."
+ },
+ {
+  "id": 5405,
+  "de": "die Zusammenfassung",
+  "tr": "özet",
+  "deBeispiel": "Am Ende gab er eine kurze Zusammenfassung der wichtigsten Punkte.",
+  "gsw": "Zämefassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Schluss hät er e churzi Zämefassig vo de wichtigschte Pünkt gää."
+ },
+ {
+  "id": 5406,
+  "de": "die Moderation",
+  "tr": "moderatörlük, oturum yönetimi",
+  "deBeispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin.",
+  "gsw": "Moderation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Moderation vo de Rundi hät e erfahreni Journalischtin übernoo."
+ },
+ {
+  "id": 5407,
+  "de": "der Redner",
+  "tr": "konuşmacı, hatip",
+  "deBeispiel": "Der Redner sprach frei und ohne einen einzigen Zettel.",
+  "gsw": "Redner",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Redner hät frei und ooni en einzige Zettel gredt."
+ },
+ {
+  "id": 5408,
+  "de": "die Sprechhemmung",
+  "tr": "konuşma çekingenliği",
+  "deBeispiel": "Viele Lernende überwinden ihre Sprechhemmung erst im Ausland.",
+  "gsw": "Schprächhemmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili Lernendi überwinded iri Schprächhemmig erscht im Uusland."
+ },
+ {
+  "id": 5409,
+  "de": "die Aussagekraft",
+  "tr": "kanıt değeri, anlatım gücü",
+  "deBeispiel": "Die Aussagekraft dieses Tests wird von Fachleuten bezweifelt.",
+  "gsw": "Uussagchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uussagchraft vo dem Tescht wird vo Fachlüt aazwiflet."
+ },
+ {
+  "id": 5410,
+  "de": "der Verbesserungsvorschlag",
+  "tr": "iyileştirme önerisi",
+  "deBeispiel": "Der Dozent notierte zu jedem Text zwei Verbesserungsvorschläge.",
+  "gsw": "Verbesserigsvorschlag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dozänt hät zu jedem Täxt zwäi Verbesserigsvorschläg notiert."
+ },
+ {
+  "id": 5411,
+  "de": "das Taktgefühl",
+  "tr": "incelik, ölçülülük",
+  "deBeispiel": "Kritik muss man mit etwas Taktgefühl vorbringen.",
+  "gsw": "Taktgfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Kritik mues me mit chli Taktgfüel vorbringe."
+ },
+ {
+  "id": 5412,
+  "de": "der Muttersprachler",
+  "tr": "ana dili konuşuru",
+  "deBeispiel": "Selbst Muttersprachler machen bei diesem Fall häufig Fehler.",
+  "gsw": "Mueterschprachler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sogar Mueterschprachler mached bi dem Fall hüüfig Fääler."
+ },
+ {
+  "id": 5413,
+  "de": "nachfragen",
+  "tr": "sorup öğrenmek, tekrar sormak",
+  "deBeispiel": "Wenn du etwas nicht verstehst, solltest du sofort nachfragen.",
+  "gsw": "naachfrage",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn du öppis nöd verschtaasch, sötsch du sofort naachfrage."
+ },
+ {
+  "id": 5414,
+  "de": "einwenden",
+  "tr": "itiraz etmek, itiraz olarak ileri sürmek",
+  "deBeispiel": "Gegen diesen Vorschlag hatte niemand etwas einzuwenden.",
+  "gsw": "iiwände",
+  "gswArtikel": null,
+  "gswBeispiel": "Gäge dää Vorschlag hät niemer öppis chöne iiwände."
+ },
+ {
+  "id": 5415,
+  "de": "stottern",
+  "tr": "kekelemek",
+  "deBeispiel": "Vor Aufregung stotterte er bei den ersten Sätzen.",
+  "gsw": "schtottere",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor Uufregig hät er bi de erschte Sätz gschtotteret."
+ },
+ {
+  "id": 5416,
+  "de": "zögern",
+  "tr": "tereddüt etmek, duraksamak",
+  "deBeispiel": "Er zögerte kurz, bevor er auf die heikle Frage antwortete.",
+  "gsw": "zögere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät churz zögeret, bevor er uf di heikli Fraag antwortet hät."
+ },
+ {
+  "id": 5417,
+  "de": "klarstellen",
+  "tr": "açıklığa kavuşturmak, netleştirmek",
+  "deBeispiel": "Ich möchte kurz klarstellen, wie meine Bemerkung gemeint war.",
+  "gsw": "klarschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht churz klarschtelle, wie mini Bemerkig gmeint gsi isch."
+ },
+ {
+  "id": 5418,
+  "de": "umformulieren",
+  "tr": "yeniden ifade etmek, başka türlü yazmak",
+  "deBeispiel": "Diesen Satz solltest du höflicher umformulieren.",
+  "gsw": "umformuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Dää Satz sötsch du höflicher umformuliere."
+ },
+ {
+  "id": 5419,
+  "de": "nachahmen",
+  "tr": "taklit etmek",
+  "deBeispiel": "Kinder ahmen die Aussprache ihrer Umgebung fast automatisch nach.",
+  "gsw": "naachaame",
+  "gswArtikel": null,
+  "gswBeispiel": "Chind chönd d Uussprach vo irer Umgäbig fascht automatisch naachaame."
+ },
+ {
+  "id": 5420,
+  "de": "abschneiden",
+  "tr": "(sınavda) sonuç almak, derece yapmak",
+  "deBeispiel": "Im mündlichen Teil hat sie deutlich besser abgeschnitten.",
+  "gsw": "abschniide",
+  "gswArtikel": null,
+  "gswBeispiel": "Im mündliche Teil hät si düütlich besser chöne abschniide."
+ },
+ {
+  "id": 5421,
+  "de": "darlegen",
+  "tr": "ortaya koymak, gerekçeli anlatmak",
+  "deBeispiel": "In der Einleitung legt sie ihre Sicht der Dinge dar.",
+  "gsw": "darlege",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Iileitig tuet si iri Sicht vo de Sache darlege."
+ },
+ {
+  "id": 5422,
+  "de": "zugeben",
+  "tr": "itiraf etmek, kabul etmek",
+  "deBeispiel": "Er gab offen zu, den Termin völlig vergessen zu haben.",
+  "gsw": "zuegää",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät offe zuegää, dass er de Termin völlig vergässe hät."
+ },
+ {
+  "id": 5423,
+  "de": "akzentfrei",
+  "tr": "aksansız",
+  "deBeispiel": "Nach zwanzig Jahren spricht er nahezu akzentfrei Deutsch.",
+  "gsw": "akzäntfrei",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach zwänzg Jaar redt er nahezue akzäntfrei Tüütsch."
+ },
+ {
+  "id": 5424,
+  "de": "gesprächig",
+  "tr": "konuşkan, sohbeti seven",
+  "deBeispiel": "Nach dem zweiten Kaffee wurde sie erstaunlich gesprächig.",
+  "gsw": "gschprööchig",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em zwäite Kaffi isch si erschtuunlich gschprööchig worde."
+ },
+ {
+  "id": 5425,
+  "de": "überzeugend",
+  "tr": "ikna edici, inandırıcı",
+  "deBeispiel": "Seine Argumente waren sachlich und ausgesprochen überzeugend.",
+  "gsw": "überzüügend",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Argumänt sind sachlich und uusgschproche überzüügend gsi."
+ },
+ {
+  "id": 5426,
+  "de": "geläufig",
+  "tr": "aşina, tanıdık; yaygın, akıcı",
+  "deBeispiel": "Dieser Ausdruck ist mir aus dem Berufsalltag durchaus geläufig.",
+  "gsw": "geläufig",
+  "gswArtikel": null,
+  "gswBeispiel": "Dää Uusdruck isch mir us em Bruefsalltag duruus geläufig."
+ },
+ {
+  "id": 5427,
+  "de": "stockend",
+  "tr": "duraklayarak, kesik kesik",
+  "deBeispiel": "Am Anfang las er noch stockend, später ganz flüssig.",
+  "gsw": "schtockend",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aafang hät er no schtockend gläse, schpöter ganz flüssig."
+ },
+ {
+  "id": 5428,
+  "de": "nachdrücklich",
+  "tr": "ısrarla, vurgulu biçimde",
+  "deBeispiel": "Der Prüfer wies nachdrücklich auf die Zeitbegrenzung hin.",
+  "gsw": "naachdrücklich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Prüefer hät naachdrücklich uf d Ziitbegränzig higwise."
+ },
+ {
+  "id": 5429,
+  "de": "beiläufig",
+  "tr": "laf arasında, öylesine",
+  "deBeispiel": "Sie erwähnte ganz beiläufig, dass sie kündigen werde.",
+  "gsw": "biiläufig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät ganz biiläufig erwäänt, dass si wärdi kündige."
+ },
+ {
+  "id": 5430,
+  "de": "treffend",
+  "tr": "isabetli, yerinde",
+  "deBeispiel": "Für dieses Gefühl gibt es im Deutschen kein treffendes Wort.",
+  "gsw": "träffend",
+  "gswArtikel": null,
+  "gswBeispiel": "Für das Gfüel git s im Tüütsche kes träffends Wort."
+ },
+ {
+  "id": 5431,
+  "de": "die Datensicherheit",
+  "tr": "veri güvenliği",
+  "deBeispiel": "Die Datensicherheit hat in unserem Unternehmen oberste Priorität.",
+  "gsw": "Datesicherheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Datesicherheit hät i üsem Unternäme oberschti Priorität."
+ },
+ {
+  "id": 5432,
+  "de": "die Benutzeroberfläche",
+  "tr": "kullanıcı arayüzü",
+  "deBeispiel": "Die neue Benutzeroberfläche wirkt deutlich übersichtlicher als die alte.",
+  "gsw": "Benutzeroberflächi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D nöi Benutzeroberflächi wirkt düütlich übersichtlicher als di alt."
+ },
+ {
+  "id": 5433,
+  "de": "die Anwendung",
+  "tr": "uygulama, kullanım",
+  "deBeispiel": "Diese Anwendung läuft auch auf älteren Geräten ohne Probleme.",
+  "gsw": "Aawändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Aawändig lauft au uf elteri Grät ooni Probleem."
+ },
+ {
+  "id": 5434,
+  "de": "der Zugriff",
+  "tr": "erişim",
+  "deBeispiel": "Ohne Berechtigung hat niemand Zugriff auf die vertraulichen Unterlagen.",
+  "gsw": "Zuegriff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni Berächtigig hät niemer Zuegriff uf di vertrauliche Unterlage."
+ },
+ {
+  "id": 5435,
+  "de": "das Kennwort",
+  "tr": "parola, şifre",
+  "deBeispiel": "Bitte ändern Sie Ihr Kennwort mindestens alle drei Monate.",
+  "gsw": "Kennwort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bitte änderet Sie Ires Kennwort mindeschtens alli drüü Monet."
+ },
+ {
+  "id": 5436,
+  "de": "der Speicherplatz",
+  "tr": "depolama alanı, bellek alanı",
+  "deBeispiel": "Auf dem Server ist kaum noch Speicherplatz für neue Aufnahmen.",
+  "gsw": "Schpeicherplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Server isch chuum na Schpeicherplatz für nöii Uufnaame."
+ },
+ {
+  "id": 5437,
+  "de": "der Arbeitsspeicher",
+  "tr": "çalışma belleği, RAM",
+  "deBeispiel": "Der Arbeitsspeicher reicht für so ein aufwendiges Programm nicht aus.",
+  "gsw": "Arbetsschpeicher",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Arbetsschpeicher längt für so es uufwendigs Programm nöd."
+ },
+ {
+  "id": 5438,
+  "de": "die Datenübertragung",
+  "tr": "veri aktarımı",
+  "deBeispiel": "Die Datenübertragung wurde wegen einer schlechten Verbindung mehrmals unterbrochen.",
+  "gsw": "Dateübertragig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dateübertragig isch wäge ere schlächte Verbindig mehrmals underbroche worde."
+ },
+ {
+  "id": 5439,
+  "de": "das Betriebssystem",
+  "tr": "işletim sistemi",
+  "deBeispiel": "Das Betriebssystem wird heute Nacht auf die neueste Fassung gebracht.",
+  "gsw": "Betriebssyschtem",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Betriebssyschtem wird hüt Nacht uf di nöischti Fassig braacht."
+ },
+ {
+  "id": 5440,
+  "de": "der Quellcode",
+  "tr": "kaynak kod",
+  "deBeispiel": "Der Quellcode dieses Programms ist für alle frei einsehbar.",
+  "gsw": "Quellcode",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Quellcode vo dem Programm isch für alli frei iisehbar."
+ },
+ {
+  "id": 5441,
+  "de": "die Fehlermeldung",
+  "tr": "hata mesajı",
+  "deBeispiel": "Beim Start erscheint jedes Mal dieselbe rätselhafte Fehlermeldung.",
+  "gsw": "Fäälermäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bim Schtart erschiint jedes Mal di gliich rätselhafti Fäälermäldig."
+ },
+ {
+  "id": 5442,
+  "de": "der Systemausfall",
+  "tr": "sistem arızası, sistem çökmesi",
+  "deBeispiel": "Nach dem Systemausfall konnten wir stundenlang keine Bestellungen bearbeiten.",
+  "gsw": "Syschtemuusfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Syschtemuusfall händ mir schtundelang kei Beschtellige chöne bearbeite."
+ },
+ {
+  "id": 5443,
+  "de": "die Berechtigung",
+  "tr": "yetki, izin",
+  "deBeispiel": "Neue Mitarbeiter erhalten erst nach der Schulung erweiterte Berechtigungen.",
+  "gsw": "Berächtigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nöii Mitarbeiter überchömed erscht nach de Schuelig erwiterti Berächtigige."
+ },
+ {
+  "id": 5444,
+  "de": "das Nutzerkonto",
+  "tr": "kullanıcı hesabı",
+  "deBeispiel": "Sein Nutzerkonto wurde nach mehreren Verstößen dauerhaft gelöscht.",
+  "gsw": "Nutzerkonto",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sis Nutzerkonto isch nach mehrere Verschtöss duurhaft glöscht worde."
+ },
+ {
+  "id": 5445,
+  "de": "die Sicherheitslücke",
+  "tr": "güvenlik açığı",
+  "deBeispiel": "Die Sicherheitslücke wurde zum Glück vor dem Angriff entdeckt.",
+  "gsw": "Sicherheitslücke",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sicherheitslücke isch zum Glück vor em Aagriff entdeckt worde."
+ },
+ {
+  "id": 5446,
+  "de": "die Schadsoftware",
+  "tr": "zararlı yazılım",
+  "deBeispiel": "Über einen Anhang gelangte Schadsoftware in das gesamte Firmennetz.",
+  "gsw": "Schadsoftware",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über en Aahang isch Schadsoftware is ganz Firmenetz choo."
+ },
+ {
+  "id": 5447,
+  "de": "der Angreifer",
+  "tr": "saldırgan",
+  "deBeispiel": "Die Angreifer verschafften sich über gestohlene Zugangsdaten Eintritt ins System.",
+  "gsw": "Aagriifer",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Aagriifer händ sich über gschtohleni Zuegangsdate Iitritt is Syschtem verschafft."
+ },
+ {
+  "id": 5448,
+  "de": "der Datenmissbrauch",
+  "tr": "veri kötüye kullanımı",
+  "deBeispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs.",
+  "gsw": "Datemissbruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gäge de Aabieter lauft e Untersuechig wäge möglichem Datemissbruuch."
+ },
+ {
+  "id": 5449,
+  "de": "der Datenverlust",
+  "tr": "veri kaybı",
+  "deBeispiel": "Eine regelmäßige Sicherung schützt am besten vor plötzlichem Datenverlust.",
+  "gsw": "Dateverluscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "E regelmässigi Sicherig schützt am beschte vor plötzlichem Dateverluscht."
+ },
+ {
+  "id": 5450,
+  "de": "die Verfügbarkeit",
+  "tr": "erişilebilirlik, kullanılabilirlik",
+  "deBeispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
+  "gsw": "Verfüegbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vertrag sicheret öis e Verfüegbarkeit vo fascht hundert Prozänt zue."
+ },
+ {
+  "id": 5451,
+  "de": "die Rechenleistung",
+  "tr": "işlem gücü",
+  "deBeispiel": "Für diese Auswertung brauchen wir deutlich mehr Rechenleistung als bisher.",
+  "gsw": "Rächeleischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Uuswertig bruuched mer düütlich meh Rächeleischtig als bishär."
+ },
+ {
+  "id": 5452,
+  "de": "das Endgerät",
+  "tr": "uç cihaz, son kullanıcı cihazı",
+  "deBeispiel": "Die Seite passt sich an jedes Endgerät automatisch an.",
+  "gsw": "Ändgrät",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Siite passt sich automatisch a jedes Ändgrät aa."
+ },
+ {
+  "id": 5453,
+  "de": "der Sensor",
+  "tr": "sensör, algılayıcı",
+  "deBeispiel": "Ein Sensor an der Tür meldet jede unbefugte Bewegung.",
+  "gsw": "Sensor",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Sensor a de Tür mäldet jedi unbefuegti Bewegig."
+ },
+ {
+  "id": 5454,
+  "de": "die Fernsteuerung",
+  "tr": "uzaktan kumanda, uzaktan kontrol",
+  "deBeispiel": "Die Heizung lässt sich per Fernsteuerung vom Handy aus regeln.",
+  "gsw": "Fernschtüürig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Heizig laat sich per Fernschtüürig vom Händy us regle."
+ },
+ {
+  "id": 5455,
+  "de": "der Roboter",
+  "tr": "robot",
+  "deBeispiel": "In der Halle übernehmen Roboter inzwischen die schwersten Arbeitsschritte.",
+  "gsw": "Roboter",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Halle übernänd Roboter inzwüsche di schwerschte Arbetsschritt."
+ },
+ {
+  "id": 5456,
+  "de": "der Entwickler",
+  "tr": "geliştirici",
+  "deBeispiel": "Die Entwickler arbeiten seit Wochen an einer stabileren Fassung.",
+  "gsw": "Entwickler",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Entwickler schaffed sit Wuche a ere schtabilere Fassig."
+ },
+ {
+  "id": 5457,
+  "de": "die Neuerung",
+  "tr": "yenilik",
+  "deBeispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten.",
+  "gsw": "Nöierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di wichtigscht Nöierig betrifft de Schutz vo persönliche Date."
+ },
+ {
+  "id": 5458,
+  "de": "der Ablauf",
+  "tr": "işleyiş, süreç, akış",
+  "deBeispiel": "Der gesamte Ablauf der Bestellung wird nun vom Rechner gesteuert.",
+  "gsw": "Ablauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De ganz Ablauf vo de Bschtellig wird jetz vom Rächner gschtüüret."
+ },
+ {
+  "id": 5459,
+  "de": "das Ladegerät",
+  "tr": "şarj cihazı",
+  "deBeispiel": "Ich habe mein Ladegerät im Zug liegen lassen.",
+  "gsw": "Ladegrät",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich han mis Ladegrät im Zug la ligge."
+ },
+ {
+  "id": 5460,
+  "de": "die Datenbank",
+  "tr": "veri tabanı",
+  "deBeispiel": "In der Datenbank stehen die Angaben von mehreren Millionen Kunden.",
+  "gsw": "Datebank",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Datebank schtönd d Aagabe vo mehrere Millione Chunde."
+ },
+ {
+  "id": 5461,
+  "de": "die Suchmaschine",
+  "tr": "arama motoru",
+  "deBeispiel": "Die Suchmaschine zeigt Werbung immer vor den eigentlichen Ergebnissen.",
+  "gsw": "Suechmaschine",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Suechmaschine zeigt d Wärbig immer vor de eigentliche Ergäbnis."
+ },
+ {
+  "id": 5462,
+  "de": "das Dateiformat",
+  "tr": "dosya biçimi",
+  "deBeispiel": "Bitte schicken Sie den Bericht in einem gängigen Dateiformat.",
+  "gsw": "Dateiformat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schicked Sie de Bricht bitte i mene gängige Dateiformat."
+ },
+ {
+  "id": 5463,
+  "de": "der Virenschutz",
+  "tr": "virüs koruması",
+  "deBeispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen.",
+  "gsw": "Viireschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni aktuelle Viireschutz sött me kei frömdi Aahäng ufmache."
+ },
+ {
+  "id": 5464,
+  "de": "der Netzbetreiber",
+  "tr": "şebeke işletmecisi, operatör",
+  "deBeispiel": "Der Netzbetreiber hat die Störung nach zwei Tagen endlich behoben.",
+  "gsw": "Netzbetriiber",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Netzbetriiber hät d Schtöörig nach zwäi Täg äntlich bhobe."
+ },
+ {
+  "id": 5465,
+  "de": "die Dienstleistung",
+  "tr": "hizmet",
+  "deBeispiel": "Viele Dienstleistungen der Behörde lassen sich inzwischen im Netz erledigen.",
+  "gsw": "Dienschtleischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill Dienschtleischtige vo de Behörde lönd sich inzwüsche im Netz erledige."
+ },
+ {
+  "id": 5466,
+  "de": "die Elektronik",
+  "tr": "elektronik aksam, elektronik (bilim dalı)",
+  "deBeispiel": "Bei dem Unfall wurde vor allem die Elektronik des Wagens beschädigt.",
+  "gsw": "Elektronik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bim Unfall isch vor allem d Elektronik vom Wage bschädiget worde."
+ },
+ {
+  "id": 5467,
+  "de": "die Stromversorgung",
+  "tr": "elektrik beslemesi, güç kaynağı",
+  "deBeispiel": "Eine unterbrochene Stromversorgung kann den ganzen Betrieb lahmlegen.",
+  "gsw": "Schtromversorgig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En underbrocheni Schtromversorgig cha de ganz Betrib lahmlege."
+ },
+ {
+  "id": 5468,
+  "de": "die Handhabung",
+  "tr": "kullanım, kullanış",
+  "deBeispiel": "Die Handhabung des Programms ist auch für Ungeübte leicht.",
+  "gsw": "Handhabig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Handhabig vom Programm isch au für Ungüebti liecht."
+ },
+ {
+  "id": 5469,
+  "de": "die Funkverbindung",
+  "tr": "telsiz bağlantısı, kablosuz bağlantı",
+  "deBeispiel": "Im Tunnel brach die Funkverbindung zum Fahrzeug plötzlich ab.",
+  "gsw": "Funkverbindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Tunnel isch d Funkverbindig zum Fahrzüüg plötzlich abbroche."
+ },
+ {
+  "id": 5470,
+  "de": "das Signal",
+  "tr": "sinyal, işaret",
+  "deBeispiel": "Das Signal wird auf dem Land oft von Bäumen abgeschwächt.",
+  "gsw": "Signal",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Signal wird uf em Land oft vo de Bäum abgschwächt."
+ },
+ {
+  "id": 5471,
+  "de": "die Simulation",
+  "tr": "simülasyon, benzetim",
+  "deBeispiel": "In der Simulation hielt die Brücke auch starkem Wind stand.",
+  "gsw": "Simulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Simulation hät d Brugg au schtarkem Wind schtandghalte."
+ },
+ {
+  "id": 5472,
+  "de": "der Warnhinweis",
+  "tr": "uyarı, uyarı notu",
+  "deBeispiel": "Die meisten Leute klicken den Warnhinweis einfach weg.",
+  "gsw": "Warnhiiwiis",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di mäischte Lüüt klicked de Warnhiiwiis eifach ewägg."
+ },
+ {
+  "id": 5473,
+  "de": "die Bildschirmauflösung",
+  "tr": "ekran çözünürlüğü",
+  "deBeispiel": "Bei dieser Bildschirmauflösung ist die Schrift kaum noch lesbar.",
+  "gsw": "Bildschirmuflösig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dere Bildschirmuflösig isch d Schrift chuum meh läsbar."
+ },
+ {
+  "id": 5474,
+  "de": "der Testlauf",
+  "tr": "deneme çalışması, test çalıştırması",
+  "deBeispiel": "Vor der Einführung gab es mehrere Testläufe mit echten Kunden.",
+  "gsw": "Teschtlauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vor de Iifüerig hät s mehreri Teschtläuf mit ächte Chunde gee."
+ },
+ {
+  "id": 5475,
+  "de": "verschlüsseln",
+  "tr": "şifrelemek",
+  "deBeispiel": "Alle Nachrichten werden bereits auf dem Gerät verschlüsselt.",
+  "gsw": "verschlüssle",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli Nachrichte wärded scho uf em Grät verschlüsslet."
+ },
+ {
+  "id": 5476,
+  "de": "aktualisieren",
+  "tr": "güncellemek",
+  "deBeispiel": "Wir aktualisieren die Angaben auf der Seite jeden Morgen.",
+  "gsw": "aktualisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir aktualisiered d Aagabe uf de Siite jede Morge."
+ },
+ {
+  "id": 5477,
+  "de": "programmieren",
+  "tr": "programlamak, kodlamak",
+  "deBeispiel": "Sie hat die Steuerung der Maschine selbst programmiert.",
+  "gsw": "programmiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät d Schtüürig vo de Maschine sälber programmiert."
+ },
+ {
+  "id": 5478,
+  "de": "abstürzen",
+  "tr": "çökmek (program), donmak",
+  "deBeispiel": "Das Programm ist mitten in der Bearbeitung wieder abgestürzt.",
+  "gsw": "abschtürze",
+  "gswArtikel": null,
+  "gswBeispiel": "S Programm isch mitte i de Bearbeitig wieder abgschtürzt."
+ },
+ {
+  "id": 5479,
+  "de": "ausführen",
+  "tr": "yürütmek, çalıştırmak, uygulamak",
+  "deBeispiel": "Der Rechner führt den Befehl erst nach der Bestätigung aus.",
+  "gsw": "uusfüere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Rächner tuet de Befääl erscht nach de Beschtätigung uusfüere."
+ },
+ {
+  "id": 5480,
+  "de": "wiederherstellen",
+  "tr": "geri yüklemek, eski hâline getirmek",
+  "deBeispiel": "Zum Glück konnten wir die gelöschten Unterlagen wiederherstellen.",
+  "gsw": "widerherschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Zum Glück händ mer di glöschte Underlage chöne widerherschtelle."
+ },
+ {
+  "id": 5481,
+  "de": "erfassen",
+  "tr": "kaydetmek, saptamak, kavramak",
+  "deBeispiel": "Das Gerät erfasst den Verbrauch jeder einzelnen Wohnung.",
+  "gsw": "erfasse",
+  "gswArtikel": null,
+  "gswBeispiel": "S Grät erfasst de Verbruuch vo jedere einzelne Wonig."
+ },
+ {
+  "id": 5482,
+  "de": "eingeben",
+  "tr": "girmek (veri), yazmak",
+  "deBeispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
+  "gsw": "iigee",
+  "gswArtikel": null,
+  "gswBeispiel": "Sie müend bitte de Beschtätigungscode us de Nachricht iigee."
+ },
+ {
+  "id": 5483,
+  "de": "sperren",
+  "tr": "engellemek, bloke etmek, kapatmak",
+  "deBeispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt.",
+  "gsw": "schperre",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach drüü falsche Versüech wird de Zuegang automatisch gschperrt."
+ },
+ {
+  "id": 5484,
+  "de": "freischalten",
+  "tr": "etkinleştirmek, açmak, aktive etmek",
+  "deBeispiel": "Die Funktion wird erst nach der Bezahlung freigeschaltet.",
+  "gsw": "freischalte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Funktion tuet me erscht nach de Zaalig freischalte."
+ },
+ {
+  "id": 5485,
+  "de": "abrufen",
+  "tr": "sorgulamak, erişmek, çağırmak",
+  "deBeispiel": "Den Kontostand kann man jederzeit vom Handy abrufen.",
+  "gsw": "abruefe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kontoschtand cha me jederziit vom Händy abruefe."
+ },
+ {
+  "id": 5486,
+  "de": "blockieren",
+  "tr": "engellemek, bloke etmek",
+  "deBeispiel": "Das Programm blockiert Werbung und unerwünschte Verbindungen zuverlässig.",
+  "gsw": "blockiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Programm blockiert Wärbig und unerwünschti Verbindige zuverlässig."
+ },
+ {
+  "id": 5487,
+  "de": "filtern",
+  "tr": "filtrelemek, süzmek",
+  "deBeispiel": "Der Dienst filtert verdächtige Nachrichten schon vor der Zustellung.",
+  "gsw": "filtere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dienscht filteret verdächtigi Nachrichte scho vor de Zueschtellig."
+ },
+ {
+  "id": 5488,
+  "de": "verknüpfen",
+  "tr": "bağlamak, ilişkilendirmek",
+  "deBeispiel": "Die App verknüpft deinen Kalender mit dem des Teams.",
+  "gsw": "verchnüpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "D App verchnüpft din Kaländer mit dem vom Team."
+ },
+ {
+  "id": 5489,
+  "de": "kabellos",
+  "tr": "kablosuz",
+  "deBeispiel": "Die Kopfhörer verbinden sich kabellos mit jedem Gerät im Raum.",
+  "gsw": "kabellos",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chopfhörer verbinded sich kabellos mit jedem Grät im Ruum."
+ },
+ {
+  "id": 5490,
+  "de": "kompatibel",
+  "tr": "uyumlu",
+  "deBeispiel": "Der Drucker ist leider nicht mit unserem System kompatibel.",
+  "gsw": "kompatibel",
+  "gswArtikel": null,
+  "gswBeispiel": "De Drucker isch läider nöd mit öisem Syschtem kompatibel."
+ },
+ {
+  "id": 5491,
+  "de": "veraltet",
+  "tr": "eskimiş, güncelliğini yitirmiş",
+  "deBeispiel": "Die Ausstattung im Labor ist inzwischen hoffnungslos veraltet.",
+  "gsw": "veraltet",
+  "gswArtikel": null,
+  "gswBeispiel": "D Uusschtattig im Labor isch inzwüsche hoffnigslos veraltet."
+ },
+ {
+  "id": 5492,
+  "de": "standardmäßig",
+  "tr": "standart olarak, varsayılan olarak",
+  "deBeispiel": "Die Ortung ist bei diesem Gerät standardmäßig ausgeschaltet.",
+  "gsw": "schtandardmässig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ortig isch bi dem Grät schtandardmässig uusgschaltet."
+ },
+ {
+  "id": 5493,
+  "de": "aufwendig",
+  "tr": "zahmetli, masraflı, çok emek isteyen",
+  "deBeispiel": "Die Umstellung war aufwendiger, als wir zunächst gedacht hatten.",
+  "gsw": "ufwändig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Umschtellig isch ufwändiger gsi, als mer zerscht dänkt händ."
+ },
+ {
+  "id": 5494,
+  "de": "zeitgemäß",
+  "tr": "çağdaş, güncel, çağa uygun",
+  "deBeispiel": "Eine zeitgemäße Ausrüstung gehört heute zu jedem Arbeitsplatz.",
+  "gsw": "ziitgmäss",
+  "gswArtikel": null,
+  "gswBeispiel": "E ziitgmässi Uusrüschtig ghört hüt zu jedem Arbetsplatz."
+ },
+ {
+  "id": 5495,
+  "de": "unbefugt",
+  "tr": "yetkisiz, izinsiz",
+  "deBeispiel": "Unbefugte Zugriffe werden vom System sofort gemeldet.",
+  "gsw": "unbefuegt",
+  "gswArtikel": null,
+  "gswBeispiel": "Unbefuegti Zuegriff wärded vom Syschtem sofort gmäldet."
+ },
+ {
+  "id": 5496,
+  "de": "manuell",
+  "tr": "elle, manuel",
+  "deBeispiel": "Diesen Schritt muss man leider immer noch manuell erledigen.",
+  "gsw": "manuell",
+  "gswArtikel": null,
+  "gswBeispiel": "Dä Schritt mues me läider immer no manuell erledige."
+ },
+ {
+  "id": 5497,
+  "de": "der Klimaschutz",
+  "tr": "iklim koruma, iklim koruması",
+  "deBeispiel": "Die Regierung investiert jährlich Milliarden in den Klimaschutz.",
+  "gsw": "Klimaschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Regierig inveschtiert jedes Jaar Milliarde i de Klimaschutz."
+ },
+ {
+  "id": 5498,
+  "de": "das Treibhausgas",
+  "tr": "sera gazı",
+  "deBeispiel": "Der Verkehr verursacht rund ein Fünftel aller Treibhausgase.",
+  "gsw": "Triibhuusgas",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Verchehr verursacht öppe en Füfftel vo allne Triibhuusgas."
+ },
+ {
+  "id": 5499,
+  "de": "das Kohlendioxid",
+  "tr": "karbondioksit",
+  "deBeispiel": "Wälder nehmen große Mengen Kohlendioxid aus der Luft auf.",
+  "gsw": "Kohlendioxid",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wälder nänd grossi Mänge Kohlendioxid us de Luft uuf."
+ },
+ {
+  "id": 5500,
+  "de": "die Luftverschmutzung",
+  "tr": "hava kirliliği",
+  "deBeispiel": "In vielen Großstädten ist die Luftverschmutzung deutlich gestiegen.",
+  "gsw": "Luftverschmutzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I villne Groosschtädt isch d Luftverschmutzig düütlich gschtige."
+ },
+ {
+  "id": 5501,
+  "de": "der Feinstaub",
+  "tr": "ince toz, partikül madde",
+  "deBeispiel": "Der Feinstaub in der Innenstadt gefährdet vor allem ältere Menschen.",
+  "gsw": "Fiischtaub",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Fiischtaub i de Innerschtadt gfäärdet vor allem elteri Mäntsche."
+ },
+ {
+  "id": 5502,
+  "de": "das Abgas",
+  "tr": "egzoz gazı, atık gaz",
+  "deBeispiel": "Moderne Filter reinigen die Abgase der Fabrik weitgehend.",
+  "gsw": "Abgas",
+  "gswArtikel": "s",
+  "gswBeispiel": "Moderni Filter reiniged d Abgas vo de Fabrik wiitgehend.",
+  "ayniLehce": [
+   "Abgase (B1)"
+  ]
+ },
+ {
+  "id": 5503,
+  "de": "der Schadstoff",
+  "tr": "zararlı madde, kirletici madde",
+  "deBeispiel": "Im Boden wurden gefährliche Schadstoffe aus der alten Fabrik gefunden.",
+  "gsw": "Schadschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Bode sind gfäärlichi Schadschtoff us de alte Fabrik gfunde worde."
+ },
+ {
+  "id": 5504,
+  "de": "die Mülltrennung",
+  "tr": "çöp ayrıştırma",
+  "deBeispiel": "In deutschen Haushalten ist die Mülltrennung längst selbstverständlich.",
+  "gsw": "Mülltrennig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I düütsche Huushalt isch d Mülltrennig scho lang sälbverschtändlich."
+ },
+ {
+  "id": 5505,
+  "de": "die Pfandflasche",
+  "tr": "depozitolu şişe",
+  "deBeispiel": "Er bringt die Pfandflaschen jeden Samstag zum Supermarkt zurück.",
+  "gsw": "Pfandflasche",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er bringt d Pfandflasche jede Samschtig zum Supermärt zrugg."
+ },
+ {
+  "id": 5506,
+  "de": "der Energieverbrauch",
+  "tr": "enerji tüketimi",
+  "deBeispiel": "Durch neue Fenster sank der Energieverbrauch des Hauses erheblich.",
+  "gsw": "Energieverbruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Dur nöii Fänschter isch de Energieverbruuch vom Huus erheblich gsunke."
+ },
+ {
+  "id": 5507,
+  "de": "das Windrad",
+  "tr": "rüzgâr türbini",
+  "deBeispiel": "Hinter dem Dorf drehen sich seit einem Jahr drei Windräder.",
+  "gsw": "Windrad",
+  "gswArtikel": "s",
+  "gswBeispiel": "Hinder em Dorf drääied sich sit eme Jaar drüü Windräder."
+ },
+ {
+  "id": 5508,
+  "de": "die Solaranlage",
+  "tr": "güneş enerjisi tesisi, güneş paneli sistemi",
+  "deBeispiel": "Die Solaranlage auf dem Dach deckt fast den halben Strombedarf.",
+  "gsw": "Solaraalag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Solaraalag ufem Dach deckt fascht de halb Schtrombedarf."
+ },
+ {
+  "id": 5509,
+  "de": "die Braunkohle",
+  "tr": "linyit",
+  "deBeispiel": "Der Ausstieg aus der Braunkohle ist politisch umstritten.",
+  "gsw": "Bruunchole",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Uusschtieg us de Bruunchole isch politisch umschtritte."
+ },
+ {
+  "id": 5510,
+  "de": "das Erdöl",
+  "tr": "petrol",
+  "deBeispiel": "Ein großer Teil der Kunststoffe wird aus Erdöl hergestellt.",
+  "gsw": "Erdöl",
+  "gswArtikel": "s",
+  "gswBeispiel": "En grosse Teil vo de Kunschtschtoff wird us Erdöl härgschtellt."
+ },
+ {
+  "id": 5511,
+  "de": "die Energiewende",
+  "tr": "enerji dönüşümü",
+  "deBeispiel": "Die Energiewende kommt langsamer voran als ursprünglich geplant.",
+  "gsw": "Energiewände",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Energiewände chunt langsamer vorwärts als ursprünglich plant."
+ },
+ {
+  "id": 5512,
+  "de": "der Verbrennungsmotor",
+  "tr": "içten yanmalı motor",
+  "deBeispiel": "Ab 2035 sollen kaum noch Verbrennungsmotoren verkauft werden.",
+  "gsw": "Verbrennigsmotor",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ab 2035 sölled chuum no Verbrennigsmotore verchauft wärde."
+ },
+ {
+  "id": 5513,
+  "de": "der Grenzwert",
+  "tr": "sınır değer, limit değeri",
+  "deBeispiel": "Der gesetzliche Grenzwert für Stickoxide wurde mehrfach überschritten.",
+  "gsw": "Gränzwärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gsetzlich Gränzwärt für Schtickoxid isch mehrfach überschritte worde."
+ }
+]

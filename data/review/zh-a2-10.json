@@ -1,0 +1,1007 @@
+[
+ {
+  "id": 7975,
+  "de": "kühlen",
+  "tr": "soğutmak, buz koymak",
+  "deBeispiel": "Kühle das Knie mit Eis, dann wird es besser.",
+  "gsw": "chüele",
+  "gswArtikel": null,
+  "gswBeispiel": "Chüel s Chnü mit Iis, denn wird s besser."
+ },
+ {
+  "id": 7976,
+  "de": "sich ausschlafen",
+  "tr": "iyice uyumak, uykusunu almak",
+  "deBeispiel": "Am Wochenende möchte ich mich endlich ausschlafen.",
+  "gsw": "sich usschlaafe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenänd wett ich mich ändlich usschlaafe."
+ },
+ {
+  "id": 7977,
+  "de": "schwindlig",
+  "tr": "başı dönen",
+  "deBeispiel": "Wenn ich zu schnell aufstehe, wird mir schwindlig.",
+  "gsw": "schwindlig",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn ich z schnäll ufschtaa, wird mer schwindlig."
+ },
+ {
+  "id": 7978,
+  "de": "heiser",
+  "tr": "sesi kısık, boğuk sesli",
+  "deBeispiel": "Nach dem Konzert war ich ganz heiser.",
+  "gsw": "häiser",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Konzärt bin ich ganz häiser gsi."
+ },
+ {
+  "id": 7979,
+  "de": "geschwollen",
+  "tr": "şişmiş, şiş",
+  "deBeispiel": "Mein Fuß ist dick und geschwollen.",
+  "gsw": "gschwulle",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Fuess isch dick und gschwulle."
+ },
+ {
+  "id": 7980,
+  "de": "verletzt",
+  "tr": "yaralı, sakatlanmış",
+  "deBeispiel": "Bei dem Unfall wurde zum Glück niemand verletzt.",
+  "gsw": "verletzt",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi dem Unfall isch zum Glück niemert verletzt worde."
+ },
+ {
+  "id": 7981,
+  "de": "übel",
+  "tr": "midesi bulanan, kötü",
+  "deBeispiel": "Im Bus ist mir immer übel.",
+  "gsw": "übel",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Bus isch mer immer übel."
+ },
+ {
+  "id": 7982,
+  "de": "schmerzhaft",
+  "tr": "acı veren, ağrılı",
+  "deBeispiel": "Die Spritze war kurz, aber schmerzhaft.",
+  "gsw": "schmärzhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schprütze isch churz gsi, aber schmärzhaft."
+ },
+ {
+  "id": 7983,
+  "de": "ansteckend",
+  "tr": "bulaşıcı",
+  "deBeispiel": "Eine Grippe ist sehr ansteckend.",
+  "gsw": "aasteckend",
+  "gswArtikel": null,
+  "gswBeispiel": "E Grippe isch sehr aasteckend."
+ },
+ {
+  "id": 7984,
+  "de": "ohnmächtig",
+  "tr": "baygın",
+  "deBeispiel": "In der Hitze wurde die alte Frau ohnmächtig.",
+  "gsw": "ohnmächtig",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Hitz isch di alt Frau ohnmächtig worde."
+ },
+ {
+  "id": 7985,
+  "de": "die Telefonnummer",
+  "tr": "telefon numarası",
+  "deBeispiel": "Kannst du mir bitte deine Telefonnummer geben?",
+  "gsw": "Telefonnummere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chasch mer bitte dini Telefonnummere gää?",
+  "ayniLehce": [
+   "Rufnummer (B1)"
+  ]
+ },
+ {
+  "id": 7986,
+  "de": "die Handynummer",
+  "tr": "cep telefonu numarası",
+  "deBeispiel": "Meine Handynummer hat sich letzte Woche geändert.",
+  "gsw": "Händynummere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Händynummere hät sich letscht Wuche gänderet."
+ },
+ {
+  "id": 7987,
+  "de": "das Telefonat",
+  "tr": "telefon görüşmesi",
+  "deBeispiel": "Das Telefonat mit meinem Chef hat nur fünf Minuten gedauert.",
+  "gsw": "Telefonat",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Telefonat mit mim Chef hät nu füf Minute duuret."
+ },
+ {
+  "id": 7988,
+  "de": "das Telefongespräch",
+  "tr": "telefon konuşması",
+  "deBeispiel": "Nach dem Telefongespräch war meine Mutter viel ruhiger.",
+  "gsw": "Telefongschpröch",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach em Telefongschpröch isch mini Mueter vill rueiger gsi."
+ },
+ {
+  "id": 7989,
+  "de": "das Telefonbuch",
+  "tr": "telefon rehberi",
+  "deBeispiel": "Die Nummer der Praxis steht im Telefonbuch.",
+  "gsw": "Telefonbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Nummere vo de Praxis schtaat im Telefonbuech."
+ },
+ {
+  "id": 7990,
+  "de": "die SMS",
+  "tr": "kısa mesaj, SMS",
+  "deBeispiel": "Ich schreibe dir später eine SMS.",
+  "gsw": "SMS",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich schriibe der schpööter e SMS."
+ },
+ {
+  "id": 7991,
+  "de": "die Sprachnachricht",
+  "tr": "sesli mesaj",
+  "deBeispiel": "Meine Oma schickt lieber eine Sprachnachricht als eine SMS.",
+  "gsw": "Schpraachnachricht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Grossmueter schickt lieber e Schpraachnachricht als e SMS."
+ },
+ {
+  "id": 7992,
+  "de": "der Klingelton",
+  "tr": "zil sesi",
+  "deBeispiel": "Dein Klingelton ist wirklich sehr laut.",
+  "gsw": "Klingelton",
+  "gswArtikel": "de",
+  "gswBeispiel": "Din Klingelton isch würkli sehr luut."
+ },
+ {
+  "id": 7993,
+  "de": "auflegen",
+  "tr": "telefonu kapatmak",
+  "deBeispiel": "Bitte leg nicht auf, ich bin gleich zurück.",
+  "gsw": "uflege",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte tue nöd uflege, ich bi grad zrugg."
+ },
+ {
+  "id": 7994,
+  "de": "zurückrufen",
+  "tr": "geri aramak",
+  "deBeispiel": "Ich rufe dich heute Abend zurück.",
+  "gsw": "zruggrüefe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue der hüt Aabig zruggrüefe."
+ },
+ {
+  "id": 7995,
+  "de": "das Smartphone",
+  "tr": "akıllı telefon",
+  "deBeispiel": "Mein neues Smartphone hat eine sehr gute Kamera.",
+  "gsw": "Smartphone",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mis nöie Smartphone hät e sehr gueti Kamera."
+ },
+ {
+  "id": 7996,
+  "de": "der Akku",
+  "tr": "batarya, pil",
+  "deBeispiel": "Mein Akku ist fast leer.",
+  "gsw": "Akku",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Akku isch fascht leer."
+ },
+ {
+  "id": 7997,
+  "de": "das Ladekabel",
+  "tr": "şarj kablosu",
+  "deBeispiel": "Hast du ein Ladekabel für mein Handy?",
+  "gsw": "Ladekabel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Häsch es Ladekabel für mis Händy?"
+ },
+ {
+  "id": 7998,
+  "de": "der Laptop",
+  "tr": "dizüstü bilgisayar",
+  "deBeispiel": "Ich nehme meinen Laptop mit ins Büro.",
+  "gsw": "Laptop",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich nime min Laptop mit is Büro."
+ },
+ {
+  "id": 7999,
+  "de": "die Maus",
+  "tr": "fare (bilgisayar), fare (hayvan)",
+  "deBeispiel": "Die Maus von meinem Computer funktioniert nicht mehr.",
+  "gsw": "Muus",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Muus vo mim Computer funktioniert nüme."
+ },
+ {
+  "id": 8000,
+  "de": "der Kopfhörer",
+  "tr": "kulaklık",
+  "deBeispiel": "Im Zug höre ich Musik mit Kopfhörern.",
+  "gsw": "Chopfhörer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Zug lose ich Musig mit Chopfhörer."
+ },
+ {
+  "id": 8001,
+  "de": "das Mikrofon",
+  "tr": "mikrofon",
+  "deBeispiel": "Dein Mikrofon ist aus, ich höre dich nicht.",
+  "gsw": "Mikrofon",
+  "gswArtikel": "s",
+  "gswBeispiel": "Dis Mikrofon isch us, ich ghöre di nöd."
+ },
+ {
+  "id": 8002,
+  "de": "die Webcam",
+  "tr": "web kamerası",
+  "deBeispiel": "Für das Videogespräch brauchst du eine Webcam.",
+  "gsw": "Webcam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für s Videogschpröch bruuchsch e Webcam."
+ },
+ {
+  "id": 8003,
+  "de": "der Scanner",
+  "tr": "tarayıcı (cihaz)",
+  "deBeispiel": "Der Scanner steht neben dem Drucker.",
+  "gsw": "Scanner",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Scanner schtaat näbem Drucker."
+ },
+ {
+  "id": 8004,
+  "de": "scannen",
+  "tr": "taramak",
+  "deBeispiel": "Bitte scannen Sie den Vertrag und schicken Sie ihn mir.",
+  "gsw": "scanne",
+  "gswArtikel": null,
+  "gswBeispiel": "Scanned Si bitte de Vertrag und schicked Si en mer."
+ },
+ {
+  "id": 8005,
+  "de": "der Router",
+  "tr": "modem, yönlendirici",
+  "deBeispiel": "Der Router im Wohnzimmer ist kaputt.",
+  "gsw": "Router",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Router im Wonzimmer isch kaputt."
+ },
+ {
+  "id": 8006,
+  "de": "das WLAN",
+  "tr": "kablosuz internet, wifi",
+  "deBeispiel": "Gibt es hier im Café ein kostenloses WLAN?",
+  "gsw": "WLAN",
+  "gswArtikel": "s",
+  "gswBeispiel": "Gits da im Café es gratis WLAN?"
+ },
+ {
+  "id": 8007,
+  "de": "die Software",
+  "tr": "yazılım",
+  "deBeispiel": "Die neue Software ist einfach zu bedienen.",
+  "gsw": "Software",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di nöi Software isch äifach z bediene."
+ },
+ {
+  "id": 8008,
+  "de": "der Speicher",
+  "tr": "bellek, hafıza",
+  "deBeispiel": "Der Speicher von meinem Handy ist voll.",
+  "gsw": "Schpeicher",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schpeicher vo mim Händy isch voll."
+ },
+ {
+  "id": 8009,
+  "de": "die App",
+  "tr": "uygulama",
+  "deBeispiel": "Ich habe eine neue App zum Deutschlernen.",
+  "gsw": "App",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich han e nöii App zum Dütschlerne."
+ },
+ {
+  "id": 8010,
+  "de": "das Update",
+  "tr": "güncelleme",
+  "deBeispiel": "Das Update dauert ungefähr zehn Minuten.",
+  "gsw": "Update",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Update duuret öppe zäh Minute."
+ },
+ {
+  "id": 8011,
+  "de": "die Website",
+  "tr": "internet sitesi",
+  "deBeispiel": "Auf der Website der Schule findest du alle Termine.",
+  "gsw": "Website",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Website vo de Schuel findsch alli Termin."
+ },
+ {
+  "id": 8012,
+  "de": "der Benutzer",
+  "tr": "kullanıcı",
+  "deBeispiel": "Jeder Benutzer bekommt ein eigenes Passwort.",
+  "gsw": "Benutzer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Benutzer überchunt es eigets Passwort."
+ },
+ {
+  "id": 8013,
+  "de": "der Benutzername",
+  "tr": "kullanıcı adı",
+  "deBeispiel": "Ich habe meinen Benutzernamen vergessen.",
+  "gsw": "Benutzername",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich han min Benutzername vergässe."
+ },
+ {
+  "id": 8014,
+  "de": "sich abmelden",
+  "tr": "çıkış yapmak, kaydını sildirmek",
+  "deBeispiel": "Vergiss nicht, dich am Computer abzumelden.",
+  "gsw": "sich abmälde",
+  "gswArtikel": null,
+  "gswBeispiel": "Vergiss nöd, dich am Computer abzmälde."
+ },
+ {
+  "id": 8015,
+  "de": "offline",
+  "tr": "çevrimdışı",
+  "deBeispiel": "Mein Bruder war den ganzen Tag offline.",
+  "gsw": "offline",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brueder isch de ganz Tag offline gsi."
+ },
+ {
+  "id": 8016,
+  "de": "der Chat",
+  "tr": "sohbet (yazışma)",
+  "deBeispiel": "In unserem Chat schreiben wir jeden Tag.",
+  "gsw": "Chat",
+  "gswArtikel": "de",
+  "gswBeispiel": "In üsem Chat schriibed mir jede Tag."
+ },
+ {
+  "id": 8017,
+  "de": "das Profil",
+  "tr": "profil",
+  "deBeispiel": "Auf meinem Profil ist ein Foto vom Urlaub.",
+  "gsw": "Profil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf mim Profil isch es Foto vo de Ferie."
+ },
+ {
+  "id": 8018,
+  "de": "das Selfie",
+  "tr": "özçekim, selfie",
+  "deBeispiel": "Wir haben vor dem Museum ein Selfie gemacht.",
+  "gsw": "Selfie",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ vor em Museum es Selfie gmacht."
+ },
+ {
+  "id": 8019,
+  "de": "der Anhang",
+  "tr": "ek (e-postada), ilave",
+  "deBeispiel": "Die Rechnung ist im Anhang.",
+  "gsw": "Aahang",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Rächnig isch im Aahang."
+ },
+ {
+  "id": 8020,
+  "de": "der Betreff",
+  "tr": "konu (yazışmada)",
+  "deBeispiel": "Schreib bitte einen kurzen Betreff in die E-Mail.",
+  "gsw": "Betreff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schriib bitte en churze Betreff i s E-Mail."
+ },
+ {
+  "id": 8021,
+  "de": "der Spam",
+  "tr": "istenmeyen posta, spam",
+  "deBeispiel": "Diese Nachricht war leider Spam.",
+  "gsw": "Spam",
+  "gswArtikel": "de",
+  "gswBeispiel": "Die Nachricht isch läider Spam gsi."
+ },
+ {
+  "id": 8022,
+  "de": "abschicken",
+  "tr": "göndermek, yollamak",
+  "deBeispiel": "Ich habe das Formular gestern abgeschickt.",
+  "gsw": "abschicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich han s Formular geschter abgschickt."
+ },
+ {
+  "id": 8023,
+  "de": "der Umschlag",
+  "tr": "zarf",
+  "deBeispiel": "Der Brief liegt in einem weißen Umschlag.",
+  "gsw": "Couvert",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Brief liit in eme wiisse Couvert.",
+  "ayniLehce": [
+   "Briefumschlag (B1)",
+   "Couvert (B1)",
+   "Kuvert (B1)"
+  ]
+ },
+ {
+  "id": 8024,
+  "de": "das Briefpapier",
+  "tr": "mektup kâğıdı",
+  "deBeispiel": "Meine Tante schreibt immer auf schönem Briefpapier.",
+  "gsw": "Briefpapier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Tante schriibt immer uf schöönem Briefpapier."
+ },
+ {
+  "id": 8025,
+  "de": "das Päckchen",
+  "tr": "küçük paket, koli",
+  "deBeispiel": "Für meine Schwester ist ein Päckchen gekommen.",
+  "gsw": "Päckli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für mini Schweschter isch es Päckli choo.",
+  "ayniLehce": [
+   "Paket (A1)"
+  ]
+ },
+ {
+  "id": 8026,
+  "de": "das Porto",
+  "tr": "posta ücreti",
+  "deBeispiel": "Das Porto für den Brief kostet einen Euro.",
+  "gsw": "Porto",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Porto für de Brief choschtet en Euro."
+ },
+ {
+  "id": 8027,
+  "de": "das Postamt",
+  "tr": "postane",
+  "deBeispiel": "Das Postamt ist samstags nur bis zwölf Uhr offen.",
+  "gsw": "Poschtamt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Poschtamt isch am Samschtig nu bis am zwölfi offe."
+ },
+ {
+  "id": 8028,
+  "de": "das Postfach",
+  "tr": "posta kutusu (abone kutusu)",
+  "deBeispiel": "Schicken Sie den Brief bitte an unser Postfach.",
+  "gsw": "Poschtfach",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schicked Si de Brief bitte a üses Poschtfach."
+ },
+ {
+  "id": 8029,
+  "de": "die Hausnummer",
+  "tr": "kapı numarası, bina numarası",
+  "deBeispiel": "Du hast die Hausnummer im Formular vergessen.",
+  "gsw": "Huusnummere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Du häsch d Huusnummere im Formular vergässe."
+ },
+ {
+  "id": 8030,
+  "de": "der Zeitungsartikel",
+  "tr": "gazete yazısı, gazete haberi",
+  "deBeispiel": "Der Zeitungsartikel über unsere Stadt war sehr interessant.",
+  "gsw": "Ziitigsartikel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Ziitigsartikel über öisi Schtadt isch sehr intressant gsi."
+ },
+ {
+  "id": 8031,
+  "de": "die Tageszeitung",
+  "tr": "günlük gazete",
+  "deBeispiel": "Mein Vater liest jeden Morgen die Tageszeitung.",
+  "gsw": "Taagesziitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Vatter list jede Morge d Taagesziitig."
+ },
+ {
+  "id": 8032,
+  "de": "das Fernsehprogramm",
+  "tr": "televizyon programı (yayın akışı)",
+  "deBeispiel": "Heute ist das Fernsehprogramm wirklich langweilig.",
+  "gsw": "Fernsehprogramm",
+  "gswArtikel": "s",
+  "gswBeispiel": "Hüt isch s Fernsehprogramm würkli langwiilig."
+ },
+ {
+  "id": 8033,
+  "de": "die Fernsehsendung",
+  "tr": "televizyon programı, yayın",
+  "deBeispiel": "Diese Fernsehsendung läuft immer am Sonntagabend.",
+  "gsw": "Fernsehsändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Fernsehsändig lauft immer am Sunntigaabig."
+ },
+ {
+  "id": 8034,
+  "de": "der Radiosender",
+  "tr": "radyo istasyonu, radyo kanalı",
+  "deBeispiel": "Im Auto höre ich immer denselben Radiosender.",
+  "gsw": "Radiosänder",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Auto lose ich immer de gliich Radiosänder."
+ },
+ {
+  "id": 8035,
+  "de": "der Podcast",
+  "tr": "podcast",
+  "deBeispiel": "Beim Kochen höre ich gern einen Podcast.",
+  "gsw": "Podcast",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim Choche lose ich gärn en Podcast."
+ },
+ {
+  "id": 8036,
+  "de": "die Lautstärke",
+  "tr": "ses seviyesi, ses yüksekliği",
+  "deBeispiel": "Kannst du bitte die Lautstärke leiser machen?",
+  "gsw": "Luutschtärchi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chasch bitte d Luutschtärchi liiser mache?"
+ },
+ {
+  "id": 8037,
+  "de": "umschalten",
+  "tr": "kanal değiştirmek",
+  "deBeispiel": "Bitte schalte auf einen anderen Sender um.",
+  "gsw": "umschalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte uf en andere Sänder umschalte?"
+ },
+ {
+  "id": 8038,
+  "de": "ausschalten",
+  "tr": "kapatmak (cihaz)",
+  "deBeispiel": "Schalte bitte den Fernseher aus, ich möchte schlafen.",
+  "gsw": "usschalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte de Fernseh usschalte, ich wett schlaafe."
+ },
+ {
+  "id": 8039,
+  "de": "die Zusage",
+  "tr": "olumlu cevap, kabul",
+  "deBeispiel": "Wir warten noch auf deine Zusage für die Hochzeit.",
+  "gsw": "Zuesaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir warted no uf dini Zuesaag für d Hochziit."
+ },
+ {
+  "id": 8040,
+  "de": "die Absage",
+  "tr": "olumsuz cevap, iptal",
+  "deBeispiel": "Leider habe ich eine Absage von der Firma bekommen.",
+  "gsw": "Absaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Läider han ich e Absaag vo de Firma überchoo."
+ },
+ {
+  "id": 8041,
+  "de": "sich absprechen",
+  "tr": "sözleşmek, aralarında anlaşmak",
+  "deBeispiel": "Wir müssen uns wegen des Termins noch absprechen.",
+  "gsw": "abschpräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend öis wäg em Termin no abschpräche."
+ },
+ {
+  "id": 8042,
+  "de": "die Vereinbarung",
+  "tr": "anlaşma, mutabakat",
+  "deBeispiel": "Wir haben eine Vereinbarung über die Miete getroffen.",
+  "gsw": "Vereinbaarig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir händ e Vereinbaarig über d Miet troffe."
+ },
+ {
+  "id": 8043,
+  "de": "das Anmeldeformular",
+  "tr": "kayıt formu, başvuru formu",
+  "deBeispiel": "Bitte füllen Sie das Anmeldeformular in Druckbuchstaben aus.",
+  "gsw": "Aamäldeformular",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bitte fülled Sie s Aamäldeformular i Druckbuechschtaabe us."
+ },
+ {
+  "id": 8044,
+  "de": "der Fahrschein",
+  "tr": "bilet, yol bileti",
+  "deBeispiel": "Ich habe meinen Fahrschein am Automaten gekauft.",
+  "gsw": "Billett",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich han mis Billett am Automaat gchauft.",
+  "ayniLehce": [
+   "Fahrkarte (A1)",
+   "Billett (B1)"
+  ]
+ },
+ {
+  "id": 8045,
+  "de": "das Abteil",
+  "tr": "kompartıman",
+  "deBeispiel": "In unserem Abteil sitzen noch zwei Personen.",
+  "gsw": "Abtäil",
+  "gswArtikel": "s",
+  "gswBeispiel": "I öisem Abtäil sitzed no zwäi Persone."
+ },
+ {
+  "id": 8046,
+  "de": "der Schaffner",
+  "tr": "kondüktör, biletçi",
+  "deBeispiel": "Der Schaffner möchte unsere Tickets sehen.",
+  "gsw": "Kondukteur",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kondukteur wett öisi Billett gsee."
+ },
+ {
+  "id": 8047,
+  "de": "die Bushaltestelle",
+  "tr": "otobüs durağı",
+  "deBeispiel": "Die Bushaltestelle ist gleich vor dem Supermarkt.",
+  "gsw": "Bushaltschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bushaltschtell isch grad vor em Supermärt."
+ },
+ {
+  "id": 8048,
+  "de": "der Busbahnhof",
+  "tr": "otogar",
+  "deBeispiel": "Der Bus nach Hamburg fährt am Busbahnhof ab.",
+  "gsw": "Busbahnhof",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bus uf Hamburg fahrt am Busbahnhof ab."
+ },
+ {
+  "id": 8049,
+  "de": "die Endstation",
+  "tr": "son durak",
+  "deBeispiel": "Wir müssen bis zur Endstation fahren.",
+  "gsw": "Ändschtation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir müend bis zur Ändschtation fahre."
+ },
+ {
+  "id": 8050,
+  "de": "die Ankunftszeit",
+  "tr": "varış saati",
+  "deBeispiel": "Weißt du die Ankunftszeit von dem Zug?",
+  "gsw": "Aakunftsziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäisch du d Aakunftsziit vo dem Zug?"
+ },
+ {
+  "id": 8051,
+  "de": "der Sitzplatz",
+  "tr": "oturma yeri, koltuk",
+  "deBeispiel": "Im Bus war kein Sitzplatz mehr frei.",
+  "gsw": "Sitzplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Bus isch kän Sitzplatz me frei gsi."
+ },
+ {
+  "id": 8052,
+  "de": "die Zugfahrt",
+  "tr": "tren yolculuğu",
+  "deBeispiel": "Die Zugfahrt nach München dauert vier Stunden.",
+  "gsw": "Zugfaart",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zugfaart uf München duuret vier Schtund."
+ },
+ {
+  "id": 8053,
+  "de": "der Lokführer",
+  "tr": "tren makinisti",
+  "deBeispiel": "Mein Onkel arbeitet als Lokführer.",
+  "gsw": "Lokfüehrer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Onkel schaffet als Lokfüehrer."
+ },
+ {
+  "id": 8054,
+  "de": "der Flugbegleiter",
+  "tr": "kabin görevlisi",
+  "deBeispiel": "Der Flugbegleiter bringt uns Wasser.",
+  "gsw": "Flugbegläiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Flugbegläiter bringt öis Wasser."
+ },
+ {
+  "id": 8055,
+  "de": "die Bordkarte",
+  "tr": "biniş kartı",
+  "deBeispiel": "Bitte zeigen Sie mir Ihre Bordkarte.",
+  "gsw": "Bordcharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte zäiged Sie mir Iri Bordcharte."
+ },
+ {
+  "id": 8056,
+  "de": "das Handgepäck",
+  "tr": "el bagajı",
+  "deBeispiel": "Ich nehme nur Handgepäck mit.",
+  "gsw": "Handgepäck",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich nime nu Handgepäck mit."
+ },
+ {
+  "id": 8057,
+  "de": "der Rückflug",
+  "tr": "dönüş uçuşu",
+  "deBeispiel": "Unser Rückflug ist am Sonntagabend.",
+  "gsw": "Rückflug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öise Rückflug isch am Sunntigaabig."
+ },
+ {
+  "id": 8058,
+  "de": "der Zwischenstopp",
+  "tr": "ara duraklama, aktarma molası",
+  "deBeispiel": "Wir haben einen Zwischenstopp in Wien.",
+  "gsw": "Zwüschestopp",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ en Zwüschestopp z Wien."
+ },
+ {
+  "id": 8059,
+  "de": "einchecken",
+  "tr": "check-in yapmak",
+  "deBeispiel": "Wir müssen zwei Stunden vor dem Flug einchecken.",
+  "gsw": "iichecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend zwäi Schtund vor em Flug iichecke."
+ },
+ {
+  "id": 8060,
+  "de": "auschecken",
+  "tr": "otelden çıkış yapmak",
+  "deBeispiel": "Im Hotel muss man bis elf Uhr auschecken.",
+  "gsw": "uschecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Hotel mues mer bis am elfi uschecke."
+ },
+ {
+  "id": 8061,
+  "de": "die Sicherheitskontrolle",
+  "tr": "güvenlik kontrolü",
+  "deBeispiel": "An der Sicherheitskontrolle war eine lange Schlange.",
+  "gsw": "Sicherhäitskontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Sicherhäitskontrolle isch e langi Schlange gsi."
+ },
+ {
+  "id": 8062,
+  "de": "die Ausreise",
+  "tr": "ülkeden çıkış",
+  "deBeispiel": "Bei der Ausreise braucht man einen gültigen Pass.",
+  "gsw": "Usräis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Usräis bruucht mer en gültige Pass."
+ },
+ {
+  "id": 8063,
+  "de": "die Passkontrolle",
+  "tr": "pasaport kontrolü",
+  "deBeispiel": "An der Grenze gab es eine kurze Passkontrolle.",
+  "gsw": "Passkontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Gränze hät s e churzi Passkontrolle ggee."
+ },
+ {
+  "id": 8064,
+  "de": "das Hotelzimmer",
+  "tr": "otel odası",
+  "deBeispiel": "Unser Hotelzimmer liegt im dritten Stock.",
+  "gsw": "Hotelzimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Öises Hotelzimmer isch im dritte Schtock."
+ },
+ {
+  "id": 8065,
+  "de": "der Zimmerschlüssel",
+  "tr": "oda anahtarı",
+  "deBeispiel": "Ich habe den Zimmerschlüssel an der Rezeption abgegeben.",
+  "gsw": "Zimmerschlüssel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich han de Zimmerschlüssel a de Rezeption abggee."
+ },
+ {
+  "id": 8066,
+  "de": "der Gastgeber",
+  "tr": "ev sahibi",
+  "deBeispiel": "Unser Gastgeber hat uns die Stadt gezeigt.",
+  "gsw": "Gaschtgäber",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öise Gaschtgäber hät öis d Schtadt zäigt."
+ },
+ {
+  "id": 8067,
+  "de": "der Campingplatz",
+  "tr": "kamp alanı",
+  "deBeispiel": "Wir schlafen eine Woche auf dem Campingplatz.",
+  "gsw": "Campingplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir schlaafed e Wuche uf em Campingplatz."
+ },
+ {
+  "id": 8068,
+  "de": "der Zeltplatz",
+  "tr": "çadır yeri",
+  "deBeispiel": "Am See haben wir einen schönen Zeltplatz gefunden.",
+  "gsw": "Zältplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am See händ mir en schööne Zältplatz gfunde."
+ },
+ {
+  "id": 8069,
+  "de": "das Ferienhaus",
+  "tr": "yazlık ev, tatil evi",
+  "deBeispiel": "Wir haben ein kleines Ferienhaus am Meer gemietet.",
+  "gsw": "Feriehuus",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ es chliises Feriehuus am Meer gmietet."
+ },
+ {
+  "id": 8070,
+  "de": "die Anreise",
+  "tr": "gidiş yolculuğu, gidiş",
+  "deBeispiel": "Die Anreise mit dem Auto dauert fünf Stunden.",
+  "gsw": "Aaräis",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aaräis mit em Auto duuret füüf Schtund."
+ },
+ {
+  "id": 8071,
+  "de": "die Abreise",
+  "tr": "hareket, yola çıkış",
+  "deBeispiel": "Vor der Abreise räumen wir das Zimmer auf.",
+  "gsw": "Abräis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Abräis ruume mir s Zimmer uuf."
+ },
+ {
+  "id": 8072,
+  "de": "abreisen",
+  "tr": "yola çıkmak, ayrılmak",
+  "deBeispiel": "Wir reisen morgen früh ab.",
+  "gsw": "abräise",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend morn früe abräise."
+ },
+ {
+  "id": 8073,
+  "de": "die Wegbeschreibung",
+  "tr": "yol tarifi",
+  "deBeispiel": "Kannst du mir eine kurze Wegbeschreibung schicken?",
+  "gsw": "Wägbeschriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chasch mer e churzi Wägbeschriibig schicke?"
+ },
+ {
+  "id": 8074,
+  "de": "die Landkarte",
+  "tr": "harita",
+  "deBeispiel": "Opa sucht den Weg lieber auf einer Landkarte.",
+  "gsw": "Landcharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Grosspapi suecht de Wäg lieber uf ere Landcharte."
+ },
+ {
+  "id": 8075,
+  "de": "der Wegweiser",
+  "tr": "yön levhası",
+  "deBeispiel": "Am Wegweiser gehen wir nach links.",
+  "gsw": "Wägwiiser",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Wägwiiser gönd mir nach links."
+ },
+ {
+  "id": 8076,
+  "de": "die Abkürzung",
+  "tr": "kestirme yol, kısaltma",
+  "deBeispiel": "Durch den Park gibt es eine Abkürzung zum Bahnhof.",
+  "gsw": "Abchürzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur de Park git s e Abchürzig zum Bahnhof."
+ },
+ {
+  "id": 8077,
+  "de": "der Rückweg",
+  "tr": "dönüş yolu",
+  "deBeispiel": "Auf dem Rückweg kaufen wir noch Brot.",
+  "gsw": "Rückwäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Rückwäg chaufed mir no Brot."
+ },
+ {
+  "id": 8078,
+  "de": "der Hinweg",
+  "tr": "gidiş yolu",
+  "deBeispiel": "Auf dem Hinweg hat es die ganze Zeit geregnet.",
+  "gsw": "Hiwäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Hiwäg hät s di ganz Ziit grägnet."
+ },
+ {
+  "id": 8079,
+  "de": "der Heimweg",
+  "tr": "eve dönüş yolu",
+  "deBeispiel": "Auf dem Heimweg habe ich meine Nachbarin getroffen.",
+  "gsw": "Häiwäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Häiwäg han ich mini Nachbaarin troffe."
+ },
+ {
+  "id": 8080,
+  "de": "die Reisetasche",
+  "tr": "seyahat çantası",
+  "deBeispiel": "Meine Reisetasche ist schon fast voll.",
+  "gsw": "Räisetäsche",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Räisetäsche isch scho fascht voll."
+ },
+ {
+  "id": 8081,
+  "de": "der Reiseplan",
+  "tr": "seyahat planı",
+  "deBeispiel": "Wir haben unseren Reiseplan noch einmal geändert.",
+  "gsw": "Räiseplan",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ öise Räiseplan no einisch gänderet."
+ },
+ {
+  "id": 8082,
+  "de": "der Parkplatz",
+  "tr": "otopark, park yeri",
+  "deBeispiel": "Vor dem Hotel gibt es einen großen Parkplatz.",
+  "gsw": "Parkplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vor em Hotel git s en groosse Parkplatz."
+ },
+ {
+  "id": 8083,
+  "de": "der Kofferraum",
+  "tr": "bagaj (araba)",
+  "deBeispiel": "Die Koffer passen alle in den Kofferraum.",
+  "gsw": "Kofferruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Koffer passed alli i de Kofferruum."
+ },
+ {
+  "id": 8084,
+  "de": "der Sicherheitsgurt",
+  "tr": "emniyet kemeri",
+  "deBeispiel": "Bitte legen Sie den Sicherheitsgurt an.",
+  "gsw": "Sicherhäitsgurt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bitte leged Sie de Sicherhäitsgurt aa."
+ }
+]

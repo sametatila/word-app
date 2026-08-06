@@ -1,0 +1,629 @@
+[
+ {
+  "id": 791,
+  "de": "seit",
+  "tr": "-den beri",
+  "deBeispiel": "Ich wohne seit drei Jahren in Köln.",
+  "gsw": "sit",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wone sit drüü Jaar z Köln."
+ },
+ {
+  "id": 792,
+  "de": "selbstständig",
+  "tr": "kendi işinin sahibi, serbest çalışan",
+  "deBeispiel": "Er ist selbstständig.",
+  "gsw": "sälbschtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch sälbschtändig."
+ },
+ {
+  "id": 793,
+  "de": "sich",
+  "tr": "kendini, kendine",
+  "deBeispiel": "Sie müssen sich erst anmelden.",
+  "gsw": "sich",
+  "gswArtikel": null,
+  "gswBeispiel": "Si müend sich zerscht aamälde."
+ },
+ {
+  "id": 794,
+  "de": "sitzen",
+  "tr": "oturmak",
+  "deBeispiel": "Wo möchten Sie sitzen? – Bitte ganz hinten.",
+  "gsw": "sitze",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo möchted Si sitze? – Bitte ganz hine."
+ },
+ {
+  "id": 795,
+  "de": "das Sofa",
+  "tr": "kanepe",
+  "deBeispiel": "Das Sofa ist bequem.",
+  "gsw": "Sofa",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Sofa isch bequem."
+ },
+ {
+  "id": 796,
+  "de": "der Sohn",
+  "tr": "oğul",
+  "deBeispiel": "Das ist Hans, mein Sohn.",
+  "gsw": "Soon",
+  "gswArtikel": "de",
+  "gswBeispiel": "Das isch de Hans, min Soon."
+ },
+ {
+  "id": 797,
+  "de": "sollen",
+  "tr": "gerekmek, -meli",
+  "deBeispiel": "Soll ich kommen? Was soll ich mitbringen?",
+  "gsw": "söle",
+  "gswArtikel": null,
+  "gswBeispiel": "Was söled mer zum Fäscht mitbringe?"
+ },
+ {
+  "id": 798,
+  "de": "die Sonne",
+  "tr": "güneş",
+  "deBeispiel": "1. Das Wetter ist schön. Die Sonne scheint. 2. Ich habe zu lange in der Sonne gelegen.",
+  "gsw": "Sunne",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Wätter isch schöön. D Sunne schiint."
+ },
+ {
+  "id": 799,
+  "de": "die Speisekarte",
+  "tr": "yemek listesi, menü",
+  "deBeispiel": "Bringen Sie mir die Speisekarte, bitte.",
+  "gsw": "Schpiischarte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bringed Si mer bitte d Schpiischarte."
+ },
+ {
+  "id": 800,
+  "de": "stehen",
+  "tr": "durmak, yazılı olmak",
+  "deBeispiel": "Ich glaube es nicht, aber es steht in der Zeitung. Der Bus steht schon an der Haltestelle.",
+  "gsw": "schtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich glaubs nöd, aber es schtaat i de Ziitig."
+ },
+ {
+  "id": 801,
+  "de": "die Stelle",
+  "tr": "iş, mevki",
+  "deBeispiel": "Ich habe eine neue Stelle.",
+  "gsw": "Schtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha e neui Schtell.",
+  "ayniLehce": [
+   "Arbeitsstelle (B1)"
+  ]
+ },
+ {
+  "id": 802,
+  "de": "stellen",
+  "tr": "koymak (dik olarak), yerleştirmek",
+  "deBeispiel": "Stell die Tasche rechts in die Ecke!",
+  "gsw": "schtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch d Täsche rächts i d Egge schtelle."
+ },
+ {
+  "id": 803,
+  "de": "der Stock",
+  "tr": "kat",
+  "deBeispiel": "Unsere Wohnung liegt im ersten Stock.",
+  "gsw": "Schtock",
+  "gswArtikel": "de",
+  "gswBeispiel": "Üsi Wonig isch im erschte Schtock."
+ },
+ {
+  "id": 804,
+  "de": "die Straßenbahn",
+  "tr": "tramvay",
+  "deBeispiel": "Wo fährt die Straßenbahn ab?",
+  "gsw": "Tram",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wo faart s Tram ab?",
+  "ayniLehce": [
+   "Tram (B1)"
+  ]
+ },
+ {
+  "id": 805,
+  "de": "studieren",
+  "tr": "üniversitede okumak, öğrenim görmek",
+  "deBeispiel": "Ich studiere in Mainz.",
+  "gsw": "schtudiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich schtudiere z Mainz."
+ },
+ {
+  "id": 806,
+  "de": "das Studium",
+  "tr": "üniversite eğitimi, öğrenim",
+  "deBeispiel": "Das Studium beginnt im Oktober.",
+  "gsw": "Schtudium",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schtudium faat im Oktober aa."
+ },
+ {
+  "id": 807,
+  "de": "der Student",
+  "tr": "üniversite öğrencisi",
+  "deBeispiel": "Schüler und Studenten zahlen die Hälfte.",
+  "gsw": "Schtudänt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schüeler und Schtudänte zaled d Hälfti."
+ },
+ {
+  "id": 808,
+  "de": "die Stunde",
+  "tr": "saat, ders saati",
+  "deBeispiel": "Ich bin in einer Stunde zurück.",
+  "gsw": "Schtund",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich bi in ere Schtund zrugg."
+ },
+ {
+  "id": 809,
+  "de": "das Taxi",
+  "tr": "taksi",
+  "deBeispiel": "Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi.",
+  "gsw": "Taxi",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es git hüt käin Bus me. Er faart mit em Taxi."
+ },
+ {
+  "id": 810,
+  "de": "der Teil",
+  "tr": "parça, bölüm (bütünün bir parçası)",
+  "deBeispiel": "Lies bitte auch den zweiten Teil.",
+  "gsw": "Täil",
+  "gswArtikel": "de",
+  "gswBeispiel": "Lis bitte au de zwäit Täil.",
+  "ayniLehce": [
+   "Teil (B1)"
+  ]
+ },
+ {
+  "id": 811,
+  "de": "das Telefon",
+  "tr": "telefon",
+  "deBeispiel": "Darf ich bitte Ihr Telefon benutzen?",
+  "gsw": "Telefon",
+  "gswArtikel": "s",
+  "gswBeispiel": "Darf ich bitte Ires Telefon bruuche?"
+ },
+ {
+  "id": 812,
+  "de": "der Termin",
+  "tr": "randevu",
+  "deBeispiel": "Am besten machen wir sofort einen Termin.",
+  "gsw": "Termiin",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am beschte mached mer grad en Termiin ab."
+ },
+ {
+  "id": 813,
+  "de": "der Test",
+  "tr": "test, sınav",
+  "deBeispiel": "Der Test war einfach.",
+  "gsw": "Tescht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Tescht isch äifach gsii."
+ },
+ {
+  "id": 814,
+  "de": "der Text",
+  "tr": "metin",
+  "deBeispiel": "Lesen Sie bitte diesen Text.",
+  "gsw": "Text",
+  "gswArtikel": "de",
+  "gswBeispiel": "Läsed Si bitte de Text da."
+ },
+ {
+  "id": 815,
+  "de": "das Ticket",
+  "tr": "bilet (uçak, etkinlik)",
+  "deBeispiel": "Wie viel kostet das Ticket?",
+  "gsw": "Ticket",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie vil choschtet s Ticket?"
+ },
+ {
+  "id": 816,
+  "de": "die Tochter",
+  "tr": "kız evlat",
+  "deBeispiel": "Das ist meine Tochter Katharina.",
+  "gsw": "Tochter",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das isch mini Tochter, d Katharina."
+ },
+ {
+  "id": 817,
+  "de": "die Tomate",
+  "tr": "domates",
+  "deBeispiel": "Die Tomate ist noch grün.",
+  "gsw": "Tomate",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tomate isch na grüen.",
+  "ayniLehce": [
+   "Paradeiser (B1)"
+  ]
+ },
+ {
+  "id": 818,
+  "de": "tot",
+  "tr": "ölü",
+  "deBeispiel": "Sein Vater ist schon lange tot.",
+  "gsw": "tot",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Vatter isch scho lang tot."
+ },
+ {
+  "id": 819,
+  "de": "sich treffen",
+  "tr": "buluşmak",
+  "deBeispiel": "Ich treffe in der Stadt einen Kollegen. Wir treffen uns immer freitags.",
+  "gsw": "sich träffe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich träffe i de Schtadt en Kolleg. Mir träffed eus immer am Friitig."
+ },
+ {
+  "id": 820,
+  "de": "die Treppe",
+  "tr": "merdiven (binada, basamaklı)",
+  "deBeispiel": "Die Toilette? Die Treppe hoch und dann links.",
+  "gsw": "Schtäge",
+  "gswArtikel": "d",
+  "gswBeispiel": "S WC? D Schtäge duruf und dänn links.",
+  "ayniLehce": [
+   "Stiege (B1)"
+  ]
+ },
+ {
+  "id": 821,
+  "de": "tschüss",
+  "tr": "hoşça kal, güle güle",
+  "deBeispiel": "Junge Leute sagen meistens „tschüss!“ und nicht „auf Wiedersehen“.",
+  "gsw": "Ade",
+  "gswArtikel": null,
+  "gswBeispiel": "Z Züri säit mer zum Abschiid «Ade» oder «Tschau»."
+ },
+ {
+  "id": 822,
+  "de": "tun",
+  "tr": "yapmak",
+  "deBeispiel": "Ich habe noch etwas zu tun. Was tut Ihr Mann?",
+  "gsw": "tue",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha na öppis z tue."
+ },
+ {
+  "id": 823,
+  "de": "übernachten",
+  "tr": "gecelemek, konaklamak",
+  "deBeispiel": "Du kannst bei mir übernachten.",
+  "gsw": "übernachte",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch bi mir übernachte."
+ },
+ {
+  "id": 824,
+  "de": "überweisen",
+  "tr": "havale etmek",
+  "deBeispiel": "Sie können das Geld auch überweisen.",
+  "gsw": "überwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "Si chönd s Gäld au überwiise."
+ },
+ {
+  "id": 825,
+  "de": "umziehen",
+  "tr": "taşınmak",
+  "deBeispiel": "Nächsten Monat ziehen wir um.",
+  "gsw": "zügle",
+  "gswArtikel": null,
+  "gswBeispiel": "Nächschte Monet zügled mer.",
+  "ayniLehce": [
+   "zügeln (B2)"
+  ]
+ },
+ {
+  "id": 827,
+  "de": "unten",
+  "tr": "aşağıda",
+  "deBeispiel": "Er wohnt ganz unten im Haus.",
+  "gsw": "une",
+  "gswArtikel": null,
+  "gswBeispiel": "Er wont ganz une im Huus."
+ },
+ {
+  "id": 828,
+  "de": "unter",
+  "tr": "altında",
+  "deBeispiel": "Unter uns wohnt eine Familie mit drei Kindern.",
+  "gsw": "under",
+  "gswArtikel": null,
+  "gswBeispiel": "Under eus wont e Familie mit drüü Chind."
+ },
+ {
+  "id": 829,
+  "de": "unterschreiben",
+  "tr": "imzalamak",
+  "deBeispiel": "Wo muss ich unterschreiben?",
+  "gsw": "underschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo mues ich underschriibe?"
+ },
+ {
+  "id": 830,
+  "de": "die Unterschrift",
+  "tr": "imza",
+  "deBeispiel": "Hier fehlt noch Ihre Unterschrift.",
+  "gsw": "Underschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "Da fäält na Iri Underschrift."
+ },
+ {
+  "id": 831,
+  "de": "der Urlaub",
+  "tr": "tatil, izin",
+  "deBeispiel": "Ich nehme im September Urlaub.",
+  "gsw": "Ferie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich nime im Septämber Ferie.",
+  "ayniLehce": [
+   "Ferien (A1)"
+  ]
+ },
+ {
+  "id": 832,
+  "de": "der Vater",
+  "tr": "baba",
+  "deBeispiel": "Mein Vater ist Arbeiter.",
+  "gsw": "Vatter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Vatter isch Arbeiter."
+ },
+ {
+  "id": 833,
+  "de": "verboten",
+  "tr": "yasak",
+  "deBeispiel": "Hier ist Rauchen verboten.",
+  "gsw": "verbote",
+  "gswArtikel": null,
+  "gswBeispiel": "Da isch Rauche verbote."
+ },
+ {
+  "id": 834,
+  "de": "der Verein",
+  "tr": "dernek, kulüp",
+  "deBeispiel": "Es gibt einen neuen Sportverein in der Stadt.",
+  "gsw": "Veräin",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es git en neue Schportveräin i de Schtadt."
+ },
+ {
+  "id": 835,
+  "de": "verheiratet",
+  "tr": "evli",
+  "deBeispiel": "Ich bin verheiratet und habe drei Kinder.",
+  "gsw": "verhüratet",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi verhüratet und ha drüü Chind."
+ },
+ {
+  "id": 836,
+  "de": "verkaufen",
+  "tr": "satmak",
+  "deBeispiel": "Er verkauft sein altes Auto.",
+  "gsw": "verchaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "Er will sis alte Auto verchaufe."
+ },
+ {
+  "id": 837,
+  "de": "der Verkäufer",
+  "tr": "satıcı",
+  "deBeispiel": "Meine Mutter ist Verkäuferin im Kaufhaus.",
+  "gsw": "Verchäufer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mini Mueter isch Verchäuferin im Warehuus."
+ },
+ {
+  "id": 838,
+  "de": "vermieten",
+  "tr": "kiraya vermek",
+  "deBeispiel": "Die Wohnung ist schon vermietet.",
+  "gsw": "vermiete",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wonig isch scho vermietet."
+ },
+ {
+  "id": 839,
+  "de": "der Vermieter",
+  "tr": "ev sahibi, kiraya veren",
+  "deBeispiel": "Unser Vermieter heißt Huber. Er wohnt auch hier.",
+  "gsw": "Vermieter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Üse Vermieter häisst Huber. Er wont au da."
+ },
+ {
+  "id": 840,
+  "de": "der Verwandte",
+  "tr": "akraba (erkek)",
+  "deBeispiel": "Peter besucht seine Verwandten in Polen.",
+  "gsw": "Verwandte",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Peter bsuecht sini Verwandte z Pole.",
+  "ayniLehce": [
+   "Verwandte (B1)"
+  ]
+ },
+ {
+  "id": 841,
+  "de": "die Vorsicht",
+  "tr": "dikkat",
+  "deBeispiel": "Vorsicht! Da kommt ein Auto.",
+  "gsw": "Vorsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vorsicht! Da chunt es Auto."
+ },
+ {
+  "id": 842,
+  "de": "sich vorstellen",
+  "tr": "kendini tanıtmak",
+  "deBeispiel": "Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?",
+  "gsw": "sich vorschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir wänd eus kännelerne. Chönd Si sich vorschtelle, bitte?"
+ },
+ {
+  "id": 843,
+  "de": "die Vorwahl",
+  "tr": "alan kodu",
+  "deBeispiel": "Wie ist die Vorwahl von München?",
+  "gsw": "Vorwaal",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wie isch d Vorwaal vo Münche?"
+ },
+ {
+  "id": 844,
+  "de": "was für ein",
+  "tr": "ne tür bir, nasıl bir",
+  "deBeispiel": "Was für eine Farbe möchten Sie?",
+  "gsw": "was für en",
+  "gswArtikel": null,
+  "gswBeispiel": "Was für e Farb möchted Si?"
+ },
+ {
+  "id": 845,
+  "de": "sich waschen",
+  "tr": "yıkanmak",
+  "deBeispiel": "Wo kann ich mir die Hände waschen? Ich muss morgen waschen.",
+  "gsw": "sich wäsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo chan ich mer d Händ wäsche?"
+ },
+ {
+  "id": 846,
+  "de": "weiblich",
+  "tr": "kadın, dişi",
+  "deBeispiel": "Kreuzen Sie bitte an: „weiblich“ oder „männlich“.",
+  "gsw": "wiiblich",
+  "gswArtikel": null,
+  "gswBeispiel": "Chrüüzed Si bitte aa: «wiiblich» oder «männlich»."
+ },
+ {
+  "id": 847,
+  "de": "der Wein",
+  "tr": "şarap",
+  "deBeispiel": "Nein danke, ich möchte keinen Wein.",
+  "gsw": "Wii",
+  "gswArtikel": "de",
+  "gswBeispiel": "Näi danke, ich wett kän Wii."
+ },
+ {
+  "id": 848,
+  "de": "die Welt",
+  "tr": "dünya",
+  "deBeispiel": "Es gibt viele Probleme auf der Welt.",
+  "gsw": "Wält",
+  "gswArtikel": "d",
+  "gswBeispiel": "Es git vili Problem uf de Wält."
+ },
+ {
+  "id": 849,
+  "de": "das Wetter",
+  "tr": "hava, hava durumu",
+  "deBeispiel": "Wir hatten schlechtes Wetter.",
+  "gsw": "Wätter",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ schlächts Wätter ghaa."
+ },
+ {
+  "id": 850,
+  "de": "das Wiederhören",
+  "tr": "hoşça kalın (telefonda vedalaşma)",
+  "deBeispiel": "Wir müssen jetzt Schluss machen. Also auf Wiederhören!",
+  "gsw": "Widerhöre",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir müend jetz Schluss mache. Also uf Widerhöre!"
+ },
+ {
+  "id": 851,
+  "de": "der Wind",
+  "tr": "rüzgar",
+  "deBeispiel": "Der Wind kommt aus Osten.",
+  "gsw": "Wind",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wind chunt vo Oschte."
+ },
+ {
+  "id": 852,
+  "de": "zahlen",
+  "tr": "ödemek",
+  "deBeispiel": "Entschuldigung, zahlen bitte!",
+  "gsw": "zale",
+  "gswArtikel": null,
+  "gswBeispiel": "Exgüsi, zale bitte!"
+ },
+ {
+  "id": 853,
+  "de": "zurzeit",
+  "tr": "şu anda, şu sırada",
+  "deBeispiel": "Zurzeit habe ich sehr viel zu tun.",
+  "gsw": "im Momänt",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Momänt han ich sehr vil z tue."
+ },
+ {
+  "id": 854,
+  "de": "die Zigarette",
+  "tr": "sigara",
+  "deBeispiel": "Wie teuer sind die Zigaretten?",
+  "gsw": "Zigarette",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wie tüür sind d Zigarette?"
+ },
+ {
+  "id": 855,
+  "de": "der Zoll",
+  "tr": "gümrük",
+  "deBeispiel": "Wir müssen noch durch den Zoll.",
+  "gsw": "Zoll",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir müend na dur de Zoll."
+ },
+ {
+  "id": 856,
+  "de": "zufrieden",
+  "tr": "memnun",
+  "deBeispiel": "Ich bin mit der Wohnung zufrieden.",
+  "gsw": "zfride",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi mit de Wonig zfride."
+ },
+ {
+  "id": 857,
+  "de": "zurück",
+  "tr": "geri",
+  "deBeispiel": "Einmal Frankfurt und zurück. Wann kommst du zurück?",
+  "gsw": "zrugg",
+  "gswArtikel": null,
+  "gswBeispiel": "Äimal Frankfurt und zrugg, bitte. Wänn chunsch zrugg?"
+ },
+ {
+  "id": 858,
+  "de": "zwischen",
+  "tr": "arasında",
+  "deBeispiel": "Heidelberg liegt zwischen Frankfurt und Stuttgart. Zwischen 8 und 10 Uhr bin ich zu Hause.",
+  "gsw": "zwüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwüsche em Achti und em Zääni bin ich dihäi."
+ }
+]

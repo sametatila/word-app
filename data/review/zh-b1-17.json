@@ -1,0 +1,385 @@
+[
+ {
+  "id": 3150,
+  "de": "die Zeugin",
+  "tr": "tanık, şahit (kadın)",
+  "deBeispiel": "Die Polizei sucht noch Zeugen für den Unfall.",
+  "gsw": "Züügin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Polizei suecht e wichtigi Züügin vom Unfall."
+ },
+ {
+  "id": 3151,
+  "de": "ziehen",
+  "tr": "çekmek; taşınmak",
+  "deBeispiel": "1. Sie müssen ziehen, nicht drücken. 2. Wir sind vor drei Wochen nach Hamburg gezogen. 3. Machen Sie bitte die Tür zu, e",
+  "gsw": "zie",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Si müend zie, nöd schtoosse. 2. Mir sind vor drüü Wuche uf Züri züglet."
+ },
+ {
+  "id": 3152,
+  "de": "ziemlich",
+  "tr": "oldukça, epey",
+  "deBeispiel": "1. Ich bin schon ziemlich müde. Ich gehe ins Bett. 2. Ich musste beim Arzt ziemlich lange warten.",
+  "gsw": "zimli",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich bi scho zimli müed. Ich gaa is Bett. 2. Ich ha bim Dokter zimli lang müese warte."
+ },
+ {
+  "id": 3153,
+  "de": "die Zinsen",
+  "tr": "faiz",
+  "deBeispiel": "Wie viele Zinsen bekomme ich für mein Sparkonto?",
+  "gsw": "Zins",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wie vill Zins überchume-n-ich für mis Schparkonto?"
+ },
+ {
+  "id": 3154,
+  "de": "der Zivilstand",
+  "tr": "medeni hâl (İsviçre)",
+  "deBeispiel": "Bei „Zivilstand“ musst du „ledig“ ankreuzen.",
+  "gsw": "Zivilschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi «Zivilschtand» muesch «ledig» aachrüüzle.",
+  "ayniLehce": [
+   "Personenstand (B1)"
+  ]
+ },
+ {
+  "id": 3155,
+  "de": "die Zone",
+  "tr": "bölge (sınırları belirlenmiş alan)",
+  "deBeispiel": "Hier können wir nicht fahren. Das ist eine Fußgängerzone.",
+  "gsw": "Zone",
+  "gswArtikel": "d",
+  "gswBeispiel": "Da dörfemer nöd inefaare. Die Zone isch nur für Fuessgänger."
+ },
+ {
+  "id": 3156,
+  "de": "zubereiten",
+  "tr": "hazırlamak (yemek)",
+  "deBeispiel": "Sie bereitet das Fleisch mit Kartoffeln zu.",
+  "gsw": "zueberäite",
+  "gswArtikel": null,
+  "gswBeispiel": "Si tuet s Fläisch mit Härdöpfel zueberäite."
+ },
+ {
+  "id": 3157,
+  "de": "der Zufall",
+  "tr": "rastlantı, tesadüf",
+  "deBeispiel": "1. So ein Zufall, dass ich dich hier treffe. 2. Durch Zufall habe ich gehört, dass die Wohnung frei ist.",
+  "gsw": "Zuefall",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. So en Zuefall, dass ich di da träffe! 2. Dur Zuefall han ich ghöört, dass d Wonig frei isch."
+ },
+ {
+  "id": 3158,
+  "de": "zufällig",
+  "tr": "tesadüfen, rastlantısal",
+  "deBeispiel": "1. Wir haben uns zufällig am Bahnhof getroffen. 2. Hast du zufällig meine Brille gesehen?",
+  "gsw": "zuefällig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir händ üs zuefällig am Bahnhof troffe. 2. Häsch zuefällig mini Brille gsee?"
+ },
+ {
+  "id": 3159,
+  "de": "der Zugang",
+  "tr": "giriş, erişim",
+  "deBeispiel": "1. Der Zugang zu diesem Haus ist schwierig. 2. Hast du Zugang zum Internet?",
+  "gsw": "Zuegang",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. De Zuegang zu dem Huus isch schwirig. 2. Häsch Zuegang zum Internet?"
+ },
+ {
+  "id": 3160,
+  "de": "zugänglich",
+  "tr": "erişilebilir, ulaşılabilir",
+  "deBeispiel": "Der Park ist für alle zugänglich.",
+  "gsw": "zuegänglich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Park isch für alli zuegänglich."
+ },
+ {
+  "id": 3161,
+  "de": "zugehen",
+  "tr": "kapanmak",
+  "deBeispiel": "Die Tür geht nicht zu. Kannst du mir helfen?",
+  "gsw": "zuegaa",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tüür wott äifach nöd zuegaa. Chasch mer hälfe?"
+ },
+ {
+  "id": 3162,
+  "de": "das Zuhause",
+  "tr": "ev, yuva",
+  "deBeispiel": "Ich fühle mich hier wohl. Das ist mein Zuhause.",
+  "gsw": "Dihäi",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich füül mi da wool. Das isch mis Dihäi."
+ },
+ {
+  "id": 3163,
+  "de": "die Zukunft",
+  "tr": "gelecek",
+  "deBeispiel": "1. Du musst mehr für die Schule lernen. Denk an die Zukunft. 2. In Zukunft werde ich vorsichtiger sein.",
+  "gsw": "Zuekunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Du muesch me für d Schuel leere. Dänk a d Zuekunft. 2. I Zuekunft bin ich vorsichtiger."
+ },
+ {
+  "id": 3164,
+  "de": "zukünftig",
+  "tr": "gelecekte, ileride",
+  "deBeispiel": "Ich bitte dich, zukünftig früher zu kommen.",
+  "gsw": "zuekünftig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bitte di, zuekünftig früener z choo."
+ },
+ {
+  "id": 3165,
+  "de": "zumindest",
+  "tr": "en azından",
+  "deBeispiel": "Ich möchte nicht in der Stadt wohnen, zumindest jetzt nicht, wenn die Kinder noch so klein sind.",
+  "gsw": "zmindescht",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wott nöd i de Schtadt wohne, zmindescht jetz nöd, wo d Chind na so chlii sind."
+ },
+ {
+  "id": 3166,
+  "de": "zunächst",
+  "tr": "önce, ilk olarak",
+  "deBeispiel": "Zunächst möchte ich alle begrüßen!",
+  "gsw": "zeerscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Zeerscht möcht ich alli begrüesse!"
+ },
+ {
+  "id": 3167,
+  "de": "die Zünder",
+  "tr": "kibrit (Avusturya)",
+  "deBeispiel": "Ich hätte gern eine Schachtel Zünder.",
+  "gsw": "Zündhölzli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich hett gern e Schachtle Zündhölzli.",
+  "ayniLehce": [
+   "Streichholz (B1)",
+   "Zündholz (B1)"
+  ]
+ },
+ {
+  "id": 3168,
+  "de": "das Zündholz",
+  "tr": "kibrit",
+  "deBeispiel": "Ich hätte gern eine Schachtel Zündhölzer.",
+  "gsw": "Zündhölzli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich hett gern e Schachtle Zündhölzli.",
+  "ayniLehce": [
+   "Streichholz (B1)",
+   "Zünder (B1)"
+  ]
+ },
+ {
+  "id": 3169,
+  "de": "zunehmen",
+  "tr": "kilo almak, artmak",
+  "deBeispiel": "Ich habe im Urlaub 1 Kilo zugenommen.",
+  "gsw": "zuenää",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha i de Ferie sicher es Kilo müese zuenää."
+ },
+ {
+  "id": 3170,
+  "de": "zurechtkommen",
+  "tr": "başa çıkmak, idare etmek",
+  "deBeispiel": "Soll ich Ihnen helfen? - Danke. Ich komme allein zurecht.",
+  "gsw": "zrächtchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Söll ich Ine hälfe? – Danke, ich cha scho elläi zrächtchoo."
+ },
+ {
+  "id": 3172,
+  "de": "zusagen",
+  "tr": "kabul etmek, olumlu yanıt vermek",
+  "deBeispiel": "Meine Eltern haben uns zum Essen eingeladen. Ich habe zugesagt.",
+  "gsw": "zuesäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Eltere händ üs zum Ässe iiglade. Ich wott hüt na zuesäge."
+ },
+ {
+  "id": 3174,
+  "de": "die Zusammenarbeit",
+  "tr": "iş birliği",
+  "deBeispiel": "Sie sind der neue Kollege? Auf gute Zusammenarbeit!",
+  "gsw": "Zämenarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si sind de neu Kolleeg? Uf e gueti Zämenarbet!"
+ },
+ {
+  "id": 3175,
+  "de": "zusammenfassen",
+  "tr": "özetlemek",
+  "deBeispiel": "Können Sie das bitte noch einmal kurz zusammenfassen?",
+  "gsw": "zämefasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Chönd Si das bitte namal churz zämefasse?"
+ },
+ {
+  "id": 3176,
+  "de": "der Zusammenhang",
+  "tr": "bağlantı, ilişki",
+  "deBeispiel": "1. In diesem Zusammenhang möchte ich Sie auf zwei Bücher aufmerksam machen. 2. Was ist der Zusammenhang zwischen diesen ",
+  "gsw": "Zämehang",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. I dem Zämehang möcht ich Si uf zwäi Büecher ufmerksam mache. 2. Was isch de Zämehang zwüsched dene zwäi Sache?"
+ },
+ {
+  "id": 3177,
+  "de": "zusätzlich",
+  "tr": "ek olarak, ilave",
+  "deBeispiel": "Sie müssen in Zukunft eine Stunde zusätzlich arbeiten.",
+  "gsw": "zuesätzlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Si müend i Zuekunft e Schtund zuesätzlich schaffe."
+ },
+ {
+  "id": 3178,
+  "de": "der Zuschauer",
+  "tr": "izleyici, seyirci",
+  "deBeispiel": "- Liebe Zuschauer, wir wünschen Ihnen gute Unterhaltung.",
+  "gsw": "Zueschauer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Liebi Zueschauer, mir wünsched Ine gueti Underhaltig."
+ },
+ {
+  "id": 3179,
+  "de": "der Zuschlag",
+  "tr": "ek ücret",
+  "deBeispiel": "Für diesen Zug müssen Sie einen Zuschlag zahlen.",
+  "gsw": "Zueschlaag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für de Zug müend Si en Zueschlaag zale."
+ },
+ {
+  "id": 3180,
+  "de": "der Zustand",
+  "tr": "durum, hâl (bir şeyin, bir yerin içinde bulunduğu hâl)",
+  "deBeispiel": "Als wir in die Wohnung eingezogen sind, war sie in sehr schlechtem Zustand.",
+  "gsw": "Zueschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wo mir iizoge sind, isch d Wonig imene ganz schlächte Zueschtand gsii."
+ },
+ {
+  "id": 3181,
+  "de": "zuständig",
+  "tr": "yetkili, sorumlu",
+  "deBeispiel": "Wir haben ein Problem mit der Heizung. Wer ist dafür zuständig?",
+  "gsw": "zueschtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ es Problem mit de Häizig. Wer isch defür zueschtändig?"
+ },
+ {
+  "id": 3182,
+  "de": "zustimmen",
+  "tr": "katılmak, hemfikir olmak; onaylamak",
+  "deBeispiel": "1. Ich stimme dir in dieser Sache völlig zu. 2. Er nickt zustimmend.",
+  "gsw": "zueschtimme",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Da chan ich der nur zueschtimme. 2. Er nickt zueschtimmend."
+ },
+ {
+  "id": 3183,
+  "de": "die Zustimmung",
+  "tr": "onay, rıza",
+  "deBeispiel": "Wir brauchen Ihre Zustimmung, um Ihnen Werbung zu schicken.",
+  "gsw": "Zueschtimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir bruuched Iri Zueschtimmig, wämmer Ine Wärbig wänd schicke."
+ },
+ {
+  "id": 3184,
+  "de": "die Zutaten",
+  "tr": "malzemeler",
+  "deBeispiel": "Welche Zutaten braucht man für diesen Kuchen?",
+  "gsw": "Zuetate",
+  "gswArtikel": "d",
+  "gswBeispiel": "Was für Zuetate bruucht mer für de Chueche?"
+ },
+ {
+  "id": 3185,
+  "de": "zuverlässig",
+  "tr": "güvenilir",
+  "deBeispiel": "Der Kollege kommt bestimmt gleich. Er ist immer sehr zuverlässig.",
+  "gsw": "zueverlässig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kolleeg chunt sicher grad. Er isch immer sehr zueverlässig."
+ },
+ {
+  "id": 3186,
+  "de": "das/der Zvieri/Znüni",
+  "tr": "ara öğün, atıştırmalık",
+  "deBeispiel": "Es ist Zeit für ein kleines Zvieri.",
+  "gsw": "Zvieri",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch Ziit für es chliises Zvieri.",
+  "ayniLehce": [
+   "Jause (B1)"
+  ]
+ },
+ {
+  "id": 3187,
+  "de": "zwar",
+  "tr": "gerçi, her ne kadar; (und zwar) hem de, şöyle ki",
+  "deBeispiel": "1. Diese Schuhe sind zwar teuer, aber gut. 2. Ich kriege jetzt doch eine Woche Urlaub, und zwar nächsten Monat.",
+  "gsw": "zwaar",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Die Schue sind zwaar tüür, aber guet. 2. Ich überchume jetz doch e Wuche Ferie, und zwaar nächschte Monet."
+ },
+ {
+  "id": 3188,
+  "de": "der Zweck",
+  "tr": "amaç",
+  "deBeispiel": "Ich glaube, es hat keinen Zweck, sich zu bewerben. Der Job ist sicher schon weg.",
+  "gsw": "Zwäck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich glaub, es hät käin Zwäck, sich z bewerbe. De Job isch sicher scho wäg."
+ },
+ {
+  "id": 3189,
+  "de": "zweifeln",
+  "tr": "şüphe etmek, kuşkulanmak",
+  "deBeispiel": "Ich zweifle nicht daran, dass Sie recht haben.",
+  "gsw": "zwiifle",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich zwiifle nöd draa, dass Si rächt händ."
+ },
+ {
+  "id": 3190,
+  "de": "der Zweifel",
+  "tr": "şüphe, kuşku",
+  "deBeispiel": "1. Da ist ohne Zweifel die beste Lösung. 2. Allmählich bekomme ich Zweifel daran.",
+  "gsw": "Zwiifel",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Das isch ooni Zwiifel di bescht Lösig. 2. Langsam überchume-n-ich Zwiifel draa."
+ },
+ {
+  "id": 3191,
+  "de": "die Zwiebel",
+  "tr": "soğan",
+  "deBeispiel": "Eine Zwiebel in kleine Stücke schneiden und zusammen mit dem Fleisch braten.",
+  "gsw": "Zwible",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Zwible i chliini Schtückli schniide und zäme mit em Fläisch braate."
+ },
+ {
+  "id": 3192,
+  "de": "zwingen",
+  "tr": "zorlamak",
+  "deBeispiel": "1. Bitte zwing mich nicht etwas zu essen. Ich bin wirklich nicht hungrig. 2. Das schlechte Wetter zwang uns umzukehren.",
+  "gsw": "sich zwinge",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Bitte tue mi nöd zwinge, öppis z ässe. Ich ha würkli käin Hunger. 2. S schlächt Wätter hät üs zwunge umzcheere."
+ }
+]

@@ -1,0 +1,934 @@
+[
+ {
+  "id": 8305,
+  "de": "sich verwählen",
+  "tr": "yanlış numara çevirmek",
+  "deBeispiel": "Entschuldigung, ich habe mich verwählt.",
+  "gsw": "sich verwääle",
+  "gswArtikel": null,
+  "gswBeispiel": "Entschuldigung, ich ha mich verwäält."
+ },
+ {
+  "id": 8306,
+  "de": "dranbleiben",
+  "tr": "hatta kalmak, beklemede kalmak",
+  "deBeispiel": "Bleiben Sie bitte kurz dran, ich frage nach.",
+  "gsw": "draabliibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Bliibed Si bitte churz draa, ich frööge nach."
+ },
+ {
+  "id": 8307,
+  "de": "auslachen",
+  "tr": "alay etmek, birine gülmek",
+  "deBeispiel": "Keiner lacht dich hier wegen deiner Fehler aus.",
+  "gsw": "uslache",
+  "gswArtikel": null,
+  "gswBeispiel": "Da lachet di käine wäge dine Fääler us."
+ },
+ {
+  "id": 8308,
+  "de": "anschreien",
+  "tr": "birine bağırmak",
+  "deBeispiel": "Der Chef schreit seine Mitarbeiter nie an.",
+  "gsw": "aaschreie",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chef tuet sini Mitarbäiter nie aaschreie."
+ },
+ {
+  "id": 8309,
+  "de": "ausreden",
+  "tr": "sözünü bitirmek, lafını tamamlamak",
+  "deBeispiel": "Ich rede zuerst aus, dann bist du dran.",
+  "gsw": "usrede",
+  "gswArtikel": null,
+  "gswBeispiel": "Zerscht rede ich us, dänn bisch du draa."
+ },
+ {
+  "id": 8310,
+  "de": "sich ausdrücken",
+  "tr": "kendini ifade etmek",
+  "deBeispiel": "Auf Deutsch drücke ich mich noch sehr langsam aus.",
+  "gsw": "sich usdrücke",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf Tüütsch drücke ich mich na sehr langsam us."
+ },
+ {
+  "id": 8311,
+  "de": "nerven",
+  "tr": "sinir etmek, rahatsız etmek",
+  "deBeispiel": "Der laute Nachbar nervt mich jeden Abend.",
+  "gsw": "nerve",
+  "gswArtikel": null,
+  "gswBeispiel": "De luut Nachbar nervt mich jede Aabig."
+ },
+ {
+  "id": 8312,
+  "de": "sich anfreunden",
+  "tr": "arkadaş olmak, dost olmak",
+  "deBeispiel": "Im Kurs freundet sie sich schnell mit allen an.",
+  "gsw": "sich aafründe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Kurs tuet si sich schnäll mit allne aafründe."
+ },
+ {
+  "id": 8313,
+  "de": "kontaktieren",
+  "tr": "iletişime geçmek, temasa geçmek",
+  "deBeispiel": "Bitte kontaktieren Sie uns per E-Mail.",
+  "gsw": "kontaktiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte kontaktiered Si öis per E-Mail."
+ },
+ {
+  "id": 8314,
+  "de": "posten",
+  "tr": "paylaşmak, paylaşım yapmak",
+  "deBeispiel": "Meine Schwester postet jeden Tag ein Foto.",
+  "gsw": "poste",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Schwöschter postet jede Tag es Foto."
+ },
+ {
+  "id": 8315,
+  "de": "liken",
+  "tr": "beğenmek, beğeni bırakmak",
+  "deBeispiel": "Mein Bruder likt alle meine Bilder sofort.",
+  "gsw": "like",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brüeder liket alli mini Bilder sofort."
+ },
+ {
+  "id": 8316,
+  "de": "verschicken",
+  "tr": "göndermek, yollamak",
+  "deBeispiel": "Ich verschicke die Einladungen morgen früh.",
+  "gsw": "verschicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich verschicke d Iiladige morn früe."
+ },
+ {
+  "id": 8317,
+  "de": "zuschicken",
+  "tr": "göndermek, postayla yollamak",
+  "deBeispiel": "Die Firma schickt mir den Vertrag heute zu.",
+  "gsw": "zueschicke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma schickt mer de Vertrag hüt zue."
+ },
+ {
+  "id": 8318,
+  "de": "vorführen",
+  "tr": "göstermek, tanıtmak",
+  "deBeispiel": "Der Verkäufer führt uns das neue Handy vor.",
+  "gsw": "vorfüere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Verchäufer füert öis s nöi Handy vor."
+ },
+ {
+  "id": 8319,
+  "de": "mitbekommen",
+  "tr": "fark etmek, kulak misafiri olmak",
+  "deBeispiel": "Bekommst du das Gespräch am Nebentisch mit?",
+  "gsw": "mitüberchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Überchunsch du s Gschpröch am Näbetisch mit?"
+ },
+ {
+  "id": 8320,
+  "de": "kapieren",
+  "tr": "anlamak, kavramak",
+  "deBeispiel": "Jetzt kapiere ich die Regel endlich.",
+  "gsw": "kapiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Jetz kapiere ich d Regel ändlich."
+ },
+ {
+  "id": 8321,
+  "de": "verwirren",
+  "tr": "kafasını karıştırmak, şaşırtmak",
+  "deBeispiel": "Die vielen Formulare verwirren mich total.",
+  "gsw": "verwirre",
+  "gswArtikel": null,
+  "gswBeispiel": "Die vile Formular verwirred mich total."
+ },
+ {
+  "id": 8322,
+  "de": "erraten",
+  "tr": "tahmin etmek, bilmek",
+  "deBeispiel": "Er errät meine Antwort fast immer sofort.",
+  "gsw": "errate",
+  "gswArtikel": null,
+  "gswBeispiel": "Er erraat mini Antwort fascht immer sofort."
+ },
+ {
+  "id": 8323,
+  "de": "ahnen",
+  "tr": "sezmek, önceden hissetmek",
+  "deBeispiel": "Ich ahne schon, dass sie bald umzieht.",
+  "gsw": "aane",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich aane scho, dass si bald züglet."
+ },
+ {
+  "id": 8324,
+  "de": "sich trauen",
+  "tr": "cesaret etmek, göze almak",
+  "deBeispiel": "Sie traut sich nicht, den Chef nach Urlaub zu fragen.",
+  "gsw": "sich traue",
+  "gswArtikel": null,
+  "gswBeispiel": "Si traut sich nöd, de Chef nach Ferie z frööge."
+ },
+ {
+  "id": 8325,
+  "de": "tratschen",
+  "tr": "dedikodu yapmak, çene çalmak",
+  "deBeispiel": "Die Nachbarinnen tratschen jeden Morgen im Hof.",
+  "gsw": "tratsche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Nachbarinne tratsched jede Morge im Hof."
+ },
+ {
+  "id": 8326,
+  "de": "vorziehen",
+  "tr": "tercih etmek, yeğlemek",
+  "deBeispiel": "Am Abend ziehe ich Tee dem Kaffee vor.",
+  "gsw": "vorzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig zie ich de Tee em Kaffi vor."
+ },
+ {
+  "id": 8327,
+  "de": "einsehen",
+  "tr": "kabullenmek, anlamak",
+  "deBeispiel": "Er sieht seinen Fehler endlich ein.",
+  "gsw": "iigsee",
+  "gswArtikel": null,
+  "gswBeispiel": "Er tuet sin Fääler ändlich iigsee."
+ },
+ {
+  "id": 8328,
+  "de": "gestehen",
+  "tr": "itiraf etmek",
+  "deBeispiel": "Sie gesteht, dass sie das Buch vergessen hat.",
+  "gsw": "gschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Si gschtaat, dass si s Buech vergässe hät."
+ },
+ {
+  "id": 8329,
+  "de": "befürchten",
+  "tr": "endişe etmek, korkmak",
+  "deBeispiel": "Ich befürchte, dass wir zu spät zum Bahnhof kommen.",
+  "gsw": "befürchte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich befürchte, dass mir z schpaat zum Bahnhof chömed."
+ },
+ {
+  "id": 8330,
+  "de": "aufmuntern",
+  "tr": "neşelendirmek, moral vermek",
+  "deBeispiel": "Ein Anruf von dir muntert mich sofort auf.",
+  "gsw": "ufmuntere",
+  "gswArtikel": null,
+  "gswBeispiel": "En Aaruef vo dir munteret mich sofort uf."
+ },
+ {
+  "id": 8331,
+  "de": "motivieren",
+  "tr": "motive etmek, isteklendirmek",
+  "deBeispiel": "Meine Lehrerin motiviert uns jeden Tag neu.",
+  "gsw": "motiviere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Leererin motiviert öis jede Tag nöi."
+ },
+ {
+  "id": 8332,
+  "de": "flirten",
+  "tr": "flört etmek",
+  "deBeispiel": "Auf der Party flirtet er mit allen Gästen.",
+  "gsw": "flirte",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf de Party flirtet er mit allne Gäscht."
+ },
+ {
+  "id": 8333,
+  "de": "anvertrauen",
+  "tr": "içini dökmek, emanet etmek",
+  "deBeispiel": "Sie vertraut mir ihr größtes Problem an.",
+  "gsw": "aavertraue",
+  "gswArtikel": null,
+  "gswBeispiel": "Si tuet mer ires gröschte Problem aavertraue."
+ },
+ {
+  "id": 8334,
+  "de": "nicken",
+  "tr": "başıyla onaylamak, baş sallamak",
+  "deBeispiel": "Sie nickt nur und sagt kein Wort.",
+  "gsw": "nicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Si nickt nu und säit käi Wort."
+ },
+ {
+  "id": 8335,
+  "de": "grinsen",
+  "tr": "sırıtmak",
+  "deBeispiel": "Warum grinst du die ganze Zeit so?",
+  "gsw": "grinse",
+  "gswArtikel": null,
+  "gswBeispiel": "Werum grinsch du di ganz Ziit eso?"
+ },
+ {
+  "id": 8336,
+  "de": "brüllen",
+  "tr": "haykırmak, avaz avaz bağırmak",
+  "deBeispiel": "Der Trainer brüllt über den ganzen Platz.",
+  "gsw": "brüele",
+  "gswArtikel": null,
+  "gswBeispiel": "De Trainer brüelet über de ganz Platz.",
+  "ayniLehce": [
+   "weinen (A2)",
+   "schreien (B1)"
+  ]
+ },
+ {
+  "id": 8337,
+  "de": "meckern",
+  "tr": "söylenmek, dırdır etmek",
+  "deBeispiel": "Mein Kollege meckert über jedes Essen in der Kantine.",
+  "gsw": "möögele",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Kolleg möögelet über jedes Ässe i de Kantine."
+ },
+ {
+  "id": 8338,
+  "de": "jammern",
+  "tr": "sızlanmak, yakınmak",
+  "deBeispiel": "Er jammert den ganzen Tag über die Hitze.",
+  "gsw": "jommere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er jommeret de ganz Tag über d Hitz."
+ },
+ {
+  "id": 8339,
+  "de": "sich beklagen",
+  "tr": "şikâyet etmek, yakınmak",
+  "deBeispiel": "Die Gäste beklagen sich über den Lärm im Hotel.",
+  "gsw": "sich beklage",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gäscht beklaged sich über de Lärm im Hotel."
+ },
+ {
+  "id": 8340,
+  "de": "sich zanken",
+  "tr": "atışmak, çekişmek",
+  "deBeispiel": "Die Kinder zanken sich um das neue Spielzeug.",
+  "gsw": "sich zanke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind zanked sich um s nöi Schpiilzüüg."
+ },
+ {
+  "id": 8341,
+  "de": "schwören",
+  "tr": "yemin etmek",
+  "deBeispiel": "Ich schwöre dir, ich habe nichts davon gewusst.",
+  "gsw": "schwöre",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich schwöre der, ich ha nüüt dervo gwüsst."
+ },
+ {
+  "id": 8342,
+  "de": "beschimpfen",
+  "tr": "sövmek, ağır sözler söylemek",
+  "deBeispiel": "Im Bus beschimpft ein Mann den Fahrer.",
+  "gsw": "beschimpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Bus beschimpft en Maa de Chauffeur."
+ },
+ {
+  "id": 8343,
+  "de": "mitreden",
+  "tr": "söz sahibi olmak, konuşmaya katılmak",
+  "deBeispiel": "Bei diesem Thema rede ich gern mit.",
+  "gsw": "mitrede",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi dem Thema rede ich gärn mit."
+ },
+ {
+  "id": 8344,
+  "de": "zwinkern",
+  "tr": "göz kırpmak",
+  "deBeispiel": "Mein Opa zwinkert mir über den Tisch zu.",
+  "gsw": "zwinkere",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Grosspapi zwinkeret mer über de Tisch zue."
+ },
+ {
+  "id": 8345,
+  "de": "begeistern",
+  "tr": "hayran bırakmak, coşturmak",
+  "deBeispiel": "Der neue Film begeistert meine ganze Familie.",
+  "gsw": "begeischtere",
+  "gswArtikel": null,
+  "gswBeispiel": "De nöi Film begeischteret mini ganz Familie."
+ },
+ {
+  "id": 8346,
+  "de": "weitersagen",
+  "tr": "başkasına söylemek, yaymak",
+  "deBeispiel": "Sag das bitte nicht weiter, es ist ein Geheimnis!",
+  "gsw": "wiitersäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Säg das bitte nöd wiiter, es isch es Ghäimnis!"
+ },
+ {
+  "id": 8347,
+  "de": "weiterhelfen",
+  "tr": "yardımcı olmak, yol göstermek",
+  "deBeispiel": "Die Frau am Schalter hilft mir immer weiter.",
+  "gsw": "wiiterhälfe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Frau am Schalter hilft mer immer wiiter."
+ },
+ {
+  "id": 8348,
+  "de": "anlügen",
+  "tr": "yalan söylemek (birine)",
+  "deBeispiel": "Warum lügst du deine Eltern so oft an?",
+  "gsw": "aalüüge",
+  "gswArtikel": null,
+  "gswBeispiel": "Werum tuesch du dini Eltere so oft aalüüge?"
+ },
+ {
+  "id": 8349,
+  "de": "verärgern",
+  "tr": "kızdırmak, canını sıkmak",
+  "deBeispiel": "Seine Antwort verärgert die ganze Gruppe.",
+  "gsw": "verärgere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Antwort verärgeret di ganz Gruppe."
+ },
+ {
+  "id": 8350,
+  "de": "das Badezimmer",
+  "tr": "banyo",
+  "deBeispiel": "Das Badezimmer ist klein, aber sehr hell.",
+  "gsw": "Badzimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Badzimmer isch chlii, aber sehr hell."
+ },
+ {
+  "id": 8351,
+  "de": "der Eimer",
+  "tr": "kova",
+  "deBeispiel": "Ich hole einen Eimer mit warmem Wasser.",
+  "gsw": "Chübel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich hole en Chübel mit warmem Wasser."
+ },
+ {
+  "id": 8352,
+  "de": "der Ofen",
+  "tr": "soba, fırın",
+  "deBeispiel": "Im Winter machen wir jeden Abend den Ofen an.",
+  "gsw": "Ofe",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Winter mached mir jede Aabig de Ofe aa.",
+  "ayniLehce": [
+   "(Back-)Ofen (B1)",
+   "(Back-)Rohr (B1)"
+  ]
+ },
+ {
+  "id": 8353,
+  "de": "streichen",
+  "tr": "boyamak (duvar)",
+  "deBeispiel": "Wir wollen die Wände im Wohnzimmer weiß streichen.",
+  "gsw": "schtriiche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir wänd d Wänd im Wohnzimmer wiiss schtriiche."
+ },
+ {
+  "id": 8354,
+  "de": "die Schublade",
+  "tr": "çekmece",
+  "deBeispiel": "Die Löffel sind in der oberen Schublade.",
+  "gsw": "Schublade",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Löffel sind i de obere Schublade."
+ },
+ {
+  "id": 8355,
+  "de": "der Kamin",
+  "tr": "şömine",
+  "deBeispiel": "Im Wohnzimmer gibt es einen alten Kamin.",
+  "gsw": "Cheminée",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Wohnzimmer hät s es alts Cheminée."
+ },
+ {
+  "id": 8356,
+  "de": "die Türklingel",
+  "tr": "kapı zili",
+  "deBeispiel": "Unsere Türklingel ist kaputt, bitte klopfen Sie.",
+  "gsw": "Türglogge",
+  "gswArtikel": "d",
+  "gswBeispiel": "Öisi Türglogge isch kaputt, bitte chlopfed Si."
+ },
+ {
+  "id": 8357,
+  "de": "der Dachboden",
+  "tr": "çatı katı, tavan arası",
+  "deBeispiel": "Die alten Koffer stehen auf dem Dachboden.",
+  "gsw": "Eschtrich",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di alte Choffer schtönd uf em Eschtrich."
+ },
+ {
+  "id": 8358,
+  "de": "die Haustür",
+  "tr": "sokak kapısı, bina kapısı",
+  "deBeispiel": "Bitte mach die Haustür abends zu.",
+  "gsw": "Huustür",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte mach d Huustür am Aabig zue."
+ },
+ {
+  "id": 8359,
+  "de": "die Matratze",
+  "tr": "yatak, şilte",
+  "deBeispiel": "Die neue Matratze ist viel bequemer.",
+  "gsw": "Matratze",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di nöi Matratze isch vil bequemer."
+ },
+ {
+  "id": 8360,
+  "de": "der Besen",
+  "tr": "süpürge",
+  "deBeispiel": "Der Besen steht hinter der Tür in der Küche.",
+  "gsw": "Bäse",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bäse schtaat hinder de Tür i de Chuchi."
+ },
+ {
+  "id": 8361,
+  "de": "das Gästezimmer",
+  "tr": "misafir odası",
+  "deBeispiel": "Meine Schwester schläft im Gästezimmer.",
+  "gsw": "Gäschtezimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Schwöschter schlaaft im Gäschtezimmer."
+ },
+ {
+  "id": 8362,
+  "de": "der Fußboden",
+  "tr": "yer, döşeme",
+  "deBeispiel": "Der Fußboden im Flur ist aus Holz.",
+  "gsw": "Bode",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bode im Gang isch us Holz.",
+  "ayniLehce": [
+   "Boden (B1)"
+  ]
+ },
+ {
+  "id": 8363,
+  "de": "der Staubsauger",
+  "tr": "elektrikli süpürge",
+  "deBeispiel": "Der Staubsauger ist leider kaputt.",
+  "gsw": "Schtaubsuuger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtaubsuuger isch läider kaputt."
+ },
+ {
+  "id": 8364,
+  "de": "die Waschmaschine",
+  "tr": "çamaşır makinesi",
+  "deBeispiel": "Die Waschmaschine steht im Keller.",
+  "gsw": "Wöschmaschine",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wöschmaschine schtaat im Chäller."
+ },
+ {
+  "id": 8365,
+  "de": "der Mülleimer",
+  "tr": "çöp kovası",
+  "deBeispiel": "Kannst du bitte den Mülleimer leeren?",
+  "gsw": "Güselchübel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Chasch bitte de Güselchübel lääre?",
+  "ayniLehce": [
+   "Mülltonne (B1)"
+  ]
+ },
+ {
+  "id": 8366,
+  "de": "das Kinderzimmer",
+  "tr": "çocuk odası",
+  "deBeispiel": "Im Kinderzimmer liegen überall Spielsachen.",
+  "gsw": "Chinderzimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Chinderzimmer liit überall Schpiilzüüg."
+ },
+ {
+  "id": 8367,
+  "de": "wischen",
+  "tr": "silmek, paspaslamak",
+  "deBeispiel": "Am Samstag wische ich den Boden in der Küche.",
+  "gsw": "ufnää",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Samschtig tue ich de Bode i de Chuchi ufnää.",
+  "ayniLehce": [
+   "aufnehmen (B1)"
+  ]
+ },
+ {
+  "id": 8368,
+  "de": "das Esszimmer",
+  "tr": "yemek odası",
+  "deBeispiel": "Sonntags essen wir alle zusammen im Esszimmer.",
+  "gsw": "Ässzimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Sunntig ässed mir alli zäme im Ässzimmer."
+ },
+ {
+  "id": 8369,
+  "de": "das Waschbecken",
+  "tr": "lavabo",
+  "deBeispiel": "Das Waschbecken im Bad ist verstopft.",
+  "gsw": "Lavabo",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Lavabo im Bad isch verschtopft."
+ },
+ {
+  "id": 8370,
+  "de": "die Spüle",
+  "tr": "mutfak evyesi",
+  "deBeispiel": "In der Spüle steht noch schmutziges Geschirr.",
+  "gsw": "Schüttschtäi",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Schüttschtäi schtaat na dräckigs Gschirr."
+ },
+ {
+  "id": 8371,
+  "de": "die Schraube",
+  "tr": "vida",
+  "deBeispiel": "Ich brauche noch eine kleine Schraube für das Regal.",
+  "gsw": "Schruube",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich bruuch na e chlini Schruube für s Gschtell.",
+  "ayniLehce": [
+   "schrauben (A2)"
+  ]
+ },
+ {
+  "id": 8372,
+  "de": "die Kommode",
+  "tr": "şifonyer, çekmeceli dolap",
+  "deBeispiel": "Meine Socken sind in der Kommode im Schlafzimmer.",
+  "gsw": "Kommode",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Socke sind i de Kommode im Schlaafzimmer."
+ },
+ {
+  "id": 8373,
+  "de": "der Schraubenzieher",
+  "tr": "tornavida",
+  "deBeispiel": "Hast du einen Schraubenzieher für mich?",
+  "gsw": "Schruubezieher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Häsch en Schruubezieher für mich?"
+ },
+ {
+  "id": 8374,
+  "de": "der Trockner",
+  "tr": "kurutma makinesi",
+  "deBeispiel": "Die Handtücher sind noch im Trockner.",
+  "gsw": "Tumbler",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Handtüecher sind na im Tumbler."
+ },
+ {
+  "id": 8375,
+  "de": "der Kleiderschrank",
+  "tr": "gardırop, elbise dolabı",
+  "deBeispiel": "Der Kleiderschrank ist zu klein für zwei Personen.",
+  "gsw": "Chläiderchaschte",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Chläiderchaschte isch z chlii für zwäi Persone."
+ },
+ {
+  "id": 8376,
+  "de": "lüften",
+  "tr": "havalandırmak",
+  "deBeispiel": "Du musst das Zimmer jeden Morgen kurz lüften.",
+  "gsw": "lüfte",
+  "gswArtikel": null,
+  "gswBeispiel": "Du muesch s Zimmer jede Morge churz lüfte."
+ },
+ {
+  "id": 8377,
+  "de": "bügeln",
+  "tr": "ütülemek",
+  "deBeispiel": "Ich bügele am Abend meine Hemden.",
+  "gsw": "glätte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich glätte am Aabig mini Hemp.",
+  "ayniLehce": [
+   "glätten (A2)"
+  ]
+ },
+ {
+  "id": 8378,
+  "de": "der Hocker",
+  "tr": "tabure",
+  "deBeispiel": "Setz dich bitte auf den Hocker neben dem Tisch.",
+  "gsw": "Hocker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sitz di bitte uf de Hocker näbet em Tisch."
+ },
+ {
+  "id": 8379,
+  "de": "die Glühbirne",
+  "tr": "ampul",
+  "deBeispiel": "Im Flur ist die Glühbirne kaputt.",
+  "gsw": "Glüebire",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Gang isch d Glüebire kaputt."
+ },
+ {
+  "id": 8380,
+  "de": "der Ventilator",
+  "tr": "vantilatör",
+  "deBeispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator.",
+  "gsw": "Ventilator",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Summer bruuched mir im Schlaafzimmer en Ventilator."
+ },
+ {
+  "id": 8381,
+  "de": "der Nachttisch",
+  "tr": "komodin",
+  "deBeispiel": "Meine Brille liegt auf dem Nachttisch.",
+  "gsw": "Nachttisch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mini Brille liit uf em Nachttisch."
+ },
+ {
+  "id": 8382,
+  "de": "der Wasserhahn",
+  "tr": "musluk",
+  "deBeispiel": "Der Wasserhahn in der Küche tropft schon wieder.",
+  "gsw": "Wasserhaane",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wasserhaane i de Chuchi tropfet scho wider."
+ },
+ {
+  "id": 8383,
+  "de": "aufschließen",
+  "tr": "kilidi açmak, açmak",
+  "deBeispiel": "Kannst du bitte die Wohnungstür aufschließen?",
+  "gsw": "ufschliesse",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte d Wonigstür ufschliesse?"
+ },
+ {
+  "id": 8384,
+  "de": "die Bettwäsche",
+  "tr": "nevresim takımı",
+  "deBeispiel": "Ich wechsle jeden Samstag die Bettwäsche.",
+  "gsw": "Bettwösch",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich wächsle jede Samschtig d Bettwösch."
+ },
+ {
+  "id": 8385,
+  "de": "der Quadratmeter",
+  "tr": "metrekare",
+  "deBeispiel": "Unsere Wohnung hat 65 Quadratmeter.",
+  "gsw": "Quadratmeter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öisi Wonig hät 65 Quadratmeter."
+ },
+ {
+  "id": 8386,
+  "de": "die Tapete",
+  "tr": "duvar kâğıdı",
+  "deBeispiel": "Die alte Tapete gefällt mir überhaupt nicht.",
+  "gsw": "Tapete",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di alt Tapete gfallt mer überhaupt nöd."
+ },
+ {
+  "id": 8387,
+  "de": "die Kaffeemaschine",
+  "tr": "kahve makinesi",
+  "deBeispiel": "Die Kaffeemaschine steht neben dem Kühlschrank.",
+  "gsw": "Kafimaschine",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kafimaschine schtaat näbet em Chüelschrank."
+ },
+ {
+  "id": 8388,
+  "de": "der Lichtschalter",
+  "tr": "ışık düğmesi",
+  "deBeispiel": "Der Lichtschalter ist links neben der Tür.",
+  "gsw": "Liechtschalter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Liechtschalter isch links näbet de Tür."
+ },
+ {
+  "id": 8389,
+  "de": "das Obergeschoss",
+  "tr": "üst kat",
+  "deBeispiel": "Die Schlafzimmer sind im Obergeschoss.",
+  "gsw": "Obergschoss",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Schlaafzimmer sind im Obergschoss."
+ },
+ {
+  "id": 8390,
+  "de": "der Untermieter",
+  "tr": "alt kiracı, kiracının kiracısı",
+  "deBeispiel": "Wir suchen einen Untermieter für das kleine Zimmer.",
+  "gsw": "Undermieter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir sueched en Undermieter für s chlii Zimmer."
+ },
+ {
+  "id": 8391,
+  "de": "der Gefrierschrank",
+  "tr": "derin dondurucu",
+  "deBeispiel": "Das Brot liegt im Gefrierschrank.",
+  "gsw": "Gfrierschrank",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Brot liit im Gfrierschrank."
+ },
+ {
+  "id": 8392,
+  "de": "die Bettdecke",
+  "tr": "yorgan",
+  "deBeispiel": "Im Winter brauche ich eine dicke Bettdecke.",
+  "gsw": "Duvet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Winter bruuch ich es dicks Duvet."
+ },
+ {
+  "id": 8393,
+  "de": "der Ersatzschlüssel",
+  "tr": "yedek anahtar",
+  "deBeispiel": "Der Ersatzschlüssel liegt bei meiner Nachbarin.",
+  "gsw": "Ersatzschlüssel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Ersatzschlüssel liit bi minere Nachbarin."
+ },
+ {
+  "id": 8394,
+  "de": "das Bügeleisen",
+  "tr": "ütü",
+  "deBeispiel": "Vorsicht, das Bügeleisen ist noch heiß!",
+  "gsw": "Glätteise",
+  "gswArtikel": "s",
+  "gswBeispiel": "Achtung, s Glätteise isch na häiss!"
+ },
+ {
+  "id": 8395,
+  "de": "das Bücherregal",
+  "tr": "kitaplık",
+  "deBeispiel": "Das Bücherregal ist schon wieder voll.",
+  "gsw": "Büechergschtell",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Büechergschtell isch scho wider voll."
+ },
+ {
+  "id": 8396,
+  "de": "der Esstisch",
+  "tr": "yemek masası",
+  "deBeispiel": "Am Esstisch haben sechs Personen Platz.",
+  "gsw": "Ässtisch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Ässtisch hät s Platz für sächs Persone."
+ },
+ {
+  "id": 8397,
+  "de": "die Stromrechnung",
+  "tr": "elektrik faturası",
+  "deBeispiel": "Die Stromrechnung ist dieses Jahr sehr hoch.",
+  "gsw": "Schtromrächnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtromrächnig isch das Jaar sehr höch."
+ },
+ {
+  "id": 8398,
+  "de": "der Geschirrspüler",
+  "tr": "bulaşık makinesi",
+  "deBeispiel": "Stell die Teller bitte in den Geschirrspüler.",
+  "gsw": "Gschirrschpüeler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schtell d Täller bitte i de Gschirrschpüeler."
+ },
+ {
+  "id": 8399,
+  "de": "das Doppelbett",
+  "tr": "çift kişilik yatak",
+  "deBeispiel": "Im Schlafzimmer steht ein großes Doppelbett.",
+  "gsw": "Doppelbett",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Schlaafzimmer schtaat es grosses Doppelbett."
+ },
+ {
+  "id": 8400,
+  "de": "der Heizkörper",
+  "tr": "radyatör, petek",
+  "deBeispiel": "Der Heizkörper im Bad wird nicht warm.",
+  "gsw": "Häizchörper",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Häizchörper im Bad wird nöd warm."
+ },
+ {
+  "id": 8401,
+  "de": "der Couchtisch",
+  "tr": "sehpa, orta sehpa",
+  "deBeispiel": "Die Zeitung liegt auf dem Couchtisch.",
+  "gsw": "Couchtisch",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Ziitig liit uf em Couchtisch."
+ },
+ {
+  "id": 8402,
+  "de": "das Putzmittel",
+  "tr": "temizlik malzemesi",
+  "deBeispiel": "Die Putzmittel stehen unter der Spüle.",
+  "gsw": "Putzmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Putzmittel schtönd under em Schüttschtäi."
+ },
+ {
+  "id": 8403,
+  "de": "der Abstellraum",
+  "tr": "depo odası, kiler",
+  "deBeispiel": "Das Fahrrad steht im Abstellraum.",
+  "gsw": "Abschtellruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Velo schtaat im Abschtellruum."
+ },
+ {
+  "id": 8404,
+  "de": "die Wohnungssuche",
+  "tr": "ev arama, konut arayışı",
+  "deBeispiel": "Die Wohnungssuche in der Stadt ist sehr schwer.",
+  "gsw": "Wonigssuechi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wonigssuechi i de Schtadt isch sehr schwer."
+ },
+ {
+  "id": 8405,
+  "de": "das Reihenhaus",
+  "tr": "sıra ev, bitişik nizam ev",
+  "deBeispiel": "Meine Eltern wohnen in einem kleinen Reihenhaus.",
+  "gsw": "Reiehuus",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Eltere wohned i mene chliine Reiehuus."
+ }
+]

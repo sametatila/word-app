@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6903,
+  "de": "nominieren",
+  "tr": "aday göstermek",
+  "deBeispiel": "Die Partei nominierte überraschend eine parteilose Kandidatin.",
+  "gsw": "nominiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Partei hät überraschend e parteilosi Kandidatin nominiert."
+ },
+ {
+  "id": 6904,
+  "de": "entmachten",
+  "tr": "yetkisiz bırakmak, iktidardan düşürmek",
+  "deBeispiel": "Die Reform entmachtet die Kammer faktisch zugunsten der Regierung.",
+  "gsw": "entmachte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Reform entmachtet d Chammer faktisch zuegunschte vo de Regierig."
+ },
+ {
+  "id": 6905,
+  "de": "aushöhlen",
+  "tr": "içini boşaltmak, işlevsiz kılmak",
+  "deBeispiel": "Zahlreiche Ausnahmen höhlen den Schutz der Verfassung nach und nach aus.",
+  "gsw": "uushöhle",
+  "gswArtikel": null,
+  "gswBeispiel": "Zaalrichi Uusnaame tüend de Schutz vo de Verfassig nach und nach uushöhle."
+ },
+ {
+  "id": 6906,
+  "de": "parlamentarisch",
+  "tr": "parlamenter, meclise ilişkin",
+  "deBeispiel": "Der Untersuchungsausschuss ist ein scharfes parlamentarisches Kontrollinstrument.",
+  "gsw": "parlamentarisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Undersuechigsuusschuss isch es scharfs parlamentarischs Kontrollinschtrumänt."
+ },
+ {
+  "id": 6907,
+  "de": "hoheitlich",
+  "tr": "kamu otoritesine dayalı, egemenlik yetkisiyle",
+  "deBeispiel": "Diese Aufgaben darf allein der Staat hoheitlich wahrnehmen.",
+  "gsw": "hoheitlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Uufgaabe dörf ellei de Schtaat hoheitlich waarnää."
+ },
+ {
+  "id": 6908,
+  "de": "weisungsgebunden",
+  "tr": "talimata bağlı",
+  "deBeispiel": "Die Staatsanwaltschaft ist gegenüber dem Justizministerium weisungsgebunden.",
+  "gsw": "wiisigsgebunde",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtaatsaawaltschaft isch gägenüber em Juschtizminischterium wiisigsgebunde."
+ },
+ {
+  "id": 6909,
+  "de": "populistisch",
+  "tr": "popülist",
+  "deBeispiel": "Mit populistischen Parolen lassen sich komplexe Probleme nicht lösen.",
+  "gsw": "populistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit populistische Parole lönd sich komplexi Probläm nöd löse."
+ },
+ {
+  "id": 6910,
+  "de": "das Erinnerungsvermögen",
+  "tr": "hatırlama yetisi, anımsama gücü",
+  "deBeispiel": "Mit zunehmendem Alter lässt das Erinnerungsvermögen allmählich nach.",
+  "gsw": "Erinnerigsvermöge",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mit zuenähmendem Alter laat s Erinnerigsvermöge allmählich nach."
+ },
+ {
+  "id": 6911,
+  "de": "die Verzerrung",
+  "tr": "çarpıtma, sapma",
+  "deBeispiel": "Systematische Verzerrungen im Denken lassen sich kaum vollständig vermeiden.",
+  "gsw": "Verzerrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Systematischi Verzerrige im Dänke lönd sich chuum ganz vermiide."
+ },
+ {
+  "id": 6912,
+  "de": "die Voreingenommenheit",
+  "tr": "peşin hüküm, taraflılık",
+  "deBeispiel": "Die Studie untersucht, wie Voreingenommenheit die Bewertung von Bewerbern verfälscht.",
+  "gsw": "Voriigenommeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Studie undersuecht, wie d Voriigenommeheit d Bewertig vo Bewärber verfälscht."
+ },
+ {
+  "id": 6913,
+  "de": "die Entscheidungsfindung",
+  "tr": "karar verme süreci",
+  "deBeispiel": "Unter Zeitdruck folgt die Entscheidungsfindung eher einfachen Faustregeln.",
+  "gsw": "Entschäidigsfindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Under Ziitdruck folgt d Entschäidigsfindig eender eifache Fuuschtregle."
+ },
+ {
+  "id": 6914,
+  "de": "das Bewusstsein",
+  "tr": "bilinç, farkındalık",
+  "deBeispiel": "Wie aus neuronaler Aktivität Bewusstsein entsteht, ist bis heute ungeklärt.",
+  "gsw": "Bewusstsii",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie us neuronaler Aktivität Bewusstsii entschtaat, isch bis hüt ungeklärt."
+ },
+ {
+  "id": 6915,
+  "de": "das Bedürfnis",
+  "tr": "ihtiyaç, gereksinim",
+  "deBeispiel": "Das Bedürfnis nach Anerkennung treibt viele Menschen unbemerkt an.",
+  "gsw": "Bedürfnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Bedürfnis nach Aaerkennig triibt vili Mäntsche unbemerkt aa."
+ },
+ {
+  "id": 6916,
+  "de": "der Reiz",
+  "tr": "uyaran, uyarıcı",
+  "deBeispiel": "Das Gehirn filtert die meisten Reize aus, bevor sie bewusst werden.",
+  "gsw": "Räiz",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Hirn filteret di mäischte Räiz uus, bevor si bewusst werded."
+ },
+ {
+  "id": 6917,
+  "de": "der Denkfehler",
+  "tr": "düşünme hatası, akıl yürütme yanlışı",
+  "deBeispiel": "Dieser Denkfehler tritt selbst bei erfahrenen Fachleuten regelmäßig auf.",
+  "gsw": "Dänkfähler",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dänkfähler chunt sogar bi erfaarne Fachlüüt regelmässig vor."
+ },
+ {
+  "id": 6918,
+  "de": "das Urteilsvermögen",
+  "tr": "muhakeme yetisi, yargı gücü",
+  "deBeispiel": "Starke Emotionen trüben das Urteilsvermögen mehr, als uns lieb ist.",
+  "gsw": "Urtäilsvermöge",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schtarchi Emotione trüebed s Urtäilsvermöge meh, als öis lieb isch."
+ },
+ {
+  "id": 6919,
+  "de": "das Selbstbild",
+  "tr": "benlik imgesi, kendilik algısı",
+  "deBeispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein.",
+  "gsw": "Sälbschtbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ires Sälbschtbild schtimmt chuum mit em Iidruck vo de Kollege überii."
+ },
+ {
+  "id": 6920,
+  "de": "die Identität",
+  "tr": "kimlik",
+  "deBeispiel": "In der Jugend wird die eigene Identität immer wieder neu ausgehandelt.",
+  "gsw": "Identität",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Juged wird di eigen Identität immer wider nöi uusghandlet."
+ },
+ {
+  "id": 6921,
+  "de": "die Konditionierung",
+  "tr": "koşullanma, şartlanma",
+  "deBeispiel": "Pawlow zeigte die Konditionierung anhand eines einfachen Glockensignals.",
+  "gsw": "Konditionierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Pawlow hät d Konditionierig ahand vo mene eifache Glockesignal zäigt."
+ },
+ {
+  "id": 6922,
+  "de": "die Verstärkung",
+  "tr": "pekiştirme, takviye",
+  "deBeispiel": "Positive Verstärkung wirkt langfristig besser als jede Form von Strafe.",
+  "gsw": "Verschtärkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Positivi Verschtärkig wirkt langfrischtig besser als jedi Form vo Schtraaf."
+ },
+ {
+  "id": 6923,
+  "de": "das Belohnungssystem",
+  "tr": "ödül sistemi",
+  "deBeispiel": "Soziale Netzwerke sprechen gezielt das Belohnungssystem im Gehirn an.",
+  "gsw": "Belohnigssystem",
+  "gswArtikel": "s",
+  "gswBeispiel": "Soziali Netzwärch schpräched geziilt s Belohnigssystem im Hirn aa."
+ },
+ {
+  "id": 6924,
+  "de": "die Neurose",
+  "tr": "nevroz",
+  "deBeispiel": "Der Begriff Neurose gilt in der heutigen Diagnostik als überholt.",
+  "gsw": "Neurose",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Begriff Neurose gilt i de hüttige Diagnoschtik as überholt."
+ },
+ {
+  "id": 6925,
+  "de": "die Bewältigungsstrategie",
+  "tr": "başa çıkma stratejisi",
+  "deBeispiel": "Humor ist für viele eine erstaunlich wirksame Bewältigungsstrategie.",
+  "gsw": "Bewältigigsschtrategie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Humor isch für vili e erschtuunlich wirksami Bewältigigsschtrategie."
+ },
+ {
+  "id": 6926,
+  "de": "der Abwehrmechanismus",
+  "tr": "savunma mekanizması",
+  "deBeispiel": "Leugnen ist ein Abwehrmechanismus, der kurzfristig entlastet.",
+  "gsw": "Abwehrmechanismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Lügne isch en Abwehrmechanismus, wo churzfrischtig entlaschtet."
+ },
+ {
+  "id": 6927,
+  "de": "die Projektion",
+  "tr": "yansıtma",
+  "deBeispiel": "Wer ständig Neid unterstellt, betreibt womöglich selbst eine Projektion.",
+  "gsw": "Projektion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer schtändig Niid underschtellt, betriibt womöglich sälber e Projektion."
+ },
+ {
+  "id": 6928,
+  "de": "die Übertragung",
+  "tr": "aktarım",
+  "deBeispiel": "In der Analyse richtet sich die Übertragung oft auf den Therapeuten.",
+  "gsw": "Übertragig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Analyse richtet sich d Übertragig oft uf de Therapeut."
+ },
+ {
+  "id": 6929,
+  "de": "die Verhaltenstherapie",
+  "tr": "davranış terapisi",
+  "deBeispiel": "Die Verhaltenstherapie setzt weniger an der Kindheit als an aktuellen Mustern an.",
+  "gsw": "Verhaltenstherapie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verhaltenstherapie setzt weniger bi de Chindheit as bi aktuelle Muschter aa."
+ },
+ {
+  "id": 6930,
+  "de": "die Psychoanalyse",
+  "tr": "psikanaliz",
+  "deBeispiel": "Die Psychoanalyse hat unser Bild vom Seelenleben nachhaltig verändert.",
+  "gsw": "Psychoanalyse",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Psychoanalyse hät öises Bild vom Seeleläbe naachhaltig verändert."
+ },
+ {
+  "id": 6931,
+  "de": "das Krankheitsbild",
+  "tr": "hastalık tablosu, klinik tablo",
+  "deBeispiel": "Das Krankheitsbild äußert sich bei Kindern anders als bei Erwachsenen.",
+  "gsw": "Chrankheitsbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Chrankheitsbild zäigt sich bi Chind anders as bi Erwachsene."
+ },
+ {
+  "id": 6932,
+  "de": "die Bindungstheorie",
+  "tr": "bağlanma kuramı",
+  "deBeispiel": "Die Bindungstheorie erklärt, warum frühe Beziehungen so prägend wirken.",
+  "gsw": "Bindigstheorie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bindigstheorie erklärt, warum früeni Bezieige so prägend wirked."
+ },
+ {
+  "id": 6933,
+  "de": "die Ablösung",
+  "tr": "ayrışma, kopuş",
+  "deBeispiel": "Die Ablösung vom Elternhaus verläuft selten ohne Konflikte.",
+  "gsw": "Ablösig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ablösig vom Elterehuus verlauft sälte ohni Konflikt."
+ },
+ {
+  "id": 6934,
+  "de": "die Anpassungsfähigkeit",
+  "tr": "uyum yeteneği, uyum sağlama becerisi",
+  "deBeispiel": "Die Anpassungsfähigkeit des Menschen an neue Umgebungen ist bemerkenswert.",
+  "gsw": "Aapassigsfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aapassigsfähigkeit vom Mänsch a nöii Umgäbige isch bemerkenswärt."
+ },
+ {
+  "id": 6935,
+  "de": "die Widerstandsfähigkeit",
+  "tr": "dayanıklılık, psikolojik sağlamlık",
+  "deBeispiel": "Stabile Beziehungen stärken die psychische Widerstandsfähigkeit erheblich.",
+  "gsw": "Widerschtandsfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtabili Bezieige schtärked d psychisch Widerschtandsfähigkeit erheblich."
+ },
+ {
+  "id": 6936,
+  "de": "die Selbstregulation",
+  "tr": "öz düzenleme, kendini düzenleme",
+  "deBeispiel": "Kinder lernen Selbstregulation vor allem durch verlässliche Bezugspersonen.",
+  "gsw": "Sälbschtregulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chind lehred Sälbschtregulation vor allem dur verlässlichi Bezugsperson."
+ },
+ {
+  "id": 6937,
+  "de": "die Impulskontrolle",
+  "tr": "dürtü kontrolü",
+  "deBeispiel": "Müdigkeit schwächt die Impulskontrolle deutlich stärker als vermutet.",
+  "gsw": "Impulskontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Müedigkeit schwächt d Impulskontrolle düütlich schtärcher als vermuetet."
+ },
+ {
+  "id": 6938,
+  "de": "die Frustration",
+  "tr": "hayal kırıklığı, engellenmişlik",
+  "deBeispiel": "Anhaltende Frustration schlägt nicht selten in Aggression um.",
+  "gsw": "Frustration",
+  "gswArtikel": "d",
+  "gswBeispiel": "Aahaltendi Frustration schlaat nöd sälte in Aggression um."
+ },
+ {
+  "id": 6939,
+  "de": "der Affekt",
+  "tr": "duygulanım, ani duygu patlaması",
+  "deBeispiel": "Im Affekt getroffene Entscheidungen bereut man meistens später.",
+  "gsw": "Affekt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Affekt troffeni Entschäidige bereut mer mäischtens schpööter."
+ },
+ {
+  "id": 6940,
+  "de": "die Emotion",
+  "tr": "duygu",
+  "deBeispiel": "Emotionen liefern Informationen, die dem Verstand allein entgehen.",
+  "gsw": "Emotion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Emotione lieferet Informatione, wo em Verschtand ellei entgönd."
+ },
+ {
+  "id": 6941,
+  "de": "die Abneigung",
+  "tr": "hoşlanmama, antipati, tiksinti",
+  "deBeispiel": "Seine Abneigung gegen große Gruppen wurde mit den Jahren stärker.",
+  "gsw": "Abnäigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Abnäigig gäge grossi Gruppe isch mit de Jaar schtärcher worde."
+ },
+ {
+  "id": 6942,
+  "de": "die Scham",
+  "tr": "utanç",
+  "deBeispiel": "Scham hindert viele Betroffene daran, überhaupt Hilfe zu suchen.",
+  "gsw": "Schaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schaam hinderet vili Betroffeni dra, überhaupt Hilf z sueche."
+ },
+ {
+  "id": 6943,
+  "de": "abspeichern",
+  "tr": "kaydetmek, belleğe almak",
+  "deBeispiel": "Das Gehirn speichert vor allem emotional geladene Szenen dauerhaft ab.",
+  "gsw": "abschpeichere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Hirn tuet vor allem emotional gladeni Szene duurhaft abschpeichere."
+ },
+ {
+  "id": 6944,
+  "de": "ausblenden",
+  "tr": "görmezden gelmek, dikkate almamak",
+  "deBeispiel": "Im Gespräch blenden wir störende Geräusche fast vollständig aus.",
+  "gsw": "uusblände",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Gschpröch tüend mer schtörendi Grüüsch fascht ganz uusblände."
+ },
+ {
+  "id": 6945,
+  "de": "steuern",
+  "tr": "yönlendirmek, yönetmek",
+  "deBeispiel": "Erwartungen steuern die Wahrnehmung stärker, als uns bewusst ist.",
+  "gsw": "schtüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "Erwartige schtüüred d Waarnemig schtärcher, als öis bewusst isch."
+ },
+ {
+  "id": 6946,
+  "de": "hemmen",
+  "tr": "engellemek, ketlemek",
+  "deBeispiel": "Zu strenge Kritik hemmt die Kreativität von Schülern erheblich.",
+  "gsw": "hemme",
+  "gswArtikel": null,
+  "gswBeispiel": "Z schtrengi Kritik hemmt d Kreativität vo Schüeler erheblich."
+ },
+ {
+  "id": 6947,
+  "de": "hervorrufen",
+  "tr": "meydana getirmek, doğurmak",
+  "deBeispiel": "Widersprüchliche Botschaften rufen bei Kindern große Verunsicherung hervor.",
+  "gsw": "hervorruefe",
+  "gswArtikel": null,
+  "gswBeispiel": "Widerschprüchlichi Botschafte tüend bi de Chind e grossi Verunsicherig hervorruefe."
+ },
+ {
+  "id": 6948,
+  "de": "bewirken",
+  "tr": "yol açmak, sağlamak, meydana getirmek",
+  "deBeispiel": "Schon kleine Veränderungen im Alltag bewirken oft erstaunlich viel.",
+  "gsw": "bewirke",
+  "gswArtikel": null,
+  "gswBeispiel": "Scho chliini Veränderige im Alltag bewirked oft erschtuunlich vill."
+ },
+ {
+  "id": 6949,
+  "de": "sich hineinversetzen",
+  "tr": "kendini birinin yerine koymak",
+  "deBeispiel": "Erst ab etwa vier Jahren können Kinder sich in andere hineinversetzen.",
+  "gsw": "sich ineversetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Ersch ab öppe vier Jaar chönd sich d Chind i anderi ineversetze."
+ },
+ {
+  "id": 6950,
+  "de": "deuten",
+  "tr": "yorumlamak, anlamlandırmak",
+  "deBeispiel": "Dasselbe Verhalten wird je nach Erwartung völlig anders gedeutet.",
+  "gsw": "düüte",
+  "gswArtikel": null,
+  "gswBeispiel": "S glich Verhalte wird je nach Erwartig völlig anders düütet."
+ },
+ {
+  "id": 6951,
+  "de": "überschätzen",
+  "tr": "abartmak, olduğundan fazla görmek",
+  "deBeispiel": "Anfänger überschätzen ihr Können häufig, Fachleute eher das Gegenteil.",
+  "gsw": "überschätze",
+  "gswArtikel": null,
+  "gswBeispiel": "Aafänger überschätzed iri Chönne hüüfig, Fachlüüt eender s Gägetäil."
+ },
+ {
+  "id": 6952,
+  "de": "zwanghaft",
+  "tr": "takıntılı, saplantılı",
+  "deBeispiel": "Sein zwanghaftes Kontrollieren der Türen kostete ihn jeden Abend Zeit.",
+  "gsw": "zwanghaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Sis zwanghafte Kontrolliere vo de Türe hät en jede Aabig Ziit koschtet."
+ },
+ {
+  "id": 6953,
+  "de": "labil",
+  "tr": "dengesiz, kırılgan",
+  "deBeispiel": "In dieser Phase war sie emotional außerordentlich labil.",
+  "gsw": "labil",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere Phase isch si emotional uusserordentlich labil gsi."
+ },
+ {
+  "id": 6954,
+  "de": "selektiv",
+  "tr": "seçici",
+  "deBeispiel": "Unsere Erinnerung arbeitet selektiv und formt die Vergangenheit um.",
+  "gsw": "selektiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Öisi Erinnerig schaffet selektiv und formt d Vergangeheit um."
+ },
+ {
+  "id": 6955,
+  "de": "voreilig",
+  "tr": "aceleci, düşünmeden",
+  "deBeispiel": "Man sollte aus einem einzigen Test keine voreiligen Schlüsse ziehen.",
+  "gsw": "voriilig",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer sött us eme einzige Täscht kei voriilige Schlüss zie."
+ },
+ {
+  "id": 6956,
+  "de": "angeboren",
+  "tr": "doğuştan gelen",
+  "deBeispiel": "Ob Temperament angeboren ist, wird bis heute kontrovers diskutiert.",
+  "gsw": "aagbore",
+  "gswArtikel": null,
+  "gswBeispiel": "Öb s Temperamänt aagbore isch, wird bis hüt kontrovers diskutiert."
+ },
+ {
+  "id": 6957,
+  "de": "kognitiv",
+  "tr": "bilişsel",
+  "deBeispiel": "Schlafmangel beeinträchtigt kognitive Leistungen schon nach wenigen Nächten.",
+  "gsw": "kognitiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Schlaafmangel beiiträchtiget kognitivi Leischtige scho nach weneg Nächt."
+ },
+ {
+  "id": 6958,
+  "de": "intuitiv",
+  "tr": "sezgisel",
+  "deBeispiel": "Erfahrene Ärzte urteilen oft intuitiv und liegen dabei richtig.",
+  "gsw": "intuitiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Erfaareni Ärzt urtäiled oft intuitiv und liged debii richtig."
+ },
+ {
+  "id": 6959,
+  "de": "introvertiert",
+  "tr": "içe dönük",
+  "deBeispiel": "Introvertierte Menschen brauchen nach Gesprächen mehr Zeit für sich.",
+  "gsw": "introvertiert",
+  "gswArtikel": null,
+  "gswBeispiel": "Introvertierti Mäntsche bruuched nach Gschpröch meh Ziit für sich."
+ },
+ {
+  "id": 6960,
+  "de": "unumstößlich",
+  "tr": "sarsılmaz, tartışılmaz, kesin",
+  "deBeispiel": "Seine Überzeugung galt ihm als unumstößliche Wahrheit.",
+  "gsw": "unumschtösslich",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Überzügig isch für en e unumschtösslichi Waarheit gsi."
+ },
+ {
+  "id": 6961,
+  "de": "unbeirrt",
+  "tr": "yolundan sapmayan, kararlı, yılmadan",
+  "deBeispiel": "Trotz aller Kritik verfolgte sie ihr Ziel unbeirrt weiter.",
+  "gsw": "unbeirrt",
+  "gswArtikel": null,
+  "gswBeispiel": "Trotz aller Kritik hät si ires Ziil unbeirrt wiiterverfolgt."
+ },
+ {
+  "id": 6962,
+  "de": "behutsam",
+  "tr": "ihtiyatlı, özenli, nazik",
+  "deBeispiel": "Das Thema muss man behutsam ansprechen, sonst verhärten sich die Fronten.",
+  "gsw": "behuetsam",
+  "gswArtikel": null,
+  "gswBeispiel": "S Thema mues mer behuetsam aaschpräche, susch verhärted sich d Fronte."
+ },
+ {
+  "id": 6963,
+  "de": "herablassend",
+  "tr": "tepeden bakan, küçümseyici",
+  "deBeispiel": "Sein herablassender Ton machte eine sachliche Debatte unmöglich.",
+  "gsw": "herablassend",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin herablassende Ton hät e sachlichi Debatte unmöglich gmacht."
+ },
+ {
+  "id": 6964,
+  "de": "abschätzig",
+  "tr": "aşağılayıcı, hor gören",
+  "deBeispiel": "Über die Arbeit seiner Kollegen äußerte er sich abschätzig.",
+  "gsw": "abschätzig",
+  "gswArtikel": null,
+  "gswBeispiel": "Über d Arbet vo sine Kollege hät er sich abschätzig gäusseret."
+ },
+ {
+  "id": 6965,
+  "de": "wohlwollend",
+  "tr": "iyi niyetli, olumlu bakan, hayırhah",
+  "deBeispiel": "Die Jury nahm den Entwurf wohlwollend zur Kenntnis.",
+  "gsw": "wohlwollend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Jury hät de Entwurf wohlwollend zur Kenntnis gnoo."
+ },
+ {
+  "id": 6966,
+  "de": "geringschätzig",
+  "tr": "küçümseyen, hafife alan",
+  "deBeispiel": "Sie sprach geringschätzig über die Bemühungen der Kommission.",
+  "gsw": "geringschätzig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät geringschätzig über d Bemüeige vo de Kommission gredt."
+ },
+ {
+  "id": 6967,
+  "de": "unvoreingenommen",
+  "tr": "önyargısız, tarafsız",
+  "deBeispiel": "Ein Gutachter sollte die Unterlagen unvoreingenommen prüfen.",
+  "gsw": "unvoriigenomme",
+  "gswArtikel": null,
+  "gswBeispiel": "En Guetachter sött d Underlage unvoriigenomme prüefe."
+ },
+ {
+  "id": 6968,
+  "de": "verbissen",
+  "tr": "inatçı, hırslı, dişini sıkmış",
+  "deBeispiel": "Er verteidigte seine These mit verbissener Entschlossenheit.",
+  "gsw": "verbisse",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sini These mit verbissener Entschlosseheit verteidiget."
+ },
+ {
+  "id": 6969,
+  "de": "umsichtig",
+  "tr": "basiretli, tedbirli, her yönü düşünen",
+  "deBeispiel": "Die Leitung hat in der Krise umsichtig gehandelt.",
+  "gsw": "umsichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Leitig hät i de Chrise umsichtig ghandlet."
+ },
+ {
+  "id": 6970,
+  "de": "besonnen",
+  "tr": "sağduyulu, soğukkanlı, ölçülü",
+  "deBeispiel": "Gerade in aufgeheizten Debatten wirkt ihre besonnene Art beruhigend.",
+  "gsw": "bsunne",
+  "gswArtikel": null,
+  "gswBeispiel": "Grad in ufghitzte Debatte wirkt iri bsunneni Art beruehigend."
+ },
+ {
+  "id": 6971,
+  "de": "überheblich",
+  "tr": "kibirli, burnu büyük",
+  "deBeispiel": "Wer andere Disziplinen überheblich abtut, verliert schnell an Glaubwürdigkeit.",
+  "gsw": "überheblich",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer anderi Disziplinen überheblich abtuet, verliert schnäll a Glaubwürdigkeit."
+ },
+ {
+  "id": 6972,
+  "de": "anmaßend",
+  "tr": "haddini bilmez, küstah",
+  "deBeispiel": "Es wäre anmaßend, über fremde Lebensentwürfe zu urteilen.",
+  "gsw": "aamaassend",
+  "gswArtikel": null,
+  "gswBeispiel": "Es wär aamaassend, über fremdi Läbensentwürf z urtäile."
+ },
+ {
+  "id": 6973,
+  "de": "aufdringlich",
+  "tr": "sırnaşık, rahatsız edici ölçüde ısrarcı",
+  "deBeispiel": "Die Werbung im Text wirkt aufdringlich und stört den Lesefluss.",
+  "gsw": "uufdringlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Werbig im Täxt wirkt uufdringlich und schtört de Läsefluss."
+ },
+ {
+  "id": 6974,
+  "de": "distanziert",
+  "tr": "mesafeli, soğuk",
+  "deBeispiel": "Der Autor betrachtet seine eigene Jugend auffallend distanziert.",
+  "gsw": "distanziert",
+  "gswArtikel": null,
+  "gswBeispiel": "De Autor betrachtet sini eigeni Juged uffallend distanziert."
+ },
+ {
+  "id": 6975,
+  "de": "schroff",
+  "tr": "sert, ters, haşin",
+  "deBeispiel": "Seine schroffe Antwort beendete das Gespräch abrupt.",
+  "gsw": "schroff",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini schroffi Antwort hät s Gschpröch abrupt beendet."
+ },
+ {
+  "id": 6976,
+  "de": "unterschwellig",
+  "tr": "üstü örtülü, bilinçaltına seslenen, sezdirmeden",
+  "deBeispiel": "In dem Bericht schwingt unterschwellig eine Warnung mit.",
+  "gsw": "underschwellig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Bricht schwingt underschwellig e Warnig mit."
+ },
+ {
+  "id": 6977,
+  "de": "latent",
+  "tr": "gizli, örtük, potansiyel hâlde",
+  "deBeispiel": "Der Konflikt blieb jahrelang latent, bevor er offen ausbrach.",
+  "gsw": "latent",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konflikt isch jaarelang latent bliibe, bevor er offe uusbroche isch."
+ },
+ {
+  "id": 6978,
+  "de": "augenscheinlich",
+  "tr": "görünüşe göre, apaçık",
+  "deBeispiel": "Die Maßnahme hat augenscheinlich nicht die erhoffte Wirkung erzielt.",
+  "gsw": "augeschiinlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Massnaam hät augeschiinlich nöd di erhoffti Wirkig erziilt."
+ },
+ {
+  "id": 6979,
+  "de": "vielsagend",
+  "tr": "çok şey anlatan, manidar",
+  "deBeispiel": "Ihr Schweigen an dieser Stelle war ausgesprochen vielsagend.",
+  "gsw": "villsägend",
+  "gswArtikel": null,
+  "gswBeispiel": "Ires Schwiige a dere Schtell isch uusgschproche villsägend gsi."
+ },
+ {
+  "id": 6980,
+  "de": "tiefgründig",
+  "tr": "derinlikli, derin anlamlı",
+  "deBeispiel": "Der Essay wirkt auf den ersten Blick schlicht, ist aber tiefgründig.",
+  "gsw": "tüüfgründig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Essay wirkt uf de erscht Blick schlicht, isch aber tüüfgründig."
+ },
+ {
+  "id": 6981,
+  "de": "schlüssig",
+  "tr": "tutarlı, mantıklı, ikna edici",
+  "deBeispiel": "Die Argumentation ist elegant, aber nicht in allen Punkten schlüssig.",
+  "gsw": "schlüssig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Argumentation isch elegant, aber nöd i allne Pünkt schlüssig."
+ },
+ {
+  "id": 6982,
+  "de": "prägnant",
+  "tr": "özlü, veciz, çarpıcı biçimde kısa",
+  "deBeispiel": "In wenigen prägnanten Sätzen fasste er die Debatte zusammen.",
+  "gsw": "prägnant",
+  "gswArtikel": null,
+  "gswBeispiel": "I weneg prägnante Sätz hät er d Debatte zämegfasst."
+ },
+ {
+  "id": 6983,
+  "de": "unerbittlich",
+  "tr": "acımasız, amansız, taviz tanımaz",
+  "deBeispiel": "Die Zeit drängt unerbittlich, eine Entscheidung ist überfällig.",
+  "gsw": "unerbittlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ziit drängt unerbittlich, en Entschäid isch überfällig."
+ },
+ {
+  "id": 6984,
+  "de": "beharrlich",
+  "tr": "sebatlı, ısrarlı, azimli",
+  "deBeispiel": "Beharrlich fragte die Journalistin nach den fehlenden Zahlen.",
+  "gsw": "beharrlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Beharrlich hät d Journalischtin nach de fählende Zaale gfrogt."
+ },
+ {
+  "id": 6985,
+  "de": "zaghaft",
+  "tr": "çekingen, ürkek, tereddütlü",
+  "deBeispiel": "Die Reformen wurden nur zaghaft und mit großer Verspätung umgesetzt.",
+  "gsw": "zaghaft",
+  "gswArtikel": null,
+  "gswBeispiel": "D Reforme sind nu zaghaft und mit grosser Verschpötig umgsetzt worde."
+ },
+ {
+  "id": 6986,
+  "de": "bedächtig",
+  "tr": "ölçülü, ağırdan alan, düşünerek davranan",
+  "deBeispiel": "Er wählte seine Worte bedächtig, um niemanden zu verletzen.",
+  "gsw": "bedächtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sini Wört bedächtig uusgwählt, zum niemert verletze."
+ },
+ {
+  "id": 6987,
+  "de": "sich sträuben",
+  "tr": "direnmek, karşı koymak, yanaşmamak",
+  "deBeispiel": "Viele Betriebe sträuben sich gegen die neuen Auflagen.",
+  "gsw": "sich schträube",
+  "gswArtikel": null,
+  "gswBeispiel": "Vili Betrieb schträubed sich gäge di nöie Uuflaage."
+ },
+ {
+  "id": 6988,
+  "de": "zurückschrecken",
+  "tr": "çekinmek, geri durmak, ürkmek",
+  "deBeispiel": "Vor unbequemen Schlussfolgerungen schreckt die Autorin nicht zurück.",
+  "gsw": "zruggschrecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor unbequeme Schlussfolgerige tuet d Autorin nöd zruggschrecke."
+ },
+ {
+  "id": 6989,
+  "de": "herabsetzen",
+  "tr": "küçük düşürmek, değerini azaltmak",
+  "deBeispiel": "Niemand darf die Leistung anderer öffentlich herabsetzen.",
+  "gsw": "herabsetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Niemert dörf d Leischtig vo andere öffentlich herabsetze."
+ },
+ {
+  "id": 6990,
+  "de": "sich fügen",
+  "tr": "boyun eğmek, uymak",
+  "deBeispiel": "Am Ende fügte er sich der Mehrheit, wenn auch widerwillig.",
+  "gsw": "sich füege",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Schluss hät er sich de Mehrheit gfüegt, wenn au widerwillig."
+ },
+ {
+  "id": 6991,
+  "de": "zaudern",
+  "tr": "duraksamak, ayak sürümek",
+  "deBeispiel": "Die Politik zaudert, während die Kosten weiter steigen.",
+  "gsw": "zaudere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Politik zauderet, während d Koschte wiiter schtiiged."
+ },
+ {
+  "id": 6992,
+  "de": "absehen",
+  "tr": "vazgeçmek, göz ardı etmek, öngörmek",
+  "deBeispiel": "Von einer Klage hat das Unternehmen vorerst abgesehen.",
+  "gsw": "abgsee",
+  "gswArtikel": null,
+  "gswBeispiel": "Vo ere Chlaag hät s Unternäme vorersch abgsee."
+ },
+ {
+  "id": 6993,
+  "de": "entgegnen",
+  "tr": "karşılık vermek, itiraz olarak söylemek",
+  "deBeispiel": "Auf diesen Vorwurf entgegnete sie mit auffallender Ruhe.",
+  "gsw": "entgägne",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf de Vorwurf hät si mit uffallender Rue entgägnet."
+ },
+ {
+  "id": 6994,
+  "de": "anmuten",
+  "tr": "izlenimi vermek, gibi görünmek",
+  "deBeispiel": "Der Vorschlag mutet auf den ersten Blick reichlich naiv an.",
+  "gsw": "aamuete",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorschlag tuet uf de erscht Blick ziemlich naiv aamuete."
+ },
+ {
+  "id": 6995,
+  "de": "sich erweisen",
+  "tr": "çıkmak, olduğu anlaşılmak",
+  "deBeispiel": "Die anfängliche Skepsis erwies sich später als berechtigt.",
+  "gsw": "sich erwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "Di aafänglich Skepsis hät sich schpööter as berechtigt erwise."
+ },
+ {
+  "id": 6996,
+  "de": "überwiegen",
+  "tr": "ağır basmak, baskın gelmek",
+  "deBeispiel": "In der Diskussion überwogen am Ende die kritischen Stimmen.",
+  "gsw": "überwige",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Diskussion händ am Schluss di kritische Schtimme überwoge."
+ },
+ {
+  "id": 6997,
+  "de": "vorherrschen",
+  "tr": "hâkim olmak, egemen olmak",
+  "deBeispiel": "Lange Zeit herrschte in der Forschung eine ganz andere Auffassung vor.",
+  "gsw": "vorherrsche",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Forschig hät langi Ziit e ganz anderi Uffassig vorherrscht."
+ },
+ {
+  "id": 6998,
+  "de": "innewohnen",
+  "tr": "içkin olmak, doğasında bulunmak",
+  "deBeispiel": "Jeder Utopie wohnt ein Stück Selbsttäuschung inne.",
+  "gsw": "innewohne",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedere Utopie tuet es Schtuck Sälbschttüüschig innewohne."
+ },
+ {
+  "id": 6999,
+  "de": "verhehlen",
+  "tr": "gizlemek, saklamak",
+  "deBeispiel": "Er verhehlte seine Enttäuschung über das Ergebnis nicht.",
+  "gsw": "verhäle",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sini Enttüüschig über s Ergäbnis nöd verhäle."
+ },
+ {
+  "id": 7000,
+  "de": "erahnen",
+  "tr": "sezmek, hissetmek, kestirmek",
+  "deBeispiel": "Die Tragweite dieser Entscheidung lässt sich erst erahnen.",
+  "gsw": "erahne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tragwiiti vo dem Entschäid laat sich ersch erahne."
+ },
+ {
+  "id": 7001,
+  "de": "sich bewähren",
+  "tr": "kendini kanıtlamak, işe yaradığını göstermek",
+  "deBeispiel": "Das Verfahren hat sich auch unter schwierigen Bedingungen bewährt.",
+  "gsw": "sich bewääre",
+  "gswArtikel": null,
+  "gswBeispiel": "S Verfaare hät sich au under schwirige Bedingige bewäärt."
+ },
+ {
+  "id": 7002,
+  "de": "der Hang",
+  "tr": "eğilim, düşkünlük, temayül",
+  "deBeispiel": "Sein Hang zur Übertreibung schwächt sonst gute Argumente.",
+  "gsw": "Hang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin Hang zur Übertriibig schwächt susch gueti Argumänt."
+ },
+ {
+  "id": 7003,
+  "de": "die Gleichgültigkeit",
+  "tr": "kayıtsızlık, umursamazlık",
+  "deBeispiel": "Die größte Gefahr ist nicht der Widerspruch, sondern die Gleichgültigkeit.",
+  "gsw": "Gliichgültigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di gröschti Gfaar isch nöd de Widerschpruch, sondern d Gliichgültigkeit."
+ },
+ {
+  "id": 7004,
+  "de": "die Vehemenz",
+  "tr": "sertlik, hararet, coşkunluk",
+  "deBeispiel": "Mit unerwarteter Vehemenz wies er die Vorwürfe zurück.",
+  "gsw": "Vehemenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit unerwarteter Vehemenz hät er d Vorwürf zruggwise."
+ },
+ {
+  "id": 7005,
+  "de": "die Schattierung",
+  "tr": "ince ayrım, tonlama, nüans",
+  "deBeispiel": "Der Text kennt viele Schattierungen zwischen Zustimmung und Ablehnung.",
+  "gsw": "Schattierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Täxt kennt vili Schattierige zwüschet Zueschtimmig und Ablehnig."
+ },
+ {
+  "id": 7006,
+  "de": "die Gesinnung",
+  "tr": "zihniyet, dünya görüşü, tutum",
+  "deBeispiel": "Über die politische Gesinnung des Autors sagt der Roman wenig.",
+  "gsw": "Gsinnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d politisch Gsinnig vom Autor sait de Roman weneg."
+ },
+ {
+  "id": 7007,
+  "de": "der Gleichmut",
+  "tr": "sükûnet, istifini bozmama, dinginlik",
+  "deBeispiel": "Mit erstaunlichem Gleichmut nahm sie die Niederlage hin.",
+  "gsw": "Gliichmuet",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mit erschtuunlichem Gliichmuet hät si d Niderlaag hignoo."
+ },
+ {
+  "id": 7008,
+  "de": "die Abgeklärtheit",
+  "tr": "olgunluk, yaşanmışlıktan gelen dinginlik",
+  "deBeispiel": "Die Abgeklärtheit des Alters ersetzt bisweilen den Ehrgeiz der Jugend.",
+  "gsw": "Abgklärtheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abgklärtheit vom Alter ersetzt zwüschedure de Ehrgiiz vo de Juged."
+ },
+ {
+  "id": 7009,
+  "de": "der Argwohn",
+  "tr": "kuşku, şüphe, güvensizlik",
+  "deBeispiel": "Die plötzliche Kehrtwende weckte bei vielen Beobachtern Argwohn.",
+  "gsw": "Argwoon",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di plötzlich Chehrtwändi hät bi vilne Beobachter Argwoon gweckt."
+ },
+ {
+  "id": 7010,
+  "de": "der Überdruss",
+  "tr": "bıkkınlık, usanç",
+  "deBeispiel": "Der Überdruss an leeren Versprechen wächst in der Bevölkerung.",
+  "gsw": "Überdruss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Überdruss a leere Verschpräche wachst i de Bevölkerig."
+ },
+ {
+  "id": 7011,
+  "de": "die Wehmut",
+  "tr": "hüzün, buruk özlem",
+  "deBeispiel": "Mit leiser Wehmut blickte er auf die vergangenen Jahre zurück.",
+  "gsw": "Weemuet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit liisere Weemuet hät er uf di vergangene Jaar zruggblickt."
+ },
+ {
+  "id": 7012,
+  "de": "die Aufrichtigkeit",
+  "tr": "içtenlik, dürüstlük, samimiyet",
+  "deBeispiel": "An seiner Aufrichtigkeit zweifelte im Saal niemand.",
+  "gsw": "Uufrichtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "A sinere Uufrichtigkeit hät im Saal niemert zwiiflet."
+ }
+]

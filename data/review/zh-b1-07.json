@@ -1,0 +1,1028 @@
+[
+ {
+  "id": 2015,
+  "de": "das Gras",
+  "tr": "çim, ot",
+  "deBeispiel": "Wir lagen den ganzen Tag im Gras.",
+  "gsw": "Graas",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir sind de ganz Tag im Graas gläge."
+ },
+ {
+  "id": 2016,
+  "de": "die Gratulation",
+  "tr": "tebrik",
+  "deBeispiel": "Herzliche Gratulation! Sie haben gewonnen!",
+  "gsw": "Gratulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Härzlichi Gratulation! Si händ gwunne!"
+ },
+ {
+  "id": 2017,
+  "de": "gratis",
+  "tr": "bedava, ücretsiz",
+  "deBeispiel": "Diese Reparatur kostet Sie gar nichts, wir machen das gratis für Sie.",
+  "gsw": "gratis",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Reparatur choschtet Si gar nüüt, mir mached das gratis für Si.",
+  "ayniLehce": [
+   "kostenlos (A2)"
+  ]
+ },
+ {
+  "id": 2018,
+  "de": "greifen",
+  "tr": "tutmak, kapmak",
+  "deBeispiel": "Greifen Sie doch zu!",
+  "gsw": "griife",
+  "gswArtikel": null,
+  "gswBeispiel": "Si dörfed gärn zuegriife!"
+ },
+ {
+  "id": 2019,
+  "de": "die Grenze",
+  "tr": "sınır",
+  "deBeispiel": "An der Grenze musst du deinen Ausweis zeigen.",
+  "gsw": "Gränze",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Gränze muesch din Uuswiis zäige."
+ },
+ {
+  "id": 2020,
+  "de": "grillieren",
+  "tr": "mangal yapmak, ızgara yapmak",
+  "deBeispiel": "Heute wollen wir im Garten grillieren.",
+  "gsw": "grilliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt wänd mir im Garte grilliere.",
+  "ayniLehce": [
+   "grillen (A1)"
+  ]
+ },
+ {
+  "id": 2021,
+  "de": "der Grill",
+  "tr": "mangal, ızgara",
+  "deBeispiel": "Kannst du mir deinen Grill leihen? Wir wollen am Wochenende ein Picknick machen.",
+  "gsw": "Grill",
+  "gswArtikel": "de",
+  "gswBeispiel": "Chasch mir din Grill usleene? Mir wänd am Wuchenänd es Picknick mache."
+ },
+ {
+  "id": 2022,
+  "de": "Groß-",
+  "tr": "büyük- (ön ek)",
+  "deBeispiel": "z.B. die Großeltern, die Großmutter, der Großvater",
+  "gsw": "Grooss-",
+  "gswArtikel": null,
+  "gswBeispiel": "z.B. d Groosseltere, d Groossmueter, de Groossvatter"
+ },
+ {
+  "id": 2023,
+  "de": "gründen",
+  "tr": "kurmak (şirket, dernek)",
+  "deBeispiel": "Frau Bauer hat eine eigene Firma gegründet.",
+  "gsw": "gründe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Frau Bauer hät en äigeni Firma gründet."
+ },
+ {
+  "id": 2024,
+  "de": "der Grund",
+  "tr": "sebep, neden; zemin",
+  "deBeispiel": "1. Sie haben Ihre Stelle gekündigt. Aus welchem Grund? 2. Sie haben keinen Grund, sich zu beschweren.",
+  "gsw": "Grund",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Si händ Iri Schtell kündet. Us welem Grund? 2. Si händ kein Grund, sich z beschwäre."
+ },
+ {
+  "id": 2025,
+  "de": "gründlich",
+  "tr": "esaslı, iyice, derinlemesine",
+  "deBeispiel": "1. Ich möchte die Wohnung gründlich reinigen, bevor der Besuch kommt. 2. Waschen Sie sich gründlich die Hände.",
+  "gsw": "gründlich",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich möcht d Wonig gründlich putze, bevor de Bsuech chunt. 2. Wäsched Si d Händ gründlich."
+ },
+ {
+  "id": 2026,
+  "de": "das Grundstück",
+  "tr": "arsa",
+  "deBeispiel": "Wir wollen ein Haus bauen und suchen ein günstiges Grundstück.",
+  "gsw": "Grundschtück",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir wänd es Huus baue und sueched es günschtigs Grundschtück."
+ },
+ {
+  "id": 2027,
+  "de": "grüßen",
+  "tr": "selamlamak",
+  "deBeispiel": "1. Wer war die Frau, die du eben gegrüßt hast? 2. Ich soll Sie von Frau Meier grüßen.",
+  "gsw": "grüesse",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wer isch d Frau gsii, wo du grad grüesst häsch? 2. Ich söll Si vo de Frau Meier grüesse."
+ },
+ {
+  "id": 2028,
+  "de": "gucken",
+  "tr": "bakmak",
+  "deBeispiel": "1. Guck doch mal! Es schneit. 2. Was bedeutet dieses Wort? – Guck doch im Wörterbuch nach.",
+  "gsw": "luege",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Chum cho luege! Es schniit. 2. Was häisst das Wort? – Chasch im Wörterbuech naaluege.",
+  "ayniLehce": [
+   "schauen (B1)"
+  ]
+ },
+ {
+  "id": 2029,
+  "de": "die Gymnastik",
+  "tr": "jimnastik",
+  "deBeispiel": "Ich mache jeden Morgen Gymnastik.",
+  "gsw": "Gymnaschtik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich mache jede Morge Gymnaschtik."
+ },
+ {
+  "id": 2030,
+  "de": "das Hackfleisch",
+  "tr": "kıyma",
+  "deBeispiel": "Geben Sie mir bitte 500g Hackfleisch.",
+  "gsw": "Ghackets",
+  "gswArtikel": "s",
+  "gswBeispiel": "Gänd Si mir bitte 500 Gramm Ghackets.",
+  "ayniLehce": [
+   "Faschiertes (B1)"
+  ]
+ },
+ {
+  "id": 2031,
+  "de": "der Hafen",
+  "tr": "liman",
+  "deBeispiel": "Wenn du in Hamburg bist, musst du dir unbedingt den Hafen ansehen.",
+  "gsw": "Hafe",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wänn du z Hamburg bisch, muesch der unbedingt de Hafe aaluege."
+ },
+ {
+  "id": 2032,
+  "de": "hageln",
+  "tr": "dolu yağmak",
+  "deBeispiel": "Bei Gewitter kann es auch hageln.",
+  "gsw": "hagle",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi eme Gwitter cha s au hagle."
+ },
+ {
+  "id": 2034,
+  "de": "halb",
+  "tr": "yarım, buçuk",
+  "deBeispiel": "1. Treffen wir uns um halb neun? 2. Bei dieser Firma habe ich ein halbes Jahr gearbeitet. 3. Ich gebe Ihnen die Tomaten ",
+  "gsw": "halb",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Träffed mir eus am halbi nüüni? 2. Bi dere Firma han ich es halbs Jaar gschaffet."
+ },
+ {
+  "id": 2035,
+  "de": "halbtags",
+  "tr": "yarım gün, yarı zamanlı",
+  "deBeispiel": "Ich habe ein kleines Kind und kann nicht acht Stunden am Tag arbeiten. Deshalb möchte ich halbtags arbeiten.",
+  "gsw": "halbtags",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha es chliises Chind und cha nöd acht Schtund am Tag schaffe. Drum möcht ich halbtags schaffe."
+ },
+ {
+  "id": 2036,
+  "de": "die Hälfte",
+  "tr": "yarı, yarım",
+  "deBeispiel": "1. Bitte teilt euch die Schokolade. Jeder bekommt die Hälfte. 2. Die Hälfte vom Urlaub ist schon vorbei. 3. Was hat der ",
+  "gsw": "Helfti",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Bitte täiled eu d Schoggi. Jede überchunt d Helfti. 2. D Helfti vo de Ferie isch scho verbii."
+ },
+ {
+  "id": 2037,
+  "de": "das Hallenbad",
+  "tr": "kapalı yüzme havuzu",
+  "deBeispiel": "Sie geht jeden Tag zum Schwimmen ins Hallenbad.",
+  "gsw": "Hallebad",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si gaat jede Tag go schwüme is Hallebad."
+ },
+ {
+  "id": 2038,
+  "de": "halt",
+  "tr": "işte, ne yapalım ki",
+  "deBeispiel": "Es gibt leider keine Karten mehr. – Schade. Da kann man nichts machen. Das ist halt so.",
+  "gsw": "halt",
+  "gswArtikel": null,
+  "gswBeispiel": "Es git läider keini Charte me. – Schad. Da cha me nüüt mache. Das isch halt eso.",
+  "ayniLehce": [
+   "Halt (B1)"
+  ]
+ },
+ {
+  "id": 2039,
+  "de": "haltbar",
+  "tr": "dayanıklı",
+  "deBeispiel": "Diese Tomaten sind mindestens 2 Wochen haltbar.",
+  "gsw": "haltbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Tomate sind mindeschtens zwoo Wuche haltbar."
+ },
+ {
+  "id": 2040,
+  "de": "der Halt",
+  "tr": "durak, dayanak",
+  "deBeispiel": "6. Halt, Polizei! Fahren Sie bitte an den Straßenrand. 7. Die Wurst hält sich noch ein paar Tage. Nächster Halt ist am S",
+  "gsw": "Halt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De nöchscht Halt isch am Hauptbaanhof.",
+  "ayniLehce": [
+   "halt (B1)"
+  ]
+ },
+ {
+  "id": 2041,
+  "de": "der Hammer",
+  "tr": "çekiç",
+  "deBeispiel": "Ich möchte ein Bild aufhängen. Hast du einen Hammer für mich?",
+  "gsw": "Hammer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich möcht es Bild ufhänke. Häsch en Hammer für mich?"
+ },
+ {
+  "id": 2042,
+  "de": "der Handwerker",
+  "tr": "zanaatkâr, usta",
+  "deBeispiel": "- Morgen sind bei uns die Handwerker. Wir bekommen eine neue Badewanne.",
+  "gsw": "Handwärcher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Morn sind bi eus d Handwärcher. Mir überchömed e neui Badwanne."
+ },
+ {
+  "id": 2043,
+  "de": "handeln",
+  "tr": "ticaret yapmak, söz konusu olmak",
+  "deBeispiel": "1. Herr Huber hat ein kleines Geschäft. Er handelt mit Obst und Gemüse. 2. Kann ich Sie bitte mal sprechen? – Worum hand",
+  "gsw": "handle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Herr Huber hät es chliises Gschäft. Er handlet mit Obscht und Gmües."
+ },
+ {
+  "id": 2044,
+  "de": "der Handel",
+  "tr": "ticaret",
+  "deBeispiel": "Der Handel mit Computern ist ein gutes Geschäft.",
+  "gsw": "Handel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Handel mit Computer isch es guets Gschäft."
+ },
+ {
+  "id": 2045,
+  "de": "der Händler",
+  "tr": "satıcı, tüccar",
+  "deBeispiel": "- Ich gehe zum Gemüsehändler, soll ich dir etwas mitbringen?",
+  "gsw": "Händler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich gaa zum Gmüeshändler, söll ich dir öppis mitbringe?"
+ },
+ {
+  "id": 2046,
+  "de": "hassen",
+  "tr": "nefret etmek",
+  "deBeispiel": "1. Ich hasse Autofahren. 2. Ich hasse es, zu spät zu kommen.",
+  "gsw": "hasse",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich hasse s Autofaare. 2. Ich hasse s, z schpaat z choo."
+ },
+ {
+  "id": 2047,
+  "de": "häufig",
+  "tr": "sık, sık sık",
+  "deBeispiel": "Haben Sie häufig Kopfschmerzen? Dann sollten Sie nicht so lange am Computer sitzen.",
+  "gsw": "hüüfig",
+  "gswArtikel": null,
+  "gswBeispiel": "Händ Si hüüfig Chopfwee? Dänn sötted Si nöd so lang am Computer hocke."
+ },
+ {
+  "id": 2049,
+  "de": "der Hauptbahnhof",
+  "tr": "merkez tren istasyonu, ana gar",
+  "deBeispiel": "Treffen wir uns am Hauptbahnhof?",
+  "gsw": "Hauptbaanhof",
+  "gswArtikel": "de",
+  "gswBeispiel": "Träffed mir eus am Hauptbaanhof?"
+ },
+ {
+  "id": 2050,
+  "de": "die Hausfrau/Hausmann",
+  "tr": "ev hanımı, ev erkeği",
+  "deBeispiel": "Meine Frau ist Hausfrau und kümmert sich um die Kinder./Mein Mann ist Hausmann und kümmert sich um die Kinder.",
+  "gsw": "Huusfrau",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Frau isch Huusfrau und luegt zu de Chind.",
+  "ayniLehce": [
+   "Hausfrau (A1)"
+  ]
+ },
+ {
+  "id": 2051,
+  "de": "der Hausmeister",
+  "tr": "kapıcı, bina görevlisi",
+  "deBeispiel": "- Der Hausmeister hat mir geholfen, den Schrank in die Wohnung zu tragen.",
+  "gsw": "Abwart",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Abwart hät mir ghulfe, de Chaschte i d Wonig z träge.",
+  "ayniLehce": [
+   "Abwart (B1)"
+  ]
+ },
+ {
+  "id": 2052,
+  "de": "die Haut",
+  "tr": "deri, cilt",
+  "deBeispiel": "Haben Sie eine Creme für trockene Haut?",
+  "gsw": "Huut",
+  "gswArtikel": "d",
+  "gswBeispiel": "Händ Si e Crème für trocheni Huut?"
+ },
+ {
+  "id": 2053,
+  "de": "heben",
+  "tr": "kaldırmak",
+  "deBeispiel": "1. Kannst du mir helfen? Das Paket kann ich allein nicht heben. 2. Wenn Sie für diesen Vorschlag sind, heben Sie bitte d",
+  "gsw": "lupfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch mir hälfe? S Paket cha ich eläi nöd lupfe."
+ },
+ {
+  "id": 2054,
+  "de": "heim",
+  "tr": "eve",
+  "deBeispiel": "Ich will jetzt heim.",
+  "gsw": "häi",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich will jetz häi."
+ },
+ {
+  "id": 2055,
+  "de": "das Heim",
+  "tr": "yurt, ev",
+  "deBeispiel": "Meine Oma wohnt in einem Seniorenheim.",
+  "gsw": "Häim",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Groossmueter wont in eme Altershäim."
+ },
+ {
+  "id": 2056,
+  "de": "heimlich",
+  "tr": "gizlice, gizli",
+  "deBeispiel": "Gestern habe ich gehört, dass mein Sohn heimlich raucht.",
+  "gsw": "häimlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter han ich ghöört, dass min Bueb häimlich rauchet."
+ },
+ {
+  "id": 2057,
+  "de": "das Heimweh",
+  "tr": "sıla hasreti, yurt özlemi",
+  "deBeispiel": "Ich habe oft Heimweh nach meiner Familie.",
+  "gsw": "Häimwee",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha oft Häimwee nach minere Familie."
+ },
+ {
+  "id": 2058,
+  "de": "heizen",
+  "tr": "ısıtmak",
+  "deBeispiel": "1. Wir heizen mit Öl. 2. Ziehen Sie sich warm an. In der Halle ist nicht geheizt.",
+  "gsw": "häize",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir häized mit Öl. 2. Leged Si sich warm aa. I de Halle isch nöd ghäizt."
+ },
+ {
+  "id": 2059,
+  "de": "der Held",
+  "tr": "kahraman",
+  "deBeispiel": "1. Er spielt gern den Helden. 2. Sie ist die Heldin des Tages.",
+  "gsw": "Held",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Er schpilt gärn de Held. 2. Si isch d Heldin vom Tag."
+ },
+ {
+  "id": 2060,
+  "de": "die Heldin",
+  "tr": "kadın kahraman",
+  "deBeispiel": "1. Er spielt gern den Helden. 2. Sie ist die Heldin des Tages.",
+  "gsw": "Heldin",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Er schpilt gärn de Held. 2. Si isch d Heldin vom Tag."
+ },
+ {
+  "id": 2061,
+  "de": "das Hend(e)l",
+  "tr": "piliç, tavuk",
+  "deBeispiel": "Zum Mittagessen gibt es Hendl mit Reis.",
+  "gsw": "Güggeli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zum Zmittag git s Güggeli mit Riis."
+ },
+ {
+  "id": 2064,
+  "de": "die Herausforderung",
+  "tr": "meydan okuma, zorluk",
+  "deBeispiel": "Das Spiel ist eine Herausforderung.",
+  "gsw": "Useforderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Schpiil isch e richtigi Useforderig."
+ },
+ {
+  "id": 2066,
+  "de": "die Herkunft",
+  "tr": "köken, menşe",
+  "deBeispiel": "Viele Leute fragen mich nach meiner Herkunft.",
+  "gsw": "Härkunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vil Lüüt fräged mich nach minere Härkunft."
+ },
+ {
+  "id": 2067,
+  "de": "der Hersteller",
+  "tr": "üretici",
+  "deBeispiel": "- Ihr Handy ist kaputt? Wir schicken es an den Hersteller zurück und lassen es reparieren.",
+  "gsw": "Herschteller",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ires Handy isch kaputt? Mir schicked s zum Herschteller zrugg und lönd s flicke."
+ },
+ {
+  "id": 2068,
+  "de": "herunter-",
+  "tr": "aşağı, indirme",
+  "deBeispiel": "Ich habe mir Musik aus dem Internet (he)runtergeladen.",
+  "gsw": "abe-",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha mir Musig usem Internet abeglade."
+ },
+ {
+  "id": 2069,
+  "de": "(herunter-)fahren",
+  "tr": "kapatmak, aşağı inmek",
+  "deBeispiel": "Zum Schluss musst du den Computer herunterfahren.",
+  "gsw": "abefaare",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Schluss muesch de Computer abefaare."
+ },
+ {
+  "id": 2070,
+  "de": "das Herz",
+  "tr": "kalp, yürek",
+  "deBeispiel": "1. Ich bin ganz nervös. Mir klopft das Herz. 2. Wir müssen Ihr Herz untersuchen.",
+  "gsw": "Härz",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Ich bi ganz nervöös. Mir chlopfet s Härz. 2. Mir müend Ires Härz undersueche."
+ },
+ {
+  "id": 2072,
+  "de": "heutige",
+  "tr": "bugünkü, günümüz",
+  "deBeispiel": "Die heutigen Computer können viel mehr als noch vor ein paar Jahren.",
+  "gsw": "hüttig-",
+  "gswArtikel": null,
+  "gswBeispiel": "Di hüttige Computer chönd vil mee als no vor es paar Jaar."
+ },
+ {
+  "id": 2074,
+  "de": "hierher",
+  "tr": "buraya",
+  "deBeispiel": "Ich komme oft hierher. In diesem Café gibt es guten Kuchen.",
+  "gsw": "dahäre",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich chume oft dahäre. I dem Kafi git s guete Chueche."
+ },
+ {
+  "id": 2075,
+  "de": "(hinunter) runterwerfen",
+  "tr": "aşağı atmak",
+  "deBeispiel": "Kannst du mir bitte den Schlüssel runterwerfen? Ich habe meinen vergessen.",
+  "gsw": "aberüere",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch mir bitte de Schlüssel aberüere? Ich ha minen vergässe."
+ },
+ {
+  "id": 2077,
+  "de": "hinterlassen",
+  "tr": "geride bırakmak (mesaj, iz)",
+  "deBeispiel": "Möchten Sie eine Nachricht hinterlassen?",
+  "gsw": "hinderlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänd Si e Naachricht hinderlaa?"
+ },
+ {
+  "id": 2078,
+  "de": "hinterher",
+  "tr": "sonradan, ardından",
+  "deBeispiel": "Vor der Prüfung habe ich so viel gelernt. Hinterher habe ich vieles wieder vergessen.",
+  "gsw": "nachhär",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor de Prüefig han ich so vil gleert. Nachhär han ich vil devo wider vergässe."
+ },
+ {
+  "id": 2079,
+  "de": "hinweisen",
+  "tr": "dikkat çekmek, belirtmek",
+  "deBeispiel": "Wir möchten Sie darauf hinweisen, dass das Rauchen am Bahnsteig nicht gestattet ist.",
+  "gsw": "hiiwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir möchted Si druf hiiwiise, dass s Rauche am Perron verbotte isch."
+ },
+ {
+  "id": 2080,
+  "de": "der Hinweis",
+  "tr": "ipucu, işaret, bilgi",
+  "deBeispiel": "Die Polizei hat viele Hinweise zum Unfall bekommen.",
+  "gsw": "Hiiwiis",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Polizei hät vil Hiiwiis zum Unfall überchoo."
+ },
+ {
+  "id": 2081,
+  "de": "historisch",
+  "tr": "tarihi",
+  "deBeispiel": "Wir waren mit unserer Klasse im Historischen Museum.",
+  "gsw": "hischtorisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sind mit eusere Klass im Hischtorische Museum gsii."
+ },
+ {
+  "id": 2082,
+  "de": "die Hitze",
+  "tr": "sıcak, sıcaklık",
+  "deBeispiel": "Gestern war eine schreckliche Hitze!",
+  "gsw": "Hitz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Geschter isch e schrecklichi Hitz gsii!"
+ },
+ {
+  "id": 2083,
+  "de": "die Höhe",
+  "tr": "yükseklik",
+  "deBeispiel": "1. Mein Tisch hat folgende Maße: Länge: 1,20 m, Breite: 0,60 m, Höhe: 0,80 m. 2. Wir fliegen jetzt in 6000 m Höhe.",
+  "gsw": "Höchi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir flüüged jetz uf 6000 Meter Höchi."
+ },
+ {
+  "id": 2084,
+  "de": "hochladen",
+  "tr": "yüklemek",
+  "deBeispiel": "Kannst du bitte die Datei für die Hausaufgabe hochladen?",
+  "gsw": "ufelade",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte d Datei für d Ufzgi ufelade?"
+ },
+ {
+  "id": 2085,
+  "de": "höchstens",
+  "tr": "en fazla, olsa olsa",
+  "deBeispiel": "Ich habe wenig Zeit. Ich kann höchstens eine Viertelstunde bleiben.",
+  "gsw": "höchschtens",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha wenig Ziit. Ich cha höchschtens e Viertelschtund bliibe."
+ },
+ {
+  "id": 2086,
+  "de": "der Hof",
+  "tr": "avlu, bahçe",
+  "deBeispiel": "Die Kinder spielen am liebsten im Hof.",
+  "gsw": "Hof",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Chind schpiled am liebschte im Hof."
+ },
+ {
+  "id": 2087,
+  "de": "der Bauernhof",
+  "tr": "çiftlik",
+  "deBeispiel": "Meine Großeltern hatten einen Bauernhof.",
+  "gsw": "Puurehof",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mini Groosseltere händ en Puurehof ghaa."
+ },
+ {
+  "id": 2088,
+  "de": "die Hoffnung",
+  "tr": "umut",
+  "deBeispiel": "Man darf die Hoffnung nicht verlieren.",
+  "gsw": "Hoffnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Me darf d Hoffnig nöd verlüüre."
+ },
+ {
+  "id": 2089,
+  "de": "höflich",
+  "tr": "kibar, nazik",
+  "deBeispiel": "Unser Nachbar ist sehr höflich. Er sagt immer als Erster Guten Tag.",
+  "gsw": "höflich",
+  "gswArtikel": null,
+  "gswBeispiel": "Euse Naachber isch sehr höflich. Er säit immer als Erschte Grüezi."
+ },
+ {
+  "id": 2090,
+  "de": "das Holz",
+  "tr": "tahta, ahşap, odun",
+  "deBeispiel": "Möchten Sie ein Regal aus Holz oder aus Metall?",
+  "gsw": "Holz",
+  "gswArtikel": "s",
+  "gswBeispiel": "Möchted Si es Regal us Holz oder us Metall?"
+ },
+ {
+  "id": 2091,
+  "de": "der Honig",
+  "tr": "bal",
+  "deBeispiel": "Ich esse gern Brötchen mit Honig und Butter zum Frühstück.",
+  "gsw": "Honig",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich isse gärn Brötli mit Honig und Butter zum Zmorge."
+ },
+ {
+  "id": 2092,
+  "de": "der Hörer",
+  "tr": "dinleyici (radyo, yayın)",
+  "deBeispiel": "Die Sendung hat viele Hörer und Hörerinnen.",
+  "gsw": "Höörer",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Sändig hät vil Höörer und Höörerinne."
+ },
+ {
+  "id": 2093,
+  "de": "die Hörerin",
+  "tr": "kadın dinleyici (radyo, yayın)",
+  "deBeispiel": "Die Sendung hat viele Hörer und Hörerinnen.",
+  "gsw": "Höörerin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sändig hät vil Höörer und Höörerinne."
+ },
+ {
+  "id": 2094,
+  "de": "der Zuhörer",
+  "tr": "dinleyici (bir konuşmayı dinleyen)",
+  "deBeispiel": "Die Sendung hat viele Hörer und Hörerinnen.",
+  "gsw": "Zuehöörer",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Sändig hät vil Zuehöörer und Zuehöörerinne."
+ },
+ {
+  "id": 2095,
+  "de": "der Hügel",
+  "tr": "tepe",
+  "deBeispiel": "Auf diesem Hügel machen wir eine Pause.",
+  "gsw": "Hügel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf dem Hügel mached mir e Pause."
+ },
+ {
+  "id": 2096,
+  "de": "der Humor",
+  "tr": "mizah, espri anlayışı",
+  "deBeispiel": "1. Wir mögen Paul, weil er so viel Humor hat. 2. Den Humor des Komikers verstehe ich nicht.",
+  "gsw": "Humor",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Mir möged de Paul, wil er so vil Humor hät. 2. De Humor vo dem Komiker verschtaan ich nöd."
+ },
+ {
+  "id": 2097,
+  "de": "hungrig",
+  "tr": "aç",
+  "deBeispiel": "Ich bin sehr hungrig.",
+  "gsw": "hungrig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi sehr hungrig."
+ },
+ {
+  "id": 2098,
+  "de": "hupen",
+  "tr": "klakson çalmak",
+  "deBeispiel": "Hier ist ein Krankenhaus. Hier darfst du nicht hupen.",
+  "gsw": "hupe",
+  "gswArtikel": null,
+  "gswBeispiel": "Daa isch es Schpital. Daa dörfsch nöd hupe.",
+  "ayniLehce": [
+   "Hupe (A2)"
+  ]
+ },
+ {
+  "id": 2099,
+  "de": "der Husten",
+  "tr": "öksürük",
+  "deBeispiel": "Haben Sie ein Medikament gegen Husten?",
+  "gsw": "Hueschte",
+  "gswArtikel": "de",
+  "gswBeispiel": "Händ Si es Medikamänt gäge Hueschte?",
+  "ayniLehce": [
+   "husten (A2)"
+  ]
+ },
+ {
+  "id": 2100,
+  "de": "der Hut",
+  "tr": "şapka",
+  "deBeispiel": "Sie sollten im Sommer nicht ohne Hut in die Sonne gehen.",
+  "gsw": "Huet",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si sötted im Summer nöd ooni Huet a d Sunne gaa."
+ },
+ {
+  "id": 2101,
+  "de": "die Hütte",
+  "tr": "kulübe",
+  "deBeispiel": "Wir übernachten in der Hütte auf dem Berg.",
+  "gsw": "Hütte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir übernachted i de Hütte uf em Bärg."
+ },
+ {
+  "id": 2102,
+  "de": "ideal",
+  "tr": "ideal, mükemmel",
+  "deBeispiel": "Eine Wohnung mit Garten wäre für uns ideal.",
+  "gsw": "ideal",
+  "gswArtikel": null,
+  "gswBeispiel": "E Wonig mit Garte wär für eus ideal."
+ },
+ {
+  "id": 2103,
+  "de": "illegal",
+  "tr": "yasa dışı, illegal",
+  "deBeispiel": "Ohne Steuerkarte zu arbeiten ist illegal. Wenn es herauskommt, musst du Strafe zahlen.",
+  "gsw": "illegal",
+  "gswArtikel": null,
+  "gswBeispiel": "Schwarzschaffe isch illegal. Wänn s usechunt, muesch e Buess zale."
+ },
+ {
+  "id": 2104,
+  "de": "der Imbiss",
+  "tr": "atıştırmalık, hafif yemek",
+  "deBeispiel": "Es ist Zeit für einen kleinen Imbiss.",
+  "gsw": "Znüni",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es isch Ziit für en chliine Znüni."
+ },
+ {
+  "id": 2105,
+  "de": "der Import",
+  "tr": "ithalat",
+  "deBeispiel": "1. Im dritten Stock ist die Firma Schmidt & Co, Import und Export. 2. Der Import von Zigaretten ist nur bis zu einer bes",
+  "gsw": "Import",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im dritte Schtock isch d Firma Schmidt & Co, Import und Export."
+ },
+ {
+  "id": 2106,
+  "de": "indem",
+  "tr": "-erek/-arak, bu şekilde",
+  "deBeispiel": "Du kannst die Datei öffnen, indem du hier klickst.",
+  "gsw": "indem",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch d Datei uftue, indem du daa klicksch."
+ },
+ {
+  "id": 2107,
+  "de": "individuell",
+  "tr": "bireysel",
+  "deBeispiel": "Die Lehrerin versucht, jedes Kind individuell zu fördern.",
+  "gsw": "individuell",
+  "gswArtikel": null,
+  "gswBeispiel": "D Leererin probiert, jedes Chind individuell z fördere."
+ },
+ {
+  "id": 2108,
+  "de": "die Industrie",
+  "tr": "sanayi, endüstri",
+  "deBeispiel": "In dieser Gegend gibt es viel Industrie.",
+  "gsw": "Induschtrii",
+  "gswArtikel": "d",
+  "gswBeispiel": "I dere Gägend git s vil Induschtrii."
+ },
+ {
+  "id": 2109,
+  "de": "die Infektion",
+  "tr": "enfeksiyon",
+  "deBeispiel": "Sie haben eine Infektion. Sie müssen Tabletten nehmen.",
+  "gsw": "Infektion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si händ e Infektion. Si müend Tablette nää."
+ },
+ {
+  "id": 2110,
+  "de": "informieren",
+  "tr": "bilgilendirmek",
+  "deBeispiel": "1. Wir informieren Sie rechtzeitig über die neuen Prüfungstermine. 2. Du musst dich vor der Reise genau über die Bedingu",
+  "gsw": "informiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir informiered Si rächtziitig über di neue Prüefigstermin.",
+  "ayniLehce": [
+   "sich informieren (A2)"
+  ]
+ },
+ {
+  "id": 2111,
+  "de": "der Ingenieur",
+  "tr": "mühendis",
+  "deBeispiel": "Hans will Bauingenieur werden.",
+  "gsw": "Ingenieur",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Hans wott Buuingenieur wärde."
+ },
+ {
+  "id": 2112,
+  "de": "der Inhalt",
+  "tr": "içerik, içindekiler",
+  "deBeispiel": "Geben Sie den Inhalt der Packung in einen Liter kochendes Wasser.",
+  "gsw": "Inhalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gänd Si de Inhalt vo de Packig in en Liter chochends Wasser."
+ },
+ {
+  "id": 2113,
+  "de": "inklusive",
+  "tr": "dahil",
+  "deBeispiel": "Der Zimmerpreis ist inklusive Frühstück.",
+  "gsw": "inklusive",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zimmerpriis isch inklusive Zmorge.",
+  "ayniLehce": [
+   "einschließlich (B1)"
+  ]
+ },
+ {
+  "id": 2114,
+  "de": "innen",
+  "tr": "içeride, içte",
+  "deBeispiel": "Der Lichtschalter ist innen links.",
+  "gsw": "inne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Liechtschalter isch inne links."
+ },
+ {
+  "id": 2115,
+  "de": "innere",
+  "tr": "iç, dahili",
+  "deBeispiel": "Wir müssen Sie untersuchen. Es kann sein, dass Sie innere Verletzungen haben.",
+  "gsw": "inner-",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend Si undersueche. Es cha sii, dass Si inneri Verletzige händ."
+ },
+ {
+  "id": 2116,
+  "de": "innerhalb",
+  "tr": "içinde, içerisinde",
+  "deBeispiel": "1. Diese Fahrkarte gilt nur innerhalb der Stadt. 2. Nach dem Umzug müssen Sie sich innerhalb einer Woche ummelden.",
+  "gsw": "innerhalb",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Das Billett gilt nur innerhalb vo de Schtadt. 2. Nach em Umzug müend Si sich innerhalb vonere Wuche ummälde."
+ },
+ {
+  "id": 2117,
+  "de": "das Inserat",
+  "tr": "ilan",
+  "deBeispiel": "Was kostet ein Inserat in der Zeitung?",
+  "gsw": "Inseraat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Was choschtet es Inseraat i de Ziitig?"
+ },
+ {
+  "id": 2118,
+  "de": "insgesamt",
+  "tr": "toplam, toplamda",
+  "deBeispiel": "Insgesamt haben sich 20 Teilnehmer für die Prüfung angemeldet.",
+  "gsw": "insgesamt",
+  "gswArtikel": null,
+  "gswBeispiel": "Insgesamt händ sich 20 Täilnämer für d Prüefig aagmäldet."
+ },
+ {
+  "id": 2119,
+  "de": "installieren",
+  "tr": "kurmak, yüklemek (program, cihaz)",
+  "deBeispiel": "Können Sie mir helfen, meinen Computer zu installieren?",
+  "gsw": "inschtalliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Chönd Si mir hälfe, min Computer z inschtalliere?"
+ },
+ {
+  "id": 2120,
+  "de": "das Institut",
+  "tr": "enstitü",
+  "deBeispiel": "Ich besuche einen Sprachkurs in einem kleinen Sprachinstitut.",
+  "gsw": "Inschtitut",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich gaa in en Schpraachkurs in eme chliine Schpraachinschtitut."
+ },
+ {
+  "id": 2121,
+  "de": "integrieren",
+  "tr": "entegre etmek, uyum sağlamak",
+  "deBeispiel": "1. Sie ist schon sehr gut im Team integriert. 2. Die Leute aus dem Ausland sollen besser integriert werden.",
+  "gsw": "integriere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Si isch scho sehr guet im Team integriert. 2. Mir sötted d Lüüt usem Uusland besser integriere."
+ },
+ {
+  "id": 2122,
+  "de": "die Integration",
+  "tr": "entegrasyon, uyum",
+  "deBeispiel": "Gute Deutschkenntnisse sollen bei der Integration helfen.",
+  "gsw": "Integration",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gueti Tüütschkenntniss sölled bi de Integration hälfe."
+ },
+ {
+  "id": 2123,
+  "de": "die Intelligenz",
+  "tr": "zekâ",
+  "deBeispiel": "Meine Kinder haben in der Schule einen Intelligenztest gemacht.",
+  "gsw": "Intelligänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Chind händ i de Schuel en Intelligänztescht gmacht."
+ },
+ {
+  "id": 2124,
+  "de": "intensiv",
+  "tr": "yoğun",
+  "deBeispiel": "Ich möchte intensiv Deutsch lernen.",
+  "gsw": "intensiiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht intensiiv Tüütsch leere."
+ },
+ {
+  "id": 2125,
+  "de": "der Intensivkurs",
+  "tr": "yoğun kurs",
+  "deBeispiel": "Der Intensivkurs findet täglich von 9 bis 12 Uhr statt.",
+  "gsw": "Intensiivkurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Intensiivkurs isch jede Tag vo nüüni bis am zwölfi."
+ },
+ {
+  "id": 2126,
+  "de": "interessieren",
+  "tr": "ilgilendirmek, ilgilenmek",
+  "deBeispiel": "1. Das Thema Kindererziehung interessiert mich sehr. 2. Ich interessiere mich sehr für Fußball.",
+  "gsw": "interessiere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. S Thema Chindererziehig interessiert mich sehr. 2. Ich interessiere mich sehr für Fuessball."
+ },
+ {
+  "id": 2127,
+  "de": "interessiert",
+  "tr": "ilgilenen, ilgi duyan",
+  "deBeispiel": "Mein Nachbar zieht nächsten Monat aus. Sind Sie noch an der Wohnung interessiert?",
+  "gsw": "interessiert",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Naachber zieht nöchschte Monet uus. Sind Si no a de Wonig interessiert?"
+ },
+ {
+  "id": 2128,
+  "de": "interkulturell",
+  "tr": "kültürlerarası",
+  "deBeispiel": "Wir haben in der Sprachschule ein interkulturelles Fest gefeiert.",
+  "gsw": "interkulturell",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ i de Schpraachschuel es interkulturells Fäscht gfiiret."
+ },
+ {
+  "id": 2129,
+  "de": "inzwischen",
+  "tr": "bu arada, bu esnada",
+  "deBeispiel": "Herr Müller kommt gleich zurück. Sie können inzwischen in seinem Büro warten.",
+  "gsw": "inzwüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "De Herr Müller chunt grad zrugg. Si chönd inzwüsche i sim Büro warte."
+ },
+ {
+  "id": 2130,
+  "de": "irgendein",
+  "tr": "herhangi bir",
+  "deBeispiel": "Was für einen Saft möchten Sie? – Ganz egal, irgendeinen.",
+  "gsw": "irgendäin",
+  "gswArtikel": null,
+  "gswBeispiel": "Was für en Saft möchted Si? – Ganz egal, irgendäine."
+ },
+ {
+  "id": 2131,
+  "de": "irgendwann",
+  "tr": "bir ara, bir gün",
+  "deBeispiel": "Ich habe Sie irgendwann schon mal gesehen.",
+  "gsw": "irgendwänn",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha Si irgendwänn scho mal gsee."
+ },
+ {
+  "id": 2132,
+  "de": "sich irren",
+  "tr": "yanılmak, hata yapmak",
+  "deBeispiel": "1. Du irrst dich. Das Auto war nicht grün, sondern rot. 2. Ich habe mich in der Hausnummer geirrt.",
+  "gsw": "sich irre",
+  "gswArtikel": null,
+  "gswBeispiel": "Daa muesch dich irre. S Auto isch nöd grüen, sondern root gsii."
+ }
+]

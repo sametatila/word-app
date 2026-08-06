@@ -1,0 +1,995 @@
+[
+ {
+  "id": 3303,
+  "de": "die Zensur",
+  "tr": "sansür",
+  "deBeispiel": "In manchen Ländern herrscht eine strenge Zensur.",
+  "gsw": "Zensur",
+  "gswArtikel": "d",
+  "gswBeispiel": "I mängne Länder herrscht e strängi Zensur."
+ },
+ {
+  "id": 3304,
+  "de": "recherchieren",
+  "tr": "araştırmak",
+  "deBeispiel": "Der Journalist recherchierte monatelang zu diesem Fall.",
+  "gsw": "recherchiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Journalischt hät mönetelang zu dem Fall recherchiert."
+ },
+ {
+  "id": 3305,
+  "de": "der Skandal",
+  "tr": "skandal",
+  "deBeispiel": "Der Skandal erschütterte die gesamte Partei.",
+  "gsw": "Skandal",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Skandal hät di ganz Partei erschütteret."
+ },
+ {
+  "id": 3306,
+  "de": "objektiv",
+  "tr": "nesnel, tarafsız",
+  "deBeispiel": "Ein guter Nachrichtenbeitrag sollte möglichst objektiv sein.",
+  "gsw": "objektiv",
+  "gswArtikel": null,
+  "gswBeispiel": "En guete Nachrichtebiitrag sött möglichst objektiv sii."
+ },
+ {
+  "id": 3307,
+  "de": "die Objektivität",
+  "tr": "nesnellik, objektiflik",
+  "deBeispiel": "Die Objektivität der Presse wird häufig angezweifelt.",
+  "gsw": "Objektivität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Objektivität vo de Presse wird hüfig aazwiiflet."
+ },
+ {
+  "id": 3308,
+  "de": "tendenziös",
+  "tr": "taraflı, yanlı",
+  "deBeispiel": "Der Artikel wurde von Kritikern als tendenziös bezeichnet.",
+  "gsw": "tendenziös",
+  "gswArtikel": null,
+  "gswBeispiel": "De Artikel isch vo Kritiker als tendenziös bezäichnet worde."
+ },
+ {
+  "id": 3309,
+  "de": "die Fehlinformation",
+  "tr": "yanlış bilgi",
+  "deBeispiel": "Fehlinformationen verbreiten sich im Internet rasend schnell.",
+  "gsw": "Fäälinformation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Fäälinformatione verbräited sich im Internet rasend schnäll."
+ },
+ {
+  "id": 3310,
+  "de": "der Geflüchtete",
+  "tr": "mülteci, sığınmacı",
+  "deBeispiel": "Viele Geflüchtete suchen in Europa ein neues Zuhause.",
+  "gsw": "Gflüchtete",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili Gflüchteti sueched in Europa es neus Dihei."
+ },
+ {
+  "id": 3311,
+  "de": "das Herkunftsland",
+  "tr": "geldiği ülke, menşe ülkesi",
+  "deBeispiel": "Viele Migranten pflegen weiterhin Kontakt zu ihrem Herkunftsland.",
+  "gsw": "Herkunftsland",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vili Migrante pfläged wiiterhin Kontakt zu irem Herkunftsland."
+ },
+ {
+  "id": 3312,
+  "de": "der Migrationshintergrund",
+  "tr": "göçmen kökeni",
+  "deBeispiel": "Viele Schüler in der Klasse haben einen Migrationshintergrund.",
+  "gsw": "Migrationshindergrund",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili Schüeler i de Klass händ en Migrationshindergrund."
+ },
+ {
+  "id": 3313,
+  "de": "abschieben",
+  "tr": "sınır dışı etmek",
+  "deBeispiel": "Die Behörde plant, den abgelehnten Asylbewerber abzuschieben.",
+  "gsw": "usschaffe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde wott de abglehnt Asylbewärber usschaffe."
+ },
+ {
+  "id": 3314,
+  "de": "die Abschiebung",
+  "tr": "sınır dışı etme",
+  "deBeispiel": "Die Abschiebung wurde vom Gericht vorerst gestoppt.",
+  "gsw": "Usschaffig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Usschaffig isch vom Gricht vorläufig gstoppt worde."
+ },
+ {
+  "id": 3315,
+  "de": "einwandern",
+  "tr": "(bir ülkeye) göç etmek",
+  "deBeispiel": "Seine Großeltern wanderten in den sechziger Jahren ein.",
+  "gsw": "iiwandere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Grosseltere sind i de Sächzgerjaar i d Schwiiz iigwanderet."
+ },
+ {
+  "id": 3316,
+  "de": "der Einwanderer",
+  "tr": "göçmen (bir ülkeye gelip yerleşen)",
+  "deBeispiel": "Viele Einwanderer erhoffen sich hier eine bessere Zukunft.",
+  "gsw": "Iiwanderer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili Iiwanderer erhoffed sich daa e besseri Zuekumft."
+ },
+ {
+  "id": 3317,
+  "de": "sich integrieren",
+  "tr": "uyum sağlamak, entegre olmak",
+  "deBeispiel": "Er hat sich schnell in die neue Gesellschaft integriert.",
+  "gsw": "sich integriere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sich schnäll i di neu Gsellschaft integriert."
+ },
+ {
+  "id": 3318,
+  "de": "die Staatsangehörigkeit",
+  "tr": "vatandaşlık",
+  "deBeispiel": "Sie beantragte nach zehn Jahren die deutsche Staatsangehörigkeit.",
+  "gsw": "Staatsaaghörigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si hät nach zää Jaar d Schwiizer Staatsaaghörigkeit beantraagt."
+ },
+ {
+  "id": 3319,
+  "de": "einbürgern",
+  "tr": "vatandaşlığa almak",
+  "deBeispiel": "Der Staat bürgert jedes Jahr Tausende Ausländer ein.",
+  "gsw": "iibürgere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Staat hät au das Jaar wider Tuusigi vo Usländer iibürgeret."
+ },
+ {
+  "id": 3320,
+  "de": "das Bildungssystem",
+  "tr": "eğitim sistemi",
+  "deBeispiel": "Das Bildungssystem muss dringend reformiert werden.",
+  "gsw": "Bildigssystem",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Bildigssystem muess dringend reformiert werde."
+ },
+ {
+  "id": 3321,
+  "de": "die Chancengleichheit",
+  "tr": "fırsat eşitliği",
+  "deBeispiel": "Chancengleichheit in der Bildung ist noch nicht erreicht.",
+  "gsw": "Chancegliichheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chancegliichheit i de Bildig isch no nöd erräicht."
+ },
+ {
+  "id": 3322,
+  "de": "der Lehrplan",
+  "tr": "müfredat",
+  "deBeispiel": "Der neue Lehrplan legt mehr Wert auf digitale Kompetenzen.",
+  "gsw": "Leerplaan",
+  "gswArtikel": "de",
+  "gswBeispiel": "De neu Leerplaan läit mee Wärt uf digitali Kompetänze."
+ },
+ {
+  "id": 3323,
+  "de": "die Bildungspolitik",
+  "tr": "eğitim politikası",
+  "deBeispiel": "Die Bildungspolitik unterscheidet sich stark zwischen den Bundesländern.",
+  "gsw": "Bildigspolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bildigspolitik underschäidet sich starch vo Kanton zu Kanton."
+ },
+ {
+  "id": 3324,
+  "de": "die Kompetenz",
+  "tr": "yetkinlik, beceri",
+  "deBeispiel": "Digitale Kompetenzen werden in der Schule immer wichtiger.",
+  "gsw": "Kompetänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Digitali Kompetänze werded i de Schuel immer wichtiger."
+ },
+ {
+  "id": 3325,
+  "de": "benachteiligt",
+  "tr": "dezavantajlı",
+  "deBeispiel": "Benachteiligte Kinder brauchen zusätzliche Unterstützung in der Schule.",
+  "gsw": "benachtäiligt",
+  "gswArtikel": null,
+  "gswBeispiel": "Benachtäiligti Chind bruuched i de Schuel zuesätzlichi Understützig."
+ },
+ {
+  "id": 3326,
+  "de": "der Staatsbürger",
+  "tr": "vatandaş, yurttaş",
+  "deBeispiel": "Jeder Staatsbürger hat das Recht auf freie Meinungsäußerung.",
+  "gsw": "Staatsbürger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Staatsbürger hät s Rächt, sini Mäinig frii z säge."
+ },
+ {
+  "id": 3327,
+  "de": "die Mitbestimmung",
+  "tr": "katılım hakkı, söz hakkı",
+  "deBeispiel": "Mitbestimmung der Bürger stärkt die Demokratie nachhaltig.",
+  "gsw": "Mitbestimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mitbestimmig vo de Bürger stärcht d Demokratie nachhaltig."
+ },
+ {
+  "id": 3328,
+  "de": "die Erschöpfung",
+  "tr": "tükenme, bitkinlik",
+  "deBeispiel": "Nach der Prüfungsphase litt sie unter starker Erschöpfung.",
+  "gsw": "Erschöpfig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Prüefigsphase hät si under starcher Erschöpfig glitte."
+ },
+ {
+  "id": 3329,
+  "de": "die Genesung",
+  "tr": "iyileşme, şifa bulma",
+  "deBeispiel": "Der Arzt wünschte ihm eine schnelle Genesung.",
+  "gsw": "Besserig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Arzt hät em e gueti Besserig gwünscht.",
+  "ayniLehce": [
+   "Besserung (B1)"
+  ]
+ },
+ {
+  "id": 3330,
+  "de": "die Ansteckung",
+  "tr": "bulaşma, enfeksiyon",
+  "deBeispiel": "Um eine Ansteckung zu vermeiden, trug sie eine Maske.",
+  "gsw": "Aasteckig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si hät e Maske träit, zum e Aasteckig vermiide."
+ },
+ {
+  "id": 3331,
+  "de": "der Kreislauf",
+  "tr": "kan dolaşımı; döngü, devir",
+  "deBeispiel": "Regelmäßiger Sport stärkt den Kreislauf.",
+  "gsw": "Chräislauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Regelmässige Sport stärcht de Chräislauf."
+ },
+ {
+  "id": 3332,
+  "de": "die Verspannung",
+  "tr": "kas gerginliği",
+  "deBeispiel": "Die Verspannung im Nacken kam vom langen Sitzen.",
+  "gsw": "Verspannig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verspannig im Nacke isch vom lange Sitze choo."
+ },
+ {
+  "id": 3333,
+  "de": "der Schlafmangel",
+  "tr": "uyku eksikliği",
+  "deBeispiel": "Schlafmangel wirkt sich negativ auf die Konzentration aus.",
+  "gsw": "Schlaafmangel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schlaafmangel wirkt sich negativ uf d Konzentration us."
+ },
+ {
+  "id": 3334,
+  "de": "die Beschwerde",
+  "tr": "rahatsızlık, ağrı; şikâyet",
+  "deBeispiel": "Sie klagte über anhaltende Beschwerden im unteren Rücken.",
+  "gsw": "Beschwerde",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si hät über aahaltendi Beschwerde im undere Rugge klagt."
+ },
+ {
+  "id": 3335,
+  "de": "die Diagnose",
+  "tr": "teşhis",
+  "deBeispiel": "Die Diagnose stellte sich erst nach mehreren Tests heraus.",
+  "gsw": "Diagnose",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Diagnose isch erscht nach mehrere Teschts klaar gsii."
+ },
+ {
+  "id": 3336,
+  "de": "das Symptom",
+  "tr": "belirti",
+  "deBeispiel": "Die ersten Symptome traten schon vor Tagen auf.",
+  "gsw": "Symptom",
+  "gswArtikel": "s",
+  "gswBeispiel": "Di erschte Symptom sind scho vor es paar Tääg uufträtte."
+ },
+ {
+  "id": 3337,
+  "de": "die Immunabwehr",
+  "tr": "bağışıklık savunması",
+  "deBeispiel": "Vitamin C soll die Immunabwehr unterstützen.",
+  "gsw": "Immunabwehr",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vitamin C söll d Immunabwehr understütze."
+ },
+ {
+  "id": 3338,
+  "de": "der Stoffwechsel",
+  "tr": "metabolizma",
+  "deBeispiel": "Ein aktiver Stoffwechsel hilft beim Abnehmen.",
+  "gsw": "Stoffwächsel",
+  "gswArtikel": "de",
+  "gswBeispiel": "En aktive Stoffwächsel hilft bim Abnää."
+ },
+ {
+  "id": 3339,
+  "de": "die Belastbarkeit",
+  "tr": "dayanıklılık, tahammül gücü",
+  "deBeispiel": "Seine körperliche Belastbarkeit hat sich deutlich verbessert.",
+  "gsw": "Belaschtbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini körperlich Belaschtbarkeit hät sich düütlich verbesseret."
+ },
+ {
+  "id": 3340,
+  "de": "der Rückfall",
+  "tr": "nüksetme, tekrarlama",
+  "deBeispiel": "Ein Rückfall in alte Gewohnheiten ist keine Seltenheit.",
+  "gsw": "Ruggfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Ruggfall i alti Gwonheite chunt gar nöd sälte vor."
+ },
+ {
+  "id": 3341,
+  "de": "das Wohlbefinden",
+  "tr": "iyi hissetme hâli",
+  "deBeispiel": "Ausreichend Schlaf fördert das allgemeine Wohlbefinden.",
+  "gsw": "Woolbefinde",
+  "gswArtikel": "s",
+  "gswBeispiel": "Gnueg Schlaaf fördert s allgemäine Woolbefinde."
+ },
+ {
+  "id": 3342,
+  "de": "die Narbe",
+  "tr": "yara izi",
+  "deBeispiel": "Die Narbe am Arm erinnert ihn an den Unfall.",
+  "gsw": "Narbe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Narbe am Arm erinneret en a de Unfall."
+ },
+ {
+  "id": 3343,
+  "de": "sich schonen",
+  "tr": "kendini yormamak, kendini kollamak",
+  "deBeispiel": "Nach der Krankheit sollte er sich noch schonen.",
+  "gsw": "sich schone",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Chrankheit sött er sich no schone."
+ },
+ {
+  "id": 3344,
+  "de": "genesen",
+  "tr": "iyileşmek, şifa bulmak",
+  "deBeispiel": "Der Patient ist vollständig genesen.",
+  "gsw": "gsund werde",
+  "gswArtikel": null,
+  "gswBeispiel": "De Patiänt isch vollständig gsund worde."
+ },
+ {
+  "id": 3345,
+  "de": "die Wut",
+  "tr": "öfke, hiddet",
+  "deBeispiel": "Vor Wut konnte er kaum noch sprechen.",
+  "gsw": "Wuet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor Wuet hät er fascht nüme chöne rede."
+ },
+ {
+  "id": 3346,
+  "de": "die Eifersucht",
+  "tr": "kıskançlık",
+  "deBeispiel": "Eifersucht kann eine Beziehung stark belasten.",
+  "gsw": "Iifersucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iifersucht cha e Beziehig schwer belaschte."
+ },
+ {
+  "id": 3347,
+  "de": "die Sehnsucht",
+  "tr": "özlem",
+  "deBeispiel": "Die Sehnsucht nach der Heimat wurde immer größer.",
+  "gsw": "Seensucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Seensucht nach de Heimet isch immer gröösser worde."
+ },
+ {
+  "id": 3348,
+  "de": "die Verzweiflung",
+  "tr": "umutsuzluk, çaresizlik",
+  "deBeispiel": "In seiner Verzweiflung wusste er nicht mehr weiter.",
+  "gsw": "Verzwiiflig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I sinere Verzwiiflig hät er nüme wiiter gwüsst."
+ },
+ {
+  "id": 3349,
+  "de": "die Erleichterung",
+  "tr": "rahatlama, ferahlama",
+  "deBeispiel": "Nach der guten Nachricht spürte sie große Erleichterung.",
+  "gsw": "Erliechterig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de guete Nachricht hät si e groossi Erliechterig gspürt."
+ },
+ {
+  "id": 3350,
+  "de": "die Zuneigung",
+  "tr": "sevgi, yakınlık duyma",
+  "deBeispiel": "Seine Zuneigung zu ihr wuchs mit jedem Tag.",
+  "gsw": "Zuenäigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Zuenäigig zu ire isch mit jedem Taag gwachse."
+ },
+ {
+  "id": 3351,
+  "de": "das Mitgefühl",
+  "tr": "duygudaşlık, empati",
+  "deBeispiel": "Sie brachte den Opfern viel Mitgefühl entgegen.",
+  "gsw": "Mitgfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si hät de Opfer vil Mitgfüel entgägebracht."
+ },
+ {
+  "id": 3352,
+  "de": "die Gelassenheit",
+  "tr": "sakinlik, soğukkanlılık",
+  "deBeispiel": "Mit erstaunlicher Gelassenheit nahm sie die Kritik hin.",
+  "gsw": "Glasseheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit erstuunlicher Glasseheit hät si d Kritik aagnaa."
+ },
+ {
+  "id": 3353,
+  "de": "die Verlegenheit",
+  "tr": "mahcubiyet, utanma",
+  "deBeispiel": "Vor Verlegenheit wurde er rot im Gesicht.",
+  "gsw": "Verlägeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor Verlägeheit isch er im Gsicht root worde."
+ },
+ {
+  "id": 3354,
+  "de": "der Neid",
+  "tr": "haset, çekememezlik",
+  "deBeispiel": "Sein Erfolg weckte bei einigen Kollegen Neid.",
+  "gsw": "Niid",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin Erfolg hät bi mängne Kollege Niid gweckt."
+ },
+ {
+  "id": 3355,
+  "de": "die Reue",
+  "tr": "pişmanlık",
+  "deBeispiel": "Reue über seine Worte plagte ihn tagelang.",
+  "gsw": "Reue",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reue über sini Wort hät en tageläng plaget."
+ },
+ {
+  "id": 3356,
+  "de": "das Unbehagen",
+  "tr": "huzursuzluk",
+  "deBeispiel": "Ein leises Unbehagen beschlich sie in der fremden Umgebung.",
+  "gsw": "Unbehage",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es liisligs Unbehage hät si i de frömde Umgäbig überchoo."
+ },
+ {
+  "id": 3357,
+  "de": "sich sehnen",
+  "tr": "hasretini çekmek, can atmak (sahip olmadığı bir şeye)",
+  "deBeispiel": "Er sehnt sich nach mehr Ruhe im Alltag.",
+  "gsw": "sich seene",
+  "gswArtikel": null,
+  "gswBeispiel": "Er seent sich nach mee Rue im Alltag."
+ },
+ {
+  "id": 3358,
+  "de": "verzweifeln",
+  "tr": "umutsuzluğa kapılmak",
+  "deBeispiel": "Bitte verzweifle nicht an dieser Aufgabe.",
+  "gsw": "verzwiifle",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte verzwiifle nöd a dere Uufgaab."
+ },
+ {
+  "id": 3359,
+  "de": "die Zurückhaltung",
+  "tr": "çekingenlik, temkinlilik",
+  "deBeispiel": "Seine Zurückhaltung wirkte auf manche unnahbar.",
+  "gsw": "Zrugghaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Zrugghaltig hät uf mängi distanziert gwirkt."
+ },
+ {
+  "id": 3360,
+  "de": "die Eigenschaft",
+  "tr": "özellik, nitelik",
+  "deBeispiel": "Ehrlichkeit zählt zu seinen wichtigsten Eigenschaften.",
+  "gsw": "Äigeschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Eerlichkeit ghört zu sine wichtigschte Äigeschafte."
+ },
+ {
+  "id": 3361,
+  "de": "der Ehrgeiz",
+  "tr": "hırs, tutku",
+  "deBeispiel": "Ihr Ehrgeiz trieb sie zu Höchstleistungen an.",
+  "gsw": "Eergiiz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire Eergiiz hät si zu Höchschtläischtige aatribe."
+ },
+ {
+  "id": 3362,
+  "de": "die Bescheidenheit",
+  "tr": "alçakgönüllülük",
+  "deBeispiel": "Trotz seines Erfolgs bewahrte er seine Bescheidenheit.",
+  "gsw": "Beschäideheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Trotz sim Erfolg hät er sini Beschäideheit bhalte."
+ },
+ {
+  "id": 3363,
+  "de": "die Sturheit",
+  "tr": "inatçılık",
+  "deBeispiel": "Seine Sturheit machte jede Diskussion schwierig.",
+  "gsw": "Stuurheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Stuurheit hät jedi Diskussion schwirig gmacht."
+ },
+ {
+  "id": 3364,
+  "de": "die Großzügigkeit",
+  "tr": "cömertlik",
+  "deBeispiel": "Ihre Großzügigkeit war in der ganzen Nachbarschaft bekannt.",
+  "gsw": "Grosszügigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Grosszügigkeit isch i de ganze Nachberschaft bekannt gsii."
+ },
+ {
+  "id": 3365,
+  "de": "die Zuverlässigkeit",
+  "tr": "güvenilirlik (sözünde durma, işi aksatmama)",
+  "deBeispiel": "Seine Zuverlässigkeit machte ihn zum idealen Kollegen.",
+  "gsw": "Zueverlässigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Zueverlässigkeit hät en zum ideale Kolleg gmacht."
+ },
+ {
+  "id": 3366,
+  "de": "die Selbstsicherheit",
+  "tr": "özgüven",
+  "deBeispiel": "Mit wachsender Selbstsicherheit trat sie vor das Publikum.",
+  "gsw": "Sälbstsicherheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit wachsender Sälbstsicherheit isch si vor s Publikum gstande."
+ },
+ {
+  "id": 3367,
+  "de": "die Empfindlichkeit",
+  "tr": "hassasiyet, alınganlık",
+  "deBeispiel": "Seine Empfindlichkeit gegenüber Kritik überraschte mich.",
+  "gsw": "Empfindlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Empfindlichkeit gägenüber Kritik hät mi überrascht."
+ },
+ {
+  "id": 3368,
+  "de": "der Charakterzug",
+  "tr": "karakter özelliği",
+  "deBeispiel": "Neugier ist ein typischer Charakterzug von ihm.",
+  "gsw": "Charakterzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Neugiir isch en typische Charakterzug vo im."
+ },
+ {
+  "id": 3369,
+  "de": "zurückhaltend",
+  "tr": "çekingen, mesafeli",
+  "deBeispiel": "Bei Fremden verhält er sich eher zurückhaltend.",
+  "gsw": "zrugghaltend",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi Frömde isch er eener zrugghaltend."
+ },
+ {
+  "id": 3370,
+  "de": "ehrgeizig",
+  "tr": "hırslı",
+  "deBeispiel": "Sie gilt als sehr ehrgeizige Studentin.",
+  "gsw": "eergiizig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si gilt als sehr eergiizigi Studäntin."
+ },
+ {
+  "id": 3371,
+  "de": "eigensinnig",
+  "tr": "inatçı, dediğim dedik",
+  "deBeispiel": "Der eigensinnige Junge ließ sich nicht überzeugen.",
+  "gsw": "äigesinnig",
+  "gswArtikel": null,
+  "gswBeispiel": "De äigesinnig Bueb hät sich nöd la überzüüge."
+ },
+ {
+  "id": 3372,
+  "de": "gelassen",
+  "tr": "sakin, soğukkanlı",
+  "deBeispiel": "Er reagierte gelassen auf die überraschende Nachricht.",
+  "gsw": "glasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät ganz glasse uf di überraschend Nachricht reagiert."
+ },
+ {
+  "id": 3373,
+  "de": "einfühlsam",
+  "tr": "anlayışlı, empatik",
+  "deBeispiel": "Die Therapeutin ging sehr einfühlsam mit ihr um.",
+  "gsw": "iifüelsam",
+  "gswArtikel": null,
+  "gswBeispiel": "D Therapeutin isch sehr iifüelsam mit ire umggange."
+ },
+ {
+  "id": 3374,
+  "de": "rücksichtsvoll",
+  "tr": "saygılı, düşünceli",
+  "deBeispiel": "Sein rücksichtsvolles Verhalten wurde von allen geschätzt.",
+  "gsw": "ruggsichtsvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli händ sis ruggsichtsvolle Verhalte gschätzt."
+ },
+ {
+  "id": 3375,
+  "de": "oberflächlich",
+  "tr": "yüzeysel",
+  "deBeispiel": "Ihre Freundschaft blieb lange Zeit eher oberflächlich.",
+  "gsw": "oberflächlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Iri Fründschaft isch lang eener oberflächlich bliibe."
+ },
+ {
+  "id": 3376,
+  "de": "verlässlich",
+  "tr": "güvenilir",
+  "deBeispiel": "Ein verlässlicher Freund steht auch in schweren Zeiten bei.",
+  "gsw": "verlässlich",
+  "gswArtikel": null,
+  "gswBeispiel": "En verlässliche Fründ staat äim au i schwäre Ziite bii."
+ },
+ {
+  "id": 3377,
+  "de": "impulsiv",
+  "tr": "dürtüsel, düşünmeden davranan",
+  "deBeispiel": "Seine impulsive Art führte oft zu Missverständnissen.",
+  "gsw": "impulsiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini impulsiv Art hät hüfig zu Missverständnis gfüert."
+ },
+ {
+  "id": 3378,
+  "de": "großzügig",
+  "tr": "cömert",
+  "deBeispiel": "Sie ist bekannt für ihr großzügiges Trinkgeld.",
+  "gsw": "grosszügig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch bekannt für irs grosszügige Trinkgäld."
+ },
+ {
+  "id": 3379,
+  "de": "die Bindung",
+  "tr": "bağ, bağlanma",
+  "deBeispiel": "Die emotionale Bindung zwischen den Geschwistern war stark.",
+  "gsw": "Bindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di emotional Bindig zwüsched de Gschwüschterti isch starch gsii."
+ },
+ {
+  "id": 3380,
+  "de": "die Entfremdung",
+  "tr": "uzaklaşma, yabancılaşma",
+  "deBeispiel": "Die Entfremdung zwischen den Eltern und dem Sohn wuchs.",
+  "gsw": "Entfrömdig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entfrömdig zwüsched de Eltere und em Soon isch immer gröösser worde."
+ },
+ {
+  "id": 3381,
+  "de": "die Versöhnung",
+  "tr": "barışma",
+  "deBeispiel": "Nach Jahren des Streits kam es endlich zur Versöhnung.",
+  "gsw": "Versöönig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach Jaare voll Striit isch es äntli zur Versöönig choo."
+ },
+ {
+  "id": 3382,
+  "de": "sich versöhnen",
+  "tr": "barışmak",
+  "deBeispiel": "Die Geschwister haben sich nach dem Streit versöhnt.",
+  "gsw": "sich versööne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gschwüschterti händ sich nach em Striit versöönt."
+ },
+ {
+  "id": 3383,
+  "de": "sich entfremden",
+  "tr": "yabancılaşmak, uzaklaşmak",
+  "deBeispiel": "Die Freunde haben sich im Laufe der Jahre entfremdet.",
+  "gsw": "sich entfrömde",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kollege händ sich im Lauf vo de Jaare entfrömdet."
+ },
+ {
+  "id": 3384,
+  "de": "sich auseinandersetzen",
+  "tr": "ele almak, kafa yormak",
+  "deBeispiel": "Er musste sich intensiv mit dem Konflikt auseinandersetzen.",
+  "gsw": "sich usenandsetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sich intensiv mit em Konflikt müese usenandsetze."
+ },
+ {
+  "id": 3385,
+  "de": "das Unterbewusstsein",
+  "tr": "bilinçaltı",
+  "deBeispiel": "Träume geben oft Einblick in unser Unterbewusstsein.",
+  "gsw": "Underbewusstsii",
+  "gswArtikel": "s",
+  "gswBeispiel": "Träum gäbed hüfig en Iiblick i öises Underbewusstsii."
+ },
+ {
+  "id": 3386,
+  "de": "die Wahrnehmung",
+  "tr": "algı",
+  "deBeispiel": "Die subjektive Wahrnehmung beeinflusst unser Urteilsvermögen.",
+  "gsw": "Waarnämig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D subjektiv Waarnämig beiiflusst öises Urtäilsvermöge."
+ },
+ {
+  "id": 3387,
+  "de": "die Verdrängung",
+  "tr": "bastırma",
+  "deBeispiel": "Verdrängung ist ein bekannter Abwehrmechanismus der Psyche.",
+  "gsw": "Verdrängig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verdrängig isch en bekannte Abweermechanismus vo de Psyche."
+ },
+ {
+  "id": 3388,
+  "de": "die Prägung",
+  "tr": "biçimlenme, şekillenme (erken etkilerle)",
+  "deBeispiel": "Die frühkindliche Prägung beeinflusst das spätere Verhalten.",
+  "gsw": "Prägig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D früechindlich Prägig beiiflusst s spöteri Verhalte."
+ },
+ {
+  "id": 3389,
+  "de": "das Selbstbewusstsein",
+  "tr": "özgüven, öz farkındalık",
+  "deBeispiel": "Positive Erfahrungen stärken das Selbstbewusstsein.",
+  "gsw": "Sälbstbewusstsii",
+  "gswArtikel": "s",
+  "gswBeispiel": "Positivi Erfahrige stärched s Sälbstbewusstsii."
+ },
+ {
+  "id": 3390,
+  "de": "die Bewältigung",
+  "tr": "başa çıkma, üstesinden gelme",
+  "deBeispiel": "Die Bewältigung von Stress erfordert bestimmte Strategien.",
+  "gsw": "Bewältigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bewältigig vo Stress bruucht bestimmti Strategie."
+ },
+ {
+  "id": 3391,
+  "de": "der Antrieb",
+  "tr": "dürtü, güdü",
+  "deBeispiel": "Ihm fehlte der innere Antrieb, weiterzumachen.",
+  "gsw": "Aatriib",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im hät de inner Aatriib gfäält, zum wiitermache."
+ },
+ {
+  "id": 3392,
+  "de": "das Trauma",
+  "tr": "travma",
+  "deBeispiel": "Das Trauma aus der Kindheit wirkte bis ins Erwachsenenalter nach.",
+  "gsw": "Trauma",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Trauma us de Chindheit hät bis is Erwachsenealter nachgwirkt."
+ },
+ {
+  "id": 3393,
+  "de": "die Belastung",
+  "tr": "yük, stres kaynağı",
+  "deBeispiel": "Die berufliche Belastung führte schließlich zum Burnout.",
+  "gsw": "Belaschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D berueflich Belaschtig hät schlussändlich zum Burnout gfüert."
+ },
+ {
+  "id": 3394,
+  "de": "der Umgang",
+  "tr": "(bir şeyle) başa çıkma biçimi, davranış tarzı",
+  "deBeispiel": "Ihr Umgang mit Rückschlägen beeindruckte alle.",
+  "gsw": "Umgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire Umgang mit Ruggschlääg hät alli beiidruckt."
+ },
+ {
+  "id": 3395,
+  "de": "bewältigen",
+  "tr": "üstesinden gelmek, başa çıkmak",
+  "deBeispiel": "Sie hat die Krise erstaunlich gut bewältigt.",
+  "gsw": "bewältige",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät d Krise erstuunlich guet bewältiget."
+ },
+ {
+  "id": 3396,
+  "de": "verdrängen",
+  "tr": "bastırmak",
+  "deBeispiel": "Er verdrängte die unangenehme Erinnerung jahrelang.",
+  "gsw": "verdränge",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät di unaagnäm Erinnerig jaareläng verdrängt."
+ },
+ {
+  "id": 3397,
+  "de": "wahrnehmen",
+  "tr": "algılamak, fark etmek",
+  "deBeispiel": "Kinder nehmen Spannungen zwischen Eltern oft genau wahr.",
+  "gsw": "waarnää",
+  "gswArtikel": null,
+  "gswBeispiel": "Chind tüend Spannige zwüsched de Eltere hüfig ganz genau waarnää."
+ },
+ {
+  "id": 3398,
+  "de": "sich auswirken",
+  "tr": "etkilemek, yansımak",
+  "deBeispiel": "Stress kann sich negativ auf die Gesundheit auswirken.",
+  "gsw": "sich uswirke",
+  "gswArtikel": null,
+  "gswBeispiel": "Stress cha sich negativ uf d Gsundheit uswirke."
+ },
+ {
+  "id": 3399,
+  "de": "empfinden",
+  "tr": "hissetmek, duyumsamak",
+  "deBeispiel": "Sie empfand tiefe Dankbarkeit für seine Hilfe.",
+  "gsw": "empfinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät tüüfi Dankbarkeit für sini Hilf empfunde."
+ },
+ {
+  "id": 3400,
+  "de": "der Algorithmus",
+  "tr": "algoritma",
+  "deBeispiel": "Der Algorithmus sortiert die Daten in wenigen Sekunden.",
+  "gsw": "Algorithmus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Algorithmus sortiert d Date i es paar Sekunde."
+ },
+ {
+  "id": 3401,
+  "de": "die Verschlüsselung",
+  "tr": "şifreleme",
+  "deBeispiel": "Ohne Verschlüsselung sind persönliche Daten leicht angreifbar.",
+  "gsw": "Verschlüsselig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Verschlüsselig sind persöönlichi Date liecht aagriifbar."
+ },
+ {
+  "id": 3402,
+  "de": "der Datenschutz",
+  "tr": "veri koruma, gizlilik",
+  "deBeispiel": "Der Datenschutz spielt bei neuen Apps eine wichtige Rolle.",
+  "gsw": "Dateschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dateschutz spilt bi neue Apps e wichtigi Rolle."
+ },
+ {
+  "id": 3403,
+  "de": "die Schnittstelle",
+  "tr": "arayüz",
+  "deBeispiel": "Die neue Schnittstelle verbindet beide Programme reibungslos.",
+  "gsw": "Schnittstell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di neu Schnittstell verbindet di bäide Programm problemlos."
+ },
+ {
+  "id": 3404,
+  "de": "die Innovation",
+  "tr": "yenilik, inovasyon",
+  "deBeispiel": "Die Firma investiert stark in technologische Innovation.",
+  "gsw": "Innovation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Firma investiert starch i di technologisch Innovation."
+ },
+ {
+  "id": 3405,
+  "de": "der Halbleiter",
+  "tr": "yarı iletken",
+  "deBeispiel": "Ohne Halbleiter könnten moderne Computer nicht funktionieren.",
+  "gsw": "Halbläiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni Halbläiter chöntid moderni Computer nöd funktioniere."
+ },
+ {
+  "id": 3406,
+  "de": "automatisieren",
+  "tr": "otomatikleştirmek",
+  "deBeispiel": "Die Fabrik will ihre Produktion vollständig automatisieren.",
+  "gsw": "automatisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fabrik will iri Produktion vollständig automatisiere."
+ },
+ {
+  "id": 3407,
+  "de": "vernetzen",
+  "tr": "ağa bağlamak, bağlantılandırmak",
+  "deBeispiel": "Smarte Geräte lassen sich heutzutage einfach vernetzen.",
+  "gsw": "vernetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Smarti Grät lönd sich hützutags äifach vernetze."
+ },
+ {
+  "id": 3408,
+  "de": "drahtlos",
+  "tr": "kablosuz",
+  "deBeispiel": "Die Kopfhörer übertragen den Ton völlig drahtlos.",
+  "gsw": "draatlos",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chopfhörer übertraged de Ton ganz draatlos."
+ },
+ {
+  "id": 3409,
+  "de": "der Klimawandel",
+  "tr": "iklim değişikliği",
+  "deBeispiel": "Der Klimawandel bedroht viele Küstenregionen weltweit.",
+  "gsw": "Klimawandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Klimawandel bedroht vili Küschteregione uf de ganze Wält."
+ },
+ {
+  "id": 3410,
+  "de": "die Nachhaltigkeit",
+  "tr": "sürdürülebilirlik",
+  "deBeispiel": "Nachhaltigkeit wird für viele Unternehmen immer wichtiger.",
+  "gsw": "Nachhaltigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nachhaltigkeit wird für vili Firmene immer wichtiger."
+ },
+ {
+  "id": 3411,
+  "de": "der Treibhauseffekt",
+  "tr": "sera etkisi",
+  "deBeispiel": "Der Treibhauseffekt verstärkt die globale Erwärmung.",
+  "gsw": "Triibhuuseffekt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Triibhuuseffekt verstärcht di global Erwärmig."
+ },
+ {
+  "id": 3412,
+  "de": "die Emission",
+  "tr": "emisyon, salım",
+  "deBeispiel": "Die Stadt will die Emissionen des Verkehrs deutlich senken.",
+  "gsw": "Emission",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Stadt will d Emissione vom Vercheer düütlich senke."
+ }
+]

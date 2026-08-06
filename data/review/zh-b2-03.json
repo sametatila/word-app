@@ -1,0 +1,1001 @@
+[
+ {
+  "id": 3413,
+  "de": "die Ressource",
+  "tr": "kaynak (doğal, ekonomik)",
+  "deBeispiel": "Wir müssen natürliche Ressourcen sparsamer nutzen.",
+  "gsw": "Ressource",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir müend di natürliche Ressource sparsamer bruuche."
+ },
+ {
+  "id": 3414,
+  "de": "recyceln",
+  "tr": "geri dönüştürmek",
+  "deBeispiel": "In dieser Stadt wird fast der ganze Müll recycelt.",
+  "gsw": "rezikliere",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere Stadt wird fascht de ganz Güsel rezikliert."
+ },
+ {
+  "id": 3415,
+  "de": "die Verschwendung",
+  "tr": "israf",
+  "deBeispiel": "Die Verschwendung von Lebensmitteln belastet die Umwelt.",
+  "gsw": "Verschwändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verschwändig vo Läbensmittel belaschtet d Umwält."
+ },
+ {
+  "id": 3416,
+  "de": "erneuerbar",
+  "tr": "yenilenebilir",
+  "deBeispiel": "Immer mehr Strom stammt aus erneuerbaren Energien.",
+  "gsw": "erneuerbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Immer mee Strom chunt us erneuerbare Energie."
+ },
+ {
+  "id": 3417,
+  "de": "umweltfreundlich",
+  "tr": "çevre dostu",
+  "deBeispiel": "Viele Kunden bevorzugen mittlerweile umweltfreundliche Produkte.",
+  "gsw": "umwältfründlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Vili Chunde bevorzuged underdesse umwältfründlichi Produkt."
+ },
+ {
+  "id": 3418,
+  "de": "der CO2-Ausstoß",
+  "tr": "karbondioksit salımı",
+  "deBeispiel": "Der CO2-Ausstoß der Industrie sinkt nur langsam.",
+  "gsw": "CO2-Usstoss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De CO2-Usstoss vo de Induschtrii sinkt nu langsam."
+ },
+ {
+  "id": 3419,
+  "de": "die Solarenergie",
+  "tr": "güneş enerjisi",
+  "deBeispiel": "Solarenergie deckt inzwischen einen großen Teil des Bedarfs.",
+  "gsw": "Solarenergie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Solarenergie deckt underdesse en groosse Täil vom Bedarf."
+ },
+ {
+  "id": 3420,
+  "de": "die Windkraft",
+  "tr": "rüzgar enerjisi",
+  "deBeispiel": "Die Region setzt stark auf Windkraft und Solaranlagen.",
+  "gsw": "Windchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Region setzt starch uf Windchraft und Solaraalage."
+ },
+ {
+  "id": 3421,
+  "de": "die Artenvielfalt",
+  "tr": "tür çeşitliliği, biyoçeşitlilik",
+  "deBeispiel": "Der Regenwald bietet eine enorme Artenvielfalt.",
+  "gsw": "Artevilfalt",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Rägewald bütet e riisigi Artevilfalt."
+ },
+ {
+  "id": 3422,
+  "de": "das Aussterben",
+  "tr": "soyu tükenme",
+  "deBeispiel": "Der Klimawandel beschleunigt das Aussterben vieler Arten.",
+  "gsw": "Usstärbe",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Klimawandel beschlüüniget s Usstärbe vo vilne Arte."
+ },
+ {
+  "id": 3423,
+  "de": "der Lebensraum",
+  "tr": "yaşam alanı, habitat",
+  "deBeispiel": "Der Bau der Straße zerstört den Lebensraum vieler Tiere.",
+  "gsw": "Läbensruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bau vo de Straass zerstöört de Läbensruum vo vilne Tier."
+ },
+ {
+  "id": 3424,
+  "de": "die Vegetation",
+  "tr": "bitki örtüsü",
+  "deBeispiel": "Die Vegetation der Region hat sich stark verändert.",
+  "gsw": "Vegetation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vegetation vo de Region hät sich starch veränderet."
+ },
+ {
+  "id": 3425,
+  "de": "die Dürre",
+  "tr": "kuraklık (uzun süren, ürünü vuran)",
+  "deBeispiel": "Die anhaltende Dürre gefährdet die gesamte Ernte.",
+  "gsw": "Dürri",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di aahaltend Dürri gfäärdet di ganz Ernt."
+ },
+ {
+  "id": 3426,
+  "de": "der Permafrost",
+  "tr": "permafrost, sürekli donmuş toprak",
+  "deBeispiel": "Der auftauende Permafrost setzt gefährliches Methan frei.",
+  "gsw": "Permafrost",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Permafrost, wo am Uuftaue isch, setzt gfäärlichs Methan frii."
+ },
+ {
+  "id": 3427,
+  "de": "die Naturkatastrophe",
+  "tr": "doğal afet",
+  "deBeispiel": "Die Naturkatastrophe hat ganze Dörfer zerstört.",
+  "gsw": "Naturkatastrophe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Naturkatastrophe hät ganzi Dörfer zerstöört."
+ },
+ {
+  "id": 3428,
+  "de": "gedeihen",
+  "tr": "gelişmek, serpilmek",
+  "deBeispiel": "In diesem Klima gedeihen die Pflanzen besonders gut.",
+  "gsw": "gediie",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Klima gediied d Pflanze bsunders guet."
+ },
+ {
+  "id": 3429,
+  "de": "bewässern",
+  "tr": "sulamak",
+  "deBeispiel": "Die Bauern bewässern die Felder mit modernen Anlagen.",
+  "gsw": "bewässere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Buure bewässered d Fälder mit moderne Aalage."
+ },
+ {
+  "id": 3430,
+  "de": "der Organismus",
+  "tr": "organizma",
+  "deBeispiel": "Manche Organismen überleben selbst in extremer Kälte.",
+  "gsw": "Organismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mängi Organisme überläbed sogar i extremer Chälti."
+ },
+ {
+  "id": 3431,
+  "de": "bedrohen",
+  "tr": "tehdit etmek",
+  "deBeispiel": "Die Trockenheit bedroht die Existenz vieler Bauern.",
+  "gsw": "bedrohe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Trocheheit bedroht d Exischtänz vo vilne Buure."
+ },
+ {
+  "id": 3432,
+  "de": "das Ökosystem",
+  "tr": "ekosistem",
+  "deBeispiel": "Jeder Eingriff kann das gesamte Ökosystem stören.",
+  "gsw": "Ökosystem",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jede Iigriff cha s ganze Ökosystem störe."
+ },
+ {
+  "id": 3433,
+  "de": "die Hypothese",
+  "tr": "hipotez, varsayım",
+  "deBeispiel": "Die Wissenschaftler wollen ihre Hypothese überprüfen.",
+  "gsw": "Hypothese",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wüsseschaftler wänd iri Hypothese überprüefe."
+ },
+ {
+  "id": 3434,
+  "de": "die Erkenntnis",
+  "tr": "bulgu, kavrayış",
+  "deBeispiel": "Neue Erkenntnisse verändern oft alte Theorien.",
+  "gsw": "Erkenntnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Neui Erkenntnis veränderet hüfig alti Theorie."
+ },
+ {
+  "id": 3435,
+  "de": "das Molekül",
+  "tr": "molekül",
+  "deBeispiel": "Das Molekül besteht aus mehreren Atomen.",
+  "gsw": "Molekül",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Molekül bestaat us mehrere Atom."
+ },
+ {
+  "id": 3436,
+  "de": "die Zelle",
+  "tr": "hücre",
+  "deBeispiel": "Jede Zelle des Körpers benötigt ausreichend Sauerstoff.",
+  "gsw": "Zälle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Zälle vom Körper bruucht gnueg Suurstoff."
+ },
+ {
+  "id": 3437,
+  "de": "wissenschaftlich",
+  "tr": "bilimsel",
+  "deBeispiel": "Die Ergebnisse wurden wissenschaftlich genau überprüft.",
+  "gsw": "wüsseschaftlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Resultat sind wüsseschaftlich genau überprüeft worde."
+ },
+ {
+  "id": 3438,
+  "de": "der Nahverkehr",
+  "tr": "toplu taşıma, şehir içi ulaşım",
+  "deBeispiel": "Der öffentliche Nahverkehr wird in der Stadt ausgebaut.",
+  "gsw": "ÖV",
+  "gswArtikel": "de",
+  "gswBeispiel": "De ÖV wird i de Stadt langsam uusbaut."
+ },
+ {
+  "id": 3439,
+  "de": "der Verkehrskollaps",
+  "tr": "trafik çöküşü, trafik kilitlenmesi",
+  "deBeispiel": "Der Unfall führte zu einem totalen Verkehrskollaps.",
+  "gsw": "Vercheerskollaps",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Unfall hät zumene totale Vercheerskollaps gfüert."
+ },
+ {
+  "id": 3440,
+  "de": "pendeln",
+  "tr": "işe gidip gelmek, mekik dokumak",
+  "deBeispiel": "Sie pendelt jeden Tag eine Stunde zur Arbeit.",
+  "gsw": "pändle",
+  "gswArtikel": null,
+  "gswBeispiel": "Si pändlet jede Taag e Stund zur Arbet."
+ },
+ {
+  "id": 3441,
+  "de": "die Elektromobilität",
+  "tr": "elektrikli ulaşım",
+  "deBeispiel": "Die Elektromobilität wächst in den Städten rasant.",
+  "gsw": "Elektromobilität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Elektromobilität wachst i de Städt rasant."
+ },
+ {
+  "id": 3442,
+  "de": "die Ladestation",
+  "tr": "şarj istasyonu",
+  "deBeispiel": "An dieser Ladestation kann man E-Autos aufladen.",
+  "gsw": "Ladestation",
+  "gswArtikel": "d",
+  "gswBeispiel": "A dere Ladestation cha mer E-Autos uuflade."
+ },
+ {
+  "id": 3443,
+  "de": "die Infrastruktur",
+  "tr": "altyapı",
+  "deBeispiel": "Die Stadt investiert in eine moderne Infrastruktur.",
+  "gsw": "Infrastruktur",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Stadt investiert i e moderni Infrastruktur."
+ },
+ {
+  "id": 3444,
+  "de": "die Verkehrsdichte",
+  "tr": "trafik yoğunluğu",
+  "deBeispiel": "Die Verkehrsdichte nimmt zur Rushhour deutlich zu.",
+  "gsw": "Vercheersdichti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vercheersdichti nimmt zur Stossziit düütlich zue."
+ },
+ {
+  "id": 3445,
+  "de": "ausweichen",
+  "tr": "sapmak, yoldan çekilmek (çarpmamak için)",
+  "deBeispiel": "Der Radfahrer musste dem Fußgänger ausweichen.",
+  "gsw": "uswiiche",
+  "gswArtikel": null,
+  "gswBeispiel": "De Velofaarer hät em Fuessgänger müese uswiiche."
+ },
+ {
+  "id": 3446,
+  "de": "der Fahrgast",
+  "tr": "yolcu",
+  "deBeispiel": "Die Fahrgäste warteten geduldig auf den verspäteten Bus.",
+  "gsw": "Faargascht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Faargascht hät geduldig uf de verspötet Bus gwartet."
+ },
+ {
+  "id": 3447,
+  "de": "die Stadtplanung",
+  "tr": "şehir planlaması",
+  "deBeispiel": "Die moderne Stadtplanung berücksichtigt den Klimaschutz.",
+  "gsw": "Stadtplanig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D modern Stadtplanig berücksichtigt de Klimaschutz."
+ },
+ {
+  "id": 3448,
+  "de": "der Wohnraum",
+  "tr": "konut alanı, yaşam alanı",
+  "deBeispiel": "In Großstädten fehlt es zunehmend an bezahlbarem Wohnraum.",
+  "gsw": "Woonruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de groosse Städt fäält s immer mee a zaalbarem Woonruum."
+ },
+ {
+  "id": 3449,
+  "de": "der Mietanstieg",
+  "tr": "kira artışı",
+  "deBeispiel": "Der starke Mietanstieg trifft vor allem junge Familien.",
+  "gsw": "Mietaastiig",
+  "gswArtikel": "de",
+  "gswBeispiel": "De starch Mietaastiig trifft vor allem jungi Familie."
+ },
+ {
+  "id": 3450,
+  "de": "die Gentrifizierung",
+  "tr": "soylulaştırma",
+  "deBeispiel": "Die Gentrifizierung verändert das Viertel spürbar.",
+  "gsw": "Gentrifizierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gentrifizierig veränderet s Quartier spüürbar."
+ },
+ {
+  "id": 3451,
+  "de": "das Wohnviertel",
+  "tr": "yerleşim bölgesi, mahalle",
+  "deBeispiel": "Das Wohnviertel wurde in den letzten Jahren saniert.",
+  "gsw": "Quartier",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Quartier isch i de letschte Jaar saniert worde.",
+  "ayniLehce": [
+   "Quartier (B1)",
+   "Viertel (B1)",
+   "Stadtteil (A2)"
+  ]
+ },
+ {
+  "id": 3452,
+  "de": "überfüllt",
+  "tr": "aşırı kalabalık",
+  "deBeispiel": "Die Bahn war zur Stoßzeit völlig überfüllt.",
+  "gsw": "überfüllt",
+  "gswArtikel": null,
+  "gswBeispiel": "S Tram isch zur Stossziit total überfüllt gsii."
+ },
+ {
+  "id": 3453,
+  "de": "die Lebensqualität",
+  "tr": "yaşam kalitesi",
+  "deBeispiel": "Grünflächen verbessern die Lebensqualität in der Stadt.",
+  "gsw": "Läbensqualität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Grüenflächene verbessered d Läbensqualität i de Stadt."
+ },
+ {
+  "id": 3454,
+  "de": "der Ballungsraum",
+  "tr": "yoğun nüfuslu bölge, metropol alanı",
+  "deBeispiel": "Im Ballungsraum leben Millionen Menschen auf engem Raum.",
+  "gsw": "Agglomeration",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Agglomeration läbed Millione Mänsche uf ängem Ruum."
+ },
+ {
+  "id": 3455,
+  "de": "die Bevölkerungsdichte",
+  "tr": "nüfus yoğunluğu",
+  "deBeispiel": "Die Bevölkerungsdichte ist im Zentrum besonders hoch.",
+  "gsw": "Bevölkerigsdichti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bevölkerigsdichti isch im Zäntrum bsunders hööch."
+ },
+ {
+  "id": 3456,
+  "de": "verdichten",
+  "tr": "yoğunlaştırmak",
+  "deBeispiel": "Die Stadt will die Bebauung im Zentrum verdichten.",
+  "gsw": "verdichte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Stadt will d Bebauig im Zäntrum verdichte."
+ },
+ {
+  "id": 3457,
+  "de": "die Wohnungsnot",
+  "tr": "konut sıkıntısı",
+  "deBeispiel": "Die Wohnungsnot verschärft sich in vielen Metropolen.",
+  "gsw": "Wonigsnoot",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wonigsnoot verschärft sich i vilne groosse Städt."
+ },
+ {
+  "id": 3458,
+  "de": "sanieren",
+  "tr": "yenilemek, restore etmek",
+  "deBeispiel": "Die Stadt lässt die alten Gebäude energetisch sanieren.",
+  "gsw": "saniere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Stadt laat di alte Gebäud energetisch saniere."
+ },
+ {
+  "id": 3459,
+  "de": "die Grünfläche",
+  "tr": "yeşil alan",
+  "deBeispiel": "Neue Grünflächen sollen das Stadtklima verbessern.",
+  "gsw": "Grüenflächi",
+  "gswArtikel": "d",
+  "gswBeispiel": "E neui Grüenflächi söll s Stadtklima verbessere."
+ },
+ {
+  "id": 3460,
+  "de": "die Nachbarschaft",
+  "tr": "komşuluk, mahalle",
+  "deBeispiel": "In dieser Nachbarschaft kennt man sich gut.",
+  "gsw": "Nachberschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "I dere Nachberschaft kennt mer enand guet."
+ },
+ {
+  "id": 3461,
+  "de": "urban",
+  "tr": "kentsel",
+  "deBeispiel": "Urbane Räume wachsen weltweit immer schneller.",
+  "gsw": "urban",
+  "gswArtikel": null,
+  "gswBeispiel": "Urbani Rüüm wachsed wältwiit immer schnäller."
+ },
+ {
+  "id": 3733,
+  "de": "die Erledigung",
+  "tr": "yapılacak iş, halledilecek iş",
+  "deBeispiel": "Ich muss heute noch ein paar Erledigungen machen.",
+  "gsw": "Erledigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich mues hüt no es paar Erledigige mache."
+ },
+ {
+  "id": 3734,
+  "de": "sich gewöhnen an",
+  "tr": "alışmak",
+  "deBeispiel": "Ich habe mich schnell an den neuen Alltag gewöhnt.",
+  "gsw": "sich gwöne a",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha mich schnäll a de neu Alltag gwönt."
+ },
+ {
+  "id": 3736,
+  "de": "die Angelegenheit",
+  "tr": "mesele, konu",
+  "deBeispiel": "Das ist eine rein private Angelegenheit.",
+  "gsw": "Aaglägehäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das isch e räin privati Aaglägehäit."
+ },
+ {
+  "id": 3737,
+  "de": "der Zeitmangel",
+  "tr": "zaman darlığı",
+  "deBeispiel": "Wegen Zeitmangel schaffe ich das heute nicht.",
+  "gsw": "Ziitmangel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäge Ziitmangel schaff ich das hüt nöd."
+ },
+ {
+  "id": 3738,
+  "de": "sich beschäftigen mit",
+  "tr": "ilgilenmek, uğraşmak",
+  "deBeispiel": "Sie beschäftigt sich in ihrer Freizeit mit Fotografie.",
+  "gsw": "sich beschäftige mit",
+  "gswArtikel": null,
+  "gswBeispiel": "Si beschäftiget sich i de Freiziit mit Fotografie."
+ },
+ {
+  "id": 3739,
+  "de": "die Instandhaltung",
+  "tr": "bakım, bakım-onarım",
+  "deBeispiel": "Die Instandhaltung des alten Hauses kostet viel Geld.",
+  "gsw": "Inschtandhaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Inschtandhaltig vom alte Huus koschtet vil Gäld."
+ },
+ {
+  "id": 3740,
+  "de": "die Nebenkosten",
+  "tr": "ek masraflar, aidat",
+  "deBeispiel": "Die Nebenkosten sind im letzten Jahr deutlich gestiegen.",
+  "gsw": "Näbechöschte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Näbechöschte sind im letschte Jaar düütlich gschtige."
+ },
+ {
+  "id": 3741,
+  "de": "der Mietvertrag",
+  "tr": "kira sözleşmesi",
+  "deBeispiel": "Wir haben gestern den Mietvertrag unterschrieben.",
+  "gsw": "Mietvertraag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ geschter de Mietvertraag underschribe."
+ },
+ {
+  "id": 3742,
+  "de": "die Renovierung",
+  "tr": "tadilat, yenileme",
+  "deBeispiel": "Die Renovierung dauert leider länger als geplant.",
+  "gsw": "Renovation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Renovation duuret läider länger als gplant."
+ },
+ {
+  "id": 3743,
+  "de": "die Kaution",
+  "tr": "depozito",
+  "deBeispiel": "Die Kaution beträgt meistens drei Monatsmieten.",
+  "gsw": "Depot",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Depot für d Wonig isch mäischtens drü Monetsmiete."
+ },
+ {
+  "id": 3744,
+  "de": "die Wohngemeinschaft",
+  "tr": "paylaşımlı ev, öğrenci evi",
+  "deBeispiel": "Sie lebt seit zwei Jahren in einer Wohngemeinschaft.",
+  "gsw": "Wongmäinschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si läbt siit zwäi Jaar i ere Wongmäinschaft."
+ },
+ {
+  "id": 3745,
+  "de": "geräumig",
+  "tr": "ferah, geniş",
+  "deBeispiel": "Die neue Wohnung ist wirklich sehr geräumig.",
+  "gsw": "gruumig",
+  "gswArtikel": null,
+  "gswBeispiel": "D neu Wonig isch würkli sehr gruumig."
+ },
+ {
+  "id": 3746,
+  "de": "der Ausverkauf",
+  "tr": "indirim, sezon sonu satışı",
+  "deBeispiel": "Im Ausverkauf bekommt man oft sehr günstige Ware.",
+  "gsw": "Usverchauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Usverchauf überchunt me oft sehr günschtigi War."
+ },
+ {
+  "id": 3747,
+  "de": "der Kassenbon",
+  "tr": "kasa fişi",
+  "deBeispiel": "Bewahren Sie den Kassenbon für einen Umtausch auf.",
+  "gsw": "Kassezädel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bhalted Si de Kassezädel für en Umtuusch."
+ },
+ {
+  "id": 3748,
+  "de": "stöbern",
+  "tr": "karıştırıp bakmak, gezinmek",
+  "deBeispiel": "Sie stöbert am liebsten in den Regalen des Buchladens.",
+  "gsw": "schtöbere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si schtöberet am liebschte i de Regal vom Buechlade."
+ },
+ {
+  "id": 3749,
+  "de": "die Zutat",
+  "tr": "malzeme (yemek için)",
+  "deBeispiel": "Für den Kuchen brauchen wir noch einige Zutaten.",
+  "gsw": "Zuetat",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für de Chueche bruuched mir no es paar Zuetate."
+ },
+ {
+  "id": 3750,
+  "de": "würzen",
+  "tr": "baharatlamak",
+  "deBeispiel": "Sie würzt die Suppe gern mit frischem Ingwer.",
+  "gsw": "würze",
+  "gswArtikel": null,
+  "gswBeispiel": "Si würzt d Suppe gärn mit frischem Ingwer."
+ },
+ {
+  "id": 3751,
+  "de": "der Nachtisch",
+  "tr": "tatlı (yemek sonrası)",
+  "deBeispiel": "Zum Nachtisch gibt es heute einen Schokoladenkuchen.",
+  "gsw": "Dessert",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zum Dessert git s hüt en Schoggichueche.",
+  "ayniLehce": [
+   "Dessert (B1)",
+   "Nachspeise (B1)"
+  ]
+ },
+ {
+  "id": 3752,
+  "de": "die Bedienung",
+  "tr": "servis, garson hizmeti",
+  "deBeispiel": "Die Bedienung in diesem Café ist sehr freundlich.",
+  "gsw": "Bedienig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bedienig i dem Kafi isch mega fründlich."
+ },
+ {
+  "id": 3753,
+  "de": "deftig",
+  "tr": "doyurucu, ağır (yemek)",
+  "deBeispiel": "Nach der Wanderung wollten wir etwas Deftiges essen.",
+  "gsw": "währschaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Wanderig händ mir öppis Währschafts wele ässe."
+ },
+ {
+  "id": 3754,
+  "de": "herzhaft",
+  "tr": "tuzlu, baharatlı (tatlının zıddı)",
+  "deBeispiel": "Ich esse lieber herzhafte als süße Speisen.",
+  "gsw": "härzhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich isse lieber härzhafti Sache als süessi."
+ },
+ {
+  "id": 3755,
+  "de": "die Spezialität",
+  "tr": "yöresel özel yemek",
+  "deBeispiel": "Diese Spezialität ist typisch für die Region.",
+  "gsw": "Spezialität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Spezialität isch typisch für d Region."
+ },
+ {
+  "id": 3756,
+  "de": "servieren",
+  "tr": "servis etmek",
+  "deBeispiel": "Der Kellner serviert den Wein sehr elegant.",
+  "gsw": "serviere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kellner serviert de Wii ganz elegant."
+ },
+ {
+  "id": 3757,
+  "de": "die Vorspeise",
+  "tr": "ordövr, ön yemek",
+  "deBeispiel": "Als Vorspeise nehme ich heute einen Salat.",
+  "gsw": "Vorspiis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Als Vorspiis nime ich hüt en Salaat."
+ },
+ {
+  "id": 3758,
+  "de": "der Hauptgang",
+  "tr": "ana yemek",
+  "deBeispiel": "Der Hauptgang wird in zwanzig Minuten serviert.",
+  "gsw": "Hauptgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Hauptgang wird i zwänzg Minute serviert."
+ },
+ {
+  "id": 3759,
+  "de": "die Buchung",
+  "tr": "rezervasyon (işlemi)",
+  "deBeispiel": "Die Buchung des Hotels war ganz unkompliziert.",
+  "gsw": "Buechig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Buechig vom Hotel isch ganz unkompliziert gsii."
+ },
+ {
+  "id": 3760,
+  "de": "stornieren",
+  "tr": "iptal etmek",
+  "deBeispiel": "Wegen Krankheit musste ich die Reise stornieren.",
+  "gsw": "schtorniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wäge de Chrankheit han ich d Räis müese schtorniere."
+ },
+ {
+  "id": 3761,
+  "de": "die Stornierung",
+  "tr": "iptal etme",
+  "deBeispiel": "Die Stornierung ist bis 24 Stunden vorher kostenlos.",
+  "gsw": "Schtornierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtornierig isch bis 24 Schtunde vorher gratis."
+ },
+ {
+  "id": 3762,
+  "de": "der Fremdenführer",
+  "tr": "turist rehberi",
+  "deBeispiel": "Ein Fremdenführer zeigte uns die historische Altstadt.",
+  "gsw": "Frömdefüerer",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Frömdefüerer hät üüs di historisch Altschtadt zäiget."
+ },
+ {
+  "id": 3763,
+  "de": "entspannen",
+  "tr": "rahatlamak",
+  "deBeispiel": "Am Strand kann ich abends richtig gut entspannen.",
+  "gsw": "entspanne",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Schtrand chan ich am Aabig richtig guet entspanne."
+ },
+ {
+  "id": 3764,
+  "de": "die Ferienwohnung",
+  "tr": "tatil evi, kiralık daire",
+  "deBeispiel": "Wir haben eine Ferienwohnung direkt am Meer gemietet.",
+  "gsw": "Feriewonig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir händ e Feriewonig diräkt am Meer gmietet."
+ },
+ {
+  "id": 3765,
+  "de": "der Sonnenbrand",
+  "tr": "güneş yanığı",
+  "deBeispiel": "Ohne Sonnencreme bekommt man am Strand schnell einen Sonnenbrand.",
+  "gsw": "Sunnebrand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni Sunnecreme überchunt me am Schtrand schnäll en Sunnebrand."
+ },
+ {
+  "id": 3766,
+  "de": "die Freizeitbeschäftigung",
+  "tr": "boş zaman etkinliği",
+  "deBeispiel": "Lesen ist meine liebste Freizeitbeschäftigung im Winter.",
+  "gsw": "Friiziitbeschäftigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Läse isch mini liebschti Friiziitbeschäftigig im Winter."
+ },
+ {
+  "id": 3767,
+  "de": "der Zeitvertreib",
+  "tr": "vakit geçirme, eğlence",
+  "deBeispiel": "Kartenspielen ist bei uns ein beliebter Zeitvertreib.",
+  "gsw": "Ziitvertriib",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jasse isch bi üüs en beliebte Ziitvertriib."
+ },
+ {
+  "id": 3768,
+  "de": "die Mitgliedschaft",
+  "tr": "üyelik",
+  "deBeispiel": "Ich habe eine Mitgliedschaft im Fitnessstudio abgeschlossen.",
+  "gsw": "Mitgliidschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha e Mitgliidschaft im Fitness abgschlosse."
+ },
+ {
+  "id": 3769,
+  "de": "ausspannen",
+  "tr": "dinlenmek, mola vermek",
+  "deBeispiel": "Am Wochenende will ich einfach nur ausspannen.",
+  "gsw": "usschpanne",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenänd wott ich äifach nur usschpanne."
+ },
+ {
+  "id": 3770,
+  "de": "die Muße",
+  "tr": "boş vakit, huzurlu zaman",
+  "deBeispiel": "Endlich habe ich Muße, ein gutes Buch zu lesen.",
+  "gsw": "Muesse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ändlich han ich Muesse, es guets Buech z läse."
+ },
+ {
+  "id": 3771,
+  "de": "zurückführen auf",
+  "tr": "bir şeye bağlamak, dayandırmak",
+  "deBeispiel": "Der Erfolg lässt sich auf harte Arbeit zurückführen.",
+  "gsw": "zruggfüere uf",
+  "gswArtikel": null,
+  "gswBeispiel": "De Erfolg laat sich uf harti Arbet zruggfüere."
+ },
+ {
+  "id": 3772,
+  "de": "beitragen zu",
+  "tr": "katkıda bulunmak",
+  "deBeispiel": "Jeder kann zum Klimaschutz beitragen.",
+  "gsw": "biiträge zu",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede cha zum Klimaschutz biiträge."
+ },
+ {
+  "id": 3773,
+  "de": "sich durchsetzen",
+  "tr": "kendini kabul ettirmek, üstün gelmek",
+  "deBeispiel": "Die neue Technik hat sich schnell durchgesetzt.",
+  "gsw": "sich duresetze",
+  "gswArtikel": null,
+  "gswBeispiel": "D neu Technik hät sich schnäll chöne duresetze."
+ },
+ {
+  "id": 3774,
+  "de": "sich auseinandersetzen mit",
+  "tr": "bir konuyla uğraşmak, ele almak",
+  "deBeispiel": "Die Schüler setzen sich mit dem Thema Migration auseinander.",
+  "gsw": "sich usenandsetze mit",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schüeler müend sich mit em Theema Migration usenandsetze."
+ },
+ {
+  "id": 3775,
+  "de": "zurücktreten",
+  "tr": "istifa etmek, geri çekilmek",
+  "deBeispiel": "Der Minister ist nach dem Skandal zurückgetreten.",
+  "gsw": "zruggträtte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Minischter isch nach em Skandal zruggträtte."
+ },
+ {
+  "id": 3776,
+  "de": "einbeziehen",
+  "tr": "dahil etmek, katmak",
+  "deBeispiel": "Die Lehrerin bezieht alle Schüler in die Diskussion ein.",
+  "gsw": "iibezie",
+  "gswArtikel": null,
+  "gswBeispiel": "D Leererin wott alli Schüeler i d Diskussion iibezie."
+ },
+ {
+  "id": 3777,
+  "de": "nachgeben",
+  "tr": "boyun eğmek, taviz vermek",
+  "deBeispiel": "Die Eltern geben dem Kind viel zu oft nach.",
+  "gsw": "naagää",
+  "gswArtikel": null,
+  "gswBeispiel": "D Eltere sötted em Chind nöd bi allem naagää."
+ },
+ {
+  "id": 3778,
+  "de": "aufklären",
+  "tr": "aydınlatmak, açıklığa kavuşturmak",
+  "deBeispiel": "Die Polizei konnte den Fall bisher nicht aufklären.",
+  "gsw": "ufchläre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät de Fall bis jetz nöd chöne ufchläre."
+ },
+ {
+  "id": 3779,
+  "de": "beruhen",
+  "tr": "dayanmak, temellenmek",
+  "deBeispiel": "Die Theorie beruht auf jahrelangen Forschungen.",
+  "gsw": "berue uf",
+  "gswArtikel": null,
+  "gswBeispiel": "D Theorii beruet uf jaarelanger Forschig."
+ },
+ {
+  "id": 3780,
+  "de": "bestehen aus",
+  "tr": "oluşmak, meydana gelmek",
+  "deBeispiel": "Das Team besteht aus zehn Mitgliedern.",
+  "gsw": "beschtaa us",
+  "gswArtikel": null,
+  "gswBeispiel": "S Team beschtaat us zää Mitglider."
+ },
+ {
+  "id": 3783,
+  "de": "sich bewerben um",
+  "tr": "başvurmak",
+  "deBeispiel": "Sie bewirbt sich um ein Stipendium im Ausland.",
+  "gsw": "sich bewärbe um",
+  "gswArtikel": null,
+  "gswBeispiel": "Si wott sich um es Schtipendium im Usland bewärbe."
+ },
+ {
+  "id": 3786,
+  "de": "sich verlassen auf",
+  "tr": "bel bağlamak, güvenip dayanmak",
+  "deBeispiel": "Du kannst dich jederzeit auf meine Hilfe verlassen.",
+  "gsw": "sich verlaa uf",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch di jederziit uf mini Hilf verlaa."
+ },
+ {
+  "id": 3787,
+  "de": "sich beziehen auf",
+  "tr": "atıfta bulunmak, ilgili olmak",
+  "deBeispiel": "Diese Frage bezieht sich auf den letzten Abschnitt.",
+  "gsw": "sich bezie uf",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Fraag bezieht sich uf de letscht Abschnitt."
+ },
+ {
+  "id": 3788,
+  "de": "sich engagieren für",
+  "tr": "kendini adamak, faal çalışmak",
+  "deBeispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
+  "gsw": "sich engagiere für",
+  "gswArtikel": null,
+  "gswBeispiel": "Si engagiert sich sit Jaare für de Umwältschutz."
+ },
+ {
+  "id": 3789,
+  "de": "sich orientieren an",
+  "tr": "örnek almak, yön belirlemek",
+  "deBeispiel": "Junge Designer orientieren sich oft an bekannten Vorbildern.",
+  "gsw": "sich orientiere a",
+  "gswArtikel": null,
+  "gswBeispiel": "Jungi Designer orientiered sich oft a bekannte Vorbilder."
+ },
+ {
+  "id": 3790,
+  "de": "sich richten nach",
+  "tr": "uymak, göre hareket etmek",
+  "deBeispiel": "Der Preis richtet sich nach der Nachfrage.",
+  "gsw": "sich richte nach",
+  "gswArtikel": null,
+  "gswBeispiel": "De Priis richtet sich nach de Naachfraag."
+ },
+ {
+  "id": 3792,
+  "de": "hinweisen auf",
+  "tr": "dikkat çekmek, işaret etmek",
+  "deBeispiel": "Der Arzt weist auf die Risiken der Behandlung hin.",
+  "gsw": "hiiwiise uf",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokter tuet uf d Risike vo de Behandlig hiiwiise."
+ },
+ {
+  "id": 3793,
+  "de": "resultieren aus",
+  "tr": "kaynaklanmak, -den doğmak",
+  "deBeispiel": "Der Streit resultierte aus einem einfachen Missverständnis.",
+  "gsw": "resultiere us",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtriit hät us eme äifache Missverschtändnis resultiert."
+ },
+ {
+  "id": 3795,
+  "de": "neigen zu",
+  "tr": "eğiliminde olmak",
+  "deBeispiel": "Er neigt dazu, kleine Probleme zu übertreiben.",
+  "gsw": "näige zu",
+  "gswArtikel": null,
+  "gswBeispiel": "Er näigt dezue, chliini Probleem z übertriibe."
+ },
+ {
+  "id": 3796,
+  "de": "verfügen über",
+  "tr": "sahip olmak, tasarrufunda bulundurmak",
+  "deBeispiel": "Die Firma verfügt über modernste Technik.",
+  "gsw": "verfüege über",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma verfüegt über di modernscht Technik."
+ },
+ {
+  "id": 3798,
+  "de": "leiden an",
+  "tr": "-den muzdarip olmak, çekmek",
+  "deBeispiel": "Sie leidet seit Jahren an einer seltenen Krankheit.",
+  "gsw": "liide a",
+  "gswArtikel": null,
+  "gswBeispiel": "Si liidet sit Jaare an ere sältene Chrankheit."
+ },
+ {
+  "id": 3800,
+  "de": "sich erinnern an",
+  "tr": "hatırlamak, anımsamak",
+  "deBeispiel": "Ich erinnere mich kaum an meine frühe Kindheit.",
+  "gsw": "sich erinnere a",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mag mi chuum a mini früei Chindheit erinnere."
+ },
+ {
+  "id": 3802,
+  "de": "sich entscheiden für",
+  "tr": "karar vermek, seçmek",
+  "deBeispiel": "Wir haben uns für die günstigere Variante entschieden.",
+  "gsw": "sich entschäide für",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ üüs am Änd für di günschtiger Variante müese entschäide."
+ },
+ {
+  "id": 3804,
+  "de": "sich einsetzen für",
+  "tr": "savunmak, mücadele etmek (bir amaç için)",
+  "deBeispiel": "Die Organisation setzt sich für Menschenrechte ein.",
+  "gsw": "sich iisetze für",
+  "gswArtikel": null,
+  "gswBeispiel": "D Organisation wott sich für d Mänscherächt iisetze."
+ }
+]

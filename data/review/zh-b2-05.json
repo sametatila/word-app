@@ -1,0 +1,992 @@
+[
+ {
+  "id": 4081,
+  "de": "die Betriebsrente",
+  "tr": "işyeri emeklilik aylığı, kurumsal emeklilik",
+  "deBeispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
+  "gsw": "Betriebsränte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Näbet de gsetzliche Ränte überchunt er e chlini Betriebsränte."
+ },
+ {
+  "id": 4082,
+  "de": "die Altersvorsorge",
+  "tr": "emeklilik birikimi, yaşlılık güvencesi",
+  "deBeispiel": "Mit der privaten Altersvorsorge sollte man möglichst früh beginnen.",
+  "gsw": "Altersvorsorg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit de private Altersvorsorg sött me möglichscht früe aafange."
+ },
+ {
+  "id": 4083,
+  "de": "die Elternzeit",
+  "tr": "ebeveyn izni",
+  "deBeispiel": "Immer mehr Väter nehmen inzwischen mehrere Monate Elternzeit.",
+  "gsw": "Eltereziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Immer mee Vätter nämed inzwüsche mehreri Mönet Eltereziit."
+ },
+ {
+  "id": 4084,
+  "de": "der Mutterschutz",
+  "tr": "doğum öncesi ve sonrası koruma, analık izni",
+  "deBeispiel": "Während des Mutterschutzes darf der Betrieb ihr nicht kündigen.",
+  "gsw": "Muetterschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Während em Muetterschutz dörf de Betrib ere nöd chünde."
+ },
+ {
+  "id": 4085,
+  "de": "der Urlaubsanspruch",
+  "tr": "izin hakkı",
+  "deBeispiel": "Der gesetzliche Urlaubsanspruch beträgt mindestens zwanzig Arbeitstage.",
+  "gsw": "Ferieaaschpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gsetzlich Ferieaaschpruch isch mindeschtens zwänzg Arbetstäg."
+ },
+ {
+  "id": 4086,
+  "de": "die Betriebsvereinbarung",
+  "tr": "işyeri anlaşması, işyeri toplu düzenlemesi",
+  "deBeispiel": "Eine neue Betriebsvereinbarung regelt das mobile Arbeiten von zu Hause.",
+  "gsw": "Betriebsveräinbarig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E nöii Betriebsveräinbarig reglet s mobile Schaffe vo dehäi."
+ },
+ {
+  "id": 4087,
+  "de": "die Interessenvertretung",
+  "tr": "çıkarların temsili, temsil organı",
+  "deBeispiel": "Ohne eine starke Interessenvertretung haben die Beschäftigten kaum Einfluss.",
+  "gsw": "Intressevertretig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni e schtarchi Intressevertretig händ d Bschäftigte chuum Iifluss."
+ },
+ {
+  "id": 4088,
+  "de": "der Warnstreik",
+  "tr": "uyarı grevi",
+  "deBeispiel": "Ein zweistündiger Warnstreik legte den gesamten Nahverkehr lahm.",
+  "gsw": "Warnschtreik",
+  "gswArtikel": "de",
+  "gswBeispiel": "En zwäischtündige Warnschtreik hät de ganz Naaverchehr lahmgläit."
+ },
+ {
+  "id": 4089,
+  "de": "der Arbeitskampf",
+  "tr": "işçi mücadelesi, grev ve lokavt süreci",
+  "deBeispiel": "Der Arbeitskampf dauerte drei Wochen und kostete Millionen.",
+  "gsw": "Arbetschampf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Arbetschampf hät drüü Wuche duuret und hät Millione choschtet."
+ },
+ {
+  "id": 4090,
+  "de": "der Arbeitsschutz",
+  "tr": "iş sağlığı ve güvenliği",
+  "deBeispiel": "Die Aufsichtsbehörde prüft regelmäßig den Arbeitsschutz im Betrieb.",
+  "gsw": "Arbetsschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Uufsichtsbehörde prüeft regelmässig de Arbetsschutz im Betrib."
+ },
+ {
+  "id": 4091,
+  "de": "der Arbeitsunfall",
+  "tr": "iş kazası",
+  "deBeispiel": "Jeder Arbeitsunfall muss innerhalb weniger Tage gemeldet werden.",
+  "gsw": "Arbetsunfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Arbetsunfall mues innerhalb vo weenig Täg gmäldet werde."
+ },
+ {
+  "id": 4092,
+  "de": "die Sicherheitsvorschrift",
+  "tr": "güvenlik talimatı, güvenlik kuralı",
+  "deBeispiel": "Wer die Sicherheitsvorschriften missachtet, gefährdet auch seine Kollegen.",
+  "gsw": "Sicherheitsvorschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer d Sicherheitsvorschrifte missachtet, gfäärdet au sini Kollege."
+ },
+ {
+  "id": 4093,
+  "de": "die Berufsgenossenschaft",
+  "tr": "meslek kazaları sigorta kurumu",
+  "deBeispiel": "Die Berufsgenossenschaft zahlt die Behandlung nach einem Unfall im Betrieb.",
+  "gsw": "Bruefsgnosseschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bruefsgnosseschaft zahlt d Behandlig nach eme Unfall im Betrib."
+ },
+ {
+  "id": 4094,
+  "de": "einarbeiten",
+  "tr": "işe alıştırmak, oryantasyon yapmak",
+  "deBeispiel": "Eine erfahrene Kollegin arbeitet die neuen Mitglieder des Teams ein.",
+  "gsw": "iiarbeite",
+  "gswArtikel": null,
+  "gswBeispiel": "En erfaarni Kollegin tuet di nöie Mitglider vom Team iiarbeite."
+ },
+ {
+  "id": 4095,
+  "de": "anlernen",
+  "tr": "iş başında öğretmek, yetiştirmek",
+  "deBeispiel": "Für diese Tätigkeit werden die Hilfskräfte in zwei Tagen angelernt.",
+  "gsw": "aalerne",
+  "gswArtikel": null,
+  "gswBeispiel": "Für die Tätigkäit tuet me d Hilfschreft i zwäi Täg aalerne."
+ },
+ {
+  "id": 4096,
+  "de": "abmahnen",
+  "tr": "yazılı uyarı vermek, ihtar etmek",
+  "deBeispiel": "Der Chef hat ihn wegen wiederholter Verspätungen schriftlich abgemahnt.",
+  "gsw": "abmaane",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chef hät en wäge wiiderholte Verschpäätige schriftlich abgmaant."
+ },
+ {
+  "id": 4097,
+  "de": "freistellen",
+  "tr": "izinli saymak, işten muaf tutmak",
+  "deBeispiel": "Für die Prüfung wurde sie eine Woche lang von der Arbeit freigestellt.",
+  "gsw": "freischtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Prüefig isch si e Wuche lang vo de Arbet freigschtellt worde."
+ },
+ {
+  "id": 4098,
+  "de": "anwerben",
+  "tr": "eleman temin etmek, işe çekmek",
+  "deBeispiel": "Das Unternehmen wirbt gezielt Ingenieure aus dem Ausland an.",
+  "gsw": "aawärbe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternäme tuet geziilt Ingenieur us em Uusland aawärbe."
+ },
+ {
+  "id": 4099,
+  "de": "beaufsichtigen",
+  "tr": "denetlemek, gözetim altında tutmak",
+  "deBeispiel": "Ein Meister beaufsichtigt die Arbeiten an der neuen Maschine.",
+  "gsw": "beuufsichtige",
+  "gswArtikel": null,
+  "gswBeispiel": "En Meischter beuufsichtiget d Arbete a de nöie Maschine."
+ },
+ {
+  "id": 4100,
+  "de": "einweisen",
+  "tr": "bilgilendirmek, işin nasıl yapılacağını göstermek",
+  "deBeispiel": "Alle Beschäftigten werden vor dem ersten Einsatz gründlich eingewiesen.",
+  "gsw": "iiwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli Bschäftigte tuet me vor em erschte Iisatz gründlich iiwiise."
+ },
+ {
+  "id": 4101,
+  "de": "schulen",
+  "tr": "eğitmek, kurs vermek",
+  "deBeispiel": "Die Mitarbeiter werden jedes Jahr im Umgang mit Kundendaten geschult.",
+  "gsw": "schuele",
+  "gswArtikel": null,
+  "gswBeispiel": "D Mitarbeiter wärded jedes Jaar im Umgang mit Chundedate gschuelet."
+ },
+ {
+  "id": 4102,
+  "de": "zumuten",
+  "tr": "katlanmasını beklemek, reva görmek",
+  "deBeispiel": "So lange Schichten kann man niemandem auf Dauer zumuten.",
+  "gsw": "zuemuete",
+  "gswArtikel": null,
+  "gswBeispiel": "So langi Schichte cha me niemertem uf d Duur zuemuete."
+ },
+ {
+  "id": 4103,
+  "de": "kooperieren",
+  "tr": "işbirliği yapmak",
+  "deBeispiel": "Die beiden Abteilungen kooperieren bei der Einführung der Software.",
+  "gsw": "kooperiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Di bäide Abteilige kooperiered bi de Iifüerig vo de Software."
+ },
+ {
+  "id": 4104,
+  "de": "umstrukturieren",
+  "tr": "yeniden yapılandırmak",
+  "deBeispiel": "Der Konzern will die Verwaltung im kommenden Jahr umstrukturieren.",
+  "gsw": "umschtrukturiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konzern wil d Verwaltig im choomende Jaar umschtrukturiere."
+ },
+ {
+  "id": 4105,
+  "de": "rationalisieren",
+  "tr": "verimlilik için küçültmek, akılcılaştırmak",
+  "deBeispiel": "Durch die Automatisierung wurden ganze Arbeitsbereiche rationalisiert.",
+  "gsw": "rationalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Dur d Automatisierig sind ganzi Arbetsberiich rationalisiert worde."
+ },
+ {
+  "id": 4106,
+  "de": "koordinieren",
+  "tr": "koordine etmek, eşgüdüm sağlamak",
+  "deBeispiel": "Sie koordiniert die Termine zwischen Produktion und Vertrieb.",
+  "gsw": "koordiniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si koordiniert d Termin zwüsched Produktion und Vertrib."
+ },
+ {
+  "id": 4107,
+  "de": "beurteilen",
+  "tr": "değerlendirmek, hakkında hüküm vermek",
+  "deBeispiel": "Vorgesetzte beurteilen die Leistung ihrer Teams einmal im Jahr.",
+  "gsw": "beurtäile",
+  "gswArtikel": null,
+  "gswBeispiel": "Vorgsetzti beurtäiled d Läischtig vo irne Teams äinisch im Jaar."
+ },
+ {
+  "id": 4108,
+  "de": "vorlegen",
+  "tr": "ibraz etmek, gösterip sunmak (belge)",
+  "deBeispiel": "Bitte legen Sie am ersten Arbeitstag Ihre Zeugnisse im Original vor.",
+  "gsw": "vorläge",
+  "gswArtikel": null,
+  "gswBeispiel": "Sie müend am erschte Arbetstag Iri Züügnis im Original vorläge."
+ },
+ {
+  "id": 4109,
+  "de": "ausscheiden",
+  "tr": "ayrılmak, işten çıkmak",
+  "deBeispiel": "Zum Jahresende scheidet der langjährige Geschäftsführer aus dem Unternehmen aus.",
+  "gsw": "uusschäide",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf s Jaaresänd wird de langjäärig Gschäftsfüerer us em Unternäme uusschäide."
+ },
+ {
+  "id": 4110,
+  "de": "antreten",
+  "tr": "göreve başlamak, işe başlamak",
+  "deBeispiel": "Sie tritt ihre neue Stelle in der Verwaltung schon nächsten Montag an.",
+  "gsw": "aaträtte",
+  "gswArtikel": null,
+  "gswBeispiel": "Si wird iri nöi Schtell i de Verwaltig scho nächschte Määntig aaträtte."
+ },
+ {
+  "id": 4111,
+  "de": "absichern",
+  "tr": "güvence altına almak, teminat altına almak",
+  "deBeispiel": "Der Vertrag sichert die Beschäftigten für den Fall einer Insolvenz ab.",
+  "gsw": "absichere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vertrag tuet d Bschäftigte für de Fall vonere Insolvenz absichere."
+ },
+ {
+  "id": 4112,
+  "de": "einhalten",
+  "tr": "uymak, riayet etmek",
+  "deBeispiel": "Die gesetzlichen Ruhepausen müssen in jeder Schicht eingehalten werden.",
+  "gsw": "iihalte",
+  "gswArtikel": null,
+  "gswBeispiel": "D gsetzliche Ruepause mues me i jedere Schicht iihalte."
+ },
+ {
+  "id": 4113,
+  "de": "verstoßen",
+  "tr": "ihlal etmek, aykırı davranmak",
+  "deBeispiel": "Wer gegen die Betriebsordnung verstößt, muss mit Konsequenzen rechnen.",
+  "gsw": "verschtoosse",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer gäge d Betriebsordnig verschtoosst, mues mit Konsequänze rächne."
+ },
+ {
+  "id": 4114,
+  "de": "mitwirken",
+  "tr": "katkıda bulunmak, iştirak etmek",
+  "deBeispiel": "An der Erarbeitung des Sozialplans haben mehrere Gremien mitgewirkt.",
+  "gsw": "mitwirke",
+  "gswArtikel": null,
+  "gswBeispiel": "A de Uusarbeitig vom Sozialplan händ mehreri Gremie mitgwirkt."
+ },
+ {
+  "id": 4115,
+  "de": "mitbestimmen",
+  "tr": "birlikte karar vermek, söz sahibi olmak",
+  "deBeispiel": "Bei der Gestaltung der Dienstpläne dürfen die Beschäftigten mitbestimmen.",
+  "gsw": "mitbeschtimme",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi de Gschtaltig vo de Dienschtplän dörfed d Bschäftigte mitbeschtimme."
+ },
+ {
+  "id": 4116,
+  "de": "betriebsbedingt",
+  "tr": "işletme gereği, işletmesel nedenli",
+  "deBeispiel": "Zwanzig Stellen wurden betriebsbedingt gestrichen.",
+  "gsw": "betriebsbedingt",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwänzg Schtelle sind betriebsbedingt gschtriche worde."
+ },
+ {
+  "id": 4117,
+  "de": "überqualifiziert",
+  "tr": "aşırı nitelikli, pozisyona göre fazla donanımlı",
+  "deBeispiel": "Man lehnte ihn ab, weil er für die Stelle überqualifiziert sei.",
+  "gsw": "überqualifiziert",
+  "gswArtikel": null,
+  "gswBeispiel": "Me hät en abglehnt, wil er für d Schtell überqualifiziert seg."
+ },
+ {
+  "id": 4118,
+  "de": "durchsetzungsfähig",
+  "tr": "kendini kabul ettirebilen, dediğini yaptırabilen",
+  "deBeispiel": "Für diese Position suchen wir eine durchsetzungsfähige Persönlichkeit.",
+  "gsw": "durchsetzigsfähig",
+  "gswArtikel": null,
+  "gswBeispiel": "Für die Position suechet mir e durchsetzigsfähigi Persönlichkäit."
+ },
+ {
+  "id": 4119,
+  "de": "gewissenhaft",
+  "tr": "titiz, özenli, vicdanlı",
+  "deBeispiel": "Sie erledigt auch die langweiligsten Aufgaben gewissenhaft.",
+  "gsw": "gwüssehaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Si erlediget au di langwiiligschte Uufgabe gwüssehaft."
+ },
+ {
+  "id": 4120,
+  "de": "engagiert",
+  "tr": "kendini işine adamış, gayretli",
+  "deBeispiel": "Der Betriebsrat setzt sich engagiert für die jüngeren Kollegen ein.",
+  "gsw": "engagiert",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betriebsraat setzt sich engagiert für di jüngere Kollege ii."
+ },
+ {
+  "id": 4121,
+  "de": "ehrenamtlich",
+  "tr": "gönüllü, fahri",
+  "deBeispiel": "Viele Mitglieder der Kommission arbeiten rein ehrenamtlich.",
+  "gsw": "eereamtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Vili Mitglider vo de Kommission schaffed rein eereamtlich."
+ },
+ {
+  "id": 4122,
+  "de": "unentgeltlich",
+  "tr": "ücretsiz, karşılıksız",
+  "deBeispiel": "Die Schulungen stehen den Beschäftigten unentgeltlich zur Verfügung.",
+  "gsw": "unentgältlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schuelige schtönd de Bschäftigte unentgältlich zur Verfüegig."
+ },
+ {
+  "id": 4123,
+  "de": "erwerbstätig",
+  "tr": "çalışan, gelir getiren bir işte olan",
+  "deBeispiel": "In dieser Altersgruppe sind mehr als achtzig Prozent erwerbstätig.",
+  "gsw": "erwerbstätig",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere Altersgruppe sind mee als achtzg Prozänt erwerbstätig."
+ },
+ {
+  "id": 4124,
+  "de": "nebenberuflich",
+  "tr": "yan iş olarak, asıl mesleğin yanında",
+  "deBeispiel": "Nebenberuflich gibt er abends Kurse an der Volkshochschule.",
+  "gsw": "näbebrueflich",
+  "gswArtikel": null,
+  "gswBeispiel": "Näbebrueflich git er am Aabig Kürs a de Volkshochschuel."
+ },
+ {
+  "id": 4125,
+  "de": "belastbar",
+  "tr": "stres altında çalışabilen, dayanıklı",
+  "deBeispiel": "Wer im Schichtbetrieb arbeitet, muss körperlich und seelisch belastbar sein.",
+  "gsw": "belaschtbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer im Schichtbetrib schaffet, mues körperlich und seelisch belaschtbar sii."
+ },
+ {
+  "id": 4126,
+  "de": "erheblich",
+  "tr": "önemli ölçüde, hatırı sayılır",
+  "deBeispiel": "Die Kosten sind im letzten Quartal erheblich gestiegen.",
+  "gsw": "erheblich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chöschte sind im letschte Quartal erheblich gschtige."
+ },
+ {
+  "id": 4127,
+  "de": "geringfügig",
+  "tr": "cüzi, önemsiz, az miktarda",
+  "deBeispiel": "Die Abweichung vom Plan war nur geringfügig.",
+  "gsw": "geringfüegig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Abwiichig vom Plan isch nu geringfüegig gsi."
+ },
+ {
+  "id": 4128,
+  "de": "mittelmäßig",
+  "tr": "vasat, orta karar",
+  "deBeispiel": "Der Film erhielt von den Kritikern nur mittelmäßige Bewertungen.",
+  "gsw": "mittelmässig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Film hät vo de Kritiker nu mittelmässigi Bewertige überchoo."
+ },
+ {
+  "id": 4129,
+  "de": "überwiegend",
+  "tr": "ağırlıklı olarak, çoğunlukla",
+  "deBeispiel": "Die Teilnehmer kamen überwiegend aus kleineren Betrieben.",
+  "gsw": "überwiegend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Teilnämer sind überwiegend us chliinere Betrib choo."
+ },
+ {
+  "id": 4130,
+  "de": "beträchtlich",
+  "tr": "epey, hayli, kayda değer",
+  "deBeispiel": "Das Projekt verschlang einen beträchtlichen Teil des Budgets.",
+  "gsw": "beträchtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Projäkt hät en beträchtliche Teil vom Budget gschluckt."
+ },
+ {
+  "id": 4131,
+  "de": "spürbar",
+  "tr": "hissedilir, gözle görülür",
+  "deBeispiel": "Die Nachfrage hat sich seit dem Frühjahr spürbar belebt.",
+  "gsw": "schpürbar",
+  "gswArtikel": null,
+  "gswBeispiel": "D Naachfraag hät sich siit em Früelig schpürbar belebt."
+ },
+ {
+  "id": 4132,
+  "de": "merklich",
+  "tr": "belirgin biçimde, fark edilir ölçüde",
+  "deBeispiel": "Das Tempo der Verhandlungen hat merklich abgenommen.",
+  "gsw": "merklich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Tempo vo de Verhandlige hät merklich abgnoo."
+ },
+ {
+  "id": 4133,
+  "de": "drastisch",
+  "tr": "sert, çarpıcı, köklü",
+  "deBeispiel": "Die Behörde hat die Gebühren drastisch angehoben.",
+  "gsw": "draschtisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde hät d Gebüüre draschtisch erhöcht."
+ },
+ {
+  "id": 4134,
+  "de": "rapide",
+  "tr": "hızla, süratle",
+  "deBeispiel": "Die Zahl der Bewerbungen ist rapide gesunken.",
+  "gsw": "rapide",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zaal vo de Bewerbige isch rapide gsunke."
+ },
+ {
+  "id": 4135,
+  "de": "allmählich",
+  "tr": "yavaş yavaş, giderek",
+  "deBeispiel": "Die Spannungen im Team lösten sich allmählich auf.",
+  "gsw": "allmäälich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schpannige im Team händ sich allmäälich uufglööst."
+ },
+ {
+  "id": 4136,
+  "de": "stetig",
+  "tr": "istikrarlı, sürekli, düzenli",
+  "deBeispiel": "Der Verein verzeichnet seit Jahren einen stetigen Zulauf.",
+  "gsw": "schtetig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Veräin verzäichnet siit Jaare en schtetige Zuelauf."
+ },
+ {
+  "id": 4137,
+  "de": "sprunghaft",
+  "tr": "sıçramalı, ani, düzensiz",
+  "deBeispiel": "Die Preise entwickelten sich in diesem Jahr sprunghaft.",
+  "gsw": "schprunghaft",
+  "gswArtikel": null,
+  "gswBeispiel": "D Priis händ sich das Jaar schprunghaft entwicklet."
+ },
+ {
+  "id": 4138,
+  "de": "unzureichend",
+  "tr": "yetersiz",
+  "deBeispiel": "Die Begründung des Antrags war völlig unzureichend.",
+  "gsw": "unzuereichend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Begründig vom Aatrag isch völlig unzuereichend gsi."
+ },
+ {
+  "id": 4139,
+  "de": "übermäßig",
+  "tr": "aşırı, ölçüsüz",
+  "deBeispiel": "Übermäßiger Konsum von Zucker schadet der Gesundheit.",
+  "gsw": "übermässig",
+  "gswArtikel": null,
+  "gswBeispiel": "Übermässige Konsum vo Zucker schadet de Gsundheit."
+ },
+ {
+  "id": 4140,
+  "de": "nahezu",
+  "tr": "neredeyse, hemen hemen",
+  "deBeispiel": "Die Halle war am Eröffnungsabend nahezu leer.",
+  "gsw": "nahezue",
+  "gswArtikel": null,
+  "gswBeispiel": "D Halle isch am Eröffnigsaabig nahezue leer gsi."
+ },
+ {
+  "id": 4141,
+  "de": "schätzungsweise",
+  "tr": "tahminen, yaklaşık olarak",
+  "deBeispiel": "An der Demonstration nahmen schätzungsweise zehntausend Menschen teil.",
+  "gsw": "schätzigswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "A de Demonstration händ schätzigswiis zäätuusig Mäntsche teilgnoo."
+ },
+ {
+  "id": 4142,
+  "de": "vergleichsweise",
+  "tr": "nispeten, kıyaslandığında",
+  "deBeispiel": "Die Mieten sind hier vergleichsweise niedrig geblieben.",
+  "gsw": "verglichswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "D Miete sind da verglichswiis nidrig bliibe."
+ },
+ {
+  "id": 4143,
+  "de": "mangelhaft",
+  "tr": "kusurlu, eksik, yetersiz",
+  "deBeispiel": "Die Dokumentation der Versuche war mangelhaft.",
+  "gsw": "mangelhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "D Dokumentation vo de Versuech isch mangelhaft gsi."
+ },
+ {
+  "id": 4144,
+  "de": "hervorragend",
+  "tr": "mükemmel, üstün, çok iyi",
+  "deBeispiel": "Sie hat die Prüfung mit einem hervorragenden Ergebnis bestanden.",
+  "gsw": "hervorragend",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät d Prüefig mit eme hervorragende Ergäbnis beschtande."
+ },
+ {
+  "id": 4145,
+  "de": "akzeptabel",
+  "tr": "kabul edilebilir, makul",
+  "deBeispiel": "Für diesen Preis ist die Qualität durchaus akzeptabel.",
+  "gsw": "akzeptabel",
+  "gswArtikel": null,
+  "gswBeispiel": "Für de Priis isch d Qualität durchuus akzeptabel."
+ },
+ {
+  "id": 4146,
+  "de": "vielfältig",
+  "tr": "çeşitli, çok yönlü",
+  "deBeispiel": "Die Ursachen des Problems sind vielfältig und schwer zu trennen.",
+  "gsw": "vilfältig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ursache vom Problem sind vilfältig und schwer z trenne."
+ },
+ {
+  "id": 4147,
+  "de": "signifikant",
+  "tr": "anlamlı, kayda değer",
+  "deBeispiel": "Zwischen beiden Gruppen bestand kein signifikanter Unterschied.",
+  "gsw": "signifikant",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwüsched de bäide Gruppe isch kein signifikante Unterschid gsi."
+ },
+ {
+  "id": 4148,
+  "de": "konstant",
+  "tr": "sabit, değişmeyen",
+  "deBeispiel": "Die Temperatur blieb über Stunden konstant.",
+  "gsw": "konschtant",
+  "gswArtikel": null,
+  "gswBeispiel": "D Temperatur isch über Schtunde konschtant bliibe."
+ },
+ {
+  "id": 4149,
+  "de": "enorm",
+  "tr": "muazzam, çok büyük",
+  "deBeispiel": "Der Aufwand für die Umstellung war enorm.",
+  "gsw": "enorm",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uufwand für d Umschtellig isch enorm gsi."
+ },
+ {
+  "id": 4150,
+  "de": "dürftig",
+  "tr": "cılız, kıt, yetersiz",
+  "deBeispiel": "Die Ausbeute des Versuchs fiel ziemlich dürftig aus.",
+  "gsw": "dürftig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Uusbüüti vom Versuech isch ziemli dürftig uusgfale."
+ },
+ {
+  "id": 4151,
+  "de": "vereinzelt",
+  "tr": "tek tük, münferit",
+  "deBeispiel": "Vereinzelt gab es Kritik an dem neuen Verfahren.",
+  "gsw": "veräinzelt",
+  "gswArtikel": null,
+  "gswBeispiel": "Veräinzelt hät s Kritik am nöie Verfaare gäh."
+ },
+ {
+  "id": 4152,
+  "de": "überschaubar",
+  "tr": "sınırlı, kolayca kavranabilir",
+  "deBeispiel": "Der finanzielle Schaden blieb bislang überschaubar.",
+  "gsw": "überschaubar",
+  "gswArtikel": null,
+  "gswBeispiel": "De finanziell Schade isch bishär überschaubar bliibe."
+ },
+ {
+  "id": 4153,
+  "de": "nennenswert",
+  "tr": "kayda değer, anmaya değer",
+  "deBeispiel": "Nennenswerte Fortschritte gab es in diesem Bereich nicht.",
+  "gsw": "nännenswert",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Beriich hät s kei nännenswerti Fortschritt gäh."
+ },
+ {
+  "id": 4154,
+  "de": "zusehends",
+  "tr": "gözle görülür biçimde, gitgide",
+  "deBeispiel": "Die Lage auf dem Wohnungsmarkt spitzt sich zusehends zu.",
+  "gsw": "zuesehends",
+  "gswArtikel": null,
+  "gswBeispiel": "D Laag uf em Wohnigsmarkt schpitzt sich zuesehends zue."
+ },
+ {
+  "id": 4155,
+  "de": "sukzessive",
+  "tr": "kademeli olarak, peyderpey",
+  "deBeispiel": "Die Förderung wird in den nächsten Jahren sukzessive zurückgefahren.",
+  "gsw": "sukzessiv",
+  "gswArtikel": null,
+  "gswBeispiel": "D Förderig wird i de nöchschte Jaar sukzessiv abbaut."
+ },
+ {
+  "id": 4156,
+  "de": "schrittweise",
+  "tr": "adım adım, aşamalı olarak",
+  "deBeispiel": "Die strengen Regeln sollen schrittweise gelockert werden.",
+  "gsw": "schrittwiis",
+  "gswArtikel": null,
+  "gswBeispiel": "Di schträngi Rägle sölled schrittwiis glockeret werde."
+ },
+ {
+  "id": 4157,
+  "de": "überproportional",
+  "tr": "orantısız biçimde fazla, orantısız yüksek",
+  "deBeispiel": "Junge Familien sind von den Kosten überproportional betroffen.",
+  "gsw": "überproportional",
+  "gswArtikel": null,
+  "gswBeispiel": "Jungi Familie sind vo de Chöschte überproportional betroffe."
+ },
+ {
+  "id": 4158,
+  "de": "ausschlaggebend",
+  "tr": "belirleyici, tayin edici",
+  "deBeispiel": "Für die Entscheidung war letztlich der Preis ausschlaggebend.",
+  "gsw": "uusschlaggebend",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Entschäidig isch am Änd de Priis uusschlaggebend gsi."
+ },
+ {
+  "id": 4159,
+  "de": "lückenhaft",
+  "tr": "eksik, boşluklarla dolu",
+  "deBeispiel": "Die Angaben in der Akte sind an mehreren Stellen lückenhaft.",
+  "gsw": "lückehaft",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aagabe i de Akte sind a mehrere Schtelle lückehaft."
+ },
+ {
+  "id": 4160,
+  "de": "einwandfrei",
+  "tr": "kusursuz, sorunsuz",
+  "deBeispiel": "Das Gerät funktionierte während der gesamten Prüfung einwandfrei.",
+  "gsw": "iiwandfrei",
+  "gswArtikel": null,
+  "gswBeispiel": "S Grät hät während de ganze Prüefig iiwandfrei funktioniert."
+ },
+ {
+  "id": 4161,
+  "de": "bestenfalls",
+  "tr": "en iyi ihtimalle, olsa olsa",
+  "deBeispiel": "Die Einsparung beträgt bestenfalls ein paar hundert Franken.",
+  "gsw": "beschtefalls",
+  "gswArtikel": null,
+  "gswBeispiel": "D Iisparig isch beschtefalls es paar hundert Franke."
+ },
+ {
+  "id": 4162,
+  "de": "sich verschärfen",
+  "tr": "keskinleşmek, ağırlaşmak",
+  "deBeispiel": "Der Wettbewerb in der Branche hat sich deutlich verschärft.",
+  "gsw": "sich verschärfe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Wettbewerb i de Branche hät sich düütlich verschärft."
+ },
+ {
+  "id": 4163,
+  "de": "steigern",
+  "tr": "artırmak, yükseltmek (kademeli olarak)",
+  "deBeispiel": "Der Betrieb konnte seinen Absatz um zwölf Prozent steigern.",
+  "gsw": "schtiigere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betrib hät sin Absatz um zwölf Prozänt chöne schtiigere."
+ },
+ {
+  "id": 4164,
+  "de": "senken",
+  "tr": "düşürmek, indirmek",
+  "deBeispiel": "Die Bank hat die Zinsen zum zweiten Mal gesenkt.",
+  "gsw": "sänke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bank hät d Zinse zum zwäite Mal gsänkt."
+ },
+ {
+  "id": 4165,
+  "de": "schrumpfen",
+  "tr": "küçülmek, daralmak",
+  "deBeispiel": "Die Zahl der Mitglieder ist in zehn Jahren stark geschrumpft.",
+  "gsw": "schrumpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zaal vo de Mitglider isch i zää Jaar schtarch gschrumpft."
+ },
+ {
+  "id": 4166,
+  "de": "stagnieren",
+  "tr": "durgunlaşmak, yerinde saymak",
+  "deBeispiel": "Die Löhne stagnieren in dieser Branche seit Jahren.",
+  "gsw": "schtagniere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Löhn schtagniered i dere Branche siit Jaare."
+ },
+ {
+  "id": 4167,
+  "de": "zurückgehen",
+  "tr": "azalmak, gerilemek",
+  "deBeispiel": "Die Unfallzahlen sind im vergangenen Jahr deutlich zurückgegangen.",
+  "gsw": "zruggaa",
+  "gswArtikel": null,
+  "gswBeispiel": "D Unfallzaale sind im vergangene Jaar düütlich zruggange."
+ },
+ {
+  "id": 4168,
+  "de": "übertreffen",
+  "tr": "aşmak, geçmek, geride bırakmak",
+  "deBeispiel": "Das Ergebnis hat alle Erwartungen der Geschäftsleitung übertroffen.",
+  "gsw": "überträffe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Ergäbnis hät alli Erwartige vo de Gschäftsläitig übertroffe."
+ },
+ {
+  "id": 4169,
+  "de": "überschreiten",
+  "tr": "aşmak, sınırı geçmek",
+  "deBeispiel": "Der Lärmpegel überschreitet nachts den erlaubten Wert.",
+  "gsw": "überschriite",
+  "gswArtikel": null,
+  "gswBeispiel": "De Lärmpegel überschriitet z Nacht de erlaubt Wert."
+ },
+ {
+  "id": 4170,
+  "de": "einstufen",
+  "tr": "sınıflandırmak, derecelendirmek",
+  "deBeispiel": "Der Fall wurde von der Behörde als dringend eingestuft.",
+  "gsw": "iischtuefe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fall isch vo de Behörde als dringend iigschtueft worde."
+ },
+ {
+  "id": 4171,
+  "de": "würdigen",
+  "tr": "takdir etmek, değerini teslim etmek",
+  "deBeispiel": "Die Jury würdigte vor allem den Mut der Autorin.",
+  "gsw": "würdige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Jury hät vor allem de Muet vo de Autorin gwürdiget."
+ },
+ {
+  "id": 4172,
+  "de": "beanstanden",
+  "tr": "kusur bulmak, itiraz etmek",
+  "deBeispiel": "Der Prüfer beanstandete mehrere Posten in der Abrechnung.",
+  "gsw": "beanschtande",
+  "gswArtikel": null,
+  "gswBeispiel": "De Prüefer hät mehreri Poschte i de Abrächnig beanschtandet."
+ },
+ {
+  "id": 4173,
+  "de": "sich verschlechtern",
+  "tr": "kötüleşmek, fenalaşmak",
+  "deBeispiel": "Der Zustand des Gebäudes hat sich rasch verschlechtert.",
+  "gsw": "sich verschlächtere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zuschtand vom Gebäude hät sich schnäll verschlächteret."
+ },
+ {
+  "id": 4174,
+  "de": "sich verdoppeln",
+  "tr": "iki katına çıkmak",
+  "deBeispiel": "Die Zahl der Anfragen hat sich innerhalb eines Jahres verdoppelt.",
+  "gsw": "sich verdopple",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zaal vo de Aafraage hät sich innerhalb vo eme Jaar verdopplet."
+ },
+ {
+  "id": 4175,
+  "de": "halbieren",
+  "tr": "yarıya indirmek, ikiye bölmek",
+  "deBeispiel": "Die Firma will ihren Energieverbrauch bis 2030 halbieren.",
+  "gsw": "halbiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma wil ire Energieverbruuch bis 2030 halbiere."
+ },
+ {
+  "id": 4176,
+  "de": "ausgleichen",
+  "tr": "dengelemek, telafi etmek",
+  "deBeispiel": "Die Einnahmen im Sommer gleichen die Verluste im Winter aus.",
+  "gsw": "uusgliiche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Iinaame im Summer tüend d Verluscht im Winter uusgliiche."
+ },
+ {
+  "id": 4177,
+  "de": "sich belaufen",
+  "tr": "tutmak, (bir miktarı) bulmak, -e ulaşmak",
+  "deBeispiel": "Der Schaden beläuft sich auf mehrere hunderttausend Franken.",
+  "gsw": "sich belaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schade belauft sich uf mehreri hunderttuusig Franke."
+ },
+ {
+  "id": 4178,
+  "de": "betragen",
+  "tr": "tutmak, etmek, olmak",
+  "deBeispiel": "Die Wartezeit beträgt derzeit rund drei Wochen.",
+  "gsw": "beträäge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Warteziit beträägt momentan öppe drüü Wuche."
+ },
+ {
+  "id": 4179,
+  "de": "gewichten",
+  "tr": "ağırlıklandırmak, önem derecesi vermek",
+  "deBeispiel": "Die Prüfung gewichtet die schriftliche Leistung doppelt.",
+  "gsw": "gwichte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Prüefig gwichtet di schriftlich Läischtig doppelt."
+ },
+ {
+  "id": 4180,
+  "de": "nachlassen",
+  "tr": "azalmak, hafiflemek, zayıflamak",
+  "deBeispiel": "Gegen Abend ließ der Wind deutlich nach.",
+  "gsw": "naalaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Gäge Aabig hät de Wind düütlich naaglaa."
+ },
+ {
+  "id": 4181,
+  "de": "zulegen",
+  "tr": "artmak, artırmak, yükselmek",
+  "deBeispiel": "Der Anbieter hat bei den Nutzerzahlen kräftig zugelegt.",
+  "gsw": "zueläge",
+  "gswArtikel": null,
+  "gswBeispiel": "De Aabieter hät bi de Nutzerzaale chräftig zuegläit."
+ },
+ {
+  "id": 4182,
+  "de": "sich abschwächen",
+  "tr": "zayıflamak, hız kesmek",
+  "deBeispiel": "Das Wachstum hat sich im zweiten Halbjahr abgeschwächt.",
+  "gsw": "sich abschwäche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wachstum hät sich im zwäite Halbjaar abgschwächt."
+ },
+ {
+  "id": 4183,
+  "de": "verstärken",
+  "tr": "güçlendirmek, artırmak, pekiştirmek",
+  "deBeispiel": "Die Gemeinde will die Kontrollen an Wochenenden verstärken.",
+  "gsw": "verschtärke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeind wil d Kontrolle am Wuchenänd verschtärke."
+ },
+ {
+  "id": 4184,
+  "de": "ausweiten",
+  "tr": "genişletmek, yaymak",
+  "deBeispiel": "Der Betrieb hat sein Angebot auf drei Kantone ausgeweitet.",
+  "gsw": "uuswiite",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betrib hät sis Aagebot uf drüü Kantön uusgwitet."
+ },
+ {
+  "id": 4185,
+  "de": "eindämmen",
+  "tr": "sınırlamak, önüne geçmek, frenlemek",
+  "deBeispiel": "Mit strengen Auflagen will die Stadt den Verkehr eindämmen.",
+  "gsw": "iidämme",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit schtränge Uuflaage wil d Schtadt de Verchehr iidämme."
+ },
+ {
+  "id": 4186,
+  "de": "ermitteln",
+  "tr": "tespit etmek, belirlemek, saptamak",
+  "deBeispiel": "Die Kommission ermittelte den Mittelwert aller eingegangenen Angebote.",
+  "gsw": "ermittle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kommission hät de Mittelwert vo allne iigange Aagebot ermittlet."
+ },
+ {
+  "id": 4187,
+  "de": "aufwerten",
+  "tr": "değerini artırmak, itibarını yükseltmek",
+  "deBeispiel": "Der neue Bahnhof hat das ganze Quartier aufgewertet.",
+  "gsw": "uufwerte",
+  "gswArtikel": null,
+  "gswBeispiel": "De nöi Baanhof hät s ganze Quartier uufgwertet."
+ },
+ {
+  "id": 4188,
+  "de": "beziffern",
+  "tr": "rakamla belirtmek, miktarını vermek",
+  "deBeispiel": "Die Versicherung beziffert den Schaden auf zwei Millionen.",
+  "gsw": "beziffere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Versicherig beziffert de Schade uf zwäi Millione."
+ },
+ {
+  "id": 4189,
+  "de": "die Zunahme",
+  "tr": "artış, çoğalma",
+  "deBeispiel": "Die Statistik zeigt eine deutliche Zunahme der Fernarbeit.",
+  "gsw": "Zuenaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtatischtik zäigt e düütlichi Zuenaam vo de Fernarbet."
+ },
+ {
+  "id": 4190,
+  "de": "der Rückgang",
+  "tr": "düşüş, gerileme",
+  "deBeispiel": "Der Rückgang der Besucherzahlen bereitet dem Museum Sorgen.",
+  "gsw": "Rüggang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rüggang vo de Bsuecherzaale macht em Museum Sorge."
+ }
+]

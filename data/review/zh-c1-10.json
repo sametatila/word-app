@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6243,
+  "de": "vorantreiben",
+  "tr": "ilerletmek, hız kazandırmak",
+  "deBeispiel": "Die Region treibt den Aufbau eigener Speicher konsequent voran.",
+  "gsw": "voraatriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Region wott de Uufbau vo eigene Schpiicher konsequänt voraatriibe."
+ },
+ {
+  "id": 6244,
+  "de": "dimensionieren",
+  "tr": "boyutlandırmak, ölçeklendirmek",
+  "deBeispiel": "Das Netz ist für solche Lastspitzen schlicht zu klein dimensioniert.",
+  "gsw": "dimensioniere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Netz isch für settigi Laschtschpitze äifach z chlii dimensioniert."
+ },
+ {
+  "id": 6245,
+  "de": "netzdienlich",
+  "tr": "şebekeye yararlı, şebeke dostu",
+  "deBeispiel": "Wer netzdienlich lädt, soll künftig ein niedrigeres Entgelt zahlen.",
+  "gsw": "netzdienlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer netzdienlich ladet, söll künftig es tüüfers Entgält zaale."
+ },
+ {
+  "id": 6246,
+  "de": "kapitalintensiv",
+  "tr": "sermaye yoğun",
+  "deBeispiel": "Infrastruktur ist kapitalintensiv und rechnet sich erst nach Jahrzehnten.",
+  "gsw": "kapitalintensiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Infrastruktur isch kapitalintensiv und rentiert erscht nach Jaarzähnt."
+ },
+ {
+  "id": 6247,
+  "de": "dezentral",
+  "tr": "merkezî olmayan, dağıtık",
+  "deBeispiel": "Dezentral organisierte Erzeugung verlangt ein völlig anderes Steuerungskonzept.",
+  "gsw": "dezentral",
+  "gswArtikel": null,
+  "gswBeispiel": "Dezentral organisierti Erzüügig verlangt es ganz anders Stüerigskonzept."
+ },
+ {
+  "id": 6248,
+  "de": "kostendeckend",
+  "tr": "maliyeti karşılayan, masrafını çıkaran",
+  "deBeispiel": "Der Tarif ist seit Jahren nicht mehr kostendeckend kalkuliert.",
+  "gsw": "choschtedeckend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Tarif isch scho siit Jaare nüme choschtedeckend kalkuliert."
+ },
+ {
+  "id": 6249,
+  "de": "unerlässlich",
+  "tr": "vazgeçilmez, olmazsa olmaz",
+  "deBeispiel": "Eine verlässliche Datengrundlage ist für jede seriöse Prognose unerlässlich.",
+  "gsw": "unerlässlich",
+  "gswArtikel": null,
+  "gswBeispiel": "E verlässlichi Dategrundlaag isch für jedi seriösi Prognoos unerlässlich."
+ },
+ {
+  "id": 6250,
+  "de": "die Geschichtsschreibung",
+  "tr": "tarih yazımı, tarihçilik",
+  "deBeispiel": "Die koloniale Geschichtsschreibung hat viele Stimmen jahrzehntelang ausgeblendet.",
+  "gsw": "Gschichtsschriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D koloniali Gschichtsschriibig hät vili Schtimme jaarzähntelang uusgblendet."
+ },
+ {
+  "id": 6251,
+  "de": "die Quellenkritik",
+  "tr": "kaynak eleştirisi",
+  "deBeispiel": "Ohne saubere Quellenkritik bleibt jede historische Deutung angreifbar.",
+  "gsw": "Quellekritik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni suuberi Quellekritik bliibt jedi historischi Düütig aagriifbar."
+ },
+ {
+  "id": 6252,
+  "de": "der Zeitzeuge",
+  "tr": "dönemin tanığı, olayları yaşamış tanık",
+  "deBeispiel": "Die letzten Zeitzeugen sterben, und ihre Berichte werden umso kostbarer.",
+  "gsw": "Ziitzüüge",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di letschte Ziitzüüge schtärbed, und ihri Bricht wärded umso choschtbarer."
+ },
+ {
+  "id": 6253,
+  "de": "die Kontinuität",
+  "tr": "süreklilik, devamlılık",
+  "deBeispiel": "Der Forscher betont die personelle Kontinuität in den Behörden nach 1945.",
+  "gsw": "Kontinuität",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Forscher betoont d personelli Kontinuität i de Behörde nach 1945."
+ },
+ {
+  "id": 6254,
+  "de": "der Bruch",
+  "tr": "kopuş, kırılma",
+  "deBeispiel": "Ob das Jahr wirklich einen Bruch markiert, ist unter Fachleuten strittig.",
+  "gsw": "Bruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öb das Jaar würklich en Bruch markiert, isch under de Fachlüüt schtrittig."
+ },
+ {
+  "id": 6255,
+  "de": "der Kolonialismus",
+  "tr": "sömürgecilik",
+  "deBeispiel": "Der Kolonialismus wirkt in Handelsstrukturen und Sprachpolitik bis heute nach.",
+  "gsw": "Kolonialismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kolonialismus wirkt i de Handelsschtrukture und i de Spraachpolitik bis hüt naa."
+ },
+ {
+  "id": 6256,
+  "de": "das Archiv",
+  "tr": "arşiv",
+  "deBeispiel": "Im Archiv lagern Akten, die noch nie jemand ausgewertet hat.",
+  "gsw": "Archiv",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Archiv liged Akte, wo no nie öpper uusgwertet hät."
+ },
+ {
+  "id": 6257,
+  "de": "die Aufarbeitung",
+  "tr": "yüzleşme, hesaplaşma, ele alıp işleme",
+  "deBeispiel": "Die Aufarbeitung der Diktatur begann erst zwei Jahrzehnte später.",
+  "gsw": "Uufarbeitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uufarbeitig vo de Diktatur hät erscht zwäi Jaarzähnt spöter aagfange."
+ },
+ {
+  "id": 6258,
+  "de": "die Vergangenheitsbewältigung",
+  "tr": "geçmişle hesaplaşma",
+  "deBeispiel": "Vergangenheitsbewältigung lässt sich nicht per Gesetz verordnen.",
+  "gsw": "Vergangeheitsbewältigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vergangeheitsbewältigig laat sich nöd per Gsetz verordne."
+ },
+ {
+  "id": 6259,
+  "de": "die Deutungshoheit",
+  "tr": "yorum üstünlüğü, anlamlandırma tekeli",
+  "deBeispiel": "Um die Deutungshoheit über das Gedenken wird bis heute gerungen.",
+  "gsw": "Düütigshoheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Um d Düütigshoheit über s Gedenke wird bis hüt grunge."
+ },
+ {
+  "id": 6260,
+  "de": "das Narrativ",
+  "tr": "anlatı, hâkim söylem",
+  "deBeispiel": "Das nationale Narrativ vom ewigen Opfer hält sich hartnäckig.",
+  "gsw": "Narrativ",
+  "gswArtikel": "s",
+  "gswBeispiel": "S nationale Narrativ vom ewige Opfer haltet sich hartnäckig."
+ },
+ {
+  "id": 6261,
+  "de": "die Verklärung",
+  "tr": "yüceltme, pembeye boyama",
+  "deBeispiel": "Seine Rede war eine Verklärung einer Epoche, die er nie erlebt hat.",
+  "gsw": "Verklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Red isch e Verklärig gsi vo ere Epoche, wo er nie erläbt hät."
+ },
+ {
+  "id": 6262,
+  "de": "das Mahnmal",
+  "tr": "uyarı anıtı, ibret anıtı",
+  "deBeispiel": "Das Mahnmal steht bewusst mitten im Alltag der Stadt.",
+  "gsw": "Mahnmaal",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Mahnmaal schtaat bewusst mitte im Alltag vo de Schtadt."
+ },
+ {
+  "id": 6263,
+  "de": "die Gedenkstätte",
+  "tr": "anma yeri, anıt mekân",
+  "deBeispiel": "Die Gedenkstätte empfängt jedes Jahr Tausende von Schulklassen.",
+  "gsw": "Gedenkschtätte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gedenkschtätte empfangt jedes Jaar Tuusigi vo Schuelklasse."
+ },
+ {
+  "id": 6264,
+  "de": "die Restitution",
+  "tr": "iade, geri verme",
+  "deBeispiel": "Die Restitution der Bronzen wurde nach langen Verhandlungen beschlossen.",
+  "gsw": "Restitution",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Restitution vo de Bronze isch nach lange Verhandlige beschlosse worde."
+ },
+ {
+  "id": 6265,
+  "de": "die Provenienz",
+  "tr": "köken, geliş yolu",
+  "deBeispiel": "Bei mehreren Objekten ist die Provenienz bis heute ungeklärt.",
+  "gsw": "Provenienz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi mehrere Objekt isch d Provenienz bis hüt nöd gklärt."
+ },
+ {
+  "id": 6266,
+  "de": "die Raubkunst",
+  "tr": "yağmalanmış sanat eseri",
+  "deBeispiel": "Das Museum prüft seine Sammlung systematisch auf Raubkunst.",
+  "gsw": "Raubkunscht",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Museum prüeft sini Sammlig systematisch uf Raubkunscht."
+ },
+ {
+  "id": 6267,
+  "de": "die Zeitgeschichte",
+  "tr": "yakın dönem tarihi",
+  "deBeispiel": "Sie lehrt Zeitgeschichte und forscht zu den Nachkriegsjahren.",
+  "gsw": "Ziitgschicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si unterrichtet Ziitgschicht und forschet zu de Nachchriegsjaar."
+ },
+ {
+  "id": 6268,
+  "de": "der Historiker",
+  "tr": "tarihçi",
+  "deBeispiel": "Zwei Historiker widersprachen der offiziellen Darstellung entschieden.",
+  "gsw": "Historiker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zwäi Historiker händ de offizielle Darschtellig entschide widersproche."
+ },
+ {
+  "id": 6269,
+  "de": "die Rekonstruktion",
+  "tr": "yeniden kurma, canlandırma",
+  "deBeispiel": "Die Rekonstruktion der Ereignisse stützt sich auf drei unabhängige Quellen.",
+  "gsw": "Rekonstruktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rekonstruktion vo de Eräignis schtützt sich uf drü unabhängigi Quelle."
+ },
+ {
+  "id": 6270,
+  "de": "die Fälschung",
+  "tr": "sahte (belge, eser), sahtecilik",
+  "deBeispiel": "Erst die Papieranalyse entlarvte das Tagebuch als plumpe Fälschung.",
+  "gsw": "Fälschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Erscht d Papieranalyse hät s Tagebuech als plumpi Fälschig entlarvt."
+ },
+ {
+  "id": 6271,
+  "de": "die Authentizität",
+  "tr": "özgünlük, gerçeklik",
+  "deBeispiel": "Die Authentizität des Dokuments wird von mehreren Fachleuten bezweifelt.",
+  "gsw": "Authentizität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Authentizität vom Dokumänt wird vo mehrere Fachlüüt bezwiiflet."
+ },
+ {
+  "id": 6272,
+  "de": "die Fremdherrschaft",
+  "tr": "yabancı egemenliği, işgal yönetimi",
+  "deBeispiel": "Vier Jahrhunderte Fremdherrschaft prägen das Selbstbild der Region.",
+  "gsw": "Frömdherrschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vier Jaarhundert Frömdherrschaft präged s Selbschtbild vo de Region."
+ },
+ {
+  "id": 6273,
+  "de": "die Ausbeutung",
+  "tr": "sömürü",
+  "deBeispiel": "Der Wohlstand der Metropole beruhte auf der Ausbeutung der Kolonien.",
+  "gsw": "Uusbüütig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Woolschtand vo de Metropole hät uf de Uusbüütig vo de Kolonie beruet."
+ },
+ {
+  "id": 6274,
+  "de": "die Aussöhnung",
+  "tr": "uzlaşma, barışma",
+  "deBeispiel": "Die Aussöhnung beider Länder begann mit einem stillen Kniefall.",
+  "gsw": "Uussöönig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uussöönig vo beide Länder hät mit eme schtille Chnüüfall aagfange."
+ },
+ {
+  "id": 6275,
+  "de": "die Wiedergutmachung",
+  "tr": "telafi, zararın giderilmesi",
+  "deBeispiel": "Materielle Wiedergutmachung ersetzt keine ehrliche Entschuldigung.",
+  "gsw": "Widergutmachig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Materielli Widergutmachig ersetzt kei ehrlichi Entschuldigig."
+ },
+ {
+  "id": 6276,
+  "de": "die Täterschaft",
+  "tr": "faillik, suçu işlemiş olma",
+  "deBeispiel": "Die Akten belegen eine aktive Täterschaft, nicht bloßes Mitlaufen.",
+  "gsw": "Täterschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Akte beleged e aktivi Täterschaft und nöd bloss es Mitlaufe."
+ },
+ {
+  "id": 6277,
+  "de": "die Opferrolle",
+  "tr": "mağdur rolü, kurban rolü",
+  "deBeispiel": "Die Nachkriegsgesellschaft flüchtete sich bequem in die Opferrolle.",
+  "gsw": "Opferrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Nachchriegsgsellschaft hät sich bequem i d Opferrolle gflüchtet."
+ },
+ {
+  "id": 6278,
+  "de": "die Relativierung",
+  "tr": "göreceleştirme, hafifletme",
+  "deBeispiel": "Solche Vergleiche laufen auf eine Relativierung der Verbrechen hinaus.",
+  "gsw": "Relativierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sonigi Verglich laufed uf e Relativierig vo de Verbräche uus."
+ },
+ {
+  "id": 6279,
+  "de": "die Vereinnahmung",
+  "tr": "sahiplenme, kendi amacına alet etme",
+  "deBeispiel": "Die Familie wehrte sich gegen die politische Vereinnahmung des Gedenkens.",
+  "gsw": "Vereinnahmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Familie hät sich gäge di politischi Vereinnahmig vom Gedenke gwehrt."
+ },
+ {
+  "id": 6280,
+  "de": "die Heldenverehrung",
+  "tr": "kahraman kültü, kahraman yüceltmesi",
+  "deBeispiel": "Statt Heldenverehrung fordern die Autoren eine nüchterne Bilanz.",
+  "gsw": "Heldeverehrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Statt Heldeverehrig verlanged d Autore e nüechterni Bilanz."
+ },
+ {
+  "id": 6281,
+  "de": "die Nostalgie",
+  "tr": "nostalji, geçmiş özlemi",
+  "deBeispiel": "Hinter der Nostalgie verbirgt sich oft eine sehr selektive Erinnerung.",
+  "gsw": "Nostalgie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hinder de Nostalgie verschteckt sich oft e sehr selektivi Erinnerig."
+ },
+ {
+  "id": 6282,
+  "de": "die Nachwirkung",
+  "tr": "kalıcı etki, sonradan ortaya çıkan etki",
+  "deBeispiel": "Die Nachwirkungen der Teilung zeigen sich noch in den Wahlergebnissen.",
+  "gsw": "Nachwirkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Nachwirkige vo de Teilig zeiged sich no i de Waalergebnis."
+ },
+ {
+  "id": 6283,
+  "de": "der Niedergang",
+  "tr": "çöküş, gerileme",
+  "deBeispiel": "Der Niedergang des Reiches vollzog sich über mehrere Generationen.",
+  "gsw": "Niedergang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Niedergang vom Riich hät sich über mehreri Generatione vollzoge."
+ },
+ {
+  "id": 6284,
+  "de": "die Säkularisierung",
+  "tr": "sekülerleşme, dünyevileşme",
+  "deBeispiel": "Die Säkularisierung veränderte auch die Formen des öffentlichen Gedenkens.",
+  "gsw": "Säkularisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Säkularisierig hät au d Forme vom öffentliche Gedenke veränderet."
+ },
+ {
+  "id": 6285,
+  "de": "die Machtergreifung",
+  "tr": "iktidarı ele geçirme",
+  "deBeispiel": "Der Begriff Machtergreifung verschleiert, wie viele mitgeholfen haben.",
+  "gsw": "Machtergriifig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Begriff Machtergriifig verschleieret, wie vili mitgholfe händ."
+ },
+ {
+  "id": 6286,
+  "de": "die Diktatur",
+  "tr": "diktatörlük",
+  "deBeispiel": "Zwei Diktaturen innerhalb eines Jahrhunderts haben das Land gezeichnet.",
+  "gsw": "Diktatur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwäi Diktature innerhalb vo eim Jaarhundert händ s Land gzeichnet."
+ },
+ {
+  "id": 6287,
+  "de": "der Aufstand",
+  "tr": "ayaklanma, isyan",
+  "deBeispiel": "Der Aufstand wurde binnen weniger Tage blutig niedergeschlagen.",
+  "gsw": "Uufschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Uufschtand isch innerhalb vo weneg Täg bluetig niedergschlage worde."
+ },
+ {
+  "id": 6288,
+  "de": "die Verschwörung",
+  "tr": "komplo, gizli tertip",
+  "deBeispiel": "Die Verschwörung scheiterte, doch ihr Andenken wurde später politisch genutzt.",
+  "gsw": "Verschwörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verschwörig isch gschiiteret, aber ihres Andenke isch spöter politisch gnutzt worde."
+ },
+ {
+  "id": 6289,
+  "de": "die Gleichschaltung",
+  "tr": "tek tipleştirme, tümüyle denetime alma",
+  "deBeispiel": "Die Gleichschaltung der Presse dauerte kaum ein halbes Jahr.",
+  "gsw": "Gliichschaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gliichschaltig vo de Presse hät chuum es halbs Jaar duuret."
+ },
+ {
+  "id": 6290,
+  "de": "die Deportation",
+  "tr": "sürgün etme, toplu sevk",
+  "deBeispiel": "Die Deportationen wurden von örtlichen Beamten sorgfältig organisiert.",
+  "gsw": "Deportation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Deportatione sind vo örtliche Beamte sorgfältig organisiert worde."
+ },
+ {
+  "id": 6291,
+  "de": "der Völkermord",
+  "tr": "soykırım",
+  "deBeispiel": "Das Parlament stufte die Verbrechen offiziell als Völkermord ein.",
+  "gsw": "Völkermord",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Parlamänt hät d Verbräche offiziell als Völkermord iigschtueft."
+ },
+ {
+  "id": 6292,
+  "de": "erforschen",
+  "tr": "araştırmak, incelemek",
+  "deBeispiel": "Ein Team erforscht die Rolle der Kirche in jenen Jahren.",
+  "gsw": "erforsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Es Team erforschet d Rolle vo de Chile i dene Jaar."
+ },
+ {
+  "id": 6293,
+  "de": "ergründen",
+  "tr": "derinlemesine araştırmak, künhüne varmak",
+  "deBeispiel": "Die Studie versucht, die Motive der Mitläufer zu ergründen.",
+  "gsw": "ergründe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Studie versuecht, d Motiv vo de Mitläufer z ergründe."
+ },
+ {
+  "id": 6294,
+  "de": "nachzeichnen",
+  "tr": "adım adım ortaya koymak, izini sürmek",
+  "deBeispiel": "Das Buch zeichnet den Weg der Familie durch drei Länder nach.",
+  "gsw": "nachezeichne",
+  "gswArtikel": null,
+  "gswBeispiel": "S Buech versuecht, de Wääg vo de Familie dur drü Länder nachezeichne."
+ },
+ {
+  "id": 6295,
+  "de": "einordnen",
+  "tr": "bağlamına oturtmak, sınıflandırmak",
+  "deBeispiel": "Ohne Kontext lässt sich die Quelle kaum sinnvoll einordnen.",
+  "gsw": "iiordne",
+  "gswArtikel": null,
+  "gswBeispiel": "Ohni Kontext laat sich d Quelle chuum sinnvoll iiordne."
+ },
+ {
+  "id": 6296,
+  "de": "sichten",
+  "tr": "gözden geçirmek, taramak",
+  "deBeispiel": "Sie hat monatelang Akten gesichtet, bevor sie zu schreiben begann.",
+  "gsw": "sichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät monatelang Akte gsichtet, bevor si aagfange hät z schriibe."
+ },
+ {
+  "id": 6297,
+  "de": "leugnen",
+  "tr": "inkâr etmek",
+  "deBeispiel": "Wer die Massenmorde leugnet, macht sich hier strafbar.",
+  "gsw": "lögne",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer d Massemörd lögnet, macht sich do schtrafbar."
+ },
+ {
+  "id": 6298,
+  "de": "eingestehen",
+  "tr": "itiraf etmek, kabullenmek",
+  "deBeispiel": "Der Staat gestand seine Mitverantwortung erst sehr spät ein.",
+  "gsw": "iigschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat hät sini Mitverantwortig erscht sehr spaat iigschtande."
+ },
+ {
+  "id": 6299,
+  "de": "sühnen",
+  "tr": "kefaretini ödemek, bedelini ödemek",
+  "deBeispiel": "Kein Denkmal kann sühnen, was damals geschehen ist.",
+  "gsw": "süene",
+  "gswArtikel": null,
+  "gswBeispiel": "Kes Denkmaal cha süene, was demaals passiert isch."
+ },
+ {
+  "id": 6300,
+  "de": "sich auflehnen",
+  "tr": "başkaldırmak, isyan etmek",
+  "deBeispiel": "Die Studenten lehnten sich gegen das Schweigen ihrer Eltern auf.",
+  "gsw": "sich uuflehne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtudänte händ sich gäge s Schwiige vo ihrne Eltere uufglehnt."
+ },
+ {
+  "id": 6301,
+  "de": "zensieren",
+  "tr": "sansürlemek",
+  "deBeispiel": "Ganze Passagen des Berichts wurden nachträglich zensiert.",
+  "gsw": "zensiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ganzi Passage vom Bricht sind nachträglich zensiert worde."
+ },
+ {
+  "id": 6302,
+  "de": "fortbestehen",
+  "tr": "varlığını sürdürmek, devam etmek",
+  "deBeispiel": "Alte Netzwerke bestanden auch nach dem Systemwechsel fort.",
+  "gsw": "fortbschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Alti Netzwärk sind au nach em Systemwächsel fortbschtande."
+ },
+ {
+  "id": 6303,
+  "de": "überdauern",
+  "tr": "ayakta kalmak, günümüze ulaşmak",
+  "deBeispiel": "Nur wenige Handschriften haben die Jahrhunderte überdauert.",
+  "gsw": "überduure",
+  "gswArtikel": null,
+  "gswBeispiel": "Nu weneg Handschrifte händ d Jaarhundert überduuret."
+ },
+ {
+  "id": 6304,
+  "de": "verblassen",
+  "tr": "solmak, silikleşmek",
+  "deBeispiel": "Mit dem Tod der Beteiligten verblasst auch die Erinnerung.",
+  "gsw": "verblasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit em Tod vo de Beteiligte verblasst au d Erinnerig."
+ },
+ {
+  "id": 6305,
+  "de": "anknüpfen",
+  "tr": "bağlanmak, kaldığı yerden sürdürmek",
+  "deBeispiel": "Die neue Regierung knüpfte bewusst an ältere Traditionen an.",
+  "gsw": "aachnüpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "D nöi Regierig hät bewusst a elteri Traditione aagchnüpft."
+ },
+ {
+  "id": 6306,
+  "de": "umdeuten",
+  "tr": "başka anlama çekmek, yeniden yorumlamak",
+  "deBeispiel": "Eine Niederlage wurde nachträglich zum heroischen Opfer umgedeutet.",
+  "gsw": "umdüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "E Niederlaag isch nachträglich zum heroische Opfer umdüütet worde."
+ },
+ {
+  "id": 6307,
+  "de": "verbürgt",
+  "tr": "belgelenmiş, kanıtlı",
+  "deBeispiel": "Als historisch verbürgt gilt allein das Datum der Ankunft.",
+  "gsw": "verbürgt",
+  "gswArtikel": null,
+  "gswBeispiel": "Als historisch verbürgt gilt eläi s Datum vo de Aachunft."
+ },
+ {
+  "id": 6308,
+  "de": "folgenreich",
+  "tr": "sonuçları ağır, etkisi büyük",
+  "deBeispiel": "Diese scheinbar kleine Entscheidung erwies sich als äußerst folgenreich.",
+  "gsw": "folgeriich",
+  "gswArtikel": null,
+  "gswBeispiel": "Die schiinbar chlii Entschäidig hät sich als üsserscht folgeriich erwise."
+ },
+ {
+  "id": 6309,
+  "de": "rückblickend",
+  "tr": "geriye dönüp bakıldığında",
+  "deBeispiel": "Rückblickend erscheint der Konflikt fast unausweichlich gewesen zu sein.",
+  "gsw": "rückblickend",
+  "gswArtikel": null,
+  "gswBeispiel": "Rückblickend schiint de Konflikt fascht unuuswiichlich gsi z sii."
+ },
+ {
+  "id": 6310,
+  "de": "zwiespältig",
+  "tr": "çelişkili, ikircikli",
+  "deBeispiel": "Sein Nachruhm bleibt bis heute außerordentlich zwiespältig.",
+  "gsw": "zwiischpältig",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Nachruem bliibt bis hüt usserordentlich zwiischpältig."
+ },
+ {
+  "id": 6311,
+  "de": "schonungslos",
+  "tr": "acımasızca, hiç yumuşatmadan",
+  "deBeispiel": "Der Bericht benennt die Versäumnisse der Behörden schonungslos.",
+  "gsw": "schonigslos",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bricht benennt d Versüümnis vo de Behörde schonigslos."
+ },
+ {
+  "id": 6312,
+  "de": "der Welthandel",
+  "tr": "dünya ticareti, küresel ticaret",
+  "deBeispiel": "Der Welthandel hat sich seit den neunziger Jahren grundlegend verändert.",
+  "gsw": "Wälthandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wälthandel hät sich siit de nüünziger Jaar grundlegend veränderet."
+ },
+ {
+  "id": 6313,
+  "de": "die Armutsbekämpfung",
+  "tr": "yoksullukla mücadele",
+  "deBeispiel": "Bildung gilt als wirksamstes Instrument der langfristigen Armutsbekämpfung.",
+  "gsw": "Armuetsbekämpfig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bildig gilt als wirksamschts Instrumänt vo de langfrischtige Armuetsbekämpfig."
+ },
+ {
+  "id": 6314,
+  "de": "das Schwellenland",
+  "tr": "yükselen ekonomi, eşik ülke",
+  "deBeispiel": "Mehrere Schwellenländer treten inzwischen selbstbewusst als Investoren auf.",
+  "gsw": "Schwelleland",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mehreri Schwelleländer träted inzwüsche sälbstbewusst als Investore uuf."
+ },
+ {
+  "id": 6315,
+  "de": "das Entwicklungsland",
+  "tr": "gelişmekte olan ülke",
+  "deBeispiel": "Viele Entwicklungsländer tragen die Folgen einer Krise, die sie nicht verursacht haben.",
+  "gsw": "Entwickligsland",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vili Entwickligsländer träged d Folge vo ere Krise, wo si nöd verursacht händ."
+ },
+ {
+  "id": 6316,
+  "de": "der Protektionismus",
+  "tr": "korumacılık, himayecilik",
+  "deBeispiel": "Wachsender Protektionismus gefährdet die Exporte kleinerer Volkswirtschaften.",
+  "gsw": "Protektionismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wachsende Protektionismus gfährdet d Export vo chlinere Volkswirtschafte."
+ },
+ {
+  "id": 6317,
+  "de": "die Zollschranke",
+  "tr": "gümrük engeli, tarife duvarı",
+  "deBeispiel": "Hohe Zollschranken halten verarbeitete Produkte aus dem Süden vom Markt fern.",
+  "gsw": "Zollschranke",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hochi Zollschranke haltet verarbeiteti Produkt us em Süde vom Markt wäg."
+ },
+ {
+  "id": 6318,
+  "de": "die Kinderarbeit",
+  "tr": "çocuk işçiliği",
+  "deBeispiel": "Kinderarbeit lässt sich nur bekämpfen, wenn Familien ein Auskommen haben.",
+  "gsw": "Chinderarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chinderarbet laat sich nu bekämpfe, wänn d Familie öppis zum Läbe händ."
+ },
+ {
+  "id": 6319,
+  "de": "die Sorgfaltspflicht",
+  "tr": "özen yükümlülüğü, durum tespiti yükümlülüğü",
+  "deBeispiel": "Das Gesetz verpflichtet Konzerne zu einer Sorgfaltspflicht entlang ihrer Zulieferkette.",
+  "gsw": "Sorgfaltspflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gsetz verpflichtet d Konzern zu ere Sorgfaltspflicht entlang vo ihrer Zulieferchette."
+ },
+ {
+  "id": 6320,
+  "de": "der Ressourcenverbrauch",
+  "tr": "kaynak tüketimi",
+  "deBeispiel": "Der Ressourcenverbrauch der reichen Länder übersteigt jedes vertretbare Maß.",
+  "gsw": "Ressourceverbruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Ressourceverbruuch vo de riiche Länder überschtiigt jedes vertretbare Mass."
+ },
+ {
+  "id": 6321,
+  "de": "der Schuldenerlass",
+  "tr": "borç silme, borç affı",
+  "deBeispiel": "Ohne einen umfassenden Schuldenerlass bleibt jede Reform wirkungslos.",
+  "gsw": "Schuldeerlass",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ohni en umfassende Schuldeerlass bliibt jedi Reform wirkigslos."
+ },
+ {
+  "id": 6322,
+  "de": "die Direktinvestition",
+  "tr": "doğrudan yatırım",
+  "deBeispiel": "Ausländische Direktinvestitionen fließen vor allem in den Bergbau.",
+  "gsw": "Direktinveschtition",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uusländischi Direktinveschtitione fliessed vor allem i de Bergbau."
+ },
+ {
+  "id": 6323,
+  "de": "die Weltordnung",
+  "tr": "dünya düzeni",
+  "deBeispiel": "Die alte Weltordnung verliert an Verbindlichkeit, eine neue zeichnet sich kaum ab.",
+  "gsw": "Wältordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D alt Wältordnig verlüürt a Verbindlichkeit, und e nöii zeichnet sich chuum ab."
+ },
+ {
+  "id": 6324,
+  "de": "die Wettbewerbsfähigkeit",
+  "tr": "rekabet gücü",
+  "deBeispiel": "Niedrige Löhne sichern kurzfristig die Wettbewerbsfähigkeit, aber keinen Wohlstand.",
+  "gsw": "Wettbewerbsfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Tiefi Löön sicheret churzfrischtig d Wettbewerbsfähigkeit, aber kein Woolschtand."
+ },
+ {
+  "id": 6325,
+  "de": "das Handelsdefizit",
+  "tr": "ticaret açığı",
+  "deBeispiel": "Das chronische Handelsdefizit zwingt das Land zu immer neuen Krediten.",
+  "gsw": "Handelsdefizit",
+  "gswArtikel": "s",
+  "gswBeispiel": "S chronische Handelsdefizit zwingt s Land zu immer nöie Kredit."
+ },
+ {
+  "id": 6326,
+  "de": "der Binnenmarkt",
+  "tr": "iç pazar",
+  "deBeispiel": "Ein funktionierender Binnenmarkt macht die Region weniger anfällig für Schocks.",
+  "gsw": "Binnemarkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "En funktionierende Binnemarkt macht d Region weniger aafällig für Schocks."
+ },
+ {
+  "id": 6327,
+  "de": "die Migrationsbewegung",
+  "tr": "göç hareketi",
+  "deBeispiel": "Klimawandel und Armut verstärken die Migrationsbewegungen innerhalb des Kontinents.",
+  "gsw": "Migrationsbewegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Klimawandel und Armuet verschtärked d Migrationsbewegige innerhalb vom Kontinänt."
+ },
+ {
+  "id": 6328,
+  "de": "die Urbanisierung",
+  "tr": "kentleşme, şehirleşme",
+  "deBeispiel": "Die rasante Urbanisierung überholt jede staatliche Planung.",
+  "gsw": "Urbanisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D rasanti Urbanisierig überholt jedi schtaatlichi Planig."
+ },
+ {
+  "id": 6329,
+  "de": "die Hungersnot",
+  "tr": "kıtlık, açlık felaketi",
+  "deBeispiel": "Die Hungersnot war keine Naturkatastrophe, sondern politisch verschuldet.",
+  "gsw": "Hungersnoot",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Hungersnoot isch kei Naturkataschtrophe gsi, sondern politisch verschuldet."
+ },
+ {
+  "id": 6330,
+  "de": "der Technologietransfer",
+  "tr": "teknoloji aktarımı",
+  "deBeispiel": "Ohne Technologietransfer bleibt die Energiewende im Süden Theorie.",
+  "gsw": "Technologietransfer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ohni Technologietransfer bliibt d Energiewändi im Süde Theorie."
+ },
+ {
+  "id": 6331,
+  "de": "die Interdependenz",
+  "tr": "karşılıklı bağımlılık",
+  "deBeispiel": "Die Pandemie hat die Interdependenz der Volkswirtschaften schmerzhaft sichtbar gemacht.",
+  "gsw": "Interdependenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Pandemie hät d Interdependenz vo de Volkswirtschafte schmärzhaft sichtbar gmacht."
+ },
+ {
+  "id": 6332,
+  "de": "das Gütesiegel",
+  "tr": "kalite etiketi, sertifika işareti",
+  "deBeispiel": "Das Gütesiegel garantiert faire Preise, sagt aber nichts über Arbeitszeiten.",
+  "gsw": "Güetesigel",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Güetesigel garantiert fairi Priis, seit aber nüüt über d Arbetsziite."
+ },
+ {
+  "id": 6333,
+  "de": "die Entwicklungszusammenarbeit",
+  "tr": "kalkınma işbirliği",
+  "deBeispiel": "Moderne Entwicklungszusammenarbeit versteht sich als Partnerschaft auf Augenhöhe.",
+  "gsw": "Entwickligszämenarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Moderni Entwickligszämenarbet verschtaat sich als Partnerschaft uf Augehöchi."
+ },
+ {
+  "id": 6334,
+  "de": "die Nichtregierungsorganisation",
+  "tr": "sivil toplum kuruluşu",
+  "deBeispiel": "Mehrere Nichtregierungsorganisationen haben den Bericht gemeinsam veröffentlicht.",
+  "gsw": "Nichtregierigsorganisation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mehreri Nichtregierigsorganisatione händ de Bricht gmeinsam veröffentlicht."
+ },
+ {
+  "id": 6335,
+  "de": "die Fluchtursache",
+  "tr": "göçe zorlayan neden, kaçış nedeni",
+  "deBeispiel": "Wer Fluchtursachen bekämpfen will, muss über Handelspolitik reden.",
+  "gsw": "Fluchtursach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer Fluchtursache bekämpfe will, mues über Handelspolitik rede."
+ },
+ {
+  "id": 6336,
+  "de": "das Wohlstandsgefälle",
+  "tr": "refah uçurumu",
+  "deBeispiel": "Das Wohlstandsgefälle innerhalb der Länder wächst schneller als zwischen ihnen.",
+  "gsw": "Woolschtandsgfäll",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Woolschtandsgfäll innerhalb vo de Länder wachst schneller als zwüsche ne."
+ },
+ {
+  "id": 6337,
+  "de": "der Landraub",
+  "tr": "toprak gaspı",
+  "deBeispiel": "Investoren betreiben Landraub, während die Behörden wegsehen.",
+  "gsw": "Landraub",
+  "gswArtikel": "de",
+  "gswBeispiel": "Investore betriibed Landraub, während d Behörde wäglueged."
+ },
+ {
+  "id": 6338,
+  "de": "die Steueroase",
+  "tr": "vergi cenneti",
+  "deBeispiel": "Über Steueroasen entziehen sich Konzerne ihrer Verantwortung gegenüber der Allgemeinheit.",
+  "gsw": "Stüüroase",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über Stüüroase drücked sich d Konzern vor ihrer Verantwortig gägenüber de Allgemeinheit."
+ },
+ {
+  "id": 6339,
+  "de": "die Gewinnverlagerung",
+  "tr": "kâr kaydırma",
+  "deBeispiel": "Durch Gewinnverlagerung entgehen den Herkunftsländern Milliarden an Steuern.",
+  "gsw": "Gwinnverlagerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur Gwinnverlagerig gönd de Herkunftsländer Milliarde a Stüüre verlore."
+ },
+ {
+  "id": 6340,
+  "de": "die Kapitalflucht",
+  "tr": "sermaye kaçışı",
+  "deBeispiel": "Nach der Wahl setzte eine massive Kapitalflucht ins Ausland ein.",
+  "gsw": "Kapitalflucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Waal hät e massivi Kapitalflucht is Uusland iigsetzt."
+ },
+ {
+  "id": 6341,
+  "de": "angleichen",
+  "tr": "denkleştirmek, uyumlaştırmak",
+  "deBeispiel": "Die Union will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
+  "gsw": "aagliiche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Union wott d Sozialschtandards vo ihrne Mitglider schrittwiis aagliiche."
+ },
+ {
+  "id": 6342,
+  "de": "boykottieren",
+  "tr": "boykot etmek",
+  "deBeispiel": "Mehrere Staaten boykottieren die Konferenz aus politischen Gründen.",
+  "gsw": "boykottiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mehreri Schtaate boykottiered d Konferänz us politische Gründ."
+ },
+ {
+  "id": 6343,
+  "de": "sanktionieren",
+  "tr": "yaptırım uygulamak, cezalandırmak",
+  "deBeispiel": "Verstöße gegen die Auflagen werden bisher kaum sanktioniert.",
+  "gsw": "sanktioniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Verschtöss gäge d Uuflaage wärded bishär chuum sanktioniert."
+ },
+ {
+  "id": 6344,
+  "de": "privatisieren",
+  "tr": "özelleştirmek",
+  "deBeispiel": "Die Wasserversorgung wurde privatisiert, und die Preise stiegen sofort.",
+  "gsw": "privatisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wasserversorgig isch privatisiert worde, und d Priis sind sofort gschtige."
+ },
+ {
+  "id": 6345,
+  "de": "verstaatlichen",
+  "tr": "devletleştirmek, kamulaştırmak",
+  "deBeispiel": "Die Regierung drohte damit, die Ölförderung zu verstaatlichen.",
+  "gsw": "verschtaatliche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regierig hät dermit droht, d Öölfördrig z verschtaatliche."
+ },
+ {
+  "id": 6346,
+  "de": "zugutekommen",
+  "tr": "yararına olmak, işine yaramak",
+  "deBeispiel": "Das Wachstum ist bislang nur einer schmalen Oberschicht zugutegekommen.",
+  "gsw": "zguetchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wachstum isch bishär nu ere schmale Oberschicht zguetchoo."
+ },
+ {
+  "id": 6347,
+  "de": "grenzüberschreitend",
+  "tr": "sınır ötesi, sınır aşan",
+  "deBeispiel": "Steuerflucht ist ein grenzüberschreitendes Problem und verlangt gemeinsame Antworten.",
+  "gsw": "gränzüberschriitend",
+  "gswArtikel": null,
+  "gswBeispiel": "Stüürflucht isch es gränzüberschriitends Problem und verlangt gmeinsami Antworte."
+ },
+ {
+  "id": 6348,
+  "de": "bilateral",
+  "tr": "ikili, iki taraflı",
+  "deBeispiel": "Die beiden Staaten regeln ihre Handelsbeziehungen bilateral.",
+  "gsw": "bilateral",
+  "gswArtikel": null,
+  "gswBeispiel": "Di beide Schtaate regled ihri Handelsbeziehige bilateral."
+ },
+ {
+  "id": 6349,
+  "de": "ungleich",
+  "tr": "eşit olmayan, eşitsiz",
+  "deBeispiel": "Die Lasten des Klimawandels sind extrem ungleich verteilt.",
+  "gsw": "ungliich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Laschte vom Klimawandel sind extrem ungliich verteilt."
+ },
+ {
+  "id": 6350,
+  "de": "gemeinnützig",
+  "tr": "kamu yararına, kâr amacı gütmeyen",
+  "deBeispiel": "Die Stiftung arbeitet gemeinnützig und legt ihre Finanzen offen.",
+  "gsw": "gmeinnützig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtiftig schaffet gmeinnützig und leit ihri Finanze offe."
+ },
+ {
+  "id": 6351,
+  "de": "zugunsten",
+  "tr": "lehine, yararına",
+  "deBeispiel": "Die Regeln wurden zugunsten der Exporteure geändert.",
+  "gsw": "zguunschte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regle sind zguunschte vo de Exporteur gänderet worde."
+ },
+ {
+  "id": 6352,
+  "de": "die Rechtsstaatlichkeit",
+  "tr": "hukuk devleti ilkesi, hukukun üstünlüğü",
+  "deBeispiel": "Die Reform stellt die Rechtsstaatlichkeit des gesamten Verfahrens infrage.",
+  "gsw": "Rächtsschtaatlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reform schtellt d Rächtsschtaatlichkeit vom ganze Verfaare i Fraag."
+ }
+]

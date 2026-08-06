@@ -1,0 +1,995 @@
+[
+ {
+  "id": 6683,
+  "de": "sich unterziehen",
+  "tr": "(bir şeye) girmek, tabi olmak",
+  "deBeispiel": "Sie hat sich freiwillig einer belastenden Untersuchung unterzogen.",
+  "gsw": "sich unterzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät sich freiwillig ere belaschtende Untersuechig unterzoge."
+ },
+ {
+  "id": 6684,
+  "de": "unheilbar",
+  "tr": "tedavi edilemez, şifasız",
+  "deBeispiel": "Unheilbar Kranke brauchen Begleitung, nicht immer neue Eingriffe.",
+  "gsw": "unheilbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Unheilbar Chranki bruuched e Begleitig und nöd immer neui Iigriff."
+ },
+ {
+  "id": 6685,
+  "de": "invasiv",
+  "tr": "girişimsel, invaziv",
+  "deBeispiel": "Weniger invasive Verfahren verkürzen die Genesungszeit erheblich.",
+  "gsw": "invasiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Weniger invasivi Verfaare verchürzed d Gnesigsziit erheblich."
+ },
+ {
+  "id": 6686,
+  "de": "aussagekräftig",
+  "tr": "anlamlı, açıklayıcı",
+  "deBeispiel": "Bei so kleinen Fallzahlen ist das Ergebnis kaum aussagekräftig.",
+  "gsw": "uussagechräftig",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi so chliine Fallzaale isch s Resultat chuum uussagechräftig."
+ },
+ {
+  "id": 6687,
+  "de": "mündig",
+  "tr": "ergin, kendi kararını verebilen",
+  "deBeispiel": "Das Leitbild vom mündigen Patienten bleibt oft blanke Theorie.",
+  "gsw": "mündig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Leitbild vom mündige Patiänt bliibt oft blanki Theorie.",
+  "ayniLehce": [
+   "Mündung (B2)"
+  ]
+ },
+ {
+  "id": 6688,
+  "de": "die Universalität",
+  "tr": "evrensellik, genel geçerlilik",
+  "deBeispiel": "Die Universalität der Menschenrechte wird von manchen Regierungen offen bestritten.",
+  "gsw": "Universalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Universalität vo de Mäntscherächt wird vo mänge Regierige offe beschtritte."
+ },
+ {
+  "id": 6689,
+  "de": "das Völkergewohnheitsrecht",
+  "tr": "uluslararası örf ve âdet hukuku",
+  "deBeispiel": "Das Folterverbot gilt heute als Teil des Völkergewohnheitsrechts.",
+  "gsw": "Völchergwohnheitsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Folterverbot giltet hüt as Teil vom Völchergwohnheitsrächt."
+ },
+ {
+  "id": 6690,
+  "de": "der Vertragsstaat",
+  "tr": "taraf devlet, sözleşmeye taraf ülke",
+  "deBeispiel": "Jeder Vertragsstaat muss alle vier Jahre einen ausführlichen Bericht vorlegen.",
+  "gsw": "Vertragsschtaat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Vertragsschtaat mues alli vier Jaar en uusfüehrliche Bericht vorleege."
+ },
+ {
+  "id": 6691,
+  "de": "das Zusatzprotokoll",
+  "tr": "ek protokol",
+  "deBeispiel": "Das Zusatzprotokoll eröffnet Einzelpersonen erstmals den Weg zum Ausschuss.",
+  "gsw": "Zuesatzprotokoll",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Zuesatzprotokoll eröffnet Einzelpersone zum erschte Mal de Wäg zum Uusschuss."
+ },
+ {
+  "id": 6692,
+  "de": "die Flüchtlingskonvention",
+  "tr": "mülteci sözleşmesi",
+  "deBeispiel": "Die Flüchtlingskonvention verbietet die Rückführung in ein Verfolgerland.",
+  "gsw": "Flüchtligskonvention",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Flüchtligskonvention verbüütet d Rückfüehrig in es Verfolgerland."
+ },
+ {
+  "id": 6693,
+  "de": "die Zurückweisung",
+  "tr": "geri çevirme, sınırda geri gönderme",
+  "deBeispiel": "Die Zurückweisung an der Grenze verstößt gegen geltendes Flüchtlingsrecht.",
+  "gsw": "Zruggwiisig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zruggwiisig a de Gränze verschtoosst gäge s gältende Flüchtligsrächt."
+ },
+ {
+  "id": 6694,
+  "de": "der Herkunftsstaat",
+  "tr": "menşe ülke, geldiği devlet",
+  "deBeispiel": "Die Lage im Herkunftsstaat wird vor jeder Entscheidung sorgfältig geprüft.",
+  "gsw": "Herkunftsschtaat",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Laag im Herkunftsschtaat wird vor jedere Entschäidig sorgfältig prüeft."
+ },
+ {
+  "id": 6695,
+  "de": "die Staatenlosigkeit",
+  "tr": "vatansızlık",
+  "deBeispiel": "Staatenlosigkeit nimmt den Betroffenen fast jeden rechtlichen Schutz.",
+  "gsw": "Schtaatelosigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtaatelosigkeit nimmt de Betroffene fascht jede rächtlich Schutz."
+ },
+ {
+  "id": 6696,
+  "de": "die Intervention",
+  "tr": "müdahale",
+  "deBeispiel": "Eine humanitäre Intervention ohne Mandat bleibt völkerrechtlich hochumstritten.",
+  "gsw": "Intervention",
+  "gswArtikel": "d",
+  "gswBeispiel": "En humanitäri Intervention ohni Mandat bliibt völkerrächtlich hoch umschtritte."
+ },
+ {
+  "id": 6697,
+  "de": "die Hoheitsgewalt",
+  "tr": "hükümranlık yetkisi, kamu gücü",
+  "deBeispiel": "Der Vertrag gilt für alle Personen unter der Hoheitsgewalt des Staates.",
+  "gsw": "Hoheitsgwalt",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vertrag giltet für alli Persone under de Hoheitsgwalt vom Schtaat."
+ },
+ {
+  "id": 6698,
+  "de": "der Strafgerichtshof",
+  "tr": "ceza mahkemesi (uluslararası)",
+  "deBeispiel": "Der Strafgerichtshof erließ einen Haftbefehl gegen den ehemaligen Befehlshaber.",
+  "gsw": "Schtraafgrichtshof",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtraafgrichtshof hät en Haftbefähl gäge de ehemalig Befählshaber erlaa."
+ },
+ {
+  "id": 6699,
+  "de": "die Verfahrensgarantie",
+  "tr": "usul güvencesi",
+  "deBeispiel": "Im Eilverfahren wurden zentrale Verfahrensgarantien schlicht übergangen.",
+  "gsw": "Verfaarensgarantie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Iilverfaare sind zentrali Verfaarensgarantie eifach übergange worde."
+ },
+ {
+  "id": 6700,
+  "de": "die Individualbeschwerde",
+  "tr": "bireysel başvuru",
+  "deBeispiel": "Die Individualbeschwerde gibt einzelnen Bürgern Zugang zu einem internationalen Ausschuss.",
+  "gsw": "Individualbeschwerde",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Individualbeschwerde git einzelne Bürger en Zuegang zu eme internationale Uusschuss."
+ },
+ {
+  "id": 6701,
+  "de": "der Präzedenzfall",
+  "tr": "emsal, emsal karar",
+  "deBeispiel": "Das Urteil gilt als Präzedenzfall für alle künftigen Klagen gegen Konzerne.",
+  "gsw": "Präzedenzfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Urteil giltet as Präzedenzfall für alli künftige Chlage gäge Konzern."
+ },
+ {
+  "id": 6702,
+  "de": "die Verbindlichkeit",
+  "tr": "bağlayıcılık",
+  "deBeispiel": "Über die rechtliche Verbindlichkeit der Erklärung streiten Fachleute bis heute.",
+  "gsw": "Verbindlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d rächtlichi Verbindlichkeit vo de Erklärig schtriited d Fachlüüt bis hüt."
+ },
+ {
+  "id": 6703,
+  "de": "die Straflosigkeit",
+  "tr": "cezasızlık",
+  "deBeispiel": "Jahrzehntelange Straflosigkeit hat das Vertrauen in die Justiz zerstört.",
+  "gsw": "Schtraaflosigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jaarzähntelangi Schtraaflosigkeit hät s Vertraue i d Juschtiz zerschtört."
+ },
+ {
+  "id": 6704,
+  "de": "die Folter",
+  "tr": "işkence",
+  "deBeispiel": "Das Verbot der Folter gilt ausnahmslos und auch im Notstand.",
+  "gsw": "Folter",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Verbot vo de Folter giltet uusnaamslos und au im Notschtand."
+ },
+ {
+  "id": 6705,
+  "de": "die Misshandlung",
+  "tr": "kötü muamele, eziyet",
+  "deBeispiel": "Ärzte bestätigten Spuren schwerer Misshandlungen während der Haft.",
+  "gsw": "Misshandlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ärzt händ Schpuure vo schwäre Misshandlige während de Haft beschtätigt."
+ },
+ {
+  "id": 6706,
+  "de": "die Willkür",
+  "tr": "keyfilik, keyfî davranış",
+  "deBeispiel": "Klare Verfahrensregeln sollen die Behörden vor Willkür bewahren.",
+  "gsw": "Willkür",
+  "gswArtikel": "d",
+  "gswBeispiel": "Klari Verfaarensregle söled d Behörde vor Willkür bewaare."
+ },
+ {
+  "id": 6707,
+  "de": "der Übergriff",
+  "tr": "saldırı, taşkınlık, yetki aşımı",
+  "deBeispiel": "Übergriffe der Sicherheitskräfte wurden monatelang gar nicht untersucht.",
+  "gsw": "Übergriff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Übergriff vo de Sicherheitschräft sind monatelang gar nöd untersuecht worde."
+ },
+ {
+  "id": 6708,
+  "de": "die Unterdrückung",
+  "tr": "baskı, bastırma, zulüm",
+  "deBeispiel": "Die Unterdrückung der Opposition wurde als Staatsräson gerechtfertigt.",
+  "gsw": "Underdrückig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Underdrückig vo de Opposition isch as Schtaatsräson grächtfertigt worde."
+ },
+ {
+  "id": 6709,
+  "de": "der Sonderberichterstatter",
+  "tr": "özel raportör",
+  "deBeispiel": "Der Sonderberichterstatter durfte die Gefängnisse nur unter Auflagen besuchen.",
+  "gsw": "Sunderberichterschtatter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Sunderberichterschtatter hät d Gfängnis nu under Uuflaage dörfe bsueche."
+ },
+ {
+  "id": 6710,
+  "de": "anklagen",
+  "tr": "dava açmak, itham etmek",
+  "deBeispiel": "Zwei ehemalige Minister wurden wegen schwerer Verbrechen angeklagt.",
+  "gsw": "aaklage",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwee ehemaligi Minischter sind wäge schwäre Verbräche aaklagt worde."
+ },
+ {
+  "id": 6711,
+  "de": "einfordern",
+  "tr": "(hakkı olanı) ısrarla talep etmek, geri istemek",
+  "deBeispiel": "Die Angehörigen fordern seit Jahren Aufklärung und Entschädigung ein.",
+  "gsw": "iifordere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aaghörige fordered sit Jaare e Uufklärig und e Entschädigung ii."
+ },
+ {
+  "id": 6712,
+  "de": "vollstrecken",
+  "tr": "infaz etmek, icra etmek",
+  "deBeispiel": "Der Haftbefehl konnte im Ausland lange nicht vollstreckt werden.",
+  "gsw": "vollschtrecke",
+  "gswArtikel": null,
+  "gswBeispiel": "De Haftbefähl hät mer im Uusland lang nöd chöne vollschtrecke."
+ },
+ {
+  "id": 6713,
+  "de": "aberkennen",
+  "tr": "geri almak, elinden almak (hak, statü)",
+  "deBeispiel": "Der Familie wurde die Staatsangehörigkeit ohne nachvollziehbare Begründung aberkannt.",
+  "gsw": "aberkenne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Familie isch d Schtaatsaaghörigkeit ohni nachvollziebari Begründig aberkennt worde."
+ },
+ {
+  "id": 6714,
+  "de": "entschädigen",
+  "tr": "tazmin etmek, zararını karşılamak",
+  "deBeispiel": "Der Staat muss die Betroffenen für die rechtswidrige Haft entschädigen.",
+  "gsw": "entschädige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat mues d Betroffene für di rächtswidrigi Haft entschädige."
+ },
+ {
+  "id": 6715,
+  "de": "unantastbar",
+  "tr": "dokunulmaz",
+  "deBeispiel": "Die Würde des Menschen gilt in dieser Verfassung als unantastbar.",
+  "gsw": "unaataschtbar",
+  "gswArtikel": null,
+  "gswBeispiel": "D Würde vom Mäntsch giltet i dere Verfassig as unaataschtbar."
+ },
+ {
+  "id": 6716,
+  "de": "unveräußerlich",
+  "tr": "devredilemez, vazgeçilemez",
+  "deBeispiel": "Diese Rechte sind unveräußerlich und können niemandem abgekauft werden.",
+  "gsw": "unveräusserlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Rächt sind unveräusserlich und mer chan si niemertem abchaufe."
+ },
+ {
+  "id": 6717,
+  "de": "systematisch",
+  "tr": "sistematik, dizgesel",
+  "deBeispiel": "Die Angriffe erfolgten systematisch und richteten sich gegen die Zivilbevölkerung.",
+  "gsw": "systematisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aagriff sind systematisch erfolgt und händ sich gäge d Zivilbevölkerig grichtet."
+ },
+ {
+  "id": 6718,
+  "de": "ausnahmslos",
+  "tr": "istisnasız",
+  "deBeispiel": "Dieses Verbot gilt ausnahmslos, auch in Zeiten des Krieges.",
+  "gsw": "uusnaamslos",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Verbot giltet uusnaamslos, au i de Ziite vom Chrieg."
+ },
+ {
+  "id": 6719,
+  "de": "schutzbedürftig",
+  "tr": "korunmaya muhtaç",
+  "deBeispiel": "Besonders schutzbedürftige Personen brauchen ein beschleunigtes und sensibles Verfahren.",
+  "gsw": "schutzbedürftig",
+  "gswArtikel": null,
+  "gswBeispiel": "Bsunders schutzbedürftigi Persone bruuched es beschlünigts und sensibels Verfaare."
+ },
+ {
+  "id": 6720,
+  "de": "unteilbar",
+  "tr": "bölünemez, bir bütün olan",
+  "deBeispiel": "Soziale und politische Rechte werden in der Erklärung als unteilbar bezeichnet.",
+  "gsw": "unteilbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Soziali und politischi Rächt wärded i de Erklärig as unteilbar bezeichnet."
+ },
+ {
+  "id": 6721,
+  "de": "die Entropie",
+  "tr": "entropi, düzensizlik ölçüsü",
+  "deBeispiel": "In einem geschlossenen System nimmt die Entropie mit der Zeit zu.",
+  "gsw": "Entropie",
+  "gswArtikel": "d",
+  "gswBeispiel": "In eme gschlossene Syschtem nimmt d Entropie mit de Ziit zue."
+ },
+ {
+  "id": 6722,
+  "de": "die Schwerkraft",
+  "tr": "yerçekimi",
+  "deBeispiel": "Ohne die Schwerkraft würde das Wasser einfach im Raum schweben.",
+  "gsw": "Schwerchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni d Schwerchraft würd s Wasser eifach im Ruum schwebe."
+ },
+ {
+  "id": 6723,
+  "de": "der Aggregatzustand",
+  "tr": "maddenin hâli, fiziksel hâl",
+  "deBeispiel": "Wasser kommt in allen drei Aggregatzuständen auf der Erde vor.",
+  "gsw": "Aggregatzuestand",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Wasser chunt uf de Erde in allne drei Aggregatzueschtänd vor."
+ },
+ {
+  "id": 6724,
+  "de": "der Atomkern",
+  "tr": "atom çekirdeği",
+  "deBeispiel": "Bei der Spaltung eines Atomkerns wird enorm viel Energie frei.",
+  "gsw": "Atomchern",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi de Schpaltig vo eme Atomchern wird enorm vil Energie frei."
+ },
+ {
+  "id": 6725,
+  "de": "die Halbwertszeit",
+  "tr": "yarılanma ömrü",
+  "deBeispiel": "Dieses Isotop hat eine Halbwertszeit von mehreren tausend Jahren.",
+  "gsw": "Halbwertsziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das Isotop hät e Halbwertsziit vo mehrere tuusig Jaar."
+ },
+ {
+  "id": 6726,
+  "de": "die Radioaktivität",
+  "tr": "radyoaktivite, radyoaktiflik",
+  "deBeispiel": "Die Radioaktivität im Boden wird seit dem Unfall regelmäßig gemessen.",
+  "gsw": "Radioaktivität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Radioaktivität im Bode wird sit em Unfall regelmässig gmässe."
+ },
+ {
+  "id": 6727,
+  "de": "die Strahlung",
+  "tr": "ışınım, radyasyon",
+  "deBeispiel": "Die Atmosphäre schützt uns vor einem Großteil der kosmischen Strahlung.",
+  "gsw": "Schtraalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Atmosphäre schützt öis vor eme groosse Teil vo de kosmische Schtraalig."
+ },
+ {
+  "id": 6728,
+  "de": "die Wellenlänge",
+  "tr": "dalga boyu",
+  "deBeispiel": "Rotes Licht hat eine deutlich größere Wellenlänge als blaues.",
+  "gsw": "Wällelängi",
+  "gswArtikel": "d",
+  "gswBeispiel": "S rote Liecht hät e düütlich grösseri Wällelängi as s blaue."
+ },
+ {
+  "id": 6729,
+  "de": "die Frequenz",
+  "tr": "frekans, sıklık",
+  "deBeispiel": "Fledermäuse orientieren sich mit Tönen sehr hoher Frequenz.",
+  "gsw": "Frequenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Flädermüüs orientiered sich mit Tön vo sehr hoher Frequenz."
+ },
+ {
+  "id": 6730,
+  "de": "die Schwingung",
+  "tr": "titreşim, salınım",
+  "deBeispiel": "Der Sensor misst selbst kleinste Schwingungen der Brücke.",
+  "gsw": "Schwingig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Sensor misst sogar di chliinschte Schwingige vo de Brugg."
+ },
+ {
+  "id": 6731,
+  "de": "die Resonanz",
+  "tr": "rezonans, yankılanma",
+  "deBeispiel": "Durch Resonanz kann eine Brücke gefährlich stark ins Schwingen geraten.",
+  "gsw": "Resonanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur d Resonanz cha e Brugg gfährlich schtark is Schwinge cho."
+ },
+ {
+  "id": 6732,
+  "de": "die Trägheit",
+  "tr": "eylemsizlik, atalet",
+  "deBeispiel": "Beim Bremsen spürt man die Trägheit des eigenen Körpers deutlich.",
+  "gsw": "Trägheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bim Bremse gschpürt mer d Trägheit vom eigene Chörper düütlich."
+ },
+ {
+  "id": 6733,
+  "de": "die Reibung",
+  "tr": "sürtünme",
+  "deBeispiel": "Auf nassem Asphalt ist die Reibung der Reifen deutlich geringer.",
+  "gsw": "Riibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf nassem Asphalt isch d Riibig vo de Pneu düütlich chliiner."
+ },
+ {
+  "id": 6734,
+  "de": "die Beschleunigung",
+  "tr": "ivme, hızlanma",
+  "deBeispiel": "Die Beschleunigung eines fallenden Körpers ist nahezu konstant.",
+  "gsw": "Beschlünigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Beschlünigig vo eme fallende Chörper isch fascht konschtant."
+ },
+ {
+  "id": 6735,
+  "de": "der Auftrieb",
+  "tr": "kaldırma kuvveti",
+  "deBeispiel": "Der Auftrieb im Salzwasser ist größer als im Süßwasser.",
+  "gsw": "Uuftrib",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Uuftrib im Salzwasser isch grösser as im Süesswasser."
+ },
+ {
+  "id": 6736,
+  "de": "die Dichte",
+  "tr": "yoğunluk",
+  "deBeispiel": "Öl schwimmt oben, weil seine Dichte geringer ist als die von Wasser.",
+  "gsw": "Dichti",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Öl schwümmt obe, wil sini Dichti chliiner isch as die vom Wasser."
+ },
+ {
+  "id": 6737,
+  "de": "das Magnetfeld",
+  "tr": "manyetik alan",
+  "deBeispiel": "Das Magnetfeld der Erde lenkt geladene Teilchen aus dem All ab.",
+  "gsw": "Magnetfäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Magnetfäld vo de Erde lenkt gladeni Teili us em All ab."
+ },
+ {
+  "id": 6738,
+  "de": "die Leitfähigkeit",
+  "tr": "iletkenlik",
+  "deBeispiel": "Kupfer wird wegen seiner hohen Leitfähigkeit für Kabel verwendet.",
+  "gsw": "Leitfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Chupfer wird wäge sinere hoche Leitfähigkeit für Kabel bruucht."
+ },
+ {
+  "id": 6739,
+  "de": "die Wechselwirkung",
+  "tr": "etkileşim, karşılıklı etki",
+  "deBeispiel": "Zwischen den beiden Medikamenten sind gefährliche Wechselwirkungen möglich.",
+  "gsw": "Wächselwirkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüsched de beide Medikamänt sind gfährlichi Wächselwirkige möglich."
+ },
+ {
+  "id": 6740,
+  "de": "das Teilchen",
+  "tr": "parçacık, zerre",
+  "deBeispiel": "In der Luft schweben winzige Teilchen, die man kaum sieht.",
+  "gsw": "Teili",
+  "gswArtikel": "s",
+  "gswBeispiel": "I de Luft schwebed winzigi Teili, wo mer chuum gseht."
+ },
+ {
+  "id": 6741,
+  "de": "der Katalysator",
+  "tr": "katalizör",
+  "deBeispiel": "Ein Katalysator beschleunigt die Reaktion, ohne selbst verbraucht zu werden.",
+  "gsw": "Katalysator",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Katalysator beschlünigt d Reaktion, ohni sälber verbrucht z werde."
+ },
+ {
+  "id": 6742,
+  "de": "die Oxidation",
+  "tr": "oksitlenme, yükseltgenme",
+  "deBeispiel": "Rost entsteht durch die langsame Oxidation von Eisen an der Luft.",
+  "gsw": "Oxidation",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Roscht entschtaat dur di langsam Oxidation vo Iise a de Luft."
+ },
+ {
+  "id": 6743,
+  "de": "die Verbrennung",
+  "tr": "yanma, yakma",
+  "deBeispiel": "Bei der Verbrennung von Kohle entsteht sehr viel Kohlendioxid.",
+  "gsw": "Verbrennig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Verbrennig vo Chole entschtaat sehr vil Choledioxid."
+ },
+ {
+  "id": 6744,
+  "de": "die Gärung",
+  "tr": "mayalanma, fermantasyon",
+  "deBeispiel": "Ohne Gärung gäbe es weder Brot noch Wein.",
+  "gsw": "Gärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Gärig gäb's weder es Brot no en Wii."
+ },
+ {
+  "id": 6745,
+  "de": "die Zersetzung",
+  "tr": "ayrışma, çürüme",
+  "deBeispiel": "Die Zersetzung der Blätter im Waldboden dauert mehrere Monate.",
+  "gsw": "Zersetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zersetzig vo de Blätter im Waldbode duuret mehreri Mönet."
+ },
+ {
+  "id": 6746,
+  "de": "der Siedepunkt",
+  "tr": "kaynama noktası",
+  "deBeispiel": "In den Bergen liegt der Siedepunkt von Wasser deutlich niedriger.",
+  "gsw": "Siedepunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Bärge liit de Siedepunkt vom Wasser düütlich tüüfer."
+ },
+ {
+  "id": 6747,
+  "de": "der Kristall",
+  "tr": "kristal",
+  "deBeispiel": "Beim langsamen Verdunsten bilden sich im Glas feine Kristalle.",
+  "gsw": "Krischtall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim langsame Verdunschte bilded sich im Glas fiini Krischtall."
+ },
+ {
+  "id": 6748,
+  "de": "der Sauerstoff",
+  "tr": "oksijen",
+  "deBeispiel": "In großer Höhe enthält die Luft deutlich weniger Sauerstoff.",
+  "gsw": "Suurschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "I groosser Höchi hät d Luft düütlich weniger Suurschtoff."
+ },
+ {
+  "id": 6749,
+  "de": "die Verdunstung",
+  "tr": "buharlaşma",
+  "deBeispiel": "Durch die Verdunstung verliert der See im Sommer viel Wasser.",
+  "gsw": "Verdunschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur d Verdunschtig verlüürt de See im Summer vil Wasser."
+ },
+ {
+  "id": 6750,
+  "de": "die Verwitterung",
+  "tr": "ayrışma, doğal aşınma",
+  "deBeispiel": "Frost und Regen beschleunigen die Verwitterung des alten Gemäuers.",
+  "gsw": "Verwitterig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Froscht und de Räge beschlüniged d Verwitterig vom alte Gmüür."
+ },
+ {
+  "id": 6751,
+  "de": "die Symbiose",
+  "tr": "ortak yaşam, simbiyoz",
+  "deBeispiel": "Pilz und Alge leben in der Flechte in enger Symbiose.",
+  "gsw": "Symbiose",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Pilz und d Alge läbed i de Flächte in enger Symbiose."
+ },
+ {
+  "id": 6752,
+  "de": "die Mutation",
+  "tr": "mutasyon",
+  "deBeispiel": "Eine einzige Mutation kann die Wirkung des Medikaments aufheben.",
+  "gsw": "Mutation",
+  "gswArtikel": "d",
+  "gswBeispiel": "E einzigi Mutation cha d Wirkig vom Medikamänt uufhebe."
+ },
+ {
+  "id": 6753,
+  "de": "die Photosynthese",
+  "tr": "fotosentez",
+  "deBeispiel": "Bei der Photosynthese wandeln Pflanzen Licht in chemische Energie um.",
+  "gsw": "Photosynthese",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Photosynthese wandled d Pflanze s Liecht i chemischi Energie um."
+ },
+ {
+  "id": 6754,
+  "de": "der Zellkern",
+  "tr": "hücre çekirdeği",
+  "deBeispiel": "Das Erbmaterial liegt bei den meisten Lebewesen im Zellkern.",
+  "gsw": "Zällchern",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Erbmaterial liit bi de meischte Läbewäse im Zällchern."
+ },
+ {
+  "id": 6755,
+  "de": "das Chromosom",
+  "tr": "kromozom",
+  "deBeispiel": "Der Mensch besitzt in jeder Körperzelle sechsundvierzig Chromosomen.",
+  "gsw": "Chromosom",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Mäntsch hät i jedere Chörperzäll sächsevierzg Chromosome."
+ },
+ {
+  "id": 6756,
+  "de": "das Erbgut",
+  "tr": "kalıtsal madde, genom, genetik yapı",
+  "deBeispiel": "Ein Eingriff in das Erbgut wirft heikle ethische Fragen auf.",
+  "gsw": "Erbguet",
+  "gswArtikel": "s",
+  "gswBeispiel": "En Iigriff is Erbguet wirft heikli ethischi Frage uuf."
+ },
+ {
+  "id": 6757,
+  "de": "das Enzym",
+  "tr": "enzim",
+  "deBeispiel": "Ohne dieses Enzym kann der Körper den Zucker nicht abbauen.",
+  "gsw": "Enzym",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ohni das Enzym cha de Chörper de Zucker nöd abbaue."
+ },
+ {
+  "id": 6758,
+  "de": "das Hormon",
+  "tr": "hormon",
+  "deBeispiel": "Bei Stress schüttet der Körper vermehrt bestimmte Hormone aus.",
+  "gsw": "Hormon",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bi Schtress schüttet de Chörper vermehrt bestimmti Hormon uus."
+ },
+ {
+  "id": 6759,
+  "de": "die Evolution",
+  "tr": "evrim",
+  "deBeispiel": "Die Evolution verläuft nicht zielgerichtet, sondern über zufällige Veränderungen.",
+  "gsw": "Evolution",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Evolution verlauft nöd zielgrichtet, sondern über zuefälligi Veränderige."
+ },
+ {
+  "id": 6760,
+  "de": "verdampfen",
+  "tr": "buharlaşmak, buhara dönüşmek",
+  "deBeispiel": "Bei hundert Grad verdampft das Wasser vollständig.",
+  "gsw": "verdampfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi hundert Grad verdampft s Wasser vollschtändig."
+ },
+ {
+  "id": 6761,
+  "de": "erstarren",
+  "tr": "katılaşmak, donmak",
+  "deBeispiel": "Die glühende Lava erstarrt an der Luft zu schwarzem Gestein.",
+  "gsw": "erschtarre",
+  "gswArtikel": null,
+  "gswBeispiel": "D gliehendi Lava erschtarrt a de Luft zu schwarzem Gschtei."
+ },
+ {
+  "id": 6762,
+  "de": "spalten",
+  "tr": "bölmek, yarmak, ayrıştırmak",
+  "deBeispiel": "Enzyme spalten die Stärke in einzelne Zuckerbausteine.",
+  "gsw": "schpalte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Enzym schpalted d Schtärchi in einzelni Zuckerbauschtei."
+ },
+ {
+  "id": 6763,
+  "de": "sich ausdehnen",
+  "tr": "genleşmek, yayılmak",
+  "deBeispiel": "Metall dehnt sich bei Hitze deutlich messbar aus.",
+  "gsw": "sich uusdehne",
+  "gswArtikel": null,
+  "gswBeispiel": "S Metall dehnt sich bi de Hitz düütlich messbar uus."
+ },
+ {
+  "id": 6764,
+  "de": "sich zusammenziehen",
+  "tr": "büzülmek, kasılmak",
+  "deBeispiel": "Bei Kälte ziehen sich die Blutgefäße in der Haut zusammen.",
+  "gsw": "sich zämezie",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi de Chelti ziend sich d Bluetgfäss i de Huut zäme."
+ },
+ {
+  "id": 6765,
+  "de": "abstoßen",
+  "tr": "itmek, geri itmek",
+  "deBeispiel": "Gleiche Pole eines Magneten stoßen einander ab.",
+  "gsw": "abschtosse",
+  "gswArtikel": null,
+  "gswBeispiel": "Gliichi Pol vo eme Magnet schtossed enand ab."
+ },
+ {
+  "id": 6766,
+  "de": "absondern",
+  "tr": "salgılamak, ayırmak",
+  "deBeispiel": "Die Pflanze sondert bei Verletzung einen klebrigen Saft ab.",
+  "gsw": "absundere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Pflanze sunderet bi ere Verletzig en chläbrige Saft ab."
+ },
+ {
+  "id": 6767,
+  "de": "sich vermehren",
+  "tr": "çoğalmak, üremek",
+  "deBeispiel": "In warmem Wasser vermehren sich die Keime besonders schnell.",
+  "gsw": "sich vermehre",
+  "gswArtikel": null,
+  "gswBeispiel": "Im warme Wasser vermehred sich d Chiim bsunders schnäll."
+ },
+ {
+  "id": 6768,
+  "de": "ablagern",
+  "tr": "biriktirmek, çökeltmek",
+  "deBeispiel": "Der Fluss lagert an der Mündung feinen Sand ab.",
+  "gsw": "ablagere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fluss lageret a de Mündig e fiine Sand ab."
+ },
+ {
+  "id": 6769,
+  "de": "verdünnen",
+  "tr": "seyreltmek, sulandırmak",
+  "deBeispiel": "Die Säure muss vor dem Versuch stark verdünnt werden.",
+  "gsw": "verdünne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Süüri mues mer vor em Versuech schtark verdünne."
+ },
+ {
+  "id": 6770,
+  "de": "umwandeln",
+  "tr": "dönüştürmek",
+  "deBeispiel": "Der Muskel wandelt chemische Energie in Bewegung um.",
+  "gsw": "umwandle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Muskel wandlet chemischi Energie i Bewegig um."
+ },
+ {
+  "id": 6771,
+  "de": "freisetzen",
+  "tr": "açığa çıkarmak, salmak",
+  "deBeispiel": "Beim Auftauen der Böden wird viel Methan freigesetzt.",
+  "gsw": "freisetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Uuftaue vo de Böde wird vil Methan freigsetzt."
+ },
+ {
+  "id": 6772,
+  "de": "binden",
+  "tr": "bağlamak, tutmak",
+  "deBeispiel": "Moore binden erhebliche Mengen an Kohlendioxid.",
+  "gsw": "binde",
+  "gswArtikel": null,
+  "gswBeispiel": "D Moor binded erhebligi Mänge a Choledioxid."
+ },
+ {
+  "id": 6773,
+  "de": "züchten",
+  "tr": "yetiştirmek, ıslah etmek",
+  "deBeispiel": "Forscher züchten im Labor besonders widerstandsfähige Sorten.",
+  "gsw": "züchte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Forscher züchted im Labor bsunders widerschtandsfähigi Sorte."
+ },
+ {
+  "id": 6774,
+  "de": "verwesen",
+  "tr": "çürümek, ayrışmak",
+  "deBeispiel": "Im feuchten Boden verwesen die Reste innerhalb weniger Wochen.",
+  "gsw": "verwäse",
+  "gswArtikel": null,
+  "gswBeispiel": "Im füechte Bode verwäsed d Rescht innerhalb vo weniger Wuche."
+ },
+ {
+  "id": 6775,
+  "de": "aufsaugen",
+  "tr": "emmek, soğurmak",
+  "deBeispiel": "Die Wurzeln saugen das Wasser samt gelösten Nährstoffen auf.",
+  "gsw": "uufsuuge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wurzle suuged s Wasser samt de glöschte Nährschtoff uuf."
+ },
+ {
+  "id": 6776,
+  "de": "schweben",
+  "tr": "asılı durmak, süzülmek",
+  "deBeispiel": "Der Staub schwebt stundenlang in der stehenden Luft.",
+  "gsw": "schwebe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaub schwebt schtundelang i de schtende Luft."
+ },
+ {
+  "id": 6777,
+  "de": "rotieren",
+  "tr": "dönmek, kendi ekseninde dönmek",
+  "deBeispiel": "Die Erde rotiert einmal in vierundzwanzig Stunden um sich selbst.",
+  "gsw": "rotiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Erde rotiert einisch i vierezwänzg Schtund um sich sälber."
+ },
+ {
+  "id": 6778,
+  "de": "flüchtig",
+  "tr": "uçucu, çabuk buharlaşan",
+  "deBeispiel": "Der Lösungsstoff ist sehr flüchtig und verliert schnell an Wirkung.",
+  "gsw": "flüchtig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Lösigsschtoff isch sehr flüchtig und verlüürt schnäll a Wirkig."
+ },
+ {
+  "id": 6779,
+  "de": "organisch",
+  "tr": "organik (kimya, biyoloji)",
+  "deBeispiel": "Im Sediment fanden die Forscher überraschend viel organisches Material.",
+  "gsw": "organisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Sediment händ d Forscher überraschend vil organischs Material gfunde."
+ },
+ {
+  "id": 6780,
+  "de": "thermisch",
+  "tr": "ısıl, termik",
+  "deBeispiel": "Die Fassade ist thermisch schlecht gegen die Kälte isoliert.",
+  "gsw": "thermisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fassade isch thermisch schlächt gäge d Chelti isoliert."
+ },
+ {
+  "id": 6781,
+  "de": "elastisch",
+  "tr": "esnek, elastik",
+  "deBeispiel": "Das Material bleibt auch bei tiefen Temperaturen elastisch.",
+  "gsw": "elaschtisch",
+  "gswArtikel": null,
+  "gswBeispiel": "S Material bliibt au bi tüüfe Temperature elaschtisch."
+ },
+ {
+  "id": 6782,
+  "de": "luftdicht",
+  "tr": "hava geçirmez",
+  "deBeispiel": "Die Proben werden luftdicht verschlossen und gekühlt gelagert.",
+  "gsw": "luftdicht",
+  "gswArtikel": null,
+  "gswBeispiel": "D Probe wärded luftdicht verschlosse und chüelt glageret."
+ },
+ {
+  "id": 6783,
+  "de": "unbeständig",
+  "tr": "kararsız, değişken",
+  "deBeispiel": "Diese Verbindung ist chemisch unbeständig und zerfällt rasch.",
+  "gsw": "unbeschtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Verbindig isch chemisch unbeschtändig und zerfallt schnäll."
+ },
+ {
+  "id": 6784,
+  "de": "durchsichtig",
+  "tr": "saydam, şeffaf",
+  "deBeispiel": "Die Larve ist fast durchsichtig und daher kaum zu erkennen.",
+  "gsw": "durchsichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Larve isch fascht durchsichtig und drum chuum z erkenne."
+ },
+ {
+  "id": 6785,
+  "de": "wasserabweisend",
+  "tr": "su itici, suyu iten",
+  "deBeispiel": "Die Blätter der Pflanze sind von Natur aus wasserabweisend.",
+  "gsw": "wasserabwiisend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Blätter vo de Pflanze sind vo Natur uus wasserabwiisend."
+ },
+ {
+  "id": 6786,
+  "de": "die Ökosystemleistung",
+  "tr": "ekosistem hizmeti",
+  "deBeispiel": "Bestäubung und Wasserreinigung zählen zu den unterschätzten Ökosystemleistungen.",
+  "gsw": "Ökosyschtemleischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Beschtäubig und d Wasserreinigig ghöred zu de underschätzte Ökosyschtemleischtige."
+ },
+ {
+  "id": 6787,
+  "de": "die Klimapolitik",
+  "tr": "iklim politikası",
+  "deBeispiel": "Eine glaubwürdige Klimapolitik braucht verbindliche Ziele statt unverbindlicher Absichtserklärungen.",
+  "gsw": "Klimapolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "E gloubwürdigi Klimapolitik bruucht verbindlichi Ziel schtatt unverbindlichi Absichtserklärige."
+ },
+ {
+  "id": 6788,
+  "de": "die Kohlenstoffsenke",
+  "tr": "karbon yutağı",
+  "deBeispiel": "Alte Wälder wirken über Jahrhunderte als zuverlässige Kohlenstoffsenke.",
+  "gsw": "Choleschtoffsänke",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Wälder wirked über Jaarhundert as zuverlässigi Choleschtoffsänke."
+ },
+ {
+  "id": 6789,
+  "de": "die Entwaldung",
+  "tr": "ormansızlaşma",
+  "deBeispiel": "Die Entwaldung schreitet trotz internationaler Abkommen ungebremst voran.",
+  "gsw": "Entwaldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entwaldig schriitet trotz internationale Abkomme ungebremst voraa."
+ },
+ {
+  "id": 6790,
+  "de": "die Bodenerosion",
+  "tr": "toprak erozyonu",
+  "deBeispiel": "Intensive Landwirtschaft beschleunigt die Bodenerosion in vielen Regionen erheblich.",
+  "gsw": "Bodeerosion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D intensivi Landwirtschaft beschlünigt d Bodeerosion i vilne Regione erheblich."
+ },
+ {
+  "id": 6791,
+  "de": "die Übernutzung",
+  "tr": "aşırı kullanım, aşırı yararlanma",
+  "deBeispiel": "Die Übernutzung der Grundwasservorräte lässt sich kaum rückgängig machen.",
+  "gsw": "Übernutzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Übernutzig vo de Grundwasservorrät laat sich chuum rückgängig mache."
+ },
+ {
+  "id": 6792,
+  "de": "die Belastungsgrenze",
+  "tr": "yük sınırı, dayanma sınırı",
+  "deBeispiel": "Viele Böden haben ihre ökologische Belastungsgrenze längst überschritten.",
+  "gsw": "Belaschtigsgränze",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vil Böde händ ihri ökologischi Belaschtigsgränze scho lang überschritte."
+ }
+]

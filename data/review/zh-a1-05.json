@@ -1,0 +1,1022 @@
+[
+ {
+  "id": 445,
+  "de": "telefonieren",
+  "tr": "telefonla konuşmak",
+  "deBeispiel": "Ich telefoniere oft mit meiner Freundin in Frankfurt.",
+  "gsw": "telefoniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich telefoniere oft mit minere Fründin z Frankfurt."
+ },
+ {
+  "id": 446,
+  "de": "Tennis spielen",
+  "tr": "tenis oynamak",
+  "deBeispiel": "Er spielt gut Tennis.",
+  "gsw": "Tennis schpile",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich gang am Mittwuch immer go Tennis schpile."
+ },
+ {
+  "id": 447,
+  "de": "teuer",
+  "tr": "pahalı",
+  "deBeispiel": "Mein neues Kleid war sehr teuer, aber es ist wunderbar.",
+  "gsw": "tüür",
+  "gswArtikel": null,
+  "gswBeispiel": "Miis nöis Chläid isch sehr tüür gsii, aber es isch wunderbar."
+ },
+ {
+  "id": 448,
+  "de": "das Theater",
+  "tr": "tiyatro",
+  "deBeispiel": "Am Sonntag waren wir im Theater.",
+  "gsw": "Theater",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Sunntig simer im Theater gsii."
+ },
+ {
+  "id": 449,
+  "de": "das Thema",
+  "tr": "konu",
+  "deBeispiel": "Wie heißt das Thema des Buchs?",
+  "gsw": "Thema",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie häisst s Thema vom Buech?"
+ },
+ {
+  "id": 450,
+  "de": "das Tier",
+  "tr": "hayvan",
+  "deBeispiel": "Ich möchte ein Tier haben: eine Katze oder einen Hund.",
+  "gsw": "Tier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich möcht es Tier haa: e Chatz oder en Hund."
+ },
+ {
+  "id": 451,
+  "de": "der Tisch",
+  "tr": "masa",
+  "deBeispiel": "Am Fenster ist ein Tisch.",
+  "gsw": "Tisch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim Fänschter schtaat en Tisch."
+ },
+ {
+  "id": 452,
+  "de": "die Toilette",
+  "tr": "tuvalet",
+  "deBeispiel": "Wo ist die Toilette?",
+  "gsw": "WC",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wo isch s WC?"
+ },
+ {
+  "id": 453,
+  "de": "toll",
+  "tr": "harika, muhteşem",
+  "deBeispiel": "In den Ferien war es toll.",
+  "gsw": "toll",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Ferie isch es toll gsii."
+ },
+ {
+  "id": 454,
+  "de": "tragen",
+  "tr": "taşımak, giymek",
+  "deBeispiel": "Ich kann den Koffer nicht tragen, er ist zu schwer. Er trägt heute einen blauen Anzug.",
+  "gsw": "träge",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha de Koffer nöd träge, er isch z schwär. Er träit hüt en blaue Aazug."
+ },
+ {
+  "id": 455,
+  "de": "traurig",
+  "tr": "üzgün",
+  "deBeispiel": "Ich bin oft traurig.",
+  "gsw": "truurig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi oft truurig."
+ },
+ {
+  "id": 456,
+  "de": "treffen",
+  "tr": "buluşmak, karşılaşmak",
+  "deBeispiel": "Am Nachmittag treffe ich meine Freunde.",
+  "gsw": "träffe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Namittag träffed mir öisi Fründe."
+ },
+ {
+  "id": 457,
+  "de": "trinken",
+  "tr": "içmek",
+  "deBeispiel": "Wir trinken gern Saft.",
+  "gsw": "trinke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir trinked gärn Saft."
+ },
+ {
+  "id": 458,
+  "de": "das T-Shirt",
+  "tr": "tişört",
+  "deBeispiel": "Wie gefällt dir mein neues T-Shirt?",
+  "gsw": "T-Shirt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie gfallt der miis nöis T-Shirt?"
+ },
+ {
+  "id": 459,
+  "de": "tschüss!",
+  "tr": "hoşça kal!",
+  "deBeispiel": "Also bis bald - tschüss!",
+  "gsw": "Tschau",
+  "gswArtikel": null,
+  "gswBeispiel": "Also bis bald – Tschau!"
+ },
+ {
+  "id": 460,
+  "de": "die Tür",
+  "tr": "kapı",
+  "deBeispiel": "Mach bitte die Tür zu!",
+  "gsw": "Türe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mach bitte d Türe zue!"
+ },
+ {
+  "id": 461,
+  "de": "die U-Bahn",
+  "tr": "metro",
+  "deBeispiel": "Wir nehmen die U-Bahn.",
+  "gsw": "U-Bahn",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir nämed d U-Bahn."
+ },
+ {
+  "id": 462,
+  "de": "üben",
+  "tr": "alıştırma yapmak, çalışmak",
+  "deBeispiel": "Ich muss jeden Tag Klavier üben.",
+  "gsw": "üebe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues jede Tag Klavier üebe."
+ },
+ {
+  "id": 463,
+  "de": "über",
+  "tr": "üzerinden, karşıdan karşıya; hakkında",
+  "deBeispiel": "Jetzt gehen wir über die Straße.",
+  "gsw": "über",
+  "gswArtikel": null,
+  "gswBeispiel": "Jetz gömer über d Straass."
+ },
+ {
+  "id": 464,
+  "de": "überall",
+  "tr": "her yerde",
+  "deBeispiel": "In der Altstadt gibt es überall kleine Cafés.",
+  "gsw": "überall",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Altschtadt häts überall chliini Cafés."
+ },
+ {
+  "id": 465,
+  "de": "die Uhr",
+  "tr": "saat",
+  "deBeispiel": "Hast du keine Uhr?/Wie viel Uhr ist es?",
+  "gsw": "Uhr",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch du käi Uhr?/Wie viil Uhr isch es?"
+ },
+ {
+  "id": 466,
+  "de": "um",
+  "tr": "saat ...'de, etrafında, çevresinde",
+  "deBeispiel": "Um 7.30 Uhr kommt der Zug.",
+  "gsw": "um",
+  "gswArtikel": null,
+  "gswBeispiel": "Um halbi achti chunt de Zug."
+ },
+ {
+  "id": 467,
+  "de": "und",
+  "tr": "ve",
+  "deBeispiel": "Karl und Susanne kommen auch.",
+  "gsw": "und",
+  "gswArtikel": null,
+  "gswBeispiel": "De Karl und d Susanne chömed au."
+ },
+ {
+  "id": 468,
+  "de": "und so weiter",
+  "tr": "ve saire, vesaire",
+  "deBeispiel": "usw.",
+  "gsw": "und so wiiter",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir bruuched Täller, Gläser, Bschteck und so wiiter."
+ },
+ {
+  "id": 469,
+  "de": "unser",
+  "tr": "bizim",
+  "deBeispiel": "Das ist unser neues Auto. (vergl. Grammatik)",
+  "gsw": "öise",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch öises nöis Auto."
+ },
+ {
+  "id": 470,
+  "de": "der Unterricht",
+  "tr": "ders",
+  "deBeispiel": "Der Unterricht macht mir Spaß.",
+  "gsw": "Unterricht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Unterricht macht mer Schpass."
+ },
+ {
+  "id": 471,
+  "de": "verdienen",
+  "tr": "kazanmak (para), hak etmek",
+  "deBeispiel": "In den Ferien möchte ich ein bisschen Geld verdienen.",
+  "gsw": "verdiene",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Ferie möcht ich es bitzli Gäld verdiene."
+ },
+ {
+  "id": 472,
+  "de": "vergessen",
+  "tr": "unutmak",
+  "deBeispiel": "Ich vergesse oft die Vokabeln.",
+  "gsw": "vergässe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha d Wörtli scho wider vergässe."
+ },
+ {
+  "id": 473,
+  "de": "verrückt",
+  "tr": "çılgın, deli",
+  "deBeispiel": "Ich finde die Idee verrückt. Sie trägt so verrückte Kleider.",
+  "gsw": "verruckt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde die Idee verruckt. Si träit so verruckti Chläider."
+ },
+ {
+  "id": 474,
+  "de": "verstehen",
+  "tr": "anlamak",
+  "deBeispiel": "Ich verstehe dich nicht.",
+  "gsw": "verschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich verschtaa di nöd."
+ },
+ {
+  "id": 475,
+  "de": "viel",
+  "tr": "çok (miktar), birçok",
+  "deBeispiel": "Hast du viele Freunde?",
+  "gsw": "viil",
+  "gswArtikel": null,
+  "gswBeispiel": "Häsch du viil Fründe?"
+ },
+ {
+  "id": 476,
+  "de": "vielleicht",
+  "tr": "belki",
+  "deBeispiel": "Kannst du mir vielleicht helfen?/Vielleicht kommt er.",
+  "gsw": "villicht",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch mer villicht hälfe?/Villicht chunt er."
+ },
+ {
+  "id": 477,
+  "de": "von",
+  "tr": "-den/-dan, tarafından",
+  "deBeispiel": "Der Computer ist ein Geschenk von meinem Onkel./ Sie arbeitet von sieben bis neun./Er kommt von der Arbeit.",
+  "gsw": "vo",
+  "gswArtikel": null,
+  "gswBeispiel": "De Computer isch es Gschänk vo mim Unggle./Si schaffet vo sibni bis nüüni./Er chunt vo de Arbet."
+ },
+ {
+  "id": 478,
+  "de": "vor",
+  "tr": "önünde, önce",
+  "deBeispiel": "Ich treffe Peter vor dem Kino./Vor dem Frühstück.",
+  "gsw": "vor",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich träffe de Peter vor em Kino./Vor em Zmorge."
+ },
+ {
+  "id": 479,
+  "de": "der Vorname",
+  "tr": "ad, isim",
+  "deBeispiel": "Wie ist dein Vorname?",
+  "gsw": "Vorname",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wie isch din Vorname?"
+ },
+ {
+  "id": 480,
+  "de": "vorstellen",
+  "tr": "tanıtmak, takdim etmek",
+  "deBeispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
+  "gsw": "vorschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch di bitte churz vorschtelle?"
+ },
+ {
+  "id": 481,
+  "de": "wahr",
+  "tr": "doğru, gerçek",
+  "deBeispiel": "Das ist sicher nicht wahr./Das schmeckt gut, nicht wahr?",
+  "gsw": "waar",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch sicher nöd waar./Das schmeckt guet, oder?",
+  "ayniLehce": [
+   "Ware (B1)"
+  ]
+ },
+ {
+  "id": 482,
+  "de": "der Wald",
+  "tr": "orman",
+  "deBeispiel": "In Thüringen gibt es sehr viel Wald.",
+  "gsw": "Wald",
+  "gswArtikel": "de",
+  "gswBeispiel": "Um Züri ume häts sehr viil Wald."
+ },
+ {
+  "id": 483,
+  "de": "wandern",
+  "tr": "yürüyüş yapmak, doğa yürüyüşüne çıkmak",
+  "deBeispiel": "Am Wochenende wandern wir zum Tüngelsee.",
+  "gsw": "wandere",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenänd wandered mir an Zürisee."
+ },
+ {
+  "id": 484,
+  "de": "wann",
+  "tr": "ne zaman",
+  "deBeispiel": "Wann hast du Geburtstag?",
+  "gsw": "wänn",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn häsch du Geburtstag?",
+  "ayniLehce": [
+   "wenn (A2)"
+  ]
+ },
+ {
+  "id": 485,
+  "de": "warm",
+  "tr": "sıcak, ılık",
+  "deBeispiel": "Gestern war es hier schon sehr warm.",
+  "gsw": "warm",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter isch es daa scho sehr warm gsii."
+ },
+ {
+  "id": 486,
+  "de": "warten",
+  "tr": "beklemek",
+  "deBeispiel": "Wartest du schon lange?",
+  "gsw": "warte",
+  "gswArtikel": null,
+  "gswBeispiel": "Häsch scho lang müese warte?"
+ },
+ {
+  "id": 487,
+  "de": "warum",
+  "tr": "neden, niçin",
+  "deBeispiel": "Warum antwortest du nicht?",
+  "gsw": "warum",
+  "gswArtikel": null,
+  "gswBeispiel": "Warum antwortisch du nöd?"
+ },
+ {
+  "id": 488,
+  "de": "was",
+  "tr": "ne",
+  "deBeispiel": "Was kann man hier kaufen?",
+  "gsw": "was",
+  "gswArtikel": null,
+  "gswBeispiel": "Was cha me daa chaufe?"
+ },
+ {
+  "id": 489,
+  "de": "waschen",
+  "tr": "yıkamak",
+  "deBeispiel": "Ich will meine Haare waschen.",
+  "gsw": "wäsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich will mini Haar wäsche."
+ },
+ {
+  "id": 490,
+  "de": "das Wasser",
+  "tr": "su",
+  "deBeispiel": "Das Wasser ist so kalt./Gib mir bitte ein Glas Wasser.",
+  "gsw": "Wasser",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Wasser isch so chalt./Gib mer bitte es Glas Wasser."
+ },
+ {
+  "id": 491,
+  "de": "wecken",
+  "tr": "uyandırmak",
+  "deBeispiel": "Meine Mutter weckt mich um 7.30 Uhr.",
+  "gsw": "wecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter mues mich jede Morge am halbi achti wecke."
+ },
+ {
+  "id": 492,
+  "de": "weh tun",
+  "tr": "acımak, ağrımak",
+  "deBeispiel": "Mein Kopf tut so weh.",
+  "gsw": "weetue",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Chopf! Das mues doch weetue!",
+  "ayniLehce": [
+   "wehtun (A2)"
+  ]
+ },
+ {
+  "id": 493,
+  "de": "weit",
+  "tr": "uzak",
+  "deBeispiel": "Wir fahren zum See, das ist nicht weit.",
+  "gsw": "wiit",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir fahred an See, das isch nöd wiit."
+ },
+ {
+  "id": 494,
+  "de": "weiter",
+  "tr": "daha ileri, devam ederek",
+  "deBeispiel": "Der Bus fährt nicht weiter.",
+  "gsw": "wiiter",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bus fahrt nöd wiiter."
+ },
+ {
+  "id": 495,
+  "de": "welche",
+  "tr": "hangi",
+  "deBeispiel": "Welche CD möchtest du?",
+  "gsw": "wele",
+  "gswArtikel": null,
+  "gswBeispiel": "Wele Film wotsch luege?",
+  "ayniLehce": [
+   "wollen (A1)"
+  ]
+ },
+ {
+  "id": 496,
+  "de": "wenig",
+  "tr": "az",
+  "deBeispiel": "Ich habe heute wenig Zeit.",
+  "gsw": "wenig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha hüt wenig Ziit."
+ },
+ {
+  "id": 497,
+  "de": "wer",
+  "tr": "kim",
+  "deBeispiel": "Wer ist die elegante Frau?",
+  "gsw": "wär",
+  "gswArtikel": null,
+  "gswBeispiel": "Wär isch die eleganti Frau?"
+ },
+ {
+  "id": 498,
+  "de": "werden",
+  "tr": "olmak, haline gelmek",
+  "deBeispiel": "Ich möchte Architekt werden.",
+  "gsw": "wärde",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht Architekt wärde."
+ },
+ {
+  "id": 499,
+  "de": "wichtig",
+  "tr": "önemli",
+  "deBeispiel": "Ich glaube, die Frage ist wichtig.",
+  "gsw": "wichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich glaube, d Fraag isch wichtig."
+ },
+ {
+  "id": 500,
+  "de": "wie",
+  "tr": "nasıl, gibi",
+  "deBeispiel": "Wie heißt du?/Wie groß ist Berlin?/Wie alt ist er?/ Das ist wie im Kino!",
+  "gsw": "wie",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie häissisch du?/Wie grooss isch Züri?/Wie alt isch er?/Das isch wie im Kino!"
+ },
+ {
+  "id": 501,
+  "de": "wieder",
+  "tr": "tekrar, yine",
+  "deBeispiel": "Ich möchte wieder nach Deutschland fahren.",
+  "gsw": "wider",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wott wider uf Tüütschland faare."
+ },
+ {
+  "id": 502,
+  "de": "wiederholen",
+  "tr": "tekrarlamak",
+  "deBeispiel": "Können Sie das bitte wiederholen?",
+  "gsw": "widerhole",
+  "gswArtikel": null,
+  "gswBeispiel": "Chönd Si das bitte widerhole?"
+ },
+ {
+  "id": 503,
+  "de": "das Wiedersehen",
+  "tr": "tekrar görüşme, yeniden buluşma",
+  "deBeispiel": "Auf Wiedersehen!",
+  "gsw": "Widerluege",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf Widerluege!"
+ },
+ {
+  "id": 504,
+  "de": "wie viel",
+  "tr": "ne kadar, kaç",
+  "deBeispiel": "Wie viel kostet das?",
+  "gsw": "wie vil",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie vil choschtet das?"
+ },
+ {
+  "id": 505,
+  "de": "willkommen",
+  "tr": "hoş geldin, hoş geldiniz",
+  "deBeispiel": "Herzlich willkommen!",
+  "gsw": "willkomme",
+  "gswArtikel": null,
+  "gswBeispiel": "Härzlich willkomme!"
+ },
+ {
+  "id": 506,
+  "de": "wir",
+  "tr": "biz",
+  "deBeispiel": "Wir haben eine neue Lehrerin. (vergl. Grammatik)",
+  "gsw": "mir",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ e nöii Leererin."
+ },
+ {
+  "id": 507,
+  "de": "wirklich",
+  "tr": "gerçekten",
+  "deBeispiel": "Willst du das wirklich kaufen?",
+  "gsw": "würkli",
+  "gswArtikel": null,
+  "gswBeispiel": "Wotsch das würkli chaufe?"
+ },
+ {
+  "id": 508,
+  "de": "wissen",
+  "tr": "bilmek",
+  "deBeispiel": "Weißt du, wie er heißt?",
+  "gsw": "wüsse",
+  "gswArtikel": null,
+  "gswBeispiel": "Wäisch du, wie er häisst?",
+  "ayniLehce": [
+   "Wissen (B1)"
+  ]
+ },
+ {
+  "id": 509,
+  "de": "wo",
+  "tr": "nerede",
+  "deBeispiel": "Wo waren Sie im Urlaub? Wo ist die Post? Wo sind Sie geboren?",
+  "gsw": "wo",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo sind Si i de Ferie gsii? Wo isch d Poscht?"
+ },
+ {
+  "id": 510,
+  "de": "woher",
+  "tr": "nereden",
+  "deBeispiel": "Woher kommt der Zug?",
+  "gsw": "vo wo",
+  "gswArtikel": null,
+  "gswBeispiel": "Vo wo chunt de Zug?"
+ },
+ {
+  "id": 511,
+  "de": "wohin",
+  "tr": "nereye",
+  "deBeispiel": "Wohin fährt der Bus?",
+  "gsw": "wo ane",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo ane faart de Bus?"
+ },
+ {
+  "id": 512,
+  "de": "wohnen",
+  "tr": "oturmak, yaşamak, ikamet etmek",
+  "deBeispiel": "Ich wohne in München.",
+  "gsw": "wohne",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wohne z Züri."
+ },
+ {
+  "id": 513,
+  "de": "die Wohnung",
+  "tr": "daire, ev",
+  "deBeispiel": "Unsere Wohnung hat drei Zimmer.",
+  "gsw": "Wonig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Öisi Wonig hät drüü Zimmer."
+ },
+ {
+  "id": 514,
+  "de": "das Wohnzimmer",
+  "tr": "oturma odası",
+  "deBeispiel": "Ich mache die Hausaufgaben im Wohnzimmer.",
+  "gsw": "Wonzimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich mache d Huusufgabe im Wonzimmer."
+ },
+ {
+  "id": 515,
+  "de": "wollen",
+  "tr": "istemek",
+  "deBeispiel": "Willst du meine Freunde kennenlernen?",
+  "gsw": "wele",
+  "gswArtikel": null,
+  "gswBeispiel": "Wotsch mini Fründe kennelerne?",
+  "ayniLehce": [
+   "welche (A1)"
+  ]
+ },
+ {
+  "id": 516,
+  "de": "das Wort",
+  "tr": "kelime, sözcük",
+  "deBeispiel": "Wie viele Wörter hat dein Brief?",
+  "gsw": "Wort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie vil Wörter hät din Brief?"
+ },
+ {
+  "id": 517,
+  "de": "wunderbar",
+  "tr": "harika, mükemmel",
+  "deBeispiel": "Das Essen schmeckt wunderbar.",
+  "gsw": "wunderbar",
+  "gswArtikel": null,
+  "gswBeispiel": "S Ässe schmöckt wunderbar."
+ },
+ {
+  "id": 518,
+  "de": "wünschen",
+  "tr": "dilemek",
+  "deBeispiel": "Ich wünsche dir schöne Ferien.",
+  "gsw": "wünsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wünsche der schöni Ferie."
+ },
+ {
+  "id": 519,
+  "de": "die Wurst",
+  "tr": "sosis, sucuk",
+  "deBeispiel": "Ich möchte eine Curry-Wurst.",
+  "gsw": "Wurscht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich hett gärn e Currywurscht."
+ },
+ {
+  "id": 520,
+  "de": "der Zahn",
+  "tr": "diş",
+  "deBeispiel": "Der Zahn tut mir schon seit einer Woche weh.",
+  "gsw": "Zaa",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Zaa tuet mer scho sit ere Wuche wee."
+ },
+ {
+  "id": 521,
+  "de": "zeigen",
+  "tr": "göstermek",
+  "deBeispiel": "Zeigst du mir deinen Computer?",
+  "gsw": "zäige",
+  "gswArtikel": null,
+  "gswBeispiel": "Zäigsch mer din Computer?"
+ },
+ {
+  "id": 522,
+  "de": "die Zeit",
+  "tr": "zaman, vakit",
+  "deBeispiel": "Wann hast du Zeit für mich?",
+  "gsw": "Ziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wänn häsch Ziit für mich?"
+ },
+ {
+  "id": 523,
+  "de": "die Zeitung",
+  "tr": "gazete",
+  "deBeispiel": "Meine Mutter liest am Morgen die Zeitung.",
+  "gsw": "Ziitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Mueter list am Morge d Ziitig."
+ },
+ {
+  "id": 524,
+  "de": "das Zimmer",
+  "tr": "oda",
+  "deBeispiel": "Mein Zimmer ist sehr klein.",
+  "gsw": "Zimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mis Zimmer isch sehr chlii."
+ },
+ {
+  "id": 525,
+  "de": "zu",
+  "tr": "çok, fazla; -e, -a",
+  "deBeispiel": "zu groß/zum Frühstück/zum Zahnarzt/zur Post/ zum Geburtstag",
+  "gsw": "z",
+  "gswArtikel": null,
+  "gswBeispiel": "z grooss / zum Zmorge / zum Zaanarzt / zum Geburtstag"
+ },
+ {
+  "id": 526,
+  "de": "zuerst",
+  "tr": "önce, ilk olarak",
+  "deBeispiel": "Sagen Sie bitte zuerst den Vornamen.",
+  "gsw": "zerscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Säged Si bitte zerscht de Vorname."
+ },
+ {
+  "id": 527,
+  "de": "der Zug",
+  "tr": "tren",
+  "deBeispiel": "Ich fahre gern mit dem Zug.",
+  "gsw": "Zug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich faare gern mit em Zug."
+ },
+ {
+  "id": 528,
+  "de": "zum Beispiel",
+  "tr": "örneğin",
+  "deBeispiel": "Mein Freund hat viele Hobbys, zum Beispiel Kochen, Lesen und Tanzen.",
+  "gsw": "zum Biischpil",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Fründ hät vil Hobbys, zum Biischpil Choche, Läse und Tanze."
+ },
+ {
+  "id": 529,
+  "de": "zumachen",
+  "tr": "kapatmak (kapı, pencere)",
+  "deBeispiel": "Machst du bitte das Fenster zu?",
+  "gsw": "zuemache",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte s Fänschter zuemache?",
+  "ayniLehce": [
+   "schließen (A1)"
+  ]
+ },
+ {
+  "id": 530,
+  "de": "zusammen",
+  "tr": "birlikte",
+  "deBeispiel": "Wir machen zusammen Hausaufgaben.",
+  "gsw": "zäme",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir mached zäme Huusufgabe.",
+  "ayniLehce": [
+   "gemeinsam (B1)"
+  ]
+ },
+ {
+  "id": 531,
+  "de": "zu sein",
+  "tr": "kapalı olmak (günlük dil)",
+  "deBeispiel": "Die Bibliothek ist in den Ferien zu.",
+  "gsw": "zue sii",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bibliothek isch i de Ferie zue.",
+  "ayniLehce": [
+   "geschlossen sein (A1)"
+  ]
+ },
+ {
+  "id": 532,
+  "de": "die Abfahrt",
+  "tr": "kalkış, hareket",
+  "deBeispiel": "Vor der Abfahrt rufe ich an.",
+  "gsw": "Abfaart",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Abfaart lüüt ich aa."
+ },
+ {
+  "id": 533,
+  "de": "der Absender",
+  "tr": "gönderen kişi",
+  "deBeispiel": "Da ist ein Brief für dich ohne Absender.",
+  "gsw": "Absänder",
+  "gswArtikel": "de",
+  "gswBeispiel": "Da isch en Brief für dich ooni Absänder."
+ },
+ {
+  "id": 536,
+  "de": "anbieten",
+  "tr": "sunmak, ikram etmek",
+  "deBeispiel": "Was darf ich dir anbieten?",
+  "gsw": "aabüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "Was darf ich der aabüüte?"
+ },
+ {
+  "id": 537,
+  "de": "das Angebot",
+  "tr": "indirim, kampanya; teklif",
+  "deBeispiel": "Heute sind Sportschuhe im Angebot.",
+  "gsw": "Aagebot",
+  "gswArtikel": "s",
+  "gswBeispiel": "Hüt sind Schportschue im Aagebot."
+ },
+ {
+  "id": 538,
+  "de": "anklicken",
+  "tr": "tıklamak",
+  "deBeispiel": "Da musst du dieses Wort anklicken.",
+  "gsw": "aaklicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Da muesch das Wort aaklicke."
+ },
+ {
+  "id": 539,
+  "de": "die Ankunft",
+  "tr": "varış",
+  "deBeispiel": "Auf diesem Plan steht nur die Ankunft(-szeit) der Züge.",
+  "gsw": "Aakunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf dem Plan schtaat nu d Aakunft vo de Züüg."
+ },
+ {
+  "id": 540,
+  "de": "ankreuzen",
+  "tr": "işaretlemek, çarpı koymak",
+  "deBeispiel": "Auf dem Formular müssen Sie an mehreren Stellen etwas ankreuzen.",
+  "gsw": "aachrüüze",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Formular müend Si a mehrere Schtele öppis aachrüüze."
+ },
+ {
+  "id": 541,
+  "de": "anmachen",
+  "tr": "çalıştırmak, açmak (cihaz, ışık)",
+  "deBeispiel": "Mach bitte das Licht an!",
+  "gsw": "aamache",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte s Liecht aamache?"
+ },
+ {
+  "id": 542,
+  "de": "sich anmelden",
+  "tr": "kayıt olmak, kaydolmak",
+  "deBeispiel": "Wo kann ich mich anmelden?",
+  "gsw": "sich aamälde",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo chan ich mich aamälde?"
+ },
+ {
+  "id": 543,
+  "de": "die Anmeldung",
+  "tr": "kayıt, kayıt işlemi",
+  "deBeispiel": "Eine Anmeldung für diesen Kurs ist nicht mehr möglich.",
+  "gsw": "Aamäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En Aamäldig für dä Kurs isch nüme möglich."
+ },
+ {
+  "id": 544,
+  "de": "die Anrede",
+  "tr": "hitap",
+  "deBeispiel": "Schreiben Sie auch eine Anrede und einen Gruß.",
+  "gsw": "Aareed",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schriibed Si au en Aareed und en Gruess."
+ },
+ {
+  "id": 547,
+  "de": "die Ansage",
+  "tr": "anons, duyuru",
+  "deBeispiel": "Hören Sie die Ansagen.",
+  "gsw": "Aasag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Losed Si d Aasage."
+ },
+ {
+  "id": 548,
+  "de": "der Anschluss",
+  "tr": "bağlantı, aktarma",
+  "deBeispiel": "In Mannheim haben Sie Anschluss nach Saarbrücken. Ist das die Anmeldung für einen Telefonanschluss?",
+  "gsw": "Aaschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Z Züri händ Si Aaschluss uf Bärn. Isch das d Aamäldig für en Telefonaaschluss?"
+ },
+ {
+  "id": 549,
+  "de": "an sein",
+  "tr": "açık olmak (cihaz, ışık)",
+  "deBeispiel": "Heute Nacht war das Licht an.",
+  "gsw": "aa sii",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt Nacht isch s Liecht aa gsii."
+ },
+ {
+  "id": 550,
+  "de": "sich anziehen",
+  "tr": "giyinmek",
+  "deBeispiel": "Ich muss mich noch anziehen.",
+  "gsw": "sich aalege",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues mi no aalege."
+ },
+ {
+  "id": 551,
+  "de": "das Apartment",
+  "tr": "apartman dairesi, stüdyo daire",
+  "deBeispiel": "Wir haben ein Apartment gemietet.",
+  "gsw": "Apartment",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ es Apartment gmietet."
+ },
+ {
+  "id": 552,
+  "de": "der Arbeitsplatz",
+  "tr": "iş yeri, çalışma yeri",
+  "deBeispiel": "An meinem Arbeitsplatz fehlt ein Drucker.",
+  "gsw": "Arbetsplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "A mim Arbetsplatz fäält en Drucker."
+ },
+ {
+  "id": 553,
+  "de": "die Aufgabe",
+  "tr": "görev, ödev",
+  "deBeispiel": "Das ist eine schwere Aufgabe.",
+  "gsw": "Ufgab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das isch e schwäri Ufgab."
+ },
+ {
+  "id": 554,
+  "de": "aufhören",
+  "tr": "bitmek, sona ermek; (bir şeyi) bırakmak",
+  "deBeispiel": "Der Kurs hört in einer Woche auf. Hier hört die Bahnhofstraße auf.",
+  "gsw": "ufhöre",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend jetz ufhöre. Da hört d Baanhofstraass uf."
+ },
+ {
+  "id": 555,
+  "de": "der Aufzug",
+  "tr": "asansör",
+  "deBeispiel": "In diesem Haus gibt es keinen Aufzug.",
+  "gsw": "Lift",
+  "gswArtikel": "de",
+  "gswBeispiel": "I dem Huus git s kän Lift.",
+  "ayniLehce": [
+   "Lift (B1)"
+  ]
+ },
+ {
+  "id": 556,
+  "de": "ausfüllen",
+  "tr": "doldurmak (form, belge)",
+  "deBeispiel": "Füllen Sie bitte dieses Formular aus.",
+  "gsw": "usfülle",
+  "gswArtikel": null,
+  "gswBeispiel": "Si müend bitte das Formular usfülle."
+ },
+ {
+  "id": 557,
+  "de": "der Ausgang",
+  "tr": "çıkış",
+  "deBeispiel": "Entschuldigung, wo ist der Ausgang?",
+  "gsw": "Usgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Exgüsi, wo isch de Usgang?"
+ },
+ {
+  "id": 558,
+  "de": "die Auskunft",
+  "tr": "bilgi, danışma",
+  "deBeispiel": "Können Sie mir eine Auskunft geben?",
+  "gsw": "Uskunft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chönd Si mer en Uskunft gää?"
+ }
+]

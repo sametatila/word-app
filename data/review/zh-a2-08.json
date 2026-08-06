@@ -1,0 +1,998 @@
+[
+ {
+  "id": 7755,
+  "de": "vormittags",
+  "tr": "öğleden önce",
+  "deBeispiel": "Der Kurs findet vormittags statt.",
+  "gsw": "vormittags",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs findet vormittags schtatt."
+ },
+ {
+  "id": 7756,
+  "de": "verständnisvoll",
+  "tr": "anlayışlı",
+  "deBeispiel": "Der Direktor war sehr verständnisvoll.",
+  "gsw": "verschtändnisvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "De Direktor isch sehr verschtändnisvoll gsi."
+ },
+ {
+  "id": 7757,
+  "de": "staatlich",
+  "tr": "devlete ait, resmî",
+  "deBeispiel": "Meine Kinder gehen auf eine staatliche Schule.",
+  "gsw": "schtaatlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Chind gönd i e schtaatlichi Schuel."
+ },
+ {
+  "id": 7758,
+  "de": "auswendig",
+  "tr": "ezbere",
+  "deBeispiel": "Ich kann das Gedicht schon auswendig.",
+  "gsw": "uswändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha s Gedicht scho uswändig."
+ },
+ {
+  "id": 7759,
+  "de": "sprachlich",
+  "tr": "dilsel, dil açısından",
+  "deBeispiel": "Sprachlich hat er sich sehr verbessert.",
+  "gsw": "schpraachlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Schpraachlich hät er sich sehr verbesseret."
+ },
+ {
+  "id": 7760,
+  "de": "der Wochenmarkt",
+  "tr": "haftalık pazar, semt pazarı",
+  "deBeispiel": "Am Samstag kaufe ich Obst auf dem Wochenmarkt.",
+  "gsw": "Wuchemärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Samschtig chauf ich Obscht uf em Wuchemärt."
+ },
+ {
+  "id": 7761,
+  "de": "die Konditorei",
+  "tr": "pastane",
+  "deBeispiel": "Die Torte kommt aus einer kleinen Konditorei.",
+  "gsw": "Konditorei",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Torte chunt us ere chliine Konditorei."
+ },
+ {
+  "id": 7762,
+  "de": "das Schuhgeschäft",
+  "tr": "ayakkabı mağazası",
+  "deBeispiel": "Das Schuhgeschäft hat heute bis 20 Uhr offen.",
+  "gsw": "Schuegschäft",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schuegschäft hät hüt bis 20 Uhr offe."
+ },
+ {
+  "id": 7763,
+  "de": "das Warenhaus",
+  "tr": "büyük mağaza",
+  "deBeispiel": "Im Warenhaus gibt es alles von Kleidung bis Küchenmöbel.",
+  "gsw": "Warehuus",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Warehuus git s alles vo Chleider bis Chuchimöbel.",
+  "ayniLehce": [
+   "Kaufhaus (A2)"
+  ]
+ },
+ {
+  "id": 7764,
+  "de": "der Einkaufswagen",
+  "tr": "alışveriş arabası",
+  "deBeispiel": "Mein Einkaufswagen ist schon ganz voll.",
+  "gsw": "Iichaufswage",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Iichaufswage isch scho ganz voll."
+ },
+ {
+  "id": 7765,
+  "de": "die Einkaufsliste",
+  "tr": "alışveriş listesi",
+  "deBeispiel": "Ohne Einkaufsliste vergesse ich immer etwas.",
+  "gsw": "Iichaufslischte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Iichaufslischte vergiss ich immer öppis."
+ },
+ {
+  "id": 7766,
+  "de": "der Korb",
+  "tr": "sepet",
+  "deBeispiel": "Leg die Äpfel bitte in den Korb.",
+  "gsw": "Chorb",
+  "gswArtikel": "de",
+  "gswBeispiel": "Leg d Öpfel bitte i de Chorb."
+ },
+ {
+  "id": 7767,
+  "de": "der Stammkunde",
+  "tr": "sürekli müşteri, devamlı müşteri",
+  "deBeispiel": "Als Stammkunde bekomme ich in dem Laden zehn Prozent Rabatt.",
+  "gsw": "Schtammchund",
+  "gswArtikel": "de",
+  "gswBeispiel": "Als Schtammchund überchum ich i dem Lade zää Prozänt Rabatt."
+ },
+ {
+  "id": 7768,
+  "de": "die Warteschlange",
+  "tr": "kuyruk, sıra",
+  "deBeispiel": "An der Kasse war eine lange Warteschlange.",
+  "gsw": "Warteschlange",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Kasse isch e langi Warteschlange gsi."
+ },
+ {
+  "id": 7769,
+  "de": "anstehen",
+  "tr": "kuyrukta beklemek, sıraya girmek",
+  "deBeispiel": "Wir mussten zwanzig Minuten an der Kasse anstehen.",
+  "gsw": "aaschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ zwänzg Minute a de Kasse müese aaschtaa."
+ },
+ {
+  "id": 7770,
+  "de": "das Preisschild",
+  "tr": "fiyat etiketi",
+  "deBeispiel": "Auf dem Preisschild steht 4,99 Euro.",
+  "gsw": "Priisschild",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf em Priisschild schtoot 4,99 Euro."
+ },
+ {
+  "id": 7771,
+  "de": "der Schlussverkauf",
+  "tr": "sezon sonu indirimi",
+  "deBeispiel": "Im Schlussverkauf habe ich eine Jacke für 20 Euro gekauft.",
+  "gsw": "Schlussverchauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Schlussverchauf han ich e Jagge für 20 Euro chauft."
+ },
+ {
+  "id": 7772,
+  "de": "der Sonderpreis",
+  "tr": "özel fiyat, indirimli fiyat",
+  "deBeispiel": "Diese Woche gibt es Kaffee zum Sonderpreis.",
+  "gsw": "Sonderpriis",
+  "gswArtikel": "de",
+  "gswBeispiel": "Die Wuche git s Kafi zum Sonderpriis."
+ },
+ {
+  "id": 7773,
+  "de": "das Kleingeld",
+  "tr": "bozuk para",
+  "deBeispiel": "Hast du Kleingeld für den Einkaufswagen?",
+  "gsw": "Chliigäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Häsch Chliigäld für de Iichaufswage?"
+ },
+ {
+  "id": 7774,
+  "de": "der Geldschein",
+  "tr": "banknot, kâğıt para",
+  "deBeispiel": "Ich habe nur einen Geldschein von 50 Euro dabei.",
+  "gsw": "Gäldschiin",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich han nu en Gäldschiin vo 50 Euro debii."
+ },
+ {
+  "id": 7775,
+  "de": "das Wechselgeld",
+  "tr": "para üstü",
+  "deBeispiel": "Die Verkäuferin hat mir das Wechselgeld gegeben.",
+  "gsw": "Wächselgäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Verchäuferin hät mer s Wächselgäld gee."
+ },
+ {
+  "id": 7776,
+  "de": "der Kassenzettel",
+  "tr": "kasa fişi",
+  "deBeispiel": "Ohne Kassenzettel kann ich die Hose nicht zurückbringen.",
+  "gsw": "Kassezettel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni Kassezettel cha ich d Hose nöd zruggbringe."
+ },
+ {
+  "id": 7777,
+  "de": "die Kassiererin",
+  "tr": "kasiyer (kadın)",
+  "deBeispiel": "Die Kassiererin war sehr freundlich zu mir.",
+  "gsw": "Kassiererin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kassiererin isch sehr fründlich zu mir gsi."
+ },
+ {
+  "id": 7778,
+  "de": "der Joghurt",
+  "tr": "yoğurt",
+  "deBeispiel": "Zum Frühstück esse ich Joghurt mit Obst.",
+  "gsw": "Joghurt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zum Zmorge äss ich Joghurt mit Obscht."
+ },
+ {
+  "id": 7779,
+  "de": "der Senf",
+  "tr": "hardal",
+  "deBeispiel": "Möchtest du Senf oder Ketchup zur Wurst?",
+  "gsw": "Sänf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wottsch Sänf oder Ketchup zu de Wurscht?"
+ },
+ {
+  "id": 7780,
+  "de": "das Rindfleisch",
+  "tr": "sığır eti, dana eti",
+  "deBeispiel": "Für die Suppe brauche ich ein halbes Kilo Rindfleisch.",
+  "gsw": "Rindfläisch",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für d Suppe bruuch ich es halbs Kilo Rindfläisch."
+ },
+ {
+  "id": 7781,
+  "de": "knusprig",
+  "tr": "çıtır, gevrek",
+  "deBeispiel": "Das Brot vom Bäcker ist heute schön knusprig.",
+  "gsw": "chnuschprig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Brot vom Beck isch hüt schöön chnuschprig."
+ },
+ {
+  "id": 7782,
+  "de": "der Vorrat",
+  "tr": "stok, erzak",
+  "deBeispiel": "Wir haben noch einen Vorrat an Reis und Mehl.",
+  "gsw": "Vorraat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ no en Vorraat a Riis und Mähl."
+ },
+ {
+  "id": 7783,
+  "de": "der Teig",
+  "tr": "hamur",
+  "deBeispiel": "Der Teig muss eine Stunde ruhen.",
+  "gsw": "Täig",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Täig mues e Schtund rue."
+ },
+ {
+  "id": 7784,
+  "de": "die Pommes",
+  "tr": "patates kızartması (günlük kısa hâl)",
+  "deBeispiel": "Mein Sohn isst am liebsten Pommes mit Ketchup.",
+  "gsw": "Pommes",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Suhn isst am liebschte Pommes mit Ketchup."
+ },
+ {
+  "id": 7785,
+  "de": "das Hauptgericht",
+  "tr": "ana yemek",
+  "deBeispiel": "Als Hauptgericht nehme ich Fisch mit Kartoffeln.",
+  "gsw": "Hauptgricht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Als Hauptgricht nimm ich Fisch mit Härdöpfel."
+ },
+ {
+  "id": 7786,
+  "de": "das Tagesgericht",
+  "tr": "günün yemeği",
+  "deBeispiel": "Das Tagesgericht kostet heute nur 8 Euro.",
+  "gsw": "Tagesgricht",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Tagesgricht koschtet hüt nu 8 Euro."
+ },
+ {
+  "id": 7787,
+  "de": "die Beilage",
+  "tr": "garnitür, yan yemek",
+  "deBeispiel": "Als Beilage gibt es Reis oder Salat.",
+  "gsw": "Biilaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Als Biilaag git s Riis oder Salat."
+ },
+ {
+  "id": 7788,
+  "de": "die Getränkekarte",
+  "tr": "içecek menüsü",
+  "deBeispiel": "Der Kellner bringt uns gleich die Getränkekarte.",
+  "gsw": "Getränkecharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Kellner bringt eus grad d Getränkecharte."
+ },
+ {
+  "id": 7789,
+  "de": "die Serviette",
+  "tr": "peçete",
+  "deBeispiel": "Können Sie mir bitte noch eine Serviette bringen?",
+  "gsw": "Serviette",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chönd Si mer bitte no e Serviette bringe?"
+ },
+ {
+  "id": 7790,
+  "de": "das Tablett",
+  "tr": "tepsi",
+  "deBeispiel": "Sie trägt vier Gläser auf einem Tablett.",
+  "gsw": "Tablett",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si trait vier Glääser uf eme Tablett."
+ },
+ {
+  "id": 7791,
+  "de": "die Selbstbedienung",
+  "tr": "self servis",
+  "deBeispiel": "Hier ist Selbstbedienung, das Essen holt man an der Theke.",
+  "gsw": "Sälbschtbedienig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Da isch Sälbschtbedienig, s Ässe holt mer a de Thek."
+ },
+ {
+  "id": 7792,
+  "de": "die Bestellung",
+  "tr": "sipariş",
+  "deBeispiel": "Meine Bestellung kommt morgen mit der Post.",
+  "gsw": "Bschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Bschtellig chunt morn mit de Poscht."
+ },
+ {
+  "id": 7793,
+  "de": "schneiden",
+  "tr": "kesmek, doğramak",
+  "deBeispiel": "Bitte schneide das Brot in dünne Scheiben.",
+  "gsw": "schniide",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte schniid s Brot i dünni Schiibe."
+ },
+ {
+  "id": 7794,
+  "de": "schälen",
+  "tr": "soymak (kabuğunu)",
+  "deBeispiel": "Ich schäle die Kartoffeln für das Abendessen.",
+  "gsw": "schäle",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich schäle d Härdöpfel für de Znacht."
+ },
+ {
+  "id": 7795,
+  "de": "rühren",
+  "tr": "karıştırmak (kaşıkla çevirmek)",
+  "deBeispiel": "Rühr die Soße, damit sie nicht anbrennt.",
+  "gsw": "rüere",
+  "gswArtikel": null,
+  "gswBeispiel": "Rüer d Sosse, damit si nöd aabrennt."
+ },
+ {
+  "id": 7796,
+  "de": "aufwärmen",
+  "tr": "ısıtmak (yemeği)",
+  "deBeispiel": "Ich wärme die Suppe von gestern auf.",
+  "gsw": "ufwärme",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wärme d Suppe vo geschter uuf."
+ },
+ {
+  "id": 7797,
+  "de": "abtrocknen",
+  "tr": "kurulamak",
+  "deBeispiel": "Du wäschst ab und ich trockne die Teller ab.",
+  "gsw": "abtröchne",
+  "gswArtikel": null,
+  "gswBeispiel": "Du wäschsch ab und ich tröchne d Täller ab."
+ },
+ {
+  "id": 7798,
+  "de": "decken",
+  "tr": "kurmak (sofra), örtmek",
+  "deBeispiel": "Kannst du bitte den Tisch für vier Personen decken?",
+  "gsw": "decke",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte de Tisch für vier Persone decke?"
+ },
+ {
+  "id": 7799,
+  "de": "der Deckel",
+  "tr": "kapak",
+  "deBeispiel": "Mach bitte den Deckel auf den Topf.",
+  "gsw": "Deckel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Tue bitte de Deckel uf d Pfanne."
+ },
+ {
+  "id": 7800,
+  "de": "die Mikrowelle",
+  "tr": "mikrodalga fırın",
+  "deBeispiel": "Stell das Essen zwei Minuten in die Mikrowelle.",
+  "gsw": "Mikrowelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtell s Ässe zwäi Minute i d Mikrowelle."
+ },
+ {
+  "id": 7801,
+  "de": "das Kochbuch",
+  "tr": "yemek kitabı",
+  "deBeispiel": "Meine Mutter hat mir ein Kochbuch geschenkt.",
+  "gsw": "Chochbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Muetter hät mer es Chochbuech gschänkt."
+ },
+ {
+  "id": 7802,
+  "de": "das Gramm",
+  "tr": "gram",
+  "deBeispiel": "Ich brauche 200 Gramm Käse.",
+  "gsw": "Gramm",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich bruuche 200 Gramm Chäs."
+ },
+ {
+  "id": 7803,
+  "de": "der Liter",
+  "tr": "litre",
+  "deBeispiel": "Bring bitte zwei Liter Milch mit.",
+  "gsw": "Liter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bring bitte zwäi Liter Milch mit."
+ },
+ {
+  "id": 7804,
+  "de": "das Kilo",
+  "tr": "kilo",
+  "deBeispiel": "Ein Kilo Tomaten kostet hier zwei Euro.",
+  "gsw": "Kilo",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es Kilo Tomate koschtet da zwäi Euro."
+ },
+ {
+  "id": 7805,
+  "de": "die Packung",
+  "tr": "paket, ambalaj",
+  "deBeispiel": "In der Packung sind zehn Teebeutel.",
+  "gsw": "Packig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Packig sind zää Teebüteli."
+ },
+ {
+  "id": 7806,
+  "de": "der Becher",
+  "tr": "kap, bardak (kulpsuz)",
+  "deBeispiel": "Ich kaufe einen Becher Sahne für den Kuchen.",
+  "gsw": "Becher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich chaufe en Becher Rahm für de Chueche."
+ },
+ {
+  "id": 7807,
+  "de": "der Karton",
+  "tr": "karton kutu",
+  "deBeispiel": "Die Flaschen sind in einem großen Karton.",
+  "gsw": "Karton",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Flasche sind i eme groosse Karton."
+ },
+ {
+  "id": 7808,
+  "de": "die Waage",
+  "tr": "terazi, tartı",
+  "deBeispiel": "Leg das Obst bitte auf die Waage.",
+  "gsw": "Waag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Leg s Obscht bitte uf d Waag."
+ },
+ {
+  "id": 7809,
+  "de": "die Tube",
+  "tr": "tüp (ambalaj)",
+  "deBeispiel": "Wir brauchen noch eine Tube Zahnpasta.",
+  "gsw": "Tube",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir bruuched no e Tube Zahnpaschta."
+ },
+ {
+  "id": 7810,
+  "de": "die Sparkasse",
+  "tr": "tasarruf bankası",
+  "deBeispiel": "Mein Konto ist bei der Sparkasse.",
+  "gsw": "Schparkasse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mis Konto isch bi de Schparkasse."
+ },
+ {
+  "id": 7811,
+  "de": "das Sparbuch",
+  "tr": "tasarruf hesabı cüzdanı",
+  "deBeispiel": "Für meine Tochter habe ich ein Sparbuch eröffnet.",
+  "gsw": "Schparbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für mini Tochter han ich es Schparbuech eröffnet."
+ },
+ {
+  "id": 7812,
+  "de": "der Geldbeutel",
+  "tr": "cüzdan, para kesesi",
+  "deBeispiel": "Mein Geldbeutel ist im Bus liegen geblieben.",
+  "gsw": "Gäldbüütel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Gäldbüütel isch im Bus lige bliibe."
+ },
+ {
+  "id": 7813,
+  "de": "die Rückgabe",
+  "tr": "iade",
+  "deBeispiel": "Die Rückgabe ist nur mit Kassenzettel möglich.",
+  "gsw": "Rückgab",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rückgab isch nu mit Kassezettel möglich."
+ },
+ {
+  "id": 7814,
+  "de": "zurückgeben",
+  "tr": "geri vermek, iade etmek",
+  "deBeispiel": "Ich möchte diese Schuhe zurückgeben, sie sind zu klein.",
+  "gsw": "zrugg gää",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wett die Schue zrugg gää, si sind z chlii."
+ },
+ {
+  "id": 7815,
+  "de": "zurückschicken",
+  "tr": "geri göndermek",
+  "deBeispiel": "Die Jacke passt nicht, ich schicke sie zurück.",
+  "gsw": "zruggschicke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Jagge passt nöd, ich schicke si zrugg.",
+  "ayniLehce": [
+   "zurücksenden (B2)"
+  ]
+ },
+ {
+  "id": 7816,
+  "de": "das Pfand",
+  "tr": "depozito (şişe, kap)",
+  "deBeispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
+  "gsw": "Pfand",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf d Fläsche zahlsch 25 Cent Pfand."
+ },
+ {
+  "id": 7817,
+  "de": "die Schwiegermutter",
+  "tr": "kayınvalide",
+  "deBeispiel": "Meine Schwiegermutter kocht jeden Sonntag für die ganze Familie.",
+  "gsw": "Schwigermuetter",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Schwigermuetter chochet jede Sunntig für di ganz Familie."
+ },
+ {
+  "id": 7818,
+  "de": "der Schwiegervater",
+  "tr": "kayınpeder",
+  "deBeispiel": "Mein Schwiegervater hat mir im Garten geholfen.",
+  "gsw": "Schwigervatter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Schwigervatter hät mer im Garte gholfe."
+ },
+ {
+  "id": 7819,
+  "de": "der Schwiegersohn",
+  "tr": "damat (kızın kocası)",
+  "deBeispiel": "Ihr Schwiegersohn arbeitet als Lehrer.",
+  "gsw": "Schwigersuhn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire Schwigersuhn schafft als Lehrer."
+ },
+ {
+  "id": 7820,
+  "de": "die Schwiegertochter",
+  "tr": "gelin (oğlun eşi)",
+  "deBeispiel": "Seine Schwiegertochter bringt immer Kuchen mit.",
+  "gsw": "Schwigertochter",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Schwigertochter bringt immer Chueche mit."
+ },
+ {
+  "id": 7821,
+  "de": "das Enkelkind",
+  "tr": "torun",
+  "deBeispiel": "Meine Großeltern haben fünf Enkelkinder.",
+  "gsw": "Enkelchind",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Grosseltere händ föif Enkelchind."
+ },
+ {
+  "id": 7822,
+  "de": "die Verlobung",
+  "tr": "nişan",
+  "deBeispiel": "Wir feiern unsere Verlobung im Garten.",
+  "gsw": "Verlobig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir fiired eusi Verlobig im Garte."
+ },
+ {
+  "id": 7823,
+  "de": "die Braut",
+  "tr": "gelin",
+  "deBeispiel": "Die Braut trägt ein weißes Kleid.",
+  "gsw": "Bruut",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bruut trait es wiisses Chleid."
+ },
+ {
+  "id": 7824,
+  "de": "der Bräutigam",
+  "tr": "damat, güvey",
+  "deBeispiel": "Der Bräutigam wartet nervös vor der Kirche.",
+  "gsw": "Brüütigam",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Brüütigam wartet nervös vor de Chile."
+ },
+ {
+  "id": 7825,
+  "de": "der Trauzeuge",
+  "tr": "nikâh şahidi",
+  "deBeispiel": "Mein bester Freund ist mein Trauzeuge.",
+  "gsw": "Truuzüüge",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min bescht Fründ isch min Truuzüüge."
+ },
+ {
+  "id": 7826,
+  "de": "die Beerdigung",
+  "tr": "cenaze töreni",
+  "deBeispiel": "Die Beerdigung ist am Freitag um zehn Uhr.",
+  "gsw": "Beerdigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Beerdigig isch am Friitig am zäni."
+ },
+ {
+  "id": 7827,
+  "de": "die Familienfeier",
+  "tr": "aile kutlaması",
+  "deBeispiel": "Am Wochenende haben wir eine große Familienfeier.",
+  "gsw": "Familiefiir",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Wucheänd händ mer e groossi Familiefiir."
+ },
+ {
+  "id": 7828,
+  "de": "der Blumenstrauß",
+  "tr": "çiçek buketi",
+  "deBeispiel": "Ich bringe der Gastgeberin einen Blumenstrauß mit.",
+  "gsw": "Bluemeschtruuss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich bring de Gaschtgeberin en Bluemeschtruuss mit."
+ },
+ {
+  "id": 7829,
+  "de": "der Weihnachtsbaum",
+  "tr": "Noel ağacı",
+  "deBeispiel": "Der Weihnachtsbaum steht dieses Jahr im Wohnzimmer.",
+  "gsw": "Wiehnachtsbaum",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wiehnachtsbaum schtaat das Jaar im Wohnzimmer."
+ },
+ {
+  "id": 7830,
+  "de": "die Umarmung",
+  "tr": "kucaklama, sarılma",
+  "deBeispiel": "Nach der langen Reise bekam ich von meiner Mutter eine herzliche Umarmung.",
+  "gsw": "Umarmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de lange Räis han ich vo minere Mueter e härzligi Umarmig überchoo."
+ },
+ {
+  "id": 7831,
+  "de": "der Zwilling",
+  "tr": "ikiz",
+  "deBeispiel": "Mein Bruder und ich sind Zwillinge.",
+  "gsw": "Zwilling",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Brueder und ich sind Zwilling."
+ },
+ {
+  "id": 7832,
+  "de": "die Stiefmutter",
+  "tr": "üvey anne",
+  "deBeispiel": "Seine Stiefmutter ist sehr nett zu ihm.",
+  "gsw": "Schtiefmueter",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Schtiefmueter isch sehr nett zu em."
+ },
+ {
+  "id": 7833,
+  "de": "der Kinderwagen",
+  "tr": "bebek arabası",
+  "deBeispiel": "Der Kinderwagen passt nicht in den Aufzug.",
+  "gsw": "Chinderwage",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Chinderwage passt nöd i de Lift."
+ },
+ {
+  "id": 7834,
+  "de": "die Windel",
+  "tr": "bebek bezi",
+  "deBeispiel": "Der Kleine braucht eine frische Windel.",
+  "gsw": "Windle",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Chlii bruucht e frischi Windle."
+ },
+ {
+  "id": 7835,
+  "de": "die Witwe",
+  "tr": "dul kadın",
+  "deBeispiel": "Meine Nachbarin ist seit drei Jahren Witwe.",
+  "gsw": "Witwe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Nochberin isch sit drü Jaar Witwe."
+ },
+ {
+  "id": 7836,
+  "de": "der Hochzeitstag",
+  "tr": "evlilik yıldönümü, düğün günü",
+  "deBeispiel": "Zum Hochzeitstag schenkt mein Mann mir immer Rosen.",
+  "gsw": "Hochziitstag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zum Hochziitstag schänkt mer min Maa immer Rose."
+ },
+ {
+  "id": 7837,
+  "de": "das Patenkind",
+  "tr": "vaftiz çocuğu",
+  "deBeispiel": "Mein Patenkind wird morgen sechs Jahre alt.",
+  "gsw": "Patechind",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mis Patechind wird morn sächs Jaar alt."
+ },
+ {
+  "id": 7838,
+  "de": "großziehen",
+  "tr": "büyütmek, yetiştirmek",
+  "deBeispiel": "Sie hat drei Kinder allein großgezogen.",
+  "gsw": "grosszieh",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät drü Chind ellei grosszoge."
+ },
+ {
+  "id": 7839,
+  "de": "adoptieren",
+  "tr": "evlat edinmek",
+  "deBeispiel": "Das Paar möchte ein Kind adoptieren.",
+  "gsw": "adoptiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Paar wett es Chind adoptiere."
+ },
+ {
+  "id": 7840,
+  "de": "vergeben",
+  "tr": "affetmek, bağışlamak",
+  "deBeispiel": "Nach dem Streit hat sie ihrem Bruder vergeben.",
+  "gsw": "vergää",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Striit hät si irem Brueder vergää."
+ },
+ {
+  "id": 7841,
+  "de": "zusammenkommen",
+  "tr": "bir araya gelmek, toplanmak",
+  "deBeispiel": "An Weihnachten kommt die ganze Familie zusammen.",
+  "gsw": "zämechoo",
+  "gswArtikel": null,
+  "gswBeispiel": "A Wienachte tuet di ganz Familie zämechoo."
+ },
+ {
+  "id": 7842,
+  "de": "erben",
+  "tr": "miras almak",
+  "deBeispiel": "Er hat von seiner Tante ein altes Haus geerbt.",
+  "gsw": "erbe",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät vo sinere Tante es alts Huus gerbt."
+ },
+ {
+  "id": 7843,
+  "de": "bewundern",
+  "tr": "hayran olmak",
+  "deBeispiel": "Ich bewundere meine Großmutter sehr.",
+  "gsw": "bewundere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bewundere mini Grossmueter sehr."
+ },
+ {
+  "id": 7844,
+  "de": "belohnen",
+  "tr": "ödüllendirmek",
+  "deBeispiel": "Die Eltern belohnen ihre Kinder für gute Noten.",
+  "gsw": "belohne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Eltere belohned ihri Chind für gueti Note."
+ },
+ {
+  "id": 7845,
+  "de": "wickeln",
+  "tr": "(bebeğin) altını değiştirmek, sarmak",
+  "deBeispiel": "Kannst du das Baby wickeln?",
+  "gsw": "wickle",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch du s Baby wickle?"
+ },
+ {
+  "id": 7846,
+  "de": "anstoßen",
+  "tr": "kadeh kaldırmak, kadeh tokuşturmak",
+  "deBeispiel": "Wir stoßen auf das junge Paar an.",
+  "gsw": "aaschtoosse",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend uf s jung Paar aaschtoosse."
+ },
+ {
+  "id": 7847,
+  "de": "schmücken",
+  "tr": "süslemek",
+  "deBeispiel": "Die Kinder schmücken den Saal für die Feier.",
+  "gsw": "schmücke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind schmücked de Saal für d Fiir."
+ },
+ {
+  "id": 7848,
+  "de": "ähneln",
+  "tr": "benzemek",
+  "deBeispiel": "Meine Tochter ähnelt ihrer Oma sehr.",
+  "gsw": "ähnle",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Tochter ähnlet irer Grossmueter sehr."
+ },
+ {
+  "id": 7849,
+  "de": "zusammenhalten",
+  "tr": "birlik olmak, kenetlenmek",
+  "deBeispiel": "In schweren Zeiten hält unsere Familie zusammen.",
+  "gsw": "zämehalte",
+  "gswArtikel": null,
+  "gswBeispiel": "I schwäre Ziite tuet üsi Familie zämehalte."
+ },
+ {
+  "id": 7850,
+  "de": "taufen",
+  "tr": "vaftiz etmek",
+  "deBeispiel": "Das Baby wird am Sonntag getauft.",
+  "gsw": "taufe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Baby wird am Sunntig tauft."
+ },
+ {
+  "id": 7851,
+  "de": "kuscheln",
+  "tr": "sarılıp yatmak, sokulmak",
+  "deBeispiel": "Abends kuscheln wir auf dem Sofa.",
+  "gsw": "chuschle",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig chuschled mir uf em Sofa."
+ },
+ {
+  "id": 7852,
+  "de": "trauern",
+  "tr": "yas tutmak",
+  "deBeispiel": "Die Familie trauert um den Großvater.",
+  "gsw": "truure",
+  "gswArtikel": null,
+  "gswBeispiel": "D Familie truuret um de Grossvatter."
+ },
+ {
+  "id": 7853,
+  "de": "überreichen",
+  "tr": "takdim etmek, elden vermek",
+  "deBeispiel": "Am Ende der Feier überreicht er den Gästen kleine Geschenke.",
+  "gsw": "überreiche",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Änd vo de Fiir überreicht er de Gescht chlini Gschänk."
+ },
+ {
+  "id": 7854,
+  "de": "bewirten",
+  "tr": "ağırlamak, ikram etmek",
+  "deBeispiel": "Sie bewirtet ihre Gäste mit Kuchen und Tee.",
+  "gsw": "bewirte",
+  "gswArtikel": null,
+  "gswBeispiel": "Si bewirtet ihri Gescht mit Chueche und Tee."
+ },
+ {
+  "id": 7855,
+  "de": "hüten",
+  "tr": "bakmak, göz kulak olmak",
+  "deBeispiel": "Am Samstag hüte ich die Kinder meiner Schwester.",
+  "gsw": "hüete",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Samschtig hüete ich d Chind vo minere Schweschter."
+ },
+ {
+  "id": 7856,
+  "de": "vorbeischauen",
+  "tr": "uğramak, şöyle bir uğrayıp bakmak",
+  "deBeispiel": "Schau doch am Sonntag bei uns vorbei!",
+  "gsw": "verbiiluege",
+  "gswArtikel": null,
+  "gswBeispiel": "Lueg doch am Sunntig bi üs verbii!"
+ },
+ {
+  "id": 7857,
+  "de": "auskommen",
+  "tr": "geçinmek (biriyle), anlaşmak",
+  "deBeispiel": "Ich komme mit meinen Nachbarn gut aus.",
+  "gsw": "uschoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich chume mit mine Nochbere guet us."
+ },
+ {
+  "id": 7858,
+  "de": "zusammenleben",
+  "tr": "birlikte yaşamak",
+  "deBeispiel": "In diesem Haus leben drei Generationen zusammen.",
+  "gsw": "zämeläbe",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Huus tüend drü Generatione zämeläbe."
+ },
+ {
+  "id": 7859,
+  "de": "stillen",
+  "tr": "emzirmek",
+  "deBeispiel": "Die Mutter stillt ihr Baby noch.",
+  "gsw": "schtille",
+  "gswArtikel": null,
+  "gswBeispiel": "D Mueter schtillt ihres Baby no."
+ },
+ {
+  "id": 7860,
+  "de": "beistehen",
+  "tr": "yanında olmak, destek olmak",
+  "deBeispiel": "Meine Freunde stehen mir immer bei.",
+  "gsw": "biischtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Fründe tüend mer immer biischtaa."
+ },
+ {
+  "id": 7861,
+  "de": "kinderlos",
+  "tr": "çocuksuz",
+  "deBeispiel": "Das Ehepaar ist seit zehn Jahren kinderlos.",
+  "gsw": "chinderlos",
+  "gswArtikel": null,
+  "gswBeispiel": "S Eepaar isch sit zäh Jaar chinderlos."
+ },
+ {
+  "id": 7862,
+  "de": "getrennt",
+  "tr": "ayrı, ayrılmış",
+  "deBeispiel": "Meine Eltern leben seit einem Jahr getrennt.",
+  "gsw": "trännt",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Eltere läbed sit eme Jaar trännt."
+ },
+ {
+  "id": 7863,
+  "de": "gegenseitig",
+  "tr": "karşılıklı",
+  "deBeispiel": "In einer Familie ist gegenseitige Hilfe wichtig.",
+  "gsw": "gägesitig",
+  "gswArtikel": null,
+  "gswBeispiel": "I ere Familie isch gägesitigi Hilf wichtig."
+ },
+ {
+  "id": 7864,
+  "de": "festlich",
+  "tr": "şık (özel gün için), şenlikli",
+  "deBeispiel": "Alle Gäste sind festlich gekleidet.",
+  "gsw": "feschtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli Gescht sind feschtlich aazoge."
+ }
+]

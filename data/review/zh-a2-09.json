@@ -1,0 +1,1001 @@
+[
+ {
+  "id": 7865,
+  "de": "feierlich",
+  "tr": "törensel, ağırbaşlı",
+  "deBeispiel": "Die Rede des Vaters war sehr feierlich.",
+  "gsw": "fiirlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Red vom Vatter isch sehr fiirlich gsi."
+ },
+ {
+  "id": 7866,
+  "de": "häuslich",
+  "tr": "eve düşkün, ev işlerine yatkın",
+  "deBeispiel": "Mein Bruder ist sehr häuslich und kocht jeden Abend.",
+  "gsw": "hüüslich",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brueder isch sehr hüüslich und chochet jede Aabig."
+ },
+ {
+  "id": 7867,
+  "de": "artig",
+  "tr": "uslu, terbiyeli",
+  "deBeispiel": "Die Kinder waren beim Besuch sehr artig.",
+  "gsw": "artig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind sind bim Bsuech sehr artig gsi."
+ },
+ {
+  "id": 7868,
+  "de": "ungezogen",
+  "tr": "terbiyesiz, yaramaz",
+  "deBeispiel": "Sei nicht so ungezogen zu deiner Oma!",
+  "gsw": "ungezoge",
+  "gswArtikel": null,
+  "gswBeispiel": "Sig nöd eso ungezoge zu dinere Grossmueter!"
+ },
+ {
+  "id": 7869,
+  "de": "nervig",
+  "tr": "sinir bozucu",
+  "deBeispiel": "Mein kleiner Bruder ist manchmal richtig nervig.",
+  "gsw": "nervig",
+  "gswArtikel": null,
+  "gswBeispiel": "Min chliine Brueder isch mängisch richtig nervig."
+ },
+ {
+  "id": 7870,
+  "de": "unverheiratet",
+  "tr": "evli olmayan, bekâr",
+  "deBeispiel": "Meine Tante ist immer noch unverheiratet.",
+  "gsw": "unverhüraatet",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Tante isch immer no unverhüraatet."
+ },
+ {
+  "id": 7871,
+  "de": "untereinander",
+  "tr": "kendi aralarında, birbirleriyle",
+  "deBeispiel": "Die Geschwister helfen sich untereinander.",
+  "gsw": "undereinand",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gschwüschterti hälfed sich undereinand."
+ },
+ {
+  "id": 7872,
+  "de": "füreinander",
+  "tr": "birbiri için",
+  "deBeispiel": "Gute Freunde sind immer füreinander da.",
+  "gsw": "füreinand",
+  "gswArtikel": null,
+  "gswBeispiel": "Gueti Fründe sind immer füreinand da."
+ },
+ {
+  "id": 7873,
+  "de": "stur",
+  "tr": "inatçı, dik kafalı",
+  "deBeispiel": "Mein Opa ist manchmal sehr stur.",
+  "gsw": "schtur",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Grossvatter isch mängisch sehr schtur."
+ },
+ {
+  "id": 7874,
+  "de": "verwöhnt",
+  "tr": "şımarık",
+  "deBeispiel": "Das Kind ist von seinen Großeltern ziemlich verwöhnt.",
+  "gsw": "verwöönt",
+  "gswArtikel": null,
+  "gswBeispiel": "S Chind isch vo sine Grosseltere ziemli verwöönt."
+ },
+ {
+  "id": 7875,
+  "de": "alleinstehend",
+  "tr": "bekâr, yalnız yaşayan",
+  "deBeispiel": "Sie ist alleinstehend und wohnt mit ihrer Katze.",
+  "gsw": "alleinschtehend",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch alleinschtehend und wont mit irere Chatz."
+ },
+ {
+  "id": 7876,
+  "de": "fürsorglich",
+  "tr": "şefkatli, ilgili",
+  "deBeispiel": "Meine Mutter ist sehr fürsorglich.",
+  "gsw": "fürsorglich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter isch sehr fürsorglich."
+ },
+ {
+  "id": 7877,
+  "de": "sich entspannen",
+  "tr": "rahatlamak, gevşemek",
+  "deBeispiel": "Nach der Arbeit entspanne ich mich am liebsten mit Musik.",
+  "gsw": "sich entschpanne",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Arbet entschpanne ich mich am liebschte mit Musig."
+ },
+ {
+  "id": 7878,
+  "de": "angeln",
+  "tr": "balık tutmak",
+  "deBeispiel": "Mein Opa angelt jeden Sonntag am See.",
+  "gsw": "angle",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Grossvatter anglet jede Sunntig am See."
+ },
+ {
+  "id": 7879,
+  "de": "turnen",
+  "tr": "jimnastik yapmak",
+  "deBeispiel": "Die Kinder turnen zweimal pro Woche in der Schule.",
+  "gsw": "turne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind turned zwäimal pro Wuche i de Schuel."
+ },
+ {
+  "id": 7880,
+  "de": "segeln",
+  "tr": "yelken yapmak, yelkenle gitmek",
+  "deBeispiel": "Im Sommer segeln wir oft auf dem Bodensee.",
+  "gsw": "sägle",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Summer sägled mir oft uf em Bodesee."
+ },
+ {
+  "id": 7881,
+  "de": "würfeln",
+  "tr": "zar atmak",
+  "deBeispiel": "Du bist dran, jetzt musst du würfeln.",
+  "gsw": "würfle",
+  "gswArtikel": null,
+  "gswBeispiel": "Du bisch draa, jetz muesch würfle."
+ },
+ {
+  "id": 7882,
+  "de": "stricken",
+  "tr": "örgü örmek",
+  "deBeispiel": "Meine Mutter strickt mir einen warmen Pullover.",
+  "gsw": "schtricke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Mueter schtrickt mer en warme Pullover."
+ },
+ {
+  "id": 7883,
+  "de": "mitspielen",
+  "tr": "birlikte oynamak, oyuna katılmak",
+  "deBeispiel": "Darf ich bei eurem Spiel mitspielen?",
+  "gsw": "mitschpile",
+  "gswArtikel": null,
+  "gswBeispiel": "Dörf ich bi euem Schpil mitschpile?"
+ },
+ {
+  "id": 7884,
+  "de": "veranstalten",
+  "tr": "düzenlemek, tertip etmek",
+  "deBeispiel": "Unser Verein veranstaltet im Juni ein großes Sommerfest.",
+  "gsw": "veraaschtalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Üse Veräin veraaschtaltet im Juni es grosses Summerfäscht."
+ },
+ {
+  "id": 7885,
+  "de": "abschalten",
+  "tr": "kafa dağıtmak, kapatmak (cihaz)",
+  "deBeispiel": "Beim Wandern kann ich richtig gut abschalten.",
+  "gsw": "abschalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Wandere chan ich richtig guet abschalte."
+ },
+ {
+  "id": 7886,
+  "de": "rudern",
+  "tr": "kürek çekmek",
+  "deBeispiel": "Wir sind mit dem Boot bis zur kleinen Insel gerudert.",
+  "gsw": "rudere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sind mit em Boot bis zur chliine Insle gruderet."
+ },
+ {
+  "id": 7887,
+  "de": "boxen",
+  "tr": "boks yapmak",
+  "deBeispiel": "Mein Bruder boxt seit drei Jahren in einem Club.",
+  "gsw": "boxe",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brueder boxt sit drü Jaar in eme Club."
+ },
+ {
+  "id": 7888,
+  "de": "musizieren",
+  "tr": "müzik yapmak, çalgı çalmak",
+  "deBeispiel": "Am Wochenende musizieren wir zusammen im Wohnzimmer.",
+  "gsw": "musiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenänd musiziered mir zäme im Wonzimmer."
+ },
+ {
+  "id": 7889,
+  "de": "trommeln",
+  "tr": "davul çalmak, trampet çalmak",
+  "deBeispiel": "Der Junge trommelt laut auf einem alten Eimer.",
+  "gsw": "trommle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bueb trommlet luut uf eme alte Chübel."
+ },
+ {
+  "id": 7890,
+  "de": "blättern",
+  "tr": "sayfa çevirmek, karıştırmak (kitap)",
+  "deBeispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift.",
+  "gsw": "blettere",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Wartzimmer blettere ich gärn in ere Ziitschrift."
+ },
+ {
+  "id": 7891,
+  "de": "ausleihen",
+  "tr": "ödünç almak, ödünç vermek",
+  "deBeispiel": "Ich möchte drei Bücher für zwei Wochen ausleihen.",
+  "gsw": "usliiche",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wett drü Büecher für zwäi Wuche usliiche."
+ },
+ {
+  "id": 7892,
+  "de": "jubeln",
+  "tr": "sevinç çığlığı atmak, tezahürat yapmak",
+  "deBeispiel": "Nach dem letzten Tor jubelten alle im Stadion.",
+  "gsw": "juble",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em letschte Tor händ alli im Schtadion gjublet."
+ },
+ {
+  "id": 7893,
+  "de": "klatschen",
+  "tr": "alkışlamak, el çırpmak",
+  "deBeispiel": "Am Ende des Konzerts klatschte das Publikum sehr lange.",
+  "gsw": "chlatsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Änd vom Konzärt hät s Publikum sehr lang gchlatschet."
+ },
+ {
+  "id": 7894,
+  "de": "pfeifen",
+  "tr": "ıslık çalmak, düdük çalmak",
+  "deBeispiel": "Der Schiedsrichter pfeift und das Spiel ist zu Ende.",
+  "gsw": "pfiiffe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schiedsrichter pfiifft und s Schpil isch fertig."
+ },
+ {
+  "id": 7895,
+  "de": "plaudern",
+  "tr": "sohbet etmek, çene çalmak",
+  "deBeispiel": "Nach dem Kurs plaudern wir noch eine halbe Stunde im Café.",
+  "gsw": "plaudere",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Kurs plauderet mir no e halbi Schtund im Café."
+ },
+ {
+  "id": 7896,
+  "de": "bummeln",
+  "tr": "gezinmek, dolaşmak (vitrin gezmek)",
+  "deBeispiel": "Am Samstag bummeln wir gern durch die Altstadt.",
+  "gsw": "bummle",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Samschtig bummled mir gärn dur d Altschtadt."
+ },
+ {
+  "id": 7897,
+  "de": "ausprobieren",
+  "tr": "denemek, tecrübe etmek",
+  "deBeispiel": "Ich möchte dieses Jahr eine neue Sportart ausprobieren.",
+  "gsw": "usprobiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wett dis Jaar e nöii Schportart usprobiere."
+ },
+ {
+  "id": 7898,
+  "de": "anschauen",
+  "tr": "izlemek, bakmak",
+  "deBeispiel": "Heute Abend schauen wir einen alten Film an.",
+  "gsw": "aaluege",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt Aabig tüend mir en alte Film aaluege.",
+  "ayniLehce": [
+   "ansehen (A2)"
+  ]
+ },
+ {
+  "id": 7899,
+  "de": "dehnen",
+  "tr": "germek, esnetmek",
+  "deBeispiel": "Nach dem Laufen dehne ich immer meine Beine.",
+  "gsw": "dehne",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Springe dehne ich immer mini Bäi."
+ },
+ {
+  "id": 7900,
+  "de": "athletisch",
+  "tr": "atletik",
+  "deBeispiel": "Sein Bruder ist groß und sehr athletisch.",
+  "gsw": "athletisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Brueder isch grooss und sehr athletisch."
+ },
+ {
+  "id": 7901,
+  "de": "einfallsreich",
+  "tr": "yaratıcı, buluşçu",
+  "deBeispiel": "Deine Geschenkidee ist wirklich einfallsreich.",
+  "gsw": "iifallsriich",
+  "gswArtikel": null,
+  "gswBeispiel": "Dini Gschänkidee isch würkli iifallsriich."
+ },
+ {
+  "id": 7902,
+  "de": "wöchentlich",
+  "tr": "haftalık, haftada bir",
+  "deBeispiel": "Der Chor trifft sich wöchentlich am Mittwochabend.",
+  "gsw": "wüchentlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chor trifft sich wüchentlich am Mittwuchaabig."
+ },
+ {
+  "id": 7903,
+  "de": "täglich",
+  "tr": "günlük, her gün",
+  "deBeispiel": "Er spielt täglich eine Stunde Gitarre.",
+  "gsw": "täglich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er schpilt täglich e Schtund Gitarre."
+ },
+ {
+  "id": 7904,
+  "de": "nachmittags",
+  "tr": "öğleden sonraları",
+  "deBeispiel": "Nachmittags gehe ich mit den Kindern auf den Sportplatz.",
+  "gsw": "namittags",
+  "gswArtikel": null,
+  "gswBeispiel": "Namittags gang ich mit de Chind uf de Schportplatz."
+ },
+ {
+  "id": 7905,
+  "de": "fit",
+  "tr": "formda, zinde",
+  "deBeispiel": "Mit dem Rad zur Arbeit zu fahren hält mich fit.",
+  "gsw": "fit",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit em Velo i d Arbet z fahre haltet mi fit."
+ },
+ {
+  "id": 7906,
+  "de": "verspielt",
+  "tr": "oyuncu, oyunbaz",
+  "deBeispiel": "Unser junger Hund ist noch sehr verspielt.",
+  "gsw": "verschpilt",
+  "gswArtikel": null,
+  "gswBeispiel": "Üse jung Hund isch no sehr verschpilt."
+ },
+ {
+  "id": 7907,
+  "de": "der Sportverein",
+  "tr": "spor kulübü",
+  "deBeispiel": "Mein Sohn ist seit einem Jahr in einem Sportverein.",
+  "gsw": "Schportveräin",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Suhn isch sit eme Jaar in eme Schportveräin."
+ },
+ {
+  "id": 7908,
+  "de": "die Turnhalle",
+  "tr": "spor salonu (okul)",
+  "deBeispiel": "Bei Regen findet das Training in der Turnhalle statt.",
+  "gsw": "Turnhalle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi Räge isch s Training i de Turnhalle.",
+  "ayniLehce": [
+   "Sporthalle (A2)"
+  ]
+ },
+ {
+  "id": 7909,
+  "de": "das Fitnessstudio",
+  "tr": "spor salonu, fitness merkezi",
+  "deBeispiel": "Ich gehe dreimal pro Woche ins Fitnessstudio.",
+  "gsw": "Fitnessstudio",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich gang drümal pro Wuche is Fitnessstudio."
+ },
+ {
+  "id": 7910,
+  "de": "die Trainerin",
+  "tr": "antrenör (kadın)",
+  "deBeispiel": "Unsere Trainerin erklärt die Übung noch einmal.",
+  "gsw": "Trainerin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Üsi Trainerin erklärt d Übig no emal."
+ },
+ {
+  "id": 7911,
+  "de": "die Eintrittskarte",
+  "tr": "giriş bileti",
+  "deBeispiel": "Die Eintrittskarte für das Konzert kostet zwanzig Euro.",
+  "gsw": "Iitrittskarte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iitrittskarte für s Konzärt choschtet zwänzg Euro."
+ },
+ {
+  "id": 7912,
+  "de": "die Geige",
+  "tr": "keman",
+  "deBeispiel": "Meine Tochter lernt seit zwei Jahren Geige.",
+  "gsw": "Giige",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tochter lernt sit zwäi Jaar Giige."
+ },
+ {
+  "id": 7913,
+  "de": "das Schlagzeug",
+  "tr": "bateri, davul takımı",
+  "deBeispiel": "Sein Schlagzeug steht im Keller, weil es so laut ist.",
+  "gsw": "Schlagzüüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sis Schlagzüüg schtaat im Chäller, wil s eso luut isch."
+ },
+ {
+  "id": 7914,
+  "de": "der Chor",
+  "tr": "koro",
+  "deBeispiel": "Sie singt seit fünf Jahren in einem kleinen Chor.",
+  "gsw": "Chor",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si singt sit füf Jaar in eme chliine Chor."
+ },
+ {
+  "id": 7915,
+  "de": "das Brettspiel",
+  "tr": "kutu oyunu, masa oyunu",
+  "deBeispiel": "Am Abend spielen wir oft ein Brettspiel mit den Kindern.",
+  "gsw": "Brettschpil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Aabig schpiled mir oft es Brettschpil mit de Chind."
+ },
+ {
+  "id": 7916,
+  "de": "das Schach",
+  "tr": "satranç",
+  "deBeispiel": "Mein Großvater hat mir Schach beigebracht.",
+  "gsw": "Schach",
+  "gswArtikel": "s",
+  "gswBeispiel": "Min Grossvatter hät mer Schach biibracht."
+ },
+ {
+  "id": 7917,
+  "de": "das Puzzle",
+  "tr": "yapboz, puzzle",
+  "deBeispiel": "Das Puzzle hat tausend Teile und ist ziemlich schwer.",
+  "gsw": "Puzzle",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Puzzle hät tuusig Täil und isch ziemli schwer."
+ },
+ {
+  "id": 7918,
+  "de": "der Würfel",
+  "tr": "zar, küp",
+  "deBeispiel": "Ein Würfel fehlt, wir können nicht anfangen.",
+  "gsw": "Würfel",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Würfel fählt, mir chönd nöd aafange."
+ },
+ {
+  "id": 7919,
+  "de": "der Freizeitpark",
+  "tr": "lunapark, eğlence parkı",
+  "deBeispiel": "Im Sommer fahren wir mit der Klasse in einen Freizeitpark.",
+  "gsw": "Freiziitpark",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Summer fahred mir mit de Klass in en Freiziitpark."
+ },
+ {
+  "id": 7920,
+  "de": "das Lagerfeuer",
+  "tr": "kamp ateşi",
+  "deBeispiel": "Am Lagerfeuer haben wir bis Mitternacht Lieder gesungen.",
+  "gsw": "Lagerfüür",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Lagerfüür händ mir bis Mitternacht Lieder gsunge."
+ },
+ {
+  "id": 7921,
+  "de": "der Pinsel",
+  "tr": "fırça (boya)",
+  "deBeispiel": "Wasch bitte den Pinsel nach dem Malen aus.",
+  "gsw": "Pinsel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäsch bitte de Pinsel nach em Male us."
+ },
+ {
+  "id": 7922,
+  "de": "der Turnschuh",
+  "tr": "spor ayakkabısı",
+  "deBeispiel": "Für den Kurs brauchst du saubere Turnschuhe.",
+  "gsw": "Turnschue",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für de Kurs bruuchsch suuberi Turnschue."
+ },
+ {
+  "id": 7923,
+  "de": "das Trikot",
+  "tr": "forma",
+  "deBeispiel": "Er trägt das rote Trikot mit der Nummer neun.",
+  "gsw": "Trikot",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er treit s roote Trikot mit de Nummere nüün."
+ },
+ {
+  "id": 7924,
+  "de": "der Torwart",
+  "tr": "kaleci",
+  "deBeispiel": "Unser Torwart hat heute sehr gut gespielt.",
+  "gsw": "Goalie",
+  "gswArtikel": "de",
+  "gswBeispiel": "Üse Goalie hät hüt sehr guet gschpilt."
+ },
+ {
+  "id": 7925,
+  "de": "die Halbzeit",
+  "tr": "devre, devre arası",
+  "deBeispiel": "In der zweiten Halbzeit fielen drei Tore.",
+  "gsw": "Halbziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de zwöite Halbziit sind drü Toor gfalle."
+ },
+ {
+  "id": 7926,
+  "de": "das Kartenspiel",
+  "tr": "kâğıt oyunu, iskambil oyunu",
+  "deBeispiel": "Kennst du ein einfaches Kartenspiel für vier Personen?",
+  "gsw": "Chartenschpil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Chennsch du es äifachs Chartenschpil für vier Persone?"
+ },
+ {
+  "id": 7927,
+  "de": "die Zunge",
+  "tr": "dil",
+  "deBeispiel": "Der Arzt sagt: Bitte zeigen Sie mir Ihre Zunge!",
+  "gsw": "Zunge",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dokter säit: Zäiged Si mer bitte Ihri Zunge!"
+ },
+ {
+  "id": 7928,
+  "de": "der Daumen",
+  "tr": "başparmak",
+  "deBeispiel": "Beim Kochen habe ich mir den Daumen verletzt.",
+  "gsw": "Duume",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim Choche han ich mer de Duume verletzt."
+ },
+ {
+  "id": 7929,
+  "de": "das Kinn",
+  "tr": "çene",
+  "deBeispiel": "Er ist gefallen und hat jetzt eine Wunde am Kinn.",
+  "gsw": "Chinn",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er isch gheit und hät jetz e Wunde am Chinn."
+ },
+ {
+  "id": 7930,
+  "de": "die Stirn",
+  "tr": "alın",
+  "deBeispiel": "Die Mutter legt dem Kind die Hand auf die Stirn.",
+  "gsw": "Schtirn",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mueter läit em Chind d Hand uf d Schtirn."
+ },
+ {
+  "id": 7931,
+  "de": "die Wange",
+  "tr": "yanak",
+  "deBeispiel": "Nach dem Sport sind seine Wangen ganz rot.",
+  "gsw": "Wange",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Schport sind sini Wange ganz root."
+ },
+ {
+  "id": 7932,
+  "de": "der Zeh",
+  "tr": "ayak parmağı",
+  "deBeispiel": "Ich bin gegen den Tisch gelaufen, jetzt tut mein Zeh weh.",
+  "gsw": "Zeh",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich bi gäge de Tisch gloffe, jetz tuet mer min Zeh weh."
+ },
+ {
+  "id": 7933,
+  "de": "der Ellenbogen",
+  "tr": "dirsek",
+  "deBeispiel": "Beim Fahrradfahren ist er gestürzt und hat sich den Ellenbogen aufgeschlagen.",
+  "gsw": "Ellboge",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim Velofahre isch er gheit und hät sich de Ellboge ufgschlage."
+ },
+ {
+  "id": 7934,
+  "de": "der Nacken",
+  "tr": "ense, boyun arkası",
+  "deBeispiel": "Nach der Arbeit am Computer tut mir der Nacken weh.",
+  "gsw": "Nacke",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de Arbet am Computer tuet mer de Nacke weh."
+ },
+ {
+  "id": 7935,
+  "de": "die Hüfte",
+  "tr": "kalça",
+  "deBeispiel": "Meine Oma hat Schmerzen in der Hüfte.",
+  "gsw": "Hüft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Grossmueter hät Schmärze i de Hüft."
+ },
+ {
+  "id": 7936,
+  "de": "die Lunge",
+  "tr": "akciğer",
+  "deBeispiel": "Rauchen ist schlecht für die Lunge.",
+  "gsw": "Lunge",
+  "gswArtikel": "d",
+  "gswBeispiel": "Rauche isch schlächt für d Lunge."
+ },
+ {
+  "id": 7937,
+  "de": "die Leber",
+  "tr": "karaciğer",
+  "deBeispiel": "Zu viel Alkohol schadet der Leber.",
+  "gsw": "Läbere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Z viel Alkohol schadet de Läbere."
+ },
+ {
+  "id": 7938,
+  "de": "der Knöchel",
+  "tr": "ayak bileği",
+  "deBeispiel": "Beim Fußball habe ich mir den Knöchel verletzt.",
+  "gsw": "Chnöchel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim Fuessball han ich mer de Chnöchel verletzt."
+ },
+ {
+  "id": 7939,
+  "de": "das Handgelenk",
+  "tr": "el bileği",
+  "deBeispiel": "Mein Handgelenk tut weh, wenn ich schreibe.",
+  "gsw": "Handglenk",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mis Handglenk tuet weh, wänn ich schriibe."
+ },
+ {
+  "id": 7940,
+  "de": "das Gehirn",
+  "tr": "beyin",
+  "deBeispiel": "Schlaf ist wichtig für das Gehirn.",
+  "gsw": "Ghirn",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schlaaf isch wichtig für s Ghirn."
+ },
+ {
+  "id": 7941,
+  "de": "die Kopfschmerzen",
+  "tr": "baş ağrısı",
+  "deBeispiel": "Ich habe seit gestern Kopfschmerzen und nehme eine Tablette.",
+  "gsw": "Chopfweh",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich han sit geschter Chopfweh und nime e Tablette."
+ },
+ {
+  "id": 7942,
+  "de": "die Halsschmerzen",
+  "tr": "boğaz ağrısı",
+  "deBeispiel": "Bei Halsschmerzen trinke ich immer Tee mit Honig.",
+  "gsw": "Halsweh",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bi Halsweh trink ich immer Tee mit Honig."
+ },
+ {
+  "id": 7943,
+  "de": "die Zahnschmerzen",
+  "tr": "diş ağrısı",
+  "deBeispiel": "Wegen der Zahnschmerzen konnte ich nachts nicht schlafen.",
+  "gsw": "Zahnweh",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wäg em Zahnweh han ich z Nacht nöd chöne schlaafe."
+ },
+ {
+  "id": 7944,
+  "de": "die Rückenschmerzen",
+  "tr": "sırt ağrısı, bel ağrısı",
+  "deBeispiel": "Viele Menschen im Büro haben Rückenschmerzen.",
+  "gsw": "Ruggeweh",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vili Lüüt im Büro händ Ruggeweh."
+ },
+ {
+  "id": 7945,
+  "de": "der Durchfall",
+  "tr": "ishal",
+  "deBeispiel": "Nach dem Essen im Urlaub hatte ich Durchfall.",
+  "gsw": "Durchfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Ässe i de Ferie han ich Durchfall gha."
+ },
+ {
+  "id": 7946,
+  "de": "die Migräne",
+  "tr": "migren",
+  "deBeispiel": "Meine Schwester hat oft Migräne und braucht dann Ruhe.",
+  "gsw": "Migräne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Schweschter hät oft Migräne und bruucht denn Rueh."
+ },
+ {
+  "id": 7947,
+  "de": "das Nasenbluten",
+  "tr": "burun kanaması",
+  "deBeispiel": "Das Kind hat Nasenbluten, hol bitte ein Taschentuch.",
+  "gsw": "Nasebluete",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Chind hät Nasebluete, hol bitte es Nastuech."
+ },
+ {
+  "id": 7948,
+  "de": "der Rettungswagen",
+  "tr": "ambulans, cankurtaran",
+  "deBeispiel": "Der Rettungswagen bringt den Mann ins Krankenhaus.",
+  "gsw": "Ambulanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ambulanz bringt de Maa is Schpital.",
+  "ayniLehce": [
+   "Krankenwagen (B1)"
+  ]
+ },
+ {
+  "id": 7949,
+  "de": "der Augenarzt",
+  "tr": "göz doktoru",
+  "deBeispiel": "Der Augenarzt hat gesagt, ich brauche eine neue Brille.",
+  "gsw": "Augearzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Augearzt hät gsäit, ich bruuchi e nöii Brülle."
+ },
+ {
+  "id": 7950,
+  "de": "der Kinderarzt",
+  "tr": "çocuk doktoru",
+  "deBeispiel": "Wir haben morgen einen Termin beim Kinderarzt.",
+  "gsw": "Chinderarzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ morn en Termin bim Chinderarzt."
+ },
+ {
+  "id": 7951,
+  "de": "das Krankenzimmer",
+  "tr": "hasta odası",
+  "deBeispiel": "Im Krankenzimmer liegen zwei Patienten.",
+  "gsw": "Chrankezimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Chrankezimmer liged zwäi Patiente."
+ },
+ {
+  "id": 7952,
+  "de": "der Notarzt",
+  "tr": "acil doktoru",
+  "deBeispiel": "Nach dem Unfall kam der Notarzt sehr schnell.",
+  "gsw": "Notarzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Unfall isch de Notarzt sehr schnäll choo."
+ },
+ {
+  "id": 7953,
+  "de": "der Chirurg",
+  "tr": "cerrah",
+  "deBeispiel": "Der Chirurg hat meinen Vater am Knie operiert.",
+  "gsw": "Chirurg",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Chirurg hät min Vatter am Chnü operiert."
+ },
+ {
+  "id": 7954,
+  "de": "die Behandlung",
+  "tr": "tedavi",
+  "deBeispiel": "Die Behandlung dauert drei Wochen.",
+  "gsw": "Behandlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Behandlig duuret drü Wuche."
+ },
+ {
+  "id": 7955,
+  "de": "die Blutprobe",
+  "tr": "kan örneği, kan tahlili",
+  "deBeispiel": "Vor der Untersuchung nimmt die Schwester eine Blutprobe.",
+  "gsw": "Bluetprob",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Undersuechig nimmt d Schweschter e Bluetprob."
+ },
+ {
+  "id": 7956,
+  "de": "der Hustensaft",
+  "tr": "öksürük şurubu",
+  "deBeispiel": "Nimm abends einen Löffel Hustensaft.",
+  "gsw": "Hueschtesaft",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nimm am Aabig en Löffel Hueschtesaft."
+ },
+ {
+  "id": 7957,
+  "de": "die Augentropfen",
+  "tr": "göz damlası",
+  "deBeispiel": "Die Augentropfen bekomme ich ohne Rezept in der Apotheke.",
+  "gsw": "Augetropfe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Augetropfe überchum ich ohni Rezäpt i de Apotheke."
+ },
+ {
+  "id": 7958,
+  "de": "die Schlaftablette",
+  "tr": "uyku hapı",
+  "deBeispiel": "Ohne Schlaftablette kann er kaum einschlafen.",
+  "gsw": "Schlaaftablette",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Schlaaftablette cha er chuum iischlaafe."
+ },
+ {
+  "id": 7959,
+  "de": "die Krücke",
+  "tr": "koltuk değneği",
+  "deBeispiel": "Nach der Operation läuft sie mit Krücken.",
+  "gsw": "Chrucke",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Operation lauft si mit Chrucke."
+ },
+ {
+  "id": 7960,
+  "de": "der Rollstuhl",
+  "tr": "tekerlekli sandalye",
+  "deBeispiel": "Mein Nachbar sitzt seit dem Unfall im Rollstuhl.",
+  "gsw": "Rollschtuel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Nochber sitzt sit em Unfall im Rollschtuel."
+ },
+ {
+  "id": 7961,
+  "de": "der Gips",
+  "tr": "alçı",
+  "deBeispiel": "Mein Arm ist gebrochen und jetzt im Gips.",
+  "gsw": "Gips",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Arm isch broche und jetz im Gips."
+ },
+ {
+  "id": 7962,
+  "de": "der Impfstoff",
+  "tr": "aşı",
+  "deBeispiel": "In der Praxis gibt es einen neuen Impfstoff gegen Grippe.",
+  "gsw": "Impfschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Praxis gits en nöie Impfschtoff gäge d Grippe."
+ },
+ {
+  "id": 7963,
+  "de": "die Kontaktlinse",
+  "tr": "kontakt lens",
+  "deBeispiel": "Ich trage lieber Kontaktlinsen als eine Brille.",
+  "gsw": "Kontaktlinse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich trage lieber Kontaktlinse als e Brülle."
+ },
+ {
+  "id": 7964,
+  "de": "der Blutzucker",
+  "tr": "kan şekeri",
+  "deBeispiel": "Mein Opa misst jeden Morgen seinen Blutzucker.",
+  "gsw": "Bluetzucker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Grossvatter misst jede Morge sin Bluetzucker."
+ },
+ {
+  "id": 7965,
+  "de": "die Massage",
+  "tr": "masaj",
+  "deBeispiel": "Gegen die Schmerzen im Rücken hilft eine Massage.",
+  "gsw": "Massage",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge d Schmärze im Rugge hilft e Massage."
+ },
+ {
+  "id": 7966,
+  "de": "der Puls",
+  "tr": "nabız",
+  "deBeispiel": "Die Ärztin misst zuerst meinen Puls.",
+  "gsw": "Puls",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Ärztin misst zerscht min Puls."
+ },
+ {
+  "id": 7967,
+  "de": "die Erste Hilfe",
+  "tr": "ilk yardım",
+  "deBeispiel": "Auf der Straße hat er Erste Hilfe geleistet.",
+  "gsw": "Erschti Hilf",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Schtraass hät er Erschti Hilf gleischtet."
+ },
+ {
+  "id": 7968,
+  "de": "niesen",
+  "tr": "hapşırmak",
+  "deBeispiel": "Ich muss die ganze Zeit niesen.",
+  "gsw": "nüüse",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues di ganz Ziit nüüse."
+ },
+ {
+  "id": 7969,
+  "de": "zittern",
+  "tr": "titremek",
+  "deBeispiel": "Meine Hände zittern, weil ich Fieber habe.",
+  "gsw": "zittere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Händ zitteret, wil ich Fieber han."
+ },
+ {
+  "id": 7970,
+  "de": "impfen",
+  "tr": "aşılamak, aşı yapmak",
+  "deBeispiel": "Morgen lasse ich mich gegen Grippe impfen.",
+  "gsw": "impfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Morn la ich mich gäge d Grippe impfe."
+ },
+ {
+  "id": 7971,
+  "de": "röntgen",
+  "tr": "röntgen çekmek",
+  "deBeispiel": "Im Krankenhaus haben sie meinen Fuß geröntgt.",
+  "gsw": "röntge",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Schpital händ si min Fuess gröntget."
+ },
+ {
+  "id": 7972,
+  "de": "sich anstecken",
+  "tr": "hastalık kapmak, bulaşmak",
+  "deBeispiel": "Bleib zu Hause, ich möchte mich nicht anstecken.",
+  "gsw": "sich aastecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Blib dihäi, ich wett mich nöd aastecke."
+ },
+ {
+  "id": 7973,
+  "de": "sich fühlen",
+  "tr": "kendini hissetmek",
+  "deBeispiel": "Heute fühle ich mich schon viel besser.",
+  "gsw": "sich füehle",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt füehle ich mich scho vill besser."
+ },
+ {
+  "id": 7974,
+  "de": "schlucken",
+  "tr": "yutmak",
+  "deBeispiel": "Mein Hals tut weh und ich kann kaum schlucken.",
+  "gsw": "schlucke",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Hals tuet weh und ich cha chuum schlucke."
+ }
+]

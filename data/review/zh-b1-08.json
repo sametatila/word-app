@@ -1,0 +1,1044 @@
+[
+ {
+  "id": 2133,
+  "de": "die Jause",
+  "tr": "atıştırmalık, ara öğün",
+  "deBeispiel": "Es ist Zeit für eine kleine Jause.",
+  "gsw": "Zvieri",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es isch Ziit für en chliine Zvieri.",
+  "ayniLehce": [
+   "das/der Zvieri/Znüni (B1)"
+  ]
+ },
+ {
+  "id": 2134,
+  "de": "je",
+  "tr": "göre, her",
+  "deBeispiel": "1. Die Pullover kosten je nach Qualität zwischen 40 und 60 Euro. 2. Fahren Sie im Juni oder im Juli? – Je nachdem, wann ",
+  "gsw": "je",
+  "gswArtikel": null,
+  "gswBeispiel": "D Pullover choschted je nach Qualität zwüsche 40 und 60 Franke."
+ },
+ {
+  "id": 2135,
+  "de": "je … desto …",
+  "tr": "ne kadar … o kadar …",
+  "deBeispiel": "Je länger ich Deutsch lerne, desto besser kann ich es verstehen.",
+  "gsw": "je … deschto …",
+  "gswArtikel": null,
+  "gswBeispiel": "Je länger ich Tüütsch leere, deschto besser verschtaan ich s."
+ },
+ {
+  "id": 2136,
+  "de": "jederzeit",
+  "tr": "her zaman, her an",
+  "deBeispiel": "Sie können mich jederzeit anrufen.",
+  "gsw": "jederziit",
+  "gswArtikel": null,
+  "gswBeispiel": "Si chönd mich jederziit aalüüte."
+ },
+ {
+  "id": 2137,
+  "de": "jedes Mal",
+  "tr": "her seferinde, her defasında",
+  "deBeispiel": "Inge erzählt die Geschichte jedes Mal anders.",
+  "gsw": "jedes Maal",
+  "gswArtikel": null,
+  "gswBeispiel": "D Inge verzelt d Gschicht jedes Maal andersch."
+ },
+ {
+  "id": 2138,
+  "de": "jedoch",
+  "tr": "ama, fakat, ancak",
+  "deBeispiel": "Sie ruft immer wieder an, jedoch ohne Erfolg.",
+  "gsw": "aber",
+  "gswArtikel": null,
+  "gswBeispiel": "Si lüütet immer wider aa, aber ooni Erfolg.",
+  "ayniLehce": [
+   "aber (A1)"
+  ]
+ },
+ {
+  "id": 2139,
+  "de": "jemals",
+  "tr": "hiç, şimdiye kadar",
+  "deBeispiel": "Hast du jemals von dem Problem gehört? – Nein, nie.",
+  "gsw": "jemals",
+  "gswArtikel": null,
+  "gswBeispiel": "Häsch du jemals vo dem Problem ghöört? – Näi, nie."
+ },
+ {
+  "id": 2140,
+  "de": "jeweils",
+  "tr": "her defasında, her seferinde",
+  "deBeispiel": "Der Kurs findet jeweils montags und donnerstags um 18 Uhr statt.",
+  "gsw": "jewiils",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs isch jewiils am Mäntig und am Dunschtig am sächsi."
+ },
+ {
+  "id": 2141,
+  "de": "der Journalist",
+  "tr": "gazeteci",
+  "deBeispiel": "Meine Tochter möchte Journalistin werden.",
+  "gsw": "Journalischt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mini Tochter möcht Journalischtin wärde."
+ },
+ {
+  "id": 2142,
+  "de": "die Journalistin",
+  "tr": "kadın gazeteci",
+  "deBeispiel": "Meine Tochter möchte Journalistin werden.",
+  "gsw": "Journalischtin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tochter möcht Journalischtin wärde."
+ },
+ {
+  "id": 2143,
+  "de": "die Jugend",
+  "tr": "gençlik",
+  "deBeispiel": "In meiner Jugend habe ich mich sehr für Musik interessiert.",
+  "gsw": "Jugend",
+  "gswArtikel": "d",
+  "gswBeispiel": "I minere Jugend han ich mich sehr für Musig interessiert."
+ },
+ {
+  "id": 2144,
+  "de": "die Jugendliche",
+  "tr": "genç kız, genç (kadın)",
+  "deBeispiel": "1. Die Jugendlichen gehen gerne in die Disko. 2. Der Eintritt ist für Kinder und Jugendliche bis 16 Jahre frei.",
+  "gsw": "Jugendliche",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. D Jugendliche gönd gärn in Uusgang. 2. De Iitritt isch für Chind und Jugendliche bis 16 gratis.",
+  "ayniLehce": [
+   "Jugendliche (A1)"
+  ]
+ },
+ {
+  "id": 2145,
+  "de": "das Kabel",
+  "tr": "kablo",
+  "deBeispiel": "1. Wo ist das Kabel für das Aufnahmegerät? 2. Mit Kabel bekommen Sie über 30 Fernsehkanäle.",
+  "gsw": "Kabel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wo isch s Kabel für s Ufnaamgräät?"
+ },
+ {
+  "id": 2146,
+  "de": "die Kabine",
+  "tr": "kabin",
+  "deBeispiel": "Um zu wählen, gehen Sie bitte in diese Kabine.",
+  "gsw": "Kabine",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zum Wääle gönd Si bitte i die Kabine."
+ },
+ {
+  "id": 2147,
+  "de": "das Kaffeehaus",
+  "tr": "kahvehane, kafe",
+  "deBeispiel": "Hier in der Nähe ist ein Kaffeehaus. Lass uns einen Kaffee trinken.",
+  "gsw": "Kafi",
+  "gswArtikel": "s",
+  "gswBeispiel": "Grad i de Nöchi isch es Kafi. Chum, mir gönd döt en Kafi go trinke.",
+  "ayniLehce": [
+   "Café (A1)"
+  ]
+ },
+ {
+  "id": 2148,
+  "de": "die Kälte",
+  "tr": "soğuk, soğukluk",
+  "deBeispiel": "Bei dieser Kälte fahre ich nicht mit dem Fahrrad.",
+  "gsw": "Chelti",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dere Chelti faar ich nöd mit em Velo."
+ },
+ {
+  "id": 2149,
+  "de": "kämpfen",
+  "tr": "mücadele etmek, savaşmak",
+  "deBeispiel": "Die Frauen kämpfen für mehr Rechte.",
+  "gsw": "kämpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fraue kämpfed für mee Rächt."
+ },
+ {
+  "id": 2150,
+  "de": "der Kampf",
+  "tr": "mücadele, kavga, savaş",
+  "deBeispiel": "Im Schulbus gibt es immer einen Kampf um die Sitzplätze.",
+  "gsw": "Kampf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Schuelbus git s immer en Kampf um d Sitzplätz."
+ },
+ {
+  "id": 2151,
+  "de": "der Kanal",
+  "tr": "kanal",
+  "deBeispiel": "Mit Kabel bekommen Sie über 30 Fernsehkanäle.",
+  "gsw": "Kanal",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mit Kabel überchömed Si über 30 Fernseekanäl."
+ },
+ {
+  "id": 2152,
+  "de": "der Kandidat",
+  "tr": "aday",
+  "deBeispiel": "Wie viele Kandidaten kommen zur Prüfung?",
+  "gsw": "Kandidaat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wie vil Kandidaate chömed a d Prüefig?"
+ },
+ {
+  "id": 2153,
+  "de": "die Kanne",
+  "tr": "sürahi, demlik",
+  "deBeispiel": "1. Das ist aber eine schöne Teekanne. – Ja, die ist aus China. 2. Bitte einen Kaffee! – Eine Tasse oder ein Kännchen?",
+  "gsw": "Channe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das isch aber e schööni Channe. – Ja, die isch us China."
+ },
+ {
+  "id": 2154,
+  "de": "die Kantine",
+  "tr": "yemekhane, kantin",
+  "deBeispiel": "In unserer Kantine kann man günstig essen.",
+  "gsw": "Kantine",
+  "gswArtikel": "d",
+  "gswBeispiel": "I eusere Kantine cha me günschtig ässe."
+ },
+ {
+  "id": 2155,
+  "de": "das Kapitel",
+  "tr": "bölüm",
+  "deBeispiel": "Die Lehrerin hat gesagt, wir sollen zwei Kapitel im Buch wiederholen.",
+  "gsw": "Kapitel",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Leererin hät gsäit, mir sölled zwäi Kapitel im Buech widerhole."
+ },
+ {
+  "id": 2156,
+  "de": "kaputtgehen",
+  "tr": "bozulmak, kırılmak",
+  "deBeispiel": "1. Pass bitte mit diesem Glas auf. Es geht leicht kaputt. 2. Der Fernseher ist gestern kaputtgegangen.",
+  "gsw": "kaputtgaa",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Pass uf mit dem Glas, es cha liecht kaputtgaa. 2. De Fernseer isch geschter kaputtggange."
+ },
+ {
+  "id": 2157,
+  "de": "kaputtmachen",
+  "tr": "bozmak, kırmak",
+  "deBeispiel": "Wer hat die Lampe kaputtgemacht?",
+  "gsw": "kaputtmache",
+  "gswArtikel": null,
+  "gswBeispiel": "Du muesch nöd alles kaputtmache! Wer hät d Lampe kaputtgmacht?"
+ },
+ {
+  "id": 2158,
+  "de": "der Karneval",
+  "tr": "karnaval",
+  "deBeispiel": "Dort hängt mein Kostüm für den Karnevals(um)zug.",
+  "gsw": "Fasnacht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Döt hanget mis Koschtüm für de Fasnachtsumzug.",
+  "ayniLehce": [
+   "Fasching (B1)",
+   "Fasnacht (B1)"
+  ]
+ },
+ {
+  "id": 2159,
+  "de": "die Karotte",
+  "tr": "havuç",
+  "deBeispiel": "Hasen fressen gern Karotten.",
+  "gsw": "Rüebli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Hase frässed gärn Rüebli.",
+  "ayniLehce": [
+   "Möhre (B1)",
+   "Rüebli (B1)"
+  ]
+ },
+ {
+  "id": 2160,
+  "de": "die Karriere",
+  "tr": "kariyer",
+  "deBeispiel": "Mein Bruder hat große Pläne. Er will Karriere machen.",
+  "gsw": "Karriere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Brüeder hät groossi Plään. Er will Karriere mache."
+ },
+ {
+  "id": 2161,
+  "de": "die Chipkarte",
+  "tr": "çip kart, akıllı kart",
+  "deBeispiel": "Ich habe eine Chipkarte für diesen Automaten.",
+  "gsw": "Chipcharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha e Chipcharte für dä Automat."
+ },
+ {
+  "id": 2162,
+  "de": "die Kassette",
+  "tr": "kaset",
+  "deBeispiel": "Meine Eltern besitzen noch viele Musikkassetten.",
+  "gsw": "Kassette",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Eltere händ no vil Musigkassette."
+ },
+ {
+  "id": 2163,
+  "de": "der Kasten",
+  "tr": "kutu, sandık, dolap",
+  "deBeispiel": "Ich habe zwei Kästen Bier gekauft. Die Handtücher liegen im Kasten.",
+  "gsw": "Chaschte",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Handtüecher sind im Chaschte.",
+  "ayniLehce": [
+   "Schrank (A1)"
+  ]
+ },
+ {
+  "id": 2164,
+  "de": "der Katalog",
+  "tr": "katalog",
+  "deBeispiel": "Ich habe mir ein Kleid aus dem Katalog bestellt.",
+  "gsw": "Katalog",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha mir es Chläid usem Katalog bschtellt."
+ },
+ {
+  "id": 2165,
+  "de": "die Katastrophe",
+  "tr": "felaket, afet",
+  "deBeispiel": "Der Urlaub war eine Katastrophe. Es hat nur geregnet.",
+  "gsw": "Kataschtrophe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ferie sind e Kataschtrophe gsii. Es hät nur grägnet."
+ },
+ {
+  "id": 2166,
+  "de": "sich etwas kaufen",
+  "tr": "satın almak",
+  "deBeispiel": "1. Im Supermarkt kauft man sehr günstig ein. 2. Ich habe mir einen Pullover gekauft.",
+  "gsw": "chaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Im Supermärt cha me günschtig iichaufe. 2. Ich ha mir en Pullover gchauft.",
+  "ayniLehce": [
+   "kaufen (A1)"
+  ]
+ },
+ {
+  "id": 2167,
+  "de": "der Kauf",
+  "tr": "satın alma, alışveriş",
+  "deBeispiel": "Der neue Esstisch war ein guter Kauf.",
+  "gsw": "Chauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De neu Esstisch isch en guete Chauf gsii."
+ },
+ {
+  "id": 2168,
+  "de": "der Käufer",
+  "tr": "alıcı, müşteri",
+  "deBeispiel": "- Ich habe schon einen Käufer für den alten Tisch.",
+  "gsw": "Chäufer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha scho en Chäufer für de alt Tisch."
+ },
+ {
+  "id": 2169,
+  "de": "kaum",
+  "tr": "hemen hemen hiç, neredeyse hiç, zar zor",
+  "deBeispiel": "1. Ich kann Sie kaum verstehen. Bitte sprechen Sie lauter. 2. Es hat letzte Woche kaum geregnet. 3. Die Fahrt hat nicht ",
+  "gsw": "chuum",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich verschtaa Si chuum. Bitte reded Si luuter. 2. Es hät letschti Wuche chuum grägnet."
+ },
+ {
+  "id": 2171,
+  "de": "der Kellner",
+  "tr": "garson",
+  "deBeispiel": "Ich bin Kellnerin von Beruf.",
+  "gsw": "Kellner",
+  "gswArtikel": "de",
+  "gswBeispiel": "Er isch Kellner vo Beruef.",
+  "ayniLehce": [
+   "Ober (B1)"
+  ]
+ },
+ {
+  "id": 2172,
+  "de": "die Kellnerin",
+  "tr": "kadın garson",
+  "deBeispiel": "Ich bin Kellnerin von Beruf.",
+  "gsw": "Kellnerin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich bi Kellnerin vo Beruef."
+ },
+ {
+  "id": 2173,
+  "de": "das Kennzeichen",
+  "tr": "plaka, işaret",
+  "deBeispiel": "Das Auto hat ein Schweizer Kennzeichen.",
+  "gsw": "Nummereschild",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Auto hät es Schwiizer Nummereschild."
+ },
+ {
+  "id": 2174,
+  "de": "die Kerze",
+  "tr": "mum",
+  "deBeispiel": "Für den Geburtstagstisch brauchen wir viele Blumen und Kerzen.",
+  "gsw": "Chärze",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für de Geburtstagstisch bruuched mir vil Blueme und Chärze."
+ },
+ {
+  "id": 2175,
+  "de": "die Kindheit",
+  "tr": "çocukluk",
+  "deBeispiel": "In meiner Kindheit war ich oft auf dem Land bei meinen Großeltern.",
+  "gsw": "Chindheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "I minere Chindheit bin ich vil uf em Land bi mine Groosseltere gsii."
+ },
+ {
+  "id": 2176,
+  "de": "die Kiste",
+  "tr": "kutu, sandık",
+  "deBeispiel": "Ich habe zwei Kisten Bier gekauft.",
+  "gsw": "Chischte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha zwoo Chischte Bier gchauft."
+ },
+ {
+  "id": 2177,
+  "de": "das Kissen",
+  "tr": "yastık",
+  "deBeispiel": "Ohne Kopfkissen kann ich nicht schlafen.",
+  "gsw": "Chüssi",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ooni Chüssi cha ich nöd schlaafe."
+ },
+ {
+  "id": 2178,
+  "de": "klagen",
+  "tr": "yakınmak, şikayet etmek",
+  "deBeispiel": "Sie klagt über Kopfschmerzen.",
+  "gsw": "chlage",
+  "gswArtikel": null,
+  "gswBeispiel": "Vil Lüüt chlaged über Chopfwee."
+ },
+ {
+  "id": 2179,
+  "de": "klären",
+  "tr": "açıklığa kavuşturmak, çözmek",
+  "deBeispiel": "Ich hoffe, wir können dieses Problem bald klären.",
+  "gsw": "kläre",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich hoffe, mir chönd das Problem bald kläre."
+ },
+ {
+  "id": 2180,
+  "de": "klasse",
+  "tr": "harika, süper",
+  "deBeispiel": "Ich finde unseren Lehrer klasse.",
+  "gsw": "super",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich find euse Leerer super.",
+  "ayniLehce": [
+   "super (A2)"
+  ]
+ },
+ {
+  "id": 2181,
+  "de": "kleben",
+  "tr": "yapıştırmak, yapışmak",
+  "deBeispiel": "1. Die Briefmarke klebt nicht mehr. 2. Ich klebe Ihnen ein Pflaster darauf.",
+  "gsw": "chläbe",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Briefmarke chläbt nüme. 2. Ich chläbe Ine es Pflaschter druf."
+ },
+ {
+  "id": 2182,
+  "de": "klettern",
+  "tr": "tırmanmak",
+  "deBeispiel": "Die Kinder sind auf den Baum geklettert.",
+  "gsw": "chlädere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind sind uf de Baum gchläderet."
+ },
+ {
+  "id": 2183,
+  "de": "klicken",
+  "tr": "tıklamak",
+  "deBeispiel": "Wenn du die Datei öffnen willst, musst du mit der Maus zweimal klicken.",
+  "gsw": "klicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn du d Datei uftue wottsch, muesch mit de Muus zwäimal klicke."
+ },
+ {
+  "id": 2184,
+  "de": "der Klick",
+  "tr": "tık, tıklama",
+  "deBeispiel": "s Um das Wort zu markieren, genügt ein Doppelklick mit der linken Maustaste.",
+  "gsw": "Klick",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zum s Wort markiere, längt en Doppelklick mit de lingge Muustaschte."
+ },
+ {
+  "id": 2185,
+  "de": "das Klima",
+  "tr": "iklim",
+  "deBeispiel": "Alle sagen, dass sich das Klima ändert.",
+  "gsw": "Klima",
+  "gswArtikel": "s",
+  "gswBeispiel": "Alli säged, dass sich s Klima änderet."
+ },
+ {
+  "id": 2186,
+  "de": "die Klimaanlage",
+  "tr": "klima",
+  "deBeispiel": "Im Sommer brauchen wir eine Klimaanlage.",
+  "gsw": "Klimaanlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Summer bruuched mir e Klimaanlaag."
+ },
+ {
+  "id": 2187,
+  "de": "klingeln",
+  "tr": "çalmak, zil çalmak",
+  "deBeispiel": "1. Ich glaube, es hat an der Tür geklingelt. 2. Das Telefon klingelt.",
+  "gsw": "lüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich glaub, es hät a de Tüür glüütet. 2. S Telefon lüütet."
+ },
+ {
+  "id": 2188,
+  "de": "die Klingel",
+  "tr": "zil",
+  "deBeispiel": "Drück bitte auf die Klingel!",
+  "gsw": "Glöggli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Drück bitte uf s Glöggli!"
+ },
+ {
+  "id": 2189,
+  "de": "klingen",
+  "tr": "kulağa gelmek, ses vermek",
+  "deBeispiel": "Wollen wir einkaufen gehen und danach zusammen kochen? – Ja, das klingt gut.",
+  "gsw": "töne",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänd mir go poschte und dänn zäme choche? – Ja, das tönt guet."
+ },
+ {
+  "id": 2190,
+  "de": "die Klinik",
+  "tr": "klinik",
+  "deBeispiel": "Ich muss in die Klinik, um meinen kranken Onkel zu besuchen.",
+  "gsw": "Klinik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich mues i d Klinik go min chranke Unggle bsueche."
+ },
+ {
+  "id": 2191,
+  "de": "klopfen",
+  "tr": "vurmak, kapıyı çalmak",
+  "deBeispiel": "1. Da klopft jemand ans Fenster. 2. Hat es nicht eben geklopft? 3. Bitte klopfen Sie an.",
+  "gsw": "chlopfe",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Da chlopft öpper as Fänschter. 2. Bitte chlopfed Si aa."
+ },
+ {
+  "id": 2192,
+  "de": "der Kloß",
+  "tr": "hamur topu, hamur köftesi",
+  "deBeispiel": "Möchten Sie zum Fleisch Kartoffeln oder Klöße? – Klöße, bitte.",
+  "gsw": "Knödel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Möchted Si zum Fläisch Härdöpfel oder Knödel? – Knödel, bitte.",
+  "ayniLehce": [
+   "Knödel (B1)"
+  ]
+ },
+ {
+  "id": 2193,
+  "de": "knapp",
+  "tr": "kıt, dar, az",
+  "deBeispiel": "1. Mach schnell. Die Zeit ist knapp. 2. Unser Geld wird knapp. Wir müssen sparen. 3. Die Fahrt war kurz. Nur knapp eine ",
+  "gsw": "chnapp",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mach schnäll! D Ziit isch chnapp. 2. Euses Gäld wird chnapp. Mir müend schpare."
+ },
+ {
+  "id": 2194,
+  "de": "die Kneipe",
+  "tr": "meyhane, bar",
+  "deBeispiel": "Gehen wir noch in eine Kneipe ein Bier trinken?",
+  "gsw": "Beiz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gömmer no in e Beiz go es Bier trinke?",
+  "ayniLehce": [
+   "Lokal (A1)",
+   "Gasthaus (B1)"
+  ]
+ },
+ {
+  "id": 2195,
+  "de": "das Knie",
+  "tr": "diz",
+  "deBeispiel": "Ich habe mich am Knie verletzt. Jetzt kann ich nicht laufen.",
+  "gsw": "Chnüü",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha mich am Chnüü verletzt. Jetz cha ich nöd laufe."
+ },
+ {
+  "id": 2196,
+  "de": "der Knochen",
+  "tr": "kemik",
+  "deBeispiel": "Ich bin hingefallen. Jetzt tun mir alle Knochen weh.",
+  "gsw": "Chnoche",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich bi gheit. Jetz tüend mir alli Chnoche wee."
+ },
+ {
+  "id": 2197,
+  "de": "der Knödel",
+  "tr": "hamur topu, patates köftesi",
+  "deBeispiel": "Möchten Sie zum Fleisch Erdäpfel oder Knödel? – Knödel bitte.",
+  "gsw": "Knödel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Möchted Si zum Fläisch Härdöpfel oder Knödel? – Knödel, bitte.",
+  "ayniLehce": [
+   "Kloß (B1)"
+  ]
+ },
+ {
+  "id": 2198,
+  "de": "der Knopf",
+  "tr": "düğme",
+  "deBeispiel": "1. An meiner Jacke fehlt ein Knopf. 2. Der Fahrstuhl kommt nicht. – Sie müssen auf den Knopf drücken.",
+  "gsw": "Chnopf",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. A minere Jagge fäält en Chnopf. 2. De Lift chunt nöd. – Si müend uf de Chnopf drücke."
+ },
+ {
+  "id": 2199,
+  "de": "der Koch",
+  "tr": "aşçı",
+  "deBeispiel": "Ein Freund von mir ist Koch in einem teuren Restaurant.",
+  "gsw": "Choch",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Fründ vo mir isch Choch in eme tüüre Reschtaurant."
+ },
+ {
+  "id": 2200,
+  "de": "die Köchin",
+  "tr": "kadın aşçı",
+  "deBeispiel": "Ein Freund von mir ist Koch in einem teuren Restaurant.",
+  "gsw": "Chöchin",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Fründin vo mir isch Chöchin in eme tüüre Reschtaurant."
+ },
+ {
+  "id": 2201,
+  "de": "die Kollegin",
+  "tr": "kadın meslektaş, iş arkadaşı",
+  "deBeispiel": "1. Ich habe guten Kontakt zu meinen Kollegen. 2. Mein neuer Kollege ist sehr nett.",
+  "gsw": "Kollegin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini neu Kollegin isch sehr nätt."
+ },
+ {
+  "id": 2202,
+  "de": "die Kommunikation",
+  "tr": "iletişim",
+  "deBeispiel": "Die Kommunikation zwischen den Abteilungen ist gut.",
+  "gsw": "Kommunikation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kommunikation zwüsche de Abtäilige isch guet."
+ },
+ {
+  "id": 2203,
+  "de": "komplett",
+  "tr": "tamamen, eksiksiz",
+  "deBeispiel": "1. Ich habe den Termin komplett vergessen. 2. Die Wohnung ist jetzt komplett eingerichtet.",
+  "gsw": "komplett",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha de Termin komplett vergässe. 2. D Wonig isch jetz komplett iigrichtet."
+ },
+ {
+  "id": 2204,
+  "de": "kompliziert",
+  "tr": "karmaşık, karışık",
+  "deBeispiel": "Er schreibt viel zu kompliziert.",
+  "gsw": "kompliziert",
+  "gswArtikel": null,
+  "gswBeispiel": "Er schriibt vil z kompliziert."
+ },
+ {
+  "id": 2205,
+  "de": "der Kompromiss",
+  "tr": "uzlaşma, orta yol",
+  "deBeispiel": "Alle wollen etwas anderes. Wir müssen einen Kompromiss finden.",
+  "gsw": "Kompromiss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Alli wänd öppis anders. Mir müend en Kompromiss finde."
+ },
+ {
+  "id": 2206,
+  "de": "die Konferenz",
+  "tr": "konferans",
+  "deBeispiel": "Die Konferenz findet in Raum 19 statt.",
+  "gsw": "Konferänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Konferänz findet im Ruum 19 schtatt."
+ },
+ {
+  "id": 2207,
+  "de": "die Konfitüre",
+  "tr": "reçel",
+  "deBeispiel": "Bring bitte noch ein Glas Konfitüre mit.",
+  "gsw": "Gonfi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bring bitte no es Glaas Gonfi mit.",
+  "ayniLehce": [
+   "Marmelade (A1)"
+  ]
+ },
+ {
+  "id": 2208,
+  "de": "der Konflikt",
+  "tr": "çatışma, anlaşmazlık",
+  "deBeispiel": "1. Das ist ein alter Konflikt. 2. Ich habe einen Konflikt mit meinen Eltern.",
+  "gsw": "Konflikt",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Das isch en alte Konflikt. 2. Ich ha en Konflikt mit mine Eltere."
+ },
+ {
+  "id": 2209,
+  "de": "der König",
+  "tr": "kral",
+  "deBeispiel": "Der spanische König ist in Deutschland zu Besuch.",
+  "gsw": "Küng",
+  "gswArtikel": "de",
+  "gswBeispiel": "De schpanisch Küng isch z Tüütschland uf Bsuech."
+ },
+ {
+  "id": 2210,
+  "de": "die Konkurrenz",
+  "tr": "rekabet, rakip",
+  "deBeispiel": "1. Die Reparatur ist mir hier zu teuer. Bei der Konkurrenz bekomme ich sie für die Hälfte. 2. Es ist schwer, ein Geschäf",
+  "gsw": "Konkurränz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reparatur isch mir daa z tüür. Bi de Konkurränz überchume ich si für d Helfti."
+ },
+ {
+  "id": 2211,
+  "de": "das Konsulat",
+  "tr": "konsolosluk",
+  "deBeispiel": "Ein Visum bekommst du auch im Konsulat.",
+  "gsw": "Konsulaat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es Visum überchunsch au im Konsulaat."
+ },
+ {
+  "id": 2212,
+  "de": "konsumieren",
+  "tr": "tüketmek",
+  "deBeispiel": "Die Europäer haben im letzten Jahr mehr Fleisch konsumiert.",
+  "gsw": "konsumiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Europäer händ im letschte Jaar mee Fläisch konsumiert."
+ },
+ {
+  "id": 2213,
+  "de": "der Konsum",
+  "tr": "tüketim",
+  "deBeispiel": "Der Konsum von Lebensmitteln steigt.",
+  "gsw": "Konsum",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Konsum vo Läbensmittel schtiigt."
+ },
+ {
+  "id": 2214,
+  "de": "das Girokonto",
+  "tr": "vadesiz hesap, banka hesabı",
+  "deBeispiel": "Mein Girokonto kostet gar nichts.",
+  "gsw": "Privatkonto",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mis Privatkonto choschtet gar nüüt."
+ },
+ {
+  "id": 2215,
+  "de": "die Kontrolle",
+  "tr": "kontrol, denetim",
+  "deBeispiel": "1. An den Grenzen gibt es kaum noch Kontrollen. 2. Fahrkartenkontrolle! Bitte Ihre Fahrkarten!",
+  "gsw": "Kontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. A de Gränze git s chuum no Kontrolle. 2. Billettkontrolle! Bitte Iri Billett!"
+ },
+ {
+  "id": 2216,
+  "de": "sich konzentrieren",
+  "tr": "konsantre olmak, yoğunlaşmak",
+  "deBeispiel": "Bitte stör mich jetzt nicht. Ich muss mich auf meine Arbeit konzentrieren.",
+  "gsw": "sich konzentriere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte schtör mich jetz nöd. Ich mues mich uf mini Arbet konzentriere."
+ },
+ {
+  "id": 2217,
+  "de": "kopieren",
+  "tr": "kopyalamak, fotokopi çekmek",
+  "deBeispiel": "1. Kann ich mir diesen Artikel kopieren? 2. Ich kopiere dir die Datei auf die Speicherkarte. 3. Ich kann dir die CD kopi",
+  "gsw": "kopiere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Cha ich mir dä Artikel kopiere? 2. Ich kopiere dir d Datei uf d Schpäichercharte."
+ },
+ {
+  "id": 2218,
+  "de": "die Kopie",
+  "tr": "kopya, fotokopi",
+  "deBeispiel": "Machst du mir bitte eine Kopie?",
+  "gsw": "Kopie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Machsch mir bitte e Kopie?"
+ },
+ {
+  "id": 2219,
+  "de": "der Kopierer",
+  "tr": "fotokopi makinesi",
+  "deBeispiel": "- Der Kopierer ist schon wieder kaputt.",
+  "gsw": "Kopierer",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kopierer isch scho wider kaputt."
+ },
+ {
+  "id": 2220,
+  "de": "körperlich",
+  "tr": "bedensel, fiziksel",
+  "deBeispiel": "Körperliche Arbeit macht mir nichts aus.",
+  "gsw": "körperlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Körperlichi Arbet macht mir nüüt uus."
+ },
+ {
+  "id": 2221,
+  "de": "korrekt",
+  "tr": "doğru, kurallara uygun",
+  "deBeispiel": "Ich habe die Rechnung geprüft. Alles ist korrekt.",
+  "gsw": "korrekt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha d Rächnig kontrolliert. Alles isch korrekt."
+ },
+ {
+  "id": 2222,
+  "de": "der Korridor",
+  "tr": "koridor",
+  "deBeispiel": "Wir warten draußen im Korridor.",
+  "gsw": "Gang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir warted dusse im Gang.",
+  "ayniLehce": [
+   "Flur (B1)",
+   "Gang (B1)"
+  ]
+ },
+ {
+  "id": 2223,
+  "de": "korrigieren",
+  "tr": "düzeltmek",
+  "deBeispiel": "1. Können Sie bitte meinen Brief korrigieren? 2. Der Lehrer hat meine Fehler korrigiert.",
+  "gsw": "korrigiere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Chönd Si bitte min Brief korrigiere? 2. De Leerer hät mini Fääler korrigiert."
+ },
+ {
+  "id": 2224,
+  "de": "die Kosten",
+  "tr": "masraf, gider, maliyet",
+  "deBeispiel": "Die Kosten für die Reise bekomme ich von der Firma.",
+  "gsw": "Chöschte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chöschte für d Räis überchume ich vo de Firma."
+ },
+ {
+  "id": 2225,
+  "de": "das Kostüm",
+  "tr": "kostüm",
+  "deBeispiel": "In dem Film tragen die Leute bunte Kostüme.",
+  "gsw": "Koschtüm",
+  "gswArtikel": "s",
+  "gswBeispiel": "I dem Film träged d Lüüt bunti Koschtüm."
+ },
+ {
+  "id": 2226,
+  "de": "die Kraft",
+  "tr": "güç, kuvvet",
+  "deBeispiel": "Für diese Arbeit braucht man viel Kraft.",
+  "gsw": "Chraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Arbet bruucht me vil Chraft."
+ },
+ {
+  "id": 2227,
+  "de": "kräftig",
+  "tr": "güçlü, kuvvetli",
+  "deBeispiel": "1. Der Mann ist kräftig. Er macht viel Sport und isst viel. 2. Die Suppe musst du kräftig würzen.",
+  "gsw": "chräftig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. De Maa isch chräftig. Er macht vil Schport und isst vil. 2. D Suppe muesch chräftig würze."
+ },
+ {
+  "id": 2228,
+  "de": "das Kraftfahrzeug",
+  "tr": "motorlu taşıt",
+  "deBeispiel": "Auf dieser Straße sind Kraftfahrzeuge nicht erlaubt.",
+  "gsw": "Motorfaarzüüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf dere Schtraass sind Motorfaarzüüg nöd erlaubt."
+ },
+ {
+  "id": 2229,
+  "de": "das Kraftwerk",
+  "tr": "elektrik santrali",
+  "deBeispiel": "Die Menschen protestieren gegen das Kraftwerk.",
+  "gsw": "Chraftwärch",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Lüüt proteschtiered gäge s Chraftwärch."
+ },
+ {
+  "id": 2230,
+  "de": "der Kranke",
+  "tr": "hasta (erkek, genel)",
+  "deBeispiel": "Kranke brauchen viel Ruhe.",
+  "gsw": "Chranke",
+  "gswArtikel": "de",
+  "gswBeispiel": "Chranki bruuched vil Rue."
+ },
+ {
+  "id": 2231,
+  "de": "die Kranke",
+  "tr": "hasta (kadın, genel)",
+  "deBeispiel": "Kranke brauchen viel Ruhe.",
+  "gsw": "Chranki",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chranki bruuched vil Rue."
+ },
+ {
+  "id": 2232,
+  "de": "der Krankenpfleger",
+  "tr": "erkek hemşire, hasta bakıcı",
+  "deBeispiel": "- Mein Bruder arbeitet als Krankenpfleger im Krankenhaus.",
+  "gsw": "Chrankepfleger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Brüeder schaffet als Chrankepfleger im Schpital."
+ },
+ {
+  "id": 2233,
+  "de": "die Krankenschwester",
+  "tr": "hemşire (kadın)",
+  "deBeispiel": "Meine Cousine möchte gern Krankenschwester werden.",
+  "gsw": "Chrankeschwöschter",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Cousine möcht gärn Chrankeschwöschter wärde."
+ },
+ {
+  "id": 2234,
+  "de": "der Krankenwagen",
+  "tr": "ambulans",
+  "deBeispiel": "- Wir mussten einen Krankenwagen rufen.",
+  "gsw": "Ambulanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir händ e Ambulanz müese rüefe.",
+  "ayniLehce": [
+   "Rettungswagen (A2)"
+  ]
+ },
+ {
+  "id": 2235,
+  "de": "kreativ",
+  "tr": "yaratıcı",
+  "deBeispiel": "1. Die Kinder sind beim Basteln sehr kreativ. 2. Wir brauchen eine kreative Lösung für dieses Problem.",
+  "gsw": "kreatiiv",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Chind sind bim Baschtle sehr kreatiiv. 2. Mir bruuched e kreatiivi Lösig für das Problem."
+ },
+ {
+  "id": 2237,
+  "de": "der Kreis",
+  "tr": "daire, çember, ilçe",
+  "deBeispiel": "1. Die Kinder sitzen im Kindergarten im Kreis. 2. Bitte malt jetzt alle einen Kreis in euer Heft. 3. Unser Ort gehört zu",
+  "gsw": "Chräis",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. D Chind sitzed im Chindsgi im Chräis. 2. Mir woned im Chräis 3."
+ },
+ {
+  "id": 2238,
+  "de": "das Kreuz",
+  "tr": "haç, çarpı işareti",
+  "deBeispiel": "Was bedeutet dieses Kreuz hier?",
+  "gsw": "Chrüüz",
+  "gswArtikel": "s",
+  "gswBeispiel": "Was bedüütet das Chrüüz daa?"
+ },
+ {
+  "id": 2239,
+  "de": "der Krieg",
+  "tr": "savaş",
+  "deBeispiel": "1. Es herrscht noch immer Krieg in diesem Land. 2. Der Lehrer spricht über den Zweiten Weltkrieg.",
+  "gsw": "Chrieg",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Es isch immer no Chrieg i dem Land. 2. De Leerer redt über de Zwäit Wältchrieg."
+ },
+ {
+  "id": 2240,
+  "de": "die Kriminalpolizei",
+  "tr": "cinayet masası, kriminal polis",
+  "deBeispiel": "Ein Nachbar von uns arbeitet bei der Kriminalpolizei.",
+  "gsw": "Kriminalpolizei",
+  "gswArtikel": null,
+  "gswBeispiel": "En Naachber vo eus schaffet bi de Kriminalpolizei."
+ },
+ {
+  "id": 2241,
+  "de": "die Krise",
+  "tr": "kriz",
+  "deBeispiel": "Die Wirtschaft steckt in einer schweren Krise.",
+  "gsw": "Krise",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wirtschaft schteckt in ere schwääre Krise."
+ },
+ {
+  "id": 2242,
+  "de": "kritisieren",
+  "tr": "eleştirmek",
+  "deBeispiel": "Kritisiere mich nicht so oft.",
+  "gsw": "kritisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Kritisier mich nöd so vil."
+ },
+ {
+  "id": 2243,
+  "de": "die Kritik",
+  "tr": "eleştiri",
+  "deBeispiel": "1. Es gibt viel Kritik an der Politik der Regierung. 2. Dieser Film hat sehr gute Kritiken bekommen.",
+  "gsw": "Kritik",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Es git vil Kritik a de Politik vo de Regierig. 2. Dä Film hät sehr gueti Kritike überchoo."
+ },
+ {
+  "id": 2244,
+  "de": "kritisch",
+  "tr": "eleştirel, kritik",
+  "deBeispiel": "Es gab eine Diskussion über die Lebensmittelpreise. Ein Journalist hat kritische Fragen gestellt.",
+  "gsw": "kritisch",
+  "gswArtikel": null,
+  "gswBeispiel": "En Journalischt hät kritischi Frage gschtellt."
+ }
+]

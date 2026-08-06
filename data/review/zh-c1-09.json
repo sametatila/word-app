@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6133,
+  "de": "die Abwägung",
+  "tr": "tartıp değerlendirme, muhakeme",
+  "deBeispiel": "Nach sorgfältiger Abwägung aller Argumente fiel die Entscheidung sehr knapp aus.",
+  "gsw": "Abwägig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach sorgfältiger Abwägig vo allne Argumänt isch d Entschäidig sehr chnapp uusgfalle."
+ },
+ {
+  "id": 6134,
+  "de": "die Erörterung",
+  "tr": "irdeleme, ele alma, tartışma",
+  "deBeispiel": "Die Erörterung dieser Frage nahm den halben Abend in Anspruch.",
+  "gsw": "Erörterig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erörterig vo dere Froog hät de halb Aabig in Aaschpruch gnoo."
+ },
+ {
+  "id": 6135,
+  "de": "der Streitpunkt",
+  "tr": "anlaşmazlık konusu, ihtilaf noktası",
+  "deBeispiel": "Der eigentliche Streitpunkt blieb bis zum Schluss ungeklärt.",
+  "gsw": "Schtriitpunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De eigentlich Schtriitpunkt isch bis zum Schluss ungklärt bliibe."
+ },
+ {
+  "id": 6136,
+  "de": "der Blickwinkel",
+  "tr": "bakış açısı, perspektif",
+  "deBeispiel": "Aus diesem Blickwinkel betrachtet erscheint der Einwand plötzlich berechtigt.",
+  "gsw": "Blickwinkel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Us dem Blickwinkel bschaut wirkt de Iiwand plötzlich berächtigt."
+ },
+ {
+  "id": 6137,
+  "de": "die Rhetorik",
+  "tr": "retorik, hitabet, söz sanatı",
+  "deBeispiel": "Hinter der brillanten Rhetorik verbarg sich kein einziges Argument.",
+  "gsw": "Rhetorik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hinder de brillante Rhetorik hät sich käis äinzigs Argumänt versteckt."
+ },
+ {
+  "id": 6138,
+  "de": "die Unterstellung",
+  "tr": "isnat, asılsız suçlama",
+  "deBeispiel": "Solche Unterstellungen haben in einer sachlichen Debatte nichts verloren.",
+  "gsw": "Underschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Settigi Underschtellige händ i ere sachliche Debatte nüüt verloore."
+ },
+ {
+  "id": 6139,
+  "de": "die Widerlegung",
+  "tr": "çürütme, yanlışlama",
+  "deBeispiel": "Die Widerlegung seiner Hauptthese gelang der Rednerin in wenigen Sätzen.",
+  "gsw": "Widerlegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Widerlegig vo siner Hauptthese isch de Rednerin i wenige Sätz glunge."
+ },
+ {
+  "id": 6140,
+  "de": "die Facette",
+  "tr": "yön, boyut, cephe",
+  "deBeispiel": "Der Vortrag beleuchtete auch die weniger bekannten Facetten des Problems.",
+  "gsw": "Facette",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vortrag hät au di weniger bekannte Facette vom Problem beleuchtet."
+ },
+ {
+  "id": 6141,
+  "de": "die Stoßrichtung",
+  "tr": "yönelim, hedef, saldırı yönü",
+  "deBeispiel": "Die Stoßrichtung seiner Kritik war von Anfang an klar.",
+  "gsw": "Schtoossrichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtoossrichtig vo siner Kritik isch vo Aafang aa klaar gsi."
+ },
+ {
+  "id": 6142,
+  "de": "der Duktus",
+  "tr": "üslup, anlatım tarzı",
+  "deBeispiel": "Der akademische Duktus des Textes schreckt viele Leser ab.",
+  "gsw": "Duktus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De akademisch Duktus vom Text schreckt vili Läser ab."
+ },
+ {
+  "id": 6143,
+  "de": "der Tenor",
+  "tr": "genel hava, ana ton, esas fikir",
+  "deBeispiel": "Der Tenor der gesamten Debatte war überraschend versöhnlich.",
+  "gsw": "Tenor",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Tenor vo de ganze Debatte isch überraschend versöönlich gsi."
+ },
+ {
+  "id": 6144,
+  "de": "die Replik",
+  "tr": "karşı cevap, replik",
+  "deBeispiel": "Ihre Replik auf den Zwischenruf erntete Applaus im ganzen Saal.",
+  "gsw": "Replik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Replik uf de Zwüscheruef hät im ganze Saal Applaus gärntet."
+ },
+ {
+  "id": 6145,
+  "de": "der Dissens",
+  "tr": "görüş ayrılığı, uyuşmazlık",
+  "deBeispiel": "Der Dissens betrifft weniger die Fakten als deren Deutung.",
+  "gsw": "Dissens",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dissens betrifft weniger d Fakte als iri Düütig."
+ },
+ {
+  "id": 6146,
+  "de": "der Trugschluss",
+  "tr": "yanılgı, mantık hatası",
+  "deBeispiel": "Wer so argumentiert, unterliegt einem weit verbreiteten Trugschluss.",
+  "gsw": "Trugschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wer eso argumentiert, unterliit eme wiit verbreitete Trugschluss."
+ },
+ {
+  "id": 6147,
+  "de": "der Zirkelschluss",
+  "tr": "döngüsel akıl yürütme, kısır döngü",
+  "deBeispiel": "Seine Begründung entpuppte sich bei genauem Hinsehen als Zirkelschluss.",
+  "gsw": "Zirkelschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sini Begründig hät sich bi genauem Hiiluege als Zirkelschluss entpuppt."
+ },
+ {
+  "id": 6148,
+  "de": "die Analogie",
+  "tr": "analoji, benzeşim",
+  "deBeispiel": "Die Analogie zwischen Markt und Ökosystem hinkt an entscheidender Stelle.",
+  "gsw": "Analogie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Analogie zwüsched Märt und Ökosyschtem hinkt a entschäidender Schtell."
+ },
+ {
+  "id": 6149,
+  "de": "das Gegenbeispiel",
+  "tr": "karşı örnek",
+  "deBeispiel": "Ein einziges Gegenbeispiel genügt, um die Regel zu erschüttern.",
+  "gsw": "Gägebiischpil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es äinzigs Gägebiischpil längt, zum d Regle z erschüttere."
+ },
+ {
+  "id": 6150,
+  "de": "die Grundannahme",
+  "tr": "temel varsayım",
+  "deBeispiel": "Die Grundannahme des Modells wurde nie ernsthaft geprüft.",
+  "gsw": "Grundaanaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Grundaanaam vom Modäll isch nie ärnschthaft prüeft worde."
+ },
+ {
+  "id": 6151,
+  "de": "der Einwurf",
+  "tr": "araya girme, laf atma, kısa itiraz",
+  "deBeispiel": "Sein knapper Einwurf brachte die Rednerin kurz aus dem Konzept.",
+  "gsw": "Iiwurf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin chnapp Iiwurf hät d Rednerin churz us em Konzept broocht."
+ },
+ {
+  "id": 6152,
+  "de": "die Überzeugungskraft",
+  "tr": "ikna gücü",
+  "deBeispiel": "Seinem Vortrag fehlte es trotz guter Daten an Überzeugungskraft.",
+  "gsw": "Überzüügigschraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sim Vortrag hät s trotz guete Date a Überzüügigschraft gfäält."
+ },
+ {
+  "id": 6153,
+  "de": "die Skepsis",
+  "tr": "kuşku, şüphecilik",
+  "deBeispiel": "Gegenüber solchen Prognosen ist eine gesunde Skepsis angebracht.",
+  "gsw": "Skepsis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gägenüber settige Prognose isch e gsundi Skepsis aabroocht."
+ },
+ {
+  "id": 6154,
+  "de": "die Einseitigkeit",
+  "tr": "tek yanlılık, taraflılık",
+  "deBeispiel": "Man warf dem Bericht Einseitigkeit bei der Auswahl der Quellen vor.",
+  "gsw": "Äisitigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mer hät em Bricht Äisitigkeit bi de Uuswaal vo de Quelle vorgworfe."
+ },
+ {
+  "id": 6155,
+  "de": "die Sachlichkeit",
+  "tr": "nesnellik, konuya bağlı kalma",
+  "deBeispiel": "Bei aller Leidenschaft sollten wir die Sachlichkeit nicht verlieren.",
+  "gsw": "Sachlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi allere Liidenschaft sötted mer d Sachlichkeit nöd verlüüre."
+ },
+ {
+  "id": 6156,
+  "de": "die Andeutung",
+  "tr": "ima, üstü kapalı söz",
+  "deBeispiel": "Statt klarer Kritik blieb es bei vagen Andeutungen.",
+  "gsw": "Aadüütig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtatt klaare Kritik isch es bi vaage Aadüütige bliibe."
+ },
+ {
+  "id": 6157,
+  "de": "die Ironie",
+  "tr": "ironi, alaycılık",
+  "deBeispiel": "Die Ironie seiner Bemerkung entging der Hälfte des Publikums.",
+  "gsw": "Ironie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ironie vo siner Bemerkig isch de Hälfti vom Publikum entgange."
+ },
+ {
+  "id": 6158,
+  "de": "die Stringenz",
+  "tr": "tutarlılık, mantıksal bütünlük",
+  "deBeispiel": "Der Aufsatz besticht durch Stringenz und eine klare Gliederung.",
+  "gsw": "Schtringenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Uufsatz beschticht dur Schtringenz und e klaari Gliderig."
+ },
+ {
+  "id": 6159,
+  "de": "die Prägnanz",
+  "tr": "özlülük, veciz anlatım",
+  "deBeispiel": "Mit bewundernswerter Prägnanz fasste sie die gesamte Debatte zusammen.",
+  "gsw": "Prägnanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit bewundernswerter Prägnanz hät si di ganz Debatte zämegfasst."
+ },
+ {
+  "id": 6160,
+  "de": "die Redundanz",
+  "tr": "gereksiz tekrar, fazlalık",
+  "deBeispiel": "Der Text gewinnt deutlich, wenn man die zahlreichen Redundanzen streicht.",
+  "gsw": "Redundanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Text gwinnt düütlich, wemmer di zaalriiche Redundanze schtrichet."
+ },
+ {
+  "id": 6161,
+  "de": "der Exkurs",
+  "tr": "konu dışına sapma, ek açıklama",
+  "deBeispiel": "Nach einem längeren Exkurs kehrte er zum eigentlichen Thema zurück.",
+  "gsw": "Exkurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach eme längere Exkurs isch er zum eigentliche Thema zruggchoo."
+ },
+ {
+  "id": 6162,
+  "de": "das Resümee",
+  "tr": "özet, genel değerlendirme",
+  "deBeispiel": "Zum Schluss zog die Moderatorin ein nüchternes Resümee.",
+  "gsw": "Resümee",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zum Schluss hät d Moderatorin es nüechters Resümee zoge."
+ },
+ {
+  "id": 6163,
+  "de": "die Quintessenz",
+  "tr": "öz, can alıcı nokta",
+  "deBeispiel": "Die Quintessenz seiner Rede passt in einen einzigen Satz.",
+  "gsw": "Quintessenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Quintessenz vo siner Red passt in en äinzige Satz."
+ },
+ {
+  "id": 6164,
+  "de": "die Kernaussage",
+  "tr": "ana mesaj, temel sav",
+  "deBeispiel": "Die Kernaussage der Studie wurde in den Medien stark verzerrt.",
+  "gsw": "Chernuussaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chernuussaag vo de Schtudie isch i de Medie schtark verzerrt worde."
+ },
+ {
+  "id": 6165,
+  "de": "die Suggestivfrage",
+  "tr": "yönlendirici soru",
+  "deBeispiel": "Mit dieser Suggestivfrage lenkte der Journalist das ganze Gespräch.",
+  "gsw": "Suggeschtivfroog",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit dere Suggeschtivfroog hät de Journalischt s ganz Gspröch glänkt."
+ },
+ {
+  "id": 6166,
+  "de": "der Gemeinplatz",
+  "tr": "klişe, basmakalıp söz",
+  "deBeispiel": "Seine Rede bestand fast ausschließlich aus abgegriffenen Gemeinplätzen.",
+  "gsw": "Gmeinplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sini Red hät fascht uusschliesslich us abgriffene Gmeinplätz beschtande."
+ },
+ {
+  "id": 6167,
+  "de": "die Binsenweisheit",
+  "tr": "herkesin bildiği gerçek, aşikâr şey",
+  "deBeispiel": "Dass Bildung wichtig ist, gilt inzwischen als Binsenweisheit.",
+  "gsw": "Binsewiisheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dass Bildig wichtig isch, gilt inzwüsche als Binsewiisheit."
+ },
+ {
+  "id": 6168,
+  "de": "zugestehen",
+  "tr": "kabul etmek, hakkını teslim etmek",
+  "deBeispiel": "Man muss ihm zugestehen, dass seine Zahlen korrekt sind.",
+  "gsw": "zuegschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer mues em zuegschtaa, dass sini Zaale korrekt sind."
+ },
+ {
+  "id": 6169,
+  "de": "folgern",
+  "tr": "sonuç çıkarmak, çıkarımda bulunmak",
+  "deBeispiel": "Daraus folgerte der Autor voreilig einen kausalen Zusammenhang.",
+  "gsw": "folgere",
+  "gswArtikel": null,
+  "gswBeispiel": "Daadrus hät de Autor voreilig en kausale Zämehang gfolgeret."
+ },
+ {
+  "id": 6170,
+  "de": "bezweifeln",
+  "tr": "kuşku duymak, şüphe etmek",
+  "deBeispiel": "Niemand bezweifelt die Fakten, wohl aber ihre Deutung.",
+  "gsw": "bezwiifle",
+  "gswArtikel": null,
+  "gswBeispiel": "Niemert bezwiiflet d Fakte, wool aber iri Düütig."
+ },
+ {
+  "id": 6171,
+  "de": "differenzieren",
+  "tr": "ayrım yapmak, ince ayrıma gitmek",
+  "deBeispiel": "An dieser Stelle müssen wir sehr genau differenzieren.",
+  "gsw": "differenziere",
+  "gswArtikel": null,
+  "gswBeispiel": "A dere Schtell müend mer sehr genau differenziere."
+ },
+ {
+  "id": 6172,
+  "de": "anführen",
+  "tr": "öne sürmek, örnek göstermek, zikretmek",
+  "deBeispiel": "Als Beleg führte er eine ältere Studie aus Schweden an.",
+  "gsw": "aafüere",
+  "gswArtikel": null,
+  "gswBeispiel": "Als Beleg hät er e elteri Schtudie us Schwede aagfüert."
+ },
+ {
+  "id": 6173,
+  "de": "vorbringen",
+  "tr": "ileri sürmek, dile getirmek",
+  "deBeispiel": "Gegen diesen Vorschlag hat bislang niemand ernsthafte Bedenken vorgebracht.",
+  "gsw": "vorbringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Gäge dää Vorschlaag hät bishär niemert ärnschthafti Bedänke vorbroocht."
+ },
+ {
+  "id": 6174,
+  "de": "beipflichten",
+  "tr": "hak vermek, katılmak",
+  "deBeispiel": "In diesem Punkt kann ich meinem Vorredner nur beipflichten.",
+  "gsw": "biipflichte",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Punkt cha ich mim Vorredner nu biipflichte."
+ },
+ {
+  "id": 6175,
+  "de": "entgegenhalten",
+  "tr": "karşı olarak ileri sürmek, karşılık vermek",
+  "deBeispiel": "Dem hielt die Kritikerin eine ganze Reihe neuerer Studien entgegen.",
+  "gsw": "entgägehalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Dem hät d Kritikerin e ganzi Reie vo neuere Schtudie entgägeghalte."
+ },
+ {
+  "id": 6176,
+  "de": "monieren",
+  "tr": "kusur bulmak, eleştirmek",
+  "deBeispiel": "Mehrere Gutachter monierten die unklare Fragestellung der Arbeit.",
+  "gsw": "moniere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mehreri Guetachter händ di unklaari Frooschtellig vo de Arbet moniert."
+ },
+ {
+  "id": 6177,
+  "de": "plädieren",
+  "tr": "savunmak, taraf olmak",
+  "deBeispiel": "Die Fachleute plädieren für ein deutlich behutsameres Vorgehen.",
+  "gsw": "plädiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fachlüüt plädiered für es düütlich behuetsamers Vorgaa."
+ },
+ {
+  "id": 6178,
+  "de": "konzedieren",
+  "tr": "kabul etmek, teslim etmek",
+  "deBeispiel": "Selbst seine Gegner konzedieren ihm eine gewisse gedankliche Konsequenz.",
+  "gsw": "konzediere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sogar sini Gägner konzediered em e gwüssi gedanklichi Konsequänz."
+ },
+ {
+  "id": 6179,
+  "de": "revidieren",
+  "tr": "gözden geçirmek, düzeltmek",
+  "deBeispiel": "Angesichts neuer Daten musste sie ihre These revidieren.",
+  "gsw": "revidiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Aagsichts neue Date hät si iri These müesse revidiere."
+ },
+ {
+  "id": 6180,
+  "de": "nahelegen",
+  "tr": "düşündürmek, işaret etmek, telkin etmek",
+  "deBeispiel": "Die Befunde legen einen ganz anderen Schluss nahe.",
+  "gsw": "naaheleege",
+  "gswArtikel": null,
+  "gswBeispiel": "D Befund tüend en ganz andere Schluss naaheleege."
+ },
+ {
+  "id": 6181,
+  "de": "indes",
+  "tr": "ne var ki, oysa, bununla birlikte",
+  "deBeispiel": "Sein Einwand klang plausibel, entbehrte indes jeder empirischen Grundlage.",
+  "gsw": "indes",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Iiwand hät plausibel tönt, es hät em indes jedi empirischi Grundlaag gfäält."
+ },
+ {
+  "id": 6182,
+  "de": "hingegen",
+  "tr": "buna karşılık, ise",
+  "deBeispiel": "Die erste Studie bestätigt den Effekt, die zweite hingegen nicht.",
+  "gsw": "hingäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Di erscht Schtudie beschtätigt de Effekt, di zwäit hingäge nöd."
+ },
+ {
+  "id": 6183,
+  "de": "folglich",
+  "tr": "dolayısıyla, bu nedenle",
+  "deBeispiel": "Die Prämisse ist falsch, folglich bricht die ganze Argumentation zusammen.",
+  "gsw": "folglich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Prämisse isch falsch, folglich bricht di ganz Argumentation zäme."
+ },
+ {
+  "id": 6184,
+  "de": "freilich",
+  "tr": "gerçi, ne var ki, elbette",
+  "deBeispiel": "Der Vergleich ist reizvoll, trägt freilich nur bedingt.",
+  "gsw": "freilich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vergliich isch reizvoll, treit freilich nu bedingt."
+ },
+ {
+  "id": 6185,
+  "de": "wenngleich",
+  "tr": "her ne kadar, -sa da",
+  "deBeispiel": "Seine Kritik ist berechtigt, wenngleich sie deutlich zu scharf ausfällt.",
+  "gsw": "wänngliich",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Kritik isch berächtigt, wänngliich si düütlich z scharf uusfallt."
+ },
+ {
+  "id": 6186,
+  "de": "mitnichten",
+  "tr": "asla, hiç de değil",
+  "deBeispiel": "Damit ist die entscheidende Frage mitnichten beantwortet.",
+  "gsw": "mitnichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Damit isch di entschäidend Froog mitnichte beantwortet."
+ },
+ {
+  "id": 6187,
+  "de": "vermeintlich",
+  "tr": "sözde, güya, öyle sanılan",
+  "deBeispiel": "Der vermeintliche Widerspruch löst sich bei genauerer Betrachtung auf.",
+  "gsw": "vermeintlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De vermeintlich Widerschpruch löst sich bi genauerer Betrachtig uuf."
+ },
+ {
+  "id": 6188,
+  "de": "fadenscheinig",
+  "tr": "sudan, asılsız, inandırıcılıktan uzak",
+  "deBeispiel": "Mit fadenscheinigen Argumenten versuchte er, die Kritik abzuwehren.",
+  "gsw": "fadeschiinig",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit fadeschiinige Argumänt hät er probiert, d Kritik abzwehre."
+ },
+ {
+  "id": 6189,
+  "de": "stichhaltig",
+  "tr": "sağlam, tutarlı, geçerli",
+  "deBeispiel": "Für diese Annahme gibt es bislang kein stichhaltiges Argument.",
+  "gsw": "schtichhaltig",
+  "gswArtikel": null,
+  "gswBeispiel": "Für die Aanaam gits bishär käis schtichhaltigs Argumänt."
+ },
+ {
+  "id": 6190,
+  "de": "zweifelsohne",
+  "tr": "hiç kuşkusuz, şüphesiz",
+  "deBeispiel": "Sie war zweifelsohne die klügste Rednerin des Abends.",
+  "gsw": "zwiifelsooni",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch zwiifelsooni di gschiitischt Rednerin vom Aabig gsi."
+ },
+ {
+  "id": 6191,
+  "de": "implizit",
+  "tr": "örtük, dolaylı, zımni",
+  "deBeispiel": "Diese Kritik war in seinem Vortrag nur implizit enthalten.",
+  "gsw": "implizit",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Kritik isch i sim Vortrag nu implizit enthalte gsi."
+ },
+ {
+  "id": 6192,
+  "de": "der Netzausbau",
+  "tr": "şebeke genişletme, şebeke yatırımı",
+  "deBeispiel": "Ohne einen zügigen Netzausbau bleibt der erzeugte Strom im Norden liegen.",
+  "gsw": "Netzuusbau",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni en zügige Netzuusbau bliibt de erzügt Schtrom im Norde ligge."
+ },
+ {
+  "id": 6193,
+  "de": "das Netzentgelt",
+  "tr": "şebeke kullanım bedeli, iletim ücreti",
+  "deBeispiel": "Steigende Netzentgelte treffen vor allem Haushalte mit geringem Einkommen.",
+  "gsw": "Netzentgält",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schtiigendi Netzentgält träffed vor allem Huushalt mit chliinem Iikoo."
+ },
+ {
+  "id": 6194,
+  "de": "die Netzstabilität",
+  "tr": "şebeke istikrarı",
+  "deBeispiel": "Bei schwankender Einspeisung wird die Netzstabilität zur eigentlichen Herausforderung.",
+  "gsw": "Netzschtabilität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi schwankender Iischpiisig wird d Netzschtabilität zur eigentliche Uusforderig."
+ },
+ {
+  "id": 6195,
+  "de": "das Übertragungsnetz",
+  "tr": "iletim şebekesi",
+  "deBeispiel": "Das Übertragungsnetz stammt in weiten Teilen noch aus den siebziger Jahren.",
+  "gsw": "Übertragigsnetz",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Übertragigsnetz schtammt i wiite Teil no us de siebziger Jaar."
+ },
+ {
+  "id": 6196,
+  "de": "die Grundlast",
+  "tr": "baz yük, temel yük",
+  "deBeispiel": "Wer deckt künftig die Grundlast, wenn die alten Kraftwerke wegfallen?",
+  "gsw": "Grundlascht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer deckt künftig d Grundlascht, wänn di alte Chraftwärch wägfallet?"
+ },
+ {
+  "id": 6197,
+  "de": "die Spitzenlast",
+  "tr": "puant yük, tepe yük",
+  "deBeispiel": "An kalten Winterabenden erreicht die Spitzenlast regelmäßig kritische Werte.",
+  "gsw": "Schpitzelascht",
+  "gswArtikel": "d",
+  "gswBeispiel": "A chalte Winteraabige erräicht d Schpitzelascht regelmässig kritischi Wert."
+ },
+ {
+  "id": 6198,
+  "de": "die Einspeisung",
+  "tr": "şebekeye besleme, elektrik verme",
+  "deBeispiel": "Die Einspeisung aus privaten Anlagen hat sich binnen fünf Jahren verdoppelt.",
+  "gsw": "Iischpiisig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iischpiisig us private Aalaage hät sich innerhalb vo füüf Jaar verdopplet."
+ },
+ {
+  "id": 6199,
+  "de": "die Speicherkapazität",
+  "tr": "depolama kapasitesi",
+  "deBeispiel": "Ohne zusätzliche Speicherkapazität lässt sich der Überschuss kaum sinnvoll nutzen.",
+  "gsw": "Schpiicherkapazität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni zuesätzlichi Schpiicherkapazität lat sich de Überschuss chuum sinnvoll nutze."
+ },
+ {
+  "id": 6200,
+  "de": "der Stromausfall",
+  "tr": "elektrik kesintisi",
+  "deBeispiel": "Ein großflächiger Stromausfall würde die Debatte über Reservekraftwerke sofort verändern.",
+  "gsw": "Schtromuusfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "En groossflächige Schtromuusfall würd d Debatte über Reservechraftwärch sofort verändere."
+ },
+ {
+  "id": 6201,
+  "de": "die Kapazitätsreserve",
+  "tr": "kapasite yedeği, yedek kapasite",
+  "deBeispiel": "Die Kapazitätsreserve wird nur in ausgewiesenen Notlagen überhaupt abgerufen.",
+  "gsw": "Kapazitätsreserve",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kapazitätsreserve wird nu i uusgwisene Notlaage überhaupt abgrüeft."
+ },
+ {
+  "id": 6202,
+  "de": "der Investitionszyklus",
+  "tr": "yatırım döngüsü",
+  "deBeispiel": "Im Energiesektor umfasst ein Investitionszyklus leicht drei Jahrzehnte.",
+  "gsw": "Inveschtitionszyklus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Energiesektor umfasst en Inveschtitionszyklus liicht drei Jaarzähnt."
+ },
+ {
+  "id": 6203,
+  "de": "die Amortisation",
+  "tr": "yatırımın kendini amorti etmesi, geri ödeme süresi",
+  "deBeispiel": "Die Amortisation der Anlage verzögert sich durch die niedrigen Marktpreise.",
+  "gsw": "Amortisation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Amortisation vo de Aalaag verzögeret sich dur di tüüfe Märtpriis."
+ },
+ {
+  "id": 6204,
+  "de": "die Anschubfinanzierung",
+  "tr": "başlangıç finansmanı, ilk destek fonu",
+  "deBeispiel": "Der Bund stellt eine Anschubfinanzierung bereit, den Rest tragen die Kommunen.",
+  "gsw": "Aaschubfinanzierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Bund schtellt e Aaschubfinanzierig bereit, de Rescht träged d Gmeinde."
+ },
+ {
+  "id": 6205,
+  "de": "der Kapitalbedarf",
+  "tr": "sermaye ihtiyacı",
+  "deBeispiel": "Der Kapitalbedarf übersteigt bei Weitem das, was ein Stadtwerk allein stemmen kann.",
+  "gsw": "Kapitalbedarf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kapitalbedarf übertrifft bi wiitem das, wo es Schtadtwärch elläi cha schtemme."
+ },
+ {
+  "id": 6206,
+  "de": "die Renditeerwartung",
+  "tr": "getiri beklentisi",
+  "deBeispiel": "Private Investoren steigen nur bei planbaren Renditeerwartungen ein.",
+  "gsw": "Renditeerwartig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Privati Inveschtore schtiiged nu bi plaanbare Renditeerwartige ii."
+ },
+ {
+  "id": 6207,
+  "de": "die Grenzkosten",
+  "tr": "marjinal maliyet",
+  "deBeispiel": "Windkraft verdrängt teure Kraftwerke, weil ihre Grenzkosten nahezu null betragen.",
+  "gsw": "Gränzchoschte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Windchraft verdrängt tüüri Chraftwärch, wil iri Gränzchoschte fascht null betraged."
+ },
+ {
+  "id": 6208,
+  "de": "die Folgekosten",
+  "tr": "sonradan doğan maliyetler, ardından gelen masraflar",
+  "deBeispiel": "Die Folgekosten des Rückbaus wurden in der ursprünglichen Rechnung schlicht ausgeblendet.",
+  "gsw": "Folgechoschte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Folgechoschte vom Rückbau sind i de ursprüngliche Rächnig äifach uusblendet worde."
+ },
+ {
+  "id": 6209,
+  "de": "die Kostenüberschreitung",
+  "tr": "maliyet aşımı",
+  "deBeispiel": "Bei Großprojekten gilt eine Kostenüberschreitung inzwischen fast als Regelfall.",
+  "gsw": "Choschteüberschriitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi Groossprojekt gilt e Choschteüberschriitig inzwüsche fascht als Regelfall."
+ },
+ {
+  "id": 6210,
+  "de": "der Skaleneffekt",
+  "tr": "ölçek etkisi, ölçek ekonomisi",
+  "deBeispiel": "Erst bei großen Stückzahlen greifen die erhofften Skaleneffekte wirklich.",
+  "gsw": "Skaleneffekt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Erscht bi groosse Schtückzaale griifed di erhoffte Skaleneffekt würklich."
+ },
+ {
+  "id": 6211,
+  "de": "das Einsparpotenzial",
+  "tr": "tasarruf potansiyeli",
+  "deBeispiel": "Das größte Einsparpotenzial liegt nach wie vor im Gebäudebestand.",
+  "gsw": "Iischparpotenzial",
+  "gswArtikel": "s",
+  "gswBeispiel": "S grööscht Iischparpotenzial liit nach wie vor im Gebäudebeschtand."
+ },
+ {
+  "id": 6212,
+  "de": "die Importabhängigkeit",
+  "tr": "ithalata bağımlılık",
+  "deBeispiel": "Die Importabhängigkeit bei Gas hat sich als politisches Druckmittel erwiesen.",
+  "gsw": "Importabhängigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Importabhängigkeit bim Gas hät sich als politischs Druckmittel erwise."
+ },
+ {
+  "id": 6213,
+  "de": "die Trägerschaft",
+  "tr": "işletme sorumluluğu, sahiplik yapısı",
+  "deBeispiel": "Über die künftige Trägerschaft des Netzes wird seit Monaten gestritten.",
+  "gsw": "Trägerschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über di künftig Trägerschaft vom Netz wird sit Monet gschtritte."
+ },
+ {
+  "id": 6214,
+  "de": "die Konzession",
+  "tr": "imtiyaz, işletme ruhsatı",
+  "deBeispiel": "Die Konzession läuft in zwei Jahren aus und wird neu vergeben.",
+  "gsw": "Konzession",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Konzession lauft in zwäi Jaar uus und wird neu vergää."
+ },
+ {
+  "id": 6215,
+  "de": "das Vergabeverfahren",
+  "tr": "ihale süreci, tahsis usulü",
+  "deBeispiel": "Das Vergabeverfahren wurde nach einer Rüge der Aufsicht vollständig wiederholt.",
+  "gsw": "Vergaabverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Vergaabverfaare isch nach ere Rüeg vo de Uufsicht vollschtändig widerhoolt worde."
+ },
+ {
+  "id": 6216,
+  "de": "das Betreibermodell",
+  "tr": "işletme modeli",
+  "deBeispiel": "Man einigte sich auf ein Betreibermodell mit öffentlicher Mehrheitsbeteiligung.",
+  "gsw": "Betriibermodäll",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mer hät sich uf es Betriibermodäll mit öffentlicher Meerheitsbeteiligig gäinigt."
+ },
+ {
+  "id": 6217,
+  "de": "das Konsortium",
+  "tr": "konsorsiyum, ortak girişim",
+  "deBeispiel": "Ein internationales Konsortium übernimmt Bau und Betrieb der Anlage.",
+  "gsw": "Konsortium",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es internationals Konsortium übernimmt Bau und Betrib vo de Aalaag."
+ },
+ {
+  "id": 6218,
+  "de": "das Beteiligungsmodell",
+  "tr": "ortaklık modeli, katılım modeli",
+  "deBeispiel": "Ein faires Beteiligungsmodell erhöht die Zustimmung der betroffenen Gemeinden spürbar.",
+  "gsw": "Beteiligigsmodäll",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es fairs Beteiligigsmodäll erhöcht d Zueschtimmig vo de betroffene Gmeinde spürbar."
+ },
+ {
+  "id": 6219,
+  "de": "die Rekommunalisierung",
+  "tr": "yeniden belediyeleştirme, kamuya geri alma",
+  "deBeispiel": "Die Rekommunalisierung der Wasserversorgung gilt manchen als Vorbild.",
+  "gsw": "Rekommunalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rekommunalisierig vo de Wasserversorgig gilt mängem als Vorbild."
+ },
+ {
+  "id": 6220,
+  "de": "das Genehmigungsverfahren",
+  "tr": "izin süreci, ruhsat prosedürü",
+  "deBeispiel": "Das Genehmigungsverfahren dauert länger als der eigentliche Bau der Leitung.",
+  "gsw": "Gnämigigsverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Gnämigigsverfaare duuret länger als de eigentlich Bau vo de Leitig."
+ },
+ {
+  "id": 6221,
+  "de": "die Planfeststellung",
+  "tr": "güzergâh onay kararı, proje onayı",
+  "deBeispiel": "Erst nach der Planfeststellung darf mit den Erdarbeiten begonnen werden.",
+  "gsw": "Planfeschtschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Erscht nach de Planfeschtschtellig dörf mit de Erdarbete aagfange werde."
+ },
+ {
+  "id": 6222,
+  "de": "die Trassenführung",
+  "tr": "güzergâh belirleme, hat güzergâhı",
+  "deBeispiel": "Gegen die geplante Trassenführung regt sich in den Dörfern erheblicher Widerstand.",
+  "gsw": "Trassefüerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge di plaanti Trassefüerig regt sich i de Dörfer erhebliche Widerschtand."
+ },
+ {
+  "id": 6223,
+  "de": "der Zielkonflikt",
+  "tr": "hedef çatışması, amaçlar arası çelişki",
+  "deBeispiel": "Zwischen Naturschutz und Netzausbau besteht ein kaum auflösbarer Zielkonflikt.",
+  "gsw": "Ziilkonflikt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zwüsched Naturschutz und Netzuusbau bschtaat en chuum uuflösbare Ziilkonflikt."
+ },
+ {
+  "id": 6224,
+  "de": "die Pfadabhängigkeit",
+  "tr": "yol bağımlılığı, geçmiş tercihlere bağlılık",
+  "deBeispiel": "Frühere Entscheidungen erzeugen eine Pfadabhängigkeit, die spätere Korrekturen erschwert.",
+  "gsw": "Pfadabhängigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Früeneri Entschäidige erzüüged e Pfadabhängigkeit, wo spöteri Korrekture erschwert."
+ },
+ {
+  "id": 6225,
+  "de": "die Regulierungsbehörde",
+  "tr": "düzenleyici kurum",
+  "deBeispiel": "Die Regulierungsbehörde prüft, ob die veranschlagten Kosten überhaupt anerkennungsfähig sind.",
+  "gsw": "Regulierigsbehörde",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Regulierigsbehörde prüeft, öb di veraaschlagte Choschte überhaupt aanerkennigsfäig sind."
+ },
+ {
+  "id": 6226,
+  "de": "die Entflechtung",
+  "tr": "ayrıştırma, yapısal ayrım",
+  "deBeispiel": "Die Entflechtung von Netzbetrieb und Stromhandel war politisch hart umkämpft.",
+  "gsw": "Entflächtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entflächtig vo Netzbetrib und Schtromhandel isch politisch hert umchämpft gsi."
+ },
+ {
+  "id": 6227,
+  "de": "die Umlage",
+  "tr": "paylaştırılan katkı payı, tüketiciye yansıtılan pay",
+  "deBeispiel": "Die Kosten werden über eine Umlage auf alle Verbraucher verteilt.",
+  "gsw": "Umlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Choschte werded über e Umlaag uf alli Verbrucher verteilt."
+ },
+ {
+  "id": 6228,
+  "de": "das Verursacherprinzip",
+  "tr": "kirleten öder ilkesi",
+  "deBeispiel": "Nach dem Verursacherprinzip müsste die Industrie einen größeren Anteil tragen.",
+  "gsw": "Verursacherprinzip",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach em Verursacherprinzip müesst d Induschtrie en grössere Aateil träge."
+ },
+ {
+  "id": 6229,
+  "de": "die Machbarkeitsstudie",
+  "tr": "fizibilite çalışması",
+  "deBeispiel": "Die Machbarkeitsstudie kam zu einem deutlich nüchterneren Ergebnis als erwartet.",
+  "gsw": "Machbarkeitsschtudie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Machbarkeitsschtudie isch zu eme düütlich nüechterere Ergäbnis choo als erwartet."
+ },
+ {
+  "id": 6230,
+  "de": "der Fördermechanismus",
+  "tr": "teşvik mekanizması, destekleme düzeni",
+  "deBeispiel": "Der bisherige Fördermechanismus belohnt Ausbau, nicht aber Systemdienlichkeit.",
+  "gsw": "Fördermechanismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De bishärig Fördermechanismus belohnt Uusbau, aber nöd Syschtemdienlichkeit."
+ },
+ {
+  "id": 6231,
+  "de": "der Transformationspfad",
+  "tr": "dönüşüm patikası, dönüşüm rotası",
+  "deBeispiel": "Alle Szenarien beschreiben denselben Transformationspfad mit unterschiedlichem Tempo.",
+  "gsw": "Transformationspfad",
+  "gswArtikel": "de",
+  "gswBeispiel": "Alli Szenarie beschriibed dä gliich Transformationspfad mit unterschidlichem Tempo."
+ },
+ {
+  "id": 6232,
+  "de": "bereitstellen",
+  "tr": "sağlamak, tahsis etmek",
+  "deBeispiel": "Für den Umbau der Kraftwerke werden zusätzliche Mittel bereitgestellt.",
+  "gsw": "bereitschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Für de Umbau vo de Chraftwärch werded zuesätzlichi Mittel bereitgschtellt."
+ },
+ {
+  "id": 6233,
+  "de": "umrüsten",
+  "tr": "dönüştürmek, teçhizatını değiştirmek",
+  "deBeispiel": "Die Anlage soll bis zum Winter auf Wasserstoff umgerüstet werden.",
+  "gsw": "umrüschte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aalaag söll bis zum Winter uf Wasserschtoff umgrüschtet werde."
+ },
+ {
+  "id": 6234,
+  "de": "refinanzieren",
+  "tr": "yeniden finanse etmek, borcu çevirmek",
+  "deBeispiel": "Der Betreiber muss den Kredit zu deutlich schlechteren Konditionen refinanzieren.",
+  "gsw": "refinanziere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betriiber mues de Kredit zu düütlich schlächtere Konditione refinanziere."
+ },
+ {
+  "id": 6235,
+  "de": "liberalisieren",
+  "tr": "serbestleştirmek",
+  "deBeispiel": "Der Markt wurde in den neunziger Jahren schrittweise liberalisiert.",
+  "gsw": "liberalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Märt isch i de nüünziger Jaar schrittwiis liberalisiert worde."
+ },
+ {
+  "id": 6236,
+  "de": "ertüchtigen",
+  "tr": "güçlendirmek, kapasitesini iyileştirmek",
+  "deBeispiel": "Bestehende Leitungen lassen sich oft günstiger ertüchtigen als neu bauen.",
+  "gsw": "ertüchtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Beschtaandi Leitige lönd sich oft günschtiger ertüchtige als neu baue."
+ },
+ {
+  "id": 6237,
+  "de": "überbrücken",
+  "tr": "(dönemi, boşluğu) geçici olarak kapatmak, idare etmek",
+  "deBeispiel": "Reservekraftwerke sollen die kritischen Wochen im Februar überbrücken.",
+  "gsw": "überbrugge",
+  "gswArtikel": null,
+  "gswBeispiel": "Reservechraftwärch söllet di kritische Wuche im Februar überbrugge."
+ },
+ {
+  "id": 6238,
+  "de": "staffeln",
+  "tr": "kademelendirmek, basamaklandırmak",
+  "deBeispiel": "Die Abgabe wird nach Verbrauch gestaffelt, damit Sparsamkeit belohnt wird.",
+  "gsw": "schtaffle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Abgaab wird nach Verbruuch gschtafflet, damit Sparsamkeit belohnt wird."
+ },
+ {
+  "id": 6239,
+  "de": "deckeln",
+  "tr": "tavan koymak, üst sınır belirlemek",
+  "deBeispiel": "Die Politik hat die Preise für Grundverbrauch vorübergehend gedeckelt.",
+  "gsw": "deckle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Politik hät d Priis für de Grundverbruuch vorübergehend gdeckelet."
+ },
+ {
+  "id": 6240,
+  "de": "umschichten",
+  "tr": "kaynak aktarmak, yeniden dağıtmak",
+  "deBeispiel": "Mittel aus dem Straßenbau wurden in die Schiene umgeschichtet.",
+  "gsw": "umschichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Mittel us em Schtraassebau sind i d Schine umgschichtet worde."
+ },
+ {
+  "id": 6241,
+  "de": "festschreiben",
+  "tr": "yazılı olarak sabitlemek, hükme bağlamak",
+  "deBeispiel": "Das Abkommen schreibt verbindliche Zwischenziele bis 2035 fest.",
+  "gsw": "feschtschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Abkomme sind verbindlichi Zwüscheziil bis 2035 feschtgschribe worde."
+ },
+ {
+  "id": 6242,
+  "de": "hinauszögern",
+  "tr": "sürüncemede bırakmak, oyalayarak geciktirmek",
+  "deBeispiel": "Die Betreiber zögern kostspielige Nachrüstungen mit juristischen Mitteln hinaus.",
+  "gsw": "usezögere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Betriiber probiered, choschtspieligi Naachrüschtige mit juristische Mittel usezögere."
+ }
+]

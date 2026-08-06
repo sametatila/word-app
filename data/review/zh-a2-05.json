@@ -1,0 +1,998 @@
+[
+ {
+  "id": 1335,
+  "de": "der Zoo",
+  "tr": "hayvanat bahçesi",
+  "deBeispiel": "Am Sonntag gehen wir in den Zoo.",
+  "gsw": "Zoo",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Sunntig gömmer in Zoo."
+ },
+ {
+  "id": 1336,
+  "de": "der Zucker",
+  "tr": "şeker",
+  "deBeispiel": "Trinken Sie den Tee mit oder ohne Zucker?",
+  "gsw": "Zucker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Trinked Si de Tee mit oder ohni Zucker?"
+ },
+ {
+  "id": 1337,
+  "de": "zuhören",
+  "tr": "dinlemek, kulak vermek",
+  "deBeispiel": "Hör mir doch mal zu! Ich rede mit dir.",
+  "gsw": "zuelose",
+  "gswArtikel": null,
+  "gswBeispiel": "Du muesch mer emaal richtig zuelose! Ich rede mit dir."
+ },
+ {
+  "id": 1338,
+  "de": "zuletzt",
+  "tr": "en son, sonunda",
+  "deBeispiel": "Wir haben uns vor drei Jahren zuletzt gesehen. Diese Aufgabe machen wir zuletzt.",
+  "gsw": "zletscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ üs vor drüü Jaar zletscht gsee. Die Ufgab mached mir zletscht."
+ },
+ {
+  "id": 1339,
+  "de": "zurück-",
+  "tr": "geri (dönmek, vermek, gitmek)",
+  "deBeispiel": "Fahrt ihr nach der Party zurück nach Hause? Wann muss ich das Buch zurückgeben? Wir gehen wieder zurück. Wann kommst du ",
+  "gsw": "zrugg-",
+  "gswArtikel": null,
+  "gswBeispiel": "Fahred ihr nach em Fäscht zrugg häi? Wänn mues ich s Buech zrugggää? Mir gönd wider zrugg."
+ },
+ {
+  "id": 7430,
+  "de": "winzig",
+  "tr": "minicik, çok küçük",
+  "deBeispiel": "Unsere erste Wohnung war winzig.",
+  "gsw": "winzig",
+  "gswArtikel": null,
+  "gswBeispiel": "Öisi erschti Wonig isch winzig gsii."
+ },
+ {
+  "id": 7431,
+  "de": "gigantisch",
+  "tr": "devasa, kocaman",
+  "deBeispiel": "Vor dem Bahnhof steht eine gigantische Uhr.",
+  "gsw": "gigantisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Bahnhof staat e gigantischi Uhr."
+ },
+ {
+  "id": 7432,
+  "de": "oval",
+  "tr": "oval",
+  "deBeispiel": "Der Spiegel im Flur ist oval.",
+  "gsw": "oval",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schpiegel im Gang isch oval."
+ },
+ {
+  "id": 7433,
+  "de": "massiv",
+  "tr": "masif, som",
+  "deBeispiel": "Der Tisch ist aus massivem Holz.",
+  "gsw": "massiv",
+  "gswArtikel": null,
+  "gswBeispiel": "De Tisch isch us massivem Holz."
+ },
+ {
+  "id": 7434,
+  "de": "zart",
+  "tr": "yumuşacık, ince",
+  "deBeispiel": "Das Fleisch ist heute besonders zart.",
+  "gsw": "zart",
+  "gswArtikel": null,
+  "gswBeispiel": "S Fläisch isch hüt bsunders zart."
+ },
+ {
+  "id": 7435,
+  "de": "grob",
+  "tr": "kaba, iri taneli",
+  "deBeispiel": "Das Salz ist zu grob für den Salat.",
+  "gsw": "grob",
+  "gswArtikel": null,
+  "gswBeispiel": "S Salz isch z grob für de Salat."
+ },
+ {
+  "id": 7436,
+  "de": "steif",
+  "tr": "sert, katı (esnemeyen, bükülmeyen)",
+  "deBeispiel": "Der neue Lederschuh ist noch sehr steif.",
+  "gsw": "schtiif",
+  "gswArtikel": null,
+  "gswBeispiel": "De nöi Läderschue isch no sehr schtiif."
+ },
+ {
+  "id": 7437,
+  "de": "rau",
+  "tr": "pürüzlü, kaba",
+  "deBeispiel": "Die Wand ist rau und nicht gestrichen.",
+  "gsw": "ruuch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wand isch ruuch und nöd gschtriche."
+ },
+ {
+  "id": 7438,
+  "de": "klebrig",
+  "tr": "yapış yapış, yapışkan",
+  "deBeispiel": "Der Tisch ist noch klebrig vom Saft.",
+  "gsw": "chläbrig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Tisch isch no chläbrig vom Saft."
+ },
+ {
+  "id": 7439,
+  "de": "staubig",
+  "tr": "tozlu",
+  "deBeispiel": "Die Bücher im Keller sind sehr staubig.",
+  "gsw": "schtaubig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Büecher im Chäller sind sehr schtaubig."
+ },
+ {
+  "id": 7440,
+  "de": "glänzend",
+  "tr": "parlak",
+  "deBeispiel": "Nach dem Putzen ist der Boden richtig glänzend.",
+  "gsw": "glänzend",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Putze isch de Bode richtig glänzend."
+ },
+ {
+  "id": 7441,
+  "de": "matt",
+  "tr": "mat",
+  "deBeispiel": "Wir haben die Wände in einem matten Weiß gestrichen.",
+  "gsw": "matt",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ d Wänd in eme matte Wiiss gschtriche."
+ },
+ {
+  "id": 7442,
+  "de": "hölzern",
+  "tr": "ahşap, tahtadan",
+  "deBeispiel": "Auf dem Balkon steht ein hölzerner Stuhl.",
+  "gsw": "hölzig",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Balkon staat en hölzige Schtuel."
+ },
+ {
+  "id": 7443,
+  "de": "metallisch",
+  "tr": "metalik, madensi",
+  "deBeispiel": "Das Wasser hier schmeckt etwas metallisch.",
+  "gsw": "metallisch",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wasser da schmöckt chli metallisch."
+ },
+ {
+  "id": 7444,
+  "de": "wasserdicht",
+  "tr": "su geçirmez",
+  "deBeispiel": "Meine neue Jacke ist zum Glück wasserdicht.",
+  "gsw": "wasserdicht",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini nöi Jagge isch zum Glück wasserdicht."
+ },
+ {
+  "id": 7445,
+  "de": "hellblau",
+  "tr": "açık mavi",
+  "deBeispiel": "Sie trägt ein hellblaues Hemd.",
+  "gsw": "hellblau",
+  "gswArtikel": null,
+  "gswBeispiel": "Si treit es hellblaus Hemd."
+ },
+ {
+  "id": 7446,
+  "de": "dunkelblau",
+  "tr": "koyu mavi, lacivert",
+  "deBeispiel": "Der Koffer ist dunkelblau und ziemlich groß.",
+  "gsw": "dunkelblau",
+  "gswArtikel": null,
+  "gswBeispiel": "De Koffer isch dunkelblau und ziemli grooss."
+ },
+ {
+  "id": 7447,
+  "de": "bläulich",
+  "tr": "mavimsi",
+  "deBeispiel": "Am Abend wird der Schnee bläulich.",
+  "gsw": "bläulich",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig wird de Schnee bläulich."
+ },
+ {
+  "id": 7448,
+  "de": "rötlich",
+  "tr": "kırmızımsı",
+  "deBeispiel": "Ihre Haare sind rötlich, fast orange.",
+  "gsw": "rötlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Iri Haar sind rötlich, fascht orange."
+ },
+ {
+  "id": 7449,
+  "de": "gelblich",
+  "tr": "sarımsı",
+  "deBeispiel": "Die alte Tischdecke ist schon gelblich.",
+  "gsw": "gälblich",
+  "gswArtikel": null,
+  "gswBeispiel": "S alt Tischtuech isch scho gälblich."
+ },
+ {
+  "id": 7450,
+  "de": "golden",
+  "tr": "altın rengi, altından",
+  "deBeispiel": "Meine Oma trägt einen goldenen Ring.",
+  "gsw": "goldig",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Oma treit en goldige Ring."
+ },
+ {
+  "id": 7451,
+  "de": "silbern",
+  "tr": "gümüş rengi, gümüşten",
+  "deBeispiel": "Auf dem Tisch liegen silberne Löffel.",
+  "gsw": "silberig",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Tisch ligged silberigi Löffel."
+ },
+ {
+  "id": 7452,
+  "de": "einfarbig",
+  "tr": "tek renkli, düz renk",
+  "deBeispiel": "Für das Büro kaufe ich lieber einfarbige Hemden.",
+  "gsw": "eifarbig",
+  "gswArtikel": null,
+  "gswBeispiel": "Fürs Büro chaufe ich lieber eifarbigi Hemder."
+ },
+ {
+  "id": 7453,
+  "de": "gestreift",
+  "tr": "çizgili",
+  "deBeispiel": "Er hat einen gestreiften Pullover an.",
+  "gsw": "gschtreift",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät en gschtreifte Pullover a."
+ },
+ {
+  "id": 7454,
+  "de": "kariert",
+  "tr": "kareli, ekose",
+  "deBeispiel": "Auf dem Tisch liegt eine karierte Decke.",
+  "gsw": "kariert",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Tisch lit e karierti Decki."
+ },
+ {
+  "id": 7455,
+  "de": "defekt",
+  "tr": "arızalı, bozuk",
+  "deBeispiel": "Der Aufzug ist seit Montag defekt.",
+  "gsw": "defekt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Lift isch sit Mäntig defekt."
+ },
+ {
+  "id": 7456,
+  "de": "beschädigt",
+  "tr": "hasarlı, zarar görmüş",
+  "deBeispiel": "Das Paket kam beschädigt bei mir an.",
+  "gsw": "bschädiget",
+  "gswArtikel": null,
+  "gswBeispiel": "S Paket isch bschädiget bi mir aacho."
+ },
+ {
+  "id": 7457,
+  "de": "zerbrochen",
+  "tr": "kırık, kırılmış",
+  "deBeispiel": "Im Karton lagen zwei zerbrochene Teller.",
+  "gsw": "zerbroche",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Karton sind zwäi zerbrocheni Täller gläge."
+ },
+ {
+  "id": 7458,
+  "de": "heil",
+  "tr": "sağlam, bütün",
+  "deBeispiel": "Zum Glück sind alle Gläser heil geblieben.",
+  "gsw": "heil",
+  "gswArtikel": null,
+  "gswBeispiel": "Zum Glück sind alli Glääser heil bliibe."
+ },
+ {
+  "id": 7459,
+  "de": "gebraucht",
+  "tr": "ikinci el, kullanılmış",
+  "deBeispiel": "Wir haben eine gebrauchte Waschmaschine gekauft.",
+  "gsw": "bruucht",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ e bruuchti Wäschmaschine chauft."
+ },
+ {
+  "id": 7460,
+  "de": "abgenutzt",
+  "tr": "yıpranmış, eskimiş",
+  "deBeispiel": "Der Teppich im Wohnzimmer ist schon abgenutzt.",
+  "gsw": "abgnutzt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Teppich im Wonzimmer isch scho abgnutzt."
+ },
+ {
+  "id": 7461,
+  "de": "rostig",
+  "tr": "paslı",
+  "deBeispiel": "Im Garten steht ein rostiges Fahrrad.",
+  "gsw": "roschtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Garte staat es roschtigs Velo."
+ },
+ {
+  "id": 7462,
+  "de": "wackelig",
+  "tr": "sallanan, oynak",
+  "deBeispiel": "Setz dich nicht auf den Stuhl, er ist wackelig.",
+  "gsw": "wagglig",
+  "gswArtikel": null,
+  "gswBeispiel": "Hock di nöd uf de Schtuel, er isch wagglig."
+ },
+ {
+  "id": 7463,
+  "de": "zerbrechlich",
+  "tr": "kırılgan, kolay kırılır",
+  "deBeispiel": "Vorsicht, die Vase ist sehr zerbrechlich.",
+  "gsw": "zerbrächlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Achtung, d Vase isch sehr zerbrächlich."
+ },
+ {
+  "id": 7464,
+  "de": "stabil",
+  "tr": "sağlam, dayanıklı",
+  "deBeispiel": "Das Regal ist stabil und trägt viele Bücher.",
+  "gsw": "schtabil",
+  "gswArtikel": null,
+  "gswBeispiel": "S Regal isch schtabil und treit vill Büecher."
+ },
+ {
+  "id": 7465,
+  "de": "gefüllt",
+  "tr": "dolu, doldurulmuş",
+  "deBeispiel": "Auf dem Tisch stand eine mit Wasser gefüllte Flasche.",
+  "gsw": "gfüllt",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Tisch isch e Flasche gschtande, wo mit Wasser gfüllt gsii isch."
+ },
+ {
+  "id": 7466,
+  "de": "unordentlich",
+  "tr": "dağınık, düzensiz",
+  "deBeispiel": "Mein Zimmer ist heute sehr unordentlich.",
+  "gsw": "unordentlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mis Zimmer isch hüt sehr unordentlich."
+ },
+ {
+  "id": 7467,
+  "de": "gepflegt",
+  "tr": "bakımlı, özenli",
+  "deBeispiel": "Der Garten hinter dem Haus ist sehr gepflegt.",
+  "gsw": "gpflegt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Garte hinder em Huus isch sehr gpflegt."
+ },
+ {
+  "id": 7468,
+  "de": "dreckig",
+  "tr": "kirli, pis",
+  "deBeispiel": "Deine Schuhe sind ganz dreckig.",
+  "gsw": "dräckig",
+  "gswArtikel": null,
+  "gswBeispiel": "Dini Schue sind ganz dräckig.",
+  "ayniLehce": [
+   "schmutzig (A2)"
+  ]
+ },
+ {
+  "id": 7469,
+  "de": "verdorben",
+  "tr": "bozulmuş, çürümüş",
+  "deBeispiel": "Die Milch im Kühlschrank ist verdorben.",
+  "gsw": "verdorbe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Milch im Chüelschrank isch verdorbe."
+ },
+ {
+  "id": 7470,
+  "de": "schimmelig",
+  "tr": "küflü",
+  "deBeispiel": "Das Brot ist nach einer Woche schimmelig.",
+  "gsw": "schimmlig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Brot isch nach ere Wuche schimmlig."
+ },
+ {
+  "id": 7471,
+  "de": "außergewöhnlich",
+  "tr": "olağanüstü, sıra dışı",
+  "deBeispiel": "Das Hotel hatte eine außergewöhnliche Aussicht.",
+  "gsw": "ussergwöhnlich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Hotel hät e ussergwöhnlichi Ussicht gha."
+ },
+ {
+  "id": 7472,
+  "de": "edel",
+  "tr": "kaliteli, zarif",
+  "deBeispiel": "Das Restaurant hat edle Möbel aus dunklem Holz.",
+  "gsw": "edel",
+  "gswArtikel": null,
+  "gswBeispiel": "D Möbel im Restaurant sind us dunklem Holz und ganz edel."
+ },
+ {
+  "id": 7473,
+  "de": "schlicht",
+  "tr": "sade, gösterişsiz",
+  "deBeispiel": "Ich mag Zimmer, die schlicht eingerichtet sind.",
+  "gsw": "schlicht",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha Zimmer gern, wo schlicht iigrichtet sind."
+ },
+ {
+  "id": 7474,
+  "de": "originell",
+  "tr": "özgün, orijinal",
+  "deBeispiel": "Dein Geschenk war wirklich originell.",
+  "gsw": "originell",
+  "gswArtikel": null,
+  "gswBeispiel": "Dis Gschänk isch würkli originell gsii."
+ },
+ {
+  "id": 7475,
+  "de": "unauffällig",
+  "tr": "göze batmayan, dikkat çekmeyen",
+  "deBeispiel": "Die Tasche ist klein und unauffällig.",
+  "gsw": "unuffällig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Täsche isch chlii und unuffällig."
+ },
+ {
+  "id": 7476,
+  "de": "auffällig",
+  "tr": "göze çarpan, dikkat çekici",
+  "deBeispiel": "Sie trägt heute eine auffällige rote Jacke.",
+  "gsw": "uffällig",
+  "gswArtikel": null,
+  "gswBeispiel": "Si treit hüt e uffälligi roti Jagge."
+ },
+ {
+  "id": 7477,
+  "de": "altmodisch",
+  "tr": "eski moda, demode",
+  "deBeispiel": "Die Lampe im Flur sieht ziemlich altmodisch aus.",
+  "gsw": "altmodisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Lampe im Gang gseht ziemli altmodisch us."
+ },
+ {
+  "id": 7478,
+  "de": "modisch",
+  "tr": "modaya uygun, şık",
+  "deBeispiel": "Diese Brille ist gerade sehr modisch.",
+  "gsw": "modisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Brille isch grad sehr modisch."
+ },
+ {
+  "id": 7479,
+  "de": "handlich",
+  "tr": "kullanışlı, taşıması kolay",
+  "deBeispiel": "Der kleine Koffer ist leicht und handlich.",
+  "gsw": "handlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De chlii Koffer isch liicht und handlich."
+ },
+ {
+  "id": 7480,
+  "de": "eisig",
+  "tr": "buz gibi",
+  "deBeispiel": "Draußen weht ein eisiger Wind.",
+  "gsw": "iisig",
+  "gswArtikel": null,
+  "gswBeispiel": "Dusse blaast en iisige Wind."
+ },
+ {
+  "id": 7481,
+  "de": "frostig",
+  "tr": "ayazlı, dondurucu",
+  "deBeispiel": "Die Nächte sind im Januar oft frostig.",
+  "gsw": "froschtig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Nächt sind im Januar oft froschtig."
+ },
+ {
+  "id": 7482,
+  "de": "lauwarm",
+  "tr": "ılık",
+  "deBeispiel": "Der Kaffee ist nur noch lauwarm.",
+  "gsw": "lauwarm",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kaffi isch nur no lauwarm."
+ },
+ {
+  "id": 7483,
+  "de": "stürmisch",
+  "tr": "fırtınalı",
+  "deBeispiel": "Gestern war das Wetter sehr stürmisch.",
+  "gsw": "schtürmisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter isch s Wätter sehr schtürmisch gsii."
+ },
+ {
+  "id": 7484,
+  "de": "regnerisch",
+  "tr": "yağmurlu",
+  "deBeispiel": "Im April ist es hier meistens regnerisch.",
+  "gsw": "rägnerisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Im April isch es da meischtens rägnerisch."
+ },
+ {
+  "id": 7485,
+  "de": "bedeckt",
+  "tr": "kapalı (hava), bulutlu",
+  "deBeispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
+  "gsw": "bedeckt",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt bliibt de Himmel de ganz Tag bedeckt."
+ },
+ {
+  "id": 7486,
+  "de": "zugig",
+  "tr": "cereyanlı, esintili",
+  "deBeispiel": "Im Treppenhaus ist es immer zugig.",
+  "gsw": "zugig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Treppehuus isch es immer zugig."
+ },
+ {
+  "id": 7487,
+  "de": "stickig",
+  "tr": "havasız, boğucu",
+  "deBeispiel": "Im Bus war die Luft sehr stickig.",
+  "gsw": "schtickig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Bus isch d Luft sehr schtickig gsii."
+ },
+ {
+  "id": 7488,
+  "de": "luftig",
+  "tr": "havadar, ferah",
+  "deBeispiel": "Das neue Büro ist hell und luftig.",
+  "gsw": "luftig",
+  "gswArtikel": null,
+  "gswBeispiel": "S nöi Büro isch hell und luftig."
+ },
+ {
+  "id": 7489,
+  "de": "beheizt",
+  "tr": "ısıtmalı, ısıtılan",
+  "deBeispiel": "Die Garage ist im Winter nicht beheizt.",
+  "gsw": "bheizt",
+  "gswArtikel": null,
+  "gswBeispiel": "D Garage isch im Winter nöd bheizt."
+ },
+ {
+  "id": 7490,
+  "de": "ungemütlich",
+  "tr": "iç açıcı olmayan, soğuk (ortam)",
+  "deBeispiel": "Das Wartezimmer war kalt und ungemütlich.",
+  "gsw": "ungmüetlich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wartzimmer isch chalt und ungmüetlich gsii."
+ },
+ {
+  "id": 7491,
+  "de": "unbequem",
+  "tr": "rahatsız, konforsuz",
+  "deBeispiel": "Diese Schuhe sind schön, aber unbequem.",
+  "gsw": "unbequem",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Schue sind schöön, aber unbequem."
+ },
+ {
+  "id": 7492,
+  "de": "köstlich",
+  "tr": "nefis, çok lezzetli",
+  "deBeispiel": "Der Kuchen von deiner Mutter war köstlich.",
+  "gsw": "köschtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chueche vo dinere Mueter isch köschtlich gsii."
+ },
+ {
+  "id": 7493,
+  "de": "würzig",
+  "tr": "baharatlı, çeşnili",
+  "deBeispiel": "Die Suppe ist schön würzig.",
+  "gsw": "würzig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Suppe isch schöön würzig."
+ },
+ {
+  "id": 7494,
+  "de": "fad",
+  "tr": "yavan, tatsız",
+  "deBeispiel": "Ohne Salz schmeckt das Essen fad.",
+  "gsw": "fad",
+  "gswArtikel": null,
+  "gswBeispiel": "Ohni Salz schmöckt s Ässe fad."
+ },
+ {
+  "id": 7495,
+  "de": "muffig",
+  "tr": "küf kokulu, ağır kokulu",
+  "deBeispiel": "Im Keller riecht es muffig.",
+  "gsw": "muffig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Chäller schmöckt's muffig."
+ },
+ {
+  "id": 7496,
+  "de": "stinkend",
+  "tr": "pis kokan, leş gibi kokan",
+  "deBeispiel": "Vor dem Haus stand eine stinkende Mülltonne.",
+  "gsw": "schtinkend",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Huus isch en schtinkende Güselchübel gschtande."
+ },
+ {
+  "id": 7497,
+  "de": "duftend",
+  "tr": "mis kokulu, güzel kokan",
+  "deBeispiel": "Sie brachte mir duftende Blumen mit.",
+  "gsw": "duftend",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät mir duftendi Blueme mitbracht."
+ },
+ {
+  "id": 7498,
+  "de": "dumpf",
+  "tr": "boğuk (ses)",
+  "deBeispiel": "Aus dem Nachbarhaus kam ein dumpfes Geräusch.",
+  "gsw": "dumpf",
+  "gswArtikel": null,
+  "gswBeispiel": "Us em Nochberhuus isch es dumpfs Grüüsch cho."
+ },
+ {
+  "id": 7499,
+  "de": "schrill",
+  "tr": "tiz, keskin (ses)",
+  "deBeispiel": "Der Wecker hat einen schrillen Ton.",
+  "gsw": "schrill",
+  "gswArtikel": null,
+  "gswBeispiel": "De Wecker hät en schrille Ton."
+ },
+ {
+  "id": 7500,
+  "de": "geduldig",
+  "tr": "sabırlı",
+  "deBeispiel": "Meine Lehrerin ist sehr geduldig mit uns.",
+  "gsw": "gduldig",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Lehrerin isch sehr gduldig mit öis."
+ },
+ {
+  "id": 7501,
+  "de": "ungeduldig",
+  "tr": "sabırsız",
+  "deBeispiel": "Mein Bruder wird schnell ungeduldig, wenn er warten muss.",
+  "gsw": "ungduldig",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Brueder wird schnäll ungduldig, wänn er warte mues."
+ },
+ {
+  "id": 7502,
+  "de": "bescheiden",
+  "tr": "alçakgönüllü, mütevazı",
+  "deBeispiel": "Er ist reich, aber er lebt sehr bescheiden.",
+  "gsw": "bschäide",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch riich, aber er läbt sehr bschäide."
+ },
+ {
+  "id": 7503,
+  "de": "geizig",
+  "tr": "cimri",
+  "deBeispiel": "Mein Onkel ist so geizig, dass er nie Trinkgeld gibt.",
+  "gsw": "giizig",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Unggle isch so giizig, dass er nie es Trinkgäld git."
+ },
+ {
+  "id": 7504,
+  "de": "egoistisch",
+  "tr": "bencil",
+  "deBeispiel": "Sei nicht so egoistisch und teile die Schokolade!",
+  "gsw": "egoistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Sig nöd so egoistisch und teil d Schoggi!"
+ },
+ {
+  "id": 7505,
+  "de": "hilfsbereit",
+  "tr": "yardımsever",
+  "deBeispiel": "Unsere neuen Nachbarn sind sehr hilfsbereit.",
+  "gsw": "hilfsbereit",
+  "gswArtikel": null,
+  "gswBeispiel": "Öisi nöie Nochbere sind sehr hilfsbereit."
+ },
+ {
+  "id": 7506,
+  "de": "gastfreundlich",
+  "tr": "misafirperver",
+  "deBeispiel": "Die Familie war gastfreundlich und hat uns zum Essen eingeladen.",
+  "gsw": "gaschtfründlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Familie isch gaschtfründlich gsii und hät öis zum Ässe iiglade."
+ },
+ {
+  "id": 7507,
+  "de": "schüchtern",
+  "tr": "utangaç, çekingen",
+  "deBeispiel": "Als Kind war ich sehr schüchtern.",
+  "gsw": "schüüch",
+  "gswArtikel": null,
+  "gswBeispiel": "Als Chind bin ich sehr schüüch gsii.",
+  "ayniLehce": [
+   "scheu (A2)"
+  ]
+ },
+ {
+  "id": 7508,
+  "de": "schweigsam",
+  "tr": "az konuşan, suskun",
+  "deBeispiel": "Mein Vater ist ein schweigsamer Mann.",
+  "gsw": "schwiigsam",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Vatter isch en schwiigsame Maa."
+ },
+ {
+  "id": 7509,
+  "de": "gemein",
+  "tr": "kötü niyetli, kırıcı",
+  "deBeispiel": "Das war gemein von dir, sie so zu ärgern.",
+  "gsw": "gmein",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch gmein gsii vo dir, si eso z ärgere."
+ },
+ {
+  "id": 7510,
+  "de": "anständig",
+  "tr": "dürüst, terbiyeli",
+  "deBeispiel": "Er ist ein anständiger Mensch und hilft immer.",
+  "gsw": "aaschtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch en aaschtändige Mäntsch und hilft immer."
+ },
+ {
+  "id": 7511,
+  "de": "misstrauisch",
+  "tr": "kuşkucu, güvenmeyen",
+  "deBeispiel": "Seit dem Streit ist sie mir gegenüber misstrauisch.",
+  "gsw": "misstrauisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Sit em Schtriit isch si mir gegenüber misstrauisch."
+ },
+ {
+  "id": 7512,
+  "de": "neidisch",
+  "tr": "kıskanç, imrenen",
+  "deBeispiel": "Meine Kollegin ist neidisch auf mein neues Auto.",
+  "gsw": "niidisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Kollegin isch niidisch uf mis nöi Auto."
+ },
+ {
+  "id": 7513,
+  "de": "brav",
+  "tr": "uslu, söz dinleyen",
+  "deBeispiel": "Die Kinder waren heute den ganzen Tag brav.",
+  "gsw": "brav",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind sind hüt de ganz Tag brav gsii."
+ },
+ {
+  "id": 7514,
+  "de": "aggressiv",
+  "tr": "agresif, saldırgan (davranış)",
+  "deBeispiel": "Nach zwei Bier wird er leider aggressiv.",
+  "gsw": "aggressiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach zwäi Bier wird er läider aggressiv."
+ },
+ {
+  "id": 7515,
+  "de": "friedlich",
+  "tr": "barışçıl, huzurlu",
+  "deBeispiel": "Mein Großvater war ein friedlicher Mann.",
+  "gsw": "fridlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Grossvatter isch en fridliche Maa gsii."
+ },
+ {
+  "id": 7516,
+  "de": "respektvoll",
+  "tr": "saygılı",
+  "deBeispiel": "Die Schüler sind respektvoll zu ihren Lehrern.",
+  "gsw": "reschpäktvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schüeler sind reschpäktvoll zu ihrne Lehrer."
+ },
+ {
+  "id": 7517,
+  "de": "rücksichtslos",
+  "tr": "düşüncesiz, saygısız",
+  "deBeispiel": "Er fährt rücksichtslos und viel zu schnell.",
+  "gsw": "rücksichtslos",
+  "gswArtikel": null,
+  "gswBeispiel": "Er faart rücksichtslos und vill z schnäll."
+ },
+ {
+  "id": 7518,
+  "de": "unverschämt",
+  "tr": "arsız, terbiyesiz",
+  "deBeispiel": "Seine Antwort am Telefon war richtig unverschämt.",
+  "gsw": "unverschämt",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Antwort am Telefon isch richtig unverschämt gsii."
+ },
+ {
+  "id": 7519,
+  "de": "unhöflich",
+  "tr": "kaba, nezaketsiz",
+  "deBeispiel": "Es ist unhöflich, beim Essen auf das Handy zu schauen.",
+  "gsw": "unhöflich",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch unhöflich, bim Ässe ufs Händi z luege."
+ },
+ {
+  "id": 7520,
+  "de": "untreu",
+  "tr": "sadakatsiz, vefasız",
+  "deBeispiel": "Sie hat sich getrennt, weil ihr Mann untreu war.",
+  "gsw": "untreu",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät sich trennt, wil ire Maa untreu gsii isch."
+ },
+ {
+  "id": 7521,
+  "de": "absichtlich",
+  "tr": "kasten, bilerek",
+  "deBeispiel": "Er hat das Glas nicht absichtlich kaputt gemacht.",
+  "gsw": "absichtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät s Glas nöd absichtlich kaputt gmacht."
+ },
+ {
+  "id": 7522,
+  "de": "hilflos",
+  "tr": "çaresiz",
+  "deBeispiel": "Ohne meine Brille fühle ich mich völlig hilflos.",
+  "gsw": "hilflos",
+  "gswArtikel": null,
+  "gswBeispiel": "Ohni mini Brille fühl ich mich völlig hilflos."
+ },
+ {
+  "id": 7523,
+  "de": "geschickt",
+  "tr": "becerikli, mahir",
+  "deBeispiel": "Meine Schwester ist sehr geschickt mit ihren Händen.",
+  "gsw": "gschickt",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Schwöschter isch sehr gschickt mit ihrne Händ."
+ },
+ {
+  "id": 7524,
+  "de": "ungeschickt",
+  "tr": "beceriksiz, sakar",
+  "deBeispiel": "Ich bin so ungeschickt, mir fällt immer etwas herunter.",
+  "gsw": "ungschickt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi so ungschickt, mir gheit immer öppis abe."
+ },
+ {
+  "id": 7525,
+  "de": "schlau",
+  "tr": "akıllı, zeki, kurnaz",
+  "deBeispiel": "Das war eine schlaue Idee von dir.",
+  "gsw": "schlau",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch e schlaui Idee gsii vo dir."
+ },
+ {
+  "id": 7526,
+  "de": "begabt",
+  "tr": "yetenekli",
+  "deBeispiel": "Mein Sohn ist musikalisch sehr begabt.",
+  "gsw": "begabt",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Suhn isch musikalisch sehr begabt."
+ },
+ {
+  "id": 7527,
+  "de": "talentiert",
+  "tr": "yetenekli",
+  "deBeispiel": "Sie ist eine talentierte junge Fußballspielerin.",
+  "gsw": "talentiert",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch e talentierti jungi Fuessballschpilerin."
+ },
+ {
+  "id": 7528,
+  "de": "vergesslich",
+  "tr": "unutkan",
+  "deBeispiel": "Im Alter wurde meine Oma sehr vergesslich.",
+  "gsw": "vergässlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Alter isch mini Oma sehr vergässlich worde."
+ },
+ {
+  "id": 7529,
+  "de": "gutmütig",
+  "tr": "iyi kalpli, yumuşak huylu",
+  "deBeispiel": "Unser Hausmeister ist ein gutmütiger alter Mann.",
+  "gsw": "guetmüetig",
+  "gswArtikel": null,
+  "gswBeispiel": "Öise Abwart isch en guetmüetige alte Maa."
+ },
+ {
+  "id": 7530,
+  "de": "unpünktlich",
+  "tr": "dakik olmayan, geç kalan",
+  "deBeispiel": "Er ist immer unpünktlich und kommt zu spät.",
+  "gsw": "unpünktlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch immer unpünktlich und chunt z spaat."
+ },
+ {
+  "id": 7531,
+  "de": "hektisch",
+  "tr": "telaşlı, aceleci",
+  "deBeispiel": "Am Morgen ist meine Mutter immer sehr hektisch.",
+  "gsw": "hektisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Morge isch mini Mueter immer sehr hektisch."
+ },
+ {
+  "id": 7532,
+  "de": "lässig",
+  "tr": "rahat, havalı",
+  "deBeispiel": "Mein Chef ist im Büro sehr lässig.",
+  "gsw": "lässig",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Chef isch im Büro sehr lässig."
+ },
+ {
+  "id": 7533,
+  "de": "lebhaft",
+  "tr": "hareketli, canlı (kişi, huy)",
+  "deBeispiel": "Unsere Tochter ist ein lebhaftes Kind.",
+  "gsw": "läbhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Öisi Tochter isch es läbhafts Chind."
+ },
+ {
+  "id": 7534,
+  "de": "kindisch",
+  "tr": "çocukça",
+  "deBeispiel": "Mit vierzig ist so ein Streit einfach kindisch.",
+  "gsw": "chindisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit vierzg isch so en Schtriit eifach chindisch."
+ }
+]

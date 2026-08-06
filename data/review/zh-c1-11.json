@@ -1,0 +1,992 @@
+[
+ {
+  "id": 6353,
+  "de": "die Rechtsprechung",
+  "tr": "içtihat, yargı kararları",
+  "deBeispiel": "Die Rechtsprechung des obersten Gerichts hat sich seither deutlich gewandelt.",
+  "gsw": "Rächtsprächig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rächtsprächig vom oberschte Gricht hät sich siit dänn düütlich gwandlet."
+ },
+ {
+  "id": 6354,
+  "de": "die Rechtsquelle",
+  "tr": "hukuk kaynağı",
+  "deBeispiel": "Neben dem Gesetz gelten auch Verträge als anerkannte Rechtsquellen.",
+  "gsw": "Rächtsquelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Näbem Gsetz gälted au Verträäg als anerkanti Rächtsquelle."
+ },
+ {
+  "id": 6355,
+  "de": "die Rechtsfortbildung",
+  "tr": "hukukun geliştirilmesi, yargı yoluyla hukuk yaratma",
+  "deBeispiel": "Durch Rechtsfortbildung schließen die Gerichte Lücken, die der Gesetzgeber hinterlassen hat.",
+  "gsw": "Rächtsfortbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur Rächtsfortbildig schlüssed d Grichte Lücke, wo de Gsetzgeber hinderlaa hät."
+ },
+ {
+  "id": 6356,
+  "de": "die Rechtssicherheit",
+  "tr": "hukuk güvenliği",
+  "deBeispiel": "Ständig wechselnde Vorschriften untergraben die Rechtssicherheit für alle Beteiligten.",
+  "gsw": "Rächtssicherheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtändig wechslendi Vorschrifte untergrabed d Rächtssicherheit für all Beteiligte."
+ },
+ {
+  "id": 6357,
+  "de": "die Rechtsfolge",
+  "tr": "hukuki sonuç",
+  "deBeispiel": "Der Vertragsbruch zieht empfindliche Rechtsfolgen für beide Seiten nach sich.",
+  "gsw": "Rächtsfolg",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vertragsbruch zieht empfindlichi Rächtsfolge für beidi Siite nach sich."
+ },
+ {
+  "id": 6358,
+  "de": "die Rechtslücke",
+  "tr": "hukuk boşluğu",
+  "deBeispiel": "Der neue Sachverhalt offenbart eine Rechtslücke, die niemand vorhergesehen hatte.",
+  "gsw": "Rächtslücke",
+  "gswArtikel": "d",
+  "gswBeispiel": "De nöi Sachverhalt zeigt e Rächtslücke, wo niemert vorusgsee hät."
+ },
+ {
+  "id": 6359,
+  "de": "der Rechtspositivismus",
+  "tr": "hukuki pozitivizm",
+  "deBeispiel": "Der Rechtspositivismus trennt die Geltung des Rechts streng von der Moral.",
+  "gsw": "Rächtspositivismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rächtspositivismus trennt d Geltig vom Rächt schträng vo de Moral."
+ },
+ {
+  "id": 6360,
+  "de": "der Rechtsweg",
+  "tr": "yargı yolu",
+  "deBeispiel": "Nach der Ablehnung blieb ihr nur noch der Rechtsweg.",
+  "gsw": "Rächtswääg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de Ablehnig isch ere nu no de Rächtswääg blibe."
+ },
+ {
+  "id": 6361,
+  "de": "die Rechtsordnung",
+  "tr": "hukuk düzeni",
+  "deBeispiel": "Jede Rechtsordnung beruht auf Grundentscheidungen, die selten offen diskutiert werden.",
+  "gsw": "Rächtsordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Rächtsordnig beruet uf Grundentschäidige, wo sälte offe diskutiert wärded."
+ },
+ {
+  "id": 6362,
+  "de": "das Rechtsgut",
+  "tr": "hukuki değer, korunan hukuki menfaat",
+  "deBeispiel": "Das Strafrecht schützt Rechtsgüter wie Leben, Freiheit und Eigentum.",
+  "gsw": "Rächtsguet",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schtrafrächt schützt Rächtsgüeter wie s Läbe, d Freiheit und s Eigetum."
+ },
+ {
+  "id": 6363,
+  "de": "die Rechtsphilosophie",
+  "tr": "hukuk felsefesi",
+  "deBeispiel": "In der Rechtsphilosophie streitet man seit Jahrhunderten über den Gerechtigkeitsbegriff.",
+  "gsw": "Rächtsphilosophie",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Rächtsphilosophie schtriitet mer siit Jaarhundert über de Grächtigkeitsbegriff."
+ },
+ {
+  "id": 6364,
+  "de": "die Rechtsdogmatik",
+  "tr": "hukuk dogmatiği",
+  "deBeispiel": "Die Rechtsdogmatik ordnet die Vorschriften zu einem widerspruchsfreien System.",
+  "gsw": "Rächtsdogmatik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rächtsdogmatik ordnet d Vorschrifte zu eme widerspruchsfreie Syschtem."
+ },
+ {
+  "id": 6365,
+  "de": "das Rechtsempfinden",
+  "tr": "adalet duygusu, hukuk duygusu",
+  "deBeispiel": "Das milde Urteil verletzte das Rechtsempfinden vieler Beobachter.",
+  "gsw": "Rächtsempfinde",
+  "gswArtikel": "s",
+  "gswBeispiel": "S milde Urteil hät s Rächtsempfinde vo vilne Beobachter verletzt."
+ },
+ {
+  "id": 6366,
+  "de": "die Verhältnismäßigkeit",
+  "tr": "ölçülülük, orantılılık",
+  "deBeispiel": "Das Gericht prüfte die Verhältnismäßigkeit des polizeilichen Eingriffs sehr genau.",
+  "gsw": "Verhältnismässigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gricht hät d Verhältnismässigkeit vom polizeiliche Iigriff sehr genau prüeft."
+ },
+ {
+  "id": 6367,
+  "de": "die Gewaltenteilung",
+  "tr": "kuvvetler ayrılığı",
+  "deBeispiel": "Die Gewaltenteilung soll verhindern, dass sich Macht an einer Stelle bündelt.",
+  "gsw": "Gwalteteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gwalteteilig söll verhindere, dass sich d Macht an ere Schtell bündlet."
+ },
+ {
+  "id": 6368,
+  "de": "die Verfassungsbeschwerde",
+  "tr": "anayasa şikâyeti, bireysel başvuru",
+  "deBeispiel": "Gegen das Gesetz wurde bereits mehrfach Verfassungsbeschwerde erhoben.",
+  "gsw": "Verfassigsbeschwerd",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge s Gsetz isch scho mehrfach Verfassigsbeschwerd erhobe worde."
+ },
+ {
+  "id": 6369,
+  "de": "die Normenkontrolle",
+  "tr": "norm denetimi",
+  "deBeispiel": "Im Rahmen der Normenkontrolle prüft das Gericht die Vereinbarkeit mit der Verfassung.",
+  "gsw": "Normekontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Raame vo de Normekontrolle prüeft s Gricht d Vereinbarkeit mit de Verfassig."
+ },
+ {
+  "id": 6370,
+  "de": "das Gesetzgebungsverfahren",
+  "tr": "yasama süreci, kanun yapım usulü",
+  "deBeispiel": "Das Gesetzgebungsverfahren wurde wegen formeller Fehler abgebrochen.",
+  "gsw": "Gsetzgebigsverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Gsetzgebigsverfaare isch wäge formelle Fähler abbroche worde."
+ },
+ {
+  "id": 6371,
+  "de": "das Präjudiz",
+  "tr": "emsal karar, içtihat örneği",
+  "deBeispiel": "Die Entscheidung wirkt als Präjudiz für alle ähnlich gelagerten Fälle.",
+  "gsw": "Präjudiz",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Entschäidig wirkt als Präjudiz für ali ähnlich glagerete Fäll."
+ },
+ {
+  "id": 6372,
+  "de": "das Willkürverbot",
+  "tr": "keyfilik yasağı",
+  "deBeispiel": "Das Willkürverbot zwingt die Behörden, gleiche Fälle gleich zu behandeln.",
+  "gsw": "Willkürverbot",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Willkürverbot zwingt d Behörde, gliichi Fäll gliich z behandle."
+ },
+ {
+  "id": 6373,
+  "de": "der Ermessensspielraum",
+  "tr": "takdir alanı, takdir yetkisi",
+  "deBeispiel": "Der Behörde bleibt bei dieser Entscheidung ein erheblicher Ermessensspielraum.",
+  "gsw": "Ermessensschpilruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Behörde bliibt bi dere Entschäidig en erhebliche Ermessensschpilruum."
+ },
+ {
+  "id": 6374,
+  "de": "das Strafmaß",
+  "tr": "ceza miktarı, verilecek ceza",
+  "deBeispiel": "Über das Strafmaß entscheidet das Gericht nach der Schwere der Tat.",
+  "gsw": "Schtrafmass",
+  "gswArtikel": "s",
+  "gswBeispiel": "Über s Schtrafmass entschäidet s Gricht nach de Schweri vo de Taat."
+ },
+ {
+  "id": 6375,
+  "de": "die Unschuldsvermutung",
+  "tr": "masumiyet karinesi",
+  "deBeispiel": "Die vorschnelle Berichterstattung verletzte die Unschuldsvermutung des Beschuldigten.",
+  "gsw": "Unschuldsvermuetig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di vorschnelli Brichterschtattig hät d Unschuldsvermuetig vom Beschuldigte verletzt."
+ },
+ {
+  "id": 6376,
+  "de": "der Amtsmissbrauch",
+  "tr": "görevi kötüye kullanma",
+  "deBeispiel": "Gegen den Beamten wird wegen Amtsmissbrauchs ermittelt.",
+  "gsw": "Amtsmissbruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gäge de Beamt wird wäge Amtsmissbruuch ermittlet."
+ },
+ {
+  "id": 6377,
+  "de": "die Befangenheit",
+  "tr": "yanlılık, tarafsızlığın yitimi",
+  "deBeispiel": "Wegen möglicher Befangenheit zog sich der Richter von dem Fall zurück.",
+  "gsw": "Befangeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge möglicher Befangeheit hät sich de Richter vo dem Fall zrugzoge."
+ },
+ {
+  "id": 6378,
+  "de": "der Leitsatz",
+  "tr": "içtihat özeti, temel ilke",
+  "deBeispiel": "Der erste Leitsatz des Urteils wird in allen Kommentaren zitiert.",
+  "gsw": "Leitsatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De erscht Leitsatz vom Urteil wird i alne Kommentar zitiert."
+ },
+ {
+  "id": 6379,
+  "de": "der Tatbestand",
+  "tr": "suçun unsurları, olgusal durum",
+  "deBeispiel": "Das Verhalten erfüllt den Tatbestand der Nötigung.",
+  "gsw": "Tatbeschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Verhalte erfüllt de Tatbeschtand vo de Nötigig."
+ },
+ {
+  "id": 6380,
+  "de": "das Gewohnheitsrecht",
+  "tr": "örf ve âdet hukuku",
+  "deBeispiel": "In manchen Bereichen gilt bis heute ungeschriebenes Gewohnheitsrecht.",
+  "gsw": "Gwohnheitsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "I mänge Bereich gilt bis hüt ungschribes Gwohnheitsrächt."
+ },
+ {
+  "id": 6381,
+  "de": "das Naturrecht",
+  "tr": "doğal hukuk",
+  "deBeispiel": "Das Naturrecht leitet seine Sätze aus der Vernunft ab.",
+  "gsw": "Naturrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Naturrächt leitet sini Sätz us de Vernunft ab."
+ },
+ {
+  "id": 6382,
+  "de": "die Legitimität",
+  "tr": "meşruiyet",
+  "deBeispiel": "Ohne breite Zustimmung verliert eine Ordnung ihre Legitimität.",
+  "gsw": "Legitimität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni breiti Zuestimmig verlüürt e Ordnig ihri Legitimität."
+ },
+ {
+  "id": 6383,
+  "de": "der Vorsatz",
+  "tr": "kasıt",
+  "deBeispiel": "Für eine Verurteilung muss dem Täter Vorsatz nachgewiesen werden.",
+  "gsw": "Vorsatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für e Verurteilig mues em Täter Vorsatz nachgwise wärde."
+ },
+ {
+  "id": 6384,
+  "de": "die Fahrlässigkeit",
+  "tr": "ihmal, taksir",
+  "deBeispiel": "Der Unfall beruhte auf grober Fahrlässigkeit des Fahrers.",
+  "gsw": "Fahrlässigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Unfall hät uf grober Fahrlässigkeit vom Fahrer beruet."
+ },
+ {
+  "id": 6385,
+  "de": "die Notwehr",
+  "tr": "meşru müdafaa",
+  "deBeispiel": "Er berief sich vor Gericht erfolgreich auf Notwehr.",
+  "gsw": "Notwehr",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät sich vor Gricht erfolgriich uf Notwehr berüefft."
+ },
+ {
+  "id": 6386,
+  "de": "die Menschenwürde",
+  "tr": "insan onuru",
+  "deBeispiel": "Die Menschenwürde steht am Anfang der Verfassung und ist unantastbar.",
+  "gsw": "Mäntschewürdi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mäntschewürdi schtaat am Aafang vo de Verfassig und isch unaatastbar."
+ },
+ {
+  "id": 6387,
+  "de": "der Gleichheitsgrundsatz",
+  "tr": "eşitlik ilkesi",
+  "deBeispiel": "Die Regelung verstößt nach Ansicht der Kläger gegen den Gleichheitsgrundsatz.",
+  "gsw": "Gliichheitsgrundsatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Regelig verschtoosst nach Aasicht vo de Chläger gäge de Gliichheitsgrundsatz."
+ },
+ {
+  "id": 6388,
+  "de": "der Grundrechtseingriff",
+  "tr": "temel hakka müdahale",
+  "deBeispiel": "Jeder Grundrechtseingriff braucht eine klare gesetzliche Grundlage.",
+  "gsw": "Grundrächtsiigriff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Grundrächtsiigriff bruucht e klari gsetzlichi Grundlaag."
+ },
+ {
+  "id": 6389,
+  "de": "die Präambel",
+  "tr": "başlangıç metni, önsöz",
+  "deBeispiel": "Die Präambel nennt die Werte, auf die sich der Staat gründet.",
+  "gsw": "Präambel",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Präambel nennt d Wert, wo sich de Schtaat druf gründet."
+ },
+ {
+  "id": 6390,
+  "de": "die Billigkeit",
+  "tr": "hakkaniyet, nasafet",
+  "deBeispiel": "Wo das Gesetz schweigt, entscheidet das Gericht nach Billigkeit.",
+  "gsw": "Billigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wo s Gsetz schwiigt, entschäidet s Gricht nach Billigkeit."
+ },
+ {
+  "id": 6391,
+  "de": "die Privatautonomie",
+  "tr": "irade serbestisi, özel hukuk özerkliği",
+  "deBeispiel": "Die Privatautonomie erlaubt den Parteien, ihre Verträge frei zu gestalten.",
+  "gsw": "Privatautonomie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Privatautonomie erlaubt de Parteie, ihri Verträäg frei z gschtalte."
+ },
+ {
+  "id": 6392,
+  "de": "die Judikative",
+  "tr": "yargı erki",
+  "deBeispiel": "Die Judikative darf sich nicht zum Ersatzgesetzgeber aufschwingen.",
+  "gsw": "Judikative",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Judikative dörf sich nöd zum Ersatzgsetzgeber uufschwinge."
+ },
+ {
+  "id": 6393,
+  "de": "die Gerichtsbarkeit",
+  "tr": "yargı yetkisi, yargı kolu",
+  "deBeispiel": "Für diesen Streit ist die ordentliche Gerichtsbarkeit zuständig.",
+  "gsw": "Grichtsbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für dä Schtriit isch di ordentlichi Grichtsbarkeit zueschtändig."
+ },
+ {
+  "id": 6394,
+  "de": "subsumieren",
+  "tr": "kapsamına sokmak, norm altına yerleştirmek",
+  "deBeispiel": "Der Richter subsumierte den Sachverhalt unter die passende Norm.",
+  "gsw": "subsumiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Richter hät de Sachverhalt under di passendi Norm subsumiert."
+ },
+ {
+  "id": 6395,
+  "de": "verwerfen",
+  "tr": "reddetmek, (plan/fikirden) vazgeçmek",
+  "deBeispiel": "Das Gericht verwarf die Beschwerde als unbegründet.",
+  "gsw": "verwärfe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät d Beschwerd als unbegründet verworfe."
+ },
+ {
+  "id": 6396,
+  "de": "kodifizieren",
+  "tr": "kanunlaştırmak, derlemek",
+  "deBeispiel": "Das Zivilrecht wurde im neunzehnten Jahrhundert umfassend kodifiziert.",
+  "gsw": "kodifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Zivilrächt isch im nüünzähnte Jaarhundert umfassend kodifiziert worde."
+ },
+ {
+  "id": 6397,
+  "de": "freisprechen",
+  "tr": "beraat ettirmek",
+  "deBeispiel": "Das Gericht sprach den Angeklagten aus Mangel an Beweisen frei.",
+  "gsw": "freischpräche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät de Aaklagt us Mangel a Bewiis freigschproche."
+ },
+ {
+  "id": 6398,
+  "de": "obliegen",
+  "tr": "yükümlülüğünde olmak, düşmek",
+  "deBeispiel": "Die Beweisführung obliegt in diesem Verfahren der Anklage.",
+  "gsw": "oblige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bewiisfüehrig obliit i dem Verfaare de Aaklaag."
+ },
+ {
+  "id": 6399,
+  "de": "heranziehen",
+  "tr": "başvurmak, esas almak",
+  "deBeispiel": "Zur Begründung zog das Gericht ältere Entscheidungen heran.",
+  "gsw": "biizieh",
+  "gswArtikel": null,
+  "gswBeispiel": "Zur Begründig hät s Gricht au elteri Entschäidige biizieh chöne."
+ },
+ {
+  "id": 6400,
+  "de": "verkünden",
+  "tr": "ilan etmek, açıklamak",
+  "deBeispiel": "Das Urteil wird kommenden Dienstag öffentlich verkündet.",
+  "gsw": "verkünde",
+  "gswArtikel": null,
+  "gswBeispiel": "S Urteil wird nächschte Ziischtig öffentlich verkündet."
+ },
+ {
+  "id": 6401,
+  "de": "zurechnen",
+  "tr": "atfetmek, isnat etmek",
+  "deBeispiel": "Der Schaden wird dem Unternehmen als Ganzem zugerechnet.",
+  "gsw": "zuerechne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schade wird em Unternäme als Ganzes zuegrechnet."
+ },
+ {
+  "id": 6402,
+  "de": "rügen",
+  "tr": "kınamak, eleştirmek",
+  "deBeispiel": "Das oberste Gericht rügte die schleppende Dauer des Verfahrens.",
+  "gsw": "rüege",
+  "gswArtikel": null,
+  "gswBeispiel": "S oberscht Gricht hät di schleppendi Duur vom Verfaare grüegt."
+ },
+ {
+  "id": 6403,
+  "de": "verfassungswidrig",
+  "tr": "anayasaya aykırı",
+  "deBeispiel": "Der Gerichtshof erklärte die Regelung für verfassungswidrig.",
+  "gsw": "verfassigswidrig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Grichtshof hät d Regelig für verfassigswidrig erklärt."
+ },
+ {
+  "id": 6404,
+  "de": "ausdrücklich",
+  "tr": "açıkça, sarih biçimde",
+  "deBeispiel": "Das Gesetz verbietet diese Praxis ausdrücklich.",
+  "gsw": "uusdrücklich",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gsetz verbüt die Praxis uusdrücklich."
+ },
+ {
+  "id": 6405,
+  "de": "unbeschadet",
+  "tr": "saklı kalmak kaydıyla, halel gelmeksizin",
+  "deBeispiel": "Unbeschadet dieser Regelung bleiben ältere Ansprüche bestehen.",
+  "gsw": "unbeschadet",
+  "gswArtikel": null,
+  "gswBeispiel": "Unbeschadet vo dere Regelig bliibed elteri Aasprüch beschtaa."
+ },
+ {
+  "id": 6406,
+  "de": "hinreichend",
+  "tr": "yeterli, kâfi",
+  "deBeispiel": "Für eine Anklage fehlt bislang ein hinreichender Tatverdacht.",
+  "gsw": "hinreichend",
+  "gswArtikel": null,
+  "gswBeispiel": "Für e Aaklaag fählt bishär en hinreichende Tatverdacht."
+ },
+ {
+  "id": 6407,
+  "de": "unbestritten",
+  "tr": "tartışmasız",
+  "deBeispiel": "Der Sachverhalt ist zwischen den Parteien weitgehend unbestritten.",
+  "gsw": "unbeschtritte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Sachverhalt isch zwüsche de Parteie wiitgehend unbeschtritte."
+ },
+ {
+  "id": 6408,
+  "de": "die Resozialisierung",
+  "tr": "topluma yeniden kazandırma, ıslah",
+  "deBeispiel": "Der offene Vollzug soll die Resozialisierung der Gefangenen fördern.",
+  "gsw": "Resozialisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De offen Vollzug söll d Resozialisierig vo de Gfangene fördere."
+ },
+ {
+  "id": 6409,
+  "de": "die Rückfallquote",
+  "tr": "tekrar suç işleme oranı",
+  "deBeispiel": "Bei jungen Männern liegt die Rückfallquote deutlich über dem Durchschnitt.",
+  "gsw": "Rückfallquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi junge Manne liit d Rückfallquote düütlich über em Durchschnitt."
+ },
+ {
+  "id": 6410,
+  "de": "die Delinquenz",
+  "tr": "suçluluk, suça yönelim",
+  "deBeispiel": "Frühe Delinquenz hängt oft mit brüchigen familiären Bindungen zusammen.",
+  "gsw": "Delinquenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Früechi Delinquenz hanget oft mit brüchige familiäre Bindige zäme."
+ },
+ {
+  "id": 6411,
+  "de": "der Straftäter",
+  "tr": "suç faili, suçlu",
+  "deBeispiel": "Viele Straftäter stammen aus sozial hoch belasteten Wohnvierteln.",
+  "gsw": "Schtraftäter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili Schtraftäter chömed us sozial hoch belaschtete Wohnviertel."
+ },
+ {
+  "id": 6412,
+  "de": "der Strafvollzug",
+  "tr": "ceza infazı, cezaevi düzeni",
+  "deBeispiel": "Der moderne Strafvollzug orientiert sich am Ziel der Wiedereingliederung.",
+  "gsw": "Schtrafvollzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "De modern Schtrafvollzug orientiert sich am Ziil vo de Wideriigliderig."
+ },
+ {
+  "id": 6413,
+  "de": "die Haftanstalt",
+  "tr": "cezaevi, tutukevi",
+  "deBeispiel": "In der überfüllten Haftanstalt teilen sich drei Männer eine Zelle.",
+  "gsw": "Haftaaschtalt",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de überfüllte Haftaaschtalt teiled sich drü Manne e Zelle."
+ },
+ {
+  "id": 6414,
+  "de": "der Freiheitsentzug",
+  "tr": "özgürlükten yoksun bırakma",
+  "deBeispiel": "Freiheitsentzug gilt als letztes Mittel und nicht als Regelsanktion.",
+  "gsw": "Freiheitsentzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Freiheitsentzug gilt als letschts Mittel und nöd als Regelsanktion."
+ },
+ {
+  "id": 6415,
+  "de": "die Führungsaufsicht",
+  "tr": "tahliye sonrası denetim",
+  "deBeispiel": "Nach der Entlassung stand er fünf Jahre unter Führungsaufsicht.",
+  "gsw": "Füehrigsuufsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Entlassig isch er füüf Jaar under Füehrigsuufsicht gschtande."
+ },
+ {
+  "id": 6416,
+  "de": "die Inhaftierung",
+  "tr": "hapsetme, tutuklama",
+  "deBeispiel": "Die lange Inhaftierung hat seine sozialen Kontakte fast völlig zerstört.",
+  "gsw": "Inhaftierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di lang Inhaftierig hät sini soziale Kontakt fascht völlig zerschtört."
+ },
+ {
+  "id": 6417,
+  "de": "der Insasse",
+  "tr": "mahkûm, kurum sakini",
+  "deBeispiel": "Jeder dritte Insasse leidet unter einer unbehandelten Suchterkrankung.",
+  "gsw": "Insass",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede dritt Insass liidet under ere unbehandlete Suchterchrankig."
+ },
+ {
+  "id": 6418,
+  "de": "die Vollzugslockerung",
+  "tr": "infaz koşullarında gevşetme",
+  "deBeispiel": "Vollzugslockerungen werden nur nach sorgfältiger Prüfung gewährt.",
+  "gsw": "Vollzugslockerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vollzugslockerige wärded nu nach sorgfältiger Prüefig gwährt."
+ },
+ {
+  "id": 6419,
+  "de": "die Sicherungsverwahrung",
+  "tr": "güvenlik tedbiri olarak alıkoyma",
+  "deBeispiel": "Die Sicherungsverwahrung bleibt unter Fachleuten heftig umstritten.",
+  "gsw": "Sicherigsverwahrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sicherigsverwahrig bliibt under de Fachlüüt heftig umschtritte."
+ },
+ {
+  "id": 6420,
+  "de": "die Wiedereingliederung",
+  "tr": "topluma yeniden uyum sağlama",
+  "deBeispiel": "Ohne Wohnung und Arbeit scheitert die Wiedereingliederung meistens.",
+  "gsw": "Wideriigliderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Wohnig und Arbet schiiteret d Wideriigliderig meischtens."
+ },
+ {
+  "id": 6421,
+  "de": "die Stigmatisierung",
+  "tr": "damgalama",
+  "deBeispiel": "Die Stigmatisierung Entlassener erschwert jede berufliche Perspektive.",
+  "gsw": "Schtigmatisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtigmatisierig vo Entlassne erschwert jedi bruefflichi Perschpektive."
+ },
+ {
+  "id": 6422,
+  "de": "die Subkultur",
+  "tr": "alt kültür",
+  "deBeispiel": "Hinter Gittern entsteht rasch eine eigene Subkultur mit strengen Regeln.",
+  "gsw": "Subkultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hinder Gitter entschtaat schnäll e eigni Subkultur mit schtränge Regle."
+ },
+ {
+  "id": 6423,
+  "de": "die Verwahrlosung",
+  "tr": "bakımsızlık, ihmale terk edilmişlik",
+  "deBeispiel": "Die Verwahrlosung ganzer Stadtteile begünstigt kleinere Eigentumsdelikte.",
+  "gsw": "Verwahrlosig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verwahrlosig vo ganze Schtadtteil begünschtigt chlineri Eigetumsdelikt."
+ },
+ {
+  "id": 6424,
+  "de": "die Gewaltbereitschaft",
+  "tr": "şiddete yatkınlık",
+  "deBeispiel": "Die Gewaltbereitschaft steigt, wenn Alkohol und Gruppendruck zusammenkommen.",
+  "gsw": "Gwaltbereitschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gwaltbereitschaft schtiigt, wänn Alkohol und Gruppedruck zämechömed."
+ },
+ {
+  "id": 6425,
+  "de": "der Opferschutz",
+  "tr": "mağdurun korunması",
+  "deBeispiel": "Der Opferschutz wurde lange gegenüber der Täterperspektive vernachlässigt.",
+  "gsw": "Opferschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Opferschutz isch lang gägenüber de Täterperschpektive vernachlässiget worde."
+ },
+ {
+  "id": 6426,
+  "de": "die Viktimisierung",
+  "tr": "mağdurlaştırma, mağdur olma",
+  "deBeispiel": "Wiederholte Viktimisierung trifft vor allem sozial isolierte Menschen.",
+  "gsw": "Viktimisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Widerholti Viktimisierig trifft vor allem sozial isolierti Mäntsche."
+ },
+ {
+  "id": 6427,
+  "de": "die Sühne",
+  "tr": "kefaret, günahın ödenmesi",
+  "deBeispiel": "Der Gedanke der Sühne prägt bis heute unser Strafverständnis.",
+  "gsw": "Süeni",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Gedanke vo de Süeni prägt bis hüt öises Schtrafverschtändnis."
+ },
+ {
+  "id": 6428,
+  "de": "der Strafzweck",
+  "tr": "cezanın amacı",
+  "deBeispiel": "Über den eigentlichen Strafzweck streiten Fachleute seit Jahrhunderten.",
+  "gsw": "Schtrafzweck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Über de eigentlich Schtrafzweck schtriited d Fachlüüt siit Jaarhundert."
+ },
+ {
+  "id": 6429,
+  "de": "die Generalprävention",
+  "tr": "genel önleme",
+  "deBeispiel": "Die Generalprävention zielt auf die Allgemeinheit, nicht auf den Einzelnen.",
+  "gsw": "Generalprävention",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Generalprävention zielt uf d Allgemeinheit und nöd uf de Einzelt."
+ },
+ {
+  "id": 6430,
+  "de": "die Spezialprävention",
+  "tr": "özel önleme",
+  "deBeispiel": "Therapieangebote im Vollzug dienen vor allem der Spezialprävention.",
+  "gsw": "Schpezialprävention",
+  "gswArtikel": "d",
+  "gswBeispiel": "Therapieaagebot im Vollzug diened vor allem de Schpezialprävention."
+ },
+ {
+  "id": 6431,
+  "de": "das Dunkelfeld",
+  "tr": "karanlık alan, kayıtlara geçmeyen suçlar",
+  "deBeispiel": "Bei häuslicher Gewalt ist das Dunkelfeld besonders groß.",
+  "gsw": "Dunkelfäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bi hüüslicher Gwalt isch s Dunkelfäld bsunders grooss."
+ },
+ {
+  "id": 6432,
+  "de": "die Kriminalstatistik",
+  "tr": "suç istatistiği",
+  "deBeispiel": "Die Kriminalstatistik bildet nur angezeigte Taten ab.",
+  "gsw": "Kriminalschtatischtik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kriminalschtatischtik bildet nu aazeigti Taate ab."
+ },
+ {
+  "id": 6433,
+  "de": "die Anzeigebereitschaft",
+  "tr": "ihbar etme eğilimi",
+  "deBeispiel": "Eine steigende Anzeigebereitschaft kann höhere Fallzahlen vortäuschen.",
+  "gsw": "Aazeigebereitschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "E schtiigendi Aazeigebereitschaft cha höcheri Fallzale vortüüsche."
+ },
+ {
+  "id": 6434,
+  "de": "die Devianz",
+  "tr": "sapma, normdan sapan davranış",
+  "deBeispiel": "Devianz wird erst durch gesellschaftliche Reaktion zum Problem.",
+  "gsw": "Devianz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Devianz wird erscht dur di gsellschaftlichi Reaktion zum Problem."
+ },
+ {
+  "id": 6435,
+  "de": "der Normverstoß",
+  "tr": "norm ihlali",
+  "deBeispiel": "Nicht jeder Normverstoß wird strafrechtlich verfolgt.",
+  "gsw": "Normverschtooss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nöd jede Normverschtooss wird schtrafrächtlich verfolgt."
+ },
+ {
+  "id": 6436,
+  "de": "die Anomie",
+  "tr": "anomi, normsuzluk",
+  "deBeispiel": "Durkheim erklärte steigende Kriminalität mit gesellschaftlicher Anomie.",
+  "gsw": "Anomie",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Durkheim hät schtiigendi Kriminalität mit gsellschaftlicher Anomie erklärt."
+ },
+ {
+  "id": 6437,
+  "de": "die Selbstkontrolle",
+  "tr": "özdenetim",
+  "deBeispiel": "Geringe Selbstkontrolle gilt als stabiler Prädiktor für spätere Straftaten.",
+  "gsw": "Sälbschtkontrolle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gringi Sälbschtkontrolle gilt als schtabile Prädiktor für schpöteri Schtraftaate."
+ },
+ {
+  "id": 6438,
+  "de": "die Tatgelegenheit",
+  "tr": "suç işleme fırsatı",
+  "deBeispiel": "Bessere Beleuchtung verringert die Tatgelegenheit in dunklen Unterführungen.",
+  "gsw": "Tatglegeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Besseri Beleuchtig verringeret d Tatglegeheit i dunkle Unterfüehrige."
+ },
+ {
+  "id": 6439,
+  "de": "der Risikofaktor",
+  "tr": "risk faktörü, risk etkeni",
+  "deBeispiel": "Schulabbruch zählt zu den stärksten Risikofaktoren im Jugendalter.",
+  "gsw": "Risikofaktor",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schuelabbruch zellt zu de schtärchschte Risikofaktore im Jugendalter."
+ },
+ {
+  "id": 6440,
+  "de": "die Gefährlichkeit",
+  "tr": "tehlikelilik",
+  "deBeispiel": "Die Gefährlichkeit eines Menschen lässt sich nie zuverlässig vorhersagen.",
+  "gsw": "Gfährlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gfährlichkeit vo eme Mäntsch laat sich nie zuverlässig voruussäge."
+ },
+ {
+  "id": 6441,
+  "de": "die Jugendkriminalität",
+  "tr": "gençlik suçluluğu",
+  "deBeispiel": "Jugendkriminalität ist meist episodenhaft und verliert sich mit dem Erwachsenwerden.",
+  "gsw": "Jugendkriminalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jugendkriminalität isch meischtens episodehaft und verlüürt sich mit em Erwachsewärde."
+ },
+ {
+  "id": 6442,
+  "de": "die Beschaffungskriminalität",
+  "tr": "uyuşturucu temini amaçlı suçlar",
+  "deBeispiel": "Ein großer Teil der Einbrüche geht auf Beschaffungskriminalität zurück.",
+  "gsw": "Beschaffigskriminalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "En groosse Teil vo de Iibrüch gaat uf Beschaffigskriminalität zrugg."
+ },
+ {
+  "id": 6443,
+  "de": "die Entkriminalisierung",
+  "tr": "suç olmaktan çıkarma",
+  "deBeispiel": "Die Entkriminalisierung leichter Drogen entlastet die Behörden spürbar.",
+  "gsw": "Entkriminalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entkriminalisierig vo liichte Droge entlaschtet d Behörde spürbar."
+ },
+ {
+  "id": 6444,
+  "de": "die Einzelhaft",
+  "tr": "hücre hapsi, tek kişilik hücrede tutulma",
+  "deBeispiel": "Monatelange Einzelhaft hinterlässt tiefe psychische Spuren.",
+  "gsw": "Einzelhaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Monatelangi Einzelhaft hinderlaat tüüfi psychischi Schpure."
+ },
+ {
+  "id": 6445,
+  "de": "die Repression",
+  "tr": "baskı, bastırma politikası",
+  "deBeispiel": "Reine Repression ohne soziale Maßnahmen verschiebt das Problem nur.",
+  "gsw": "Repression",
+  "gswArtikel": "d",
+  "gswBeispiel": "Reini Repression ohni soziali Massnaame verschiebt s Problem nu."
+ },
+ {
+  "id": 6446,
+  "de": "die Perspektivlosigkeit",
+  "tr": "geleceksizlik, umutsuzluk",
+  "deBeispiel": "Perspektivlosigkeit ist ein häufiger Nährboden für dauerhafte Straffälligkeit.",
+  "gsw": "Perschpektivlosigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Perschpektivlosigkeit isch en hüüfige Nährbode für duurhafti Schtraffälligkeit."
+ },
+ {
+  "id": 6447,
+  "de": "die Kriminalitätsfurcht",
+  "tr": "suç korkusu",
+  "deBeispiel": "Die Kriminalitätsfurcht älterer Menschen übersteigt ihr tatsächliches Risiko.",
+  "gsw": "Kriminalitätsfurcht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kriminalitätsfurcht vo eltere Lüüt übertrifft ires tatsächliche Risiko."
+ },
+ {
+  "id": 6448,
+  "de": "die Verrohung",
+  "tr": "kabalaşma, vahşileşme",
+  "deBeispiel": "Manche beklagen eine allgemeine Verrohung des öffentlichen Umgangs.",
+  "gsw": "Verrohig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mänggi beklaged e allgemeini Verrohig vom öffentliche Umgang."
+ },
+ {
+  "id": 6449,
+  "de": "einsperren",
+  "tr": "hapsetmek, kapatmak",
+  "deBeispiel": "Wer Menschen jahrelang einsperrt, muss auch an ihre Rückkehr denken.",
+  "gsw": "iischperre",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer Mönsche jaarelang iischperrt, mues au a ire Rückkeer dänke."
+ },
+ {
+  "id": 6450,
+  "de": "büßen",
+  "tr": "bedelini ödemek, cezasını çekmek",
+  "deBeispiel": "Er musste für einen einzigen Abend jahrelang büßen.",
+  "gsw": "büesse",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät für en äinzige Aabig jaarelang müesse büesse."
+ },
+ {
+  "id": 6451,
+  "de": "abgleiten",
+  "tr": "kaymak, sürüklenmek",
+  "deBeispiel": "Nach dem Jobverlust glitt er allmählich in die Illegalität ab.",
+  "gsw": "abgliite",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Jobverluscht isch er allmählich i d Illegalität abgglitte."
+ },
+ {
+  "id": 6452,
+  "de": "straucheln",
+  "tr": "yoldan çıkmak, tökezlemek",
+  "deBeispiel": "Wer einmal gestrauchelt ist, verdient eine zweite Chance.",
+  "gsw": "schtruuchle",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer äinisch gschtruuchlet isch, verdient e zwöiti Chance."
+ },
+ {
+  "id": 6453,
+  "de": "abrutschen",
+  "tr": "düşmek, aşağı kaymak",
+  "deBeispiel": "Ohne Betreuung rutschen viele Jugendliche in kriminelle Gruppen ab.",
+  "gsw": "abrutsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Ooni Betröiig tüend vill Jugendlichi i kriminelli Gruppe abrutsche."
+ },
+ {
+  "id": 6454,
+  "de": "unterbringen",
+  "tr": "yerleştirmek, barındırmak",
+  "deBeispiel": "Junge Gefangene werden getrennt von Erwachsenen untergebracht.",
+  "gsw": "underbringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Jungi Gfangeni mues mer trennt vo de Erwachsene underbringe."
+ },
+ {
+  "id": 6455,
+  "de": "verbüßen",
+  "tr": "cezasını çekmek, hapis yatmak",
+  "deBeispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei.",
+  "gsw": "verbüesse",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät zwäi Drittel vo sinere Schtraaf verbüesst und isch dänn frei choo."
+ },
+ {
+  "id": 6456,
+  "de": "bewachen",
+  "tr": "korumak, gözetim altında tutmak, nöbet tutmak",
+  "deBeispiel": "Nachts bewachen nur wenige Beamte den gesamten Trakt.",
+  "gsw": "bewache",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Nacht bewached nu weneg Beamti de ganz Trakt."
+ },
+ {
+  "id": 6457,
+  "de": "isolieren",
+  "tr": "tecrit etmek, yalıtmak",
+  "deBeispiel": "Wer Gefangene isoliert, zerstört genau die Bindungen, die sie halten.",
+  "gsw": "isoliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer Gfangeni isoliert, zerschtört genau die Bindige, wo sie haltet."
+ },
+ {
+  "id": 6458,
+  "de": "aufarbeiten",
+  "tr": "yüzleşmek, gözden geçirip işlemek",
+  "deBeispiel": "In der Therapie arbeitet er seine Tat Schritt für Schritt auf.",
+  "gsw": "ufarbeite",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Therapie tuet er sini Taat Schritt für Schritt ufarbeite."
+ },
+ {
+  "id": 6459,
+  "de": "deeskalieren",
+  "tr": "gerginliği azaltmak, yatıştırmak",
+  "deBeispiel": "Geschulte Beamte deeskalieren Konflikte, bevor Gewalt entsteht.",
+  "gsw": "deeskaliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Gschuulti Beamti deeskaliered Konflikt, bevor Gwalt entschtaat."
+ },
+ {
+  "id": 6460,
+  "de": "abschotten",
+  "tr": "dış dünyaya kapatmak, yalıtmak",
+  "deBeispiel": "Die Anstalt schottet ihre Insassen fast vollständig von außen ab.",
+  "gsw": "abschotte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aaschtalt tuet iri Insasse fascht völlig vo usse abschotte."
+ },
+ {
+  "id": 6461,
+  "de": "rehabilitieren",
+  "tr": "topluma yeniden kazandırmak, itibarını iade etmek",
+  "deBeispiel": "Der Staat sollte Straffällige nicht nur bestrafen, sondern auch rehabilitieren.",
+  "gsw": "rehabilitiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat sött Schtraffälligi nöd nu beschtraafe, sondern au rehabilitiere."
+ },
+ {
+  "id": 6462,
+  "de": "entgleisen",
+  "tr": "kontrolden çıkmak, çığırından çıkmak",
+  "deBeispiel": "Die Auseinandersetzung entgleiste innerhalb weniger Minuten völlig.",
+  "gsw": "entgleise",
+  "gswArtikel": null,
+  "gswBeispiel": "D Uusenandersetzig isch innerhalb vo weneg Minute völlig entgleist."
+ }
+]

@@ -1,0 +1,1015 @@
+[
+ {
+  "id": 3032,
+  "de": "verwenden",
+  "tr": "kullanmak",
+  "deBeispiel": "Dieses Wort wird oft verwendet.",
+  "gsw": "verwände",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Wort verwändet mer oft."
+ },
+ {
+  "id": 3033,
+  "de": "verzeihen",
+  "tr": "affetmek",
+  "deBeispiel": "Das werde ich ihm nie verzeihen können.",
+  "gsw": "verziie",
+  "gswArtikel": null,
+  "gswBeispiel": "Das chan ich em nie verziie."
+ },
+ {
+  "id": 3034,
+  "de": "Verzeihung",
+  "tr": "özür dilerim, affedersiniz",
+  "deBeispiel": "Verzeihung! Ich habe die falsche Nummer gewählt.",
+  "gsw": "Äxgüsi",
+  "gswArtikel": null,
+  "gswBeispiel": "Äxgüsi! Ich ha di falsch Nummere gwäält."
+ },
+ {
+  "id": 3035,
+  "de": "verzichten",
+  "tr": "vazgeçmek",
+  "deBeispiel": "Ich verzichte heute auf den Kaffee.",
+  "gsw": "verzichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich verzichte hüt uf de Kaffi."
+ },
+ {
+  "id": 3036,
+  "de": "das Video",
+  "tr": "video",
+  "deBeispiel": "1. Ich habe den Film auf Video aufgenommen. 2. Lass uns ein Video vom Fest machen!",
+  "gsw": "Video",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Ich ha de Film uf Video ufgnaa. 2. Chum, mir mached es Video vom Fäscht!"
+ },
+ {
+  "id": 3038,
+  "de": "das Viertel",
+  "tr": "mahalle, semt, çeyrek",
+  "deBeispiel": "Wir wohnen in einem schönen Viertel.",
+  "gsw": "Quartier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir wohned imene schööne Quartier.",
+  "ayniLehce": [
+   "Quartier (B1)",
+   "Wohnviertel (B2)",
+   "Stadtteil (A2)"
+  ]
+ },
+ {
+  "id": 3039,
+  "de": "virtuell",
+  "tr": "sanal",
+  "deBeispiel": "Auf dieser Website kann man an einer virtuellen Stadtrundfahrt teilnehmen.",
+  "gsw": "virtuell",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf dere Website cha mer bin-ere virtuelle Schtadtrundfaart mitmache."
+ },
+ {
+  "id": 3040,
+  "de": "der Virus",
+  "tr": "virüs",
+  "deBeispiel": "Ich habe mal wieder einen Virus auf meinem Computer.",
+  "gsw": "Virus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha scho wider en Virus uf mim Computer."
+ },
+ {
+  "id": 3041,
+  "de": "die Visitenkarte",
+  "tr": "kartvizit",
+  "deBeispiel": "Darf ich Ihnen meine Visitenkarte geben?",
+  "gsw": "Visitecharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Darf ich Ine mini Visitecharte gää?"
+ },
+ {
+  "id": 3042,
+  "de": "das Visum",
+  "tr": "vize",
+  "deBeispiel": "Das Visum ist für drei Monate gültig.",
+  "gsw": "Visum",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Visum isch drüü Mönet gültig."
+ },
+ {
+  "id": 3043,
+  "de": "das Vitamin",
+  "tr": "vitamin",
+  "deBeispiel": "Der Arzt sagt, ich soll viele Vitamine essen.",
+  "gsw": "Vitamin",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Dokter säit, ich söll vill Vitamin z mir nää."
+ },
+ {
+  "id": 3044,
+  "de": "die Vollzeit",
+  "tr": "tam zamanlı",
+  "deBeispiel": "Ich möchte gerne Vollzeit arbeiten.",
+  "gsw": "Vollziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich würd gern Vollziit schaffe."
+ },
+ {
+  "id": 3046,
+  "de": "völlig",
+  "tr": "tamamen, tamamıyla",
+  "deBeispiel": "Das halte ich für völlig ausgeschlossen.",
+  "gsw": "völlig",
+  "gswArtikel": null,
+  "gswBeispiel": "Das halt ich für völlig usgschlosse."
+ },
+ {
+  "id": 3047,
+  "de": "voneinander",
+  "tr": "birbirinden",
+  "deBeispiel": "4. Von jetzt an müssen wir sparen. 5. Das Büro ist von 13 bis 15 Uhr geschlossen. Wir haben lange nichts voneinander geh",
+  "gsw": "vonenand",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ scho lang nüüt me vonenand ghöört."
+ },
+ {
+  "id": 3048,
+  "de": "vor allem",
+  "tr": "özellikle, her şeyden önce",
+  "deBeispiel": "Grüßen Sie alle von mir, vor allem Frau Meier.",
+  "gsw": "vor allem",
+  "gswArtikel": null,
+  "gswBeispiel": "Grüezed Si alli vo mir, vor allem d Frau Meier."
+ },
+ {
+  "id": 3049,
+  "de": "voraus",
+  "tr": "önden, önceden",
+  "deBeispiel": "1. Gehen Sie schon voraus. 2. Ich danke Ihnen im Voraus für Ihre Mühe.",
+  "gsw": "voruus",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Gönd Si scho voruus. 2. Ich danke Ine im Voruus für Iri Müe."
+ },
+ {
+  "id": 3050,
+  "de": "die Voraussetzung",
+  "tr": "ön koşul, şart",
+  "deBeispiel": "1. Gesunde Ernährung ist die Voraussetzung für ein langes Leben. 2. Er will die Arbeit nur unter der Voraussetzung anneh",
+  "gsw": "Vorussetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Gsundi Ernäärig isch d Vorussetzig für es langs Läbe. 2. Er wott d Arbet nur under äinere Vorussetzig aanää."
+ },
+ {
+  "id": 3051,
+  "de": "voraussichtlich",
+  "tr": "muhtemelen, tahminen",
+  "deBeispiel": "Der Zug hat voraussichtlich 20 Minuten Verspätung.",
+  "gsw": "vorussichtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zug hät vorussichtlich zwänzg Minute Verschpöötig."
+ },
+ {
+  "id": 3053,
+  "de": "sich vorbereiten",
+  "tr": "hazırlanmak",
+  "deBeispiel": "1. Am Sonntag machen wir ein kleines Fest. Ich muss noch viel dafür vorbereiten. 2. Ich muss mich auf meine Prüfung vorb",
+  "gsw": "sich vorberäite",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Am Sunntig mached mir es chliises Fäscht. Ich mue na vill defür vorberäite. 2. Ich mue mi uf mini Prüefig vorberäite."
+ },
+ {
+  "id": 3054,
+  "de": "die Vorbereitung",
+  "tr": "hazırlık",
+  "deBeispiel": "Nächste Woche beginnen wir mit der Vorbereitung für die Prüfung.",
+  "gsw": "Vorberäitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nächscht Wuche fanged mir mit de Vorberäitig für d Prüefig aa."
+ },
+ {
+  "id": 3055,
+  "de": "vordere",
+  "tr": "ön",
+  "deBeispiel": "In den vorderen Reihen sind noch Plätze frei.",
+  "gsw": "vorder",
+  "gswArtikel": null,
+  "gswBeispiel": "I de vordere Räie hätts na freii Plätz."
+ },
+ {
+  "id": 3056,
+  "de": "die Vorfahrt",
+  "tr": "geçiş önceliği",
+  "deBeispiel": "Achtung! Das Auto rechts hat Vorfahrt!",
+  "gsw": "Vortritt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Achtung! S Auto vo rächts hät Vortritt!"
+ },
+ {
+  "id": 3057,
+  "de": "vorhaben",
+  "tr": "planlamak, niyetinde olmak",
+  "deBeispiel": "Haben Sie morgen Abend schon etwas vor?",
+  "gsw": "vorhaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Händ Si morn am Aabig scho öppis vor? – Näi, me cha ja nöd jede Aabig öppis vorhaa."
+ },
+ {
+  "id": 3058,
+  "de": "vorhin",
+  "tr": "az önce, biraz önce",
+  "deBeispiel": "Vorhin hat Heidrun angerufen. Du sollst sie zurückrufen.",
+  "gsw": "vorhär",
+  "gswArtikel": null,
+  "gswBeispiel": "Vorhär hät d Heidrun aaglüte. Du sölltisch si zruggrüefe.",
+  "ayniLehce": [
+   "vorher (A2)"
+  ]
+ },
+ {
+  "id": 3059,
+  "de": "vorkommen",
+  "tr": "olmak, meydana gelmek",
+  "deBeispiel": "Kein Problem. Das kann vorkommen.",
+  "gsw": "vorchoo",
+  "gswArtikel": null,
+  "gswBeispiel": "Käis Problem. Das cha vorchoo."
+ },
+ {
+  "id": 3060,
+  "de": "vorläufig",
+  "tr": "geçici, şimdilik",
+  "deBeispiel": "1. Ich habe noch keine Wohnung. Ich wohne vorläufig bei einem Freund. 2. Das ist eine vorläufige Entscheidung.",
+  "gsw": "vorläufig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha na käi Wonig. Ich wohne vorläufig bin-eme Fründ. 2. Das isch e vorläufigi Entschäidig."
+ },
+ {
+  "id": 3061,
+  "de": "vorlesen",
+  "tr": "yüksek sesle okumak",
+  "deBeispiel": "Ich lese meinen Kindern oft etwas vor.",
+  "gsw": "vorläse",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue mine Chind oft öppis vorläse."
+ },
+ {
+  "id": 3063,
+  "de": "vorschlagen",
+  "tr": "önermek, teklif etmek",
+  "deBeispiel": "Ich schlage vor, dass wir eine Pause machen.",
+  "gsw": "vorschlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wott vorschlaa, dass mir e Pause mached."
+ },
+ {
+  "id": 3064,
+  "de": "die Vorschrift",
+  "tr": "kural, yönetmelik, talimat",
+  "deBeispiel": "Beachten Sie bitte die Vorschriften für das Benutzen der Bibliothek.",
+  "gsw": "Vorschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "Beachted Si bitte d Vorschrifte für d Benutzig vo de Bibliothek."
+ },
+ {
+  "id": 3065,
+  "de": "die Vorstellung",
+  "tr": "gösteri, seans",
+  "deBeispiel": "Wann läuft der Film? – Die nächste Vorstellung ist um 15 Uhr.",
+  "gsw": "Vorschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wänn lauft de Film? – Di nächscht Vorschtellig isch am drüü."
+ },
+ {
+  "id": 3066,
+  "de": "das Vorstellungsgespräch",
+  "tr": "iş görüşmesi, mülakat",
+  "deBeispiel": "Wann hast du dein Vorstellungsgespräch?",
+  "gsw": "Vorschtelligsgschpräch",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wänn häsch du dis Vorschtelligsgschpräch?"
+ },
+ {
+  "id": 3067,
+  "de": "der Vorteil",
+  "tr": "avantaj, yarar",
+  "deBeispiel": "Der Vorteil von dieser Wohnung ist, dass sie direkt im Zentrum liegt.",
+  "gsw": "Vortäil",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vortäil vo dere Wonig isch, dass si diräkt im Zäntrum liit."
+ },
+ {
+  "id": 3068,
+  "de": "der Vortrag",
+  "tr": "konuşma, sunum",
+  "deBeispiel": "Ihr Vortrag war sehr interessant.",
+  "gsw": "Vortraag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire Vortraag isch sehr interessant gsii."
+ },
+ {
+  "id": 3069,
+  "de": "der Vorwurf",
+  "tr": "suçlama, sitem",
+  "deBeispiel": "Eva kann nichts dafür. Mach ihr keine Vorwürfe.",
+  "gsw": "Vorwurf",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Eva cha nüt defür. Mach ere käin Vorwurf."
+ },
+ {
+  "id": 3070,
+  "de": "waagerecht",
+  "tr": "yatay",
+  "deBeispiel": "Ziehen Sie bitte einen waagerechten Strich.",
+  "gsw": "waagrächt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ziend Si bitte en waagrächte Schtrich."
+ },
+ {
+  "id": 3071,
+  "de": "wachsen",
+  "tr": "büyümek, uzamak",
+  "deBeispiel": "1. Mein Sohn ist sehr gewachsen. Er ist jetzt schon größer als ich. 2. Ich will mir die Haare wachsen lassen. 3. In mein",
+  "gsw": "wachse",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Min Sohn isch schtarch gwachse. Er isch jetz scho gröösser als ich. 2. Ich wott mer d Haar wachse laa."
+ },
+ {
+  "id": 3072,
+  "de": "die Wahl",
+  "tr": "seçim",
+  "deBeispiel": "1. Sie haben die Wahl: mit Vollpension oder Halbpension? 2. Die nächste Wahl ist im Herbst.",
+  "gsw": "Waal",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Si händ d Waal: mit Vollpension oder Halbpension? 2. Di nächscht Waal isch im Herbscht."
+ },
+ {
+  "id": 3073,
+  "de": "wahnsinnig",
+  "tr": "çılgın, deli, çok",
+  "deBeispiel": "1. Du fährst viel zu schnell. Bist du wahnsinnig?! 2. Diese Musik gefällt mir wahnsinnig gut.",
+  "gsw": "waansinnig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Du faarsch vill z schnäll. Bisch waansinnig?! 2. Die Musig gfallt mer waansinnig guet."
+ },
+ {
+  "id": 3074,
+  "de": "die Wahrheit",
+  "tr": "gerçek, hakikat",
+  "deBeispiel": "Sag mir bitte die Wahrheit. Hast du wieder geraucht?",
+  "gsw": "Waarhäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Säg mer bitte d Waarhäit. Häsch wider graucht?"
+ },
+ {
+  "id": 3075,
+  "de": "während",
+  "tr": "-ken, esnasında, sırasında",
+  "deBeispiel": "1. Während ich arbeite, höre ich oft Musik. 2. Während der Prüfung dürfen wir unsere Handys nicht benutzen.",
+  "gsw": "während",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Während ich schaffe, los ich oft Musig. 2. Während de Prüefig dörfemer s Handy nöd bruuche."
+ },
+ {
+  "id": 3076,
+  "de": "die Wand",
+  "tr": "duvar (iç duvar)",
+  "deBeispiel": "1. Ich stelle das Regal rechts an die Wand. 2. Die Wände sind hier sehr dünn. Man hört alles.",
+  "gsw": "Wand",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Ich schtele s Regal rächts a d Wand. 2. D Wänd sind da sehr dünn. Me ghöört alles."
+ },
+ {
+  "id": 3077,
+  "de": "die Wanderung",
+  "tr": "yürüyüş, doğa yürüyüşü",
+  "deBeispiel": "Wir haben in den Ferien eine schöne Wanderung gemacht.",
+  "gsw": "Wanderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir händ i de Ferie e schööni Wanderig gmacht."
+ },
+ {
+  "id": 3078,
+  "de": "die Ware",
+  "tr": "mal, ürün",
+  "deBeispiel": "Wir liefern Ihnen die Ware direkt ins Haus.",
+  "gsw": "Waar",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir liefered Ine d Waar diräkt is Huus.",
+  "ayniLehce": [
+   "wahr (A1)"
+  ]
+ },
+ {
+  "id": 3079,
+  "de": "die Wärme",
+  "tr": "sıcaklık, ılıklık",
+  "deBeispiel": "Wärme ist gut gegen meine Schmerzen.",
+  "gsw": "Wermi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wermi tuet guet gäge mini Schmärze."
+ },
+ {
+  "id": 3080,
+  "de": "warnen",
+  "tr": "uyarmak",
+  "deBeispiel": "Ich warne Sie. Der Hund ist gefährlich.",
+  "gsw": "warne",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich warne Si. De Hund isch gföörlich."
+ },
+ {
+  "id": 3082,
+  "de": "das Waschmittel",
+  "tr": "deterjan",
+  "deBeispiel": "- Diese Bluse darfst du nicht mit jedem Waschmittel waschen.",
+  "gsw": "Wöschmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Die Bluse dörfsch nöd mit jedem Wöschmittel wäsche."
+ },
+ {
+  "id": 3083,
+  "de": "der Wecker",
+  "tr": "çalar saat",
+  "deBeispiel": "- Hast du den Wecker schon gestellt?",
+  "gsw": "Wecker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Häsch de Wecker scho gschtellt?"
+ },
+ {
+  "id": 3084,
+  "de": "weder … noch",
+  "tr": "ne … ne de",
+  "deBeispiel": "Für Urlaub haben wir weder Zeit noch Geld.",
+  "gsw": "weder … no",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Ferie hämmer weder Ziit no Gäld."
+ },
+ {
+  "id": 3085,
+  "de": "sich weigern",
+  "tr": "reddetmek, karşı çıkmak",
+  "deBeispiel": "Ich weigere mich diese Arbeit zu tun.",
+  "gsw": "sich wäigere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wäigere mi, die Arbet z mache."
+ },
+ {
+  "id": 3087,
+  "de": "die Weiterbildung",
+  "tr": "mesleki eğitim, kurs",
+  "deBeispiel": "Ich möchte eine Weiterbildung machen.",
+  "gsw": "Wiiterbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich möcht e Wiiterbildig mache.",
+  "ayniLehce": [
+   "Fortbildung (B1)"
+  ]
+ },
+ {
+  "id": 3088,
+  "de": "weltweit",
+  "tr": "dünya çapında, küresel",
+  "deBeispiel": "1. Unsere Firma produziert für den weltweiten Markt. 2. Das Zertifikat B1 wird weltweit angeboten.",
+  "gsw": "wältwiit",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Üsi Firma produziert für de wältwiite Märt. 2. S Zertifikat B1 gits wältwiit."
+ },
+ {
+  "id": 3089,
+  "de": "wenden",
+  "tr": "dönüş yapmak, geri dönmek",
+  "deBeispiel": "Sie müssen zurückfahren, aber hier dürfen Sie nicht wenden.",
+  "gsw": "wände",
+  "gswArtikel": null,
+  "gswBeispiel": "Si müend zruggfaare, aber da dörfed Si nöd wände."
+ },
+ {
+  "id": 3091,
+  "de": "die Werbung",
+  "tr": "reklam",
+  "deBeispiel": "1. Ich sehe gern Werbung im Fernsehen. 2. Ich möchte keine Werbung im Briefkasten.",
+  "gsw": "Wärbig",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Ich lueg gern Wärbig am Fernsee. 2. Ich wott käi Wärbig im Briefchaschte."
+ },
+ {
+  "id": 3092,
+  "de": "werfen",
+  "tr": "atmak, fırlatmak",
+  "deBeispiel": "Die Kinder haben Steine ins Wasser geworfen.",
+  "gsw": "wärfe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind wärfed Schtäi is Wasser."
+ },
+ {
+  "id": 3093,
+  "de": "das Werk",
+  "tr": "fabrika, tesis; eser",
+  "deBeispiel": "Wir haben gestern das Werk besichtigt.",
+  "gsw": "Wärk",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ geschter s Wärk bsichtiget."
+ },
+ {
+  "id": 3094,
+  "de": "das Werkzeug",
+  "tr": "alet, araç",
+  "deBeispiel": "Wir hatten kein Werkzeug für die Reparatur dabei.",
+  "gsw": "Wärkzüüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir händ käis Wärkzüüg für d Reparatur debii ghaa."
+ },
+ {
+  "id": 3095,
+  "de": "wert",
+  "tr": "değerinde",
+  "deBeispiel": "Das Auto ist vielleicht noch 1000 Euro wert.",
+  "gsw": "wärt",
+  "gswArtikel": null,
+  "gswBeispiel": "S Auto isch villicht na tuusig Franke wärt.",
+  "ayniLehce": [
+   "Wert (B1)"
+  ]
+ },
+ {
+  "id": 3096,
+  "de": "der Wert",
+  "tr": "değer",
+  "deBeispiel": "1. Das Haus hat einen Wert von ca. 1 Mio. Euro. 2. Es hat ja doch keinen Wert. 3. Auf Ihr Urteil lege ich großen Wert.",
+  "gsw": "Wärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. S Huus hät en Wärt vo öppe äinere Million Franke. 2. Uf Ires Urtäil leg ich groosse Wärt.",
+  "ayniLehce": [
+   "wert (B1)"
+  ]
+ },
+ {
+  "id": 3097,
+  "de": "wertlos",
+  "tr": "değersiz",
+  "deBeispiel": "Diese alten Geldscheine sind heute völlig wertlos.",
+  "gsw": "wärtlos",
+  "gswArtikel": null,
+  "gswBeispiel": "Die alte Banknoote sind hüt völlig wärtlos."
+ },
+ {
+  "id": 3098,
+  "de": "wertvoll",
+  "tr": "değerli",
+  "deBeispiel": "Ich habe einen sehr wertvollen Ring von meiner Großmutter.",
+  "gsw": "wärtvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha en sehr wärtvolle Ring vo minere Groosmueter."
+ },
+ {
+  "id": 3099,
+  "de": "weshalb",
+  "tr": "niçin, neden",
+  "deBeispiel": "1. Weshalb rufst du an? 2. Ich bekomme Besuch, weshalb ich leider nicht zur Party gehen werde.",
+  "gsw": "werum",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Werum rüefsch aa? 2. Ich überchume Bsuech, und drum chan ich läider nöd a d Party."
+ },
+ {
+  "id": 3100,
+  "de": "wetten",
+  "tr": "bahse girmek, iddiaya girmek",
+  "deBeispiel": "1. Wir haben gewettet, dass sie wieder zu spät kommt. 2. Wetten, dass es bald regnet?",
+  "gsw": "wette",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir händ gwettet, dass si wider z schpaat chunt. 2. Wette, dass es gliich bald rägnet?"
+ },
+ {
+  "id": 3101,
+  "de": "der Wetterbericht",
+  "tr": "hava durumu raporu",
+  "deBeispiel": "Hast du schon den Wetterbericht gehört?",
+  "gsw": "Wätterbricht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Häsch scho de Wätterbricht ghöört?"
+ },
+ {
+  "id": 3102,
+  "de": "die Wettervorhersage",
+  "tr": "hava tahmini",
+  "deBeispiel": "Die Wettervorhersage für morgen: trocken und sonnig.",
+  "gsw": "Wätterprognose",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wätterprognose für morn: troche und sunnig."
+ },
+ {
+  "id": 3103,
+  "de": "widersprechen",
+  "tr": "itiraz etmek, karşı çıkmak",
+  "deBeispiel": "1. Da muss ich Ihnen widersprechen. 2. Das widerspricht sich aber.",
+  "gsw": "widerschpräche",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Da mue-n-ich Ine widerschpräche. 2. Das widerschpricht sich aber."
+ },
+ {
+  "id": 3105,
+  "de": "die Wiederholung",
+  "tr": "tekrar",
+  "deBeispiel": "Eine Wiederholung der Prüfung ist möglich.",
+  "gsw": "Widerholig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Widerholig vo de Prüefig isch möglich."
+ },
+ {
+  "id": 3106,
+  "de": "wiegen",
+  "tr": "tartmak, ağırlığında olmak",
+  "deBeispiel": "1. Wie viel wiegst du? 2. Der Brief wiegt mehr als 20 Gramm.",
+  "gsw": "wääge",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wie vill wäägsch du? 2. De Brief wäägt me als zwänzg Gramm."
+ },
+ {
+  "id": 3107,
+  "de": "wild",
+  "tr": "vahşi, azgın",
+  "deBeispiel": "1. Das ist ein wilder Fluss. 2. Spielt nicht so wild!",
+  "gsw": "wild",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Das isch en wilde Fluss. 2. Schpiled nöd so wild!"
+ },
+ {
+  "id": 3108,
+  "de": "die Wiese",
+  "tr": "çayır, çimenlik",
+  "deBeispiel": "Vor unserem Haus ist eine Wiese mit Bäumen.",
+  "gsw": "Matte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor üsem Huus isch e Matte mit Bäum."
+ },
+ {
+  "id": 3109,
+  "de": "wieso",
+  "tr": "neden, niçin",
+  "deBeispiel": "Wie lange sind Sie hier? – Wieso fragen Sie?",
+  "gsw": "wiso",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie lang sind Si scho da? – Wiso fröged Si?"
+ },
+ {
+  "id": 3110,
+  "de": "wie viel(e)",
+  "tr": "ne kadar, kaç tane",
+  "deBeispiel": "1. Wie viel Geld hast du dabei? 2. Wie viel ist ein Euro hier wert? 3. Wie viele Kinder haben Sie?",
+  "gsw": "wie vill",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wie vill Gäld häsch debii? 2. Wie vill isch en Euro i de Schwiiz wärt? 3. Wie vill Chind händ Si?"
+ },
+ {
+  "id": 3111,
+  "de": "winken",
+  "tr": "el sallamak",
+  "deBeispiel": "Alle standen auf dem Bahnsteig und winkten zum Abschied.",
+  "gsw": "winke",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli schtönd uf em Perron und winked zum Abschiid."
+ },
+ {
+  "id": 3112,
+  "de": "wirken",
+  "tr": "etki etmek, işe yaramak",
+  "deBeispiel": "Die Tabletten haben nicht gewirkt.",
+  "gsw": "wirke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tablette wirked läider gaar nöd."
+ },
+ {
+  "id": 3113,
+  "de": "die Wirkung",
+  "tr": "etki, tesir (bir şeyin yol açtığı sonuç)",
+  "deBeispiel": "Welche Wirkungen hat dieses Medikament? Muss ich vorsichtig sein?",
+  "gsw": "Wirkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Was für Wirkige hät das Medikamänt? Mue-n-ich ufpasse?"
+ },
+ {
+  "id": 3114,
+  "de": "die Wirklichkeit",
+  "tr": "gerçek, gerçeklik",
+  "deBeispiel": "1. Das Buch beschreibt die Wirklichkeit um 1900 sehr gut. 2. Man sagte mir, das Buch kostet nur 9 Euro. In Wirklichkeit ",
+  "gsw": "Würklichkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. S Buech beschriibt d Würklichkäit um 1900 sehr guet. 2. Me hät mer gsäit, s Buech choscht nur nüün Franke. I de Würklichkäit choschtets zwänzg."
+ },
+ {
+  "id": 3115,
+  "de": "der Wirt",
+  "tr": "lokantacı, işletmeci (lokanta, meyhane)",
+  "deBeispiel": "Ich kenne die Wirtin von diesem Lokal. Sie ist sehr nett.",
+  "gsw": "Wirt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich känne de Wirt vo dem Lokal. Er isch sehr nätt."
+ },
+ {
+  "id": 3116,
+  "de": "die Wirtin",
+  "tr": "lokantacı, işletmeci (kadın)",
+  "deBeispiel": "Ich kenne die Wirtin von diesem Lokal. Sie ist sehr nett.",
+  "gsw": "Wirtin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich känne d Wirtin vo dem Lokal. Si isch sehr nätt."
+ },
+ {
+  "id": 3117,
+  "de": "die Wirtschaft",
+  "tr": "ekonomi",
+  "deBeispiel": "In der Schule lernen die Kinder viel über Wirtschaft und Politik.",
+  "gsw": "Wirtschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Schuel leered d Chind vill über Wirtschaft und Politik."
+ },
+ {
+  "id": 3118,
+  "de": "das Wissen",
+  "tr": "bilgi",
+  "deBeispiel": "1. Es hat ein großes Wissen über Pflanzen. 2. Ich tue nichts ohne dein Wissen.",
+  "gsw": "Wüsse",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Si hät es groosses Wüsse über Pflanze. 2. Ich mache nüt ohni dis Wüsse.",
+  "ayniLehce": [
+   "wissen (A1)"
+  ]
+ },
+ {
+  "id": 3119,
+  "de": "die Wissenschaft",
+  "tr": "bilim",
+  "deBeispiel": "Vertreter von Kunst und Wissenschaft treffen sich heute in Berlin.",
+  "gsw": "Wüsseschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Verträtter vo Kunscht und Wüsseschaft träffed sich hüt z Züri."
+ },
+ {
+  "id": 3120,
+  "de": "der Wissenschaftler",
+  "tr": "bilim insanı, bilim adamı",
+  "deBeispiel": "- Sie ist Wissenschaftlerin an der Universität.",
+  "gsw": "Wüsseschaftler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si isch Wüsseschaftlerin a de Universitäät."
+ },
+ {
+  "id": 3121,
+  "de": "wohl",
+  "tr": "iyi; galiba, herhalde",
+  "deBeispiel": "1. Kann ich nach Hause gehen? Ich fühle mich nicht wohl. 2. Das wird wohl etwas länger dauern als geplant.",
+  "gsw": "wool",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Chan ich häigaa? Ich füül mi nöd wool. 2. Das gaat wool chli lenger als plant."
+ },
+ {
+  "id": 3122,
+  "de": "der Wohnsitz",
+  "tr": "ikametgah, mesken",
+  "deBeispiel": "Er hat einen festen Wohnsitz in dieser Stadt.",
+  "gsw": "Wohnsitz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Er hät en feschte Wohnsitz i dere Schtadt."
+ },
+ {
+  "id": 3123,
+  "de": "die Wolle",
+  "tr": "yün",
+  "deBeispiel": "Dieser Pullover ist aus reiner Wolle.",
+  "gsw": "Wule",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Pullover isch us räiner Wule."
+ },
+ {
+  "id": 3124,
+  "de": "worüber",
+  "tr": "ne hakkında, ne üzerine",
+  "deBeispiel": "Worüber lachen Sie?",
+  "gsw": "über was",
+  "gswArtikel": null,
+  "gswBeispiel": "Über was lached Si?"
+ },
+ {
+  "id": 3125,
+  "de": "worum",
+  "tr": "ne hakkında, ne ile ilgili",
+  "deBeispiel": "Kann ich Herrn Meier sprechen? – Worum geht es denn?",
+  "gsw": "um was",
+  "gswArtikel": null,
+  "gswBeispiel": "Chan ich mit em Herr Meier rede? – Um was gaats dänn?"
+ },
+ {
+  "id": 3126,
+  "de": "das Wörterbuch",
+  "tr": "sözlük",
+  "deBeispiel": "Ich muss das Wort im Wörterbuch nachschlagen.",
+  "gsw": "Wörterbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich mue s Wort im Wörterbuech naaluege."
+ },
+ {
+  "id": 3127,
+  "de": "die Wunde",
+  "tr": "yara",
+  "deBeispiel": "Die Wunde müssen wir sofort verbinden.",
+  "gsw": "Wund",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wund müend mir sofort verbinde."
+ },
+ {
+  "id": 3128,
+  "de": "das Wunder",
+  "tr": "mucize",
+  "deBeispiel": "1. Ich bin mit dem Fahrrad gestürzt. Es war ein Wunder, dass nichts Schlimmes passiert ist. 2. Du isst zu viel Schokolad",
+  "gsw": "Wunder",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Ich bi mit em Velo gschtürzt. Es isch es Wunder gsii, dass nüt Schlimms passiert isch. 2. Du issisch z vill Schoggi. Käis Wunder, dass der schlächt isch."
+ },
+ {
+  "id": 3129,
+  "de": "wunderschön",
+  "tr": "çok güzel, harika",
+  "deBeispiel": "1. Wir haben einen Ausflug gemacht. Es war wunderschön. 2. Ich habe mir ein wunderschönes Kleid gekauft.",
+  "gsw": "wunderschöön",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir händ en Usflug gmacht. Es isch wunderschöön gsii. 2. Ich ha mer es wunderschööns Chläid chauft."
+ },
+ {
+  "id": 3130,
+  "de": "sich wundern",
+  "tr": "şaşırmak",
+  "deBeispiel": "1. Es hat mich gewundert, dass das Essen hier so günstig ist. 2. Ich wundere mich, dass du schon so früh aus der Schule ",
+  "gsw": "sich wundere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Es hät mi gwunderet, dass s Ässe da so günschtig isch. 2. Ich wundere mi, dass du scho so früe us de Schuel häi chunsch."
+ },
+ {
+  "id": 3131,
+  "de": "sich wünschen",
+  "tr": "dilemek, istemek",
+  "deBeispiel": "1. Ich wünsche Ihnen alles Gute. 2. Was wünschst du dir zum Geburtstag? 3. Wünsch mir Glück!",
+  "gsw": "sich wünsche",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich wünsche Ine alles Gueti. 2. Was wünschisch der zum Geburtstag? 3. Wünsch mer Glück!"
+ },
+ {
+  "id": 3132,
+  "de": "wütend",
+  "tr": "öfkeli, kızgın",
+  "deBeispiel": "Warum bist du so wütend?",
+  "gsw": "hässig",
+  "gswArtikel": null,
+  "gswBeispiel": "Werum bisch so hässig?"
+ },
+ {
+  "id": 3133,
+  "de": "die Anzahl",
+  "tr": "sayı, adet",
+  "deBeispiel": "Die Anzahl der Teilnehmer war groß.",
+  "gsw": "Aazaal",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aazaal Täilnämer isch grooss gsii."
+ },
+ {
+  "id": 3134,
+  "de": "zahlreich",
+  "tr": "çok sayıda, sayısız",
+  "deBeispiel": "Die Gäste sind zahlreich gekommen. Es gibt zahlreiche Beispiele für gute Zusammenarbeit.",
+  "gsw": "zaalriich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gescht sind zaalriich choo. Es git zaalriichi Bischpil für gueti Zämenarbet."
+ },
+ {
+  "id": 3135,
+  "de": "die Zahlung",
+  "tr": "ödeme",
+  "deBeispiel": "Bitte geben Sie bei der Zahlung die Rechnungsnummer an.",
+  "gsw": "Zaalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte gänd Si bi de Zaalig d Rächnigsnummere aa."
+ },
+ {
+  "id": 3136,
+  "de": "zählen",
+  "tr": "saymak, güvenmek",
+  "deBeispiel": "1. Bitte zählen Sie das Wechselgeld sofort nach. 2. Mein Sohn kann schon bis 100 zählen. 3. Ich zähle auf dich!",
+  "gsw": "zele",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Bitte zeled Si s Retourgäld sofort naa. 2. Min Sohn cha scho bis hundert zele. 3. Ich zele uf di!"
+ },
+ {
+  "id": 3137,
+  "de": "die Zahncreme/Zahnpasta",
+  "tr": "diş macunu",
+  "deBeispiel": "Die neue Zahncreme riecht sehr gut.",
+  "gsw": "Zaanpaschta",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di neu Zaanpaschta schmöckt sehr guet."
+ },
+ {
+  "id": 3138,
+  "de": "die Zange",
+  "tr": "pense, kerpeten",
+  "deBeispiel": "Um das Fahrrad zu reparieren, brauchst du eine Zange.",
+  "gsw": "Zange",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zum s Velo flicke bruuchsch e Zange."
+ },
+ {
+  "id": 3139,
+  "de": "das Zeichen",
+  "tr": "işaret",
+  "deBeispiel": "Bitte fangen Sie erst an, wenn ich Ihnen ein Zeichen gebe.",
+  "gsw": "Zäiche",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bitte fanged Si eerscht aa, wänn ich Ine es Zäiche gibe."
+ },
+ {
+  "id": 3140,
+  "de": "das Verkehrszeichen",
+  "tr": "trafik işareti",
+  "deBeispiel": "- Meine Kinder lernen in der Schule gerade die Verkehrszeichen.",
+  "gsw": "Verkeerszäiche",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Chind leered i de Schuel grad d Verkeerszäiche."
+ },
+ {
+  "id": 3141,
+  "de": "die Zeichnung",
+  "tr": "çizim, resim",
+  "deBeispiel": "Das ist eine schöne Zeichnung.",
+  "gsw": "Zäichnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das isch e schööni Zäichnig."
+ },
+ {
+  "id": 3142,
+  "de": "die Zeile",
+  "tr": "satır",
+  "deBeispiel": "Das Wort steht in der fünften Zeile von oben.",
+  "gsw": "Ziile",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Wort schtaat i de füfte Ziile vo obe."
+ },
+ {
+  "id": 3143,
+  "de": "der Zeitpunkt",
+  "tr": "zaman, an",
+  "deBeispiel": "Er ist krank. Das ist kein guter Zeitpunkt für einen Besuch.",
+  "gsw": "Ziitpunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Er isch chrank. Das isch käin guete Ziitpunkt für en Bsuech."
+ },
+ {
+  "id": 3144,
+  "de": "zelten",
+  "tr": "kamp yapmak",
+  "deBeispiel": "Ich habe noch nie gezeltet.",
+  "gsw": "campiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha na nie campiert."
+ },
+ {
+  "id": 3145,
+  "de": "zentral",
+  "tr": "merkezi",
+  "deBeispiel": "Wir suchen eine Zweizimmerwohnung in zentraler Lage.",
+  "gsw": "zentral",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sueched e Zwäizimmerwonig a-nere zentrale Laag."
+ },
+ {
+  "id": 3146,
+  "de": "zerstören",
+  "tr": "yok etmek, tahrip etmek",
+  "deBeispiel": "Der Sturm hat viele Häuser zerstört.",
+  "gsw": "zerschtööre",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schturm hät vill Hüüser zerschtöört."
+ },
+ {
+  "id": 3147,
+  "de": "das Zertifikat",
+  "tr": "sertifika, belge",
+  "deBeispiel": "Wenn ich die Prüfung schaffe, bekomme ich ein Zertifikat.",
+  "gsw": "Zertifikat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wänn ich d Prüefig schaffe, überchume-n-ich es Zertifikat."
+ },
+ {
+  "id": 3148,
+  "de": "das Zeug",
+  "tr": "eşya, şey",
+  "deBeispiel": "Was hast du mit meinen Sachen gemacht? – Ich habe dein ganzes Zeug in dein Zimmer getan.",
+  "gsw": "Züüg",
+  "gswArtikel": "s",
+  "gswBeispiel": "Was häsch mit mine Sache gmacht? – Ich ha dis ganze Züüg i dis Zimmer taa."
+ },
+ {
+  "id": 3149,
+  "de": "der Zeuge",
+  "tr": "tanık, şahit (erkek)",
+  "deBeispiel": "Die Polizei sucht noch Zeugen für den Unfall.",
+  "gsw": "Züüge",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Polizei suecht na Züüge für de Unfall."
+ }
+]

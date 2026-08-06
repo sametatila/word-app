@@ -1,0 +1,995 @@
+[
+ {
+  "id": 5073,
+  "de": "das Hochwasser",
+  "tr": "taşkın, yüksek su seviyesi",
+  "deBeispiel": "Die Gemeinde hat entlang des Flusses Schutzwälle gegen Hochwasser gebaut.",
+  "gsw": "Hochwasser",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Gmeind hät em Fluss naa Schutzwäll gäge s Hochwasser baut."
+ },
+ {
+  "id": 5074,
+  "de": "die Lawine",
+  "tr": "çığ",
+  "deBeispiel": "Wegen der Lawinengefahr blieb der Wanderweg den ganzen Winter gesperrt.",
+  "gsw": "Lawine",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäg de Lawinegfaar isch de Wanderwäg de ganz Winter gschperrt blibe."
+ },
+ {
+  "id": 5075,
+  "de": "die Hitzewelle",
+  "tr": "sıcak hava dalgası",
+  "deBeispiel": "Die dritte Hitzewelle des Sommers trocknete die Felder völlig aus.",
+  "gsw": "Hitzwelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di dritt Hitzwelle vom Summer hät d Fälder völlig uuströchnet."
+ },
+ {
+  "id": 5076,
+  "de": "der Luftdruck",
+  "tr": "hava basıncı",
+  "deBeispiel": "Ein rasch fallender Luftdruck kündigt meist schlechtes Wetter an.",
+  "gsw": "Luftdruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "En schnäll fallende Luftdruck kündigt meischtens schlächts Wätter aa."
+ },
+ {
+  "id": 5077,
+  "de": "die Bewölkung",
+  "tr": "bulutluluk",
+  "deBeispiel": "Am Nachmittag nimmt die Bewölkung von Westen her deutlich zu.",
+  "gsw": "Bewölkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Namittag nimmt d Bewölkig vo Weschte här düütlich zue."
+ },
+ {
+  "id": 5078,
+  "de": "die Schneedecke",
+  "tr": "kar örtüsü",
+  "deBeispiel": "Unter der dicken Schneedecke überstehen die Stauden den Winter gut.",
+  "gsw": "Schneedecki",
+  "gswArtikel": "d",
+  "gswBeispiel": "Under de dicke Schneedecki überschtönd d Staude de Winter guet."
+ },
+ {
+  "id": 5079,
+  "de": "der Erdrutsch",
+  "tr": "heyelan, toprak kayması",
+  "deBeispiel": "Ein Erdrutsch verschüttete nach dem Dauerregen die Straße ins Dorf.",
+  "gsw": "Erdrutsch",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Erdrutsch hät nach em Duurräge d Schtraass is Dorf verschüttet."
+ },
+ {
+  "id": 5080,
+  "de": "die Erderwärmung",
+  "tr": "küresel ısınma",
+  "deBeispiel": "Die Erderwärmung verschiebt die Blütezeit vieler heimischer Pflanzen.",
+  "gsw": "Erderwärmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erderwärmig verschiebt d Blüetziit vo vilne einheimische Pflanze."
+ },
+ {
+  "id": 5081,
+  "de": "die Klimazone",
+  "tr": "iklim kuşağı",
+  "deBeispiel": "Diese Palmenart wächst nur in tropischen Klimazonen im Freiland.",
+  "gsw": "Klimazone",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Palmeart wachst nu i tropische Klimazone im Freiland."
+ },
+ {
+  "id": 5082,
+  "de": "die Trockenheit",
+  "tr": "kuraklık, kuruluk",
+  "deBeispiel": "Die anhaltende Trockenheit zwingt die Bauern zu strenger Wasserplanung.",
+  "gsw": "Tröchni",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di aahaltend Tröchni zwingt d Buure zunere schtränge Wasserplanig."
+ },
+ {
+  "id": 5083,
+  "de": "die Dämmerung",
+  "tr": "alacakaranlık, tan/akşam vakti",
+  "deBeispiel": "In der Dämmerung kommen die Rehe an den Waldrand heraus.",
+  "gsw": "Dämmerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Dämmerig chömed d Reh a de Waldrand use."
+ },
+ {
+  "id": 5084,
+  "de": "der Nadelwald",
+  "tr": "iğne yapraklı orman",
+  "deBeispiel": "Der dichte Nadelwald reicht bis an den Rand des Moores.",
+  "gsw": "Nadelwald",
+  "gswArtikel": "de",
+  "gswBeispiel": "De dicht Nadelwald reicht bis a de Rand vom Moor."
+ },
+ {
+  "id": 5085,
+  "de": "die Lichtung",
+  "tr": "orman açıklığı, kayran",
+  "deBeispiel": "Auf der Lichtung machten wir Rast und beobachteten die Vögel.",
+  "gsw": "Lichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Lichtig händ mir Rascht gmacht und d Vögel beobachtet."
+ },
+ {
+  "id": 5086,
+  "de": "der Waldrand",
+  "tr": "orman kenarı",
+  "deBeispiel": "Am Waldrand wachsen Sträucher, die vielen Insekten Nahrung bieten.",
+  "gsw": "Waldrand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Waldrand wachsed Schtrüücher, wo vilne Insekte Nahrig bieted."
+ },
+ {
+  "id": 5087,
+  "de": "das Naturschutzgebiet",
+  "tr": "doğa koruma alanı",
+  "deBeispiel": "Im Naturschutzgebiet dürfen Besucher die Wege nicht verlassen.",
+  "gsw": "Naturschutzgebiet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Naturschutzgebiet dörfed d Bsuecher d Wäg nöd verlaa."
+ },
+ {
+  "id": 5088,
+  "de": "das Moor",
+  "tr": "bataklık, turbalık",
+  "deBeispiel": "Ein intaktes Moor speichert erstaunlich große Mengen an Kohlenstoff.",
+  "gsw": "Moor",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es intakts Moor schpeicheret erschtuunlich grossi Mänge Choolestoff."
+ },
+ {
+  "id": 5089,
+  "de": "der Acker",
+  "tr": "tarla, ekili arazi",
+  "deBeispiel": "Nach der Ernte lag der Acker mehrere Wochen brach.",
+  "gsw": "Acher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de Ärnt isch de Acher mehreri Wuche brach gläge."
+ },
+ {
+  "id": 5090,
+  "de": "die Knospe",
+  "tr": "tomurcuk",
+  "deBeispiel": "An den Zweigen zeigen sich die ersten Knospen des Frühlings.",
+  "gsw": "Chnoschpe",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Zwiig zeiged sich di erschte Chnoschpe vom Früelig."
+ },
+ {
+  "id": 5091,
+  "de": "der Trieb",
+  "tr": "sürgün, filiz",
+  "deBeispiel": "Die jungen Triebe sollte man erst nach dem letzten Frost schneiden.",
+  "gsw": "Trieb",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di junge Trieb sött mer erscht nach em letschte Froscht schniide."
+ },
+ {
+  "id": 5092,
+  "de": "die Rinde",
+  "tr": "ağaç kabuğu",
+  "deBeispiel": "An der rissigen Rinde erkennt man das Alter der Eiche.",
+  "gsw": "Rinde",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de rissige Rinde erkennt mer s Alter vo de Eiche."
+ },
+ {
+  "id": 5093,
+  "de": "die Baumkrone",
+  "tr": "ağaç tepesi, taç",
+  "deBeispiel": "Der Sturm hat mehrere Baumkronen im Park abgebrochen.",
+  "gsw": "Boumchrone",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Schturm hät mehreri Boumchrone im Park abbroche."
+ },
+ {
+  "id": 5094,
+  "de": "der Strauch",
+  "tr": "çalı",
+  "deBeispiel": "Der Strauch vor dem Fenster trägt im Herbst rote Beeren.",
+  "gsw": "Schtruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtruuch vor em Fänschter treit im Herbscht roti Beeri."
+ },
+ {
+  "id": 5095,
+  "de": "die Staude",
+  "tr": "çok yıllık bitki",
+  "deBeispiel": "Diese Stauden blühen jedes Jahr wieder ohne großen Aufwand.",
+  "gsw": "Staude",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Staude blüehed jedes Jaar wider ohni grosse Uufwand."
+ },
+ {
+  "id": 5096,
+  "de": "der Obstbaum",
+  "tr": "meyve ağacı",
+  "deBeispiel": "Im Februar werden die alten Obstbäume im Garten ausgelichtet.",
+  "gsw": "Obschtboum",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Februar wird im Garte jede alt Obschtboum uusglichtet."
+ },
+ {
+  "id": 5097,
+  "de": "das Beet",
+  "tr": "tarh, çiçek/sebze yatağı",
+  "deBeispiel": "Im hinteren Beet haben wir dieses Jahr Kräuter angelegt.",
+  "gsw": "Beet",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im hindere Beet händ mir das Jaar Chrüter aaglait."
+ },
+ {
+  "id": 5098,
+  "de": "das Gewächshaus",
+  "tr": "sera",
+  "deBeispiel": "Im Gewächshaus reifen die Tomaten gut zwei Wochen früher.",
+  "gsw": "Gwächshuus",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Gwächshuus werded d Tomate guet zwäi Wuche früener riif."
+ },
+ {
+  "id": 5099,
+  "de": "der Kompost",
+  "tr": "kompost, organik gübre",
+  "deBeispiel": "Küchenabfälle und Laub kommen bei uns auf den Kompost.",
+  "gsw": "Komposcht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Chuchiabfäll und Laub chömed bi eus uf de Komposcht."
+ },
+ {
+  "id": 5100,
+  "de": "der Setzling",
+  "tr": "fide",
+  "deBeispiel": "Die Setzlinge kommen erst Mitte Mai ins Freiland.",
+  "gsw": "Setzling",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Setzling chömed erscht Mitti Mai is Freiland."
+ },
+ {
+  "id": 5101,
+  "de": "die Gartenschere",
+  "tr": "bahçe makası",
+  "deBeispiel": "Mit einer scharfen Gartenschere verletzt man die Rinde weniger.",
+  "gsw": "Garteschäre",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit ere schaarfe Garteschäre verletzt mer d Rinde weniger."
+ },
+ {
+  "id": 5102,
+  "de": "die Gießkanne",
+  "tr": "sulama kabı, süzgeçli kova",
+  "deBeispiel": "Er füllte die Gießkanne aus der Regentonne hinter dem Schuppen.",
+  "gsw": "Giesschanne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät d Giesschanne us de Rägetonne hinder em Schopf gfüllt."
+ },
+ {
+  "id": 5103,
+  "de": "das Wildtier",
+  "tr": "yabani hayvan",
+  "deBeispiel": "Der neue Zaun soll Wildtiere von der Autobahn fernhalten.",
+  "gsw": "Wildtier",
+  "gswArtikel": "s",
+  "gswBeispiel": "De nöi Zuun söll d Wildtier vo de Autobaan wägghalte."
+ },
+ {
+  "id": 5104,
+  "de": "das Nagetier",
+  "tr": "kemirgen",
+  "deBeispiel": "Nagetiere haben im Winter die Rinde der jungen Bäume abgefressen.",
+  "gsw": "Nagetier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nagetier händ im Winter d Rinde vo de junge Böim abgfrässe."
+ },
+ {
+  "id": 5105,
+  "de": "der Zugvogel",
+  "tr": "göçmen kuş",
+  "deBeispiel": "Viele Zugvögel kehren wegen des milderen Klimas früher zurück.",
+  "gsw": "Zugvogel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vili Zugvögel chömed wäg em milderen Klima früener zrugg."
+ },
+ {
+  "id": 5106,
+  "de": "das Bienenvolk",
+  "tr": "arı kolonisi",
+  "deBeispiel": "Ein starkes Bienenvolk übersteht auch einen langen Winter.",
+  "gsw": "Biievolk",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es schtarchs Biievolk überschtaat au en lange Winter."
+ },
+ {
+  "id": 5107,
+  "de": "der Nistplatz",
+  "tr": "yuvalanma yeri",
+  "deBeispiel": "Alte Scheunen bieten Schwalben einen sicheren Nistplatz.",
+  "gsw": "Nischtplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Alti Schüüre bieted de Schwalbe en sichere Nischtplatz."
+ },
+ {
+  "id": 5108,
+  "de": "welken",
+  "tr": "solmak, pörsümek",
+  "deBeispiel": "Ohne Wasser welken die Blätter schon nach zwei Tagen.",
+  "gsw": "welke",
+  "gswArtikel": null,
+  "gswBeispiel": "Ohni Wasser welked d Blätter scho nach zwäi Täg."
+ },
+ {
+  "id": 5109,
+  "de": "verdorren",
+  "tr": "kuruyup kavrulmak",
+  "deBeispiel": "Der Rasen ist im heißen August völlig verdorrt.",
+  "gsw": "verdorre",
+  "gswArtikel": null,
+  "gswBeispiel": "De Raase isch im häisse Auguscht völlig verdorrt."
+ },
+ {
+  "id": 5110,
+  "de": "sprießen",
+  "tr": "filizlenmek, yeşermek",
+  "deBeispiel": "Nach dem warmen Regen sprießt überall frisches Grün.",
+  "gsw": "schpriesse",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em warme Räge schpriesst überall frischs Grüen."
+ },
+ {
+  "id": 5111,
+  "de": "umgraben",
+  "tr": "belleyip alt üst etmek, çapalamak",
+  "deBeispiel": "Im Herbst hat er das ganze Gemüsebeet noch einmal umgegraben.",
+  "gsw": "umgrabe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Herbscht hät er s ganz Gmüesbeet no einisch umgrabe."
+ },
+ {
+  "id": 5112,
+  "de": "jäten",
+  "tr": "yabani ot ayıklamak",
+  "deBeispiel": "Nach dem Regen lässt sich das Unkraut leichter jäten.",
+  "gsw": "jäte",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Räge laat sich s Unchruut liechter jäte."
+ },
+ {
+  "id": 5113,
+  "de": "beschneiden",
+  "tr": "budamak",
+  "deBeispiel": "Die Hecke sollte man zweimal im Jahr beschneiden.",
+  "gsw": "bschniide",
+  "gswArtikel": null,
+  "gswBeispiel": "D Hegg sött mer zwäimal im Jaar bschniide."
+ },
+ {
+  "id": 5114,
+  "de": "streunen",
+  "tr": "başıboş dolaşmak",
+  "deBeispiel": "Nachts streunen Füchse sogar durch die Gärten am Stadtrand.",
+  "gsw": "schtreune",
+  "gswArtikel": null,
+  "gswBeispiel": "Znacht schtreuned Füchs sogar dur d Gärte am Schtadtrand."
+ },
+ {
+  "id": 5115,
+  "de": "aufforsten",
+  "tr": "ağaçlandırmak",
+  "deBeispiel": "Die Gemeinde will die kahlen Hänge wieder aufforsten.",
+  "gsw": "uufforschte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeind wott di chaale Häng wider uufforschte."
+ },
+ {
+  "id": 5116,
+  "de": "verwittern",
+  "tr": "hava koşullarıyla aşınmak, yıpranmak",
+  "deBeispiel": "Der Zaun ist über die Jahre in Wind und Regen verwittert.",
+  "gsw": "verwittere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zuun isch über d Jaar i Wind und Räge verwitteret."
+ },
+ {
+  "id": 5117,
+  "de": "abkühlen",
+  "tr": "serinlemek, soğumak",
+  "deBeispiel": "Nach dem Gewitter hat sich die Luft spürbar abgekühlt.",
+  "gsw": "abchüele",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Gwitter hät sich d Luft schpürbar abchüelt."
+ },
+ {
+  "id": 5118,
+  "de": "nieseln",
+  "tr": "çiselemek",
+  "deBeispiel": "Draußen nieselt es seit dem frühen Morgen ununterbrochen.",
+  "gsw": "nisle",
+  "gswArtikel": null,
+  "gswBeispiel": "Dusse nislet es sit em früene Morge ununderbroche."
+ },
+ {
+  "id": 5119,
+  "de": "aufklaren",
+  "tr": "hava açmak",
+  "deBeispiel": "Gegen Mittag klarte es auf und die Sonne kam heraus.",
+  "gsw": "uufklare",
+  "gswArtikel": null,
+  "gswBeispiel": "Gäge Mittag hät s uufklaart und d Sunne isch usechoo."
+ },
+ {
+  "id": 5120,
+  "de": "überfluten",
+  "tr": "su basmak, sular altında bırakmak",
+  "deBeispiel": "Der Bach hat nach der Schneeschmelze die Wiesen überflutet.",
+  "gsw": "überflute",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bach hät nach de Schneeschmelzi d Wise überflutet."
+ },
+ {
+  "id": 5121,
+  "de": "versickern",
+  "tr": "toprağa sızmak",
+  "deBeispiel": "Auf verdichtetem Boden versickert das Regenwasser nur langsam.",
+  "gsw": "versickere",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf verdichtetem Bode versickeret s Rägewasser nu langsam."
+ },
+ {
+  "id": 5122,
+  "de": "bestäuben",
+  "tr": "tozlaştırmak, döllemek",
+  "deBeispiel": "Wildbienen bestäuben viele Obstsorten zuverlässiger als Honigbienen.",
+  "gsw": "beschtüübe",
+  "gswArtikel": null,
+  "gswBeispiel": "Wildbiene beschtüübed vili Obschtsorte zuverlässiger als Honigbiene."
+ },
+ {
+  "id": 5123,
+  "de": "brüten",
+  "tr": "kuluçkaya yatmak",
+  "deBeispiel": "Auf dem Dach des Rathauses brüten seit Jahren Störche.",
+  "gsw": "brüete",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Dach vom Rathuus brüeted sit Jaare Störch."
+ },
+ {
+  "id": 5124,
+  "de": "stürmen",
+  "tr": "fırtına çıkmak, sert esmek",
+  "deBeispiel": "An der Küste stürmte es die ganze Nacht hindurch.",
+  "gsw": "schtürme",
+  "gswArtikel": null,
+  "gswBeispiel": "A de Küschte hät s di ganz Nacht dur gschtürmt."
+ },
+ {
+  "id": 5125,
+  "de": "verdunsten",
+  "tr": "buharlaşmak",
+  "deBeispiel": "In der Mittagshitze verdunstet das Gießwasser fast sofort.",
+  "gsw": "verdunschte",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Mittagshitz verdunschtet s Giesswasser fascht sofort."
+ },
+ {
+  "id": 5126,
+  "de": "schmelzen",
+  "tr": "erimek",
+  "deBeispiel": "Der Schnee auf den Gipfeln schmilzt von Jahr zu Jahr früher.",
+  "gsw": "schmelze",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schnee uf de Gipfel tuet vo Jaar zu Jaar früener schmelze."
+ },
+ {
+  "id": 5127,
+  "de": "wuchern",
+  "tr": "aşırı büyümek, her yeri sarmak",
+  "deBeispiel": "Die Minze wuchert im ganzen Garten und verdrängt andere Kräuter.",
+  "gsw": "wuechere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Minze wuecheret im ganze Garte und verdrängt anderi Chrüter."
+ },
+ {
+  "id": 5128,
+  "de": "roden",
+  "tr": "ağaçları kesip temizlemek",
+  "deBeispiel": "Für die neue Trasse wurde ein ganzer Streifen Wald gerodet.",
+  "gsw": "rode",
+  "gswArtikel": null,
+  "gswBeispiel": "Für di nöi Trasse isch en ganze Schtreife Wald grodet worde."
+ },
+ {
+  "id": 5129,
+  "de": "fruchtbar",
+  "tr": "verimli, bereketli",
+  "deBeispiel": "Der Boden am Flussufer ist besonders fruchtbar und leicht zu bearbeiten.",
+  "gsw": "fruchtbar",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bode am Flussufer isch bsunders fruchtbar und liecht z bearbeite."
+ },
+ {
+  "id": 5130,
+  "de": "karg",
+  "tr": "kıraç, çorak",
+  "deBeispiel": "Auf dem kargen Bergboden wachsen nur wenige zähe Pflanzen.",
+  "gsw": "charg",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em charge Bergbode wachsed nu weneg zäächi Pflanze."
+ },
+ {
+  "id": 5131,
+  "de": "sumpfig",
+  "tr": "bataklık gibi, çamurlu",
+  "deBeispiel": "Nach der Schneeschmelze ist die Wiese hinter dem Hof sumpfig.",
+  "gsw": "sumpfig",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Schneeschmelzi isch d Wise hinder em Hof sumpfig."
+ },
+ {
+  "id": 5132,
+  "de": "immergrün",
+  "tr": "her dem yeşil",
+  "deBeispiel": "Immergrüne Hecken bieten Vögeln auch im Winter Schutz.",
+  "gsw": "immergrüen",
+  "gswArtikel": null,
+  "gswBeispiel": "Immergrüeni Hegge bieted de Vögel au im Winter Schutz."
+ },
+ {
+  "id": 5133,
+  "de": "winterhart",
+  "tr": "kışa dayanıklı",
+  "deBeispiel": "Diese Sorte ist winterhart und muss nicht abgedeckt werden.",
+  "gsw": "winterhart",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Sorte isch winterhart und mues nöd abdeckt werde."
+ },
+ {
+  "id": 5134,
+  "de": "artenreich",
+  "tr": "tür bakımından zengin",
+  "deBeispiel": "Eine artenreiche Wiese kommt ohne chemische Mittel gut zurecht.",
+  "gsw": "artereich",
+  "gswArtikel": null,
+  "gswBeispiel": "E artereichi Wise chunnt ohni chemischi Mittel guet zrächt."
+ },
+ {
+  "id": 5135,
+  "de": "üppig",
+  "tr": "gür, bol",
+  "deBeispiel": "Nach dem regnerischen Frühling wächst alles besonders üppig.",
+  "gsw": "üppig",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em rägnerische Früelig wachst alles bsunders üppig."
+ },
+ {
+  "id": 5136,
+  "de": "jahreszeitlich",
+  "tr": "mevsimsel, mevsime bağlı",
+  "deBeispiel": "Der Wasserstand des Sees schwankt stark jahreszeitlich.",
+  "gsw": "jaresziitlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Wasserschtand vom See schwankt schtarch jaresziitlich."
+ },
+ {
+  "id": 5137,
+  "de": "schwül",
+  "tr": "bunaltıcı, boğucu sıcak",
+  "deBeispiel": "Die Luft war den ganzen Tag schwül und drückend.",
+  "gsw": "schwüel",
+  "gswArtikel": null,
+  "gswBeispiel": "D Luft isch de ganz Tag schwüel und drückend gsi."
+ },
+ {
+  "id": 5138,
+  "de": "naturnah",
+  "tr": "doğaya yakın, doğal",
+  "deBeispiel": "Der Bach wurde naturnah umgestaltet und mäandert wieder frei.",
+  "gsw": "naturnaach",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bach isch naturnaach umgschtaltet worde und mäanderet wider frei."
+ },
+ {
+  "id": 5139,
+  "de": "der Stimmzettel",
+  "tr": "oy pusulası",
+  "deBeispiel": "Er faltete den Stimmzettel und warf ihn in die Urne.",
+  "gsw": "Schtimmzettel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Er hät de Schtimmzettel gfaltet und en i d Urne gworfe."
+ },
+ {
+  "id": 5140,
+  "de": "die Volksabstimmung",
+  "tr": "halk oylaması, referandum",
+  "deBeispiel": "Über den Bau der neuen Brücke entscheidet eine Volksabstimmung.",
+  "gsw": "Volksabschtimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über de Bau vo de nöie Brugg entscheidet e Volksabschtimmig."
+ },
+ {
+  "id": 5141,
+  "de": "die Bürgerinitiative",
+  "tr": "yurttaş girişimi, vatandaş inisiyatifi",
+  "deBeispiel": "Eine Bürgerinitiative kämpft seit Jahren gegen den geplanten Flughafen.",
+  "gsw": "Bürgerinitiative",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Bürgerinitiative kämpft sit Jaare gäge de gplant Flughafe."
+ },
+ {
+  "id": 5142,
+  "de": "der Bürgermeister",
+  "tr": "belediye başkanı",
+  "deBeispiel": "Der Bürgermeister eröffnete die Sitzung mit einer kurzen Rede.",
+  "gsw": "Bürgermeischter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bürgermeischter hät d Sitzig mit ere churze Red eröffnet."
+ },
+ {
+  "id": 5143,
+  "de": "der Gemeinderat",
+  "tr": "belediye meclisi, meclis üyesi",
+  "deBeispiel": "Der Gemeinderat tritt jeden zweiten Donnerstag im Rathaus zusammen.",
+  "gsw": "Gmeindraat",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Gmeindraat chunnt jede zwäit Dunschtig im Rathuus zäme."
+ },
+ {
+  "id": 5144,
+  "de": "der Stadtrat",
+  "tr": "şehir meclisi, meclis üyesi",
+  "deBeispiel": "Im Stadtrat gibt es keine klare Mehrheit für den Vorschlag.",
+  "gsw": "Schtadtraat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Schtadtraat gits kei klari Mehrheit für de Vorschlag."
+ },
+ {
+  "id": 5145,
+  "de": "die Stadtverwaltung",
+  "tr": "belediye idaresi, şehir yönetimi",
+  "deBeispiel": "Die Stadtverwaltung bearbeitet den Antrag innerhalb von vier Wochen.",
+  "gsw": "Schtadtverwaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtadtverwaltig bearbeitet de Aatrag innerhalb vo vier Wuche."
+ },
+ {
+  "id": 5146,
+  "de": "die Sitzung",
+  "tr": "oturum, toplantı",
+  "deBeispiel": "Die Sitzung wurde nach drei Stunden ohne Ergebnis unterbrochen.",
+  "gsw": "Sitzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sitzig isch nach drei Schtund ohni Ergebnis underbroche worde.",
+  "ayniLehce": [
+   "Besprechung (B1)"
+  ]
+ },
+ {
+  "id": 5147,
+  "de": "die Gesetzgebung",
+  "tr": "yasama, mevzuat",
+  "deBeispiel": "Die Gesetzgebung hinkt der technischen Entwicklung deutlich hinterher.",
+  "gsw": "Gsetzgebig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gsetzgebig hinkt de technische Entwicklig düütlich hinderhär."
+ },
+ {
+  "id": 5148,
+  "de": "die Fraktion",
+  "tr": "meclis grubu, fraksiyon",
+  "deBeispiel": "Die größte Fraktion stellt den Vorsitzenden des Ausschusses.",
+  "gsw": "Fraktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di gröschti Fraktion schtellt de Vorsitzend vom Uusschuss."
+ },
+ {
+  "id": 5149,
+  "de": "der Parteitag",
+  "tr": "parti kongresi, kurultay",
+  "deBeispiel": "Auf dem Parteitag in Hannover wurde heftig über Steuern gestritten.",
+  "gsw": "Parteitag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Parteitag z Hannover isch heftig über Schtüüre gschtritte worde."
+ },
+ {
+  "id": 5150,
+  "de": "die Amtszeit",
+  "tr": "görev süresi",
+  "deBeispiel": "Seine zweite Amtszeit endet im Frühjahr nächsten Jahres.",
+  "gsw": "Amtsziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini zwäit Amtsziit ändet im Früelig vom nöchschte Jaar."
+ },
+ {
+  "id": 5151,
+  "de": "das Mandat",
+  "tr": "milletvekilliği, temsil yetkisi",
+  "deBeispiel": "Die kleine Partei verlor bei der Wahl drei Mandate.",
+  "gsw": "Mandat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Di chli Partei hät bi de Waal drei Mandat verlore."
+ },
+ {
+  "id": 5152,
+  "de": "die Demokratie",
+  "tr": "demokrasi",
+  "deBeispiel": "Eine Demokratie lebt davon, dass Menschen sich einmischen.",
+  "gsw": "Demokratie",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Demokratie läbt devoo, dass sich d Mäntsche iimischend."
+ },
+ {
+  "id": 5153,
+  "de": "die Wählerschaft",
+  "tr": "seçmen kitlesi",
+  "deBeispiel": "Die Partei hat ihre traditionelle Wählerschaft in den Städten verloren.",
+  "gsw": "Wählerschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Partei hät iri traditionelli Wählerschaft i de Schtedt verlore."
+ },
+ {
+  "id": 5154,
+  "de": "die Demonstration",
+  "tr": "gösteri, yürüyüş",
+  "deBeispiel": "An der Demonstration gegen die Mieterhöhungen nahmen Tausende teil.",
+  "gsw": "Demonstration",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Demonstration gäge d Mieterhöhige händ Tuusigi teilgnoo."
+ },
+ {
+  "id": 5155,
+  "de": "die Petition",
+  "tr": "dilekçe, imza kampanyası",
+  "deBeispiel": "Die Petition für den Erhalt des Schwimmbads sammelte 20000 Unterschriften.",
+  "gsw": "Petition",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Petition für de Erhalt vom Schwimmbad hät 20000 Underschrifte gsammlet."
+ },
+ {
+  "id": 5156,
+  "de": "die Transparenz",
+  "tr": "şeffaflık",
+  "deBeispiel": "Bei der Vergabe der Aufträge fehlt es an Transparenz.",
+  "gsw": "Transparenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Vergaab vo de Uufträg fählt s a Transparenz."
+ },
+ {
+  "id": 5157,
+  "de": "das Gemeinwohl",
+  "tr": "kamu yararı, ortak iyi",
+  "deBeispiel": "Der Politiker beruft sich bei jeder Entscheidung auf das Gemeinwohl.",
+  "gsw": "Gmeinwool",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Politiker berueft sich bi jedem Entscheid uf s Gmeinwool."
+ },
+ {
+  "id": 5158,
+  "de": "die Bekanntmachung",
+  "tr": "resmî duyuru, ilan",
+  "deBeispiel": "Die amtliche Bekanntmachung hing zwei Wochen im Schaukasten.",
+  "gsw": "Bekanntmachig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D amtlichi Bekanntmachig isch zwäi Wuche im Schaukaschte ghanget."
+ },
+ {
+  "id": 5159,
+  "de": "die Anhörung",
+  "tr": "dinleme oturumu, görüş alma",
+  "deBeispiel": "Vor der Entscheidung findet eine öffentliche Anhörung der Anwohner statt.",
+  "gsw": "Aahörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor em Entscheid findet e öffentlichi Aahörig vo de Aawoner schtatt."
+ },
+ {
+  "id": 5160,
+  "de": "der Einspruch",
+  "tr": "itiraz",
+  "deBeispiel": "Gegen den Bescheid können Sie innerhalb eines Monats Einspruch erheben.",
+  "gsw": "Iischpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gäge de Bscheid chönd Si innerhalb vo eme Monet Iischpruch erhebe."
+ },
+ {
+  "id": 5161,
+  "de": "das Misstrauensvotum",
+  "tr": "güvensizlik oyu",
+  "deBeispiel": "Die Regierung überstand das Misstrauensvotum mit nur zwei Stimmen.",
+  "gsw": "Misstrauensvotum",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Regierig hät s Misstrauensvotum mit nu zwäi Schtimme überschtande."
+ },
+ {
+  "id": 5162,
+  "de": "das Wahllokal",
+  "tr": "sandık merkezi, oy verme yeri",
+  "deBeispiel": "Die Wahllokale öffnen um acht Uhr und schließen um achtzehn Uhr.",
+  "gsw": "Waallokal",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Waallokal öffned am acht Uhr und schliessed am achtzäh Uhr."
+ },
+ {
+  "id": 5163,
+  "de": "die Hochrechnung",
+  "tr": "seçim tahmini, projeksiyon",
+  "deBeispiel": "Die erste Hochrechnung zeigte einen knappen Vorsprung der Grünen.",
+  "gsw": "Hochrechnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di erscht Hochrechnig hät en chnappe Vorschprung vo de Grüene zeigt."
+ },
+ {
+  "id": 5164,
+  "de": "die Auszählung",
+  "tr": "oy sayımı",
+  "deBeispiel": "Die Auszählung der Briefwahlstimmen dauerte bis in die Nacht.",
+  "gsw": "Uszählig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uszählig vo de Briefwaalschtimme hät bis i d Nacht duuret."
+ },
+ {
+  "id": 5165,
+  "de": "das Wahlrecht",
+  "tr": "oy hakkı, seçim hukuku",
+  "deBeispiel": "Das Wahlrecht ab sechzehn wird in mehreren Bundesländern diskutiert.",
+  "gsw": "Waalrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Waalrächt ab sächzäh wird i mehrere Bundesländer diskutiert."
+ },
+ {
+  "id": 5166,
+  "de": "die Pressekonferenz",
+  "tr": "basın toplantısı",
+  "deBeispiel": "Der Minister verließ die Pressekonferenz ohne eine einzige Frage zu beantworten.",
+  "gsw": "Pressekonferenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Minischter hät d Pressekonferenz verlaa, ohni ei einzigi Fraag z beantworte."
+ },
+ {
+  "id": 5167,
+  "de": "das Wahlversprechen",
+  "tr": "seçim vaadi",
+  "deBeispiel": "Von den Wahlversprechen ist nach zwei Jahren wenig übrig geblieben.",
+  "gsw": "Waalverschpräche",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vo de Waalverschpräche isch nach zwäi Jaar wenig übrig blibe."
+ },
+ {
+  "id": 5168,
+  "de": "der Machtwechsel",
+  "tr": "iktidar değişimi",
+  "deBeispiel": "Nach zwölf Jahren kam es endlich zu einem Machtwechsel.",
+  "gsw": "Machtwächsel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach zwölf Jaar isch es ändlich zumene Machtwächsel choo."
+ },
+ {
+  "id": 5169,
+  "de": "die Legislaturperiode",
+  "tr": "yasama dönemi",
+  "deBeispiel": "Das Gesetz soll noch in dieser Legislaturperiode verabschiedet werden.",
+  "gsw": "Legislaturperiode",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gsetz söll no i dere Legislaturperiode verabschidet werde."
+ },
+ {
+  "id": 5170,
+  "de": "das Parlament",
+  "tr": "parlamento, meclis",
+  "deBeispiel": "Das Parlament stimmte gestern über den umstrittenen Entwurf ab.",
+  "gsw": "Parlament",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Parlament hät geschter über de umschtritten Entwurf abgschtimmt."
+ },
+ {
+  "id": 5171,
+  "de": "die Politikverdrossenheit",
+  "tr": "siyasetten bıkkınlık",
+  "deBeispiel": "Die wachsende Politikverdrossenheit zeigt sich an der niedrigen Beteiligung.",
+  "gsw": "Politikverdrosseheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di wachsend Politikverdrosseheit zeigt sich a de nidrige Beteiligig."
+ },
+ {
+  "id": 5172,
+  "de": "die Steuererhöhung",
+  "tr": "vergi artışı",
+  "deBeispiel": "Vor der Wahl schließt jede Partei eine Steuererhöhung aus.",
+  "gsw": "Schtüürerhöhig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Waal schliesst jedi Partei e Schtüürerhöhig uus."
+ },
+ {
+  "id": 5173,
+  "de": "die Rechenschaft",
+  "tr": "hesap verme",
+  "deBeispiel": "Gewählte Vertreter müssen den Bürgern Rechenschaft über ihre Arbeit ablegen.",
+  "gsw": "Rächeschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gwählti Vertreter mönd de Bürger Rächeschaft über iri Arbet ablege."
+ },
+ {
+  "id": 5174,
+  "de": "das Wahlergebnis",
+  "tr": "seçim sonucu",
+  "deBeispiel": "Das vorläufige Wahlergebnis wird kurz nach Mitternacht erwartet.",
+  "gsw": "Waalergebnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "S vorläufig Waalergebnis wird churz nach Mitternacht erwartet."
+ },
+ {
+  "id": 5175,
+  "de": "die Vertrauensfrage",
+  "tr": "güvenoyu istemi",
+  "deBeispiel": "Der Kanzler stellte im Dezember überraschend die Vertrauensfrage.",
+  "gsw": "Vertrauensfraag",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Kanzler hät im Dezember überraschend d Vertrauensfraag gschtellt."
+ },
+ {
+  "id": 5176,
+  "de": "das Grundrecht",
+  "tr": "temel hak",
+  "deBeispiel": "Die Versammlungsfreiheit ist ein Grundrecht und keine Gefälligkeit des Staates.",
+  "gsw": "Grundrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Versammligsfreiheit isch es Grundrächt und kei Gfälligkeit vom Schtaat."
+ },
+ {
+  "id": 5177,
+  "de": "die Bürgerbeteiligung",
+  "tr": "yurttaş katılımı",
+  "deBeispiel": "Bei großen Bauprojekten ist eine frühe Bürgerbeteiligung inzwischen üblich.",
+  "gsw": "Bürgerbeteiligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi grosse Bauprojekt isch e früeni Bürgerbeteiligig inzwüsche üblich."
+ },
+ {
+  "id": 5178,
+  "de": "kandidieren",
+  "tr": "adaylığını koymak, aday olmak",
+  "deBeispiel": "Sie kandidiert im Herbst zum ersten Mal für den Stadtrat.",
+  "gsw": "kandidiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si kandidiert im Herbscht zum erschte Mal für de Schtadtraat."
+ },
+ {
+  "id": 5179,
+  "de": "regieren",
+  "tr": "yönetmek, iktidarda olmak",
+  "deBeispiel": "Die beiden Parteien regieren das Land seit vier Jahren gemeinsam.",
+  "gsw": "regiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Di beide Parteie regiered s Land sit vier Jaar gmeinsam."
+ },
+ {
+  "id": 5180,
+  "de": "befürworten",
+  "tr": "desteklemek, olumlu bulmak",
+  "deBeispiel": "Eine knappe Mehrheit befürwortet den Ausbau des Radwegenetzes.",
+  "gsw": "befürworte",
+  "gswArtikel": null,
+  "gswBeispiel": "E chnappi Mehrheit befürwortet de Uusbau vom Velowägnetz."
+ },
+ {
+  "id": 5181,
+  "de": "ernennen",
+  "tr": "atamak, tayin etmek",
+  "deBeispiel": "Der Rat ernannte sie zur neuen Leiterin des Ordnungsamts.",
+  "gsw": "ernenne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Raat hät si zur nöie Leiterin vom Ordnigsamt ernennt."
+ },
+ {
+  "id": 5182,
+  "de": "vereidigen",
+  "tr": "yemin ettirmek, göreve yemin ile başlatmak",
+  "deBeispiel": "Die neuen Minister wurden am Mittwoch im Parlament vereidigt.",
+  "gsw": "vereidige",
+  "gswArtikel": null,
+  "gswBeispiel": "Di nöie Minischter sind am Mittwuch im Parlament vereidigt worde."
+ }
+]

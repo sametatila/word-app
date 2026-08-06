@@ -1,0 +1,569 @@
+[
+ {
+  "id": 5624,
+  "de": "einträglich",
+  "tr": "kazançlı, kârlı",
+  "deBeispiel": "Der Handel mit Ersatzteilen ist erstaunlich einträglich geworden.",
+  "gsw": "iiträglich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Handel mit Ersatzteil isch erschtuunlich iiträglich worde."
+ },
+ {
+  "id": 5625,
+  "de": "die Untermiete",
+  "tr": "alt kira, alt kiracılık",
+  "deBeispiel": "Er wohnt zur Untermiete in einem Zimmer bei einer Familie.",
+  "gsw": "Undermiet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er wont zur Undermiet i mene Zimmer bi ere Familie."
+ },
+ {
+  "id": 5626,
+  "de": "der Mietspiegel",
+  "tr": "kira endeksi, resmî kira barometresi",
+  "deBeispiel": "Laut Mietspiegel ist die geforderte Miete deutlich zu hoch.",
+  "gsw": "Mietschpiegel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Luut Mietschpiegel isch di gforderet Miet düütlich z hooch."
+ },
+ {
+  "id": 5627,
+  "de": "die Mietpreisbremse",
+  "tr": "kira artış freni, kira tavanı düzenlemesi",
+  "deBeispiel": "Die Mietpreisbremse soll den Anstieg der Mieten in Großstädten dämpfen.",
+  "gsw": "Mietpriisbrämse",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mietpriisbrämse söll de Aaschtieg vo de Miete i de Groosschtädt dämpfe."
+ },
+ {
+  "id": 5628,
+  "de": "die Hausverwaltung",
+  "tr": "bina yönetimi, apartman yönetimi",
+  "deBeispiel": "Die Hausverwaltung reagiert seit Wochen nicht auf unsere Beschwerden.",
+  "gsw": "Huusverwaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Huusverwaltig reagiert sit Wuche nöd uf öisi Bschwerde."
+ },
+ {
+  "id": 5629,
+  "de": "die Zwangsräumung",
+  "tr": "zorla tahliye, icra yoluyla tahliye",
+  "deBeispiel": "Nach monatelangem Streit kam es zur Zwangsräumung der Wohnung.",
+  "gsw": "Zwangsruumig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach monetelangem Schtriit isch es zur Zwangsruumig vo de Wonig cho."
+ },
+ {
+  "id": 5630,
+  "de": "der Schimmel",
+  "tr": "küf",
+  "deBeispiel": "Hinter dem Schrank hat sich im Winter Schimmel gebildet.",
+  "gsw": "Schimmel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Hinder em Schrank hät sich im Winter Schimmel bildet."
+ },
+ {
+  "id": 5631,
+  "de": "die Immobilie",
+  "tr": "gayrimenkul, taşınmaz",
+  "deBeispiel": "Er hat sein Geld in Immobilien statt in Aktien angelegt.",
+  "gsw": "Immobilie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät sis Gäld i Immobilie schtatt in Aktie aagleit."
+ },
+ {
+  "id": 5632,
+  "de": "der Makler",
+  "tr": "emlakçı, komisyoncu",
+  "deBeispiel": "Der Makler verlangt eine Provision von zwei Monatsmieten.",
+  "gsw": "Makler",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Makler verlangt e Provision vo zwäi Monetsmiete."
+ },
+ {
+  "id": 5633,
+  "de": "die Eigentumswohnung",
+  "tr": "mülkiyeti kendine ait daire, kat mülkiyetli daire",
+  "deBeispiel": "Sie haben eine kleine Eigentumswohnung am Stadtrand gekauft.",
+  "gsw": "Eigetumswonig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si händ e chlini Eigetumswonig am Schtadtrand gchauft."
+ },
+ {
+  "id": 5634,
+  "de": "die Wertsteigerung",
+  "tr": "değer artışı",
+  "deBeispiel": "Der neue Bahnhof sorgte für eine deutliche Wertsteigerung der Grundstücke.",
+  "gsw": "Wärtschtiigerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De nöi Baanhof hät für e düütlichi Wärtschtiigerig vo de Grundschtück gsorgt."
+ },
+ {
+  "id": 5635,
+  "de": "der Wohnungsmarkt",
+  "tr": "konut piyasası",
+  "deBeispiel": "Der Wohnungsmarkt in der Hauptstadt ist seit Jahren angespannt.",
+  "gsw": "Wonigsmarkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wonigsmarkt i de Hauptschtadt isch sit Jaar aagschpannt."
+ },
+ {
+  "id": 5636,
+  "de": "der Leerstand",
+  "tr": "boş durma, boş kalma (konut, dükkân)",
+  "deBeispiel": "In der Altstadt nimmt der Leerstand von Ladenlokalen zu.",
+  "gsw": "Leerschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Altschtadt nimmt de Leerschtand vo Ladelokal zue."
+ },
+ {
+  "id": 5637,
+  "de": "die Dämmung",
+  "tr": "yalıtım, izolasyon",
+  "deBeispiel": "Eine bessere Dämmung senkt die Heizkosten spürbar.",
+  "gsw": "Dämmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E bessri Dämmig senkt d Heizchoschte schpüürbar."
+ },
+ {
+  "id": 5638,
+  "de": "die Fassade",
+  "tr": "cephe, bina yüzü",
+  "deBeispiel": "Die Fassade des Gebäudes wird im Frühjahr neu gestrichen.",
+  "gsw": "Fassade",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fassade vom Gebäud wird im Früelig nöi gschtriche."
+ },
+ {
+  "id": 5639,
+  "de": "der Grundriss",
+  "tr": "kat planı, plan",
+  "deBeispiel": "Auf dem Grundriss erkennt man drei Zimmer und einen Balkon.",
+  "gsw": "Grundriss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Grundriss gseet me drüü Zimmer und en Balkon."
+ },
+ {
+  "id": 5640,
+  "de": "das Dachgeschoss",
+  "tr": "çatı katı",
+  "deBeispiel": "Im Dachgeschoss ist es im Sommer unerträglich heiß.",
+  "gsw": "Dachgschoss",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Dachgschoss isch es im Summer unerträglich häiss."
+ },
+ {
+  "id": 5641,
+  "de": "der Altbau",
+  "tr": "eski yapı, eski bina (genelde savaş öncesi)",
+  "deBeispiel": "Viele Studenten wohnen gern in einem Altbau mit hohen Decken.",
+  "gsw": "Altbau",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vill Schtudänte wonded gern i mene Altbau mit hoche Decke."
+ },
+ {
+  "id": 5642,
+  "de": "der Neubau",
+  "tr": "yeni yapı, yeni bina",
+  "deBeispiel": "Der Neubau am Fluss bietet Platz für achtzig Familien.",
+  "gsw": "Nöibau",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Nöibau am Fluss bütet Platz für achtzg Familie."
+ },
+ {
+  "id": 5643,
+  "de": "die Baugenehmigung",
+  "tr": "yapı ruhsatı, inşaat izni",
+  "deBeispiel": "Ohne Baugenehmigung darf hier nicht gebaut werden.",
+  "gsw": "Baubewilligung",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Baubewilligung dörf me da nöd baue."
+ },
+ {
+  "id": 5644,
+  "de": "der Bebauungsplan",
+  "tr": "imar planı",
+  "deBeispiel": "Der neue Bebauungsplan sieht deutlich mehr Grünflächen vor.",
+  "gsw": "Bebauigsplan",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im nöie Bebauigsplan hät s düütlich meh Grüenflächene."
+ },
+ {
+  "id": 5645,
+  "de": "die Stadtentwicklung",
+  "tr": "kentsel gelişim, şehir planlaması",
+  "deBeispiel": "Die Stadtentwicklung orientiert sich künftig stärker am Klimaschutz.",
+  "gsw": "Schtadtentwicklig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtadtentwicklig orientiert sich künftig schtärcher am Klimaschutz."
+ },
+ {
+  "id": 5646,
+  "de": "das Stadtviertel",
+  "tr": "semt, mahalle",
+  "deBeispiel": "Das Stadtviertel hat sich in zehn Jahren völlig verändert.",
+  "gsw": "Schtadtviertel",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schtadtviertel hät sich i zää Jaar völlig verändert."
+ },
+ {
+  "id": 5647,
+  "de": "die Innenstadt",
+  "tr": "şehir merkezi",
+  "deBeispiel": "In der Innenstadt sollen künftig deutlich weniger Autos fahren.",
+  "gsw": "Innerschtadt",
+  "gswArtikel": "d",
+  "gswBeispiel": "In de Innerschtadt sölled i Zuekunft düütlich weniger Auto faare."
+ },
+ {
+  "id": 5648,
+  "de": "die Sozialwohnung",
+  "tr": "sosyal konut",
+  "deBeispiel": "Die Stadt plant den Bau von tausend neuen Sozialwohnungen.",
+  "gsw": "Sozialwohnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtadt plant de Bau vo tuusig nöie Sozialwohnige."
+ },
+ {
+  "id": 5649,
+  "de": "die Obdachlosigkeit",
+  "tr": "evsizlik, barınaksızlık",
+  "deBeispiel": "Steigende Mieten treiben immer mehr Menschen in die Obdachlosigkeit.",
+  "gsw": "Obdachlosigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtiigendi Miete triibed immer meh Mäntsche i d Obdachlosigkeit."
+ },
+ {
+  "id": 5650,
+  "de": "die Wohnfläche",
+  "tr": "kullanım alanı, net konut alanı",
+  "deBeispiel": "Die Wohnung hat eine Wohnfläche von siebzig Quadratmetern.",
+  "gsw": "Wohnflächi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wohnig hät e Wohnflächi vo sibzg Quadratmeter."
+ },
+ {
+  "id": 5651,
+  "de": "der Stellplatz",
+  "tr": "park yeri, araç yeri",
+  "deBeispiel": "Zur Wohnung gehört ein überdachter Stellplatz für ein Auto.",
+  "gsw": "Schtellplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zu de Wohnig ghört en überdachte Schtellplatz für es Auto."
+ },
+ {
+  "id": 5652,
+  "de": "die Spedition",
+  "tr": "nakliye firması, taşımacılık şirketi",
+  "deBeispiel": "Für den Umzug haben wir eine günstige Spedition beauftragt.",
+  "gsw": "Schpedition",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für de Umzug händ mir e günschtigi Schpedition beuuftraget."
+ },
+ {
+  "id": 5653,
+  "de": "das Verkehrsaufkommen",
+  "tr": "trafik yoğunluğu, trafik hacmi",
+  "deBeispiel": "Am Freitagnachmittag ist das Verkehrsaufkommen besonders hoch.",
+  "gsw": "Verchehrsuufchoo",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Friitignamittag isch s Verchehrsuufchoo bsunders hoch."
+ },
+ {
+  "id": 5654,
+  "de": "der Kreisverkehr",
+  "tr": "dönel kavşak",
+  "deBeispiel": "Am Kreisverkehr müssen Sie die zweite Ausfahrt nehmen.",
+  "gsw": "Chräisverchehr",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Chräisverchehr müend Sie di zwäit Uusfaart nää."
+ },
+ {
+  "id": 5655,
+  "de": "der Radweg",
+  "tr": "bisiklet yolu",
+  "deBeispiel": "Der neue Radweg verläuft getrennt von der Fahrbahn.",
+  "gsw": "Velowäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "De nöi Velowäg verlauft trännt vo de Faarbahn."
+ },
+ {
+  "id": 5656,
+  "de": "der Pendler",
+  "tr": "işe gidip gelen kişi, banliyö yolcusu",
+  "deBeispiel": "Tausende Pendler fahren täglich mit dem Zug in die Stadt.",
+  "gsw": "Pändler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Tuusigi Pändler faared täglich mit em Zug i d Schtadt."
+ },
+ {
+  "id": 5657,
+  "de": "die Maut",
+  "tr": "geçiş ücreti, otoyol ücreti",
+  "deBeispiel": "In Österreich muss man für die Autobahn eine Maut zahlen.",
+  "gsw": "Maut",
+  "gswArtikel": "d",
+  "gswBeispiel": "In Öschtriich mues mer für d Autobahn e Maut zale."
+ },
+ {
+  "id": 5658,
+  "de": "die Tiefgarage",
+  "tr": "yeraltı otoparkı, kapalı otopark",
+  "deBeispiel": "In der Tiefgarage sind am Abend noch einige Plätze frei.",
+  "gsw": "Tüüfgarage",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Tüüfgarage sind am Aabig no es paar Plätz frei."
+ },
+ {
+  "id": 5659,
+  "de": "die Geschwindigkeitsbegrenzung",
+  "tr": "hız sınırı",
+  "deBeispiel": "Vor der Schule gilt eine Geschwindigkeitsbegrenzung von dreißig.",
+  "gsw": "Gschwindigkeitsbegränzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Schuel gilt e Gschwindigkeitsbegränzig vo drissg."
+ },
+ {
+  "id": 5660,
+  "de": "die Ladesäule",
+  "tr": "şarj istasyonu, şarj ünitesi",
+  "deBeispiel": "Vor dem Rathaus wurden zwei neue Ladesäulen installiert.",
+  "gsw": "Ladesüüle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor em Rathuus sind zwäi nöi Ladesüüle inschtalliert worde."
+ },
+ {
+  "id": 5661,
+  "de": "das Schienennetz",
+  "tr": "demiryolu ağı",
+  "deBeispiel": "Das Schienennetz im Norden wird in den nächsten Jahren erweitert.",
+  "gsw": "Schiinenetz",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schiinenetz im Norde wird i de nächschte Jaar erwiiteret."
+ },
+ {
+  "id": 5662,
+  "de": "die Umgehungsstraße",
+  "tr": "çevre yolu",
+  "deBeispiel": "Seit dem Bau der Umgehungsstraße ist es im Dorf ruhiger.",
+  "gsw": "Umfaarigsschtraass",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sit em Bau vo de Umfaarigsschtraass isch es im Dorf ruehiger."
+ },
+ {
+  "id": 5663,
+  "de": "der Zugausfall",
+  "tr": "tren seferinin iptali",
+  "deBeispiel": "Wegen des Sturms kam es zu zahlreichen Zugausfällen.",
+  "gsw": "Zugsuusfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäge em Schturm hät s vill Zugsuusfäll ggä."
+ },
+ {
+  "id": 5664,
+  "de": "der Anwohner",
+  "tr": "civarda oturan kişi, mahalle sakini",
+  "deBeispiel": "Die Anwohner beschweren sich über den Lärm der Baustelle.",
+  "gsw": "Aawohner",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Aawohner beklaged sich über de Lärm vo de Bauschtell."
+ },
+ {
+  "id": 5665,
+  "de": "modernisieren",
+  "tr": "modernleştirmek, yenilemek",
+  "deBeispiel": "Der Eigentümer will das Bad und die Heizung modernisieren.",
+  "gsw": "modernisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bsitzer wott s Bad und d Heizig modernisiere."
+ },
+ {
+  "id": 5666,
+  "de": "errichten",
+  "tr": "inşa etmek, dikmek",
+  "deBeispiel": "Auf dem Gelände soll ein neues Wohnhaus errichtet werden.",
+  "gsw": "errichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Gländ söll es nöis Wohnhuus errichtet werde."
+ },
+ {
+  "id": 5667,
+  "de": "abreißen",
+  "tr": "yıkmak, sökmek",
+  "deBeispiel": "Die alte Fabrik am Kanal wird im Sommer abgerissen.",
+  "gsw": "abriisse",
+  "gswArtikel": null,
+  "gswBeispiel": "D alt Fabrik am Kanaal wird im Summer abgrisse."
+ },
+ {
+  "id": 5668,
+  "de": "umleiten",
+  "tr": "başka yöne yönlendirmek, güzergâhı değiştirmek",
+  "deBeispiel": "Der Verkehr wird wegen der Bauarbeiten großräumig umgeleitet.",
+  "gsw": "umleite",
+  "gswArtikel": null,
+  "gswBeispiel": "De Verchehr wird wäge de Bauarbete grossrüümig umgleitet."
+ },
+ {
+  "id": 5669,
+  "de": "ausbauen",
+  "tr": "genişletmek, geliştirmek",
+  "deBeispiel": "Die Stadt will das Radwegenetz in den nächsten Jahren ausbauen.",
+  "gsw": "uusboue",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtadt wott s Velowägnetz i de nächschte Jaar uusboue."
+ },
+ {
+  "id": 5670,
+  "de": "erschließen",
+  "tr": "altyapıya kavuşturmak, imara açmak",
+  "deBeispiel": "Das neue Baugebiet wird zuerst mit Straßen und Leitungen erschlossen.",
+  "gsw": "erschliesse",
+  "gswArtikel": null,
+  "gswBeispiel": "S nöi Baugebiet wird zerscht mit Schtraasse und Leitige erschlosse."
+ },
+ {
+  "id": 5671,
+  "de": "verlegen",
+  "tr": "döşemek, yerini değiştirmek",
+  "deBeispiel": "Die Handwerker verlegen im Keller neue Rohre.",
+  "gsw": "verlege",
+  "gswArtikel": null,
+  "gswBeispiel": "D Handwerker verlegged im Käller nöi Röhr."
+ },
+ {
+  "id": 5672,
+  "de": "einparken",
+  "tr": "park etmek, manevrayla yerleştirmek",
+  "deBeispiel": "In dieser engen Straße kann man kaum einparken.",
+  "gsw": "iiparkiere",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere änge Schtraass cha mer chuum iiparkiere."
+ },
+ {
+  "id": 5673,
+  "de": "befahren",
+  "tr": "üzerinden geçmek, araçla kullanmak",
+  "deBeispiel": "Diese Straße darf nur von Anliegern befahren werden.",
+  "gsw": "befaare",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Schtraass dörf nur vo de Aawohner befaare werde."
+ },
+ {
+  "id": 5674,
+  "de": "ausstatten",
+  "tr": "donatmak, teçhiz etmek",
+  "deBeispiel": "Die Wohnung ist mit einer neuen Küche ausgestattet.",
+  "gsw": "uusschtatte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wohnig isch mit ere nöie Chuchi uusgschtattet."
+ },
+ {
+  "id": 5675,
+  "de": "umgestalten",
+  "tr": "yeniden düzenlemek, dönüştürmek",
+  "deBeispiel": "Der Platz vor dem Bahnhof wird komplett umgestaltet.",
+  "gsw": "umgschtalte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Platz vor em Bahnhof wird komplett umgschtaltet."
+ },
+ {
+  "id": 5676,
+  "de": "bezuschussen",
+  "tr": "maddi destek vermek, sübvanse etmek",
+  "deBeispiel": "Der Staat bezuschusst den Einbau neuer Fenster.",
+  "gsw": "bezueschusse",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat tuet de Iibau vo nöie Fänschter bezueschusse."
+ },
+ {
+  "id": 5677,
+  "de": "abstellen",
+  "tr": "bırakmak, park etmek",
+  "deBeispiel": "Fahrräder dürfen nicht im Treppenhaus abgestellt werden.",
+  "gsw": "abschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Velo dörfed nöd im Träppehuus abgschtellt werde."
+ },
+ {
+  "id": 5678,
+  "de": "ortsüblich",
+  "tr": "yörede alışılmış, emsale uygun",
+  "deBeispiel": "Die Miete liegt leicht über der ortsüblichen Vergleichsmiete.",
+  "gsw": "ortsüeblich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Miet liit liicht über de ortsüebliche Verglichsmiet."
+ },
+ {
+  "id": 5679,
+  "de": "bezugsfertig",
+  "tr": "oturmaya hazır, teslime hazır",
+  "deBeispiel": "Die Wohnungen sollen schon im Herbst bezugsfertig sein.",
+  "gsw": "bezugsfertig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wohnige sölled scho im Herbscht bezugsfertig sii."
+ },
+ {
+  "id": 5680,
+  "de": "fußläufig",
+  "tr": "yürüme mesafesinde",
+  "deBeispiel": "Der Bahnhof ist von hier aus fußläufig zu erreichen.",
+  "gsw": "fuessläufig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bahnhof isch vo daa us fuessläufig z erreiche."
+ },
+ {
+  "id": 5681,
+  "de": "innerorts",
+  "tr": "yerleşim yeri içinde",
+  "deBeispiel": "Innerorts gilt in der Regel Tempo fünfzig.",
+  "gsw": "innerorts",
+  "gswArtikel": null,
+  "gswBeispiel": "Innerorts gilt i de Regel Tempo füfzg."
+ },
+ {
+  "id": 5682,
+  "de": "barrierefrei",
+  "tr": "engelsiz, erişilebilir",
+  "deBeispiel": "Der Umbau macht das Gebäude endlich barrierefrei.",
+  "gsw": "barrierefrei",
+  "gswArtikel": null,
+  "gswBeispiel": "De Umbau macht s Gebäud ändlich barrierefrei."
+ },
+ {
+  "id": 5683,
+  "de": "verkehrsberuhigt",
+  "tr": "trafiği yavaşlatılmış, araç trafiği kısıtlanmış",
+  "deBeispiel": "In verkehrsberuhigten Zonen darf man nur Schritt fahren.",
+  "gsw": "verchehrsberuehigt",
+  "gswArtikel": null,
+  "gswBeispiel": "I verchehrsberuehigte Zone dörf mer nur Schritt faare."
+ },
+ {
+  "id": 5684,
+  "de": "unzumutbar",
+  "tr": "katlanılamaz, makul sayılamayacak",
+  "deBeispiel": "Der Lärm in der Wohnung ist für Familien unzumutbar.",
+  "gsw": "unzuemuetbar",
+  "gswArtikel": null,
+  "gswBeispiel": "De Lärm i de Wohnig isch für Familie unzuemuetbar."
+ },
+ {
+  "id": 5685,
+  "de": "umliegend",
+  "tr": "çevredeki, etraftaki",
+  "deBeispiel": "Die umliegenden Gemeinden wachsen schneller als die Großstadt.",
+  "gsw": "umliggend",
+  "gswArtikel": null,
+  "gswBeispiel": "D umliggende Gmeinde wachsed schneller als d Groosschtadt."
+ },
+ {
+  "id": 5686,
+  "de": "baufällig",
+  "tr": "harap, yıkılmaya yüz tutmuş",
+  "deBeispiel": "Das baufällige Haus an der Ecke steht seit Jahren leer.",
+  "gsw": "baufällig",
+  "gswArtikel": null,
+  "gswBeispiel": "S baufällig Huus a de Egge schtaat sit Jaare leer."
+ }
+]

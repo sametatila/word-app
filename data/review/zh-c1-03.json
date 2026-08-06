@@ -1,0 +1,995 @@
+[
+ {
+  "id": 3683,
+  "de": "beschönigen",
+  "tr": "olduğundan iyi göstermek, kılıfına uydurmak",
+  "deBeispiel": "Er versucht, die Fehler seiner Firma zu beschönigen.",
+  "gsw": "beschönige",
+  "gswArtikel": null,
+  "gswBeispiel": "Er probiert, d Fääler vo sinere Firma z beschönige."
+ },
+ {
+  "id": 3684,
+  "de": "sich einbürgern",
+  "tr": "yerleşmek, yaygınlaşmak",
+  "deBeispiel": "Der Ausdruck hat sich im Alltag eingebürgert.",
+  "gsw": "sich iibürgere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Usdruck hät sich im Alltag iibürgeret."
+ },
+ {
+  "id": 3685,
+  "de": "resultieren",
+  "tr": "kaynaklanmak, sonuçlanmak",
+  "deBeispiel": "Der Konflikt resultiert aus einem Missverständnis.",
+  "gsw": "resultiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konflikt resultiert us eme Missverschtändnis."
+ },
+ {
+  "id": 3686,
+  "de": "vertagen",
+  "tr": "ertelemek (toplantı, oturum)",
+  "deBeispiel": "Die Sitzung wurde auf nächste Woche vertagt.",
+  "gsw": "vertaage",
+  "gswArtikel": null,
+  "gswBeispiel": "D Sitzig isch uf nöchscht Wuche vertaagt worde."
+ },
+ {
+  "id": 3687,
+  "de": "sich verselbstständigen",
+  "tr": "bağımsızlaşmak, kontrolden çıkmak",
+  "deBeispiel": "Das Projekt hat sich völlig verselbstständigt.",
+  "gsw": "sich versälbschtändige",
+  "gswArtikel": null,
+  "gswBeispiel": "S Projäkt hät sich völlig versälbschtändigt."
+ },
+ {
+  "id": 3688,
+  "de": "sich abheben",
+  "tr": "farklılaşmak, öne çıkmak",
+  "deBeispiel": "Das Produkt hebt sich deutlich von der Konkurrenz ab.",
+  "gsw": "sich abheebe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Produkt hebt sich düütlich vo de Konkurränz ab."
+ },
+ {
+  "id": 3689,
+  "de": "einräumen",
+  "tr": "kabul etmek, itiraf etmek",
+  "deBeispiel": "Der Minister räumte Fehler in der Planung ein.",
+  "gsw": "iiruume",
+  "gswArtikel": null,
+  "gswBeispiel": "De Minischter hät Fääler i de Planig iigruumt."
+ },
+ {
+  "id": 3690,
+  "de": "beeinträchtigen",
+  "tr": "olumsuz etkilemek",
+  "deBeispiel": "Lärm kann die Konzentration erheblich beeinträchtigen.",
+  "gsw": "beiiträchtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Lärm cha d Konzentration starch beiiträchtige."
+ },
+ {
+  "id": 3691,
+  "de": "sich verzetteln",
+  "tr": "dağılmak, odağı kaybetmek",
+  "deBeispiel": "Bei so vielen Aufgaben verzettelt man sich leicht.",
+  "gsw": "sich verzettle",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi so vilne Uufgabe verzettlet me sich liecht."
+ },
+ {
+  "id": 3692,
+  "de": "bemängeln",
+  "tr": "eleştirmek, kusur bulmak",
+  "deBeispiel": "Kritiker bemängeln die fehlende Transparenz des Verfahrens.",
+  "gsw": "bemängle",
+  "gswArtikel": null,
+  "gswBeispiel": "Kritiker bemängled di fäälend Transparänz vom Verfaare."
+ },
+ {
+  "id": 3693,
+  "de": "sich abspielen",
+  "tr": "gerçekleşmek, yaşanmak",
+  "deBeispiel": "Die Szene spielte sich vor den Augen der Zeugen ab.",
+  "gsw": "sich abschpile",
+  "gswArtikel": null,
+  "gswBeispiel": "D Szene hät sich vor de Auge vo de Züüge abgschpilt."
+ },
+ {
+  "id": 3694,
+  "de": "präzisieren",
+  "tr": "netleştirmek, kesinleştirmek",
+  "deBeispiel": "Bitte präzisieren Sie Ihre Aussage etwas genauer.",
+  "gsw": "präzisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte präzisiered Si Iri Ussaag na chli gnauer."
+ },
+ {
+  "id": 3695,
+  "de": "sich auszahlen",
+  "tr": "karşılığını vermek, işe yaramak",
+  "deBeispiel": "Die harte Arbeit hat sich am Ende ausgezahlt.",
+  "gsw": "sich uszaale",
+  "gswArtikel": null,
+  "gswBeispiel": "Di härt Arbet hät sich am Änd uszaalt."
+ },
+ {
+  "id": 3696,
+  "de": "vereinnahmen",
+  "tr": "kendine mal etmek, sahiplenmek",
+  "deBeispiel": "Die Partei versucht, das Thema politisch zu vereinnahmen.",
+  "gsw": "veriinaame",
+  "gswArtikel": null,
+  "gswBeispiel": "D Partei probiert, s Thema politisch z veriinaame."
+ },
+ {
+  "id": 3697,
+  "de": "bezwecken",
+  "tr": "amaçlamak",
+  "deBeispiel": "Was bezweckt er mit dieser Aussage eigentlich?",
+  "gsw": "bezwäcke",
+  "gswArtikel": null,
+  "gswBeispiel": "Was bezwäckt er mit dere Ussaag äigetli?"
+ },
+ {
+  "id": 3698,
+  "de": "auslegen",
+  "tr": "yorumlamak (yasa, metin)",
+  "deBeispiel": "Man kann das Gesetz unterschiedlich auslegen.",
+  "gsw": "uslegge",
+  "gswArtikel": null,
+  "gswBeispiel": "Me cha s Gsetz underschidlich uslegge."
+ },
+ {
+  "id": 3699,
+  "de": "sich niederschlagen",
+  "tr": "yansımak, etkisini göstermek",
+  "deBeispiel": "Die Krise schlägt sich in sinkenden Umsätzen nieder.",
+  "gsw": "sich niderschlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chrise schlaat sich i sinkende Umsätz nider."
+ },
+ {
+  "id": 3700,
+  "de": "verharren",
+  "tr": "sabit kalmak, bir durumda kalmak",
+  "deBeispiel": "Die Preise verharren seit Monaten auf hohem Niveau.",
+  "gsw": "verharre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Priise verharred siit Mönet uf hööchem Niveau."
+ },
+ {
+  "id": 3701,
+  "de": "der Beweggrund",
+  "tr": "sebep, güdü, saik",
+  "deBeispiel": "Seine wahren Beweggründe blieben lange im Dunkeln.",
+  "gsw": "Beweggrund",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin waare Beweggrund isch lang im Dunkle bliibe."
+ },
+ {
+  "id": 3702,
+  "de": "die Tragweite",
+  "tr": "önem, kapsam",
+  "deBeispiel": "Die Tragweite der Entscheidung wurde erst später klar.",
+  "gsw": "Tragwiiti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tragwiiti vo dem Entscheid isch erscht spöter klaar worde."
+ },
+ {
+  "id": 3703,
+  "de": "der Anhaltspunkt",
+  "tr": "ipucu, dayanak noktası",
+  "deBeispiel": "Es gibt keinen Anhaltspunkt für diese Vermutung.",
+  "gsw": "Aahaltspunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Es git kei Aahaltspunkt für die Vermuetig."
+ },
+ {
+  "id": 3704,
+  "de": "die Zwickmühle",
+  "tr": "ikilem, çıkmaz",
+  "deBeispiel": "Er steckt in einer echten Zwickmühle zwischen Job und Familie.",
+  "gsw": "Zwickmüli",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er schteckt i ere ächte Zwickmüli zwüsched Job und Familie."
+ },
+ {
+  "id": 3705,
+  "de": "der Missstand",
+  "tr": "aksaklık, kötü durum",
+  "deBeispiel": "Die Reportage deckt gravierende Missstände im System auf.",
+  "gsw": "Missschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Reportage deckt en gravierende Missschtand im Syschtem uf."
+ },
+ {
+  "id": 3706,
+  "de": "die Tücke",
+  "tr": "sinsi zorluk, gizli sorun",
+  "deBeispiel": "Die Software hat einige technische Tücken.",
+  "gsw": "Tück",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Software hät es paar technischi Tücke."
+ },
+ {
+  "id": 3707,
+  "de": "der Spielraum",
+  "tr": "manevra alanı, esneklik",
+  "deBeispiel": "Der Verhandlungsführer hat wenig finanziellen Spielraum.",
+  "gsw": "Schpilruum",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verhandligsfüerer hät wenig finanzielle Schpilruum."
+ },
+ {
+  "id": 3708,
+  "de": "die Beharrlichkeit",
+  "tr": "azim, ısrar",
+  "deBeispiel": "Nur durch Beharrlichkeit erreichte sie ihr Ziel.",
+  "gsw": "Beharrlichkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nume dur Beharrlichkäit hät si irs Ziil erräicht."
+ },
+ {
+  "id": 3709,
+  "de": "der Anschein",
+  "tr": "görünüş, izlenim",
+  "deBeispiel": "Allem Anschein nach wird das Projekt verschoben.",
+  "gsw": "Aaschiin",
+  "gswArtikel": "de",
+  "gswBeispiel": "Allem Aaschiin naa wird s Projäkt verschobe."
+ },
+ {
+  "id": 3710,
+  "de": "die Tragfähigkeit",
+  "tr": "sağlamlık, taşıma gücü",
+  "deBeispiel": "Die Tragfähigkeit des Konzepts ist noch fraglich.",
+  "gsw": "Tragfähigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tragfähigkäit vo dem Konzäpt isch no fraglich."
+ },
+ {
+  "id": 3711,
+  "de": "die Unzulänglichkeit",
+  "tr": "yetersizlik, eksiklik",
+  "deBeispiel": "Die Unzulänglichkeiten des Plans wurden schnell sichtbar.",
+  "gsw": "Unzulänglichkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Unzulänglichkäite vom Plaan sind schnäll sichtbar worde."
+ },
+ {
+  "id": 3712,
+  "de": "unumgänglich",
+  "tr": "kaçınılmaz",
+  "deBeispiel": "Eine Reform ist mittlerweile unumgänglich geworden.",
+  "gsw": "unumgänglich",
+  "gswArtikel": null,
+  "gswBeispiel": "E Reform isch underdesse unumgänglich worde."
+ },
+ {
+  "id": 3713,
+  "de": "gravierend",
+  "tr": "ciddi, ağır",
+  "deBeispiel": "Der Fehler hatte gravierende Folgen für das Unternehmen.",
+  "gsw": "gravierend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fääler hät gravierendi Folge für s Unternäme ghaa."
+ },
+ {
+  "id": 3714,
+  "de": "fragwürdig",
+  "tr": "şüpheli, tartışmalı",
+  "deBeispiel": "Seine Methoden erscheinen vielen als fragwürdig.",
+  "gsw": "fragwürdig",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Methode erschiined vilne als fragwürdig."
+ },
+ {
+  "id": 3715,
+  "de": "unumstritten",
+  "tr": "tartışmasız",
+  "deBeispiel": "Der Erfolg der Maßnahme ist keineswegs unumstritten.",
+  "gsw": "unumschtritte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Erfolg vo dere Massnaam isch überhaupt nöd unumschtritte."
+ },
+ {
+  "id": 3716,
+  "de": "vielschichtig",
+  "tr": "çok katmanlı, karmaşık",
+  "deBeispiel": "Das Thema ist weitaus vielschichtiger, als es zunächst scheint.",
+  "gsw": "vilschichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Thema isch vil vilschichtiger, als es am Aafang schiint."
+ },
+ {
+  "id": 3717,
+  "de": "nachvollziehbar",
+  "tr": "anlaşılır, mantıklı",
+  "deBeispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
+  "gsw": "naavollziebar",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Entscheid isch bi dene Umschtänd guet naavollziebar."
+ },
+ {
+  "id": 3718,
+  "de": "widersprüchlich",
+  "tr": "çelişkili",
+  "deBeispiel": "Die Aussagen der Zeugen waren teilweise widersprüchlich.",
+  "gsw": "widerschprüchlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ussage vo de Züüge sind täilwiis widerschprüchlich gsii."
+ },
+ {
+  "id": 3719,
+  "de": "unabdingbar",
+  "tr": "vazgeçilmez, zorunlu",
+  "deBeispiel": "Vertrauen ist für eine gute Zusammenarbeit unabdingbar.",
+  "gsw": "unabdingbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Vertraue isch für e gueti Zämearbet unabdingbar."
+ },
+ {
+  "id": 3720,
+  "de": "brisant",
+  "tr": "hassas, patlayıcı nitelikte",
+  "deBeispiel": "Das Dokument enthält politisch brisante Details.",
+  "gsw": "brisant",
+  "gswArtikel": null,
+  "gswBeispiel": "S Dokumänt enthaltet politisch brisanti Details."
+ },
+ {
+  "id": 3721,
+  "de": "aufschlussreich",
+  "tr": "aydınlatıcı, bilgilendirici",
+  "deBeispiel": "Die Studie liefert aufschlussreiche Einblicke in das Verhalten.",
+  "gsw": "ufschlussriich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtudie liferet ufschlussriichi Iiblick is Verhalte."
+ },
+ {
+  "id": 3722,
+  "de": "trügerisch",
+  "tr": "aldatıcı, yanıltıcı",
+  "deBeispiel": "Die Ruhe vor dem Sturm ist oft trügerisch.",
+  "gsw": "trügerisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Rue vor em Schturm isch oft trügerisch."
+ },
+ {
+  "id": 3723,
+  "de": "gängig",
+  "tr": "yaygın, geçerli",
+  "deBeispiel": "Diese Methode ist in der Branche längst gängige Praxis.",
+  "gsw": "gängig",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Methode isch i de Branche scho lang gängigi Praxis."
+ },
+ {
+  "id": 3724,
+  "de": "prekär",
+  "tr": "güvencesiz, istikrarsız",
+  "deBeispiel": "Viele Freiberufler leben in einer prekären finanziellen Lage.",
+  "gsw": "prekär",
+  "gswArtikel": null,
+  "gswBeispiel": "Vil Freiberuefler läbed i ere prekäre finanzielle Laag."
+ },
+ {
+  "id": 3725,
+  "de": "schwerwiegend",
+  "tr": "ağır, ciddi",
+  "deBeispiel": "Der Vorfall hatte schwerwiegende Konsequenzen für alle Beteiligten.",
+  "gsw": "schwärwiegend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorfall hät schwärwiegendi Konsequänze für alli Betäiligte ghaa."
+ },
+ {
+  "id": 3726,
+  "de": "unbestreitbar",
+  "tr": "tartışılmaz, yadsınamaz",
+  "deBeispiel": "Der Klimawandel ist mittlerweile eine unbestreitbare Tatsache.",
+  "gsw": "unbeschtriitbar",
+  "gswArtikel": null,
+  "gswBeispiel": "De Klimawandel isch underdesse e unbeschtriitbari Tatsach."
+ },
+ {
+  "id": 3727,
+  "de": "vorschnell",
+  "tr": "aceleci, düşünmeden",
+  "deBeispiel": "Man sollte keine vorschnellen Schlüsse ziehen.",
+  "gsw": "vorschnäll",
+  "gswArtikel": null,
+  "gswBeispiel": "Me sött kei vorschnälle Schlüss zie."
+ },
+ {
+  "id": 3728,
+  "de": "tiefgreifend",
+  "tr": "köklü, derinlemesine",
+  "deBeispiel": "Die Reform bringt tiefgreifende Veränderungen mit sich.",
+  "gsw": "tüüfgriifend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Reform bringt tüüfgriifendi Veränderige mit sich."
+ },
+ {
+  "id": 3729,
+  "de": "dessenungeachtet",
+  "tr": "buna rağmen",
+  "deBeispiel": "Die Warnungen waren deutlich, dessenungeachtet handelte niemand.",
+  "gsw": "trotzdem",
+  "gswArtikel": null,
+  "gswBeispiel": "D Warnige sind düütlich gsii, trotzdem hät niemert ghandlet.",
+  "ayniLehce": [
+   "trotzdem (B1)"
+  ]
+ },
+ {
+  "id": 3730,
+  "de": "sofern",
+  "tr": "eğer, şu şartla ki",
+  "deBeispiel": "Sofern nichts dazwischenkommt, beginnt das Projekt pünktlich.",
+  "gsw": "sofärn",
+  "gswArtikel": null,
+  "gswBeispiel": "Sofärn nüüt dezwüsched chunt, faat s Projäkt pünktlich aa."
+ },
+ {
+  "id": 3731,
+  "de": "ins Wasser fallen",
+  "tr": "suya düşmek, iptal olmak",
+  "deBeispiel": "Wegen des schlechten Wetters ist das Fest ins Wasser gefallen.",
+  "gsw": "is Wasser falle",
+  "gswArtikel": null,
+  "gswBeispiel": "Wäge em schlächte Wätter isch s Fäscht is Wasser gfalle."
+ },
+ {
+  "id": 3732,
+  "de": "auf Anhieb",
+  "tr": "ilk seferde, hemen",
+  "deBeispiel": "Sie hat die Prüfung auf Anhieb bestanden.",
+  "gsw": "uf Aahieb",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät d Prüefig uf Aahieb bschtande."
+ },
+ {
+  "id": 3883,
+  "de": "die Strategie",
+  "tr": "strateji",
+  "deBeispiel": "Die Geschäftsführung hat eine neue Strategie entwickelt.",
+  "gsw": "Schtrategii",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gschäftsläitig hät e neui Schtrategii entwicklet."
+ },
+ {
+  "id": 3884,
+  "de": "der Wettbewerbsvorteil",
+  "tr": "rekabet avantajı",
+  "deBeispiel": "Durch Innovation sichert sich das Unternehmen einen Wettbewerbsvorteil.",
+  "gsw": "Wettbewärbsvortäil",
+  "gswArtikel": "de",
+  "gswBeispiel": "Dur Innovation sicheret sich s Unternääme en Wettbewärbsvortäil."
+ },
+ {
+  "id": 3885,
+  "de": "die Marktdurchdringung",
+  "tr": "pazara nüfuz etme",
+  "deBeispiel": "Die Marktdurchdringung in Asien verlief schleppender als erwartet.",
+  "gsw": "Marktduredringig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Marktduredringig in Asie isch harziger gloffe als erwartet."
+ },
+ {
+  "id": 3886,
+  "de": "das Alleinstellungsmerkmal",
+  "tr": "ayırt edici özellik, benzersiz satış noktası",
+  "deBeispiel": "Ohne klares Alleinstellungsmerkmal geht das Produkt im Markt unter.",
+  "gsw": "Alläischtelligsmerkmaal",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ooni es klaars Alläischtelligsmerkmaal gaat s Produkt im Markt under."
+ },
+ {
+  "id": 3887,
+  "de": "die Expansion",
+  "tr": "genişleme, büyüme",
+  "deBeispiel": "Die geplante Expansion nach Südamerika wurde vorerst gestoppt.",
+  "gsw": "Expansion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di plant Expansion uf Süüdamerika isch vorerscht gschtoppt worde."
+ },
+ {
+  "id": 3888,
+  "de": "anstreben",
+  "tr": "hedeflemek, amaçlamak",
+  "deBeispiel": "Der Vorstand strebt eine Verdopplung des Umsatzes an.",
+  "gsw": "aaschträbe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorschtand tuet e Verdopplig vom Umsatz aaschträbe."
+ },
+ {
+  "id": 3889,
+  "de": "die Positionierung",
+  "tr": "konumlandırma",
+  "deBeispiel": "Die strategische Positionierung der Marke muss überdacht werden.",
+  "gsw": "Positionierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D schtrategisch Positionierig vo de Marke muess überdänkt wärde."
+ },
+ {
+  "id": 3890,
+  "de": "zukunftsweisend",
+  "tr": "geleceğe yönelik, öncü",
+  "deBeispiel": "Das Unternehmen verfolgt einen zukunftsweisenden Ansatz.",
+  "gsw": "zuekunftswiisend",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternääme verfolgt en zuekunftswiisende Aasatz."
+ },
+ {
+  "id": 3891,
+  "de": "die Weichenstellung",
+  "tr": "yön belirleyici karar",
+  "deBeispiel": "Diese Weichenstellung entscheidet über die nächsten zehn Jahre.",
+  "gsw": "Wiicheschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Wiicheschtellig entschäidet über di nöchschte zää Jaar."
+ },
+ {
+  "id": 3892,
+  "de": "das Kerngeschäft",
+  "tr": "asıl iş kolu, çekirdek iş",
+  "deBeispiel": "Das Unternehmen konzentriert sich wieder auf sein Kerngeschäft.",
+  "gsw": "Chärngschäft",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Unternääme konzentriert sich wider uf sis Chärngschäft."
+ },
+ {
+  "id": 3893,
+  "de": "aushandeln",
+  "tr": "müzakere ederek anlaşmak",
+  "deBeispiel": "Die Gewerkschaft hat bessere Konditionen ausgehandelt.",
+  "gsw": "ushandle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gwerkschaft hät besseri Konditione chöne ushandle."
+ },
+ {
+  "id": 3894,
+  "de": "das Zugeständnis",
+  "tr": "taviz",
+  "deBeispiel": "Ein weiteres Zugeständnis wollte die Geschäftsführung nicht machen.",
+  "gsw": "Zuegschtändnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es wiiters Zuegschtändnis hät d Gschäftsläitig nöd wele mache."
+ },
+ {
+  "id": 3895,
+  "de": "die Verhandlungsmasse",
+  "tr": "pazarlık kozu, pazarlıkta verilecek şey",
+  "deBeispiel": "Der Bonus diente als zusätzliche Verhandlungsmasse.",
+  "gsw": "Verhandligsmass",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Bonus hät als zuesätzlichi Verhandligsmass dienet."
+ },
+ {
+  "id": 3896,
+  "de": "feilschen",
+  "tr": "pazarlık etmek",
+  "deBeispiel": "Um den Preis wurde bis zuletzt gefeilscht.",
+  "gsw": "märte",
+  "gswArtikel": null,
+  "gswBeispiel": "Um de Priis hät me bis zletscht gmärtet."
+ },
+ {
+  "id": 3897,
+  "de": "die Sackgasse",
+  "tr": "çıkmaz",
+  "deBeispiel": "Die Verhandlungen gerieten in eine Sackgasse.",
+  "gsw": "Sackgass",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verhandlige sind i e Sackgass groote."
+ },
+ {
+  "id": 3898,
+  "de": "beharren",
+  "tr": "ısrar etmek",
+  "deBeispiel": "Er beharrte auf seiner ursprünglichen Forderung.",
+  "gsw": "beharre",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät uf sinere ursprüngliche Forderig beharrt."
+ },
+ {
+  "id": 3899,
+  "de": "die Schlichtung",
+  "tr": "arabuluculuk, uzlaştırma",
+  "deBeispiel": "Der Tarifstreit wurde durch eine Schlichtung beigelegt.",
+  "gsw": "Schlichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Tarifschtriit isch dur e Schlichtig biigläit worde."
+ },
+ {
+  "id": 3900,
+  "de": "die Risikobereitschaft",
+  "tr": "risk alma eğilimi",
+  "deBeispiel": "Die Risikobereitschaft der Investoren ist deutlich gesunken.",
+  "gsw": "Risikoberäitschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Risikoberäitschaft vo de Inveschtore isch düütlich gsunke."
+ },
+ {
+  "id": 3901,
+  "de": "abfedern",
+  "tr": "etkisini yumuşatmak",
+  "deBeispiel": "Rücklagen sollen den Umsatzeinbruch abfedern.",
+  "gsw": "abfädere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Reserve söled de Umsatziibruch abfädere."
+ },
+ {
+  "id": 3902,
+  "de": "die Absicherung",
+  "tr": "güvence, teminat altına alma",
+  "deBeispiel": "Zur Absicherung wurde eine zusätzliche Versicherung abgeschlossen.",
+  "gsw": "Absicherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zur Absicherig hät me e zuesätzlichi Versicherig abgschlosse."
+ },
+ {
+  "id": 3903,
+  "de": "das Ausfallrisiko",
+  "tr": "temerrüt riski",
+  "deBeispiel": "Die Bank bewertet das Ausfallrisiko des Kreditnehmers neu.",
+  "gsw": "Usfallrisiko",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Bank bewärtet s Usfallrisiko vom Kreditnämer neu."
+ },
+ {
+  "id": 3904,
+  "de": "die Rücklage",
+  "tr": "yedek akçe",
+  "deBeispiel": "Die Firma bildet Rücklagen für schlechtere Zeiten.",
+  "gsw": "Reserve",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Firma legt Reserve aa für schlächteri Ziite."
+ },
+ {
+  "id": 3905,
+  "de": "unkalkulierbar",
+  "tr": "hesaplanamaz, öngörülemez",
+  "deBeispiel": "Die politischen Entwicklungen machen das Geschäft unkalkulierbar.",
+  "gsw": "unkalkulierbar",
+  "gswArtikel": null,
+  "gswBeispiel": "D politisch Entwicklig macht s Gschäft unkalkulierbar."
+ },
+ {
+  "id": 3906,
+  "de": "der Fallstrick",
+  "tr": "gizli tuzak",
+  "deBeispiel": "Der Vertrag enthält einige rechtliche Fallstricke.",
+  "gsw": "Fallschtrick",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vertraag hät es paar rächtlichi Fallschtrick din."
+ },
+ {
+  "id": 3907,
+  "de": "eskalieren",
+  "tr": "tırmanmak, şiddetlenmek",
+  "deBeispiel": "Der Konflikt zwischen den Abteilungen ist eskaliert.",
+  "gsw": "eskaliere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konflikt zwüsched de Abtäilige isch eskaliert."
+ },
+ {
+  "id": 3908,
+  "de": "die Schadensbegrenzung",
+  "tr": "zarar sınırlama",
+  "deBeispiel": "Nach dem Skandal betrieb die Firma reine Schadensbegrenzung.",
+  "gsw": "Schadesbegränzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Skandal hät d Firma nu na Schadesbegränzig betribe."
+ },
+ {
+  "id": 3909,
+  "de": "der CO2-Fußabdruck",
+  "tr": "karbon ayak izi",
+  "deBeispiel": "Der Konzern will seinen CO2-Fußabdruck bis 2030 halbieren.",
+  "gsw": "CO2-Fuessabdruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Konzärn wott sin CO2-Fuessabdruck bis 2030 halbiere."
+ },
+ {
+  "id": 3910,
+  "de": "die Ressourcenschonung",
+  "tr": "kaynak tasarrufu",
+  "deBeispiel": "Ressourcenschonung gehört inzwischen zur Unternehmensstrategie.",
+  "gsw": "Ressourceschonig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ressourceschonig ghört hüt zur Firmeschtrategii."
+ },
+ {
+  "id": 3911,
+  "de": "klimaneutral",
+  "tr": "iklim nötr, karbon nötr",
+  "deBeispiel": "Die Produktion soll bis 2035 klimaneutral werden.",
+  "gsw": "klimaneutral",
+  "gswArtikel": null,
+  "gswBeispiel": "D Produktion sett bis 2035 klimaneutral sii."
+ },
+ {
+  "id": 3912,
+  "de": "die Kreislaufwirtschaft",
+  "tr": "döngüsel ekonomi",
+  "deBeispiel": "Das Startup setzt konsequent auf Kreislaufwirtschaft.",
+  "gsw": "Chräislaufwirtschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Startup setzt konsequänt uf Chräislaufwirtschaft."
+ },
+ {
+  "id": 3913,
+  "de": "das Nachhaltigkeitsziel",
+  "tr": "sürdürülebilirlik hedefi",
+  "deBeispiel": "Die Nachhaltigkeitsziele wurden im Geschäftsbericht verankert.",
+  "gsw": "Naahaltigkeitsziil",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Naahaltigkeitsziil sind im Gschäftsbricht feschtghalte."
+ },
+ {
+  "id": 3914,
+  "de": "die Umweltauflage",
+  "tr": "çevre yükümlülüğü",
+  "deBeispiel": "Strengere Umweltauflagen erhöhen die Produktionskosten.",
+  "gsw": "Umwältuflaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtrengeri Umwältuflaage mached d Produktion tüürer."
+ },
+ {
+  "id": 3915,
+  "de": "die Emissionsminderung",
+  "tr": "emisyon azaltma",
+  "deBeispiel": "Das Werk investiert in Anlagen zur Emissionsminderung.",
+  "gsw": "Emissionsminderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Wärk inveschtiert i Aalage zur Emissionsminderig."
+ },
+ {
+  "id": 3916,
+  "de": "der Raubbau",
+  "tr": "aşırı sömürü, talan",
+  "deBeispiel": "Kritiker werfen dem Konzern Raubbau an natürlichen Ressourcen vor.",
+  "gsw": "Raubbau",
+  "gswArtikel": "de",
+  "gswBeispiel": "Kritiker wärfed em Konzärn Raubbau a de natürliche Ressource vor."
+ },
+ {
+  "id": 3917,
+  "de": "kompensieren",
+  "tr": "telafi etmek, dengelemek",
+  "deBeispiel": "Der Konzern will nicht vermeidbare Emissionen kompensieren.",
+  "gsw": "kompensiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konzärn wott di unvermäidbare Emissione kompensiere."
+ },
+ {
+  "id": 3918,
+  "de": "das Umweltbewusstsein",
+  "tr": "çevre bilinci",
+  "deBeispiel": "Das gestiegene Umweltbewusstsein der Kunden verändert die Nachfrage.",
+  "gsw": "Umwältbewusstsii",
+  "gswArtikel": "s",
+  "gswBeispiel": "S gschtigene Umwältbewusstsii vo de Chunde veränderet d Naachfraag."
+ },
+ {
+  "id": 3919,
+  "de": "die Automatisierung",
+  "tr": "otomasyon",
+  "deBeispiel": "Durch Automatisierung sollen Produktionskosten gesenkt werden.",
+  "gsw": "Automatisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur d Automatisierig söled d Produktionskoschte gsenkt wärde."
+ },
+ {
+  "id": 3920,
+  "de": "die Skalierbarkeit",
+  "tr": "ölçeklenebilirlik",
+  "deBeispiel": "Investoren achten besonders auf die Skalierbarkeit des Geschäftsmodells.",
+  "gsw": "Skalierbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Inveschtore lueged bsunders uf d Skalierbarkeit vom Gschäftsmodäll."
+ },
+ {
+  "id": 3921,
+  "de": "digitalisieren",
+  "tr": "dijitalleştirmek",
+  "deBeispiel": "Das Unternehmen hat sämtliche Prozesse digitalisiert.",
+  "gsw": "digitalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternääme hät sämtlichi Prozäss digitalisiert."
+ },
+ {
+  "id": 3922,
+  "de": "die Datenflut",
+  "tr": "veri seli, bilgi bombardımanı",
+  "deBeispiel": "Die Datenflut überfordert viele Abteilungen ohne geeignete Tools.",
+  "gsw": "Datefluet",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Datefluet überforderet vili Abtäilige ooni gäigneti Tools."
+ },
+ {
+  "id": 3923,
+  "de": "das Geschäftsmodell",
+  "tr": "iş modeli",
+  "deBeispiel": "Das bisherige Geschäftsmodell steht zunehmend unter Druck.",
+  "gsw": "Gschäftsmodäll",
+  "gswArtikel": "s",
+  "gswBeispiel": "S bisherig Gschäftsmodäll chunt zuenämend under Druck."
+ },
+ {
+  "id": 3924,
+  "de": "disruptiv",
+  "tr": "yıkıcı, çığır açan",
+  "deBeispiel": "Die Branche wird derzeit von disruptiven Technologien erschüttert.",
+  "gsw": "disruptiv",
+  "gswArtikel": null,
+  "gswBeispiel": "D Branche wird im Momänt vo disruptive Technologie duregschüttlet."
+ },
+ {
+  "id": 3925,
+  "de": "die Vernetzung",
+  "tr": "ağ oluşturma, bağlantılandırma",
+  "deBeispiel": "Die zunehmende Vernetzung der Lieferketten birgt neue Risiken.",
+  "gsw": "Vernetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di zuenämend Vernetzig vo de Lieferchettine bringt neui Risike."
+ },
+ {
+  "id": 3926,
+  "de": "die Cyberkriminalität",
+  "tr": "siber suç",
+  "deBeispiel": "Cyberkriminalität verursacht jährlich Milliardenschäden.",
+  "gsw": "Cyberkriminalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Cyberkriminalität verursacht jedes Jaar Milliardeschääde."
+ },
+ {
+  "id": 3927,
+  "de": "die Personalentwicklung",
+  "tr": "personel gelişimi",
+  "deBeispiel": "Die Personalentwicklung wurde in den letzten Jahren vernachlässigt.",
+  "gsw": "Personalentwicklig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Personalentwicklig isch i de letschte Jaar vernaachlässiget worde."
+ },
+ {
+  "id": 3928,
+  "de": "die Fluktuation",
+  "tr": "personel devir hızı",
+  "deBeispiel": "Die hohe Fluktuation im Vertrieb bereitet der Geschäftsführung Sorgen.",
+  "gsw": "Fluktuation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di hööch Fluktuation im Verchauf macht de Gschäftsläitig Sorge."
+ },
+ {
+  "id": 3929,
+  "de": "rekrutieren",
+  "tr": "işe almak",
+  "deBeispiel": "Das Unternehmen rekrutiert verstärkt im Ausland.",
+  "gsw": "rekrutiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternääme rekrutiert verschtärkt im Usland."
+ },
+ {
+  "id": 3930,
+  "de": "die Mitarbeiterbindung",
+  "tr": "çalışan bağlılığı",
+  "deBeispiel": "Flexible Arbeitszeiten stärken die Mitarbeiterbindung.",
+  "gsw": "Mitarbeiterbindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Flexibli Arbetsziite schtärked d Mitarbeiterbindig."
+ },
+ {
+  "id": 3931,
+  "de": "das Betriebsklima",
+  "tr": "işyeri atmosferi",
+  "deBeispiel": "Der Führungswechsel hat das Betriebsklima spürbar verbessert.",
+  "gsw": "Betriibsklima",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Füerigswächsel hät s Betriibsklima merklich verbesseret."
+ },
+ {
+  "id": 3932,
+  "de": "die Weiterbildungsmaßnahme",
+  "tr": "hizmet içi eğitim programı, mesleki gelişim faaliyeti",
+  "deBeispiel": "Neue Weiterbildungsmaßnahmen wurden für alle Abteilungen eingeführt.",
+  "gsw": "Wiiterbildigsmassnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Neui Wiiterbildigsmassnaame sind für alli Abtäilige iigfüert worde."
+ },
+ {
+  "id": 3933,
+  "de": "der Führungsstil",
+  "tr": "liderlik tarzı",
+  "deBeispiel": "Ihr kooperativer Führungsstil kommt im Team gut an.",
+  "gsw": "Füerigsschtiil",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ire kooperativ Füerigsschtiil chunt im Team guet aa."
+ },
+ {
+  "id": 3934,
+  "de": "die Work-Life-Balance",
+  "tr": "iş-yaşam dengesi",
+  "deBeispiel": "Viele Bewerber legen heute großen Wert auf Work-Life-Balance.",
+  "gsw": "Work-Life-Balance",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili Bewärber leged hüt grosse Wärt uf d Work-Life-Balance."
+ },
+ {
+  "id": 3935,
+  "de": "der Umsatzeinbruch",
+  "tr": "ciroda ani düşüş, satışlarda çöküş",
+  "deBeispiel": "Der plötzliche Umsatzeinbruch zwang das Unternehmen zum Sparkurs.",
+  "gsw": "Umsatziibruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De plötzlich Umsatziibruch hät s Unternääme zum Schpaare zwunge."
+ },
+ {
+  "id": 3936,
+  "de": "die Effizienzsteigerung",
+  "tr": "verimlilik artışı",
+  "deBeispiel": "Effizienzsteigerung ist das erklärte Ziel der neuen Strategie.",
+  "gsw": "Effiziänzschtäigerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Effiziänzschtäigerig isch s erklärte Ziil vo de neue Schtrategii."
+ },
+ {
+  "id": 3937,
+  "de": "die Restrukturierung",
+  "tr": "yeniden yapılandırma",
+  "deBeispiel": "Die geplante Restrukturierung betrifft mehrere Standorte.",
+  "gsw": "Reschtrukturierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di plant Reschtrukturierig betrifft mereri Schtandort."
+ },
+ {
+  "id": 3938,
+  "de": "die Übernahme",
+  "tr": "devralma, satın alma",
+  "deBeispiel": "Die feindliche Übernahme konnte in letzter Minute abgewehrt werden.",
+  "gsw": "Übernaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di findlich Übernaam hät me i letschter Minute chöne abweere."
+ },
+ {
+  "id": 3939,
+  "de": "das Insolvenzverfahren",
+  "tr": "iflas süreci",
+  "deBeispiel": "Gegen den Zulieferer wurde ein Insolvenzverfahren eröffnet.",
+  "gsw": "Konkursverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "Gäge de Zuelieferer isch es Konkursverfaare eröffnet worde."
+ },
+ {
+  "id": 3940,
+  "de": "die Marktsättigung",
+  "tr": "pazar doygunluğu",
+  "deBeispiel": "Wegen der Marktsättigung sucht das Unternehmen neue Absatzmärkte.",
+  "gsw": "Marktsättigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge de Marktsättigig suecht s Unternääme neui Absatzmärt."
+ },
+ {
+  "id": 3941,
+  "de": "die Rentabilität",
+  "tr": "karlılık",
+  "deBeispiel": "Die Rentabilität der Filialen wird jährlich überprüft.",
+  "gsw": "Rentabilität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rentabilität vo de Filiale wird jedes Jaar überprüeft."
+ },
+ {
+  "id": 3942,
+  "de": "straffen",
+  "tr": "sadeleştirmek, kısaltıp toparlamak",
+  "deBeispiel": "Die neuen Vorgaben straffen die internen Abläufe erheblich.",
+  "gsw": "schtraffe",
+  "gswArtikel": null,
+  "gswBeispiel": "Di neue Vorgaabe schtraffed di interne Abläuf merklich."
+ }
+]

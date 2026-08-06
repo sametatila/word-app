@@ -1,0 +1,1037 @@
+[
+ {
+  "id": 8085,
+  "de": "das Lenkrad",
+  "tr": "direksiyon",
+  "deBeispiel": "Halt das Lenkrad mit beiden Händen!",
+  "gsw": "Lenkrad",
+  "gswArtikel": "s",
+  "gswBeispiel": "Halt s Lenkrad mit beidne Händ!"
+ },
+ {
+  "id": 8086,
+  "de": "die Hupe",
+  "tr": "korna",
+  "deBeispiel": "Die Hupe an meinem Auto ist kaputt.",
+  "gsw": "Hupe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Hupe a mim Auto isch kaputt.",
+  "ayniLehce": [
+   "hupen (B1)"
+  ]
+ },
+ {
+  "id": 8087,
+  "de": "der Mietwagen",
+  "tr": "kiralık araba",
+  "deBeispiel": "Am Flughafen holen wir den Mietwagen ab.",
+  "gsw": "Mietwage",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Flughafe hole mir de Mietwage ab."
+ },
+ {
+  "id": 8088,
+  "de": "der Beifahrer",
+  "tr": "ön koltuktaki yolcu",
+  "deBeispiel": "Als Beifahrer lese ich die Karte.",
+  "gsw": "Biifahrer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Als Biifahrer lise ich d Charte."
+ },
+ {
+  "id": 8089,
+  "de": "der Autofahrer",
+  "tr": "araba sürücüsü",
+  "deBeispiel": "Der Autofahrer hat vor der Ampel gebremst.",
+  "gsw": "Autofahrer",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Autofahrer hät vor de Ampele brämst."
+ },
+ {
+  "id": 8090,
+  "de": "der Bürgersteig",
+  "tr": "kaldırım",
+  "deBeispiel": "Auf dem Bürgersteig darf man nicht parken.",
+  "gsw": "Trottoir",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf em Trottoir dörf mer nöd parkiere.",
+  "ayniLehce": [
+   "Gehsteig (B1)",
+   "Trottoir (B1)",
+   "Gehweg (A2)"
+  ]
+ },
+ {
+  "id": 8091,
+  "de": "abschleppen",
+  "tr": "çekmek, çekiciyle götürmek",
+  "deBeispiel": "Die Polizei lässt das Auto abschleppen.",
+  "gsw": "abschleppe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei laat s Auto abschleppe."
+ },
+ {
+  "id": 8092,
+  "de": "die Raststätte",
+  "tr": "dinlenme tesisi",
+  "deBeispiel": "An der nächsten Raststätte machen wir eine Pause.",
+  "gsw": "Raschtschtätt",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de nöchschte Raschtschtätt mached mir e Pause."
+ },
+ {
+  "id": 8093,
+  "de": "das Wohnmobil",
+  "tr": "karavan",
+  "deBeispiel": "Meine Eltern reisen im Sommer mit dem Wohnmobil.",
+  "gsw": "Wohnmobil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mini Eltere räised im Summer mit em Wohnmobil."
+ },
+ {
+  "id": 8094,
+  "de": "mitfahren",
+  "tr": "birlikte gitmek, arabasına binmek",
+  "deBeispiel": "Darf ich bis zum Bahnhof mitfahren?",
+  "gsw": "mitfahre",
+  "gswArtikel": null,
+  "gswBeispiel": "Dörf ich bis zum Bahnhof mitfahre?"
+ },
+ {
+  "id": 8095,
+  "de": "das Andenken",
+  "tr": "hatıra eşyası",
+  "deBeispiel": "Ich habe meiner Schwester ein kleines Andenken gekauft.",
+  "gsw": "Aadänke",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich han minere Schwöschter es chliises Aadänke gchauft."
+ },
+ {
+  "id": 8096,
+  "de": "die Badehose",
+  "tr": "mayo (erkek), deniz şortu",
+  "deBeispiel": "Hast du deine Badehose eingepackt?",
+  "gsw": "Badhose",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch du dini Badhose iipackt?"
+ },
+ {
+  "id": 8097,
+  "de": "die Bootsfahrt",
+  "tr": "tekne gezisi",
+  "deBeispiel": "Am Nachmittag machen wir eine Bootsfahrt auf dem See.",
+  "gsw": "Bootsfahrt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Namittag mached mir e Bootsfahrt uf em See."
+ },
+ {
+  "id": 8098,
+  "de": "die Weltreise",
+  "tr": "dünya turu",
+  "deBeispiel": "Mein Bruder träumt von einer Weltreise.",
+  "gsw": "Wälträis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Min Brüeder tröimt vo ere Wälträis."
+ },
+ {
+  "id": 8099,
+  "de": "der Sonnenschirm",
+  "tr": "güneş şemsiyesi",
+  "deBeispiel": "Am Strand liegen wir unter dem Sonnenschirm.",
+  "gsw": "Sunneschirm",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Schtrand ligged mir under em Sunneschirm."
+ },
+ {
+  "id": 8100,
+  "de": "die Klassenfahrt",
+  "tr": "okul gezisi",
+  "deBeispiel": "Meine Tochter fährt nächste Woche auf Klassenfahrt.",
+  "gsw": "Klassefahrt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Tochter fahrt nöchscht Wuche uf Klassefahrt."
+ },
+ {
+  "id": 8101,
+  "de": "der Frühling",
+  "tr": "ilkbahar",
+  "deBeispiel": "Im Frühling blühen die Bäume im Park.",
+  "gsw": "Früelig",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Früelig blüehnd d Böim im Park."
+ },
+ {
+  "id": 8102,
+  "de": "der Sommer",
+  "tr": "yaz",
+  "deBeispiel": "Im Sommer gehen wir jeden Tag an den See.",
+  "gsw": "Summer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Summer gönd mir jede Taag an See."
+ },
+ {
+  "id": 8103,
+  "de": "der Herbst",
+  "tr": "sonbahar",
+  "deBeispiel": "Im Herbst fallen die Blätter von den Bäumen.",
+  "gsw": "Herbscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Herbscht falled d Bletter vo de Böim."
+ },
+ {
+  "id": 8104,
+  "de": "der Winter",
+  "tr": "kış",
+  "deBeispiel": "Der Winter war dieses Jahr sehr kalt.",
+  "gsw": "Winter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Winter isch das Jaar sehr chalt gsi."
+ },
+ {
+  "id": 8105,
+  "de": "die Jahreszeit",
+  "tr": "mevsim",
+  "deBeispiel": "Welche Jahreszeit magst du am liebsten?",
+  "gsw": "Jaresziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Weli Jaresziit häsch am liebschte?"
+ },
+ {
+  "id": 8106,
+  "de": "der Stadtteil",
+  "tr": "semt, şehrin bir bölgesi",
+  "deBeispiel": "Wir wohnen in einem ruhigen Stadtteil im Norden.",
+  "gsw": "Quartier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir wohned imene ruhige Quartier im Norde.",
+  "ayniLehce": [
+   "Quartier (B1)",
+   "Viertel (B1)",
+   "Wohnviertel (B2)"
+  ]
+ },
+ {
+  "id": 8107,
+  "de": "der Gehweg",
+  "tr": "kaldırım, yaya yolu",
+  "deBeispiel": "Auf dem Gehweg darf man nicht parken.",
+  "gsw": "Trottoir",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf em Trottoir dörf mer nöd parkiere.",
+  "ayniLehce": [
+   "Gehsteig (B1)",
+   "Trottoir (B1)",
+   "Bürgersteig (A2)"
+  ]
+ },
+ {
+  "id": 8108,
+  "de": "die Laterne",
+  "tr": "sokak lambası, fener",
+  "deBeispiel": "Vor unserem Haus steht eine alte Laterne.",
+  "gsw": "Laterne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor öisem Huus schtaat e alti Laterne."
+ },
+ {
+  "id": 8109,
+  "de": "der Brunnen",
+  "tr": "çeşme, kuyu",
+  "deBeispiel": "Auf dem Marktplatz gibt es einen schönen Brunnen.",
+  "gsw": "Brunne",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Märtplatz git s en schööne Brunne."
+ },
+ {
+  "id": 8110,
+  "de": "der Bach",
+  "tr": "dere, çay",
+  "deBeispiel": "Hinter dem Dorf fließt ein kleiner Bach.",
+  "gsw": "Bach",
+  "gswArtikel": "de",
+  "gswBeispiel": "Hinder em Dorf flüsst en chliine Bach."
+ },
+ {
+  "id": 8111,
+  "de": "der Teich",
+  "tr": "gölet, havuz",
+  "deBeispiel": "Im Teich schwimmen viele Enten.",
+  "gsw": "Weier",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Weier schwümmed vili Ente."
+ },
+ {
+  "id": 8112,
+  "de": "der Zweig",
+  "tr": "dal",
+  "deBeispiel": "Ein Vogel sitzt auf dem Zweig vor dem Fenster.",
+  "gsw": "Zwiig",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Vogel sitzt uf em Zwiig vor em Fänschter."
+ },
+ {
+  "id": 8113,
+  "de": "die Wurzel",
+  "tr": "kök",
+  "deBeispiel": "Die Wurzeln des Baumes sind sehr tief.",
+  "gsw": "Wurzle",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wurzle vom Baum sind sehr tüüf."
+ },
+ {
+  "id": 8114,
+  "de": "die Biene",
+  "tr": "arı",
+  "deBeispiel": "Eine Biene sitzt auf der gelben Blume.",
+  "gsw": "Biene",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Biene sitzt uf de gääle Blueme."
+ },
+ {
+  "id": 8115,
+  "de": "der Frosch",
+  "tr": "kurbağa",
+  "deBeispiel": "Am Teich haben wir einen grünen Frosch gesehen.",
+  "gsw": "Frosch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Weier händ mir en grüene Frosch gsee."
+ },
+ {
+  "id": 8116,
+  "de": "das Schaf",
+  "tr": "koyun",
+  "deBeispiel": "Auf der Weide stehen zwanzig Schafe.",
+  "gsw": "Schaaf",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf de Wäid schtönd zwänzg Schaaf."
+ },
+ {
+  "id": 8117,
+  "de": "der Papierkorb",
+  "tr": "çöp sepeti, kâğıt sepeti",
+  "deBeispiel": "Wirf das Papier bitte in den Papierkorb.",
+  "gsw": "Papierchorb",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wirf s Papier bitte i de Papierchorb."
+ },
+ {
+  "id": 8118,
+  "de": "der Sonnenschein",
+  "tr": "güneş ışığı",
+  "deBeispiel": "Nach dem Regen kam endlich der Sonnenschein.",
+  "gsw": "Sunneschiin",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Räge isch entli de Sunneschiin choo."
+ },
+ {
+  "id": 8119,
+  "de": "die Meldebescheinigung",
+  "tr": "ikametgâh belgesi",
+  "deBeispiel": "Der Vermieter möchte eine Meldebescheinigung von mir sehen.",
+  "gsw": "Mäldebeschäinigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vermieter wett e Mäldebeschäinigig vo mir gsee."
+ },
+ {
+  "id": 8120,
+  "de": "die Streife",
+  "tr": "devriye",
+  "deBeispiel": "Die Polizei fährt jede Nacht Streife in unserem Viertel.",
+  "gsw": "Schtreife",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Polizei fahrt jedi Nacht Schtreife i öisem Quartier."
+ },
+ {
+  "id": 8121,
+  "de": "sich ausweisen",
+  "tr": "kimliğini göstermek",
+  "deBeispiel": "Bei der Kontrolle musst du dich mit dem Pass ausweisen.",
+  "gsw": "uswiise",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi de Kontrolle muesch di mit em Pass uswiise.",
+  "ayniLehce": [
+   "ausweisen (C1)"
+  ]
+ },
+ {
+  "id": 8122,
+  "de": "sich informieren",
+  "tr": "bilgi almak, bilgi edinmek",
+  "deBeispiel": "Ich habe mich beim Amt über die Anmeldung informiert.",
+  "gsw": "informiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich han mich bim Amt über d Aamäldig informiert.",
+  "ayniLehce": [
+   "informieren (B1)"
+  ]
+ },
+ {
+  "id": 8123,
+  "de": "wehen",
+  "tr": "esmek",
+  "deBeispiel": "Am Meer weht heute ein starker Wind.",
+  "gsw": "wääie",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Meer tuet hüt en schtarche Wind wääie."
+ },
+ {
+  "id": 8124,
+  "de": "untergehen",
+  "tr": "batmak (güneş)",
+  "deBeispiel": "Am Meer ist die Sonne gerade untergegangen.",
+  "gsw": "undergaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Meer isch d Sunne grad undergange."
+ },
+ {
+  "id": 8125,
+  "de": "stempeln",
+  "tr": "mühürlemek, damgalamak",
+  "deBeispiel": "Die Frau am Schalter hat mein Formular gestempelt.",
+  "gsw": "schtämple",
+  "gswArtikel": null,
+  "gswBeispiel": "D Frau am Schalter hät mis Formular gschtämplet."
+ },
+ {
+  "id": 8126,
+  "de": "durchsuchen",
+  "tr": "aramak, arama yapmak",
+  "deBeispiel": "Die Polizei hat den ganzen Park durchsucht.",
+  "gsw": "duresueche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät de ganz Park duresuecht."
+ },
+ {
+  "id": 8127,
+  "de": "ausgraben",
+  "tr": "kazıp çıkarmak",
+  "deBeispiel": "Der Hund hat im Garten einen Knochen ausgegraben.",
+  "gsw": "usgrabe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hund hät im Garte en Chnoche usgrabe."
+ },
+ {
+  "id": 8128,
+  "de": "ernten",
+  "tr": "hasat etmek, toplamak",
+  "deBeispiel": "Im Herbst ernten die Bauern die Äpfel.",
+  "gsw": "ernte",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Herbscht ernted d Puure d Öpfel."
+ },
+ {
+  "id": 8129,
+  "de": "absperren",
+  "tr": "kapatmak, kordona almak",
+  "deBeispiel": "Die Polizei hat die Straße nach dem Unfall abgesperrt.",
+  "gsw": "abschperre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät d Schtraass nach em Unfall abgschperrt."
+ },
+ {
+  "id": 8130,
+  "de": "pflücken",
+  "tr": "koparmak, toplamak (çiçek, meyve)",
+  "deBeispiel": "Die Kinder pflücken Blumen auf der Wiese.",
+  "gsw": "pflücke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind pflücked Blueme uf de Wise."
+ },
+ {
+  "id": 8131,
+  "de": "bellen",
+  "tr": "havlamak",
+  "deBeispiel": "Der Hund des Nachbarn bellt die ganze Nacht.",
+  "gsw": "bälle",
+  "gswArtikel": null,
+  "gswBeispiel": "Em Nachbar sin Hund bällt di ganz Nacht."
+ },
+ {
+  "id": 8132,
+  "de": "jagen",
+  "tr": "avlamak, kovalamak",
+  "deBeispiel": "Der Fuchs jagt nachts kleine Tiere.",
+  "gsw": "jage",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fuchs jagt z Nacht chliini Tier."
+ },
+ {
+  "id": 8133,
+  "de": "verbrennen",
+  "tr": "yakmak",
+  "deBeispiel": "Im Garten darf man kein Laub verbrennen.",
+  "gsw": "verbrenne",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Garte dörf mer kes Laub verbrenne."
+ },
+ {
+  "id": 8134,
+  "de": "säubern",
+  "tr": "temizlemek",
+  "deBeispiel": "Wir säubern den Strand von Plastik und Papier.",
+  "gsw": "suubere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir suubered de Schtrand vo Plastik und Papier."
+ },
+ {
+  "id": 8135,
+  "de": "vorhersagen",
+  "tr": "tahmin etmek, önceden bildirmek",
+  "deBeispiel": "Für morgen sagt man Regen vorher.",
+  "gsw": "vorussäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Für morn tuet mer Räge vorussäge."
+ },
+ {
+  "id": 8136,
+  "de": "kriechen",
+  "tr": "sürünmek, emeklemek",
+  "deBeispiel": "Eine Schnecke kriecht langsam über den Weg.",
+  "gsw": "chrüche",
+  "gswArtikel": null,
+  "gswBeispiel": "E Schnägg chrücht langsam über de Wäg."
+ },
+ {
+  "id": 8137,
+  "de": "streiten",
+  "tr": "tartışmak, kavga etmek",
+  "deBeispiel": "Die Nachbarn streiten oft über den Lärm.",
+  "gsw": "schtriite",
+  "gswArtikel": null,
+  "gswBeispiel": "D Nachbere schtriited oft wäge em Lärm.",
+  "ayniLehce": [
+   "sich streiten (B1)"
+  ]
+ },
+ {
+  "id": 8138,
+  "de": "verletzen",
+  "tr": "yaralamak",
+  "deBeispiel": "Bei dem Unfall hat sich niemand verletzt.",
+  "gsw": "verletze",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi dem Unfall hät sich niemert verletzt.",
+  "ayniLehce": [
+   "sich verletzen (B1)"
+  ]
+ },
+ {
+  "id": 8139,
+  "de": "fällen",
+  "tr": "kesmek (ağaç), devirmek",
+  "deBeispiel": "Im Winter haben sie den kranken Baum gefällt.",
+  "gsw": "fälle",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Winter händ si de chrank Baum gfällt."
+ },
+ {
+  "id": 8140,
+  "de": "aufgehen",
+  "tr": "doğmak (güneş), açılmak",
+  "deBeispiel": "Im Sommer geht die Sonne schon um fünf Uhr auf.",
+  "gsw": "uufgaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Summer tuet d Sunne scho am füfi uufgaa."
+ },
+ {
+  "id": 8141,
+  "de": "erfrieren",
+  "tr": "donmak, soğuktan ölmek",
+  "deBeispiel": "Bei diesem Frost können die Blumen erfrieren.",
+  "gsw": "erfrüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi dem Froscht chönd d Blueme erfrüüre."
+ },
+ {
+  "id": 8142,
+  "de": "summen",
+  "tr": "vızıldamak, mırıldanmak",
+  "deBeispiel": "Die Bienen summen den ganzen Tag im Garten.",
+  "gsw": "summe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Biene summed de ganz Taag im Garte.",
+  "ayniLehce": [
+   "Summe (B1)"
+  ]
+ },
+ {
+  "id": 8143,
+  "de": "grün",
+  "tr": "yeşil",
+  "deBeispiel": "Im Frühling wird die Wiese wieder ganz grün.",
+  "gsw": "grüen",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Früelig wird d Wise wieder ganz grüen."
+ },
+ {
+  "id": 8144,
+  "de": "lebendig",
+  "tr": "canlı, yaşayan",
+  "deBeispiel": "Abends ist die Innenstadt sehr lebendig.",
+  "gsw": "läbendig",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig isch d Innerschtadt sehr läbendig."
+ },
+ {
+  "id": 8145,
+  "de": "erlaubt",
+  "tr": "serbest, izin verilen",
+  "deBeispiel": "Hier ist das Parken nur eine Stunde erlaubt.",
+  "gsw": "erlaubt",
+  "gswArtikel": null,
+  "gswBeispiel": "Da isch s Parkiere nu ei Schtund erlaubt."
+ },
+ {
+  "id": 8146,
+  "de": "zahm",
+  "tr": "uysal, evcil",
+  "deBeispiel": "Die Ziegen auf dem Bauernhof sind ganz zahm.",
+  "gsw": "zam",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gäisse uf em Puurehof sind ganz zam."
+ },
+ {
+  "id": 8147,
+  "de": "heftig",
+  "tr": "şiddetli, sert",
+  "deBeispiel": "Gestern hat es den ganzen Tag heftig geregnet.",
+  "gsw": "heftig",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter hät s de ganz Taag heftig grägnet."
+ },
+ {
+  "id": 8148,
+  "de": "harmlos",
+  "tr": "zararsız",
+  "deBeispiel": "Keine Angst, diese Spinne ist ganz harmlos.",
+  "gsw": "harmlos",
+  "gswArtikel": null,
+  "gswBeispiel": "Kä Angscht, die Schpinne isch ganz harmlos."
+ },
+ {
+  "id": 8149,
+  "de": "belebt",
+  "tr": "hareketli, kalabalık",
+  "deBeispiel": "Die Straße vor dem Bahnhof ist immer belebt.",
+  "gsw": "beläbt",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtraass vor em Bahnhof isch immer beläbt."
+ },
+ {
+  "id": 8150,
+  "de": "rutschig",
+  "tr": "kaygan",
+  "deBeispiel": "Nach dem Regen ist der Weg sehr rutschig.",
+  "gsw": "rutschig",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Räge isch de Wäg sehr rutschig."
+ },
+ {
+  "id": 8151,
+  "de": "wachsam",
+  "tr": "tetikte, uyanık",
+  "deBeispiel": "Der Hund ist nachts sehr wachsam.",
+  "gsw": "wachsam",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hund isch z Nacht sehr wachsam."
+ },
+ {
+  "id": 8152,
+  "de": "essbar",
+  "tr": "yenilebilir",
+  "deBeispiel": "Nicht jeder Pilz im Wald ist essbar.",
+  "gsw": "ässbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöd jede Pilz im Wald isch ässbar."
+ },
+ {
+  "id": 8153,
+  "de": "biologisch",
+  "tr": "organik, biyolojik",
+  "deBeispiel": "Dieses Gemüse kommt aus biologischem Anbau.",
+  "gsw": "biologisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Gmües chunt us biologischem Aabau."
+ },
+ {
+  "id": 8154,
+  "de": "örtlich",
+  "tr": "yerel",
+  "deBeispiel": "Die örtliche Polizei hat uns sofort geholfen.",
+  "gsw": "örtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D örtlich Polizei hät öis sofort ghulfe."
+ },
+ {
+  "id": 8155,
+  "de": "grau",
+  "tr": "gri",
+  "deBeispiel": "Der Himmel ist heute den ganzen Tag grau.",
+  "gsw": "grau",
+  "gswArtikel": null,
+  "gswBeispiel": "De Himmel isch hüt de ganz Taag grau."
+ },
+ {
+  "id": 8156,
+  "de": "scheu",
+  "tr": "ürkek, çekingen",
+  "deBeispiel": "Rehe sind sehr scheu und laufen schnell weg.",
+  "gsw": "schüüch",
+  "gswArtikel": null,
+  "gswBeispiel": "Reh sind sehr schüüch und laufed schnäll wäg.",
+  "ayniLehce": [
+   "schüchtern (A2)"
+  ]
+ },
+ {
+  "id": 8157,
+  "de": "verschmutzt",
+  "tr": "kirlenmiş, kirli",
+  "deBeispiel": "Der Fluss ist an dieser Stelle stark verschmutzt.",
+  "gsw": "verschmutzt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fluss isch a dere Schtell schtarch verschmutzt."
+ },
+ {
+  "id": 8158,
+  "de": "unangenehm",
+  "tr": "rahatsız edici, nahoş",
+  "deBeispiel": "Der kalte Wind am Bahnhof war sehr unangenehm.",
+  "gsw": "unaagnehm",
+  "gswArtikel": null,
+  "gswBeispiel": "De chalt Wind am Bahnhof isch sehr unaagnehm gsi."
+ },
+ {
+  "id": 8159,
+  "de": "vollständig",
+  "tr": "eksiksiz, tam",
+  "deBeispiel": "Bitte füllen Sie das Formular vollständig aus.",
+  "gsw": "vollschtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte fülled Sie s Formular vollschtändig us."
+ },
+ {
+  "id": 8160,
+  "de": "berechtigt",
+  "tr": "hakkı olan, yetkili",
+  "deBeispiel": "Nur Anwohner sind berechtigt, hier zu parken.",
+  "gsw": "berechtigt",
+  "gswArtikel": null,
+  "gswBeispiel": "Nu Aawohner sind berechtigt, da z parkiere."
+ },
+ {
+  "id": 8161,
+  "de": "glätten",
+  "tr": "düzeltmek, düzleştirmek",
+  "deBeispiel": "Vor dem Essen glätte ich die Tischdecke mit der Hand.",
+  "gsw": "glätte",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Ässe glätte ich s Tischtuech mit de Hand.",
+  "ayniLehce": [
+   "bügeln (A2)"
+  ]
+ },
+ {
+  "id": 8162,
+  "de": "abstauben",
+  "tr": "tozunu almak",
+  "deBeispiel": "Am Wochenende staube ich die Regale im Wohnzimmer ab.",
+  "gsw": "abschtaube",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenend tue ich d Regal im Wohnzimmer abschtaube."
+ },
+ {
+  "id": 8163,
+  "de": "schrubben",
+  "tr": "ovalamak, fırçalayarak temizlemek",
+  "deBeispiel": "Ich schrubbe den Boden im Bad mit einer harten Bürste.",
+  "gsw": "schrubbe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich schrubbe de Bode im Bad mit ere harte Bürschte."
+ },
+ {
+  "id": 8164,
+  "de": "aufwischen",
+  "tr": "(dökülen şeyi) silmek, paspaslamak",
+  "deBeispiel": "Das Kind hat Milch verschüttet, ich wische sie schnell auf.",
+  "gsw": "uufwüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Chind hät Milch verschüttet, ich tue si schnäll uufwüsche."
+ },
+ {
+  "id": 8165,
+  "de": "saugen",
+  "tr": "elektrikli süpürgeyle süpürmek, emmek",
+  "deBeispiel": "Ich sauge jeden Freitag den Teppich im Wohnzimmer.",
+  "gsw": "suuge",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue jede Friitig de Teppich im Wohnzimmer suuge."
+ },
+ {
+  "id": 8166,
+  "de": "ausräumen",
+  "tr": "boşaltmak, içindekileri çıkarmak",
+  "deBeispiel": "Nach dem Frühstück räume ich die Spülmaschine aus.",
+  "gsw": "usruume",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Zmorge tue ich d Abwäschmaschine usruume."
+ },
+ {
+  "id": 8167,
+  "de": "ausmisten",
+  "tr": "ayıklamak, gereksizleri atmak",
+  "deBeispiel": "Einmal im Jahr miste ich den Kleiderschrank aus.",
+  "gsw": "usmischte",
+  "gswArtikel": null,
+  "gswBeispiel": "Einisch im Jaar tue ich de Chläiderschrank usmischte."
+ },
+ {
+  "id": 8168,
+  "de": "ausleeren",
+  "tr": "boşaltmak",
+  "deBeispiel": "Am Morgen leere ich den Briefkasten aus.",
+  "gsw": "usleere",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Morge tue ich de Briefchaschte usleere."
+ },
+ {
+  "id": 8169,
+  "de": "umrühren",
+  "tr": "karıştırmak (kaşıkla, çorbayı)",
+  "deBeispiel": "Ich rühre die Suppe mit einem Löffel langsam um.",
+  "gsw": "umrüere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue d Suppe mit eme Löffel langsam umrüere."
+ },
+ {
+  "id": 8170,
+  "de": "rösten",
+  "tr": "kızartmak (yağsız: ekmek, kahve), kavurmak",
+  "deBeispiel": "Ich röste das Brot in der Pfanne, bis es braun ist.",
+  "gsw": "röschte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich röschte s Brot i de Pfanne, bis es bruun isch."
+ },
+ {
+  "id": 8171,
+  "de": "aufessen",
+  "tr": "hepsini yemek, tabağını bitirmek",
+  "deBeispiel": "Mein Sohn isst seinen Teller zum Glück immer ganz auf.",
+  "gsw": "uufässe",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Sohn tuet sin Täller zum Glück immer ganz uufässe."
+ },
+ {
+  "id": 8172,
+  "de": "hacken",
+  "tr": "doğramak, kıymak",
+  "deBeispiel": "Für die Soße hacke ich die Zwiebeln ganz klein.",
+  "gsw": "hacke",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Sauce hacke ich d Zwible ganz chlii."
+ },
+ {
+  "id": 8173,
+  "de": "reiben",
+  "tr": "rendelemek, ovmak",
+  "deBeispiel": "Für die Nudeln reibe ich noch etwas Käse.",
+  "gsw": "riibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Nudle riibe ich no chli Chäs."
+ },
+ {
+  "id": 8174,
+  "de": "kneten",
+  "tr": "yoğurmak",
+  "deBeispiel": "Für das Brot knete ich den Teig mit den Händen.",
+  "gsw": "chnäte",
+  "gswArtikel": null,
+  "gswBeispiel": "Für s Brot chnäte ich de Täig mit de Händ."
+ },
+ {
+  "id": 8175,
+  "de": "pressen",
+  "tr": "sıkmak, preslemek",
+  "deBeispiel": "Zum Frühstück presse ich eine frische Orange.",
+  "gsw": "prässe",
+  "gswArtikel": null,
+  "gswBeispiel": "Zum Zmorge prässe ich e frischi Orange."
+ },
+ {
+  "id": 8176,
+  "de": "auftauen",
+  "tr": "buzunu çözmek, çözülmek",
+  "deBeispiel": "Ich taue das Fleisch über Nacht im Kühlschrank auf.",
+  "gsw": "uuftaue",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue s Fläisch über Nacht im Chüelschrank uuftaue."
+ },
+ {
+  "id": 8177,
+  "de": "einfrieren",
+  "tr": "dondurmak, derin dondurucuya koymak",
+  "deBeispiel": "Wir frieren das restliche Brot für später ein.",
+  "gsw": "iifrüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend s restlich Brot für schpöter iifrüüre."
+ },
+ {
+  "id": 8178,
+  "de": "einweichen",
+  "tr": "suda bekletmek, ıslatmak",
+  "deBeispiel": "Die Bohnen weiche ich über Nacht in kaltem Wasser ein.",
+  "gsw": "iiwäiche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bohne tue ich über Nacht i chaltem Wasser iiwäiche."
+ },
+ {
+  "id": 8179,
+  "de": "aufsetzen",
+  "tr": "(su, kahve) ocağa koymak, takmak",
+  "deBeispiel": "Ich setze schnell Wasser für den Tee auf.",
+  "gsw": "uufsetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich tue schnäll Wasser für de Tee uufsetze."
+ },
+ {
+  "id": 8180,
+  "de": "abspülen",
+  "tr": "bulaşık yıkamak, durulamak",
+  "deBeispiel": "Nach dem Abendessen spüle ich das Geschirr von Hand ab.",
+  "gsw": "abwäsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Znacht tue ich s Gschirr vo Hand abwäsche.",
+  "ayniLehce": [
+   "abwaschen (B1)"
+  ]
+ },
+ {
+  "id": 8181,
+  "de": "zusammenlegen",
+  "tr": "katlamak, üst üste katlamak",
+  "deBeispiel": "Meine Tochter legt die T-Shirts ordentlich zusammen.",
+  "gsw": "zämeleege",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Tochter tuet d T-Shirts orndlich zämeleege."
+ },
+ {
+  "id": 8182,
+  "de": "flicken",
+  "tr": "yamamak, onarmak",
+  "deBeispiel": "Meine Oma flickt meine alte Hose mit Nadel und Faden.",
+  "gsw": "flicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Grossmueter flickt mini alti Hose mit Nadle und Fade.",
+  "ayniLehce": [
+   "reparieren (A1)"
+  ]
+ },
+ {
+  "id": 8183,
+  "de": "stopfen",
+  "tr": "yamamak (çorap), tıkmak",
+  "deBeispiel": "Meine Oma stopft die Löcher in meinen Socken.",
+  "gsw": "schtopfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Grossmueter schtopft d Löcher i mine Socke."
+ },
+ {
+  "id": 8184,
+  "de": "austrinken",
+  "tr": "içip bitirmek",
+  "deBeispiel": "Trink bitte deinen Kaffee aus, wir müssen gleich los.",
+  "gsw": "ustrinke",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte din Kaffi ustrinke, mir müend glii los."
+ },
+ {
+  "id": 8185,
+  "de": "nageln",
+  "tr": "çivilemek",
+  "deBeispiel": "Er nagelt ein kleines Brett über die Tür.",
+  "gsw": "nagle",
+  "gswArtikel": null,
+  "gswBeispiel": "Er tuet es chliises Brätt über d Tür nagle."
+ },
+ {
+  "id": 8186,
+  "de": "sägen",
+  "tr": "testereyle kesmek",
+  "deBeispiel": "Meine Eltern sägen im Garten Holz für den Ofen.",
+  "gsw": "sääge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Eltere tüend im Garte Holz für de Ofe sääge."
+ },
+ {
+  "id": 8187,
+  "de": "ölen",
+  "tr": "yağlamak",
+  "deBeispiel": "Einmal im Jahr ölen wir die Türen in der Wohnung.",
+  "gsw": "öle",
+  "gswArtikel": null,
+  "gswBeispiel": "Einisch im Jaar öle mir d Türe i de Wohnig."
+ },
+ {
+  "id": 8188,
+  "de": "schmieren",
+  "tr": "sürmek (tereyağı vb.), yağlamak",
+  "deBeispiel": "Morgens schmiere ich Butter und Marmelade auf mein Brot.",
+  "gsw": "schmiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Morge schmiere ich Butter und Konfi uf mis Brot."
+ },
+ {
+  "id": 8189,
+  "de": "abkratzen",
+  "tr": "kazımak, kazıyarak çıkarmak",
+  "deBeispiel": "Im Winter kratze ich morgens das Eis vom Auto ab.",
+  "gsw": "abchratze",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Winter tue ich am Morge s Iis vom Auto abchratze."
+ },
+ {
+  "id": 8190,
+  "de": "zusammenbauen",
+  "tr": "kurmak (parçaları birleştirerek), monte etmek",
+  "deBeispiel": "Wir bauen das neue Regal am Wochenende zusammen.",
+  "gsw": "zämebaue",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend s neu Regal am Wuchenend zämebaue."
+ },
+ {
+  "id": 8191,
+  "de": "anbringen",
+  "tr": "takmak, monte etmek",
+  "deBeispiel": "Der Hausmeister bringt eine neue Lampe im Flur an.",
+  "gsw": "aabringe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Abwart tuet e neui Lampe im Gang aabringe."
+ },
+ {
+  "id": 8192,
+  "de": "beschriften",
+  "tr": "üzerine yazmak, etiketlemek",
+  "deBeispiel": "Ich beschrifte die Dosen im Küchenschrank mit einem Stift.",
+  "gsw": "beschrifte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich beschrifte d Dose im Chuchischrank mit eme Schtift."
+ },
+ {
+  "id": 8193,
+  "de": "anschalten",
+  "tr": "açmak (cihaz)",
+  "deBeispiel": "Am Abend schalte ich die Lampe im Wohnzimmer an.",
+  "gsw": "aaschalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig tue ich d Lampe im Wohnzimmer aaschalte."
+ },
+ {
+  "id": 8194,
+  "de": "abdecken",
+  "tr": "üstünü örtmek, üstünü kapatmak",
+  "deBeispiel": "Beim Streichen decke ich den Boden mit einer Folie ab.",
+  "gsw": "abdecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Schtriiche tue ich de Bode mit ere Folie abdecke."
+ }
+]

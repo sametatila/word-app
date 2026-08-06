@@ -1,0 +1,992 @@
+[
+ {
+  "id": 7013,
+  "de": "der Laizismus",
+  "tr": "laiklik",
+  "deBeispiel": "Der Laizismus verlangt eine strikte Trennung von Staat und Kirche.",
+  "gsw": "Laizismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Laizismus verlangt e schtrikti Trennig vo Schtaat und Chile."
+ },
+ {
+  "id": 7014,
+  "de": "die Frömmigkeit",
+  "tr": "dindarlık, sofuluk",
+  "deBeispiel": "Ihre stille Frömmigkeit war für Außenstehende kaum sichtbar.",
+  "gsw": "Frömmigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri schtilli Frömmigkeit isch für Uusseschtehendi chuum sichtbar gsi."
+ },
+ {
+  "id": 7015,
+  "de": "das Glaubensbekenntnis",
+  "tr": "iman ikrarı, inanç bildirisi",
+  "deBeispiel": "Die Gemeinde spricht das Glaubensbekenntnis am Ende des Gottesdienstes.",
+  "gsw": "Glaubensbekenntnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Gmäind schpricht s Glaubensbekenntnis am Schluss vom Gottesdienscht."
+ },
+ {
+  "id": 7016,
+  "de": "die Konfession",
+  "tr": "mezhep, itikat",
+  "deBeispiel": "In dieser Stadt leben Menschen unterschiedlicher Konfessionen friedlich nebeneinander.",
+  "gsw": "Konfession",
+  "gswArtikel": "d",
+  "gswBeispiel": "I dere Schtadt läbed Mäntsche vo underschidliche Konfessione fridlich nebenand."
+ },
+ {
+  "id": 7017,
+  "de": "die Gewissensfreiheit",
+  "tr": "vicdan özgürlüğü",
+  "deBeispiel": "Die Verfassung schützt die Gewissensfreiheit jedes einzelnen Bürgers.",
+  "gsw": "Gwüssensfreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verfassig schützt d Gwüssensfreiheit vo jedem einzelne Bürger."
+ },
+ {
+  "id": 7018,
+  "de": "die Religionsfreiheit",
+  "tr": "din özgürlüğü",
+  "deBeispiel": "Ohne Religionsfreiheit bleibt religiöse Vielfalt eine bloße Behauptung.",
+  "gsw": "Religionsfreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Religionsfreiheit bliibt religiösi Vilfalt e blossi Behauptig."
+ },
+ {
+  "id": 7019,
+  "de": "das Dogma",
+  "tr": "dogma, nas",
+  "deBeispiel": "Er weigerte sich, ein überliefertes Dogma unkritisch zu übernehmen.",
+  "gsw": "Dogma",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er hät sich gweigeret, es überlifereds Dogma unkritisch z übernää."
+ },
+ {
+  "id": 7020,
+  "de": "die Orthodoxie",
+  "tr": "ortodoksi, katı bağlılık",
+  "deBeispiel": "Die strenge Orthodoxie ließ kaum Raum für abweichende Deutungen.",
+  "gsw": "Orthodoxie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di schtreng Orthodoxie hät chuum Ruum für abwiichendi Düütige gloo."
+ },
+ {
+  "id": 7021,
+  "de": "die Häresie",
+  "tr": "sapkınlık, dinî sapma",
+  "deBeispiel": "Was früher als Häresie galt, wird heute nüchtern diskutiert.",
+  "gsw": "Häresie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Was früener as Häresie golte hät, wird hüt nüechtern diskutiert."
+ },
+ {
+  "id": 7022,
+  "de": "die Offenbarung",
+  "tr": "vahiy, ifşa",
+  "deBeispiel": "Die Schrift versteht sich selbst als Offenbarung göttlichen Willens.",
+  "gsw": "Offebarig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schrift verschtaat sich sälber as Offebarig vom göttliche Wille."
+ },
+ {
+  "id": 7023,
+  "de": "die Transzendenz",
+  "tr": "aşkınlık",
+  "deBeispiel": "Ohne den Bezug auf Transzendenz verliert der Begriff seinen Sinn.",
+  "gsw": "Transzendenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni de Bezug uf d Transzendenz verliert de Begriff sin Sinn."
+ },
+ {
+  "id": 7024,
+  "de": "das Jenseits",
+  "tr": "öte dünya, ahiret",
+  "deBeispiel": "Vorstellungen vom Jenseits unterscheiden sich zwischen den Religionen erheblich.",
+  "gsw": "Jensiits",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Vorschtellige vom Jensiits underschäided sich zwüschet de Religione erheblich."
+ },
+ {
+  "id": 7025,
+  "de": "die Erlösung",
+  "tr": "kurtuluş, selamet",
+  "deBeispiel": "Die Lehre verspricht Erlösung durch Umkehr und tätige Reue.",
+  "gsw": "Erlösig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Lehr verschpricht Erlösig dur Umchehr und tätigi Rüü."
+ },
+ {
+  "id": 7026,
+  "de": "die Gnade",
+  "tr": "lütuf, merhamet",
+  "deBeispiel": "Nach dieser Auffassung ist Gnade nicht verdienbar, sondern geschenkt.",
+  "gsw": "Gnaad",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach dere Uffassig isch d Gnaad nöd verdienbar, sondern gschenkt."
+ },
+ {
+  "id": 7027,
+  "de": "die Buße",
+  "tr": "tövbe, kefaret",
+  "deBeispiel": "Die Buße galt als sichtbares Zeichen innerer Umkehr.",
+  "gsw": "Buess",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Buess hät as sichtbars Zäiche vo innerer Umchehr golte."
+ },
+ {
+  "id": 7028,
+  "de": "die Askese",
+  "tr": "çilecilik, nefis terbiyesi",
+  "deBeispiel": "Askese bedeutet hier bewussten Verzicht, nicht Verachtung des Körpers.",
+  "gsw": "Askese",
+  "gswArtikel": "d",
+  "gswBeispiel": "Askese häisst da bewusste Verzicht und nöd Verachtig vom Chörper."
+ },
+ {
+  "id": 7029,
+  "de": "die Mystik",
+  "tr": "mistisizm, tasavvuf",
+  "deBeispiel": "Die Mystik sucht die unmittelbare Erfahrung des Göttlichen.",
+  "gsw": "Mystik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mystik suecht di unmittelbari Erfaarig vom Göttliche."
+ },
+ {
+  "id": 7030,
+  "de": "das Sakrament",
+  "tr": "sakrament, kutsal ayin",
+  "deBeispiel": "Die Taufe gilt in vielen Kirchen als grundlegendes Sakrament.",
+  "gsw": "Sakramänt",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Taufi gilt i vilne Chile as grundlegends Sakramänt."
+ },
+ {
+  "id": 7031,
+  "de": "die Liturgie",
+  "tr": "ayin düzeni, litürji",
+  "deBeispiel": "Die Liturgie folgt einer festen Ordnung von Gesang und Gebet.",
+  "gsw": "Liturgie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Liturgie folgt ere feschte Ordnig vo Gsang und Gebät."
+ },
+ {
+  "id": 7032,
+  "de": "die Predigt",
+  "tr": "vaaz",
+  "deBeispiel": "Seine Predigt griff aktuelle gesellschaftliche Konflikte behutsam auf.",
+  "gsw": "Predig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Predig hät aktuelli gsellschaftlichi Konflikt behuetsam uufgriffe."
+ },
+ {
+  "id": 7033,
+  "de": "die Seelsorge",
+  "tr": "manevi rehberlik, ruhani danışmanlık",
+  "deBeispiel": "In Kliniken übernimmt die Seelsorge oft eine tröstende Aufgabe.",
+  "gsw": "Seelsorg",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Kliniken übernimmt d Seelsorg oft e tröschtendi Uufgaab."
+ },
+ {
+  "id": 7034,
+  "de": "die Geistlichkeit",
+  "tr": "ruhban sınıfı, din adamları",
+  "deBeispiel": "Die Geistlichkeit verlor im Zuge der Modernisierung erheblich an Autorität.",
+  "gsw": "Gäischtlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gäischtlichkeit hät im Zug vo de Modernisierig erheblich a Autorität verlore."
+ },
+ {
+  "id": 7035,
+  "de": "der Klerus",
+  "tr": "ruhban, din adamları sınıfı",
+  "deBeispiel": "Der Klerus wehrte sich lange gegen jede staatliche Aufsicht.",
+  "gsw": "Klerus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Klerus hät sich lang gäge jedi schtaatlichi Uufsicht gwehrt."
+ },
+ {
+  "id": 7036,
+  "de": "die Wallfahrt",
+  "tr": "hac yolculuğu, ziyaret",
+  "deBeispiel": "Jedes Frühjahr brechen Tausende zu einer Wallfahrt auf.",
+  "gsw": "Wallfaart",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jede Früelig bräched Tuusigi zu ere Wallfaart uuf."
+ },
+ {
+  "id": 7037,
+  "de": "die Fastenzeit",
+  "tr": "oruç dönemi, perhiz zamanı",
+  "deBeispiel": "Während der Fastenzeit verzichten viele bewusst auf gewohnte Annehmlichkeiten.",
+  "gsw": "Faschtenziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Während de Faschtenziit verzichted vili bewusst uf gwohnti Aanämlichkeite."
+ },
+ {
+  "id": 7038,
+  "de": "der Kirchenaustritt",
+  "tr": "kiliseden ayrılma, üyelikten çıkma",
+  "deBeispiel": "Die Zahl der Kirchenaustritte ist in den letzten Jahren gestiegen.",
+  "gsw": "Chileuustritt",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Zaal vo de Chileuustritt isch i de letschte Jaar gschtige."
+ },
+ {
+  "id": 7039,
+  "de": "die Exegese",
+  "tr": "metin şerhi, tefsir",
+  "deBeispiel": "Seine Exegese des Textes weicht von der herrschenden Lesart ab.",
+  "gsw": "Exegese",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Exegese vom Täxt wiicht vo de herrschende Läsart ab."
+ },
+ {
+  "id": 7040,
+  "de": "der Fundamentalismus",
+  "tr": "köktencilik",
+  "deBeispiel": "Fundamentalismus entsteht selten ohne das Gefühl kultureller Bedrohung.",
+  "gsw": "Fundamentalismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Fundamentalismus entschtaat sälte ohni s Gfüel vo kultureller Bedrohig."
+ },
+ {
+  "id": 7041,
+  "de": "der Aberglaube",
+  "tr": "batıl inanç",
+  "deBeispiel": "Zwischen Aberglaube und gelebtem Volksglauben verläuft keine klare Grenze.",
+  "gsw": "Aberglaube",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zwüschet Aberglaube und gläbtem Volchsglaube verlauft kei klari Gränze."
+ },
+ {
+  "id": 7042,
+  "de": "die Spiritualität",
+  "tr": "maneviyat, tinsellik",
+  "deBeispiel": "Viele suchen Spiritualität heute außerhalb der etablierten Institutionen.",
+  "gsw": "Spiritualität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili sueched Spiritualität hüt usserhalb vo de etablierte Institutione."
+ },
+ {
+  "id": 7043,
+  "de": "die Religionsgemeinschaft",
+  "tr": "din cemaati, dinî topluluk",
+  "deBeispiel": "Der Staat behandelt alle Religionsgemeinschaften rechtlich gleich.",
+  "gsw": "Religionsgmäinschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Schtaat behandlet alli Religionsgmäinschafte rächtlich gliich."
+ },
+ {
+  "id": 7044,
+  "de": "der Agnostizismus",
+  "tr": "agnostisizm, bilinemezcilik",
+  "deBeispiel": "Der Agnostizismus hält die Frage nach Gott für unentscheidbar.",
+  "gsw": "Agnostizismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Agnostizismus haltet d Fraag nach Gott für unentschäidbar."
+ },
+ {
+  "id": 7045,
+  "de": "die Schöpfung",
+  "tr": "yaratılış, kâinat",
+  "deBeispiel": "Die Schöpfung wird hier als anvertrautes Gut verstanden.",
+  "gsw": "Schöpfig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schöpfig wird da as aavertrauts Guet verschtande."
+ },
+ {
+  "id": 7046,
+  "de": "die Vorsehung",
+  "tr": "ilahi takdir, kader",
+  "deBeispiel": "An eine lenkende Vorsehung glaubt heute kaum noch jemand.",
+  "gsw": "Vorsehig",
+  "gswArtikel": "d",
+  "gswBeispiel": "A e lenkendi Vorsehig glaubt hüt chuum no öpper."
+ },
+ {
+  "id": 7047,
+  "de": "die Reliquie",
+  "tr": "kutsal emanet",
+  "deBeispiel": "Die Reliquie zog jahrhundertelang Pilger aus ganz Europa an.",
+  "gsw": "Reliquie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reliquie hät jaarhundertelang Pilger us ganz Europa aazoge."
+ },
+ {
+  "id": 7048,
+  "de": "die Ökumene",
+  "tr": "ekümenizm, kiliseler arası birlik",
+  "deBeispiel": "Die Ökumene bemüht sich um Annäherung zwischen getrennten Kirchen.",
+  "gsw": "Ökumene",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ökumene bemüeit sich um e Aanäherig zwüschet getrennte Chile."
+ },
+ {
+  "id": 7049,
+  "de": "die Ehrfurcht",
+  "tr": "derin saygı, huşu",
+  "deBeispiel": "Er betrat den alten Betsaal mit sichtbarer Ehrfurcht.",
+  "gsw": "Eerfurcht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er isch mit sichtbaarer Eerfurcht in de alt Bätsaal iigange."
+ },
+ {
+  "id": 7050,
+  "de": "das Gelübde",
+  "tr": "adak, yemin",
+  "deBeispiel": "Er legte ein Gelübde ab, das ihn lebenslang band.",
+  "gsw": "Glübde",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er hät es Glübde abgläit, wo en s ganz Läbe lang bunde hät."
+ },
+ {
+  "id": 7051,
+  "de": "die Entzauberung",
+  "tr": "büyübozumu, gizemin yitimi",
+  "deBeispiel": "Die Entzauberung der Welt beschreibt einen langen historischen Prozess.",
+  "gsw": "Entzauberig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entzauberig vo de Wält beschriibt en lange historische Prozäss."
+ },
+ {
+  "id": 7052,
+  "de": "die Glaubenskrise",
+  "tr": "inanç krizi, iman bunalımı",
+  "deBeispiel": "Nach dem Verlust geriet er in eine tiefe Glaubenskrise.",
+  "gsw": "Glaubenskrise",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Verluscht isch er in e tüüfi Glaubenskrise cho."
+ },
+ {
+  "id": 7053,
+  "de": "verehren",
+  "tr": "saygı duymak, hürmet etmek, ululamak",
+  "deBeispiel": "In dieser Region verehrt man den Heiligen bis heute.",
+  "gsw": "verehre",
+  "gswArtikel": null,
+  "gswBeispiel": "In dere Region verehrt mer de Heilig bis hüt."
+ },
+ {
+  "id": 7054,
+  "de": "anbeten",
+  "tr": "tapmak, ibadet etmek",
+  "deBeispiel": "Sie beten dort seit Generationen dieselbe Gottheit an.",
+  "gsw": "aabätte",
+  "gswArtikel": null,
+  "gswBeispiel": "Si händ det sit Generatione di gliich Gottheit aabättet."
+ },
+ {
+  "id": 7055,
+  "de": "segnen",
+  "tr": "kutsamak, hayır dua etmek",
+  "deBeispiel": "Der Priester segnete die Versammelten am Ende der Feier.",
+  "gsw": "sägne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Pfarrer hät am Schluss vo de Fiir d Versammlete gsägnet."
+ },
+ {
+  "id": 7056,
+  "de": "missionieren",
+  "tr": "misyonerlik yapmak, din yaymak",
+  "deBeispiel": "Die Gemeinschaft missioniert nicht, sondern wartet auf Interessierte.",
+  "gsw": "missioniere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeinschaft missioniert nöd, sondern wartet uf Interessierti."
+ },
+ {
+  "id": 7057,
+  "de": "predigen",
+  "tr": "vaaz vermek",
+  "deBeispiel": "Er predigte über Nachsicht, ohne jemanden zu belehren.",
+  "gsw": "predige",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät über Nachsicht predigt, oni öpper z belehre."
+ },
+ {
+  "id": 7058,
+  "de": "pilgern",
+  "tr": "hacca gitmek, ziyarete gitmek",
+  "deBeispiel": "Jährlich pilgern Zehntausende zu diesem abgelegenen Bergkloster.",
+  "gsw": "pilgere",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedes Jaar pilgered Zäätuusigi zu dem abgläägene Bärgchloschter."
+ },
+ {
+  "id": 7059,
+  "de": "fasten",
+  "tr": "oruç tutmak, perhiz yapmak",
+  "deBeispiel": "Viele fasten aus gesundheitlichen und nicht aus religiösen Gründen.",
+  "gsw": "faschte",
+  "gswArtikel": null,
+  "gswBeispiel": "Vill faschted us gsundheitliche und nöd us religiöse Gründ."
+ },
+ {
+  "id": 7060,
+  "de": "entsagen",
+  "tr": "vazgeçmek, el etek çekmek",
+  "deBeispiel": "Sie entsagte dem Besitz und lebte fortan im Kloster.",
+  "gsw": "entsäge",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät sich entschide, em Bsitz z entsäge, und läbt sitdem im Chloschter."
+ },
+ {
+  "id": 7061,
+  "de": "tolerieren",
+  "tr": "hoşgörmek, tolere etmek",
+  "deBeispiel": "Abweichende Meinungen wurden innerhalb der Gemeinde kaum toleriert.",
+  "gsw": "toleriere",
+  "gswArtikel": null,
+  "gswBeispiel": "Abwiichendi Meinige sind i de Gmeind chuum toleriert worde."
+ },
+ {
+  "id": 7062,
+  "de": "verketzern",
+  "tr": "sapkın ilan etmek, karalamak",
+  "deBeispiel": "Kritische Stimmen wurden damals als abtrünnig verketzert.",
+  "gsw": "verchetzere",
+  "gswArtikel": null,
+  "gswBeispiel": "Kritischi Schtimme sind demaals als abtrünnig verchetzeret worde."
+ },
+ {
+  "id": 7063,
+  "de": "weihen",
+  "tr": "takdis etmek, adamak",
+  "deBeispiel": "Die neue Kapelle wurde in einer schlichten Feier geweiht.",
+  "gsw": "wiie",
+  "gswArtikel": null,
+  "gswBeispiel": "D nöi Kapälle isch in ere schlichte Fiir gwiiht worde."
+ },
+ {
+  "id": 7064,
+  "de": "abschwören",
+  "tr": "yeminle reddetmek, dönmek",
+  "deBeispiel": "Unter Druck schwor er seiner Überzeugung öffentlich ab.",
+  "gsw": "abschwöre",
+  "gswArtikel": null,
+  "gswBeispiel": "Under Druck hät er müese sinere Überzügig öffentlich abschwöre."
+ },
+ {
+  "id": 7065,
+  "de": "konvertieren",
+  "tr": "din değiştirmek, geçmek",
+  "deBeispiel": "Sie ist als Erwachsene zu einer anderen Konfession konvertiert.",
+  "gsw": "konvertiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch als Erwachseni zu ere andere Konfession konvertiert."
+ },
+ {
+  "id": 7066,
+  "de": "praktizieren",
+  "tr": "uygulamak, yaşamak",
+  "deBeispiel": "Er praktiziert seinen Glauben eher still als demonstrativ.",
+  "gsw": "praktiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er praktiziert sin Glaube eender schtill als demonschtrativ."
+ },
+ {
+  "id": 7067,
+  "de": "sich distanzieren",
+  "tr": "mesafe koymak, uzak durmak",
+  "deBeispiel": "Die Leitung distanzierte sich klar von den radikalen Äußerungen.",
+  "gsw": "sich distanziere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Leitig hät sich klar vo de radikale Üsserige distanziert."
+ },
+ {
+  "id": 7068,
+  "de": "sich berufen",
+  "tr": "dayanmak, referans göstermek",
+  "deBeispiel": "Beide Seiten berufen sich auf dieselbe heilige Schrift.",
+  "gsw": "sich berüefe",
+  "gswArtikel": null,
+  "gswBeispiel": "Beidi Siite berüefed sich uf di gliich heilig Schrift."
+ },
+ {
+  "id": 7069,
+  "de": "weltlich",
+  "tr": "dünyevi, dinî olmayan",
+  "deBeispiel": "Weltliche und geistliche Macht waren hier lange verflochten.",
+  "gsw": "wältlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Wältlichi und geischtlichi Macht sind da lang verflochte gsi."
+ },
+ {
+  "id": 7070,
+  "de": "interreligiös",
+  "tr": "dinler arası",
+  "deBeispiel": "Der interreligiöse Dialog kommt in der Praxis nur langsam voran.",
+  "gsw": "interreligiös",
+  "gswArtikel": null,
+  "gswBeispiel": "De interreligiös Dialog chunnt i de Praxis nur langsam vorwärts."
+ },
+ {
+  "id": 7071,
+  "de": "andächtig",
+  "tr": "huşu içinde, dikkat kesilmiş",
+  "deBeispiel": "Die Zuhörer verfolgten die Zeremonie andächtig und völlig still.",
+  "gsw": "andächtig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zueloser händ d Zeremonie andächtig und ganz schtill verfolgt."
+ },
+ {
+  "id": 7072,
+  "de": "ehrwürdig",
+  "tr": "saygıdeğer, muhterem",
+  "deBeispiel": "Das ehrwürdige Gebäude dient seit dem Mittelalter demselben Zweck.",
+  "gsw": "eerwürdig",
+  "gswArtikel": null,
+  "gswBeispiel": "S eerwürdige Gebäude dient sit em Mittelalter em gliiche Zwäck."
+ },
+ {
+  "id": 7073,
+  "de": "pluralistisch",
+  "tr": "çoğulcu",
+  "deBeispiel": "In einer pluralistischen Gesellschaft konkurrieren viele Sinnangebote miteinander.",
+  "gsw": "pluralistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "In ere pluralistische Gsellschaft konkurriered vill Sinnaagebot mitenand."
+ },
+ {
+  "id": 7074,
+  "de": "der Bedeutungswandel",
+  "tr": "anlam değişmesi, anlam kayması",
+  "deBeispiel": "Das Wort hat im Lauf der Jahrhunderte einen erstaunlichen Bedeutungswandel durchgemacht.",
+  "gsw": "Bedütigswandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Wort hät im Lauf vo de Jaarhundert en erschtuunliche Bedütigswandel durgmacht."
+ },
+ {
+  "id": 7075,
+  "de": "die Äquivalenz",
+  "tr": "eşdeğerlik, denklik",
+  "deBeispiel": "Eine vollständige Äquivalenz zwischen zwei Sprachen gibt es selten.",
+  "gsw": "Äquivalenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "E vollschtändigi Äquivalenz zwüschet zwo Sprache gits sälte."
+ },
+ {
+  "id": 7076,
+  "de": "der Sinngehalt",
+  "tr": "anlam içeriği, öz anlam",
+  "deBeispiel": "Die Übersetzung bewahrt den Sinngehalt, nicht aber den Klang des Originals.",
+  "gsw": "Sinngehalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Übersetzig bhaltet de Sinngehalt, aber nöd de Klang vom Original."
+ },
+ {
+  "id": 7077,
+  "de": "der Sprachgebrauch",
+  "tr": "dil kullanımı, kullanım alışkanlığı",
+  "deBeispiel": "Im heutigen Sprachgebrauch klingt dieser Ausdruck deutlich veraltet.",
+  "gsw": "Spraachgebruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im hütige Spraachgebruuch tönt de Uusdruck düütlich veraltet."
+ },
+ {
+  "id": 7078,
+  "de": "die Sprachebene",
+  "tr": "dil düzeyi, dil kaydı",
+  "deBeispiel": "Der Redner wechselte mitten im Vortrag die Sprachebene.",
+  "gsw": "Spraachebeni",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Redner hät mitte im Vortrag d Spraachebeni gwächslet."
+ },
+ {
+  "id": 7079,
+  "de": "die Stilebene",
+  "tr": "üslup düzeyi",
+  "deBeispiel": "Beide Wörter bedeuten dasselbe, gehören aber verschiedenen Stilebenen an.",
+  "gsw": "Schtilebeni",
+  "gswArtikel": "d",
+  "gswBeispiel": "Beidi Wörter bedüted s Gliiche, ghöred aber zu verschidnige Schtilebene."
+ },
+ {
+  "id": 7080,
+  "de": "die Zielsprache",
+  "tr": "erek dil, hedef dil",
+  "deBeispiel": "Der Übersetzer muss vor allem die Zielsprache souverän beherrschen.",
+  "gsw": "Zielspraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Übersetzer mues vor allem d Zielspraach souverän beherrsche."
+ },
+ {
+  "id": 7081,
+  "de": "die Ausgangssprache",
+  "tr": "kaynak dil",
+  "deBeispiel": "Manche Wortspiele der Ausgangssprache gehen bei der Übertragung verloren.",
+  "gsw": "Usgangsspraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mängi Wortschpiil vo de Usgangsspraach gönd bi de Übertragig verlore."
+ },
+ {
+  "id": 7082,
+  "de": "das Wortfeld",
+  "tr": "kelime alanı, anlam alanı",
+  "deBeispiel": "Alle diese Verben gehören zum Wortfeld der Wahrnehmung.",
+  "gsw": "Wortfäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "All die Verbe ghöred zum Wortfäld vo de Waarnämig."
+ },
+ {
+  "id": 7083,
+  "de": "der Sinnzusammenhang",
+  "tr": "bağlam, anlam bağlantısı",
+  "deBeispiel": "Aus dem Sinnzusammenhang gerissen wirkt die Aussage schlicht falsch.",
+  "gsw": "Sinnzämehang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Us em Sinnzämehang grisse wirkt d Uussag schlicht falsch."
+ },
+ {
+  "id": 7084,
+  "de": "die Ungenauigkeit",
+  "tr": "kesinlik eksikliği, yanlışlık",
+  "deBeispiel": "Kleine Ungenauigkeiten in der Terminologie führen später zu großen Missverständnissen.",
+  "gsw": "Ungenauigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chlini Ungenauigkeite i de Terminologie füered spöter zu groosse Missverschtändnis."
+ },
+ {
+  "id": 7085,
+  "de": "die Abstufung",
+  "tr": "derecelendirme, incelikli fark",
+  "deBeispiel": "Höflichkeitsformen kennen im Deutschen feine Abstufungen.",
+  "gsw": "Abschtuefig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Höflichkeitsforme kenned im Tüütsche fiini Abschtuefige."
+ },
+ {
+  "id": 7086,
+  "de": "der Sprechakt",
+  "tr": "söz edimi",
+  "deBeispiel": "Eine Frage kann als Sprechakt auch eine höfliche Aufforderung sein.",
+  "gsw": "Sprächakt",
+  "gswArtikel": "de",
+  "gswBeispiel": "E Frag cha als Sprächakt au e höflichi Uffordrig sii."
+ },
+ {
+  "id": 7087,
+  "de": "die Äußerung",
+  "tr": "söz, ifade, beyan",
+  "deBeispiel": "Jede Äußerung gewinnt ihren Sinn erst in einer bestimmten Situation.",
+  "gsw": "Üsserig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Üsserig überchunnt iren Sinn erscht in ere beschtimmte Situation."
+ },
+ {
+  "id": 7088,
+  "de": "die Unübersetzbarkeit",
+  "tr": "çevrilemezlik",
+  "deBeispiel": "Die Unübersetzbarkeit mancher Begriffe ist ein altes Thema der Sprachtheorie.",
+  "gsw": "Unübersetzbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Unübersetzbarkeit vo mängem Begriff isch es alts Thema vo de Spraachtheorie."
+ },
+ {
+  "id": 7089,
+  "de": "der Beiklang",
+  "tr": "çağrışım, yan ton",
+  "deBeispiel": "Das Wort trägt einen abschätzigen Beiklang, den kein Wörterbuch verzeichnet.",
+  "gsw": "Biiklang",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Wort treit en abschätzige Biiklang, wo i keim Wörterbuech schtoot."
+ },
+ {
+  "id": 7090,
+  "de": "die Nebenbedeutung",
+  "tr": "yan anlam",
+  "deBeispiel": "Im Fachtext stört die spöttische Nebenbedeutung des Begriffs erheblich.",
+  "gsw": "Näbebedütig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Fachtext schtört di schpöttisch Näbebedütig vom Begriff erheblich."
+ },
+ {
+  "id": 7091,
+  "de": "die Sprachnorm",
+  "tr": "dil normu, ölçünlü kullanım",
+  "deBeispiel": "Die Sprachnorm folgt dem Gebrauch, nicht umgekehrt.",
+  "gsw": "Spraachnorm",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Spraachnorm folgt em Gebruuch und nöd umgekeert."
+ },
+ {
+  "id": 7092,
+  "de": "die Terminologie",
+  "tr": "terminoloji, terim dizgesi",
+  "deBeispiel": "Ohne einheitliche Terminologie wird jede Fachdiskussion mühsam.",
+  "gsw": "Terminologie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Oni einheitlichi Terminologie wird jedi Fachdiskussion müesam."
+ },
+ {
+  "id": 7093,
+  "de": "die Begriffsbestimmung",
+  "tr": "kavram tanımı, tanımlama",
+  "deBeispiel": "Am Anfang der Studie steht eine sorgfältige Begriffsbestimmung.",
+  "gsw": "Begriffsbeschtimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Aafang vo de Schtudie schtoot e sorgfältigi Begriffsbeschtimmig."
+ },
+ {
+  "id": 7094,
+  "de": "die Begrifflichkeit",
+  "tr": "kavram örgüsü, kavramsal çerçeve",
+  "deBeispiel": "Die Autorin übernimmt die Begrifflichkeit der älteren Forschung nicht.",
+  "gsw": "Begrifflichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Autorin übernimmt d Begrifflichkeit vo de eltere Forschig nöd."
+ },
+ {
+  "id": 7095,
+  "de": "die Bezeichnung",
+  "tr": "adlandırma, terim",
+  "deBeispiel": "Für dieselbe Sache gibt es in den Regionen ganz verschiedene Bezeichnungen.",
+  "gsw": "Bezeichnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für s gliiche Ding gits i de Regione ganz verschidnigi Bezeichnige."
+ },
+ {
+  "id": 7096,
+  "de": "der Wortsinn",
+  "tr": "sözcüğün anlamı, lafzî anlam",
+  "deBeispiel": "Im engeren Wortsinn trifft der Begriff hier gar nicht zu.",
+  "gsw": "Wortsinn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im engere Wortsinn trifft de Begriff da gar nöd zue."
+ },
+ {
+  "id": 7097,
+  "de": "das Lehnwort",
+  "tr": "ödünç kelime, alıntı sözcük",
+  "deBeispiel": "Viele Lehnwörter haben ihre ursprüngliche Bedeutung längst verloren.",
+  "gsw": "Leenwort",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vill Leenwörter händ iri ursprünglichi Bedütig scho lang verlore."
+ },
+ {
+  "id": 7098,
+  "de": "die Untertreibung",
+  "tr": "olduğundan az gösterme, küçümseyerek anlatma",
+  "deBeispiel": "Von einem kleinen Problem zu sprechen war eine glatte Untertreibung.",
+  "gsw": "Undertriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vo mene chliine Problem z rede isch e glatti Undertriibig gsi."
+ },
+ {
+  "id": 7099,
+  "de": "die Übertreibung",
+  "tr": "abartma, mübalağa",
+  "deBeispiel": "Ohne Übertreibung lässt sich das Ausmaß des Wandels kaum beschreiben.",
+  "gsw": "Übertriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Oni Übertriibig laat sich s Uusmaass vom Wandel chuum beschriibe."
+ },
+ {
+  "id": 7100,
+  "de": "die Verharmlosung",
+  "tr": "önemsizleştirme, hafifletme",
+  "deBeispiel": "Solche Ausdrücke dienen der Verharmlosung eines ernsten Sachverhalts.",
+  "gsw": "Verharmlosig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sonigi Uusdrück diened de Verharmlosig vo mene ernschte Sachverhalt."
+ },
+ {
+  "id": 7101,
+  "de": "die Herabsetzung",
+  "tr": "küçümseme, aşağılama",
+  "deBeispiel": "Die Bemerkung enthält eine kaum verhüllte Herabsetzung der Gegenseite.",
+  "gsw": "Herabsetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bemerkig enthaltet e chuum verhülti Herabsetzig vo de Gägesiite."
+ },
+ {
+  "id": 7102,
+  "de": "die Auslassung",
+  "tr": "atlama, eksiltme",
+  "deBeispiel": "Gerade die Auslassungen im Text verraten die Absicht des Verfassers.",
+  "gsw": "Uslassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Grad d Uslassige im Text verrated d Absicht vom Verfasser."
+ },
+ {
+  "id": 7103,
+  "de": "der Bezugsrahmen",
+  "tr": "referans çerçevesi, bağlam çerçevesi",
+  "deBeispiel": "Ohne gemeinsamen Bezugsrahmen reden die beiden Seiten aneinander vorbei.",
+  "gsw": "Bezugsrahme",
+  "gswArtikel": "de",
+  "gswBeispiel": "Oni gmeinsame Bezugsrahme redet die zwo Siite anenand verbii."
+ },
+ {
+  "id": 7104,
+  "de": "die Sprecherabsicht",
+  "tr": "konuşurun niyeti",
+  "deBeispiel": "Der Satz ist nur verständlich, wenn man die Sprecherabsicht mitdenkt.",
+  "gsw": "Sprächerabsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Satz isch nur verschtändlich, wemer d Sprächerabsicht mitdänkt."
+ },
+ {
+  "id": 7105,
+  "de": "entsprechen",
+  "tr": "karşılık gelmek, uygun düşmek",
+  "deBeispiel": "Kein türkisches Wort entspricht diesem Begriff vollständig.",
+  "gsw": "entspräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Kes türkischs Wort tuet dem Begriff vollschtändig entspräche."
+ },
+ {
+  "id": 7106,
+  "de": "abweichen",
+  "tr": "sapmak, ayrılmak",
+  "deBeispiel": "Die Fassung weicht an mehreren Stellen deutlich vom Original ab.",
+  "gsw": "abwiiche",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fassig tuet a mehrere Schtelle düütlich vom Original abwiiche."
+ },
+ {
+  "id": 7107,
+  "de": "verkürzen",
+  "tr": "kısaltmak, indirgemek",
+  "deBeispiel": "Die Schlagzeile verkürzt das Argument bis zur Unkenntlichkeit.",
+  "gsw": "verchürze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schlagziile verchürzt s Argumänt bis zur Unkenntlichkeit."
+ },
+ {
+  "id": 7108,
+  "de": "gleichsetzen",
+  "tr": "bir tutmak, aynı saymak",
+  "deBeispiel": "Man darf Verstehen nicht einfach mit Zustimmung gleichsetzen.",
+  "gsw": "gliichsetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer daf s Verschtaa nöd eifach mit Zuestimmig gliichsetze."
+ },
+ {
+  "id": 7109,
+  "de": "mitschwingen",
+  "tr": "arka planda hissedilmek, birlikte çağrışmak",
+  "deBeispiel": "In dem harmlosen Wort schwingt hier ein leiser Vorwurf mit.",
+  "gsw": "mitschwinge",
+  "gswArtikel": null,
+  "gswBeispiel": "In dem harmlose Wort tuet da en liise Vorwurf mitschwinge."
+ },
+ {
+  "id": 7110,
+  "de": "versinnbildlichen",
+  "tr": "simgelemek, temsil etmek",
+  "deBeispiel": "Das Bild vom Netz versinnbildlicht die Verflechtung der Bedeutungen.",
+  "gsw": "versinnbildliche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Bild vom Netz versinnbildlicht d Verflächtig vo de Bedütige."
+ },
+ {
+  "id": 7111,
+  "de": "besagen",
+  "tr": "anlamına gelmek, demek olmak",
+  "deBeispiel": "Die Regel besagt lediglich, dass der Kontext den Vorrang hat.",
+  "gsw": "bsäge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Regel wott lediglich bsäge, dass de Kontext de Vorrang hät."
+ },
+ {
+  "id": 7112,
+  "de": "verwässern",
+  "tr": "sulandırmak, içeriğini boşaltmak",
+  "deBeispiel": "Der inflationäre Gebrauch hat den Begriff völlig verwässert.",
+  "gsw": "verwässere",
+  "gswArtikel": null,
+  "gswBeispiel": "De inflationär Gebruuch hät de Begriff völlig verwässeret."
+ },
+ {
+  "id": 7113,
+  "de": "entstellen",
+  "tr": "çarpıtmak, tahrif etmek",
+  "deBeispiel": "Ein einziges weggelassenes Wort kann den Sinn völlig entstellen.",
+  "gsw": "entschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Es einzigs wegglaas Wort cha de Sinn völlig entschtelle."
+ },
+ {
+  "id": 7114,
+  "de": "benennen",
+  "tr": "adlandırmak, açıkça belirtmek",
+  "deBeispiel": "Erst wenn wir das Phänomen benennen, können wir darüber streiten.",
+  "gsw": "benenne",
+  "gswArtikel": null,
+  "gswBeispiel": "Erscht wänn mer s Phänomen benenned, chönd mer drüber schtriite."
+ },
+ {
+  "id": 7115,
+  "de": "auffassen",
+  "tr": "algılamak, yorumlamak",
+  "deBeispiel": "Sie hat die Bemerkung als versteckte Kritik aufgefasst.",
+  "gsw": "uffasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät d Bemerkig als verschteckti Kritik ufgfasst."
+ },
+ {
+  "id": 7116,
+  "de": "explizit",
+  "tr": "açık, açıkça belirtilmiş",
+  "deBeispiel": "Der Vertrag nennt diese Pflicht explizit im dritten Absatz.",
+  "gsw": "explizit",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vertrag nennt die Pflicht explizit im dritte Absatz."
+ },
+ {
+  "id": 7117,
+  "de": "missverständlich",
+  "tr": "yanlış anlaşılmaya açık",
+  "deBeispiel": "Die Überschrift war missverständlich und wurde später geändert.",
+  "gsw": "missverschtändlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Überschrift isch missverschtändlich gsi und isch spöter gänderet worde."
+ },
+ {
+  "id": 7118,
+  "de": "idiomatisch",
+  "tr": "deyimsel, dile özgü",
+  "deBeispiel": "Die Übersetzung ist korrekt, klingt aber nicht idiomatisch.",
+  "gsw": "idiomatisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Übersetzig isch korrekt, tönt aber nöd idiomatisch."
+ },
+ {
+  "id": 7119,
+  "de": "kontextabhängig",
+  "tr": "bağlama bağlı",
+  "deBeispiel": "Die Bedeutung solcher Partikeln ist stark kontextabhängig.",
+  "gsw": "kontextabhängig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bedütig vo sonige Partikle isch schtark kontextabhängig."
+ },
+ {
+  "id": 7120,
+  "de": "abwertend",
+  "tr": "aşağılayıcı, olumsuz anlam yüklü",
+  "deBeispiel": "In diesem Zusammenhang wird das Wort eindeutig abwertend gebraucht.",
+  "gsw": "abwertend",
+  "gswArtikel": null,
+  "gswBeispiel": "In dem Zämehang wird s Wort eindüütig abwertend bruucht."
+ },
+ {
+  "id": 7121,
+  "de": "die Schicht",
+  "tr": "toplumsal katman, sınıf",
+  "deBeispiel": "Kinder aus bildungsfernen Schichten erreichen seltener das Gymnasium.",
+  "gsw": "Schicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chind us bildigsferne Schichte erreiched seltener s Gymnasium."
+ },
+ {
+  "id": 7122,
+  "de": "die Diaspora",
+  "tr": "diaspora",
+  "deBeispiel": "Die Diaspora hält den Kontakt zur Heimat über soziale Netzwerke aufrecht.",
+  "gsw": "Diaspora",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Diaspora haltet de Kontakt zur Heimat über soziali Netzwärch ufrächt."
+ }
+]

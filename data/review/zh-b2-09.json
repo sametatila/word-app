@@ -1,0 +1,992 @@
+[
+ {
+  "id": 4521,
+  "de": "die Ungeduld",
+  "tr": "sabırsızlık",
+  "deBeispiel": "Seine Ungeduld gegenüber den Kindern bereut er inzwischen.",
+  "gsw": "Ungeduld",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Ungeduld gägenüber de Chind beröit er inzwüsche."
+ },
+ {
+  "id": 4522,
+  "de": "der Zorn",
+  "tr": "öfke, hiddet",
+  "deBeispiel": "Sie ließ ihren Zorn an den falschen Menschen aus.",
+  "gsw": "Zorn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si hät ire Zorn a de falsche Mäntsche uusglaa."
+ },
+ {
+  "id": 4523,
+  "de": "das Schuldgefühl",
+  "tr": "suçluluk duygusu",
+  "deBeispiel": "Nach der Trennung plagten sie starke Schuldgefühle.",
+  "gsw": "Schuldgfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach de Trennig händ si schtarchi Schuldgfüel plaaget."
+ },
+ {
+  "id": 4524,
+  "de": "das Mitleid",
+  "tr": "acıma, merhamet",
+  "deBeispiel": "Er will Unterstützung, aber kein Mitleid von seinen Freunden.",
+  "gsw": "Mitleid",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er wott Unterschtützig, aber kes Mitleid vo sine Fründe."
+ },
+ {
+  "id": 4525,
+  "de": "die Ausgrenzung",
+  "tr": "dışlama, dışlanma",
+  "deBeispiel": "Viele Jugendliche erleben Ausgrenzung schon in der Schule.",
+  "gsw": "Uusgränzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill Jugendlichi erläbed Uusgränzig scho i de Schuel."
+ },
+ {
+  "id": 4526,
+  "de": "die Zugehörigkeit",
+  "tr": "aidiyet, mensubiyet",
+  "deBeispiel": "Das Gefühl der Zugehörigkeit ist für die Integration entscheidend.",
+  "gsw": "Zuegehörigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gfüel vo de Zuegehörigkeit isch für d Integration entschäidend."
+ },
+ {
+  "id": 4527,
+  "de": "die Hilfsbereitschaft",
+  "tr": "yardımseverlik",
+  "deBeispiel": "Nach dem Hochwasser war die Hilfsbereitschaft in der Region enorm.",
+  "gsw": "Hilfsbereitschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Hochwasser isch d Hilfsbereitschaft i de Region enorm gsi."
+ },
+ {
+  "id": 4528,
+  "de": "die Nächstenliebe",
+  "tr": "insan sevgisi, kardeşlik sevgisi, hayırseverlik",
+  "deBeispiel": "Der Verein lebt von Nächstenliebe und ehrenamtlichem Einsatz.",
+  "gsw": "Nächschteliebi",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Verein läbt vo Nächschteliebi und ehreamtlichem Iisatz."
+ },
+ {
+  "id": 4529,
+  "de": "das Pflegeheim",
+  "tr": "bakımevi, huzurevi",
+  "deBeispiel": "Die Familie konnte sich nicht auf ein Pflegeheim einigen.",
+  "gsw": "Pflegeheim",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Familie hät sich nöd uf es Pflegeheim chöne einige."
+ },
+ {
+  "id": 4530,
+  "de": "die Einsamkeit",
+  "tr": "yalnızlık",
+  "deBeispiel": "Einsamkeit im Alter gilt inzwischen als ernstes gesundheitliches Risiko.",
+  "gsw": "Eisamkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Eisamkeit im Alter gilt inzwüsche als ärnschts gsundheitlichs Risiko."
+ },
+ {
+  "id": 4531,
+  "de": "die Geburtenrate",
+  "tr": "doğum oranı",
+  "deBeispiel": "Die Geburtenrate ist im vergangenen Jahrzehnt deutlich gesunken.",
+  "gsw": "Geburterate",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Geburterate isch im letschte Jaarzähnt düütlich gsunke."
+ },
+ {
+  "id": 4532,
+  "de": "die Kinderbetreuung",
+  "tr": "çocuk bakımı",
+  "deBeispiel": "Ohne bezahlbare Kinderbetreuung können viele Mütter nicht arbeiten.",
+  "gsw": "Chinderbetreuig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni bezaalbari Chinderbetreuig chönd vill Müetere nöd schaffe."
+ },
+ {
+  "id": 4533,
+  "de": "der Erziehungsstil",
+  "tr": "çocuk yetiştirme tarzı, terbiye anlayışı",
+  "deBeispiel": "Die Eltern streiten oft über den richtigen Erziehungsstil.",
+  "gsw": "Erziehigsschtil",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Eltere schtriited oft über de richtig Erziehigsschtil."
+ },
+ {
+  "id": 4534,
+  "de": "die Autorität",
+  "tr": "otorite, saygınlık",
+  "deBeispiel": "Er hat als Vater längst jede Autorität verloren.",
+  "gsw": "Autorität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät als Vatter scho lang jedi Autorität verlore."
+ },
+ {
+  "id": 4535,
+  "de": "der Gehorsam",
+  "tr": "itaat, söz dinleme",
+  "deBeispiel": "Früher galt blinder Gehorsam als wichtigste Tugend eines Kindes.",
+  "gsw": "Ghorsam",
+  "gswArtikel": "de",
+  "gswBeispiel": "Früener hät blinde Ghorsam als wichtigschti Tugend vomene Chind gulte."
+ },
+ {
+  "id": 4536,
+  "de": "die Pubertät",
+  "tr": "ergenlik, buluğ çağı",
+  "deBeispiel": "In der Pubertät ziehen sich viele Jugendliche von den Eltern zurück.",
+  "gsw": "Pubertät",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Pubertät zieved sich vill Jugendlichi vo de Eltere zrugg."
+ },
+ {
+  "id": 4537,
+  "de": "das Sorgerecht",
+  "tr": "velayet",
+  "deBeispiel": "Nach der Scheidung stritten beide Eltern um das Sorgerecht.",
+  "gsw": "Sorgrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach de Schäidig händ beedi Eltere um s Sorgrächt gschtritte."
+ },
+ {
+  "id": 4538,
+  "de": "der Unterhalt",
+  "tr": "nafaka, geçim masrafı",
+  "deBeispiel": "Der Vater zahlt monatlich Unterhalt für seine beiden Kinder.",
+  "gsw": "Unterhalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vatter zaalt monetlich Unterhalt für sini beedi Chind."
+ },
+ {
+  "id": 4539,
+  "de": "die Rollenverteilung",
+  "tr": "rol dağılımı, görev paylaşımı",
+  "deBeispiel": "Die traditionelle Rollenverteilung im Haushalt hat sich kaum verändert.",
+  "gsw": "Rolleverteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D traditionell Rolleverteilig im Huushalt hät sich chuum verändert."
+ },
+ {
+  "id": 4540,
+  "de": "die Gleichberechtigung",
+  "tr": "hak eşitliği, eşitlik",
+  "deBeispiel": "Von echter Gleichberechtigung sind wir beim Gehalt noch weit entfernt.",
+  "gsw": "Gliichberächtigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vo ächter Gliichberächtigig sind mer bim Loon no wiit ewägg."
+ },
+ {
+  "id": 4541,
+  "de": "die Emanzipation",
+  "tr": "özgürleşme, kadının kurtuluşu",
+  "deBeispiel": "Die Emanzipation der Frauen veränderte die Familienstrukturen grundlegend.",
+  "gsw": "Emanzipation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Emanzipation vo de Fraue hät d Familieschtrukture grundlegend verändert."
+ },
+ {
+  "id": 4542,
+  "de": "die Überforderung",
+  "tr": "aşırı yüklenme, altından kalkamama",
+  "deBeispiel": "Viele junge Eltern klagen über ständige Überforderung im Alltag.",
+  "gsw": "Überforderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill jungi Eltere chlaged über schtändigi Überforderig im Alltag."
+ },
+ {
+  "id": 4543,
+  "de": "der Rückhalt",
+  "tr": "destek, arka çıkma",
+  "deBeispiel": "In der Krise fand sie großen Rückhalt in ihrer Familie.",
+  "gsw": "Rückhalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Chrise hät si en groosse Rückhalt i ihrer Familie gfunde."
+ },
+ {
+  "id": 4544,
+  "de": "die Zuwendung",
+  "tr": "ilgi, şefkat, yakınlık gösterme",
+  "deBeispiel": "Alte Menschen brauchen mehr Zuwendung, als viele Angehörige glauben.",
+  "gsw": "Zuewändig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Lüüt bruuched meh Zuewändig, als vill Aaghörigi glaubed."
+ },
+ {
+  "id": 4545,
+  "de": "die Ablehnung",
+  "tr": "reddetme, kabul etmeme, olumsuz tutum",
+  "deBeispiel": "Seine offene Ablehnung des neuen Partners belastete die Beziehung.",
+  "gsw": "Ablehnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini offni Ablehnig vom nöie Partner hät d Beziehig belaschtet."
+ },
+ {
+  "id": 4546,
+  "de": "die Bewunderung",
+  "tr": "hayranlık",
+  "deBeispiel": "Der Junge blickte mit Bewunderung zu seinem älteren Bruder auf.",
+  "gsw": "Bewunderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Bueb hät mit Bewunderig zu sim eltere Brueder ufegluegt."
+ },
+ {
+  "id": 4547,
+  "de": "die Missgunst",
+  "tr": "çekememezlik, başkasının iyiliğini istememe",
+  "deBeispiel": "Zwischen den Geschwistern herrschte jahrelang stille Missgunst.",
+  "gsw": "Missgunscht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüschet de Gschwüschterte hät jaarelang schtilli Missgunscht gherrscht."
+ },
+ {
+  "id": 4548,
+  "de": "der Wendepunkt",
+  "tr": "dönüm noktası",
+  "deBeispiel": "Die Geburt des ersten Kindes war ein Wendepunkt in ihrem Leben.",
+  "gsw": "Wändepunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Geburt vom erschte Chind isch en Wändepunkt i ihrem Läbe gsi."
+ },
+ {
+  "id": 4549,
+  "de": "der Freiwilligendienst",
+  "tr": "gönüllü hizmet (belirli süreli tam zamanlı program)",
+  "deBeispiel": "Nach dem Abitur leistet er ein Jahr Freiwilligendienst im Altenheim.",
+  "gsw": "Freiwilligedienscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em Abitur macht er es Jaar Freiwilligedienscht im Altersheim."
+ },
+ {
+  "id": 4550,
+  "de": "der Lebensabend",
+  "tr": "ömrün son dönemi, yaşlılık günleri",
+  "deBeispiel": "Sie möchte ihren Lebensabend in der Nähe der Enkel verbringen.",
+  "gsw": "Läbensaabig",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si möcht ire Läbensaabig i de Nöchi vo de Enkel verbringe."
+ },
+ {
+  "id": 4551,
+  "de": "der Vertrauensbruch",
+  "tr": "güveni kötüye kullanma, güven ihlali",
+  "deBeispiel": "Für sie war die Lüge ein unverzeihlicher Vertrauensbruch.",
+  "gsw": "Vertrauensbruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für si isch d Lüge en unverzeihliche Vertrauensbruch gsi."
+ },
+ {
+  "id": 4552,
+  "de": "die Empathie",
+  "tr": "empati, duygudaşlık",
+  "deBeispiel": "Ohne Empathie lassen sich solche Konflikte kaum lösen.",
+  "gsw": "Empathie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Empathie lönd sich sonigi Konflikt chuum löse."
+ },
+ {
+  "id": 4553,
+  "de": "die Selbstbeherrschung",
+  "tr": "kendine hâkim olma, öz denetim",
+  "deBeispiel": "Es kostete ihn viel Selbstbeherrschung, ruhig zu bleiben.",
+  "gsw": "Selbschtbeherrschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Es hät en vill Selbschtbeherrschig koschtet, ruig z bliibe."
+ },
+ {
+  "id": 4554,
+  "de": "die Willenskraft",
+  "tr": "irade gücü",
+  "deBeispiel": "Mit erstaunlicher Willenskraft hat sie ihre Sucht überwunden.",
+  "gsw": "Willeschraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit erschtuunlicher Willeschraft hät si ihri Sucht überwunde."
+ },
+ {
+  "id": 4555,
+  "de": "die Verbundenheit",
+  "tr": "bağlılık, yakınlık hissi",
+  "deBeispiel": "Trotz der Entfernung blieb eine tiefe Verbundenheit zwischen ihnen.",
+  "gsw": "Verbundeheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Trotz de Entfernig isch e tüüfi Verbundeheit zwüschet ene bliibe."
+ },
+ {
+  "id": 4556,
+  "de": "die Zuversicht",
+  "tr": "umut, iyimserlik, geleceğe güven",
+  "deBeispiel": "Trotz der Diagnose hat er seine Zuversicht nicht verloren.",
+  "gsw": "Zueversicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Trotz de Diagnose hät er sini Zueversicht nöd verlore."
+ },
+ {
+  "id": 4557,
+  "de": "die Selbstverwirklichung",
+  "tr": "kendini gerçekleştirme",
+  "deBeispiel": "Für viele steht heute die Selbstverwirklichung über der Familienplanung.",
+  "gsw": "Selbschtverwirklichig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für vill schtaat hüt d Selbschtverwirklichig über de Familieplanig."
+ },
+ {
+  "id": 4558,
+  "de": "verwöhnen",
+  "tr": "şımartmak, üstüne titremek",
+  "deBeispiel": "Die Großeltern verwöhnen die Kinder jedes Wochenende mit Geschenken.",
+  "gsw": "verwöne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Grosseltere verwöned d Chind jedes Wucheänd mit Gschänk."
+ },
+ {
+  "id": 4559,
+  "de": "ermutigen",
+  "tr": "cesaretlendirmek, yüreklendirmek",
+  "deBeispiel": "Der Lehrer ermutigte sie, sich für den Kurs zu bewerben.",
+  "gsw": "ermuetige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Leerer hät si ermuetiget, sich für de Kurs z bewärbe."
+ },
+ {
+  "id": 4560,
+  "de": "trösten",
+  "tr": "teselli etmek, avutmak",
+  "deBeispiel": "Sie tröstete ihre Freundin nach der schmerzhaften Trennung.",
+  "gsw": "tröschte",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät ihri Fründin nach de schmerzhafte Trennig tröschtet."
+ },
+ {
+  "id": 4561,
+  "de": "prägen",
+  "tr": "biçimlendirmek, iz bırakmak, damgasını vurmak",
+  "deBeispiel": "Die Erfahrungen der Kindheit prägen uns bis ins hohe Alter.",
+  "gsw": "präge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Erfaarige vo de Chindheit präged eus bis is hööche Alter."
+ },
+ {
+  "id": 4562,
+  "de": "misstrauen",
+  "tr": "güvenmemek, kuşku duymak",
+  "deBeispiel": "Nach dem Vorfall misstraute er allen Nachbarn.",
+  "gsw": "misstraue",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Vorfall hät er allne Nochbere misstraut."
+ },
+ {
+  "id": 4563,
+  "de": "bereuen",
+  "tr": "pişman olmak",
+  "deBeispiel": "Sie bereut es, damals so hart mit ihrem Sohn gewesen zu sein.",
+  "gsw": "beröie",
+  "gswArtikel": null,
+  "gswBeispiel": "Si beröit s, dass si demaals so hert mit ihrem Suhn gsi isch."
+ },
+ {
+  "id": 4564,
+  "de": "sich schämen",
+  "tr": "utanmak",
+  "deBeispiel": "Der Junge schämte sich für das Verhalten seines Vaters.",
+  "gsw": "sich schäme",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bueb hät sich für s Verhalte vo sim Vatter gschämt."
+ },
+ {
+  "id": 4565,
+  "de": "sich anpassen",
+  "tr": "uyum sağlamak, ayak uydurmak",
+  "deBeispiel": "Nicht jeder will sich den Erwartungen der Gruppe anpassen.",
+  "gsw": "sich aapasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöd jede wott sich a d Erwartige vo de Gruppe aapasse."
+ },
+ {
+  "id": 4566,
+  "de": "respektieren",
+  "tr": "saygı duymak, saymak",
+  "deBeispiel": "Eltern sollten die Grenzen ihrer erwachsenen Kinder respektieren.",
+  "gsw": "reschpektiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Eltere sötted d Gränze vo ihrne erwachsene Chind reschpektiere."
+ },
+ {
+  "id": 4567,
+  "de": "aushalten",
+  "tr": "dayanmak, katlanmak",
+  "deBeispiel": "Diese ständigen Vorwürfe hält auf Dauer niemand aus.",
+  "gsw": "uushalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Die schtändige Vorwürf chan uf d Duur niemert uushalte."
+ },
+ {
+  "id": 4568,
+  "de": "spenden",
+  "tr": "bağışlamak, bağışta bulunmak",
+  "deBeispiel": "Die Gemeinde spendete für die Betreuung obdachloser Familien.",
+  "gsw": "schpände",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeind hät für d Betreuig vo obdachlose Familie gschpändet."
+ },
+ {
+  "id": 4569,
+  "de": "schlichten",
+  "tr": "arabuluculuk etmek, uzlaştırmak",
+  "deBeispiel": "Die Großmutter schlichtete den Streit zwischen den Geschwistern.",
+  "gsw": "schlichte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Grossmuetter hät de Schtriit zwüschet de Gschwüschterte gschlichtet."
+ },
+ {
+  "id": 4570,
+  "de": "aufwachsen",
+  "tr": "büyümek, yetişmek",
+  "deBeispiel": "Sie ist bei ihren Großeltern auf dem Land aufgewachsen.",
+  "gsw": "ufwachse",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät bi ihrne Grosseltere uf em Land chöne ufwachse."
+ },
+ {
+  "id": 4571,
+  "de": "altern",
+  "tr": "yaşlanmak",
+  "deBeispiel": "Die Bevölkerung altert schneller, als die Politik erwartet hatte.",
+  "gsw": "altere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bevölkerig alteret schneller, als d Politik erwartet hät."
+ },
+ {
+  "id": 4572,
+  "de": "sich zerstreiten",
+  "tr": "kavga edip bozuşmak, küs düşmek",
+  "deBeispiel": "Die beiden Brüder haben sich wegen des Erbes zerstritten.",
+  "gsw": "sich zerschtriite",
+  "gswArtikel": null,
+  "gswBeispiel": "Di beede Brüeder händ sich wäge em Erb zerschtritte."
+ },
+ {
+  "id": 4573,
+  "de": "sich aufopfern",
+  "tr": "kendini feda etmek, kendini adamak",
+  "deBeispiel": "Jahrelang hat sie sich für ihre pflegebedürftige Mutter aufgeopfert.",
+  "gsw": "sich ufopfere",
+  "gswArtikel": null,
+  "gswBeispiel": "Jaarelang hät si sich für ihri pflegebedürftig Muetter müese ufopfere."
+ },
+ {
+  "id": 4574,
+  "de": "beschützen",
+  "tr": "korumak, kollamak",
+  "deBeispiel": "Er wollte seine kleine Schwester vor jeder Enttäuschung beschützen.",
+  "gsw": "beschütze",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sini chli Schwöschter vor jeder Enttüüschig wele beschütze."
+ },
+ {
+  "id": 4575,
+  "de": "ermahnen",
+  "tr": "uyarmak, ikaz etmek",
+  "deBeispiel": "Die Erzieherin ermahnte die Kinder mehrmals zur Rücksicht.",
+  "gsw": "ermane",
+  "gswArtikel": null,
+  "gswBeispiel": "D Erzieherin hät d Chind mehrmaals zu Rücksicht ermant."
+ },
+ {
+  "id": 4576,
+  "de": "sich zurückziehen",
+  "tr": "geri çekilmek, kendi kabuğuna çekilmek",
+  "deBeispiel": "Seit dem Verlust zieht er sich immer mehr von Freunden zurück.",
+  "gsw": "sich zruggzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Sit em Verluscht tuet er sich immer meh vo de Fründe zruggzie."
+ },
+ {
+  "id": 4577,
+  "de": "mitfühlen",
+  "tr": "birinin duygularını paylaşmak, halinden anlamak",
+  "deBeispiel": "Als Therapeutin kann sie mit ihren Klienten wirklich mitfühlen.",
+  "gsw": "mitfüele",
+  "gswArtikel": null,
+  "gswBeispiel": "Als Therapeutin chan si mit ihrne Kliente wükli mitfüele."
+ },
+ {
+  "id": 4578,
+  "de": "nachsichtig",
+  "tr": "hoşgörülü, müsamahakâr",
+  "deBeispiel": "Bei den Enkeln ist er viel nachsichtiger als früher bei den Kindern.",
+  "gsw": "nachsichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi de Enkel isch er vill nachsichtiger als früener bi de Chind."
+ },
+ {
+  "id": 4579,
+  "de": "eifersüchtig",
+  "tr": "kıskanç",
+  "deBeispiel": "Das ältere Kind reagierte eifersüchtig auf das neue Geschwisterchen.",
+  "gsw": "iifersüchtig",
+  "gswArtikel": null,
+  "gswBeispiel": "S elter Chind hät iifersüchtig uf s nöi Gschwüschterli reagiert."
+ },
+ {
+  "id": 4580,
+  "de": "aufgeschlossen",
+  "tr": "açık fikirli, yeniliğe açık",
+  "deBeispiel": "Für ihr Alter ist sie erstaunlich aufgeschlossen gegenüber neuen Ideen.",
+  "gsw": "ufgschlosse",
+  "gswArtikel": null,
+  "gswBeispiel": "Für ires Alter isch si erschtuunlich ufgschlosse gägenüber nöie Idee."
+ },
+ {
+  "id": 4581,
+  "de": "selbstbewusst",
+  "tr": "özgüvenli, kendine güvenen",
+  "deBeispiel": "Lob im Elternhaus macht Kinder langfristig selbstbewusster.",
+  "gsw": "selbschtbewusst",
+  "gswArtikel": null,
+  "gswBeispiel": "Lob im Elterehuus macht d Chind langfrischtig selbschtbewusster."
+ },
+ {
+  "id": 4582,
+  "de": "alleinerziehend",
+  "tr": "tek başına çocuk büyüten",
+  "deBeispiel": "Alleinerziehende Mütter sind besonders oft von Armut bedroht.",
+  "gsw": "eleierziehend",
+  "gswArtikel": null,
+  "gswBeispiel": "Eleierziehendi Müetere sind bsunders oft vo Armuet bedroht."
+ },
+ {
+  "id": 4583,
+  "de": "zwischenmenschlich",
+  "tr": "insanlar arası, kişiler arası",
+  "deBeispiel": "Die meisten Probleme im Team sind rein zwischenmenschlicher Natur.",
+  "gsw": "zwüschemäntschlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Di meischte Probleem im Team sind rein zwüschemäntschlicher Natur."
+ },
+ {
+  "id": 4584,
+  "de": "gesellig",
+  "tr": "sosyal, insan içini seven, hoşsohbet",
+  "deBeispiel": "Ihr Mann ist eher still, sie dagegen sehr gesellig.",
+  "gsw": "gsellig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ire Maa isch eender schtill, si degäge sehr gsellig."
+ },
+ {
+  "id": 4585,
+  "de": "launisch",
+  "tr": "kaprisli, dakikası dakikasına uymayan",
+  "deBeispiel": "In den letzten Wochen ist er ungewöhnlich launisch geworden.",
+  "gsw": "luunisch",
+  "gswArtikel": null,
+  "gswBeispiel": "I de letschte Wuche isch er ungwöndlich luunisch worde."
+ },
+ {
+  "id": 4586,
+  "de": "nachtragend",
+  "tr": "kin tutan, unutmayan",
+  "deBeispiel": "Sie ist nicht nachtragend, aber vergessen wird sie das nie.",
+  "gsw": "nachtragend",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch nöd nachtragend, aber vergässe wird si das nie."
+ },
+ {
+  "id": 4587,
+  "de": "die Nebenwirkung",
+  "tr": "yan etki",
+  "deBeispiel": "Das Medikament hat bei vielen Patienten unangenehme Nebenwirkungen.",
+  "gsw": "Näbewirkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Medikamänt hät bi vile Patiänte unaagnämi Näbewirkige."
+ },
+ {
+  "id": 4588,
+  "de": "die Impfung",
+  "tr": "aşı, aşılama",
+  "deBeispiel": "Die Impfung gegen Grippe wird älteren Menschen dringend empfohlen.",
+  "gsw": "Impfig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Impfig gäge Grippe wird eltere Lüüt dringend empfohle."
+ },
+ {
+  "id": 4589,
+  "de": "die Zuzahlung",
+  "tr": "katkı payı, ek ödeme",
+  "deBeispiel": "Für dieses Medikament fällt eine Zuzahlung von fünf Euro an.",
+  "gsw": "Zuezaalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für das Medikamänt gits e Zuezaalig vo füüf Euro."
+ },
+ {
+  "id": 4591,
+  "de": "die Rehabilitation",
+  "tr": "rehabilitasyon, iyileştirme süreci",
+  "deBeispiel": "Nach der Operation beginnt eine mehrwöchige Rehabilitation am Meer.",
+  "gsw": "Rehabilitation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Operation faat e meerwüchigi Rehabilitation am Meer aa."
+ },
+ {
+  "id": 4592,
+  "de": "die Depression",
+  "tr": "depresyon",
+  "deBeispiel": "Eine Depression ist eine ernste Krankheit und keine Schwäche.",
+  "gsw": "Depression",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Depression isch e ärnschti Chrankheit und kei Schwächi."
+ },
+ {
+  "id": 4593,
+  "de": "die Angststörung",
+  "tr": "anksiyete bozukluğu, kaygı bozukluğu",
+  "deBeispiel": "Ihre Angststörung lässt sich mit Gesprächstherapie gut behandeln.",
+  "gsw": "Angschtschtörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ihri Angschtschtörig laat sich mit ere Gschprächstherapie guet behandle."
+ },
+ {
+  "id": 4594,
+  "de": "die Einwilligung",
+  "tr": "rıza, muvafakat (resmî/hukuki izin)",
+  "deBeispiel": "Ohne schriftliche Einwilligung darf der Arzt nicht operieren.",
+  "gsw": "Iiwilligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni schriftlichi Iiwilligig dörf de Dokter nöd operiere."
+ },
+ {
+  "id": 4595,
+  "de": "der Befund",
+  "tr": "tetkik sonucu, bulgu",
+  "deBeispiel": "Der Befund war zum Glück völlig unauffällig.",
+  "gsw": "Befund",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Befund isch zum Glück ganz unuffällig gsi."
+ },
+ {
+  "id": 4596,
+  "de": "der Blutdruck",
+  "tr": "tansiyon, kan basıncı",
+  "deBeispiel": "Mein Vater misst seinen Blutdruck jeden Morgen vor dem Frühstück.",
+  "gsw": "Bluetdruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Vatter misst sin Bluetdruck jede Morge vor em Zmorge."
+ },
+ {
+  "id": 4597,
+  "de": "der Bewegungsmangel",
+  "tr": "hareketsizlik",
+  "deBeispiel": "Bewegungsmangel im Büroalltag schadet dem Rücken auf Dauer.",
+  "gsw": "Bewegigsmangel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bewegigsmangel im Büroalltag schadet em Rugge uf d Duur."
+ },
+ {
+  "id": 4598,
+  "de": "das Übergewicht",
+  "tr": "fazla kilo, aşırı kilo",
+  "deBeispiel": "Starkes Übergewicht erhöht das Risiko für Diabetes deutlich.",
+  "gsw": "Übergwicht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schtarchs Übergwicht erhöcht s Risiko für Diabetes düütlich."
+ },
+ {
+  "id": 4599,
+  "de": "der Entzug",
+  "tr": "yoksunluk, bağımlılık tedavisi",
+  "deBeispiel": "Der Entzug war hart, aber er hat es geschafft.",
+  "gsw": "Entzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Entzug isch hert gsi, aber er häts gschafft."
+ },
+ {
+  "id": 4600,
+  "de": "der Erreger",
+  "tr": "hastalık etkeni, patojen",
+  "deBeispiel": "Der Erreger wird vor allem über die Hände weitergegeben.",
+  "gsw": "Erreger",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Erreger wird vor allem über d Händ wiitergää."
+ },
+ {
+  "id": 4601,
+  "de": "die Entzündung",
+  "tr": "iltihap, enflamasyon",
+  "deBeispiel": "Die Entzündung im Knie ist nach zwei Wochen zurückgegangen.",
+  "gsw": "Entzündig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entzündig im Chnüü isch nach zwo Wuche zruggange."
+ },
+ {
+  "id": 4602,
+  "de": "das Arzneimittel",
+  "tr": "ilaç",
+  "deBeispiel": "Neue Arzneimittel werden vor der Zulassung jahrelang geprüft.",
+  "gsw": "Arzneimittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nöii Arzneimittel wärded vor de Zuelassig jaarelang prüeft."
+ },
+ {
+  "id": 4603,
+  "de": "die Dosierung",
+  "tr": "doz, dozaj",
+  "deBeispiel": "Bitte halten Sie sich genau an die vorgeschriebene Dosierung.",
+  "gsw": "Dosierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte haltet Si sich genau a di vorgschribni Dosierig."
+ },
+ {
+  "id": 4604,
+  "de": "die Packungsbeilage",
+  "tr": "prospektüs, kullanma talimatı",
+  "deBeispiel": "Lesen Sie die Packungsbeilage, bevor Sie die Tabletten nehmen.",
+  "gsw": "Packigsbeilaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Läset Si d Packigsbeilaag, bevor Si d Tablette nämed."
+ },
+ {
+  "id": 4605,
+  "de": "der Wirkstoff",
+  "tr": "etken madde",
+  "deBeispiel": "Beide Tabletten enthalten denselben Wirkstoff, kosten aber unterschiedlich viel.",
+  "gsw": "Wirkschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Beedi Tablette enthalted de gliich Wirkschtoff, choschted aber unterschiedlich vill."
+ },
+ {
+  "id": 4606,
+  "de": "die Allergie",
+  "tr": "alerji",
+  "deBeispiel": "Im Frühling macht ihm seine Allergie besonders zu schaffen.",
+  "gsw": "Allergie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Früelig macht em sini Allergie bsunders z schaffe."
+ },
+ {
+  "id": 4607,
+  "de": "der Eingriff",
+  "tr": "müdahale, ameliyat",
+  "deBeispiel": "Der Eingriff dauert nur zwanzig Minuten und gilt als harmlos.",
+  "gsw": "Iigriff",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Iigriff duuret nur zwänzg Minute und gilt als harmlos."
+ },
+ {
+  "id": 4608,
+  "de": "die Narkose",
+  "tr": "anestezi, narkoz",
+  "deBeispiel": "Nach der Narkose fühlte sie sich noch stundenlang benommen.",
+  "gsw": "Narkose",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Narkose hät si sich no schtundelang benomme gfüelt."
+ },
+ {
+  "id": 4609,
+  "de": "die Ohnmacht",
+  "tr": "bayılma, baygınlık",
+  "deBeispiel": "Aus der Ohnmacht erwachte er erst im Krankenwagen.",
+  "gsw": "Oomacht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Us de Oomacht isch er erscht im Chrankewage verwachet."
+ },
+ {
+  "id": 4610,
+  "de": "der Schwindel",
+  "tr": "baş dönmesi",
+  "deBeispiel": "Beim schnellen Aufstehen bekomme ich manchmal Schwindel.",
+  "gsw": "Schwindel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim schnelle Ufschtaa überchume ich mängisch Schwindel."
+ },
+ {
+  "id": 4611,
+  "de": "die Übelkeit",
+  "tr": "mide bulantısı",
+  "deBeispiel": "Die Übelkeit trat kurz nach der ersten Tablette auf.",
+  "gsw": "Übelkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Übelkeit isch churz nach de erschte Tablette choo."
+ },
+ {
+  "id": 4612,
+  "de": "die Atemnot",
+  "tr": "nefes darlığı",
+  "deBeispiel": "Bei plötzlicher Atemnot sollten Sie sofort den Notruf wählen.",
+  "gsw": "Atemnot",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi plötzlicher Atemnot sölled Si sofort de Notruf wähle."
+ },
+ {
+  "id": 4613,
+  "de": "die Krankschreibung",
+  "tr": "istirahat raporu",
+  "deBeispiel": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben.",
+  "gsw": "Chrankschriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dokter hät mer e Chrankschriibig für drei Täg gää."
+ },
+ {
+  "id": 4614,
+  "de": "das Attest",
+  "tr": "sağlık raporu, belge",
+  "deBeispiel": "Für den Sportunterricht braucht mein Sohn ein ärztliches Attest.",
+  "gsw": "Attescht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für de Schportunterricht bruucht min Suhn es ärztlichs Attescht."
+ },
+ {
+  "id": 4615,
+  "de": "die Bettruhe",
+  "tr": "yatak istirahati",
+  "deBeispiel": "Der Arzt verschrieb ihr eine Woche strenge Bettruhe.",
+  "gsw": "Bettrueh",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dokter hät ere e Wuche schträngi Bettrueh verschribe."
+ },
+ {
+  "id": 4616,
+  "de": "die Vorsorgeuntersuchung",
+  "tr": "kontrol muayenesi, tarama muayenesi",
+  "deBeispiel": "Ab vierzig zahlt die Kasse jährlich eine Vorsorgeuntersuchung.",
+  "gsw": "Vorsorgunterschuechig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ab vierzg zaalt d Kasse jedes Jaar e Vorsorgunterschuechig."
+ },
+ {
+  "id": 4617,
+  "de": "die Früherkennung",
+  "tr": "erken teşhis",
+  "deBeispiel": "Bei Krebs entscheidet die Früherkennung oft über die Heilungschancen.",
+  "gsw": "Früeherkennig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi Chräbs entschäidet d Früeherkennig oft über d Heilungschance."
+ },
+ {
+  "id": 4618,
+  "de": "der Hausarzt",
+  "tr": "aile hekimi",
+  "deBeispiel": "Mein Hausarzt kennt meine Krankengeschichte seit zwanzig Jahren.",
+  "gsw": "Huusarzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Huusarzt kennt mini Chrankegschicht sit zwänzg Jaar."
+ },
+ {
+  "id": 4619,
+  "de": "der Facharzt",
+  "tr": "uzman hekim",
+  "deBeispiel": "Auf einen Termin beim Facharzt wartet man hier ewig.",
+  "gsw": "Facharzt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf en Termin bim Facharzt wartet mer da ewig."
+ },
+ {
+  "id": 4620,
+  "de": "die Pflegekraft",
+  "tr": "bakım görevlisi, hemşire",
+  "deBeispiel": "In vielen Kliniken fehlen ausgebildete Pflegekräfte für die Nachtschicht.",
+  "gsw": "Pflegechraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "I vile Klinike fääled uusbildeti Pflegechräft für d Nachtschicht."
+ },
+ {
+  "id": 4621,
+  "de": "der Sanitäter",
+  "tr": "sağlık görevlisi, paramedik",
+  "deBeispiel": "Die Sanitäter waren schon nach sechs Minuten vor Ort.",
+  "gsw": "Sanitäter",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Sanitäter sind scho nach sächs Minute vor Ort gsi."
+ },
+ {
+  "id": 4622,
+  "de": "der Rettungsdienst",
+  "tr": "acil yardım servisi",
+  "deBeispiel": "Der Rettungsdienst wurde noch in der Nacht alarmiert.",
+  "gsw": "Rettigsdienscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rettigsdienscht isch no i de Nacht alarmiert worde."
+ },
+ {
+  "id": 4623,
+  "de": "das Wartezimmer",
+  "tr": "bekleme odası",
+  "deBeispiel": "Im Wartezimmer saßen an diesem Morgen fast zwanzig Patienten.",
+  "gsw": "Wartezimmer",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Wartezimmer sind a dem Morge fascht zwänzg Patiänte ghocket."
+ },
+ {
+  "id": 4624,
+  "de": "die Selbsthilfegruppe",
+  "tr": "destek grubu, dayanışma grubu",
+  "deBeispiel": "In der Selbsthilfegruppe spricht er offen über seine Krankheit.",
+  "gsw": "Selbschthilfgruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Selbschthilfgruppe redt er offe über sini Chrankheit."
+ },
+ {
+  "id": 4625,
+  "de": "das Gesundheitswesen",
+  "tr": "sağlık sistemi, sağlık hizmetleri",
+  "deBeispiel": "Das deutsche Gesundheitswesen steht vor großen finanziellen Problemen.",
+  "gsw": "Gsundheitswäse",
+  "gswArtikel": "s",
+  "gswBeispiel": "S tüütsch Gsundheitswäse schtaat vor groosse finanzielle Probleem."
+ },
+ {
+  "id": 4626,
+  "de": "die Kostenübernahme",
+  "tr": "masrafların karşılanması, ödemenin üstlenilmesi",
+  "deBeispiel": "Die Kasse hat die Kostenübernahme für die Brille abgelehnt.",
+  "gsw": "Choschteübernaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kasse hät d Choschteübernaam für d Brülle abglehnt."
+ },
+ {
+  "id": 4627,
+  "de": "die Quarantäne",
+  "tr": "karantina",
+  "deBeispiel": "Nach dem positiven Test musste die ganze Familie in Quarantäne.",
+  "gsw": "Quarantäne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em positive Tescht hät di ganz Familie i d Quarantäne müese."
+ },
+ {
+  "id": 4628,
+  "de": "die Pandemie",
+  "tr": "pandemi, salgın",
+  "deBeispiel": "Während der Pandemie arbeiteten viele Ärzte an der Belastungsgrenze.",
+  "gsw": "Pandemie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Während de Pandemie händ vill Dokter a de Belaschtigsgränze gschaffet."
+ },
+ {
+  "id": 4629,
+  "de": "das Immunsystem",
+  "tr": "bağışıklık sistemi",
+  "deBeispiel": "Schlafmangel schwächt das Immunsystem stärker als viele denken.",
+  "gsw": "Immunsyschtem",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schlafmangel schwächt s Immunsyschtem schtärcher, als vill dänked."
+ },
+ {
+  "id": 4630,
+  "de": "die Lebenserwartung",
+  "tr": "yaşam beklentisi, ortalama ömür",
+  "deBeispiel": "Die Lebenserwartung ist in den letzten Jahrzehnten deutlich gestiegen.",
+  "gsw": "Läbenserwartig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Läbenserwartig isch i de letschte Jaarzähnt düütlich gschtige."
+ },
+ {
+  "id": 4631,
+  "de": "das Beruhigungsmittel",
+  "tr": "sakinleştirici",
+  "deBeispiel": "Beruhigungsmittel sollte man niemals ohne ärztlichen Rat nehmen.",
+  "gsw": "Berueigungsmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Berueigungsmittel sött mer nie ohni ärztliche Raat nää."
+ }
+]

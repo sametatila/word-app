@@ -1,0 +1,992 @@
+[
+ {
+  "id": 5693,
+  "de": "der Flächenverbrauch",
+  "tr": "arazi tüketimi, alan kullanımı",
+  "deBeispiel": "Der Flächenverbrauch durch Siedlungen wächst schneller als geplant.",
+  "gsw": "Flächeverbruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Flächeverbruuch dur d Sidlige wachst schneller als plaant."
+ },
+ {
+  "id": 5694,
+  "de": "die Direktzahlung",
+  "tr": "doğrudan ödeme, doğrudan destek",
+  "deBeispiel": "Die Direktzahlungen sollen künftig an ökologische Leistungen gekoppelt werden.",
+  "gsw": "Direktzaalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Direktzaalige sölled i Zuekunft a ökologischi Leischtige koppelt werde."
+ },
+ {
+  "id": 5695,
+  "de": "die Bodenspekulation",
+  "tr": "arazi spekülasyonu",
+  "deBeispiel": "Bodenspekulation treibt die Pachten in vielen Regionen nach oben.",
+  "gsw": "Bodeschpekulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bodeschpekulation triibt d Pacht i vilne Regione uufe."
+ },
+ {
+  "id": 5696,
+  "de": "die Bodenfruchtbarkeit",
+  "tr": "toprak verimliliği",
+  "deBeispiel": "Der Erhalt der Bodenfruchtbarkeit wird selten als Gemeinwohlaufgabe verstanden.",
+  "gsw": "Bodefruchtbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Erhalt vo de Bodefruchtbarkeit wird sälte als Gmeinwoluufgaab verschtande."
+ },
+ {
+  "id": 5697,
+  "de": "der Weltmarktpreis",
+  "tr": "dünya piyasa fiyatı",
+  "deBeispiel": "Fallende Weltmarktpreise ruinieren kleine Erzeuger im globalen Süden.",
+  "gsw": "Wältmarktpriis",
+  "gswArtikel": "de",
+  "gswBeispiel": "Fallendi Wältmarktpriis ruiniered chlini Erzüüger im globale Süde."
+ },
+ {
+  "id": 5698,
+  "de": "der Erzeugerpreis",
+  "tr": "üretici fiyatı",
+  "deBeispiel": "Die Erzeugerpreise decken bei vielen Höfen nicht einmal die Kosten.",
+  "gsw": "Erzüügerpriis",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Erzüügerpriis decked bi vilne Höf nöd emaal d Choschte."
+ },
+ {
+  "id": 5699,
+  "de": "die Preisvolatilität",
+  "tr": "fiyat oynaklığı, fiyat dalgalanması",
+  "deBeispiel": "Die Preisvolatilität auf den Rohstoffmärkten erschwert jede Investitionsplanung.",
+  "gsw": "Priisvolatilität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Priisvolatilität uf de Rohschtoffmärt erschwert jedi Inväschtitionsplanig."
+ },
+ {
+  "id": 5700,
+  "de": "die Handelsliberalisierung",
+  "tr": "ticaretin serbestleştirilmesi",
+  "deBeispiel": "Die Handelsliberalisierung hat den Wettbewerbsdruck auf europäische Betriebe erhöht.",
+  "gsw": "Handelsliberalisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Handelsliberalisierig hät de Wettbewerbsdruck uf europäischi Betrib erhöcht."
+ },
+ {
+  "id": 5701,
+  "de": "die Marktordnung",
+  "tr": "piyasa düzeni, piyasa düzenlemesi",
+  "deBeispiel": "Ohne eine wirksame Marktordnung bleiben die Erzeuger dem Handel ausgeliefert.",
+  "gsw": "Marktordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni e wirksami Marktordnig bliibed d Erzüüger em Handel uusgliferet."
+ },
+ {
+  "id": 5702,
+  "de": "die Wertschöpfungskette",
+  "tr": "değer zinciri",
+  "deBeispiel": "In der Wertschöpfungskette bleibt beim Bauern der kleinste Anteil.",
+  "gsw": "Wertschöpfigschetti",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Wertschöpfigschetti bliibt bim Buur de chliinscht Aateil."
+ },
+ {
+  "id": 5703,
+  "de": "die Landflucht",
+  "tr": "kırdan kente göç",
+  "deBeispiel": "Die Landflucht junger Menschen entleert ganze Landstriche.",
+  "gsw": "Landflucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Landflucht vo de junge Lüüt leert ganzi Landschtrich uus."
+ },
+ {
+  "id": 5704,
+  "de": "die Hofnachfolge",
+  "tr": "çiftliğin devri, çiftlikte kuşak değişimi",
+  "deBeispiel": "Bei jedem zweiten Betrieb ist die Hofnachfolge völlig ungeklärt.",
+  "gsw": "Hofnachfolg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi jedem zwäite Betrib isch d Hofnachfolg völlig unklaar."
+ },
+ {
+  "id": 5705,
+  "de": "der Pestizideinsatz",
+  "tr": "pestisit kullanımı",
+  "deBeispiel": "Der Pestizideinsatz soll bis zum Ende des Jahrzehnts halbiert werden.",
+  "gsw": "Peschtizidiisatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Peschtizidiisatz söll bis am Änd vom Jaarzänt halbiert werde."
+ },
+ {
+  "id": 5706,
+  "de": "die Nitratbelastung",
+  "tr": "nitrat kirliliği, nitrat yükü",
+  "deBeispiel": "Die Nitratbelastung des Grundwassers überschreitet vielerorts die Grenzwerte.",
+  "gsw": "Nitratbelaschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Nitratbelaschtig vom Grundwasser überschriitet vilerorts d Gränzwert."
+ },
+ {
+  "id": 5707,
+  "de": "die Biodiversität",
+  "tr": "biyoçeşitlilik",
+  "deBeispiel": "Der Verlust an Biodiversität schreitet auf Agrarflächen besonders schnell voran.",
+  "gsw": "Biodiversität",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Verluscht a Biodiversität schriitet uf Agrarfläche bsunders schnell vora."
+ },
+ {
+  "id": 5708,
+  "de": "der Nachhaltigkeitsstandard",
+  "tr": "sürdürülebilirlik standardı",
+  "deBeispiel": "Freiwillige Nachhaltigkeitsstandards ersetzen keine verbindliche Regulierung.",
+  "gsw": "Nachhaltigkeitsschtandard",
+  "gswArtikel": "de",
+  "gswBeispiel": "Freiwilligi Nachhaltigkeitsschtandards ersetzed kei verbindlichi Regulierig."
+ },
+ {
+  "id": 5709,
+  "de": "die Herkunftskennzeichnung",
+  "tr": "menşe etiketlemesi, köken bildirimi",
+  "deBeispiel": "Eine verpflichtende Herkunftskennzeichnung würde regionale Erzeuger deutlich stärken.",
+  "gsw": "Herchunftschennzeichnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E verpflichtendi Herchunftschennzeichnig wür regionali Erzüüger düütlich schtärke."
+ },
+ {
+  "id": 5710,
+  "de": "die Rückverfolgbarkeit",
+  "tr": "izlenebilirlik",
+  "deBeispiel": "Die Rückverfolgbarkeit endet oft schon beim ersten Zwischenhändler.",
+  "gsw": "Rückverfolgbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rückverfolgbarkeit hört oft scho bim erschte Zwüschehändler uuf."
+ },
+ {
+  "id": 5711,
+  "de": "die Versorgungssicherheit",
+  "tr": "arz güvenliği, tedarik güvenliği",
+  "deBeispiel": "Versorgungssicherheit wird derzeit als Argument gegen strengere Auflagen benutzt.",
+  "gsw": "Versorgigssicherheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Versorgigssicherheit wird momentan als Argumänt gäge schtrengeri Uuflaage bruucht."
+ },
+ {
+  "id": 5712,
+  "de": "der Ökolandbau",
+  "tr": "organik tarım",
+  "deBeispiel": "Der Ökolandbau wächst langsamer, als die Politik es versprochen hatte.",
+  "gsw": "Ökolandbau",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Ökolandbau wachst langsamer, als d Politik s verschproche hät."
+ },
+ {
+  "id": 5713,
+  "de": "das Ordnungsrecht",
+  "tr": "düzenleyici hukuk, emredici mevzuat",
+  "deBeispiel": "Anreize allein genügen nicht, irgendwann greift das Ordnungsrecht.",
+  "gsw": "Ordnigsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Aariiz elei gnüeged nöd, irgendwenn griift s Ordnigsrächt."
+ },
+ {
+  "id": 5714,
+  "de": "die Flurbereinigung",
+  "tr": "arazi toplulaştırması",
+  "deBeispiel": "Die Flurbereinigung der Nachkriegszeit hat unzählige Hecken beseitigt.",
+  "gsw": "Flurbereinigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Flurbereinigig vo de Nachchriegsziit hät unzäälig vill Hegge beseitiget."
+ },
+ {
+  "id": 5715,
+  "de": "die Landnahme",
+  "tr": "toprak gaspı, arazi ele geçirme",
+  "deBeispiel": "Investoren betreiben in mehreren Ländern eine kaum regulierte Landnahme.",
+  "gsw": "Landnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Inväschtore betriibed i mehrere Länder e chuum regulierti Landnaam."
+ },
+ {
+  "id": 5716,
+  "de": "der Sortenschutz",
+  "tr": "çeşit koruma hakkı, ıslahçı hakkı",
+  "deBeispiel": "Der Sortenschutz sichert Züchtern über Jahre exklusive Verwertungsrechte.",
+  "gsw": "Sorteschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Sorteschutz sicheret de Züchter über Jaar exklusivi Verwertigsrächt."
+ },
+ {
+  "id": 5717,
+  "de": "die Gentechnik",
+  "tr": "gen teknolojisi, genetik mühendisliği",
+  "deBeispiel": "Über neue Gentechnik wird in Brüssel seit Jahren erbittert gestritten.",
+  "gsw": "Gentechnik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über nöi Gentechnik wird z Brüssel sit Jaare erbitteret gschtritte."
+ },
+ {
+  "id": 5718,
+  "de": "das Nachbaurecht",
+  "tr": "tohumu yeniden ekme hakkı",
+  "deBeispiel": "Das Nachbaurecht der Bauern wurde durch Lizenzverträge schrittweise ausgehöhlt.",
+  "gsw": "Nachbaurächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Nachbaurächt vo de Buure isch dur Lizänzverträäg schrittwiis uusghöhlt worde."
+ },
+ {
+  "id": 5719,
+  "de": "der Tiertransport",
+  "tr": "canlı hayvan nakli",
+  "deBeispiel": "Lange Tiertransporte in Drittstaaten sind rechtlich kaum zu kontrollieren.",
+  "gsw": "Tiertransport",
+  "gswArtikel": "de",
+  "gswBeispiel": "Langi Tiertransport i Drittschtaate sind rächtlich chuum z kontrolliere."
+ },
+ {
+  "id": 5720,
+  "de": "der Schlachtbetrieb",
+  "tr": "mezbaha, kesimhane",
+  "deBeispiel": "Wenige große Schlachtbetriebe bestimmen faktisch die Preise am Markt.",
+  "gsw": "Schlachtbetrib",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wenig grossi Schlachtbetrib beschtimmed faktisch d Priis am Märt."
+ },
+ {
+  "id": 5721,
+  "de": "die Milchquote",
+  "tr": "süt kotası",
+  "deBeispiel": "Nach dem Ende der Milchquote brachen die Preise dramatisch ein.",
+  "gsw": "Milchquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Änd vo de Milchquote sind d Priis dramatisch iibroche."
+ },
+ {
+  "id": 5722,
+  "de": "die Überproduktion",
+  "tr": "aşırı üretim",
+  "deBeispiel": "Die Überproduktion wird über Exporte auf ärmere Märkte abgewälzt.",
+  "gsw": "Überproduktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Überproduktion wird über Export uf ärmeri Märt abgwälzt."
+ },
+ {
+  "id": 5723,
+  "de": "das Freihandelsabkommen",
+  "tr": "serbest ticaret anlaşması",
+  "deBeispiel": "Das Freihandelsabkommen öffnet den Markt für billige Importe.",
+  "gsw": "Freihandelsabkomme",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Freihandelsabkomme öffnet de Märt für billigi Import."
+ },
+ {
+  "id": 5724,
+  "de": "die Wettbewerbsverzerrung",
+  "tr": "rekabetin bozulması, haksız rekabet",
+  "deBeispiel": "Unterschiedliche Sozialstandards führen zu erheblichen Wettbewerbsverzerrungen.",
+  "gsw": "Wettbewerbsverzerrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Underschiidlichi Sozialschtandards füered zu erhebliche Wettbewerbsverzerrige."
+ },
+ {
+  "id": 5725,
+  "de": "die Direktvermarktung",
+  "tr": "doğrudan pazarlama, üreticiden satış",
+  "deBeispiel": "Über die Direktvermarktung umgehen Höfe den Druck des Handels.",
+  "gsw": "Direktvermarktig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Direktvermarktig umgönd d Höf de Druck vom Handel."
+ },
+ {
+  "id": 5726,
+  "de": "der Nutzungskonflikt",
+  "tr": "kullanım çatışması, arazi kullanımı uyuşmazlığı",
+  "deBeispiel": "Zwischen Naturschutz und Energieerzeugung entstehen wachsende Nutzungskonflikte.",
+  "gsw": "Nutzigskonflikt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zwüsche Naturschutz und Energieerzüügig entschtönd wachsendi Nutzigskonflikt."
+ },
+ {
+  "id": 5727,
+  "de": "der Kleinbauer",
+  "tr": "küçük çiftçi",
+  "deBeispiel": "Kleinbauern ernähren weltweit einen erstaunlich großen Teil der Bevölkerung.",
+  "gsw": "Chliibuur",
+  "gswArtikel": "de",
+  "gswBeispiel": "Chliibuure ernäered wältwiit en erschtuunlich groosse Teil vo de Bevölkerig."
+ },
+ {
+  "id": 5728,
+  "de": "brachliegen",
+  "tr": "atıl durmak, boş yatmak, nadasta olmak",
+  "deBeispiel": "Tausende Hektar liegen aus rein spekulativen Gründen brach.",
+  "gsw": "brachlige",
+  "gswArtikel": null,
+  "gswBeispiel": "Tuusigi Hektar tüend us rein schpekulative Gründ brachlige."
+ },
+ {
+  "id": 5729,
+  "de": "verpachten",
+  "tr": "kiraya vermek, icara vermek",
+  "deBeispiel": "Die Gemeinde verpachtet ihre Flächen bevorzugt an ökologisch wirtschaftende Betriebe.",
+  "gsw": "verpachte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeind verpachtet ihri Fläche bevorzugt a ökologisch wirtschaftendi Betrib."
+ },
+ {
+  "id": 5730,
+  "de": "entkoppeln",
+  "tr": "bağını koparmak, ayrıştırmak",
+  "deBeispiel": "Die Beihilfen wurden von der produzierten Menge entkoppelt.",
+  "gsw": "entkopple",
+  "gswArtikel": null,
+  "gswBeispiel": "D Biihilfe sind vo de produzierte Mängi entkoppelt worde."
+ },
+ {
+  "id": 5731,
+  "de": "deklarieren",
+  "tr": "beyan etmek, bildirmek",
+  "deBeispiel": "Der Hersteller muss die Herkunft der Rohstoffe vollständig deklarieren.",
+  "gsw": "deklariere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Herschteller mues d Herchunft vo de Rohschtoff vollschtändig deklariere."
+ },
+ {
+  "id": 5732,
+  "de": "diversifizieren",
+  "tr": "çeşitlendirmek",
+  "deBeispiel": "Viele Betriebe diversifizieren ihre Einkommensquellen, um Krisen zu überstehen.",
+  "gsw": "diversifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Vill Betrib diversifiziered ihri Iinaamsquelle, zum d Krise überschtaa."
+ },
+ {
+  "id": 5733,
+  "de": "auslaugen",
+  "tr": "(toprağın) verimini tüketmek, çoraklaştırmak",
+  "deBeispiel": "Jahrzehntelanger Maisanbau hat die Böden vollständig ausgelaugt.",
+  "gsw": "uuslauge",
+  "gswArtikel": null,
+  "gswBeispiel": "Jaarzäntelange Maisaabau hät d Böde vollschtändig uusglaugt."
+ },
+ {
+  "id": 5734,
+  "de": "abschöpfen",
+  "tr": "kaymağını almak, el koymak",
+  "deBeispiel": "Der Zwischenhandel schöpft den größten Teil der Marge ab.",
+  "gsw": "abschöpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zwüschehandel tuet de gröscht Teil vo de Marge abschöpfe."
+ },
+ {
+  "id": 5735,
+  "de": "veredeln",
+  "tr": "işleyip değerini artırmak, ıslah etmek",
+  "deBeispiel": "Regional veredelte Produkte erzielen auf dem Markt höhere Preise.",
+  "gsw": "veredle",
+  "gswArtikel": null,
+  "gswBeispiel": "Regional veredleti Produkt erziiled am Märt höcheri Priis."
+ },
+ {
+  "id": 5736,
+  "de": "beweiden",
+  "tr": "otlatmak, meraya çıkarmak",
+  "deBeispiel": "Extensiv beweidete Wiesen beherbergen deutlich mehr Insektenarten.",
+  "gsw": "beweide",
+  "gswArtikel": null,
+  "gswBeispiel": "Extensiv beweideti Wise beherberged düütlich meh Insektearte."
+ },
+ {
+  "id": 5737,
+  "de": "kontaminieren",
+  "tr": "bulaştırmak, kirletmek",
+  "deBeispiel": "Abdrift kann benachbarte Felder unbeabsichtigt kontaminieren.",
+  "gsw": "kontaminiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Abdrift cha benachbarti Fälder unbeabsichtiget kontaminiere."
+ },
+ {
+  "id": 5738,
+  "de": "aufkaufen",
+  "tr": "toptan satın almak, kapatmak",
+  "deBeispiel": "Fonds kaufen in Ostdeutschland ganze Betriebe samt Flächen auf.",
+  "gsw": "uufchaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "Fonds tüend z Oschtdüütschland ganzi Betrib samt Fläche uufchaufe."
+ },
+ {
+  "id": 5739,
+  "de": "verknappen",
+  "tr": "azaltmak, kıt hale getirmek",
+  "deBeispiel": "Exportverbote verknappen das Angebot und treiben die Preise hoch.",
+  "gsw": "verchnappe",
+  "gswArtikel": null,
+  "gswBeispiel": "Exportverbot verchnapped s Aagebot und triibed d Priis uufe."
+ },
+ {
+  "id": 5740,
+  "de": "überdüngen",
+  "tr": "aşırı gübrelemek",
+  "deBeispiel": "Wer die Felder überdüngt, belastet über Jahre das Grundwasser.",
+  "gsw": "überdünge",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer d Fälder überdüngt, belaschtet über Jaar s Grundwasser."
+ },
+ {
+  "id": 5741,
+  "de": "anbauen",
+  "tr": "yetiştirmek, ekmek",
+  "deBeispiel": "In der Region werden fast ausschließlich Energiepflanzen angebaut.",
+  "gsw": "aaboue",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Region werded fascht uusschliesslich Energiepflanze aabout."
+ },
+ {
+  "id": 5742,
+  "de": "flächendeckend",
+  "tr": "her yeri kapsayan, yaygın",
+  "deBeispiel": "Die Kontrollen finden bisher nicht flächendeckend statt.",
+  "gsw": "flächedeckend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kontrolle finded bishär nöd flächedeckend schtatt."
+ },
+ {
+  "id": 5743,
+  "de": "multifunktional",
+  "tr": "çok işlevli",
+  "deBeispiel": "Die Landwirtschaft gilt als multifunktional, weil sie mehr als Nahrung liefert.",
+  "gsw": "multifunktional",
+  "gswArtikel": null,
+  "gswBeispiel": "D Landwirtschaft gilt als multifunktional, wil si meh als nu Naarig liferet."
+ },
+ {
+  "id": 5744,
+  "de": "importabhängig",
+  "tr": "ithalata bağımlı",
+  "deBeispiel": "Bei Futtermitteln ist Europa nach wie vor stark importabhängig.",
+  "gsw": "importabhängig",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi de Fuettermittel isch Europa nach wie vor schtarch importabhängig."
+ },
+ {
+  "id": 5745,
+  "de": "standortangepasst",
+  "tr": "yöreye uyarlanmış, yetişme ortamına uygun",
+  "deBeispiel": "Standortangepasste Sorten kommen mit Trockenheit deutlich besser zurecht.",
+  "gsw": "schtandortaagepasst",
+  "gswArtikel": null,
+  "gswBeispiel": "Schtandortaagepassti Sorte chömed mit de Trochni düütlich besser zwäg."
+ },
+ {
+  "id": 5746,
+  "de": "verbrauchernah",
+  "tr": "tüketiciye yakın",
+  "deBeispiel": "Verbrauchernahe Erzeugung verkürzt die Wege und schafft Vertrauen.",
+  "gsw": "verbruuchernah",
+  "gswArtikel": null,
+  "gswBeispiel": "Verbruuchernahi Erzüügig verchürzt d Wääg und schafft Vertraue."
+ },
+ {
+  "id": 5747,
+  "de": "ländlich",
+  "tr": "kırsal",
+  "deBeispiel": "Der ländliche Raum verliert seit Jahren an Infrastruktur und Einfluss.",
+  "gsw": "ländlich",
+  "gswArtikel": null,
+  "gswBeispiel": "De ländlich Ruum verliert sit Jaare a Infraschtruktur und Iifluss."
+ },
+ {
+  "id": 5748,
+  "de": "bodenschonend",
+  "tr": "toprağı koruyan, toprak dostu",
+  "deBeispiel": "Bodenschonende Verfahren setzen sich nur langsam in der Praxis durch.",
+  "gsw": "bodeschonend",
+  "gswArtikel": null,
+  "gswBeispiel": "Bodeschonendi Verfaare setzed sich nur langsam i de Praxis dure."
+ },
+ {
+  "id": 5749,
+  "de": "ackerbaulich",
+  "tr": "tarla tarımına ilişkin, ziraî",
+  "deBeispiel": "Ackerbauliche Maßnahmen allein lösen das Problem der Verdichtung nicht.",
+  "gsw": "ackerbaulich",
+  "gswArtikel": null,
+  "gswBeispiel": "Ackerbaulichi Massnaame elei löised s Problem vo de Verdichtig nöd."
+ },
+ {
+  "id": 5750,
+  "de": "das Ritual",
+  "tr": "ritüel, tören",
+  "deBeispiel": "Das Ritual markiert den Übergang vom Kind zum Erwachsenen.",
+  "gsw": "Ritual",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Ritual markiert de Übergang vom Chind zum Erwachsene."
+ },
+ {
+  "id": 5751,
+  "de": "das Brauchtum",
+  "tr": "gelenek görenek, örf",
+  "deBeispiel": "Das ländliche Brauchtum wird heute vor allem touristisch vermarktet.",
+  "gsw": "Bruuchtum",
+  "gswArtikel": "s",
+  "gswBeispiel": "S ländlich Bruuchtum wird hüt vor allem turischtisch vermarktet."
+ },
+ {
+  "id": 5752,
+  "de": "die Sitte",
+  "tr": "âdet, töre",
+  "deBeispiel": "Fremde Sitten wirken oft nur deshalb befremdlich, weil Kontext fehlt.",
+  "gsw": "Sitte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Frömdi Sitte wirked oft nur drum befrömdlich, wil de Kontext fäält."
+ },
+ {
+  "id": 5753,
+  "de": "das Tabu",
+  "tr": "tabu, yasak",
+  "deBeispiel": "Jede Gesellschaft schützt ihre Ordnung durch unausgesprochene Tabus.",
+  "gsw": "Tabu",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jedi Gsellschaft schützt ihri Ordnig dur unuusgschprocheni Tabus."
+ },
+ {
+  "id": 5754,
+  "de": "das Deutungsmuster",
+  "tr": "yorumlama kalıbı, anlamlandırma şeması",
+  "deBeispiel": "Solche Deutungsmuster werden schon in der Kindheit erworben.",
+  "gsw": "Düütigsmuschter",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sonigi Düütigsmuschter werded scho i de Chindheit erworbe."
+ },
+ {
+  "id": 5755,
+  "de": "die Feldforschung",
+  "tr": "alan araştırması, saha çalışması",
+  "deBeispiel": "Ihre Feldforschung in den Anden dauerte insgesamt vierzehn Monate.",
+  "gsw": "Fäldforschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ihri Fäldforschig i de Ande hät insgsamt vierzäh Monet duuret."
+ },
+ {
+  "id": 5756,
+  "de": "die Verwandtschaft",
+  "tr": "akrabalık, hısımlık",
+  "deBeispiel": "Verwandtschaft ist keine biologische Tatsache, sondern eine soziale Ordnung.",
+  "gsw": "Verwandtschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Verwandtschaft isch kei biologischi Tatsach, sondern e soziali Ordnig."
+ },
+ {
+  "id": 5757,
+  "de": "die Abstammung",
+  "tr": "soy, köken",
+  "deBeispiel": "Die Abstammung wird in dieser Gruppe über die Mutter berechnet.",
+  "gsw": "Abschtammig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abschtammig wird i dere Gruppe über d Mueter brächnet."
+ },
+ {
+  "id": 5758,
+  "de": "die Fremdheit",
+  "tr": "yabancılık, ötekilik",
+  "deBeispiel": "Fremdheit entsteht erst im Blick des Beobachters.",
+  "gsw": "Frömdheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Frömdheit entschtaat erscht im Blick vom Beobachter."
+ },
+ {
+  "id": 5759,
+  "de": "die Andersartigkeit",
+  "tr": "farklılık, başkalık",
+  "deBeispiel": "Die Ausstellung betont die Andersartigkeit statt der Gemeinsamkeiten.",
+  "gsw": "Andersartigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uusschtellig betont d Andersartigkeit schtatt d Gmeinsamkeite."
+ },
+ {
+  "id": 5760,
+  "de": "der Ethnozentrismus",
+  "tr": "etnosantrizm, kendi kültürünü merkeze alma",
+  "deBeispiel": "Ein unbemerkter Ethnozentrismus prägt viele ältere Reiseberichte.",
+  "gsw": "Ethnozentrismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "En unbemerkte Ethnozentrismus prägt vill älteri Reiseberichte."
+ },
+ {
+  "id": 5761,
+  "de": "der Kulturrelativismus",
+  "tr": "kültürel görelilik",
+  "deBeispiel": "Der Kulturrelativismus verbietet es, fremde Praktiken vorschnell zu bewerten.",
+  "gsw": "Kulturrelativismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kulturrelativismus verbüüt s, frömdi Praktike vorschnäll z bewerte."
+ },
+ {
+  "id": 5762,
+  "de": "die Akkulturation",
+  "tr": "kültürleşme, kültürel uyum",
+  "deBeispiel": "Die Akkulturation verlief in der zweiten Generation deutlich schneller.",
+  "gsw": "Akkulturation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Akkulturation isch i de zwäite Generation düütlich schneller verlaufe."
+ },
+ {
+  "id": 5763,
+  "de": "die Assimilation",
+  "tr": "asimilasyon, benzeşme",
+  "deBeispiel": "Assimilation wurde lange als selbstverständliches Ziel der Einwanderungspolitik gesehen.",
+  "gsw": "Assimilation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Assimilation isch lang als sälbschtverschtändlichs Ziel vo de Iiwanderigspolitik agluegt worde."
+ },
+ {
+  "id": 5764,
+  "de": "die Hybridität",
+  "tr": "melezlik, karma yapı",
+  "deBeispiel": "Die Hybridität städtischer Musikszenen widerlegt jedes reine Kulturmodell.",
+  "gsw": "Hybridität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Hybridität vo de schtädtische Musigszene widerleit jedes reine Kulturmodell."
+ },
+ {
+  "id": 5765,
+  "de": "die Sozialisation",
+  "tr": "toplumsallaşma, sosyalleşme",
+  "deBeispiel": "Werte werden in der frühen Sozialisation eher beiläufig als ausdrücklich vermittelt.",
+  "gsw": "Sozialisation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wert werded i de früeje Sozialisation eender biiläufig als uusdrücklich vermittlet."
+ },
+ {
+  "id": 5766,
+  "de": "das Vermächtnis",
+  "tr": "miras, bırakılan kültürel birikim",
+  "deBeispiel": "Diese Erzählungen sind das eigentliche Vermächtnis der Dorfgemeinschaft.",
+  "gsw": "Vermächtnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Die Verzellige sind s eigentlich Vermächtnis vo de Dorfgmeinschaft."
+ },
+ {
+  "id": 5767,
+  "de": "die Erinnerungskultur",
+  "tr": "hatırlama kültürü, anma kültürü",
+  "deBeispiel": "Die Erinnerungskultur eines Landes zeigt sich an seinen Denkmälern.",
+  "gsw": "Erinnerigskultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erinnerigskultur vo mene Land zeigt sich a sine Dänkmäler."
+ },
+ {
+  "id": 5768,
+  "de": "die Kosmologie",
+  "tr": "kozmoloji, evren tasavvuru",
+  "deBeispiel": "In ihrer Kosmologie sind Tiere und Menschen keine getrennten Kategorien.",
+  "gsw": "Kosmologie",
+  "gswArtikel": "d",
+  "gswBeispiel": "I ihrer Kosmologie sind Tier und Mäntsche kei getrennti Kategorie."
+ },
+ {
+  "id": 5769,
+  "de": "der Kult",
+  "tr": "kült, tapınma",
+  "deBeispiel": "Der Kult um die Ahnen strukturiert den gesamten Festkalender.",
+  "gsw": "Kult",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kult um d Ahne schtrukturiert de ganz Fäschtkalender."
+ },
+ {
+  "id": 5770,
+  "de": "die Initiation",
+  "tr": "erginleme, kabul töreni",
+  "deBeispiel": "Nach der Initiation darf der Jugendliche an den Beratungen teilnehmen.",
+  "gsw": "Initiation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Initiation dörf de Jugendlich a de Beratige teilnää."
+ },
+ {
+  "id": 5771,
+  "de": "die Lebenswelt",
+  "tr": "yaşam dünyası, gündelik yaşam alanı",
+  "deBeispiel": "Der Forscher wollte die Lebenswelt der Fischer von innen verstehen.",
+  "gsw": "Läbenswält",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Forscher hät d Läbenswält vo de Fischer vo inne wölle verschtaa."
+ },
+ {
+  "id": 5772,
+  "de": "die Alltagspraxis",
+  "tr": "gündelik pratik, günlük uygulama",
+  "deBeispiel": "Große Weltbilder zeigen sich am deutlichsten in banaler Alltagspraxis.",
+  "gsw": "Alltagspraxis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Grossi Wältbilder zeiged sich am düütlichschte i de banale Alltagspraxis."
+ },
+ {
+  "id": 5773,
+  "de": "das Handlungsmuster",
+  "tr": "davranış kalıbı, eylem örüntüsü",
+  "deBeispiel": "Dieselben Handlungsmuster wiederholen sich über mehrere Generationen hinweg.",
+  "gsw": "Handligsmuschter",
+  "gswArtikel": "s",
+  "gswBeispiel": "Di gliiche Handligsmuschter widerholed sich über mehreri Generatione häre."
+ },
+ {
+  "id": 5774,
+  "de": "der Verhaltenskodex",
+  "tr": "davranış kuralları, davranış kodu",
+  "deBeispiel": "Ein ungeschriebener Verhaltenskodex regelt, wer zuerst spricht.",
+  "gsw": "Verhaltenskodex",
+  "gswArtikel": "de",
+  "gswBeispiel": "En ungschribene Verhaltenskodex regelt, wer zerscht redt."
+ },
+ {
+  "id": 5775,
+  "de": "die Reinheit",
+  "tr": "saflık, temizlik, arılık",
+  "deBeispiel": "Vorstellungen von Reinheit trennen das Essbare vom Verbotenen.",
+  "gsw": "Reinheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vorschtellige vo Reinheit trennet s Ässbare vom Verbotene."
+ },
+ {
+  "id": 5776,
+  "de": "die Sippe",
+  "tr": "sülale, klan",
+  "deBeispiel": "Die Sippe entscheidet gemeinsam über die Verteilung des Landes.",
+  "gsw": "Sippe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sippe entscheidet gmeinsam über d Verteilig vom Land."
+ },
+ {
+  "id": 5777,
+  "de": "die Reziprozität",
+  "tr": "karşılıklılık",
+  "deBeispiel": "Reziprozität hält das Netz gegenseitiger Verpflichtungen zusammen.",
+  "gsw": "Reziprozität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Reziprozität haltet s Netz vo gägesiitige Verpflichtige zäme."
+ },
+ {
+  "id": 5778,
+  "de": "die Gabe",
+  "tr": "armağan, hediye",
+  "deBeispiel": "Eine Gabe verpflichtet den Empfänger zu einer späteren Gegenleistung.",
+  "gsw": "Gaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Gaab verpflichtet de Empfänger zu ere schpätere Gägeleischtig."
+ },
+ {
+  "id": 5779,
+  "de": "die Rangordnung",
+  "tr": "hiyerarşi, sıra düzeni",
+  "deBeispiel": "Die Sitzordnung bei Festen bildet die soziale Rangordnung ab.",
+  "gsw": "Rangordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sitzordnig a de Fäscht bildet d soziali Rangordnig ab."
+ },
+ {
+  "id": 5780,
+  "de": "das Machtgefüge",
+  "tr": "güç yapısı, iktidar düzeni",
+  "deBeispiel": "Der Forscher übersah lange das Machtgefüge hinter den Interviews.",
+  "gsw": "Machtgfüeg",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Forscher hät s Machtgfüeg hinder de Interviews lang übersee."
+ },
+ {
+  "id": 5781,
+  "de": "die Zuschreibung",
+  "tr": "atıf, yakıştırma",
+  "deBeispiel": "Solche Zuschreibungen sagen mehr über uns als über die Beschriebenen.",
+  "gsw": "Zueschriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sonigi Zueschriibige säged meh über öis als über di Beschribene."
+ },
+ {
+  "id": 5782,
+  "de": "das Stereotyp",
+  "tr": "basmakalıp yargı, klişe",
+  "deBeispiel": "Das Stereotyp hält sich, obwohl keine Studie es bestätigt.",
+  "gsw": "Schtereotyp",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schtereotyp haltet sich, obwohl kei Schtudie s beschtätigt."
+ },
+ {
+  "id": 5783,
+  "de": "das Stigma",
+  "tr": "damga, damgalanma",
+  "deBeispiel": "Das Stigma haftet an der Familie noch nach zwei Generationen.",
+  "gsw": "Schtigma",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Schtigma haftet a de Familie no nach zwäi Generatione."
+ },
+ {
+  "id": 5784,
+  "de": "die Exotik",
+  "tr": "egzotiklik, egzotizm",
+  "deBeispiel": "Die Exotik der Bilder verstellt den Blick auf den Alltag.",
+  "gsw": "Exotik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Exotik vo de Bilder verschtellt de Blick uf de Alltag."
+ },
+ {
+  "id": 5785,
+  "de": "die Verflechtung",
+  "tr": "iç içe geçme, karşılıklı bağlantı",
+  "deBeispiel": "Die Verflechtung von Religion und Wirtschaft ist hier kaum aufzulösen.",
+  "gsw": "Verflächtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verflächtig vo Religion und Wirtschaft isch daa chuum uufzlöse."
+ },
+ {
+  "id": 5786,
+  "de": "die Vielschichtigkeit",
+  "tr": "çok katmanlılık",
+  "deBeispiel": "Die Vielschichtigkeit des Festes erschließt sich erst nach Wochen.",
+  "gsw": "Vilschichtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vilschichtigkeit vom Fäscht erschliesst sich erscht nach Wuche."
+ },
+ {
+  "id": 5787,
+  "de": "die Sinnstiftung",
+  "tr": "anlam kurma, anlam yaratma",
+  "deBeispiel": "Rituale dienen der Sinnstiftung in Zeiten großer Unsicherheit.",
+  "gsw": "Sinnschtiftig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Rituaal dienend de Sinnschtiftig i Ziite vo grosser Unsicherheit."
+ },
+ {
+  "id": 5788,
+  "de": "der Habitus",
+  "tr": "habitus, yerleşik davranış tarzı",
+  "deBeispiel": "Der akademische Habitus verrät sich schon an der Wortwahl.",
+  "gsw": "Habitus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De akademisch Habitus verraat sich scho a de Wortwaal."
+ },
+ {
+  "id": 5789,
+  "de": "das Milieu",
+  "tr": "sosyal çevre, muhit",
+  "deBeispiel": "In diesem Milieu gilt offene Zurschaustellung von Reichtum als peinlich.",
+  "gsw": "Milieu",
+  "gswArtikel": "s",
+  "gswBeispiel": "I dem Milieu gilt s offene Zurschaustelle vo Riichtum als piinlich."
+ },
+ {
+  "id": 5790,
+  "de": "die Distinktion",
+  "tr": "ayrım, seçkinlik gösterisi",
+  "deBeispiel": "Geschmack dient hier vor allem der sozialen Distinktion.",
+  "gsw": "Distinktion",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Gschmack dient daa vor allem de soziale Distinktion."
+ },
+ {
+  "id": 5791,
+  "de": "die Randgruppe",
+  "tr": "marjinal grup, kenarda kalmış topluluk",
+  "deBeispiel": "Die Studie gibt einer lange übersehenen Randgruppe eine Stimme.",
+  "gsw": "Randgruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtudie git ere lang übersehene Randgruppe e Schtimm."
+ },
+ {
+  "id": 5792,
+  "de": "die Mehrheitsgesellschaft",
+  "tr": "çoğunluk toplumu",
+  "deBeispiel": "Die Mehrheitsgesellschaft hält ihre eigenen Normen für neutral.",
+  "gsw": "Meerheitsgsellschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Meerheitsgsellschaft haltet ihri eigene Norme für neutral."
+ },
+ {
+  "id": 5793,
+  "de": "das Selbstverständnis",
+  "tr": "kendini algılayış, kendini tanımlama biçimi",
+  "deBeispiel": "Das Selbstverständnis der Zunft beruht auf jahrhundertealten Erzählungen.",
+  "gsw": "Sälbschtverschtändnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Sälbschtverschtändnis vo de Zunft beruet uf jaarhundertealte Verzellige."
+ },
+ {
+  "id": 5794,
+  "de": "das Artefakt",
+  "tr": "insan yapımı nesne, eser",
+  "deBeispiel": "Jedes Artefakt im Depot trägt eine Geschichte seiner Aneignung.",
+  "gsw": "Artefakt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jedes Artefakt im Depot treit e Gschicht vo sinere Aaeignig."
+ },
+ {
+  "id": 5795,
+  "de": "das Glaubenssystem",
+  "tr": "inanç sistemi",
+  "deBeispiel": "Ein Glaubenssystem lässt sich nicht in einzelne Sätze zerlegen.",
+  "gsw": "Gloubenssyschtem",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es Gloubenssyschtem laat sich nöd i einzelni Sätz zerlege."
+ },
+ {
+  "id": 5796,
+  "de": "tradieren",
+  "tr": "kuşaktan kuşağa aktarmak",
+  "deBeispiel": "Diese Formeln werden mündlich tradiert und nie aufgeschrieben.",
+  "gsw": "tradiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Formle werded mündlich tradiert und nie uufgschribe."
+ },
+ {
+  "id": 5797,
+  "de": "wiederbeleben",
+  "tr": "canlandırmak, yeniden diriltmek",
+  "deBeispiel": "Der Verein hat einen fast vergessenen Tanz wiederbelebt.",
+  "gsw": "widerbeläbe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Verein hät en fascht vergässne Tanz widerbeläbt."
+ },
+ {
+  "id": 5798,
+  "de": "entstammen",
+  "tr": "-den gelmek, kökeni -e dayanmak",
+  "deBeispiel": "Der Brauch entstammt einer weit älteren bäuerlichen Ordnung.",
+  "gsw": "entschtamme",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bruuch entschtammt ere wiit ältere büürliche Ordnig."
+ },
+ {
+  "id": 5799,
+  "de": "weitergeben",
+  "tr": "aktarmak, iletmek",
+  "deBeispiel": "Die Großmütter geben die Lieder ohne jede Notenschrift weiter.",
+  "gsw": "witergää",
+  "gswArtikel": null,
+  "gswBeispiel": "D Grossmüetere tüend d Lieder ohni jedi Notenschrift witergää."
+ },
+ {
+  "id": 5800,
+  "de": "ableiten",
+  "tr": "çıkarmak, çıkarsamak, türetmek",
+  "deBeispiel": "Aus einem einzigen Fall lässt sich keine Regel ableiten.",
+  "gsw": "ableite",
+  "gswArtikel": null,
+  "gswBeispiel": "Us eme einzige Fall laat sich kei Regle ableite."
+ },
+ {
+  "id": 5801,
+  "de": "stiften",
+  "tr": "yaratmak, oluşturmak, bağışlamak",
+  "deBeispiel": "Gemeinsame Mahlzeiten stiften Zusammengehörigkeit über alle Konflikte hinweg.",
+  "gsw": "schtifte",
+  "gswArtikel": null,
+  "gswBeispiel": "Gmeinsami Määlziite schtiftend Zämeghörigkeit über alli Konflikt häre."
+ },
+ {
+  "id": 5802,
+  "de": "ächten",
+  "tr": "dışlamak, lanetlemek, yasaklamak",
+  "deBeispiel": "Wer gegen das Schweigegebot verstieß, wurde von allen geächtet.",
+  "gsw": "ächte",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer gäge s Schwiigegebot verschtoosse hät, isch vo allne gächtet worde."
+ }
+]

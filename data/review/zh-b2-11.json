@@ -1,0 +1,1001 @@
+[
+ {
+  "id": 4742,
+  "de": "die Sehne",
+  "tr": "kiriş, tendon",
+  "deBeispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt.",
+  "gsw": "Sehne",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät sich bim Tennis e Sehne im Ellboge greizt."
+ },
+ {
+  "id": 4743,
+  "de": "die Muskulatur",
+  "tr": "kas yapısı, kaslar",
+  "deBeispiel": "Eine kräftige Muskulatur stützt die Wirbelsäule im Alltag.",
+  "gsw": "Muskulatur",
+  "gswArtikel": "d",
+  "gswBeispiel": "E chräftigi Muskulatur schtützt d Wirbelsüüle im Alltag."
+ },
+ {
+  "id": 4744,
+  "de": "die Wirbelsäule",
+  "tr": "omurga",
+  "deBeispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben.",
+  "gsw": "Wirbelsüüle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Langs Sitze belaschtet d Wirbelsüüle meh als schwers Hebe."
+ },
+ {
+  "id": 4745,
+  "de": "die Abwehrkräfte",
+  "tr": "vücut direnci, savunma gücü",
+  "deBeispiel": "Frische Luft und Bewegung stärken die Abwehrkräfte im Winter.",
+  "gsw": "Abwehrchräft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Frischi Luft und Bewegig schtärked im Winter d Abwehrchräft."
+ },
+ {
+  "id": 4746,
+  "de": "die Essgewohnheit",
+  "tr": "beslenme alışkanlığı",
+  "deBeispiel": "Alte Essgewohnheiten lassen sich nur mit viel Geduld ändern.",
+  "gsw": "Ässgwoonhäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Ässgwoonhäite chan mer nu mit vil Geduld ändere."
+ },
+ {
+  "id": 4747,
+  "de": "die Verdauung",
+  "tr": "sindirim",
+  "deBeispiel": "Nach dem üppigen Essen brauchte seine Verdauung eine Weile.",
+  "gsw": "Verdauig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em üppige Ässe hät sini Verdauig es Wiili bruucht."
+ },
+ {
+  "id": 4748,
+  "de": "der Heißhunger",
+  "tr": "ani açlık krizi, kurt gibi acıkma",
+  "deBeispiel": "Am späten Abend überfällt mich oft der Heißhunger auf Süßes.",
+  "gsw": "Häisshunger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am schpaate Aabig überchunt mich oft de Häisshunger uf Süesses."
+ },
+ {
+  "id": 4749,
+  "de": "die Sättigung",
+  "tr": "doyma, tokluk",
+  "deBeispiel": "Das Gefühl der Sättigung setzt erst nach zwanzig Minuten ein.",
+  "gsw": "Sättigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gfüel vo de Sättigig chunt erscht nach zwänzg Minute."
+ },
+ {
+  "id": 4750,
+  "de": "die Flüssigkeitszufuhr",
+  "tr": "sıvı alımı",
+  "deBeispiel": "An heißen Tagen ist eine ausreichende Flüssigkeitszufuhr besonders wichtig.",
+  "gsw": "Flüssigkäitszuefuer",
+  "gswArtikel": "d",
+  "gswBeispiel": "A häisse Täg isch e gnüegendi Flüssigkäitszuefuer bsunders wichtig."
+ },
+ {
+  "id": 4751,
+  "de": "das Genussmittel",
+  "tr": "keyif verici madde (kahve, alkol, sigara)",
+  "deBeispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung.",
+  "gsw": "Gnussmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Kaffi und Alkohol gältet als Gnussmittel und nöd als Nahrig."
+ },
+ {
+  "id": 4752,
+  "de": "die Abhängigkeit",
+  "tr": "bağımlılık",
+  "deBeispiel": "Der Übergang vom Genuss zur Abhängigkeit verläuft oft unbemerkt.",
+  "gsw": "Abhängigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Übergang vom Gnuss zur Abhängigkäit gaat oft unbemerkt."
+ },
+ {
+  "id": 4753,
+  "de": "der Biorhythmus",
+  "tr": "biyolojik ritim",
+  "deBeispiel": "Nachtschichten bringen den Biorhythmus komplett durcheinander.",
+  "gsw": "Biorhythmus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nachtschichte bringed de Biorhythmus komplett durenand."
+ },
+ {
+  "id": 4754,
+  "de": "das Nickerchen",
+  "tr": "kısa uyku, şekerleme",
+  "deBeispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
+  "gsw": "Nickerli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es chuurzes Nickerli nach em Zmittag macht erschtuunlich wach."
+ },
+ {
+  "id": 4755,
+  "de": "die Leistungsfähigkeit",
+  "tr": "performans, verim gücü",
+  "deBeispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen.",
+  "gsw": "Läischtigsfähigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am Namittag sinkt bi vilne Mänsche di geischtigi Läischtigsfähigkäit."
+ },
+ {
+  "id": 4756,
+  "de": "die Überlastung",
+  "tr": "aşırı yüklenme, aşırı zorlanma",
+  "deBeispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung.",
+  "gsw": "Überlaschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schmerze im Chnüü sind e klassischi Folg vo Überlaschtig."
+ },
+ {
+  "id": 4757,
+  "de": "die Vorsorge",
+  "tr": "koruyucu bakım, önlem",
+  "deBeispiel": "Zur Vorsorge geht sie einmal im Jahr zum Zahnarzt.",
+  "gsw": "Vorsorg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zur Vorsorg gaat si äinisch im Jaar zum Zaarzt."
+ },
+ {
+  "id": 4758,
+  "de": "der Trainingsplan",
+  "tr": "antrenman programı",
+  "deBeispiel": "Sein Trainingsplan sieht drei Einheiten pro Woche vor.",
+  "gsw": "Trainingsplan",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin Trainingsplan gseht drei Äinhäite pro Wuche vor."
+ },
+ {
+  "id": 4759,
+  "de": "die Zerrung",
+  "tr": "kas zorlanması, incinme",
+  "deBeispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung.",
+  "gsw": "Zerrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Ufwärme holt mer sich schnäll e Zerrig."
+ },
+ {
+  "id": 4760,
+  "de": "die Prellung",
+  "tr": "berelenme, ezik",
+  "deBeispiel": "Der Sturz endete zum Glück nur mit einer Prellung.",
+  "gsw": "Prellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Schturz isch zum Glück nu mit ere Prellig usggange."
+ },
+ {
+  "id": 4761,
+  "de": "die Heilung",
+  "tr": "iyileşme, şifa",
+  "deBeispiel": "Die Heilung des Bruchs dauerte länger als erwartet.",
+  "gsw": "Häilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Häilig vom Bruch hät länger duuret als erwartet."
+ },
+ {
+  "id": 4762,
+  "de": "die Auszeit",
+  "tr": "mola, ara verme",
+  "deBeispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit.",
+  "gsw": "Usziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em schtressige Jaar hät er sich e längeri Usziit gnoo."
+ },
+ {
+  "id": 4763,
+  "de": "die Achtsamkeit",
+  "tr": "farkındalık, dikkatli olma",
+  "deBeispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht.",
+  "gsw": "Achtsamkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit chli Achtsamkäit merkt mer früener, wänn de Körper e Pause bruucht."
+ },
+ {
+  "id": 4764,
+  "de": "die Körperhaltung",
+  "tr": "duruş, vücut duruşu",
+  "deBeispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen.",
+  "gsw": "Körperhaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E schlächti Körperhaltig am Bildschirm füehrt oft zu Nackeschmerze."
+ },
+ {
+  "id": 4765,
+  "de": "das Körpergefühl",
+  "tr": "beden algısı, beden hissi",
+  "deBeispiel": "Tanzen hat ihr ein ganz neues Körpergefühl gegeben.",
+  "gsw": "Körpergfüel",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Tanze hät ere es ganz nöis Körpergfüel gee."
+ },
+ {
+  "id": 4766,
+  "de": "der Ausgleich",
+  "tr": "denge sağlama, telafi",
+  "deBeispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob.",
+  "gsw": "Usgliich",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Schwümme isch für en de perfekt Usgliich zum Bürojob."
+ },
+ {
+  "id": 4767,
+  "de": "die Nachtruhe",
+  "tr": "gece uykusu, gece dinlenmesi",
+  "deBeispiel": "Der Lärm der Nachbarn stört regelmäßig meine Nachtruhe.",
+  "gsw": "Nachtrue",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Lärm vo de Nachbere schtört regelmässig mini Nachtrue."
+ },
+ {
+  "id": 4768,
+  "de": "der Tiefschlaf",
+  "tr": "derin uyku",
+  "deBeispiel": "Im Tiefschlaf erholt sich der Körper am gründlichsten.",
+  "gsw": "Tüüfschlaaf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Tüüfschlaaf erholt sich de Körper am gründlichschte."
+ },
+ {
+  "id": 4769,
+  "de": "die Selbstdisziplin",
+  "tr": "öz disiplin",
+  "deBeispiel": "Frühsport verlangt am Anfang eine Menge Selbstdisziplin.",
+  "gsw": "Sälbschtdisziplin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Früeschport verlangt am Aafang e Mängi Sälbschtdisziplin."
+ },
+ {
+  "id": 4770,
+  "de": "sich dehnen",
+  "tr": "germe hareketi yapmak, esnemek (spor)",
+  "deBeispiel": "Nach dem Laufen solltest du dich gründlich dehnen.",
+  "gsw": "sich dehne",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Laufe söttsch di gründlich dehne."
+ },
+ {
+  "id": 4771,
+  "de": "sich verausgaben",
+  "tr": "kendini tüketmek, gücünü aşırı harcamak",
+  "deBeispiel": "Er hat sich im ersten Kilometer völlig verausgabt.",
+  "gsw": "sich verusgaabe",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sich im erschte Kilometer völlig verusgaabt."
+ },
+ {
+  "id": 4772,
+  "de": "ermüden",
+  "tr": "yorulmak, yormak",
+  "deBeispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist.",
+  "gsw": "ermüede",
+  "gswArtikel": null,
+  "gswBeispiel": "D Auge ermüeded schnäll, wänn s Liecht z schwach isch."
+ },
+ {
+  "id": 4773,
+  "de": "sich abgewöhnen",
+  "tr": "bir alışkanlığı bırakmak",
+  "deBeispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt.",
+  "gsw": "sich abgwööne",
+  "gswArtikel": null,
+  "gswBeispiel": "S schpaat Nasche han ich mer mit vil Müe abgwöönt."
+ },
+ {
+  "id": 4774,
+  "de": "durchschlafen",
+  "tr": "kesintisiz uyumak",
+  "deBeispiel": "Seit Wochen kann sie nachts nicht mehr durchschlafen.",
+  "gsw": "dureschlaafe",
+  "gswArtikel": null,
+  "gswBeispiel": "Sit Wuche cha si z Nacht nüme dureschlaafe."
+ },
+ {
+  "id": 4775,
+  "de": "stärken",
+  "tr": "güçlendirmek, kuvvetlendirmek",
+  "deBeispiel": "Diese Übung stärkt vor allem den unteren Rücken.",
+  "gsw": "schtärche",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Übig schtärcht vor allem de unter Rugge."
+ },
+ {
+  "id": 4776,
+  "de": "verkrampfen",
+  "tr": "kasılmak, kramp girmek",
+  "deBeispiel": "Beim Schwimmen ist ihm plötzlich die Wade verkrampft.",
+  "gsw": "verchrampfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Schwümme isch em plötzlich d Wade verchrampft."
+ },
+ {
+  "id": 4777,
+  "de": "sich aufwärmen",
+  "tr": "ısınmak (spor öncesi)",
+  "deBeispiel": "Vor dem Spiel wärmt sich die Mannschaft zwanzig Minuten auf.",
+  "gsw": "sich ufwärme",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Schpil mues sich d Mannschaft zwänzg Minute ufwärme."
+ },
+ {
+  "id": 4778,
+  "de": "zusammenbrechen",
+  "tr": "çökmek, yığılmak",
+  "deBeispiel": "Kurz vor dem Ziel brach der Läufer erschöpft zusammen.",
+  "gsw": "zämebräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Churz vor em Ziil isch de Läufer erschöpft zämebroche."
+ },
+ {
+  "id": 4779,
+  "de": "zügeln",
+  "tr": "dizginlemek, frenlemek",
+  "deBeispiel": "Beim Buffet muss ich meinen Appetit wirklich zügeln.",
+  "gsw": "zügle",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Buffet mues ich min Appetit würklich zügle.",
+  "ayniLehce": [
+   "umziehen (A1)"
+  ]
+ },
+ {
+  "id": 4780,
+  "de": "unterdrücken",
+  "tr": "bastırmak, tutmak",
+  "deBeispiel": "Im Meeting konnte er ein Gähnen kaum unterdrücken.",
+  "gsw": "underdrucke",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Meeting hät er es Gäine chuum chöne underdrucke."
+ },
+ {
+  "id": 4781,
+  "de": "sich aufraffen",
+  "tr": "kendini toparlayıp harekete geçmek",
+  "deBeispiel": "Abends kann ich mich kaum noch zum Sport aufraffen.",
+  "gsw": "sich ufraffe",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Aabig cha ich mich chuum meh zum Schport ufraffe."
+ },
+ {
+  "id": 4782,
+  "de": "durchhalten",
+  "tr": "dayanmak, sürdürmek",
+  "deBeispiel": "Die letzten zwei Kilometer hat sie tapfer durchgehalten.",
+  "gsw": "durehalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Di letschte zwäi Kilometer hät si tapfer chöne durehalte."
+ },
+ {
+  "id": 4783,
+  "de": "umstellen",
+  "tr": "değiştirmek, düzenini değiştirmek",
+  "deBeispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt.",
+  "gsw": "umschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Diagnose hät er sini Ernährig komplett umgschtellt."
+ },
+ {
+  "id": 4784,
+  "de": "meiden",
+  "tr": "kaçınmak, uzak durmak",
+  "deBeispiel": "Seit der Diät meidet sie Zucker fast vollständig.",
+  "gsw": "miide",
+  "gswArtikel": null,
+  "gswBeispiel": "Sit de Diät miidet si de Zucker fascht vollschtändig."
+ },
+ {
+  "id": 4785,
+  "de": "sich gönnen",
+  "tr": "kendine tanımak, kendine izin vermek",
+  "deBeispiel": "Am Wochenende gönnt er sich eine lange Mittagspause.",
+  "gsw": "sich gönne",
+  "gswArtikel": null,
+  "gswBeispiel": "Am Wuchenänd gönnt er sich e langi Mittagspause."
+ },
+ {
+  "id": 4786,
+  "de": "dösen",
+  "tr": "uyuklamak, hafif uyuklamak",
+  "deBeispiel": "Im Zug döste ich zwei Stunden vor mich hin.",
+  "gsw": "döse",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Zug han ich zwäi Schtund vor mich häre gdöset."
+ },
+ {
+  "id": 4787,
+  "de": "ankurbeln",
+  "tr": "hızlandırmak, canlandırmak",
+  "deBeispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an.",
+  "gsw": "aachurble",
+  "gswArtikel": null,
+  "gswBeispiel": "En chalte Guss am Morge tuet de Chreisluuf aachurble."
+ },
+ {
+  "id": 4788,
+  "de": "humpeln",
+  "tr": "topallamak",
+  "deBeispiel": "Nach dem Sturz humpelte er den ganzen Weg nach Hause.",
+  "gsw": "humple",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Schturz isch er de ganz Wääg hei ghumplet."
+ },
+ {
+  "id": 4789,
+  "de": "ausgeruht",
+  "tr": "dinlenmiş, dinç",
+  "deBeispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht.",
+  "gsw": "usgrueet",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Ferie hät si ändlich wider usgrueet gwürkt."
+ },
+ {
+  "id": 4790,
+  "de": "träge",
+  "tr": "ağır, uyuşuk, hantal",
+  "deBeispiel": "Nach dem schweren Essen fühlte ich mich richtig träge.",
+  "gsw": "träg",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em schwäre Ässe han ich mich richtig träg gfüelt."
+ },
+ {
+  "id": 4791,
+  "de": "munter",
+  "tr": "zinde, neşeli, uyanık",
+  "deBeispiel": "Nach zwei Tassen Kaffee war er wieder munter.",
+  "gsw": "munter",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach zwäi Tasse Kaffi isch er wider munter gsi."
+ },
+ {
+  "id": 4792,
+  "de": "ausgewogen",
+  "tr": "dengeli",
+  "deBeispiel": "Eine ausgewogene Ernährung ist wichtiger als jede Diät.",
+  "gsw": "usgwoge",
+  "gswArtikel": null,
+  "gswBeispiel": "E usgwogeni Ernährig isch wichtiger als jedi Diät."
+ },
+ {
+  "id": 4793,
+  "de": "seelisch",
+  "tr": "ruhsal, manevi",
+  "deBeispiel": "Dauerstress belastet den Menschen körperlich und seelisch.",
+  "gsw": "seelisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Duurschtress belaschtet de Mänsch körperlich und seelisch."
+ },
+ {
+  "id": 4794,
+  "de": "ungesund",
+  "tr": "sağlıksız",
+  "deBeispiel": "So wenig zu schlafen ist auf Dauer ziemlich ungesund.",
+  "gsw": "ungsund",
+  "gswArtikel": null,
+  "gswBeispiel": "Eso weni z schlaafe isch uf d Duur ziemlich ungsund."
+ },
+ {
+  "id": 4795,
+  "de": "wohltuend",
+  "tr": "iyi gelen, rahatlatıcı",
+  "deBeispiel": "Ein warmes Bad ist nach einem langen Tag wohltuend.",
+  "gsw": "wooltuend",
+  "gswArtikel": null,
+  "gswBeispiel": "Es warms Bad isch nach eme lange Tag wooltuend."
+ },
+ {
+  "id": 4796,
+  "de": "aufrecht",
+  "tr": "dik (duruş)",
+  "deBeispiel": "Versuch, beim Tippen aufrecht auf dem Stuhl zu sitzen.",
+  "gsw": "ufrecht",
+  "gswArtikel": null,
+  "gswBeispiel": "Versuech, bim Tippe ufrecht uf em Schtuel z sitze."
+ },
+ {
+  "id": 4797,
+  "de": "maßvoll",
+  "tr": "ölçülü, aşırıya kaçmayan",
+  "deBeispiel": "Er trinkt Alkohol nur maßvoll und selten.",
+  "gsw": "maassvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "Er trinkt Alkohol nu maassvoll und sälte."
+ },
+ {
+  "id": 4798,
+  "de": "der Kaufvertrag",
+  "tr": "satış sözleşmesi",
+  "deBeispiel": "Mit dem Klick auf den Button kommt ein Kaufvertrag zustande.",
+  "gsw": "Chaufvertrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mit em Klick uf de Chnopf chunt en Chaufvertrag zueschtand."
+ },
+ {
+  "id": 4799,
+  "de": "der Widerruf",
+  "tr": "cayma, geri alma",
+  "deBeispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden.",
+  "gsw": "Widerruef",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Widerruef mues innerhalb vo vierzää Täg erklärt werde."
+ },
+ {
+  "id": 4800,
+  "de": "die Rückerstattung",
+  "tr": "geri ödeme, iade",
+  "deBeispiel": "Die Rückerstattung des Kaufpreises dauerte fast drei Wochen.",
+  "gsw": "Rückerschtattig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rückerschtattig vom Chaufpriis hät fascht drei Wuche duuret."
+ },
+ {
+  "id": 4801,
+  "de": "der Kaufbeleg",
+  "tr": "satın alma belgesi, fiş",
+  "deBeispiel": "Ohne Kaufbeleg nimmt der Händler die Ware nicht zurück.",
+  "gsw": "Chaufbeleg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni Chaufbeleg nimmt de Händler d Waar nöd zrugg."
+ },
+ {
+  "id": 4802,
+  "de": "der Preisnachlass",
+  "tr": "fiyat indirimi",
+  "deBeispiel": "Wegen des Kratzers gewährte uns der Verkäufer einen Preisnachlass.",
+  "gsw": "Priisnachlass",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wäge em Chratzer hät öis de Verchäufer en Priisnachlass gee."
+ },
+ {
+  "id": 4803,
+  "de": "der Dienstleister",
+  "tr": "hizmet sağlayıcı",
+  "deBeispiel": "Der Dienstleister haftet für Schäden, die seine Mitarbeiter verursachen.",
+  "gsw": "Dienschtläischter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dienschtläischter haftet für Schäde, wo sini Mitarbeiter verursached."
+ },
+ {
+  "id": 4804,
+  "de": "der Kundendienst",
+  "tr": "müşteri hizmetleri, teknik servis",
+  "deBeispiel": "Der Kundendienst war stundenlang telefonisch nicht zu erreichen.",
+  "gsw": "Chundedienscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Chundedienscht isch schtundelang telefonisch nöd erreichbar gsi."
+ },
+ {
+  "id": 4805,
+  "de": "die Schlichtungsstelle",
+  "tr": "uzlaştırma kurulu, hakem heyeti",
+  "deBeispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter.",
+  "gsw": "Schlichtigsschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi Schtriit mit de Airline hilft e unabhängigi Schlichtigsschtell wiiter."
+ },
+ {
+  "id": 4806,
+  "de": "die Verbraucherzentrale",
+  "tr": "tüketici danışma merkezi",
+  "deBeispiel": "Die Verbraucherzentrale warnt vor unseriösen Anrufen angeblicher Gewinnspiele.",
+  "gsw": "Verbrucherzentrale",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verbrucherzentrale warnt vor unseriöse Aarüef vo aagebliche Gwünnschpiil."
+ },
+ {
+  "id": 4807,
+  "de": "der Preisvergleich",
+  "tr": "fiyat karşılaştırması",
+  "deBeispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro.",
+  "gsw": "Priisverglich",
+  "gswArtikel": "de",
+  "gswBeispiel": "En chuurze Priisverglich im Netz schpart oft hundert Euro."
+ },
+ {
+  "id": 4808,
+  "de": "die Versandkosten",
+  "tr": "kargo ücreti, gönderim masrafı",
+  "deBeispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
+  "gsw": "Versandchöschte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ab eme Beschtellwert vo füfzg Euro entfallet d Versandchöschte."
+ },
+ {
+  "id": 4809,
+  "de": "die Gutschrift",
+  "tr": "alacak kaydı, hesaba geçirme",
+  "deBeispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
+  "gsw": "Guetschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtatt Bargäld hät si e Guetschrift über achtzg Euro überchoo."
+ },
+ {
+  "id": 4810,
+  "de": "der Gutschein",
+  "tr": "hediye çeki, kupon",
+  "deBeispiel": "Der Gutschein ist drei Jahre lang in allen Filialen gültig.",
+  "gsw": "Guetschiin",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Guetschiin isch drei Jaar lang i allne Filiale gültig."
+ },
+ {
+  "id": 4811,
+  "de": "die Haltbarkeit",
+  "tr": "raf ömrü, dayanıklılık",
+  "deBeispiel": "Die Haltbarkeit des Produkts steht klein auf der Rückseite.",
+  "gsw": "Haltbarkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Haltbarkäit vom Produkt schtaat chlii uf de Rüggsiite."
+ },
+ {
+  "id": 4813,
+  "de": "die Kundenbindung",
+  "tr": "müşteri bağlılığı sağlama",
+  "deBeispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung.",
+  "gsw": "Chundebindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Rabattaktione dienet vor allem de langfrischtige Chundebindig."
+ },
+ {
+  "id": 4814,
+  "de": "der Tarif",
+  "tr": "tarife, ücret planı",
+  "deBeispiel": "Wir haben in einen günstigeren Tarif ohne Mindestlaufzeit gewechselt.",
+  "gsw": "Tarif",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir sind i en günschtigere Tarif ooni Mindeschtlaufziit gwächslet."
+ },
+ {
+  "id": 4815,
+  "de": "die Grundgebühr",
+  "tr": "sabit ücret, abonelik bedeli",
+  "deBeispiel": "Neben der Grundgebühr zahlen Sie für jede Minute extra.",
+  "gsw": "Grundgebüür",
+  "gswArtikel": "d",
+  "gswBeispiel": "Näbet de Grundgebüür zaaled Si für jedi Minute extra."
+ },
+ {
+  "id": 4816,
+  "de": "die Kulanz",
+  "tr": "iyi niyet gösterme, esneklik",
+  "deBeispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenfrei.",
+  "gsw": "Kulanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Us Kulanz hät d Firma s Grät trotzdem gratis repariert."
+ },
+ {
+  "id": 4817,
+  "de": "der Versicherungsschutz",
+  "tr": "sigorta teminatı",
+  "deBeispiel": "Der Versicherungsschutz erlischt, wenn Sie die Prämie nicht zahlen.",
+  "gsw": "Versicherigsschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Versicherigsschutz erlischt, wänn Si d Prämie nöd zaaled."
+ },
+ {
+  "id": 4818,
+  "de": "der Auftraggeber",
+  "tr": "iş veren taraf, sipariş veren",
+  "deBeispiel": "Der Auftraggeber muss die Arbeiten innerhalb einer Woche abnehmen.",
+  "gsw": "Uftraggäber",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Uftraggäber mues d Arbete innerhalb vo ere Wuche abnää."
+ },
+ {
+  "id": 4819,
+  "de": "der Ansprechpartner",
+  "tr": "muhatap, ilgili kişi",
+  "deBeispiel": "Für Beschwerden ist Frau Krüger die zuständige Ansprechpartnerin.",
+  "gsw": "Aaschprächpartner",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für Beschwerde isch d Frau Krüger di zueschtändigi Aaschprächpartnerin."
+ },
+ {
+  "id": 4820,
+  "de": "die Filiale",
+  "tr": "şube (mağaza, banka)",
+  "deBeispiel": "Online gekaufte Kleidung können Sie in jeder Filiale zurückgeben.",
+  "gsw": "Filiale",
+  "gswArtikel": "d",
+  "gswBeispiel": "Online gchaufti Chläider chönd Si i jedere Filiale zrugg gää."
+ },
+ {
+  "id": 4821,
+  "de": "der Einzelhandel",
+  "tr": "perakende ticaret",
+  "deBeispiel": "Der stationäre Einzelhandel leidet seit Jahren unter dem Onlinegeschäft.",
+  "gsw": "Äinzelhandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De schtationär Äinzelhandel liidet sit Jaare under em Onlinegschäft."
+ },
+ {
+  "id": 4822,
+  "de": "der Warenkorb",
+  "tr": "alışveriş sepeti",
+  "deBeispiel": "Viele Kunden brechen den Kauf mit vollem Warenkorb ab.",
+  "gsw": "Waarechorb",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vil Chunde bräched de Chauf mit vollem Waarechorb ab."
+ },
+ {
+  "id": 4823,
+  "de": "das Sortiment",
+  "tr": "ürün yelpazesi, çeşit",
+  "deBeispiel": "Der Discounter hat sein Sortiment um regionale Produkte erweitert.",
+  "gsw": "Sortimänt",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Discounter hät sis Sortimänt um regionali Produkt erwiteret."
+ },
+ {
+  "id": 4824,
+  "de": "die Nutzungsbedingungen",
+  "tr": "kullanım koşulları",
+  "deBeispiel": "Kaum jemand liest die Nutzungsbedingungen vor der Anmeldung durch.",
+  "gsw": "Nutzigsbedingige",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chuum öpper liist d Nutzigsbedingige vor de Aameldig dure."
+ },
+ {
+  "id": 4825,
+  "de": "der Vertragspartner",
+  "tr": "sözleşme tarafı",
+  "deBeispiel": "Ihr Vertragspartner ist nicht der Hersteller, sondern der Händler.",
+  "gsw": "Vertragspartner",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ihre Vertragspartner isch nöd de Herschteller, sondern de Händler."
+ },
+ {
+  "id": 4826,
+  "de": "das Rückgaberecht",
+  "tr": "iade hakkı",
+  "deBeispiel": "Im Laden besteht kein gesetzliches Rückgaberecht für einwandfreie Ware.",
+  "gsw": "Rückgaabrecht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Lade gits käis gsetzlichs Rückgaabrecht für äiwandfreii Waar."
+ },
+ {
+  "id": 4827,
+  "de": "der Rücktritt",
+  "tr": "sözleşmeden dönme, vazgeçme",
+  "deBeispiel": "Der Rücktritt vom Vertrag kostet je nach Zeitpunkt unterschiedlich viel.",
+  "gsw": "Rücktritt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rücktritt vom Vertrag koschtet je nach Ziitpunkt underschiedlich vil."
+ },
+ {
+  "id": 4828,
+  "de": "das Treueprogramm",
+  "tr": "sadakat programı",
+  "deBeispiel": "Im Treueprogramm sammeln Kunden Punkte für spätere Einkäufe.",
+  "gsw": "Trüüiprogramm",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Trüüiprogramm sammled d Chunde Pünkt für schpäteri Iichäuf."
+ },
+ {
+  "id": 4829,
+  "de": "reklamieren",
+  "tr": "şikâyet etmek, arızalı ürünü bildirmek",
+  "deBeispiel": "Ich habe die defekte Kaffeemaschine sofort beim Händler reklamiert.",
+  "gsw": "reklamiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich han di defekti Kaffimaschine sofort bim Händler reklamiert.",
+  "ayniLehce": [
+   "sich beschweren (B1)"
+  ]
+ },
+ {
+  "id": 4830,
+  "de": "nachbessern",
+  "tr": "düzeltmek, sonradan iyileştirmek",
+  "deBeispiel": "Der Handwerker musste die schiefe Fliesenreihe kostenlos nachbessern.",
+  "gsw": "nachbessere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Handwärcher hät di schiefi Plättlireie gratis müese nachbessere."
+ },
+ {
+  "id": 4831,
+  "de": "mahnen",
+  "tr": "ihtar etmek, uyarı göndermek",
+  "deBeispiel": "Der Verlag mahnte den Kunden wegen zweier offener Beträge.",
+  "gsw": "maane",
+  "gswArtikel": null,
+  "gswBeispiel": "De Verlag hät de Chund wäge zwäi offne Beträg gmaanet."
+ },
+ {
+  "id": 4832,
+  "de": "abraten",
+  "tr": "vazgeçirmeye çalışmak, tavsiye etmemek",
+  "deBeispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab.",
+  "gsw": "abroote",
+  "gswArtikel": null,
+  "gswBeispiel": "De Berater hät öis vo de tüüre Zuesatzversicherig abgroote."
+ },
+ {
+  "id": 4833,
+  "de": "einlösen",
+  "tr": "kullanmak (kupon, çek), bozdurmak, yerine getirmek",
+  "deBeispiel": "Den Gutschein kann man auch in mehreren Teilbeträgen einlösen.",
+  "gsw": "iilöse",
+  "gswArtikel": null,
+  "gswBeispiel": "De Guetschiin cha mer au i mehrere Täilbeträg iilöse."
+ },
+ {
+  "id": 4834,
+  "de": "verpflichten",
+  "tr": "yükümlü kılmak, zorunda bırakmak",
+  "deBeispiel": "Das Gesetz verpflichtet Händler zu einer verständlichen Preisauszeichnung.",
+  "gsw": "verpflichte",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gsetz verpflichtet d Händler zu ere verschtändliche Priisuszäichnig."
+ },
+ {
+  "id": 4835,
+  "de": "täuschen",
+  "tr": "aldatmak, yanıltmak",
+  "deBeispiel": "Mit der halb leeren Packung täuscht der Hersteller die Käufer.",
+  "gsw": "tüüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit de halb leere Packig tüüscht de Herschteller d Chäufer."
+ },
+ {
+  "id": 4836,
+  "de": "beheben",
+  "tr": "gidermek (arıza, hata, sorun)",
+  "deBeispiel": "Der Techniker konnte die Störung erst nach zwei Besuchen beheben.",
+  "gsw": "behebe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Techniker hät d Schtörig erscht nach zwäi Bsüech chöne behebe."
+ },
+ {
+  "id": 4837,
+  "de": "werben",
+  "tr": "reklam yapmak, tanıtmak",
+  "deBeispiel": "Die Kette wirbt seit Wochen mit angeblich unschlagbaren Preisen.",
+  "gsw": "wärbe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chetti wott sit Wuche mit aagebliche unschlagbare Priis wärbe."
+ },
+ {
+  "id": 4838,
+  "de": "zusichern",
+  "tr": "taahhüt etmek, güvence vermek",
+  "deBeispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert.",
+  "gsw": "zuesichere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Verchäufer hät öis e Lieferig innert drei Täg zuegsicheret."
+ },
+ {
+  "id": 4839,
+  "de": "abrechnen",
+  "tr": "faturalandırmak, hesabını çıkarmak",
+  "deBeispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet.",
+  "gsw": "abrächne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Beratig wird nach Schtunde und nöd puuschal abgrächnet."
+ },
+ {
+  "id": 4840,
+  "de": "zurücksenden",
+  "tr": "geri göndermek",
+  "deBeispiel": "Bitte senden Sie die Ware in der Originalverpackung zurück.",
+  "gsw": "zruggschicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Si mönd d Waar i de Originalverpackig zruggschicke.",
+  "ayniLehce": [
+   "zurückschicken (A2)"
+  ]
+ },
+ {
+  "id": 4841,
+  "de": "anpreisen",
+  "tr": "övmek, pazarlamak",
+  "deBeispiel": "Im Fernsehen wird das Mittel als Wunderkur angepriesen.",
+  "gsw": "aapriise",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Fernsee tuet mer s Mittel als Wunderchur aapriise."
+ },
+ {
+  "id": 4842,
+  "de": "kostenpflichtig",
+  "tr": "ücretli, ücrete tabi",
+  "deBeispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
+  "gsw": "koschtepflichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Probemonet wird s Aagebot automatisch koschtepflichtig."
+ },
+ {
+  "id": 4843,
+  "de": "unverbindlich",
+  "tr": "bağlayıcı olmayan, taahhütsüz",
+  "deBeispiel": "Lassen Sie sich zunächst unverbindlich ein Angebot erstellen.",
+  "gsw": "unverbindlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Länd Si sich zerscht emal unverbindlich es Aagebot mache."
+ },
+ {
+  "id": 4844,
+  "de": "irreführend",
+  "tr": "yanıltıcı",
+  "deBeispiel": "Das Gericht hielt die Bezeichnung für irreführend und verbot sie.",
+  "gsw": "irrefüehrend",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät d Bezäichnig für irrefüehrend ghalte und verbotte."
+ },
+ {
+  "id": 4845,
+  "de": "hochwertig",
+  "tr": "kaliteli, nitelikli",
+  "deBeispiel": "Für hochwertige Materialien zahlen viele Kunden gern etwas mehr.",
+  "gsw": "hochwertig",
+  "gswArtikel": null,
+  "gswBeispiel": "Für hochwertigi Materialie zaaled vil Chunde gärn chli meh."
+ },
+ {
+  "id": 4846,
+  "de": "überteuert",
+  "tr": "fahiş fiyatlı, aşırı pahalı",
+  "deBeispiel": "Die Ersatzteile des Herstellers sind im Vergleich deutlich überteuert.",
+  "gsw": "übertüüret",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ersatztäil vom Herschteller sind im Verglich düütlich übertüüret."
+ },
+ {
+  "id": 4847,
+  "de": "zumutbar",
+  "tr": "makul, katlanılabilir",
+  "deBeispiel": "Eine Wartezeit von zehn Wochen ist dem Kunden nicht zumutbar.",
+  "gsw": "zuemuetbar",
+  "gswArtikel": null,
+  "gswBeispiel": "E Wartziit vo zää Wuche isch em Chund nöd zuemuetbar."
+ },
+ {
+  "id": 4848,
+  "de": "sachgemäß",
+  "tr": "usulüne uygun (kullanım)",
+  "deBeispiel": "Die Garantie gilt nur bei sachgemäßer Nutzung des Geräts.",
+  "gsw": "sachgmäss",
+  "gswArtikel": null,
+  "gswBeispiel": "D Garantie gilt nur bi sachgmässer Nutzig vom Grät."
+ },
+ {
+  "id": 4849,
+  "de": "die Aufführung",
+  "tr": "gösteri, temsil, oynanış",
+  "deBeispiel": "Die Aufführung am Samstag war schon zwei Wochen vorher ausgebucht.",
+  "gsw": "Uufführig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uufführig am Samschtig isch scho zwäi Wuche vorher uusbuecht gsi."
+ },
+ {
+  "id": 4850,
+  "de": "die Inszenierung",
+  "tr": "sahneye koyma, sahneleme, yorum",
+  "deBeispiel": "Die moderne Inszenierung des Klassikers hat das Publikum gespalten.",
+  "gsw": "Inszenierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di modern Inszenierig vom Klassiker hät s Publikum gschpalte."
+ },
+ {
+  "id": 4851,
+  "de": "das Drehbuch",
+  "tr": "senaryo (film metni)",
+  "deBeispiel": "Am Drehbuch haben drei Autoren fast zwei Jahre lang gearbeitet.",
+  "gsw": "Drehbuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Drehbuech händ drei Autore fascht zwäi Jaar lang gschaffet."
+ },
+ {
+  "id": 4852,
+  "de": "der Darsteller",
+  "tr": "oyuncu, canlandıran kişi",
+  "deBeispiel": "Der Darsteller der Hauptrolle bekam den Preis für seine Leistung.",
+  "gsw": "Darschteller",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Darschteller vo de Hauptrolle hät de Priis für sini Läischtig übercho."
+ }
+]

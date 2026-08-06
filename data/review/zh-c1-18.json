@@ -1,0 +1,995 @@
+[
+ {
+  "id": 7123,
+  "de": "der Aufstieg",
+  "tr": "yükselme, sınıf atlama",
+  "deBeispiel": "Der soziale Aufstieg gelingt in Deutschland seltener als früher.",
+  "gsw": "Ufschtiig",
+  "gswArtikel": "de",
+  "gswBeispiel": "De soziali Ufschtiig glingt z Tüütschland seltener als früener."
+ },
+ {
+  "id": 7124,
+  "de": "die Leitkultur",
+  "tr": "başat kültür, referans kültür",
+  "deBeispiel": "Der Begriff Leitkultur wird in der Debatte höchst unterschiedlich verwendet.",
+  "gsw": "Leitkultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Begriff Leitkultur wird i de Debatte höchscht underschidlich bruucht."
+ },
+ {
+  "id": 7125,
+  "de": "die Benachteiligung",
+  "tr": "dezavantaj, mağduriyet",
+  "deBeispiel": "Strukturelle Benachteiligung lässt sich statistisch inzwischen klar belegen.",
+  "gsw": "Benachteiligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtrukturelli Benachteiligig laat sich schtatistisch mitlerwiil klar bewiise."
+ },
+ {
+  "id": 7126,
+  "de": "die Binnenmigration",
+  "tr": "iç göç",
+  "deBeispiel": "Die Binnenmigration vom Osten in den Westen hat sich deutlich abgeschwächt.",
+  "gsw": "Binnemigration",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Binnemigration vom Oschte in de Weschte hät sich düütlich abgschwächt."
+ },
+ {
+  "id": 7127,
+  "de": "die Fremdenfeindlichkeit",
+  "tr": "yabancı düşmanlığı",
+  "deBeispiel": "Offene Fremdenfeindlichkeit äußert sich häufig erst in Krisenzeiten.",
+  "gsw": "Fremdefeindlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Offni Fremdefeindlichkeit zeigt sich hüüfig erscht i Kriisezite."
+ },
+ {
+  "id": 7128,
+  "de": "der Rassismus",
+  "tr": "ırkçılık",
+  "deBeispiel": "Rassismus zeigt sich oft in beiläufigen Bemerkungen im Alltag.",
+  "gsw": "Rassismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Rassismus zeigt sich oft i beiläufige Bemerkige im Alltag."
+ },
+ {
+  "id": 7129,
+  "de": "der Pluralismus",
+  "tr": "çoğulculuk",
+  "deBeispiel": "Weltanschaulicher Pluralismus gilt als Kennzeichen moderner Gesellschaften.",
+  "gsw": "Pluralismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wältaaschauliche Pluralismus gilt als Kennzeiche vo de moderne Gsellschafte."
+ },
+ {
+  "id": 7130,
+  "de": "der Wertewandel",
+  "tr": "değerlerin dönüşümü",
+  "deBeispiel": "Der Wertewandel zeigt sich besonders deutlich im Verhältnis zur Arbeit.",
+  "gsw": "Wertewandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wertewandel zeigt sich bsunders düütlich im Verhältnis zur Arbet."
+ },
+ {
+  "id": 7131,
+  "de": "das Prekariat",
+  "tr": "prekarya, güvencesiz çalışanlar kesimi",
+  "deBeispiel": "Das neue Prekariat besteht längst nicht mehr nur aus Ungelernten.",
+  "gsw": "Prekariat",
+  "gswArtikel": "s",
+  "gswBeispiel": "S nöie Prekariat bschtoot scho lang nüme nur us Unglernte."
+ },
+ {
+  "id": 7132,
+  "de": "das Armutsrisiko",
+  "tr": "yoksulluk riski",
+  "deBeispiel": "Alleinerziehende tragen ein weit überdurchschnittliches Armutsrisiko.",
+  "gsw": "Armuetsrisiko",
+  "gswArtikel": "s",
+  "gswBeispiel": "Alleinerziehendi träged es wiit überdurchschnittlichs Armuetsrisiko."
+ },
+ {
+  "id": 7133,
+  "de": "die Durchlässigkeit",
+  "tr": "geçirgenlik, geçişkenlik",
+  "deBeispiel": "Die Durchlässigkeit des Bildungssystems ist geringer als offiziell behauptet.",
+  "gsw": "Durchlässigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Durchlässigkeit vom Bildigssyschtem isch chliiner als offiziell behauptet."
+ },
+ {
+  "id": 7134,
+  "de": "die Elite",
+  "tr": "seçkinler, elit",
+  "deBeispiel": "Die politischen Eliten rekrutieren sich noch immer aus wenigen Familien.",
+  "gsw": "Elite",
+  "gswArtikel": "d",
+  "gswBeispiel": "D politische Elite rekrutiered sich immer no us wenige Familie."
+ },
+ {
+  "id": 7135,
+  "de": "das Bürgertum",
+  "tr": "burjuvazi, kentsoylu sınıf",
+  "deBeispiel": "Das städtische Bürgertum verlor im vergangenen Jahrhundert an Einfluss.",
+  "gsw": "Bürgertum",
+  "gswArtikel": "s",
+  "gswBeispiel": "S schtädtische Bürgertum hät im letzte Jaarhundert a Iifluss verlore."
+ },
+ {
+  "id": 7136,
+  "de": "die Klassengesellschaft",
+  "tr": "sınıflı toplum",
+  "deBeispiel": "Manche Forscher sprechen von der Rückkehr der Klassengesellschaft.",
+  "gsw": "Klassegsellschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mängi Forscher rede vo de Rückkeer vo de Klassegsellschaft."
+ },
+ {
+  "id": 7137,
+  "de": "die Enklave",
+  "tr": "enklav, kapalı yerleşim adası",
+  "deBeispiel": "Wohlhabende Enklaven schotten sich immer stärker vom Umland ab.",
+  "gsw": "Enklave",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wolhabendi Enklave schotted sich immer schtärcher vom Umland ab."
+ },
+ {
+  "id": 7138,
+  "de": "die Kluft",
+  "tr": "uçurum, derin ayrım",
+  "deBeispiel": "Zwischen Stadt und Land öffnet sich eine wachsende soziale Kluft.",
+  "gsw": "Kluft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüschet Schtadt und Land tuet sich e wachsendi soziali Kluft uf."
+ },
+ {
+  "id": 7139,
+  "de": "die Polarisierung",
+  "tr": "kutuplaşma",
+  "deBeispiel": "Die Polarisierung der Debatte erschwert jede sachliche Verständigung.",
+  "gsw": "Polarisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Polarisierig vo de Debatte erschwert jedi sachlichi Verschtändigig."
+ },
+ {
+  "id": 7140,
+  "de": "das Ressentiment",
+  "tr": "gizli husumet, hınç",
+  "deBeispiel": "Wirtschaftliche Unsicherheit nährt Ressentiments gegenüber Neuankömmlingen.",
+  "gsw": "Ressentiment",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wirtschaftlichi Unsicherheit näärt Ressentiments gägenüber Nöiaachömmlinge."
+ },
+ {
+  "id": 7141,
+  "de": "ausgrenzen",
+  "tr": "dışlamak, ötekileştirmek",
+  "deBeispiel": "Wer den Dialekt nicht beherrscht, wird schnell subtil ausgegrenzt.",
+  "gsw": "usgränze",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer de Dialäkt nöd cha, wird schnäll subtil usgränzt."
+ },
+ {
+  "id": 7142,
+  "de": "eingliedern",
+  "tr": "bünyesine katmak, kaynaştırmak",
+  "deBeispiel": "Der Betrieb hat die neuen Kollegen erstaunlich rasch eingegliedert.",
+  "gsw": "iigliidere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betrib hät di nöie Kollege erschtuunlich schnäll iigliideret."
+ },
+ {
+  "id": 7143,
+  "de": "bevorzugen",
+  "tr": "tercih etmek, kayırmak",
+  "deBeispiel": "Personalabteilungen bevorzugen bei gleicher Qualifikation oft vertraute Namen.",
+  "gsw": "bevorzuge",
+  "gswArtikel": null,
+  "gswBeispiel": "Personalabteilige bevorzuged bi gliicher Qualifikation oft vertrauti Näme."
+ },
+ {
+  "id": 7144,
+  "de": "vererben",
+  "tr": "miras bırakmak, aktarmak",
+  "deBeispiel": "Bildungschancen werden in Deutschland noch immer weitgehend vererbt.",
+  "gsw": "vererbe",
+  "gswArtikel": null,
+  "gswBeispiel": "Bildigschance werded z Tüütschland immer no wiitgehend vererbt."
+ },
+ {
+  "id": 7145,
+  "de": "reproduzieren",
+  "tr": "yeniden üretmek",
+  "deBeispiel": "Das Schulsystem reproduziert bestehende Unterschiede statt sie abzubauen.",
+  "gsw": "reproduziere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Schuelsyschtem reproduziert beschtehendi Underschiid, statt si abzbaue."
+ },
+ {
+  "id": 7146,
+  "de": "sich einleben",
+  "tr": "alışmak, yeni yere uyum sağlamak",
+  "deBeispiel": "Die Familie hat sich im neuen Viertel überraschend schnell eingelebt.",
+  "gsw": "sich iiläbe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Familie hät sich im nöie Quartier überraschend schnäll iigläbt."
+ },
+ {
+  "id": 7147,
+  "de": "sich niederlassen",
+  "tr": "yerleşmek, kalıcı olarak oturmak",
+  "deBeispiel": "Viele Rückkehrer lassen sich bewusst in ihrer alten Heimatstadt nieder.",
+  "gsw": "sich niderlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Vill Rückkeerer wänd sich bewusst i irer alte Heimatschtadt niderlaa."
+ },
+ {
+  "id": 7148,
+  "de": "entwurzeln",
+  "tr": "kökünden koparmak, yurdundan etmek",
+  "deBeispiel": "Der Krieg hat eine ganze Generation entwurzelt und über Kontinente verstreut.",
+  "gsw": "entwurzle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chrieg hät e ganzi Generation entwurzlet und über Kontinänt verschtreut."
+ },
+ {
+  "id": 7149,
+  "de": "pauschalisieren",
+  "tr": "toptan genelleme yapmak, toptancılık yapmak",
+  "deBeispiel": "Wer so pauschalisiert, verkennt die Vielschichtigkeit des Phänomens.",
+  "gsw": "pauschalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer eso pauschalisiert, verkennt d Vilschichtigkeit vom Phänomen."
+ },
+ {
+  "id": 7150,
+  "de": "erschweren",
+  "tr": "zorlaştırmak, güçleştirmek",
+  "deBeispiel": "Bürokratische Hürden erschweren den Zugang zum Arbeitsmarkt zusätzlich.",
+  "gsw": "erschwere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bürokratischi Hürde erschwered de Zuegang zum Arbetsmarkt zuesätzlich."
+ },
+ {
+  "id": 7151,
+  "de": "zusammenwachsen",
+  "tr": "kaynaşmak, birbiriyle bütünleşmek",
+  "deBeispiel": "Die beiden Stadtteile sind erst nach Jahrzehnten wirklich zusammengewachsen.",
+  "gsw": "zämewachse",
+  "gswArtikel": null,
+  "gswBeispiel": "Di zwei Schtadtteil sind erscht nach Jaarzäänt würklich zämegwachse."
+ },
+ {
+  "id": 7152,
+  "de": "erodieren",
+  "tr": "aşınmak, yıpranmak",
+  "deBeispiel": "Das Vertrauen in die Institutionen ist über Jahre langsam erodiert.",
+  "gsw": "erodiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Vertraue i d Inschtitutione isch über Jaar langsam erodiert."
+ },
+ {
+  "id": 7153,
+  "de": "bildungsfern",
+  "tr": "eğitimden uzak",
+  "deBeispiel": "Der Begriff bildungsfern gilt vielen Fachleuten selbst als abwertend.",
+  "gsw": "bildigsfern",
+  "gswArtikel": null,
+  "gswBeispiel": "De Begriff bildigsfern gilt für vill Fachlüüt sälber als abwertend."
+ },
+ {
+  "id": 7154,
+  "de": "ethnisch",
+  "tr": "etnik",
+  "deBeispiel": "Die Statistik erfasst keine ethnisch definierten Kategorien.",
+  "gsw": "ethnisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtatischtik erfasst kei ethnisch definierti Kategorie."
+ },
+ {
+  "id": 7155,
+  "de": "heterogen",
+  "tr": "türdeş olmayan, çeşitli",
+  "deBeispiel": "Die Schülerschaft ist heute weit heterogener als vor dreißig Jahren.",
+  "gsw": "heterogen",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schüelerschaft isch hüt vill heterogener als vor driissg Jaar."
+ },
+ {
+  "id": 7156,
+  "de": "sesshaft",
+  "tr": "yerleşik",
+  "deBeispiel": "Nach Jahren des Pendelns ist die Familie endlich sesshaft geworden.",
+  "gsw": "sässhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach Jaar vom Pendle isch d Familie ändlich sässhaft worde."
+ },
+ {
+  "id": 7157,
+  "de": "obgleich",
+  "tr": "her ne kadar, -e rağmen",
+  "deBeispiel": "Obgleich die Zahlen sinken, hält sich die Angst hartnäckig.",
+  "gsw": "obwool",
+  "gswArtikel": null,
+  "gswBeispiel": "Obwool d Zaale sinked, haltet sich d Angscht hartnäckig.",
+  "ayniLehce": [
+   "obwohl (B1)"
+  ]
+ },
+ {
+  "id": 7158,
+  "de": "die Erhebung",
+  "tr": "veri toplama, anket çalışması, araştırma",
+  "deBeispiel": "Die Erhebung wurde in vier Bundesländern gleichzeitig durchgeführt.",
+  "gsw": "Erhebig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erhebig isch i vier Bundesländer gliichziitig durgfüert worde."
+ },
+ {
+  "id": 7159,
+  "de": "die Messung",
+  "tr": "ölçüm",
+  "deBeispiel": "Die zweite Messung bestätigte die Werte der ersten Reihe.",
+  "gsw": "Mässig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D zwöiti Mässig hät d Wärt vo de erschte Reie bschtätigt."
+ },
+ {
+  "id": 7160,
+  "de": "die Streuung",
+  "tr": "dağılım genişliği, saçılım",
+  "deBeispiel": "Die Streuung der Einzelwerte ist deutlich größer als erwartet.",
+  "gsw": "Schtreuig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtreuig vo de Einzelwärt isch düütlich gröösser als erwartet."
+ },
+ {
+  "id": 7161,
+  "de": "die Schätzung",
+  "tr": "tahmin, kestirim",
+  "deBeispiel": "Vorsichtige Schätzungen gehen von etwa zwölf Prozent aus.",
+  "gsw": "Schätzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vorsichtigi Schätzige gönd vo öppe zwölf Prozänt us."
+ },
+ {
+  "id": 7162,
+  "de": "die Prognose",
+  "tr": "öngörü, tahmin",
+  "deBeispiel": "Die Prognose beruht auf Daten der vergangenen zehn Jahre.",
+  "gsw": "Prognose",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Prognose berueht uf Date vo de letzte zää Jaar."
+ },
+ {
+  "id": 7163,
+  "de": "das Merkmal",
+  "tr": "özellik, nitelik, değişken özellik",
+  "deBeispiel": "Alter und Bildungsstand wurden als zentrale Merkmale erfasst.",
+  "gsw": "Merkmal",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Alter und de Bildigsschtand sind als zentrali Merkmal erfasst worde."
+ },
+ {
+  "id": 7164,
+  "de": "die Ausprägung",
+  "tr": "alabileceği değer, düzey, görünüm biçimi",
+  "deBeispiel": "Das Merkmal kann drei verschiedene Ausprägungen annehmen.",
+  "gsw": "Uspräägig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Merkmal cha drei verschidnigi Uspräägige aanää."
+ },
+ {
+  "id": 7165,
+  "de": "der Datensatz",
+  "tr": "veri seti, veri kaydı",
+  "deBeispiel": "Unvollständige Datensätze wurden vor der Analyse aussortiert.",
+  "gsw": "Datesatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Unvollschtändigi Datesätz sind vor de Analyse usortiert worde."
+ },
+ {
+  "id": 7166,
+  "de": "die Befragung",
+  "tr": "anket, görüşme",
+  "deBeispiel": "An der Befragung nahmen rund zweitausend Haushalte teil.",
+  "gsw": "Befragig",
+  "gswArtikel": "d",
+  "gswBeispiel": "An de Befragig händ öppe zwöituusig Huushalt teilgnoo."
+ },
+ {
+  "id": 7167,
+  "de": "die Wahrscheinlichkeit",
+  "tr": "olasılık, ihtimal",
+  "deBeispiel": "Die Wahrscheinlichkeit eines Zufallsbefunds liegt unter fünf Prozent.",
+  "gsw": "Waarschiinlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Waarschiinlichkeit vo mene Zuefallsbefund liit under füf Prozänt."
+ },
+ {
+  "id": 7168,
+  "de": "die Häufigkeit",
+  "tr": "sıklık, frekans",
+  "deBeispiel": "Die Häufigkeit solcher Fälle hat sich seit 2010 verdoppelt.",
+  "gsw": "Hüüfigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Hüüfigkeit vo sonige Fäll hät sich sit 2010 verdoppelt."
+ },
+ {
+  "id": 7169,
+  "de": "die Verteilung",
+  "tr": "dağılım",
+  "deBeispiel": "Die Verteilung der Einkommen ist stark nach rechts verschoben.",
+  "gsw": "Verteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verteilig vo de Iikomme isch schtark nach rächts verschobe."
+ },
+ {
+  "id": 7170,
+  "de": "der Mittelwert",
+  "tr": "ortalama değer",
+  "deBeispiel": "Der Mittelwert verdeckt hier erhebliche Unterschiede zwischen den Gruppen.",
+  "gsw": "Mittelwärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Mittelwärt verdeckt da erheblichi Underschiid zwüschet de Gruppe."
+ },
+ {
+  "id": 7171,
+  "de": "der Ausreißer",
+  "tr": "aykırı değer, uç değer",
+  "deBeispiel": "Ein einzelner Ausreißer verschiebt den Durchschnitt spürbar nach oben.",
+  "gsw": "Usriisser",
+  "gswArtikel": "de",
+  "gswBeispiel": "En einzelne Usriisser verschiebt de Durchschnitt spürbar nach obe."
+ },
+ {
+  "id": 7172,
+  "de": "die Grundgesamtheit",
+  "tr": "evren, ana kütle",
+  "deBeispiel": "Die Stichprobe bildet die Grundgesamtheit nur unzureichend ab.",
+  "gsw": "Grundgsamtheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtichprob bildet d Grundgsamtheit nur ungenüegend ab."
+ },
+ {
+  "id": 7173,
+  "de": "die Gültigkeit",
+  "tr": "geçerlilik",
+  "deBeispiel": "Die Gültigkeit des Verfahrens wurde in mehreren Studien geprüft.",
+  "gsw": "Gültigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gültigkeit vom Verfaare isch i mehrere Schtudie prüeft worde."
+ },
+ {
+  "id": 7174,
+  "de": "der Schwellenwert",
+  "tr": "eşik değer",
+  "deBeispiel": "Erst oberhalb dieses Schwellenwerts gilt der Effekt als bedeutsam.",
+  "gsw": "Schwelewärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Erscht oberhalb vo dem Schwelewärt gilt de Effekt als bedütsam."
+ },
+ {
+  "id": 7175,
+  "de": "die Bezugsgröße",
+  "tr": "referans büyüklük, karşılaştırma ölçütü",
+  "deBeispiel": "Ohne klare Bezugsgröße bleibt die Prozentangabe wenig aussagekräftig.",
+  "gsw": "Bezugsgrööss",
+  "gswArtikel": "d",
+  "gswBeispiel": "Oni klari Bezugsgrööss bliibt d Prozäntaagab wenig usagechräftig."
+ },
+ {
+  "id": 7176,
+  "de": "die Versuchsanordnung",
+  "tr": "deney düzeneği, deney tasarımı",
+  "deBeispiel": "Die Versuchsanordnung erlaubt keine eindeutige Aussage über die Ursache.",
+  "gsw": "Versuechsaaordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Versuechsaaordnig erlaubt kei eindüütigi Uussag über d Ursach."
+ },
+ {
+  "id": 7177,
+  "de": "die Längsschnittstudie",
+  "tr": "boylamsal çalışma, uzunlamasına araştırma",
+  "deBeispiel": "Eine Längsschnittstudie begleitet dieselben Personen über viele Jahre.",
+  "gsw": "Längsschnittschtudie",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Längsschnittschtudie begleitet di gliiche Persone über vill Jaar."
+ },
+ {
+  "id": 7178,
+  "de": "die Metaanalyse",
+  "tr": "meta-analiz",
+  "deBeispiel": "Die Metaanalyse fasst die Befunde aus 34 Einzelstudien zusammen.",
+  "gsw": "Metaanalyse",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Metaanalyse fasst d Befund us 34 Einzelschtudie zäme."
+ },
+ {
+  "id": 7179,
+  "de": "die Störgröße",
+  "tr": "karıştırıcı etken, gürültü faktörü",
+  "deBeispiel": "Mögliche Störgrößen wurden im Modell statistisch herausgerechnet.",
+  "gsw": "Schtöörgrööss",
+  "gswArtikel": "d",
+  "gswBeispiel": "Möglichi Schtöörgröössi sind im Modäll schtatistisch usegrächnet worde."
+ },
+ {
+  "id": 7180,
+  "de": "die Einflussgröße",
+  "tr": "etkileyen değişken, belirleyici etken",
+  "deBeispiel": "Das Einkommen erweist sich als stärkste Einflussgröße im Modell.",
+  "gsw": "Iiflussgrööss",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Iikomme erwiist sich als schtärchschti Iiflussgrööss im Modäll."
+ },
+ {
+  "id": 7181,
+  "de": "die Variable",
+  "tr": "değişken",
+  "deBeispiel": "Zwei Variablen erklären zusammen fast die Hälfte der Unterschiede.",
+  "gsw": "Variable",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwo Variable erkläred zäme fascht d Hälfti vo de Underschiid."
+ },
+ {
+  "id": 7182,
+  "de": "der Parameter",
+  "tr": "parametre, ayar değeri",
+  "deBeispiel": "Schon kleine Änderungen der Parameter verändern das Ergebnis erheblich.",
+  "gsw": "Parameter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Scho chlini Änderige vo de Parameter veränderid s Ergebnis erheblich."
+ },
+ {
+  "id": 7183,
+  "de": "der Indikator",
+  "tr": "gösterge",
+  "deBeispiel": "Die Arbeitslosenquote gilt als grober Indikator für die Wirtschaftslage.",
+  "gsw": "Indikator",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Arbetslosequote gilt als grobe Indikator für d Wirtschaftslag."
+ },
+ {
+  "id": 7184,
+  "de": "der Koeffizient",
+  "tr": "katsayı",
+  "deBeispiel": "Der Koeffizient bleibt auch nach der Bereinigung deutlich positiv.",
+  "gsw": "Koeffizient",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Koeffizient bliibt au nach de Bereinigig düütlich positiv."
+ },
+ {
+  "id": 7185,
+  "de": "die Unsicherheit",
+  "tr": "belirsizlik, kesinsizlik",
+  "deBeispiel": "Die verbleibenden Unsicherheiten sollten offen benannt werden.",
+  "gsw": "Unsicherheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di verbliibende Unsicherheite sött mer offe benenne."
+ },
+ {
+  "id": 7186,
+  "de": "die Robustheit",
+  "tr": "sağlamlık, dayanıklılık",
+  "deBeispiel": "Zusätzliche Tests bestätigen die Robustheit der berichteten Effekte.",
+  "gsw": "Robuschtheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zuesätzlichi Teschts bschtätiged d Robuschtheit vo de brichtete Effekt."
+ },
+ {
+  "id": 7187,
+  "de": "der Rückschluss",
+  "tr": "çıkarım, sonuç çıkarma",
+  "deBeispiel": "Aus einer einzigen Erhebung lassen sich kaum Rückschlüsse ziehen.",
+  "gsw": "Rückschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Us ere einzige Erhebig lönd sich chuum Rückschlüss zie."
+ },
+ {
+  "id": 7188,
+  "de": "die Übertragbarkeit",
+  "tr": "aktarılabilirlik, genellenebilirlik",
+  "deBeispiel": "Die Übertragbarkeit der Ergebnisse auf andere Länder ist fraglich.",
+  "gsw": "Übertragbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Übertragbarkeit vo de Ergebnis uf anderi Länder isch fraglich."
+ },
+ {
+  "id": 7189,
+  "de": "die Vorgehensweise",
+  "tr": "izlenen yöntem, yaklaşım",
+  "deBeispiel": "Die gewählte Vorgehensweise wird im Anhang ausführlich dokumentiert.",
+  "gsw": "Vorgeeswiis",
+  "gswArtikel": "d",
+  "gswBeispiel": "D gwählti Vorgeeswiis wird im Aahang uusfüerlich dokumentiert."
+ },
+ {
+  "id": 7190,
+  "de": "das Signifikanzniveau",
+  "tr": "anlamlılık düzeyi",
+  "deBeispiel": "Der Effekt bleibt auf dem üblichen Signifikanzniveau nachweisbar.",
+  "gsw": "Signifikanzniveau",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Effekt bliibt uf em üebliche Signifikanzniveau nachwiisbar."
+ },
+ {
+  "id": 7191,
+  "de": "die Normierung",
+  "tr": "standartlaştırma, normalleştirme",
+  "deBeispiel": "Ohne Normierung sind die Werte der beiden Skalen nicht vergleichbar.",
+  "gsw": "Normierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Oni Normierig sind d Wärt vo de beide Skala nöd vergliichbar."
+ },
+ {
+  "id": 7192,
+  "de": "bereinigen",
+  "tr": "arındırmak, düzeltmek",
+  "deBeispiel": "Die Zahlen sind um saisonale Effekte bereinigt worden.",
+  "gsw": "bereinige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zaale sind um saisonali Effekt bereinigt worde."
+ },
+ {
+  "id": 7193,
+  "de": "extrapolieren",
+  "tr": "eğilimi ileriye taşımak, ekstrapolasyon yapmak",
+  "deBeispiel": "Man sollte den Trend nicht unbesehen in die Zukunft extrapolieren.",
+  "gsw": "extrapoliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer sött de Trend nöd unbeseh i d Zuekunft extrapoliere."
+ },
+ {
+  "id": 7194,
+  "de": "validieren",
+  "tr": "geçerliliğini sınamak, doğrulamak",
+  "deBeispiel": "Das Modell wurde anhand unabhängiger Daten validiert.",
+  "gsw": "validiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Modäll isch anhand vo unabhängige Date validiert worde."
+ },
+ {
+  "id": 7195,
+  "de": "zurückführen",
+  "tr": "bir nedene bağlamak, dayandırmak",
+  "deBeispiel": "Der Rückgang wird vor allem auf die Alterung der Bevölkerung zurückgeführt.",
+  "gsw": "zrugfüere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Rückgang wird vor allem uf d Alterig vo de Bevölkerig zrugfüert."
+ },
+ {
+  "id": 7196,
+  "de": "unterschätzen",
+  "tr": "hafife almak, olduğundan az tahmin etmek",
+  "deBeispiel": "Ältere Modelle haben das Tempo der Entwicklung deutlich unterschätzt.",
+  "gsw": "underschätze",
+  "gswArtikel": null,
+  "gswBeispiel": "Elteri Modäll händ s Tempo vo de Entwicklig düütlich underschätzt."
+ },
+ {
+  "id": 7197,
+  "de": "gegenüberstellen",
+  "tr": "karşı karşıya koymak, karşılaştırmak",
+  "deBeispiel": "Die Tabelle stellt die Werte beider Erhebungsjahre gegenüber.",
+  "gsw": "gägenüberschtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tabälle tuet d Wärt vo beide Erhebigsjaar gägenüberschtelle."
+ },
+ {
+  "id": 7198,
+  "de": "aggregieren",
+  "tr": "toplulaştırmak, bir araya toplamak",
+  "deBeispiel": "Die Einzelangaben wurden auf Kreisebene aggregiert.",
+  "gsw": "aggregiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Einzelaagabe sind uf Chreisebeni aggregiert worde."
+ },
+ {
+  "id": 7199,
+  "de": "replizieren",
+  "tr": "yinelemek, aynı koşullarda tekrarlamak",
+  "deBeispiel": "Bislang konnte kein Team den Effekt erfolgreich replizieren.",
+  "gsw": "repliziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bis jetz hät kes Team de Effekt erfolgriich chöne repliziere."
+ },
+ {
+  "id": 7200,
+  "de": "operationalisieren",
+  "tr": "ölçülebilir hale getirmek, işlevsel tanıma dökmek",
+  "deBeispiel": "Wie man Lebensqualität operationalisiert, bleibt umstritten.",
+  "gsw": "operationalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie mer d Läbensqualität operationalisiert, bliibt umschtritte."
+ },
+ {
+  "id": 7201,
+  "de": "erhärten",
+  "tr": "pekiştirmek, kanıtlarla güçlendirmek",
+  "deBeispiel": "Neuere Daten erhärten den Verdacht auf einen systematischen Fehler.",
+  "gsw": "erhärte",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöieri Date erhärted de Verdacht uf en syschtematische Fääler."
+ },
+ {
+  "id": 7202,
+  "de": "abbilden",
+  "tr": "yansıtmak, temsil etmek",
+  "deBeispiel": "Der Index bildet die tatsächliche Belastung nur unvollständig ab.",
+  "gsw": "abbilde",
+  "gswArtikel": null,
+  "gswBeispiel": "De Index tuet di tatsächlichi Belaschtig nur unvollschtändig abbilde."
+ },
+ {
+  "id": 7203,
+  "de": "modellieren",
+  "tr": "modellemek",
+  "deBeispiel": "Die Forscher modellieren den Verlauf unter drei verschiedenen Szenarien.",
+  "gsw": "modelliere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Forscher modelliered de Verlauf under drei verschidnige Szenarie."
+ },
+ {
+  "id": 7204,
+  "de": "simulieren",
+  "tr": "benzetim yapmak, simüle etmek",
+  "deBeispiel": "Das Programm simuliert die Entwicklung über einen Zeitraum von 50 Jahren.",
+  "gsw": "simuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Programm simuliert d Entwicklig über en Ziitruum vo 50 Jaar."
+ },
+ {
+  "id": 7205,
+  "de": "näherungsweise",
+  "tr": "yaklaşık olarak, kabaca",
+  "deBeispiel": "Der Verlauf lässt sich näherungsweise durch eine Gerade beschreiben.",
+  "gsw": "näherigswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "De Verlauf laat sich näherigswiis mit ere Grade beschriibe."
+ },
+ {
+  "id": 7206,
+  "de": "tendenziell",
+  "tr": "eğilim olarak, genel olarak",
+  "deBeispiel": "Jüngere Befragte antworten tendenziell kritischer als ältere.",
+  "gsw": "tendenziell",
+  "gswArtikel": null,
+  "gswBeispiel": "Jüngeri Befragti antworted tendenziell kritischer als elteri."
+ },
+ {
+  "id": 7207,
+  "de": "quantitativ",
+  "tr": "nicel, sayısal",
+  "deBeispiel": "Die Arbeit verbindet quantitative Verfahren mit ausführlichen Interviews.",
+  "gsw": "quantitativ",
+  "gswArtikel": null,
+  "gswBeispiel": "D Arbet verbindet quantitativi Verfaare mit uusfüerliche Interviews."
+ },
+ {
+  "id": 7208,
+  "de": "qualitativ",
+  "tr": "nitel",
+  "deBeispiel": "Für diese Fragestellung eignet sich ein qualitativer Zugang besser.",
+  "gsw": "qualitativ",
+  "gswArtikel": null,
+  "gswBeispiel": "Für die Fragschtellig eignet sich en qualitative Zuegang besser."
+ },
+ {
+  "id": 7209,
+  "de": "methodisch",
+  "tr": "yöntemsel, yöntem açısından",
+  "deBeispiel": "Die Studie weist mehrere methodische Schwächen auf.",
+  "gsw": "methodisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtudie hät mehreri methodischi Schwäche."
+ },
+ {
+  "id": 7210,
+  "de": "die Datenethik",
+  "tr": "veri etiği",
+  "deBeispiel": "Ohne eine belastbare Datenethik bleibt jede Digitalstrategie moralisch blind.",
+  "gsw": "Dateethik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Oni e belaschtbari Dateethik bliibt jedi Digitalschtrategie moralisch blind."
+ },
+ {
+  "id": 7211,
+  "de": "die Überwachung",
+  "tr": "gözetim, izleme",
+  "deBeispiel": "Flächendeckende Überwachung verändert das Verhalten der Menschen im öffentlichen Raum.",
+  "gsw": "Überwachig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Flächedeckendi Überwachig verändert s Verhalte vo de Lüüt im öffentliche Ruum."
+ },
+ {
+  "id": 7212,
+  "de": "die Datensparsamkeit",
+  "tr": "veri minimizasyonu, az veri toplama ilkesi",
+  "deBeispiel": "Datensparsamkeit gilt als Leitprinzip, wird in der Praxis aber selten eingehalten.",
+  "gsw": "Datesparsamkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Datesparsamkeit gilt als Leitprinzip, wird i de Praxis aber sälte iighalte."
+ },
+ {
+  "id": 7213,
+  "de": "die Nachvollziehbarkeit",
+  "tr": "anlaşılabilirlik, izlenebilirlik",
+  "deBeispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen erheblich.",
+  "gsw": "Nachvollziebarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi komplexe Modäll liidet d Nachvollziebarkeit vo einzelne Entscheidige erheblich."
+ },
+ {
+  "id": 7214,
+  "de": "die Zweckbindung",
+  "tr": "amaca bağlılık ilkesi",
+  "deBeispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen.",
+  "gsw": "Zwäckbindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zwäckbindig erlaubt kei spöteri Uuswertig zu ganz andere Ziel."
+ },
+ {
+  "id": 7215,
+  "de": "die Profilbildung",
+  "tr": "profil çıkarma",
+  "deBeispiel": "Kommerzielle Profilbildung erfasst längst auch politische Neigungen der Nutzer.",
+  "gsw": "Profilbildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Kommerzielli Profilbildig erfasst scho lang au d politische Neigige vo de Nutzer."
+ },
+ {
+  "id": 7216,
+  "de": "die Mustererkennung",
+  "tr": "örüntü tanıma",
+  "deBeispiel": "Mustererkennung ersetzt kein Verständnis der zugrunde liegenden Zusammenhänge.",
+  "gsw": "Muschtererkennig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Muschtererkennig ersetzt kes Verschtaa vo de zugrundliegende Zämehäng."
+ },
+ {
+  "id": 7217,
+  "de": "das Lernverfahren",
+  "tr": "öğrenme yöntemi (teknik süreç, algoritma)",
+  "deBeispiel": "Statistische Lernverfahren liefern Korrelationen, aber keine Erklärungen.",
+  "gsw": "Lernverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schtatistischi Lernverfaare liferid Korrelatione, aber kei Erklärige."
+ },
+ {
+  "id": 7218,
+  "de": "die Trainingsdaten",
+  "tr": "eğitim verileri",
+  "deBeispiel": "Woher die Trainingsdaten stammen, bleibt bei vielen Anbietern unklar.",
+  "gsw": "Trainingsdate",
+  "gswArtikel": "d",
+  "gswBeispiel": "Woher d Trainingsdate chömed, bliibt bi vilne Aabieter unklar."
+ },
+ {
+  "id": 7219,
+  "de": "die Regulierung",
+  "tr": "düzenleme, regülasyon",
+  "deBeispiel": "Eine zu späte Regulierung zementiert die Vormacht der etablierten Konzerne.",
+  "gsw": "Regulierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E z schpaati Regulierig zementiert d Vormacht vo de etablierte Konzern."
+ },
+ {
+  "id": 7220,
+  "de": "die Wertschöpfung",
+  "tr": "katma değer yaratma",
+  "deBeispiel": "Die eigentliche Wertschöpfung verlagert sich von der Hardware zur Software.",
+  "gsw": "Wertschöpfig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di eigentlichi Wertschöpfig verlageret sich vo de Hardware zur Software."
+ },
+ {
+  "id": 7221,
+  "de": "die Beschäftigungsstruktur",
+  "tr": "istihdam yapısı",
+  "deBeispiel": "Die Beschäftigungsstruktur verschiebt sich zugunsten hochqualifizierter Tätigkeiten.",
+  "gsw": "Beschäftigigsschtruktur",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Beschäftigigsschtruktur verschiebt sich zuegunschte vo hochqualifizierte Tätigkeite."
+ },
+ {
+  "id": 7222,
+  "de": "der Sachzwang",
+  "tr": "nesnel zorunluluk, kaçınılmaz koşul",
+  "deBeispiel": "Technischer Fortschritt wird oft als Sachzwang dargestellt, nicht als politische Wahl.",
+  "gsw": "Sachzwang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De technisch Fortschritt wird oft als Sachzwang dargschtellt und nöd als politischi Waal."
+ },
+ {
+  "id": 7223,
+  "de": "die Technikfolgenabschätzung",
+  "tr": "teknolojinin etkilerinin değerlendirilmesi",
+  "deBeispiel": "Eine ernsthafte Technikfolgenabschätzung müsste vor der Markteinführung stattfinden.",
+  "gsw": "Technikfolgeabschätzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En ernschthafti Technikfolgeabschätzig müesst vor de Markteinfüerig schtattfinde."
+ },
+ {
+  "id": 7224,
+  "de": "der Fortschrittsglaube",
+  "tr": "ilerleme inancı",
+  "deBeispiel": "Ein ungebrochener Fortschrittsglaube verstellt den Blick auf die Nebenwirkungen.",
+  "gsw": "Fortschrittsglaube",
+  "gswArtikel": "de",
+  "gswBeispiel": "En ungebrochene Fortschrittsglaube verschtellt de Blick uf d Näbewirkige."
+ },
+ {
+  "id": 7225,
+  "de": "die Technikskepsis",
+  "tr": "teknoloji şüpheciliği",
+  "deBeispiel": "Ihre Technikskepsis beruht auf Erfahrung, nicht auf bloßer Angst.",
+  "gsw": "Technikskepsis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Technikskepsis berueht uf Erfaarig und nöd uf blooser Angscht."
+ },
+ {
+  "id": 7226,
+  "de": "die Verantwortungsdiffusion",
+  "tr": "sorumluluğun dağılıp kaybolması",
+  "deBeispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern.",
+  "gsw": "Verantwortigsdiffusion",
+  "gswArtikel": "d",
+  "gswBeispiel": "I verteilte Syschtem droht e Verantwortigsdiffusion zwüschet Entwickler und Betriiber."
+ },
+ {
+  "id": 7227,
+  "de": "die Angriffsfläche",
+  "tr": "saldırıya açık yüzey, zafiyet alanı",
+  "deBeispiel": "Jede zusätzliche Vernetzung vergrößert die Angriffsfläche des gesamten Systems.",
+  "gsw": "Aagriffsflächi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi zuesätzlichi Vernetzig vergröössert d Aagriffsflächi vom ganze Syschtem."
+ },
+ {
+  "id": 7228,
+  "de": "das Zugriffsrecht",
+  "tr": "erişim hakkı, erişim yetkisi",
+  "deBeispiel": "Zu weit gefasste Zugriffsrechte sind eine häufige Ursache für Datenpannen.",
+  "gsw": "Zuegriffsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Z wiit gfassti Zuegriffsrächt sind e hüüfigi Ursach für Datepanne."
+ },
+ {
+  "id": 7229,
+  "de": "die Berechenbarkeit",
+  "tr": "hesaplanabilirlik, öngörülebilirlik",
+  "deBeispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare erkenntnistheoretische Grenzen.",
+  "gsw": "Berächebarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Berächebarkeit vom menschliche Verhalte hät klari erkenntnistheoretischi Gränze."
+ },
+ {
+  "id": 7230,
+  "de": "die Quantifizierung",
+  "tr": "sayısallaştırma, niceliğe indirgeme",
+  "deBeispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
+  "gsw": "Quantifizierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Quantifizierig vo de Bildig verkennt, was sich schwer mässe laat."
+ },
+ {
+  "id": 7231,
+  "de": "die Selbstverpflichtung",
+  "tr": "gönüllü taahhüt",
+  "deBeispiel": "Freiwillige Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze.",
+  "gsw": "Sälbschtverpflichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Freiwilligi Sälbschtverpflichtige vo de Branche ersetzed kei verbindlichi Gsetz."
+ },
+ {
+  "id": 7232,
+  "de": "die Aufsichtsbehörde",
+  "tr": "denetim kurumu, düzenleyici kurum",
+  "deBeispiel": "Der Aufsichtsbehörde fehlt es an Fachpersonal und technischer Ausstattung.",
+  "gsw": "Ufsichtsbehörde",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Ufsichtsbehörde fäält s Fachpersonal und di technischi Uusrüschtig."
+ }
+]

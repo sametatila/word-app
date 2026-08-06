@@ -1,0 +1,1010 @@
+[
+ {
+  "id": 1675,
+  "de": "doppelt",
+  "tr": "çift, iki katı",
+  "deBeispiel": "Das Buch habe ich doppelt.",
+  "gsw": "doppelt",
+  "gswArtikel": null,
+  "gswBeispiel": "S Buech han ich doppelt."
+ },
+ {
+  "id": 1676,
+  "de": "Doppel-",
+  "tr": "çift, iki kişilik",
+  "deBeispiel": "1. Wir hätten gern ein Doppelbett. 2. Wollen Sie ein Doppelzimmer oder ein Einzelzimmer?",
+  "gsw": "Doppel-",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir hetted gärn es Doppelbett. 2. Wänd Si es Doppelzimmer oder es Äinzelzimmer?"
+ },
+ {
+  "id": 1677,
+  "de": "dorthin",
+  "tr": "oraya",
+  "deBeispiel": "Deine Tasche kannst du dorthin stellen.",
+  "gsw": "det ane",
+  "gswArtikel": null,
+  "gswBeispiel": "Diini Täsche chasch det ane schtelle."
+ },
+ {
+  "id": 1678,
+  "de": "die Dose",
+  "tr": "konserve kutusu, teneke kutu",
+  "deBeispiel": "Ich habe noch eine Dose Bohnen.",
+  "gsw": "Büchs",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha na e Büchs Boone.",
+  "ayniLehce": [
+   "Büchse (B1)"
+  ]
+ },
+ {
+  "id": 1679,
+  "de": "der Dreck",
+  "tr": "kir, pislik",
+  "deBeispiel": "1. Iss den Apfel nicht! Der lag im Dreck. 2. Ich konnte vor lauter Dreck auf dem Fenster nichts sehen. 3. Kümmere dich u",
+  "gsw": "Dräck",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Iss de Öpfel nöd! De isch im Dräck gläge. 2. Vor luuter Dräck am Fänschter han ich nüüt gsee.",
+  "ayniLehce": [
+   "Schmutz (B1)"
+  ]
+ },
+ {
+  "id": 1680,
+  "de": "drehen",
+  "tr": "çevirmek, döndürmek",
+  "deBeispiel": "1. Drehen Sie zum Einschalten den Schalter nach rechts. 2. Die Kinder drehen sich zur Musik im Kreis. 3. Bei Familie Hub",
+  "gsw": "dräje",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Zum Iischalte dräjed Si de Schalter nach rächts. 2. D Chind dräjed sich zu de Musig im Chräis."
+ },
+ {
+  "id": 1682,
+  "de": "die Droge",
+  "tr": "uyuşturucu",
+  "deBeispiel": "Nimmst du etwa Drogen?",
+  "gsw": "Drooge",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nimsch du öppe Drooge?"
+ },
+ {
+  "id": 1683,
+  "de": "die Drogerie",
+  "tr": "drogeri (kozmetik ve temizlik ürünleri mağazası)",
+  "deBeispiel": "Waschmittel bekommst du in der Drogerie.",
+  "gsw": "Drogerii",
+  "gswArtikel": "d",
+  "gswBeispiel": "Waschmittel überchunsch i de Drogerii."
+ },
+ {
+  "id": 1684,
+  "de": "der Druck",
+  "tr": "baskı, basınç",
+  "deBeispiel": "1. Mit einem Knopfdruck schaltet man das Gerät ein. 2. Wie hoch muss der Druck in den vorderen Reifen sein?",
+  "gsw": "Druck",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Mit äim Chnopfdruck schaltet mer s Grät ii. 2. Wie hööch mues de Druck i de vordere Pneu sii?"
+ },
+ {
+  "id": 1685,
+  "de": "durcheinander",
+  "tr": "karmakarışık, dağınık",
+  "deBeispiel": "3. Wir haben den ganzen Mai durch geheizt. 4. Wir haben unsere Wohnung durch einen Freund bekommen. 1. Alle meine Sachen",
+  "gsw": "durenand",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli miini Sache sind durenand."
+ },
+ {
+  "id": 1686,
+  "de": "der Durchschnitt",
+  "tr": "ortalama",
+  "deBeispiel": "1. Der Durchschnitt der Ausgaben liegt bei 150 Euro im Monat. 2. Im Durchschnitt brauchen wir täglich 20 Minuten zur Arb",
+  "gsw": "Durchschnitt",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Mir gäbed im Durchschnitt 150 Franke im Monet us. 2. Im Durchschnitt bruuched mer jede Taag 20 Minuute zur Arbet."
+ },
+ {
+  "id": 1687,
+  "de": "durchschnittlich",
+  "tr": "ortalama olarak",
+  "deBeispiel": "Die Preise sind im letzten Jahr um durchschnittlich 6 % gestiegen.",
+  "gsw": "durchschnittlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Priise sind im letschte Jaar um durchschnittlich 6 Prozänt gschtige."
+ },
+ {
+  "id": 1688,
+  "de": "durstig",
+  "tr": "susamış",
+  "deBeispiel": "Du bist sicher durstig. Was möchtest du trinken?",
+  "gsw": "durschtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Du bisch sicher durschtig. Was wotsch trinke?"
+ },
+ {
+  "id": 1689,
+  "de": "duzen",
+  "tr": "sen diye hitap etmek",
+  "deBeispiel": "Wollen wir Du zueinander sagen? Ja, wir können uns gern duzen?",
+  "gsw": "duze",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänd mer enand Du säge? Ja, mir chönd üüs gärn duze."
+ },
+ {
+  "id": 1690,
+  "de": "eben",
+  "tr": "az önce, işte",
+  "deBeispiel": "1. Ich bin eben erst angekommen. 2. Ich gebe auf. Ich habe eben kein Glück!",
+  "gsw": "äbe",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich bi äbe erscht aachoo. 2. Ich gib uf. Ich ha äbe käis Glück!"
+ },
+ {
+  "id": 1691,
+  "de": "ebenfalls",
+  "tr": "aynı şekilde, keza",
+  "deBeispiel": "Ich wünsche Ihnen ein schönes Wochenende. – Danke, ebenfalls.",
+  "gsw": "gliichfalls",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wünsche Ine es schööns Wuchenänd. – Merci, gliichfalls.",
+  "ayniLehce": [
+   "gleichfalls (B1)"
+  ]
+ },
+ {
+  "id": 1692,
+  "de": "ebenso",
+  "tr": "aynı şekilde, keza",
+  "deBeispiel": "Schöne Feiertage. – Danke, ebenso.",
+  "gsw": "äbeso",
+  "gswArtikel": null,
+  "gswBeispiel": "Schööni Fiirtääg. – Merci, äbeso."
+ },
+ {
+  "id": 1693,
+  "de": "die e-card",
+  "tr": "sağlık sigortası kartı",
+  "deBeispiel": "Haben Sie Ihre e-card dabei?",
+  "gsw": "e-card",
+  "gswArtikel": "d",
+  "gswBeispiel": "Händ Si Iri e-card debii?"
+ },
+ {
+  "id": 1694,
+  "de": "die Versichertenkarte",
+  "tr": "sigorta kartı, sağlık kartı",
+  "deBeispiel": "Haben Sie Ihre e-card dabei?",
+  "gsw": "Versichertecharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Händ Si Iri Versichertecharte debii?"
+ },
+ {
+  "id": 1695,
+  "de": "die EC-Karte",
+  "tr": "banka kartı",
+  "deBeispiel": "Bezahlen Sie bar? Sie können auch mit der ec-Karte zahlen.",
+  "gsw": "EC-Charte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zaaled Si bar? Si chönd au mit de EC-Charte zaale."
+ },
+ {
+  "id": 1696,
+  "de": "das Eck",
+  "tr": "köşe",
+  "deBeispiel": "1. Das Regal stellen wir hier ins Eck. 2. Das bekommen Sie im Kiosk am Eck. 3. Wo ist die Apotheke? − Gleich ums Eck.",
+  "gsw": "Egg",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. S Regaal schtelled mer daa is Egg. 2. Das überchömed Si im Kiosk am Egg. 3. Wo isch d Apoteek? – Grad ums Egg."
+ },
+ {
+  "id": 1697,
+  "de": "eckig",
+  "tr": "köşeli",
+  "deBeispiel": "Ich möchte einen eckigen Tisch, keinen runden.",
+  "gsw": "eggig",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht en eggige Tisch, käin runde."
+ },
+ {
+  "id": 1698,
+  "de": "die Ehe",
+  "tr": "evlilik",
+  "deBeispiel": "Sie hat zwei Kinder aus erster Ehe.",
+  "gsw": "Ee",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si hät zwäi Chind us de erschte Ee."
+ },
+ {
+  "id": 1699,
+  "de": "das Ehepaar",
+  "tr": "evli çift, karı koca",
+  "deBeispiel": "Das Ehepaar unter uns hat zwei Kinder.",
+  "gsw": "Eepaar",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Eepaar under üüs hät zwäi Chind."
+ },
+ {
+  "id": 1700,
+  "de": "eher",
+  "tr": "daha erken; daha çok, ziyade",
+  "deBeispiel": "1. Ich stehe meist eher auf als mein Mann. 2. Michael sieht gerne Serien, ich mag eher Krimis.",
+  "gsw": "ender",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich schtaan mäischtens ender uf als min Maa. 2. De Michael luegt gärn Serie, ich luege ender Krimis."
+ },
+ {
+  "id": 1701,
+  "de": "ehrlich",
+  "tr": "dürüst",
+  "deBeispiel": "1. Sie ist ein ehrlicher Mensch. 2. Bitte sei in dieser Sache ehrlich. 3. Die Pause haben wir uns ehrlich verdient.",
+  "gsw": "eerlich",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Si isch en eerliche Mäntsch. 2. Bitte sig i dere Sach eerlich. 3. D Pause händ mer üüs eerlich verdient."
+ },
+ {
+  "id": 1702,
+  "de": "eigene",
+  "tr": "kendi, özel",
+  "deBeispiel": "1. Fast jedes Kind hat ein eigenes Zimmer. 2. Manche Leute haben keine eigene Meinung.",
+  "gsw": "äige-",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Fascht jedes Chind hät es äiges Zimmer. 2. Mängi Lüüt händ käi äigeni Mäinig."
+ },
+ {
+  "id": 1703,
+  "de": "eigentlich",
+  "tr": "aslında",
+  "deBeispiel": "1. Wir wollten eigentlich Freunde besuchen, aber dann sind wir doch zu Hause geblieben. 2. Die Sängerin nennt sich Arabe",
+  "gsw": "äigetli",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ äigetli Fründe wele bsueche, aber dänn sind mer doch dihäi bliibe."
+ },
+ {
+  "id": 1704,
+  "de": "sich eignen",
+  "tr": "uygun olmak, elverişli olmak",
+  "deBeispiel": "Dieses Hotel eignet sich besonders für Familien mit Kindern.",
+  "gsw": "sich äigne",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Hotel äignet sich bsunders für Familie mit Chind."
+ },
+ {
+  "id": 1705,
+  "de": "eilen",
+  "tr": "acelesi olmak, acil olmak; acele etmek",
+  "deBeispiel": "Es eilt sehr. Bitte machen Sie schnell.",
+  "gsw": "pressiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Es pressiert sehr. Bitte mached Si schnäll.",
+  "ayniLehce": [
+   "sich beeilen (B1)"
+  ]
+ },
+ {
+  "id": 1706,
+  "de": "die Eile",
+  "tr": "acele",
+  "deBeispiel": "1. Ich bin sehr in Eile 2. Das hat keine Eile.",
+  "gsw": "Iil",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Ich bi sehr i de Iil. 2. Das hät käi Iil."
+ },
+ {
+  "id": 1707,
+  "de": "die Einbahnstraße",
+  "tr": "tek yönlü sokak",
+  "deBeispiel": "Die Goethestraße ist jetzt eine Einbahnstraße.",
+  "gsw": "Äibaanstraass",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Goethestraass isch jetz en Äibaanstraass."
+ },
+ {
+  "id": 1708,
+  "de": "einbrechen",
+  "tr": "zorla girmek, (hırsız) girmek",
+  "deBeispiel": "Jemand ist in unsere Wohnung eingebrochen.",
+  "gsw": "iibräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Öpper isch i üüsi Wonig iibroche."
+ },
+ {
+  "id": 1709,
+  "de": "der Einbrecher",
+  "tr": "ev soyguncusu, (eve giren) hırsız",
+  "deBeispiel": "- Die Einbrecher haben nichts gestohlen.",
+  "gsw": "Iibrächer",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Iibrächer händ nüüt gschtole."
+ },
+ {
+  "id": 1710,
+  "de": "der Einbruch",
+  "tr": "hırsızlık, ev soygunu",
+  "deBeispiel": "In der Urlaubszeit gibt es viele Wohnungseinbrüche.",
+  "gsw": "Iibruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Ferieziit git s viil Wonigsiibrüch."
+ },
+ {
+  "id": 1711,
+  "de": "eindeutig",
+  "tr": "kesin, açık",
+  "deBeispiel": "1. Das Ergebnis ist eindeutig. Du hast gewonnen. 2. Du kannst eindeutig besser kochen als ich.",
+  "gsw": "äidüütig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. S Ergäbnis isch äidüütig. Du häsch gwunne. 2. Du chasch äidüütig besser choche als ich."
+ },
+ {
+  "id": 1712,
+  "de": "der Eindruck",
+  "tr": "izlenim",
+  "deBeispiel": "1. Ich finde die Leute auf der Straße ziemlich unfreundlich. Wie ist dein Eindruck? 2. Ich glaube, ich habe bei dem Vors",
+  "gsw": "Iidruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich finde d Lüüt uf de Straass zimli unfründlich. Was isch din Iidruck?"
+ },
+ {
+  "id": 1713,
+  "de": "einerseits",
+  "tr": "bir yandan",
+  "deBeispiel": "Einerseits möchte ich die Reise gern machen, andererseits ist sie zu teuer.",
+  "gsw": "äinersiits",
+  "gswArtikel": null,
+  "gswBeispiel": "Äinersiits möcht ich die Räis gärn mache, anderersiits isch si z tüür."
+ },
+ {
+  "id": 1714,
+  "de": "die Einfahrt",
+  "tr": "giriş yolu",
+  "deBeispiel": "1. Da parkt wieder jemand vor unserer Einfahrt. 2. Können Sie nicht lesen: Einfahrt freihalten!",
+  "gsw": "Iifaart",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Det parkiert scho wider öpper vor üüsere Iifaart. 2. Chönd Si nöd läse: Iifaart friihalte!"
+ },
+ {
+  "id": 1715,
+  "de": "einfallen",
+  "tr": "aklına gelmek",
+  "deBeispiel": "Mir ist wieder eingefallen, wie das Buch heißt.",
+  "gsw": "iifalle",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir isch wider iigfalle, wie s Buech häisst."
+ },
+ {
+  "id": 1716,
+  "de": "der Einfall",
+  "tr": "fikir, buluş",
+  "deBeispiel": "Frag einfach meine Freundin. Sie hat immer gute Einfälle.",
+  "gsw": "Iifall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Frög äifach miini Fründin. Si hät immer gueti Iifäll."
+ },
+ {
+  "id": 1717,
+  "de": "der Einfluss",
+  "tr": "etki, nüfuz",
+  "deBeispiel": "Das Wetter hat Einfluss auf die Gesundheit der Menschen.",
+  "gsw": "Iifluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Wätter hät en Iifluss uf d Gsundhäit vo de Mäntsche."
+ },
+ {
+  "id": 1718,
+  "de": "beeinflussen",
+  "tr": "etkilemek",
+  "deBeispiel": "Dieses Ereignis hat die Wahlen beeinflusst.",
+  "gsw": "beiiflusse",
+  "gswArtikel": null,
+  "gswBeispiel": "Das Eräignis hät d Waale beiiflusst."
+ },
+ {
+  "id": 1719,
+  "de": "einfügen",
+  "tr": "yapıştırmak, eklemek",
+  "deBeispiel": "Markieren Sie zuerst die Zeilen, dann „kopieren“ drücken und dann einfügen.",
+  "gsw": "iifüege",
+  "gswArtikel": null,
+  "gswBeispiel": "Markiered Si zerscht d Ziile, dänn uf «kopiere» drucke und dänn iifüege."
+ },
+ {
+  "id": 1720,
+  "de": "einführen",
+  "tr": "ithal etmek, uygulamaya koymak",
+  "deBeispiel": "1. Dürfen wir diese Ware ins Land einführen? 2. Wir haben letztes Jahr ein neues System eingeführt.",
+  "gsw": "iifüere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Törfed mer die Ware is Land iifüere? 2. Mir händ letscht Jaar es neus Syschtem iigfüert."
+ },
+ {
+  "id": 1721,
+  "de": "die Einführung",
+  "tr": "giriş, tanıtım",
+  "deBeispiel": "Leider habe ich die Einführung des Kurses verpasst.",
+  "gsw": "Iifüerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Läider han ich d Iifüerig vom Kurs verpasst."
+ },
+ {
+  "id": 1722,
+  "de": "einheitlich",
+  "tr": "tek tip, standart",
+  "deBeispiel": "Die Schüler dieser Schule tragen einheitliche Kleidung.",
+  "gsw": "äihäitlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schüeler vo dere Schuel träged äihäitlichi Chläider."
+ },
+ {
+  "id": 1723,
+  "de": "sich einigen",
+  "tr": "anlaşmak, uzlaşmak",
+  "deBeispiel": "Jeder hat einen anderen Vorschlag. Wir können uns leider nicht einigen.",
+  "gsw": "sich äinige",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede hät en andere Vorschlaag. Mir chönd üüs läider nöd äinige."
+ },
+ {
+  "id": 1724,
+  "de": "der Einkauf",
+  "tr": "alışveriş",
+  "deBeispiel": "1. Achten Sie beim Einkauf auf Sonderangebote. 2. Ich habe alle Einkäufe erledigt. Jetzt können wir einen Kaffee trinken",
+  "gsw": "Iichauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Achted Si bim Iichauf uf d Aktione. 2. Ich ha alli Iichäuf erlediget. Jetz chönd mer en Kafi go trinke."
+ },
+ {
+  "id": 1725,
+  "de": "das Einkommen",
+  "tr": "gelir",
+  "deBeispiel": "Bei einem höheren Einkommen muss man mehr Steuern zahlen.",
+  "gsw": "Iikomme",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bi eme hööchere Iikomme mues mer mee Schtüüre zaale."
+ },
+ {
+  "id": 1726,
+  "de": "einnehmen",
+  "tr": "almak, içmek (ilaç)",
+  "deBeispiel": "Wie muss ich die Tropfen einnehmen?",
+  "gsw": "iinää",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie mues ich die Tropfe iinää?"
+ },
+ {
+  "id": 1727,
+  "de": "die Einnahme",
+  "tr": "gelir, kazanç",
+  "deBeispiel": "Unser Geschäft läuft gut. Unsere Einnahmen waren in diesem Monat höher als im letzten.",
+  "gsw": "Iinaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Üüses Gschäft lauft guet. Üüsi Iinaame sind de Monet hööcher gsii als letschte Monet."
+ },
+ {
+  "id": 1728,
+  "de": "einrichten",
+  "tr": "döşemek, kurmak",
+  "deBeispiel": "1. Ich habe meine Wohnung selbst eingerichtet. 2. Wenn Sie Fragen haben, rufen Sie uns an. Wir haben eine extra Telefon-",
+  "gsw": "iirichte",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha miini Wonig sälber iigrichtet. 2. Wänn Si Frage händ, lüüted Si üüs aa. Mir händ extra e Telefon-Hotline iigrichtet."
+ },
+ {
+  "id": 1729,
+  "de": "die Einrichtung",
+  "tr": "mobilya, dekorasyon",
+  "deBeispiel": "Deine Wohnung ist sehr gemütlich, die Einrichtung gefällt mir sehr gut.",
+  "gsw": "Iirichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Diini Wonig isch sehr gmüetlich, d Iirichtig gfallt mer sehr guet."
+ },
+ {
+  "id": 1730,
+  "de": "einsam",
+  "tr": "yalnız",
+  "deBeispiel": "Ohne meine Familie fühle ich mich ein bisschen einsam.",
+  "gsw": "äinsam",
+  "gswArtikel": null,
+  "gswBeispiel": "Ooni miini Familie füül ich mi es bitzli äinsam."
+ },
+ {
+  "id": 1731,
+  "de": "einschalten",
+  "tr": "açmak, çalıştırmak (cihaz)",
+  "deBeispiel": "Können Sie bitte die Heizung einschalten?",
+  "gsw": "iischalte",
+  "gswArtikel": null,
+  "gswBeispiel": "Chönd Si bitte d Häizig iischalte?"
+ },
+ {
+  "id": 1732,
+  "de": "einschließlich",
+  "tr": "dahil",
+  "deBeispiel": "Alles zusammen kostet 200 Euro einschließlich Fahrtkosten.",
+  "gsw": "inklusive",
+  "gswArtikel": null,
+  "gswBeispiel": "Alles zäme choschtet 200 Franke inklusive Faartchöschte.",
+  "ayniLehce": [
+   "inklusive (B1)"
+  ]
+ },
+ {
+  "id": 1733,
+  "de": "das Einschreiben",
+  "tr": "taahhütlü mektup",
+  "deBeispiel": "Ich habe den Brief als Einschreiben geschickt.",
+  "gsw": "Iischriibe",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha de Brief als Iischriibe gschickt."
+ },
+ {
+  "id": 1734,
+  "de": "einsetzen",
+  "tr": "görevlendirmek, kullanmak, çaba göstermek",
+  "deBeispiel": "1. Ich glaube, wir müssen jemanden einsetzen, der sich um die Organisation kümmert. 2. Peter hat sich dafür eingesetzt, ",
+  "gsw": "iisetze",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich glaube, mir müend öpper iisetze, wo sich um d Organisation kümmeret. 2. De Peter hät sich defür iigsetzt, dass alli chönd mitmache."
+ },
+ {
+  "id": 1735,
+  "de": "einstellen",
+  "tr": "işe almak, ayarlamak",
+  "deBeispiel": "1. Die Firma wird in diesem Jahr drei neue Leute einstellen. 2. Das Gerät ist nicht richtig eingestellt.",
+  "gsw": "iischtelle",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Firma schtellt das Jaar drüü neui Lüüt ii. 2. S Grät isch nöd richtig iigschtellt."
+ },
+ {
+  "id": 1737,
+  "de": "eintreten",
+  "tr": "katılmak, üye olmak",
+  "deBeispiel": "Letztes Jahr bin ich in einen Sportverein eingetreten.",
+  "gsw": "iiträtte",
+  "gswArtikel": null,
+  "gswBeispiel": "Letscht Jaar bin ich in en Schportveräin iiträtte."
+ },
+ {
+  "id": 1738,
+  "de": "einverstanden",
+  "tr": "anlaştık, hemfikir",
+  "deBeispiel": "1. Als Termin schlage ich den 3. Mai vor. – Gut, einverstanden! 2. Bist du einverstanden, wenn wir bald nach Hause gehen",
+  "gsw": "iiverschtande",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Als Termin schlaan ich de 3. Mai vor. – Guet, iiverschtande! 2. Bisch iiverschtande, wänn mer bald häi gönd?"
+ },
+ {
+  "id": 1739,
+  "de": "der Einwohner",
+  "tr": "sakin, bir yerde oturan kişi",
+  "deBeispiel": "Berlin hat über drei Millionen Einwohner.",
+  "gsw": "Iiwoner",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Schtadt Züri hät über 400 000 Iiwoner."
+ },
+ {
+  "id": 1740,
+  "de": "die Einwohnerin",
+  "tr": "sakin",
+  "deBeispiel": "Berlin hat über drei Millionen Einwohner.",
+  "gsw": "Iiwonerin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtadt Züri hät über 400 000 Iiwonerinne und Iiwoner."
+ },
+ {
+  "id": 1741,
+  "de": "einzahlen",
+  "tr": "para yatırmak",
+  "deBeispiel": "Ich habe gestern Geld auf mein Bankkonto eingezahlt.",
+  "gsw": "iizaale",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha geschter Gäld uf mis Bankkonto iizaalt."
+ },
+ {
+  "id": 1742,
+  "de": "die Einzahlung",
+  "tr": "para yatırma",
+  "deBeispiel": "Sie sollten die Einzahlung pünktlich machen.",
+  "gsw": "Iizaalig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si sötted d Iizaalig pünktlich mache."
+ },
+ {
+  "id": 1743,
+  "de": "einzeln",
+  "tr": "tek tek, ayrı ayrı",
+  "deBeispiel": "1. Dieses Mineralwasser gibt es nur als Sechserpack, nicht einzeln. 2. Die Schüler mussten einzeln zum Schularzt kommen.",
+  "gsw": "äinzeln",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Das Mineraalwasser git s nume im Sächserpack, nöd äinzeln. 2. D Schüeler händ äinzeln zum Schuelarzt müese choo."
+ },
+ {
+  "id": 1745,
+  "de": "die Einzelheit",
+  "tr": "ayrıntı, detay",
+  "deBeispiel": "Du musst mir das in allen Einzelheiten erzählen.",
+  "gsw": "Äinzelhäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Du muesch mer das i allne Äinzelhäite verzelle."
+ },
+ {
+  "id": 1746,
+  "de": "einzige",
+  "tr": "tek, yegâne",
+  "deBeispiel": "1. Wir waren die einzigen Gäste. 2. Das war das einzige Mal, dass ich ihn gesehen habe.",
+  "gsw": "äinzig-",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir sind di äinzige Gescht gsii. 2. Das isch s äinzige Mal gsii, wo ich en gsee ha."
+ },
+ {
+  "id": 1748,
+  "de": "die Eisenbahn",
+  "tr": "demiryolu, tren",
+  "deBeispiel": "Die Kinder wünschen sich eine elektrische Eisenbahn.",
+  "gsw": "Iisebaan",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chind wünsched sich en elektrischi Iisebaan."
+ },
+ {
+  "id": 1749,
+  "de": "elegant",
+  "tr": "şık",
+  "deBeispiel": "Ich finde dein Kleid sehr elegant.",
+  "gsw": "elegant",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde dis Chläid sehr elegant."
+ },
+ {
+  "id": 1750,
+  "de": "elektrisch",
+  "tr": "elektrikli",
+  "deBeispiel": "Wir kochen nicht mit Gas, sondern elektrisch.",
+  "gsw": "elektrisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir choched nöd mit Gas, mir choched elektrisch."
+ },
+ {
+  "id": 1751,
+  "de": "Elektro-",
+  "tr": "elektrik",
+  "deBeispiel": "z.B. Elektrogeschäft, Elektroingenieur, Elektroherd",
+  "gsw": "Elektro-",
+  "gswArtikel": null,
+  "gswBeispiel": "z. B. Elektrogschäft, Elektroingenieur, Elektrohärd"
+ },
+ {
+  "id": 1752,
+  "de": "elektronisch",
+  "tr": "elektronik",
+  "deBeispiel": "Wir sollten die Daten elektronisch bearbeiten, sonst dauert es zu lange.",
+  "gsw": "elektronisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sötted d Date elektronisch bearbeite, susch gaats z lang."
+ },
+ {
+  "id": 1753,
+  "de": "empfangen",
+  "tr": "almak, karşılamak",
+  "deBeispiel": "1. Wir können mit unserem Fernseher über 30 Programme empfangen. 2. Die Gäste wurden sehr herzlich empfangen.",
+  "gsw": "empfange",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir chönd mit eusem Fernseh über 30 Programm empfange. 2. D Gäscht sind sehr herzlich empfange worde."
+ },
+ {
+  "id": 1754,
+  "de": "der Empfang",
+  "tr": "alım, çekim, resepsiyon",
+  "deBeispiel": "1. Bitte den Empfang bestätigen! 2. Ich bin mit dem Fernseher nicht zufrieden. Der Empfang ist sehr schlecht. 3. Zur Fir",
+  "gsw": "Empfang",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Bitte de Empfang beschtätige! 2. Ich bi mit em Fernseh nöd zfride. De Empfang isch sehr schlächt."
+ },
+ {
+  "id": 1755,
+  "de": "die Empfehlung",
+  "tr": "tavsiye, öneri (biri için)",
+  "deBeispiel": "Ich rufe auf Empfehlung von Herrn Weber an.",
+  "gsw": "Empfehlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich lüüte uf Empfehlig vom Herr Weber aa."
+ },
+ {
+  "id": 1756,
+  "de": "endgültig",
+  "tr": "kesin, nihai",
+  "deBeispiel": "1. Damit ist das Problem endgültig gelöst. 2. Der endgültige Termin steht noch nicht fest. 3. Das Ergebnis ist noch nich",
+  "gsw": "endgültig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Demit isch s Problem endgültig glööst. 2. De endgültig Termin schtaat na nöd fescht."
+ },
+ {
+  "id": 1757,
+  "de": "die Energie",
+  "tr": "enerji",
+  "deBeispiel": "1. Wir müssen Energie sparen. 2. Abends habe ich keine Energie mehr, um Sport zu machen.",
+  "gsw": "Energii",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Mir müend Energii schpare. 2. Am Aabig han ich kei Energii me, zum na Schport z mache."
+ },
+ {
+  "id": 1758,
+  "de": "der Enkel",
+  "tr": "torun (erkek)",
+  "deBeispiel": "Alle meine Enkel gehen schon zur Schule.",
+  "gsw": "Änkel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Alli mini Änkel gönd scho i d Schuel."
+ },
+ {
+  "id": 1759,
+  "de": "die Enkelin",
+  "tr": "torun (kız)",
+  "deBeispiel": "Alle meine Enkel gehen schon zur Schule.",
+  "gsw": "Änkelin",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alli mini Änkelinne gönd scho i d Schuel."
+ },
+ {
+  "id": 1760,
+  "de": "entdecken",
+  "tr": "keşfetmek, fark etmek",
+  "deBeispiel": "Ich habe in deinem Brief noch ein paar Fehler entdeckt.",
+  "gsw": "entdecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha i dim Brief na es paar Fääler entdeckt."
+ },
+ {
+  "id": 1761,
+  "de": "entfernen",
+  "tr": "uzaklaştırmak, kaldırmak",
+  "deBeispiel": "1. Der Müll muss dringend entfernt werden. 2. Das Hotel liegt etwa 100 m vom Strand entfernt.",
+  "gsw": "entferne",
+  "gswArtikel": null,
+  "gswBeispiel": "1. De Güsel muess dringend entfernt wärde. 2. S Hotel liit öppe 100 Meter vom Schtrand entfernt."
+ },
+ {
+  "id": 1762,
+  "de": "die Entfernung",
+  "tr": "mesafe, uzaklık",
+  "deBeispiel": "Aus dieser Entfernung ist das nicht zu erkennen.",
+  "gsw": "Entfernig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Us dere Entfernig cha mer das nöd erchenne."
+ },
+ {
+  "id": 1763,
+  "de": "entgegenkommen",
+  "tr": "karşıdan gelmek, kolaylık göstermek",
+  "deBeispiel": "1. Auf dem Weg nach Hause ist mir mein Nachbar entgegengekommen. 2. Können Sie mir mit dem Preis entgegenkommen?",
+  "gsw": "entgegechoo",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Uf em Wääg hei isch mer min Nachber entgegechoo. 2. Chönd Si mer bim Priis entgegechoo?"
+ },
+ {
+  "id": 1764,
+  "de": "enthalten",
+  "tr": "içermek",
+  "deBeispiel": "1. Diese Schokolade enthält nur sehr wenig Zucker. 2. Ist die Änderung im Preis enthalten?",
+  "gsw": "enthalte",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Die Schoggi enthaltet nur ganz wenig Zucker. 2. Isch d Änderig im Priis enthalte?"
+ },
+ {
+  "id": 1765,
+  "de": "entlang",
+  "tr": "boyunca",
+  "deBeispiel": "Gehen Sie diese Straße entlang. Dann kommen Sie direkt zum Bahnhof.",
+  "gsw": "entlang",
+  "gswArtikel": null,
+  "gswBeispiel": "Gönd Si die Straass entlang, dänn chömed Si diräkt zum Bahnhof."
+ },
+ {
+  "id": 1766,
+  "de": "entlassen",
+  "tr": "taburcu etmek, işten çıkarmak",
+  "deBeispiel": "1. Die Operation ist gut gelaufen. Wir können Sie nächste Woche aus dem Krankenhaus entlassen. 2. Die Firma hat viele Mi",
+  "gsw": "entlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Operation isch guet gloffe. Mir chönd Si nöchscht Wuche us em Schpital entlaa. 2. D Firma hät vil Mitarbeiter entlaa."
+ },
+ {
+  "id": 1767,
+  "de": "die Entlassung",
+  "tr": "işten çıkarma",
+  "deBeispiel": "Seine Entlassung aus der Firma kam überraschend.",
+  "gsw": "Entlassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Entlassig us de Firma isch überraschend choo."
+ },
+ {
+  "id": 1768,
+  "de": "entscheiden",
+  "tr": "karar vermek",
+  "deBeispiel": "1. Das kann ich nicht allein entscheiden, da muss ich erst fragen. 2. Für welchen Anzug haben Sie sich entschieden?",
+  "gsw": "entschäide",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Das chan ich nöd eläi entschäide, da muess ich zerscht frööge. 2. Für welen Aazug händ Si sich entschide?"
+ },
+ {
+  "id": 1769,
+  "de": "die Entscheidung",
+  "tr": "karar",
+  "deBeispiel": "Diese wichtige Entscheidung möchte ich zuerst mit meinem Mann besprechen.",
+  "gsw": "Entschäidig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die wichtig Entschäidig will ich zerscht mit mim Maa beschpräche."
+ },
+ {
+  "id": 1770,
+  "de": "unentschieden",
+  "tr": "berabere, kararsız",
+  "deBeispiel": "1. Es steht unentschieden zwischen den beiden Mannschaften. 2. Ich bin noch immer unentschieden, was ich morgen tun soll",
+  "gsw": "unentschide",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Es schtaat unentschide zwüsched de bäide Mannschafte. 2. Ich bi immer na unentschide, was ich morn söll mache."
+ },
+ {
+  "id": 1771,
+  "de": "sich entschließen",
+  "tr": "karar vermek",
+  "deBeispiel": "Mein Nachbar hat sich nun doch entschlossen, sein Auto zu verkaufen.",
+  "gsw": "sich entschlüüsse",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Nachber entschlüüsst sich jetz doch, sis Auto z verchaufe."
+ },
+ {
+  "id": 1772,
+  "de": "entschlossen",
+  "tr": "kararlı",
+  "deBeispiel": "Ich bin fest entschlossen, diese Ausbildung fertigzumachen.",
+  "gsw": "entschlosse",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi fescht entschlosse, die Uusbildig fertig z mache."
+ },
+ {
+  "id": 1773,
+  "de": "entsorgen",
+  "tr": "elden çıkarmak, imha etmek",
+  "deBeispiel": "Wie kann ich meine alte Kaffeemaschine entsorgen?",
+  "gsw": "entsorge",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie chan ich mini alt Kafimaschine entsorge?"
+ },
+ {
+  "id": 1774,
+  "de": "entspannend",
+  "tr": "rahatlatıcı",
+  "deBeispiel": "Der Urlaub war sehr entspannend.",
+  "gsw": "entschpannend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ferie sind sehr entschpannend gsii."
+ },
+ {
+  "id": 1775,
+  "de": "entstehen",
+  "tr": "oluşmak, ortaya çıkmak",
+  "deBeispiel": "1. Hier entsteht ein neues Einkaufszentrum. 2. Andere Kosten entstehen nicht.",
+  "gsw": "entschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Da entschtaat es neus Iichaufszentrum. 2. Susch entschtönd käi wiitere Chöschte."
+ },
+ {
+  "id": 1776,
+  "de": "enttäuschen",
+  "tr": "hayal kırıklığına uğratmak",
+  "deBeispiel": "1. Leider hat mich sein Verhalten enttäuscht. 2. Wir waren von dem Konzert sehr enttäuscht. 3. Das Ergebnis war enttäusc",
+  "gsw": "enttüüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Läider hät mich sis Verhalte enttüüscht. 2. Mir sind vom Konzärt sehr enttüüscht gsii."
+ },
+ {
+  "id": 1777,
+  "de": "die Enttäuschung",
+  "tr": "hayal kırıklığı",
+  "deBeispiel": "Das Endspiel war eine große Enttäuschung.",
+  "gsw": "Enttüüschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Ändschpiil isch e groossi Enttüüschig gsii."
+ },
+ {
+  "id": 1778,
+  "de": "entweder ... oder",
+  "tr": "ya ... ya da",
+  "deBeispiel": "Nur einer kann gewinnen, entweder du oder ich.",
+  "gsw": "entweder ... oder",
+  "gswArtikel": null,
+  "gswBeispiel": "Nur äine cha gwünne, entweder du oder ich."
+ },
+ {
+  "id": 1779,
+  "de": "entwickeln",
+  "tr": "geliştirmek",
+  "deBeispiel": "1. Unser Sohn entwickelt sich gut in der Schule. 2. Die Firma hat ein neues Produkt entwickelt.",
+  "gsw": "entwickle",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Euse Sohn entwicklet sich guet i de Schuel. 2. D Firma hät es neus Produkt entwicklet."
+ },
+ {
+  "id": 1780,
+  "de": "die Entwicklung",
+  "tr": "gelişim, gelişme",
+  "deBeispiel": "Genug Schlaf ist wichtig für die Entwicklung Ihres Kindes.",
+  "gsw": "Entwicklig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gnueg Schlaaf isch wichtig für d Entwicklig vo Irem Chind."
+ },
+ {
+  "id": 1781,
+  "de": "die Erde",
+  "tr": "toprak, dünya",
+  "deBeispiel": "1. Die Pflanzen brauchen neue Erde. 2. Mein Sohn hat das Glas auf die Erde fallen lassen.",
+  "gsw": "Ärde",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. D Pflanze bruuched neui Ärde. 2. Min Sohn hät s Glas uf d Ärde gheie laa."
+ },
+ {
+  "id": 1782,
+  "de": "der Erdapfel",
+  "tr": "patates (Avusturya)",
+  "deBeispiel": "3. An der Konferenz nehmen Vertreter aus fast allen Ländern der Erde teil. Kann ich bitte noch Erdäpfel bekommen?",
+  "gsw": "Härdöpfel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Chan ich bitte na Härdöpfel übercho?",
+  "ayniLehce": [
+   "Kartoffel (A1)"
+  ]
+ },
+ {
+  "id": 1784,
+  "de": "das Ereignis",
+  "tr": "olay",
+  "deBeispiel": "1. Alle Zeitungen haben über diese Ereignisse berichtet. 2. Das Konzert war ein großes Ereignis.",
+  "gsw": "Eräignis",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Alli Ziitige händ über die Eräignis brichtet. 2. S Konzärt isch es groosses Eräignis gsii."
+ },
+ {
+  "id": 1785,
+  "de": "sich ereignen",
+  "tr": "meydana gelmek, olmak",
+  "deBeispiel": "Der Unfall ereignete sich am frühen Morgen.",
+  "gsw": "sich eräigne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Unfall hät sich am früene Morge eräignet."
+ },
+ {
+  "id": 1786,
+  "de": "erfahren",
+  "tr": "öğrenmek",
+  "deBeispiel": "Wann erfahren wir das Ergebnis der Prüfung?",
+  "gsw": "erfaare",
+  "gswArtikel": null,
+  "gswBeispiel": "Wänn erfaared mir s Resultat vo de Prüefig?"
+ },
+ {
+  "id": 1787,
+  "de": "erfinden",
+  "tr": "icat etmek",
+  "deBeispiel": "Das Rad wurde vor ca. 6000 Jahren erfunden.",
+  "gsw": "erfinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht au emal öppis erfinde, wo d Wält veränderet."
+ },
+ {
+  "id": 1788,
+  "de": "die Erfindung",
+  "tr": "icat, buluş",
+  "deBeispiel": "Die Erfindung des Buchdrucks war sehr wichtig für die Menschen.",
+  "gsw": "Erfindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erfindig vom Buechdruck isch für d Mäntsche sehr wichtig gsii."
+ },
+ {
+  "id": 1789,
+  "de": "der Erfolg",
+  "tr": "başarı",
+  "deBeispiel": "1. Der Film war ein großer Erfolg. 2. Ich wünsche Ihnen viel Erfolg bei der Prüfung.",
+  "gsw": "Erfolg",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. De Film isch en groosse Erfolg gsii. 2. Ich wünsche Ine vil Erfolg bi de Prüefig."
+ }
+]

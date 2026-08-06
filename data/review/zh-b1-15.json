@@ -1,0 +1,1032 @@
+[
+ {
+  "id": 2920,
+  "de": "die Umwelt",
+  "tr": "çevre",
+  "deBeispiel": "Alte Autos sind ein Problem für die Umwelt.",
+  "gsw": "Umwält",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Auto sind es Problem für d Umwält."
+ },
+ {
+  "id": 2921,
+  "de": "der Umweltschutz",
+  "tr": "çevre koruma",
+  "deBeispiel": "Das Land muss mehr Geld für Umweltschutz ausgeben.",
+  "gsw": "Umwältschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Land mues me Gäld für de Umwältschutz uusgää."
+ },
+ {
+  "id": 2922,
+  "de": "die Umweltverschmutzung",
+  "tr": "çevre kirliliği",
+  "deBeispiel": "Die Umweltverschmutzung nimmt weiter zu.",
+  "gsw": "Umwältverschmutzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Umwältverschmutzig nimmt wiiter zue."
+ },
+ {
+  "id": 2923,
+  "de": "un-",
+  "tr": "olumsuzluk öneki",
+  "deBeispiel": "1. Der Verkäufer war sehr unfreundlich. 2. Dieses Geräusch ist mir unangenehm. 3. Er kam wie immer unpünktlich.",
+  "gsw": "un-",
+  "gswArtikel": null,
+  "gswBeispiel": "1. De Verchäufer isch sehr unfründlich gsii. 2. Er isch wie immer unpünktlich choo."
+ },
+ {
+  "id": 2924,
+  "de": "ungefähr",
+  "tr": "yaklaşık, aşağı yukarı",
+  "deBeispiel": "Wie weit ist es bis zum Bahnhof? – Nicht weit, ungefähr zehn Minuten zu Fuß.",
+  "gsw": "öppe",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie wiit isch es bis zum Bahnhof? – Nöd wiit, öppe zää Minuute z Fuess.",
+  "ayniLehce": [
+   "etwa (B1)"
+  ]
+ },
+ {
+  "id": 2925,
+  "de": "ungewöhnlich",
+  "tr": "alışılmadık, olağandışı",
+  "deBeispiel": "Ich finde diese Speise ungewöhnlich, aber sie schmeckt gut.",
+  "gsw": "ungwöönlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde das Ässe ungwöönlich, aber es schmöckt guet."
+ },
+ {
+  "id": 2926,
+  "de": "unglaublich",
+  "tr": "inanılmaz",
+  "deBeispiel": "Es ist unglaublich. Schon wieder so ein Unglück.",
+  "gsw": "unglaublich",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch unglaublich. Scho wider so es Unglück."
+ },
+ {
+  "id": 2927,
+  "de": "das Unglück",
+  "tr": "kaza, felaket, talihsizlik",
+  "deBeispiel": "Bei dem Unglück gab es viele Verletzte.",
+  "gsw": "Unglück",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bi däm Unglück hät s vil Verletzti ggää."
+ },
+ {
+  "id": 2928,
+  "de": "unheimlich",
+  "tr": "ürkütücü, tekinsiz",
+  "deBeispiel": "1. Ich mag dieses Haus nicht. Es sieht unheimlich aus. 2. Diese Person ist mir unheimlich. 3. Lass uns umkehren. Mir wir",
+  "gsw": "unheimlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mag das Huus nöd. Es gseet unheimlich us."
+ },
+ {
+  "id": 2929,
+  "de": "die Uniform",
+  "tr": "üniforma",
+  "deBeispiel": "In der Schule, die sie besucht, trägt man Uniformen.",
+  "gsw": "Uniform",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Schuel, wo si gaat, träit me Uniforme."
+ },
+ {
+  "id": 2931,
+  "de": "unterbrechen",
+  "tr": "kesmek, sözünü kesmek, ara vermek",
+  "deBeispiel": "1. Wir unterbrechen die Sendung für eine wichtige Nachricht. 2. Bitte unterbrich mich nicht, wenn ich spreche.",
+  "gsw": "underbräche",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir underbräched d Sändig für e wichtigi Naachricht. 2. Bitte underbrich mi nöd, wänn ich rede."
+ },
+ {
+  "id": 2932,
+  "de": "sich unterhalten",
+  "tr": "sohbet etmek, eğlenmek",
+  "deBeispiel": "1. Wir haben uns über das Fußballspiel unterhalten. 2. Ich habe mich bei der Party sehr gut unterhalten.",
+  "gsw": "underhalte",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Mir händ öis über s Fuessballschpiil underhalte. 2. Ich ha mi a de Party sehr guet underhalte."
+ },
+ {
+  "id": 2933,
+  "de": "die Unterhaltung",
+  "tr": "sohbet, eğlence",
+  "deBeispiel": "Wir wünschen Ihnen gute Unterhaltung.",
+  "gsw": "Underhaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir wünsched Ine gueti Underhaltig."
+ },
+ {
+  "id": 2934,
+  "de": "die Unterlagen",
+  "tr": "belgeler, dosya evrakları (başvuru, iş belgeleri)",
+  "deBeispiel": "Ich schicke Ihnen alle Unterlagen mit der Post zu.",
+  "gsw": "Underlage",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich schicke Ine ali Underlage mit de Poscht."
+ },
+ {
+  "id": 2935,
+  "de": "unterlassen",
+  "tr": "kaçınmak, yapmamak",
+  "deBeispiel": "Das Rauchen auf den Gängen ist zu unterlassen.",
+  "gsw": "underlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "S Rauche i de Gäng isch z underlaa."
+ },
+ {
+  "id": 2936,
+  "de": "der Unternehmer",
+  "tr": "girişimci, işadamı",
+  "deBeispiel": "- Sie ist erfolgreiche Unternehmerin.",
+  "gsw": "Undernämer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si isch e erfolgriichi Undernämerin."
+ },
+ {
+  "id": 2937,
+  "de": "unterrichten",
+  "tr": "ders vermek, öğretmek",
+  "deBeispiel": "Meine Frau unterrichtet Spanisch.",
+  "gsw": "underrichte",
+  "gswArtikel": null,
+  "gswBeispiel": "Miini Frau underrichtet Schpanisch."
+ },
+ {
+  "id": 2938,
+  "de": "untersagt",
+  "tr": "yasak",
+  "deBeispiel": "Es ist untersagt, hier zu rauchen.",
+  "gsw": "undersäit",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch undersäit, da z rauche."
+ },
+ {
+  "id": 2939,
+  "de": "unterscheiden",
+  "tr": "ayırt etmek, ayırmak",
+  "deBeispiel": "Ihr seid euch sehr ähnlich. Auf dem Foto kann man euch beide nicht unterscheiden.",
+  "gsw": "underschäide",
+  "gswArtikel": null,
+  "gswBeispiel": "Ir sind enand sehr änlich. Uf em Foto cha me öi bäidi nöd underschäide."
+ },
+ {
+  "id": 2940,
+  "de": "unterschiedlich",
+  "tr": "farklı, değişik",
+  "deBeispiel": "Mein Bruder und ich sind sehr unterschiedlich. Er interessiert sich für Mathematik, ich mich für Sprachen.",
+  "gsw": "underschidlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Miin Brüeder und ich sind sehr underschidlich. Er interessiert sich für Mathi, ich für Schpraache."
+ },
+ {
+  "id": 2941,
+  "de": "unterstreichen",
+  "tr": "altını çizmek",
+  "deBeispiel": "Wir sollen alle wichtigen Wörter unterstreichen.",
+  "gsw": "underschtriiche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sölled ali wichtige Wörter underschtriiche."
+ },
+ {
+  "id": 2942,
+  "de": "unterstützen",
+  "tr": "desteklemek",
+  "deBeispiel": "Sie unterstützen mich, wo sie nur können.",
+  "gsw": "underschtütze",
+  "gswArtikel": null,
+  "gswBeispiel": "Si underschtützed mi, wo si nu chönd."
+ },
+ {
+  "id": 2943,
+  "de": "die Unterstützung",
+  "tr": "destek",
+  "deBeispiel": "Ich nehme Ihre Unterstützung gern an.",
+  "gsw": "Underschtützig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich nime Iri Underschtützig gärn aa."
+ },
+ {
+  "id": 2944,
+  "de": "die Untersuchung",
+  "tr": "muayene, inceleme",
+  "deBeispiel": "Ich habe morgen eine Untersuchung im Krankenhaus.",
+  "gsw": "Undersuechig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha morn e Undersuechig im Schpital."
+ },
+ {
+  "id": 2945,
+  "de": "unterwegs",
+  "tr": "yolda",
+  "deBeispiel": "1. Warte auf mich. Ich bin unterwegs und komme gleich. 2. Unterwegs können wir noch etwas essen. 3. Stell dir vor, der B",
+  "gsw": "underwägs",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wart uf mi. Ich bi underwägs und chume grad. 2. Underwägs chönd mir no öppis ässe."
+ },
+ {
+  "id": 2946,
+  "de": "die Urkunde",
+  "tr": "belge, sertifika, diploma",
+  "deBeispiel": "Wenn wir das Spiel gewinnen, bekommen wir eine Urkunde.",
+  "gsw": "Urkund",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wänn mir s Schpiil gwünned, überchömed mir e Urkund."
+ },
+ {
+  "id": 2947,
+  "de": "die Ursache",
+  "tr": "neden, sebep",
+  "deBeispiel": "1. Kennt man schon die Unfallursache? 2. Vielen Dank! – Keine Ursache!",
+  "gsw": "Ursach",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Känt me scho d Unfallursach? 2. Merci vilmal! – Kei Ursach!"
+ },
+ {
+  "id": 2948,
+  "de": "verursachen",
+  "tr": "neden olmak, sebep olmak",
+  "deBeispiel": "Dieser Busfahrer verursachte den Unfall.",
+  "gsw": "verursache",
+  "gswArtikel": null,
+  "gswBeispiel": "De Buschauffeur hät de Unfall verursacht."
+ },
+ {
+  "id": 2949,
+  "de": "ursprünglich",
+  "tr": "başlangıçta, aslında",
+  "deBeispiel": "Ursprünglich wollte ich in einem Restaurant arbeiten. Aber dann bin ich Busfahrerin geworden.",
+  "gsw": "urschprünglich",
+  "gswArtikel": null,
+  "gswBeispiel": "Urschprünglich han ich wele imene Restaurant schaffe. Aber dänn bin ich Buschauffeurin worde."
+ },
+ {
+  "id": 2950,
+  "de": "das Urteil",
+  "tr": "karar, hüküm, yargı",
+  "deBeispiel": "1. Dein Urteil ist für mich sehr wichtig. 2. Das Urteil des Gerichts erscheint mir zu hart.",
+  "gsw": "Urtäil",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Diis Urtäil isch für mi sehr wichtig. 2. S Urtäil vom Gricht schiint mir z hert."
+ },
+ {
+  "id": 2951,
+  "de": "die Vase",
+  "tr": "vazo",
+  "deBeispiel": "Hast du eine Vase für die Blumen?",
+  "gsw": "Vase",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch e Vase für d Blueme?"
+ },
+ {
+  "id": 2952,
+  "de": "vegetarisch",
+  "tr": "vejetaryen",
+  "deBeispiel": "1. Ich mag kein Fleisch. Ich esse am liebsten vegetarisch. 2. Haben Sie auch vegetarische Gerichte?",
+  "gsw": "vegetarisch",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich mag kei Fläisch. Ich isse am liebschte vegetarisch. 2. Händ Si au öppis Vegetarischs?"
+ },
+ {
+  "id": 2953,
+  "de": "das Velo",
+  "tr": "bisiklet (İsviçre)",
+  "deBeispiel": "1. Sie fährt jeden Morgen mit dem Velo zur Arbeit. 2. Am Sonntag fahren wir oft Velo.",
+  "gsw": "Velo",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Si fahrt jede Morge mit em Velo go schaffe. 2. Am Sunntig fahred mir oft Velo.",
+  "ayniLehce": [
+   "Fahrrad (A1)"
+  ]
+ },
+ {
+  "id": 2954,
+  "de": "sich verabreden",
+  "tr": "buluşmak üzere sözleşmek, randevulaşmak",
+  "deBeispiel": "Wir haben uns mit Freunden verabredet. Wir wollen zusammen essen.",
+  "gsw": "abmache",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ mit de Fründe abgmacht – mir gönd zäme go ässe.",
+  "ayniLehce": [
+   "vereinbaren (A2)",
+   "abmachen (B1)"
+  ]
+ },
+ {
+  "id": 2955,
+  "de": "verabredet",
+  "tr": "randevusu olan, sözleşmiş",
+  "deBeispiel": "Tut mir leid, ich habe keine Zeit. Ich bin mit meiner Freundin verabredet.",
+  "gsw": "abgmacht",
+  "gswArtikel": null,
+  "gswBeispiel": "Tuet mir läid, ich ha kei Ziit. Ich ha mit miinere Fründin öppis abgmacht."
+ },
+ {
+  "id": 2956,
+  "de": "die Verabredung",
+  "tr": "randevu, buluşma",
+  "deBeispiel": "Ich habe um 15 Uhr eine Verabredung mit Klaus.",
+  "gsw": "Abmachig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich ha am drüü e Abmachig mit em Klaus."
+ },
+ {
+  "id": 2957,
+  "de": "sich verabschieden",
+  "tr": "vedalaşmak",
+  "deBeispiel": "1. Ich wurde von meinen Freunden sehr nett verabschiedet. 2. Es ist schon 23 Uhr. Ich möchte mich verabschieden.",
+  "gsw": "verabschide",
+  "gswArtikel": null,
+  "gswBeispiel": "Es isch scho elfi. Ich möcht mi verabschide."
+ },
+ {
+  "id": 2958,
+  "de": "der Abschied",
+  "tr": "veda",
+  "deBeispiel": "Der Abschied von meinen Freunden fiel mir schwer.",
+  "gsw": "Abschiid",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Abschiid vo miine Fründe isch mir schwär gfale."
+ },
+ {
+  "id": 2959,
+  "de": "sich verändern",
+  "tr": "değişmek",
+  "deBeispiel": "1. Das geht so nicht. Wir müssen die Organisation verändern. 2. Wir haben uns lange nicht gesehen. Aber du hast dich gar",
+  "gsw": "verändere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ öis lang nöd gsee. Aber du häsch di gar nöd veränderet."
+ },
+ {
+  "id": 2960,
+  "de": "verantwortlich",
+  "tr": "sorumlu",
+  "deBeispiel": "Sie sind für Ihre Kinder verantwortlich.",
+  "gsw": "verantwortlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Si sind für Iri Chind verantwortlich."
+ },
+ {
+  "id": 2961,
+  "de": "die Verantwortung",
+  "tr": "sorumluluk",
+  "deBeispiel": "Sie tragen die Verantwortung für Ihre Kinder.",
+  "gsw": "Verantwortig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si träged d Verantwortig für Iri Chind."
+ },
+ {
+  "id": 2962,
+  "de": "sich verbessern",
+  "tr": "kendini geliştirmek, ilerlemek, düzelmek",
+  "deBeispiel": "1. Ich habe mein Deutsch verbessert. 2. Meine Kinder haben sich in der Schule verbessert.",
+  "gsw": "verbessere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha miis Tüütsch verbesseret. 2. Miini Chind händ sich i de Schuel verbesseret.",
+  "ayniLehce": [
+   "verbessern (A2)"
+  ]
+ },
+ {
+  "id": 2963,
+  "de": "verbieten",
+  "tr": "yasaklamak",
+  "deBeispiel": "Ich werde meinen Kindern das Rauchen verbieten.",
+  "gsw": "verbüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wird miine Chind s Rauche verbüüte."
+ },
+ {
+  "id": 2964,
+  "de": "das Verbot",
+  "tr": "yasak",
+  "deBeispiel": "Ich bin für das Verbot dieses neuen Videospiels.",
+  "gsw": "Verbot",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich bi für s Verbot vo däm nöie Videogame."
+ },
+ {
+  "id": 2965,
+  "de": "verbinden",
+  "tr": "bağlamak, sarmak",
+  "deBeispiel": "1. Wir müssen die Wunde sofort verbinden.",
+  "gsw": "verbinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend d Wunde sofort verbinde."
+ },
+ {
+  "id": 2966,
+  "de": "die Verbindung",
+  "tr": "bağlantı",
+  "deBeispiel": "2. Sie sind falsch verbunden! Hier ist Müller, nicht Meyer. 1. Die Verbindung ist sehr gut. Ich kann direkt mit diesem Z",
+  "gsw": "Verbindig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verbindig isch sehr guet. Ich cha diräkt mit däm Zug fahre."
+ },
+ {
+  "id": 2967,
+  "de": "verbrauchen",
+  "tr": "tüketmek, harcamak",
+  "deBeispiel": "Wie viel Benzin verbraucht dein Auto?",
+  "gsw": "verbruuche",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie vil Benzin verbruucht diis Auto?"
+ },
+ {
+  "id": 2968,
+  "de": "der Verbrecher",
+  "tr": "suçlu (erkek)",
+  "deBeispiel": "Die Polizei hat den Verbrecher verhaftet.",
+  "gsw": "Verbrächer",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Polizei hät de Verbrächer verhaftet."
+ },
+ {
+  "id": 2969,
+  "de": "die Verbrecherin",
+  "tr": "suçlu (kadın)",
+  "deBeispiel": "Die Polizei hat den Verbrecher verhaftet.",
+  "gsw": "Verbrächerin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Polizei hät d Verbrächerin verhaftet."
+ },
+ {
+  "id": 2970,
+  "de": "sich verbrennen",
+  "tr": "yakmak, yanmak",
+  "deBeispiel": "1. Ich werde alle Briefe verbrennen. 2. Der Herd war noch heiß. Ich habe mich verbrannt.",
+  "gsw": "verbränne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Herd isch no häiss gsii. Ich ha mi verbrännt."
+ },
+ {
+  "id": 2971,
+  "de": "verbringen",
+  "tr": "geçirmek",
+  "deBeispiel": "Wie haben Sie Ihren Urlaub verbracht?",
+  "gsw": "verbringe",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo wänd ir öichi Ferie verbringe?"
+ },
+ {
+  "id": 2972,
+  "de": "der Verdacht",
+  "tr": "şüphe",
+  "deBeispiel": "1. Wer hat das Geld aus der Kasse genommen? – Ich weiß es nicht, aber ich habe einen Verdacht. 2. Wen haben Sie in Verda",
+  "gsw": "Verdacht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wär hät s Gäld us de Kasse gno? – Ich wäiss es nöd, aber ich ha en Verdacht."
+ },
+ {
+  "id": 2973,
+  "de": "verdächtig",
+  "tr": "şüpheli",
+  "deBeispiel": "1. Die Tür war nicht abgeschlossen. Das ist verdächtig. 2. Haben Sie etwas Verdächtiges gesehen?",
+  "gsw": "verdächtig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. D Türe isch nöd abgschlosse gsii. Das isch verdächtig. 2. Händ Si öppis Verdächtigs gsee?"
+ },
+ {
+  "id": 2974,
+  "de": "die Vergangenheit",
+  "tr": "geçmiş",
+  "deBeispiel": "In der Vergangenheit war das anders.",
+  "gsw": "Vergangehäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Vergangehäit isch das andersch gsii."
+ },
+ {
+  "id": 2975,
+  "de": "vergeblich",
+  "tr": "boşuna, sonuçsuz",
+  "deBeispiel": "Ich habe vergeblich versucht dich anzurufen.",
+  "gsw": "vergäbe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha vergäbe versuecht, dir aazlüüte."
+ },
+ {
+  "id": 2976,
+  "de": "der Vergleich",
+  "tr": "karşılaştırma",
+  "deBeispiel": "1. Ein Vergleich ist schwer möglich. 2. Im Vergleich zum Wetter letzte Woche ist es heute warm.",
+  "gsw": "Vergliich",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. En Vergliich isch schwär möglich. 2. Im Vergliich zum Wätter vo letschter Wuche isch es hüt warm."
+ },
+ {
+  "id": 2977,
+  "de": "sich vergnügen",
+  "tr": "eğlenmek, keyif almak",
+  "deBeispiel": "Auf der Party habe ich mich sehr vergnügt.",
+  "gsw": "vergnüege",
+  "gswArtikel": null,
+  "gswBeispiel": "A de Party han ich mi sehr guet vergnüegt.",
+  "ayniLehce": [
+   "Vergnügen (B1)"
+  ]
+ },
+ {
+  "id": 2978,
+  "de": "das Vergnügen",
+  "tr": "keyif, zevk, eğlence",
+  "deBeispiel": "- 1. Es ist ein Vergnügen, den Kindern beim Spielen zuzusehen. 2. Ich wünsche dir viel Vergnügen bei der Party!",
+  "gsw": "Vergnüege",
+  "gswArtikel": "s",
+  "gswBeispiel": "1. Es isch es Vergnüege, de Chind bim Schpile zuezluege. 2. Ich wünsche dir vil Vergnüege a de Party!",
+  "ayniLehce": [
+   "sich vergnügen (B1)"
+  ]
+ },
+ {
+  "id": 2979,
+  "de": "vergnügt",
+  "tr": "neşeli, keyifli",
+  "deBeispiel": "Er kam mit einem vergnügten Grinsen herein.",
+  "gsw": "vergnüegt",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch mit eme vergnüegte Grinse inecho."
+ },
+ {
+  "id": 2980,
+  "de": "vergrößern",
+  "tr": "büyütmek",
+  "deBeispiel": "1. Können Sie das Foto vergrößern? 2. Wir wollen unser Geschäft vergrößern.",
+  "gsw": "vergrössere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Chönd Si s Foto vergrössere? 2. Mir wänd öises Gschäft vergrössere."
+ },
+ {
+  "id": 2981,
+  "de": "verhaften",
+  "tr": "tutuklamak",
+  "deBeispiel": "Die Polizei hat 23 Menschen verhaftet.",
+  "gsw": "verhafte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Polizei hät 23 Lüüt verhaftet."
+ },
+ {
+  "id": 2982,
+  "de": "sich verhalten",
+  "tr": "davranmak",
+  "deBeispiel": "Der Mann hat sich uns gegenüber merkwürdig verhalten.",
+  "gsw": "verhalte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Maa hät sich öis gägenüber komisch verhalte.",
+  "ayniLehce": [
+   "Verhalten (B1)"
+  ]
+ },
+ {
+  "id": 2983,
+  "de": "das Verhalten",
+  "tr": "davranış",
+  "deBeispiel": "Ich bewundere dein Verhalten in der schwierigen Situation.",
+  "gsw": "Verhalte",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich bewundere diis Verhalte i de schwirige Situation.",
+  "ayniLehce": [
+   "sich verhalten (B1)"
+  ]
+ },
+ {
+  "id": 2984,
+  "de": "das Verhältnis",
+  "tr": "ilişki",
+  "deBeispiel": "Ich habe ein gutes Verhältnis zu meinen Eltern.",
+  "gsw": "Verhältnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha es guets Verhältnis zu miine Eltere."
+ },
+ {
+  "id": 2985,
+  "de": "verhindern",
+  "tr": "önlemek, engellemek",
+  "deBeispiel": "Wir konnten den Unfall nicht verhindern.",
+  "gsw": "verhindere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ de Unfall nöd chöne verhindere."
+ },
+ {
+  "id": 2986,
+  "de": "die Verkäuferin",
+  "tr": "satıcı, tezgahtar",
+  "deBeispiel": "Die Verkäuferin wird Ihnen gleich helfen.",
+  "gsw": "Verchäuferin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verchäuferin hilft Ine grad."
+ },
+ {
+  "id": 2987,
+  "de": "der Verlag",
+  "tr": "yayınevi",
+  "deBeispiel": "Von welchem Verlag ist dieses Buch?",
+  "gsw": "Verlaag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vo welem Verlaag isch das Buech?"
+ },
+ {
+  "id": 2988,
+  "de": "verlangen",
+  "tr": "istemek, talep etmek",
+  "deBeispiel": "1. Jeden Tag Überstunden? Das können Sie nicht verlangen. 2. Wie viel verlangen Sie für das Auto? 3. Frau Müller, Sie we",
+  "gsw": "verlange",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Jede Tag Überschtunde? Das chönd Si nöd verlange. 2. Wie vil verlanged Si für s Auto?"
+ },
+ {
+  "id": 2989,
+  "de": "verlängern",
+  "tr": "uzatmak",
+  "deBeispiel": "1. Ich muss meinen Pass verlängern lassen. 2. Die U-Bahn Linie U4 wird verlängert.",
+  "gsw": "verlängere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues miin Pass la verlängere."
+ },
+ {
+  "id": 2990,
+  "de": "verlassen",
+  "tr": "terk etmek, ayrılmak",
+  "deBeispiel": "1. Ich habe die Party um 3 Uhr verlassen. 2. Du kannst dich auf mich verlassen. Ich helfe dir auf jeden Fall.",
+  "gsw": "verlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha d Party am drüü verlaa. 2. Du chasch di uf mi verlaa. Ich hilf dir uf jede Fall."
+ },
+ {
+  "id": 2991,
+  "de": "sich verlaufen",
+  "tr": "yolunu kaybetmek",
+  "deBeispiel": "Gestern haben wir uns im Wald verlaufen. Wir haben erst eine Stunde später den richtigen Weg gefunden.",
+  "gsw": "verlaufe",
+  "gswArtikel": null,
+  "gswBeispiel": "Geschter händ mir öis im Wald verlaufe. Mir händ erscht e Schtund schpööter de richtig Wäg gfunde."
+ },
+ {
+  "id": 2992,
+  "de": "sich verletzen",
+  "tr": "yaralanmak",
+  "deBeispiel": "1. Ich habe mich an der Hand verletzt. 2. Ich habe mir den Arm verletzt.",
+  "gsw": "verletze",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha mi a de Hand verletzt. 2. Ich ha mir de Arm verletzt.",
+  "ayniLehce": [
+   "verletzen (A2)"
+  ]
+ },
+ {
+  "id": 2993,
+  "de": "die Verletzung",
+  "tr": "yaralanma",
+  "deBeispiel": "Keine Angst. Die Verletzung ist nicht so schlimm.",
+  "gsw": "Verletzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Kei Angscht. D Verletzig isch nöd so schlimm."
+ },
+ {
+  "id": 2994,
+  "de": "sich verlieben",
+  "tr": "aşık olmak",
+  "deBeispiel": "Ich habe mich verliebt.",
+  "gsw": "verliebe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha mi verliebt."
+ },
+ {
+  "id": 2995,
+  "de": "verliebt",
+  "tr": "aşık",
+  "deBeispiel": "Ich bin in Francesco verliebt.",
+  "gsw": "verliebt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi in Francesco verliebt."
+ },
+ {
+  "id": 2996,
+  "de": "der Verlierer",
+  "tr": "kaybeden",
+  "deBeispiel": "- Sie ist eine gute Verliererin.",
+  "gsw": "Verlüürer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si isch e gueti Verlüürerin."
+ },
+ {
+  "id": 2997,
+  "de": "der Verlust",
+  "tr": "kayıp",
+  "deBeispiel": "Der Verlust meiner Uhr ärgert mich sehr.",
+  "gsw": "Verluscht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verluscht vo miinere Uur ärgeret mi sehr."
+ },
+ {
+  "id": 2998,
+  "de": "vermeiden",
+  "tr": "kaçınmak, önlemek",
+  "deBeispiel": "Der Arzt sagt, ich soll Stress vermeiden.",
+  "gsw": "vermiide",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokter säit, ich söll Schtress vermiide."
+ },
+ {
+  "id": 2999,
+  "de": "die Vermietung",
+  "tr": "kiraya verme, kiralama",
+  "deBeispiel": "Mit der Vermietung von Wohnungen kann man viel Geld verdienen.",
+  "gsw": "Vermietig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit de Vermietig vo Wonige cha me vil Gäld verdiene."
+ },
+ {
+  "id": 3000,
+  "de": "vermissen",
+  "tr": "özlemek",
+  "deBeispiel": "Ich vermisse meine Familie.",
+  "gsw": "vermisse",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich vermisse miini Familie."
+ },
+ {
+  "id": 3001,
+  "de": "die Vermittlung",
+  "tr": "aracılık bürosu, santral",
+  "deBeispiel": "1. Du suchst ein Zimmer? Dann frag bei der Vermittlung am Bahnhof nach. 2. Rufen Sie die Vermittlung an und fragen Sie n",
+  "gsw": "Vermittlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Du suechsch es Zimmer? Dänn frög bi de Vermittlig am Bahnhof naa. 2. Rüefed Si d Vermittlig aa und fröged Si dete."
+ },
+ {
+  "id": 3002,
+  "de": "vermuten",
+  "tr": "sanmak, tahmin etmek, varsaymak",
+  "deBeispiel": "Ich vermute, sie wird heute nicht kommen.",
+  "gsw": "vermuete",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich vermuete, si chunt hüt nöd."
+ },
+ {
+  "id": 3003,
+  "de": "vermutlich",
+  "tr": "muhtemelen, galiba",
+  "deBeispiel": "Vermutlich sagt er die Wahrheit.",
+  "gsw": "vermuetlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Vermuetlich säit er d Waarhäit."
+ },
+ {
+  "id": 3004,
+  "de": "vernünftig",
+  "tr": "makul, mantıklı, akıllıca",
+  "deBeispiel": "1. Seien Sie doch vernünftig! 2. Das ist ein ganz vernünftiger Vorschlag.",
+  "gsw": "vernünftig",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Sind Si doch vernünftig! 2. Das isch en ganz vernünftige Vorschlaag."
+ },
+ {
+  "id": 3005,
+  "de": "verpacken",
+  "tr": "paketlemek, ambalajlamak",
+  "deBeispiel": "Hast Du die Pakete gut verpackt?",
+  "gsw": "verpacke",
+  "gswArtikel": null,
+  "gswBeispiel": "Häsch du d Päckli guet verpackt?"
+ },
+ {
+  "id": 3006,
+  "de": "verpflegen",
+  "tr": "beslemek, yemek sağlamak",
+  "deBeispiel": "Wir werden hier sehr gut mit Essen verpflegt.",
+  "gsw": "verpflääge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir werded da mit em Ässe sehr guet verpflääget."
+ },
+ {
+  "id": 3007,
+  "de": "verpflichtet",
+  "tr": "yükümlü, zorunlu",
+  "deBeispiel": "Sie sind verpflichtet, den Unfall zu melden.",
+  "gsw": "verpflichtet",
+  "gswArtikel": null,
+  "gswBeispiel": "Si sind verpflichtet, de Unfall z mälde."
+ },
+ {
+  "id": 3008,
+  "de": "verraten",
+  "tr": "ele vermek, açığa vurmak",
+  "deBeispiel": "1. Wer hat dir das Geheimnis verraten? 2. Sein Blick verriet mir, dass er verletzt ist.",
+  "gsw": "verraate",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wer hät der s Ghäimnis verraate? 2. Sin Blick hät mer verraate, dass er verletzt isch."
+ },
+ {
+  "id": 3009,
+  "de": "die Versammlung",
+  "tr": "toplantı, toplanma",
+  "deBeispiel": "Der Minister hielt bei der Versammlung eine Rede.",
+  "gsw": "Versammlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Minischter hät a de Versammlig e Red ghalte."
+ },
+ {
+  "id": 3010,
+  "de": "versäumen",
+  "tr": "kaçırmak, ihmal etmek",
+  "deBeispiel": "Tut mir leid, ich habe die Anmeldefrist versäumt.",
+  "gsw": "verpasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Tuet mer läid, ich ha d Aamäldefrischt verpasst.",
+  "ayniLehce": [
+   "verpassen (A2)"
+  ]
+ },
+ {
+  "id": 3011,
+  "de": "verschreiben",
+  "tr": "reçete yazmak, ilaç yazmak",
+  "deBeispiel": "Die Ärztin hat mir Tabletten verschrieben.",
+  "gsw": "verschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ärztin hät mer müese Tablette verschriibe."
+ },
+ {
+  "id": 3012,
+  "de": "verschwinden",
+  "tr": "kaybolmak, ortadan kaybolmak",
+  "deBeispiel": "Mein Ausweis ist verschwunden. Hast du ihn vielleicht gesehen?",
+  "gsw": "verschwinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Uswiis cha doch nöd äifach so verschwinde! Häsch en villicht gsee?"
+ },
+ {
+  "id": 3013,
+  "de": "versichern",
+  "tr": "sigortalamak, temin etmek",
+  "deBeispiel": "1. Wollen Sie Ihr Gepäck versichern? 2. Wie sind Sie versichert?",
+  "gsw": "versichere",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Wänd Si Ires Gepäck versichere? 2. Wie sind Si versicheret?"
+ },
+ {
+  "id": 3014,
+  "de": "die Versicherung",
+  "tr": "sigorta",
+  "deBeispiel": "1. Sie sollten eine Versicherung für Ihr Gepäck abschließen. 2. Sie müssen den Unfall der Versicherung melden.",
+  "gsw": "Versicherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "1. Si sötted für Ires Gepäck e Versicherig abschlüüsse. 2. Si müend de Unfall de Versicherig mälde."
+ },
+ {
+  "id": 3015,
+  "de": "versprechen",
+  "tr": "söz vermek",
+  "deBeispiel": "Meine Mutter hat mir versprochen, mich abzuholen.",
+  "gsw": "verspräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch mer verspräche, dass du mi abholsch?"
+ },
+ {
+  "id": 3016,
+  "de": "verständlich",
+  "tr": "anlaşılır",
+  "deBeispiel": "Nach acht Stunden Schule haben die Kinder keine Lust mehr, die Hausaufgaben zu machen. Ich finde das verständlich.",
+  "gsw": "verständlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach acht Schtund Schuel händ d Chind käi Luscht me, d Ufzgi z mache. Ich finde das verständlich."
+ },
+ {
+  "id": 3017,
+  "de": "das Verständnis",
+  "tr": "anlayış",
+  "deBeispiel": "Wir bitten um Ihr Verständnis.",
+  "gsw": "Verständnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir bitted um Ires Verständnis."
+ },
+ {
+  "id": 3018,
+  "de": "sich verstecken",
+  "tr": "saklanmak, gizlenmek",
+  "deBeispiel": "1. Ich habe das Geld hinter dem Regal versteckt. 2. Die Kinder verstecken sich im Wald.",
+  "gsw": "sich verstecke",
+  "gswArtikel": null,
+  "gswBeispiel": "1. Ich ha s Gäld hinder em Regal versteckt. 2. D Chind wänd sich im Wald verstecke."
+ },
+ {
+  "id": 3020,
+  "de": "der Versuch",
+  "tr": "deneme, girişim, deney",
+  "deBeispiel": "1. In der Forschung werden viele Versuche gemacht. 2. Mein Versuch, etwas zu ändern, blieb ohne Erfolg.",
+  "gsw": "Versuech",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. I de Forschig werded vill Versüech gmacht. 2. Min Versuech, öppis z ändere, hät nüt bracht."
+ },
+ {
+  "id": 3021,
+  "de": "verteilen",
+  "tr": "dağıtmak",
+  "deBeispiel": "Kannst du bitte schon mal die Gläser verteilen?",
+  "gsw": "vertäile",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch bitte scho mal d Gleser vertäile?"
+ },
+ {
+  "id": 3022,
+  "de": "vertrauen",
+  "tr": "güvenmek",
+  "deBeispiel": "Ich kenne dich gut. Ich vertraue dir.",
+  "gsw": "vertraue",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich känne di guet. Ich vertraue der.",
+  "ayniLehce": [
+   "Vertrauen (B1)"
+  ]
+ },
+ {
+  "id": 3023,
+  "de": "das Vertrauen",
+  "tr": "güven",
+  "deBeispiel": "Ich habe Vertrauen zu Ihnen.",
+  "gsw": "Vertraue",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich ha Vertraue zu Ine.",
+  "ayniLehce": [
+   "vertrauen (B1)"
+  ]
+ },
+ {
+  "id": 3024,
+  "de": "vertreten",
+  "tr": "temsil etmek, vekalet etmek",
+  "deBeispiel": "Wer vertritt Sie, wenn Sie Urlaub machen?",
+  "gsw": "verträtte",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer söll Si verträtte, wänn Si i de Ferie sind?"
+ },
+ {
+  "id": 3025,
+  "de": "der Vertreter",
+  "tr": "temsilci, vekil",
+  "deBeispiel": "- 1. Als Herr Dr. Müller in Urlaub war, bin ich zu seiner Vertreterin gegangen. 2. Die Elternvertreter treffen sich morg",
+  "gsw": "Verträtter",
+  "gswArtikel": "de",
+  "gswBeispiel": "1. Wo de Herr Dokter Müller i de Ferie gsii isch, bin ich zu sinere Verträtterin ggange. 2. D Elteverträtter träffed sich morn."
+ },
+ {
+  "id": 3026,
+  "de": "die Vertretung",
+  "tr": "vekalet, temsil",
+  "deBeispiel": "Herr Dr. Meyer macht für mich die Vertretung.",
+  "gsw": "Verträttig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Herr Dokter Meyer macht für mich d Verträttig."
+ },
+ {
+  "id": 3027,
+  "de": "verurteilen",
+  "tr": "mahkum etmek, hüküm giydirmek",
+  "deBeispiel": "Das Gericht hat den Täter zu einer Geldstrafe verurteilt.",
+  "gsw": "verurtäile",
+  "gswArtikel": null,
+  "gswBeispiel": "D Richter verurtäiled de Tääter zu ere Gäldschtraaf."
+ },
+ {
+  "id": 3028,
+  "de": "die Verwaltung",
+  "tr": "yönetim, idare",
+  "deBeispiel": "Sprechen Sie bitte mit der Verwaltung. Die können Ihnen helfen.",
+  "gsw": "Verwaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Reded Si bitte mit de Verwaltig. Die chönd Ine hälfe."
+ },
+ {
+  "id": 3029,
+  "de": "verwandt",
+  "tr": "akraba",
+  "deBeispiel": "Sind Sie mit Frau Meyer verwandt?",
+  "gsw": "verwandt",
+  "gswArtikel": null,
+  "gswBeispiel": "Sind Si mit de Frau Meyer verwandt?"
+ },
+ {
+  "id": 3030,
+  "de": "die Verwandte",
+  "tr": "akraba (kadın)",
+  "deBeispiel": "Zu meinem Geburtstag kommen alle Verwandten.",
+  "gsw": "Verwandte",
+  "gswArtikel": "d",
+  "gswBeispiel": "A min Geburtstag chömed alli Verwandte.",
+  "ayniLehce": [
+   "Verwandte (A1)"
+  ]
+ },
+ {
+  "id": 3031,
+  "de": "verwechseln",
+  "tr": "karıştırmak (yanlışlıkla başkası sanmak)",
+  "deBeispiel": "Entschuldigen Sie, ich habe Sie mit jemandem verwechselt.",
+  "gsw": "verwächsle",
+  "gswArtikel": null,
+  "gswBeispiel": "Äxgüsi, ich ha Si mit öpperem verwächslet."
+ }
+]

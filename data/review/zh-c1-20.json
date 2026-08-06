@@ -1,0 +1,785 @@
+[
+ {
+  "id": 7343,
+  "de": "die Geldwäsche",
+  "tr": "kara para aklama",
+  "deBeispiel": "Die Bank verschärfte ihre Kontrollen gegen Geldwäsche erheblich.",
+  "gsw": "Gäldwäschi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bank hät ihri Kontrolle gäge d Gäldwäschi erheblich verschärft."
+ },
+ {
+  "id": 7344,
+  "de": "die Anspruchsgruppe",
+  "tr": "paydaş, menfaat sahibi grup",
+  "deBeispiel": "Die Strategie berücksichtigt die Erwartungen aller relevanten Anspruchsgruppen.",
+  "gsw": "Aaschpruchsgruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtrategie berücksichtigt d Erwartige vo allne relevante Aaschpruchsgruppe."
+ },
+ {
+  "id": 7345,
+  "de": "die Rechtfertigung",
+  "tr": "gerekçe, haklı çıkarma, mazeret",
+  "deBeispiel": "Der Wettbewerbsdruck taugt nicht als Rechtfertigung für gefälschte Prüfberichte.",
+  "gsw": "Rächtfertigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Wettbewerbsdruck taugt nöd als Rächtfertigig für gfälschti Prüefbricht."
+ },
+ {
+  "id": 7346,
+  "de": "die Meldestelle",
+  "tr": "bildirim birimi, ihbar merkezi",
+  "deBeispiel": "Verdachtsfälle können anonym an die interne Meldestelle gerichtet werden.",
+  "gsw": "Mäldeschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Verdachtsfäll chönd anonym a di interni Mäldeschtell grichtet werde."
+ },
+ {
+  "id": 7347,
+  "de": "die Nebentätigkeit",
+  "tr": "yan iş, ek görev",
+  "deBeispiel": "Jede bezahlte Nebentätigkeit muss der Compliance-Abteilung angezeigt werden.",
+  "gsw": "Näbetätigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi zaalti Näbetätigkeit mues de Compliance-Abteilig gmäldet werde."
+ },
+ {
+  "id": 7348,
+  "de": "die Gegenleistung",
+  "tr": "karşılık, karşı edim",
+  "deBeispiel": "Für die Spende wurde offenbar eine politische Gegenleistung erwartet.",
+  "gsw": "Gägeläischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Schpänd isch offebar e politischi Gägeläischtig erwartet worde."
+ },
+ {
+  "id": 7349,
+  "de": "die Preisabsprache",
+  "tr": "fiyat anlaşması, danışıklı fiyatlandırma",
+  "deBeispiel": "Die Preisabsprachen kosteten die Verbraucher jährlich Millionenbeträge.",
+  "gsw": "Priisabschprach",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Priisabschprache händ d Konsumänte jedes Jaar Millionebeträg koschtet."
+ },
+ {
+  "id": 7350,
+  "de": "die Monopolstellung",
+  "tr": "tekel konumu",
+  "deBeispiel": "Der Anbieter nutzte seine Monopolstellung zulasten kleinerer Händler aus.",
+  "gsw": "Monopolschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aabieter hät sini Monopolschtellig zulaschte vo chliinere Händler uusgnutzt."
+ },
+ {
+  "id": 7351,
+  "de": "der Deckmantel",
+  "tr": "kılıf, perde, bahane",
+  "deBeispiel": "Unter dem Deckmantel der Forschung wurden Werbekampagnen finanziert.",
+  "gsw": "Deckmantel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Under em Deckmantel vo de Forschig sind Werbekampagne finanziert worde."
+ },
+ {
+  "id": 7352,
+  "de": "bestechen",
+  "tr": "rüşvet vermek, satın almak",
+  "deBeispiel": "Der Vertriebsleiter soll mehrere Zollbeamte bestochen haben.",
+  "gsw": "beschtäche",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vertriibsleiter söll mehreri Zollbeamti beschtoche haa."
+ },
+ {
+  "id": 7353,
+  "de": "durchleuchten",
+  "tr": "didik didik incelemek, mercek altına almak",
+  "deBeispiel": "Eine externe Kanzlei durchleuchtete sämtliche Beraterverträge der letzten Jahre.",
+  "gsw": "durlüüchte",
+  "gswArtikel": null,
+  "gswBeispiel": "E externi Kanzlei hät sämtlichi Berateverträg vo de letschte Jaar durlüüchtet."
+ },
+ {
+  "id": 7354,
+  "de": "schädigen",
+  "tr": "zarar vermek, zedelemek",
+  "deBeispiel": "Der Skandal hat das Ansehen der ganzen Branche nachhaltig geschädigt.",
+  "gsw": "schädige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Skandal hät s Aasee vo de ganze Branche nachhaltig gschädiget."
+ },
+ {
+  "id": 7355,
+  "de": "billigen",
+  "tr": "onaylamak, hoş görmek, uygun bulmak",
+  "deBeispiel": "Der Aufsichtsrat billigte die fragwürdige Praxis über Jahre stillschweigend.",
+  "gsw": "billige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uufsichtsraat hät di fragwürdig Praxis über Jaar schtillschwiigend billiget."
+ },
+ {
+  "id": 7356,
+  "de": "unterschlagen",
+  "tr": "zimmetine geçirmek, gizlemek",
+  "deBeispiel": "Der Kassenwart hat über Jahre erhebliche Summen unterschlagen.",
+  "gsw": "underschlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kassier hät über Jaar erheblichi Summe underschlage."
+ },
+ {
+  "id": 7357,
+  "de": "vortäuschen",
+  "tr": "-mış gibi göstermek, numara yapmak",
+  "deBeispiel": "Mit geschönten Kennzahlen täuschte die Firma wirtschaftliche Stabilität vor.",
+  "gsw": "vortüüsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit gschööngete Kennzaale hät d Firma wirtschaftlichi Schtabilität vortüüscht."
+ },
+ {
+  "id": 7358,
+  "de": "sich bereichern",
+  "tr": "haksız kazanç sağlamak, (başkasının sırtından) zenginleşmek",
+  "deBeispiel": "Einzelne Manager bereicherten sich auf Kosten der Belegschaft.",
+  "gsw": "sich beriichere",
+  "gswArtikel": null,
+  "gswBeispiel": "Einzelni Manager händ sich uf Choschte vo de Belegschaft beriicheret."
+ },
+ {
+  "id": 7359,
+  "de": "auferlegen",
+  "tr": "yüklemek, dayatmak, zorunlu kılmak",
+  "deBeispiel": "Das Gericht erlegte dem Konzern umfangreiche Berichtspflichten auf.",
+  "gsw": "uferlege",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gricht hät em Konzärn umfangriichi Brichtpflichte uferleit."
+ },
+ {
+  "id": 7360,
+  "de": "integer",
+  "tr": "dürüst, lekesiz, güvenilir",
+  "deBeispiel": "Man hielt sie für eine integre und unbestechliche Vorgesetzte.",
+  "gsw": "integer",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer hät sie für e integri und unbeschtächlichi Vorgsetzti ghalte."
+ },
+ {
+  "id": 7361,
+  "de": "unlauter",
+  "tr": "haksız, dürüst olmayan",
+  "deBeispiel": "Irreführende Umweltversprechen gelten als unlauterer Wettbewerb.",
+  "gsw": "unluuter",
+  "gswArtikel": null,
+  "gswBeispiel": "Irrefüerendi Umwältverschpräche gälted als unluutere Wettbewerb."
+ },
+ {
+  "id": 7362,
+  "de": "vertretbar",
+  "tr": "savunulabilir, kabul edilebilir",
+  "deBeispiel": "Ethisch vertretbar ist diese Preisgestaltung auf Dauer nicht.",
+  "gsw": "vertretbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Ethisch vertretbar isch die Priisgschtaltig uf d Duur nöd."
+ },
+ {
+  "id": 7363,
+  "de": "ethisch",
+  "tr": "etik, ahlaki",
+  "deBeispiel": "Die Entscheidung wirft grundlegende ethische Fragen auf.",
+  "gsw": "ethisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Entscheid wirft grundlegendi ethischi Frooge uuf."
+ },
+ {
+  "id": 7364,
+  "de": "wissentlich",
+  "tr": "bilerek, bilinçli olarak",
+  "deBeispiel": "Sie hat die falschen Angaben wissentlich weitergeleitet.",
+  "gsw": "wüssentlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät di falsche Aagabe wüssentlich wiitergleitet."
+ },
+ {
+  "id": 7365,
+  "de": "gutgläubig",
+  "tr": "iyi niyetli, saf",
+  "deBeispiel": "Viele Anleger vertrauten gutgläubig auf die testierten Zahlen.",
+  "gsw": "guetgläubig",
+  "gswArtikel": null,
+  "gswBeispiel": "Vil Aaleger händ guetgläubig uf di teschtierte Zaale vertraut."
+ },
+ {
+  "id": 7366,
+  "de": "die Genauigkeit",
+  "tr": "kesinlik, hassasiyet, doğruluk",
+  "deBeispiel": "Die Genauigkeit der Messgeräte begrenzt die möglichen Schlüsse.",
+  "gsw": "Genauigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Genauigkeit vo de Mässgrät begränzt di mögliche Schlüss."
+ },
+ {
+  "id": 7367,
+  "de": "die Näherung",
+  "tr": "yaklaşım, yaklaşık değer",
+  "deBeispiel": "Das Modell liefert nur eine grobe Näherung an die Wirklichkeit.",
+  "gsw": "Näherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Modell liferet nu e grobi Näherig a d Wirklichkeit."
+ },
+ {
+  "id": 7368,
+  "de": "die Beweisführung",
+  "tr": "kanıtlama, ispat yöntemi",
+  "deBeispiel": "Seine Beweisführung wirkt elegant, hält der Prüfung aber nicht stand.",
+  "gsw": "Bewiisfüerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Bewiisfüerig wirkt elegant, haltet de Prüefig aber nöd schtand."
+ },
+ {
+  "id": 7369,
+  "de": "die Wiederholbarkeit",
+  "tr": "tekrarlanabilirlik",
+  "deBeispiel": "Die Wiederholbarkeit von Experimenten gilt als Kern wissenschaftlicher Arbeit.",
+  "gsw": "Widerhoolbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Widerhoolbarkeit vo Experimänt gilt als Chern vo de wüsseschaftliche Arbet."
+ },
+ {
+  "id": 7370,
+  "de": "die Fehlerquelle",
+  "tr": "hata kaynağı",
+  "deBeispiel": "Mögliche Fehlerquellen werden im letzten Abschnitt offen benannt.",
+  "gsw": "Fählerquelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Möglichi Fählerquelle werded im letschte Abschnitt offe gnännt."
+ },
+ {
+  "id": 7371,
+  "de": "die Sichtweise",
+  "tr": "bakış açısı, görüş",
+  "deBeispiel": "Seine Sichtweise setzte sich erst Jahrzehnte später durch.",
+  "gsw": "Sichtwiis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Sichtwiis hät sich erscht Jaarzähnt schpöter durgsetzt."
+ },
+ {
+  "id": 7372,
+  "de": "die Denkschule",
+  "tr": "düşünce okulu, ekol",
+  "deBeispiel": "Beide Denkschulen streiten seit Langem über denselben Grundbegriff.",
+  "gsw": "Dänkschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "Beidi Dänkschuele schtriited siit langem über de gliich Grundbegriff."
+ },
+ {
+  "id": 7373,
+  "de": "der Anwendungsbezug",
+  "tr": "uygulamayla bağ, pratiğe dönüklük",
+  "deBeispiel": "Dem Projekt fehlt bislang jeder erkennbare Anwendungsbezug.",
+  "gsw": "Aawändigsbezug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Em Projekt fäält bis jetz jede erkennbar Aawändigsbezug."
+ },
+ {
+  "id": 7374,
+  "de": "der Erkenntnisgewinn",
+  "tr": "bilgi kazanımı, yeni bilgi",
+  "deBeispiel": "Der Erkenntnisgewinn rechtfertigt den enormen Aufwand kaum.",
+  "gsw": "Erkenntnisgwinn",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Erkenntnisgwinn rächtfertigt de enorm Uufwand chuum."
+ },
+ {
+  "id": 7375,
+  "de": "der Aufsatz",
+  "tr": "makale, deneme",
+  "deBeispiel": "Ihr Aufsatz gilt inzwischen als Standardtext des Fachs.",
+  "gsw": "Uufsatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ihre Uufsatz gilt inzwüsche als Schtandardtext vom Fach."
+ },
+ {
+  "id": 7376,
+  "de": "das Literaturverzeichnis",
+  "tr": "kaynakça",
+  "deBeispiel": "Das Literaturverzeichnis umfasst über dreihundert einzelne Titel.",
+  "gsw": "Literaturverzäichnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Literaturverzäichnis umfasst über drüühundert einzelni Titel."
+ },
+ {
+  "id": 7377,
+  "de": "die Begutachtung",
+  "tr": "değerlendirme, hakem incelemesi",
+  "deBeispiel": "Die anonyme Begutachtung durch Fachleute dauerte mehrere Monate.",
+  "gsw": "Begutachtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di anonym Begutachtig dur Fachlüüt hät mehreri Mönet duuret."
+ },
+ {
+  "id": 7378,
+  "de": "der Fachkollege",
+  "tr": "meslektaş, alandan meslektaş",
+  "deBeispiel": "Zwei Fachkollegen bestätigten die Ergebnisse in einem eigenen Versuch.",
+  "gsw": "Fachkolleg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zwee Fachkollege händ d Ergebnis in eme eigene Versuech beschtätigt."
+ },
+ {
+  "id": 7379,
+  "de": "das Fachgebiet",
+  "tr": "uzmanlık alanı, disiplin",
+  "deBeispiel": "In ihrem Fachgebiet gilt sie als führende Stimme.",
+  "gsw": "Fachgebiet",
+  "gswArtikel": "s",
+  "gswBeispiel": "I ihrem Fachgebiet gilt si als füerendi Schtimm."
+ },
+ {
+  "id": 7380,
+  "de": "die Antragstellung",
+  "tr": "başvuru yapma, başvuru süreci",
+  "deBeispiel": "Die Antragstellung kostet oft mehr Zeit als die eigentliche Arbeit.",
+  "gsw": "Aatragschtellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aatragschtellig choschtet oft mee Ziit als di eigentlich Arbet."
+ },
+ {
+  "id": 7381,
+  "de": "die Tagung",
+  "tr": "konferans, bilimsel toplantı",
+  "deBeispiel": "Auf der Tagung stellte sie erste vorläufige Ergebnisse vor.",
+  "gsw": "Tagig",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Tagig hät si erschti vorläufigi Ergebnis vorgschtellt."
+ },
+ {
+  "id": 7382,
+  "de": "die Fachdebatte",
+  "tr": "alan içi tartışma, uzmanlık tartışması",
+  "deBeispiel": "Die Fachdebatte über diesen Begriff dauert nun schon Jahrzehnte.",
+  "gsw": "Fachdebatte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fachdebatte über dä Begriff duuret jetz scho Jaarzähnt."
+ },
+ {
+  "id": 7383,
+  "de": "die Streitfrage",
+  "tr": "tartışmalı konu, ihtilaflı soru",
+  "deBeispiel": "Diese Streitfrage spaltet die Forschung bis heute.",
+  "gsw": "Schtriitfrog",
+  "gswArtikel": "d",
+  "gswBeispiel": "Die Schtriitfrog schpaltet d Forschig bis hüt."
+ },
+ {
+  "id": 7384,
+  "de": "die Lehrmeinung",
+  "tr": "yerleşik görüş, hâkim öğreti",
+  "deBeispiel": "Die herrschende Lehrmeinung geriet durch neue Funde ins Wanken.",
+  "gsw": "Leermeinig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di herrschendi Leermeinig isch dur neui Fund is Wanke choo."
+ },
+ {
+  "id": 7385,
+  "de": "stützen",
+  "tr": "desteklemek, dayanak oluşturmak",
+  "deBeispiel": "Die neuen Funde stützen die These nur teilweise.",
+  "gsw": "schtütze",
+  "gswArtikel": null,
+  "gswBeispiel": "Di neue Fund schtützed d These nu teilwiis."
+ },
+ {
+  "id": 7386,
+  "de": "erproben",
+  "tr": "denemek, sınamak",
+  "deBeispiel": "Das Verfahren wurde zunächst an kleinen Gruppen erprobt.",
+  "gsw": "erprobe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Verfaare isch zerscht a chliine Gruppe erprobt worde."
+ },
+ {
+  "id": 7387,
+  "de": "aufzeigen",
+  "tr": "göstermek, ortaya koymak",
+  "deBeispiel": "Die Untersuchung zeigt deutliche Lücken im bisherigen Wissen auf.",
+  "gsw": "ufzeige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Untersuechig hät düütlichi Lücke im bisherige Wüsse chöne ufzeige."
+ },
+ {
+  "id": 7388,
+  "de": "promovieren",
+  "tr": "doktora yapmak",
+  "deBeispiel": "Sie promovierte mit einer Arbeit über frühneuzeitliche Briefe.",
+  "gsw": "promoviere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät mit ere Arbet über frühneuziitlichi Brief promoviert."
+ },
+ {
+  "id": 7389,
+  "de": "wegweisend",
+  "tr": "yol gösterici, çığır açıcı",
+  "deBeispiel": "Der Aufsatz gilt heute als wegweisend für die gesamte Disziplin.",
+  "gsw": "wägwiisend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uufsatz gilt hüt als wägwiisend für di ganz Disziplin."
+ },
+ {
+  "id": 7390,
+  "de": "strittig",
+  "tr": "tartışmalı, ihtilaflı",
+  "deBeispiel": "Ob der Effekt überhaupt existiert, bleibt weiterhin strittig.",
+  "gsw": "schtrittig",
+  "gswArtikel": null,
+  "gswBeispiel": "Öb de Effekt überhaupt existiert, bliibt wiiterhin schtrittig."
+ },
+ {
+  "id": 7391,
+  "de": "mehrdeutig",
+  "tr": "çok anlamlı, muğlak",
+  "deBeispiel": "Der Begriff wird in der Literatur auffallend mehrdeutig verwendet.",
+  "gsw": "mehrdüütig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Begriff wird i de Literatur uffallend mehrdüütig bruucht."
+ },
+ {
+  "id": 7392,
+  "de": "die Unumkehrbarkeit",
+  "tr": "geri dönülmezlik, tersine çevrilemezlik",
+  "deBeispiel": "Die Unumkehrbarkeit dieser Entwicklung macht rasches Handeln nötig.",
+  "gsw": "Unumchehrbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Unumchehrbarkeit vo dere Entwicklig macht schnälls Handle nötig."
+ },
+ {
+  "id": 7393,
+  "de": "die Eintrittswahrscheinlichkeit",
+  "tr": "gerçekleşme olasılığı",
+  "deBeispiel": "Die Eintrittswahrscheinlichkeit des Ereignisses lässt sich kaum seriös angeben.",
+  "gsw": "Iitrittswahrschiinlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iitrittswahrschiinlichkeit vom Ereignis laat sich chuum seriös aagee."
+ },
+ {
+  "id": 7394,
+  "de": "das Gefahrenpotenzial",
+  "tr": "tehlike potansiyeli, risk barındırma",
+  "deBeispiel": "Fachleute streiten über das Gefahrenpotenzial der neuen Technologie.",
+  "gsw": "Gfaarepotenzial",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Fachlüüt schtriited über s Gfaarepotenzial vo de neue Technologie."
+ },
+ {
+  "id": 7395,
+  "de": "das Frühwarnsystem",
+  "tr": "erken uyarı sistemi",
+  "deBeispiel": "Ein gutes Frühwarnsystem meldet Auffälligkeiten, bevor der Schaden entsteht.",
+  "gsw": "Früewarnsyschtem",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es guets Früewarnsyschtem mäldet Uffälligkeite, bevor de Schade entschtaat."
+ },
+ {
+  "id": 7396,
+  "de": "die Ungewissheit",
+  "tr": "belirsizlik, bilinmezlik",
+  "deBeispiel": "Planung unter Ungewissheit verlangt Demut gegenüber den eigenen Zahlen.",
+  "gsw": "Ungwüssheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Planig under Ungwüssheit verlangt Demuet gägenüber de eigene Zaale."
+ },
+ {
+  "id": 7397,
+  "de": "der Zeithorizont",
+  "tr": "zaman ufku, öngörü süresi",
+  "deBeispiel": "Jenseits eines Zeithorizonts von zwanzig Jahren wird jede Aussage vage.",
+  "gsw": "Ziithorizont",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jensiits vomene Ziithorizont vo zwänzg Jaar wird jedi Uussag vaag."
+ },
+ {
+  "id": 7398,
+  "de": "die Datenlage",
+  "tr": "veri durumu, eldeki veriler",
+  "deBeispiel": "Bei dieser dünnen Datenlage sind belastbare Aussagen kaum möglich.",
+  "gsw": "Datelaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dere dünne Datelaag sind belaschtbari Uussage chuum möglich."
+ },
+ {
+  "id": 7399,
+  "de": "der Richtwert",
+  "tr": "referans değer, yönlendirici değer",
+  "deBeispiel": "Der genannte Richtwert ist eine Orientierung, keine verbindliche Vorgabe.",
+  "gsw": "Richtwärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gnännt Richtwärt isch e Orientierig, kei verbindlichi Vorgab."
+ },
+ {
+  "id": 7400,
+  "de": "die Folgenabschätzung",
+  "tr": "etki değerlendirmesi, sonuç analizi",
+  "deBeispiel": "Vor der Einführung wurde eine ausführliche Folgenabschätzung vorgelegt.",
+  "gsw": "Folgeabschätzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor de Iifüerig isch e uusfüerlichi Folgeabschätzig vorgleit worde."
+ },
+ {
+  "id": 7401,
+  "de": "der Kollateralschaden",
+  "tr": "yan hasar, dolaylı zarar",
+  "deBeispiel": "Die Kollateralschäden dieser Sparpolitik zeigen sich erst Jahre später.",
+  "gsw": "Kollateralschade",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kollateralschade vo dere Sparpolitik zeigt sich erscht Jaar schpöter."
+ },
+ {
+  "id": 7402,
+  "de": "die Verwundbarkeit",
+  "tr": "kırılganlık, zarar görebilirlik",
+  "deBeispiel": "Die Pandemie hat die Verwundbarkeit globaler Lieferketten offengelegt.",
+  "gsw": "Verwundbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Pandemie hät d Verwundbarkeit vo de globale Lieferchette offeglegt."
+ },
+ {
+  "id": 7403,
+  "de": "der Notfallplan",
+  "tr": "acil durum planı",
+  "deBeispiel": "Ein Notfallplan nützt wenig, wenn ihn niemand je geprobt hat.",
+  "gsw": "Notfallplaan",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Notfallplaan nützt wenig, wenn en nie öpper probt hät."
+ },
+ {
+  "id": 7404,
+  "de": "das Beharrungsvermögen",
+  "tr": "atalet, değişime direnç",
+  "deBeispiel": "Das Beharrungsvermögen der Institutionen bremst jede angekündigte Reform.",
+  "gsw": "Beharrigsvermöge",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Beharrigsvermöge vo de Inschtitutione bremst jedi aakündigti Reform."
+ },
+ {
+  "id": 7405,
+  "de": "die Erschütterung",
+  "tr": "sarsıntı, sarsılma",
+  "deBeispiel": "Das Vertrauen der Anleger hat eine schwere Erschütterung erlitten.",
+  "gsw": "Erschütterig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Vertraue vo de Aaleger hät e schweri Erschütterig erlitte."
+ },
+ {
+  "id": 7406,
+  "de": "die Verwerfung",
+  "tr": "çarpıklık, kırılma, dengesizlik",
+  "deBeispiel": "Der Umbau der Wirtschaft führt zu sozialen Verwerfungen in ganzen Regionen.",
+  "gsw": "Verwärfig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Umbau vo de Wirtschaft füert zu soziale Verwärfige i ganze Regione."
+ },
+ {
+  "id": 7407,
+  "de": "die Risikoscheu",
+  "tr": "riskten kaçınma eğilimi",
+  "deBeispiel": "Übertriebene Risikoscheu kann selbst zu einem erheblichen Risiko werden.",
+  "gsw": "Risikoschüüch",
+  "gswArtikel": "d",
+  "gswBeispiel": "Übertriebni Risikoschüüch cha sälber zumene erhebliche Risiko werde."
+ },
+ {
+  "id": 7408,
+  "de": "die Erwartungshaltung",
+  "tr": "beklenti, beklenti içinde olma",
+  "deBeispiel": "Die Erwartungshaltung der Öffentlichkeit beeinflusst die Prognosen der Fachleute.",
+  "gsw": "Erwartigshaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erwartigshaltig vo de Öffentlichkeit beiiflusst d Prognose vo de Fachlüüt."
+ },
+ {
+  "id": 7409,
+  "de": "das Leitbild",
+  "tr": "ideal model, yol gösterici ilke",
+  "deBeispiel": "Ohne ein überzeugendes Leitbild bleibt jede Reform Stückwerk.",
+  "gsw": "Leitbild",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ohni es überzügends Leitbild bliibt jedi Reform Schtückwärk."
+ },
+ {
+  "id": 7410,
+  "de": "die Dystopie",
+  "tr": "distopya, karanlık gelecek tasavvuru",
+  "deBeispiel": "Der Roman zeichnet eine Dystopie, die unangenehm plausibel wirkt.",
+  "gsw": "Dystopie",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Roman zeichnet e Dystopie, wo unaagnehm plausibel wirkt."
+ },
+ {
+  "id": 7411,
+  "de": "die Langzeitfolge",
+  "tr": "uzun vadeli sonuç",
+  "deBeispiel": "Über die Langzeitfolgen dieses Eingriffs weiß man bisher wenig.",
+  "gsw": "Langziitfolg",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Langziitfolge vo dem Iigriff wäiss mer bis jetz wenig."
+ },
+ {
+  "id": 7412,
+  "de": "die Vorkehrung",
+  "tr": "önlem, tedbir",
+  "deBeispiel": "Die Kommune hat für den Ernstfall umfangreiche Vorkehrungen getroffen.",
+  "gsw": "Vorchehrig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gmeind hät für de Ärnschtfall umfangriichi Vorchehrige troffe."
+ },
+ {
+  "id": 7413,
+  "de": "der Dominoeffekt",
+  "tr": "domino etkisi, zincirleme etki",
+  "deBeispiel": "Der Ausfall eines Zulieferers löste einen Dominoeffekt in der Branche aus.",
+  "gsw": "Dominoeffekt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Uusfall vo eim Zulieferer hät en Dominoeffekt i de Branche uusglöst."
+ },
+ {
+  "id": 7414,
+  "de": "die Kurskorrektur",
+  "tr": "rota düzeltmesi, yön değişikliği",
+  "deBeispiel": "Eine frühe Kurskorrektur wäre billiger gewesen als die späte Rettung.",
+  "gsw": "Kurskorrektur",
+  "gswArtikel": "d",
+  "gswBeispiel": "E frühi Kurskorrektur wär billiger gsi als di schpaat Rettig."
+ },
+ {
+  "id": 7415,
+  "de": "die Erblast",
+  "tr": "geçmişten devralınan yük, miras kalan sorun",
+  "deBeispiel": "Die kommende Regierung übernimmt eine schwere finanzielle Erblast.",
+  "gsw": "Erblascht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di chömend Regierig übernimmt e schweri finanzielli Erblascht."
+ },
+ {
+  "id": 7416,
+  "de": "antizipieren",
+  "tr": "önceden sezmek, öngörmek",
+  "deBeispiel": "Gute Planung antizipiert Widerstände, statt sie später zu beklagen.",
+  "gsw": "antizipiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Gueti Planig antizipiert Widerschtänd, schtatt sie schpöter z beklage."
+ },
+ {
+  "id": 7417,
+  "de": "ausloten",
+  "tr": "yoklamak, sınırlarını araştırmak",
+  "deBeispiel": "Die Kommission lotet aus, welche Maßnahmen politisch überhaupt durchsetzbar sind.",
+  "gsw": "uuslote",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kommission mues uuslote, weli Massnaame politisch überhaupt durzsetze sind."
+ },
+ {
+  "id": 7418,
+  "de": "durchspielen",
+  "tr": "baştan sona düşünmek, senaryolarını denemek",
+  "deBeispiel": "Im Krisenstab wurden alle denkbaren Verläufe einmal durchgespielt.",
+  "gsw": "durschpile",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Krisenschtab hät mer alli dänkbare Verläuf äimal chöne durschpile."
+ },
+ {
+  "id": 7419,
+  "de": "ausbleiben",
+  "tr": "gerçekleşmemek, gelmemek",
+  "deBeispiel": "Der erhoffte Aufschwung ist auch in diesem Jahr ausgeblieben.",
+  "gsw": "uusbliibe",
+  "gswArtikel": null,
+  "gswBeispiel": "De erhoffti Uufschwung isch au i dem Jaar uusbliibe."
+ },
+ {
+  "id": 7420,
+  "de": "umschlagen",
+  "tr": "birdenbire tersine dönmek, aniden değişmek",
+  "deBeispiel": "Die anfängliche Begeisterung ist rasch in Ernüchterung umgeschlagen.",
+  "gsw": "umschlaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Di aafänglich Begeischterig isch schnäll i Ernüechterig umgschlage."
+ },
+ {
+  "id": 7421,
+  "de": "einkalkulieren",
+  "tr": "hesaba katmak, göz önünde bulundurmak",
+  "deBeispiel": "Rückschläge sind in diesem Zeitplan bereits einkalkuliert.",
+  "gsw": "iikalkuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Rückschläg sind i dem Ziitplaan scho iikalkuliert."
+ },
+ {
+  "id": 7422,
+  "de": "herbeiführen",
+  "tr": "sağlamak, gerçekleştirmek, yol açmak",
+  "deBeispiel": "Eine Entscheidung sollte man herbeiführen, bevor die Lage kippt.",
+  "gsw": "herbiifüere",
+  "gswArtikel": null,
+  "gswBeispiel": "En Entscheid sött mer herbiifüere, bevor d Lag chippt."
+ },
+ {
+  "id": 7423,
+  "de": "veranschlagen",
+  "tr": "öngörmek, tahmini olarak belirlemek",
+  "deBeispiel": "Für den Umbau sind fünf Jahre veranschlagt, realistisch sind acht.",
+  "gsw": "veraaschlage",
+  "gswArtikel": null,
+  "gswBeispiel": "Für de Umbau sind föif Jaar veraaschlaget, realistisch sind acht."
+ },
+ {
+  "id": 7424,
+  "de": "sich wappnen",
+  "tr": "hazırlıklı olmak, kendini donatmak",
+  "deBeispiel": "Die Städte wappnen sich gegen immer längere Hitzeperioden.",
+  "gsw": "sich wappne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtedt wappned sich gäge immer längeri Hitzperiode."
+ },
+ {
+  "id": 7425,
+  "de": "unabsehbar",
+  "tr": "kestirilemez, öngörülemez",
+  "deBeispiel": "Ein Ausstieg hätte Folgen von unabsehbarer Tragweite.",
+  "gsw": "unabsehbar",
+  "gswArtikel": null,
+  "gswBeispiel": "En Uusschtieg hätti Folge vo unabsehbarer Tragwiiti."
+ },
+ {
+  "id": 7426,
+  "de": "vorausschauend",
+  "tr": "ileriyi gören, öngörülü",
+  "deBeispiel": "Vorausschauendes Handeln kostet heute Geld und spart morgen viel mehr.",
+  "gsw": "vorusschauend",
+  "gswArtikel": null,
+  "gswBeispiel": "Vorusschauends Handle choschtet hüt Gäld und schpaart morn vil mee."
+ },
+ {
+  "id": 7427,
+  "de": "hypothetisch",
+  "tr": "varsayımsal, farazi",
+  "deBeispiel": "Diese Zahlen sind rein hypothetisch und ersetzen keine Messung.",
+  "gsw": "hypothetisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Zaale sind rein hypothetisch und ersetzed kei Mässig."
+ },
+ {
+  "id": 7428,
+  "de": "schleichend",
+  "tr": "sinsi, yavaş yavaş ilerleyen",
+  "deBeispiel": "Der schleichende Verlust an Vertrauen fällt zunächst kaum auf.",
+  "gsw": "schliichend",
+  "gswArtikel": null,
+  "gswBeispiel": "De schliichend Verluscht a Vertraue fallt zerscht chuum uuf."
+ },
+ {
+  "id": 7429,
+  "de": "verhängnisvoll",
+  "tr": "vahim, uğursuz sonuçlara yol açan",
+  "deBeispiel": "Das Zögern in den ersten Wochen erwies sich als verhängnisvoll.",
+  "gsw": "verhängnisvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "S Zögere i de erschte Wuche hät sich als verhängnisvoll erwise."
+ }
+]

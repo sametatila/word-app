@@ -1,0 +1,992 @@
+[
+ {
+  "id": 5514,
+  "de": "das Klimaziel",
+  "tr": "iklim hedefi",
+  "deBeispiel": "Ohne strengere Vorgaben werden die Klimaziele klar verfehlt.",
+  "gsw": "Klimaziel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ooni schträngeri Vorgabe wärded d Klimaziel klar verfäält."
+ },
+ {
+  "id": 5515,
+  "de": "die Klimaneutralität",
+  "tr": "iklim nötrlüğü, karbon nötrlüğü",
+  "deBeispiel": "Der Konzern will bis 2040 vollständige Klimaneutralität erreichen.",
+  "gsw": "Klimaneutralität",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Konzern will bis 2040 vollschtändigi Klimaneutralität erreiche."
+ },
+ {
+  "id": 5516,
+  "de": "das Artensterben",
+  "tr": "türlerin yok oluşu",
+  "deBeispiel": "Das weltweite Artensterben schreitet schneller voran als befürchtet.",
+  "gsw": "Artenschtärbe",
+  "gswArtikel": "s",
+  "gswBeispiel": "S wältwiit Artenschtärbe schriitet schneller vorwärts als befürchtet."
+ },
+ {
+  "id": 5517,
+  "de": "der Regenwald",
+  "tr": "yağmur ormanı",
+  "deBeispiel": "Für Weideflächen wird jedes Jahr viel Regenwald vernichtet.",
+  "gsw": "Rägewald",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für Weidflächene wird jedes Jaar vill Rägewald vernichtet."
+ },
+ {
+  "id": 5518,
+  "de": "die Abholzung",
+  "tr": "ormansızlaştırma, ağaç kesimi",
+  "deBeispiel": "Die Abholzung im Amazonasgebiet hat wieder zugenommen.",
+  "gsw": "Abholzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abholzig im Amazonasgebiet hät wieder zuegnoo."
+ },
+ {
+  "id": 5519,
+  "de": "der Meeresspiegel",
+  "tr": "deniz seviyesi",
+  "deBeispiel": "Ein steigender Meeresspiegel bedroht viele flache Küstenregionen.",
+  "gsw": "Meeresschpiegel",
+  "gswArtikel": "de",
+  "gswBeispiel": "En schtiigende Meeresschpiegel bedroot vill flachi Küschteregione."
+ },
+ {
+  "id": 5520,
+  "de": "das Trinkwasser",
+  "tr": "içme suyu",
+  "deBeispiel": "In manchen Regionen wird sauberes Trinkwasser immer teurer.",
+  "gsw": "Trinkwasser",
+  "gswArtikel": "s",
+  "gswBeispiel": "I mänge Regione wird suubers Trinkwasser immer tüürer."
+ },
+ {
+  "id": 5521,
+  "de": "das Abwasser",
+  "tr": "atık su, kanalizasyon suyu",
+  "deBeispiel": "Das Abwasser der Fabrik floss jahrelang ungeklärt in den Fluss.",
+  "gsw": "Abwasser",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Abwasser vo de Fabrik isch jaarelang ungchläärt in Fluss gflosse."
+ },
+ {
+  "id": 5522,
+  "de": "die Kläranlage",
+  "tr": "arıtma tesisi",
+  "deBeispiel": "Die neue Kläranlage reinigt das Wasser von tausend Haushalten.",
+  "gsw": "Chläraalag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D nöi Chläraalag reiniget s Wasser vo tuusig Huushalt."
+ },
+ {
+  "id": 5523,
+  "de": "die Wasserknappheit",
+  "tr": "su kıtlığı",
+  "deBeispiel": "Im Sommer führt die Wasserknappheit oft zu strengen Auflagen.",
+  "gsw": "Wasserchnappheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Summer füert d Wasserchnappheit oft zu schtränge Uuflage."
+ },
+ {
+  "id": 5524,
+  "de": "das Düngemittel",
+  "tr": "gübre",
+  "deBeispiel": "Zu viele Düngemittel belasten das Grundwasser der Region.",
+  "gsw": "Düngemittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Z vill Düngemittel belaschted s Grundwasser vo de Region."
+ },
+ {
+  "id": 5525,
+  "de": "die Umweltkatastrophe",
+  "tr": "çevre felaketi",
+  "deBeispiel": "Der Unfall im Chemiewerk gilt als schwere Umweltkatastrophe.",
+  "gsw": "Umwältkataschtrofe",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Unfall im Chemiewärch gilt als schweri Umwältkataschtrofe."
+ },
+ {
+  "id": 5526,
+  "de": "die Lärmbelästigung",
+  "tr": "gürültü rahatsızlığı, gürültü kirliliği",
+  "deBeispiel": "Die Anwohner klagen über die Lärmbelästigung durch den Flughafen.",
+  "gsw": "Lärmbeläschtigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aawoner klaged über d Lärmbeläschtigig dur de Flughafe."
+ },
+ {
+  "id": 5527,
+  "de": "die Ozonschicht",
+  "tr": "ozon tabakası",
+  "deBeispiel": "Die Ozonschicht erholt sich langsam von den früheren Schäden.",
+  "gsw": "Ozonschicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ozonschicht erholt sich langsam vo de früenere Schäde."
+ },
+ {
+  "id": 5528,
+  "de": "die Deponie",
+  "tr": "çöp depolama alanı, düzenli depolama sahası",
+  "deBeispiel": "Auf der Deponie am Stadtrand wird kaum noch Restmüll gelagert.",
+  "gsw": "Deponie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Deponie am Schtadtrand wird chuum no Räschtmüll glageret."
+ },
+ {
+  "id": 5529,
+  "de": "die Umweltpolitik",
+  "tr": "çevre politikası",
+  "deBeispiel": "Die Umweltpolitik der Regierung wird von Fachleuten scharf kritisiert.",
+  "gsw": "Umwältpolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Umwältpolitik vo de Regierig wird vo Fachlüüt scharf kritisiert."
+ },
+ {
+  "id": 5530,
+  "de": "der Emissionshandel",
+  "tr": "emisyon ticareti",
+  "deBeispiel": "Der europäische Emissionshandel macht Kohlestrom deutlich teurer.",
+  "gsw": "Emissionshandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De europäisch Emissionshandel macht de Choleschtrom düütlich tüürer."
+ },
+ {
+  "id": 5531,
+  "de": "das Konsumverhalten",
+  "tr": "tüketim davranışı, tüketim alışkanlığı",
+  "deBeispiel": "Ohne verändertes Konsumverhalten sind die Ziele nicht zu schaffen.",
+  "gsw": "Konsumverhalte",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ooni veränderets Konsumverhalte sind d Ziel nöd z schaffe."
+ },
+ {
+  "id": 5532,
+  "de": "die Wegwerfgesellschaft",
+  "tr": "kullan-at toplumu",
+  "deBeispiel": "Reparieren statt kaufen ist eine Antwort auf die Wegwerfgesellschaft.",
+  "gsw": "Wägwärfgsellschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Repariere schtatt chaufe isch e Antwort uf d Wägwärfgsellschaft."
+ },
+ {
+  "id": 5533,
+  "de": "das Mikroplastik",
+  "tr": "mikroplastik",
+  "deBeispiel": "Selbst in abgelegenen Seen findet man inzwischen Mikroplastik.",
+  "gsw": "Mikroplaschtik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sogar i abglägene See findt me inzwüsche Mikroplaschtik."
+ },
+ {
+  "id": 5534,
+  "de": "der Ökostrom",
+  "tr": "yeşil elektrik, temiz enerji elektriği",
+  "deBeispiel": "Wir beziehen seit letztem Jahr ausschließlich Ökostrom.",
+  "gsw": "Ökoschtrom",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir bezüend sit letschtem Jaar uusschliesslich Ökoschtrom."
+ },
+ {
+  "id": 5535,
+  "de": "die Wärmepumpe",
+  "tr": "ısı pompası",
+  "deBeispiel": "Die Wärmepumpe ersetzt in vielen Neubauten die alte Gasheizung.",
+  "gsw": "Wärmpumpe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wärmpumpe ersetzt i villne Nöibaute di alt Gasheizig."
+ },
+ {
+  "id": 5536,
+  "de": "belasten",
+  "tr": "kirletmek, yük bindirmek, zorlamak",
+  "deBeispiel": "Der Schwerverkehr belastet die Luft in der Innenstadt stark.",
+  "gsw": "belaschte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schwerverchehr belaschtet d Luft i de Innerschtadt schtark."
+ },
+ {
+  "id": 5537,
+  "de": "einsparen",
+  "tr": "tasarruf etmek, kısmak",
+  "deBeispiel": "Mit der neuen Anlage lassen sich jährlich tausend Tonnen einsparen.",
+  "gsw": "iischpare",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit de nöie Aalag lönd sich jedes Jaar tuusig Tonne iischpare."
+ },
+ {
+  "id": 5538,
+  "de": "erzeugen",
+  "tr": "üretmek, meydana getirmek",
+  "deBeispiel": "Das Kraftwerk erzeugt Strom fast ausschließlich aus Wasserkraft.",
+  "gsw": "erzüüge",
+  "gswArtikel": null,
+  "gswBeispiel": "S Chraftwärch erzüügt Schtrom fascht uusschliesslich us Wasserchraft."
+ },
+ {
+  "id": 5539,
+  "de": "ausstoßen",
+  "tr": "salmak, yaymak",
+  "deBeispiel": "Ein Flug nach New York stößt mehrere Tonnen Kohlendioxid aus.",
+  "gsw": "uusschtoosse",
+  "gswArtikel": null,
+  "gswBeispiel": "En Flug uf New York tuet mehreri Tonne Kohlendioxid uusschtoosse."
+ },
+ {
+  "id": 5540,
+  "de": "bewahren",
+  "tr": "korumak, muhafaza etmek",
+  "deBeispiel": "Wir müssen diese Landschaft für die nächsten Generationen bewahren.",
+  "gsw": "bewaare",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend die Landschaft für di nöchschte Generatione bewaare."
+ },
+ {
+  "id": 5541,
+  "de": "aufbereiten",
+  "tr": "arıtmak, işlemden geçirmek",
+  "deBeispiel": "Das Werk bereitet gebrauchtes Wasser für die Industrie auf.",
+  "gsw": "uufbereite",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wärch tuet bruuchts Wasser für d Induschtrie uufbereite."
+ },
+ {
+  "id": 5542,
+  "de": "dämmen",
+  "tr": "yalıtmak, izole etmek",
+  "deBeispiel": "Wer sein Dach gut dämmt, spart im Winter viel Heizöl.",
+  "gsw": "dämme",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer sis Dach guet dämmt, schpart im Winter vill Heizöl."
+ },
+ {
+  "id": 5543,
+  "de": "austrocknen",
+  "tr": "kurumak, kuruyup gitmek",
+  "deBeispiel": "Der kleine Bach ist im vergangenen Sommer völlig ausgetrocknet.",
+  "gsw": "uustrochne",
+  "gswArtikel": null,
+  "gswBeispiel": "De chlii Bach isch im vergangene Summer völlig uusgtrochnet."
+ },
+ {
+  "id": 5544,
+  "de": "ansteigen",
+  "tr": "yükselmek, artmak",
+  "deBeispiel": "Die Durchschnittstemperatur ist seit 1900 deutlich angestiegen.",
+  "gsw": "aaschtiige",
+  "gswArtikel": null,
+  "gswBeispiel": "D Durchschnittstemperatur isch sit 1900 düütlich aagschtige."
+ },
+ {
+  "id": 5545,
+  "de": "verseuchen",
+  "tr": "kirletmek (zehirli maddeyle), bulaştırmak",
+  "deBeispiel": "Auslaufendes Öl hat den Boden auf Jahre hinaus verseucht.",
+  "gsw": "verseuche",
+  "gswArtikel": null,
+  "gswBeispiel": "Uuslaufends Öl hät de Bode uf Jaar use verseucht."
+ },
+ {
+  "id": 5546,
+  "de": "kompostieren",
+  "tr": "kompost yapmak, gübreye dönüştürmek",
+  "deBeispiel": "Küchenreste kompostieren wir im Garten hinter dem Haus.",
+  "gsw": "komposchtiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Chucheräschte komposchtiered mer im Garte hinder em Huus."
+ },
+ {
+  "id": 5547,
+  "de": "verwerten",
+  "tr": "değerlendirmek, geri kazanmak",
+  "deBeispiel": "Fast neunzig Prozent des Altpapiers werden erneut verwertet.",
+  "gsw": "verwärte",
+  "gswArtikel": null,
+  "gswBeispiel": "Fascht nüünzg Prozänt vom Altpapier wärded nomal verwärtet."
+ },
+ {
+  "id": 5548,
+  "de": "zurückgewinnen",
+  "tr": "geri kazanmak, geri elde etmek",
+  "deBeispiel": "Aus alten Handys lassen sich wertvolle Metalle zurückgewinnen.",
+  "gsw": "zruggwünne",
+  "gswArtikel": null,
+  "gswBeispiel": "Us alte Händy lönd sich wärtvolli Metall zruggwünne."
+ },
+ {
+  "id": 5549,
+  "de": "abbauen",
+  "tr": "çıkarmak (maden), ayrıştırmak, azaltmak",
+  "deBeispiel": "In dieser Gegend wird seit hundert Jahren Kohle abgebaut.",
+  "gsw": "abbaue",
+  "gswArtikel": null,
+  "gswBeispiel": "I dere Gägend tuet me sit hundert Jaar Chole abbaue."
+ },
+ {
+  "id": 5550,
+  "de": "umweltschädlich",
+  "tr": "çevreye zararlı",
+  "deBeispiel": "Diese Reinigungsmittel gelten als besonders umweltschädlich.",
+  "gsw": "umwältschädlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Reinigigsmittel gälted als bsunders umwältschädlich."
+ },
+ {
+  "id": 5551,
+  "de": "fossil",
+  "tr": "fosil (yakıt)",
+  "deBeispiel": "Der Ausstieg aus fossilen Brennstoffen dauert länger als erhofft.",
+  "gsw": "fossil",
+  "gswArtikel": null,
+  "gswBeispiel": "De Uusschtieg us fossile Brännschtoff duuret länger als erhofft."
+ },
+ {
+  "id": 5552,
+  "de": "energieeffizient",
+  "tr": "enerji verimli",
+  "deBeispiel": "Das Bürogebäude wurde besonders energieeffizient geplant.",
+  "gsw": "energieeffizient",
+  "gswArtikel": null,
+  "gswBeispiel": "S Bürogebäud isch bsunders energieeffizient plant worde."
+ },
+ {
+  "id": 5553,
+  "de": "wiederverwendbar",
+  "tr": "yeniden kullanılabilir",
+  "deBeispiel": "Im Café gibt es Kaffee nur noch in wiederverwendbaren Bechern.",
+  "gsw": "widerverwändbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Café git s de Kaffi nur no i widerverwändbare Becher."
+ },
+ {
+  "id": 5554,
+  "de": "verschwenderisch",
+  "tr": "savurgan, israfçı",
+  "deBeispiel": "Wir gehen mit Wasser und Energie noch immer verschwenderisch um.",
+  "gsw": "verschwenderisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir gönd mit Wasser und Energie immer no verschwenderisch um."
+ },
+ {
+  "id": 5555,
+  "de": "verheerend",
+  "tr": "yıkıcı, felaket boyutunda",
+  "deBeispiel": "Der Sturm hatte für die Küstendörfer verheerende Folgen.",
+  "gsw": "verheerend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schturm hät für d Küschtedörfer verheerendi Folge gha."
+ },
+ {
+  "id": 5556,
+  "de": "sortenrein",
+  "tr": "türüne göre ayrılmış, karışımsız",
+  "deBeispiel": "Nur sortenrein gesammelte Kunststoffe lassen sich gut wiederverwerten.",
+  "gsw": "sorterein",
+  "gswArtikel": null,
+  "gswBeispiel": "Nur sorterein gsammleti Kunschtschtoff lönd sich guet widerverwärte."
+ },
+ {
+  "id": 5557,
+  "de": "klimafreundlich",
+  "tr": "iklim dostu",
+  "deBeispiel": "Mit dem Zug zu reisen ist deutlich klimafreundlicher als zu fliegen.",
+  "gsw": "klimafründlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit em Zug z reise isch düütlich klimafründlicher als z flüüge."
+ },
+ {
+  "id": 5558,
+  "de": "die Mieterhöhung",
+  "tr": "kira artışı, kira zammı",
+  "deBeispiel": "Der Vermieter muss die Mieterhöhung schriftlich begründen.",
+  "gsw": "Mieterhöhig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Vermieter mues d Mieterhöhig schriftlich begründe."
+ },
+ {
+  "id": 5559,
+  "de": "die Mietminderung",
+  "tr": "kira indirimi, kirada indirim talebi",
+  "deBeispiel": "Wegen des Schimmels im Bad verlangt sie eine Mietminderung.",
+  "gsw": "Mietminderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge em Schimmel im Bad verlangt si e Mietminderig."
+ },
+ {
+  "id": 5560,
+  "de": "der Nachmieter",
+  "tr": "sonraki kiracı, devralan kiracı",
+  "deBeispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag.",
+  "gsw": "Nachmieter",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wänn du en Nachmieter findsch, chunsch früener us em Vertrag use."
+ },
+ {
+  "id": 5561,
+  "de": "das Widerrufsrecht",
+  "tr": "cayma hakkı",
+  "deBeispiel": "Bei Bestellungen im Internet haben Sie ein Widerrufsrecht von vierzehn Tagen.",
+  "gsw": "Widerruefsrächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bi Bschtellige im Internet händ Sie es Widerruefsrächt vo vierzäh Täg."
+ },
+ {
+  "id": 5562,
+  "de": "der Restbetrag",
+  "tr": "kalan tutar, bakiye",
+  "deBeispiel": "Den Restbetrag überweisen Sie bitte innerhalb von zehn Tagen.",
+  "gsw": "Räschtbetrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Räschtbetrag überwiised Sie bitte innerhalb vo zää Täg."
+ },
+ {
+  "id": 5563,
+  "de": "das Inkasso",
+  "tr": "alacak tahsili, tahsilat takibi",
+  "deBeispiel": "Nach der dritten Mahnung übergibt die Firma die Forderung dem Inkasso.",
+  "gsw": "Inkasso",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nach de dritte Mahnig gitt d Firma d Forderig em Inkasso wiiter."
+ },
+ {
+  "id": 5564,
+  "de": "die Hausordnung",
+  "tr": "bina yönetim kuralları, apartman yönetmeliği",
+  "deBeispiel": "Die Hausordnung verbietet lautes Musizieren nach zweiundzwanzig Uhr.",
+  "gsw": "Huusordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Huusordnig verbüttet luuts Musiziere nach zwäiezwänzg Uhr."
+ },
+ {
+  "id": 5565,
+  "de": "die Ruhestörung",
+  "tr": "huzur bozma, gürültüyle rahatsız etme",
+  "deBeispiel": "Die Nachbarn meldeten die nächtliche Ruhestörung der Polizei.",
+  "gsw": "Rueschtöörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Nachbere händ di nächtlich Rueschtöörig de Polizei gmäldet."
+ },
+ {
+  "id": 5566,
+  "de": "die Vertragsstrafe",
+  "tr": "cezai şart",
+  "deBeispiel": "Wer zu spät liefert, muss eine Vertragsstrafe zahlen.",
+  "gsw": "Vertragsschtraaf",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer z schpaat lieferet, mues e Vertragsschtraaf zaale."
+ },
+ {
+  "id": 5567,
+  "de": "die Beweislast",
+  "tr": "ispat yükü",
+  "deBeispiel": "Im ersten Jahr nach dem Kauf liegt die Beweislast beim Verkäufer.",
+  "gsw": "Bewiislascht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im erschte Jaar nach em Chauf liit d Bewiislascht bim Verchäufer."
+ },
+ {
+  "id": 5568,
+  "de": "der Streitfall",
+  "tr": "uyuşmazlık, ihtilaf",
+  "deBeispiel": "Im Streitfall entscheidet das Gericht am Sitz des Anbieters.",
+  "gsw": "Schtriitfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Schtriitfall entscheidet s Gricht am Sitz vom Aabieter."
+ },
+ {
+  "id": 5569,
+  "de": "die Geschäftsbedingungen",
+  "tr": "genel işlem şartları, sözleşme koşulları",
+  "deBeispiel": "Die allgemeinen Geschäftsbedingungen stehen klein gedruckt auf der Rückseite.",
+  "gsw": "Gschäftsbedingige",
+  "gswArtikel": "d",
+  "gswBeispiel": "D allgemeine Gschäftsbedingige schtönd chlii druckt uf de Rüggsiite."
+ },
+ {
+  "id": 5570,
+  "de": "der Rechtsanspruch",
+  "tr": "yasal hak, hukuki talep hakkı",
+  "deBeispiel": "Auf eine kostenlose Reparatur besteht in diesem Fall kein Rechtsanspruch.",
+  "gsw": "Rächtsaaschpruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf e koschtelosi Reparatur bschtaat i dem Fall kein Rächtsaaschpruch."
+ },
+ {
+  "id": 5571,
+  "de": "die Betriebskostenabrechnung",
+  "tr": "işletme giderleri dökümü, aidat hesabı",
+  "deBeispiel": "Die Betriebskostenabrechnung kam erst ein Jahr später ins Haus.",
+  "gsw": "Betriebskoschteabrächnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Betriebskoschteabrächnig isch erscht es Jaar schpöter is Huus cho."
+ },
+ {
+  "id": 5572,
+  "de": "der Eigenbedarf",
+  "tr": "kendi ihtiyacı (için tahliye)",
+  "deBeispiel": "Der Vermieter kündigte die Wohnung wegen Eigenbedarf.",
+  "gsw": "Eigebedarf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vermieter hät d Wonig wäge Eigebedarf kündet."
+ },
+ {
+  "id": 5573,
+  "de": "das Übergabeprotokoll",
+  "tr": "teslim tutanağı",
+  "deBeispiel": "Beim Auszug haben wir jeden Kratzer im Übergabeprotokoll vermerkt.",
+  "gsw": "Übergabprotokoll",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bim Uuszug händ mer jede Chratzer im Übergabprotokoll vermerkt."
+ },
+ {
+  "id": 5574,
+  "de": "die Zusatzvereinbarung",
+  "tr": "ek anlaşma, ek protokol",
+  "deBeispiel": "Die Haltung von Haustieren regelt eine gesonderte Zusatzvereinbarung.",
+  "gsw": "Zuesatzvereinbarig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Haltig vo Huustier regelt e bsunderi Zuesatzvereinbarig."
+ },
+ {
+  "id": 5575,
+  "de": "die Preisanpassung",
+  "tr": "fiyat güncellemesi, zam",
+  "deBeispiel": "Der Anbieter kündigte eine Preisanpassung zum Jahreswechsel an.",
+  "gsw": "Priisaapassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aabieter hät e Priisaapassig uf de Jaareswächsel aakündet."
+ },
+ {
+  "id": 5576,
+  "de": "die Willenserklärung",
+  "tr": "irade beyanı",
+  "deBeispiel": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen.",
+  "gsw": "Willenserchlärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En Vertrag entschtaat dur zwäi übereischtimmendi Willenserchlärige."
+ },
+ {
+  "id": 5577,
+  "de": "pfänden",
+  "tr": "haczetmek",
+  "deBeispiel": "Der Gerichtsvollzieher darf einen Teil des Lohns pfänden.",
+  "gsw": "pfände",
+  "gswArtikel": null,
+  "gswBeispiel": "De Grichtsvollzieher dörf en Teil vom Loon pfände."
+ },
+ {
+  "id": 5578,
+  "de": "räumen",
+  "tr": "boşaltmak, tahliye etmek (konut, mekân)",
+  "deBeispiel": "Der Mieter muss die Wohnung bis Monatsende räumen.",
+  "gsw": "ruume",
+  "gswArtikel": null,
+  "gswBeispiel": "De Mieter mues d Wonig bis Ändi Monet ruume."
+ },
+ {
+  "id": 5579,
+  "de": "beurkunden",
+  "tr": "resmî olarak tasdik etmek, noterde düzenlemek",
+  "deBeispiel": "Der Kaufvertrag wird im Beisein beider Parteien beurkundet.",
+  "gsw": "beurkunde",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chaufvertrag wird im Biisii vo beidne Parteie beurkundet."
+ },
+ {
+  "id": 5580,
+  "de": "bestreiten",
+  "tr": "inkâr etmek, reddetmek (iddiayı)",
+  "deBeispiel": "Die Firma bestreitet, den Schaden verursacht zu haben.",
+  "gsw": "beschtriite",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma beschtriitet, dass si de Schade verursacht hät."
+ },
+ {
+  "id": 5581,
+  "de": "abtreten",
+  "tr": "devretmek, temlik etmek",
+  "deBeispiel": "Er hat seine Forderung an ein anderes Unternehmen abgetreten.",
+  "gsw": "abträtte",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sini Forderig an es anders Unternäme abträtte."
+ },
+ {
+  "id": 5582,
+  "de": "hinterlegen",
+  "tr": "depozito olarak bırakmak, tevdi etmek",
+  "deBeispiel": "Die Kaution wird auf einem gesonderten Konto hinterlegt.",
+  "gsw": "hinderlege",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kaution mues me uf eme bsundere Konto hinderlege."
+ },
+ {
+  "id": 5583,
+  "de": "zustehen",
+  "tr": "hakkı olmak, hakkı doğmak",
+  "deBeispiel": "Ihnen steht in diesem Fall eine volle Rückzahlung zu.",
+  "gsw": "zueschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "I dem Fall tuet Ine e volli Rückzaalig zueschtaa."
+ },
+ {
+  "id": 5584,
+  "de": "gutschreiben",
+  "tr": "hesaba geçirmek, alacak kaydetmek",
+  "deBeispiel": "Der Betrag wird Ihrem Konto in zwei Tagen gutgeschrieben.",
+  "gsw": "guetschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir tüend Ine de Betrag i zwäi Täg uf em Konto guetschriibe."
+ },
+ {
+  "id": 5585,
+  "de": "vertraglich",
+  "tr": "sözleşmeye dayalı, sözleşmeyle belirlenmiş",
+  "deBeispiel": "Die Reinigung des Treppenhauses ist vertraglich klar geregelt.",
+  "gsw": "vertraglich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Reinigig vom Träppehuus isch vertraglich klar gregelt."
+ },
+ {
+  "id": 5586,
+  "de": "unwirksam",
+  "tr": "geçersiz, hükümsüz",
+  "deBeispiel": "Eine solche Klausel ist nach ständiger Rechtsprechung unwirksam.",
+  "gsw": "unwirksam",
+  "gswArtikel": null,
+  "gswBeispiel": "E settigi Klausel isch nach schtändiger Rächtschprächig unwirksam."
+ },
+ {
+  "id": 5587,
+  "de": "rechtskräftig",
+  "tr": "kesinleşmiş, kesin hüküm hâline gelmiş",
+  "deBeispiel": "Das Urteil ist seit letzter Woche rechtskräftig.",
+  "gsw": "rächtschräftig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Urteil isch sit letschter Wuche rächtschräftig."
+ },
+ {
+  "id": 5588,
+  "de": "stillschweigend",
+  "tr": "zımnen, üstü kapalı biçimde",
+  "deBeispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr.",
+  "gsw": "schtillschwiigend",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vertrag verlängeret sich schtillschwiigend um es wiiters Jaar."
+ },
+ {
+  "id": 5589,
+  "de": "gesetzlich",
+  "tr": "yasal, kanuni",
+  "deBeispiel": "Die gesetzliche Frist für die Rückgabe beträgt vierzehn Tage.",
+  "gsw": "gsetzlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D gsetzlich Frischt für d Rückgab isch vierzäh Täg."
+ },
+ {
+  "id": 5590,
+  "de": "einvernehmlich",
+  "tr": "karşılıklı rızayla, mutabakatla",
+  "deBeispiel": "Beide Seiten haben den Vertrag einvernehmlich aufgehoben.",
+  "gsw": "iivernämlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Beidi Siite händ de Vertrag iivernämlich uufghobe."
+ },
+ {
+  "id": 5591,
+  "de": "die Marge",
+  "tr": "kâr marjı, marj",
+  "deBeispiel": "Bei diesem Produkt ist die Marge erschreckend gering.",
+  "gsw": "Marge",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dem Produkt isch d Marge erschreckend chlii."
+ },
+ {
+  "id": 5592,
+  "de": "der Vertrieb",
+  "tr": "satış, dağıtım, satış bölümü",
+  "deBeispiel": "Der Vertrieb meldet steigende Bestellungen aus Osteuropa.",
+  "gsw": "Vertrib",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vertrib mäldet schtiigendi Bschtellige us Oschteuropa."
+ },
+ {
+  "id": 5593,
+  "de": "der Großhandel",
+  "tr": "toptan ticaret, toptancılık",
+  "deBeispiel": "Wir beziehen unsere Waren direkt aus dem Großhandel.",
+  "gsw": "Groosshandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir bezüend öisi Waare direkt us em Groosshandel."
+ },
+ {
+  "id": 5594,
+  "de": "die Ausschreibung",
+  "tr": "ihale, ilan",
+  "deBeispiel": "Die Firma hat sich an der öffentlichen Ausschreibung beteiligt.",
+  "gsw": "Uusschriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Firma hät sich a de öffentliche Uusschriibig beteiligt."
+ },
+ {
+  "id": 5595,
+  "de": "die Ausfuhr",
+  "tr": "ihracat, dışsatım",
+  "deBeispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen.",
+  "gsw": "Uusfuer",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uusfuer vo bschtimmte Technologie underliit schtränge Kontrolle."
+ },
+ {
+  "id": 5596,
+  "de": "die Einfuhr",
+  "tr": "ithalat, dışalım",
+  "deBeispiel": "Die Einfuhr frischer Lebensmittel wurde vorübergehend untersagt.",
+  "gsw": "Iifuer",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Iifuer vo frische Läbesmittel isch vorüberghend verbotte worde."
+ },
+ {
+  "id": 5597,
+  "de": "die Umsatzsteuer",
+  "tr": "KDV, satış vergisi",
+  "deBeispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen.",
+  "gsw": "Umsatzschtüür",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Rächnig isch d Umsatzschtüür bsunders uusgwise."
+ },
+ {
+  "id": 5598,
+  "de": "die Existenzgründung",
+  "tr": "iş kurma, girişim kurma",
+  "deBeispiel": "Die Stadt berät junge Leute bei der Existenzgründung kostenfrei.",
+  "gsw": "Exischtänzgründig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtadt beraat jungi Lüüt bi de Exischtänzgründig koschtelos."
+ },
+ {
+  "id": 5599,
+  "de": "die Beteiligung",
+  "tr": "hisse, pay, katılım",
+  "deBeispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent.",
+  "gsw": "Beteiligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Inveschtor haltet e Beteiligig vo füfezwänzg Prozänt."
+ },
+ {
+  "id": 5600,
+  "de": "die Börse",
+  "tr": "borsa",
+  "deBeispiel": "An der Börse reagierten die Anleger nervös auf die neuen Zahlen.",
+  "gsw": "Börse",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Börse händ d Aaleger nervös uf di nöie Zaale reagiert."
+ },
+ {
+  "id": 5601,
+  "de": "die Preisgestaltung",
+  "tr": "fiyatlandırma, fiyat politikası",
+  "deBeispiel": "Die aggressive Preisgestaltung des Anbieters ärgert die ganze Branche.",
+  "gsw": "Priisgschtaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di aggressiv Priisgschtaltig vom Aabieter ärgeret di ganz Branche."
+ },
+ {
+  "id": 5602,
+  "de": "die Beschaffung",
+  "tr": "tedarik, temin",
+  "deBeispiel": "Die Beschaffung der Ersatzteile dauert länger als geplant.",
+  "gsw": "Bschaffig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bschaffig vo de Ersatzteil duuret länger als plant."
+ },
+ {
+  "id": 5603,
+  "de": "die Qualitätssicherung",
+  "tr": "kalite güvencesi, kalite kontrol",
+  "deBeispiel": "In der Qualitätssicherung wird jedes zehnte Teil genau geprüft.",
+  "gsw": "Qualitätssicherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Qualitätssicherig wird jedes zäänte Teil genau prüeft."
+ },
+ {
+  "id": 5604,
+  "de": "die Effizienz",
+  "tr": "verimlilik, etkinlik",
+  "deBeispiel": "Neue Maschinen sollen die Effizienz der gesamten Produktion erhöhen.",
+  "gsw": "Effizienz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nöii Maschine sölled d Effizienz vo de ganze Produktion erhööche."
+ },
+ {
+  "id": 5605,
+  "de": "die Sanierung",
+  "tr": "mali yeniden yapılandırma, ıslah",
+  "deBeispiel": "Die Sanierung des Unternehmens dauerte fast drei Jahre.",
+  "gsw": "Sanierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sanierig vom Unternäme hät fascht drüü Jaar duuret."
+ },
+ {
+  "id": 5606,
+  "de": "das Gewerbe",
+  "tr": "ticari işletme, esnaflık, meslek",
+  "deBeispiel": "Wer ein Gewerbe anmeldet, braucht am Anfang wenig Kapital.",
+  "gsw": "Gwerb",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wer es Gwerb aamäldet, bruucht am Aafang wenig Kapital."
+ },
+ {
+  "id": 5607,
+  "de": "das Monopol",
+  "tr": "tekel",
+  "deBeispiel": "Der Anbieter besitzt in dieser Region praktisch ein Monopol.",
+  "gsw": "Monopol",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Aabieter hät i dere Region praktisch es Monopol."
+ },
+ {
+  "id": 5608,
+  "de": "das Kartell",
+  "tr": "kartel",
+  "deBeispiel": "Das Kartell hatte die Preise über Jahre künstlich hochgehalten.",
+  "gsw": "Kartell",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Kartell hät d Priis über Jaar künschtlich hooch ghalte."
+ },
+ {
+  "id": 5609,
+  "de": "der Lieferengpass",
+  "tr": "tedarik darboğazı, sevkiyat sıkıntısı",
+  "deBeispiel": "Ein Lieferengpass bei Chips bremst die gesamte Branche.",
+  "gsw": "Lieferängpass",
+  "gswArtikel": "de",
+  "gswBeispiel": "En Lieferängpass bi de Chips bremst di ganz Branche."
+ },
+ {
+  "id": 5610,
+  "de": "das Eigenkapital",
+  "tr": "öz sermaye, öz kaynak",
+  "deBeispiel": "Ohne ausreichendes Eigenkapital gewährt die Bank keinen Kredit.",
+  "gsw": "Eigekapital",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ooni gnueg Eigekapital git d Bank kein Kredit."
+ },
+ {
+  "id": 5611,
+  "de": "erzielen",
+  "tr": "elde etmek, sağlamak",
+  "deBeispiel": "Mit dem neuen Modell erzielte die Firma hohe Verkaufszahlen.",
+  "gsw": "erziele",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit em nöie Modell hät d Firma hochi Verchaufszaale erzielt."
+ },
+ {
+  "id": 5612,
+  "de": "konkurrieren",
+  "tr": "rekabet etmek, yarışmak",
+  "deBeispiel": "Kleine Läden können mit den großen Ketten kaum konkurrieren.",
+  "gsw": "konkurriere",
+  "gswArtikel": null,
+  "gswBeispiel": "Chlini Läde chönd mit de grosse Chette chuum konkurriere."
+ },
+ {
+  "id": 5613,
+  "de": "exportieren",
+  "tr": "ihraç etmek",
+  "deBeispiel": "Die Region exportiert vor allem Maschinen und Fahrzeugteile.",
+  "gsw": "exportiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Region exportiert vor allem Maschine und Fahrzüügteil."
+ },
+ {
+  "id": 5614,
+  "de": "verlagern",
+  "tr": "kaydırmak, başka yere taşımak",
+  "deBeispiel": "Der Hersteller hat die Fertigung nach Osteuropa verlagert.",
+  "gsw": "verlagere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Herschteller hät d Fertigung uf Oschteuropa verlageret."
+ },
+ {
+  "id": 5615,
+  "de": "florieren",
+  "tr": "iyi gitmek, gelişmek",
+  "deBeispiel": "Trotz der Krise floriert der Handel mit Gebrauchtwagen.",
+  "gsw": "floriere",
+  "gswArtikel": null,
+  "gswBeispiel": "Trotz de Krise floriert de Handel mit Gebruuchtwäge."
+ },
+ {
+  "id": 5616,
+  "de": "veräußern",
+  "tr": "elden çıkarmak, satmak",
+  "deBeispiel": "Der Konzern veräußerte seine Anteile an dem kleinen Zulieferer.",
+  "gsw": "veräussere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konzern hät sini Aateil am chliine Zuelieferant veräusseret."
+ },
+ {
+  "id": 5617,
+  "de": "unterbieten",
+  "tr": "altına inmek, fiyat kırmak",
+  "deBeispiel": "Der Wettbewerber hat unser Angebot deutlich unterboten.",
+  "gsw": "underbüüte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Konkurränt hät öises Aagebot chöne düütlich underbüüte."
+ },
+ {
+  "id": 5618,
+  "de": "wirtschaftlich",
+  "tr": "ekonomik, iktisadi, verimli",
+  "deBeispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt.",
+  "gsw": "wirtschaftlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Laag vom Betrib isch wirtschaftlich üsserscht aagschpannt."
+ },
+ {
+  "id": 5619,
+  "de": "marktführend",
+  "tr": "pazar lideri olan",
+  "deBeispiel": "Bei Sicherheitstechnik ist die Firma in Europa marktführend.",
+  "gsw": "marktfüerend",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi de Sicherheitstechnik isch d Firma in Europa marktfüerend."
+ },
+ {
+  "id": 5620,
+  "de": "rückläufig",
+  "tr": "gerileyen, azalan",
+  "deBeispiel": "Die Bestellungen aus dem Ausland sind seit Monaten rückläufig.",
+  "gsw": "rückläufig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bschtellige us em Uusland sind sit Monet rückläufig."
+ },
+ {
+  "id": 5621,
+  "de": "geschäftlich",
+  "tr": "iş ile ilgili, iş için, ticari",
+  "deBeispiel": "Er ist diese Woche geschäftlich in Mailand unterwegs.",
+  "gsw": "gschäftlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er isch die Wuche gschäftlich z Mailand underwägs."
+ },
+ {
+  "id": 5622,
+  "de": "serienmäßig",
+  "tr": "standart olarak, seri üretimde bulunan",
+  "deBeispiel": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut.",
+  "gsw": "seriemässig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Navigationssyschtem isch bi dem Modell seriemässig iiboue."
+ },
+ {
+  "id": 5623,
+  "de": "mittelständisch",
+  "tr": "orta ölçekli, KOBİ niteliğinde",
+  "deBeispiel": "Die Region lebt vor allem von mittelständischen Betrieben.",
+  "gsw": "mittelschtändisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Region läbt vor allem vo mittelschtändische Betrib."
+ }
+]

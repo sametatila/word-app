@@ -1,0 +1,996 @@
+[
+ {
+  "id": 7233,
+  "de": "ausspähen",
+  "tr": "gizlice gözetlemek, casusluk etmek",
+  "deBeispiel": "Der Dienst hat jahrelang die Kommunikation befreundeter Regierungen ausgespäht.",
+  "gsw": "usspähe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dienscht hät jaarelang d Kommunikation vo befründete Regierige usgspäht."
+ },
+ {
+  "id": 7234,
+  "de": "protokollieren",
+  "tr": "kayda geçirmek, tutanağa geçirmek",
+  "deBeispiel": "Jeder Zugriff auf die Datenbank wird lückenlos protokolliert.",
+  "gsw": "protokolliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Zuegriff uf d Datebank wird lückelos protokolliert."
+ },
+ {
+  "id": 7235,
+  "de": "nachbilden",
+  "tr": "taklit etmek, yeniden oluşturmak",
+  "deBeispiel": "Maschinen bilden sprachliche Muster nach, ohne sie zu verstehen.",
+  "gsw": "nachbilde",
+  "gswArtikel": null,
+  "gswBeispiel": "Maschine tüend schpraachlichi Muschter nachbilde, oni si z verschtaa."
+ },
+ {
+  "id": 7236,
+  "de": "skalieren",
+  "tr": "ölçeklendirmek, büyütmek",
+  "deBeispiel": "Ein Fehler, der sich beliebig skalieren lässt, wird zum Systemrisiko.",
+  "gsw": "skaliere",
+  "gswArtikel": null,
+  "gswBeispiel": "En Fääler, wo sich beliebig laat skaliere, wird zum Syschtemrisiko."
+ },
+ {
+  "id": 7237,
+  "de": "aushebeln",
+  "tr": "etkisiz kılmak, devre dışı bırakmak",
+  "deBeispiel": "Technische Voreinstellungen hebeln bestehende Schutzrechte faktisch aus.",
+  "gsw": "usheble",
+  "gswArtikel": null,
+  "gswBeispiel": "Technischi Voreinschtellige tüend beschtehendi Schutzrächt faktisch usheble."
+ },
+ {
+  "id": 7238,
+  "de": "voraussetzen",
+  "tr": "varsaymak, önkoşul saymak",
+  "deBeispiel": "Diese Argumentation setzt voraus, dass Daten neutral seien.",
+  "gsw": "vorussetze",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Argumentation tuet vorussetze, dass d Date neutral sind."
+ },
+ {
+  "id": 7239,
+  "de": "einhegen",
+  "tr": "sınırlarını çizmek, denetim altına almak",
+  "deBeispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen.",
+  "gsw": "iihege",
+  "gswArtikel": null,
+  "gswBeispiel": "De Gsetzgeber wott d Macht vo de Plattforme rächtlich iihege."
+ },
+ {
+  "id": 7240,
+  "de": "lernfähig",
+  "tr": "öğrenme yeteneği olan",
+  "deBeispiel": "Ein lernfähiges System verändert sein Verhalten nach der Zulassung.",
+  "gsw": "lernfäig",
+  "gswArtikel": null,
+  "gswBeispiel": "Es lernfäigs Syschtem verändert sis Verhalte nach de Zuelassig."
+ },
+ {
+  "id": 7241,
+  "de": "fehleranfällig",
+  "tr": "hataya açık, arızaya yatkın",
+  "deBeispiel": "Gerade bei seltenen Fällen bleibt die Erkennung fehleranfällig.",
+  "gsw": "fääleraafällig",
+  "gswArtikel": null,
+  "gswBeispiel": "Grad bi seltene Fäll bliibt d Erkennig fääleraafällig."
+ },
+ {
+  "id": 7242,
+  "de": "datengetrieben",
+  "tr": "veriye dayalı",
+  "deBeispiel": "Datengetriebene Verwaltung verspricht Effizienz und riskiert zugleich Kontrollverluste.",
+  "gsw": "dategetribe",
+  "gswArtikel": null,
+  "gswBeispiel": "Dategetribeni Verwaltig verschpricht Effizienz und riskiert gliichziitig Kontrollverlüscht."
+ },
+ {
+  "id": 7243,
+  "de": "allgegenwärtig",
+  "tr": "her yerde olan, her yanı sarmış",
+  "deBeispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden.",
+  "gsw": "allgägewärtig",
+  "gswArtikel": null,
+  "gswBeispiel": "S Erfasse vo Date isch im Alltag scho lang allgägewärtig worde."
+ },
+ {
+  "id": 7244,
+  "de": "personenbezogen",
+  "tr": "kişisel, kişiye ilişkin",
+  "deBeispiel": "Auch scheinbar harmlose Angaben können personenbezogen sein.",
+  "gsw": "personebezoge",
+  "gswArtikel": null,
+  "gswBeispiel": "Au schiinbar harmlosi Aagabe chönd personebezoge sii."
+ },
+ {
+  "id": 7245,
+  "de": "zwangsläufig",
+  "tr": "kaçınılmaz olarak, ister istemez",
+  "deBeispiel": "Mehr Rechenleistung führt nicht zwangsläufig zu besseren Entscheidungen.",
+  "gsw": "zwangsläufig",
+  "gswArtikel": null,
+  "gswBeispiel": "Meh Rächeleischtig füert nöd zwangsläufig zu bessere Entscheidige."
+ },
+ {
+  "id": 7246,
+  "de": "die Befugnis",
+  "tr": "yetki, salahiyet",
+  "deBeispiel": "Der Ausschuss überschritt seine Befugnisse bei der Vergabe der Mittel.",
+  "gsw": "Befugnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Uusschuss hät sini Befugnis bi de Vergaab vo de Mittel überschritte."
+ },
+ {
+  "id": 7247,
+  "de": "die Bewilligung",
+  "tr": "onay, tahsis, izin",
+  "deBeispiel": "Ohne die Bewilligung der Fördermittel kann das Projekt nicht starten.",
+  "gsw": "Bewilligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni d Bewilligig vo de Fördermittel cha s Projekt nöd schtarte.",
+  "ayniLehce": [
+   "Erlaubnis (A2)",
+   "Genehmigung (B2)"
+  ]
+ },
+ {
+  "id": 7248,
+  "de": "der Bürokratieabbau",
+  "tr": "bürokrasinin azaltılması",
+  "deBeispiel": "Der versprochene Bürokratieabbau blieb bislang weitgehend folgenlos.",
+  "gsw": "Bürokratieabbau",
+  "gswArtikel": "de",
+  "gswBeispiel": "De versproche Bürokratieabbau isch bis jetz wiitgehend folgelos bliibe."
+ },
+ {
+  "id": 7249,
+  "de": "der Dienstweg",
+  "tr": "resmî prosedür, hiyerarşik yol",
+  "deBeispiel": "Beschwerden müssen zunächst auf dem üblichen Dienstweg eingereicht werden.",
+  "gsw": "Dienschtwäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bschwärde mönd zerscht uf em üebliche Dienschtwäg iigreicht werde."
+ },
+ {
+  "id": 7250,
+  "de": "die Kontrollinstanz",
+  "tr": "denetim mercii",
+  "deBeispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung.",
+  "gsw": "Kontrollinschtanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni unabhängigi Kontrollinschtanz bliibt jedi Reform e blossi Absichtserklärig."
+ },
+ {
+  "id": 7251,
+  "de": "die Ombudsstelle",
+  "tr": "kamu denetçiliği birimi, arabulucu makam",
+  "deBeispiel": "Bürger können sich bei Konflikten mit Ämtern an die Ombudsstelle wenden.",
+  "gsw": "Ombudsschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bürger chönd sich bi Konflikt mit de Ämter a d Ombudsschtell wände."
+ },
+ {
+  "id": 7252,
+  "de": "das Regelwerk",
+  "tr": "kurallar bütünü, mevzuat",
+  "deBeispiel": "Das Regelwerk ist über die Jahre unübersichtlich und widersprüchlich geworden.",
+  "gsw": "Rägelwärk",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Rägelwärk isch über d Jaar unübersichtlich und widersprüchlich worde."
+ },
+ {
+  "id": 7253,
+  "de": "die Satzung",
+  "tr": "tüzük, ana sözleşme",
+  "deBeispiel": "Die Satzung des Vereins wurde auf der Mitgliederversammlung grundlegend geändert.",
+  "gsw": "Satzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Satzig vom Veräin isch a de Mitgliederversammlig grundlegend gänderet worde."
+ },
+ {
+  "id": 7254,
+  "de": "die Verantwortlichkeit",
+  "tr": "sorumluluk, mesuliyet",
+  "deBeispiel": "Die Verantwortlichkeiten zwischen Bund und Ländern sind kaum klar abgegrenzt.",
+  "gsw": "Verantwortlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verantwortlichkeite zwüsched Bund und Länder sind chuum klaar abgränzt."
+ },
+ {
+  "id": 7255,
+  "de": "der Verwaltungsapparat",
+  "tr": "yönetim aygıtı, bürokratik yapı",
+  "deBeispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil der Haushaltsmittel.",
+  "gsw": "Verwaltigsapparat",
+  "gswArtikel": "de",
+  "gswBeispiel": "En ufblähte Verwaltigsapparat frisst en Grossteil vo de Haushaltsmittel."
+ },
+ {
+  "id": 7256,
+  "de": "die Verwaltungsreform",
+  "tr": "kamu yönetimi reformu",
+  "deBeispiel": "Die angekündigte Verwaltungsreform scheiterte am Widerstand der Ministerien.",
+  "gsw": "Verwaltigsreform",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di aakündigt Verwaltigsreform isch am Widerschtand vo de Minischterie gschiiteret."
+ },
+ {
+  "id": 7257,
+  "de": "der Zuständigkeitsbereich",
+  "tr": "yetki alanı, görev sahası",
+  "deBeispiel": "Diese Frage liegt außerhalb des Zuständigkeitsbereichs unserer Abteilung.",
+  "gsw": "Zueschtändigkeitsbereich",
+  "gswArtikel": "de",
+  "gswBeispiel": "Die Frog liit usserhalb vom Zueschtändigkeitsbereich vo eusere Abteilig."
+ },
+ {
+  "id": 7258,
+  "de": "der Amtsschimmel",
+  "tr": "bürokratik hantallık, kırtasiyecilik",
+  "deBeispiel": "Bei jedem Formular wiehert wieder der Amtsschimmel.",
+  "gsw": "Amtsschimmel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi jedem Formular wieheret wider de Amtsschimmel."
+ },
+ {
+  "id": 7259,
+  "de": "das Beamtentum",
+  "tr": "memurluk kurumu, memur sınıfı",
+  "deBeispiel": "Das preußische Beamtentum galt lange als Vorbild an Pflichttreue.",
+  "gsw": "Beamtetum",
+  "gswArtikel": "s",
+  "gswBeispiel": "S prüüssisch Beamtetum hät lang als Vorbild a Pflichttreui golte."
+ },
+ {
+  "id": 7260,
+  "de": "die Auskunftspflicht",
+  "tr": "bilgi verme yükümlülüğü",
+  "deBeispiel": "Gegenüber dem Untersuchungsausschuss besteht eine umfassende Auskunftspflicht.",
+  "gsw": "Uuskunftspflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gägenüber em Untersuechigsuusschuss bschtaat e umfassendi Uuskunftspflicht."
+ },
+ {
+  "id": 7261,
+  "de": "die Dezentralisierung",
+  "tr": "yerelleşme, yetki dağıtımı",
+  "deBeispiel": "Die Dezentralisierung der Zuständigkeiten hat die Verfahren spürbar beschleunigt.",
+  "gsw": "Dezentralisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dezentralisierig vo de Zueschtändigkeite hät d Verfaare spürbar beschleunigt."
+ },
+ {
+  "id": 7262,
+  "de": "die Vertraulichkeit",
+  "tr": "gizlilik, mahremiyet",
+  "deBeispiel": "Die Vertraulichkeit der Personalakten muss unbedingt gewahrt bleiben.",
+  "gsw": "Vertruulichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vertruulichkeit vo de Personalakte mues unbedingt gwaart bliibe."
+ },
+ {
+  "id": 7263,
+  "de": "die Amtshilfe",
+  "tr": "kurumlar arası yardım, idari destek",
+  "deBeispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe.",
+  "gsw": "Amtshilf",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Polizei hät em Finanzamt bi de Duresuechig Amtshilf gläischtet."
+ },
+ {
+  "id": 7264,
+  "de": "der Prüfbericht",
+  "tr": "denetim raporu",
+  "deBeispiel": "Der Prüfbericht deckte erhebliche Mängel in der Mittelverwendung auf.",
+  "gsw": "Prüefbricht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Prüefbricht hät erhebligi Mängel bi de Mittelverwändig ufdeckt."
+ },
+ {
+  "id": 7265,
+  "de": "der Rechnungshof",
+  "tr": "sayıştay",
+  "deBeispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Landesbehörden.",
+  "gsw": "Rächnigshof",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rächnigshof hät d Vergaabpraxis vo mehrere Landesbehörde kritisiert."
+ },
+ {
+  "id": 7266,
+  "de": "verfügen",
+  "tr": "resmen karar vermek, emretmek; (über +A) sahip olmak",
+  "deBeispiel": "Die Behörde verfügte die sofortige Schließung des Betriebs.",
+  "gsw": "verfüege",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde hät di sofortigi Schliessig vom Betrib verfüegt."
+ },
+ {
+  "id": 7267,
+  "de": "einschreiten",
+  "tr": "müdahale etmek, işe karışmak",
+  "deBeispiel": "Die Aufsicht schritt erst ein, als der Schaden längst entstanden war.",
+  "gsw": "iischriite",
+  "gswArtikel": null,
+  "gswBeispiel": "D Uufsicht isch erscht iigschritte, wo de Schade scho lang entschtande gsi isch."
+ },
+ {
+  "id": 7268,
+  "de": "anberaumen",
+  "tr": "gün belirlemek, (toplantı, duruşma için) tarih tayin etmek",
+  "deBeispiel": "Für kommende Woche wurde eine außerordentliche Sitzung anberaumt.",
+  "gsw": "aaberaume",
+  "gswArtikel": null,
+  "gswBeispiel": "Für di chömend Wuche isch e usserordentlichi Sitzig aaberaumt worde."
+ },
+ {
+  "id": 7269,
+  "de": "zuwiderhandeln",
+  "tr": "aykırı davranmak, ihlal etmek",
+  "deBeispiel": "Wer den Auflagen zuwiderhandelt, muss mit einem Bußgeld rechnen.",
+  "gsw": "zuwiderhandle",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer de Uflage zuwiderhandlet, mues mit ere Buess rächne."
+ },
+ {
+  "id": 7270,
+  "de": "erwirken",
+  "tr": "elde etmek, çıkarttırmak",
+  "deBeispiel": "Die Initiative erwirkte einen Baustopp für das umstrittene Gelände.",
+  "gsw": "erwirke",
+  "gswArtikel": null,
+  "gswBeispiel": "D Initiative hät en Baustopp für s umschtrittene Gländ erwirkt."
+ },
+ {
+  "id": 7271,
+  "de": "formell",
+  "tr": "biçimsel, resmî",
+  "deBeispiel": "Formell war alles korrekt, inhaltlich blieb die Entscheidung fragwürdig.",
+  "gsw": "formell",
+  "gswArtikel": null,
+  "gswBeispiel": "Formell isch alles korrekt gsi, inhaltlich isch de Entscheid fragwürdig bliibe."
+ },
+ {
+  "id": 7272,
+  "de": "schwerfällig",
+  "tr": "hantal, ağır işleyen",
+  "deBeispiel": "Der Apparat reagiert auf neue Anforderungen ausgesprochen schwerfällig.",
+  "gsw": "schwärfällig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Apparat reagiert uf neui Aaforderige uusgschproche schwärfällig."
+ },
+ {
+  "id": 7273,
+  "de": "antragsberechtigt",
+  "tr": "başvuru hakkı olan",
+  "deBeispiel": "Antragsberechtigt sind nur Einrichtungen mit Sitz im Inland.",
+  "gsw": "aatragsberechtigt",
+  "gswArtikel": null,
+  "gswBeispiel": "Aatragsberechtigt sind nu Iirichtige mit Sitz im Inland."
+ },
+ {
+  "id": 7274,
+  "de": "seitens",
+  "tr": "tarafından (resmî dil)",
+  "deBeispiel": "Seitens der Verwaltung gab es bislang keine belastbare Stellungnahme.",
+  "gsw": "siitens",
+  "gswArtikel": null,
+  "gswBeispiel": "Siitens vo de Verwaltig hät s bis jetz kei belaschtbari Schtellignaam gee."
+ },
+ {
+  "id": 7275,
+  "de": "mangels",
+  "tr": "yokluğundan dolayı, bulunmaması nedeniyle",
+  "deBeispiel": "Das Verfahren wurde mangels hinreichender Beweise eingestellt.",
+  "gsw": "mangels",
+  "gswArtikel": null,
+  "gswBeispiel": "S Verfaare isch mangels gnüegende Bewiis iigschtellt worde."
+ },
+ {
+  "id": 7276,
+  "de": "die Deflation",
+  "tr": "deflasyon, fiyatların genel düşüşü",
+  "deBeispiel": "Eine anhaltende Deflation kann die Konjunktur stärker lähmen als moderate Preissteigerungen.",
+  "gsw": "Deflation",
+  "gswArtikel": "d",
+  "gswBeispiel": "E aahaltendi Deflation cha d Konjunktur schtercher lääme als moderati Priissteigerige."
+ },
+ {
+  "id": 7277,
+  "de": "die Stagnation",
+  "tr": "durgunluk, duraklama",
+  "deBeispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft endlich wieder leicht.",
+  "gsw": "Schtagnation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach zwäi Jaar Schtagnation wachst d Wirtschaft ändlich wider liicht."
+ },
+ {
+  "id": 7278,
+  "de": "die Fiskalpolitik",
+  "tr": "maliye politikası",
+  "deBeispiel": "Über die richtige Fiskalpolitik streiten Ökonomen seit der letzten Rezession.",
+  "gsw": "Fiskalpolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über di richtigi Fiskalpolitik schtriited d Ökonome siit de letschte Rezession."
+ },
+ {
+  "id": 7279,
+  "de": "die Anleihe",
+  "tr": "tahvil, borçlanma senedi",
+  "deBeispiel": "Die Notenbank kauft Anleihen auf, um die langfristigen Zinsen zu senken.",
+  "gsw": "Aaleihe",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Notebank chauft Aaleihe uuf, zum di langfrischtige Zinse senke."
+ },
+ {
+  "id": 7280,
+  "de": "der Kapitalmarkt",
+  "tr": "sermaye piyasası",
+  "deBeispiel": "Die Kapitalmärkte reagierten nervös auf die überraschende Zinsentscheidung.",
+  "gsw": "Kapitalmarkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kapitalmarkt hät nervös uf de überraschend Zinsentscheid reagiert."
+ },
+ {
+  "id": 7281,
+  "de": "das Haushaltsdefizit",
+  "tr": "bütçe açığı",
+  "deBeispiel": "Das Haushaltsdefizit stieg im vergangenen Jahr auf vier Prozent der Wirtschaftsleistung.",
+  "gsw": "Haushaltsdefizit",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Haushaltsdefizit isch letscht Jaar uf vier Prozänt vo de Wirtschaftsläischtig gschtige."
+ },
+ {
+  "id": 7282,
+  "de": "der Konjunkturzyklus",
+  "tr": "konjonktür döngüsü, ekonomik çevrim",
+  "deBeispiel": "Jeder Konjunkturzyklus durchläuft Phasen des Aufschwungs und der Abkühlung.",
+  "gsw": "Konjunkturzyklus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Konjunkturzyklus durchlauft Phase vom Uufschwung und vo de Abchüelig."
+ },
+ {
+  "id": 7283,
+  "de": "die Produktivität",
+  "tr": "verimlilik, üretkenlik",
+  "deBeispiel": "Ohne Investitionen in Bildung stagniert die Produktivität einer Volkswirtschaft.",
+  "gsw": "Produktivität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Inveschtitione i d Bildig schtagniert d Produktivität vo ere Volkswirtschaft."
+ },
+ {
+  "id": 7284,
+  "de": "die Preisstabilität",
+  "tr": "fiyat istikrarı",
+  "deBeispiel": "Das oberste Ziel der Notenbank bleibt die Preisstabilität im Euroraum.",
+  "gsw": "Priisschtabilität",
+  "gswArtikel": "d",
+  "gswBeispiel": "S oberschte Ziel vo de Notebank bliibt d Priisschtabilität im Euroruum."
+ },
+ {
+  "id": 7285,
+  "de": "der Sozialtransfer",
+  "tr": "sosyal transfer, sosyal yardım ödemesi",
+  "deBeispiel": "Ohne staatliche Sozialtransfers läge die Armutsquote deutlich höher.",
+  "gsw": "Sozialtransfer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ohni schtaatlichi Sozialtransfer wär d Armuetsquote düütlich höcher."
+ },
+ {
+  "id": 7286,
+  "de": "die Finanzaufsicht",
+  "tr": "mali denetim kurumu, finansal denetim",
+  "deBeispiel": "Die Finanzaufsicht prüft, ob die Institute genügend Rücklagen bilden.",
+  "gsw": "Finanzuufsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Finanzuufsicht prüeft, öb d Inschtitut gnueg Rücklaage bilded."
+ },
+ {
+  "id": 7287,
+  "de": "die Zahlungsfähigkeit",
+  "tr": "ödeme gücü, borcunu ödeyebilme",
+  "deBeispiel": "Zweifel an der Zahlungsfähigkeit des Staates trieben die Zinsen nach oben.",
+  "gsw": "Zaalungsfähigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwiifel a de Zaalungsfähigkeit vom Schtaat händ d Zinse uuftriebe."
+ },
+ {
+  "id": 7288,
+  "de": "die Spekulationsblase",
+  "tr": "spekülasyon balonu",
+  "deBeispiel": "Kurz vor dem Platzen einer Spekulationsblase wirkt der Markt besonders euphorisch.",
+  "gsw": "Schpekulationsblaase",
+  "gswArtikel": "d",
+  "gswBeispiel": "Churz vor em Platze vo ere Schpekulationsblaase wirkt de Märt bsunders euphorisch."
+ },
+ {
+  "id": 7289,
+  "de": "die Finanzkrise",
+  "tr": "finansal kriz",
+  "deBeispiel": "Die Finanzkrise von 2008 erschütterte das Vertrauen in die Banken dauerhaft.",
+  "gsw": "Finanzkrise",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Finanzkrise vo 2008 hät s Vertraue i d Banke duurhaft erschütteret."
+ },
+ {
+  "id": 7290,
+  "de": "das Systemrisiko",
+  "tr": "sistemik risk",
+  "deBeispiel": "Sehr große Institute bergen ein Systemrisiko für die gesamte Volkswirtschaft.",
+  "gsw": "Syschtemrisiko",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sehr grossi Inschtitut bärged es Syschtemrisiko für di ganz Volkswirtschaft."
+ },
+ {
+  "id": 7291,
+  "de": "das Rettungspaket",
+  "tr": "kurtarma paketi",
+  "deBeispiel": "Das Parlament billigte ein Rettungspaket in Höhe von zwanzig Milliarden Euro.",
+  "gsw": "Rettigspaket",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Parlamänt hät es Rettigspaket i de Höchi vo zwänzg Milliarde Euro bewilligt."
+ },
+ {
+  "id": 7292,
+  "de": "die Notenbank",
+  "tr": "merkez bankası",
+  "deBeispiel": "Die Notenbank handelt formal unabhängig von den Wünschen der Regierung.",
+  "gsw": "Notebank",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Notebank handlet formal unabhängig vo de Wünsch vo de Regierig."
+ },
+ {
+  "id": 7293,
+  "de": "die Geldmenge",
+  "tr": "para arzı, para miktarı",
+  "deBeispiel": "Eine rasch wachsende Geldmenge gilt vielen Ökonomen als Warnsignal.",
+  "gsw": "Gäldmängi",
+  "gswArtikel": "d",
+  "gswBeispiel": "E schnäll wachsendi Gäldmängi gilt bi vilne Ökonome als Warnsignal."
+ },
+ {
+  "id": 7294,
+  "de": "die Abwertung",
+  "tr": "değer kaybı, devalüasyon",
+  "deBeispiel": "Die Abwertung der Landeswährung verteuerte sämtliche Importe schlagartig.",
+  "gsw": "Abwertig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abwertig vo de Landeswährig hät sämtlichi Import schlagartig vertüüret."
+ },
+ {
+  "id": 7295,
+  "de": "die Handelsbilanz",
+  "tr": "dış ticaret dengesi, ticaret bilançosu",
+  "deBeispiel": "Das Land weist seit Jahren eine deutlich positive Handelsbilanz auf.",
+  "gsw": "Handelsbilanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Land hät siit Jaar e düütlich positivi Handelsbilanz."
+ },
+ {
+  "id": 7296,
+  "de": "der Freihandel",
+  "tr": "serbest ticaret",
+  "deBeispiel": "Befürworter des Freihandels versprechen niedrigere Preise für alle Verbraucher.",
+  "gsw": "Freihandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Befürworter vom Freihandel verschpräched tüüfferi Priis für alli Konsumänte."
+ },
+ {
+  "id": 7297,
+  "de": "der Grenznutzen",
+  "tr": "marjinal fayda",
+  "deBeispiel": "Der Grenznutzen jedes weiteren Glases Wasser nimmt rasch ab.",
+  "gsw": "Gränznutze",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Gränznutze vo jedem wiitere Glas Wasser nimmt schnäll ab."
+ },
+ {
+  "id": 7298,
+  "de": "die Opportunitätskosten",
+  "tr": "fırsat maliyeti",
+  "deBeispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne.",
+  "gsw": "Opportunitätschoschte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer schtudiert, hät Opportunitätschoschte i de Form vo entgangnem Loon."
+ },
+ {
+  "id": 7299,
+  "de": "das Marktversagen",
+  "tr": "piyasa başarısızlığı",
+  "deBeispiel": "Umweltschäden gelten in der Theorie als klassisches Beispiel für Marktversagen.",
+  "gsw": "Marktversage",
+  "gswArtikel": "s",
+  "gswBeispiel": "Umwältschäde gälted i de Theorie als klassisches Bispil für Marktversage."
+ },
+ {
+  "id": 7300,
+  "de": "die Allokation",
+  "tr": "tahsis, kaynakların dağılımı",
+  "deBeispiel": "Der Preis sorgt in der Theorie für eine effiziente Allokation knapper Güter.",
+  "gsw": "Allokation",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Priis sorgt i de Theorie für e effizienti Allokation vo chnappe Güeter."
+ },
+ {
+  "id": 7301,
+  "de": "die Sparquote",
+  "tr": "tasarruf oranı",
+  "deBeispiel": "Die Sparquote der privaten Haushalte ist auf ein Rekordhoch geklettert.",
+  "gsw": "Sparquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sparquote vo de private Haushalt isch uf es Rekordhoch gchlätteret."
+ },
+ {
+  "id": 7302,
+  "de": "die Gewinnmarge",
+  "tr": "kâr marjı",
+  "deBeispiel": "Steigende Rohstoffpreise drücken die Gewinnmargen der Hersteller.",
+  "gsw": "Gwinnmarge",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtiigendi Rohschtoffpriis drücked d Gwinnmarge vo de Härschteller."
+ },
+ {
+  "id": 7303,
+  "de": "der Vermögenswert",
+  "tr": "varlık, mal varlığı unsuru",
+  "deBeispiel": "In unsicheren Zeiten flüchten Anleger in reale Vermögenswerte.",
+  "gsw": "Vermögenswärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "I unsichere Ziite flüchted d Aaleger i reali Vermögenswärt."
+ },
+ {
+  "id": 7304,
+  "de": "die Realwirtschaft",
+  "tr": "reel ekonomi",
+  "deBeispiel": "Die Krise sprang schnell vom Finanzsektor auf die Realwirtschaft über.",
+  "gsw": "Realwirtschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Krise isch schnäll vom Finanzsektor uf d Realwirtschaft übergschprunge."
+ },
+ {
+  "id": 7305,
+  "de": "der Abschwung",
+  "tr": "gerileme, daralma dönemi",
+  "deBeispiel": "Der Abschwung traf die exportorientierte Industrie besonders hart.",
+  "gsw": "Abschwung",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Abschwung hät di exportorientiert Induschtrie bsunders hert troffe."
+ },
+ {
+  "id": 7306,
+  "de": "die Arbeitslosenquote",
+  "tr": "işsizlik oranı",
+  "deBeispiel": "Trotz des Wachstums sank die Arbeitslosenquote nur geringfügig.",
+  "gsw": "Arbetslosequote",
+  "gswArtikel": "d",
+  "gswBeispiel": "Trotz em Wachstum isch d Arbetslosequote nu grad gring gsunke."
+ },
+ {
+  "id": 7307,
+  "de": "der Tarifabschluss",
+  "tr": "toplu sözleşme anlaşması",
+  "deBeispiel": "Der Tarifabschluss sieht Lohnerhöhungen in zwei Stufen vor.",
+  "gsw": "Tarifabschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Tarifabschluss gseht Loonerhöhige i zwäi Schtuefe vor."
+ },
+ {
+  "id": 7308,
+  "de": "die Teuerung",
+  "tr": "hayat pahalılığı, fiyat artışı",
+  "deBeispiel": "Vor allem Mieten und Lebensmittel treiben die Teuerung derzeit an.",
+  "gsw": "Tüürig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vor allem d Miete und d Läbensmittel triibed d Tüürig im Momänt aa."
+ },
+ {
+  "id": 7309,
+  "de": "besteuern",
+  "tr": "vergilendirmek",
+  "deBeispiel": "Kapitalerträge werden in vielen Ländern niedriger besteuert als Arbeitseinkommen.",
+  "gsw": "beschtüüre",
+  "gswArtikel": null,
+  "gswBeispiel": "Kapitalerträg werded i vilne Länder tüüffer beschtüüret als Arbetsiikommen."
+ },
+ {
+  "id": 7310,
+  "de": "dämpfen",
+  "tr": "frenlemek, hafifletmek, yavaşlatmak",
+  "deBeispiel": "Höhere Zinsen dämpfen den Konsum der privaten Haushalte.",
+  "gsw": "dämpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Höcheri Zinse dämpfed de Konsum vo de private Haushalt."
+ },
+ {
+  "id": 7311,
+  "de": "verzinsen",
+  "tr": "faiz işletmek, faiz ödemek",
+  "deBeispiel": "Das Guthaben wird mit knapp zwei Prozent jährlich verzinst.",
+  "gsw": "verzinse",
+  "gswArtikel": null,
+  "gswBeispiel": "S Guethabe wird mit chnapp zwäi Prozänt im Jaar verzinst."
+ },
+ {
+  "id": 7312,
+  "de": "horten",
+  "tr": "istiflemek, biriktirmek",
+  "deBeispiel": "Aus Angst vor der Krise horteten viele Haushalte Bargeld.",
+  "gsw": "horte",
+  "gswArtikel": null,
+  "gswBeispiel": "Us Angscht vor de Krise händ vil Haushalt Bargäld ghortet."
+ },
+ {
+  "id": 7313,
+  "de": "ausschütten",
+  "tr": "kâr dağıtmak, ödeme yapmak",
+  "deBeispiel": "Der Vorstand will einen größeren Teil des Gewinns ausschütten.",
+  "gsw": "uusschütte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorschtand wott en grössere Teil vom Gwinn uusschütte."
+ },
+ {
+  "id": 7314,
+  "de": "verzerren",
+  "tr": "çarpıtmak, bozmak",
+  "deBeispiel": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren.",
+  "gsw": "verzerre",
+  "gswArtikel": null,
+  "gswBeispiel": "Schtaatlichi Iigriff chönd de Wettbewerb erheblich verzerre."
+ },
+ {
+  "id": 7315,
+  "de": "monetär",
+  "tr": "parasal",
+  "deBeispiel": "Rein monetäre Erklärungen greifen bei dieser Krise deutlich zu kurz.",
+  "gsw": "monetär",
+  "gswArtikel": null,
+  "gswBeispiel": "Rein monetäri Erklärige griffed bi dere Krise düütlich z chuurz."
+ },
+ {
+  "id": 7316,
+  "de": "marktwirtschaftlich",
+  "tr": "piyasa ekonomisine dayalı",
+  "deBeispiel": "Er verteidigt marktwirtschaftliche Lösungen auch im Gesundheitswesen.",
+  "gsw": "marktwirtschaftlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er verteidigt marktwirtschaftlichi Löösige au im Gsundheitswäse."
+ },
+ {
+  "id": 7317,
+  "de": "volatil",
+  "tr": "oynak, dalgalı",
+  "deBeispiel": "Die Rohstoffmärkte blieben über das ganze Jahr hinweg volatil.",
+  "gsw": "volatil",
+  "gswArtikel": null,
+  "gswBeispiel": "D Rohschtoffmärkt sind s ganz Jaar über volatil bliibe."
+ },
+ {
+  "id": 7318,
+  "de": "antizyklisch",
+  "tr": "konjonktüre ters yönde, antisiklik",
+  "deBeispiel": "Der Staat sollte antizyklisch investieren, also gerade in schlechten Zeiten.",
+  "gsw": "antizyklisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Schtaat sött antizyklisch inveschtiere, also grad i schlächte Ziite."
+ },
+ {
+  "id": 7319,
+  "de": "solvent",
+  "tr": "ödeme gücü olan, borcunu ödeyebilen",
+  "deBeispiel": "Nur solvente Kunden erhalten von der Bank größere Kredite.",
+  "gsw": "solvent",
+  "gswArtikel": null,
+  "gswBeispiel": "Nu solventi Chunde überchömed vo de Bank grösseri Kredit."
+ },
+ {
+  "id": 7320,
+  "de": "nominal",
+  "tr": "nominal, itibari",
+  "deBeispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum.",
+  "gsw": "nominal",
+  "gswArtikel": null,
+  "gswBeispiel": "D Löön sind nominal spürbar gschtige, real aber chuum."
+ },
+ {
+  "id": 7321,
+  "de": "expansiv",
+  "tr": "genişletici, yayılmacı",
+  "deBeispiel": "Eine expansive Geldpolitik verbilligt Kredite für Unternehmen und Haushalte.",
+  "gsw": "expansiv",
+  "gswArtikel": null,
+  "gswBeispiel": "E expansivi Gäldpolitik verbilliget d Kredit für Unternäme und Haushalt."
+ },
+ {
+  "id": 7322,
+  "de": "restriktiv",
+  "tr": "sıkı, kısıtlayıcı",
+  "deBeispiel": "Die Zentralbank verfolgt seit Monaten einen ausgesprochen restriktiven Kurs.",
+  "gsw": "reschtriktiv",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zentralbank verfolgt siit Mönet en uusgschproche reschtriktive Kurs."
+ },
+ {
+  "id": 7323,
+  "de": "überschuldet",
+  "tr": "aşırı borçlu, borç batağında",
+  "deBeispiel": "Überschuldete Haushalte finden nur schwer aus der Zinsfalle heraus.",
+  "gsw": "überschuldet",
+  "gswArtikel": null,
+  "gswBeispiel": "Überschuldeti Haushalt findet nu schwer us de Zinsfalle uuse."
+ },
+ {
+  "id": 7324,
+  "de": "die Vetternwirtschaft",
+  "tr": "kayırmacılık, adam kayırma",
+  "deBeispiel": "Bei der Vergabe der Posten herrschte offenkundig Vetternwirtschaft.",
+  "gsw": "Vetterewirtschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi de Vergaab vo de Poschte hät offekundig Vetterewirtschaft gherrscht."
+ },
+ {
+  "id": 7325,
+  "de": "der Hinweisgeber",
+  "tr": "ihbarcı, bilgi uçuran kişi",
+  "deBeispiel": "Der Hinweisgeber machte die Bestechungszahlungen der Tochterfirma öffentlich.",
+  "gsw": "Hiiwiisgeber",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Hiiwiisgeber hät d Beschtechigszaalige vo de Tochterfirma öffentlich gmacht."
+ },
+ {
+  "id": 7326,
+  "de": "das Fehlverhalten",
+  "tr": "usulsüz davranış, kusurlu davranış",
+  "deBeispiel": "Systematisches Fehlverhalten im Einkauf blieb jahrelang unentdeckt.",
+  "gsw": "Fählverhalte",
+  "gswArtikel": "s",
+  "gswBeispiel": "Syschtematisches Fählverhalte im Iichauf isch jaarelang unentdeckt bliibe."
+ },
+ {
+  "id": 7327,
+  "de": "das Schmiergeld",
+  "tr": "rüşvet parası",
+  "deBeispiel": "Über Beraterverträge flossen jahrelang Schmiergelder an lokale Beamte.",
+  "gsw": "Schmiergäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Über Berateverträg sind jaarelang Schmiergälder a lokali Beamti gflosse."
+ },
+ {
+  "id": 7328,
+  "de": "die Vorteilsnahme",
+  "tr": "çıkar sağlama, menfaat temini",
+  "deBeispiel": "Gegen den Abteilungsleiter wird wegen Vorteilsnahme im Amt ermittelt.",
+  "gsw": "Vorteilsnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge de Abteiligsleiter wird wäge Vorteilsnaam im Amt ermittlet."
+ },
+ {
+  "id": 7329,
+  "de": "der Machtmissbrauch",
+  "tr": "yetki kötüye kullanımı, güç suistimali",
+  "deBeispiel": "Die Untersuchung ergab klare Hinweise auf Machtmissbrauch in der Personalabteilung.",
+  "gsw": "Machtmissbruuch",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Untersuechig hät klari Hiiwiis uf Machtmissbruuch i de Personalabteilig ergää."
+ },
+ {
+  "id": 7330,
+  "de": "die Seilschaft",
+  "tr": "çıkar ağı, klik, dayanışma grubu",
+  "deBeispiel": "Alte Seilschaften bestimmten weiterhin, wer in den Aufsichtsrat einzog.",
+  "gsw": "Seilschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Seilschafte händ wiiterhin beschtimmt, wer i de Uufsichtsraat iizoge isch."
+ },
+ {
+  "id": 7331,
+  "de": "die Intransparenz",
+  "tr": "şeffaflık eksikliği, kapalılık",
+  "deBeispiel": "Die Intransparenz der Zahlungsströme erschwerte jede unabhängige Prüfung erheblich.",
+  "gsw": "Intransparänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Intransparänz vo de Zaaligsschtröm hät jedi unabhängigi Prüefig erheblich erschwert."
+ },
+ {
+  "id": 7332,
+  "de": "die Offenlegung",
+  "tr": "açıklama, ifşa etme, kamuya duyurma",
+  "deBeispiel": "Die vollständige Offenlegung der Nebeneinkünfte ist inzwischen verpflichtend.",
+  "gsw": "Offelegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di vollschtändig Offelegig vo de Näbeniikünft isch inzwüsche verpflichtend."
+ },
+ {
+  "id": 7333,
+  "de": "der Nachhaltigkeitsbericht",
+  "tr": "sürdürülebilirlik raporu",
+  "deBeispiel": "Der Nachhaltigkeitsbericht nennt beeindruckende Zahlen ohne überprüfbare Grundlage.",
+  "gsw": "Nachhaltigkeitsbricht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Nachhaltigkeitsbricht nännt iidrücklichi Zaale ohni überprüefbari Grundlaag."
+ },
+ {
+  "id": 7334,
+  "de": "die Grünfärberei",
+  "tr": "yeşil aklama, çevreci gösterme",
+  "deBeispiel": "Kritiker werfen dem Konzern reine Grünfärberei ohne echte Emissionsminderung vor.",
+  "gsw": "Grüenfärberei",
+  "gswArtikel": "d",
+  "gswBeispiel": "Kritiker werfed em Konzärn reini Grüenfärberei ohni echti Emissionsminderig vor."
+ },
+ {
+  "id": 7335,
+  "de": "der Etikettenschwindel",
+  "tr": "etiket aldatmacası, göz boyama",
+  "deBeispiel": "Das angeblich klimaneutrale Produkt entpuppte sich als reiner Etikettenschwindel.",
+  "gsw": "Etikettenschwindel",
+  "gswArtikel": "de",
+  "gswBeispiel": "S aagäblich klimaneutrale Produkt hät sich als reine Etikettenschwindel uusegschtellt."
+ },
+ {
+  "id": 7336,
+  "de": "die Doppelmoral",
+  "tr": "çifte standart, ikiyüzlü ahlak",
+  "deBeispiel": "Wer Menschenrechte predigt und Zulieferer presst, betreibt Doppelmoral.",
+  "gsw": "Doppelmoral",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer Mänschterächt prediget und d Zulieferer usspresst, betriibt Doppelmoral."
+ },
+ {
+  "id": 7337,
+  "de": "das Reputationsrisiko",
+  "tr": "itibar riski",
+  "deBeispiel": "Das Reputationsrisiko wog am Ende schwerer als der erwartete Gewinn.",
+  "gsw": "Reputationsrisiko",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Reputationsrisiko hät am Schluss schwerer gwoge als de erwarteti Gwinn."
+ },
+ {
+  "id": 7338,
+  "de": "die Grauzone",
+  "tr": "gri alan, belirsiz alan",
+  "deBeispiel": "Solche Geschenke bewegen sich in einer rechtlichen Grauzone.",
+  "gsw": "Grauzone",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sonigi Gschänk bewäged sich i ere rächtliche Grauzone."
+ },
+ {
+  "id": 7339,
+  "de": "das Verantwortungsbewusstsein",
+  "tr": "sorumluluk bilinci",
+  "deBeispiel": "Ihm fehlte jedes Verantwortungsbewusstsein für die Folgen seiner Entscheidungen.",
+  "gsw": "Verantwortigsbewusstsii",
+  "gswArtikel": "s",
+  "gswBeispiel": "Em hät jedes Verantwortigsbewusstsii für d Folge vo sine Entscheid gfäält."
+ },
+ {
+  "id": 7340,
+  "de": "das Insidergeschäft",
+  "tr": "içeriden öğrenenlerin ticareti",
+  "deBeispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung.",
+  "gsw": "Insidergschäft",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Uufsicht prüeft möglichi Insidergschäft churz vor de Übernaamsaakündigig."
+ },
+ {
+  "id": 7341,
+  "de": "die Bilanzfälschung",
+  "tr": "bilanço tahrifatı",
+  "deBeispiel": "Die jahrelange Bilanzfälschung flog erst durch einen internen Hinweis auf.",
+  "gsw": "Bilanzfälschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di jaarelang Bilanzfälschig isch erscht dur en interne Hiiwiis uufgfloge."
+ },
+ {
+  "id": 7342,
+  "de": "die Veruntreuung",
+  "tr": "zimmete geçirme, emniyeti suistimal",
+  "deBeispiel": "Wegen Veruntreuung von Fördermitteln wurde die Geschäftsführerin entlassen.",
+  "gsw": "Veruntreuig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge Veruntreuig vo Fördermittel isch d Gschäftsfüererin entlaa worde."
+ }
+]

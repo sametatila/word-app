@@ -1,0 +1,995 @@
+[
+ {
+  "id": 4632,
+  "de": "die Schlafstörung",
+  "tr": "uyku bozukluğu",
+  "deBeispiel": "Seit dem Umzug plagen ihn heftige Schlafstörungen.",
+  "gsw": "Schlafschtörig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sit em Umzug plaaged en heftigi Schlafschtörige."
+ },
+ {
+  "id": 4633,
+  "de": "heilen",
+  "tr": "iyileştirmek, iyileşmek",
+  "deBeispiel": "Die Wunde ist ohne Narbe vollständig geheilt.",
+  "gsw": "heile",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wunde isch ohni Narbe vollschtändig gheilt."
+ },
+ {
+  "id": 4634,
+  "de": "lindern",
+  "tr": "hafifletmek, dindirmek",
+  "deBeispiel": "Diese Salbe lindert den Juckreiz schon nach wenigen Minuten.",
+  "gsw": "lindere",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Salbe linderet de Juckreiz scho nach weneme paar Minute."
+ },
+ {
+  "id": 4635,
+  "de": "versorgen",
+  "tr": "tedavi etmek, bakımını üstlenmek, ihtiyacını karşılamak",
+  "deBeispiel": "Die Ärztin versorgte die Verletzten direkt an der Unfallstelle.",
+  "gsw": "versorge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ärztin hät d Verletzte direkt a de Unfallschtell versorget."
+ },
+ {
+  "id": 4636,
+  "de": "einliefern",
+  "tr": "hastaneye kaldırmak, yatırmak",
+  "deBeispiel": "Der Patient wurde gestern Abend mit hohem Fieber eingeliefert.",
+  "gsw": "iiliefere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer hät de Patiänt geschter Aabig mit hoochem Fieber müese iiliefere."
+ },
+ {
+  "id": 4637,
+  "de": "verordnen",
+  "tr": "reçete yazmak, (tedavi) öngörmek",
+  "deBeispiel": "Der Arzt verordnete ihm sechs Wochen Krankengymnastik.",
+  "gsw": "verordne",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokter hät em sächs Wuche Chrankegymnaschtik verordnet."
+ },
+ {
+  "id": 4638,
+  "de": "anstecken",
+  "tr": "bulaştırmak, (hastalığı) geçirmek",
+  "deBeispiel": "Ich möchte im Büro niemanden mit meiner Erkältung anstecken.",
+  "gsw": "aastecke",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht im Büro niemert mit minere Erchältig aastecke."
+ },
+ {
+  "id": 4639,
+  "de": "überlasten",
+  "tr": "aşırı yüklemek, zorlamak",
+  "deBeispiel": "Wer den Rücken ständig überlastet, bekommt früher oder später Probleme.",
+  "gsw": "überlaschte",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer de Rugge schtändig überlaschtet, überchunt früener oder schpöter Probleem."
+ },
+ {
+  "id": 4640,
+  "de": "ertragen",
+  "tr": "katlanmak, dayanmak",
+  "deBeispiel": "Die Schmerzen waren kaum noch zu ertragen.",
+  "gsw": "ertrage",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schmerze sind chuum meh z ertrage gsi."
+ },
+ {
+  "id": 4641,
+  "de": "abklären",
+  "tr": "araştırmak, netleştirmek",
+  "deBeispiel": "Solche Beschwerden sollte man unbedingt beim Arzt abklären lassen.",
+  "gsw": "abchläre",
+  "gswArtikel": null,
+  "gswBeispiel": "Sonigi Beschwerde sött mer unbedingt bim Dokter abchläre laa."
+ },
+ {
+  "id": 4642,
+  "de": "verweigern",
+  "tr": "reddetmek, kabul etmemek",
+  "deBeispiel": "Der Patient verweigerte die Behandlung aus religiösen Gründen.",
+  "gsw": "verweigere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Patiänt hät d Behandlig us religiöse Gründ verweigeret."
+ },
+ {
+  "id": 4643,
+  "de": "verschlimmern",
+  "tr": "kötüleştirmek, ağırlaştırmak",
+  "deBeispiel": "Durch das lange Warten hat sich sein Zustand verschlimmert.",
+  "gsw": "verschlimmere",
+  "gswArtikel": null,
+  "gswBeispiel": "Dur s lange Warte hät sich sin Zueschtand verschlimmeret."
+ },
+ {
+  "id": 4644,
+  "de": "stabilisieren",
+  "tr": "stabil hâle getirmek, dengede tutmak",
+  "deBeispiel": "Der Zustand des Patienten hat sich über Nacht stabilisiert.",
+  "gsw": "schtabilisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zueschtand vom Patiänt hät sich über d Nacht schtabilisiert."
+ },
+ {
+  "id": 4645,
+  "de": "betäuben",
+  "tr": "uyuşturmak, anestezi uygulamak",
+  "deBeispiel": "Der Zahnarzt betäubt die Stelle vor dem Bohren.",
+  "gsw": "betäube",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zaarzt betäubt d Schtell vor em Boore."
+ },
+ {
+  "id": 4646,
+  "de": "spritzen",
+  "tr": "iğne yapmak, enjekte etmek",
+  "deBeispiel": "Sie muss sich täglich Insulin in den Bauch spritzen.",
+  "gsw": "schpritze",
+  "gswArtikel": null,
+  "gswBeispiel": "Si mues sich jede Tag Insulin i de Buuch schpritze.",
+  "ayniLehce": [
+   "Spritze (B1)"
+  ]
+ },
+ {
+  "id": 4647,
+  "de": "desinfizieren",
+  "tr": "dezenfekte etmek",
+  "deBeispiel": "Vor jedem Eingriff werden die Hände gründlich desinfiziert.",
+  "gsw": "desinfiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor jedem Iigriff werdet d Händ gründlich desinfiziert."
+ },
+ {
+  "id": 4648,
+  "de": "sich bessern",
+  "tr": "iyileşmek, düzelmek",
+  "deBeispiel": "Ihr Husten hat sich nach dem Urlaub deutlich gebessert.",
+  "gsw": "sich bessere",
+  "gswArtikel": null,
+  "gswBeispiel": "Ire Hueschte hät sich nach de Ferie düütlich gebesseret."
+ },
+ {
+  "id": 4649,
+  "de": "erkranken",
+  "tr": "hastalanmak",
+  "deBeispiel": "Jedes Jahr erkranken Tausende Menschen an dieser Infektion.",
+  "gsw": "erchranke",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedes Jaar erchranket Tuusigi Mänsche a dere Infektion."
+ },
+ {
+  "id": 4650,
+  "de": "vorbeugen",
+  "tr": "önlemek, önlem almak",
+  "deBeispiel": "Mit Sport und guter Ernährung kann man vielen Krankheiten vorbeugen.",
+  "gsw": "vorbüüge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit Schport und guetem Ässe cha mer vilne Chrankhäite vorbüüge."
+ },
+ {
+  "id": 4651,
+  "de": "chronisch",
+  "tr": "kronik, süreğen",
+  "deBeispiel": "Er lebt seit seiner Jugend mit einer chronischen Krankheit.",
+  "gsw": "chronisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Er läbt sit sinere Jugend mit ere chronische Chrankhäit."
+ },
+ {
+  "id": 4652,
+  "de": "akut",
+  "tr": "akut, ivedi",
+  "deBeispiel": "Bei akuten Schmerzen hilft nur der Notdienst am Wochenende.",
+  "gsw": "akut",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi akute Schmerze hilft am Wuchenänd nume de Notdienscht."
+ },
+ {
+  "id": 4653,
+  "de": "ambulant",
+  "tr": "ayakta tedavi ile ilgili, hastaneye yatmadan",
+  "deBeispiel": "Die meisten dieser Operationen werden heute ambulant durchgeführt.",
+  "gsw": "ambulant",
+  "gswArtikel": null,
+  "gswBeispiel": "Di mäischte vo dene Operatione werdet hüt ambulant duregfüehrt."
+ },
+ {
+  "id": 4654,
+  "de": "stationär",
+  "tr": "yatarak tedavi ile ilgili",
+  "deBeispiel": "Nach dem Sturz wurde sie zwei Wochen stationär aufgenommen.",
+  "gsw": "schtationär",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Schturz isch si zwäi Wuche schtationär ufgnoo worde."
+ },
+ {
+  "id": 4655,
+  "de": "rezeptpflichtig",
+  "tr": "reçeteye tabi",
+  "deBeispiel": "Dieses starke Schlafmittel ist in Deutschland rezeptpflichtig.",
+  "gsw": "rezäptpflichtig",
+  "gswArtikel": null,
+  "gswBeispiel": "Das schtarch Schlaafmittel isch z Tüütschland rezäptpflichtig."
+ },
+ {
+  "id": 4656,
+  "de": "psychisch",
+  "tr": "ruhsal, psikolojik",
+  "deBeispiel": "Psychisch war das letzte Jahr für die Familie sehr anstrengend.",
+  "gsw": "psychisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Psychisch isch s letscht Jaar für d Familie sehr aaschtrengend gsi."
+ },
+ {
+  "id": 4657,
+  "de": "anfällig",
+  "tr": "hassas, yatkın",
+  "deBeispiel": "Im Winter bin ich besonders anfällig für Erkältungen.",
+  "gsw": "aafällig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Winter bin ich bsunders aafällig für Erchältige."
+ },
+ {
+  "id": 4658,
+  "de": "arbeitsunfähig",
+  "tr": "çalışamaz durumda, iş göremez",
+  "deBeispiel": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig.",
+  "gsw": "arbetsunfähig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dokter hät en für zää Täg arbetsunfähig gschribe."
+ },
+ {
+  "id": 4659,
+  "de": "nüchtern",
+  "tr": "aç karnına, ayık",
+  "deBeispiel": "Zur Blutabnahme müssen Sie morgen nüchtern erscheinen.",
+  "gsw": "nüechter",
+  "gswArtikel": null,
+  "gswBeispiel": "Zur Bluetabnaam mönd Si morn nüechter cho."
+ },
+ {
+  "id": 4660,
+  "de": "übertragbar",
+  "tr": "bulaşıcı, aktarılabilir",
+  "deBeispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar.",
+  "gsw": "übertragbar",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Chrankhäit isch nu dur en direkte Kontakt übertragbar."
+ },
+ {
+  "id": 4661,
+  "de": "die Fertigung",
+  "tr": "imalat, üretim",
+  "deBeispiel": "Die Fertigung läuft seit Montag wieder im Zweischichtbetrieb.",
+  "gsw": "Fertigung",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fertigung lauft sit Määntig wider im Zwäischichtbetrib."
+ },
+ {
+  "id": 4662,
+  "de": "der Werkstoff",
+  "tr": "malzeme, yapı malzemesi",
+  "deBeispiel": "Für das Gehäuse haben wir einen leichteren Werkstoff gewählt.",
+  "gsw": "Wärkschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für s Gehüüs händ mir en liechtere Wärkschtoff gwählt."
+ },
+ {
+  "id": 4663,
+  "de": "der Verschleiß",
+  "tr": "aşınma, yıpranma",
+  "deBeispiel": "Der Verschleiß an den Lagern ist deutlich höher als erwartet.",
+  "gsw": "Verschliiss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verschliiss a de Lager isch düütlich höcher als erwartet."
+ },
+ {
+  "id": 4664,
+  "de": "die Wartung",
+  "tr": "bakım",
+  "deBeispiel": "Während der Wartung steht die gesamte Linie still.",
+  "gsw": "Wartig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Während de Wartig schtaat di ganz Linie schtill."
+ },
+ {
+  "id": 4665,
+  "de": "die Schweißnaht",
+  "tr": "kaynak dikişi",
+  "deBeispiel": "Der Prüfer entdeckte einen feinen Riss in der Schweißnaht.",
+  "gsw": "Schwäissnaat",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Prüefer hät en fine Riss i de Schwäissnaat entdeckt."
+ },
+ {
+  "id": 4666,
+  "de": "der Schmierstoff",
+  "tr": "yağlayıcı madde, madeni yağ",
+  "deBeispiel": "Bei hohen Temperaturen versagt dieser Schmierstoff sehr schnell.",
+  "gsw": "Schmierschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi hoche Temperature versagt de Schmierschtoff sehr schnäll."
+ },
+ {
+  "id": 4667,
+  "de": "die Legierung",
+  "tr": "alaşım",
+  "deBeispiel": "Die neue Legierung ist leichter und trotzdem sehr belastbar.",
+  "gsw": "Legierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di nöi Legierig isch liechter und trotzdem sehr belaschtbar."
+ },
+ {
+  "id": 4668,
+  "de": "die Vorrichtung",
+  "tr": "tertibat, aparat",
+  "deBeispiel": "Ohne diese Vorrichtung lässt sich das Bauteil kaum einspannen.",
+  "gsw": "Vorrichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni die Vorrichtig laat sich s Bautäil chuum iischpanne."
+ },
+ {
+  "id": 4669,
+  "de": "die Baugruppe",
+  "tr": "modül, montaj grubu",
+  "deBeispiel": "Jede Baugruppe wird vor dem Einbau einzeln getestet.",
+  "gsw": "Baugruppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Baugruppe wird vor em Iibau äinzeln teschtet."
+ },
+ {
+  "id": 4670,
+  "de": "das Bauteil",
+  "tr": "parça, bileşen",
+  "deBeispiel": "Das defekte Bauteil stammt aus einer älteren Serie.",
+  "gsw": "Bautäil",
+  "gswArtikel": "s",
+  "gswBeispiel": "S defekt Bautäil schtammt us ere eltere Serie."
+ },
+ {
+  "id": 4671,
+  "de": "die Nacharbeit",
+  "tr": "düzeltme işi, yeniden işleme",
+  "deBeispiel": "Die Nacharbeit kostet uns jeden Monat mehrere Tausend Euro.",
+  "gsw": "Nacharbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Nacharbet koschtet öis jede Monet mehreri tuusig Euro."
+ },
+ {
+  "id": 4672,
+  "de": "der Prüfstand",
+  "tr": "test tezgâhı, deney düzeneği",
+  "deBeispiel": "Der Motor lief auf dem Prüfstand über vierzig Stunden.",
+  "gsw": "Prüefschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Motor isch uf em Prüefschtand über vierzg Schtund gloffe."
+ },
+ {
+  "id": 4673,
+  "de": "das Messgerät",
+  "tr": "ölçüm aleti",
+  "deBeispiel": "Das Messgerät muss einmal im Jahr überprüft werden.",
+  "gsw": "Mässgrät",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Mässgrät mues äinisch im Jaar überprüeft werde."
+ },
+ {
+  "id": 4674,
+  "de": "die Toleranz",
+  "tr": "tolerans, izin verilen sapma",
+  "deBeispiel": "Die Toleranz liegt bei zwei Zehntelmillimetern, nicht mehr.",
+  "gsw": "Toleranz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Toleranz liit bi zwäi Zähntelmillimeter, nöd meh."
+ },
+ {
+  "id": 4675,
+  "de": "der Zulieferer",
+  "tr": "tedarikçi, yan sanayi firması",
+  "deBeispiel": "Unser wichtigster Zulieferer sitzt keine dreißig Kilometer entfernt.",
+  "gsw": "Zuelieferer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Öise wichtigscht Zuelieferer sitzt käini drissg Kilometer wiit ewägg."
+ },
+ {
+  "id": 4676,
+  "de": "der Lagerbestand",
+  "tr": "stok, depo mevcudu",
+  "deBeispiel": "Der Lagerbestand reicht höchstens noch für zwei Wochen.",
+  "gsw": "Lagerbeschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Lagerbeschtand längt höchschtens no für zwäi Wuche."
+ },
+ {
+  "id": 4677,
+  "de": "der Gabelstapler",
+  "tr": "forklift",
+  "deBeispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren.",
+  "gsw": "Gabelschtapler",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Halle dörf de Gabelschtapler nu gschuelts Personal fahre."
+ },
+ {
+  "id": 4678,
+  "de": "das Fließband",
+  "tr": "montaj bandı, üretim bandı",
+  "deBeispiel": "Am Fließband bleibt für jeden Handgriff nur eine Minute.",
+  "gsw": "Fliessband",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Fliessband bliibt für jede Handgriff nu ei Minute."
+ },
+ {
+  "id": 4679,
+  "de": "die Frühschicht",
+  "tr": "sabah vardiyası",
+  "deBeispiel": "Meine Frühschicht beginnt schon um halb sechs.",
+  "gsw": "Früeschicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mini Früeschicht faat scho am halbi sächsi aa."
+ },
+ {
+  "id": 4680,
+  "de": "die Durchlaufzeit",
+  "tr": "üretim süresi, geçiş süresi",
+  "deBeispiel": "Durch die neue Software sank die Durchlaufzeit um ein Drittel.",
+  "gsw": "Dureloufziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dur di nöi Software isch d Dureloufziit um es Drittel gsunke."
+ },
+ {
+  "id": 4681,
+  "de": "der Rohstoff",
+  "tr": "hammadde",
+  "deBeispiel": "Die Preise für wichtige Rohstoffe sind erneut gestiegen.",
+  "gsw": "Rohschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Priis für wichtigi Rohschtoff sind erneut gschtige."
+ },
+ {
+  "id": 4682,
+  "de": "die Korrosion",
+  "tr": "korozyon, paslanma",
+  "deBeispiel": "Gegen Korrosion hilft nur eine ordentliche Schutzschicht.",
+  "gsw": "Korrosion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge Korrosion hilft nu en ornetlichi Schutzschicht."
+ },
+ {
+  "id": 4683,
+  "de": "die Montage",
+  "tr": "montaj, kurulum",
+  "deBeispiel": "Die Montage der Anlage dauert voraussichtlich drei Tage.",
+  "gsw": "Montage",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Montage vo de Aalaag duuret voruussichtlich drei Täg."
+ },
+ {
+  "id": 4684,
+  "de": "die Betriebsstätte",
+  "tr": "işletme tesisi, üretim yeri",
+  "deBeispiel": "Das Unternehmen unterhält drei Betriebsstätten in Süddeutschland.",
+  "gsw": "Betriibsschtätt",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Unternäme unterhaltet drei Betriibsschtätte z Süüdtüütschland."
+ },
+ {
+  "id": 4685,
+  "de": "die Dichtung",
+  "tr": "conta, sızdırmazlık elemanı",
+  "deBeispiel": "Die poröse Dichtung war die Ursache für den Ölverlust.",
+  "gsw": "Dichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di poröösi Dichtig isch d Ursach für de Ölverluscht gsi."
+ },
+ {
+  "id": 4686,
+  "de": "die Steuerung",
+  "tr": "kumanda, kontrol sistemi",
+  "deBeispiel": "Die Steuerung der Presse wird nächstes Jahr komplett erneuert.",
+  "gsw": "Schtüürig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtüürig vo de Prässe wird nächschts Jaar komplett erneueret."
+ },
+ {
+  "id": 4687,
+  "de": "die Betriebsanleitung",
+  "tr": "kullanım kılavuzu (makine, tesis)",
+  "deBeispiel": "Lesen Sie die Betriebsanleitung, bevor Sie die Maschine einschalten.",
+  "gsw": "Betriibsaaläitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Läset Si d Betriibsaaläitig, bevor Si d Maschine iischalted."
+ },
+ {
+  "id": 4688,
+  "de": "der Gefahrstoff",
+  "tr": "tehlikeli madde",
+  "deBeispiel": "Gefahrstoffe werden in einem separaten Raum aufbewahrt.",
+  "gsw": "Gfaarschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gfaarschtoff werdet i mene separate Ruum ufbewaart."
+ },
+ {
+  "id": 4689,
+  "de": "der Wirkungsgrad",
+  "tr": "verim, verimlilik oranı",
+  "deBeispiel": "Der Wirkungsgrad des alten Kessels liegt unter sechzig Prozent.",
+  "gsw": "Wirkigsgrad",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wirkigsgrad vom alte Chessel liit under sächzg Prozänt."
+ },
+ {
+  "id": 4690,
+  "de": "der Prototyp",
+  "tr": "prototip, ilk örnek",
+  "deBeispiel": "Der erste Prototyp wird im Herbst der Geschäftsleitung vorgestellt.",
+  "gsw": "Prototyp",
+  "gswArtikel": "de",
+  "gswBeispiel": "De erscht Prototyp wird im Herbscht de Gschäftsläitig vorgschtellt."
+ },
+ {
+  "id": 4691,
+  "de": "das Ersatzteil",
+  "tr": "yedek parça",
+  "deBeispiel": "Für dieses Modell gibt es kaum noch passende Ersatzteile.",
+  "gsw": "Ersatztäil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für das Modäll gits chuum no passendi Ersatztäil."
+ },
+ {
+  "id": 4692,
+  "de": "die Rüstzeit",
+  "tr": "hazırlık süresi, ayar süresi",
+  "deBeispiel": "Kürzere Rüstzeiten machen auch kleine Serien wieder rentabel.",
+  "gsw": "Rüschtziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Chürzeri Rüschtziite mached au chlini Serie wider rentabel."
+ },
+ {
+  "id": 4693,
+  "de": "die Stückzahl",
+  "tr": "adet, üretim adedi",
+  "deBeispiel": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich.",
+  "gsw": "Schtückzaal",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ab ere bschtimmte Schtückzaal sinkt de Priis pro Täil düütlich."
+ },
+ {
+  "id": 4694,
+  "de": "die Fehlerquote",
+  "tr": "hata oranı",
+  "deBeispiel": "Nach der Schulung sank die Fehlerquote auf unter ein Prozent.",
+  "gsw": "Fählerquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Schuelig isch d Fählerquote uf under ei Prozänt gsunke."
+ },
+ {
+  "id": 4695,
+  "de": "der Arbeitsgang",
+  "tr": "iş adımı, işlem aşaması",
+  "deBeispiel": "Dieser Arbeitsgang lässt sich mit dem nächsten zusammenlegen.",
+  "gsw": "Arbetsgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Dä Arbetsgang laat sich mit em nächschte zämelege."
+ },
+ {
+  "id": 4696,
+  "de": "die Zertifizierung",
+  "tr": "belgelendirme, sertifikasyon",
+  "deBeispiel": "Ohne Zertifizierung dürfen wir gar nicht erst anbieten.",
+  "gsw": "Zertifizierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Zertifizierig dörfed mir gar nöd erscht offeriere."
+ },
+ {
+  "id": 4697,
+  "de": "die Abnahme",
+  "tr": "kabul, teslim kontrolü",
+  "deBeispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt.",
+  "gsw": "Abnaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abnaam dur de Chund findet nächschte Friitig schtatt."
+ },
+ {
+  "id": 4698,
+  "de": "die Reklamation",
+  "tr": "şikâyet, iade talebi",
+  "deBeispiel": "Die Reklamation betraf eine ganze Charge fehlerhafter Teile.",
+  "gsw": "Reklamation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reklamation hät e ganzi Charge fählerhafti Täil betroffe."
+ },
+ {
+  "id": 4699,
+  "de": "der Ausfall",
+  "tr": "arıza, devre dışı kalma",
+  "deBeispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
+  "gsw": "Usfall",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Usfall vo de Chüelig hät d Produktion en ganze Tag lahmgläit."
+ },
+ {
+  "id": 4700,
+  "de": "die Gewährleistung",
+  "tr": "garanti, ayıba karşı sorumluluk",
+  "deBeispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum.",
+  "gsw": "Gwäärläischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gwäärläischtig lauft zwäi Jaar ab em Lieferdatum."
+ },
+ {
+  "id": 4701,
+  "de": "die Ausbeute",
+  "tr": "verim, elde edilen miktar",
+  "deBeispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter.",
+  "gsw": "Usbüüti",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi dünnem Bläch isch d Usbüüti pro Tafle düütlich schlechter."
+ },
+ {
+  "id": 4702,
+  "de": "die Werkbank",
+  "tr": "tezgâh, çalışma tezgâhı",
+  "deBeispiel": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile durcheinander.",
+  "gsw": "Wärchbank",
+  "gswArtikel": "d",
+  "gswBeispiel": "Uf de Wärchbank sind Wärchzüüg und halbfertigi Täil durenand gläge."
+ },
+ {
+  "id": 4703,
+  "de": "fräsen",
+  "tr": "frezelemek",
+  "deBeispiel": "Die Nut wird in einem Durchgang sauber gefräst.",
+  "gsw": "fräse",
+  "gswArtikel": null,
+  "gswBeispiel": "D Nut wird i eim Duregang suuber gfräst."
+ },
+ {
+  "id": 4704,
+  "de": "bohren",
+  "tr": "delmek, delik açmak",
+  "deBeispiel": "Bevor du bohrst, prüfe bitte noch einmal die Maße.",
+  "gsw": "boore",
+  "gswArtikel": null,
+  "gswBeispiel": "Bevor du boorsch, prüef bitte no einisch d Maass."
+ },
+ {
+  "id": 4705,
+  "de": "schleifen",
+  "tr": "zımparalamak, taşlamak",
+  "deBeispiel": "Die Kanten müssen noch geschliffen werden, sonst verletzt sich jemand.",
+  "gsw": "schliiffe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chante mönd mer no schliiffe, susch verletzt sich öpper."
+ },
+ {
+  "id": 4706,
+  "de": "schmieden",
+  "tr": "dövmek, demir dövmek",
+  "deBeispiel": "Früher wurden solche Beschläge von Hand geschmiedet.",
+  "gsw": "schmide",
+  "gswArtikel": null,
+  "gswBeispiel": "Früener sind sonigi Bschläg vo Hand gschmidet worde."
+ },
+ {
+  "id": 4707,
+  "de": "einbauen",
+  "tr": "monte etmek, yerleştirmek",
+  "deBeispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
+  "gsw": "iibaue",
+  "gswArtikel": null,
+  "gswBeispiel": "De Techniker chunt morn en schtärchere Motor iibaue."
+ },
+ {
+  "id": 4708,
+  "de": "nachrüsten",
+  "tr": "sonradan takmak, güncelleyip donatmak",
+  "deBeispiel": "Die alten Pressen wurden mit einer Schutzeinrichtung nachgerüstet.",
+  "gsw": "nachrüschte",
+  "gswArtikel": null,
+  "gswBeispiel": "Di alte Prässe hät mer mit ere Schutziirichtig müese nachrüschte."
+ },
+ {
+  "id": 4709,
+  "de": "justieren",
+  "tr": "ayarlamak, ince ayar yapmak",
+  "deBeispiel": "Der Anschlag muss nach jedem Werkzeugwechsel neu justiert werden.",
+  "gsw": "juschtiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Aaschlag mues nach jedem Wärchzüügwächsel nöi juschtiert werde."
+ },
+ {
+  "id": 4710,
+  "de": "kalibrieren",
+  "tr": "kalibre etmek",
+  "deBeispiel": "Die Waage wird jedes Jahr von einem externen Institut kalibriert.",
+  "gsw": "kalibriere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Waag wird jedes Jaar vo mene externe Inschtitut kalibriert."
+ },
+ {
+  "id": 4711,
+  "de": "sich abnutzen",
+  "tr": "aşınmak (kullanımdan), yıpranmak",
+  "deBeispiel": "Die Schneide nutzt sich bei hartem Material schnell ab.",
+  "gsw": "sich abnutze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schniide cha sich bi hartem Material schnäll abnutze."
+ },
+ {
+  "id": 4712,
+  "de": "verladen",
+  "tr": "yüklemek, araca yüklemek",
+  "deBeispiel": "Die Container werden noch heute Abend auf Lastwagen verladen.",
+  "gsw": "verlade",
+  "gswArtikel": null,
+  "gswBeispiel": "D Container werdet no hüt Aabig uf Laschtwage verlade."
+ },
+ {
+  "id": 4713,
+  "de": "ausliefern",
+  "tr": "teslim etmek, sevk etmek",
+  "deBeispiel": "Die Maschinen werden erst nach der Endprüfung ausgeliefert.",
+  "gsw": "usliefere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Maschine cha mer erscht nach de Endprüefig usliefere."
+ },
+ {
+  "id": 4714,
+  "de": "zuschneiden",
+  "tr": "kesmek, ölçüye göre kesmek",
+  "deBeispiel": "Das Blech wird per Laser exakt auf Maß zugeschnitten.",
+  "gsw": "zueschniide",
+  "gswArtikel": null,
+  "gswBeispiel": "S Bläch laat sich per Laser exakt uf Maass zueschniide."
+ },
+ {
+  "id": 4715,
+  "de": "stanzen",
+  "tr": "presle delmek, kalıpla kesmek",
+  "deBeispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt.",
+  "gsw": "schtanze",
+  "gswArtikel": null,
+  "gswBeispiel": "I eim Hub werdet vier Löcher gliichziitig gschtanzt."
+ },
+ {
+  "id": 4716,
+  "de": "härten",
+  "tr": "sertleştirmek",
+  "deBeispiel": "Die Zahnräder werden anschließend im Ofen gehärtet.",
+  "gsw": "härte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zaaräder werdet aaschliessend im Oofe ghärtet."
+ },
+ {
+  "id": 4717,
+  "de": "lackieren",
+  "tr": "boyamak, verniklemek",
+  "deBeispiel": "Die Rahmen werden in zwei Schichten pulverbeschichtet lackiert.",
+  "gsw": "lackiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Rahme werdet i zwäi Schichte pulverbeschichtet lackiert."
+ },
+ {
+  "id": 4718,
+  "de": "beschichten",
+  "tr": "kaplamak, kaplama yapmak",
+  "deBeispiel": "Die Oberfläche wird mit einer dünnen Keramikschicht beschichtet.",
+  "gsw": "beschichte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Oberflächi wird mit ere dünne Keramikschicht beschichtet."
+ },
+ {
+  "id": 4719,
+  "de": "stilllegen",
+  "tr": "faaliyeti durdurmak, kapatmak",
+  "deBeispiel": "Das Werk wurde nach vierzig Jahren endgültig stillgelegt.",
+  "gsw": "schtilllege",
+  "gswArtikel": null,
+  "gswBeispiel": "S Wärch hät mer nach vierzg Jaar entgültig müese schtilllege."
+ },
+ {
+  "id": 4720,
+  "de": "festziehen",
+  "tr": "sıkmak, sıkıştırmak",
+  "deBeispiel": "Ziehen Sie die Schrauben über Kreuz gleichmäßig fest.",
+  "gsw": "feschtzie",
+  "gswArtikel": null,
+  "gswBeispiel": "Si mönd d Schruube über Chrüz gliichmässig feschtzie."
+ },
+ {
+  "id": 4721,
+  "de": "vermessen",
+  "tr": "ölçmek, ölçümünü yapmak",
+  "deBeispiel": "Jedes zehnte Werkstück wird im Labor genau vermessen.",
+  "gsw": "vermässe",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedes zäänt Wärchschtuck wird im Labor genau vermässe."
+ },
+ {
+  "id": 4722,
+  "de": "drosseln",
+  "tr": "kısmak, düşürmek (üretim, hız)",
+  "deBeispiel": "Wegen der hohen Energiepreise hat der Betrieb die Produktion gedrosselt.",
+  "gsw": "drossle",
+  "gswArtikel": null,
+  "gswBeispiel": "Wäge de hoche Energiepriis hät de Betrib d Produktion gedrosslet."
+ },
+ {
+  "id": 4723,
+  "de": "serienreif",
+  "tr": "seri üretime hazır",
+  "deBeispiel": "Das Verfahren ist vielversprechend, aber noch nicht serienreif.",
+  "gsw": "serieriif",
+  "gswArtikel": null,
+  "gswBeispiel": "S Verfaare isch vilverschprächend, aber no nöd serieriif."
+ },
+ {
+  "id": 4724,
+  "de": "betriebsbereit",
+  "tr": "çalışmaya hazır, işletmeye hazır",
+  "deBeispiel": "Nach der Reparatur ist die Anlage wieder betriebsbereit.",
+  "gsw": "betriibsbereit",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Reparatur isch d Aalaag wider betriibsbereit."
+ },
+ {
+  "id": 4725,
+  "de": "witterungsbeständig",
+  "tr": "hava koşullarına dayanıklı",
+  "deBeispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material.",
+  "gsw": "witterigsbeschtändig",
+  "gswArtikel": null,
+  "gswBeispiel": "Für de Ussebereich bruuched mir es witterigsbeschtändigs Material."
+ },
+ {
+  "id": 4726,
+  "de": "rostfrei",
+  "tr": "paslanmaz",
+  "deBeispiel": "Die Behälter bestehen komplett aus rostfreiem Stahl.",
+  "gsw": "roschtfrii",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behälter beschtönd komplett us roschtfriiem Schtaal."
+ },
+ {
+  "id": 4727,
+  "de": "fachgerecht",
+  "tr": "usulüne uygun, tekniğine uygun",
+  "deBeispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
+  "gsw": "fachgrecht",
+  "gswArtikel": null,
+  "gswBeispiel": "Altöl mues mer fachgrecht entsorge und nöd äifach usschütte."
+ },
+ {
+  "id": 4728,
+  "de": "handwerklich",
+  "tr": "el işçiliğine dayalı, zanaatla ilgili",
+  "deBeispiel": "Die Tür ist handwerklich sauber gearbeitet und hält Jahrzehnte.",
+  "gsw": "handwärchlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tür isch handwärchlich suuber gmacht und haltet Jaarzähnt."
+ },
+ {
+  "id": 4729,
+  "de": "maschinell",
+  "tr": "makineyle, makine ile yapılan",
+  "deBeispiel": "Diese Naht wird maschinell gesetzt, nicht mehr von Hand.",
+  "gsw": "maschinell",
+  "gswArtikel": null,
+  "gswBeispiel": "Die Naat wird maschinell gsetzt und nöd meh vo Hand."
+ },
+ {
+  "id": 4730,
+  "de": "störanfällig",
+  "tr": "arızaya yatkın",
+  "deBeispiel": "Die ältere Steuerung gilt als besonders störanfällig.",
+  "gsw": "schtöraafällig",
+  "gswArtikel": null,
+  "gswBeispiel": "Di elteri Schtüürig gilt als bsunders schtöraafällig."
+ },
+ {
+  "id": 4731,
+  "de": "spröde",
+  "tr": "kırılgan, gevrek",
+  "deBeispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht.",
+  "gsw": "schpröd",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi Chelti wird de Kunschtschtoff schpröd und bricht liecht."
+ },
+ {
+  "id": 4732,
+  "de": "die Ausdauer",
+  "tr": "dayanıklılık, sebat",
+  "deBeispiel": "Mit regelmäßigem Training verbessert sich deine Ausdauer erstaunlich schnell.",
+  "gsw": "Usduur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit regelmässigem Training verbesseret sich dini Usduur erschtuunlich schnäll."
+ },
+ {
+  "id": 4733,
+  "de": "die Beweglichkeit",
+  "tr": "hareketlilik, hareket kabiliyeti",
+  "deBeispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab.",
+  "gsw": "Beweglichkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Alter nimmt d Beweglichkäit vo de Glänk düütlich ab."
+ },
+ {
+  "id": 4734,
+  "de": "der Muskelkater",
+  "tr": "kas ağrısı (antrenman sonrası)",
+  "deBeispiel": "Nach dem ersten Lauftraining hatte ich drei Tage Muskelkater.",
+  "gsw": "Muskelkater",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach em erschte Loufträning han ich drei Täg Muskelkater gha."
+ },
+ {
+  "id": 4735,
+  "de": "die Entlastung",
+  "tr": "yükün hafifletilmesi, rahatlama",
+  "deBeispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens.",
+  "gsw": "Entlaschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En höcheverschtellbare Schriibtisch sorgt für Entlaschtig vom Rugge."
+ },
+ {
+  "id": 4736,
+  "de": "die Regeneration",
+  "tr": "toparlanma, yenilenme",
+  "deBeispiel": "Ohne ausreichende Regeneration bringt hartes Training gar nichts.",
+  "gsw": "Regeneration",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni gnueg Regeneration bringt es harts Training gar nüüt."
+ },
+ {
+  "id": 4737,
+  "de": "das Gleichgewicht",
+  "tr": "denge",
+  "deBeispiel": "Auf dem schmalen Balken verlor sie kurz das Gleichgewicht.",
+  "gsw": "Gliichgwicht",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf em schmale Balke hät si churz s Gliichgwicht verlore."
+ },
+ {
+  "id": 4738,
+  "de": "die Durchblutung",
+  "tr": "kan dolaşımı (bir bölgedeki), kanlanma",
+  "deBeispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine.",
+  "gsw": "Durebluetig",
+  "gswArtikel": "d",
+  "gswBeispiel": "En chuurze Schpaziergang förderet d Durebluetig vo de Bäi."
+ },
+ {
+  "id": 4739,
+  "de": "die Atmung",
+  "tr": "nefes alıp verme, solunum",
+  "deBeispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung.",
+  "gsw": "Atmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bim Yoga achtet mer vor allem uf e rueigi Atmig."
+ },
+ {
+  "id": 4740,
+  "de": "die Anspannung",
+  "tr": "gerginlik, gerilim",
+  "deBeispiel": "Nach der Prüfung fiel die ganze Anspannung endlich von ihm ab.",
+  "gsw": "Aaschpannig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Prüefig isch di ganz Aaschpannig ändlich vo em abgfalle."
+ },
+ {
+  "id": 4741,
+  "de": "das Gelenk",
+  "tr": "eklem",
+  "deBeispiel": "Beim Joggen auf Asphalt werden die Gelenke stark beansprucht.",
+  "gsw": "Glänk",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bim Jogge uf Asphalt werdet d Glänk schtark beaaschprucht."
+ }
+]

@@ -1,0 +1,1010 @@
+[
+ {
+  "id": 3805,
+  "de": "sich konzentrieren auf",
+  "tr": "odaklanmak, yoğunlaşmak",
+  "deBeispiel": "Er muss sich besser auf die Prüfung konzentrieren.",
+  "gsw": "sich konzentriere uf",
+  "gswArtikel": null,
+  "gswBeispiel": "Er muess sich besser uf d Prüefig konzentriere."
+ },
+ {
+  "id": 3808,
+  "de": "überwinden",
+  "tr": "üstesinden gelmek, aşmak",
+  "deBeispiel": "Sie musste in ihrem Leben viele Hindernisse überwinden.",
+  "gsw": "überwinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät i irem Läbe vili Hindernis müese überwinde."
+ },
+ {
+  "id": 3809,
+  "de": "vernachlässigen",
+  "tr": "ihmal etmek",
+  "deBeispiel": "Er vernachlässigt seine Gesundheit wegen der Arbeit.",
+  "gsw": "vernaachlässige",
+  "gswArtikel": null,
+  "gswBeispiel": "Er vernaachlässigt sini Gsundheit wäge de Arbet."
+ },
+ {
+  "id": 3810,
+  "de": "einschätzen",
+  "tr": "değerlendirmek, tahmin etmek",
+  "deBeispiel": "Experten schätzen die aktuelle Lage als kritisch ein.",
+  "gsw": "iischätze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Expärte tüend di aktuell Laag als kritisch iischätze."
+ },
+ {
+  "id": 3811,
+  "de": "überzeugen",
+  "tr": "ikna etmek",
+  "deBeispiel": "Sie konnte den Chef von ihrer neuen Idee überzeugen.",
+  "gsw": "überzüüge",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät de Chef vo irere neue Idee chöne überzüüge.",
+  "ayniLehce": [
+   "sich überzeugen (B1)"
+  ]
+ },
+ {
+  "id": 3812,
+  "de": "ermöglichen",
+  "tr": "mümkün kılmak, sağlamak",
+  "deBeispiel": "Das Stipendium ermöglicht ihr ein Studium im Ausland.",
+  "gsw": "ermügliche",
+  "gswArtikel": null,
+  "gswBeispiel": "S Schtipendium ermüglicht ire es Schtudium im Usland."
+ },
+ {
+  "id": 3813,
+  "de": "erweitern",
+  "tr": "genişletmek",
+  "deBeispiel": "Das Unternehmen will sein Angebot deutlich erweitern.",
+  "gsw": "erwiitere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Unternääme wott sis Aagebot düütlich erwiitere."
+ },
+ {
+  "id": 3814,
+  "de": "verwirklichen",
+  "tr": "gerçekleştirmek",
+  "deBeispiel": "Er hat sich seinen Traum vom eigenen Café verwirklicht.",
+  "gsw": "verwürkliche",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät sich de Traum vom äigene Kafi verwürklicht."
+ },
+ {
+  "id": 3815,
+  "de": "scheitern an",
+  "tr": "başarısız olmak, takılıp kalmak",
+  "deBeispiel": "Das Projekt ist letztendlich an fehlendem Geld gescheitert.",
+  "gsw": "schiitere a",
+  "gswArtikel": null,
+  "gswBeispiel": "S Projäkt isch am Änd am fäälende Gäld gschiiteret."
+ },
+ {
+  "id": 3816,
+  "de": "sich abfinden mit",
+  "tr": "razı olmak, kabullenmek",
+  "deBeispiel": "Sie musste sich mit dem Verlust ihres Jobs abfinden.",
+  "gsw": "sich abfinde mit",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät sich mit em Verluscht vo irere Schtell müese abfinde."
+ },
+ {
+  "id": 3817,
+  "de": "nachhaltig",
+  "tr": "sürdürülebilir, kalıcı",
+  "deBeispiel": "Die Firma setzt konsequent auf eine nachhaltige Produktion.",
+  "gsw": "naahaltig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Firma setzt konsequänt uf e naahaltigi Produktion."
+ },
+ {
+  "id": 3818,
+  "de": "ausgeprägt",
+  "tr": "belirgin, gelişmiş",
+  "deBeispiel": "Sie hat ein ausgeprägtes Interesse an fremden Sprachen.",
+  "gsw": "usprägt",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät es usprägts Interässe a frömde Spraache."
+ },
+ {
+  "id": 3819,
+  "de": "angemessen",
+  "tr": "uygun, makul",
+  "deBeispiel": "Der geforderte Preis erscheint mir durchaus angemessen.",
+  "gsw": "aagmässe",
+  "gswArtikel": null,
+  "gswBeispiel": "De verlangt Priis schiint mer ganz aagmässe."
+ },
+ {
+  "id": 3820,
+  "de": "gleichgültig",
+  "tr": "kayıtsız, ilgisiz",
+  "deBeispiel": "Ihm ist das Ergebnis der Wahl völlig gleichgültig.",
+  "gsw": "gliichgültig",
+  "gswArtikel": null,
+  "gswBeispiel": "Im isch s Ergäbnis vo de Waal völlig gliichgültig."
+ },
+ {
+  "id": 3821,
+  "de": "vorteilhaft",
+  "tr": "avantajlı, elverişli",
+  "deBeispiel": "Das Angebot ist für beide Vertragsseiten sehr vorteilhaft.",
+  "gsw": "vortäilhaft",
+  "gswArtikel": null,
+  "gswBeispiel": "S Aagebot isch für bäidi Siite sehr vortäilhaft."
+ },
+ {
+  "id": 3822,
+  "de": "umstritten",
+  "tr": "tartışmalı, ihtilaflı",
+  "deBeispiel": "Das neue Gesetz ist in der Bevölkerung sehr umstritten.",
+  "gsw": "umschtritte",
+  "gswArtikel": null,
+  "gswBeispiel": "S neu Gsetz isch i de Bevölkerig sehr umschtritte."
+ },
+ {
+  "id": 3823,
+  "de": "zwingend",
+  "tr": "zorunlu, kaçınılmaz",
+  "deBeispiel": "Ein Nachweis der Qualifikation ist zwingend erforderlich.",
+  "gsw": "zwingend",
+  "gswArtikel": null,
+  "gswBeispiel": "En Naachwiis vo de Qualifikation isch zwingend nötig."
+ },
+ {
+  "id": 3824,
+  "de": "unentbehrlich",
+  "tr": "vazgeçilmez",
+  "deBeispiel": "Gute Kommunikation ist in einem Team unentbehrlich.",
+  "gsw": "unentbeerlich",
+  "gswArtikel": null,
+  "gswBeispiel": "E gueti Kommunikation isch imene Team unentbeerlich."
+ },
+ {
+  "id": 3825,
+  "de": "die Auseinandersetzung",
+  "tr": "tartışma, çatışma",
+  "deBeispiel": "Es kam zu einer heftigen Auseinandersetzung zwischen den Nachbarn.",
+  "gsw": "Usenandsetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Es isch zunere heftige Usenandsetzig zwüsched de Naachbere choo."
+ },
+ {
+  "id": 3826,
+  "de": "die Bemühung",
+  "tr": "çaba, gayret",
+  "deBeispiel": "Trotz aller Bemühungen blieb der gewünschte Erfolg aus.",
+  "gsw": "Bemüeig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Trotz allne Bemüeige isch de gwünscht Erfolg usbliibe."
+ },
+ {
+  "id": 3827,
+  "de": "die Verzögerung",
+  "tr": "gecikme, erteleme",
+  "deBeispiel": "Wegen technischer Probleme kam es zu einer langen Verzögerung.",
+  "gsw": "Verzögerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge tächnische Probleem isch es zunere lange Verzögerig choo."
+ },
+ {
+  "id": 3828,
+  "de": "die Einschätzung",
+  "tr": "değerlendirme, kanaat",
+  "deBeispiel": "Meiner Einschätzung nach wird sich die Lage bald bessern.",
+  "gsw": "Iischätzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Minere Iischätzig naa wird sich d Laag bald bessere."
+ },
+ {
+  "id": 3829,
+  "de": "die Verständigung",
+  "tr": "anlaşma, karşılıklı anlama",
+  "deBeispiel": "Trotz der Sprachbarriere gelang die Verständigung gut.",
+  "gsw": "Verschtändigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Trotz de Spraachbarriere hät d Verschtändigig guet klappet."
+ },
+ {
+  "id": 3830,
+  "de": "die Ausdrucksweise",
+  "tr": "ifade tarzı, anlatım biçimi",
+  "deBeispiel": "Seine Ausdrucksweise wirkt sehr gewählt und höflich.",
+  "gsw": "Usdruckswiis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Usdruckswiis würkt sehr gwäält und höflich."
+ },
+ {
+  "id": 3831,
+  "de": "die Formulierung",
+  "tr": "ifade, dile getirme",
+  "deBeispiel": "Die Formulierung des Satzes war missverständlich.",
+  "gsw": "Formulierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Formulierig vom Satz isch missverschtändlich gsii."
+ },
+ {
+  "id": 3832,
+  "de": "die Stellungnahme",
+  "tr": "görüş bildirme, açıklama",
+  "deBeispiel": "Die Universität gab eine offizielle Stellungnahme ab.",
+  "gsw": "Schtellignaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uni hät e offizielli Schtellignaam abggää."
+ },
+ {
+  "id": 3833,
+  "de": "die Verhandlung",
+  "tr": "müzakere, görüşme",
+  "deBeispiel": "Die Verhandlungen über das Stipendium zogen sich hin.",
+  "gsw": "Verhandlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verhandlige über s Schtipendium händ sich i d Längi zoge."
+ },
+ {
+  "id": 3834,
+  "de": "die Fremdsprachenkenntnis",
+  "tr": "yabancı dil bilgisi",
+  "deBeispiel": "Gute Fremdsprachenkenntnisse sind für das Praktikum wichtig.",
+  "gsw": "Frömdspraachechäntnis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gueti Frömdspraachechäntnis sind für s Praktikum wichtig."
+ },
+ {
+  "id": 3835,
+  "de": "die Rechtschreibung",
+  "tr": "yazım kuralları, imla",
+  "deBeispiel": "Die Rechtschreibung wird bei der Klausur bewertet.",
+  "gsw": "Rächtschriibig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rächtschriibig wird bi de Prüefig bewärtet."
+ },
+ {
+  "id": 3836,
+  "de": "das Sprachniveau",
+  "tr": "dil seviyesi",
+  "deBeispiel": "Für das Studium wird das Sprachniveau B2 verlangt.",
+  "gsw": "Spraachniveau",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für s Schtudium wird s Spraachniveau B2 verlangt."
+ },
+ {
+  "id": 3837,
+  "de": "die Sprachprüfung",
+  "tr": "dil sınavı",
+  "deBeispiel": "Ohne bestandene Sprachprüfung ist keine Immatrikulation möglich.",
+  "gsw": "Spraachprüefig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni bschtandeni Spraachprüefig cha me sich nöd immatrikuliere."
+ },
+ {
+  "id": 3838,
+  "de": "der Dolmetscher",
+  "tr": "tercüman",
+  "deBeispiel": "Beim Amt stand ein Dolmetscher zur Verfügung.",
+  "gsw": "Dolmätscher",
+  "gswArtikel": "de",
+  "gswBeispiel": "Uf em Amt hät s en Dolmätscher ghaa."
+ },
+ {
+  "id": 3839,
+  "de": "die Lernstrategie",
+  "tr": "öğrenme stratejisi",
+  "deBeispiel": "Eine gute Lernstrategie erleichtert die Prüfungsvorbereitung.",
+  "gsw": "Lernschtrategii",
+  "gswArtikel": "d",
+  "gswBeispiel": "E gueti Lernschtrategii macht d Prüefigsvorberäitig äifacher."
+ },
+ {
+  "id": 3840,
+  "de": "das Selbststudium",
+  "tr": "kendi kendine çalışma",
+  "deBeispiel": "Vieles muss man im Selbststudium nachholen.",
+  "gsw": "Sälbschtschtudium",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vil muess me im Sälbschtschtudium naahole."
+ },
+ {
+  "id": 3841,
+  "de": "die Zulassung",
+  "tr": "kabul, izin",
+  "deBeispiel": "Die Zulassung zum Studiengang erfolgt nach Aktenlage.",
+  "gsw": "Zuelassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zuelassig zum Schtudiegang gaat nach Aktelaag."
+ },
+ {
+  "id": 3842,
+  "de": "die Prüfungsordnung",
+  "tr": "sınav yönetmeliği",
+  "deBeispiel": "Die Prüfungsordnung regelt alle Modalitäten der Klausur.",
+  "gsw": "Prüefigsornig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Prüefigsornig reglet alli Äinzelheite vo de Prüefig."
+ },
+ {
+  "id": 3843,
+  "de": "die Wiederholungsprüfung",
+  "tr": "bütünleme sınavı",
+  "deBeispiel": "Wer durchfällt, kann an der Wiederholungsprüfung teilnehmen.",
+  "gsw": "Widerholigsprüefig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wer duregheit, cha a de Widerholigsprüefig täilnää."
+ },
+ {
+  "id": 3844,
+  "de": "die Klausur",
+  "tr": "yazılı sınav",
+  "deBeispiel": "Die Klausur dauert neunzig Minuten.",
+  "gsw": "Prüefig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Prüefig gaat nüünzg Minute.",
+  "ayniLehce": [
+   "Klassenarbeit (A1)",
+   "Prüfung (A1)",
+   "Schularbeit (B1)"
+  ]
+ },
+ {
+  "id": 3845,
+  "de": "die Bewertung",
+  "tr": "değerlendirme, notlandırma",
+  "deBeispiel": "Die Bewertung der Hausarbeit erfolgt nach festen Kriterien.",
+  "gsw": "Bewärtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bewärtig vo de Seminararbet gaat nach fixe Kriterie."
+ },
+ {
+  "id": 3846,
+  "de": "der Prüfungsausschuss",
+  "tr": "sınav kurulu",
+  "deBeispiel": "Der Prüfungsausschuss entscheidet über die Anerkennung.",
+  "gsw": "Prüefigsusschuss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Prüefigsusschuss entschäidet über d Aaerkennig."
+ },
+ {
+  "id": 3847,
+  "de": "die Immatrikulation",
+  "tr": "üniversiteye kayıt",
+  "deBeispiel": "Die Immatrikulation muss bis Ende September erfolgen.",
+  "gsw": "Immatrikulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Immatrikulation muess bis Änd Septämber gmacht sii."
+ },
+ {
+  "id": 3848,
+  "de": "die Exmatrikulation",
+  "tr": "üniversite kaydını sildirme",
+  "deBeispiel": "Nach dem Abschluss folgt die Exmatrikulation.",
+  "gsw": "Exmatrikulation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Abschluss chunt d Exmatrikulation."
+ },
+ {
+  "id": 3849,
+  "de": "die Vorlesung",
+  "tr": "üniversite dersi, ders",
+  "deBeispiel": "Die Vorlesung beginnt pünktlich um acht Uhr.",
+  "gsw": "Vorläsig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vorläsig faat pünktlich am achti aa."
+ },
+ {
+  "id": 3850,
+  "de": "die Hausarbeit",
+  "tr": "dönem ödevi, seminer ödevi",
+  "deBeispiel": "Die Hausarbeit muss bis Semesterende abgegeben werden.",
+  "gsw": "Seminararbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Seminararbet muess bis Semeschteränd abggää sii."
+ },
+ {
+  "id": 3851,
+  "de": "die Abschlussarbeit",
+  "tr": "bitirme tezi",
+  "deBeispiel": "Für die Abschlussarbeit braucht sie noch drei Monate.",
+  "gsw": "Abschlussarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Abschlussarbet bruucht si na drei Mönet."
+ },
+ {
+  "id": 3852,
+  "de": "der Studiengang",
+  "tr": "öğrenim programı, bölüm",
+  "deBeispiel": "Der Studiengang ist sehr praxisorientiert aufgebaut.",
+  "gsw": "Schtudiegang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtudiegang isch sehr praxisnaach ufbaut."
+ },
+ {
+  "id": 3853,
+  "de": "die Zulassungsvoraussetzung",
+  "tr": "kabul şartı",
+  "deBeispiel": "Deutschkenntnisse sind eine wichtige Zulassungsvoraussetzung.",
+  "gsw": "Zuelassigsvorussetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Tüütschchäntnis sind e wichtigi Zuelassigsvorussetzig."
+ },
+ {
+  "id": 3854,
+  "de": "die Praktikumsstelle",
+  "tr": "staj yeri",
+  "deBeispiel": "Er hat endlich eine passende Praktikumsstelle gefunden.",
+  "gsw": "Praktikumsschtell",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät ändlich e passendi Praktikumsschtell gfunde."
+ },
+ {
+  "id": 3855,
+  "de": "das Praktikumszeugnis",
+  "tr": "staj belgesi",
+  "deBeispiel": "Am Ende erhält jeder Praktikant ein Praktikumszeugnis.",
+  "gsw": "Praktikumszüügnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Am Schluss überchunt jede Praktikant es Praktikumszüügnis."
+ },
+ {
+  "id": 3856,
+  "de": "die Bewerbungsunterlage",
+  "tr": "başvuru evrakı",
+  "deBeispiel": "Die vollständigen Bewerbungsunterlagen müssen fristgerecht eingehen.",
+  "gsw": "Bewärbigsunderlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D vollschtändige Bewärbigsunderlaage müend rächtziitig iiträffe."
+ },
+ {
+  "id": 3857,
+  "de": "das Anschreiben",
+  "tr": "başvuru mektubu, ön yazı",
+  "deBeispiel": "Im Anschreiben erklärt sie ihre Motivation ausführlich.",
+  "gsw": "Motivationsschriibe",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im Motivationsschriibe erchlärt si genau, warum si d Schtell wott."
+ },
+ {
+  "id": 3858,
+  "de": "die Bewerbungsfrist",
+  "tr": "başvuru süresi",
+  "deBeispiel": "Die Bewerbungsfrist läuft Ende des Monats ab.",
+  "gsw": "Bewärbigsfrischt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bewärbigsfrischt lauft Änd Monet ab."
+ },
+ {
+  "id": 3859,
+  "de": "das Empfehlungsschreiben",
+  "tr": "referans mektubu",
+  "deBeispiel": "Ein Empfehlungsschreiben des Professors stärkt die Bewerbung.",
+  "gsw": "Empfäligsschriibe",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es Empfäligsschriibe vom Profässer schtärkt d Bewärbig."
+ },
+ {
+  "id": 3860,
+  "de": "die Bescheinigung",
+  "tr": "belge, yazı",
+  "deBeispiel": "Für die Anmeldung braucht man eine Bescheinigung der Uni.",
+  "gsw": "Beschtätigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Aamäldig bruucht me e Beschtätigig vo de Uni.",
+  "ayniLehce": [
+   "Bestätigung (B1)"
+  ]
+ },
+ {
+  "id": 3861,
+  "de": "die Abmeldung",
+  "tr": "kayıt sildirme, çıkış bildirimi",
+  "deBeispiel": "Bei einem Umzug ist eine Abmeldung erforderlich.",
+  "gsw": "Abmäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bimene Umzug bruucht s e Abmäldig."
+ },
+ {
+  "id": 3862,
+  "de": "der Sachbearbeiter",
+  "tr": "memur, işlem görevlisi",
+  "deBeispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
+  "gsw": "Sachbearbeiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De zueschtändig Sachbearbeiter prüeft s Gsuech."
+ },
+ {
+  "id": 3863,
+  "de": "die Verlängerung",
+  "tr": "uzatma, süre uzatımı",
+  "deBeispiel": "Für die Verlängerung des Visums braucht man mehrere Unterlagen.",
+  "gsw": "Verlängerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Verlängerig vom Visum bruucht me mereri Underlaage."
+ },
+ {
+  "id": 3864,
+  "de": "die Beglaubigung",
+  "tr": "onay, tasdik",
+  "deBeispiel": "Für die Beglaubigung der Kopie fällt eine Gebühr an.",
+  "gsw": "Beglaubigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Beglaubigig vo de Kopii muess me e Gebüür zale."
+ },
+ {
+  "id": 3865,
+  "de": "die Genehmigung",
+  "tr": "izin, onay",
+  "deBeispiel": "Ohne Genehmigung darf die Baustelle nicht beginnen.",
+  "gsw": "Bewilligig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Bewilligig darf d Bauschtell nöd aafange.",
+  "ayniLehce": [
+   "Erlaubnis (A2)",
+   "Bewilligung (C1)"
+  ]
+ },
+ {
+  "id": 3866,
+  "de": "missverstehen",
+  "tr": "yanlış anlamak",
+  "deBeispiel": "Bitte entschuldigen Sie, ich habe Sie missverstanden.",
+  "gsw": "missverschtaa",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte säged Si s namal, susch chönnt ich Si missverschtaa."
+ },
+ {
+  "id": 3867,
+  "de": "formulieren",
+  "tr": "ifade etmek, dile getirmek",
+  "deBeispiel": "Sie hat ihre Kritik sehr diplomatisch formuliert.",
+  "gsw": "formuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät iri Kritik sehr diplomaatisch formuliert."
+ },
+ {
+  "id": 3868,
+  "de": "sich verständigen",
+  "tr": "anlaşmak, iletişim kurmak",
+  "deBeispiel": "Wir konnten uns notfalls auf Englisch verständigen.",
+  "gsw": "sich verschtändige",
+  "gswArtikel": null,
+  "gswBeispiel": "Zur Noot händ mir üüs uf Änglisch chöne verschtändige."
+ },
+ {
+  "id": 3869,
+  "de": "beherrschen",
+  "tr": "hakim olmak, iyi bilmek",
+  "deBeispiel": "Sie beherrscht drei Fremdsprachen fließend.",
+  "gsw": "beherrsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Si beherrscht drei Frömdspraache fliessend."
+ },
+ {
+  "id": 3870,
+  "de": "dolmetschen",
+  "tr": "sözlü çevirmek, tercümanlık yapmak",
+  "deBeispiel": "Er hat beim Termin für die Familie gedolmetscht.",
+  "gsw": "dolmätsche",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät bim Termin für d Familie dolmätschet."
+ },
+ {
+  "id": 3871,
+  "de": "sich aneignen",
+  "tr": "edinmek, öğrenmek",
+  "deBeispiel": "Innerhalb eines Jahres hat sie sich die Sprache angeeignet.",
+  "gsw": "sich aaäigne",
+  "gswArtikel": null,
+  "gswBeispiel": "Innert eme Jaar hät si sich d Spraach chöne aaäigne."
+ },
+ {
+  "id": 3872,
+  "de": "erwerben",
+  "tr": "kazanmak, edinmek",
+  "deBeispiel": "Im Kurs erwirbt man wichtige Grammatikkenntnisse.",
+  "gsw": "erwärbe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Kurs cha me wichtigi Grammatikchäntnis erwärbe."
+ },
+ {
+  "id": 3873,
+  "de": "vertiefen",
+  "tr": "derinleştirmek, pekiştirmek",
+  "deBeispiel": "Im Seminar vertiefen die Studierenden ihr Wissen.",
+  "gsw": "vertüüfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Seminar vertüüfed d Schtudierende ires Wüsse."
+ },
+ {
+  "id": 3874,
+  "de": "sich fortbilden",
+  "tr": "kendini geliştirmek",
+  "deBeispiel": "Lehrer müssen sich regelmäßig fortbilden.",
+  "gsw": "sich wiiterbilde",
+  "gswArtikel": null,
+  "gswBeispiel": "Leerer müend sich regelmässig wiiterbilde."
+ },
+ {
+  "id": 3875,
+  "de": "durchfallen",
+  "tr": "başarısız olmak, kalmak",
+  "deBeispiel": "Leider ist sie bei der Klausur durchgefallen.",
+  "gsw": "duregheie",
+  "gswArtikel": null,
+  "gswBeispiel": "Läider isch si bi de Prüefig duregheit."
+ },
+ {
+  "id": 3876,
+  "de": "benoten",
+  "tr": "notlandırmak",
+  "deBeispiel": "Die Hausarbeit wird von zwei Dozenten benotet.",
+  "gsw": "benote",
+  "gswArtikel": null,
+  "gswBeispiel": "D Seminararbet wird vo zwäi Dozänte benotet."
+ },
+ {
+  "id": 3877,
+  "de": "sich immatrikulieren",
+  "tr": "üniversiteye kayıt olmak",
+  "deBeispiel": "Neue Studierende müssen sich online immatrikulieren.",
+  "gsw": "sich immatrikuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Neui Schtudierendi müend sich online immatrikuliere."
+ },
+ {
+  "id": 3878,
+  "de": "absolvieren",
+  "tr": "tamamlamak, bitirmek",
+  "deBeispiel": "Er hat ein sechsmonatiges Praktikum absolviert.",
+  "gsw": "absolviere",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät es Praktikum vo säks Mönet absolviert."
+ },
+ {
+  "id": 3879,
+  "de": "zweisprachig",
+  "tr": "iki dilli",
+  "deBeispiel": "Die Familie erzieht ihre Kinder zweisprachig.",
+  "gsw": "zwäispraachig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Familie erzieht iri Chind zwäispraachig."
+ },
+ {
+  "id": 3880,
+  "de": "fristgerecht",
+  "tr": "süresi içinde, zamanında",
+  "deBeispiel": "Der Antrag muss fristgerecht eingereicht werden.",
+  "gsw": "frischtgrächt",
+  "gswArtikel": null,
+  "gswBeispiel": "S Gsuech muess frischtgrächt iigräicht wärde."
+ },
+ {
+  "id": 3881,
+  "de": "ausführlich",
+  "tr": "ayrıntılı, detaylı",
+  "deBeispiel": "Bitte beschreiben Sie Ihre Motivation ausführlich.",
+  "gsw": "usfüerlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte beschriibed Si Iri Motivation usfüerlich."
+ },
+ {
+  "id": 3882,
+  "de": "verbindlich",
+  "tr": "bağlayıcı, kesin",
+  "deBeispiel": "Die Anmeldung ist ab sofort verbindlich.",
+  "gsw": "verbindlich",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aamäldig isch ab sofort verbindlich."
+ },
+ {
+  "id": 4047,
+  "de": "der Tarifvertrag",
+  "tr": "toplu iş sözleşmesi",
+  "deBeispiel": "Der neue Tarifvertrag gilt für alle Beschäftigten der Branche.",
+  "gsw": "Tarifvertrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De nöi Tarifvertrag gilt für alli Bschäftigte vo de Branche."
+ },
+ {
+  "id": 4048,
+  "de": "der Arbeitgeber",
+  "tr": "işveren",
+  "deBeispiel": "Mein Arbeitgeber übernimmt die Kosten für die Weiterbildung.",
+  "gsw": "Arbetgäber",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Arbetgäber übernimmt d Chöschte für d Wiiterbildig."
+ },
+ {
+  "id": 4049,
+  "de": "der Arbeitnehmer",
+  "tr": "işçi, çalışan",
+  "deBeispiel": "Jeder Arbeitnehmer hat Anspruch auf bezahlten Urlaub.",
+  "gsw": "Arbetnämer",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Arbetnämer hät Aaschpruch uf bezahlti Ferie."
+ },
+ {
+  "id": 4050,
+  "de": "die Personalabteilung",
+  "tr": "insan kaynakları departmanı",
+  "deBeispiel": "Wenden Sie sich mit Ihren Fragen bitte an die Personalabteilung.",
+  "gsw": "Personalabteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wändet Sie sich mit Irne Fraage bitte a d Personalabteilig."
+ },
+ {
+  "id": 4051,
+  "de": "die Fachkraft",
+  "tr": "uzman eleman, nitelikli işgücü",
+  "deBeispiel": "In der Pflege fehlen seit Jahren ausgebildete Fachkräfte.",
+  "gsw": "Fachchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Pfläg fäält es siit Jaare a uusbildete Fachchraft."
+ },
+ {
+  "id": 4052,
+  "de": "die Führungskraft",
+  "tr": "yönetici, üst düzey yönetici",
+  "deBeispiel": "Als Führungskraft muss man auch unangenehme Entscheidungen treffen.",
+  "gsw": "Füehrigschraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "As Füehrigschraft mues mer au unaagnämi Entschäidige träffe."
+ },
+ {
+  "id": 4053,
+  "de": "der Abteilungsleiter",
+  "tr": "departman müdürü, bölüm şefi",
+  "deBeispiel": "Der Abteilungsleiter hat den Urlaubsantrag noch nicht unterschrieben.",
+  "gsw": "Abteiligsläiter",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Abteiligsläiter hät de Ferieaatrag no nöd underschribe."
+ },
+ {
+  "id": 4054,
+  "de": "der Auszubildende",
+  "tr": "çırak, meslek eğitimi öğrencisi",
+  "deBeispiel": "Die Firma stellt in diesem Jahr zwölf Auszubildende ein.",
+  "gsw": "Lehrling",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Firma stellt das Jaar zwölf Lehrling aa.",
+  "ayniLehce": [
+   "Azubi (A2)"
+  ]
+ },
+ {
+  "id": 4055,
+  "de": "das Arbeitsklima",
+  "tr": "iş ortamı, çalışma atmosferi",
+  "deBeispiel": "Seit dem Wechsel der Leitung hat sich das Arbeitsklima deutlich verbessert.",
+  "gsw": "Arbetsklima",
+  "gswArtikel": "s",
+  "gswBeispiel": "Siit em Wächsel vo de Läitig hät sich s Arbetsklima düütlich verbesseret."
+ },
+ {
+  "id": 4056,
+  "de": "die Arbeitszeit",
+  "tr": "çalışma süresi, mesai saati",
+  "deBeispiel": "Die wöchentliche Arbeitszeit wurde auf 38 Stunden gesenkt.",
+  "gsw": "Arbetsziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D wüchentlich Arbetsziit isch uf 38 Schtund gsenkt worde."
+ },
+ {
+  "id": 4057,
+  "de": "die Gleitzeit",
+  "tr": "esnek mesai, kayan çalışma saati",
+  "deBeispiel": "Dank der Gleitzeit kann ich meine Kinder morgens zur Schule bringen.",
+  "gsw": "Gliitziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dank de Gliitziit chan ich mini Chind am Morge i d Schuel bringe."
+ },
+ {
+  "id": 4058,
+  "de": "die Schichtarbeit",
+  "tr": "vardiyalı çalışma",
+  "deBeispiel": "Ständige Schichtarbeit belastet auf Dauer den Schlafrhythmus.",
+  "gsw": "Schichtarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtändigi Schichtarbet belaschtet uf d Duur de Schlaafrhythmus."
+ },
+ {
+  "id": 4059,
+  "de": "die Kurzarbeit",
+  "tr": "kısa çalışma, kısmi çalışma",
+  "deBeispiel": "Während der Krise musste der Betrieb Kurzarbeit anmelden.",
+  "gsw": "Churzarbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Während de Krise hät de Betrib müesse Churzarbet aamälde."
+ },
+ {
+  "id": 4060,
+  "de": "die Probezeit",
+  "tr": "deneme süresi",
+  "deBeispiel": "In der Probezeit kann der Vertrag mit kurzer Frist beendet werden.",
+  "gsw": "Probeziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Probeziit cha de Vertrag mit ere churze Frischt beändet werde."
+ },
+ {
+  "id": 4061,
+  "de": "die Befristung",
+  "tr": "süre sınırlaması, geçici sözleşme",
+  "deBeispiel": "Viele junge Wissenschaftler leiden unter der ständigen Befristung ihrer Stellen.",
+  "gsw": "Befrischtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vili jungi Wüsseschaftler liidet under de schtändige Befrischtig vo irne Schtelle."
+ },
+ {
+  "id": 4062,
+  "de": "die Festanstellung",
+  "tr": "kadrolu iş, daimi istihdam",
+  "deBeispiel": "Nach zwei Praktika bekam sie endlich eine Festanstellung.",
+  "gsw": "Fäschtaastellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach zwäi Praktika hät si ändlich e Fäschtaastellig überchoo."
+ },
+ {
+  "id": 4063,
+  "de": "die Vergütung",
+  "tr": "ücret, ödeme",
+  "deBeispiel": "Über die Höhe der Vergütung wird im zweiten Gespräch verhandelt.",
+  "gsw": "Vergüetig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Höchi vo de Vergüetig wird im zwäite Gschpröch verhandlet."
+ },
+ {
+  "id": 4064,
+  "de": "der Stundenlohn",
+  "tr": "saat ücreti",
+  "deBeispiel": "Der Stundenlohn liegt in dieser Branche deutlich unter dem Durchschnitt.",
+  "gsw": "Schtundelohn",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtundelohn liit i dere Branche düütlich under em Durchschnitt."
+ },
+ {
+  "id": 4065,
+  "de": "die Lohnfortzahlung",
+  "tr": "hastalıkta ücret ödemesinin sürmesi",
+  "deBeispiel": "Im Krankheitsfall besteht sechs Wochen lang Anspruch auf Lohnfortzahlung.",
+  "gsw": "Lohnfortzahlig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Chrankheitsfall hät me sächs Wuche lang Aaschpruch uf Lohnfortzahlig."
+ },
+ {
+  "id": 4066,
+  "de": "die Prämie",
+  "tr": "prim, ikramiye",
+  "deBeispiel": "Für das gute Jahresergebnis erhielten alle Beschäftigten eine Prämie.",
+  "gsw": "Prämie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für s guet Jaaresergäbnis händ alli Bschäftigte e Prämie überchoo."
+ },
+ {
+  "id": 4067,
+  "de": "die Kündigungsfrist",
+  "tr": "ihbar süresi, fesih bildirim süresi",
+  "deBeispiel": "Die Kündigungsfrist beträgt in meinem Fall drei Monate zum Quartalsende.",
+  "gsw": "Chündigungsfrischt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chündigungsfrischt isch i mim Fall drüü Mönet uf s Quartalsänd."
+ },
+ {
+  "id": 4068,
+  "de": "der Aufhebungsvertrag",
+  "tr": "ikale sözleşmesi, karşılıklı fesih anlaşması",
+  "deBeispiel": "Statt einer Klage einigten sich beide Seiten auf einen Aufhebungsvertrag.",
+  "gsw": "Uufhebigsvertrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Statt ere Chlaag händ sich bäidi Siite uf en Uufhebigsvertrag gäinigt."
+ },
+ {
+  "id": 4069,
+  "de": "das Arbeitszeugnis",
+  "tr": "çalışma belgesi, iş referans belgesi",
+  "deBeispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
+  "gsw": "Arbetszüügnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es wohlwollend formulierts Arbetszüügnis erliichteret di nöchscht Bewerbig."
+ },
+ {
+  "id": 4070,
+  "de": "die Stellenanzeige",
+  "tr": "iş ilanı",
+  "deBeispiel": "In der Stellenanzeige stand nichts über das Gehalt.",
+  "gsw": "Schtelleaazäig",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Schtelleaazäig isch nüüt über de Lohn gschtande."
+ },
+ {
+  "id": 4071,
+  "de": "das Anforderungsprofil",
+  "tr": "aranan nitelikler, pozisyon gereklilikleri",
+  "deBeispiel": "Sein Lebenslauf passt genau auf das Anforderungsprofil der Stelle.",
+  "gsw": "Aaforderigsprofil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Sin Läbeslauf passt genau uf s Aaforderigsprofil vo de Schtell."
+ },
+ {
+  "id": 4072,
+  "de": "das Auswahlverfahren",
+  "tr": "seçim süreci, eleme süreci",
+  "deBeispiel": "Das Auswahlverfahren zog sich über mehrere Wochen hin.",
+  "gsw": "Uuswaalverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Uuswaalverfaare hät sich über mehreri Wuche hiizoge."
+ },
+ {
+  "id": 4073,
+  "de": "der Eignungstest",
+  "tr": "yetenek testi, uygunluk sınavı",
+  "deBeispiel": "Vor der Einladung müssen alle Kandidaten einen Eignungstest absolvieren.",
+  "gsw": "Äignigstescht",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vor de Iiladig müend alli Kandidate en Äignigstescht absolviere."
+ },
+ {
+  "id": 4074,
+  "de": "die Referenz",
+  "tr": "referans, tavsiye",
+  "deBeispiel": "Bitte geben Sie zwei Referenzen aus früheren Anstellungen an.",
+  "gsw": "Referenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte gänd Sie zwäi Referenze us früenere Aastellige aa."
+ },
+ {
+  "id": 4075,
+  "de": "die Personalakte",
+  "tr": "özlük dosyası, personel dosyası",
+  "deBeispiel": "Die Abmahnung wurde in die Personalakte aufgenommen.",
+  "gsw": "Personalakte",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abmahnig isch i d Personalakte ufgnoo worde."
+ },
+ {
+  "id": 4076,
+  "de": "die Berufserfahrung",
+  "tr": "mesleki tecrübe, iş deneyimi",
+  "deBeispiel": "Für diese Position wird mehrjährige Berufserfahrung im Ausland erwartet.",
+  "gsw": "Bruefserfaarig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für die Position wird mehrjäärigi Bruefserfaarig im Uusland erwartet."
+ },
+ {
+  "id": 4077,
+  "de": "die Aufstiegschance",
+  "tr": "yükselme fırsatı, terfi imkânı",
+  "deBeispiel": "In kleinen Betrieben sind die Aufstiegschancen oft begrenzt.",
+  "gsw": "Uufschtiigschance",
+  "gswArtikel": "d",
+  "gswBeispiel": "I chliine Betrib sind d Uufschtiigschance oft bschränkt."
+ },
+ {
+  "id": 4078,
+  "de": "die Selbstständigkeit",
+  "tr": "kendi işini kurma, serbest çalışma",
+  "deBeispiel": "Nach zehn Jahren im Konzern wagte er den Schritt in die Selbstständigkeit.",
+  "gsw": "Sälbschtändigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach zää Jaar im Konzern hät er de Schritt i d Sälbschtändigkäit gwagt."
+ },
+ {
+  "id": 4079,
+  "de": "das Arbeitslosengeld",
+  "tr": "işsizlik maaşı, işsizlik ödeneği",
+  "deBeispiel": "Sie bezog ein halbes Jahr lang Arbeitslosengeld, bevor sie etwas fand.",
+  "gsw": "Arbetslosegäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si hät es halbs Jaar lang Arbetslosegäld überchoo, bevor si öppis gfunde hät."
+ },
+ {
+  "id": 4080,
+  "de": "die Sozialversicherung",
+  "tr": "sosyal sigorta, sosyal güvenlik",
+  "deBeispiel": "Die Beiträge zur Sozialversicherung werden direkt vom Gehalt abgezogen.",
+  "gsw": "Sozialversicherig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Biiträäg a d Sozialversicherig wärded diräkt vom Lohn abzoge."
+ }
+]

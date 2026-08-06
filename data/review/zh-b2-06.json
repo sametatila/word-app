@@ -1,0 +1,992 @@
+[
+ {
+  "id": 4191,
+  "de": "der Umfang",
+  "tr": "kapsam, hacim, boyut",
+  "deBeispiel": "Der Umfang der Arbeiten war zu Beginn nicht absehbar.",
+  "gsw": "Umfang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Umfang vo de Arbete isch am Aafang nöd absehbar gsi."
+ },
+ {
+  "id": 4192,
+  "de": "der Anteil",
+  "tr": "pay, oran, hisse",
+  "deBeispiel": "Der Anteil erneuerbarer Energien wächst seit Jahren.",
+  "gsw": "Aateil",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Aateil vo de ernöierbare Energie wachst siit Jaare."
+ },
+ {
+  "id": 4193,
+  "de": "die Schwankung",
+  "tr": "dalgalanma, oynaklık",
+  "deBeispiel": "Starke Schwankungen der Preise erschweren die Planung.",
+  "gsw": "Schwankig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Schtarchi Schwankige bi de Priis erschwääred d Planig."
+ },
+ {
+  "id": 4194,
+  "de": "der Überschuss",
+  "tr": "fazla, artı bakiye",
+  "deBeispiel": "Die Gemeinde schloss das Jahr mit einem kleinen Überschuss ab.",
+  "gsw": "Überschuss",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Gmeind hät s Jaar mit eme chliine Überschuss abgschlosse."
+ },
+ {
+  "id": 4195,
+  "de": "das Kriterium",
+  "tr": "ölçüt, kıstas",
+  "deBeispiel": "Das wichtigste Kriterium bei der Auswahl war die Erfahrung.",
+  "gsw": "Kriterium",
+  "gswArtikel": "s",
+  "gswBeispiel": "S wichtigscht Kriterium bi de Uuswaal isch d Erfaarig gsi."
+ },
+ {
+  "id": 4196,
+  "de": "die Tendenz",
+  "tr": "eğilim, gidişat",
+  "deBeispiel": "Die Zahlen zeigen eine klare Tendenz nach oben.",
+  "gsw": "Tendenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zaale zäiged e klari Tendenz nach obe."
+ },
+ {
+  "id": 4197,
+  "de": "die Quote",
+  "tr": "oran, kota",
+  "deBeispiel": "Die Quote der Ausbildungsabbrüche ist leicht gestiegen.",
+  "gsw": "Quote",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Quote vo de Uusbildigsabbrüch isch liicht gschtige."
+ },
+ {
+  "id": 4198,
+  "de": "die Spanne",
+  "tr": "aralık, fark, marj",
+  "deBeispiel": "Die Spanne zwischen den Angeboten war überraschend groß.",
+  "gsw": "Schpanne",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schpanne zwüsched de Aagebot isch überraschend grooss gsi."
+ },
+ {
+  "id": 4199,
+  "de": "die Größenordnung",
+  "tr": "büyüklük mertebesi, ölçek",
+  "deBeispiel": "Die Kosten bewegen sich in der Größenordnung von zwei Millionen.",
+  "gsw": "Grössenordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chöschte bewegend sich i de Grössenordnig vo zwäi Millione."
+ },
+ {
+  "id": 4200,
+  "de": "das Gefälle",
+  "tr": "fark, uçurum, eğim",
+  "deBeispiel": "Zwischen Stadt und Land besteht ein deutliches Gefälle bei den Löhnen.",
+  "gsw": "Gfäll",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zwüsched Schtadt und Land git s es düütlichs Gfäll bi de Löhn."
+ },
+ {
+  "id": 4201,
+  "de": "die Obergrenze",
+  "tr": "üst sınır, tavan",
+  "deBeispiel": "Für die Beiträge gilt eine gesetzliche Obergrenze.",
+  "gsw": "Obergränze",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für d Biiträäg gilt e gsetzlichi Obergränze."
+ },
+ {
+  "id": 4202,
+  "de": "die Einbuße",
+  "tr": "kayıp, zarar",
+  "deBeispiel": "Der Sturm führte zu erheblichen Einbußen bei der Ernte.",
+  "gsw": "Iibuess",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Schturm hät zu erhebliche Iibuesse bi de Ärnt gfüert."
+ },
+ {
+  "id": 4203,
+  "de": "die Bandbreite",
+  "tr": "yelpaze, aralık, çeşitlilik",
+  "deBeispiel": "Die Bandbreite der Meinungen im Publikum war beachtlich.",
+  "gsw": "Bandbräiti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bandbräiti vo de Mäinige im Publikum isch beachtlich gsi."
+ },
+ {
+  "id": 4204,
+  "de": "die Schwelle",
+  "tr": "eşik, sınır",
+  "deBeispiel": "Die Arbeitslosigkeit liegt knapp unter der kritischen Schwelle.",
+  "gsw": "Schwelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Arbetslosigkäit liit knapp under de kritische Schwelle."
+ },
+ {
+  "id": 4205,
+  "de": "der Lehrgang",
+  "tr": "kurs, eğitim programı",
+  "deBeispiel": "Der Lehrgang dauert sechs Wochen und endet mit einer Prüfung.",
+  "gsw": "Leergang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Leergang duuret sächs Wuche und ändet mit ere Prüefig."
+ },
+ {
+  "id": 4206,
+  "de": "die Berufsschule",
+  "tr": "meslek okulu",
+  "deBeispiel": "Zweimal pro Woche besucht sie die Berufsschule in Hamburg.",
+  "gsw": "Bruefsschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwäimal i de Wuche gaat si i d Bruefsschuel z Hamburg."
+ },
+ {
+  "id": 4207,
+  "de": "der Studienplatz",
+  "tr": "üniversitede öğrenim yeri, kayıt hakkı",
+  "deBeispiel": "Er hat endlich einen Studienplatz für Medizin bekommen.",
+  "gsw": "Schtudieplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Er hät ändlich en Schtudieplatz für Medizin überchoo."
+ },
+ {
+  "id": 4208,
+  "de": "die Fakultät",
+  "tr": "fakülte",
+  "deBeispiel": "Die juristische Fakultät zieht im Herbst in ein neues Gebäude.",
+  "gsw": "Fakultät",
+  "gswArtikel": "d",
+  "gswBeispiel": "D juristisch Fakultät zügelt im Herbscht i es nöis Gebäude."
+ },
+ {
+  "id": 4209,
+  "de": "die Studiengebühr",
+  "tr": "öğrenim ücreti, harç",
+  "deBeispiel": "In vielen Bundesländern zahlen Studierende keine Studiengebühren mehr.",
+  "gsw": "Schtudiegebüür",
+  "gswArtikel": "d",
+  "gswBeispiel": "I vile Bundesländer zahled d Schtudierende kei Schtudiegebüüre mee."
+ },
+ {
+  "id": 4210,
+  "de": "der Bildungsweg",
+  "tr": "eğitim yolu, öğrenim süreci",
+  "deBeispiel": "Der zweite Bildungsweg steht auch Berufstätigen offen.",
+  "gsw": "Bildigswäg",
+  "gswArtikel": "de",
+  "gswBeispiel": "De zwäit Bildigswäg schtaat au de Bruefstätige offe."
+ },
+ {
+  "id": 4211,
+  "de": "der Schulabschluss",
+  "tr": "okul diploması, mezuniyet derecesi",
+  "deBeispiel": "Ohne Schulabschluss ist die Suche nach einer Lehrstelle schwierig.",
+  "gsw": "Schuelabschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ooni Schuelabschluss isch d Suech nach ere Leerschtell schwirig."
+ },
+ {
+  "id": 4212,
+  "de": "die Fachrichtung",
+  "tr": "bölüm, uzmanlık alanı",
+  "deBeispiel": "Nach zwei Semestern wechselte er die Fachrichtung.",
+  "gsw": "Fachrichtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach zwäi Semeschter hät er d Fachrichtig gwächslet."
+ },
+ {
+  "id": 4213,
+  "de": "die Fertigkeit",
+  "tr": "beceri, ustalık",
+  "deBeispiel": "Im Praktikum erwerben die Auszubildenden praktische Fertigkeiten.",
+  "gsw": "Fertigkäit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Praktikum erwerbed d Lehrling praktischi Fertigkäite."
+ },
+ {
+  "id": 4214,
+  "de": "die Hochschulreife",
+  "tr": "üniversiteye giriş yeterliliği",
+  "deBeispiel": "Die allgemeine Hochschulreife berechtigt zum Studium an jeder Universität.",
+  "gsw": "Hochschuelreifi",
+  "gswArtikel": "d",
+  "gswBeispiel": "D allgemäini Hochschuelreifi berechtiget zum Schtudium a jedere Universität."
+ },
+ {
+  "id": 4215,
+  "de": "der Praxisbezug",
+  "tr": "uygulamayla bağ, pratiğe dönüklük",
+  "deBeispiel": "Vielen Studiengängen fehlt es an echtem Praxisbezug.",
+  "gsw": "Praxisbezug",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi vile Schtudiegäng fäält s a echtem Praxisbezug."
+ },
+ {
+  "id": 4216,
+  "de": "die Lehrkraft",
+  "tr": "öğretmen, eğitmen",
+  "deBeispiel": "An der Schule fehlen seit Monaten ausgebildete Lehrkräfte.",
+  "gsw": "Leerchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Schuel fäält s siit Mönet a uusbildete Leerchraft."
+ },
+ {
+  "id": 4217,
+  "de": "die Auffassungsgabe",
+  "tr": "kavrayış, anlama yetisi",
+  "deBeispiel": "Sie hat eine schnelle Auffassungsgabe und lernt mühelos.",
+  "gsw": "Uuffassigsgaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Si hät e schnelli Uuffassigsgaab und lernt ooni Müe."
+ },
+ {
+  "id": 4218,
+  "de": "die Lernmethode",
+  "tr": "öğrenme yöntemi",
+  "deBeispiel": "Welche Lernmethode passt, muss jeder selbst herausfinden.",
+  "gsw": "Lernmethode",
+  "gswArtikel": "d",
+  "gswBeispiel": "Weli Lernmethode passt, mues jede sälber uusefinde."
+ },
+ {
+  "id": 4219,
+  "de": "die Gliederung",
+  "tr": "plan, ana hatlar, bölümlendirme",
+  "deBeispiel": "Der Professor bemängelte die unklare Gliederung der Arbeit.",
+  "gsw": "Gliderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Profässer hät di unklari Gliderig vo de Arbet bemänglet."
+ },
+ {
+  "id": 4220,
+  "de": "die Quellenangabe",
+  "tr": "kaynak gösterimi",
+  "deBeispiel": "Ohne korrekte Quellenangaben wird die Arbeit nicht bewertet.",
+  "gsw": "Quelleaagab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni korräkti Quelleaagabe wird d Arbet nöd bewertet."
+ },
+ {
+  "id": 4221,
+  "de": "das Plagiat",
+  "tr": "intihal, aşırma",
+  "deBeispiel": "Die Universität entzog ihm wegen eines Plagiats den Titel.",
+  "gsw": "Plagiat",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Universität hät em wäge eme Plagiat de Titel entzoge."
+ },
+ {
+  "id": 4222,
+  "de": "die Anmeldefrist",
+  "tr": "kayıt süresi, başvuru süresi",
+  "deBeispiel": "Die Anmeldefrist für das Wintersemester läuft am Freitag ab.",
+  "gsw": "Aamäldefrischt",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aamäldefrischt fürs Wintersemeschter lauft am Friitig ab."
+ },
+ {
+  "id": 4223,
+  "de": "der Doktorand",
+  "tr": "doktora öğrencisi",
+  "deBeispiel": "Der Doktorand stellte seine Ergebnisse im Kolloquium vor.",
+  "gsw": "Doktorand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Doktorand hät sini Ergäbnis im Kolloquium vorgschtellt."
+ },
+ {
+  "id": 4224,
+  "de": "die Zulassungsbeschränkung",
+  "tr": "kontenjan sınırlaması",
+  "deBeispiel": "Für Psychologie gilt an fast allen Universitäten eine Zulassungsbeschränkung.",
+  "gsw": "Zuelassigsbeschränkig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für Psychologie gilt a fascht allne Universitäte e Zuelassigsbeschränkig."
+ },
+ {
+  "id": 4225,
+  "de": "die Durchschnittsnote",
+  "tr": "not ortalaması",
+  "deBeispiel": "Seine Durchschnittsnote reichte für den gewünschten Studiengang nicht.",
+  "gsw": "Durchschnittsnote",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Durchschnittsnote hät für de gwünscht Schtudiegang nöd glangt."
+ },
+ {
+  "id": 4226,
+  "de": "die Schulpflicht",
+  "tr": "zorunlu eğitim",
+  "deBeispiel": "In Deutschland besteht die Schulpflicht bis zum sechzehnten Lebensjahr.",
+  "gsw": "Schuelpflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "I Dütschland gilt d Schuelpflicht bis zum sächzähnte Läbesjaar."
+ },
+ {
+  "id": 4227,
+  "de": "der Lehrvertrag",
+  "tr": "çıraklık sözleşmesi",
+  "deBeispiel": "Der Betrieb schloss mit ihr einen dreijährigen Lehrvertrag.",
+  "gsw": "Leervertrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Betrib hät mit ere en drüüjäärige Leervertrag abgschlosse."
+ },
+ {
+  "id": 4228,
+  "de": "der Ausbildungsplatz",
+  "tr": "çıraklık yeri, mesleki eğitim yeri",
+  "deBeispiel": "In der Region bleiben viele Ausbildungsplätze unbesetzt.",
+  "gsw": "Uusbildigsplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Region bliibed vil Uusbildigsplätz unbesetzt."
+ },
+ {
+  "id": 4229,
+  "de": "die Meisterprüfung",
+  "tr": "ustalık sınavı",
+  "deBeispiel": "Nach der Meisterprüfung darf er selbst Lehrlinge ausbilden.",
+  "gsw": "Meischterprüefig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Meischterprüefig dörf er sälber Lehrling uusbilde."
+ },
+ {
+  "id": 4230,
+  "de": "die Umschulung",
+  "tr": "meslek değiştirme eğitimi",
+  "deBeispiel": "Das Arbeitsamt finanziert ihm eine Umschulung zum Pfleger.",
+  "gsw": "Umschuelig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Arbetsamt finanziert em e Umschuelig zum Pflääger."
+ },
+ {
+  "id": 4231,
+  "de": "die Wissenslücke",
+  "tr": "bilgi eksiği, bilgi boşluğu",
+  "deBeispiel": "Der Test deckte erhebliche Wissenslücken in Mathematik auf.",
+  "gsw": "Wüssenslücke",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Tescht hät erhebligi Wüssenslücke i Mathematik uufdeckt."
+ },
+ {
+  "id": 4232,
+  "de": "der Bildungsurlaub",
+  "tr": "eğitim izni",
+  "deBeispiel": "Sie nahm eine Woche Bildungsurlaub für einen Sprachkurs.",
+  "gsw": "Bildigsurlaub",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si hät e Wuche Bildigsurlaub für en Schpraachkurs gnoo."
+ },
+ {
+  "id": 4233,
+  "de": "die Abendschule",
+  "tr": "akşam okulu",
+  "deBeispiel": "Er besucht die Abendschule, um seinen Realschulabschluss zu machen.",
+  "gsw": "Aabigschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er gaat i d Aabigschuel, zum sin Realschuelabschluss z mache."
+ },
+ {
+  "id": 4234,
+  "de": "das Fernstudium",
+  "tr": "uzaktan eğitim",
+  "deBeispiel": "Ein Fernstudium verlangt viel Disziplin und gute Zeiteinteilung.",
+  "gsw": "Fernschtudium",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es Fernschtudium verlangt vil Disziplin und e gueti Ziitiiteilig."
+ },
+ {
+  "id": 4235,
+  "de": "die Volkshochschule",
+  "tr": "halk eğitim merkezi",
+  "deBeispiel": "Die Volkshochschule bietet im Herbst neue Sprachkurse an.",
+  "gsw": "Volkshochschuel",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Volkshochschuel biitet im Herbscht nöii Schpraachkürs aa."
+ },
+ {
+  "id": 4236,
+  "de": "die Fehlzeit",
+  "tr": "devamsızlık süresi",
+  "deBeispiel": "Wegen zu vieler Fehlzeiten wurde er nicht zugelassen.",
+  "gsw": "Fäälziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge z vile Fäälziite isch er nöd zuegla worde."
+ },
+ {
+  "id": 4237,
+  "de": "die Versetzung",
+  "tr": "sınıf geçme, nakil",
+  "deBeispiel": "Seine Versetzung in die nächste Klasse ist gefährdet.",
+  "gsw": "Versetzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Versetzig i di nöchscht Klass isch gfäärdet."
+ },
+ {
+  "id": 4238,
+  "de": "die Erwachsenenbildung",
+  "tr": "yetişkin eğitimi",
+  "deBeispiel": "Die Erwachsenenbildung gewinnt in alternden Gesellschaften an Bedeutung.",
+  "gsw": "Erwachsenebildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erwachsenebildig gwünnt i alternde Gsellschafte a Bedüütig."
+ },
+ {
+  "id": 4239,
+  "de": "die Mitschrift",
+  "tr": "ders notu, tutulan not",
+  "deBeispiel": "Er lieh sich die Mitschriften der letzten Vorlesung aus.",
+  "gsw": "Mitschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät sich d Mitschrifte vo de letschte Vorlesig uusgleent."
+ },
+ {
+  "id": 4240,
+  "de": "die Begabung",
+  "tr": "yetenek (doğuştan gelen), kabiliyet",
+  "deBeispiel": "Ihre musikalische Begabung zeigte sich schon im Kindergarten.",
+  "gsw": "Begabig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri musikalisch Begabig hät sich scho im Chindergarte zäigt."
+ },
+ {
+  "id": 4241,
+  "de": "das Abschlusszeugnis",
+  "tr": "diploma, mezuniyet belgesi",
+  "deBeispiel": "Das Abschlusszeugnis wird im Original bei der Bewerbung verlangt.",
+  "gsw": "Abschlusszüügnis",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Abschlusszüügnis wird bi de Bewerbig im Original verlangt."
+ },
+ {
+  "id": 4242,
+  "de": "der Schwerpunkt",
+  "tr": "ağırlık noktası, odak",
+  "deBeispiel": "Im Master wählte sie den Schwerpunkt Umweltrecht.",
+  "gsw": "Schwerpunkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Master hät si de Schwerpunkt Umwälträcht gwählt."
+ },
+ {
+  "id": 4243,
+  "de": "das Pflichtfach",
+  "tr": "zorunlu ders",
+  "deBeispiel": "Statistik ist in diesem Studiengang ein Pflichtfach.",
+  "gsw": "Pflichtfach",
+  "gswArtikel": "s",
+  "gswBeispiel": "Schtatischtik isch i dem Schtudiegang es Pflichtfach."
+ },
+ {
+  "id": 4244,
+  "de": "der Werdegang",
+  "tr": "geçmiş, gelişim süreci",
+  "deBeispiel": "Im Vorstellungsgespräch schilderte sie ihren beruflichen Werdegang.",
+  "gsw": "Werdegang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Vorschtelligsgschpröch hät si ire brueflich Werdegang gschilderet."
+ },
+ {
+  "id": 4245,
+  "de": "die Laufbahn",
+  "tr": "kariyer, meslek yolu",
+  "deBeispiel": "Nach dem Referendariat begann seine Laufbahn als Lehrer.",
+  "gsw": "Laufbaan",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach em Referendariat hät sini Laufbaan als Lehrer aagfange."
+ },
+ {
+  "id": 4246,
+  "de": "der Leistungsdruck",
+  "tr": "başarı baskısı",
+  "deBeispiel": "Der Leistungsdruck an Gymnasien nimmt seit Jahren zu.",
+  "gsw": "Läischtigsdruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Läischtigsdruck a de Gymnasie nimmt siit Jaare zue."
+ },
+ {
+  "id": 4247,
+  "de": "die Prüfungsangst",
+  "tr": "sınav kaygısı",
+  "deBeispiel": "Gegen ihre Prüfungsangst hilft ihr eine einfache Atemübung.",
+  "gsw": "Prüefigsangscht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge iri Prüefigsangscht hilft ere e eifachi Atemüebig."
+ },
+ {
+  "id": 4248,
+  "de": "die Promotion",
+  "tr": "doktora",
+  "deBeispiel": "Nach der Promotion arbeitete sie in der Forschung weiter.",
+  "gsw": "Promotion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de Promotion hät si i de Forschig wiitergschaffet."
+ },
+ {
+  "id": 4249,
+  "de": "der Absolvent",
+  "tr": "mezun",
+  "deBeispiel": "Die meisten Absolventen finden innerhalb eines Jahres eine Stelle.",
+  "gsw": "Absolvent",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di mäischte Absolvente finded innerhalb vo eme Jaar e Schtell."
+ },
+ {
+  "id": 4250,
+  "de": "der Dozent",
+  "tr": "öğretim görevlisi",
+  "deBeispiel": "Der Dozent verschob das Seminar auf nächsten Dienstag.",
+  "gsw": "Dozent",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Dozent hät s Seminar uf nöchschte Ziischtig verschobe."
+ },
+ {
+  "id": 4251,
+  "de": "sich einprägen",
+  "tr": "aklına kazımak, ezberlemek",
+  "deBeispiel": "Die Formeln muss man sich vor der Klausur einprägen.",
+  "gsw": "sich iiprääge",
+  "gswArtikel": null,
+  "gswBeispiel": "D Formle mues mer sich vor de Klausur iiprääge."
+ },
+ {
+  "id": 4252,
+  "de": "nachholen",
+  "tr": "telafi etmek, sonradan tamamlamak",
+  "deBeispiel": "Den verpassten Stoff holt sie am Wochenende nach.",
+  "gsw": "naachhole",
+  "gswArtikel": null,
+  "gswBeispiel": "De verpasst Schtoff mues si am Wuchenänd naachhole."
+ },
+ {
+  "id": 4253,
+  "de": "abfragen",
+  "tr": "sorarak yoklamak, sözlü sormak",
+  "deBeispiel": "Der Vater fragt seinen Sohn jeden Abend die Vokabeln ab.",
+  "gsw": "abfrööge",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vatter tuet sim Sohn jede Aabig d Vokable abfrööge."
+ },
+ {
+  "id": 4254,
+  "de": "vermitteln",
+  "tr": "aktarmak, kazandırmak, aracılık etmek",
+  "deBeispiel": "Der Kurs vermittelt die Grundlagen des wissenschaftlichen Arbeitens.",
+  "gsw": "vermittle",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs vermittlet d Grundlaage vom wüsseschaftliche Schaffe."
+ },
+ {
+  "id": 4255,
+  "de": "sich spezialisieren",
+  "tr": "uzmanlaşmak",
+  "deBeispiel": "Nach dem Studium hat er sich auf Steuerrecht spezialisiert.",
+  "gsw": "sich spezialisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Studium hät er sich uf Schtüürrächt spezialisiert."
+ },
+ {
+  "id": 4256,
+  "de": "nachweisen",
+  "tr": "belgelemek, kanıtlamak",
+  "deBeispiel": "Alle Bewerber müssen ausreichende Deutschkenntnisse durch ein Zertifikat nachweisen.",
+  "gsw": "naachwiise",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli Bewärber müend gnueg Tüütschkenntnis mit eme Zertifikat naachwiise."
+ },
+ {
+  "id": 4257,
+  "de": "erlernen",
+  "tr": "öğrenmek, meslek edinmek",
+  "deBeispiel": "Sie hat ihren Beruf in einem kleinen Betrieb erlernt.",
+  "gsw": "erlerne",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät iren Beruef i eme chliine Betrib erlernt."
+ },
+ {
+  "id": 4258,
+  "de": "festigen",
+  "tr": "pekiştirmek, sağlamlaştırmak",
+  "deBeispiel": "Regelmäßige Übungen festigen das Gelernte dauerhaft.",
+  "gsw": "feschtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Regelmässigi Üebige feschtiged s Glernte duurhaft."
+ },
+ {
+  "id": 4259,
+  "de": "begreifen",
+  "tr": "kavramak, anlamak",
+  "deBeispiel": "Erst im dritten Anlauf begriff er die Aufgabe.",
+  "gsw": "begriife",
+  "gswArtikel": null,
+  "gswBeispiel": "Erscht im dritte Aalauf hät er d Uufgaab chöne begriife."
+ },
+ {
+  "id": 4260,
+  "de": "erläutern",
+  "tr": "açıklamak, izah etmek",
+  "deBeispiel": "Bitte erläutern Sie Ihre Methode in wenigen Sätzen.",
+  "gsw": "erlüütere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte erlüüteret Sie Iri Methode i wenige Sätz."
+ },
+ {
+  "id": 4261,
+  "de": "schwänzen",
+  "tr": "dersi asmak, kırmak",
+  "deBeispiel": "Er hat den ganzen Monat den Sportunterricht geschwänzt.",
+  "gsw": "schwänze",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät de ganz Monet de Schportunterricht gschwänzt."
+ },
+ {
+  "id": 4262,
+  "de": "scheitern",
+  "tr": "başarısız olmak, suya düşmek",
+  "deBeispiel": "Sein Versuch, das Studium abzuschließen, ist zweimal gescheitert.",
+  "gsw": "schiitere",
+  "gswArtikel": null,
+  "gswBeispiel": "Sin Versuech, s Studium abzschlüsse, isch zwäimal gschiiteret."
+ },
+ {
+  "id": 4263,
+  "de": "abbrechen",
+  "tr": "yarıda bırakmak, kesmek",
+  "deBeispiel": "Aus finanziellen Gründen brach sie das Studium ab.",
+  "gsw": "abbräche",
+  "gswArtikel": null,
+  "gswBeispiel": "Us finanzielle Gründ hät si s Studium müese abbräche."
+ },
+ {
+  "id": 4264,
+  "de": "aufholen",
+  "tr": "açığı kapatmak, yetişmek",
+  "deBeispiel": "Nach der Krankheit holte er den Stoff schnell auf.",
+  "gsw": "ufhole",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Chrankheit hät er de Schtoff schnäll chöne ufhole."
+ },
+ {
+  "id": 4265,
+  "de": "referieren",
+  "tr": "sunum yapmak, bildiri sunmak",
+  "deBeispiel": "Morgen referiert sie über die Reformen im Bildungswesen.",
+  "gsw": "referiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Morn referiert si über d Reforme im Bildigswäse."
+ },
+ {
+  "id": 4266,
+  "de": "vortragen",
+  "tr": "sunmak, anlatmak",
+  "deBeispiel": "Jede Gruppe trägt ihre Ergebnisse in zehn Minuten vor.",
+  "gsw": "vortrage",
+  "gswArtikel": null,
+  "gswBeispiel": "Jedi Gruppe mues iri Ergäbnis i zää Minute vortrage."
+ },
+ {
+  "id": 4267,
+  "de": "anrechnen",
+  "tr": "saymak, mahsup etmek",
+  "deBeispiel": "Die Hochschule rechnet ihm die bisherigen Leistungen an.",
+  "gsw": "aarächne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Hochschuel tuet em di bishärige Läischtige aarächne."
+ },
+ {
+  "id": 4268,
+  "de": "auswerten",
+  "tr": "değerlendirmek, çözümlemek",
+  "deBeispiel": "Die Ergebnisse der Umfrage werden im Seminar ausgewertet.",
+  "gsw": "uswärte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Ergäbnis vo de Umfrag werded mer im Seminar uswärte."
+ },
+ {
+  "id": 4269,
+  "de": "büffeln",
+  "tr": "ineklemek, sıkı çalışmak",
+  "deBeispiel": "Vor dem Examen büffelte er wochenlang Vokabeln.",
+  "gsw": "büffle",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor em Examen hät er wuchelang Vokable müese büffle."
+ },
+ {
+  "id": 4270,
+  "de": "anleiten",
+  "tr": "yol göstermek, iş başında eğitmek",
+  "deBeispiel": "Erfahrene Kollegen leiten die neuen Auszubildenden geduldig an.",
+  "gsw": "aaleite",
+  "gswArtikel": null,
+  "gswBeispiel": "Erfahreni Kollege tüend di nöie Lehrling geduldig aaleite."
+ },
+ {
+  "id": 4271,
+  "de": "einüben",
+  "tr": "alıştırma yaparak öğrenmek, çalışmak",
+  "deBeispiel": "Die Klasse übt den Dialog für die Prüfung ein.",
+  "gsw": "iiüebe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Klass mues de Dialog für d Prüefig iiüebe."
+ },
+ {
+  "id": 4272,
+  "de": "schulisch",
+  "tr": "okulla ilgili, okuldaki",
+  "deBeispiel": "Seine schulischen Leistungen haben sich deutlich verbessert.",
+  "gsw": "schuelisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini schuelische Läischtige händ sich düütlich verbesseret."
+ },
+ {
+  "id": 4273,
+  "de": "akademisch",
+  "tr": "akademik",
+  "deBeispiel": "Für die Stelle wird ein akademischer Abschluss vorausgesetzt.",
+  "gsw": "akademisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Für d Schtell wird en akademische Abschluss vorusgsetzt."
+ },
+ {
+  "id": 4274,
+  "de": "praxisnah",
+  "tr": "uygulamaya dönük, pratiğe yakın",
+  "deBeispiel": "Der Unterricht ist praxisnah und arbeitet mit echten Fällen.",
+  "gsw": "praxisnaach",
+  "gswArtikel": null,
+  "gswBeispiel": "De Unterricht isch praxisnaach und schaffet mit ächte Fäll."
+ },
+ {
+  "id": 4275,
+  "de": "lernbereit",
+  "tr": "öğrenmeye istekli",
+  "deBeispiel": "Der Betrieb sucht lernbereite junge Leute ohne Vorkenntnisse.",
+  "gsw": "lernbereit",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betrib suecht lernbereiti jungi Lüüt ohni Vorkenntnis."
+ },
+ {
+  "id": 4276,
+  "de": "wissbegierig",
+  "tr": "meraklı, öğrenmeye hevesli",
+  "deBeispiel": "Wissbegierige Kinder stellen den ganzen Tag Fragen.",
+  "gsw": "wüssbegierig",
+  "gswArtikel": null,
+  "gswBeispiel": "Wüssbegierigi Chind schtelled de ganz Tag Frage."
+ },
+ {
+  "id": 4277,
+  "de": "anspruchsvoll",
+  "tr": "zorlu, nitelikli; (kişi için) seçici",
+  "deBeispiel": "Der Kurs ist anspruchsvoll und verlangt tägliche Vorbereitung.",
+  "gsw": "aaschpruchsvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs isch aaschpruchsvoll und verlangt tägligi Vorbereitig."
+ },
+ {
+  "id": 4278,
+  "de": "berufsbegleitend",
+  "tr": "çalışırken yapılan, işle birlikte yürütülen",
+  "deBeispiel": "Sie macht einen berufsbegleitenden Master in Betriebswirtschaft.",
+  "gsw": "bruefsbegleitend",
+  "gswArtikel": null,
+  "gswBeispiel": "Si macht en bruefsbegleitende Master i Betriebswirtschaft."
+ },
+ {
+  "id": 4279,
+  "de": "fortgeschritten",
+  "tr": "ileri düzey, ilerlemiş",
+  "deBeispiel": "Der Kurs richtet sich an fortgeschrittene Teilnehmer.",
+  "gsw": "fortgschritte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs richtet sich a fortgschritteni Teilnämer."
+ },
+ {
+  "id": 4280,
+  "de": "zielstrebig",
+  "tr": "azimli, hedefe kilitlenmiş",
+  "deBeispiel": "Zielstrebig arbeitete sie auf ihren Abschluss hin.",
+  "gsw": "zielschträbig",
+  "gswArtikel": null,
+  "gswBeispiel": "Zielschträbig hät si uf iren Abschluss ane gschaffet."
+ },
+ {
+  "id": 4281,
+  "de": "die Tagesordnung",
+  "tr": "gündem",
+  "deBeispiel": "Die Tagesordnung wird eine Woche vor der Sitzung verschickt.",
+  "gsw": "Tagesornig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Tagesornig wird e Wuche vor de Sitzig verschickt."
+ },
+ {
+  "id": 4282,
+  "de": "das Protokoll",
+  "tr": "tutanak, protokol",
+  "deBeispiel": "Wer schreibt heute das Protokoll der Besprechung?",
+  "gsw": "Protokoll",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wer schriibt hüt s Protokoll vo de Bschprächig?"
+ },
+ {
+  "id": 4283,
+  "de": "die Wortmeldung",
+  "tr": "söz talebi, söz isteme",
+  "deBeispiel": "Gibt es zu diesem Punkt noch weitere Wortmeldungen?",
+  "gsw": "Wortmäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Git s zu dem Punkt no wiiteri Wortmäldige?"
+ },
+ {
+  "id": 4284,
+  "de": "die Sitzungsleitung",
+  "tr": "toplantı yönetimi, oturum başkanlığı",
+  "deBeispiel": "Die Sitzungsleitung übernimmt in dieser Woche der Abteilungsleiter.",
+  "gsw": "Sitzigsleitig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Sitzigsleitig übernimmt die Wuche de Abteiligsleiter."
+ },
+ {
+  "id": 4285,
+  "de": "die Fristverlängerung",
+  "tr": "süre uzatımı, mühlet uzatma",
+  "deBeispiel": "Wir haben beim Kunden eine Fristverlängerung um zwei Wochen erreicht.",
+  "gsw": "Frischtverlängerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir händ bim Chunde e Frischtverlängerig vo zwäi Wuche erreicht."
+ },
+ {
+  "id": 4286,
+  "de": "der Meilenstein",
+  "tr": "kilometre taşı, dönüm noktası",
+  "deBeispiel": "Der erste Meilenstein des Projekts ist termingerecht erreicht worden.",
+  "gsw": "Meilestäi",
+  "gswArtikel": "de",
+  "gswBeispiel": "De erscht Meilestäi vom Projekt isch termingerecht erreicht worde."
+ },
+ {
+  "id": 4287,
+  "de": "der Projektauftrag",
+  "tr": "proje görevlendirmesi, proje tanımı",
+  "deBeispiel": "Im Projektauftrag stehen Ziele, Budget und Verantwortlichkeiten.",
+  "gsw": "Projektuftrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Projektuftrag schtönd d Ziel, s Budget und d Verantwortlichkeite."
+ },
+ {
+  "id": 4288,
+  "de": "das Arbeitspaket",
+  "tr": "iş paketi",
+  "deBeispiel": "Jedes Arbeitspaket hat einen festen Verantwortlichen im Team.",
+  "gsw": "Arbetspaket",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jedes Arbetspaket hät en feschte Verantwortliche im Team."
+ },
+ {
+  "id": 4289,
+  "de": "der Zwischenbericht",
+  "tr": "ara rapor",
+  "deBeispiel": "Der Zwischenbericht liegt der Geschäftsführung seit Montag vor.",
+  "gsw": "Zwüschebricht",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Zwüschebricht liit de Gschäftsfüehrig sit Määntig vor."
+ },
+ {
+  "id": 4290,
+  "de": "der Sachstand",
+  "tr": "mevcut durum, güncel durum",
+  "deBeispiel": "Bitte informieren Sie mich kurz über den aktuellen Sachstand.",
+  "gsw": "Sachschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bitte informiered Sie mich churz über de aktuell Sachschtand."
+ },
+ {
+  "id": 4291,
+  "de": "der Vorgang",
+  "tr": "işlem, dosya, süreç",
+  "deBeispiel": "Der Vorgang wurde an die zuständige Kollegin abgegeben.",
+  "gsw": "Vorgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vorgang isch a di zueschtändig Kollegin abgää worde."
+ },
+ {
+  "id": 4292,
+  "de": "die Ablage",
+  "tr": "dosyalama, evrak yeri",
+  "deBeispiel": "Die digitale Ablage ist inzwischen übersichtlicher als der Aktenschrank.",
+  "gsw": "Ablaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di digitali Ablaag isch inzwüsche übersichtlicher als de Akteschrank."
+ },
+ {
+  "id": 4293,
+  "de": "die Registratur",
+  "tr": "arşiv birimi, kayıt bürosu",
+  "deBeispiel": "Alte Akten lagern seit Jahren unten in der Registratur.",
+  "gsw": "Registratur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Akte lageret sit Jaare une i de Registratur."
+ },
+ {
+  "id": 4294,
+  "de": "der Posteingang",
+  "tr": "gelen evrak, gelen kutusu",
+  "deBeispiel": "Jeden Morgen sortiert sie zuerst den Posteingang der Abteilung.",
+  "gsw": "Poschtiigang",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Morge sortiert si zerscht de Poschtiigang vo de Abteilig."
+ },
+ {
+  "id": 4295,
+  "de": "der Verteiler",
+  "tr": "dağıtım listesi",
+  "deBeispiel": "Setzen Sie die Rechtsabteilung bitte mit auf den Verteiler.",
+  "gsw": "Verteiler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Setzed Sie d Rächtsabteilig bitte au uf de Verteiler."
+ },
+ {
+  "id": 4296,
+  "de": "das Rundschreiben",
+  "tr": "genelge, sirküler",
+  "deBeispiel": "Im letzten Rundschreiben ging es um die neuen Arbeitszeiten.",
+  "gsw": "Rundschriibe",
+  "gswArtikel": "s",
+  "gswBeispiel": "Im letschte Rundschriibe isch es um di nöie Arbetsziite gange."
+ },
+ {
+  "id": 4297,
+  "de": "die Aktennotiz",
+  "tr": "dosya notu, not tutanağı",
+  "deBeispiel": "Zu dem Telefonat habe ich eine kurze Aktennotiz verfasst.",
+  "gsw": "Aktenotiz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zu dem Telefonat han i e churzi Aktenotiz gschribe."
+ },
+ {
+  "id": 4298,
+  "de": "die Zuarbeit",
+  "tr": "hazırlık katkısı, destek çalışması",
+  "deBeispiel": "Ohne die Zuarbeit der Fachbereiche wird der Bericht nicht fertig.",
+  "gsw": "Zuearbet",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni d Zuearbet vo de Fachberiich wird de Bricht nöd fertig."
+ },
+ {
+  "id": 4299,
+  "de": "die Absprache",
+  "tr": "anlaşma, mutabakat, kararlaştırma",
+  "deBeispiel": "Nach Absprache mit dem Kunden verschieben wir den Liefertermin.",
+  "gsw": "Absprach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach Absprach mit em Chunde verschiebed mer de Liefertermin."
+ },
+ {
+  "id": 4300,
+  "de": "der Handlungsbedarf",
+  "tr": "harekete geçme gereği, müdahale ihtiyacı",
+  "deBeispiel": "Bei den Lieferzeiten sehen wir dringenden Handlungsbedarf.",
+  "gsw": "Handligsbedarf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bi de Lieferziite gsehnd mer dringende Handligsbedarf."
+ }
+]

@@ -1,0 +1,995 @@
+[
+ {
+  "id": 5913,
+  "de": "die Raumordnung",
+  "tr": "mekânsal planlama, bölge düzenlemesi",
+  "deBeispiel": "Die Raumordnung des Landes bremst neue Einkaufszentren auf der grünen Wiese.",
+  "gsw": "Ruumordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ruumordnig vom Land brämst nöii Iichaufszentre uf de grüene Wise."
+ },
+ {
+  "id": 5914,
+  "de": "das Erbbaurecht",
+  "tr": "üst hakkı, uzun süreli arsa kullanım hakkı",
+  "deBeispiel": "Die Stadt vergibt das Grundstück nur noch im Erbbaurecht.",
+  "gsw": "Erbbaurächt",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Schtadt vergiit s Grundschtück nur no im Erbbaurächt."
+ },
+ {
+  "id": 5915,
+  "de": "der Immobilienmarkt",
+  "tr": "gayrimenkul piyasası",
+  "deBeispiel": "Der überhitzte Immobilienmarkt treibt selbst Gutverdienende aus der Stadt.",
+  "gsw": "Immobiliemarkt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De überhitzt Immobiliemarkt triibt sogar Guetverdienendi us de Schtadt."
+ },
+ {
+  "id": 5916,
+  "de": "die Gemeinnützigkeit",
+  "tr": "kamu yararına olma, kamu yararı statüsü",
+  "deBeispiel": "Mit der Abschaffung der Gemeinnützigkeit verschwand der soziale Wohnungsbau.",
+  "gsw": "Gmäinnützigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mit de Abschaffig vo de Gmäinnützigkeit isch de soziali Wonigsbau verschwunde."
+ },
+ {
+  "id": 5917,
+  "de": "die Hitzeinsel",
+  "tr": "ısı adası",
+  "deBeispiel": "Dicht bebaute Viertel werden im Sommer zu regelrechten Hitzeinseln.",
+  "gsw": "Hitzinsle",
+  "gswArtikel": "d",
+  "gswBeispiel": "Dicht bebauti Viertel werdet im Summer zu rägelrächte Hitzinsle."
+ },
+ {
+  "id": 5918,
+  "de": "die Klimaanpassung",
+  "tr": "iklime uyum",
+  "deBeispiel": "Klimaanpassung heißt in der Stadt vor allem Entsiegeln und Begrünen.",
+  "gsw": "Klima-Aapassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Klima-Aapassig häisst i de Schtadt vor allem Entsiegle und Begrüene."
+ },
+ {
+  "id": 5919,
+  "de": "die Verkehrswende",
+  "tr": "ulaşım dönüşümü",
+  "deBeispiel": "Ohne Verkehrswende bleibt jede Klimastrategie der Stadt bloßes Papier.",
+  "gsw": "Verchehrswändi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Verchehrswändi bliibt jedi Klimaschtrategie vo de Schtadt bloosses Papier."
+ },
+ {
+  "id": 5920,
+  "de": "der Rückbau",
+  "tr": "sökme, kısmi yıkım",
+  "deBeispiel": "Der Rückbau der Stadtautobahn schuf Platz für einen Park.",
+  "gsw": "Rückbuu",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rückbuu vo de Schtadtautobaan hät Platz für en Park gschaffe."
+ },
+ {
+  "id": 5921,
+  "de": "die Umnutzung",
+  "tr": "yeniden işlevlendirme, işlev değişikliği",
+  "deBeispiel": "Die Umnutzung der Kirche zur Bibliothek stieß auf heftigen Widerstand.",
+  "gsw": "Umnutzig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Umnutzig vo de Chile zu ere Bibliothek isch uf heftige Widerschtand gschtoosse."
+ },
+ {
+  "id": 5922,
+  "de": "die Konversion",
+  "tr": "sivil kullanıma dönüştürme, dönüşüm",
+  "deBeispiel": "Die Konversion der Kaserne dauert deutlich länger als geplant.",
+  "gsw": "Konversion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Konversion vo de Kaserne duuret düütlich länger als plant."
+ },
+ {
+  "id": 5923,
+  "de": "die Enteignung",
+  "tr": "kamulaştırma, istimlak",
+  "deBeispiel": "Eine Enteignung großer Wohnungskonzerne halten manche Juristen für zulässig.",
+  "gsw": "Enteignig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E Enteignig vo groosse Wonigskonzern haltet mänchi Juriste für zuelässig."
+ },
+ {
+  "id": 5924,
+  "de": "der Milieuschutz",
+  "tr": "sosyal doku koruması, mahalle koruma statüsü",
+  "deBeispiel": "Der Milieuschutz soll die alteingesessenen Mieter im Viertel halten.",
+  "gsw": "Milieuschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Milieuschutz söll di altiigsässne Mieter im Viertel halte."
+ },
+ {
+  "id": 5925,
+  "de": "entwerfen",
+  "tr": "tasarlamak, taslağını çizmek",
+  "deBeispiel": "Sie entwarf das Rathaus als bewusst zurückhaltenden Baukörper.",
+  "gsw": "entwerfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät s Raathuus als bewusst zrugghaltende Buuchörper entworfe."
+ },
+ {
+  "id": 5926,
+  "de": "revitalisieren",
+  "tr": "canlandırmak, yeniden hayat vermek",
+  "deBeispiel": "Kleine Läden sollen das verödete Zentrum wieder revitalisieren.",
+  "gsw": "revitalisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Chlini Läde söled s verödete Zentrum wider revitalisiere."
+ },
+ {
+  "id": 5927,
+  "de": "restaurieren",
+  "tr": "restore etmek, aslına uygun onarmak",
+  "deBeispiel": "Die Stuckdecke wurde nach alten Fotografien restauriert.",
+  "gsw": "reschtauriere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtuckdecki isch na alte Fotografie reschtauriert worde."
+ },
+ {
+  "id": 5928,
+  "de": "ausweisen",
+  "tr": "(alan olarak) ilan etmek, tahsis etmek",
+  "deBeispiel": "Die Gemeinde hat das ganze Ufer als Schutzgebiet ausgewiesen.",
+  "gsw": "uswiise",
+  "gswArtikel": null,
+  "gswBeispiel": "D Gmeind hät s ganz Ufer als Schutzgebiet usgwise.",
+  "ayniLehce": [
+   "sich ausweisen (A2)"
+  ]
+ },
+ {
+  "id": 5929,
+  "de": "ansiedeln",
+  "tr": "yerleştirmek, konumlandırmak",
+  "deBeispiel": "Im Erdgeschoss will die Stadt Gewerbe und Cafés ansiedeln.",
+  "gsw": "aasidle",
+  "gswArtikel": null,
+  "gswBeispiel": "Im Erdgschoss wott d Schtadt Gwerb und Cafés aasidle."
+ },
+ {
+  "id": 5930,
+  "de": "gliedern",
+  "tr": "bölümlere ayırmak, düzenlemek",
+  "deBeispiel": "Vorsprünge gliedern die lange Fassade in ruhige Abschnitte.",
+  "gsw": "gliedere",
+  "gswArtikel": null,
+  "gswBeispiel": "Vorschprüng gliederet d lang Fassade i ruehigi Abschnitt."
+ },
+ {
+  "id": 5931,
+  "de": "akzentuieren",
+  "tr": "vurgulamak, öne çıkarmak (biçim, tasarım yoluyla)",
+  "deBeispiel": "Ein roter Sockel akzentuiert den Eingang des Gebäudes.",
+  "gsw": "akzentuiere",
+  "gswArtikel": null,
+  "gswBeispiel": "En rote Sockel akzentuiert de Iigang vom Gebäude."
+ },
+ {
+  "id": 5932,
+  "de": "dominieren",
+  "tr": "hâkim olmak, baskın gelmek",
+  "deBeispiel": "Der Büroturm dominiert die Silhouette der ganzen Innenstadt.",
+  "gsw": "dominiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Büroturm dominiert d Silhouette vo de ganze Innenschtadt."
+ },
+ {
+  "id": 5933,
+  "de": "entkernen",
+  "tr": "içini boşaltmak, iç yapısını sökmek",
+  "deBeispiel": "Das Kaufhaus wurde entkernt und komplett neu aufgeteilt.",
+  "gsw": "entchärne",
+  "gswArtikel": null,
+  "gswBeispiel": "S Chaufhuus isch entchärnt und komplett nöi uufteilt worde."
+ },
+ {
+  "id": 5934,
+  "de": "umwidmen",
+  "tr": "tahsis amacını değiştirmek, başka amaca ayırmak",
+  "deBeispiel": "Der Parkplatz wurde kurzerhand zu einer Spielfläche umgewidmet.",
+  "gsw": "umwidme",
+  "gswArtikel": null,
+  "gswBeispiel": "De Parkplatz isch churzerhand zu ere Schpilflächi umgwidmet."
+ },
+ {
+  "id": 5935,
+  "de": "verwahrlosen",
+  "tr": "bakımsız kalmak, kendi hâline terk edilmek",
+  "deBeispiel": "Die Anlage verwahrloste, seit die Stadt kein Geld mehr hatte.",
+  "gsw": "verwaarlose",
+  "gswArtikel": null,
+  "gswBeispiel": "D Aalaag isch verwaarloset, sit d Schtadt käis Gäld me ghaa hät."
+ },
+ {
+  "id": 5936,
+  "de": "verfallen",
+  "tr": "harabeye dönmek, çökmek",
+  "deBeispiel": "Das Herrenhaus verfiel, bis ein Verein es endlich übernahm.",
+  "gsw": "verfalle",
+  "gswArtikel": null,
+  "gswBeispiel": "S Herrehuus isch verfalle, bis en Veräin s ändlich übernoo hät."
+ },
+ {
+  "id": 5937,
+  "de": "verorten",
+  "tr": "konumlandırmak, bir yere oturtmak",
+  "deBeispiel": "Der Kritiker verortet den Bau zwischen Brutalismus und Klassizismus.",
+  "gsw": "verorte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kritiker verortet de Buu zwüschet Brutalismus und Klassizismus."
+ },
+ {
+  "id": 5938,
+  "de": "deregulieren",
+  "tr": "kuralsızlaştırmak, serbestleştirmek",
+  "deBeispiel": "Wer den Wohnungsmarkt dereguliert, überlässt ihn allein der Rendite.",
+  "gsw": "dereguliere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wer de Wonigsmarkt dereguliert, überlaat en elläi de Rendite."
+ },
+ {
+  "id": 5939,
+  "de": "städtebaulich",
+  "tr": "şehircilik açısından, kentsel tasarıma ilişkin",
+  "deBeispiel": "Städtebaulich ist der Entwurf schlüssiger als architektonisch.",
+  "gsw": "schtedtebaulich",
+  "gswArtikel": null,
+  "gswBeispiel": "Schtedtebaulich isch de Entwurf schlüssiger als architektonisch."
+ },
+ {
+  "id": 5940,
+  "de": "maßstäblich",
+  "tr": "ölçek bakımından, ölçeğe uygun",
+  "deBeispiel": "Der Anbau ist maßstäblich viel zu groß für die enge Gasse.",
+  "gsw": "masschtäblich",
+  "gswArtikel": null,
+  "gswBeispiel": "De Aabau isch masschtäblich viel z grooss für di äng Gass."
+ },
+ {
+  "id": 5941,
+  "de": "kleinteilig",
+  "tr": "küçük parçalı, ince dokulu",
+  "deBeispiel": "Die kleinteilige Erdgeschosszone macht die Straße lebendig.",
+  "gsw": "chliiteilig",
+  "gswArtikel": null,
+  "gswBeispiel": "Di chliiteiligi Erdgschosszone macht d Straass läbändig."
+ },
+ {
+  "id": 5942,
+  "de": "monoton",
+  "tr": "tekdüze, monoton",
+  "deBeispiel": "Die endlosen Reihenhäuser wirken auf Dauer ausgesprochen monoton.",
+  "gsw": "monoton",
+  "gswArtikel": null,
+  "gswBeispiel": "Di endlose Reiehüüser wirket uf d Duur usgschproche monoton."
+ },
+ {
+  "id": 5943,
+  "de": "gesichtslos",
+  "tr": "kimliksiz, karaktersiz",
+  "deBeispiel": "Zwischen Autobahn und Gewerbepark wirkt der Ort völlig gesichtslos.",
+  "gsw": "gsichtslos",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwüschet Autobaan und Gwerbepark wirkt de Ort völlig gsichtslos."
+ },
+ {
+  "id": 5944,
+  "de": "autogerecht",
+  "tr": "otomobil odaklı, araca göre düzenlenmiş",
+  "deBeispiel": "Die autogerechte Stadt der Sechzigerjahre gilt heute als Irrweg.",
+  "gsw": "autogerecht",
+  "gswArtikel": null,
+  "gswBeispiel": "Di autogerechti Schtadt vo de Sächzgerjaar giltet hüt als Irrwäg."
+ },
+ {
+  "id": 5945,
+  "de": "repräsentativ",
+  "tr": "gösterişli, temsil niteliği taşıyan",
+  "deBeispiel": "Das Foyer sollte vor allem repräsentativ wirken.",
+  "gsw": "repräsentativ",
+  "gswArtikel": null,
+  "gswBeispiel": "S Foyer hät vor allem repräsentativ sölle wirke."
+ },
+ {
+  "id": 5946,
+  "de": "unwirtlich",
+  "tr": "yaşanması güç, ıssız ve soğuk",
+  "deBeispiel": "Bei Wind wird der weite Vorplatz ausgesprochen unwirtlich.",
+  "gsw": "unwirtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi Wind wird de wiit Vorplatz usgschproche unwirtlich."
+ },
+ {
+  "id": 5947,
+  "de": "wuchtig",
+  "tr": "iri kütleli, ağır ve heybetli",
+  "deBeispiel": "Der wuchtige Sockel erdrückt die zierlichen Nachbarhäuser förmlich.",
+  "gsw": "wuchtig",
+  "gswArtikel": null,
+  "gswBeispiel": "De wuchtig Sockel erdruckt di zierliche Nochberhüüser förmlich."
+ },
+ {
+  "id": 5948,
+  "de": "die Bildungsgerechtigkeit",
+  "tr": "eğitimde adalet, eğitim eşitliği",
+  "deBeispiel": "Ohne gezielte Förderung bleibt Bildungsgerechtigkeit ein leeres Versprechen.",
+  "gsw": "Bildigsgerechtigkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni gezielti Förderig bliibt d Bildigsgerechtigkeit es leers Verschpräche."
+ },
+ {
+  "id": 5949,
+  "de": "die Bildungsungleichheit",
+  "tr": "eğitim eşitsizliği",
+  "deBeispiel": "Die Studie belegt, dass die Bildungsungleichheit seit Jahren kaum abnimmt.",
+  "gsw": "Bildigsunglichheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Schtudie zäigt, das d Bildigsunglichheit sit Jaare chuum abnimmt."
+ },
+ {
+  "id": 5950,
+  "de": "der Bildungsaufstieg",
+  "tr": "eğitim yoluyla sosyal yükseliş",
+  "deBeispiel": "Für Kinder aus Arbeiterfamilien bleibt der Bildungsaufstieg die Ausnahme.",
+  "gsw": "Bildigsuufschtig",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für Chind us Arbeiterfamilie bliibt de Bildigsuufschtig d Usnaam."
+ },
+ {
+  "id": 5951,
+  "de": "die Bildungsexpansion",
+  "tr": "eğitimin yaygınlaşması, okullaşmanın genişlemesi",
+  "deBeispiel": "Die Bildungsexpansion hat die Zahl der Studierenden vervielfacht.",
+  "gsw": "Bildigsexpansion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Bildigsexpansion hät d Zaal vo de Schtudierende verviilfacht."
+ },
+ {
+  "id": 5952,
+  "de": "die Bildungsrendite",
+  "tr": "eğitimin getirisi",
+  "deBeispiel": "Ökonomen berechnen die Bildungsrendite eines zusätzlichen Schuljahres.",
+  "gsw": "Bildigsrendite",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ökonome berechnet d Bildigsrendite vo eme zuesätzliche Schueljaar."
+ },
+ {
+  "id": 5953,
+  "de": "die Akkreditierung",
+  "tr": "akreditasyon, tanınma onayı",
+  "deBeispiel": "Ohne Akkreditierung darf der Studiengang keine Abschlüsse vergeben.",
+  "gsw": "Akkreditierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni Akkreditierig dörf de Schtudiegang kei Abschlüss vergää."
+ },
+ {
+  "id": 5954,
+  "de": "die Hochschulautonomie",
+  "tr": "üniversite özerkliği",
+  "deBeispiel": "Die Reform stärkt die Hochschulautonomie in Personalfragen erheblich.",
+  "gsw": "Hochschuelautonomie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Reform schterkt d Hochschuelautonomie i Personalfrage erheblich."
+ },
+ {
+  "id": 5955,
+  "de": "die Drittmittel",
+  "tr": "dış kaynaklı araştırma fonu",
+  "deBeispiel": "Ein Großteil der Forschung wird inzwischen über Drittmittel finanziert.",
+  "gsw": "Drittmittel",
+  "gswArtikel": "d",
+  "gswBeispiel": "En Groossteil vo de Forschig wird inzwüschet über Drittmittel finanziert."
+ },
+ {
+  "id": 5956,
+  "de": "die Grundfinanzierung",
+  "tr": "temel finansman, taban bütçe",
+  "deBeispiel": "Die Grundfinanzierung der Universitäten stagniert seit über einem Jahrzehnt.",
+  "gsw": "Grundfinanzierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Grundfinanzierig vo de Universitäte schtagniert sit über eme Jaarzäänt."
+ },
+ {
+  "id": 5957,
+  "de": "die Exzellenzinitiative",
+  "tr": "mükemmeliyet programı",
+  "deBeispiel": "Die Exzellenzinitiative hat den Wettbewerb zwischen den Hochschulen verschärft.",
+  "gsw": "Exzellenzinitiative",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Exzellenzinitiative hät de Wettbewerb zwüschet de Hochschuele verschärft."
+ },
+ {
+  "id": 5958,
+  "de": "der Publikationsdruck",
+  "tr": "yayın baskısı",
+  "deBeispiel": "Der Publikationsdruck verleitet manche Forscher zu voreiligen Ergebnissen.",
+  "gsw": "Publikationsdruck",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Publikationsdruck verläitet mänchi Forscher zu voriilige Ergebnis."
+ },
+ {
+  "id": 5959,
+  "de": "die Selektivität",
+  "tr": "seçicilik, eleyicilik",
+  "deBeispiel": "Die hohe Selektivität des Schulsystems wird seit Jahren kritisiert.",
+  "gsw": "Selektivität",
+  "gswArtikel": "d",
+  "gswBeispiel": "D hooch Selektivität vom Schuelsyschtem wird sit Jaare kritisiert."
+ },
+ {
+  "id": 5960,
+  "de": "der Studienabbruch",
+  "tr": "öğrenimi yarıda bırakma",
+  "deBeispiel": "In den Ingenieurfächern ist der Studienabbruch besonders häufig.",
+  "gsw": "Schtudieabbruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Ingenieurfächer isch de Schtudieabbruch bsunders hüüfig."
+ },
+ {
+  "id": 5961,
+  "de": "die Habilitation",
+  "tr": "doçentlik tezi, habilitasyon",
+  "deBeispiel": "Die Habilitation gilt vielen als überholter Weg zur Professur.",
+  "gsw": "Habilitation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Habilitation giltet villne als überholte Wäg zur Professur."
+ },
+ {
+  "id": 5962,
+  "de": "das Berufungsverfahren",
+  "tr": "öğretim üyesi atama süreci",
+  "deBeispiel": "Das Berufungsverfahren zog sich über mehr als zwei Jahre hin.",
+  "gsw": "Beruefigsverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Beruefigsverfaare hät sich über mee als zwäi Jaar häregzoge."
+ },
+ {
+  "id": 5963,
+  "de": "der Lehrstuhl",
+  "tr": "kürsü, profesörlük kadrosu",
+  "deBeispiel": "Nach der Emeritierung blieb der Lehrstuhl zwei Semester unbesetzt.",
+  "gsw": "Leerschtuel",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach de Emeritierig isch de Leerschtuel zwäi Semeschter unbesetzt blibe."
+ },
+ {
+  "id": 5964,
+  "de": "die Qualifikationsphase",
+  "tr": "yeterlilik dönemi, akademik hazırlık aşaması",
+  "deBeispiel": "In der Qualifikationsphase hängen viele Stellen an befristeten Projekten.",
+  "gsw": "Qualifikationsphase",
+  "gswArtikel": "d",
+  "gswBeispiel": "I de Qualifikationsphase hänged vill Schtelle a befrischtete Projäkt."
+ },
+ {
+  "id": 5965,
+  "de": "die Forschungsförderung",
+  "tr": "araştırma desteği, araştırma fonlaması",
+  "deBeispiel": "Die Forschungsförderung richtet sich zunehmend an thematischen Schwerpunkten aus.",
+  "gsw": "Forschigsförderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Forschigsförderig richtet sich zuenämend a thematische Schwerpünkt us."
+ },
+ {
+  "id": 5966,
+  "de": "die Mittelvergabe",
+  "tr": "ödenek dağıtımı, fon tahsisi",
+  "deBeispiel": "Die Mittelvergabe erfolgt heute überwiegend nach Leistungskriterien.",
+  "gsw": "Mittelvergaab",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Mittelvergaab erfolgt hüt überwiegend nach Läischtigskriterie."
+ },
+ {
+  "id": 5967,
+  "de": "der Leistungsindikator",
+  "tr": "performans göstergesi",
+  "deBeispiel": "Kritiker halten die gewählten Leistungsindikatoren für wenig aussagekräftig.",
+  "gsw": "Läischtigsindikator",
+  "gswArtikel": "de",
+  "gswBeispiel": "Kritiker haltet di usgwählte Läischtigsindikatore für weni ussagechräftig."
+ },
+ {
+  "id": 5968,
+  "de": "die Rechenschaftspflicht",
+  "tr": "hesap verme yükümlülüğü",
+  "deBeispiel": "Mehr Autonomie geht mit einer strengeren Rechenschaftspflicht einher.",
+  "gsw": "Rächeschaftspflicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mee Autonomie bringt au e schtrengeri Rächeschaftspflicht mit sich."
+ },
+ {
+  "id": 5969,
+  "de": "die Evaluierung",
+  "tr": "değerlendirme, gözden geçirme",
+  "deBeispiel": "Die externe Evaluierung des Instituts fiel überraschend kritisch aus.",
+  "gsw": "Evaluierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D externi Evaluierig vom Inschtitut isch überraschend kritisch usgfalle."
+ },
+ {
+  "id": 5970,
+  "de": "die Meritokratie",
+  "tr": "liyakat düzeni, meritokrasi",
+  "deBeispiel": "Der Glaube an die Meritokratie verdeckt strukturelle Startvorteile.",
+  "gsw": "Meritokratie",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Glaube a d Meritokratie verdeckt schtrukturelli Schtartvorteil."
+ },
+ {
+  "id": 5971,
+  "de": "die Elitenbildung",
+  "tr": "elit yetiştirme, seçkin kesim oluşturma",
+  "deBeispiel": "Privatschulen tragen in vielen Ländern zur Elitenbildung bei.",
+  "gsw": "Elitebildig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Privatschuele träged i villne Länder zur Elitebildig bii."
+ },
+ {
+  "id": 5972,
+  "de": "der Wissenstransfer",
+  "tr": "bilgi aktarımı",
+  "deBeispiel": "Der Wissenstransfer in die Wirtschaft gilt als dritte Aufgabe der Hochschulen.",
+  "gsw": "Wüssenstransfer",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Wüssenstransfer i d Wirtschaft giltet als dritti Uufgab vo de Hochschuele."
+ },
+ {
+  "id": 5973,
+  "de": "die Grundlagenforschung",
+  "tr": "temel araştırma",
+  "deBeispiel": "Grundlagenforschung braucht Geduld und lässt sich schwer planen.",
+  "gsw": "Grundlageforschig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Grundlageforschig bruucht Geduld und laat sich schwär plane."
+ },
+ {
+  "id": 5974,
+  "de": "die Kompetenzorientierung",
+  "tr": "yetkinlik odaklılık",
+  "deBeispiel": "Die Kompetenzorientierung hat die Lehrpläne grundlegend verändert.",
+  "gsw": "Kompetenzorientierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kompetenzorientierig hät d Leerplän grundlegend veränderet."
+ },
+ {
+  "id": 5975,
+  "de": "die Wissenschaftsfreiheit",
+  "tr": "bilim özgürlüğü",
+  "deBeispiel": "Die Wissenschaftsfreiheit endet nicht dort, wo Ergebnisse unbequem werden.",
+  "gsw": "Wüsseschaftsfreiheit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wüsseschaftsfreiheit ändet nöd deet, wo d Ergebnis unbequem werdet."
+ },
+ {
+  "id": 5976,
+  "de": "die Wettbewerbslogik",
+  "tr": "rekabet mantığı",
+  "deBeispiel": "Die Wettbewerbslogik hat den Umgang mit Kollegen spürbar verändert.",
+  "gsw": "Wettbewerbslogik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Wettbewerbslogik hät de Umgang mit de Kollege schpüürbar veränderet."
+ },
+ {
+  "id": 5977,
+  "de": "die Fachzeitschrift",
+  "tr": "bilimsel dergi, alan dergisi",
+  "deBeispiel": "Der Aufsatz erschien in einer angesehenen internationalen Fachzeitschrift.",
+  "gsw": "Fachziitschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Uufsatz isch i ere aagsähne internationale Fachziitschrift erschine."
+ },
+ {
+  "id": 5978,
+  "de": "die Redlichkeit",
+  "tr": "dürüstlük, doğruluk",
+  "deBeispiel": "Wissenschaftliche Redlichkeit verlangt, auch Fehlschläge zu berichten.",
+  "gsw": "Redlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wüsseschaftlichi Redlichkeit verlangt, au Fäälschläg z berichte."
+ },
+ {
+  "id": 5979,
+  "de": "die Reproduzierbarkeit",
+  "tr": "yeniden üretilebilirlik",
+  "deBeispiel": "Die mangelnde Reproduzierbarkeit vieler Studien beunruhigt die Fachwelt.",
+  "gsw": "Reproduzierbarkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di mangelndi Reproduzierbarkeit vo villne Schtudie beunruhiget d Fachwält."
+ },
+ {
+  "id": 5980,
+  "de": "das Erkenntnisinteresse",
+  "tr": "araştırma amacı, bilme ilgisi",
+  "deBeispiel": "Jede Untersuchung sollte ihr Erkenntnisinteresse offenlegen.",
+  "gsw": "Erkenntnisinteresse",
+  "gswArtikel": "s",
+  "gswBeispiel": "Jedi Untersuechig sött ires Erkenntnisinteresse offeleege."
+ },
+ {
+  "id": 5981,
+  "de": "das Humankapital",
+  "tr": "beşerî sermaye",
+  "deBeispiel": "Bildung wird in dieser Sichtweise als Investition in Humankapital verstanden.",
+  "gsw": "Humankapital",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Bildig wird i dere Sichtwiis als Investition i s Humankapital verschtande."
+ },
+ {
+  "id": 5982,
+  "de": "die Gymnasialempfehlung",
+  "tr": "liseye yönlendirme tavsiyesi",
+  "deBeispiel": "Die Gymnasialempfehlung hängt statistisch stark vom Elternhaus ab.",
+  "gsw": "Gymnasialempfäälig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gymnasialempfäälig hängt schtatistisch schtark vom Elterehuus ab."
+ },
+ {
+  "id": 5983,
+  "de": "die Übergangsquote",
+  "tr": "geçiş oranı",
+  "deBeispiel": "Die Übergangsquote an die Hochschulen ist regional sehr unterschiedlich.",
+  "gsw": "Übergangsquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Übergangsquote a d Hochschuele isch regional sehr underschidlich."
+ },
+ {
+  "id": 5984,
+  "de": "die Inklusion",
+  "tr": "kapsayıcılık, bütünleştirme",
+  "deBeispiel": "Inklusion gelingt nur mit ausreichend geschultem Personal.",
+  "gsw": "Inklusion",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Inklusion gliingt nur mit gnueg gschuelte Personal."
+ },
+ {
+  "id": 5985,
+  "de": "der Lehrkräftemangel",
+  "tr": "öğretmen açığı",
+  "deBeispiel": "Der Lehrkräftemangel trifft benachteiligte Schulen am härtesten.",
+  "gsw": "Leerchräftemangel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Leerchräftemangel trifft benachteiligti Schuele am härteschte."
+ },
+ {
+  "id": 5986,
+  "de": "der Quereinstieg",
+  "tr": "alan dışından mesleğe geçiş",
+  "deBeispiel": "Der Quereinstieg in den Schuldienst wurde deutlich erleichtert.",
+  "gsw": "Quereiischtig",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Quereiischtig i de Schueldienscht isch düütlich erliichteret worde."
+ },
+ {
+  "id": 5987,
+  "de": "die Ökonomisierung",
+  "tr": "piyasalaşma, ekonomik mantığa tabi kılma",
+  "deBeispiel": "Viele Lehrende beklagen die Ökonomisierung der Universitäten.",
+  "gsw": "Ökonomisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vill Lehrendi beklaged d Ökonomisierig vo de Universitäte."
+ },
+ {
+  "id": 5988,
+  "de": "die Bestenauslese",
+  "tr": "en iyileri seçme ilkesi",
+  "deBeispiel": "Das Verfahren soll eine faire Bestenauslese gewährleisten.",
+  "gsw": "Beschteuslese",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Verfaare söll e fairi Beschteuslese gwäärläischte."
+ },
+ {
+  "id": 5989,
+  "de": "der Wissenschaftsbetrieb",
+  "tr": "bilim dünyası, akademik düzen",
+  "deBeispiel": "Im heutigen Wissenschaftsbetrieb zählt Sichtbarkeit oft mehr als Tiefe.",
+  "gsw": "Wüsseschaftsbetrieb",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im hüttige Wüsseschaftsbetrieb zellt Sichtbarkeit oft mee als Tüüfi."
+ },
+ {
+  "id": 5990,
+  "de": "einwerben",
+  "tr": "fon sağlamak, kaynak toplamak",
+  "deBeispiel": "Die Arbeitsgruppe hat für das Projekt beachtliche Mittel eingeworben.",
+  "gsw": "iiwerbe",
+  "gswArtikel": null,
+  "gswBeispiel": "D Arbetsgruppe hät für s Projäkt beachtlichi Mittel iigworbe."
+ },
+ {
+  "id": 5991,
+  "de": "begutachten",
+  "tr": "hakemlik yapmak, incelemek",
+  "deBeispiel": "Zwei unabhängige Fachleute begutachten jeden eingereichten Antrag.",
+  "gsw": "beguetachte",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwäi unabhängigi Fachlüüt beguetachtet jede iigreichti Aatrag."
+ },
+ {
+  "id": 5992,
+  "de": "benachteiligen",
+  "tr": "dezavantajlı duruma düşürmek, mağdur etmek",
+  "deBeispiel": "Das frühe Auswahlverfahren benachteiligt Kinder ohne akademischen Hintergrund.",
+  "gsw": "benachteilige",
+  "gswArtikel": null,
+  "gswBeispiel": "S früeje Uswaalverfaare benachteiliget Chind ohni akademische Hindergrund."
+ },
+ {
+  "id": 5993,
+  "de": "ausdifferenzieren",
+  "tr": "farklılaştırmak, alt dallara ayırmak",
+  "deBeispiel": "Das Fach hat sich in den letzten Jahrzehnten stark ausdifferenziert.",
+  "gsw": "usdifferenziere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Fach hät sich i de letschte Jaarzäänt schtark usdifferenziert."
+ },
+ {
+  "id": 5994,
+  "de": "entfristen",
+  "tr": "kadroyu süresiz hale getirmek",
+  "deBeispiel": "Nach acht Jahren wurde ihre Stelle endlich entfristet.",
+  "gsw": "entfrischte",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach acht Jaar isch iri Schtell ändlich entfrischtet worde."
+ },
+ {
+  "id": 5995,
+  "de": "legitimieren",
+  "tr": "meşrulaştırmak, haklı çıkarmak",
+  "deBeispiel": "Mit dem Verweis auf Exzellenz legitimiert man ungleiche Mittelverteilung.",
+  "gsw": "legitimiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit em Verwiis uf Exzellenz legitimiert mer unglichi Mittelverteilig."
+ },
+ {
+  "id": 5996,
+  "de": "priorisieren",
+  "tr": "önceliklendirmek",
+  "deBeispiel": "Bei knappen Kassen muss die Fakultät ihre Vorhaben priorisieren.",
+  "gsw": "priorisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi chnappe Kasse mues d Fakultät iri Vorhabe priorisiere."
+ },
+ {
+  "id": 5997,
+  "de": "quantifizieren",
+  "tr": "sayısallaştırmak, ölçülebilir kılmak",
+  "deBeispiel": "Nicht jede Form von Lehrqualität lässt sich sinnvoll quantifizieren.",
+  "gsw": "quantifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöd jedi Form vo Leerqualität laat sich sinnvoll quantifiziere."
+ },
+ {
+  "id": 5998,
+  "de": "ausschöpfen",
+  "tr": "sonuna kadar kullanmak, tüketmek",
+  "deBeispiel": "Das Land schöpft sein Bildungspotenzial bei Weitem nicht aus.",
+  "gsw": "usschöpfe",
+  "gswArtikel": null,
+  "gswBeispiel": "S Land schöpft sis Bildigspotenzial bi wiitem nöd us."
+ },
+ {
+  "id": 5999,
+  "de": "zuweisen",
+  "tr": "tahsis etmek, ayırmak",
+  "deBeispiel": "Den Fakultäten werden die Stellen nach einem festen Schlüssel zugewiesen.",
+  "gsw": "zuewiise",
+  "gswArtikel": null,
+  "gswBeispiel": "De Fakultäte werdet d Schtelle nach eme feschte Schlüssel zuegwise."
+ },
+ {
+  "id": 6000,
+  "de": "bemessen",
+  "tr": "ölçüp belirlemek, tayin etmek",
+  "deBeispiel": "Der Zuschuss wird nach der Zahl der Absolventen bemessen.",
+  "gsw": "bemässe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zueschuss wird nach de Zaal vo de Absolvänte bemässe."
+ },
+ {
+  "id": 6001,
+  "de": "zuschreiben",
+  "tr": "atfetmek, yüklemek",
+  "deBeispiel": "Den Lehrkräften wird eine Verantwortung zugeschrieben, die sie kaum tragen können.",
+  "gsw": "zueschriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Leerchräft wird e Verantwortig zuegschribe, wo si chuum chönd trage."
+ },
+ {
+  "id": 6002,
+  "de": "chancengerecht",
+  "tr": "fırsat eşitliğine uygun",
+  "deBeispiel": "Ein chancengerechtes System darf Kinder nicht so früh sortieren.",
+  "gsw": "chancengerecht",
+  "gswArtikel": null,
+  "gswBeispiel": "Es chancengerechts Syschtem dörf d Chind nöd so früe sortiere."
+ },
+ {
+  "id": 6003,
+  "de": "leistungsbezogen",
+  "tr": "performansa dayalı",
+  "deBeispiel": "Ein Teil des Budgets wird leistungsbezogen vergeben.",
+  "gsw": "läischtigsbezoge",
+  "gswArtikel": null,
+  "gswBeispiel": "En Täil vom Budget wird läischtigsbezoge vergää."
+ },
+ {
+  "id": 6004,
+  "de": "interdisziplinär",
+  "tr": "disiplinler arası",
+  "deBeispiel": "Interdisziplinäre Projekte haben es bei der Begutachtung oft schwer.",
+  "gsw": "interdisziplinär",
+  "gswArtikel": null,
+  "gswBeispiel": "Interdisziplinäri Projäkt händs bi de Begutachtig oft schwär."
+ },
+ {
+  "id": 6005,
+  "de": "herkunftsbedingt",
+  "tr": "sosyal kökenden kaynaklanan",
+  "deBeispiel": "Herkunftsbedingte Unterschiede zeigen sich schon in der Grundschule.",
+  "gsw": "herkunftsbedingt",
+  "gswArtikel": null,
+  "gswBeispiel": "Herkunftsbedingti Underschid zäiged sich scho i de Grundschuel."
+ },
+ {
+  "id": 6006,
+  "de": "zweckgebunden",
+  "tr": "belirli amaca bağlı, tahsisli",
+  "deBeispiel": "Die zusätzlichen Gelder sind streng zweckgebunden und nicht übertragbar.",
+  "gsw": "zweckgebunde",
+  "gswArtikel": null,
+  "gswBeispiel": "Di zuesätzliche Gälder sind schtreng zweckgebunde und nöd übertragbar."
+ },
+ {
+  "id": 6007,
+  "de": "ungeachtet",
+  "tr": "-e rağmen, dikkate almaksızın",
+  "deBeispiel": "Ungeachtet aller Reformen bleibt der Zusammenhang zwischen Herkunft und Erfolg bestehen.",
+  "gsw": "ungeachtet",
+  "gswArtikel": null,
+  "gswBeispiel": "Ungeachtet vo allne Reforme bliibt de Zämehang zwüschet Herkunft und Erfolg beschtaa."
+ },
+ {
+  "id": 6008,
+  "de": "die Überalterung",
+  "tr": "nüfusun yaşlanması, aşırı yaşlanma",
+  "deBeispiel": "Die Überalterung der Gesellschaft stellt das Rentensystem vor kaum lösbare Probleme.",
+  "gsw": "Überalterig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Überalterig vo de Gsellschaft schtellt s Rentesyschtem vor chuum lösbari Problem."
+ },
+ {
+  "id": 6009,
+  "de": "der Geburtenrückgang",
+  "tr": "doğumlardaki düşüş, doğurganlık gerilemesi",
+  "deBeispiel": "Der Geburtenrückgang macht sich zuerst in den Grundschulen bemerkbar.",
+  "gsw": "Geburterückgang",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Geburterückgang macht sich zerscht i de Grundschuele bemerkbar."
+ },
+ {
+  "id": 6010,
+  "de": "die Fruchtbarkeitsziffer",
+  "tr": "doğurganlık hızı, doğurganlık oranı",
+  "deBeispiel": "Die zusammengefasste Fruchtbarkeitsziffer liegt deutlich unter dem bestandserhaltenden Niveau.",
+  "gsw": "Fruchtbarkeitsziffer",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di zämegfassti Fruchtbarkeitsziffer liit düütlich under em beschtandserhaltende Niveau."
+ },
+ {
+  "id": 6011,
+  "de": "die Bevölkerungsprognose",
+  "tr": "nüfus projeksiyonu, nüfus tahmini",
+  "deBeispiel": "Jede Bevölkerungsprognose beruht auf Annahmen, die sich als falsch erweisen können.",
+  "gsw": "Bevölkerigsprognose",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Bevölkerigsprognose beruet uf Aanaame, wo sich als falsch chönd erwiise."
+ },
+ {
+  "id": 6012,
+  "de": "die Altersstruktur",
+  "tr": "yaş yapısı, yaş dağılımı",
+  "deBeispiel": "Die Altersstruktur der Belegschaft hat sich in zehn Jahren erheblich verschoben.",
+  "gsw": "Altersschtruktur",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Altersschtruktur vo de Belegschaft hät sich i zää Jaar erheblich verschobe."
+ },
+ {
+  "id": 6013,
+  "de": "die Abwanderung",
+  "tr": "göç etme, dışarı göç",
+  "deBeispiel": "Die Abwanderung gut ausgebildeter Fachkräfte kostet die Region ihre Zukunft.",
+  "gsw": "Abwanderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Abwanderig vo guet usbildete Fachchräft koschtet d Region iri Zuekunft."
+ },
+ {
+  "id": 6014,
+  "de": "die Binnenwanderung",
+  "tr": "iç göç",
+  "deBeispiel": "Die Binnenwanderung verläuft weiterhin von Ost nach West.",
+  "gsw": "Binnewanderig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Binnewanderig verlauft wiiterhin vo Oscht nach Wescht."
+ },
+ {
+  "id": 6015,
+  "de": "die Sterblichkeit",
+  "tr": "ölüm oranı, ölümlülük",
+  "deBeispiel": "Die sinkende Sterblichkeit im hohen Alter verlängert die Rentenbezugsdauer.",
+  "gsw": "Sterblichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di sinkendi Sterblichkeit im hoche Alter verlängeret d Rentebezugsduur."
+ },
+ {
+  "id": 6016,
+  "de": "die Kohorte",
+  "tr": "kuşak grubu, kohort",
+  "deBeispiel": "Die geburtenstarken Kohorten der Sechzigerjahre gehen jetzt in den Ruhestand.",
+  "gsw": "Kohorte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di geburteschtarke Kohorte vo de Sächzgerjaar gönd jetz i de Ruehschtand."
+ },
+ {
+  "id": 6017,
+  "de": "die Demografie",
+  "tr": "demografi, nüfus bilimi",
+  "deBeispiel": "Die Demografie liefert Argumente, aber sie ersetzt keine politische Entscheidung.",
+  "gsw": "Demografie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Demografie lieferet Argumänt, aber si ersetzt kei politischi Entschäidig."
+ },
+ {
+  "id": 6018,
+  "de": "der Wanderungssaldo",
+  "tr": "net göç, göç dengesi",
+  "deBeispiel": "Nur ein positiver Wanderungssaldo hält die Einwohnerzahl derzeit stabil.",
+  "gsw": "Wanderigssaldo",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nur en positive Wanderigssaldo haltet d Iiwoonerzaal derziit schtabil."
+ },
+ {
+  "id": 6019,
+  "de": "die Erwerbsquote",
+  "tr": "işgücüne katılım oranı",
+  "deBeispiel": "Eine höhere Erwerbsquote der Frauen könnte den Rückgang teilweise auffangen.",
+  "gsw": "Erwerbsquote",
+  "gswArtikel": "d",
+  "gswBeispiel": "E höcheri Erwerbsquote vo de Fraue chönt de Rückgang teilwiis uffange."
+ },
+ {
+  "id": 6020,
+  "de": "das Rentenniveau",
+  "tr": "emekli aylığı düzeyi",
+  "deBeispiel": "Ein stabiles Rentenniveau ist ohne höhere Beiträge kaum zu halten.",
+  "gsw": "Renteniveau",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es schtabils Renteniveau isch ohni höcheri Bitrag chuum z halte."
+ },
+ {
+  "id": 6021,
+  "de": "der Beitragssatz",
+  "tr": "prim oranı, katkı payı oranı",
+  "deBeispiel": "Der Beitragssatz zur Pflegeversicherung wurde erneut angehoben.",
+  "gsw": "Bitragssatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Bitragssatz zur Pfläägversicherig isch erneut aaghobe worde."
+ },
+ {
+  "id": 6022,
+  "de": "das Umlageverfahren",
+  "tr": "dağıtım esaslı emeklilik sistemi (çalışanların primiyle ödeme)",
+  "deBeispiel": "Das Umlageverfahren funktioniert nur, solange genügend Beitragszahler nachkommen.",
+  "gsw": "Umlaageverfaare",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Umlaageverfaare funktioniert nur, solang gnueg Bitragszaaler nachechömed."
+ }
+]

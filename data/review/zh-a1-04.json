@@ -1,0 +1,1029 @@
+[
+ {
+  "id": 334,
+  "de": "nach",
+  "tr": "-e/-a (yön), -den sonra",
+  "deBeispiel": "Sie fährt mit dem Bus nach Berlin.",
+  "gsw": "nach",
+  "gswArtikel": null,
+  "gswBeispiel": "Si fahrt mit em Bus nach Berlin."
+ },
+ {
+  "id": 335,
+  "de": "die Nachricht",
+  "tr": "haber, mesaj",
+  "deBeispiel": "Du hörst die Nachricht noch einmal./ Das ist eine gute Nachricht.",
+  "gsw": "Nachricht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Du ghörsch d Nachricht na äimal./Das isch e gueti Nachricht."
+ },
+ {
+  "id": 336,
+  "de": "nächste",
+  "tr": "gelecek, bir sonraki",
+  "deBeispiel": "Nächsten Monat bekommen wir Zeugnisse.",
+  "gsw": "nöchscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöchschte Monet überchömed mir s Zügnis."
+ },
+ {
+  "id": 337,
+  "de": "der Name",
+  "tr": "isim, ad",
+  "deBeispiel": "Mein Name ist Peter Niemöller.",
+  "gsw": "Name",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Name isch Peter Niemöller."
+ },
+ {
+  "id": 338,
+  "de": "nehmen",
+  "tr": "almak",
+  "deBeispiel": "Nehmen Sie den Bus zum Marktplatz.",
+  "gsw": "nää",
+  "gswArtikel": null,
+  "gswBeispiel": "Sii chönd de Bus zum Märtplatz nää."
+ },
+ {
+  "id": 339,
+  "de": "nein",
+  "tr": "hayır",
+  "deBeispiel": "Kommst du mit? - Nein, leider nicht.",
+  "gsw": "näi",
+  "gswArtikel": null,
+  "gswBeispiel": "Chunsch mit? – Näi, läider nöd."
+ },
+ {
+  "id": 340,
+  "de": "nett",
+  "tr": "kibar, hoş",
+  "deBeispiel": "Ich finde, sie ist nett und lustig.",
+  "gsw": "nätt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde, si isch nätt und luschtig."
+ },
+ {
+  "id": 341,
+  "de": "neu",
+  "tr": "yeni",
+  "deBeispiel": "Ist der Computer neu?",
+  "gsw": "nöi",
+  "gswArtikel": null,
+  "gswBeispiel": "Isch de Computer nöi?"
+ },
+ {
+  "id": 342,
+  "de": "nicht",
+  "tr": "değil",
+  "deBeispiel": "Ich kann dich nicht verstehen.",
+  "gsw": "nöd",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha di nöd verschtaa."
+ },
+ {
+  "id": 343,
+  "de": "nichts",
+  "tr": "hiçbir şey",
+  "deBeispiel": "Ich möchte nichts essen./Das macht nichts.",
+  "gsw": "nüüt",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht nüüt ässe./Das macht nüüt."
+ },
+ {
+  "id": 344,
+  "de": "nie",
+  "tr": "asla, hiç",
+  "deBeispiel": "Ich war noch nie in Frankreich.",
+  "gsw": "nie",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi na nie z Frankriich gsii."
+ },
+ {
+  "id": 345,
+  "de": "niemand",
+  "tr": "hiç kimse",
+  "deBeispiel": "Kann mir niemand helfen?",
+  "gsw": "niemert",
+  "gswArtikel": null,
+  "gswBeispiel": "Cha mer niemert hälfe?"
+ },
+ {
+  "id": 346,
+  "de": "noch",
+  "tr": "hâlâ, henüz",
+  "deBeispiel": "Ich muss noch Hausaufgaben machen.",
+  "gsw": "na",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues na Husufgabe mache."
+ },
+ {
+  "id": 347,
+  "de": "normal",
+  "tr": "normal",
+  "deBeispiel": "Eine ganz normale Situation.",
+  "gsw": "normal",
+  "gswArtikel": null,
+  "gswBeispiel": "E ganz normali Situation."
+ },
+ {
+  "id": 348,
+  "de": "die Note",
+  "tr": "not (okul notu)",
+  "deBeispiel": "Hast du gute Noten in Englisch?",
+  "gsw": "Note",
+  "gswArtikel": "d",
+  "gswBeispiel": "Häsch gueti Note in Änglisch?",
+  "ayniLehce": [
+   "Schein (B1)"
+  ]
+ },
+ {
+  "id": 349,
+  "de": "die Nummer",
+  "tr": "numara",
+  "deBeispiel": "Bitte, sag mir deine Telefonnummer./ Welche Hausnummer hast du?",
+  "gsw": "Nummere",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte säg mer dini Telefonnummere./Weli Husnummere häsch du?"
+ },
+ {
+  "id": 350,
+  "de": "nur",
+  "tr": "sadece",
+  "deBeispiel": "Ich möchte nur ein Glas Wasser.",
+  "gsw": "nume",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht nume es Glas Wasser.",
+  "ayniLehce": [
+   "ausschließlich (B1)",
+   "bloß (B1)"
+  ]
+ },
+ {
+  "id": 351,
+  "de": "das Obst",
+  "tr": "meyve",
+  "deBeispiel": "Wir essen immer viel Obst.",
+  "gsw": "Frücht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir ässed immer viil Frücht.",
+  "ayniLehce": [
+   "Früchte (B1)"
+  ]
+ },
+ {
+  "id": 352,
+  "de": "oder",
+  "tr": "veya, ya da",
+  "deBeispiel": "Trinkst du Tee oder Kaffee?",
+  "gsw": "oder",
+  "gswArtikel": null,
+  "gswBeispiel": "Trinksch Tee oder Kaffi?"
+ },
+ {
+  "id": 353,
+  "de": "offen",
+  "tr": "açık",
+  "deBeispiel": "Jetzt ist die Tür offen.",
+  "gsw": "offe",
+  "gswArtikel": null,
+  "gswBeispiel": "Jetz isch d Türe offe.",
+  "ayniLehce": [
+   "geöffnet (A1)"
+  ]
+ },
+ {
+  "id": 354,
+  "de": "oft",
+  "tr": "sık sık",
+  "deBeispiel": "Wir gehen oft im Park spazieren.",
+  "gsw": "oft",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir gönd oft im Park go schpaziere."
+ },
+ {
+  "id": 355,
+  "de": "ohne",
+  "tr": "-siz, olmadan",
+  "deBeispiel": "Ein Sonntag ohne meine Freunde ist langweilig.",
+  "gsw": "ooni",
+  "gswArtikel": null,
+  "gswBeispiel": "En Sunntig ooni mini Fründe isch langwiilig."
+ },
+ {
+  "id": 356,
+  "de": "der Ohrring",
+  "tr": "küpe",
+  "deBeispiel": "Sie trägt einen kleinen Ohrring.",
+  "gsw": "Oorring",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si träit en chliine Oorring."
+ },
+ {
+  "id": 357,
+  "de": "die Ordnung",
+  "tr": "düzen",
+  "deBeispiel": "Das ist in Ordnung./Kannst du hier Ordnung machen?",
+  "gsw": "Ornig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das isch in Ornig./Chasch daa Ornig mache?"
+ },
+ {
+  "id": 358,
+  "de": "das Paket",
+  "tr": "paket, koli",
+  "deBeispiel": "Ist das Paket für mich?",
+  "gsw": "Päckli",
+  "gswArtikel": "s",
+  "gswBeispiel": "Isch das Päckli für mich?",
+  "ayniLehce": [
+   "Päckchen (A2)"
+  ]
+ },
+ {
+  "id": 359,
+  "de": "der Park",
+  "tr": "park",
+  "deBeispiel": "Wir gehen in den Park. .",
+  "gsw": "Park",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir gönd in Park."
+ },
+ {
+  "id": 360,
+  "de": "passieren",
+  "tr": "olmak, meydana gelmek",
+  "deBeispiel": "Wie ist der Unfall passiert? Was ist passiert?",
+  "gsw": "passiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Wie isch de Unfall passiert? Was isch passiert?"
+ },
+ {
+  "id": 361,
+  "de": "die Pause",
+  "tr": "mola, ara",
+  "deBeispiel": "Jetzt machen wir eine Pause.",
+  "gsw": "Pause",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jetz mached mir e Pause."
+ },
+ {
+  "id": 362,
+  "de": "das Pferd",
+  "tr": "at",
+  "deBeispiel": "Das Pferd ist schon alt.",
+  "gsw": "Ross",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Ross isch scho alt."
+ },
+ {
+  "id": 363,
+  "de": "die Pizza",
+  "tr": "pizza",
+  "deBeispiel": "Heute gibt es bei uns Pizza mit Tomaten und Käse.",
+  "gsw": "Pizza",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hüt gits bi öis Pizza mit Tomate und Chäs."
+ },
+ {
+  "id": 364,
+  "de": "der Platz",
+  "tr": "yer, meydan, alan",
+  "deBeispiel": "Das ist mein Platz./In meiner Wohnung ist wenig Platz./Ist der Platz noch frei?",
+  "gsw": "Platz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Das isch min Platz./I minere Wonig häts wenig Platz./Isch de Platz na frei?"
+ },
+ {
+  "id": 365,
+  "de": "die Post",
+  "tr": "postane, posta",
+  "deBeispiel": "Ich gehe zur Post, kommst du mit?",
+  "gsw": "Poscht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich gang uf d Poscht, chunsch mit?"
+ },
+ {
+  "id": 366,
+  "de": "das Poster",
+  "tr": "poster",
+  "deBeispiel": "In meinem Zimmer sind viele Poster.",
+  "gsw": "Poschter",
+  "gswArtikel": "s",
+  "gswBeispiel": "I mim Zimmer häts viil Poschter."
+ },
+ {
+  "id": 367,
+  "de": "die Postkarte",
+  "tr": "kartpostal",
+  "deBeispiel": "Wir schreiben ihm eine Postkarte.",
+  "gsw": "Poschtcharte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir schriibed em e Poschtcharte."
+ },
+ {
+  "id": 368,
+  "de": "das Problem",
+  "tr": "sorun, problem",
+  "deBeispiel": "Mein Problem ist die Sprache.",
+  "gsw": "Problem",
+  "gswArtikel": "s",
+  "gswBeispiel": "Miis Problem isch d Spraach."
+ },
+ {
+  "id": 369,
+  "de": "der Pullover",
+  "tr": "kazak",
+  "deBeispiel": "Du brauchst keinen Pullover, es ist warm.",
+  "gsw": "Pullover",
+  "gswArtikel": "de",
+  "gswBeispiel": "Du bruuchsch käin Pullover, es isch warm."
+ },
+ {
+  "id": 370,
+  "de": "pünktlich",
+  "tr": "dakik, tam zamanında",
+  "deBeispiel": "Kommt bitte pünktlich!",
+  "gsw": "pünktlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Chömed bitte pünktlich!"
+ },
+ {
+  "id": 371,
+  "de": "der Quatsch",
+  "tr": "saçmalık",
+  "deBeispiel": "Ich finde, das ist Quatsch!",
+  "gsw": "Blödsinn",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich finde, das isch Blödsinn!"
+ },
+ {
+  "id": 372,
+  "de": "das Quiz",
+  "tr": "bilgi yarışması",
+  "deBeispiel": "Das ist ein Quiz für Kinder.",
+  "gsw": "Quiz",
+  "gswArtikel": "s",
+  "gswBeispiel": "Das isch es Quiz für Chind."
+ },
+ {
+  "id": 373,
+  "de": "das Rad",
+  "tr": "bisiklet, tekerlek",
+  "deBeispiel": "Ich fahre mit dem Rad in die Schule.",
+  "gsw": "Rad",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Rad vo mim Velo isch kaputt."
+ },
+ {
+  "id": 375,
+  "de": "der Radiergummi",
+  "tr": "silgi",
+  "deBeispiel": "Gibst du mir deinen Radiergummi?",
+  "gsw": "Gummi",
+  "gswArtikel": "de",
+  "gswBeispiel": "Giisch mer din Gummi?"
+ },
+ {
+  "id": 376,
+  "de": "das Radio",
+  "tr": "radyo",
+  "deBeispiel": "Ich habe ein neues Radio.",
+  "gsw": "Radio",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha en nöie Radio."
+ },
+ {
+  "id": 377,
+  "de": "raten",
+  "tr": "tahmin etmek",
+  "deBeispiel": "Das ist ein Spiel, man muss die Städte raten.",
+  "gsw": "raate",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch es Schpiil, me mues d Schtädt raate."
+ },
+ {
+  "id": 378,
+  "de": "das Rätsel",
+  "tr": "bilmece",
+  "deBeispiel": "Ich finde das Rätsel zu schwer.",
+  "gsw": "Rätsel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich finde s Rätsel z schwär."
+ },
+ {
+  "id": 379,
+  "de": "recht haben",
+  "tr": "haklı olmak",
+  "deBeispiel": "Du hast (nicht) recht.",
+  "gsw": "rächt haa",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch nöd immer rächt haa!"
+ },
+ {
+  "id": 380,
+  "de": "rechts",
+  "tr": "sağda, sağa",
+  "deBeispiel": "Hier rechts ist unsere Schule.",
+  "gsw": "rächts",
+  "gswArtikel": null,
+  "gswBeispiel": "Daa rächts isch öisi Schuel."
+ },
+ {
+  "id": 381,
+  "de": "der Regen",
+  "tr": "yağmur",
+  "deBeispiel": "Ich mag den Regen nicht.",
+  "gsw": "Räge",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich mag de Räge nöd."
+ },
+ {
+  "id": 382,
+  "de": "regnen",
+  "tr": "yağmur yağmak",
+  "deBeispiel": "Es regnet oft bei uns.",
+  "gsw": "rägne",
+  "gswArtikel": null,
+  "gswBeispiel": "Es rägnet oft bi öis."
+ },
+ {
+  "id": 383,
+  "de": "die Reise",
+  "tr": "yolculuk, seyahat",
+  "deBeispiel": "Wir machen eine Reise.",
+  "gsw": "Räis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir mached e Räis."
+ },
+ {
+  "id": 384,
+  "de": "reiten",
+  "tr": "ata binmek",
+  "deBeispiel": "Reiten ist mein Hobby.",
+  "gsw": "riite",
+  "gswArtikel": null,
+  "gswBeispiel": "Riite isch miis Hobby."
+ },
+ {
+  "id": 385,
+  "de": "reparieren",
+  "tr": "tamir etmek, onarmak",
+  "deBeispiel": "Mein Vater kann das Fahrrad reparieren.",
+  "gsw": "flicke",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Vatter cha s Velo flicke.",
+  "ayniLehce": [
+   "flicken (A2)"
+  ]
+ },
+ {
+  "id": 386,
+  "de": "das Restaurant",
+  "tr": "restoran",
+  "deBeispiel": "Wir essen heute im Restaurant.",
+  "gsw": "Restaurant",
+  "gswArtikel": "s",
+  "gswBeispiel": "Mir ässed hüt im Restaurant."
+ },
+ {
+  "id": 387,
+  "de": "richtig",
+  "tr": "doğru",
+  "deBeispiel": "Die Antwort ist nicht richtig.",
+  "gsw": "richtig",
+  "gswArtikel": null,
+  "gswBeispiel": "D Antwort isch nöd richtig.",
+  "ayniLehce": [
+   "Richtung (B1)"
+  ]
+ },
+ {
+  "id": 388,
+  "de": "der Ring",
+  "tr": "yüzük",
+  "deBeispiel": "Sie trägt viele Ringe.",
+  "gsw": "Ring",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si träit viil Ring."
+ },
+ {
+  "id": 389,
+  "de": "der Rucksack",
+  "tr": "sırt çantası",
+  "deBeispiel": "Der Rucksack für die Schule ist fertig.",
+  "gsw": "Rucksack",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rucksack für d Schuel isch parat."
+ },
+ {
+  "id": 390,
+  "de": "ruhig",
+  "tr": "sakin, sessiz",
+  "deBeispiel": "Seid jetzt bitte ruhig!",
+  "gsw": "ruig",
+  "gswArtikel": null,
+  "gswBeispiel": "Sind jetz bitte ruig!"
+ },
+ {
+  "id": 391,
+  "de": "die Sache",
+  "tr": "şey, eşya",
+  "deBeispiel": "Wo sind meine Schulsachen?/Das ist eine tolle Sache.",
+  "gsw": "Sach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wo sind mini Schuelsache?/Das isch e tolli Sach."
+ },
+ {
+  "id": 392,
+  "de": "der Saft",
+  "tr": "meyve suyu",
+  "deBeispiel": "Möchtest du Wasser oder Saft?",
+  "gsw": "Saft",
+  "gswArtikel": "de",
+  "gswBeispiel": "Wotsch Wasser oder Saft?"
+ },
+ {
+  "id": 393,
+  "de": "sagen",
+  "tr": "söylemek, demek",
+  "deBeispiel": "Eva sagt, sie kommt heute nicht.",
+  "gsw": "säge",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha der nöd säge, ob d Eva hüt chunt."
+ },
+ {
+  "id": 394,
+  "de": "der Salat",
+  "tr": "salata",
+  "deBeispiel": "Am Abend gibt es immer Salat.",
+  "gsw": "Salat",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Aabig gits immer Salat."
+ },
+ {
+  "id": 395,
+  "de": "schade",
+  "tr": "yazık",
+  "deBeispiel": "Du kannst nicht kommen? Das ist schade!",
+  "gsw": "schad",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch nöd choo? Das isch schad!"
+ },
+ {
+  "id": 396,
+  "de": "schenken",
+  "tr": "hediye etmek",
+  "deBeispiel": "Ich möchte Anna einen Pullover schenken.",
+  "gsw": "schänke",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich möcht de Anna en Pullover schänke."
+ },
+ {
+  "id": 397,
+  "de": "das Schiff",
+  "tr": "gemi",
+  "deBeispiel": "Sie fahren mit dem Schiff.",
+  "gsw": "Schiff",
+  "gswArtikel": "s",
+  "gswBeispiel": "Si fahred mit em Schiff."
+ },
+ {
+  "id": 398,
+  "de": "schlafen",
+  "tr": "uyumak",
+  "deBeispiel": "Wo kann ich schlafen?",
+  "gsw": "schlaafe",
+  "gswArtikel": null,
+  "gswBeispiel": "Wo cha ich schlaafe?"
+ },
+ {
+  "id": 399,
+  "de": "schlecht",
+  "tr": "kötü, fena",
+  "deBeispiel": "Mir ist so schlecht./Das Essen hier ist nicht schlecht.",
+  "gsw": "schlächt",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir isch so schlächt./S Ässe daa isch nöd schlächt."
+ },
+ {
+  "id": 400,
+  "de": "schmecken",
+  "tr": "tadı olmak, lezzetli olmak",
+  "deBeispiel": "Wie schmeckt der Hamburger?",
+  "gsw": "schmecke",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hamburger mues doch guet schmecke!"
+ },
+ {
+  "id": 401,
+  "de": "der Schmerz",
+  "tr": "ağrı, acı",
+  "deBeispiel": "Ich habe Bauchschmerzen.",
+  "gsw": "Schmärz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ich ha Buuchschmärze."
+ },
+ {
+  "id": 402,
+  "de": "schnell",
+  "tr": "hızlı, çabuk",
+  "deBeispiel": "Warum fährst du so schnell?",
+  "gsw": "schnäll",
+  "gswArtikel": null,
+  "gswBeispiel": "Warum fahrsch du so schnäll?"
+ },
+ {
+  "id": 403,
+  "de": "die Schokolade",
+  "tr": "çikolata",
+  "deBeispiel": "Ich esse keine Schokolade.",
+  "gsw": "Schoggi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich isse käi Schoggi."
+ },
+ {
+  "id": 404,
+  "de": "schon",
+  "tr": "çoktan, bile, artık",
+  "deBeispiel": "Ich habe schon sechs Computerspiele.",
+  "gsw": "scho",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha scho sächs Computerschpiil.",
+  "ayniLehce": [
+   "bereits (B1)"
+  ]
+ },
+ {
+  "id": 405,
+  "de": "schön",
+  "tr": "güzel",
+  "deBeispiel": "Mein Zimmer ist sehr schön und gemütlich.",
+  "gsw": "schöön",
+  "gswArtikel": null,
+  "gswBeispiel": "Miis Zimmer isch sehr schöön und gmüetlich."
+ },
+ {
+  "id": 406,
+  "de": "schreiben",
+  "tr": "yazmak",
+  "deBeispiel": "Erika schreibt mir jeden Tag.",
+  "gsw": "schriibe",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mues de Erika na es Mail schriibe.",
+  "ayniLehce": [
+   "Schreiben (B1)"
+  ]
+ },
+ {
+  "id": 407,
+  "de": "schwer",
+  "tr": "zor, ağır",
+  "deBeispiel": "Ich finde die Hausaufgaben sehr schwer.",
+  "gsw": "schwär",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde d Husufgabe sehr schwär."
+ },
+ {
+  "id": 408,
+  "de": "das Schwimmbad",
+  "tr": "yüzme havuzu",
+  "deBeispiel": "Im Sommer gehen wir oft ins Schwimmbad.",
+  "gsw": "Badi",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Summer gömer oft i d Badi."
+ },
+ {
+  "id": 409,
+  "de": "schwimmen",
+  "tr": "yüzmek",
+  "deBeispiel": "Ich kann gut schwimmen.",
+  "gsw": "schwüme",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich cha guet schwüme."
+ },
+ {
+  "id": 410,
+  "de": "der See",
+  "tr": "göl",
+  "deBeispiel": "Der See ist sehr groß./Wir wohnen am See./ Wir fahren zum Ammersee.",
+  "gsw": "See",
+  "gswArtikel": "de",
+  "gswBeispiel": "De See isch sehr grooss./Mir wohned am See./Mir fahred an Zürisee."
+ },
+ {
+  "id": 411,
+  "de": "sehen",
+  "tr": "görmek",
+  "deBeispiel": "Siehst du das große Haus? Da wohne ich.",
+  "gsw": "gsee",
+  "gswArtikel": null,
+  "gswBeispiel": "Gseesch das groosse Huus? Deet wohn ich."
+ },
+ {
+  "id": 412,
+  "de": "sehr",
+  "tr": "çok (derece), pek",
+  "deBeispiel": "Ich liebe ihn sehr./Das ist sehr wichtig.",
+  "gsw": "sehr",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich han en sehr gärn./Das isch sehr wichtig."
+ },
+ {
+  "id": 413,
+  "de": "sein",
+  "tr": "olmak",
+  "deBeispiel": "Ich bin 13 Jahre alt./Das ist mein Bruder./ Er ist Student./ Die Kinder sind im Garten.",
+  "gsw": "sii",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich will nöd eläi sii./Ich bi drizää Jaar alt.",
+  "ayniLehce": [
+   "Sie (A1)"
+  ]
+ },
+ {
+  "id": 414,
+  "de": "die Seite",
+  "tr": "sayfa",
+  "deBeispiel": "Das steht auf Seite 3.",
+  "gsw": "Siite",
+  "gswArtikel": "d",
+  "gswBeispiel": "Das schtaat uf Siite drüü."
+ },
+ {
+  "id": 415,
+  "de": "sicher",
+  "tr": "emin, kesin, güvenli",
+  "deBeispiel": "Du bist sicher gut in der Schule.",
+  "gsw": "sicher",
+  "gswArtikel": null,
+  "gswBeispiel": "Du bisch sicher guet i de Schuel."
+ },
+ {
+  "id": 416,
+  "de": "sie",
+  "tr": "o, onlar",
+  "deBeispiel": "Das ist Frau Meyer, sie wohnt hier.",
+  "gsw": "si",
+  "gswArtikel": null,
+  "gswBeispiel": "Das isch d Frau Meyer, si wohnt daa."
+ },
+ {
+  "id": 417,
+  "de": "Sie",
+  "tr": "siz",
+  "deBeispiel": "Sind Sie der neue Lehrer?/Wie geht es Ihnen? (vergl. Grammatik)",
+  "gsw": "Sii",
+  "gswArtikel": null,
+  "gswBeispiel": "Sind Sii de nöi Lehrer?/Wie gaat s Ine?",
+  "ayniLehce": [
+   "sein (A1)"
+  ]
+ },
+ {
+  "id": 418,
+  "de": "so",
+  "tr": "böyle, bu kadar, o kadar",
+  "deBeispiel": "Ich mache das nicht so./Das schmeckt so gut./ Sie ist so alt wie ich.",
+  "gsw": "so",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mache das nöd so./Das schmeckt so guet./Si isch so alt wie ich."
+ },
+ {
+  "id": 419,
+  "de": "sofort",
+  "tr": "hemen, derhal",
+  "deBeispiel": "Warte, ich komme sofort!",
+  "gsw": "sofort",
+  "gswArtikel": null,
+  "gswBeispiel": "Wart, ich chume sofort!"
+ },
+ {
+  "id": 420,
+  "de": "der Spaß",
+  "tr": "eğlence, zevk",
+  "deBeispiel": "Wir haben immer viel Spaß zusammen./Viel Spaß!",
+  "gsw": "Schpass",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ immer viil Schpass zäme./Viil Schpass!"
+ },
+ {
+  "id": 421,
+  "de": "spät",
+  "tr": "geç",
+  "deBeispiel": "Mach schnell, es ist spät!/Ich komme zu spät./ Wie spät ist es?",
+  "gsw": "schpaat",
+  "gswArtikel": null,
+  "gswBeispiel": "Mach schnäll, es isch schpaat!/Ich chume z schpaat./Wie schpaat isch es?"
+ },
+ {
+  "id": 422,
+  "de": "später",
+  "tr": "daha sonra",
+  "deBeispiel": "Ich mache die Hausaufgaben später.",
+  "gsw": "schpööter",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich mache d Husufgabe schpööter."
+ },
+ {
+  "id": 423,
+  "de": "spazieren gehen",
+  "tr": "yürüyüşe çıkmak",
+  "deBeispiel": "Wollen wir spazieren gehen?",
+  "gsw": "go schpaziere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir gönd am Sunntig immer go schpaziere."
+ },
+ {
+  "id": 424,
+  "de": "das Spiel",
+  "tr": "oyun",
+  "deBeispiel": "Ich kenne ein neues Spiel.",
+  "gsw": "Schpiil",
+  "gswArtikel": "s",
+  "gswBeispiel": "Ich chänne es nöis Schpiil."
+ },
+ {
+  "id": 425,
+  "de": "spielen",
+  "tr": "oynamak",
+  "deBeispiel": "Willst du mit uns spielen?",
+  "gsw": "schpile",
+  "gswArtikel": null,
+  "gswBeispiel": "Wotsch mit öis schpile?"
+ },
+ {
+  "id": 426,
+  "de": "der Spielplatz",
+  "tr": "oyun alanı, oyun parkı",
+  "deBeispiel": "Sie ist mit Ben auf dem Spielplatz.",
+  "gsw": "Schpilplatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Si isch mit em Ben uf em Schpilplatz."
+ },
+ {
+  "id": 427,
+  "de": "der Sport",
+  "tr": "spor",
+  "deBeispiel": "Sport ist mein Hobby.",
+  "gsw": "Schport",
+  "gswArtikel": "de",
+  "gswBeispiel": "Schport isch miis Hobby."
+ },
+ {
+  "id": 428,
+  "de": "die Sprache",
+  "tr": "dil, lisan",
+  "deBeispiel": "Er spricht fünf Sprachen.",
+  "gsw": "Spraach",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er redt föif Spraache."
+ },
+ {
+  "id": 429,
+  "de": "sprechen",
+  "tr": "konuşmak",
+  "deBeispiel": "Sie spricht mit dem Lehrer.",
+  "gsw": "rede",
+  "gswArtikel": null,
+  "gswBeispiel": "Si mues na mit em Lehrer rede.",
+  "ayniLehce": [
+   "reden (A2)"
+  ]
+ },
+ {
+  "id": 430,
+  "de": "die Stadt",
+  "tr": "şehir, kent",
+  "deBeispiel": "Unsere Stadt ist nicht so groß.",
+  "gsw": "Schtadt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Öisi Schtadt isch nöd so grooss."
+ },
+ {
+  "id": 431,
+  "de": "der Strand",
+  "tr": "plaj, kumsal",
+  "deBeispiel": "Wir spielen am Strand.",
+  "gsw": "Strand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir schpiled am Strand."
+ },
+ {
+  "id": 432,
+  "de": "die Straße",
+  "tr": "sokak, cadde",
+  "deBeispiel": "Wir wohnen in der Goethe-Straße.",
+  "gsw": "Straass",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mir wohned a de Goethestraass."
+ },
+ {
+  "id": 433,
+  "de": "das Stück",
+  "tr": "parça",
+  "deBeispiel": "Willst du noch ein Stück Kuchen?",
+  "gsw": "Schtück",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wotsch na es Schtück Chueche?"
+ },
+ {
+  "id": 434,
+  "de": "suchen",
+  "tr": "aramak",
+  "deBeispiel": "Ich suche meinen Kugelschreiber.",
+  "gsw": "sueche",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich sueche min Chugelschriiber."
+ },
+ {
+  "id": 435,
+  "de": "der Supermarkt",
+  "tr": "süpermarket",
+  "deBeispiel": "Wir kaufen immer im Supermarkt ein.",
+  "gsw": "Supermärt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir gönd immer im Supermärt go poschte."
+ },
+ {
+  "id": 436,
+  "de": "die Suppe",
+  "tr": "çorba",
+  "deBeispiel": "Ich kann auch Suppe kochen.",
+  "gsw": "Suppe",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich cha au Suppe choche."
+ },
+ {
+  "id": 437,
+  "de": "süß",
+  "tr": "tatlı (şekerli), şirin",
+  "deBeispiel": "Der Kaffee ist zu süß./Der neue Tennislehrer ist wirklich süß!",
+  "gsw": "süess",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kaffi isch z süess./De nöi Tennislehrer isch würkli süess!"
+ },
+ {
+  "id": 438,
+  "de": "die Süßigkeiten",
+  "tr": "tatlılar, şekerlemeler",
+  "deBeispiel": "Am liebsten esse ich Süßigkeiten.",
+  "gsw": "Süessigkäite",
+  "gswArtikel": "d",
+  "gswBeispiel": "Am liebschte iss ich Süessigkäite."
+ },
+ {
+  "id": 439,
+  "de": "sympathisch",
+  "tr": "sempatik, sevimli",
+  "deBeispiel": "Ich finde ihn sehr sympathisch.",
+  "gsw": "sympathisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich finde en sehr sympathisch."
+ },
+ {
+  "id": 440,
+  "de": "tanzen",
+  "tr": "dans etmek",
+  "deBeispiel": "Leider kann er nicht gut tanzen.",
+  "gsw": "tanze",
+  "gswArtikel": null,
+  "gswBeispiel": "Läider cha er nöd guet tanze."
+ },
+ {
+  "id": 441,
+  "de": "die Tasche",
+  "tr": "çanta",
+  "deBeispiel": "Die Tasche ist sehr schwer.",
+  "gsw": "Täsche",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Täsche isch mega schwär."
+ },
+ {
+  "id": 442,
+  "de": "das Taschengeld",
+  "tr": "harçlık",
+  "deBeispiel": "Wie viel Taschengeld bekommst du?",
+  "gsw": "Sackgäld",
+  "gswArtikel": "s",
+  "gswBeispiel": "Wie viil Sackgäld überchunsch du?"
+ },
+ {
+  "id": 443,
+  "de": "die Tasse",
+  "tr": "fincan",
+  "deBeispiel": "Ich möchte eine Tasse Kakao.",
+  "gsw": "Tasse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich möcht e Tasse Kakao."
+ },
+ {
+  "id": 444,
+  "de": "der Tee",
+  "tr": "çay",
+  "deBeispiel": "Am Abend trinken wir Tee.",
+  "gsw": "Tee",
+  "gswArtikel": "de",
+  "gswBeispiel": "Am Aabig trinked mir Tee."
+ }
+]

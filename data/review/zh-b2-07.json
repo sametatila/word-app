@@ -1,0 +1,992 @@
+[
+ {
+  "id": 4301,
+  "de": "der Klärungsbedarf",
+  "tr": "açıklığa kavuşturma ihtiyacı",
+  "deBeispiel": "Zu den Kosten besteht noch erheblicher Klärungsbedarf.",
+  "gsw": "Klärigsbedarf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zu de Choschte bschtaat no erhebliche Klärigsbedarf."
+ },
+ {
+  "id": 4302,
+  "de": "der Engpass",
+  "tr": "darboğaz, sıkışıklık",
+  "deBeispiel": "Im Sommer gibt es regelmäßig personelle Engpässe.",
+  "gsw": "Engpass",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im Summer git s regelmässig personelli Engpäss."
+ },
+ {
+  "id": 4303,
+  "de": "das Zeitfenster",
+  "tr": "zaman aralığı, uygun zaman dilimi",
+  "deBeispiel": "Für die Umstellung bleibt uns nur ein enges Zeitfenster.",
+  "gsw": "Ziitfäischter",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für d Umschtellig blibt is nur es engs Ziitfäischter."
+ },
+ {
+  "id": 4304,
+  "de": "die Pufferzeit",
+  "tr": "yedek süre, tampon zaman",
+  "deBeispiel": "Plane für die Endabnahme unbedingt etwas Pufferzeit ein.",
+  "gsw": "Pufferziit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Plan für d Endabnaam unbedingt es bitzli Pufferziit ii."
+ },
+ {
+  "id": 4305,
+  "de": "die Priorisierung",
+  "tr": "önceliklendirme",
+  "deBeispiel": "Ohne klare Priorisierung verzetteln wir uns in Kleinigkeiten.",
+  "gsw": "Priorisierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni klari Priorisierig verzettled mer üs i Chliinigkeite."
+ },
+ {
+  "id": 4306,
+  "de": "die Dringlichkeit",
+  "tr": "aciliyet",
+  "deBeispiel": "Die Aufgaben werden nach ihrer Dringlichkeit sortiert.",
+  "gsw": "Dringlichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uufgabe werded nach irer Dringlichkeit sortiert."
+ },
+ {
+  "id": 4307,
+  "de": "der Arbeitsablauf",
+  "tr": "iş akışı",
+  "deBeispiel": "Die neuen Formulare haben unsere Arbeitsabläufe deutlich vereinfacht.",
+  "gsw": "Arbetsablauf",
+  "gswArtikel": "de",
+  "gswBeispiel": "Di nöie Formular händ üsi Arbetsabläuf düütlich vereifacht."
+ },
+ {
+  "id": 4308,
+  "de": "der Geschäftsprozess",
+  "tr": "iş süreci",
+  "deBeispiel": "Alle Geschäftsprozesse werden derzeit auf Papierverzicht geprüft.",
+  "gsw": "Gschäftsprozess",
+  "gswArtikel": "de",
+  "gswBeispiel": "Alli Gschäftsprozesse werded zur Ziit uf Papierverzicht prüeft."
+ },
+ {
+  "id": 4309,
+  "de": "der Verantwortungsbereich",
+  "tr": "sorumluluk alanı",
+  "deBeispiel": "Die Budgetplanung fällt nicht in meinen Verantwortungsbereich.",
+  "gsw": "Verantwortigsberiich",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Budgetplanig fallt nöd i min Verantwortigsberiich."
+ },
+ {
+  "id": 4310,
+  "de": "die Stellvertretung",
+  "tr": "vekâlet, yerine bakma",
+  "deBeispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung.",
+  "gsw": "Schtellvertretig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Während miine Ferie übernimmt d Frau Kern d Schtellvertretig."
+ },
+ {
+  "id": 4311,
+  "de": "die Aufgabenverteilung",
+  "tr": "görev dağılımı",
+  "deBeispiel": "Über die Aufgabenverteilung im Team gab es einige Diskussionen.",
+  "gsw": "Uufgabeverteilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Über d Uufgabeverteilig im Team hät s einigi Diskussione gää."
+ },
+ {
+  "id": 4312,
+  "de": "die Weisung",
+  "tr": "talimat, emir",
+  "deBeispiel": "Er hat die Unterlagen auf Weisung der Leitung vernichtet.",
+  "gsw": "Wiisig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät d Unterlage uf Wiisig vo de Leitig vernichtet."
+ },
+ {
+  "id": 4313,
+  "de": "die Vorgabe",
+  "tr": "şart, belirlenen ölçüt, hedef",
+  "deBeispiel": "Die zeitlichen Vorgaben der Zentrale sind kaum zu schaffen.",
+  "gsw": "Vorgab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di ziitliche Vorgabe vo de Zentrale sind chuum z schaffe."
+ },
+ {
+  "id": 4314,
+  "de": "die Richtlinie",
+  "tr": "yönerge, kılavuz ilke",
+  "deBeispiel": "Für Dienstreisen gelten seit Januar strengere Richtlinien.",
+  "gsw": "Richtlinie",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für Dienschtreise gälted sit Januar schträngeri Richtlinie."
+ },
+ {
+  "id": 4315,
+  "de": "das Formblatt",
+  "tr": "matbu form, standart form",
+  "deBeispiel": "Den Antrag reichen Sie bitte auf dem beiliegenden Formblatt ein.",
+  "gsw": "Formblatt",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Aatrag reichet Sie bitte uf em biiliegende Formblatt ii."
+ },
+ {
+  "id": 4316,
+  "de": "der Entwurf",
+  "tr": "taslak",
+  "deBeispiel": "Der erste Entwurf des Vertrags geht morgen an die Rechtsabteilung.",
+  "gsw": "Entwurf",
+  "gswArtikel": "de",
+  "gswBeispiel": "De erscht Entwurf vom Vertrag gaat morn a d Rächtsabteilig."
+ },
+ {
+  "id": 4317,
+  "de": "die Fassung",
+  "tr": "sürüm, versiyon, metin hâli",
+  "deBeispiel": "Bitte arbeiten Sie nur mit der aktuellen Fassung des Handbuchs.",
+  "gsw": "Fassig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bitte schaffed Sie nur mit de aktuelle Fassig vom Handbuech."
+ },
+ {
+  "id": 4318,
+  "de": "die Freigabe",
+  "tr": "onay, serbest bırakma",
+  "deBeispiel": "Ohne die Freigabe des Vorstands drucken wir nichts.",
+  "gsw": "Freigab",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni d Freigab vom Vorschtand drucked mer nüüt."
+ },
+ {
+  "id": 4319,
+  "de": "die Rückmeldung",
+  "tr": "geri bildirim, dönüş",
+  "deBeispiel": "Ich warte noch auf die Rückmeldung aus dem Einkauf.",
+  "gsw": "Rückmäldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ich warte no uf d Rückmäldig us em Iichauf."
+ },
+ {
+  "id": 4320,
+  "de": "die Abweichung",
+  "tr": "sapma, farklılık",
+  "deBeispiel": "Jede Abweichung vom Zeitplan muss schriftlich begründet werden.",
+  "gsw": "Abwiichig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi Abwiichig vom Ziitplan mues schriftlich begründet werde."
+ },
+ {
+  "id": 4321,
+  "de": "die Kennzahl",
+  "tr": "gösterge, performans rakamı",
+  "deBeispiel": "Die wichtigsten Kennzahlen stehen auf der ersten Seite des Berichts.",
+  "gsw": "Kennzaal",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di wichtigschte Kennzaale schtönd uf de erschte Siite vom Bricht."
+ },
+ {
+  "id": 4322,
+  "de": "die Dokumentation",
+  "tr": "belgeleme, dokümantasyon",
+  "deBeispiel": "Eine saubere Dokumentation spart bei Rückfragen viel Zeit.",
+  "gsw": "Dokumentation",
+  "gswArtikel": "d",
+  "gswBeispiel": "E suuberi Dokumentation schpaart bi Rückfrage vil Ziit."
+ },
+ {
+  "id": 4323,
+  "de": "der Konsens",
+  "tr": "uzlaşı, görüş birliği",
+  "deBeispiel": "Nach langer Diskussion fanden die Abteilungen endlich einen Konsens.",
+  "gsw": "Konsens",
+  "gswArtikel": "de",
+  "gswBeispiel": "Nach langer Diskussion händ d Abteilige äntlich en Konsens gfunde."
+ },
+ {
+  "id": 4324,
+  "de": "der Vorbehalt",
+  "tr": "çekince, şerh",
+  "deBeispiel": "Wir stimmen dem Angebot unter Vorbehalt der Prüfung zu.",
+  "gsw": "Vorbehalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir schtimmed em Aagebot unter Vorbehalt vo de Prüefig zue."
+ },
+ {
+  "id": 4325,
+  "de": "die Auslastung",
+  "tr": "iş yoğunluğu, kapasite kullanımı",
+  "deBeispiel": "Die Auslastung des Teams liegt seit Wochen bei hundert Prozent.",
+  "gsw": "Uslaschtig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Uslaschtig vom Team liit sit Wuche bi hundert Prozänt."
+ },
+ {
+  "id": 4326,
+  "de": "die Kapazität",
+  "tr": "kapasite, iş gücü",
+  "deBeispiel": "Für zusätzliche Aufgaben haben wir derzeit keine freien Kapazitäten.",
+  "gsw": "Kapazität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Für zuesätzlichi Uufgabe händ mer zur Ziit kei freie Kapazitäte."
+ },
+ {
+  "id": 4327,
+  "de": "die Terminüberschneidung",
+  "tr": "randevu çakışması",
+  "deBeispiel": "Wegen einer Terminüberschneidung kann ich erst später dazukommen.",
+  "gsw": "Terminüberschniidig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wäge ere Terminüberschniidig chan i erscht schpöter dezuechoo."
+ },
+ {
+  "id": 4328,
+  "de": "einberufen",
+  "tr": "toplantıya çağırmak, toplamak",
+  "deBeispiel": "Der Betriebsrat hat für Freitag eine Versammlung einberufen.",
+  "gsw": "iiberüefe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Betriebsrat hät für de Friitig e Versammlig iiberüefe."
+ },
+ {
+  "id": 4329,
+  "de": "beauftragen",
+  "tr": "görevlendirmek, sipariş vermek",
+  "deBeispiel": "Man hat eine externe Firma mit der Auswertung beauftragt.",
+  "gsw": "beuftrage",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer hät e externi Firma mit de Uswärtig beuftragt."
+ },
+ {
+  "id": 4330,
+  "de": "abarbeiten",
+  "tr": "sırayla bitirmek, tamamlamak",
+  "deBeispiel": "Bis Mittag hat sie die halbe Liste abgearbeitet.",
+  "gsw": "abarbeite",
+  "gswArtikel": null,
+  "gswBeispiel": "Bis am Mittag hät si di halb Lischte chöne abarbeite."
+ },
+ {
+  "id": 4331,
+  "de": "terminieren",
+  "tr": "tarih belirlemek, zamana bağlamak",
+  "deBeispiel": "Die Abnahme ist auf den zweiten Mai terminiert.",
+  "gsw": "terminiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Abnaam isch uf de zwäit Mai terminiert."
+ },
+ {
+  "id": 4332,
+  "de": "strukturieren",
+  "tr": "düzenlemek, yapılandırmak",
+  "deBeispiel": "Wir müssen die Besprechungen besser strukturieren.",
+  "gsw": "schtrukturiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir müend d Bschprächige besser schtrukturiere."
+ },
+ {
+  "id": 4333,
+  "de": "bündeln",
+  "tr": "birleştirmek, tek elde toplamak",
+  "deBeispiel": "Wir bündeln alle Anfragen in einem gemeinsamen Postfach.",
+  "gsw": "bündle",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir bündled alli Aafrage i eme gmeinsame Poschtfach."
+ },
+ {
+  "id": 4334,
+  "de": "weiterleiten",
+  "tr": "iletmek, yönlendirmek",
+  "deBeispiel": "Ich habe deine Anfrage an die Fachabteilung weitergeleitet.",
+  "gsw": "wiiterleite",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha dini Aafrag scho a d Fachabteilig chöne wiiterleite."
+ },
+ {
+  "id": 4335,
+  "de": "archivieren",
+  "tr": "arşivlemek",
+  "deBeispiel": "Abgeschlossene Vorgänge werden nach einem Jahr archiviert.",
+  "gsw": "archiviere",
+  "gswArtikel": null,
+  "gswBeispiel": "Abgschlosseni Vorgäng werded nach eme Jaar archiviert."
+ },
+ {
+  "id": 4336,
+  "de": "absegnen",
+  "tr": "onaylamak, imzasını vermek",
+  "deBeispiel": "Die Leitung muss das Konzept noch absegnen.",
+  "gsw": "absägne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Leitig mues s Konzept no absägne."
+ },
+ {
+  "id": 4337,
+  "de": "nachhaken",
+  "tr": "üstelemek, üzerine gitmek",
+  "deBeispiel": "Wenn niemand antwortet, hake ich morgen noch einmal nach.",
+  "gsw": "naachhake",
+  "gswArtikel": null,
+  "gswBeispiel": "Wenn niemert antwortet, mues i morn no einisch naachhake."
+ },
+ {
+  "id": 4338,
+  "de": "nachfassen",
+  "tr": "takibini yapmak, tekrar sormak",
+  "deBeispiel": "Beim Kunden sollten wir nächste Woche höflich nachfassen.",
+  "gsw": "naachfasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Bim Chunde sötted mer nöchscht Wuche höflich naachfasse."
+ },
+ {
+  "id": 4339,
+  "de": "anmahnen",
+  "tr": "ihtar etmek, hatırlatarak istemek",
+  "deBeispiel": "Die Zentrale hat die fehlenden Berichte bereits zweimal angemahnt.",
+  "gsw": "aamahne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Zentrale hät di fählende Bricht scho zwäimal müese aamahne."
+ },
+ {
+  "id": 4340,
+  "de": "überziehen",
+  "tr": "aşmak, süreyi geçirmek",
+  "deBeispiel": "Der Referent hat seine Redezeit um zehn Minuten überzogen.",
+  "gsw": "überzie",
+  "gswArtikel": null,
+  "gswBeispiel": "De Referent hät sini Redeziit um zää Minute überzoge."
+ },
+ {
+  "id": 4341,
+  "de": "aufschieben",
+  "tr": "ertelemek, sonraya bırakmak",
+  "deBeispiel": "Unangenehme Aufgaben schiebt er gern bis Freitag auf.",
+  "gsw": "ufschiebe",
+  "gswArtikel": null,
+  "gswBeispiel": "Unaagnämi Uufgabe tuet er gern bis am Friitig ufschiebe."
+ },
+ {
+  "id": 4342,
+  "de": "entlasten",
+  "tr": "yükünü hafifletmek, rahatlatmak",
+  "deBeispiel": "Eine zusätzliche Kraft würde das ganze Sekretariat entlasten.",
+  "gsw": "entlaschte",
+  "gswArtikel": null,
+  "gswBeispiel": "E zuesätzlichi Chraft würd s ganz Sekretariat entlaschte."
+ },
+ {
+  "id": 4343,
+  "de": "beschleunigen",
+  "tr": "hızlandırmak",
+  "deBeispiel": "Die digitale Ablage hat die Bearbeitung spürbar beschleunigt.",
+  "gsw": "beschlüünige",
+  "gswArtikel": null,
+  "gswBeispiel": "Di digitali Ablaag hät d Bearbeitig schpürbar beschlüüniget."
+ },
+ {
+  "id": 4344,
+  "de": "umsetzen",
+  "tr": "hayata geçirmek, uygulamak",
+  "deBeispiel": "Die Vorschläge aus der Sitzung wollen wir bis Herbst umsetzen.",
+  "gsw": "umsetze",
+  "gswArtikel": null,
+  "gswBeispiel": "D Vorschläg us de Sitzig wänd mer bis im Herbscht umsetze."
+ },
+ {
+  "id": 4345,
+  "de": "durchführen",
+  "tr": "gerçekleştirmek, yürütmek",
+  "deBeispiel": "Die Schulung wird in zwei Gruppen durchgeführt.",
+  "gsw": "durefüehre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schuelig wird i zwäi Gruppe durefüehrt."
+ },
+ {
+  "id": 4346,
+  "de": "überwachen",
+  "tr": "denetlemek, izlemek",
+  "deBeispiel": "Ein Kollege überwacht laufend die Einhaltung der Fristen.",
+  "gsw": "überwache",
+  "gswArtikel": null,
+  "gswBeispiel": "En Kolleg überwacht laufend d Iihaltig vo de Frischte."
+ },
+ {
+  "id": 4347,
+  "de": "unverzüglich",
+  "tr": "derhâl, gecikmeksizin",
+  "deBeispiel": "Änderungen sind der Personalabteilung unverzüglich mitzuteilen.",
+  "gsw": "unverzüglich",
+  "gswArtikel": null,
+  "gswBeispiel": "Änderige mues mer de Personalabteilig unverzüglich mitteile."
+ },
+ {
+  "id": 4348,
+  "de": "federführend",
+  "tr": "baş sorumlu olarak, öncülük eden",
+  "deBeispiel": "Unsere Abteilung ist bei diesem Projekt federführend.",
+  "gsw": "federfüehrend",
+  "gswArtikel": null,
+  "gswBeispiel": "Üsi Abteilig isch bi dem Projekt federfüehrend."
+ },
+ {
+  "id": 4349,
+  "de": "zeitnah",
+  "tr": "kısa süre içinde, vakit geçirmeden",
+  "deBeispiel": "Bitte beantworten Sie die Anfrage möglichst zeitnah.",
+  "gsw": "ziitnaach",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte beantwortet Sie d Aafrag möglichscht ziitnaach."
+ },
+ {
+  "id": 4350,
+  "de": "kurzfristig",
+  "tr": "son anda, kısa süre kala; kısa vadeli",
+  "deBeispiel": "Der Termin wurde kurzfristig auf Donnerstag verlegt.",
+  "gsw": "churzfrischtig",
+  "gswArtikel": null,
+  "gswBeispiel": "De Termin isch churzfrischtig uf de Dunschtig verschobe worde."
+ },
+ {
+  "id": 4351,
+  "de": "zügig",
+  "tr": "hızlıca, aksatmadan",
+  "deBeispiel": "Wenn alle mitziehen, kommen wir zügig voran.",
+  "gsw": "zügig",
+  "gswArtikel": null,
+  "gswBeispiel": "Wenn alli mitzien, chömed mer zügig vorwärts."
+ },
+ {
+  "id": 4352,
+  "de": "lückenlos",
+  "tr": "eksiksiz, kesintisiz",
+  "deBeispiel": "Die Bearbeitung jedes Vorgangs muss lückenlos dokumentiert sein.",
+  "gsw": "lückelos",
+  "gswArtikel": null,
+  "gswBeispiel": "D Bearbeitig vo jedem Vorgang mues lückelos dokumentiert sii."
+ },
+ {
+  "id": 4353,
+  "de": "reibungslos",
+  "tr": "sorunsuz, pürüzsüz",
+  "deBeispiel": "Die Übergabe an das neue Team verlief reibungslos.",
+  "gsw": "riibigslos",
+  "gswArtikel": null,
+  "gswBeispiel": "D Übergaab a s nöie Team isch riibigslos verlaufe."
+ },
+ {
+  "id": 4354,
+  "de": "vorrangig",
+  "tr": "öncelikli, öncelikle",
+  "deBeispiel": "Beschwerden von Kunden werden vorrangig bearbeitet.",
+  "gsw": "vorrangig",
+  "gswArtikel": null,
+  "gswBeispiel": "Beschwerde vo Chunde werded vorrangig bearbeitet."
+ },
+ {
+  "id": 4355,
+  "de": "abteilungsübergreifend",
+  "tr": "bölümler arası, birimleri kapsayan",
+  "deBeispiel": "Für solche Fragen brauchen wir eine abteilungsübergreifende Arbeitsgruppe.",
+  "gsw": "abteiligsübergriifend",
+  "gswArtikel": null,
+  "gswBeispiel": "Für sonigi Frage bruuched mer e abteiligsübergriifendi Arbetsgruppe."
+ },
+ {
+  "id": 4356,
+  "de": "termingerecht",
+  "tr": "zamanında, tarihine uygun",
+  "deBeispiel": "Die Unterlagen gingen termingerecht bei der Behörde ein.",
+  "gsw": "termingerecht",
+  "gswArtikel": null,
+  "gswBeispiel": "D Unterlage sind termingerecht bi de Behörde iigange."
+ },
+ {
+  "id": 4357,
+  "de": "der Anbau",
+  "tr": "yetiştirme, ekim, tarım",
+  "deBeispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch.",
+  "gsw": "Aabau",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Aabau vo Mais lohnt sich uf dene Böde chuum meh."
+ },
+ {
+  "id": 4358,
+  "de": "die Viehzucht",
+  "tr": "hayvancılık, besicilik",
+  "deBeispiel": "In dieser Region lebt fast jeder zweite Betrieb von der Viehzucht.",
+  "gsw": "Viehzucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "I dere Region läbt fascht jede zwäit Betrib vo de Viehzucht."
+ },
+ {
+  "id": 4359,
+  "de": "das Nutztier",
+  "tr": "çiftlik hayvanı, besi hayvanı",
+  "deBeispiel": "Für Nutztiere gelten strengere Vorschriften als für Haustiere.",
+  "gsw": "Nutztier",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für Nutztier gälted schträngeri Vorschrifte als für Huustier."
+ },
+ {
+  "id": 4360,
+  "de": "der Dünger",
+  "tr": "gübre",
+  "deBeispiel": "Zu viel Dünger belastet das Grundwasser in der ganzen Gegend.",
+  "gsw": "Dünger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Z vil Dünger belaschtet s Grundwasser i de ganze Gägend."
+ },
+ {
+  "id": 4361,
+  "de": "der Nährstoff",
+  "tr": "besin maddesi, besleyici madde",
+  "deBeispiel": "Beim langen Kochen gehen viele Nährstoffe verloren.",
+  "gsw": "Nährschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Bim lange Choche gönd vil Nährschtoff verlore."
+ },
+ {
+  "id": 4362,
+  "de": "der Ballaststoff",
+  "tr": "lif, posa",
+  "deBeispiel": "Vollkornbrot enthält deutlich mehr Ballaststoffe als Weißbrot.",
+  "gsw": "Ballaschtstoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vollchornbrot hät düütlich meh Ballaschtstoff als Wiissbrot."
+ },
+ {
+  "id": 4363,
+  "de": "das Eiweiß",
+  "tr": "protein, yumurta akı",
+  "deBeispiel": "Linsen sind eine günstige Quelle für pflanzliches Eiweiß.",
+  "gsw": "Äiwiiss",
+  "gswArtikel": "s",
+  "gswBeispiel": "Linse sind e günschtigi Quelle für pflanzlichs Äiwiiss."
+ },
+ {
+  "id": 4364,
+  "de": "das Getreide",
+  "tr": "tahıl, hububat",
+  "deBeispiel": "Das Getreide wurde wegen des Regens zu spät geerntet.",
+  "gsw": "Getreid",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Getreid isch wäg em Räge z schpaat gärntet worde."
+ },
+ {
+  "id": 4365,
+  "de": "die Hülsenfrucht",
+  "tr": "baklagil",
+  "deBeispiel": "Hülsenfrüchte verbessern nebenbei die Qualität des Bodens.",
+  "gsw": "Hülsefrucht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hülsefrücht verbesseret nebebii d Qualität vom Bode."
+ },
+ {
+  "id": 4366,
+  "de": "der Erzeuger",
+  "tr": "üretici (tarım, ham ürün), yetiştirici",
+  "deBeispiel": "Vom Endpreis bleibt dem Erzeuger oft nur ein kleiner Teil.",
+  "gsw": "Erzüüger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Vom Endpriis bliibt em Erzüüger oft nur en chliine Teil."
+ },
+ {
+  "id": 4367,
+  "de": "die Verpackung",
+  "tr": "ambalaj, paketleme",
+  "deBeispiel": "Die neue Verpackung besteht vollständig aus recyceltem Papier.",
+  "gsw": "Verpackig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di nöi Verpackig bschtaat vollschtändig us recycletem Papier."
+ },
+ {
+  "id": 4368,
+  "de": "die Kennzeichnung",
+  "tr": "işaretleme, etiketleme, tanımlama",
+  "deBeispiel": "Eine klare Kennzeichnung der Herkunft ist seit Januar Pflicht.",
+  "gsw": "Kennzeichnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E klari Kennzeichnig vo de Herkunft isch sit Januar Pflicht."
+ },
+ {
+  "id": 4369,
+  "de": "das Etikett",
+  "tr": "etiket",
+  "deBeispiel": "Auf dem Etikett stehen alle Zutaten in absteigender Menge.",
+  "gsw": "Etikett",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf em Etikett schtönd alli Zuetate i abschtiigender Mängi."
+ },
+ {
+  "id": 4370,
+  "de": "das Mindesthaltbarkeitsdatum",
+  "tr": "tavsiye edilen tüketim tarihi",
+  "deBeispiel": "Viele Joghurts sind nach dem Mindesthaltbarkeitsdatum noch genießbar.",
+  "gsw": "Mindeschthaltbarkeitsdatum",
+  "gswArtikel": "s",
+  "gswBeispiel": "Vil Joghurt sind nach em Mindeschthaltbarkeitsdatum no gniessbar."
+ },
+ {
+  "id": 4371,
+  "de": "der Verbraucherschutz",
+  "tr": "tüketicinin korunması, tüketici hakları",
+  "deBeispiel": "Der Verbraucherschutz fordert strengere Regeln für Werbung mit Kindern.",
+  "gsw": "Verbruucherschutz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verbruucherschutz fordert schträngeri Regle für Werbig mit Chind."
+ },
+ {
+  "id": 4372,
+  "de": "die Sorte",
+  "tr": "çeşit, tür, cins",
+  "deBeispiel": "Alte Sorten sind robuster, bringen aber weniger Ernte.",
+  "gsw": "Sorte",
+  "gswArtikel": "d",
+  "gswBeispiel": "Alti Sorte sind robuschter, bringed aber weniger Ärnt."
+ },
+ {
+  "id": 4373,
+  "de": "die Genossenschaft",
+  "tr": "kooperatif, birlik",
+  "deBeispiel": "Die Milchbauern haben sich zu einer Genossenschaft zusammengeschlossen.",
+  "gsw": "Genosseschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Milchbuure händ sich zunere Genosseschaft zämegschlosse."
+ },
+ {
+  "id": 4374,
+  "de": "der Zwischenhändler",
+  "tr": "aracı, komisyoncu",
+  "deBeispiel": "Ohne Zwischenhändler bleibt den Bauern ein höherer Anteil.",
+  "gsw": "Zwüschehändler",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ohni Zwüschehändler bliibt de Buure en höchere Aateil."
+ },
+ {
+  "id": 4375,
+  "de": "die Vermarktung",
+  "tr": "pazarlama, satışa sunma",
+  "deBeispiel": "Die Vermarktung regionaler Produkte läuft inzwischen über eine eigene Plattform.",
+  "gsw": "Vermarktig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vermarktig vo regionale Produkt lauft inzwüsche über e eigeni Plattform."
+ },
+ {
+  "id": 4376,
+  "de": "der Absatz",
+  "tr": "satış, sürüm",
+  "deBeispiel": "Der Absatz von Hafermilch ist im letzten Jahr stark gestiegen.",
+  "gsw": "Absatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Absatz vo Hafermilch isch im letschte Jaar schtark gschtige."
+ },
+ {
+  "id": 4377,
+  "de": "die Lebensmittelverschwendung",
+  "tr": "gıda israfı",
+  "deBeispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt.",
+  "gsw": "Läbensmittelverschwendig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Gäge Läbensmittelverschwendig hilft vor allem e besseri Planig im Huushalt."
+ },
+ {
+  "id": 4378,
+  "de": "die Entsorgung",
+  "tr": "bertaraf, atıkların yok edilmesi",
+  "deBeispiel": "Die Entsorgung der abgelaufenen Ware kostet den Supermarkt viel Geld.",
+  "gsw": "Entsorgig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Entsorgig vo de abgloffene Waar koschtet de Supermarkt vil Gäld."
+ },
+ {
+  "id": 4379,
+  "de": "der Landwirt",
+  "tr": "çiftçi, tarım üreticisi",
+  "deBeispiel": "Immer weniger Landwirte finden einen Nachfolger für ihren Hof.",
+  "gsw": "Landwirt",
+  "gswArtikel": "de",
+  "gswBeispiel": "Immer weniger Landwirt finded en Naachfolger für ire Hof."
+ },
+ {
+  "id": 4380,
+  "de": "das Siegel",
+  "tr": "sertifika etiketi, mühür, damga",
+  "deBeispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
+  "gsw": "Siegel",
+  "gswArtikel": "s",
+  "gswBeispiel": "S grüen Siegel säit elei no nüüt über d Tierhaltig us."
+ },
+ {
+  "id": 4381,
+  "de": "der Rückstand",
+  "tr": "kalıntı, artık",
+  "deBeispiel": "In den Proben fanden die Prüfer keine Rückstände von Pestiziden.",
+  "gsw": "Rückschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Probe händ d Prüefer kei Rückschtänd vo Peschtizide gfunde."
+ },
+ {
+  "id": 4382,
+  "de": "das Pestizid",
+  "tr": "tarım ilacı, pestisit",
+  "deBeispiel": "Der Einsatz bestimmter Pestizide ist in der EU inzwischen verboten.",
+  "gsw": "Peschtizid",
+  "gswArtikel": "s",
+  "gswBeispiel": "De Iisatz vo bschtimmte Peschtizid isch i de EU inzwüsche verbote."
+ },
+ {
+  "id": 4383,
+  "de": "das Pflanzenschutzmittel",
+  "tr": "bitki koruma ilacı, zirai ilaç",
+  "deBeispiel": "Neue Pflanzenschutzmittel müssen ein langes Zulassungsverfahren durchlaufen.",
+  "gsw": "Pflanzeschutzmittel",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nöii Pflanzeschutzmittel müend es langs Zuelassigsverfahre durelaufe."
+ },
+ {
+  "id": 4384,
+  "de": "der Schädling",
+  "tr": "zararlı, haşere",
+  "deBeispiel": "Ein einziger Schädling kann die halbe Ernte vernichten.",
+  "gsw": "Schädling",
+  "gswArtikel": "de",
+  "gswBeispiel": "En einzige Schädling cha di halb Ärnt vernichte."
+ },
+ {
+  "id": 4385,
+  "de": "das Unkraut",
+  "tr": "yabani ot",
+  "deBeispiel": "Auf dem Bioacker wird das Unkraut mechanisch entfernt.",
+  "gsw": "Unchruut",
+  "gswArtikel": "s",
+  "gswBeispiel": "Uf em Bioacker wird s Unchruut mechanisch entfernt."
+ },
+ {
+  "id": 4386,
+  "de": "die Bewässerung",
+  "tr": "sulama",
+  "deBeispiel": "Ohne künstliche Bewässerung wäre hier kein Gemüseanbau möglich.",
+  "gsw": "Bewässerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ohni künschtlichi Bewässerig wär da kein Gmüesaabau möglich."
+ },
+ {
+  "id": 4387,
+  "de": "die Missernte",
+  "tr": "ürün kıtlığı, kötü hasat",
+  "deBeispiel": "Nach der zweiten Missernte in Folge gab der Betrieb auf.",
+  "gsw": "Missärnt",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach de zwäite Missärnt i Folg hät de Betrib ufgää."
+ },
+ {
+  "id": 4388,
+  "de": "die Fruchtfolge",
+  "tr": "ekim nöbeti, münavebe",
+  "deBeispiel": "Eine durchdachte Fruchtfolge hält den Acker über Jahre fruchtbar.",
+  "gsw": "Fruchtfolg",
+  "gswArtikel": "d",
+  "gswBeispiel": "E duredachti Fruchtfolg haltet de Acker über Jaar fruchtbar."
+ },
+ {
+  "id": 4389,
+  "de": "die Monokultur",
+  "tr": "tek ürün tarımı, monokültür",
+  "deBeispiel": "Monokulturen sind besonders anfällig für Krankheiten und Insekten.",
+  "gsw": "Monokultur",
+  "gswArtikel": "d",
+  "gswBeispiel": "Monokulture sind bsunders aafällig für Chrankheite und Insekte."
+ },
+ {
+  "id": 4390,
+  "de": "die Erosion",
+  "tr": "erozyon, aşınma",
+  "deBeispiel": "Hecken am Feldrand schützen die Hänge vor Erosion.",
+  "gsw": "Erosion",
+  "gswArtikel": "d",
+  "gswBeispiel": "Hegge am Fäldrand schützed d Häng vor Erosion."
+ },
+ {
+  "id": 4391,
+  "de": "die Weide",
+  "tr": "mera, otlak",
+  "deBeispiel": "Im Sommer stehen die Kühe den ganzen Tag auf der Weide.",
+  "gsw": "Weid",
+  "gswArtikel": "d",
+  "gswBeispiel": "Im Summer schtönd d Chüe de ganz Tag uf de Weid."
+ },
+ {
+  "id": 4392,
+  "de": "das Tierwohl",
+  "tr": "hayvan refahı",
+  "deBeispiel": "Für mehr Tierwohl wären viele Kunden bereit, mehr zu zahlen.",
+  "gsw": "Tierwohl",
+  "gswArtikel": "s",
+  "gswBeispiel": "Für meh Tierwohl wäred vil Chunde bereit, meh z zale."
+ },
+ {
+  "id": 4393,
+  "de": "die Massentierhaltung",
+  "tr": "endüstriyel hayvancılık, fabrika tipi hayvancılık",
+  "deBeispiel": "Der Film zeigt schonungslos die Zustände in der Massentierhaltung.",
+  "gsw": "Massetierhaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Film zeigt schonigslos d Zueschtänd i de Massetierhaltig."
+ },
+ {
+  "id": 4394,
+  "de": "die Molkerei",
+  "tr": "mandıra, süt fabrikası",
+  "deBeispiel": "Die Molkerei holt die Milch jeden zweiten Tag vom Hof ab.",
+  "gsw": "Molkerei",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Molkerei holt d Milch jede zwäit Tag vom Hof ab."
+ },
+ {
+  "id": 4395,
+  "de": "die Lagerung",
+  "tr": "depolama, saklama",
+  "deBeispiel": "Bei falscher Lagerung verlieren Äpfel schnell ihren Geschmack.",
+  "gsw": "Lagerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi falscher Lagerig verlüred d Öpfel schnäll ire Gschmack."
+ },
+ {
+  "id": 4396,
+  "de": "die Kühlkette",
+  "tr": "soğuk zincir",
+  "deBeispiel": "Wird die Kühlkette unterbrochen, ist die Ware nicht mehr sicher.",
+  "gsw": "Chüelchetti",
+  "gswArtikel": "d",
+  "gswBeispiel": "Wird d Chüelchetti unterbroche, isch d Waar nüme sicher."
+ },
+ {
+  "id": 4397,
+  "de": "der Zusatzstoff",
+  "tr": "katkı maddesi",
+  "deBeispiel": "Das Produkt kommt ganz ohne künstliche Zusatzstoffe aus.",
+  "gsw": "Zuesatzschtoff",
+  "gswArtikel": "de",
+  "gswBeispiel": "S Produkt chunt ganz ohni künschtlichi Zuesatzschtoff us."
+ },
+ {
+  "id": 4398,
+  "de": "der Rückruf",
+  "tr": "geri çağırma, ürün toplatma",
+  "deBeispiel": "Der Hersteller startete einen Rückruf für mehrere Chargen Käse.",
+  "gsw": "Rückruef",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Herschteller hät en Rückruef für mehreri Charge Chäs gschtartet."
+ },
+ {
+  "id": 4399,
+  "de": "der Geschmacksverstärker",
+  "tr": "tat arttırıcı, lezzet arttırıcı",
+  "deBeispiel": "In der Fertigsuppe stecken gleich mehrere Geschmacksverstärker.",
+  "gsw": "Gschmacksverschtärker",
+  "gswArtikel": "de",
+  "gswBeispiel": "I de Fertigsuppe schtecked grad mehreri Gschmacksverschtärker."
+ },
+ {
+  "id": 4400,
+  "de": "die Mangelernährung",
+  "tr": "yetersiz beslenme",
+  "deBeispiel": "Auch in reichen Ländern leiden alte Menschen an Mangelernährung.",
+  "gsw": "Mangelernährig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Au i riiche Länder liided alti Mäntsche a Mangelernährig."
+ },
+ {
+  "id": 4401,
+  "de": "die Unverträglichkeit",
+  "tr": "intolerans, tahammülsüzlük",
+  "deBeispiel": "Bei einer Unverträglichkeit muss man die Zutatenliste genau lesen.",
+  "gsw": "Unverträglichkeit",
+  "gswArtikel": "d",
+  "gswBeispiel": "Bi ere Unverträglichkeit mues mer d Zuetateliste genau läse."
+ },
+ {
+  "id": 4402,
+  "de": "das Allergen",
+  "tr": "alerjen",
+  "deBeispiel": "Die vierzehn wichtigsten Allergene müssen auf der Karte stehen.",
+  "gsw": "Allergen",
+  "gswArtikel": "s",
+  "gswBeispiel": "Di vierzäh wichtigschte Allergene müend uf de Charte schtaa."
+ },
+ {
+  "id": 4403,
+  "de": "der Ertrag",
+  "tr": "verim, ürün miktarı, getiri",
+  "deBeispiel": "Trotz der Trockenheit lag der Ertrag über dem Durchschnitt.",
+  "gsw": "Ertrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Trotz de Trochni isch de Ertrag über em Durchschnitt gläge."
+ },
+ {
+  "id": 4404,
+  "de": "das Saatgut",
+  "tr": "tohumluk, tohum",
+  "deBeispiel": "Das Saatgut stammt aus einer regionalen Vermehrung.",
+  "gsw": "Saatguet",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Saatguet chunt us ere regionale Vermehrig."
+ },
+ {
+  "id": 4405,
+  "de": "schlachten",
+  "tr": "kesmek, boğazlamak",
+  "deBeispiel": "Die Tiere werden erst in einem Betrieb weiter weg geschlachtet.",
+  "gsw": "schlachte",
+  "gswArtikel": null,
+  "gswBeispiel": "D Tier werded erscht i eme Betrib wiiter wäg gschlachtet."
+ },
+ {
+  "id": 4406,
+  "de": "melken",
+  "tr": "sağmak",
+  "deBeispiel": "Heute werden die Kühe von einem Roboter gemolken.",
+  "gsw": "mälche",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt tuet en Roboter d Chüe mälche."
+ },
+ {
+  "id": 4407,
+  "de": "verarbeiten",
+  "tr": "işlemek, işleyip ürüne dönüştürmek",
+  "deBeispiel": "Der Hof verarbeitet die Milch selbst zu Käse und Joghurt.",
+  "gsw": "verarbeite",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hof verarbeitet d Milch sälber zu Chäs und Joghurt."
+ },
+ {
+  "id": 4408,
+  "de": "konservieren",
+  "tr": "muhafaza etmek, konserve yapmak",
+  "deBeispiel": "Früher konservierte man Gemüse vor allem mit Salz.",
+  "gsw": "konserviere",
+  "gswArtikel": null,
+  "gswBeispiel": "Früener hät mer s Gmües vor allem mit Salz konserviert."
+ },
+ {
+  "id": 4409,
+  "de": "verderben",
+  "tr": "bozulmak, çürümek",
+  "deBeispiel": "Bei dieser Hitze verdirbt das Fleisch innerhalb weniger Stunden.",
+  "gsw": "verderbe",
+  "gswArtikel": null,
+  "gswBeispiel": "Bi dere Hitz verderbt s Fläisch innerhalb vo weniger Schtund."
+ },
+ {
+  "id": 4410,
+  "de": "wegwerfen",
+  "tr": "atmak, çöpe atmak",
+  "deBeispiel": "Jeder Haushalt wirft im Jahr rund achtzig Kilo Essen weg.",
+  "gsw": "wägwerfe",
+  "gswArtikel": null,
+  "gswBeispiel": "Jede Huushalt tuet im Jaar rund achtzg Kilo Ässe wägwerfe."
+ }
+]

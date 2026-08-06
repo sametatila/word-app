@@ -1,0 +1,1009 @@
+[
+ {
+  "id": 7535,
+  "de": "charmant",
+  "tr": "sevimli, cana yakın, hoş sohbet",
+  "deBeispiel": "Der Kellner war sehr charmant zu den Gästen.",
+  "gsw": "charmant",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kellner isch sehr charmant zu de Gescht gsii."
+ },
+ {
+  "id": 7536,
+  "de": "attraktiv",
+  "tr": "çekici, alımlı",
+  "deBeispiel": "Sie findet ihren neuen Kollegen sehr attraktiv.",
+  "gsw": "attraktiv",
+  "gswArtikel": null,
+  "gswBeispiel": "Si findet ire nöi Kolleg sehr attraktiv."
+ },
+ {
+  "id": 7537,
+  "de": "nachdenklich",
+  "tr": "düşünceli, dalgın",
+  "deBeispiel": "Nach dem Gespräch war mein Vater sehr nachdenklich.",
+  "gsw": "naadänklich",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Gschpröch isch min Vatter sehr naadänklich gsii."
+ },
+ {
+  "id": 7538,
+  "de": "sanft",
+  "tr": "yumuşak, nazik",
+  "deBeispiel": "Die Krankenschwester hat eine sanfte Stimme.",
+  "gsw": "sanft",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chrankeschwöschter hät e sanfti Schtimm."
+ },
+ {
+  "id": 7539,
+  "de": "liebevoll",
+  "tr": "sevecen, şefkatli",
+  "deBeispiel": "Meine Großmutter war immer sehr liebevoll.",
+  "gsw": "liebevoll",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Grossmueter isch immer sehr liebevoll gsii."
+ },
+ {
+  "id": 7540,
+  "de": "zärtlich",
+  "tr": "şefkatli, nazik (dokunuş, ses)",
+  "deBeispiel": "Er nahm sie zärtlich in den Arm.",
+  "gsw": "zärtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät si zärtlich i d Ärm gnaa."
+ },
+ {
+  "id": 7541,
+  "de": "humorvoll",
+  "tr": "esprili, mizah dolu",
+  "deBeispiel": "Unser Trainer ist ein humorvoller Mensch.",
+  "gsw": "humorvoll",
+  "gswArtikel": null,
+  "gswBeispiel": "Öise Trainer isch en humorvolle Mäntsch."
+ },
+ {
+  "id": 7542,
+  "de": "motiviert",
+  "tr": "motive, istekli",
+  "deBeispiel": "Die neue Praktikantin ist sehr motiviert.",
+  "gsw": "motiviert",
+  "gswArtikel": null,
+  "gswBeispiel": "D nöi Praktikantin isch sehr motiviert."
+ },
+ {
+  "id": 7543,
+  "de": "pessimistisch",
+  "tr": "karamsar",
+  "deBeispiel": "Warum bist du immer so pessimistisch?",
+  "gsw": "pessimistisch",
+  "gswArtikel": null,
+  "gswBeispiel": "Warum bisch du immer so pessimistisch?"
+ },
+ {
+  "id": 7544,
+  "de": "überrascht",
+  "tr": "şaşkın, şaşırmış",
+  "deBeispiel": "Ich war überrascht, dich hier zu sehen.",
+  "gsw": "überrascht",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi überrascht gsii, dich da z gsee."
+ },
+ {
+  "id": 7545,
+  "de": "erstaunt",
+  "tr": "hayret etmiş, şaşırmış",
+  "deBeispiel": "Alle waren erstaunt über sein gutes Deutsch.",
+  "gsw": "erschtuunt",
+  "gswArtikel": null,
+  "gswBeispiel": "Alli sind erschtuunt gsii über sis guet Tüütsch."
+ },
+ {
+  "id": 7546,
+  "de": "besorgt",
+  "tr": "endişeli, kaygılı",
+  "deBeispiel": "Die Eltern sind besorgt um ihren kranken Sohn.",
+  "gsw": "bsorgt",
+  "gswArtikel": null,
+  "gswBeispiel": "D Elterne sind bsorgt um ire chrank Suhn."
+ },
+ {
+  "id": 7547,
+  "de": "enttäuscht",
+  "tr": "hayal kırıklığına uğramış",
+  "deBeispiel": "Ich bin enttäuscht, weil du nicht gekommen bist.",
+  "gsw": "enttüüscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi enttüüscht, wil du nöd cho bisch."
+ },
+ {
+  "id": 7548,
+  "de": "aufgeregt",
+  "tr": "heyecanlı, telaşlı",
+  "deBeispiel": "Vor der Prüfung war ich sehr aufgeregt.",
+  "gsw": "ufgregt",
+  "gswArtikel": null,
+  "gswBeispiel": "Vor de Prüefig bin ich sehr ufgregt gsii."
+ },
+ {
+  "id": 7549,
+  "de": "verwirrt",
+  "tr": "kafası karışmış, şaşkın",
+  "deBeispiel": "Nach der langen Erklärung war ich völlig verwirrt.",
+  "gsw": "verwirrt",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de lange Erklärig bin ich völlig verwirrt gsii."
+ },
+ {
+  "id": 7550,
+  "de": "verärgert",
+  "tr": "kızgın, canı sıkkın",
+  "deBeispiel": "Der Kunde war über die späte Lieferung verärgert.",
+  "gsw": "verärgeret",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kund isch über di spaat Lieferig verärgeret gsii."
+ },
+ {
+  "id": 7551,
+  "de": "beleidigt",
+  "tr": "gücenmiş, alınmış",
+  "deBeispiel": "Sie ist beleidigt, weil ich ihre Frisur nicht gelobt habe.",
+  "gsw": "beleidiget",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch beleidiget, wil ich ire Frisur nöd globt ha."
+ },
+ {
+  "id": 7552,
+  "de": "entspannt",
+  "tr": "rahatlamış, sakin",
+  "deBeispiel": "Nach dem Urlaub sieht er sehr entspannt aus.",
+  "gsw": "entschpannt",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Ferie gseht er sehr entschpannt us."
+ },
+ {
+  "id": 7553,
+  "de": "erleichtert",
+  "tr": "içi rahatlamış, ferahlamış",
+  "deBeispiel": "Ich war erleichtert, als der Arzt anrief.",
+  "gsw": "erliichteret",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich bi erliichteret gsii, wo de Arzt aaglüüte hät."
+ },
+ {
+  "id": 7554,
+  "de": "gestresst",
+  "tr": "stresli",
+  "deBeispiel": "Meine Kollegin ist diese Woche total gestresst.",
+  "gsw": "gschtresst",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Kollegin isch die Wuche total gschtresst."
+ },
+ {
+  "id": 7555,
+  "de": "gelangweilt",
+  "tr": "canı sıkkın, sıkılmış",
+  "deBeispiel": "Die Kinder saßen gelangweilt im Wartezimmer.",
+  "gsw": "glangwiilt",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chind sind glangwiilt im Wartzimmer gsässe."
+ },
+ {
+  "id": 7556,
+  "de": "schläfrig",
+  "tr": "uykulu",
+  "deBeispiel": "Nach dem Mittagessen werde ich immer schläfrig.",
+  "gsw": "schlöfrig",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Zmittag wird ich immer schlöfrig."
+ },
+ {
+  "id": 7557,
+  "de": "unglücklich",
+  "tr": "mutsuz",
+  "deBeispiel": "In seinem alten Job war er sehr unglücklich.",
+  "gsw": "unglücklich",
+  "gswArtikel": null,
+  "gswBeispiel": "I sim alte Job isch er sehr unglücklich gsii."
+ },
+ {
+  "id": 7558,
+  "de": "unzufrieden",
+  "tr": "hoşnutsuz, memnuniyetsiz",
+  "deBeispiel": "Der Gast war mit dem Zimmer unzufrieden.",
+  "gsw": "unzfride",
+  "gswArtikel": null,
+  "gswBeispiel": "De Gascht isch mit em Zimmer unzfride gsii."
+ },
+ {
+  "id": 7559,
+  "de": "ungerecht",
+  "tr": "adaletsiz, haksız",
+  "deBeispiel": "Der Chef behandelt die Praktikanten ungerecht.",
+  "gsw": "ungrächt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chef behandlet d Praktikante ungrächt."
+ },
+ {
+  "id": 7560,
+  "de": "verlobt",
+  "tr": "nişanlı",
+  "deBeispiel": "Meine Schwester ist seit einem Jahr verlobt.",
+  "gsw": "verlobt",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Schwöschter isch sit eme Jaar verlobt."
+ },
+ {
+  "id": 7561,
+  "de": "verwitwet",
+  "tr": "dul",
+  "deBeispiel": "Meine Nachbarin ist seit zehn Jahren verwitwet.",
+  "gsw": "verwitwet",
+  "gswArtikel": null,
+  "gswBeispiel": "Mini Nochberin isch sit zää Jaar verwitwet."
+ },
+ {
+  "id": 7562,
+  "de": "minderjährig",
+  "tr": "reşit olmayan",
+  "deBeispiel": "Minderjährige Kinder dürfen keinen Alkohol kaufen.",
+  "gsw": "minderjäärig",
+  "gswArtikel": null,
+  "gswBeispiel": "Minderjäärigi Chind dörfed kein Alkohol chaufe."
+ },
+ {
+  "id": 7563,
+  "de": "volljährig",
+  "tr": "reşit",
+  "deBeispiel": "In Deutschland ist man mit 18 Jahren volljährig.",
+  "gsw": "volljäärig",
+  "gswArtikel": null,
+  "gswBeispiel": "I Tüütschland isch mer mit 18 Jaar volljäärig."
+ },
+ {
+  "id": 7564,
+  "de": "jugendlich",
+  "tr": "genç, gençlere özgü",
+  "deBeispiel": "Mit sechzig hat er noch ein jugendliches Aussehen.",
+  "gsw": "jugendlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Mit sächzg hät er no es jugendlichs Uussee."
+ },
+ {
+  "id": 7565,
+  "de": "unerfahren",
+  "tr": "deneyimsiz, tecrübesiz",
+  "deBeispiel": "Der neue Fahrer ist noch sehr unerfahren.",
+  "gsw": "unerfaare",
+  "gswArtikel": null,
+  "gswBeispiel": "De nöi Fahrer isch no sehr unerfaare."
+ },
+ {
+  "id": 7566,
+  "de": "pensioniert",
+  "tr": "emekli olmuş, emekliye ayrılmış",
+  "deBeispiel": "Mein Onkel ist seit zwei Jahren pensioniert.",
+  "gsw": "pensioniert",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Unggle isch sit zwäi Jaar pensioniert."
+ },
+ {
+  "id": 7567,
+  "de": "behindert",
+  "tr": "engelli",
+  "deBeispiel": "Der Platz vorne ist für behinderte Fahrgäste.",
+  "gsw": "behinderet",
+  "gswArtikel": null,
+  "gswBeispiel": "De Platz vorne isch für Fahrgescht, wo behinderet sind."
+ },
+ {
+  "id": 7568,
+  "de": "befreundet",
+  "tr": "arkadaş olan, dost",
+  "deBeispiel": "Wir sind seit der Schulzeit befreundet.",
+  "gsw": "befründet",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sind sit de Schuelziit befründet."
+ },
+ {
+  "id": 7569,
+  "de": "vertraut",
+  "tr": "tanıdık, alışık",
+  "deBeispiel": "Seine Stimme kam mir sofort vertraut vor.",
+  "gsw": "vertraut",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Schtimm isch mer sofort vertraut vorcho."
+ },
+ {
+  "id": 7570,
+  "de": "künftig",
+  "tr": "bundan sonra, ileride",
+  "deBeispiel": "Künftig arbeite ich nur noch vier Tage pro Woche.",
+  "gsw": "künftig",
+  "gswArtikel": null,
+  "gswBeispiel": "Künftig schaffe ich nur no vier Täg pro Wuche."
+ },
+ {
+  "id": 7571,
+  "de": "demnächst",
+  "tr": "yakında, çok yakında",
+  "deBeispiel": "Der neue Supermarkt öffnet demnächst.",
+  "gsw": "demnächscht",
+  "gswArtikel": null,
+  "gswBeispiel": "De nöi Supermarkt macht demnächscht uf."
+ },
+ {
+  "id": 7572,
+  "de": "bislang",
+  "tr": "şimdiye kadar, bugüne dek",
+  "deBeispiel": "Bislang habe ich keine Antwort bekommen.",
+  "gsw": "bislang",
+  "gswArtikel": null,
+  "gswBeispiel": "Bislang han ich kei Antwort überchoo."
+ },
+ {
+  "id": 7573,
+  "de": "davor",
+  "tr": "ondan önce, öncesinde",
+  "deBeispiel": "Um acht beginnt der Kurs, davor trinke ich einen Kaffee.",
+  "gsw": "devor",
+  "gswArtikel": null,
+  "gswBeispiel": "Am achti faat de Kurs aa, devor trink ich en Kaffi."
+ },
+ {
+  "id": 7574,
+  "de": "zuvor",
+  "tr": "daha önce, önceden",
+  "deBeispiel": "Wir hatten uns nie zuvor gesehen.",
+  "gsw": "zuvor",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ öis nie zuvor gsee."
+ },
+ {
+  "id": 7575,
+  "de": "anschließend",
+  "tr": "ardından, hemen sonra",
+  "deBeispiel": "Wir essen zuerst, anschließend gehen wir ins Kino.",
+  "gsw": "anschliessend",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir ässed zerscht, anschliessend gönd mir is Kino."
+ },
+ {
+  "id": 7576,
+  "de": "frühestens",
+  "tr": "en erken",
+  "deBeispiel": "Der Arzt hat frühestens am Freitag einen Termin frei.",
+  "gsw": "früeschtens",
+  "gswArtikel": null,
+  "gswBeispiel": "De Arzt hät früeschtens am Friitig en Termin frei."
+ },
+ {
+  "id": 7577,
+  "de": "neuerdings",
+  "tr": "son zamanlarda, yeni yeni",
+  "deBeispiel": "Neuerdings fährt mein Vater mit dem Fahrrad zur Arbeit.",
+  "gsw": "nöierdings",
+  "gswArtikel": null,
+  "gswBeispiel": "Nöierdings faart min Vatter mit em Velo zur Arbet."
+ },
+ {
+  "id": 7578,
+  "de": "seither",
+  "tr": "o zamandan beri",
+  "deBeispiel": "Sie ist letztes Jahr umgezogen und seither sehen wir uns selten.",
+  "gsw": "sithär",
+  "gswArtikel": null,
+  "gswBeispiel": "Si isch letscht Jaar umzoge und sithär gsehnd mir öis sälte.",
+  "ayniLehce": [
+   "seitdem (B1)"
+  ]
+ },
+ {
+  "id": 7579,
+  "de": "zwischendurch",
+  "tr": "arada bir, arada sırada",
+  "deBeispiel": "Ich lerne drei Stunden und mache zwischendurch eine Pause.",
+  "gsw": "zwüschedure",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich lerne drei Schtund und mache zwüschedure e Pause."
+ },
+ {
+  "id": 7580,
+  "de": "momentan",
+  "tr": "şu anda, şimdilik",
+  "deBeispiel": "Momentan habe ich leider kein Geld für ein Auto.",
+  "gsw": "momentan",
+  "gswArtikel": null,
+  "gswBeispiel": "Momentan han ich läider kei Gäld für es Auto."
+ },
+ {
+  "id": 7581,
+  "de": "derzeit",
+  "tr": "şu sıralar, hâlihazırda",
+  "deBeispiel": "Derzeit sucht die Firma zwei neue Mitarbeiter.",
+  "gsw": "derziit",
+  "gswArtikel": null,
+  "gswBeispiel": "Derziit suecht d Firma zwäi nöii Mitarbeiter."
+ },
+ {
+  "id": 7582,
+  "de": "tagsüber",
+  "tr": "gündüzleri, gün boyunca",
+  "deBeispiel": "Tagsüber ist niemand zu Hause.",
+  "gsw": "tagsüber",
+  "gswArtikel": null,
+  "gswBeispiel": "Tagsüber isch niemert dihei."
+ },
+ {
+  "id": 7583,
+  "de": "vorerst",
+  "tr": "şimdilik, geçici olarak",
+  "deBeispiel": "Wir bleiben vorerst in der alten Wohnung.",
+  "gsw": "vorerscht",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir bliibed vorerscht i de alte Wonig."
+ },
+ {
+  "id": 7584,
+  "de": "zeitweise",
+  "tr": "zaman zaman, bir süreliğine",
+  "deBeispiel": "Die Straße ist zeitweise gesperrt.",
+  "gsw": "ziitwiis",
+  "gswArtikel": null,
+  "gswBeispiel": "D Schtraass isch ziitwiis gschperrt."
+ },
+ {
+  "id": 7585,
+  "de": "jahrelang",
+  "tr": "yıllarca",
+  "deBeispiel": "Er hat jahrelang in der Schweiz gearbeitet.",
+  "gsw": "jaarelang",
+  "gswArtikel": null,
+  "gswBeispiel": "Er hät jaarelang i de Schwiiz gschaffet."
+ },
+ {
+  "id": 7586,
+  "de": "stundenlang",
+  "tr": "saatlerce",
+  "deBeispiel": "Wir haben stundenlang auf den Zug gewartet.",
+  "gsw": "schtundelang",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ schtundelang uf de Zug gwartet."
+ },
+ {
+  "id": 7587,
+  "de": "tagelang",
+  "tr": "günlerce",
+  "deBeispiel": "Es hat tagelang geregnet.",
+  "gsw": "tagelang",
+  "gswArtikel": null,
+  "gswBeispiel": "Es hät tagelang grägnet."
+ },
+ {
+  "id": 7588,
+  "de": "monatelang",
+  "tr": "aylarca",
+  "deBeispiel": "Sie hat monatelang eine Wohnung gesucht.",
+  "gsw": "monetelang",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät monetelang e Wonig gsuecht."
+ },
+ {
+  "id": 7589,
+  "de": "morgens",
+  "tr": "sabahları",
+  "deBeispiel": "Morgens trinke ich immer einen Tee.",
+  "gsw": "morgens",
+  "gswArtikel": null,
+  "gswBeispiel": "Morgens trink ich immer en Tee."
+ },
+ {
+  "id": 7590,
+  "de": "abends",
+  "tr": "akşamları",
+  "deBeispiel": "Abends bin ich meistens zu müde zum Kochen.",
+  "gsw": "aabigs",
+  "gswArtikel": null,
+  "gswBeispiel": "Aabigs bin ich meischtens z müed zum Choche."
+ },
+ {
+  "id": 7591,
+  "de": "mittags",
+  "tr": "öğlenleri",
+  "deBeispiel": "Mittags esse ich in der Kantine.",
+  "gsw": "mittags",
+  "gswArtikel": null,
+  "gswBeispiel": "Mittags ässe ich i de Kantine."
+ },
+ {
+  "id": 7592,
+  "de": "nachts",
+  "tr": "geceleri",
+  "deBeispiel": "Nachts ist es hier sehr ruhig.",
+  "gsw": "nachts",
+  "gswArtikel": null,
+  "gswBeispiel": "Nachts isch es da sehr ruhig."
+ },
+ {
+  "id": 7593,
+  "de": "sonntags",
+  "tr": "pazarları, pazar günleri",
+  "deBeispiel": "Sonntags haben die Geschäfte geschlossen.",
+  "gsw": "sunntigs",
+  "gswArtikel": null,
+  "gswBeispiel": "Sunntigs händ d Gschäft zue."
+ },
+ {
+  "id": 7594,
+  "de": "gelegentlich",
+  "tr": "ara sıra, fırsat buldukça",
+  "deBeispiel": "Gelegentlich gehen wir zusammen schwimmen.",
+  "gsw": "gelegentlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Gelegentlich gönd mir zäme schwümme."
+ },
+ {
+  "id": 7595,
+  "de": "mehrmals",
+  "tr": "birkaç kez, defalarca",
+  "deBeispiel": "Ich habe dich mehrmals angerufen.",
+  "gsw": "mehrmals",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich han dir mehrmals aaglüüte."
+ },
+ {
+  "id": 7596,
+  "de": "mehrfach",
+  "tr": "birden çok kez, tekrar tekrar",
+  "deBeispiel": "Das Formular wurde mehrfach kontrolliert.",
+  "gsw": "mehrfach",
+  "gswArtikel": null,
+  "gswBeispiel": "S Formular isch mehrfach kontrolliert worde."
+ },
+ {
+  "id": 7597,
+  "de": "wiederholt",
+  "tr": "defalarca, üst üste",
+  "deBeispiel": "Der Nachbar hat sich wiederholt über den Lärm beschwert.",
+  "gsw": "widerholt",
+  "gswArtikel": null,
+  "gswBeispiel": "De Nochber hät sich widerholt über de Lärm bschwärt."
+ },
+ {
+  "id": 7598,
+  "de": "stets",
+  "tr": "daima, her zaman",
+  "deBeispiel": "Der Chef ist stets freundlich zu den Kunden.",
+  "gsw": "schtets",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chef isch schtets fründlich zu de Chunde."
+ },
+ {
+  "id": 7599,
+  "de": "andauernd",
+  "tr": "sürekli, ha bire",
+  "deBeispiel": "Mein Handy klingelt andauernd.",
+  "gsw": "anduurend",
+  "gswArtikel": null,
+  "gswBeispiel": "Mis Händi lüütet anduurend."
+ },
+ {
+  "id": 7600,
+  "de": "ausnahmsweise",
+  "tr": "istisna olarak, bir kereliğine",
+  "deBeispiel": "Heute darfst du ausnahmsweise länger fernsehen.",
+  "gsw": "usnahmswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "Hüt dörfsch du usnahmswiis länger fernsee."
+ },
+ {
+  "id": 7601,
+  "de": "vollkommen",
+  "tr": "tamamen, büsbütün",
+  "deBeispiel": "Nach dem Umzug war ich vollkommen erschöpft.",
+  "gsw": "vollkomme",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach em Umzug bin ich vollkomme erschöpft gsii."
+ },
+ {
+  "id": 7602,
+  "de": "äußerst",
+  "tr": "son derece, aşırı",
+  "deBeispiel": "Die Prüfung war äußerst schwer.",
+  "gsw": "üsserscht",
+  "gswArtikel": null,
+  "gswBeispiel": "D Prüefig isch üsserscht schwär gsii."
+ },
+ {
+  "id": 7603,
+  "de": "einigermaßen",
+  "tr": "az çok, idare eder ölçüde",
+  "deBeispiel": "Ich spreche einigermaßen gut Deutsch.",
+  "gsw": "einigermasse",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich rede einigermasse guet Tüütsch."
+ },
+ {
+  "id": 7604,
+  "de": "genügend",
+  "tr": "yeterince, kâfi miktarda",
+  "deBeispiel": "Wir haben genügend Stühle für alle Gäste.",
+  "gsw": "gnueg",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir händ gnueg Schtüel für alli Gescht.",
+  "ayniLehce": [
+   "genug (A1)",
+   "ausreichend (B1)"
+  ]
+ },
+ {
+  "id": 7605,
+  "de": "teilweise",
+  "tr": "kısmen",
+  "deBeispiel": "Die Rechnung wurde nur teilweise bezahlt.",
+  "gsw": "teilwiis",
+  "gswArtikel": null,
+  "gswBeispiel": "D Rächnig isch nur teilwiis zalt worde."
+ },
+ {
+  "id": 7606,
+  "de": "halbwegs",
+  "tr": "şöyle böyle, az çok",
+  "deBeispiel": "Das Zimmer ist jetzt halbwegs sauber.",
+  "gsw": "halbwägs",
+  "gswArtikel": null,
+  "gswBeispiel": "S Zimmer isch jetz halbwägs suuber."
+ },
+ {
+  "id": 7607,
+  "de": "größtenteils",
+  "tr": "büyük ölçüde, çoğunlukla",
+  "deBeispiel": "Die Arbeit ist größtenteils fertig.",
+  "gsw": "gröschteteils",
+  "gswArtikel": null,
+  "gswBeispiel": "D Arbet isch gröschteteils fertig."
+ },
+ {
+  "id": 7608,
+  "de": "etliche",
+  "tr": "epeyce, birçok",
+  "deBeispiel": "Auf dem Markt gab es etliche gute Angebote.",
+  "gsw": "etlichi",
+  "gswArtikel": null,
+  "gswBeispiel": "Uf em Märt hät's etlichi gueti Angebot gha."
+ },
+ {
+  "id": 7609,
+  "de": "hauptsächlich",
+  "tr": "başlıca, esas olarak",
+  "deBeispiel": "Ich esse hauptsächlich Gemüse und Obst.",
+  "gsw": "hauptsächlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ässe hauptsächlich Gmües und Obscht."
+ },
+ {
+  "id": 7610,
+  "de": "insbesondere",
+  "tr": "özellikle, bilhassa",
+  "deBeispiel": "Der Kurs hilft insbesondere den Anfängern.",
+  "gsw": "insbesondere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs hilft insbesondere de Aafänger."
+ },
+ {
+  "id": 7611,
+  "de": "erstens",
+  "tr": "birincisi, ilk olarak",
+  "deBeispiel": "Erstens ist die Wohnung zu teuer, zweitens ist sie zu klein.",
+  "gsw": "erschtens",
+  "gswArtikel": null,
+  "gswBeispiel": "Erschtens isch d Wonig z tüür, zwöitens isch si z chlii."
+ },
+ {
+  "id": 7612,
+  "de": "zweitens",
+  "tr": "ikincisi",
+  "deBeispiel": "Zweitens brauchen wir noch einen Tisch für die Küche.",
+  "gsw": "zwöitens",
+  "gswArtikel": null,
+  "gswBeispiel": "Zwöitens bruuched mir no en Tisch für d Chuchi."
+ },
+ {
+  "id": 7613,
+  "de": "drittens",
+  "tr": "üçüncüsü",
+  "deBeispiel": "Drittens sollten wir früher losfahren.",
+  "gsw": "drittens",
+  "gswArtikel": null,
+  "gswBeispiel": "Drittens sötted mir früener losfaare."
+ },
+ {
+  "id": 7614,
+  "de": "daraufhin",
+  "tr": "bunun üzerine",
+  "deBeispiel": "Ich habe mich beschwert, daraufhin hat die Firma das Geld zurückgezahlt.",
+  "gsw": "druufhi",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha mich bschwärt, druufhi hät d Firma s Gäld zruggzalt."
+ },
+ {
+  "id": 7615,
+  "de": "letztlich",
+  "tr": "sonuçta, nihayetinde",
+  "deBeispiel": "Letztlich haben wir uns für das kleine Auto entschieden.",
+  "gsw": "letschtlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Letschtlich händ mir öis für s chlii Auto entschide."
+ },
+ {
+  "id": 7616,
+  "de": "noch mal",
+  "tr": "bir daha, tekrar",
+  "deBeispiel": "Kannst du das bitte nochmal erklären?",
+  "gsw": "nomal",
+  "gswArtikel": null,
+  "gswBeispiel": "Chasch du das bitte nomal erkläre?"
+ },
+ {
+  "id": 7617,
+  "de": "erneut",
+  "tr": "yeniden, tekrardan",
+  "deBeispiel": "Der Bus hatte erneut Verspätung.",
+  "gsw": "erneut",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bus hät erneut Verschpötig gha."
+ },
+ {
+  "id": 7618,
+  "de": "irgendwo",
+  "tr": "bir yerde, herhangi bir yerde",
+  "deBeispiel": "Mein Schlüssel muss irgendwo in der Tasche sein.",
+  "gsw": "irgendwo",
+  "gswArtikel": null,
+  "gswBeispiel": "Min Schlüssel mues irgendwo i de Täsche sii."
+ },
+ {
+  "id": 7619,
+  "de": "irgendwie",
+  "tr": "bir şekilde, nasılsa",
+  "deBeispiel": "Wir schaffen das irgendwie bis Freitag.",
+  "gsw": "irgendwie",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir schaffed das irgendwie bis am Friitig."
+ },
+ {
+  "id": 7620,
+  "de": "entweder",
+  "tr": "ya (… ya da)",
+  "deBeispiel": "Wir fahren entweder mit dem Zug oder mit dem Bus.",
+  "gsw": "entweder",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir faared entweder mit em Zug oder mit em Bus."
+ },
+ {
+  "id": 7621,
+  "de": "weder",
+  "tr": "ne (… ne de)",
+  "deBeispiel": "Ich habe weder Zeit noch Lust.",
+  "gsw": "weder",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich ha weder Ziit no Luscht."
+ },
+ {
+  "id": 7622,
+  "de": "sowohl",
+  "tr": "hem (… hem de)",
+  "deBeispiel": "Sie spricht sowohl Türkisch als auch Deutsch.",
+  "gsw": "sowohl",
+  "gswArtikel": null,
+  "gswBeispiel": "Si redt sowohl Türkisch als au Tüütsch."
+ },
+ {
+  "id": 7623,
+  "de": "sowie",
+  "tr": "ve ayrıca, ile birlikte",
+  "deBeispiel": "Bitte bringen Sie Ihren Ausweis sowie ein Foto mit.",
+  "gsw": "sowie",
+  "gswArtikel": null,
+  "gswBeispiel": "Bitte bringed Si Ihre Uswiis sowie es Foto mit."
+ },
+ {
+  "id": 7624,
+  "de": "beziehungsweise",
+  "tr": "ya da, daha doğrusu",
+  "deBeispiel": "Der Kurs kostet 80 beziehungsweise 60 Euro für Studenten.",
+  "gsw": "beziehigswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "De Kurs koschtet 80 beziehigswiis 60 Euro für Schtudänte."
+ },
+ {
+  "id": 7625,
+  "de": "anstatt",
+  "tr": "yerine",
+  "deBeispiel": "Anstatt zu lernen, hat er den ganzen Tag gespielt.",
+  "gsw": "anschtatt",
+  "gswArtikel": null,
+  "gswBeispiel": "Anschtatt z lerne, hät er de ganz Tag gschpilt."
+ },
+ {
+  "id": 7626,
+  "de": "desto",
+  "tr": "o kadar (je … desto: ne kadar … o kadar)",
+  "deBeispiel": "Je früher wir losfahren, desto weniger Verkehr haben wir.",
+  "gsw": "deschto",
+  "gswArtikel": null,
+  "gswBeispiel": "Je früener mir losfaared, deschto weniger Verchehr händ mir."
+ },
+ {
+  "id": 7627,
+  "de": "oberhalb",
+  "tr": "üstünde, yukarısında",
+  "deBeispiel": "Das Restaurant liegt oberhalb des Sees.",
+  "gsw": "oberhalb",
+  "gswArtikel": null,
+  "gswBeispiel": "S Restaurant lit oberhalb vom See."
+ },
+ {
+  "id": 7628,
+  "de": "unterhalb",
+  "tr": "altında, aşağısında",
+  "deBeispiel": "Unterhalb der Brücke gibt es einen Parkplatz.",
+  "gsw": "underhalb",
+  "gswArtikel": null,
+  "gswBeispiel": "Underhalb vo de Brugg hät's en Parkplatz."
+ },
+ {
+  "id": 7629,
+  "de": "aufgrund",
+  "tr": "nedeniyle, dolayısıyla",
+  "deBeispiel": "Aufgrund des Schnees fällt der Unterricht aus.",
+  "gsw": "ufgrund",
+  "gswArtikel": null,
+  "gswBeispiel": "Ufgrund vom Schnee fallt de Underricht us."
+ },
+ {
+  "id": 7630,
+  "de": "mithilfe",
+  "tr": "yardımıyla, sayesinde",
+  "deBeispiel": "Mithilfe einer App finde ich jede Adresse.",
+  "gsw": "mithilf",
+  "gswArtikel": null,
+  "gswBeispiel": "Mithilf vo ere App find ich jedi Adrässe."
+ },
+ {
+  "id": 7631,
+  "de": "zudem",
+  "tr": "ayrıca, üstelik",
+  "deBeispiel": "Die Wohnung ist günstig, zudem liegt sie sehr zentral.",
+  "gsw": "zudäm",
+  "gswArtikel": null,
+  "gswBeispiel": "D Wonig isch günschtig, zudäm liit si sehr zäntral."
+ },
+ {
+  "id": 7632,
+  "de": "darum",
+  "tr": "bu yüzden, onun için",
+  "deBeispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt.",
+  "gsw": "drum",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich han käs Bargäld gha, drum han ich mit de Charte zahlt.",
+  "ayniLehce": [
+   "deshalb (A1)",
+   "daher (B1)"
+  ]
+ },
+ {
+  "id": 7633,
+  "de": "stattdessen",
+  "tr": "onun yerine",
+  "deBeispiel": "Der Kuchen war aus, stattdessen habe ich ein Eis genommen.",
+  "gsw": "statt däm",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chueche isch uus gsi, statt däm han ich e Glace gnaa."
+ },
+ {
+  "id": 7634,
+  "de": "somit",
+  "tr": "böylece, dolayısıyla",
+  "deBeispiel": "Der Vertrag ist unterschrieben und somit gültig.",
+  "gsw": "somit",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vertrag isch underschriibe und somit gültig."
+ },
+ {
+  "id": 7635,
+  "de": "immerhin",
+  "tr": "yine de, hiç yoktan",
+  "deBeispiel": "Der Zug war spät, aber immerhin hatte ich einen Sitzplatz.",
+  "gsw": "immerhin",
+  "gswArtikel": null,
+  "gswBeispiel": "De Zug isch schpaat gsi, aber immerhin han ich en Sitzplatz gha."
+ },
+ {
+  "id": 7636,
+  "de": "jedenfalls",
+  "tr": "her hâlükârda, ne olursa olsun",
+  "deBeispiel": "Ich weiß nicht, ob er kommt, ich warte jedenfalls bis acht.",
+  "gsw": "jedefalls",
+  "gswArtikel": null,
+  "gswBeispiel": "Ich wäiss nöd, öb er chunt, ich warte jedefalls bis achti."
+ },
+ {
+  "id": 7637,
+  "de": "beispielsweise",
+  "tr": "örneğin, söz gelimi",
+  "deBeispiel": "Du kannst beispielsweise am Wochenende vorbeikommen.",
+  "gsw": "bischpilswiis",
+  "gswArtikel": null,
+  "gswBeispiel": "Du chasch bischpilswiis am Wucheänd verbiichoo."
+ },
+ {
+  "id": 7638,
+  "de": "ansonsten",
+  "tr": "aksi takdirde, onun dışında",
+  "deBeispiel": "Ruf mich bitte an, ansonsten warte ich umsonst.",
+  "gsw": "susch",
+  "gswArtikel": null,
+  "gswBeispiel": "Rüef mich bitte aa, susch warte ich vergäbe.",
+  "ayniLehce": [
+   "sonst (A2)"
+  ]
+ },
+ {
+  "id": 7639,
+  "de": "notfalls",
+  "tr": "gerekirse, icabında",
+  "deBeispiel": "Notfalls nehmen wir ein Taxi zum Bahnhof.",
+  "gsw": "notfalls",
+  "gswArtikel": null,
+  "gswBeispiel": "Notfalls nämed mer es Taxi zum Bahnhof."
+ },
+ {
+  "id": 7640,
+  "de": "der Bäcker",
+  "tr": "fırıncı",
+  "deBeispiel": "Mein Vater ist Bäcker und steht jeden Morgen um drei Uhr auf.",
+  "gsw": "Beck",
+  "gswArtikel": "de",
+  "gswBeispiel": "Min Vatter isch Beck und schtaat jede Morge am drüü Uhr uf.",
+  "ayniLehce": [
+   "Bäckerei (A1)"
+  ]
+ },
+ {
+  "id": 7641,
+  "de": "der Kassierer",
+  "tr": "kasiyer",
+  "deBeispiel": "Der Kassierer im Supermarkt war heute sehr freundlich.",
+  "gsw": "Kassierer",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Kassierer im Supermarkt isch hüt sehr fründlich gsi."
+ },
+ {
+  "id": 7642,
+  "de": "der Elektriker",
+  "tr": "elektrikçi",
+  "deBeispiel": "Wir haben einen Elektriker gerufen, weil das Licht nicht geht.",
+  "gsw": "Elektriker",
+  "gswArtikel": "de",
+  "gswBeispiel": "Mir händ en Elektriker grüeft, wil s Liecht nöd gaat."
+ },
+ {
+  "id": 7643,
+  "de": "der Klempner",
+  "tr": "tesisatçı",
+  "deBeispiel": "Der Klempner repariert morgen unsere Dusche.",
+  "gsw": "Schpängler",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schpängler repariert morn eusi Dusche."
+ },
+ {
+  "id": 7644,
+  "de": "der Tischler",
+  "tr": "marangoz",
+  "deBeispiel": "Der Tischler baut mir einen neuen Schrank aus Holz.",
+  "gsw": "Schriiner",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schriiner bout mer en neue Chaschte us Holz."
+ }
+]

@@ -1,0 +1,992 @@
+[
+ {
+  "id": 3462,
+  "de": "die These",
+  "tr": "tez, sav",
+  "deBeispiel": "Der Autor vertritt in seiner Arbeit eine gewagte These.",
+  "gsw": "These",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Autor vertritt i sinere Arbet e gwaagti These."
+ },
+ {
+  "id": 3463,
+  "de": "die Argumentation",
+  "tr": "argümantasyon, gerekçelendirme",
+  "deBeispiel": "Ihre Argumentation überzeugte selbst die Kritiker.",
+  "gsw": "Argumentation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Iri Argumentation hät sogar d Kritiker überzüügt."
+ },
+ {
+  "id": 3464,
+  "de": "die Schlussfolgerung",
+  "tr": "sonuç çıkarma, çıkarım",
+  "deBeispiel": "Aus den Daten lässt sich keine eindeutige Schlussfolgerung ziehen.",
+  "gsw": "Schlussfolgerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Us de Date laat sich kei äidüütigi Schlussfolgerig zie."
+ },
+ {
+  "id": 3465,
+  "de": "die Auswertung",
+  "tr": "değerlendirme, analiz",
+  "deBeispiel": "Die statistische Auswertung dauerte mehrere Wochen.",
+  "gsw": "Uuswertig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D statistisch Uuswertig hät mehreri Wuche duuret."
+ },
+ {
+  "id": 3466,
+  "de": "die Fragestellung",
+  "tr": "araştırma sorusu, konu",
+  "deBeispiel": "Die zentrale Fragestellung der Studie blieb ungeklärt.",
+  "gsw": "Fraagstellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D zäntral Fraagstellig vo de Studie isch offe bliibe."
+ },
+ {
+  "id": 3467,
+  "de": "die Methodik",
+  "tr": "yöntem, metodoloji",
+  "deBeispiel": "Die Methodik der Studie wurde von Fachkollegen kritisiert.",
+  "gsw": "Methodik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Methodik vo de Studie isch vo Fachkollege kritisiert worde."
+ },
+ {
+  "id": 3468,
+  "de": "das Fazit",
+  "tr": "sonuç, özet",
+  "deBeispiel": "Zum Fazit kommt der Forscher erst im letzten Kapitel.",
+  "gsw": "Fazit",
+  "gswArtikel": "s",
+  "gswBeispiel": "Zum Fazit chunt de Forscher erscht im letschte Kapitel."
+ },
+ {
+  "id": 3469,
+  "de": "der Widerspruch",
+  "tr": "çelişki, itiraz",
+  "deBeispiel": "Die Ergebnisse stehen im Widerspruch zur bisherigen Theorie.",
+  "gsw": "Widerspruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Resultat stönd im Widerspruch zur bisherige Theorie."
+ },
+ {
+  "id": 3470,
+  "de": "der Einwand",
+  "tr": "itiraz, karşı görüş",
+  "deBeispiel": "Gegen diesen Einwand lässt sich kaum etwas vorbringen.",
+  "gsw": "Iiwand",
+  "gswArtikel": "de",
+  "gswBeispiel": "Gäge de Iiwand cha mer chuum öppis vorbringe."
+ },
+ {
+  "id": 3471,
+  "de": "die Kontroverse",
+  "tr": "tartışma, ihtilaf",
+  "deBeispiel": "Die Kontroverse um die Studie hält bis heute an.",
+  "gsw": "Kontroverse",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kontroverse um d Studie haltet bis hüt aa."
+ },
+ {
+  "id": 3472,
+  "de": "der Diskurs",
+  "tr": "söylem, tartışma",
+  "deBeispiel": "Der wissenschaftliche Diskurs lebt von unterschiedlichen Meinungen.",
+  "gsw": "Diskurs",
+  "gswArtikel": "de",
+  "gswBeispiel": "De wüsseschaftlich Diskurs läbt vo underschidliche Mäinige."
+ },
+ {
+  "id": 3473,
+  "de": "die Subjektivität",
+  "tr": "öznellik",
+  "deBeispiel": "Man wirft der Studie eine gewisse Subjektivität vor.",
+  "gsw": "Subjektivität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Mer wirft de Studie e gwüssi Subjektivität vor."
+ },
+ {
+  "id": 3474,
+  "de": "die Annahme",
+  "tr": "varsayım, kabul",
+  "deBeispiel": "Die Annahme erwies sich im Nachhinein als falsch.",
+  "gsw": "Aanaam",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Aanaam hät sich nachhär als falsch usegstellt."
+ },
+ {
+  "id": 3475,
+  "de": "die Relevanz",
+  "tr": "önem, konuyla ilgililik",
+  "deBeispiel": "Die Relevanz der Studie für die Praxis ist unbestritten.",
+  "gsw": "Relevanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Relevanz vo de Studie für d Praxis isch unbestritte."
+ },
+ {
+  "id": 3476,
+  "de": "die Plausibilität",
+  "tr": "akla yatkınlık, inandırıcılık",
+  "deBeispiel": "An der Plausibilität dieser Erklärung zweifeln viele Forscher.",
+  "gsw": "Plausibilität",
+  "gswArtikel": "d",
+  "gswBeispiel": "A de Plausibilität vo dere Erklärig zwiifled vili Forscher."
+ },
+ {
+  "id": 3477,
+  "de": "die Signifikanz",
+  "tr": "anlamlılık, önem derecesi",
+  "deBeispiel": "Das Ergebnis erreichte keine statistische Signifikanz.",
+  "gsw": "Signifikanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Resultat hät kei statistischi Signifikanz erräicht."
+ },
+ {
+  "id": 3478,
+  "de": "die Interpretation",
+  "tr": "yorum, yorumlama",
+  "deBeispiel": "Die Daten lassen mehrere Interpretationen zu.",
+  "gsw": "Interpretation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Date lönd mehreri Interpretatione zue."
+ },
+ {
+  "id": 3479,
+  "de": "die Perspektive",
+  "tr": "bakış açısı, perspektif",
+  "deBeispiel": "Die Studie eröffnet eine neue Perspektive auf das Thema.",
+  "gsw": "Perspektive",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Studie eröffnet e neui Perspektive uf s Thema."
+ },
+ {
+  "id": 3480,
+  "de": "die Differenzierung",
+  "tr": "ayrım, farklılaştırma",
+  "deBeispiel": "Eine genaue Differenzierung der Begriffe ist notwendig.",
+  "gsw": "Differenzierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "E gnaui Differenzierig vo de Begriff isch nötig."
+ },
+ {
+  "id": 3481,
+  "de": "die Verallgemeinerung",
+  "tr": "genelleme",
+  "deBeispiel": "Vorschnelle Verallgemeinerungen sollten vermieden werden.",
+  "gsw": "Verallgemäinerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Vorschnälli Verallgemäinerige sött mer vermiide."
+ },
+ {
+  "id": 3482,
+  "de": "die Herangehensweise",
+  "tr": "yaklaşım, yöntem",
+  "deBeispiel": "Seine Herangehensweise unterscheidet sich grundlegend von der üblichen.",
+  "gsw": "Vorgehenswiis",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Vorgehenswiis underschäidet sich grundlegend vo de üebliche."
+ },
+ {
+  "id": 3483,
+  "de": "die Fachliteratur",
+  "tr": "uzmanlık literatürü, alan yazını",
+  "deBeispiel": "Die Fachliteratur zu diesem Thema ist inzwischen unüberschaubar.",
+  "gsw": "Fachliteratur",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fachliteratur zu dem Thema isch underdesse chuum mee z überblicke."
+ },
+ {
+  "id": 3484,
+  "de": "das Paradigma",
+  "tr": "paradigma, model",
+  "deBeispiel": "Ein neues Paradigma löste die alte Theorie ab.",
+  "gsw": "Paradigma",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es neus Paradigma hät di alt Theorie abglööst."
+ },
+ {
+  "id": 3485,
+  "de": "die Prämisse",
+  "tr": "öncül, ön kabul",
+  "deBeispiel": "Die gesamte Argumentation beruht auf einer fragwürdigen Prämisse.",
+  "gsw": "Prämisse",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di ganz Argumentation basiert uf ere fraagwürdige Prämisse."
+ },
+ {
+  "id": 3486,
+  "de": "die Kausalität",
+  "tr": "nedensellik",
+  "deBeispiel": "Korrelation bedeutet nicht automatisch Kausalität.",
+  "gsw": "Kausalität",
+  "gswArtikel": "d",
+  "gswBeispiel": "Korrelation häisst nöd automatisch Kausalität."
+ },
+ {
+  "id": 3487,
+  "de": "die Korrelation",
+  "tr": "korelasyon, ilinti",
+  "deBeispiel": "Zwischen den beiden Faktoren zeigt sich eine deutliche Korrelation.",
+  "gsw": "Korrelation",
+  "gswArtikel": "d",
+  "gswBeispiel": "Zwüsched de bäide Faktore zäigt sich e düütlichi Korrelation."
+ },
+ {
+  "id": 3488,
+  "de": "die Stichprobe",
+  "tr": "örneklem",
+  "deBeispiel": "Die Stichprobe war für allgemeine Aussagen zu klein.",
+  "gsw": "Stichprob",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Stichprob isch für allgemäini Uussaage z chlii gsii."
+ },
+ {
+  "id": 3489,
+  "de": "die Datenerhebung",
+  "tr": "veri toplama",
+  "deBeispiel": "Die Datenerhebung erfolgte mittels standardisierter Fragebögen.",
+  "gsw": "Dateerhebig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dateerhebig isch mit standardisierte Fraagebööge gmacht worde."
+ },
+ {
+  "id": 3490,
+  "de": "der Forschungsstand",
+  "tr": "araştırma durumu, literatür durumu",
+  "deBeispiel": "Der aktuelle Forschungsstand wird im zweiten Kapitel dargestellt.",
+  "gsw": "Forschigsstand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De aktuell Forschigsstand wird im zwäite Kapitel dargstellt."
+ },
+ {
+  "id": 3491,
+  "de": "das Postulat",
+  "tr": "ilke, varsayım",
+  "deBeispiel": "Dieses Postulat wurde von der Fachwelt weitgehend akzeptiert.",
+  "gsw": "Postulat",
+  "gswArtikel": "s",
+  "gswBeispiel": "Das Postulat isch vo de Fachwält wiitgehend akzeptiert worde."
+ },
+ {
+  "id": 3492,
+  "de": "die Nuance",
+  "tr": "nüans, ince ayrım",
+  "deBeispiel": "Solche Nuancen entgehen einer oberflächlichen Betrachtung leicht.",
+  "gsw": "Nuance",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sonigi Nuance übersiet mer liecht, wänn mer nu oberflächlich luegt."
+ },
+ {
+  "id": 3493,
+  "de": "die Kohärenz",
+  "tr": "tutarlılık, bağdaşıklık",
+  "deBeispiel": "Dem Text fehlt es an innerer Kohärenz.",
+  "gsw": "Kohärenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "Em Text fäält s a de innere Kohärenz."
+ },
+ {
+  "id": 3494,
+  "de": "die Konsistenz",
+  "tr": "tutarlılık, uyumluluk",
+  "deBeispiel": "Die Konsistenz der Argumentation überzeugt die Leserschaft.",
+  "gsw": "Konsistenz",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Konsistenz vo de Argumentation überzüügt d Läserschaft."
+ },
+ {
+  "id": 3495,
+  "de": "der Diskussionsbeitrag",
+  "tr": "tartışma katkısı, görüş",
+  "deBeispiel": "Sein Diskussionsbeitrag brachte neue Aspekte in die Debatte ein.",
+  "gsw": "Diskussionsbiitrag",
+  "gswArtikel": "de",
+  "gswBeispiel": "Sin Diskussionsbiitrag hät neui Aspekt i d Debatte braacht."
+ },
+ {
+  "id": 3496,
+  "de": "die Gegenposition",
+  "tr": "karşı görüş, karşı tez",
+  "deBeispiel": "Eine fundierte Gegenposition fehlt in der Arbeit bislang.",
+  "gsw": "Gägeposition",
+  "gswArtikel": "d",
+  "gswBeispiel": "E fundierti Gägeposition fäält i de Arbet bis jetz."
+ },
+ {
+  "id": 3497,
+  "de": "die Fallstudie",
+  "tr": "vaka çalışması, örnek olay",
+  "deBeispiel": "Die Fallstudie veranschaulicht die theoretischen Überlegungen.",
+  "gsw": "Fallstudie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Fallstudie veraaschaulicht di theoretische Überlegige."
+ },
+ {
+  "id": 3498,
+  "de": "die Argumentationskette",
+  "tr": "argüman zinciri",
+  "deBeispiel": "Die Argumentationskette weist an entscheidender Stelle eine Lücke auf.",
+  "gsw": "Argumentationschetti",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Argumentationschetti hät anere entschäidende Stell e Lücke."
+ },
+ {
+  "id": 3499,
+  "de": "der Erklärungsansatz",
+  "tr": "açıklama yaklaşımı",
+  "deBeispiel": "Für dieses Phänomen existieren mehrere konkurrierende Erklärungsansätze.",
+  "gsw": "Erklärigsaasatz",
+  "gswArtikel": "de",
+  "gswBeispiel": "Für das Phänomen git s nöd nu äin Erklärigsaasatz."
+ },
+ {
+  "id": 3500,
+  "de": "erörtern",
+  "tr": "tartışmak, ele almak",
+  "deBeispiel": "Die Autoren erörtern das Problem aus verschiedenen Blickwinkeln.",
+  "gsw": "erörtere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Autore erörtered s Problem us verschidene Blickwinkel."
+ },
+ {
+  "id": 3501,
+  "de": "postulieren",
+  "tr": "öne sürmek, ileri sürmek",
+  "deBeispiel": "Der Forscher postuliert einen bislang unbekannten Zusammenhang.",
+  "gsw": "poschtuliere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Forscher poschtuliert en bis jetz unbekannte Zämehang."
+ },
+ {
+  "id": 3502,
+  "de": "konstatieren",
+  "tr": "tespit etmek, saptamak",
+  "deBeispiel": "Die Studie konstatiert einen deutlichen Rückgang der Werte.",
+  "gsw": "konschtatiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Studie konschtatiert en tüütliche Rückgang vo de Wärt."
+ },
+ {
+  "id": 3503,
+  "de": "veranschaulichen",
+  "tr": "örneklerle açıklamak, gözler önüne sermek",
+  "deBeispiel": "Ein Diagramm veranschaulicht die komplexen Zusammenhänge.",
+  "gsw": "veraaschauliche",
+  "gswArtikel": null,
+  "gswBeispiel": "Es Diagramm veraaschaulicht die komplexe Zämehäng."
+ },
+ {
+  "id": 3504,
+  "de": "widerlegen",
+  "tr": "çürütmek",
+  "deBeispiel": "Die neuen Daten widerlegen die ursprüngliche Hypothese.",
+  "gsw": "widerlege",
+  "gswArtikel": null,
+  "gswBeispiel": "Di neue Date widerleged di ursprünglich Hypothese."
+ },
+ {
+  "id": 3505,
+  "de": "belegen",
+  "tr": "kanıtlamak, belgelemek",
+  "deBeispiel": "Die Ergebnisse belegen den vermuteten Zusammenhang eindeutig.",
+  "gsw": "belege",
+  "gswArtikel": null,
+  "gswBeispiel": "D Resultat beleged de vermuetet Zämehang äidüütig."
+ },
+ {
+  "id": 3506,
+  "de": "herleiten",
+  "tr": "türetmek, çıkarım yapmak",
+  "deBeispiel": "Aus den Prämissen lässt sich die Schlussfolgerung logisch herleiten.",
+  "gsw": "härleite",
+  "gswArtikel": null,
+  "gswBeispiel": "Us de Prämisse chan mer d Schlussfolgerig logisch härleite."
+ },
+ {
+  "id": 3507,
+  "de": "verifizieren",
+  "tr": "doğrulamak",
+  "deBeispiel": "Die Ergebnisse müssen durch weitere Versuche verifiziert werden.",
+  "gsw": "verifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Resultat müend mit wiitere Versüech verifiziert wärde."
+ },
+ {
+  "id": 3508,
+  "de": "falsifizieren",
+  "tr": "yanlışlamak, çürütmek",
+  "deBeispiel": "Eine Theorie muss grundsätzlich falsifizierbar sein.",
+  "gsw": "falsifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "E Theorie muess grundsätzlich falsifizierbar sii."
+ },
+ {
+  "id": 3509,
+  "de": "untermauern",
+  "tr": "desteklemek, temellendirmek",
+  "deBeispiel": "Zahlreiche Studien untermauern diese Annahme.",
+  "gsw": "undermuure",
+  "gswArtikel": null,
+  "gswBeispiel": "Vili Studie undermuured die Aanaam."
+ },
+ {
+  "id": 3510,
+  "de": "schlussfolgern",
+  "tr": "sonuç çıkarmak",
+  "deBeispiel": "Daraus schlussfolgert der Autor eine allgemeine Regel.",
+  "gsw": "schlussfolgere",
+  "gswArtikel": null,
+  "gswBeispiel": "Us dem schlussfolgeret de Autor e allgemäini Regle."
+ },
+ {
+  "id": 3511,
+  "de": "resümieren",
+  "tr": "özetlemek",
+  "deBeispiel": "Zum Abschluss resümiert die Autorin die wichtigsten Ergebnisse.",
+  "gsw": "resümiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Zum Schluss resümiert d Autorin di wichtigschte Resultat."
+ },
+ {
+  "id": 3512,
+  "de": "thematisieren",
+  "tr": "konu edinmek, ele almak",
+  "deBeispiel": "Der Vortrag thematisiert die ethischen Grenzen der Forschung.",
+  "gsw": "thematisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vortrag thematisiert di ethische Gränze vo de Forschig."
+ },
+ {
+  "id": 3513,
+  "de": "hinterfragen",
+  "tr": "sorgulamak",
+  "deBeispiel": "Man sollte etablierte Theorien immer wieder kritisch hinterfragen.",
+  "gsw": "hinderfrooge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer sött etablierti Theorie immer wider kritisch hinderfrooge."
+ },
+ {
+  "id": 3514,
+  "de": "relativieren",
+  "tr": "göreceleştirmek",
+  "deBeispiel": "Neue Befunde relativieren die bisherige Einschätzung erheblich.",
+  "gsw": "relativiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Neui Befund relativiered di bisherig Iischätzig starch."
+ },
+ {
+  "id": 3515,
+  "de": "verallgemeinern",
+  "tr": "genellemek",
+  "deBeispiel": "Man darf Einzelfälle nicht vorschnell verallgemeinern.",
+  "gsw": "verallgemäinere",
+  "gswArtikel": null,
+  "gswBeispiel": "Mer dörf Äinzelfäll nöd vorschnäll verallgemäinere."
+ },
+ {
+  "id": 3516,
+  "de": "eingrenzen",
+  "tr": "sınırlamak, daraltmak",
+  "deBeispiel": "Zunächst muss das Thema klar eingegrenzt werden.",
+  "gsw": "iigränze",
+  "gswArtikel": null,
+  "gswBeispiel": "Zerscht muess mer s Thema klar iigränze."
+ },
+ {
+  "id": 3517,
+  "de": "konkretisieren",
+  "tr": "somutlaştırmak, netleştirmek",
+  "deBeispiel": "Die vage Fragestellung wurde im Verlauf konkretisiert.",
+  "gsw": "konkretisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Di vagi Fraagstellig isch im Verlauf konkretisiert worde."
+ },
+ {
+  "id": 3518,
+  "de": "anzweifeln",
+  "tr": "kuşkuyla karşılamak, sorgulamak",
+  "deBeispiel": "Kritiker zweifeln die Aussagekraft der Studie an.",
+  "gsw": "aazwiifle",
+  "gswArtikel": null,
+  "gswBeispiel": "Kritiker tüend d Uussagechraft vo de Studie aazwiifle."
+ },
+ {
+  "id": 3519,
+  "de": "paraphrasieren",
+  "tr": "başka sözcüklerle ifade etmek",
+  "deBeispiel": "In der Zusammenfassung wird der Originaltext paraphrasiert.",
+  "gsw": "paraphrasiere",
+  "gswArtikel": null,
+  "gswBeispiel": "I de Zämefassig wird de Originaltext paraphrasiert."
+ },
+ {
+  "id": 3520,
+  "de": "gleichwohl",
+  "tr": "yine de, buna karşın",
+  "deBeispiel": "Die Kritik war berechtigt, gleichwohl blieb der Autor bei seiner These.",
+  "gsw": "gliichwool",
+  "gswArtikel": null,
+  "gswBeispiel": "D Kritik isch berächtigt gsii, gliichwool isch de Autor bi sinere These bliibe."
+ },
+ {
+  "id": 3521,
+  "de": "mithin",
+  "tr": "dolayısıyla, bu nedenle",
+  "deBeispiel": "Die Stichprobe war klein, mithin sind die Ergebnisse nur bedingt aussagekräftig.",
+  "gsw": "mithii",
+  "gswArtikel": null,
+  "gswBeispiel": "D Stichprob isch chlii gsii, mithii sind d Resultat nume bedingt uussagechräftig."
+ },
+ {
+  "id": 3522,
+  "de": "insofern",
+  "tr": "bu bakımdan, bu ölçüde",
+  "deBeispiel": "Insofern lässt sich die Hypothese als bestätigt betrachten.",
+  "gsw": "insofärn",
+  "gswArtikel": null,
+  "gswBeispiel": "Insofärn chan mer d Hypothese als beschtätigt aaluege."
+ },
+ {
+  "id": 3523,
+  "de": "keineswegs",
+  "tr": "asla, kesinlikle değil",
+  "deBeispiel": "Die Ergebnisse sind keineswegs eindeutig zu interpretieren.",
+  "gsw": "käineswägs",
+  "gswArtikel": null,
+  "gswBeispiel": "D Resultat sind käineswägs äidüütig z interpretiere."
+ },
+ {
+  "id": 3524,
+  "de": "zumal",
+  "tr": "hele ki, özellikle de (çünkü)",
+  "deBeispiel": "Die Studie überzeugt, zumal sie auf einer großen Stichprobe beruht.",
+  "gsw": "zmaal",
+  "gswArtikel": null,
+  "gswBeispiel": "D Studie überzüügt, zmaal si uf ere groosse Stichprob basiert."
+ },
+ {
+  "id": 3525,
+  "de": "mitunter",
+  "tr": "bazen, kimi zaman",
+  "deBeispiel": "Empirische Befunde widersprechen mitunter der gängigen Theorie.",
+  "gsw": "mitunder",
+  "gswArtikel": null,
+  "gswBeispiel": "Empirischi Befund widerspräched mitunder de gängige Theorie."
+ },
+ {
+  "id": 3526,
+  "de": "weitgehend",
+  "tr": "büyük ölçüde, hemen hemen",
+  "deBeispiel": "Die Fachwelt stimmt der These weitgehend zu.",
+  "gsw": "wiitgehend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Fachwält stimmt de These wiitgehend zue."
+ },
+ {
+  "id": 3527,
+  "de": "dementsprechend",
+  "tr": "buna göre, buna uygun olarak",
+  "deBeispiel": "Die Methodik wurde dementsprechend angepasst.",
+  "gsw": "dementschprächend",
+  "gswArtikel": null,
+  "gswBeispiel": "D Methodik isch dementschprächend aapasst worde."
+ },
+ {
+  "id": 3528,
+  "de": "infolgedessen",
+  "tr": "bunun sonucunda, bu yüzden",
+  "deBeispiel": "Die Stichprobe war verzerrt, infolgedessen sind die Resultate fragwürdig.",
+  "gsw": "infolgedesse",
+  "gswArtikel": null,
+  "gswBeispiel": "D Stichprob isch verzerrt gsii, infolgedesse sind d Resultat fraagwürdig."
+ },
+ {
+  "id": 3529,
+  "de": "nichtsdestotrotz",
+  "tr": "yine de, buna rağmen",
+  "deBeispiel": "Die Datenlage war dünn, nichtsdestotrotz zog man vorsichtige Schlüsse.",
+  "gsw": "nüütdeschtotrotz",
+  "gswArtikel": null,
+  "gswBeispiel": "D Datelag isch dünn gsii, nüütdeschtotrotz hät mer vorsichtigi Schlüss zoge."
+ },
+ {
+  "id": 3530,
+  "de": "vielmehr",
+  "tr": "daha doğrusu, aksine",
+  "deBeispiel": "Es geht nicht um Zustimmung, vielmehr um kritische Auseinandersetzung.",
+  "gsw": "vilmee",
+  "gswArtikel": null,
+  "gswBeispiel": "Es gaat nöd um Zuestimmig, vilmee um di kritisch Usenandersetzig."
+ },
+ {
+  "id": 3531,
+  "de": "plausibel",
+  "tr": "akla yatkın, inandırıcı",
+  "deBeispiel": "Die Erklärung klingt plausibel, bedarf aber weiterer Belege.",
+  "gsw": "plausibel",
+  "gswArtikel": null,
+  "gswBeispiel": "D Erklärig tönt plausibel, bruucht aber no wiiteri Beleg."
+ },
+ {
+  "id": 3532,
+  "de": "fundiert",
+  "tr": "dayanaklı, sağlam temelli",
+  "deBeispiel": "Die Autorin argumentiert fundiert und nachvollziehbar.",
+  "gsw": "fundiert",
+  "gswArtikel": null,
+  "gswBeispiel": "D Autorin argumentiert fundiert und naavollziebar."
+ },
+ {
+  "id": 3533,
+  "de": "empirisch",
+  "tr": "ampirik, gözleme dayalı",
+  "deBeispiel": "Die Aussage stützt sich auf empirisch erhobene Daten.",
+  "gsw": "empirisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D Uussag stützt sich uf empirisch erhobeni Date."
+ },
+ {
+  "id": 3534,
+  "de": "mutmaßlich",
+  "tr": "varsayılan, tahmin edilen",
+  "deBeispiel": "Der mutmaßliche Zusammenhang konnte nicht bestätigt werden.",
+  "gsw": "muetmaasslich",
+  "gswArtikel": null,
+  "gswBeispiel": "De muetmaasslich Zämehang hät mer nöd chöne beschtätige."
+ },
+ {
+  "id": 3535,
+  "de": "die Klage",
+  "tr": "dava",
+  "deBeispiel": "Die Klage wurde vom Landgericht als unbegründet abgewiesen.",
+  "gsw": "Chlag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Chlag isch vom Bezirksgricht als unbegründet abgwise worde."
+ },
+ {
+  "id": 3536,
+  "de": "die Berufung",
+  "tr": "istinaf",
+  "deBeispiel": "Der Anwalt legte gegen das Urteil Berufung ein.",
+  "gsw": "Berüefig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aawalt hät gäge s Urtäil Berüefig iigläit."
+ },
+ {
+  "id": 3537,
+  "de": "die Revision",
+  "tr": "temyiz",
+  "deBeispiel": "Die Revision wurde vom Bundesgerichtshof zugelassen.",
+  "gsw": "Revision",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Revision isch vom Bundesgricht zueglaa worde."
+ },
+ {
+  "id": 3538,
+  "de": "der Beschluss",
+  "tr": "karar (mahkeme, kurul)",
+  "deBeispiel": "Der Beschluss des Gerichts ist sofort vollstreckbar.",
+  "gsw": "Beschluss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Beschluss vom Gricht isch sofort vollschtreckbar."
+ },
+ {
+  "id": 3539,
+  "de": "die Vollstreckung",
+  "tr": "icra",
+  "deBeispiel": "Die Vollstreckung des Urteils wurde ausgesetzt.",
+  "gsw": "Vollschtreckig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vollschtreckig vom Urtäil isch uusgsetzt worde."
+ },
+ {
+  "id": 3540,
+  "de": "die Verjährung",
+  "tr": "zamanaşımı",
+  "deBeispiel": "Der Anspruch unterliegt der dreijährigen Verjährung.",
+  "gsw": "Verjäärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Aaschpruch underliit de drüüjäärige Verjäärig."
+ },
+ {
+  "id": 3541,
+  "de": "der Rechtsstreit",
+  "tr": "hukuki anlaşmazlık",
+  "deBeispiel": "Der Rechtsstreit zog sich über Jahre hin.",
+  "gsw": "Rächtsschtriit",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Rächtsschtriit hät sich über Jaar hiizoge."
+ },
+ {
+  "id": 3542,
+  "de": "die Klausel",
+  "tr": "şart, madde",
+  "deBeispiel": "Die Klausel wurde für unwirksam erklärt.",
+  "gsw": "Klausel",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Klausel isch für unwürksam erklärt worde."
+ },
+ {
+  "id": 3543,
+  "de": "die Haftung",
+  "tr": "sorumluluk (hukuki, mali)",
+  "deBeispiel": "Die Haftung des Herstellers ist gesetzlich geregelt.",
+  "gsw": "Haftig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Haftig vom Herschteller isch gsetzlich greglet."
+ },
+ {
+  "id": 3544,
+  "de": "die Vollmacht",
+  "tr": "vekalet, vekaletname",
+  "deBeispiel": "Er erteilte seinem Anwalt eine umfassende Vollmacht.",
+  "gsw": "Vollmacht",
+  "gswArtikel": "d",
+  "gswBeispiel": "Er hät sim Aawalt e umfassendi Vollmacht ggää."
+ },
+ {
+  "id": 3545,
+  "de": "das Gutachten",
+  "tr": "bilirkişi raporu",
+  "deBeispiel": "Das Gutachten bestätigte die Fahrlässigkeit des Angeklagten.",
+  "gsw": "Guetachte",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Guetachte hät d Faarlässigkäit vom Aagklagte beschtätigt."
+ },
+ {
+  "id": 3546,
+  "de": "der Sachverhalt",
+  "tr": "olgu, durum",
+  "deBeispiel": "Der Sachverhalt wurde vom Gericht sorgfältig geprüft.",
+  "gsw": "Sachverhalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Sachverhalt isch vom Gricht sorgfältig prüeft worde."
+ },
+ {
+  "id": 3547,
+  "de": "die Bestimmung",
+  "tr": "hüküm, düzenleme",
+  "deBeispiel": "Die gesetzliche Bestimmung trat rückwirkend in Kraft.",
+  "gsw": "Beschtimmig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Di gsetzlich Beschtimmig isch rückwürkend in Chraft träte."
+ },
+ {
+  "id": 3548,
+  "de": "der Straftatbestand",
+  "tr": "suç unsuru",
+  "deBeispiel": "Der Straftatbestand des Betrugs war eindeutig erfüllt.",
+  "gsw": "Schtraaftatbeschtand",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Schtraaftatbeschtand vom Betrug isch äidüütig erfüllt gsii."
+ },
+ {
+  "id": 3549,
+  "de": "die Anklage",
+  "tr": "suçlama, kamu davası",
+  "deBeispiel": "Die Staatsanwaltschaft erhob Anklage wegen Untreue.",
+  "gsw": "Aaklag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Staatsaawaltschaft hät Aaklag wäge Untreui erhobe."
+ },
+ {
+  "id": 3550,
+  "de": "die Instanz",
+  "tr": "merci, derece",
+  "deBeispiel": "Der Fall durchlief mehrere Instanzen.",
+  "gsw": "Inschtanz",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Fall isch dur mehreri Inschtanze ggange."
+ },
+ {
+  "id": 3551,
+  "de": "anfechten",
+  "tr": "itiraz etmek, iptalini istemek",
+  "deBeispiel": "Der Kläger focht den Bescheid vor Gericht an.",
+  "gsw": "aafächte",
+  "gswArtikel": null,
+  "gswBeispiel": "De Chläger wott de Bschäid vor Gricht aafächte."
+ },
+ {
+  "id": 3552,
+  "de": "die Dienststelle",
+  "tr": "resmi daire, birim",
+  "deBeispiel": "Die zuständige Dienststelle bearbeitet Anträge innerhalb von sechs Wochen.",
+  "gsw": "Dienschtstell",
+  "gswArtikel": "d",
+  "gswBeispiel": "D zueständig Dienschtstell behandlet Aaträg innert sächs Wuche."
+ },
+ {
+  "id": 3553,
+  "de": "der Erlass",
+  "tr": "genelge, kararname",
+  "deBeispiel": "Der Erlass regelt die Vergabe öffentlicher Aufträge.",
+  "gsw": "Erlass",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Erlass reglet d Vergaab vo öffentliche Ufträg."
+ },
+ {
+  "id": 3554,
+  "de": "die Verordnung",
+  "tr": "yönetmelik",
+  "deBeispiel": "Die neue Verordnung tritt zum Jahresbeginn in Kraft.",
+  "gsw": "Verordnig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D neu Verordnig trittet am Aafang vom Jaar i Chraft."
+ },
+ {
+  "id": 3555,
+  "de": "die Verwaltungsvorschrift",
+  "tr": "idari talimat",
+  "deBeispiel": "Die Verwaltungsvorschrift konkretisiert das Gesetz.",
+  "gsw": "Verwaltigsvorschrift",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verwaltigsvorschrift konkretisiert s Gsetz."
+ },
+ {
+  "id": 3556,
+  "de": "der Vollzug",
+  "tr": "uygulama, icra",
+  "deBeispiel": "Der Vollzug der Maßnahme obliegt der Kommune.",
+  "gsw": "Vollzug",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Vollzug vo de Massnaam isch Sach vo de Gmäind."
+ },
+ {
+  "id": 3557,
+  "de": "die Aufsicht",
+  "tr": "denetim",
+  "deBeispiel": "Die Aufsicht über die Banken liegt bei der Behörde.",
+  "gsw": "Ufsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ufsicht über d Banke liit bi de Behörde."
+ },
+ {
+  "id": 3558,
+  "de": "das Ermessen",
+  "tr": "takdir yetkisi",
+  "deBeispiel": "Die Behörde übte ihr Ermessen pflichtgemäß aus.",
+  "gsw": "Ermässe",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Behörde hät ires Ermässe pflichtgemääss uusgüebt."
+ },
+ {
+  "id": 3559,
+  "de": "die Ermächtigung",
+  "tr": "yetkilendirme, izin",
+  "deBeispiel": "Das Gesetz enthält eine Ermächtigung zum Erlass von Verordnungen.",
+  "gsw": "Ermächtigig",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Gsetz enthaltet e Ermächtigig zum Erlass vo Verordnige."
+ },
+ {
+  "id": 3560,
+  "de": "der Amtsträger",
+  "tr": "kamu görevlisi",
+  "deBeispiel": "Amtsträger unterliegen einer besonderen Verschwiegenheitspflicht.",
+  "gsw": "Amtsträger",
+  "gswArtikel": "de",
+  "gswBeispiel": "Amtsträger underligged ere bsundere Schwiigepflicht."
+ },
+ {
+  "id": 3561,
+  "de": "die Dienstaufsicht",
+  "tr": "idari denetim (amirin memur üzerindeki)",
+  "deBeispiel": "Die Dienstaufsicht prüfte das Verhalten des Beamten.",
+  "gsw": "Dienschtufsicht",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dienschtufsicht hät s Verhalte vom Beamte prüeft."
+ },
+ {
+  "id": 3562,
+  "de": "die Kompetenzverteilung",
+  "tr": "yetki dağılımı",
+  "deBeispiel": "Die Kompetenzverteilung zwischen Bund und Ländern ist komplex.",
+  "gsw": "Kompetänzvertäilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kompetänzvertäilig zwüsched Bund und Kantöön isch komplex."
+ },
+ {
+  "id": 3563,
+  "de": "der Verwaltungsakt",
+  "tr": "idari işlem",
+  "deBeispiel": "Der Verwaltungsakt wurde fristgerecht angefochten.",
+  "gsw": "Verwaltigsakt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verwaltigsakt isch fristgrächt aagfochte woorde."
+ },
+ {
+  "id": 3564,
+  "de": "anordnen",
+  "tr": "emretmek, talimat vermek",
+  "deBeispiel": "Das Ministerium ordnete eine sofortige Überprüfung an.",
+  "gsw": "aaordne",
+  "gswArtikel": null,
+  "gswBeispiel": "D Behörde wott e sofortigi Überprüefig aaordne."
+ },
+ {
+  "id": 3565,
+  "de": "bevollmächtigen",
+  "tr": "yetkilendirmek",
+  "deBeispiel": "Der Vorstand bevollmächtigte den Geschäftsführer zur Unterzeichnung.",
+  "gsw": "bevollmächtige",
+  "gswArtikel": null,
+  "gswBeispiel": "De Vorstand wott de Gschäftsfüerer für d Underschrift bevollmächtige."
+ },
+ {
+  "id": 3566,
+  "de": "das Gesuch",
+  "tr": "dilekçe, talep",
+  "deBeispiel": "Er reichte ein Gesuch um Aufschub der Zahlungsfrist ein.",
+  "gsw": "Gsuech",
+  "gswArtikel": "s",
+  "gswBeispiel": "Er hät es Gsuech um Ufschub vo de Zaaligsfrist iigräicht."
+ },
+ {
+  "id": 3567,
+  "de": "die Ausschlussfrist",
+  "tr": "hak düşürücü süre",
+  "deBeispiel": "Nach Ablauf der Ausschlussfrist ist der Anspruch erloschen.",
+  "gsw": "Usschlussfrist",
+  "gswArtikel": "d",
+  "gswBeispiel": "Nach Ablauf vo de Usschlussfrist isch de Aaspruch verfalle."
+ },
+ {
+  "id": 3568,
+  "de": "die Verfügung",
+  "tr": "emir, idari karar",
+  "deBeispiel": "Die Verfügung des Amtes wurde umgehend vollzogen.",
+  "gsw": "Verfüegig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Verfüegig vom Amt isch sofort vollzoge woorde."
+ },
+ {
+  "id": 3569,
+  "de": "die Vorlage",
+  "tr": "ibraz, sunum",
+  "deBeispiel": "Die Vorlage der vollständigen Unterlagen ist zwingend erforderlich.",
+  "gsw": "Vorlaag",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Vorlaag vo de vollständige Underlage isch zwingend nötig."
+ },
+ {
+  "id": 3570,
+  "de": "die Rechtsbehelfsbelehrung",
+  "tr": "itiraz yolları bildirimi",
+  "deBeispiel": "Ohne Rechtsbehelfsbelehrung beginnt die Frist nicht zu laufen.",
+  "gsw": "Rechtsmittelbeleerig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Ooni Rechtsmittelbeleerig faat d Frist gar nöd aa z laufe."
+ },
+ {
+  "id": 3571,
+  "de": "die Zustellung",
+  "tr": "tebligat",
+  "deBeispiel": "Die Zustellung des Bescheids erfolgte per Einschreiben.",
+  "gsw": "Zuestellig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Zuestellig vom Bschäid isch mit iigschribnem Brief erfolgt."
+ }
+]

@@ -1,0 +1,992 @@
+[
+ {
+  "id": 3572,
+  "de": "einreichen",
+  "tr": "sunmak, ibraz etmek",
+  "deBeispiel": "Die Unterlagen sind vollständig und fristgerecht einzureichen.",
+  "gsw": "iiräiche",
+  "gswArtikel": null,
+  "gswBeispiel": "Du muesch d Underlage vollständig und fristgrächt iiräiche."
+ },
+ {
+  "id": 3573,
+  "de": "übermitteln",
+  "tr": "iletmek",
+  "deBeispiel": "Die Daten wurden elektronisch an das Amt übermittelt.",
+  "gsw": "übermittle",
+  "gswArtikel": null,
+  "gswBeispiel": "D Date wärded elektronisch as Amt übermittlet."
+ },
+ {
+  "id": 3574,
+  "de": "der Vermerk",
+  "tr": "not, şerh",
+  "deBeispiel": "Der Sachbearbeiter fügte dem Vorgang einen Vermerk hinzu.",
+  "gsw": "Vermerk",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Sachbearbäiter hät em Dossier en Vermerk aagfüegt."
+ },
+ {
+  "id": 3575,
+  "de": "das Aktenzeichen",
+  "tr": "dosya numarası",
+  "deBeispiel": "Bitte geben Sie das Aktenzeichen in Ihrer Korrespondenz an.",
+  "gsw": "Aktezäiche",
+  "gswArtikel": "s",
+  "gswBeispiel": "Bitte gänd Si s Aktezäiche i de Korrespondänz aa."
+ },
+ {
+  "id": 3576,
+  "de": "formlos",
+  "tr": "şekle bağlı olmayan, biçim şartı aranmayan",
+  "deBeispiel": "Ein formloser Antrag genügt in diesem besonderen Fall.",
+  "gsw": "formlos",
+  "gswArtikel": null,
+  "gswBeispiel": "En formlose Aatrag längt i dem bsundere Fall."
+ },
+ {
+  "id": 3577,
+  "de": "rechtsverbindlich",
+  "tr": "hukuken bağlayıcı",
+  "deBeispiel": "Erst die Unterschrift macht das Dokument rechtsverbindlich.",
+  "gsw": "rechtsverbindlich",
+  "gswArtikel": null,
+  "gswBeispiel": "Erscht d Underschrift macht s Dokumänt rechtsverbindlich."
+ },
+ {
+  "id": 3578,
+  "de": "der Staatshaushalt",
+  "tr": "devlet bütçesi",
+  "deBeispiel": "Der Staatshaushalt wies im vergangenen Jahr ein hohes Defizit auf.",
+  "gsw": "Staatshuushalt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Staatshuushalt hät letscht Jaar es hööchs Defizit ghaa."
+ },
+ {
+  "id": 3579,
+  "de": "das Defizit",
+  "tr": "açık, defisit",
+  "deBeispiel": "Das Haushaltsdefizit stieg trotz der Sparmaßnahmen weiter an.",
+  "gsw": "Defizit",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Defizit im Staatshuushalt isch trotz de Schparmassnaame wiiter gschtige."
+ },
+ {
+  "id": 3580,
+  "de": "die Subvention",
+  "tr": "devlet desteği, sübvansiyon",
+  "deBeispiel": "Die Subventionen für die heimische Industrie wurden gekürzt.",
+  "gsw": "Subvention",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Subventione für di iihäimisch Induschtrii sind gchürzt woorde."
+ },
+ {
+  "id": 3581,
+  "de": "die Konjunkturpolitik",
+  "tr": "konjonktür politikası",
+  "deBeispiel": "Die Konjunkturpolitik zielt auf die Stabilisierung der Wirtschaft ab.",
+  "gsw": "Konjunkturpolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Konjunkturpolitik zilt uf d Schtabilisierig vo de Wirtschaft ab."
+ },
+ {
+  "id": 3582,
+  "de": "die Geldpolitik",
+  "tr": "para politikası",
+  "deBeispiel": "Die Geldpolitik der Notenbank beeinflusst maßgeblich die Zinssätze.",
+  "gsw": "Gältpolitik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Gältpolitik vo de Nationalbank beiiflusst d Zinssätz massgäblich."
+ },
+ {
+  "id": 3583,
+  "de": "der Leitzins",
+  "tr": "politika faizi",
+  "deBeispiel": "Die Notenbank erhöhte den Leitzins um einen halben Prozentpunkt.",
+  "gsw": "Läitzins",
+  "gswArtikel": "de",
+  "gswBeispiel": "D Nationalbank hät de Läitzins um en halbe Prozäntpunkt erhööcht."
+ },
+ {
+  "id": 3584,
+  "de": "die Staatsverschuldung",
+  "tr": "kamu borcu",
+  "deBeispiel": "Die Staatsverschuldung erreichte einen historischen Höchststand.",
+  "gsw": "Staatsverschuldig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Staatsverschuldig hät en historische Hööchschtstand erräicht."
+ },
+ {
+  "id": 3585,
+  "de": "das Wirtschaftswachstum",
+  "tr": "ekonomik büyüme",
+  "deBeispiel": "Das Wirtschaftswachstum verlangsamte sich im letzten Jahr merklich.",
+  "gsw": "Wirtschaftswachstum",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Wirtschaftswachstum hät sich im letschte Jaar dütlich verlangsamet."
+ },
+ {
+  "id": 3586,
+  "de": "die Deregulierung",
+  "tr": "deregülasyon",
+  "deBeispiel": "Die Deregulierung des Marktes führte zu mehr Wettbewerb.",
+  "gsw": "Deregulierig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Deregulierig vom Markt hät zu mee Konkurränz gfüert."
+ },
+ {
+  "id": 3587,
+  "de": "die Marktwirtschaft",
+  "tr": "piyasa ekonomisi",
+  "deBeispiel": "Die soziale Marktwirtschaft verbindet Wettbewerb mit sozialer Absicherung.",
+  "gsw": "Marktwirtschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D sozial Marktwirtschaft verbindet Konkurränz mit sozialer Absicherig."
+ },
+ {
+  "id": 3588,
+  "de": "der Strukturwandel",
+  "tr": "yapısal değişim",
+  "deBeispiel": "Der Strukturwandel trifft besonders die alten Industrieregionen.",
+  "gsw": "Strukturwandel",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Strukturwandel trifft bsunders di alte Induschtriiregione."
+ },
+ {
+  "id": 3589,
+  "de": "die Kaufkraft",
+  "tr": "satın alma gücü",
+  "deBeispiel": "Die steigenden Preise mindern spürbar die Kaufkraft der Verbraucher.",
+  "gsw": "Chaufchraft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D schtiigende Priis mindered d Chaufchraft vo de Konsumänte dütlich."
+ },
+ {
+  "id": 3590,
+  "de": "das Bruttoinlandsprodukt",
+  "tr": "gayri safi yurtiçi hasıla",
+  "deBeispiel": "Das Bruttoinlandsprodukt wuchs im Vergleich zum Vorjahr deutlich.",
+  "gsw": "Bruttoinlandprodukt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Bruttoinlandprodukt isch im Verglich zum Vorjaar dütlich gwachse."
+ },
+ {
+  "id": 3591,
+  "de": "fiskalisch",
+  "tr": "mali, maliyeye ilişkin",
+  "deBeispiel": "Die fiskalische Disziplin der Regierung wurde international gelobt.",
+  "gsw": "fiskalisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D fiskalisch Disziplin vo de Regierig isch international globt woorde."
+ },
+ {
+  "id": 3592,
+  "de": "konjunkturell",
+  "tr": "konjonktürel",
+  "deBeispiel": "Der Rückgang der Nachfrage war rein konjunkturell bedingt.",
+  "gsw": "konjunkturell",
+  "gswArtikel": null,
+  "gswBeispiel": "Dass d Naachfraag zrugggange isch, isch rein konjunkturell bedingt gsii."
+ },
+ {
+  "id": 3593,
+  "de": "das Ministerium",
+  "tr": "bakanlık",
+  "deBeispiel": "Das Ministerium erarbeitete einen umstrittenen neuen Gesetzentwurf.",
+  "gsw": "Departemänt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Departemänt hät en umstrittene neue Gsetzesentwurf vorgläit."
+ },
+ {
+  "id": 3594,
+  "de": "der Ausschuss",
+  "tr": "komisyon, kurul",
+  "deBeispiel": "Der Ausschuss berät derzeit über den Gesetzesvorschlag.",
+  "gsw": "Usschuss",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Usschuss beraatet zurziit über de Gsetzesvorschlag."
+ },
+ {
+  "id": 3595,
+  "de": "das Gremium",
+  "tr": "kurul, heyet",
+  "deBeispiel": "Ein unabhängiges Gremium prüft die erhobenen Vorwürfe.",
+  "gsw": "Gremium",
+  "gswArtikel": "s",
+  "gswBeispiel": "Es unabhängigs Gremium prüeft di erhobene Vorwürf."
+ },
+ {
+  "id": 3596,
+  "de": "der Verband",
+  "tr": "birlik, meslek örgütü",
+  "deBeispiel": "Der Verband vertritt die Interessen der gesamten Branche.",
+  "gsw": "Verband",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Verband vertritt d Interässe vo de ganze Branche."
+ },
+ {
+  "id": 3597,
+  "de": "die Kommission",
+  "tr": "komisyon",
+  "deBeispiel": "Die Kommission legte ihren Abschlussbericht dem Parlament vor.",
+  "gsw": "Kommission",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Kommission hät em Parlamänt ire Schlussbericht vorgläit."
+ },
+ {
+  "id": 3598,
+  "de": "das Kuratorium",
+  "tr": "mütevelli heyeti, yönetim kurulu",
+  "deBeispiel": "Das Kuratorium entscheidet über die Vergabe der Fördermittel.",
+  "gsw": "Kuratorium",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Kuratorium entschäidet über d Vergaab vo de Fördergälder."
+ },
+ {
+  "id": 3599,
+  "de": "die Körperschaft",
+  "tr": "tüzel kişilik, kurum",
+  "deBeispiel": "Die Körperschaft des öffentlichen Rechts genießt besondere Rechte.",
+  "gsw": "Körperschaft",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Körperschaft vom öffentliche Recht gnüüsst bsunderi Rächt."
+ },
+ {
+  "id": 3600,
+  "de": "die Institution",
+  "tr": "kurum",
+  "deBeispiel": "Die Institution genießt in der Bevölkerung nach wie vor hohes Vertrauen.",
+  "gsw": "Institution",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Institution gnüüsst i de Bevölkerig nach wie vor es hoochs Vertraue."
+ },
+ {
+  "id": 3601,
+  "de": "der Amtsinhaber",
+  "tr": "makam sahibi, görevdeki kişi",
+  "deBeispiel": "Der Amtsinhaber wurde für eine weitere Amtszeit bestätigt.",
+  "gsw": "Amtsinhaber",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Amtsinhaber isch für e wiiteri Amtsziit beschtätigt worde."
+ },
+ {
+  "id": 3602,
+  "de": "die Selbstverwaltung",
+  "tr": "özyönetim",
+  "deBeispiel": "Die kommunale Selbstverwaltung ist im Grundgesetz verankert.",
+  "gsw": "Sälbschtverwaltig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D kommunal Sälbschtverwaltig isch i de Verfassig fescht verankeret."
+ },
+ {
+  "id": 3603,
+  "de": "die Ästhetik",
+  "tr": "estetik",
+  "deBeispiel": "Die Ästhetik des Romans wurde von Kritikern kontrovers diskutiert.",
+  "gsw": "Ästhetik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ästhetik vom Roman isch vo de Kritiker kontrovärs diskutiert worde."
+ },
+ {
+  "id": 3604,
+  "de": "die Epoche",
+  "tr": "çağ, dönem",
+  "deBeispiel": "Jede literarische Epoche prägt ihre eigene Formensprache.",
+  "gsw": "Epoche",
+  "gswArtikel": "d",
+  "gswBeispiel": "Jedi literarisch Epoche prägt iri äigeti Formespraach."
+ },
+ {
+  "id": 3605,
+  "de": "die Ideologie",
+  "tr": "ideoloji",
+  "deBeispiel": "Die Ideologie des Autors spiegelt sich in jedem Kapitel wider.",
+  "gsw": "Ideologie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ideologie vom Autor schpieglet sich i jedem Kapitel."
+ },
+ {
+  "id": 3606,
+  "de": "die Doktrin",
+  "tr": "doktrin, öğreti",
+  "deBeispiel": "Die philosophische Doktrin wurde von Generationen weitergegeben.",
+  "gsw": "Doktrin",
+  "gswArtikel": "d",
+  "gswBeispiel": "D philosophisch Doktrin isch über Generatione wiitergää worde."
+ },
+ {
+  "id": 3607,
+  "de": "das Manifest",
+  "tr": "bildiri, manifesto",
+  "deBeispiel": "Das Manifest der Avantgarde forderte einen radikalen Traditionsbruch.",
+  "gsw": "Manifescht",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Manifescht vo de Avantgarde hät en radikale Bruch mit de Tradition gforderet."
+ },
+ {
+  "id": 3608,
+  "de": "die Avantgarde",
+  "tr": "avangart, öncü sanat akımı",
+  "deBeispiel": "Die Avantgarde brach bewusst mit den ästhetischen Konventionen.",
+  "gsw": "Avantgarde",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Avantgarde hät bewusst mit de ästhetische Konventione broche."
+ },
+ {
+  "id": 3609,
+  "de": "der Kanon",
+  "tr": "kanon, klasikler listesi",
+  "deBeispiel": "Der literarische Kanon wird ständig neu verhandelt und erweitert.",
+  "gsw": "Kanon",
+  "gswArtikel": "de",
+  "gswBeispiel": "De literarisch Kanon wird immer wider neu verhandlet und erwiiteret."
+ },
+ {
+  "id": 3610,
+  "de": "die Rezension",
+  "tr": "eleştiri yazısı, tanıtım yazısı",
+  "deBeispiel": "Die Rezension lobte die stilistische Finesse des Romans.",
+  "gsw": "Rezension",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Rezension hät die stilistisch Finesse vom Roman globt."
+ },
+ {
+  "id": 3611,
+  "de": "der Essayist",
+  "tr": "deneme yazarı",
+  "deBeispiel": "Der Essayist beleuchtet gesellschaftliche Fragen mit scharfem Verstand.",
+  "gsw": "Essayischt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Essayischt belüüchtet gsellschaftlichi Frage mit scharfem Verschtand."
+ },
+ {
+  "id": 3612,
+  "de": "das Drama",
+  "tr": "dram, tiyatro oyunu",
+  "deBeispiel": "Das Drama thematisiert den inneren Konflikt des Protagonisten.",
+  "gsw": "Drama",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Drama thematisiert de inner Konflikt vom Protagonischt."
+ },
+ {
+  "id": 3613,
+  "de": "die Tragödie",
+  "tr": "trajedi",
+  "deBeispiel": "Die griechische Tragödie behandelt das Schicksal des Menschen.",
+  "gsw": "Tragödie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D griechisch Tragödie handlet vom Schicksal vom Mäntsch."
+ },
+ {
+  "id": 3614,
+  "de": "die Komödie",
+  "tr": "komedi",
+  "deBeispiel": "Die Komödie entlarvt gesellschaftliche Missstände mit feinem Humor.",
+  "gsw": "Komödie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Komödie entlarvt gsellschaftlichi Missschtänd mit fiinem Humor."
+ },
+ {
+  "id": 3615,
+  "de": "der Monolog",
+  "tr": "monolog",
+  "deBeispiel": "Im inneren Monolog offenbart die Figur ihre verborgenen Ängste.",
+  "gsw": "Monolog",
+  "gswArtikel": "de",
+  "gswBeispiel": "Im innere Monolog zäigt d Figur iri verborgene Ängscht."
+ },
+ {
+  "id": 3616,
+  "de": "die Novelle",
+  "tr": "uzun hikaye, novella",
+  "deBeispiel": "Die Novelle konzentriert sich auf ein einziges dramatisches Ereignis.",
+  "gsw": "Novelle",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Novelle konzentriert sich uf äi äinzigs dramatischs Eräignis."
+ },
+ {
+  "id": 3617,
+  "de": "die Erzählperspektive",
+  "tr": "anlatı bakış açısı",
+  "deBeispiel": "Die Erzählperspektive wechselt mehrfach zwischen den Figuren.",
+  "gsw": "Erzäälperschpektive",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erzäälperschpektive wächslet es paar Mal zwüsched de Figure."
+ },
+ {
+  "id": 3618,
+  "de": "die Anspielung",
+  "tr": "ima, gönderme",
+  "deBeispiel": "Der Text enthält zahlreiche Anspielungen auf die Bibel.",
+  "gsw": "Aaschpilig",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Text enthaltet vili Aaschpilige uf d Bibel."
+ },
+ {
+  "id": 3619,
+  "de": "die Allegorie",
+  "tr": "alegori",
+  "deBeispiel": "Die Höhle steht als Allegorie für die menschliche Unwissenheit.",
+  "gsw": "Allegorie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Höhli schtaat als Allegorie für di mänschlich Unwüssehäit."
+ },
+ {
+  "id": 3620,
+  "de": "der Topos",
+  "tr": "edebi motif, ortak tema",
+  "deBeispiel": "Der Topos der vergänglichen Schönheit durchzieht die Lyrik.",
+  "gsw": "Topos",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Topos vo de vergängliche Schöönhäit zieht sich dur d Lyrik."
+ },
+ {
+  "id": 3621,
+  "de": "die Satire",
+  "tr": "hiciv, taşlama",
+  "deBeispiel": "Die Satire verspottet die Eitelkeit des Adels scharfzüngig.",
+  "gsw": "Satire",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Satire verschpottet d Iitelkäit vom Adel scharfzüngig."
+ },
+ {
+  "id": 3622,
+  "de": "die Parodie",
+  "tr": "parodi",
+  "deBeispiel": "Die Parodie übertreibt den pathetischen Stil des Originals.",
+  "gsw": "Parodie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Parodie übertriibt de pathetisch Schtil vom Original."
+ },
+ {
+  "id": 3623,
+  "de": "der Kontext",
+  "tr": "bağlam",
+  "deBeispiel": "Ohne den historischen Kontext bleibt das Gedicht unverständlich.",
+  "gsw": "Kontext",
+  "gswArtikel": "de",
+  "gswBeispiel": "Ohni de hischtorisch Kontext bliibt s Gedicht unverschtändlich."
+ },
+ {
+  "id": 3624,
+  "de": "die Aufklärung",
+  "tr": "Aydınlanma",
+  "deBeispiel": "Die Aufklärung stellte die Vernunft über religiöse Autorität.",
+  "gsw": "Ufklärig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Ufklärig hät d Vernunft über di religiös Autorität gschtellt."
+ },
+ {
+  "id": 3625,
+  "de": "die Renaissance",
+  "tr": "Rönesans",
+  "deBeispiel": "Die Renaissance rückte den Menschen ins Zentrum des Denkens.",
+  "gsw": "Renaissance",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Renaissance hät de Mäntsch is Zentrum vom Dänke gruckt."
+ },
+ {
+  "id": 3626,
+  "de": "die Metaphysik",
+  "tr": "metafizik",
+  "deBeispiel": "Die Metaphysik fragt nach dem Wesen der Wirklichkeit selbst.",
+  "gsw": "Metaphysik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Metaphysik fragt nach em Wese vo de Würklichkäit sälber."
+ },
+ {
+  "id": 3627,
+  "de": "der Nihilismus",
+  "tr": "nihilizm",
+  "deBeispiel": "Der Nihilismus leugnet die Existenz objektiver Werte.",
+  "gsw": "Nihilismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Nihilismus schtriitet ab, dass es objektivi Wärt git."
+ },
+ {
+  "id": 3628,
+  "de": "der Existenzialismus",
+  "tr": "varoluşçuluk",
+  "deBeispiel": "Der Existenzialismus betont die radikale Freiheit des Individuums.",
+  "gsw": "Exischtänzialismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Exischtänzialismus betont di radikal Friihäit vom Individuum."
+ },
+ {
+  "id": 3629,
+  "de": "die Dialektik",
+  "tr": "diyalektik (yöntem, öğreti)",
+  "deBeispiel": "Hegels Dialektik beruht auf These, Antithese und Synthese.",
+  "gsw": "Dialektik",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Dialektik vom Hegel berueht uf These, Antithese und Synthese."
+ },
+ {
+  "id": 3630,
+  "de": "die Erkenntnistheorie",
+  "tr": "bilgi kuramı, epistemoloji",
+  "deBeispiel": "Die Erkenntnistheorie untersucht die Grenzen menschlichen Wissens.",
+  "gsw": "Erkänntnistheorie",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Erkänntnistheorie undersuecht d Gränze vom mänschliche Wüsse."
+ },
+ {
+  "id": 3631,
+  "de": "die Weltanschauung",
+  "tr": "dünya görüşü",
+  "deBeispiel": "Seine Weltanschauung prägte sein gesamtes literarisches Schaffen.",
+  "gsw": "Wältaaschauig",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Wältaaschauig hät sis ganze literarische Schaffe prägt."
+ },
+ {
+  "id": 3632,
+  "de": "die Polemik",
+  "tr": "polemik, çatışmalı tartışma",
+  "deBeispiel": "Seine Polemik gegen die Kritiker war scharf und unversöhnlich.",
+  "gsw": "Polemik",
+  "gswArtikel": "d",
+  "gswBeispiel": "Sini Polemik gäge d Kritiker isch scharf und unversöönlich gsii."
+ },
+ {
+  "id": 3633,
+  "de": "der Aphorismus",
+  "tr": "özdeyiş, aforizma",
+  "deBeispiel": "Nietzsches Aphorismen bestechen durch ihre sprachliche Prägnanz.",
+  "gsw": "Aphorismus",
+  "gswArtikel": "de",
+  "gswBeispiel": "Jede Aphorismus vom Nietzsche beschticht dur sini schpraachlich Prägnanz."
+ },
+ {
+  "id": 3634,
+  "de": "die Reminiszenz",
+  "tr": "anımsama, çağrışım",
+  "deBeispiel": "Der Roman ist voller Reminiszenzen an die eigene Kindheit.",
+  "gsw": "Reminiszänz",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Roman isch voll Reminiszänze a di äigeti Chindhäit."
+ },
+ {
+  "id": 3635,
+  "de": "die Konnotation",
+  "tr": "yan anlam, çağrışım",
+  "deBeispiel": "Das Wort trägt in diesem Kontext eine negative Konnotation.",
+  "gsw": "Konnotation",
+  "gswArtikel": "d",
+  "gswBeispiel": "S Wort träit i dem Kontext e negativi Konnotation."
+ },
+ {
+  "id": 3636,
+  "de": "die Denotation",
+  "tr": "düz anlam",
+  "deBeispiel": "Die Denotation eines Wortes unterscheidet sich von der Konnotation.",
+  "gsw": "Denotation",
+  "gswArtikel": "d",
+  "gswBeispiel": "D Denotation vomene Wort isch öppis anders als d Konnotation."
+ },
+ {
+  "id": 3637,
+  "de": "der Subtext",
+  "tr": "alt metin, örtük anlam",
+  "deBeispiel": "Zwischen den Zeilen verbirgt sich ein politischer Subtext.",
+  "gsw": "Subtext",
+  "gswArtikel": "de",
+  "gswBeispiel": "Zwüsched de Ziile verschteckt sich en politische Subtext."
+ },
+ {
+  "id": 3638,
+  "de": "die Zäsur",
+  "tr": "dönüm noktası, kesinti",
+  "deBeispiel": "Der Krieg markierte eine tiefe Zäsur in der Kulturgeschichte.",
+  "gsw": "Zäsur",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Chrieg hät e tüüfi Zäsur i de Kulturgschicht markiert."
+ },
+ {
+  "id": 3639,
+  "de": "der Umbruch",
+  "tr": "köklü değişim, altüst oluş",
+  "deBeispiel": "Der gesellschaftliche Umbruch spiegelte sich in der Kunst wider.",
+  "gsw": "Umbruch",
+  "gswArtikel": "de",
+  "gswBeispiel": "De gsellschaftlich Umbruch hät sich i de Kunscht gschpieglet."
+ },
+ {
+  "id": 3640,
+  "de": "das Relikt",
+  "tr": "kalıntı, geçmişten kalma şey",
+  "deBeispiel": "Das Gedicht wirkt wie ein Relikt aus vergangenen Zeiten.",
+  "gsw": "Relikt",
+  "gswArtikel": "s",
+  "gswBeispiel": "S Gedicht wirkt wie es Relikt us vergangene Ziite."
+ },
+ {
+  "id": 3641,
+  "de": "die Überlieferung",
+  "tr": "aktarım, sözlü gelenek",
+  "deBeispiel": "Die mündliche Überlieferung bewahrte alte Mythen über Jahrhunderte.",
+  "gsw": "Überlieferig",
+  "gswArtikel": "d",
+  "gswBeispiel": "D mündlich Überlieferig hät alti Mythe über Jaarhunderte bewaart."
+ },
+ {
+  "id": 3642,
+  "de": "das Fragment",
+  "tr": "parça, kalıntı metin",
+  "deBeispiel": "Nur ein Fragment des antiken Dramas ist erhalten geblieben.",
+  "gsw": "Fragment",
+  "gswArtikel": "s",
+  "gswBeispiel": "Nur es Fragment vom antike Drama isch erhalte blibe."
+ },
+ {
+  "id": 3643,
+  "de": "die Chiffre",
+  "tr": "simge, şifreli işaret",
+  "deBeispiel": "Der Dichter nutzt die Chiffre als verschlüsseltes Symbol.",
+  "gsw": "Chiffre",
+  "gswArtikel": "d",
+  "gswBeispiel": "De Dichter bruucht d Chiffre als verschlüsslets Symbol."
+ },
+ {
+  "id": 3644,
+  "de": "der Mythos",
+  "tr": "mit, efsane",
+  "deBeispiel": "Der Mythos von Prometheus fasziniert bis heute die Menschheit.",
+  "gsw": "Mythos",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Mythos vom Prometheus fasziniert d Mäntschhäit bis hüt."
+ },
+ {
+  "id": 3645,
+  "de": "der Zeitgeist",
+  "tr": "zamanın ruhu",
+  "deBeispiel": "Der Roman fängt den Zeitgeist der Jahrhundertwende meisterhaft ein.",
+  "gsw": "Ziitgäischt",
+  "gswArtikel": "de",
+  "gswBeispiel": "De Roman fangt de Ziitgäischt vo de Jaarhundertwändi mäischterhaft ii."
+ },
+ {
+  "id": 3646,
+  "de": "das Kulturerbe",
+  "tr": "kültürel miras",
+  "deBeispiel": "Die Altstadt gehört zum immateriellen Kulturerbe der Region.",
+  "gsw": "Kulturerb",
+  "gswArtikel": "s",
+  "gswBeispiel": "D Altschtadt ghöört zum Kulturerb vo de Region."
+ },
+ {
+  "id": 3647,
+  "de": "interpretieren",
+  "tr": "yorumlamak",
+  "deBeispiel": "Kritiker interpretieren das Ende des Romans völlig unterschiedlich.",
+  "gsw": "interpretiere",
+  "gswArtikel": null,
+  "gswBeispiel": "Kritiker interpretiered s Endi vom Roman ganz underschiidlich."
+ },
+ {
+  "id": 3648,
+  "de": "reflektieren",
+  "tr": "üzerine düşünmek, yansıtmak",
+  "deBeispiel": "Der Essay reflektiert kritisch über die Rolle der Kunst.",
+  "gsw": "reflektiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Autore reflektiered im Essay kritisch über d Rolle vo de Kunscht."
+ },
+ {
+  "id": 3649,
+  "de": "verkörpern",
+  "tr": "somutlaştırmak, temsil etmek",
+  "deBeispiel": "Die Figur verkörpert das Ideal des tragischen Helden.",
+  "gsw": "verkörpere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Figur verkörperet s Ideal vom tragische Held."
+ },
+ {
+  "id": 3650,
+  "de": "widerspiegeln",
+  "tr": "yansıtmak",
+  "deBeispiel": "Die Architektur spiegelt den Zeitgeist der Epoche wider.",
+  "gsw": "widerschpiegle",
+  "gswArtikel": null,
+  "gswBeispiel": "Me gseet a de Architektur, wie sich de Ziitgäischt vo de Epoche widerschpieglet."
+ },
+ {
+  "id": 3651,
+  "de": "polarisieren",
+  "tr": "kutuplaştırmak",
+  "deBeispiel": "Das umstrittene Kunstwerk polarisiert die Öffentlichkeit stark.",
+  "gsw": "polarisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S umschtritte Chunschtwärch polarisiert d Öffentlichkäit starch."
+ },
+ {
+  "id": 3652,
+  "de": "idealisieren",
+  "tr": "idealleştirmek",
+  "deBeispiel": "Die Romantiker idealisierten das Landleben und die Natur.",
+  "gsw": "idealisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Romantiker händ s Landläbe und d Natur idealisiert."
+ },
+ {
+  "id": 3653,
+  "de": "glorifizieren",
+  "tr": "yüceltmek",
+  "deBeispiel": "Das Epos glorifiziert die Taten vergangener Helden.",
+  "gsw": "glorifiziere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Epos glorifiziert d Taate vo vergangene Hälde."
+ },
+ {
+  "id": 3654,
+  "de": "stilisieren",
+  "tr": "stilize etmek, üsluplaştırmak",
+  "deBeispiel": "Der Maler stilisiert die Figuren zu abstrakten Formen.",
+  "gsw": "stilisiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Maaler stilisiert d Figuure zu abstrakte Forme."
+ },
+ {
+  "id": 3655,
+  "de": "inszenieren",
+  "tr": "sahneye koymak, kurgulamak",
+  "deBeispiel": "Der Regisseur inszeniert das Drama in einem kargen Bühnenbild.",
+  "gsw": "inszeniere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Regisseur inszeniert s Drama i eme charge Büünebild."
+ },
+ {
+  "id": 3656,
+  "de": "rezipieren",
+  "tr": "algılamak, alımlamak (bir eseri)",
+  "deBeispiel": "Das Publikum rezipiert das Werk auf ganz unterschiedliche Weise.",
+  "gsw": "rezipiere",
+  "gswArtikel": null,
+  "gswBeispiel": "S Publikum rezipiert s Wärch uf ganz underschidlichi Aart."
+ },
+ {
+  "id": 3657,
+  "de": "verklären",
+  "tr": "idealize ederek anmak, güzelleştirmek",
+  "deBeispiel": "Die Erinnerung verklärt die Vergangenheit oft ins Positive.",
+  "gsw": "verchlääre",
+  "gswArtikel": null,
+  "gswBeispiel": "D Erinnerig verchläärt d Vergangehäit oft is Positive."
+ },
+ {
+  "id": 3658,
+  "de": "transzendieren",
+  "tr": "aşmak, ötesine geçmek",
+  "deBeispiel": "Die Kunst versucht, die Grenzen der Sprache zu transzendieren.",
+  "gsw": "transzendiere",
+  "gswArtikel": null,
+  "gswBeispiel": "D Chunscht probiert, d Gränze vo de Spraach z transzendiere."
+ },
+ {
+  "id": 3659,
+  "de": "abstrahieren",
+  "tr": "soyutlamak",
+  "deBeispiel": "Der Künstler abstrahiert die Form bis zur reinen Geometrie.",
+  "gsw": "abstrahiere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Künschtler abstrahiert d Form bis zur räine Geometrii."
+ },
+ {
+  "id": 3660,
+  "de": "zeitlos",
+  "tr": "eskimeyen, çağlar üstü",
+  "deBeispiel": "Die Themen des Dramas wirken erstaunlich zeitlos und aktuell.",
+  "gsw": "ziitlos",
+  "gswArtikel": null,
+  "gswBeispiel": "D Theme vom Drama wirked erschtuunlich ziitlos und aktuell."
+ },
+ {
+  "id": 3661,
+  "de": "ambivalent",
+  "tr": "ikircikli, çelişik duygular taşıyan",
+  "deBeispiel": "Seine Haltung gegenüber der Moderne bleibt zutiefst ambivalent.",
+  "gsw": "ambivalent",
+  "gswArtikel": null,
+  "gswBeispiel": "Sini Haltig gägenüber de Moderne bliibt zutiefscht ambivalent."
+ },
+ {
+  "id": 3662,
+  "de": "kontrovers",
+  "tr": "tartışmalı",
+  "deBeispiel": "Die Ausstellung wurde in der Presse äußerst kontrovers diskutiert.",
+  "gsw": "kontrovers",
+  "gswArtikel": null,
+  "gswBeispiel": "D Usschtellig isch i de Presse üsserscht kontrovers diskutiert worde."
+ },
+ {
+  "id": 3663,
+  "de": "epochal",
+  "tr": "çağ açan, çığır açıcı",
+  "deBeispiel": "Der Roman gilt als epochales Werk der Weltliteratur.",
+  "gsw": "epochal",
+  "gswArtikel": null,
+  "gswBeispiel": "De Roman gilt als epochals Wärch vo de Wältliteratuur."
+ },
+ {
+  "id": 3664,
+  "de": "avantgardistisch",
+  "tr": "avangart, öncü (üslup)",
+  "deBeispiel": "Die avantgardistische Malerei brach mit allen bisherigen Regeln.",
+  "gsw": "avantgardischtisch",
+  "gswArtikel": null,
+  "gswBeispiel": "D avantgardischtisch Maalerii hät mit allne bisherige Regle broche."
+ },
+ {
+  "id": 3665,
+  "de": "dialektisch",
+  "tr": "diyalektik, diyalektiğe dayalı",
+  "deBeispiel": "Hegel entwickelt seine Theorie in einer dialektischen Argumentation.",
+  "gsw": "dialäktisch",
+  "gswArtikel": null,
+  "gswBeispiel": "De Hegel entwicklet sini Theorii mit ere dialäktische Argumentation."
+ },
+ {
+  "id": 3666,
+  "de": "paradox",
+  "tr": "paradoksal, çelişkili",
+  "deBeispiel": "Es klingt paradox, doch der Verlust brachte künstlerische Freiheit.",
+  "gsw": "paradox",
+  "gswArtikel": null,
+  "gswBeispiel": "Es tönt paradox, aber de Verluscht hät künschtlerischi Friihäit braacht."
+ },
+ {
+  "id": 3667,
+  "de": "existenziell",
+  "tr": "varoluşsal",
+  "deBeispiel": "Der Protagonist erlebt eine existenzielle Krise nach dem Verlust.",
+  "gsw": "existänziell",
+  "gswArtikel": null,
+  "gswBeispiel": "De Protagonischt erläbt nach em Verluscht e existänzielli Chrise."
+ },
+ {
+  "id": 3668,
+  "de": "fragmentarisch",
+  "tr": "parça parça, eksik",
+  "deBeispiel": "Das Manuskript ist nur fragmentarisch überliefert worden.",
+  "gsw": "fragmentarisch",
+  "gswArtikel": null,
+  "gswBeispiel": "S Manuskript isch nume fragmentarisch überliferet worde."
+ },
+ {
+  "id": 3669,
+  "de": "kontemplativ",
+  "tr": "tefekküre dayalı, derin düşünceli",
+  "deBeispiel": "Der Dichter pflegt einen kontemplativen Blick auf die Welt.",
+  "gsw": "kontemplativ",
+  "gswArtikel": null,
+  "gswBeispiel": "De Dichter hät en kontemplative Blick uf d Wält."
+ },
+ {
+  "id": 3670,
+  "de": "erwägen",
+  "tr": "düşünmek, göz önünde bulundurmak",
+  "deBeispiel": "Wir sollten erwägen, den Vertrag frühzeitig zu kündigen.",
+  "gsw": "erwääge",
+  "gswArtikel": null,
+  "gswBeispiel": "Mir sötted erwääge, de Vertraag früeziitig z chündige."
+ },
+ {
+  "id": 3671,
+  "de": "sich abzeichnen",
+  "tr": "belirmek, ortaya çıkmak",
+  "deBeispiel": "Ein Wandel in der Politik zeichnet sich langsam ab.",
+  "gsw": "sich abzäichne",
+  "gswArtikel": null,
+  "gswBeispiel": "En Wandel i de Politik zäichnet sich langsam ab."
+ },
+ {
+  "id": 3672,
+  "de": "sich häufen",
+  "tr": "artmak, çoğalmak",
+  "deBeispiel": "In den letzten Wochen haben sich die Beschwerden gehäuft.",
+  "gsw": "sich hüüfe",
+  "gswArtikel": null,
+  "gswBeispiel": "I de letschte Wuche händ sich d Beschwärde ghüüft."
+ },
+ {
+  "id": 3674,
+  "de": "sich erübrigen",
+  "tr": "gereksiz olmak",
+  "deBeispiel": "Nach der Absage erübrigt sich jede weitere Diskussion.",
+  "gsw": "sich erübrige",
+  "gswArtikel": null,
+  "gswBeispiel": "Nach de Absaag erübrigt sich jedi wiiteri Diskussion."
+ },
+ {
+  "id": 3675,
+  "de": "abwägen",
+  "tr": "tartmak, kıyaslamak",
+  "deBeispiel": "Man muss Vor- und Nachteile sorgfältig abwägen.",
+  "gsw": "abwääge",
+  "gswArtikel": null,
+  "gswBeispiel": "Me muess Vor- und Nachtäil sorgfältig abwääge."
+ },
+ {
+  "id": 3676,
+  "de": "vorwegnehmen",
+  "tr": "önceden dile getirmek, öne almak",
+  "deBeispiel": "Der Autor nimmt im Vorwort die Kritik vorweg.",
+  "gsw": "vorwägnää",
+  "gswArtikel": null,
+  "gswBeispiel": "De Autor nimmt im Voorwort d Kritik vorwäg."
+ },
+ {
+  "id": 3677,
+  "de": "sich entpuppen",
+  "tr": "çıkmak, ortaya çıkmak",
+  "deBeispiel": "Der vermeintliche Freund entpuppte sich als Betrüger.",
+  "gsw": "sich entpuppe",
+  "gswArtikel": null,
+  "gswBeispiel": "De vermäintlich Fründ hät sich als Betrüüger entpuppt."
+ },
+ {
+  "id": 3678,
+  "de": "verkennen",
+  "tr": "yanlış değerlendirmek",
+  "deBeispiel": "Man sollte die Gefahr nicht verkennen.",
+  "gsw": "verchenne",
+  "gswArtikel": null,
+  "gswBeispiel": "Me sött d Gfaar nöd verchenne."
+ },
+ {
+  "id": 3679,
+  "de": "sich abfinden",
+  "tr": "kabullenmek, razı olmak",
+  "deBeispiel": "Sie musste sich mit der Niederlage abfinden.",
+  "gsw": "sich abfinde",
+  "gswArtikel": null,
+  "gswBeispiel": "Si hät sich mit de Niderlaag müese abfinde."
+ },
+ {
+  "id": 3680,
+  "de": "hervorheben",
+  "tr": "vurgulamak, öne çıkarmak",
+  "deBeispiel": "Der Bericht hebt die positiven Aspekte hervor.",
+  "gsw": "hervorheebe",
+  "gswArtikel": null,
+  "gswBeispiel": "De Bricht hebt di positive Aschpäkt hervor."
+ },
+ {
+  "id": 3681,
+  "de": "sich verflüchtigen",
+  "tr": "buharlaşmak, kaybolmak",
+  "deBeispiel": "Die anfängliche Begeisterung hat sich schnell verflüchtigt.",
+  "gsw": "sich verflüchtige",
+  "gswArtikel": null,
+  "gswBeispiel": "Di aafänglich Begäischterig hät sich schnäll verflüchtigt."
+ },
+ {
+  "id": 3682,
+  "de": "anprangern",
+  "tr": "teşhir etmek, alenen kınamak",
+  "deBeispiel": "Der Journalist prangert die Missstände öffentlich an.",
+  "gsw": "aaprangere",
+  "gswArtikel": null,
+  "gswBeispiel": "De Journalischt prangeret d Misschtänd öffentlich aa."
+ }
+]
