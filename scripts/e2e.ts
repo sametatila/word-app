@@ -818,6 +818,11 @@ async function main() {
     check("istem seviyeyi taşıyor", prompt.includes(lesson.level));
     check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
     check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
+    // Kapanış turu: alt sınıra ulaşınca model sahneyi kapatmalı — talimat
+    // ancak istendiğinde eklenmeli, her turda kapanmaya çalışan model olmaz.
+    check("kapanış talimatı istenince var",
+      roleplayPrompt(lesson, { closing: true }).includes("KAPANIŞ TURU"));
+    check("kapanış talimatı istenmeyince yok", !prompt.includes("KAPANIŞ TURU"));
   }
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");

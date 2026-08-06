@@ -31,7 +31,7 @@ export type RoleplayTurn = ChatMessage;
  * düzeltmesi yerine "bu dersin kalıbına göre" düzeltme almak, dersin
  * bütünlüğünü koruyan şey.
  */
-export function roleplayPrompt(lesson: Lesson): string {
+export function roleplayPrompt(lesson: Lesson, opts?: { closing?: boolean }): string {
   const dialect =
     lesson.course === "gsw-zh"
       ? "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil."
@@ -153,7 +153,17 @@ CEVABIN EN SONUNDA ÜÇ ÖNERİ (her seferinde yaz)
   cümle yazmak öneri değil dolgu oluyor.
 - Öneri satırlarına açıklama, tırnak, numara ekleme.
 
-Karakter bütünlüğüne dikkat et: Almanca (ä ö ü ß) ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.`;
+Karakter bütünlüğüne dikkat et: Almanca (ä ö ü ß) ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.${
+    opts?.closing
+      ? `
+
+KAPANIŞ TURU — konuşma amacına ulaştı
+Bu cevabında sahneyi DOĞAL biçimde kapat: rolüne uygun kısa bir toparlama ve
+veda söyle (en fazla 2 cümle). SORU SORMA ve öneri satırı (${SUGGESTION_MARK}) YAZMA.
+Düzeltme kuralları geçerli: öğrencinin son cümlesinde gerçek bir hata varsa
+düzeltme satırını yine yaz.`
+      : ""
+  }`;
 }
 
 /**
@@ -170,7 +180,13 @@ export async function* streamRoleplay(
   const providers = chatProviders();
   if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
 
-  const system = roleplayPrompt(lesson);
+  // Alt sınıra ulaşıldığında model sahneyi kapatıyor: ders bir sohbet uygulaması
+  // değil ve "yeterince konuşuldu"nun kararını öğrenciye bırakmak konuşmayı
+  // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci dersi bitiriyor.
+  const userTurns = messages.filter((m) => m.role === "user").length;
+  const system = roleplayPrompt(lesson, {
+    closing: userTurns >= lesson.roleplay.minTurns,
+  });
   const failures: string[] = [];
 
   for (const provider of providers) {

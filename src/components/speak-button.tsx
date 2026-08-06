@@ -52,6 +52,16 @@ function cleanForSpeech(text: string): string {
  * `speechSynthesis.cancel()` davranışıyla aynı.
  */
 let element: HTMLAudioElement | null = null;
+/**
+ * İkinci ses öğesi — yalnızca ders anlatımının parça zinciri kullanıyor.
+ *
+ * Parçalar tek öğeyle art arda çalındığında her sınırda aynı bekleme vardı:
+ * önceki parça bitiyor, src değişiyor, yeni kaynak açılıp çözülüyor ve ancak
+ * o zaman ses başlıyordu. İki öğeyle sıradaki parça, geçerli parça ÇALARKEN
+ * yükleniyor; bitişte yapılacak tek iş hazır öğede play() demek. Sınırdaki
+ * boşluk ağ/çözme süresinden JS'in olay işleme süresine iniyor.
+ */
+let extra: HTMLAudioElement | null = null;
 /** Bitişi hangi okumaya ait olduğunu ayırt etmek için — öğe paylaşıldığı için gerekli. */
 let token = 0;
 
@@ -59,6 +69,15 @@ function audioElement(): HTMLAudioElement | null {
   if (typeof Audio === "undefined") return null;
   if (!element) element = new Audio();
   return element;
+}
+
+function extraElement(): HTMLAudioElement | null {
+  if (typeof Audio === "undefined") return null;
+  if (!extra) {
+    extra = new Audio();
+    extra.preload = "auto";
+  }
+  return extra;
 }
 
 /**
@@ -71,8 +90,10 @@ function audioElement(): HTMLAudioElement | null {
 function primeOnFirstGesture() {
   if (typeof window === "undefined") return;
   const unlock = () => {
-    const el = audioElement();
-    if (el) {
+    // Her iki öğe de serbest bırakılıyor: anlatım zinciri ikinciyi de kullanıyor
+    // ve iOS yalnızca kullanıcı hareketiyle çalmış öğeyi serbest sayıyor.
+    for (const el of [audioElement(), extraElement()]) {
+      if (!el) continue;
       el.src =
         "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjI5LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAACAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD//////////////////////////////////////8AAAAATGF2YzU4LjU0AAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA";
       el.volume = 0;
@@ -192,32 +213,119 @@ function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string }
 }
 
 /**
+ * Parçaların okunmaya hazırlanması: temizle, birleştir, sadeleştir.
+ *
+ * İki iş yapılıyor ve ikisi de duraklamayla ilgili:
+ *
+ *   1. AYNI dildeki bitişik parçalar tek parçaya birleşiyor. Her parça ayrı
+ *      bir sentez ve ayrı bir ses dosyası demek; "Türkçesi 'su' demek." ile
+ *      "Lütfen" arasına dosya sınırı koymak cümlenin ortasına bekleme koymak
+ *      oluyor. Sınır yalnızca dil GERÇEKTEN değiştiğinde kalıyor — orada ses
+ *      de değişmek zorunda.
+ *   2. Üç nokta ("…") atılıyor. İçerikte kalıbın devamını gösteriyor
+ *      ("Ich möchte …") ama nöral ses onu uzun bir duraklama olarak okuyor;
+ *      ekranda anlamlı, kulakta delik.
+ *
+ * Önden indirme de aynı birleştirmeden geçmek ZORUNDA: önbellek anahtarı
+ * metnin kendisi, farklı bölünmüş metin ayrı girdi demek olur.
+ */
+function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
+  const out: SpeechSegment[] = [];
+  for (const seg of segments) {
+    const text = cleanForSpeech(seg.text.replace(/…|\.{3}/g, " "));
+    if (!text) continue;
+    const last = out[out.length - 1];
+    if (last && last.lang === seg.lang) last.text = `${last.text} ${text}`;
+    else out.push({ lang: seg.lang, text });
+  }
+  return out;
+}
+
+/**
  * Parçaları sırayla, her birini kendi dilinin sesiyle okur.
  *
  * `onEnd` son parça bittiğinde (ya da hiç çalınamadığında) bir kez çağrılır —
  * eller serbest akışta mikrofonun açılması buna bağlı. Dönen işlev okumayı
- * iptal eder: parçalar arasında bileşen sökülürse sıradaki parça başlamaz.
- * (Çalmakta olan parçayı ayrıca susturmak gerekmiyor; sonraki her okuma
- * paylaşılan ses öğesini zaten kesiyor.)
+ * iptal eder ve sesi susturur.
+ *
+ * Oynatma çift tamponlu: parça i çalarken parça i+1 öteki öğede yükleniyor,
+ * bitişte hazır öğeye yalnızca play() deniyor. Tek öğeyle her sınırda
+ * "src değiştir → indir → çöz → başla" bekleniyordu ve kullanıcı bunu
+ * cümlelerin arasında düzenli bir takılma olarak duyuyordu.
  */
 export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): () => void {
-  let cancelled = false;
-  const queue = segments
-    .map((s) => ({ ...s, text: cleanForSpeech(s.text) }))
-    .filter((s) => s.text);
+  const queue = mergeForSpeech(segments);
+  if (!queue.length) {
+    onEnd?.();
+    return () => {};
+  }
 
-  const step = (i: number) => {
-    if (cancelled) return;
+  const a = audioElement();
+  const b = extraElement();
+  const mine = ++token;
+
+  // Ses öğesi yoksa (sunucu, çok eski ortam) tarayıcı sentezine sırayla düş.
+  if (!a || !b) {
+    const step = (i: number) => {
+      if (token !== mine) return;
+      if (i >= queue.length) {
+        onEnd?.();
+        return;
+      }
+      const { voice, course } = voiceForSegment(queue[i]);
+      speakWithBrowser(queue[i].text, voice, course, () => step(i + 1));
+    };
+    step(0);
+    return () => {
+      if (token === mine) token++;
+    };
+  }
+
+  a.pause();
+  b.pause();
+  const els = [a, b];
+
+  const srcFor = (seg: SpeechSegment) => {
+    const { voice } = voiceForSegment(seg);
+    return `/api/tts?v=${voice}&t=${encodeURIComponent(seg.text)}`;
+  };
+  /** i. parçayı kendi öğesine yükler — çalma değil, hazırlık. */
+  const preload = (i: number) => {
+    const el = els[i % 2];
+    el.onended = null;
+    el.onerror = null;
+    el.src = srcFor(queue[i]);
+    el.load();
+  };
+  const playAt = (i: number) => {
+    if (token !== mine) return;
     if (i >= queue.length) {
       onEnd?.();
       return;
     }
-    const { voice, course } = voiceForSegment(queue[i]);
-    play(queue[i].text, voice, course, () => step(i + 1));
+    const el = els[i % 2];
+    const fallback = () => {
+      // Uç düşmüş ya da dosya çalınamıyor: bu parçayı tarayıcı sentezi okusun,
+      // zincir kopmasın.
+      if (token !== mine) return;
+      const { voice, course } = voiceForSegment(queue[i]);
+      speakWithBrowser(queue[i].text, voice, course, () => playAt(i + 1));
+    };
+    el.onended = () => {
+      if (token === mine) playAt(i + 1);
+    };
+    el.onerror = fallback;
+    if (i + 1 < queue.length) preload(i + 1);
+    void el.play().catch(fallback);
   };
-  step(0);
+
+  preload(0);
+  playAt(0);
   return () => {
-    cancelled = true;
+    if (token !== mine) return;
+    token++;
+    a.pause();
+    b.pause();
   };
 }
 
@@ -231,19 +339,23 @@ export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): ()
 export function stopSpeaking() {
   token++;
   element?.pause();
+  extra?.pause();
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
     window.speechSynthesis.cancel();
   }
 }
 
-/** Parçaların seslerini önceden indirir — ders akışında bekleme olmasın. */
+/**
+ * Parçaların seslerini önceden indirir — ders akışında bekleme olmasın.
+ *
+ * Oynatmayla AYNI birleştirmeden geçiyor: önbellek anahtarı metnin kendisi,
+ * farklı bölünmüş metin ayrı (ve boşuna) bir girdi olurdu.
+ */
 export function prefetchSegments(segments: SpeechSegment[]) {
   if (typeof fetch === "undefined") return;
-  for (const seg of segments) {
-    const clean = cleanForSpeech(seg.text);
-    if (!clean) continue;
+  for (const seg of mergeForSpeech(segments)) {
     const { voice } = voiceForSegment(seg);
-    void fetch(`/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`, {
+    void fetch(`/api/tts?v=${voice}&t=${encodeURIComponent(seg.text)}`, {
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */
