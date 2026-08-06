@@ -1,190 +1,390 @@
-import type { Lesson } from "../types";
+import { de, tr, type Lesson } from "../types";
 
 /**
  * A2 dersleri — Almanca.
  *
- * A1 cümlenin iskeletini kurdu; A2 o iskeleti zamanda ve nezakette esnetiyor.
- * Üçü de Türkçe konuşanın doğrudan karşılığı olmayan yapılar: geçmiş zamanın
- * iki parçaya bölünmesi, edatların hâl seçmesi, ve nezaketin ayrı bir fiil
- * biçimiyle kurulması.
+ * A1 senaryoları "hayatta kalma" konuşmalarıydı; A2 senaryoları bir durumu
+ * YÖNETMEYİ öğretiyor: doktora derdini anlatıp öneri almak, geçmişte olanı
+ * anlatmak. Dil takımı da buna göre büyüyor: kip fiili (sollen) ve geçmiş
+ * zaman (Perfekt) — ikisi de Türkçede doğrudan karşılığı olmayan yapılar.
  */
 export const deA2: Lesson[] = [
   {
-    id: "de-a2-l1",
+    id: "de-a2-arzt",
     level: "A2",
     course: "de",
-    ruleId: "Perfekt",
-    title: "Geçmiş zaman: haben/sein + Partizip",
-    summary: "Konuşma dilinde geçmiş iki parçalıdır ve ikinci parça sona gider.",
-    minutes: 8,
-    rule:
-      "Almanca konuşma dilinde geçmiş zaman Perfekt ile kurulur: yardımcı fiil (haben ya da sein) İKİNCİ sırada, asıl fiilin Partizip biçimi cümlenin SONUNDA. Hareket ve durum değişikliği bildiren fiiller „sein“ alır (gehen, kommen, fahren, bleiben), gerisi „haben“.",
-    examples: [
-      { de: "Ich habe gestern gearbeitet.", tr: "Dün çalıştım." },
-      { de: "Wir sind nach Berlin gefahren.", tr: "Berlin'e gittik." },
-      { de: "Hast du das Buch gelesen?", tr: "Kitabı okudun mu?" },
+    title: "Beim Arzt",
+    titleTr: "Doktorda",
+    summary: "Öneri almayı ve vermeyi öğretir: sollen kipi üç kalıpta.",
+    minutes: 9,
+    focusId: "Modalverb-sollen",
+    vocab: [
+      { de: "das Fieber", tr: "ateş" },
+      { de: "die Tablette", tr: "hap" },
+      { de: "nehmen", tr: "almak" },
+      { de: "schlafen", tr: "uyumak" },
+      { de: "der Husten", tr: "öksürük" },
     ],
-    checks: [
+    patterns: [
+      { de: "Du sollst …", tr: "birine bir şey yapmasını önerirken kullanılır" },
+      { de: "Ich soll …", tr: "kendi yapman gerekeni söylerken kullanılır" },
+      { de: "Was soll ich tun?", tr: "'Ne yapmalıyım?' diye sorarken kullanılır" },
+    ],
+    lecture: [
       {
-        kind: "fill",
-        prompt: "„Ich ___ einen Film ___.“ (sehen)",
-        options: ["habe … gesehen", "bin … gesehen", "habe … sehen"],
-        answer: "habe … gesehen",
-        why: "„sehen“ hareket bildirmez, „haben“ alır; Partizip biçimi „gesehen“ ve sona gider.",
-      },
-      {
-        kind: "fill",
-        prompt: "„Wir ___ ins Kino ___.“ (gehen)",
-        options: ["haben … gegangen", "sind … gegangen", "sind … gehen"],
-        answer: "sind … gegangen",
-        why: "„gehen“ yer değişikliği bildirir, yardımcı fiili „sein“dir.",
-      },
-      {
-        kind: "pick",
-        prompt: "Hangisi doğru?",
-        options: [
-          "Ich habe gestern gearbeitet.",
-          "Ich gearbeitet habe gestern.",
-          "Ich habe gearbeitet gestern.",
+        say: [
+          tr(
+            "Bugün doktordayız! 'Sen yapmalısın', 'Ben yapmalıyım' ve 'Ne yapmalıyım?' kalıplarını öğreneceğiz. Başlamaya hazır mısın?",
+          ),
         ],
-        answer: "Ich habe gestern gearbeitet.",
-        why: "Yardımcı fiil ikinci, Partizip en sonda; zaman ifadesi ikisinin arasında.",
+        expect: { kind: "confirm" },
       },
       {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Ich habe viel gelernt.",
-          "Wir sind spät gekommen.",
-          "Ich bin einen Film gesehen.",
+        say: [
+          de("sollen"),
+          tr(
+            "fiili, birinin yapması gereken şeyi söyler. Doktor sana, sen kendine — bu ders boyunca hep onu kullanacağız. Önce kelimeleri öğrenelim.",
+          ),
         ],
-        answer: "Ich bin einen Film gesehen.",
-        why: "„sehen“ hareket bildirmez, „haben“ alır: „Ich habe einen Film gesehen.“",
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("das Fieber"),
+          tr("Türkçesi 'ateş' demek. Lütfen"),
+          de("das Fieber"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Fieber" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("die Tablette"),
+          tr("Türkçesi 'hap' demek. Lütfen"),
+          de("die Tablette"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Tablette" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("nehmen"),
+          tr("Türkçesi 'almak' demek. Lütfen"),
+          de("nehmen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "nehmen" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("schlafen"),
+          tr("Türkçesi 'uyumak' demek. Lütfen"),
+          de("schlafen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "schlafen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Husten"),
+          tr("Türkçesi 'öksürük' demek. Lütfen"),
+          de("der Husten"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Husten" },
+      },
+      {
+        say: [
+          tr("Şimdi ilk kalıbımız:"),
+          de("Du sollst …"),
+          tr(
+            "Birine bir şey yapmasını önerirken kullanılır: 'Sen … yapmalısın' demek. Asıl fiil cümlenin sonuna gider.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Sen bir hap almalısın.' Almancası:"),
+          de("Du sollst eine Tablette nehmen."),
+          tr("Lütfen"),
+          de("Du sollst eine Tablette nehmen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Du sollst eine Tablette nehmen" },
+      },
+      {
+        say: [tr("Şimdi sıra sende: 'Sen uyumalısın.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Du sollst schlafen",
+          hint: [
+            tr("Kalıp:"),
+            de("Du sollst"),
+            tr("artı fiil, fiil sonda:"),
+            de("Du sollst schlafen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Ich soll …"),
+          tr("Kendi yapman gerekeni söylerken kullanılır: 'Ben … yapmalıyım' demek."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Ben bir hap almalıyım.' Almancası:"),
+          de("Ich soll eine Tablette nehmen."),
+          tr("Lütfen"),
+          de("Ich soll eine Tablette nehmen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich soll eine Tablette nehmen" },
+      },
+      {
+        say: [tr("Peki 'Ben uyumalıyım.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich soll schlafen",
+          hint: [
+            tr("Aynı kalıp, özne değişti:"),
+            de("Ich soll schlafen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Üçüncü kalıbımız bir soru:"),
+          de("Was soll ich tun?"),
+          tr("'Ne yapmalıyım?' demek. Doktora tam da bunu soracaksın. Lütfen"),
+          de("Was soll ich tun?"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Was soll ich tun" },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Ich soll ein Tablette nehmen."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Ich soll ein Tablette nehmen.",
+          answer: false,
+          why: [
+            de("die Tablette"),
+            tr("dişil bir kelime; 'ein' değil 'eine' olmalı. Doğrusu:"),
+            de("Ich soll eine Tablette nehmen."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Çok iyi gidiyorsun. Şimdi doktorun karşısındasın: derdini anlat, ne yapman gerektiğini sor ve önerileri dinle.",
+          ),
+        ],
       },
     ],
     roleplay: {
       scene:
-        "Bir arkadaşın dün ne yaptığını soruyor. Perfekt ile anlat: hem „haben“ hem „sein“ alan fiiller kullanmaya çalış (arbeiten, essen, gehen, fahren).",
-      partner: "meraklı bir arkadaş",
-      opening: "Hey! Was hast du gestern gemacht?",
-      openingTr: "Selam! Dün ne yaptın?",
+        "Kendini iyi hissetmiyorsun ve doktora geldin. Şikâyetini anlat (ateş, öksürük), doktora 'Was soll ich tun?' diye sor ve sana söylediklerini 'Ich soll …' ile onayla.",
+      partner: "sakin ve ilgili bir doktor",
+      opening: "Guten Tag! Was fehlt Ihnen denn?",
+      openingTr: "İyi günler! Neyiniz var?",
       minTurns: 4,
     },
   },
   {
-    id: "de-a2-l2",
+    id: "de-a2-urlaub",
     level: "A2",
     course: "de",
-    ruleId: "Wechselpraepositionen",
-    title: "Nerede / nereye: in, auf, an",
-    summary: "Aynı edat, hareket varsa Akkusativ, yoksa Dativ ister.",
-    minutes: 8,
-    rule:
-      "in, auf, an, unter, über gibi edatlar iki hâl birden alır ve seçim soruya bağlıdır. „Wohin?“ (nereye) — hareket var, Akkusativ. „Wo?“ (nerede) — hareket yok, Dativ. Türkçede bu ayrım ekle yapıldığı için (eve / evde) edatın hâl değiştirmesi beklenmedik geliyor.",
-    examples: [
-      { de: "Ich gehe in die Stadt.", tr: "Şehre gidiyorum. (nereye → Akkusativ)" },
-      { de: "Ich bin in der Stadt.", tr: "Şehirdeyim. (nerede → Dativ)" },
-      { de: "Er legt das Buch auf den Tisch.", tr: "Kitabı masaya koyuyor." },
-      { de: "Das Buch liegt auf dem Tisch.", tr: "Kitap masada duruyor." },
+    title: "Letzter Urlaub",
+    titleTr: "Son tatil",
+    summary: "Geçmişi anlatmayı öğretir: Perfekt, sein ve haben ayrımıyla.",
+    minutes: 9,
+    focusId: "Perfekt",
+    vocab: [
+      { de: "der Urlaub", tr: "tatil" },
+      { de: "das Meer", tr: "deniz" },
+      { de: "der Strand", tr: "plaj" },
+      { de: "fahren", tr: "gitmek (araçla)" },
+      { de: "sehen", tr: "görmek" },
     ],
-    checks: [
+    patterns: [
+      { de: "Ich bin … gefahren.", tr: "geçmişte bir yere gittiğini söylerken kullanılır" },
+      { de: "Ich habe … gesehen.", tr: "geçmişte yaptığın diğer şeyleri anlatırken kullanılır" },
+    ],
+    lecture: [
       {
-        kind: "fill",
-        prompt: "„Ich fahre ___ die Schweiz.“",
-        options: ["in", "in der", "in die"],
-        answer: "in die",
-        why: "Hareket var („fahre“), yani Akkusativ: „in die Schweiz“.",
-      },
-      {
-        kind: "fill",
-        prompt: "„Wir wohnen ___ Berlin.“",
-        options: ["in", "in die", "nach"],
-        answer: "in",
-        why: "Şehir adlarında „wohnen“ ile yalın „in“ kullanılır; hareket yok.",
-      },
-      {
-        kind: "fill",
-        prompt: "„Der Schlüssel liegt ___ Tisch.“",
-        options: ["auf den", "auf dem", "auf das"],
-        answer: "auf dem",
-        why: "„liegen“ durum bildirir, hareket yok → Dativ: „auf dem Tisch“.",
-      },
-      {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Ich gehe in die Küche.",
-          "Das Glas steht auf den Tisch.",
-          "Wir sind im Garten.",
+        say: [
+          tr(
+            "Bugün geçmişten bahsediyoruz: son tatilin! Almancada geçmiş, Perfekt ile anlatılır. 'Gittim' ve 'gördüm' demeyi öğreneceğiz. Hazır mısın?",
+          ),
         ],
-        answer: "Das Glas steht auf den Tisch.",
-        why: "„stehen“ durum bildirir, hareket yok → Dativ: „auf dem Tisch“.",
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Perfekt iki parçadan oluşur: yardımcı fiil ikinci sırada, asıl fiil 'ge-' hâliyle cümlenin sonunda. Hangi yardımcı fiil? Birazdan göreceğiz. Önce kelimeler.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("der Urlaub"),
+          tr("Türkçesi 'tatil' demek. Lütfen"),
+          de("der Urlaub"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Urlaub" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("das Meer"),
+          tr("Türkçesi 'deniz' demek. Lütfen"),
+          de("das Meer"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Meer" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("der Strand"),
+          tr("Türkçesi 'plaj' demek. Lütfen"),
+          de("der Strand"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Strand" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("fahren"),
+          tr("Türkçesi 'araçla gitmek' demek. Lütfen"),
+          de("fahren"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "fahren" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("sehen"),
+          tr("Türkçesi 'görmek' demek. Lütfen"),
+          de("sehen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "sehen" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız:"),
+          de("Ich bin … gefahren."),
+          tr(
+            "Hareket bildiren fiiller 'sein' ile kurulur: gitmek, gelmek, uçmak. 'Ben bir yere gittim' demek.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Tatilde Antalya'ya gittim.' Almancası:"),
+          de("Ich bin nach Antalya gefahren."),
+          tr("Lütfen"),
+          de("Ich bin nach Antalya gefahren"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich bin nach Antalya gefahren" },
+      },
+      {
+        say: [tr("Şimdi sıra sende: 'Ben İzmir'e gittim.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich bin nach Izmir gefahren",
+          hint: [
+            tr("Şehirlere 'nach' ile gidilir ve 'gefahren' sona:"),
+            de("Ich bin nach Izmir gefahren."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Ich habe … gesehen."),
+          tr("Hareket bildirmeyen fiillerin çoğu 'haben' ile kurulur. 'Ben … gördüm' demek."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Denizi gördüm.' Almancası:"),
+          de("Ich habe das Meer gesehen."),
+          tr("Lütfen"),
+          de("Ich habe das Meer gesehen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich habe das Meer gesehen" },
+      },
+      {
+        say: [
+          tr("Peki 'Plajı gördüm.' nasıl dersin? Dikkat:"),
+          de("der Strand"),
+          tr("eril ve cümlenin nesnesi."),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich habe den Strand gesehen",
+          hint: [
+            de("der Strand"),
+            tr("eril ve nesne olduğu için 'den Strand' olur:"),
+            de("Ich habe den Strand gesehen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Ich habe nach Berlin gefahren."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Ich habe nach Berlin gefahren.",
+          answer: false,
+          why: [
+            de("fahren"),
+            tr("hareket fiili; 'haben' değil 'sein' alır. Doğrusu:"),
+            de("Ich bin nach Berlin gefahren."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Harika! Şimdi bir arkadaşın sana tatilini soruyor. Nereye gittiğini ve ne gördüğünü Perfekt ile anlat.",
+          ),
+        ],
       },
     ],
     roleplay: {
       scene:
-        "Evde bir şey kaybettin ve ev arkadaşına soruyorsun. Hem „nerede“ hem „nereye“ soruları kur — edatın hâl değiştirdiği yerleri bilerek kullan.",
-      partner: "yardım etmeye çalışan ev arkadaşı",
-      opening: "Was suchst du denn? Hast du im Wohnzimmer geschaut?",
-      openingTr: "Ne arıyorsun? Oturma odasına baktın mı?",
-      minTurns: 4,
-    },
-  },
-  {
-    id: "de-a2-l3",
-    level: "A2",
-    course: "de",
-    ruleId: "Konjunktiv-Hoeflichkeit",
-    title: "Kibar istek: möchte, hätte gern, könnten Sie",
-    summary: "İstek doğrudan söylenmez; kalıp değişir.",
-    minutes: 7,
-    rule:
-      "Almancada istek „will“ ile söylenmez — kaba durur. Yerine kalıplar kullanılır: „ich möchte…“, „ich hätte gern…“, „könnten Sie…?“. Türkçede nezaket tonla kurulabildiği için bu kalıpları atlamak sık görülüyor ama Almancada ton yetmiyor, biçim değişmek zorunda.",
-    examples: [
-      { de: "Ich möchte einen Kaffee, bitte.", tr: "Bir kahve istiyorum, lütfen." },
-      { de: "Ich hätte gern die Rechnung.", tr: "Hesabı alabilir miyim." },
-      { de: "Könnten Sie mir helfen?", tr: "Bana yardım edebilir misiniz?" },
-    ],
-    checks: [
-      {
-        kind: "pick",
-        prompt: "Bir restoranda en uygunu hangisi?",
-        options: ["Ich will ein Bier.", "Ich möchte ein Bier, bitte.", "Gib mir ein Bier."],
-        answer: "Ich möchte ein Bier, bitte.",
-        why: "„will“ ve emir kipi kaba durur; „möchte“ + „bitte“ nötr ve kibar.",
-      },
-      {
-        kind: "pick",
-        prompt: "Yardım isterken hangisi kibar?",
-        options: ["Helfen Sie mir!", "Können Sie mir helfen?", "Könnten Sie mir helfen?"],
-        answer: "Könnten Sie mir helfen?",
-        why: "„könnten“ „können“in kibar biçimi; ikisi de olur ama „könnten“ daha yumuşak.",
-      },
-      {
-        kind: "pick",
-        prompt: "„Ich ___ gern einen Tisch für zwei.“",
-        options: ["habe", "hätte", "will"],
-        answer: "hätte",
-        why: "„hätte gern“ kalıp hâlinde kibar istek bildirir.",
-      },
-      {
-        kind: "spot",
-        prompt: "Hangi cümle bir restoranda kaba durur?",
-        options: [
-          "Ich hätte gern die Karte.",
-          "Ich will die Karte.",
-          "Könnten Sie mir die Karte bringen?",
-        ],
-        answer: "Ich will die Karte.",
-        why: "„will“ doğrudan istek bildirir ve kaba durur; „möchte“ ya da „hätte gern“ kullanılır.",
-      },
-    ],
-    roleplay: {
-      scene:
-        "Bir restorandasın. Sipariş ver, bir şey rica et ve sonunda hesabı iste. Her istekte kibar kalıplardan birini kullan.",
-      partner: "resmî konuşan bir garson",
-      opening: "Guten Abend! Haben Sie schon gewählt?",
-      openingTr: "İyi akşamlar! Seçiminizi yaptınız mı?",
+        "Bir arkadaşınla kahve içiyorsun ve sana son tatilini soruyor. Nereye gittiğini 'Ich bin … gefahren', ne gördüğünü ve yaptığını 'Ich habe …' ile anlat.",
+      partner: "tatil hikâyelerini seven bir arkadaş",
+      opening: "Hallo! Du warst doch im Urlaub. Wohin bist du gefahren?",
+      openingTr: "Selam! Sen tatildeydin. Nereye gittin?",
       minTurns: 4,
     },
   },

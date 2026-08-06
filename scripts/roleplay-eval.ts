@@ -60,11 +60,11 @@ const SCRIPT: Step[] = [
 /**
  * Ölçüm dersi.
  *
- * Senaryonun gömülü hataları bu dersin kuralıyla kesişiyor (V2: „Am Wochenende
- * ich gehe“), yani test yalnızca genel dilbilgisini değil **dersin kendi
- * kuralını** yakalayıp yakalamadığını da ölçüyor.
+ * Senaryonun gömülü hataları (Akkusativ, V2) genel dilbilgisi hataları;
+ * istem dersin kalıplarına odaklansa da her gerçek hatayı düzeltmek zorunda —
+ * test tam olarak bunu ölçüyor.
  */
-const LESSON = findLesson("de-a1-l1")!;
+const LESSON = findLesson("de-a1-hallo")!;
 
 /* ─────────────── Ölçütler ─────────────── */
 

@@ -1,136 +1,388 @@
-import type { Lesson } from "../types";
+import { de, tr, type Lesson } from "../types";
 
 /**
  * B1 dersleri — Almanca.
  *
- * A1–A2 tek cümle kurmayı öğretti; B1 cümleleri birbirine bağlamayı öğretiyor.
- * Türkçe konuşan için asıl kırılma noktası burası: Türkçede bağlama ekle
- * yapılıyor (gelince, geldiği için), Almancada ayrı bir kelime geliyor ve o
- * kelime cümlenin sözcük dizilişini değiştiriyor.
+ * A seviyeleri tek cümle kurdurdu; B1 cümleleri bağlamayı ve inceltmeyi
+ * öğretiyor. Senaryolar da buna göre "yetişkin işleri": iş görüşmesi ve ev
+ * arama — ikisi de Almanya'da yaşayan birinin er geç yaşayacağı, kalıpların
+ * gerçekten gerektiği konuşmalar.
  */
 export const deB1: Lesson[] = [
   {
-    id: "de-b1-l1",
+    id: "de-b1-bewerbung",
     level: "B1",
     course: "de",
-    ruleId: "Nebensatz-weil-dass",
-    title: "Yan cümlede fiil sona gider",
-    summary: "weil, dass, wenn ile başlayan cümlede fiil en sondadır.",
-    minutes: 8,
-    rule:
-      "weil, dass, wenn, obwohl gibi bağlaçlar yan cümle kurar ve yan cümlede çekimli fiil EN SONA gider. Ana cümlede ikinci sırada olan fiil, bağlaçtan sonra sona düşüyor — aynı fiil, iki farklı yer. Türkçede bağlama ek ile yapıldığı için bu değişiklik beklenmiyor.",
-    examples: [
-      { de: "Ich bleibe zu Hause, weil ich müde bin.", tr: "Evde kalıyorum çünkü yorgunum." },
-      { de: "Ich glaube, dass er recht hat.", tr: "Sanırım haklı." },
-      { de: "Wenn ich Zeit habe, komme ich mit.", tr: "Vaktim olursa gelirim." },
+    title: "Das Vorstellungsgespräch",
+    titleTr: "İş görüşmesi",
+    summary: "Sebep anlatmayı öğretir: weil yan cümlesi ve seit + Dativ.",
+    minutes: 10,
+    focusId: "Nebensatz-weil",
+    vocab: [
+      { de: "die Stelle", tr: "pozisyon, iş" },
+      { de: "die Erfahrung", tr: "deneyim" },
+      { de: "sich bewerben", tr: "başvurmak" },
+      { de: "die Stärke", tr: "güçlü yön" },
+      { de: "der Lebenslauf", tr: "özgeçmiş" },
     ],
-    checks: [
+    patterns: [
+      { de: "…, weil …", tr: "sebep söylerken kullanılır; fiil yan cümlenin sonuna gider" },
+      { de: "seit + Dativ", tr: "'…'den beri' derken kullanılır: seit drei Jahren" },
+    ],
+    lecture: [
       {
-        kind: "fill",
-        prompt: "„Ich komme nicht, weil ich krank ___.“",
-        options: ["bin", "ist", "sein"],
-        answer: "bin",
-        why: "Yan cümlede fiil sona gider ve özne „ich“ olduğu için „bin“.",
-      },
-      {
-        kind: "pick",
-        prompt: "Hangisi doğru?",
-        options: [
-          "Ich denke, dass er kommt morgen.",
-          "Ich denke, dass er morgen kommt.",
-          "Ich denke, dass kommt er morgen.",
+        say: [
+          tr(
+            "Bugün bir iş görüşmesindesin! Sebep bildiren 'weil' cümlelerini ve '…'den beri' anlamındaki 'seit' kalıbını öğreneceğiz. Başlamaya hazır mısın?",
+          ),
         ],
-        answer: "Ich denke, dass er morgen kommt.",
-        why: "„dass“ yan cümle açar; fiil („kommt“) en sona gider.",
+        expect: { kind: "confirm" },
       },
       {
-        kind: "fill",
-        prompt: "„Wenn es regnet, ___ ich zu Hause.“",
-        options: ["ich bleibe", "bleibe", "bleiben"],
-        answer: "bleibe",
-        why: "Yan cümle başta olduğu için birinci öğe sayılır; ana cümlenin fiili hemen arkasından gelir.",
-      },
-      {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Ich bleibe hier, weil es regnet.",
-          "Ich glaube, dass sie kommt morgen.",
-          "Wenn du willst, gehen wir.",
+        say: [
+          tr(
+            "İş görüşmesinin iki temel sorusu var: neden ve ne zamandır. İkisine de bu dersin kalıplarıyla cevap vereceksin. Önce kelimeler.",
+          ),
         ],
-        answer: "Ich glaube, dass sie kommt morgen.",
-        why: "„dass“ yan cümle açar; fiil sona gitmeli: „dass sie morgen kommt“.",
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("die Stelle"),
+          tr("Türkçesi 'pozisyon, iş' demek. Lütfen"),
+          de("die Stelle"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Stelle" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("die Erfahrung"),
+          tr("Türkçesi 'deneyim' demek. Lütfen"),
+          de("die Erfahrung"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Erfahrung" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("sich bewerben"),
+          tr("Türkçesi 'başvurmak' demek. Lütfen"),
+          de("sich bewerben"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "sich bewerben" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("die Stärke"),
+          tr("Türkçesi 'güçlü yön' demek. Lütfen"),
+          de("die Stärke"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Stärke" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Lebenslauf"),
+          tr("Türkçesi 'özgeçmiş' demek. Lütfen"),
+          de("der Lebenslauf"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Lebenslauf" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız:"),
+          de("weil"),
+          tr(
+            "'çünkü' demek. Ama dikkat: 'weil' ile başlayan yan cümlede fiil cümlenin SONUNA gider. Türkçedeki gibi ortada kalmaz.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Başvuruyorum çünkü yeni deneyimler istiyorum.' Almancası:"),
+          de("Ich bewerbe mich, weil ich neue Erfahrungen möchte."),
+          tr("Lütfen"),
+          de("Ich bewerbe mich, weil ich neue Erfahrungen möchte"),
+          tr("deyin."),
+        ],
+        expect: {
+          kind: "repeat",
+          target: "Ich bewerbe mich, weil ich neue Erfahrungen möchte",
+        },
+      },
+      {
+        say: [
+          tr(
+            "Şimdi sıra sende: 'Bu pozisyonu istiyorum çünkü Almanca konuşuyorum.' nasıl dersin?",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich möchte die Stelle, weil ich Deutsch spreche",
+          accept: ["Ich möchte diese Stelle, weil ich Deutsch spreche"],
+          hint: [
+            tr("'weil'den sonra fiil en sona gider:"),
+            de("Ich möchte die Stelle, weil ich Deutsch spreche."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("seit"),
+          tr(
+            "'…'den beri' demek ve her zaman Dativ alır: seit einem Jahr, seit drei Jahren. Türkçeden farkı şu: Almanca hâlâ süren işler için şimdiki zaman kullanır.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Üç yıldır öğretmen olarak çalışıyorum.' Almancası:"),
+          de("Ich arbeite seit drei Jahren als Lehrer."),
+          tr("Lütfen"),
+          de("Ich arbeite seit drei Jahren als Lehrer"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich arbeite seit drei Jahren als Lehrer" },
+      },
+      {
+        say: [tr("Peki 'Bir yıldır Almanca öğreniyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich lerne seit einem Jahr Deutsch",
+          hint: [
+            tr("'seit' Dativ alır: 'ein Jahr' → 'einem Jahr'."),
+            de("Ich lerne seit einem Jahr Deutsch."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Ich lerne Deutsch, weil ich arbeite in Berlin."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Ich lerne Deutsch, weil ich arbeite in Berlin.",
+          answer: false,
+          why: [
+            de("weil"),
+            tr("fiili yan cümlenin sonuna atar. Doğrusu:"),
+            de("Ich lerne Deutsch, weil ich in Berlin arbeite."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Hazırsın! Şimdi görüşme odasındasın: neden başvurduğunu 'weil' ile, ne zamandır çalıştığını 'seit' ile anlatacaksın.",
+          ),
+        ],
       },
     ],
     roleplay: {
       scene:
-        "Bir davete gidemeyeceğini arkadaşına anlatıyorsun. Gerekçelerini „weil“ ile kur, düşüncelerini „ich glaube, dass…“ ile söyle. Fiili sona atmayı unutma.",
-      partner: "biraz ısrarcı ama anlayışlı bir arkadaş",
-      opening: "Kommst du morgen zu meiner Party?",
-      openingTr: "Yarın partime geliyor musun?",
-      minTurns: 4,
+        "Bir şirkette iş görüşmesindesin. Neden başvurduğunu 'weil' ile, ne kadar süredir çalıştığını ya da öğrendiğini 'seit' ile anlat; güçlü yönlerinden bahset.",
+      partner: "profesyonel ama samimi bir İK uzmanı",
+      opening:
+        "Guten Tag, schön, dass Sie da sind! Erzählen Sie mal: Warum bewerben Sie sich bei uns?",
+      openingTr: "İyi günler, hoş geldiniz! Anlatın bakalım: Neden bize başvuruyorsunuz?",
+      minTurns: 5,
     },
   },
   {
-    id: "de-b1-l2",
+    id: "de-b1-wohnung",
     level: "B1",
     course: "de",
-    ruleId: "Relativsatz",
-    title: "İlgi cümlesi: der, die, das",
-    summary: "Bir ismi tarif eden cümle, ismin cinsine göre bağlanır.",
-    minutes: 8,
-    rule:
-      "Bir ismi açıklamak için ilgi cümlesi kurulur ve bağlayıcı, ismin CİNSİNE göre seçilir: der (eril), die (dişil/çoğul), das (nötr). İlgi cümlesi de yan cümledir, yani fiil sona gider. Türkçede bu iş sıfat-fiil ekiyle yapıldığından (aldığım kitap) ayrı bir bağlayıcı fikri yeni geliyor.",
-    examples: [
-      { de: "Das ist der Mann, der hier arbeitet.", tr: "Bu, burada çalışan adam." },
-      { de: "Ich habe eine Freundin, die in Berlin wohnt.", tr: "Berlin'de oturan bir arkadaşım var." },
-      { de: "Das Buch, das ich lese, ist spannend.", tr: "Okuduğum kitap heyecanlı." },
+    title: "Die Wohnungssuche",
+    titleTr: "Ev arama",
+    summary: "Kibar istek ve ricayı öğretir: Konjunktiv II ile würde ve könnten.",
+    minutes: 10,
+    focusId: "Konjunktiv-II",
+    vocab: [
+      { de: "die Wohnung", tr: "daire" },
+      { de: "die Miete", tr: "kira" },
+      { de: "die Besichtigung", tr: "daireyi gezme" },
+      { de: "hell", tr: "aydınlık" },
+      { de: "der Vermieter", tr: "ev sahibi" },
     ],
-    checks: [
+    patterns: [
+      { de: "Ich würde gern …", tr: "kibarca '… isterdim' derken kullanılır" },
+      { de: "Könnten Sie …?", tr: "kibar rica: '… yapabilir misiniz?' derken kullanılır" },
+    ],
+    lecture: [
       {
-        kind: "fill",
-        prompt: "„Das ist die Frau, ___ Deutsch unterrichtet.“",
-        options: ["der", "die", "das"],
-        answer: "die",
-        why: "„Frau“ dişil olduğu için bağlayıcı „die“.",
-      },
-      {
-        kind: "fill",
-        prompt: "„Ich kenne den Mann, ___ dort steht.“",
-        options: ["der", "den", "dem"],
-        answer: "der",
-        why: "İlgi cümlesinde bağlayıcı, o cümledeki görevine göre çekilir; burada özne olduğu için „der“.",
-      },
-      {
-        kind: "pick",
-        prompt: "Hangisi doğru?",
-        options: [
-          "Das Auto, das ist rot, gehört mir.",
-          "Das Auto, das rot ist, gehört mir.",
-          "Das Auto, ist das rot, gehört mir.",
+        say: [
+          tr(
+            "Bugün ev arıyoruz! Almanya'da ev sahibiyle konuşmanın anahtarı kibarlık: 'isterdim' ve 'yapabilir misiniz' kalıplarını öğreneceğiz. Hazır mısın?",
+          ),
         ],
-        answer: "Das Auto, das rot ist, gehört mir.",
-        why: "İlgi cümlesi yan cümledir; fiil („ist“) sona gider.",
+        expect: { kind: "confirm" },
       },
       {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Das ist der Mann, der dort wohnt.",
-          "Ich habe ein Buch, das ich mag.",
-          "Das ist die Frau, der hier arbeitet.",
+        say: [
+          tr(
+            "Bu iki kalıp Konjunktiv II ile kurulur — dilek kipi. Doğrudan 'istiyorum' demekten daha yumuşak duyulur ve resmî konuşmaların tamamı bununla döner. Önce kelimeler.",
+          ),
         ],
-        answer: "Das ist die Frau, der hier arbeitet.",
-        why: "„Frau“ dişil; bağlayıcı „die“ olmalı.",
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("die Wohnung"),
+          tr("Türkçesi 'daire' demek. Lütfen"),
+          de("die Wohnung"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Wohnung" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("die Miete"),
+          tr("Türkçesi 'kira' demek. Lütfen"),
+          de("die Miete"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Miete" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("die Besichtigung"),
+          tr("Türkçesi 'daireyi gezme, görme randevusu' demek. Lütfen"),
+          de("die Besichtigung"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Besichtigung" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("hell"),
+          tr("Türkçesi 'aydınlık' demek. Lütfen"),
+          de("hell"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "hell" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Vermieter"),
+          tr("Türkçesi 'ev sahibi' demek. Lütfen"),
+          de("der Vermieter"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Vermieter" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız:"),
+          de("Ich würde gern …"),
+          tr("Kibarca '… isterdim' demek. Asıl fiil mastar hâliyle cümlenin sonuna gider."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Daireyi gezmek isterdim.' Almancası:"),
+          de("Ich würde gern die Wohnung besichtigen."),
+          tr("Lütfen"),
+          de("Ich würde gern die Wohnung besichtigen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich würde gern die Wohnung besichtigen" },
+      },
+      {
+        say: [
+          tr("Şimdi sıra sende: 'Ev sahibiyle konuşmak isterdim.' nasıl dersin? İpucu:"),
+          de("mit"),
+          tr("edatı Dativ alır."),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich würde gern mit dem Vermieter sprechen",
+          hint: [
+            de("mit"),
+            tr("Dativ aldığı için 'mit dem Vermieter' olur, fiil sona:"),
+            de("Ich würde gern mit dem Vermieter sprechen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Könnten Sie …?"),
+          tr("Kibar rica: '… yapabilir misiniz?' demek. Fiil yine cümlenin sonunda."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Bana daireyi gösterebilir misiniz?' Almancası:"),
+          de("Könnten Sie mir die Wohnung zeigen?"),
+          tr("Lütfen"),
+          de("Könnten Sie mir die Wohnung zeigen?"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Könnten Sie mir die Wohnung zeigen" },
+      },
+      {
+        say: [tr("Peki 'Bana kirayı söyleyebilir misiniz?' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Könnten Sie mir die Miete sagen",
+          accept: ["Könnten Sie die Miete sagen"],
+          hint: [
+            tr("Kalıp:"),
+            de("Könnten Sie"),
+            tr("artı istenen şey, fiil sonda:"),
+            de("Könnten Sie mir die Miete sagen?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Könnten Sie zeigen mir die Wohnung?"),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Könnten Sie zeigen mir die Wohnung?",
+          answer: false,
+          why: [
+            tr("Bu kalıpta asıl fiil cümlenin sonuna gider. Doğrusu:"),
+            de("Könnten Sie mir die Wohnung zeigen?"),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Çok iyi! Şimdi ilanını gördüğün daire için ev sahibiyle görüşüyorsun. Kibar kalıplarla soru sor ve bir gezme randevusu almaya çalış.",
+          ),
+        ],
       },
     ],
     roleplay: {
       scene:
-        "Bir fotoğraftaki kişileri ve eşyaları tarif ediyorsun. Her tarifte ilgi cümlesi kur: „Das ist der/die/das …, der/die/das …“",
-      partner: "fotoğrafı merak eden bir arkadaş",
-      opening: "Wer ist das auf dem Foto? Und was ist das da hinten?",
-      openingTr: "Fotoğraftaki kim? Peki arkadaki ne?",
-      minTurns: 4,
+        "Bir daire ilanı için ev sahibiyle telefonda görüşüyorsun. 'Ich würde gern …' ve 'Könnten Sie …?' kalıplarıyla daireyi sor, kirayı öğren ve bir gezme randevusu al.",
+      partner: "biraz resmî ama yardımsever bir ev sahibi",
+      opening: "Guten Tag! Sie interessieren sich für die Wohnung, richtig?",
+      openingTr: "İyi günler! Daireyle ilgileniyorsunuz, değil mi?",
+      minTurns: 5,
     },
   },
 ];

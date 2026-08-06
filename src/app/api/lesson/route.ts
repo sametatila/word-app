@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { findLesson } from "@/lib/lessons";
+import { scoredSteps } from "@/lib/lessons/types";
 import { recordLesson } from "@/lib/lessons/progress";
 
 export const dynamic = "force-dynamic";
@@ -32,7 +33,7 @@ export async function POST(req: Request) {
 
   const lesson = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
   if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
-  if (typeof correct !== "number" || correct < 0 || correct > lesson.checks.length) {
+  if (typeof correct !== "number" || correct < 0 || correct > scoredSteps(lesson)) {
     return NextResponse.json({ error: "bad_score" }, { status: 400 });
   }
 

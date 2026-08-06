@@ -2,17 +2,20 @@ import type { Lesson } from "./types";
 import { deA1 } from "./content/de-a1";
 import { deA2 } from "./content/de-a2";
 import { deB1 } from "./content/de-b1";
-import { zhLessons } from "./content/zh";
 
 /**
  * Ders kataloğu.
  *
  * Beceri içeriğinden farklı olarak veritabanına yüklenmiyor: dersler bütünüyle
- * kod, çünkü rol yapma istemi ders metninden üretiliyor ve ikisinin ayrı
- * yerlerde durması istemin içeriğe göre değişmesini zorlaştırırdı. İlerleme
- * (hangi ders bitti, hangi kural zayıf) veritabanında.
+ * kod, çünkü hem anlatım senaryosu hem rol yapma istemi ders metninden
+ * üretiliyor ve ikisinin ayrı yerlerde durması istemin içeriğe göre değişmesini
+ * zorlaştırırdı. İlerleme (hangi ders bitti, hangi kural zayıf) veritabanında.
+ *
+ * Şimdilik yalnızca Almanca kursu: katalog Learna kurgusuna (anlatım + konuşma)
+ * yeni geçti ve önce bu yapının oturması gerekiyor. Zürih dersleri aynı iskelet
+ * doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
-export const LESSONS: Lesson[] = [...deA1, ...deA2, ...deB1, ...zhLessons];
+export const LESSONS: Lesson[] = [...deA1, ...deA2, ...deB1];
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;
 

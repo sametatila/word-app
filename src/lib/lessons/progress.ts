@@ -3,7 +3,7 @@ import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userLessons } from "@/lib/db/schema";
 import { LESSONS, lessonsFor } from "./index";
-import type { Lesson } from "./types";
+import { scoredSteps, type Lesson } from "./types";
 
 /**
  * Ders ilerlemesi ve kuralların tekrar zamanlaması.
@@ -21,7 +21,8 @@ import type { Lesson } from "./types";
 
 const LADDER = [1, 3, 7, 16, 35];
 
-/** Alıştırmaların bu oranı doğruysa ders "geçildi" sayılıyor. */
+/** Puanlanan adımların (üretim + doğru/yanlış) bu oranı ilk denemede
+ *  doğruysa ders "geçildi" sayılıyor. */
 const PASS_RATIO = 0.7;
 
 export type LessonState = {
@@ -98,7 +99,7 @@ export async function recordLesson(
   correct: number,
   roleplayDone: boolean,
 ): Promise<{ passed: boolean; nextDays: number }> {
-  const total = lesson.checks.length;
+  const total = scoredSteps(lesson);
   const passed = roleplayDone && total > 0 && correct / total >= PASS_RATIO;
 
   const [existing] = await db
@@ -116,7 +117,7 @@ export async function recordLesson(
     .values({
       userId,
       lessonId: lesson.id,
-      ruleId: lesson.ruleId,
+      ruleId: lesson.focusId,
       correct,
       total,
       roleplayDone,
@@ -164,14 +165,18 @@ export async function recordLesson(
 export async function weakRules(userId: string, limit = 3): Promise<string[]> {
   const rows = await db
     .select({
+      lessonId: userLessons.lessonId,
       ruleId: userLessons.ruleId,
       intervalDays: userLessons.intervalDays,
       attempts: userLessons.attempts,
     })
     .from(userLessons)
     .where(eq(userLessons.userId, userId));
+  // Katalogdan çıkmış derslerin kayıtları sayılmıyor: kullanıcı o kurala artık
+  // hiçbir dersten ulaşamaz, "oturmamış" diye göstermek çıkışsız bir uyarı olur.
+  const known = new Set(LESSONS.map((l) => l.id));
   const weak = rows
-    .filter((r) => r.attempts >= 2 && r.intervalDays <= LADDER[0])
+    .filter((r) => known.has(r.lessonId) && r.attempts >= 2 && r.intervalDays <= LADDER[0])
     .map((r) => r.ruleId);
   return [...new Set(weak)].slice(0, limit);
 }

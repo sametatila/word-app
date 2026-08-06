@@ -38,6 +38,7 @@ import { derivedConfusions } from "../src/lib/speech-rules";
 import { weakSpeechTopics } from "../src/lib/speech-progress";
 import { germanLexicon } from "../src/lib/speech-lexicon";
 import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
+import { scoredSteps } from "../src/lib/lessons/types";
 import { lessonBoard, nextLesson, recordLesson, weakRules } from "../src/lib/lessons/progress";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
@@ -682,52 +683,68 @@ async function main() {
     }
   }
 
-  console.log("\n11r) Ders içeriği ve kural kuyruğu");
+  console.log("\n11r) Ders içeriği: anlatım senaryosu ve konuşma");
   {
     check("ders havuzu var", LESSONS.length > 0, `(${LESSONS.length})`);
     const ids = new Set(LESSONS.map((l) => l.id));
     check("ders kimlikleri benzersiz", ids.size === LESSONS.length);
 
-    // Ders bir konu değil TEK bir kural öğretiyor; kural kimliği tekrar
-    // kuyruğunun anahtarı olduğu için boş olamaz.
-    check("her dersin kural kimliği var", LESSONS.every((l) => l.ruleId.trim().length > 0));
-    check("her derste kural metni var", LESSONS.every((l) => l.rule.trim().length > 20));
-    check("her derste örnek var", LESSONS.every((l) => l.examples.length >= 2));
-    check("her derste alıştırma var", LESSONS.every((l) => l.checks.length >= 2));
+    // Odak kimliği tekrar kuyruğunun anahtarı olduğu için boş olamaz.
+    check("her dersin odak kimliği var", LESSONS.every((l) => l.focusId.trim().length > 0));
+    check("her derste kelime takımı var", LESSONS.every((l) => l.vocab.length >= 4));
+    check("her derste kalıp var", LESSONS.every((l) => l.patterns.length >= 2));
+    check("her ders seviye başlığı taşıyor",
+      LESSONS.every((l) => l.title.trim().length > 0 && l.titleTr.trim().length > 0));
 
-    // Doğru cevap şıklar arasında olmalı, yoksa soru çözülemez.
-    const badAnswer = LESSONS.flatMap((l) =>
-      l.checks.filter((c) => !c.options.includes(c.answer)).map(() => l.id),
-    );
-    check("doğru cevap şıklar arasında", badAnswer.length === 0,
-      `(${[...new Set(badAnswer)].join(", ")})`);
-    check("şıklar benzersiz",
-      LESSONS.every((l) => l.checks.every((c) => new Set(c.options).size === c.options.length)));
-    check("her cevabın gerekçesi var",
-      LESSONS.every((l) => l.checks.every((c) => c.why.trim().length > 10)));
+    // Anlatım "hazır mısın" ile açılmalı: sesli akış öğrencinin haberi olmadan
+    // konuşmaya başlamamalı.
+    check("anlatım onayla başlıyor",
+      LESSONS.every((l) => l.lecture[0]?.expect?.kind === "confirm"));
+    check("anlatım yeterince uzun",
+      LESSONS.every((l) => l.lecture.length >= 12),
+      `(en kısa: ${Math.min(...LESSONS.map((l) => l.lecture.length))})`);
 
-    // Soru türü çeşitliliği: tek tip soru sormak öğrenciyi kalıba alıştırıyor,
-    // üçüncü soruda artık kuralı değil şık desenini okuyor. Her ders en az iki
-    // farklı tür sormalı ve „hatayı bul“ her derste bulunmalı — kuralın
-    // ihlalini görmek, kuralı tanımaktan farklı ve daha zor bir iş.
-    check("her derste en az iki soru türü var",
-      LESSONS.every((l) => new Set(l.checks.map((c) => c.kind)).size >= 2));
-    check("her derste hata bulma sorusu var",
-      LESSONS.every((l) => l.checks.some((c) => c.kind === "spot")),
-      `(${LESSONS.filter((l) => !l.checks.some((c) => c.kind === "spot")).map((l) => l.id).join(", ")})`);
-    check("her derste en az dört alıştırma var",
-      LESSONS.every((l) => l.checks.length >= 4));
+    // Öğretilen her kelime anlatımda tekrar ettirilmeli — listede durup sesli
+    // hiç söyletilmeyen kelime öğretilmiş sayılmaz.
+    const repeats = (l: (typeof LESSONS)[number]) =>
+      l.lecture
+        .filter((s) => s.expect?.kind === "repeat")
+        .map((s) => (s.expect as { target: string }).target.toLowerCase());
+    check("her kelime tekrar ettiriliyor",
+      LESSONS.every((l) => l.vocab.every((v) => repeats(l).some((t) => t.includes(v.de.toLowerCase())))),
+      `(${LESSONS.filter((l) => !l.vocab.every((v) => repeats(l).some((t) => t.includes(v.de.toLowerCase())))).map((l) => l.id).join(", ")})`);
 
-    // Rol yapma dersin asıl parçası: sahne, rol ve açılış repliği olmadan
+    // Puanlanan adımlar: üretim kurdurur, doğru/yanlış sınar. İkisi de olmalı.
+    check("her derste üretim alıştırması var",
+      LESSONS.every((l) => l.lecture.some((s) => s.expect?.kind === "produce")));
+    check("her derste doğru/yanlış var",
+      LESSONS.every((l) => l.lecture.some((s) => s.expect?.kind === "truefalse")));
+    check("puanlanan adım sayısı yeterli",
+      LESSONS.every((l) => scoredSteps(l) >= 3));
+
+    // Üretim adımının ipucu, hedefi ve yanlışta okunacak açıklaması dolu olmalı.
+    const produces = LESSONS.flatMap((l) =>
+      l.lecture.filter((s) => s.expect?.kind === "produce").map((s) => s.expect as { target: string; hint: { text: string }[] }));
+    check("üretim hedefleri dolu", produces.every((p) => p.target.trim().length > 0));
+    check("üretim ipuçları dolu", produces.every((p) => p.hint.length > 0 && p.hint.every((h) => h.text.trim().length > 0)));
+    const tfs = LESSONS.flatMap((l) =>
+      l.lecture.filter((s) => s.expect?.kind === "truefalse").map((s) => s.expect as { statement: string; why: { text: string }[] }));
+    check("doğru/yanlış gerekçeleri dolu",
+      tfs.every((t) => t.statement.trim().length > 0 && t.why.length > 0));
+
+    // Segmentler boş olamaz: boş parça seslendirmede sessiz bir delik açar.
+    check("bütün segmentler dolu",
+      LESSONS.every((l) => l.lecture.every((s) => s.say.length > 0 && s.say.every((seg) => seg.text.trim().length > 0))));
+
+    // Konuşma dersin asıl parçası: sahne, rol ve açılış repliği olmadan
     // öğrenci boş ekranla karşılaşır — serbest sohbetin en pahalı sorunu buydu.
     check("her derste sahne var", LESSONS.every((l) => l.roleplay.scene.trim().length > 20));
     check("her derste açılış repliği var",
       LESSONS.every((l) => l.roleplay.opening.trim().length > 0 && l.roleplay.openingTr.trim().length > 0));
-    check("rol yapmanın alt sınırı makul",
+    check("konuşmanın alt sınırı makul",
       LESSONS.every((l) => l.roleplay.minTurns >= 3 && l.roleplay.minTurns <= 8));
 
-    check("iki kursta da ders var",
-      lessonsFor("de").length > 0 && lessonsFor("gsw-zh").length > 0);
+    check("Almanca kursunda ders var", lessonsFor("de").length > 0);
     check("kurs süzgeci karıştırmıyor",
       lessonsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
     check("ders kimlikle bulunuyor", findLesson(LESSONS[0].id)?.id === LESSONS[0].id);
@@ -737,7 +754,7 @@ async function main() {
   console.log("\n11r1) Ders ilerlemesi ve tekrar merdiveni");
   {
     const lesson = LESSONS[0];
-    const full = lesson.checks.length;
+    const full = scoredSteps(lesson);
 
     // Rol yapma tamamlanmadıysa ders geçilmiş sayılmıyor: alıştırmaları doğru
     // yapıp konuşmadan çıkmak dersin asıl parçasını atlamak demek.
@@ -784,23 +801,23 @@ async function main() {
 
     // Zayıf kural: tekrarı gelmiş ve son denemede geçilememiş olan.
     const weak = await weakRules(USER);
-    check("oturmamış kural listeleniyor", weak.includes(lesson.ruleId), `(${weak.join(", ")})`);
+    check("oturmamış kural listeleniyor", weak.includes(lesson.focusId), `(${weak.join(", ")})`);
   }
 
-  console.log("\n11r2) Rol yapma istemi derse bağlı");
+  console.log("\n11r2) Konuşma istemi derse bağlı");
   {
     const lesson = LESSONS[0];
     const prompt = roleplayPrompt(lesson);
-    // İstem dersin kuralını taşımak zorunda: düzeltmenin „bu dersin kuralına
-    // göre“ yapılmasını sağlayan tek şey bu.
-    check("istem dersin kuralını taşıyor", prompt.includes(lesson.rule.slice(0, 40)));
+    // İstem dersin kalıplarını ve kelimelerini taşımak zorunda: düzeltmenin ve
+    // yönlendirmenin „bu dersin öğrettiğine göre“ yapılmasını sağlayan tek şey bu.
+    check("istem dersin kalıplarını taşıyor",
+      lesson.patterns.every((p) => prompt.includes(p.de)));
+    check("istem dersin kelimelerini taşıyor",
+      lesson.vocab.every((v) => prompt.includes(v.de)));
     check("istem sahneyi taşıyor", prompt.includes(lesson.roleplay.scene.slice(0, 30)));
     check("istem seviyeyi taşıyor", prompt.includes(lesson.level));
     check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
     check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
-    const zh = LESSONS.find((l) => l.course === "gsw-zh")!;
-    check("lehçe dersinde istem lehçeyi söylüyor",
-      roleplayPrompt(zh).includes("Züritüütsch"));
   }
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");

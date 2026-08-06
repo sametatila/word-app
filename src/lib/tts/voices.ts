@@ -15,7 +15,34 @@ export type VoiceId =
   | "de-DE-KatjaNeural"
   | "de-DE-ConradNeural"
   | "de-CH-LeniNeural"
-  | "de-CH-JanNeural";
+  | "de-CH-JanNeural"
+  | "tr-TR-EmelNeural";
+
+/**
+ * Ders anlatım sesi — Türkçe.
+ *
+ * Kullanıcının seçtiği ses hedef dilin sesi; anlatım sesi ise dersin
+ * öğretmeni ve Türkçe konuşuyor. İkisi ayrı işler: ders içinde "İlk
+ * kelimemiz…" cümlesi Türkçe sesle, içindeki Almanca kelime Almanca sesle
+ * okunuyor (bkz. speak-button, speakSegments). Bu yüzden `VOICES` listesinde
+ * değil — seçim ekranında görünmesi anlamsız olurdu, tercih edilecek bir
+ * alternatifi yok.
+ */
+export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
+
+/**
+ * Ders anlatımının Almanca sesi — kullanıcının profil tercihi DEĞİL, bilerek.
+ *
+ * Derste öncelik gecikme: akış "öğretmen söyler → öğrenci tekrarlar" ritmiyle
+ * ilerliyor ve her cümle öncesi beklemek ritmi öldürüyor. Ses sabit olunca
+ * dersin bütün cümleleri kullanıcıdan bağımsız TEK önbellek girdisi oluyor —
+ * dersi ilk açan kişi CDN'i herkes için ısıtıyor ve sonraki her öğrencide ses
+ * ağa hiç çıkmadan geliyor. Profil sesine saygı bu kazanımı ikiye bölerdi.
+ * Katja zaten ölçülmüş en hızlı ses; Zürih kursunda lehçeyi doğru okuyan Leni.
+ */
+export function lessonVoice(course: string): VoiceId {
+  return course === "gsw-zh" ? "de-CH-LeniNeural" : "de-DE-KatjaNeural";
+}
 
 export type Voice = {
   id: VoiceId;
@@ -102,5 +129,7 @@ export function resolveVoice(course: string, voice: string | null | undefined): 
  */
 export function rateFor(voice: VoiceId, slow = false): string {
   if (slow) return voice.startsWith("de-CH") ? "-40%" : "-35%";
+  // Türkçe anlatım yavaşlatılmıyor: öğrencinin ana dili, anlaşılırlık sorunu yok.
+  if (voice.startsWith("tr-")) return "+0%";
   return voice.startsWith("de-CH") ? "-12%" : "-8%";
 }

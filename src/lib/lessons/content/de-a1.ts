@@ -1,186 +1,412 @@
-import type { Lesson } from "../types";
+import { de, tr, type Lesson } from "../types";
 
 /**
  * A1 dersleri — Almanca.
  *
- * Sıra rastgele değil: her ders bir öncekinin kullandığı yapıyı varsayıyor.
- * Önce cümlenin iskeleti (fiil ikinci sırada), sonra nesne (Akkusativ), sonra
- * zaman ifadeleri. Bu sırayla gidilince rol yapmada öğrencinin kuracağı cümle
- * her seferinde bir öncekinin üstüne biniyor.
+ * Her ders bir senaryo (tanışma, kafe) ve o senaryonun konuşulabilmesi için
+ * gereken en küçük dil takımını öğretiyor: birkaç kelime, birkaç kalıp.
+ * Anlatımın sırası her derste aynı iskelet: hazır mısın → kelimeler tek tek →
+ * kalıp + örnek + üretim → doğru/yanlış → konuşmaya geçiş. İskeletin sabit
+ * olması öğrencinin dersin biçimini değil içeriğini düşünmesini sağlıyor.
  */
 export const deA1: Lesson[] = [
   {
-    id: "de-a1-l1",
+    id: "de-a1-hallo",
     level: "A1",
     course: "de",
-    ruleId: "V2-Regel",
-    title: "Fiil ikinci sırada",
-    summary: "Almanca cümlede çekimli fiil her zaman ikinci öğedir.",
-    minutes: 7,
-    rule:
-      "Almancada çekimli fiil cümlenin İKİNCİ öğesidir. Başa ne koyarsan koy — özne, zaman, yer — fiil hep ikinci sırada kalır ve özne fiilin arkasına geçer. Türkçede fiil sona gittiği için bu, en sık atlanan kuraldır.",
-    examples: [
-      { de: "Ich gehe am Wochenende ins Kino.", tr: "Hafta sonu sinemaya gidiyorum." },
-      { de: "Am Wochenende gehe ich ins Kino.", tr: "Hafta sonu sinemaya gidiyorum." },
-      { de: "Heute arbeite ich zu Hause.", tr: "Bugün evde çalışıyorum." },
+    title: "Hallo!",
+    titleTr: "Tanışma",
+    summary: "Adını, nereli olduğunu ve nerede oturduğunu söylemeyi öğretir.",
+    minutes: 8,
+    focusId: "Vorstellung",
+    vocab: [
+      { de: "hallo", tr: "merhaba" },
+      { de: "heißen", tr: "adı … olmak" },
+      { de: "kommen", tr: "gelmek" },
+      { de: "wohnen", tr: "oturmak" },
+      { de: "der Name", tr: "isim" },
     ],
-    checks: [
+    patterns: [
+      { de: "Ich heiße …", tr: "adını söylerken kullanılır" },
+      { de: "Ich komme aus …", tr: "nereli olduğunu söylerken kullanılır" },
+      { de: "Ich wohne in …", tr: "nerede oturduğunu söylerken kullanılır" },
+    ],
+    lecture: [
       {
-        kind: "pick",
-        prompt: "Hangisi doğru?",
-        options: ["Morgen ich komme.", "Morgen komme ich.", "Morgen ich komme nicht."],
-        answer: "Morgen komme ich.",
-        why: "„Morgen“ birinci öğe; fiil („komme“) ikinci sıraya, özne („ich“) arkasına geçer.",
-      },
-      {
-        kind: "fill",
-        prompt: "„Heute ___ ich müde.“ boşluğa ne gelir?",
-        options: ["bin", "ist", "sein"],
-        answer: "bin",
-        why: "Fiil ikinci sırada ve özne „ich“ olduğu için çekim „bin“dir.",
-      },
-      {
-        kind: "pick",
-        prompt: "Cümlenin başına „In Istanbul“ eklenirse „Ich wohne“ nasıl olur?",
-        options: ["In Istanbul ich wohne.", "In Istanbul wohne ich.", "Wohne in Istanbul ich."],
-        answer: "In Istanbul wohne ich.",
-        why: "Başa gelen öğe birinci sayılır; fiil ikinci sırayı korur.",
-      },
-      {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Am Abend lese ich ein Buch.",
-          "Heute ich gehe zur Arbeit.",
-          "Morgen kommt mein Bruder.",
+        say: [
+          tr(
+            "Merhaba! Bugün kendimizi tanıtmayı öğreneceğiz. Üç kalıp işleyeceğiz: adını söylemek, nereli olduğunu söylemek ve nerede oturduğunu söylemek. Başlamaya hazır mısın?",
+          ),
         ],
-        answer: "Heute ich gehe zur Arbeit.",
-        why: "Başta „Heute“ varken fiil ikinci sırada olmalı: „Heute gehe ich zur Arbeit.“",
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Bu üç kalıpla ilk tanışma konuşmanı yapabileceksin. Önce kelimeleri öğrenelim.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("hallo"),
+          tr("Türkçesi 'merhaba' demek. Lütfen"),
+          de("hallo"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "hallo" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("heißen"),
+          tr("Türkçesi 'adı bir şey olmak' demek. Lütfen"),
+          de("heißen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "heißen" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("kommen"),
+          tr("Türkçesi 'gelmek' demek. Lütfen"),
+          de("kommen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "kommen" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("wohnen"),
+          tr("Türkçesi 'oturmak, yaşamak' demek. Lütfen"),
+          de("wohnen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "wohnen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Name"),
+          tr("Türkçesi 'isim' demek. Lütfen"),
+          de("der Name"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Name" },
+      },
+      {
+        say: [
+          tr("Şimdi ilk kalıbımız:"),
+          de("Ich heiße …"),
+          tr("Adını söylerken kullanılır, yani 'Benim adım …' demek."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek bir cümle: 'Benim adım Anna.' Almancası:"),
+          de("Ich heiße Anna."),
+          tr("Lütfen"),
+          de("Ich heiße Anna"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich heiße Anna" },
+      },
+      {
+        say: [
+          tr(
+            "Şimdi sıra sende: 'Benim adım Ali.' demek için hangi Almanca cümleyi kullanırsın? Lütfen söyle.",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich heiße Ali",
+          hint: [
+            tr("Kalıbımız"),
+            de("Ich heiße …"),
+            tr("idi. Adı kalıbın sonuna ekle ve tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Ich komme aus …"),
+          tr("Nereli olduğunu söyler: 'Ben …'dan geliyorum' demek."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Ben Türkiye'den geliyorum.' Almancası:"),
+          de("Ich komme aus der Türkei."),
+          tr("Lütfen"),
+          de("Ich komme aus der Türkei"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich komme aus der Türkei" },
+      },
+      {
+        say: [
+          tr(
+            "Peki 'Ben İstanbul'dan geliyorum.' demek için hangi cümleyi kullanırsın? Küçük bir bilgi: şehir adlarının önüne artikel gelmez.",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich komme aus Istanbul",
+          hint: [
+            tr("Şehir adlarının önüne artikel gelmez, kalıp yeterli:"),
+            de("Ich komme aus Istanbul."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Üçüncü kalıbımız:"),
+          de("Ich wohne in …"),
+          tr("Nerede oturduğunu söyler: '… şehrinde oturuyorum' demek."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Berlin'de oturuyorum.' Almancası:"),
+          de("Ich wohne in Berlin."),
+          tr("Lütfen"),
+          de("Ich wohne in Berlin"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich wohne in Berlin" },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Ich heiße aus Ankara."),
+          tr("cümlesi doğru mu, yanlış mı? Lütfen 'doğru' ya da 'yanlış' olarak cevapla."),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Ich heiße aus Ankara.",
+          answer: false,
+          why: [
+            de("heißen"),
+            tr("yalnızca ad söylemek içindir. Nereli olduğunu söylemek için"),
+            de("Ich komme aus Ankara."),
+            tr("denir."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Bugün kendini tanıtmayı öğrendin. Şimdi öğrendiklerini gerçek bir konuşmada kullanma zamanı: yeni bir komşunla tanışacaksın.",
+          ),
+        ],
       },
     ],
     roleplay: {
       scene:
-        "Yeni bir komşunla merdivende karşılaştın. Sana günlük programını soruyor. Cevaplarına „Heute…“, „Morgen…“, „Am Wochenende…“ gibi zaman ifadeleriyle başla — kuralı kullanman gereken yer tam orası.",
+        "Apartmanına yeni taşındın ve merdivende bir komşunla karşılaştın. Kendini tanıt: adını, nereli olduğunu ve nerede oturduğunu söyle.",
       partner: "meraklı ama kibar bir komşu",
-      opening: "Guten Tag! Sie sind neu hier, oder? Was machen Sie heute?",
-      openingTr: "İyi günler! Buraya yeni taşındınız, değil mi? Bugün ne yapıyorsunuz?",
+      opening: "Hallo! Sie sind neu hier, oder? Wie heißen Sie?",
+      openingTr: "Merhaba! Buraya yeni taşındınız, değil mi? Adınız ne?",
       minTurns: 4,
     },
   },
   {
-    id: "de-a1-l2",
+    id: "de-a1-cafe",
     level: "A1",
     course: "de",
-    ruleId: "Akkusativ",
-    title: "Belirtme hâli: den, einen",
-    summary: "Nesne olan eril kelimede „der“ → „den“, „ein“ → „einen“ olur.",
-    minutes: 7,
-    rule:
-      "Cümlenin nesnesi belirtme hâline (Akkusativ) girer. Değişen tek şey ERİL kelimelerdir: „der“ → „den“, „ein“ → „einen“. Dişil ve nötr olanlar aynı kalır. Türkçede nesne eki her cinste aynı olduğu için bu ayrım gözden kaçıyor.",
-    examples: [
-      { de: "Ich habe einen Bruder.", tr: "Bir erkek kardeşim var." },
-      { de: "Ich sehe den Mann.", tr: "Adamı görüyorum." },
-      { de: "Ich habe eine Schwester.", tr: "Bir kız kardeşim var." },
-      { de: "Ich kaufe das Buch.", tr: "Kitabı alıyorum." },
+    title: "Im Café",
+    titleTr: "Kafede",
+    summary: "Kibarca sipariş vermeyi ve hesap istemeyi öğretir.",
+    minutes: 8,
+    focusId: "Akkusativ-einen",
+    vocab: [
+      { de: "der Kaffee", tr: "kahve" },
+      { de: "der Tee", tr: "çay" },
+      { de: "das Wasser", tr: "su" },
+      { de: "bestellen", tr: "sipariş etmek" },
+      { de: "die Rechnung", tr: "hesap" },
     ],
-    checks: [
+    patterns: [
+      { de: "Ich möchte …", tr: "kibarca bir şey isterken kullanılır" },
+      { de: "Die Rechnung, bitte!", tr: "hesap isterken kullanılır" },
+    ],
+    lecture: [
       {
-        kind: "fill",
-        prompt: "„Ich habe ___ Hund.“ (der Hund)",
-        options: ["ein", "einen", "eine"],
-        answer: "einen",
-        why: "„Hund“ eril ve burada nesne; „ein“ belirtme hâlinde „einen“ olur.",
-      },
-      {
-        kind: "fill",
-        prompt: "„Ich trinke ___ Milch.“ (die Milch)",
-        options: ["die", "den", "das"],
-        answer: "die",
-        why: "Dişil kelimeler belirtme hâlinde değişmez.",
-      },
-      {
-        kind: "pick",
-        prompt: "Hangisi doğru?",
-        options: ["Ich sehe der Mann.", "Ich sehe den Mann.", "Ich sehe dem Mann."],
-        answer: "Ich sehe den Mann.",
-        why: "Eril nesne „den“ alır; „dem“ yönelme hâlidir (Dativ), burada değil.",
-      },
-      {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Ich sehe einen Film.",
-          "Ich kaufe ein Auto.",
-          "Ich habe ein Hund.",
+        say: [
+          tr(
+            "Bugün bir kafedeyiz! Kibarca sipariş vermeyi ve hesap istemeyi öğreneceğiz. Başlamaya hazır mısın?",
+          ),
         ],
-        answer: "Ich habe ein Hund.",
-        why: "„Hund“ eril ve nesne; „ein“ değil „einen“ olmalı.",
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Sipariş vermenin anahtarı tek bir kalıp; ama önce içeceklerin adlarını öğrenelim.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
+          de("der Kaffee"),
+          tr("Türkçesi 'kahve' demek. Lütfen"),
+          de("der Kaffee"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Kaffee" },
+      },
+      {
+        say: [
+          tr("İkinci kelimemiz:"),
+          de("der Tee"),
+          tr("Türkçesi 'çay' demek. Lütfen"),
+          de("der Tee"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Tee" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("das Wasser"),
+          tr("Türkçesi 'su' demek. Lütfen"),
+          de("das Wasser"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Wasser" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("bestellen"),
+          tr("Türkçesi 'sipariş etmek' demek. Lütfen"),
+          de("bestellen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "bestellen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("die Rechnung"),
+          tr("Türkçesi 'hesap' demek. Lütfen"),
+          de("die Rechnung"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Rechnung" },
+      },
+      {
+        say: [
+          tr("Şimdi kalıbımız:"),
+          de("Ich möchte …"),
+          tr("Kibarca '… istiyorum' demek. Sipariş verirken hep bu kalıbı kullanırız."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Bir su istiyorum.' Almancası:"),
+          de("Ich möchte ein Wasser."),
+          tr("Lütfen"),
+          de("Ich möchte ein Wasser"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Ich möchte ein Wasser" },
+      },
+      {
+        say: [
+          tr("Bir püf noktası: eril kelimelerde 'ein' değil 'einen' denir."),
+          de("der Kaffee"),
+          tr("eril olduğu için 'Bir kahve istiyorum' şöyle olur:"),
+          de("Ich möchte einen Kaffee."),
+        ],
+      },
+      {
+        say: [tr("Lütfen"), de("Ich möchte einen Kaffee"), tr("deyin.")],
+        expect: { kind: "repeat", target: "Ich möchte einen Kaffee" },
+      },
+      {
+        say: [
+          tr("Şimdi sıra sende: 'Bir çay istiyorum.' nasıl dersin?"),
+          de("der Tee"),
+          tr("de eril bir kelime."),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich möchte einen Tee",
+          hint: [
+            de("der Tee"),
+            tr("eril; 'ein' değil 'einen' olmalı:"),
+            de("Ich möchte einen Tee."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İçecekler bitti, hesap isteyeceksin. Almancada hesap istemek çok kısa:"),
+          de("Die Rechnung, bitte!"),
+          tr("Yani 'Hesap, lütfen!' Lütfen"),
+          de("Die Rechnung, bitte"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Die Rechnung, bitte" },
+      },
+      {
+        say: [
+          tr(
+            "Küçük bir meydan okuma: 'Bir kahve ve bir su istiyorum.' nasıl dersin? Dikkat: kahve eril, su değil.",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich möchte einen Kaffee und ein Wasser",
+          hint: [
+            de("der Kaffee"),
+            tr("eril, 'einen' alır;"),
+            de("das Wasser"),
+            tr("nötr, 'ein' kalır:"),
+            de("Ich möchte einen Kaffee und ein Wasser."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Ich möchte ein Kaffee."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Ich möchte ein Kaffee.",
+          answer: false,
+          why: [
+            de("der Kaffee"),
+            tr("eril ve burada nesne; 'einen' olmalı. Doğrusu:"),
+            de("Ich möchte einen Kaffee."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr(
+            "Harika gidiyorsun! Şimdi gerçek bir kafedesin: garson sipariş almaya geliyor. Öğrendiğin kalıplarla sipariş ver ve sonunda hesabı iste.",
+          ),
+        ],
       },
     ],
     roleplay: {
       scene:
-        "Bir mağazadasın ve satıcıya ne aradığını anlatıyorsun. Eril kelimeler seçmeye çalış (der Mantel, der Schuh, der Tisch) — kuralı kullanacağın yer orası.",
-      partner: "yardımsever bir satıcı",
-      opening: "Guten Tag! Was suchen Sie denn?",
-      openingTr: "İyi günler! Ne arıyorsunuz?",
-      minTurns: 4,
-    },
-  },
-  {
-    id: "de-a1-l3",
-    level: "A1",
-    course: "de",
-    ruleId: "Trennbare-Verben",
-    title: "Ayrılabilen fiiller",
-    summary: "„aufstehen“ gibi fiillerin öneki cümlenin sonuna gider.",
-    minutes: 7,
-    rule:
-      "Bazı fiillerin başında ayrılabilen bir önek vardır: aufstehen, einkaufen, anrufen, mitkommen. Cümle kurulunca fiil ikinci sıraya, ÖNEK ise cümlenin SONUNA gider. Türkçede böyle bir şey olmadığı için önek çoğu zaman fiile yapışık bırakılıyor.",
-    examples: [
-      { de: "Ich stehe um sieben Uhr auf.", tr: "Saat yedide kalkıyorum." },
-      { de: "Wir kaufen am Samstag ein.", tr: "Cumartesi alışveriş yapıyoruz." },
-      { de: "Rufst du mich morgen an?", tr: "Beni yarın arar mısın?" },
-    ],
-    checks: [
-      {
-        kind: "fill",
-        prompt: "„aufstehen“ ile: „Ich ___ um acht ___.“",
-        options: ["stehe … auf", "aufstehe … —", "auf … stehe"],
-        answer: "stehe … auf",
-        why: "Fiil ikinci sırada, önek cümlenin sonunda.",
-      },
-      {
-        kind: "pick",
-        prompt: "Hangisi doğru?",
-        options: ["Wir einkaufen heute.", "Wir kaufen heute ein.", "Wir kaufen ein heute."],
-        answer: "Wir kaufen heute ein.",
-        why: "Önek en sona gider; zaman ifadesi fiil ile önek arasında kalır.",
-      },
-      {
-        kind: "fill",
-        prompt: "„anrufen“ ile soru: „___ du mich ___?“",
-        options: ["Rufst … an", "Anrufst … —", "Ruf … an du"],
-        answer: "Rufst … an",
-        why: "Soruda fiil başa geçer ama önek yine sonda kalır.",
-      },
-      {
-        kind: "spot",
-        prompt: "Hangi cümlede hata var?",
-        options: [
-          "Ich rufe dich später an.",
-          "Wir kaufen morgen ein.",
-          "Ich aufstehe um sieben.",
-        ],
-        answer: "Ich aufstehe um sieben.",
-        why: "Önek fiile yapışık kalmış; doğrusu „Ich stehe um sieben auf.“",
-      },
-    ],
-    roleplay: {
-      scene:
-        "Bir arkadaşınla hafta sonu planı yapıyorsun. Ayrılabilen fiiller kullan: aufstehen, einkaufen, anrufen, mitkommen. Öneki cümlenin sonuna atmayı unutma.",
-      partner: "plan yapmayı seven bir arkadaş",
-      opening: "Hallo! Was machen wir am Samstag? Stehst du früh auf?",
-      openingTr: "Selam! Cumartesi ne yapıyoruz? Erken kalkıyor musun?",
+        "Bir kafede oturuyorsun ve garson siparişini almaya geldi. 'Ich möchte …' kalıbıyla bir şeyler sipariş et, sohbet et ve sonunda hesabı iste.",
+      partner: "güler yüzlü bir garson",
+      opening: "Guten Tag! Was möchten Sie bestellen?",
+      openingTr: "İyi günler! Ne sipariş etmek istersiniz?",
       minTurns: 4,
     },
   },

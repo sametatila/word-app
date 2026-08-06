@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SpeakerIcon } from "./icons";
-import { resolveVoice, type VoiceId } from "@/lib/tts/voices";
+import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 
 /**
  * Tarayıcının konuşma sentezi ile telaffuz. Desteklenmiyorsa hiç görünmez.
@@ -165,6 +165,92 @@ export function speakSlowly(text: string, onEnd?: () => void) {
   speakGerman(text, onEnd, true);
 }
 
+/**
+ * Dil bazında bölünmüş metin parçası — ders anlatımının birimi.
+ *
+ * Ders Türkçe anlatıyor ama içinde Almanca hedefler geçiyor: "İlk kelimemiz:
+ * das Wasser." Tek sesle okumak iki dilden birini bozuyor — Türkçe ses
+ * Almancayı Türkçe fonetiğiyle, Almanca ses Türkçeyi Alman aksanıyla okurdu.
+ * Öğrencinin duyacağı telaffuz dersin öğrettiği şeyin kendisi olduğu için bu
+ * kabul edilebilir bir bozulma değil; parça hangi dildeyse o dilin nöral
+ * sesiyle okunuyor.
+ */
+export type SpeechSegment = { lang: "tr" | "de"; text: string };
+
+/**
+ * Parçanın sesi profil tercihinden BAĞIMSIZ: derste öncelik gecikme.
+ *
+ * Ses sabit olunca dersin her cümlesi kullanıcıdan bağımsız tek önbellek
+ * girdisi — ilk dinleyen CDN'i herkes için ısıtıyor (bkz. lib/tts/voices,
+ * lessonVoice). Profil sesi konuşma pratiği gibi kullanıcıya özel üretilen
+ * yerlerde geçerli olmayı sürdürüyor.
+ */
+function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string } {
+  if (seg.lang === "tr") return { voice: TURKISH_VOICE, course: "de" };
+  const course = readLocal(COURSE_KEY) ?? "de";
+  return { voice: lessonVoice(course), course };
+}
+
+/**
+ * Parçaları sırayla, her birini kendi dilinin sesiyle okur.
+ *
+ * `onEnd` son parça bittiğinde (ya da hiç çalınamadığında) bir kez çağrılır —
+ * eller serbest akışta mikrofonun açılması buna bağlı. Dönen işlev okumayı
+ * iptal eder: parçalar arasında bileşen sökülürse sıradaki parça başlamaz.
+ * (Çalmakta olan parçayı ayrıca susturmak gerekmiyor; sonraki her okuma
+ * paylaşılan ses öğesini zaten kesiyor.)
+ */
+export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): () => void {
+  let cancelled = false;
+  const queue = segments
+    .map((s) => ({ ...s, text: cleanForSpeech(s.text) }))
+    .filter((s) => s.text);
+
+  const step = (i: number) => {
+    if (cancelled) return;
+    if (i >= queue.length) {
+      onEnd?.();
+      return;
+    }
+    const { voice, course } = voiceForSegment(queue[i]);
+    play(queue[i].text, voice, course, () => step(i + 1));
+  };
+  step(0);
+  return () => {
+    cancelled = true;
+  };
+}
+
+/**
+ * Çalan sesi keser ve bekleyen bitiş geri çağrılarını geçersiz kılar.
+ *
+ * Mikrofona dokunan kullanıcı okumayı beklemek istemiyor: ses sussun, tanıma
+ * başlasın. Jeton artırıldığı için kesilen okumanın geç gelen `onended` olayı
+ * hiçbir şeyi tetiklemiyor — eller serbest döngü kendi kendine açılmıyor.
+ */
+export function stopSpeaking() {
+  token++;
+  element?.pause();
+  if (typeof window !== "undefined" && "speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+/** Parçaların seslerini önceden indirir — ders akışında bekleme olmasın. */
+export function prefetchSegments(segments: SpeechSegment[]) {
+  if (typeof fetch === "undefined") return;
+  for (const seg of segments) {
+    const clean = cleanForSpeech(seg.text);
+    if (!clean) continue;
+    const { voice } = voiceForSegment(seg);
+    void fetch(`/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`, {
+      priority: "low",
+    } as RequestInit).catch(() => {
+      /* önden indirme başarısızsa normal akış zaten çalışıyor */
+    });
+  }
+}
+
 function play(
   clean: string,
   voice: VoiceId,
@@ -176,7 +262,7 @@ function play(
 ) {
   const audio = audioElement();
   if (!audio) {
-    speakWithBrowser(clean, course, onEnd, slow);
+    speakWithBrowser(clean, voice, course, onEnd, slow);
     return;
   }
 
@@ -194,7 +280,7 @@ function play(
     if (done || token !== mine) return;
     done = true;
     // Uç düşmüş, ağ yok ya da tarayıcı mp3'ü çalamıyor: eski davranışa dön.
-    speakWithBrowser(clean, course, onEnd, slow);
+    speakWithBrowser(clean, voice, course, onEnd, slow);
   };
 
   audio.pause();
@@ -229,19 +315,29 @@ function play(
  * tercih edilir, yoksa herhangi bir Almanca ses. Cihazda de-CH bulunmaması
  * zaten bu değişikliğin sebeplerinden biriydi.
  */
-function speakWithBrowser(clean: string, course: string, onEnd?: () => void, slow = false) {
+function speakWithBrowser(
+  clean: string,
+  voice: VoiceId,
+  course: string,
+  onEnd?: () => void,
+  slow = false,
+) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
     onEnd?.();
     return;
   }
-  const gsw = course === "gsw-zh";
+  // Dil, istenen sesin kimliğinden okunuyor: Türkçe anlatım parçası yedekte de
+  // Türkçe okunmalı — kursun Almanca sesine düşmek anlatımı anlaşılmaz yapar.
+  const lang = voice.slice(0, 5);
+  const gsw = course === "gsw-zh" && lang !== "tr-TR";
   const u = new SpeechSynthesisUtterance(clean);
-  u.lang = gsw ? "de-CH" : "de-DE";
-  u.rate = slow ? (gsw ? 0.55 : 0.6) : gsw ? 0.88 : 0.92;
+  u.lang = gsw ? "de-CH" : lang;
+  u.rate = slow ? (gsw ? 0.55 : 0.6) : gsw ? 0.88 : lang === "tr-TR" ? 1 : 0.92;
   const voices = window.speechSynthesis.getVoices();
   const picked = gsw
     ? (voices.find((v) => v.lang === "de-CH") ?? voices.find((v) => v.lang.startsWith("de")))
-    : voices.find((v) => v.lang.startsWith("de"));
+    : (voices.find((v) => v.lang === lang) ??
+      voices.find((v) => v.lang.startsWith(lang.slice(0, 2))));
   if (picked) u.voice = picked;
   if (onEnd) {
     u.onend = () => onEnd();

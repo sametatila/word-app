@@ -3,155 +3,179 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { SpeakButton, prefetchGerman, speakGerman, useSpeechAvailable } from "@/components/speak-button";
+import {
+  prefetchGerman,
+  prefetchSegments,
+  speakGerman,
+  speakSegments,
+  stopSpeaking,
+  useSpeechAvailable,
+} from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { AlertIcon, CheckIcon, MicIcon, SparkIcon, XIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, MicIcon, SparkIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { parseReply } from "@/lib/chat-format";
 import { fx } from "@/lib/fx";
-import type { Lesson } from "@/lib/lessons/types";
+import { judgeSpeech } from "@/lib/speech";
+import { tr as trSeg, type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
 
 /**
- * Ders oynatıcısı — kural, alıştırma, rol yapma, özet.
+ * Ders oynatıcısı — anlatım, konuşma pratiği, özet.
  *
- * Akışın sırası tasarımın kendisi. Kuralı okumadan alıştırmaya, alıştırmayı
- * geçmeden konuşmaya girilmiyor; çünkü serbest sohbetin en pahalı sorunu
- * öğrencinin "ne diyeceğim?" diye kalmasıydı ve bunun sebebi konuşmaya
- * hazırlıksız girmekti. Burada konuşmaya gelindiğinde elde bir kural, üç örnek
- * ve az önce çözülmüş sorular var.
+ * Anlatım bir sohbet gibi akıyor ama senaryosu yazılı: öğretmen söylüyor,
+ * öğrenci KONUŞARAK cevap veriyor, senaryo ilerliyor. Model beklenmediği için
+ * akışta hiç "cevap geliyor…" yok; tek bekleme sesin kendisi ve o da önceden
+ * indiriliyor.
  *
- * Rol yapma "yeterince konuşuldu"da değil, kural kullanıldığında bitiyor;
- * `minTurns` yalnızca alt sınır.
+ * İki dilin sınırı her an kesin: anlatım parçaları Türkçe sesle, hedefler
+ * Almanca sesle okunuyor; beklenen cevap Almancaysa tanıyıcı Almanca,
+ * Türkçeyse (onay, doğru/yanlış) Türkçe dinliyor. Yanlış dilde dinlemek
+ * tanıyıcıya en yakın kelimeyi uydurtmak demek — bu yüzden dil, adımın
+ * beklentisinden türetiliyor ve asla tahmin edilmiyor.
  */
 
-type Phase = "rule" | "checks" | "roleplay" | "summary";
+type Phase = "lecture" | "roleplay" | "summary";
 type Turn = { role: "user" | "assistant"; content: string };
+
+/** Anlatım akışındaki bir baloncuk. */
+type FeedItem =
+  | { role: "assistant"; segments: Segment[]; tone?: "hint" }
+  | { role: "user"; text: string };
 
 const HANDSFREE_KEY = "wortspiel-lesson-handsfree";
 
 /**
  * Eller serbestken mikrofonun boşuna açık kalabileceği süre.
  *
- * Tanıyıcı hiç ses duymazsa kendiliğinden kapanmıyor; öğrenci ekranda
- * "Dinliyorum" yazısıyla baş başa kalıyor ve ne beklendiğini anlamıyor. Süre
- * dolunca normale dönülüyor: mikrofon kapanıyor, düğme yeniden dokunulabilir
- * hâle geliyor ve ne yapılacağı yazılıyor.
- *
- * On iki saniye ölçüyle değil gözlemle seçildi: bir cümle kurmayı düşünmek
- * birkaç saniye sürüyor, ama on saniyeyi geçen sessizlik artık düşünme değil
- * takılma oluyor.
+ * Tanıyıcı hiç ses duymazsa kendiliğinden kapanmıyor; süre dolunca mikrofon
+ * kapanıyor ve ne yapılacağı yazılıyor. On iki saniye gözlemle seçildi: bir
+ * cümleyi düşünmek birkaç saniye, on saniyeyi geçen sessizlik takılma.
  */
 const SILENCE_MS = 12000;
 
 /**
  * Yarım kalan dersin cihazda saklanması.
  *
- * Ders üç bölümlü (kural → alıştırma → rol yapma) ve rol yapma en uzun
- * bölüm. Öğrenci konuşmanın ortasında çıkarsa geri döndüğünde kuraldan
- * başlıyordu: dört alıştırmayı yeniden yapmak, aynı açılış replikini yeniden
- * dinlemek ve konuşmayı sıfırdan kurmak gerekiyordu. Bir dersi yarıda
- * bırakmanın bedeli, dersin tamamını yeniden yapmak oluyordu.
- *
- * Sunucuda değil cihazda tutuluyor: yarım bir konuşmanın turları kalıcı bir
- * kayıt değil ve her turda sunucuya yazmak konuşmanın akışına bir bekleme
- * daha eklerdi. Bunun bedeli açık — başka cihazda devam edilemiyor.
- *
- * Süresi geçen kayıt yok sayılıyor: iki hafta önce yarım bırakılmış bir
- * konuşmanın ortasına düşmek, baştan başlamaktan daha kafa karıştırıcı olur.
+ * Anlatım uzun bir akış ve konuşma daha da uzun; ortasında çıkan öğrenci
+ * döndüğünde baştan başlamamalı. Sunucuda değil cihazda: yarım bir akışın
+ * adım sayacı kalıcı bir kayıt değil ve her adımda sunucuya yazmak akışa
+ * bekleme eklerdi. Bedeli açık — başka cihazda devam edilemiyor.
  */
 const RESUME_KEY = "wortspiel-lesson-progress";
 const RESUME_DAYS = 3;
 
-type Saved = { phase: Phase; checkIndex: number; correctCount: number; turns: Turn[]; at: number };
+type Saved = {
+  phase: Phase;
+  stepIndex: number;
+  correctCount: number;
+  turns: Turn[];
+  at: number;
+};
 
-function readSaved(lessonId: string): Saved | null {
+function readSaved(lesson: Lesson): Saved | null {
   try {
-    const raw = localStorage.getItem(`${RESUME_KEY}:${lessonId}`);
+    const raw = localStorage.getItem(`${RESUME_KEY}:${lesson.id}`);
     if (!raw) return null;
     const v = JSON.parse(raw) as Saved;
     if (!v || typeof v.at !== "number") return null;
     if (Date.now() - v.at > RESUME_DAYS * 86400000) return null;
-    if (v.phase !== "checks" && v.phase !== "roleplay") return null;
+    if (v.phase !== "lecture" && v.phase !== "roleplay") return null;
+    if (v.phase === "lecture" && (v.stepIndex <= 0 || v.stepIndex >= lesson.lecture.length))
+      return null;
     return v;
   } catch {
     return null;
   }
 }
 
+/**
+ * Övgüler dönüşümlü: her doğruda aynı kelimeyi duymak övgüyü görünmez yapıyor.
+ * Sıra adım numarasından geliyor ki aynı adımın tekrarında bile değişsin.
+ */
+const PRAISE = ["Çok iyi!", "Harika!", "Süper!", "Çok güzel söyledin!", "Mükemmel!"];
+
+/** Türkçe hükmün ayrıştırılması — doğru mu dedi, yanlış mı? */
+function parseJudgment(text: string): boolean | null {
+  const t = text.toLocaleLowerCase("tr-TR");
+  const yes = /doğru|dogru/.test(t);
+  const no = /yanlış|yanlıs|yanlis/.test(t);
+  if (yes === no) return null; // ikisi birden ya da hiçbiri: hüküm yok
+  return yes;
+}
+
 export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   const router = useRouter();
-  const [phase, setPhase] = useState<Phase>("rule");
+  const [phase, setPhase] = useState<Phase>("lecture");
 
-  // Alıştırma durumu
-  const [checkIndex, setCheckIndex] = useState(0);
-  const [picked, setPicked] = useState<string | null>(null);
+  // ── Anlatım durumu ──
+  const [feed, setFeed] = useState<FeedItem[]>([]);
+  const [stepIndex, setStepIndex] = useState(0);
+  const [started, setStarted] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
+  /** Geçerli adımda kaç deneme yapıldı — ipucu merdiveni buna bakıyor. */
+  const attempts = useRef(0);
+  /** Bu adımda cevap bekleniyor mu (ses bitti, sıra öğrencide). */
+  const [awaiting, setAwaiting] = useState(false);
 
-  // Rol yapma durumu
+  // ── Konuşma durumu ──
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [listening, setListening] = useState(false);
-  /** Yönlendirme metni — hata değil, ne yapılacağını söyleyen bir satır. */
   const [hint, setHint] = useState<string | null>(null);
   const [handsFree, setHandsFree] = useState(true);
   /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
   const [typing, setTyping] = useState(false);
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
-  /** Yarım kalan dersten devam edildi mi — kullanıcıya bir kez söyleniyor. */
   const [resumed, setResumed] = useState(false);
-
-  /**
-   * İlk çizimde kayıt okunmuyor: sunucu ile tarayıcının farklı şey çizmesi
-   * hidrasyonu bozar. Kayıt yüklenene kadar bölüm "rule" kalıyor ve yükleme
-   * bittiğinde yerine geçiyor.
-   */
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    const v = readSaved(lesson.id);
-    // Bayrak bir ref değil durum olmak ZORUNDA. Ref olsaydı aynı etki
-    // turunda kaydetme etkisi de çalışır ve `phase` henüz "rule" olduğu için
-    // kaydı SİLERDİ; ancak bir sonraki çizimde geri yazıldığı için tesadüfen
-    // işliyordu. Durum olunca kaydetme ancak geri yükleme uygulandıktan
-    // sonraki çizimde başlıyor.
-    setReady(true);
-    if (!v) return;
-    setCheckIndex(v.checkIndex);
-    setCorrectCount(v.correctCount);
-    setTurns(v.turns);
-    setPhase(v.phase);
-    setResumed(true);
-  }, [lesson.id]);
-
-  // Yazma sırasında kayıt yapılmıyor: taslak metin dersin ilerlemesi değil.
-  useEffect(() => {
-    if (!ready) return;
-    try {
-      if (phase === "rule" || phase === "summary") {
-        localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
-        return;
-      }
-      const v: Saved = { phase, checkIndex, correctCount, turns, at: Date.now() };
-      localStorage.setItem(`${RESUME_KEY}:${lesson.id}`, JSON.stringify(v));
-    } catch {
-      /* depolama kapalıysa devam etme özelliği yok sayılıyor */
-    }
-  }, [ready, lesson.id, phase, checkIndex, correctCount, turns]);
 
   const ttsAvailable = useSpeechAvailable();
   const [asrAvailable, setAsrAvailable] = useState(false);
   useEffect(() => setAsrAvailable(recognitionCtor() !== null), []);
 
   const recognition = useRef<Recognition | null>(null);
-  /** Eller serbestken sessizliği ölçen zamanlayıcı. */
   const silence = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bottom = useRef<HTMLDivElement>(null);
-  const input = useRef<HTMLTextAreaElement>(null);
-  const handsFreeRef = useRef(false);
+  const handsFreeRef = useRef(true);
   const draftRef = useRef("");
+  /** Süren okumayı iptal eden işlev — adım değişince ya da sökülünce. */
+  const cancelSpeech = useRef<(() => void) | null>(null);
   const speechToken = useRef(0);
   const sendRef = useRef<(text: string) => void>(() => {});
+
+  const step = lesson.lecture[stepIndex];
+  const expect = step?.expect;
+
+  /**
+   * İlk çizimde kayıt okunmuyor: sunucu ile tarayıcının farklı şey çizmesi
+   * hidrasyonu bozar. Kayıt yüklenene kadar akış başlamıyor.
+   */
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const v = readSaved(lesson);
+    setReady(true);
+    if (!v) return;
+    setStepIndex(v.stepIndex);
+    setCorrectCount(v.correctCount);
+    setTurns(v.turns);
+    setPhase(v.phase);
+    setResumed(true);
+  }, [lesson]);
+
+  useEffect(() => {
+    if (!ready) return;
+    try {
+      if (phase === "summary" || (phase === "lecture" && stepIndex === 0)) {
+        localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
+        return;
+      }
+      const v: Saved = { phase, stepIndex, correctCount, turns, at: Date.now() };
+      localStorage.setItem(`${RESUME_KEY}:${lesson.id}`, JSON.stringify(v));
+    } catch {
+      /* depolama kapalıysa devam etme özelliği yok sayılıyor */
+    }
+  }, [ready, lesson.id, phase, stepIndex, correctCount, turns]);
 
   useEffect(() => {
     draftRef.current = draft;
@@ -159,37 +183,6 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
   useEffect(() => {
     handsFreeRef.current = handsFree;
   }, [handsFree]);
-  useEffect(
-    () => () => {
-      recognition.current?.abort();
-      if (silence.current) clearTimeout(silence.current);
-    },
-    [],
-  );
-  useEffect(() => {
-    bottom.current?.scrollIntoView({ behavior: "smooth", block: "end" });
-  }, [turns, phase]);
-
-  /**
-   * Dersin bütün seslerini baştan indirir.
-   *
-   * Ders kısa ve hangi cümlelerin okunacağı baştan belli: örnekler ve rol
-   * yapmanın açılış repliği. Öğrenci kuralı okurken bunlar iniyor, böylece
-   * hoparlöre basıldığında ya da rol yapma başladığında ağa hiç çıkılmıyor.
-   */
-  useEffect(() => {
-    for (const ex of lesson.examples) prefetchGerman(ex.de);
-    prefetchGerman(lesson.roleplay.opening);
-  }, [lesson]);
-
-  /**
-   * Eller serbest döngü **açık** başlıyor.
-   *
-   * Rol yapma konuşma tabanlı olduğu için doğal akış şu: model konuşur,
-   * bitince mikrofon kendiliğinden açılır, öğrenci cevap verir. Bunu isteğe
-   * bağlı bir seçenek yapmak, varsayılan deneyimi yazışmaya geri döndürüyordu.
-   * Kapatan kullanıcının tercihi hatırlanıyor; hiç dokunmayan için açık.
-   */
   useEffect(() => {
     try {
       setHandsFree(localStorage.getItem(HANDSFREE_KEY) !== "0");
@@ -197,55 +190,341 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       setHandsFree(true);
     }
   }, []);
+  useEffect(
+    () => () => {
+      recognition.current?.abort();
+      cancelSpeech.current?.();
+      stopSpeaking();
+      if (silence.current) clearTimeout(silence.current);
+    },
+    [],
+  );
+  useEffect(() => {
+    bottom.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, [feed, turns, phase, awaiting]);
 
-  /** Öğrencinin kaç kez söz aldığı — rol yapmanın alt sınırı buna bakıyor. */
-  const userTurns = turns.filter((t) => t.role === "user").length;
-  const roleplayDone = userTurns >= lesson.roleplay.minTurns;
+  /**
+   * Sesler önceden iniyor: geçerli adım ve sonraki iki adım. Öğretmen
+   * konuşurken sıradaki cümleler indiği için akışta ağ hiç hissedilmiyor.
+   * Konuşmanın açılış repliği de anlatım sırasında hazırlanıyor.
+   */
+  useEffect(() => {
+    const ahead = lesson.lecture.slice(stepIndex, stepIndex + 3).flatMap((s) => s.say);
+    prefetchSegments(ahead);
+    prefetchGerman(lesson.roleplay.opening);
+  }, [lesson, stepIndex]);
 
-  // ─────────────────────────── alıştırmalar ───────────────────────────
+  // ─────────────────────────── anlatım motoru ───────────────────────────
 
-  const check = lesson.checks[checkIndex];
+  const clearSilence = () => {
+    if (silence.current) clearTimeout(silence.current);
+    silence.current = null;
+  };
 
-  function answer(option: string) {
-    if (picked) return;
-    setPicked(option);
-    const isCorrect = option === check.answer;
-    if (isCorrect) setCorrectCount((n) => n + 1);
-    fx(isCorrect ? "correct" : "wrong", 900);
-    // Doğru cevapta kendiliğinden ilerliyor: gerekçe kısa bir an görünüyor ve
-    // geçiliyor. Yanlışta duruluyor — orada okunacak bir şey var ve öğrencinin
-    // kendi hızında okuması gerekiyor. Her cevapta düğmeye bastırmak, doğru
-    // bilen öğrenciye gereksiz bir adım yüklüyordu.
-    if (isCorrect) setTimeout(() => advance(), 1400);
+  /**
+   * Tanımayı başlatır — dil, adımın beklentisinden geliyor.
+   *
+   * Almanca hedef beklenirken üç aday isteniyor: değerlendirme (judgeSpeech)
+   * ilk adaydan doğruluk, alt adaylardan teşhis çıkarıyor. Türkçe hükümde tek
+   * aday yeter.
+   */
+  const capture = useCallback(
+    async (lang: string, onHeard: (alternatives: string[]) => void, auto: boolean) => {
+      const Ctor = recognitionCtor();
+      if (!Ctor) return;
+      const permission = await requestMicrophone();
+      if (permission === "denied") {
+        setError("Mikrofon izni verilmedi. Yazarak da devam edebilirsin.");
+        return;
+      }
+      recognition.current?.abort();
+      const rec = new Ctor();
+      recognition.current = rec;
+      rec.lang = lang;
+      rec.interimResults = false;
+      rec.continuous = false;
+      rec.maxAlternatives = 3;
+      rec.onresult = (e) => {
+        clearSilence();
+        const result = e.results[0];
+        const alternatives: string[] = [];
+        for (let i = 0; i < (result?.length ?? 0); i++) {
+          const t = result[i]?.transcript?.trim();
+          if (t) alternatives.push(t);
+        }
+        if (!alternatives.length) return;
+        setHint(null);
+        onHeard(alternatives);
+      };
+      rec.onerror = () => {
+        clearSilence();
+        setListening(false);
+      };
+      rec.onend = () => {
+        clearSilence();
+        setListening(false);
+      };
+      setListening(true);
+      setHint(null);
+      try {
+        rec.start();
+        // Sessizlik sayacı yalnızca kendiliğinden açılan mikrofon için:
+        // kullanıcı kendi dokunduysa ne yaptığını biliyor.
+        if (auto) {
+          clearSilence();
+          silence.current = setTimeout(() => {
+            rec.stop();
+            setListening(false);
+            setHint("Sesini duyamadım. Hazır olunca mikrofona dokun ya da yazarak devam et.");
+          }, SILENCE_MS);
+        }
+      } catch {
+        clearSilence();
+        setListening(false);
+      }
+    },
+    [],
+  );
+
+  /** Beklentinin tanıma dili. Almanca hedefler kursun diliyle dinleniyor. */
+  const langFor = useCallback(
+    (e: Expectation): string =>
+      e.kind === "confirm" || e.kind === "truefalse"
+        ? "tr-TR"
+        : lesson.course === "gsw-zh"
+          ? "de-CH"
+          : "de-DE",
+    [lesson.course],
+  );
+
+  /**
+   * Bir anlatım adımını oynatır: baloncuğu ekler, sesleri okur; beklenti
+   * varsa mikrofonu açar, yoksa sıradaki adıma geçer.
+   *
+   * `prefix` bir önceki cevabın övgüsü — ayrı bir baloncuk yerine sıradaki
+   * cümlenin başına ekleniyor: "Çok iyi! İkinci kelimemiz…" Learna'nın da
+   * yaptığı bu ve sebebi ekran düzeni değil ritim: övgü tek başına bir tur
+   * değil, geçişin yakıtı.
+   */
+  const runStep = useCallback(
+    (index: number, prefix?: Segment[]) => {
+      const s = lesson.lecture[index];
+      if (!s) {
+        startRoleplay();
+        return;
+      }
+      attempts.current = 0;
+      setAwaiting(false);
+      setStepIndex(index);
+      setTyping(false);
+      const segments = [...(prefix ?? []), ...s.say];
+      setFeed((f) => [...f, { role: "assistant", segments }]);
+      const token = ++speechToken.current;
+      cancelSpeech.current?.();
+      const after = () => {
+        if (speechToken.current !== token) return;
+        if (s.expect) {
+          setAwaiting(true);
+          if (handsFreeRef.current && asrAvailable) {
+            void capture(langFor(s.expect), (alts) => evaluateRef.current(alts), true);
+          }
+        } else {
+          runStepRef.current(index + 1);
+        }
+      };
+      if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after);
+      else after();
+    },
+    // startRoleplay aşağıda tanımlı; ref üzerinden çağrılıyor.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [lesson, ttsAvailable, asrAvailable, capture, langFor],
+  );
+  const runStepRef = useRef(runStep);
+  useEffect(() => {
+    runStepRef.current = runStep;
+  }, [runStep]);
+
+  /** Yalnızca konuşan bir ara baloncuk: ipucu, düzeltme, teselli. */
+  const interject = useCallback(
+    (segments: Segment[], then?: () => void, tone: "hint" | undefined = "hint") => {
+      setAwaiting(false);
+      setFeed((f) => [...f, { role: "assistant", segments, tone }]);
+      const token = ++speechToken.current;
+      cancelSpeech.current?.();
+      const after = () => {
+        if (speechToken.current !== token) return;
+        then?.();
+      };
+      if (ttsAvailable) cancelSpeech.current = speakSegments(segments, after);
+      else after();
+    },
+    [ttsAvailable],
+  );
+
+  /** Aynı adım için mikrofonu yeniden açar (ipucundan sonra). */
+  const reopen = useCallback(() => {
+    setAwaiting(true);
+    const e = lesson.lecture[stepIndexRef.current]?.expect;
+    if (!e) return;
+    if (handsFreeRef.current && asrAvailable) {
+      void capture(langFor(e), (alts) => evaluateRef.current(alts), true);
+    }
+  }, [asrAvailable, capture, langFor, lesson]);
+  const stepIndexRef = useRef(0);
+  useEffect(() => {
+    stepIndexRef.current = stepIndex;
+  }, [stepIndex]);
+
+  /**
+   * Öğrencinin cevabını değerlendirir — anlatımın kalbi.
+   *
+   * İpucu merdiveni: ilk yanlışta hedefe özgü ipucu, ikincisinde doğrusu
+   * söylenip bir kez daha isteniyor, üçüncüsünde ders takılmadan devam ediyor
+   * — takılan adım konuşma pratiğinde zaten tekrar karşına çıkacak. Amaç
+   * sınamak değil söyletmek; üç denemeden sonra dördüncüyü istemek öğretmeyi
+   * bırakıp sınava dönüşmek olurdu.
+   */
+  const evaluate = useCallback(
+    (alternatives: string[]) => {
+      const s = lesson.lecture[stepIndexRef.current];
+      const e = s?.expect;
+      if (!e) return;
+      const said = alternatives[0] ?? "";
+      if (!said.trim()) return;
+      setFeed((f) => [...f, { role: "user", text: said }]);
+      const praise = trSeg(PRAISE[stepIndexRef.current % PRAISE.length]);
+      const next = () => runStepRef.current(stepIndexRef.current + 1, [praise]);
+      const isFirstTry = attempts.current === 0;
+
+      if (e.kind === "confirm") {
+        runStepRef.current(stepIndexRef.current + 1);
+        return;
+      }
+
+      if (e.kind === "truefalse") {
+        const judgment = parseJudgment(said);
+        if (judgment === null) {
+          interject([trSeg("Lütfen yalnızca 'doğru' ya da 'yanlış' de.")], reopen);
+          return;
+        }
+        const ok = judgment === e.answer;
+        if (ok && isFirstTry) setCorrectCount((n) => n + 1);
+        fx(ok ? "correct" : "wrong", 900);
+        interject(
+          [trSeg(ok ? PRAISE[stepIndexRef.current % PRAISE.length] : "Olmadı."), ...e.why],
+          () => runStepRef.current(stepIndexRef.current + 1),
+          ok ? undefined : "hint",
+        );
+        return;
+      }
+
+      // repeat | produce — Almanca hedefle karşılaştırma.
+      const targets = [e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])];
+      const verdicts = targets.map((t) => judgeSpeech(t, alternatives));
+      const best = verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
+
+      if (best.kind === "correct") {
+        if (e.kind === "produce" && isFirstTry) setCorrectCount((n) => n + 1);
+        fx("correct", 900);
+        next();
+        return;
+      }
+
+      if (best.kind === "uncertain") {
+        interject(
+          [trSeg("Tam duyamadım. Bir kez daha söyler misin:"), { lang: "de", text: e.target }],
+          reopen,
+        );
+        return;
+      }
+
+      attempts.current += 1;
+      fx("wrong", 900);
+
+      if (attempts.current >= 3) {
+        interject(
+          [trSeg("Sorun değil — bu, konuşmada tekrar karşına çıkacak. Devam edelim.")],
+          () => runStepRef.current(stepIndexRef.current + 1),
+        );
+        return;
+      }
+
+      if (attempts.current === 2) {
+        interject(
+          [trSeg("Doğrusu:"), { lang: "de", text: e.target }, trSeg("Lütfen tekrar et.")],
+          reopen,
+        );
+        return;
+      }
+
+      // İlk yanlış: üretimde içerikteki hedefe özgü ipucu; tekrarla eksik
+      // kelimeler söyleniyor — "yanlış" demek öğretmez, neyin eksik olduğu öğretir.
+      if (e.kind === "produce") {
+        interject(e.hint, reopen);
+      } else {
+        const missing =
+          best.kind === "partial" || best.kind === "different" ? best.missing : [];
+        interject(
+          missing.length
+            ? [
+                trSeg("Neredeyse! Eksik kalan:"),
+                { lang: "de", text: missing.join(", ") },
+                trSeg("Bir kez daha:"),
+                { lang: "de", text: e.target },
+              ]
+            : [trSeg("Bir kez daha deneyelim:"), { lang: "de", text: e.target }],
+          reopen,
+        );
+      }
+    },
+    [interject, lesson, reopen],
+  );
+  const evaluateRef = useRef(evaluate);
+  useEffect(() => {
+    evaluateRef.current = evaluate;
+  }, [evaluate]);
+
+  /** Anlatımı başlat — ilk adım, kayıttan dönülüyorsa kaldığı adım. */
+  useEffect(() => {
+    if (!ready || started || phase !== "lecture") return;
+    setStarted(true);
+    runStepRef.current(stepIndexRef.current);
+    // İlk adım yalnızca bir kez oynatılmalı.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, started, phase]);
+
+  /** Adımı atla — takılan öğrencinin çıkışı; puan almadan ilerler. */
+  function skipStep() {
+    recognition.current?.abort();
+    attempts.current = 0;
+    runStep(stepIndex + 1);
   }
 
-  function advance() {
-    setPicked(null);
-    if (checkIndex + 1 < lesson.checks.length) setCheckIndex((i) => i + 1);
-    else startRoleplay();
+  /** Yazılan cevap da sesli cevapla aynı kapıdan geçiyor. */
+  function submitTyped() {
+    const clean = draft.trim();
+    if (!clean) return;
+    setDraft("");
+    evaluate([clean]);
   }
 
-
-
-  // ─────────────────────────── rol yapma ───────────────────────────
+  // ─────────────────────────── konuşma pratiği ───────────────────────────
 
   function startRoleplay() {
+    recognition.current?.abort();
+    cancelSpeech.current?.();
+    setAwaiting(false);
     setPhase("roleplay");
-    // Açılış repliği içerikte yazılı: konuşma boş ekranla başlamıyor ve model
-    // ilk turu üretmek için beklenmiyor.
+    if (turns.length) return; // kayıttan dönüldü, konuşma zaten kurulu
     setTurns([{ role: "assistant", content: lesson.roleplay.opening }]);
-    // Açılış repliği bitince mikrofon kendiliğinden açılıyor.
-    // Önce geri çağrısız okunuyordu: eller serbest açık olsa bile konuşma
-    // mikrofon kapalı başlıyordu ve öğrencinin ayrıca düğmeye dokunması
-    // gerekiyordu — yani "eller serbest" ilk turda hiç çalışmıyordu.
     const token = ++speechToken.current;
     if (ttsAvailable)
       speakGerman(lesson.roleplay.opening, () => {
         if (speechToken.current !== token) return;
         if (!handsFreeRef.current) return;
-        void listen(true);
+        void listenRoleplay();
       });
-    else if (handsFreeRef.current) void listen(true);
+    else if (handsFreeRef.current) void listenRoleplay();
   }
 
   const send = useCallback(
@@ -286,12 +565,10 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
         if (ttsAvailable && body.trim()) {
           const token = ++speechToken.current;
           speakGerman(body, () => {
-            // cancel() bekleyen okumanın bitişini de tetikliyor; bu okumanın
-            // hâlâ güncel olup olmadığı jetonla ayırt ediliyor.
             if (speechToken.current !== token) return;
             if (!handsFreeRef.current) return;
             if (draftRef.current.trim()) return;
-            void listen(true);
+            void listenRoleplay();
           });
         }
       } catch {
@@ -301,68 +578,21 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
         setBusy(false);
       }
     },
-    // `listen` aşağıda tanımlı; bağımlılığa alınırsa döngü oluşur.
+    // `listenRoleplay` aşağıda tanımlı; bağımlılığa alınırsa döngü oluşur.
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [turns, busy, lesson.id, ttsAvailable],
   );
-
   useEffect(() => {
     sendRef.current = (t: string) => void send(t);
   }, [send]);
 
-  const listen = useCallback(async (autoSend = false) => {
-    const Ctor = recognitionCtor();
-    if (!Ctor) return;
-    const permission = await requestMicrophone();
-    if (permission === "denied") {
-      setError("Mikrofon izni verilmedi. Yazarak da devam edebilirsin.");
-      return;
-    }
-    const rec = new Ctor();
-    recognition.current = rec;
-    rec.lang = lesson.course === "gsw-zh" ? "de-CH" : "de-DE";
-    rec.interimResults = false;
-    rec.continuous = false;
-    rec.maxAlternatives = 1;
-    const clearSilence = () => {
-      if (silence.current) clearTimeout(silence.current);
-      silence.current = null;
-    };
-    rec.onresult = (e) => {
-      clearSilence();
-      const said = e.results[0]?.[0]?.transcript?.trim() ?? "";
-      if (!said) return;
-      setHint(null);
-      if (autoSend) sendRef.current(said);
-      else setDraft((d) => (d ? `${d} ${said}` : said));
-    };
-    rec.onerror = () => {
-      clearSilence();
-      setListening(false);
-    };
-    rec.onend = () => {
-      clearSilence();
-      setListening(false);
-    };
-    setListening(true);
-    setHint(null);
-    try {
-      rec.start();
-      // Sessizlik sayacı yalnızca kendiliğinden açılan mikrofon için: kullanıcı
-      // kendi dokunduysa ne yaptığını biliyor, altından zemini çekmek yanlış.
-      if (autoSend) {
-        clearSilence();
-        silence.current = setTimeout(() => {
-          rec.stop();
-          setListening(false);
-          setHint("Sesini duyamadım. Hazır olunca mikrofona dokun ya da yazarak devam et.");
-        }, SILENCE_MS);
-      }
-    } catch {
-      clearSilence();
-      setListening(false);
-    }
-  }, [lesson.course]);
+  const listenRoleplay = useCallback(async () => {
+    await capture(
+      lesson.course === "gsw-zh" ? "de-CH" : "de-DE",
+      (alts) => sendRef.current(alts[0] ?? ""),
+      true,
+    );
+  }, [capture, lesson.course]);
 
   function stopListening() {
     recognition.current?.stop();
@@ -377,24 +607,26 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
     } catch {
       /* depolama kapalı */
     }
-    // İzin kullanıcı hareketiyle isteniyor; yüklü PWA'da tanıyıcı bunu
-    // kendiliğinden yapmıyor.
     if (!next) {
-      // Kapatılınca dinleme de bitmeli: aksi hâlde "kapalı" yazarken mikrofon
-      // açık kalıyordu.
       stopListening();
       return;
     }
     await requestMicrophone();
-    // Açmak, mikrofona dokunmakla aynı şey. Önce yalnızca bir tercih
-    // kaydediliyordu ve etkisi ancak BİR SONRAKİ model cevabından sonra
-    // görülüyordu; kullanıcı açıp bir de mikrofona dokunmak zorunda kalıyordu.
-    if (!busy && !listening) void listen(true);
+    if (busy || listening) return;
+    // Açmak, mikrofona dokunmakla aynı şey — hangi fazdaysak orada dinle.
+    if (phase === "roleplay") void listenRoleplay();
+    else if (awaiting && expect) void capture(langFor(expect), (a) => evaluate(a), true);
   }
+
+  const userTurns = turns.filter((t) => t.role === "user").length;
+  const roleplayDone = userTurns >= lesson.roleplay.minTurns;
 
   // ─────────────────────────── bitiş ───────────────────────────
 
   async function finish() {
+    recognition.current?.abort();
+    cancelSpeech.current?.();
+    stopSpeaking();
     setPhase("summary");
     try {
       const res = await fetch("/api/lesson", {
@@ -408,8 +640,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       });
       if (res.ok) setSaved((await res.json()) as { passed: boolean; nextDays: number });
     } catch {
-      // Kayıt başarısızsa özet yine gösteriliyor: dersi yaptığın gerçeği
-      // sunucuya ulaşamamış olmasından bağımsız.
+      // Kayıt başarısızsa özet yine gösteriliyor.
     }
   }
 
@@ -422,13 +653,26 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       ? parseReply(turns.at(-1)!.content).suggestions
       : [];
 
+  const scoredTotal = lesson.lecture.filter(
+    (s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse",
+  ).length;
+
+  // ─────────────────────────── görünüm ───────────────────────────
+
+  const micLabel = busy
+    ? "Cevap geliyor…"
+    : listening
+      ? "Dinliyorum — bitince dokun"
+      : (hint ?? "Konuşmak için dokun");
+
   return (
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4">
       <Steps phase={phase} />
 
-      {/* Devam edildiği söyleniyor: kullanıcı dersin ortasına düştüğünde
-          nerede olduğunu anlamalı. Kapatılabiliyor — bilgi bir kez gerekli,
-          sonra yer kaplıyor. */}
+      {phase === "lecture" ? (
+        <LectureProgress at={stepIndex} total={lesson.lecture.length} />
+      ) : null}
+
       {resumed && phase !== "summary" ? (
         <div
           className="flex items-center gap-2 rounded-xl px-3 py-2 text-xs"
@@ -437,7 +681,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
           <span className="flex-1" style={{ color: "var(--color-brand-500)" }}>
             {phase === "roleplay"
               ? "Konuşmaya kaldığın yerden devam ediyorsun."
-              : "Alıştırmalara kaldığın yerden devam ediyorsun."}
+              : "Derse kaldığın yerden devam ediyorsun."}
           </span>
           <button
             type="button"
@@ -450,8 +694,6 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
           <button
             type="button"
             onClick={() => {
-              // Baştan başlamak da bir seçenek olmalı: devam etmek varsayılan,
-              // dayatma değil.
               try {
                 localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
               } catch {
@@ -459,10 +701,11 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
               }
               setResumed(false);
               setTurns([]);
-              setCheckIndex(0);
+              setFeed([]);
               setCorrectCount(0);
-              setPicked(null);
-              setPhase("rule");
+              attempts.current = 0;
+              setPhase("lecture");
+              runStep(0);
             }}
             className="btn btn-ghost shrink-0 px-2 py-0.5 text-xs"
           >
@@ -472,106 +715,203 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
       ) : null}
 
       <AnimatePresence mode="wait">
-        {phase === "rule" ? (
+        {phase === "lecture" ? (
           <motion.section
-            key="rule"
+            key="lecture"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="card p-5"
+            className="card flex min-h-0 flex-1 flex-col overflow-hidden"
           >
-            <h2 className="text-lg font-bold">{lesson.title}</h2>
-            <p className="muted mt-1 text-sm">{lesson.summary}</p>
-            <p className="mt-4 text-sm leading-relaxed">{lesson.rule}</p>
-
-            <div className="mt-4 space-y-2">
-              {lesson.examples.map((ex) => (
-                <div
-                  key={ex.de}
-                  className="rounded-xl px-3 py-2.5"
-                  style={{ background: "var(--surface-2)" }}
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="brand-text text-sm font-bold">{ex.de}</span>
-                    <SpeakButton text={ex.de} size="sm" />
-                  </div>
-                  <p className="muted mt-0.5 text-xs">{ex.tr}</p>
+            <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+              <div className="flex items-center justify-between gap-2">
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-bold">{lesson.title}</p>
+                  <p className="muted truncate text-xs">{lesson.titleTr}</p>
                 </div>
-              ))}
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setPhase("checks")}
-              className="btn btn-primary mt-5 w-full py-3 text-sm"
-            >
-              Anladım, alıştırmaya geç
-            </button>
-          </motion.section>
-        ) : null}
-
-        {phase === "checks" && check ? (
-          <motion.section
-            key={`check-${checkIndex}`}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="card p-5"
-          >
-            <div className="flex items-center justify-between">
-              <p className="muted text-xs font-semibold">
-                {checkIndex + 1} / {lesson.checks.length}
-              </p>
-              {/* Sorunun ne ölçtüğünü söylemek öğrenciye ne yapacağını da
-                  söylüyor: doldurmak, tanımak, hatayı bulmak ayrı işler. */}
-              <span className="chip px-2 py-0.5 text-[11px] font-semibold">
-                {check.kind === "fill"
-                  ? "Boşluğu doldur"
-                  : check.kind === "spot"
-                    ? "Hatayı bul"
-                    : "Doğruyu seç"}
-              </span>
-            </div>
-            <p className="mt-2 text-base font-semibold">{check.prompt}</p>
-
-            <div className="mt-4 grid gap-2">
-              {check.options.map((opt) => {
-                const isAnswer = opt === check.answer;
-                const state = !picked
-                  ? ""
-                  : isAnswer
-                    ? "option-correct"
-                    : opt === picked
-                      ? "option-wrong"
-                      : "";
-                return (
-                  <button
-                    key={opt}
-                    type="button"
-                    onClick={() => answer(opt)}
-                    disabled={Boolean(picked)}
-                    className={`option px-4 py-3 text-left text-sm ${state}`}
-                  >
-                    {opt}
-                  </button>
-                );
-              })}
-            </div>
-
-            {picked ? (
-              <>
-                <p className="muted mt-3 text-sm leading-relaxed">{check.why}</p>
-                {picked !== check.answer ? (
+                {ttsAvailable || asrAvailable ? (
                   <button
                     type="button"
-                    onClick={advance}
-                    className="btn btn-primary mt-4 w-full py-3 text-sm"
+                    onClick={() => void toggleHandsFree()}
+                    aria-pressed={handsFree}
+                    className="btn btn-ghost flex shrink-0 items-center gap-1.5 px-2 py-1 text-xs"
+                    style={{ color: handsFree ? "var(--color-brand-500)" : undefined }}
                   >
-                    {checkIndex + 1 < lesson.checks.length ? "Anladım, devam" : "Rol yapmaya geç"}
+                    <MicIcon size={13} />
+                    {handsFree ? "Eller serbest: açık" : "Eller serbest"}
                   </button>
                 ) : null}
-              </>
+              </div>
+            </div>
+
+            <div className="flex-1 space-y-3 overflow-y-auto p-4">
+              <AsrNote visible={!asrAvailable} />
+              {feed.map((item, i) => (
+                <LectureBubble key={i} item={item} ttsAvailable={ttsAvailable} />
+              ))}
+              <div ref={bottom} />
+            </div>
+
+            {error ? (
+              <p className="shrink-0 px-4 pb-2 text-xs" style={{ color: "var(--color-flame-500)" }}>
+                {error}
+              </p>
             ) : null}
+
+            {/* Cevap alanı beklentiye göre şekil değiştiriyor: onayda tek
+                düğme, doğru/yanlışta iki düğme, Almanca hedefte mikrofon.
+                Düğmeler mikrofona alternatif — konuşmak her zaman mümkün. */}
+            <div className="shrink-0 border-t p-4" style={{ borderColor: "var(--border)" }}>
+              {awaiting && expect?.kind === "confirm" ? (
+                <div className="flex flex-col items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      recognition.current?.abort();
+                      runStep(stepIndex + 1);
+                    }}
+                    className="btn btn-primary w-full py-3 text-sm"
+                  >
+                    Hazırım, başlayalım
+                  </button>
+                  {asrAvailable ? (
+                    <p className="muted text-center text-xs">…ya da sesli cevap ver.</p>
+                  ) : null}
+                </div>
+              ) : null}
+
+              {awaiting && expect?.kind === "truefalse" ? (
+                <div className="mb-3 grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      recognition.current?.abort();
+                      evaluate(["doğru"]);
+                    }}
+                    className="option px-4 py-3 text-center text-sm font-semibold"
+                  >
+                    Doğru
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      recognition.current?.abort();
+                      evaluate(["yanlış"]);
+                    }}
+                    className="option px-4 py-3 text-center text-sm font-semibold"
+                  >
+                    Yanlış
+                  </button>
+                </div>
+              ) : null}
+
+              {expect && expect.kind !== "confirm" && asrAvailable ? (
+                <div className="flex flex-col items-center gap-2">
+                  <motion.button
+                    type="button"
+                    whileTap={{ scale: 0.94 }}
+                    onClick={() => {
+                      if (listening) {
+                        stopListening();
+                        return;
+                      }
+                      // Dokunmak okumayı bekletmez: ses kesilir, dinleme başlar.
+                      cancelSpeech.current?.();
+                      stopSpeaking();
+                      setAwaiting(true);
+                      void capture(langFor(expect), (a) => evaluate(a), false);
+                    }}
+                    aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
+                    className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg"
+                    style={{
+                      background: listening ? "var(--color-rose-500)" : "var(--color-brand-500)",
+                    }}
+                  >
+                    <motion.span
+                      animate={listening ? { scale: [1, 1.15, 1] } : { scale: 1 }}
+                      transition={{ repeat: listening ? Infinity : 0, duration: 1.1 }}
+                    >
+                      <MicIcon size={24} />
+                    </motion.span>
+                  </motion.button>
+                  <p
+                    className="text-center text-xs"
+                    style={{
+                      color:
+                        hint && !listening ? "var(--color-flame-500)" : "var(--text-muted)",
+                    }}
+                  >
+                    {listening
+                      ? expect.kind === "truefalse"
+                        ? "Dinliyorum — 'doğru' ya da 'yanlış' de"
+                        : "Dinliyorum — bitince dokun"
+                      : (hint ?? "Konuşmak için dokun")}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    {expect.kind !== "truefalse" ? (
+                      <button
+                        type="button"
+                        onClick={() => setTyping((v) => !v)}
+                        className="btn btn-ghost px-3 py-1 text-xs"
+                      >
+                        {typing ? "Yazmayı kapat" : "Yazarak cevapla"}
+                      </button>
+                    ) : null}
+                    <button
+                      type="button"
+                      onClick={skipStep}
+                      className="btn btn-ghost px-3 py-1 text-xs"
+                    >
+                      Bu adımı atla
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+
+              {expect && expect.kind !== "confirm" && !asrAvailable ? (
+                <p className="muted mb-2 text-center text-xs">
+                  Bu tarayıcı konuşma tanımayı desteklemiyor; yazarak devam et.
+                </p>
+              ) : null}
+
+              {expect &&
+              (expect.kind === "repeat" || expect.kind === "produce") &&
+              (typing || !asrAvailable) ? (
+                <div className="mt-3 flex items-end gap-2">
+                  <textarea
+                    value={draft}
+                    onChange={(e) => setDraft(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        submitTyped();
+                      }
+                    }}
+                    rows={1}
+                    placeholder="Almanca yaz…"
+                    className="input max-h-28 flex-1 resize-none py-2 text-sm"
+                  />
+                  <button
+                    type="button"
+                    onClick={submitTyped}
+                    disabled={!draft.trim()}
+                    className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
+                  >
+                    Gönder
+                  </button>
+                </div>
+              ) : null}
+
+              {!expect && stepIndex >= lesson.lecture.length - 1 && feed.length ? (
+                <button
+                  type="button"
+                  onClick={startRoleplay}
+                  className="btn btn-primary w-full py-3 text-sm"
+                >
+                  Konuşmaya geç
+                </button>
+              ) : null}
+            </div>
           </motion.section>
         ) : null}
 
@@ -583,10 +923,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
             exit={{ opacity: 0 }}
             className="card flex min-h-0 flex-1 flex-col overflow-hidden"
           >
-            <div
-              className="shrink-0 border-b px-4 py-3"
-              style={{ borderColor: "var(--border)" }}
-            >
+            <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
               <p className="text-sm font-bold">{lesson.roleplay.partner}</p>
               <p className="muted mt-0.5 text-xs leading-relaxed">{lesson.roleplay.scene}</p>
               <div className="mt-2 flex items-center justify-between gap-2">
@@ -622,10 +959,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
             </div>
 
             {error ? (
-              <p
-                className="shrink-0 px-4 pb-2 text-xs"
-                style={{ color: "var(--color-flame-500)" }}
-              >
+              <p className="shrink-0 px-4 pb-2 text-xs" style={{ color: "var(--color-flame-500)" }}>
                 {error}
               </p>
             ) : null}
@@ -645,29 +979,25 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
               </div>
             ) : null}
 
-            {/* Konuşma tabanlı giriş.
-                Burası önce bir yazışma kutusuydu ve dersin amacına aykırıydı:
-                rol yapmanın işi konuşturmak, yazdırmak değil. Yazarak cevap
-                veren öğrenci telaffuzunu hiç denemiyor, düşünme süresi
-                gerçek konuşmadakinden uzun oluyor ve kurduğu cümleyi gözüyle
-                kontrol ediyor — konuşurken hiçbiri olmuyor.
-
-                Mikrofon tek ve büyük: ekrandaki asıl eylem o. Yazmak yalnızca
-                tanıyıcı yoksa ya da kullanıcı açıkça isterse görünüyor. */}
             <div className="shrink-0 border-t p-4" style={{ borderColor: "var(--border)" }}>
               {asrAvailable ? (
                 <div className="flex flex-col items-center gap-2">
                   <motion.button
                     type="button"
                     whileTap={{ scale: 0.94 }}
-                    onClick={() => (listening ? stopListening() : void listen(true))}
+                    onClick={() => {
+                      if (listening) {
+                        stopListening();
+                        return;
+                      }
+                      stopSpeaking();
+                      void listenRoleplay();
+                    }}
                     disabled={busy}
                     aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
                     className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-50"
                     style={{
-                      background: listening
-                        ? "var(--color-rose-500)"
-                        : "var(--color-brand-500)",
+                      background: listening ? "var(--color-rose-500)" : "var(--color-brand-500)",
                     }}
                   >
                     <motion.span
@@ -679,16 +1009,15 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                   </motion.button>
                   <p
                     className="text-center text-xs"
-                    style={{ color: hint && !listening && !busy ? "var(--color-flame-500)" : "var(--text-muted)" }}
+                    style={{
+                      color:
+                        hint && !listening && !busy
+                          ? "var(--color-flame-500)"
+                          : "var(--text-muted)",
+                    }}
                   >
-                    {busy
-                      ? "Cevap geliyor…"
-                      : listening
-                        ? "Dinliyorum — bitince dokun"
-                        : (hint ?? "Konuşmak için dokun")}
+                    {micLabel}
                   </p>
-                  {/* Yazmak kapalı değil ama öne çıkmıyor: takılan öğrencinin
-                      çıkışı olmalı, varsayılan yolu değil. */}
                   <button
                     type="button"
                     onClick={() => setTyping((v) => !v)}
@@ -706,7 +1035,6 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
               {typing || !asrAvailable ? (
                 <div className="mt-3 flex items-end gap-2">
                   <textarea
-                    ref={input}
                     value={draft}
                     onChange={(e) => setDraft(e.target.value)}
                     onKeyDown={(e) => {
@@ -754,9 +1082,7 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
               <span
                 className="flex h-9 w-9 items-center justify-center rounded-xl text-white"
                 style={{
-                  background: saved?.passed
-                    ? "var(--color-mint-500)"
-                    : "var(--color-flame-500)",
+                  background: saved?.passed ? "var(--color-mint-500)" : "var(--color-flame-500)",
                 }}
               >
                 {saved?.passed ? <CheckIcon size={18} /> : <SparkIcon size={18} />}
@@ -765,18 +1091,33 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                 <h2 className="text-base font-bold">
                   {saved?.passed ? "Ders tamam" : "Ders yarım kaldı"}
                 </h2>
-                <p className="muted text-xs">{lesson.title}</p>
+                <p className="muted text-xs">
+                  {lesson.title} · {lesson.titleTr}
+                </p>
               </div>
             </div>
 
             <dl className="mt-4 grid grid-cols-2 gap-3">
-              <Stat label="Alıştırma" value={`${correctCount} / ${lesson.checks.length}`} />
+              <Stat label="Alıştırma" value={`${correctCount} / ${scoredTotal}`} />
               <Stat
                 label="Konuşma"
                 value={`${userTurns} tur`}
                 tone={roleplayDone ? "ok" : "warn"}
               />
             </dl>
+
+            {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta
+                toplu görünmeli — Learna bunu yapmıyor, biz yapıyoruz. */}
+            <div className="mt-4">
+              <p className="muted text-xs font-semibold">Bu dersin kelimeleri</p>
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {lesson.vocab.map((v) => (
+                  <span key={v.de} className="chip px-2 py-1 text-xs">
+                    <b>{v.de}</b> · {v.tr}
+                  </span>
+                ))}
+              </div>
+            </div>
 
             {corrections.length ? (
               <div className="mt-4">
@@ -797,12 +1138,12 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
 
             {!roleplayDone ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                Dersin sayılması için rol yapmada en az {lesson.roleplay.minTurns} kez söz
-                alman gerekiyor — kural ancak kullanılınca oturuyor.
+                Dersin sayılması için konuşmada en az {lesson.roleplay.minTurns} kez söz alman
+                gerekiyor — kalıplar ancak kullanılınca oturuyor.
               </p>
             ) : saved ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                Bu kural {saved.nextDays} gün sonra tekrar karşına çıkacak.
+                Bu ders {saved.nextDays} gün sonra tekrar karşına çıkacak.
               </p>
             ) : null}
 
@@ -833,9 +1174,8 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
 
 function Steps({ phase }: { phase: Phase }) {
   const steps: { id: Phase; label: string }[] = [
-    { id: "rule", label: "Kural" },
-    { id: "checks", label: "Alıştırma" },
-    { id: "roleplay", label: "Rol yapma" },
+    { id: "lecture", label: "Anlatım" },
+    { id: "roleplay", label: "Konuşma" },
     { id: "summary", label: "Özet" },
   ];
   const at = steps.findIndex((s) => s.id === phase);
@@ -845,9 +1185,7 @@ function Steps({ phase }: { phase: Phase }) {
         <div key={s.id} className="flex flex-1 flex-col gap-1">
           <span
             className="h-1 rounded-full"
-            style={{
-              background: i <= at ? "var(--color-brand-500)" : "var(--border)",
-            }}
+            style={{ background: i <= at ? "var(--color-brand-500)" : "var(--border)" }}
           />
           <span
             className="text-[11px] font-semibold"
@@ -857,6 +1195,20 @@ function Steps({ phase }: { phase: Phase }) {
           </span>
         </div>
       ))}
+    </div>
+  );
+}
+
+/** Anlatımın ince ilerleme çizgisi — kaç adımdan kaçındayız. */
+function LectureProgress({ at, total }: { at: number; total: number }) {
+  const pct = total ? Math.round(((at + 1) / total) * 100) : 0;
+  return (
+    <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
+      <motion.div
+        className="brand-gradient h-full rounded-full"
+        animate={{ width: `${pct}%` }}
+        transition={{ type: "spring", stiffness: 150, damping: 24 }}
+      />
     </div>
   );
 }
@@ -878,6 +1230,63 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok
       >
         {value}
       </dd>
+    </div>
+  );
+}
+
+/**
+ * Anlatım baloncuğu.
+ *
+ * Almanca parçalar görsel olarak da ayrı: öğrenci hedefi cümlenin içinde
+ * aramamalı. Hoparlör düğmesi baloncuğun tamamını yeniden okuyor — her parça
+ * kendi diliyle.
+ */
+function LectureBubble({ item, ttsAvailable }: { item: FeedItem; ttsAvailable: boolean }) {
+  if (item.role === "user") {
+    return (
+      <div className="flex justify-end">
+        <p
+          className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
+          style={{ background: "var(--color-brand-500)" }}
+        >
+          {item.text}
+        </p>
+      </div>
+    );
+  }
+  const hint = item.tone === "hint";
+  return (
+    <div className="flex items-end gap-1.5">
+      <div
+        className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm leading-relaxed"
+        style={{
+          background: hint
+            ? "color-mix(in srgb, var(--color-flame-500) 10%, transparent)"
+            : "var(--surface-2)",
+        }}
+      >
+        {item.segments.map((seg, i) => (
+          <span key={i}>
+            {seg.lang === "de" ? (
+              <span className="brand-text font-bold">{seg.text}</span>
+            ) : (
+              seg.text
+            )}
+            {i < item.segments.length - 1 ? " " : null}
+          </span>
+        ))}
+      </div>
+      {ttsAvailable ? (
+        <motion.button
+          type="button"
+          whileTap={{ scale: 0.9 }}
+          onClick={() => speakSegments(item.segments)}
+          aria-label="Yeniden dinle"
+          className="btn btn-ghost h-7 w-7 shrink-0"
+        >
+          <SpeakerIcon size={13} />
+        </motion.button>
+      ) : null}
     </div>
   );
 }
@@ -914,7 +1323,15 @@ function Bubble({
       >
         {body.trim() || (pending ? "…" : "")}
         {ttsAvailable && body.trim() ? (
-          <SpeakButton text={body} size="sm" className="ml-1 align-middle" />
+          <motion.button
+            type="button"
+            whileTap={{ scale: 0.9 }}
+            onClick={() => speakGerman(body)}
+            aria-label="Yeniden dinle"
+            className="btn btn-ghost ml-1 h-7 w-7 shrink-0 align-middle"
+          >
+            <SpeakerIcon size={13} />
+          </motion.button>
         ) : null}
       </div>
       {corrections.map((c, i) => (

@@ -1,59 +1,100 @@
 import type { CefrLevel } from "../skills/types";
 
 /**
- * Ders — uygulamanın yeni öğrenme birimi.
+ * Ders — konuşma tabanlı öğretim birimi.
  *
- * Serbest sohbetin yerine geçiyor ve sebebi yapısal. Sohbet ayrı bir sekmeydi:
- * oraya bilerek gitmen gerekiyordu, ne konuşacağın belirsizdi ve öğrendiğin
- * şeyle konuştuğun şey arasında bağ yoktu. Öğrenme açısından en pahalı eksik
- * buydu — yeni bir yapıyı öğrenip **hemen kullanmak** yerine, öğrenmek bir
- * yerde, konuşmak başka bir yerde duruyordu.
+ * İki fazdan oluşuyor ve sıra tasarımın kendisi:
  *
- * Ders o boşluğu kapatıyor ve dört parçadan oluşuyor:
+ *   1. **Anlatım (lecture)** — yazılı bir senaryo üzerinden ilerleyen sesli
+ *      diyalog. Öğretmen Türkçe anlatıyor, hedefler Almanca: kelimeler tek tek
+ *      tekrar ettiriliyor, kalıp açıklanıyor, örnek söyletiliyor, sonra
+ *      öğrenciden kendi cümlesini ÜRETMESİ isteniyor. Her adım konuşarak
+ *      cevaplanıyor; yanlışta ipucu verilip yeniden deneniyor.
+ *   2. **Konuşma (practice)** — anlatımda öğrenilenlerin kullanılmak zorunda
+ *      olduğu serbest rol yapma. Model kalıpları biliyor ve konuşmayı onların
+ *      kullanılacağı yöne sürüyor. Asıl öğrenme burada; anlatım buna hazırlık.
  *
- *   1. `rule`     — tek bir kural, Türkçe ve kısa. Ders bir konu anlatmıyor,
- *                   **bir** kural öğretiyor; dağılmanın önüne geçen şey bu.
- *   2. `examples` — kuralı gösteren birkaç Almanca cümle.
- *   3. `checks`   — kuralın anlaşıldığını sınayan hızlı sorular. Rol yapmadan
- *                   önce geliyorlar: kuralı anlamadan konuşmaya girmek
- *                   öğrenciyi konuşmanın ortasında bırakıyor.
- *   4. `roleplay` — kuralın kullanılmak zorunda olduğu bir durum. Asıl
- *                   öğrenme burada oluyor; öncekiler buna hazırlık.
- *
- * Rol yapma serbest sohbetten iki şeyle ayrılıyor: konusu belli (bir durum) ve
- * hedefi belli (bu kuralı kullandırmak). Model kuralı biliyor ve kullanılmadan
- * konuşmayı bitirmiyor.
+ * Anlatımın yazılı senaryo olması bilinçli bir tercih: içerik elle yazılınca
+ * her cümlenin sesi önceden sentezlenip önbelleklenebiliyor, akış hiç model
+ * beklemiyor ve iki dilin (anlatım Türkçe, hedef Almanca) nerede başlayıp
+ * bittiği kesin olarak biliniyor — seslendirme ve tanıma dili adım adım buna
+ * göre seçiliyor.
  */
 
 /**
- * Dersin sınadığı hızlı soru.
+ * Dil bazında bölünmüş metin parçası.
  *
- * `kind` sorunun ne tür bir bilgi ölçtüğünü söylüyor ve arayüz buna göre
- * biçim değiştiriyor. Tek tip soru sormak öğrenciyi kalıba alıştırıyor:
- * üçüncü soruda artık kuralı değil şık desenini okuyor. Üç ayrı tür bunun
- * önüne geçiyor ve her biri farklı bir şeyi ölçüyor.
+ * Anlatım cümleleri iki dili aynı anda taşıyor: "İlk kelimemiz: das Wasser."
+ * Parçalara bölmek seslendirmenin temelidir — Türkçe parça Türkçe nöral sesle,
+ * Almanca parça kursun Almanca sesiyle okunur. Tek parçada karıştırmak iki
+ * dilden birinin telaffuzunu bozar ve bozulan telaffuz dersin öğrettiği şeyin
+ * kendisidir.
  */
-export type LessonCheckKind =
-  /** Boşluk doldurma — kuralı üretebiliyor mu. */
-  | "fill"
-  /** Doğru cümleyi seçme — kuralı tanıyabiliyor mu. */
-  | "pick"
-  /** Hatalı cümleyi bulma — kuralın ihlalini görebiliyor mu. */
-  | "spot";
+export type Segment = { lang: "tr" | "de"; text: string };
 
-export type LessonCheck = {
-  kind: LessonCheckKind;
-  /** Soru metni — Türkçe yönlendirme ya da boşluklu Almanca cümle. */
-  prompt: string;
-  /** Şıklar; biri doğru. */
-  options: string[];
-  /** Doğru şık (options içinde geçmeli). */
-  answer: string;
-  /** Neden doğru olduğu — cevaptan sonra gösteriliyor. */
-  why: string;
+/** İçerik dosyaları için kısayollar — segment yazımını okunur tutuyor. */
+export const tr = (text: string): Segment => ({ lang: "tr", text });
+export const de = (text: string): Segment => ({ lang: "de", text });
+
+/**
+ * Adımın öğrenciden beklediği cevap.
+ *
+ * Beklentinin türü yalnızca arayüzü değil **mikrofonun dilini** de belirliyor:
+ * Almanca hedef beklenirken tanıyıcı de-DE, Türkçe onay ya da doğru/yanlış
+ * beklenirken tr-TR dinliyor. Yanlış dilde dinlemek tanıyıcının en yakın
+ * kelimeyi uydurması demek — "doğru" derken "Torf" duyulması gibi.
+ */
+export type Expectation =
+  /** Türkçe onay — "hazır mısın?" sorusuna herhangi bir cevap yeterli. */
+  | { kind: "confirm" }
+  /**
+   * Almanca tekrar — verilen hedefi söylemesi bekleniyor.
+   *
+   * Puanlanmıyor: tekrar bir alıştırma değil, kelimeyi ağza alma denemesi.
+   * Yanlışta eksik kelimeler söylenip yeniden deneniyor; üçüncü denemeden
+   * sonra ders takılmadan devam ediyor.
+   */
+  | { kind: "repeat"; target: string }
+  /**
+   * Almanca üretim — Türkçe verilen cümleyi Almanca kurması bekleniyor.
+   *
+   * Dersin puanlanan adımı bu (doğru/yanlış ile birlikte): kelimeyi tekrar
+   * etmekle cümleyi kurmak ayrı işler ve ders "geçildi" sayılırken ölçülen
+   * şey kurabilmek. `accept` eşdeğer doğru cevaplar; `hint` ilk yanlıştan
+   * sonra okunacak, hatanın tipik sebebini söyleyen ipucu.
+   */
+  | { kind: "produce"; target: string; accept?: string[]; hint: Segment[] }
+  /**
+   * Doğru/yanlış — Almanca bir cümle hakkında Türkçe hüküm bekleniyor.
+   *
+   * Cevaptan sonra `why` okunuyor: hüküm tek başına öğretmiyor, gerekçe
+   * öğretiyor. Yanlış cevapta da aynı gerekçe okunuyor ve ders ilerliyor —
+   * doğru/yanlışta ikinci deneme anlamsız, cevap artık biliniyor.
+   */
+  | { kind: "truefalse"; statement: string; answer: boolean; why: Segment[] };
+
+/**
+ * Anlatımın bir adımı: öğretmen `say` parçalarını sesli söylüyor, sonra
+ * `expect` varsa cevabı bekliyor, yoksa bir sonraki adıma geçiyor.
+ * Beklentisiz adımlar açıklama baloncukları — kalıbın ne işe yaradığı gibi.
+ */
+export type LectureStep = {
+  say: Segment[];
+  expect?: Expectation;
 };
 
-/** Rol yapmanın sahnesi. */
+/** Derste öğretilen kelime — anlatım bunları tek tek tekrar ettiriyor. */
+export type VocabItem = { de: string; tr: string };
+
+/** Derste öğretilen kalıp — konuşma fazının istemi bunlardan kuruluyor. */
+export type PatternItem = {
+  /** Kalıbın kendisi, Almanca: "Ich möchte …". */
+  de: string;
+  /** Ne işe yaradığı, Türkçe: "bir şey isterken kullanılır". */
+  tr: string;
+};
+
+/** Konuşma fazının sahnesi. */
 export type LessonRoleplay = {
   /** Durum, Türkçe: öğrenci nerede ve ne yapıyor. */
   scene: string;
@@ -63,10 +104,10 @@ export type LessonRoleplay = {
   opening: string;
   openingTr: string;
   /**
-   * Öğrencinin kuralı kullanmış sayılması için gereken tur sayısı.
+   * Öğrencinin kalıpları kullanmış sayılması için gereken tur sayısı.
    *
-   * Rol yapma "yeterince konuşuldu"da değil, **kural kullanıldığında** bitiyor;
-   * bu sayı yalnızca alt sınır. Sohbetin amacı süre doldurmak değil.
+   * Konuşma "yeterince konuşuldu"da değil, kalıplar kullanıldığında bitiyor;
+   * bu sayı yalnızca alt sınır.
    */
   minTurns: number;
 };
@@ -75,24 +116,39 @@ export type Lesson = {
   id: string;
   level: CefrLevel;
   course: "de" | "gsw-zh";
-  /** Ders başlığı — kuralın adı, konu değil. */
+  /** Dersin konusu, Almanca — senaryonun adı: "Beim Arzt", "Im Café". */
   title: string;
-  /** Bir cümlede ne öğretiyor. */
+  /** Konunun Türkçesi — listede başlığın altında duruyor. */
+  titleTr: string;
+  /** Bir cümlede ne öğretiyor, Türkçe. */
   summary: string;
   minutes: number;
-  /** Kuralın kendisi, Türkçe. */
-  rule: string;
-  /** Kuralı gösteren cümleler. */
-  examples: { de: string; tr: string }[];
-  checks: LessonCheck[];
-  roleplay: LessonRoleplay;
   /**
-   * Kuralın kimliği — tekrar kuyruğu bunu izliyor.
+   * Dersin odağının kimliği — tekrar kuyruğu bunu izliyor.
    *
-   * Kelimelerin tekrarı vardı ama dilbilgisinin yoktu; öğrenci aynı kuralı
-   * defalarca yanlış yapıp bunu hiç görmüyordu. Sohbet düzeltmelerinin
-   * ürettiği etiketlerle (seit + Dativ, V2-Regel, Akkusativ) aynı uzayda
-   * olması bilerek: ileride düzeltmeler doğrudan bu kuyruğu besleyebilir.
+   * Konuşma düzeltmelerinin ürettiği etiketlerle (Akkusativ, V2-Regel,
+   * Modalverb-sollen) aynı uzayda: ileride düzeltmeler doğrudan bu kuyruğu
+   * besleyebilir.
    */
-  ruleId: string;
+  focusId: string;
+  /** Öğretilen kelimeler, anlatım sırasıyla. */
+  vocab: VocabItem[];
+  /** Öğretilen kalıplar — konuşma fazı bunları kullandırıyor. */
+  patterns: PatternItem[];
+  /** Anlatım senaryosu. */
+  lecture: LectureStep[];
+  /** Konuşma fazı. */
+  roleplay: LessonRoleplay;
 };
+
+/**
+ * Puanlanan adım sayısı — ders kaydının paydası.
+ *
+ * Yalnızca üretim ve doğru/yanlış sayılıyor: tekrar adımları deneme alanı,
+ * onay adımları akış. Ölçülen şey "söyleyebildi mi" değil "kurabildi mi".
+ */
+export function scoredSteps(lesson: Lesson): number {
+  return lesson.lecture.filter(
+    (s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse",
+  ).length;
+}

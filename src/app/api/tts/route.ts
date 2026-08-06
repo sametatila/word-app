@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
-import { VOICES, type VoiceId } from "@/lib/tts/voices";
+import { TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
 
 /**
  * Seslendirme ucu.
@@ -40,7 +40,8 @@ export const runtime = "nodejs";
 /** Bir yıl — içerik hiç değişmiyor, bir kelimenin sesi hep aynı. */
 const MAX_AGE = 31_536_000;
 
-const VOICE_IDS = new Set<string>(VOICES.map((v) => v.id));
+// Anlatım sesi listede yok (kullanıcı seçmiyor) ama uç onu da seslendirmeli.
+const VOICE_IDS = new Set<string>([...VOICES.map((v) => v.id), TURKISH_VOICE]);
 
 export async function GET(req: Request) {
   const url = new URL(req.url);

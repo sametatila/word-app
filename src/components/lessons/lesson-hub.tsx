@@ -50,7 +50,8 @@ export function LessonHub({
       <header>
         <h1 className="text-2xl font-bold">Dersler</h1>
         <p className="muted mt-1 text-sm">
-          Her ders tek bir kural öğretir, sonra o kuralı kullandığın bir konuşmaya sokar.
+          Her ders önce sesli anlatımla kelime ve kalıp öğretir, sonra seni onları
+          kullanacağın bir konuşmaya sokar.
         </p>
         {/* İlerleme yalnızca artan bir ölçü: kaç ders bitti. Derecelendirme
             değil, biriktirdiğini gösteriyor.
@@ -121,7 +122,16 @@ export function LessonHub({
 
       <Group title="Tekrar zamanı geldi" cards={dueCards} />
       <Group title="Yarım kalanlar" cards={halfCards} />
-      <Group title="Yeni dersler" cards={freshCards} />
+      {/* Yeni dersler seviye seviye: ders bir yolun adımı ve yol seviyelerden
+          geçiyor. Tek düz liste, A1 ile B1'i aynı torbaya koyup yolu
+          görünmez yapıyordu. */}
+      {(["A1", "A2", "B1", "B2", "C1"] as const).map((level) => (
+        <Group
+          key={level}
+          title={`${level} dersleri`}
+          cards={freshCards.filter((c) => c.lesson.level === level)}
+        />
+      ))}
       <Group title="Tamamladıkların" cards={doneCards} muted />
     </div>
   );
@@ -180,7 +190,10 @@ function Group({ title, cards, muted }: { title: string; cards: HubCard[]; muted
                 {c.lesson.level}
               </span>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-bold">{c.lesson.title}</p>
+                <p className="truncate text-sm font-bold">
+                  {c.lesson.title}
+                  <span className="muted font-normal"> · {c.lesson.titleTr}</span>
+                </p>
                 <p className="muted truncate text-xs">{c.lesson.summary}</p>
               </div>
               <Status card={c} />

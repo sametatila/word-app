@@ -16,7 +16,7 @@ import { findLesson } from "../src/lib/lessons";
 import { roleplayPrompt, type RoleplayTurn } from "../src/lib/lessons/roleplay";
 
 const TURNS = Number(process.env.LOOP_TURNS) || 20;
-const LESSON = findLesson(process.env.LOOP_LESSON || "de-a1-l1")!;
+const LESSON = findLesson(process.env.LOOP_LESSON || "de-a1-hallo")!;
 
 /** Sıradan öğrenci cevapları — konuşmayı taşımayan, kısa. */
 const REPLIES = [

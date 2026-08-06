@@ -8,8 +8,8 @@ import type { Lesson } from "./types";
  *
  * Serbest sohbetin yerine geçiyor. Aradaki fark tek bir kelimede toplanabilir:
  * **amaç**. Sohbette model her şeye cevap veriyordu ve konuşmanın nereye
- * gideceği belirsizdi; burada model dersin kuralını biliyor ve konuşmayı o
- * kuralın kullanılacağı yere doğru sürüyor.
+ * gideceği belirsizdi; burada model dersin kalıplarını biliyor ve konuşmayı
+ * onların kullanılacağı yere doğru sürüyor.
  *
  * Bunun pratik sonucu şu: öğrenci "ne diyeceğim?" sorusuyla baş başa
  * kalmıyor. Sahne belli, muhatabın kim olduğu belli, hangi yapıyı kurması
@@ -25,9 +25,11 @@ export type RoleplayTurn = ChatMessage;
 /**
  * Dersin rol yapma istemi.
  *
- * Kural metni olduğu gibi veriliyor: model öğrenciye ne öğretildiğini bilmeli
- * ki düzeltmeyi o çerçevede yapabilsin. Genel bir dilbilgisi düzeltmesi yerine
- * "bu dersin kuralına göre" düzeltme almak, dersin bütünlüğünü koruyan şey.
+ * Dersin öğrettiği kalıplar ve kelimeler olduğu gibi veriliyor: model
+ * öğrenciye ne öğretildiğini bilmeli ki konuşmayı onların kullanılacağı yöne
+ * sürebilsin ve düzeltmeyi o çerçevede yapabilsin. Genel bir dilbilgisi
+ * düzeltmesi yerine "bu dersin kalıbına göre" düzeltme almak, dersin
+ * bütünlüğünü koruyan şey.
  */
 export function roleplayPrompt(lesson: Lesson): string {
   const dialect =
@@ -35,7 +37,10 @@ export function roleplayPrompt(lesson: Lesson): string {
       ? "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil."
       : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
 
-  return `Sen bir Almanca dersinin rol yapma bölümündesin. Öğrencinin ana dili Türkçe, seviyesi ${lesson.level}. ${dialect}
+  const patterns = lesson.patterns.map((p) => `- ${p.de} — ${p.tr}`).join("\n");
+  const vocab = lesson.vocab.map((v) => `${v.de} (${v.tr})`).join(", ");
+
+  return `Sen bir Almanca dersinin konuşma pratiği bölümündesin. Öğrencinin ana dili Türkçe, seviyesi ${lesson.level}. ${dialect}
 
 ROLÜN
 ${lesson.roleplay.partner} rolündesin.
@@ -43,20 +48,23 @@ ${lesson.roleplay.partner} rolündesin.
 SAHNE
 ${lesson.roleplay.scene}
 
-BU DERSİN KURALI — öğrenci bunu kullanmayı öğreniyor
-${lesson.rule}
+BU DERSİN KALIPLARI — öğrenci az önce bunları öğrendi ve şimdi kullanmayı öğreniyor
+${patterns}
+
+BU DERSİN KELİMELERİ — konuşmayı bunların geçebileceği yerlere sür
+${vocab}
 
 HATA DÜZELTME — her cevap için sırayla uygula
 1) Öğrencinin cümlesinde GERÇEK BİR DİLBİLGİSİ HATASI var mı? (artikel, hâl,
-   çekim, sözcük sırası, edat) Varsa düzelt. Hata dersin kuralıyla ilgili
+   çekim, sözcük sırası, edat) Varsa düzelt. Hata dersin kalıplarıyla ilgili
    olmasa da düzeltilir — ders bir konuya odaklanıyor olabilir, hata
    odaklanmıyor. Birden fazla hata varsa her biri için ayrı satır yaz.
    ÜSLUP FARKI HATA DEĞİLDİR. Daha doğal ya da daha kısa bir söyleyiş varsa
    bile, öğrencinin cümlesi dilbilgisel olarak doğruysa düzeltme yazma.
    Örnek: "und ich habe zwei Kinder" doğrudur; "und habe zwei Kinder" daha
    akıcı olabilir ama bu bir düzeltme sebebi değildir.
-2) Cümle doğru ama dersin kuralını KULLANMAMIŞ mı? Bu hata DEĞİLDİR.
-   Düzeltme yazma. Onu kuralı kullanmaya sorularınla yönlendir.
+2) Cümle doğru ama dersin kalıplarını KULLANMAMIŞ mı? Bu hata DEĞİLDİR.
+   Düzeltme yazma. Onu kalıpları kullanmaya sorularınla yönlendir.
 3) Cümle tamamen doğru mu? Hiç düzeltme satırı yazma.
 
 ÖĞRENCİ KONUŞUYOR, YAZMIYOR
@@ -109,8 +117,9 @@ Düzeltme yazarken:
 NASIL KONUŞURSUN
 - Rolünde kal. Kısa konuş: en fazla 3 cümle, sonunda bir soru.
 - ${lesson.level} seviyesinde kal; bu seviyenin üstünde yapı ve kelime kullanma.
-- Konuşmayı, öğrencinin YUKARIDAKİ KURALI kullanmak zorunda kalacağı yöne sür.
-  Sorularını buna göre seç. Ama kuralı ona anlatma — ders bitti, şimdi kullanma vakti.
+- Konuşmayı, öğrencinin YUKARIDAKİ KALIPLARI kullanmak zorunda kalacağı yöne
+  sür. Sorularını buna göre seç. Ama kalıbı ona anlatma — anlatım bitti, şimdi
+  kullanma vakti.
 - SAHNEYİ İLERLET. Daha önce sorduğun bir soruyu bir daha sorma ve aynı
   kalıbı tekrarlama. Her turda sahnede yeni bir şey olsun: yeni bir ayrıntı,
   yeni bir konu, küçük bir gelişme. Kuralı kullandırmanın tek yolu aynı
@@ -136,7 +145,7 @@ CEVABIN EN SONUNDA ÜÇ ÖNERİ (her seferinde yaz)
 - Bu başlığı cevabına YAZMA. Yalnızca öneri satırlarını yaz.
 - Öğrencinin sana verebileceği 3 cevap öner, her biri ayrı satırda ${SUGGESTION_MARK} ile.
 - Öneriler Almanca, ${lesson.level} seviyesinde, en fazla 8 kelime.
-- En az ikisi BU DERSİN KURALINI kullanan cümleler olsun.
+- En az ikisi BU DERSİN KALIPLARINI kullanan cümleler olsun.
 - ÜÇÜ AYNI KELİMEYLE BAŞLAMASIN ve birbirinin kopyası olmasın. Gerçek
   kullanımda üç öneri sürekli "Heute… / Morgen… / Am Wochenende…" diye
   geliyordu; öğrenci aynı üç kalıbı her turda görünce okumayı bırakıyor.

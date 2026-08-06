@@ -2,6 +2,7 @@ import { getUserId } from "@/lib/auth/server";
 import { redirect } from "next/navigation";
 import { ensureProfile } from "@/lib/session";
 import { lessonBoard, lessonCount, nextLesson, weakRules } from "@/lib/lessons/progress";
+import { scoredSteps } from "@/lib/lessons/types";
 import { LessonHub, type HubCard } from "@/components/lessons/lesson-hub";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +34,7 @@ export default async function LessonsPage() {
     started: Boolean(c.state) && !c.state?.roleplayDone,
     due: c.due,
     correct: c.state?.correct ?? 0,
-    total: c.state?.total ?? c.lesson.checks.length,
+    total: c.state?.total ?? scoredSteps(c.lesson),
     attempts: c.state?.attempts ?? 0,
   }));
 
