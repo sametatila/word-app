@@ -19,40 +19,10 @@
  * işaret konuşmanın önüne geçmemeli.
  */
 
-type Ctx = AudioContext;
-
-let ctx: Ctx | null = null;
-
-function ensure(): Ctx | null {
-  if (typeof window === "undefined") return null;
-  const Ctor =
-    window.AudioContext ??
-    (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-  if (!Ctor) return null;
-  if (!ctx) ctx = new Ctor();
-  // Bağlam kullanıcı hareketi olmadan askıda başlayabilir; her kullanımda
-  // uyandırmayı dene — ilk hareketten sonra hep başarılı.
-  if (ctx.state === "suspended") void ctx.resume().catch(() => {});
-  return ctx;
-}
-
-/**
- * İlk kullanıcı hareketinde bağlamı kur: tarayıcılar sesi ancak hareketle
- * açılmış bağlamdan çalıyor ve işaretlerin çoğu hareketsiz anlarda (TTS
- * bitiminde) tetikleniyor.
- */
-if (typeof window !== "undefined") {
-  const wake = () => {
-    ensure();
-    window.removeEventListener("pointerdown", wake);
-    window.removeEventListener("keydown", wake);
-  };
-  window.addEventListener("pointerdown", wake, { once: true });
-  window.addEventListener("keydown", wake, { once: true });
-}
+import { sharedAudioContext } from "@/lib/audio-context";
 
 function tone(at: number, freq: number, dur: number, peak: number) {
-  const c = ensure();
+  const c = sharedAudioContext();
   if (!c || c.state !== "running") return;
   const osc = c.createOscillator();
   const gain = c.createGain();

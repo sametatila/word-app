@@ -1,7 +1,7 @@
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { rateFor, type VoiceId } from "./voices";
-import { escapeXml } from "./ssml";
+import { buildSsml } from "./ssml";
 
 /**
  * Microsoft Edge'in okuma servisiyle konuşma sentezi.
@@ -190,11 +190,7 @@ function connectAndSynthesize(
           }),
       );
 
-      const lang = voice.slice(0, 5);
-      const ssml =
-        `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='${lang}'>` +
-        `<voice name='${voice}'><prosody rate='${rateFor(voice, slow)}' pitch='+0Hz'>` +
-        `${escapeXml(clean)}</prosody></voice></speak>`;
+      const ssml = buildSsml(clean, voice, rateFor(voice, slow));
 
       ws.send(
         `X-RequestId:${randomUUID().replace(/-/g, "")}\r\n` +

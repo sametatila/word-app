@@ -1,6 +1,6 @@
 import "server-only";
 import { rateFor, type VoiceId } from "./voices";
-import { escapeXml } from "./ssml";
+import { buildSsml } from "./ssml";
 
 /**
  * Azure Speech ile seslendirme — Edge yolunun resmî yedeği.
@@ -35,11 +35,7 @@ export async function synthesizeAzure(clean: string, voice: VoiceId, slow = fals
   const region = process.env.AZURE_SPEECH_REGION;
   if (!key || !region) throw new Error("azure yapılandırılmadı");
 
-  const lang = voice.slice(0, 5);
-  const ssml =
-    `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='${lang}'>` +
-    `<voice name='${voice}'><prosody rate='${rateFor(voice, slow)}' pitch='+0Hz'>` +
-    `${escapeXml(clean)}</prosody></voice></speak>`;
+  const ssml = buildSsml(clean, voice, rateFor(voice, slow));
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);

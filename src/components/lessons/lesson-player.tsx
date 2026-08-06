@@ -888,6 +888,9 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
                     type="button"
                     onClick={() => {
                       recognition.current?.abort();
+                      // İzin en baştan, kullanıcı hareketiyle isteniyor: ilk
+                      // eller serbest açılış izin istemine takılıp gecikmesin.
+                      if (handsFree) void requestMicrophone();
                       runStep(stepIndex + 1);
                     }}
                     className="btn btn-primary w-full py-3 text-sm"

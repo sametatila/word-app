@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SpeakerIcon } from "./icons";
+import { sharedAudioContext } from "@/lib/audio-context";
 import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 
 /**
@@ -37,6 +38,11 @@ function cleanForSpeech(text: string): string {
     .replace(/[/–—]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/** Seslendirme ucunun adresi — URL önbellek anahtarı olduğu için tek yerde. */
+function ttsUrl(voice: VoiceId, clean: string, slow = false): string {
+  return `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${slow ? "&r=slow" : ""}`;
 }
 
 /**
@@ -78,6 +84,22 @@ function extraElement(): HTMLAudioElement | null {
     extra.preload = "auto";
   }
   return extra;
+}
+
+/**
+ * Süren WebAudio zincirinin susturucusu.
+ *
+ * WebAudio kaynakları ses öğeleri gibi "paylaşılan tek nesne" değil: planlanan
+ * her kaynak kendi başına çalıyor ve jeton kontrolü yalnızca ZİNCİRİN
+ * İLERLEMESİNİ durduruyor, sesin kendisini değil. Bu yüzden yeni bir okuma
+ * başlarken ya da susturma istendiğinde planlanmış kaynaklar buradan
+ * durduruluyor.
+ */
+let activeChainStop: (() => void) | null = null;
+
+function stopActiveChain() {
+  activeChainStop?.();
+  activeChainStop = null;
 }
 
 /**
@@ -140,7 +162,21 @@ export function speakGerman(text: string, onEnd?: () => void, slow = false) {
 
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
-  play(clean, voice, course, onEnd, slow);
+
+  // Önce boşluksuz yol: tek dosyada da kazanç aynı — baştaki/sondaki gömülü
+  // sessizlik atılıyor, cümle aralarındaki bir saniyelik duraklamalar
+  // sıkışıyor. Konuşma pratiğinin cevapları da böylece bekletmeden akıyor.
+  const mine = ++token;
+  stopActiveChain();
+  element?.pause();
+  extra?.pause();
+  const cancel = playGapless([ttsUrl(voice, clean, slow)], {
+    mine,
+    onEnd,
+    onFail: () => play(clean, voice, course, onEnd, slow),
+  });
+  if (cancel) activeChainStop = cancel;
+  else play(clean, voice, course, onEnd, slow);
 }
 
 /**
@@ -173,7 +209,7 @@ export function prefetchGerman(text: string) {
   if (!clean || typeof fetch === "undefined") return;
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
-  void fetch(`/api/tts?v=${voice}&t=${encodeURIComponent(clean)}`, {
+  void fetch(ttsUrl(voice, clean), {
     // Öncelik düşük: açık bir isteğin önüne geçmemeli.
     priority: "low",
   } as RequestInit).catch(() => {
@@ -241,28 +277,196 @@ function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
   return out;
 }
 
+/** Konuşma dosyasının içindeki sesli bölge — planlanacak birim. */
+type SpeechRun = { offset: number; duration: number; gapAfter: number };
+
+/** İki parça (dil geçişi) arasına konan nefes payı, saniye. */
+const SEGMENT_GAP = 0.12;
+/** Dosya içindeki uzun duraklamaların tavanı, saniye. */
+const MAX_PAUSE = 0.24;
+
 /**
- * Parçaları sırayla, her birini kendi dilinin sesiyle okur.
+ * Çözülmüş sesin konuşulan bölgelerini çıkarır.
  *
- * `onEnd` son parça bittiğinde (ya da hiç çalınamadığında) bir kez çağrılır —
- * eller serbest akışta mikrofonun açılması buna bağlı. Dönen işlev okumayı
- * iptal eder ve sesi susturur.
- *
- * Oynatma çift tamponlu: parça i çalarken parça i+1 öteki öğede yükleniyor,
- * bitişte hazır öğeye yalnızca play() deniyor. Tek öğeyle her sınırda
- * "src değiştir → indir → çöz → başla" bekleniyordu ve kullanıcı bunu
- * cümlelerin arasında düzenli bir takılma olarak duyuyordu.
+ * Sebep ölçümde: nöral seslerin MP3'lerinde cümle arası ~1.05 sn, klip sonu
+ * ~1.0 sn, başı ~0.2 sn gömülü sessizlik var ve sunucu tarafında kısılamıyor
+ * (Edge ucu mstts sessizlik etiketini reddediyor — bkz. lib/tts/ssml).
+ * Burada dosya 10 ms'lik çerçevelerle taranıyor: kenar sessizlikleri atılıyor,
+ * 300 ms'ten kısa boşluklar konuşmanın doğal ritmi sayılıp olduğu gibi
+ * bırakılıyor, uzunları `MAX_PAUSE`e sıkıştırılıyor. Nefes payı duyuluyor,
+ * bir saniyelik delikler duyulmuyor.
  */
-export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): () => void {
-  const queue = mergeForSpeech(segments);
-  if (!queue.length) {
-    onEnd?.();
-    return () => {};
+function speechRuns(buf: AudioBuffer): SpeechRun[] {
+  const data = buf.getChannelData(0);
+  const rate = buf.sampleRate;
+  const frame = Math.max(1, Math.round(rate * 0.01));
+  const frames = Math.ceil(data.length / frame);
+  /** Sessizlik eşiği — silencedetect ölçümündeki -40 dB'e denk. */
+  const THRESHOLD = 0.012;
+  /** Bölge kenarlarına eklenen pay (çerçeve) — ünsüz başlangıçları kırpılmasın. */
+  const PAD = 5;
+  /** Bundan kısa boşluklar doğal ritim sayılır (çerçeve, 300 ms). */
+  const MERGE = 30;
+
+  const loud: boolean[] = new Array(frames);
+  for (let f = 0; f < frames; f++) {
+    const start = f * frame;
+    const end = Math.min(start + frame, data.length);
+    let peak = 0;
+    for (let j = start; j < end; j++) {
+      const a = Math.abs(data[j]);
+      if (a > peak) peak = a;
+    }
+    loud[f] = peak > THRESHOLD;
   }
 
+  const zones: { s: number; e: number }[] = [];
+  let open = -1;
+  for (let f = 0; f < frames; f++) {
+    if (loud[f] && open < 0) open = f;
+    if (!loud[f] && open >= 0) {
+      zones.push({ s: open, e: f });
+      open = -1;
+    }
+  }
+  if (open >= 0) zones.push({ s: open, e: frames });
+  // Hiç sesli bölge yoksa (beklenmez) dosya olduğu gibi çalınsın.
+  if (!zones.length) return [{ offset: 0, duration: buf.duration, gapAfter: 0 }];
+
+  const merged: { s: number; e: number }[] = [];
+  for (const z of zones) {
+    const s = Math.max(0, z.s - PAD);
+    const e = Math.min(frames, z.e + PAD);
+    const last = merged[merged.length - 1];
+    if (last && s - last.e <= MERGE) last.e = e;
+    else merged.push({ s, e });
+  }
+
+  const toSec = (f: number) => (f * frame) / rate;
+  return merged.map((z, i) => {
+    const next = merged[i + 1];
+    const gap = next ? toSec(next.s) - toSec(z.e) : 0;
+    return {
+      offset: toSec(z.s),
+      duration: toSec(z.e) - toSec(z.s),
+      gapAfter: Math.min(gap, MAX_PAUSE),
+    };
+  });
+}
+
+/**
+ * Ses dosyalarını WebAudio ile boşluksuz zincirler.
+ *
+ * Ses öğesi zincirinde her sınırda "src değiştir → indir → çöz → başla"
+ * bekleniyordu ve dosyaların gömülü kenar sessizlikleri buna ekleniyordu.
+ * Burada dosyalar çözülüp konuşulan bölgeleri örneklem hassasiyetinde art
+ * arda planlanıyor: parça sınırı artık duyulan bir şey değil.
+ *
+ * İndirme ve çözme aşamalı: i. dosya çalarken sonrakiler çözülüp kuyruğun
+ * sonuna planlanıyor; hepsinin inmesi beklenmiyor. Bir dosya alınamazsa
+ * `onFail(i)` çağrılıyor — planlanmış sesin bitmesi beklenmiş olarak; çağıran
+ * taraf kalan parçaları kendi yedeğiyle sürdürüyor.
+ *
+ * Bağlam çalışır durumda değilse (henüz kullanıcı hareketi yok) `null` döner;
+ * çağıran ses öğesi yoluna düşer.
+ */
+function playGapless(
+  urls: string[],
+  opts: { mine: number; onEnd?: () => void; onFail: (index: number) => void },
+): (() => void) | null {
+  const ctx = sharedAudioContext();
+  if (!ctx || ctx.state !== "running") return null;
+  const { mine, onEnd, onFail } = opts;
+
+  const sources: AudioBufferSourceNode[] = [];
+  let cancelled = false;
+  let done = false;
+  let guard: ReturnType<typeof setTimeout> | null = null;
+  const finish = () => {
+    if (done || cancelled || token !== mine) return;
+    done = true;
+    if (guard) clearTimeout(guard);
+    onEnd?.();
+  };
+
+  void (async () => {
+    /** Planlanmış son sesin bittiği an — sıradaki bunun üstüne eklenir. */
+    let tail = 0;
+    let lastSource: AudioBufferSourceNode | null = null;
+
+    for (let i = 0; i < urls.length; i++) {
+      let buf: AudioBuffer | null = null;
+      try {
+        const res = await fetch(urls[i]);
+        if (!res.ok) throw new Error(String(res.status));
+        buf = await ctx.decodeAudioData(await res.arrayBuffer());
+      } catch {
+        buf = null;
+      }
+      if (cancelled || token !== mine) return;
+
+      if (!buf) {
+        // Planlanmış ses bitince kalanı çağıranın yedeğine devret.
+        const wait = Math.max(0, tail - ctx.currentTime) * 1000;
+        setTimeout(() => {
+          if (cancelled || token !== mine) return;
+          onFail(i);
+        }, wait + 20);
+        return;
+      }
+
+      let at = Math.max(tail + (i ? SEGMENT_GAP : 0), ctx.currentTime + 0.03);
+      for (const run of speechRuns(buf)) {
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        src.connect(ctx.destination);
+        src.start(at, run.offset, run.duration);
+        sources.push(src);
+        lastSource = src;
+        at += run.duration + run.gapAfter;
+      }
+      tail = at;
+    }
+
+    if (!lastSource) {
+      finish();
+      return;
+    }
+    lastSource.onended = finish;
+    // Emniyet: `onended` gelmezse (sekme arka plana düştü, tarayıcı atladı)
+    // bitiş planlanan sürenin az sonrasında yine bildirilsin.
+    guard = setTimeout(finish, Math.max(0, tail - ctx.currentTime) * 1000 + 400);
+  })();
+
+  return () => {
+    cancelled = true;
+    if (guard) clearTimeout(guard);
+    for (const src of sources) {
+      try {
+        src.stop();
+      } catch {
+        /* zaten bitmiş olabilir */
+      }
+    }
+  };
+}
+
+/**
+ * Ses öğeleriyle çift tamponlu zincir — WebAudio'nun yedeği.
+ *
+ * Parça i çalarken parça i+1 öteki öğede yükleniyor; sınırda yapılan tek iş
+ * hazır öğeye play() demek. Gömülü kenar sessizlikleri burada kırpılamıyor —
+ * bu yol yalnızca bağlam açılamadığında ya da bir dosya çözülemediğinde
+ * devrede.
+ */
+function chainWithElements(
+  queue: SpeechSegment[],
+  startIndex: number,
+  onEnd: (() => void) | undefined,
+  mine: number,
+) {
   const a = audioElement();
   const b = extraElement();
-  const mine = ++token;
 
   // Ses öğesi yoksa (sunucu, çok eski ortam) tarayıcı sentezine sırayla düş.
   if (!a || !b) {
@@ -275,20 +479,15 @@ export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): ()
       const { voice, course } = voiceForSegment(queue[i]);
       speakWithBrowser(queue[i].text, voice, course, () => step(i + 1));
     };
-    step(0);
-    return () => {
-      if (token === mine) token++;
-    };
+    step(startIndex);
+    return;
   }
 
   a.pause();
   b.pause();
   const els = [a, b];
 
-  const srcFor = (seg: SpeechSegment) => {
-    const { voice } = voiceForSegment(seg);
-    return `/api/tts?v=${voice}&t=${encodeURIComponent(seg.text)}`;
-  };
+  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text);
   /** i. parçayı kendi öğesine yükler — çalma değil, hazırlık. */
   const preload = (i: number) => {
     const el = els[i % 2];
@@ -319,13 +518,48 @@ export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): ()
     void el.play().catch(fallback);
   };
 
-  preload(0);
-  playAt(0);
+  preload(startIndex);
+  playAt(startIndex);
+}
+
+/**
+ * Parçaları sırayla, her birini kendi dilinin sesiyle okur.
+ *
+ * `onEnd` son parça bittiğinde (ya da hiç çalınamadığında) bir kez çağrılır —
+ * eller serbest akışta mikrofonun açılması buna bağlı. Dönen işlev okumayı
+ * iptal eder ve sesi susturur.
+ *
+ * Önce boşluksuz WebAudio yolu deneniyor (kenar sessizlikleri kırpılmış,
+ * duraklamaları sıkıştırılmış); bağlam hazır değilse ya da bir dosya
+ * alınamazsa ses öğesi zincirine düşülüyor.
+ */
+export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): () => void {
+  const queue = mergeForSpeech(segments);
+  if (!queue.length) {
+    onEnd?.();
+    return () => {};
+  }
+
+  const mine = ++token;
+  stopActiveChain();
+  element?.pause();
+  extra?.pause();
+
+  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text));
+  const cancel = playGapless(urls, {
+    mine,
+    onEnd,
+    onFail: (i) => chainWithElements(queue, i, onEnd, mine),
+  });
+  if (cancel) activeChainStop = cancel;
+  else chainWithElements(queue, 0, onEnd, mine);
+
   return () => {
     if (token !== mine) return;
     token++;
-    a.pause();
-    b.pause();
+    stopActiveChain();
+    element?.pause();
+    extra?.pause();
   };
 }
 
@@ -338,6 +572,7 @@ export function speakSegments(segments: SpeechSegment[], onEnd?: () => void): ()
  */
 export function stopSpeaking() {
   token++;
+  stopActiveChain();
   element?.pause();
   extra?.pause();
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -354,8 +589,7 @@ export function stopSpeaking() {
 export function prefetchSegments(segments: SpeechSegment[]) {
   if (typeof fetch === "undefined") return;
   for (const seg of mergeForSpeech(segments)) {
-    const { voice } = voiceForSegment(seg);
-    void fetch(`/api/tts?v=${voice}&t=${encodeURIComponent(seg.text)}`, {
+    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text), {
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */
@@ -381,6 +615,7 @@ function play(
   // Bu okumanın kimliği: öğe paylaşıldığı için, kesilen okumanın geç gelen
   // olayı yenisinin bitişi sanılmamalı.
   const mine = ++token;
+  stopActiveChain();
   let done = false;
 
   const finish = () => {
@@ -413,7 +648,7 @@ function play(
     if (!Number.isFinite(total) || total <= 0) return;
     onDuration(Math.round((total - audio.currentTime) * 1000));
   };
-  audio.src = `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${slow ? "&r=slow" : ""}`;
+  audio.src = ttsUrl(voice, clean, slow);
   audio.currentTime = 0;
   // play() reddedilirse (otomatik oynatma engeli, yüklenemeyen kaynak) de
   // aynı yedeğe düşülür.

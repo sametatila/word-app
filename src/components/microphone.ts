@@ -45,6 +45,16 @@ export function recognitionCtor(): (new () => Recognition) | null {
 }
 
 /**
+ * İzin bu oturumda bir kez doğrulandıysa tekrar sorulmuyor.
+ *
+ * Sebep gecikme: `getUserMedia` her çağrıda mikrofon DONANIMINI açıp
+ * kapatıyor ve bu yarım saniyeye kadar sürebiliyor. Eller serbest akışta bu
+ * bekleme, okumanın bitişiyle mikrofonun açılması arasında her turda duyulan
+ * bir boşluktu — izin zaten verilmişken ödenen bir bedel.
+ */
+let confirmed = false;
+
+/**
  * Mikrofon iznini **açıkça** ister.
  *
  * `SpeechRecognition.start()` tarayıcı sekmesinde izni kendiliğinden sorar ama
@@ -52,16 +62,32 @@ export function recognitionCtor(): (new () => Recognition) | null {
  * sessizce `not-allowed` ile düşüyor ve kullanıcı hiçbir şey olmadığını
  * görüyor. `getUserMedia` istemi her iki durumda da gösterir.
  *
- * Akış hemen bırakılır; tanıyıcı kendi akışını açar, bizimkini tutmak
- * mikrofonu boşuna meşgul eder (bazı cihazlarda kayıt göstergesi yanılı kalır).
+ * Sıra hızdan yana kurulu: oturumda bir kez doğrulandıysa hiç sorulmaz;
+ * tarayıcı izin durumunu söyleyebiliyorsa (`permissions.query`) cihaz hiç
+ * açılmaz; ancak ikisi de yoksa `getUserMedia` çalışır. Akış hemen bırakılır;
+ * tanıyıcı kendi akışını açar, bizimkini tutmak mikrofonu boşuna meşgul eder
+ * (bazı cihazlarda kayıt göstergesi yanık kalır).
  */
 export async function requestMicrophone(): Promise<"granted" | "denied" | "unavailable"> {
+  if (confirmed) return "granted";
   if (typeof navigator === "undefined" || !navigator.mediaDevices?.getUserMedia) {
     return "unavailable";
   }
   try {
+    const status = await navigator.permissions?.query?.({
+      name: "microphone" as PermissionName,
+    });
+    if (status?.state === "granted") {
+      confirmed = true;
+      return "granted";
+    }
+  } catch {
+    /* Firefox/Safari sorgulamayı desteklemeyebilir — istem yoluna düş */
+  }
+  try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     for (const track of stream.getTracks()) track.stop();
+    confirmed = true;
     return "granted";
   } catch {
     return "denied";
