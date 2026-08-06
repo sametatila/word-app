@@ -2027,9 +2027,177 @@
   "tr": "zorlamak",
   "not": "B1 çeviri gözden geçirmesi: örnek cümle geçişli kullanımdı, başlık dönüşlüydü"
  },
+ "3213": {
+  "tr": "tazminat, işten ayrılma tazminatı",
+  "not": "B2 çeviri gözden geçirmesi: Abfindung işten ayrılırken ödenen anlaşmalı tazminattır; 'kıdem tazminatı' Türkiye'ye özgü yasal hakkı işaret ettiği için yanıltıcı."
+ },
+ "3218": {
+  "tr": "konum, yer (işletmenin bulunduğu yer)",
+  "not": "B2 çeviri gözden geçirmesi: Standort genel olarak 'konum, yer' demektir; 'tesis konumu, üretim yeri' hem dar hem de yapay bir karşılık, örnekte Polonya'da yeni bir lokasyon açılıyor."
+ },
+ "3219": {
+  "tr": "şube, temsilcilik (firmanın kendi birimi)",
+  "not": "B2 çeviri gözden geçirmesi: Filiale ile aynı karşılığı taşıyor; Niederlassung firmanın kurduğu şube/temsilcilik, Filiale ise perakende mağaza şubesidir."
+ },
+ "3223": {
+  "tr": "yıl sonu finansal tabloları, yıllık hesap kapanışı",
+  "not": "B2 çeviri gözden geçirmesi: Jahresabschluss bilanço, gelir tablosu ve eklerinin tamamıdır; 'yıl sonu bilançosu' bir sonraki madde olan Bilanz (bilanço) ile karışıyor."
+ },
+ "3244": {
+  "tr": "sorumlu olmak, yükümlü olmak (hukuken)",
+  "not": "B2 çeviri gözden geçirmesi: 'kefil olmak' bürgen fiilinin karşılığıdır; haften örnekteki gibi kişinin zarardan hukuken sorumlu tutulmasıdır."
+ },
+ "3248": {
+  "tr": "yeterlilik kazanmak, hak kazanmak",
+  "not": "B2 çeviri gözden geçirmesi: Örnekte kişi yeni pozisyon için gereken yeterliliği kazanıyor; 'nitelik kazanmak' Türkçede bu anlamda kullanılmıyor."
+ },
+ "3268": {
+  "tr": "entegrasyon, topluma uyum",
+  "not": "B2 çeviri gözden geçirmesi: Eingliederung birinin topluma katılması ya da katılmasının sağlanmasıdır; 'kaynaşma' kişiler arası samimi yakınlaşmayı çağrıştırıyor."
+ },
+ "3270": {
+  "tr": "birlik ve beraberlik, toplumsal bütünlük",
+  "not": "B2 çeviri gözden geçirmesi: 'dayanışma' bir sonraki madde Solidarität'in karşılığı; Zusammenhalt bir topluluğun kenetlenmiş, bütün kalma hâlidir."
+ },
+ "3274": {
+  "tr": "gönüllü görev, fahri görev",
+  "not": "B2 çeviri gözden geçirmesi: Ehrenamt ücretsiz üstlenilen görevin kendisidir; Freiwilligendienst ise belirli süreli gönüllü hizmet programıdır, ayrım gerekiyor."
+ },
+ "3286": {
+  "tr": "tartışma, münazara (resmî, kamuya açık)",
+  "not": "B2 çeviri gözden geçirmesi: Diskussion ile aynı karşılığı taşıyor; Debatte örnekteki gibi parlamento/kamuoyu düzeyinde yürütülen resmî tartışmadır."
+ },
+ "3292": {
+  "tr": "yozlaşmış, rüşvetçi",
+  "not": "B2 çeviri gözden geçirmesi: Türkçede 'yolsuz' sıfat olarak kullanılmaz; korrupt bir kişi için 'yozlaşmış' denir."
+ },
+ "3294": {
+  "tr": "haber yapma, habercilik",
+  "not": "B2 çeviri gözden geçirmesi: 'haberler' Nachrichten'in karşılığı; Berichterstattung bir konunun basında ele alınma biçimi, haber verme eylemidir."
+ },
+ "3296": {
+  "tr": "kaynak (bilgi, haber kaynağı)",
+  "not": "B2 çeviri gözden geçirmesi: Ressource ile aynı karşılığı taşıyor; örnekte gazetecinin doğruladığı bilgi kaynağı kastediliyor, doğal kaynak değil."
+ },
+ "3298": {
+  "tr": "inandırıcılık, güvenilirlik (söylenene inanma)",
+  "not": "B2 çeviri gözden geçirmesi: Zuverlässigkeit ile aynı karşılığı taşıyor; Glaubwürdigkeit söylenene inanılmasıdır, Zuverlässigkeit ise kişinin sözünü tutmasıdır."
+ },
+ "3306": {
+  "tr": "nesnel, tarafsız",
+  "not": "B2 çeviri gözden geçirmesi: objektiv'in birincil anlamı 'nesnel'dir; 'tarafsız' unparteiisch/neutral karşılığı olduğu için sıra yanlış."
+ },
+ "3307": {
+  "tr": "nesnellik, objektiflik",
+  "not": "B2 çeviri gözden geçirmesi: Neutralität ile aynı karşılığı taşıyor; Objektivität kişisel yargılardan arınmış olmaktır, tarafsızlık ise taraf tutmamaktır."
+ },
+ "3311": {
+  "tr": "geldiği ülke, menşe ülkesi",
+  "not": "B2 çeviri gözden geçirmesi: 'memleket' Heimat çağrışımı yapıyor; Herkunftsland kişinin ya da ailesinin geldiği ülkedir."
+ },
+ "3316": {
+  "tr": "göçmen (bir ülkeye gelip yerleşen)",
+  "not": "B2 çeviri gözden geçirmesi: Migrant genel olarak göçmendir; Einwanderer özellikle bir ülkeye gelip yerleşendir, ayrım olmadan ikisi ayırt edilemiyor"
+ },
+ "3331": {
+  "tr": "kan dolaşımı; döngü, devir",
+  "not": "B2 çeviri gözden geçirmesi: Durchblutung dokuya giden kan akışıdır, Kreislauf dolaşımın kendisidir ve ayrıca 'döngü' anlamı taşır (Wasserkreislauf)"
+ },
+ "3334": {
+  "tr": "rahatsızlık, ağrı; şikâyet",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümle sırttaki rahatsızlıkları anlatıyor, ilk anlam bu olmalı"
+ },
+ "3337": {
+  "tr": "bağışıklık savunması",
+  "not": "B2 çeviri gözden geçirmesi: 'bağışıklık sistemi' das Immunsystem'in karşılığı; Immunabwehr o sistemin savunma tepkisidir"
+ },
+ "3343": {
+  "tr": "kendini yormamak, kendini kollamak",
+  "not": "B2 çeviri gözden geçirmesi: sich schonen kendini zorlamamak, dinlenmektir; 'kendini korumak' sich schützen ile karışıyor"
+ },
+ "3350": {
+  "tr": "sevgi, yakınlık duyma",
+  "not": "B2 çeviri gözden geçirmesi: 'meyil' bugünün Türkçesinde kullanılmıyor, sözlük kokuyor"
+ },
+ "3351": {
+  "tr": "duygudaşlık, empati",
+  "not": "B2 çeviri gözden geçirmesi: 'merhamet' die Barmherzigkeit'in karşılığı; Mitgefühl birinin duygusunu paylaşmaktır, acımak değil"
+ },
+ "3352": {
+  "tr": "sakinlik, soğukkanlılık",
+  "not": "B2 çeviri gözden geçirmesi: Gelassenheit olaylar karşısında istifini bozmamaktır; 'huzur' die Ruhe/der Frieden karşılığıdır"
+ },
+ "3354": {
+  "tr": "haset, çekememezlik",
+  "not": "B2 çeviri gözden geçirmesi: aynı pakette die Eifersucht da 'kıskançlık' diye geçiyor; Neid başkasının sahip olduğunu çekememektir"
+ },
+ "3357": {
+  "tr": "hasretini çekmek, can atmak (sahip olmadığı bir şeye)",
+  "not": "B2 çeviri gözden geçirmesi: vermissen 'özlemek'tir; sich sehnen nach örnekteki gibi hiç sahip olunmayan bir şeye duyulan güçlü istektir"
+ },
+ "3365": {
+  "tr": "güvenilirlik (sözünde durma, işi aksatmama)",
+  "not": "B2 çeviri gözden geçirmesi: die Glaubwürdigkeit 'inandırıcılık'tır; ayrım olmadan öğrenci ikisini ayıramıyor"
+ },
+ "3369": {
+  "tr": "çekingen, mesafeli",
+  "not": "B2 çeviri gözden geçirmesi: 'ağzı sıkı' verschwiegen demektir, zurückhaltend ile ilgisi yok"
+ },
+ "3372": {
+  "tr": "sakin, soğukkanlı",
+  "not": "B2 çeviri gözden geçirmesi: 'temkinli' vorsichtig demektir; gelassen tedbirli değil, telaşsızdır"
+ },
+ "3377": {
+  "tr": "dürtüsel, düşünmeden davranan",
+  "not": "B2 çeviri gözden geçirmesi: 'atılgan' girişken/cesur anlamı verir, impulsiv'in olumsuz 'düşünmeden hareket etme' anlamını vermiyor"
+ },
+ "3388": {
+  "tr": "biçimlenme, şekillenme (erken etkilerle)",
+  "not": "B2 çeviri gözden geçirmesi: 'şartlanma' die Konditionierung karşılığıdır; Prägung erken etkilerin kişilikte bıraktığı izdir"
+ },
+ "3394": {
+  "tr": "(bir şeyle) başa çıkma biçimi, davranış tarzı",
+  "not": "B2 çeviri gözden geçirmesi: 'ele alış' Türkçede kullanılmayan sözlük çevirisi; örnekteki Umgang mit Rückschlägen 'başa çıkma biçimi'dir"
+ },
+ "3413": {
+  "tr": "kaynak (doğal, ekonomik)",
+  "not": "B2 çeviri gözden geçirmesi: die Quelle de 'kaynak'tır (pınar, bilgi kaynağı); ayrım olmadan ikisi ayırt edilemiyor"
+ },
+ "3425": {
+  "tr": "kuraklık (uzun süren, ürünü vuran)",
+  "not": "B2 çeviri gözden geçirmesi: die Trockenheit genel kuruluk/kurak havadır; Dürre afet boyutundaki uzun kuraklıktır"
+ },
+ "3445": {
+  "tr": "sapmak, yoldan çekilmek (çarpmamak için)",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede bisikletli yayaya çarpmamak için yön değiştiriyor; ilk sıradaki 'kaçınmak' vermeiden ile karışıyor"
+ },
+ "3673": {
+  "drop": 3779,
+  "not": "B2 çeviri gözden geçirmesi: beruhen — 3779 ile aynı madde, aynı örnek cümle"
+ },
  "3735": {
   "drop": 3035,
   "not": "B1 gözden geçirmesi: \"verzichten auf\" — 3035 ile aynı madde, edatlı yazımı"
+ },
+ "3739": {
+  "tr": "bakım, bakım-onarım",
+  "not": "B2 çeviri gözden geçirmesi: Instandhaltung bir yapının bakım-onarımıdır; 'muhafaza' saklama/koruma anlamı verip yanıltıyor"
+ },
+ "3746": {
+  "tr": "indirim, sezon sonu satışı",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki Ausverkauf mağazanın indirim dönemidir; 'tasfiye satışı' Räumungsverkauf'un karşılığıdır ve günlük Türkçede kullanılmaz"
+ },
+ "3754": {
+  "tr": "tuzlu, baharatlı (tatlının zıddı)",
+  "not": "B2 çeviri gözden geçirmesi: herzhaft 'lezzetli' (lecker) demek değil; örnekte de süß'ün karşıtı olarak tuzlu-baharatlı yemekleri niteliyor"
+ },
+ "3779": {
+  "de": "beruhen",
+  "not": "B2 çeviri gözden geçirmesi: edat başlıktaydı; C1'deki ikizi düşürüldü"
+ },
+ "3781": {
+  "drop": 984,
+  "not": "B2 çeviri gözden geçirmesi: \"sich freuen über\" — 984 freuen ile aynı madde, edatlı yazımı"
  },
  "3782": {
   "drop": 1553,
@@ -2043,13 +2211,29 @@
   "drop": 1723,
   "not": "B1 çeviri gözden geçirmesi: sich einigen auf — 1723 ile aynı madde, edatlı yazımı"
  },
+ "3786": {
+  "tr": "bel bağlamak, güvenip dayanmak",
+  "not": "B2 çeviri gözden geçirmesi: vertrauen ile birebir aynı 'güvenmek' karşılığı ikisini ayırt edilemez kılıyor; sich verlassen auf birine güvenip dayanmaktır"
+ },
+ "3789": {
+  "tr": "örnek almak, yön belirlemek",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede genç tasarımcılar bilinen ustaları örnek alıyor; 'yönünü belirlemek' ilk sırada olunca cümledeki anlamı vermiyor"
+ },
  "3791": {
   "drop": 1235,
   "not": "A2 çeviri gözden geçirmesi: \"teilnehmen an\" — 1235 ile aynı madde, edatlı yazımı"
  },
+ "3793": {
+  "tr": "kaynaklanmak, -den doğmak",
+  "not": "B2 çeviri gözden geçirmesi: resultieren aus bir şeyden kaynaklanmaktır; 'sonuçlanmak' ters yönü (bir şeyle sonuçlanmak) anlatıp yanıltıyor"
+ },
  "3794": {
   "drop": 1346,
   "not": "B1 çeviri gözden geçirmesi: abhängen von — 1346 ile aynı madde, edatlı yazımı"
+ },
+ "3797": {
+  "drop": 3358,
+  "not": "B2 çeviri gözden geçirmesi: \"verzweifeln an\" — 3358 ile aynı madde, edatlı yazımı"
  },
  "3799": {
   "drop": 3189,
@@ -2063,6 +2247,10 @@
   "drop": 2792,
   "not": "A2 çeviri gözden geçirmesi: \"sich streiten über\" — 2792 ile aynı madde, edatlı yazımı"
  },
+ "3804": {
+  "tr": "savunmak, mücadele etmek (bir amaç için)",
+  "not": "B2 çeviri gözden geçirmesi: sich einsetzen für bir davayı savunup çaba göstermektir; 'uğraşmak' sich beschäftigen mit ile karışıyor"
+ },
  "3806": {
   "drop": 3053,
   "not": "B1 gözden geçirmesi: \"sich vorbereiten auf\" — 3053 ile aynı madde, edatlı yazımı"
@@ -2071,17 +2259,530 @@
   "drop": 2957,
   "not": "B1 çeviri gözden geçirmesi: sich verabschieden von — 2957 ile aynı madde, edatlı yazımı"
  },
+ "3819": {
+  "tr": "uygun, makul",
+  "not": "B2 çeviri gözden geçirmesi: angemessen 'yeterli' (ausreichend) demek değil; örnekteki fiyat için doğal karşılık 'makul'"
+ },
+ "3849": {
+  "tr": "üniversite dersi, ders",
+  "not": "B2 çeviri gözden geçirmesi: Vorlesung üniversitede hocanın anlattığı derstir; Türkçede 'konferans' tek seferlik bir sunumu çağrıştırdığı için yanıltıcı"
+ },
+ "3852": {
+  "tr": "öğrenim programı, bölüm",
+  "not": "B2 çeviri gözden geçirmesi: Studiengang lisans, yüksek lisans fark etmeksizin her öğrenim programını kapsar; 'lisans programı' anlamı yanlış biçimde daraltıyor"
+ },
+ "4098": {
+  "tr": "eleman temin etmek, işe çekmek",
+  "not": "B2 çeviri gözden geçirmesi: 'işe almak için kazanmak' Türkçede kurulmayan bir ifade, 'devşirmek' ise olumsuz çağrışımlı; anwerben nötr biçimde eleman bulup işe çekmektir"
+ },
+ "4102": {
+  "tr": "katlanmasını beklemek, reva görmek",
+  "not": "B2 çeviri gözden geçirmesi: baştaki 'beklemek' Türkçede 'warten' ile karışıyor; zumuten birinden zor bir şeye katlanmasını istemektir"
+ },
+ "4108": {
+  "tr": "ibraz etmek, gösterip sunmak (belge)",
+  "not": "B2 çeviri gözden geçirmesi: einreichen ile aynı 'sunmak' karşılığını paylaşıyor; vorlegen belgeyi gösterip ibraz etmek, einreichen ise resmî olarak teslim etmektir (aynı anlam: einreichen)"
+ },
+ "4157": {
+  "tr": "orantısız biçimde fazla, orantısız yüksek",
+  "not": "B2 çeviri gözden geçirmesi: 'oransız' Türkçede bu anlamda kullanılmaz; überproportional için doğru sözcük 'orantısız'"
+ },
+ "4163": {
+  "tr": "artırmak, yükseltmek (kademeli olarak)",
+  "not": "B2 çeviri gözden geçirmesi: erhöhen ve aufstocken ile aynı karşılığı taşıyordu; steigern derece derece artırmaktır"
+ },
+ "4177": {
+  "tr": "tutmak, (bir miktarı) bulmak, -e ulaşmak",
+  "not": "B2 çeviri gözden geçirmesi: 'toplamı bulmak' Türkçede kurulmayan bir ifade; örnek cümlede Türk 'zarar birkaç yüz bin frankı buluyor/tutuyor' der"
+ },
+ "4207": {
+  "tr": "üniversitede öğrenim yeri, kayıt hakkı",
+  "not": "B2 çeviri gözden geçirmesi: kişi bir kontenjan değil bir öğrenim yeri kazanır; 'üniversite kontenjanı' örnek cümledeki anlamı vermiyor ve 'öğrencilik hakkı' doğal Türkçe değil"
+ },
+ "4219": {
+  "tr": "plan, ana hatlar, bölümlendirme",
+  "not": "B2 çeviri gözden geçirmesi: 'taslak' Entwurf karşılığıdır ve yanıltıcı; Gliederung bir metnin bölüm planı, ana hatlarıdır"
+ },
+ "4240": {
+  "tr": "yetenek (doğuştan gelen), kabiliyet",
+  "not": "B2 çeviri gözden geçirmesi: Begabung doğuştan gelen yetenektir, Fähigkeit ise sonradan kazanılan beceriyi de kapsar; ayrım olmadan ikisi ayırt edilemiyor (aynı anlam: die Fähigkeit)"
+ },
+ "4270": {
+  "tr": "yol göstermek, iş başında eğitmek",
+  "not": "B2 çeviri gözden geçirmesi: anleiten birine işi göstererek öğretmektir; ilk sıradaki 'yönlendirmek' lenken/steuern anlamı verip örnekteki usta-çırak ilişkisini karşılamıyor"
+ },
+ "4276": {
+  "tr": "meraklı, öğrenmeye hevesli",
+  "not": "B2 çeviri gözden geçirmesi: 'öğrenme hevesli' Türkçede bozuk bir tamlama; doğrusu 'öğrenmeye hevesli'"
+ },
+ "4277": {
+  "tr": "zorlu, nitelikli; (kişi için) seçici",
+  "not": "B2 çeviri gözden geçirmesi: anspruchsvoll 'iddialı' demek değil; nesne için zorlu/nitelikli, kişi için seçici anlamı taşır"
+ },
+ "4287": {
+  "tr": "proje görevlendirmesi, proje tanımı",
+  "not": "B2 çeviri gözden geçirmesi: Projektauftrag hedef ve bütçeyi belirleyen resmî görevlendirme belgesidir; 'proje sözleşmesi' Projektvertrag'ın karşılığı olup yanıltıyor"
+ },
+ "4350": {
+  "tr": "son anda, kısa süre kala; kısa vadeli",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki kurzfristig 'son anda, kısa haberle' anlamındadır; 'kısa vadeli' ilk sırada olunca cümledeki anlamı vermiyor"
+ },
+ "4355": {
+  "tr": "bölümler arası, birimleri kapsayan",
+  "not": "B2 çeviri gözden geçirmesi: übergreifend birimleri kesip geçen demektir; 'birimler üstü' hiyerarşide üstte olma anlamı verip yanıltıyor"
+ },
+ "4366": {
+  "tr": "üretici (tarım, ham ürün), yetiştirici",
+  "not": "B2 çeviri gözden geçirmesi: Hersteller ile birebir aynı 'üretici' karşılığı ikisini ayırt edilemez kılıyor; Erzeuger tarımsal/ham ürün üreticisidir (aynı anlam: der Hersteller)"
+ },
+ "4370": {
+  "tr": "tavsiye edilen tüketim tarihi",
+  "not": "B2 çeviri gözden geçirmesi: Mindesthaltbarkeitsdatum son tüketim tarihi (Verbrauchsdatum) değildir; örnek cümle de bu tarihten sonra ürünün yenebildiğini söylüyor"
+ },
+ "4380": {
+  "tr": "sertifika etiketi, mühür, damga",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki 'das grüne Siegel' gıda üzerindeki denetim/sertifika etiketidir; ilk sıradaki 'mühür' cümledeki anlamı vermiyor"
+ },
+ "4415": {
+  "tr": "çift sürmek, toprağı sürmek",
+  "not": "B2 çeviri gözden geçirmesi: tek başına 'sürmek' Türkçede araç sürmeyi (fahren) çağrıştırıyor; pflügen tarlayı pullukla sürmektir"
+ },
+ "4442": {
+  "tr": "alacak, hesapta kalan artı bakiye",
+  "not": "B2 çeviri gözden geçirmesi: 'bakiye' karşılığı Kontostand ile birebir çakışıyor; Guthaben hesabın artıda kalan kısmı, yani alacaktır (aynı anlam: der Kontostand)"
+ },
+ "4459": {
+  "tr": "kesinti (vergi ve primler), harç, resim",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki Abgaben maaştan giden vergi ve sosyal güvenlik kesintileridir; ilk sıradaki 'harç' bu anlamı karşılamıyor"
+ },
+ "4470": {
+  "tr": "destek ödemesi, hibe",
+  "not": "B2 çeviri gözden geçirmesi: 'katkı payı' Türkçede kişinin kendi ödediği payı çağrıştırıyor ve Selbstbeteiligung ile karışıyor; Zuschuss dışarıdan verilen destektir"
+ },
+ "4473": {
+  "tr": "komisyon (ücret), aracılık ücreti",
+  "not": "B2 çeviri gözden geçirmesi: yalnızca 'komisyon' demek Kommission (kurul, komisyon heyeti) ile ayırt edilemiyor; Provision aracıya ödenen ücrettir (aynı anlam: die Kommission)"
+ },
+ "4483": {
+  "tr": "artırmak (bütçe, sayı, kadro), takviye etmek",
+  "not": "B2 çeviri gözden geçirmesi: 'artırmak, yükseltmek' erhöhen/steigern ile birebir aynı; aufstocken mevcut bir miktara ekleyerek artırmayı anlatır (aynı anlam: erhöhen, steigern)"
+ },
+ "4516": {
+  "tr": "özsaygı, benlik saygısı",
+  "not": "B2 çeviri gözden geçirmesi: 'öz değer duygusu' birebir çeviri kokuyor; Türkçede bu kavram 'özsaygı' ya da 'benlik saygısı' diye anılır"
+ },
+ "4528": {
+  "tr": "insan sevgisi, kardeşlik sevgisi, hayırseverlik",
+  "not": "B2 çeviri gözden geçirmesi: 'hemcinse sevgi' yanıltıcı; 'hemcins' Türkçede aynı cinsiyet anlamına gelir, oysa Nächstenliebe herkese yönelen sevgidir"
+ },
+ "4533": {
+  "tr": "çocuk yetiştirme tarzı, terbiye anlayışı",
+  "not": "B2 çeviri gözden geçirmesi: Erziehung okul eğitimi değil çocuk yetiştirmedir; başta duran 'eğitim tarzı' Bildung ile karışıyor"
+ },
+ "4540": {
+  "tr": "hak eşitliği, eşitlik",
+  "not": "B2 çeviri gözden geçirmesi: 'eşit haklılık' Türkçede kullanılmayan uydurma bir birleşim, doğru terim 'hak eşitliği'"
+ },
+ "4547": {
+  "tr": "çekememezlik, başkasının iyiliğini istememe",
+  "not": "B2 çeviri gözden geçirmesi: Missgunst başkasının iyiliğini çekememektir; başta duran 'kıskançlık' Eifersucht/eifersüchtig ile karışıyor"
+ },
+ "4549": {
+  "tr": "gönüllü hizmet (belirli süreli tam zamanlı program)",
+  "not": "B2 çeviri gözden geçirmesi: das Ehrenamt ile birebir aynı karşılığı taşıyor; Freiwilligendienst süreli tam zamanlı bir hizmet dönemidir, Ehrenamt ise yan yürütülen fahri görevdir"
+ },
+ "4556": {
+  "tr": "umut, iyimserlik, geleceğe güven",
+  "not": "B2 çeviri gözden geçirmesi: örnekte 'Zuversicht nicht verloren' umudunu yitirmemektir; başta duran 'güven' Vertrauen ile karışıyor"
+ },
+ "4573": {
+  "tr": "kendini feda etmek, kendini adamak",
+  "not": "B2 çeviri gözden geçirmesi: 'canını dişine takmak' çok çabalamak demektir, başkası için fedakârlık anlamını vermez"
+ },
+ "4577": {
+  "tr": "birinin duygularını paylaşmak, halinden anlamak",
+  "not": "B2 çeviri gözden geçirmesi: 'duygudaşlık kurmak, aynı şeyi hissetmek' sözlük dili; Türkçede biriyle mitfühlen 'halinden anlamak' diye söylenir"
+ },
+ "4584": {
+  "tr": "sosyal, insan içini seven, hoşsohbet",
+  "not": "B2 çeviri gözden geçirmesi: 'sokulgan' Türkçede daha çok çocuk/hayvan için kullanılır ve zutraulich karşılığıdır; gesellig kalabalıkta olmayı sevmektir"
+ },
  "4590": {
   "drop": 2425,
   "not": "B1 çeviri gözden geçirmesi: die Notaufnahme — 2425 ile aynı madde"
+ },
+ "4594": {
+  "tr": "rıza, muvafakat (resmî/hukuki izin)",
+  "not": "B2 çeviri gözden geçirmesi: die Zustimmung ile birebir aynı karşılık ('onay, rıza'); Einwilligung hukuki izindir, Zustimmung ise genel onaydır"
+ },
+ "4598": {
+  "tr": "fazla kilo, aşırı kilo",
+  "not": "B2 çeviri gözden geçirmesi: obezite Almancada Fettleibigkeit/Adipositas'tır; Übergewicht her fazla kiloyu kapsar, 'obezite' anlamı gereksiz ağırlaştırıyor"
+ },
+ "4626": {
+  "tr": "masrafların karşılanması, ödemenin üstlenilmesi",
+  "not": "B2 çeviri gözden geçirmesi: \"ödeme üstlenimi\" Türkçede kullanılmayan bir kalıp; doğal biçimi \"ödemenin üstlenilmesi\""
+ },
+ "4629": {
+  "tr": "bağışıklık sistemi",
+  "not": "B2 çeviri gözden geçirmesi: die Immunabwehr ile aynı karşılığı taşıyordu; Immunsystem organların bütünüdür"
+ },
+ "4635": {
+  "tr": "tedavi etmek, bakımını üstlenmek, ihtiyacını karşılamak",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede yaralılara tıbbi müdahale anlatılıyor, oysa çeviri tek başına belirsiz olan \"bakmak\" ile başlıyor"
+ },
+ "4637": {
+  "tr": "reçete yazmak, (tedavi) öngörmek",
+  "not": "B2 çeviri gözden geçirmesi: verordnen hekimin bağlayıcı talimatıdır; \"tavsiye etmek\" empfehlen'in karşılığı olup yanıltıyor"
+ },
+ "4638": {
+  "tr": "bulaştırmak, (hastalığı) geçirmek",
+  "not": "B2 çeviri gözden geçirmesi: \"hastalık geçirmek\" Türkçede hastalığı yaşamak demektir, birine bulaştırmak değil"
+ },
+ "4644": {
+  "tr": "stabil hâle getirmek, dengede tutmak",
+  "not": "B2 çeviri gözden geçirmesi: \"dengelemek\" ausgleichen'in karşılığıdır; örnekte hastanın durumunun stabilleşmesi anlatılıyor"
+ },
+ "4653": {
+  "tr": "ayakta tedavi ile ilgili, hastaneye yatmadan",
+  "not": "B2 çeviri gözden geçirmesi: \"poliklinik\" bir birim adıdır, ambulant sıfatının karşılığı değil"
+ },
+ "4662": {
+  "tr": "malzeme, yapı malzemesi",
+  "not": "B2 çeviri gözden geçirmesi: \"hammadde\" Rohstoff'un (4681) karşılığı; Werkstoff işlenmiş yapı malzemesidir, ikisi karışıyor"
+ },
+ "4670": {
+  "tr": "parça, bileşen",
+  "not": "B2 çeviri gözden geçirmesi: \"komponent\" Türkçede yerleşik değil, karşılığı \"bileşen\""
+ },
+ "4687": {
+  "tr": "kullanım kılavuzu (makine, tesis)",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam: die Bedienungsanleitung — o cihaz kılavuzudur, Betriebsanleitung makine/tesis kılavuzudur, ayırt edici gerekiyor"
+ },
+ "4711": {
+  "tr": "aşınmak (kullanımdan), yıpranmak",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam: verwittern, erodieren — onlar doğa etkisiyle aşınmadır, sich abnutzen kullanımdan aşınmadır"
+ },
+ "4717": {
+  "tr": "boyamak, verniklemek",
+  "not": "B2 çeviri gözden geçirmesi: \"cilalamak\" polieren'in karşılığıdır; lackieren boya/vernik sürmektir"
+ },
+ "4720": {
+  "tr": "sıkmak, sıkıştırmak",
+  "not": "B2 çeviri gözden geçirmesi: vida için \"sıkıca çekmek\" Türkçede kullanılmaz"
+ },
+ "4722": {
+  "tr": "kısmak, düşürmek (üretim, hız)",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam: kürzen — o kısaltma/kesinti yapmaktır, drosseln çıktıyı veya akışı azaltmaktır"
+ },
+ "4727": {
+  "tr": "usulüne uygun, tekniğine uygun",
+  "not": "B2 çeviri gözden geçirmesi: sachgemäß ile aynı karşılığı taşıyordu; fachgerecht meslek tekniğine uygunluktur"
+ },
+ "4733": {
+  "tr": "hareketlilik, hareket kabiliyeti",
+  "not": "B2 çeviri gözden geçirmesi: \"esneklik\" Flexibilität'in karşılığıdır; örnekte eklemlerin hareket açıklığı kastediliyor"
+ },
+ "4738": {
+  "tr": "kan dolaşımı (bir bölgedeki), kanlanma",
+  "not": "B2 çeviri gözden geçirmesi: Durchblutung bir doku ya da organdaki kan akışıdır; sistemin bütününü anlatan Kreislauf ile aynı karşılığı taşıyınca ayırt edilemiyor (aynı anlam: der Kreislauf)"
+ },
+ "4770": {
+  "tr": "germe hareketi yapmak, esnemek (spor)",
+  "not": "B2 çeviri gözden geçirmesi: tek başına 'esnemek' Türkçede önce esneme (gähnen) anlamına geliyor; örnek cümledeki anlam kasları germektir"
+ },
+ "4811": {
+  "tr": "raf ömrü, dayanıklılık",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede ürünün arkasında yazan şey raf ömrüdür, bu anlam başta olmalı"
  },
  "4812": {
   "drop": 2709,
   "not": "B1 çeviri gözden geçirmesi: das Sonderangebot — 2709 ile aynı madde"
  },
+ "4820": {
+  "tr": "şube (mağaza, banka)",
+  "not": "B2 çeviri gözden geçirmesi: Filiale bir zincirin satış şubesidir; firmanın işletme birimi olan Niederlassung ile aynı karşılık verilince ayrılamıyor (aynı anlam: die Niederlassung)"
+ },
+ "4833": {
+  "tr": "kullanmak (kupon, çek), bozdurmak, yerine getirmek",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümle kuponun kullanılmasıyla ilgili; 'bozdurmak' başta olunca ilk anlam cümleyle uyuşmuyor"
+ },
+ "4836": {
+  "tr": "gidermek (arıza, hata, sorun)",
+  "not": "B2 çeviri gözden geçirmesi: beheben arıza/hata giderir, beseitigen ise engel, kir gibi şeyleri ortadan kaldırır; aynı karşılıkla ayırt edilemiyorlar (aynı anlam: beseitigen)"
+ },
+ "4839": {
+  "tr": "faturalandırmak, hesabını çıkarmak",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede danışmanlık saat üzerinden faturalandırılıyor; 'hesabı kapatmak' ilk anlam olarak cümleyle uyuşmuyor"
+ },
+ "4848": {
+  "tr": "usulüne uygun (kullanım)",
+  "not": "B2 çeviri gözden geçirmesi: sachgemäß nesnenin gerektirdiği doğru kullanımı anlatır, fachgerecht ise uzmanca yapılmış işi; ayırt edici yok (aynı anlam: fachgerecht)"
+ },
+ "4849": {
+  "tr": "gösteri, temsil, oynanış",
+  "not": "B2 çeviri gözden geçirmesi: 'sahneleme' Inszenierung'un karşılığı; Aufführung bir eserin tek tek oynandığı gösterinin kendisidir"
+ },
+ "4851": {
+  "tr": "senaryo (film metni)",
+  "not": "B2 çeviri gözden geçirmesi: Drehbuch çekim için yazılan metindir, Szenario ise olay örgüsü/senaryo taslağı; aynı karşılık ikisini karıştırıyor (aynı anlam: das Szenario)"
+ },
+ "4854": {
+  "tr": "dekor, sahne dekoru, fon",
+  "not": "B2 çeviri gözden geçirmesi: Kulisse sahnedeki dekordur; 'sahne arkası' yanlış, o ancak 'hinter den Kulissen' deyiminde ortaya çıkar"
+ },
+ "4884": {
+  "tr": "gidilecek yer, seyahat hedefi",
+  "not": "B2 çeviri gözden geçirmesi: Reiseziel varılacak yerdir; 'seyahat rotası' güzergâh (Reiseroute) demektir ve yanlış anlam verir"
+ },
+ "4892": {
+  "tr": "doruk noktası, zirve",
+  "not": "B2 çeviri gözden geçirmesi: 'doruk nokta' bozuk Türkçe; tamlama eki eksik"
+ },
+ "4915": {
+  "tr": "çeşitli, renkli, monotonluktan uzak",
+  "not": "B2 çeviri gözden geçirmesi: 'değişken' wechselhaft/unbeständig demektir; abwechslungsreich çeşitlilik bakımından zengin anlamındadır"
+ },
+ "4919": {
+  "tr": "biletleri tükenmiş, tükenmiş (ürün)",
+  "not": "B2 çeviri gözden geçirmesi: tek başına 'satılmış' Türkçede aşağılayıcı bir anlam taşır ve 'stoğu bitmiş' anlamını vermez"
+ },
+ "4920": {
+  "tr": "kendi başına, kendi bildiğince (rehbersiz)",
+  "not": "B2 çeviri gözden geçirmesi: 'tek başına' kişi sayısına işaret eder; deyim ise başkasının yardımı ya da izni olmadan demektir (örnekte birden çok kişi birlikte geziyor)"
+ },
+ "4940": {
+  "tr": "duyuru, önceden haber verme",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam listesindeki die Bekanntmachung resmi ilan demek; Ankündigung olacak bir şeyin önceden bildirilmesidir, ayrım gerekiyor"
+ },
+ "4967": {
+  "tr": "yayınlamak (radyo, TV), aktarmak, devretmek",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede maçın yayınlanması anlatılıyor, bu yüzden yayın anlamı başa gelmeli; ayrıca übertragen için 'canlı' olma şartı yoktur"
+ },
+ "5005": {
+  "tr": "yasak süresi",
+  "not": "B2 çeviri gözden geçirmesi: 'bekleme yasağı' Türkçede anlamsız bir birleşim; Sperrfrist yasağın sürdüğü süredir"
+ },
+ "5022": {
+  "tr": "dil becerileri, dil düzeyi",
+  "not": "B2 çeviri gözden geçirmesi: Türkçede 'dil bilgisi' gramer demektir; Sprachkenntnisse gramer bilgisi değil, kişinin dil düzeyidir"
+ },
+ "5032": {
+  "tr": "meslekî uyum eğitimi, tamamlama kursu",
+  "not": "B2 çeviri gözden geçirmesi: 'uyum eğitimi' aynı pakettteki Integrationskurs ('uyum kursu') ile karışıyor; Anpassungslehrgang meslek denkliği için yapılan tamamlama eğitimidir"
+ },
+ "5041": {
+  "tr": "tasdik etmek, onaylamak (suret, imza)",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam olarak verilen ratifizieren anlaşma onaylamaktır; beglaubigen belge/suret tasdikidir, ayrım gerekiyor"
+ },
+ "5042": {
+  "tr": "işleme almak, üzerinde çalışmak",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede başvurunun işlem görmesi anlatılıyor; Türkçede 'başvuruyu işlemek' denmez, 'işleme almak' denir"
+ },
+ "5052": {
+  "tr": "(belgeyi) değiştirmek, yenisine çevirmek; başka ada geçirmek",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki 'Führerschein umschreiben' ehliyeti yerli belgeye çevirmektir, 'devretmek' (başkasına verme) anlamı örnekle uyuşmuyor"
+ },
+ "5068": {
+  "tr": "ani rüzgâr, rüzgâr hamlesi",
+  "not": "B2 çeviri gözden geçirmesi: 'rüzgâr patlaması' Türkçede kullanılmaz; Windstoß için doğal karşılık 'ani rüzgâr / rüzgâr hamlesi'dir"
+ },
+ "5082": {
+  "tr": "kuraklık, kuruluk",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam verilen Dürre şiddetli kuraklık olayıdır; Trockenheit genel kuruluk/kuru olma durumunu da kapsar"
+ },
+ "5102": {
+  "tr": "sulama kabı, süzgeçli kova",
+  "not": "B2 çeviri gözden geçirmesi: yalın 'kova' Eimer'in karşılığı olarak yanıltıcı; Gießkanne süzgeçli sulama kabıdır"
+ },
+ "5110": {
+  "tr": "filizlenmek, yeşermek",
+  "not": "B2 çeviri gözden geçirmesi: tek başına 'sürmek' Türkçede yanıltıcı (fahren/devam etmek); örnekteki 'sprießt frisches Grün' için doğal karşılık 'yeşermek'"
+ },
+ "5116": {
+  "tr": "hava koşullarıyla aşınmak, yıpranmak",
+  "not": "B2 çeviri gözden geçirmesi: verwittern doğa etkisiyle (yağmur, rüzgâr) yıpranmadır; ayırt edici olmadan kullanımdan aşınma anlamındaki sich abnutzen ile karışıyor (aynı anlam: sich abnutzen, erodieren)"
+ },
+ "5127": {
+  "tr": "aşırı büyümek, her yeri sarmak",
+  "not": "B2 çeviri gözden geçirmesi: 'azgınca büyümek' Türkçede kullanılan bir ifade değil; bir Türk 'nane her yeri sardı' der"
+ },
+ "5158": {
+  "tr": "resmî duyuru, ilan",
+  "not": "B2 çeviri gözden geçirmesi: Bekanntmachung makamın resmî ilanıdır; ayırt edici olmadan sıradan duyuru anlamındaki Ankündigung ile birebir aynı görünüyor (aynı anlam: die Ankündigung)"
+ },
+ "5187": {
+  "tr": "oylamada yenmek, oy çokluğuyla reddetmek",
+  "not": "B2 çeviri gözden geçirmesi: überstimmen bir kişiyi/grubu oy çokluğuyla yenmektir; 'geçersiz kılmak' oyun iptal edilmesi anlamını veriyor ve yanlış"
+ },
+ "5189": {
+  "tr": "kısmak, azaltmak (bütçe, metin)",
+  "not": "B2 çeviri gözden geçirmesi: ayırt edici olmadan, hız/akış azaltma anlamındaki drosseln ile aynı görünüyor; kürzen ödenek ya da metin kısmadır (aynı anlam: drosseln)"
+ },
+ "5194": {
+  "tr": "oy çokluğuyla, çoğunluğun oyuyla",
+  "not": "B2 çeviri gözden geçirmesi: 'çoğunlukla' Türkçede 'genellikle' diye anlaşılıyor; mehrheitlich sayısal çoğunluğu anlatır ve örnekteki anlam 'halkın çoğunluğu reddediyor'"
+ },
+ "5208": {
+  "tr": "hafif suç, kabahat",
+  "not": "B2 çeviri gözden geçirmesi: başta yalnızca 'suç' demek Straftat ile birebir çakışıyor; Vergehen Verbrechen'e göre daha hafif suç türüdür"
+ },
+ "5216": {
+  "tr": "alt kiralama, kiradaki yeri başkasına kiraya verme",
+  "not": "B2 çeviri gözden geçirmesi: 'kiraya verilenin yeniden kiralanması' sözlük kokan bir tanım; yerleşik terim 'alt kiralama'"
+ },
+ "5223": {
+  "tr": "ertelenmiş ceza, denetimli serbestlik",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki 'auf Bewährung' tecilli/ertelenmiş cezadır; ilk anlam örnekle uyuşmuyor"
+ },
+ "5230": {
+  "tr": "vesayet",
+  "not": "B2 çeviri gözden geçirmesi: Vormundschaft mahkemenin atadığı vesayettir; 'velayet' ana babanın hakkıdır (elterliche Sorge/Sorgerecht) ve öğrenciyi yanıltır"
+ },
+ "5236": {
+  "tr": "itirazda bulunmak, sunmak (Widerspruch/Beschwerde einlegen)",
+  "not": "B2 çeviri gözden geçirmesi: einlegen tek başına 'itiraz etmek' değildir; bu anlam yalnızca Widerspruch/Beschwerde nesnesiyle doğar, kalıp belirtilmeli"
+ },
+ "5239": {
+  "tr": "caymak, geri almak (beyan, izin)",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümledeki anlam sözleşmeden cayma; 'geri almak' başta olunca sözleşme bağlamına oturmuyor"
+ },
+ "5245": {
+  "tr": "zorunlu kılmak, öngörmek, emretmek",
+  "not": "B2 çeviri gözden geçirmesi: 'dayatmak' olumsuz bir ton taşır; vorschreiben (mevzuatın öngörmesi) tarafsız bir emretmedir"
+ },
+ "5260": {
+  "tr": "tur, tur gezisi",
+  "not": "B2 çeviri gözden geçirmesi: 'çevre gezisi' Türkçede doğa/çevre gezisi gibi okunuyor; Rundreise için Türklerin dediği 'Sicilya turu' gibi 'tur'dur"
+ },
+ "5264": {
+  "tr": "yüksek sezon, sezonun en yoğun dönemi",
+  "not": "B2 çeviri gözden geçirmesi: turizmde yerleşik Türkçe karşılık 'yüksek sezon'dur; açıklama cümlesi tek başına kelime karşılığı vermiyor"
+ },
+ "5337": {
+  "tr": "suç oranı, suçluluk",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede suç oranının düşmesi anlatılıyor; Türkçede 'suçluluk' önce vicdan azabını çağrıştırdığı için sıra yanlış"
+ },
+ "5352": {
+  "tr": "tahliye etmek (insanları çıkarmak)",
+  "not": "B2 çeviri gözden geçirmesi: räumen ile aynı karşılığı taşıyordu; evakuieren insanları güvenli yere çıkarmaktır"
+ },
+ "5354": {
+  "tr": "gidermek, ortadan kaldırmak",
+  "not": "B2 çeviri gözden geçirmesi: beheben ile aynı karşılığı taşıyordu; beseitigen bir şeyi tamamen yok etmektir"
+ },
  "5355": {
   "drop": 1871,
   "not": "B1 çeviri gözden geçirmesi: festnehmen — 1871 ile aynı madde"
+ },
+ "5360": {
+  "tr": "kaza geçirmek, kazaya uğramak",
+  "not": "B2 çeviri gözden geçirmesi: verunglücken kazaya uğramaktır, yaralanmayı içermez; örnekteki 'tödlich verunglückt' (kazada can vermek) ile 'kazada yaralanmak' çelişiyor"
+ },
+ "5362": {
+  "tr": "çevresini kapatmak, abluka altına almak",
+  "not": "B2 çeviri gözden geçirmesi: tek başına 'kapatmak' schließen ile karışıyor; abriegeln bir alanı çevirip giriş çıkışı kesmektir"
+ },
+ "5365": {
+  "tr": "(bir şeye karşı) mücadele etmek, savaşmak",
+  "not": "B2 çeviri gözden geçirmesi: kämpfen ile birebir aynı görünüyor; bekämpfen nesne alan bir fiildir, mücadelenin neye karşı olduğu belirtilmeli (aynı anlam: kämpfen)"
+ },
+ "5376": {
+  "tr": "vurgu, vurgulama",
+  "not": "B2 çeviri gözden geçirmesi: 'tonlama' Intonation'ın karşılığıdır; Betonung hece ya da kelime vurgusudur ve örnek de bunu anlatıyor"
+ },
+ "5385": {
+  "tr": "söz alma, (toplantıda) yapılan konuşma",
+  "not": "B2 çeviri gözden geçirmesi: 'konuşma katkısı' Türkçede kullanılmayan birebir çeviri"
+ },
+ "5392": {
+  "tr": "yorumlama, (metin veya yasa) yorumu",
+  "not": "B2 çeviri gözden geçirmesi: 'tefsir' bugün yalnızca dinî metinler için kullanılıyor, Auslegung ise genel yorumlamadır"
+ },
+ "5409": {
+  "tr": "kanıt değeri, anlatım gücü",
+  "not": "B2 çeviri gözden geçirmesi: örnekte testin sonuç verme değeri kastediliyor; ilk sıradaki 'anlatım gücü' cümledeki anlamla uyuşmuyor"
+ },
+ "5414": {
+  "tr": "itiraz etmek, itiraz olarak ileri sürmek",
+  "not": "B2 çeviri gözden geçirmesi: 'karşı çıkmak' widersprechen ile aynı görünüyor; einwenden bir itirazı dile getirmektir, nesne alır (aynı anlam: widersprechen)"
+ },
+ "5426": {
+  "tr": "aşina, tanıdık; yaygın, akıcı",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki 'mir geläufig' bana tanıdık gelmek demek, ilk anlam bu olmalı"
+ },
+ "5429": {
+  "tr": "laf arasında, öylesine",
+  "not": "B2 çeviri gözden geçirmesi: 'üstünkörü' oberflächlich'in karşılığı; beiläufig ise yeri gelmişken, önemsizmiş gibi söylemektir"
+ },
+ "5466": {
+  "tr": "elektronik aksam, elektronik (bilim dalı)",
+  "not": "B2 çeviri gözden geçirmesi: elektronisch sıfatıyla aynı karşılığı taşıyor; örnekte aracın elektronik aksamı kastediliyor (aynı anlam: elektronisch)"
+ },
+ "5474": {
+  "tr": "deneme çalışması, test çalıştırması",
+  "not": "B2 çeviri gözden geçirmesi: 'test sürüşü' Probefahrt karşılığıdır; Testlauf araç sürüşü değil, bir sistemin deneme amaçlı çalıştırılmasıdır (örnek: Testläufe mit echten Kunden)"
+ },
+ "5485": {
+  "tr": "sorgulamak, erişmek, çağırmak",
+  "not": "B2 çeviri gözden geçirmesi: örnekteki 'den Kontostand abrufen' Türkçede 'bakiyeyi sorgulamak'tır; ilk sırada duran 'çağırmak' birini çağırmak anlamıyla karışıyor"
+ },
+ "5487": {
+  "tr": "filtrelemek, süzmek",
+  "not": "B2 çeviri gözden geçirmesi: örnek dijital filtreleme (verdächtige Nachrichten filtern); ilk anlam 'süzmek' sıvı süzmeyi çağrıştırdığı için sıra yanlış"
+ },
+ "5533": {
+  "de": "Mikroplastik",
+  "artikel": "das",
+  "not": "B2 çeviri gözden geçirmesi: Mikroplastik das artikelini alır"
+ },
+ "5545": {
+  "tr": "kirletmek (zehirli maddeyle), bulaştırmak",
+  "not": "B2 çeviri gözden geçirmesi: verseuchen bir alanı zehirli/zararlı maddeyle kirletmektir; ilk sıradaki 'zehirlemek' vergiften ile karışıyor (örnek: Öl hat den Boden verseucht)"
+ },
+ "5549": {
+  "tr": "çıkarmak (maden), ayrıştırmak, azaltmak",
+  "not": "B2 çeviri gözden geçirmesi: abbauen geçişli bir fiildir; 'ayrışmak' geçişsiz olduğu için yanlış çatı veriyor, doğrusu 'ayrıştırmak'"
+ },
+ "5578": {
+  "tr": "boşaltmak, tahliye etmek (konut, mekân)",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam verilen evakuieren afet/tehlike nedeniyle insanları tahliye etmektir; räumen bir mekânı boşaltmaktır, ayırt edici gerekiyor"
+ },
+ "5580": {
+  "tr": "inkâr etmek, reddetmek (iddiayı)",
+  "not": "B2 çeviri gözden geçirmesi: aynı anlam verilen sich weigern bir şeyi yapmayı reddetmektir; bestreiten ise bir iddiayı inkâr etmektir (örnek: Die Firma bestreitet, den Schaden verursacht zu haben)"
+ },
+ "5584": {
+  "tr": "hesaba geçirmek, alacak kaydetmek",
+  "not": "B2 çeviri gözden geçirmesi: 'iade tutarını yazmak' fiili yalnızca iadeye daraltıyor; gutschreiben her türlü tutarın hesaba alacak olarak geçirilmesidir"
+ },
+ "5585": {
+  "tr": "sözleşmeye dayalı, sözleşmeyle belirlenmiş",
+  "not": "B2 çeviri gözden geçirmesi: 'akde ilişkin' bugün kimsenin kullanmadığı eskimiş bir ifade"
+ },
+ "5588": {
+  "tr": "zımnen, üstü kapalı biçimde",
+  "not": "B2 çeviri gözden geçirmesi: 'sessizce' ses çıkarmadan anlamına gelir; stillschweigend açıkça belirtilmeden, kendiliğinden demektir (örnek: Vertrag verlängert sich stillschweigend)"
+ },
+ "5621": {
+  "tr": "iş ile ilgili, iş için, ticari",
+  "not": "B2 çeviri gözden geçirmesi: örnek cümlede 'geschäftlich in Mailand' iş için/iş amaçlı demektir, 'ticari' ilk anlam olarak cümleyle uyuşmuyor"
+ },
+ "5636": {
+  "tr": "boş durma, boş kalma (konut, dükkân)",
+  "not": "B2 çeviri gözden geçirmesi: 'atıl konut ya da dükkan' kavramı değil nesneyi anlatıyor ve Türkçesi dolambaçlı; Leerstand boş kalma durumudur"
+ },
+ "5641": {
+  "tr": "eski yapı, eski bina (genelde savaş öncesi)",
+  "not": "B2 çeviri gözden geçirmesi: Altbau tarihi/anıtsal bina değil, eski (çoğunlukla 1949 öncesi) yapıdır; 'tarihi bina' yanıltıcı"
+ },
+ "5650": {
+  "tr": "kullanım alanı, net konut alanı",
+  "not": "B2 çeviri gözden geçirmesi: 'konut alanı' Türkçede imar anlamında yerleşim bölgesi olarak anlaşılır; Wohnfläche dairenin metrekare olarak kullanım alanıdır"
+ },
+ "5658": {
+  "tr": "yeraltı otoparkı, kapalı otopark",
+  "not": "B2 çeviri gözden geçirmesi: Tiefgarage özellikle yeraltı otoparkıdır; 'kapalı otopark' (Parkhaus) ilk anlam olunca ayrım kayboluyor"
  },
  "7436": {
   "tr": "sert, katı (esnemeyen, bükülmeyen)",
