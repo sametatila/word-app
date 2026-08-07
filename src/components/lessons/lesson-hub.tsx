@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -69,28 +69,42 @@ import {
   TicketIcon,
   ToothIcon,
   TrainIcon,
+  TrophyIcon,
   UmbrellaIcon,
   WaveIcon,
   WeatherIcon,
   WrenchIcon,
 } from "@/components/icons";
 import { reducedMotion } from "@/lib/fx";
+import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
 import type { Lesson, LessonIcon } from "@/lib/lessons/types";
 
 /**
- * Ders yolu — liste değil harita.
+ * Ders yolu — liste değil harita; ve harita, etaplara bölünmüş bir yolculuk.
  *
- * Dersler bir müfredatın adımları ve sıra anlamlı: her ders bir öncekinin
- * kelimeleriyle kurulmuş sahnenin üstüne biniyor. Liste bu sırayı "üstteki
- * önce" imasına sıkıştırıyordu; yol onu görünür yapıyor — düğümler bir
- * patikada zikzak diziliyor, seviye ayraçları etaplara bölüyor ve öğrencinin
- * nerede olduğu (parlayan düğüm) haritaya bakar bakmaz belli oluyor.
+ * Kurgu Duolingo'nun path modelinden uyarlandı ve üç fikre dayanıyor:
+ *
+ * 1. **Modül pankartları.** 100 derslik bir seviye tek kesintisiz şerit
+ *    olarak ezici; müfredat zaten 10 derslik tematik modüllerden oluşuyor.
+ *    Her modül, ne vadettiğini söyleyen renkli bir pankartla açılıyor
+ *    ("A1 · 3. Modül — Yeme-içme") ve pankart modülün yerel ilerlemesini
+ *    taşıyor (3/10, bitince kupa). 202 derste 4 bitirmiş birine "%2" demek
+ *    cesaret kırıcı; "bu modülde 4/10" ise ulaşılabilir bir hedef.
+ *
+ * 2. **Yolun kendisi ilerlemeyi gösteriyor.** Düğümler arası her çizgi
+ *    parçası ayrı çiziliyor: geçilmiş kenar nane yeşili, gerisi soluk.
+ *    Duolingo'nun altın patikası gibi — kat edilen yol, haritada iz
+ *    bırakıyor.
+ *
+ * 3. **Aktif düğüm konuşuyor.** Sıradaki dersin üstünde zıplayan bir
+ *    "BAŞLA" balonu var (başlanmışsa "DEVAM", tekrarsa "TEKRAR") ve
+ *    kullanıcı yoldan uzaklaşırsa alttan "Kaldığın yer" düğmesi çıkıp
+ *    tek dokunuşla geri getiriyor — 500 düğümlük yolda kaybolmak yok.
  *
  * Durumlar düğümün kendisinde: bitenler işaretli, tekrarı gelen alevli,
  * sıradaki parlıyor, ilerisi kilit görünümünde. Kilit görsel bir sıralama
  * iması — dokunmayı ENGELLEMİYOR: içerik az ve deneme serbestken gerçek bir
- * kilit öğrenciyi değil test etmeyi durdururdu. İçerik büyüyünce tek satırla
- * gerçek kilide çevrilebilir.
+ * kilit öğrenciyi değil test etmeyi durdururdu.
  */
 
 export type HubCard = {
@@ -183,22 +197,38 @@ const LEVEL_LABELS: Record<string, string> = {
 };
 
 /**
- * Zikzak deseni: sol, sağ, orta; sonra tekrar. Learna'nın haritasıyla aynı
- * ritim — göz patikayı soldan sağa, sonra ortadan aşağı takip ediyor.
+ * Modül pankartlarının vurgu renkleri — paletteki canlı tonlar sırayla
+ * dönüyor, ardışık iki modül asla aynı renkte olmuyor. Renk yalnızca
+ * pankartta: düğümler durum renklerini koruyor ki "bitti/sırada/tekrar"
+ * dili sayfa boyunca sabit kalsın.
  */
-const XS = [26, 74, 50];
-const TOP = 46;
-const ROW = 128;
+const MODULE_ACCENTS = [
+  "var(--color-brand-500)",
+  "var(--color-sky-400)",
+  "var(--color-violet-400)",
+  "var(--color-flame-500)",
+  "var(--color-rose-400)",
+  "var(--color-mint-500)",
+];
+
+/**
+ * Serpantin: her düğüm kendi satırında, x orta→sağ→orta→sol döngüsünde.
+ * Modül başında sıfırlanıyor; böylece her modül aynı S kıvrımıyla başlayan
+ * kendi küçük patikası gibi okunuyor.
+ */
+const XS = [50, 74, 50, 26];
+const TOP = 44;
+const ROW = 104;
 const NODE = 72;
 
 function positionOf(i: number): { x: number; y: number } {
-  const p = i % 3;
-  const row = Math.floor(i / 3) * 2 + (p === 2 ? 1 : 0);
-  return { x: XS[p], y: TOP + row * ROW };
+  return { x: XS[i % 4], y: TOP + i * ROW };
 }
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
 const levelIdx = (l: string) => Math.max(0, LEVEL_ORDER.indexOf(l));
+
+type PathNode = { card: HubCard; state: NodeState };
 
 export function LessonHub({
   cards,
@@ -253,6 +283,7 @@ export function LessonHub({
   }, [next]);
 
   const levels = [...new Set(cards.map((c) => c.lesson.level))];
+  let moduleCounter = 0;
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-5">
@@ -301,18 +332,41 @@ export function LessonHub({
         const levelCards = cards
           .map((card, index) => ({ card, index }))
           .filter(({ card }) => card.lesson.level === level);
+
+        // Katalog sırası = konu sırası olduğu için 10'arlı dilimler müfredat
+        // modülleriyle örtüşüyor. (Eksik üretilmiş bir seviyede dilimler
+        // kayabilir; içerik tamamlandığında kendiliğinden hizalanır.)
+        const chunks: { card: HubCard; index: number }[][] = [];
+        for (let i = 0; i < levelCards.length; i += MODULE_SIZE)
+          chunks.push(levelCards.slice(i, i + MODULE_SIZE));
+
         return (
           <section key={level}>
             <LevelDivider level={level} />
-            <LevelPath
-              nodes={levelCards.map(({ card, index }) => ({
+            {chunks.map((chunk, mi) => {
+              const accent = MODULE_ACCENTS[moduleCounter++ % MODULE_ACCENTS.length];
+              const nodes: PathNode[] = chunk.map(({ card, index }) => ({
                 card,
                 state: stateOf(card, index),
-              }))}
-            />
+              }));
+              return (
+                <div key={`${level}-${mi}`}>
+                  <ModuleBanner
+                    level={level}
+                    moduleIdx={mi}
+                    accent={accent}
+                    done={nodes.filter((n) => n.card.done).length}
+                    size={nodes.length}
+                  />
+                  <ModulePath nodes={nodes} />
+                </div>
+              );
+            })}
           </section>
         );
       })}
+
+      <ReturnToActive targetId={next ? `lesson-node-${next}` : null} />
     </div>
   );
 }
@@ -320,7 +374,7 @@ export function LessonHub({
 /** Seviye ayracı — etabın adı, iki yanında çizgi. */
 function LevelDivider({ level }: { level: string }) {
   return (
-    <div className="mb-1 flex items-center gap-3 px-2">
+    <div className="mb-3 flex items-center gap-3 px-2">
       <span className="h-px flex-1" style={{ background: "var(--border)" }} />
       <span className="muted text-xs font-bold uppercase tracking-widest">
         {level}
@@ -332,29 +386,80 @@ function LevelDivider({ level }: { level: string }) {
 }
 
 /**
- * Bir seviyenin patikası: düğümlerin arasından geçen kıvrımlı çizgi ve
- * üstünde düğümler. Çizgi SVG, düğümler mutlak konumlu bağlantılar; ikisi de
- * aynı yüzde-koordinat uzayını kullandığı için her genişlikte hizalı.
+ * Modül pankartı — etabın kapısı. Sol tarafta modül künyesi ve teması,
+ * sağda yerel ilerleme; modül bitince ilerlemenin yerini kupa alıyor.
+ * Renk yalnızca zemin tonu ve künye — yazı gövdesi tema renklerinde
+ * kalıyor ki karanlık/aydınlık iki modda da okunur olsun.
  */
-function LevelPath({ nodes }: { nodes: { card: HubCard; state: NodeState }[] }) {
+function ModuleBanner({
+  level,
+  moduleIdx,
+  accent,
+  done,
+  size,
+}: {
+  level: string;
+  moduleIdx: number;
+  accent: string;
+  done: number;
+  size: number;
+}) {
+  const theme = moduleTheme(level, moduleIdx);
+  const complete = size > 0 && done >= size;
+  return (
+    <div
+      className="flex items-center justify-between gap-3 rounded-2xl px-4 py-3"
+      style={{
+        background: complete
+          ? "color-mix(in srgb, var(--color-mint-500) 12%, var(--surface))"
+          : `color-mix(in srgb, ${accent} 12%, var(--surface))`,
+        border: `1px solid color-mix(in srgb, ${complete ? "var(--color-mint-500)" : accent} 30%, transparent)`,
+      }}
+    >
+      <div className="min-w-0">
+        <p
+          className="text-[10px] font-bold uppercase tracking-widest"
+          style={{ color: complete ? "var(--color-mint-500)" : accent }}
+        >
+          {level} · {moduleIdx + 1}. Modül
+        </p>
+        {theme ? <p className="truncate text-sm font-bold leading-snug">{theme}</p> : null}
+      </div>
+      {complete ? (
+        <span
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
+          style={{ background: "var(--color-mint-500)" }}
+        >
+          <TrophyIcon size={18} />
+        </span>
+      ) : (
+        <span className="muted shrink-0 text-xs font-bold tabular-nums">
+          {done}/{size}
+        </span>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Bir modülün patikası: serpantin üzerinde düğümler. Çizgi kenar kenar
+ * çiziliyor ve geçilmiş kenarlar (başlangıcı bitmiş ders) nane yeşili —
+ * ilerleme yolun kendisinde görünüyor. Çizgi SVG, düğümler mutlak konumlu
+ * bağlantılar; ikisi de aynı yüzde-koordinat uzayını kullandığı için her
+ * genişlikte hizalı.
+ */
+function ModulePath({ nodes }: { nodes: PathNode[] }) {
   const points = nodes.map((_, i) => positionOf(i));
   const last = points[points.length - 1] ?? { x: 50, y: TOP };
-  const height = last.y + NODE / 2 + 58;
+  const height = last.y + NODE / 2 + 56;
 
-  let d = "";
-  points.forEach((p, i) => {
-    if (i === 0) {
-      d = `M ${p.x} ${p.y}`;
-      return;
-    }
-    const prev = points[i - 1];
-    if (prev.y === p.y) {
-      d += ` L ${p.x} ${p.y}`;
-      return;
-    }
-    // Dikey iniş: yatayda kıvrılan yumuşak bir S — patikanın "yol" hissi.
+  const edges = points.slice(1).map((p, i) => {
+    const prev = points[i];
     const midY = (prev.y + p.y) / 2;
-    d += ` C ${prev.x} ${midY}, ${p.x} ${midY}, ${p.x} ${p.y}`;
+    return {
+      d: `M ${prev.x} ${prev.y} C ${prev.x} ${midY}, ${p.x} ${midY}, ${p.x} ${p.y}`,
+      passed: nodes[i].card.done,
+    };
   });
 
   return (
@@ -365,14 +470,18 @@ function LevelPath({ nodes }: { nodes: { card: HubCard; state: NodeState }[] }) 
         viewBox={`0 0 100 ${height}`}
         preserveAspectRatio="none"
       >
-        <path
-          d={d}
-          fill="none"
-          stroke="var(--border)"
-          strokeWidth={4}
-          strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
-        />
+        {edges.map((e, i) => (
+          <path
+            key={i}
+            d={e.d}
+            fill="none"
+            stroke={e.passed ? "var(--color-mint-500)" : "var(--border)"}
+            strokeOpacity={e.passed ? 0.55 : 1}
+            strokeWidth={4}
+            strokeLinecap="round"
+            vectorEffect="non-scaling-stroke"
+          />
+        ))}
       </svg>
       {nodes.map(({ card, state }, i) => (
         <LessonNode key={card.lesson.id} card={card} state={state} at={points[i]} />
@@ -425,6 +534,24 @@ function LessonNode({
       className="absolute z-10 flex w-[128px] -translate-x-1/2 flex-col items-center"
       style={{ left: `${at.x}%`, top: at.y - NODE / 2 }}
     >
+      {/* Duolingo'nun imza öğesi: aktif düğümün üstünde zıplayan çağrı
+          balonu. Metin duruma göre — taze derse BAŞLA, konuşması kalan
+          derse DEVAM, tekrarı gelene TEKRAR. */}
+      {state === "next" ? (
+        <motion.span
+          className="absolute -top-9 z-20 rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wide text-white brand-gradient"
+          style={{ boxShadow: "0 6px 16px -6px var(--color-brand-500)" }}
+          animate={still ? undefined : { y: [0, -5, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {card.due ? "TEKRAR" : card.started ? "DEVAM" : "BAŞLA"}
+          <span
+            aria-hidden
+            className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45"
+            style={{ background: "var(--color-brand-500)" }}
+          />
+        </motion.span>
+      ) : null}
       <motion.div
         whileTap={{ scale: 0.93 }}
         className={`relative flex items-center justify-center rounded-full ${
@@ -496,5 +623,60 @@ function NodeBadge({ state }: { state: NodeState }) {
     >
       {icon}
     </span>
+  );
+}
+
+/**
+ * "Kaldığın yer" — Duolingo'nun yüzen okunun karşılığı. Aktif düğüm ekrandan
+ * çıkınca alttan bir hap beliriyor; dokununca yol aktif düğüme kayıyor.
+ * 500 düğümlük bir haritada yukarı-aşağı gezinen kullanıcıyı tek dokunuşla
+ * eve döndürmenin en ucuz yolu. IntersectionObserver ile izleniyor; sabit
+ * konum, alt gezinme çubuğunun üstünde.
+ */
+function ReturnToActive({ targetId }: { targetId: string | null }) {
+  const [away, setAway] = useState(false);
+  const dirRef = useRef<"up" | "down">("down");
+
+  useEffect(() => {
+    if (!targetId) return;
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          dirRef.current = entry.boundingClientRect.top < 0 ? "up" : "down";
+          setAway(true);
+        } else {
+          setAway(false);
+        }
+      },
+      // Küçük bir tampon: düğüm ekranın tam kıyısındayken düğme titremesin.
+      { rootMargin: "-10% 0px -10% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [targetId]);
+
+  if (!targetId || !away) return null;
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        document
+          .getElementById(targetId)
+          ?.scrollIntoView({ block: "center", behavior: "smooth" });
+      }}
+      className="fixed left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full px-4 py-2 text-xs font-extrabold text-white brand-gradient"
+      style={{
+        // Alt gezinme çubuğunun hemen üstü; çubuk olmayan ekranlarda kıyıya iner.
+        bottom: "calc(var(--nav-h, 0px) + 1rem)",
+        boxShadow: "0 10px 26px -8px var(--color-brand-600)",
+      }}
+    >
+      <span aria-hidden className="text-sm leading-none">
+        {dirRef.current === "up" ? "↑" : "↓"}
+      </span>
+      Kaldığın yer
+    </button>
   );
 }
