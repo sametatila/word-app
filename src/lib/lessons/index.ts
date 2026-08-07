@@ -19,7 +19,8 @@ import { deA2B07 } from "./content/de-a2-b07";
 import { deA2B08 } from "./content/de-a2-b08";
 import { deA2B09 } from "./content/de-a2-b09";
 import { deA2B10 } from "./content/de-a2-b10";
-import { deB1 } from "./content/de-b1";
+import { deB1B01 } from "./content/de-b1-b01";
+import { deB1B02 } from "./content/de-b1-b02";
 
 /**
  * Ders kataloğu.
@@ -54,7 +55,8 @@ export const LESSONS: Lesson[] = [
   ...deA2B08,
   ...deA2B09,
   ...deA2B10,
-  ...deB1,
+  ...deB1B01,
+  ...deB1B02,
 ];
 
 export const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;
