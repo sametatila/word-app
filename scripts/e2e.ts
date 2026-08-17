@@ -758,20 +758,29 @@ async function main() {
 
     // Rol yapma tamamlanmadıysa ders geçilmiş sayılmıyor: alıştırmaları doğru
     // yapıp konuşmadan çıkmak dersin asıl parçasını atlamak demek.
-    const skipped = await recordLesson(USER, lesson, full, false);
+    const lessonDay = "2026-03-20";
+    const skipped = await recordLesson(USER, lesson, full, false, lessonDay);
     check("konuşmasız ders geçilmiş sayılmıyor", skipped.passed === false);
     check("geçilmeyen ders ertesi güne planlanıyor", skipped.nextDays === 1);
+    // Ders bölümü daha önce hiç XP vermiyordu; artık süre bazlı puan işliyor.
+    check("ders XP kazandırıyor", skipped.xpGained > 0, `(${skipped.xpGained})`);
+    check("ders çalışılan gün seriyi ilerletiyor", skipped.currentStreak >= 1);
 
     // Geçilince merdiven yukarı çıkıyor.
-    const first = await recordLesson(USER, lesson, full, true);
+    const first = await recordLesson(USER, lesson, full, true, lessonDay);
     check("konuşmayla birlikte ders geçiliyor", first.passed === true);
-    const second = await recordLesson(USER, lesson, full, true);
+    // Rol yapma eklenince puan artıyor: dersin asıl parçası o.
+    check("rol yapma ek XP kazandırıyor", first.xpGained > 0, `(${first.xpGained})`);
+    const second = await recordLesson(USER, lesson, full, true, lessonDay);
     check("aralık büyüyor", second.nextDays > first.nextDays,
       `(${first.nextDays} → ${second.nextDays})`);
+    // Aynı dersi yeniden çözmek XP kasmaya dönüşmemeli: en iyi sonuç zaten
+    // alınmışken fark sıfır.
+    check("tekrar çözüm XP kasmıyor", second.xpGained === 0, `(${second.xpGained})`);
 
     // Başarısızlık merdiveni başa alıyor — kural oturmadıysa uzun aralık
     // öğrenciyi kaybettirir.
-    const failed = await recordLesson(USER, lesson, 0, true);
+    const failed = await recordLesson(USER, lesson, 0, true, lessonDay);
     check("başarısızlık merdiveni sıfırlıyor", failed.nextDays === 1 && !failed.passed);
 
     // En iyi skor korunuyor: bir kez doğru yapılanı sonraki denemede
@@ -1200,8 +1209,21 @@ async function main() {
   check("doğru söyleyiş her görevde kabul ediliyor",
     speaking.every((e) =>
       e.tasks.every((t) => judgeSpeech(t.de, [t.de], t.confusions ?? []).kind === "correct")));
-  check("konuşma XP'si görev başına 8", xpFor(speaking[0], 0) === 0 &&
-    xpFor(speaking[0], 1) === 8);
+  // XP artık madde başına değil SÜRE başına (bkz. lib/xp.ts): eski tabloda
+  // beş dakikalık bir alıştırma ~46 XP veriyor, aynı sürede kelime oyunu
+  // ~500 XP kazandırıyordu ve bu, becerileri puan cinsinden değersiz kılıyordu.
+  {
+    const ex = speaking[0];
+    const items = itemCount(ex);
+    const none = xpFor(ex, 0);
+    const all = xpFor(ex, items);
+    check("hiç doğru yapmayan da çaba payı alıyor", none > 0, `(${none})`);
+    check("tam doğru daha çok kazandırıyor", all > none, `(${none} → ${all})`);
+    check("tam doğruda dakikada ~100 XP", Math.abs(all / ex.minutes - 100) < 1,
+      `(${(all / ex.minutes).toFixed(0)} XP/dk)`);
+    check("XP alıştırmanın süresiyle ölçekleniyor",
+      xpFor({ ...ex, minutes: ex.minutes * 2 }, items) === all * 2);
+  }
   check("madde sayısı görev sayısı", itemCount(speaking[0]) === speaking[0].tasks.length);
 
   console.log("\n11k) Konuşma değerlendirmesi");

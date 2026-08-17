@@ -3,6 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
+import { PLAYABLE_GAMES, type GameId } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -14,8 +15,13 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const today = normalizeDay(url.searchParams.get("day"));
   const extra = url.searchParams.get("extra") === "1";
+  // Tek oyunlu tur: "?game=artikel". Tanıtım kartı bir oyun değil, bir
+  // ekran — tek başına 20 tur tanıtım istenmesi anlamsız olurdu.
+  const raw = url.searchParams.get("game");
+  const only =
+    raw && (PLAYABLE_GAMES as readonly string[]).includes(raw) ? (raw as GameId) : undefined;
   try {
-    const payload = await loadSession(userId, today, extra);
+    const payload = await loadSession(userId, today, extra, only);
     return NextResponse.json(payload);
   } catch (err) {
     console.error("[session]", err);

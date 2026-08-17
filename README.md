@@ -60,6 +60,26 @@ uygulama gibi tam ekran açılır (PWA).
   ve bir sonraki tekrar tarihi.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
   ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
+- **Günün turu:** aynı kurs ve seviyedeki herkes her gün **aynı kelimeleri aynı sırayla**
+  görür — tur saklanmaz, günden türetilir. Tek hak, süre baskısı yok; skor tablosu ve
+  paylaşılabilir sonuç bu yüzden anlamlıdır (herkes aynı soruları çözmüştür).
+- **Günün görevleri:** her gün üç görev, biri mutlaka beceri/ders/günün turu gibi az
+  uğranan bir bölüme götürür. İlerleme ayrı bir sayaçta biriktirilmez, mevcut tablolardan
+  okunur; ödül talep edilince verilir ve tamamlanma sunucuda yeniden doğrulanır.
+- **Tek oyun oyna:** on oyunun her biri 20 turluk bağımsız bir tur olarak seçilebilir.
+  Kuyruk değişmez — kelimeler yine tekrar planından ve gün kontenjanındaki yenilerden
+  gelir, yeni kelime yine tanıtım kartıyla açılır. Değişen tek şey hangi oyunun sorulduğudur.
+- **Beşerli etaplar ve seri rozeti:** oturum 20 turluk tek blok değil; her beş turda bir
+  "devam et / şimdilik yeter" durağı gelir ve ilerleme sunucuda kalır. Üst üste doğrularda
+  ekranda seri rozeti belirir (yalnızca görsel — XP dengesine dokunmaz).
+- **Hatırlatma bildirimleri:** çalışılmayan günde günde en fazla bir web push. Metin duruma
+  göre seçilir — bugün kırılacak seri, tekrar borcu ya da kısa bir davet. İzin, kayıt anında
+  değil ilk tur bittikten sonra istenir; reddedilen bildirim izni tarayıcıda kalıcıdır.
+- **Seri onarımı:** tek bir kaçırılan gün seriyi sıfırlamıyor. Ayda bir kez, geri dönen
+  kullanıcının serisi kaldığı yerden devam eder ve özet ekranı bunu söyler.
+- **Paylaşılabilir sonuç:** tur sonunda Wordle tarzı kare deseni — hangi kelimeler olduğunu
+  ele vermeden turun nasıl geçtiğini gösterir. Telefonda sistem paylaşım sayfası,
+  masaüstünde panoya kopyalama.
 - **Mobil öncelikli, masaüstünde de tam:** mobilde alt sekme çubuğu, masaüstünde kenar çubuğu.
   Açık/koyu tema.
 
@@ -130,11 +150,32 @@ vercel env add DATABASE_URL production                     # ve preview/developm
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
 vercel env add CEREBRAS_API_KEY production                  # /sohbet için; yoksa yalnızca o sayfa kapalı
+
+# Hatırlatma bildirimleri — üçü birden gerekli, biri eksikse özellik kapalı kalır.
+npx web-push generate-vapid-keys --json                     # çıktıdaki iki anahtar
+vercel env add NEXT_PUBLIC_VAPID_PUBLIC_KEY production
+vercel env add VAPID_PRIVATE_KEY production
+vercel env add VAPID_SUBJECT production                     # mailto:seninadresin@ornek.com
+vercel env add CRON_SECRET production                       # openssl rand -hex 32
+
 vercel --prod
 ```
 
 Deploy sonrası Neon Console → Auth → Configuration → **Domains** kısmına Vercel alan adını ekle
 (önizleme dağıtımları için `https://*-<takım>.vercel.app` gibi joker desen de kabul edilir).
+
+### Hatırlatma bildirimleri
+
+Turu `vercel.json` içindeki cron tetikliyor (`/api/cron/reminders`, günde bir kez 18:00 UTC).
+Vercel'in **Hobby** planı günde birden sık cron kabul etmiyor — `0 * * * *` gibi bir ifade
+deploy'da hata verir. Kod her iki duruma da hazır: tur ne zaman çalışırsa çalışsın, o an
+yerel saati `reminder_hour`'u geçmiş ve o gün hiç çalışmamış kullanıcılara gönderiyor.
+Pro planına geçilirse `schedule` saatliğe çekilebilir; başka değişiklik gerekmez.
+
+Kişi başına günde en fazla bir bildirim gider ve içeriği kullanıcının durumuna göre seçilir:
+serisi bugün kırılacaksa seri, tekrar borcu varsa kelime sayısı, ikisi de yoksa kısa bir davet.
+İzin, oturum özet ekranında — kullanıcı bir tur bitirdikten sonra — isteniyor; profilden
+kapatılabiliyor.
 
 ## 4. Testler
 
@@ -313,3 +354,26 @@ ulaşılamazsa gömülü kopya devreye girer — ekran hiçbir durumda boş kalm
   kontrol listesi + kalıp desteği + örnek çözümle serbest yazı görevi.
 - **XP:** ilk tamamlamada tam verilir; tekrar çözümlerde yalnızca en iyi skorun farkı eklenir.
   Sonuçlar sunucuda (`user_skills`) tutulur, cihazlar arasında senkrondur.
+
+## 10. XP tablosu
+
+Puan **harcanan çabayı** ölçer, aktivitenin türünü değil: aynı beş dakika hangi yolla
+geçirilirse geçirilsin benzer XP kazandırır. Taban `src/lib/xp.ts` içinde tek yerde durur
+ve kelime oyunlarında ölçülen orana eşitlenmiştir (dakikada ~100 XP).
+
+Önceki dağılım öğrenmeyi çarpıtıyordu — ölçüm: kelime oyunları dakikada 99,5 XP, beş
+dakikalık bir okuma alıştırması ~9 XP/dk, dersler ise **sıfır**. Sekiz tamamlanmış ders ve
+sekiz rol yapma turu hesaba hiç yazılmamıştı; üstelik ders çalışılan gün seri bile
+ilerlemiyordu. Sıralamada yükselmek isteyen öğrenci kelime kartı çevirmek zorundaydı.
+
+| Yol | XP |
+|---|---|
+| Kelime cevabı | kaliteye göre 3–12 (≈100 XP/dk) |
+| Beceri alıştırması | `minutes × 100 × (0,5 + 0,5 × doğruluk)` |
+| Ders | süreye göre; rol yapma ayrı ağırlık taşır (dersin asıl parçası o) |
+| Günün turu | süreye göre, ilk kayıtta bir kez |
+| Görev ödülü | görev başına 120–200, üçü birden +300 |
+| Hayatta kalma rekoru | farkla orantılı, 25–400 arası |
+
+XP, günlük istatistik ve seri tek geçitten yazılır (`src/lib/award.ts`); yeni bir öğrenme
+yolu eklenirken üç şeyi ayrı ayrı hatırlamak gerekmez.

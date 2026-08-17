@@ -4,6 +4,8 @@ import { db } from "@/lib/db";
 import { userLessons } from "@/lib/db/schema";
 import { LESSONS, lessonsFor, levelIndex } from "./index";
 import { scoredSteps, type Lesson } from "./types";
+import { awardActivity } from "@/lib/award";
+import { xpDelta, xpForLesson } from "@/lib/xp";
 
 /**
  * Ders ilerlemesi ve kuralların tekrar zamanlaması.
@@ -113,7 +115,10 @@ export async function recordLesson(
   lesson: Lesson,
   correct: number,
   roleplayDone: boolean,
-): Promise<{ passed: boolean; nextDays: number }> {
+  /** Kullanıcının yerel günü — XP ve seri buna işlenir. */
+  today: string,
+  seconds = 0,
+): Promise<{ passed: boolean; nextDays: number; xpGained: number; currentStreak: number }> {
   const total = scoredSteps(lesson);
   const passed = roleplayDone && total > 0 && correct / total >= PASS_RATIO;
 
@@ -156,7 +161,23 @@ export async function recordLesson(
       },
     });
 
-  return { passed, nextDays };
+  // XP: dersin tasarlanmış süresine göre, tekrar çözümlerde yalnızca iyileşme
+  // farkı. Ders bölümü daha önce hiç puan vermiyordu — sekiz tamamlanmış ders
+  // ve sekiz rol yapma turu hesaba hiç yazılmamıştı, o gün çalışan öğrencinin
+  // serisi bile kırılıyordu.
+  const bestCorrect = Math.max(existing?.correct ?? 0, correct);
+  const bestRoleplay = (existing?.roleplayDone ?? false) || roleplayDone;
+  const previousXp = existing
+    ? xpForLesson(lesson.minutes, existing.correct, existing.total, existing.roleplayDone)
+    : null;
+  const gained = xpDelta(
+    xpForLesson(lesson.minutes, bestCorrect, total, bestRoleplay),
+    previousXp,
+  );
+
+  const award = await awardActivity(userId, today, gained, seconds);
+
+  return { passed, nextDays, xpGained: award.xpGained, currentStreak: award.currentStreak };
 }
 
 /**

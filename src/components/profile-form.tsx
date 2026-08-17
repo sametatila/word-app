@@ -7,6 +7,7 @@ import { authApi } from "@/lib/auth/api";
 import { AlertIcon, CheckIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
+import { PushSettings } from "@/components/push-settings";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 
 type Initial = {
@@ -255,6 +256,10 @@ export function ProfileForm({
         <h2 className="mb-3 font-bold">Uygulama olarak kur</h2>
         <InstallGuide tone="plain" />
       </section>
+
+      {/* Kurulumun hemen ardında: iPhone'da bildirim ancak uygulama ana
+          ekrana eklendikten sonra çalışıyor, iki bölümün sırası bunu anlatıyor. */}
+      <PushSettings />
 
       <section className="card p-5">
         <h2 className="mb-3 font-bold">Hesap</h2>

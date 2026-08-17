@@ -488,6 +488,14 @@ export const ClockIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Hatırlatma bildirimi — çan. */
+export const BellIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M18 9a6 6 0 1 0-12 0c0 4.5-1.5 6-1.5 6h15S18 13.5 18 9z" />
+    <path d="M10.3 18.5a2 2 0 0 0 3.4 0" />
+  </Svg>
+);
+
 /** Yatak — uyku ve rutin. */
 export const BedIcon = (p: IconProps) => (
   <Svg {...p}>

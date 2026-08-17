@@ -41,7 +41,21 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   async headers() {
-    return [{ source: "/:path*", headers: SECURITY_HEADERS }];
+    return [
+      { source: "/:path*", headers: SECURITY_HEADERS },
+      {
+        // Service worker önbelleğe alınmamalı: bildirim davranışındaki bir
+        // düzeltmenin kullanıcıya ulaşması, tarayıcının eski kopyayı ne zaman
+        // bırakacağına kalmamalı. Kapsam başlığı da burada — dosya kökten
+        // servis edildiği için `/` kapsamı zaten hakkı, ama açıkça yazmak
+        // taşınma ihtimaline karşı niyeti belgeliyor.
+        source: "/sw.js",
+        headers: [
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Service-Worker-Allowed", value: "/" },
+        ],
+      },
+    ];
   },
 
   async redirects() {

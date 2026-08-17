@@ -1,13 +1,16 @@
 import "server-only";
-import { and, asc, desc, eq, gt, inArray, lte, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gt, gte, inArray, lt, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
+import { nextStreak, shiftDay } from "@/lib/award";
+import { xpForChallengeRecord } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
   AnswerResult,
+  GameId,
   MissedWord,
   Round,
   RoundWord,
@@ -193,6 +196,14 @@ export async function buildSession(
    * bu yüzden sayılar tazelenir, kelime seçimi tekrarlanmaz.
    */
   metaOnly = false,
+  /**
+   * Tek oyunlu tur: verilirse bütün turlar bu oyundan kurulur.
+   *
+   * Kuyruk değişmiyor — kelimeler yine tekrar zamanı gelenlerden ve gün
+   * kontenjanındaki yenilerden geliyor. Oyun seçmek öğrenme planının dışına
+   * çıkmak değil, aynı planı sevilen oyunla yürütmek.
+   */
+  only?: GameId,
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
   const now = new Date();
@@ -386,7 +397,7 @@ export async function buildSession(
     }
   }
 
-  const rounds = composeRounds(dueWords, newWords, pool);
+  const rounds = composeRounds(dueWords, newWords, pool, only);
 
   // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
@@ -424,11 +435,15 @@ export async function loadSession(
   userId: string,
   today: string,
   extra = false,
+  /** Tek oyunlu tur istendiğinde o oyunun kimliği (bkz. buildSession). */
+  only?: GameId,
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
 
-  // "Yeni kelimelerle devam et" bilerek yeni bir tur ister; kayıtlıyı ezer.
-  if (!extra) {
+  // "Yeni kelimelerle devam et" ve tek oyun seçimi bilerek yeni bir tur ister;
+  // kayıtlıyı ezer. Oyun seçen kullanıcıya yarım kalmış karışık turu vermek,
+  // seçimini görmezden gelmek olurdu.
+  if (!extra && !only) {
     const [saved] = await db
       .select()
       .from(sessionState)
@@ -456,7 +471,7 @@ export async function loadSession(
     }
   }
 
-  const built = await buildSession(userId, today, extra);
+  const built = await buildSession(userId, today, extra, false, only);
   await db
     .insert(sessionState)
     .values({
@@ -522,11 +537,19 @@ export async function clearSessionState(userId: string) {
 /**
  * Oyun seçimi: kelimenin durumuna göre uygun oyunu atar ve aynı oyunun
  * arka arkaya tekrarlanmasını engelleyerek monotonluğu kırar.
+ *
+ * `only` verilirse tur tek bir oyundan kurulur — "20 tur Artikel Yarışı"
+ * gibi. Kuyruk değişmiyor: kelimeler yine tekrar zamanı gelenlerden ve gün
+ * kontenjanındaki yenilerden geliyor, yeni kelime yine tanıtım kartıyla
+ * açılıyor. Değişen tek şey hangi oyunun sorulduğu. Böylece oyun seçmek
+ * öğrenme planının dışına çıkmak değil, aynı planı sevdiği oyunla yürütmek
+ * oluyor.
  */
 function composeRounds(
   due: QueueItem[],
   fresh: QueueItem[],
   pool: (typeof words.$inferSelect)[],
+  only?: GameId,
 ): Round[] {
   const rounds: Round[] = [];
   let seq = 0;
@@ -548,10 +571,29 @@ function composeRounds(
     if (b.length) merged.push(b.shift()!);
   }
 
+  // Eşleştirme yalnız oynanıyorsa tur BAŞKA türlü kuruluyor: her tur beşer
+  // kelime tükettiği için kuyruk beşerli bloklara bölünüyor ve oyun sayısı
+  // kelime sayısıyla sınırlanıyor.
+  if (only === "match") {
+    const playable = merged.filter((m) => !m.intro);
+    for (const item of merged) {
+      if (rounds.length >= ROUNDS_PER_SESSION) break;
+      // Yeni kelimeler yine önce tanıtılıyor: hiç görülmemiş kelimeyi
+      // eşleştirmeye zorlamak oyun değil bilmece olurdu.
+      if (item.intro) rounds.push({ id: nextId(), game: "intro", word: item.word });
+    }
+    for (let i = 0; i + 5 <= playable.length && rounds.length < ROUNDS_PER_SESSION; i += 5) {
+      rounds.push({ id: nextId(), game: "match", words: playable.slice(i, i + 5).map((m) => m.word) });
+    }
+    return rounds;
+  }
+
   // Eşleştirme turu: tanıtımı yapılan kelimeler de aday olur, böylece oyun
   // ilk günden itibaren çıkar. Tur oturumun sonuna konur — o noktada tüm
   // kelimeler tanıtılmış olur.
-  const matchCandidates = merged.filter((m) => !m.intro).slice(0, 5);
+  // Tek oyun modunda bu ek tur yok: kullanıcı hangi oyunu istediyse onu
+  // oynuyor, araya başka bir oyun sıkıştırılmıyor.
+  const matchCandidates = only ? [] : merged.filter((m) => !m.intro).slice(0, 5);
   const useMatch = matchCandidates.length === 5;
 
   // Yalnızca bir önceki oyunu dışlamak yetmiyordu: "A B A B A" dizilimi kuralı
@@ -565,7 +607,12 @@ function composeRounds(
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
     const round = item.intro
       ? ({ id: nextId(), game: "intro", word: item.word } as Round)
-      : pickRound(item.word, item.strength, pool, recent, nextId, item.bias, usage);
+      : only
+        ? // Tek oyun modu: kelimeye o oyun kurulamıyorsa (çoğulu olmayan bir
+          // isim, örnek cümlesi olmayan bir kelime) kelime atlanıyor. Zorla
+          // başka bir oyuna düşmek, seçimi anlamsız kılardı.
+          makeRound(only, item.word, pool, nextId, item.strength)
+        : pickRound(item.word, item.strength, pool, recent, nextId, item.bias, usage);
     if (!round) continue;
     rounds.push(round);
     usage.set(round.game, (usage.get(round.game) ?? 0) + 1);
@@ -1069,13 +1116,13 @@ export async function submitAnswers(
     (u) => u.before < MASTERED_DAYS && u.after >= MASTERED_DAYS,
   ).length;
 
-  // Streak: bugün ilk kez aktifse güncellenir.
-  let { currentStreak, longestStreak } = profile;
-  if (profile.lastActiveDay !== today) {
-    const yesterday = shiftDay(today, -1);
-    currentStreak = profile.lastActiveDay === yesterday ? profile.currentStreak + 1 : 1;
-    longestStreak = Math.max(profile.longestStreak, currentStreak);
-  }
+  // Streak: bugün ilk kez aktifse güncellenir. Hesap `lib/award.ts` ile
+  // ortak — beceriler ve dersler de aynı kuralı uyguluyor.
+  const {
+    currentStreak,
+    longestStreak,
+    repaired: streakRepaired,
+  } = nextStreak(profile, today);
 
   await db
     .update(profiles)
@@ -1084,8 +1131,15 @@ export async function submitAnswers(
       longestStreak,
       lastActiveDay: today,
       totalXp: profile.totalXp + xpGained,
+      ...(streakRepaired ? { streakRepairAt: today } : {}),
     })
     .where(eq(profiles.userId, userId));
+
+  // Yarın kaç kelimenin tekrarı var — geri dönmek için somut bir sebep.
+  // Bu turda cevaplanan kelimelerin yeni zamanları yukarıda yazıldığı için
+  // sayı güncel: kullanıcı az önce oynadığı kelimelerin bir kısmını yarın
+  // görecek ve özet ekranı bunu söyleyebiliyor.
+  const dueTomorrow = await countDueTomorrow(userId, today);
 
   return {
     newlyMastered,
@@ -1096,7 +1150,29 @@ export async function submitAnswers(
     reviewsToday: stat.reviews,
     dailyGoal: profile.dailyGoal,
     goalReached: stat.reviews >= profile.dailyGoal,
+    streakRepaired,
+    dueTomorrow,
   };
+}
+
+/** Yarın tekrar zamanı gelecek kelime sayısı (kullanıcının yerel günüyle). */
+async function countDueTomorrow(userId: string, today: string): Promise<number> {
+  const start = shiftDay(today, 1);
+  const end = shiftDay(today, 2);
+  const [row] = await db
+    .select({ n: sql<number>`count(*)::int` })
+    .from(userWords)
+    .where(
+      and(
+        eq(userWords.userId, userId),
+        // Yarının tamamı: gün başından ertesi gün başına kadar. Bugün zamanı
+        // gelip de yapılmamış kelimeler buraya dahil değil — onlar yarının
+        // haberi değil, bugünün kalanı.
+        gte(userWords.dueAt, sql`${start}::date`),
+        lt(userWords.dueAt, sql`${end}::date`),
+      ),
+    );
+  return Number(row?.n ?? 0);
 }
 
 /** "Bunu zaten biliyorum": kelime pekişmiş sayılır, tekrar kuyruğuna girmez. */
@@ -1126,11 +1202,9 @@ export async function markKnown(userId: string, wordId: number) {
   return dueAt;
 }
 
-export function shiftDay(day: string, delta: number) {
-  const d = new Date(`${day}T00:00:00Z`);
-  d.setUTCDate(d.getUTCDate() + delta);
-  return d.toISOString().slice(0, 10);
-}
+// Gün kaydırma ve seri hesabı `lib/award.ts`'te; buradan yeniden dışa
+// aktarılıyor çünkü çağıranların çoğu zaten oturum modülünü kullanıyor.
+export { shiftDay };
 
 /**
  * Meydan okuma turu.
@@ -1250,15 +1324,22 @@ export async function buildChallenge(
 export async function recordChallengeScore(
   userId: string,
   score: number,
-): Promise<{ best: number; previous: number }> {
+): Promise<{ best: number; previous: number; xpGained: number }> {
   const profile = await ensureProfile(userId);
   const previous = profile.challengeBest;
-  if (score <= previous) return { best: previous, previous };
+  if (score <= previous) return { best: previous, previous, xpGained: 0 };
+
+  // Rekor kırmak ayrıca ödüllendiriliyor. Turun cevapları zaten `/api/answers`
+  // üzerinden XP kazandırıyor; buradaki ödül iyi oynamanın karşılığı — aksi
+  // hâlde uygulamanın en zorlu bölümü, kolay bir tekrar turuyla aynı puanı
+  // veriyordu.
+  const xpGained = xpForChallengeRecord(score, previous);
+
   await db
     .update(profiles)
-    .set({ challengeBest: score })
+    .set({ challengeBest: score, totalXp: profile.totalXp + xpGained })
     .where(eq(profiles.userId, userId));
-  return { best: score, previous };
+  return { best: score, previous, xpGained };
 }
 
 /** İlerleme ekranı verileri */

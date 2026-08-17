@@ -25,6 +25,28 @@ export const GAME_LABELS: Record<GameId, string> = {
   truefalse: "Doğru mu Yanlış mı",
 };
 
+/**
+ * Tek başına seçilip oynanabilen oyunlar.
+ *
+ * `intro` dışarıda: o bir oyun değil, yeni kelimenin tanıtım kartı. Yirmi tur
+ * boyunca kart okumak bir seçenek olmamalı — yine de karışık turlarda ve tek
+ * oyunlu turlarda yeni kelimelerin önüne kendiliğinden ekleniyor.
+ */
+export const PLAYABLE_GAMES = [
+  "match",
+  "choice",
+  "artikel",
+  "cloze",
+  "scramble",
+  "typing",
+  "order",
+  "plural",
+  "listen",
+  "truefalse",
+] as const satisfies readonly GameId[];
+
+export type PlayableGame = (typeof PLAYABLE_GAMES)[number];
+
 export type RoundWord = {
   id: number;
   de: string;
@@ -150,4 +172,18 @@ export type AnswerResult = {
   reviewsToday: number;
   dailyGoal: number;
   goalReached: boolean;
+  /**
+   * Bir gün kaçırılmıştı ve seri sıfırlanmak yerine kaldığı yerden sürdü.
+   * Özet ekranı bunu söylüyor: kullanıcı kaybettiğini sandığı şeyi geri
+   * aldığını bilmezse mekanizmanın hiçbir etkisi olmaz.
+   */
+  streakRepaired: boolean;
+  /**
+   * Yarın tekrarı gelecek kelime sayısı.
+   *
+   * Oturum sonunda geri dönmek için somut bir sebep veriyor. Önce yalnızca
+   * "tekrar planına alındı" yazıyordu — doğru ama tarihsiz bir söz; kullanıcıya
+   * ertesi gün uygulamayı açması için bir şey vermiyordu.
+   */
+  dueTomorrow: number;
 };

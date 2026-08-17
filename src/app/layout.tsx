@@ -1,12 +1,42 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
+/**
+ * Paylaşılan bağlantının nasıl göründüğü.
+ *
+ * Mutlak adres gerekiyor: `og:image` göreli bir yol kabul etmiyor, sosyal ağ
+ * bunu kendi alan adında arar ve önizleme boş çıkardı. Vercel önizleme
+ * dağıtımlarında adres her seferinde değiştiği için ortamdan okunuyor;
+ * yoksa üretim adresi kullanılıyor.
+ */
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://exfe.me");
+
+const description =
+  "A1'den C1'e 7.392 kelime, on oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması. Hochdeutsch ve Zürih Almancası, Türkçe anlatımıyla.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Wortspiel — Almanca Kelime",
-  description:
-    "A1'den C1'e 7.392 kelime, on oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması.",
+  description,
   applicationName: "Wortspiel",
   manifest: "/manifest.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    siteName: "Wortspiel",
+    title: "Wortspiel — Almanca kelimeleri oynayarak öğren",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wortspiel — Almanca kelimeleri oynayarak öğren",
+    description,
+  },
   appleWebApp: { capable: true, title: "Wortspiel", statusBarStyle: "black-translucent" },
   icons: {
     icon: [

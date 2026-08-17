@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   if (typeof body !== "object" || body === null) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
-  const { lessonId, correct, roleplayDone } = body as Record<string, unknown>;
+  const { lessonId, correct, roleplayDone, day, seconds } = body as Record<string, unknown>;
 
   const lesson = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
   if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
@@ -37,8 +37,23 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_score" }, { status: 400 });
   }
 
+  // Gün istemciden geliyor çünkü seri kullanıcının yerel gününe göre işliyor;
+  // sunucunun UTC günü Türkiye'de gece yarısından sonra yanlış gün olurdu.
+  const today =
+    typeof day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(day)
+      ? day
+      : new Date().toISOString().slice(0, 10);
+  const secs = typeof seconds === "number" ? Math.max(0, Math.min(3600, Math.round(seconds))) : 0;
+
   try {
-    const result = await recordLesson(userId, lesson, Math.floor(correct), roleplayDone === true);
+    const result = await recordLesson(
+      userId,
+      lesson,
+      Math.floor(correct),
+      roleplayDone === true,
+      today,
+      secs,
+    );
     return NextResponse.json(result);
   } catch (err) {
     console.error("[lesson]", err);

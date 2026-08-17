@@ -4,13 +4,15 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type {
-  Answer,
-  AnswerResult,
-  MissedWord,
-  Round,
-  SessionPayload,
-  SessionProgress,
+import {
+  GAME_LABELS,
+  type Answer,
+  type AnswerResult,
+  type MissedWord,
+  type PlayableGame,
+  type Round,
+  type SessionPayload,
+  type SessionProgress,
 } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
@@ -20,9 +22,36 @@ import { ChallengePlayer } from "@/components/challenge-player";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { FitBox } from "@/components/fit-box";
 import { AnswerPulse } from "@/components/answer-pulse";
-import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, RefreshIcon } from "@/components/icons";
+import { PushOptIn } from "@/components/push-optin";
+import { ShareResult } from "@/components/share-result";
+import { GamePicker } from "@/components/game-picker";
+import { DailyPlayer } from "@/components/daily-player";
+import { DailyCard } from "@/components/daily-card";
+import { QuestCard } from "@/components/quest-card";
+import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, PuzzleIcon, RefreshIcon } from "@/components/icons";
 
-type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error" | "challenge";
+type Status =
+  | "loading"
+  | "ready"
+  | "playing"
+  | "stage"
+  | "done"
+  | "empty"
+  | "error"
+  | "challenge"
+  | "daily";
+
+/**
+ * Bir etaptaki tur sayısı.
+ *
+ * Oturum 20 turluk tek bir blok olarak sunuluyordu ve ölçüm bunun bir duvar
+ * olduğunu gösterdi: yedi kullanıcının yedisinde son kayıtlı durum "tur
+ * kuruldu, hiç oynanmadı" idi — uygulamayı açıp 20 turu görüp kapatmışlardı.
+ * Beşerli etaplar aynı turu bitirilebilir parçalara bölüyor; her etap sonunda
+ * durmak da devam etmek de meşru bir seçenek oluyor ve yarım kalan tur zaten
+ * sunucuda saklandığı için ertesi gün kaldığı yerden sürüyor.
+ */
+const STAGE_SIZE = 5;
 
 type ErrorKind = "auth" | "db" | "network";
 
@@ -46,10 +75,31 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
   const missed = useRef<MissedWord[]>([]);
+  // Cevapların doğru/yanlış sırası — paylaşılan özetteki kareler bu.
+  // `pending` gönderildikten sonra boşaldığı için ayrı tutuluyor.
+  const marks = useRef<boolean[]>([]);
   // Yarım kalan tur artık sunucudan gelir; cihazda hiçbir şey saklanmaz.
   const [resumable, setResumable] = useState<SessionProgress | null>(null);
+  /** Tek oyunlu tur seçiliyse o oyun; karışık turda null. */
+  const [onlyGame, setOnlyGame] = useState<PlayableGame | null>(null);
+  /**
+   * Üst üste doğru sayısı ve turun en iyisi.
+   *
+   * Bilerek yalnızca görsel: XP'ye dokunmuyor. Combo çarpanı eklemek, yeni
+   * hizalanan puan dengesini (dakikada ~100 XP, bkz. lib/xp.ts) bozar ve
+   * kelime oyunlarını becerilerin önüne geçirirdi. Buradaki iş heyecan
+   * yaratmak — hayatta kalma turunda combo'nun yaptığı şey, ki ölçümde onu
+   * deneyen kullanıcı en sadık kullanıcı çıktı.
+   */
+  const [combo, setCombo] = useState(0);
+  const bestCombo = useRef(0);
+  /** Etap özetinde gösterilecek: bu etaba girerken neredeydik. */
+  const stageStart = useRef({ index: 0, correct: 0, total: 0, xp: 0 });
+  /** Tur bitmeden "şimdilik yeter" denildi mi — özetin başlığı buna bağlı. */
+  const stoppedEarly = useRef(false);
 
-  const load = useCallback(async (opts: { extra?: boolean; fresh?: boolean } = {}) => {
+  const load = useCallback(
+    async (opts: { extra?: boolean; fresh?: boolean; game?: PlayableGame | null } = {}) => {
     setStatus("loading");
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
@@ -58,10 +108,20 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     pending.current = [];
     sessionXp.current = 0;
     missed.current = [];
+    marks.current = [];
+    setCombo(0);
+    bestCombo.current = 0;
+    stoppedEarly.current = false;
+    stageStart.current = { index: 0, correct: 0, total: 0, xp: 0 };
+    // Seçim `undefined` ise dokunulmuyor, `null` ise karışık tura dönülüyor.
+    const game = opts.game === undefined ? onlyGame : opts.game;
+    setOnlyGame(game);
     try {
       // "Yeni tura başla" önce kayıtlı turu atar, sonra yenisini ister.
       if (opts.fresh) await fetch("/api/session", { method: "DELETE" });
-      const res = await fetch(`/api/session?day=${localDay()}${opts.extra ? "&extra=1" : ""}`, {
+      const res = await fetch(
+        `/api/session?day=${localDay()}${opts.extra ? "&extra=1" : ""}${game ? `&game=${game}` : ""}`,
+        {
         cache: "no-store",
       });
       if (res.status === 401) {
@@ -85,7 +145,14 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       setStatus("error");
       return null;
     }
-  }, []);
+  },
+    // `onlyGame` bilerek bağımlılık değil: seçim her çağrıda parametreyle
+    // geliyor ve okunan değer yalnızca "dokunma" durumunda kullanılıyor.
+    // Bağımlılık olsaydı her seçim `load`'u yeniden kurar ve açılıştaki
+    // etkiyi tetikleyip turu ikinci kez isterdi.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
 
   useEffect(() => {
     void load();
@@ -99,6 +166,13 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     sessionXp.current = resumable.xp;
     missed.current = resumable.missed;
     startedAt.current = Date.now();
+    setCombo(0);
+    stageStart.current = {
+      index: resumable.index,
+      correct: resumable.correct,
+      total: resumable.total,
+      xp: resumable.xp,
+    };
     setStatus("playing");
   }
 
@@ -112,6 +186,10 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     setTally({ correct: 0, total: 0, xp: 0 });
     sessionXp.current = 0;
     missed.current = [];
+    setCombo(0);
+    bestCombo.current = 0;
+    stoppedEarly.current = false;
+    stageStart.current = { index: 0, correct: 0, total: 0, xp: 0 };
     startedAt.current = Date.now();
     setStatus("playing");
   }
@@ -177,6 +255,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     async (round: Round, results: GameResult[]) => {
       const enriched: Answer[] = results.map((r) => ({ ...r, game: round.game }));
       pending.current.push(...enriched);
+      marks.current.push(...results.map((r) => r.correct));
 
       // Yanlış bilinen kelimeleri oturum özetinde göstermek için topla
       if (results.some((r) => !r.correct)) {
@@ -196,6 +275,16 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       };
       setTally(next);
 
+      // Combo: turdaki cevaplar sırayla işleniyor, bir yanlış seriyi kırıyor.
+      // Eşleştirme turu tek seferde beş cevap üretir; hepsi doğruysa seri beşer
+      // beşer büyür — oyunun kendisi de öyle çalışıyor.
+      let running = combo;
+      for (const r of results) {
+        running = r.correct ? running + 1 : 0;
+        if (running > bestCombo.current) bestCombo.current = running;
+      }
+      setCombo(running);
+
       const rounds = session?.rounds.length ?? 0;
       const isLast = index >= rounds - 1;
       const nextIndex = isLast ? rounds : index + 1;
@@ -207,12 +296,22 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         const res = await flush(true, progress);
         setResult(res ? { ...res, xpGained: sessionXp.current } : null);
         setStatus("done");
-      } else {
-        setIndex(nextIndex);
-        void flush(false, progress);
+        return;
       }
+
+      setIndex(nextIndex);
+      // Sonuç ara turlarda da saklanıyor: kullanıcı etap sonunda durursa özet
+      // ekranı güncel seriyi, günlük hedefi ve "yarın kaç kelime" bilgisini
+      // gösterebilsin. Beklenmiyor — turlar arası gecikme yaratmamalı.
+      void flush(false, progress).then((res) => {
+        if (res) setResult({ ...res, xpGained: sessionXp.current });
+      });
+
+      // Etap sınırı: burada durmak da devam etmek de meşru. İlerleme zaten
+      // sunucuya yazıldı, çıkan kullanıcı hiçbir şey kaybetmiyor.
+      if (nextIndex % STAGE_SIZE === 0) setStatus("stage");
     },
-    [flush, index, session, tally],
+    [combo, flush, index, session, tally],
   );
 
   // Sekme kapanırsa gönderilememiş cevapları kaydetmeyi dene. Her tur zaten
@@ -250,6 +349,17 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     return () => window.removeEventListener("pagehide", onHide);
   }, []);
 
+  if (status === "daily")
+    return (
+      <Screen fills>
+        <DailyPlayer
+          onExit={() => {
+            router.refresh();
+            void load();
+          }}
+        />
+      </Screen>
+    );
   if (status === "challenge")
     return (
       <Screen fills>
@@ -274,8 +384,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           meta={session.meta}
           rounds={session.rounds}
           resumable={resumable}
+          onlyGame={onlyGame}
           onStart={() => void startFresh()}
           onResume={resume}
+          onPickGame={(game) => void load({ game, fresh: true })}
+          onDaily={() => setStatus("daily")}
           leaderboard={leaderboard}
         />
       </Screen>
@@ -289,7 +402,33 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   if (status === "empty")
     return (
       <Screen>
-        <EmptyCard meta={session?.meta} onExtra={() => void load({ extra: true })} />
+        <EmptyCard
+          meta={session?.meta}
+          onlyGame={onlyGame}
+          onExtra={() => void load({ extra: true })}
+          onMixed={() => void load({ game: null, fresh: true })}
+        />
+      </Screen>
+    );
+  if (status === "stage" && session)
+    return (
+      <Screen>
+        <StageCard
+          stage={Math.ceil(index / STAGE_SIZE)}
+          stages={Math.ceil(session.rounds.length / STAGE_SIZE)}
+          correct={tally.correct - stageStart.current.correct}
+          total={tally.total - stageStart.current.total}
+          bestCombo={bestCombo.current}
+          remaining={session.rounds.length - index}
+          onContinue={() => {
+            stageStart.current = { index, correct: tally.correct, total: tally.total, xp: tally.xp };
+            setStatus("playing");
+          }}
+          onStop={() => {
+            stoppedEarly.current = true;
+            setStatus("done");
+          }}
+        />
       </Screen>
     );
   if (status === "done")
@@ -299,6 +438,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           tally={tally}
           result={result}
           missed={missed.current}
+          marks={marks.current}
+          level={session?.meta.level ?? "A1"}
+          partial={stoppedEarly.current}
           onContinue={() => {
             router.refresh();
             void load();
@@ -343,9 +485,27 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
               );
             })()}
           </span>
-          <span className="muted">
-            {tally.total > 0 ? `%${Math.round((tally.correct / tally.total) * 100)} doğru` : "Hadi başlayalım"}
-          </span>
+          {/* Combo üç doğrudan önce görünmüyor: her doğru cevapta yanıp sönen
+              bir rozet, ödül olmaktan çıkıp gürültü olurdu. */}
+          {combo >= 3 ? (
+            <motion.span
+              key={combo}
+              initial={{ scale: 1.35 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 420, damping: 16 }}
+              className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
+              style={{
+                background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
+                color: "var(--color-flame-500)",
+              }}
+            >
+              <FlameIcon size={12} /> {combo} üst üste
+            </motion.span>
+          ) : (
+            <span className="muted">
+              {tally.total > 0 ? `%${Math.round((tally.correct / tally.total) * 100)} doğru` : "Hadi başlayalım"}
+            </span>
+          )}
         </div>
         <div className="h-2 w-full overflow-hidden rounded-full surface-2">
           <motion.div
@@ -414,16 +574,23 @@ function StartCard({
   meta,
   rounds,
   resumable,
+  onlyGame,
   onStart,
   onResume,
+  onPickGame,
+  onDaily,
   leaderboard,
 }: {
   meta: SessionPayload["meta"];
   rounds: Round[];
   /** Sunucudaki yarım kalan tur — varsa "kaldığın yerden devam" gösterilir. */
   resumable: SessionProgress | null;
+  /** Tek oyunlu tur seçiliyse o oyun; karışık turda null. */
+  onlyGame: PlayableGame | null;
   onStart: () => void;
   onResume: () => void;
+  onPickGame: (game: PlayableGame | null) => void;
+  onDaily: () => void;
   /** Sunucuda hazırlanan sıralama tablosu — yalnızca bu kartta görünür. */
   leaderboard?: ReactNode;
 }) {
@@ -512,7 +679,9 @@ function StartCard({
             </div>
           ) : (
             <button onClick={onStart} className="btn btn-primary w-full px-5 py-3.5 text-base">
-              {rounds.length} turluk oturuma başla
+              {onlyGame
+                ? `${GAME_LABELS[onlyGame]} · ${rounds.length} tur`
+                : `${rounds.length} turluk oturuma başla`}
             </button>
           )}
 
@@ -548,6 +717,13 @@ function StartCard({
           </div>
         </div>
       </div>
+      {/* Günün turu oyun seçicinin ÜSTÜNDE: günde bir kez oynanan, herkesle
+          aynı olan ve kaçırılınca geri gelmeyen tek şey bu. */}
+      <DailyCard onPlay={onDaily} />
+      {/* Görevler oyun seçicinin üstünde: biri hep beceriler ya da derslere
+          götürüyor ve o bölümler bugüne kadar neredeyse hiç açılmamıştı. */}
+      <QuestCard />
+      <GamePicker active={onlyGame} onPick={onPickGame} />
       {leaderboard}
     </motion.div>
   );
@@ -621,11 +797,46 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
 
 function EmptyCard({
   meta,
+  onlyGame,
   onExtra,
+  onMixed,
 }: {
   meta: SessionPayload["meta"] | undefined;
+  onlyGame: PlayableGame | null;
   onExtra: () => void;
+  onMixed: () => void;
 }) {
+  // Tek oyun seçiliyken boş dönmesinin sebebi hedefin tamamlanması değil,
+  // o oyunun kurulabileceği kelimenin kalmaması: Çoğul Bilmece çoğulu olan
+  // isim, Cümleyi Tamamla örnek cümlesi olan kelime ister. İki durumu aynı
+  // metinle anlatmak kullanıcıyı yanıltırdı.
+  if (onlyGame) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mx-auto w-full max-w-md"
+      >
+        <div className="card p-8 text-center">
+          <div className="surface-2 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl text-[color:var(--color-brand-500)]">
+            <PuzzleIcon size={28} />
+          </div>
+          <h2 className="text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime kalmadı</h2>
+          <p className="muted mt-2 text-sm">
+            Bu oyun her kelimeyle oynanamıyor — bugünün kuyruğunda uygun kelime yok. Karışık
+            tur bütün kelimeleri kullanır.
+          </p>
+          <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+            Karışık tura dön
+          </button>
+          <button onClick={onExtra} className="btn btn-ghost mt-2 w-full px-5 py-3">
+            Yeni kelimelerle devam et
+          </button>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -655,16 +866,106 @@ function EmptyCard({
   );
 }
 
+/**
+ * Etap sonu ekranı.
+ *
+ * İki işi var. Birincisi turu bitirilebilir kılmak: 20 turluk bir blok
+ * kullanıcıyı başlamadan kaçırıyordu, beş tur ise bir oturuşta bitiyor.
+ * İkincisi durmayı meşrulaştırmak — "şimdilik yeter" bir vazgeçme değil,
+ * sunulan bir seçenek. İlerleme zaten sunucuda; ertesi gün kaldığı yerden
+ * devam ediyor.
+ */
+function StageCard({
+  stage,
+  stages,
+  correct,
+  total,
+  bestCombo,
+  remaining,
+  onContinue,
+  onStop,
+}: {
+  stage: number;
+  stages: number;
+  correct: number;
+  total: number;
+  bestCombo: number;
+  remaining: number;
+  onContinue: () => void;
+  onStop: () => void;
+}) {
+  const perfect = total > 0 && correct === total;
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.97 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="relative mx-auto w-full max-w-md"
+    >
+      {/* Kutlama yalnızca etap tertemiz geçtiyse: her etapta patlayan konfeti
+          birkaç turda değersizleşir. */}
+      <Confetti fire={perfect ? stage : 0} count={22} />
+
+      <div className="card overflow-hidden">
+        <div className="brand-gradient px-6 py-5 text-center text-white">
+          <p className="text-sm opacity-90">
+            Etap {stage} / {stages}
+          </p>
+          <h2 className="mt-1 text-xl font-bold">
+            {perfect ? "Etap tertemiz geçti" : "Etap tamam"}
+          </h2>
+          <div className="mt-3 flex items-center justify-center gap-1.5">
+            {Array.from({ length: stages }, (_, i) => (
+              <span
+                key={i}
+                className="h-1.5 rounded-full transition-all"
+                style={{
+                  width: i < stage ? 22 : 10,
+                  background: i < stage ? "#fff" : "rgba(255,255,255,0.35)",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
+          <Stat label="Bu etap" value={`${correct}/${total}`} />
+          <Stat label="En uzun seri" value={bestCombo > 0 ? `${bestCombo}` : "—"} />
+        </div>
+
+        <div className="space-y-2 p-6 pt-4">
+          <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5 text-base">
+            Devam et · {remaining} tur kaldı
+          </button>
+          <button onClick={onStop} className="btn btn-ghost w-full px-5 py-3">
+            Şimdilik yeter
+          </button>
+          <p className="muted pt-1 text-center text-xs">
+            Durursan ilerlemen kayıtlı kalır; bir sonraki gelişinde bu turdan devam edersin.
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function SummaryCard({
   tally,
   result,
   missed,
+  marks,
+  level,
+  partial,
   onContinue,
   onChallenge,
 }: {
   tally: { correct: number; total: number; xp: number };
   result: AnswerResult | null;
   missed: MissedWord[];
+  /** Cevapların doğru/yanlış sırası — paylaşılan özetteki kareler. */
+  marks: boolean[];
+  level: string;
+  /** Tur bitmeden bırakıldıysa özet "tamamlandı" demiyor. */
+  partial?: boolean;
   onContinue: () => void;
   onChallenge: () => void;
 }) {
@@ -694,7 +995,9 @@ function SummaryCard({
           >
             <ConfettiIcon size={30} />
           </motion.div>
-          <h2 className="mt-3 text-2xl font-bold">Tur tamamlandı</h2>
+          <h2 className="mt-3 text-2xl font-bold">
+            {partial ? "Buraya kadar" : "Tur tamamlandı"}
+          </h2>
           <p className="mt-1 text-sm opacity-90">
             +<CountUp value={xp} /> XP kazandın
           </p>
@@ -749,10 +1052,44 @@ function SummaryCard({
           </div>
         ) : null}
 
+        {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart:
+            sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
+            açıklanamaz hâle getirir. */}
+        {result?.streakRepaired ? (
+          <div
+            className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
+            style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)" }}
+          >
+            <p
+              className="flex items-center justify-center gap-1.5 text-sm font-bold"
+              style={{ color: "var(--color-flame-500)" }}
+            >
+              <FlameIcon size={16} /> Serin kurtarıldı
+            </p>
+            <p className="muted mt-1 text-xs">
+              Bir gün ara vermiştin; seri sıfırlanmadı, {result.currentStreak} günden devam
+              ediyor. Bu hak ayda bir kez işler.
+            </p>
+          </div>
+        ) : null}
+
         <p className="muted px-6 pt-4 text-center text-xs">
           Bu turdaki kelimeler tekrar planına alındı; unutmaya başlayacağın gün
           kendiliğinden karşına çıkacaklar.
         </p>
+
+        {/* Ertesi güne dair somut bir sayı. "Tekrar planına alındı" doğruydu
+            ama tarihsizdi; kullanıcıya yarın uygulamayı açmak için bir sebep
+            vermiyordu. */}
+        {result && result.dueTomorrow > 0 ? (
+          <p className="px-6 pt-2 text-center text-sm font-semibold">
+            Yarın{" "}
+            <span style={{ color: "var(--color-brand-500)" }}>
+              {result.dueTomorrow} kelimenin
+            </span>{" "}
+            tekrarı var.
+          </p>
+        ) : null}
 
         {missed.length ? (
           <div className="px-6 pt-4">
@@ -779,13 +1116,25 @@ function SummaryCard({
           </div>
         ) : null}
 
+        {/* Hatırlatma izni tam burada isteniyor: tur bitti, XP göründü, seri
+            ekranda duruyor. Girişte sorulan izin reddedilir ve tarayıcıda
+            kalıcı olarak kapanır — ikinci şans yok. */}
+        <PushOptIn streak={result?.currentStreak ?? 0} />
+
         <div className="space-y-2 p-6 pt-4">
           <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5">
-            Devam et
+            {partial ? "Tura geri dön" : "Devam et"}
           </button>
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
             Hayatta kalma turu
           </button>
+          <ShareResult
+            marks={marks}
+            total={tally.total}
+            accuracy={accuracy}
+            streak={result?.currentStreak ?? 0}
+            level={level}
+          />
         </div>
       </div>
     </motion.div>

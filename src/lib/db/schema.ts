@@ -60,8 +60,88 @@ export const profiles = pgTable("profiles", {
   // Hayatta kalma turunun en iyi skoru. Cihazda değil burada durur: rekor
   // hesaba aittir, telefonda kırılan rekor tarayıcıda da görünmelidir.
   challengeBest: integer("challenge_best").notNull().default(0),
+  /**
+   * Hatırlatmanın gönderilebileceği **en erken** yerel saat.
+   *
+   * Kesin gönderim saati değil, bir alt sınır. Sebebi Vercel'in cron
+   * davranışı: Hobby planında günde birden sık tetikleme deploy'da reddediliyor,
+   * yani tur günde bir kez ve herkes için aynı UTC anında çalışıyor. Bu tek
+   * anda "yerel saat tam 20:00 olsun" diye beklemek, saat dilimi batıda kalan
+   * kullanıcıya hiç bildirim göndermemek anlamına gelirdi — kapı her gün
+   * kapalı kalırdı. Varsayılan bu yüzden öğlen: turun çalıştığı anda
+   * Türkiye'de akşam, Orta Avrupa'da akşamüstü oluyor ve ikisi de kapıdan
+   * geçiyor.
+   *
+   * Cron saatlik çalışacak şekilde yükseltilirse (Pro planı) alan gerçek
+   * anlamını kazanıyor ve kullanıcı kendi saatini seçebiliyor; kod tarafında
+   * değişiklik gerekmiyor.
+   *
+   * Saat dilimi de burada duruyor çünkü bildirimi gönderen taraf sunucu ve o
+   * an tarayıcıya soramıyor: "bugün çalışmadın" ifadesi ancak kullanıcının
+   * günü biliniyorsa doğru olur.
+   */
+  reminderHour: integer("reminder_hour").notNull().default(12),
+  timezone: text("timezone").notNull().default("Europe/Istanbul"),
+  remindersEnabled: boolean("reminders_enabled").notNull().default(true),
+  /**
+   * En son hangi gün hatırlatma gönderildi.
+   *
+   * Kullanıcı başına, cihaz başına değil: üç cihazı olan biri üç bildirim
+   * almamalı. Ayrıca cron'un günde birden çok kez çalıştığı kurulumlarda
+   * tekrarı bu alan engelliyor — cron'un sıklığı değişse de kullanıcının
+   * gördüğü şey değişmiyor.
+   */
+  lastReminderDay: date("last_reminder_day"),
+  /**
+   * Serinin en son ne zaman onarıldığı.
+   *
+   * Tek bir kaçırılan gün seriyi sıfırlıyordu ve bu, geri dönen kullanıcıyı
+   * tam döndüğü anda cezalandırıyordu: dokuz günlük seri bir günlük bir
+   * aksama yüzünden bire düşünce, geri gelmenin ödülü kayıp oluyordu.
+   * Onarım tek bir kaçırılan günü affediyor ve ayda bir kullanılabiliyor —
+   * her gün affeden bir seri, seri olmaktan çıkardı.
+   */
+  streakRepairAt: date("streak_repair_at"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+/**
+ * Web push abonelikleri — cihaz başına bir satır.
+ *
+ * Uygulamanın geri çağırma kanalı yoktu: serisi kırılan kullanıcıya bunu
+ * söyleyen hiçbir şey yoktu ve geri dönmesi tamamen kendi hatırlamasına
+ * kalıyordu. Ölçülen kullanımda yedi kullanıcıdan yalnızca biri yedi ayrı
+ * güne ulaşmıştı.
+ *
+ * Abonelik tarayıcıya ait, hesaba değil: aynı kişi telefonundan ve
+ * bilgisayarından ayrı ayrı abone olur, ikisi de burada durur. Bu yüzden
+ * "bugün bildirim gönderildi mi" bilgisi burada değil profilde tutuluyor.
+ */
+export const pushSubscriptions = pgTable(
+  "push_subscriptions",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** Push servisinin adresi — aboneliğin gerçek kimliği budur. */
+    endpoint: text("endpoint").notNull(),
+    p256dh: text("p256dh").notNull(),
+    auth: text("auth").notNull(),
+    /**
+     * Arka arkaya başarısız gönderim sayısı.
+     *
+     * Push servisi 404/410 dönerse abonelik ölmüştür ve satır hemen silinir.
+     * Geçici hatalar (ağ, 5xx) ise silmeyi hak etmiyor; onlar burada sayılıyor
+     * ve ancak ısrar ederse abonelik düşüyor. Aksi hâlde tek bir kötü gece
+     * bütün aboneleri silerdi.
+     */
+    failures: integer("failures").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("push_subscriptions_endpoint_idx").on(t.endpoint),
+    index("push_subscriptions_user_idx").on(t.userId),
+  ],
+);
 
 /** Kelime başına adaptif tekrar durumu (SM-2 türevi) */
 export const userWords = pgTable(
@@ -188,6 +268,63 @@ export const sessionState = pgTable("session_state", {
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+
+/**
+ * Günün ortak turu — kullanıcı başına günde bir sonuç.
+ *
+ * Uygulamadaki bütün turlar kişiye özeldi: herkesin kuyruğu kendi tekrar
+ * planından çıkıyordu, dolayısıyla iki kişinin skoru karşılaştırılamıyordu ve
+ * paylaşılan bir sonuç kimseye bir şey ifade etmiyordu. Günün turunda aynı
+ * kurs ve seviyedeki herkes **aynı kelimeleri aynı sırayla** görüyor; skor bu
+ * yüzden anlamlı, tablo bu yüzden adil.
+ *
+ * Tek hak bilinçli: ikinci deneme, tabloyu en çok tekrar edenin kazandığı bir
+ * yarışa çevirirdi. Wordle'ın günde tek bulmacası da aynı sebeple tek.
+ */
+export const dailyScores = pgTable(
+  "daily_scores",
+  {
+    userId: text("user_id").notNull(),
+    day: date("day").notNull(),
+    /** Turun kimliği: aynı gün farklı seviyeler farklı turlar oynar. */
+    course: text("course").notNull(),
+    level: text("level").notNull(),
+    score: integer("score").notNull().default(0),
+    correct: integer("correct").notNull().default(0),
+    total: integer("total").notNull().default(0),
+    /** En uzun doğru serisi — paylaşılan özette ve tabloda görünür. */
+    bestCombo: integer("best_combo").notNull().default(0),
+    seconds: integer("seconds").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.userId, t.day] }),
+    // Günün tablosu: aynı gün, aynı kurs ve seviyedekiler puana göre sıralanır.
+    index("daily_scores_board_idx").on(t.day, t.course, t.level, t.score),
+  ],
+);
+
+/**
+ * Günlük görevlerin ödül kaydı.
+ *
+ * Yalnızca ödülü ALINMIŞ görevler yazılıyor; ilerlemenin kendisi burada
+ * tutulmuyor. Sebebi, ilerlemenin zaten başka tablolarda olması: "10 kelime
+ * tekrar et" `daily_stats`'ta, "bir ders bitir" `user_lessons`'ta duruyor.
+ * Aynı sayıyı ikinci bir yerde biriktirmek, iki sayacın ayrışması demekti —
+ * ve ayrıştığında hangisinin doğru olduğu belli olmazdı.
+ */
+export const questClaims = pgTable(
+  "quest_claims",
+  {
+    userId: text("user_id").notNull(),
+    day: date("day").notNull(),
+    /** Görev kimliği ya da günün üçünü birden bitirme ödülü için "all". */
+    questId: text("quest_id").notNull(),
+    xp: integer("xp").notNull().default(0),
+    claimedAt: timestamp("claimed_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.day, t.questId] })],
+);
 
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;

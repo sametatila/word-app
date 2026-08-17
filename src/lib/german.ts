@@ -101,6 +101,14 @@ export function pluralChoices(
   de: string,
   formen: string | null,
   count: number,
+  /**
+   * Rastgelelik kaynağı.
+   *
+   * Günün ortak turu aynı seviyedeki herkese aynı şıkları göstermek zorunda
+   * (bkz. lib/daily.ts) ve bu ancak üretim tohumdan türetilirse mümkün.
+   * Verilmezse normal turlardaki davranış sürüyor.
+   */
+  rand: () => number = Math.random,
 ): { answer: string; distractors: string[] } | null {
   if (!de || /\s/.test(de)) return null; // çok kelimeli başlıklar bu turun dışında
   const rule = parsePluralRule(formen ?? "");
@@ -127,7 +135,7 @@ export function pluralChoices(
   }
 
   // Kademe içinde sıra rastgele: hep aynı üç çeldirici gelirse şıklar ezberlenir.
-  const ordered = [...shufflePlural(tiers[0]), ...shufflePlural(tiers[1])];
+  const ordered = [...shufflePlural(tiers[0], rand), ...shufflePlural(tiers[1], rand)];
   if (ordered.length < count) return null;
   return { answer, distractors: ordered.slice(0, count) };
 }
@@ -140,10 +148,10 @@ export function pluralOf(de: string, formen: string | null): string | null {
   return joinPlural(rule.umlaut ? umlautStem(de) : de, rule.suffix);
 }
 
-function shufflePlural<T>(arr: T[]): T[] {
+function shufflePlural<T>(arr: T[], rand: () => number): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(rand() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;

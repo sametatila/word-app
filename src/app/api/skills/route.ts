@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, profiles, userSkills } from "@/lib/db/schema";
+import { userSkills } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { ensureProfile, shiftDay } from "@/lib/session";
+import { ensureProfile } from "@/lib/session";
+import { awardActivity } from "@/lib/award";
 import { getExercise, itemCount, xpFor } from "@/lib/skills";
 
 export const dynamic = "force-dynamic";
@@ -66,38 +67,16 @@ export async function POST(req: Request) {
         },
       });
 
-    await db
-      .insert(dailyStats)
-      .values({ userId, day: today, xp: xpGained, seconds: parsed.seconds })
-      .onConflictDoUpdate({
-        target: [dailyStats.userId, dailyStats.day],
-        set: {
-          xp: sql`${dailyStats.xp} + ${xpGained}`,
-          seconds: sql`${dailyStats.seconds} + ${parsed.seconds}`,
-        },
-      });
-
-    let { currentStreak, longestStreak } = profile;
-    if (profile.lastActiveDay !== today) {
-      currentStreak = profile.lastActiveDay === shiftDay(today, -1) ? profile.currentStreak + 1 : 1;
-      longestStreak = Math.max(profile.longestStreak, currentStreak);
-    }
-
-    await db
-      .update(profiles)
-      .set({
-        currentStreak,
-        longestStreak,
-        lastActiveDay: today,
-        totalXp: profile.totalXp + xpGained,
-      })
-      .where(eq(profiles.userId, userId));
+    // XP, günlük istatistik ve seri tek geçitten: seri onarımı da dahil,
+    // kelime oyunlarıyla aynı kural işliyor (bkz. lib/award.ts).
+    const award = await awardActivity(userId, today, xpGained, parsed.seconds);
 
     return NextResponse.json({
-      xpGained,
-      totalXp: profile.totalXp + xpGained,
-      currentStreak,
-      longestStreak,
+      xpGained: award.xpGained,
+      totalXp: award.totalXp,
+      currentStreak: award.currentStreak,
+      longestStreak: award.longestStreak,
+      streakRepaired: award.repaired,
       bestCorrect: best,
       total,
       repeat: prevBest !== null,

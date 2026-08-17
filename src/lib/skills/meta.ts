@@ -1,4 +1,5 @@
 import type { CefrLevel, SkillExercise, SkillId } from "./types";
+import { xpForSkill } from "@/lib/xp";
 
 /**
  * İçerik dosyalarını İÇE AKTARMAYAN sabitler ve saf yardımcılar.
@@ -27,13 +28,19 @@ export function itemCount(ex: SkillExercise): number {
 /**
  * XP hesabı — istemci ve sunucu aynı formülü kullanır; sunucu istemciden
  * gelen doğru sayısını madde sayısıyla sınırlar, XP asla istemciden gelmez.
+ *
+ * Puan madde başına değil **süre başına** hesaplanıyor (bkz. lib/xp.ts).
+ * Önceki hâli madde başına 6–10 XP veriyordu: beş dakikalık, altı soruluk bir
+ * okuma alıştırması 46 XP kazandırıyor, aynı beş dakikada kelime oyunu ~500 XP
+ * veriyordu. Bu, becerileri puan cinsinden değersiz kılıyordu ve ölçümde de
+ * öyle görünüyordu — yedi kullanıcıdan yalnızca biri bu bölümü açmıştı.
+ *
+ * Beceriler arasındaki eski ağırlık farkı (yazma > konuşma > okuma) kaldırıldı
+ * çünkü yanlış eksende ölçüyordu: bir alıştırmanın zorluğu türünde değil
+ * uzunluğunda ve soru sayısında. `minutes` alanı bunu zaten taşıyor.
  */
 export function xpFor(ex: SkillExercise, correct: number): number {
   const items = itemCount(ex);
   const capped = Math.max(0, Math.min(items, Math.round(correct)));
-  // Konuşma yazmadan hafif ama okuma/dinlemeden ağır: mikrofonla yüksek sesle
-  // konuşmak, şık işaretlemekten daha çok cesaret ister.
-  const perItem = ex.skill === "writing" ? 10 : ex.skill === "speaking" ? 8 : 6;
-  const bonus = capped === items ? 10 : 0;
-  return capped * perItem + bonus;
+  return xpForSkill(ex.minutes, capped, items);
 }
