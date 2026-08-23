@@ -31,6 +31,7 @@ import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { GamePicker } from "@/components/game-picker";
 import { Mascot } from "@/components/mascot";
+import { Stagger, StaggerItem } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
@@ -1198,8 +1199,14 @@ function SummaryCard({
     >
       <Confetti fire={deserved ? 1 : 0} />
 
-      <div className="card overflow-hidden">
-        <div className="brand-gradient p-8 text-center text-white">
+      {/*
+        Kartın bölümleri ardı ardına açılıyor, hepsi bir anda değil. Yedi
+        bölümün aynı anda belirmesi tek bir blok gibi okunuyordu; hangisinin
+        ne olduğu ancak durup bakınca ayrılıyordu. Sıra okunma sırasıyla
+        aynı: önce Erdi ve kazanılan XP, sonra sayılar, sonra ayrıntı.
+      */}
+      <Stagger className="card overflow-hidden" gap={0.07}>
+        <StaggerItem className="brand-gradient p-8 text-center text-white">
           {/* Turun nasıl geçtiğini söyleyen şey artık bir simge değil, Erdi'nin
               hâli: hak edilmiş turda kutluyor, iyi turda gülümsüyor, kötü turda
               üzülüyor. Aynı bilgi bir cümleyle de yazılabilirdi ama okunması
@@ -1218,13 +1225,13 @@ function SummaryCard({
           <p className="mt-1 text-sm opacity-90">
             +<CountUp value={xp} /> XP
           </p>
-        </div>
+        </StaggerItem>
 
-        <div className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
+        <StaggerItem className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
           <Stat label="Doğruluk" value={`%${accuracy}`} />
           <Stat label="Kelime" value={String(tally.total)} />
           <Stat label="Seri" value={`${result?.currentStreak ?? 0}g`} />
-        </div>
+        </StaggerItem>
 
         {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı
             gösterilmeden tur bittiği için başka söylenecek yer yok. */}
@@ -1279,9 +1286,7 @@ function SummaryCard({
             <p className="text-sm font-bold" style={{ color: "var(--color-mint-500)" }}>
               {mastered} kelime pekişti
             </p>
-            <p className="muted mt-1 text-xs">
-              Bu kelimeler artık üç haftadan seyrek soruluyor — yer yeni kelimelere kalıyor.
-            </p>
+
           </div>
         ) : null}
 
@@ -1300,16 +1305,11 @@ function SummaryCard({
               <FlameIcon size={16} /> Serin kurtarıldı
             </p>
             <p className="muted mt-1 text-xs">
-              Bir gün ara vermiştin; seri sıfırlanmadı, {result.currentStreak} günden devam
-              ediyor. Bu hak ayda bir kez işler.
+              Bir gün ara vermiştin — seri {result.currentStreak} günden devam ediyor. Bu hak
+              ayda bir kez işler.
             </p>
           </div>
         ) : null}
-
-        <p className="muted px-6 pt-4 text-center text-xs">
-          Bu turdaki kelimeler tekrar planına alındı; unutmaya başlayacağın gün
-          kendiliğinden karşına çıkacaklar.
-        </p>
 
         {/* Ertesi güne dair somut bir sayı. "Tekrar planına alındı" doğruydu
             ama tarihsizdi; kullanıcıya yarın uygulamayı açmak için bir sebep
@@ -1361,7 +1361,7 @@ function SummaryCard({
             kalıcı olarak kapanır — ikinci şans yok. */}
         <PushOptIn streak={result?.currentStreak ?? 0} />
 
-        <div className="space-y-2 p-6 pt-4">
+        <StaggerItem className="space-y-2 p-6 pt-4">
           <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5">
             {partial ? "Tura geri dön" : "Devam et"}
           </button>
@@ -1375,8 +1375,8 @@ function SummaryCard({
             streak={result?.currentStreak ?? 0}
             level={level}
           />
-        </div>
-      </div>
+        </StaggerItem>
+      </Stagger>
     </motion.div>
   );
 }
