@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman, speakThen } from "@/components/speak-button";
+import { prefetchGerman, speakGerman } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
@@ -20,6 +21,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
 
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
+  const { speakAndExit, exitAfter } = useRoundExit();
 
   useEffect(() => {
     started.current = Date.now();
@@ -53,13 +55,14 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
       // çizginin süresi de sesle değil okuma-anlama payıyla belirleniyor.
       const wait = correct ? 620 : 1200;
       fx(correct ? "correct" : "wrong", wait);
-      setTimeout(finish, wait);
+      exitAfter(wait, finish);
       return;
     }
 
     // Almanca olan taraf cevap: geçiş çizgisi okumanın gerçek uzunluğunda.
     const tail = correct ? 0 : 900;
-    speakThen(answer, () => setTimeout(finish, tail), {
+    speakAndExit(answer, finish, {
+      tail,
       onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
     });
   }

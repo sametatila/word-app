@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import { matchesAnswer, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakThen } from "@/components/speak-button";
+import { prefetchGerman } from "@/components/speak-button";
 
 type TypingRound = Extract<Round, { game: "typing" }>;
 
@@ -53,6 +54,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const started = useRef(Date.now());
+  const { speakAndExit } = useRoundExit();
 
   useEffect(() => {
     setValue("");
@@ -95,7 +97,8 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     vibrate(correct ? "correct" : "wrong");
     const tail = correct ? 0 : WRONG_TAIL_MS;
     const finish = () => onDone([{ wordId: word.id, correct, latencyMs, hintUsed }]);
-    speakThen(withArtikel(word), () => setTimeout(finish, tail), {
+    speakAndExit(withArtikel(word), finish, {
+      tail,
       onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
     });
   }

@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -36,7 +37,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
 
   const started = useRef(Date.now());
   const resolved = useRef(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { speakAndExit, abortExit } = useRoundExit();
 
   // Cümle tamamlanınca doğru hâli okunuyor ve o metin baştan belli; en uzun
   // ses bu oyunda olduğu için önden indirmenin kazancı da en çok burada.
@@ -55,14 +56,9 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     setHintUsed(false);
     started.current = Date.now();
     resolved.current = false;
-    if (timer.current) clearTimeout(timer.current);
-  }, [round.id]);
-
-  useEffect(() => {
-    return () => {
-      if (timer.current) clearTimeout(timer.current);
-    };
-  }, []);
+    // Yeni tur açılırken önceki turun bekleyen okuması/sayacı iptal ediliyor.
+    abortExit();
+  }, [round.id, abortExit]);
 
   useEffect(() => {
     if (status !== "playing" || resolved.current) return;
@@ -80,17 +76,16 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     // özellikle kırılgandı. Çizgi okumanın gerçek uzunluğunda dolduruluyor.
     vibrate(isCorrect ? "correct" : "wrong");
     const rest = isCorrect ? 0 : 1400;
-    speakThen(
+    speakAndExit(
       full,
-      () => {
-        timer.current = setTimeout(
-          () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
-          rest,
-        );
+      () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
+      {
+        tail: rest,
+        maxWaitMs: 12000,
+        onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + rest),
       },
-      { maxWaitMs: 12000, onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + rest) },
     );
-  }, [placed, status, answer, tail, word.id, hintUsed]);
+  }, [placed, status, answer, tail, word.id, hintUsed, speakAndExit]);
 
   const usedIds = new Set(placed.map((t) => t.id));
 

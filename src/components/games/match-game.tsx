@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
@@ -27,6 +28,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const wrongBeforeRef = useRef<Set<number>>(new Set());
   const resultsRef = useRef<GameResult[]>([]);
   const doneRef = useRef(false);
+  const { exitAfter } = useRoundExit();
 
   useEffect(() => {
     setRightItems(shuffle(words.map((w) => ({ wordId: w.id, tr: w.tr, en: w.en }))));
@@ -62,7 +64,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
       if (next.size === words.length && !doneRef.current) {
         doneRef.current = true;
         fx("correct", 500);
-        setTimeout(() => onDone(resultsRef.current), 500);
+        exitAfter(500, () => onDone(resultsRef.current));
       } else {
         fx("correct");
       }

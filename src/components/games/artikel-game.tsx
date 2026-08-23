@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakThen } from "@/components/speak-button";
+import { prefetchGerman } from "@/components/speak-button";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
 
@@ -22,6 +23,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
 
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
+  const { speakAndExit } = useRoundExit();
 
   useEffect(() => {
     started.current = Date.now();
@@ -43,11 +45,10 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     // bekletiyordu. Yanlışta doğruyu görmek için kısa bir ek süre kalıyor.
     vibrate(correct ? "correct" : "wrong");
     const tail = correct ? 0 : 900;
-    speakThen(
-      `${answer} ${word.de}`,
-      () => setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs }]), tail),
-      { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail) },
-    );
+    speakAndExit(`${answer} ${word.de}`, () => onDone([{ wordId: word.id, correct, latencyMs }]), {
+      tail,
+      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
+    });
   }
 
   return (

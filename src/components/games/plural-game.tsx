@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
 
 type PluralRound = Extract<Round, { game: "plural" }>;
 
@@ -26,6 +27,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
   const { word, answer, options } = round;
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
+  const { speakAndExit } = useRoundExit();
 
   useEffect(() => {
     started.current = Date.now();
@@ -49,11 +51,10 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // çalışırdı. Çoğul artikeli hep „die“.
     vibrate(isCorrect ? "correct" : "wrong");
     const tail = isCorrect ? 0 : 1200;
-    speakThen(
-      `die ${answer}`,
-      () => setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), tail),
-      { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail) },
-    );
+    speakAndExit(`die ${answer}`, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), {
+      tail,
+      onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail),
+    });
   }
 
   return (

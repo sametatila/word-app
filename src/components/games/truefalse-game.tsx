@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
@@ -28,6 +29,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   const { word, claim, isTrue } = round;
   const [answered, setAnswered] = useState<boolean | null>(null);
   const started = useRef(Date.now());
+  const { exitAfter } = useRoundExit();
 
   useEffect(() => {
     started.current = Date.now();
@@ -46,7 +48,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     // Yanlış eşleşmede gerçek karşılığı okumaya vakit gerekir.
     const wait = isCorrect ? 900 : 2400;
     fx(isCorrect ? "correct" : "wrong", wait);
-    setTimeout(() => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), wait);
+    exitAfter(wait, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]));
   }
 
   const settled = answered !== null;

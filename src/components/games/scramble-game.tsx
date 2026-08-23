@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import { normalize, withArtikel, type GameProps } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakThen, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman, SpeakButton } from "@/components/speak-button";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -49,7 +50,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   const started = useRef(Date.now());
   const resolvedRef = useRef(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { speakAndExit, abortExit } = useRoundExit();
   const onDoneRef = useRef(onDone);
 
   useEffect(() => {
@@ -66,15 +67,10 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     setHintUsed(false);
     started.current = Date.now();
     resolvedRef.current = false;
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    // Yeni tur açılırken önceki turun bekleyen okuması/sayacı iptal ediliyor.
+    abortExit();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
 
   useEffect(() => {
     if (status !== "playing") return;
@@ -90,17 +86,12 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     // Her zaman doğru biçim okunuyor, dizilen değil.
     vibrate(isCorrect ? "correct" : "wrong");
     const tail = isCorrect ? 0 : 1100;
-    speakThen(
+    speakAndExit(
       withArtikel(word),
-      () => {
-        timeoutRef.current = setTimeout(
-          () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
-          tail,
-        );
-      },
-      { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail) },
+      () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
+      { tail, onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail) },
     );
-  }, [placed, status, targetLetters.length, compareTarget, word, hintUsed]);
+  }, [placed, status, targetLetters.length, compareTarget, word, hintUsed, speakAndExit]);
 
   const usedIds = new Set(placed.map((t) => t.id));
 

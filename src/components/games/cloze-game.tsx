@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useRoundExit } from "./use-round-exit";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakThen } from "@/components/speak-button";
+import { prefetchGerman } from "@/components/speak-button";
 
 /**
  * Yanlış cevaptan sonra doğruyu okumaya geçmeden önceki okuma payı.
@@ -25,6 +26,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
 
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
+  const { speakAndExit } = useRoundExit();
 
   useEffect(() => {
     started.current = Date.now();
@@ -62,7 +64,8 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
 
     vibrate(isCorrect ? "correct" : "wrong");
     const tail = isCorrect ? 0 : WRONG_TAIL_MS;
-    speakThen(truth, () => setTimeout(advance, tail), {
+    speakAndExit(truth, advance, {
+      tail,
       onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail),
     });
   }
