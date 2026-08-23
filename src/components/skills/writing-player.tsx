@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { CheckIcon } from "@/components/icons";
+import { seededShuffle } from "@/lib/shuffle";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -51,7 +52,12 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
 
       {active ? (
         active.kind === "build" ? (
-          <BuildTask key={`${round}-${step}`} task={active} onDone={completeTask} />
+          <BuildTask
+            key={`${round}-${step}`}
+            task={active}
+            seed={`${round}-${step}`}
+            onDone={completeTask}
+          />
         ) : (
           <FreeTask
             key={`${round}-${step}`}
@@ -78,15 +84,6 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
   );
 }
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 /** Noktalama ve büyük/küçük harf farkı cümle kurmayı geçersiz kılmasın. */
 function normalize(s: string) {
   return s
@@ -97,10 +94,29 @@ function normalize(s: string) {
 }
 
 /** Karışık parçalardan cümle kurma — iki yanlıştan sonra doğru cevap açıklanır. */
-function BuildTask({ task, onDone }: { task: BuildTaskData; onDone: (ok: boolean) => void }) {
+function BuildTask({
+  task,
+  seed,
+  onDone,
+}: {
+  task: BuildTaskData;
+  /** Parçaların dizilişini belirleyen tohum — bkz. aşağıdaki not. */
+  seed: string;
+  onDone: (ok: boolean) => void;
+}) {
+  /**
+   * Diziliş tohumlu, çünkü bu hesap render sırasında yapılıyor:
+   * `Math.random()` ile sunucu bir sıra, tarayıcı başka bir sıra üretiyor ve
+   * hydration'da ağaç yeniden kuruluyordu. Karıştırmayı bağlanma sonrasına
+   * ertelemek de olmazdı — o zaman parçalar bir kare boyunca DOĞRU sırayla,
+   * yani cevabın kendisi olarak görünürdü.
+   *
+   * Tohum görevin sırası ve deneme sayacından geliyor: aynı görev tekrar
+   * denendiğinde diziliş yenileniyor, aynı denemede ise sabit kalıyor.
+   */
   const tokens = useMemo(
-    () => shuffle(task.answer.replace(/[.!?]$/, "").split(" ")),
-    [task],
+    () => seededShuffle(task.answer.replace(/[.!?]$/, "").split(" "), `${seed}|${task.answer}`),
+    [task, seed],
   );
   const [chosen, setChosen] = useState<number[]>([]);
   const [phase, setPhase] = useState<"editing" | "correct" | "revealed">("editing");

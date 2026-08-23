@@ -228,10 +228,11 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (438 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (446 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
-sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını ve
-ilerleme sorgularını gerçek PostgreSQL üzerinde doğrular.
+sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
+tohumlu karıştırmanın kararlılığını ve ilerleme sorgularını gerçek PostgreSQL üzerinde
+doğrular.
 
 ```bash
 # arayüzden oynayan öğrenci simülasyonu (dev sunucusu açıkken)

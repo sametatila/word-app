@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { shuffle, normalize, withArtikel, type GameProps } from "./types";
+import { normalize, withArtikel, type GameProps } from "./types";
+import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakThen, SpeakButton } from "@/components/speak-button";
@@ -12,9 +13,21 @@ type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
 type Tile = { id: number; char: string };
 
-function makePool(word: string): Tile[] {
+/**
+ * Harf havuzu.
+ *
+ * Diziliş tohumlu, çünkü bu işlev render sırasında (ilk `useState`) çalışıyor:
+ * `Math.random()` ile sunucu bir sıra, tarayıcı başka bir sıra üretiyordu ve
+ * React ağacı hydration'da yeniden kuruluyordu. Karıştırmayı `useEffect`e
+ * almak sorunu çözerdi ama bir kare boyunca harfleri DOĞRU sırayla gösterirdi
+ * — yani bulmacanın cevabını.
+ *
+ * Tohum tura özel: aynı kelime başka bir turda başka türlü diziliyor, aynı
+ * turda ise bileşen yeniden çizilse bile diziliş sabit kalıyor.
+ */
+function makePool(word: string, seed: string): Tile[] {
   const letters = Array.from(word).filter((c) => c !== " ");
-  return shuffle(letters.map((char, id) => ({ id, char })));
+  return seededShuffle(letters.map((char, id) => ({ id, char })), seed);
 }
 
 /**
@@ -29,7 +42,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   const targetLetters = useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
   const compareTarget = useMemo(() => normalize(word.de.replace(/\s+/g, "")), [word.de]);
 
-  const [pool, setPool] = useState<Tile[]>(() => makePool(word.de));
+  const [pool, setPool] = useState<Tile[]>(() => makePool(word.de, round.id));
   const [placed, setPlaced] = useState<Tile[]>([]);
   const [status, setStatus] = useState<Status>("playing");
   const [hintUsed, setHintUsed] = useState(false);
@@ -44,7 +57,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   }, [onDone]);
 
   useEffect(() => {
-    setPool(makePool(round.word.de));
+    setPool(makePool(round.word.de, round.id));
     // Tamamlanınca okunacak metin belli; önden indirilirse dokunuşla ses
     // arasında boşluk kalmıyor.
     prefetchGerman(withArtikel(round.word));

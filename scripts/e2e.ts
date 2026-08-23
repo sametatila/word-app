@@ -50,6 +50,7 @@ import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";
+import { seededShuffle } from "../src/lib/shuffle";
 import { achievements, events } from "../src/lib/db/schema";
 import { track } from "../src/lib/events";
 
@@ -1648,7 +1649,28 @@ async function main() {
   const rowsAfter = await db.select().from(achievements).where(eq(achievements.userId, USER));
   check("tekrar hesaplamak kayıt çoğaltmıyor", rowsBefore.length === rowsAfter.length);
 
-  console.log("\n18) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n18) Tohumlu karıştırma — sunucu ve tarayıcı aynı sırayı üretir");
+  // Bu değişmez bir süs değil: harf bulmacası ve cümle kurma görevinde
+  // diziliş RENDER SIRASINDA hesaplanıyor. Rastgele olduğu sürece sunucu bir
+  // sıra, tarayıcı başka bir sıra üretiyordu ve React ağacı hydration'da
+  // yeniden kuruluyordu.
+  const letters = [..."Frühstück"];
+  const a = seededShuffle(letters, "r7");
+  const b = seededShuffle(letters, "r7");
+  check("aynı tohum aynı sırayı veriyor", a.join("") === b.join(""));
+  check("farklı tohum farklı sıra veriyor", seededShuffle(letters, "r8").join("") !== a.join(""));
+  check("harfler korunuyor", [...a].sort().join("") === [...letters].sort().join(""));
+  check("uzunluk korunuyor", a.length === letters.length);
+  check("gerçekten karışıyor", a.join("") !== letters.join(""));
+  check("tek elemanlı dizi bozulmuyor", seededShuffle(["a"], "x").join("") === "a");
+  check("boş dizi bozulmuyor", seededShuffle([], "x").length === 0);
+  // Kaynak dizi değişmemeli: `useMemo` içinde çağrılıyor ve girdiyi bozarsa
+  // ikinci çağrı farklı sonuç verirdi.
+  const src = [1, 2, 3, 4, 5];
+  seededShuffle(src, "z");
+  check("kaynak dizi değişmiyor", src.join("") === "12345");
+
+  console.log("\n19) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);
