@@ -8,6 +8,7 @@ import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakGerman } from "@/components/speak-button";
+import { Mascot } from "@/components/mascot";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
 
@@ -41,7 +42,17 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   }, [round.id]);
 
   return (
-    <GameShell label="Yeni Kelime">
+    <GameShell
+      label="Yeni Kelime"
+      /*
+        Kabuğun okuma bölgesi bu turda boştu: tanıtım kartında sorulan bir soru
+        yok, dolayısıyla `prompt` da yoktu ve etiket tek başına duruyordu.
+        Erdi oraya oturuyor ve ifadesi kartın açılışını izliyor: kelime sesli
+        okunurken şaşkın, anlam belirince gülümsüyor. Kelimeyi ilk kez gören
+        birinin sırası da bu.
+      */
+      prompt={<Mascot mood={revealed ? "happy" : "wow"} size={64} className="mx-auto" />}
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
