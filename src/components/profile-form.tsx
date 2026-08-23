@@ -145,8 +145,7 @@ export function ProfileForm({
                 color: "var(--color-brand-500)",
               }}
             >
-              Kaydedince kelimeler, beceriler ve tekrar kuyruğun yeni kursa geçer. Diğer kurstaki
-              ilerlemen silinmez — geri dönünce kaldığın yerden devam edersin.
+              Kelimeler ve tekrar kuyruğun yeni kursa geçer. Diğer kurs silinmez.
             </p>
           ) : null}
         </div>
@@ -187,14 +186,23 @@ export function ProfileForm({
               </button>
             ))}
           </div>
+          {/* Havuzun nasıl kurulduğu (çoğu bu seviyeden, bir kısmı alttan,
+              bitince üst seviye) bir kez öğrenilen şeydi ve her ayar açılışında
+              dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
+              ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
           <p className="muted mt-1.5 text-xs">
             {LEVELS.find((l) => l.id === level)?.desc}. Seviyeni <strong>yalnızca sen</strong>{" "}
-            değiştirirsin — sistem seni sınayıp yukarı taşımaz ya da aşağı indirmez. Kelimelerin
-            çoğu bu seviyeden, bir kısmı boşlukları kapatmak için bir alt seviyeden gelir; bu
-            seviyede görülmemiş kelime kalmazsa bir üst seviye devreye girer.
+            değiştirirsin.
           </p>
         </div>
 
+        {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
+            satır, hiçbir eylem yok, ayarların altında duran bir öğretici.
+            Bilginin ait olduğu yer burası — hedefi ayarlayan kişinin merak
+            ettiği tek şey o sayının neyi belirlediği. */}
+        <p className="muted -mb-2 text-xs">
+          Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.
+        </p>
         <Slider
           label="Günlük tekrar hedefi"
           value={dailyGoal}
@@ -243,16 +251,6 @@ export function ProfileForm({
             <AlertIcon size={16} /> {saveError}
           </p>
         ) : null}
-      </section>
-
-      <section className="card p-5">
-        <h2 className="mb-2 font-bold">Tekrar sistemi</h2>
-        <p className="muted text-sm">
-          Kelimeleri elle tekrar listesine eklemene gerek yok. Her cevabın hızına ve doğruluğuna
-          göre bir sonraki gösterim zamanı hesaplanır; zorlandığın kelimeler sık, bildiklerin
-          giderek daha seyrek karşına çıkar. Oyun türü de kelimenin ne kadar oturduğuna göre
-          otomatik seçilir.
-        </p>
       </section>
 
       {/* Kurulum burada kalıcı olarak duruyor: tarayıcının kendi önerisi bir

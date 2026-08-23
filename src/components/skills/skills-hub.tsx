@@ -102,11 +102,12 @@ export function SkillsHub({
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-5">
+      {/* Başlığın altında "gerçek hayat Almancasıyla okuma, dinleme ve yazma
+          pratiği" diye bir tanıtım satırı vardı. Sayfaya ilk kez girenin bir
+          kez okuyacağı, her gün girenin hiç okumayacağı bir cümle — ve altında
+          zaten okuma/dinleme/yazma kartları duruyor. */}
       <header>
         <h1 className="text-2xl font-bold">Beceriler</h1>
-        <p className="muted mt-1 text-sm">
-          Gerçek hayat Almancasıyla okuma, dinleme ve yazma pratiği — seviyene göre.
-        </p>
       </header>
 
       {/* Telaffuzda zorlanılan sesler.

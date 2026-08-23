@@ -289,10 +289,9 @@ export function LessonHub({
     <div className="mx-auto w-full max-w-2xl space-y-5">
       <header>
         <h1 className="text-2xl font-bold">Dersler</h1>
-        <p className="muted mt-1 text-sm">
-          Her ders önce sesli anlatımla kelime ve kalıp öğretir, sonra seni onları
-          kullanacağın bir konuşmaya sokar.
-        </p>
+        {/* Dersin nasıl işlediğini anlatan tanıtım satırı kalktı: dersin
+            kendisi iki adımda zaten onu gösteriyor ve bu satır her açılışta
+            ilerleme çubuğunu aşağı itiyordu. */}
         <div className="mt-3">
           <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
             <span className="muted tabular-nums">
