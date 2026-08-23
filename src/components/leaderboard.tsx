@@ -1,5 +1,6 @@
 import { FlameIcon } from "@/components/icons";
-import type { LeaderboardRow } from "@/lib/session";
+import { Avatar } from "@/components/avatar";
+import type { LeaderboardWeek } from "@/lib/session";
 
 /** İlk üç için madalya rengi; sonrası nötr kalır ki tablo yorucu olmasın. */
 const MEDAL: Record<number, string> = {
@@ -8,24 +9,33 @@ const MEDAL: Record<number, string> = {
   3: "var(--color-mint-500)",
 };
 
-function initials(name: string | null) {
-  if (!name) return "?";
-  const parts = name.trim().split(/\s+/).slice(0, 2);
-  return parts.map((p) => p[0]?.toUpperCase() ?? "").join("") || "?";
-}
-
 /**
- * Öğren ekranındaki sıralama tablosu.
+ * Öğren ekranındaki haftalık sıralama.
  *
- * Sıra XP'ye göredir (seri yalnızca eşitlik bozar), çünkü XP toplam emeği
- * gösterir; seri tek başına bir günü kaçırınca sıfırlanır ve haksız görünür.
- * Kullanıcının kendi satırı ilk 10'un dışındaysa altta ayrıca gösterilir.
+ * Tablo bu haftanın XP'sini gösteriyor ve pazartesi sıfırlanıyor. Tüm
+ * zamanların toplamı burada değil profilde: orası "ne kadar yol geldim",
+ * burası "bu hafta kim çalışıyor".
+ *
+ * İki ayrıntı tabloyu bir tablodan öteye taşıyor:
+ *
+ *   - **Geri sayım.** Sıralamanın kaç gün sonra sıfırlanacağı yazıyor.
+ *     Sıfırlanacağını bilmeyen kullanıcı için tablo bir durum; bilen için
+ *     bir süre. Aciliyet buradan geliyor, bildirimden değil.
+ *   - **Bir üsttekine mesafe.** Sırf sıra numarası "6. sıradasın" der ve
+ *     biter. "Bir üsttekine 140 XP" ise ulaşılabilir, bugün kapatılabilir
+ *     bir hedeftir — üstelik kullanıcının kendi elindeki ölçüyle.
  */
-export function Leaderboard({ rows }: { rows: LeaderboardRow[] }) {
+export function Leaderboard({ week }: { week: LeaderboardWeek }) {
+  const { rows, daysLeft } = week;
   if (rows.length < 2) return null; // tek kişilik sıralama sıralama değildir
 
   const top = rows.filter((r) => r.rank <= 10);
-  const me = rows.find((r) => r.isMe && r.rank > 10);
+  const me = rows.find((r) => r.isMe);
+  const outside = me && me.rank > 10 ? me : null;
+
+  // Bir üstteki satır: kullanıcı listedeyse doğrudan, dışarıdaysa sonuncu.
+  const above = me && me.rank > 1 ? rows.find((r) => r.rank === me.rank - 1) ?? top.at(-1) : null;
+  const gap = me && above ? Math.max(0, above.xp - me.xp) : 0;
 
   return (
     <section className="card mx-auto mt-4 w-full max-w-md overflow-hidden">
@@ -33,29 +43,47 @@ export function Leaderboard({ rows }: { rows: LeaderboardRow[] }) {
         className="flex items-baseline justify-between border-b px-5 py-3.5"
         style={{ borderColor: "var(--border)" }}
       >
-        <h2 className="font-bold">Sıralama</h2>
-        <span className="muted text-xs">XP'ye göre · ilk 10</span>
+        <h2 className="font-bold">Bu haftanın sıralaması</h2>
+        <span className="muted text-xs">
+          {daysLeft === 1 ? "son gün" : `${daysLeft} gün kaldı`}
+        </span>
       </div>
 
       <ol>
         {top.map((r) => (
-          <Row key={`${r.rank}-${r.name ?? "x"}`} row={r} />
+          <Row key={r.userId} row={r} />
         ))}
       </ol>
 
-      {me ? (
+      {outside ? (
         <>
           <div className="muted px-5 py-1 text-center text-xs">···</div>
           <ol>
-            <Row row={me} />
+            <Row row={outside} />
           </ol>
         </>
+      ) : null}
+
+      {me && gap > 0 ? (
+        <p
+          className="border-t px-5 py-2.5 text-center text-xs font-semibold"
+          style={{ borderColor: "var(--border)", color: "var(--color-brand-500)" }}
+        >
+          Bir üsttekine {gap.toLocaleString("tr-TR")} XP — bir turluk mesafe.
+        </p>
+      ) : me && me.rank === 1 ? (
+        <p
+          className="border-t px-5 py-2.5 text-center text-xs font-semibold"
+          style={{ borderColor: "var(--border)", color: "var(--color-flame-500)" }}
+        >
+          Zirvedesin. Pazartesi herkes sıfırdan başlıyor.
+        </p>
       ) : null}
     </section>
   );
 }
 
-function Row({ row }: { row: LeaderboardRow }) {
+function Row({ row }: { row: { rank: number; userId: string; name: string | null; xp: number; streak: number; isMe: boolean } }) {
   const medal = MEDAL[row.rank];
   return (
     <li
@@ -74,12 +102,7 @@ function Row({ row }: { row: LeaderboardRow }) {
         {row.rank}
       </span>
 
-      <span
-        className="surface-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold"
-        style={medal ? { color: medal } : undefined}
-      >
-        {initials(row.name)}
-      </span>
+      <Avatar userId={row.userId} name={row.name} size={32} ring={medal ?? null} />
 
       <span className="min-w-0 flex-1 truncate text-sm font-semibold">
         {row.name ?? "İsimsiz öğrenci"}

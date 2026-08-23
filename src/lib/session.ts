@@ -1419,60 +1419,124 @@ export async function recordChallengeScore(
 /** İlerleme ekranı verileri */
 export type LeaderboardRow = {
   rank: number;
+  userId: string;
   name: string | null;
   xp: number;
   streak: number;
   isMe: boolean;
 };
 
+export type LeaderboardWeek = {
+  rows: LeaderboardRow[];
+  /** Haftanın başladığı gün (pazartesi, YYYY-MM-DD). */
+  start: string;
+  /** Tablonun sıfırlanmasına kaç gün kaldı — bugün dahil. */
+  daysLeft: number;
+};
+
 /**
- * Öğren ekranındaki sıralama: ilk 10 kişi, önce XP'ye sonra seriye göre.
+ * Haftanın başı (pazartesi).
  *
- * XP birincil ölçüt çünkü toplam emeği gösterir; seri yalnızca eşitlik bozar.
- * Kullanıcı ilk 10'da değilse kendi satırı sona eklenir — listede kendini
- * göremeyen kişi için tablo anlamsızlaşır. Hiç çalışmamış profiller (XP 0)
- * listeye girmez, yoksa yeni kayıtlar sıralamayı doldurur.
+ * Pazar değil pazartesi: hafta sonu en çok çalışılan iki gün ve pazar gecesi
+ * sıfırlanan bir tablo, cumartesi kazanılanı pazar akşamı silerdi. Pazartesi
+ * sıfırlama hafta sonunu tablonun FİNALİ yapıyor.
  */
-export async function getLeaderboard(userId: string, limit = 10): Promise<LeaderboardRow[]> {
+export function weekStart(day: string): string {
+  const d = new Date(`${day}T00:00:00Z`);
+  const dow = d.getUTCDay(); // 0 pazar … 6 cumartesi
+  return shiftDay(day, -((dow + 6) % 7));
+}
+
+/**
+ * Öğren ekranındaki sıralama: bu HAFTANIN XP'sine göre ilk 10 kişi.
+ *
+ * Önce tüm zamanların toplam XP'siydi ve rekabet üretmiyordu: en çok
+ * çalışmış kişi kalıcı olarak tepede duruyor, yeni gelen ise matematiksel
+ * olarak ona asla yaklaşamıyordu. Böyle bir tablo iki tarafa da bir şey
+ * söylemez — öndeki tehdit altında değil, arkadaki umutsuz.
+ *
+ * Haftalık pencere bunu tersine çeviriyor: herkes pazartesi eşit başlıyor,
+ * öndeki yerini korumak için çalışmak zorunda, arkadaki için hedef bir
+ * haftalık mesafede. Ölçü yine emek (XP) ama artık YAKIN geçmişin emeği.
+ *
+ * Toplam XP kaybolmuyor, profil ekranında birikimli ölçü olarak duruyor.
+ * İkisi farklı soruya cevap veriyor: "ne kadar yol geldim" ve "bu hafta kim
+ * çalışıyor".
+ *
+ * Veri `daily_stats`ten okunuyor, yeni sayaç yazılmıyor — aynı olayı iki
+ * yerde saymak er geç ayrışan iki sayı demek.
+ */
+export async function getLeaderboard(
+  userId: string,
+  today: string,
+  limit = 10,
+): Promise<LeaderboardWeek> {
+  const start = weekStart(today);
+  const end = shiftDay(start, 7);
+  const elapsed = Math.round(
+    (Date.parse(`${today}T00:00:00Z`) - Date.parse(`${start}T00:00:00Z`)) / 86_400_000,
+  );
+  const daysLeft = Math.min(7, Math.max(1, 7 - elapsed));
+
+  // Haftanın XP'si tek bir toplamda: her kullanıcı için bir satır.
+  const weekly = db
+    .select({
+      userId: dailyStats.userId,
+      xp: sql<number>`sum(${dailyStats.xp})::int`.as("week_xp"),
+    })
+    .from(dailyStats)
+    .where(and(gte(dailyStats.day, start), lt(dailyStats.day, end)))
+    .groupBy(dailyStats.userId)
+    .having(sql`sum(${dailyStats.xp}) > 0`)
+    .as("weekly");
+
   const top = await db
     .select({
       userId: profiles.userId,
       name: profiles.displayName,
-      xp: profiles.totalXp,
+      xp: weekly.xp,
       streak: profiles.currentStreak,
     })
-    .from(profiles)
-    .where(gt(profiles.totalXp, 0))
-    .orderBy(desc(profiles.totalXp), desc(profiles.currentStreak), asc(profiles.createdAt))
+    .from(weekly)
+    .innerJoin(profiles, eq(profiles.userId, weekly.userId))
+    .orderBy(desc(weekly.xp), desc(profiles.currentStreak), asc(profiles.createdAt))
     .limit(limit);
 
   const rows: LeaderboardRow[] = top.map((r, i) => ({
     rank: i + 1,
+    userId: r.userId,
     name: r.name,
-    xp: r.xp,
+    xp: Number(r.xp),
     streak: r.streak,
     isMe: r.userId === userId,
   }));
-  if (rows.some((r) => r.isMe)) return rows;
+  if (rows.some((r) => r.isMe)) return { rows, start, daysLeft };
 
-  // Kendi sırası: aynı ölçütle önünde kaç kişi var.
+  // Kendi satırı: bu hafta önünde kaç kişi var. Hiç çalışmamış olsa bile
+  // gösteriliyor — listede kendini göremeyen kişi için tablo anlamsızlaşır.
   const [me] = await db.select().from(profiles).where(eq(profiles.userId, userId));
-  if (!me) return rows;
-  const [{ ahead }] = await db
-    .select({ ahead: sql<number>`count(*)::int` })
-    .from(profiles)
-    .where(
-      sql`${profiles.totalXp} > ${me.totalXp}
-        or (${profiles.totalXp} = ${me.totalXp} and ${profiles.currentStreak} > ${me.currentStreak})`,
-    );
+  if (!me) return { rows, start, daysLeft };
+
+  const [mine] = await db
+    .select({ xp: sql<number>`coalesce(sum(${dailyStats.xp}), 0)::int` })
+    .from(dailyStats)
+    .where(and(eq(dailyStats.userId, userId), gte(dailyStats.day, start), lt(dailyStats.day, end)));
+  const myXp = Number(mine?.xp ?? 0);
+
+  const [ahead] = await db
+    .select({ n: sql<number>`count(*)::int` })
+    .from(weekly)
+    .where(sql`${weekly.xp} > ${myXp}`);
+
   rows.push({
-    rank: ahead + 1,
+    rank: Number(ahead?.n ?? 0) + 1,
+    userId,
     name: me.displayName,
-    xp: me.totalXp,
+    xp: myXp,
     streak: me.currentStreak,
     isMe: true,
   });
-  return rows;
+  return { rows, start, daysLeft };
 }
 
 export async function getProgress(userId: string, today: string) {
