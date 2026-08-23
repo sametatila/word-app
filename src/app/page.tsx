@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Reveal } from "@/components/reveal";
+import { Mascot } from "@/components/mascot";
 import { InstallGuide } from "@/components/install-guide";
 import {
   KeyboardIcon,
@@ -100,15 +101,26 @@ export default function Home() {
               2 kurs · A1 → C1 · 14.784 kelime · 10 oyun
             </span>
           </Reveal>
+          {/* Erdi başlığın üstünde ve büyük. Karakter uygulamanın her kapanış
+              ekranında, oyun içindeki sonuç şeridinde ve seri kutlamasında var
+              ama ilk karşılaşılan yerde — ana sayfada — hiç yoktu; yani
+              uygulamayı açmadan önce kimse onu görmüyordu. */}
+          <Reveal delay={0.04}>
+            <Mascot mood="happy" size={132} className="mx-auto mt-6" />
+          </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 text-4xl font-black leading-tight sm:text-6xl">
+            <h1 className="mt-2 text-4xl font-black leading-tight sm:text-6xl">
               Almanca kelimeleri <span className="brand-text">oynayarak</span> öğren
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
+            {/* İkinci cümle ("neyi ne zaman tekrar edeceğine uygulama karar
+                verir") aşağıdaki özellik kartlarında zaten anlatılıyordu;
+                başlığın hemen altında sistemin çalışma mantığını anlatmak,
+                daha ne olduğu söylenmeden nasıl çalıştığını anlatmak oluyor. */}
             <p className="muted mx-auto mt-5 max-w-xl text-base sm:text-lg">
               Hochdeutsch ya da Zürih Almancası — kursunu seç, on kelime oyunu ve beceri
-              alıştırmaları tek akışta gelsin. Neyi ne zaman tekrar edeceğine uygulama karar verir.
+              alıştırmaları tek akışta gelsin.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
