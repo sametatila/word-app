@@ -19,6 +19,7 @@ const GAMES: GameId[] = [
   "plural",
   "listen",
   "truefalse",
+  "speak",
 ];
 
 export async function POST(req: Request) {

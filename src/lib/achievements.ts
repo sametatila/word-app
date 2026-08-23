@@ -50,6 +50,7 @@ export type Metric =
   | "gameTyping"
   | "gameOrder"
   | "gamePlural"
+  | "gameSpeak"
   | "lessons"
   | "skills"
   | "dailyRounds"
@@ -106,6 +107,8 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "typing200", title: "Parmak hafızası", hint: "200 kelimeyi sıfırdan yaz", icon: "KeyboardIcon", tier: "silver", group: "oyun", metric: "gameTyping", target: 200 },
   { id: "order150", title: "Cümle mimarı", hint: "150 cümleyi doğru diz", icon: "ListIcon", tier: "silver", group: "oyun", metric: "gameOrder", target: 150 },
   { id: "plural150", title: "Çoğul ustası", hint: "150 çoğul biçimi doğru bil", icon: "PuzzleIcon", tier: "silver", group: "oyun", metric: "gamePlural", target: 150 },
+  { id: "speak100", title: "Ekransız", hint: "Yürürken modunda 100 kelimeyi sesli söyle", icon: "HeadphonesIcon", tier: "silver", group: "oyun", metric: "gameSpeak", target: 100 },
+  { id: "speak500", title: "Ağızdan çıkan", hint: "Yürürken modunda 500 kelimeyi sesli söyle", icon: "HeadphonesIcon", tier: "gold", group: "oyun", metric: "gameSpeak", target: 500 },
 
   // ——— Ders ——————————————————————————————————————————————————————
   { id: "lesson1", title: "İlk ders", hint: "Bir dersi rol yapmayla birlikte bitir", icon: "ChatIcon", tier: "bronze", group: "ders", metric: "lessons", target: 1 },
@@ -240,6 +243,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     gameTyping: games.get("typing") ?? 0,
     gameOrder: games.get("order") ?? 0,
     gamePlural: games.get("plural") ?? 0,
+    gameSpeak: games.get("speak") ?? 0,
     lessons: Number(lessonRow[0]?.n ?? 0),
     skills: Number(skillRow[0]?.n ?? 0),
     dailyRounds: Number(dailyRow[0]?.n ?? 0),

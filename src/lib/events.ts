@@ -23,6 +23,7 @@ export const EVENT_NAMES = [
   "session_stop", // etap sonunda "şimdilik yeter"
   "daily_play", // günün turu oynandı
   "challenge_play", // hayatta kalma turu oynandı
+  "walk_start", // yürürken (ekransız) modu başlatıldı (value = kaçıncı turdan)
   "quest_claim", // görev ödülü alındı
   "achievement_unlock", // rozet açıldı (value = rozet sayısı)
   "nav", // sekme açıldı (value = sekme sırası)

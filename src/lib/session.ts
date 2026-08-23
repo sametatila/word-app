@@ -12,6 +12,7 @@ import type {
   AnswerResult,
   GameId,
   MissedWord,
+  PlayableGame,
   Round,
   RoundWord,
   SessionPayload,
@@ -212,7 +213,7 @@ export async function buildSession(
    * kontenjanı burada hiç harcanmıyor: kullanıcı tek oyunla ne kadar
    * oynarsa oynasın, karışık tura döndüğünde yeni kelimeleri onu bekliyor.
    */
-  only?: GameId,
+  only?: PlayableGame,
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
   const now = new Date();
@@ -463,7 +464,7 @@ export async function loadSession(
   today: string,
   extra = false,
   /** Tek oyunlu tur istendiğinde o oyunun kimliği (bkz. buildSession). */
-  only?: GameId,
+  only?: PlayableGame,
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
 
@@ -603,7 +604,7 @@ function composeRounds(
   due: QueueItem[],
   fresh: QueueItem[],
   pool: (typeof words.$inferSelect)[],
-  only?: GameId,
+  only?: PlayableGame,
 ): Round[] {
   const rounds: Round[] = [];
   let seq = 0;

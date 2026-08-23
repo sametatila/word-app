@@ -9,7 +9,8 @@ export type GameId =
   | "order"
   | "plural"
   | "listen"
-  | "truefalse";
+  | "truefalse"
+  | "speak";
 
 export const GAME_LABELS: Record<GameId, string> = {
   intro: "Yeni Kelime",
@@ -23,6 +24,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   plural: "Çoğul Bilmece",
   listen: "Kulaktan Tanı",
   truefalse: "Doğru mu Yanlış mı",
+  speak: "Sesli Söyle",
 };
 
 /**
@@ -31,6 +33,12 @@ export const GAME_LABELS: Record<GameId, string> = {
  * `intro` dışarıda: o bir oyun değil, yeni kelimenin tanıtım kartı. Yirmi tur
  * boyunca kart okumak bir seçenek olmamalı — yine de karışık turlarda ve tek
  * oyunlu turlarda yeni kelimelerin önüne kendiliğinden ekleniyor.
+ *
+ * `speak` de dışarıda ve sebebi başka: o bir oyun değil bir MOD. Yürürken
+ * modu turun tamamını sesli sürüyor ve ekranda oynanmıyor; oyun seçicide bir
+ * satır olarak durması, ne olduğunu yanlış anlatırdı. Cevapları yine de kendi
+ * adıyla kaydediliyor, yoksa profil ekranındaki oyun başarısı tablosunda
+ * sesli cevaplar yazma oyununun hanesine yazılırdı.
  */
 export const PLAYABLE_GAMES = [
   "match",

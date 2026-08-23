@@ -36,6 +36,8 @@ import { Stagger, StaggerItem } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
+import { WalkCard } from "@/components/walk-card";
+import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
 import { AlertIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
@@ -48,7 +50,8 @@ type Status =
   | "empty"
   | "error"
   | "challenge"
-  | "daily";
+  | "daily"
+  | "walk";
 
 /**
  * Bir etaptaki tur sayısı.
@@ -172,7 +175,8 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * bayrağı görünce kuyruğu tutuyor ve etap/özet ekranında salıyor.
    */
   useEffect(() => {
-    const playing = status === "playing" || status === "challenge" || status === "daily";
+    const playing =
+      status === "playing" || status === "challenge" || status === "daily" || status === "walk";
     window.dispatchEvent(new CustomEvent("wortspiel:busy", { detail: { busy: playing } }));
   }, [status]);
 
@@ -485,6 +489,17 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         />
       </Screen>
     );
+  if (status === "walk")
+    return (
+      <Screen fills>
+        <WalkPlayer
+          onExit={() => {
+            router.refresh();
+            void load();
+          }}
+        />
+      </Screen>
+    );
   if (status === "challenge")
     return (
       <Screen fills>
@@ -521,6 +536,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
             track("challenge_play");
             setStatus("challenge");
           }}
+          onWalk={() => setStatus("walk")}
           leaderboard={leaderboard}
         />
       </Screen>
@@ -720,6 +736,7 @@ function StartCard({
   onPickGame,
   onDaily,
   onChallenge,
+  onWalk,
   leaderboard,
 }: {
   meta: SessionPayload["meta"];
@@ -733,6 +750,7 @@ function StartCard({
   onPickGame: (game: PlayableGame | null) => void;
   onDaily: () => void;
   onChallenge: () => void;
+  onWalk: () => void;
   /** Sunucuda hazırlanan sıralama tablosu — yalnızca bu kartta görünür. */
   leaderboard?: ReactNode;
 }) {
@@ -874,6 +892,9 @@ function StartCard({
       {/* Görevler oyun seçicinin üstünde: biri hep beceriler ya da derslere
           götürüyor ve o bölümler bugüne kadar neredeyse hiç açılmamıştı. */}
       <QuestCard />
+      {/* Yürürken modu oyun seçicinin hemen üstünde: o da turun başka bir
+          yoldan oynanması, yani seçiciye en yakın akraba. */}
+      <WalkCard onPlay={onWalk} />
       <GamePicker active={onlyGame} onPick={onPickGame} />
       {leaderboard}
     </motion.div>

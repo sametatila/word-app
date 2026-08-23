@@ -3,7 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
-import { PLAYABLE_GAMES, type GameId } from "@/lib/types";
+import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +19,7 @@ export async function GET(req: Request) {
   // ekran — tek başına 20 tur tanıtım istenmesi anlamsız olurdu.
   const raw = url.searchParams.get("game");
   const only =
-    raw && (PLAYABLE_GAMES as readonly string[]).includes(raw) ? (raw as GameId) : undefined;
+    raw && (PLAYABLE_GAMES as readonly string[]).includes(raw) ? (raw as PlayableGame) : undefined;
   try {
     const payload = await loadSession(userId, today, extra, only);
     return NextResponse.json(payload);
