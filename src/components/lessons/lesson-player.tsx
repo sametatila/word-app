@@ -12,7 +12,8 @@ import {
   useSpeechAvailable,
 } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { AlertIcon, CheckIcon, MicIcon, SparkIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { AlertIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 import { parseReply } from "@/lib/chat-format";
 import { Confetti } from "@/components/celebrate";
 import { fx, reducedMotion } from "@/lib/fx";
@@ -1299,15 +1300,13 @@ export function LessonPlayer({
             {/* Geçilen ders küçük bir kutlamayı hak ediyor — sonuç sunucudan
                 dönünce patlıyor, kalan her durumda hiç çizilmiyor. */}
             <Confetti fire={saved?.passed ? 1 : 0} />
+            {/* Ders kapanışında da Erdi: geçilen derste kutluyor, yarım kalanda
+                düşünüyor. Kelime turu, etap kartı, oyun içindeki sonuç şeridi ve
+                beceri egzersizi aynı karakterle kapanıyor — kapanış anını her
+                bölümde başka bir simgeyle karşılamak, aynı uygulamada birkaç
+                ayrı dil konuşmak olurdu. */}
             <div className="flex items-center gap-2">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-xl text-white"
-                style={{
-                  background: saved?.passed ? "var(--color-mint-500)" : "var(--color-flame-500)",
-                }}
-              >
-                {saved?.passed ? <CheckIcon size={18} /> : <SparkIcon size={18} />}
-              </span>
+              <Mascot mood={saved?.passed ? "cheer" : "think"} size={54} className="-my-2 shrink-0" />
               <div>
                 <h2 className="text-base font-bold">
                   {saved?.passed ? "Ders tamam" : "Ders yarım kaldı"}

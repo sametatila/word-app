@@ -6,7 +6,8 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { SKILL_LABELS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
-import { ArrowLeftIcon, CheckIcon, FlameIcon, SparkIcon } from "@/components/icons";
+import { ArrowLeftIcon, FlameIcon, SparkIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 import { LEVEL_TONE } from "./theme";
 
 /** Cihazın yerel gününü verir — istatistikler kullanıcının gününe yazılır. */
@@ -148,15 +149,13 @@ export function ResultCard({
       transition={{ type: "spring", stiffness: 200, damping: 22 }}
       className="card mt-5 p-5 text-center"
     >
-      <div
-        className="mx-auto flex h-12 w-12 items-center justify-center rounded-full text-white"
-        style={{
-          background: perfect ? "var(--color-mint-500)" : "var(--color-brand-500)",
-        }}
-      >
-        <CheckIcon size={24} />
-      </div>
-      <h2 className="mt-3 text-lg font-bold">
+      {/* Sonucu söyleyen şey burada da Erdi — kelime turlarında, etap
+          kartlarında ve oyun içindeki sonuç şeridinde olduğu gibi. Beceri
+          egzersizini bitirmek de bir tur bitirmek kadar bir an; orada karakter
+          kutlarken burada onay simgesi çıkması, aynı uygulamada iki ayrı dil
+          konuşmak olurdu. */}
+      <Mascot mood={perfect ? "cheer" : "happy"} size={84} className="mx-auto" />
+      <h2 className="mt-1 text-lg font-bold">
         {perfect
           ? "Kusursuz! Hepsi doğru."
           : `${total} ${noun === "görev" ? "görevden" : "sorudan"} ${correct} doğru`}
