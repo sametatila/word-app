@@ -2,6 +2,7 @@ import { getUserInfo, authEnabled } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
 import { ProgressView } from "@/components/progress-view";
+import { AchievementWall } from "@/components/achievement-wall";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +40,8 @@ export default async function ProfilePage() {
           totalXp: profile.totalXp,
         }}
       >
+        <AchievementWall />
+
         <ProgressView
           levels={data.levels}
           days={data.days.map((d) => ({

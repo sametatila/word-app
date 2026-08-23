@@ -8,6 +8,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
 import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
+import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
 import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark, ChatIcon } from "./icons";
 
@@ -103,6 +104,11 @@ export function AppShell({
           değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
           etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
       <SessionKeeper userId={userId} />
+      {/* Rozet kutlaması kabukta: rozet altı ayrı yerde kazanılabiliyor
+          (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ve
+          altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.
+          Tetikleyici zaten var olan `wortspiel:stats` olayı. */}
+      <AchievementUnlock />
       <TopProgress />
       <InstallPrompt />
       {/* Masaüstü kenar çubuğu */}
