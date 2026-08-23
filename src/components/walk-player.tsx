@@ -6,6 +6,7 @@ import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/sp
 import { useListen } from "@/components/use-listen";
 import { isSpeechCorrect, judgeSpeech } from "@/lib/speech";
 import { parseConfirm } from "@/lib/voice-intent";
+import { useWakeLock, wakeLockSupported } from "@/components/use-wake-lock";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
@@ -39,6 +40,7 @@ import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "
  *   - **Ekran kapanınca tanıyıcı susuyor.** Tarayıcıda arka planda konuşma
  *     tanıma yok; kilitli telefonda dinleyen bir sekme, mikrofonu görünmez
  *     biçimde açık tutmak olurdu. Tek dürüst çözüm ekranın kapanmasını
+ *     engellemek (`useWakeLock`).
  *   - **Sayfa görünmez olursa tur yanmamalı.** Başka bir uygulamaya geçilince
  *     tanıyıcı anında boş dönüyordu ve yirmi tur saniyeler içinde "duyamadım"
  *     diye tükeniyordu. Görünürlük gidince tur DURUYOR.
@@ -69,6 +71,29 @@ type Phase = "speaking" | "listening" | "judging";
  * çekilirdi. Duyulmayan tur cevapsız geçiliyor ve doğru karşılık okunuyor.
  */
 const UNHEARD_IS_NOT_WRONG = true;
+
+/**
+ * Mikrofonun çalışmadığına ne zaman karar verilir.
+ *
+ * Mikrofon gerçekten çalışmıyorsa (izin geri alınmış, başka uygulama
+ * kullanıyor, sayfa arka planda) her tur anında boş dönüyor ve yirmi turluk
+ * oturum saniyeler içinde tükeniyor — kullanıcı cebinden çıkardığında tur
+ * bitmiş oluyor.
+ *
+ * Ölçüt bilerek "üst üste" DEĞİL, "son N turun M'si". Tarayıcı tanıyıcısı
+ * bozuk durumdayken bile arada bir çöp metin döndürebiliyor; ardışıklık
+ * arayan bir sayaç o tek metinle sıfırlanıyor ve koruma hiç devreye
+ * girmiyordu. Ölçümde tam olarak bu oldu: kırk beş saniyede altı tur yandı,
+ * sayaç hiç üçe ulaşmadı.
+ *
+ * Pencere dar tutuldu: gerçekten konuşan biri gürültülü bir sokakta iki tur
+ * kaçırabilir, dört turun üçünü kaçırmaz.
+ */
+const UNHEARD_WINDOW = 4;
+const UNHEARD_LIMIT = 3;
+
+/** Onay sorusunda cevabı beklerken tanınan sessizlik tavanı. */
+const CONFIRM_SILENCE_MS = 7000;
 
 function localDay(): string {
   const d = new Date();
@@ -114,6 +139,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const walkRef = useRef({ correct: 0, total: 0, sessions: 1 });
   /** Son turların duyuldu/duyulmadı geçmişi — pencere bunun üstünde. */
   const heardLog = useRef<boolean[]>([]);
+  const { acquire, release } = useWakeLock();
   /** Okumanın bitişini bekleyen söz — iptal edilirse elle çözülür. */
   const speakDone = useRef<(() => void) | null>(null);
 
@@ -253,10 +279,18 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       const token = ++run.current;
       const alive = () => token === run.current;
 
-      for (let i = from; i < rounds.length; i++) {
+      // Dış döngü OTURUMLAR üzerinde: yirmi tur bitince sesli onay alınıp
+      // taze bir tur çekiliyor. Böylece telefonu cepten çıkarmadan devam
+      // edilebiliyor — modun bütün anlamı zaten bu.
+      let current = rounds;
+      let start = from;
+
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+      for (let i = start; i < current.length; i++) {
         if (!alive()) return;
         setIndex(i);
-        const round = rounds[i];
+        const round = current[i];
         const results: Answer[] = [];
 
         for (const word of wordsOf(round)) {
@@ -303,8 +337,31 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           const ok = isSpeechCorrect(decision) || decision.kind === "uncertain";
           const unheard = decision.kind === "unheard";
 
+          // Pencere her turda güncelleniyor: duyulan da duyulmayan da giriyor.
+          heardLog.current.push(!unheard);
+          if (heardLog.current.length > UNHEARD_WINDOW) heardLog.current.shift();
+          const misses = heardLog.current.filter((h) => !h).length;
+
           if (unheard && UNHEARD_IS_NOT_WRONG) {
             setVerdict("unheard");
+
+            // Dar bir pencerede biriken sessizlik bir gürültü değil, bir arıza
+            // işareti: mikrofon başka bir uygulamada, izin geri alınmış ya da
+            // sayfa arka planda.
+            if (misses >= UNHEARD_LIMIT) {
+              await say([
+                {
+                  lang: "tr",
+                  text: "Sesini duyamıyorum. Turu durdurdum, hazır olunca devam et.",
+                },
+              ]);
+              if (!alive()) return;
+              setStatus("paused");
+              void release();
+              heardLog.current = [];
+              return;
+            }
+
             await say([
               { lang: "tr", text: "Duyamadım." },
               { lang: "de", text: target },
@@ -410,7 +467,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     if (permission === "unavailable") return setStatus("unsupported");
 
     resetCombo();
+    heardLog.current = [];
     startedAt.current = Date.now();
+    // Ekran uyanık tutuluyor: kilitli telefonda tarayıcının konuşma tanıyıcısı
+    // susuyor ve tur, kullanıcı hiçbir şey duymadan "duyamadım" diye tükeniyor.
+    void acquire();
     setStatus("playing");
     track("walk_start", from);
     void loop(rounds, from);
@@ -418,13 +479,36 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   function pause() {
     stopAll();
+    void release();
     setStatus("paused");
   }
 
   function leave() {
     stopAll();
+    void release();
     onExit();
   }
+
+  /**
+   * Sayfa görünmez olursa tur DURUR.
+   *
+   * Ekran kilidi çoğu durumu çözüyor ama her şeyi değil: başka bir uygulamaya
+   * geçmek, aramaya cevap vermek ya da kilidi desteklemeyen bir tarayıcı hâlâ
+   * sayfayı arka plana atıyor. Orada tanıyıcı anında boş dönüyor; durmayan bir
+   * tur yirmi soruyu saniyeler içinde harcardı.
+   */
+  useEffect(() => {
+    if (status !== "playing") return;
+    const onHidden = () => {
+      if (document.visibilityState === "hidden") {
+        stopAll();
+        void release();
+        setStatus("paused");
+      }
+    };
+    document.addEventListener("visibilitychange", onHidden);
+    return () => document.removeEventListener("visibilitychange", onHidden);
+  }, [status, stopAll, release]);
 
   // ── Görünüm ────────────────────────────────────────────────────────
 
@@ -491,6 +575,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           </li>
           <li>
             ·{" "}
+            {wakeLockSupported()
               ? "Ekran açık tutulur, çünkü telefon kilitlenince tarayıcı mikrofonu susturuyor."
               : "Bu tarayıcı ekranı açık tutmayı desteklemiyor; telefon kilitlenirse tur duraklar."}
           </li>
