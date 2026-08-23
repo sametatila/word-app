@@ -69,27 +69,29 @@ export function PushSettings() {
         <BellIcon size={18} /> Hatırlatmalar
       </h2>
 
+      {/*
+        Engelli durumlarda metin bir açıklama değil, bir TALİMAT: kullanıcı bu
+        anahtarı arıyor ve bulamıyor, tek merak ettiği ne yapması gerektiği.
+        Üç metnin de sebep kısmı ("bu tarayıcı desteklemiyor", "izin
+        reddedilmiş") atıldı — durum zaten anahtarın olmamasından belli;
+        geriye yalnızca yapılacak iş kaldı.
+      */}
       {state === "unsupported" ? (
-        <p className="muted text-sm">
-          Bu tarayıcı bildirim göndermeyi desteklemiyor. Uygulamayı ana ekrana ekleyip
-          oradan açarsan çalışır.
-        </p>
+        <p className="muted text-sm">Uygulamayı ana ekrana ekleyip oradan aç.</p>
       ) : state === "ios" ? (
         <p className="muted text-sm">
-          iPhone&apos;da bildirim yalnızca ana ekrana eklenmiş uygulamada çalışıyor. Yukarıdaki
-          “Uygulama olarak kur” adımlarını izleyip uygulamayı oradan açtığında bu anahtar
-          görünecek.
+          Yukarıdaki “Uygulama olarak kur” adımlarını izle, sonra uygulamayı ana ekrandan aç.
         </p>
       ) : state === "denied" ? (
         <p className="muted text-sm">
-          Bildirim izni bu tarayıcıda reddedilmiş. Açmak için tarayıcının site ayarlarından
-          Wortspiel&apos;e bildirim izni vermen gerekiyor.
+          Tarayıcının site ayarlarından Wortspiel&apos;e bildirim izni ver.
         </p>
       ) : (
         <>
+          {/* Açıkken kaç bildirim geleceği yazıyla söylenmesi GEREKEN şey:
+              izni veren kişinin tek sorusu bu ve deneyerek öğrenilmiyor. */}
           <p className="muted text-sm">
-            Çalışmadığın günlerde günde en fazla bir bildirim: serin tehlikedeyse ya da
-            tekrar zamanı gelen kelimen varsa. Başka hiçbir şey için gönderilmez.
+            Günde en fazla bir bildirim: serin tehlikedeyse ya da tekrarın varsa.
           </p>
           <button
             onClick={() => void toggle()}

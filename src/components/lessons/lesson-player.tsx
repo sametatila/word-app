@@ -1075,7 +1075,7 @@ export function LessonPlayer({
 
               {expect && expect.kind !== "confirm" && !asrAvailable ? (
                 <p className="muted mb-2 text-center text-xs">
-                  Bu tarayıcı konuşma tanımayı desteklemiyor; yazarak devam et.
+                  Konuşma tanıma yok — yazarak devam et.
                 </p>
               ) : null}
 
@@ -1247,7 +1247,7 @@ export function LessonPlayer({
                 </div>
               ) : (
                 <p className="muted mb-2 text-center text-xs">
-                  Bu tarayıcı konuşma tanımayı desteklemiyor; yazarak devam et.
+                  Konuşma tanıma yok — yazarak devam et.
                 </p>
               )}
 
@@ -1670,7 +1670,7 @@ function AsrNote({ visible }: { visible: boolean }) {
       }}
     >
       <AlertIcon size={14} className="mt-0.5 shrink-0" />
-      <span>Bu tarayıcı konuşma tanımayı desteklemiyor; yazarak devam edebilirsin.</span>
+      <span>Konuşma tanıma yok — yazarak devam edebilirsin.</span>
     </div>
   );
 }

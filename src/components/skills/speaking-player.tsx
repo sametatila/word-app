@@ -423,14 +423,16 @@ function Feedback({
           <p className="muted mt-2 text-sm">
             Duyulan: <span className="font-semibold">“{verdict.heard}”</span>
           </p>
+          {/* Gerekçe ("doğru söylemiş olabilirsin ama tanıyıcı emin değil")
+              düştü: başlık zaten "tam net duyulmadı" diyor ve altında ne
+              duyulduğu yazıyor. Kalan cümle yapılacak işin kendisi. */}
           <p className="muted mt-2 text-sm">
-            Doğru söylemiş olabilirsin ama tanıyıcı emin değil. Biraz daha yüksek
-            sesle ve heceleri ayırarak bir kez daha söyle.
+            Biraz daha yüksek sesle, heceleri ayırarak bir kez daha söyle.
           </p>
         </div>
       ) : verdict.kind === "unheard" ? (
         <p className="muted text-center text-sm">
-          Hiçbir şey duyulmadı. Mikrofona yaklaş ve biraz daha yüksek sesle söyle.
+          Hiçbir şey duyulmadı — mikrofona yaklaş.
         </p>
       ) : (
         <>

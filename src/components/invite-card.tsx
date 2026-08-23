@@ -49,10 +49,11 @@ export function InviteCard() {
       <h2 className="mb-2 flex items-center gap-2 font-bold">
         <HandshakeIcon size={18} /> Birini çağır
       </h2>
-      <p className="muted text-sm">
-        Haftalık sıralama, günün turu ve paylaşılan sonuçlar ancak yanında biri varken anlam
-        kazanıyor. Bağlantıyı gönder, aynı tabloda yarışın.
-      </p>
+      {/* İlk cümle üç özelliği sayıp hepsinin neden tek başına anlamsız
+          olduğunu anlatıyordu; ikna metni bile olsa kullanıcıya kendi
+          uygulamasını tanıtıyordu. Kalan cümle davetin ne işe yaradığını
+          söylüyor, o kadar. */}
+      <p className="muted text-sm">Bağlantıyı gönder, aynı tabloda yarışın.</p>
       <button onClick={() => void invite()} className="btn btn-primary mt-3 px-4 py-2.5 text-sm">
         {copied ? "Bağlantı kopyalandı" : "Davet bağlantısını paylaş"}
       </button>
