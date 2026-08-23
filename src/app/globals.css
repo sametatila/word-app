@@ -103,8 +103,24 @@
     background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700));
     box-shadow: 0 8px 20px -10px var(--color-brand-600);
   }
-  .btn-primary:hover {
-    filter: brightness(1.07);
+  /*
+   * Fare imleci OLAN cihazlarda üzerine gelme vurgusu.
+   *
+   * Dokunmatik ekranda `:hover` bir "üzerine gelme" değil, bir KALINTI:
+   * iOS dokunulan öğeyi bir sonraki dokunuşa kadar üzerine gelinmiş sayıyor
+   * ve o noktada sonradan oluşan öğelere de aynı durumu uyguluyor. Şıklarda
+   * bu doğrudan yanlış bilgi üretiyordu — bir soruda dokunulan yerdeki şık,
+   * bir sonraki soruda seçilmiş gibi çerçeveli açılıyor ve öğrenci hangi
+   * şıkkı kendisinin işaretlediğini ayırt edemiyordu.
+   *
+   * `pointer: fine` de gerekiyor: hem dokunmatik hem fareli dizüstülerde
+   * `hover: hover` tek başına doğru, ama parmakla kullanıldığında aynı
+   * kalıntı orada da oluşuyor.
+   */
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover {
+      filter: brightness(1.07);
+    }
   }
   .btn-ghost {
     background: var(--surface-2);
@@ -118,9 +134,11 @@
     transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease,
       box-shadow 0.15s ease;
   }
-  .option:hover:not(:disabled) {
-    border-color: var(--color-brand-400);
-    transform: translateY(-1px);
+  @media (hover: hover) and (pointer: fine) {
+    .option:hover:not(:disabled) {
+      border-color: var(--color-brand-400);
+      transform: translateY(-1px);
+    }
   }
   /* Dokunulduğu an tepki ver: kullanıcı seçiminin algılandığını hemen görsün. */
   .option:active:not(:disabled) {
@@ -143,10 +161,12 @@
     transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease,
       transform 0.12s ease;
   }
-  .chip:hover:not(.chip-active) {
-    border-color: var(--color-brand-400);
-    color: var(--text);
-    background: color-mix(in srgb, var(--color-brand-500) 7%, var(--surface));
+  @media (hover: hover) and (pointer: fine) {
+    .chip:hover:not(.chip-active) {
+      border-color: var(--color-brand-400);
+      color: var(--text);
+      background: color-mix(in srgb, var(--color-brand-500) 7%, var(--surface));
+    }
   }
   .chip:active {
     transform: scale(0.95);
