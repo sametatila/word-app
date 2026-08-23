@@ -3,7 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { saveSessionProgress, submitAnswers } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
-import type { Answer, GameId } from "@/lib/types";
+import type { Answer, GameId, Wager } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -38,7 +38,13 @@ export async function POST(req: Request) {
   if (!parsed) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   try {
-    const result = await submitAnswers(userId, parsed.answers, parsed.day, parsed.seconds);
+    const result = await submitAnswers(
+      userId,
+      parsed.answers,
+      parsed.day,
+      parsed.seconds,
+      parsed.wager,
+    );
     // Turun nerede kalındığı cevaplarla aynı istekte gider: her turda iki ayrı
     // ağ isteği yapmak mobilde gereksiz bir gecikme olurdu.
     if (parsed.progress) await saveSessionProgress(userId, parsed.day, parsed.progress);
@@ -77,5 +83,25 @@ function parseBody(body: unknown) {
   const seconds = typeof b.seconds === "number" ? Math.max(0, Math.round(b.seconds)) : 0;
   // İlerleme isteğe bağlıdır: meydan okuma turu cevap gönderir ama kayıtlı bir
   // oturuma ait değildir.
-  return { answers, day, seconds, progress: parseProgress(b.progress) };
+  return { answers, day, seconds, progress: parseProgress(b.progress), wager: parseWager(b.wager) };
+}
+
+/**
+ * Bahis sonucu.
+ *
+ * Doğrulama dar: etap beş turluk olduğu için `total` 1–10 arasında, `correct`
+ * ondan büyük olamaz, `stake` tavanlı. Bozuk ya da abartılı bir istek puan
+ * basamaz; hesabın kendisi de `xpForWager` içinde ayrıca sınırlanıyor.
+ */
+function parseWager(raw: unknown): Wager | null {
+  if (typeof raw !== "object" || raw === null) return null;
+  const w = raw as Record<string, unknown>;
+  if (typeof w.correct !== "number" || typeof w.total !== "number" || typeof w.stake !== "number") {
+    return null;
+  }
+  const total = Math.round(w.total);
+  const correct = Math.round(w.correct);
+  if (!Number.isFinite(total) || total < 1 || total > 10) return null;
+  if (!Number.isFinite(correct) || correct < 0 || correct > total) return null;
+  return { total, correct, stake: Math.max(0, Math.min(250, Math.round(w.stake))) };
 }

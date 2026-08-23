@@ -100,3 +100,34 @@ export function xpDelta(nextXp: number, previousXp: number | null): number {
   if (previousXp === null) return Math.max(0, nextXp);
   return Math.max(0, nextXp - previousXp);
 }
+
+/**
+ * Bahisli etabın sonucu.
+ *
+ * Etap sınırında kullanıcı isterse "bahse girer": sonraki beş turu hatasız
+ * bitirirse o etabın puanı ikiye katlanır, iki ya da daha çok yanlışta etap
+ * hiç puan kazandırmamış olur. Bir yanlış ne kazandırır ne kaybettirir.
+ *
+ * İki kural bunu adil tutuyor:
+ *
+ *   1. **Tamamen isteğe bağlı.** Bahse girmeyen hiçbir şey kaybetmez ve
+ *      kaybedebileceği bir şey olduğunu da bilmez — oyunun zorluğu değişmez.
+ *   2. **Kayıp yalnızca o etaba ait.** Kaybedilen en fazla, o beş turda az
+ *      önce kazanılan puandır. Dünkü emeğe dokunulmaz. Bir öğrenme
+ *      uygulamasının kullanıcıyı GERİ götürmesi savunulamaz; "bu etap
+ *      boşa gitti" ise gergin ama dürüst.
+ *
+ * Bahsin varlık sebebi zorluk değil GERİLİM: ana turda kaybedilecek hiçbir
+ * şey yoktu, dolayısıyla kazanılacak bir şey de yoktu. Hayatta kalma turunda
+ * ölçülen odak farkını ana tura taşıyan şey bu.
+ */
+export function xpForWager(correct: number, total: number, stake: number): number {
+  if (total <= 0) return 0;
+  // Pay istemciden geliyor (sunucu etabın kendi toplamını ayrıca tutmuyor),
+  // bu yüzden tavanlı: bozuk ya da abartılı bir sayı puan basamaz.
+  const safeStake = Math.max(0, Math.min(250, Math.round(stake)));
+  const wrong = total - correct;
+  if (wrong === 0) return safeStake;
+  if (wrong === 1) return 0;
+  return -safeStake;
+}

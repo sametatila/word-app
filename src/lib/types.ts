@@ -190,10 +190,28 @@ export type SessionPayload = {
     pacing: "normal" | "light" | "review";
     /** Takılan (leech) kelime sayısı — tempo kararının gerekçesi. */
     leeches: number;
+    /**
+     * Hayatta kalma turundaki rekor.
+     *
+     * Başlangıç kartındaki arena kartı için: tur yalnızca oturum ÖZETİNDEN
+     * ulaşılabiliyordu, yani 20 turu bitirmeden görülemiyordu. Rekoru göstermek
+     * için ayrı bir istek atmak yerine meta'ya bindiriliyor — kart zaten bu
+     * paketle çiziliyor.
+     */
+    challengeBest: number;
   };
 };
 
+/** Bahisli etabın istemciden gelen sonucu. */
+export type Wager = { correct: number; total: number; stake: number };
+
 export type AnswerResult = {
+  /**
+   * Bahisli etabın puan farkı: hatasızsa artı, iki yanlışta eksi, aksi hâlde
+   * sıfır. `xpGained` bunu zaten içeriyor; ayrı dönmesinin sebebi özet
+   * ekranının bahsin sonucunu ayrıca söyleyebilmesi.
+   */
+  wagerXp: number;
   /** Bu turda pekişme eşiğini (21 gün) geçen kelime sayısı. */
   newlyMastered: number;
   xpGained: number;

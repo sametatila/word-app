@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { dailyStats, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
-import { xpForChallengeRecord } from "@/lib/xp";
+import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
 import type {
@@ -17,6 +17,7 @@ import type {
   SessionPayload,
   SessionProgress,
   Option,
+  Wager,
 } from "@/lib/types";
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
@@ -286,6 +287,7 @@ export async function buildSession(
     displayName: profile.displayName,
     level: band.level,
     coverage: { mastered: cov?.mastered ?? 0, total: cov?.total ?? 0 },
+    challengeBest: profile.challengeBest,
     pacing,
     leeches: health?.leeches ?? 0,
   };
@@ -1055,6 +1057,8 @@ export async function submitAnswers(
   answers: Answer[],
   today: string,
   seconds: number,
+  /** Bahisli etap kapandıysa sonucu — yoksa bahis oynanmamıştır. */
+  wager: Wager | null = null,
 ): Promise<AnswerResult> {
   const profile = await ensureProfile(userId);
   const now = new Date();
@@ -1156,6 +1160,17 @@ export async function submitAnswers(
 
   if (reviewRows.length) await db.insert(reviews).values(reviewRows);
 
+  /**
+   * Bahsin farkı.
+   *
+   * Kazançla aynı kalemde yazılıyor (günlük istatistik + toplam XP), çünkü
+   * bahis ayrı bir para birimi değil, aynı puanın riske atılmış hâli.
+   * Kaybın tabanı sıfır: bir öğrenme uygulaması kullanıcıyı geri
+   * götürmemeli — en fazla "bu etap boşa gitti" diyebilir.
+   */
+  const wagerXp = wager ? xpForWager(wager.correct, wager.total, wager.stake) : 0;
+  xpGained = Math.max(0, xpGained + wagerXp);
+
   const [stat] = await db
     .insert(dailyStats)
     .values({
@@ -1216,6 +1231,7 @@ export async function submitAnswers(
   const dueTomorrow = await countDueTomorrow(userId, today);
 
   return {
+    wagerXp,
     newlyMastered,
     xpGained,
     totalXp: profile.totalXp + xpGained,
