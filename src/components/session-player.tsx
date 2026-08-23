@@ -31,6 +31,7 @@ import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { GamePicker } from "@/components/game-picker";
 import { Mascot } from "@/components/mascot";
+import { MascotPop } from "@/components/mascot-pop";
 import { Stagger, StaggerItem } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
@@ -140,6 +141,8 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * deneyen kullanıcı en sadık kullanıcı çıktı.
    */
   const [combo, setCombo] = useState(0);
+  /** Erdi'nin kutlama çıkışını tetikleyen sayaç — değeri değil, değişmesi önemli. */
+  const [cheer, setCheer] = useState(0);
   const bestCombo = useRef(0);
   /** Etap özetinde gösterilecek: bu etaba girerken neredeydik. */
   const stageStart = useRef({ index: 0, correct: 0, total: 0, xp: 0 });
@@ -185,6 +188,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     missed.current = [];
     marks.current = [];
     setCombo(0);
+    setCheer(0);
     resetCombo();
     play("start");
     track("session_start");
@@ -381,6 +385,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         if (running > bestCombo.current) bestCombo.current = running;
       }
       setCombo(running);
+      // Erdi beşin katlarında kenardan uzanıp kutluyor. Eşik combo rozetinin
+      // eşiğinden (üç) yüksek: rozet "seri sürüyor" diyor ve her doğruda
+      // güncelleniyor, kutlama ise bir OLAY olmalı — her üç cevapta bir çıkan
+      // karakter kutlama olmaktan çıkıp trafiğe dönüşürdü.
+      if (running >= 5 && running % 5 === 0) setCheer(running);
 
       const rounds = session?.rounds.length ?? 0;
       const isLast = index >= rounds - 1;
@@ -585,6 +594,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
 
   return (
     <Screen fills>
+    <MascotPop trigger={cheer} />
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
       <div className="mb-2 shrink-0">
         <LevelBadge
