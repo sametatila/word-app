@@ -22,14 +22,19 @@ uygulama gibi tam ekran açılır (PWA).
 - **Beceriler bölümü (`/skills`):** her kursta A1–C1 için okuma, dinleme ve yazma alıştırmaları —
   metin, sözlükçe (gloss), çoktan seçmeli sorular ve gerekçeli açıklamalar; yazmada önce cümle
   kurma, sonra kontrol listeli serbest yazı ve örnek çözüm.
-- **Sohbet (`/sohbet`):** seviyene göre konuşan Almanca partner. Her istekte tekrar kuyruğundan
-  18 kelime sistem istemine girer, konuşma onların etrafında döner — sohbet SRS'in üstüne biner.
-  Hatalar konuşmayı bölmeden tek satırda düzeltilir. Yazmak son çare: her cevabın altında
-  dokunulabilir öneriler, mikrofonla sesli cevap ve umlaut tuşları var. **Eller serbest**
-  anahtarı açıkken tek bir döngü kurulur — cevap sesli okunur, okuma biter bitmez mikrofon
-  kendiliğinden açılır, söylediğin doğrudan gönderilir; telefona hiç dokunmazsın. GitHub Models'in ücretsiz
-  Cerebras, Groq ya da Mistral'in ücretsiz katmanı üzerinden çalışır; anahtarı olan ilk
-  sağlayıcı seçilir, düşerse yedeğe geçilir. Anahtar yoksa sayfa çökmez, ne yapılacağını söyler.
+- **Ders içi rol yapma:** serbest sohbet bölümü kaldırıldı; yerine her dersin sonundaki
+  konuşma fazı geçti (`/api/roleplay`). Fark tek kelimede: **amaç**. Sohbette model her şeye
+  cevap veriyordu ve konuşmanın nereye gideceği belirsizdi — boş sayfa serbest sohbetin en
+  pahalı sorunuydu. Rol yapmada sahne, muhatap ve kullanılacak kalıplar belli; model konuşmayı
+  dersin kalıplarına doğru sürüyor ve düzeltmeyi o çerçevede yapıyor. **Eller serbest** anahtarı
+  açıkken tek bir döngü kurulur — cevap sesli okunur, okuma biter bitmez mikrofon kendiliğinden
+  açılır, söylediğin doğrudan gönderilir. GitHub Models'in ücretsiz Cerebras, Groq ya da
+  Mistral'in ücretsiz katmanı üzerinden çalışır; anahtarı olan ilk sağlayıcı seçilir, düşerse
+  yedeğe geçilir.
+- **Rol yapmanın adı var:** muhataplar isimsiz değil. Her modül (10 ders) küçük bir kadroya
+  sahip ve aynı üç kişi o modül boyunca dönüyor — yeme-içme modülünde tanıştığın garson üç ders
+  sonra yine karşına çıkıyor. İsimler dersin katalogdaki yerinden türetiliyor
+  (`src/lib/lessons/characters.ts`), içerik dosyalarına tek bir alan bile eklenmedi.
 - **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
   kelime listesinde ve Cümleyi Tamamla oyununda görünür.
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
@@ -58,6 +63,31 @@ uygulama gibi tam ekran açılır (PWA).
 - **"Bunu zaten biliyorum":** bildiğin kelimeyi tek dokunuşla pekişmiş işaretleyip atlarsın.
 - **Kelimelerim ekranı:** binlerce kelimede arama, seviye/durum filtresi, çoğul-tür bilgisi, örnek cümle
   ve bir sonraki tekrar tarihi.
+- **Sesli geri bildirim:** her doğru cevapta yükselen kısa bir ton, yanlışta alçalan bir nota.
+  Perde sabit değil — üst üste doğru gittikçe pentatonik bir merdivende bir basamak yükseliyor,
+  yani ekrana bakmadan da serinin sürdüğü duyuluyor. Etap, kusursuz etap, rekor, rozet açılışı
+  ve son sekiz saniyenin ayrı ezgileri var. Ses dosyası yok: tonlar WebAudio ile yerinde
+  üretiliyor, indirilecek bir şey olmadığı için ilk cevap da anında sesli. Profilden kapatılır.
+- **Haftalık sıralama:** tablo tüm zamanların toplamını değil **bu haftanın** XP'sini gösteriyor
+  ve pazartesi sıfırlanıyor. Toplam birikim tablosu iki tarafa da bir şey söylemiyordu: öndeki
+  tehdit altında değildi, arkadaki umutsuzdu. Tabloda kaç gün kaldığı ve bir üsttekine kaç XP
+  olduğu yazıyor — "6. sıradasın" bir durum, "bir üsttekine 140 XP" bir hedef.
+- **Öğrenci arması:** sıralamadaki gri baş-harf dairesi yerine kimlikten türetilen renkli arma
+  (gradyan + desen). Sıfır depolama, sıfır ayar, herkes farklı; ilk üçün armasında madalya
+  halkası var.
+- **Rozetler:** 37 rozet, yedi grupta (seri · kelime · oyunlar · dersler · beceriler · turlar ·
+  keşif). İlerleme ayrı bir sayaçta biriktirilmiyor, mevcut tablolardan okunuyor — bunun sonucu
+  rozetlerin **geriye dönük** olması: sistem açıldığı gün kimse sıfırdan başlamıyor. Kilitli
+  rozetler gizlenmiyor, sönük duruyor ve altlarında "ne kadar kaldı" çubuğu var; gizlenmiş
+  hedef hedef değildir. Eşikler bilerek uzak — beş dakikada açılan rozet, rozet değil bildirimdir.
+  Hiçbiri satın alınamaz, tek yol oynamak.
+- **Bahis:** etap sınırında isteğe bağlı risk. Sonraki beş tur hatasız geçerse o etabın puanı
+  ikiye katlanıyor, iki yanlışta etap hiç puan kazandırmamış oluyor, tek yanlış başa baş.
+  Kayıp yalnızca o etaba ait: dünkü birikime dokunulmuyor. Bahse girmeyen için oyun hiç
+  değişmiyor.
+- **Arena başlangıç ekranında:** hayatta kalma turuna tek giriş oturum ÖZETİYDİ, yani turu
+  görebilmek için önce 20 turluk bir oturumu bitirmek gerekiyordu. Artık günün turunun hemen
+  altında, rekorunla birlikte duruyor.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
   ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
 - **Günün turu:** aynı kurs ve seviyedeki herkes her gün **aynı kelimeleri aynı sırayla**
@@ -104,18 +134,18 @@ DATABASE_URL="postgresql://user:pass@ep-xxx-pooler.<region>.aws.neon.tech/neondb
 NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
 NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 
-# Sohbet (/sohbet) — üçünden biri yeter. Sıra: cerebras → groq → mistral.
+# Ders içi rol yapma — üçünden biri yeter. Sıra: cerebras → groq → mistral.
 CEREBRAS_API_KEY="..."          # önerilen: ücretsizlerin en hızlısı, 1M token/gün
 # GROQ_API_KEY="..."            # ~500K token/gün, ilk yedek
 # MISTRAL_API_KEY="..."         # 1B token/ay ama ~2 RPM — taşma yedeği
 ```
 
-Sohbet üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
+Rol yapma üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
 Cerebras → Groq → Mistral). Üçü de OpenAI uyumlu olduğu için tek istemci yetiyor; sıra
-hıza göre kurulu, çünkü sohbette gecikme her şeyden önemli. Birincil düşerse yedeğe
+hıza göre kurulu, çünkü konuşmada gecikme her şeyden önemli. Birincil düşerse yedeğe
 geçilir — **akış başlamadan önce**; başladıktan sonra yarım cümlenin üstüne başka modelin
 cevabını eklemek doğru olmazdı. Sırayı `CHAT_PROVIDER` ile ezebilirsin. Hiçbiri yoksa yalnızca
-`/sohbet` kapalı görünür, uygulamanın geri kalanı etkilenmez.
+derslerin konuşma fazı kapalı görünür, uygulamanın geri kalanı etkilenmez.
 
 Anahtarlar **koda gömülmez** — bu depo GitHub'a push ediliyor ve GitHub kendi token biçimini
 tarayıp bulduğu anda iptal ediyor.
@@ -125,7 +155,7 @@ bağlıysa tüm oyunlar, ilerleme ve streak çalışır. İki değer eklenince g
 kendiliğinden devreye girer.
 
 Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi · `/learn` oturum ·
-`/words` kelime listesi · `/skills` okuma-dinleme-yazma-konuşma · `/sohbet` serbest sohbet ·
+`/words` kelime listesi · `/skills` okuma-dinleme-yazma-konuşma · `/lessons` ders yolu ·
 `/profile` ayarlar + ilerleme ·
 `/demo-games` on oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
 
@@ -149,7 +179,7 @@ vercel link
 vercel env add DATABASE_URL production                     # ve preview/development
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
-vercel env add CEREBRAS_API_KEY production                  # /sohbet için; yoksa yalnızca o sayfa kapalı
+vercel env add CEREBRAS_API_KEY production                  # rol yapma için; yoksa yalnızca o faz kapalı
 
 # Hatırlatma bildirimleri — üçü birden gerekli, biri eksikse özellik kapalı kalır.
 npx web-push generate-vapid-keys --json                     # çıktıdaki iki anahtar
@@ -190,12 +220,18 @@ docker run -d --name wa-pg -e POSTGRES_PASSWORD=test -e POSTGRES_DB=wa \
 for f in drizzle/*.sql; do
   docker cp "$f" wa-pg:/tmp/m.sql && docker exec wa-pg psql -U postgres -d wa -q -f /tmp/m.sql
 done
-TEST_DATABASE_URL="postgres://postgres:test@localhost:55432/wa" npm run test:e2e
+# Testin dolu bir `words` tablosuna ihtiyacı var: tohumlanmamış veritabanında oturum
+# kurulamadığı için testlerin çoğu "0 tur üretildi" diye düşer ve sebebi kodmuş gibi görünür.
+# (`npm run db:seed` burada kullanılamaz — Neon'un HTTP sürücüsü düz PostgreSQL'e bağlanmaz.)
+export TEST_DATABASE_URL="postgres://postgres:test@localhost:55432/wa"
+npm run test:seed
+npm run test:e2e
 ```
 
-E2E testi (196 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
-mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını ve ilerleme
-sorgularını gerçek PostgreSQL üzerinde doğrular.
+E2E testi (438 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
+sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını ve
+ilerleme sorgularını gerçek PostgreSQL üzerinde doğrular.
 
 ```bash
 # arayüzden oynayan öğrenci simülasyonu (dev sunucusu açıkken)
@@ -209,9 +245,9 @@ src/
   app/
     page.tsx                tanıtım sayfası
     kurs-sec                ilk giriş: kurs + başlangıç seviyesi
-    (app)/learn|words|skills|sohbet|profile
+    (app)/learn|words|skills|lessons|profile
     api/session             oturum kuyruğunu üretir
-    api/chat                sohbet partneri (akışlı; sağlayıcı seçimi chat-providers.ts)
+    api/roleplay            ders içi rol yapma (akışlı; sağlayıcı seçimi chat-providers.ts)
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
     api/words/known         "bunu zaten biliyorum" işaretlemesi
@@ -223,15 +259,24 @@ src/
   lib/
     auth/                   Neon Auth sunucu + istemci sarmalayıcıları
     srs.ts                  tekrar motoru (saf fonksiyonlar)
-    session.ts              kuyruk kurgusu, cevap işleme, ilerleme sorguları
+    session.ts              kuyruk kurgusu, cevap işleme, haftalık sıralama, ilerleme
+    sfx.ts                  oyun sesleri (WebAudio; dosya yok, tonlar yerinde üretilir)
+    achievements.ts         37 rozetin tanımı + mevcut tablolardan geriye dönük hesabı
+    events.ts / track.ts    ürün olayları (sunucu yazımı / istemci göndericisi)
+    xp.ts                   XP tablosu + bahis kuralı (tek referans noktası)
+    lessons/characters.ts   rol yapma kadrosu — isimler katalog sırasından türer
     example.ts              örnek cümle ayıklama (numaralı liste + kısaltma farkındalığı)
     skills/                 beceri içeriği: types · meta · content/{a1..c1, zh-a1..zh-c1}
     db/schema.ts            words · profiles · user_words · reviews · daily_stats ·
-                            skill_exercises · user_skills
+                            skill_exercises · user_skills · session_state · daily_scores ·
+                            quest_claims · user_lessons · achievements · events
   components/
-    session-player.tsx      oyun akışını yöneten oynatıcı
+    session-player.tsx      oyun akışını yöneten oynatıcı (etaplar, bahis, arena)
     games/*.tsx             on oyun + ortak çerçeve
     skills/*.tsx            beceri hub'ı, okuma/dinleme/yazma çalıştırıcıları
+    achievement-*.tsx       rozet duvarı, rozet görseli, açılış kutlaması
+    avatar.tsx              kimlikten türetilen öğrenci arması
+    leaderboard.tsx         haftalık sıralama
 data/
   app/words.json            Almanca tohumlama kaynağı (7.392 kelime, A1–C1)
   app/beispiel-tr.json      örnek cümlelerin Türkçe çevirileri (7.426 cümle)
@@ -374,6 +419,89 @@ ilerlemiyordu. Sıralamada yükselmek isteyen öğrenci kelime kartı çevirmek 
 | Günün turu | süreye göre, ilk kayıtta bir kez |
 | Görev ödülü | görev başına 120–200, üçü birden +300 |
 | Hayatta kalma rekoru | farkla orantılı, 25–400 arası |
+| Bahisli etap | hatasızsa etabın puanı kadar ek, iki yanlışta etabın puanı kadar eksi (tavan 250) |
 
 XP, günlük istatistik ve seri tek geçitten yazılır (`src/lib/award.ts`); yeni bir öğrenme
 yolu eklenirken üç şeyi ayrı ayrı hatırlamak gerekmez.
+
+## 11. Oyun katmanı
+
+Uygulamada mekanik eksik değildi; eksik olan **geri bildirim, hatıra ve rekabet**ti. Bu bölüm
+o üçünü kuran parçaları ve neden öyle kurulduklarını anlatıyor.
+
+### Ses
+
+Uygulama tamamen sessizdi. Geri bildirim yalnızca titreşim ve ekrandaki geçiş çizgisiydi;
+titreşim masaüstünde hiç yok, telefonda da sistem ayarıyla kapatılabiliyor — yani bir cevabın
+doğru olduğu bazı cihazlarda **sadece renkle** anlaşılıyordu.
+
+Sesin işi süslemek değil, üç şeyi söylemek:
+
+| Ne der | Nasıl |
+|---|---|
+| "Cevabın alındı" | Dokunuş–ses gecikmesi sıfıra yakın: ses dosyası yok, tonlar `WebAudio` ile yerinde üretiliyor |
+| "Üst üste doğru gidiyorsun" | Doğru sesi sabit değil; her ardışık doğruda pentatonik merdivende bir basamak yükseliyor |
+| "Bir şey kazandın" | Etap, kusursuz etap, rekor ve rozet açılışının ayrı ezgileri var |
+
+Merdiven bilerek pentatonik: hangi basamaktan hangisine atlanırsa atlansın uyumsuz aralık
+çıkmaz. Kromatik bir dizide 7. doğruda kulağı tırmalayan bir aralık duyulur ve "kombo
+yükseliyor" hissi bozulurdu.
+
+Ses tek noktadan bağlı (`src/lib/fx.ts` içindeki `vibrate()`): on oyunun hepsi ve dersler
+cevabı aldığı anda ya `vibrate()` ya da onu zaten çağıran `fx()` üzerinden geçiyor. On bir
+çağrı yerini dolaşmadan bütün uygulama seslendi.
+
+### Rozetler
+
+Biriken tek şey XP'ydi ve XP tek bir sayı: 41.320'den 41.480'e çıkmak hiçbir şey anlatmıyor.
+Geriye dönüp bakılacak bir yüzey yoktu — oysa veritabanında yüz günlük seriler, binlerce doğru
+cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
+
+Üç karar:
+
+1. **İlerleme biriktirilmiyor**, mevcut tablolardan okunuyor (`quests.ts` ile aynı ilke).
+   Bedeli birkaç ek sorgu; karşılığı rozetlerin **geriye dönük** olması. Sistem açıldığı gün
+   kimse sıfırdan başlamıyor.
+2. **Az ve zor.** Her şeye rozet veren sistemler *overjustification* etkisiyle içsel
+   motivasyonu düşürüyor. 37 rozetin çoğu aylara, birkaçı yıllara yayılıyor.
+3. **Hiçbiri satın alınamaz.** Uygulamada para yok ve olmayacak; rozetin değeri buradan geliyor.
+
+Kutlama tek bir yerde duruyor (`app-shell.tsx` → `AchievementUnlock`) ve tetikleyicisi zaten var
+olan `wortspiel:stats` olayı: XP değiştiğinde bir şey kazanılmış demektir. Rozetin kazanılabileceği
+altı ayrı yere (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ayrı kutlama koymak,
+altı yerde unutulabilecek bir şey demekti.
+
+### Bahis
+
+Ana turda kaybedilecek hiçbir şey yoktu, dolayısıyla kazanılacak bir şey de yoktu. Bahis
+gerilimi ana tura taşıyor:
+
+| Sonuç | Etki |
+|---|---|
+| Beşi de doğru | Etabın puanı iki katı |
+| Bir yanlış | Başa baş |
+| İki veya daha çok yanlış | Etap puan kazandırmaz |
+
+İki kural adil tutuyor: **tamamen isteğe bağlı** (bahse girmeyen için oyun hiç değişmez) ve
+**kayıp yalnızca o etaba ait** (dünkü emeğe dokunulmaz, toplam XP asla geriye gitmez). Pay
+istemciden geldiği için sunucuda tavanlı — `xpForWager` 250'yi geçen bir pay kabul etmiyor.
+
+### Ölçüm
+
+Bugüne kadarki kararlar ölçümle alındı ama ölçülebilen yalnızca ardında iz bırakan şeylerdi:
+cevaplar, dersler, XP. Görülemeyen sorular en çok merak edilenlerdi — kaç kişi başlangıç kartını
+görüp hiç başlamadan çıktı, hangi sekmeye hiç dokunulmadı.
+
+`events` tablosu bilerek dar: kim, hangi gün, hangi olay, isteğe bağlı bir sayı. Serbest metin ya
+da jsonb yok; olay adları `src/lib/events.ts` içindeki **kapalı listeden** doğrulanıyor, yoksa
+tablo altı ayda kimsenin anlamını bilmediği yüzlerce adla dolardı. Yazma hiçbir zaman hata
+fırlatmıyor: ölçüm, ölçtüğü şeyi bozmamalı.
+
+### Bilerek yapılmayanlar
+
+| Ne | Neden |
+|---|---|
+| Enerji / can sistemi | Öğrenmeyi duvara çarptırır. Ücretsiz kullanıcıyı saatlerce bekleten bir sistem, öğrenme uygulamasının kendi amacına aykırı |
+| Para, mağaza, satın alınabilir rozet | Bu uygulama satılmıyor. Açılabilir her şeyin tek yolu oynamak |
+| Otomatik seviye düşürme | Oturum doğruluğu yetkinliği değil kuyruğun bileşimini ölçüyor; daha önce kaldırıldı, geri gelmedi |
+| Bildirim sıklığını artırmak | Günde bir sınırı doğru; eksik olan sıklık değil, tetikleyicinin türüydü |
