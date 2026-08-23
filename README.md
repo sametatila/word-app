@@ -95,9 +95,9 @@ uygulama gibi tam ekran açılır (PWA).
   kendisi (aynı kuyruk, aynı uç), yani ekranda başlayıp kulakla devam edebilirsin; SRS, günlük
   hedef ve seri hiçbir şeyin farkında olmaz. Duyulmayan tur **yanlış sayılmaz** — sokaktaki
   gürültü tekrar planını bozmamalı. Yirmi tur bitince **“devam edelim mi?”** sesli sorulur ve
-  “evet” demen yeter: telefonu çıkarmadan bir sonraki tura geçilir. Ekran açık tutulur (tarayıcı
-  kilitli telefonda mikrofonu susturuyor), uygulamadan çıkılırsa tur duraklar ve mikrofon
-  gerçekten çalışmıyorsa tur yanmadan durur.
+  “evet” demen yeter: telefonu çıkarmadan bir sonraki tura geçilir. **Ekran kapanırsa tur
+  durmuyor**, ölçmeyen “cepte” kipine düşüyor ve okumaya devam ediyor; ekran açılınca ölçen
+  kipe geri dönüyor.
 - **Modül sınavı (patron turu):** ders yolundaki her modülün sonunda, o modülün ~45 kelimesiyle
   süre baskılı bir sınav. Hayatta kalma turundan farkı bir **kaybetme koşulu** olması: 15 soruyu
   60 saniye içinde bitirmek zorundasın (doğru +3 sn, yanlış −5 sn). Geçilen modül yolda taç
@@ -533,14 +533,35 @@ taşınınca ortaya bambaşka bir kullanım anı çıktı — yürürken, bulaş
 | Duyulmayan tur yanlış sayılmaz | Sokakta mikrofonun bir turu kaçırması olağan; onu hata yazmak kelimeyi gerçekten unutulduğu için değil gürültü yüzünden öne çekerdi |
 | Cevaplar `speak` adıyla kaydedilir | Yazma oyununun hanesine yazmak kolaydı ama profildeki oyun başarısı tablosunu bozardı: ikisi farklı beceri |
 
-Telefon cepteyken dört şey ayrıca çözülmek zorunda kaldı:
+#### Ekran kapanınca: iki kip
+
+Web'de **arka planda konuşma tanıma yok**. Bu bir eksik değil, bilinçli bir platform kararı:
+kilitli telefonda dinleyen bir sekme, mikrofonu görünmez biçimde açık tutmak olurdu. `Screen
+Wake Lock` de yalnızca BOŞTA KALMAYI engelliyor — kullanıcı güç tuşuna basınca ekran yine
+kapanıyor ve o anda tanıyıcı susuyor, `AudioContext` askıya alınıyor.
+
+Bu yüzden mod iki kipli:
+
+| Kip | Ölçer mi | Ekran |
+|---|---|---|
+| **Sesli cevap** | Evet — doğru/yanlış işlenir, tekrar planı ilerler | Açık kalmalı (kilit istenir) |
+| **Cepte** | Hayır — yalnızca okur: Türkçesi, tekrar payı, Almancası | Kapalı olabilir |
+
+Ekran kapandığında ölçen kip **durmuyor**, cepte kipine düşüyor ve bunu sesle söylüyor; ekran
+açılınca geri dönüyor. Durmak, kullanıcının cebinden çıkardığında hiçbir şey olmamış bulması
+demekti — asıl şikâyet buydu.
+
+Cepte kipinin ekran kapalıyken sürmesi iki parçaya bağlı: sesler WebAudio yerine **ses öğesi**
+zinciriyle çalınıyor (kilitlenince `AudioContext` askıya alınıyor, ses öğeleri çalmaya devam
+ediyor — podcast uygulamalarının çalışma biçimi) ve arkada **sessiz bir döngü** ile
+`MediaSession` duruyor, böylece tarayıcı sekmeyi "medya çalıyor" sayıp zamanlayıcıları kısmıyor.
+
+İki koruma daha var:
 
 | Sorun | Çözüm |
 |---|---|
-| Ekran kapanınca tanıyıcı susuyor | Ekran uyanık tutuluyor (`Screen Wake Lock`). Tarayıcıda **arka planda konuşma tanıma yok** — kilitli telefonda dinleyen bir sekme, mikrofonu görünmez biçimde açık tutmak olurdu; tek dürüst çözüm ekranın kapanmasını engellemek |
-| Uygulamadan çıkılınca tur yanıyor | Sayfa görünmez olunca tur duruyor. Önce her tur anında boş dönüyor ve yirmi soru saniyeler içinde "duyamadım" diye tükeniyordu |
-| Mikrofon bozukken tur yanıyor | Son dört turun üçü duyulmadıysa tur duruyor. Ölçüt bilerek "üst üste" değil: bozuk tanıyıcı arada çöp metin döndürüyor ve ardışıklık arayan bir sayaç onunla sıfırlanıyordu — ölçümde 45 saniyede altı tur yandı, sayaç hiç üçe ulaşmadı |
-| Tur bitince telefonu çıkarmak gerekiyor | "Devam edelim mi?" sesli soruluyor, cevap sesli alınıyor. Anlaşılmayan cevap ne evet ne hayır sayılıyor; soru bir kez tekrarlanıyor, sonra duruluyor |
+| Mikrofon bozukken tur yanıyor | Son dört turun üçü duyulmadıysa cepte kipine düşülür. Ölçüt bilerek "üst üste" değil: bozuk tanıyıcı arada çöp metin döndürüyor ve ardışıklık arayan bir sayaç onunla sıfırlanıyordu — ölçümde 45 saniyede altı tur yandı, sayaç hiç üçe ulaşmadı |
+| Tur bitince telefonu çıkarmak gerekiyor | "Devam edelim mi?" sesli soruluyor, cevap sesli alınıyor. Anlaşılmayan cevap ne evet ne hayır sayılıyor; soru bir kez tekrarlanıyor, sonra duruluyor. Cepte kipinde mikrofon olmadığı için kendiliğinden devam edilir |
 
 ### Modül sınavı
 

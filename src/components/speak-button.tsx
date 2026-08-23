@@ -557,6 +557,18 @@ export function speakSegments(
   onEnd?: () => void,
   /** Metnin açığa çıkma anı — ses başlamadan bir nefes önce, bir kez. */
   onStart?: () => void,
+  /**
+   * Arka plan kipi: boşluksuz WebAudio yolu hiç denenmez, doğrudan ses
+   * öğesi zinciri kullanılır.
+   *
+   * Sebebi tek bir platform gerçeği: telefon kilitlendiğinde `AudioContext`
+   * askıya alınıyor ve WebAudio ile çalan her şey susuyor. Ses öğeleri ise
+   * arka planda çalmaya devam ediyor — podcast uygulamalarının çalışma
+   * biçimi bu. Cepte modu ekran kapalıyken sürmek zorunda olduğu için o yolu
+   * baştan seçiyor; boşluksuzluk orada zaten ikinci derecede, çünkü parçalar
+   * arasında bilerek sessizlik var.
+   */
+  opts?: { background?: boolean },
 ): () => void {
   const queue = mergeForSpeech(segments);
   if (!queue.length) {
@@ -576,6 +588,17 @@ export function speakSegments(
     started = true;
     onStart?.();
   };
+
+  if (opts?.background) {
+    chainWithElements(queue, 0, onEnd, mine, startOnce);
+    return () => {
+      if (token !== mine) return;
+      token++;
+      stopActiveChain();
+      element?.pause();
+      extra?.pause();
+    };
+  }
 
   const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text));
   const cancel = playGapless(urls, {

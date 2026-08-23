@@ -7,6 +7,7 @@ import { useListen } from "@/components/use-listen";
 import { isSpeechCorrect, judgeSpeech } from "@/lib/speech";
 import { parseConfirm } from "@/lib/voice-intent";
 import { useWakeLock, wakeLockSupported } from "@/components/use-wake-lock";
+import { startPocketAudio, stopPocketAudio, updatePocketTitle } from "@/components/pocket-audio";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
@@ -46,6 +47,20 @@ import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "
  *     diye tükeniyordu. Görünürlük gidince tur DURUYOR.
  *   - **Tur bitince telefonu çıkarmak gerekmemeli.** Oturum sonunda soru sesli
  *     soruluyor ve cevap sesli alınıyor: "devam edelim mi?" → "evet".
+ *
+ * Ekran KAPANDIĞINDA ne olacağı ayrı bir sorun ve iki kipi zorunlu kıldı.
+ * Ekran kilidi yalnızca boşta kalmayı engelliyor; kullanıcı güç tuşuna basıp
+ * telefonu cebine attığında ekran yine kapanıyor ve konuşma tanıyıcı susuyor.
+ * Web'de arka planda konuşma tanıma yok — bu bir eksik değil, mikrofonun
+ * görünmez biçimde açık kalmasını engelleyen bilinçli bir platform kararı.
+ *
+ *   - **Sesli cevap** kipi ölçüyor ama ekranın açık kalmasını istiyor.
+ *   - **Cepte** kipi ölçmüyor: Türkçesini okuyor, tekrar etmen için susuyor,
+ *     sonra Almancasını okuyor. Ekran kapalıyken çalışıyor.
+ *
+ * Ekran kapanırsa ölçen kip DURMUYOR, cepte kipine düşüyor ve bunu sesle
+ * söylüyor. Durmak, kullanıcının cebinden çıkardığında hiçbir şey olmamış
+ * bulmasıydı — asıl şikâyet buydu.
  */
 
 type Status =
@@ -95,6 +110,17 @@ const UNHEARD_LIMIT = 3;
 /** Onay sorusunda cevabı beklerken tanınan sessizlik tavanı. */
 const CONFIRM_SILENCE_MS = 7000;
 
+/**
+ * Cepte kipinde soru ile cevap arasındaki sessizlik.
+ *
+ * Kullanıcının kelimeyi kendi kendine söylemesi için. Kısa olursa cevap
+ * ağızdan çıkmadan geliyor ve alıştırma dinlemeye dönüşüyor; uzun olursa
+ * yürüyüş temposu düşüyor. Ders anlatımındaki tekrar payıyla aynı ölçü.
+ */
+const POCKET_GAP_MS = 3200;
+/** Kelimeler arası nefes payı. */
+const POCKET_STEP_MS = 900;
+
 function localDay(): string {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -118,6 +144,18 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [verdict, setVerdict] = useState<"correct" | "wrong" | "unheard" | null>(null);
   /** Şu an sorulan şey bir kelime değil, "devam edelim mi?" onayı. */
   const [asking, setAsking] = useState(false);
+  /**
+   * Çalışan kip.
+   *
+   * `graded` ölçüyor ama ekranın açık kalmasını istiyor; `pocket` ölçmüyor
+   * ama ekran kapalıyken de sürüyor. Hem durum hem ref: ekranda gösterilmesi
+   * gerekiyor ve döngünün içinden okunuyor (döngü her turda yeniden
+   * kurulmadığı için durum olarak okunsa eski değeri görürdü).
+   */
+  const [mode, setMode] = useState<"graded" | "pocket">("graded");
+  const modeRef = useRef<"graded" | "pocket">("graded");
+  /** Cepte kipine KENDİLİĞİNDEN düşüldü mü — ekran dönünce geri alınsın diye. */
+  const degradedRef = useRef(false);
   const [tally, setTally] = useState({ correct: 0, total: 0 });
 
   const { listen, cancel } = useListen();
@@ -204,12 +242,51 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const say = useCallback((segments: SpeechSegment[]): Promise<void> => {
     return new Promise<void>((resolve) => {
       speakDone.current = resolve;
-      speakSegments(segments, () => {
-        speakDone.current = null;
-        resolve();
-      });
+      // Cepte kipinde ses ÖĞESİ yolu zorlanıyor: telefon kilitlendiğinde
+      // `AudioContext` askıya alınıyor ve WebAudio ile çalan her şey susuyor.
+      speakSegments(
+        segments,
+        () => {
+          speakDone.current = null;
+          resolve();
+        },
+        undefined,
+        { background: modeRef.current === "pocket" },
+      );
     });
   }, []);
+
+  /** Cepte kipinde parçalar arası sessizlik — iptal edilebilir bekleme. */
+  const rest = useCallback((ms: number, alive: () => boolean): Promise<void> => {
+    return new Promise<void>((resolve) => {
+      const t = setTimeout(resolve, ms);
+      // Kullanıcı çıkarsa bekleme boşuna sürmesin.
+      const check = setInterval(() => {
+        if (!alive()) {
+          clearTimeout(t);
+          clearInterval(check);
+          resolve();
+        }
+      }, 200);
+      setTimeout(() => clearInterval(check), ms + 50);
+    });
+  }, []);
+
+  /** Kipi değiştirir ve sesle duyurur — kullanıcı ekrana bakmıyor olabilir. */
+  const switchMode = useCallback(
+    async (next: "graded" | "pocket", announce: string | null) => {
+      modeRef.current = next;
+      setMode(next);
+      if (next === "pocket") {
+        cancel();
+        startPocketAudio("Wortspiel · Cepte", {});
+      } else {
+        stopPocketAudio();
+      }
+      if (announce) await say([{ lang: "tr", text: announce }]);
+    },
+    [cancel, say],
+  );
 
   const stopAll = useCallback(() => {
     run.current++;
@@ -244,6 +321,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     async (correct: number, total: number): Promise<"yes" | "no"> => {
       const summary =
         total > 0 ? `Tur bitti. ${total} sorudan ${correct} doğru.` : "Tur bitti.";
+      // Cepte kipinde mikrofon yok: soru sorulup cevapsız beklemek, kullanıcıyı
+      // sessizce turun sonunda bırakırdı. Devam ediliyor ve söyleniyor.
+      if (modeRef.current === "pocket") {
+        await say([{ lang: "tr", text: "Tur bitti, yenisine geçiyorum." }]);
+        return "yes";
+      }
+
       setAsking(true);
       setVerdict(null);
       try {
@@ -319,6 +403,26 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             continue;
           }
 
+          // Cepte kipi: ölçmüyor, okuyor. Türkçesi → sen söyle diye sessizlik
+          // → Almancası. Mikrofon hiç açılmıyor, çünkü ekran kapalıyken zaten
+          // açılamıyor; cevap kaydedilmiyor, çünkü duyulmayan bir cevabı
+          // "doğru" saymak tekrar planını bozardı.
+          if (modeRef.current === "pocket") {
+            setPhase("speaking");
+            updatePocketTitle(word.tr);
+            await say([{ lang: "tr", text: word.tr }]);
+            if (!alive()) return;
+            setPhase("listening");
+            await rest(POCKET_GAP_MS, alive);
+            if (!alive()) return;
+            setPhase("judging");
+            setVerdict(null);
+            await say([{ lang: "de", text: target }]);
+            if (!alive()) return;
+            await rest(POCKET_STEP_MS, alive);
+            continue;
+          }
+
           // Soru: Türkçe karşılık okunuyor, ardından mikrofon açılıyor.
           setPhase("speaking");
           await say([{ lang: "tr", text: word.tr }]);
@@ -349,17 +453,16 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             // işareti: mikrofon başka bir uygulamada, izin geri alınmış ya da
             // sayfa arka planda.
             if (misses >= UNHEARD_LIMIT) {
-              await say([
-                {
-                  lang: "tr",
-                  text: "Sesini duyamıyorum. Turu durdurdum, hazır olunca devam et.",
-                },
-              ]);
-              if (!alive()) return;
-              setStatus("paused");
-              void release();
+              // Durmak yerine cepte kipine düşülüyor. Durmak, kullanıcının
+              // cebinden çıkardığında hiçbir şey olmamış bulmasıydı — asıl
+              // şikâyet buydu. Okuma sürüyor, yalnızca ölçüm bırakılıyor.
               heardLog.current = [];
-              return;
+              await switchMode(
+                "pocket",
+                "Sesini duyamıyorum. Cepte kipine geçtim: söyleyeceğim, sen tekrar et.",
+              );
+              if (!alive()) return;
+              continue;
             }
 
             await say([
@@ -452,26 +555,36 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       play("start");
       }
     },
-    [askContinue, fetchSession, flush, listen, release, say],
+    [askContinue, fetchSession, flush, listen, rest, say, switchMode],
   );
 
-  async function start(from: number) {
+  async function start(from: number, wanted: "graded" | "pocket") {
     const rounds = session?.rounds;
     if (!rounds?.length) return;
-    // İzin açıkça isteniyor: ana ekrana eklenmiş uygulamada tanıyıcının kendi
-    // istemi güvenilir biçimde çıkmıyor ve tanıma sessizce düşüyor.
-    const { requestMicrophone, recognitionCtor } = await import("@/components/microphone");
-    if (!recognitionCtor()) return setStatus("unsupported");
-    const permission = await requestMicrophone();
-    if (permission === "denied") return setStatus("denied");
-    if (permission === "unavailable") return setStatus("unsupported");
 
+    if (wanted === "graded") {
+      // İzin açıkça isteniyor: ana ekrana eklenmiş uygulamada tanıyıcının kendi
+      // istemi güvenilir biçimde çıkmıyor ve tanıma sessizce düşüyor.
+      const { requestMicrophone, recognitionCtor } = await import("@/components/microphone");
+      if (!recognitionCtor()) return setStatus("unsupported");
+      const permission = await requestMicrophone();
+      if (permission === "denied") return setStatus("denied");
+      if (permission === "unavailable") return setStatus("unsupported");
+      // Ekran uyanık tutuluyor — ölçüm ancak sayfa görünürken çalışıyor.
+      void acquire();
+    } else {
+      // Sessiz döngü ve kilit ekranı denetimi DOKUNUŞUN İÇİNDE kuruluyor:
+      // kullanıcı hareketi olmadan çalmaya başlayan ses reddediliyor ve
+      // sonrasında cepte kipi hiç ses çıkarmıyor.
+      startPocketAudio("Wortspiel · Cepte", {});
+    }
+
+    modeRef.current = wanted;
+    setMode(wanted);
+    degradedRef.current = false;
     resetCombo();
     heardLog.current = [];
     startedAt.current = Date.now();
-    // Ekran uyanık tutuluyor: kilitli telefonda tarayıcının konuşma tanıyıcısı
-    // susuyor ve tur, kullanıcı hiçbir şey duymadan "duyamadım" diye tükeniyor.
-    void acquire();
     setStatus("playing");
     track("walk_start", from);
     void loop(rounds, from);
@@ -480,35 +593,44 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   function pause() {
     stopAll();
     void release();
+    stopPocketAudio();
     setStatus("paused");
   }
 
   function leave() {
     stopAll();
     void release();
+    stopPocketAudio();
     onExit();
   }
 
   /**
-   * Sayfa görünmez olursa tur DURUR.
+   * Ekran kapanınca tur DURMUYOR, cepte kipine düşüyor.
    *
-   * Ekran kilidi çoğu durumu çözüyor ama her şeyi değil: başka bir uygulamaya
-   * geçmek, aramaya cevap vermek ya da kilidi desteklemeyen bir tarayıcı hâlâ
-   * sayfayı arka plana atıyor. Orada tanıyıcı anında boş dönüyor; durmayan bir
-   * tur yirmi soruyu saniyeler içinde harcardı.
+   * Ekran kilidi yalnızca boşta kalmayı engelliyor; kullanıcı güç tuşuna basıp
+   * telefonu cebine attığında ekran yine kapanıyor ve konuşma tanıyıcı
+   * susuyor. Önceki sürüm burada turu durduruyordu ve şikâyet tam olarak
+   * buydu: cepten çıkarınca hiçbir şey olmamış oluyordu.
+   *
+   * Artık ölçüm bırakılıyor, okuma sürüyor. Ekran geri açıldığında ölçen kipe
+   * dönülüyor — ikisi de sesle duyuruluyor, çünkü kullanıcı ekrana bakmıyor.
    */
   useEffect(() => {
     if (status !== "playing") return;
-    const onHidden = () => {
-      if (document.visibilityState === "hidden") {
-        stopAll();
-        void release();
-        setStatus("paused");
+    const onChange = () => {
+      const hidden = document.visibilityState === "hidden";
+      if (hidden && modeRef.current === "graded") {
+        degradedRef.current = true;
+        void switchMode("pocket", null);
+      } else if (!hidden && modeRef.current === "pocket" && degradedRef.current) {
+        degradedRef.current = false;
+        void switchMode("graded", "Ekran açık, mikrofon geri geldi.");
+        void acquire();
       }
     };
-    document.addEventListener("visibilitychange", onHidden);
-    return () => document.removeEventListener("visibilitychange", onHidden);
-  }, [status, stopAll, release]);
+    document.addEventListener("visibilitychange", onChange);
+    return () => document.removeEventListener("visibilitychange", onChange);
+  }, [status, switchMode, acquire]);
 
   // ── Görünüm ────────────────────────────────────────────────────────
 
@@ -565,21 +687,28 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           {status === "paused" ? "Duraklatıldı" : "Yürürken"}
         </h2>
         <p className="muted mt-2 text-sm leading-relaxed">
-          Türkçesini duyacaksın, Almancasını söyleyeceksin. Ekrana bakmana gerek yok —
-          telefonu cebine koyabilirsin. Yanlışta doğrusu okunur, duyulmayan tur atlanır.
+          İki kip var. Hangisini seçersen seç Türkçesini duyar, Almancasını söylersin —
+          fark, cevabının ölçülüp ölçülmediği.
         </p>
-        <ul className="muted mt-2 space-y-1 text-sm leading-relaxed">
-          <li>
-            · Tur bitince <strong>“devam edelim mi?”</strong> diye sorulur; “evet” ya da “hayır”
-            demen yeter, telefonu çıkarman gerekmez.
-          </li>
-          <li>
-            ·{" "}
-            {wakeLockSupported()
-              ? "Ekran açık tutulur, çünkü telefon kilitlenince tarayıcı mikrofonu susturuyor."
-              : "Bu tarayıcı ekranı açık tutmayı desteklemiyor; telefon kilitlenirse tur duraklar."}
-          </li>
-        </ul>
+
+        <div className="mt-4 space-y-2 text-left">
+          <div className="rounded-xl px-3.5 py-3" style={{ background: "var(--surface-2)" }}>
+            <p className="text-sm font-bold">Sesli cevap · ölçülür</p>
+            <p className="muted mt-0.5 text-xs leading-relaxed">
+              Söylediğin dinlenir, doğru/yanlış işlenir, tekrar planın ilerler. Ekranın açık
+              kalması gerekiyor: telefon kilitlenince tarayıcı mikrofonu kapatıyor.
+              {wakeLockSupported() ? " Ekran senin için açık tutulur." : ""}
+            </p>
+          </div>
+          <div className="rounded-xl px-3.5 py-3" style={{ background: "var(--surface-2)" }}>
+            <p className="text-sm font-bold">Cepte · ekran kapalı çalışır</p>
+            <p className="muted mt-0.5 text-xs leading-relaxed">
+              Türkçesi okunur, tekrar etmen için susulur, sonra Almancası okunur. Mikrofon
+              kullanılmaz — bu yüzden ölçüm yok, tekrar planın ilerlemez. Ekranı kapatıp
+              cebine atabilirsin.
+            </p>
+          </div>
+        </div>
         {status === "paused" ? (
           <p
             className="mt-3 rounded-xl px-3 py-2.5 text-sm"
@@ -596,8 +725,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           <strong>{Math.min(index + 1, total)}</strong>
           <span className="muted"> / {total} tur</span>
         </div>
-        <button onClick={() => void start(index)} className="btn btn-primary mt-5 w-full px-5 py-4 text-base">
-          {status === "paused" ? "Devam et" : "Kulaklığı tak, başla"}
+        <button
+          onClick={() => void start(index, "graded")}
+          className="btn btn-primary mt-5 w-full px-5 py-4 text-base"
+        >
+          {status === "paused" ? "Sesli cevapla devam et" : "Sesli cevap ver"}
+        </button>
+        <button
+          onClick={() => void start(index, "pocket")}
+          className="btn btn-ghost mt-2 w-full px-5 py-4 text-base"
+        >
+          Cepte dinle
         </button>
         <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">Geri dön</button>
       </Frame>
@@ -623,7 +761,25 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     <Frame>
       <div className="mb-4 flex items-baseline justify-between text-xs font-semibold">
         <span className="muted">{index + 1} / {total}</span>
-        <span className="muted tabular-nums">{tally.correct}/{tally.total} doğru</span>
+        <span className="flex items-center gap-2">
+          {/* Kip ekranda yazıyor: cepte kipinde cevaplar ölçülmüyor ve bunu
+              bilmeyen kullanıcı "neden sayı artmıyor" diye sorardı. */}
+          <span
+            className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
+            style={{
+              background:
+                mode === "pocket"
+                  ? "color-mix(in srgb, var(--color-mint-500) 16%, transparent)"
+                  : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
+              color: mode === "pocket" ? "var(--color-mint-500)" : "var(--color-brand-500)",
+            }}
+          >
+            {mode === "pocket" ? "cepte" : "sesli"}
+          </span>
+          {mode === "graded" ? (
+            <span className="muted tabular-nums">{tally.correct}/{tally.total} doğru</span>
+          ) : null}
+        </span>
       </div>
 
       {/* Ekran ikincil: asıl akış kulakta. Yine de bakan biri ne olduğunu
@@ -655,12 +811,34 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               animate={{ scale: [1, 1.15, 1] }}
               transition={{ repeat: Infinity, duration: 1.4 }}
               className="flex h-16 w-16 items-center justify-center rounded-full"
-              style={{ background: "color-mix(in srgb, var(--color-brand-500) 16%, transparent)", color: "var(--color-brand-500)" }}
+              style={{
+                background:
+                  mode === "pocket"
+                    ? "color-mix(in srgb, var(--color-mint-500) 16%, transparent)"
+                    : "color-mix(in srgb, var(--color-brand-500) 16%, transparent)",
+                color: mode === "pocket" ? "var(--color-mint-500)" : "var(--color-brand-500)",
+              }}
             >
               <MicIcon size={28} />
             </motion.span>
             <p className="mt-3 text-lg font-bold">{prompt?.tr}</p>
-            <p className="muted mt-1 text-sm">Almancasını söyle</p>
+            <p className="muted mt-1 text-sm">
+              {mode === "pocket" ? "Şimdi sen söyle" : "Almancasını söyle"}
+            </p>
+          </>
+        ) : mode === "pocket" && phase === "judging" ? (
+          <>
+            <span
+              className="flex h-16 w-16 items-center justify-center rounded-full"
+              style={{
+                background: "color-mix(in srgb, var(--color-mint-500) 18%, transparent)",
+                color: "var(--color-mint-500)",
+              }}
+            >
+              <CheckIcon size={28} />
+            </span>
+            <p className="mt-3 text-lg font-bold">{prompt?.de}</p>
+            <p className="muted mt-1 text-sm">{prompt?.tr}</p>
           </>
         ) : verdict ? (
           <>
