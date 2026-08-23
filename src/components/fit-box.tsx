@@ -16,6 +16,29 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
  * kaydırma da yoktu. Artık sığmadığında küçültme bırakılıp kaydırmaya izin
  * veriliyor — küçültülmüş ama yine de kesik bir ekran, tam boyutlu ama
  * kaydırılabilir bir ekrandan kötü.
+ *
+ * ## İçerik neden tam ortada değil
+ *
+ * Artan boşluk telefonda eşit paylaşılmıyor: dörtte üçü üste, dörtte biri alta
+ * gidiyor. Sebep tek elle kullanım. Telefon tek elle tutulurken başparmağın
+ * rahat ulaştığı alan ekranın alt yarısı; dikey ortalanmış bir oyun kartında
+ * şıklar ekranın tam ortasında duruyor ve üsttekilere uzanmak için ya elin
+ * kayması ya ikinci elin gerekmesi gerekiyordu. Oysa oyun ekranı baştan sona
+ * dokunmaktan ibaret — okunacak tek şey soru, dokunulacak şey ise şıkların
+ * hepsi.
+ *
+ * Tamamen alta yapıştırmak yerine altta bir pay bırakılıyor: alt gezinme
+ * çubuğuna değen bir şık, cevap verirken sekme değiştirme riski demek.
+ *
+ * `md`den itibaren (tablet/masaüstü) ortalamaya dönülüyor: orada ulaşım diye
+ * bir sorun yok, imleç her yere aynı uzaklıkta ve alta itilmiş bir kart
+ * yalnızca dengesiz görünürdü.
+ *
+ * Boşluk `justify-*` ile değil, iki esneyen boşluk öğesiyle paylaşılıyor.
+ * Sebebi taşma hâli: içerik sığmayıp küçültüldüğünde ölçek dönüşümü kutunun
+ * MERKEZİNDEN uygulanıyor ve doğru görünmesi için kutunun da ortalanmış olması
+ * gerekiyor. Esneyen boşluklar yalnızca artı boşluk varken büyüyor; boşluk
+ * eksiye düştüğünde sıfırlanıp sahneyi `justify-center`e bırakıyorlar.
  */
 export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: number }) {
   const outer = useRef<HTMLDivElement>(null);
@@ -72,6 +95,10 @@ export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: nu
         scrolls ? "overflow-y-auto overscroll-contain" : "justify-center overflow-hidden"
       }`}
     >
+      {/* Üstteki boşluk alttakinin üç katı: içerik başparmağın ulaştığı yere
+          iniyor. Kaydırma moduna geçildiğinde boşluk paylaşımı anlamsız —
+          orada içerik zaten ekrandan taşıyor. */}
+      {scrolls ? null : <div aria-hidden className="grow-[3] md:grow" />}
       <div
         ref={inner}
         style={{
@@ -82,6 +109,7 @@ export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: nu
       >
         {children}
       </div>
+      {scrolls ? null : <div aria-hidden className="grow" />}
     </div>
   );
 }
