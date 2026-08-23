@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CheckIcon, LinkIcon } from "@/components/icons";
+import { track } from "@/lib/track";
 
 /**
  * Tur sonucunu paylaşma.
@@ -69,6 +70,7 @@ export function ShareResult({
   if (!total) return null;
 
   async function share() {
+    track("share");
     const text = buildShareText({
       marks,
       total,

@@ -8,6 +8,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
 import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
+import { track } from "@/lib/track";
 import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark, ChatIcon } from "./icons";
 
 const NAV = [
@@ -76,6 +77,14 @@ export function AppShell({
     ro.observe(nav);
     return () => ro.disconnect();
   }, []);
+
+  // Hangi sekmeye gerçekten uğranıyor. Ölçüm bunu bir kez elle yapmıştı ve
+  // sonuç görevler bölümünü doğurmuştu: yedi kullanıcıdan biri becerileri,
+  // üçü dersleri açmıştı. Artık her açılış kendiliğinden yazılıyor.
+  useEffect(() => {
+    const i = NAV.findIndex((n) => pathname.startsWith(n.href));
+    if (i >= 0) track("nav", i);
+  }, [pathname]);
 
   useEffect(() => {
     const onStats = (e: Event) => {
