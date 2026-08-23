@@ -152,8 +152,12 @@ NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
 NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 
 # Ders içi rol yapma — üçünden biri yeter. Sıra: cerebras → groq → mistral.
-# Aynı anahtarlar yürürken modunun sesli cevabı için de kullanılıyor (groq ya da
-# mistral); yoksa mod tarayıcının kendi tanıyıcısına düşer ve ekran açık kalmalıdır.
+#
+# Yürürken modunun EKRAN KAPALI çalışması için ayrıca bir yazıya çevirme anahtarı
+# gerekiyor. Önerilen: DEEPGRAM_API_KEY (bozuk seste uydurmuyor, boş dönüyor).
+# Yoksa GROQ_API_KEY ya da MISTRAL_API_KEY de kullanılır. Hiçbiri yoksa mod
+# tarayıcının kendi tanıyıcısına düşer ve ekranın açık kalması gerekir.
+# DEEPGRAM_API_KEY="..."
 CEREBRAS_API_KEY="..."          # önerilen: ücretsizlerin en hızlısı, 1M token/gün
 # GROQ_API_KEY="..."            # ~500K token/gün, ilk yedek
 # MISTRAL_API_KEY="..."         # 1B token/ay ama ~2 RPM — taşma yedeği
@@ -206,6 +210,7 @@ vercel env add DATABASE_URL production                     # ve preview/developm
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
 vercel env add CEREBRAS_API_KEY production                  # rol yapma için; yoksa yalnızca o faz kapalı
+vercel env add DEEPGRAM_API_KEY production                  # yürürken modu ekran kapalı çalışsın diye
 
 # Hatırlatma bildirimleri — üçü birden gerekli, biri eksikse özellik kapalı kalır.
 npx web-push generate-vapid-keys --json                     # çıktıdaki iki anahtar
@@ -564,10 +569,25 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 | Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
 | Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |
 
-Yazıya çevirme `/api/stt` üzerinden, OpenAI uyumlu `audio/transcriptions` ucuyla: sıra
-**groq** (`whisper-large-v3-turbo`), sonra **mistral** (`voxtral-mini-latest`). Hiçbiri
-yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor — o da çalışıyor ama ekranın
-açık kalmasını istiyor ve arayüz bunu söylüyor.
+Yazıya çevirme `/api/stt` üzerinden. Sıra **deepgram** (`nova-3`), sonra **groq**
+(`whisper-large-v3-turbo`), sonra **mistral** (`voxtral-mini-latest`). Hiçbiri
+yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor.
+
+Deepgram'in başta olmasının sebebi hızı değil **dürüstlüğü**. Ölçüldü — temiz ve gürültülü
+seste ikisi de 8/8, ama ses bozulduğunda yolları ayrılıyor:
+
+| ses | groq | deepgram |
+|---|---|---|
+| tam | 8/8 | 8/8 |
+| gürültülü + kısık | 8/8 | 8/8 |
+| başı kesik | **"Vielen Dank.", "Krater"** (uyduruyor) | **""** (boş döner) |
+
+Bu uygulamada fark büyük: uydurma bir metin **yanlış cevap** olup öğrenciyi cezalandırıyor,
+boş metin ise "duyamadım" sayılıp tekrar planına hiç dokunmuyor. Groq yedekte: daha hızlı
+(ölçüldü: 215 ms'ye karşı 483 ms) ama ani yükte 429 veriyor.
+
+Deepgram OpenAI biçimini konuşmuyor (parametreler adreste, ses ham gövdede, cevap başka
+yapıda), bu yüzden uçta iki lehçe var.
 
 Her AI çağrısı — **başarısız denemeler dâhil** — `ai_usage` tablosuna yazılıyor: iş türü
 (roleplay · coach · stt), sağlayıcı, model, HTTP durumu, gecikme, jeton sayısı, ses saniyesi ve

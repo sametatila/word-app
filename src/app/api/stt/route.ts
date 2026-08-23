@@ -68,20 +68,47 @@ export async function POST(req: Request) {
   for (const provider of providers) {
     const startedAt = Date.now();
     try {
-      const body = new FormData();
-      // Dosya adı uzantısı önemli: sağlayıcılar biçimi ondan anlıyor.
-      body.append("file", file, file.name || "clip.webm");
-      body.append("model", provider.model);
-      // Dil veriliyor: hedef dil belli olduğu için tanıyıcının dil tahmini
-      // yapmasına gerek yok ve tahmin, tek kelimelik kliplerde sık şaşıyor.
-      body.append("language", language);
-      body.append("response_format", "json");
-
-      const res = await fetch(`${provider.baseUrl}/audio/transcriptions`, {
-        method: "POST",
-        headers: { authorization: `Bearer ${provider.key}` },
-        body,
-      });
+      /*
+        İki lehçe: OpenAI biçimi çok parçalı gövde ve JSON cevap istiyor,
+        Deepgram ise parametreleri adreste, sesi ham gövdede alıyor.
+      */
+      const res =
+        provider.dialect === "deepgram"
+          ? await fetch(
+              `${provider.baseUrl}?${new URLSearchParams({
+                model: provider.model,
+                language,
+                // Noktalama ve biçimlendirme kapalı: tek kelimelik cevapta
+                // ikisi de gürültü, karşılaştırma zaten normalleştiriyor.
+                punctuate: "false",
+                smart_format: "false",
+              })}`,
+              {
+                method: "POST",
+                headers: {
+                  Authorization: `Token ${provider.key}`,
+                  "content-type": file.type || "audio/webm",
+                },
+                body: await file.arrayBuffer(),
+              },
+            )
+          : await (async () => {
+              const body = new FormData();
+              // Dosya adı uzantısı önemli: sağlayıcılar biçimi ondan anlıyor.
+              body.append("file", file, file.name || "clip.webm");
+              body.append("model", provider.model);
+              // Dil veriliyor: hedef dil belli olduğu için tanıyıcının dil
+              // tahmini yapmasına gerek yok ve tahmin, tek kelimelik kliplerde
+              // sık şaşıyor.
+              body.append("language", language);
+              body.append("temperature", "0");
+              body.append("response_format", "json");
+              return fetch(`${provider.baseUrl}/audio/transcriptions`, {
+                method: "POST",
+                headers: { authorization: `Bearer ${provider.key}` },
+                body,
+              });
+            })();
       if (!res.ok) {
         const detail = await res.text().catch(() => "");
         recordAiUsage(userId, {
@@ -97,8 +124,15 @@ export async function POST(req: Request) {
         failures.push(`${provider.name}: ${res.status}`);
         continue;
       }
-      const data = (await res.json()) as { text?: string };
-      const text = (data.text ?? "").trim();
+      const data = (await res.json()) as {
+        text?: string;
+        results?: { channels?: { alternatives?: { transcript?: string }[] }[] };
+      };
+      const text = (
+        provider.dialect === "deepgram"
+          ? (data.results?.channels?.[0]?.alternatives?.[0]?.transcript ?? "")
+          : (data.text ?? "")
+      ).trim();
 
       /*
         Her çağrı muhasebeye yazılıyor.

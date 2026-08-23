@@ -513,7 +513,21 @@ export function chatConfigured(): boolean {
   return chatProviders().length > 0;
 }
 
-export type SttProvider = { name: ProviderName; baseUrl: string; key: string; model: string };
+/**
+ * Yazıya çevirme sağlayıcısı.
+ *
+ * `dialect` gerekiyor çünkü hepsi OpenAI biçimini konuşmuyor: Deepgram
+ * parametreleri adreste, sesi ham gövdede istiyor ve cevabı başka bir yapıda
+ * dönüyor. Sohbet tarafında böyle bir ayrım yok, orada beşi de aynı biçimi
+ * konuşuyor.
+ */
+export type SttProvider = {
+  name: string;
+  dialect: "openai" | "deepgram";
+  baseUrl: string;
+  key: string;
+  model: string;
+};
 
 /**
  * Konuşmayı yazıya çevirebilen sağlayıcılar, sırayla.
@@ -525,14 +539,43 @@ export type SttProvider = { name: ProviderName; baseUrl: string; key: string; mo
  * her saniye yürüyüşün ritmini bozuyor.
  */
 export function sttProviders(): SttProvider[] {
-  const order: ProviderName[] = ["groq", "mistral"];
   const out: SttProvider[] = [];
+
+  /*
+    Deepgram başta ve sebebi hızı değil DÜRÜSTLÜĞÜ.
+
+    Ölçüldü — temiz ve gürültülü seste ikisi de 8/8, ama ses bozulduğunda
+    yolları ayrılıyor:
+
+      başı kesik ses → groq: "Vielen Dank.", "Krater"   (uyduruyor)
+                       deepgram: ""                      (boş dönüyor)
+
+    Bu uygulamada fark büyük: uydurma bir metin YANLIŞ CEVAP olup öğrenciyi
+    cezalandırıyor, boş metin ise "duyamadım" sayılıp tekrar planına hiç
+    dokunmuyor. Yanlış bilgi vermektense bilmediğini söylemek.
+
+    Groq yedekte kalıyor: daha hızlı (ölçüldü: 215 ms'ye karşı 483 ms) ve
+    ücretsiz katmanı geniş, ama ani yükte 429 veriyor.
+  */
+  const dgKey = process.env.DEEPGRAM_API_KEY;
+  if (dgKey) {
+    out.push({
+      name: "deepgram",
+      dialect: "deepgram",
+      baseUrl: "https://api.deepgram.com/v1/listen",
+      key: dgKey,
+      model: process.env.DEEPGRAM_STT_MODEL || "nova-3",
+    });
+  }
+
+  const order: ProviderName[] = ["groq", "mistral"];
   for (const name of order) {
     const cfg = CATALOG[name];
     const key = process.env[cfg.envKey];
     if (!key || !cfg.sttModel) continue;
     out.push({
       name,
+      dialect: "openai",
       baseUrl: cfg.baseUrl,
       key,
       model: (cfg.sttEnvModel && process.env[cfg.sttEnvModel]) || cfg.sttModel,
