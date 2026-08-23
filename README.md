@@ -95,9 +95,8 @@ uygulama gibi tam ekran açılır (PWA).
   kendisi (aynı kuyruk, aynı uç), yani ekranda başlayıp kulakla devam edebilirsin; SRS, günlük
   hedef ve seri hiçbir şeyin farkında olmaz. Duyulmayan tur **yanlış sayılmaz** — sokaktaki
   gürültü tekrar planını bozmamalı. Yirmi tur bitince **“devam edelim mi?”** sesli sorulur ve
-  “evet” demen yeter: telefonu çıkarmadan bir sonraki tura geçilir. **Ekran kapanırsa tur
-  durmuyor**, ölçmeyen “cepte” kipine düşüyor ve okumaya devam ediyor; ekran açılınca ölçen
-  kipe geri dönüyor.
+  “evet” demen yeter. **Ekran kapalıyken de çalışır**: cevap tarayıcının konuşma tanıyıcısıyla
+  değil, kısa bir ses klibi kaydedilip sunucuda yazıya çevrilerek alınır.
 - **Modül sınavı (patron turu):** ders yolundaki her modülün sonunda, o modülün ~45 kelimesiyle
   süre baskılı bir sınav. Hayatta kalma turundan farkı bir **kaybetme koşulu** olması: 15 soruyu
   60 saniye içinde bitirmek zorundasın (doğru +3 sn, yanlış −5 sn). Geçilen modül yolda taç
@@ -153,6 +152,8 @@ NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
 NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 
 # Ders içi rol yapma — üçünden biri yeter. Sıra: cerebras → groq → mistral.
+# Aynı anahtarlar yürürken modunun sesli cevabı için de kullanılıyor (groq ya da
+# mistral); yoksa mod tarayıcının kendi tanıyıcısına düşer ve ekran açık kalmalıdır.
 CEREBRAS_API_KEY="..."          # önerilen: ücretsizlerin en hızlısı, 1M token/gün
 # GROQ_API_KEY="..."            # ~500K token/gün, ilk yedek
 # MISTRAL_API_KEY="..."         # 1B token/ay ama ~2 RPM — taşma yedeği
@@ -533,35 +534,38 @@ taşınınca ortaya bambaşka bir kullanım anı çıktı — yürürken, bulaş
 | Duyulmayan tur yanlış sayılmaz | Sokakta mikrofonun bir turu kaçırması olağan; onu hata yazmak kelimeyi gerçekten unutulduğu için değil gürültü yüzünden öne çekerdi |
 | Cevaplar `speak` adıyla kaydedilir | Yazma oyununun hanesine yazmak kolaydı ama profildeki oyun başarısı tablosunu bozardı: ikisi farklı beceri |
 
-#### Ekran kapanınca: iki kip
+#### Ekran kapalıyken mikrofon
 
-Web'de **arka planda konuşma tanıma yok**. Bu bir eksik değil, bilinçli bir platform kararı:
-kilitli telefonda dinleyen bir sekme, mikrofonu görünmez biçimde açık tutmak olurdu. `Screen
-Wake Lock` de yalnızca BOŞTA KALMAYI engelliyor — kullanıcı güç tuşuna basınca ekran yine
-kapanıyor ve o anda tanıyıcı susuyor, `AudioContext` askıya alınıyor.
+Tarayıcının kendi konuşma tanıyıcısı (`SpeechRecognition`) **yalnızca sayfa görünürken**
+çalışıyor. Telefon kilitlenince susuyor ve bunun etrafından dolaşmanın yolu yok: bu bir eksik
+değil, mikrofonun görünmez biçimde açık kalmasını engelleyen bilinçli bir platform kararı.
+`Screen Wake Lock` de yetmiyor, çünkü yalnızca BOŞTA KALMAYI engelliyor — güç tuşuna basıldığında
+ekran yine kapanıyor.
 
-Bu yüzden mod iki kipli:
+Çözüm tanıyıcıyı bırakmak: ses `getUserMedia` ile **kendimiz kaydediliyor** ve sunucuda yazıya
+çevriliyor. `getUserMedia` akışı arka planda yaşamaya devam ediyor — sesli not uygulamalarının
+ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 
-| Kip | Ölçer mi | Ekran |
-|---|---|---|
-| **Sesli cevap** | Evet — doğru/yanlış işlenir, tekrar planı ilerler | Açık kalmalı (kilit istenir) |
-| **Cepte** | Hayır — yalnızca okur: Türkçesi, tekrar payı, Almancası | Kapalı olabilir |
+| Parça | Neden |
+|---|---|
+| Mikrofon oturum boyunca **bir kez** açılıp açık tutuluyor | Her tur yeniden açmak yarım saniyeye kadar gecikme ekliyor; daha önemlisi akış kapalıyken sekmenin arka planda canlı kalması için sebep kalmıyor |
+| Kayıt penceresi **sabit** (3,5 sn) | Sessizlik algılamak için WebAudio çözümleyicisi gerekiyor ama ekran kapanınca `AudioContext` askıya alınıyor — çözümleyici tam ihtiyaç duyulan yerde duruyor |
+| Sesler **ses öğesi** zinciriyle çalınıyor | Kilitlenince `AudioContext` askıya alınıyor, ses öğeleri çalmaya devam ediyor (podcast uygulamalarının çalışma biçimi) |
+| Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
+| Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |
 
-Ekran kapandığında ölçen kip **durmuyor**, cepte kipine düşüyor ve bunu sesle söylüyor; ekran
-açılınca geri dönüyor. Durmak, kullanıcının cebinden çıkardığında hiçbir şey olmamış bulması
-demekti — asıl şikâyet buydu.
-
-Cepte kipinin ekran kapalıyken sürmesi iki parçaya bağlı: sesler WebAudio yerine **ses öğesi**
-zinciriyle çalınıyor (kilitlenince `AudioContext` askıya alınıyor, ses öğeleri çalmaya devam
-ediyor — podcast uygulamalarının çalışma biçimi) ve arkada **sessiz bir döngü** ile
-`MediaSession` duruyor, böylece tarayıcı sekmeyi "medya çalıyor" sayıp zamanlayıcıları kısmıyor.
+Yazıya çevirme `/api/stt` üzerinden, OpenAI uyumlu `audio/transcriptions` ucuyla: sıra
+**groq** (`whisper-large-v3-turbo`, ücretsiz katman günde 2.000 istek · 28.800 saniye ses),
+sonra **mistral** (`voxtral-mini-latest`). Hiçbiri yapılandırılmamışsa tarayıcının kendi
+tanıyıcısına düşülüyor — o da çalışıyor ama ekranın açık kalmasını istiyor ve arayüz bunu
+söylüyor.
 
 İki koruma daha var:
 
 | Sorun | Çözüm |
 |---|---|
-| Mikrofon bozukken tur yanıyor | Son dört turun üçü duyulmadıysa cepte kipine düşülür. Ölçüt bilerek "üst üste" değil: bozuk tanıyıcı arada çöp metin döndürüyor ve ardışıklık arayan bir sayaç onunla sıfırlanıyordu — ölçümde 45 saniyede altı tur yandı, sayaç hiç üçe ulaşmadı |
-| Tur bitince telefonu çıkarmak gerekiyor | "Devam edelim mi?" sesli soruluyor, cevap sesli alınıyor. Anlaşılmayan cevap ne evet ne hayır sayılıyor; soru bir kez tekrarlanıyor, sonra duruluyor. Cepte kipinde mikrofon olmadığı için kendiliğinden devam edilir |
+| Mikrofon bozukken tur yanıyor | Son dört turun üçü duyulmadıysa tur duruyor. Ölçüt bilerek "üst üste" değil: bozuk tanıyıcı arada çöp metin döndürüyor ve ardışıklık arayan bir sayaç onunla sıfırlanıyordu — ölçümde 45 saniyede altı tur yandı, sayaç hiç üçe ulaşmadı |
+| Tur bitince telefonu çıkarmak gerekiyor | "Devam edelim mi?" sesli soruluyor, cevap sesli alınıyor. Anlaşılmayan cevap ne evet ne hayır sayılıyor; soru bir kez tekrarlanıyor, sonra duruluyor |
 
 ### Modül sınavı
 
