@@ -1,0 +1,446 @@
+{
+ "paket": "b2-041",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5646,
+   "de": "das Stadtviertel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Stadtviertel",
+   "mevcutTr": "semt, mahalle",
+   "mevcutBeispiel": "Das Stadtviertel hat sich in zehn Jahren völlig verändert.",
+   "mevcutBeispielTr": "Semt on yıl içinde tamamen değişti.",
+   "cakisan": [
+    "das Quartier (B1)",
+    "der Stadtteil (A2)"
+   ]
+  },
+  {
+   "id": 5647,
+   "de": "die Innenstadt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Innenstädte",
+   "mevcutTr": "şehir merkezi",
+   "mevcutBeispiel": "In der Innenstadt sollen künftig deutlich weniger Autos fahren.",
+   "mevcutBeispielTr": "Şehir merkezinde bundan sonra çok daha az araba dolaşacak."
+  },
+  {
+   "id": 5648,
+   "de": "die Sozialwohnung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sozialwohnungen",
+   "mevcutTr": "sosyal konut",
+   "mevcutBeispiel": "Die Stadt plant den Bau von tausend neuen Sozialwohnungen.",
+   "mevcutBeispielTr": "Şehir bin yeni sosyal konut yapmayı planlıyor."
+  },
+  {
+   "id": 5649,
+   "de": "die Obdachlosigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "evsizlik, barınaksızlık",
+   "mevcutBeispiel": "Steigende Mieten treiben immer mehr Menschen in die Obdachlosigkeit.",
+   "mevcutBeispielTr": "Artan kiralar giderek daha çok insanı evsizliğe sürüklüyor."
+  },
+  {
+   "id": 5650,
+   "de": "die Wohnfläche",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wohnflächen",
+   "mevcutTr": "kullanım alanı, net konut alanı",
+   "mevcutBeispiel": "Die Wohnung hat eine Wohnfläche von siebzig Quadratmetern.",
+   "mevcutBeispielTr": "Dairenin yetmiş metrekare kullanım alanı var."
+  },
+  {
+   "id": 5651,
+   "de": "der Stellplatz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Stellplätze",
+   "mevcutTr": "park yeri, araç yeri",
+   "mevcutBeispiel": "Zur Wohnung gehört ein überdachter Stellplatz für ein Auto.",
+   "mevcutBeispielTr": "Daireye bir araba için üstü kapalı park yeri dahil."
+  },
+  {
+   "id": 5652,
+   "de": "die Spedition",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Speditionen",
+   "mevcutTr": "nakliye firması, taşımacılık şirketi",
+   "mevcutBeispiel": "Für den Umzug haben wir eine günstige Spedition beauftragt.",
+   "mevcutBeispielTr": "Taşınmak için uygun fiyatlı bir nakliye firmasıyla anlaştık."
+  },
+  {
+   "id": 5653,
+   "de": "das Verkehrsaufkommen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "trafik yoğunluğu, trafik hacmi",
+   "mevcutBeispiel": "Am Freitagnachmittag ist das Verkehrsaufkommen besonders hoch.",
+   "mevcutBeispielTr": "Cuma öğleden sonraları trafik yoğunluğu özellikle yüksek oluyor.",
+   "cakisan": [
+    "die Verkehrsdichte (B2)"
+   ]
+  },
+  {
+   "id": 5654,
+   "de": "der Kreisverkehr",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kreisverkehre",
+   "mevcutTr": "dönel kavşak",
+   "mevcutBeispiel": "Am Kreisverkehr müssen Sie die zweite Ausfahrt nehmen.",
+   "mevcutBeispielTr": "Dönel kavşakta ikinci çıkışa girmeniz gerekiyor."
+  },
+  {
+   "id": 5655,
+   "de": "der Radweg",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Radwege",
+   "mevcutTr": "bisiklet yolu",
+   "mevcutBeispiel": "Der neue Radweg verläuft getrennt von der Fahrbahn.",
+   "mevcutBeispielTr": "Yeni bisiklet yolu araç şeridinden ayrı ilerliyor."
+  },
+  {
+   "id": 5656,
+   "de": "der Pendler",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Pendler",
+   "mevcutTr": "işe gidip gelen kişi, banliyö yolcusu",
+   "mevcutBeispiel": "Tausende Pendler fahren täglich mit dem Zug in die Stadt.",
+   "mevcutBeispielTr": "Binlerce kişi her gün trenle şehre gidip geliyor."
+  },
+  {
+   "id": 5657,
+   "de": "die Maut",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Mauten",
+   "mevcutTr": "geçiş ücreti, otoyol ücreti",
+   "mevcutBeispiel": "In Österreich muss man für die Autobahn eine Maut zahlen.",
+   "mevcutBeispielTr": "Avusturya'da otoyol için geçiş ücreti ödemek gerekiyor."
+  },
+  {
+   "id": 5658,
+   "de": "die Tiefgarage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Tiefgaragen",
+   "mevcutTr": "yeraltı otoparkı, kapalı otopark",
+   "mevcutBeispiel": "In der Tiefgarage sind am Abend noch einige Plätze frei.",
+   "mevcutBeispielTr": "Yeraltı otoparkında akşam saatlerinde hâlâ birkaç yer boş."
+  },
+  {
+   "id": 5659,
+   "de": "die Geschwindigkeitsbegrenzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Geschwindigkeitsbegrenzungen",
+   "mevcutTr": "hız sınırı",
+   "mevcutBeispiel": "Vor der Schule gilt eine Geschwindigkeitsbegrenzung von dreißig.",
+   "mevcutBeispielTr": "Okulun önünde otuz kilometrelik hız sınırı geçerli.",
+   "cakisan": [
+    "die Geschwindigkeitsbeschränkung (B1)"
+   ]
+  },
+  {
+   "id": 5660,
+   "de": "die Ladesäule",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ladesäulen",
+   "mevcutTr": "şarj istasyonu, şarj ünitesi",
+   "mevcutBeispiel": "Vor dem Rathaus wurden zwei neue Ladesäulen installiert.",
+   "mevcutBeispielTr": "Belediye binasının önüne iki yeni şarj ünitesi kuruldu.",
+   "cakisan": [
+    "die Ladestation (B2)"
+   ]
+  },
+  {
+   "id": 5661,
+   "de": "das Schienennetz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schienennetze",
+   "mevcutTr": "demiryolu ağı",
+   "mevcutBeispiel": "Das Schienennetz im Norden wird in den nächsten Jahren erweitert.",
+   "mevcutBeispielTr": "Kuzeydeki demiryolu ağı önümüzdeki yıllarda genişletilecek."
+  },
+  {
+   "id": 5662,
+   "de": "die Umgehungsstraße",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Umgehungsstraßen",
+   "mevcutTr": "çevre yolu",
+   "mevcutBeispiel": "Seit dem Bau der Umgehungsstraße ist es im Dorf ruhiger.",
+   "mevcutBeispielTr": "Çevre yolu yapıldığından beri köy daha sakin."
+  },
+  {
+   "id": 5663,
+   "de": "der Zugausfall",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zugausfälle",
+   "mevcutTr": "tren seferinin iptali",
+   "mevcutBeispiel": "Wegen des Sturms kam es zu zahlreichen Zugausfällen.",
+   "mevcutBeispielTr": "Fırtına yüzünden çok sayıda tren seferi iptal edildi."
+  },
+  {
+   "id": 5664,
+   "de": "der Anwohner",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anwohner",
+   "mevcutTr": "civarda oturan kişi, mahalle sakini",
+   "mevcutBeispiel": "Die Anwohner beschweren sich über den Lärm der Baustelle.",
+   "mevcutBeispielTr": "Civarda oturanlar şantiyenin gürültüsünden şikayetçi."
+  },
+  {
+   "id": 5665,
+   "de": "modernisieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat modernisiert",
+   "mevcutTr": "modernleştirmek, yenilemek",
+   "mevcutBeispiel": "Der Eigentümer will das Bad und die Heizung modernisieren.",
+   "mevcutBeispielTr": "Mal sahibi banyoyu ve kaloriferi yenilemek istiyor."
+  },
+  {
+   "id": 5666,
+   "de": "errichten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat errichtet",
+   "mevcutTr": "inşa etmek, dikmek",
+   "mevcutBeispiel": "Auf dem Gelände soll ein neues Wohnhaus errichtet werden.",
+   "mevcutBeispielTr": "Arazide yeni bir apartman inşa edilecek.",
+   "cakisan": [
+    "bauen (A2)"
+   ]
+  },
+  {
+   "id": 5667,
+   "de": "abreißen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgerissen",
+   "mevcutTr": "yıkmak, sökmek",
+   "mevcutBeispiel": "Die alte Fabrik am Kanal wird im Sommer abgerissen.",
+   "mevcutBeispielTr": "Kanal kenarındaki eski fabrika yaz aylarında yıkılacak."
+  },
+  {
+   "id": 5668,
+   "de": "umleiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat umgeleitet",
+   "mevcutTr": "başka yöne yönlendirmek, güzergâhı değiştirmek",
+   "mevcutBeispiel": "Der Verkehr wird wegen der Bauarbeiten großräumig umgeleitet.",
+   "mevcutBeispielTr": "Trafik inşaat çalışmaları nedeniyle geniş bir alanda başka yöne yönlendiriliyor."
+  },
+  {
+   "id": 5669,
+   "de": "ausbauen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgebaut",
+   "mevcutTr": "genişletmek, geliştirmek",
+   "mevcutBeispiel": "Die Stadt will das Radwegenetz in den nächsten Jahren ausbauen.",
+   "mevcutBeispielTr": "Şehir bisiklet yolu ağını önümüzdeki yıllarda genişletmek istiyor.",
+   "cakisan": [
+    "erweitern (B2)",
+    "ausweiten (B2)"
+   ]
+  },
+  {
+   "id": 5670,
+   "de": "erschließen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erschlossen",
+   "mevcutTr": "altyapıya kavuşturmak, imara açmak",
+   "mevcutBeispiel": "Das neue Baugebiet wird zuerst mit Straßen und Leitungen erschlossen.",
+   "mevcutBeispielTr": "Yeni yapı alanı önce yollar ve hatlarla altyapıya kavuşturuluyor."
+  },
+  {
+   "id": 5671,
+   "de": "verlegen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verlegt",
+   "mevcutTr": "döşemek, yerini değiştirmek",
+   "mevcutBeispiel": "Die Handwerker verlegen im Keller neue Rohre.",
+   "mevcutBeispielTr": "Ustalar bodrumda yeni borular döşüyor.",
+   "cakisan": [
+    "einrichten (B1)"
+   ]
+  },
+  {
+   "id": 5672,
+   "de": "einparken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingeparkt",
+   "mevcutTr": "park etmek, manevrayla yerleştirmek",
+   "mevcutBeispiel": "In dieser engen Straße kann man kaum einparken.",
+   "mevcutBeispielTr": "Bu dar sokakta neredeyse park edilemiyor.",
+   "cakisan": [
+    "parken (A2)"
+   ]
+  },
+  {
+   "id": 5673,
+   "de": "befahren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat befahren",
+   "mevcutTr": "üzerinden geçmek, araçla kullanmak",
+   "mevcutBeispiel": "Diese Straße darf nur von Anliegern befahren werden.",
+   "mevcutBeispielTr": "Bu yolu yalnızca civarda oturanlar araçla kullanabilir."
+  },
+  {
+   "id": 5674,
+   "de": "ausstatten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgestattet",
+   "mevcutTr": "donatmak, teçhiz etmek",
+   "mevcutBeispiel": "Die Wohnung ist mit einer neuen Küche ausgestattet.",
+   "mevcutBeispielTr": "Daire yeni bir mutfakla donatılmış durumda."
+  },
+  {
+   "id": 5675,
+   "de": "umgestalten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat umgestaltet",
+   "mevcutTr": "yeniden düzenlemek, dönüştürmek",
+   "mevcutBeispiel": "Der Platz vor dem Bahnhof wird komplett umgestaltet.",
+   "mevcutBeispielTr": "Tren istasyonunun önündeki meydan baştan aşağı yeniden düzenleniyor."
+  },
+  {
+   "id": 5676,
+   "de": "bezuschussen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bezuschusst",
+   "mevcutTr": "maddi destek vermek, sübvanse etmek",
+   "mevcutBeispiel": "Der Staat bezuschusst den Einbau neuer Fenster.",
+   "mevcutBeispielTr": "Devlet yeni pencere takılmasına maddi destek veriyor."
+  },
+  {
+   "id": 5677,
+   "de": "abstellen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgestellt",
+   "mevcutTr": "bırakmak, park etmek",
+   "mevcutBeispiel": "Fahrräder dürfen nicht im Treppenhaus abgestellt werden.",
+   "mevcutBeispielTr": "Bisikletler merdiven boşluğuna bırakılamaz.",
+   "cakisan": [
+    "lassen (A1)",
+    "loslassen (A2)"
+   ]
+  },
+  {
+   "id": 5678,
+   "de": "ortsüblich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yörede alışılmış, emsale uygun",
+   "mevcutBeispiel": "Die Miete liegt leicht über der ortsüblichen Vergleichsmiete.",
+   "mevcutBeispielTr": "Kira, yöredeki emsal kira bedelinin biraz üzerinde."
+  },
+  {
+   "id": 5679,
+   "de": "bezugsfertig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "oturmaya hazır, teslime hazır",
+   "mevcutBeispiel": "Die Wohnungen sollen schon im Herbst bezugsfertig sein.",
+   "mevcutBeispielTr": "Dairelerin daha sonbaharda oturmaya hazır olması bekleniyor."
+  },
+  {
+   "id": 5680,
+   "de": "fußläufig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yürüme mesafesinde",
+   "mevcutBeispiel": "Der Bahnhof ist von hier aus fußläufig zu erreichen.",
+   "mevcutBeispielTr": "Tren istasyonuna buradan yürüyerek ulaşılabiliyor."
+  },
+  {
+   "id": 5681,
+   "de": "innerorts",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yerleşim yeri içinde",
+   "mevcutBeispiel": "Innerorts gilt in der Regel Tempo fünfzig.",
+   "mevcutBeispielTr": "Yerleşim yeri içinde kural olarak elli hız sınırı geçerlidir."
+  },
+  {
+   "id": 5682,
+   "de": "barrierefrei",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "engelsiz, erişilebilir",
+   "mevcutBeispiel": "Der Umbau macht das Gebäude endlich barrierefrei.",
+   "mevcutBeispielTr": "Tadilat binayı nihayet engelsiz hale getiriyor."
+  },
+  {
+   "id": 5683,
+   "de": "verkehrsberuhigt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "trafiği yavaşlatılmış, araç trafiği kısıtlanmış",
+   "mevcutBeispiel": "In verkehrsberuhigten Zonen darf man nur Schritt fahren.",
+   "mevcutBeispielTr": "Trafiği yavaşlatılmış bölgelerde ancak yürüme hızında gidilebilir."
+  },
+  {
+   "id": 5684,
+   "de": "unzumutbar",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "katlanılamaz, makul sayılamayacak",
+   "mevcutBeispiel": "Der Lärm in der Wohnung ist für Familien unzumutbar.",
+   "mevcutBeispielTr": "Dairedeki gürültü aileler için katlanılabilir değil."
+  },
+  {
+   "id": 5685,
+   "de": "umliegend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çevredeki, etraftaki",
+   "mevcutBeispiel": "Die umliegenden Gemeinden wachsen schneller als die Großstadt.",
+   "mevcutBeispielTr": "Çevredeki belediyeler büyük şehirden daha hızlı büyüyor."
+  },
+  {
+   "id": 5686,
+   "de": "baufällig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "harap, yıkılmaya yüz tutmuş",
+   "mevcutBeispiel": "Das baufällige Haus an der Ecke steht seit Jahren leer.",
+   "mevcutBeispielTr": "Köşedeki harap ev yıllardır boş duruyor."
+  }
+ ]
+}

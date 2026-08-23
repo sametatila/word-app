@@ -1,0 +1,597 @@
+{
+ "paket": "a2-025",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 8189,
+   "de": "abkratzen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kratzt ab, hat abgekratzt",
+   "mevcutTr": "kazımak, kazıyarak çıkarmak",
+   "mevcutBeispiel": "Im Winter kratze ich morgens das Eis vom Auto ab.",
+   "mevcutBeispielTr": "Kışın sabahları arabadaki buzu kazıyorum."
+  },
+  {
+   "id": 8190,
+   "de": "zusammenbauen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "baut zusammen, hat zusammengebaut",
+   "mevcutTr": "kurmak (parçaları birleştirerek), monte etmek",
+   "mevcutBeispiel": "Wir bauen das neue Regal am Wochenende zusammen.",
+   "mevcutBeispielTr": "Yeni rafı hafta sonu monte ediyoruz.",
+   "cakisan": [
+    "installieren (B1)",
+    "decken (A2)",
+    "aufbauen (A2)"
+   ]
+  },
+  {
+   "id": 8191,
+   "de": "anbringen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bringt an, hat angebracht",
+   "mevcutTr": "takmak, monte etmek",
+   "mevcutBeispiel": "Der Hausmeister bringt eine neue Lampe im Flur an.",
+   "mevcutBeispielTr": "Kapıcı koridora yeni bir lamba takıyor."
+  },
+  {
+   "id": 8192,
+   "de": "beschriften",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "beschriftet, hat beschriftet",
+   "mevcutTr": "üzerine yazmak, etiketlemek",
+   "mevcutBeispiel": "Ich beschrifte die Dosen im Küchenschrank mit einem Stift.",
+   "mevcutBeispielTr": "Mutfak dolabındaki kutuların üzerine kalemle yazıyorum."
+  },
+  {
+   "id": 8193,
+   "de": "anschalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schaltet an, hat angeschaltet",
+   "mevcutTr": "açmak (cihaz)",
+   "mevcutBeispiel": "Am Abend schalte ich die Lampe im Wohnzimmer an.",
+   "mevcutBeispielTr": "Akşamları oturma odasındaki lambayı açıyorum.",
+   "cakisan": [
+    "einschalten (B1)",
+    "schalten (B1)",
+    "aufschlagen (A2)"
+   ]
+  },
+  {
+   "id": 8194,
+   "de": "abdecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "deckt ab, hat abgedeckt",
+   "mevcutTr": "üstünü örtmek, üstünü kapatmak",
+   "mevcutBeispiel": "Beim Streichen decke ich den Boden mit einer Folie ab.",
+   "mevcutBeispielTr": "Boya yaparken zemini bir naylonla örtüyorum.",
+   "cakisan": [
+    "zudecken (A2)"
+   ]
+  },
+  {
+   "id": 8195,
+   "de": "warmhalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hält warm, hat warmgehalten",
+   "mevcutTr": "sıcak tutmak",
+   "mevcutBeispiel": "Ich halte das Essen im Ofen für meinen Mann warm.",
+   "mevcutBeispielTr": "Yemeği eşim için fırında sıcak tutuyorum."
+  },
+  {
+   "id": 8196,
+   "de": "knoten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "knotet, hat geknotet",
+   "mevcutTr": "düğümlemek, düğüm atmak",
+   "mevcutBeispiel": "Ich knote den vollen Müllsack fest zu.",
+   "mevcutBeispielTr": "Dolu çöp torbasını sıkıca düğümlüyorum."
+  },
+  {
+   "id": 8197,
+   "de": "einschlafen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schläft ein, ist eingeschlafen",
+   "mevcutTr": "uykuya dalmak",
+   "mevcutBeispiel": "Gestern bin ich vor dem Fernseher eingeschlafen.",
+   "mevcutBeispielTr": "Dün televizyonun karşısında uyuyakaldım."
+  },
+  {
+   "id": 8199,
+   "de": "verschlafen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verschläft, hat verschlafen",
+   "mevcutTr": "uyuyakalmak, geç kalkmak",
+   "mevcutBeispiel": "Heute Morgen habe ich verschlafen und den Bus verpasst.",
+   "mevcutBeispielTr": "Bu sabah uyuyakaldım ve otobüsü kaçırdım."
+  },
+  {
+   "id": 8200,
+   "de": "aufwecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "weckt auf, hat aufgeweckt",
+   "mevcutTr": "uyandırmak",
+   "mevcutBeispiel": "Jeden Morgen wecke ich meine Kinder um sieben Uhr auf.",
+   "mevcutBeispielTr": "Her sabah çocuklarımı saat yedide uyandırıyorum.",
+   "cakisan": [
+    "wecken (A1)"
+   ]
+  },
+  {
+   "id": 8201,
+   "de": "aufbleiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bleibt auf, ist aufgeblieben",
+   "mevcutTr": "(geç saate kadar) uyanık kalmak, yatmamak",
+   "mevcutBeispiel": "Am Wochenende bleiben die Kinder eine Stunde länger auf.",
+   "mevcutBeispielTr": "Hafta sonu çocuklar bir saat daha geç yatıyor."
+  },
+  {
+   "id": 8202,
+   "de": "sich strecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "streckt sich, hat sich gestreckt",
+   "mevcutTr": "gerinmek, uzanıp esnemek",
+   "mevcutBeispiel": "Nach dem Aufstehen strecke ich mich am offenen Fenster.",
+   "mevcutBeispielTr": "Kalktıktan sonra açık pencerenin önünde geriniyorum."
+  },
+  {
+   "id": 8203,
+   "de": "sich kämmen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kämmt sich, hat sich gekämmt",
+   "mevcutTr": "saçını taramak",
+   "mevcutBeispiel": "Jeden Morgen kämme ich mich vor dem Spiegel im Bad.",
+   "mevcutBeispielTr": "Her sabah banyodaki aynanın önünde saçımı tarıyorum."
+  },
+  {
+   "id": 8204,
+   "de": "föhnen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "föhnt, hat geföhnt",
+   "mevcutTr": "fön çekmek, saç kurutmak",
+   "mevcutBeispiel": "Nach dem Duschen föhne ich meine Haare im Bad.",
+   "mevcutBeispielTr": "Duştan sonra banyoda saçlarımı fönlüyorum."
+  },
+  {
+   "id": 8205,
+   "de": "bürsten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bürstet, hat gebürstet",
+   "mevcutTr": "fırçalamak",
+   "mevcutBeispiel": "Vor der Arbeit bürste ich meine schwarzen Schuhe.",
+   "mevcutBeispielTr": "İşten önce siyah ayakkabılarımı fırçalıyorum."
+  },
+  {
+   "id": 8206,
+   "de": "anprobieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "probiert an, hat anprobiert",
+   "mevcutTr": "denemek (kıyafet), üstünde denemek",
+   "mevcutBeispiel": "Im Geschäft probiere ich zuerst die blaue Jacke an.",
+   "mevcutBeispielTr": "Mağazada önce mavi ceketi deniyorum.",
+   "cakisan": [
+    "probieren (A2)",
+    "versuchen (A2)",
+    "erproben (C1)",
+    "ausprobieren (A2)"
+   ]
+  },
+  {
+   "id": 8207,
+   "de": "kassieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kassiert, hat kassiert",
+   "mevcutTr": "tahsil etmek, para almak",
+   "mevcutBeispiel": "An der Kasse kassiert heute eine junge Frau.",
+   "mevcutBeispielTr": "Kasada bugün genç bir kadın para alıyor."
+  },
+  {
+   "id": 8208,
+   "de": "auffüllen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "füllt auf, hat aufgefüllt",
+   "mevcutTr": "doldurmak, eksiğini tamamlamak",
+   "mevcutBeispiel": "Bitte fülle das Waschmittel im Schrank auf.",
+   "mevcutBeispielTr": "Lütfen dolaptaki deterjanı tamamla.",
+   "cakisan": [
+    "abfüllen (B2)",
+    "einschenken (A2)",
+    "füllen (A2)"
+   ]
+  },
+  {
+   "id": 8209,
+   "de": "nachfüllen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "füllt nach, hat nachgefüllt",
+   "mevcutTr": "yeniden doldurmak, üstüne eklemek",
+   "mevcutBeispiel": "Füll bitte das Salz nach, die Dose ist fast leer.",
+   "mevcutBeispielTr": "Lütfen tuzu tazele, kutu neredeyse boş."
+  },
+  {
+   "id": 8210,
+   "de": "einschenken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schenkt ein, hat eingeschenkt",
+   "mevcutTr": "(içecek) doldurmak, koymak",
+   "mevcutBeispiel": "Meine Mutter schenkt uns nach dem Essen Tee ein.",
+   "mevcutBeispielTr": "Annem yemekten sonra bize çay koyuyor.",
+   "cakisan": [
+    "abfüllen (B2)",
+    "auffüllen (A2)",
+    "füllen (A2)"
+   ]
+  },
+  {
+   "id": 8211,
+   "de": "aufbewahren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bewahrt auf, hat aufbewahrt",
+   "mevcutTr": "saklamak, muhafaza etmek",
+   "mevcutBeispiel": "Wir bewahren die Kartoffeln im kühlen Keller auf.",
+   "mevcutBeispielTr": "Patatesleri serin bodrumda saklıyoruz.",
+   "cakisan": [
+    "behalten (B1)"
+   ]
+  },
+  {
+   "id": 8212,
+   "de": "abräumen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "räumt ab, hat abgeräumt",
+   "mevcutTr": "(masayı) toplamak, kaldırmak",
+   "mevcutBeispiel": "Nach dem Essen räume ich den Tisch schnell ab.",
+   "mevcutBeispielTr": "Yemekten sonra masayı hemen topluyorum.",
+   "cakisan": [
+    "aufräumen (A1)",
+    "sammeln (A2)",
+    "erheben (B2)",
+    "einsammeln (A2)"
+   ]
+  },
+  {
+   "id": 8213,
+   "de": "anrichten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "richtet an, hat angerichtet",
+   "mevcutTr": "(yemeği) tabağa koyup sunmak",
+   "mevcutBeispiel": "Meine Frau richtet den Salat auf einem großen Teller an.",
+   "mevcutBeispielTr": "Eşim salatayı büyük bir tabakta sunuyor."
+  },
+  {
+   "id": 8214,
+   "de": "auftragen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "trägt auf, hat aufgetragen",
+   "mevcutTr": "sürmek (krem, boya)",
+   "mevcutBeispiel": "Jeden Abend trage ich eine Creme auf die Hände auf.",
+   "mevcutBeispielTr": "Her akşam ellerime krem sürüyorum."
+  },
+  {
+   "id": 8215,
+   "de": "naschen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "nascht, hat genascht",
+   "mevcutTr": "atıştırmak (tatlı), gizlice yemek",
+   "mevcutBeispiel": "Die Kinder naschen heimlich von der Schokolade.",
+   "mevcutBeispielTr": "Çocuklar gizlice çikolatadan atıştırıyor."
+  },
+  {
+   "id": 8216,
+   "de": "aufschneiden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schneidet auf, hat aufgeschnitten",
+   "mevcutTr": "dilimlemek, kesip açmak",
+   "mevcutBeispiel": "Meine Mutter schneidet den Kuchen in der Küche auf.",
+   "mevcutBeispielTr": "Annem pastayı mutfakta dilimliyor."
+  },
+  {
+   "id": 8217,
+   "de": "verschließen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verschließt, hat verschlossen",
+   "mevcutTr": "sıkıca kapatmak, kilitlemek",
+   "mevcutBeispiel": "Verschließ bitte die Marmelade gut, sonst wird sie schlecht.",
+   "mevcutBeispielTr": "Lütfen reçeli iyice kapat, yoksa bozulur."
+  },
+  {
+   "id": 8218,
+   "de": "zudecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "deckt zu, hat zugedeckt",
+   "mevcutTr": "üstünü örtmek",
+   "mevcutBeispiel": "Abends decke ich meinen Sohn im Bett warm zu.",
+   "mevcutBeispielTr": "Akşamları oğlumun üstünü yatakta sıkıca örtüyorum.",
+   "cakisan": [
+    "abdecken (A2)"
+   ]
+  },
+  {
+   "id": 8219,
+   "de": "beziehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bezieht, hat bezogen",
+   "mevcutTr": "(yatağa) çarşaf geçirmek, kaplamak",
+   "mevcutBeispiel": "Am Samstag beziehe ich alle Betten in der Wohnung neu.",
+   "mevcutBeispielTr": "Cumartesi günü evdeki bütün yatakların çarşaflarını yeniliyorum."
+  },
+  {
+   "id": 8220,
+   "de": "polieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "poliert, hat poliert",
+   "mevcutTr": "parlatmak, cilalamak",
+   "mevcutBeispiel": "Vor dem Besuch poliere ich die Gläser mit einem Tuch.",
+   "mevcutBeispielTr": "Misafir gelmeden önce bardakları bir bezle parlatıyorum."
+  },
+  {
+   "id": 8221,
+   "de": "montieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "montiert, hat montiert",
+   "mevcutTr": "monte etmek, kurmak",
+   "mevcutBeispiel": "Der Handwerker montiert heute die neue Küche.",
+   "mevcutBeispielTr": "Usta bugün yeni mutfağı monte ediyor.",
+   "cakisan": [
+    "einbauen (B2)"
+   ]
+  },
+  {
+   "id": 8222,
+   "de": "ausbessern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bessert aus, hat ausgebessert",
+   "mevcutTr": "onarmak, düzeltmek",
+   "mevcutBeispiel": "Ich bessere die kleine Stelle an der Wand mit Farbe aus.",
+   "mevcutBeispielTr": "Duvardaki küçük yeri boyayla onarıyorum."
+  },
+  {
+   "id": 8223,
+   "de": "schaufeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schaufelt, hat geschaufelt",
+   "mevcutTr": "kürekle temizlemek, küremek",
+   "mevcutBeispiel": "Im Winter schaufeln wir den Schnee vor der Haustür.",
+   "mevcutBeispielTr": "Kışın ev kapısının önündeki karı küreriz."
+  },
+  {
+   "id": 8224,
+   "de": "mithelfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hilft mit, hat mitgeholfen",
+   "mevcutTr": "yardım etmek, el atmak",
+   "mevcutBeispiel": "Meine Kinder helfen im Haushalt jeden Tag mit.",
+   "mevcutBeispielTr": "Çocuklarım ev işlerinde her gün yardım ediyor.",
+   "cakisan": [
+    "helfen (A1)",
+    "nachhelfen (A2)"
+   ]
+  },
+  {
+   "id": 8225,
+   "de": "sich abwechseln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "wechselt sich ab, hat sich abgewechselt",
+   "mevcutTr": "sırayla yapmak, nöbetleşmek",
+   "mevcutBeispiel": "Beim Kochen wechseln wir uns in der Familie ab.",
+   "mevcutBeispielTr": "Ailede yemek pişirmeyi sırayla yapıyoruz."
+  },
+  {
+   "id": 8226,
+   "de": "losgehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht los, ist losgegangen",
+   "mevcutTr": "yola çıkmak, başlamak",
+   "mevcutBeispiel": "Wir gehen um sieben Uhr los.",
+   "mevcutBeispielTr": "Saat yedide yola çıkıyoruz.",
+   "cakisan": [
+    "losfahren (B1)",
+    "aufbrechen (B2)",
+    "abreisen (A2)"
+   ]
+  },
+  {
+   "id": 8227,
+   "de": "weggehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht weg, ist weggegangen",
+   "mevcutTr": "gitmek, uzaklaşmak",
+   "mevcutBeispiel": "Meine Kollegin geht heute früher weg.",
+   "mevcutBeispielTr": "İş arkadaşım bugün erken gidiyor.",
+   "cakisan": [
+    "fahren (A1)",
+    "gehen (A1)",
+    "aufsuchen (B2)"
+   ]
+  },
+  {
+   "id": 8228,
+   "de": "weglaufen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "läuft weg, ist weggelaufen",
+   "mevcutTr": "kaçmak, koşarak uzaklaşmak",
+   "mevcutBeispiel": "Der Hund ist im Park weggelaufen.",
+   "mevcutBeispielTr": "Köpek parkta kaçtı.",
+   "cakisan": [
+    "fliehen (B1)",
+    "entkommen (B2)"
+   ]
+  },
+  {
+   "id": 8229,
+   "de": "zurückkommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt zurück, ist zurückgekommen",
+   "mevcutTr": "geri gelmek, dönmek",
+   "mevcutBeispiel": "Mein Vater kommt am Freitag aus Hamburg zurück.",
+   "mevcutBeispielTr": "Babam cuma günü Hamburg'dan geri geliyor."
+  },
+  {
+   "id": 8230,
+   "de": "hingehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht hin, ist hingegangen",
+   "mevcutTr": "oraya gitmek",
+   "mevcutBeispiel": "Das Konzert ist billig, wir gehen zusammen hin.",
+   "mevcutBeispielTr": "Konser ucuz, oraya birlikte gidiyoruz.",
+   "cakisan": [
+    "hinfahren (A2)"
+   ]
+  },
+  {
+   "id": 8231,
+   "de": "herkommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt her, ist hergekommen",
+   "mevcutTr": "buraya gelmek",
+   "mevcutBeispiel": "Komm bitte kurz her, ich brauche deine Hilfe.",
+   "mevcutBeispielTr": "Lütfen kısa bir süre buraya gel, yardımına ihtiyacım var."
+  },
+  {
+   "id": 8232,
+   "de": "reinkommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt rein, ist reingekommen",
+   "mevcutTr": "içeri girmek",
+   "mevcutBeispiel": "Der Chef kommt gleich ins Büro rein.",
+   "mevcutBeispielTr": "Patron birazdan büroya içeri giriyor."
+  },
+  {
+   "id": 8233,
+   "de": "rausgehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht raus, ist rausgegangen",
+   "mevcutTr": "dışarı çıkmak",
+   "mevcutBeispiel": "In der Pause gehe ich kurz raus.",
+   "mevcutBeispielTr": "Molada kısa bir süre dışarı çıkıyorum.",
+   "cakisan": [
+    "ausgehen (A2)"
+   ]
+  },
+  {
+   "id": 8234,
+   "de": "vorbeikommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt vorbei, ist vorbeigekommen",
+   "mevcutTr": "uğramak, uğrayıp geçmek",
+   "mevcutBeispiel": "Der Techniker kommt morgen bei uns vorbei.",
+   "mevcutBeispielTr": "Teknisyen yarın bize uğruyor.",
+   "cakisan": [
+    "vorbeischauen (A2)"
+   ]
+  },
+  {
+   "id": 8235,
+   "de": "umkehren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kehrt um, ist umgekehrt",
+   "mevcutTr": "geri dönmek, geldiği yoldan dönmek",
+   "mevcutBeispiel": "Es hat stark geregnet, deshalb sind wir umgekehrt.",
+   "mevcutBeispielTr": "Çok yağmur yağdı, bu yüzden geri döndük.",
+   "cakisan": [
+    "zurückfahren (A2)"
+   ]
+  },
+  {
+   "id": 8236,
+   "de": "anhalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hält an, hat angehalten",
+   "mevcutTr": "durmak, durdurmak",
+   "mevcutBeispiel": "Der Bus hält vor der Schule an.",
+   "mevcutBeispielTr": "Otobüs okulun önünde duruyor.",
+   "cakisan": [
+    "halten (A1)",
+    "stehen (A1)",
+    "stehen bleiben (B1)"
+   ]
+  },
+  {
+   "id": 8237,
+   "de": "stehenbleiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bleibt stehen, ist stehen geblieben",
+   "mevcutTr": "durup kalmak, olduğu yerde durmak",
+   "mevcutBeispiel": "Meine Uhr ist heute Nacht stehen geblieben.",
+   "mevcutBeispielTr": "Saatim bu gece durdu."
+  },
+  {
+   "id": 8238,
+   "de": "betreten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "betritt, hat betreten",
+   "mevcutTr": "girmek, ayak basmak",
+   "mevcutBeispiel": "Man darf den Rasen im Park nicht betreten.",
+   "mevcutBeispielTr": "Parktaki çime basmak yasaktır.",
+   "cakisan": [
+    "eingeben (B2)",
+    "sich unterziehen (C1)",
+    "ablegen (A2)"
+   ]
+  },
+  {
+   "id": 8239,
+   "de": "durchgehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht durch, ist durchgegangen",
+   "mevcutTr": "gözden geçirmek, içinden geçmek",
+   "mevcutBeispiel": "Wir gehen die Liste noch einmal zusammen durch.",
+   "mevcutBeispielTr": "Listeyi bir kez daha birlikte gözden geçiriyoruz.",
+   "cakisan": [
+    "revidieren (C1)",
+    "sichten (C1)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,557 @@
+{
+ "paket": "c1-038",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 7103,
+   "de": "der Bezugsrahmen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bezugsrahmen",
+   "mevcutTr": "referans çerçevesi, bağlam çerçevesi",
+   "mevcutBeispiel": "Ohne gemeinsamen Bezugsrahmen reden die beiden Seiten aneinander vorbei.",
+   "mevcutBeispielTr": "Ortak bir referans çerçevesi olmadan iki taraf birbirini anlamıyor."
+  },
+  {
+   "id": 7104,
+   "de": "die Sprecherabsicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprecherabsichten",
+   "mevcutTr": "konuşurun niyeti",
+   "mevcutBeispiel": "Der Satz ist nur verständlich, wenn man die Sprecherabsicht mitdenkt.",
+   "mevcutBeispielTr": "Cümle ancak konuşurun niyeti hesaba katılırsa anlaşılır."
+  },
+  {
+   "id": 7105,
+   "de": "entsprechen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entsprochen",
+   "mevcutTr": "karşılık gelmek, uygun düşmek",
+   "mevcutBeispiel": "Kein türkisches Wort entspricht diesem Begriff vollständig.",
+   "mevcutBeispielTr": "Hiçbir Türkçe kelime bu kavrama tam olarak karşılık gelmiyor."
+  },
+  {
+   "id": 7106,
+   "de": "abweichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist abgewichen",
+   "mevcutTr": "sapmak, ayrılmak",
+   "mevcutBeispiel": "Die Fassung weicht an mehreren Stellen deutlich vom Original ab.",
+   "mevcutBeispielTr": "Bu sürüm birkaç yerde özgün metinden belirgin biçimde ayrılıyor.",
+   "cakisan": [
+    "ausweichen (B2)"
+   ]
+  },
+  {
+   "id": 7107,
+   "de": "verkürzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verkürzt",
+   "mevcutTr": "kısaltmak, indirgemek",
+   "mevcutBeispiel": "Die Schlagzeile verkürzt das Argument bis zur Unkenntlichkeit.",
+   "mevcutBeispielTr": "Manşet, savı tanınmayacak kadar indirgiyor."
+  },
+  {
+   "id": 7108,
+   "de": "gleichsetzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gleichgesetzt",
+   "mevcutTr": "bir tutmak, aynı saymak",
+   "mevcutBeispiel": "Man darf Verstehen nicht einfach mit Zustimmung gleichsetzen.",
+   "mevcutBeispielTr": "Anlamayı öylece onaylamayla bir tutmamak gerekir."
+  },
+  {
+   "id": 7109,
+   "de": "mitschwingen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat mitgeschwungen",
+   "mevcutTr": "arka planda hissedilmek, birlikte çağrışmak",
+   "mevcutBeispiel": "In dem harmlosen Wort schwingt hier ein leiser Vorwurf mit.",
+   "mevcutBeispielTr": "Bu masum kelimede hafif bir sitem de hissediliyor."
+  },
+  {
+   "id": 7110,
+   "de": "versinnbildlichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat versinnbildlicht",
+   "mevcutTr": "simgelemek, temsil etmek",
+   "mevcutBeispiel": "Das Bild vom Netz versinnbildlicht die Verflechtung der Bedeutungen.",
+   "mevcutBeispielTr": "Ağ imgesi, anlamların iç içe geçişini simgeliyor."
+  },
+  {
+   "id": 7111,
+   "de": "besagen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat besagt",
+   "mevcutTr": "anlamına gelmek, demek olmak",
+   "mevcutBeispiel": "Die Regel besagt lediglich, dass der Kontext den Vorrang hat.",
+   "mevcutBeispielTr": "Kural yalnızca bağlamın öncelikli olduğu anlamına geliyor.",
+   "cakisan": [
+    "bedeuten (A1)"
+   ]
+  },
+  {
+   "id": 7112,
+   "de": "verwässern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verwässert",
+   "mevcutTr": "sulandırmak, içeriğini boşaltmak",
+   "mevcutBeispiel": "Der inflationäre Gebrauch hat den Begriff völlig verwässert.",
+   "mevcutBeispielTr": "Aşırı kullanım bu kavramı tamamen sulandırdı."
+  },
+  {
+   "id": 7113,
+   "de": "entstellen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entstellt",
+   "mevcutTr": "çarpıtmak, tahrif etmek",
+   "mevcutBeispiel": "Ein einziges weggelassenes Wort kann den Sinn völlig entstellen.",
+   "mevcutBeispielTr": "Atlanan tek bir kelime anlamı tümüyle çarpıtabilir.",
+   "cakisan": [
+    "verzerren (C1)"
+   ]
+  },
+  {
+   "id": 7114,
+   "de": "benennen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat benannt",
+   "mevcutTr": "adlandırmak, açıkça belirtmek",
+   "mevcutBeispiel": "Erst wenn wir das Phänomen benennen, können wir darüber streiten.",
+   "mevcutBeispielTr": "Olguyu ancak adlandırdığımızda üzerinde tartışabiliriz.",
+   "cakisan": [
+    "nennen (A2)"
+   ]
+  },
+  {
+   "id": 7115,
+   "de": "auffassen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aufgefasst",
+   "mevcutTr": "algılamak, yorumlamak",
+   "mevcutBeispiel": "Sie hat die Bemerkung als versteckte Kritik aufgefasst.",
+   "mevcutBeispielTr": "Bu sözü örtük bir eleştiri olarak algıladı.",
+   "cakisan": [
+    "wahrnehmen (B2)",
+    "rezipieren (C1)"
+   ]
+  },
+  {
+   "id": 7116,
+   "de": "explizit",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "açık, açıkça belirtilmiş",
+   "mevcutBeispiel": "Der Vertrag nennt diese Pflicht explizit im dritten Absatz.",
+   "mevcutBeispielTr": "Sözleşme bu yükümlülüğü üçüncü paragrafta açıkça anıyor.",
+   "cakisan": [
+    "offen (A1)",
+    "geöffnet (A1)",
+    "deutlich (A2)",
+    "das Defizit (C1)"
+   ]
+  },
+  {
+   "id": 7117,
+   "de": "missverständlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yanlış anlaşılmaya açık",
+   "mevcutBeispiel": "Die Überschrift war missverständlich und wurde später geändert.",
+   "mevcutBeispielTr": "Başlık yanlış anlaşılmaya açıktı ve sonradan değiştirildi."
+  },
+  {
+   "id": 7118,
+   "de": "idiomatisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "deyimsel, dile özgü",
+   "mevcutBeispiel": "Die Übersetzung ist korrekt, klingt aber nicht idiomatisch.",
+   "mevcutBeispielTr": "Çeviri doğru ama dilin doğal kullanımına uymuyor."
+  },
+  {
+   "id": 7119,
+   "de": "kontextabhängig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bağlama bağlı",
+   "mevcutBeispiel": "Die Bedeutung solcher Partikeln ist stark kontextabhängig.",
+   "mevcutBeispielTr": "Bu tür ilgeçlerin anlamı büyük ölçüde bağlama bağlıdır."
+  },
+  {
+   "id": 7120,
+   "de": "abwertend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aşağılayıcı, olumsuz anlam yüklü",
+   "mevcutBeispiel": "In diesem Zusammenhang wird das Wort eindeutig abwertend gebraucht.",
+   "mevcutBeispielTr": "Bu bağlamda kelime açıkça aşağılayıcı biçimde kullanılıyor.",
+   "cakisan": [
+    "abschätzig (C1)"
+   ]
+  },
+  {
+   "id": 7121,
+   "de": "die Schicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schichten",
+   "mevcutTr": "toplumsal katman, sınıf",
+   "mevcutBeispiel": "Kinder aus bildungsfernen Schichten erreichen seltener das Gymnasium.",
+   "mevcutBeispielTr": "Eğitimden uzak katmanların çocukları liseye daha seyrek ulaşıyor."
+  },
+  {
+   "id": 7122,
+   "de": "die Diaspora",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "diaspora",
+   "mevcutBeispiel": "Die Diaspora hält den Kontakt zur Heimat über soziale Netzwerke aufrecht.",
+   "mevcutBeispielTr": "Diaspora anavatanla bağını sosyal ağlar üzerinden sürdürüyor."
+  },
+  {
+   "id": 7123,
+   "de": "der Aufstieg",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aufstiege",
+   "mevcutTr": "yükselme, sınıf atlama",
+   "mevcutBeispiel": "Der soziale Aufstieg gelingt in Deutschland seltener als früher.",
+   "mevcutBeispielTr": "Toplumsal yükselme Almanya'da eskisine göre daha seyrek gerçekleşiyor."
+  },
+  {
+   "id": 7124,
+   "de": "die Leitkultur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leitkulturen",
+   "mevcutTr": "başat kültür, referans kültür",
+   "mevcutBeispiel": "Der Begriff Leitkultur wird in der Debatte höchst unterschiedlich verwendet.",
+   "mevcutBeispielTr": "Başat kültür kavramı tartışmada son derece farklı biçimlerde kullanılıyor."
+  },
+  {
+   "id": 7125,
+   "de": "die Benachteiligung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Benachteiligungen",
+   "mevcutTr": "dezavantaj, mağduriyet",
+   "mevcutBeispiel": "Strukturelle Benachteiligung lässt sich statistisch inzwischen klar belegen.",
+   "mevcutBeispielTr": "Yapısal dezavantaj artık istatistiksel olarak açıkça kanıtlanabiliyor.",
+   "cakisan": [
+    "der Nachteil (B1)"
+   ]
+  },
+  {
+   "id": 7126,
+   "de": "die Binnenmigration",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Binnenmigrationen",
+   "mevcutTr": "iç göç",
+   "mevcutBeispiel": "Die Binnenmigration vom Osten in den Westen hat sich deutlich abgeschwächt.",
+   "mevcutBeispielTr": "Doğudan batıya iç göç belirgin biçimde zayıfladı.",
+   "cakisan": [
+    "die Binnenwanderung (C1)"
+   ]
+  },
+  {
+   "id": 7127,
+   "de": "die Fremdenfeindlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fremdenfeindlichkeiten",
+   "mevcutTr": "yabancı düşmanlığı",
+   "mevcutBeispiel": "Offene Fremdenfeindlichkeit äußert sich häufig erst in Krisenzeiten.",
+   "mevcutBeispielTr": "Açık yabancı düşmanlığı çoğu kez ancak kriz dönemlerinde dışa vurur."
+  },
+  {
+   "id": 7128,
+   "de": "der Rassismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rassismen",
+   "mevcutTr": "ırkçılık",
+   "mevcutBeispiel": "Rassismus zeigt sich oft in beiläufigen Bemerkungen im Alltag.",
+   "mevcutBeispielTr": "Irkçılık çoğu zaman gündelik hayattaki laf arasındaki söylemlerde belirir."
+  },
+  {
+   "id": 7129,
+   "de": "der Pluralismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çoğulculuk",
+   "mevcutBeispiel": "Weltanschaulicher Pluralismus gilt als Kennzeichen moderner Gesellschaften.",
+   "mevcutBeispielTr": "Dünya görüşü çoğulculuğu modern toplumların bir işareti sayılır."
+  },
+  {
+   "id": 7130,
+   "de": "der Wertewandel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "değerlerin dönüşümü",
+   "mevcutBeispiel": "Der Wertewandel zeigt sich besonders deutlich im Verhältnis zur Arbeit.",
+   "mevcutBeispielTr": "Değerlerin dönüşümü en açık biçimde işe bakışta görülüyor."
+  },
+  {
+   "id": 7131,
+   "de": "das Prekariat",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "prekarya, güvencesiz çalışanlar kesimi",
+   "mevcutBeispiel": "Das neue Prekariat besteht längst nicht mehr nur aus Ungelernten.",
+   "mevcutBeispielTr": "Yeni güvencesizler kesimi artık yalnızca vasıfsızlardan oluşmuyor."
+  },
+  {
+   "id": 7132,
+   "de": "das Armutsrisiko",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Armutsrisiken",
+   "mevcutTr": "yoksulluk riski",
+   "mevcutBeispiel": "Alleinerziehende tragen ein weit überdurchschnittliches Armutsrisiko.",
+   "mevcutBeispielTr": "Tek başına çocuk büyütenler ortalamanın çok üstünde bir yoksulluk riski taşıyor."
+  },
+  {
+   "id": 7133,
+   "de": "die Durchlässigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Durchlässigkeiten",
+   "mevcutTr": "geçirgenlik, geçişkenlik",
+   "mevcutBeispiel": "Die Durchlässigkeit des Bildungssystems ist geringer als offiziell behauptet.",
+   "mevcutBeispielTr": "Eğitim sisteminin geçirgenliği resmen iddia edilenden daha düşük."
+  },
+  {
+   "id": 7134,
+   "de": "die Elite",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Eliten",
+   "mevcutTr": "seçkinler, elit",
+   "mevcutBeispiel": "Die politischen Eliten rekrutieren sich noch immer aus wenigen Familien.",
+   "mevcutBeispielTr": "Siyasi seçkinler hâlâ birkaç aileden devşiriliyor."
+  },
+  {
+   "id": 7135,
+   "de": "das Bürgertum",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "burjuvazi, kentsoylu sınıf",
+   "mevcutBeispiel": "Das städtische Bürgertum verlor im vergangenen Jahrhundert an Einfluss.",
+   "mevcutBeispielTr": "Kentli burjuvazi geçen yüzyılda etkisini yitirdi."
+  },
+  {
+   "id": 7136,
+   "de": "die Klassengesellschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Klassengesellschaften",
+   "mevcutTr": "sınıflı toplum",
+   "mevcutBeispiel": "Manche Forscher sprechen von der Rückkehr der Klassengesellschaft.",
+   "mevcutBeispielTr": "Bazı araştırmacılar sınıflı toplumun geri dönüşünden söz ediyor."
+  },
+  {
+   "id": 7137,
+   "de": "die Enklave",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Enklaven",
+   "mevcutTr": "enklav, kapalı yerleşim adası",
+   "mevcutBeispiel": "Wohlhabende Enklaven schotten sich immer stärker vom Umland ab.",
+   "mevcutBeispielTr": "Varlıklı enklavlar çevrelerinden giderek daha çok kopuyor."
+  },
+  {
+   "id": 7138,
+   "de": "die Kluft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Klüfte",
+   "mevcutTr": "uçurum, derin ayrım",
+   "mevcutBeispiel": "Zwischen Stadt und Land öffnet sich eine wachsende soziale Kluft.",
+   "mevcutBeispielTr": "Şehirle kır arasında büyüyen bir toplumsal uçurum açılıyor."
+  },
+  {
+   "id": 7139,
+   "de": "die Polarisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Polarisierungen",
+   "mevcutTr": "kutuplaşma",
+   "mevcutBeispiel": "Die Polarisierung der Debatte erschwert jede sachliche Verständigung.",
+   "mevcutBeispielTr": "Tartışmanın kutuplaşması her türlü nesnel anlaşmayı zorlaştırıyor."
+  },
+  {
+   "id": 7140,
+   "de": "das Ressentiment",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ressentiments",
+   "mevcutTr": "gizli husumet, hınç",
+   "mevcutBeispiel": "Wirtschaftliche Unsicherheit nährt Ressentiments gegenüber Neuankömmlingen.",
+   "mevcutBeispielTr": "Ekonomik güvensizlik yeni gelenlere karşı hıncı besliyor."
+  },
+  {
+   "id": 7141,
+   "de": "ausgrenzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgegrenzt",
+   "mevcutTr": "dışlamak, ötekileştirmek",
+   "mevcutBeispiel": "Wer den Dialekt nicht beherrscht, wird schnell subtil ausgegrenzt.",
+   "mevcutBeispielTr": "Yerel ağzı bilmeyen kişi çabucak ince yollardan dışlanır.",
+   "cakisan": [
+    "ächten (C1)"
+   ]
+  },
+  {
+   "id": 7142,
+   "de": "eingliedern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat eingegliedert",
+   "mevcutTr": "bünyesine katmak, kaynaştırmak",
+   "mevcutBeispiel": "Der Betrieb hat die neuen Kollegen erstaunlich rasch eingegliedert.",
+   "mevcutBeispielTr": "İşletme yeni meslektaşları şaşırtıcı ölçüde çabuk bünyesine kattı."
+  },
+  {
+   "id": 7143,
+   "de": "bevorzugen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bevorzugt",
+   "mevcutTr": "tercih etmek, kayırmak",
+   "mevcutBeispiel": "Personalabteilungen bevorzugen bei gleicher Qualifikation oft vertraute Namen.",
+   "mevcutBeispielTr": "İnsan kaynakları birimleri aynı nitelikte çoğu kez tanıdık isimleri kayırıyor.",
+   "cakisan": [
+    "vorziehen (A2)"
+   ]
+  },
+  {
+   "id": 7144,
+   "de": "vererben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vererbt",
+   "mevcutTr": "miras bırakmak, aktarmak",
+   "mevcutBeispiel": "Bildungschancen werden in Deutschland noch immer weitgehend vererbt.",
+   "mevcutBeispielTr": "Eğitim fırsatları Almanya'da hâlâ büyük ölçüde miras yoluyla aktarılıyor."
+  },
+  {
+   "id": 7145,
+   "de": "reproduzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat reproduziert",
+   "mevcutTr": "yeniden üretmek",
+   "mevcutBeispiel": "Das Schulsystem reproduziert bestehende Unterschiede statt sie abzubauen.",
+   "mevcutBeispielTr": "Okul sistemi mevcut farkları azaltmak yerine yeniden üretiyor."
+  },
+  {
+   "id": 7146,
+   "de": "sich einleben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich eingelebt",
+   "mevcutTr": "alışmak, yeni yere uyum sağlamak",
+   "mevcutBeispiel": "Die Familie hat sich im neuen Viertel überraschend schnell eingelebt.",
+   "mevcutBeispielTr": "Aile yeni mahallesine şaşırtıcı derecede çabuk alıştı.",
+   "cakisan": [
+    "gewöhnen (B1)",
+    "sich gewöhnen an (B2)"
+   ]
+  },
+  {
+   "id": 7147,
+   "de": "sich niederlassen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich niedergelassen",
+   "mevcutTr": "yerleşmek, kalıcı olarak oturmak",
+   "mevcutBeispiel": "Viele Rückkehrer lassen sich bewusst in ihrer alten Heimatstadt nieder.",
+   "mevcutBeispielTr": "Pek çok geri dönen, bilinçli olarak eski memleket şehrine yerleşiyor.",
+   "cakisan": [
+    "sich einbürgern (C1)",
+    "sich verfestigen (C1)"
+   ]
+  },
+  {
+   "id": 7148,
+   "de": "entwurzeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entwurzelt",
+   "mevcutTr": "kökünden koparmak, yurdundan etmek",
+   "mevcutBeispiel": "Der Krieg hat eine ganze Generation entwurzelt und über Kontinente verstreut.",
+   "mevcutBeispielTr": "Savaş koca bir kuşağı kökünden kopardı ve kıtalara dağıttı."
+  },
+  {
+   "id": 7149,
+   "de": "pauschalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat pauschalisiert",
+   "mevcutTr": "toptan genelleme yapmak, toptancılık yapmak",
+   "mevcutBeispiel": "Wer so pauschalisiert, verkennt die Vielschichtigkeit des Phänomens.",
+   "mevcutBeispielTr": "Bu şekilde toptancılık yapan, olgunun çok katmanlılığını gözden kaçırır."
+  },
+  {
+   "id": 7150,
+   "de": "erschweren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat erschwert",
+   "mevcutTr": "zorlaştırmak, güçleştirmek",
+   "mevcutBeispiel": "Bürokratische Hürden erschweren den Zugang zum Arbeitsmarkt zusätzlich.",
+   "mevcutBeispielTr": "Bürokratik engeller iş piyasasına erişimi ayrıca zorlaştırıyor."
+  },
+  {
+   "id": 7151,
+   "de": "zusammenwachsen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist zusammengewachsen",
+   "mevcutTr": "kaynaşmak, birbiriyle bütünleşmek",
+   "mevcutBeispiel": "Die beiden Stadtteile sind erst nach Jahrzehnten wirklich zusammengewachsen.",
+   "mevcutBeispielTr": "İki semt ancak onlarca yıl sonra gerçekten kaynaştı.",
+   "cakisan": [
+    "verschmelzen (C1)"
+   ]
+  },
+  {
+   "id": 7152,
+   "de": "erodieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist erodiert",
+   "mevcutTr": "aşınmak, yıpranmak",
+   "mevcutBeispiel": "Das Vertrauen in die Institutionen ist über Jahre langsam erodiert.",
+   "mevcutBeispielTr": "Kurumlara duyulan güven yıllar içinde yavaşça aşındı.",
+   "cakisan": [
+    "sich abnutzen (B2)"
+   ]
+  }
+ ]
+}

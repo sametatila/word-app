@@ -1,0 +1,585 @@
+{
+ "paket": "b1-035",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 2125,
+   "de": "der Intensivkurs",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "yoğun kurs",
+   "mevcutBeispiel": "Der Intensivkurs findet täglich von 9 bis 12 Uhr statt.",
+   "mevcutBeispielTr": "Yoğun kurs her gün 9-12 arası yapılıyor."
+  },
+  {
+   "id": 2128,
+   "de": "interkulturell",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kültürlerarası",
+   "mevcutBeispiel": "Wir haben in der Sprachschule ein interkulturelles Fest gefeiert.",
+   "mevcutBeispielTr": "Dil okulunda kültürlerarası bir şenlik düzenledik."
+  },
+  {
+   "id": 2130,
+   "de": "irgendein",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "herhangi bir",
+   "mevcutBeispiel": "Was für einen Saft möchten Sie? – Ganz egal, irgendeinen.",
+   "mevcutBeispielTr": "Nasıl bir meyve suyu istersiniz? – Fark etmez, herhangi biri."
+  },
+  {
+   "id": 2133,
+   "de": "die Jause",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (A) → D: Imbiss, CH: Znüni/Zvieri",
+   "mevcutTr": "atıştırmalık, ara öğün",
+   "mevcutBeispiel": "Es ist Zeit für eine kleine Jause.",
+   "mevcutBeispielTr": "Küçük bir ara öğün vakti geldi.",
+   "cakisan": [
+    "der Imbiss (B1)"
+   ]
+  },
+  {
+   "id": 2135,
+   "de": "je … desto …",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ne kadar … o kadar …",
+   "mevcutBeispiel": "Je länger ich Deutsch lerne, desto besser kann ich es verstehen.",
+   "mevcutBeispielTr": "Almanca öğrendikçe daha iyi anlıyorum."
+  },
+  {
+   "id": 2137,
+   "de": "jedes Mal",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "her seferinde, her defasında",
+   "mevcutBeispiel": "Inge erzählt die Geschichte jedes Mal anders.",
+   "mevcutBeispielTr": "Inge hikâyeyi her seferinde farklı anlatıyor."
+  },
+  {
+   "id": 2161,
+   "de": "die Chipkarte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "çip kart, akıllı kart",
+   "mevcutBeispiel": "Ich habe eine Chipkarte für diesen Automaten.",
+   "mevcutBeispielTr": "Bu otomat için çipli kartım var."
+  },
+  {
+   "id": 2166,
+   "de": "sich etwas kaufen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "kauft, kaufte, hat gekauft",
+   "mevcutTr": "satın almak",
+   "mevcutBeispiel": "1. Im Supermarkt kauft man sehr günstig ein. 2. Ich habe mir einen Pullover gekauft.",
+   "mevcutBeispielTr": "1. Süpermarketten çok uygun alışveriş yapılıyor. 2. Kendime bir kazak aldım.",
+   "cakisan": [
+    "kaufen (A1)"
+   ]
+  },
+  {
+   "id": 2192,
+   "de": "der Kloß",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e (D) → D, A: Knödel",
+   "mevcutTr": "hamur topu, hamur köftesi",
+   "mevcutBeispiel": "Möchten Sie zum Fleisch Kartoffeln oder Klöße? – Klöße, bitte.",
+   "mevcutBeispielTr": "Etin yanına patates mi, hamur köftesi mi istersiniz? – Köfte lütfen.",
+   "cakisan": [
+    "der Knödel (B1)"
+   ]
+  },
+  {
+   "id": 2214,
+   "de": "das Girokonto",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "vadesiz hesap, banka hesabı",
+   "mevcutBeispiel": "Mein Girokonto kostet gar nichts.",
+   "mevcutBeispielTr": "Vadesiz hesabım tamamen ücretsiz."
+  },
+  {
+   "id": 2228,
+   "de": "das Kraftfahrzeug",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "motorlu taşıt",
+   "mevcutBeispiel": "Auf dieser Straße sind Kraftfahrzeuge nicht erlaubt.",
+   "mevcutBeispielTr": "Bu yolda motorlu taşıtlar yasak."
+  },
+  {
+   "id": 2240,
+   "de": "die Kriminalpolizei",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "cinayet masası, kriminal polis",
+   "mevcutBeispiel": "Ein Nachbar von uns arbeitet bei der Kriminalpolizei.",
+   "mevcutBeispielTr": "Bir komşumuz cinayet masasında çalışıyor."
+  },
+  {
+   "id": 2251,
+   "de": "der Kursleiter",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Kursleiter, -nen",
+   "mevcutTr": "kurs eğitmeni, kurs yöneticisi",
+   "mevcutBeispiel": "- Die Kursleiterin ist mit unserer Kursgruppe manchmal in den Computerraum gegangen.",
+   "mevcutBeispielTr": "Kurs eğitmenimiz zaman zaman grubumuzla bilgisayar odasına giderdi."
+  },
+  {
+   "id": 2257,
+   "de": "das Kuvert",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s (A) →",
+   "mevcutTr": "zarf",
+   "mevcutBeispiel": "Ich hätte gern 50 Kuverts und Briefmarken dazu.",
+   "mevcutBeispielTr": "50 zarf ve yanına pul rica ediyorum.",
+   "cakisan": [
+    "der Briefumschlag (B1)",
+    "das Couvert (B1)",
+    "der Umschlag (A2)"
+   ]
+  },
+  {
+   "id": 2277,
+   "de": "die Lehrstelle",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "çıraklık yeri, staj yeri",
+   "mevcutBeispiel": "Es sind noch viele Lehrstellen frei.",
+   "mevcutBeispielTr": "Hâlâ birçok çıraklık yeri boş.",
+   "cakisan": [
+    "der Ausbildungsplatz (B2)"
+   ]
+  },
+  {
+   "id": 2280,
+   "de": "leid tun",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "tut leid, tat leid, hat leidgetan",
+   "mevcutTr": "üzgün olmak, acımak (birine)",
+   "mevcutBeispiel": "1. Die Frau tut mir leid. 2. Wie komme ich zum Bahnhof? - Tut mir leid, das weiß ich nicht. 3. Es tut mir leid, dass ich",
+   "mevcutBeispielTr": "1. Kadına çok üzülüyorum. 2. İstasyona nasıl giderim? – Üzgünüm, bilmiyorum. 3. Geç kaldığım için özür dilerim."
+  },
+  {
+   "id": 2296,
+   "de": "linke",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sol",
+   "mevcutBeispiel": "1. Er hat sich das linke Bein gebrochen. 2. Das Haus ist auf der linken Seite.",
+   "mevcutBeispielTr": "1. Sol bacağını kırdı. 2. Ev sol tarafta.",
+   "cakisan": [
+    "links (A1)"
+   ]
+  },
+  {
+   "id": 2320,
+   "de": "die Marille",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (A) → D, CH: Aprikose",
+   "mevcutTr": "kayısı",
+   "mevcutBeispiel": "Schmecken dir die Marillen?",
+   "mevcutBeispielTr": "Kayısıları beğendin mi?",
+   "cakisan": [
+    "die Aprikose (B1)"
+   ]
+  },
+  {
+   "id": 2324,
+   "de": "die Matura",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "CH) → D: Abitur",
+   "mevcutTr": "lise bitirme sınavı (Avusturya)",
+   "mevcutBeispiel": "Meine Tocher hat gerade die Matura gemacht.",
+   "mevcutBeispielTr": "Kızım az önce Matura'yı (lise bitirme sınavını) verdi."
+  },
+  {
+   "id": 2334,
+   "de": "die Mehrwertsteuer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "katma değer vergisi",
+   "mevcutBeispiel": "Die Mehrwertsteuer bei diesem Produkt beträgt 20 %.",
+   "mevcutBeispielTr": "Bu üründe KDV %20."
+  },
+  {
+   "id": 2350,
+   "de": "der Migrant",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "göçmen",
+   "mevcutBeispiel": "Viele Migranten kommen aus Osteuropa.",
+   "mevcutBeispielTr": "Birçok göçmen Doğu Avrupa'dan geliyor.",
+   "cakisan": [
+    "der Einwanderer (B2)"
+   ]
+  },
+  {
+   "id": 2351,
+   "de": "die Migrantin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "göçmen kadın",
+   "mevcutBeispiel": "Viele Migranten kommen aus Osteuropa.",
+   "mevcutBeispielTr": "Birçok göçmen Doğu Avrupa'dan geliyor."
+  },
+  {
+   "id": 2352,
+   "de": "die Migration",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "göç",
+   "mevcutBeispiel": "Gestern gab es im Fernsehen eine Diskussion zum Thema Migration.",
+   "mevcutBeispielTr": "Dün televizyonda göç konulu bir tartışma vardı."
+  },
+  {
+   "id": 2357,
+   "de": "miss-",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "olumsuzluk ön eki: yanlış-, -sizlik",
+   "mevcutBeispiel": "1. Die Konferenz war ein Misserfolg. 2. Das Misstrauen zwischen den beiden Parteien ist weiterhin groß. 3. Sie haben mic",
+   "mevcutBeispielTr": "1. Konferans tam bir başarısızlıktı. 2. İki parti arasındaki güvensizlik hâlâ büyük."
+  },
+  {
+   "id": 2363,
+   "de": "mittlere",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "orta",
+   "mevcutBeispiel": "In den mittleren Reihen sind noch Plätze frei.",
+   "mevcutBeispielTr": "Orta sıralarda hâlâ boş yer var.",
+   "cakisan": [
+    "die Mitte (A1)"
+   ]
+  },
+  {
+   "id": 2368,
+   "de": "die Mobilbox",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "telesekreter, sesli mesaj kutusu",
+   "mevcutBeispiel": "Ich habe zwei Nachrichten auf meiner Mobilbox.",
+   "mevcutBeispielTr": "Sesli mesaj kutumda iki mesaj var.",
+   "cakisan": [
+    "der Anrufbeantworter (A1)"
+   ]
+  },
+  {
+   "id": 2369,
+   "de": "die Mobilität",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "hareketlilik, mobilite",
+   "mevcutBeispiel": "Sprachen zu lernen fördert die Mobilität.",
+   "mevcutBeispielTr": "Dil öğrenmek hareketliliği artırır.",
+   "cakisan": [
+    "die Beweglichkeit (B2)"
+   ]
+  },
+  {
+   "id": 2373,
+   "de": "die Möhre",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (D) → Karotte, CH: Rüebli",
+   "mevcutTr": "havuç",
+   "mevcutBeispiel": "Hasen fressen gern Möhren.",
+   "mevcutBeispielTr": "Tavşanlar havucu severek yer.",
+   "cakisan": [
+    "die Karotte (B1)",
+    "das Rüebli (B1)"
+   ]
+  },
+  {
+   "id": 2385,
+   "de": "das Müesli/Müsli",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "müsli",
+   "mevcutBeispiel": "Zum Frühstück gibt es Müsli mit Obst.",
+   "mevcutBeispielTr": "Kahvaltıda meyveli müsli var."
+  },
+  {
+   "id": 2419,
+   "de": "die Nichtraucherin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "sigara içmeyen kadın",
+   "mevcutBeispiel": "1. In unserer Familie sind alle Nichtraucher. 2. Möchten Sie einen Tisch im Nichtraucherbereich?",
+   "mevcutBeispielTr": "1. Ailemizde kimse sigara içmez. 2. Sigara içilmeyen bölümde bir masa ister misiniz?"
+  },
+  {
+   "id": 2425,
+   "de": "die Notaufnahme",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "acil servis",
+   "mevcutBeispiel": "Die Notaufnahme ist gleich hier links.",
+   "mevcutBeispielTr": "Acil servis hemen şurada, solda."
+  },
+  {
+   "id": 2434,
+   "de": "obere",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "üst, üstteki",
+   "mevcutBeispiel": "Die Wohnung im oberen Stockwerk ist vermietet.",
+   "mevcutBeispielTr": "Üst kattaki daire kiraya verildi."
+  },
+  {
+   "id": 2436,
+   "de": "das Obers",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "CH: (Schlag-)Rahm",
+   "mevcutTr": "krema, çırpılmış krema (Avusturya)",
+   "mevcutBeispiel": "Ich hätte gern ein Stück Torte mit (Schlag-)Obers.",
+   "mevcutBeispielTr": "Bir dilim çırpılmış kremalı turta rica ediyorum.",
+   "cakisan": [
+    "der Rahm (B1)",
+    "die Sahne (B1)"
+   ]
+  },
+  {
+   "id": 2446,
+   "de": "Öko-",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "(ökologisch)",
+   "mevcutTr": "eko-, ekolojik",
+   "mevcutBeispiel": "z.B. Ökoladen, Ökostrom, ökologischer Anbau",
+   "mevcutBeispielTr": "örn. ekolojik market, yeşil elektrik, ekolojik tarım"
+  },
+  {
+   "id": 2455,
+   "de": "die Ordination",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en (A) Praxis",
+   "mevcutTr": "muayenehane",
+   "mevcutBeispiel": "Die Ordination bleibt bis zum 7. Jänner geschlossen.",
+   "mevcutBeispielTr": "Muayenehane 7 Ocak'a kadar kapalı kalacak.",
+   "cakisan": [
+    "die Praxis (A1)",
+    "die Arztpraxis (A2)"
+   ]
+  },
+  {
+   "id": 2466,
+   "de": "der Paradeiser",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "- (A) Tomate",
+   "mevcutTr": "domates (Avusturya)",
+   "mevcutBeispiel": "Kauf bitte noch Paradeiser auf dem Markt.",
+   "mevcutBeispielTr": "Pazardan bir de domates al lütfen.",
+   "cakisan": [
+    "die Tomate (A1)"
+   ]
+  },
+  {
+   "id": 2469,
+   "de": "die Passagierin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "yolcu (kadın)",
+   "mevcutBeispiel": "Die Passagiere Schulz und Kaufmann sollen bitte zur Information kommen.",
+   "mevcutBeispielTr": "Yolcular Schulz ve Kaufmann, lütfen danışmaya geliniz.",
+   "cakisan": [
+    "der Passagier (B1)",
+    "der Fahrgast (B2)"
+   ]
+  },
+  {
+   "id": 2473,
+   "de": "pauschal",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "paket hâlinde, her şey dahil; toptan",
+   "mevcutBeispiel": "Sie haben die Reise pauschal gebucht.",
+   "mevcutBeispielTr": "Geziyi her şey dahil (paket) olarak rezerve ettiler."
+  },
+  {
+   "id": 2477,
+   "de": "in Pension gehen",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "A) → D: in Rente gehen/sein, D, CH: pensioniert werden/sein",
+   "mevcutTr": "emekliye ayrılmak, emekli olmak",
+   "mevcutBeispiel": "1. Ich gehe Ende des Jahres in Pension. 2. Mein Nachbar ist seit zehn Jahren in Pension.",
+   "mevcutBeispielTr": "1. Yıl sonunda emekliye ayrılıyorum. 2. Komşum on yıldır emekli."
+  },
+  {
+   "id": 2478,
+   "de": "pensioniert werden",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "CH) → D, A: in Pension gehen/sein, D: in Rente gehen/sein",
+   "mevcutTr": "emekli olmak",
+   "mevcutBeispiel": "1. Ich werde Ende des Jahres pensioniert. 2. Mein Nachbar ist seit zehn Jahren pensioniert.",
+   "mevcutBeispielTr": "1. Yıl sonunda emekli oluyorum. 2. Komşum on yıldır emekli.",
+   "cakisan": [
+    "in Rente gehen (B1)"
+   ]
+  },
+  {
+   "id": 2479,
+   "de": "der Pensionist",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en / die → Pensionistin, -nen (A) D, CH: Rentner",
+   "mevcutTr": "emekli (Avusturya)",
+   "mevcutBeispiel": "Meine Großmutter arbeitet nicht mehr. Sie ist Pensionistin.",
+   "mevcutBeispielTr": "Büyükannem artık çalışmıyor. Emekli.",
+   "cakisan": [
+    "der Rentner (A2)"
+   ]
+  },
+  {
+   "id": 2482,
+   "de": "der Perron",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s (CH) → D, A: Bahnsteig",
+   "mevcutTr": "peron (İsviçre)",
+   "mevcutBeispiel": "Auf Hauptbahnhöfen gibt es meist viele Perrons.",
+   "mevcutBeispielTr": "Büyük garlarda genellikle çok sayıda peron vardır.",
+   "cakisan": [
+    "der Bahnsteig (A1)",
+    "das Gleis (A1)"
+   ]
+  },
+  {
+   "id": 2485,
+   "de": "der Personenstand",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "A: Familienstand, CH: Zivilstand",
+   "mevcutTr": "medeni hâl (Almanya)",
+   "mevcutBeispiel": "Bei „Personenstand“ musst du „ledig“ ankreuzen.",
+   "mevcutBeispielTr": "„Medeni hâl“ kısmında „bekâr“ı işaretlemen gerekiyor.",
+   "cakisan": [
+    "der Familienstand (A1)",
+    "der Zivilstand (B1)"
+   ]
+  },
+  {
+   "id": 2509,
+   "de": "der Pöstler",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "- / die Pöstlerin, -nen (CH) → Briefträger",
+   "mevcutTr": "postacı (İsviçre)",
+   "mevcutBeispiel": "War die Pöstlerin schon da?",
+   "mevcutBeispielTr": "Postacı geldi mi?",
+   "cakisan": [
+    "der Briefträger (B1)",
+    "der Postbote (A2)"
+   ]
+  },
+  {
+   "id": 2510,
+   "de": "das Poulet",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s (CH) → D: Hähnchen/Hühnchen, A: Hend(e)l",
+   "mevcutTr": "tavuk",
+   "mevcutBeispiel": "Zum Mittagessen gibt es Poulet mit Reis.",
+   "mevcutBeispielTr": "Öğle yemeğinde pilavlı tavuk var."
+  },
+  {
+   "id": 2522,
+   "de": "der Profisportler",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Profisportlerin, -nen",
+   "mevcutTr": "profesyonel sporcu",
+   "mevcutBeispiel": "- Mein Sohn möchte Profisportler werden.",
+   "mevcutBeispielTr": "Oğlum profesyonel sporcu olmak istiyor."
+  },
+  {
+   "id": 2536,
+   "de": "der Rahm",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "A: (Schlag-)Obers",
+   "mevcutTr": "krema, kaymak (İsviçre)",
+   "mevcutBeispiel": "Ich hätte gern ein Stück Torte mit (Schlag-)Rahm.",
+   "mevcutBeispielTr": "Bir dilim kremalı turta rica ediyorum.",
+   "cakisan": [
+    "das Obers (B1)",
+    "die Sahne (B1)"
+   ]
+  },
+  {
+   "id": 2555,
+   "de": "rechte",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sağ",
+   "mevcutBeispiel": "Ich habe mir den rechten Arm gebrochen.",
+   "mevcutBeispielTr": "Sağ kolumu kırdım."
+  },
+  {
+   "id": 2578,
+   "de": "in Rente gehen",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "A: in Pension gehen/sein, CH, D: pensioniert werden/sein",
+   "mevcutTr": "emekli olmak",
+   "mevcutBeispiel": "1. Ich gehe Ende des Jahres in Rente. 2. Mein Nachbar ist seit zehn Jahren in Rente.",
+   "mevcutBeispielTr": "1. Yıl sonunda emekli oluyorum. 2. Komşum on yıldır emekli.",
+   "cakisan": [
+    "pensioniert werden (B1)"
+   ]
+  },
+  {
+   "id": 2594,
+   "de": "die Rückfahrt",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "dönüş yolculuğu",
+   "mevcutBeispiel": "Auf der Rückfahrt besuche ich meine Eltern.",
+   "mevcutBeispielTr": "Dönüş yolunda annemleri ziyaret edeceğim."
+  }
+ ]
+}

@@ -1,0 +1,532 @@
+{
+ "paket": "c1-030",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6703,
+   "de": "die Straflosigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "cezasızlık",
+   "mevcutBeispiel": "Jahrzehntelange Straflosigkeit hat das Vertrauen in die Justiz zerstört.",
+   "mevcutBeispielTr": "Onlarca yıl süren cezasızlık yargıya duyulan güveni yok etti."
+  },
+  {
+   "id": 6704,
+   "de": "die Folter",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Foltern",
+   "mevcutTr": "işkence",
+   "mevcutBeispiel": "Das Verbot der Folter gilt ausnahmslos und auch im Notstand.",
+   "mevcutBeispielTr": "İşkence yasağı istisnasız ve olağanüstü hâlde de geçerlidir."
+  },
+  {
+   "id": 6705,
+   "de": "die Misshandlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Misshandlungen",
+   "mevcutTr": "kötü muamele, eziyet",
+   "mevcutBeispiel": "Ärzte bestätigten Spuren schwerer Misshandlungen während der Haft.",
+   "mevcutBeispielTr": "Doktorlar gözaltı sırasındaki ağır kötü muamelenin izlerini doğruladı."
+  },
+  {
+   "id": 6706,
+   "de": "die Willkür",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "keyfilik, keyfî davranış",
+   "mevcutBeispiel": "Klare Verfahrensregeln sollen die Behörden vor Willkür bewahren.",
+   "mevcutBeispielTr": "Açık usul kuralları makamları keyfilikten uzak tutmalıdır.",
+   "cakisan": [
+    "die Beliebigkeit (C1)"
+   ]
+  },
+  {
+   "id": 6707,
+   "de": "der Übergriff",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Übergriffe",
+   "mevcutTr": "saldırı, taşkınlık, yetki aşımı",
+   "mevcutBeispiel": "Übergriffe der Sicherheitskräfte wurden monatelang gar nicht untersucht.",
+   "mevcutBeispielTr": "Güvenlik güçlerinin taşkınlıkları aylarca hiç soruşturulmadı.",
+   "cakisan": [
+    "der Anschlag (B2)"
+   ]
+  },
+  {
+   "id": 6708,
+   "de": "die Unterdrückung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Unterdrückungen",
+   "mevcutTr": "baskı, bastırma, zulüm",
+   "mevcutBeispiel": "Die Unterdrückung der Opposition wurde als Staatsräson gerechtfertigt.",
+   "mevcutBeispielTr": "Muhalefetin baskı altına alınması devlet çıkarıyla meşrulaştırıldı.",
+   "cakisan": [
+    "der Druck (B1)",
+    "die Repression (C1)"
+   ]
+  },
+  {
+   "id": 6709,
+   "de": "der Sonderberichterstatter",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sonderberichterstatter",
+   "mevcutTr": "özel raportör",
+   "mevcutBeispiel": "Der Sonderberichterstatter durfte die Gefängnisse nur unter Auflagen besuchen.",
+   "mevcutBeispielTr": "Özel raportör cezaevlerini ancak koşullu olarak ziyaret edebildi."
+  },
+  {
+   "id": 6710,
+   "de": "anklagen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angeklagt",
+   "mevcutTr": "dava açmak, itham etmek",
+   "mevcutBeispiel": "Zwei ehemalige Minister wurden wegen schwerer Verbrechen angeklagt.",
+   "mevcutBeispielTr": "İki eski bakan ağır suçlar nedeniyle yargılanmak üzere itham edildi.",
+   "cakisan": [
+    "verklagen (B2)"
+   ]
+  },
+  {
+   "id": 6711,
+   "de": "einfordern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat eingefordert",
+   "mevcutTr": "(hakkı olanı) ısrarla talep etmek, geri istemek",
+   "mevcutBeispiel": "Die Angehörigen fordern seit Jahren Aufklärung und Entschädigung ein.",
+   "mevcutBeispielTr": "Yakınları yıllardır aydınlatılma ve tazminat talep ediyor."
+  },
+  {
+   "id": 6712,
+   "de": "vollstrecken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vollstreckt",
+   "mevcutTr": "infaz etmek, icra etmek",
+   "mevcutBeispiel": "Der Haftbefehl konnte im Ausland lange nicht vollstreckt werden.",
+   "mevcutBeispielTr": "Tutuklama emri yurt dışında uzun süre infaz edilemedi."
+  },
+  {
+   "id": 6713,
+   "de": "aberkennen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aberkannt",
+   "mevcutTr": "geri almak, elinden almak (hak, statü)",
+   "mevcutBeispiel": "Der Familie wurde die Staatsangehörigkeit ohne nachvollziehbare Begründung aberkannt.",
+   "mevcutBeispielTr": "Ailenin vatandaşlığı anlaşılır bir gerekçe olmadan elinden alındı.",
+   "cakisan": [
+    "entziehen (B2)"
+   ]
+  },
+  {
+   "id": 6714,
+   "de": "entschädigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entschädigt",
+   "mevcutTr": "tazmin etmek, zararını karşılamak",
+   "mevcutBeispiel": "Der Staat muss die Betroffenen für die rechtswidrige Haft entschädigen.",
+   "mevcutBeispielTr": "Devlet hukuka aykırı tutukluluk nedeniyle ilgilileri tazmin etmek zorunda."
+  },
+  {
+   "id": 6715,
+   "de": "unantastbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dokunulmaz",
+   "mevcutBeispiel": "Die Würde des Menschen gilt in dieser Verfassung als unantastbar.",
+   "mevcutBeispielTr": "Bu anayasada insan onuru dokunulmaz sayılır."
+  },
+  {
+   "id": 6716,
+   "de": "unveräußerlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "devredilemez, vazgeçilemez",
+   "mevcutBeispiel": "Diese Rechte sind unveräußerlich und können niemandem abgekauft werden.",
+   "mevcutBeispielTr": "Bu haklar devredilemez niteliktedir ve kimseden satın alınamaz."
+  },
+  {
+   "id": 6717,
+   "de": "systematisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sistematik, dizgesel",
+   "mevcutBeispiel": "Die Angriffe erfolgten systematisch und richteten sich gegen die Zivilbevölkerung.",
+   "mevcutBeispielTr": "Saldırılar sistematik biçimde gerçekleşti ve sivil halkı hedef aldı."
+  },
+  {
+   "id": 6718,
+   "de": "ausnahmslos",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "istisnasız",
+   "mevcutBeispiel": "Dieses Verbot gilt ausnahmslos, auch in Zeiten des Krieges.",
+   "mevcutBeispielTr": "Bu yasak savaş zamanlarında bile istisnasız geçerlidir."
+  },
+  {
+   "id": 6719,
+   "de": "schutzbedürftig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "korunmaya muhtaç",
+   "mevcutBeispiel": "Besonders schutzbedürftige Personen brauchen ein beschleunigtes und sensibles Verfahren.",
+   "mevcutBeispielTr": "Özellikle korunmaya muhtaç kişiler hızlı ve duyarlı bir süreç gerektirir."
+  },
+  {
+   "id": 6720,
+   "de": "unteilbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bölünemez, bir bütün olan",
+   "mevcutBeispiel": "Soziale und politische Rechte werden in der Erklärung als unteilbar bezeichnet.",
+   "mevcutBeispielTr": "Bildiride sosyal ve siyasal haklar bölünemez olarak nitelendirilir."
+  },
+  {
+   "id": 6721,
+   "de": "die Entropie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entropien",
+   "mevcutTr": "entropi, düzensizlik ölçüsü",
+   "mevcutBeispiel": "In einem geschlossenen System nimmt die Entropie mit der Zeit zu.",
+   "mevcutBeispielTr": "Kapalı bir sistemde entropi zamanla artar."
+  },
+  {
+   "id": 6722,
+   "de": "die Schwerkraft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yerçekimi",
+   "mevcutBeispiel": "Ohne die Schwerkraft würde das Wasser einfach im Raum schweben.",
+   "mevcutBeispielTr": "Yerçekimi olmasaydı su öylece boşlukta asılı kalırdı."
+  },
+  {
+   "id": 6723,
+   "de": "der Aggregatzustand",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aggregatzustände",
+   "mevcutTr": "maddenin hâli, fiziksel hâl",
+   "mevcutBeispiel": "Wasser kommt in allen drei Aggregatzuständen auf der Erde vor.",
+   "mevcutBeispielTr": "Su yeryüzünde üç hâlin de hepsinde bulunur."
+  },
+  {
+   "id": 6724,
+   "de": "der Atomkern",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Atomkerne",
+   "mevcutTr": "atom çekirdeği",
+   "mevcutBeispiel": "Bei der Spaltung eines Atomkerns wird enorm viel Energie frei.",
+   "mevcutBeispielTr": "Bir atom çekirdeğinin bölünmesinde muazzam bir enerji açığa çıkar."
+  },
+  {
+   "id": 6725,
+   "de": "die Halbwertszeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Halbwertszeiten",
+   "mevcutTr": "yarılanma ömrü",
+   "mevcutBeispiel": "Dieses Isotop hat eine Halbwertszeit von mehreren tausend Jahren.",
+   "mevcutBeispielTr": "Bu izotopun yarılanma ömrü birkaç bin yıldır."
+  },
+  {
+   "id": 6726,
+   "de": "die Radioaktivität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "radyoaktivite, radyoaktiflik",
+   "mevcutBeispiel": "Die Radioaktivität im Boden wird seit dem Unfall regelmäßig gemessen.",
+   "mevcutBeispielTr": "Topraktaki radyoaktiflik kazadan beri düzenli olarak ölçülüyor."
+  },
+  {
+   "id": 6727,
+   "de": "die Strahlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Strahlungen",
+   "mevcutTr": "ışınım, radyasyon",
+   "mevcutBeispiel": "Die Atmosphäre schützt uns vor einem Großteil der kosmischen Strahlung.",
+   "mevcutBeispielTr": "Atmosfer bizi kozmik ışınımın büyük bölümünden korur."
+  },
+  {
+   "id": 6728,
+   "de": "die Wellenlänge",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wellenlängen",
+   "mevcutTr": "dalga boyu",
+   "mevcutBeispiel": "Rotes Licht hat eine deutlich größere Wellenlänge als blaues.",
+   "mevcutBeispielTr": "Kırmızı ışığın dalga boyu maviden belirgin biçimde büyüktür."
+  },
+  {
+   "id": 6729,
+   "de": "die Frequenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Frequenzen",
+   "mevcutTr": "frekans, sıklık",
+   "mevcutBeispiel": "Fledermäuse orientieren sich mit Tönen sehr hoher Frequenz.",
+   "mevcutBeispielTr": "Yarasalar çok yüksek frekanslı seslerle yön bulur."
+  },
+  {
+   "id": 6730,
+   "de": "die Schwingung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schwingungen",
+   "mevcutTr": "titreşim, salınım",
+   "mevcutBeispiel": "Der Sensor misst selbst kleinste Schwingungen der Brücke.",
+   "mevcutBeispielTr": "Sensör köprünün en küçük titreşimlerini bile ölçüyor."
+  },
+  {
+   "id": 6731,
+   "de": "die Resonanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Resonanzen",
+   "mevcutTr": "rezonans, yankılanma",
+   "mevcutBeispiel": "Durch Resonanz kann eine Brücke gefährlich stark ins Schwingen geraten.",
+   "mevcutBeispielTr": "Rezonans yüzünden bir köprü tehlikeli ölçüde titreşmeye başlayabilir."
+  },
+  {
+   "id": 6732,
+   "de": "die Trägheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eylemsizlik, atalet",
+   "mevcutBeispiel": "Beim Bremsen spürt man die Trägheit des eigenen Körpers deutlich.",
+   "mevcutBeispielTr": "Fren yaparken kendi bedeninin eylemsizliğini açıkça hissedersin."
+  },
+  {
+   "id": 6733,
+   "de": "die Reibung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Reibungen",
+   "mevcutTr": "sürtünme",
+   "mevcutBeispiel": "Auf nassem Asphalt ist die Reibung der Reifen deutlich geringer.",
+   "mevcutBeispielTr": "Islak asfaltta lastiklerin sürtünmesi belirgin biçimde azdır."
+  },
+  {
+   "id": 6734,
+   "de": "die Beschleunigung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beschleunigungen",
+   "mevcutTr": "ivme, hızlanma",
+   "mevcutBeispiel": "Die Beschleunigung eines fallenden Körpers ist nahezu konstant.",
+   "mevcutBeispielTr": "Düşen bir cismin ivmesi neredeyse sabittir."
+  },
+  {
+   "id": 6735,
+   "de": "der Auftrieb",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kaldırma kuvveti",
+   "mevcutBeispiel": "Der Auftrieb im Salzwasser ist größer als im Süßwasser.",
+   "mevcutBeispielTr": "Tuzlu sudaki kaldırma kuvveti tatlı sudakinden büyüktür."
+  },
+  {
+   "id": 6736,
+   "de": "die Dichte",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dichten",
+   "mevcutTr": "yoğunluk",
+   "mevcutBeispiel": "Öl schwimmt oben, weil seine Dichte geringer ist als die von Wasser.",
+   "mevcutBeispielTr": "Yağ üstte kalır, çünkü yoğunluğu sudan azdır."
+  },
+  {
+   "id": 6737,
+   "de": "das Magnetfeld",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Magnetfelder",
+   "mevcutTr": "manyetik alan",
+   "mevcutBeispiel": "Das Magnetfeld der Erde lenkt geladene Teilchen aus dem All ab.",
+   "mevcutBeispielTr": "Dünya'nın manyetik alanı uzaydan gelen yüklü parçacıkları saptırır."
+  },
+  {
+   "id": 6738,
+   "de": "die Leitfähigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leitfähigkeiten",
+   "mevcutTr": "iletkenlik",
+   "mevcutBeispiel": "Kupfer wird wegen seiner hohen Leitfähigkeit für Kabel verwendet.",
+   "mevcutBeispielTr": "Bakır, yüksek iletkenliği nedeniyle kablolarda kullanılır."
+  },
+  {
+   "id": 6739,
+   "de": "die Wechselwirkung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wechselwirkungen",
+   "mevcutTr": "etkileşim, karşılıklı etki",
+   "mevcutBeispiel": "Zwischen den beiden Medikamenten sind gefährliche Wechselwirkungen möglich.",
+   "mevcutBeispielTr": "İki ilaç arasında tehlikeli etkileşimler olabilir."
+  },
+  {
+   "id": 6740,
+   "de": "das Teilchen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Teilchen",
+   "mevcutTr": "parçacık, zerre",
+   "mevcutBeispiel": "In der Luft schweben winzige Teilchen, die man kaum sieht.",
+   "mevcutBeispielTr": "Havada gözle güç görülen minicik parçacıklar asılı duruyor."
+  },
+  {
+   "id": 6741,
+   "de": "der Katalysator",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Katalysatoren",
+   "mevcutTr": "katalizör",
+   "mevcutBeispiel": "Ein Katalysator beschleunigt die Reaktion, ohne selbst verbraucht zu werden.",
+   "mevcutBeispielTr": "Katalizör kendisi tükenmeden tepkimeyi hızlandırır."
+  },
+  {
+   "id": 6742,
+   "de": "die Oxidation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Oxidationen",
+   "mevcutTr": "oksitlenme, yükseltgenme",
+   "mevcutBeispiel": "Rost entsteht durch die langsame Oxidation von Eisen an der Luft.",
+   "mevcutBeispielTr": "Pas, demirin havada yavaşça oksitlenmesiyle oluşur."
+  },
+  {
+   "id": 6743,
+   "de": "die Verbrennung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verbrennungen",
+   "mevcutTr": "yanma, yakma",
+   "mevcutBeispiel": "Bei der Verbrennung von Kohle entsteht sehr viel Kohlendioxid.",
+   "mevcutBeispielTr": "Kömürün yanmasıyla çok miktarda karbondioksit oluşur."
+  },
+  {
+   "id": 6744,
+   "de": "die Gärung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gärungen",
+   "mevcutTr": "mayalanma, fermantasyon",
+   "mevcutBeispiel": "Ohne Gärung gäbe es weder Brot noch Wein.",
+   "mevcutBeispielTr": "Mayalanma olmasaydı ne ekmek olurdu ne şarap."
+  },
+  {
+   "id": 6745,
+   "de": "die Zersetzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zersetzungen",
+   "mevcutTr": "ayrışma, çürüme",
+   "mevcutBeispiel": "Die Zersetzung der Blätter im Waldboden dauert mehrere Monate.",
+   "mevcutBeispielTr": "Orman toprağındaki yaprakların ayrışması aylar sürer.",
+   "cakisan": [
+    "die Segregation (C1)",
+    "die Verwitterung (C1)",
+    "die Ablösung (C1)"
+   ]
+  },
+  {
+   "id": 6746,
+   "de": "der Siedepunkt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Siedepunkte",
+   "mevcutTr": "kaynama noktası",
+   "mevcutBeispiel": "In den Bergen liegt der Siedepunkt von Wasser deutlich niedriger.",
+   "mevcutBeispielTr": "Dağlarda suyun kaynama noktası belirgin biçimde daha düşüktür."
+  },
+  {
+   "id": 6747,
+   "de": "der Kristall",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kristalle",
+   "mevcutTr": "kristal",
+   "mevcutBeispiel": "Beim langsamen Verdunsten bilden sich im Glas feine Kristalle.",
+   "mevcutBeispielTr": "Yavaş buharlaşma sırasında bardakta ince kristaller oluşur."
+  },
+  {
+   "id": 6748,
+   "de": "der Sauerstoff",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "oksijen",
+   "mevcutBeispiel": "In großer Höhe enthält die Luft deutlich weniger Sauerstoff.",
+   "mevcutBeispielTr": "Yüksek irtifada hava belirgin biçimde daha az oksijen içerir."
+  },
+  {
+   "id": 6749,
+   "de": "die Verdunstung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verdunstungen",
+   "mevcutTr": "buharlaşma",
+   "mevcutBeispiel": "Durch die Verdunstung verliert der See im Sommer viel Wasser.",
+   "mevcutBeispielTr": "Buharlaşma yüzünden göl yazın çok su kaybediyor."
+  },
+  {
+   "id": 6750,
+   "de": "die Verwitterung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ayrışma, doğal aşınma",
+   "mevcutBeispiel": "Frost und Regen beschleunigen die Verwitterung des alten Gemäuers.",
+   "mevcutBeispielTr": "Don ve yağmur eski duvarın aşınmasını hızlandırıyor.",
+   "cakisan": [
+    "die Segregation (C1)",
+    "die Zersetzung (C1)",
+    "die Ablösung (C1)"
+   ]
+  },
+  {
+   "id": 6751,
+   "de": "die Symbiose",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Symbiosen",
+   "mevcutTr": "ortak yaşam, simbiyoz",
+   "mevcutBeispiel": "Pilz und Alge leben in der Flechte in enger Symbiose.",
+   "mevcutBeispielTr": "Likende mantar ve yosun sıkı bir ortak yaşam sürdürür."
+  },
+  {
+   "id": 6752,
+   "de": "die Mutation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Mutationen",
+   "mevcutTr": "mutasyon",
+   "mevcutBeispiel": "Eine einzige Mutation kann die Wirkung des Medikaments aufheben.",
+   "mevcutBeispielTr": "Tek bir mutasyon ilacın etkisini ortadan kaldırabilir."
+  }
+ ]
+}

@@ -1,0 +1,595 @@
+{
+ "paket": "c1-003",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 3475,
+   "de": "die Relevanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "önem, konuyla ilgililik",
+   "mevcutBeispiel": "Die Relevanz der Studie für die Praxis ist unbestritten.",
+   "mevcutBeispielTr": "Çalışmanın uygulamadaki önemi tartışmasız.",
+   "cakisan": [
+    "die Tragweite (C1)"
+   ]
+  },
+  {
+   "id": 3887,
+   "de": "die Expansion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Expansionen",
+   "mevcutTr": "genişleme, büyüme",
+   "mevcutBeispiel": "Die geplante Expansion nach Südamerika wurde vorerst gestoppt.",
+   "mevcutBeispielTr": "Güney Amerika'ya planlanan genişleme şimdilik durduruldu."
+  },
+  {
+   "id": 3649,
+   "de": "verkörpern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verkörpert, hat verkörpert",
+   "mevcutTr": "somutlaştırmak, temsil etmek",
+   "mevcutBeispiel": "Die Figur verkörpert das Ideal des tragischen Helden.",
+   "mevcutBeispielTr": "Karakter, trajik kahraman idealini temsil ediyor.",
+   "cakisan": [
+    "konkretisieren (C1)"
+   ]
+  },
+  {
+   "id": 3697,
+   "de": "bezwecken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "bezweckt, hat bezweckt",
+   "mevcutTr": "amaçlamak",
+   "mevcutBeispiel": "Was bezweckt er mit dieser Aussage eigentlich?",
+   "mevcutBeispielTr": "Bu sözüyle aslında neyi amaçlıyor?"
+  },
+  {
+   "id": 3605,
+   "de": "die Ideologie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ideologien",
+   "mevcutTr": "ideoloji",
+   "mevcutBeispiel": "Die Ideologie des Autors spiegelt sich in jedem Kapitel wider.",
+   "mevcutBeispielTr": "Yazarın ideolojisi her bölüme yansıyor."
+  },
+  {
+   "id": 3640,
+   "de": "das Relikt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Relikte",
+   "mevcutTr": "kalıntı, geçmişten kalma şey",
+   "mevcutBeispiel": "Das Gedicht wirkt wie ein Relikt aus vergangenen Zeiten.",
+   "mevcutBeispielTr": "Şiir, geçmiş zamanlardan kalma bir kalıntı gibi duruyor.",
+   "cakisan": [
+    "der Rückstand (B2)"
+   ]
+  },
+  {
+   "id": 3675,
+   "de": "abwägen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "wägt ab, hat abgewogen",
+   "mevcutTr": "tartmak, kıyaslamak",
+   "mevcutBeispiel": "Man muss Vor- und Nachteile sorgfältig abwägen.",
+   "mevcutBeispielTr": "Artıları ve eksileri dikkatle tartmak gerekir.",
+   "cakisan": [
+    "wiegen (B1)"
+   ]
+  },
+  {
+   "id": 3537,
+   "de": "die Revision",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Revisionen",
+   "mevcutTr": "temyiz",
+   "mevcutBeispiel": "Die Revision wurde vom Bundesgerichtshof zugelassen.",
+   "mevcutBeispielTr": "Temyiz başvurusu Federal Yargıtay'ca kabul edildi."
+  },
+  {
+   "id": 4001,
+   "de": "ausbeuten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "beutet aus, hat ausgebeutet",
+   "mevcutTr": "sömürmek",
+   "mevcutBeispiel": "Konzerne beuten die Ressourcen ärmerer Länder rücksichtslos aus.",
+   "mevcutBeispielTr": "Şirketler, yoksul ülkelerin kaynaklarını acımasızca sömürüyor."
+  },
+  {
+   "id": 3482,
+   "de": "die Herangehensweise",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Herangehensweisen",
+   "mevcutTr": "yaklaşım, yöntem",
+   "mevcutBeispiel": "Seine Herangehensweise unterscheidet sich grundlegend von der üblichen.",
+   "mevcutBeispielTr": "Yaklaşımı, alışılmış olandan temelden farklı.",
+   "cakisan": [
+    "die Näherung (C1)"
+   ]
+  },
+  {
+   "id": 3962,
+   "de": "die Zumutung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zumutungen",
+   "mevcutTr": "kabul edilemez şey, eziyet",
+   "mevcutBeispiel": "Die lange Wartezeit empfand sie als reine Zumutung.",
+   "mevcutBeispielTr": "Uzun bekleme süresini düpedüz bir haksızlık olarak gördü."
+  },
+  {
+   "id": 3689,
+   "de": "einräumen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "räumt ein, hat eingeräumt",
+   "mevcutTr": "kabul etmek, itiraf etmek",
+   "mevcutBeispiel": "Der Minister räumte Fehler in der Planung ein.",
+   "mevcutBeispielTr": "Bakan, planlamada hatalar olduğunu kabul etti.",
+   "cakisan": [
+    "akzeptieren (B1)",
+    "annehmen (B1)",
+    "aufnehmen (B1)",
+    "zusagen (B1)",
+    "zugestehen (C1)",
+    "konzedieren (C1)"
+   ]
+  },
+  {
+   "id": 3642,
+   "de": "das Fragment",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fragmente",
+   "mevcutTr": "parça, kalıntı metin",
+   "mevcutBeispiel": "Nur ein Fragment des antiken Dramas ist erhalten geblieben.",
+   "mevcutBeispielTr": "Antik oyundan geriye yalnızca bir parça kaldı.",
+   "cakisan": [
+    "das Stück (A1)",
+    "der Teil (A1)",
+    "das Bauteil (B2)"
+   ]
+  },
+  {
+   "id": 3509,
+   "de": "untermauern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "untermauert, hat untermauert",
+   "mevcutTr": "desteklemek, temellendirmek",
+   "mevcutBeispiel": "Zahlreiche Studien untermauern diese Annahme.",
+   "mevcutBeispielTr": "Sayısız çalışma bu varsayımı destekliyor.",
+   "cakisan": [
+    "fördern (B1)",
+    "unterstützen (B1)",
+    "befürworten (B2)",
+    "stützen (C1)"
+   ]
+  },
+  {
+   "id": 3888,
+   "de": "anstreben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "strebt an, hat angestrebt",
+   "mevcutTr": "hedeflemek, amaçlamak",
+   "mevcutBeispiel": "Der Vorstand strebt eine Verdopplung des Umsatzes an.",
+   "mevcutBeispielTr": "Yönetim kurulu ciroyu ikiye katlamayı hedefliyor."
+  },
+  {
+   "id": 4009,
+   "de": "scheinheilig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ikiyüzlü, riyakâr",
+   "mevcutBeispiel": "Kritiker nennen die Kampagne des Unternehmens schlicht scheinheilig.",
+   "mevcutBeispielTr": "Eleştirmenler şirketin kampanyasını düpedüz ikiyüzlü buluyor."
+  },
+  {
+   "id": 3708,
+   "de": "die Beharrlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "azim, ısrar",
+   "mevcutBeispiel": "Nur durch Beharrlichkeit erreichte sie ihr Ziel.",
+   "mevcutBeispielTr": "Hedefine ancak azimle ulaştı."
+  },
+  {
+   "id": 4007,
+   "de": "tugendhaft",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "erdemli",
+   "mevcutBeispiel": "In ihren Reden gibt sie sich gerne besonders tugendhaft.",
+   "mevcutBeispielTr": "Konuşmalarında kendini özellikle erdemli göstermeyi seviyor."
+  },
+  {
+   "id": 3943,
+   "de": "der Interessenkonflikt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Interessenkonflikte",
+   "mevcutTr": "çıkar çatışması",
+   "mevcutBeispiel": "Ein möglicher Interessenkonflikt wurde offen angesprochen.",
+   "mevcutBeispielTr": "Olası bir çıkar çatışması açıkça dile getirildi."
+  },
+  {
+   "id": 3471,
+   "de": "die Kontroverse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kontroversen",
+   "mevcutTr": "tartışma, ihtilaf",
+   "mevcutBeispiel": "Die Kontroverse um die Studie hält bis heute an.",
+   "mevcutBeispielTr": "Çalışma etrafındaki tartışma bugün hâlâ sürüyor.",
+   "cakisan": [
+    "die Diskussion (B1)",
+    "die Debatte (B2)",
+    "die Auseinandersetzung (B2)"
+   ]
+  },
+  {
+   "id": 3908,
+   "de": "die Schadensbegrenzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "zarar sınırlama",
+   "mevcutBeispiel": "Nach dem Skandal betrieb die Firma reine Schadensbegrenzung.",
+   "mevcutBeispielTr": "Skandaldan sonra şirket yalnızca zararı sınırlamaya çalıştı."
+  },
+  {
+   "id": 3465,
+   "de": "die Auswertung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Auswertungen",
+   "mevcutTr": "değerlendirme, analiz",
+   "mevcutBeispiel": "Die statistische Auswertung dauerte mehrere Wochen.",
+   "mevcutBeispielTr": "İstatistiksel değerlendirme birkaç hafta sürdü.",
+   "cakisan": [
+    "die Einschätzung (B2)",
+    "die Bewertung (B2)",
+    "die Beurteilung (B2)",
+    "die Evaluierung (C1)",
+    "die Begutachtung (C1)"
+   ]
+  },
+  {
+   "id": 3660,
+   "de": "zeitlos",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eskimeyen, çağlar üstü",
+   "mevcutBeispiel": "Die Themen des Dramas wirken erstaunlich zeitlos und aktuell.",
+   "mevcutBeispielTr": "Oyunun temaları şaşırtıcı ölçüde zamansız ve güncel."
+  },
+  {
+   "id": 3551,
+   "de": "anfechten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ficht an, hat angefochten",
+   "mevcutTr": "itiraz etmek, iptalini istemek",
+   "mevcutBeispiel": "Der Kläger focht den Bescheid vor Gericht an.",
+   "mevcutBeispielTr": "Davacı, karara mahkemede itiraz etti.",
+   "cakisan": [
+    "widersprechen (B1)",
+    "einwenden (B2)"
+   ]
+  },
+  {
+   "id": 3648,
+   "de": "reflektieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "reflektiert, hat reflektiert",
+   "mevcutTr": "üzerine düşünmek, yansıtmak",
+   "mevcutBeispiel": "Der Essay reflektiert kritisch über die Rolle der Kunst.",
+   "mevcutBeispielTr": "Deneme, sanatın rolü üzerine eleştirel bir bakışla düşünüyor."
+  },
+  {
+   "id": 4016,
+   "de": "verdeutlichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verdeutlicht, hat verdeutlicht",
+   "mevcutTr": "açıkça göstermek, örnekle anlaşılır kılmak",
+   "mevcutBeispiel": "Das Beispiel verdeutlicht die Problematik sehr gut.",
+   "mevcutBeispielTr": "Örnek, sorunu çok iyi ortaya koyuyor."
+  },
+  {
+   "id": 3717,
+   "de": "nachvollziehbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "anlaşılır, mantıklı",
+   "mevcutBeispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
+   "mevcutBeispielTr": "Koşullar düşünülünce kararı gayet anlaşılır.",
+   "cakisan": [
+    "verständlich (B1)"
+   ]
+  },
+  {
+   "id": 3907,
+   "de": "eskalieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "eskaliert, ist eskaliert",
+   "mevcutTr": "tırmanmak, şiddetlenmek",
+   "mevcutBeispiel": "Der Konflikt zwischen den Abteilungen ist eskaliert.",
+   "mevcutBeispielTr": "Bölümler arasındaki çatışma iyice tırmandı.",
+   "cakisan": [
+    "klettern (B1)",
+    "besteigen (B2)"
+   ]
+  },
+  {
+   "id": 3574,
+   "de": "der Vermerk",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vermerke",
+   "mevcutTr": "not, şerh",
+   "mevcutBeispiel": "Der Sachbearbeiter fügte dem Vorgang einen Vermerk hinzu.",
+   "mevcutBeispielTr": "Memur, dosyaya bir not ekledi.",
+   "cakisan": [
+    "die Note (A1)",
+    "die Notiz (A2)",
+    "die Anmerkung (B2)"
+   ]
+  },
+  {
+   "id": 3541,
+   "de": "der Rechtsstreit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rechtsstreitigkeiten",
+   "mevcutTr": "hukuki anlaşmazlık",
+   "mevcutBeispiel": "Der Rechtsstreit zog sich über Jahre hin.",
+   "mevcutBeispielTr": "Hukuki anlaşmazlık yıllarca sürdü."
+  },
+  {
+   "id": 3622,
+   "de": "die Parodie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Parodien",
+   "mevcutTr": "parodi",
+   "mevcutBeispiel": "Die Parodie übertreibt den pathetischen Stil des Originals.",
+   "mevcutBeispielTr": "Parodi, orijinalin abartılı duygusal üslubunu iyice uç noktaya taşıyor."
+  },
+  {
+   "id": 3556,
+   "de": "der Vollzug",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vollzüge",
+   "mevcutTr": "uygulama, icra",
+   "mevcutBeispiel": "Der Vollzug der Maßnahme obliegt der Kommune.",
+   "mevcutBeispielTr": "Önlemin uygulanması belediyenin görevidir.",
+   "cakisan": [
+    "die Anwendung (B2)",
+    "die App (A2)"
+   ]
+  },
+  {
+   "id": 3526,
+   "de": "weitgehend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "büyük ölçüde, hemen hemen",
+   "mevcutBeispiel": "Die Fachwelt stimmt der These weitgehend zu.",
+   "mevcutBeispielTr": "Bilim çevresi teze büyük ölçüde katılıyor.",
+   "cakisan": [
+    "größtenteils (A2)"
+   ]
+  },
+  {
+   "id": 3550,
+   "de": "die Instanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Instanzen",
+   "mevcutTr": "merci, derece",
+   "mevcutBeispiel": "Der Fall durchlief mehrere Instanzen.",
+   "mevcutBeispielTr": "Dava birden çok yargı derecesinden geçti."
+  },
+  {
+   "id": 4008,
+   "de": "selbstgerecht",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kendini haklı gören, kibirli",
+   "mevcutBeispiel": "Sein selbstgerechter Ton stieß bei vielen Zuhörern auf Ablehnung.",
+   "mevcutBeispielTr": "Kendini haklı gören ses tonu birçok dinleyicide tepki uyandırdı."
+  },
+  {
+   "id": 3463,
+   "de": "die Argumentation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Argumentationen",
+   "mevcutTr": "argümantasyon, gerekçelendirme",
+   "mevcutBeispiel": "Ihre Argumentation überzeugte selbst die Kritiker.",
+   "mevcutBeispielTr": "Gerekçelendirmesi eleştirmenleri bile ikna etti."
+  },
+  {
+   "id": 4005,
+   "de": "verwerflich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ahlaken kınanacak, kabul edilemez",
+   "mevcutBeispiel": "Solche Manipulationen sind ethisch schlicht verwerflich.",
+   "mevcutBeispielTr": "Bu tür manipülasyonlar etik açıdan düpedüz kabul edilemez."
+  },
+  {
+   "id": 3718,
+   "de": "widersprüchlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çelişkili",
+   "mevcutBeispiel": "Die Aussagen der Zeugen waren teilweise widersprüchlich.",
+   "mevcutBeispielTr": "Tanıkların ifadeleri yer yer çelişkiliydi.",
+   "cakisan": [
+    "zwiespältig (C1)"
+   ]
+  },
+  {
+   "id": 3700,
+   "de": "verharren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verharrt, hat verharrt",
+   "mevcutTr": "sabit kalmak, bir durumda kalmak",
+   "mevcutBeispiel": "Die Preise verharren seit Monaten auf hohem Niveau.",
+   "mevcutBeispielTr": "Fiyatlar aylardır yüksek seviyede sabit duruyor."
+  },
+  {
+   "id": 4004,
+   "de": "bedenklich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "endişe verici, kaygı uyandırıcı",
+   "mevcutBeispiel": "Der Vertrauensverlust in die Presse ist eine bedenkliche Entwicklung.",
+   "mevcutBeispielTr": "Basına duyulan güvenin azalması endişe verici bir gelişme."
+  },
+  {
+   "id": 3603,
+   "de": "die Ästhetik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ästhetiken",
+   "mevcutTr": "estetik",
+   "mevcutBeispiel": "Die Ästhetik des Romans wurde von Kritikern kontrovers diskutiert.",
+   "mevcutBeispielTr": "Romanın estetiği eleştirmenler arasında hararetle tartışıldı."
+  },
+  {
+   "id": 3543,
+   "de": "die Haftung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Haftungen",
+   "mevcutTr": "sorumluluk (hukuki, mali)",
+   "mevcutBeispiel": "Die Haftung des Herstellers ist gesetzlich geregelt.",
+   "mevcutBeispielTr": "Üreticinin sorumluluğu yasayla düzenlenmiştir."
+  },
+  {
+   "id": 3898,
+   "de": "beharren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "beharrt, hat beharrt",
+   "mevcutTr": "ısrar etmek",
+   "mevcutBeispiel": "Er beharrte auf seiner ursprünglichen Forderung.",
+   "mevcutBeispielTr": "İlk talebinde ısrar etti."
+  },
+  {
+   "id": 3991,
+   "de": "bevormunden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "bevormundet, hat bevormundet",
+   "mevcutTr": "adına karar vermek, vesayetçi davranmak",
+   "mevcutBeispiel": "Viele fühlen sich durch ständige Ratschläge bevormundet.",
+   "mevcutBeispielTr": "Birçok kişi sürekli verilen akıllarla vesayet altına alındığını hissediyor."
+  },
+  {
+   "id": 3662,
+   "de": "kontrovers",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tartışmalı",
+   "mevcutBeispiel": "Die Ausstellung wurde in der Presse äußerst kontrovers diskutiert.",
+   "mevcutBeispielTr": "Sergi basında son derece tartışmalı biçimde ele alındı.",
+   "cakisan": [
+    "umstritten (B2)",
+    "strittig (C1)"
+   ]
+  },
+  {
+   "id": 3712,
+   "de": "unumgänglich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kaçınılmaz",
+   "mevcutBeispiel": "Eine Reform ist mittlerweile unumgänglich geworden.",
+   "mevcutBeispielTr": "Reform artık kaçınılmaz hâle geldi."
+  },
+  {
+   "id": 3494,
+   "de": "die Konsistenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konsistenzen",
+   "mevcutTr": "tutarlılık, uyumluluk",
+   "mevcutBeispiel": "Die Konsistenz der Argumentation überzeugt die Leserschaft.",
+   "mevcutBeispielTr": "Gerekçelendirmenin tutarlılığı okuru ikna ediyor.",
+   "cakisan": [
+    "die Kohärenz (C1)",
+    "die Stringenz (C1)"
+   ]
+  },
+  {
+   "id": 3579,
+   "de": "das Defizit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Defizite",
+   "mevcutTr": "açık, defisit",
+   "mevcutBeispiel": "Das Haushaltsdefizit stieg trotz der Sparmaßnahmen weiter an.",
+   "mevcutBeispielTr": "Bütçe açığı, tasarruf önlemlerine rağmen artmaya devam etti.",
+   "cakisan": [
+    "offen (A1)",
+    "geöffnet (A1)",
+    "deutlich (A2)",
+    "explizit (C1)"
+   ]
+  },
+  {
+   "id": 3725,
+   "de": "schwerwiegend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ağır, ciddi",
+   "mevcutBeispiel": "Der Vorfall hatte schwerwiegende Konsequenzen für alle Beteiligten.",
+   "mevcutBeispielTr": "Olay, ilgili herkes için ağır sonuçlar doğurdu.",
+   "cakisan": [
+    "träge (B2)"
+   ]
+  },
+  {
+   "id": 3726,
+   "de": "unbestreitbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tartışılmaz, yadsınamaz",
+   "mevcutBeispiel": "Der Klimawandel ist mittlerweile eine unbestreitbare Tatsache.",
+   "mevcutBeispielTr": "İklim değişikliği artık yadsınamaz bir gerçek."
+  }
+ ]
+}

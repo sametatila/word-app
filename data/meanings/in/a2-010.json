@@ -1,0 +1,535 @@
+{
+ "paket": "a2-010",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7438,
+   "de": "klebrig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yapış yapış, yapışkan",
+   "mevcutBeispiel": "Der Tisch ist noch klebrig vom Saft.",
+   "mevcutBeispielTr": "Masa meyve suyundan hâlâ yapış yapış."
+  },
+  {
+   "id": 7439,
+   "de": "staubig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tozlu",
+   "mevcutBeispiel": "Die Bücher im Keller sind sehr staubig.",
+   "mevcutBeispielTr": "Bodrumdaki kitaplar çok tozlu."
+  },
+  {
+   "id": 7440,
+   "de": "glänzend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "parlak",
+   "mevcutBeispiel": "Nach dem Putzen ist der Boden richtig glänzend.",
+   "mevcutBeispielTr": "Temizlikten sonra yer gerçekten parlak."
+  },
+  {
+   "id": 7441,
+   "de": "matt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "mat",
+   "mevcutBeispiel": "Wir haben die Wände in einem matten Weiß gestrichen.",
+   "mevcutBeispielTr": "Duvarları mat bir beyaza boyadık."
+  },
+  {
+   "id": 7442,
+   "de": "hölzern",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ahşap, tahtadan",
+   "mevcutBeispiel": "Auf dem Balkon steht ein hölzerner Stuhl.",
+   "mevcutBeispielTr": "Balkonda ahşap bir sandalye duruyor."
+  },
+  {
+   "id": 7443,
+   "de": "metallisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "metalik, madensi",
+   "mevcutBeispiel": "Das Wasser hier schmeckt etwas metallisch.",
+   "mevcutBeispielTr": "Buradaki su biraz metalik tadıyor."
+  },
+  {
+   "id": 7444,
+   "de": "wasserdicht",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "su geçirmez",
+   "mevcutBeispiel": "Meine neue Jacke ist zum Glück wasserdicht.",
+   "mevcutBeispielTr": "Yeni montum neyse ki su geçirmez."
+  },
+  {
+   "id": 7445,
+   "de": "hellblau",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "açık mavi",
+   "mevcutBeispiel": "Sie trägt ein hellblaues Hemd.",
+   "mevcutBeispielTr": "Açık mavi bir gömlek giyiyor."
+  },
+  {
+   "id": 7446,
+   "de": "dunkelblau",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "koyu mavi, lacivert",
+   "mevcutBeispiel": "Der Koffer ist dunkelblau und ziemlich groß.",
+   "mevcutBeispielTr": "Bavul lacivert ve oldukça büyük."
+  },
+  {
+   "id": 7447,
+   "de": "bläulich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "mavimsi",
+   "mevcutBeispiel": "Am Abend wird der Schnee bläulich.",
+   "mevcutBeispielTr": "Akşamları kar mavimsi oluyor."
+  },
+  {
+   "id": 7448,
+   "de": "rötlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kırmızımsı",
+   "mevcutBeispiel": "Ihre Haare sind rötlich, fast orange.",
+   "mevcutBeispielTr": "Saçları kırmızımsı, neredeyse turuncu."
+  },
+  {
+   "id": 7449,
+   "de": "gelblich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sarımsı",
+   "mevcutBeispiel": "Die alte Tischdecke ist schon gelblich.",
+   "mevcutBeispielTr": "Eski masa örtüsü artık sarımsı."
+  },
+  {
+   "id": 7450,
+   "de": "golden",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "altın rengi, altından",
+   "mevcutBeispiel": "Meine Oma trägt einen goldenen Ring.",
+   "mevcutBeispielTr": "Babaannem altın bir yüzük takıyor."
+  },
+  {
+   "id": 7451,
+   "de": "silbern",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gümüş rengi, gümüşten",
+   "mevcutBeispiel": "Auf dem Tisch liegen silberne Löffel.",
+   "mevcutBeispielTr": "Masanın üstünde gümüş kaşıklar duruyor."
+  },
+  {
+   "id": 7452,
+   "de": "einfarbig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tek renkli, düz renk",
+   "mevcutBeispiel": "Für das Büro kaufe ich lieber einfarbige Hemden.",
+   "mevcutBeispielTr": "Ofis için tek renkli gömlekler almayı tercih ediyorum."
+  },
+  {
+   "id": 7453,
+   "de": "gestreift",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çizgili",
+   "mevcutBeispiel": "Er hat einen gestreiften Pullover an.",
+   "mevcutBeispielTr": "Üstünde çizgili bir kazak var."
+  },
+  {
+   "id": 7454,
+   "de": "kariert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kareli, ekose",
+   "mevcutBeispiel": "Auf dem Tisch liegt eine karierte Decke.",
+   "mevcutBeispielTr": "Masanın üstünde kareli bir örtü duruyor."
+  },
+  {
+   "id": 7455,
+   "de": "defekt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "arızalı, bozuk",
+   "mevcutBeispiel": "Der Aufzug ist seit Montag defekt.",
+   "mevcutBeispielTr": "Asansör pazartesiden beri arızalı."
+  },
+  {
+   "id": 7456,
+   "de": "beschädigt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hasarlı, zarar görmüş",
+   "mevcutBeispiel": "Das Paket kam beschädigt bei mir an.",
+   "mevcutBeispielTr": "Paket bana hasarlı ulaştı."
+  },
+  {
+   "id": 7457,
+   "de": "zerbrochen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kırık, kırılmış",
+   "mevcutBeispiel": "Im Karton lagen zwei zerbrochene Teller.",
+   "mevcutBeispielTr": "Kutunun içinde iki kırık tabak vardı."
+  },
+  {
+   "id": 7458,
+   "de": "heil",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sağlam, bütün",
+   "mevcutBeispiel": "Zum Glück sind alle Gläser heil geblieben.",
+   "mevcutBeispielTr": "Neyse ki bütün bardaklar sağlam kaldı.",
+   "cakisan": [
+    "fest (B1)",
+    "tragfähig (C1)",
+    "stichhaltig (C1)",
+    "stabil (A2)"
+   ]
+  },
+  {
+   "id": 7459,
+   "de": "gebraucht",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ikinci el, kullanılmış",
+   "mevcutBeispiel": "Wir haben eine gebrauchte Waschmaschine gekauft.",
+   "mevcutBeispielTr": "İkinci el bir çamaşır makinesi aldık."
+  },
+  {
+   "id": 7460,
+   "de": "abgenutzt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yıpranmış, eskimiş",
+   "mevcutBeispiel": "Der Teppich im Wohnzimmer ist schon abgenutzt.",
+   "mevcutBeispielTr": "Oturma odasındaki halı iyice yıpranmış."
+  },
+  {
+   "id": 7461,
+   "de": "rostig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "paslı",
+   "mevcutBeispiel": "Im Garten steht ein rostiges Fahrrad.",
+   "mevcutBeispielTr": "Bahçede paslı bir bisiklet duruyor."
+  },
+  {
+   "id": 7462,
+   "de": "wackelig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sallanan, oynak",
+   "mevcutBeispiel": "Setz dich nicht auf den Stuhl, er ist wackelig.",
+   "mevcutBeispielTr": "O sandalyeye oturma, sallanıyor."
+  },
+  {
+   "id": 7463,
+   "de": "zerbrechlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kırılgan, kolay kırılır",
+   "mevcutBeispiel": "Vorsicht, die Vase ist sehr zerbrechlich.",
+   "mevcutBeispielTr": "Dikkat et, vazo çok kırılgan.",
+   "cakisan": [
+    "spröde (B2)"
+   ]
+  },
+  {
+   "id": 7464,
+   "de": "stabil",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sağlam, dayanıklı",
+   "mevcutBeispiel": "Das Regal ist stabil und trägt viele Bücher.",
+   "mevcutBeispielTr": "Raf sağlam ve çok kitap taşıyor.",
+   "cakisan": [
+    "fest (B1)",
+    "tragfähig (C1)",
+    "stichhaltig (C1)",
+    "heil (A2)"
+   ]
+  },
+  {
+   "id": 7465,
+   "de": "gefüllt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dolu, doldurulmuş",
+   "mevcutBeispiel": "Auf dem Tisch stand eine mit Wasser gefüllte Flasche.",
+   "mevcutBeispielTr": "Masanın üstünde suyla dolu bir şişe duruyordu.",
+   "cakisan": [
+    "besetzt (A1)",
+    "voll (A2)",
+    "der Hagel (B2)"
+   ]
+  },
+  {
+   "id": 7466,
+   "de": "unordentlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dağınık, düzensiz",
+   "mevcutBeispiel": "Mein Zimmer ist heute sehr unordentlich.",
+   "mevcutBeispielTr": "Odam bugün çok dağınık."
+  },
+  {
+   "id": 7467,
+   "de": "gepflegt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bakımlı, özenli",
+   "mevcutBeispiel": "Der Garten hinter dem Haus ist sehr gepflegt.",
+   "mevcutBeispielTr": "Evin arkasındaki bahçe çok bakımlı."
+  },
+  {
+   "id": 7468,
+   "de": "dreckig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kirli, pis",
+   "mevcutBeispiel": "Deine Schuhe sind ganz dreckig.",
+   "mevcutBeispielTr": "Ayakkabıların resmen kirli.",
+   "cakisan": [
+    "schmutzig (A2)"
+   ]
+  },
+  {
+   "id": 7469,
+   "de": "verdorben",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bozulmuş, çürümüş",
+   "mevcutBeispiel": "Die Milch im Kühlschrank ist verdorben.",
+   "mevcutBeispielTr": "Buzdolabındaki süt bozulmuş."
+  },
+  {
+   "id": 7470,
+   "de": "schimmelig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "küflü",
+   "mevcutBeispiel": "Das Brot ist nach einer Woche schimmelig.",
+   "mevcutBeispielTr": "Ekmek bir hafta sonra küflü."
+  },
+  {
+   "id": 7471,
+   "de": "außergewöhnlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "olağanüstü, sıra dışı",
+   "mevcutBeispiel": "Das Hotel hatte eine außergewöhnliche Aussicht.",
+   "mevcutBeispielTr": "Otelin olağanüstü bir manzarası vardı."
+  },
+  {
+   "id": 7472,
+   "de": "edel",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kaliteli, zarif",
+   "mevcutBeispiel": "Das Restaurant hat edle Möbel aus dunklem Holz.",
+   "mevcutBeispielTr": "Restoranda koyu ahşaptan kaliteli mobilyalar var.",
+   "cakisan": [
+    "hochwertig (B2)"
+   ]
+  },
+  {
+   "id": 7473,
+   "de": "schlicht",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sade, gösterişsiz",
+   "mevcutBeispiel": "Ich mag Zimmer, die schlicht eingerichtet sind.",
+   "mevcutBeispielTr": "Sade döşenmiş odaları severim."
+  },
+  {
+   "id": 7474,
+   "de": "originell",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "özgün, orijinal",
+   "mevcutBeispiel": "Dein Geschenk war wirklich originell.",
+   "mevcutBeispielTr": "Hediyen gerçekten özgündü."
+  },
+  {
+   "id": 7475,
+   "de": "unauffällig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "göze batmayan, dikkat çekmeyen",
+   "mevcutBeispiel": "Die Tasche ist klein und unauffällig.",
+   "mevcutBeispielTr": "Çanta küçük ve göze batmıyor."
+  },
+  {
+   "id": 7476,
+   "de": "auffällig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "göze çarpan, dikkat çekici",
+   "mevcutBeispiel": "Sie trägt heute eine auffällige rote Jacke.",
+   "mevcutBeispielTr": "Bugün dikkat çekici kırmızı bir ceket giyiyor."
+  },
+  {
+   "id": 7477,
+   "de": "altmodisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "eski moda, demode",
+   "mevcutBeispiel": "Die Lampe im Flur sieht ziemlich altmodisch aus.",
+   "mevcutBeispielTr": "Koridordaki lamba oldukça eski moda görünüyor."
+  },
+  {
+   "id": 7478,
+   "de": "modisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "modaya uygun, şık",
+   "mevcutBeispiel": "Diese Brille ist gerade sehr modisch.",
+   "mevcutBeispielTr": "Bu gözlük şu sıralar çok modaya uygun."
+  },
+  {
+   "id": 7479,
+   "de": "handlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kullanışlı, taşıması kolay",
+   "mevcutBeispiel": "Der kleine Koffer ist leicht und handlich.",
+   "mevcutBeispielTr": "Küçük bavul hafif ve kullanışlı."
+  },
+  {
+   "id": 7480,
+   "de": "eisig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "buz gibi",
+   "mevcutBeispiel": "Draußen weht ein eisiger Wind.",
+   "mevcutBeispielTr": "Dışarıda buz gibi bir rüzgâr esiyor."
+  },
+  {
+   "id": 7481,
+   "de": "frostig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ayazlı, dondurucu",
+   "mevcutBeispiel": "Die Nächte sind im Januar oft frostig.",
+   "mevcutBeispielTr": "Ocakta geceler çoğu zaman ayazlı olur."
+  },
+  {
+   "id": 7482,
+   "de": "lauwarm",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ılık",
+   "mevcutBeispiel": "Der Kaffee ist nur noch lauwarm.",
+   "mevcutBeispielTr": "Kahve artık sadece ılık."
+  },
+  {
+   "id": 7483,
+   "de": "stürmisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "fırtınalı",
+   "mevcutBeispiel": "Gestern war das Wetter sehr stürmisch.",
+   "mevcutBeispielTr": "Dün hava çok fırtınalıydı."
+  },
+  {
+   "id": 7484,
+   "de": "regnerisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yağmurlu",
+   "mevcutBeispiel": "Im April ist es hier meistens regnerisch.",
+   "mevcutBeispielTr": "Nisanda burası çoğunlukla yağmurlu olur."
+  },
+  {
+   "id": 7485,
+   "de": "bedeckt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kapalı (hava), bulutlu",
+   "mevcutBeispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
+   "mevcutBeispielTr": "Bugün gökyüzü bütün gün kapalı kalacak.",
+   "cakisan": [
+    "geschlossen (A1)"
+   ]
+  },
+  {
+   "id": 7486,
+   "de": "zugig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "cereyanlı, esintili",
+   "mevcutBeispiel": "Im Treppenhaus ist es immer zugig.",
+   "mevcutBeispielTr": "Merdiven boşluğu her zaman cereyanlıdır."
+  },
+  {
+   "id": 7487,
+   "de": "stickig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "havasız, boğucu",
+   "mevcutBeispiel": "Im Bus war die Luft sehr stickig.",
+   "mevcutBeispielTr": "Otobüste hava çok boğucuydu."
+  }
+ ]
+}

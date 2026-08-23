@@ -1,0 +1,593 @@
+{
+ "paket": "b1-019",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 3016,
+   "de": "verständlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "anlaşılır",
+   "mevcutBeispiel": "Nach acht Stunden Schule haben die Kinder keine Lust mehr, die Hausaufgaben zu machen. Ich finde das verständlich.",
+   "mevcutBeispielTr": "Sekiz saat okuldan sonra çocukların ödev yapmaya hiç hevesi kalmıyor. Bunu anlayışla karşılıyorum.",
+   "cakisan": [
+    "nachvollziehbar (C1)"
+   ]
+  },
+  {
+   "id": 2109,
+   "de": "die Infektion",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "enfeksiyon",
+   "mevcutBeispiel": "Sie haben eine Infektion. Sie müssen Tabletten nehmen.",
+   "mevcutBeispielTr": "Bir enfeksiyonunuz var; hap kullanmanız gerekiyor."
+  },
+  {
+   "id": 1451,
+   "de": "aufregen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "regt auf, regte auf, hat aufgeregt",
+   "mevcutTr": "sinirlendirmek, heyecanlandırmak",
+   "mevcutBeispiel": "1. Es regt mich auf, dass ich schon wieder Überstunden machen muss. 2. Ganz ruhig! Bitte regen Sie sich nicht auf. 3. He",
+   "mevcutBeispielTr": "Yine fazla mesai yapmak zorunda olmam beni sinirlendiriyor."
+  },
+  {
+   "id": 3002,
+   "de": "vermuten",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "vermutet, vermutete, hat vermutet",
+   "mevcutTr": "sanmak, tahmin etmek, varsaymak",
+   "mevcutBeispiel": "Ich vermute, sie wird heute nicht kommen.",
+   "mevcutBeispielTr": "Sanırım bugün gelmeyecek.",
+   "cakisan": [
+    "glauben (A1)"
+   ]
+  },
+  {
+   "id": 1580,
+   "de": "der Bewohner",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "sakin, oturan kişi",
+   "mevcutBeispiel": "Ich kenne die anderen Hausbewohner nicht.",
+   "mevcutBeispielTr": "Binadaki diğer sakinleri tanımıyorum.",
+   "cakisan": [
+    "ruhig (A1)",
+    "die Bewohnerin (B1)",
+    "der Einwohner (B1)",
+    "die Einwohnerin (B1)",
+    "gelassen (B2)"
+   ]
+  },
+  {
+   "id": 3030,
+   "de": "die Verwandte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "akraba (kadın)",
+   "mevcutBeispiel": "Zu meinem Geburtstag kommen alle Verwandten.",
+   "mevcutBeispielTr": "Doğum günüme bütün akrabalar geliyor.",
+   "cakisan": [
+    "der Verwandte (A1)",
+    "verwandt (B1)"
+   ]
+  },
+  {
+   "id": 2230,
+   "de": "der Kranke",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "hasta (erkek, genel)",
+   "mevcutBeispiel": "Kranke brauchen viel Ruhe.",
+   "mevcutBeispielTr": "Hastaların çok dinlenmeye ihtiyacı var."
+  },
+  {
+   "id": 2231,
+   "de": "die Kranke",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "hasta (kadın, genel)",
+   "mevcutBeispiel": "Kranke brauchen viel Ruhe.",
+   "mevcutBeispielTr": "Hastaların çok dinlenmeye ihtiyacı var."
+  },
+  {
+   "id": 2907,
+   "de": "das Ufer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "kıyı (nehir, göl)",
+   "mevcutBeispiel": "1. Er schwimmt ans Ufer zurück. 2. Am Seeufer ist es schön spazieren zu gehen.",
+   "mevcutBeispielTr": "1. Yüzerek kıyıya geri dönüyor. 2. Göl kıyısında yürüyüş yapmak çok güzel."
+  },
+  {
+   "id": 1458,
+   "de": "ausgebildet",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "eğitimli, yetişmiş",
+   "mevcutBeispiel": "Für diesen Beruf müssen Sie gut ausgebildet sein.",
+   "mevcutBeispielTr": "Bu meslek için iyi eğitim almış olmanız gerekir."
+  },
+  {
+   "id": 3013,
+   "de": "versichern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "versichert, versicherte, hat versichert",
+   "mevcutTr": "sigortalamak, temin etmek",
+   "mevcutBeispiel": "1. Wollen Sie Ihr Gepäck versichern? 2. Wie sind Sie versichert?",
+   "mevcutBeispielTr": "1. Bagajınızı sigortalatmak ister misiniz? 2. Sigortanız nasıl?"
+  },
+  {
+   "id": 2625,
+   "de": "die Scheibe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "dilim, cam",
+   "mevcutBeispiel": "1. Fünf Scheiben Käse, bitte. 2. Die Scheiben sind ganz schmutzig. Ich muss die Fenster putzen.",
+   "mevcutBeispielTr": "1. Beş dilim peynir lütfen. 2. Camlar çok kirli. Pencereleri silmem gerekiyor."
+  },
+  {
+   "id": 2206,
+   "de": "die Konferenz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "konferans",
+   "mevcutBeispiel": "Die Konferenz findet in Raum 19 statt.",
+   "mevcutBeispielTr": "Konferans 19 numaralı salonda yapılacak.",
+   "cakisan": [
+    "die Tagung (C1)"
+   ]
+  },
+  {
+   "id": 2146,
+   "de": "die Kabine",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "kabin",
+   "mevcutBeispiel": "Um zu wählen, gehen Sie bitte in diese Kabine.",
+   "mevcutBeispielTr": "Oy kullanmak için lütfen bu kabine girin."
+  },
+  {
+   "id": 1626,
+   "de": "die Chefin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "patron, yönetici",
+   "mevcutBeispiel": "Das kann ich nicht allein entscheiden, da muss ich erst die Chefin fragen.",
+   "mevcutBeispielTr": "Buna tek başıma karar veremem; önce patronuma sormam gerek.",
+   "cakisan": [
+    "der Chef (A1)"
+   ]
+  },
+  {
+   "id": 1347,
+   "de": "abhängig",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bağımlı",
+   "mevcutBeispiel": "Gregor ist finanziell von seinen Eltern abhängig.",
+   "mevcutBeispielTr": "Gregor maddi olarak ailesine bağımlı.",
+   "cakisan": [
+    "süchtig (B1)"
+   ]
+  },
+  {
+   "id": 1958,
+   "de": "geeignet",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "uygun, elverişli",
+   "mevcutBeispiel": "Dieses Spiel ist nicht für Kinder unter drei Jahren geeignet.",
+   "mevcutBeispielTr": "Bu oyun üç yaşından küçük çocuklar için uygun değildir.",
+   "cakisan": [
+    "angemessen (B2)"
+   ]
+  },
+  {
+   "id": 3061,
+   "de": "vorlesen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "liest vor, las vor, hat vorgelesen",
+   "mevcutTr": "yüksek sesle okumak",
+   "mevcutBeispiel": "Ich lese meinen Kindern oft etwas vor.",
+   "mevcutBeispielTr": "Çocuklarıma sık sık bir şeyler okurum."
+  },
+  {
+   "id": 1423,
+   "de": "anzeigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "zeigt an, zeigte an, hat angezeigt",
+   "mevcutTr": "ihbar etmek, bildirmek",
+   "mevcutBeispiel": "Wenn Sie hier parken, zeige ich Sie an.",
+   "mevcutBeispielTr": "Buraya park ederseniz sizi şikâyet ederim."
+  },
+  {
+   "id": 3009,
+   "de": "die Versammlung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "toplantı, toplanma",
+   "mevcutBeispiel": "Der Minister hielt bei der Versammlung eine Rede.",
+   "mevcutBeispielTr": "Bakan, toplantıda bir konuşma yaptı.",
+   "cakisan": [
+    "die Besprechung (B1)"
+   ]
+  },
+  {
+   "id": 2602,
+   "de": "der Saal",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "Säle",
+   "mevcutTr": "salon, büyük salon",
+   "mevcutBeispiel": "Für unsere Familienfeier haben wir einen kleinen Saal gemietet.",
+   "mevcutBeispielTr": "Aile kutlamamız için küçük bir salon kiraladık.",
+   "cakisan": [
+    "der Salon (B1)"
+   ]
+  },
+  {
+   "id": 3117,
+   "de": "die Wirtschaft",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ekonomi",
+   "mevcutBeispiel": "In der Schule lernen die Kinder viel über Wirtschaft und Politik.",
+   "mevcutBeispielTr": "Çocuklar okulda ekonomi ve siyaset hakkında çok şey öğreniyor."
+  },
+  {
+   "id": 2356,
+   "de": "mischen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "mischt, mischte, hat gemischt",
+   "mevcutTr": "karıştırmak, harmanlamak",
+   "mevcutBeispiel": "1. Ich möchte ein gemischtes Eis mit Sahne. 2. Wie möchten Sie das Geld? – Bitte gemischt, große und kleine Scheine.",
+   "mevcutBeispielTr": "1. Kremalı karışık bir dondurma istiyorum. 2. Parayı nasıl istersiniz? – Karışık lütfen, büyük ve küçük banknotlar.",
+   "cakisan": [
+    "verwechseln (B1)",
+    "rühren (A2)"
+   ]
+  },
+  {
+   "id": 1812,
+   "de": "ernähren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "ernährt, ernährte, hat ernährt",
+   "mevcutTr": "beslemek",
+   "mevcutBeispiel": "1. Wie ernähre ich mich richtig? 2. Meine Eltern müssen beide arbeiten, um die Familie zu ernähren.",
+   "mevcutBeispielTr": "1. Nasıl doğru beslenirim? 2. Ailemizi geçindirmek için annemle babamın ikisi de çalışmak zorunda.",
+   "cakisan": [
+    "füttern (B1)",
+    "verpflegen (B1)"
+   ]
+  },
+  {
+   "id": 1732,
+   "de": "einschließlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "dahil",
+   "mevcutBeispiel": "Alles zusammen kostet 200 Euro einschließlich Fahrtkosten.",
+   "mevcutBeispielTr": "Hepsi birlikte, yol masrafları dahil 200 Euro tutuyor.",
+   "cakisan": [
+    "inklusive (B1)"
+   ]
+  },
+  {
+   "id": 2182,
+   "de": "klettern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "klettert, kletterte, ist geklettert",
+   "mevcutTr": "tırmanmak",
+   "mevcutBeispiel": "Die Kinder sind auf den Baum geklettert.",
+   "mevcutBeispielTr": "Çocuklar ağaca tırmandı.",
+   "cakisan": [
+    "eskalieren (C1)",
+    "besteigen (B2)"
+   ]
+  },
+  {
+   "id": 3174,
+   "de": "die Zusammenarbeit",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "iş birliği",
+   "mevcutBeispiel": "Sie sind der neue Kollege? Auf gute Zusammenarbeit!",
+   "mevcutBeispielTr": "Yeni meslektaş siz misiniz? İyi çalışmalar dilerim, iş birliğimize!"
+  },
+  {
+   "id": 1940,
+   "de": "garantieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "garantiert, garantierte, hat garantiert",
+   "mevcutTr": "garanti etmek",
+   "mevcutBeispiel": "Ich kann Ihnen nicht garantieren, dass das Gerät nächste Woche fertig ist.",
+   "mevcutBeispielTr": "Cihazın gelecek haftaya hazır olacağını size garanti edemem.",
+   "cakisan": [
+    "gewährleisten (C1)"
+   ]
+  },
+  {
+   "id": 2833,
+   "de": "technisch",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "teknik",
+   "mevcutBeispiel": "1. Es gab ein technisches Problem. 2. Sind Sie technisch interessiert?",
+   "mevcutBeispielTr": "1. Teknik bir sorun vardı. 2. Teknik konulara ilginiz var mı?",
+   "cakisan": [
+    "die Technik (B1)"
+   ]
+  },
+  {
+   "id": 2263,
+   "de": "die Landung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "iniş",
+   "mevcutBeispiel": "Bei der Landung müssen Sie sich anschnallen.",
+   "mevcutBeispielTr": "İniş sırasında kemerinizi bağlamanız gerekiyor."
+  },
+  {
+   "id": 2091,
+   "de": "der Honig",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bal",
+   "mevcutBeispiel": "Ich esse gern Brötchen mit Honig und Butter zum Frühstück.",
+   "mevcutBeispielTr": "Kahvaltıda bal ve tereyağlı ekmek yemeyi severim."
+  },
+  {
+   "id": 3027,
+   "de": "verurteilen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verurteilt, verurteilte, hat verurteilt",
+   "mevcutTr": "mahkum etmek, hüküm giydirmek",
+   "mevcutBeispiel": "Das Gericht hat den Täter zu einer Geldstrafe verurteilt.",
+   "mevcutBeispielTr": "Mahkeme, faili para cezasına çarptırdı."
+  },
+  {
+   "id": 1878,
+   "de": "die Feuerwehr",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "itfaiye",
+   "mevcutBeispiel": "Schnell! Rufen Sie die Feuerwehr! Die Nummer ist: 112.",
+   "mevcutBeispielTr": "Çabuk! İtfaiyeyi arayın! Numara: 112."
+  },
+  {
+   "id": 3025,
+   "de": "der Vertreter",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Vertreterin, -nen",
+   "mevcutTr": "temsilci, vekil",
+   "mevcutBeispiel": "- 1. Als Herr Dr. Müller in Urlaub war, bin ich zu seiner Vertreterin gegangen. 2. Die Elternvertreter treffen sich morg",
+   "mevcutBeispielTr": "1. Dr. Müller tatildeyken vekiline gittim. 2. Veli temsilcileri yarın toplanıyor."
+  },
+  {
+   "id": 2051,
+   "de": "der Hausmeister",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Hausmeisterin, -nen → (D, A) CH: Abwart",
+   "mevcutTr": "kapıcı, bina görevlisi",
+   "mevcutBeispiel": "- Der Hausmeister hat mir geholfen, den Schrank in die Wohnung zu tragen.",
+   "mevcutBeispielTr": "Kapıcı, dolabı daireye taşımama yardım etti.",
+   "cakisan": [
+    "der Abwart (B1)",
+    "die Abwartin (B1)"
+   ]
+  },
+  {
+   "id": 2628,
+   "de": "der Schein",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "banknot",
+   "mevcutBeispiel": "1. Kannst du einen Schein in Kleingeld wechseln? 2. Hast du Kleingeld für den Automaten? Ich habe nur Scheine.",
+   "mevcutBeispielTr": "1. Bir banknotu bozuk parayla değiştirebilir misin? 2. Otomat için bozuk paran var mı? Bende yalnızca banknot var.",
+   "cakisan": [
+    "der Geldschein (A2)"
+   ]
+  },
+  {
+   "id": 2172,
+   "de": "die Kellnerin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen → D, A: Ober, CH: Serviceangestellter",
+   "mevcutTr": "kadın garson",
+   "mevcutBeispiel": "Ich bin Kellnerin von Beruf.",
+   "mevcutBeispielTr": "Mesleğim garsonluk."
+  },
+  {
+   "id": 2118,
+   "de": "insgesamt",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "toplam, toplamda",
+   "mevcutBeispiel": "Insgesamt haben sich 20 Teilnehmer für die Prüfung angemeldet.",
+   "mevcutBeispielTr": "Sınava toplam 20 katılımcı kaydoldu.",
+   "cakisan": [
+    "gesamt- (B1)",
+    "die Summe (B1)"
+   ]
+  },
+  {
+   "id": 2316,
+   "de": "der Mangel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-",
+   "mevcutTr": "eksiklik, yetersizlik",
+   "mevcutBeispiel": "1. In dieser Stadt gibt es einen großen Mangel an Wohnungen. 2. Die Maschine hat technische Mängel.",
+   "mevcutBeispielTr": "1. Bu şehirde büyük bir konut sıkıntısı var. 2. Makinede teknik kusurlar var."
+  },
+  {
+   "id": 2201,
+   "de": "die Kollegin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "kadın meslektaş, iş arkadaşı",
+   "mevcutBeispiel": "1. Ich habe guten Kontakt zu meinen Kollegen. 2. Mein neuer Kollege ist sehr nett.",
+   "mevcutBeispielTr": "1. İş arkadaşlarımla aram iyi. 2. Yeni iş arkadaşım çok cana yakın."
+  },
+  {
+   "id": 1787,
+   "de": "erfinden",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "erfindet, erfand, hat erfunden",
+   "mevcutTr": "icat etmek",
+   "mevcutBeispiel": "Das Rad wurde vor ca. 6000 Jahren erfunden.",
+   "mevcutBeispielTr": "Tekerlek yaklaşık 6000 yıl önce icat edildi."
+  },
+  {
+   "id": 1816,
+   "de": "die Ernte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "hasat, ürün",
+   "mevcutBeispiel": "Die Ernte ist dieses Jahr gut.",
+   "mevcutBeispielTr": "Bu yıl hasat iyi."
+  },
+  {
+   "id": 2173,
+   "de": "das Kennzeichen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "plaka, işaret",
+   "mevcutBeispiel": "Das Auto hat ein Schweizer Kennzeichen.",
+   "mevcutBeispielTr": "Arabanın İsviçre plakası var."
+  },
+  {
+   "id": 2693,
+   "de": "siegen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "siegt, siegte, hat gesiegt",
+   "mevcutTr": "kazanmak, galip gelmek",
+   "mevcutBeispiel": "Die Mannschaft siegte mit 2:0.",
+   "mevcutBeispielTr": "Takım 2-0 kazandı.",
+   "cakisan": [
+    "verdienen (A1)",
+    "erwerben (B2)",
+    "erwirtschaften (B2)"
+   ]
+  },
+  {
+   "id": 1678,
+   "de": "die Dose",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n → D, CH: Büchse",
+   "mevcutTr": "konserve kutusu, teneke kutu",
+   "mevcutBeispiel": "Ich habe noch eine Dose Bohnen.",
+   "mevcutBeispielTr": "Bir kutu konserve fasulyem daha var.",
+   "cakisan": [
+    "die Büchse (B1)"
+   ]
+  },
+  {
+   "id": 3079,
+   "de": "die Wärme",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sıcaklık, ılıklık",
+   "mevcutBeispiel": "Wärme ist gut gegen meine Schmerzen.",
+   "mevcutBeispielTr": "Sıcaklık ağrılarıma iyi geliyor.",
+   "cakisan": [
+    "die Temperatur (B1)"
+   ]
+  },
+  {
+   "id": 2310,
+   "de": "das Magazin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "dergi",
+   "mevcutBeispiel": "Jugendliche lesen dieses Magazin gern.",
+   "mevcutBeispielTr": "Gençler bu dergiyi severek okuyor.",
+   "cakisan": [
+    "die Zeitschrift (A2)"
+   ]
+  },
+  {
+   "id": 2227,
+   "de": "kräftig",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "güçlü, kuvvetli",
+   "mevcutBeispiel": "1. Der Mann ist kräftig. Er macht viel Sport und isst viel. 2. Die Suppe musst du kräftig würzen.",
+   "mevcutBeispielTr": "1. Adam güçlü kuvvetli; çok spor yapıyor ve iyi besleniyor. 2. Çorbayı bolca baharatlaman gerek.",
+   "cakisan": [
+    "stark (A2)"
+   ]
+  },
+  {
+   "id": 2388,
+   "de": "die Nachbarin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "nen",
+   "mevcutTr": "komşu (kadın)",
+   "mevcutBeispiel": "Meine neue Nachbarin ist sehr nett.",
+   "mevcutBeispielTr": "Yeni komşum çok cana yakın.",
+   "cakisan": [
+    "der Nachbar (A2)"
+   ]
+  },
+  {
+   "id": 2399,
+   "de": "der Nagel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-",
+   "mevcutTr": "çivi, tırnak",
+   "mevcutBeispiel": "1. Kannst du mir den Nagel in die Wand schlagen? 2. Ich muss mir die Fingernägel schneiden.",
+   "mevcutBeispielTr": "1. Şu çiviyi duvara çakabilir misin? 2. Tırnaklarımı kesmem lazım."
+  }
+ ]
+}

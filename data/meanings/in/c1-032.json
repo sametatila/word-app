@@ -1,0 +1,544 @@
+{
+ "paket": "c1-032",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6803,
+   "de": "die Bepreisung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bepreisungen",
+   "mevcutTr": "fiyatlandırma",
+   "mevcutBeispiel": "Ohne konsequente Bepreisung des Kohlendioxids bleiben Appelle wirkungslos.",
+   "mevcutBeispielTr": "Karbondioksit tutarlı biçimde fiyatlandırılmadıkça çağrılar etkisiz kalır.",
+   "cakisan": [
+    "die Preisgestaltung (B2)"
+   ]
+  },
+  {
+   "id": 6804,
+   "de": "die Lenkungswirkung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Lenkungswirkungen",
+   "mevcutTr": "yönlendirici etki",
+   "mevcutBeispiel": "Die Abgabe entfaltet nur bei hohen Sätzen eine spürbare Lenkungswirkung.",
+   "mevcutBeispielTr": "Bu vergi ancak yüksek oranlarda hissedilir bir yönlendirici etki yaratıyor."
+  },
+  {
+   "id": 6805,
+   "de": "das Vorsorgeprinzip",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vorsorgeprinzipien",
+   "mevcutTr": "ihtiyat ilkesi, önlem alma ilkesi",
+   "mevcutBeispiel": "Nach dem Vorsorgeprinzip genügt ein begründeter Verdacht für ein Verbot.",
+   "mevcutBeispielTr": "İhtiyat ilkesine göre bir yasak için makul bir şüphe yeterlidir."
+  },
+  {
+   "id": 6806,
+   "de": "das Gemeingut",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gemeingüter",
+   "mevcutTr": "kamusal varlık, ortak mülk",
+   "mevcutBeispiel": "Sauberes Wasser gilt vielen Ökonomen als klassisches Gemeingut.",
+   "mevcutBeispielTr": "Temiz su, birçok iktisatçıya göre klasik bir kamusal varlıktır."
+  },
+  {
+   "id": 6807,
+   "de": "die Allmende",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Allmenden",
+   "mevcutTr": "ortak kullanım alanı, müşterek",
+   "mevcutBeispiel": "Die Tragik der Allmende beschreibt den Verfall gemeinsam genutzter Ressourcen.",
+   "mevcutBeispielTr": "Müştereklerin trajedisi, ortak kullanılan kaynakların çöküşünü anlatır."
+  },
+  {
+   "id": 6808,
+   "de": "die Wachstumskritik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "büyüme eleştirisi",
+   "mevcutBeispiel": "Die Wachstumskritik stellt das Bruttoinlandsprodukt als Wohlstandsmaß infrage.",
+   "mevcutBeispielTr": "Büyüme eleştirisi, gayrisafi yurt içi hasılayı refah ölçütü olarak sorgular."
+  },
+  {
+   "id": 6809,
+   "de": "die Entkopplung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entkopplungen",
+   "mevcutTr": "ayrıştırma, bağlantının koparılması",
+   "mevcutBeispiel": "Eine absolute Entkopplung von Wachstum und Emissionen ist bislang selten gelungen.",
+   "mevcutBeispielTr": "Büyüme ile emisyonların mutlak ayrıştırılması şimdiye dek nadiren başarıldı.",
+   "cakisan": [
+    "die Entflechtung (C1)"
+   ]
+  },
+  {
+   "id": 6810,
+   "de": "der Sekundärrohstoff",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sekundärrohstoffe",
+   "mevcutTr": "ikincil hammadde, geri kazanılmış hammadde",
+   "mevcutBeispiel": "Aus Altgeräten gewonnene Sekundärrohstoffe ersetzen zunehmend importierte Metalle.",
+   "mevcutBeispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler ithal metallerin yerini giderek alıyor."
+  },
+  {
+   "id": 6811,
+   "de": "die Abfallvermeidung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "atık önleme, atığın kaynağında azaltılması",
+   "mevcutBeispiel": "Abfallvermeidung steht in der Hierarchie noch vor jeder Verwertung.",
+   "mevcutBeispielTr": "Atık önleme, hiyerarşide her türlü geri kazanımdan önce gelir."
+  },
+  {
+   "id": 6812,
+   "de": "die Langlebigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uzun ömürlülük, dayanıklılık",
+   "mevcutBeispiel": "Reparierbarkeit und Langlebigkeit müssen wieder zu Verkaufsargumenten werden.",
+   "mevcutBeispielTr": "Onarılabilirlik ve uzun ömürlülük yeniden birer satış gerekçesi olmalı."
+  },
+  {
+   "id": 6813,
+   "de": "die Obsoleszenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eskime, kullanım dışı kalma",
+   "mevcutBeispiel": "Ob geplante Obsoleszenz tatsächlich existiert, ist wissenschaftlich umstritten.",
+   "mevcutBeispielTr": "Planlı eskitmenin gerçekten var olup olmadığı bilimsel olarak tartışmalı."
+  },
+  {
+   "id": 6814,
+   "de": "die Dekarbonisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "karbonsuzlaşma",
+   "mevcutBeispiel": "Die Dekarbonisierung der Schwerindustrie gilt als besonders schwierige Aufgabe.",
+   "mevcutBeispielTr": "Ağır sanayinin karbonsuzlaştırılması özellikle zor bir görev sayılıyor."
+  },
+  {
+   "id": 6815,
+   "de": "die Ökobilanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ökobilanzen",
+   "mevcutTr": "yaşam döngüsü değerlendirmesi, çevresel bilanço",
+   "mevcutBeispiel": "Die Ökobilanz eines Produkts fällt je nach Systemgrenze völlig anders aus.",
+   "mevcutBeispielTr": "Bir ürünün çevresel bilançosu, sistem sınırına göre bambaşka çıkabiliyor."
+  },
+  {
+   "id": 6816,
+   "de": "der Lebenszyklus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Lebenszyklen",
+   "mevcutTr": "yaşam döngüsü",
+   "mevcutBeispiel": "Bewertet wird der gesamte Lebenszyklus von der Rohstoffgewinnung bis zur Entsorgung.",
+   "mevcutBeispielTr": "Hammadde çıkarımından bertarafa kadar tüm yaşam döngüsü değerlendiriliyor."
+  },
+  {
+   "id": 6817,
+   "de": "das Naturkapital",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "doğal sermaye",
+   "mevcutBeispiel": "Wer Naturkapital verbraucht, lebt von der Substanz künftiger Generationen.",
+   "mevcutBeispielTr": "Doğal sermayeyi tüketen, gelecek kuşakların birikimini yiyor demektir."
+  },
+  {
+   "id": 6818,
+   "de": "die Umweltethik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çevre etiği",
+   "mevcutBeispiel": "Die Umweltethik fragt, ob der Natur ein Eigenwert zukommt.",
+   "mevcutBeispielTr": "Çevre etiği, doğanın kendinden menkul bir değeri olup olmadığını sorar."
+  },
+  {
+   "id": 6819,
+   "de": "die Klimagerechtigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iklim adaleti",
+   "mevcutBeispiel": "Klimagerechtigkeit bedeutet, historische Verantwortung bei der Lastenteilung zu berücksichtigen.",
+   "mevcutBeispielTr": "İklim adaleti, yük paylaşımında tarihsel sorumluluğu hesaba katmak demektir."
+  },
+  {
+   "id": 6820,
+   "de": "erschöpfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat erschöpft",
+   "mevcutTr": "tüketmek, bitirmek",
+   "mevcutBeispiel": "Der Mensch erschöpft Vorräte, deren Neubildung Jahrtausende dauert.",
+   "mevcutBeispielTr": "İnsan, yeniden oluşması binlerce yıl süren rezervleri tüketiyor.",
+   "cakisan": [
+    "konsumieren (B1)",
+    "verbrauchen (B1)",
+    "aufzehren (B2)"
+   ]
+  },
+  {
+   "id": 6821,
+   "de": "regulieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat reguliert",
+   "mevcutTr": "düzenlemek, kurallara bağlamak",
+   "mevcutBeispiel": "Der Staat reguliert den Zugang zu knappen Wasserrechten streng.",
+   "mevcutBeispielTr": "Devlet, kıt su haklarına erişimi sıkı biçimde düzenliyor.",
+   "cakisan": [
+    "ordnen (B1)",
+    "regeln (B1)",
+    "strukturieren (B2)",
+    "veranstalten (A2)"
+   ]
+  },
+  {
+   "id": 6822,
+   "de": "umdenken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgedacht",
+   "mevcutTr": "düşünce biçimini değiştirmek, yeniden düşünmek",
+   "mevcutBeispiel": "Beim Umgang mit Wasser muss die Landwirtschaft grundlegend umdenken.",
+   "mevcutBeispielTr": "Tarım, suyla ilişkisinde köklü biçimde yeniden düşünmek zorunda."
+  },
+  {
+   "id": 6823,
+   "de": "umsteuern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgesteuert",
+   "mevcutTr": "rotayı değiştirmek, yön değiştirmek",
+   "mevcutBeispiel": "Die Politik müsste jetzt umsteuern, um die Ziele noch zu erreichen.",
+   "mevcutBeispielTr": "Hedeflere hâlâ ulaşmak için siyasetin şimdi rotayı değiştirmesi gerekirdi."
+  },
+  {
+   "id": 6824,
+   "de": "abmildern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgemildert",
+   "mevcutTr": "hafifletmek, yumuşatmak",
+   "mevcutBeispiel": "Grüne Dächer können die Hitze in dicht bebauten Vierteln abmildern.",
+   "mevcutBeispielTr": "Yeşil çatılar, yoğun yapılaşmış mahallelerdeki sıcağı hafifletebilir.",
+   "cakisan": [
+    "lindern (B2)"
+   ]
+  },
+  {
+   "id": 6825,
+   "de": "wiederverwerten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat wiederverwertet",
+   "mevcutTr": "geri dönüştürmek, yeniden değerlendirmek",
+   "mevcutBeispiel": "Bislang wird nur ein Bruchteil der Kunststoffe tatsächlich wiederverwertet.",
+   "mevcutBeispielTr": "Şimdiye dek plastiklerin ancak küçük bir kısmı gerçekten geri dönüştürülüyor.",
+   "cakisan": [
+    "recyceln (B2)"
+   ]
+  },
+  {
+   "id": 6826,
+   "de": "bilanzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bilanziert",
+   "mevcutTr": "bilançosunu çıkarmak, hesabını yapmak",
+   "mevcutBeispiel": "Unternehmen müssen ihre Emissionen künftig lückenlos bilanzieren.",
+   "mevcutBeispielTr": "Şirketler bundan böyle emisyonlarının eksiksiz hesabını çıkarmak zorunda."
+  },
+  {
+   "id": 6827,
+   "de": "renaturieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat renaturiert",
+   "mevcutTr": "doğal hâline döndürmek",
+   "mevcutBeispiel": "Der begradigte Fluss wird abschnittsweise wieder renaturiert.",
+   "mevcutBeispielTr": "Düzleştirilmiş nehir, kısım kısım yeniden doğal hâline döndürülüyor."
+  },
+  {
+   "id": 6828,
+   "de": "ressourcenschonend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kaynakları koruyan, kaynak tasarruflu",
+   "mevcutBeispiel": "Das Verfahren gilt als besonders ressourcenschonend und energieeffizient.",
+   "mevcutBeispielTr": "Yöntem, kaynakları koruyucu ve enerji açısından verimli sayılıyor."
+  },
+  {
+   "id": 6829,
+   "de": "emissionsarm",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "düşük emisyonlu",
+   "mevcutBeispiel": "Emissionsarme Verfahren setzen sich nur bei klaren Vorgaben durch.",
+   "mevcutBeispielTr": "Düşük emisyonlu yöntemler ancak net kurallar olduğunda yaygınlaşıyor."
+  },
+  {
+   "id": 6830,
+   "de": "irreversibel",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geri döndürülemez",
+   "mevcutBeispiel": "Manche Schäden am Korallenriff sind praktisch irreversibel.",
+   "mevcutBeispielTr": "Mercan resifindeki bazı hasarlar pratikte geri döndürülemez."
+  },
+  {
+   "id": 6831,
+   "de": "folgenschwer",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ağır sonuçlar doğuran, vahim",
+   "mevcutBeispiel": "Die Entscheidung über den Tagebau war folgenschwerer als erwartet.",
+   "mevcutBeispielTr": "Açık ocak madenine ilişkin karar beklenenden daha ağır sonuçlar doğurdu."
+  },
+  {
+   "id": 6832,
+   "de": "zukunftsfähig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geleceğe dayanıklı, sürdürülebilir",
+   "mevcutBeispiel": "Ein zukunftsfähiges Wirtschaftsmodell darf nicht auf ewigem Mengenwachstum beruhen.",
+   "mevcutBeispielTr": "Geleceğe dönük bir ekonomi modeli sonsuz büyümeye dayanamaz."
+  },
+  {
+   "id": 6833,
+   "de": "regenerativ",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yenilenebilir",
+   "mevcutBeispiel": "Regenerative Energien decken inzwischen mehr als die Hälfte des Bedarfs.",
+   "mevcutBeispielTr": "Yenilenebilir enerjiler artık ihtiyacın yarısından fazlasını karşılıyor.",
+   "cakisan": [
+    "erneuerbar (B2)"
+   ]
+  },
+  {
+   "id": 6834,
+   "de": "nachweislich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kanıtlanmış biçimde, kanıtlarla sabit olarak",
+   "mevcutBeispiel": "Die Maßnahme hat den Nitratgehalt nachweislich gesenkt.",
+   "mevcutBeispielTr": "Bu önlem nitrat düzeyini kanıtlanmış biçimde düşürdü."
+  },
+  {
+   "id": 6835,
+   "de": "die Tugend",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Tugenden",
+   "mevcutTr": "erdem, fazilet",
+   "mevcutBeispiel": "Für Aristoteles war Mut eine Tugend zwischen Feigheit und Tollkühnheit.",
+   "mevcutBeispielTr": "Aristoteles için cesaret, korkaklıkla delice atılganlık arasındaki bir erdemdi."
+  },
+  {
+   "id": 6836,
+   "de": "die Willensfreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "irade özgürlüğü",
+   "mevcutBeispiel": "Die Hirnforschung stellt unsere Vorstellung von Willensfreiheit ernsthaft infrage.",
+   "mevcutBeispielTr": "Beyin araştırmaları, irade özgürlüğü tasavvurumuzu ciddi biçimde sorgulatıyor."
+  },
+  {
+   "id": 6837,
+   "de": "die Zurechnungsfähigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kusur yeteneği, ceza sorumluluğu (akli yeterlilik)",
+   "mevcutBeispiel": "Das Gericht ließ die Zurechnungsfähigkeit des Angeklagten psychiatrisch prüfen.",
+   "mevcutBeispielTr": "Mahkeme, sanığın temyiz kudretini psikiyatrik olarak inceletti."
+  },
+  {
+   "id": 6838,
+   "de": "die Integrität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dürüstlük, ilkelilik, bütünlük",
+   "mevcutBeispiel": "Seine Integrität blieb selbst unter politischem Druck unbeschädigt.",
+   "mevcutBeispielTr": "Dürüstlüğü, siyasi baskı altında bile zedelenmeden kaldı.",
+   "cakisan": [
+    "die Redlichkeit (C1)"
+   ]
+  },
+  {
+   "id": 6839,
+   "de": "die Barmherzigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "merhamet, şefkat",
+   "mevcutBeispiel": "Zwischen kalter Gerechtigkeit und echter Barmherzigkeit besteht eine alte Spannung.",
+   "mevcutBeispielTr": "Soğuk adaletle gerçek merhamet arasında eski bir gerilim vardır."
+  },
+  {
+   "id": 6840,
+   "de": "der Egoismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bencillik, egoizm",
+   "mevcutBeispiel": "Manche Denker halten Egoismus für die ehrlichste Triebkraft des Handelns.",
+   "mevcutBeispielTr": "Bazı düşünürler bencilliği, eylemin en dürüst itici gücü sayar."
+  },
+  {
+   "id": 6841,
+   "de": "der Altruismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "özgecilik, diğerkâmlık",
+   "mevcutBeispiel": "Ob echter Altruismus überhaupt existiert, ist bis heute umstritten.",
+   "mevcutBeispielTr": "Gerçek bir özgeciliğin var olup olmadığı bugün hâlâ tartışmalıdır."
+  },
+  {
+   "id": 6842,
+   "de": "das Pflichtgefühl",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Pflichtgefühle",
+   "mevcutTr": "görev duygusu, sorumluluk hissi",
+   "mevcutBeispiel": "Sie blieb aus reinem Pflichtgefühl bei ihrer kranken Mutter.",
+   "mevcutBeispielTr": "Salt görev duygusuyla hasta annesinin yanında kaldı."
+  },
+  {
+   "id": 6843,
+   "de": "der Zwiespalt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zwiespalte",
+   "mevcutTr": "iç çatışma, ikilem",
+   "mevcutBeispiel": "Der Arzt geriet in einen tiefen Zwiespalt zwischen Schweigepflicht und Warnung.",
+   "mevcutBeispielTr": "Doktor, sır saklama yükümlülüğüyle uyarma arasında derin bir iç çatışmaya düştü."
+  },
+  {
+   "id": 6844,
+   "de": "das Dilemma",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dilemmata",
+   "mevcutTr": "ikilem, çıkmaz",
+   "mevcutBeispiel": "Das klassische Dilemma lässt beide Auswege gleich schlecht erscheinen.",
+   "mevcutBeispielTr": "Klasik ikilem, her iki çıkış yolunu da eşit derecede kötü gösterir.",
+   "cakisan": [
+    "die Zwickmühle (C1)"
+   ]
+  },
+  {
+   "id": 6845,
+   "de": "die Vernunft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "akıl, mantık",
+   "mevcutBeispiel": "Kant wollte die Grenzen der reinen Vernunft genau bestimmen.",
+   "mevcutBeispielTr": "Kant, saf aklın sınırlarını tam olarak belirlemek istiyordu."
+  },
+  {
+   "id": 6846,
+   "de": "der Verstand",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "zihin, muhakeme, anlık",
+   "mevcutBeispiel": "Der Verstand ordnet, aber er stiftet keinen Sinn.",
+   "mevcutBeispielTr": "Zihin düzenler, ama anlam yaratmaz."
+  },
+  {
+   "id": 6847,
+   "de": "die Einsicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Einsichten",
+   "mevcutTr": "kavrayış, idrak, anlayış",
+   "mevcutBeispiel": "Diese Einsicht kam ihm erst nach jahrelanger Beschäftigung mit dem Thema.",
+   "mevcutBeispielTr": "Bu kavrayışa ancak konuyla yıllarca uğraştıktan sonra vardı.",
+   "cakisan": [
+    "die Auffassungsgabe (B2)"
+   ]
+  },
+  {
+   "id": 6848,
+   "de": "die Weisheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Weisheiten",
+   "mevcutTr": "bilgelik, hikmet",
+   "mevcutBeispiel": "Wissen lässt sich anhäufen, Weisheit dagegen kaum.",
+   "mevcutBeispielTr": "Bilgi biriktirilebilir, ama bilgelik pek biriktirilemez."
+  },
+  {
+   "id": 6849,
+   "de": "die Besonnenheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sağduyu, temkinlilik, itidal",
+   "mevcutBeispiel": "In der Krise zeigte sie eine bemerkenswerte Besonnenheit.",
+   "mevcutBeispielTr": "Kriz sırasında dikkate değer bir sağduyu gösterdi."
+  },
+  {
+   "id": 6850,
+   "de": "der Relativismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "görecelilik, rölativizm",
+   "mevcutBeispiel": "Ein radikaler Relativismus macht jede Kritik an Unrecht unmöglich.",
+   "mevcutBeispielTr": "Radikal bir görecelilik, haksızlığa yönelik her eleştiriyi imkânsız kılar."
+  },
+  {
+   "id": 6851,
+   "de": "die Maxime",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Maximen",
+   "mevcutTr": "ilke, düstur",
+   "mevcutBeispiel": "Handle nur nach einer Maxime, die du allgemein wollen kannst.",
+   "mevcutBeispielTr": "Yalnızca genel geçer olmasını isteyebileceğin bir ilkeye göre davran.",
+   "cakisan": [
+    "das Postulat (C1)"
+   ]
+  },
+  {
+   "id": 6852,
+   "de": "das Gebot",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gebote",
+   "mevcutTr": "buyruk, emir, ilke",
+   "mevcutBeispiel": "Fairness ist hier weniger ein Gesetz als ein moralisches Gebot.",
+   "mevcutBeispielTr": "Adillik burada bir yasadan çok ahlaki bir buyruktur."
+  }
+ ]
+}

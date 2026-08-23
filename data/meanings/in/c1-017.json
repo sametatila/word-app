@@ -1,0 +1,513 @@
+{
+ "paket": "c1-017",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6053,
+   "de": "nachrücken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist nachgerückt",
+   "mevcutTr": "yerini almak üzere gelmek, ardından gelmek",
+   "mevcutBeispiel": "Für jeden Rentner rücken heute deutlich weniger Junge nach.",
+   "mevcutBeispielTr": "Bugün her emeklinin yerine belirgin biçimde daha az genç geliyor."
+  },
+  {
+   "id": 6054,
+   "de": "vergreisen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist vergreist",
+   "mevcutTr": "nüfusça yaşlanmak, ihtiyarlamak",
+   "mevcutBeispiel": "Ganze Landkreise vergreisen, während die Städte weiter wachsen.",
+   "mevcutBeispielTr": "Kentler büyümeye devam ederken koca ilçeler ihtiyarlıyor."
+  },
+  {
+   "id": 6055,
+   "de": "demografisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "demografik, nüfusla ilgili",
+   "mevcutBeispiel": "Der demografische Wandel wirkt langsam, aber er ist unerbittlich.",
+   "mevcutBeispielTr": "Demografik dönüşüm yavaş işler, ama acımasızdır."
+  },
+  {
+   "id": 6056,
+   "de": "kinderreich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çok çocuklu",
+   "mevcutBeispiel": "Kinderreiche Familien tragen ein überdurchschnittliches Armutsrisiko.",
+   "mevcutBeispielTr": "Çok çocuklu aileler ortalamanın üstünde bir yoksulluk riski taşıyor."
+  },
+  {
+   "id": 6057,
+   "de": "strukturschwach",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yapısal olarak zayıf, geri kalmış",
+   "mevcutBeispiel": "In strukturschwachen Regionen fehlt es an Ärzten und Busverbindungen.",
+   "mevcutBeispielTr": "Yapısal olarak zayıf bölgelerde doktor ve otobüs bağlantısı yok."
+  },
+  {
+   "id": 6058,
+   "de": "hierzulande",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bu ülkede, bizde",
+   "mevcutBeispiel": "Hierzulande wird die Debatte fast ausschließlich über die Rente geführt.",
+   "mevcutBeispielTr": "Bu ülkede tartışma neredeyse yalnızca emeklilik üzerinden yürütülüyor."
+  },
+  {
+   "id": 6059,
+   "de": "absehbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "öngörülebilir, yakın gelecekte beklenen",
+   "mevcutBeispiel": "In absehbarer Zeit wird jede dritte Person über sechzig sein.",
+   "mevcutBeispielTr": "Öngörülebilir bir süre içinde her üç kişiden biri altmış yaşın üstünde olacak."
+  },
+  {
+   "id": 6060,
+   "de": "vielerorts",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "birçok yerde",
+   "mevcutBeispiel": "Vielerorts stehen ganze Straßenzüge seit Jahren leer.",
+   "mevcutBeispielTr": "Birçok yerde tüm sokaklar yıllardır boş duruyor."
+  },
+  {
+   "id": 6061,
+   "de": "langfristig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uzun vadeli, uzun vadede",
+   "mevcutBeispiel": "Langfristig entscheidet nicht die Geburtenrate, sondern die Produktivität.",
+   "mevcutBeispielTr": "Uzun vadede belirleyici olan doğum oranı değil, verimliliktir."
+  },
+  {
+   "id": 6062,
+   "de": "der Waffenstillstand",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Waffenstillstände",
+   "mevcutTr": "ateşkes",
+   "mevcutBeispiel": "Der brüchige Waffenstillstand hielt nur wenige Wochen.",
+   "mevcutBeispielTr": "Kırılgan ateşkes yalnızca birkaç hafta dayandı."
+  },
+  {
+   "id": 6063,
+   "de": "die Neutralität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Neutralitäten",
+   "mevcutTr": "tarafsızlık",
+   "mevcutBeispiel": "Die Schweiz beruft sich bei solchen Konflikten auf ihre Neutralität.",
+   "mevcutBeispielTr": "İsviçre bu tür çatışmalarda tarafsızlığına dayanır."
+  },
+  {
+   "id": 6064,
+   "de": "die Souveränität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Souveränitäten",
+   "mevcutTr": "egemenlik",
+   "mevcutBeispiel": "Der Einmarsch verletzte die Souveränität des Nachbarstaates.",
+   "mevcutBeispielTr": "Askeri giriş komşu devletin egemenliğini ihlal etti."
+  },
+  {
+   "id": 6065,
+   "de": "das Völkerrecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uluslararası hukuk, devletler hukuku",
+   "mevcutBeispiel": "Nach geltendem Völkerrecht ist ein solcher Angriff unzulässig.",
+   "mevcutBeispielTr": "Yürürlükteki uluslararası hukuka göre böyle bir saldırı kabul edilemez."
+  },
+  {
+   "id": 6066,
+   "de": "die Deeskalation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Deeskalationen",
+   "mevcutTr": "gerilimin azaltılması, yatıştırma",
+   "mevcutBeispiel": "Beide Seiten signalisierten erstmals Interesse an einer Deeskalation.",
+   "mevcutBeispielTr": "İki taraf da ilk kez gerilimi azaltmaya ilgi gösterdi."
+  },
+  {
+   "id": 6067,
+   "de": "die Konfliktpartei",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konfliktparteien",
+   "mevcutTr": "çatışmanın tarafı, ihtilaf tarafı",
+   "mevcutBeispiel": "Alle Konfliktparteien wurden an den Verhandlungsort geladen.",
+   "mevcutBeispielTr": "Çatışmanın bütün tarafları görüşme yerine davet edildi."
+  },
+  {
+   "id": 6068,
+   "de": "das Friedensabkommen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Friedensabkommen",
+   "mevcutTr": "barış anlaşması",
+   "mevcutBeispiel": "Das Friedensabkommen wurde nach zähen Gesprächen endlich unterschrieben.",
+   "mevcutBeispielTr": "Barış anlaşması çetin görüşmelerin ardından nihayet imzalandı."
+  },
+  {
+   "id": 6069,
+   "de": "das Kriegsverbrechen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kriegsverbrechen",
+   "mevcutTr": "savaş suçu",
+   "mevcutBeispiel": "Die Kommission dokumentierte mutmaßliche Kriegsverbrechen in der Region.",
+   "mevcutBeispielTr": "Komisyon bölgedeki iddia edilen savaş suçlarını belgeledi."
+  },
+  {
+   "id": 6070,
+   "de": "die Menschenrechtsverletzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Menschenrechtsverletzungen",
+   "mevcutTr": "insan hakları ihlali",
+   "mevcutBeispiel": "Der Bericht listet systematische Menschenrechtsverletzungen im Grenzgebiet auf.",
+   "mevcutBeispielTr": "Rapor sınır bölgesindeki sistematik insan hakları ihlallerini sıralıyor."
+  },
+  {
+   "id": 6071,
+   "de": "die Schutzverantwortung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "koruma sorumluluğu",
+   "mevcutBeispiel": "Kritiker sehen in der Schutzverantwortung einen Vorwand für Interventionen.",
+   "mevcutBeispielTr": "Eleştirmenler koruma sorumluluğunu müdahaleler için bir bahane olarak görüyor."
+  },
+  {
+   "id": 6072,
+   "de": "die Konfrontation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konfrontationen",
+   "mevcutTr": "karşı karşıya gelme, çatışma",
+   "mevcutBeispiel": "Die Rhetorik der Regierung steuert offen auf Konfrontation zu.",
+   "mevcutBeispielTr": "Hükümetin söylemi açıkça çatışmaya doğru gidiyor."
+  },
+  {
+   "id": 6073,
+   "de": "die Annäherung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Annäherungen",
+   "mevcutTr": "yakınlaşma",
+   "mevcutBeispiel": "Nach Jahren der Feindschaft kam es zu einer vorsichtigen Annäherung.",
+   "mevcutBeispielTr": "Yıllarca süren düşmanlıktan sonra temkinli bir yakınlaşma yaşandı."
+  },
+  {
+   "id": 6074,
+   "de": "die Entspannung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entspannungen",
+   "mevcutTr": "yumuşama, gerginliğin azalması",
+   "mevcutBeispiel": "Der Gefangenenaustausch gilt als Zeichen einer beginnenden Entspannung.",
+   "mevcutBeispielTr": "Esir değişimi başlayan bir yumuşamanın işareti sayılıyor."
+  },
+  {
+   "id": 6075,
+   "de": "der Unterhändler",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Unterhändler",
+   "mevcutTr": "müzakereci, görüşme temsilcisi",
+   "mevcutBeispiel": "Die Unterhändler beider Lager trafen sich an einem geheimen Ort.",
+   "mevcutBeispielTr": "İki kampın müzakerecileri gizli bir yerde buluştu."
+  },
+  {
+   "id": 6076,
+   "de": "der Schiedsspruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schiedssprüche",
+   "mevcutTr": "hakem kararı, tahkim kararı",
+   "mevcutBeispiel": "Der Schiedsspruch ist für beide Staaten bindend.",
+   "mevcutBeispielTr": "Hakem kararı her iki devlet için de bağlayıcıdır."
+  },
+  {
+   "id": 6077,
+   "de": "die Resolution",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Resolutionen",
+   "mevcutTr": "karar (uluslararası kuruluş), karar metni",
+   "mevcutBeispiel": "Der Sicherheitsrat verabschiedete die Resolution mit knapper Mehrheit.",
+   "mevcutBeispielTr": "Güvenlik Konseyi kararı kıl payı çoğunlukla kabul etti.",
+   "cakisan": [
+    "die Entscheidung (B1)",
+    "das Urteil (B1)"
+   ]
+  },
+  {
+   "id": 6078,
+   "de": "das Vetorecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vetorechte",
+   "mevcutTr": "veto hakkı",
+   "mevcutBeispiel": "Das Vetorecht der ständigen Mitglieder blockiert seit Jahren jede Entscheidung.",
+   "mevcutBeispielTr": "Daimi üyelerin veto hakkı yıllardır her kararı bloke ediyor."
+  },
+  {
+   "id": 6079,
+   "de": "die Stimmenthaltung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stimmenthaltungen",
+   "mevcutTr": "çekimser oy",
+   "mevcutBeispiel": "Drei Stimmenthaltungen verhinderten eine einstimmige Verurteilung.",
+   "mevcutBeispielTr": "Üç çekimser oy oybirliğiyle kınamayı engelledi."
+  },
+  {
+   "id": 6080,
+   "de": "der Vertragsbruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vertragsbrüche",
+   "mevcutTr": "anlaşma ihlali, sözleşmeyi bozma",
+   "mevcutBeispiel": "Die Stationierung neuer Raketen wertete man als klaren Vertragsbruch.",
+   "mevcutBeispielTr": "Yeni füzelerin konuşlandırılması açık bir anlaşma ihlali sayıldı."
+  },
+  {
+   "id": 6081,
+   "de": "der Bündnisfall",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bündnisfälle",
+   "mevcutTr": "ittifak yükümlülüğünün doğması",
+   "mevcutBeispiel": "Zum ersten Mal in der Geschichte wurde der Bündnisfall ausgerufen.",
+   "mevcutBeispielTr": "Tarihte ilk kez ittifak yükümlülüğü ilan edildi."
+  },
+  {
+   "id": 6082,
+   "de": "die Beistandspflicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beistandspflichten",
+   "mevcutTr": "yardım yükümlülüğü, destek zorunluluğu",
+   "mevcutBeispiel": "Aus dem Vertrag ergibt sich eine gegenseitige Beistandspflicht.",
+   "mevcutBeispielTr": "Anlaşmadan karşılıklı bir yardım yükümlülüğü doğuyor."
+  },
+  {
+   "id": 6083,
+   "de": "die Gegenmaßnahme",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gegenmaßnahmen",
+   "mevcutTr": "karşı önlem",
+   "mevcutBeispiel": "Als Gegenmaßnahme wurden die Handelsvergünstigungen sofort ausgesetzt.",
+   "mevcutBeispielTr": "Karşı önlem olarak ticaret ayrıcalıkları derhal askıya alındı."
+  },
+  {
+   "id": 6084,
+   "de": "die Vergeltung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vergeltungen",
+   "mevcutTr": "misilleme, karşılık verme",
+   "mevcutBeispiel": "Der Angriff war offenkundig als Vergeltung gedacht.",
+   "mevcutBeispielTr": "Saldırı açıkça bir misilleme olarak tasarlanmıştı."
+  },
+  {
+   "id": 6085,
+   "de": "die Repressalie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Repressalien",
+   "mevcutTr": "misilleme tedbiri, baskı önlemi",
+   "mevcutBeispiel": "Die Zivilbevölkerung fürchtet Repressalien der Besatzer.",
+   "mevcutBeispielTr": "Sivil halk işgalcilerin misilleme tedbirlerinden korkuyor."
+  },
+  {
+   "id": 6086,
+   "de": "die Provokation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Provokationen",
+   "mevcutTr": "provokasyon, kışkırtma",
+   "mevcutBeispiel": "Das Manöver an der Grenze wurde als gezielte Provokation gewertet.",
+   "mevcutBeispielTr": "Sınırdaki tatbikat kasıtlı bir provokasyon olarak değerlendirildi."
+  },
+  {
+   "id": 6087,
+   "de": "die Grenzverletzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Grenzverletzungen",
+   "mevcutTr": "sınır ihlali",
+   "mevcutBeispiel": "Die wiederholten Grenzverletzungen führten zu einer scharfen Protestnote.",
+   "mevcutBeispielTr": "Tekrarlanan sınır ihlalleri sert bir protesto notasına yol açtı."
+  },
+  {
+   "id": 6088,
+   "de": "die Vertreibung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vertreibungen",
+   "mevcutTr": "sürgün, yerinden etme",
+   "mevcutBeispiel": "Die massenhafte Vertreibung der Bevölkerung erfüllt den Tatbestand eines Verbrechens.",
+   "mevcutBeispielTr": "Halkın kitlesel olarak yerinden edilmesi bir suç unsuru oluşturuyor.",
+   "cakisan": [
+    "der Trieb (B2)"
+   ]
+  },
+  {
+   "id": 6089,
+   "de": "die Abrüstung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abrüstungen",
+   "mevcutTr": "silahsızlanma",
+   "mevcutBeispiel": "Über die atomare Abrüstung wird seit Jahrzehnten ergebnislos verhandelt.",
+   "mevcutBeispielTr": "Nükleer silahsızlanma onlarca yıldır sonuçsuz biçimde görüşülüyor."
+  },
+  {
+   "id": 6090,
+   "de": "das Machtgleichgewicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Machtgleichgewichte",
+   "mevcutTr": "güç dengesi",
+   "mevcutBeispiel": "Der Beitritt neuer Mitglieder verschob das regionale Machtgleichgewicht.",
+   "mevcutBeispielTr": "Yeni üyelerin katılımı bölgesel güç dengesini kaydırdı."
+  },
+  {
+   "id": 6091,
+   "de": "die Einflusssphäre",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Einflusssphären",
+   "mevcutTr": "nüfuz alanı, etki alanı",
+   "mevcutBeispiel": "Beide Großmächte betrachten die Region als ihre Einflusssphäre.",
+   "mevcutBeispielTr": "Her iki büyük güç de bölgeyi kendi nüfuz alanı sayıyor."
+  },
+  {
+   "id": 6092,
+   "de": "die Bedrohungslage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bedrohungslagen",
+   "mevcutTr": "tehdit durumu",
+   "mevcutBeispiel": "Der Geheimdienst bewertet die Bedrohungslage derzeit als erhöht.",
+   "mevcutBeispielTr": "İstihbarat servisi tehdit durumunu şu anda yükselmiş olarak değerlendiriyor."
+  },
+  {
+   "id": 6093,
+   "de": "die Sicherheitsgarantie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sicherheitsgarantien",
+   "mevcutTr": "güvenlik garantisi",
+   "mevcutBeispiel": "Ohne belastbare Sicherheitsgarantien wird das Land keinem Abkommen zustimmen.",
+   "mevcutBeispielTr": "Sağlam güvenlik garantileri olmadan ülke hiçbir anlaşmayı kabul etmeyecek."
+  },
+  {
+   "id": 6094,
+   "de": "der Truppenabzug",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Truppenabzüge",
+   "mevcutTr": "askerlerin çekilmesi",
+   "mevcutBeispiel": "Der vollständige Truppenabzug soll bis zum Jahresende erfolgen.",
+   "mevcutBeispielTr": "Askerlerin tamamen çekilmesi yıl sonuna kadar gerçekleşecek."
+  },
+  {
+   "id": 6095,
+   "de": "die Pufferzone",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Pufferzonen",
+   "mevcutTr": "tampon bölge",
+   "mevcutBeispiel": "Zwischen den Fronten wurde eine entmilitarisierte Pufferzone eingerichtet.",
+   "mevcutBeispielTr": "Cepheler arasında askerden arındırılmış bir tampon bölge oluşturuldu."
+  },
+  {
+   "id": 6096,
+   "de": "die Demarkationslinie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Demarkationslinien",
+   "mevcutTr": "sınır çizgisi, ayrım hattı",
+   "mevcutBeispiel": "Beobachter überwachen die Einhaltung der Demarkationslinie rund um die Uhr.",
+   "mevcutBeispielTr": "Gözlemciler ayrım hattına uyulmasını gece gündüz denetliyor."
+  },
+  {
+   "id": 6097,
+   "de": "die Annexion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Annexionen",
+   "mevcutTr": "ilhak",
+   "mevcutBeispiel": "Die Annexion der Halbinsel wurde international nicht anerkannt.",
+   "mevcutBeispielTr": "Yarımadanın ilhakı uluslararası düzeyde tanınmadı."
+  },
+  {
+   "id": 6098,
+   "de": "der Gebietsanspruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gebietsansprüche",
+   "mevcutTr": "toprak talebi, toprak iddiası",
+   "mevcutBeispiel": "Historische Karten dienen beiden Seiten zur Begründung ihrer Gebietsansprüche.",
+   "mevcutBeispielTr": "Tarihî haritalar iki tarafa da toprak taleplerini gerekçelendirmek için hizmet ediyor."
+  },
+  {
+   "id": 6099,
+   "de": "das Selbstbestimmungsrecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Selbstbestimmungsrechte",
+   "mevcutTr": "kendi kaderini tayin hakkı",
+   "mevcutBeispiel": "Die Minderheit pocht auf ihr Selbstbestimmungsrecht.",
+   "mevcutBeispielTr": "Azınlık kendi kaderini tayin hakkında ısrar ediyor."
+  },
+  {
+   "id": 6100,
+   "de": "die Nichteinmischung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "içişlerine karışmama",
+   "mevcutBeispiel": "Der Grundsatz der Nichteinmischung wird in der Praxis oft umgangen.",
+   "mevcutBeispielTr": "İçişlerine karışmama ilkesi pratikte sıkça delinir."
+  },
+  {
+   "id": 6101,
+   "de": "die Schutzmacht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schutzmächte",
+   "mevcutTr": "koruyucu devlet, himaye eden güç",
+   "mevcutBeispiel": "Ein neutrales Land übernahm die Rolle der Schutzmacht.",
+   "mevcutBeispielTr": "Tarafsız bir ülke koruyucu devlet rolünü üstlendi."
+  },
+  {
+   "id": 6102,
+   "de": "die Verhandlungsführung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "müzakere yönetimi, görüşmelerin yürütülmesi",
+   "mevcutBeispiel": "Seine geschickte Verhandlungsführung rettete das Abkommen in letzter Minute.",
+   "mevcutBeispielTr": "Onun ustaca müzakere yönetimi anlaşmayı son dakikada kurtardı."
+  }
+ ]
+}

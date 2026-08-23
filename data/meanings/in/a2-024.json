@@ -1,0 +1,573 @@
+{
+ "paket": "a2-024",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 8139,
+   "de": "fällen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "fällt, hat gefällt",
+   "mevcutTr": "kesmek (ağaç), devirmek",
+   "mevcutBeispiel": "Im Winter haben sie den kranken Baum gefällt.",
+   "mevcutBeispielTr": "Kışın hasta ağacı kestiler.",
+   "cakisan": [
+    "sich schneiden (B1)",
+    "unterbrechen (B1)",
+    "schlachten (B2)",
+    "einbehalten (B2)",
+    "zuschneiden (B2)",
+    "schneiden (A2)"
+   ]
+  },
+  {
+   "id": 8140,
+   "de": "aufgehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht auf, ist aufgegangen",
+   "mevcutTr": "doğmak (güneş), açılmak",
+   "mevcutBeispiel": "Im Sommer geht die Sonne schon um fünf Uhr auf.",
+   "mevcutBeispielTr": "Yazın güneş daha saat beşte doğuyor.",
+   "cakisan": [
+    "geboren werden (B1)"
+   ]
+  },
+  {
+   "id": 8141,
+   "de": "erfrieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "erfriert, ist erfroren",
+   "mevcutTr": "donmak, soğuktan ölmek",
+   "mevcutBeispiel": "Bei diesem Frost können die Blumen erfrieren.",
+   "mevcutBeispielTr": "Bu ayazda çiçekler donabilir."
+  },
+  {
+   "id": 8142,
+   "de": "summen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "summt, hat gesummt",
+   "mevcutTr": "vızıldamak, mırıldanmak",
+   "mevcutBeispiel": "Die Bienen summen den ganzen Tag im Garten.",
+   "mevcutBeispielTr": "Arılar bütün gün bahçede vızıldıyor."
+  },
+  {
+   "id": 8143,
+   "de": "grün",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yeşil",
+   "mevcutBeispiel": "Im Frühling wird die Wiese wieder ganz grün.",
+   "mevcutBeispielTr": "İlkbaharda çayır yine tamamen yeşil oluyor."
+  },
+  {
+   "id": 8144,
+   "de": "lebendig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "canlı, yaşayan",
+   "mevcutBeispiel": "Abends ist die Innenstadt sehr lebendig.",
+   "mevcutBeispielTr": "Akşamları şehir merkezi çok canlı."
+  },
+  {
+   "id": 8145,
+   "de": "erlaubt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "serbest, izin verilen",
+   "mevcutBeispiel": "Hier ist das Parken nur eine Stunde erlaubt.",
+   "mevcutBeispielTr": "Burada park etmeye sadece bir saat izin var."
+  },
+  {
+   "id": 8146,
+   "de": "zahm",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "uysal, evcil",
+   "mevcutBeispiel": "Die Ziegen auf dem Bauernhof sind ganz zahm.",
+   "mevcutBeispielTr": "Çiftlikteki keçiler tamamen uysal."
+  },
+  {
+   "id": 8147,
+   "de": "heftig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şiddetli, sert",
+   "mevcutBeispiel": "Gestern hat es den ganzen Tag heftig geregnet.",
+   "mevcutBeispielTr": "Dün bütün gün şiddetli yağmur yağdı."
+  },
+  {
+   "id": 8148,
+   "de": "harmlos",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "zararsız",
+   "mevcutBeispiel": "Keine Angst, diese Spinne ist ganz harmlos.",
+   "mevcutBeispielTr": "Korkma, bu örümcek tamamen zararsız."
+  },
+  {
+   "id": 8149,
+   "de": "belebt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hareketli, kalabalık",
+   "mevcutBeispiel": "Die Straße vor dem Bahnhof ist immer belebt.",
+   "mevcutBeispielTr": "İstasyonun önündeki cadde her zaman hareketli.",
+   "cakisan": [
+    "mobil (B1)",
+    "lebhaft (A2)"
+   ]
+  },
+  {
+   "id": 8150,
+   "de": "rutschig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kaygan",
+   "mevcutBeispiel": "Nach dem Regen ist der Weg sehr rutschig.",
+   "mevcutBeispielTr": "Yağmurdan sonra yol çok kaygan.",
+   "cakisan": [
+    "glatt (B1)"
+   ]
+  },
+  {
+   "id": 8151,
+   "de": "wachsam",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tetikte, uyanık",
+   "mevcutBeispiel": "Der Hund ist nachts sehr wachsam.",
+   "mevcutBeispielTr": "Köpek geceleri çok tetikte."
+  },
+  {
+   "id": 8152,
+   "de": "essbar",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yenilebilir",
+   "mevcutBeispiel": "Nicht jeder Pilz im Wald ist essbar.",
+   "mevcutBeispielTr": "Ormandaki her mantar yenilebilir değildir."
+  },
+  {
+   "id": 8153,
+   "de": "biologisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "organik, biyolojik",
+   "mevcutBeispiel": "Dieses Gemüse kommt aus biologischem Anbau.",
+   "mevcutBeispielTr": "Bu sebze organik tarımdan geliyor.",
+   "cakisan": [
+    "Bio- (B1)"
+   ]
+  },
+  {
+   "id": 8154,
+   "de": "örtlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yerel",
+   "mevcutBeispiel": "Die örtliche Polizei hat uns sofort geholfen.",
+   "mevcutBeispielTr": "Yerel polis bize hemen yardım etti."
+  },
+  {
+   "id": 8155,
+   "de": "grau",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gri",
+   "mevcutBeispiel": "Der Himmel ist heute den ganzen Tag grau.",
+   "mevcutBeispielTr": "Gökyüzü bugün bütün gün gri."
+  },
+  {
+   "id": 8156,
+   "de": "scheu",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ürkek, çekingen",
+   "mevcutBeispiel": "Rehe sind sehr scheu und laufen schnell weg.",
+   "mevcutBeispielTr": "Karacalar çok ürkektir ve hızla kaçarlar."
+  },
+  {
+   "id": 8157,
+   "de": "verschmutzt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kirlenmiş, kirli",
+   "mevcutBeispiel": "Der Fluss ist an dieser Stelle stark verschmutzt.",
+   "mevcutBeispielTr": "Nehir bu noktada ağır şekilde kirlenmiş."
+  },
+  {
+   "id": 8158,
+   "de": "unangenehm",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "rahatsız edici, nahoş",
+   "mevcutBeispiel": "Der kalte Wind am Bahnhof war sehr unangenehm.",
+   "mevcutBeispielTr": "İstasyondaki soğuk rüzgâr çok rahatsız ediciydi."
+  },
+  {
+   "id": 8159,
+   "de": "vollständig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "eksiksiz, tam",
+   "mevcutBeispiel": "Bitte füllen Sie das Formular vollständig aus.",
+   "mevcutBeispielTr": "Lütfen formu eksiksiz doldurun.",
+   "cakisan": [
+    "lückenlos (B2)"
+   ]
+  },
+  {
+   "id": 8160,
+   "de": "berechtigt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hakkı olan, yetkili",
+   "mevcutBeispiel": "Nur Anwohner sind berechtigt, hier zu parken.",
+   "mevcutBeispielTr": "Sadece mahalle sakinleri burada park etmeye yetkilidir."
+  },
+  {
+   "id": 8161,
+   "de": "glätten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "glättet, hat geglättet",
+   "mevcutTr": "düzeltmek, düzleştirmek",
+   "mevcutBeispiel": "Vor dem Essen glätte ich die Tischdecke mit der Hand.",
+   "mevcutBeispielTr": "Yemekten önce masa örtüsünü elimle düzeltiyorum.",
+   "cakisan": [
+    "korrigieren (B1)",
+    "nachbessern (B2)",
+    "richtigstellen (C1)"
+   ]
+  },
+  {
+   "id": 8162,
+   "de": "abstauben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "staubt ab, hat abgestaubt",
+   "mevcutTr": "tozunu almak",
+   "mevcutBeispiel": "Am Wochenende staube ich die Regale im Wohnzimmer ab.",
+   "mevcutBeispielTr": "Hafta sonu oturma odasındaki rafların tozunu alıyorum."
+  },
+  {
+   "id": 8163,
+   "de": "schrubben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schrubbt, hat geschrubbt",
+   "mevcutTr": "ovalamak, fırçalayarak temizlemek",
+   "mevcutBeispiel": "Ich schrubbe den Boden im Bad mit einer harten Bürste.",
+   "mevcutBeispielTr": "Banyodaki zemini sert bir fırçayla ovalıyorum."
+  },
+  {
+   "id": 8164,
+   "de": "aufwischen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "wischt auf, hat aufgewischt",
+   "mevcutTr": "(dökülen şeyi) silmek, paspaslamak",
+   "mevcutBeispiel": "Das Kind hat Milch verschüttet, ich wische sie schnell auf.",
+   "mevcutBeispielTr": "Çocuk süt döktü, ben de hemen siliyorum.",
+   "cakisan": [
+    "löschen (B1)",
+    "abwischen (A2)",
+    "wischen (A2)"
+   ]
+  },
+  {
+   "id": 8165,
+   "de": "saugen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "saugt, hat gesaugt",
+   "mevcutTr": "elektrikli süpürgeyle süpürmek, emmek",
+   "mevcutBeispiel": "Ich sauge jeden Freitag den Teppich im Wohnzimmer.",
+   "mevcutBeispielTr": "Her cuma oturma odasındaki halıyı süpürüyorum."
+  },
+  {
+   "id": 8166,
+   "de": "ausräumen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "räumt aus, hat ausgeräumt",
+   "mevcutTr": "boşaltmak, içindekileri çıkarmak",
+   "mevcutBeispiel": "Nach dem Frühstück räume ich die Spülmaschine aus.",
+   "mevcutBeispielTr": "Kahvaltıdan sonra bulaşık makinesini boşaltıyorum.",
+   "cakisan": [
+    "räumen (B2)",
+    "ausleeren (A2)",
+    "abladen (A2)",
+    "leeren (A2)"
+   ]
+  },
+  {
+   "id": 8167,
+   "de": "ausmisten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "mistet aus, hat ausgemistet",
+   "mevcutTr": "ayıklamak, gereksizleri atmak",
+   "mevcutBeispiel": "Einmal im Jahr miste ich den Kleiderschrank aus.",
+   "mevcutBeispielTr": "Yılda bir kez gardırobu ayıklıyorum.",
+   "cakisan": [
+    "aussortieren (B2)"
+   ]
+  },
+  {
+   "id": 8168,
+   "de": "ausleeren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "leert aus, hat ausgeleert",
+   "mevcutTr": "boşaltmak",
+   "mevcutBeispiel": "Am Morgen leere ich den Briefkasten aus.",
+   "mevcutBeispielTr": "Sabahleyin posta kutusunu boşaltıyorum.",
+   "cakisan": [
+    "räumen (B2)",
+    "ausräumen (A2)",
+    "abladen (A2)",
+    "leeren (A2)"
+   ]
+  },
+  {
+   "id": 8169,
+   "de": "umrühren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "rührt um, hat umgerührt",
+   "mevcutTr": "karıştırmak (kaşıkla, çorbayı)",
+   "mevcutBeispiel": "Ich rühre die Suppe mit einem Löffel langsam um.",
+   "mevcutBeispielTr": "Çorbayı bir kaşıkla yavaşça karıştırıyorum."
+  },
+  {
+   "id": 8170,
+   "de": "rösten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "röstet, hat geröstet",
+   "mevcutTr": "kızartmak (yağsız: ekmek, kahve), kavurmak",
+   "mevcutBeispiel": "Ich röste das Brot in der Pfanne, bis es braun ist.",
+   "mevcutBeispielTr": "Ekmeği tavada kahverengi olana kadar kızartıyorum."
+  },
+  {
+   "id": 8171,
+   "de": "aufessen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "isst auf, hat aufgegessen",
+   "mevcutTr": "hepsini yemek, tabağını bitirmek",
+   "mevcutBeispiel": "Mein Sohn isst seinen Teller zum Glück immer ganz auf.",
+   "mevcutBeispielTr": "Oğlum neyse ki tabağını hep tamamen bitiriyor."
+  },
+  {
+   "id": 8172,
+   "de": "hacken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hackt, hat gehackt",
+   "mevcutTr": "doğramak, kıymak",
+   "mevcutBeispiel": "Für die Soße hacke ich die Zwiebeln ganz klein.",
+   "mevcutBeispielTr": "Sos için soğanları çok ince doğruyorum."
+  },
+  {
+   "id": 8173,
+   "de": "reiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "reibt, hat gerieben",
+   "mevcutTr": "rendelemek, ovmak",
+   "mevcutBeispiel": "Für die Nudeln reibe ich noch etwas Käse.",
+   "mevcutBeispielTr": "Makarna için biraz daha peynir rendeliyorum."
+  },
+  {
+   "id": 8174,
+   "de": "kneten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "knetet, hat geknetet",
+   "mevcutTr": "yoğurmak",
+   "mevcutBeispiel": "Für das Brot knete ich den Teig mit den Händen.",
+   "mevcutBeispielTr": "Ekmek için hamuru ellerimle yoğuruyorum."
+  },
+  {
+   "id": 8175,
+   "de": "pressen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "presst, hat gepresst",
+   "mevcutTr": "sıkmak, preslemek",
+   "mevcutBeispiel": "Zum Frühstück presse ich eine frische Orange.",
+   "mevcutBeispielTr": "Kahvaltı için taze bir portakal sıkıyorum.",
+   "cakisan": [
+    "festziehen (B2)"
+   ]
+  },
+  {
+   "id": 8176,
+   "de": "auftauen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "taut auf, hat aufgetaut",
+   "mevcutTr": "buzunu çözmek, çözülmek",
+   "mevcutBeispiel": "Ich taue das Fleisch über Nacht im Kühlschrank auf.",
+   "mevcutBeispielTr": "Eti gece boyunca buzdolabında çözdürüyorum."
+  },
+  {
+   "id": 8177,
+   "de": "einfrieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "friert ein, hat eingefroren",
+   "mevcutTr": "dondurmak, derin dondurucuya koymak",
+   "mevcutBeispiel": "Wir frieren das restliche Brot für später ein.",
+   "mevcutBeispielTr": "Kalan ekmeği sonrası için donduruyoruz."
+  },
+  {
+   "id": 8178,
+   "de": "einweichen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "weicht ein, hat eingeweicht",
+   "mevcutTr": "suda bekletmek, ıslatmak",
+   "mevcutBeispiel": "Die Bohnen weiche ich über Nacht in kaltem Wasser ein.",
+   "mevcutBeispielTr": "Fasulyeyi gece boyunca soğuk suda bekletiyorum."
+  },
+  {
+   "id": 8179,
+   "de": "aufsetzen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "setzt auf, hat aufgesetzt",
+   "mevcutTr": "(su, kahve) ocağa koymak, takmak",
+   "mevcutBeispiel": "Ich setze schnell Wasser für den Tee auf.",
+   "mevcutBeispielTr": "Çay için hemen su koyuyorum."
+  },
+  {
+   "id": 8180,
+   "de": "abspülen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "spült ab, hat abgespült",
+   "mevcutTr": "bulaşık yıkamak, durulamak",
+   "mevcutBeispiel": "Nach dem Abendessen spüle ich das Geschirr von Hand ab.",
+   "mevcutBeispielTr": "Akşam yemeğinden sonra bulaşıkları elde yıkıyorum.",
+   "cakisan": [
+    "abwaschen (B1)"
+   ]
+  },
+  {
+   "id": 8181,
+   "de": "zusammenlegen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "legt zusammen, hat zusammengelegt",
+   "mevcutTr": "katlamak, üst üste katlamak",
+   "mevcutBeispiel": "Meine Tochter legt die T-Shirts ordentlich zusammen.",
+   "mevcutBeispielTr": "Kızım tişörtleri düzgünce katlıyor.",
+   "cakisan": [
+    "falten (A2)"
+   ]
+  },
+  {
+   "id": 8182,
+   "de": "flicken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "flickt, hat geflickt",
+   "mevcutTr": "yamamak, onarmak",
+   "mevcutBeispiel": "Meine Oma flickt meine alte Hose mit Nadel und Faden.",
+   "mevcutBeispielTr": "Babaannem eski pantolonumu iğne iplikle yamıyor.",
+   "cakisan": [
+    "stopfen (A2)"
+   ]
+  },
+  {
+   "id": 8183,
+   "de": "stopfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "stopft, hat gestopft",
+   "mevcutTr": "yamamak (çorap), tıkmak",
+   "mevcutBeispiel": "Meine Oma stopft die Löcher in meinen Socken.",
+   "mevcutBeispielTr": "Babaannem çoraplarımdaki delikleri yamıyor.",
+   "cakisan": [
+    "flicken (A2)"
+   ]
+  },
+  {
+   "id": 8184,
+   "de": "austrinken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "trinkt aus, hat ausgetrunken",
+   "mevcutTr": "içip bitirmek",
+   "mevcutBeispiel": "Trink bitte deinen Kaffee aus, wir müssen gleich los.",
+   "mevcutBeispielTr": "Lütfen kahveni bitir, birazdan çıkmamız gerek."
+  },
+  {
+   "id": 8185,
+   "de": "nageln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "nagelt, hat genagelt",
+   "mevcutTr": "çivilemek",
+   "mevcutBeispiel": "Er nagelt ein kleines Brett über die Tür.",
+   "mevcutBeispielTr": "Kapının üstüne küçük bir tahta çiviliyor."
+  },
+  {
+   "id": 8186,
+   "de": "sägen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sägt, hat gesägt",
+   "mevcutTr": "testereyle kesmek",
+   "mevcutBeispiel": "Meine Eltern sägen im Garten Holz für den Ofen.",
+   "mevcutBeispielTr": "Annemle babam bahçede soba için odun kesiyor."
+  },
+  {
+   "id": 8187,
+   "de": "ölen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ölt, hat geölt",
+   "mevcutTr": "yağlamak",
+   "mevcutBeispiel": "Einmal im Jahr ölen wir die Türen in der Wohnung.",
+   "mevcutBeispielTr": "Yılda bir kez evdeki kapıları yağlıyoruz."
+  },
+  {
+   "id": 8188,
+   "de": "schmieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schmiert, hat geschmiert",
+   "mevcutTr": "sürmek (tereyağı vb.), yağlamak",
+   "mevcutBeispiel": "Morgens schmiere ich Butter und Marmelade auf mein Brot.",
+   "mevcutBeispielTr": "Sabahları ekmeğime tereyağı ve reçel sürüyorum.",
+   "cakisan": [
+    "dauern (A1)"
+   ]
+  }
+ ]
+}

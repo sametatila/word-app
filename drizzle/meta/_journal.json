@@ -134,6 +134,13 @@
       "when": 1786965130500,
       "tag": "0018_sudden_warpath",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1787505330646,
+      "tag": "0019_modern_black_panther",
+      "breakpoints": true
     }
   ]
 }

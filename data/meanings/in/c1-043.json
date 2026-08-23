@@ -1,0 +1,580 @@
+{
+ "paket": "c1-043",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 7353,
+   "de": "durchleuchten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat durchleuchtet",
+   "mevcutTr": "didik didik incelemek, mercek altına almak",
+   "mevcutBeispiel": "Eine externe Kanzlei durchleuchtete sämtliche Beraterverträge der letzten Jahre.",
+   "mevcutBeispielTr": "Dışarıdan bir hukuk bürosu son yılların bütün danışmanlık sözleşmelerini mercek altına aldı."
+  },
+  {
+   "id": 7354,
+   "de": "schädigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat geschädigt",
+   "mevcutTr": "zarar vermek, zedelemek",
+   "mevcutBeispiel": "Der Skandal hat das Ansehen der ganzen Branche nachhaltig geschädigt.",
+   "mevcutBeispielTr": "Skandal, tüm sektörün itibarına kalıcı biçimde zarar verdi.",
+   "cakisan": [
+    "beschädigen (B1)",
+    "schaden (B1)"
+   ]
+  },
+  {
+   "id": 7355,
+   "de": "billigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gebilligt",
+   "mevcutTr": "onaylamak, hoş görmek, uygun bulmak",
+   "mevcutBeispiel": "Der Aufsichtsrat billigte die fragwürdige Praxis über Jahre stillschweigend.",
+   "mevcutBeispielTr": "Denetim kurulu bu kuşkulu uygulamayı yıllarca sessizce onayladı.",
+   "cakisan": [
+    "bestätigen (A2)",
+    "genehmigen (B1)",
+    "absegnen (B2)",
+    "bewilligen (B2)",
+    "ratifizieren (C1)"
+   ]
+  },
+  {
+   "id": 7356,
+   "de": "unterschlagen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat unterschlagen",
+   "mevcutTr": "zimmetine geçirmek, gizlemek",
+   "mevcutBeispiel": "Der Kassenwart hat über Jahre erhebliche Summen unterschlagen.",
+   "mevcutBeispielTr": "Sayman yıllar boyunca hatırı sayılır tutarları zimmetine geçirdi."
+  },
+  {
+   "id": 7357,
+   "de": "vortäuschen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vorgetäuscht",
+   "mevcutTr": "-mış gibi göstermek, numara yapmak",
+   "mevcutBeispiel": "Mit geschönten Kennzahlen täuschte die Firma wirtschaftliche Stabilität vor.",
+   "mevcutBeispielTr": "Şirket, allanıp pullanmış rakamlarla ekonomik istikrar varmış gibi gösterdi."
+  },
+  {
+   "id": 7358,
+   "de": "sich bereichern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich bereichert",
+   "mevcutTr": "haksız kazanç sağlamak, (başkasının sırtından) zenginleşmek",
+   "mevcutBeispiel": "Einzelne Manager bereicherten sich auf Kosten der Belegschaft.",
+   "mevcutBeispielTr": "Bazı yöneticiler çalışanların sırtından haksız kazanç sağladı."
+  },
+  {
+   "id": 7359,
+   "de": "auferlegen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat auferlegt",
+   "mevcutTr": "yüklemek, dayatmak, zorunlu kılmak",
+   "mevcutBeispiel": "Das Gericht erlegte dem Konzern umfangreiche Berichtspflichten auf.",
+   "mevcutBeispielTr": "Mahkeme, holdinge kapsamlı raporlama yükümlülükleri yükledi.",
+   "cakisan": [
+    "hochladen (B1)",
+    "verladen (B2)",
+    "beladen (A2)"
+   ]
+  },
+  {
+   "id": 7360,
+   "de": "integer",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dürüst, lekesiz, güvenilir",
+   "mevcutBeispiel": "Man hielt sie für eine integre und unbestechliche Vorgesetzte.",
+   "mevcutBeispielTr": "Onu dürüst ve rüşvete kapalı bir amir olarak görüyorlardı.",
+   "cakisan": [
+    "ehrlich (B1)",
+    "anständig (A2)"
+   ]
+  },
+  {
+   "id": 7361,
+   "de": "unlauter",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "haksız, dürüst olmayan",
+   "mevcutBeispiel": "Irreführende Umweltversprechen gelten als unlauterer Wettbewerb.",
+   "mevcutBeispielTr": "Yanıltıcı çevre vaatleri haksız rekabet sayılıyor."
+  },
+  {
+   "id": 7362,
+   "de": "vertretbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "savunulabilir, kabul edilebilir",
+   "mevcutBeispiel": "Ethisch vertretbar ist diese Preisgestaltung auf Dauer nicht.",
+   "mevcutBeispielTr": "Bu fiyatlandırma uzun vadede etik olarak savunulabilir değil."
+  },
+  {
+   "id": 7363,
+   "de": "ethisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "etik, ahlaki",
+   "mevcutBeispiel": "Die Entscheidung wirft grundlegende ethische Fragen auf.",
+   "mevcutBeispielTr": "Bu karar temel etik sorular doğuruyor."
+  },
+  {
+   "id": 7364,
+   "de": "wissentlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilerek, bilinçli olarak",
+   "mevcutBeispiel": "Sie hat die falschen Angaben wissentlich weitergeleitet.",
+   "mevcutBeispielTr": "Yanlış bilgileri bilerek iletti.",
+   "cakisan": [
+    "willentlich (C1)"
+   ]
+  },
+  {
+   "id": 7365,
+   "de": "gutgläubig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iyi niyetli, saf",
+   "mevcutBeispiel": "Viele Anleger vertrauten gutgläubig auf die testierten Zahlen.",
+   "mevcutBeispielTr": "Birçok yatırımcı iyi niyetle onaylanmış rakamlara güvendi.",
+   "cakisan": [
+    "wohlwollend (C1)"
+   ]
+  },
+  {
+   "id": 7366,
+   "de": "die Genauigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Genauigkeiten",
+   "mevcutTr": "kesinlik, hassasiyet, doğruluk",
+   "mevcutBeispiel": "Die Genauigkeit der Messgeräte begrenzt die möglichen Schlüsse.",
+   "mevcutBeispielTr": "Ölçüm cihazlarının hassasiyeti çıkarılabilecek sonuçları sınırlıyor."
+  },
+  {
+   "id": 7367,
+   "de": "die Näherung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Näherungen",
+   "mevcutTr": "yaklaşım, yaklaşık değer",
+   "mevcutBeispiel": "Das Modell liefert nur eine grobe Näherung an die Wirklichkeit.",
+   "mevcutBeispielTr": "Model gerçekliğe yalnızca kaba bir yaklaşıklık sunuyor.",
+   "cakisan": [
+    "die Herangehensweise (C1)"
+   ]
+  },
+  {
+   "id": 7368,
+   "de": "die Beweisführung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beweisführungen",
+   "mevcutTr": "kanıtlama, ispat yöntemi",
+   "mevcutBeispiel": "Seine Beweisführung wirkt elegant, hält der Prüfung aber nicht stand.",
+   "mevcutBeispielTr": "Kanıtlaması zarif görünüyor ama incelemeye dayanmıyor."
+  },
+  {
+   "id": 7369,
+   "de": "die Wiederholbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tekrarlanabilirlik",
+   "mevcutBeispiel": "Die Wiederholbarkeit von Experimenten gilt als Kern wissenschaftlicher Arbeit.",
+   "mevcutBeispielTr": "Deneylerin tekrarlanabilirliği bilimsel çalışmanın özü sayılır."
+  },
+  {
+   "id": 7370,
+   "de": "die Fehlerquelle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fehlerquellen",
+   "mevcutTr": "hata kaynağı",
+   "mevcutBeispiel": "Mögliche Fehlerquellen werden im letzten Abschnitt offen benannt.",
+   "mevcutBeispielTr": "Olası hata kaynakları son bölümde açıkça sıralanıyor."
+  },
+  {
+   "id": 7371,
+   "de": "die Sichtweise",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sichtweisen",
+   "mevcutTr": "bakış açısı, görüş",
+   "mevcutBeispiel": "Seine Sichtweise setzte sich erst Jahrzehnte später durch.",
+   "mevcutBeispielTr": "Onun bakış açısı ancak onlarca yıl sonra kabul gördü.",
+   "cakisan": [
+    "der Standpunkt (B1)",
+    "die Perspektive (C1)",
+    "der Blickwinkel (C1)"
+   ]
+  },
+  {
+   "id": 7372,
+   "de": "die Denkschule",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Denkschulen",
+   "mevcutTr": "düşünce okulu, ekol",
+   "mevcutBeispiel": "Beide Denkschulen streiten seit Langem über denselben Grundbegriff.",
+   "mevcutBeispielTr": "İki düşünce okulu uzun zamandır aynı temel kavram üzerinde tartışıyor."
+  },
+  {
+   "id": 7373,
+   "de": "der Anwendungsbezug",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Anwendungsbezüge",
+   "mevcutTr": "uygulamayla bağ, pratiğe dönüklük",
+   "mevcutBeispiel": "Dem Projekt fehlt bislang jeder erkennbare Anwendungsbezug.",
+   "mevcutBeispielTr": "Projenin şimdiye dek uygulamayla görünür bir bağı yok.",
+   "cakisan": [
+    "der Praxisbezug (B2)"
+   ]
+  },
+  {
+   "id": 7374,
+   "de": "der Erkenntnisgewinn",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erkenntnisgewinne",
+   "mevcutTr": "bilgi kazanımı, yeni bilgi",
+   "mevcutBeispiel": "Der Erkenntnisgewinn rechtfertigt den enormen Aufwand kaum.",
+   "mevcutBeispielTr": "Elde edilen bilgi kazanımı bu muazzam emeği pek karşılamıyor."
+  },
+  {
+   "id": 7375,
+   "de": "der Aufsatz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aufsätze",
+   "mevcutTr": "makale, deneme",
+   "mevcutBeispiel": "Ihr Aufsatz gilt inzwischen als Standardtext des Fachs.",
+   "mevcutBeispielTr": "Makalesi artık alanın temel metinlerinden sayılıyor.",
+   "cakisan": [
+    "der Artikel (A1)"
+   ]
+  },
+  {
+   "id": 7376,
+   "de": "das Literaturverzeichnis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Literaturverzeichnisse",
+   "mevcutTr": "kaynakça",
+   "mevcutBeispiel": "Das Literaturverzeichnis umfasst über dreihundert einzelne Titel.",
+   "mevcutBeispielTr": "Kaynakça üç yüzden fazla ayrı eser içeriyor."
+  },
+  {
+   "id": 7377,
+   "de": "die Begutachtung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Begutachtungen",
+   "mevcutTr": "değerlendirme, hakem incelemesi",
+   "mevcutBeispiel": "Die anonyme Begutachtung durch Fachleute dauerte mehrere Monate.",
+   "mevcutBeispielTr": "Uzmanlarca yapılan anonim değerlendirme birkaç ay sürdü.",
+   "cakisan": [
+    "die Auswertung (C1)",
+    "die Einschätzung (B2)",
+    "die Bewertung (B2)",
+    "die Beurteilung (B2)",
+    "die Evaluierung (C1)"
+   ]
+  },
+  {
+   "id": 7378,
+   "de": "der Fachkollege",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fachkollegen",
+   "mevcutTr": "meslektaş, alandan meslektaş",
+   "mevcutBeispiel": "Zwei Fachkollegen bestätigten die Ergebnisse in einem eigenen Versuch.",
+   "mevcutBeispielTr": "İki meslektaş sonuçları kendi deneyleriyle doğruladı."
+  },
+  {
+   "id": 7379,
+   "de": "das Fachgebiet",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fachgebiete",
+   "mevcutTr": "uzmanlık alanı, disiplin",
+   "mevcutBeispiel": "In ihrem Fachgebiet gilt sie als führende Stimme.",
+   "mevcutBeispielTr": "Kendi uzmanlık alanında öncü bir ses sayılıyor."
+  },
+  {
+   "id": 7380,
+   "de": "die Antragstellung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Antragstellungen",
+   "mevcutTr": "başvuru yapma, başvuru süreci",
+   "mevcutBeispiel": "Die Antragstellung kostet oft mehr Zeit als die eigentliche Arbeit.",
+   "mevcutBeispielTr": "Başvuru süreci çoğu zaman asıl işten daha çok vakit alıyor."
+  },
+  {
+   "id": 7381,
+   "de": "die Tagung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Tagungen",
+   "mevcutTr": "konferans, bilimsel toplantı",
+   "mevcutBeispiel": "Auf der Tagung stellte sie erste vorläufige Ergebnisse vor.",
+   "mevcutBeispielTr": "Konferansta ilk geçici sonuçlarını sundu.",
+   "cakisan": [
+    "die Konferenz (B1)"
+   ]
+  },
+  {
+   "id": 7382,
+   "de": "die Fachdebatte",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fachdebatten",
+   "mevcutTr": "alan içi tartışma, uzmanlık tartışması",
+   "mevcutBeispiel": "Die Fachdebatte über diesen Begriff dauert nun schon Jahrzehnte.",
+   "mevcutBeispielTr": "Bu kavram üzerine alan içi tartışma onlarca yıldır sürüyor."
+  },
+  {
+   "id": 7383,
+   "de": "die Streitfrage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Streitfragen",
+   "mevcutTr": "tartışmalı konu, ihtilaflı soru",
+   "mevcutBeispiel": "Diese Streitfrage spaltet die Forschung bis heute.",
+   "mevcutBeispielTr": "Bu tartışmalı konu araştırmacıları bugün hâlâ ikiye bölüyor."
+  },
+  {
+   "id": 7384,
+   "de": "die Lehrmeinung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Lehrmeinungen",
+   "mevcutTr": "yerleşik görüş, hâkim öğreti",
+   "mevcutBeispiel": "Die herrschende Lehrmeinung geriet durch neue Funde ins Wanken.",
+   "mevcutBeispielTr": "Hâkim görüş yeni buluntularla sarsıldı."
+  },
+  {
+   "id": 7385,
+   "de": "stützen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gestützt",
+   "mevcutTr": "desteklemek, dayanak oluşturmak",
+   "mevcutBeispiel": "Die neuen Funde stützen die These nur teilweise.",
+   "mevcutBeispielTr": "Yeni buluntular tezi ancak kısmen destekliyor.",
+   "cakisan": [
+    "fördern (B1)",
+    "unterstützen (B1)",
+    "untermauern (C1)",
+    "befürworten (B2)"
+   ]
+  },
+  {
+   "id": 7386,
+   "de": "erproben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat erprobt",
+   "mevcutTr": "denemek, sınamak",
+   "mevcutBeispiel": "Das Verfahren wurde zunächst an kleinen Gruppen erprobt.",
+   "mevcutBeispielTr": "Yöntem önce küçük gruplar üzerinde denendi.",
+   "cakisan": [
+    "probieren (A2)",
+    "versuchen (A2)",
+    "ausprobieren (A2)",
+    "anprobieren (A2)"
+   ]
+  },
+  {
+   "id": 7387,
+   "de": "aufzeigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aufgezeigt",
+   "mevcutTr": "göstermek, ortaya koymak",
+   "mevcutBeispiel": "Die Untersuchung zeigt deutliche Lücken im bisherigen Wissen auf.",
+   "mevcutBeispielTr": "İnceleme mevcut bilgideki belirgin boşlukları ortaya koyuyor.",
+   "cakisan": [
+    "zeigen (A1)",
+    "vormachen (A2)",
+    "vorführen (A2)"
+   ]
+  },
+  {
+   "id": 7388,
+   "de": "promovieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat promoviert",
+   "mevcutTr": "doktora yapmak",
+   "mevcutBeispiel": "Sie promovierte mit einer Arbeit über frühneuzeitliche Briefe.",
+   "mevcutBeispielTr": "Erken modern dönem mektupları üzerine bir çalışmayla doktora yaptı."
+  },
+  {
+   "id": 7389,
+   "de": "wegweisend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yol gösterici, çığır açıcı",
+   "mevcutBeispiel": "Der Aufsatz gilt heute als wegweisend für die gesamte Disziplin.",
+   "mevcutBeispielTr": "Makale bugün tüm disiplin için çığır açıcı sayılıyor."
+  },
+  {
+   "id": 7390,
+   "de": "strittig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tartışmalı, ihtilaflı",
+   "mevcutBeispiel": "Ob der Effekt überhaupt existiert, bleibt weiterhin strittig.",
+   "mevcutBeispielTr": "Etkinin var olup olmadığı hâlâ tartışmalı.",
+   "cakisan": [
+    "kontrovers (C1)",
+    "umstritten (B2)"
+   ]
+  },
+  {
+   "id": 7391,
+   "de": "mehrdeutig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çok anlamlı, muğlak",
+   "mevcutBeispiel": "Der Begriff wird in der Literatur auffallend mehrdeutig verwendet.",
+   "mevcutBeispielTr": "Kavram literatürde dikkat çekici biçimde muğlak kullanılıyor."
+  },
+  {
+   "id": 7392,
+   "de": "die Unumkehrbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geri dönülmezlik, tersine çevrilemezlik",
+   "mevcutBeispiel": "Die Unumkehrbarkeit dieser Entwicklung macht rasches Handeln nötig.",
+   "mevcutBeispielTr": "Bu gelişmenin geri dönülmez oluşu hızlı davranmayı gerektiriyor."
+  },
+  {
+   "id": 7393,
+   "de": "die Eintrittswahrscheinlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Eintrittswahrscheinlichkeiten",
+   "mevcutTr": "gerçekleşme olasılığı",
+   "mevcutBeispiel": "Die Eintrittswahrscheinlichkeit des Ereignisses lässt sich kaum seriös angeben.",
+   "mevcutBeispielTr": "Olayın gerçekleşme olasılığı ciddi biçimde neredeyse belirtilemiyor."
+  },
+  {
+   "id": 7394,
+   "de": "das Gefahrenpotenzial",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gefahrenpotenziale",
+   "mevcutTr": "tehlike potansiyeli, risk barındırma",
+   "mevcutBeispiel": "Fachleute streiten über das Gefahrenpotenzial der neuen Technologie.",
+   "mevcutBeispielTr": "Uzmanlar yeni teknolojinin tehlike potansiyeli konusunda tartışıyor."
+  },
+  {
+   "id": 7395,
+   "de": "das Frühwarnsystem",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Frühwarnsysteme",
+   "mevcutTr": "erken uyarı sistemi",
+   "mevcutBeispiel": "Ein gutes Frühwarnsystem meldet Auffälligkeiten, bevor der Schaden entsteht.",
+   "mevcutBeispielTr": "İyi bir erken uyarı sistemi, zarar oluşmadan önce anormallikleri bildirir."
+  },
+  {
+   "id": 7396,
+   "de": "die Ungewissheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ungewissheiten",
+   "mevcutTr": "belirsizlik, bilinmezlik",
+   "mevcutBeispiel": "Planung unter Ungewissheit verlangt Demut gegenüber den eigenen Zahlen.",
+   "mevcutBeispielTr": "Bilinmezlik altında planlama, kendi rakamlarına karşı alçakgönüllülük ister.",
+   "cakisan": [
+    "die Unsicherheit (C1)"
+   ]
+  },
+  {
+   "id": 7397,
+   "de": "der Zeithorizont",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zeithorizonte",
+   "mevcutTr": "zaman ufku, öngörü süresi",
+   "mevcutBeispiel": "Jenseits eines Zeithorizonts von zwanzig Jahren wird jede Aussage vage.",
+   "mevcutBeispielTr": "Yirmi yıllık bir zaman ufkunun ötesinde her ifade muğlaklaşıyor."
+  },
+  {
+   "id": 7398,
+   "de": "die Datenlage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Datenlagen",
+   "mevcutTr": "veri durumu, eldeki veriler",
+   "mevcutBeispiel": "Bei dieser dünnen Datenlage sind belastbare Aussagen kaum möglich.",
+   "mevcutBeispielTr": "Bu zayıf veri durumunda güvenilir yargılar neredeyse imkânsız."
+  },
+  {
+   "id": 7399,
+   "de": "der Richtwert",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Richtwerte",
+   "mevcutTr": "referans değer, yönlendirici değer",
+   "mevcutBeispiel": "Der genannte Richtwert ist eine Orientierung, keine verbindliche Vorgabe.",
+   "mevcutBeispielTr": "Belirtilen referans değer bir yön göstergesidir, bağlayıcı bir kural değil."
+  },
+  {
+   "id": 7400,
+   "de": "die Folgenabschätzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Folgenabschätzungen",
+   "mevcutTr": "etki değerlendirmesi, sonuç analizi",
+   "mevcutBeispiel": "Vor der Einführung wurde eine ausführliche Folgenabschätzung vorgelegt.",
+   "mevcutBeispielTr": "Uygulamaya geçmeden önce ayrıntılı bir etki değerlendirmesi sunuldu."
+  },
+  {
+   "id": 7401,
+   "de": "der Kollateralschaden",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kollateralschäden",
+   "mevcutTr": "yan hasar, dolaylı zarar",
+   "mevcutBeispiel": "Die Kollateralschäden dieser Sparpolitik zeigen sich erst Jahre später.",
+   "mevcutBeispielTr": "Bu tasarruf politikasının yan hasarları ancak yıllar sonra görünüyor."
+  },
+  {
+   "id": 7402,
+   "de": "die Verwundbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verwundbarkeiten",
+   "mevcutTr": "kırılganlık, zarar görebilirlik",
+   "mevcutBeispiel": "Die Pandemie hat die Verwundbarkeit globaler Lieferketten offengelegt.",
+   "mevcutBeispielTr": "Salgın, küresel tedarik zincirlerinin kırılganlığını gözler önüne serdi."
+  }
+ ]
+}

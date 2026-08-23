@@ -1,0 +1,557 @@
+{
+ "paket": "b2-031",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5145,
+   "de": "die Stadtverwaltung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Stadtverwaltungen",
+   "mevcutTr": "belediye idaresi, şehir yönetimi",
+   "mevcutBeispiel": "Die Stadtverwaltung bearbeitet den Antrag innerhalb von vier Wochen.",
+   "mevcutBeispielTr": "Belediye idaresi başvuruyu dört hafta içinde işleme alıyor."
+  },
+  {
+   "id": 5146,
+   "de": "die Sitzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sitzungen",
+   "mevcutTr": "oturum, toplantı",
+   "mevcutBeispiel": "Die Sitzung wurde nach drei Stunden ohne Ergebnis unterbrochen.",
+   "mevcutBeispielTr": "Oturum üç saat sonra sonuçsuz kaldığı için ara verildi."
+  },
+  {
+   "id": 5147,
+   "de": "die Gesetzgebung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yasama, mevzuat",
+   "mevcutBeispiel": "Die Gesetzgebung hinkt der technischen Entwicklung deutlich hinterher.",
+   "mevcutBeispielTr": "Yasama, teknik gelişmenin belirgin biçimde gerisinde kalıyor."
+  },
+  {
+   "id": 5148,
+   "de": "die Fraktion",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fraktionen",
+   "mevcutTr": "meclis grubu, fraksiyon",
+   "mevcutBeispiel": "Die größte Fraktion stellt den Vorsitzenden des Ausschusses.",
+   "mevcutBeispielTr": "En büyük meclis grubu komisyon başkanını belirliyor."
+  },
+  {
+   "id": 5149,
+   "de": "der Parteitag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Parteitage",
+   "mevcutTr": "parti kongresi, kurultay",
+   "mevcutBeispiel": "Auf dem Parteitag in Hannover wurde heftig über Steuern gestritten.",
+   "mevcutBeispielTr": "Hannover'deki parti kongresinde vergiler üzerine sert tartışmalar yaşandı."
+  },
+  {
+   "id": 5150,
+   "de": "die Amtszeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Amtszeiten",
+   "mevcutTr": "görev süresi",
+   "mevcutBeispiel": "Seine zweite Amtszeit endet im Frühjahr nächsten Jahres.",
+   "mevcutBeispielTr": "İkinci görev süresi gelecek yıl ilkbaharda sona eriyor."
+  },
+  {
+   "id": 5151,
+   "de": "das Mandat",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Mandate",
+   "mevcutTr": "milletvekilliği, temsil yetkisi",
+   "mevcutBeispiel": "Die kleine Partei verlor bei der Wahl drei Mandate.",
+   "mevcutBeispielTr": "Küçük parti seçimde üç milletvekilliği kaybetti."
+  },
+  {
+   "id": 5152,
+   "de": "die Demokratie",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Demokratien",
+   "mevcutTr": "demokrasi",
+   "mevcutBeispiel": "Eine Demokratie lebt davon, dass Menschen sich einmischen.",
+   "mevcutBeispielTr": "Demokrasi, insanların işin içine karışmasıyla ayakta durur."
+  },
+  {
+   "id": 5153,
+   "de": "die Wählerschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wählerschaften",
+   "mevcutTr": "seçmen kitlesi",
+   "mevcutBeispiel": "Die Partei hat ihre traditionelle Wählerschaft in den Städten verloren.",
+   "mevcutBeispielTr": "Parti şehirlerdeki geleneksel seçmen kitlesini kaybetti."
+  },
+  {
+   "id": 5154,
+   "de": "die Demonstration",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Demonstrationen",
+   "mevcutTr": "gösteri, yürüyüş",
+   "mevcutBeispiel": "An der Demonstration gegen die Mieterhöhungen nahmen Tausende teil.",
+   "mevcutBeispielTr": "Kira artışlarına karşı düzenlenen gösteriye binlerce kişi katıldı.",
+   "cakisan": [
+    "die Vorstellung (B1)",
+    "die Aufführung (B2)"
+   ]
+  },
+  {
+   "id": 5155,
+   "de": "die Petition",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Petitionen",
+   "mevcutTr": "dilekçe, imza kampanyası",
+   "mevcutBeispiel": "Die Petition für den Erhalt des Schwimmbads sammelte 20000 Unterschriften.",
+   "mevcutBeispielTr": "Yüzme havuzunun korunması için açılan dilekçe 20000 imza topladı.",
+   "cakisan": [
+    "das Gesuch (C1)"
+   ]
+  },
+  {
+   "id": 5156,
+   "de": "die Transparenz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "şeffaflık",
+   "mevcutBeispiel": "Bei der Vergabe der Aufträge fehlt es an Transparenz.",
+   "mevcutBeispielTr": "İhalelerin dağıtımında şeffaflık eksik."
+  },
+  {
+   "id": 5157,
+   "de": "das Gemeinwohl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kamu yararı, ortak iyi",
+   "mevcutBeispiel": "Der Politiker beruft sich bei jeder Entscheidung auf das Gemeinwohl.",
+   "mevcutBeispielTr": "Siyasetçi her kararında kamu yararına dayanıyor."
+  },
+  {
+   "id": 5158,
+   "de": "die Bekanntmachung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bekanntmachungen",
+   "mevcutTr": "resmî duyuru, ilan",
+   "mevcutBeispiel": "Die amtliche Bekanntmachung hing zwei Wochen im Schaukasten.",
+   "mevcutBeispielTr": "Resmî duyuru iki hafta boyunca ilan panosunda asılı kaldı."
+  },
+  {
+   "id": 5159,
+   "de": "die Anhörung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anhörungen",
+   "mevcutTr": "dinleme oturumu, görüş alma",
+   "mevcutBeispiel": "Vor der Entscheidung findet eine öffentliche Anhörung der Anwohner statt.",
+   "mevcutBeispielTr": "Karardan önce mahalle sakinleriyle açık bir dinleme oturumu yapılacak."
+  },
+  {
+   "id": 5160,
+   "de": "der Einspruch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Einsprüche",
+   "mevcutTr": "itiraz",
+   "mevcutBeispiel": "Gegen den Bescheid können Sie innerhalb eines Monats Einspruch erheben.",
+   "mevcutBeispielTr": "Karara karşı bir ay içinde itiraz edebilirsiniz.",
+   "cakisan": [
+    "der Einwand (C1)"
+   ]
+  },
+  {
+   "id": 5161,
+   "de": "das Misstrauensvotum",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Misstrauensvoten",
+   "mevcutTr": "güvensizlik oyu",
+   "mevcutBeispiel": "Die Regierung überstand das Misstrauensvotum mit nur zwei Stimmen.",
+   "mevcutBeispielTr": "Hükümet güvensizlik oylamasını yalnızca iki oy farkla atlattı."
+  },
+  {
+   "id": 5162,
+   "de": "das Wahllokal",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wahllokale",
+   "mevcutTr": "sandık merkezi, oy verme yeri",
+   "mevcutBeispiel": "Die Wahllokale öffnen um acht Uhr und schließen um achtzehn Uhr.",
+   "mevcutBeispielTr": "Sandık merkezleri saat sekizde açılıp on sekizde kapanıyor."
+  },
+  {
+   "id": 5163,
+   "de": "die Hochrechnung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Hochrechnungen",
+   "mevcutTr": "seçim tahmini, projeksiyon",
+   "mevcutBeispiel": "Die erste Hochrechnung zeigte einen knappen Vorsprung der Grünen.",
+   "mevcutBeispielTr": "İlk seçim tahmini Yeşiller'in kıl payı önde olduğunu gösterdi."
+  },
+  {
+   "id": 5164,
+   "de": "die Auszählung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Auszählungen",
+   "mevcutTr": "oy sayımı",
+   "mevcutBeispiel": "Die Auszählung der Briefwahlstimmen dauerte bis in die Nacht.",
+   "mevcutBeispielTr": "Mektupla verilen oyların sayımı gece yarısına kadar sürdü."
+  },
+  {
+   "id": 5165,
+   "de": "das Wahlrecht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "oy hakkı, seçim hukuku",
+   "mevcutBeispiel": "Das Wahlrecht ab sechzehn wird in mehreren Bundesländern diskutiert.",
+   "mevcutBeispielTr": "On altı yaşından itibaren oy hakkı birçok eyalette tartışılıyor."
+  },
+  {
+   "id": 5166,
+   "de": "die Pressekonferenz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Pressekonferenzen",
+   "mevcutTr": "basın toplantısı",
+   "mevcutBeispiel": "Der Minister verließ die Pressekonferenz ohne eine einzige Frage zu beantworten.",
+   "mevcutBeispielTr": "Bakan tek bir soruya bile cevap vermeden basın toplantısını terk etti."
+  },
+  {
+   "id": 5167,
+   "de": "das Wahlversprechen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wahlversprechen",
+   "mevcutTr": "seçim vaadi",
+   "mevcutBeispiel": "Von den Wahlversprechen ist nach zwei Jahren wenig übrig geblieben.",
+   "mevcutBeispielTr": "İki yıl sonra seçim vaatlerinden geriye pek bir şey kalmadı."
+  },
+  {
+   "id": 5168,
+   "de": "der Machtwechsel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Machtwechsel",
+   "mevcutTr": "iktidar değişimi",
+   "mevcutBeispiel": "Nach zwölf Jahren kam es endlich zu einem Machtwechsel.",
+   "mevcutBeispielTr": "On iki yıl sonra nihayet bir iktidar değişimi yaşandı."
+  },
+  {
+   "id": 5169,
+   "de": "die Legislaturperiode",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Legislaturperioden",
+   "mevcutTr": "yasama dönemi",
+   "mevcutBeispiel": "Das Gesetz soll noch in dieser Legislaturperiode verabschiedet werden.",
+   "mevcutBeispielTr": "Yasanın bu yasama döneminde çıkarılması planlanıyor."
+  },
+  {
+   "id": 5170,
+   "de": "das Parlament",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Parlamente",
+   "mevcutTr": "parlamento, meclis",
+   "mevcutBeispiel": "Das Parlament stimmte gestern über den umstrittenen Entwurf ab.",
+   "mevcutBeispielTr": "Parlamento dün tartışmalı tasarıyı oyladı."
+  },
+  {
+   "id": 5171,
+   "de": "die Politikverdrossenheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "siyasetten bıkkınlık",
+   "mevcutBeispiel": "Die wachsende Politikverdrossenheit zeigt sich an der niedrigen Beteiligung.",
+   "mevcutBeispielTr": "Artan siyaset bıkkınlığı düşük katılımda kendini gösteriyor."
+  },
+  {
+   "id": 5172,
+   "de": "die Steuererhöhung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Steuererhöhungen",
+   "mevcutTr": "vergi artışı",
+   "mevcutBeispiel": "Vor der Wahl schließt jede Partei eine Steuererhöhung aus.",
+   "mevcutBeispielTr": "Seçim öncesinde her parti vergi artışını reddediyor."
+  },
+  {
+   "id": 5173,
+   "de": "die Rechenschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hesap verme",
+   "mevcutBeispiel": "Gewählte Vertreter müssen den Bürgern Rechenschaft über ihre Arbeit ablegen.",
+   "mevcutBeispielTr": "Seçilmiş temsilciler yaptıkları işin hesabını vatandaşa vermek zorundadır."
+  },
+  {
+   "id": 5174,
+   "de": "das Wahlergebnis",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wahlergebnisse",
+   "mevcutTr": "seçim sonucu",
+   "mevcutBeispiel": "Das vorläufige Wahlergebnis wird kurz nach Mitternacht erwartet.",
+   "mevcutBeispielTr": "Geçici seçim sonucunun gece yarısından kısa süre sonra açıklanması bekleniyor."
+  },
+  {
+   "id": 5175,
+   "de": "die Vertrauensfrage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vertrauensfragen",
+   "mevcutTr": "güvenoyu istemi",
+   "mevcutBeispiel": "Der Kanzler stellte im Dezember überraschend die Vertrauensfrage.",
+   "mevcutBeispielTr": "Başbakan aralık ayında beklenmedik biçimde güvenoyu istedi."
+  },
+  {
+   "id": 5176,
+   "de": "das Grundrecht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Grundrechte",
+   "mevcutTr": "temel hak",
+   "mevcutBeispiel": "Die Versammlungsfreiheit ist ein Grundrecht und keine Gefälligkeit des Staates.",
+   "mevcutBeispielTr": "Toplanma özgürlüğü bir temel haktır, devletin lütfu değil."
+  },
+  {
+   "id": 5177,
+   "de": "die Bürgerbeteiligung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bürgerbeteiligungen",
+   "mevcutTr": "yurttaş katılımı",
+   "mevcutBeispiel": "Bei großen Bauprojekten ist eine frühe Bürgerbeteiligung inzwischen üblich.",
+   "mevcutBeispielTr": "Büyük inşaat projelerinde erken yurttaş katılımı artık olağan hâle geldi."
+  },
+  {
+   "id": 5178,
+   "de": "kandidieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat kandidiert",
+   "mevcutTr": "adaylığını koymak, aday olmak",
+   "mevcutBeispiel": "Sie kandidiert im Herbst zum ersten Mal für den Stadtrat.",
+   "mevcutBeispielTr": "Sonbaharda ilk kez şehir meclisi için aday oluyor."
+  },
+  {
+   "id": 5179,
+   "de": "regieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat regiert",
+   "mevcutTr": "yönetmek, iktidarda olmak",
+   "mevcutBeispiel": "Die beiden Parteien regieren das Land seit vier Jahren gemeinsam.",
+   "mevcutBeispielTr": "İki parti dört yıldır ülkeyi birlikte yönetiyor.",
+   "cakisan": [
+    "führen (B1)",
+    "leiten (B1)"
+   ]
+  },
+  {
+   "id": 5180,
+   "de": "befürworten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat befürwortet",
+   "mevcutTr": "desteklemek, olumlu bulmak",
+   "mevcutBeispiel": "Eine knappe Mehrheit befürwortet den Ausbau des Radwegenetzes.",
+   "mevcutBeispielTr": "Kıl payı bir çoğunluk bisiklet yolu ağının genişletilmesini destekliyor.",
+   "cakisan": [
+    "fördern (B1)",
+    "unterstützen (B1)",
+    "untermauern (C1)",
+    "stützen (C1)"
+   ]
+  },
+  {
+   "id": 5181,
+   "de": "ernennen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ernannt",
+   "mevcutTr": "atamak, tayin etmek",
+   "mevcutBeispiel": "Der Rat ernannte sie zur neuen Leiterin des Ordnungsamts.",
+   "mevcutBeispielTr": "Meclis onu zabıta müdürlüğünün yeni başkanı olarak atadı."
+  },
+  {
+   "id": 5182,
+   "de": "vereidigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vereidigt",
+   "mevcutTr": "yemin ettirmek, göreve yemin ile başlatmak",
+   "mevcutBeispiel": "Die neuen Minister wurden am Mittwoch im Parlament vereidigt.",
+   "mevcutBeispielTr": "Yeni bakanlar çarşamba günü mecliste yemin ettirildi."
+  },
+  {
+   "id": 5183,
+   "de": "abschaffen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgeschafft",
+   "mevcutTr": "kaldırmak, ilga etmek",
+   "mevcutBeispiel": "Die Gebühren für Kindergärten wurden im ganzen Land abgeschafft.",
+   "mevcutBeispielTr": "Anaokulu ücretleri ülke genelinde kaldırıldı.",
+   "cakisan": [
+    "aufheben (B1)",
+    "heben (B1)",
+    "anheben (A2)"
+   ]
+  },
+  {
+   "id": 5184,
+   "de": "reformieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat reformiert",
+   "mevcutTr": "reform yapmak, yenilemek",
+   "mevcutBeispiel": "Das Rentensystem soll bis 2030 grundlegend reformiert werden.",
+   "mevcutBeispielTr": "Emeklilik sisteminin 2030'a kadar kökten reforme edilmesi planlanıyor."
+  },
+  {
+   "id": 5185,
+   "de": "erlassen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erlassen",
+   "mevcutTr": "çıkarmak, yürürlüğe koymak",
+   "mevcutBeispiel": "Die Stadt hat ein Verbot für laute Feuerwerke erlassen.",
+   "mevcutBeispielTr": "Şehir, gürültülü havai fişekler için bir yasak çıkardı.",
+   "cakisan": [
+    "abnehmen (B1)",
+    "ausziehen (B1)",
+    "abbauen (B2)",
+    "ableiten (C1)"
+   ]
+  },
+  {
+   "id": 5186,
+   "de": "unterzeichnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat unterzeichnet",
+   "mevcutTr": "imzalamak",
+   "mevcutBeispiel": "Über 50000 Menschen haben den Aufruf bereits unterzeichnet.",
+   "mevcutBeispielTr": "50000'den fazla kişi çağrıyı çoktan imzaladı.",
+   "cakisan": [
+    "unterschreiben (A1)"
+   ]
+  },
+  {
+   "id": 5187,
+   "de": "überstimmen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat überstimmt",
+   "mevcutTr": "oylamada yenmek, oy çokluğuyla reddetmek",
+   "mevcutBeispiel": "Die kleine Fraktion wurde bei der Abstimmung deutlich überstimmt.",
+   "mevcutBeispielTr": "Küçük grup oylamada açık farkla azınlıkta kaldı."
+  },
+  {
+   "id": 5188,
+   "de": "aufrufen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgerufen",
+   "mevcutTr": "çağrıda bulunmak, çağırmak",
+   "mevcutBeispiel": "Die Gewerkschaft rief für Freitag zu einem Warnstreik auf.",
+   "mevcutBeispielTr": "Sendika cuma günü için uyarı grevi çağrısı yaptı."
+  },
+  {
+   "id": 5189,
+   "de": "kürzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gekürzt",
+   "mevcutTr": "kısmak, azaltmak (bütçe, metin)",
+   "mevcutBeispiel": "Die Mittel für Bibliotheken wurden erneut um zehn Prozent gekürzt.",
+   "mevcutBeispielTr": "Kütüphanelere ayrılan kaynak yeniden yüzde on azaltıldı.",
+   "cakisan": [
+    "drosseln (B2)"
+   ]
+  },
+  {
+   "id": 5190,
+   "de": "erheben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erhoben",
+   "mevcutTr": "toplamak, tahsil etmek, ileri sürmek",
+   "mevcutBeispiel": "Die Gemeinde erhebt seit Januar eine Gebühr für Straßenreinigung.",
+   "mevcutBeispielTr": "Belediye ocak ayından beri sokak temizliği için ücret alıyor.",
+   "cakisan": [
+    "aufräumen (A1)",
+    "sammeln (A2)",
+    "abräumen (A2)",
+    "einsammeln (A2)"
+   ]
+  },
+  {
+   "id": 5191,
+   "de": "einbringen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingebracht",
+   "mevcutTr": "sunmak, gündeme getirmek",
+   "mevcutBeispiel": "Die Opposition brachte im Rat einen eigenen Vorschlag ein.",
+   "mevcutBeispielTr": "Muhalefet mecliste kendi önerisini gündeme getirdi.",
+   "cakisan": [
+    "anbieten (A1)",
+    "bieten (B1)",
+    "präsentieren (B1)",
+    "einreichen (C1)",
+    "vortragen (B2)",
+    "darbieten (C1)"
+   ]
+  },
+  {
+   "id": 5192,
+   "de": "kommunal",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "belediyeye ait, yerel",
+   "mevcutBeispiel": "Über den Bau von Radwegen wird auf kommunaler Ebene entschieden.",
+   "mevcutBeispielTr": "Bisiklet yollarının yapımına yerel yönetim düzeyinde karar veriliyor."
+  },
+  {
+   "id": 5193,
+   "de": "einstimmig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "oybirliğiyle",
+   "mevcutBeispiel": "Der Rat nahm den Vorschlag am Ende einstimmig an.",
+   "mevcutBeispielTr": "Meclis öneriyi sonunda oybirliğiyle kabul etti."
+  },
+  {
+   "id": 5194,
+   "de": "mehrheitlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "oy çokluğuyla, çoğunluğun oyuyla",
+   "mevcutBeispiel": "Die Bevölkerung lehnt das Projekt mehrheitlich ab.",
+   "mevcutBeispielTr": "Halk projeyi çoğunlukla reddediyor."
+  }
+ ]
+}

@@ -1,0 +1,559 @@
+{
+ "paket": "b2-013",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4243,
+   "de": "das Pflichtfach",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Pflichtfächer",
+   "mevcutTr": "zorunlu ders",
+   "mevcutBeispiel": "Statistik ist in diesem Studiengang ein Pflichtfach.",
+   "mevcutBeispielTr": "Bu bölümde istatistik zorunlu bir derstir."
+  },
+  {
+   "id": 4244,
+   "de": "der Werdegang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Werdegänge",
+   "mevcutTr": "geçmiş, gelişim süreci",
+   "mevcutBeispiel": "Im Vorstellungsgespräch schilderte sie ihren beruflichen Werdegang.",
+   "mevcutBeispielTr": "Mülakatta mesleki geçmişini anlattı.",
+   "cakisan": [
+    "die Vergangenheit (B1)"
+   ]
+  },
+  {
+   "id": 4245,
+   "de": "die Laufbahn",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Laufbahnen",
+   "mevcutTr": "kariyer, meslek yolu",
+   "mevcutBeispiel": "Nach dem Referendariat begann seine Laufbahn als Lehrer.",
+   "mevcutBeispielTr": "Stajyerlik döneminden sonra öğretmenlik kariyeri başladı.",
+   "cakisan": [
+    "die Karriere (B1)"
+   ]
+  },
+  {
+   "id": 4246,
+   "de": "der Leistungsdruck",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "başarı baskısı",
+   "mevcutBeispiel": "Der Leistungsdruck an Gymnasien nimmt seit Jahren zu.",
+   "mevcutBeispielTr": "Liselerdeki başarı baskısı yıllardır artıyor."
+  },
+  {
+   "id": 4247,
+   "de": "die Prüfungsangst",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Prüfungsängste",
+   "mevcutTr": "sınav kaygısı",
+   "mevcutBeispiel": "Gegen ihre Prüfungsangst hilft ihr eine einfache Atemübung.",
+   "mevcutBeispielTr": "Sınav kaygısına karşı ona basit bir nefes egzersizi iyi geliyor."
+  },
+  {
+   "id": 4248,
+   "de": "die Promotion",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Promotionen",
+   "mevcutTr": "doktora",
+   "mevcutBeispiel": "Nach der Promotion arbeitete sie in der Forschung weiter.",
+   "mevcutBeispielTr": "Doktoradan sonra araştırmada çalışmayı sürdürdü."
+  },
+  {
+   "id": 4249,
+   "de": "der Absolvent",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Absolventen",
+   "mevcutTr": "mezun",
+   "mevcutBeispiel": "Die meisten Absolventen finden innerhalb eines Jahres eine Stelle.",
+   "mevcutBeispielTr": "Mezunların çoğu bir yıl içinde iş buluyor."
+  },
+  {
+   "id": 4250,
+   "de": "der Dozent",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Dozenten",
+   "mevcutTr": "öğretim görevlisi",
+   "mevcutBeispiel": "Der Dozent verschob das Seminar auf nächsten Dienstag.",
+   "mevcutBeispielTr": "Öğretim görevlisi semineri gelecek salıya erteledi."
+  },
+  {
+   "id": 4251,
+   "de": "sich einprägen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingeprägt",
+   "mevcutTr": "aklına kazımak, ezberlemek",
+   "mevcutBeispiel": "Die Formeln muss man sich vor der Klausur einprägen.",
+   "mevcutBeispielTr": "Formülleri sınavdan önce aklına kazımak gerekiyor."
+  },
+  {
+   "id": 4252,
+   "de": "nachholen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat nachgeholt",
+   "mevcutTr": "telafi etmek, sonradan tamamlamak",
+   "mevcutBeispiel": "Den verpassten Stoff holt sie am Wochenende nach.",
+   "mevcutBeispielTr": "Kaçırdığı konuyu hafta sonu telafi ediyor.",
+   "cakisan": [
+    "kompensieren (C1)"
+   ]
+  },
+  {
+   "id": 4253,
+   "de": "abfragen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgefragt",
+   "mevcutTr": "sorarak yoklamak, sözlü sormak",
+   "mevcutBeispiel": "Der Vater fragt seinen Sohn jeden Abend die Vokabeln ab.",
+   "mevcutBeispielTr": "Baba her akşam oğluna kelimeleri soruyor."
+  },
+  {
+   "id": 4254,
+   "de": "vermitteln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vermittelt",
+   "mevcutTr": "aktarmak, kazandırmak, aracılık etmek",
+   "mevcutBeispiel": "Der Kurs vermittelt die Grundlagen des wissenschaftlichen Arbeitens.",
+   "mevcutBeispielTr": "Kurs bilimsel çalışmanın temellerini kazandırıyor.",
+   "cakisan": [
+    "wiedergeben (B2)",
+    "weitergeben (C1)"
+   ]
+  },
+  {
+   "id": 4255,
+   "de": "sich spezialisieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat spezialisiert",
+   "mevcutTr": "uzmanlaşmak",
+   "mevcutBeispiel": "Nach dem Studium hat er sich auf Steuerrecht spezialisiert.",
+   "mevcutBeispielTr": "Öğreniminden sonra vergi hukukunda uzmanlaştı."
+  },
+  {
+   "id": 4256,
+   "de": "nachweisen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat nachgewiesen",
+   "mevcutTr": "belgelemek, kanıtlamak",
+   "mevcutBeispiel": "Alle Bewerber müssen ausreichende Deutschkenntnisse durch ein Zertifikat nachweisen.",
+   "mevcutBeispielTr": "Bütün adaylar yeterli Almanca bilgisini bir sertifikayla belgelemek zorunda.",
+   "cakisan": [
+    "bescheinigen (B2)",
+    "dokumentieren (C1)"
+   ]
+  },
+  {
+   "id": 4257,
+   "de": "erlernen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erlernt",
+   "mevcutTr": "öğrenmek, meslek edinmek",
+   "mevcutBeispiel": "Sie hat ihren Beruf in einem kleinen Betrieb erlernt.",
+   "mevcutBeispielTr": "Mesleğini küçük bir işletmede öğrendi.",
+   "cakisan": [
+    "lernen (A1)",
+    "erfahren (B1)",
+    "herausfinden (A2)"
+   ]
+  },
+  {
+   "id": 4258,
+   "de": "festigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gefestigt",
+   "mevcutTr": "pekiştirmek, sağlamlaştırmak",
+   "mevcutBeispiel": "Regelmäßige Übungen festigen das Gelernte dauerhaft.",
+   "mevcutBeispielTr": "Düzenli alıştırmalar öğrenileni kalıcı olarak pekiştirir.",
+   "cakisan": [
+    "erhärten (C1)"
+   ]
+  },
+  {
+   "id": 4259,
+   "de": "begreifen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat begriffen",
+   "mevcutTr": "kavramak, anlamak",
+   "mevcutBeispiel": "Erst im dritten Anlauf begriff er die Aufgabe.",
+   "mevcutBeispielTr": "Ancak üçüncü denemede soruyu kavradı."
+  },
+  {
+   "id": 4260,
+   "de": "erläutern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erläutert",
+   "mevcutTr": "açıklamak, izah etmek",
+   "mevcutBeispiel": "Bitte erläutern Sie Ihre Methode in wenigen Sätzen.",
+   "mevcutBeispielTr": "Lütfen yönteminizi birkaç cümleyle açıklayın.",
+   "cakisan": [
+    "erklären (A1)"
+   ]
+  },
+  {
+   "id": 4261,
+   "de": "schwänzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschwänzt",
+   "mevcutTr": "dersi asmak, kırmak",
+   "mevcutBeispiel": "Er hat den ganzen Monat den Sportunterricht geschwänzt.",
+   "mevcutBeispielTr": "Bütün ay beden dersini astı."
+  },
+  {
+   "id": 4262,
+   "de": "scheitern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist gescheitert",
+   "mevcutTr": "başarısız olmak, suya düşmek",
+   "mevcutBeispiel": "Sein Versuch, das Studium abzuschließen, ist zweimal gescheitert.",
+   "mevcutBeispielTr": "Öğrenimini bitirme çabası iki kez suya düştü.",
+   "cakisan": [
+    "scheitern an (B2)",
+    "durchfallen (B2)"
+   ]
+  },
+  {
+   "id": 4263,
+   "de": "abbrechen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgebrochen",
+   "mevcutTr": "yarıda bırakmak, kesmek",
+   "mevcutBeispiel": "Aus finanziellen Gründen brach sie das Studium ab.",
+   "mevcutBeispielTr": "Maddi nedenlerle öğrenimini yarıda bıraktı."
+  },
+  {
+   "id": 4264,
+   "de": "aufholen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgeholt",
+   "mevcutTr": "açığı kapatmak, yetişmek",
+   "mevcutBeispiel": "Nach der Krankheit holte er den Stoff schnell auf.",
+   "mevcutBeispielTr": "Hastalıktan sonra konu açığını hızla kapattı."
+  },
+  {
+   "id": 4265,
+   "de": "referieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat referiert",
+   "mevcutTr": "sunum yapmak, bildiri sunmak",
+   "mevcutBeispiel": "Morgen referiert sie über die Reformen im Bildungswesen.",
+   "mevcutBeispielTr": "Yarın eğitim alanındaki reformlar üzerine sunum yapacak."
+  },
+  {
+   "id": 4266,
+   "de": "vortragen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vorgetragen",
+   "mevcutTr": "sunmak, anlatmak",
+   "mevcutBeispiel": "Jede Gruppe trägt ihre Ergebnisse in zehn Minuten vor.",
+   "mevcutBeispielTr": "Her grup sonuçlarını on dakikada sunuyor.",
+   "cakisan": [
+    "anbieten (A1)",
+    "bieten (B1)",
+    "präsentieren (B1)",
+    "einreichen (C1)",
+    "einbringen (B2)",
+    "darbieten (C1)"
+   ]
+  },
+  {
+   "id": 4267,
+   "de": "anrechnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angerechnet",
+   "mevcutTr": "saymak, mahsup etmek",
+   "mevcutBeispiel": "Die Hochschule rechnet ihm die bisherigen Leistungen an.",
+   "mevcutBeispielTr": "Yüksekokul şimdiye kadarki derslerini geçerli sayıyor.",
+   "cakisan": [
+    "zählen (B1)"
+   ]
+  },
+  {
+   "id": 4268,
+   "de": "auswerten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgewertet",
+   "mevcutTr": "değerlendirmek, çözümlemek",
+   "mevcutBeispiel": "Die Ergebnisse der Umfrage werden im Seminar ausgewertet.",
+   "mevcutBeispielTr": "Anketin sonuçları seminerde değerlendirilecek.",
+   "cakisan": [
+    "einschätzen (B2)",
+    "beurteilen (B2)",
+    "verwerten (B2)",
+    "bewerten (A2)"
+   ]
+  },
+  {
+   "id": 4269,
+   "de": "büffeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gebüffelt",
+   "mevcutTr": "ineklemek, sıkı çalışmak",
+   "mevcutBeispiel": "Vor dem Examen büffelte er wochenlang Vokabeln.",
+   "mevcutBeispielTr": "Sınav öncesinde haftalarca kelime çalıştı."
+  },
+  {
+   "id": 4270,
+   "de": "anleiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angeleitet",
+   "mevcutTr": "yol göstermek, iş başında eğitmek",
+   "mevcutBeispiel": "Erfahrene Kollegen leiten die neuen Auszubildenden geduldig an.",
+   "mevcutBeispielTr": "Deneyimli meslektaşlar yeni çırakları sabırla yönlendiriyor."
+  },
+  {
+   "id": 4271,
+   "de": "einüben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingeübt",
+   "mevcutTr": "alıştırma yaparak öğrenmek, çalışmak",
+   "mevcutBeispiel": "Die Klasse übt den Dialog für die Prüfung ein.",
+   "mevcutBeispielTr": "Sınıf sınav için diyaloğu çalışıyor."
+  },
+  {
+   "id": 4272,
+   "de": "schulisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "okulla ilgili, okuldaki",
+   "mevcutBeispiel": "Seine schulischen Leistungen haben sich deutlich verbessert.",
+   "mevcutBeispielTr": "Okuldaki başarısı belirgin biçimde arttı."
+  },
+  {
+   "id": 4273,
+   "de": "akademisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "akademik",
+   "mevcutBeispiel": "Für die Stelle wird ein akademischer Abschluss vorausgesetzt.",
+   "mevcutBeispielTr": "Bu pozisyon için akademik bir derece şart koşuluyor."
+  },
+  {
+   "id": 4274,
+   "de": "praxisnah",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "uygulamaya dönük, pratiğe yakın",
+   "mevcutBeispiel": "Der Unterricht ist praxisnah und arbeitet mit echten Fällen.",
+   "mevcutBeispielTr": "Ders uygulamaya dönük ve gerçek örneklerle işleniyor."
+  },
+  {
+   "id": 4275,
+   "de": "lernbereit",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "öğrenmeye istekli",
+   "mevcutBeispiel": "Der Betrieb sucht lernbereite junge Leute ohne Vorkenntnisse.",
+   "mevcutBeispielTr": "İşletme ön bilgisi olmayan, öğrenmeye istekli gençler arıyor."
+  },
+  {
+   "id": 4276,
+   "de": "wissbegierig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "meraklı, öğrenmeye hevesli",
+   "mevcutBeispiel": "Wissbegierige Kinder stellen den ganzen Tag Fragen.",
+   "mevcutBeispielTr": "Meraklı çocuklar bütün gün soru sorar.",
+   "cakisan": [
+    "gespannt (B1)",
+    "neugierig (B1)"
+   ]
+  },
+  {
+   "id": 4277,
+   "de": "anspruchsvoll",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "zorlu, nitelikli; (kişi için) seçici",
+   "mevcutBeispiel": "Der Kurs ist anspruchsvoll und verlangt tägliche Vorbereitung.",
+   "mevcutBeispielTr": "Kurs zorlu ve her gün hazırlık gerektiriyor."
+  },
+  {
+   "id": 4278,
+   "de": "berufsbegleitend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çalışırken yapılan, işle birlikte yürütülen",
+   "mevcutBeispiel": "Sie macht einen berufsbegleitenden Master in Betriebswirtschaft.",
+   "mevcutBeispielTr": "Çalışırken işletme alanında yüksek lisans yapıyor."
+  },
+  {
+   "id": 4279,
+   "de": "fortgeschritten",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ileri düzey, ilerlemiş",
+   "mevcutBeispiel": "Der Kurs richtet sich an fortgeschrittene Teilnehmer.",
+   "mevcutBeispielTr": "Kurs ileri düzey katılımcılara yönelik."
+  },
+  {
+   "id": 4280,
+   "de": "zielstrebig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "azimli, hedefe kilitlenmiş",
+   "mevcutBeispiel": "Zielstrebig arbeitete sie auf ihren Abschluss hin.",
+   "mevcutBeispielTr": "Azimle mezuniyetine doğru çalıştı."
+  },
+  {
+   "id": 4281,
+   "de": "die Tagesordnung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Tagesordnungen",
+   "mevcutTr": "gündem",
+   "mevcutBeispiel": "Die Tagesordnung wird eine Woche vor der Sitzung verschickt.",
+   "mevcutBeispielTr": "Gündem, toplantıdan bir hafta önce gönderilir."
+  },
+  {
+   "id": 4282,
+   "de": "das Protokoll",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Protokolle",
+   "mevcutTr": "tutanak, protokol",
+   "mevcutBeispiel": "Wer schreibt heute das Protokoll der Besprechung?",
+   "mevcutBeispielTr": "Bugünkü toplantının tutanağını kim yazacak?"
+  },
+  {
+   "id": 4283,
+   "de": "die Wortmeldung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wortmeldungen",
+   "mevcutTr": "söz talebi, söz isteme",
+   "mevcutBeispiel": "Gibt es zu diesem Punkt noch weitere Wortmeldungen?",
+   "mevcutBeispielTr": "Bu madde hakkında başka söz almak isteyen var mı?"
+  },
+  {
+   "id": 4284,
+   "de": "die Sitzungsleitung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sitzungsleitungen",
+   "mevcutTr": "toplantı yönetimi, oturum başkanlığı",
+   "mevcutBeispiel": "Die Sitzungsleitung übernimmt in dieser Woche der Abteilungsleiter.",
+   "mevcutBeispielTr": "Bu hafta toplantı yönetimini bölüm müdürü üstleniyor."
+  },
+  {
+   "id": 4285,
+   "de": "die Fristverlängerung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fristverlängerungen",
+   "mevcutTr": "süre uzatımı, mühlet uzatma",
+   "mevcutBeispiel": "Wir haben beim Kunden eine Fristverlängerung um zwei Wochen erreicht.",
+   "mevcutBeispielTr": "Müşteriden iki haftalık bir süre uzatımı aldık."
+  },
+  {
+   "id": 4286,
+   "de": "der Meilenstein",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Meilensteine",
+   "mevcutTr": "kilometre taşı, dönüm noktası",
+   "mevcutBeispiel": "Der erste Meilenstein des Projekts ist termingerecht erreicht worden.",
+   "mevcutBeispielTr": "Projenin ilk kilometre taşına zamanında ulaşıldı."
+  },
+  {
+   "id": 4287,
+   "de": "der Projektauftrag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Projektaufträge",
+   "mevcutTr": "proje görevlendirmesi, proje tanımı",
+   "mevcutBeispiel": "Im Projektauftrag stehen Ziele, Budget und Verantwortlichkeiten.",
+   "mevcutBeispielTr": "Proje görev belgesinde hedefler, bütçe ve sorumluluklar yer alır."
+  },
+  {
+   "id": 4288,
+   "de": "das Arbeitspaket",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Arbeitspakete",
+   "mevcutTr": "iş paketi",
+   "mevcutBeispiel": "Jedes Arbeitspaket hat einen festen Verantwortlichen im Team.",
+   "mevcutBeispielTr": "Her iş paketinin ekipte belirli bir sorumlusu var."
+  },
+  {
+   "id": 4289,
+   "de": "der Zwischenbericht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zwischenberichte",
+   "mevcutTr": "ara rapor",
+   "mevcutBeispiel": "Der Zwischenbericht liegt der Geschäftsführung seit Montag vor.",
+   "mevcutBeispielTr": "Ara rapor pazartesiden beri yönetimin elinde."
+  },
+  {
+   "id": 4290,
+   "de": "der Sachstand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sachstände",
+   "mevcutTr": "mevcut durum, güncel durum",
+   "mevcutBeispiel": "Bitte informieren Sie mich kurz über den aktuellen Sachstand.",
+   "mevcutBeispielTr": "Lütfen beni güncel durum hakkında kısaca bilgilendirin."
+  },
+  {
+   "id": 4291,
+   "de": "der Vorgang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vorgänge",
+   "mevcutTr": "işlem, dosya, süreç",
+   "mevcutBeispiel": "Der Vorgang wurde an die zuständige Kollegin abgegeben.",
+   "mevcutBeispielTr": "İşlem, yetkili meslektaşımıza devredildi."
+  },
+  {
+   "id": 4292,
+   "de": "die Ablage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ablagen",
+   "mevcutTr": "dosyalama, evrak yeri",
+   "mevcutBeispiel": "Die digitale Ablage ist inzwischen übersichtlicher als der Aktenschrank.",
+   "mevcutBeispielTr": "Dijital dosyalama artık evrak dolabından daha düzenli."
+  }
+ ]
+}

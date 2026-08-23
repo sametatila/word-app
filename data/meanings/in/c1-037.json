@@ -1,0 +1,531 @@
+{
+ "paket": "c1-037",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 7053,
+   "de": "verehren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verehrt",
+   "mevcutTr": "saygı duymak, hürmet etmek, ululamak",
+   "mevcutBeispiel": "In dieser Region verehrt man den Heiligen bis heute.",
+   "mevcutBeispielTr": "Bu bölgede azize bugüne dek hürmet edilir.",
+   "cakisan": [
+    "respektieren (B2)"
+   ]
+  },
+  {
+   "id": 7054,
+   "de": "anbeten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angebetet",
+   "mevcutTr": "tapmak, ibadet etmek",
+   "mevcutBeispiel": "Sie beten dort seit Generationen dieselbe Gottheit an.",
+   "mevcutBeispielTr": "Orada kuşaklardır aynı tanrıya tapıyorlar."
+  },
+  {
+   "id": 7055,
+   "de": "segnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gesegnet",
+   "mevcutTr": "kutsamak, hayır dua etmek",
+   "mevcutBeispiel": "Der Priester segnete die Versammelten am Ende der Feier.",
+   "mevcutBeispielTr": "Rahip, törenin sonunda orada toplananları kutsadı."
+  },
+  {
+   "id": 7056,
+   "de": "missionieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat missioniert",
+   "mevcutTr": "misyonerlik yapmak, din yaymak",
+   "mevcutBeispiel": "Die Gemeinschaft missioniert nicht, sondern wartet auf Interessierte.",
+   "mevcutBeispielTr": "Topluluk misyonerlik yapmaz, ilgi duyanları bekler."
+  },
+  {
+   "id": 7057,
+   "de": "predigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gepredigt",
+   "mevcutTr": "vaaz vermek",
+   "mevcutBeispiel": "Er predigte über Nachsicht, ohne jemanden zu belehren.",
+   "mevcutBeispielTr": "Kimseye ders vermeden hoşgörü üzerine vaaz verdi."
+  },
+  {
+   "id": 7058,
+   "de": "pilgern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist gepilgert",
+   "mevcutTr": "hacca gitmek, ziyarete gitmek",
+   "mevcutBeispiel": "Jährlich pilgern Zehntausende zu diesem abgelegenen Bergkloster.",
+   "mevcutBeispielTr": "Her yıl on binlerce kişi bu ıssız dağ manastırını ziyarete gider."
+  },
+  {
+   "id": 7059,
+   "de": "fasten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gefastet",
+   "mevcutTr": "oruç tutmak, perhiz yapmak",
+   "mevcutBeispiel": "Viele fasten aus gesundheitlichen und nicht aus religiösen Gründen.",
+   "mevcutBeispielTr": "Birçok kişi dinî nedenlerle değil sağlık nedenleriyle oruç tutuyor."
+  },
+  {
+   "id": 7060,
+   "de": "entsagen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entsagt",
+   "mevcutTr": "vazgeçmek, el etek çekmek",
+   "mevcutBeispiel": "Sie entsagte dem Besitz und lebte fortan im Kloster.",
+   "mevcutBeispielTr": "Mülkünden vazgeçti ve bundan sonra manastırda yaşadı.",
+   "cakisan": [
+    "aufgeben (B1)",
+    "verzichten (B1)",
+    "absehen (C1)"
+   ]
+  },
+  {
+   "id": 7061,
+   "de": "tolerieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat toleriert",
+   "mevcutTr": "hoşgörmek, tolere etmek",
+   "mevcutBeispiel": "Abweichende Meinungen wurden innerhalb der Gemeinde kaum toleriert.",
+   "mevcutBeispielTr": "Farklı görüşler cemaat içinde neredeyse hiç hoşgörülmedi."
+  },
+  {
+   "id": 7062,
+   "de": "verketzern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verketzert",
+   "mevcutTr": "sapkın ilan etmek, karalamak",
+   "mevcutBeispiel": "Kritische Stimmen wurden damals als abtrünnig verketzert.",
+   "mevcutBeispielTr": "Eleştirel sesler o dönemde dönek diye sapkın ilan edildi."
+  },
+  {
+   "id": 7063,
+   "de": "weihen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat geweiht",
+   "mevcutTr": "takdis etmek, adamak",
+   "mevcutBeispiel": "Die neue Kapelle wurde in einer schlichten Feier geweiht.",
+   "mevcutBeispielTr": "Yeni şapel sade bir törenle takdis edildi."
+  },
+  {
+   "id": 7064,
+   "de": "abschwören",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgeschworen",
+   "mevcutTr": "yeminle reddetmek, dönmek",
+   "mevcutBeispiel": "Unter Druck schwor er seiner Überzeugung öffentlich ab.",
+   "mevcutBeispielTr": "Baskı altında inancını alenen reddetti."
+  },
+  {
+   "id": 7065,
+   "de": "konvertieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist konvertiert",
+   "mevcutTr": "din değiştirmek, geçmek",
+   "mevcutBeispiel": "Sie ist als Erwachsene zu einer anderen Konfession konvertiert.",
+   "mevcutBeispielTr": "Yetişkinliğinde başka bir mezhebe geçti."
+  },
+  {
+   "id": 7066,
+   "de": "praktizieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat praktiziert",
+   "mevcutTr": "uygulamak, yaşamak",
+   "mevcutBeispiel": "Er praktiziert seinen Glauben eher still als demonstrativ.",
+   "mevcutBeispielTr": "İnancını gösterişli biçimde değil, daha çok sessizce yaşıyor.",
+   "cakisan": [
+    "anwenden (B1)"
+   ]
+  },
+  {
+   "id": 7067,
+   "de": "sich distanzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich distanziert",
+   "mevcutTr": "mesafe koymak, uzak durmak",
+   "mevcutBeispiel": "Die Leitung distanzierte sich klar von den radikalen Äußerungen.",
+   "mevcutBeispielTr": "Yönetim, radikal açıklamalardan açıkça uzak durdu."
+  },
+  {
+   "id": 7068,
+   "de": "sich berufen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich berufen",
+   "mevcutTr": "dayanmak, referans göstermek",
+   "mevcutBeispiel": "Beide Seiten berufen sich auf dieselbe heilige Schrift.",
+   "mevcutBeispielTr": "Her iki taraf da aynı kutsal metne dayanıyor.",
+   "cakisan": [
+    "beruhen (B2)",
+    "aushalten (B2)",
+    "durchhalten (B2)"
+   ]
+  },
+  {
+   "id": 7069,
+   "de": "weltlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dünyevi, dinî olmayan",
+   "mevcutBeispiel": "Weltliche und geistliche Macht waren hier lange verflochten.",
+   "mevcutBeispielTr": "Dünyevi ve ruhani iktidar burada uzun süre iç içeydi.",
+   "cakisan": [
+    "profan (C1)"
+   ]
+  },
+  {
+   "id": 7070,
+   "de": "interreligiös",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dinler arası",
+   "mevcutBeispiel": "Der interreligiöse Dialog kommt in der Praxis nur langsam voran.",
+   "mevcutBeispielTr": "Dinler arası diyalog pratikte ancak yavaş ilerliyor."
+  },
+  {
+   "id": 7071,
+   "de": "andächtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "huşu içinde, dikkat kesilmiş",
+   "mevcutBeispiel": "Die Zuhörer verfolgten die Zeremonie andächtig und völlig still.",
+   "mevcutBeispielTr": "Dinleyiciler töreni huşu içinde ve tam bir sessizlikle izledi."
+  },
+  {
+   "id": 7072,
+   "de": "ehrwürdig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "saygıdeğer, muhterem",
+   "mevcutBeispiel": "Das ehrwürdige Gebäude dient seit dem Mittelalter demselben Zweck.",
+   "mevcutBeispielTr": "Saygıdeğer yapı, Orta Çağ'dan beri aynı amaca hizmet ediyor."
+  },
+  {
+   "id": 7073,
+   "de": "pluralistisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çoğulcu",
+   "mevcutBeispiel": "In einer pluralistischen Gesellschaft konkurrieren viele Sinnangebote miteinander.",
+   "mevcutBeispielTr": "Çoğulcu bir toplumda pek çok anlam önerisi birbiriyle yarışır."
+  },
+  {
+   "id": 7074,
+   "de": "der Bedeutungswandel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bedeutungswandel",
+   "mevcutTr": "anlam değişmesi, anlam kayması",
+   "mevcutBeispiel": "Das Wort hat im Lauf der Jahrhunderte einen erstaunlichen Bedeutungswandel durchgemacht.",
+   "mevcutBeispielTr": "Kelime yüzyıllar içinde şaşırtıcı bir anlam değişimi geçirdi."
+  },
+  {
+   "id": 7075,
+   "de": "die Äquivalenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Äquivalenzen",
+   "mevcutTr": "eşdeğerlik, denklik",
+   "mevcutBeispiel": "Eine vollständige Äquivalenz zwischen zwei Sprachen gibt es selten.",
+   "mevcutBeispielTr": "İki dil arasında tam bir eşdeğerlik nadiren bulunur."
+  },
+  {
+   "id": 7076,
+   "de": "der Sinngehalt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sinngehalte",
+   "mevcutTr": "anlam içeriği, öz anlam",
+   "mevcutBeispiel": "Die Übersetzung bewahrt den Sinngehalt, nicht aber den Klang des Originals.",
+   "mevcutBeispielTr": "Çeviri, özgün metnin anlamını korur ama sesini korumaz."
+  },
+  {
+   "id": 7077,
+   "de": "der Sprachgebrauch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprachgebräuche",
+   "mevcutTr": "dil kullanımı, kullanım alışkanlığı",
+   "mevcutBeispiel": "Im heutigen Sprachgebrauch klingt dieser Ausdruck deutlich veraltet.",
+   "mevcutBeispielTr": "Bugünkü dil kullanımında bu ifade epeyce eskimiş duruyor."
+  },
+  {
+   "id": 7078,
+   "de": "die Sprachebene",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprachebenen",
+   "mevcutTr": "dil düzeyi, dil kaydı",
+   "mevcutBeispiel": "Der Redner wechselte mitten im Vortrag die Sprachebene.",
+   "mevcutBeispielTr": "Konuşmacı sunumun ortasında dil düzeyini değiştirdi."
+  },
+  {
+   "id": 7079,
+   "de": "die Stilebene",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stilebenen",
+   "mevcutTr": "üslup düzeyi",
+   "mevcutBeispiel": "Beide Wörter bedeuten dasselbe, gehören aber verschiedenen Stilebenen an.",
+   "mevcutBeispielTr": "İki kelime de aynı şeyi anlatıyor ama farklı üslup düzeylerine ait."
+  },
+  {
+   "id": 7080,
+   "de": "die Zielsprache",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zielsprachen",
+   "mevcutTr": "erek dil, hedef dil",
+   "mevcutBeispiel": "Der Übersetzer muss vor allem die Zielsprache souverän beherrschen.",
+   "mevcutBeispielTr": "Çevirmenin her şeyden önce erek dile tam hâkim olması gerekir."
+  },
+  {
+   "id": 7081,
+   "de": "die Ausgangssprache",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ausgangssprachen",
+   "mevcutTr": "kaynak dil",
+   "mevcutBeispiel": "Manche Wortspiele der Ausgangssprache gehen bei der Übertragung verloren.",
+   "mevcutBeispielTr": "Kaynak dildeki bazı sözcük oyunları aktarımda kayboluyor."
+  },
+  {
+   "id": 7082,
+   "de": "das Wortfeld",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wortfelder",
+   "mevcutTr": "kelime alanı, anlam alanı",
+   "mevcutBeispiel": "Alle diese Verben gehören zum Wortfeld der Wahrnehmung.",
+   "mevcutBeispielTr": "Bütün bu fiiller algı kelime alanına aittir."
+  },
+  {
+   "id": 7083,
+   "de": "der Sinnzusammenhang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sinnzusammenhänge",
+   "mevcutTr": "bağlam, anlam bağlantısı",
+   "mevcutBeispiel": "Aus dem Sinnzusammenhang gerissen wirkt die Aussage schlicht falsch.",
+   "mevcutBeispielTr": "Anlam bağlamından koparılınca bu söz düpedüz yanlış görünüyor.",
+   "cakisan": [
+    "der Kontext (C1)"
+   ]
+  },
+  {
+   "id": 7084,
+   "de": "die Ungenauigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ungenauigkeiten",
+   "mevcutTr": "kesinlik eksikliği, yanlışlık",
+   "mevcutBeispiel": "Kleine Ungenauigkeiten in der Terminologie führen später zu großen Missverständnissen.",
+   "mevcutBeispielTr": "Terminolojideki küçük belirsizlikler sonradan büyük yanlış anlamalara yol açıyor."
+  },
+  {
+   "id": 7085,
+   "de": "die Abstufung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abstufungen",
+   "mevcutTr": "derecelendirme, incelikli fark",
+   "mevcutBeispiel": "Höflichkeitsformen kennen im Deutschen feine Abstufungen.",
+   "mevcutBeispielTr": "Almancada nezaket biçimlerinin ince dereceleri vardır."
+  },
+  {
+   "id": 7086,
+   "de": "der Sprechakt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprechakte",
+   "mevcutTr": "söz edimi",
+   "mevcutBeispiel": "Eine Frage kann als Sprechakt auch eine höfliche Aufforderung sein.",
+   "mevcutBeispielTr": "Bir soru, söz edimi olarak kibar bir rica da olabilir."
+  },
+  {
+   "id": 7087,
+   "de": "die Äußerung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Äußerungen",
+   "mevcutTr": "söz, ifade, beyan",
+   "mevcutBeispiel": "Jede Äußerung gewinnt ihren Sinn erst in einer bestimmten Situation.",
+   "mevcutBeispielTr": "Her söz anlamını ancak belirli bir durumda kazanır."
+  },
+  {
+   "id": 7088,
+   "de": "die Unübersetzbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çevrilemezlik",
+   "mevcutBeispiel": "Die Unübersetzbarkeit mancher Begriffe ist ein altes Thema der Sprachtheorie.",
+   "mevcutBeispielTr": "Bazı kavramların çevrilemezliği dil kuramının eski bir konusudur."
+  },
+  {
+   "id": 7089,
+   "de": "der Beiklang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beiklänge",
+   "mevcutTr": "çağrışım, yan ton",
+   "mevcutBeispiel": "Das Wort trägt einen abschätzigen Beiklang, den kein Wörterbuch verzeichnet.",
+   "mevcutBeispielTr": "Kelime, hiçbir sözlükte yazmayan küçümseyici bir tınıya sahip."
+  },
+  {
+   "id": 7090,
+   "de": "die Nebenbedeutung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nebenbedeutungen",
+   "mevcutTr": "yan anlam",
+   "mevcutBeispiel": "Im Fachtext stört die spöttische Nebenbedeutung des Begriffs erheblich.",
+   "mevcutBeispielTr": "Uzmanlık metninde terimin alaycı yan anlamı epeyce rahatsız ediyor.",
+   "cakisan": [
+    "die Konnotation (C1)"
+   ]
+  },
+  {
+   "id": 7091,
+   "de": "die Sprachnorm",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprachnormen",
+   "mevcutTr": "dil normu, ölçünlü kullanım",
+   "mevcutBeispiel": "Die Sprachnorm folgt dem Gebrauch, nicht umgekehrt.",
+   "mevcutBeispielTr": "Dil normu kullanımı izler, tersi olmaz."
+  },
+  {
+   "id": 7092,
+   "de": "die Terminologie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Terminologien",
+   "mevcutTr": "terminoloji, terim dizgesi",
+   "mevcutBeispiel": "Ohne einheitliche Terminologie wird jede Fachdiskussion mühsam.",
+   "mevcutBeispielTr": "Tek biçimli bir terminoloji olmadan her uzmanlık tartışması zahmetli olur."
+  },
+  {
+   "id": 7093,
+   "de": "die Begriffsbestimmung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Begriffsbestimmungen",
+   "mevcutTr": "kavram tanımı, tanımlama",
+   "mevcutBeispiel": "Am Anfang der Studie steht eine sorgfältige Begriffsbestimmung.",
+   "mevcutBeispielTr": "Çalışmanın başında özenli bir kavram tanımı yer alıyor."
+  },
+  {
+   "id": 7094,
+   "de": "die Begrifflichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Begrifflichkeiten",
+   "mevcutTr": "kavram örgüsü, kavramsal çerçeve",
+   "mevcutBeispiel": "Die Autorin übernimmt die Begrifflichkeit der älteren Forschung nicht.",
+   "mevcutBeispielTr": "Yazar, eski araştırmanın kavram örgüsünü devralmıyor."
+  },
+  {
+   "id": 7095,
+   "de": "die Bezeichnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bezeichnungen",
+   "mevcutTr": "adlandırma, terim",
+   "mevcutBeispiel": "Für dieselbe Sache gibt es in den Regionen ganz verschiedene Bezeichnungen.",
+   "mevcutBeispielTr": "Aynı şey için bölgelere göre bambaşka adlandırmalar var."
+  },
+  {
+   "id": 7096,
+   "de": "der Wortsinn",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sözcüğün anlamı, lafzî anlam",
+   "mevcutBeispiel": "Im engeren Wortsinn trifft der Begriff hier gar nicht zu.",
+   "mevcutBeispielTr": "Dar anlamıyla bu terim burada hiç geçerli değil."
+  },
+  {
+   "id": 7097,
+   "de": "das Lehnwort",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Lehnwörter",
+   "mevcutTr": "ödünç kelime, alıntı sözcük",
+   "mevcutBeispiel": "Viele Lehnwörter haben ihre ursprüngliche Bedeutung längst verloren.",
+   "mevcutBeispielTr": "Birçok ödünç kelime asıl anlamını çoktan yitirdi."
+  },
+  {
+   "id": 7098,
+   "de": "die Untertreibung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Untertreibungen",
+   "mevcutTr": "olduğundan az gösterme, küçümseyerek anlatma",
+   "mevcutBeispiel": "Von einem kleinen Problem zu sprechen war eine glatte Untertreibung.",
+   "mevcutBeispielTr": "Küçük bir sorundan söz etmek düpedüz hafife almaktı."
+  },
+  {
+   "id": 7099,
+   "de": "die Übertreibung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Übertreibungen",
+   "mevcutTr": "abartma, mübalağa",
+   "mevcutBeispiel": "Ohne Übertreibung lässt sich das Ausmaß des Wandels kaum beschreiben.",
+   "mevcutBeispielTr": "Abartmadan bu değişimin boyutunu anlatmak neredeyse imkânsız."
+  },
+  {
+   "id": 7100,
+   "de": "die Verharmlosung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verharmlosungen",
+   "mevcutTr": "önemsizleştirme, hafifletme",
+   "mevcutBeispiel": "Solche Ausdrücke dienen der Verharmlosung eines ernsten Sachverhalts.",
+   "mevcutBeispielTr": "Bu tür ifadeler ciddi bir durumu önemsizleştirmeye yarıyor."
+  },
+  {
+   "id": 7101,
+   "de": "die Herabsetzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Herabsetzungen",
+   "mevcutTr": "küçümseme, aşağılama",
+   "mevcutBeispiel": "Die Bemerkung enthält eine kaum verhüllte Herabsetzung der Gegenseite.",
+   "mevcutBeispielTr": "Bu söz, karşı tarafa yönelik neredeyse örtüsüz bir küçümseme içeriyor."
+  },
+  {
+   "id": 7102,
+   "de": "die Auslassung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Auslassungen",
+   "mevcutTr": "atlama, eksiltme",
+   "mevcutBeispiel": "Gerade die Auslassungen im Text verraten die Absicht des Verfassers.",
+   "mevcutBeispielTr": "Metindeki eksiltmeler tam da yazarın niyetini ele veriyor."
+  }
+ ]
+}

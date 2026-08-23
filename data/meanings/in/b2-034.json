@@ -1,0 +1,532 @@
+{
+ "paket": "b2-034",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5295,
+   "de": "sich orientieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich orientiert",
+   "mevcutTr": "yön bulmak, kendine yön vermek",
+   "mevcutBeispiel": "Ohne Handy konnte er sich in der Altstadt kaum orientieren.",
+   "mevcutBeispielTr": "Telefon olmadan tarihi merkezde yön bulmakta zorlandı."
+  },
+  {
+   "id": 5296,
+   "de": "durchqueren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat durchquert",
+   "mevcutTr": "boydan boya geçmek, kat etmek",
+   "mevcutBeispiel": "Die Gruppe hat die Wüste in elf Tagen durchquert.",
+   "mevcutBeispielTr": "Grup çölü on bir günde baştan başa geçti."
+  },
+  {
+   "id": 5297,
+   "de": "ansteuern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angesteuert",
+   "mevcutTr": "-e yönelmek, rotasını çevirmek",
+   "mevcutBeispiel": "Das Schiff steuerte wegen des Sturms einen geschützten Hafen an.",
+   "mevcutBeispielTr": "Gemi fırtına yüzünden korunaklı bir limana yöneldi."
+  },
+  {
+   "id": 5298,
+   "de": "vermarkten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vermarktet",
+   "mevcutTr": "pazarlamak, satışa sunmak",
+   "mevcutBeispiel": "Die Region vermarktet sich seit Jahren als sanftes Urlaubsziel.",
+   "mevcutBeispielTr": "Bölge yıllardır kendini doğa dostu bir tatil yeri olarak pazarlıyor."
+  },
+  {
+   "id": 5299,
+   "de": "einschränken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingeschränkt",
+   "mevcutTr": "sınırlamak, kısıtlamak",
+   "mevcutBeispiel": "Die Stadt will die Zahl der Ferienwohnungen deutlich einschränken.",
+   "mevcutBeispielTr": "Şehir tatil dairelerinin sayısını belirgin biçimde sınırlamak istiyor.",
+   "cakisan": [
+    "beschränken (B1)",
+    "eingrenzen (C1)",
+    "eindämmen (B2)"
+   ]
+  },
+  {
+   "id": 5300,
+   "de": "aufbrechen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist aufgebrochen",
+   "mevcutTr": "yola çıkmak, hareket etmek",
+   "mevcutBeispiel": "Wir sind noch vor Sonnenaufgang zur Hütte aufgebrochen.",
+   "mevcutBeispielTr": "Daha gün doğmadan dağ evine doğru yola çıktık.",
+   "cakisan": [
+    "losfahren (B1)",
+    "abreisen (A2)",
+    "losgehen (A2)"
+   ]
+  },
+  {
+   "id": 5301,
+   "de": "verzollen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verzollt",
+   "mevcutTr": "gümrük vergisini ödemek, gümrükten geçirmek",
+   "mevcutBeispiel": "Diese Waren müssen Sie bei der Einreise verzollen.",
+   "mevcutBeispielTr": "Bu malları ülkeye girişte gümrükte beyan etmeniz gerekiyor."
+  },
+  {
+   "id": 5302,
+   "de": "abholzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgeholzt",
+   "mevcutTr": "ormanı kesmek, ağaçları yok etmek",
+   "mevcutBeispiel": "Für die neue Hotelanlage wurde ein ganzer Hang abgeholzt.",
+   "mevcutBeispielTr": "Yeni otel tesisi için koca bir yamaçtaki ağaçlar kesildi."
+  },
+  {
+   "id": 5303,
+   "de": "gefährden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gefährdet",
+   "mevcutTr": "tehlikeye atmak, riske sokmak",
+   "mevcutBeispiel": "Unvorsichtige Besucher gefährden das Gleichgewicht des empfindlichen Ökosystems.",
+   "mevcutBeispielTr": "Dikkatsiz ziyaretçiler hassas ekosistemin dengesini tehlikeye atıyor."
+  },
+  {
+   "id": 5304,
+   "de": "abklingen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist abgeklungen",
+   "mevcutTr": "hafiflemek, yatışmak",
+   "mevcutBeispiel": "Erst am Nachmittag ist der Sturm allmählich abgeklungen.",
+   "mevcutBeispielTr": "Fırtına ancak öğleden sonra yavaş yavaş dindi."
+  },
+  {
+   "id": 5305,
+   "de": "abgelegen",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ücra, uzak, sapa",
+   "mevcutBeispiel": "Das Gehöft liegt abgelegen und ist nur über einen Feldweg erreichbar.",
+   "mevcutBeispielTr": "Çiftlik ücra bir yerde ve oraya ancak toprak yoldan ulaşılıyor."
+  },
+  {
+   "id": 5306,
+   "de": "unberührt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "el değmemiş, bozulmamış",
+   "mevcutBeispiel": "Im Norden gibt es noch weitgehend unberührte Küstenabschnitte.",
+   "mevcutBeispielTr": "Kuzeyde büyük ölçüde el değmemiş kıyı kesimleri hâlâ var."
+  },
+  {
+   "id": 5307,
+   "de": "malerisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "pitoresk, resim gibi",
+   "mevcutBeispiel": "Das malerische Dorf zieht jedes Wochenende Hunderte Besucher an.",
+   "mevcutBeispielTr": "Resim gibi köy her hafta sonu yüzlerce ziyaretçi çekiyor."
+  },
+  {
+   "id": 5308,
+   "de": "atemberaubend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nefes kesici, muhteşem",
+   "mevcutBeispiel": "Vom Pass aus bot sich uns ein atemberaubender Blick.",
+   "mevcutBeispielTr": "Geçitten bize nefes kesici bir manzara açıldı."
+  },
+  {
+   "id": 5309,
+   "de": "ausgebucht",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tamamen dolu, rezervasyonu dolmuş",
+   "mevcutBeispiel": "Alle Zimmer am See sind für Juli bereits ausgebucht.",
+   "mevcutBeispielTr": "Göl kenarındaki bütün odalar temmuz için çoktan doldu."
+  },
+  {
+   "id": 5310,
+   "de": "unwegsam",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "geçit vermez, yolu bozuk",
+   "mevcutBeispiel": "Das Gelände ist unwegsam und für Kinderwagen völlig ungeeignet.",
+   "mevcutBeispielTr": "Arazi geçit vermez durumda ve bebek arabası için hiç uygun değil."
+  },
+  {
+   "id": 5311,
+   "de": "wechselhaft",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "değişken, kararsız",
+   "mevcutBeispiel": "Im Frühjahr ist das Wetter in den Bergen sehr wechselhaft.",
+   "mevcutBeispielTr": "İlkbaharda dağlarda hava çok değişken oluyor.",
+   "cakisan": [
+    "die Variable (C1)"
+   ]
+  },
+  {
+   "id": 5312,
+   "de": "ganzjährig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yıl boyu, tüm yıl açık",
+   "mevcutBeispiel": "Die Berghütte ist ganzjährig geöffnet und gut ausgelastet.",
+   "mevcutBeispielTr": "Dağ evi yıl boyunca açık ve doluluğu yüksek."
+  },
+  {
+   "id": 5313,
+   "de": "die Brandstiftung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Brandstiftungen",
+   "mevcutTr": "kundaklama, kasten yangın çıkarma",
+   "mevcutBeispiel": "Die Ermittler schließen Brandstiftung inzwischen nicht mehr aus.",
+   "mevcutBeispielTr": "Soruşturmacılar artık kundaklama ihtimalini dışlamıyor."
+  },
+  {
+   "id": 5314,
+   "de": "der Rauchmelder",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rauchmelder",
+   "mevcutTr": "duman dedektörü, duman alarmı",
+   "mevcutBeispiel": "In jedem Schlafzimmer muss ein funktionierender Rauchmelder angebracht sein.",
+   "mevcutBeispielTr": "Her yatak odasında çalışır durumda bir duman dedektörü bulunmak zorunda."
+  },
+  {
+   "id": 5315,
+   "de": "der Feuerlöscher",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Feuerlöscher",
+   "mevcutTr": "yangın söndürücü",
+   "mevcutBeispiel": "Der Feuerlöscher im Flur wird einmal im Jahr geprüft.",
+   "mevcutBeispielTr": "Koridordaki yangın söndürücü yılda bir kez kontrol ediliyor."
+  },
+  {
+   "id": 5316,
+   "de": "der Ersthelfer",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ersthelfer",
+   "mevcutTr": "ilk yardımcı, ilk müdahaleyi yapan kişi",
+   "mevcutBeispiel": "Jeder Betrieb muss eine bestimmte Zahl ausgebildeter Ersthelfer beschäftigen.",
+   "mevcutBeispielTr": "Her işletme belirli sayıda eğitimli ilk yardımcı çalıştırmak zorunda."
+  },
+  {
+   "id": 5317,
+   "de": "der Fluchtweg",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fluchtwege",
+   "mevcutTr": "kaçış yolu, tahliye yolu",
+   "mevcutBeispiel": "Die Fluchtwege dürfen unter keinen Umständen zugestellt werden.",
+   "mevcutBeispielTr": "Kaçış yolları hiçbir koşulda kapatılmamalı."
+  },
+  {
+   "id": 5318,
+   "de": "der Sicherheitsabstand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sicherheitsabstände",
+   "mevcutTr": "güvenlik mesafesi",
+   "mevcutBeispiel": "Auf der Autobahn hielt kaum jemand den vorgeschriebenen Sicherheitsabstand ein.",
+   "mevcutBeispielTr": "Otoyolda neredeyse kimse öngörülen güvenlik mesafesini korumadı."
+  },
+  {
+   "id": 5319,
+   "de": "die Gefahrenquelle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gefahrenquellen",
+   "mevcutTr": "tehlike kaynağı",
+   "mevcutBeispiel": "Lose Kabel sind in einer Werkstatt eine ständige Gefahrenquelle.",
+   "mevcutBeispielTr": "Gevşek kablolar bir atölyede sürekli bir tehlike kaynağıdır."
+  },
+  {
+   "id": 5320,
+   "de": "die Unfallstelle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Unfallstellen",
+   "mevcutTr": "kaza yeri, kaza mahalli",
+   "mevcutBeispiel": "Die Polizei sperrte die Unfallstelle für mehrere Stunden ab.",
+   "mevcutBeispielTr": "Polis kaza yerini saatlerce trafiğe kapattı."
+  },
+  {
+   "id": 5321,
+   "de": "der Anschlag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anschläge",
+   "mevcutTr": "saldırı, suikast",
+   "mevcutBeispiel": "Nach dem Anschlag wurden die Kontrollen an Bahnhöfen deutlich verschärft.",
+   "mevcutBeispielTr": "Saldırının ardından tren garlarındaki kontroller belirgin biçimde sıkılaştırıldı.",
+   "cakisan": [
+    "der Übergriff (C1)"
+   ]
+  },
+  {
+   "id": 5322,
+   "de": "der Katastrophenschutz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "afet yönetimi, sivil savunma",
+   "mevcutBeispiel": "Der Katastrophenschutz übt zweimal jährlich den Ernstfall.",
+   "mevcutBeispielTr": "Afet yönetimi yılda iki kez gerçek durum tatbikatı yapıyor."
+  },
+  {
+   "id": 5323,
+   "de": "das Verbrechen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verbrechen",
+   "mevcutTr": "suç, ağır suç",
+   "mevcutBeispiel": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt.",
+   "mevcutBeispielTr": "Suç, yıllar süren soruşturmaya rağmen aydınlatılamadı.",
+   "cakisan": [
+    "die Schuld (B1)",
+    "die Straftat (B2)"
+   ]
+  },
+  {
+   "id": 5324,
+   "de": "das Erdbeben",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Erdbeben",
+   "mevcutTr": "deprem",
+   "mevcutBeispiel": "Das Erdbeben hat mehrere Brücken in der Region unbrauchbar gemacht.",
+   "mevcutBeispielTr": "Deprem bölgedeki birkaç köprüyü kullanılamaz hale getirdi."
+  },
+  {
+   "id": 5325,
+   "de": "die Trümmer",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "enkaz, moloz",
+   "mevcutBeispiel": "Unter den Trümmern des Hauses suchten Helfer die ganze Nacht.",
+   "mevcutBeispielTr": "Yardım ekipleri bütün gece evin enkazı altında arama yaptı."
+  },
+  {
+   "id": 5326,
+   "de": "die Einsatzkraft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Einsatzkräfte",
+   "mevcutTr": "görevli ekip elemanı, müdahale ekibi",
+   "mevcutBeispiel": "Über zweihundert Einsatzkräfte waren die ganze Nacht im Einsatz.",
+   "mevcutBeispielTr": "İki yüzden fazla görevli bütün gece sahada çalıştı."
+  },
+  {
+   "id": 5327,
+   "de": "der Tatort",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Tatorte",
+   "mevcutTr": "olay yeri, suç mahalli",
+   "mevcutBeispiel": "Am Tatort wurden Spuren gefunden, die zum Verdächtigen führten.",
+   "mevcutBeispielTr": "Olay yerinde şüpheliye götüren izler bulundu."
+  },
+  {
+   "id": 5328,
+   "de": "der Diebstahl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Diebstähle",
+   "mevcutTr": "hırsızlık, çalma",
+   "mevcutBeispiel": "Für den Diebstahl im Lager gibt es bisher keine Zeugen.",
+   "mevcutBeispielTr": "Depodaki hırsızlıkla ilgili şimdiye kadar hiç tanık yok.",
+   "cakisan": [
+    "der Einbruch (B1)"
+   ]
+  },
+  {
+   "id": 5329,
+   "de": "der Betrug",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "dolandırıcılık, sahtekârlık",
+   "mevcutBeispiel": "Der Angeklagte wurde wegen Betrugs in mehreren Fällen verurteilt.",
+   "mevcutBeispielTr": "Sanık birden fazla dolandırıcılık vakasından mahkûm edildi."
+  },
+  {
+   "id": 5330,
+   "de": "der Raub",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gasp, soygun",
+   "mevcutBeispiel": "Der Raub auf die Tankstelle dauerte kaum zwei Minuten.",
+   "mevcutBeispielTr": "Benzin istasyonuna yapılan soygun ancak iki dakika sürdü."
+  },
+  {
+   "id": 5331,
+   "de": "die Erpressung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Erpressungen",
+   "mevcutTr": "şantaj, haraç kesme",
+   "mevcutBeispiel": "Die Firma erstattete Anzeige wegen versuchter Erpressung.",
+   "mevcutBeispielTr": "Şirket şantaj girişimi nedeniyle suç duyurusunda bulundu."
+  },
+  {
+   "id": 5332,
+   "de": "die Körperverletzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Körperverletzungen",
+   "mevcutTr": "yaralama, müessir fiil",
+   "mevcutBeispiel": "Nach der Schlägerei ermittelt die Polizei wegen gefährlicher Körperverletzung.",
+   "mevcutBeispielTr": "Kavganın ardından polis nitelikli yaralama suçundan soruşturma yürütüyor."
+  },
+  {
+   "id": 5333,
+   "de": "die Fahndung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fahndungen",
+   "mevcutTr": "arama, aranan kişi takibi",
+   "mevcutBeispiel": "Die Fahndung nach den Tätern läuft seit dem frühen Morgen.",
+   "mevcutBeispielTr": "Faillerin aranması sabahın erken saatlerinden beri sürüyor."
+  },
+  {
+   "id": 5334,
+   "de": "der Haftbefehl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Haftbefehle",
+   "mevcutTr": "tutuklama emri",
+   "mevcutBeispiel": "Das Gericht erließ noch am selben Abend einen Haftbefehl.",
+   "mevcutBeispielTr": "Mahkeme aynı akşam bir tutuklama emri çıkardı."
+  },
+  {
+   "id": 5335,
+   "de": "das Polizeirevier",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Polizeireviere",
+   "mevcutTr": "polis karakolu",
+   "mevcutBeispiel": "Sie musste ihre Aussage auf dem Polizeirevier noch einmal wiederholen.",
+   "mevcutBeispielTr": "İfadesini karakolda bir kez daha tekrarlamak zorunda kaldı."
+  },
+  {
+   "id": 5336,
+   "de": "die Abschreckung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "caydırıcılık, caydırma",
+   "mevcutBeispiel": "Höhere Strafen wirken nach Ansicht vieler Fachleute kaum als Abschreckung.",
+   "mevcutBeispielTr": "Birçok uzmana göre ağır cezalar pek caydırıcı olmuyor."
+  },
+  {
+   "id": 5337,
+   "de": "die Kriminalität",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "suç oranı, suçluluk",
+   "mevcutBeispiel": "Die Kriminalität im Stadtteil ist seit zwei Jahren rückläufig.",
+   "mevcutBeispielTr": "Mahalledeki suç oranı iki yıldır düşüşte."
+  },
+  {
+   "id": 5338,
+   "de": "die Notlage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Notlagen",
+   "mevcutTr": "sıkıntılı durum, darda kalma",
+   "mevcutBeispiel": "Der Fonds hilft Familien, die unverschuldet in eine Notlage geraten sind.",
+   "mevcutBeispielTr": "Fon, kendi kusuru olmadan zor duruma düşen ailelere yardım ediyor."
+  },
+  {
+   "id": 5339,
+   "de": "der Zwischenfall",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zwischenfälle",
+   "mevcutTr": "olay, beklenmedik hadise",
+   "mevcutBeispiel": "Das Spiel verlief bis auf einen kleinen Zwischenfall völlig ruhig.",
+   "mevcutBeispielTr": "Maç küçük bir olay dışında tamamen sakin geçti.",
+   "cakisan": [
+    "das Ereignis (B1)"
+   ]
+  },
+  {
+   "id": 5340,
+   "de": "die Warnmeldung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Warnmeldungen",
+   "mevcutTr": "uyarı bildirimi, uyarı mesajı",
+   "mevcutBeispiel": "Die Warnmeldung erreichte alle Handys in der Region gleichzeitig.",
+   "mevcutBeispielTr": "Uyarı bildirimi bölgedeki bütün telefonlara aynı anda ulaştı."
+  },
+  {
+   "id": 5341,
+   "de": "die Schutzausrüstung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schutzausrüstungen",
+   "mevcutTr": "koruyucu ekipman, koruyucu donanım",
+   "mevcutBeispiel": "Ohne vollständige Schutzausrüstung darf niemand die Halle betreten.",
+   "mevcutBeispielTr": "Eksiksiz koruyucu ekipman olmadan kimse salona giremez."
+  },
+  {
+   "id": 5342,
+   "de": "die Wiederbelebung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wiederbelebungen",
+   "mevcutTr": "canlandırma, resüsitasyon",
+   "mevcutBeispiel": "Die Wiederbelebung gelang erst nach mehreren Minuten.",
+   "mevcutBeispielTr": "Canlandırma ancak birkaç dakika sonra başarılı oldu."
+  },
+  {
+   "id": 5343,
+   "de": "die Vergiftung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vergiftungen",
+   "mevcutTr": "zehirlenme",
+   "mevcutBeispiel": "Die Kinder wurden mit einer leichten Vergiftung ins Krankenhaus gebracht.",
+   "mevcutBeispielTr": "Çocuklar hafif zehirlenmeyle hastaneye kaldırıldı."
+  },
+  {
+   "id": 5344,
+   "de": "die Seuche",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Seuchen",
+   "mevcutTr": "salgın hastalık, salgın",
+   "mevcutBeispiel": "Die Seuche breitete sich zuerst unter den Tieren der Region aus.",
+   "mevcutBeispielTr": "Salgın önce bölgedeki hayvanlar arasında yayıldı."
+  }
+ ]
+}

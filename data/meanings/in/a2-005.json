@@ -1,0 +1,571 @@
+{
+ "paket": "a2-005",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 1170,
+   "de": "sammeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sammelt, hat gesammelt",
+   "mevcutTr": "toplamak, biriktirmek",
+   "mevcutBeispiel": "Peter sammelt Briefmarken. Im Herbst sammeln wir im Wald bunte Blätter.",
+   "mevcutBeispielTr": "Peter pul biriktiriyor. Sonbaharda ormanda rengarenk yapraklar topluyoruz.",
+   "cakisan": [
+    "aufräumen (A1)",
+    "erheben (B2)",
+    "abräumen (A2)",
+    "einsammeln (A2)"
+   ]
+  },
+  {
+   "id": 1240,
+   "de": "der Titel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "başlık, unvan",
+   "mevcutBeispiel": "Wie heißt der Film? - Ich weiß den Titel nicht mehr.",
+   "mevcutBeispielTr": "Filmin adı ne? - Başlığını hatırlamıyorum.",
+   "cakisan": [
+    "die Überschrift (B1)"
+   ]
+  },
+  {
+   "id": 1206,
+   "de": "sparen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "spart, hat gespart",
+   "mevcutTr": "tasarruf etmek, biriktirmek",
+   "mevcutBeispiel": "Ein neues Auto ist sehr teuer. Ich muss sparen.",
+   "mevcutBeispielTr": "Yeni bir araba çok pahalı. Para biriktirmem gerekiyor.",
+   "cakisan": [
+    "einsparen (B2)"
+   ]
+  },
+  {
+   "id": 1146,
+   "de": "prüfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "prüft, hat geprüft",
+   "mevcutTr": "kontrol etmek, incelemek",
+   "mevcutBeispiel": "Bitte prüfen Sie die Rechnung sofort.",
+   "mevcutBeispielTr": "Lütfen faturayı hemen kontrol edin.",
+   "cakisan": [
+    "kontrollieren (A2)",
+    "überprüfen (B1)"
+   ]
+  },
+  {
+   "id": 1247,
+   "de": "das Training",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "antrenman",
+   "mevcutBeispiel": "Das Training ist immer dienstags. Ich gehe jede Woche zum Training.",
+   "mevcutBeispielTr": "Antrenman hep salı günleri. Her hafta antrenmana gidiyorum."
+  },
+  {
+   "id": 1244,
+   "de": "die Tour",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "tur, gezi",
+   "mevcutBeispiel": "Wo kann ich eine Stadttour buchen? Wir gehen am Wochenende wandern. Ich kenne eine schöne Tour in den Bergen.",
+   "mevcutBeispielTr": "Nereden bir şehir turu ayarlayabilirim? Hafta sonu doğa yürüyüşüne çıkıyoruz. Dağlarda güzel bir rota biliyorum.",
+   "cakisan": [
+    "der Rundgang (A2)",
+    "die Runde (B1)",
+    "die Rundfahrt (B1)",
+    "die Rundreise (B2)"
+   ]
+  },
+  {
+   "id": 907,
+   "de": "bestehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "besteht, hat bestanden",
+   "mevcutTr": "geçmek, oluşmak",
+   "mevcutBeispiel": "Ich habe die Prüfung bestanden! Die Prüfung besteht aus vier Teilen: Hören, Lesen, Schreiben und Sprechen.",
+   "mevcutBeispielTr": "Sınavı geçtim! Sınav dört bölümden oluşuyor: dinleme, okuma, yazma ve konuşma."
+  },
+  {
+   "id": 1016,
+   "de": "hässlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çirkin",
+   "mevcutBeispiel": "Ich finde das Kleid hässlich. Es gefällt mir nicht.",
+   "mevcutBeispielTr": "Elbiseyi çirkin buluyorum. Hoşuma gitmiyor."
+  },
+  {
+   "id": 955,
+   "de": "eng",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dar",
+   "mevcutBeispiel": "Diese Hose ist zu eng. Gibt es sie auch eine Nummer größer?",
+   "mevcutBeispielTr": "Bu pantolon çok dar. Bir beden büyüğü var mı?",
+   "cakisan": [
+    "schmal (B1)"
+   ]
+  },
+  {
+   "id": 1093,
+   "de": "der Mitarbeiter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "çalışan, personel",
+   "mevcutBeispiel": "Unsere Firma hat sieben Mitarbeiter.",
+   "mevcutBeispielTr": "Firmamızın yedi çalışanı var.",
+   "cakisan": [
+    "berufstätig (B1)",
+    "erwerbstätig (B2)"
+   ]
+  },
+  {
+   "id": 1168,
+   "de": "rund",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yuvarlak; yaklaşık",
+   "mevcutBeispiel": "Unser Wohnzimmertisch ist rund. Bis Berlin sind es noch rund 80 Kilometer.",
+   "mevcutBeispielTr": "Oturma odamızdaki masa yuvarlak. Berlin'e daha yaklaşık 80 kilometre var."
+  },
+  {
+   "id": 1110,
+   "de": "nebenan",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yan tarafta, bitişikte",
+   "mevcutBeispiel": "Das ist José. Er wohnt nebenan.",
+   "mevcutBeispielTr": "Bu José. Yan tarafta oturuyor."
+  },
+  {
+   "id": 1134,
+   "de": "planen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "plant, hat geplant",
+   "mevcutTr": "planlamak",
+   "mevcutBeispiel": "Wir sollen zusammen eine Klassenparty planen. Morgen schwimmen ... ist ein guter Plan.",
+   "mevcutBeispielTr": "Birlikte bir sınıf partisi planlayacağız. Yarın yüzmek... iyi bir plan.",
+   "cakisan": [
+    "vorhaben (B1)"
+   ]
+  },
+  {
+   "id": 968,
+   "de": "der Fan",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "hayran",
+   "mevcutBeispiel": "Er ist ein großer Fußballfan. Bella ist ein Fan von Rammstein.",
+   "mevcutBeispielTr": "O büyük bir futbol hayranı. Bella bir Rammstein hayranı.",
+   "cakisan": [
+    "begeistert (B1)"
+   ]
+  },
+  {
+   "id": 902,
+   "de": "berühmt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ünlü, meşhur",
+   "mevcutBeispiel": "Thomas Müller ist ein berühmter Fußballspieler.",
+   "mevcutBeispielTr": "Thomas Müller ünlü bir futbolcu."
+  },
+  {
+   "id": 993,
+   "de": "die Garage",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "garaj",
+   "mevcutBeispiel": "Hier ist eine Garage für dein Auto.",
+   "mevcutBeispielTr": "Araban için burada bir garaj var."
+  },
+  {
+   "id": 1033,
+   "de": "sich informieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "informiert, hat informiert",
+   "mevcutTr": "bilgi edinmek, bilgi almak",
+   "mevcutBeispiel": "Ich möchte mich vor der Reise über das Land informieren. Hast du dich über die Prüfung informiert?",
+   "mevcutBeispielTr": "Seyahatten önce ülke hakkında bilgi almak istiyorum. Sınav hakkında bilgi aldın mı?"
+  },
+  {
+   "id": 972,
+   "de": "die Feier",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n (z. B. Feierabend, Feiertag)",
+   "mevcutTr": "kutlama",
+   "mevcutBeispiel": "Wann hast du Feierabend? Am ersten Mai ist ein Feiertag.",
+   "mevcutBeispielTr": "Mesain ne zaman bitiyor? Bir Mayıs resmi tatil."
+  },
+  {
+   "id": 1119,
+   "de": "nützlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yararlı, faydalı",
+   "mevcutBeispiel": "Danke für den Tipp. Er war sehr nützlich.",
+   "mevcutBeispielTr": "Tavsiye için teşekkürler. Çok faydalı oldu."
+  },
+  {
+   "id": 1106,
+   "de": "nass",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ıslak",
+   "mevcutBeispiel": "Geh nicht mit den nassen Schuhen ins Wohnzimmer! Du bist ja ganz nass. Hast du den Regenschirm vergessen?",
+   "mevcutBeispielTr": "Islak ayakkabılarla oturma odasına girme! İyice ıslanmışsın. Şemsiyeni mi unuttun?"
+  },
+  {
+   "id": 1047,
+   "de": "die Kette",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kolye, zincir",
+   "mevcutBeispiel": "Meine Mutter bekommt eine schöne Kette zum Geburtstag.",
+   "mevcutBeispielTr": "Annem doğum gününde güzel bir kolye alacak."
+  },
+  {
+   "id": 1236,
+   "de": "der Teller",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "tabak",
+   "mevcutBeispiel": "Stell die Teller bitte auf den Tisch! Möchtest du noch einen Teller Suppe?",
+   "mevcutBeispielTr": "Tabakları masaya koy lütfen! Bir tabak çorba daha ister misin?"
+  },
+  {
+   "id": 1302,
+   "de": "die Wäsche",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "çamaşır",
+   "mevcutBeispiel": "Ich muss noch Wäsche waschen.",
+   "mevcutBeispielTr": "Daha çamaşır yıkamam gerekiyor."
+  },
+  {
+   "id": 904,
+   "de": "beschreiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "beschreibt, hat beschrieben",
+   "mevcutTr": "tarif etmek, tanımlamak",
+   "mevcutBeispiel": "Kannst du mir den Weg zum Bahnhof beschreiben?",
+   "mevcutBeispielTr": "Bana gara giden yolu tarif edebilir misin?"
+  },
+  {
+   "id": 1117,
+   "de": "notwendig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gerekli",
+   "mevcutBeispiel": "Muss ich noch einmal kommen? – Nein, das ist nicht notwendig.",
+   "mevcutBeispielTr": "Bir daha gelmem gerekiyor mu? – Hayır, gerekli değil.",
+   "cakisan": [
+    "erforderlich (B1)",
+    "nötig (B1)"
+   ]
+  },
+  {
+   "id": 898,
+   "de": "bequem",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "rahat",
+   "mevcutBeispiel": "Das Sofa ist sehr bequem. Meine Kinder ziehen am liebsten bequeme Schuhe an.",
+   "mevcutBeispielTr": "Kanepe çok rahat. Çocuklarım en çok rahat ayakkabıları giymeyi seviyor.",
+   "cakisan": [
+    "gemütlich (A1)",
+    "lässig (A2)"
+   ]
+  },
+  {
+   "id": 1239,
+   "de": "der Tipp",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "tavsiye, ipucu",
+   "mevcutBeispiel": "Kannst du mir einen guten Tipp geben?",
+   "mevcutBeispielTr": "Bana iyi bir tavsiye verebilir misin?",
+   "cakisan": [
+    "die Empfehlung (B1)"
+   ]
+  },
+  {
+   "id": 1258,
+   "de": "sich umziehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "zieht sich um, zog sich um, hat sich umgezogen",
+   "mevcutTr": "üstünü değiştirmek, kıyafet değiştirmek",
+   "mevcutBeispiel": "Warte bitte, ich muss mich noch umziehen.",
+   "mevcutBeispielTr": "Bekle lütfen, daha üstümü değiştirmem gerekiyor."
+  },
+  {
+   "id": 1253,
+   "de": "typisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tipik",
+   "mevcutBeispiel": "Diese Musik ist typisch für dieses Land. Typisch Anna, sie kommt natürlich wieder zu spät.",
+   "mevcutBeispielTr": "Bu müzik bu ülke için tipik. Tipik Anna, tabii ki yine geç geliyor."
+  },
+  {
+   "id": 1262,
+   "de": "die Universität",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "üniversite",
+   "mevcutBeispiel": "Er studiert an der Universität Freiburg.",
+   "mevcutBeispielTr": "Freiburg Üniversitesi'nde okuyor."
+  },
+  {
+   "id": 1232,
+   "de": "austauschen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "tauscht (aus), hat (aus)getauscht",
+   "mevcutTr": "değiş tokuş etmek, paylaşmak",
+   "mevcutBeispiel": "Können wir unsere Adressen austauschen?",
+   "mevcutBeispielTr": "Adreslerimizi paylaşabilir miyiz?"
+  },
+  {
+   "id": 1310,
+   "de": "weich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yumuşak",
+   "mevcutBeispiel": "Ich möchte zum Frühstück ein weiches Ei. Das Bett im Hotel war zu weich.",
+   "mevcutBeispielTr": "Kahvaltıda rafadan yumurta istiyorum. Oteldeki yatak fazla yumuşaktı.",
+   "cakisan": [
+    "sanft (A2)"
+   ]
+  },
+  {
+   "id": 1054,
+   "de": "das Konzert",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "konser",
+   "mevcutBeispiel": "Für das Konzert am Sonntag gibt es noch Karten.",
+   "mevcutBeispielTr": "Pazar günkü konser için hâlâ bilet var."
+  },
+  {
+   "id": 1073,
+   "de": "leihen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "leiht, hat geliehen",
+   "mevcutTr": "ödünç vermek, ödünç almak",
+   "mevcutBeispiel": "Kannst du mir fünf Euro leihen?",
+   "mevcutBeispielTr": "Bana beş euro borç verir misin?"
+  },
+  {
+   "id": 1163,
+   "de": "romantisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "romantik",
+   "mevcutBeispiel": "Dieser Film ist sehr romantisch. Meine Freundin ist total romantisch.",
+   "mevcutBeispielTr": "Bu film çok romantik. Kız arkadaşım tam bir romantik."
+  },
+  {
+   "id": 1102,
+   "de": "das Museum",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-een",
+   "mevcutTr": "müze",
+   "mevcutBeispiel": "Im Kunstmuseum gibt es eine neue Ausstellung.",
+   "mevcutBeispielTr": "Sanat müzesinde yeni bir sergi var."
+  },
+  {
+   "id": 1114,
+   "de": "nirgends",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hiçbir yerde",
+   "mevcutBeispiel": "Hier kann man nirgends parken. Wo ist Stefan? Ich kann ihn nirgends sehen.",
+   "mevcutBeispielTr": "Burada hiçbir yere park edilemiyor. Stefan nerede? Onu hiçbir yerde göremiyorum.",
+   "cakisan": [
+    "nirgendwo (B1)"
+   ]
+  },
+  {
+   "id": 1183,
+   "de": "schmutzig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kirli",
+   "mevcutBeispiel": "Das Handtuch ist schmutzig.",
+   "mevcutBeispielTr": "Havlu kirli.",
+   "cakisan": [
+    "dreckig (A2)"
+   ]
+  },
+  {
+   "id": 1217,
+   "de": "der Stiefel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "çizme",
+   "mevcutBeispiel": "Wie viel kosten die roten Stiefel?",
+   "mevcutBeispielTr": "Kırmızı çizmeler ne kadar?"
+  },
+  {
+   "id": 1251,
+   "de": "trocken",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kuru",
+   "mevcutBeispiel": "Die Wäsche ist bald trocken.",
+   "mevcutBeispielTr": "Çamaşırlar birazdan kurur."
+  },
+  {
+   "id": 876,
+   "de": "die Ausbildung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "meslek eğitimi, mesleki öğrenim",
+   "mevcutBeispiel": "Ich möchte eine Ausbildung zum Krankenpfleger machen.",
+   "mevcutBeispielTr": "Hastabakıcılık eğitimi almak istiyorum."
+  },
+  {
+   "id": 1246,
+   "de": "trainieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "trainiert, hat trainiert",
+   "mevcutTr": "antrenman yapmak, çalışmak",
+   "mevcutBeispiel": "Wir trainieren einmal pro Woche im Sportverein.",
+   "mevcutBeispielTr": "Spor kulübünde haftada bir antrenman yapıyoruz."
+  },
+  {
+   "id": 1049,
+   "de": "klappen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "klappt, hat geklappt",
+   "mevcutTr": "yolunda gitmek, işe yaramak",
+   "mevcutBeispiel": "Können wir uns heute Mittag treffen? – Ja, das klappt. Wie war die Reise? - Gut, es hat alles super geklappt.",
+   "mevcutBeispielTr": "Bugün öğlen buluşabilir miyiz? – Evet, olur. Seyahat nasıldı? - İyiydi, her şey yolunda gitti."
+  },
+  {
+   "id": 937,
+   "de": "diskutieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "diskutiert, hat diskutiert",
+   "mevcutTr": "tartışmak",
+   "mevcutBeispiel": "Ich möchte das mit meinen Kollegen diskutieren.",
+   "mevcutBeispielTr": "Bunu iş arkadaşlarımla tartışmak istiyorum.",
+   "cakisan": [
+    "erörtern (C1)",
+    "streiten (A2)"
+   ]
+  },
+  {
+   "id": 988,
+   "de": "der Führerschein",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "ehliyet",
+   "mevcutBeispiel": "Hast du den Führerschein? Sie hat die Führerscheinprüfung bestanden.",
+   "mevcutBeispielTr": "Ehliyetin var mı? Ehliyet sınavını geçti.",
+   "cakisan": [
+    "der Führerausweis (B1)"
+   ]
+  },
+  {
+   "id": 1121,
+   "de": "online",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çevrimiçi",
+   "mevcutBeispiel": "Wann bist du wieder online? Ich habe hier kein Internet. Ich bin erst heute Abend wieder online. Sie können das Geld auc",
+   "mevcutBeispielTr": "Ne zaman yine çevrimiçi olursun? Burada internetim yok. Ancak bu akşam yine çevrimiçi olurum."
+  },
+  {
+   "id": 1218,
+   "de": "der Stift",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "kalem",
+   "mevcutBeispiel": "Kannst du mir bitte einen Stift geben? - Was brauchst du? Einen Farbstift oder einen Bleistift oder einen Kugelschreiber",
+   "mevcutBeispielTr": "Bana bir kalem verir misin lütfen? - Ne lazım? Boya kalemi mi, kurşun kalem mi, tükenmez mi?"
+  },
+  {
+   "id": 1038,
+   "de": "das Interview",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "röportaj",
+   "mevcutBeispiel": "Komm schnell! Im Radio kommt ein Interview mit deinem Lieblingssänger.",
+   "mevcutBeispielTr": "Çabuk gel! Radyoda en sevdiğin şarkıcıyla bir röportaj var.",
+   "cakisan": [
+    "die Reportage (B1)"
+   ]
+  },
+  {
+   "id": 1333,
+   "de": "der Zirkus",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-se",
+   "mevcutTr": "sirk",
+   "mevcutBeispiel": "Heute gehen wir mit den Kindern in den Zirkus.",
+   "mevcutBeispielTr": "Bugün çocuklarla sirke gidiyoruz."
+  },
+  {
+   "id": 1160,
+   "de": "das Rezept",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "tarif; reçete",
+   "mevcutBeispiel": "Dieser Kuchen schmeckt super! Kannst du mir bitte das Rezept geben? Dieses Medikament gibt es nur auf Rezept.",
+   "mevcutBeispielTr": "Bu pasta harika olmuş! Tarifini verir misin lütfen? Bu ilaç sadece reçeteyle satılıyor."
+  }
+ ]
+}

@@ -1,0 +1,535 @@
+{
+ "paket": "b2-025",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4845,
+   "de": "hochwertig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kaliteli, nitelikli",
+   "mevcutBeispiel": "Für hochwertige Materialien zahlen viele Kunden gern etwas mehr.",
+   "mevcutBeispielTr": "Kaliteli malzemeler için birçok müşteri seve seve biraz fazla ödüyor.",
+   "cakisan": [
+    "edel (A2)"
+   ]
+  },
+  {
+   "id": 4846,
+   "de": "überteuert",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "fahiş fiyatlı, aşırı pahalı",
+   "mevcutBeispiel": "Die Ersatzteile des Herstellers sind im Vergleich deutlich überteuert.",
+   "mevcutBeispielTr": "Üreticinin yedek parçaları kıyaslandığında bariz şekilde fahiş fiyatlı."
+  },
+  {
+   "id": 4847,
+   "de": "zumutbar",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "makul, katlanılabilir",
+   "mevcutBeispiel": "Eine Wartezeit von zehn Wochen ist dem Kunden nicht zumutbar.",
+   "mevcutBeispielTr": "On haftalık bir bekleme süresi müşteriden beklenemez.",
+   "cakisan": [
+    "vernünftig (B1)",
+    "einleuchtend (C1)"
+   ]
+  },
+  {
+   "id": 4848,
+   "de": "sachgemäß",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "usulüne uygun (kullanım)",
+   "mevcutBeispiel": "Die Garantie gilt nur bei sachgemäßer Nutzung des Geräts.",
+   "mevcutBeispielTr": "Garanti yalnızca cihazın usulüne uygun kullanımında geçerlidir.",
+   "cakisan": [
+    "fachgerecht (B2)",
+    "ordnungsgemäß (B2)"
+   ]
+  },
+  {
+   "id": 4849,
+   "de": "die Aufführung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Aufführungen",
+   "mevcutTr": "gösteri, temsil, oynanış",
+   "mevcutBeispiel": "Die Aufführung am Samstag war schon zwei Wochen vorher ausgebucht.",
+   "mevcutBeispielTr": "Cumartesi günkü temsil daha iki hafta öncesinden dolmuştu.",
+   "cakisan": [
+    "die Vorstellung (B1)",
+    "die Demonstration (B2)"
+   ]
+  },
+  {
+   "id": 4850,
+   "de": "die Inszenierung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Inszenierungen",
+   "mevcutTr": "sahneye koyma, sahneleme, yorum",
+   "mevcutBeispiel": "Die moderne Inszenierung des Klassikers hat das Publikum gespalten.",
+   "mevcutBeispielTr": "Klasiğin modern sahnelemesi seyirciyi ikiye böldü."
+  },
+  {
+   "id": 4851,
+   "de": "das Drehbuch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Drehbücher",
+   "mevcutTr": "senaryo (film metni)",
+   "mevcutBeispiel": "Am Drehbuch haben drei Autoren fast zwei Jahre lang gearbeitet.",
+   "mevcutBeispielTr": "Senaryo üzerinde üç yazar neredeyse iki yıl çalıştı.",
+   "cakisan": [
+    "das Szenario (C1)"
+   ]
+  },
+  {
+   "id": 4852,
+   "de": "der Darsteller",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Darsteller",
+   "mevcutTr": "oyuncu, canlandıran kişi",
+   "mevcutBeispiel": "Der Darsteller der Hauptrolle bekam den Preis für seine Leistung.",
+   "mevcutBeispielTr": "Başroldeki oyuncu performansıyla ödülü aldı.",
+   "cakisan": [
+    "der Schauspieler (B1)",
+    "der Spieler (B1)",
+    "verspielt (A2)"
+   ]
+  },
+  {
+   "id": 4853,
+   "de": "die Besetzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Besetzungen",
+   "mevcutTr": "oyuncu kadrosu, kadro",
+   "mevcutBeispiel": "Mit dieser Besetzung hat das Theater einen echten Erfolg gelandet.",
+   "mevcutBeispielTr": "Bu kadroyla tiyatro gerçek bir başarı yakaladı."
+  },
+  {
+   "id": 4854,
+   "de": "die Kulisse",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kulissen",
+   "mevcutTr": "dekor, sahne dekoru, fon",
+   "mevcutBeispiel": "Die Kulissen für den zweiten Akt wurden in der Pause umgebaut.",
+   "mevcutBeispielTr": "İkinci perdenin dekorları arada yeniden kuruldu."
+  },
+  {
+   "id": 4855,
+   "de": "die Premiere",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Premieren",
+   "mevcutTr": "gala, ilk gösterim, prömiyer",
+   "mevcutBeispiel": "Zur Premiere kamen auch mehrere Kritiker aus dem Ausland.",
+   "mevcutBeispielTr": "Galaya yurt dışından birkaç eleştirmen de geldi."
+  },
+  {
+   "id": 4856,
+   "de": "der Beifall",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "alkış, beğeni",
+   "mevcutBeispiel": "Nach dem letzten Lied hielt der Beifall minutenlang an.",
+   "mevcutBeispielTr": "Son şarkının ardından alkış dakikalarca sürdü."
+  },
+  {
+   "id": 4857,
+   "de": "der Vorhang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vorhänge",
+   "mevcutTr": "perde (sahne)",
+   "mevcutBeispiel": "Der Vorhang fiel, und das ganze Haus erhob sich.",
+   "mevcutBeispielTr": "Perde indi ve bütün salon ayağa kalktı."
+  },
+  {
+   "id": 4858,
+   "de": "das Gemälde",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gemälde",
+   "mevcutTr": "tablo, yağlıboya resim",
+   "mevcutBeispiel": "Das Gemälde hängt seit über hundert Jahren in diesem Saal.",
+   "mevcutBeispielTr": "Tablo yüz yılı aşkın süredir bu salonda asılı.",
+   "cakisan": [
+    "die Tabelle (B1)"
+   ]
+  },
+  {
+   "id": 4859,
+   "de": "die Leinwand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Leinwände",
+   "mevcutTr": "tuval, perde (sinema)",
+   "mevcutBeispiel": "Der Maler spannte eine neue Leinwand auf den hölzernen Rahmen.",
+   "mevcutBeispielTr": "Ressam ahşap çerçeveye yeni bir tuval gerdi."
+  },
+  {
+   "id": 4860,
+   "de": "die Skulptur",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Skulpturen",
+   "mevcutTr": "heykel, yontu",
+   "mevcutBeispiel": "Vor dem Rathaus steht eine Skulptur aus rostigem Stahl.",
+   "mevcutBeispielTr": "Belediye binasının önünde paslı çelikten bir heykel duruyor."
+  },
+  {
+   "id": 4861,
+   "de": "die Sammlung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sammlungen",
+   "mevcutTr": "koleksiyon, derleme",
+   "mevcutBeispiel": "Seine private Sammlung umfasst mehr als vierhundert Zeichnungen.",
+   "mevcutBeispielTr": "Özel koleksiyonu dört yüzden fazla çizim içeriyor."
+  },
+  {
+   "id": 4862,
+   "de": "das Exponat",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Exponate",
+   "mevcutTr": "sergi eseri, sergilenen parça",
+   "mevcutBeispiel": "Das wertvollste Exponat wird nur hinter Glas gezeigt.",
+   "mevcutBeispielTr": "En değerli sergi parçası yalnızca cam arkasında gösteriliyor."
+  },
+  {
+   "id": 4863,
+   "de": "das Kunstwerk",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kunstwerke",
+   "mevcutTr": "sanat eseri",
+   "mevcutBeispiel": "Jedes Kunstwerk im Museum hat eine eigene Geschichte.",
+   "mevcutBeispielTr": "Müzedeki her sanat eserinin kendine ait bir hikâyesi var."
+  },
+  {
+   "id": 4864,
+   "de": "die Restaurierung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Restaurierungen",
+   "mevcutTr": "restorasyon, onarım",
+   "mevcutBeispiel": "Die Restaurierung der alten Fresken dauert noch bis nächsten Herbst.",
+   "mevcutBeispielTr": "Eski freskolerin restorasyonu gelecek sonbahara kadar sürecek."
+  },
+  {
+   "id": 4865,
+   "de": "der Spielplan",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Spielpläne",
+   "mevcutTr": "oyun programı, repertuvar",
+   "mevcutBeispiel": "Der neue Spielplan der Oper erscheint immer im Juni.",
+   "mevcutBeispielTr": "Operanın yeni oyun programı her zaman haziranda yayımlanır."
+  },
+  {
+   "id": 4866,
+   "de": "der Komponist",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Komponisten",
+   "mevcutTr": "besteci",
+   "mevcutBeispiel": "Der Komponist schrieb die Musik eigens für diesen Film.",
+   "mevcutBeispielTr": "Besteci müziği özellikle bu film için yazdı."
+  },
+  {
+   "id": 4867,
+   "de": "der Dirigent",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Dirigenten",
+   "mevcutTr": "orkestra şefi",
+   "mevcutBeispiel": "Der Dirigent hob den Taktstock und der Saal wurde still.",
+   "mevcutBeispielTr": "Şef bagetini kaldırdı ve salon sessizleşti."
+  },
+  {
+   "id": 4868,
+   "de": "die Melodie",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Melodien",
+   "mevcutTr": "ezgi, melodi",
+   "mevcutBeispiel": "Diese Melodie geht mir seit gestern nicht mehr aus dem Kopf.",
+   "mevcutBeispielTr": "Bu ezgi dünden beri aklımdan çıkmıyor."
+  },
+  {
+   "id": 4869,
+   "de": "der Rhythmus",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rhythmen",
+   "mevcutTr": "ritim, tempo",
+   "mevcutBeispiel": "Der Rhythmus des Stücks wechselt in der zweiten Hälfte.",
+   "mevcutBeispielTr": "Parçanın ritmi ikinci yarıda değişiyor."
+  },
+  {
+   "id": 4870,
+   "de": "die Tournee",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Tournees",
+   "mevcutTr": "turne",
+   "mevcutBeispiel": "Die Band geht im Frühjahr auf Tournee durch acht Länder.",
+   "mevcutBeispielTr": "Grup ilkbaharda sekiz ülkeyi kapsayan bir turneye çıkıyor."
+  },
+  {
+   "id": 4871,
+   "de": "das Theaterstück",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Theaterstücke",
+   "mevcutTr": "tiyatro oyunu",
+   "mevcutBeispiel": "Das Theaterstück behandelt den Alltag einer Familie nach dem Krieg.",
+   "mevcutBeispielTr": "Oyun, savaş sonrası bir ailenin gündelik hayatını ele alıyor."
+  },
+  {
+   "id": 4872,
+   "de": "der Wettkampf",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wettkämpfe",
+   "mevcutTr": "müsabaka, yarışma",
+   "mevcutBeispiel": "Vor dem Wettkampf war sie so nervös wie nie zuvor.",
+   "mevcutBeispielTr": "Müsabakadan önce hiç olmadığı kadar gergindi."
+  },
+  {
+   "id": 4873,
+   "de": "das Turnier",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Turniere",
+   "mevcutTr": "turnuva",
+   "mevcutBeispiel": "Das Turnier wird in diesem Jahr in drei Städten ausgetragen.",
+   "mevcutBeispielTr": "Turnuva bu yıl üç şehirde düzenleniyor."
+  },
+  {
+   "id": 4874,
+   "de": "die Meisterschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Meisterschaften",
+   "mevcutTr": "şampiyona, şampiyonluk",
+   "mevcutBeispiel": "Nach zwölf Jahren hat der Klub endlich wieder die Meisterschaft geholt.",
+   "mevcutBeispielTr": "Kulüp on iki yıl sonra nihayet yeniden şampiyonluğu kazandı."
+  },
+  {
+   "id": 4875,
+   "de": "die Niederlage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Niederlagen",
+   "mevcutTr": "yenilgi, mağlubiyet",
+   "mevcutBeispiel": "Die knappe Niederlage im Halbfinale hat alle sehr enttäuscht.",
+   "mevcutBeispielTr": "Yarı finaldeki farksız yenilgi herkesi çok hayal kırıklığına uğrattı."
+  },
+  {
+   "id": 4876,
+   "de": "der Schiedsrichter",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schiedsrichter",
+   "mevcutTr": "hakem",
+   "mevcutBeispiel": "Der Schiedsrichter pfiff das Spiel drei Minuten früher ab.",
+   "mevcutBeispielTr": "Hakem maçı üç dakika erken bitirdi."
+  },
+  {
+   "id": 4877,
+   "de": "der Leistungssport",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "profesyonel spor, yüksek performans sporu",
+   "mevcutBeispiel": "Im Leistungssport entscheiden oft nur wenige Hundertstelsekunden.",
+   "mevcutBeispielTr": "Profesyonel sporda çoğu zaman saliseler belirleyici olur."
+  },
+  {
+   "id": 4878,
+   "de": "der Anhänger",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anhänger",
+   "mevcutTr": "taraftar, yandaş",
+   "mevcutBeispiel": "Tausende Anhänger begleiteten die Mannschaft zum Auswärtsspiel.",
+   "mevcutBeispielTr": "Binlerce taraftar takıma deplasman maçında eşlik etti."
+  },
+  {
+   "id": 4879,
+   "de": "die Tribüne",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Tribünen",
+   "mevcutTr": "tribün",
+   "mevcutBeispiel": "Auf der oberen Tribüne waren noch einige Plätze frei.",
+   "mevcutBeispielTr": "Üst tribünde hâlâ birkaç boş yer vardı."
+  },
+  {
+   "id": 4880,
+   "de": "die Ausrüstung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausrüstungen",
+   "mevcutTr": "donanım, ekipman, teçhizat",
+   "mevcutBeispiel": "Ohne die richtige Ausrüstung sollte man nicht in die Berge gehen.",
+   "mevcutBeispielTr": "Doğru ekipman olmadan dağa çıkılmamalı."
+  },
+  {
+   "id": 4881,
+   "de": "der Brauch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bräuche",
+   "mevcutTr": "gelenek, âdet",
+   "mevcutBeispiel": "Dieser Brauch wird in der Region seit Jahrhunderten gepflegt.",
+   "mevcutBeispielTr": "Bu gelenek bölgede yüzyıllardır yaşatılıyor.",
+   "cakisan": [
+    "die Tradition (B1)"
+   ]
+  },
+  {
+   "id": 4882,
+   "de": "das Volksfest",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Volksfeste",
+   "mevcutTr": "halk şenliği, panayır",
+   "mevcutBeispiel": "Zum Volksfest im August kommen Besucher aus der ganzen Umgebung.",
+   "mevcutBeispielTr": "Ağustostaki halk şenliğine çevredeki her yerden ziyaretçi geliyor."
+  },
+  {
+   "id": 4883,
+   "de": "die Tracht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Trachten",
+   "mevcutTr": "yöresel kıyafet, geleneksel giysi",
+   "mevcutBeispiel": "Beim Umzug trugen viele Teilnehmer die Tracht ihrer Großeltern.",
+   "mevcutBeispielTr": "Geçit töreninde katılımcıların çoğu dedelerinin yöresel kıyafetini giydi."
+  },
+  {
+   "id": 4884,
+   "de": "das Reiseziel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Reiseziele",
+   "mevcutTr": "gidilecek yer, seyahat hedefi",
+   "mevcutBeispiel": "Als Reiseziel wählten sie diesmal eine kleine Insel im Norden.",
+   "mevcutBeispielTr": "Gidecekleri yer olarak bu kez kuzeyde küçük bir ada seçtiler."
+  },
+  {
+   "id": 4885,
+   "de": "der Wanderweg",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wanderwege",
+   "mevcutTr": "yürüyüş parkuru, doğa yolu",
+   "mevcutBeispiel": "Der markierte Wanderweg führt am Fluss entlang bis zur Mühle.",
+   "mevcutBeispielTr": "İşaretli yürüyüş parkuru nehir boyunca değirmene kadar gidiyor."
+  },
+  {
+   "id": 4886,
+   "de": "der Dokumentarfilm",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Dokumentarfilme",
+   "mevcutTr": "belgesel",
+   "mevcutBeispiel": "Der Dokumentarfilm zeigt das Leben in einem abgelegenen Bergdorf.",
+   "mevcutBeispielTr": "Belgesel, ücra bir dağ köyündeki yaşamı gösteriyor."
+  },
+  {
+   "id": 4887,
+   "de": "der Untertitel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Untertitel",
+   "mevcutTr": "altyazı",
+   "mevcutBeispiel": "Den Film schauen wir lieber im Original mit deutschen Untertiteln.",
+   "mevcutBeispielTr": "Filmi tercihen orijinal dilinde Almanca altyazıyla izliyoruz."
+  },
+  {
+   "id": 4888,
+   "de": "der Kritiker",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kritiker",
+   "mevcutTr": "eleştirmen",
+   "mevcutBeispiel": "Die Kritiker lobten vor allem die Kameraarbeit des jungen Regisseurs.",
+   "mevcutBeispielTr": "Eleştirmenler özellikle genç yönetmenin kamera çalışmasını övdü."
+  },
+  {
+   "id": 4889,
+   "de": "die Auszeichnung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Auszeichnungen",
+   "mevcutTr": "ödül, nişan",
+   "mevcutBeispiel": "Für ihr Lebenswerk erhielt sie eine besondere Auszeichnung.",
+   "mevcutBeispielTr": "Yaşam boyu eserleri için özel bir ödül aldı."
+  },
+  {
+   "id": 4890,
+   "de": "die Preisverleihung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Preisverleihungen",
+   "mevcutTr": "ödül töreni",
+   "mevcutBeispiel": "Die Preisverleihung findet in diesem Jahr im alten Opernhaus statt.",
+   "mevcutBeispielTr": "Ödül töreni bu yıl eski opera binasında yapılıyor."
+  },
+  {
+   "id": 4891,
+   "de": "die Einschaltquote",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Einschaltquoten",
+   "mevcutTr": "izlenme oranı, reyting",
+   "mevcutBeispiel": "Die Einschaltquote der Sportsendung ist am Sonntagabend am höchsten.",
+   "mevcutBeispielTr": "Spor programının izlenme oranı pazar akşamı en yüksek seviyede."
+  },
+  {
+   "id": 4892,
+   "de": "der Höhepunkt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Höhepunkte",
+   "mevcutTr": "doruk noktası, zirve",
+   "mevcutBeispiel": "Der Höhepunkt des Abends war der Auftritt des Chors.",
+   "mevcutBeispielTr": "Akşamın doruk noktası koronun performansıydı."
+  },
+  {
+   "id": 4893,
+   "de": "die Leidenschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Leidenschaften",
+   "mevcutTr": "tutku, ihtiras",
+   "mevcutBeispiel": "Das Klettern ist für ihn keine Pflicht, sondern eine Leidenschaft.",
+   "mevcutBeispielTr": "Tırmanış onun için bir zorunluluk değil, bir tutku."
+  },
+  {
+   "id": 4894,
+   "de": "die Jury",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Jurys",
+   "mevcutTr": "jüri, seçici kurul",
+   "mevcutBeispiel": "Die Jury konnte sich lange nicht auf einen Sieger einigen.",
+   "mevcutBeispielTr": "Jüri uzun süre bir kazanan üzerinde anlaşamadı."
+  }
+ ]
+}

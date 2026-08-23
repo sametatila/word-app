@@ -1,0 +1,523 @@
+{
+ "paket": "c1-027",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6553,
+   "de": "der Vers",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verse",
+   "mevcutTr": "dize, mısra",
+   "mevcutBeispiel": "Die letzten beiden Verse bleiben bewusst unvollendet.",
+   "mevcutBeispielTr": "Son iki dize bilinçli olarak tamamlanmamış bırakılıyor."
+  },
+  {
+   "id": 6554,
+   "de": "die Strophe",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Strophen",
+   "mevcutTr": "kıta, bent",
+   "mevcutBeispiel": "Jede Strophe endet mit demselben ruhigen Bild.",
+   "mevcutBeispielTr": "Her kıta aynı dingin imgeyle bitiyor."
+  },
+  {
+   "id": 6555,
+   "de": "die Prosa",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "düzyazı, nesir",
+   "mevcutBeispiel": "Ihre Prosa ist nüchtern und kommt ohne Schmuck aus.",
+   "mevcutBeispielTr": "Onun düzyazısı yalın ve hiçbir süse ihtiyaç duymuyor."
+  },
+  {
+   "id": 6556,
+   "de": "die Lyrik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şiir sanatı, lirik şiir",
+   "mevcutBeispiel": "Moderne Lyrik verlangt vom Leser eine hohe Aufmerksamkeit.",
+   "mevcutBeispielTr": "Modern şiir okurdan yüksek bir dikkat ister."
+  },
+  {
+   "id": 6557,
+   "de": "die Abhandlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abhandlungen",
+   "mevcutTr": "inceleme, bilimsel makale",
+   "mevcutBeispiel": "Er hat eine trockene Abhandlung über Satzzeichen geschrieben.",
+   "mevcutBeispielTr": "Noktalama işaretleri üzerine kuru bir inceleme yazdı."
+  },
+  {
+   "id": 6558,
+   "de": "das Leitmotiv",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leitmotive",
+   "mevcutTr": "ana motif, temel izlek",
+   "mevcutBeispiel": "Das Meer bildet in ihrem Werk ein wiederkehrendes Leitmotiv.",
+   "mevcutBeispielTr": "Deniz, eserinde yinelenen bir ana motif oluşturuyor."
+  },
+  {
+   "id": 6559,
+   "de": "die Streitschrift",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Streitschriften",
+   "mevcutTr": "polemik yazısı, sert eleştiri metni",
+   "mevcutBeispiel": "Seine Streitschrift gegen die Akademie erschien zunächst anonym.",
+   "mevcutBeispielTr": "Akademiye karşı yazdığı polemik metni önce imzasız yayımlandı."
+  },
+  {
+   "id": 6560,
+   "de": "das Zitat",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zitate",
+   "mevcutTr": "alıntı",
+   "mevcutBeispiel": "Das Zitat ist im Original deutlich schärfer formuliert.",
+   "mevcutBeispielTr": "Alıntı özgün metinde çok daha sert ifade edilmiş."
+  },
+  {
+   "id": 6561,
+   "de": "die Leserschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "okur kitlesi",
+   "mevcutBeispiel": "Die Zeitschrift hat eine kleine, aber treue Leserschaft.",
+   "mevcutBeispielTr": "Dergi küçük ama sadık bir okur kitlesine sahip."
+  },
+  {
+   "id": 6562,
+   "de": "das Wortspiel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wortspiele",
+   "mevcutTr": "kelime oyunu",
+   "mevcutBeispiel": "Das Wortspiel im Titel lässt sich kaum übersetzen.",
+   "mevcutBeispielTr": "Başlıktaki kelime oyunu neredeyse çevrilemiyor."
+  },
+  {
+   "id": 6563,
+   "de": "das Sprachbild",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprachbilder",
+   "mevcutTr": "dil imgesi, mecaz",
+   "mevcutBeispiel": "Ihre Sprachbilder stammen fast alle aus der Landwirtschaft.",
+   "mevcutBeispielTr": "Dil imgelerinin neredeyse tamamı tarımdan geliyor."
+  },
+  {
+   "id": 6564,
+   "de": "die Rahmenhandlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rahmenhandlungen",
+   "mevcutTr": "çerçeve öykü",
+   "mevcutBeispiel": "Die Rahmenhandlung spielt in einem verschneiten Gasthaus.",
+   "mevcutBeispielTr": "Çerçeve öykü karla kaplı bir handa geçiyor."
+  },
+  {
+   "id": 6565,
+   "de": "die Rückblende",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rückblenden",
+   "mevcutTr": "geriye dönüş",
+   "mevcutBeispiel": "Die Kindheit der Figur wird nur in Rückblenden gezeigt.",
+   "mevcutBeispielTr": "Karakterin çocukluğu yalnızca geriye dönüşlerde gösteriliyor."
+  },
+  {
+   "id": 6566,
+   "de": "die Fabel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fabeln",
+   "mevcutTr": "fabl",
+   "mevcutBeispiel": "Die Fabel endet mit einer knappen moralischen Lehre.",
+   "mevcutBeispielTr": "Fabl kısa bir ahlaki dersle sona eriyor."
+  },
+  {
+   "id": 6567,
+   "de": "der Stilbruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stilbrüche",
+   "mevcutTr": "üslup kopukluğu",
+   "mevcutBeispiel": "Der plötzliche Wechsel in die Amtssprache wirkt wie ein Stilbruch.",
+   "mevcutBeispielTr": "Resmî dile ani geçiş bir üslup kopukluğu gibi duruyor."
+  },
+  {
+   "id": 6568,
+   "de": "der Klappentext",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Klappentexte",
+   "mevcutTr": "arka kapak yazısı, tanıtım yazısı",
+   "mevcutBeispiel": "Der Klappentext verspricht mehr, als das Buch einlöst.",
+   "mevcutBeispielTr": "Arka kapak yazısı kitabın verdiğinden fazlasını vaat ediyor."
+  },
+  {
+   "id": 6569,
+   "de": "anspielen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angespielt",
+   "mevcutTr": "ima etmek, göndermede bulunmak",
+   "mevcutBeispiel": "Der Titel spielt auf ein bekanntes Volkslied an.",
+   "mevcutBeispielTr": "Başlık bilinen bir halk türküsüne gönderme yapıyor.",
+   "cakisan": [
+    "andeuten (B2)",
+    "insinuieren (C1)"
+   ]
+  },
+  {
+   "id": 6570,
+   "de": "zuspitzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat zugespitzt",
+   "mevcutTr": "keskinleştirmek, uca taşımak",
+   "mevcutBeispiel": "Der Essayist spitzt seine These bewusst zu.",
+   "mevcutBeispielTr": "Denemeci tezini bilinçli olarak uca taşıyor."
+  },
+  {
+   "id": 6571,
+   "de": "entlehnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entlehnt",
+   "mevcutTr": "ödünç almak, alıntılamak",
+   "mevcutBeispiel": "Das Wort wurde im Mittelalter aus dem Latein entlehnt.",
+   "mevcutBeispielTr": "Kelime Orta Çağ'da Latinceden ödünç alındı.",
+   "cakisan": [
+    "ausleihen (A2)"
+   ]
+  },
+  {
+   "id": 6572,
+   "de": "überliefern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überliefert",
+   "mevcutTr": "kuşaktan kuşağa aktarmak, nakletmek",
+   "mevcutBeispiel": "Die Sage wurde jahrhundertelang nur mündlich überliefert.",
+   "mevcutBeispielTr": "Efsane yüzyıllarca yalnızca sözlü olarak aktarıldı.",
+   "cakisan": [
+    "tradieren (C1)"
+   ]
+  },
+  {
+   "id": 6573,
+   "de": "abwandeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgewandelt",
+   "mevcutTr": "değiştirerek uyarlamak, başkalaştırmak",
+   "mevcutBeispiel": "Sie wandelt das alte Motiv nur leicht ab.",
+   "mevcutBeispielTr": "Eski motifi yalnızca hafifçe değiştiriyor."
+  },
+  {
+   "id": 6574,
+   "de": "verweisen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verwiesen",
+   "mevcutTr": "atıfta bulunmak, yollamak",
+   "mevcutBeispiel": "Die Autorin verweist im Anhang auf ältere Untersuchungen.",
+   "mevcutBeispielTr": "Yazar ekte daha eski incelemelere atıfta bulunuyor.",
+   "cakisan": [
+    "sich beziehen auf (B2)"
+   ]
+  },
+  {
+   "id": 6575,
+   "de": "parodieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat parodiert",
+   "mevcutTr": "parodisini yapmak, taklit ederek alay etmek",
+   "mevcutBeispiel": "Der junge Autor parodiert den Stil seines Lehrers.",
+   "mevcutBeispielTr": "Genç yazar hocasının üslubunun parodisini yapıyor."
+  },
+  {
+   "id": 6576,
+   "de": "ausschmücken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgeschmückt",
+   "mevcutTr": "süslemek, abartarak anlatmak",
+   "mevcutBeispiel": "Er schmückt jede Anekdote ein wenig aus.",
+   "mevcutBeispielTr": "Her anekdotu biraz süsleyerek anlatıyor.",
+   "cakisan": [
+    "dekorieren (B1)",
+    "schmücken (A2)"
+   ]
+  },
+  {
+   "id": 6577,
+   "de": "hervorgehen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist hervorgegangen",
+   "mevcutTr": "ortaya çıkmak, anlaşılmak",
+   "mevcutBeispiel": "Aus dem Briefwechsel geht ihre tiefe Freundschaft hervor.",
+   "mevcutBeispielTr": "Mektuplaşmadan derin dostlukları anlaşılıyor."
+  },
+  {
+   "id": 6578,
+   "de": "einflechten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat eingeflochten",
+   "mevcutTr": "araya serpiştirmek, katmak",
+   "mevcutBeispiel": "Sie flicht immer wieder kleine Beobachtungen in die Handlung ein.",
+   "mevcutBeispielTr": "Olay örgüsüne durmadan küçük gözlemler serpiştiriyor."
+  },
+  {
+   "id": 6579,
+   "de": "abschweifen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist abgeschweift",
+   "mevcutTr": "konudan sapmak, dağılmak",
+   "mevcutBeispiel": "Der Redner schweift ständig vom eigentlichen Thema ab.",
+   "mevcutBeispielTr": "Konuşmacı sürekli asıl konudan sapıyor."
+  },
+  {
+   "id": 6580,
+   "de": "bildhaft",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "imgesel, göz önünde canlandıran",
+   "mevcutBeispiel": "Ihre Sprache ist ungewöhnlich bildhaft und zugleich konkret.",
+   "mevcutBeispielTr": "Dili alışılmadık ölçüde imgesel ve aynı zamanda somut."
+  },
+  {
+   "id": 6581,
+   "de": "unmissverständlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "açık seçik, yanlış anlaşılmaya yer bırakmayan",
+   "mevcutBeispiel": "Der Kritiker äußert seine Ablehnung unmissverständlich.",
+   "mevcutBeispielTr": "Eleştirmen beğenmediğini açık seçik dile getiriyor."
+  },
+  {
+   "id": 6582,
+   "de": "lakonisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "lakonik, az ve öz",
+   "mevcutBeispiel": "Sein Stil bleibt bis zum letzten Satz lakonisch.",
+   "mevcutBeispielTr": "Üslubu son cümleye kadar az ve öz kalıyor."
+  },
+  {
+   "id": 6583,
+   "de": "gleichsam",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "adeta, sanki",
+   "mevcutBeispiel": "Die Wiederholung wirkt gleichsam wie ein musikalisches Motiv.",
+   "mevcutBeispielTr": "Yineleme adeta müzikal bir motif gibi etki ediyor."
+  },
+  {
+   "id": 6584,
+   "de": "das Verlagswesen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yayıncılık sektörü",
+   "mevcutBeispiel": "Das gesamte Verlagswesen steht durch schwindende Anzeigenerlöse unter Druck.",
+   "mevcutBeispielTr": "Azalan ilan gelirleri yüzünden bütün yayıncılık sektörü baskı altında."
+  },
+  {
+   "id": 6585,
+   "de": "die Propaganda",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "propaganda",
+   "mevcutBeispiel": "Wirksame Propaganda arbeitet selten mit Lügen, sondern mit gezielten Auslassungen.",
+   "mevcutBeispielTr": "Etkili propaganda nadiren yalanla, çoğunlukla hedefli eksik bırakmalarla çalışır."
+  },
+  {
+   "id": 6586,
+   "de": "der Quellenschutz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "haber kaynağının gizliliği, kaynağın korunması",
+   "mevcutBeispiel": "Ohne konsequenten Quellenschutz würde kaum ein Insider mit Journalisten sprechen.",
+   "mevcutBeispielTr": "Tutarlı bir kaynak koruma olmasa hiçbir içeriden kişi gazetecilerle konuşmazdı."
+  },
+  {
+   "id": 6587,
+   "de": "der Informant",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Informanten",
+   "mevcutTr": "bilgi kaynağı, haber kaynağı (kişi)",
+   "mevcutBeispiel": "Der Informant übergab die Unterlagen nur unter der Zusicherung völliger Anonymität.",
+   "mevcutBeispielTr": "Bilgi kaynağı belgeleri ancak tam anonimlik güvencesi karşılığında teslim etti."
+  },
+  {
+   "id": 6588,
+   "de": "die Enthüllung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Enthüllungen",
+   "mevcutTr": "ifşa, açığa çıkarma",
+   "mevcutBeispiel": "Die Enthüllung des Verlagsdeals brachte den Aufsichtsrat erheblich in Erklärungsnot.",
+   "mevcutBeispielTr": "Yayınevi anlaşmasının ifşası denetim kurulunu ciddi biçimde açıklama yapmak zorunda bıraktı."
+  },
+  {
+   "id": 6589,
+   "de": "die Boulevardpresse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "magazin basını, bulvar basını",
+   "mevcutBeispiel": "Die Boulevardpresse lebt von Empörung, nicht von der geduldigen Einordnung der Fakten.",
+   "mevcutBeispielTr": "Bulvar basını olguların sabırlı bir şekilde bağlama oturtulmasından değil, öfkeden beslenir."
+  },
+  {
+   "id": 6590,
+   "de": "das Leitmedium",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leitmedien",
+   "mevcutTr": "yönlendirici medya, referans yayın organı",
+   "mevcutBeispiel": "Was die Leitmedien aufgreifen, bestimmt oft die Tagesordnung der übrigen Redaktionen.",
+   "mevcutBeispielTr": "Referans yayın organlarının ele aldığı konu çoğu zaman diğer yayın kurullarının gündemini belirler."
+  },
+  {
+   "id": 6591,
+   "de": "die Meinungsbildung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Meinungsbildungen",
+   "mevcutTr": "kanaat oluşumu, fikir oluşturma",
+   "mevcutBeispiel": "Algorithmen greifen tiefer in die politische Meinungsbildung ein, als viele annehmen.",
+   "mevcutBeispielTr": "Algoritmalar siyasi kanaat oluşumuna çoğu kişinin sandığından daha derin biçimde müdahale ediyor."
+  },
+  {
+   "id": 6592,
+   "de": "die Meinungsvielfalt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "görüş çeşitliliği, çoğulculuk",
+   "mevcutBeispiel": "Der Gesetzgeber soll die Meinungsvielfalt sichern, ohne einzelne Inhalte zu bewerten.",
+   "mevcutBeispielTr": "Yasa koyucu, tek tek içerikleri değerlendirmeden görüş çeşitliliğini güvence altına almalıdır."
+  },
+  {
+   "id": 6593,
+   "de": "die Wahrhaftigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wahrhaftigkeiten",
+   "mevcutTr": "doğruluk, dürüstlük",
+   "mevcutBeispiel": "Wahrhaftigkeit verlangt mehr als formale Richtigkeit einzelner Angaben.",
+   "mevcutBeispielTr": "Doğruluk, tek tek verilerin biçimsel olarak yerinde olmasından fazlasını gerektirir."
+  },
+  {
+   "id": 6594,
+   "de": "das Persönlichkeitsrecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Persönlichkeitsrechte",
+   "mevcutTr": "kişilik hakkı",
+   "mevcutBeispiel": "Das Persönlichkeitsrecht der Betroffenen wiegt hier schwerer als das Informationsinteresse.",
+   "mevcutBeispielTr": "Burada ilgililerin kişilik hakkı, bilgi edinme menfaatinden daha ağır basıyor."
+  },
+  {
+   "id": 6595,
+   "de": "die Aufmerksamkeitsökonomie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dikkat ekonomisi",
+   "mevcutBeispiel": "In der Aufmerksamkeitsökonomie wird die knappe Ressource nicht Information, sondern Zuwendung.",
+   "mevcutBeispielTr": "Dikkat ekonomisinde kıt kaynak bilgi değil, ilgi hâline gelir."
+  },
+  {
+   "id": 6596,
+   "de": "der Rundfunkbeitrag",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rundfunkbeiträge",
+   "mevcutTr": "yayın katkı payı, radyo-televizyon aidatı",
+   "mevcutBeispiel": "Der Rundfunkbeitrag soll Programme unabhängig von Werbeeinnahmen und Quoten finanzieren.",
+   "mevcutBeispielTr": "Yayın katkı payı, programları reklam gelirlerinden ve reytinglerden bağımsız biçimde finanse etmelidir."
+  },
+  {
+   "id": 6597,
+   "de": "die Medienkonzentration",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "medya yoğunlaşması, medya tekelleşmesi",
+   "mevcutBeispiel": "Die wachsende Medienkonzentration verringert die Zahl wirklich unabhängiger Stimmen.",
+   "mevcutBeispielTr": "Artan medya yoğunlaşması gerçekten bağımsız seslerin sayısını azaltıyor."
+  },
+  {
+   "id": 6598,
+   "de": "der Pressekodex",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Pressekodizes",
+   "mevcutTr": "basın meslek ilkeleri",
+   "mevcutBeispiel": "Der Pressekodex untersagt es, Opfer ohne Not identifizierbar zu machen.",
+   "mevcutBeispielTr": "Basın meslek ilkeleri, mağdurların gereksiz yere teşhis edilebilir kılınmasını yasaklar."
+  },
+  {
+   "id": 6599,
+   "de": "das Redaktionsgeheimnis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Redaktionsgeheimnisse",
+   "mevcutTr": "yayın kurulu gizliliği, redaksiyon sırrı",
+   "mevcutBeispiel": "Die Durchsuchung verletzte nach Ansicht des Gerichts das Redaktionsgeheimnis.",
+   "mevcutBeispielTr": "Mahkemeye göre arama, yayın kurulu gizliliğini ihlal ediyordu."
+  },
+  {
+   "id": 6600,
+   "de": "das Zeugnisverweigerungsrecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zeugnisverweigerungsrechte",
+   "mevcutTr": "tanıklıktan çekinme hakkı",
+   "mevcutBeispiel": "Journalisten berufen sich vor Gericht auf ihr Zeugnisverweigerungsrecht.",
+   "mevcutBeispielTr": "Gazeteciler mahkemede tanıklıktan çekinme haklarına dayanırlar."
+  },
+  {
+   "id": 6601,
+   "de": "die Informationsfreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilgi edinme özgürlüğü",
+   "mevcutBeispiel": "Die Informationsfreiheit gibt jedem Bürger Zugang zu amtlichen Unterlagen.",
+   "mevcutBeispielTr": "Bilgi edinme özgürlüğü her yurttaşa resmî belgelere erişim hakkı verir."
+  },
+  {
+   "id": 6602,
+   "de": "der Nachrichtenwert",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nachrichtenwerte",
+   "mevcutTr": "haber değeri",
+   "mevcutBeispiel": "Nähe, Konflikt und Prominenz erhöhen den Nachrichtenwert eines Ereignisses erheblich.",
+   "mevcutBeispielTr": "Yakınlık, çatışma ve ünlülük bir olayın haber değerini belirgin biçimde artırır."
+  }
+ ]
+}

@@ -1,0 +1,548 @@
+{
+ "paket": "a2-012",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7538,
+   "de": "sanft",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yumuşak, nazik",
+   "mevcutBeispiel": "Die Krankenschwester hat eine sanfte Stimme.",
+   "mevcutBeispielTr": "Hemşirenin yumuşak bir sesi var.",
+   "cakisan": [
+    "weich (A2)"
+   ]
+  },
+  {
+   "id": 7539,
+   "de": "liebevoll",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sevecen, şefkatli",
+   "mevcutBeispiel": "Meine Großmutter war immer sehr liebevoll.",
+   "mevcutBeispielTr": "Büyükannem her zaman çok sevecendi."
+  },
+  {
+   "id": 7540,
+   "de": "zärtlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şefkatli, nazik (dokunuş, ses)",
+   "mevcutBeispiel": "Er nahm sie zärtlich in den Arm.",
+   "mevcutBeispielTr": "Onu şefkatle kollarına aldı.",
+   "cakisan": [
+    "fürsorglich (A2)"
+   ]
+  },
+  {
+   "id": 7541,
+   "de": "humorvoll",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "esprili, mizah dolu",
+   "mevcutBeispiel": "Unser Trainer ist ein humorvoller Mensch.",
+   "mevcutBeispielTr": "Antrenörümüz esprili bir insan.",
+   "cakisan": [
+    "witzig (A2)"
+   ]
+  },
+  {
+   "id": 7542,
+   "de": "motiviert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "motive, istekli",
+   "mevcutBeispiel": "Die neue Praktikantin ist sehr motiviert.",
+   "mevcutBeispielTr": "Yeni stajyer çok istekli."
+  },
+  {
+   "id": 7543,
+   "de": "pessimistisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "karamsar",
+   "mevcutBeispiel": "Warum bist du immer so pessimistisch?",
+   "mevcutBeispielTr": "Neden hep bu kadar karamsarsın?"
+  },
+  {
+   "id": 7544,
+   "de": "überrascht",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şaşkın, şaşırmış",
+   "mevcutBeispiel": "Ich war überrascht, dich hier zu sehen.",
+   "mevcutBeispielTr": "Seni burada görünce şaşırdım."
+  },
+  {
+   "id": 7545,
+   "de": "erstaunt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hayret etmiş, şaşırmış",
+   "mevcutBeispiel": "Alle waren erstaunt über sein gutes Deutsch.",
+   "mevcutBeispielTr": "Herkes onun iyi Almancasına hayret etti."
+  },
+  {
+   "id": 7546,
+   "de": "besorgt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "endişeli, kaygılı",
+   "mevcutBeispiel": "Die Eltern sind besorgt um ihren kranken Sohn.",
+   "mevcutBeispielTr": "Anne baba hasta oğulları için endişeli.",
+   "cakisan": [
+    "ängstlich (B1)"
+   ]
+  },
+  {
+   "id": 7547,
+   "de": "enttäuscht",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hayal kırıklığına uğramış",
+   "mevcutBeispiel": "Ich bin enttäuscht, weil du nicht gekommen bist.",
+   "mevcutBeispielTr": "Gelmediğin için hayal kırıklığına uğradım."
+  },
+  {
+   "id": 7548,
+   "de": "aufgeregt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "heyecanlı, telaşlı",
+   "mevcutBeispiel": "Vor der Prüfung war ich sehr aufgeregt.",
+   "mevcutBeispielTr": "Sınavdan önce çok heyecanlıydım.",
+   "cakisan": [
+    "spannend (A2)"
+   ]
+  },
+  {
+   "id": 7549,
+   "de": "verwirrt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kafası karışmış, şaşkın",
+   "mevcutBeispiel": "Nach der langen Erklärung war ich völlig verwirrt.",
+   "mevcutBeispielTr": "Uzun açıklamadan sonra kafam tamamen karışmıştı."
+  },
+  {
+   "id": 7550,
+   "de": "verärgert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kızgın, canı sıkkın",
+   "mevcutBeispiel": "Der Kunde war über die späte Lieferung verärgert.",
+   "mevcutBeispielTr": "Müşteri geç teslimat yüzünden kızgındı.",
+   "cakisan": [
+    "böse (A1)"
+   ]
+  },
+  {
+   "id": 7551,
+   "de": "beleidigt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gücenmiş, alınmış",
+   "mevcutBeispiel": "Sie ist beleidigt, weil ich ihre Frisur nicht gelobt habe.",
+   "mevcutBeispielTr": "Saç modelini övmediğim için alındı."
+  },
+  {
+   "id": 7552,
+   "de": "entspannt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "rahatlamış, sakin",
+   "mevcutBeispiel": "Nach dem Urlaub sieht er sehr entspannt aus.",
+   "mevcutBeispielTr": "Tatilden sonra çok rahatlamış görünüyor."
+  },
+  {
+   "id": 7553,
+   "de": "erleichtert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "içi rahatlamış, ferahlamış",
+   "mevcutBeispiel": "Ich war erleichtert, als der Arzt anrief.",
+   "mevcutBeispielTr": "Doktor aradığında içim rahatladı."
+  },
+  {
+   "id": 7554,
+   "de": "gestresst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "stresli",
+   "mevcutBeispiel": "Meine Kollegin ist diese Woche total gestresst.",
+   "mevcutBeispielTr": "Meslektaşım bu hafta tamamen stresli.",
+   "cakisan": [
+    "stressig (A2)"
+   ]
+  },
+  {
+   "id": 7555,
+   "de": "gelangweilt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "canı sıkkın, sıkılmış",
+   "mevcutBeispiel": "Die Kinder saßen gelangweilt im Wartezimmer.",
+   "mevcutBeispielTr": "Çocuklar bekleme odasında canları sıkkın oturuyorlardı."
+  },
+  {
+   "id": 7556,
+   "de": "schläfrig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "uykulu",
+   "mevcutBeispiel": "Nach dem Mittagessen werde ich immer schläfrig.",
+   "mevcutBeispielTr": "Öğle yemeğinden sonra hep uykum gelir."
+  },
+  {
+   "id": 7557,
+   "de": "unglücklich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "mutsuz",
+   "mevcutBeispiel": "In seinem alten Job war er sehr unglücklich.",
+   "mevcutBeispielTr": "Eski işinde çok mutsuzdu."
+  },
+  {
+   "id": 7558,
+   "de": "unzufrieden",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hoşnutsuz, memnuniyetsiz",
+   "mevcutBeispiel": "Der Gast war mit dem Zimmer unzufrieden.",
+   "mevcutBeispielTr": "Misafir odadan memnun değildi."
+  },
+  {
+   "id": 7559,
+   "de": "ungerecht",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "adaletsiz, haksız",
+   "mevcutBeispiel": "Der Chef behandelt die Praktikanten ungerecht.",
+   "mevcutBeispielTr": "Patron stajyerlere adaletsiz davranıyor."
+  },
+  {
+   "id": 7560,
+   "de": "verlobt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "nişanlı",
+   "mevcutBeispiel": "Meine Schwester ist seit einem Jahr verlobt.",
+   "mevcutBeispielTr": "Kız kardeşim bir yıldır nişanlı."
+  },
+  {
+   "id": 7561,
+   "de": "verwitwet",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dul",
+   "mevcutBeispiel": "Meine Nachbarin ist seit zehn Jahren verwitwet.",
+   "mevcutBeispielTr": "Komşum on yıldır dul."
+  },
+  {
+   "id": 7562,
+   "de": "minderjährig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "reşit olmayan",
+   "mevcutBeispiel": "Minderjährige Kinder dürfen keinen Alkohol kaufen.",
+   "mevcutBeispielTr": "Reşit olmayan çocuklar alkol satın alamaz."
+  },
+  {
+   "id": 7563,
+   "de": "volljährig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "reşit",
+   "mevcutBeispiel": "In Deutschland ist man mit 18 Jahren volljährig.",
+   "mevcutBeispielTr": "Almanya'da 18 yaşında reşit olunuyor."
+  },
+  {
+   "id": 7564,
+   "de": "jugendlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "genç, gençlere özgü",
+   "mevcutBeispiel": "Mit sechzig hat er noch ein jugendliches Aussehen.",
+   "mevcutBeispielTr": "Altmış yaşında hâlâ genç bir görünümü var.",
+   "cakisan": [
+    "jung (A1)",
+    "der Jugendliche (A1)"
+   ]
+  },
+  {
+   "id": 7565,
+   "de": "unerfahren",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "deneyimsiz, tecrübesiz",
+   "mevcutBeispiel": "Der neue Fahrer ist noch sehr unerfahren.",
+   "mevcutBeispielTr": "Yeni şoför henüz çok deneyimsiz."
+  },
+  {
+   "id": 7566,
+   "de": "pensioniert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "emekli olmuş, emekliye ayrılmış",
+   "mevcutBeispiel": "Mein Onkel ist seit zwei Jahren pensioniert.",
+   "mevcutBeispielTr": "Amcam iki yıldır emekli."
+  },
+  {
+   "id": 7567,
+   "de": "behindert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "engelli",
+   "mevcutBeispiel": "Der Platz vorne ist für behinderte Fahrgäste.",
+   "mevcutBeispielTr": "Öndeki yer engelli yolcular içindir."
+  },
+  {
+   "id": 7568,
+   "de": "befreundet",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "arkadaş olan, dost",
+   "mevcutBeispiel": "Wir sind seit der Schulzeit befreundet.",
+   "mevcutBeispielTr": "Okul zamanından beri arkadaşız."
+  },
+  {
+   "id": 7569,
+   "de": "vertraut",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tanıdık, alışık",
+   "mevcutBeispiel": "Seine Stimme kam mir sofort vertraut vor.",
+   "mevcutBeispielTr": "Sesi bana hemen tanıdık geldi.",
+   "cakisan": [
+    "der Bekannte (A1)",
+    "die Bekannte (B1)"
+   ]
+  },
+  {
+   "id": 7570,
+   "de": "künftig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bundan sonra, ileride",
+   "mevcutBeispiel": "Künftig arbeite ich nur noch vier Tage pro Woche.",
+   "mevcutBeispielTr": "Bundan sonra haftada sadece dört gün çalışacağım."
+  },
+  {
+   "id": 7571,
+   "de": "demnächst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yakında, çok yakında",
+   "mevcutBeispiel": "Der neue Supermarkt öffnet demnächst.",
+   "mevcutBeispielTr": "Yeni süpermarket yakında açılıyor.",
+   "cakisan": [
+    "bald (A1)"
+   ]
+  },
+  {
+   "id": 7572,
+   "de": "bislang",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şimdiye kadar, bugüne dek",
+   "mevcutBeispiel": "Bislang habe ich keine Antwort bekommen.",
+   "mevcutBeispielTr": "Şimdiye kadar hiç cevap almadım.",
+   "cakisan": [
+    "bisher (B1)"
+   ]
+  },
+  {
+   "id": 7573,
+   "de": "davor",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ondan önce, öncesinde",
+   "mevcutBeispiel": "Um acht beginnt der Kurs, davor trinke ich einen Kaffee.",
+   "mevcutBeispielTr": "Kurs sekizde başlıyor, ondan önce bir kahve içiyorum."
+  },
+  {
+   "id": 7574,
+   "de": "zuvor",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "daha önce, önceden",
+   "mevcutBeispiel": "Wir hatten uns nie zuvor gesehen.",
+   "mevcutBeispielTr": "Birbirimizi daha önce hiç görmemiştik."
+  },
+  {
+   "id": 7575,
+   "de": "anschließend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ardından, hemen sonra",
+   "mevcutBeispiel": "Wir essen zuerst, anschließend gehen wir ins Kino.",
+   "mevcutBeispielTr": "Önce yemek yiyoruz, ardından sinemaya gidiyoruz."
+  },
+  {
+   "id": 7576,
+   "de": "frühestens",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "en erken",
+   "mevcutBeispiel": "Der Arzt hat frühestens am Freitag einen Termin frei.",
+   "mevcutBeispielTr": "Doktorun en erken cuma günü boş randevusu var."
+  },
+  {
+   "id": 7577,
+   "de": "neuerdings",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "son zamanlarda, yeni yeni",
+   "mevcutBeispiel": "Neuerdings fährt mein Vater mit dem Fahrrad zur Arbeit.",
+   "mevcutBeispielTr": "Son zamanlarda babam işe bisikletle gidiyor."
+  },
+  {
+   "id": 7578,
+   "de": "seither",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "o zamandan beri",
+   "mevcutBeispiel": "Sie ist letztes Jahr umgezogen und seither sehen wir uns selten.",
+   "mevcutBeispielTr": "Geçen yıl taşındı ve o zamandan beri birbirimizi nadiren görüyoruz.",
+   "cakisan": [
+    "seitdem (B1)"
+   ]
+  },
+  {
+   "id": 7579,
+   "de": "zwischendurch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "arada bir, arada sırada",
+   "mevcutBeispiel": "Ich lerne drei Stunden und mache zwischendurch eine Pause.",
+   "mevcutBeispielTr": "Üç saat çalışıyorum ve arada bir mola veriyorum."
+  },
+  {
+   "id": 7580,
+   "de": "momentan",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şu anda, şimdilik",
+   "mevcutBeispiel": "Momentan habe ich leider kein Geld für ein Auto.",
+   "mevcutBeispielTr": "Şu anda maalesef araba için param yok.",
+   "cakisan": [
+    "gerade (A1)",
+    "zurzeit (A1)"
+   ]
+  },
+  {
+   "id": 7581,
+   "de": "derzeit",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şu sıralar, hâlihazırda",
+   "mevcutBeispiel": "Derzeit sucht die Firma zwei neue Mitarbeiter.",
+   "mevcutBeispielTr": "Şu sıralar firma iki yeni çalışan arıyor."
+  },
+  {
+   "id": 7582,
+   "de": "tagsüber",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gündüzleri, gün boyunca",
+   "mevcutBeispiel": "Tagsüber ist niemand zu Hause.",
+   "mevcutBeispielTr": "Gündüzleri evde kimse olmuyor."
+  },
+  {
+   "id": 7583,
+   "de": "vorerst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şimdilik, geçici olarak",
+   "mevcutBeispiel": "Wir bleiben vorerst in der alten Wohnung.",
+   "mevcutBeispielTr": "Şimdilik eski dairede kalıyoruz."
+  },
+  {
+   "id": 7584,
+   "de": "zeitweise",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "zaman zaman, bir süreliğine",
+   "mevcutBeispiel": "Die Straße ist zeitweise gesperrt.",
+   "mevcutBeispielTr": "Yol zaman zaman kapalı oluyor."
+  },
+  {
+   "id": 7585,
+   "de": "jahrelang",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yıllarca",
+   "mevcutBeispiel": "Er hat jahrelang in der Schweiz gearbeitet.",
+   "mevcutBeispielTr": "Yıllarca İsviçre'de çalıştı."
+  },
+  {
+   "id": 7586,
+   "de": "stundenlang",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "saatlerce",
+   "mevcutBeispiel": "Wir haben stundenlang auf den Zug gewartet.",
+   "mevcutBeispielTr": "Saatlerce treni bekledik."
+  },
+  {
+   "id": 7587,
+   "de": "tagelang",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "günlerce",
+   "mevcutBeispiel": "Es hat tagelang geregnet.",
+   "mevcutBeispielTr": "Günlerce yağmur yağdı."
+  }
+ ]
+}

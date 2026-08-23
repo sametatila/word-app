@@ -1,0 +1,563 @@
+{
+ "paket": "c1-035",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6953,
+   "de": "labil",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dengesiz, kırılgan",
+   "mevcutBeispiel": "In dieser Phase war sie emotional außerordentlich labil.",
+   "mevcutBeispielTr": "Bu dönemde duygusal olarak son derece dengesizdi."
+  },
+  {
+   "id": 6954,
+   "de": "selektiv",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "seçici",
+   "mevcutBeispiel": "Unsere Erinnerung arbeitet selektiv und formt die Vergangenheit um.",
+   "mevcutBeispielTr": "Hafızamız seçici çalışır ve geçmişi yeniden biçimlendirir."
+  },
+  {
+   "id": 6955,
+   "de": "voreilig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aceleci, düşünmeden",
+   "mevcutBeispiel": "Man sollte aus einem einzigen Test keine voreiligen Schlüsse ziehen.",
+   "mevcutBeispielTr": "Tek bir testten aceleci sonuçlar çıkarılmamalıdır.",
+   "cakisan": [
+    "vorschnell (C1)"
+   ]
+  },
+  {
+   "id": 6956,
+   "de": "angeboren",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "doğuştan gelen",
+   "mevcutBeispiel": "Ob Temperament angeboren ist, wird bis heute kontrovers diskutiert.",
+   "mevcutBeispielTr": "Mizacın doğuştan gelip gelmediği bugün hâlâ tartışmalıdır."
+  },
+  {
+   "id": 6957,
+   "de": "kognitiv",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilişsel",
+   "mevcutBeispiel": "Schlafmangel beeinträchtigt kognitive Leistungen schon nach wenigen Nächten.",
+   "mevcutBeispielTr": "Uykusuzluk bilişsel performansı birkaç gece sonra bile bozar."
+  },
+  {
+   "id": 6958,
+   "de": "intuitiv",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sezgisel",
+   "mevcutBeispiel": "Erfahrene Ärzte urteilen oft intuitiv und liegen dabei richtig.",
+   "mevcutBeispielTr": "Deneyimli hekimler çoğu kez sezgisel karar verir ve isabet ederler."
+  },
+  {
+   "id": 6959,
+   "de": "introvertiert",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "içe dönük",
+   "mevcutBeispiel": "Introvertierte Menschen brauchen nach Gesprächen mehr Zeit für sich.",
+   "mevcutBeispielTr": "İçe dönük insanlar sohbetlerden sonra kendilerine daha çok zaman ayırmak ister."
+  },
+  {
+   "id": 6960,
+   "de": "unumstößlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sarsılmaz, tartışılmaz, kesin",
+   "mevcutBeispiel": "Seine Überzeugung galt ihm als unumstößliche Wahrheit.",
+   "mevcutBeispielTr": "Kendi kanaatini sarsılmaz bir gerçek sayıyordu."
+  },
+  {
+   "id": 6961,
+   "de": "unbeirrt",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yolundan sapmayan, kararlı, yılmadan",
+   "mevcutBeispiel": "Trotz aller Kritik verfolgte sie ihr Ziel unbeirrt weiter.",
+   "mevcutBeispielTr": "Bütün eleştirilere rağmen hedefini kararlılıkla izlemeyi sürdürdü."
+  },
+  {
+   "id": 6962,
+   "de": "behutsam",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ihtiyatlı, özenli, nazik",
+   "mevcutBeispiel": "Das Thema muss man behutsam ansprechen, sonst verhärten sich die Fronten.",
+   "mevcutBeispielTr": "Bu konuya ihtiyatla girilmeli, yoksa taraflar iyice katılaşır."
+  },
+  {
+   "id": 6963,
+   "de": "herablassend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tepeden bakan, küçümseyici",
+   "mevcutBeispiel": "Sein herablassender Ton machte eine sachliche Debatte unmöglich.",
+   "mevcutBeispielTr": "Tepeden bakan üslubu nesnel bir tartışmayı olanaksız kıldı."
+  },
+  {
+   "id": 6964,
+   "de": "abschätzig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aşağılayıcı, hor gören",
+   "mevcutBeispiel": "Über die Arbeit seiner Kollegen äußerte er sich abschätzig.",
+   "mevcutBeispielTr": "Meslektaşlarının çalışmaları hakkında aşağılayıcı sözler söyledi.",
+   "cakisan": [
+    "abwertend (C1)"
+   ]
+  },
+  {
+   "id": 6965,
+   "de": "wohlwollend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iyi niyetli, olumlu bakan, hayırhah",
+   "mevcutBeispiel": "Die Jury nahm den Entwurf wohlwollend zur Kenntnis.",
+   "mevcutBeispielTr": "Jüri taslağı iyi niyetle karşıladı.",
+   "cakisan": [
+    "gutgläubig (C1)"
+   ]
+  },
+  {
+   "id": 6966,
+   "de": "geringschätzig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "küçümseyen, hafife alan",
+   "mevcutBeispiel": "Sie sprach geringschätzig über die Bemühungen der Kommission.",
+   "mevcutBeispielTr": "Komisyonun çabalarından küçümseyerek söz etti."
+  },
+  {
+   "id": 6967,
+   "de": "unvoreingenommen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "önyargısız, tarafsız",
+   "mevcutBeispiel": "Ein Gutachter sollte die Unterlagen unvoreingenommen prüfen.",
+   "mevcutBeispielTr": "Bir bilirkişi belgeleri önyargısız biçimde incelemelidir."
+  },
+  {
+   "id": 6968,
+   "de": "verbissen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "inatçı, hırslı, dişini sıkmış",
+   "mevcutBeispiel": "Er verteidigte seine These mit verbissener Entschlossenheit.",
+   "mevcutBeispielTr": "Tezini dişini sıkarak, inatçı bir kararlılıkla savundu.",
+   "cakisan": [
+    "eigensinnig (B2)",
+    "stur (A2)"
+   ]
+  },
+  {
+   "id": 6969,
+   "de": "umsichtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "basiretli, tedbirli, her yönü düşünen",
+   "mevcutBeispiel": "Die Leitung hat in der Krise umsichtig gehandelt.",
+   "mevcutBeispielTr": "Yönetim kriz sırasında basiretli davrandı."
+  },
+  {
+   "id": 6970,
+   "de": "besonnen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sağduyulu, soğukkanlı, ölçülü",
+   "mevcutBeispiel": "Gerade in aufgeheizten Debatten wirkt ihre besonnene Art beruhigend.",
+   "mevcutBeispielTr": "Özellikle gergin tartışmalarda onun soğukkanlı tavrı yatıştırıcı oluyor."
+  },
+  {
+   "id": 6971,
+   "de": "überheblich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kibirli, burnu büyük",
+   "mevcutBeispiel": "Wer andere Disziplinen überheblich abtut, verliert schnell an Glaubwürdigkeit.",
+   "mevcutBeispielTr": "Başka disiplinleri kibirle geçiştiren kişi inandırıcılığını çabuk yitirir."
+  },
+  {
+   "id": 6972,
+   "de": "anmaßend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "haddini bilmez, küstah",
+   "mevcutBeispiel": "Es wäre anmaßend, über fremde Lebensentwürfe zu urteilen.",
+   "mevcutBeispielTr": "Başkalarının hayat tasarıları hakkında hüküm vermek haddini bilmezlik olur."
+  },
+  {
+   "id": 6973,
+   "de": "aufdringlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sırnaşık, rahatsız edici ölçüde ısrarcı",
+   "mevcutBeispiel": "Die Werbung im Text wirkt aufdringlich und stört den Lesefluss.",
+   "mevcutBeispielTr": "Metindeki reklam rahatsız edici ölçüde ısrarcı ve okuma akışını bozuyor."
+  },
+  {
+   "id": 6974,
+   "de": "distanziert",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mesafeli, soğuk",
+   "mevcutBeispiel": "Der Autor betrachtet seine eigene Jugend auffallend distanziert.",
+   "mevcutBeispielTr": "Yazar kendi gençliğine dikkat çekecek kadar mesafeli bakıyor."
+  },
+  {
+   "id": 6975,
+   "de": "schroff",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sert, ters, haşin",
+   "mevcutBeispiel": "Seine schroffe Antwort beendete das Gespräch abrupt.",
+   "mevcutBeispielTr": "Sert cevabı konuşmayı bir anda bitirdi.",
+   "cakisan": [
+    "hart (A2)",
+    "streng (A2)",
+    "drastisch (B2)",
+    "steif (A2)"
+   ]
+  },
+  {
+   "id": 6976,
+   "de": "unterschwellig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "üstü örtülü, bilinçaltına seslenen, sezdirmeden",
+   "mevcutBeispiel": "In dem Bericht schwingt unterschwellig eine Warnung mit.",
+   "mevcutBeispielTr": "Raporda üstü örtülü bir uyarı hissediliyor."
+  },
+  {
+   "id": 6977,
+   "de": "latent",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gizli, örtük, potansiyel hâlde",
+   "mevcutBeispiel": "Der Konflikt blieb jahrelang latent, bevor er offen ausbrach.",
+   "mevcutBeispielTr": "Çatışma açıkça patlak vermeden önce yıllarca gizli kaldı.",
+   "cakisan": [
+    "geheim (B1)",
+    "vertraulich (B2)"
+   ]
+  },
+  {
+   "id": 6978,
+   "de": "augenscheinlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "görünüşe göre, apaçık",
+   "mevcutBeispiel": "Die Maßnahme hat augenscheinlich nicht die erhoffte Wirkung erzielt.",
+   "mevcutBeispielTr": "Önlem görünüşe göre umulan etkiyi yaratmadı."
+  },
+  {
+   "id": 6979,
+   "de": "vielsagend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çok şey anlatan, manidar",
+   "mevcutBeispiel": "Ihr Schweigen an dieser Stelle war ausgesprochen vielsagend.",
+   "mevcutBeispielTr": "Onun bu noktadaki sessizliği son derece manidardı."
+  },
+  {
+   "id": 6980,
+   "de": "tiefgründig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "derinlikli, derin anlamlı",
+   "mevcutBeispiel": "Der Essay wirkt auf den ersten Blick schlicht, ist aber tiefgründig.",
+   "mevcutBeispielTr": "Deneme ilk bakışta yalın görünse de derinlikli bir metin."
+  },
+  {
+   "id": 6981,
+   "de": "schlüssig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tutarlı, mantıklı, ikna edici",
+   "mevcutBeispiel": "Die Argumentation ist elegant, aber nicht in allen Punkten schlüssig.",
+   "mevcutBeispielTr": "Argümantasyon zarif ama her noktada tutarlı değil."
+  },
+  {
+   "id": 6982,
+   "de": "prägnant",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "özlü, veciz, çarpıcı biçimde kısa",
+   "mevcutBeispiel": "In wenigen prägnanten Sätzen fasste er die Debatte zusammen.",
+   "mevcutBeispielTr": "Birkaç özlü cümleyle tartışmayı özetledi."
+  },
+  {
+   "id": 6983,
+   "de": "unerbittlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "acımasız, amansız, taviz tanımaz",
+   "mevcutBeispiel": "Die Zeit drängt unerbittlich, eine Entscheidung ist überfällig.",
+   "mevcutBeispielTr": "Zaman amansızca daralıyor, karar çoktan verilmeliydi."
+  },
+  {
+   "id": 6984,
+   "de": "beharrlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sebatlı, ısrarlı, azimli",
+   "mevcutBeispiel": "Beharrlich fragte die Journalistin nach den fehlenden Zahlen.",
+   "mevcutBeispielTr": "Gazeteci eksik rakamları ısrarla sorup durdu."
+  },
+  {
+   "id": 6985,
+   "de": "zaghaft",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çekingen, ürkek, tereddütlü",
+   "mevcutBeispiel": "Die Reformen wurden nur zaghaft und mit großer Verspätung umgesetzt.",
+   "mevcutBeispielTr": "Reformlar ancak çekingen biçimde ve büyük gecikmeyle uygulandı.",
+   "cakisan": [
+    "zurückhaltend (B2)"
+   ]
+  },
+  {
+   "id": 6986,
+   "de": "bedächtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ölçülü, ağırdan alan, düşünerek davranan",
+   "mevcutBeispiel": "Er wählte seine Worte bedächtig, um niemanden zu verletzen.",
+   "mevcutBeispielTr": "Kimseyi incitmemek için sözcüklerini ölçüp biçerek seçti.",
+   "cakisan": [
+    "maßvoll (B2)"
+   ]
+  },
+  {
+   "id": 6987,
+   "de": "sich sträuben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich gesträubt",
+   "mevcutTr": "direnmek, karşı koymak, yanaşmamak",
+   "mevcutBeispiel": "Viele Betriebe sträuben sich gegen die neuen Auflagen.",
+   "mevcutBeispielTr": "Birçok işletme yeni yükümlülüklere karşı direniyor."
+  },
+  {
+   "id": 6988,
+   "de": "zurückschrecken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist zurückgeschreckt",
+   "mevcutTr": "çekinmek, geri durmak, ürkmek",
+   "mevcutBeispiel": "Vor unbequemen Schlussfolgerungen schreckt die Autorin nicht zurück.",
+   "mevcutBeispielTr": "Yazar rahatsız edici sonuçlardan çekinmiyor."
+  },
+  {
+   "id": 6989,
+   "de": "herabsetzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat herabgesetzt",
+   "mevcutTr": "küçük düşürmek, değerini azaltmak",
+   "mevcutBeispiel": "Niemand darf die Leistung anderer öffentlich herabsetzen.",
+   "mevcutBeispielTr": "Kimse başkalarının emeğini alenen küçük düşüremez."
+  },
+  {
+   "id": 6990,
+   "de": "sich fügen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich gefügt",
+   "mevcutTr": "boyun eğmek, uymak",
+   "mevcutBeispiel": "Am Ende fügte er sich der Mehrheit, wenn auch widerwillig.",
+   "mevcutBeispielTr": "Sonunda isteksizce de olsa çoğunluğa boyun eğdi.",
+   "cakisan": [
+    "nachgeben (B2)",
+    "sich unterordnen (C1)"
+   ]
+  },
+  {
+   "id": 6991,
+   "de": "zaudern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gezaudert",
+   "mevcutTr": "duraksamak, ayak sürümek",
+   "mevcutBeispiel": "Die Politik zaudert, während die Kosten weiter steigen.",
+   "mevcutBeispielTr": "Maliyetler artmaya devam ederken siyaset ayak sürüyor."
+  },
+  {
+   "id": 6992,
+   "de": "absehen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgesehen",
+   "mevcutTr": "vazgeçmek, göz ardı etmek, öngörmek",
+   "mevcutBeispiel": "Von einer Klage hat das Unternehmen vorerst abgesehen.",
+   "mevcutBeispielTr": "Şirket şimdilik dava açmaktan vazgeçti.",
+   "cakisan": [
+    "aufgeben (B1)",
+    "verzichten (B1)",
+    "entsagen (C1)"
+   ]
+  },
+  {
+   "id": 6993,
+   "de": "entgegnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entgegnet",
+   "mevcutTr": "karşılık vermek, itiraz olarak söylemek",
+   "mevcutBeispiel": "Auf diesen Vorwurf entgegnete sie mit auffallender Ruhe.",
+   "mevcutBeispielTr": "Bu suçlamaya dikkat çekici bir sakinlikle karşılık verdi.",
+   "cakisan": [
+    "erwidern (B2)"
+   ]
+  },
+  {
+   "id": 6994,
+   "de": "anmuten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angemutet",
+   "mevcutTr": "izlenimi vermek, gibi görünmek",
+   "mevcutBeispiel": "Der Vorschlag mutet auf den ersten Blick reichlich naiv an.",
+   "mevcutBeispielTr": "Öneri ilk bakışta hayli saf bir izlenim veriyor."
+  },
+  {
+   "id": 6995,
+   "de": "sich erweisen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich erwiesen",
+   "mevcutTr": "çıkmak, olduğu anlaşılmak",
+   "mevcutBeispiel": "Die anfängliche Skepsis erwies sich später als berechtigt.",
+   "mevcutBeispielTr": "Başlangıçtaki kuşkuculuğun sonradan haklı olduğu anlaşıldı.",
+   "cakisan": [
+    "sich entpuppen (C1)"
+   ]
+  },
+  {
+   "id": 6996,
+   "de": "überwiegen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überwogen",
+   "mevcutTr": "ağır basmak, baskın gelmek",
+   "mevcutBeispiel": "In der Diskussion überwogen am Ende die kritischen Stimmen.",
+   "mevcutBeispielTr": "Tartışmada sonunda eleştirel sesler ağır bastı."
+  },
+  {
+   "id": 6997,
+   "de": "vorherrschen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vorgeherrscht",
+   "mevcutTr": "hâkim olmak, egemen olmak",
+   "mevcutBeispiel": "Lange Zeit herrschte in der Forschung eine ganz andere Auffassung vor.",
+   "mevcutBeispielTr": "Uzun süre araştırmalarda bambaşka bir anlayış hâkimdi.",
+   "cakisan": [
+    "dominieren (C1)"
+   ]
+  },
+  {
+   "id": 6998,
+   "de": "innewohnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat innegewohnt",
+   "mevcutTr": "içkin olmak, doğasında bulunmak",
+   "mevcutBeispiel": "Jeder Utopie wohnt ein Stück Selbsttäuschung inne.",
+   "mevcutBeispielTr": "Her ütopyanın doğasında bir parça kendini kandırma vardır."
+  },
+  {
+   "id": 6999,
+   "de": "verhehlen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verhehlt",
+   "mevcutTr": "gizlemek, saklamak",
+   "mevcutBeispiel": "Er verhehlte seine Enttäuschung über das Ergebnis nicht.",
+   "mevcutBeispielTr": "Sonuçtan duyduğu hayal kırıklığını gizlemedi.",
+   "cakisan": [
+    "verschweigen (B2)"
+   ]
+  },
+  {
+   "id": 7000,
+   "de": "erahnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat erahnt",
+   "mevcutTr": "sezmek, hissetmek, kestirmek",
+   "mevcutBeispiel": "Die Tragweite dieser Entscheidung lässt sich erst erahnen.",
+   "mevcutBeispielTr": "Bu kararın kapsamı henüz ancak sezilebiliyor.",
+   "cakisan": [
+    "ahnen (A2)"
+   ]
+  },
+  {
+   "id": 7001,
+   "de": "sich bewähren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich bewährt",
+   "mevcutTr": "kendini kanıtlamak, işe yaradığını göstermek",
+   "mevcutBeispiel": "Das Verfahren hat sich auch unter schwierigen Bedingungen bewährt.",
+   "mevcutBeispielTr": "Yöntem zor koşullarda da kendini kanıtladı."
+  },
+  {
+   "id": 7002,
+   "de": "der Hang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hänge",
+   "mevcutTr": "eğilim, düşkünlük, temayül",
+   "mevcutBeispiel": "Sein Hang zur Übertreibung schwächt sonst gute Argumente.",
+   "mevcutBeispielTr": "Abartıya olan düşkünlüğü, iyi argümanlarını bile zayıflatıyor.",
+   "cakisan": [
+    "die Tendenz (B2)",
+    "die Neigung (B2)"
+   ]
+  }
+ ]
+}

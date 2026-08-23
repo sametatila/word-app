@@ -1,0 +1,583 @@
+{
+ "paket": "a2-027",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 8290,
+   "de": "quatschen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "quatscht, hat gequatscht",
+   "mevcutTr": "laflamak, gevezelik etmek",
+   "mevcutBeispiel": "Die Kinder quatschen im Unterricht viel zu laut.",
+   "mevcutBeispielTr": "Çocuklar derste çok yüksek sesle laflıyor."
+  },
+  {
+   "id": 8291,
+   "de": "flüstern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "flüstert, hat geflüstert",
+   "mevcutTr": "fısıldamak",
+   "mevcutBeispiel": "Meine Freundin flüstert mir die Antwort ins Ohr.",
+   "mevcutBeispielTr": "Arkadaşım cevabı kulağıma fısıldıyor."
+  },
+  {
+   "id": 8292,
+   "de": "benachrichtigen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "benachrichtigt, hat benachrichtigt",
+   "mevcutTr": "haber vermek, bilgilendirmek",
+   "mevcutBeispiel": "Der Arzt benachrichtigt uns, sobald das Ergebnis da ist.",
+   "mevcutBeispielTr": "Sonuç gelir gelmez doktor bize haber veriyor.",
+   "cakisan": [
+    "ankündigen (B1)",
+    "Bescheid sagen (B1)",
+    "Bescheid geben (B1)",
+    "melden (B1)",
+    "alarmieren (B2)"
+   ]
+  },
+  {
+   "id": 8293,
+   "de": "herausfinden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "findet heraus, hat herausgefunden",
+   "mevcutTr": "öğrenmek, bulmak",
+   "mevcutBeispiel": "Ich finde morgen heraus, wie viel die Reparatur kostet.",
+   "mevcutBeispielTr": "Tamirin ne kadar tuttuğunu yarın öğreneceğim.",
+   "cakisan": [
+    "lernen (A1)",
+    "erfahren (B1)",
+    "erlernen (B2)"
+   ]
+  },
+  {
+   "id": 8294,
+   "de": "seufzen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "seufzt, hat geseufzt",
+   "mevcutTr": "iç çekmek",
+   "mevcutBeispiel": "Meine Mutter seufzt, wenn sie die Rechnung sieht.",
+   "mevcutBeispielTr": "Annem faturayı görünce iç çekiyor."
+  },
+  {
+   "id": 8295,
+   "de": "bedauern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bedauert, hat bedauert",
+   "mevcutTr": "üzülmek, pişman olmak",
+   "mevcutBeispiel": "Ich bedauere sehr, dass ich am Samstag nicht kommen kann.",
+   "mevcutBeispielTr": "Cumartesi gelemeyeceğim için çok üzülüyorum.",
+   "cakisan": [
+    "leidtun (A2)"
+   ]
+  },
+  {
+   "id": 8296,
+   "de": "staunen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "staunt, hat gestaunt",
+   "mevcutTr": "şaşırmak, hayret etmek",
+   "mevcutBeispiel": "Die Kinder staunen über die große Torte.",
+   "mevcutBeispielTr": "Çocuklar büyük pastaya hayret ediyor.",
+   "cakisan": [
+    "sich wundern (B1)"
+   ]
+  },
+  {
+   "id": 8297,
+   "de": "sich vertragen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verträgt sich, hat sich vertragen",
+   "mevcutTr": "iyi geçinmek, anlaşmak",
+   "mevcutBeispiel": "Meine zwei Brüder vertragen sich endlich wieder.",
+   "mevcutBeispielTr": "İki kardeşim sonunda yine iyi geçiniyor."
+  },
+  {
+   "id": 8298,
+   "de": "sich verloben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verlobt sich, hat sich verlobt",
+   "mevcutTr": "nişanlanmak",
+   "mevcutBeispiel": "Anna und Tom verloben sich im Sommer.",
+   "mevcutBeispielTr": "Anna ile Tom yazın nişanlanıyor."
+  },
+  {
+   "id": 8299,
+   "de": "mailen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "mailt, hat gemailt",
+   "mevcutTr": "e-posta atmak",
+   "mevcutBeispiel": "Ich maile dir die Adresse heute Abend.",
+   "mevcutBeispielTr": "Adresi bu akşam sana e-posta atarım."
+  },
+  {
+   "id": 8300,
+   "de": "drohen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "droht, hat gedroht",
+   "mevcutTr": "tehdit etmek, gözdağı vermek",
+   "mevcutBeispiel": "Der Nachbar droht uns wegen des Lärms mit der Polizei.",
+   "mevcutBeispielTr": "Komşu gürültü yüzünden bizi polisle tehdit ediyor.",
+   "cakisan": [
+    "bedrohen (B2)"
+   ]
+  },
+  {
+   "id": 8301,
+   "de": "vorwerfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "wirft vor, hat vorgeworfen",
+   "mevcutTr": "suçlamak, başa kakmak",
+   "mevcutBeispiel": "Er wirft mir jeden Tag meine Unordnung vor.",
+   "mevcutBeispielTr": "Her gün dağınıklığımı başıma kakıyor."
+  },
+  {
+   "id": 8302,
+   "de": "durchkommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt durch, ist durchgekommen",
+   "mevcutTr": "(telefonda) ulaşabilmek, bağlanmak",
+   "mevcutBeispiel": "Ich komme bei der Hotline einfach nicht durch.",
+   "mevcutBeispielTr": "Çağrı merkezine bir türlü ulaşamıyorum."
+  },
+  {
+   "id": 8303,
+   "de": "ansagen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sagt an, hat angesagt",
+   "mevcutTr": "duyurmak, bildirmek",
+   "mevcutBeispiel": "Die Lehrerin sagt den Test für Freitag an.",
+   "mevcutBeispielTr": "Öğretmen sınavı cuma günü için duyuruyor.",
+   "cakisan": [
+    "bekannt geben (B1)",
+    "bekanntgeben (B2)"
+   ]
+  },
+  {
+   "id": 8304,
+   "de": "zurückschreiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schreibt zurück, hat zurückgeschrieben",
+   "mevcutTr": "cevap yazmak",
+   "mevcutBeispiel": "Mein Bruder schreibt mir nie zurück.",
+   "mevcutBeispielTr": "Kardeşim bana hiç cevap yazmıyor."
+  },
+  {
+   "id": 8305,
+   "de": "sich verwählen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verwählt sich, hat sich verwählt",
+   "mevcutTr": "yanlış numara çevirmek",
+   "mevcutBeispiel": "Entschuldigung, ich habe mich verwählt.",
+   "mevcutBeispielTr": "Pardon, yanlış numara çevirdim."
+  },
+  {
+   "id": 8306,
+   "de": "dranbleiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bleibt dran, ist drangeblieben",
+   "mevcutTr": "hatta kalmak, beklemede kalmak",
+   "mevcutBeispiel": "Bleiben Sie bitte kurz dran, ich frage nach.",
+   "mevcutBeispielTr": "Lütfen kısa bir süre hatta kalın, sorup geleyim."
+  },
+  {
+   "id": 8307,
+   "de": "auslachen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "lacht aus, hat ausgelacht",
+   "mevcutTr": "alay etmek, birine gülmek",
+   "mevcutBeispiel": "Keiner lacht dich hier wegen deiner Fehler aus.",
+   "mevcutBeispielTr": "Burada kimse hataların yüzünden sana gülmüyor."
+  },
+  {
+   "id": 8308,
+   "de": "anschreien",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schreit an, hat angeschrien",
+   "mevcutTr": "birine bağırmak",
+   "mevcutBeispiel": "Der Chef schreit seine Mitarbeiter nie an.",
+   "mevcutBeispielTr": "Patron çalışanlarına asla bağırmaz."
+  },
+  {
+   "id": 8309,
+   "de": "ausreden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "redet aus, hat ausgeredet",
+   "mevcutTr": "sözünü bitirmek, lafını tamamlamak",
+   "mevcutBeispiel": "Ich rede zuerst aus, dann bist du dran.",
+   "mevcutBeispielTr": "Önce ben sözümü bitireyim, sonra sıra sende."
+  },
+  {
+   "id": 8310,
+   "de": "sich ausdrücken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "drückt sich aus, hat sich ausgedrückt",
+   "mevcutTr": "kendini ifade etmek",
+   "mevcutBeispiel": "Auf Deutsch drücke ich mich noch sehr langsam aus.",
+   "mevcutBeispielTr": "Almanca kendimi hâlâ çok yavaş ifade ediyorum."
+  },
+  {
+   "id": 8311,
+   "de": "nerven",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "nervt, hat genervt",
+   "mevcutTr": "sinir etmek, rahatsız etmek",
+   "mevcutBeispiel": "Der laute Nachbar nervt mich jeden Abend.",
+   "mevcutBeispielTr": "Gürültücü komşu her akşam sinirimi bozuyor."
+  },
+  {
+   "id": 8312,
+   "de": "sich anfreunden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "freundet sich an, hat sich angefreundet",
+   "mevcutTr": "arkadaş olmak, dost olmak",
+   "mevcutBeispiel": "Im Kurs freundet sie sich schnell mit allen an.",
+   "mevcutBeispielTr": "Kursta herkesle çabucak arkadaş oluyor."
+  },
+  {
+   "id": 8313,
+   "de": "kontaktieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kontaktiert, hat kontaktiert",
+   "mevcutTr": "iletişime geçmek, temasa geçmek",
+   "mevcutBeispiel": "Bitte kontaktieren Sie uns per E-Mail.",
+   "mevcutBeispielTr": "Lütfen bizimle e-posta yoluyla iletişime geçin."
+  },
+  {
+   "id": 8314,
+   "de": "posten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "postet, hat gepostet",
+   "mevcutTr": "paylaşmak, paylaşım yapmak",
+   "mevcutBeispiel": "Meine Schwester postet jeden Tag ein Foto.",
+   "mevcutBeispielTr": "Kız kardeşim her gün bir fotoğraf paylaşıyor.",
+   "cakisan": [
+    "teilen (A2)"
+   ]
+  },
+  {
+   "id": 8315,
+   "de": "liken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "likt, hat gelikt",
+   "mevcutTr": "beğenmek, beğeni bırakmak",
+   "mevcutBeispiel": "Mein Bruder likt alle meine Bilder sofort.",
+   "mevcutBeispielTr": "Kardeşim bütün fotoğraflarımı hemen beğeniyor."
+  },
+  {
+   "id": 8316,
+   "de": "verschicken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verschickt, hat verschickt",
+   "mevcutTr": "göndermek, yollamak",
+   "mevcutBeispiel": "Ich verschicke die Einladungen morgen früh.",
+   "mevcutBeispielTr": "Davetiyeleri yarın sabah gönderiyorum.",
+   "cakisan": [
+    "schicken (A1)",
+    "senden (B1)",
+    "entsenden (C1)",
+    "abschicken (A2)",
+    "zuschicken (A2)"
+   ]
+  },
+  {
+   "id": 8317,
+   "de": "zuschicken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schickt zu, hat zugeschickt",
+   "mevcutTr": "göndermek, postayla yollamak",
+   "mevcutBeispiel": "Die Firma schickt mir den Vertrag heute zu.",
+   "mevcutBeispielTr": "Firma sözleşmeyi bugün bana yolluyor.",
+   "cakisan": [
+    "schicken (A1)",
+    "senden (B1)",
+    "entsenden (C1)",
+    "abschicken (A2)",
+    "verschicken (A2)"
+   ]
+  },
+  {
+   "id": 8318,
+   "de": "vorführen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "führt vor, hat vorgeführt",
+   "mevcutTr": "göstermek, tanıtmak",
+   "mevcutBeispiel": "Der Verkäufer führt uns das neue Handy vor.",
+   "mevcutBeispielTr": "Satıcı bize yeni telefonu gösteriyor.",
+   "cakisan": [
+    "zeigen (A1)",
+    "aufzeigen (C1)",
+    "vormachen (A2)"
+   ]
+  },
+  {
+   "id": 8319,
+   "de": "mitbekommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bekommt mit, hat mitbekommen",
+   "mevcutTr": "fark etmek, kulak misafiri olmak",
+   "mevcutBeispiel": "Bekommst du das Gespräch am Nebentisch mit?",
+   "mevcutBeispielTr": "Yan masadaki konuşmayı duyuyor musun?",
+   "cakisan": [
+    "merken (A2)",
+    "bemerken (B1)"
+   ]
+  },
+  {
+   "id": 8320,
+   "de": "kapieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kapiert, hat kapiert",
+   "mevcutTr": "anlamak, kavramak",
+   "mevcutBeispiel": "Jetzt kapiere ich die Regel endlich.",
+   "mevcutBeispielTr": "Kuralı sonunda şimdi anlıyorum.",
+   "cakisan": [
+    "verstehen (A1)",
+    "nachvollziehen (C1)"
+   ]
+  },
+  {
+   "id": 8321,
+   "de": "verwirren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verwirrt, hat verwirrt",
+   "mevcutTr": "kafasını karıştırmak, şaşırtmak",
+   "mevcutBeispiel": "Die vielen Formulare verwirren mich total.",
+   "mevcutBeispielTr": "Bunca form kafamı tamamen karıştırıyor."
+  },
+  {
+   "id": 8322,
+   "de": "erraten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "errät, hat erraten",
+   "mevcutTr": "tahmin etmek, bilmek",
+   "mevcutBeispiel": "Er errät meine Antwort fast immer sofort.",
+   "mevcutBeispielTr": "Cevabımı neredeyse her zaman hemen tahmin ediyor.",
+   "cakisan": [
+    "raten (A1)",
+    "schätzen (B1)",
+    "vorhersagen (A2)"
+   ]
+  },
+  {
+   "id": 8323,
+   "de": "ahnen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ahnt, hat geahnt",
+   "mevcutTr": "sezmek, önceden hissetmek",
+   "mevcutBeispiel": "Ich ahne schon, dass sie bald umzieht.",
+   "mevcutBeispielTr": "Yakında taşınacağını şimdiden seziyorum.",
+   "cakisan": [
+    "erahnen (C1)"
+   ]
+  },
+  {
+   "id": 8324,
+   "de": "sich trauen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "traut sich, hat sich getraut",
+   "mevcutTr": "cesaret etmek, göze almak",
+   "mevcutBeispiel": "Sie traut sich nicht, den Chef nach Urlaub zu fragen.",
+   "mevcutBeispielTr": "Patrondan izin istemeye cesaret edemiyor."
+  },
+  {
+   "id": 8325,
+   "de": "tratschen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "tratscht, hat getratscht",
+   "mevcutTr": "dedikodu yapmak, çene çalmak",
+   "mevcutBeispiel": "Die Nachbarinnen tratschen jeden Morgen im Hof.",
+   "mevcutBeispielTr": "Komşu kadınlar her sabah avluda dedikodu yapıyor."
+  },
+  {
+   "id": 8326,
+   "de": "vorziehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "zieht vor, hat vorgezogen",
+   "mevcutTr": "tercih etmek, yeğlemek",
+   "mevcutBeispiel": "Am Abend ziehe ich Tee dem Kaffee vor.",
+   "mevcutBeispielTr": "Akşamları çayı kahveye tercih ediyorum.",
+   "cakisan": [
+    "bevorzugen (C1)"
+   ]
+  },
+  {
+   "id": 8327,
+   "de": "einsehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sieht ein, hat eingesehen",
+   "mevcutTr": "kabullenmek, anlamak",
+   "mevcutBeispiel": "Er sieht seinen Fehler endlich ein.",
+   "mevcutBeispielTr": "Hatasını sonunda kabulleniyor.",
+   "cakisan": [
+    "sich abfinden (C1)",
+    "hinnehmen (C1)"
+   ]
+  },
+  {
+   "id": 8328,
+   "de": "gestehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "gesteht, hat gestanden",
+   "mevcutTr": "itiraf etmek",
+   "mevcutBeispiel": "Sie gesteht, dass sie das Buch vergessen hat.",
+   "mevcutBeispielTr": "Kitabı unuttuğunu itiraf ediyor.",
+   "cakisan": [
+    "zugeben (B2)",
+    "eingestehen (C1)"
+   ]
+  },
+  {
+   "id": 8329,
+   "de": "befürchten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "befürchtet, hat befürchtet",
+   "mevcutTr": "endişe etmek, korkmak",
+   "mevcutBeispiel": "Ich befürchte, dass wir zu spät zum Bahnhof kommen.",
+   "mevcutBeispielTr": "Gara çok geç varacağımızdan endişe ediyorum."
+  },
+  {
+   "id": 8330,
+   "de": "aufmuntern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "muntert auf, hat aufgemuntert",
+   "mevcutTr": "neşelendirmek, moral vermek",
+   "mevcutBeispiel": "Ein Anruf von dir muntert mich sofort auf.",
+   "mevcutBeispielTr": "Senden gelen bir telefon beni hemen neşelendiriyor."
+  },
+  {
+   "id": 8331,
+   "de": "motivieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "motiviert, hat motiviert",
+   "mevcutTr": "motive etmek, isteklendirmek",
+   "mevcutBeispiel": "Meine Lehrerin motiviert uns jeden Tag neu.",
+   "mevcutBeispielTr": "Öğretmenim bizi her gün yeniden motive ediyor."
+  },
+  {
+   "id": 8332,
+   "de": "flirten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "flirtet, hat geflirtet",
+   "mevcutTr": "flört etmek",
+   "mevcutBeispiel": "Auf der Party flirtet er mit allen Gästen.",
+   "mevcutBeispielTr": "Partide bütün misafirlerle flört ediyor."
+  },
+  {
+   "id": 8333,
+   "de": "anvertrauen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "vertraut an, hat anvertraut",
+   "mevcutTr": "içini dökmek, emanet etmek",
+   "mevcutBeispiel": "Sie vertraut mir ihr größtes Problem an.",
+   "mevcutBeispielTr": "En büyük sorununu bana açıyor."
+  },
+  {
+   "id": 8334,
+   "de": "nicken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "nickt, hat genickt",
+   "mevcutTr": "başıyla onaylamak, baş sallamak",
+   "mevcutBeispiel": "Sie nickt nur und sagt kein Wort.",
+   "mevcutBeispielTr": "Sadece başıyla onaylıyor ve tek kelime etmiyor."
+  },
+  {
+   "id": 8335,
+   "de": "grinsen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "grinst, hat gegrinst",
+   "mevcutTr": "sırıtmak",
+   "mevcutBeispiel": "Warum grinst du die ganze Zeit so?",
+   "mevcutBeispielTr": "Neden sürekli böyle sırıtıyorsun?"
+  },
+  {
+   "id": 8336,
+   "de": "brüllen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "brüllt, hat gebrüllt",
+   "mevcutTr": "haykırmak, avaz avaz bağırmak",
+   "mevcutBeispiel": "Der Trainer brüllt über den ganzen Platz.",
+   "mevcutBeispielTr": "Antrenör bütün sahaya haykırıyor."
+  },
+  {
+   "id": 8337,
+   "de": "meckern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "meckert, hat gemeckert",
+   "mevcutTr": "söylenmek, dırdır etmek",
+   "mevcutBeispiel": "Mein Kollege meckert über jedes Essen in der Kantine.",
+   "mevcutBeispielTr": "İş arkadaşım kantindeki her yemek için söyleniyor."
+  },
+  {
+   "id": 8338,
+   "de": "jammern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "jammert, hat gejammert",
+   "mevcutTr": "sızlanmak, yakınmak",
+   "mevcutBeispiel": "Er jammert den ganzen Tag über die Hitze.",
+   "mevcutBeispielTr": "Bütün gün sıcaktan yakınıyor."
+  },
+  {
+   "id": 8339,
+   "de": "sich beklagen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "beklagt sich, hat sich beklagt",
+   "mevcutTr": "şikâyet etmek, yakınmak",
+   "mevcutBeispiel": "Die Gäste beklagen sich über den Lärm im Hotel.",
+   "mevcutBeispielTr": "Misafirler oteldeki gürültüden şikâyet ediyor.",
+   "cakisan": [
+    "reklamieren (B2)"
+   ]
+  }
+ ]
+}

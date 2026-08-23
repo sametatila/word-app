@@ -1,0 +1,509 @@
+{
+ "paket": "c1-036",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 7003,
+   "de": "die Gleichgültigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gleichgültigkeiten",
+   "mevcutTr": "kayıtsızlık, umursamazlık",
+   "mevcutBeispiel": "Die größte Gefahr ist nicht der Widerspruch, sondern die Gleichgültigkeit.",
+   "mevcutBeispielTr": "En büyük tehlike itiraz değil, kayıtsızlıktır."
+  },
+  {
+   "id": 7004,
+   "de": "die Vehemenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sertlik, hararet, coşkunluk",
+   "mevcutBeispiel": "Mit unerwarteter Vehemenz wies er die Vorwürfe zurück.",
+   "mevcutBeispielTr": "Suçlamaları beklenmedik bir hararetle reddetti."
+  },
+  {
+   "id": 7005,
+   "de": "die Schattierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schattierungen",
+   "mevcutTr": "ince ayrım, tonlama, nüans",
+   "mevcutBeispiel": "Der Text kennt viele Schattierungen zwischen Zustimmung und Ablehnung.",
+   "mevcutBeispielTr": "Metin, onayla ret arasında pek çok ince ayrım barındırıyor."
+  },
+  {
+   "id": 7006,
+   "de": "die Gesinnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gesinnungen",
+   "mevcutTr": "zihniyet, dünya görüşü, tutum",
+   "mevcutBeispiel": "Über die politische Gesinnung des Autors sagt der Roman wenig.",
+   "mevcutBeispielTr": "Roman, yazarın siyasi zihniyeti hakkında pek bir şey söylemiyor."
+  },
+  {
+   "id": 7007,
+   "de": "der Gleichmut",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sükûnet, istifini bozmama, dinginlik",
+   "mevcutBeispiel": "Mit erstaunlichem Gleichmut nahm sie die Niederlage hin.",
+   "mevcutBeispielTr": "Yenilgiyi şaşırtıcı bir sükûnetle karşıladı."
+  },
+  {
+   "id": 7008,
+   "de": "die Abgeklärtheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "olgunluk, yaşanmışlıktan gelen dinginlik",
+   "mevcutBeispiel": "Die Abgeklärtheit des Alters ersetzt bisweilen den Ehrgeiz der Jugend.",
+   "mevcutBeispielTr": "Yaşın getirdiği olgunluk zaman zaman gençliğin hırsının yerini alır."
+  },
+  {
+   "id": 7009,
+   "de": "der Argwohn",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kuşku, şüphe, güvensizlik",
+   "mevcutBeispiel": "Die plötzliche Kehrtwende weckte bei vielen Beobachtern Argwohn.",
+   "mevcutBeispielTr": "Ani dönüş birçok gözlemcide kuşku uyandırdı.",
+   "cakisan": [
+    "die Skepsis (C1)"
+   ]
+  },
+  {
+   "id": 7010,
+   "de": "der Überdruss",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bıkkınlık, usanç",
+   "mevcutBeispiel": "Der Überdruss an leeren Versprechen wächst in der Bevölkerung.",
+   "mevcutBeispielTr": "Halkta boş vaatlere karşı bıkkınlık artıyor."
+  },
+  {
+   "id": 7011,
+   "de": "die Wehmut",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hüzün, buruk özlem",
+   "mevcutBeispiel": "Mit leiser Wehmut blickte er auf die vergangenen Jahre zurück.",
+   "mevcutBeispielTr": "Geçmiş yıllara hafif bir hüzünle baktı."
+  },
+  {
+   "id": 7012,
+   "de": "die Aufrichtigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aufrichtigkeiten",
+   "mevcutTr": "içtenlik, dürüstlük, samimiyet",
+   "mevcutBeispiel": "An seiner Aufrichtigkeit zweifelte im Saal niemand.",
+   "mevcutBeispielTr": "Salonda onun içtenliğinden kimse kuşku duymadı."
+  },
+  {
+   "id": 7013,
+   "de": "der Laizismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "laiklik",
+   "mevcutBeispiel": "Der Laizismus verlangt eine strikte Trennung von Staat und Kirche.",
+   "mevcutBeispielTr": "Laiklik, devlet ile kilisenin kesin biçimde ayrılmasını gerektirir."
+  },
+  {
+   "id": 7014,
+   "de": "die Frömmigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dindarlık, sofuluk",
+   "mevcutBeispiel": "Ihre stille Frömmigkeit war für Außenstehende kaum sichtbar.",
+   "mevcutBeispielTr": "Onun sessiz dindarlığı dışarıdan bakanlar için neredeyse görünmezdi."
+  },
+  {
+   "id": 7015,
+   "de": "das Glaubensbekenntnis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Glaubensbekenntnisse",
+   "mevcutTr": "iman ikrarı, inanç bildirisi",
+   "mevcutBeispiel": "Die Gemeinde spricht das Glaubensbekenntnis am Ende des Gottesdienstes.",
+   "mevcutBeispielTr": "Cemaat, ayinin sonunda iman ikrarını birlikte okur."
+  },
+  {
+   "id": 7016,
+   "de": "die Konfession",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konfessionen",
+   "mevcutTr": "mezhep, itikat",
+   "mevcutBeispiel": "In dieser Stadt leben Menschen unterschiedlicher Konfessionen friedlich nebeneinander.",
+   "mevcutBeispielTr": "Bu şehirde farklı mezheplerden insanlar barış içinde yan yana yaşıyor."
+  },
+  {
+   "id": 7017,
+   "de": "die Gewissensfreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "vicdan özgürlüğü",
+   "mevcutBeispiel": "Die Verfassung schützt die Gewissensfreiheit jedes einzelnen Bürgers.",
+   "mevcutBeispielTr": "Anayasa her bir yurttaşın vicdan özgürlüğünü korur."
+  },
+  {
+   "id": 7018,
+   "de": "die Religionsfreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "din özgürlüğü",
+   "mevcutBeispiel": "Ohne Religionsfreiheit bleibt religiöse Vielfalt eine bloße Behauptung.",
+   "mevcutBeispielTr": "Din özgürlüğü olmadan dinsel çeşitlilik yalnızca bir iddia olarak kalır."
+  },
+  {
+   "id": 7019,
+   "de": "das Dogma",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dogmen",
+   "mevcutTr": "dogma, nas",
+   "mevcutBeispiel": "Er weigerte sich, ein überliefertes Dogma unkritisch zu übernehmen.",
+   "mevcutBeispielTr": "Aktarılagelen bir dogmayı sorgusuzca benimsemeyi reddetti."
+  },
+  {
+   "id": 7020,
+   "de": "die Orthodoxie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ortodoksi, katı bağlılık",
+   "mevcutBeispiel": "Die strenge Orthodoxie ließ kaum Raum für abweichende Deutungen.",
+   "mevcutBeispielTr": "Katı ortodoksi, farklı yorumlara neredeyse hiç yer bırakmadı."
+  },
+  {
+   "id": 7021,
+   "de": "die Häresie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Häresien",
+   "mevcutTr": "sapkınlık, dinî sapma",
+   "mevcutBeispiel": "Was früher als Häresie galt, wird heute nüchtern diskutiert.",
+   "mevcutBeispielTr": "Eskiden sapkınlık sayılan şey bugün serinkanlılıkla tartışılıyor."
+  },
+  {
+   "id": 7022,
+   "de": "die Offenbarung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Offenbarungen",
+   "mevcutTr": "vahiy, ifşa",
+   "mevcutBeispiel": "Die Schrift versteht sich selbst als Offenbarung göttlichen Willens.",
+   "mevcutBeispielTr": "Kutsal metin kendisini ilahi iradenin vahyi olarak anlar."
+  },
+  {
+   "id": 7023,
+   "de": "die Transzendenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aşkınlık",
+   "mevcutBeispiel": "Ohne den Bezug auf Transzendenz verliert der Begriff seinen Sinn.",
+   "mevcutBeispielTr": "Aşkınlıkla ilişkisi kesildiğinde kavram anlamını yitirir."
+  },
+  {
+   "id": 7024,
+   "de": "das Jenseits",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "öte dünya, ahiret",
+   "mevcutBeispiel": "Vorstellungen vom Jenseits unterscheiden sich zwischen den Religionen erheblich.",
+   "mevcutBeispielTr": "Öte dünya tasavvurları dinler arasında hayli farklılık gösterir."
+  },
+  {
+   "id": 7025,
+   "de": "die Erlösung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erlösungen",
+   "mevcutTr": "kurtuluş, selamet",
+   "mevcutBeispiel": "Die Lehre verspricht Erlösung durch Umkehr und tätige Reue.",
+   "mevcutBeispielTr": "Öğreti, dönüş ve eylemli pişmanlık yoluyla kurtuluş vaat eder."
+  },
+  {
+   "id": 7026,
+   "de": "die Gnade",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gnaden",
+   "mevcutTr": "lütuf, merhamet",
+   "mevcutBeispiel": "Nach dieser Auffassung ist Gnade nicht verdienbar, sondern geschenkt.",
+   "mevcutBeispielTr": "Bu anlayışa göre lütuf hak edilemez, bağışlanır."
+  },
+  {
+   "id": 7027,
+   "de": "die Buße",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bußen",
+   "mevcutTr": "tövbe, kefaret",
+   "mevcutBeispiel": "Die Buße galt als sichtbares Zeichen innerer Umkehr.",
+   "mevcutBeispielTr": "Tövbe, içsel bir dönüşün görünür işareti sayılırdı."
+  },
+  {
+   "id": 7028,
+   "de": "die Askese",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çilecilik, nefis terbiyesi",
+   "mevcutBeispiel": "Askese bedeutet hier bewussten Verzicht, nicht Verachtung des Körpers.",
+   "mevcutBeispielTr": "Burada çile, bedeni küçümsemeyi değil bilinçli bir vazgeçişi anlatır."
+  },
+  {
+   "id": 7029,
+   "de": "die Mystik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mistisizm, tasavvuf",
+   "mevcutBeispiel": "Die Mystik sucht die unmittelbare Erfahrung des Göttlichen.",
+   "mevcutBeispielTr": "Mistisizm, ilahi olanın dolaysız deneyimini arar."
+  },
+  {
+   "id": 7030,
+   "de": "das Sakrament",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sakramente",
+   "mevcutTr": "sakrament, kutsal ayin",
+   "mevcutBeispiel": "Die Taufe gilt in vielen Kirchen als grundlegendes Sakrament.",
+   "mevcutBeispielTr": "Vaftiz, birçok kilisede temel bir sakrament sayılır."
+  },
+  {
+   "id": 7031,
+   "de": "die Liturgie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Liturgien",
+   "mevcutTr": "ayin düzeni, litürji",
+   "mevcutBeispiel": "Die Liturgie folgt einer festen Ordnung von Gesang und Gebet.",
+   "mevcutBeispielTr": "Ayin düzeni, ilahi ve dua bakımından belirli bir sıra izler."
+  },
+  {
+   "id": 7032,
+   "de": "die Predigt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Predigten",
+   "mevcutTr": "vaaz",
+   "mevcutBeispiel": "Seine Predigt griff aktuelle gesellschaftliche Konflikte behutsam auf.",
+   "mevcutBeispielTr": "Vaazı, güncel toplumsal çatışmaları ölçülü biçimde ele aldı."
+  },
+  {
+   "id": 7033,
+   "de": "die Seelsorge",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "manevi rehberlik, ruhani danışmanlık",
+   "mevcutBeispiel": "In Kliniken übernimmt die Seelsorge oft eine tröstende Aufgabe.",
+   "mevcutBeispielTr": "Hastanelerde manevi rehberlik çoğu zaman teselli edici bir işlev üstlenir."
+  },
+  {
+   "id": 7034,
+   "de": "die Geistlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ruhban sınıfı, din adamları",
+   "mevcutBeispiel": "Die Geistlichkeit verlor im Zuge der Modernisierung erheblich an Autorität.",
+   "mevcutBeispielTr": "Ruhban sınıfı, modernleşmeyle birlikte otoritesini büyük ölçüde yitirdi."
+  },
+  {
+   "id": 7035,
+   "de": "der Klerus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ruhban, din adamları sınıfı",
+   "mevcutBeispiel": "Der Klerus wehrte sich lange gegen jede staatliche Aufsicht.",
+   "mevcutBeispielTr": "Ruhban sınıfı uzun süre her türlü devlet denetimine direndi."
+  },
+  {
+   "id": 7036,
+   "de": "die Wallfahrt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wallfahrten",
+   "mevcutTr": "hac yolculuğu, ziyaret",
+   "mevcutBeispiel": "Jedes Frühjahr brechen Tausende zu einer Wallfahrt auf.",
+   "mevcutBeispielTr": "Her ilkbaharda binlerce kişi bir hac yolculuğuna çıkar."
+  },
+  {
+   "id": 7037,
+   "de": "die Fastenzeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fastenzeiten",
+   "mevcutTr": "oruç dönemi, perhiz zamanı",
+   "mevcutBeispiel": "Während der Fastenzeit verzichten viele bewusst auf gewohnte Annehmlichkeiten.",
+   "mevcutBeispielTr": "Oruç döneminde birçok kişi alışkın olduğu rahatlıklardan bilinçli olarak vazgeçer."
+  },
+  {
+   "id": 7038,
+   "de": "der Kirchenaustritt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kirchenaustritte",
+   "mevcutTr": "kiliseden ayrılma, üyelikten çıkma",
+   "mevcutBeispiel": "Die Zahl der Kirchenaustritte ist in den letzten Jahren gestiegen.",
+   "mevcutBeispielTr": "Kiliseden ayrılanların sayısı son yıllarda arttı."
+  },
+  {
+   "id": 7039,
+   "de": "die Exegese",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Exegesen",
+   "mevcutTr": "metin şerhi, tefsir",
+   "mevcutBeispiel": "Seine Exegese des Textes weicht von der herrschenden Lesart ab.",
+   "mevcutBeispielTr": "Metne ilişkin şerhi, hâkim okumadan ayrılıyor."
+  },
+  {
+   "id": 7040,
+   "de": "der Fundamentalismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "köktencilik",
+   "mevcutBeispiel": "Fundamentalismus entsteht selten ohne das Gefühl kultureller Bedrohung.",
+   "mevcutBeispielTr": "Köktencilik, kültürel tehdit duygusu olmadan nadiren ortaya çıkar."
+  },
+  {
+   "id": 7041,
+   "de": "der Aberglaube",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "batıl inanç",
+   "mevcutBeispiel": "Zwischen Aberglaube und gelebtem Volksglauben verläuft keine klare Grenze.",
+   "mevcutBeispielTr": "Batıl inançla yaşayan halk inancı arasında net bir sınır yoktur."
+  },
+  {
+   "id": 7042,
+   "de": "die Spiritualität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "maneviyat, tinsellik",
+   "mevcutBeispiel": "Viele suchen Spiritualität heute außerhalb der etablierten Institutionen.",
+   "mevcutBeispielTr": "Bugün birçok kişi maneviyatı yerleşik kurumların dışında arıyor."
+  },
+  {
+   "id": 7043,
+   "de": "die Religionsgemeinschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Religionsgemeinschaften",
+   "mevcutTr": "din cemaati, dinî topluluk",
+   "mevcutBeispiel": "Der Staat behandelt alle Religionsgemeinschaften rechtlich gleich.",
+   "mevcutBeispielTr": "Devlet, bütün dinî toplulukları hukuken eşit sayar."
+  },
+  {
+   "id": 7044,
+   "de": "der Agnostizismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "agnostisizm, bilinemezcilik",
+   "mevcutBeispiel": "Der Agnostizismus hält die Frage nach Gott für unentscheidbar.",
+   "mevcutBeispielTr": "Agnostisizm, Tanrı sorusunu karara bağlanamaz görür."
+  },
+  {
+   "id": 7045,
+   "de": "die Schöpfung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schöpfungen",
+   "mevcutTr": "yaratılış, kâinat",
+   "mevcutBeispiel": "Die Schöpfung wird hier als anvertrautes Gut verstanden.",
+   "mevcutBeispielTr": "Yaratılış burada emanet edilmiş bir varlık olarak anlaşılır."
+  },
+  {
+   "id": 7046,
+   "de": "die Vorsehung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ilahi takdir, kader",
+   "mevcutBeispiel": "An eine lenkende Vorsehung glaubt heute kaum noch jemand.",
+   "mevcutBeispielTr": "Yönlendirici bir ilahi takdire bugün neredeyse kimse inanmıyor."
+  },
+  {
+   "id": 7047,
+   "de": "die Reliquie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Reliquien",
+   "mevcutTr": "kutsal emanet",
+   "mevcutBeispiel": "Die Reliquie zog jahrhundertelang Pilger aus ganz Europa an.",
+   "mevcutBeispielTr": "Kutsal emanet yüzyıllar boyunca Avrupa'nın her yerinden hacı çekti."
+  },
+  {
+   "id": 7048,
+   "de": "die Ökumene",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ekümenizm, kiliseler arası birlik",
+   "mevcutBeispiel": "Die Ökumene bemüht sich um Annäherung zwischen getrennten Kirchen.",
+   "mevcutBeispielTr": "Ekümenizm, ayrı düşmüş kiliseler arasında yakınlaşma çabası güder."
+  },
+  {
+   "id": 7049,
+   "de": "die Ehrfurcht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "derin saygı, huşu",
+   "mevcutBeispiel": "Er betrat den alten Betsaal mit sichtbarer Ehrfurcht.",
+   "mevcutBeispielTr": "Eski ibadet salonuna gözle görülür bir huşu içinde girdi."
+  },
+  {
+   "id": 7050,
+   "de": "das Gelübde",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gelübde",
+   "mevcutTr": "adak, yemin",
+   "mevcutBeispiel": "Er legte ein Gelübde ab, das ihn lebenslang band.",
+   "mevcutBeispielTr": "Kendisini ömür boyu bağlayan bir adak adadı."
+  },
+  {
+   "id": 7051,
+   "de": "die Entzauberung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "büyübozumu, gizemin yitimi",
+   "mevcutBeispiel": "Die Entzauberung der Welt beschreibt einen langen historischen Prozess.",
+   "mevcutBeispielTr": "Dünyanın büyübozumu uzun bir tarihsel süreci anlatır."
+  },
+  {
+   "id": 7052,
+   "de": "die Glaubenskrise",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Glaubenskrisen",
+   "mevcutTr": "inanç krizi, iman bunalımı",
+   "mevcutBeispiel": "Nach dem Verlust geriet er in eine tiefe Glaubenskrise.",
+   "mevcutBeispielTr": "Kaybın ardından derin bir inanç krizine düştü."
+  }
+ ]
+}

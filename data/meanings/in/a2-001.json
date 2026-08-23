@@ -1,0 +1,606 @@
+{
+ "paket": "a2-001",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 932,
+   "de": "dass",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "-dığı, ki",
+   "mevcutBeispiel": "Rico hat gesagt, dass er auch zur Party kommt. Ich finde es super, dass du mich besuchst.",
+   "mevcutBeispielTr": "Rico partiye kendisinin de geleceğini söyledi. Beni ziyaret etmen bence harika."
+  },
+  {
+   "id": 1315,
+   "de": "wenn",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "eğer",
+   "mevcutBeispiel": "Wenn ich nicht arbeiten muss, komme ich.",
+   "mevcutBeispielTr": "Çalışmam gerekmezse gelirim.",
+   "cakisan": [
+    "falls (B1)",
+    "sofern (C1)"
+   ]
+  },
+  {
+   "id": 863,
+   "de": "als",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "-den daha, olarak, iken",
+   "mevcutBeispiel": "Hector ist jünger als seine Schwester. Sie arbeitet als Krankenschwester.",
+   "mevcutBeispielTr": "Hector, kız kardeşinden daha genç. Hemşire olarak çalışıyor."
+  },
+  {
+   "id": 1306,
+   "de": "weg",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "(wegbringen/ -fahren/-gehen/ -laufen/-machen/ -nehmen/-werfen)",
+   "mevcutTr": "kayıp, yok olmuş",
+   "mevcutBeispiel": "Meine Brille ist weg. Ich finde sie nicht mehr. Bringst du bitte den Müll weg? Können Sie Ihr Auto bitte wegfahren? Ich ",
+   "mevcutBeispielTr": "Gözlüğüm kayıp; artık bulamıyorum. Çöpü götürür müsün lütfen? Arabanızı çekebilir misiniz?",
+   "cakisan": [
+    "der Verlust (B1)",
+    "die Einbuße (B2)"
+   ]
+  },
+  {
+   "id": 1307,
+   "de": "der Weg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "yol",
+   "mevcutBeispiel": "Das ist der kürzeste Weg. Können Sie mir bitte den Weg zum Flughafen beschreiben?",
+   "mevcutBeispielTr": "En kısa yol bu. Bana havaalanına giden yolu tarif edebilir misiniz?"
+  },
+  {
+   "id": 1311,
+   "de": "weil",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çünkü (fiil sona gider)",
+   "mevcutBeispiel": "Ich kann nicht kommen, weil ich arbeiten muss.",
+   "mevcutBeispielTr": "Gelemiyorum çünkü çalışmam gerekiyor.",
+   "cakisan": [
+    "denn (A1)",
+    "nämlich (B1)"
+   ]
+  },
+  {
+   "id": 992,
+   "de": "ganz",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tam, bütün, sağlam",
+   "mevcutBeispiel": "Oh nein! Was ist passiert? Ist deine Brille jetzt kaputt? - Nein, zum Glück ist sie noch ganz! Morgen haben wir den ganz",
+   "mevcutBeispielTr": "Olamaz! Ne oldu? Gözlüğün kırıldı mı? - Hayır, neyse ki hâlâ sağlam!"
+  },
+  {
+   "id": 1086,
+   "de": "meinen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "meint, hat gemeint",
+   "mevcutTr": "demek istemek, kastetmek, düşünmek",
+   "mevcutBeispiel": "Wie meinst du das? Erklär mir das bitte genauer! Der Film ist gut. Was meinst du?",
+   "mevcutBeispielTr": "Bunu nasıl yani? Bana daha ayrıntılı açıklar mısın! Film iyi. Sen ne düşünüyorsun?"
+  },
+  {
+   "id": 1001,
+   "de": "genau",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tam olarak, kesinlikle, doğru",
+   "mevcutBeispiel": "Sind Sie sicher, dass die Prüfung am 15. Juni ist? - Ja, das weiß ich genau. Die Uhr geht genau. Es ist genau acht Uhr.",
+   "mevcutBeispielTr": "Sınavın 15 Haziran'da olduğundan emin misiniz? - Evet, kesin biliyorum. Saat doğru gidiyor. Saat tam sekiz."
+  },
+  {
+   "id": 1151,
+   "de": "reden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "redet, hat geredet",
+   "mevcutTr": "konuşmak",
+   "mevcutBeispiel": "Mit meiner Freundin kann ich über alles reden. Rede nicht so viel!",
+   "mevcutBeispielTr": "Kız arkadaşımla her şeyi konuşabiliyorum. Bu kadar çok konuşma!",
+   "cakisan": [
+    "sprechen (A1)"
+   ]
+  },
+  {
+   "id": 1039,
+   "de": "jemand",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "biri, birisi",
+   "mevcutBeispiel": "Hat jemand meinen Stift? Hallo, ist jemand da?",
+   "mevcutBeispielTr": "Kalemim kimde? Merhaba, kimse var mı?"
+  },
+  {
+   "id": 1124,
+   "de": "das Paar",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "çift",
+   "mevcutBeispiel": "Romeo und Julia sind ein Paar. Ich brauche ein Paar Schuhe.",
+   "mevcutBeispielTr": "Romeo ile Juliet bir çift. Bir çift ayakkabıya ihtiyacım var.",
+   "cakisan": [
+    "doppelt (B1)",
+    "Doppel- (B1)"
+   ]
+  },
+  {
+   "id": 1195,
+   "de": "selbst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kendisi, kendi",
+   "mevcutBeispiel": "Du musst mir nicht helfen, ich mache das selbst.",
+   "mevcutBeispielTr": "Bana yardım etmene gerek yok, kendim yaparım.",
+   "cakisan": [
+    "selber (B1)"
+   ]
+  },
+  {
+   "id": 1022,
+   "de": "her",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "buraya, bu yana",
+   "mevcutBeispiel": "Komm bitte mal her! Herein! Die Tür ist offen. Woher kommen Sie?",
+   "mevcutBeispielTr": "Buraya gelsene! İçeri girin! Kapı açık. Nerelisiniz?",
+   "cakisan": [
+    "hierher (B1)"
+   ]
+  },
+  {
+   "id": 1108,
+   "de": "natürlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "doğal olarak; tabii, elbette",
+   "mevcutBeispiel": "Natürlich helfen wir dir. Kommst du zu meiner Party? – Natürlich.",
+   "mevcutBeispielTr": "Tabii ki sana yardım ederiz. Partime geliyor musun? – Elbette."
+  },
+  {
+   "id": 1308,
+   "de": "wegen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yüzünden, nedeniyle",
+   "mevcutBeispiel": "Wegen seiner Arbeit kann er leider nicht kommen. Ich rufe wegen meiner Tochter an.",
+   "mevcutBeispielTr": "İşi yüzünden maalesef gelemiyor. Kızım için arıyorum."
+  },
+  {
+   "id": 1028,
+   "de": "hin",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "oraya, o yöne",
+   "mevcutBeispiel": "Wo gehst du hin?/Wohin gehst du? Wohin ist Paul gegangen? – Ich glaube dorthin. Er geht in den Garten hinaus. Wir gehen ",
+   "mevcutBeispielTr": "Nereye gidiyorsun? Paul nereye gitti? – Sanırım şuraya. Bahçeye çıkıyor.",
+   "cakisan": [
+    "dahin (B1)",
+    "dorthin (B1)"
+   ]
+  },
+  {
+   "id": 964,
+   "de": "erst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ancak, henüz, daha yeni",
+   "mevcutBeispiel": "Wir können erst morgen kommen. Dina ist keine 18, sie ist erst 16 Jahre alt.",
+   "mevcutBeispielTr": "Ancak yarın gelebiliriz. Dina 18 değil, daha 16 yaşında.",
+   "cakisan": [
+    "allerdings (B1)"
+   ]
+  },
+  {
+   "id": 1204,
+   "de": "sonst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "başka; yoksa, aksi takdirde",
+   "mevcutBeispiel": "Haben Sie sonst noch einen Wunsch? – Nein danke, das ist alles. Beeil dich, sonst kommen wir zu spät!",
+   "mevcutBeispielTr": "Başka bir arzunuz var mı? – Hayır teşekkürler, hepsi bu. Acele et, yoksa geç kalacağız!",
+   "cakisan": [
+    "anders (A2)"
+   ]
+  },
+  {
+   "id": 929,
+   "de": "dabei sein",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ist dabei, war dabei, ist dabei gewesen",
+   "mevcutTr": "orada olmak, katılmak",
+   "mevcutBeispiel": "Schön, dass du dabei bist!",
+   "mevcutBeispielTr": "Aramızda olman ne güzel!"
+  },
+  {
+   "id": 946,
+   "de": "egal",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "fark etmez, önemli değil",
+   "mevcutBeispiel": "Das ist mir egal. Willst du Tee oder Kaffee trinken? – Egal.",
+   "mevcutBeispielTr": "Benim için fark etmez. Çay mı içersin, kahve mi? – Fark etmez."
+  },
+  {
+   "id": 945,
+   "de": "echt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gerçek, hakiki",
+   "mevcutBeispiel": "Ist das Bild ein echter Picasso? Der Film ist echt gut.",
+   "mevcutBeispielTr": "Bu tablo gerçek bir Picasso mu? Film gerçekten iyi.",
+   "cakisan": [
+    "die Tatsache (B1)",
+    "die Wahrheit (B1)",
+    "die Wirklichkeit (B1)"
+   ]
+  },
+  {
+   "id": 1216,
+   "de": "sterben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "stirbt, ist gestorben",
+   "mevcutTr": "ölmek",
+   "mevcutBeispiel": "Herr Müller kommt heute nicht. Sein Vater ist gestern gestorben.",
+   "mevcutBeispielTr": "Bay Müller bugün gelmiyor. Babası dün vefat etti."
+  },
+  {
+   "id": 970,
+   "de": "fast",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "neredeyse, hemen hemen",
+   "mevcutBeispiel": "Der Film ist fast zu Ende. Ich habe fast alles verstanden.",
+   "mevcutBeispielTr": "Film neredeyse bitti. Neredeyse her şeyi anladım.",
+   "cakisan": [
+    "beinahe (B1)",
+    "nahezu (B2)"
+   ]
+  },
+  {
+   "id": 1289,
+   "de": "vorbei",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yanından geçerek, uğrayarak; bitmiş, geçmiş",
+   "mevcutBeispiel": "Die Linie 8 fährt am Krankenhaus vorbei. Kommst du morgen bei mir vorbei?",
+   "mevcutBeispielTr": "8 numaralı hat hastanenin önünden geçiyor. Yarın bana uğrar mısın?"
+  },
+  {
+   "id": 1029,
+   "de": "hinter",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "arkasında",
+   "mevcutBeispiel": "Hinter dem Haus haben wir einen Garten.",
+   "mevcutBeispielTr": "Evin arkasında bir bahçemiz var."
+  },
+  {
+   "id": 1202,
+   "de": "sogar",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hatta",
+   "mevcutBeispiel": "Heute ist es sehr kalt. In den Bergen schneit es sogar. Zu meiner Hochzeit kommen viele Gäste. Sogar meine Tante aus Kan",
+   "mevcutBeispielTr": "Bugün hava çok soğuk. Dağlarda kar bile yağıyor. Düğünüme çok misafir geliyor."
+  },
+  {
+   "id": 1167,
+   "de": "die Ruhe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "sessizlik, huzur, dinlenme",
+   "mevcutBeispiel": "Ruhe, bitte! Hier in der Bibliothek darf man nicht laut sprechen. Meine Großmutter ist krank. Sie braucht viel Ruhe.",
+   "mevcutBeispielTr": "Sessiz olun lütfen! Burada, kütüphanede yüksek sesle konuşulmaz. Büyükannem hasta; çok dinlenmesi gerekiyor."
+  },
+  {
+   "id": 1284,
+   "de": "versuchen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "versucht, hat versucht",
+   "mevcutTr": "denemek",
+   "mevcutBeispiel": "Kann ich es auch einmal versuchen? Haben Sie es schon einmal mit diesem Mittel versucht?",
+   "mevcutBeispielTr": "Ben de bir denesem olur mu? Bu ilacı hiç denediniz mi?",
+   "cakisan": [
+    "probieren (A2)",
+    "erproben (C1)",
+    "ausprobieren (A2)",
+    "anprobieren (A2)"
+   ]
+  },
+  {
+   "id": 866,
+   "de": "anders",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "başka, farklı",
+   "mevcutBeispiel": "Anders geht das leider nicht. Oliver ist anders als seine Freunde.",
+   "mevcutBeispielTr": "Maalesef başka türlü olmuyor. Oliver, arkadaşlarından farklı.",
+   "cakisan": [
+    "sonst (A2)"
+   ]
+  },
+  {
+   "id": 1299,
+   "de": "der Wagen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "–",
+   "mevcutTr": "araba, vagon",
+   "mevcutBeispiel": "Wo steht Ihr Wagen? Im zweiten Wagen ist unser Zugrestaurant.",
+   "mevcutBeispielTr": "Arabanız nerede duruyor? Yemekli vagon ikinci vagonda.",
+   "cakisan": [
+    "das Auto (A1)"
+   ]
+  },
+  {
+   "id": 1005,
+   "de": "das Gesicht",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-er",
+   "mevcutTr": "yüz",
+   "mevcutBeispiel": "Wasch dir bitte das Gesicht. Sie hat ein freundliches Gesicht.",
+   "mevcutBeispielTr": "Yüzünü yıka lütfen. Güler yüzlü biri."
+  },
+  {
+   "id": 935,
+   "de": "das Ding",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "şey, nesne",
+   "mevcutBeispiel": "Gib mir bitte mal das Ding da drüben! Was macht man mit diesem Ding? - Damit kann man Flaschen öffnen.",
+   "mevcutBeispielTr": "Şuradaki şeyi bana versene! Bu şey ne işe yarıyor? - Bununla şişe açılıyor.",
+   "cakisan": [
+    "die Sache (A1)"
+   ]
+  },
+  {
+   "id": 974,
+   "de": "das Fest",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "bayram, şenlik",
+   "mevcutBeispiel": "Frohes Fest! Am Wochenende feiern wir ein Fest. Meine Tochter hat Geburtstag.",
+   "mevcutBeispielTr": "İyi bayramlar! Hafta sonu bir kutlama yapıyoruz. Kızımın doğum günü."
+  },
+  {
+   "id": 881,
+   "de": "außer",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dışında, hariç",
+   "mevcutBeispiel": "Außer Lisa möchte niemand den Film sehen. Wir haben täglich außer Samstag geöffnet.",
+   "mevcutBeispielTr": "Lisa dışında kimse filmi izlemek istemiyor. Cumartesi hariç her gün açığız.",
+   "cakisan": [
+    "außerhalb (A2)"
+   ]
+  },
+  {
+   "id": 1198,
+   "de": "sich setzen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "setzt, setzte, hat gesetzt",
+   "mevcutTr": "oturmak (bir yere geçip)",
+   "mevcutBeispiel": "Setz dich doch!",
+   "mevcutBeispielTr": "Otursana!",
+   "cakisan": [
+    "wohnen (A1)",
+    "sitzen (A1)",
+    "sich hinsetzen (A2)"
+   ]
+  },
+  {
+   "id": 1301,
+   "de": "wahrscheinlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "muhtemelen",
+   "mevcutBeispiel": "Wahrscheinlich mache ich im Herbst einen Deutschkurs. Er kommt wahrscheinlich nicht.",
+   "mevcutBeispielTr": "Muhtemelen sonbaharda bir Almanca kursuna gideceğim. Muhtemelen gelmeyecek.",
+   "cakisan": [
+    "vermutlich (B1)",
+    "voraussichtlich (B1)"
+   ]
+  },
+  {
+   "id": 1089,
+   "de": "die Menge",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "miktar, çokluk; kalabalık",
+   "mevcutBeispiel": "Wir haben noch eine Menge Zeit. Ich kenne eine Menge Leute in dieser Stadt.",
+   "mevcutBeispielTr": "Daha bir sürü vaktimiz var. Bu şehirde bir sürü insan tanıyorum."
+  },
+  {
+   "id": 922,
+   "de": "das Büro",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "ofis, büro",
+   "mevcutBeispiel": "Ich arbeite in einem Büro. Unser Büro ist bis Dienstag geschlossen.",
+   "mevcutBeispielTr": "Bir ofiste çalışıyorum. Ofisimiz salıya kadar kapalı."
+  },
+  {
+   "id": 1175,
+   "de": "schaffen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schafft, hat geschafft",
+   "mevcutTr": "başarmak, becermek",
+   "mevcutBeispiel": "Kannst du mir bitte helfen? Ich schaffe das nicht alleine. Geschafft! Das Projekt ist endlich fertig.",
+   "mevcutBeispielTr": "Bana yardım eder misin lütfen? Bunu tek başıma başaramıyorum. Oldu bitti! Proje sonunda hazır."
+  },
+  {
+   "id": 1287,
+   "de": "voll",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dolu (boş değil), tıklım tıklım",
+   "mevcutBeispiel": "Morgens und abends sind die Züge immer sehr voll. Die Flasche ist noch ganz voll.",
+   "mevcutBeispielTr": "Sabah ve akşamları trenler hep çok dolu olur. Şişe daha dopdolu.",
+   "cakisan": [
+    "besetzt (A1)",
+    "der Hagel (B2)",
+    "gefüllt (A2)"
+   ]
+  },
+  {
+   "id": 936,
+   "de": "direkt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "doğrudan",
+   "mevcutBeispiel": "Wir wohnen direkt über dem Café. Gibt es keinen direkten Zug nach Hamburg? - Nein, Sie müssen immer umsteigen. Ich möcht",
+   "mevcutBeispielTr": "Tam kafenin üstünde oturuyoruz. Hamburg'a direkt tren yok mu? - Hayır, mutlaka aktarma yapmanız gerekiyor."
+  },
+  {
+   "id": 1112,
+   "de": "nennen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "nennt, hat genannt",
+   "mevcutTr": "adlandırmak, çağırmak",
+   "mevcutBeispiel": "Mein Freund heißt Alexander, aber alle nennen ihn Alex.",
+   "mevcutBeispielTr": "Arkadaşımın adı Alexander ama herkes ona Alex diyor.",
+   "cakisan": [
+    "benennen (C1)"
+   ]
+  },
+  {
+   "id": 959,
+   "de": "sich erinnern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "erinnert, hat erinnert",
+   "mevcutTr": "hatırlamak",
+   "mevcutBeispiel": "Erinnerst du dich an José? - Nein, ich erinnere mich nicht an ihn, tut mir leid. Kannst du mich morgen bitte an meinen A",
+   "mevcutBeispielTr": "José'yi hatırlıyor musun? - Hayır, onu hatırlamıyorum, üzgünüm. Yarın bana randevumu hatırlatır mısın?",
+   "cakisan": [
+    "sich erinnern an (B2)"
+   ]
+  },
+  {
+   "id": 1278,
+   "de": "verlieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verliert, hat verloren",
+   "mevcutTr": "kaybetmek",
+   "mevcutBeispiel": "Ich habe meinen Schlüssel verloren. Michael hat seine Arbeit verloren. Wir haben das Fußballspiel verloren.",
+   "mevcutBeispielTr": "Anahtarımı kaybettim. Michael işini kaybetti. Futbol maçını kaybettik.",
+   "cakisan": [
+    "einbüßen (C1)"
+   ]
+  },
+  {
+   "id": 1166,
+   "de": "rufen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ruft, hat gerufen",
+   "mevcutTr": "çağırmak, seslenmek",
+   "mevcutBeispiel": "Rufst du bitte die Kinder. Das Essen ist fertig. Wir müssen einen Arzt rufen.",
+   "mevcutBeispielTr": "Çocukları çağırır mısın lütfen. Yemek hazır. Bir doktor çağırmamız gerekiyor.",
+   "cakisan": [
+    "auffordern (B1)"
+   ]
+  },
+  {
+   "id": 1227,
+   "de": "super",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "harika, süper",
+   "mevcutBeispiel": "Der Film ist super. Er kann super tanzen.",
+   "mevcutBeispielTr": "Film süper. Harika dans edebiliyor.",
+   "cakisan": [
+    "toll (A1)",
+    "wunderbar (A1)",
+    "fantastisch (A2)",
+    "klasse (B1)",
+    "prima (B1)"
+   ]
+  },
+  {
+   "id": 1243,
+   "de": "total",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tamamen, son derece",
+   "mevcutBeispiel": "Der Film ist total langweilig.",
+   "mevcutBeispielTr": "Film son derece sıkıcı.",
+   "cakisan": [
+    "komplett (B1)",
+    "völlig (B1)",
+    "vollkommen (A2)"
+   ]
+  },
+  {
+   "id": 931,
+   "de": "damals",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "o zamanlar, o dönemde",
+   "mevcutBeispiel": "Als Student hatte ich viel Zeit und wollte reisen. Aber damals hatte ich kein Geld.",
+   "mevcutBeispielTr": "Öğrenciyken çok vaktim vardı ve seyahat etmek istiyordum. Ama o zamanlar hiç param yoktu."
+  },
+  {
+   "id": 1027,
+   "de": "der Himmel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "gökyüzü",
+   "mevcutBeispiel": "Heute ist so tolles Wetter: Der Himmel ist blau und es gibt keine Wolken.",
+   "mevcutBeispielTr": "Bugün hava harika: gökyüzü mavi ve hiç bulut yok."
+  }
+ ]
+}

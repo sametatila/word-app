@@ -1,0 +1,557 @@
+{
+ "paket": "a2-018",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7838,
+   "de": "großziehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "zieht groß, hat großgezogen",
+   "mevcutTr": "büyütmek, yetiştirmek",
+   "mevcutBeispiel": "Sie hat drei Kinder allein großgezogen.",
+   "mevcutBeispielTr": "Üç çocuğu tek başına büyüttü.",
+   "cakisan": [
+    "vergrößern (B1)"
+   ]
+  },
+  {
+   "id": 7839,
+   "de": "adoptieren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "adoptiert, hat adoptiert",
+   "mevcutTr": "evlat edinmek",
+   "mevcutBeispiel": "Das Paar möchte ein Kind adoptieren.",
+   "mevcutBeispielTr": "Çift bir çocuk evlat edinmek istiyor."
+  },
+  {
+   "id": 7840,
+   "de": "vergeben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "vergibt, hat vergeben",
+   "mevcutTr": "affetmek, bağışlamak",
+   "mevcutBeispiel": "Nach dem Streit hat sie ihrem Bruder vergeben.",
+   "mevcutBeispielTr": "Kavgadan sonra kardeşini affetti.",
+   "cakisan": [
+    "entschuldigen (A1)",
+    "verzeihen (B1)"
+   ]
+  },
+  {
+   "id": 7841,
+   "de": "zusammenkommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt zusammen, ist zusammengekommen",
+   "mevcutTr": "bir araya gelmek, toplanmak",
+   "mevcutBeispiel": "An Weihnachten kommt die ganze Familie zusammen.",
+   "mevcutBeispielTr": "Noel'de bütün aile bir araya geliyor."
+  },
+  {
+   "id": 7842,
+   "de": "erben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "erbt, hat geerbt",
+   "mevcutTr": "miras almak",
+   "mevcutBeispiel": "Er hat von seiner Tante ein altes Haus geerbt.",
+   "mevcutBeispielTr": "Halasından eski bir ev miras aldı."
+  },
+  {
+   "id": 7843,
+   "de": "bewundern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bewundert, hat bewundert",
+   "mevcutTr": "hayran olmak",
+   "mevcutBeispiel": "Ich bewundere meine Großmutter sehr.",
+   "mevcutBeispielTr": "Büyükanneme çok hayranım."
+  },
+  {
+   "id": 7844,
+   "de": "belohnen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "belohnt, hat belohnt",
+   "mevcutTr": "ödüllendirmek",
+   "mevcutBeispiel": "Die Eltern belohnen ihre Kinder für gute Noten.",
+   "mevcutBeispielTr": "Anne baba çocuklarını iyi notlar için ödüllendiriyor."
+  },
+  {
+   "id": 7845,
+   "de": "wickeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "wickelt, hat gewickelt",
+   "mevcutTr": "(bebeğin) altını değiştirmek, sarmak",
+   "mevcutBeispiel": "Kannst du das Baby wickeln?",
+   "mevcutBeispielTr": "Bebeğin altını değiştirebilir misin?"
+  },
+  {
+   "id": 7846,
+   "de": "anstoßen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "stößt an, hat angestoßen",
+   "mevcutTr": "kadeh kaldırmak, kadeh tokuşturmak",
+   "mevcutBeispiel": "Wir stoßen auf das junge Paar an.",
+   "mevcutBeispielTr": "Genç çift için kadeh kaldırıyoruz."
+  },
+  {
+   "id": 7847,
+   "de": "schmücken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schmückt, hat geschmückt",
+   "mevcutTr": "süslemek",
+   "mevcutBeispiel": "Die Kinder schmücken den Saal für die Feier.",
+   "mevcutBeispielTr": "Çocuklar kutlama için salonu süslüyor.",
+   "cakisan": [
+    "dekorieren (B1)",
+    "ausschmücken (C1)"
+   ]
+  },
+  {
+   "id": 7848,
+   "de": "ähneln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ähnelt, hat geähnelt",
+   "mevcutTr": "benzemek",
+   "mevcutBeispiel": "Meine Tochter ähnelt ihrer Oma sehr.",
+   "mevcutBeispielTr": "Kızım büyükannesine çok benziyor."
+  },
+  {
+   "id": 7849,
+   "de": "zusammenhalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hält zusammen, hat zusammengehalten",
+   "mevcutTr": "birlik olmak, kenetlenmek",
+   "mevcutBeispiel": "In schweren Zeiten hält unsere Familie zusammen.",
+   "mevcutBeispielTr": "Zor zamanlarda ailemiz birlik olur."
+  },
+  {
+   "id": 7850,
+   "de": "taufen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "tauft, hat getauft",
+   "mevcutTr": "vaftiz etmek",
+   "mevcutBeispiel": "Das Baby wird am Sonntag getauft.",
+   "mevcutBeispielTr": "Bebek pazar günü vaftiz edilecek."
+  },
+  {
+   "id": 7851,
+   "de": "kuscheln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kuschelt, hat gekuschelt",
+   "mevcutTr": "sarılıp yatmak, sokulmak",
+   "mevcutBeispiel": "Abends kuscheln wir auf dem Sofa.",
+   "mevcutBeispielTr": "Akşamları kanepede sarılıp yatıyoruz."
+  },
+  {
+   "id": 7852,
+   "de": "trauern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "trauert, hat getrauert",
+   "mevcutTr": "yas tutmak",
+   "mevcutBeispiel": "Die Familie trauert um den Großvater.",
+   "mevcutBeispielTr": "Aile büyükbaba için yas tutuyor."
+  },
+  {
+   "id": 7853,
+   "de": "überreichen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "überreicht, hat überreicht",
+   "mevcutTr": "takdim etmek, elden vermek",
+   "mevcutBeispiel": "Am Ende der Feier überreicht er den Gästen kleine Geschenke.",
+   "mevcutBeispielTr": "Kutlamanın sonunda misafirlere küçük hediyeler takdim ediyor."
+  },
+  {
+   "id": 7854,
+   "de": "bewirten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bewirtet, hat bewirtet",
+   "mevcutTr": "ağırlamak, ikram etmek",
+   "mevcutBeispiel": "Sie bewirtet ihre Gäste mit Kuchen und Tee.",
+   "mevcutBeispielTr": "Misafirlerini kek ve çayla ağırlıyor."
+  },
+  {
+   "id": 7855,
+   "de": "hüten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hütet, hat gehütet",
+   "mevcutTr": "bakmak, göz kulak olmak",
+   "mevcutBeispiel": "Am Samstag hüte ich die Kinder meiner Schwester.",
+   "mevcutBeispielTr": "Cumartesi kız kardeşimin çocuklarına bakıyorum.",
+   "cakisan": [
+    "ansehen (A2)",
+    "betreuen (B1)",
+    "gucken (B1)",
+    "pflegen (B1)",
+    "schauen (B1)",
+    "sorgen (B1)"
+   ]
+  },
+  {
+   "id": 7856,
+   "de": "vorbeischauen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schaut vorbei, hat vorbeigeschaut",
+   "mevcutTr": "uğramak, şöyle bir uğrayıp bakmak",
+   "mevcutBeispiel": "Schau doch am Sonntag bei uns vorbei!",
+   "mevcutBeispielTr": "Pazar günü bize uğrasana!",
+   "cakisan": [
+    "vorbeikommen (A2)"
+   ]
+  },
+  {
+   "id": 7857,
+   "de": "auskommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt aus, ist ausgekommen",
+   "mevcutTr": "geçinmek (biriyle), anlaşmak",
+   "mevcutBeispiel": "Ich komme mit meinen Nachbarn gut aus.",
+   "mevcutBeispielTr": "Komşularımla iyi geçiniyorum."
+  },
+  {
+   "id": 7858,
+   "de": "zusammenleben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "lebt zusammen, hat zusammengelebt",
+   "mevcutTr": "birlikte yaşamak",
+   "mevcutBeispiel": "In diesem Haus leben drei Generationen zusammen.",
+   "mevcutBeispielTr": "Bu evde üç kuşak birlikte yaşıyor."
+  },
+  {
+   "id": 7859,
+   "de": "stillen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "stillt, hat gestillt",
+   "mevcutTr": "emzirmek",
+   "mevcutBeispiel": "Die Mutter stillt ihr Baby noch.",
+   "mevcutBeispielTr": "Anne bebeğini hâlâ emziriyor."
+  },
+  {
+   "id": 7860,
+   "de": "beistehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "steht bei, hat beigestanden",
+   "mevcutTr": "yanında olmak, destek olmak",
+   "mevcutBeispiel": "Meine Freunde stehen mir immer bei.",
+   "mevcutBeispielTr": "Arkadaşlarım her zaman yanımda olur."
+  },
+  {
+   "id": 7861,
+   "de": "kinderlos",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çocuksuz",
+   "mevcutBeispiel": "Das Ehepaar ist seit zehn Jahren kinderlos.",
+   "mevcutBeispielTr": "Evli çift on yıldır çocuksuz."
+  },
+  {
+   "id": 7862,
+   "de": "getrennt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ayrı, ayrılmış",
+   "mevcutBeispiel": "Meine Eltern leben seit einem Jahr getrennt.",
+   "mevcutBeispielTr": "Annemle babam bir yıldır ayrı yaşıyor."
+  },
+  {
+   "id": 7863,
+   "de": "gegenseitig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "karşılıklı",
+   "mevcutBeispiel": "In einer Familie ist gegenseitige Hilfe wichtig.",
+   "mevcutBeispielTr": "Bir ailede karşılıklı yardım önemlidir.",
+   "cakisan": [
+    "wechselseitig (C1)"
+   ]
+  },
+  {
+   "id": 7864,
+   "de": "festlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şık (özel gün için), şenlikli",
+   "mevcutBeispiel": "Alle Gäste sind festlich gekleidet.",
+   "mevcutBeispielTr": "Bütün misafirler bayramlık giyinmiş.",
+   "cakisan": [
+    "chic/schick (B1)",
+    "elegant (B1)"
+   ]
+  },
+  {
+   "id": 7865,
+   "de": "feierlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "törensel, ağırbaşlı",
+   "mevcutBeispiel": "Die Rede des Vaters war sehr feierlich.",
+   "mevcutBeispielTr": "Babanın konuşması çok törenseldi."
+  },
+  {
+   "id": 7866,
+   "de": "häuslich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "eve düşkün, ev işlerine yatkın",
+   "mevcutBeispiel": "Mein Bruder ist sehr häuslich und kocht jeden Abend.",
+   "mevcutBeispielTr": "Kardeşim çok eve düşkün ve her akşam yemek pişiriyor."
+  },
+  {
+   "id": 7867,
+   "de": "artig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "uslu, terbiyeli",
+   "mevcutBeispiel": "Die Kinder waren beim Besuch sehr artig.",
+   "mevcutBeispielTr": "Çocuklar ziyarette çok uslu durdular.",
+   "cakisan": [
+    "brav (A2)"
+   ]
+  },
+  {
+   "id": 7868,
+   "de": "ungezogen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "terbiyesiz, yaramaz",
+   "mevcutBeispiel": "Sei nicht so ungezogen zu deiner Oma!",
+   "mevcutBeispielTr": "Büyükannene karşı bu kadar terbiyesiz olma!"
+  },
+  {
+   "id": 7869,
+   "de": "nervig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sinir bozucu",
+   "mevcutBeispiel": "Mein kleiner Bruder ist manchmal richtig nervig.",
+   "mevcutBeispielTr": "Küçük kardeşim bazen gerçekten sinir bozucu.",
+   "cakisan": [
+    "ärgerlich (B1)"
+   ]
+  },
+  {
+   "id": 7870,
+   "de": "unverheiratet",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "evli olmayan, bekâr",
+   "mevcutBeispiel": "Meine Tante ist immer noch unverheiratet.",
+   "mevcutBeispielTr": "Teyzem hâlâ evli değil."
+  },
+  {
+   "id": 7871,
+   "de": "untereinander",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kendi aralarında, birbirleriyle",
+   "mevcutBeispiel": "Die Geschwister helfen sich untereinander.",
+   "mevcutBeispielTr": "Kardeşler kendi aralarında birbirlerine yardım ediyor."
+  },
+  {
+   "id": 7872,
+   "de": "füreinander",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "birbiri için",
+   "mevcutBeispiel": "Gute Freunde sind immer füreinander da.",
+   "mevcutBeispielTr": "İyi arkadaşlar her zaman birbiri için oradadır."
+  },
+  {
+   "id": 7873,
+   "de": "stur",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "inatçı, dik kafalı",
+   "mevcutBeispiel": "Mein Opa ist manchmal sehr stur.",
+   "mevcutBeispielTr": "Dedem bazen çok inatçıdır.",
+   "cakisan": [
+    "eigensinnig (B2)",
+    "verbissen (C1)"
+   ]
+  },
+  {
+   "id": 7874,
+   "de": "verwöhnt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şımarık",
+   "mevcutBeispiel": "Das Kind ist von seinen Großeltern ziemlich verwöhnt.",
+   "mevcutBeispielTr": "Çocuk büyükanne ve büyükbabası tarafından epey şımartılmış."
+  },
+  {
+   "id": 7875,
+   "de": "alleinstehend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bekâr, yalnız yaşayan",
+   "mevcutBeispiel": "Sie ist alleinstehend und wohnt mit ihrer Katze.",
+   "mevcutBeispielTr": "O bekâr ve kedisiyle yaşıyor.",
+   "cakisan": [
+    "ledig (A1)"
+   ]
+  },
+  {
+   "id": 7876,
+   "de": "fürsorglich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şefkatli, ilgili",
+   "mevcutBeispiel": "Meine Mutter ist sehr fürsorglich.",
+   "mevcutBeispielTr": "Annem çok şefkatlidir.",
+   "cakisan": [
+    "zärtlich (A2)"
+   ]
+  },
+  {
+   "id": 7877,
+   "de": "sich entspannen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "entspannt sich, hat sich entspannt",
+   "mevcutTr": "rahatlamak, gevşemek",
+   "mevcutBeispiel": "Nach der Arbeit entspanne ich mich am liebsten mit Musik.",
+   "mevcutBeispielTr": "İşten sonra en çok müzikle rahatlıyorum."
+  },
+  {
+   "id": 7878,
+   "de": "angeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "angelt, hat geangelt",
+   "mevcutTr": "balık tutmak",
+   "mevcutBeispiel": "Mein Opa angelt jeden Sonntag am See.",
+   "mevcutBeispielTr": "Dedem her pazar gölde balık tutuyor."
+  },
+  {
+   "id": 7879,
+   "de": "turnen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "turnt, hat geturnt",
+   "mevcutTr": "jimnastik yapmak",
+   "mevcutBeispiel": "Die Kinder turnen zweimal pro Woche in der Schule.",
+   "mevcutBeispielTr": "Çocuklar haftada iki kez okulda jimnastik yapıyor."
+  },
+  {
+   "id": 7880,
+   "de": "segeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "segelt, ist gesegelt",
+   "mevcutTr": "yelken yapmak, yelkenle gitmek",
+   "mevcutBeispiel": "Im Sommer segeln wir oft auf dem Bodensee.",
+   "mevcutBeispielTr": "Yazın sık sık Bodensee'de yelken yapıyoruz."
+  },
+  {
+   "id": 7881,
+   "de": "würfeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "würfelt, hat gewürfelt",
+   "mevcutTr": "zar atmak",
+   "mevcutBeispiel": "Du bist dran, jetzt musst du würfeln.",
+   "mevcutBeispielTr": "Sıra sende, şimdi zar atman gerekiyor."
+  },
+  {
+   "id": 7882,
+   "de": "stricken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "strickt, hat gestrickt",
+   "mevcutTr": "örgü örmek",
+   "mevcutBeispiel": "Meine Mutter strickt mir einen warmen Pullover.",
+   "mevcutBeispielTr": "Annem bana sıcak bir kazak örüyor."
+  },
+  {
+   "id": 7883,
+   "de": "mitspielen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "spielt mit, hat mitgespielt",
+   "mevcutTr": "birlikte oynamak, oyuna katılmak",
+   "mevcutBeispiel": "Darf ich bei eurem Spiel mitspielen?",
+   "mevcutBeispielTr": "Oyununuza katılabilir miyim?"
+  },
+  {
+   "id": 7884,
+   "de": "veranstalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "veranstaltet, hat veranstaltet",
+   "mevcutTr": "düzenlemek, tertip etmek",
+   "mevcutBeispiel": "Unser Verein veranstaltet im Juni ein großes Sommerfest.",
+   "mevcutBeispielTr": "Derneğimiz haziranda büyük bir yaz şenliği düzenliyor.",
+   "cakisan": [
+    "ordnen (B1)",
+    "regeln (B1)",
+    "strukturieren (B2)",
+    "regulieren (C1)"
+   ]
+  },
+  {
+   "id": 7885,
+   "de": "abschalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schaltet ab, hat abgeschaltet",
+   "mevcutTr": "kafa dağıtmak, kapatmak (cihaz)",
+   "mevcutBeispiel": "Beim Wandern kann ich richtig gut abschalten.",
+   "mevcutBeispielTr": "Doğa yürüyüşünde gerçekten güzel kafa dağıtabiliyorum."
+  },
+  {
+   "id": 7886,
+   "de": "rudern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "rudert, ist gerudert",
+   "mevcutTr": "kürek çekmek",
+   "mevcutBeispiel": "Wir sind mit dem Boot bis zur kleinen Insel gerudert.",
+   "mevcutBeispielTr": "Kayıkla küçük adaya kadar kürek çektik."
+  },
+  {
+   "id": 7887,
+   "de": "boxen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "boxt, hat geboxt",
+   "mevcutTr": "boks yapmak",
+   "mevcutBeispiel": "Mein Bruder boxt seit drei Jahren in einem Club.",
+   "mevcutBeispielTr": "Kardeşim üç yıldır bir kulüpte boks yapıyor."
+  }
+ ]
+}

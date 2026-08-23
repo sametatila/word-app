@@ -1,0 +1,519 @@
+{
+ "paket": "c1-015",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 5953,
+   "de": "die Akkreditierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Akkreditierungen",
+   "mevcutTr": "akreditasyon, tanınma onayı",
+   "mevcutBeispiel": "Ohne Akkreditierung darf der Studiengang keine Abschlüsse vergeben.",
+   "mevcutBeispielTr": "Akreditasyon olmadan bu program diploma veremez."
+  },
+  {
+   "id": 5954,
+   "de": "die Hochschulautonomie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "üniversite özerkliği",
+   "mevcutBeispiel": "Die Reform stärkt die Hochschulautonomie in Personalfragen erheblich.",
+   "mevcutBeispielTr": "Reform, personel konularında üniversite özerkliğini önemli ölçüde güçlendiriyor."
+  },
+  {
+   "id": 5955,
+   "de": "die Drittmittel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Drittmittel",
+   "mevcutTr": "dış kaynaklı araştırma fonu",
+   "mevcutBeispiel": "Ein Großteil der Forschung wird inzwischen über Drittmittel finanziert.",
+   "mevcutBeispielTr": "Araştırmaların büyük kısmı artık dış kaynaklı fonlarla finanse ediliyor."
+  },
+  {
+   "id": 5956,
+   "de": "die Grundfinanzierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Grundfinanzierungen",
+   "mevcutTr": "temel finansman, taban bütçe",
+   "mevcutBeispiel": "Die Grundfinanzierung der Universitäten stagniert seit über einem Jahrzehnt.",
+   "mevcutBeispielTr": "Üniversitelerin temel finansmanı on yılı aşkın süredir yerinde sayıyor."
+  },
+  {
+   "id": 5957,
+   "de": "die Exzellenzinitiative",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Exzellenzinitiativen",
+   "mevcutTr": "mükemmeliyet programı",
+   "mevcutBeispiel": "Die Exzellenzinitiative hat den Wettbewerb zwischen den Hochschulen verschärft.",
+   "mevcutBeispielTr": "Mükemmeliyet programı yükseköğretim kurumları arasındaki rekabeti keskinleştirdi."
+  },
+  {
+   "id": 5958,
+   "de": "der Publikationsdruck",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yayın baskısı",
+   "mevcutBeispiel": "Der Publikationsdruck verleitet manche Forscher zu voreiligen Ergebnissen.",
+   "mevcutBeispielTr": "Yayın baskısı bazı araştırmacıları aceleci sonuçlara sürüklüyor."
+  },
+  {
+   "id": 5959,
+   "de": "die Selektivität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "seçicilik, eleyicilik",
+   "mevcutBeispiel": "Die hohe Selektivität des Schulsystems wird seit Jahren kritisiert.",
+   "mevcutBeispielTr": "Okul sisteminin yüksek seçiciliği yıllardır eleştiriliyor."
+  },
+  {
+   "id": 5960,
+   "de": "der Studienabbruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Studienabbrüche",
+   "mevcutTr": "öğrenimi yarıda bırakma",
+   "mevcutBeispiel": "In den Ingenieurfächern ist der Studienabbruch besonders häufig.",
+   "mevcutBeispielTr": "Mühendislik dallarında öğrenimi yarıda bırakma özellikle yaygın."
+  },
+  {
+   "id": 5961,
+   "de": "die Habilitation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Habilitationen",
+   "mevcutTr": "doçentlik tezi, habilitasyon",
+   "mevcutBeispiel": "Die Habilitation gilt vielen als überholter Weg zur Professur.",
+   "mevcutBeispielTr": "Habilitasyon birçok kişiye göre profesörlüğe giden eskimiş bir yol."
+  },
+  {
+   "id": 5962,
+   "de": "das Berufungsverfahren",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Berufungsverfahren",
+   "mevcutTr": "öğretim üyesi atama süreci",
+   "mevcutBeispiel": "Das Berufungsverfahren zog sich über mehr als zwei Jahre hin.",
+   "mevcutBeispielTr": "Atama süreci iki yıldan fazla sürdü."
+  },
+  {
+   "id": 5963,
+   "de": "der Lehrstuhl",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Lehrstühle",
+   "mevcutTr": "kürsü, profesörlük kadrosu",
+   "mevcutBeispiel": "Nach der Emeritierung blieb der Lehrstuhl zwei Semester unbesetzt.",
+   "mevcutBeispielTr": "Emeklilikten sonra kürsü iki dönem boş kaldı."
+  },
+  {
+   "id": 5964,
+   "de": "die Qualifikationsphase",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Qualifikationsphasen",
+   "mevcutTr": "yeterlilik dönemi, akademik hazırlık aşaması",
+   "mevcutBeispiel": "In der Qualifikationsphase hängen viele Stellen an befristeten Projekten.",
+   "mevcutBeispielTr": "Yeterlilik döneminde birçok kadro süreli projelere bağlı."
+  },
+  {
+   "id": 5965,
+   "de": "die Forschungsförderung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "araştırma desteği, araştırma fonlaması",
+   "mevcutBeispiel": "Die Forschungsförderung richtet sich zunehmend an thematischen Schwerpunkten aus.",
+   "mevcutBeispielTr": "Araştırma desteği giderek tematik önceliklere göre şekilleniyor."
+  },
+  {
+   "id": 5966,
+   "de": "die Mittelvergabe",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ödenek dağıtımı, fon tahsisi",
+   "mevcutBeispiel": "Die Mittelvergabe erfolgt heute überwiegend nach Leistungskriterien.",
+   "mevcutBeispielTr": "Fon dağıtımı bugün ağırlıklı olarak performans ölçütlerine göre yapılıyor."
+  },
+  {
+   "id": 5967,
+   "de": "der Leistungsindikator",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leistungsindikatoren",
+   "mevcutTr": "performans göstergesi",
+   "mevcutBeispiel": "Kritiker halten die gewählten Leistungsindikatoren für wenig aussagekräftig.",
+   "mevcutBeispielTr": "Eleştirmenler seçilen performans göstergelerini pek anlamlı bulmuyor."
+  },
+  {
+   "id": 5968,
+   "de": "die Rechenschaftspflicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rechenschaftspflichten",
+   "mevcutTr": "hesap verme yükümlülüğü",
+   "mevcutBeispiel": "Mehr Autonomie geht mit einer strengeren Rechenschaftspflicht einher.",
+   "mevcutBeispielTr": "Daha fazla özerklik, daha katı bir hesap verme yükümlülüğüyle birlikte gelir."
+  },
+  {
+   "id": 5969,
+   "de": "die Evaluierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Evaluierungen",
+   "mevcutTr": "değerlendirme, gözden geçirme",
+   "mevcutBeispiel": "Die externe Evaluierung des Instituts fiel überraschend kritisch aus.",
+   "mevcutBeispielTr": "Enstitünün dış değerlendirmesi beklenmedik ölçüde eleştirel çıktı.",
+   "cakisan": [
+    "die Auswertung (C1)",
+    "die Einschätzung (B2)",
+    "die Bewertung (B2)",
+    "die Beurteilung (B2)",
+    "die Begutachtung (C1)"
+   ]
+  },
+  {
+   "id": 5970,
+   "de": "die Meritokratie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Meritokratien",
+   "mevcutTr": "liyakat düzeni, meritokrasi",
+   "mevcutBeispiel": "Der Glaube an die Meritokratie verdeckt strukturelle Startvorteile.",
+   "mevcutBeispielTr": "Meritokrasiye duyulan inanç yapısal başlangıç avantajlarını gizliyor."
+  },
+  {
+   "id": 5971,
+   "de": "die Elitenbildung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "elit yetiştirme, seçkin kesim oluşturma",
+   "mevcutBeispiel": "Privatschulen tragen in vielen Ländern zur Elitenbildung bei.",
+   "mevcutBeispielTr": "Özel okullar birçok ülkede elit yetiştirmeye katkıda bulunuyor."
+  },
+  {
+   "id": 5972,
+   "de": "der Wissenstransfer",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wissenstransfers",
+   "mevcutTr": "bilgi aktarımı",
+   "mevcutBeispiel": "Der Wissenstransfer in die Wirtschaft gilt als dritte Aufgabe der Hochschulen.",
+   "mevcutBeispielTr": "Ekonomiye bilgi aktarımı üniversitelerin üçüncü görevi sayılıyor."
+  },
+  {
+   "id": 5973,
+   "de": "die Grundlagenforschung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Grundlagenforschungen",
+   "mevcutTr": "temel araştırma",
+   "mevcutBeispiel": "Grundlagenforschung braucht Geduld und lässt sich schwer planen.",
+   "mevcutBeispielTr": "Temel araştırma sabır ister ve planlaması zordur."
+  },
+  {
+   "id": 5974,
+   "de": "die Kompetenzorientierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yetkinlik odaklılık",
+   "mevcutBeispiel": "Die Kompetenzorientierung hat die Lehrpläne grundlegend verändert.",
+   "mevcutBeispielTr": "Yetkinlik odaklılık müfredatları kökten değiştirdi."
+  },
+  {
+   "id": 5975,
+   "de": "die Wissenschaftsfreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilim özgürlüğü",
+   "mevcutBeispiel": "Die Wissenschaftsfreiheit endet nicht dort, wo Ergebnisse unbequem werden.",
+   "mevcutBeispielTr": "Bilim özgürlüğü, sonuçlar rahatsız edici olduğu yerde bitmez."
+  },
+  {
+   "id": 5976,
+   "de": "die Wettbewerbslogik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wettbewerbslogiken",
+   "mevcutTr": "rekabet mantığı",
+   "mevcutBeispiel": "Die Wettbewerbslogik hat den Umgang mit Kollegen spürbar verändert.",
+   "mevcutBeispielTr": "Rekabet mantığı meslektaşlarla ilişkileri belirgin biçimde değiştirdi."
+  },
+  {
+   "id": 5977,
+   "de": "die Fachzeitschrift",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fachzeitschriften",
+   "mevcutTr": "bilimsel dergi, alan dergisi",
+   "mevcutBeispiel": "Der Aufsatz erschien in einer angesehenen internationalen Fachzeitschrift.",
+   "mevcutBeispielTr": "Makale saygın bir uluslararası bilimsel dergide yayımlandı."
+  },
+  {
+   "id": 5978,
+   "de": "die Redlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dürüstlük, doğruluk",
+   "mevcutBeispiel": "Wissenschaftliche Redlichkeit verlangt, auch Fehlschläge zu berichten.",
+   "mevcutBeispielTr": "Bilimsel dürüstlük, başarısızlıkların da bildirilmesini gerektirir.",
+   "cakisan": [
+    "die Integrität (C1)"
+   ]
+  },
+  {
+   "id": 5979,
+   "de": "die Reproduzierbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yeniden üretilebilirlik",
+   "mevcutBeispiel": "Die mangelnde Reproduzierbarkeit vieler Studien beunruhigt die Fachwelt.",
+   "mevcutBeispielTr": "Birçok çalışmanın yinelenememesi bilim çevrelerini kaygılandırıyor."
+  },
+  {
+   "id": 5980,
+   "de": "das Erkenntnisinteresse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erkenntnisinteressen",
+   "mevcutTr": "araştırma amacı, bilme ilgisi",
+   "mevcutBeispiel": "Jede Untersuchung sollte ihr Erkenntnisinteresse offenlegen.",
+   "mevcutBeispielTr": "Her inceleme, hangi soruya yanıt aradığını açıkça belirtmelidir."
+  },
+  {
+   "id": 5981,
+   "de": "das Humankapital",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "beşerî sermaye",
+   "mevcutBeispiel": "Bildung wird in dieser Sichtweise als Investition in Humankapital verstanden.",
+   "mevcutBeispielTr": "Bu bakış açısında eğitim, beşerî sermayeye yapılan bir yatırım sayılır."
+  },
+  {
+   "id": 5982,
+   "de": "die Gymnasialempfehlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gymnasialempfehlungen",
+   "mevcutTr": "liseye yönlendirme tavsiyesi",
+   "mevcutBeispiel": "Die Gymnasialempfehlung hängt statistisch stark vom Elternhaus ab.",
+   "mevcutBeispielTr": "Liseye yönlendirme tavsiyesi istatistiksel olarak büyük ölçüde aile kökenine bağlı."
+  },
+  {
+   "id": 5983,
+   "de": "die Übergangsquote",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Übergangsquoten",
+   "mevcutTr": "geçiş oranı",
+   "mevcutBeispiel": "Die Übergangsquote an die Hochschulen ist regional sehr unterschiedlich.",
+   "mevcutBeispielTr": "Üniversiteye geçiş oranı bölgeden bölgeye büyük farklılık gösteriyor."
+  },
+  {
+   "id": 5984,
+   "de": "die Inklusion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Inklusionen",
+   "mevcutTr": "kapsayıcılık, bütünleştirme",
+   "mevcutBeispiel": "Inklusion gelingt nur mit ausreichend geschultem Personal.",
+   "mevcutBeispielTr": "Kapsayıcılık ancak yeterince eğitimli personelle başarılabilir."
+  },
+  {
+   "id": 5985,
+   "de": "der Lehrkräftemangel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "öğretmen açığı",
+   "mevcutBeispiel": "Der Lehrkräftemangel trifft benachteiligte Schulen am härtesten.",
+   "mevcutBeispielTr": "Öğretmen açığı en çok dezavantajlı okulları vuruyor."
+  },
+  {
+   "id": 5986,
+   "de": "der Quereinstieg",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Quereinstiege",
+   "mevcutTr": "alan dışından mesleğe geçiş",
+   "mevcutBeispiel": "Der Quereinstieg in den Schuldienst wurde deutlich erleichtert.",
+   "mevcutBeispielTr": "Öğretmenliğe alan dışından geçiş belirgin biçimde kolaylaştırıldı."
+  },
+  {
+   "id": 5987,
+   "de": "die Ökonomisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "piyasalaşma, ekonomik mantığa tabi kılma",
+   "mevcutBeispiel": "Viele Lehrende beklagen die Ökonomisierung der Universitäten.",
+   "mevcutBeispielTr": "Birçok öğretim elemanı üniversitelerin piyasalaşmasından yakınıyor."
+  },
+  {
+   "id": 5988,
+   "de": "die Bestenauslese",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "en iyileri seçme ilkesi",
+   "mevcutBeispiel": "Das Verfahren soll eine faire Bestenauslese gewährleisten.",
+   "mevcutBeispielTr": "Bu yöntem, adil biçimde en iyilerin seçilmesini güvence altına almalı."
+  },
+  {
+   "id": 5989,
+   "de": "der Wissenschaftsbetrieb",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilim dünyası, akademik düzen",
+   "mevcutBeispiel": "Im heutigen Wissenschaftsbetrieb zählt Sichtbarkeit oft mehr als Tiefe.",
+   "mevcutBeispielTr": "Bugünkü akademik düzende görünürlük çoğu zaman derinlikten daha önemli."
+  },
+  {
+   "id": 5990,
+   "de": "einwerben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat eingeworben",
+   "mevcutTr": "fon sağlamak, kaynak toplamak",
+   "mevcutBeispiel": "Die Arbeitsgruppe hat für das Projekt beachtliche Mittel eingeworben.",
+   "mevcutBeispielTr": "Çalışma grubu proje için hatırı sayılır bir kaynak sağladı."
+  },
+  {
+   "id": 5991,
+   "de": "begutachten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat begutachtet",
+   "mevcutTr": "hakemlik yapmak, incelemek",
+   "mevcutBeispiel": "Zwei unabhängige Fachleute begutachten jeden eingereichten Antrag.",
+   "mevcutBeispielTr": "Sunulan her başvuruyu iki bağımsız uzman inceliyor."
+  },
+  {
+   "id": 5992,
+   "de": "benachteiligen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat benachteiligt",
+   "mevcutTr": "dezavantajlı duruma düşürmek, mağdur etmek",
+   "mevcutBeispiel": "Das frühe Auswahlverfahren benachteiligt Kinder ohne akademischen Hintergrund.",
+   "mevcutBeispielTr": "Erken yaşta yapılan eleme, akademik geçmişi olmayan çocukları dezavantajlı duruma düşürüyor."
+  },
+  {
+   "id": 5993,
+   "de": "ausdifferenzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausdifferenziert",
+   "mevcutTr": "farklılaştırmak, alt dallara ayırmak",
+   "mevcutBeispiel": "Das Fach hat sich in den letzten Jahrzehnten stark ausdifferenziert.",
+   "mevcutBeispielTr": "Bu alan son on yıllarda büyük ölçüde alt dallara ayrıldı."
+  },
+  {
+   "id": 5994,
+   "de": "entfristen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entfristet",
+   "mevcutTr": "kadroyu süresiz hale getirmek",
+   "mevcutBeispiel": "Nach acht Jahren wurde ihre Stelle endlich entfristet.",
+   "mevcutBeispielTr": "Sekiz yılın ardından kadrosu nihayet süresiz hale getirildi."
+  },
+  {
+   "id": 5995,
+   "de": "legitimieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat legitimiert",
+   "mevcutTr": "meşrulaştırmak, haklı çıkarmak",
+   "mevcutBeispiel": "Mit dem Verweis auf Exzellenz legitimiert man ungleiche Mittelverteilung.",
+   "mevcutBeispielTr": "Mükemmeliyete atıf yapılarak eşitsiz kaynak dağılımı meşrulaştırılıyor."
+  },
+  {
+   "id": 5996,
+   "de": "priorisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat priorisiert",
+   "mevcutTr": "önceliklendirmek",
+   "mevcutBeispiel": "Bei knappen Kassen muss die Fakultät ihre Vorhaben priorisieren.",
+   "mevcutBeispielTr": "Bütçe kısıtlıyken fakülte projelerini önceliklendirmek zorunda."
+  },
+  {
+   "id": 5997,
+   "de": "quantifizieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat quantifiziert",
+   "mevcutTr": "sayısallaştırmak, ölçülebilir kılmak",
+   "mevcutBeispiel": "Nicht jede Form von Lehrqualität lässt sich sinnvoll quantifizieren.",
+   "mevcutBeispielTr": "Öğretim kalitesinin her boyutu anlamlı biçimde sayısallaştırılamaz."
+  },
+  {
+   "id": 5998,
+   "de": "ausschöpfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgeschöpft",
+   "mevcutTr": "sonuna kadar kullanmak, tüketmek",
+   "mevcutBeispiel": "Das Land schöpft sein Bildungspotenzial bei Weitem nicht aus.",
+   "mevcutBeispielTr": "Ülke eğitim potansiyelini hiç de sonuna kadar kullanmıyor."
+  },
+  {
+   "id": 5999,
+   "de": "zuweisen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat zugewiesen",
+   "mevcutTr": "tahsis etmek, ayırmak",
+   "mevcutBeispiel": "Den Fakultäten werden die Stellen nach einem festen Schlüssel zugewiesen.",
+   "mevcutBeispielTr": "Fakültelere kadrolar belirli bir anahtara göre tahsis ediliyor."
+  },
+  {
+   "id": 6000,
+   "de": "bemessen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bemessen",
+   "mevcutTr": "ölçüp belirlemek, tayin etmek",
+   "mevcutBeispiel": "Der Zuschuss wird nach der Zahl der Absolventen bemessen.",
+   "mevcutBeispielTr": "Ödenek, mezun sayısına göre belirleniyor."
+  },
+  {
+   "id": 6001,
+   "de": "zuschreiben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat zugeschrieben",
+   "mevcutTr": "atfetmek, yüklemek",
+   "mevcutBeispiel": "Den Lehrkräften wird eine Verantwortung zugeschrieben, die sie kaum tragen können.",
+   "mevcutBeispielTr": "Öğretmenlere, taşımalarının güç olduğu bir sorumluluk atfediliyor.",
+   "cakisan": [
+    "zurechnen (C1)"
+   ]
+  },
+  {
+   "id": 6002,
+   "de": "chancengerecht",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "fırsat eşitliğine uygun",
+   "mevcutBeispiel": "Ein chancengerechtes System darf Kinder nicht so früh sortieren.",
+   "mevcutBeispielTr": "Fırsat eşitliğine uygun bir sistem çocukları bu kadar erken ayırmamalı."
+  }
+ ]
+}

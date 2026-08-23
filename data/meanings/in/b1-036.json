@@ -1,0 +1,562 @@
+{
+ "paket": "b1-036",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 2598,
+   "de": "das Rüebli",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "- (CH) → Karotte, D: Möhre",
+   "mevcutTr": "havuç",
+   "mevcutBeispiel": "Hasen fressen gern Rüebli.",
+   "mevcutBeispielTr": "Tavşanlar havucu severek yer.",
+   "cakisan": [
+    "die Karotte (B1)",
+    "die Möhre (B1)"
+   ]
+  },
+  {
+   "id": 2626,
+   "de": "sich scheiden lassen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "lässt sich scheiden, ließ sich scheiden, hat sich scheiden lassen",
+   "mevcutTr": "boşanmak",
+   "mevcutBeispiel": "Meine Nachbarn haben sich scheiden lassen.",
+   "mevcutBeispielTr": "Komşularım boşandı."
+  },
+  {
+   "id": 2658,
+   "de": "die Schularbeit",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en (A) → D: Klassenarbeit",
+   "mevcutTr": "sınav, yazılı sınav",
+   "mevcutBeispiel": "Mein Sohn schreibt bei Schularbeiten immer gute Noten.",
+   "mevcutBeispielTr": "Oğlum yazılı sınavlardan hep iyi notlar alıyor.",
+   "cakisan": [
+    "die Klassenarbeit (A1)",
+    "die Prüfung (A1)"
+   ]
+  },
+  {
+   "id": 2664,
+   "de": "das Schwammerl",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (A) → Pilz schwanger",
+   "mevcutTr": "mantar",
+   "mevcutBeispiel": "Haben Sie frische Schwammerln? Meine Frau ist im dritten Monat schwanger.",
+   "mevcutBeispielTr": "Taze mantarınız var mı?",
+   "cakisan": [
+    "der Pilz (B1)"
+   ]
+  },
+  {
+   "id": 2667,
+   "de": "Schwieger-",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kayın-",
+   "mevcutBeispiel": "1. Wir besuchen morgen meine Schwiegereltern. 2. Mein Schwiegervater ist Lehrer. 3. Ich verstehe mich gut mit meiner Sch",
+   "mevcutBeispielTr": "1. Yarın kayınvalidemle kayınpederimi ziyaret ediyoruz. 2. Kayınpederim öğretmen. 3. Görümcemle aram çok iyi."
+  },
+  {
+   "id": 2670,
+   "de": "die Nordsee/Ostsee",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "Kuzey Denizi / Baltık Denizi",
+   "mevcutBeispiel": "Im Sommer fahren wir immer an die See.",
+   "mevcutBeispielTr": "Yazın hep deniz kenarına gideriz."
+  },
+  {
+   "id": 2681,
+   "de": "die Semmel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (A) D: Brötchen, CH: Brötli",
+   "mevcutTr": "küçük ekmek, sandviç ekmeği",
+   "mevcutBeispiel": "Ich hole schnell ein paar Semmeln zum Frühstück.",
+   "mevcutBeispielTr": "Kahvaltı için hemen birkaç küçük ekmek alıp geleyim.",
+   "cakisan": [
+    "das Brötchen (A1)"
+   ]
+  },
+  {
+   "id": 2687,
+   "de": "der Serviceangestellte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n / die Serviceangestellte, - n (CH) → Kellner, D, A: Ober",
+   "mevcutTr": "servis görevlisi, garson",
+   "mevcutBeispiel": "Ich bin Serviceangestellte von Beruf.",
+   "mevcutBeispielTr": "Mesleğim servis görevlisi."
+  },
+  {
+   "id": 2706,
+   "de": "sogenannte",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sözde, denilen",
+   "mevcutBeispiel": "1. Studenten, die lange studieren, sind sogenannte Langzeitstudierende. 2. Wo bleiben denn deine sogenannten Freunde?",
+   "mevcutBeispielTr": "1. Uzun süre okuyan öğrencilere \"uzun dönem öğrencisi\" denir. 2. Peki senin şu sözde arkadaşların nerede kaldı?",
+   "cakisan": [
+    "vermeintlich (C1)"
+   ]
+  },
+  {
+   "id": 2708,
+   "de": "solche",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "böyle, bu tür",
+   "mevcutBeispiel": "Solche Schuhe finde ich toll.",
+   "mevcutBeispielTr": "Böyle ayakkabıları çok beğeniyorum.",
+   "cakisan": [
+    "so (A1)"
+   ]
+  },
+  {
+   "id": 2709,
+   "de": "das Sonderangebot",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "özel teklif, indirim",
+   "mevcutBeispiel": "Das ist ein Sonderangebot: 25 % reduziert.",
+   "mevcutBeispielTr": "Bu özel bir kampanya: %25 indirimli."
+  },
+  {
+   "id": 2716,
+   "de": "so viel",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "o kadar çok, kadar",
+   "mevcutBeispiel": "1. Ich habe so viel gegessen. Jetzt ist mir schlecht. 2. Ich verdiene nur halb so viel wie er.",
+   "mevcutBeispielTr": "1. O kadar çok yedim ki, şimdi midem bulanıyor. 2. Onun kazandığının ancak yarısı kadar kazanıyorum."
+  },
+  {
+   "id": 2718,
+   "de": "sowohl … als auch",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "hem ... hem de",
+   "mevcutBeispiel": "Sowohl Sie als auch Ihre Frau müssen unterschreiben.",
+   "mevcutBeispielTr": "Hem sizin hem de eşinizin imzalaması gerekiyor."
+  },
+  {
+   "id": 2723,
+   "de": "Speise",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "yemek, yiyecek",
+   "mevcutBeispiel": "Als Vorspeise nehme ich eine Suppe, aber dafür nehme ich keine Nachspeise. (D, A)",
+   "mevcutBeispielTr": "Başlangıç olarak çorba alacağım ama tatlı almayacağım.",
+   "cakisan": [
+    "essen (A1)",
+    "das Essen (A1)",
+    "das Gericht (A2)",
+    "fressen (B1)"
+   ]
+  },
+  {
+   "id": 2736,
+   "de": "die Zweitsprache",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "ikinci dil",
+   "mevcutBeispiel": "Deutsch ist seine Zweitsprache.",
+   "mevcutBeispielTr": "Almanca onun ikinci dili."
+  },
+  {
+   "id": 2743,
+   "de": "städtisch",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kentsel, belediyeye ait",
+   "mevcutBeispiel": "Ich gehe gern in die städtische Bibliothek.",
+   "mevcutBeispielTr": "Belediye kütüphanesine gitmeyi seviyorum.",
+   "cakisan": [
+    "urban (B2)"
+   ]
+  },
+  {
+   "id": 2760,
+   "de": "stehen bleiben",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "durmak",
+   "mevcutBeispiel": "1. Bitte bleiben Sie stehen. 2. Meine Uhr ist stehen geblieben.",
+   "mevcutBeispielTr": "1. Lütfen olduğunuz yerde durun. 2. Saatim durmuş.",
+   "cakisan": [
+    "halten (A1)",
+    "stehen (A1)",
+    "anhalten (A2)"
+   ]
+  },
+  {
+   "id": 2771,
+   "de": "stilistisch",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "üslup açısından, üslupla ilgili",
+   "mevcutBeispiel": "Der Text ist stilistisch sehr schön.",
+   "mevcutBeispielTr": "Metin üslup açısından çok güzel."
+  },
+  {
+   "id": 2773,
+   "de": "die Stiege",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (A) → D, CH: Treppe",
+   "mevcutTr": "merdiven (binadaki basamaklar, Avusturya)",
+   "mevcutBeispiel": "1. Wo ist die Toilette? – Die Stiege hoch und dann links. 2. Meine Oma kann nicht gut Stiegen steigen.",
+   "mevcutBeispielTr": "1. Tuvalet nerede? – Merdivenden yukarı çıkın, sonra solda. 2. Babaannem merdiven çıkmakta zorlanıyor."
+  },
+  {
+   "id": 2774,
+   "de": "das Stiegenhaus",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er (A) → D, CH: Treppenhaus",
+   "mevcutTr": "merdiven boşluğu",
+   "mevcutBeispiel": "Im Stiegenhaus ist kein Licht.",
+   "mevcutBeispielTr": "Merdiven boşluğunda ışık yok.",
+   "cakisan": [
+    "das Treppenhaus (B1)"
+   ]
+  },
+  {
+   "id": 2799,
+   "de": "der Studierende",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "öğrenci (erkek)",
+   "mevcutBeispiel": "Zehn Studierende besuchen das Seminar.",
+   "mevcutBeispielTr": "Semineri on öğrenci takip ediyor.",
+   "cakisan": [
+    "der Schüler (A1)",
+    "die Studierende (B1)"
+   ]
+  },
+  {
+   "id": 2800,
+   "de": "die Studierende",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "öğrenci (kadın)",
+   "mevcutBeispiel": "Zehn Studierende besuchen das Seminar.",
+   "mevcutBeispielTr": "Semineri on öğrenci takip ediyor.",
+   "cakisan": [
+    "der Schüler (A1)",
+    "der Studierende (B1)"
+   ]
+  },
+  {
+   "id": 2808,
+   "de": "das Suchtmittel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bağımlılık yapan madde",
+   "mevcutBeispiel": "- Manche Medikamente sind auch Suchtmittel.",
+   "mevcutBeispielTr": "Bazı ilaçlar aynı zamanda bağımlılık yapan maddelerdir."
+  },
+  {
+   "id": 2835,
+   "de": "Tee ziehen lassen",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çayı demlenmeye bırakmak",
+   "mevcutBeispiel": "Diesen Tee sollte man 10 Minuten ziehen lassen.",
+   "mevcutBeispielTr": "Bu çayı 10 dakika demlenmeye bırakmak gerekiyor."
+  },
+  {
+   "id": 2850,
+   "de": "der Tierpark",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s",
+   "mevcutTr": "hayvanat bahçesi",
+   "mevcutBeispiel": "Wollen wir am Samstag mit den Kindern in den Tierpark gehen?",
+   "mevcutBeispielTr": "Cumartesi çocuklarla hayvanat bahçesine gidelim mi?",
+   "cakisan": [
+    "der Zoo (A2)"
+   ]
+  },
+  {
+   "id": 2863,
+   "de": "das Tram",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s → D, A: Straßenbahn",
+   "mevcutTr": "tramvay (İsviçre)",
+   "mevcutBeispiel": "Fahren wir mit dem Tram oder dem Bus?",
+   "mevcutBeispielTr": "Tramvayla mı gidelim, otobüsle mi?",
+   "cakisan": [
+    "die Straßenbahn (A1)"
+   ]
+  },
+  {
+   "id": 2871,
+   "de": "getrennt leben",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ayrı yaşamak",
+   "mevcutBeispiel": "Ich lebe getrennt von meiner Frau.",
+   "mevcutBeispielTr": "Eşimden ayrı yaşıyorum."
+  },
+  {
+   "id": 2878,
+   "de": "das Trottoir",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s (CH) → Gehsteig (D, A)",
+   "mevcutTr": "kaldırım (İsviçre)",
+   "mevcutBeispiel": "Das Velofahren auf dem Trottoir ist nicht erlaubt.",
+   "mevcutBeispielTr": "Kaldırımda bisiklet sürmek yasak.",
+   "cakisan": [
+    "der Bürgersteig (A2)",
+    "der Gehweg (A2)"
+   ]
+  },
+  {
+   "id": 2899,
+   "de": "die Überstunde",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "fazla mesai",
+   "mevcutBeispiel": "Ich muss heute Überstunden machen.",
+   "mevcutBeispielTr": "Bugün fazla mesai yapmam gerekiyor."
+  },
+  {
+   "id": 2900,
+   "de": "übertreiben",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "übertreibt, übertrieb, hat übertrieben",
+   "mevcutTr": "abartmak",
+   "mevcutBeispiel": "Ein bisschen Sport ist gesund. Aber man sollte es nicht übertreiben.",
+   "mevcutBeispielTr": "Biraz spor sağlıklıdır ama abartmamak gerekir.",
+   "cakisan": [
+    "dramatisieren (C1)",
+    "aufbauschen (C1)",
+    "überschätzen (C1)"
+   ]
+  },
+  {
+   "id": 2909,
+   "de": "um … zu",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "-mek için",
+   "mevcutBeispiel": "Um gesund zu bleiben, musst du Sport machen und Gemüse essen.",
+   "mevcutBeispielTr": "Sağlıklı kalmak için spor yapmalı ve sebze yemelisin."
+  },
+  {
+   "id": 2919,
+   "de": "der Umtausch",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "(satın alınan malın) değiştirilmesi",
+   "mevcutBeispiel": "Ein Umtausch ist leider nicht möglich.",
+   "mevcutBeispielTr": "Değişim maalesef mümkün değil."
+  },
+  {
+   "id": 2923,
+   "de": "un-",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "olumsuzluk öneki",
+   "mevcutBeispiel": "1. Der Verkäufer war sehr unfreundlich. 2. Dieses Geräusch ist mir unangenehm. 3. Er kam wie immer unpünktlich.",
+   "mevcutBeispielTr": "1. Satıcı çok kaba davrandı. 2. Bu ses beni rahatsız ediyor. 3. Her zamanki gibi geç geldi."
+  },
+  {
+   "id": 2953,
+   "de": "das Velo",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s (CH) → Fahrrad, D, A: Rad",
+   "mevcutTr": "bisiklet (İsviçre)",
+   "mevcutBeispiel": "1. Sie fährt jeden Morgen mit dem Velo zur Arbeit. 2. Am Sonntag fahren wir oft Velo.",
+   "mevcutBeispielTr": "1. Her sabah işe bisikletle gidiyor. 2. Pazar günleri sık sık bisiklete bineriz.",
+   "cakisan": [
+    "das Fahrrad (A1)",
+    "das Rad (A1)"
+   ]
+  },
+  {
+   "id": 2999,
+   "de": "die Vermietung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "kiraya verme, kiralama",
+   "mevcutBeispiel": "Mit der Vermietung von Wohnungen kann man viel Geld verdienen.",
+   "mevcutBeispielTr": "Daire kiralayarak çok para kazanılabiliyor."
+  },
+  {
+   "id": 3006,
+   "de": "verpflegen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verpflegt, verpflegte, hat verpflegt",
+   "mevcutTr": "beslemek, yemek sağlamak",
+   "mevcutBeispiel": "Wir werden hier sehr gut mit Essen verpflegt.",
+   "mevcutBeispielTr": "Burada yemek konusunda çok iyi ağırlanıyoruz.",
+   "cakisan": [
+    "ernähren (B1)",
+    "füttern (B1)"
+   ]
+  },
+  {
+   "id": 3039,
+   "de": "virtuell",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sanal",
+   "mevcutBeispiel": "Auf dieser Website kann man an einer virtuellen Stadtrundfahrt teilnehmen.",
+   "mevcutBeispielTr": "Bu web sitesinde sanal bir şehir turuna katılabiliyorsunuz."
+  },
+  {
+   "id": 3048,
+   "de": "vor allem",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "özellikle, her şeyden önce",
+   "mevcutBeispiel": "Grüßen Sie alle von mir, vor allem Frau Meier.",
+   "mevcutBeispielTr": "Herkese selam söyleyin, özellikle Bayan Meier'e.",
+   "cakisan": [
+    "besonders (A1)",
+    "insbesondere (A2)"
+   ]
+  },
+  {
+   "id": 3055,
+   "de": "vordere",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ön",
+   "mevcutBeispiel": "In den vorderen Reihen sind noch Plätze frei.",
+   "mevcutBeispielTr": "Ön sıralarda hâlâ boş yer var."
+  },
+  {
+   "id": 3084,
+   "de": "weder … noch",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ne … ne de",
+   "mevcutBeispiel": "Für Urlaub haben wir weder Zeit noch Geld.",
+   "mevcutBeispielTr": "Tatil için ne zamanımız var ne de paramız."
+  },
+  {
+   "id": 3087,
+   "de": "die Weiterbildung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "mesleki eğitim, kurs",
+   "mevcutBeispiel": "Ich möchte eine Weiterbildung machen.",
+   "mevcutBeispielTr": "Bir mesleki gelişim eğitimi almak istiyorum.",
+   "cakisan": [
+    "die Fortbildung (B1)"
+   ]
+  },
+  {
+   "id": 3110,
+   "de": "wie viel(e)",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ne kadar, kaç tane",
+   "mevcutBeispiel": "1. Wie viel Geld hast du dabei? 2. Wie viel ist ein Euro hier wert? 3. Wie viele Kinder haben Sie?",
+   "mevcutBeispielTr": "1. Yanında ne kadar paran var? 2. Burada bir euro ne kadar ediyor? 3. Kaç çocuğunuz var?",
+   "cakisan": [
+    "wie viel (A1)"
+   ]
+  },
+  {
+   "id": 3137,
+   "de": "die Zahncreme/Zahnpasta",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "diş macunu",
+   "mevcutBeispiel": "Die neue Zahncreme riecht sehr gut.",
+   "mevcutBeispielTr": "Yeni diş macunu çok güzel kokuyor."
+  },
+  {
+   "id": 3140,
+   "de": "das Verkehrszeichen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "trafik işareti",
+   "mevcutBeispiel": "- Meine Kinder lernen in der Schule gerade die Verkehrszeichen.",
+   "mevcutBeispielTr": "Çocuklarım okulda şu sıralar trafik işaretlerini öğreniyor."
+  },
+  {
+   "id": 3154,
+   "de": "der Zivilstand",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "D, A: Familienstand",
+   "mevcutTr": "medeni hâl (İsviçre)",
+   "mevcutBeispiel": "Bei „Zivilstand“ musst du „ledig“ ankreuzen.",
+   "mevcutBeispielTr": "\"Medeni hâl\" kısmında \"bekâr\" seçeneğini işaretlemelisin.",
+   "cakisan": [
+    "der Familienstand (A1)",
+    "der Personenstand (B1)"
+   ]
+  },
+  {
+   "id": 3168,
+   "de": "das Zündholz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er → Streichholz, A: Zünder",
+   "mevcutTr": "kibrit",
+   "mevcutBeispiel": "Ich hätte gern eine Schachtel Zündhölzer.",
+   "mevcutBeispielTr": "Bir kutu kibrit almak istiyorum.",
+   "cakisan": [
+    "das Streichholz (B1)",
+    "die Zünder (B1)"
+   ]
+  },
+  {
+   "id": 3186,
+   "de": "das/der Zvieri/Znüni",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "-s (CH) → D: Imbiss, A: Jause",
+   "mevcutTr": "ara öğün, atıştırmalık",
+   "mevcutBeispiel": "Es ist Zeit für ein kleines Zvieri.",
+   "mevcutBeispielTr": "Küçük bir ara öğün vakti geldi."
+  }
+ ]
+}

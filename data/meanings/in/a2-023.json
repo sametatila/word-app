@@ -1,0 +1,548 @@
+{
+ "paket": "a2-023",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 8088,
+   "de": "der Beifahrer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "ön koltuktaki yolcu",
+   "mevcutBeispiel": "Als Beifahrer lese ich die Karte.",
+   "mevcutBeispielTr": "Ön koltuktaki yolcu olarak haritayı ben okuyorum."
+  },
+  {
+   "id": 8089,
+   "de": "der Autofahrer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "araba sürücüsü",
+   "mevcutBeispiel": "Der Autofahrer hat vor der Ampel gebremst.",
+   "mevcutBeispielTr": "Araba sürücüsü ışıktan önce fren yaptı."
+  },
+  {
+   "id": 8090,
+   "de": "der Bürgersteig",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "kaldırım",
+   "mevcutBeispiel": "Auf dem Bürgersteig darf man nicht parken.",
+   "mevcutBeispielTr": "Kaldırıma park etmek yasak.",
+   "cakisan": [
+    "das Trottoir (B1)",
+    "der Gehweg (A2)"
+   ]
+  },
+  {
+   "id": 8091,
+   "de": "abschleppen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schleppt ab, hat abgeschleppt",
+   "mevcutTr": "çekmek, çekiciyle götürmek",
+   "mevcutBeispiel": "Die Polizei lässt das Auto abschleppen.",
+   "mevcutBeispielTr": "Polis arabayı çektiriyor.",
+   "cakisan": [
+    "ziehen (B1)"
+   ]
+  },
+  {
+   "id": 8092,
+   "de": "die Raststätte",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "dinlenme tesisi",
+   "mevcutBeispiel": "An der nächsten Raststätte machen wir eine Pause.",
+   "mevcutBeispielTr": "Bir sonraki dinlenme tesisinde mola veriyoruz."
+  },
+  {
+   "id": 8093,
+   "de": "das Wohnmobil",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "karavan",
+   "mevcutBeispiel": "Meine Eltern reisen im Sommer mit dem Wohnmobil.",
+   "mevcutBeispielTr": "Ailem yazın karavanla seyahat ediyor."
+  },
+  {
+   "id": 8094,
+   "de": "mitfahren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "fährt mit, ist mitgefahren",
+   "mevcutTr": "birlikte gitmek, arabasına binmek",
+   "mevcutBeispiel": "Darf ich bis zum Bahnhof mitfahren?",
+   "mevcutBeispielTr": "Gara kadar sizinle gelebilir miyim?"
+  },
+  {
+   "id": 8095,
+   "de": "das Andenken",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "hatıra eşyası",
+   "mevcutBeispiel": "Ich habe meiner Schwester ein kleines Andenken gekauft.",
+   "mevcutBeispielTr": "Kız kardeşime küçük bir hatıra eşyası aldım."
+  },
+  {
+   "id": 8096,
+   "de": "die Badehose",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "mayo (erkek), deniz şortu",
+   "mevcutBeispiel": "Hast du deine Badehose eingepackt?",
+   "mevcutBeispielTr": "Mayonu bavula koydun mu?"
+  },
+  {
+   "id": 8097,
+   "de": "die Bootsfahrt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "tekne gezisi",
+   "mevcutBeispiel": "Am Nachmittag machen wir eine Bootsfahrt auf dem See.",
+   "mevcutBeispielTr": "Öğleden sonra gölde bir tekne gezisi yapıyoruz."
+  },
+  {
+   "id": 8098,
+   "de": "die Weltreise",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "dünya turu",
+   "mevcutBeispiel": "Mein Bruder träumt von einer Weltreise.",
+   "mevcutBeispielTr": "Kardeşim bir dünya turu hayal ediyor."
+  },
+  {
+   "id": 8099,
+   "de": "der Sonnenschirm",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "güneş şemsiyesi",
+   "mevcutBeispiel": "Am Strand liegen wir unter dem Sonnenschirm.",
+   "mevcutBeispielTr": "Plajda güneş şemsiyesinin altında uzanıyoruz."
+  },
+  {
+   "id": 8100,
+   "de": "die Klassenfahrt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "okul gezisi",
+   "mevcutBeispiel": "Meine Tochter fährt nächste Woche auf Klassenfahrt.",
+   "mevcutBeispielTr": "Kızım gelecek hafta okul gezisine gidiyor."
+  },
+  {
+   "id": 8101,
+   "de": "der Frühling",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "ilkbahar",
+   "mevcutBeispiel": "Im Frühling blühen die Bäume im Park.",
+   "mevcutBeispielTr": "İlkbaharda parktaki ağaçlar çiçek açar."
+  },
+  {
+   "id": 8102,
+   "de": "der Sommer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "yaz",
+   "mevcutBeispiel": "Im Sommer gehen wir jeden Tag an den See.",
+   "mevcutBeispielTr": "Yazın her gün göle gidiyoruz."
+  },
+  {
+   "id": 8103,
+   "de": "der Herbst",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "sonbahar",
+   "mevcutBeispiel": "Im Herbst fallen die Blätter von den Bäumen.",
+   "mevcutBeispielTr": "Sonbaharda yapraklar ağaçlardan düşer."
+  },
+  {
+   "id": 8104,
+   "de": "der Winter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kış",
+   "mevcutBeispiel": "Der Winter war dieses Jahr sehr kalt.",
+   "mevcutBeispielTr": "Bu yıl kış çok soğuktu."
+  },
+  {
+   "id": 8105,
+   "de": "die Jahreszeit",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "mevsim",
+   "mevcutBeispiel": "Welche Jahreszeit magst du am liebsten?",
+   "mevcutBeispielTr": "En çok hangi mevsimi seviyorsun?"
+  },
+  {
+   "id": 8106,
+   "de": "der Stadtteil",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "semt, şehrin bir bölgesi",
+   "mevcutBeispiel": "Wir wohnen in einem ruhigen Stadtteil im Norden.",
+   "mevcutBeispielTr": "Kuzeyde sakin bir semtte oturuyoruz.",
+   "cakisan": [
+    "das Quartier (B1)",
+    "das Stadtviertel (B2)"
+   ]
+  },
+  {
+   "id": 8107,
+   "de": "der Gehweg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "kaldırım, yaya yolu",
+   "mevcutBeispiel": "Auf dem Gehweg darf man nicht parken.",
+   "mevcutBeispielTr": "Kaldırımda park edilmez.",
+   "cakisan": [
+    "das Trottoir (B1)",
+    "der Bürgersteig (A2)"
+   ]
+  },
+  {
+   "id": 8108,
+   "de": "die Laterne",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "sokak lambası, fener",
+   "mevcutBeispiel": "Vor unserem Haus steht eine alte Laterne.",
+   "mevcutBeispielTr": "Evimizin önünde eski bir sokak lambası duruyor."
+  },
+  {
+   "id": 8109,
+   "de": "der Brunnen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "çeşme, kuyu",
+   "mevcutBeispiel": "Auf dem Marktplatz gibt es einen schönen Brunnen.",
+   "mevcutBeispielTr": "Meydanda güzel bir çeşme var."
+  },
+  {
+   "id": 8110,
+   "de": "der Bach",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "dere, çay",
+   "mevcutBeispiel": "Hinter dem Dorf fließt ein kleiner Bach.",
+   "mevcutBeispielTr": "Köyün arkasından küçük bir dere akıyor."
+  },
+  {
+   "id": 8111,
+   "de": "der Teich",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "gölet, havuz",
+   "mevcutBeispiel": "Im Teich schwimmen viele Enten.",
+   "mevcutBeispielTr": "Gölette birçok ördek yüzüyor."
+  },
+  {
+   "id": 8112,
+   "de": "der Zweig",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "dal",
+   "mevcutBeispiel": "Ein Vogel sitzt auf dem Zweig vor dem Fenster.",
+   "mevcutBeispielTr": "Pencerenin önündeki dalda bir kuş oturuyor."
+  },
+  {
+   "id": 8113,
+   "de": "die Wurzel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kök",
+   "mevcutBeispiel": "Die Wurzeln des Baumes sind sehr tief.",
+   "mevcutBeispielTr": "Ağacın kökleri çok derin."
+  },
+  {
+   "id": 8114,
+   "de": "die Biene",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "arı",
+   "mevcutBeispiel": "Eine Biene sitzt auf der gelben Blume.",
+   "mevcutBeispielTr": "Sarı çiçeğin üstünde bir arı duruyor."
+  },
+  {
+   "id": 8115,
+   "de": "der Frosch",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "kurbağa",
+   "mevcutBeispiel": "Am Teich haben wir einen grünen Frosch gesehen.",
+   "mevcutBeispielTr": "Göletin yanında yeşil bir kurbağa gördük."
+  },
+  {
+   "id": 8116,
+   "de": "das Schaf",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "koyun",
+   "mevcutBeispiel": "Auf der Weide stehen zwanzig Schafe.",
+   "mevcutBeispielTr": "Otlakta yirmi koyun duruyor."
+  },
+  {
+   "id": 8117,
+   "de": "der Papierkorb",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "çöp sepeti, kâğıt sepeti",
+   "mevcutBeispiel": "Wirf das Papier bitte in den Papierkorb.",
+   "mevcutBeispielTr": "Kâğıdı lütfen çöp sepetine at."
+  },
+  {
+   "id": 8118,
+   "de": "der Sonnenschein",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "güneş ışığı",
+   "mevcutBeispiel": "Nach dem Regen kam endlich der Sonnenschein.",
+   "mevcutBeispielTr": "Yağmurdan sonra sonunda güneş ışığı geldi."
+  },
+  {
+   "id": 8119,
+   "de": "die Meldebescheinigung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "ikametgâh belgesi",
+   "mevcutBeispiel": "Der Vermieter möchte eine Meldebescheinigung von mir sehen.",
+   "mevcutBeispielTr": "Ev sahibi benden bir ikametgâh belgesi görmek istiyor."
+  },
+  {
+   "id": 8120,
+   "de": "die Streife",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "devriye",
+   "mevcutBeispiel": "Die Polizei fährt jede Nacht Streife in unserem Viertel.",
+   "mevcutBeispielTr": "Polis her gece mahallemizde devriye geziyor."
+  },
+  {
+   "id": 8121,
+   "de": "sich ausweisen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "weist sich aus, hat sich ausgewiesen",
+   "mevcutTr": "kimliğini göstermek",
+   "mevcutBeispiel": "Bei der Kontrolle musst du dich mit dem Pass ausweisen.",
+   "mevcutBeispielTr": "Kontrolde pasaportla kimliğini göstermelisin."
+  },
+  {
+   "id": 8123,
+   "de": "wehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "weht, hat geweht",
+   "mevcutTr": "esmek",
+   "mevcutBeispiel": "Am Meer weht heute ein starker Wind.",
+   "mevcutBeispielTr": "Bugün denizde kuvvetli bir rüzgâr esiyor."
+  },
+  {
+   "id": 8124,
+   "de": "untergehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "geht unter, ist untergegangen",
+   "mevcutTr": "batmak (güneş)",
+   "mevcutBeispiel": "Am Meer ist die Sonne gerade untergegangen.",
+   "mevcutBeispielTr": "Denizde güneş az önce battı.",
+   "cakisan": [
+    "sinken (B1)"
+   ]
+  },
+  {
+   "id": 8125,
+   "de": "stempeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "stempelt, hat gestempelt",
+   "mevcutTr": "mühürlemek, damgalamak",
+   "mevcutBeispiel": "Die Frau am Schalter hat mein Formular gestempelt.",
+   "mevcutBeispielTr": "Gişedeki kadın formumu mühürledi."
+  },
+  {
+   "id": 8126,
+   "de": "durchsuchen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "durchsucht, hat durchsucht",
+   "mevcutTr": "aramak, arama yapmak",
+   "mevcutBeispiel": "Die Polizei hat den ganzen Park durchsucht.",
+   "mevcutBeispielTr": "Polis bütün parkı aradı.",
+   "cakisan": [
+    "anrufen (A1)",
+    "suchen (A1)"
+   ]
+  },
+  {
+   "id": 8127,
+   "de": "ausgraben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "gräbt aus, hat ausgegraben",
+   "mevcutTr": "kazıp çıkarmak",
+   "mevcutBeispiel": "Der Hund hat im Garten einen Knochen ausgegraben.",
+   "mevcutBeispielTr": "Köpek bahçede bir kemik kazıp çıkardı."
+  },
+  {
+   "id": 8128,
+   "de": "ernten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "erntet, hat geerntet",
+   "mevcutTr": "hasat etmek, toplamak",
+   "mevcutBeispiel": "Im Herbst ernten die Bauern die Äpfel.",
+   "mevcutBeispielTr": "Sonbaharda çiftçiler elmaları topluyor."
+  },
+  {
+   "id": 8129,
+   "de": "absperren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sperrt ab, hat abgesperrt",
+   "mevcutTr": "kapatmak, kordona almak",
+   "mevcutBeispiel": "Die Polizei hat die Straße nach dem Unfall abgesperrt.",
+   "mevcutBeispielTr": "Polis kazadan sonra caddeyi kapattı.",
+   "cakisan": [
+    "(herunter-)fahren (B1)",
+    "ausschalten (A2)"
+   ]
+  },
+  {
+   "id": 8130,
+   "de": "pflücken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "pflückt, hat gepflückt",
+   "mevcutTr": "koparmak, toplamak (çiçek, meyve)",
+   "mevcutBeispiel": "Die Kinder pflücken Blumen auf der Wiese.",
+   "mevcutBeispielTr": "Çocuklar çayırda çiçek topluyor."
+  },
+  {
+   "id": 8131,
+   "de": "bellen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bellt, hat gebellt",
+   "mevcutTr": "havlamak",
+   "mevcutBeispiel": "Der Hund des Nachbarn bellt die ganze Nacht.",
+   "mevcutBeispielTr": "Komşunun köpeği bütün gece havlıyor."
+  },
+  {
+   "id": 8132,
+   "de": "jagen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "jagt, hat gejagt",
+   "mevcutTr": "avlamak, kovalamak",
+   "mevcutBeispiel": "Der Fuchs jagt nachts kleine Tiere.",
+   "mevcutBeispielTr": "Tilki geceleri küçük hayvanları avlıyor."
+  },
+  {
+   "id": 8133,
+   "de": "verbrennen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verbrennt, hat verbrannt",
+   "mevcutTr": "yakmak",
+   "mevcutBeispiel": "Im Garten darf man kein Laub verbrennen.",
+   "mevcutBeispielTr": "Bahçede yaprak yakmak yasaktır.",
+   "cakisan": [
+    "sich verbrennen (B1)"
+   ]
+  },
+  {
+   "id": 8134,
+   "de": "säubern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "säubert, hat gesäubert",
+   "mevcutTr": "temizlemek",
+   "mevcutBeispiel": "Wir säubern den Strand von Plastik und Papier.",
+   "mevcutBeispielTr": "Sahili plastikten ve kâğıttan temizliyoruz.",
+   "cakisan": [
+    "putzen (A2)",
+    "reinigen (B1)"
+   ]
+  },
+  {
+   "id": 8135,
+   "de": "vorhersagen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sagt vorher, hat vorhergesagt",
+   "mevcutTr": "tahmin etmek, önceden bildirmek",
+   "mevcutBeispiel": "Für morgen sagt man Regen vorher.",
+   "mevcutBeispielTr": "Yarın için yağmur tahmin ediliyor.",
+   "cakisan": [
+    "raten (A1)",
+    "schätzen (B1)",
+    "erraten (A2)"
+   ]
+  },
+  {
+   "id": 8136,
+   "de": "kriechen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kriecht, ist gekrochen",
+   "mevcutTr": "sürünmek, emeklemek",
+   "mevcutBeispiel": "Eine Schnecke kriecht langsam über den Weg.",
+   "mevcutBeispielTr": "Bir salyangoz yavaşça yolun üzerinde sürünüyor."
+  },
+  {
+   "id": 8137,
+   "de": "streiten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "streitet, hat gestritten",
+   "mevcutTr": "tartışmak, kavga etmek",
+   "mevcutBeispiel": "Die Nachbarn streiten oft über den Lärm.",
+   "mevcutBeispielTr": "Komşular sık sık gürültü yüzünden tartışıyor.",
+   "cakisan": [
+    "diskutieren (A2)",
+    "erörtern (C1)"
+   ]
+  },
+  {
+   "id": 8138,
+   "de": "verletzen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verletzt, hat verletzt",
+   "mevcutTr": "yaralamak",
+   "mevcutBeispiel": "Bei dem Unfall hat sich niemand verletzt.",
+   "mevcutBeispielTr": "Kazada kimse yaralanmadı."
+  }
+ ]
+}

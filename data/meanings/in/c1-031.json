@@ -1,0 +1,536 @@
+{
+ "paket": "c1-031",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6753,
+   "de": "die Photosynthese",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "fotosentez",
+   "mevcutBeispiel": "Bei der Photosynthese wandeln Pflanzen Licht in chemische Energie um.",
+   "mevcutBeispielTr": "Fotosentezde bitkiler ışığı kimyasal enerjiye dönüştürür."
+  },
+  {
+   "id": 6754,
+   "de": "der Zellkern",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zellkerne",
+   "mevcutTr": "hücre çekirdeği",
+   "mevcutBeispiel": "Das Erbmaterial liegt bei den meisten Lebewesen im Zellkern.",
+   "mevcutBeispielTr": "Kalıtım maddesi çoğu canlıda hücre çekirdeğinde bulunur."
+  },
+  {
+   "id": 6755,
+   "de": "das Chromosom",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Chromosomen",
+   "mevcutTr": "kromozom",
+   "mevcutBeispiel": "Der Mensch besitzt in jeder Körperzelle sechsundvierzig Chromosomen.",
+   "mevcutBeispielTr": "İnsan her vücut hücresinde kırk altı kromozom taşır."
+  },
+  {
+   "id": 6756,
+   "de": "das Erbgut",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kalıtsal madde, genom, genetik yapı",
+   "mevcutBeispiel": "Ein Eingriff in das Erbgut wirft heikle ethische Fragen auf.",
+   "mevcutBeispielTr": "Kalıtım maddesine müdahale çetin etik sorular doğuruyor."
+  },
+  {
+   "id": 6757,
+   "de": "das Enzym",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Enzyme",
+   "mevcutTr": "enzim",
+   "mevcutBeispiel": "Ohne dieses Enzym kann der Körper den Zucker nicht abbauen.",
+   "mevcutBeispielTr": "Bu enzim olmadan vücut şekeri parçalayamaz."
+  },
+  {
+   "id": 6758,
+   "de": "das Hormon",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hormone",
+   "mevcutTr": "hormon",
+   "mevcutBeispiel": "Bei Stress schüttet der Körper vermehrt bestimmte Hormone aus.",
+   "mevcutBeispielTr": "Stres hâlinde vücut belirli hormonları daha çok salgılar."
+  },
+  {
+   "id": 6759,
+   "de": "die Evolution",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "evrim",
+   "mevcutBeispiel": "Die Evolution verläuft nicht zielgerichtet, sondern über zufällige Veränderungen.",
+   "mevcutBeispielTr": "Evrim bir amaca yönelmez, rastlantısal değişimler üzerinden ilerler."
+  },
+  {
+   "id": 6760,
+   "de": "verdampfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist verdampft",
+   "mevcutTr": "buharlaşmak, buhara dönüşmek",
+   "mevcutBeispiel": "Bei hundert Grad verdampft das Wasser vollständig.",
+   "mevcutBeispielTr": "Yüz derecede su tamamen buharlaşır.",
+   "cakisan": [
+    "sich verflüchtigen (C1)",
+    "verdunsten (B2)"
+   ]
+  },
+  {
+   "id": 6761,
+   "de": "erstarren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist erstarrt",
+   "mevcutTr": "katılaşmak, donmak",
+   "mevcutBeispiel": "Die glühende Lava erstarrt an der Luft zu schwarzem Gestein.",
+   "mevcutBeispielTr": "Kızgın lav havada katılaşarak siyah kayaya dönüşür."
+  },
+  {
+   "id": 6762,
+   "de": "spalten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gespalten",
+   "mevcutTr": "bölmek, yarmak, ayrıştırmak",
+   "mevcutBeispiel": "Enzyme spalten die Stärke in einzelne Zuckerbausteine.",
+   "mevcutBeispielTr": "Enzimler nişastayı tek tek şeker birimlerine ayrıştırır."
+  },
+  {
+   "id": 6763,
+   "de": "sich ausdehnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich ausgedehnt",
+   "mevcutTr": "genleşmek, yayılmak",
+   "mevcutBeispiel": "Metall dehnt sich bei Hitze deutlich messbar aus.",
+   "mevcutBeispielTr": "Metal sıcakta ölçülebilir biçimde genleşir."
+  },
+  {
+   "id": 6764,
+   "de": "sich zusammenziehen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich zusammengezogen",
+   "mevcutTr": "büzülmek, kasılmak",
+   "mevcutBeispiel": "Bei Kälte ziehen sich die Blutgefäße in der Haut zusammen.",
+   "mevcutBeispielTr": "Soğukta deri altındaki kan damarları büzülür."
+  },
+  {
+   "id": 6765,
+   "de": "abstoßen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgestoßen",
+   "mevcutTr": "itmek, geri itmek",
+   "mevcutBeispiel": "Gleiche Pole eines Magneten stoßen einander ab.",
+   "mevcutBeispielTr": "Bir mıknatısın aynı kutupları birbirini iter.",
+   "cakisan": [
+    "schieben (B1)"
+   ]
+  },
+  {
+   "id": 6766,
+   "de": "absondern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgesondert",
+   "mevcutTr": "salgılamak, ayırmak",
+   "mevcutBeispiel": "Die Pflanze sondert bei Verletzung einen klebrigen Saft ab.",
+   "mevcutBeispielTr": "Bitki yaralandığında yapışkan bir öz salgılıyor."
+  },
+  {
+   "id": 6767,
+   "de": "sich vermehren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich vermehrt",
+   "mevcutTr": "çoğalmak, üremek",
+   "mevcutBeispiel": "In warmem Wasser vermehren sich die Keime besonders schnell.",
+   "mevcutBeispielTr": "Ilık suda mikroplar özellikle hızlı çoğalır."
+  },
+  {
+   "id": 6768,
+   "de": "ablagern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgelagert",
+   "mevcutTr": "biriktirmek, çökeltmek",
+   "mevcutBeispiel": "Der Fluss lagert an der Mündung feinen Sand ab.",
+   "mevcutBeispielTr": "Nehir ağzında ince kum biriktiriyor."
+  },
+  {
+   "id": 6769,
+   "de": "verdünnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verdünnt",
+   "mevcutTr": "seyreltmek, sulandırmak",
+   "mevcutBeispiel": "Die Säure muss vor dem Versuch stark verdünnt werden.",
+   "mevcutBeispielTr": "Asidin deneyden önce iyice seyreltilmesi gerekir."
+  },
+  {
+   "id": 6770,
+   "de": "umwandeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgewandelt",
+   "mevcutTr": "dönüştürmek",
+   "mevcutBeispiel": "Der Muskel wandelt chemische Energie in Bewegung um.",
+   "mevcutBeispielTr": "Kas kimyasal enerjiyi harekete dönüştürür.",
+   "cakisan": [
+    "umrüsten (C1)"
+   ]
+  },
+  {
+   "id": 6771,
+   "de": "freisetzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat freigesetzt",
+   "mevcutTr": "açığa çıkarmak, salmak",
+   "mevcutBeispiel": "Beim Auftauen der Böden wird viel Methan freigesetzt.",
+   "mevcutBeispielTr": "Toprakların çözülmesiyle bol miktarda metan açığa çıkıyor.",
+   "cakisan": [
+    "aufdecken (B2)"
+   ]
+  },
+  {
+   "id": 6772,
+   "de": "binden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gebunden",
+   "mevcutTr": "bağlamak, tutmak",
+   "mevcutBeispiel": "Moore binden erhebliche Mengen an Kohlendioxid.",
+   "mevcutBeispielTr": "Bataklıklar hatırı sayılır miktarda karbondioksit tutar.",
+   "cakisan": [
+    "anschließen (B1)",
+    "verbinden (B1)",
+    "verknüpfen (B2)"
+   ]
+  },
+  {
+   "id": 6773,
+   "de": "züchten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gezüchtet",
+   "mevcutTr": "yetiştirmek, ıslah etmek",
+   "mevcutBeispiel": "Forscher züchten im Labor besonders widerstandsfähige Sorten.",
+   "mevcutBeispielTr": "Araştırmacılar laboratuvarda özellikle dayanıklı türler yetiştiriyor.",
+   "cakisan": [
+    "erziehen (B1)",
+    "anbauen (C1)",
+    "ausbilden (A2)"
+   ]
+  },
+  {
+   "id": 6774,
+   "de": "verwesen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist verwest",
+   "mevcutTr": "çürümek, ayrışmak",
+   "mevcutBeispiel": "Im feuchten Boden verwesen die Reste innerhalb weniger Wochen.",
+   "mevcutBeispielTr": "Nemli toprakta kalıntılar birkaç hafta içinde çürür."
+  },
+  {
+   "id": 6775,
+   "de": "aufsaugen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aufgesaugt",
+   "mevcutTr": "emmek, soğurmak",
+   "mevcutBeispiel": "Die Wurzeln saugen das Wasser samt gelösten Nährstoffen auf.",
+   "mevcutBeispielTr": "Kökler suyu, içinde çözünmüş besinlerle birlikte emer."
+  },
+  {
+   "id": 6776,
+   "de": "schweben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat geschwebt",
+   "mevcutTr": "asılı durmak, süzülmek",
+   "mevcutBeispiel": "Der Staub schwebt stundenlang in der stehenden Luft.",
+   "mevcutBeispielTr": "Toz durgun havada saatlerce asılı kalıyor."
+  },
+  {
+   "id": 6777,
+   "de": "rotieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat rotiert",
+   "mevcutTr": "dönmek, kendi ekseninde dönmek",
+   "mevcutBeispiel": "Die Erde rotiert einmal in vierundzwanzig Stunden um sich selbst.",
+   "mevcutBeispielTr": "Dünya yirmi dört saatte bir kez kendi çevresinde döner.",
+   "cakisan": [
+    "abbiegen (B1)",
+    "sich umdrehen (B1)"
+   ]
+  },
+  {
+   "id": 6778,
+   "de": "flüchtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uçucu, çabuk buharlaşan",
+   "mevcutBeispiel": "Der Lösungsstoff ist sehr flüchtig und verliert schnell an Wirkung.",
+   "mevcutBeispielTr": "Çözücü madde çok uçucudur ve etkisini hızla yitirir."
+  },
+  {
+   "id": 6779,
+   "de": "organisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "organik (kimya, biyoloji)",
+   "mevcutBeispiel": "Im Sediment fanden die Forscher überraschend viel organisches Material.",
+   "mevcutBeispielTr": "Araştırmacılar tortuda şaşırtıcı ölçüde çok organik madde buldu."
+  },
+  {
+   "id": 6780,
+   "de": "thermisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ısıl, termik",
+   "mevcutBeispiel": "Die Fassade ist thermisch schlecht gegen die Kälte isoliert.",
+   "mevcutBeispielTr": "Cephe soğuğa karşı ısıl olarak kötü yalıtılmış."
+  },
+  {
+   "id": 6781,
+   "de": "elastisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "esnek, elastik",
+   "mevcutBeispiel": "Das Material bleibt auch bei tiefen Temperaturen elastisch.",
+   "mevcutBeispielTr": "Malzeme düşük sıcaklıklarda da esnek kalıyor.",
+   "cakisan": [
+    "flexibel (B1)"
+   ]
+  },
+  {
+   "id": 6782,
+   "de": "luftdicht",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hava geçirmez",
+   "mevcutBeispiel": "Die Proben werden luftdicht verschlossen und gekühlt gelagert.",
+   "mevcutBeispielTr": "Numuneler hava geçirmez biçimde kapatılıp soğukta saklanıyor."
+  },
+  {
+   "id": 6783,
+   "de": "unbeständig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kararsız, değişken",
+   "mevcutBeispiel": "Diese Verbindung ist chemisch unbeständig und zerfällt rasch.",
+   "mevcutBeispielTr": "Bu bileşik kimyasal olarak kararsızdır ve hızla parçalanır."
+  },
+  {
+   "id": 6784,
+   "de": "durchsichtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "saydam, şeffaf",
+   "mevcutBeispiel": "Die Larve ist fast durchsichtig und daher kaum zu erkennen.",
+   "mevcutBeispielTr": "Larva neredeyse saydamdır, bu yüzden güçlükle fark edilir."
+  },
+  {
+   "id": 6785,
+   "de": "wasserabweisend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "su itici, suyu iten",
+   "mevcutBeispiel": "Die Blätter der Pflanze sind von Natur aus wasserabweisend.",
+   "mevcutBeispielTr": "Bitkinin yaprakları doğası gereği su iticidir."
+  },
+  {
+   "id": 6786,
+   "de": "die Ökosystemleistung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ökosystemleistungen",
+   "mevcutTr": "ekosistem hizmeti",
+   "mevcutBeispiel": "Bestäubung und Wasserreinigung zählen zu den unterschätzten Ökosystemleistungen.",
+   "mevcutBeispielTr": "Tozlaşma ve suyun temizlenmesi, hafife alınan ekosistem hizmetleri arasındadır."
+  },
+  {
+   "id": 6787,
+   "de": "die Klimapolitik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iklim politikası",
+   "mevcutBeispiel": "Eine glaubwürdige Klimapolitik braucht verbindliche Ziele statt unverbindlicher Absichtserklärungen.",
+   "mevcutBeispielTr": "İnandırıcı bir iklim politikası, bağlayıcı olmayan niyet beyanları yerine bağlayıcı hedeflere ihtiyaç duyar."
+  },
+  {
+   "id": 6788,
+   "de": "die Kohlenstoffsenke",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kohlenstoffsenken",
+   "mevcutTr": "karbon yutağı",
+   "mevcutBeispiel": "Alte Wälder wirken über Jahrhunderte als zuverlässige Kohlenstoffsenke.",
+   "mevcutBeispielTr": "Yaşlı ormanlar yüzyıllar boyunca güvenilir bir karbon yutağı işlevi görür."
+  },
+  {
+   "id": 6789,
+   "de": "die Entwaldung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ormansızlaşma",
+   "mevcutBeispiel": "Die Entwaldung schreitet trotz internationaler Abkommen ungebremst voran.",
+   "mevcutBeispielTr": "Ormansızlaşma, uluslararası anlaşmalara rağmen hız kesmeden sürüyor."
+  },
+  {
+   "id": 6790,
+   "de": "die Bodenerosion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "toprak erozyonu",
+   "mevcutBeispiel": "Intensive Landwirtschaft beschleunigt die Bodenerosion in vielen Regionen erheblich.",
+   "mevcutBeispielTr": "Yoğun tarım, birçok bölgede toprak erozyonunu belirgin biçimde hızlandırıyor."
+  },
+  {
+   "id": 6791,
+   "de": "die Übernutzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aşırı kullanım, aşırı yararlanma",
+   "mevcutBeispiel": "Die Übernutzung der Grundwasservorräte lässt sich kaum rückgängig machen.",
+   "mevcutBeispielTr": "Yeraltı suyu rezervlerinin aşırı kullanımını geri döndürmek neredeyse imkânsız."
+  },
+  {
+   "id": 6792,
+   "de": "die Belastungsgrenze",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Belastungsgrenzen",
+   "mevcutTr": "yük sınırı, dayanma sınırı",
+   "mevcutBeispiel": "Viele Böden haben ihre ökologische Belastungsgrenze längst überschritten.",
+   "mevcutBeispielTr": "Birçok toprak ekolojik dayanma sınırını çoktan aşmış durumda."
+  },
+  {
+   "id": 6793,
+   "de": "die Regenerationsfähigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yenilenme yetisi, kendini onarma kapasitesi",
+   "mevcutBeispiel": "Die Regenerationsfähigkeit der Meere wird systematisch überschätzt.",
+   "mevcutBeispielTr": "Denizlerin yenilenme yetisi sistemli biçimde fazla iyimser değerlendiriliyor."
+  },
+  {
+   "id": 6794,
+   "de": "die Rückkopplung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rückkopplungen",
+   "mevcutTr": "geri besleme, geri bildirim döngüsü",
+   "mevcutBeispiel": "Tauender Permafrost löst eine gefährliche Rückkopplung im Klimasystem aus.",
+   "mevcutBeispielTr": "Çözülen donmuş toprak, iklim sisteminde tehlikeli bir geri besleme başlatıyor."
+  },
+  {
+   "id": 6795,
+   "de": "die Umweltverträglichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çevreyle uyumluluk, çevresel uygunluk",
+   "mevcutBeispiel": "Vor dem Bau wird die Umweltverträglichkeit des Vorhabens sorgfältig geprüft.",
+   "mevcutBeispielTr": "İnşaattan önce projenin çevreyle uyumluluğu titizlikle inceleniyor."
+  },
+  {
+   "id": 6796,
+   "de": "die Schadstoffbelastung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schadstoffbelastungen",
+   "mevcutTr": "kirletici madde yükü, zararlı madde kirliliği",
+   "mevcutBeispiel": "Die Schadstoffbelastung der Luft sinkt in den Innenstädten nur langsam.",
+   "mevcutBeispielTr": "Havadaki kirletici madde yükü şehir merkezlerinde ancak yavaş yavaş azalıyor."
+  },
+  {
+   "id": 6797,
+   "de": "die Versiegelung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Versiegelungen",
+   "mevcutTr": "toprağın betonlaşması, geçirimsiz yüzey kaplaması",
+   "mevcutBeispiel": "Die Versiegelung der Böden verschärft die Folgen starker Regenfälle.",
+   "mevcutBeispielTr": "Toprakların betonlaşması şiddetli yağmurların sonuçlarını ağırlaştırıyor."
+  },
+  {
+   "id": 6798,
+   "de": "die Nahrungskette",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nahrungsketten",
+   "mevcutTr": "besin zinciri",
+   "mevcutBeispiel": "Giftstoffe reichern sich am oberen Ende der Nahrungskette an.",
+   "mevcutBeispielTr": "Zehirli maddeler besin zincirinin üst basamaklarında birikir."
+  },
+  {
+   "id": 6799,
+   "de": "der Stoffkreislauf",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stoffkreisläufe",
+   "mevcutTr": "madde döngüsü",
+   "mevcutBeispiel": "Der natürliche Stoffkreislauf wird durch industrielle Eingriffe empfindlich gestört.",
+   "mevcutBeispielTr": "Doğal madde döngüsü sanayi müdahaleleriyle hassas biçimde bozuluyor."
+  },
+  {
+   "id": 6800,
+   "de": "der Bestandsrückgang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bestandsrückgänge",
+   "mevcutTr": "popülasyon azalması, stok gerilemesi",
+   "mevcutBeispiel": "Der dramatische Bestandsrückgang der Insekten alarmiert inzwischen auch Landwirte.",
+   "mevcutBeispielTr": "Böcek popülasyonundaki çarpıcı azalma artık çiftçileri de tedirgin ediyor."
+  },
+  {
+   "id": 6801,
+   "de": "der Transformationsprozess",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Transformationsprozesse",
+   "mevcutTr": "dönüşüm süreci",
+   "mevcutBeispiel": "Der ökologische Transformationsprozess verlangt tiefgreifende institutionelle Reformen.",
+   "mevcutBeispielTr": "Ekolojik dönüşüm süreci köklü kurumsal reformlar gerektiriyor."
+  },
+  {
+   "id": 6802,
+   "de": "das Schutzgebiet",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schutzgebiete",
+   "mevcutTr": "koruma alanı",
+   "mevcutBeispiel": "Ohne wirksame Kontrolle bleibt ein Schutzgebiet bloß eine Linie auf der Karte.",
+   "mevcutBeispielTr": "Etkili denetim olmadan koruma alanı haritada bir çizgiden ibaret kalır."
+  }
+ ]
+}

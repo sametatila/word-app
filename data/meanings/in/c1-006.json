@@ -1,0 +1,558 @@
+{
+ "paket": "c1-006",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 3619,
+   "de": "die Allegorie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Allegorien",
+   "mevcutTr": "alegori",
+   "mevcutBeispiel": "Die Höhle steht als Allegorie für die menschliche Unwissenheit.",
+   "mevcutBeispielTr": "Mağara, insanın cehaletinin alegorisi olarak duruyor."
+  },
+  {
+   "id": 3620,
+   "de": "der Topos",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Topoi",
+   "mevcutTr": "edebi motif, ortak tema",
+   "mevcutBeispiel": "Der Topos der vergänglichen Schönheit durchzieht die Lyrik.",
+   "mevcutBeispielTr": "Geçici güzellik motifi şiirin tamamına yayılıyor."
+  },
+  {
+   "id": 3626,
+   "de": "die Metaphysik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "–",
+   "mevcutTr": "metafizik",
+   "mevcutBeispiel": "Die Metaphysik fragt nach dem Wesen der Wirklichkeit selbst.",
+   "mevcutBeispielTr": "Metafizik, gerçekliğin bizzat özünü sorgular."
+  },
+  {
+   "id": 3627,
+   "de": "der Nihilismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "–",
+   "mevcutTr": "nihilizm",
+   "mevcutBeispiel": "Der Nihilismus leugnet die Existenz objektiver Werte.",
+   "mevcutBeispielTr": "Nihilizm, nesnel değerlerin varlığını reddeder."
+  },
+  {
+   "id": 3628,
+   "de": "der Existenzialismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "–",
+   "mevcutTr": "varoluşçuluk",
+   "mevcutBeispiel": "Der Existenzialismus betont die radikale Freiheit des Individuums.",
+   "mevcutBeispielTr": "Varoluşçuluk, bireyin köklü özgürlüğünü vurgular."
+  },
+  {
+   "id": 3629,
+   "de": "die Dialektik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dialektiken",
+   "mevcutTr": "diyalektik (yöntem, öğreti)",
+   "mevcutBeispiel": "Hegels Dialektik beruht auf These, Antithese und Synthese.",
+   "mevcutBeispielTr": "Hegel'in diyalektiği tez, antitez ve senteze dayanır."
+  },
+  {
+   "id": 3630,
+   "de": "die Erkenntnistheorie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erkenntnistheorien",
+   "mevcutTr": "bilgi kuramı, epistemoloji",
+   "mevcutBeispiel": "Die Erkenntnistheorie untersucht die Grenzen menschlichen Wissens.",
+   "mevcutBeispielTr": "Bilgi kuramı, insan bilgisinin sınırlarını araştırır."
+  },
+  {
+   "id": 3632,
+   "de": "die Polemik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Polemiken",
+   "mevcutTr": "polemik, çatışmalı tartışma",
+   "mevcutBeispiel": "Seine Polemik gegen die Kritiker war scharf und unversöhnlich.",
+   "mevcutBeispielTr": "Eleştirmenlere yönelik polemiği sert ve uzlaşmazdı."
+  },
+  {
+   "id": 3633,
+   "de": "der Aphorismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aphorismen",
+   "mevcutTr": "özdeyiş, aforizma",
+   "mevcutBeispiel": "Nietzsches Aphorismen bestechen durch ihre sprachliche Prägnanz.",
+   "mevcutBeispielTr": "Nietzsche'nin aforizmaları dildeki yoğunluklarıyla etkiler."
+  },
+  {
+   "id": 3634,
+   "de": "die Reminiszenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Reminiszenzen",
+   "mevcutTr": "anımsama, çağrışım",
+   "mevcutBeispiel": "Der Roman ist voller Reminiszenzen an die eigene Kindheit.",
+   "mevcutBeispielTr": "Roman, yazarın kendi çocukluğuna dair çağrışımlarla dolu."
+  },
+  {
+   "id": 3635,
+   "de": "die Konnotation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konnotationen",
+   "mevcutTr": "yan anlam, çağrışım",
+   "mevcutBeispiel": "Das Wort trägt in diesem Kontext eine negative Konnotation.",
+   "mevcutBeispielTr": "Bu bağlamda kelime olumsuz bir yan anlam taşıyor.",
+   "cakisan": [
+    "die Nebenbedeutung (C1)"
+   ]
+  },
+  {
+   "id": 3636,
+   "de": "die Denotation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Denotationen",
+   "mevcutTr": "düz anlam",
+   "mevcutBeispiel": "Die Denotation eines Wortes unterscheidet sich von der Konnotation.",
+   "mevcutBeispielTr": "Bir kelimenin düz anlamı yan anlamından farklıdır."
+  },
+  {
+   "id": 3637,
+   "de": "der Subtext",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Subtexte",
+   "mevcutTr": "alt metin, örtük anlam",
+   "mevcutBeispiel": "Zwischen den Zeilen verbirgt sich ein politischer Subtext.",
+   "mevcutBeispielTr": "Satır aralarında politik bir alt metin gizli."
+  },
+  {
+   "id": 3638,
+   "de": "die Zäsur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zäsuren",
+   "mevcutTr": "dönüm noktası, kesinti",
+   "mevcutBeispiel": "Der Krieg markierte eine tiefe Zäsur in der Kulturgeschichte.",
+   "mevcutBeispielTr": "Savaş, kültür tarihinde derin bir kırılma noktası oldu.",
+   "cakisan": [
+    "der Wendepunkt (B2)"
+   ]
+  },
+  {
+   "id": 3639,
+   "de": "der Umbruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Umbrüche",
+   "mevcutTr": "köklü değişim, altüst oluş",
+   "mevcutBeispiel": "Der gesellschaftliche Umbruch spiegelte sich in der Kunst wider.",
+   "mevcutBeispielTr": "Toplumsal altüst oluş sanata da yansıdı."
+  },
+  {
+   "id": 3645,
+   "de": "der Zeitgeist",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "–",
+   "mevcutTr": "zamanın ruhu",
+   "mevcutBeispiel": "Der Roman fängt den Zeitgeist der Jahrhundertwende meisterhaft ein.",
+   "mevcutBeispielTr": "Roman, yüzyıl dönümünün ruhunu ustalıkla yakalıyor."
+  },
+  {
+   "id": 3646,
+   "de": "das Kulturerbe",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "–",
+   "mevcutTr": "kültürel miras",
+   "mevcutBeispiel": "Die Altstadt gehört zum immateriellen Kulturerbe der Region.",
+   "mevcutBeispielTr": "Eski şehir, bölgenin kültürel mirasının bir parçası."
+  },
+  {
+   "id": 3651,
+   "de": "polarisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "polarisiert, hat polarisiert",
+   "mevcutTr": "kutuplaştırmak",
+   "mevcutBeispiel": "Das umstrittene Kunstwerk polarisiert die Öffentlichkeit stark.",
+   "mevcutBeispielTr": "Tartışmalı sanat eseri kamuoyunu iyice kutuplaştırıyor."
+  },
+  {
+   "id": 3652,
+   "de": "idealisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "idealisiert, hat idealisiert",
+   "mevcutTr": "idealleştirmek",
+   "mevcutBeispiel": "Die Romantiker idealisierten das Landleben und die Natur.",
+   "mevcutBeispielTr": "Romantikler kır hayatını ve doğayı idealleştirdi."
+  },
+  {
+   "id": 3653,
+   "de": "glorifizieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "glorifiziert, hat glorifiziert",
+   "mevcutTr": "yüceltmek",
+   "mevcutBeispiel": "Das Epos glorifiziert die Taten vergangener Helden.",
+   "mevcutBeispielTr": "Destan, geçmiş kahramanların yaptıklarını yüceltiyor.",
+   "cakisan": [
+    "überhöhen (C1)"
+   ]
+  },
+  {
+   "id": 3654,
+   "de": "stilisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "stilisiert, hat stilisiert",
+   "mevcutTr": "stilize etmek, üsluplaştırmak",
+   "mevcutBeispiel": "Der Maler stilisiert die Figuren zu abstrakten Formen.",
+   "mevcutBeispielTr": "Ressam, figürleri soyut biçimlere dönüştürerek stilize ediyor."
+  },
+  {
+   "id": 3656,
+   "de": "rezipieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "rezipiert, hat rezipiert",
+   "mevcutTr": "algılamak, alımlamak (bir eseri)",
+   "mevcutBeispiel": "Das Publikum rezipiert das Werk auf ganz unterschiedliche Weise.",
+   "mevcutBeispielTr": "Seyirciler eseri çok farklı biçimlerde algılıyor.",
+   "cakisan": [
+    "wahrnehmen (B2)",
+    "auffassen (C1)"
+   ]
+  },
+  {
+   "id": 3657,
+   "de": "verklären",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verklärt, hat verklärt",
+   "mevcutTr": "idealize ederek anmak, güzelleştirmek",
+   "mevcutBeispiel": "Die Erinnerung verklärt die Vergangenheit oft ins Positive.",
+   "mevcutBeispielTr": "Hafıza, geçmişi çoğu zaman olduğundan güzel gösterir."
+  },
+  {
+   "id": 3658,
+   "de": "transzendieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "transzendiert, hat transzendiert",
+   "mevcutTr": "aşmak, ötesine geçmek",
+   "mevcutBeispiel": "Die Kunst versucht, die Grenzen der Sprache zu transzendieren.",
+   "mevcutBeispielTr": "Sanat, dilin sınırlarını aşmaya çalışır.",
+   "cakisan": [
+    "übertreffen (B2)",
+    "überschreiten (B2)",
+    "überziehen (B2)"
+   ]
+  },
+  {
+   "id": 3659,
+   "de": "abstrahieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "abstrahiert, hat abstrahiert",
+   "mevcutTr": "soyutlamak",
+   "mevcutBeispiel": "Der Künstler abstrahiert die Form bis zur reinen Geometrie.",
+   "mevcutBeispielTr": "Sanatçı, biçimi saf geometriye varana dek soyutluyor."
+  },
+  {
+   "id": 3661,
+   "de": "ambivalent",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ikircikli, çelişik duygular taşıyan",
+   "mevcutBeispiel": "Seine Haltung gegenüber der Moderne bleibt zutiefst ambivalent.",
+   "mevcutBeispielTr": "Moderniteye karşı tutumu son derece çelişkili."
+  },
+  {
+   "id": 3663,
+   "de": "epochal",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çağ açan, çığır açıcı",
+   "mevcutBeispiel": "Der Roman gilt als epochales Werk der Weltliteratur.",
+   "mevcutBeispielTr": "Roman, dünya edebiyatının çığır açan eserlerinden sayılıyor."
+  },
+  {
+   "id": 3664,
+   "de": "avantgardistisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "avangart, öncü (üslup)",
+   "mevcutBeispiel": "Die avantgardistische Malerei brach mit allen bisherigen Regeln.",
+   "mevcutBeispielTr": "Avangard resim, o güne dek geçerli tüm kuralları yıktı.",
+   "cakisan": [
+    "die Avantgarde (C1)"
+   ]
+  },
+  {
+   "id": 3665,
+   "de": "dialektisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "diyalektik, diyalektiğe dayalı",
+   "mevcutBeispiel": "Hegel entwickelt seine Theorie in einer dialektischen Argumentation.",
+   "mevcutBeispielTr": "Hegel, kuramını diyalektik bir akıl yürütmeyle geliştirir."
+  },
+  {
+   "id": 3667,
+   "de": "existenziell",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "varoluşsal",
+   "mevcutBeispiel": "Der Protagonist erlebt eine existenzielle Krise nach dem Verlust.",
+   "mevcutBeispielTr": "Başkahraman, kayıptan sonra varoluşsal bir kriz yaşıyor."
+  },
+  {
+   "id": 3668,
+   "de": "fragmentarisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "parça parça, eksik",
+   "mevcutBeispiel": "Das Manuskript ist nur fragmentarisch überliefert worden.",
+   "mevcutBeispielTr": "El yazması günümüze yalnızca parça parça ulaşabildi."
+  },
+  {
+   "id": 3669,
+   "de": "kontemplativ",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tefekküre dayalı, derin düşünceli",
+   "mevcutBeispiel": "Der Dichter pflegt einen kontemplativen Blick auf die Welt.",
+   "mevcutBeispielTr": "Şair, dünyaya derin düşünceye dalan bir gözle bakıyor."
+  },
+  {
+   "id": 3671,
+   "de": "sich abzeichnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "zeichnet sich ab, hat sich abgezeichnet",
+   "mevcutTr": "belirmek, ortaya çıkmak",
+   "mevcutBeispiel": "Ein Wandel in der Politik zeichnet sich langsam ab.",
+   "mevcutBeispielTr": "Siyasette bir değişim yavaş yavaş belirmeye başlıyor."
+  },
+  {
+   "id": 3672,
+   "de": "sich häufen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "häuft sich, hat sich gehäuft",
+   "mevcutTr": "artmak, çoğalmak",
+   "mevcutBeispiel": "In den letzten Wochen haben sich die Beschwerden gehäuft.",
+   "mevcutBeispielTr": "Son haftalarda şikâyetler iyice arttı.",
+   "cakisan": [
+    "zulegen (B2)"
+   ]
+  },
+  {
+   "id": 3674,
+   "de": "sich erübrigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "erübrigt sich, hat sich erübrigt",
+   "mevcutTr": "gereksiz olmak",
+   "mevcutBeispiel": "Nach der Absage erübrigt sich jede weitere Diskussion.",
+   "mevcutBeispielTr": "Ret cevabından sonra daha fazla tartışmaya gerek kalmadı."
+  },
+  {
+   "id": 3676,
+   "de": "vorwegnehmen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "nimmt vorweg, hat vorweggenommen",
+   "mevcutTr": "önceden dile getirmek, öne almak",
+   "mevcutBeispiel": "Der Autor nimmt im Vorwort die Kritik vorweg.",
+   "mevcutBeispielTr": "Yazar, önsözde gelecek eleştirileri önceden karşılıyor."
+  },
+  {
+   "id": 3677,
+   "de": "sich entpuppen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "entpuppt sich, hat sich entpuppt",
+   "mevcutTr": "çıkmak, ortaya çıkmak",
+   "mevcutBeispiel": "Der vermeintliche Freund entpuppte sich als Betrüger.",
+   "mevcutBeispielTr": "Dost sandığı kişi dolandırıcı çıktı.",
+   "cakisan": [
+    "sich erweisen (C1)"
+   ]
+  },
+  {
+   "id": 3678,
+   "de": "verkennen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verkennt, hat verkannt",
+   "mevcutTr": "yanlış değerlendirmek",
+   "mevcutBeispiel": "Man sollte die Gefahr nicht verkennen.",
+   "mevcutBeispielTr": "Tehlikeyi hafife almamak gerekir."
+  },
+  {
+   "id": 3679,
+   "de": "sich abfinden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "findet sich ab, hat sich abgefunden",
+   "mevcutTr": "kabullenmek, razı olmak",
+   "mevcutBeispiel": "Sie musste sich mit der Niederlage abfinden.",
+   "mevcutBeispielTr": "Yenilgiyi kabullenmek zorunda kaldı.",
+   "cakisan": [
+    "hinnehmen (C1)",
+    "einsehen (A2)"
+   ]
+  },
+  {
+   "id": 3681,
+   "de": "sich verflüchtigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verflüchtigt sich, hat sich verflüchtigt",
+   "mevcutTr": "buharlaşmak, kaybolmak",
+   "mevcutBeispiel": "Die anfängliche Begeisterung hat sich schnell verflüchtigt.",
+   "mevcutBeispielTr": "Baştaki heyecan çabucak uçup gitti.",
+   "cakisan": [
+    "verdunsten (B2)",
+    "verdampfen (C1)"
+   ]
+  },
+  {
+   "id": 3682,
+   "de": "anprangern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "prangert an, hat angeprangert",
+   "mevcutTr": "teşhir etmek, alenen kınamak",
+   "mevcutBeispiel": "Der Journalist prangert die Missstände öffentlich an.",
+   "mevcutBeispielTr": "Gazeteci, aksaklıkları kamuoyu önünde teşhir ediyor."
+  },
+  {
+   "id": 3684,
+   "de": "sich einbürgern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "bürgert sich ein, hat sich eingebürgert",
+   "mevcutTr": "yerleşmek, yaygınlaşmak",
+   "mevcutBeispiel": "Der Ausdruck hat sich im Alltag eingebürgert.",
+   "mevcutBeispielTr": "Bu ifade günlük dile iyice yerleşti.",
+   "cakisan": [
+    "sich verfestigen (C1)",
+    "sich niederlassen (C1)"
+   ]
+  },
+  {
+   "id": 3685,
+   "de": "resultieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "resultiert, hat resultiert",
+   "mevcutTr": "kaynaklanmak, sonuçlanmak",
+   "mevcutBeispiel": "Der Konflikt resultiert aus einem Missverständnis.",
+   "mevcutBeispielTr": "Çatışma bir yanlış anlamadan kaynaklanıyor.",
+   "cakisan": [
+    "resultieren aus (B2)"
+   ]
+  },
+  {
+   "id": 3687,
+   "de": "sich verselbstständigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verselbstständigt sich, hat sich verselbstständigt",
+   "mevcutTr": "bağımsızlaşmak, kontrolden çıkmak",
+   "mevcutBeispiel": "Das Projekt hat sich völlig verselbstständigt.",
+   "mevcutBeispielTr": "Proje tamamen kontrolden çıktı."
+  },
+  {
+   "id": 3688,
+   "de": "sich abheben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hebt sich ab, hat sich abgehoben",
+   "mevcutTr": "farklılaşmak, öne çıkmak",
+   "mevcutBeispiel": "Das Produkt hebt sich deutlich von der Konkurrenz ab.",
+   "mevcutBeispielTr": "Ürün, rakiplerinden belirgin biçimde ayrışıyor."
+  },
+  {
+   "id": 3691,
+   "de": "sich verzetteln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verzettelt sich, hat sich verzettelt",
+   "mevcutTr": "dağılmak, odağı kaybetmek",
+   "mevcutBeispiel": "Bei so vielen Aufgaben verzettelt man sich leicht.",
+   "mevcutBeispielTr": "Bu kadar çok işin arasında insan kolayca dağılıyor."
+  },
+  {
+   "id": 3692,
+   "de": "bemängeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "bemängelt, hat bemängelt",
+   "mevcutTr": "eleştirmek, kusur bulmak",
+   "mevcutBeispiel": "Kritiker bemängeln die fehlende Transparenz des Verfahrens.",
+   "mevcutBeispielTr": "Eleştirmenler, sürecin şeffaf olmayışına kusur buluyor.",
+   "cakisan": [
+    "kritisieren (B1)"
+   ]
+  },
+  {
+   "id": 3693,
+   "de": "sich abspielen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "spielt sich ab, hat sich abgespielt",
+   "mevcutTr": "gerçekleşmek, yaşanmak",
+   "mevcutBeispiel": "Die Szene spielte sich vor den Augen der Zeugen ab.",
+   "mevcutBeispielTr": "Sahne, tanıkların gözleri önünde yaşandı.",
+   "cakisan": [
+    "stattfinden (A2)"
+   ]
+  },
+  {
+   "id": 3694,
+   "de": "präzisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "präzisiert, hat präzisiert",
+   "mevcutTr": "netleştirmek, kesinleştirmek",
+   "mevcutBeispiel": "Bitte präzisieren Sie Ihre Aussage etwas genauer.",
+   "mevcutBeispielTr": "Lütfen ifadenizi biraz daha netleştirin."
+  },
+  {
+   "id": 3695,
+   "de": "sich auszahlen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "zahlt sich aus, hat sich ausgezahlt",
+   "mevcutTr": "karşılığını vermek, işe yaramak",
+   "mevcutBeispiel": "Die harte Arbeit hat sich am Ende ausgezahlt.",
+   "mevcutBeispielTr": "Sıkı çalışma sonunda karşılığını verdi.",
+   "cakisan": [
+    "sich revanchieren (C1)",
+    "honorieren (C1)"
+   ]
+  }
+ ]
+}

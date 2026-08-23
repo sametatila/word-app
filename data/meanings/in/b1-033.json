@@ -1,0 +1,606 @@
+{
+ "paket": "b1-033",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 1970,
+   "de": "der Geldautomat",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en (D) → A, CH: Bancomat/Bankomat",
+   "mevcutTr": "bankamatik, ATM",
+   "mevcutBeispiel": "Ich hole noch Geld vom Geldautomaten.",
+   "mevcutBeispielTr": "Bankamatikten biraz para çekeceğim."
+  },
+  {
+   "id": 1845,
+   "de": "die Fahrbahn",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "taşıt yolu, yol",
+   "mevcutBeispiel": "Fahren Sie bitte vorsichtig. Es sind Kühe auf der Fahrbahn.",
+   "mevcutBeispielTr": "Lütfen dikkatli sürün; yolda inekler var."
+  },
+  {
+   "id": 2347,
+   "de": "die Metropole",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "büyükşehir, metropol",
+   "mevcutBeispiel": "Berlin und Wien sind Metropolen.",
+   "mevcutBeispielTr": "Berlin ve Viyana birer metropol."
+  },
+  {
+   "id": 2117,
+   "de": "das Inserat",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "ilan",
+   "mevcutBeispiel": "Was kostet ein Inserat in der Zeitung?",
+   "mevcutBeispielTr": "Gazeteye ilan vermek ne kadar?",
+   "cakisan": [
+    "die Anzeige (A1)",
+    "die Annonce (B1)"
+   ]
+  },
+  {
+   "id": 2002,
+   "de": "das Gewürz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "baharat",
+   "mevcutBeispiel": "Von den scharfen Gewürzen bekommt man Durst.",
+   "mevcutBeispielTr": "Acı baharatlar insanı susatır."
+  },
+  {
+   "id": 1391,
+   "de": "der Anbieter",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sağlayıcı",
+   "mevcutBeispiel": "- Ist das ein privater Telefonanbieter?",
+   "mevcutBeispielTr": "Bu özel bir telefon operatörü mü?"
+  },
+  {
+   "id": 2755,
+   "de": "staubsaugen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "staubsaugt, staubsaugte, hat gestaubsaugt",
+   "mevcutTr": "elektrikli süpürgeyle temizlemek",
+   "mevcutBeispiel": "Ich muss heute in meiner Wohnung noch staubsaugen.",
+   "mevcutBeispielTr": "Bugün evi elektrikli süpürgeyle süpürmem lazım."
+  },
+  {
+   "id": 2726,
+   "de": "die Spezialistin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "uzman (kadın)",
+   "mevcutBeispiel": "Mein Arzt hat mich zur Spezialistin geschickt.",
+   "mevcutBeispielTr": "Doktorum beni bir uzmana yönlendirdi.",
+   "cakisan": [
+    "der Experte (B1)",
+    "der Fachmann (B1)",
+    "der Spezialist (B1)"
+   ]
+  },
+  {
+   "id": 2270,
+   "de": "das Laufwerk",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "sürücü, disk sürücüsü",
+   "mevcutBeispiel": "Für meinen Computer habe ich mir ein neues Laufwerk gekauft.",
+   "mevcutBeispielTr": "Bilgisayarım için yeni bir sürücü aldım.",
+   "cakisan": [
+    "der Fahrer (A1)"
+   ]
+  },
+  {
+   "id": 2366,
+   "de": "möbliert",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "mobilyalı",
+   "mevcutBeispiel": "Ich suche ein möbliertes Zimmer.",
+   "mevcutBeispielTr": "Mobilyalı bir oda arıyorum."
+  },
+  {
+   "id": 1397,
+   "de": "die Angabe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "bilgi, veri",
+   "mevcutBeispiel": "Wir brauchen von Ihnen folgende Angaben: Name, Adresse, Geburtsdatum.",
+   "mevcutBeispielTr": "Sizden şu bilgilere ihtiyacımız var: ad, adres, doğum tarihi.",
+   "cakisan": [
+    "die Auskunft (A1)",
+    "das Wissen (B1)"
+   ]
+  },
+  {
+   "id": 2921,
+   "de": "der Umweltschutz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çevre koruma",
+   "mevcutBeispiel": "Das Land muss mehr Geld für Umweltschutz ausgeben.",
+   "mevcutBeispielTr": "Ülke, çevre korumaya daha çok para ayırmalı."
+  },
+  {
+   "id": 1504,
+   "de": "die Bedienungsanleitung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "kullanım kılavuzu",
+   "mevcutBeispiel": "Die Bedienungsanleitung verstehe ich nicht.",
+   "mevcutBeispielTr": "Kullanım kılavuzunu anlamıyorum."
+  },
+  {
+   "id": 1345,
+   "de": "Abgase",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "(Pl.)",
+   "mevcutTr": "atık gaz, egzoz gazı",
+   "mevcutBeispiel": "Abgase aus Industrie und Haushalten verschmutzen die Luft.",
+   "mevcutBeispielTr": "Sanayi ve evlerden çıkan egzoz gazları havayı kirletiyor."
+  },
+  {
+   "id": 2566,
+   "de": "regional",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bölgesel",
+   "mevcutBeispiel": "Du kannst mit einer Regionalbahn fahren. Das ist billiger.",
+   "mevcutBeispielTr": "Bölgesel trenle gidebilirsin. Daha ucuz."
+  },
+  {
+   "id": 1430,
+   "de": "die Architektin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "mimar (kadın)",
+   "mevcutBeispiel": "Dieses Haus hat eine berühmte Architektin gebaut.",
+   "mevcutBeispielTr": "Bu evi ünlü bir mimar inşa etti.",
+   "cakisan": [
+    "der Architekt (B1)"
+   ]
+  },
+  {
+   "id": 2643,
+   "de": "verschmutzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verschmutzt, verschmutzte, hat verschmutzt",
+   "mevcutTr": "kirletmek",
+   "mevcutBeispiel": "Die Fabrik verschmutzt den Fluss.",
+   "mevcutBeispielTr": "Fabrika nehri kirletiyor.",
+   "cakisan": [
+    "belasten (B2)",
+    "verseuchen (B2)"
+   ]
+  },
+  {
+   "id": 1426,
+   "de": "die Arbeitserlaubnis",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çalışma izni",
+   "mevcutBeispiel": "Haben Sie eine Arbeitserlaubnis?",
+   "mevcutBeispielTr": "Çalışma izniniz var mı?"
+  },
+  {
+   "id": 1785,
+   "de": "sich ereignen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "ereignet sich, ereignete sich, hat sich ereignet",
+   "mevcutTr": "meydana gelmek, olmak",
+   "mevcutBeispiel": "Der Unfall ereignete sich am frühen Morgen.",
+   "mevcutBeispielTr": "Kaza sabahın erken saatlerinde meydana geldi."
+  },
+  {
+   "id": 2340,
+   "de": "die Mensa",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s/-en",
+   "mevcutTr": "yemekhane",
+   "mevcutBeispiel": "Ich esse fast jeden Tag in der Mensa.",
+   "mevcutBeispielTr": "Neredeyse her gün yemekhanede yiyorum.",
+   "cakisan": [
+    "die Kantine (B1)"
+   ]
+  },
+  {
+   "id": 1569,
+   "de": "der Betriebsrat",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "işçi konseyi",
+   "mevcutBeispiel": "Der Betriebsrat wird Sie über die neuen Arbeitszeiten informieren.",
+   "mevcutBeispielTr": "İşçi konseyi sizi yeni çalışma saatleri hakkında bilgilendirecek."
+  },
+  {
+   "id": 2696,
+   "de": "sich siezen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "siezt, siezte, hat gesiezt",
+   "mevcutTr": "resmi hitap etmek, siz demek",
+   "mevcutBeispiel": "Obwohl sie sich schon lange kennen, siezen sie sich.",
+   "mevcutBeispielTr": "Birbirlerini uzun zamandır tanımalarına rağmen birbirlerine „siz“ diye hitap ediyorlar."
+  },
+  {
+   "id": 1341,
+   "de": "die Abbildung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "resim, çizim, şekil",
+   "mevcutBeispiel": "Auf der Abbildung sehen Sie, wie man das Gerät einschaltet.",
+   "mevcutBeispielTr": "Şekilde cihazın nasıl açıldığını görüyorsunuz.",
+   "cakisan": [
+    "das Bild (A1)"
+   ]
+  },
+  {
+   "id": 2328,
+   "de": "die Mechanikerin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "kadın tamirci",
+   "mevcutBeispiel": "1. Das kann nur ein Mechaniker reparieren. 2. Karim ist Automechaniker. Er arbeitet bei Opel.",
+   "mevcutBeispielTr": "1. Bunu ancak bir tamirci onarabilir. 2. Karim oto tamircisi; Opel'de çalışıyor."
+  },
+  {
+   "id": 3070,
+   "de": "waagerecht",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yatay",
+   "mevcutBeispiel": "Ziehen Sie bitte einen waagerechten Strich.",
+   "mevcutBeispielTr": "Lütfen yatay bir çizgi çizin."
+  },
+  {
+   "id": 1671,
+   "de": "die Doktorin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "doktor (kadın)",
+   "mevcutBeispiel": "1. Ist Frau Dr. Müller da? 2. Meine Tochter ist krank. Wir gehen zum Doktor.",
+   "mevcutBeispielTr": "Dr. Müller Hanım burada mı?",
+   "cakisan": [
+    "der Arzt (A1)",
+    "der Doktor (A1)"
+   ]
+  },
+  {
+   "id": 2319,
+   "de": "die Margarine",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "margarin",
+   "mevcutBeispiel": "Meine Frau isst nur Margarine und keine Butter.",
+   "mevcutBeispielTr": "Eşim tereyağı yemiyor, sadece margarin yiyor."
+  },
+  {
+   "id": 2601,
+   "de": "die Rundfahrt",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "tur, gezi",
+   "mevcutBeispiel": "Am zweiten Tag haben wir eine Rundfahrt durch den Hafen gemacht.",
+   "mevcutBeispielTr": "İkinci gün limanda bir tekne turu yaptık.",
+   "cakisan": [
+    "der Rundgang (A2)",
+    "die Tour (A2)",
+    "die Runde (B1)",
+    "die Rundreise (B2)"
+   ]
+  },
+  {
+   "id": 1354,
+   "de": "abonnieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "abonniert, abonnierte, hat abonniert",
+   "mevcutTr": "abone olmak",
+   "mevcutBeispiel": "Diese Zeitschrift würde ich gerne abonnieren.",
+   "mevcutBeispielTr": "Bu dergiye seve seve abone olurdum."
+  },
+  {
+   "id": 1355,
+   "de": "das Abonnement",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s/-e",
+   "mevcutTr": "abonelik",
+   "mevcutBeispiel": "Ich habe das Abonnement gekündigt.",
+   "mevcutBeispielTr": "Aboneliği iptal ettim."
+  },
+  {
+   "id": 1359,
+   "de": "die Absenderin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "gönderen (kadın)",
+   "mevcutBeispiel": "Schicken Sie das Paket an den Absender zurück.",
+   "mevcutBeispielTr": "Paketi gönderene iade edin."
+  },
+  {
+   "id": 1364,
+   "de": "der Abwart",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "kapıcı, hademe (erkek)",
+   "mevcutBeispiel": "Der Abwart hat mir geholfen, den Schrank in die Wohnung zu tragen.",
+   "mevcutBeispielTr": "Kapıcı, dolabı daireye taşımama yardım etti.",
+   "cakisan": [
+    "die Abwartin (B1)",
+    "der Hausmeister (B1)"
+   ]
+  },
+  {
+   "id": 1365,
+   "de": "die Abwartin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen (CH) → D, A: Hausmeister",
+   "mevcutTr": "kapıcı, hademe (kadın)",
+   "mevcutBeispiel": "Der Abwart hat mir geholfen, den Schrank in die Wohnung zu tragen.",
+   "mevcutBeispielTr": "Kapıcı, dolabı daireye taşımama yardım etti.",
+   "cakisan": [
+    "der Abwart (B1)",
+    "der Hausmeister (B1)"
+   ]
+  },
+  {
+   "id": 1377,
+   "de": "aller-",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "en- (en iyi/hepsinden çok)",
+   "mevcutBeispiel": "1. Am allerbesten ist es, wenn du dich ins Bett legst und lange schläfst. Dann wirst du schnell wieder gesund. 2. Das is",
+   "mevcutBeispielTr": "En iyisi yatağa uzanıp uzun uzun uyuman; o zaman çabuk iyileşirsin."
+  },
+  {
+   "id": 1383,
+   "de": "als ob",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sanki",
+   "mevcutBeispiel": "Er tut so, als ob wir nie darüber gesprochen hätten.",
+   "mevcutBeispielTr": "Sanki bunu hiç konuşmamışız gibi davranıyor."
+  },
+  {
+   "id": 1386,
+   "de": "alternativ",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "alternatif",
+   "mevcutBeispiel": "Wir brauchen alternative Energien.",
+   "mevcutBeispielTr": "Alternatif enerjilere ihtiyacımız var.",
+   "cakisan": [
+    "die Alternative (B1)"
+   ]
+  },
+  {
+   "id": 1424,
+   "de": "die Aprikose",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (D, CH) → A: Marille",
+   "mevcutTr": "kayısı",
+   "mevcutBeispiel": "Schmecken dir die Aprikosen?",
+   "mevcutBeispielTr": "Kayısıları beğendin mi?",
+   "cakisan": [
+    "die Marille (B1)"
+   ]
+  },
+  {
+   "id": 1479,
+   "de": "sich etwas aussuchen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "sucht aus, suchte aus, hat ausgesucht",
+   "mevcutTr": "seçmek",
+   "mevcutBeispiel": "Such dir etwas Schönes aus! Ich lade dich ein.",
+   "mevcutBeispielTr": "Kendine güzel bir şey seç! Ben ısmarlıyorum.",
+   "cakisan": [
+    "wählen (A2)",
+    "auswählen (B1)"
+   ]
+  },
+  {
+   "id": 1488,
+   "de": "der Bancomat/Bankomat",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "→ -en (A, CH) D: Geldautomat",
+   "mevcutTr": "ATM, bankamatik",
+   "mevcutBeispiel": "Ich hole noch schnell Geld vom Bankomaten.",
+   "mevcutBeispielTr": "Bankamatikten hemen biraz para çekeceğim."
+  },
+  {
+   "id": 1489,
+   "de": "die Bankleitzahl",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "banka kodu",
+   "mevcutBeispiel": "Bitte geben Sie Ihre Bankleitzahl an.",
+   "mevcutBeispielTr": "Lütfen banka kodunuzu belirtin."
+  },
+  {
+   "id": 1490,
+   "de": "die Bankomat-Karte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n → (A) ec-Karte/EC-Karte",
+   "mevcutTr": "banka kartı",
+   "mevcutBeispiel": "Sie können auch mit Bankomat-Karte zahlen.",
+   "mevcutBeispielTr": "Banka kartıyla da ödeyebilirsiniz.",
+   "cakisan": [
+    "die EC-Karte (B1)"
+   ]
+  },
+  {
+   "id": 1528,
+   "de": "bekannt geben",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "gibt bekannt, gab bekannt, hat bekannt gegeben",
+   "mevcutTr": "duyurmak, bildirmek",
+   "mevcutBeispiel": "Den Prüfungsort geben wir Ihnen noch rechtzeitig bekannt.",
+   "mevcutBeispielTr": "Sınav yerini size zamanında bildireceğiz.",
+   "cakisan": [
+    "bekanntgeben (B2)",
+    "ansagen (A2)"
+   ]
+  },
+  {
+   "id": 1543,
+   "de": "berufstätig",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çalışan, meslek sahibi",
+   "mevcutBeispiel": "Sind Sie berufstätig?",
+   "mevcutBeispielTr": "Çalışıyor musunuz?",
+   "cakisan": [
+    "der Mitarbeiter (A2)",
+    "erwerbstätig (B2)"
+   ]
+  },
+  {
+   "id": 1548,
+   "de": "Bescheid sagen",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "haber vermek",
+   "mevcutBeispiel": "Ich erkundige mich nach den Terminen und sage Ihnen dann Bescheid.",
+   "mevcutBeispielTr": "Randevuları öğrenip size haber veririm.",
+   "cakisan": [
+    "ankündigen (B1)",
+    "Bescheid geben (B1)",
+    "melden (B1)",
+    "alarmieren (B2)",
+    "benachrichtigen (A2)"
+   ]
+  },
+  {
+   "id": 1549,
+   "de": "Bescheid geben",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "haber vermek, bilgi vermek",
+   "mevcutBeispiel": "Kannst du mir bis morgen Bescheid geben?",
+   "mevcutBeispielTr": "Yarına kadar bana haber verebilir misin?",
+   "cakisan": [
+    "ankündigen (B1)",
+    "Bescheid sagen (B1)",
+    "melden (B1)",
+    "alarmieren (B2)",
+    "benachrichtigen (A2)"
+   ]
+  },
+  {
+   "id": 1555,
+   "de": "besondere",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "özel, belirli",
+   "mevcutBeispiel": "Meine Eltern wollten uns mit dieser Reise eine ganz besondere Freude machen.",
+   "mevcutBeispielTr": "Annemle babam bu yolculukla bizi çok özel bir şekilde sevindirmek istedi.",
+   "cakisan": [
+    "privat (A2)",
+    "speziell (B1)"
+   ]
+  },
+  {
+   "id": 1570,
+   "de": "die Betriebsrätin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "işçi konseyi üyesi",
+   "mevcutBeispiel": "Der Betriebsrat wird Sie über die neuen Arbeitszeiten informieren.",
+   "mevcutBeispielTr": "İşçi konseyi sizi yeni çalışma saatleri hakkında bilgilendirecek."
+  },
+  {
+   "id": 1581,
+   "de": "die Bewohnerin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "sakin, oturan kadın",
+   "mevcutBeispiel": "Ich kenne die anderen Hausbewohner nicht.",
+   "mevcutBeispielTr": "Binadaki diğer sakinleri tanımıyorum.",
+   "cakisan": [
+    "ruhig (A1)",
+    "der Bewohner (B1)",
+    "der Einwohner (B1)",
+    "die Einwohnerin (B1)",
+    "gelassen (B2)"
+   ]
+  },
+  {
+   "id": 1585,
+   "de": "das Billett",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e/-s → D, A: Fahrkarte",
+   "mevcutTr": "bilet",
+   "mevcutBeispiel": "Ein Billett können Sie am Schalter kaufen.",
+   "mevcutBeispielTr": "Bileti gişeden alabilirsiniz.",
+   "cakisan": [
+    "die Fahrkarte (A1)",
+    "der Fahrschein (A2)"
+   ]
+  },
+  {
+   "id": 1587,
+   "de": "Bio-",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "organik",
+   "mevcutBeispiel": "Ich kaufe nur noch Biogemüse.",
+   "mevcutBeispielTr": "Artık yalnızca organik sebze alıyorum.",
+   "cakisan": [
+    "biologisch (A2)"
+   ]
+  }
+ ]
+}

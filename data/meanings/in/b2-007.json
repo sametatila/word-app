@@ -1,0 +1,555 @@
+{
+ "paket": "b2-007",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 3366,
+   "de": "die Selbstsicherheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "özgüven",
+   "mevcutBeispiel": "Mit wachsender Selbstsicherheit trat sie vor das Publikum.",
+   "mevcutBeispielTr": "Artan özgüveniyle seyircinin karşısına çıktı.",
+   "cakisan": [
+    "das Selbstbewusstsein (B2)",
+    "das Selbstvertrauen (B2)"
+   ]
+  },
+  {
+   "id": 3367,
+   "de": "die Empfindlichkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Empfindlichkeiten",
+   "mevcutTr": "hassasiyet, alınganlık",
+   "mevcutBeispiel": "Seine Empfindlichkeit gegenüber Kritik überraschte mich.",
+   "mevcutBeispielTr": "Eleştiriye karşı alınganlığı beni şaşırttı."
+  },
+  {
+   "id": 3368,
+   "de": "der Charakterzug",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Charakterzüge",
+   "mevcutTr": "karakter özelliği",
+   "mevcutBeispiel": "Neugier ist ein typischer Charakterzug von ihm.",
+   "mevcutBeispielTr": "Merak onun tipik bir karakter özelliğidir.",
+   "cakisan": [
+    "der Wesenszug (C1)"
+   ]
+  },
+  {
+   "id": 3380,
+   "de": "die Entfremdung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "uzaklaşma, yabancılaşma",
+   "mevcutBeispiel": "Die Entfremdung zwischen den Eltern und dem Sohn wuchs.",
+   "mevcutBeispielTr": "Anne babayla oğul arasındaki uzaklaşma giderek büyüdü."
+  },
+  {
+   "id": 3382,
+   "de": "sich versöhnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "versöhnt sich, hat sich versöhnt",
+   "mevcutTr": "barışmak",
+   "mevcutBeispiel": "Die Geschwister haben sich nach dem Streit versöhnt.",
+   "mevcutBeispielTr": "Kardeşler kavgadan sonra barıştı."
+  },
+  {
+   "id": 3383,
+   "de": "sich entfremden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "entfremdet sich, hat sich entfremdet",
+   "mevcutTr": "yabancılaşmak, uzaklaşmak",
+   "mevcutBeispiel": "Die Freunde haben sich im Laufe der Jahre entfremdet.",
+   "mevcutBeispielTr": "Arkadaşlar yıllar içinde birbirinden uzaklaştı."
+  },
+  {
+   "id": 3384,
+   "de": "sich auseinandersetzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "setzt sich auseinander, hat sich auseinandergesetzt",
+   "mevcutTr": "ele almak, kafa yormak",
+   "mevcutBeispiel": "Er musste sich intensiv mit dem Konflikt auseinandersetzen.",
+   "mevcutBeispielTr": "Bu çatışmayla enine boyuna yüzleşmek zorunda kaldı.",
+   "cakisan": [
+    "aufgreifen (B2)"
+   ]
+  },
+  {
+   "id": 3388,
+   "de": "die Prägung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Prägungen",
+   "mevcutTr": "biçimlenme, şekillenme (erken etkilerle)",
+   "mevcutBeispiel": "Die frühkindliche Prägung beeinflusst das spätere Verhalten.",
+   "mevcutBeispielTr": "Erken çocukluktaki biçimlenme, sonraki davranışları etkiler."
+  },
+  {
+   "id": 3390,
+   "de": "die Bewältigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "başa çıkma, üstesinden gelme",
+   "mevcutBeispiel": "Die Bewältigung von Stress erfordert bestimmte Strategien.",
+   "mevcutBeispielTr": "Stresle başa çıkmak belirli stratejiler gerektirir."
+  },
+  {
+   "id": 3398,
+   "de": "sich auswirken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "wirkt sich aus, hat sich ausgewirkt",
+   "mevcutTr": "etkilemek, yansımak",
+   "mevcutBeispiel": "Stress kann sich negativ auf die Gesundheit auswirken.",
+   "mevcutBeispielTr": "Stres sağlığa olumsuz yansıyabilir.",
+   "cakisan": [
+    "beeinflussen (B1)",
+    "beeindrucken (B2)"
+   ]
+  },
+  {
+   "id": 3402,
+   "de": "der Datenschutz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "veri koruma, gizlilik",
+   "mevcutBeispiel": "Der Datenschutz spielt bei neuen Apps eine wichtige Rolle.",
+   "mevcutBeispielTr": "Yeni uygulamalarda veri koruması önemli bir rol oynuyor."
+  },
+  {
+   "id": 3405,
+   "de": "der Halbleiter",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Halbleiter",
+   "mevcutTr": "yarı iletken",
+   "mevcutBeispiel": "Ohne Halbleiter könnten moderne Computer nicht funktionieren.",
+   "mevcutBeispielTr": "Yarı iletkenler olmadan modern bilgisayarlar çalışamazdı."
+  },
+  {
+   "id": 3406,
+   "de": "automatisieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "automatisiert, hat automatisiert",
+   "mevcutTr": "otomatikleştirmek",
+   "mevcutBeispiel": "Die Fabrik will ihre Produktion vollständig automatisieren.",
+   "mevcutBeispielTr": "Fabrika, üretimini tamamen otomatikleştirmek istiyor."
+  },
+  {
+   "id": 3407,
+   "de": "vernetzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "vernetzt, hat vernetzt",
+   "mevcutTr": "ağa bağlamak, bağlantılandırmak",
+   "mevcutBeispiel": "Smarte Geräte lassen sich heutzutage einfach vernetzen.",
+   "mevcutBeispielTr": "Akıllı cihazlar günümüzde kolayca birbirine bağlanabiliyor."
+  },
+  {
+   "id": 3408,
+   "de": "drahtlos",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kablosuz",
+   "mevcutBeispiel": "Die Kopfhörer übertragen den Ton völlig drahtlos.",
+   "mevcutBeispielTr": "Kulaklıklar sesi tamamen kablosuz aktarıyor.",
+   "cakisan": [
+    "kabellos (B2)"
+   ]
+  },
+  {
+   "id": 3410,
+   "de": "die Nachhaltigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "sürdürülebilirlik",
+   "mevcutBeispiel": "Nachhaltigkeit wird für viele Unternehmen immer wichtiger.",
+   "mevcutBeispielTr": "Sürdürülebilirlik birçok şirket için giderek önem kazanıyor."
+  },
+  {
+   "id": 3411,
+   "de": "der Treibhauseffekt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "sera etkisi",
+   "mevcutBeispiel": "Der Treibhauseffekt verstärkt die globale Erwärmung.",
+   "mevcutBeispielTr": "Sera etkisi küresel ısınmayı şiddetlendiriyor."
+  },
+  {
+   "id": 3412,
+   "de": "die Emission",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Emissionen",
+   "mevcutTr": "emisyon, salım",
+   "mevcutBeispiel": "Die Stadt will die Emissionen des Verkehrs deutlich senken.",
+   "mevcutBeispielTr": "Şehir, trafik kaynaklı emisyonları ciddi ölçüde azaltmak istiyor."
+  },
+  {
+   "id": 3416,
+   "de": "erneuerbar",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yenilenebilir",
+   "mevcutBeispiel": "Immer mehr Strom stammt aus erneuerbaren Energien.",
+   "mevcutBeispielTr": "Elektriğin giderek daha büyük bölümü yenilenebilir enerjiden geliyor.",
+   "cakisan": [
+    "regenerativ (C1)"
+   ]
+  },
+  {
+   "id": 3417,
+   "de": "umweltfreundlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çevre dostu",
+   "mevcutBeispiel": "Viele Kunden bevorzugen mittlerweile umweltfreundliche Produkte.",
+   "mevcutBeispielTr": "Artık birçok müşteri çevre dostu ürünleri tercih ediyor."
+  },
+  {
+   "id": 3418,
+   "de": "der CO2-Ausstoß",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "karbondioksit salımı",
+   "mevcutBeispiel": "Der CO2-Ausstoß der Industrie sinkt nur langsam.",
+   "mevcutBeispielTr": "Sanayinin karbondioksit salımı ancak yavaş yavaş düşüyor."
+  },
+  {
+   "id": 3419,
+   "de": "die Solarenergie",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "güneş enerjisi",
+   "mevcutBeispiel": "Solarenergie deckt inzwischen einen großen Teil des Bedarfs.",
+   "mevcutBeispielTr": "Güneş enerjisi artık ihtiyacın büyük bölümünü karşılıyor."
+  },
+  {
+   "id": 3420,
+   "de": "die Windkraft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "rüzgar enerjisi",
+   "mevcutBeispiel": "Die Region setzt stark auf Windkraft und Solaranlagen.",
+   "mevcutBeispielTr": "Bölge büyük ölçüde rüzgar ve güneş enerjisine yöneliyor."
+  },
+  {
+   "id": 3421,
+   "de": "die Artenvielfalt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "tür çeşitliliği, biyoçeşitlilik",
+   "mevcutBeispiel": "Der Regenwald bietet eine enorme Artenvielfalt.",
+   "mevcutBeispielTr": "Yağmur ormanı muazzam bir tür çeşitliliği barındırır."
+  },
+  {
+   "id": 3426,
+   "de": "der Permafrost",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "permafrost, sürekli donmuş toprak",
+   "mevcutBeispiel": "Der auftauende Permafrost setzt gefährliches Methan frei.",
+   "mevcutBeispielTr": "Çözülen permafrost, tehlikeli metan gazı açığa çıkarıyor."
+  },
+  {
+   "id": 3429,
+   "de": "bewässern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "bewässert, hat bewässert",
+   "mevcutTr": "sulamak",
+   "mevcutBeispiel": "Die Bauern bewässern die Felder mit modernen Anlagen.",
+   "mevcutBeispielTr": "Çiftçiler tarlaları modern sistemlerle suluyor."
+  },
+  {
+   "id": 3438,
+   "de": "der Nahverkehr",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "toplu taşıma, şehir içi ulaşım",
+   "mevcutBeispiel": "Der öffentliche Nahverkehr wird in der Stadt ausgebaut.",
+   "mevcutBeispielTr": "Şehirde toplu taşıma ağı genişletiliyor."
+  },
+  {
+   "id": 3439,
+   "de": "der Verkehrskollaps",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "trafik çöküşü, trafik kilitlenmesi",
+   "mevcutBeispiel": "Der Unfall führte zu einem totalen Verkehrskollaps.",
+   "mevcutBeispielTr": "Kaza, trafiğin tamamen kilitlenmesine yol açtı."
+  },
+  {
+   "id": 3441,
+   "de": "die Elektromobilität",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "elektrikli ulaşım",
+   "mevcutBeispiel": "Die Elektromobilität wächst in den Städten rasant.",
+   "mevcutBeispielTr": "Elektrikli ulaşım şehirlerde hızla yaygınlaşıyor."
+  },
+  {
+   "id": 3442,
+   "de": "die Ladestation",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Ladestationen",
+   "mevcutTr": "şarj istasyonu",
+   "mevcutBeispiel": "An dieser Ladestation kann man E-Autos aufladen.",
+   "mevcutBeispielTr": "Bu istasyonda elektrikli arabalar şarj edilebiliyor.",
+   "cakisan": [
+    "die Ladesäule (B2)"
+   ]
+  },
+  {
+   "id": 3444,
+   "de": "die Verkehrsdichte",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "trafik yoğunluğu",
+   "mevcutBeispiel": "Die Verkehrsdichte nimmt zur Rushhour deutlich zu.",
+   "mevcutBeispielTr": "Trafik yoğunluğu zirve saatlerde belirgin biçimde artıyor.",
+   "cakisan": [
+    "das Verkehrsaufkommen (B2)"
+   ]
+  },
+  {
+   "id": 3447,
+   "de": "die Stadtplanung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "şehir planlaması",
+   "mevcutBeispiel": "Die moderne Stadtplanung berücksichtigt den Klimaschutz.",
+   "mevcutBeispielTr": "Modern şehir planlaması iklim korumasını da gözetiyor."
+  },
+  {
+   "id": 3449,
+   "de": "der Mietanstieg",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Mietanstiege",
+   "mevcutTr": "kira artışı",
+   "mevcutBeispiel": "Der starke Mietanstieg trifft vor allem junge Familien.",
+   "mevcutBeispielTr": "Sert kira artışı en çok genç aileleri vuruyor.",
+   "cakisan": [
+    "die Mieterhöhung (B2)"
+   ]
+  },
+  {
+   "id": 3450,
+   "de": "die Gentrifizierung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "soylulaştırma",
+   "mevcutBeispiel": "Die Gentrifizierung verändert das Viertel spürbar.",
+   "mevcutBeispielTr": "Soylulaştırma semti gözle görülür biçimde değiştiriyor."
+  },
+  {
+   "id": 3451,
+   "de": "das Wohnviertel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Wohnviertel",
+   "mevcutTr": "yerleşim bölgesi, mahalle",
+   "mevcutBeispiel": "Das Wohnviertel wurde in den letzten Jahren saniert.",
+   "mevcutBeispielTr": "Mahalle son yıllarda baştan sona yenilendi."
+  },
+  {
+   "id": 3454,
+   "de": "der Ballungsraum",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Ballungsräume",
+   "mevcutTr": "yoğun nüfuslu bölge, metropol alanı",
+   "mevcutBeispiel": "Im Ballungsraum leben Millionen Menschen auf engem Raum.",
+   "mevcutBeispielTr": "Metropol alanında milyonlarca insan dar bir alanda yaşıyor."
+  },
+  {
+   "id": 3455,
+   "de": "die Bevölkerungsdichte",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "nüfus yoğunluğu",
+   "mevcutBeispiel": "Die Bevölkerungsdichte ist im Zentrum besonders hoch.",
+   "mevcutBeispielTr": "Nüfus yoğunluğu merkezde özellikle yüksek."
+  },
+  {
+   "id": 3456,
+   "de": "verdichten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "verdichtet, hat verdichtet",
+   "mevcutTr": "yoğunlaştırmak",
+   "mevcutBeispiel": "Die Stadt will die Bebauung im Zentrum verdichten.",
+   "mevcutBeispielTr": "Şehir, merkezdeki yapılaşmayı yoğunlaştırmak istiyor."
+  },
+  {
+   "id": 3457,
+   "de": "die Wohnungsnot",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "konut sıkıntısı",
+   "mevcutBeispiel": "Die Wohnungsnot verschärft sich in vielen Metropolen.",
+   "mevcutBeispielTr": "Konut sıkıntısı birçok metropolde derinleşiyor."
+  },
+  {
+   "id": 3458,
+   "de": "sanieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "saniert, hat saniert",
+   "mevcutTr": "yenilemek, restore etmek",
+   "mevcutBeispiel": "Die Stadt lässt die alten Gebäude energetisch sanieren.",
+   "mevcutBeispielTr": "Şehir, eski binaları enerji verimliliği açısından yeniletiyor.",
+   "cakisan": [
+    "renovieren (A2)"
+   ]
+  },
+  {
+   "id": 3459,
+   "de": "die Grünfläche",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Grünflächen",
+   "mevcutTr": "yeşil alan",
+   "mevcutBeispiel": "Neue Grünflächen sollen das Stadtklima verbessern.",
+   "mevcutBeispielTr": "Yeni yeşil alanların şehir iklimini iyileştirmesi hedefleniyor."
+  },
+  {
+   "id": 3733,
+   "de": "die Erledigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Erledigungen",
+   "mevcutTr": "yapılacak iş, halledilecek iş",
+   "mevcutBeispiel": "Ich muss heute noch ein paar Erledigungen machen.",
+   "mevcutBeispielTr": "Bugün halletmem gereken birkaç iş daha var."
+  },
+  {
+   "id": 3734,
+   "de": "sich gewöhnen an",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "gewöhnt sich, hat sich gewöhnt",
+   "mevcutTr": "alışmak",
+   "mevcutBeispiel": "Ich habe mich schnell an den neuen Alltag gewöhnt.",
+   "mevcutBeispielTr": "Yeni günlük düzene çabuk alıştım.",
+   "cakisan": [
+    "gewöhnen (B1)",
+    "sich einleben (C1)"
+   ]
+  },
+  {
+   "id": 3737,
+   "de": "der Zeitmangel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "zaman darlığı",
+   "mevcutBeispiel": "Wegen Zeitmangel schaffe ich das heute nicht.",
+   "mevcutBeispielTr": "Zaman darlığından bunu bugün yetiştiremem."
+  },
+  {
+   "id": 3738,
+   "de": "sich beschäftigen mit",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "beschäftigt sich, hat sich beschäftigt",
+   "mevcutTr": "ilgilenmek, uğraşmak",
+   "mevcutBeispiel": "Sie beschäftigt sich in ihrer Freizeit mit Fotografie.",
+   "mevcutBeispielTr": "Boş zamanlarında fotoğrafçılıkla uğraşıyor.",
+   "cakisan": [
+    "sich kümmern (A1)",
+    "sich interessieren (A2)"
+   ]
+  },
+  {
+   "id": 3744,
+   "de": "die Wohngemeinschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Wohngemeinschaften",
+   "mevcutTr": "paylaşımlı ev, öğrenci evi",
+   "mevcutBeispiel": "Sie lebt seit zwei Jahren in einer Wohngemeinschaft.",
+   "mevcutBeispielTr": "İki yıldır paylaşımlı bir evde oturuyor."
+  },
+  {
+   "id": 3747,
+   "de": "der Kassenbon",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Kassenbons",
+   "mevcutTr": "kasa fişi",
+   "mevcutBeispiel": "Bewahren Sie den Kassenbon für einen Umtausch auf.",
+   "mevcutBeispielTr": "Değişim için kasa fişini saklayın.",
+   "cakisan": [
+    "der Kassenzettel (A2)"
+   ]
+  },
+  {
+   "id": 3753,
+   "de": "deftig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "doyurucu, ağır (yemek)",
+   "mevcutBeispiel": "Nach der Wanderung wollten wir etwas Deftiges essen.",
+   "mevcutBeispielTr": "Yürüyüşten sonra doyurucu bir şeyler yemek istedik."
+  },
+  {
+   "id": 3754,
+   "de": "herzhaft",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tuzlu, baharatlı (tatlının zıddı)",
+   "mevcutBeispiel": "Ich esse lieber herzhafte als süße Speisen.",
+   "mevcutBeispielTr": "Tatlıdan çok tuzlu yiyecekleri tercih ederim.",
+   "cakisan": [
+    "salzig (B1)"
+   ]
+  },
+  {
+   "id": 3759,
+   "de": "die Buchung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Buchungen",
+   "mevcutTr": "rezervasyon (işlemi)",
+   "mevcutBeispiel": "Die Buchung des Hotels war ganz unkompliziert.",
+   "mevcutBeispielTr": "Otel rezervasyonu hiç zahmetsizdi.",
+   "cakisan": [
+    "die Reservierung (B1)"
+   ]
+  }
+ ]
+}

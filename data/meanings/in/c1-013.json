@@ -1,0 +1,547 @@
+{
+ "paket": "c1-013",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 5853,
+   "de": "die Kollegialität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "meslektaş dayanışması, iş arkadaşlığı",
+   "mevcutBeispiel": "Unter dem Wettbewerb der Abteilungen leidet zuerst die Kollegialität.",
+   "mevcutBeispielTr": "Birimler arası rekabetten ilk zarar gören meslektaş dayanışması olur."
+  },
+  {
+   "id": 5854,
+   "de": "der Konkurrenzdruck",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "rekabet baskısı",
+   "mevcutBeispiel": "Interner Konkurrenzdruck verwandelt Kollegen unmerklich in Gegner.",
+   "mevcutBeispielTr": "İç rekabet baskısı meslektaşları fark ettirmeden rakibe dönüştürür."
+  },
+  {
+   "id": 5855,
+   "de": "die Segmentierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Segmentierungen",
+   "mevcutTr": "bölümlenme, katmanlaşma",
+   "mevcutBeispiel": "Die Segmentierung des Arbeitsmarktes hält Randgruppen dauerhaft draußen.",
+   "mevcutBeispielTr": "İşgücü piyasasının katmanlaşması kenardaki grupları kalıcı olarak dışarıda tutar."
+  },
+  {
+   "id": 5856,
+   "de": "die Marginalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kenara itilme, ötekileştirme",
+   "mevcutBeispiel": "Befristungen fördern die Marginalisierung junger Wissenschaftlerinnen.",
+   "mevcutBeispielTr": "Süreli sözleşmeler genç kadın bilim insanlarının kenara itilmesini besliyor."
+  },
+  {
+   "id": 5857,
+   "de": "die Disziplinierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Disziplinierungen",
+   "mevcutTr": "disipline etme, hizaya sokma",
+   "mevcutBeispiel": "Ständige Erreichbarkeit wirkt als subtile Form der Disziplinierung.",
+   "mevcutBeispielTr": "Sürekli ulaşılabilirlik ince bir hizaya sokma biçimi olarak işliyor."
+  },
+  {
+   "id": 5858,
+   "de": "die Legitimation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Legitimationen",
+   "mevcutTr": "meşruiyet, meşrulaştırma",
+   "mevcutBeispiel": "Der Führung fehlte jede Legitimation für diesen einsamen Beschluss.",
+   "mevcutBeispielTr": "Yönetimin bu tek başına aldığı karar için hiçbir meşru dayanağı yoktu.",
+   "cakisan": [
+    "die Legitimität (C1)"
+   ]
+  },
+  {
+   "id": 5859,
+   "de": "die Partizipation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "katılım, söz sahibi olma",
+   "mevcutBeispiel": "Partizipation ohne Entscheidungsmacht bleibt eine freundliche Geste.",
+   "mevcutBeispielTr": "Karar gücü olmayan katılım, nazik bir jest olarak kalır.",
+   "cakisan": [
+    "die Teilnahme (B1)",
+    "die Teilhabe (B2)"
+   ]
+  },
+  {
+   "id": 5860,
+   "de": "die Aushandlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aushandlungen",
+   "mevcutTr": "müzakere, uzlaşarak belirleme",
+   "mevcutBeispiel": "Regeln entstehen hier durch tägliche Aushandlung, nicht durch Erlass.",
+   "mevcutBeispielTr": "Kurallar burada emirle değil, günlük müzakereyle oluşuyor.",
+   "cakisan": [
+    "die Verhandlung (B2)"
+   ]
+  },
+  {
+   "id": 5861,
+   "de": "die Konsensfindung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uzlaşıya varma",
+   "mevcutBeispiel": "Die Konsensfindung dauerte länger, trug die Entscheidung aber besser.",
+   "mevcutBeispielTr": "Uzlaşıya varmak uzun sürdü ama kararı daha sağlam taşıdı."
+  },
+  {
+   "id": 5862,
+   "de": "die Statusunsicherheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "statü belirsizliği",
+   "mevcutBeispiel": "Statusunsicherheit macht Menschen anfällig für autoritäre Versprechen.",
+   "mevcutBeispielTr": "Statü belirsizliği insanları otoriter vaatlere açık hâle getirir."
+  },
+  {
+   "id": 5863,
+   "de": "untergraben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat untergraben",
+   "mevcutTr": "temelini sarsmak, baltalamak",
+   "mevcutBeispiel": "Willkürliche Ausnahmen untergraben das Vertrauen in jede Regel.",
+   "mevcutBeispielTr": "Keyfî istisnalar her kurala duyulan güveni baltalar."
+  },
+  {
+   "id": 5864,
+   "de": "sich unterordnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich untergeordnet",
+   "mevcutTr": "boyun eğmek, tabi olmak",
+   "mevcutBeispiel": "Er weigerte sich, dem Kalkül der Zentrale unterzuordnen.",
+   "mevcutBeispielTr": "Merkezin hesabına boyun eğmeyi reddetti.",
+   "cakisan": [
+    "nachgeben (B2)",
+    "sich fügen (C1)"
+   ]
+  },
+  {
+   "id": 5865,
+   "de": "einbinden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat eingebunden",
+   "mevcutTr": "dahil etmek, sürece katmak",
+   "mevcutBeispiel": "Wer Veränderungen will, muss die Betroffenen früh einbinden.",
+   "mevcutBeispielTr": "Değişim isteyen, etkilenenleri erkenden sürece katmalı.",
+   "cakisan": [
+    "einbeziehen (B2)"
+   ]
+  },
+  {
+   "id": 5866,
+   "de": "befähigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat befähigt",
+   "mevcutTr": "muktedir kılmak, yetkin hâle getirmek",
+   "mevcutBeispiel": "Gute Führung soll Mitarbeitende befähigen, nicht bevormunden.",
+   "mevcutBeispielTr": "İyi yöneticilik çalışanı vesayet altına almak değil, yetkin kılmaktır."
+  },
+  {
+   "id": 5867,
+   "de": "ermächtigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ermächtigt",
+   "mevcutTr": "yetkilendirmek, güç vermek",
+   "mevcutBeispiel": "Der Vorstand ermächtigte die Abteilung zu eigenständigen Entscheidungen.",
+   "mevcutBeispielTr": "Yönetim kurulu birimi kendi başına karar almaya yetkilendirdi.",
+   "cakisan": [
+    "bevollmächtigen (C1)"
+   ]
+  },
+  {
+   "id": 5868,
+   "de": "honorieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat honoriert",
+   "mevcutTr": "karşılığını vermek, ödüllendirmek",
+   "mevcutBeispiel": "Der Einsatz am Wochenende wurde von niemandem honoriert.",
+   "mevcutBeispielTr": "Hafta sonundaki çabanın karşılığını kimse vermedi.",
+   "cakisan": [
+    "sich auszahlen (C1)",
+    "sich revanchieren (C1)"
+   ]
+  },
+  {
+   "id": 5869,
+   "de": "abwälzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgewälzt",
+   "mevcutTr": "üstünden atmak, başkasına yıkmak",
+   "mevcutBeispiel": "Das Risiko wird konsequent auf die Soloselbstständigen abgewälzt.",
+   "mevcutBeispielTr": "Risk sistematik biçimde tek kişilik serbest çalışanların sırtına yıkılıyor."
+  },
+  {
+   "id": 5870,
+   "de": "vorenthalten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vorenthalten",
+   "mevcutTr": "esirgemek, vermemek",
+   "mevcutBeispiel": "Der Belegschaft wurden wesentliche Zahlen bis zuletzt vorenthalten.",
+   "mevcutBeispielTr": "Çalışanlardan önemli rakamlar son ana kadar gizlendi.",
+   "cakisan": [
+    "versagen (B2)"
+   ]
+  },
+  {
+   "id": 5871,
+   "de": "sich abgrenzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich abgegrenzt",
+   "mevcutTr": "sınır koymak, kendini ayırmak",
+   "mevcutBeispiel": "Wer sich nicht abgrenzt, arbeitet irgendwann rund um die Uhr.",
+   "mevcutBeispielTr": "Sınır koymayan bir noktada gece gündüz çalışır hâle gelir."
+  },
+  {
+   "id": 5872,
+   "de": "verschleiern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verschleiert",
+   "mevcutTr": "gerçeği gizlemek, örtbas etmek",
+   "mevcutBeispiel": "Schöne Kennziffern verschleiern häufig die Lage in den Werkstätten.",
+   "mevcutBeispielTr": "Güzel göstergeler çoğu zaman atölyelerdeki durumu örtbas eder."
+  },
+  {
+   "id": 5873,
+   "de": "beanspruchen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat beansprucht",
+   "mevcutTr": "hak iddia etmek, talep etmek",
+   "mevcutBeispiel": "Beide Abteilungen beanspruchten den Erfolg des Projekts für sich.",
+   "mevcutBeispielTr": "İki birim de projenin başarısını kendine mal etti."
+  },
+  {
+   "id": 5874,
+   "de": "entfalten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entfaltet",
+   "mevcutTr": "geliştirmek, açığa çıkarmak",
+   "mevcutBeispiel": "Erst im kleinen Team konnte sie ihre Fähigkeiten entfalten.",
+   "mevcutBeispielTr": "Yeteneklerini ancak küçük bir ekipte açığa çıkarabildi.",
+   "cakisan": [
+    "entwickeln (B1)",
+    "verbessern (A2)"
+   ]
+  },
+  {
+   "id": 5875,
+   "de": "verstetigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verstetigt",
+   "mevcutTr": "kalıcılaştırmak, sürekli hâle getirmek",
+   "mevcutBeispiel": "Aus der Notlösung wurde eine verstetigte Form der Zusammenarbeit.",
+   "mevcutBeispielTr": "Geçici çözüm, kalıcılaşmış bir iş birliği biçimine dönüştü."
+  },
+  {
+   "id": 5876,
+   "de": "ausgliedern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgegliedert",
+   "mevcutTr": "dışarıya devretmek, bünyeden ayırmak",
+   "mevcutBeispiel": "Die Reinigung wurde ausgegliedert, die Löhne fielen sofort.",
+   "mevcutBeispielTr": "Temizlik hizmeti dışarıya devredildi, ücretler hemen düştü."
+  },
+  {
+   "id": 5877,
+   "de": "betriebsintern",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şirket içi, kurum içi",
+   "mevcutBeispiel": "Die Studie wurde betriebsintern erstellt und nie veröffentlicht.",
+   "mevcutBeispielTr": "Araştırma şirket içinde hazırlandı ve hiç yayımlanmadı."
+  },
+  {
+   "id": 5878,
+   "de": "zermürbend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yıpratıcı, insanı bitiren",
+   "mevcutBeispiel": "Nicht die Aufgaben, sondern die zermürbenden Abstimmungsrunden kosten Kraft.",
+   "mevcutBeispielTr": "Gücü tüketen işler değil, yıpratıcı mutabakat turlarıdır."
+  },
+  {
+   "id": 5879,
+   "de": "unbezahlt",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ücretsiz, karşılığı ödenmeyen",
+   "mevcutBeispiel": "Ein großer Teil der geleisteten Arbeit bleibt schlicht unbezahlt.",
+   "mevcutBeispielTr": "Yapılan işin büyük bir kısmı öylece ücretsiz kalıyor.",
+   "cakisan": [
+    "kostenlos (A2)",
+    "unentgeltlich (B2)",
+    "gebührenfrei (B2)"
+   ]
+  },
+  {
+   "id": 5880,
+   "de": "informell",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gayriresmî, resmî olmayan",
+   "mevcutBeispiel": "Wichtige Entscheidungen fallen oft informell in der Kaffeeküche.",
+   "mevcutBeispielTr": "Önemli kararlar çoğu zaman gayriresmî olarak çay ocağında alınır."
+  },
+  {
+   "id": 5881,
+   "de": "strukturell",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yapısal",
+   "mevcutBeispiel": "Das Problem ist strukturell und nicht durch Motivation zu lösen.",
+   "mevcutBeispielTr": "Sorun yapısaldır ve motivasyonla çözülemez."
+  },
+  {
+   "id": 5882,
+   "de": "kollektiv",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kolektif, ortaklaşa",
+   "mevcutBeispiel": "Nur kollektiv organisiert konnten sie überhaupt etwas durchsetzen.",
+   "mevcutBeispielTr": "Ancak kolektif örgütlendiklerinde bir şey kabul ettirebildiler."
+  },
+  {
+   "id": 5883,
+   "de": "durchlässig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geçirgen, geçiş imkânı olan",
+   "mevcutBeispiel": "Der Aufstieg ist theoretisch durchlässig, praktisch bleibt er verschlossen.",
+   "mevcutBeispielTr": "Yükselme teoride geçirgen, pratikte kapalı kalıyor."
+  },
+  {
+   "id": 5884,
+   "de": "starr",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "katı, esnemeyen",
+   "mevcutBeispiel": "Starre Zuständigkeiten verhindern, dass jemand über den Rand blickt.",
+   "mevcutBeispielTr": "Katı görev tanımları kimsenin kendi sınırının ötesine bakmasını engeller."
+  },
+  {
+   "id": 5885,
+   "de": "fremdbestimmt",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "başkası tarafından belirlenen, iradesi dışında",
+   "mevcutBeispiel": "Wer fremdbestimmt arbeitet, erlebt seinen Tag als fremdes Programm.",
+   "mevcutBeispielTr": "İradesi dışında çalışan biri, gününü yabancı bir program gibi yaşar."
+  },
+  {
+   "id": 5886,
+   "de": "zweckrational",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "amaca yönelik akılcı, araçsal akılcı",
+   "mevcutBeispiel": "Rein zweckrational betrachtet lohnt sich Rücksicht auf Menschen nie.",
+   "mevcutBeispielTr": "Salt araçsal akılcı bakıldığında insanları gözetmek hiç kârlı değildir."
+  },
+  {
+   "id": 5887,
+   "de": "die Zersiedelung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zersiedelungen",
+   "mevcutTr": "düzensiz yayılma, kırsalın yapılaşması",
+   "mevcutBeispiel": "Die ungebremste Zersiedelung der Landschaft gilt als planerisches Versagen.",
+   "mevcutBeispielTr": "Peyzajın önü alınamayan düzensiz yapılaşması, planlamanın başarısızlığı sayılıyor."
+  },
+  {
+   "id": 5888,
+   "de": "das Bauvorhaben",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bauvorhaben",
+   "mevcutTr": "yapı projesi, inşaat girişimi",
+   "mevcutBeispiel": "Das umstrittene Bauvorhaben am Hafen wurde vorerst zurückgestellt.",
+   "mevcutBeispielTr": "Limandaki tartışmalı yapı projesi şimdilik ertelendi."
+  },
+  {
+   "id": 5889,
+   "de": "der Denkmalschutz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tarihî eser koruma, koruma statüsü",
+   "mevcutBeispiel": "Die alte Markthalle steht seit 1994 unter Denkmalschutz.",
+   "mevcutBeispielTr": "Eski hal binası 1994'ten beri koruma altında."
+  },
+  {
+   "id": 5890,
+   "de": "die Baukultur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yapı kültürü, mimarlık kültürü",
+   "mevcutBeispiel": "Eine hohe Baukultur zeigt sich weniger im Prunk als im Alltäglichen.",
+   "mevcutBeispielTr": "Yüksek bir yapı kültürü, gösterişten çok gündelik olanda kendini gösterir."
+  },
+  {
+   "id": 5891,
+   "de": "die Bausubstanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bausubstanzen",
+   "mevcutTr": "yapı dokusu, mevcut yapı stoku",
+   "mevcutBeispiel": "Die Bausubstanz der Siedlung ist trotz ihres Alters erstaunlich solide.",
+   "mevcutBeispielTr": "Sitenin yapı dokusu, yaşına rağmen şaşırtıcı ölçüde sağlam."
+  },
+  {
+   "id": 5892,
+   "de": "der Bauträger",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bauträger",
+   "mevcutTr": "yapı yatırımcısı, müteahhit firma",
+   "mevcutBeispiel": "Der Bauträger hatte bezahlbare Wohnungen versprochen und teure Eigentumswohnungen gebaut.",
+   "mevcutBeispielTr": "Müteahhit firma uygun fiyatlı konut sözü verip pahalı mülk daireler yaptı."
+  },
+  {
+   "id": 5893,
+   "de": "die Brachfläche",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Brachflächen",
+   "mevcutTr": "atıl arazi, boş kalmış alan",
+   "mevcutBeispiel": "Auf der Brachfläche hinter dem Bahnhof entsteht ein neues Wohnviertel.",
+   "mevcutBeispielTr": "Gar arkasındaki atıl arazide yeni bir konut mahallesi kuruluyor."
+  },
+  {
+   "id": 5894,
+   "de": "die Flächenversiegelung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "zeminin geçirimsizleştirilmesi, yüzeyin betonlaşması",
+   "mevcutBeispiel": "Die zunehmende Flächenversiegelung verschärft die Hochwassergefahr in den Städten.",
+   "mevcutBeispielTr": "Artan zemin betonlaşması şehirlerde sel tehlikesini ağırlaştırıyor."
+  },
+  {
+   "id": 5895,
+   "de": "das Ensemble",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ensembles",
+   "mevcutTr": "yapı bütünü, birlikte korunan yapı grubu",
+   "mevcutBeispiel": "Das barocke Ensemble am Marktplatz darf nicht verändert werden.",
+   "mevcutBeispielTr": "Meydandaki barok yapı bütününde değişiklik yapılamaz."
+  },
+  {
+   "id": 5896,
+   "de": "die Zwischennutzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zwischennutzungen",
+   "mevcutTr": "geçici kullanım, ara kullanım",
+   "mevcutBeispiel": "Die Zwischennutzung der Halle als Atelier läuft bis zum Abriss.",
+   "mevcutBeispielTr": "Salonun atölye olarak geçici kullanımı yıkıma kadar sürüyor."
+  },
+  {
+   "id": 5897,
+   "de": "die Aufwertung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aufwertungen",
+   "mevcutTr": "değer kazandırma, iyileştirme",
+   "mevcutBeispiel": "Die Aufwertung des Viertels hat die Mieten binnen fünf Jahren verdoppelt.",
+   "mevcutBeispielTr": "Mahallenin değer kazanması kiraları beş yıl içinde ikiye katladı."
+  },
+  {
+   "id": 5898,
+   "de": "die Segregation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Segregationen",
+   "mevcutTr": "ayrışma, mekânsal ayrışma",
+   "mevcutBeispiel": "Soziale Segregation lässt sich an den Schulbezirken deutlich ablesen.",
+   "mevcutBeispielTr": "Toplumsal ayrışma okul bölgelerinden açıkça okunabiliyor.",
+   "cakisan": [
+    "die Zersetzung (C1)",
+    "die Verwitterung (C1)",
+    "die Ablösung (C1)"
+   ]
+  },
+  {
+   "id": 5899,
+   "de": "die Peripherie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Peripherien",
+   "mevcutTr": "çeper, kent çevresi",
+   "mevcutBeispiel": "An der Peripherie wächst die Stadt schneller als im Zentrum.",
+   "mevcutBeispielTr": "Kent, çeperinde merkezdekinden daha hızlı büyüyor."
+  },
+  {
+   "id": 5900,
+   "de": "die Trabantenstadt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Trabantenstädte",
+   "mevcutTr": "uydu kent",
+   "mevcutBeispiel": "Die Trabantenstadt der Sechzigerjahre kämpft bis heute mit ihrem Ruf.",
+   "mevcutBeispielTr": "Altmışlı yılların uydu kenti bugün hâlâ ününü düzeltmeye uğraşıyor."
+  },
+  {
+   "id": 5901,
+   "de": "die Erschließung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erschließungen",
+   "mevcutTr": "altyapıya bağlama, imara açma",
+   "mevcutBeispiel": "Die Erschließung des Baugebiets kostet die Gemeinde mehrere Millionen.",
+   "mevcutBeispielTr": "İmar alanının altyapıya bağlanması belediyeye birkaç milyona mal oluyor."
+  },
+  {
+   "id": 5902,
+   "de": "das Stadtbild",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stadtbilder",
+   "mevcutTr": "kent görünümü, kentin genel dokusu",
+   "mevcutBeispiel": "Der Turm fügt sich nur schwer in das gewachsene Stadtbild ein.",
+   "mevcutBeispielTr": "Kule, zamanla oluşmuş kent görünümüne güçlükle uyum sağlıyor."
+  }
+ ]
+}

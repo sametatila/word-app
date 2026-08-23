@@ -1,0 +1,521 @@
+{
+ "paket": "c1-022",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6303,
+   "de": "überdauern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überdauert",
+   "mevcutTr": "ayakta kalmak, günümüze ulaşmak",
+   "mevcutBeispiel": "Nur wenige Handschriften haben die Jahrhunderte überdauert.",
+   "mevcutBeispielTr": "Yüzyıllara ancak birkaç el yazması dayanabildi."
+  },
+  {
+   "id": 6304,
+   "de": "verblassen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist verblasst",
+   "mevcutTr": "solmak, silikleşmek",
+   "mevcutBeispiel": "Mit dem Tod der Beteiligten verblasst auch die Erinnerung.",
+   "mevcutBeispielTr": "Olaya karışanların ölümüyle birlikte hatıra da siliniyor.",
+   "cakisan": [
+    "welken (B2)"
+   ]
+  },
+  {
+   "id": 6305,
+   "de": "anknüpfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angeknüpft",
+   "mevcutTr": "bağlanmak, kaldığı yerden sürdürmek",
+   "mevcutBeispiel": "Die neue Regierung knüpfte bewusst an ältere Traditionen an.",
+   "mevcutBeispielTr": "Yeni hükûmet bilinçli olarak daha eski geleneklere bağlandı."
+  },
+  {
+   "id": 6306,
+   "de": "umdeuten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgedeutet",
+   "mevcutTr": "başka anlama çekmek, yeniden yorumlamak",
+   "mevcutBeispiel": "Eine Niederlage wurde nachträglich zum heroischen Opfer umgedeutet.",
+   "mevcutBeispielTr": "Bir yenilgi sonradan kahramanca bir fedakârlığa dönüştürülerek yorumlandı."
+  },
+  {
+   "id": 6307,
+   "de": "verbürgt",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "belgelenmiş, kanıtlı",
+   "mevcutBeispiel": "Als historisch verbürgt gilt allein das Datum der Ankunft.",
+   "mevcutBeispielTr": "Tarihsel olarak kanıtlanmış sayılan tek şey varış tarihidir."
+  },
+  {
+   "id": 6308,
+   "de": "folgenreich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sonuçları ağır, etkisi büyük",
+   "mevcutBeispiel": "Diese scheinbar kleine Entscheidung erwies sich als äußerst folgenreich.",
+   "mevcutBeispielTr": "Görünüşte küçük olan bu karar son derece ağır sonuçlar doğurdu."
+  },
+  {
+   "id": 6309,
+   "de": "rückblickend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geriye dönüp bakıldığında",
+   "mevcutBeispiel": "Rückblickend erscheint der Konflikt fast unausweichlich gewesen zu sein.",
+   "mevcutBeispielTr": "Geriye dönüp bakıldığında çatışma neredeyse kaçınılmaz görünüyor."
+  },
+  {
+   "id": 6310,
+   "de": "zwiespältig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çelişkili, ikircikli",
+   "mevcutBeispiel": "Sein Nachruhm bleibt bis heute außerordentlich zwiespältig.",
+   "mevcutBeispielTr": "Ardında bıraktığı ün bugün hâlâ son derece ikircikli.",
+   "cakisan": [
+    "widersprüchlich (C1)"
+   ]
+  },
+  {
+   "id": 6311,
+   "de": "schonungslos",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "acımasızca, hiç yumuşatmadan",
+   "mevcutBeispiel": "Der Bericht benennt die Versäumnisse der Behörden schonungslos.",
+   "mevcutBeispielTr": "Rapor kurumların ihmallerini hiç yumuşatmadan adlandırıyor."
+  },
+  {
+   "id": 6312,
+   "de": "der Welthandel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dünya ticareti, küresel ticaret",
+   "mevcutBeispiel": "Der Welthandel hat sich seit den neunziger Jahren grundlegend verändert.",
+   "mevcutBeispielTr": "Dünya ticareti doksanlı yıllardan bu yana köklü biçimde değişti."
+  },
+  {
+   "id": 6313,
+   "de": "die Armutsbekämpfung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yoksullukla mücadele",
+   "mevcutBeispiel": "Bildung gilt als wirksamstes Instrument der langfristigen Armutsbekämpfung.",
+   "mevcutBeispielTr": "Eğitim, uzun vadeli yoksullukla mücadelenin en etkili aracı sayılıyor."
+  },
+  {
+   "id": 6314,
+   "de": "das Schwellenland",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schwellenländer",
+   "mevcutTr": "yükselen ekonomi, eşik ülke",
+   "mevcutBeispiel": "Mehrere Schwellenländer treten inzwischen selbstbewusst als Investoren auf.",
+   "mevcutBeispielTr": "Birçok yükselen ekonomi artık özgüvenli birer yatırımcı olarak sahneye çıkıyor."
+  },
+  {
+   "id": 6315,
+   "de": "das Entwicklungsland",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entwicklungsländer",
+   "mevcutTr": "gelişmekte olan ülke",
+   "mevcutBeispiel": "Viele Entwicklungsländer tragen die Folgen einer Krise, die sie nicht verursacht haben.",
+   "mevcutBeispielTr": "Birçok gelişmekte olan ülke, kendi yol açmadığı bir krizin sonuçlarını taşıyor."
+  },
+  {
+   "id": 6316,
+   "de": "der Protektionismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "korumacılık, himayecilik",
+   "mevcutBeispiel": "Wachsender Protektionismus gefährdet die Exporte kleinerer Volkswirtschaften.",
+   "mevcutBeispielTr": "Artan korumacılık küçük ekonomilerin ihracatını tehlikeye atıyor."
+  },
+  {
+   "id": 6317,
+   "de": "die Zollschranke",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zollschranken",
+   "mevcutTr": "gümrük engeli, tarife duvarı",
+   "mevcutBeispiel": "Hohe Zollschranken halten verarbeitete Produkte aus dem Süden vom Markt fern.",
+   "mevcutBeispielTr": "Yüksek gümrük engelleri güneyden gelen işlenmiş ürünleri pazardan uzak tutuyor."
+  },
+  {
+   "id": 6318,
+   "de": "die Kinderarbeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çocuk işçiliği",
+   "mevcutBeispiel": "Kinderarbeit lässt sich nur bekämpfen, wenn Familien ein Auskommen haben.",
+   "mevcutBeispielTr": "Çocuk işçiliğiyle ancak ailelerin geçimi sağlandığında mücadele edilebilir."
+  },
+  {
+   "id": 6319,
+   "de": "die Sorgfaltspflicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sorgfaltspflichten",
+   "mevcutTr": "özen yükümlülüğü, durum tespiti yükümlülüğü",
+   "mevcutBeispiel": "Das Gesetz verpflichtet Konzerne zu einer Sorgfaltspflicht entlang ihrer Zulieferkette.",
+   "mevcutBeispielTr": "Yasa, şirketleri tedarik zinciri boyunca özen yükümlülüğüne tabi tutuyor."
+  },
+  {
+   "id": 6320,
+   "de": "der Ressourcenverbrauch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kaynak tüketimi",
+   "mevcutBeispiel": "Der Ressourcenverbrauch der reichen Länder übersteigt jedes vertretbare Maß.",
+   "mevcutBeispielTr": "Zengin ülkelerin kaynak tüketimi savunulabilir her ölçüyü aşıyor."
+  },
+  {
+   "id": 6321,
+   "de": "der Schuldenerlass",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schuldenerlasse",
+   "mevcutTr": "borç silme, borç affı",
+   "mevcutBeispiel": "Ohne einen umfassenden Schuldenerlass bleibt jede Reform wirkungslos.",
+   "mevcutBeispielTr": "Kapsamlı bir borç affı olmadan her reform etkisiz kalır."
+  },
+  {
+   "id": 6322,
+   "de": "die Direktinvestition",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Direktinvestitionen",
+   "mevcutTr": "doğrudan yatırım",
+   "mevcutBeispiel": "Ausländische Direktinvestitionen fließen vor allem in den Bergbau.",
+   "mevcutBeispielTr": "Yabancı doğrudan yatırımlar öncelikle madenciliğe akıyor."
+  },
+  {
+   "id": 6323,
+   "de": "die Weltordnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Weltordnungen",
+   "mevcutTr": "dünya düzeni",
+   "mevcutBeispiel": "Die alte Weltordnung verliert an Verbindlichkeit, eine neue zeichnet sich kaum ab.",
+   "mevcutBeispielTr": "Eski dünya düzeni bağlayıcılığını yitiriyor, yenisi ise henüz belirmiyor."
+  },
+  {
+   "id": 6324,
+   "de": "die Wettbewerbsfähigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "rekabet gücü",
+   "mevcutBeispiel": "Niedrige Löhne sichern kurzfristig die Wettbewerbsfähigkeit, aber keinen Wohlstand.",
+   "mevcutBeispielTr": "Düşük ücretler kısa vadede rekabet gücünü sağlar, ama refahı değil."
+  },
+  {
+   "id": 6325,
+   "de": "das Handelsdefizit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Handelsdefizite",
+   "mevcutTr": "ticaret açığı",
+   "mevcutBeispiel": "Das chronische Handelsdefizit zwingt das Land zu immer neuen Krediten.",
+   "mevcutBeispielTr": "Kronik ticaret açığı ülkeyi sürekli yeni kredilere zorluyor."
+  },
+  {
+   "id": 6326,
+   "de": "der Binnenmarkt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Binnenmärkte",
+   "mevcutTr": "iç pazar",
+   "mevcutBeispiel": "Ein funktionierender Binnenmarkt macht die Region weniger anfällig für Schocks.",
+   "mevcutBeispielTr": "İşleyen bir iç pazar bölgeyi şoklara karşı daha az kırılgan yapar."
+  },
+  {
+   "id": 6327,
+   "de": "die Migrationsbewegung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Migrationsbewegungen",
+   "mevcutTr": "göç hareketi",
+   "mevcutBeispiel": "Klimawandel und Armut verstärken die Migrationsbewegungen innerhalb des Kontinents.",
+   "mevcutBeispielTr": "İklim değişikliği ve yoksulluk kıta içindeki göç hareketlerini güçlendiriyor."
+  },
+  {
+   "id": 6328,
+   "de": "die Urbanisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kentleşme, şehirleşme",
+   "mevcutBeispiel": "Die rasante Urbanisierung überholt jede staatliche Planung.",
+   "mevcutBeispielTr": "Hızlı kentleşme her türlü devlet planlamasını geride bırakıyor."
+  },
+  {
+   "id": 6329,
+   "de": "die Hungersnot",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hungersnöte",
+   "mevcutTr": "kıtlık, açlık felaketi",
+   "mevcutBeispiel": "Die Hungersnot war keine Naturkatastrophe, sondern politisch verschuldet.",
+   "mevcutBeispielTr": "Kıtlık bir doğal afet değil, siyasi olarak yaratılmış bir felaketti.",
+   "cakisan": [
+    "die Knappheit (C1)"
+   ]
+  },
+  {
+   "id": 6330,
+   "de": "der Technologietransfer",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Technologietransfers",
+   "mevcutTr": "teknoloji aktarımı",
+   "mevcutBeispiel": "Ohne Technologietransfer bleibt die Energiewende im Süden Theorie.",
+   "mevcutBeispielTr": "Teknoloji aktarımı olmadan güneydeki enerji dönüşümü teoride kalır."
+  },
+  {
+   "id": 6331,
+   "de": "die Interdependenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Interdependenzen",
+   "mevcutTr": "karşılıklı bağımlılık",
+   "mevcutBeispiel": "Die Pandemie hat die Interdependenz der Volkswirtschaften schmerzhaft sichtbar gemacht.",
+   "mevcutBeispielTr": "Pandemi ekonomilerin karşılıklı bağımlılığını acı biçimde görünür kıldı."
+  },
+  {
+   "id": 6332,
+   "de": "das Gütesiegel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gütesiegel",
+   "mevcutTr": "kalite etiketi, sertifika işareti",
+   "mevcutBeispiel": "Das Gütesiegel garantiert faire Preise, sagt aber nichts über Arbeitszeiten.",
+   "mevcutBeispielTr": "Kalite etiketi adil fiyat garantisi veriyor, ama çalışma saatleri hakkında bir şey söylemiyor."
+  },
+  {
+   "id": 6333,
+   "de": "die Entwicklungszusammenarbeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kalkınma işbirliği",
+   "mevcutBeispiel": "Moderne Entwicklungszusammenarbeit versteht sich als Partnerschaft auf Augenhöhe.",
+   "mevcutBeispielTr": "Modern kalkınma işbirliği kendini eşitler arası bir ortaklık olarak görüyor."
+  },
+  {
+   "id": 6334,
+   "de": "die Nichtregierungsorganisation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nichtregierungsorganisationen",
+   "mevcutTr": "sivil toplum kuruluşu",
+   "mevcutBeispiel": "Mehrere Nichtregierungsorganisationen haben den Bericht gemeinsam veröffentlicht.",
+   "mevcutBeispielTr": "Birkaç sivil toplum kuruluşu raporu birlikte yayımladı."
+  },
+  {
+   "id": 6335,
+   "de": "die Fluchtursache",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fluchtursachen",
+   "mevcutTr": "göçe zorlayan neden, kaçış nedeni",
+   "mevcutBeispiel": "Wer Fluchtursachen bekämpfen will, muss über Handelspolitik reden.",
+   "mevcutBeispielTr": "Göçe zorlayan nedenlerle mücadele etmek isteyen, ticaret politikasını konuşmalı."
+  },
+  {
+   "id": 6336,
+   "de": "das Wohlstandsgefälle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wohlstandsgefälle",
+   "mevcutTr": "refah uçurumu",
+   "mevcutBeispiel": "Das Wohlstandsgefälle innerhalb der Länder wächst schneller als zwischen ihnen.",
+   "mevcutBeispielTr": "Ülkelerin içindeki refah uçurumu, aralarındakinden daha hızlı büyüyor."
+  },
+  {
+   "id": 6337,
+   "de": "der Landraub",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "toprak gaspı",
+   "mevcutBeispiel": "Investoren betreiben Landraub, während die Behörden wegsehen.",
+   "mevcutBeispielTr": "Yatırımcılar toprak gaspı yaparken yetkililer görmezden geliyor.",
+   "cakisan": [
+    "die Landnahme (C1)"
+   ]
+  },
+  {
+   "id": 6338,
+   "de": "die Steueroase",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Steueroasen",
+   "mevcutTr": "vergi cenneti",
+   "mevcutBeispiel": "Über Steueroasen entziehen sich Konzerne ihrer Verantwortung gegenüber der Allgemeinheit.",
+   "mevcutBeispielTr": "Şirketler vergi cennetleri üzerinden topluma karşı sorumluluklarından kaçıyor."
+  },
+  {
+   "id": 6339,
+   "de": "die Gewinnverlagerung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gewinnverlagerungen",
+   "mevcutTr": "kâr kaydırma",
+   "mevcutBeispiel": "Durch Gewinnverlagerung entgehen den Herkunftsländern Milliarden an Steuern.",
+   "mevcutBeispielTr": "Kâr kaydırma yüzünden köken ülkeler milyarlarca vergiden oluyor."
+  },
+  {
+   "id": 6340,
+   "de": "die Kapitalflucht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sermaye kaçışı",
+   "mevcutBeispiel": "Nach der Wahl setzte eine massive Kapitalflucht ins Ausland ein.",
+   "mevcutBeispielTr": "Seçimden sonra yurt dışına büyük bir sermaye kaçışı başladı."
+  },
+  {
+   "id": 6341,
+   "de": "angleichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angeglichen",
+   "mevcutTr": "denkleştirmek, uyumlaştırmak",
+   "mevcutBeispiel": "Die Union will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
+   "mevcutBeispielTr": "Birlik, üyelerinin sosyal standartlarını adım adım uyumlaştırmak istiyor.",
+   "cakisan": [
+    "aufbringen (B2)"
+   ]
+  },
+  {
+   "id": 6342,
+   "de": "boykottieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat boykottiert",
+   "mevcutTr": "boykot etmek",
+   "mevcutBeispiel": "Mehrere Staaten boykottieren die Konferenz aus politischen Gründen.",
+   "mevcutBeispielTr": "Birkaç devlet konferansı siyasi gerekçelerle boykot ediyor."
+  },
+  {
+   "id": 6343,
+   "de": "sanktionieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sanktioniert",
+   "mevcutTr": "yaptırım uygulamak, cezalandırmak",
+   "mevcutBeispiel": "Verstöße gegen die Auflagen werden bisher kaum sanktioniert.",
+   "mevcutBeispielTr": "Koşullara aykırılıklara şimdiye kadar neredeyse hiç yaptırım uygulanmıyor."
+  },
+  {
+   "id": 6344,
+   "de": "privatisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat privatisiert",
+   "mevcutTr": "özelleştirmek",
+   "mevcutBeispiel": "Die Wasserversorgung wurde privatisiert, und die Preise stiegen sofort.",
+   "mevcutBeispielTr": "Su hizmeti özelleştirildi ve fiyatlar hemen yükseldi."
+  },
+  {
+   "id": 6345,
+   "de": "verstaatlichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verstaatlicht",
+   "mevcutTr": "devletleştirmek, kamulaştırmak",
+   "mevcutBeispiel": "Die Regierung drohte damit, die Ölförderung zu verstaatlichen.",
+   "mevcutBeispielTr": "Hükümet petrol üretimini devletleştirmekle tehdit etti."
+  },
+  {
+   "id": 6346,
+   "de": "zugutekommen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist zugutegekommen",
+   "mevcutTr": "yararına olmak, işine yaramak",
+   "mevcutBeispiel": "Das Wachstum ist bislang nur einer schmalen Oberschicht zugutegekommen.",
+   "mevcutBeispielTr": "Büyüme şimdiye dek yalnızca dar bir üst tabakanın yararına oldu."
+  },
+  {
+   "id": 6347,
+   "de": "grenzüberschreitend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sınır ötesi, sınır aşan",
+   "mevcutBeispiel": "Steuerflucht ist ein grenzüberschreitendes Problem und verlangt gemeinsame Antworten.",
+   "mevcutBeispielTr": "Vergi kaçışı sınır ötesi bir sorundur ve ortak yanıtlar gerektirir."
+  },
+  {
+   "id": 6348,
+   "de": "bilateral",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ikili, iki taraflı",
+   "mevcutBeispiel": "Die beiden Staaten regeln ihre Handelsbeziehungen bilateral.",
+   "mevcutBeispielTr": "İki devlet ticaret ilişkilerini ikili olarak düzenliyor."
+  },
+  {
+   "id": 6349,
+   "de": "ungleich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eşit olmayan, eşitsiz",
+   "mevcutBeispiel": "Die Lasten des Klimawandels sind extrem ungleich verteilt.",
+   "mevcutBeispielTr": "İklim değişikliğinin yükleri son derece eşitsiz dağılmış durumda."
+  },
+  {
+   "id": 6350,
+   "de": "gemeinnützig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kamu yararına, kâr amacı gütmeyen",
+   "mevcutBeispiel": "Die Stiftung arbeitet gemeinnützig und legt ihre Finanzen offen.",
+   "mevcutBeispielTr": "Vakıf kamu yararına çalışıyor ve mali durumunu açıklıyor."
+  },
+  {
+   "id": 6351,
+   "de": "zugunsten",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "lehine, yararına",
+   "mevcutBeispiel": "Die Regeln wurden zugunsten der Exporteure geändert.",
+   "mevcutBeispielTr": "Kurallar ihracatçıların lehine değiştirildi."
+  },
+  {
+   "id": 6352,
+   "de": "die Rechtsstaatlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hukuk devleti ilkesi, hukukun üstünlüğü",
+   "mevcutBeispiel": "Die Reform stellt die Rechtsstaatlichkeit des gesamten Verfahrens infrage.",
+   "mevcutBeispielTr": "Reform, tüm sürecin hukuk devleti niteliğini tartışmaya açıyor."
+  }
+ ]
+}

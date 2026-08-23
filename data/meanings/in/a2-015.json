@@ -1,0 +1,555 @@
+{
+ "paket": "a2-015",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7688,
+   "de": "der Berater",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "danışman",
+   "mevcutBeispiel": "Der Berater von der Bank hat uns alles genau erklärt.",
+   "mevcutBeispielTr": "Bankadaki danışman bize her şeyi ayrıntılı anlattı."
+  },
+  {
+   "id": 7689,
+   "de": "der Arbeitsweg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "işe gidiş yolu",
+   "mevcutBeispiel": "Mein Arbeitsweg dauert jeden Morgen fast eine Stunde.",
+   "mevcutBeispielTr": "İşe gidiş yolum her sabah neredeyse bir saat sürüyor."
+  },
+  {
+   "id": 7690,
+   "de": "der Firmenwagen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "şirket arabası",
+   "mevcutBeispiel": "Mit dem Firmenwagen fahre ich zu den Kunden.",
+   "mevcutBeispielTr": "Şirket arabasıyla müşterilere gidiyorum."
+  },
+  {
+   "id": 7691,
+   "de": "der Dienstwagen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "hizmet aracı, makam arabası",
+   "mevcutBeispiel": "Mein Chef hat einen großen Dienstwagen bekommen.",
+   "mevcutBeispielTr": "Patronum büyük bir makam arabası aldı."
+  },
+  {
+   "id": 7692,
+   "de": "die Geschäftsreise",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "iş seyahati",
+   "mevcutBeispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien.",
+   "mevcutBeispielTr": "Gelecek hafta babam Viyana'ya bir iş seyahati yapıyor."
+  },
+  {
+   "id": 7693,
+   "de": "die Dienstreise",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "görev seyahati, iş gezisi",
+   "mevcutBeispiel": "Die Firma bezahlt das Hotel auf der Dienstreise.",
+   "mevcutBeispielTr": "Şirket görev seyahatindeki oteli ödüyor."
+  },
+  {
+   "id": 7694,
+   "de": "die Schulung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "eğitim, kurs",
+   "mevcutBeispiel": "Am Dienstag habe ich eine Schulung für das neue Programm.",
+   "mevcutBeispielTr": "Salı günü yeni program için bir eğitimim var."
+  },
+  {
+   "id": 7695,
+   "de": "der Geselle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kalfa",
+   "mevcutBeispiel": "Nach der Ausbildung arbeitet er als Geselle in einer Werkstatt.",
+   "mevcutBeispielTr": "Meslek eğitiminden sonra bir atölyede kalfa olarak çalışıyor."
+  },
+  {
+   "id": 7696,
+   "de": "die Teamarbeit",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "takım çalışması, ekip çalışması",
+   "mevcutBeispiel": "In unserem Büro ist Teamarbeit sehr wichtig.",
+   "mevcutBeispielTr": "Bizim ofiste takım çalışması çok önemli."
+  },
+  {
+   "id": 7697,
+   "de": "die Arbeitskleidung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "iş kıyafeti",
+   "mevcutBeispiel": "Die Arbeitskleidung bekommen wir von der Firma.",
+   "mevcutBeispielTr": "İş kıyafetini şirketten alıyoruz."
+  },
+  {
+   "id": 7698,
+   "de": "der Handschuh",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "eldiven",
+   "mevcutBeispiel": "Bei dieser Arbeit musst du immer Handschuhe tragen.",
+   "mevcutBeispielTr": "Bu işte her zaman eldiven takmalısın."
+  },
+  {
+   "id": 7699,
+   "de": "die Schutzbrille",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "koruyucu gözlük",
+   "mevcutBeispiel": "In der Werkstatt trägt jeder eine Schutzbrille.",
+   "mevcutBeispielTr": "Atölyede herkes koruyucu gözlük takıyor."
+  },
+  {
+   "id": 7700,
+   "de": "die Grundschule",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "ilkokul",
+   "mevcutBeispiel": "Meine Tochter geht seit einem Jahr in die Grundschule.",
+   "mevcutBeispielTr": "Kızım bir yıldır ilkokula gidiyor."
+  },
+  {
+   "id": 7701,
+   "de": "das Gymnasium",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-ien",
+   "mevcutTr": "lise",
+   "mevcutBeispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
+   "mevcutBeispielTr": "Dördüncü sınıftan sonra liseye geçiyor."
+  },
+  {
+   "id": 7702,
+   "de": "die Realschule",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "ortaokul",
+   "mevcutBeispiel": "Ich habe die Realschule mit guten Noten beendet.",
+   "mevcutBeispielTr": "Ortaokulu iyi notlarla bitirdim."
+  },
+  {
+   "id": 7703,
+   "de": "das Klassenzimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "sınıf, derslik",
+   "mevcutBeispiel": "Das Klassenzimmer ist hell und hat große Fenster.",
+   "mevcutBeispielTr": "Sınıf aydınlık ve büyük pencereleri var.",
+   "cakisan": [
+    "die Klasse (A1)"
+   ]
+  },
+  {
+   "id": 7704,
+   "de": "der Schulhof",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "okul bahçesi",
+   "mevcutBeispiel": "In der Pause spielen die Kinder auf dem Schulhof.",
+   "mevcutBeispielTr": "Teneffüste çocuklar okul bahçesinde oynuyor."
+  },
+  {
+   "id": 7705,
+   "de": "die Schultasche",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "okul çantası",
+   "mevcutBeispiel": "Meine Schultasche ist heute sehr schwer.",
+   "mevcutBeispielTr": "Okul çantam bugün çok ağır."
+  },
+  {
+   "id": 7706,
+   "de": "das Schulbuch",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "ders kitabı",
+   "mevcutBeispiel": "Ich habe mein Schulbuch zu Hause vergessen.",
+   "mevcutBeispielTr": "Ders kitabımı evde unuttum."
+  },
+  {
+   "id": 7707,
+   "de": "das Schuljahr",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "öğretim yılı",
+   "mevcutBeispiel": "Das neue Schuljahr beginnt im September.",
+   "mevcutBeispielTr": "Yeni öğretim yılı eylülde başlıyor."
+  },
+  {
+   "id": 7708,
+   "de": "der Mitschüler",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "sınıf arkadaşı",
+   "mevcutBeispiel": "Mein Mitschüler hilft mir bei den Hausaufgaben.",
+   "mevcutBeispielTr": "Sınıf arkadaşım ödevlerimde bana yardım ediyor."
+  },
+  {
+   "id": 7709,
+   "de": "das Schulfach",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "ders, branş",
+   "mevcutBeispiel": "Mein liebstes Schulfach ist Musik.",
+   "mevcutBeispielTr": "En sevdiğim ders müzik.",
+   "cakisan": [
+    "das Fach (A1)",
+    "der Unterricht (A1)"
+   ]
+  },
+  {
+   "id": 7710,
+   "de": "die Mathematik",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "matematik",
+   "mevcutBeispiel": "In Mathematik habe ich eine Zwei bekommen.",
+   "mevcutBeispielTr": "Matematikten iki aldım."
+  },
+  {
+   "id": 7711,
+   "de": "die Physik",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "fizik",
+   "mevcutBeispiel": "Am Montag haben wir zwei Stunden Physik.",
+   "mevcutBeispielTr": "Pazartesi iki saat fizik dersimiz var."
+  },
+  {
+   "id": 7712,
+   "de": "die Chemie",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "kimya",
+   "mevcutBeispiel": "In Chemie machen wir heute ein Experiment.",
+   "mevcutBeispielTr": "Kimya dersinde bugün bir deney yapıyoruz."
+  },
+  {
+   "id": 7713,
+   "de": "die Sporthalle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "spor salonu",
+   "mevcutBeispiel": "Der Sportunterricht findet in der Sporthalle statt.",
+   "mevcutBeispielTr": "Beden eğitimi dersi spor salonunda yapılıyor.",
+   "cakisan": [
+    "die Turnhalle (A2)",
+    "das Fitnessstudio (A2)"
+   ]
+  },
+  {
+   "id": 7714,
+   "de": "die Grammatik",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "dil bilgisi",
+   "mevcutBeispiel": "Die deutsche Grammatik ist am Anfang schwer.",
+   "mevcutBeispielTr": "Almanca dil bilgisi başlangıçta zor."
+  },
+  {
+   "id": 7715,
+   "de": "die Vokabel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kelime (yabancı dilde öğrenilen), sözcük",
+   "mevcutBeispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
+   "mevcutBeispielTr": "Her gün yirmi yeni kelime öğreniyorum.",
+   "cakisan": [
+    "das Wort (A1)"
+   ]
+  },
+  {
+   "id": 7716,
+   "de": "das Lineal",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "cetvel",
+   "mevcutBeispiel": "Zeichne die Linie bitte mit einem Lineal.",
+   "mevcutBeispielTr": "Çizgiyi lütfen bir cetvelle çiz."
+  },
+  {
+   "id": 7717,
+   "de": "der Stundenplan",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "ders programı",
+   "mevcutBeispiel": "Unser neuer Stundenplan hängt an der Tür.",
+   "mevcutBeispielTr": "Yeni ders programımız kapıda asılı."
+  },
+  {
+   "id": 7718,
+   "de": "der Klassenlehrer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "sınıf öğretmeni",
+   "mevcutBeispiel": "Unser Klassenlehrer ist sehr nett.",
+   "mevcutBeispielTr": "Sınıf öğretmenimiz çok kibar."
+  },
+  {
+   "id": 7719,
+   "de": "der Elternabend",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "veli toplantısı",
+   "mevcutBeispiel": "Am Donnerstag ist in der Schule ein Elternabend.",
+   "mevcutBeispielTr": "Perşembe günü okulda veli toplantısı var."
+  },
+  {
+   "id": 7720,
+   "de": "die Fachhochschule",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "uygulamalı bilimler yüksekokulu",
+   "mevcutBeispiel": "Sie studiert Informatik an einer Fachhochschule.",
+   "mevcutBeispielTr": "Bir uygulamalı bilimler yüksekokulunda bilgisayar bilimi okuyor."
+  },
+  {
+   "id": 7721,
+   "de": "der Azubi",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "çırak, meslek eğitimi gören kişi",
+   "mevcutBeispiel": "Unser neuer Azubi lernt schnell.",
+   "mevcutBeispielTr": "Yeni çırağımız çabuk öğreniyor.",
+   "cakisan": [
+    "der Lehrling (B1)",
+    "der Auszubildende (B2)"
+   ]
+  },
+  {
+   "id": 7722,
+   "de": "versetzen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "versetzt, hat versetzt",
+   "mevcutTr": "sınıf geçirmek, nakletmek",
+   "mevcutBeispiel": "Die Lehrerin hat ihn in die nächste Klasse versetzt.",
+   "mevcutBeispielTr": "Öğretmen onu bir üst sınıfa geçirdi."
+  },
+  {
+   "id": 7723,
+   "de": "abhören",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hört ab, hat abgehört",
+   "mevcutTr": "(ders/kelime) sözlü sormak",
+   "mevcutBeispiel": "Meine Mutter hört mich jeden Abend die Vokabeln ab.",
+   "mevcutBeispielTr": "Annem her akşam bana kelimeleri sözlü soruyor."
+  },
+  {
+   "id": 7724,
+   "de": "mithalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hält mit, hat mitgehalten",
+   "mevcutTr": "ayak uydurmak, yetişmek",
+   "mevcutBeispiel": "In diesem Kurs kann ich gut mithalten.",
+   "mevcutBeispielTr": "Bu kursta iyi ayak uydurabiliyorum."
+  },
+  {
+   "id": 7725,
+   "de": "beibringen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bringt bei, hat beigebracht",
+   "mevcutTr": "öğretmek",
+   "mevcutBeispiel": "Meine Oma hat mir das Lesen beigebracht.",
+   "mevcutBeispielTr": "Okumayı bana anneannem öğretti."
+  },
+  {
+   "id": 7726,
+   "de": "verbessern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verbessert, hat verbessert",
+   "mevcutTr": "geliştirmek, düzeltmek",
+   "mevcutBeispiel": "Ich möchte mein Deutsch im Kurs verbessern.",
+   "mevcutBeispielTr": "Almancamı kursta geliştirmek istiyorum.",
+   "cakisan": [
+    "entwickeln (B1)",
+    "entfalten (C1)"
+   ]
+  },
+  {
+   "id": 7727,
+   "de": "bewerten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bewertet, hat bewertet",
+   "mevcutTr": "değerlendirmek, notlandırmak",
+   "mevcutBeispiel": "Die Lehrerin bewertet unsere Aufsätze am Wochenende.",
+   "mevcutBeispielTr": "Öğretmen kompozisyonlarımızı hafta sonu değerlendiriyor.",
+   "cakisan": [
+    "einschätzen (B2)",
+    "beurteilen (B2)",
+    "auswerten (B2)",
+    "verwerten (B2)"
+   ]
+  },
+  {
+   "id": 7728,
+   "de": "lehren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "lehrt, hat gelehrt",
+   "mevcutTr": "ders vermek, öğretmek",
+   "mevcutBeispiel": "Er lehrt seit zehn Jahren an einer Schule.",
+   "mevcutBeispielTr": "On yıldır bir okulda ders veriyor.",
+   "cakisan": [
+    "unterrichten (B1)"
+   ]
+  },
+  {
+   "id": 7729,
+   "de": "ausbilden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bildet aus, hat ausgebildet",
+   "mevcutTr": "yetiştirmek, meslek eğitimi vermek",
+   "mevcutBeispiel": "Die Firma bildet jedes Jahr fünf junge Leute aus.",
+   "mevcutBeispielTr": "Firma her yıl beş genci yetiştiriyor.",
+   "cakisan": [
+    "erziehen (B1)",
+    "anbauen (C1)",
+    "züchten (C1)"
+   ]
+  },
+  {
+   "id": 7730,
+   "de": "ablegen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "legt ab, hat abgelegt",
+   "mevcutTr": "(sınava) girmek, vermek",
+   "mevcutBeispiel": "Nächste Woche lege ich meine mündliche Prüfung ab.",
+   "mevcutBeispielTr": "Gelecek hafta sözlü sınavıma gireceğim.",
+   "cakisan": [
+    "eingeben (B2)",
+    "sich unterziehen (C1)",
+    "betreten (A2)"
+   ]
+  },
+  {
+   "id": 7731,
+   "de": "zuordnen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ordnet zu, hat zugeordnet",
+   "mevcutTr": "eşleştirmek, ait olduğu yere koymak",
+   "mevcutBeispiel": "Ordne die Wörter den richtigen Bildern zu!",
+   "mevcutBeispielTr": "Kelimeleri doğru resimlerle eşleştir!"
+  },
+  {
+   "id": 7732,
+   "de": "austeilen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "teilt aus, hat ausgeteilt",
+   "mevcutTr": "dağıtmak (elden, tek tek vermek)",
+   "mevcutBeispiel": "Der Lehrer teilt die Blätter für den Test aus.",
+   "mevcutBeispielTr": "Öğretmen sınav kâğıtlarını dağıtıyor."
+  },
+  {
+   "id": 7733,
+   "de": "weiterkommen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kommt weiter, ist weitergekommen",
+   "mevcutTr": "ilerlemek, yol almak",
+   "mevcutBeispiel": "Im Deutschkurs komme ich langsam weiter.",
+   "mevcutBeispielTr": "Almanca kursunda yavaş yavaş ilerliyorum."
+  },
+  {
+   "id": 7734,
+   "de": "nachhelfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hilft nach, hat nachgeholfen",
+   "mevcutTr": "(derste) yardım etmek, takviye ders vermek",
+   "mevcutBeispiel": "Meine Schwester hilft mir in Englisch nach.",
+   "mevcutBeispielTr": "Ablam İngilizce konusunda bana takviye ders veriyor.",
+   "cakisan": [
+    "helfen (A1)",
+    "mithelfen (A2)"
+   ]
+  },
+  {
+   "id": 7735,
+   "de": "nachmachen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "macht nach, hat nachgemacht",
+   "mevcutTr": "taklit etmek, aynısını yapmak",
+   "mevcutBeispiel": "Die Kinder machen alles nach, was der Lehrer zeigt.",
+   "mevcutBeispielTr": "Çocuklar öğretmenin gösterdiği her şeyi taklit ediyor.",
+   "cakisan": [
+    "nachahmen (B2)",
+    "nachbilden (C1)"
+   ]
+  },
+  {
+   "id": 7736,
+   "de": "durchlesen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "liest durch, hat durchgelesen",
+   "mevcutTr": "baştan sona okumak",
+   "mevcutBeispiel": "Lies die Aufgabe in Ruhe durch!",
+   "mevcutBeispielTr": "Soruyu sakince baştan sona oku!"
+  },
+  {
+   "id": 7737,
+   "de": "mitschreiben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schreibt mit, hat mitgeschrieben",
+   "mevcutTr": "not tutmak",
+   "mevcutBeispiel": "Im Unterricht schreibe ich immer mit.",
+   "mevcutBeispielTr": "Derste her zaman not tutarım."
+  }
+ ]
+}

@@ -1,0 +1,514 @@
+{
+ "paket": "c1-008",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 3927,
+   "de": "die Personalentwicklung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "personel gelişimi",
+   "mevcutBeispiel": "Die Personalentwicklung wurde in den letzten Jahren vernachlässigt.",
+   "mevcutBeispielTr": "Personel gelişimi son yıllarda ihmal edildi."
+  },
+  {
+   "id": 3928,
+   "de": "die Fluktuation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fluktuationen",
+   "mevcutTr": "personel devir hızı",
+   "mevcutBeispiel": "Die hohe Fluktuation im Vertrieb bereitet der Geschäftsführung Sorgen.",
+   "mevcutBeispielTr": "Satış bölümündeki yüksek personel devri yönetimi endişelendiriyor."
+  },
+  {
+   "id": 3930,
+   "de": "die Mitarbeiterbindung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çalışan bağlılığı",
+   "mevcutBeispiel": "Flexible Arbeitszeiten stärken die Mitarbeiterbindung.",
+   "mevcutBeispielTr": "Esnek çalışma saatleri çalışan bağlılığını güçlendiriyor."
+  },
+  {
+   "id": 3931,
+   "de": "das Betriebsklima",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "işyeri atmosferi",
+   "mevcutBeispiel": "Der Führungswechsel hat das Betriebsklima spürbar verbessert.",
+   "mevcutBeispielTr": "Yönetim değişikliği işyeri atmosferini gözle görülür biçimde iyileştirdi."
+  },
+  {
+   "id": 3932,
+   "de": "die Weiterbildungsmaßnahme",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Weiterbildungsmaßnahmen",
+   "mevcutTr": "hizmet içi eğitim programı, mesleki gelişim faaliyeti",
+   "mevcutBeispiel": "Neue Weiterbildungsmaßnahmen wurden für alle Abteilungen eingeführt.",
+   "mevcutBeispielTr": "Bütün bölümler için yeni mesleki gelişim programları başlatıldı."
+  },
+  {
+   "id": 3933,
+   "de": "der Führungsstil",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Führungsstile",
+   "mevcutTr": "liderlik tarzı",
+   "mevcutBeispiel": "Ihr kooperativer Führungsstil kommt im Team gut an.",
+   "mevcutBeispielTr": "İş birliğine dayalı liderlik tarzı ekipte beğeniliyor."
+  },
+  {
+   "id": 3934,
+   "de": "die Work-Life-Balance",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iş-yaşam dengesi",
+   "mevcutBeispiel": "Viele Bewerber legen heute großen Wert auf Work-Life-Balance.",
+   "mevcutBeispielTr": "Bugün birçok aday iş-yaşam dengesine büyük önem veriyor."
+  },
+  {
+   "id": 3935,
+   "de": "der Umsatzeinbruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Umsatzeinbrüche",
+   "mevcutTr": "ciroda ani düşüş, satışlarda çöküş",
+   "mevcutBeispiel": "Der plötzliche Umsatzeinbruch zwang das Unternehmen zum Sparkurs.",
+   "mevcutBeispielTr": "Ani satış düşüşü şirketi tasarrufa zorladı."
+  },
+  {
+   "id": 3936,
+   "de": "die Effizienzsteigerung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Effizienzsteigerungen",
+   "mevcutTr": "verimlilik artışı",
+   "mevcutBeispiel": "Effizienzsteigerung ist das erklärte Ziel der neuen Strategie.",
+   "mevcutBeispielTr": "Verimlilik artışı, yeni stratejinin açık hedefi."
+  },
+  {
+   "id": 3937,
+   "de": "die Restrukturierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Restrukturierungen",
+   "mevcutTr": "yeniden yapılandırma",
+   "mevcutBeispiel": "Die geplante Restrukturierung betrifft mehrere Standorte.",
+   "mevcutBeispielTr": "Planlanan yeniden yapılandırma birden çok şubeyi etkiliyor."
+  },
+  {
+   "id": 3939,
+   "de": "das Insolvenzverfahren",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Insolvenzverfahren",
+   "mevcutTr": "iflas süreci",
+   "mevcutBeispiel": "Gegen den Zulieferer wurde ein Insolvenzverfahren eröffnet.",
+   "mevcutBeispielTr": "Tedarikçi hakkında iflas süreci başlatıldı."
+  },
+  {
+   "id": 3940,
+   "de": "die Marktsättigung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "pazar doygunluğu",
+   "mevcutBeispiel": "Wegen der Marktsättigung sucht das Unternehmen neue Absatzmärkte.",
+   "mevcutBeispielTr": "Pazar doygunluğu yüzünden şirket yeni pazarlar arıyor."
+  },
+  {
+   "id": 3941,
+   "de": "die Rentabilität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "karlılık",
+   "mevcutBeispiel": "Die Rentabilität der Filialen wird jährlich überprüft.",
+   "mevcutBeispielTr": "Şubelerin kârlılığı her yıl gözden geçiriliyor."
+  },
+  {
+   "id": 3944,
+   "de": "die Compliance",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mevzuata uygunluk, uyum",
+   "mevcutBeispiel": "Compliance ist in regulierten Branchen unverzichtbar.",
+   "mevcutBeispielTr": "Düzenlemeye tabi sektörlerde mevzuata uyum vazgeçilmezdir."
+  },
+  {
+   "id": 3945,
+   "de": "die Massenmanipulation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Massenmanipulationen",
+   "mevcutTr": "kitle manipülasyonu",
+   "mevcutBeispiel": "Kritiker warnen vor der Massenmanipulation durch soziale Netzwerke.",
+   "mevcutBeispielTr": "Eleştirmenler, sosyal ağlar üzerinden kitle manipülasyonuna karşı uyarıyor."
+  },
+  {
+   "id": 3946,
+   "de": "die Boulevardisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Boulevardisierungen",
+   "mevcutTr": "magazinleşme",
+   "mevcutBeispiel": "Die Boulevardisierung der Nachrichten schadet der seriösen Berichterstattung.",
+   "mevcutBeispielTr": "Haberlerin tabloidleşmesi ciddi habercilere zarar veriyor."
+  },
+  {
+   "id": 3947,
+   "de": "die Meinungsmache",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "fikir manipülasyonu, kamuoyu yönlendirme",
+   "mevcutBeispiel": "Viele Leser durchschauen die plumpe Meinungsmache mancher Blätter nicht.",
+   "mevcutBeispielTr": "Birçok okur, bazı gazetelerin kaba kamuoyu yönlendirmesini fark etmiyor."
+  },
+  {
+   "id": 3948,
+   "de": "die Skandalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Skandalisierungen",
+   "mevcutTr": "skandallaştırma",
+   "mevcutBeispiel": "Die Skandalisierung jeder Kleinigkeit lähmt den politischen Diskurs.",
+   "mevcutBeispielTr": "Her küçük şeyin skandallaştırılması siyasi tartışmayı felç ediyor."
+  },
+  {
+   "id": 3949,
+   "de": "die Empörungswelle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Empörungswellen",
+   "mevcutTr": "öfke dalgası",
+   "mevcutBeispiel": "Der Tweet löste eine Empörungswelle im Internet aus.",
+   "mevcutBeispielTr": "Tweet, internette bir öfke dalgası başlattı."
+  },
+  {
+   "id": 3950,
+   "de": "die Filterblase",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Filterblasen",
+   "mevcutTr": "filtre balonu",
+   "mevcutBeispiel": "In seiner Filterblase begegnet er kaum abweichenden Meinungen.",
+   "mevcutBeispielTr": "Kendi filtre balonunda farklı görüşlerle neredeyse hiç karşılaşmıyor."
+  },
+  {
+   "id": 3951,
+   "de": "die Echokammer",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Echokammern",
+   "mevcutTr": "yankı odası",
+   "mevcutBeispiel": "Soziale Medien verstärken die Wirkung von Echokammern erheblich.",
+   "mevcutBeispielTr": "Sosyal medya, yankı odalarının etkisini ciddi biçimde güçlendiriyor."
+  },
+  {
+   "id": 3952,
+   "de": "die Desinformation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Desinformationen",
+   "mevcutTr": "dezenformasyon, yanlış bilgilendirme",
+   "mevcutBeispiel": "Gezielte Desinformation untergräbt das Vertrauen in Institutionen.",
+   "mevcutBeispielTr": "Hedefli dezenformasyon kurumlara duyulan güveni aşındırıyor."
+  },
+  {
+   "id": 3953,
+   "de": "die Reizüberflutung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Reizüberflutungen",
+   "mevcutTr": "uyaran bombardımanı",
+   "mevcutBeispiel": "Die ständige Reizüberflutung durch Bildschirme erschöpft viele Menschen.",
+   "mevcutBeispielTr": "Ekranlardan gelen sürekli uyaran bombardımanı birçok insanı tüketiyor."
+  },
+  {
+   "id": 3954,
+   "de": "die Oberflächlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Oberflächlichkeiten",
+   "mevcutTr": "yüzeysellik",
+   "mevcutBeispiel": "Ihm wird vorgeworfen, mit Oberflächlichkeit über komplexe Themen zu urteilen.",
+   "mevcutBeispielTr": "Karmaşık konular hakkında yüzeysellikle hüküm vermekle suçlanıyor."
+  },
+  {
+   "id": 3955,
+   "de": "die Selbstoptimierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Selbstoptimierungen",
+   "mevcutTr": "kendini sürekli geliştirme, öz-optimizasyon",
+   "mevcutBeispiel": "Der Druck zur ständigen Selbstoptimierung macht viele Menschen krank.",
+   "mevcutBeispielTr": "Sürekli kendini optimize etme baskısı birçok insanı hasta ediyor."
+  },
+  {
+   "id": 3956,
+   "de": "die Beliebigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "keyfilik, ilkesizlik",
+   "mevcutBeispiel": "Die moralische Beliebigkeit mancher Debatten verwässert klare Standpunkte.",
+   "mevcutBeispielTr": "Bazı tartışmalardaki ahlaki ilkesizlik net duruşları sulandırıyor.",
+   "cakisan": [
+    "die Willkür (C1)"
+   ]
+  },
+  {
+   "id": 3957,
+   "de": "die Instrumentalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Instrumentalisierungen",
+   "mevcutTr": "araçsallaştırma",
+   "mevcutBeispiel": "Die Instrumentalisierung der Angst dient oft politischen Zwecken.",
+   "mevcutBeispielTr": "Korkunun araçsallaştırılması çoğu zaman siyasi amaçlara hizmet eder."
+  },
+  {
+   "id": 3958,
+   "de": "die Bevormundung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bevormundungen",
+   "mevcutTr": "vesayet altına alma",
+   "mevcutBeispiel": "Viele empfinden staatliche Vorschriften als Bevormundung.",
+   "mevcutBeispielTr": "Birçok kişi devlet kurallarını vesayet olarak görüyor."
+  },
+  {
+   "id": 3959,
+   "de": "die Gängelung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gängelungen",
+   "mevcutTr": "sıkı denetim, güdüm altında tutma",
+   "mevcutBeispiel": "Er kritisiert die zunehmende Gängelung der Bürger durch Vorschriften.",
+   "mevcutBeispielTr": "Vatandaşların kurallarla giderek daha çok güdülmesini eleştiriyor."
+  },
+  {
+   "id": 3960,
+   "de": "die Entmündigung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entmündigungen",
+   "mevcutTr": "ehliyetsiz kılma, iradesizleştirme",
+   "mevcutBeispiel": "Die schleichende Entmündigung des Individuums ist eine ethische Frage.",
+   "mevcutBeispielTr": "Bireyin sinsice iradesizleştirilmesi etik bir sorundur."
+  },
+  {
+   "id": 3961,
+   "de": "die Ambivalenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ambivalenzen",
+   "mevcutTr": "ikirciklilik, çelişkili duygu",
+   "mevcutBeispiel": "Der technische Fortschritt löst bei ihr eine tiefe Ambivalenz aus.",
+   "mevcutBeispielTr": "Teknolojik ilerleme onda derin bir ikirciklilik uyandırıyor."
+  },
+  {
+   "id": 3964,
+   "de": "der Machbarkeitswahn",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "her şeyi yapabilirlik saplantısı",
+   "mevcutBeispiel": "Kritiker sprechen beim Geoengineering von einem gefährlichen Machbarkeitswahn.",
+   "mevcutBeispielTr": "Eleştirmenler, jeomühendislik için tehlikeli bir yapabilirlik saplantısından söz ediyor."
+  },
+  {
+   "id": 3965,
+   "de": "der Kontrollverlust",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kontrollverluste",
+   "mevcutTr": "kontrol kaybı",
+   "mevcutBeispiel": "Viele fürchten einen völligen Kontrollverlust gegenüber der künstlichen Intelligenz.",
+   "mevcutBeispielTr": "Birçok kişi yapay zekâ karşısında tam bir kontrol kaybından korkuyor."
+  },
+  {
+   "id": 3966,
+   "de": "der Determinismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "determinizm",
+   "mevcutBeispiel": "Der technologische Determinismus unterschätzt die Rolle menschlicher Entscheidungen.",
+   "mevcutBeispielTr": "Teknolojik determinizm, insan kararlarının rolünü hafife alıyor."
+  },
+  {
+   "id": 3967,
+   "de": "die Entmenschlichung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entmenschlichungen",
+   "mevcutTr": "insanlıktan çıkarma",
+   "mevcutBeispiel": "Die Entmenschlichung durch reine Datenlogik beunruhigt viele Philosophen.",
+   "mevcutBeispielTr": "Salt veri mantığının yol açtığı insanlıktan çıkarma birçok filozofu kaygılandırıyor."
+  },
+  {
+   "id": 3968,
+   "de": "der Datenhunger",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "veri açlığı",
+   "mevcutBeispiel": "Der Datenhunger der Konzerne kennt offenbar keine Grenzen.",
+   "mevcutBeispielTr": "Şirketlerin veri açlığı görünüşe göre sınır tanımıyor."
+  },
+  {
+   "id": 3969,
+   "de": "die Entgrenzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entgrenzungen",
+   "mevcutTr": "sınırların ortadan kalkması",
+   "mevcutBeispiel": "Die digitale Entgrenzung von Arbeit und Freizeit belastet viele Beschäftigte.",
+   "mevcutBeispielTr": "İşle boş zaman arasındaki sınırların dijital olarak silinmesi birçok çalışanı yıpratıyor."
+  },
+  {
+   "id": 3970,
+   "de": "die Autonomie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Autonomien",
+   "mevcutTr": "özerklik, bağımsızlık",
+   "mevcutBeispiel": "Die Autonomie des Einzelnen gerät durch algorithmische Empfehlungen unter Druck.",
+   "mevcutBeispielTr": "Bireyin özerkliği, algoritmik öneriler yüzünden baskı altında."
+  },
+  {
+   "id": 3973,
+   "de": "das Menschenbild",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Menschenbilder",
+   "mevcutTr": "insan anlayışı, insan tasavvuru",
+   "mevcutBeispiel": "Die Ethikkommission diskutiert das zugrunde liegende Menschenbild der KI-Forschung.",
+   "mevcutBeispielTr": "Etik kurulu, yapay zekâ araştırmalarının temelindeki insan anlayışını tartışıyor."
+  },
+  {
+   "id": 3974,
+   "de": "der Kipppunkt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kipppunkte",
+   "mevcutTr": "eşik noktası, kritik dönüm noktası",
+   "mevcutBeispiel": "Forscher warnen, dass mehrere Kipppunkte im Klimasystem nahe sind.",
+   "mevcutBeispielTr": "Araştırmacılar, iklim sistemindeki birçok eşik noktasının yakın olduğu uyarısında bulunuyor."
+  },
+  {
+   "id": 3975,
+   "de": "die Resilienz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Resilienzen",
+   "mevcutTr": "dayanıklılık, direnç",
+   "mevcutBeispiel": "Die Resilienz städtischer Systeme gegenüber Extremwetter muss gestärkt werden.",
+   "mevcutBeispielTr": "Kent sistemlerinin aşırı hava olaylarına karşı direnci güçlendirilmeli.",
+   "cakisan": [
+    "die Belastbarkeit (B2)",
+    "die Ausdauer (B2)",
+    "die Widerstandsfähigkeit (C1)"
+   ]
+  },
+  {
+   "id": 3976,
+   "de": "die Suffizienz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yetinme, tüketimi sınırlama",
+   "mevcutBeispiel": "Suffizienz statt Wachstum lautet die Forderung mancher Ökonomen.",
+   "mevcutBeispielTr": "Bazı iktisatçıların talebi büyüme değil, yeterlilik."
+  },
+  {
+   "id": 3977,
+   "de": "die Endlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sonluluk, sınırlılık",
+   "mevcutBeispiel": "Die Endlichkeit der Ressourcen wird in der Wachstumsdebatte oft ausgeblendet.",
+   "mevcutBeispielTr": "Kaynakların sonluluğu büyüme tartışmalarında çoğu zaman göz ardı ediliyor."
+  },
+  {
+   "id": 3978,
+   "de": "der Generationenvertrag",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Generationenverträge",
+   "mevcutTr": "nesiller arası sözleşme",
+   "mevcutBeispiel": "Der ökologische Generationenvertrag verpflichtet uns zu Verzicht.",
+   "mevcutBeispielTr": "Ekolojik nesiller sözleşmesi bizi feragat etmeye zorluyor."
+  },
+  {
+   "id": 3979,
+   "de": "die Zukunftsangst",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zukunftsängste",
+   "mevcutTr": "geleceğe dair kaygı",
+   "mevcutBeispiel": "Die Zukunftsangst junger Menschen angesichts der Klimakrise wächst spürbar.",
+   "mevcutBeispielTr": "İklim krizi karşısında gençlerin gelecek kaygısı gözle görülür biçimde büyüyor."
+  },
+  {
+   "id": 3980,
+   "de": "der Wachstumszwang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wachstumszwänge",
+   "mevcutTr": "büyüme zorunluluğu",
+   "mevcutBeispiel": "Der ständige Wachstumszwang der Wirtschaft steht im Widerspruch zum Klimaschutz.",
+   "mevcutBeispielTr": "Ekonominin sürekli büyüme zorunluluğu iklim korumasıyla çelişiyor."
+  },
+  {
+   "id": 3981,
+   "de": "der Generationenkonflikt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Generationenkonflikte",
+   "mevcutTr": "kuşak çatışması",
+   "mevcutBeispiel": "Der Generationenkonflikt um Klimapolitik prägt viele Familiendebatten.",
+   "mevcutBeispielTr": "İklim politikası üzerine kuşak çatışması birçok aile tartışmasına damga vuruyor."
+  },
+  {
+   "id": 3982,
+   "de": "der Alarmismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "alarmcılık, abartılı kaygı yayma",
+   "mevcutBeispiel": "Manche werfen Klimaaktivisten unberechtigten Alarmismus vor.",
+   "mevcutBeispielTr": "Bazıları iklim aktivistlerini yersiz alarmcılıkla suçluyor."
+  },
+  {
+   "id": 3983,
+   "de": "verrohen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verroht, ist verroht",
+   "mevcutTr": "vahşileşmek, kabalaşmak",
+   "mevcutBeispiel": "Manche befürchten, die Debattenkultur verrohe zunehmend.",
+   "mevcutBeispielTr": "Bazıları tartışma kültürünün giderek kabalaşmasından endişe ediyor."
+  },
+  {
+   "id": 3984,
+   "de": "instrumentalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "instrumentalisiert, hat instrumentalisiert",
+   "mevcutTr": "araçsallaştırmak",
+   "mevcutBeispiel": "Populisten instrumentalisieren die Angst der Menschen für ihre Zwecke.",
+   "mevcutBeispielTr": "Popülistler insanların korkusunu kendi amaçları için araçsallaştırıyor."
+  }
+ ]
+}

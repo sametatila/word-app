@@ -1,0 +1,548 @@
+{
+ "paket": "b2-033",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5245,
+   "de": "vorschreiben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vorgeschrieben",
+   "mevcutTr": "zorunlu kılmak, öngörmek, emretmek",
+   "mevcutBeispiel": "Die Verordnung schreibt eine schriftliche Begründung ausdrücklich vor.",
+   "mevcutBeispielTr": "Yönetmelik yazılı gerekçe sunulmasını açıkça zorunlu kılıyor."
+  },
+  {
+   "id": 5246,
+   "de": "untersagen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat untersagt",
+   "mevcutTr": "yasaklamak, men etmek",
+   "mevcutBeispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
+   "mevcutBeispielTr": "Şehre, arsanın üzerine yeni yapı yapması yasaklandı.",
+   "cakisan": [
+    "verbieten (B1)"
+   ]
+  },
+  {
+   "id": 5247,
+   "de": "gestatten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gestattet",
+   "mevcutTr": "izin vermek, müsaade etmek",
+   "mevcutBeispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
+   "mevcutBeispielTr": "Ev sahibi köpek beslenmesine yalnızca istisnai olarak izin veriyor.",
+   "cakisan": [
+    "erlauben (A1)"
+   ]
+  },
+  {
+   "id": 5248,
+   "de": "rechtswidrig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hukuka aykırı, kanunsuz",
+   "mevcutBeispiel": "Das Gericht erklärte die Kündigung für rechtswidrig.",
+   "mevcutBeispielTr": "Mahkeme fesih işlemini hukuka aykırı buldu."
+  },
+  {
+   "id": 5249,
+   "de": "behördlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "resmî, idari, daireye ait",
+   "mevcutBeispiel": "Für den Umbau brauchen wir eine behördliche Genehmigung.",
+   "mevcutBeispielTr": "Tadilat için resmî bir izne ihtiyacımız var.",
+   "cakisan": [
+    "amtlich (B2)"
+   ]
+  },
+  {
+   "id": 5250,
+   "de": "unzulässig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kabul edilemez, caiz olmayan",
+   "mevcutBeispiel": "Die Klage wurde als unzulässig zurückgewiesen.",
+   "mevcutBeispielTr": "Dava, kabul edilemez bulunarak reddedildi."
+  },
+  {
+   "id": 5251,
+   "de": "gebührenpflichtig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ücrete tabi, harca tabi",
+   "mevcutBeispiel": "Die Ausstellung einer zweiten Bescheinigung ist gebührenpflichtig.",
+   "mevcutBeispielTr": "İkinci bir belgenin düzenlenmesi ücrete tabidir."
+  },
+  {
+   "id": 5252,
+   "de": "einschlägig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ilgili, konuya ilişkin",
+   "mevcutBeispiel": "Der Anwalt zitierte die einschlägigen Vorschriften des Mietrechts.",
+   "mevcutBeispielTr": "Avukat kira hukukunun ilgili hükümlerini aktardı."
+  },
+  {
+   "id": 5253,
+   "de": "maßgeblich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "belirleyici, esas alınan",
+   "mevcutBeispiel": "Für die Berechnung ist das Datum des Eingangs maßgeblich.",
+   "mevcutBeispielTr": "Hesaplamada evrakın geliş tarihi esas alınır.",
+   "cakisan": [
+    "ausschlaggebend (B2)"
+   ]
+  },
+  {
+   "id": 5254,
+   "de": "ungültig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "geçersiz",
+   "mevcutBeispiel": "Ohne Stempel ist das Formular leider ungültig.",
+   "mevcutBeispielTr": "Mühür olmadan form maalesef geçersiz.",
+   "cakisan": [
+    "unwirksam (B2)"
+   ]
+  },
+  {
+   "id": 5255,
+   "de": "gemäß",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "uyarınca, gereğince",
+   "mevcutBeispiel": "Gemäß dem Vertrag haften Sie für alle entstandenen Schäden.",
+   "mevcutBeispielTr": "Sözleşme uyarınca doğan bütün zararlardan siz sorumlusunuz."
+  },
+  {
+   "id": 5256,
+   "de": "der Reiseveranstalter",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Reiseveranstalter",
+   "mevcutTr": "tur operatörü, seyahat düzenleyicisi",
+   "mevcutBeispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt.",
+   "mevcutBeispielTr": "Tur operatörü uçuşun iptalini bize daha dün bildirdi."
+  },
+  {
+   "id": 5257,
+   "de": "die Anzahlung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anzahlungen",
+   "mevcutTr": "kapora, ön ödeme",
+   "mevcutBeispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig.",
+   "mevcutBeispielTr": "Rezervasyon sırasında yüzde yirmilik bir kapora ödenmesi gerekiyor."
+  },
+  {
+   "id": 5258,
+   "de": "die Verpflegung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yeme içme, iaşe",
+   "mevcutBeispiel": "Im Preis sind Unterbringung und Verpflegung für sieben Tage enthalten.",
+   "mevcutBeispielTr": "Fiyata yedi günlük konaklama ve yeme içme dahildir."
+  },
+  {
+   "id": 5259,
+   "de": "die Pauschalreise",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Pauschalreisen",
+   "mevcutTr": "paket tur",
+   "mevcutBeispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen.",
+   "mevcutBeispielTr": "Pek çok tatilci tek tek hizmet almak yerine paket tur satın almayı tercih ediyor."
+  },
+  {
+   "id": 5260,
+   "de": "die Rundreise",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rundreisen",
+   "mevcutTr": "tur, tur gezisi",
+   "mevcutBeispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
+   "mevcutBeispielTr": "Sicilya turumuzda on iki yeri gezdik.",
+   "cakisan": [
+    "der Rundgang (A2)",
+    "die Tour (A2)",
+    "die Runde (B1)",
+    "die Rundfahrt (B1)"
+   ]
+  },
+  {
+   "id": 5261,
+   "de": "die Kreuzfahrt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kreuzfahrten",
+   "mevcutTr": "gemi turu, kruvaziyer",
+   "mevcutBeispiel": "Die Kreuzfahrt durch die Ostsee war günstiger als erwartet.",
+   "mevcutBeispielTr": "Baltık Denizi'ndeki gemi turu beklediğimizden ucuza geldi."
+  },
+  {
+   "id": 5262,
+   "de": "die Besichtigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Besichtigungen",
+   "mevcutTr": "gezip görme, ziyaret",
+   "mevcutBeispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich.",
+   "mevcutBeispielTr": "Katedralin gezilmesi ancak rehber eşliğinde mümkün."
+  },
+  {
+   "id": 5263,
+   "de": "der Fremdenverkehr",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "turizm, turist hareketliliği",
+   "mevcutBeispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein.",
+   "mevcutBeispielTr": "Turizm bölgeye her yıl milyonlarca kazandırıyor.",
+   "cakisan": [
+    "der Tourismus (B1)"
+   ]
+  },
+  {
+   "id": 5264,
+   "de": "die Hochsaison",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yüksek sezon, sezonun en yoğun dönemi",
+   "mevcutBeispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste.",
+   "mevcutBeispielTr": "Yoğun sezonda kıyıdaki fiyatlar ikiye katlanıyor."
+  },
+  {
+   "id": 5265,
+   "de": "der Andrang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "izdiham, yığılma",
+   "mevcutBeispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen.",
+   "mevcutBeispielTr": "Büyük kalabalık yüzünden iki saat sıra beklemek zorunda kaldık."
+  },
+  {
+   "id": 5266,
+   "de": "die Zwischenlandung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zwischenlandungen",
+   "mevcutTr": "ara iniş, aktarma inişi",
+   "mevcutBeispiel": "Der Flug nach Chile hat eine Zwischenlandung in Madrid.",
+   "mevcutBeispielTr": "Şili uçuşunun Madrid'de bir ara inişi var."
+  },
+  {
+   "id": 5267,
+   "de": "die Zollkontrolle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zollkontrollen",
+   "mevcutTr": "gümrük kontrolü",
+   "mevcutBeispiel": "Bei der Zollkontrolle wurde mein Koffer gründlich durchsucht.",
+   "mevcutBeispielTr": "Gümrük kontrolünde valizim baştan sona arandı."
+  },
+  {
+   "id": 5268,
+   "de": "die Einreise",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Einreisen",
+   "mevcutTr": "ülkeye giriş",
+   "mevcutBeispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass.",
+   "mevcutBeispielTr": "Ülkeye giriş için en az altı ay geçerli bir pasaporta ihtiyacınız var."
+  },
+  {
+   "id": 5269,
+   "de": "der Grenzübergang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Grenzübergänge",
+   "mevcutTr": "sınır kapısı",
+   "mevcutBeispiel": "Am Grenzübergang stauten sich die Autos über mehrere Kilometer.",
+   "mevcutBeispielTr": "Sınır kapısında araçlar kilometrelerce kuyruk oluşturdu."
+  },
+  {
+   "id": 5270,
+   "de": "die Unterbringung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Unterbringungen",
+   "mevcutTr": "yerleştirme, konaklama düzeni",
+   "mevcutBeispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet.",
+   "mevcutBeispielTr": "Grubun konaklaması için sade bir misafirhane kiralandı."
+  },
+  {
+   "id": 5271,
+   "de": "die Herberge",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Herbergen",
+   "mevcutTr": "hostel, konukevi",
+   "mevcutBeispiel": "Am Ende der Etappe fanden die Pilger eine einfache Herberge.",
+   "mevcutBeispielTr": "Etabın sonunda hacılar mütevazı bir konukevi buldu."
+  },
+  {
+   "id": 5272,
+   "de": "die Reiseroute",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Reiserouten",
+   "mevcutTr": "seyahat güzergâhı",
+   "mevcutBeispiel": "Wegen des Unwetters mussten wir unsere Reiseroute kurzfristig ändern.",
+   "mevcutBeispielTr": "Fırtına yüzünden güzergâhımızı son anda değiştirmek zorunda kaldık."
+  },
+  {
+   "id": 5273,
+   "de": "der Abstecher",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abstecher",
+   "mevcutTr": "kısa uğrayış, yol üstü gezi",
+   "mevcutBeispiel": "Auf dem Rückweg machten wir einen kurzen Abstecher an den See.",
+   "mevcutBeispielTr": "Dönüş yolunda göle kısa bir uğrama yaptık."
+  },
+  {
+   "id": 5274,
+   "de": "der Gipfel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gipfel",
+   "mevcutTr": "zirve, doruk",
+   "mevcutBeispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer.",
+   "mevcutBeispielTr": "Hava açıkken zirveden denize kadar görülüyor."
+  },
+  {
+   "id": 5275,
+   "de": "die Schlucht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schluchten",
+   "mevcutTr": "boğaz, kanyon",
+   "mevcutBeispiel": "Ein schmaler Pfad führt durch die enge Schlucht hinunter zum Fluss.",
+   "mevcutBeispielTr": "Dar bir patika kanyonun içinden nehre iniyor.",
+   "cakisan": [
+    "der Hals (A1)"
+   ]
+  },
+  {
+   "id": 5276,
+   "de": "die Bucht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Buchten",
+   "mevcutTr": "koy, körfez",
+   "mevcutBeispiel": "In der versteckten Bucht ankerten nur zwei kleine Segelboote.",
+   "mevcutBeispielTr": "Gizli koyda yalnızca iki küçük yelkenli demirlemişti."
+  },
+  {
+   "id": 5277,
+   "de": "die Halbinsel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Halbinseln",
+   "mevcutTr": "yarımada",
+   "mevcutBeispiel": "Die Halbinsel ist nur über eine schmale Landbrücke erreichbar.",
+   "mevcutBeispielTr": "Yarımadaya ancak dar bir kara köprüsünden ulaşılabiliyor."
+  },
+  {
+   "id": 5278,
+   "de": "der Gletscher",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gletscher",
+   "mevcutTr": "buzul",
+   "mevcutBeispiel": "Der Gletscher hat sich in dreißig Jahren um einen Kilometer zurückgezogen.",
+   "mevcutBeispielTr": "Buzul otuz yılda bir kilometre geriledi."
+  },
+  {
+   "id": 5279,
+   "de": "der Vulkan",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vulkane",
+   "mevcutTr": "yanardağ",
+   "mevcutBeispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt.",
+   "mevcutBeispielTr": "Kül bulutu nedeniyle yanardağa tırmanış yasaklandı."
+  },
+  {
+   "id": 5280,
+   "de": "die Wüste",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wüsten",
+   "mevcutTr": "çöl",
+   "mevcutBeispiel": "Nachts fallen die Temperaturen in der Wüste unter null Grad.",
+   "mevcutBeispielTr": "Geceleri çölde sıcaklık sıfırın altına düşüyor."
+  },
+  {
+   "id": 5281,
+   "de": "die Mündung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Mündungen",
+   "mevcutTr": "nehir ağzı, döküldüğü yer",
+   "mevcutBeispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel.",
+   "mevcutBeispielTr": "Nehrin denize döküldüğü yerde çok sayıda nadir kuş kuluçkaya yatıyor."
+  },
+  {
+   "id": 5282,
+   "de": "die Strömung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Strömungen",
+   "mevcutTr": "akıntı",
+   "mevcutBeispiel": "Wegen der starken Strömung ist das Baden hier verboten.",
+   "mevcutBeispielTr": "Güçlü akıntı nedeniyle burada denize girmek yasak."
+  },
+  {
+   "id": 5283,
+   "de": "die Wildnis",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "el değmemiş doğa, vahşi doğa",
+   "mevcutBeispiel": "Nur wenige Kilometer weiter beginnt die echte Wildnis.",
+   "mevcutBeispielTr": "Birkaç kilometre ötede gerçek vahşi doğa başlıyor."
+  },
+  {
+   "id": 5284,
+   "de": "die Seilbahn",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Seilbahnen",
+   "mevcutTr": "teleferik",
+   "mevcutBeispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein.",
+   "mevcutBeispielTr": "Şiddetli rüzgârda teleferik seferlerini derhal durduruyor."
+  },
+  {
+   "id": 5285,
+   "de": "der Massentourismus",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kitle turizmi",
+   "mevcutBeispiel": "Der Massentourismus belastet die Wasserversorgung der Insel erheblich.",
+   "mevcutBeispielTr": "Kitle turizmi adanın su kaynaklarını ciddi biçimde zorluyor."
+  },
+  {
+   "id": 5286,
+   "de": "das Wahrzeichen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wahrzeichen",
+   "mevcutTr": "simge yapı, sembol",
+   "mevcutBeispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens.",
+   "mevcutBeispielTr": "Eski deniz feneri bugün hâlâ limanın simgesi."
+  },
+  {
+   "id": 5287,
+   "de": "die Anlegestelle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anlegestellen",
+   "mevcutTr": "iskele, yanaşma yeri",
+   "mevcutBeispiel": "Das Ausflugsschiff verlässt die Anlegestelle jede volle Stunde.",
+   "mevcutBeispielTr": "Gezi teknesi iskeleden her saat başı kalkıyor."
+  },
+  {
+   "id": 5288,
+   "de": "das Gastgewerbe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "konaklama ve yeme içme sektörü",
+   "mevcutBeispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte.",
+   "mevcutBeispielTr": "Konaklama ve yeme içme sektöründe yıllardır nitelikli eleman bulunamıyor."
+  },
+  {
+   "id": 5289,
+   "de": "die Etappe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Etappen",
+   "mevcutTr": "etap, aşama",
+   "mevcutBeispiel": "Die letzte Etappe des Weges war die anstrengendste von allen.",
+   "mevcutBeispielTr": "Yolun son etabı hepsinin en yorucusuydu."
+  },
+  {
+   "id": 5290,
+   "de": "der Ausblick",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausblicke",
+   "mevcutTr": "manzara, görünüm",
+   "mevcutBeispiel": "Von der Terrasse hat man einen weiten Ausblick über das Tal.",
+   "mevcutBeispielTr": "Terastan vadiye doğru geniş bir manzara var.",
+   "cakisan": [
+    "die Landschaft (A2)",
+    "die Aussicht (B1)"
+   ]
+  },
+  {
+   "id": 5291,
+   "de": "umbuchen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat umgebucht",
+   "mevcutTr": "rezervasyonu değiştirmek, tarihi kaydırmak",
+   "mevcutBeispiel": "Wir mussten den Flug wegen des Streiks kostenlos umbuchen.",
+   "mevcutBeispielTr": "Grev yüzünden uçuşu ücretsiz olarak değiştirmek zorunda kaldık."
+  },
+  {
+   "id": 5292,
+   "de": "aufsuchen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgesucht",
+   "mevcutTr": "gitmek, başvurmak, uğramak",
+   "mevcutBeispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen.",
+   "mevcutBeispielTr": "Şikâyet durumunda yolcular derhal bir doktora başvurmalı.",
+   "cakisan": [
+    "fahren (A1)",
+    "gehen (A1)",
+    "weggehen (A2)"
+   ]
+  },
+  {
+   "id": 5293,
+   "de": "anreisen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist angereist",
+   "mevcutTr": "gelmek, varmak",
+   "mevcutBeispiel": "Die meisten Gäste reisen mit dem Zug oder dem Bus an.",
+   "mevcutBeispielTr": "Konukların çoğu trenle ya da otobüsle geliyor.",
+   "cakisan": [
+    "kommen (A1)"
+   ]
+  },
+  {
+   "id": 5294,
+   "de": "sich verirren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich verirrt",
+   "mevcutTr": "yolunu kaybetmek, kaybolmak",
+   "mevcutBeispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
+   "mevcutBeispielTr": "Yoğun siste iki yürüyüşçü dağda kayboldu.",
+   "cakisan": [
+    "sich verlaufen (B1)"
+   ]
+  }
+ ]
+}

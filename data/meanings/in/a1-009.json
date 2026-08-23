@@ -1,0 +1,559 @@
+{
+ "paket": "a1-009",
+ "niveau": "A1",
+ "kelimeler": [
+  {
+   "id": 24,
+   "de": "antworten",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "cevap vermek, yanıtlamak",
+   "mevcutBeispiel": "Warum antwortest du nicht?",
+   "mevcutBeispielTr": "Neden cevap vermiyorsun?"
+  },
+  {
+   "id": 380,
+   "de": "rechts",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "sağda, sağa",
+   "mevcutBeispiel": "Hier rechts ist unsere Schule.",
+   "mevcutBeispielTr": "Okulumuz burada sağda."
+  },
+  {
+   "id": 239,
+   "de": "interessant",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ilginç",
+   "mevcutBeispiel": "Das Buch ist interessant.",
+   "mevcutBeispielTr": "Kitap ilginç."
+  },
+  {
+   "id": 512,
+   "de": "wohnen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "oturmak, yaşamak, ikamet etmek",
+   "mevcutBeispiel": "Ich wohne in München.",
+   "mevcutBeispielTr": "Münih'te oturuyorum.",
+   "cakisan": [
+    "sitzen (A1)",
+    "sich setzen (A2)",
+    "sich hinsetzen (A2)"
+   ]
+  },
+  {
+   "id": 253,
+   "de": "kaputt",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "bozuk, kırık",
+   "mevcutBeispiel": "Das Radio ist kaputt.",
+   "mevcutBeispielTr": "Radyo bozuk."
+  },
+  {
+   "id": 158,
+   "de": "das Flugzeug",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-e",
+   "mevcutTr": "uçak",
+   "mevcutBeispiel": "Im Flugzeug hatte meine Mutter Angst.",
+   "mevcutBeispielTr": "Uçakta annem korktu."
+  },
+  {
+   "id": 444,
+   "de": "der Tee",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "çay",
+   "mevcutBeispiel": "Am Abend trinken wir Tee.",
+   "mevcutBeispielTr": "Akşamları çay içeriz."
+  },
+  {
+   "id": 210,
+   "de": "der Hals",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -e",
+   "mevcutTr": "boğaz, boyun",
+   "mevcutBeispiel": "Mein Hals tut so weh!",
+   "mevcutBeispielTr": "Boynum çok ağrıyor!",
+   "cakisan": [
+    "die Schlucht (B2)"
+   ]
+  },
+  {
+   "id": 73,
+   "de": "besuchen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ziyaret etmek",
+   "mevcutBeispiel": "Im Sommer besuche ich dich.",
+   "mevcutBeispielTr": "Yazın seni ziyaret ederim."
+  },
+  {
+   "id": 279,
+   "de": "die Küche",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "mutfak",
+   "mevcutBeispiel": "Wir frühstücken in der Küche.",
+   "mevcutBeispielTr": "Kahvaltıyı mutfakta yapıyoruz."
+  },
+  {
+   "id": 644,
+   "de": "feiern",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kutlamak",
+   "mevcutBeispiel": "Wir feiern heute meinen Geburtstag.",
+   "mevcutBeispielTr": "Bugün doğum günümü kutluyoruz."
+  },
+  {
+   "id": 251,
+   "de": "die Kamera",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "kamera, fotoğraf makinesi",
+   "mevcutBeispiel": "Ich zeige dir meine neue Digitalkamera.",
+   "mevcutBeispielTr": "Sana yeni dijital fotoğraf makinemi göstereyim."
+  },
+  {
+   "id": 6,
+   "de": "die Achtung",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "dikkat; saygı",
+   "mevcutBeispiel": "Achtung! Jetzt fängt es an.",
+   "mevcutBeispielTr": "Dikkat! Şimdi başlıyor.",
+   "cakisan": [
+    "die Vorsicht (A1)",
+    "die Aufmerksamkeit (B2)"
+   ]
+  },
+  {
+   "id": 202,
+   "de": "der Glückwunsch",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ü, -e",
+   "mevcutTr": "tebrik",
+   "mevcutBeispiel": "Herzlichen Glückwunsch!",
+   "mevcutBeispielTr": "Tebrikler!",
+   "cakisan": [
+    "die Gratulation (B1)"
+   ]
+  },
+  {
+   "id": 482,
+   "de": "der Wald",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -er",
+   "mevcutTr": "orman",
+   "mevcutBeispiel": "In Thüringen gibt es sehr viel Wald.",
+   "mevcutBeispielTr": "Thüringen'de çok fazla orman var."
+  },
+  {
+   "id": 196,
+   "de": "das Glas",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -er",
+   "mevcutTr": "bardak, cam",
+   "mevcutBeispiel": "Bitte ein Glas Cola.",
+   "mevcutBeispielTr": "Bir bardak kola lütfen."
+  },
+  {
+   "id": 269,
+   "de": "das Kleid",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-er",
+   "mevcutTr": "elbise",
+   "mevcutBeispiel": "Das Kleid ist sehr teuer.",
+   "mevcutBeispielTr": "Elbise çok pahalı."
+  },
+  {
+   "id": 574,
+   "de": "beginnen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "başlamak",
+   "mevcutBeispiel": "Das Spiel beginnt um 15.30 Uhr.",
+   "mevcutBeispielTr": "Maç 15.30'da başlıyor.",
+   "cakisan": [
+    "anfangen (A1)"
+   ]
+  },
+  {
+   "id": 59,
+   "de": "die Band",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "müzik grubu",
+   "mevcutBeispiel": "Die Schülerband spielt heute um 9.",
+   "mevcutBeispielTr": "Okul grubu bugün saat 9'da çalıyor."
+  },
+  {
+   "id": 553,
+   "de": "die Aufgabe",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "görev, ödev",
+   "mevcutBeispiel": "Das ist eine schwere Aufgabe.",
+   "mevcutBeispielTr": "Bu zor bir görev.",
+   "cakisan": [
+    "die Pflicht (B1)"
+   ]
+  },
+  {
+   "id": 625,
+   "de": "der Ehemann",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, er",
+   "mevcutTr": "eş, koca",
+   "mevcutBeispiel": "Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.",
+   "mevcutBeispielTr": "Bu benim eşim.",
+   "cakisan": [
+    "die Ehefrau (A1)"
+   ]
+  },
+  {
+   "id": 7,
+   "de": "die Adresse",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "adres",
+   "mevcutBeispiel": "Ich weiß die Adresse nicht.",
+   "mevcutBeispielTr": "Adresi bilmiyorum."
+  },
+  {
+   "id": 64,
+   "de": "bedeuten",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "anlamına gelmek",
+   "mevcutBeispiel": "Was bedeutet das Wort?",
+   "mevcutBeispielTr": "Bu kelime ne anlama geliyor?",
+   "cakisan": [
+    "besagen (C1)"
+   ]
+  },
+  {
+   "id": 57,
+   "de": "der Ball",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -e",
+   "mevcutTr": "top",
+   "mevcutBeispiel": "Wir spielen mit dem Ball.",
+   "mevcutBeispielTr": "Topla oynuyoruz."
+  },
+  {
+   "id": 327,
+   "de": "mitnehmen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yanına almak, beraberinde götürmek",
+   "mevcutBeispiel": "Was nehmen wir zu der Party mit?",
+   "mevcutBeispielTr": "Partiye yanımızda ne götürelim?"
+  },
+  {
+   "id": 675,
+   "de": "die Gruppe",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "grup",
+   "mevcutBeispiel": "Die erste Gruppe beginnt um 16 Uhr.",
+   "mevcutBeispielTr": "İlk grup saat 16'da başlıyor."
+  },
+  {
+   "id": 123,
+   "de": "das Eis",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "dondurma",
+   "mevcutBeispiel": "Ich möchte ein großes Eis.",
+   "mevcutBeispielTr": "Büyük boy bir dondurma istiyorum.",
+   "cakisan": [
+    "die/das Glace/Glacé (B1)"
+   ]
+  },
+  {
+   "id": 98,
+   "de": "danken",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "teşekkür etmek",
+   "mevcutBeispiel": "Die CD ist wunderbar, ich danke dir.",
+   "mevcutBeispielTr": "CD harika, sana teşekkür ederim.",
+   "cakisan": [
+    "sich bedanken (B1)"
+   ]
+  },
+  {
+   "id": 856,
+   "de": "zufrieden",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "memnun",
+   "mevcutBeispiel": "Ich bin mit der Wohnung zufrieden.",
+   "mevcutBeispielTr": "Daireden memnunum."
+  },
+  {
+   "id": 780,
+   "de": "schließen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kapatmak (kapı, dükkân)",
+   "mevcutBeispiel": "Bitte, schließen Sie die Tür.",
+   "mevcutBeispielTr": "Lütfen kapıyı kapatın.",
+   "cakisan": [
+    "zumachen (A1)"
+   ]
+  },
+  {
+   "id": 401,
+   "de": "der Schmerz",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "ağrı, acı",
+   "mevcutBeispiel": "Ich habe Bauchschmerzen.",
+   "mevcutBeispielTr": "Karnım ağrıyor."
+  },
+  {
+   "id": 148,
+   "de": "fernsehen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "televizyon izlemek",
+   "mevcutBeispiel": "Siehst du viel fern?",
+   "mevcutBeispielTr": "Çok televizyon izler misin?"
+  },
+  {
+   "id": 149,
+   "de": "das Fernsehen",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "televizyon (yayın, kurum)",
+   "mevcutBeispiel": "Was gibt es heute im Fernsehen?",
+   "mevcutBeispielTr": "Bugün televizyonda ne var?"
+  },
+  {
+   "id": 537,
+   "de": "das Angebot",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-e",
+   "mevcutTr": "indirim, kampanya; teklif",
+   "mevcutBeispiel": "Heute sind Sportschuhe im Angebot.",
+   "mevcutBeispielTr": "Bugün spor ayakkabılar kampanyada.",
+   "cakisan": [
+    "die Ermäßigung (A2)",
+    "der Rabatt (B1)",
+    "der Ausverkauf (B2)"
+   ]
+  },
+  {
+   "id": 388,
+   "de": "der Ring",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-e",
+   "mevcutTr": "yüzük",
+   "mevcutBeispiel": "Sie trägt viele Ringe.",
+   "mevcutBeispielTr": "Bir sürü yüzük takıyor."
+  },
+  {
+   "id": 720,
+   "de": "das Lied",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-er",
+   "mevcutTr": "şarkı",
+   "mevcutBeispiel": "Welches ist dein Lieblingslied?",
+   "mevcutBeispielTr": "En sevdiğin şarkı hangisi?"
+  },
+  {
+   "id": 238,
+   "de": "die Insel",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "ada",
+   "mevcutBeispiel": "Rügen ist eine Insel.",
+   "mevcutBeispielTr": "Rügen bir adadır."
+  },
+  {
+   "id": 606,
+   "de": "dauern",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "sürmek",
+   "mevcutBeispiel": "Wie lange dauert der Film?",
+   "mevcutBeispielTr": "Film ne kadar sürüyor?",
+   "cakisan": [
+    "schmieren (A2)"
+   ]
+  },
+  {
+   "id": 614,
+   "de": "das Dorf",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-ö, er",
+   "mevcutTr": "köy",
+   "mevcutBeispiel": "Meine Familie lebt in einem Dorf.",
+   "mevcutBeispielTr": "Ailem bir köyde yaşıyor."
+  },
+  {
+   "id": 716,
+   "de": "leise",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "sessiz, sessizce",
+   "mevcutBeispiel": "Seid leise. Die anderen schlafen schon.",
+   "mevcutBeispielTr": "Sessiz olun. Diğerleri uyuyor.",
+   "cakisan": [
+    "still (B1)",
+    "stumm (B1)"
+   ]
+  },
+  {
+   "id": 471,
+   "de": "verdienen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kazanmak (para), hak etmek",
+   "mevcutBeispiel": "In den Ferien möchte ich ein bisschen Geld verdienen.",
+   "mevcutBeispielTr": "Tatilde biraz para kazanmak istiyorum.",
+   "cakisan": [
+    "siegen (B1)",
+    "erwerben (B2)",
+    "erwirtschaften (B2)"
+   ]
+  },
+  {
+   "id": 359,
+   "de": "der Park",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "park",
+   "mevcutBeispiel": "Wir gehen in den Park. .",
+   "mevcutBeispielTr": "Parka gidiyoruz."
+  },
+  {
+   "id": 155,
+   "de": "das Fleisch",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "et",
+   "mevcutBeispiel": "Ich esse kein Fleisch.",
+   "mevcutBeispielTr": "Et yemiyorum."
+  },
+  {
+   "id": 523,
+   "de": "die Zeitung",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "gazete",
+   "mevcutBeispiel": "Meine Mutter liest am Morgen die Zeitung.",
+   "mevcutBeispielTr": "Annem sabahları gazete okur."
+  },
+  {
+   "id": 665,
+   "de": "das Gespräch",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-e",
+   "mevcutTr": "görüşme, konuşma",
+   "mevcutBeispiel": "Das Gespräch mit Frau Kunz ist um 14 Uhr.",
+   "mevcutBeispielTr": "Bayan Kunz'la görüşme saat 14'te."
+  },
+  {
+   "id": 809,
+   "de": "das Taxi",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "taksi",
+   "mevcutBeispiel": "Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi.",
+   "mevcutBeispielTr": "Bugün artık otobüs yok. Taksiyle gidiyor."
+  },
+  {
+   "id": 410,
+   "de": "der See",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "göl",
+   "mevcutBeispiel": "Der See ist sehr groß./Wir wohnen am See./ Wir fahren zum Ammersee.",
+   "mevcutBeispielTr": "Göl çok büyük. / Göl kenarında oturuyoruz. / Ammersee gölüne gidiyoruz."
+  },
+  {
+   "id": 851,
+   "de": "der Wind",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "rüzgar",
+   "mevcutBeispiel": "Der Wind kommt aus Osten.",
+   "mevcutBeispielTr": "Rüzgar doğudan esiyor."
+  },
+  {
+   "id": 92,
+   "de": "der Bus",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-se",
+   "mevcutTr": "otobüs",
+   "mevcutBeispiel": "Sie fährt mit dem Bus.",
+   "mevcutBeispielTr": "Otobüsle gidiyor."
+  },
+  {
+   "id": 371,
+   "de": "der Quatsch",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "saçmalık",
+   "mevcutBeispiel": "Ich finde, das ist Quatsch!",
+   "mevcutBeispielTr": "Bence bu tam bir saçmalık!"
+  }
+ ]
+}

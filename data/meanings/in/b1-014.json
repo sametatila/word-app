@@ -1,0 +1,596 @@
+{
+ "paket": "b1-014",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 1389,
+   "de": "sich amüsieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "amüsiert sich, amüsierte sich, hat sich amüsiert",
+   "mevcutTr": "eğlenmek, hoşça vakit geçirmek",
+   "mevcutBeispiel": "Bei dem Fest haben wir uns sehr gut amüsiert.",
+   "mevcutBeispielTr": "Kutlamada çok iyi eğlendik.",
+   "cakisan": [
+    "sich vergnügen (B1)"
+   ]
+  },
+  {
+   "id": 2454,
+   "de": "ordentlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "tertipli, düzenli (dağınık olmayan)",
+   "mevcutBeispiel": "1. Mein Bruder ist ein sehr ordentlicher Mensch. 2. Auf seinem Schreibtisch sieht es immer sehr ordentlich aus.",
+   "mevcutBeispielTr": "1. Kardeşim çok düzenli bir insan. 2. Çalışma masası her zaman çok derli toplu görünür."
+  },
+  {
+   "id": 2402,
+   "de": "sich nähern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "nähert sich, näherte sich, hat sich genähert",
+   "mevcutTr": "yaklaşmak",
+   "mevcutBeispiel": "Er nähert sich dem Unfallort ganz langsam.",
+   "mevcutBeispielTr": "Kaza yerine çok yavaş yaklaşıyor."
+  },
+  {
+   "id": 1353,
+   "de": "abnehmen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "nimmt ab, nahm ab, hat abgenommen",
+   "mevcutTr": "çıkarmak, sökmek / kilo vermek",
+   "mevcutBeispiel": "1. Morgen können wir den Verband abnehmen. 2. Ich habe zehn Kilo abgenommen.",
+   "mevcutBeispielTr": "Yarın bandajı çıkarabiliriz.",
+   "cakisan": [
+    "ausziehen (B1)",
+    "erlassen (B2)",
+    "abbauen (B2)",
+    "ableiten (C1)"
+   ]
+  },
+  {
+   "id": 2155,
+   "de": "das Kapitel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "bölüm",
+   "mevcutBeispiel": "Die Lehrerin hat gesagt, wir sollen zwei Kapitel im Buch wiederholen.",
+   "mevcutBeispielTr": "Öğretmen, kitaptan iki bölümü tekrar etmemizi söyledi.",
+   "cakisan": [
+    "der Abschnitt (B1)",
+    "die Abteilung (B1)",
+    "die Fachrichtung (B2)",
+    "die Rubrik (B2)"
+   ]
+  },
+  {
+   "id": 1495,
+   "de": "der Bau",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "Bauten",
+   "mevcutTr": "yapı, inşaat",
+   "mevcutBeispiel": "1. Ich wohne in einer Neubauwohnung. 2. Unser Haus ist ein Altbau.",
+   "mevcutBeispielTr": "Yeni yapım bir dairede oturuyorum."
+  },
+  {
+   "id": 1607,
+   "de": "brennen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "brennt, brannte, hat gebrannt",
+   "mevcutTr": "yanmak",
+   "mevcutBeispiel": "1. In diesem Haus hat es letztes Jahr gebrannt. 2. Die Kerze brennt noch. Mach sie bitte aus. 3. In deinem Zimmer hat di",
+   "mevcutBeispielTr": "Bu evde geçen yıl yangın çıktı."
+  },
+  {
+   "id": 1821,
+   "de": "ersetzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "ersetzt, ersetzte, hat ersetzt",
+   "mevcutTr": "yerine koymak, değiştirmek, tazmin etmek",
+   "mevcutBeispiel": "1. Wir ersetzen Ihnen die Kosten. 2. Peter ist krank. Jemand muss ihn ersetzen.",
+   "mevcutBeispielTr": "1. Masraflarınızı karşılıyoruz. 2. Peter hasta; birinin onun yerine bakması gerek."
+  },
+  {
+   "id": 2082,
+   "de": "die Hitze",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sıcak, sıcaklık",
+   "mevcutBeispiel": "Gestern war eine schreckliche Hitze!",
+   "mevcutBeispielTr": "Dün korkunç bir sıcak vardı!",
+   "cakisan": [
+    "warm (A1)",
+    "heiß (A2)"
+   ]
+  },
+  {
+   "id": 2730,
+   "de": "das Spielzeug",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "oyuncak",
+   "mevcutBeispiel": "Zu Weihnachten wünschen sich die Kinder vor allem Spielzeug.",
+   "mevcutBeispielTr": "Çocuklar yılbaşında en çok oyuncak istiyor."
+  },
+  {
+   "id": 3123,
+   "de": "die Wolle",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yün",
+   "mevcutBeispiel": "Dieser Pullover ist aus reiner Wolle.",
+   "mevcutBeispielTr": "Bu kazak saf yünden."
+  },
+  {
+   "id": 3155,
+   "de": "die Zone",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "bölge (sınırları belirlenmiş alan)",
+   "mevcutBeispiel": "Hier können wir nicht fahren. Das ist eine Fußgängerzone.",
+   "mevcutBeispielTr": "Burada araba süremeyiz. Burası yaya bölgesi.",
+   "cakisan": [
+    "das Gebiet (B1)",
+    "die Gegend (B1)",
+    "die Region (B1)"
+   ]
+  },
+  {
+   "id": 1772,
+   "de": "entschlossen",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kararlı",
+   "mevcutBeispiel": "Ich bin fest entschlossen, diese Ausbildung fertigzumachen.",
+   "mevcutBeispielTr": "Bu eğitimi bitirmeye kesin kararlıyım."
+  },
+  {
+   "id": 2641,
+   "de": "der Schmuck",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "takı, mücevher",
+   "mevcutBeispiel": "Dieser Schmuck ist von meiner Großmutter.",
+   "mevcutBeispielTr": "Bu takılar büyükannemden kalma."
+  },
+  {
+   "id": 2103,
+   "de": "illegal",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yasa dışı, illegal",
+   "mevcutBeispiel": "Ohne Steuerkarte zu arbeiten ist illegal. Wenn es herauskommt, musst du Strafe zahlen.",
+   "mevcutBeispielTr": "Vergi kaydı olmadan çalışmak yasa dışıdır. Ortaya çıkarsa ceza ödemen gerekir."
+  },
+  {
+   "id": 2767,
+   "de": "die Steuer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "vergi",
+   "mevcutBeispiel": "Wir müssen immer mehr Steuern zahlen.",
+   "mevcutBeispielTr": "Giderek daha çok vergi ödemek zorunda kalıyoruz."
+  },
+  {
+   "id": 2788,
+   "de": "die Strecke",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "mesafe, yol, güzergah",
+   "mevcutBeispiel": "1. Sind Sie die ganze Strecke zu Fuß gegangen? 2. Auf der Strecke München – Salzburg: 8 km Stau. 3. Ich möchte nach Hamb",
+   "mevcutBeispielTr": "1. Bütün yolu yürüyerek mi gittiniz? 2. Münih–Salzburg güzergâhında 8 km kuyruk var. 3. Hamburg'a gitmek istiyorum.",
+   "cakisan": [
+    "die Distanz (B1)",
+    "die Entfernung (B1)"
+   ]
+  },
+  {
+   "id": 2256,
+   "de": "die Küste",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "deniz kıyısı, sahil",
+   "mevcutBeispiel": "Unser Dorf liegt direkt an der Küste.",
+   "mevcutBeispielTr": "Köyümüz tam sahil kenarında."
+  },
+  {
+   "id": 1894,
+   "de": "der Flur",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e → Gang, D, CH: Korridor",
+   "mevcutTr": "koridor, hol",
+   "mevcutBeispiel": "Wir warten draußen im Flur.",
+   "mevcutBeispielTr": "Dışarıda, koridorda bekliyoruz.",
+   "cakisan": [
+    "der Gang (B1)",
+    "der Korridor (B1)"
+   ]
+  },
+  {
+   "id": 2269,
+   "de": "der Laster",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "kamyon",
+   "mevcutBeispiel": "Auf der Autobahn waren so viele Laster. Deshalb hat es so lange gedauert.",
+   "mevcutBeispielTr": "Otoyolda o kadar çok kamyon vardı ki. O yüzden bu kadar uzun sürdü.",
+   "cakisan": [
+    "der Lkw (A1)"
+   ]
+  },
+  {
+   "id": 2624,
+   "de": "die Schauspielerin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "kadın oyuncu, aktris",
+   "mevcutBeispiel": "Der Film war toll. Die Schauspieler waren sehr gut.",
+   "mevcutBeispielTr": "Film harikaydı. Oyuncular çok iyiydi."
+  },
+  {
+   "id": 2376,
+   "de": "das Motorrad",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er",
+   "mevcutTr": "motosiklet",
+   "mevcutBeispiel": "Oskar fährt jeden Tag mit dem Motorrad zur Arbeit.",
+   "mevcutBeispielTr": "Oskar her gün işe motosikletle gidiyor."
+  },
+  {
+   "id": 1776,
+   "de": "enttäuschen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "enttäuscht, enttäuschte, hat enttäuscht",
+   "mevcutTr": "hayal kırıklığına uğratmak",
+   "mevcutBeispiel": "1. Leider hat mich sein Verhalten enttäuscht. 2. Wir waren von dem Konzert sehr enttäuscht. 3. Das Ergebnis war enttäusc",
+   "mevcutBeispielTr": "Maalesef davranışı beni hayal kırıklığına uğrattı."
+  },
+  {
+   "id": 1885,
+   "de": "der Fleck",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "leke",
+   "mevcutBeispiel": "Du hast einen Fleck auf der Bluse.",
+   "mevcutBeispielTr": "Bluzunda leke var."
+  },
+  {
+   "id": 1758,
+   "de": "der Enkel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "torun (erkek)",
+   "mevcutBeispiel": "Alle meine Enkel gehen schon zur Schule.",
+   "mevcutBeispielTr": "Bütün torunlarım artık okula gidiyor.",
+   "cakisan": [
+    "die Enkelin (B1)",
+    "das Enkelkind (A2)"
+   ]
+  },
+  {
+   "id": 1476,
+   "de": "die Aussicht",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "manzara, gelecek beklentisi",
+   "mevcutBeispiel": "1. Von diesem Turm hat man eine tolle Aussicht. 2. Mit mehreren Fremdsprachen hat man gute Aussichten im Beruf.",
+   "mevcutBeispielTr": "Bu kuleden muhteşem bir manzara görülüyor.",
+   "cakisan": [
+    "die Landschaft (A2)",
+    "der Ausblick (B2)"
+   ]
+  },
+  {
+   "id": 3091,
+   "de": "die Werbung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "reklam",
+   "mevcutBeispiel": "1. Ich sehe gern Werbung im Fernsehen. 2. Ich möchte keine Werbung im Briefkasten.",
+   "mevcutBeispielTr": "1. Televizyonda reklam izlemeyi severim. 2. Posta kutuma reklam atılmasını istemiyorum.",
+   "cakisan": [
+    "die Reklame (B1)"
+   ]
+  },
+  {
+   "id": 2842,
+   "de": "der Teppich",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "halı",
+   "mevcutBeispiel": "1. Ich habe mir einen neuen Teppich gekauft. 2. Habt ihr in eurer neuen Wohnung Teppich oder einen Holzfußboden?",
+   "mevcutBeispielTr": "1. Kendime yeni bir halı aldım. 2. Yeni evinizde halı mı var, ahşap zemin mi?"
+  },
+  {
+   "id": 2044,
+   "de": "der Handel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ticaret",
+   "mevcutBeispiel": "Der Handel mit Computern ist ein gutes Geschäft.",
+   "mevcutBeispielTr": "Bilgisayar ticareti iyi bir iş."
+  },
+  {
+   "id": 2862,
+   "de": "der Trainer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Trainerin, -nen",
+   "mevcutTr": "antrenör, çalıştırıcı",
+   "mevcutBeispiel": "- Ich finde unseren Trainer sehr nett.",
+   "mevcutBeispielTr": "Antrenörümüzü çok cana yakın buluyorum.",
+   "cakisan": [
+    "die Trainerin (A2)"
+   ]
+  },
+  {
+   "id": 2307,
+   "de": "löschen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "löscht, löschte, hat gelöscht",
+   "mevcutTr": "silmek, söndürmek",
+   "mevcutBeispiel": "1. Du kannst die Datei löschen. Ich brauche sie nicht mehr. 2. Das Feuer wurde schnell gelöscht.",
+   "mevcutBeispielTr": "1. Dosyayı silebilirsin, artık ihtiyacım yok. 2. Yangın hızla söndürüldü.",
+   "cakisan": [
+    "aufwischen (A2)",
+    "abwischen (A2)",
+    "wischen (A2)"
+   ]
+  },
+  {
+   "id": 2860,
+   "de": "die Tradition",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "gelenek",
+   "mevcutBeispiel": "Eine große Hochzeit mit vielen Leuten ist bei uns Tradition.",
+   "mevcutBeispielTr": "Bizde çok kişinin katıldığı büyük düğün gelenektir.",
+   "cakisan": [
+    "der Brauch (B2)"
+   ]
+  },
+  {
+   "id": 1843,
+   "de": "die Fähigkeit",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "yetenek, kabiliyet",
+   "mevcutBeispiel": "1. In seiner Position braucht man die Fähigkeit, andere zu überzeugen. 2. Ich glaube, sie hat die Fähigkeit dazu.",
+   "mevcutBeispielTr": "1. Onun pozisyonunda başkalarını ikna etme yeteneği gerekir. 2. Bence onda bu yetenek var.",
+   "cakisan": [
+    "das Talent (B1)",
+    "die Begabung (B2)"
+   ]
+  },
+  {
+   "id": 2361,
+   "de": "mitteilen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "teilt mit, teilte mit, hat mitgeteilt",
+   "mevcutTr": "iletmek, bildirmek",
+   "mevcutBeispiel": "Den Prüfungstermin teilen wir Ihnen noch mit.",
+   "mevcutBeispielTr": "Sınav tarihini size ayrıca bildireceğiz.",
+   "cakisan": [
+    "ausrichten (B1)",
+    "übermitteln (C1)",
+    "weiterleiten (B2)"
+   ]
+  },
+  {
+   "id": 3017,
+   "de": "das Verständnis",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "anlayış",
+   "mevcutBeispiel": "Wir bitten um Ihr Verständnis.",
+   "mevcutBeispielTr": "Anlayışınızı rica ediyoruz."
+  },
+  {
+   "id": 1734,
+   "de": "einsetzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "setzt ein, setzte ein, hat eingesetzt",
+   "mevcutTr": "görevlendirmek, kullanmak, çaba göstermek",
+   "mevcutBeispiel": "1. Ich glaube, wir müssen jemanden einsetzen, der sich um die Organisation kümmert. 2. Peter hat sich dafür eingesetzt, ",
+   "mevcutBeispielTr": "Bence organizasyonla ilgilenecek birini görevlendirmeliyiz.",
+   "cakisan": [
+    "beauftragen (B2)"
+   ]
+  },
+  {
+   "id": 1996,
+   "de": "der Gewinn",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "kazanç, kâr, ikramiye",
+   "mevcutBeispiel": "Ich habe bei einem Ratespiel mitge - macht. Der Hauptgewinn ist ein Auto.",
+   "mevcutBeispielTr": "Bir bilgi yarışmasına katıldım. Büyük ödül bir araba.",
+   "cakisan": [
+    "der Verdienst (A2)"
+   ]
+  },
+  {
+   "id": 2489,
+   "de": "pflanzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "pflanzt, pflanzte, hat gepflanzt",
+   "mevcutTr": "dikmek (bitki)",
+   "mevcutBeispiel": "Lass uns einen Baum pflanzen!",
+   "mevcutBeispielTr": "Hadi bir ağaç dikelim!",
+   "cakisan": [
+    "nähen (B1)"
+   ]
+  },
+  {
+   "id": 2370,
+   "de": "das Modell",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "model",
+   "mevcutBeispiel": "Wie findest du dieses Auto? – Dieses Modell gefällt mir nicht.",
+   "mevcutBeispielTr": "Bu arabayı nasıl buluyorsun? – Bu model hoşuma gitmedi."
+  },
+  {
+   "id": 1989,
+   "de": "die Geschwindigkeit",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "hız",
+   "mevcutBeispiel": "Das Auto fuhr mit zu hoher Geschwindigkeit.",
+   "mevcutBeispielTr": "Araba aşırı hızla gidiyordu.",
+   "cakisan": [
+    "das Tempo (B1)"
+   ]
+  },
+  {
+   "id": 3007,
+   "de": "verpflichtet",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yükümlü, zorunlu",
+   "mevcutBeispiel": "Sie sind verpflichtet, den Unfall zu melden.",
+   "mevcutBeispielTr": "Kazayı bildirmekle yükümlüsünüz."
+  },
+  {
+   "id": 2318,
+   "de": "das Märchen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "masal",
+   "mevcutBeispiel": "Meine Großmutter hat uns viele Märchen erzählt.",
+   "mevcutBeispielTr": "Büyükannem bize çok masal anlatırdı."
+  },
+  {
+   "id": 2095,
+   "de": "der Hügel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "tepe",
+   "mevcutBeispiel": "Auf diesem Hügel machen wir eine Pause.",
+   "mevcutBeispielTr": "Bu tepede mola veriyoruz."
+  },
+  {
+   "id": 1594,
+   "de": "der Blitz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "şimşek, flaş",
+   "mevcutBeispiel": "1. Was für ein Gewitter, hast du den Blitz gesehen? 2. Hast du das Foto mit Blitz gemacht?",
+   "mevcutBeispielTr": "Ne fırtına ama! Şimşeği gördün mü?"
+  },
+  {
+   "id": 1448,
+   "de": "aufmerksam",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "dikkatli",
+   "mevcutBeispiel": "1. Die Schülerin hörte aufmerksam zu. 2. Ich mache Sie darauf aufmerksam, dass wir in einer halben Stunde schließen.",
+   "mevcutBeispielTr": "Öğrenci dikkatle dinledi.",
+   "cakisan": [
+    "vorsichtig (A2)"
+   ]
+  },
+  {
+   "id": 1978,
+   "de": "die Generation",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "nesil, kuşak",
+   "mevcutBeispiel": "In diesem Haus wohnen drei Generationen zusammen.",
+   "mevcutBeispielTr": "Bu evde üç kuşak bir arada yaşıyor."
+  },
+  {
+   "id": 1470,
+   "de": "ausrichten",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "richtet aus, richtete aus, hat ausgerichtet",
+   "mevcutTr": "iletmek, haber vermek",
+   "mevcutBeispiel": "Mein Mann ist nicht da. Soll ich ihm etwas ausrichten?",
+   "mevcutBeispielTr": "Eşim burada değil. İleteyim mi, bir mesajınız var mı?",
+   "cakisan": [
+    "mitteilen (B1)",
+    "übermitteln (C1)",
+    "weiterleiten (B2)"
+   ]
+  },
+  {
+   "id": 1467,
+   "de": "die Ausnahme",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "istisna",
+   "mevcutBeispiel": "Normalerweise muss ich am Wochenende arbeiten. Aber heute ist eine Ausnahme.",
+   "mevcutBeispielTr": "Normalde hafta sonları çalışmam gerekiyor ama bugün bir istisna."
+  },
+  {
+   "id": 2805,
+   "de": "stürzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "stürzt, stürzte, ist gestürzt",
+   "mevcutTr": "düşmek (sert biçimde), yuvarlanmak",
+   "mevcutBeispiel": "1. Ich bin auf der Straße gestürzt und habe mir den Fuß gebrochen. 2. Bitte pass auf der Treppe auf, dass du nicht hinun",
+   "mevcutBeispielTr": "1. Sokakta düştüm ve ayağımı kırdım. 2. Merdivende dikkat et, aşağı düşme.",
+   "cakisan": [
+    "fallen (A2)",
+    "abrutschen (C1)"
+   ]
+  },
+  {
+   "id": 2064,
+   "de": "die Herausforderung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "meydan okuma, zorluk",
+   "mevcutBeispiel": "Das Spiel ist eine Herausforderung.",
+   "mevcutBeispielTr": "Bu oyun tam bir meydan okuma."
+  }
+ ]
+}

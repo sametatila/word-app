@@ -1,0 +1,572 @@
+{
+ "paket": "b2-022",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4694,
+   "de": "die Fehlerquote",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fehlerquoten",
+   "mevcutTr": "hata oranı",
+   "mevcutBeispiel": "Nach der Schulung sank die Fehlerquote auf unter ein Prozent.",
+   "mevcutBeispielTr": "Eğitimden sonra hata oranı yüzde birin altına indi."
+  },
+  {
+   "id": 4695,
+   "de": "der Arbeitsgang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Arbeitsgänge",
+   "mevcutTr": "iş adımı, işlem aşaması",
+   "mevcutBeispiel": "Dieser Arbeitsgang lässt sich mit dem nächsten zusammenlegen.",
+   "mevcutBeispielTr": "Bu iş adımı bir sonrakiyle birleştirilebilir."
+  },
+  {
+   "id": 4696,
+   "de": "die Zertifizierung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zertifizierungen",
+   "mevcutTr": "belgelendirme, sertifikasyon",
+   "mevcutBeispiel": "Ohne Zertifizierung dürfen wir gar nicht erst anbieten.",
+   "mevcutBeispielTr": "Sertifikasyon olmadan teklif bile veremeyiz."
+  },
+  {
+   "id": 4697,
+   "de": "die Abnahme",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abnahmen",
+   "mevcutTr": "kabul, teslim kontrolü",
+   "mevcutBeispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt.",
+   "mevcutBeispielTr": "Müşteri kabulü önümüzdeki cuma yapılacak.",
+   "cakisan": [
+    "die Zulassung (B2)"
+   ]
+  },
+  {
+   "id": 4698,
+   "de": "die Reklamation",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Reklamationen",
+   "mevcutTr": "şikâyet, iade talebi",
+   "mevcutBeispiel": "Die Reklamation betraf eine ganze Charge fehlerhafter Teile.",
+   "mevcutBeispielTr": "Şikâyet, hatalı parçalardan oluşan bir partinin tamamıyla ilgiliydi."
+  },
+  {
+   "id": 4699,
+   "de": "der Ausfall",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausfälle",
+   "mevcutTr": "arıza, devre dışı kalma",
+   "mevcutBeispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
+   "mevcutBeispielTr": "Soğutmanın devre dışı kalması üretimi bir gün felç etti.",
+   "cakisan": [
+    "die Panne (B1)"
+   ]
+  },
+  {
+   "id": 4700,
+   "de": "die Gewährleistung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gewährleistungen",
+   "mevcutTr": "garanti, ayıba karşı sorumluluk",
+   "mevcutBeispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum.",
+   "mevcutBeispielTr": "Garanti, teslim tarihinden itibaren iki yıl geçerli.",
+   "cakisan": [
+    "die Garantie (B1)"
+   ]
+  },
+  {
+   "id": 4701,
+   "de": "die Ausbeute",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausbeuten",
+   "mevcutTr": "verim, elde edilen miktar",
+   "mevcutBeispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter.",
+   "mevcutBeispielTr": "İnce sacda levha başına verim belirgin biçimde daha kötü.",
+   "cakisan": [
+    "der Ertrag (B2)",
+    "der Wirkungsgrad (B2)"
+   ]
+  },
+  {
+   "id": 4702,
+   "de": "die Werkbank",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Werkbänke",
+   "mevcutTr": "tezgâh, çalışma tezgâhı",
+   "mevcutBeispiel": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile durcheinander.",
+   "mevcutBeispielTr": "Tezgâhın üstünde aletler ve yarım kalmış parçalar karmakarışık duruyordu."
+  },
+  {
+   "id": 4703,
+   "de": "fräsen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gefräst",
+   "mevcutTr": "frezelemek",
+   "mevcutBeispiel": "Die Nut wird in einem Durchgang sauber gefräst.",
+   "mevcutBeispielTr": "Kanal tek geçişte temiz bir şekilde frezeleniyor."
+  },
+  {
+   "id": 4704,
+   "de": "bohren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gebohrt",
+   "mevcutTr": "delmek, delik açmak",
+   "mevcutBeispiel": "Bevor du bohrst, prüfe bitte noch einmal die Maße.",
+   "mevcutBeispielTr": "Delmeden önce lütfen ölçüleri bir kez daha kontrol et."
+  },
+  {
+   "id": 4705,
+   "de": "schleifen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschliffen",
+   "mevcutTr": "zımparalamak, taşlamak",
+   "mevcutBeispiel": "Die Kanten müssen noch geschliffen werden, sonst verletzt sich jemand.",
+   "mevcutBeispielTr": "Kenarların zımparalanması gerek, yoksa biri yaralanır."
+  },
+  {
+   "id": 4706,
+   "de": "schmieden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschmiedet",
+   "mevcutTr": "dövmek, demir dövmek",
+   "mevcutBeispiel": "Früher wurden solche Beschläge von Hand geschmiedet.",
+   "mevcutBeispielTr": "Eskiden böyle aksamlar elle dövülürdü."
+  },
+  {
+   "id": 4707,
+   "de": "einbauen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingebaut",
+   "mevcutTr": "monte etmek, yerleştirmek",
+   "mevcutBeispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
+   "mevcutBeispielTr": "Teknisyen yarın daha güçlü bir motor monte edecek.",
+   "cakisan": [
+    "montieren (A2)"
+   ]
+  },
+  {
+   "id": 4708,
+   "de": "nachrüsten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat nachgerüstet",
+   "mevcutTr": "sonradan takmak, güncelleyip donatmak",
+   "mevcutBeispiel": "Die alten Pressen wurden mit einer Schutzeinrichtung nachgerüstet.",
+   "mevcutBeispielTr": "Eski preslere sonradan bir koruma düzeneği takıldı."
+  },
+  {
+   "id": 4709,
+   "de": "justieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat justiert",
+   "mevcutTr": "ayarlamak, ince ayar yapmak",
+   "mevcutBeispiel": "Der Anschlag muss nach jedem Werkzeugwechsel neu justiert werden.",
+   "mevcutBeispielTr": "Dayama, her takım değişiminden sonra yeniden ayarlanmalı."
+  },
+  {
+   "id": 4710,
+   "de": "kalibrieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat kalibriert",
+   "mevcutTr": "kalibre etmek",
+   "mevcutBeispiel": "Die Waage wird jedes Jahr von einem externen Institut kalibriert.",
+   "mevcutBeispielTr": "Terazi her yıl dışarıdan bir kuruluş tarafından kalibre ediliyor."
+  },
+  {
+   "id": 4711,
+   "de": "sich abnutzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich abgenutzt",
+   "mevcutTr": "aşınmak (kullanımdan), yıpranmak",
+   "mevcutBeispiel": "Die Schneide nutzt sich bei hartem Material schnell ab.",
+   "mevcutBeispielTr": "Sert malzemede kesici ağız çabuk aşınıyor.",
+   "cakisan": [
+    "erodieren (C1)"
+   ]
+  },
+  {
+   "id": 4712,
+   "de": "verladen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verladen",
+   "mevcutTr": "yüklemek, araca yüklemek",
+   "mevcutBeispiel": "Die Container werden noch heute Abend auf Lastwagen verladen.",
+   "mevcutBeispielTr": "Konteynerler bu akşam kamyonlara yüklenecek.",
+   "cakisan": [
+    "hochladen (B1)",
+    "auferlegen (C1)",
+    "beladen (A2)"
+   ]
+  },
+  {
+   "id": 4713,
+   "de": "ausliefern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgeliefert",
+   "mevcutTr": "teslim etmek, sevk etmek",
+   "mevcutBeispiel": "Die Maschinen werden erst nach der Endprüfung ausgeliefert.",
+   "mevcutBeispielTr": "Makineler ancak son kontrolden sonra sevk ediliyor.",
+   "cakisan": [
+    "abgeben (A1)",
+    "liefern (A2)"
+   ]
+  },
+  {
+   "id": 4714,
+   "de": "zuschneiden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zugeschnitten",
+   "mevcutTr": "kesmek, ölçüye göre kesmek",
+   "mevcutBeispiel": "Das Blech wird per Laser exakt auf Maß zugeschnitten.",
+   "mevcutBeispielTr": "Sac, lazerle tam ölçüsünde kesiliyor.",
+   "cakisan": [
+    "sich schneiden (B1)",
+    "unterbrechen (B1)",
+    "schlachten (B2)",
+    "einbehalten (B2)",
+    "schneiden (A2)",
+    "fällen (A2)"
+   ]
+  },
+  {
+   "id": 4715,
+   "de": "stanzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gestanzt",
+   "mevcutTr": "presle delmek, kalıpla kesmek",
+   "mevcutBeispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt.",
+   "mevcutBeispielTr": "Tek strokta aynı anda dört delik açılıyor."
+  },
+  {
+   "id": 4716,
+   "de": "härten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gehärtet",
+   "mevcutTr": "sertleştirmek",
+   "mevcutBeispiel": "Die Zahnräder werden anschließend im Ofen gehärtet.",
+   "mevcutBeispielTr": "Dişliler ardından fırında sertleştiriliyor."
+  },
+  {
+   "id": 4717,
+   "de": "lackieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat lackiert",
+   "mevcutTr": "boyamak, verniklemek",
+   "mevcutBeispiel": "Die Rahmen werden in zwei Schichten pulverbeschichtet lackiert.",
+   "mevcutBeispielTr": "Kasalar iki kat toz boyayla boyanıyor.",
+   "cakisan": [
+    "streichen (A2)"
+   ]
+  },
+  {
+   "id": 4718,
+   "de": "beschichten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beschichtet",
+   "mevcutTr": "kaplamak, kaplama yapmak",
+   "mevcutBeispiel": "Die Oberfläche wird mit einer dünnen Keramikschicht beschichtet.",
+   "mevcutBeispielTr": "Yüzey ince bir seramik tabakayla kaplanıyor."
+  },
+  {
+   "id": 4719,
+   "de": "stilllegen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat stillgelegt",
+   "mevcutTr": "faaliyeti durdurmak, kapatmak",
+   "mevcutBeispiel": "Das Werk wurde nach vierzig Jahren endgültig stillgelegt.",
+   "mevcutBeispielTr": "Fabrika kırk yıl sonra tamamen kapatıldı."
+  },
+  {
+   "id": 4720,
+   "de": "festziehen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat festgezogen",
+   "mevcutTr": "sıkmak, sıkıştırmak",
+   "mevcutBeispiel": "Ziehen Sie die Schrauben über Kreuz gleichmäßig fest.",
+   "mevcutBeispielTr": "Vidaları çapraz sırayla eşit şekilde sıkın.",
+   "cakisan": [
+    "pressen (A2)"
+   ]
+  },
+  {
+   "id": 4721,
+   "de": "vermessen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vermessen",
+   "mevcutTr": "ölçmek, ölçümünü yapmak",
+   "mevcutBeispiel": "Jedes zehnte Werkstück wird im Labor genau vermessen.",
+   "mevcutBeispielTr": "Her onuncu parça laboratuvarda titizlikle ölçülüyor.",
+   "cakisan": [
+    "messen (B1)"
+   ]
+  },
+  {
+   "id": 4722,
+   "de": "drosseln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gedrosselt",
+   "mevcutTr": "kısmak, düşürmek (üretim, hız)",
+   "mevcutBeispiel": "Wegen der hohen Energiepreise hat der Betrieb die Produktion gedrosselt.",
+   "mevcutBeispielTr": "Yüksek enerji fiyatları yüzünden işletme üretimi kıstı.",
+   "cakisan": [
+    "kürzen (B2)"
+   ]
+  },
+  {
+   "id": 4723,
+   "de": "serienreif",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "seri üretime hazır",
+   "mevcutBeispiel": "Das Verfahren ist vielversprechend, aber noch nicht serienreif.",
+   "mevcutBeispielTr": "Yöntem umut verici ama henüz seri üretime hazır değil."
+  },
+  {
+   "id": 4724,
+   "de": "betriebsbereit",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çalışmaya hazır, işletmeye hazır",
+   "mevcutBeispiel": "Nach der Reparatur ist die Anlage wieder betriebsbereit.",
+   "mevcutBeispielTr": "Onarımdan sonra tesis yeniden çalışmaya hazır."
+  },
+  {
+   "id": 4725,
+   "de": "witterungsbeständig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hava koşullarına dayanıklı",
+   "mevcutBeispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material.",
+   "mevcutBeispielTr": "Dış mekân için hava koşullarına dayanıklı bir malzeme gerekiyor."
+  },
+  {
+   "id": 4726,
+   "de": "rostfrei",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "paslanmaz",
+   "mevcutBeispiel": "Die Behälter bestehen komplett aus rostfreiem Stahl.",
+   "mevcutBeispielTr": "Kaplar tamamen paslanmaz çelikten yapılmış."
+  },
+  {
+   "id": 4727,
+   "de": "fachgerecht",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "usulüne uygun, tekniğine uygun",
+   "mevcutBeispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
+   "mevcutBeispielTr": "Atık yağ usulüne uygun bertaraf edilmeli, öylece dökülmemeli.",
+   "cakisan": [
+    "sachgemäß (B2)",
+    "ordnungsgemäß (B2)"
+   ]
+  },
+  {
+   "id": 4728,
+   "de": "handwerklich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "el işçiliğine dayalı, zanaatla ilgili",
+   "mevcutBeispiel": "Die Tür ist handwerklich sauber gearbeitet und hält Jahrzehnte.",
+   "mevcutBeispielTr": "Kapı el işçiliği açısından temiz yapılmış ve onlarca yıl dayanır."
+  },
+  {
+   "id": 4729,
+   "de": "maschinell",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "makineyle, makine ile yapılan",
+   "mevcutBeispiel": "Diese Naht wird maschinell gesetzt, nicht mehr von Hand.",
+   "mevcutBeispielTr": "Bu dikiş artık elle değil, makineyle yapılıyor."
+  },
+  {
+   "id": 4730,
+   "de": "störanfällig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "arızaya yatkın",
+   "mevcutBeispiel": "Die ältere Steuerung gilt als besonders störanfällig.",
+   "mevcutBeispielTr": "Eski kumanda sistemi özellikle arızaya yatkın sayılıyor."
+  },
+  {
+   "id": 4731,
+   "de": "spröde",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kırılgan, gevrek",
+   "mevcutBeispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht.",
+   "mevcutBeispielTr": "Soğukta plastik kırılganlaşıyor ve kolayca kırılıyor.",
+   "cakisan": [
+    "zerbrechlich (A2)"
+   ]
+  },
+  {
+   "id": 4732,
+   "de": "die Ausdauer",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "dayanıklılık, sebat",
+   "mevcutBeispiel": "Mit regelmäßigem Training verbessert sich deine Ausdauer erstaunlich schnell.",
+   "mevcutBeispielTr": "Düzenli antrenmanla dayanıklılığın şaşırtıcı derecede hızlı gelişir.",
+   "cakisan": [
+    "die Belastbarkeit (B2)",
+    "die Resilienz (C1)",
+    "die Widerstandsfähigkeit (C1)"
+   ]
+  },
+  {
+   "id": 4733,
+   "de": "die Beweglichkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Beweglichkeiten",
+   "mevcutTr": "hareketlilik, hareket kabiliyeti",
+   "mevcutBeispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab.",
+   "mevcutBeispielTr": "Yaşlandıkça eklemlerin hareket kabiliyeti belirgin biçimde azalır.",
+   "cakisan": [
+    "die Mobilität (B1)"
+   ]
+  },
+  {
+   "id": 4734,
+   "de": "der Muskelkater",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Muskelkater",
+   "mevcutTr": "kas ağrısı (antrenman sonrası)",
+   "mevcutBeispiel": "Nach dem ersten Lauftraining hatte ich drei Tage Muskelkater.",
+   "mevcutBeispielTr": "İlk koşu antrenmanından sonra üç gün kas ağrım vardı."
+  },
+  {
+   "id": 4735,
+   "de": "die Entlastung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Entlastungen",
+   "mevcutTr": "yükün hafifletilmesi, rahatlama",
+   "mevcutBeispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens.",
+   "mevcutBeispielTr": "Yüksekliği ayarlanabilir bir masa sırtın yükünü hafifletir."
+  },
+  {
+   "id": 4736,
+   "de": "die Regeneration",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Regenerationen",
+   "mevcutTr": "toparlanma, yenilenme",
+   "mevcutBeispiel": "Ohne ausreichende Regeneration bringt hartes Training gar nichts.",
+   "mevcutBeispielTr": "Yeterli toparlanma olmadan sert antrenmanın hiçbir faydası olmaz."
+  },
+  {
+   "id": 4737,
+   "de": "das Gleichgewicht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gleichgewichte",
+   "mevcutTr": "denge",
+   "mevcutBeispiel": "Auf dem schmalen Balken verlor sie kurz das Gleichgewicht.",
+   "mevcutBeispielTr": "Dar denge tahtasında bir an dengesini kaybetti."
+  },
+  {
+   "id": 4738,
+   "de": "die Durchblutung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kan dolaşımı (bir bölgedeki), kanlanma",
+   "mevcutBeispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine.",
+   "mevcutBeispielTr": "Kısa bir yürüyüş bacaklardaki kan dolaşımını destekler.",
+   "cakisan": [
+    "der Kreislauf (B2)"
+   ]
+  },
+  {
+   "id": 4739,
+   "de": "die Atmung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nefes alıp verme, solunum",
+   "mevcutBeispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung.",
+   "mevcutBeispielTr": "Yogada her şeyden çok sakin bir nefes alışa dikkat edilir."
+  },
+  {
+   "id": 4740,
+   "de": "die Anspannung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anspannungen",
+   "mevcutTr": "gerginlik, gerilim",
+   "mevcutBeispiel": "Nach der Prüfung fiel die ganze Anspannung endlich von ihm ab.",
+   "mevcutBeispielTr": "Sınavdan sonra üzerindeki bütün gerginlik nihayet dağıldı."
+  },
+  {
+   "id": 4741,
+   "de": "das Gelenk",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gelenke",
+   "mevcutTr": "eklem",
+   "mevcutBeispiel": "Beim Joggen auf Asphalt werden die Gelenke stark beansprucht.",
+   "mevcutBeispielTr": "Asfaltta koşarken eklemler ciddi biçimde zorlanır."
+  },
+  {
+   "id": 4742,
+   "de": "die Sehne",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sehnen",
+   "mevcutTr": "kiriş, tendon",
+   "mevcutBeispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt.",
+   "mevcutBeispielTr": "Tenis oynarken dirseğindeki bir tendonu tahriş etmiş."
+  },
+  {
+   "id": 4743,
+   "de": "die Muskulatur",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Muskulaturen",
+   "mevcutTr": "kas yapısı, kaslar",
+   "mevcutBeispiel": "Eine kräftige Muskulatur stützt die Wirbelsäule im Alltag.",
+   "mevcutBeispielTr": "Güçlü bir kas yapısı gündelik hayatta omurgayı destekler."
+  }
+ ]
+}

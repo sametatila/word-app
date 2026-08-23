@@ -1,0 +1,546 @@
+{
+ "paket": "b2-029",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5045,
+   "de": "zurückweisen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zurückgewiesen",
+   "mevcutTr": "geri çevirmek, reddetmek",
+   "mevcutBeispiel": "Der Widerspruch wurde als unbegründet zurückgewiesen.",
+   "mevcutBeispielTr": "İtiraz dayanaksız bulunarak reddedildi.",
+   "cakisan": [
+    "wegschicken (A2)"
+   ]
+  },
+  {
+   "id": 5046,
+   "de": "gewähren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gewährt",
+   "mevcutTr": "tanımak, sağlamak (hak, izin)",
+   "mevcutBeispiel": "Man hat der Familie vorläufigen Schutz gewährt.",
+   "mevcutBeispielTr": "Aileye geçici koruma tanındı.",
+   "cakisan": [
+    "kennen (A1)",
+    "anerkennen (B1)",
+    "erkennen (B1)"
+   ]
+  },
+  {
+   "id": 5047,
+   "de": "bescheinigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bescheinigt",
+   "mevcutTr": "belgelemek, yazılı olarak onaylamak",
+   "mevcutBeispiel": "Der Kursträger bescheinigt dir die regelmäßige Teilnahme.",
+   "mevcutBeispielTr": "Kurs kurumu düzenli katılımını belgeliyor.",
+   "cakisan": [
+    "nachweisen (B2)",
+    "dokumentieren (C1)"
+   ]
+  },
+  {
+   "id": 5048,
+   "de": "dulden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geduldet",
+   "mevcutTr": "hoş görmek, geçici olarak izin vermek",
+   "mevcutBeispiel": "Sein Aufenthalt wird vorerst nur geduldet.",
+   "mevcutBeispielTr": "Ülkede kalışına şimdilik yalnızca göz yumuluyor."
+  },
+  {
+   "id": 5049,
+   "de": "vorsprechen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vorgesprochen",
+   "mevcutTr": "bizzat gitmek, kuruma başvurmak",
+   "mevcutBeispiel": "Sie sollen nächste Woche persönlich bei uns vorsprechen.",
+   "mevcutBeispielTr": "Gelecek hafta bizzat kurumumuza gelmeniz gerekiyor."
+  },
+  {
+   "id": 5050,
+   "de": "aussetzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgesetzt",
+   "mevcutTr": "askıya almak, durdurmak",
+   "mevcutBeispiel": "Das Gericht hat die Abschiebung vorerst ausgesetzt.",
+   "mevcutBeispielTr": "Mahkeme sınır dışı işlemini şimdilik durdurdu."
+  },
+  {
+   "id": 5051,
+   "de": "versagen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat versagt",
+   "mevcutTr": "esirgemek, vermemek; başarısız olmak",
+   "mevcutBeispiel": "Die Zustimmung wurde ihm ohne nähere Begründung versagt.",
+   "mevcutBeispielTr": "Onay ona ayrıntılı bir gerekçe olmadan verilmedi.",
+   "cakisan": [
+    "vorenthalten (C1)"
+   ]
+  },
+  {
+   "id": 5052,
+   "de": "umschreiben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat umgeschrieben",
+   "mevcutTr": "(belgeyi) değiştirmek, yenisine çevirmek; başka ada geçirmek",
+   "mevcutBeispiel": "Den ausländischen Führerschein kann man hier umschreiben lassen.",
+   "mevcutBeispielTr": "Yabancı ehliyeti burada çevirtip yenisine dönüştürebilirsin.",
+   "cakisan": [
+    "ändern (A2)",
+    "wechseln (A2)",
+    "tauschen (B1)",
+    "umtauschen (B1)",
+    "umstellen (B2)"
+   ]
+  },
+  {
+   "id": 5053,
+   "de": "beifügen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beigefügt",
+   "mevcutTr": "eklemek, iliştirmek",
+   "mevcutBeispiel": "Bitte fügen Sie dem Schreiben eine Kopie des Passes bei.",
+   "mevcutBeispielTr": "Lütfen yazıya pasaportun bir kopyasını ekleyin."
+  },
+  {
+   "id": 5054,
+   "de": "abstammen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgestammt",
+   "mevcutTr": "soyundan gelmek, kökeni olmak",
+   "mevcutBeispiel": "Wer von deutschen Eltern abstammt, erwirbt die Staatsbürgerschaft automatisch.",
+   "mevcutBeispielTr": "Alman anne babadan gelen kişi vatandaşlığı kendiliğinden kazanır."
+  },
+  {
+   "id": 5055,
+   "de": "einreisen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist eingereist",
+   "mevcutTr": "ülkeye girmek",
+   "mevcutBeispiel": "Mit diesem Dokument darfst du mehrmals einreisen.",
+   "mevcutBeispielTr": "Bu belgeyle ülkeye birden çok kez girebilirsin."
+  },
+  {
+   "id": 5056,
+   "de": "rechtmäßig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hukuka uygun, yasal",
+   "mevcutBeispiel": "Sie hält sich seit sieben Jahren rechtmäßig im Land auf.",
+   "mevcutBeispielTr": "Yedi yıldır ülkede yasal olarak bulunuyor."
+  },
+  {
+   "id": 5057,
+   "de": "unerlaubt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "izinsiz, yasak olan",
+   "mevcutBeispiel": "Die unerlaubte Beschäftigung kann ein hohes Bußgeld kosten.",
+   "mevcutBeispielTr": "İzinsiz çalıştırma yüksek bir para cezasına yol açabilir."
+  },
+  {
+   "id": 5058,
+   "de": "staatenlos",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "vatansız",
+   "mevcutBeispiel": "Nach dem Verlust des Passes war er jahrelang staatenlos.",
+   "mevcutBeispielTr": "Pasaportunu kaybettikten sonra yıllarca vatansız kaldı."
+  },
+  {
+   "id": 5059,
+   "de": "visumpflichtig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "vizeye tabi",
+   "mevcutBeispiel": "Für dieses Land sind wir weiterhin visumpflichtig.",
+   "mevcutBeispielTr": "Bu ülke için hâlâ vizeye tabiyiz."
+  },
+  {
+   "id": 5060,
+   "de": "ordnungsgemäß",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "usulüne uygun, düzgün biçimde",
+   "mevcutBeispiel": "Der Wohnsitz war von Anfang an ordnungsgemäß gemeldet.",
+   "mevcutBeispielTr": "İkametgâh en başından beri usulüne uygun bildirilmişti.",
+   "cakisan": [
+    "fachgerecht (B2)",
+    "sachgemäß (B2)"
+   ]
+  },
+  {
+   "id": 5061,
+   "de": "gegebenenfalls",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gerektiğinde, duruma göre",
+   "mevcutBeispiel": "Weitere Papiere fordern wir gegebenenfalls schriftlich bei Ihnen an.",
+   "mevcutBeispielTr": "Gerekirse başka evrakları sizden yazılı olarak isteriz."
+  },
+  {
+   "id": 5062,
+   "de": "mehrsprachig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çok dilli",
+   "mevcutBeispiel": "Die Beratung wird mehrsprachig angeboten, unter anderem auf Türkisch.",
+   "mevcutBeispielTr": "Danışmanlık çok dilli sunuluyor, bu arada Türkçe olarak da."
+  },
+  {
+   "id": 5063,
+   "de": "vorübergehend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "geçici olarak, kısa süreli",
+   "mevcutBeispiel": "Er darf vorübergehend bei seiner Schwester wohnen.",
+   "mevcutBeispielTr": "Geçici olarak kız kardeşinin yanında kalabilir."
+  },
+  {
+   "id": 5064,
+   "de": "der Niederschlag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Niederschläge",
+   "mevcutTr": "yağış",
+   "mevcutBeispiel": "Im Süden wird in den nächsten Tagen kräftiger Niederschlag erwartet.",
+   "mevcutBeispielTr": "Güneyde önümüzdeki günlerde kuvvetli yağış bekleniyor."
+  },
+  {
+   "id": 5065,
+   "de": "der Hagel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "dolu",
+   "mevcutBeispiel": "Der Hagel hat die jungen Pflanzen im Beet völlig zerschlagen.",
+   "mevcutBeispielTr": "Dolu, tarhtaki genç bitkileri tamamen ezip geçti.",
+   "cakisan": [
+    "besetzt (A1)",
+    "voll (A2)",
+    "gefüllt (A2)"
+   ]
+  },
+  {
+   "id": 5066,
+   "de": "der Frost",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fröste",
+   "mevcutTr": "don, ayaz",
+   "mevcutBeispiel": "Nach dem späten Frost trugen die Obstbäume kaum Früchte.",
+   "mevcutBeispielTr": "Geç gelen dondan sonra meyve ağaçları neredeyse hiç ürün vermedi."
+  },
+  {
+   "id": 5067,
+   "de": "das Tauwetter",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "karların erimesi, ılık hava",
+   "mevcutBeispiel": "Das plötzliche Tauwetter ließ die Bäche im Tal anschwellen.",
+   "mevcutBeispielTr": "Ani ılık hava, vadideki dereleri kabarttı."
+  },
+  {
+   "id": 5068,
+   "de": "der Windstoß",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Windstöße",
+   "mevcutTr": "ani rüzgâr, rüzgâr hamlesi",
+   "mevcutBeispiel": "Ein heftiger Windstoß riss den Sonnenschirm von der Terrasse.",
+   "mevcutBeispielTr": "Şiddetli bir rüzgâr, şemsiyeyi terastan söküp aldı."
+  },
+  {
+   "id": 5069,
+   "de": "die Luftfeuchtigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nem, hava nemi",
+   "mevcutBeispiel": "Bei hoher Luftfeuchtigkeit wirkt die Hitze noch drückender.",
+   "mevcutBeispielTr": "Nem yüksek olduğunda sıcak daha da bunaltıcı hissettiriyor."
+  },
+  {
+   "id": 5070,
+   "de": "die Temperaturschwankung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Temperaturschwankungen",
+   "mevcutTr": "sıcaklık değişimi, ısı oynaması",
+   "mevcutBeispiel": "Starke Temperaturschwankungen setzen den empfindlichen Wurzeln zu.",
+   "mevcutBeispielTr": "Sert sıcaklık değişimleri hassas köklere zarar veriyor."
+  },
+  {
+   "id": 5071,
+   "de": "das Unwetter",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Unwetter",
+   "mevcutTr": "fırtına, sağanaklı kötü hava",
+   "mevcutBeispiel": "Das Unwetter legte am Abend den halben Bahnverkehr lahm.",
+   "mevcutBeispielTr": "Fırtına akşam saatlerinde demir yolu trafiğinin yarısını felç etti.",
+   "cakisan": [
+    "der Sturm (B1)"
+   ]
+  },
+  {
+   "id": 5072,
+   "de": "die Überschwemmung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Überschwemmungen",
+   "mevcutTr": "sel, su baskını",
+   "mevcutBeispiel": "Nach tagelangem Regen kam es im Tal zu schweren Überschwemmungen.",
+   "mevcutBeispielTr": "Günlerce süren yağmurdan sonra vadide ağır su baskınları yaşandı."
+  },
+  {
+   "id": 5073,
+   "de": "das Hochwasser",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Hochwasser",
+   "mevcutTr": "taşkın, yüksek su seviyesi",
+   "mevcutBeispiel": "Die Gemeinde hat entlang des Flusses Schutzwälle gegen Hochwasser gebaut.",
+   "mevcutBeispielTr": "Belediye, nehir boyunca taşkına karşı koruma setleri yaptı."
+  },
+  {
+   "id": 5074,
+   "de": "die Lawine",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Lawinen",
+   "mevcutTr": "çığ",
+   "mevcutBeispiel": "Wegen der Lawinengefahr blieb der Wanderweg den ganzen Winter gesperrt.",
+   "mevcutBeispielTr": "Çığ tehlikesi nedeniyle yürüyüş yolu bütün kış kapalı kaldı."
+  },
+  {
+   "id": 5075,
+   "de": "die Hitzewelle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Hitzewellen",
+   "mevcutTr": "sıcak hava dalgası",
+   "mevcutBeispiel": "Die dritte Hitzewelle des Sommers trocknete die Felder völlig aus.",
+   "mevcutBeispielTr": "Yazın üçüncü sıcak hava dalgası tarlaları tamamen kuruttu."
+  },
+  {
+   "id": 5076,
+   "de": "der Luftdruck",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hava basıncı",
+   "mevcutBeispiel": "Ein rasch fallender Luftdruck kündigt meist schlechtes Wetter an.",
+   "mevcutBeispielTr": "Hızla düşen hava basıncı çoğunlukla kötü havanın habercisidir."
+  },
+  {
+   "id": 5077,
+   "de": "die Bewölkung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "bulutluluk",
+   "mevcutBeispiel": "Am Nachmittag nimmt die Bewölkung von Westen her deutlich zu.",
+   "mevcutBeispielTr": "Öğleden sonra bulutluluk batıdan itibaren belirgin şekilde artacak."
+  },
+  {
+   "id": 5078,
+   "de": "die Schneedecke",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schneedecken",
+   "mevcutTr": "kar örtüsü",
+   "mevcutBeispiel": "Unter der dicken Schneedecke überstehen die Stauden den Winter gut.",
+   "mevcutBeispielTr": "Kalın kar örtüsünün altında çok yıllık bitkiler kışı rahat atlatıyor."
+  },
+  {
+   "id": 5079,
+   "de": "der Erdrutsch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Erdrutsche",
+   "mevcutTr": "heyelan, toprak kayması",
+   "mevcutBeispiel": "Ein Erdrutsch verschüttete nach dem Dauerregen die Straße ins Dorf.",
+   "mevcutBeispielTr": "Sürekli yağıştan sonra bir heyelan köye giden yolu kapattı."
+  },
+  {
+   "id": 5080,
+   "de": "die Erderwärmung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "küresel ısınma",
+   "mevcutBeispiel": "Die Erderwärmung verschiebt die Blütezeit vieler heimischer Pflanzen.",
+   "mevcutBeispielTr": "Küresel ısınma birçok yerli bitkinin çiçeklenme zamanını kaydırıyor."
+  },
+  {
+   "id": 5081,
+   "de": "die Klimazone",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Klimazonen",
+   "mevcutTr": "iklim kuşağı",
+   "mevcutBeispiel": "Diese Palmenart wächst nur in tropischen Klimazonen im Freiland.",
+   "mevcutBeispielTr": "Bu palmiye türü açık havada yalnızca tropik iklim kuşaklarında yetişir."
+  },
+  {
+   "id": 5082,
+   "de": "die Trockenheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kuraklık, kuruluk",
+   "mevcutBeispiel": "Die anhaltende Trockenheit zwingt die Bauern zu strenger Wasserplanung.",
+   "mevcutBeispielTr": "Süregelen kuraklık çiftçileri sıkı bir su planlamasına zorluyor."
+  },
+  {
+   "id": 5083,
+   "de": "die Dämmerung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "alacakaranlık, tan/akşam vakti",
+   "mevcutBeispiel": "In der Dämmerung kommen die Rehe an den Waldrand heraus.",
+   "mevcutBeispielTr": "Alacakaranlıkta karacalar orman kenarına kadar çıkıyor."
+  },
+  {
+   "id": 5084,
+   "de": "der Nadelwald",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Nadelwälder",
+   "mevcutTr": "iğne yapraklı orman",
+   "mevcutBeispiel": "Der dichte Nadelwald reicht bis an den Rand des Moores.",
+   "mevcutBeispielTr": "Sık iğne yapraklı orman bataklığın kenarına kadar uzanıyor."
+  },
+  {
+   "id": 5085,
+   "de": "die Lichtung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Lichtungen",
+   "mevcutTr": "orman açıklığı, kayran",
+   "mevcutBeispiel": "Auf der Lichtung machten wir Rast und beobachteten die Vögel.",
+   "mevcutBeispielTr": "Orman açıklığında mola verip kuşları izledik."
+  },
+  {
+   "id": 5086,
+   "de": "der Waldrand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Waldränder",
+   "mevcutTr": "orman kenarı",
+   "mevcutBeispiel": "Am Waldrand wachsen Sträucher, die vielen Insekten Nahrung bieten.",
+   "mevcutBeispielTr": "Orman kenarında birçok böceğe besin sağlayan çalılar yetişiyor."
+  },
+  {
+   "id": 5087,
+   "de": "das Naturschutzgebiet",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Naturschutzgebiete",
+   "mevcutTr": "doğa koruma alanı",
+   "mevcutBeispiel": "Im Naturschutzgebiet dürfen Besucher die Wege nicht verlassen.",
+   "mevcutBeispielTr": "Doğa koruma alanında ziyaretçiler yollardan ayrılamaz."
+  },
+  {
+   "id": 5088,
+   "de": "das Moor",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Moore",
+   "mevcutTr": "bataklık, turbalık",
+   "mevcutBeispiel": "Ein intaktes Moor speichert erstaunlich große Mengen an Kohlenstoff.",
+   "mevcutBeispielTr": "Bozulmamış bir turbalık şaşırtıcı miktarda karbon depolar."
+  },
+  {
+   "id": 5089,
+   "de": "der Acker",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Äcker",
+   "mevcutTr": "tarla, ekili arazi",
+   "mevcutBeispiel": "Nach der Ernte lag der Acker mehrere Wochen brach.",
+   "mevcutBeispielTr": "Hasattan sonra tarla haftalarca boş kaldı.",
+   "cakisan": [
+    "das Feld (B1)"
+   ]
+  },
+  {
+   "id": 5090,
+   "de": "die Knospe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Knospen",
+   "mevcutTr": "tomurcuk",
+   "mevcutBeispiel": "An den Zweigen zeigen sich die ersten Knospen des Frühlings.",
+   "mevcutBeispielTr": "Dallarda ilkbaharın ilk tomurcukları görünmeye başladı."
+  },
+  {
+   "id": 5091,
+   "de": "der Trieb",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Triebe",
+   "mevcutTr": "sürgün, filiz",
+   "mevcutBeispiel": "Die jungen Triebe sollte man erst nach dem letzten Frost schneiden.",
+   "mevcutBeispielTr": "Genç sürgünleri ancak son dondan sonra budamak gerekir.",
+   "cakisan": [
+    "die Vertreibung (C1)"
+   ]
+  },
+  {
+   "id": 5092,
+   "de": "die Rinde",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rinden",
+   "mevcutTr": "ağaç kabuğu",
+   "mevcutBeispiel": "An der rissigen Rinde erkennt man das Alter der Eiche.",
+   "mevcutBeispielTr": "Çatlamış kabuğundan meşenin yaşı anlaşılıyor."
+  },
+  {
+   "id": 5093,
+   "de": "die Baumkrone",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Baumkronen",
+   "mevcutTr": "ağaç tepesi, taç",
+   "mevcutBeispiel": "Der Sturm hat mehrere Baumkronen im Park abgebrochen.",
+   "mevcutBeispielTr": "Fırtına parkta birkaç ağacın tepesini kırdı."
+  },
+  {
+   "id": 5094,
+   "de": "der Strauch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sträucher",
+   "mevcutTr": "çalı",
+   "mevcutBeispiel": "Der Strauch vor dem Fenster trägt im Herbst rote Beeren.",
+   "mevcutBeispielTr": "Pencerenin önündeki çalı sonbaharda kırmızı meyveler veriyor."
+  }
+ ]
+}

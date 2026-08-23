@@ -1,0 +1,532 @@
+{
+ "paket": "c1-012",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 5803,
+   "de": "romantisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat romantisiert",
+   "mevcutTr": "romantikleştirmek, olduğundan güzel göstermek",
+   "mevcutBeispiel": "Frühe Ethnographen haben das einfache Leben stark romantisiert.",
+   "mevcutBeispielTr": "Erken dönem etnograflar basit yaşamı fazlasıyla romantikleştirdi."
+  },
+  {
+   "id": 5804,
+   "de": "kontextualisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat kontextualisiert",
+   "mevcutTr": "bağlama oturtmak, bağlamlandırmak",
+   "mevcutBeispiel": "Man muss die Aussage historisch kontextualisieren, sonst wirkt sie absurd.",
+   "mevcutBeispielTr": "Bu ifadeyi tarihsel bağlama oturtmak gerekir, yoksa saçma görünür."
+  },
+  {
+   "id": 5805,
+   "de": "entziffern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entziffert",
+   "mevcutTr": "deşifre etmek, çözmek",
+   "mevcutBeispiel": "Die Zeichen auf den Grabsteinen konnte bisher niemand entziffern.",
+   "mevcutBeispielTr": "Mezar taşlarındaki işaretleri şimdiye dek kimse çözemedi."
+  },
+  {
+   "id": 5806,
+   "de": "unterlaufen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat unterlaufen",
+   "mevcutTr": "boşa çıkarmak, atlatmak",
+   "mevcutBeispiel": "Die Jüngeren unterlaufen die strengen Regeln mit stillem Spott.",
+   "mevcutBeispielTr": "Gençler katı kuralları sessiz bir alayla boşa çıkarıyor.",
+   "cakisan": [
+    "konterkarieren (C1)"
+   ]
+  },
+  {
+   "id": 5807,
+   "de": "überformen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überformt",
+   "mevcutTr": "yeniden biçimlendirmek, başkalaştırmak",
+   "mevcutBeispiel": "Der Tourismus hat das ganze Fest allmählich überformt.",
+   "mevcutBeispielTr": "Turizm bütün şenliği yavaş yavaş yeniden biçimlendirdi."
+  },
+  {
+   "id": 5808,
+   "de": "durchdringen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat durchdrungen",
+   "mevcutTr": "nüfuz etmek, sinmek",
+   "mevcutBeispiel": "Religiöse Vorstellungen durchdringen selbst die banalsten Handgriffe.",
+   "mevcutBeispielTr": "Dinî tasavvurlar en sıradan el hareketlerine bile siniyor."
+  },
+  {
+   "id": 5809,
+   "de": "angehören",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angehört",
+   "mevcutTr": "mensubu olmak, ait olmak",
+   "mevcutBeispiel": "Jeder Erwachsene gehört zugleich mehreren solcher Verbände an.",
+   "mevcutBeispielTr": "Her yetişkin aynı anda böyle birkaç birliğin mensubudur."
+  },
+  {
+   "id": 5810,
+   "de": "sich herausbilden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich herausgebildet",
+   "mevcutTr": "oluşmak, şekillenmek",
+   "mevcutBeispiel": "Aus der Notlage hat sich eine feste Form der Nachbarschaftshilfe herausgebildet.",
+   "mevcutBeispielTr": "Zorunluluktan komşu yardımlaşmasının yerleşik bir biçimi oluştu.",
+   "cakisan": [
+    "entstehen (B1)",
+    "bestehen aus (B2)"
+   ]
+  },
+  {
+   "id": 5811,
+   "de": "sich verfestigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich verfestigt",
+   "mevcutTr": "yerleşmek, kalıplaşmak",
+   "mevcutBeispiel": "Aus einer beiläufigen Geste hat sich eine feste Regel verfestigt.",
+   "mevcutBeispielTr": "Gelişigüzel bir jestten katı bir kural kalıplaştı.",
+   "cakisan": [
+    "sich einbürgern (C1)",
+    "sich niederlassen (C1)"
+   ]
+  },
+  {
+   "id": 5812,
+   "de": "huldigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gehuldigt",
+   "mevcutTr": "saygı göstermek, tazimde bulunmak",
+   "mevcutBeispiel": "Am Neujahrstag huldigen die Familien ihren verstorbenen Ahnen.",
+   "mevcutBeispielTr": "Yılbaşı günü aileler ölmüş atalarına tazimde bulunur."
+  },
+  {
+   "id": 5813,
+   "de": "zergliedern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat zergliedert",
+   "mevcutTr": "ayrıştırmak, parçalara ayırmak",
+   "mevcutBeispiel": "Der Aufsatz zergliedert den Festverlauf in fünf klar getrennte Phasen.",
+   "mevcutBeispielTr": "Makale şenliğin akışını birbirinden net ayrılan beş evreye ayrıştırıyor."
+  },
+  {
+   "id": 5814,
+   "de": "symbolträchtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sembol yüklü, simge dolu",
+   "mevcutBeispiel": "Der Ort ist für die Gemeinde ausgesprochen symbolträchtig.",
+   "mevcutBeispielTr": "Bu yer topluluk için son derece sembol yüklüdür."
+  },
+  {
+   "id": 5815,
+   "de": "normativ",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "normatif, kural koyucu",
+   "mevcutBeispiel": "Die Beschreibung war nie neutral, sondern von Anfang an normativ.",
+   "mevcutBeispielTr": "Betimleme hiçbir zaman tarafsız değildi, başından beri normatifti."
+  },
+  {
+   "id": 5816,
+   "de": "profan",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dünyevi, sıradan",
+   "mevcutBeispiel": "Der Raum wird an Werktagen für ganz profane Zwecke genutzt.",
+   "mevcutBeispielTr": "Mekân, hafta içi tamamen sıradan amaçlarla kullanılıyor.",
+   "cakisan": [
+    "weltlich (C1)"
+   ]
+  },
+  {
+   "id": 5817,
+   "de": "sakral",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kutsal, dinsel",
+   "mevcutBeispiel": "Die Grenze zwischen sakralen und alltäglichen Gegenständen ist hier fließend.",
+   "mevcutBeispielTr": "Kutsal ve gündelik nesneler arasındaki sınır burada muğlaktır."
+  },
+  {
+   "id": 5818,
+   "de": "gebräuchlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yaygın, kullanımda olan",
+   "mevcutBeispiel": "Diese Anrede ist nur noch in wenigen Bergdörfern gebräuchlich.",
+   "mevcutBeispielTr": "Bu hitap biçimi artık yalnızca birkaç dağ köyünde yaygın.",
+   "cakisan": [
+    "gängig (C1)"
+   ]
+  },
+  {
+   "id": 5819,
+   "de": "vorherrschend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hâkim, baskın",
+   "mevcutBeispiel": "Die vorherrschende Deutung wurde erst in den Neunzigern ernsthaft bestritten.",
+   "mevcutBeispielTr": "Hâkim yorum ancak doksanlarda ciddi biçimde tartışmaya açıldı."
+  },
+  {
+   "id": 5820,
+   "de": "wechselseitig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "karşılıklı",
+   "mevcutBeispiel": "Beide Gruppen stehen in wechselseitiger Abhängigkeit voneinander.",
+   "mevcutBeispielTr": "İki grup birbirine karşılıklı bağımlılık içindedir.",
+   "cakisan": [
+    "gegenseitig (A2)"
+   ]
+  },
+  {
+   "id": 5821,
+   "de": "unausgesprochen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dile getirilmemiş, örtük",
+   "mevcutBeispiel": "Die wichtigsten Regeln bleiben in dieser Gemeinschaft unausgesprochen.",
+   "mevcutBeispielTr": "Bu toplulukta en önemli kurallar dile getirilmeden kalır."
+  },
+  {
+   "id": 5822,
+   "de": "althergebracht",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eskiden beri süregelen, kadim",
+   "mevcutBeispiel": "Man beruft sich auf althergebrachte Rechte an den Weideflächen.",
+   "mevcutBeispielTr": "Otlaklar üzerindeki kadim haklara dayanılıyor."
+  },
+  {
+   "id": 5823,
+   "de": "weltanschaulich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dünya görüşüyle ilgili, ideolojik",
+   "mevcutBeispiel": "Der Streit ist weniger sachlich als weltanschaulich begründet.",
+   "mevcutBeispielTr": "Tartışmanın temeli nesnel olmaktan çok dünya görüşüne dayanıyor."
+  },
+  {
+   "id": 5824,
+   "de": "die Hierarchie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hierarchien",
+   "mevcutTr": "hiyerarşi, basamaklanma",
+   "mevcutBeispiel": "Flache Hierarchien gelten als modern, verschwinden aber selten ganz.",
+   "mevcutBeispielTr": "Yatay hiyerarşiler modern sayılıyor ama nadiren tümüyle ortadan kalkıyor.",
+   "cakisan": [
+    "die Rangordnung (C1)"
+   ]
+  },
+  {
+   "id": 5825,
+   "de": "die Arbeitsteilung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Arbeitsteilungen",
+   "mevcutTr": "iş bölümü",
+   "mevcutBeispiel": "Die extreme Arbeitsteilung nimmt dem Einzelnen den Blick aufs Ganze.",
+   "mevcutBeispielTr": "Aşırı iş bölümü, bireyin bütünü görmesini engelliyor."
+  },
+  {
+   "id": 5826,
+   "de": "die Rationalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rationalisierungen",
+   "mevcutTr": "rasyonelleştirme, akılcılaştırma",
+   "mevcutBeispiel": "Jede Rationalisierung verspricht Effizienz und kostet zugleich Stellen.",
+   "mevcutBeispielTr": "Her akılcılaştırma verimlilik vaat ederken aynı zamanda kadrolara mal oluyor."
+  },
+  {
+   "id": 5827,
+   "de": "die Bürokratisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bürokratikleşme",
+   "mevcutBeispiel": "Die zunehmende Bürokratisierung erstickt gerade die kreativen Abteilungen.",
+   "mevcutBeispielTr": "Artan bürokratikleşme özellikle yaratıcı birimleri boğuyor."
+  },
+  {
+   "id": 5828,
+   "de": "die Arbeitsverdichtung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iş yoğunlaşması",
+   "mevcutBeispiel": "Nach dem Stellenabbau folgte für die Verbliebenen eine spürbare Arbeitsverdichtung.",
+   "mevcutBeispielTr": "Kadro azaltmanın ardından kalanlar için belirgin bir iş yoğunlaşması geldi."
+  },
+  {
+   "id": 5829,
+   "de": "die Prekarisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "güvencesizleşme",
+   "mevcutBeispiel": "Die Prekarisierung betrifft längst auch akademisch ausgebildete Berufsgruppen.",
+   "mevcutBeispielTr": "Güvencesizleşme artık akademik eğitimli meslek gruplarını da kapsıyor."
+  },
+  {
+   "id": 5830,
+   "de": "die Selbstausbeutung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kendini sömürme",
+   "mevcutBeispiel": "Wo niemand mehr kontrolliert, beginnt oft die stille Selbstausbeutung.",
+   "mevcutBeispielTr": "Kimsenin denetlemediği yerde çoğu zaman sessiz bir kendini sömürme başlar."
+  },
+  {
+   "id": 5831,
+   "de": "die Unternehmenskultur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Unternehmenskulturen",
+   "mevcutTr": "kurum kültürü, şirket kültürü",
+   "mevcutBeispiel": "Eine Unternehmenskultur lässt sich nicht per Leitbild verordnen.",
+   "mevcutBeispielTr": "Kurum kültürü bir vizyon metniyle emredilerek kurulamaz."
+  },
+  {
+   "id": 5832,
+   "de": "das Machtgefälle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Machtgefälle",
+   "mevcutTr": "güç dengesizliği, iktidar farkı",
+   "mevcutBeispiel": "Trotz der Duzkultur bleibt das Machtgefälle zwischen den Ebenen bestehen.",
+   "mevcutBeispielTr": "Samimi hitap kültürüne rağmen kademeler arasındaki güç farkı sürüyor."
+  },
+  {
+   "id": 5833,
+   "de": "die Weisungsbefugnis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Weisungsbefugnisse",
+   "mevcutTr": "talimat verme yetkisi",
+   "mevcutBeispiel": "Ohne klare Weisungsbefugnis entstehen in Projektteams ständig Reibungen.",
+   "mevcutBeispielTr": "Talimat yetkisi net olmadan proje ekiplerinde sürekli sürtüşme doğar."
+  },
+  {
+   "id": 5834,
+   "de": "der Rollenkonflikt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rollenkonflikte",
+   "mevcutTr": "rol çatışması",
+   "mevcutBeispiel": "Als Teamleiterin und Kollegin zugleich geriet sie in einen Rollenkonflikt.",
+   "mevcutBeispielTr": "Hem ekip lideri hem meslektaş olarak bir rol çatışmasına düştü."
+  },
+  {
+   "id": 5835,
+   "de": "die Subordination",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "astlık, boyun eğme",
+   "mevcutBeispiel": "Der Vortrag beschrieb Subordination als eingeübte, nicht als natürliche Haltung.",
+   "mevcutBeispielTr": "Konuşma, astlığı doğal değil öğrenilmiş bir tutum olarak tarif etti."
+  },
+  {
+   "id": 5836,
+   "de": "die Delegation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Delegationen",
+   "mevcutTr": "yetki devri",
+   "mevcutBeispiel": "Echte Delegation bedeutet, auch die Entscheidung abzugeben.",
+   "mevcutBeispielTr": "Gerçek yetki devri, kararı da bırakmak anlamına gelir."
+  },
+  {
+   "id": 5837,
+   "de": "der Handlungsspielraum",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Handlungsspielräume",
+   "mevcutTr": "hareket alanı, inisiyatif alanı",
+   "mevcutBeispiel": "Mit dem Handlungsspielraum wächst auch die Zufriedenheit am Arbeitsplatz.",
+   "mevcutBeispielTr": "Hareket alanı büyüdükçe iş yerindeki memnuniyet de artıyor."
+  },
+  {
+   "id": 5838,
+   "de": "die Tarifautonomie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "toplu sözleşme özerkliği",
+   "mevcutBeispiel": "Die Tarifautonomie hält den Staat aus der Lohnfindung heraus.",
+   "mevcutBeispielTr": "Toplu sözleşme özerkliği devleti ücret belirlemenin dışında tutar."
+  },
+  {
+   "id": 5839,
+   "de": "die Gratifikation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gratifikationen",
+   "mevcutTr": "ödüllendirme, karşılık",
+   "mevcutBeispiel": "Krank macht nicht die Mühe allein, sondern die ausbleibende Gratifikation.",
+   "mevcutBeispielTr": "Hasta eden yalnızca emek değil, gelmeyen karşılıktır."
+  },
+  {
+   "id": 5840,
+   "de": "die Identifikation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Identifikationen",
+   "mevcutTr": "özdeşleşme, kendini ait hissetme",
+   "mevcutBeispiel": "Zu starke Identifikation mit der Firma macht Kritik fast unmöglich.",
+   "mevcutBeispielTr": "Şirketle fazla özdeşleşmek eleştiriyi neredeyse imkânsız kılar."
+  },
+  {
+   "id": 5841,
+   "de": "die Loyalität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Loyalitäten",
+   "mevcutTr": "sadakat, bağlılık",
+   "mevcutBeispiel": "Loyalität wird erwartet, aber immer seltener erwidert.",
+   "mevcutBeispielTr": "Sadakat bekleniyor ama giderek daha az karşılık buluyor."
+  },
+  {
+   "id": 5842,
+   "de": "die Vereinbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bağdaşabilirlik, birlikte yürütülebilirlik",
+   "mevcutBeispiel": "Über die Vereinbarkeit von Beruf und Familie wird viel geredet.",
+   "mevcutBeispielTr": "İş ile ailenin bağdaştırılması üzerine çok konuşuluyor."
+  },
+  {
+   "id": 5843,
+   "de": "die Flexibilisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Flexibilisierungen",
+   "mevcutTr": "esnekleştirme",
+   "mevcutBeispiel": "Die Flexibilisierung der Arbeitszeit nützt nicht immer den Beschäftigten.",
+   "mevcutBeispielTr": "Çalışma saatlerinin esnekleştirilmesi her zaman çalışanların yararına değil."
+  },
+  {
+   "id": 5844,
+   "de": "die Standardisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Standardisierungen",
+   "mevcutTr": "standartlaştırma",
+   "mevcutBeispiel": "Die Standardisierung der Abläufe raubt dem Handwerk seinen Eigensinn.",
+   "mevcutBeispielTr": "Süreçlerin standartlaştırılması zanaatın kendine özgülüğünü elinden alıyor.",
+   "cakisan": [
+    "die Normierung (C1)"
+   ]
+  },
+  {
+   "id": 5845,
+   "de": "die Taktung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Taktungen",
+   "mevcutTr": "tempo düzeni, ritim ayarı",
+   "mevcutBeispiel": "Die enge Taktung der Schichten lässt kaum Raum für Gespräche.",
+   "mevcutBeispielTr": "Vardiyaların sıkı temposu sohbete neredeyse yer bırakmıyor."
+  },
+  {
+   "id": 5846,
+   "de": "der Akkord",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Akkorde",
+   "mevcutTr": "parça başı iş, parça başı ücret usulü",
+   "mevcutBeispiel": "Im Akkord zu arbeiten erhöht den Lohn und den Verschleiß.",
+   "mevcutBeispielTr": "Parça başı çalışmak hem ücreti hem yıpranmayı artırır."
+  },
+  {
+   "id": 5847,
+   "de": "die Dequalifizierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "vasıfsızlaşma, niteliksizleşme",
+   "mevcutBeispiel": "Automatisierung führt in manchen Bereichen zur Dequalifizierung ganzer Berufsgruppen.",
+   "mevcutBeispielTr": "Otomasyon bazı alanlarda tüm meslek gruplarının vasıfsızlaşmasına yol açıyor."
+  },
+  {
+   "id": 5848,
+   "de": "die Professionalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "profesyonelleşme, meslekleşme",
+   "mevcutBeispiel": "Die Professionalisierung der Pflege blieb lange hinter den Ansprüchen zurück.",
+   "mevcutBeispielTr": "Bakım işinin meslekleşmesi uzun süre beklentilerin gerisinde kaldı."
+  },
+  {
+   "id": 5849,
+   "de": "das Berufsethos",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "meslek ahlakı, mesleki duruş",
+   "mevcutBeispiel": "Ihr Berufsethos verbot ihr, die Zahlen schöner darzustellen.",
+   "mevcutBeispielTr": "Meslek ahlakı, rakamları olduğundan güzel göstermesine izin vermedi."
+  },
+  {
+   "id": 5850,
+   "de": "die Erwerbsarbeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gelir getiren iş, ücretli çalışma",
+   "mevcutBeispiel": "Erwerbsarbeit strukturiert den Tag stärker als jede andere Tätigkeit.",
+   "mevcutBeispielTr": "Ücretli çalışma günü başka her uğraştan daha güçlü biçimde düzenler."
+  },
+  {
+   "id": 5851,
+   "de": "die Reproduktionsarbeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yeniden üretim emeği, ev içi emek",
+   "mevcutBeispiel": "Reproduktionsarbeit taucht in keiner Bilanz auf und trägt trotzdem alles.",
+   "mevcutBeispielTr": "Yeniden üretim emeği hiçbir bilançoda görünmez ama her şeyi taşır."
+  },
+  {
+   "id": 5852,
+   "de": "die Wissensarbeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilgi emeği",
+   "mevcutBeispiel": "Wissensarbeit lässt sich schwer in Stunden und Stückzahlen messen.",
+   "mevcutBeispielTr": "Bilgi emeğini saat ve adetle ölçmek zordur."
+  }
+ ]
+}

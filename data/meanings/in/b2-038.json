@@ -1,0 +1,532 @@
+{
+ "paket": "b2-038",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5496,
+   "de": "manuell",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "elle, manuel",
+   "mevcutBeispiel": "Diesen Schritt muss man leider immer noch manuell erledigen.",
+   "mevcutBeispielTr": "Bu adımı maalesef hâlâ elle yapmak gerekiyor."
+  },
+  {
+   "id": 5497,
+   "de": "der Klimaschutz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "iklim koruma, iklim koruması",
+   "mevcutBeispiel": "Die Regierung investiert jährlich Milliarden in den Klimaschutz.",
+   "mevcutBeispielTr": "Hükümet her yıl iklim korumaya milyarlarca yatırım yapıyor."
+  },
+  {
+   "id": 5498,
+   "de": "das Treibhausgas",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Treibhausgase",
+   "mevcutTr": "sera gazı",
+   "mevcutBeispiel": "Der Verkehr verursacht rund ein Fünftel aller Treibhausgase.",
+   "mevcutBeispielTr": "Ulaşım, tüm sera gazlarının yaklaşık beşte birine yol açıyor."
+  },
+  {
+   "id": 5499,
+   "de": "das Kohlendioxid",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "karbondioksit",
+   "mevcutBeispiel": "Wälder nehmen große Mengen Kohlendioxid aus der Luft auf.",
+   "mevcutBeispielTr": "Ormanlar havadan büyük miktarda karbondioksit emer."
+  },
+  {
+   "id": 5500,
+   "de": "die Luftverschmutzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hava kirliliği",
+   "mevcutBeispiel": "In vielen Großstädten ist die Luftverschmutzung deutlich gestiegen.",
+   "mevcutBeispielTr": "Birçok büyük şehirde hava kirliliği belirgin biçimde arttı."
+  },
+  {
+   "id": 5501,
+   "de": "der Feinstaub",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ince toz, partikül madde",
+   "mevcutBeispiel": "Der Feinstaub in der Innenstadt gefährdet vor allem ältere Menschen.",
+   "mevcutBeispielTr": "Şehir merkezindeki ince toz özellikle yaşlıları tehdit ediyor."
+  },
+  {
+   "id": 5502,
+   "de": "das Abgas",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abgase",
+   "mevcutTr": "egzoz gazı, atık gaz",
+   "mevcutBeispiel": "Moderne Filter reinigen die Abgase der Fabrik weitgehend.",
+   "mevcutBeispielTr": "Modern filtreler fabrikanın atık gazlarını büyük ölçüde temizliyor."
+  },
+  {
+   "id": 5503,
+   "de": "der Schadstoff",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schadstoffe",
+   "mevcutTr": "zararlı madde, kirletici madde",
+   "mevcutBeispiel": "Im Boden wurden gefährliche Schadstoffe aus der alten Fabrik gefunden.",
+   "mevcutBeispielTr": "Toprakta eski fabrikadan kalma tehlikeli zararlı maddeler bulundu."
+  },
+  {
+   "id": 5504,
+   "de": "die Mülltrennung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çöp ayrıştırma",
+   "mevcutBeispiel": "In deutschen Haushalten ist die Mülltrennung längst selbstverständlich.",
+   "mevcutBeispielTr": "Alman evlerinde çöp ayrıştırma çoktan sıradan bir şey oldu."
+  },
+  {
+   "id": 5505,
+   "de": "die Pfandflasche",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Pfandflaschen",
+   "mevcutTr": "depozitolu şişe",
+   "mevcutBeispiel": "Er bringt die Pfandflaschen jeden Samstag zum Supermarkt zurück.",
+   "mevcutBeispielTr": "Depozitolu şişeleri her cumartesi markete geri götürüyor."
+  },
+  {
+   "id": 5506,
+   "de": "der Energieverbrauch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Energieverbräuche",
+   "mevcutTr": "enerji tüketimi",
+   "mevcutBeispiel": "Durch neue Fenster sank der Energieverbrauch des Hauses erheblich.",
+   "mevcutBeispielTr": "Yeni pencereler sayesinde evin enerji tüketimi belirgin şekilde düştü."
+  },
+  {
+   "id": 5507,
+   "de": "das Windrad",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Windräder",
+   "mevcutTr": "rüzgâr türbini",
+   "mevcutBeispiel": "Hinter dem Dorf drehen sich seit einem Jahr drei Windräder.",
+   "mevcutBeispielTr": "Köyün arkasında bir yıldır üç rüzgâr türbini dönüyor."
+  },
+  {
+   "id": 5508,
+   "de": "die Solaranlage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Solaranlagen",
+   "mevcutTr": "güneş enerjisi tesisi, güneş paneli sistemi",
+   "mevcutBeispiel": "Die Solaranlage auf dem Dach deckt fast den halben Strombedarf.",
+   "mevcutBeispielTr": "Çatıdaki güneş paneli sistemi elektrik ihtiyacının neredeyse yarısını karşılıyor."
+  },
+  {
+   "id": 5509,
+   "de": "die Braunkohle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "linyit",
+   "mevcutBeispiel": "Der Ausstieg aus der Braunkohle ist politisch umstritten.",
+   "mevcutBeispielTr": "Linyitten çıkış siyasi olarak tartışmalı."
+  },
+  {
+   "id": 5510,
+   "de": "das Erdöl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "petrol",
+   "mevcutBeispiel": "Ein großer Teil der Kunststoffe wird aus Erdöl hergestellt.",
+   "mevcutBeispielTr": "Plastiklerin büyük bir kısmı petrolden üretiliyor."
+  },
+  {
+   "id": 5511,
+   "de": "die Energiewende",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Energiewenden",
+   "mevcutTr": "enerji dönüşümü",
+   "mevcutBeispiel": "Die Energiewende kommt langsamer voran als ursprünglich geplant.",
+   "mevcutBeispielTr": "Enerji dönüşümü başlangıçta planlanandan daha yavaş ilerliyor."
+  },
+  {
+   "id": 5512,
+   "de": "der Verbrennungsmotor",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verbrennungsmotoren",
+   "mevcutTr": "içten yanmalı motor",
+   "mevcutBeispiel": "Ab 2035 sollen kaum noch Verbrennungsmotoren verkauft werden.",
+   "mevcutBeispielTr": "2035'ten itibaren neredeyse hiç içten yanmalı motor satılmayacak."
+  },
+  {
+   "id": 5513,
+   "de": "der Grenzwert",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Grenzwerte",
+   "mevcutTr": "sınır değer, limit değeri",
+   "mevcutBeispiel": "Der gesetzliche Grenzwert für Stickoxide wurde mehrfach überschritten.",
+   "mevcutBeispielTr": "Azot oksitler için yasal sınır değer defalarca aşıldı."
+  },
+  {
+   "id": 5514,
+   "de": "das Klimaziel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Klimaziele",
+   "mevcutTr": "iklim hedefi",
+   "mevcutBeispiel": "Ohne strengere Vorgaben werden die Klimaziele klar verfehlt.",
+   "mevcutBeispielTr": "Daha sıkı kurallar olmadan iklim hedefleri açıkça tutturulamayacak."
+  },
+  {
+   "id": 5515,
+   "de": "die Klimaneutralität",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "iklim nötrlüğü, karbon nötrlüğü",
+   "mevcutBeispiel": "Der Konzern will bis 2040 vollständige Klimaneutralität erreichen.",
+   "mevcutBeispielTr": "Şirket 2040'a kadar tam iklim nötrlüğüne ulaşmak istiyor."
+  },
+  {
+   "id": 5516,
+   "de": "das Artensterben",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "türlerin yok oluşu",
+   "mevcutBeispiel": "Das weltweite Artensterben schreitet schneller voran als befürchtet.",
+   "mevcutBeispielTr": "Dünya genelinde türlerin yok oluşu korkulandan hızlı ilerliyor."
+  },
+  {
+   "id": 5517,
+   "de": "der Regenwald",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Regenwälder",
+   "mevcutTr": "yağmur ormanı",
+   "mevcutBeispiel": "Für Weideflächen wird jedes Jahr viel Regenwald vernichtet.",
+   "mevcutBeispielTr": "Her yıl otlak açmak için çok sayıda yağmur ormanı yok ediliyor."
+  },
+  {
+   "id": 5518,
+   "de": "die Abholzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abholzungen",
+   "mevcutTr": "ormansızlaştırma, ağaç kesimi",
+   "mevcutBeispiel": "Die Abholzung im Amazonasgebiet hat wieder zugenommen.",
+   "mevcutBeispielTr": "Amazon bölgesindeki ormansızlaştırma yeniden arttı."
+  },
+  {
+   "id": 5519,
+   "de": "der Meeresspiegel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Meeresspiegel",
+   "mevcutTr": "deniz seviyesi",
+   "mevcutBeispiel": "Ein steigender Meeresspiegel bedroht viele flache Küstenregionen.",
+   "mevcutBeispielTr": "Yükselen deniz seviyesi birçok alçak kıyı bölgesini tehdit ediyor."
+  },
+  {
+   "id": 5520,
+   "de": "das Trinkwasser",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "içme suyu",
+   "mevcutBeispiel": "In manchen Regionen wird sauberes Trinkwasser immer teurer.",
+   "mevcutBeispielTr": "Bazı bölgelerde temiz içme suyu giderek pahalanıyor."
+  },
+  {
+   "id": 5521,
+   "de": "das Abwasser",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abwässer",
+   "mevcutTr": "atık su, kanalizasyon suyu",
+   "mevcutBeispiel": "Das Abwasser der Fabrik floss jahrelang ungeklärt in den Fluss.",
+   "mevcutBeispielTr": "Fabrikanın atık suyu yıllarca arıtılmadan nehre aktı."
+  },
+  {
+   "id": 5522,
+   "de": "die Kläranlage",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kläranlagen",
+   "mevcutTr": "arıtma tesisi",
+   "mevcutBeispiel": "Die neue Kläranlage reinigt das Wasser von tausend Haushalten.",
+   "mevcutBeispielTr": "Yeni arıtma tesisi bin hanenin suyunu temizliyor."
+  },
+  {
+   "id": 5523,
+   "de": "die Wasserknappheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "su kıtlığı",
+   "mevcutBeispiel": "Im Sommer führt die Wasserknappheit oft zu strengen Auflagen.",
+   "mevcutBeispielTr": "Yazın su kıtlığı çoğu zaman sıkı kısıtlamalara yol açıyor."
+  },
+  {
+   "id": 5524,
+   "de": "das Düngemittel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Düngemittel",
+   "mevcutTr": "gübre",
+   "mevcutBeispiel": "Zu viele Düngemittel belasten das Grundwasser der Region.",
+   "mevcutBeispielTr": "Aşırı gübre bölgenin yer altı suyunu kirletiyor.",
+   "cakisan": [
+    "der Dünger (B2)"
+   ]
+  },
+  {
+   "id": 5525,
+   "de": "die Umweltkatastrophe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Umweltkatastrophen",
+   "mevcutTr": "çevre felaketi",
+   "mevcutBeispiel": "Der Unfall im Chemiewerk gilt als schwere Umweltkatastrophe.",
+   "mevcutBeispielTr": "Kimya fabrikasındaki kaza ağır bir çevre felaketi sayılıyor."
+  },
+  {
+   "id": 5526,
+   "de": "die Lärmbelästigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Lärmbelästigungen",
+   "mevcutTr": "gürültü rahatsızlığı, gürültü kirliliği",
+   "mevcutBeispiel": "Die Anwohner klagen über die Lärmbelästigung durch den Flughafen.",
+   "mevcutBeispielTr": "Mahalle sakinleri havalimanının yol açtığı gürültüden şikâyetçi."
+  },
+  {
+   "id": 5527,
+   "de": "die Ozonschicht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ozon tabakası",
+   "mevcutBeispiel": "Die Ozonschicht erholt sich langsam von den früheren Schäden.",
+   "mevcutBeispielTr": "Ozon tabakası eski hasarlardan yavaş yavaş toparlanıyor."
+  },
+  {
+   "id": 5528,
+   "de": "die Deponie",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Deponien",
+   "mevcutTr": "çöp depolama alanı, düzenli depolama sahası",
+   "mevcutBeispiel": "Auf der Deponie am Stadtrand wird kaum noch Restmüll gelagert.",
+   "mevcutBeispielTr": "Şehrin kenarındaki depolama alanında artık pek atık biriktirilmiyor."
+  },
+  {
+   "id": 5529,
+   "de": "die Umweltpolitik",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çevre politikası",
+   "mevcutBeispiel": "Die Umweltpolitik der Regierung wird von Fachleuten scharf kritisiert.",
+   "mevcutBeispielTr": "Hükümetin çevre politikası uzmanlarca sert biçimde eleştiriliyor."
+  },
+  {
+   "id": 5530,
+   "de": "der Emissionshandel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "emisyon ticareti",
+   "mevcutBeispiel": "Der europäische Emissionshandel macht Kohlestrom deutlich teurer.",
+   "mevcutBeispielTr": "Avrupa emisyon ticareti kömür elektriğini belirgin şekilde pahalılaştırıyor."
+  },
+  {
+   "id": 5531,
+   "de": "das Konsumverhalten",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tüketim davranışı, tüketim alışkanlığı",
+   "mevcutBeispiel": "Ohne verändertes Konsumverhalten sind die Ziele nicht zu schaffen.",
+   "mevcutBeispielTr": "Tüketim alışkanlıkları değişmeden bu hedeflere ulaşılamaz."
+  },
+  {
+   "id": 5532,
+   "de": "die Wegwerfgesellschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wegwerfgesellschaften",
+   "mevcutTr": "kullan-at toplumu",
+   "mevcutBeispiel": "Reparieren statt kaufen ist eine Antwort auf die Wegwerfgesellschaft.",
+   "mevcutBeispielTr": "Satın almak yerine tamir etmek, kullan-at toplumuna bir yanıttır."
+  },
+  {
+   "id": 5533,
+   "de": "das Mikroplastik",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "mikroplastik",
+   "mevcutBeispiel": "Selbst in abgelegenen Seen findet man inzwischen Mikroplastik.",
+   "mevcutBeispielTr": "Artık ıssız göllerde bile mikroplastik bulunuyor."
+  },
+  {
+   "id": 5534,
+   "de": "der Ökostrom",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yeşil elektrik, temiz enerji elektriği",
+   "mevcutBeispiel": "Wir beziehen seit letztem Jahr ausschließlich Ökostrom.",
+   "mevcutBeispielTr": "Geçen yıldan beri yalnızca yeşil elektrik kullanıyoruz."
+  },
+  {
+   "id": 5535,
+   "de": "die Wärmepumpe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wärmepumpen",
+   "mevcutTr": "ısı pompası",
+   "mevcutBeispiel": "Die Wärmepumpe ersetzt in vielen Neubauten die alte Gasheizung.",
+   "mevcutBeispielTr": "Isı pompası birçok yeni binada eski gazlı kombinin yerini alıyor."
+  },
+  {
+   "id": 5536,
+   "de": "belasten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat belastet",
+   "mevcutTr": "kirletmek, yük bindirmek, zorlamak",
+   "mevcutBeispiel": "Der Schwerverkehr belastet die Luft in der Innenstadt stark.",
+   "mevcutBeispielTr": "Ağır trafik şehir merkezindeki havayı ciddi şekilde kirletiyor.",
+   "cakisan": [
+    "verschmutzen (B1)",
+    "verseuchen (B2)"
+   ]
+  },
+  {
+   "id": 5537,
+   "de": "einsparen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingespart",
+   "mevcutTr": "tasarruf etmek, kısmak",
+   "mevcutBeispiel": "Mit der neuen Anlage lassen sich jährlich tausend Tonnen einsparen.",
+   "mevcutBeispielTr": "Yeni tesisle yılda bin ton tasarruf edilebiliyor.",
+   "cakisan": [
+    "sparen (A2)"
+   ]
+  },
+  {
+   "id": 5538,
+   "de": "erzeugen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erzeugt",
+   "mevcutTr": "üretmek, meydana getirmek",
+   "mevcutBeispiel": "Das Kraftwerk erzeugt Strom fast ausschließlich aus Wasserkraft.",
+   "mevcutBeispielTr": "Santral elektriği neredeyse tamamen su gücünden üretiyor.",
+   "cakisan": [
+    "herstellen (A2)",
+    "produzieren (B1)"
+   ]
+  },
+  {
+   "id": 5539,
+   "de": "ausstoßen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgestoßen",
+   "mevcutTr": "salmak, yaymak",
+   "mevcutBeispiel": "Ein Flug nach New York stößt mehrere Tonnen Kohlendioxid aus.",
+   "mevcutBeispielTr": "New York'a bir uçuş birkaç ton karbondioksit salıyor."
+  },
+  {
+   "id": 5540,
+   "de": "bewahren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bewahrt",
+   "mevcutTr": "korumak, muhafaza etmek",
+   "mevcutBeispiel": "Wir müssen diese Landschaft für die nächsten Generationen bewahren.",
+   "mevcutBeispielTr": "Bu doğayı gelecek kuşaklar için korumak zorundayız.",
+   "cakisan": [
+    "schützen (B1)",
+    "beschützen (B2)",
+    "bewachen (C1)"
+   ]
+  },
+  {
+   "id": 5541,
+   "de": "aufbereiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufbereitet",
+   "mevcutTr": "arıtmak, işlemden geçirmek",
+   "mevcutBeispiel": "Das Werk bereitet gebrauchtes Wasser für die Industrie auf.",
+   "mevcutBeispielTr": "Tesis kullanılmış suyu sanayi için arıtıyor."
+  },
+  {
+   "id": 5542,
+   "de": "dämmen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gedämmt",
+   "mevcutTr": "yalıtmak, izole etmek",
+   "mevcutBeispiel": "Wer sein Dach gut dämmt, spart im Winter viel Heizöl.",
+   "mevcutBeispielTr": "Çatısını iyi yalıtan kışın çok fuel oil tasarrufu yapar."
+  },
+  {
+   "id": 5543,
+   "de": "austrocknen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist ausgetrocknet",
+   "mevcutTr": "kurumak, kuruyup gitmek",
+   "mevcutBeispiel": "Der kleine Bach ist im vergangenen Sommer völlig ausgetrocknet.",
+   "mevcutBeispielTr": "Küçük dere geçen yaz tamamen kurudu."
+  },
+  {
+   "id": 5544,
+   "de": "ansteigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist angestiegen",
+   "mevcutTr": "yükselmek, artmak",
+   "mevcutBeispiel": "Die Durchschnittstemperatur ist seit 1900 deutlich angestiegen.",
+   "mevcutBeispielTr": "Ortalama sıcaklık 1900'den bu yana belirgin biçimde yükseldi.",
+   "cakisan": [
+    "steigen (B1)"
+   ]
+  },
+  {
+   "id": 5545,
+   "de": "verseuchen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verseucht",
+   "mevcutTr": "kirletmek (zehirli maddeyle), bulaştırmak",
+   "mevcutBeispiel": "Auslaufendes Öl hat den Boden auf Jahre hinaus verseucht.",
+   "mevcutBeispielTr": "Sızan petrol toprağı yıllarca sürecek şekilde zehirledi.",
+   "cakisan": [
+    "verschmutzen (B1)",
+    "belasten (B2)"
+   ]
+  }
+ ]
+}

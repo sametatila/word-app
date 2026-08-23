@@ -20,12 +20,41 @@ export const words = pgTable(
     id: integer("id").primaryKey(),
     de: text("de").notNull(), // kursun hedef dilindeki biçim (gsw kursunda Züritüütsch)
     artikel: text("artikel"), // de kursunda der/die/das, gsw kursunda de/d/s
+    /**
+     * Kelimenin **tek** doğal Türkçe karşılığı.
+     *
+     * Eskiden burada virgülle ayrılmış üç dört anlam ve parantezli açıklamalar
+     * dururdu ("açık olmak (dükkân, kapı)"). Ölçülen etki tersineydi: öğrenci
+     * hangi anlamı ezberleyeceğini bilemiyor, çoktan seçmelide uzun şıklar
+     * okunmuyor, yazarak hatırlamada hangi biçimin beklendiği belirsiz
+     * kalıyordu. Artık tek karşılık var ve ayrım gerekiyorsa parantezle değil
+     * daha kesin bir Türkçe ifadeyle yapılıyor ("öğrenci" / "üniversite
+     * öğrencisi"). İkinci anlam gerekiyorsa yeri örnek cümledir.
+     */
     tr: text("tr").notNull(),
+    /**
+     * Aynı kelimenin tek doğal İngilizce karşılığı.
+     *
+     * Yalnızca ikinci bir çeviri değil, bir ayırt edici: Türkçede birbirine
+     * çöken kelimeler İngilizcede ayrışıyor (er/sie/es üçü de "o", ama "he" /
+     * "she" / "it"; das Essen ile essen ikisi de "yemek", ama "food" ile
+     * "to eat"). Fiiller "to" ile yazılır — isim/fiil çiftlerini ayıran şey bu.
+     */
+    en: text("en"),
     formen: text("formen"), // gsw kursunda Hochdeutsch köprüsü ("HD: …")
     typ: text("typ").notNull(), // Nomen | Verb | Sonstiges
     niveau: text("niveau").notNull(), // A1 | A2 | B1 | B2 | C1
+    /**
+     * Tek, tam ve kelimeyi **gerçekten içeren** bir örnek cümle.
+     *
+     * Kaynak Goethe listesinde bu alan çoğu maddede numaralı bir derlemeydi
+     * ("1. … 2. … 3. …") ve bir kısmı kelimeyi hiç taşımıyordu (lang →
+     * "Das Kleid ist zu kurz."). Boşluk doldurma ve cümle dizme turları
+     * cümleyi kelimeden kurduğu için bu, oyunun kendisini bozuyordu.
+     */
     beispiel: text("beispiel"),
     beispielTr: text("beispiel_tr"), // örnek cümlenin doğal Türkçe çevirisi
+    beispielEn: text("beispiel_en"), // aynı cümlenin doğal İngilizce çevirisi
     rank: integer("rank"), // sıklık sırası (küçük = daha yaygın)
     course: text("course").notNull().default("de"), // de | gsw-zh
   },

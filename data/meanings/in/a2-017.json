@@ -1,0 +1,559 @@
+{
+ "paket": "a2-017",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7788,
+   "de": "die Getränkekarte",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "içecek menüsü",
+   "mevcutBeispiel": "Der Kellner bringt uns gleich die Getränkekarte.",
+   "mevcutBeispielTr": "Garson birazdan bize içecek menüsünü getiriyor."
+  },
+  {
+   "id": 7789,
+   "de": "die Serviette",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "peçete",
+   "mevcutBeispiel": "Können Sie mir bitte noch eine Serviette bringen?",
+   "mevcutBeispielTr": "Bana bir peçete daha getirebilir misiniz?"
+  },
+  {
+   "id": 7790,
+   "de": "das Tablett",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "tepsi",
+   "mevcutBeispiel": "Sie trägt vier Gläser auf einem Tablett.",
+   "mevcutBeispielTr": "Bir tepsinin üzerinde dört bardak taşıyor."
+  },
+  {
+   "id": 7791,
+   "de": "die Selbstbedienung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "self servis",
+   "mevcutBeispiel": "Hier ist Selbstbedienung, das Essen holt man an der Theke.",
+   "mevcutBeispielTr": "Burası self servis, yemeği tezgâhtan alıyorsun."
+  },
+  {
+   "id": 7792,
+   "de": "die Bestellung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "sipariş",
+   "mevcutBeispiel": "Meine Bestellung kommt morgen mit der Post.",
+   "mevcutBeispielTr": "Siparişim yarın postayla geliyor.",
+   "cakisan": [
+    "der Auftrag (B1)"
+   ]
+  },
+  {
+   "id": 7793,
+   "de": "schneiden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schneidet, hat geschnitten",
+   "mevcutTr": "kesmek, doğramak",
+   "mevcutBeispiel": "Bitte schneide das Brot in dünne Scheiben.",
+   "mevcutBeispielTr": "Lütfen ekmeği ince dilimler hâlinde kes.",
+   "cakisan": [
+    "sich schneiden (B1)",
+    "unterbrechen (B1)",
+    "schlachten (B2)",
+    "einbehalten (B2)",
+    "zuschneiden (B2)",
+    "fällen (A2)"
+   ]
+  },
+  {
+   "id": 7794,
+   "de": "schälen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schält, hat geschält",
+   "mevcutTr": "soymak (kabuğunu)",
+   "mevcutBeispiel": "Ich schäle die Kartoffeln für das Abendessen.",
+   "mevcutBeispielTr": "Akşam yemeği için patatesleri soyuyorum."
+  },
+  {
+   "id": 7795,
+   "de": "rühren",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "rührt, hat gerührt",
+   "mevcutTr": "karıştırmak (kaşıkla çevirmek)",
+   "mevcutBeispiel": "Rühr die Soße, damit sie nicht anbrennt.",
+   "mevcutBeispielTr": "Sosu karıştır ki dibi tutmasın.",
+   "cakisan": [
+    "mischen (B1)",
+    "verwechseln (B1)"
+   ]
+  },
+  {
+   "id": 7796,
+   "de": "aufwärmen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "wärmt auf, hat aufgewärmt",
+   "mevcutTr": "ısıtmak (yemeği)",
+   "mevcutBeispiel": "Ich wärme die Suppe von gestern auf.",
+   "mevcutBeispielTr": "Dünkü çorbayı ısıtıyorum.",
+   "cakisan": [
+    "heizen (B1)"
+   ]
+  },
+  {
+   "id": 7797,
+   "de": "abtrocknen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "trocknet ab, hat abgetrocknet",
+   "mevcutTr": "kurulamak",
+   "mevcutBeispiel": "Du wäschst ab und ich trockne die Teller ab.",
+   "mevcutBeispielTr": "Sen bulaşık yıka, ben de tabakları kurulayayım."
+  },
+  {
+   "id": 7798,
+   "de": "decken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "deckt, hat gedeckt",
+   "mevcutTr": "kurmak (sofra), örtmek",
+   "mevcutBeispiel": "Kannst du bitte den Tisch für vier Personen decken?",
+   "mevcutBeispielTr": "Lütfen dört kişilik sofrayı kurabilir misin?",
+   "cakisan": [
+    "installieren (B1)",
+    "zusammenbauen (A2)",
+    "aufbauen (A2)"
+   ]
+  },
+  {
+   "id": 7799,
+   "de": "der Deckel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kapak",
+   "mevcutBeispiel": "Mach bitte den Deckel auf den Topf.",
+   "mevcutBeispielTr": "Lütfen tencerenin kapağını kapat."
+  },
+  {
+   "id": 7800,
+   "de": "die Mikrowelle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "mikrodalga fırın",
+   "mevcutBeispiel": "Stell das Essen zwei Minuten in die Mikrowelle.",
+   "mevcutBeispielTr": "Yemeği iki dakika mikrodalga fırına koy."
+  },
+  {
+   "id": 7801,
+   "de": "das Kochbuch",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "yemek kitabı",
+   "mevcutBeispiel": "Meine Mutter hat mir ein Kochbuch geschenkt.",
+   "mevcutBeispielTr": "Annem bana bir yemek kitabı hediye etti."
+  },
+  {
+   "id": 7802,
+   "de": "das Gramm",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "gram",
+   "mevcutBeispiel": "Ich brauche 200 Gramm Käse.",
+   "mevcutBeispielTr": "200 gram peynire ihtiyacım var."
+  },
+  {
+   "id": 7803,
+   "de": "der Liter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "litre",
+   "mevcutBeispiel": "Bring bitte zwei Liter Milch mit.",
+   "mevcutBeispielTr": "Lütfen iki litre süt getir."
+  },
+  {
+   "id": 7804,
+   "de": "das Kilo",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "kilo",
+   "mevcutBeispiel": "Ein Kilo Tomaten kostet hier zwei Euro.",
+   "mevcutBeispielTr": "Burada bir kilo domates iki avro."
+  },
+  {
+   "id": 7805,
+   "de": "die Packung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "paket, ambalaj",
+   "mevcutBeispiel": "In der Packung sind zehn Teebeutel.",
+   "mevcutBeispielTr": "Pakette on çay poşeti var.",
+   "cakisan": [
+    "das Paket (A1)"
+   ]
+  },
+  {
+   "id": 7806,
+   "de": "der Becher",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kap, bardak (kulpsuz)",
+   "mevcutBeispiel": "Ich kaufe einen Becher Sahne für den Kuchen.",
+   "mevcutBeispielTr": "Pasta için bir kap krema alıyorum."
+  },
+  {
+   "id": 7807,
+   "de": "der Karton",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "karton kutu",
+   "mevcutBeispiel": "Die Flaschen sind in einem großen Karton.",
+   "mevcutBeispielTr": "Şişeler büyük bir karton kutunun içinde."
+  },
+  {
+   "id": 7808,
+   "de": "die Waage",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "terazi, tartı",
+   "mevcutBeispiel": "Leg das Obst bitte auf die Waage.",
+   "mevcutBeispielTr": "Meyveyi lütfen teraziye koy."
+  },
+  {
+   "id": 7809,
+   "de": "die Tube",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "tüp (ambalaj)",
+   "mevcutBeispiel": "Wir brauchen noch eine Tube Zahnpasta.",
+   "mevcutBeispielTr": "Bir tüp diş macununa daha ihtiyacımız var."
+  },
+  {
+   "id": 7810,
+   "de": "die Sparkasse",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "tasarruf bankası",
+   "mevcutBeispiel": "Mein Konto ist bei der Sparkasse.",
+   "mevcutBeispielTr": "Hesabım tasarruf bankasında."
+  },
+  {
+   "id": 7811,
+   "de": "das Sparbuch",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "tasarruf hesabı cüzdanı",
+   "mevcutBeispiel": "Für meine Tochter habe ich ein Sparbuch eröffnet.",
+   "mevcutBeispielTr": "Kızım için bir tasarruf hesabı cüzdanı açtırdım."
+  },
+  {
+   "id": 7812,
+   "de": "der Geldbeutel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "cüzdan, para kesesi",
+   "mevcutBeispiel": "Mein Geldbeutel ist im Bus liegen geblieben.",
+   "mevcutBeispielTr": "Cüzdanım otobüste kaldı.",
+   "cakisan": [
+    "die Geldbörse (A2)",
+    "die Brieftasche (B1)",
+    "das Portemonnaie/Portmonee (B1)"
+   ]
+  },
+  {
+   "id": 7813,
+   "de": "die Rückgabe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "iade",
+   "mevcutBeispiel": "Die Rückgabe ist nur mit Kassenzettel möglich.",
+   "mevcutBeispielTr": "İade sadece kasa fişiyle mümkün.",
+   "cakisan": [
+    "die Restitution (C1)"
+   ]
+  },
+  {
+   "id": 7814,
+   "de": "zurückgeben",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "gibt zurück, hat zurückgegeben",
+   "mevcutTr": "geri vermek, iade etmek",
+   "mevcutBeispiel": "Ich möchte diese Schuhe zurückgeben, sie sind zu klein.",
+   "mevcutBeispielTr": "Bu ayakkabıları iade etmek istiyorum, çok küçükler."
+  },
+  {
+   "id": 7815,
+   "de": "zurückschicken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schickt zurück, hat zurückgeschickt",
+   "mevcutTr": "geri göndermek",
+   "mevcutBeispiel": "Die Jacke passt nicht, ich schicke sie zurück.",
+   "mevcutBeispielTr": "Ceket olmadı, onu geri gönderiyorum.",
+   "cakisan": [
+    "zurücksenden (B2)"
+   ]
+  },
+  {
+   "id": 7816,
+   "de": "das Pfand",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "depozito (şişe, kap)",
+   "mevcutBeispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
+   "mevcutBeispielTr": "Şişe için 25 sent depozito ödüyorsun."
+  },
+  {
+   "id": 7817,
+   "de": "die Schwiegermutter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "kayınvalide",
+   "mevcutBeispiel": "Meine Schwiegermutter kocht jeden Sonntag für die ganze Familie.",
+   "mevcutBeispielTr": "Kayınvalidem her pazar bütün aile için yemek pişiriyor."
+  },
+  {
+   "id": 7818,
+   "de": "der Schwiegervater",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "kayınpeder",
+   "mevcutBeispiel": "Mein Schwiegervater hat mir im Garten geholfen.",
+   "mevcutBeispielTr": "Kayınpederim bahçede bana yardım etti."
+  },
+  {
+   "id": 7819,
+   "de": "der Schwiegersohn",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "damat (kızın kocası)",
+   "mevcutBeispiel": "Ihr Schwiegersohn arbeitet als Lehrer.",
+   "mevcutBeispielTr": "Damadı öğretmen olarak çalışıyor.",
+   "cakisan": [
+    "der Bräutigam (A2)"
+   ]
+  },
+  {
+   "id": 7820,
+   "de": "die Schwiegertochter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "gelin (oğlun eşi)",
+   "mevcutBeispiel": "Seine Schwiegertochter bringt immer Kuchen mit.",
+   "mevcutBeispielTr": "Gelini her zaman yanında kek getiriyor.",
+   "cakisan": [
+    "die Braut (A2)"
+   ]
+  },
+  {
+   "id": 7821,
+   "de": "das Enkelkind",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-er",
+   "mevcutTr": "torun",
+   "mevcutBeispiel": "Meine Großeltern haben fünf Enkelkinder.",
+   "mevcutBeispielTr": "Büyükannemle büyükbabamın beş torunu var.",
+   "cakisan": [
+    "der Enkel (B1)",
+    "die Enkelin (B1)"
+   ]
+  },
+  {
+   "id": 7822,
+   "de": "die Verlobung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "nişan",
+   "mevcutBeispiel": "Wir feiern unsere Verlobung im Garten.",
+   "mevcutBeispielTr": "Nişanımızı bahçede kutluyoruz."
+  },
+  {
+   "id": 7823,
+   "de": "die Braut",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "gelin",
+   "mevcutBeispiel": "Die Braut trägt ein weißes Kleid.",
+   "mevcutBeispielTr": "Gelin beyaz bir elbise giyiyor.",
+   "cakisan": [
+    "die Schwiegertochter (A2)"
+   ]
+  },
+  {
+   "id": 7824,
+   "de": "der Bräutigam",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "damat, güvey",
+   "mevcutBeispiel": "Der Bräutigam wartet nervös vor der Kirche.",
+   "mevcutBeispielTr": "Damat kilisenin önünde heyecanla bekliyor.",
+   "cakisan": [
+    "der Schwiegersohn (A2)"
+   ]
+  },
+  {
+   "id": 7825,
+   "de": "der Trauzeuge",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "nikâh şahidi",
+   "mevcutBeispiel": "Mein bester Freund ist mein Trauzeuge.",
+   "mevcutBeispielTr": "En iyi arkadaşım nikâh şahidim."
+  },
+  {
+   "id": 7826,
+   "de": "die Beerdigung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "cenaze töreni",
+   "mevcutBeispiel": "Die Beerdigung ist am Freitag um zehn Uhr.",
+   "mevcutBeispielTr": "Cenaze töreni cuma günü saat onda."
+  },
+  {
+   "id": 7827,
+   "de": "die Familienfeier",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "aile kutlaması",
+   "mevcutBeispiel": "Am Wochenende haben wir eine große Familienfeier.",
+   "mevcutBeispielTr": "Hafta sonu büyük bir aile kutlamamız var."
+  },
+  {
+   "id": 7828,
+   "de": "der Blumenstrauß",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "çiçek buketi",
+   "mevcutBeispiel": "Ich bringe der Gastgeberin einen Blumenstrauß mit.",
+   "mevcutBeispielTr": "Ev sahibine bir çiçek buketi götürüyorum."
+  },
+  {
+   "id": 7829,
+   "de": "der Weihnachtsbaum",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "Noel ağacı",
+   "mevcutBeispiel": "Der Weihnachtsbaum steht dieses Jahr im Wohnzimmer.",
+   "mevcutBeispielTr": "Noel ağacı bu yıl oturma odasında duruyor."
+  },
+  {
+   "id": 7830,
+   "de": "die Umarmung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "kucaklama, sarılma",
+   "mevcutBeispiel": "Nach der langen Reise bekam ich von meiner Mutter eine herzliche Umarmung.",
+   "mevcutBeispielTr": "Uzun yolculuktan sonra annemden içten bir kucaklama aldım."
+  },
+  {
+   "id": 7831,
+   "de": "der Zwilling",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "ikiz",
+   "mevcutBeispiel": "Mein Bruder und ich sind Zwillinge.",
+   "mevcutBeispielTr": "Kardeşimle ben ikiziz."
+  },
+  {
+   "id": 7832,
+   "de": "die Stiefmutter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "üvey anne",
+   "mevcutBeispiel": "Seine Stiefmutter ist sehr nett zu ihm.",
+   "mevcutBeispielTr": "Üvey annesi ona karşı çok iyi."
+  },
+  {
+   "id": 7833,
+   "de": "der Kinderwagen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "bebek arabası",
+   "mevcutBeispiel": "Der Kinderwagen passt nicht in den Aufzug.",
+   "mevcutBeispielTr": "Bebek arabası asansöre sığmıyor."
+  },
+  {
+   "id": 7834,
+   "de": "die Windel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "bebek bezi",
+   "mevcutBeispiel": "Der Kleine braucht eine frische Windel.",
+   "mevcutBeispielTr": "Küçüğün temiz bir bebek bezine ihtiyacı var."
+  },
+  {
+   "id": 7835,
+   "de": "die Witwe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "dul kadın",
+   "mevcutBeispiel": "Meine Nachbarin ist seit drei Jahren Witwe.",
+   "mevcutBeispielTr": "Komşum üç yıldır dul."
+  },
+  {
+   "id": 7836,
+   "de": "der Hochzeitstag",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "evlilik yıldönümü, düğün günü",
+   "mevcutBeispiel": "Zum Hochzeitstag schenkt mein Mann mir immer Rosen.",
+   "mevcutBeispielTr": "Evlilik yıldönümünde kocam bana hep gül hediye eder."
+  },
+  {
+   "id": 7837,
+   "de": "das Patenkind",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-er",
+   "mevcutTr": "vaftiz çocuğu",
+   "mevcutBeispiel": "Mein Patenkind wird morgen sechs Jahre alt.",
+   "mevcutBeispielTr": "Vaftiz çocuğum yarın altı yaşına giriyor."
+  }
+ ]
+}

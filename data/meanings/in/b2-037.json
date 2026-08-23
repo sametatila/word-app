@@ -1,0 +1,562 @@
+{
+ "paket": "b2-037",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 5446,
+   "de": "die Schadsoftware",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "zararlı yazılım",
+   "mevcutBeispiel": "Über einen Anhang gelangte Schadsoftware in das gesamte Firmennetz.",
+   "mevcutBeispielTr": "Bir ek dosya üzerinden zararlı yazılım tüm şirket ağına yayıldı."
+  },
+  {
+   "id": 5447,
+   "de": "der Angreifer",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Angreifer",
+   "mevcutTr": "saldırgan",
+   "mevcutBeispiel": "Die Angreifer verschafften sich über gestohlene Zugangsdaten Eintritt ins System.",
+   "mevcutBeispielTr": "Saldırganlar çalınan giriş bilgileriyle sisteme sızdı."
+  },
+  {
+   "id": 5448,
+   "de": "der Datenmissbrauch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "veri kötüye kullanımı",
+   "mevcutBeispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs.",
+   "mevcutBeispielTr": "Sağlayıcı hakkında olası veri kötüye kullanımı nedeniyle soruşturma yürütülüyor."
+  },
+  {
+   "id": 5449,
+   "de": "der Datenverlust",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Datenverluste",
+   "mevcutTr": "veri kaybı",
+   "mevcutBeispiel": "Eine regelmäßige Sicherung schützt am besten vor plötzlichem Datenverlust.",
+   "mevcutBeispielTr": "Düzenli yedekleme ani veri kaybına karşı en iyi korumadır."
+  },
+  {
+   "id": 5450,
+   "de": "die Verfügbarkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verfügbarkeiten",
+   "mevcutTr": "erişilebilirlik, kullanılabilirlik",
+   "mevcutBeispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
+   "mevcutBeispielTr": "Sözleşme bize neredeyse yüzde yüz erişilebilirlik güvencesi veriyor."
+  },
+  {
+   "id": 5451,
+   "de": "die Rechenleistung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rechenleistungen",
+   "mevcutTr": "işlem gücü",
+   "mevcutBeispiel": "Für diese Auswertung brauchen wir deutlich mehr Rechenleistung als bisher.",
+   "mevcutBeispielTr": "Bu analiz için şimdiye kadarkinden çok daha fazla işlem gücü gerekiyor."
+  },
+  {
+   "id": 5452,
+   "de": "das Endgerät",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Endgeräte",
+   "mevcutTr": "uç cihaz, son kullanıcı cihazı",
+   "mevcutBeispiel": "Die Seite passt sich an jedes Endgerät automatisch an.",
+   "mevcutBeispielTr": "Sayfa her uç cihaza kendiliğinden uyum sağlıyor."
+  },
+  {
+   "id": 5453,
+   "de": "der Sensor",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sensoren",
+   "mevcutTr": "sensör, algılayıcı",
+   "mevcutBeispiel": "Ein Sensor an der Tür meldet jede unbefugte Bewegung.",
+   "mevcutBeispielTr": "Kapıdaki bir sensör her izinsiz hareketi bildiriyor."
+  },
+  {
+   "id": 5454,
+   "de": "die Fernsteuerung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Fernsteuerungen",
+   "mevcutTr": "uzaktan kumanda, uzaktan kontrol",
+   "mevcutBeispiel": "Die Heizung lässt sich per Fernsteuerung vom Handy aus regeln.",
+   "mevcutBeispielTr": "Kalorifer telefondan uzaktan kumandayla ayarlanabiliyor.",
+   "cakisan": [
+    "die Fernbedienung (B1)"
+   ]
+  },
+  {
+   "id": 5455,
+   "de": "der Roboter",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Roboter",
+   "mevcutTr": "robot",
+   "mevcutBeispiel": "In der Halle übernehmen Roboter inzwischen die schwersten Arbeitsschritte.",
+   "mevcutBeispielTr": "Fabrika salonunda artık en ağır iş adımlarını robotlar üstleniyor."
+  },
+  {
+   "id": 5456,
+   "de": "der Entwickler",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Entwickler",
+   "mevcutTr": "geliştirici",
+   "mevcutBeispiel": "Die Entwickler arbeiten seit Wochen an einer stabileren Fassung.",
+   "mevcutBeispielTr": "Geliştiriciler haftalardır daha kararlı bir sürüm üzerinde çalışıyor."
+  },
+  {
+   "id": 5457,
+   "de": "die Neuerung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Neuerungen",
+   "mevcutTr": "yenilik",
+   "mevcutBeispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten.",
+   "mevcutBeispielTr": "En önemli yenilik kişisel verilerin korunmasıyla ilgili.",
+   "cakisan": [
+    "die Innovation (B2)"
+   ]
+  },
+  {
+   "id": 5458,
+   "de": "der Ablauf",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abläufe",
+   "mevcutTr": "işleyiş, süreç, akış",
+   "mevcutBeispiel": "Der gesamte Ablauf der Bestellung wird nun vom Rechner gesteuert.",
+   "mevcutBeispielTr": "Siparişin tüm işleyişi artık bilgisayar tarafından yönetiliyor."
+  },
+  {
+   "id": 5459,
+   "de": "das Ladegerät",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ladegeräte",
+   "mevcutTr": "şarj cihazı",
+   "mevcutBeispiel": "Ich habe mein Ladegerät im Zug liegen lassen.",
+   "mevcutBeispielTr": "Şarj cihazımı trende unuttum."
+  },
+  {
+   "id": 5460,
+   "de": "die Datenbank",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Datenbanken",
+   "mevcutTr": "veri tabanı",
+   "mevcutBeispiel": "In der Datenbank stehen die Angaben von mehreren Millionen Kunden.",
+   "mevcutBeispielTr": "Veri tabanında milyonlarca müşterinin bilgileri bulunuyor."
+  },
+  {
+   "id": 5461,
+   "de": "die Suchmaschine",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Suchmaschinen",
+   "mevcutTr": "arama motoru",
+   "mevcutBeispiel": "Die Suchmaschine zeigt Werbung immer vor den eigentlichen Ergebnissen.",
+   "mevcutBeispielTr": "Arama motoru reklamları hep asıl sonuçlardan önce gösteriyor."
+  },
+  {
+   "id": 5462,
+   "de": "das Dateiformat",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Dateiformate",
+   "mevcutTr": "dosya biçimi",
+   "mevcutBeispiel": "Bitte schicken Sie den Bericht in einem gängigen Dateiformat.",
+   "mevcutBeispielTr": "Lütfen raporu yaygın bir dosya biçiminde gönderin."
+  },
+  {
+   "id": 5463,
+   "de": "der Virenschutz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "virüs koruması",
+   "mevcutBeispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen.",
+   "mevcutBeispielTr": "Güncel virüs koruması olmadan yabancı ekler açılmamalı."
+  },
+  {
+   "id": 5464,
+   "de": "der Netzbetreiber",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Netzbetreiber",
+   "mevcutTr": "şebeke işletmecisi, operatör",
+   "mevcutBeispiel": "Der Netzbetreiber hat die Störung nach zwei Tagen endlich behoben.",
+   "mevcutBeispielTr": "Operatör arızayı iki gün sonra nihayet giderdi."
+  },
+  {
+   "id": 5465,
+   "de": "die Dienstleistung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Dienstleistungen",
+   "mevcutTr": "hizmet",
+   "mevcutBeispiel": "Viele Dienstleistungen der Behörde lassen sich inzwischen im Netz erledigen.",
+   "mevcutBeispielTr": "Kurumun birçok hizmeti artık internet üzerinden halledilebiliyor.",
+   "cakisan": [
+    "der Service (A2)",
+    "der Dienst (B1)"
+   ]
+  },
+  {
+   "id": 5466,
+   "de": "die Elektronik",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "elektronik aksam, elektronik (bilim dalı)",
+   "mevcutBeispiel": "Bei dem Unfall wurde vor allem die Elektronik des Wagens beschädigt.",
+   "mevcutBeispielTr": "Kazada özellikle aracın elektroniği zarar gördü."
+  },
+  {
+   "id": 5467,
+   "de": "die Stromversorgung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "elektrik beslemesi, güç kaynağı",
+   "mevcutBeispiel": "Eine unterbrochene Stromversorgung kann den ganzen Betrieb lahmlegen.",
+   "mevcutBeispielTr": "Kesintiye uğrayan elektrik beslemesi tüm işletmeyi felç edebilir."
+  },
+  {
+   "id": 5468,
+   "de": "die Handhabung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kullanım, kullanış",
+   "mevcutBeispiel": "Die Handhabung des Programms ist auch für Ungeübte leicht.",
+   "mevcutBeispielTr": "Programın kullanımı deneyimsizler için bile kolay."
+  },
+  {
+   "id": 5469,
+   "de": "die Funkverbindung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Funkverbindungen",
+   "mevcutTr": "telsiz bağlantısı, kablosuz bağlantı",
+   "mevcutBeispiel": "Im Tunnel brach die Funkverbindung zum Fahrzeug plötzlich ab.",
+   "mevcutBeispielTr": "Tünelde araçla olan telsiz bağlantısı birden koptu."
+  },
+  {
+   "id": 5470,
+   "de": "das Signal",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Signale",
+   "mevcutTr": "sinyal, işaret",
+   "mevcutBeispiel": "Das Signal wird auf dem Land oft von Bäumen abgeschwächt.",
+   "mevcutBeispielTr": "Kırsalda sinyal çoğu zaman ağaçlar yüzünden zayıflıyor."
+  },
+  {
+   "id": 5471,
+   "de": "die Simulation",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Simulationen",
+   "mevcutTr": "simülasyon, benzetim",
+   "mevcutBeispiel": "In der Simulation hielt die Brücke auch starkem Wind stand.",
+   "mevcutBeispielTr": "Simülasyonda köprü şiddetli rüzgâra da dayandı."
+  },
+  {
+   "id": 5472,
+   "de": "der Warnhinweis",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Warnhinweise",
+   "mevcutTr": "uyarı, uyarı notu",
+   "mevcutBeispiel": "Die meisten Leute klicken den Warnhinweis einfach weg.",
+   "mevcutBeispielTr": "İnsanların çoğu uyarıyı okumadan kapatıp geçiyor."
+  },
+  {
+   "id": 5473,
+   "de": "die Bildschirmauflösung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bildschirmauflösungen",
+   "mevcutTr": "ekran çözünürlüğü",
+   "mevcutBeispiel": "Bei dieser Bildschirmauflösung ist die Schrift kaum noch lesbar.",
+   "mevcutBeispielTr": "Bu ekran çözünürlüğünde yazı neredeyse okunmuyor."
+  },
+  {
+   "id": 5474,
+   "de": "der Testlauf",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Testläufe",
+   "mevcutTr": "deneme çalışması, test çalıştırması",
+   "mevcutBeispiel": "Vor der Einführung gab es mehrere Testläufe mit echten Kunden.",
+   "mevcutBeispielTr": "Hizmete alınmadan önce gerçek müşterilerle birkaç deneme yapıldı."
+  },
+  {
+   "id": 5475,
+   "de": "verschlüsseln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verschlüsselt",
+   "mevcutTr": "şifrelemek",
+   "mevcutBeispiel": "Alle Nachrichten werden bereits auf dem Gerät verschlüsselt.",
+   "mevcutBeispielTr": "Bütün iletiler daha cihazın üzerindeyken şifreleniyor."
+  },
+  {
+   "id": 5476,
+   "de": "aktualisieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aktualisiert",
+   "mevcutTr": "güncellemek",
+   "mevcutBeispiel": "Wir aktualisieren die Angaben auf der Seite jeden Morgen.",
+   "mevcutBeispielTr": "Sayfadaki bilgileri her sabah güncelliyoruz."
+  },
+  {
+   "id": 5477,
+   "de": "programmieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat programmiert",
+   "mevcutTr": "programlamak, kodlamak",
+   "mevcutBeispiel": "Sie hat die Steuerung der Maschine selbst programmiert.",
+   "mevcutBeispielTr": "Makinenin kumandasını kendisi programladı."
+  },
+  {
+   "id": 5478,
+   "de": "abstürzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist abgestürzt",
+   "mevcutTr": "çökmek (program), donmak",
+   "mevcutBeispiel": "Das Programm ist mitten in der Bearbeitung wieder abgestürzt.",
+   "mevcutBeispielTr": "Program düzenleme sırasında yine çöktü.",
+   "cakisan": [
+    "zusammenbrechen (B2)",
+    "einstürzen (B2)"
+   ]
+  },
+  {
+   "id": 5479,
+   "de": "ausführen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgeführt",
+   "mevcutTr": "yürütmek, çalıştırmak, uygulamak",
+   "mevcutBeispiel": "Der Rechner führt den Befehl erst nach der Bestätigung aus.",
+   "mevcutBeispielTr": "Bilgisayar komutu ancak onaydan sonra çalıştırıyor.",
+   "cakisan": [
+    "abwickeln (B2)"
+   ]
+  },
+  {
+   "id": 5480,
+   "de": "wiederherstellen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat wiederhergestellt",
+   "mevcutTr": "geri yüklemek, eski hâline getirmek",
+   "mevcutBeispiel": "Zum Glück konnten wir die gelöschten Unterlagen wiederherstellen.",
+   "mevcutBeispielTr": "Neyse ki silinen belgeleri geri yükleyebildik."
+  },
+  {
+   "id": 5481,
+   "de": "erfassen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erfasst",
+   "mevcutTr": "kaydetmek, saptamak, kavramak",
+   "mevcutBeispiel": "Das Gerät erfasst den Verbrauch jeder einzelnen Wohnung.",
+   "mevcutBeispielTr": "Cihaz her dairenin tüketimini ayrı ayrı kaydediyor.",
+   "cakisan": [
+    "speichern (A2)",
+    "verzeichnen (B2)",
+    "abspeichern (C1)"
+   ]
+  },
+  {
+   "id": 5482,
+   "de": "eingeben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingegeben",
+   "mevcutTr": "girmek (veri), yazmak",
+   "mevcutBeispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
+   "mevcutBeispielTr": "Lütfen mesajdaki onay kodunu girin.",
+   "cakisan": [
+    "sich unterziehen (C1)",
+    "ablegen (A2)",
+    "betreten (A2)"
+   ]
+  },
+  {
+   "id": 5483,
+   "de": "sperren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gesperrt",
+   "mevcutTr": "engellemek, bloke etmek, kapatmak",
+   "mevcutBeispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt.",
+   "mevcutBeispielTr": "Üç yanlış denemeden sonra erişim kendiliğinden engelleniyor.",
+   "cakisan": [
+    "behindern (B1)",
+    "unterbinden (C1)",
+    "blockieren (B2)",
+    "hemmen (C1)"
+   ]
+  },
+  {
+   "id": 5484,
+   "de": "freischalten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat freigeschaltet",
+   "mevcutTr": "etkinleştirmek, açmak, aktive etmek",
+   "mevcutBeispiel": "Die Funktion wird erst nach der Bezahlung freigeschaltet.",
+   "mevcutBeispielTr": "Bu özellik ancak ödemeden sonra etkinleştiriliyor."
+  },
+  {
+   "id": 5485,
+   "de": "abrufen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgerufen",
+   "mevcutTr": "sorgulamak, erişmek, çağırmak",
+   "mevcutBeispiel": "Den Kontostand kann man jederzeit vom Handy abrufen.",
+   "mevcutBeispielTr": "Hesap bakiyesi istenildiği an telefondan sorgulanabiliyor.",
+   "cakisan": [
+    "hinterfragen (C1)"
+   ]
+  },
+  {
+   "id": 5486,
+   "de": "blockieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat blockiert",
+   "mevcutTr": "engellemek, bloke etmek",
+   "mevcutBeispiel": "Das Programm blockiert Werbung und unerwünschte Verbindungen zuverlässig.",
+   "mevcutBeispielTr": "Program reklamları ve istenmeyen bağlantıları güvenilir biçimde engelliyor.",
+   "cakisan": [
+    "behindern (B1)",
+    "unterbinden (C1)",
+    "sperren (B2)",
+    "hemmen (C1)"
+   ]
+  },
+  {
+   "id": 5487,
+   "de": "filtern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gefiltert",
+   "mevcutTr": "filtrelemek, süzmek",
+   "mevcutBeispiel": "Der Dienst filtert verdächtige Nachrichten schon vor der Zustellung.",
+   "mevcutBeispielTr": "Hizmet şüpheli iletileri daha teslim edilmeden süzüyor."
+  },
+  {
+   "id": 5488,
+   "de": "verknüpfen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verknüpft",
+   "mevcutTr": "bağlamak, ilişkilendirmek",
+   "mevcutBeispiel": "Die App verknüpft deinen Kalender mit dem des Teams.",
+   "mevcutBeispielTr": "Uygulama senin takvimini ekibin takvimiyle ilişkilendiriyor.",
+   "cakisan": [
+    "anschließen (B1)",
+    "verbinden (B1)",
+    "binden (C1)"
+   ]
+  },
+  {
+   "id": 5489,
+   "de": "kabellos",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kablosuz",
+   "mevcutBeispiel": "Die Kopfhörer verbinden sich kabellos mit jedem Gerät im Raum.",
+   "mevcutBeispielTr": "Kulaklık odadaki her cihaza kablosuz olarak bağlanıyor.",
+   "cakisan": [
+    "drahtlos (B2)"
+   ]
+  },
+  {
+   "id": 5490,
+   "de": "kompatibel",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "uyumlu",
+   "mevcutBeispiel": "Der Drucker ist leider nicht mit unserem System kompatibel.",
+   "mevcutBeispielTr": "Yazıcı ne yazık ki sistemimizle uyumlu değil."
+  },
+  {
+   "id": 5491,
+   "de": "veraltet",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "eskimiş, güncelliğini yitirmiş",
+   "mevcutBeispiel": "Die Ausstattung im Labor ist inzwischen hoffnungslos veraltet.",
+   "mevcutBeispielTr": "Laboratuvardaki donanım artık umutsuzca eskimiş durumda."
+  },
+  {
+   "id": 5492,
+   "de": "standardmäßig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "standart olarak, varsayılan olarak",
+   "mevcutBeispiel": "Die Ortung ist bei diesem Gerät standardmäßig ausgeschaltet.",
+   "mevcutBeispielTr": "Bu cihazda konum takibi varsayılan olarak kapalı.",
+   "cakisan": [
+    "serienmäßig (B2)"
+   ]
+  },
+  {
+   "id": 5493,
+   "de": "aufwendig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "zahmetli, masraflı, çok emek isteyen",
+   "mevcutBeispiel": "Die Umstellung war aufwendiger, als wir zunächst gedacht hatten.",
+   "mevcutBeispielTr": "Geçiş ilk başta düşündüğümüzden daha zahmetli oldu."
+  },
+  {
+   "id": 5494,
+   "de": "zeitgemäß",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çağdaş, güncel, çağa uygun",
+   "mevcutBeispiel": "Eine zeitgemäße Ausrüstung gehört heute zu jedem Arbeitsplatz.",
+   "mevcutBeispielTr": "Çağdaş bir donanım bugün her iş yerinin gereğidir.",
+   "cakisan": [
+    "zeitgenössisch (B2)"
+   ]
+  },
+  {
+   "id": 5495,
+   "de": "unbefugt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yetkisiz, izinsiz",
+   "mevcutBeispiel": "Unbefugte Zugriffe werden vom System sofort gemeldet.",
+   "mevcutBeispielTr": "Yetkisiz erişimler sistem tarafından anında bildiriliyor."
+  }
+ ]
+}

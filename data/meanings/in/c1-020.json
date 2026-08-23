@@ -1,0 +1,523 @@
+{
+ "paket": "c1-020",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6203,
+   "de": "die Amortisation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Amortisationen",
+   "mevcutTr": "yatırımın kendini amorti etmesi, geri ödeme süresi",
+   "mevcutBeispiel": "Die Amortisation der Anlage verzögert sich durch die niedrigen Marktpreise.",
+   "mevcutBeispielTr": "Düşük piyasa fiyatları yüzünden tesisin kendini geri ödemesi gecikiyor."
+  },
+  {
+   "id": 6204,
+   "de": "die Anschubfinanzierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Anschubfinanzierungen",
+   "mevcutTr": "başlangıç finansmanı, ilk destek fonu",
+   "mevcutBeispiel": "Der Bund stellt eine Anschubfinanzierung bereit, den Rest tragen die Kommunen.",
+   "mevcutBeispielTr": "Federal devlet başlangıç finansmanını sağlıyor, gerisini belediyeler üstleniyor."
+  },
+  {
+   "id": 6205,
+   "de": "der Kapitalbedarf",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kapitalbedarfe",
+   "mevcutTr": "sermaye ihtiyacı",
+   "mevcutBeispiel": "Der Kapitalbedarf übersteigt bei Weitem das, was ein Stadtwerk allein stemmen kann.",
+   "mevcutBeispielTr": "Sermaye ihtiyacı, bir belediye şirketinin tek başına kaldırabileceğini fazlasıyla aşıyor."
+  },
+  {
+   "id": 6206,
+   "de": "die Renditeerwartung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Renditeerwartungen",
+   "mevcutTr": "getiri beklentisi",
+   "mevcutBeispiel": "Private Investoren steigen nur bei planbaren Renditeerwartungen ein.",
+   "mevcutBeispielTr": "Özel yatırımcılar ancak öngörülebilir getiri beklentisi varsa işe giriyor."
+  },
+  {
+   "id": 6207,
+   "de": "die Grenzkosten",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "marjinal maliyet",
+   "mevcutBeispiel": "Windkraft verdrängt teure Kraftwerke, weil ihre Grenzkosten nahezu null betragen.",
+   "mevcutBeispielTr": "Rüzgâr enerjisi marjinal maliyeti neredeyse sıfır olduğu için pahalı santralleri saf dışı bırakıyor."
+  },
+  {
+   "id": 6208,
+   "de": "die Folgekosten",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sonradan doğan maliyetler, ardından gelen masraflar",
+   "mevcutBeispiel": "Die Folgekosten des Rückbaus wurden in der ursprünglichen Rechnung schlicht ausgeblendet.",
+   "mevcutBeispielTr": "Sökümün doğuracağı maliyetler ilk hesapta basitçe göz ardı edilmişti."
+  },
+  {
+   "id": 6209,
+   "de": "die Kostenüberschreitung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kostenüberschreitungen",
+   "mevcutTr": "maliyet aşımı",
+   "mevcutBeispiel": "Bei Großprojekten gilt eine Kostenüberschreitung inzwischen fast als Regelfall.",
+   "mevcutBeispielTr": "Büyük projelerde maliyet aşımı artık neredeyse kural sayılıyor."
+  },
+  {
+   "id": 6210,
+   "de": "der Skaleneffekt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Skaleneffekte",
+   "mevcutTr": "ölçek etkisi, ölçek ekonomisi",
+   "mevcutBeispiel": "Erst bei großen Stückzahlen greifen die erhofften Skaleneffekte wirklich.",
+   "mevcutBeispielTr": "Umulan ölçek etkileri ancak yüksek üretim adetlerinde gerçekten işliyor."
+  },
+  {
+   "id": 6211,
+   "de": "das Einsparpotenzial",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Einsparpotenziale",
+   "mevcutTr": "tasarruf potansiyeli",
+   "mevcutBeispiel": "Das größte Einsparpotenzial liegt nach wie vor im Gebäudebestand.",
+   "mevcutBeispielTr": "En büyük tasarruf potansiyeli hâlâ mevcut bina stokunda."
+  },
+  {
+   "id": 6212,
+   "de": "die Importabhängigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Importabhängigkeiten",
+   "mevcutTr": "ithalata bağımlılık",
+   "mevcutBeispiel": "Die Importabhängigkeit bei Gas hat sich als politisches Druckmittel erwiesen.",
+   "mevcutBeispielTr": "Gazda ithalata bağımlılık siyasi bir baskı aracı olduğunu gösterdi."
+  },
+  {
+   "id": 6213,
+   "de": "die Trägerschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Trägerschaften",
+   "mevcutTr": "işletme sorumluluğu, sahiplik yapısı",
+   "mevcutBeispiel": "Über die künftige Trägerschaft des Netzes wird seit Monaten gestritten.",
+   "mevcutBeispielTr": "Şebekenin gelecekteki sahiplik yapısı aylardır tartışılıyor."
+  },
+  {
+   "id": 6214,
+   "de": "die Konzession",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konzessionen",
+   "mevcutTr": "imtiyaz, işletme ruhsatı",
+   "mevcutBeispiel": "Die Konzession läuft in zwei Jahren aus und wird neu vergeben.",
+   "mevcutBeispielTr": "İmtiyaz iki yıl sonra sona eriyor ve yeniden ihale edilecek."
+  },
+  {
+   "id": 6215,
+   "de": "das Vergabeverfahren",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vergabeverfahren",
+   "mevcutTr": "ihale süreci, tahsis usulü",
+   "mevcutBeispiel": "Das Vergabeverfahren wurde nach einer Rüge der Aufsicht vollständig wiederholt.",
+   "mevcutBeispielTr": "İhale süreci denetim kurumunun uyarısı üzerine baştan tekrarlandı."
+  },
+  {
+   "id": 6216,
+   "de": "das Betreibermodell",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Betreibermodelle",
+   "mevcutTr": "işletme modeli",
+   "mevcutBeispiel": "Man einigte sich auf ein Betreibermodell mit öffentlicher Mehrheitsbeteiligung.",
+   "mevcutBeispielTr": "Kamunun çoğunluk payına sahip olduğu bir işletme modelinde uzlaşıldı."
+  },
+  {
+   "id": 6217,
+   "de": "das Konsortium",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konsortien",
+   "mevcutTr": "konsorsiyum, ortak girişim",
+   "mevcutBeispiel": "Ein internationales Konsortium übernimmt Bau und Betrieb der Anlage.",
+   "mevcutBeispielTr": "Uluslararası bir konsorsiyum tesisin inşasını ve işletmesini üstleniyor."
+  },
+  {
+   "id": 6218,
+   "de": "das Beteiligungsmodell",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beteiligungsmodelle",
+   "mevcutTr": "ortaklık modeli, katılım modeli",
+   "mevcutBeispiel": "Ein faires Beteiligungsmodell erhöht die Zustimmung der betroffenen Gemeinden spürbar.",
+   "mevcutBeispielTr": "Adil bir ortaklık modeli, etkilenen belediyelerin desteğini gözle görülür biçimde artırıyor."
+  },
+  {
+   "id": 6219,
+   "de": "die Rekommunalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rekommunalisierungen",
+   "mevcutTr": "yeniden belediyeleştirme, kamuya geri alma",
+   "mevcutBeispiel": "Die Rekommunalisierung der Wasserversorgung gilt manchen als Vorbild.",
+   "mevcutBeispielTr": "Su hizmetinin yeniden belediyeye devri kimilerince örnek sayılıyor."
+  },
+  {
+   "id": 6220,
+   "de": "das Genehmigungsverfahren",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Genehmigungsverfahren",
+   "mevcutTr": "izin süreci, ruhsat prosedürü",
+   "mevcutBeispiel": "Das Genehmigungsverfahren dauert länger als der eigentliche Bau der Leitung.",
+   "mevcutBeispielTr": "İzin süreci hattın asıl inşasından daha uzun sürüyor."
+  },
+  {
+   "id": 6221,
+   "de": "die Planfeststellung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Planfeststellungen",
+   "mevcutTr": "güzergâh onay kararı, proje onayı",
+   "mevcutBeispiel": "Erst nach der Planfeststellung darf mit den Erdarbeiten begonnen werden.",
+   "mevcutBeispielTr": "Kazı çalışmalarına ancak plan onayından sonra başlanabilir."
+  },
+  {
+   "id": 6222,
+   "de": "die Trassenführung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Trassenführungen",
+   "mevcutTr": "güzergâh belirleme, hat güzergâhı",
+   "mevcutBeispiel": "Gegen die geplante Trassenführung regt sich in den Dörfern erheblicher Widerstand.",
+   "mevcutBeispielTr": "Planlanan güzergâha karşı köylerde ciddi bir direnç oluşuyor."
+  },
+  {
+   "id": 6223,
+   "de": "der Zielkonflikt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zielkonflikte",
+   "mevcutTr": "hedef çatışması, amaçlar arası çelişki",
+   "mevcutBeispiel": "Zwischen Naturschutz und Netzausbau besteht ein kaum auflösbarer Zielkonflikt.",
+   "mevcutBeispielTr": "Doğa koruma ile şebeke genişletmesi arasında neredeyse çözülemez bir hedef çatışması var."
+  },
+  {
+   "id": 6224,
+   "de": "die Pfadabhängigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Pfadabhängigkeiten",
+   "mevcutTr": "yol bağımlılığı, geçmiş tercihlere bağlılık",
+   "mevcutBeispiel": "Frühere Entscheidungen erzeugen eine Pfadabhängigkeit, die spätere Korrekturen erschwert.",
+   "mevcutBeispielTr": "Geçmiş kararlar, sonraki düzeltmeleri zorlaştıran bir yol bağımlılığı yaratıyor."
+  },
+  {
+   "id": 6225,
+   "de": "die Regulierungsbehörde",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Regulierungsbehörden",
+   "mevcutTr": "düzenleyici kurum",
+   "mevcutBeispiel": "Die Regulierungsbehörde prüft, ob die veranschlagten Kosten überhaupt anerkennungsfähig sind.",
+   "mevcutBeispielTr": "Düzenleyici kurum, öngörülen maliyetlerin kabul edilebilir olup olmadığını inceliyor."
+  },
+  {
+   "id": 6226,
+   "de": "die Entflechtung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entflechtungen",
+   "mevcutTr": "ayrıştırma, yapısal ayrım",
+   "mevcutBeispiel": "Die Entflechtung von Netzbetrieb und Stromhandel war politisch hart umkämpft.",
+   "mevcutBeispielTr": "Şebeke işletmeciliği ile elektrik ticaretinin ayrıştırılması siyaseten sert biçimde tartışıldı.",
+   "cakisan": [
+    "die Entkopplung (C1)"
+   ]
+  },
+  {
+   "id": 6227,
+   "de": "die Umlage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Umlagen",
+   "mevcutTr": "paylaştırılan katkı payı, tüketiciye yansıtılan pay",
+   "mevcutBeispiel": "Die Kosten werden über eine Umlage auf alle Verbraucher verteilt.",
+   "mevcutBeispielTr": "Maliyetler bir katkı payı yoluyla bütün tüketicilere dağıtılıyor."
+  },
+  {
+   "id": 6228,
+   "de": "das Verursacherprinzip",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verursacherprinzipien",
+   "mevcutTr": "kirleten öder ilkesi",
+   "mevcutBeispiel": "Nach dem Verursacherprinzip müsste die Industrie einen größeren Anteil tragen.",
+   "mevcutBeispielTr": "Kirleten öder ilkesine göre sanayinin daha büyük bir payı üstlenmesi gerekirdi."
+  },
+  {
+   "id": 6229,
+   "de": "die Machbarkeitsstudie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Machbarkeitsstudien",
+   "mevcutTr": "fizibilite çalışması",
+   "mevcutBeispiel": "Die Machbarkeitsstudie kam zu einem deutlich nüchterneren Ergebnis als erwartet.",
+   "mevcutBeispielTr": "Fizibilite çalışması beklenenden çok daha ölçülü bir sonuca ulaştı."
+  },
+  {
+   "id": 6230,
+   "de": "der Fördermechanismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fördermechanismen",
+   "mevcutTr": "teşvik mekanizması, destekleme düzeni",
+   "mevcutBeispiel": "Der bisherige Fördermechanismus belohnt Ausbau, nicht aber Systemdienlichkeit.",
+   "mevcutBeispielTr": "Şimdiye kadarki teşvik mekanizması kapasite artışını ödüllendiriyor, sisteme katkıyı değil."
+  },
+  {
+   "id": 6231,
+   "de": "der Transformationspfad",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Transformationspfade",
+   "mevcutTr": "dönüşüm patikası, dönüşüm rotası",
+   "mevcutBeispiel": "Alle Szenarien beschreiben denselben Transformationspfad mit unterschiedlichem Tempo.",
+   "mevcutBeispielTr": "Bütün senaryolar aynı dönüşüm rotasını farklı hızlarla tarif ediyor."
+  },
+  {
+   "id": 6232,
+   "de": "bereitstellen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bereitgestellt",
+   "mevcutTr": "sağlamak, tahsis etmek",
+   "mevcutBeispiel": "Für den Umbau der Kraftwerke werden zusätzliche Mittel bereitgestellt.",
+   "mevcutBeispielTr": "Santrallerin dönüştürülmesi için ek kaynak tahsis ediliyor.",
+   "cakisan": [
+    "herbeiführen (C1)"
+   ]
+  },
+  {
+   "id": 6233,
+   "de": "umrüsten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgerüstet",
+   "mevcutTr": "dönüştürmek, teçhizatını değiştirmek",
+   "mevcutBeispiel": "Die Anlage soll bis zum Winter auf Wasserstoff umgerüstet werden.",
+   "mevcutBeispielTr": "Tesisin kışa kadar hidrojene dönüştürülmesi planlanıyor.",
+   "cakisan": [
+    "umwandeln (C1)"
+   ]
+  },
+  {
+   "id": 6234,
+   "de": "refinanzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat refinanziert",
+   "mevcutTr": "yeniden finanse etmek, borcu çevirmek",
+   "mevcutBeispiel": "Der Betreiber muss den Kredit zu deutlich schlechteren Konditionen refinanzieren.",
+   "mevcutBeispielTr": "İşletmeci krediyi çok daha kötü koşullarla yeniden finanse etmek zorunda."
+  },
+  {
+   "id": 6235,
+   "de": "liberalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat liberalisiert",
+   "mevcutTr": "serbestleştirmek",
+   "mevcutBeispiel": "Der Markt wurde in den neunziger Jahren schrittweise liberalisiert.",
+   "mevcutBeispielTr": "Piyasa doksanlı yıllarda adım adım serbestleştirildi."
+  },
+  {
+   "id": 6236,
+   "de": "ertüchtigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ertüchtigt",
+   "mevcutTr": "güçlendirmek, kapasitesini iyileştirmek",
+   "mevcutBeispiel": "Bestehende Leitungen lassen sich oft günstiger ertüchtigen als neu bauen.",
+   "mevcutBeispielTr": "Mevcut hatları güçlendirmek çoğu zaman yeniden inşa etmekten daha ucuz.",
+   "cakisan": [
+    "verstärken (B2)",
+    "stärken (B2)"
+   ]
+  },
+  {
+   "id": 6237,
+   "de": "überbrücken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überbrückt",
+   "mevcutTr": "(dönemi, boşluğu) geçici olarak kapatmak, idare etmek",
+   "mevcutBeispiel": "Reservekraftwerke sollen die kritischen Wochen im Februar überbrücken.",
+   "mevcutBeispielTr": "Yedek santrallerin şubattaki kritik haftaları geçici olarak karşılaması bekleniyor."
+  },
+  {
+   "id": 6238,
+   "de": "staffeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gestaffelt",
+   "mevcutTr": "kademelendirmek, basamaklandırmak",
+   "mevcutBeispiel": "Die Abgabe wird nach Verbrauch gestaffelt, damit Sparsamkeit belohnt wird.",
+   "mevcutBeispielTr": "Katkı payı tüketime göre kademelendiriliyor, böylece tasarruf ödüllendiriliyor."
+  },
+  {
+   "id": 6239,
+   "de": "deckeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gedeckelt",
+   "mevcutTr": "tavan koymak, üst sınır belirlemek",
+   "mevcutBeispiel": "Die Politik hat die Preise für Grundverbrauch vorübergehend gedeckelt.",
+   "mevcutBeispielTr": "Siyaset, temel tüketim fiyatlarına geçici olarak tavan koydu."
+  },
+  {
+   "id": 6240,
+   "de": "umschichten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgeschichtet",
+   "mevcutTr": "kaynak aktarmak, yeniden dağıtmak",
+   "mevcutBeispiel": "Mittel aus dem Straßenbau wurden in die Schiene umgeschichtet.",
+   "mevcutBeispielTr": "Karayolu yapımına ayrılan kaynaklar demiryoluna aktarıldı."
+  },
+  {
+   "id": 6241,
+   "de": "festschreiben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat festgeschrieben",
+   "mevcutTr": "yazılı olarak sabitlemek, hükme bağlamak",
+   "mevcutBeispiel": "Das Abkommen schreibt verbindliche Zwischenziele bis 2035 fest.",
+   "mevcutBeispielTr": "Anlaşma, 2035'e kadar bağlayıcı ara hedefleri hükme bağlıyor."
+  },
+  {
+   "id": 6242,
+   "de": "hinauszögern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat hinausgezögert",
+   "mevcutTr": "sürüncemede bırakmak, oyalayarak geciktirmek",
+   "mevcutBeispiel": "Die Betreiber zögern kostspielige Nachrüstungen mit juristischen Mitteln hinaus.",
+   "mevcutBeispielTr": "İşletmeciler pahalı iyileştirmeleri hukuki yollarla sürüncemede bırakıyor."
+  },
+  {
+   "id": 6243,
+   "de": "vorantreiben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vorangetrieben",
+   "mevcutTr": "ilerletmek, hız kazandırmak",
+   "mevcutBeispiel": "Die Region treibt den Aufbau eigener Speicher konsequent voran.",
+   "mevcutBeispielTr": "Bölge kendi depolama tesislerinin kurulmasını kararlılıkla ilerletiyor."
+  },
+  {
+   "id": 6244,
+   "de": "dimensionieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat dimensioniert",
+   "mevcutTr": "boyutlandırmak, ölçeklendirmek",
+   "mevcutBeispiel": "Das Netz ist für solche Lastspitzen schlicht zu klein dimensioniert.",
+   "mevcutBeispielTr": "Şebeke bu tür yük tepeleri için basitçe fazla küçük boyutlandırılmış."
+  },
+  {
+   "id": 6245,
+   "de": "netzdienlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şebekeye yararlı, şebeke dostu",
+   "mevcutBeispiel": "Wer netzdienlich lädt, soll künftig ein niedrigeres Entgelt zahlen.",
+   "mevcutBeispielTr": "Şebekeye yararlı biçimde şarj eden kişi bundan sonra daha düşük ücret ödeyecek."
+  },
+  {
+   "id": 6246,
+   "de": "kapitalintensiv",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sermaye yoğun",
+   "mevcutBeispiel": "Infrastruktur ist kapitalintensiv und rechnet sich erst nach Jahrzehnten.",
+   "mevcutBeispielTr": "Altyapı sermaye yoğundur ve ancak on yıllar sonra kendini amorti eder."
+  },
+  {
+   "id": 6247,
+   "de": "dezentral",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "merkezî olmayan, dağıtık",
+   "mevcutBeispiel": "Dezentral organisierte Erzeugung verlangt ein völlig anderes Steuerungskonzept.",
+   "mevcutBeispielTr": "Dağıtık biçimde örgütlenmiş üretim bambaşka bir yönetim anlayışı gerektirir."
+  },
+  {
+   "id": 6248,
+   "de": "kostendeckend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "maliyeti karşılayan, masrafını çıkaran",
+   "mevcutBeispiel": "Der Tarif ist seit Jahren nicht mehr kostendeckend kalkuliert.",
+   "mevcutBeispielTr": "Tarife yıllardır maliyeti karşılayacak şekilde hesaplanmıyor."
+  },
+  {
+   "id": 6249,
+   "de": "unerlässlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "vazgeçilmez, olmazsa olmaz",
+   "mevcutBeispiel": "Eine verlässliche Datengrundlage ist für jede seriöse Prognose unerlässlich.",
+   "mevcutBeispielTr": "Güvenilir bir veri temeli, ciddi her öngörü için vazgeçilmezdir.",
+   "cakisan": [
+    "unabdingbar (C1)",
+    "unentbehrlich (B2)"
+   ]
+  },
+  {
+   "id": 6250,
+   "de": "die Geschichtsschreibung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tarih yazımı, tarihçilik",
+   "mevcutBeispiel": "Die koloniale Geschichtsschreibung hat viele Stimmen jahrzehntelang ausgeblendet.",
+   "mevcutBeispielTr": "Sömürgeci tarih yazımı pek çok sesi onlarca yıl boyunca görmezden geldi."
+  },
+  {
+   "id": 6251,
+   "de": "die Quellenkritik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kaynak eleştirisi",
+   "mevcutBeispiel": "Ohne saubere Quellenkritik bleibt jede historische Deutung angreifbar.",
+   "mevcutBeispielTr": "Düzgün bir kaynak eleştirisi olmadan her tarihsel yorum saldırıya açık kalır."
+  },
+  {
+   "id": 6252,
+   "de": "der Zeitzeuge",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zeitzeugen",
+   "mevcutTr": "dönemin tanığı, olayları yaşamış tanık",
+   "mevcutBeispiel": "Die letzten Zeitzeugen sterben, und ihre Berichte werden umso kostbarer.",
+   "mevcutBeispielTr": "Son tanıklar hayatını kaybediyor ve anlatıları daha da değerli hâle geliyor."
+  }
+ ]
+}

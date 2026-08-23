@@ -1,0 +1,530 @@
+{
+ "paket": "a2-028",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 8340,
+   "de": "sich zanken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "zankt sich, hat sich gezankt",
+   "mevcutTr": "atışmak, çekişmek",
+   "mevcutBeispiel": "Die Kinder zanken sich um das neue Spielzeug.",
+   "mevcutBeispielTr": "Çocuklar yeni oyuncak için atışıyor."
+  },
+  {
+   "id": 8341,
+   "de": "schwören",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schwört, hat geschworen",
+   "mevcutTr": "yemin etmek",
+   "mevcutBeispiel": "Ich schwöre dir, ich habe nichts davon gewusst.",
+   "mevcutBeispielTr": "Yemin ederim, bundan hiç haberim yoktu."
+  },
+  {
+   "id": 8342,
+   "de": "beschimpfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "beschimpft, hat beschimpft",
+   "mevcutTr": "sövmek, ağır sözler söylemek",
+   "mevcutBeispiel": "Im Bus beschimpft ein Mann den Fahrer.",
+   "mevcutBeispielTr": "Otobüste bir adam şoföre ağzına geleni söylüyor."
+  },
+  {
+   "id": 8343,
+   "de": "mitreden",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "redet mit, hat mitgeredet",
+   "mevcutTr": "söz sahibi olmak, konuşmaya katılmak",
+   "mevcutBeispiel": "Bei diesem Thema rede ich gern mit.",
+   "mevcutBeispielTr": "Bu konuda konuşmaya seve seve katılırım."
+  },
+  {
+   "id": 8344,
+   "de": "zwinkern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "zwinkert, hat gezwinkert",
+   "mevcutTr": "göz kırpmak",
+   "mevcutBeispiel": "Mein Opa zwinkert mir über den Tisch zu.",
+   "mevcutBeispielTr": "Dedem masanın üzerinden bana göz kırpıyor."
+  },
+  {
+   "id": 8345,
+   "de": "begeistern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "begeistert, hat begeistert",
+   "mevcutTr": "hayran bırakmak, coşturmak",
+   "mevcutBeispiel": "Der neue Film begeistert meine ganze Familie.",
+   "mevcutBeispielTr": "Yeni film bütün ailemi hayran bırakıyor."
+  },
+  {
+   "id": 8346,
+   "de": "weitersagen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sagt weiter, hat weitergesagt",
+   "mevcutTr": "başkasına söylemek, yaymak",
+   "mevcutBeispiel": "Sag das bitte nicht weiter, es ist ein Geheimnis!",
+   "mevcutBeispielTr": "Bunu lütfen kimseye söyleme, bu bir sır!"
+  },
+  {
+   "id": 8347,
+   "de": "weiterhelfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "hilft weiter, hat weitergeholfen",
+   "mevcutTr": "yardımcı olmak, yol göstermek",
+   "mevcutBeispiel": "Die Frau am Schalter hilft mir immer weiter.",
+   "mevcutBeispielTr": "Gişedeki kadın bana her zaman yardımcı oluyor."
+  },
+  {
+   "id": 8348,
+   "de": "anlügen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "lügt an, hat angelogen",
+   "mevcutTr": "yalan söylemek (birine)",
+   "mevcutBeispiel": "Warum lügst du deine Eltern so oft an?",
+   "mevcutBeispielTr": "Neden aileni bu kadar sık kandırıyorsun?",
+   "cakisan": [
+    "lügen (A2)"
+   ]
+  },
+  {
+   "id": 8349,
+   "de": "verärgern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "verärgert, hat verärgert",
+   "mevcutTr": "kızdırmak, canını sıkmak",
+   "mevcutBeispiel": "Seine Antwort verärgert die ganze Gruppe.",
+   "mevcutBeispielTr": "Verdiği cevap bütün grubu kızdırıyor."
+  },
+  {
+   "id": 8350,
+   "de": "das Badezimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "banyo",
+   "mevcutBeispiel": "Das Badezimmer ist klein, aber sehr hell.",
+   "mevcutBeispielTr": "Banyo küçük ama çok aydınlık.",
+   "cakisan": [
+    "das Bad (A1)"
+   ]
+  },
+  {
+   "id": 8351,
+   "de": "der Eimer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kova",
+   "mevcutBeispiel": "Ich hole einen Eimer mit warmem Wasser.",
+   "mevcutBeispielTr": "Sıcak suyla dolu bir kova getiriyorum."
+  },
+  {
+   "id": 8352,
+   "de": "der Ofen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "soba, fırın",
+   "mevcutBeispiel": "Im Winter machen wir jeden Abend den Ofen an.",
+   "mevcutBeispielTr": "Kışın her akşam sobayı yakıyoruz."
+  },
+  {
+   "id": 8353,
+   "de": "streichen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "streicht, hat gestrichen",
+   "mevcutTr": "boyamak (duvar)",
+   "mevcutBeispiel": "Wir wollen die Wände im Wohnzimmer weiß streichen.",
+   "mevcutBeispielTr": "Oturma odasındaki duvarları beyaza boyamak istiyoruz.",
+   "cakisan": [
+    "lackieren (B2)"
+   ]
+  },
+  {
+   "id": 8354,
+   "de": "die Schublade",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "çekmece",
+   "mevcutBeispiel": "Die Löffel sind in der oberen Schublade.",
+   "mevcutBeispielTr": "Kaşıklar üstteki çekmecede."
+  },
+  {
+   "id": 8355,
+   "de": "der Kamin",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "şömine",
+   "mevcutBeispiel": "Im Wohnzimmer gibt es einen alten Kamin.",
+   "mevcutBeispielTr": "Oturma odasında eski bir şömine var."
+  },
+  {
+   "id": 8356,
+   "de": "die Türklingel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kapı zili",
+   "mevcutBeispiel": "Unsere Türklingel ist kaputt, bitte klopfen Sie.",
+   "mevcutBeispielTr": "Kapı zilimiz bozuk, lütfen kapıyı çalın."
+  },
+  {
+   "id": 8357,
+   "de": "der Dachboden",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "çatı katı, tavan arası",
+   "mevcutBeispiel": "Die alten Koffer stehen auf dem Dachboden.",
+   "mevcutBeispielTr": "Eski bavullar tavan arasında duruyor.",
+   "cakisan": [
+    "das Dachgeschoss (B2)"
+   ]
+  },
+  {
+   "id": 8358,
+   "de": "die Haustür",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "sokak kapısı, bina kapısı",
+   "mevcutBeispiel": "Bitte mach die Haustür abends zu.",
+   "mevcutBeispielTr": "Lütfen akşamları sokak kapısını kapat."
+  },
+  {
+   "id": 8359,
+   "de": "die Matratze",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "yatak, şilte",
+   "mevcutBeispiel": "Die neue Matratze ist viel bequemer.",
+   "mevcutBeispielTr": "Yeni şilte çok daha rahat.",
+   "cakisan": [
+    "das Bett (A1)"
+   ]
+  },
+  {
+   "id": 8360,
+   "de": "der Besen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "süpürge",
+   "mevcutBeispiel": "Der Besen steht hinter der Tür in der Küche.",
+   "mevcutBeispielTr": "Süpürge mutfakta kapının arkasında duruyor."
+  },
+  {
+   "id": 8361,
+   "de": "das Gästezimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "misafir odası",
+   "mevcutBeispiel": "Meine Schwester schläft im Gästezimmer.",
+   "mevcutBeispielTr": "Kız kardeşim misafir odasında uyuyor."
+  },
+  {
+   "id": 8362,
+   "de": "der Fußboden",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-",
+   "mevcutTr": "yer, döşeme",
+   "mevcutBeispiel": "Der Fußboden im Flur ist aus Holz.",
+   "mevcutBeispielTr": "Koridordaki yer ahşaptan.",
+   "cakisan": [
+    "der Platz (A1)",
+    "der Ort (A1)"
+   ]
+  },
+  {
+   "id": 8363,
+   "de": "der Staubsauger",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "elektrikli süpürge",
+   "mevcutBeispiel": "Der Staubsauger ist leider kaputt.",
+   "mevcutBeispielTr": "Elektrikli süpürge maalesef bozuk."
+  },
+  {
+   "id": 8364,
+   "de": "die Waschmaschine",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "çamaşır makinesi",
+   "mevcutBeispiel": "Die Waschmaschine steht im Keller.",
+   "mevcutBeispielTr": "Çamaşır makinesi bodrumda duruyor."
+  },
+  {
+   "id": 8365,
+   "de": "der Mülleimer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "çöp kovası",
+   "mevcutBeispiel": "Kannst du bitte den Mülleimer leeren?",
+   "mevcutBeispielTr": "Çöp kovasını boşaltabilir misin lütfen?"
+  },
+  {
+   "id": 8366,
+   "de": "das Kinderzimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "çocuk odası",
+   "mevcutBeispiel": "Im Kinderzimmer liegen überall Spielsachen.",
+   "mevcutBeispielTr": "Çocuk odasında her yerde oyuncaklar var."
+  },
+  {
+   "id": 8367,
+   "de": "wischen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "wischt, hat gewischt",
+   "mevcutTr": "silmek, paspaslamak",
+   "mevcutBeispiel": "Am Samstag wische ich den Boden in der Küche.",
+   "mevcutBeispielTr": "Cumartesi günü mutfaktaki zemini siliyorum.",
+   "cakisan": [
+    "löschen (B1)",
+    "aufwischen (A2)",
+    "abwischen (A2)"
+   ]
+  },
+  {
+   "id": 8368,
+   "de": "das Esszimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "yemek odası",
+   "mevcutBeispiel": "Sonntags essen wir alle zusammen im Esszimmer.",
+   "mevcutBeispielTr": "Pazar günleri hep birlikte yemek odasında yemek yiyoruz."
+  },
+  {
+   "id": 8369,
+   "de": "das Waschbecken",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "lavabo",
+   "mevcutBeispiel": "Das Waschbecken im Bad ist verstopft.",
+   "mevcutBeispielTr": "Banyodaki lavabo tıkalı."
+  },
+  {
+   "id": 8370,
+   "de": "die Spüle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "mutfak evyesi",
+   "mevcutBeispiel": "In der Spüle steht noch schmutziges Geschirr.",
+   "mevcutBeispielTr": "Evyede hâlâ kirli bulaşık duruyor."
+  },
+  {
+   "id": 8371,
+   "de": "die Schraube",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "vida",
+   "mevcutBeispiel": "Ich brauche noch eine kleine Schraube für das Regal.",
+   "mevcutBeispielTr": "Raf için bir küçük vidaya daha ihtiyacım var."
+  },
+  {
+   "id": 8372,
+   "de": "die Kommode",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "şifonyer, çekmeceli dolap",
+   "mevcutBeispiel": "Meine Socken sind in der Kommode im Schlafzimmer.",
+   "mevcutBeispielTr": "Çoraplarım yatak odasındaki konsolda."
+  },
+  {
+   "id": 8373,
+   "de": "der Schraubenzieher",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "tornavida",
+   "mevcutBeispiel": "Hast du einen Schraubenzieher für mich?",
+   "mevcutBeispielTr": "Bana verecek bir tornavidan var mı?"
+  },
+  {
+   "id": 8374,
+   "de": "der Trockner",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kurutma makinesi",
+   "mevcutBeispiel": "Die Handtücher sind noch im Trockner.",
+   "mevcutBeispielTr": "Havlular hâlâ kurutma makinesinde."
+  },
+  {
+   "id": 8375,
+   "de": "der Kleiderschrank",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "gardırop, elbise dolabı",
+   "mevcutBeispiel": "Der Kleiderschrank ist zu klein für zwei Personen.",
+   "mevcutBeispielTr": "Gardırop iki kişi için çok küçük."
+  },
+  {
+   "id": 8376,
+   "de": "lüften",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "lüftet, hat gelüftet",
+   "mevcutTr": "havalandırmak",
+   "mevcutBeispiel": "Du musst das Zimmer jeden Morgen kurz lüften.",
+   "mevcutBeispielTr": "Odayı her sabah kısaca havalandırman gerekiyor."
+  },
+  {
+   "id": 8377,
+   "de": "bügeln",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "bügelt, hat gebügelt",
+   "mevcutTr": "ütülemek",
+   "mevcutBeispiel": "Ich bügele am Abend meine Hemden.",
+   "mevcutBeispielTr": "Akşam gömleklerimi ütülüyorum."
+  },
+  {
+   "id": 8378,
+   "de": "der Hocker",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "tabure",
+   "mevcutBeispiel": "Setz dich bitte auf den Hocker neben dem Tisch.",
+   "mevcutBeispielTr": "Lütfen masanın yanındaki tabureye otur."
+  },
+  {
+   "id": 8379,
+   "de": "die Glühbirne",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "ampul",
+   "mevcutBeispiel": "Im Flur ist die Glühbirne kaputt.",
+   "mevcutBeispielTr": "Koridorda ampul bozuk."
+  },
+  {
+   "id": 8380,
+   "de": "der Ventilator",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "vantilatör",
+   "mevcutBeispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator.",
+   "mevcutBeispielTr": "Yazın yatak odasında bir vantilatöre ihtiyacımız oluyor."
+  },
+  {
+   "id": 8381,
+   "de": "der Nachttisch",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "komodin",
+   "mevcutBeispiel": "Meine Brille liegt auf dem Nachttisch.",
+   "mevcutBeispielTr": "Gözlüğüm komodinin üstünde duruyor."
+  },
+  {
+   "id": 8382,
+   "de": "der Wasserhahn",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "musluk",
+   "mevcutBeispiel": "Der Wasserhahn in der Küche tropft schon wieder.",
+   "mevcutBeispielTr": "Mutfaktaki musluk yine damlıyor."
+  },
+  {
+   "id": 8383,
+   "de": "aufschließen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schließt auf, hat aufgeschlossen",
+   "mevcutTr": "kilidi açmak, açmak",
+   "mevcutBeispiel": "Kannst du bitte die Wohnungstür aufschließen?",
+   "mevcutBeispielTr": "Lütfen dairenin kapısını açabilir misin?"
+  },
+  {
+   "id": 8384,
+   "de": "die Bettwäsche",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "nevresim takımı",
+   "mevcutBeispiel": "Ich wechsle jeden Samstag die Bettwäsche.",
+   "mevcutBeispielTr": "Her cumartesi nevresim takımını değiştiriyorum."
+  },
+  {
+   "id": 8385,
+   "de": "der Quadratmeter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "metrekare",
+   "mevcutBeispiel": "Unsere Wohnung hat 65 Quadratmeter.",
+   "mevcutBeispielTr": "Dairemiz 65 metrekare."
+  },
+  {
+   "id": 8386,
+   "de": "die Tapete",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "duvar kâğıdı",
+   "mevcutBeispiel": "Die alte Tapete gefällt mir überhaupt nicht.",
+   "mevcutBeispielTr": "Eski duvar kâğıdı bana hiç hoş gelmiyor."
+  },
+  {
+   "id": 8387,
+   "de": "die Kaffeemaschine",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kahve makinesi",
+   "mevcutBeispiel": "Die Kaffeemaschine steht neben dem Kühlschrank.",
+   "mevcutBeispielTr": "Kahve makinesi buzdolabının yanında duruyor."
+  },
+  {
+   "id": 8388,
+   "de": "der Lichtschalter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "ışık düğmesi",
+   "mevcutBeispiel": "Der Lichtschalter ist links neben der Tür.",
+   "mevcutBeispielTr": "Işık düğmesi kapının solunda."
+  },
+  {
+   "id": 8389,
+   "de": "das Obergeschoss",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "üst kat",
+   "mevcutBeispiel": "Die Schlafzimmer sind im Obergeschoss.",
+   "mevcutBeispielTr": "Yatak odaları üst katta."
+  }
+ ]
+}

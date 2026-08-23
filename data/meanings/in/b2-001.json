@@ -1,0 +1,558 @@
+{
+ "paket": "b2-001",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 3372,
+   "de": "gelassen",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sakin, soğukkanlı",
+   "mevcutBeispiel": "Er reagierte gelassen auf die überraschende Nachricht.",
+   "mevcutBeispielTr": "Beklenmedik habere gayet sakin tepki verdi.",
+   "cakisan": [
+    "ruhig (A1)",
+    "der Bewohner (B1)",
+    "die Bewohnerin (B1)",
+    "der Einwohner (B1)",
+    "die Einwohnerin (B1)"
+   ]
+  },
+  {
+   "id": 3265,
+   "de": "die Gerechtigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "adalet",
+   "mevcutBeispiel": "Er kämpft sein ganzes Leben für mehr Gerechtigkeit.",
+   "mevcutBeispielTr": "Hayatı boyunca daha fazla adalet için mücadele ediyor."
+  },
+  {
+   "id": 3436,
+   "de": "die Zelle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Zellen",
+   "mevcutTr": "hücre",
+   "mevcutBeispiel": "Jede Zelle des Körpers benötigt ausreichend Sauerstoff.",
+   "mevcutBeispielTr": "Vücuttaki her hücre yeterli oksijene ihtiyaç duyar."
+  },
+  {
+   "id": 3296,
+   "de": "die Quelle",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Quellen",
+   "mevcutTr": "kaynak (bilgi, haber kaynağı)",
+   "mevcutBeispiel": "Journalisten müssen ihre Quellen sorgfältig überprüfen.",
+   "mevcutBeispielTr": "Gazeteciler kaynaklarını titizlikle doğrulamalıdır."
+  },
+  {
+   "id": 3345,
+   "de": "die Wut",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "öfke, hiddet",
+   "mevcutBeispiel": "Vor Wut konnte er kaum noch sprechen.",
+   "mevcutBeispielTr": "Öfkeden neredeyse konuşamıyordu.",
+   "cakisan": [
+    "der Zorn (B2)",
+    "die Empörung (B2)"
+   ]
+  },
+  {
+   "id": 3736,
+   "de": "die Angelegenheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Angelegenheiten",
+   "mevcutTr": "mesele, konu",
+   "mevcutBeispiel": "Das ist eine rein private Angelegenheit.",
+   "mevcutBeispielTr": "Bu tamamen özel bir mesele."
+  },
+  {
+   "id": 3238,
+   "de": "verhandeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "verhandelt, hat verhandelt",
+   "mevcutTr": "müzakere etmek, pazarlık yapmak",
+   "mevcutBeispiel": "Die Gewerkschaft verhandelt seit Wochen mit dem Arbeitgeber über Löhne.",
+   "mevcutBeispielTr": "Sendika haftalardır işverenle ücretler üzerine pazarlık yürütüyor."
+  },
+  {
+   "id": 3289,
+   "de": "der Widerstand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Widerstände",
+   "mevcutTr": "direniş",
+   "mevcutBeispiel": "Die Bevölkerung leistete gegen die Reform erbitterten Widerstand.",
+   "mevcutBeispielTr": "Halk, reforma karşı şiddetli bir direniş gösterdi."
+  },
+  {
+   "id": 3378,
+   "de": "großzügig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "cömert",
+   "mevcutBeispiel": "Sie ist bekannt für ihr großzügiges Trinkgeld.",
+   "mevcutBeispielTr": "Cömert bahşişleriyle tanınır."
+  },
+  {
+   "id": 3833,
+   "de": "die Verhandlung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verhandlungen",
+   "mevcutTr": "müzakere, görüşme",
+   "mevcutBeispiel": "Die Verhandlungen über das Stipendium zogen sich hin.",
+   "mevcutBeispielTr": "Burs görüşmeleri uzadıkça uzadı.",
+   "cakisan": [
+    "die Aushandlung (C1)"
+   ]
+  },
+  {
+   "id": 3743,
+   "de": "die Kaution",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Kautionen",
+   "mevcutTr": "depozito",
+   "mevcutBeispiel": "Die Kaution beträgt meistens drei Monatsmieten.",
+   "mevcutBeispielTr": "Depozito çoğunlukla üç aylık kira tutarındadır."
+  },
+  {
+   "id": 3460,
+   "de": "die Nachbarschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Nachbarschaften",
+   "mevcutTr": "komşuluk, mahalle",
+   "mevcutBeispiel": "In dieser Nachbarschaft kennt man sich gut.",
+   "mevcutBeispielTr": "Bu mahallede herkes birbirini iyi tanır."
+  },
+  {
+   "id": 3285,
+   "de": "die Verfassung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Verfassungen",
+   "mevcutTr": "anayasa",
+   "mevcutBeispiel": "Die Verfassung garantiert die Meinungsfreiheit.",
+   "mevcutBeispielTr": "Anayasa ifade özgürlüğünü güvence altına alır."
+  },
+  {
+   "id": 3869,
+   "de": "beherrschen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "beherrscht, hat beherrscht",
+   "mevcutTr": "hakim olmak, iyi bilmek",
+   "mevcutBeispiel": "Sie beherrscht drei Fremdsprachen fließend.",
+   "mevcutBeispielTr": "Üç yabancı dili akıcı biçimde biliyor."
+  },
+  {
+   "id": 3351,
+   "de": "das Mitgefühl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "duygudaşlık, empati",
+   "mevcutBeispiel": "Sie brachte den Opfern viel Mitgefühl entgegen.",
+   "mevcutBeispielTr": "Kurbanlara büyük bir şefkat gösterdi."
+  },
+  {
+   "id": 3399,
+   "de": "empfinden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "empfindet, hat empfunden",
+   "mevcutTr": "hissetmek, duyumsamak",
+   "mevcutBeispiel": "Sie empfand tiefe Dankbarkeit für seine Hilfe.",
+   "mevcutBeispielTr": "Yardımı için derin bir minnettarlık duydu.",
+   "cakisan": [
+    "fühlen (B1)",
+    "spüren (B1)"
+   ]
+  },
+  {
+   "id": 3305,
+   "de": "der Skandal",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Skandale",
+   "mevcutTr": "skandal",
+   "mevcutBeispiel": "Der Skandal erschütterte die gesamte Partei.",
+   "mevcutBeispielTr": "Skandal bütün partiyi sarstı."
+  },
+  {
+   "id": 3342,
+   "de": "die Narbe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Narben",
+   "mevcutTr": "yara izi",
+   "mevcutBeispiel": "Die Narbe am Arm erinnert ihn an den Unfall.",
+   "mevcutBeispielTr": "Kolundaki yara izi ona kazayı hatırlatıyor."
+  },
+  {
+   "id": 3194,
+   "de": "der Vorstand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Vorstände",
+   "mevcutTr": "yönetim kurulu",
+   "mevcutBeispiel": "Der Vorstand entscheidet morgen über die neue Firmenstrategie.",
+   "mevcutBeispielTr": "Yönetim kurulu yarın yeni şirket stratejisine karar veriyor."
+  },
+  {
+   "id": 3865,
+   "de": "die Genehmigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Genehmigungen",
+   "mevcutTr": "izin, onay",
+   "mevcutBeispiel": "Ohne Genehmigung darf die Baustelle nicht beginnen.",
+   "mevcutBeispielTr": "İzin olmadan şantiye başlayamaz.",
+   "cakisan": [
+    "die Erlaubnis (A2)"
+   ]
+  },
+  {
+   "id": 3819,
+   "de": "angemessen",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "uygun, makul",
+   "mevcutBeispiel": "Der geforderte Preis erscheint mir durchaus angemessen.",
+   "mevcutBeispielTr": "İstenen fiyat bana gayet makul görünüyor.",
+   "cakisan": [
+    "geeignet (B1)"
+   ]
+  },
+  {
+   "id": 3346,
+   "de": "die Eifersucht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kıskançlık",
+   "mevcutBeispiel": "Eifersucht kann eine Beziehung stark belasten.",
+   "mevcutBeispielTr": "Kıskançlık bir ilişkiyi ciddi biçimde yıpratabilir."
+  },
+  {
+   "id": 3335,
+   "de": "die Diagnose",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Diagnosen",
+   "mevcutTr": "teşhis",
+   "mevcutBeispiel": "Die Diagnose stellte sich erst nach mehreren Tests heraus.",
+   "mevcutBeispielTr": "Teşhis ancak birkaç testten sonra konulabildi."
+  },
+  {
+   "id": 3350,
+   "de": "die Zuneigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sevgi, yakınlık duyma",
+   "mevcutBeispiel": "Seine Zuneigung zu ihr wuchs mit jedem Tag.",
+   "mevcutBeispielTr": "Ona duyduğu sevgi her geçen gün büyüyordu."
+  },
+  {
+   "id": 3218,
+   "de": "der Standort",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Standorte",
+   "mevcutTr": "konum, yer (işletmenin bulunduğu yer)",
+   "mevcutBeispiel": "Das Unternehmen eröffnet nächstes Jahr einen neuen Standort in Polen.",
+   "mevcutBeispielTr": "Şirket gelecek yıl Polonya'da yeni bir tesis açıyor.",
+   "cakisan": [
+    "die Lage (B1)"
+   ]
+  },
+  {
+   "id": 3808,
+   "de": "überwinden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "überwindet, hat überwunden",
+   "mevcutTr": "üstesinden gelmek, aşmak",
+   "mevcutBeispiel": "Sie musste in ihrem Leben viele Hindernisse überwinden.",
+   "mevcutBeispielTr": "Hayatında pek çok engeli aşmak zorunda kaldı.",
+   "cakisan": [
+    "bewältigen (B2)"
+   ]
+  },
+  {
+   "id": 3751,
+   "de": "der Nachtisch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Nachtische",
+   "mevcutTr": "tatlı (yemek sonrası)",
+   "mevcutBeispiel": "Zum Nachtisch gibt es heute einen Schokoladenkuchen.",
+   "mevcutBeispielTr": "Bugün tatlı olarak çikolatalı kek var.",
+   "cakisan": [
+    "süß (A1)",
+    "das Dessert (B1)",
+    "die Nachspeise (B1)"
+   ]
+  },
+  {
+   "id": 3348,
+   "de": "die Verzweiflung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "umutsuzluk, çaresizlik",
+   "mevcutBeispiel": "In seiner Verzweiflung wusste er nicht mehr weiter.",
+   "mevcutBeispielTr": "Çaresizlik içinde ne yapacağını bilemiyordu."
+  },
+  {
+   "id": 3756,
+   "de": "servieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "serviert, hat serviert",
+   "mevcutTr": "servis etmek",
+   "mevcutBeispiel": "Der Kellner serviert den Wein sehr elegant.",
+   "mevcutBeispielTr": "Garson şarabı çok zarif bir şekilde servis ediyor."
+  },
+  {
+   "id": 3299,
+   "de": "manipulieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "manipuliert, hat manipuliert",
+   "mevcutTr": "manipüle etmek",
+   "mevcutBeispiel": "Bilder lassen sich heute leicht manipulieren.",
+   "mevcutBeispielTr": "Görseller günümüzde kolayca manipüle edilebiliyor."
+  },
+  {
+   "id": 3347,
+   "de": "die Sehnsucht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sehnsüchte",
+   "mevcutTr": "özlem",
+   "mevcutBeispiel": "Die Sehnsucht nach der Heimat wurde immer größer.",
+   "mevcutBeispielTr": "Memleket özlemi giderek büyüyordu."
+  },
+  {
+   "id": 3775,
+   "de": "zurücktreten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "tritt zurück, ist zurückgetreten",
+   "mevcutTr": "istifa etmek, geri çekilmek",
+   "mevcutBeispiel": "Der Minister ist nach dem Skandal zurückgetreten.",
+   "mevcutBeispielTr": "Bakan, skandalın ardından istifa etti.",
+   "cakisan": [
+    "kündigen (A2)"
+   ]
+  },
+  {
+   "id": 3355,
+   "de": "die Reue",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "pişmanlık",
+   "mevcutBeispiel": "Reue über seine Worte plagte ihn tagelang.",
+   "mevcutBeispielTr": "Söyledikleri yüzünden günlerce pişmanlık duydu."
+  },
+  {
+   "id": 3394,
+   "de": "der Umgang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "(bir şeyle) başa çıkma biçimi, davranış tarzı",
+   "mevcutBeispiel": "Ihr Umgang mit Rückschlägen beeindruckte alle.",
+   "mevcutBeispielTr": "Başarısızlıkları ele alış biçimi herkesi etkiledi."
+  },
+  {
+   "id": 3240,
+   "de": "investieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "investiert, hat investiert",
+   "mevcutTr": "yatırım yapmak",
+   "mevcutBeispiel": "Das Unternehmen investiert kräftig in neue Technologien.",
+   "mevcutBeispielTr": "Şirket yeni teknolojilere büyük yatırım yapıyor.",
+   "cakisan": [
+    "anlegen (B2)"
+   ]
+  },
+  {
+   "id": 3778,
+   "de": "aufklären",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "klärt auf, hat aufgeklärt",
+   "mevcutTr": "aydınlatmak, açıklığa kavuşturmak",
+   "mevcutBeispiel": "Die Polizei konnte den Fall bisher nicht aufklären.",
+   "mevcutBeispielTr": "Polis olayı henüz aydınlatamadı."
+  },
+  {
+   "id": 3391,
+   "de": "der Antrieb",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Antriebe",
+   "mevcutTr": "dürtü, güdü",
+   "mevcutBeispiel": "Ihm fehlte der innere Antrieb, weiterzumachen.",
+   "mevcutBeispielTr": "Devam etmek için içindeki itici güç eksikti."
+  },
+  {
+   "id": 3286,
+   "de": "die Debatte",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Debatten",
+   "mevcutTr": "tartışma, münazara (resmî, kamuya açık)",
+   "mevcutBeispiel": "Im Parlament entbrannte eine hitzige Debatte.",
+   "mevcutBeispielTr": "Mecliste ateşli bir tartışma patlak verdi.",
+   "cakisan": [
+    "die Diskussion (B1)",
+    "die Kontroverse (C1)",
+    "die Auseinandersetzung (B2)"
+   ]
+  },
+  {
+   "id": 3755,
+   "de": "die Spezialität",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Spezialitäten",
+   "mevcutTr": "yöresel özel yemek",
+   "mevcutBeispiel": "Diese Spezialität ist typisch für die Region.",
+   "mevcutBeispielTr": "Bu yöresel yemek bölgeye özgüdür."
+  },
+  {
+   "id": 3415,
+   "de": "die Verschwendung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "israf",
+   "mevcutBeispiel": "Die Verschwendung von Lebensmitteln belastet die Umwelt.",
+   "mevcutBeispielTr": "Gıda israfı çevreye yük oluyor."
+  },
+  {
+   "id": 3334,
+   "de": "die Beschwerde",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Beschwerden",
+   "mevcutTr": "rahatsızlık, ağrı; şikâyet",
+   "mevcutBeispiel": "Sie klagte über anhaltende Beschwerden im unteren Rücken.",
+   "mevcutBeispielTr": "Belinin alt kısmında geçmeyen ağrılardan şikâyet ediyordu.",
+   "cakisan": [
+    "die Störung (B1)"
+   ]
+  },
+  {
+   "id": 3392,
+   "de": "das Trauma",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Traumata",
+   "mevcutTr": "travma",
+   "mevcutBeispiel": "Das Trauma aus der Kindheit wirkte bis ins Erwachsenenalter nach.",
+   "mevcutBeispielTr": "Çocukluktaki travmanın etkisi yetişkinliğe dek sürdü."
+  },
+  {
+   "id": 3349,
+   "de": "die Erleichterung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "rahatlama, ferahlama",
+   "mevcutBeispiel": "Nach der guten Nachricht spürte sie große Erleichterung.",
+   "mevcutBeispielTr": "İyi haberi alınca büyük bir rahatlama hissetti."
+  },
+  {
+   "id": 3361,
+   "de": "der Ehrgeiz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hırs, tutku",
+   "mevcutBeispiel": "Ihr Ehrgeiz trieb sie zu Höchstleistungen an.",
+   "mevcutBeispielTr": "Hırsı onu en üst düzey başarılara taşıdı."
+  },
+  {
+   "id": 3226,
+   "de": "die Investition",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Investitionen",
+   "mevcutTr": "yatırım",
+   "mevcutBeispiel": "Die Investition in neue Maschinen soll sich in zwei Jahren rentieren.",
+   "mevcutBeispielTr": "Yeni makinelere yapılan yatırımın iki yılda kendini amorti etmesi bekleniyor."
+  },
+  {
+   "id": 3293,
+   "de": "die Korruption",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yolsuzluk",
+   "mevcutBeispiel": "Korruption untergräbt das Vertrauen in die Politik.",
+   "mevcutBeispielTr": "Yolsuzluk, siyasete duyulan güveni sarsar."
+  },
+  {
+   "id": 3431,
+   "de": "bedrohen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "bedroht, hat bedroht",
+   "mevcutTr": "tehdit etmek",
+   "mevcutBeispiel": "Die Trockenheit bedroht die Existenz vieler Bauern.",
+   "mevcutBeispielTr": "Kuraklık birçok çiftçinin geçimini tehdit ediyor.",
+   "cakisan": [
+    "drohen (A2)"
+   ]
+  },
+  {
+   "id": 3353,
+   "de": "die Verlegenheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "mahcubiyet, utanma",
+   "mevcutBeispiel": "Vor Verlegenheit wurde er rot im Gesicht.",
+   "mevcutBeispielTr": "Utancından yüzü kıpkırmızı oldu."
+  },
+  {
+   "id": 3393,
+   "de": "die Belastung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Belastungen",
+   "mevcutTr": "yük, stres kaynağı",
+   "mevcutBeispiel": "Die berufliche Belastung führte schließlich zum Burnout.",
+   "mevcutBeispielTr": "İş yükü sonunda tükenmişliğe yol açtı."
+  },
+  {
+   "id": 3379,
+   "de": "die Bindung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bindungen",
+   "mevcutTr": "bağ, bağlanma",
+   "mevcutBeispiel": "Die emotionale Bindung zwischen den Geschwistern war stark.",
+   "mevcutBeispielTr": "Kardeşler arasındaki duygusal bağ güçlüydü."
+  }
+ ]
+}

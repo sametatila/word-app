@@ -6,6 +6,7 @@ import { drizzle } from "drizzle-orm/neon-http";
 import { and, eq, notInArray, sql } from "drizzle-orm";
 import { words } from "../src/lib/db/schema";
 import { cleanHeadword } from "../src/lib/headword";
+import { readMeanings } from "./apply-meanings";
 
 type Row = {
   id: number;
@@ -40,24 +41,41 @@ async function main() {
     console.warn("beispiel-tr.json bulunamadı — örnek cümle çevirileri boş kalacak.");
   }
 
+  /**
+   * Yenilenen anlamlar ve örnek cümleler (data/meanings/out/*.json).
+   *
+   * Kaynak Goethe listesi bir kelimeye üç dört anlam veriyor, örnek cümlelerin
+   * bir kısmı kelimeyi hiç içermiyor ve İngilizce hiç yok. Düzeltmeler ayrı
+   * dosyalarda duruyor ve burada **kaynağın üzerine biniyor**: words.json ham
+   * kaynak olarak dokunulmadan kalıyor, böylece bir düzeltmenin neyi
+   * değiştirdiği tek bir yerden görülebiliyor.
+   */
+  const meanings = new Map(readMeanings().map((m) => [m.id, m]));
+  if (meanings.size) console.log(`${meanings.size} yenilenmiş anlam okundu.`);
+
   // Türkçe karşılığı -mek/-mak ile bitiyorsa kelime fiildir; PDF'ten gelen
   // "Sonstiges" etiketi 200'den fazla fiili yanlış sınıflandırıyordu.
   const inferTyp = (r: Row) =>
     r.typ === "Sonstiges" && /(mek|mak)(\s*,|$)/.test(r.tr) ? "Verb" : r.typ;
 
   
-  const values = rows.map((r) => ({
-    id: r.id,
-    de: cleanHeadword(r.de),
-    artikel: r.artikel || null,
-    tr: r.tr,
-    formen: r.formen || null,
-    typ: inferTyp(r),
-    niveau: r.niveau.startsWith("A1") ? "A1" : r.niveau,
-    beispiel: r.beispiel || null,
-    beispielTr: beispielTr.get(r.id) ?? null,
-    rank: r.rank ?? null,
-  }));
+  const values = rows.map((r) => {
+    const m = meanings.get(r.id);
+    return {
+      id: r.id,
+      de: cleanHeadword(r.de),
+      artikel: r.artikel || null,
+      tr: m?.tr ?? r.tr,
+      en: m?.en ?? null,
+      formen: r.formen || null,
+      typ: inferTyp(m ? { ...r, tr: m.tr } : r),
+      niveau: r.niveau.startsWith("A1") ? "A1" : r.niveau,
+      beispiel: m?.beispiel ?? r.beispiel ?? null,
+      beispielTr: m?.beispielTr ?? beispielTr.get(r.id) ?? null,
+      beispielEn: m?.beispielEn ?? null,
+      rank: r.rank ?? null,
+    };
+  });
 
   const CHUNK = 400;
   for (let i = 0; i < values.length; i += CHUNK) {
@@ -74,8 +92,10 @@ async function main() {
           formen: sql`excluded.formen`,
           typ: sql`excluded.typ`,
           niveau: sql`excluded.niveau`,
+          en: sql`excluded.en`,
           beispiel: sql`excluded.beispiel`,
           beispielTr: sql`excluded.beispiel_tr`,
+          beispielEn: sql`excluded.beispiel_en`,
           rank: sql`excluded.rank`,
         },
       });

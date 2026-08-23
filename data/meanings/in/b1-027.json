@@ -1,0 +1,603 @@
+{
+ "paket": "b1-027",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 1644,
+   "de": "die Darstellung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "tasvir, sunum, gösterim",
+   "mevcutBeispiel": "Ihr Buch enthält eine klare Darstellung dieser Probleme.",
+   "mevcutBeispielTr": "Kitabı, bu sorunların açık bir sunumunu içeriyor."
+  },
+  {
+   "id": 2739,
+   "de": "spülen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "spült, spülte, hat gespült",
+   "mevcutTr": "yıkamak (bulaşık), çalkalamak",
+   "mevcutBeispiel": "1. Hast du das Geschirr gespült? 2. Spülen Sie bitte jetzt den Mund aus.",
+   "mevcutBeispielTr": "1. Bulaşıkları yıkadın mı? 2. Şimdi lütfen ağzınızı çalkalayın.",
+   "cakisan": [
+    "waschen (A1)"
+   ]
+  },
+  {
+   "id": 1923,
+   "de": "die Frist",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "süre, son tarih",
+   "mevcutBeispiel": "Die Frist für die Anmeldung zum Deutschkurs ist abgelaufen.",
+   "mevcutBeispielTr": "Almanca kursuna kayıt süresi doldu.",
+   "cakisan": [
+    "die Dauer (B1)"
+   ]
+  },
+  {
+   "id": 1813,
+   "de": "die Ernährung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "beslenme",
+   "mevcutBeispiel": "Ich finde eine gesunde Ernährung wichtig.",
+   "mevcutBeispielTr": "Sağlıklı beslenmeyi önemli buluyorum."
+  },
+  {
+   "id": 1617,
+   "de": "die Büchse",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n (D, CH) → A: Dose",
+   "mevcutTr": "konserve kutusu, teneke kutu",
+   "mevcutBeispiel": "Ich habe noch eine Büchse Bohnen.",
+   "mevcutBeispielTr": "Bir kutu konserve fasulyem daha var.",
+   "cakisan": [
+    "die Dose (B1)"
+   ]
+  },
+  {
+   "id": 3041,
+   "de": "die Visitenkarte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "kartvizit",
+   "mevcutBeispiel": "Darf ich Ihnen meine Visitenkarte geben?",
+   "mevcutBeispielTr": "Size kartvizitimi verebilir miyim?"
+  },
+  {
+   "id": 2550,
+   "de": "die Recherche",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "araştırma (bilgi toplama, gazetecilik)",
+   "mevcutBeispiel": "Für diesen Bericht waren viele Recherchen nötig.",
+   "mevcutBeispielTr": "Bu rapor için çok araştırma yapmak gerekti."
+  },
+  {
+   "id": 1405,
+   "de": "die Anleitung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "kılavuz, talimat",
+   "mevcutBeispiel": "In der Anleitung steht, dass bei diesem Spiel der Älteste beginnt.",
+   "mevcutBeispielTr": "Kılavuzda bu oyuna en büyüğün başlayacağı yazıyor."
+  },
+  {
+   "id": 2297,
+   "de": "die Lippe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "dudak",
+   "mevcutBeispiel": "Es ist sehr kalt. Meine Lippen sind ganz trocken.",
+   "mevcutBeispielTr": "Hava çok soğuk. Dudaklarım kupkuru oldu."
+  },
+  {
+   "id": 1651,
+   "de": "das Denkmal",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er",
+   "mevcutTr": "anıt",
+   "mevcutBeispiel": "In dieser Stadt gibt es viele berühmte Denkmäler.",
+   "mevcutBeispielTr": "Bu şehirde birçok ünlü anıt var."
+  },
+  {
+   "id": 1716,
+   "de": "der Einfall",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "fikir, buluş",
+   "mevcutBeispiel": "Frag einfach meine Freundin. Sie hat immer gute Einfälle.",
+   "mevcutBeispielTr": "Arkadaşıma sor; onun hep iyi fikirleri vardır.",
+   "cakisan": [
+    "die Ahnung (A1)",
+    "die Idee (A1)",
+    "die Meinung (A2)"
+   ]
+  },
+  {
+   "id": 2725,
+   "de": "der Spezialist",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "uzman (erkek)",
+   "mevcutBeispiel": "Mein Arzt hat mich zur Spezialistin geschickt.",
+   "mevcutBeispielTr": "Doktorum beni bir uzmana yönlendirdi.",
+   "cakisan": [
+    "der Experte (B1)",
+    "der Fachmann (B1)",
+    "die Spezialistin (B1)"
+   ]
+  },
+  {
+   "id": 1520,
+   "de": "behindern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "behindert, behinderte, hat behindert behindert",
+   "mevcutTr": "engellemek",
+   "mevcutBeispiel": "1. Bitte parken Sie so, dass Sie niemanden behindern. 2. Seit dem Unfall ist das Kind unserer Freunde behindert.",
+   "mevcutBeispielTr": "Lütfen kimseyi engellemeyecek şekilde park edin.",
+   "cakisan": [
+    "unterbinden (C1)",
+    "sperren (B2)",
+    "blockieren (B2)",
+    "hemmen (C1)"
+   ]
+  },
+  {
+   "id": 3138,
+   "de": "die Zange",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "pense, kerpeten",
+   "mevcutBeispiel": "Um das Fahrrad zu reparieren, brauchst du eine Zange.",
+   "mevcutBeispielTr": "Bisikleti tamir etmek için pense lazım."
+  },
+  {
+   "id": 1773,
+   "de": "entsorgen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "entsorgt, entsorgte, hat entsorgt",
+   "mevcutTr": "elden çıkarmak, imha etmek",
+   "mevcutBeispiel": "Wie kann ich meine alte Kaffeemaschine entsorgen?",
+   "mevcutBeispielTr": "Eski kahve makinemi nasıl elden çıkarabilirim?",
+   "cakisan": [
+    "veräußern (B2)"
+   ]
+  },
+  {
+   "id": 2714,
+   "de": "das Souvenir",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s",
+   "mevcutTr": "hediyelik eşya",
+   "mevcutBeispiel": "Ich habe ein paar Souvenirs aus dem Urlaub mitgebracht.",
+   "mevcutBeispielTr": "Tatilden birkaç hediyelik eşya getirdim."
+  },
+  {
+   "id": 1799,
+   "de": "die Erholung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "dinlenme",
+   "mevcutBeispiel": "Ich habe zu viel gearbeitet. Jetzt brauche ich etwas Erholung.",
+   "mevcutBeispielTr": "Çok fazla çalıştım; şimdi biraz dinlenmeye ihtiyacım var."
+  },
+  {
+   "id": 1442,
+   "de": "aufführen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "führt auf, führte auf, hat aufgeführt",
+   "mevcutTr": "sahnelemek, oynamak",
+   "mevcutBeispiel": "Die Kinder führen zu Weihnachten ein Theaterstück auf.",
+   "mevcutBeispielTr": "Çocuklar Noel'de bir tiyatro oyunu sahneliyor."
+  },
+  {
+   "id": 3111,
+   "de": "winken",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "winkt, winkte, hat gewinkt",
+   "mevcutTr": "el sallamak",
+   "mevcutBeispiel": "Alle standen auf dem Bahnsteig und winkten zum Abschied.",
+   "mevcutBeispielTr": "Herkes peronda durmuş, veda için el sallıyordu."
+  },
+  {
+   "id": 1673,
+   "de": "donnern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "donnert, donnerte, hat gedonnert",
+   "mevcutTr": "gök gürlemek",
+   "mevcutBeispiel": "1. Hörst du es donnern? Das Gewitter kommt näher. 2. Der Lkw donnert über die Landstraße.",
+   "mevcutBeispielTr": "Gök gürültüsünü duyuyor musun? Fırtına yaklaşıyor."
+  },
+  {
+   "id": 2104,
+   "de": "der Imbiss",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e (D) A: Jause, CH: Znüni/Zvieri",
+   "mevcutTr": "atıştırmalık, hafif yemek",
+   "mevcutBeispiel": "Es ist Zeit für einen kleinen Imbiss.",
+   "mevcutBeispielTr": "Küçük bir atıştırmalık vakti geldi.",
+   "cakisan": [
+    "die Jause (B1)"
+   ]
+  },
+  {
+   "id": 1870,
+   "de": "festlegen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "legt fest, legte fest, hat festgelegt",
+   "mevcutTr": "belirlemek, kararlaştırmak",
+   "mevcutBeispiel": "1. Ich weiß noch nicht, ob ich das mache. Ich möchte mich noch nicht festlegen. 2. Habt ihr den Hochzeitstermin schon fe",
+   "mevcutBeispielTr": "1. Bunu yapar mıyım bilmiyorum; henüz kesin karar vermek istemiyorum. 2. Düğün tarihini belirlediniz mi?",
+   "cakisan": [
+    "festsetzen (B1)"
+   ]
+  },
+  {
+   "id": 2249,
+   "de": "künstlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yapay, suni",
+   "mevcutBeispiel": "Ich mag kein künstliches Licht.",
+   "mevcutBeispielTr": "Yapay ışığı sevmem."
+  },
+  {
+   "id": 1462,
+   "de": "die Ausfahrt",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "çıkış, araç çıkışı",
+   "mevcutBeispiel": "1. Hier ist eine Ausfahrt, da dürfen Sie nicht parken. 2. Wie weit ist es noch bis zur Ausfahrt Freiburg?",
+   "mevcutBeispielTr": "Burası araç çıkışı, buraya park edemezsiniz.",
+   "cakisan": [
+    "der Ausgang (A1)"
+   ]
+  },
+  {
+   "id": 2396,
+   "de": "der Nachteil",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "dezavantaj, sakınca",
+   "mevcutBeispiel": "Einen Nachteil hat die Wohnung. Sie liegt nicht zentral.",
+   "mevcutBeispielTr": "Dairenin bir dezavantajı var: Merkezi bir yerde değil.",
+   "cakisan": [
+    "die Benachteiligung (C1)"
+   ]
+  },
+  {
+   "id": 2119,
+   "de": "installieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "installiert, installierte, hat installiert",
+   "mevcutTr": "kurmak, yüklemek (program, cihaz)",
+   "mevcutBeispiel": "Können Sie mir helfen, meinen Computer zu installieren?",
+   "mevcutBeispielTr": "Bilgisayarımı kurmama yardım edebilir misiniz?",
+   "cakisan": [
+    "decken (A2)",
+    "zusammenbauen (A2)",
+    "aufbauen (A2)"
+   ]
+  },
+  {
+   "id": 2524,
+   "de": "protestieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "protestiert, protestierte, hat protestiert",
+   "mevcutTr": "protesto etmek",
+   "mevcutBeispiel": "Wir protestieren gegen den Bau der Autobahn.",
+   "mevcutBeispielTr": "Otoyol inşaatını protesto ediyoruz."
+  },
+  {
+   "id": 2765,
+   "de": "der Stempel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "mühür, damga",
+   "mevcutBeispiel": "Der Poststempel trägt das Datum von letzter Woche. Das Paket war lange unterwegs.",
+   "mevcutBeispielTr": "Posta damgası geçen haftanın tarihini taşıyor. Paket uzun süre yolda kalmış."
+  },
+  {
+   "id": 2964,
+   "de": "das Verbot",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "yasak",
+   "mevcutBeispiel": "Ich bin für das Verbot dieses neuen Videospiels.",
+   "mevcutBeispielTr": "Bu yeni video oyununun yasaklanmasından yanayım.",
+   "cakisan": [
+    "verboten (A1)",
+    "untersagt (B1)"
+   ]
+  },
+  {
+   "id": 1618,
+   "de": "das Buffet",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s",
+   "mevcutTr": "açık büfe",
+   "mevcutBeispiel": "Das Buffet ist eröffnet!",
+   "mevcutBeispielTr": "Büfe açıldı!"
+  },
+  {
+   "id": 2158,
+   "de": "der Karneval",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s/-e (D) D, A: Fasching, CH: Fasnacht",
+   "mevcutTr": "karnaval",
+   "mevcutBeispiel": "Dort hängt mein Kostüm für den Karnevals(um)zug.",
+   "mevcutBeispielTr": "Karnaval geçidi için kostümüm orada asılı.",
+   "cakisan": [
+    "der Fasching (B1)",
+    "die Fasnacht (B1)"
+   ]
+  },
+  {
+   "id": 1398,
+   "de": "der Angehörige",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "yakın akraba (erkek)",
+   "mevcutBeispiel": "Der Arzt darf nur Familienangehörigen Auskunft geben.",
+   "mevcutBeispielTr": "Doktor yalnızca aile yakınlarına bilgi verebilir.",
+   "cakisan": [
+    "die Angehörige (B1)"
+   ]
+  },
+  {
+   "id": 1399,
+   "de": "die Angehörige",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "yakın akraba (kadın)",
+   "mevcutBeispiel": "Der Arzt darf nur Familienangehörigen Auskunft geben.",
+   "mevcutBeispielTr": "Doktor yalnızca aile yakınlarına bilgi verebilir.",
+   "cakisan": [
+    "der Angehörige (B1)"
+   ]
+  },
+  {
+   "id": 2456,
+   "de": "ordnen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "ordnet, ordnete, hat geordnet",
+   "mevcutTr": "düzenlemek, sıralamak",
+   "mevcutBeispiel": "Letztes Wochenende habe ich meine Papiere geordnet.",
+   "mevcutBeispielTr": "Geçen hafta sonu evraklarımı düzenledim.",
+   "cakisan": [
+    "regeln (B1)",
+    "strukturieren (B2)",
+    "regulieren (C1)",
+    "veranstalten (A2)"
+   ]
+  },
+  {
+   "id": 1792,
+   "de": "erfordern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "erfordert, erforderte, hat erfordert",
+   "mevcutTr": "gerektirmek",
+   "mevcutBeispiel": "Dieser Job erfordert viel Kraft.",
+   "mevcutBeispielTr": "Bu iş çok güç gerektiriyor.",
+   "cakisan": [
+    "gebieten (C1)"
+   ]
+  },
+  {
+   "id": 3042,
+   "de": "das Visum",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "Visa",
+   "mevcutTr": "vize",
+   "mevcutBeispiel": "Das Visum ist für drei Monate gültig.",
+   "mevcutBeispielTr": "Vize üç ay geçerli."
+  },
+  {
+   "id": 2987,
+   "de": "der Verlag",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e (A: ¨-e)",
+   "mevcutTr": "yayınevi",
+   "mevcutBeispiel": "Von welchem Verlag ist dieses Buch?",
+   "mevcutBeispielTr": "Bu kitap hangi yayınevinden?"
+  },
+  {
+   "id": 1944,
+   "de": "das Gasthaus",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er (A)",
+   "mevcutTr": "lokanta, birahane",
+   "mevcutBeispiel": "Gehen wir noch in ein Gasthaus ein Bier trinken?",
+   "mevcutBeispielTr": "Bir lokantaya gidip bira içelim mi?",
+   "cakisan": [
+    "das Lokal (A1)",
+    "die Gaststätte (B1)"
+   ]
+  },
+  {
+   "id": 1566,
+   "de": "der Betreuer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Betreuerin, -nen",
+   "mevcutTr": "bakıcı, gözetmen",
+   "mevcutBeispiel": "- Die Betreuerin der Kinder ist sehr nett.",
+   "mevcutBeispielTr": "Çocukların bakıcısı çok iyi biri.",
+   "cakisan": [
+    "der Pfleger (B1)"
+   ]
+  },
+  {
+   "id": 3105,
+   "de": "die Wiederholung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "tekrar",
+   "mevcutBeispiel": "Eine Wiederholung der Prüfung ist möglich.",
+   "mevcutBeispielTr": "Sınavı tekrarlamak mümkün.",
+   "cakisan": [
+    "wieder (A1)",
+    "nochmals (B1)"
+   ]
+  },
+  {
+   "id": 2087,
+   "de": "der Bauernhof",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "çiftlik",
+   "mevcutBeispiel": "Meine Großeltern hatten einen Bauernhof.",
+   "mevcutBeispielTr": "Dedemlerin bir çiftliği vardı."
+  },
+  {
+   "id": 2300,
+   "de": "loben",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "lobt, lobte, hat gelobt",
+   "mevcutTr": "övmek",
+   "mevcutBeispiel": "Ich habe alle Hausaufgaben gemacht. Der Lehrer hat mich heute gelobt.",
+   "mevcutBeispielTr": "Bütün ödevlerimi yaptım. Öğretmen bugün beni övdü.",
+   "cakisan": [
+    "anpreisen (B2)"
+   ]
+  },
+  {
+   "id": 2553,
+   "de": "rechtlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "hukuki, yasal",
+   "mevcutBeispiel": "Wir beraten Sie in rechtlichen Fragen.",
+   "mevcutBeispielTr": "Hukuki konularda size danışmanlık yapıyoruz."
+  },
+  {
+   "id": 2379,
+   "de": "die Mülltonne",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "çöp kutusu, çöp konteyneri",
+   "mevcutBeispiel": "Die Mülltonne ist voll.",
+   "mevcutBeispielTr": "Çöp konteyneri dolu.",
+   "cakisan": [
+    "der Abfalleimer (B1)"
+   ]
+  },
+  {
+   "id": 1394,
+   "de": "anerkennen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "erkennt an, erkannte an, hat anerkannt",
+   "mevcutTr": "tanımak, kabul etmek, onaylamak",
+   "mevcutBeispiel": "Meine Ausbildung wird hier nicht anerkannt.",
+   "mevcutBeispielTr": "Aldığım eğitim burada tanınmıyor.",
+   "cakisan": [
+    "kennen (A1)",
+    "erkennen (B1)",
+    "gewähren (B2)"
+   ]
+  },
+  {
+   "id": 1947,
+   "de": "das Gebäck",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "hamur işi, çörek",
+   "mevcutBeispiel": "Das Gebäck ist ganz frisch.",
+   "mevcutBeispielTr": "Hamur işleri taptaze."
+  },
+  {
+   "id": 1665,
+   "de": "das Diplom",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "diploma",
+   "mevcutBeispiel": "Wo kann ich mein Diplom abholen?",
+   "mevcutBeispielTr": "Diplomamı nereden alabilirim?",
+   "cakisan": [
+    "das Abschlusszeugnis (B2)"
+   ]
+  },
+  {
+   "id": 1720,
+   "de": "einführen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "führt ein, führte ein, hat eingeführt",
+   "mevcutTr": "ithal etmek, uygulamaya koymak",
+   "mevcutBeispiel": "1. Dürfen wir diese Ware ins Land einführen? 2. Wir haben letztes Jahr ein neues System eingeführt.",
+   "mevcutBeispielTr": "Bu malı ülkeye ithal edebilir miyiz?"
+  },
+  {
+   "id": 1484,
+   "de": "die Autorin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "yazar (kadın)",
+   "mevcutBeispiel": "Diese Autorin hat in diesem Jahr schon zwei Bücher geschrieben.",
+   "mevcutBeispielTr": "Bu yazar daha bu yıl iki kitap yazdı.",
+   "cakisan": [
+    "der Autor (B1)",
+    "der Schriftsteller (B1)"
+   ]
+  },
+  {
+   "id": 2164,
+   "de": "der Katalog",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "katalog",
+   "mevcutBeispiel": "Ich habe mir ein Kleid aus dem Katalog bestellt.",
+   "mevcutBeispielTr": "Katalogdan kendime bir elbise sipariş ettim."
+  }
+ ]
+}

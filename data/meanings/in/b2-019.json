@@ -1,0 +1,559 @@
+{
+ "paket": "b2-019",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4543,
+   "de": "der Rückhalt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "destek, arka çıkma",
+   "mevcutBeispiel": "In der Krise fand sie großen Rückhalt in ihrer Familie.",
+   "mevcutBeispielTr": "Kriz döneminde ailesinde büyük destek buldu.",
+   "cakisan": [
+    "die Förderung (B1)",
+    "die Unterstützung (B1)"
+   ]
+  },
+  {
+   "id": 4544,
+   "de": "die Zuwendung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zuwendungen",
+   "mevcutTr": "ilgi, şefkat, yakınlık gösterme",
+   "mevcutBeispiel": "Alte Menschen brauchen mehr Zuwendung, als viele Angehörige glauben.",
+   "mevcutBeispielTr": "Yaşlı insanlar birçok yakınının sandığından daha fazla ilgiye ihtiyaç duyar.",
+   "cakisan": [
+    "das Interesse (A2)"
+   ]
+  },
+  {
+   "id": 4545,
+   "de": "die Ablehnung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ablehnungen",
+   "mevcutTr": "reddetme, kabul etmeme, olumsuz tutum",
+   "mevcutBeispiel": "Seine offene Ablehnung des neuen Partners belastete die Beziehung.",
+   "mevcutBeispielTr": "Yeni partneri açıkça reddetmesi ilişkiyi zorladı."
+  },
+  {
+   "id": 4546,
+   "de": "die Bewunderung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hayranlık",
+   "mevcutBeispiel": "Der Junge blickte mit Bewunderung zu seinem älteren Bruder auf.",
+   "mevcutBeispielTr": "Çocuk ağabeyine hayranlıkla bakıyordu."
+  },
+  {
+   "id": 4547,
+   "de": "die Missgunst",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çekememezlik, başkasının iyiliğini istememe",
+   "mevcutBeispiel": "Zwischen den Geschwistern herrschte jahrelang stille Missgunst.",
+   "mevcutBeispielTr": "Kardeşler arasında yıllarca sessiz bir çekememezlik hüküm sürdü."
+  },
+  {
+   "id": 4548,
+   "de": "der Wendepunkt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wendepunkte",
+   "mevcutTr": "dönüm noktası",
+   "mevcutBeispiel": "Die Geburt des ersten Kindes war ein Wendepunkt in ihrem Leben.",
+   "mevcutBeispielTr": "İlk çocuğun doğumu hayatlarında bir dönüm noktasıydı.",
+   "cakisan": [
+    "die Zäsur (C1)"
+   ]
+  },
+  {
+   "id": 4549,
+   "de": "der Freiwilligendienst",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Freiwilligendienste",
+   "mevcutTr": "gönüllü hizmet (belirli süreli tam zamanlı program)",
+   "mevcutBeispiel": "Nach dem Abitur leistet er ein Jahr Freiwilligendienst im Altenheim.",
+   "mevcutBeispielTr": "Liseden sonra bir yıl huzurevinde gönüllü hizmet yapıyor."
+  },
+  {
+   "id": 4550,
+   "de": "der Lebensabend",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Lebensabende",
+   "mevcutTr": "ömrün son dönemi, yaşlılık günleri",
+   "mevcutBeispiel": "Sie möchte ihren Lebensabend in der Nähe der Enkel verbringen.",
+   "mevcutBeispielTr": "Yaşlılık günlerini torunlarının yakınında geçirmek istiyor."
+  },
+  {
+   "id": 4551,
+   "de": "der Vertrauensbruch",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vertrauensbrüche",
+   "mevcutTr": "güveni kötüye kullanma, güven ihlali",
+   "mevcutBeispiel": "Für sie war die Lüge ein unverzeihlicher Vertrauensbruch.",
+   "mevcutBeispielTr": "Onun için bu yalan affedilmez bir güven ihlaliydi."
+  },
+  {
+   "id": 4552,
+   "de": "die Empathie",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "empati, duygudaşlık",
+   "mevcutBeispiel": "Ohne Empathie lassen sich solche Konflikte kaum lösen.",
+   "mevcutBeispielTr": "Empati olmadan bu tür çatışmalar zor çözülür."
+  },
+  {
+   "id": 4553,
+   "de": "die Selbstbeherrschung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kendine hâkim olma, öz denetim",
+   "mevcutBeispiel": "Es kostete ihn viel Selbstbeherrschung, ruhig zu bleiben.",
+   "mevcutBeispielTr": "Sakin kalmak ona epey bir kendine hâkim olmaya mal oldu."
+  },
+  {
+   "id": 4554,
+   "de": "die Willenskraft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "irade gücü",
+   "mevcutBeispiel": "Mit erstaunlicher Willenskraft hat sie ihre Sucht überwunden.",
+   "mevcutBeispielTr": "Şaşırtıcı bir irade gücüyle bağımlılığını yendi."
+  },
+  {
+   "id": 4555,
+   "de": "die Verbundenheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "bağlılık, yakınlık hissi",
+   "mevcutBeispiel": "Trotz der Entfernung blieb eine tiefe Verbundenheit zwischen ihnen.",
+   "mevcutBeispielTr": "Aradaki mesafeye rağmen aralarında derin bir bağlılık kaldı."
+  },
+  {
+   "id": 4556,
+   "de": "die Zuversicht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "umut, iyimserlik, geleceğe güven",
+   "mevcutBeispiel": "Trotz der Diagnose hat er seine Zuversicht nicht verloren.",
+   "mevcutBeispielTr": "Teşhise rağmen umudunu yitirmedi.",
+   "cakisan": [
+    "die Hoffnung (B1)"
+   ]
+  },
+  {
+   "id": 4557,
+   "de": "die Selbstverwirklichung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kendini gerçekleştirme",
+   "mevcutBeispiel": "Für viele steht heute die Selbstverwirklichung über der Familienplanung.",
+   "mevcutBeispielTr": "Bugün birçok kişi için kendini gerçekleştirmek aile kurmaktan önce geliyor."
+  },
+  {
+   "id": 4558,
+   "de": "verwöhnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verwöhnt",
+   "mevcutTr": "şımartmak, üstüne titremek",
+   "mevcutBeispiel": "Die Großeltern verwöhnen die Kinder jedes Wochenende mit Geschenken.",
+   "mevcutBeispielTr": "Büyükanne ve büyükbaba her hafta sonu çocukları hediyelerle şımartıyor."
+  },
+  {
+   "id": 4559,
+   "de": "ermutigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ermutigt",
+   "mevcutTr": "cesaretlendirmek, yüreklendirmek",
+   "mevcutBeispiel": "Der Lehrer ermutigte sie, sich für den Kurs zu bewerben.",
+   "mevcutBeispielTr": "Öğretmen onu kursa başvurması için cesaretlendirdi."
+  },
+  {
+   "id": 4560,
+   "de": "trösten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat getröstet",
+   "mevcutTr": "teselli etmek, avutmak",
+   "mevcutBeispiel": "Sie tröstete ihre Freundin nach der schmerzhaften Trennung.",
+   "mevcutBeispielTr": "Acı verici ayrılıktan sonra arkadaşını teselli etti."
+  },
+  {
+   "id": 4561,
+   "de": "prägen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geprägt",
+   "mevcutTr": "biçimlendirmek, iz bırakmak, damgasını vurmak",
+   "mevcutBeispiel": "Die Erfahrungen der Kindheit prägen uns bis ins hohe Alter.",
+   "mevcutBeispielTr": "Çocukluk deneyimleri bizi ileri yaşlara kadar biçimlendirir.",
+   "cakisan": [
+    "gestalten (B2)"
+   ]
+  },
+  {
+   "id": 4562,
+   "de": "misstrauen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat misstraut",
+   "mevcutTr": "güvenmemek, kuşku duymak",
+   "mevcutBeispiel": "Nach dem Vorfall misstraute er allen Nachbarn.",
+   "mevcutBeispielTr": "Olaydan sonra bütün komşularına karşı güvenini yitirdi."
+  },
+  {
+   "id": 4563,
+   "de": "bereuen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bereut",
+   "mevcutTr": "pişman olmak",
+   "mevcutBeispiel": "Sie bereut es, damals so hart mit ihrem Sohn gewesen zu sein.",
+   "mevcutBeispielTr": "O zamanlar oğluna bu kadar sert davrandığına pişman."
+  },
+  {
+   "id": 4564,
+   "de": "sich schämen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich geschämt",
+   "mevcutTr": "utanmak",
+   "mevcutBeispiel": "Der Junge schämte sich für das Verhalten seines Vaters.",
+   "mevcutBeispielTr": "Çocuk babasının davranışından utandı."
+  },
+  {
+   "id": 4565,
+   "de": "sich anpassen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich angepasst",
+   "mevcutTr": "uyum sağlamak, ayak uydurmak",
+   "mevcutBeispiel": "Nicht jeder will sich den Erwartungen der Gruppe anpassen.",
+   "mevcutBeispielTr": "Herkes grubun beklentilerine ayak uydurmak istemiyor.",
+   "cakisan": [
+    "sich integrieren (B2)"
+   ]
+  },
+  {
+   "id": 4566,
+   "de": "respektieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat respektiert",
+   "mevcutTr": "saygı duymak, saymak",
+   "mevcutBeispiel": "Eltern sollten die Grenzen ihrer erwachsenen Kinder respektieren.",
+   "mevcutBeispielTr": "Ebeveynler yetişkin çocuklarının sınırlarına saygı duymalı.",
+   "cakisan": [
+    "verehren (C1)"
+   ]
+  },
+  {
+   "id": 4567,
+   "de": "aushalten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgehalten",
+   "mevcutTr": "dayanmak, katlanmak",
+   "mevcutBeispiel": "Diese ständigen Vorwürfe hält auf Dauer niemand aus.",
+   "mevcutBeispielTr": "Bu sürekli suçlamalara uzun vadede kimse dayanamaz.",
+   "cakisan": [
+    "beruhen (B2)",
+    "durchhalten (B2)",
+    "sich berufen (C1)"
+   ]
+  },
+  {
+   "id": 4568,
+   "de": "spenden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gespendet",
+   "mevcutTr": "bağışlamak, bağışta bulunmak",
+   "mevcutBeispiel": "Die Gemeinde spendete für die Betreuung obdachloser Familien.",
+   "mevcutBeispielTr": "Belediye halkı evsiz ailelerin bakımı için bağışta bulundu."
+  },
+  {
+   "id": 4569,
+   "de": "schlichten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschlichtet",
+   "mevcutTr": "arabuluculuk etmek, uzlaştırmak",
+   "mevcutBeispiel": "Die Großmutter schlichtete den Streit zwischen den Geschwistern.",
+   "mevcutBeispielTr": "Büyükanne kardeşler arasındaki kavgayı yatıştırdı."
+  },
+  {
+   "id": 4570,
+   "de": "aufwachsen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist aufgewachsen",
+   "mevcutTr": "büyümek, yetişmek",
+   "mevcutBeispiel": "Sie ist bei ihren Großeltern auf dem Land aufgewachsen.",
+   "mevcutBeispielTr": "Köyde büyükanne ve büyükbabasının yanında büyüdü.",
+   "cakisan": [
+    "wachsen (B1)"
+   ]
+  },
+  {
+   "id": 4571,
+   "de": "altern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist gealtert",
+   "mevcutTr": "yaşlanmak",
+   "mevcutBeispiel": "Die Bevölkerung altert schneller, als die Politik erwartet hatte.",
+   "mevcutBeispielTr": "Nüfus siyasetin beklediğinden daha hızlı yaşlanıyor."
+  },
+  {
+   "id": 4572,
+   "de": "sich zerstreiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich zerstritten",
+   "mevcutTr": "kavga edip bozuşmak, küs düşmek",
+   "mevcutBeispiel": "Die beiden Brüder haben sich wegen des Erbes zerstritten.",
+   "mevcutBeispielTr": "İki kardeş miras yüzünden bozuştu."
+  },
+  {
+   "id": 4573,
+   "de": "sich aufopfern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich aufgeopfert",
+   "mevcutTr": "kendini feda etmek, kendini adamak",
+   "mevcutBeispiel": "Jahrelang hat sie sich für ihre pflegebedürftige Mutter aufgeopfert.",
+   "mevcutBeispielTr": "Yıllarca bakıma muhtaç annesi için kendini feda etti."
+  },
+  {
+   "id": 4574,
+   "de": "beschützen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beschützt",
+   "mevcutTr": "korumak, kollamak",
+   "mevcutBeispiel": "Er wollte seine kleine Schwester vor jeder Enttäuschung beschützen.",
+   "mevcutBeispielTr": "Küçük kız kardeşini her hayal kırıklığından korumak istiyordu.",
+   "cakisan": [
+    "schützen (B1)",
+    "bewahren (B2)",
+    "bewachen (C1)"
+   ]
+  },
+  {
+   "id": 4575,
+   "de": "ermahnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ermahnt",
+   "mevcutTr": "uyarmak, ikaz etmek",
+   "mevcutBeispiel": "Die Erzieherin ermahnte die Kinder mehrmals zur Rücksicht.",
+   "mevcutBeispielTr": "Öğretmen çocukları birkaç kez saygılı olmaları için uyardı.",
+   "cakisan": [
+    "warnen (B1)"
+   ]
+  },
+  {
+   "id": 4576,
+   "de": "sich zurückziehen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich zurückgezogen",
+   "mevcutTr": "geri çekilmek, kendi kabuğuna çekilmek",
+   "mevcutBeispiel": "Seit dem Verlust zieht er sich immer mehr von Freunden zurück.",
+   "mevcutBeispielTr": "Kaybından beri arkadaşlarından giderek daha çok uzaklaşıyor."
+  },
+  {
+   "id": 4577,
+   "de": "mitfühlen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat mitgefühlt",
+   "mevcutTr": "birinin duygularını paylaşmak, halinden anlamak",
+   "mevcutBeispiel": "Als Therapeutin kann sie mit ihren Klienten wirklich mitfühlen.",
+   "mevcutBeispielTr": "Terapist olarak danışanlarıyla gerçekten duygudaşlık kurabiliyor."
+  },
+  {
+   "id": 4578,
+   "de": "nachsichtig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hoşgörülü, müsamahakâr",
+   "mevcutBeispiel": "Bei den Enkeln ist er viel nachsichtiger als früher bei den Kindern.",
+   "mevcutBeispielTr": "Torunlarına karşı eskiden çocuklarına olduğundan çok daha hoşgörülü.",
+   "cakisan": [
+    "tolerant (B1)"
+   ]
+  },
+  {
+   "id": 4579,
+   "de": "eifersüchtig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kıskanç",
+   "mevcutBeispiel": "Das ältere Kind reagierte eifersüchtig auf das neue Geschwisterchen.",
+   "mevcutBeispielTr": "Büyük çocuk yeni kardeşine kıskançlıkla tepki verdi.",
+   "cakisan": [
+    "neidisch (A2)"
+   ]
+  },
+  {
+   "id": 4580,
+   "de": "aufgeschlossen",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "açık fikirli, yeniliğe açık",
+   "mevcutBeispiel": "Für ihr Alter ist sie erstaunlich aufgeschlossen gegenüber neuen Ideen.",
+   "mevcutBeispielTr": "Yaşına göre yeni fikirlere şaşırtıcı derecede açık."
+  },
+  {
+   "id": 4581,
+   "de": "selbstbewusst",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "özgüvenli, kendine güvenen",
+   "mevcutBeispiel": "Lob im Elternhaus macht Kinder langfristig selbstbewusster.",
+   "mevcutBeispielTr": "Evde takdir görmek çocukları uzun vadede daha özgüvenli yapar."
+  },
+  {
+   "id": 4582,
+   "de": "alleinerziehend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tek başına çocuk büyüten",
+   "mevcutBeispiel": "Alleinerziehende Mütter sind besonders oft von Armut bedroht.",
+   "mevcutBeispielTr": "Çocuğunu tek başına büyüten anneler özellikle sık yoksulluk tehdidi altında."
+  },
+  {
+   "id": 4583,
+   "de": "zwischenmenschlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "insanlar arası, kişiler arası",
+   "mevcutBeispiel": "Die meisten Probleme im Team sind rein zwischenmenschlicher Natur.",
+   "mevcutBeispielTr": "Ekipteki sorunların çoğu tamamen kişiler arası nitelikte."
+  },
+  {
+   "id": 4584,
+   "de": "gesellig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sosyal, insan içini seven, hoşsohbet",
+   "mevcutBeispiel": "Ihr Mann ist eher still, sie dagegen sehr gesellig.",
+   "mevcutBeispielTr": "Kocası daha sessiz, o ise oldukça sokulgan biri.",
+   "cakisan": [
+    "sozial (B1)"
+   ]
+  },
+  {
+   "id": 4585,
+   "de": "launisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kaprisli, dakikası dakikasına uymayan",
+   "mevcutBeispiel": "In den letzten Wochen ist er ungewöhnlich launisch geworden.",
+   "mevcutBeispielTr": "Son haftalarda alışılmadık biçimde kaprisli oldu."
+  },
+  {
+   "id": 4586,
+   "de": "nachtragend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kin tutan, unutmayan",
+   "mevcutBeispiel": "Sie ist nicht nachtragend, aber vergessen wird sie das nie.",
+   "mevcutBeispielTr": "Kin tutan biri değil ama bunu asla unutmayacak."
+  },
+  {
+   "id": 4587,
+   "de": "die Nebenwirkung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Nebenwirkungen",
+   "mevcutTr": "yan etki",
+   "mevcutBeispiel": "Das Medikament hat bei vielen Patienten unangenehme Nebenwirkungen.",
+   "mevcutBeispielTr": "İlacın birçok hastada rahatsız edici yan etkileri var."
+  },
+  {
+   "id": 4588,
+   "de": "die Impfung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Impfungen",
+   "mevcutTr": "aşı, aşılama",
+   "mevcutBeispiel": "Die Impfung gegen Grippe wird älteren Menschen dringend empfohlen.",
+   "mevcutBeispielTr": "Grip aşısı yaşlılara özellikle tavsiye ediliyor.",
+   "cakisan": [
+    "der Impfstoff (A2)"
+   ]
+  },
+  {
+   "id": 4589,
+   "de": "die Zuzahlung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zuzahlungen",
+   "mevcutTr": "katkı payı, ek ödeme",
+   "mevcutBeispiel": "Für dieses Medikament fällt eine Zuzahlung von fünf Euro an.",
+   "mevcutBeispielTr": "Bu ilaç için beş euroluk bir katkı payı ödeniyor.",
+   "cakisan": [
+    "der Beitrag (B1)"
+   ]
+  },
+  {
+   "id": 4591,
+   "de": "die Rehabilitation",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rehabilitationen",
+   "mevcutTr": "rehabilitasyon, iyileştirme süreci",
+   "mevcutBeispiel": "Nach der Operation beginnt eine mehrwöchige Rehabilitation am Meer.",
+   "mevcutBeispielTr": "Ameliyattan sonra deniz kenarında haftalar süren bir rehabilitasyon başlıyor."
+  },
+  {
+   "id": 4592,
+   "de": "die Depression",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Depressionen",
+   "mevcutTr": "depresyon",
+   "mevcutBeispiel": "Eine Depression ist eine ernste Krankheit und keine Schwäche.",
+   "mevcutBeispielTr": "Depresyon ciddi bir hastalıktır, bir zayıflık değil."
+  },
+  {
+   "id": 4593,
+   "de": "die Angststörung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Angststörungen",
+   "mevcutTr": "anksiyete bozukluğu, kaygı bozukluğu",
+   "mevcutBeispiel": "Ihre Angststörung lässt sich mit Gesprächstherapie gut behandeln.",
+   "mevcutBeispielTr": "Kaygı bozukluğu konuşma terapisiyle iyi tedavi edilebiliyor."
+  }
+ ]
+}

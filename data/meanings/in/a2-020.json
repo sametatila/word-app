@@ -1,0 +1,527 @@
+{
+ "paket": "a2-020",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7938,
+   "de": "der Knöchel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "ayak bileği",
+   "mevcutBeispiel": "Beim Fußball habe ich mir den Knöchel verletzt.",
+   "mevcutBeispielTr": "Futbolda ayak bileğimi sakatladım."
+  },
+  {
+   "id": 7939,
+   "de": "das Handgelenk",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "el bileği",
+   "mevcutBeispiel": "Mein Handgelenk tut weh, wenn ich schreibe.",
+   "mevcutBeispielTr": "Yazı yazarken el bileğim ağrıyor."
+  },
+  {
+   "id": 7940,
+   "de": "das Gehirn",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "beyin",
+   "mevcutBeispiel": "Schlaf ist wichtig für das Gehirn.",
+   "mevcutBeispielTr": "Uyku beyin için önemlidir."
+  },
+  {
+   "id": 7941,
+   "de": "die Kopfschmerzen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Pl.)",
+   "mevcutTr": "baş ağrısı",
+   "mevcutBeispiel": "Ich habe seit gestern Kopfschmerzen und nehme eine Tablette.",
+   "mevcutBeispielTr": "Dünden beri başım ağrıyor ve bir hap alıyorum."
+  },
+  {
+   "id": 7942,
+   "de": "die Halsschmerzen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Pl.)",
+   "mevcutTr": "boğaz ağrısı",
+   "mevcutBeispiel": "Bei Halsschmerzen trinke ich immer Tee mit Honig.",
+   "mevcutBeispielTr": "Boğazım ağrıdığında hep ballı çay içerim."
+  },
+  {
+   "id": 7943,
+   "de": "die Zahnschmerzen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Pl.)",
+   "mevcutTr": "diş ağrısı",
+   "mevcutBeispiel": "Wegen der Zahnschmerzen konnte ich nachts nicht schlafen.",
+   "mevcutBeispielTr": "Diş ağrısı yüzünden geceleri uyuyamadım."
+  },
+  {
+   "id": 7944,
+   "de": "die Rückenschmerzen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Pl.)",
+   "mevcutTr": "sırt ağrısı, bel ağrısı",
+   "mevcutBeispiel": "Viele Menschen im Büro haben Rückenschmerzen.",
+   "mevcutBeispielTr": "Ofisteki birçok insanın sırt ağrısı var."
+  },
+  {
+   "id": 7945,
+   "de": "der Durchfall",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "ishal",
+   "mevcutBeispiel": "Nach dem Essen im Urlaub hatte ich Durchfall.",
+   "mevcutBeispielTr": "Tatilde yemekten sonra ishal oldum."
+  },
+  {
+   "id": 7946,
+   "de": "die Migräne",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "migren",
+   "mevcutBeispiel": "Meine Schwester hat oft Migräne und braucht dann Ruhe.",
+   "mevcutBeispielTr": "Kız kardeşimin sık sık migreni oluyor ve o zaman sessizliğe ihtiyacı var."
+  },
+  {
+   "id": 7947,
+   "de": "das Nasenbluten",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "burun kanaması",
+   "mevcutBeispiel": "Das Kind hat Nasenbluten, hol bitte ein Taschentuch.",
+   "mevcutBeispielTr": "Çocuğun burnu kanıyor, lütfen bir mendil getir."
+  },
+  {
+   "id": 7948,
+   "de": "der Rettungswagen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "ambulans, cankurtaran",
+   "mevcutBeispiel": "Der Rettungswagen bringt den Mann ins Krankenhaus.",
+   "mevcutBeispielTr": "Ambulans adamı hastaneye götürüyor.",
+   "cakisan": [
+    "der Krankenwagen (B1)"
+   ]
+  },
+  {
+   "id": 7949,
+   "de": "der Augenarzt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "göz doktoru",
+   "mevcutBeispiel": "Der Augenarzt hat gesagt, ich brauche eine neue Brille.",
+   "mevcutBeispielTr": "Göz doktoru yeni bir gözlüğe ihtiyacım olduğunu söyledi."
+  },
+  {
+   "id": 7950,
+   "de": "der Kinderarzt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "çocuk doktoru",
+   "mevcutBeispiel": "Wir haben morgen einen Termin beim Kinderarzt.",
+   "mevcutBeispielTr": "Yarın çocuk doktorunda randevumuz var."
+  },
+  {
+   "id": 7951,
+   "de": "das Krankenzimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "hasta odası",
+   "mevcutBeispiel": "Im Krankenzimmer liegen zwei Patienten.",
+   "mevcutBeispielTr": "Hasta odasında iki hasta yatıyor."
+  },
+  {
+   "id": 7952,
+   "de": "der Notarzt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "acil doktoru",
+   "mevcutBeispiel": "Nach dem Unfall kam der Notarzt sehr schnell.",
+   "mevcutBeispielTr": "Kazadan sonra acil doktoru çok çabuk geldi."
+  },
+  {
+   "id": 7953,
+   "de": "der Chirurg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "cerrah",
+   "mevcutBeispiel": "Der Chirurg hat meinen Vater am Knie operiert.",
+   "mevcutBeispielTr": "Cerrah babamı dizinden ameliyat etti."
+  },
+  {
+   "id": 7954,
+   "de": "die Behandlung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "tedavi",
+   "mevcutBeispiel": "Die Behandlung dauert drei Wochen.",
+   "mevcutBeispielTr": "Tedavi üç hafta sürüyor.",
+   "cakisan": [
+    "die Therapie (B1)"
+   ]
+  },
+  {
+   "id": 7955,
+   "de": "die Blutprobe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kan örneği, kan tahlili",
+   "mevcutBeispiel": "Vor der Untersuchung nimmt die Schwester eine Blutprobe.",
+   "mevcutBeispielTr": "Muayeneden önce hemşire kan örneği alıyor."
+  },
+  {
+   "id": 7956,
+   "de": "der Hustensaft",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "öksürük şurubu",
+   "mevcutBeispiel": "Nimm abends einen Löffel Hustensaft.",
+   "mevcutBeispielTr": "Akşamları bir kaşık öksürük şurubu al."
+  },
+  {
+   "id": 7957,
+   "de": "die Augentropfen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Pl.)",
+   "mevcutTr": "göz damlası",
+   "mevcutBeispiel": "Die Augentropfen bekomme ich ohne Rezept in der Apotheke.",
+   "mevcutBeispielTr": "Göz damlasını eczaneden reçetesiz alıyorum."
+  },
+  {
+   "id": 7958,
+   "de": "die Schlaftablette",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "uyku hapı",
+   "mevcutBeispiel": "Ohne Schlaftablette kann er kaum einschlafen.",
+   "mevcutBeispielTr": "Uyku hapı olmadan neredeyse hiç uyuyamıyor."
+  },
+  {
+   "id": 7959,
+   "de": "die Krücke",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "koltuk değneği",
+   "mevcutBeispiel": "Nach der Operation läuft sie mit Krücken.",
+   "mevcutBeispielTr": "Ameliyattan sonra koltuk değnekleriyle yürüyor."
+  },
+  {
+   "id": 7960,
+   "de": "der Rollstuhl",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "tekerlekli sandalye",
+   "mevcutBeispiel": "Mein Nachbar sitzt seit dem Unfall im Rollstuhl.",
+   "mevcutBeispielTr": "Komşum kazadan beri tekerlekli sandalyede."
+  },
+  {
+   "id": 7961,
+   "de": "der Gips",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "alçı",
+   "mevcutBeispiel": "Mein Arm ist gebrochen und jetzt im Gips.",
+   "mevcutBeispielTr": "Kolum kırıldı ve şimdi alçıda."
+  },
+  {
+   "id": 7962,
+   "de": "der Impfstoff",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "aşı",
+   "mevcutBeispiel": "In der Praxis gibt es einen neuen Impfstoff gegen Grippe.",
+   "mevcutBeispielTr": "Muayenehanede gribe karşı yeni bir aşı var.",
+   "cakisan": [
+    "die Impfung (B2)"
+   ]
+  },
+  {
+   "id": 7963,
+   "de": "die Kontaktlinse",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kontakt lens",
+   "mevcutBeispiel": "Ich trage lieber Kontaktlinsen als eine Brille.",
+   "mevcutBeispielTr": "Gözlük yerine kontakt lens takmayı tercih ederim."
+  },
+  {
+   "id": 7964,
+   "de": "der Blutzucker",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "kan şekeri",
+   "mevcutBeispiel": "Mein Opa misst jeden Morgen seinen Blutzucker.",
+   "mevcutBeispielTr": "Dedem her sabah kan şekerini ölçüyor."
+  },
+  {
+   "id": 7965,
+   "de": "die Massage",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "masaj",
+   "mevcutBeispiel": "Gegen die Schmerzen im Rücken hilft eine Massage.",
+   "mevcutBeispielTr": "Sırttaki ağrılara masaj iyi geliyor."
+  },
+  {
+   "id": 7966,
+   "de": "der Puls",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "nabız",
+   "mevcutBeispiel": "Die Ärztin misst zuerst meinen Puls.",
+   "mevcutBeispielTr": "Doktor önce nabzımı ölçüyor."
+  },
+  {
+   "id": 7967,
+   "de": "die Erste Hilfe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "ilk yardım",
+   "mevcutBeispiel": "Auf der Straße hat er Erste Hilfe geleistet.",
+   "mevcutBeispielTr": "Sokakta ilk yardım yaptı."
+  },
+  {
+   "id": 7968,
+   "de": "niesen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "niest, hat geniest",
+   "mevcutTr": "hapşırmak",
+   "mevcutBeispiel": "Ich muss die ganze Zeit niesen.",
+   "mevcutBeispielTr": "Sürekli hapşırıyorum."
+  },
+  {
+   "id": 7969,
+   "de": "zittern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "zittert, hat gezittert",
+   "mevcutTr": "titremek",
+   "mevcutBeispiel": "Meine Hände zittern, weil ich Fieber habe.",
+   "mevcutBeispielTr": "Ateşim olduğu için ellerim titriyor."
+  },
+  {
+   "id": 7970,
+   "de": "impfen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "impft, hat geimpft",
+   "mevcutTr": "aşılamak, aşı yapmak",
+   "mevcutBeispiel": "Morgen lasse ich mich gegen Grippe impfen.",
+   "mevcutBeispielTr": "Yarın grip aşısı olacağım."
+  },
+  {
+   "id": 7971,
+   "de": "röntgen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "röntgt, hat geröntgt",
+   "mevcutTr": "röntgen çekmek",
+   "mevcutBeispiel": "Im Krankenhaus haben sie meinen Fuß geröntgt.",
+   "mevcutBeispielTr": "Hastanede ayağımın röntgenini çektiler."
+  },
+  {
+   "id": 7972,
+   "de": "sich anstecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "steckt sich an, hat sich angesteckt",
+   "mevcutTr": "hastalık kapmak, bulaşmak",
+   "mevcutBeispiel": "Bleib zu Hause, ich möchte mich nicht anstecken.",
+   "mevcutBeispielTr": "Evde kal, hastalığı kapmak istemiyorum."
+  },
+  {
+   "id": 7973,
+   "de": "sich fühlen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "fühlt sich, hat sich gefühlt",
+   "mevcutTr": "kendini hissetmek",
+   "mevcutBeispiel": "Heute fühle ich mich schon viel besser.",
+   "mevcutBeispielTr": "Bugün kendimi çok daha iyi hissediyorum."
+  },
+  {
+   "id": 7974,
+   "de": "schlucken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schluckt, hat geschluckt",
+   "mevcutTr": "yutmak",
+   "mevcutBeispiel": "Mein Hals tut weh und ich kann kaum schlucken.",
+   "mevcutBeispielTr": "Boğazım ağrıyor ve neredeyse hiç yutkunamıyorum."
+  },
+  {
+   "id": 7975,
+   "de": "kühlen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "kühlt, hat gekühlt",
+   "mevcutTr": "soğutmak, buz koymak",
+   "mevcutBeispiel": "Kühle das Knie mit Eis, dann wird es besser.",
+   "mevcutBeispielTr": "Dizi buzla soğut, o zaman daha iyi olur."
+  },
+  {
+   "id": 7976,
+   "de": "sich ausschlafen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schläft sich aus, hat sich ausgeschlafen",
+   "mevcutTr": "iyice uyumak, uykusunu almak",
+   "mevcutBeispiel": "Am Wochenende möchte ich mich endlich ausschlafen.",
+   "mevcutBeispielTr": "Hafta sonunda nihayet uykumu almak istiyorum."
+  },
+  {
+   "id": 7977,
+   "de": "schwindlig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "başı dönen",
+   "mevcutBeispiel": "Wenn ich zu schnell aufstehe, wird mir schwindlig.",
+   "mevcutBeispielTr": "Çok hızlı ayağa kalktığımda başım dönüyor."
+  },
+  {
+   "id": 7978,
+   "de": "heiser",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sesi kısık, boğuk sesli",
+   "mevcutBeispiel": "Nach dem Konzert war ich ganz heiser.",
+   "mevcutBeispielTr": "Konserden sonra sesim tamamen kısılmıştı."
+  },
+  {
+   "id": 7979,
+   "de": "geschwollen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şişmiş, şiş",
+   "mevcutBeispiel": "Mein Fuß ist dick und geschwollen.",
+   "mevcutBeispielTr": "Ayağım kalın ve şişmiş durumda."
+  },
+  {
+   "id": 7980,
+   "de": "verletzt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yaralı, sakatlanmış",
+   "mevcutBeispiel": "Bei dem Unfall wurde zum Glück niemand verletzt.",
+   "mevcutBeispielTr": "Kazada şükür ki kimse yaralanmadı."
+  },
+  {
+   "id": 7981,
+   "de": "übel",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "midesi bulanan, kötü",
+   "mevcutBeispiel": "Im Bus ist mir immer übel.",
+   "mevcutBeispielTr": "Otobüste hep midem bulanır."
+  },
+  {
+   "id": 7982,
+   "de": "schmerzhaft",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "acı veren, ağrılı",
+   "mevcutBeispiel": "Die Spritze war kurz, aber schmerzhaft.",
+   "mevcutBeispielTr": "İğne kısaydı ama acı vericiydi."
+  },
+  {
+   "id": 7983,
+   "de": "ansteckend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bulaşıcı",
+   "mevcutBeispiel": "Eine Grippe ist sehr ansteckend.",
+   "mevcutBeispielTr": "Grip çok bulaşıcıdır.",
+   "cakisan": [
+    "übertragbar (B2)"
+   ]
+  },
+  {
+   "id": 7984,
+   "de": "ohnmächtig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "baygın",
+   "mevcutBeispiel": "In der Hitze wurde die alte Frau ohnmächtig.",
+   "mevcutBeispielTr": "Sıcakta yaşlı kadın bayıldı.",
+   "cakisan": [
+    "bewusstlos (B2)"
+   ]
+  },
+  {
+   "id": 7985,
+   "de": "die Telefonnummer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "telefon numarası",
+   "mevcutBeispiel": "Kannst du mir bitte deine Telefonnummer geben?",
+   "mevcutBeispielTr": "Bana lütfen telefon numaranı verebilir misin?",
+   "cakisan": [
+    "die Rufnummer (B1)"
+   ]
+  },
+  {
+   "id": 7986,
+   "de": "die Handynummer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "cep telefonu numarası",
+   "mevcutBeispiel": "Meine Handynummer hat sich letzte Woche geändert.",
+   "mevcutBeispielTr": "Cep telefonu numaram geçen hafta değişti."
+  },
+  {
+   "id": 7987,
+   "de": "das Telefonat",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "telefon görüşmesi",
+   "mevcutBeispiel": "Das Telefonat mit meinem Chef hat nur fünf Minuten gedauert.",
+   "mevcutBeispielTr": "Patronumla yaptığım telefon görüşmesi sadece beş dakika sürdü.",
+   "cakisan": [
+    "der Anruf (A1)"
+   ]
+  }
+ ]
+}

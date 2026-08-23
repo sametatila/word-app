@@ -1,0 +1,545 @@
+{
+ "paket": "a2-011",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7488,
+   "de": "luftig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "havadar, ferah",
+   "mevcutBeispiel": "Das neue Büro ist hell und luftig.",
+   "mevcutBeispielTr": "Yeni ofis aydınlık ve havadar."
+  },
+  {
+   "id": 7489,
+   "de": "beheizt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ısıtmalı, ısıtılan",
+   "mevcutBeispiel": "Die Garage ist im Winter nicht beheizt.",
+   "mevcutBeispielTr": "Garaj kışın ısıtılmıyor."
+  },
+  {
+   "id": 7490,
+   "de": "ungemütlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "iç açıcı olmayan, soğuk (ortam)",
+   "mevcutBeispiel": "Das Wartezimmer war kalt und ungemütlich.",
+   "mevcutBeispielTr": "Bekleme odası soğuk ve iç açıcı değildi."
+  },
+  {
+   "id": 7491,
+   "de": "unbequem",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "rahatsız, konforsuz",
+   "mevcutBeispiel": "Diese Schuhe sind schön, aber unbequem.",
+   "mevcutBeispielTr": "Bu ayakkabılar güzel ama rahatsız."
+  },
+  {
+   "id": 7492,
+   "de": "köstlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "nefis, çok lezzetli",
+   "mevcutBeispiel": "Der Kuchen von deiner Mutter war köstlich.",
+   "mevcutBeispielTr": "Annenin keki nefisti."
+  },
+  {
+   "id": 7493,
+   "de": "würzig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "baharatlı, çeşnili",
+   "mevcutBeispiel": "Die Suppe ist schön würzig.",
+   "mevcutBeispielTr": "Çorba güzelce baharatlı."
+  },
+  {
+   "id": 7494,
+   "de": "fad",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yavan, tatsız",
+   "mevcutBeispiel": "Ohne Salz schmeckt das Essen fad.",
+   "mevcutBeispielTr": "Tuzsuz olunca yemek yavan geliyor."
+  },
+  {
+   "id": 7495,
+   "de": "muffig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "küf kokulu, ağır kokulu",
+   "mevcutBeispiel": "Im Keller riecht es muffig.",
+   "mevcutBeispielTr": "Bodrum küf kokuyor."
+  },
+  {
+   "id": 7496,
+   "de": "stinkend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "pis kokan, leş gibi kokan",
+   "mevcutBeispiel": "Vor dem Haus stand eine stinkende Mülltonne.",
+   "mevcutBeispielTr": "Evin önünde pis kokan bir çöp kovası duruyordu."
+  },
+  {
+   "id": 7497,
+   "de": "duftend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "mis kokulu, güzel kokan",
+   "mevcutBeispiel": "Sie brachte mir duftende Blumen mit.",
+   "mevcutBeispielTr": "Bana mis kokulu çiçekler getirdi."
+  },
+  {
+   "id": 7498,
+   "de": "dumpf",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "boğuk (ses)",
+   "mevcutBeispiel": "Aus dem Nachbarhaus kam ein dumpfes Geräusch.",
+   "mevcutBeispielTr": "Yandaki evden boğuk bir ses geldi."
+  },
+  {
+   "id": 7499,
+   "de": "schrill",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tiz, keskin (ses)",
+   "mevcutBeispiel": "Der Wecker hat einen schrillen Ton.",
+   "mevcutBeispielTr": "Çalar saatin tiz bir sesi var."
+  },
+  {
+   "id": 7500,
+   "de": "geduldig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sabırlı",
+   "mevcutBeispiel": "Meine Lehrerin ist sehr geduldig mit uns.",
+   "mevcutBeispielTr": "Öğretmenim bize karşı çok sabırlı."
+  },
+  {
+   "id": 7501,
+   "de": "ungeduldig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sabırsız",
+   "mevcutBeispiel": "Mein Bruder wird schnell ungeduldig, wenn er warten muss.",
+   "mevcutBeispielTr": "Kardeşim beklemek zorunda kalınca çabuk sabırsızlaşıyor."
+  },
+  {
+   "id": 7502,
+   "de": "bescheiden",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "alçakgönüllü, mütevazı",
+   "mevcutBeispiel": "Er ist reich, aber er lebt sehr bescheiden.",
+   "mevcutBeispielTr": "O zengin ama çok mütevazı yaşıyor."
+  },
+  {
+   "id": 7503,
+   "de": "geizig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "cimri",
+   "mevcutBeispiel": "Mein Onkel ist so geizig, dass er nie Trinkgeld gibt.",
+   "mevcutBeispielTr": "Amcam o kadar cimri ki hiç bahşiş vermiyor."
+  },
+  {
+   "id": 7504,
+   "de": "egoistisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bencil",
+   "mevcutBeispiel": "Sei nicht so egoistisch und teile die Schokolade!",
+   "mevcutBeispielTr": "Bu kadar bencil olma ve çikolatayı paylaş!"
+  },
+  {
+   "id": 7505,
+   "de": "hilfsbereit",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yardımsever",
+   "mevcutBeispiel": "Unsere neuen Nachbarn sind sehr hilfsbereit.",
+   "mevcutBeispielTr": "Yeni komşularımız çok yardımsever."
+  },
+  {
+   "id": 7506,
+   "de": "gastfreundlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "misafirperver",
+   "mevcutBeispiel": "Die Familie war gastfreundlich und hat uns zum Essen eingeladen.",
+   "mevcutBeispielTr": "Aile misafirperverdi ve bizi yemeğe davet etti."
+  },
+  {
+   "id": 7507,
+   "de": "schüchtern",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "utangaç, çekingen",
+   "mevcutBeispiel": "Als Kind war ich sehr schüchtern.",
+   "mevcutBeispielTr": "Çocukken çok utangaçtım."
+  },
+  {
+   "id": 7508,
+   "de": "schweigsam",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "az konuşan, suskun",
+   "mevcutBeispiel": "Mein Vater ist ein schweigsamer Mann.",
+   "mevcutBeispielTr": "Babam az konuşan bir adamdır."
+  },
+  {
+   "id": 7509,
+   "de": "gemein",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kötü niyetli, kırıcı",
+   "mevcutBeispiel": "Das war gemein von dir, sie so zu ärgern.",
+   "mevcutBeispielTr": "Ona böyle takılman senin için kötü niyetliceydi."
+  },
+  {
+   "id": 7510,
+   "de": "anständig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dürüst, terbiyeli",
+   "mevcutBeispiel": "Er ist ein anständiger Mensch und hilft immer.",
+   "mevcutBeispielTr": "O dürüst bir insan ve her zaman yardım eder.",
+   "cakisan": [
+    "ehrlich (B1)",
+    "integer (C1)"
+   ]
+  },
+  {
+   "id": 7511,
+   "de": "misstrauisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kuşkucu, güvenmeyen",
+   "mevcutBeispiel": "Seit dem Streit ist sie mir gegenüber misstrauisch.",
+   "mevcutBeispielTr": "Kavgadan beri bana karşı kuşkucu."
+  },
+  {
+   "id": 7512,
+   "de": "neidisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kıskanç, imrenen",
+   "mevcutBeispiel": "Meine Kollegin ist neidisch auf mein neues Auto.",
+   "mevcutBeispielTr": "Meslektaşım yeni arabamı kıskanıyor.",
+   "cakisan": [
+    "eifersüchtig (B2)"
+   ]
+  },
+  {
+   "id": 7513,
+   "de": "brav",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "uslu, söz dinleyen",
+   "mevcutBeispiel": "Die Kinder waren heute den ganzen Tag brav.",
+   "mevcutBeispielTr": "Çocuklar bugün bütün gün uslu durdular.",
+   "cakisan": [
+    "artig (A2)"
+   ]
+  },
+  {
+   "id": 7514,
+   "de": "aggressiv",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "agresif, saldırgan (davranış)",
+   "mevcutBeispiel": "Nach zwei Bier wird er leider aggressiv.",
+   "mevcutBeispielTr": "İki biradan sonra maalesef saldırganlaşıyor."
+  },
+  {
+   "id": 7515,
+   "de": "friedlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "barışçıl, huzurlu",
+   "mevcutBeispiel": "Mein Großvater war ein friedlicher Mann.",
+   "mevcutBeispielTr": "Dedem barışçıl bir adamdı."
+  },
+  {
+   "id": 7516,
+   "de": "respektvoll",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "saygılı",
+   "mevcutBeispiel": "Die Schüler sind respektvoll zu ihren Lehrern.",
+   "mevcutBeispielTr": "Öğrenciler öğretmenlerine karşı saygılı.",
+   "cakisan": [
+    "rücksichtsvoll (B2)"
+   ]
+  },
+  {
+   "id": 7517,
+   "de": "rücksichtslos",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "düşüncesiz, saygısız",
+   "mevcutBeispiel": "Er fährt rücksichtslos und viel zu schnell.",
+   "mevcutBeispielTr": "Düşüncesizce ve çok hızlı araba kullanıyor."
+  },
+  {
+   "id": 7518,
+   "de": "unverschämt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "arsız, terbiyesiz",
+   "mevcutBeispiel": "Seine Antwort am Telefon war richtig unverschämt.",
+   "mevcutBeispielTr": "Telefondaki cevabı gerçekten terbiyesizceydi.",
+   "cakisan": [
+    "frech (B1)"
+   ]
+  },
+  {
+   "id": 7519,
+   "de": "unhöflich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kaba, nezaketsiz",
+   "mevcutBeispiel": "Es ist unhöflich, beim Essen auf das Handy zu schauen.",
+   "mevcutBeispielTr": "Yemek sırasında telefona bakmak kabalıktır.",
+   "cakisan": [
+    "grob (A2)"
+   ]
+  },
+  {
+   "id": 7520,
+   "de": "untreu",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sadakatsiz, vefasız",
+   "mevcutBeispiel": "Sie hat sich getrennt, weil ihr Mann untreu war.",
+   "mevcutBeispielTr": "Kocası sadakatsiz olduğu için ondan ayrıldı."
+  },
+  {
+   "id": 7521,
+   "de": "absichtlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kasten, bilerek",
+   "mevcutBeispiel": "Er hat das Glas nicht absichtlich kaputt gemacht.",
+   "mevcutBeispielTr": "Bardağı bilerek kırmadı.",
+   "cakisan": [
+    "vorsätzlich (B2)"
+   ]
+  },
+  {
+   "id": 7522,
+   "de": "hilflos",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çaresiz",
+   "mevcutBeispiel": "Ohne meine Brille fühle ich mich völlig hilflos.",
+   "mevcutBeispielTr": "Gözlüğüm olmadan kendimi tamamen çaresiz hissediyorum."
+  },
+  {
+   "id": 7523,
+   "de": "geschickt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "becerikli, mahir",
+   "mevcutBeispiel": "Meine Schwester ist sehr geschickt mit ihren Händen.",
+   "mevcutBeispielTr": "Kız kardeşim elleriyle çok becerikli."
+  },
+  {
+   "id": 7524,
+   "de": "ungeschickt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "beceriksiz, sakar",
+   "mevcutBeispiel": "Ich bin so ungeschickt, mir fällt immer etwas herunter.",
+   "mevcutBeispielTr": "O kadar sakarım ki hep elimden bir şey düşüyor."
+  },
+  {
+   "id": 7525,
+   "de": "schlau",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "akıllı, zeki, kurnaz",
+   "mevcutBeispiel": "Das war eine schlaue Idee von dir.",
+   "mevcutBeispielTr": "Bu senin akıllıca bir fikrindi.",
+   "cakisan": [
+    "klug (A2)"
+   ]
+  },
+  {
+   "id": 7526,
+   "de": "begabt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yetenekli",
+   "mevcutBeispiel": "Mein Sohn ist musikalisch sehr begabt.",
+   "mevcutBeispielTr": "Oğlum müzik konusunda çok yetenekli.",
+   "cakisan": [
+    "talentiert (A2)"
+   ]
+  },
+  {
+   "id": 7527,
+   "de": "talentiert",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yetenekli",
+   "mevcutBeispiel": "Sie ist eine talentierte junge Fußballspielerin.",
+   "mevcutBeispielTr": "O yetenekli genç bir futbolcu.",
+   "cakisan": [
+    "begabt (A2)"
+   ]
+  },
+  {
+   "id": 7528,
+   "de": "vergesslich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "unutkan",
+   "mevcutBeispiel": "Im Alter wurde meine Oma sehr vergesslich.",
+   "mevcutBeispielTr": "Yaşlılıkta babaannem çok unutkan oldu."
+  },
+  {
+   "id": 7529,
+   "de": "gutmütig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "iyi kalpli, yumuşak huylu",
+   "mevcutBeispiel": "Unser Hausmeister ist ein gutmütiger alter Mann.",
+   "mevcutBeispielTr": "Kapıcımız iyi kalpli yaşlı bir adam."
+  },
+  {
+   "id": 7530,
+   "de": "unpünktlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dakik olmayan, geç kalan",
+   "mevcutBeispiel": "Er ist immer unpünktlich und kommt zu spät.",
+   "mevcutBeispielTr": "O her zaman dakik değil ve geç geliyor."
+  },
+  {
+   "id": 7531,
+   "de": "hektisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "telaşlı, aceleci",
+   "mevcutBeispiel": "Am Morgen ist meine Mutter immer sehr hektisch.",
+   "mevcutBeispielTr": "Sabahları annem hep çok telaşlı olur."
+  },
+  {
+   "id": 7532,
+   "de": "lässig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "rahat, havalı",
+   "mevcutBeispiel": "Mein Chef ist im Büro sehr lässig.",
+   "mevcutBeispielTr": "Patronum ofiste çok rahat.",
+   "cakisan": [
+    "gemütlich (A1)",
+    "bequem (A2)"
+   ]
+  },
+  {
+   "id": 7533,
+   "de": "lebhaft",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hareketli, canlı (kişi, huy)",
+   "mevcutBeispiel": "Unsere Tochter ist ein lebhaftes Kind.",
+   "mevcutBeispielTr": "Kızımız canlı bir çocuk.",
+   "cakisan": [
+    "mobil (B1)",
+    "belebt (A2)"
+   ]
+  },
+  {
+   "id": 7534,
+   "de": "kindisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çocukça",
+   "mevcutBeispiel": "Mit vierzig ist so ein Streit einfach kindisch.",
+   "mevcutBeispielTr": "Kırk yaşında böyle bir kavga düpedüz çocukça."
+  },
+  {
+   "id": 7535,
+   "de": "charmant",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sevimli, cana yakın, hoş sohbet",
+   "mevcutBeispiel": "Der Kellner war sehr charmant zu den Gästen.",
+   "mevcutBeispielTr": "Garson misafirlere karşı çok sevimliydi."
+  },
+  {
+   "id": 7536,
+   "de": "attraktiv",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "çekici, alımlı",
+   "mevcutBeispiel": "Sie findet ihren neuen Kollegen sehr attraktiv.",
+   "mevcutBeispielTr": "Yeni iş arkadaşını çok çekici buluyor."
+  },
+  {
+   "id": 7537,
+   "de": "nachdenklich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "düşünceli, dalgın",
+   "mevcutBeispiel": "Nach dem Gespräch war mein Vater sehr nachdenklich.",
+   "mevcutBeispielTr": "Konuşmadan sonra babam çok düşünceliydi."
+  }
+ ]
+}

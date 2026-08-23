@@ -1,0 +1,566 @@
+{
+ "paket": "a1-014",
+ "niveau": "A1",
+ "kelimeler": [
+  {
+   "id": 631,
+   "de": "die E-Mail",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "e-posta",
+   "mevcutBeispiel": "Ich habe Ihre E-Mail nicht bekommen.",
+   "mevcutBeispielTr": "E-postanızı almadım."
+  },
+  {
+   "id": 815,
+   "de": "das Ticket",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "bilet (uçak, etkinlik)",
+   "mevcutBeispiel": "Wie viel kostet das Ticket?",
+   "mevcutBeispielTr": "Bilet ne kadar?"
+  },
+  {
+   "id": 765,
+   "de": "der Reis",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "pirinç",
+   "mevcutBeispiel": "Ich esse gern Reis mit Gemüse und Fisch.",
+   "mevcutBeispielTr": "Pirinci sebze ve balıkla yemeyi severim."
+  },
+  {
+   "id": 579,
+   "de": "der Bekannte",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "tanıdık (erkek)",
+   "mevcutBeispiel": "Ein Bekannter von mir heißt Klaus.",
+   "mevcutBeispielTr": "Bir tanıdığımın adı Klaus.",
+   "cakisan": [
+    "die Bekannte (B1)",
+    "vertraut (A2)"
+   ]
+  },
+  {
+   "id": 823,
+   "de": "übernachten",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "gecelemek, konaklamak",
+   "mevcutBeispiel": "Du kannst bei mir übernachten.",
+   "mevcutBeispielTr": "Bende kalabilirsin."
+  },
+  {
+   "id": 593,
+   "de": "breit",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "geniş",
+   "mevcutBeispiel": "Wie breit ist der Schrank?",
+   "mevcutBeispielTr": "Dolap ne kadar geniş?"
+  },
+  {
+   "id": 26,
+   "de": "der Apfel",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "Ä, -",
+   "mevcutTr": "elma",
+   "mevcutBeispiel": "Schmeckt dir der Apfel?",
+   "mevcutBeispielTr": "Elma hoşuna gitti mi?"
+  },
+  {
+   "id": 605,
+   "de": "das Datum",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "tarih",
+   "mevcutBeispiel": "Bitte schreiben Sie noch das Datum auf das Formular.",
+   "mevcutBeispielTr": "Lütfen forma tarihi de yazın."
+  },
+  {
+   "id": 633,
+   "de": "empfehlen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "tavsiye etmek, önermek",
+   "mevcutBeispiel": "Welchen Wein können Sie mir empfehlen?",
+   "mevcutBeispielTr": "Bana hangi şarabı önerirsiniz?"
+  },
+  {
+   "id": 722,
+   "de": "der Lkw",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "kamyon",
+   "mevcutBeispiel": "Dieser Lastkraftwagen ist sehr groß.",
+   "mevcutBeispielTr": "Bu kamyon çok büyük.",
+   "cakisan": [
+    "der Laster (B1)"
+   ]
+  },
+  {
+   "id": 850,
+   "de": "das Wiederhören",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hoşça kalın (telefonda vedalaşma)",
+   "mevcutBeispiel": "Wir müssen jetzt Schluss machen. Also auf Wiederhören!",
+   "mevcutBeispielTr": "Artık kapatmamız gerekiyor. Duyuşmak üzere!"
+  },
+  {
+   "id": 438,
+   "de": "die Süßigkeiten",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Pl.)",
+   "mevcutTr": "tatlılar, şekerlemeler",
+   "mevcutBeispiel": "Am liebsten esse ich Süßigkeiten.",
+   "mevcutBeispielTr": "En çok tatlı yemeyi severim."
+  },
+  {
+   "id": 40,
+   "de": "aufräumen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "toplamak, düzenlemek",
+   "mevcutBeispiel": "Räum bitte dein Zimmer auf.",
+   "mevcutBeispielTr": "Lütfen odanı topla.",
+   "cakisan": [
+    "sammeln (A2)",
+    "erheben (B2)",
+    "abräumen (A2)",
+    "einsammeln (A2)"
+   ]
+  },
+  {
+   "id": 461,
+   "de": "die U-Bahn",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "metro",
+   "mevcutBeispiel": "Wir nehmen die U-Bahn.",
+   "mevcutBeispielTr": "Metroya biniyoruz."
+  },
+  {
+   "id": 806,
+   "de": "das Studium",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "üniversite eğitimi, öğrenim",
+   "mevcutBeispiel": "Das Studium beginnt im Oktober.",
+   "mevcutBeispielTr": "Üniversite eğitimi ekimde başlıyor."
+  },
+  {
+   "id": 389,
+   "de": "der Rucksack",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -e",
+   "mevcutTr": "sırt çantası",
+   "mevcutBeispiel": "Der Rucksack für die Schule ist fertig.",
+   "mevcutBeispielTr": "Okul için sırt çantası hazır."
+  },
+  {
+   "id": 458,
+   "de": "das T-Shirt",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "tişört",
+   "mevcutBeispiel": "Wie gefällt dir mein neues T-Shirt?",
+   "mevcutBeispielTr": "Yeni tişörtümü nasıl buldun?"
+  },
+  {
+   "id": 749,
+   "de": "die Partnerin",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-nen",
+   "mevcutTr": "partner, eş (kadın)",
+   "mevcutBeispiel": "Sie ist meine Partnerin.",
+   "mevcutBeispielTr": "O benim partnerim.",
+   "cakisan": [
+    "der Partner (A1)"
+   ]
+  },
+  {
+   "id": 779,
+   "de": "der Schinken",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "–",
+   "mevcutTr": "jambon",
+   "mevcutBeispiel": "Ich möchte gern ein Schinkenbrot.",
+   "mevcutBeispielTr": "Jambonlu sandviç istiyorum."
+  },
+  {
+   "id": 435,
+   "de": "der Supermarkt",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -e",
+   "mevcutTr": "süpermarket",
+   "mevcutBeispiel": "Wir kaufen immer im Supermarkt ein.",
+   "mevcutBeispielTr": "Alışverişi hep süpermarketten yaparız."
+  },
+  {
+   "id": 840,
+   "de": "der Verwandte",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "akraba (erkek)",
+   "mevcutBeispiel": "Peter besucht seine Verwandten in Polen.",
+   "mevcutBeispielTr": "Peter, Polonya'daki akrabalarını ziyaret ediyor.",
+   "cakisan": [
+    "verwandt (B1)",
+    "die Verwandte (B1)"
+   ]
+  },
+  {
+   "id": 680,
+   "de": "die Halle",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "salon (fuar, spor)",
+   "mevcutBeispiel": "Wir treffen uns in Halle B",
+   "mevcutBeispielTr": "B salonunda buluşuyoruz."
+  },
+  {
+   "id": 483,
+   "de": "wandern",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yürüyüş yapmak, doğa yürüyüşüne çıkmak",
+   "mevcutBeispiel": "Am Wochenende wandern wir zum Tüngelsee.",
+   "mevcutBeispielTr": "Hafta sonu Tüngelsee'ye yürüyüşe çıkıyoruz."
+  },
+  {
+   "id": 654,
+   "de": "fremd",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yabancı, tanımadık",
+   "mevcutBeispiel": "Das weiß ich nicht; ich bin fremd hier.",
+   "mevcutBeispielTr": "Bilmiyorum; ben buranın yabancısıyım.",
+   "cakisan": [
+    "der Ausländer (A1)",
+    "ausländisch (A1)"
+   ]
+  },
+  {
+   "id": 775,
+   "de": "der Schalter",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "gişe",
+   "mevcutBeispiel": "Gehen Sie bitte zum Schalter drei!",
+   "mevcutBeispielTr": "Lütfen üç numaralı gişeye gidin!"
+  },
+  {
+   "id": 172,
+   "de": "frühstücken",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kahvaltı yapmak",
+   "mevcutBeispiel": "Wir frühstücken nicht zusammen.",
+   "mevcutBeispielTr": "Kahvaltıyı birlikte yapmıyoruz."
+  },
+  {
+   "id": 723,
+   "de": "das Lokal",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "lokanta, mekân",
+   "mevcutBeispiel": "In unserer Straße gibt es ein neues Lokal.",
+   "mevcutBeispielTr": "Sokağımızda yeni bir mekân açıldı.",
+   "cakisan": [
+    "das Gasthaus (B1)",
+    "die Gaststätte (B1)"
+   ]
+  },
+  {
+   "id": 591,
+   "de": "der Bogen",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kağıt, form; yay",
+   "mevcutBeispiel": "Schreiben Sie Ihre Lösungen bitte auf den Antwortbogen.",
+   "mevcutBeispielTr": "Cevaplarınızı lütfen cevap kağıdına yazın.",
+   "cakisan": [
+    "das Papier (A1)"
+   ]
+  },
+  {
+   "id": 224,
+   "de": "das Hobby",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "hobi",
+   "mevcutBeispiel": "Meine Hobbys sind Lesen und Tanzen.",
+   "mevcutBeispielTr": "Hobilerim okumak ve dans etmek."
+  },
+  {
+   "id": 670,
+   "de": "gratulieren",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "tebrik etmek",
+   "mevcutBeispiel": "Ich gratuliere euch zur Geburt eurer Tochter.",
+   "mevcutBeispielTr": "Kızınızın doğumu için sizi tebrik ederim."
+  },
+  {
+   "id": 730,
+   "de": "mieten",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kiralamak",
+   "mevcutBeispiel": "Ich möchte ein Auto mieten.",
+   "mevcutBeispielTr": "Bir araba kiralamak istiyorum."
+  },
+  {
+   "id": 243,
+   "de": "die Jeans",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Pl.)",
+   "mevcutTr": "kot pantolon, kot",
+   "mevcutBeispiel": "Sie trägt heute Jeans und ein Hemd.",
+   "mevcutBeispielTr": "Bugün kot pantolon ve gömlek giyiyor."
+  },
+  {
+   "id": 664,
+   "de": "die Geschwister",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(pl.)",
+   "mevcutTr": "kardeşler",
+   "mevcutBeispiel": "Ich habe leider keine Geschwister.",
+   "mevcutBeispielTr": "Maalesef hiç kardeşim yok."
+  },
+  {
+   "id": 653,
+   "de": "die Freizeit",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "boş zaman, serbest zaman",
+   "mevcutBeispiel": "In meiner Freizeit spiele ich oft Fußball.",
+   "mevcutBeispielTr": "Boş zamanlarımda sık sık futbol oynarım."
+  },
+  {
+   "id": 351,
+   "de": "das Obst",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "meyve",
+   "mevcutBeispiel": "Wir essen immer viel Obst.",
+   "mevcutBeispielTr": "Biz her zaman bol meyve yeriz.",
+   "cakisan": [
+    "die Frucht (B1)",
+    "Früchte (B1)"
+   ]
+  },
+  {
+   "id": 570,
+   "de": "der Balkon",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "balkon",
+   "mevcutBeispiel": "Die Wohnung hat auch einen kleinen Balkon.",
+   "mevcutBeispielTr": "Dairenin küçük bir balkonu da var."
+  },
+  {
+   "id": 60,
+   "de": "der Basketball",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -e",
+   "mevcutTr": "basketbol",
+   "mevcutBeispiel": "Meine Hobbys sind Basketball und Musik.",
+   "mevcutBeispielTr": "Hobilerim basketbol ve müzik."
+  },
+  {
+   "id": 837,
+   "de": "der Verkäufer",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "–",
+   "mevcutTr": "satıcı",
+   "mevcutBeispiel": "Meine Mutter ist Verkäuferin im Kaufhaus.",
+   "mevcutBeispielTr": "Annem büyük mağazada satış görevlisi.",
+   "cakisan": [
+    "der Händler (B1)",
+    "die Verkäuferin (B1)"
+   ]
+  },
+  {
+   "id": 855,
+   "de": "der Zoll",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "gümrük",
+   "mevcutBeispiel": "Wir müssen noch durch den Zoll.",
+   "mevcutBeispielTr": "Bir de gümrükten geçmemiz gerekiyor."
+  },
+  {
+   "id": 807,
+   "de": "der Student",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "üniversite öğrencisi",
+   "mevcutBeispiel": "Schüler und Studenten zahlen die Hälfte.",
+   "mevcutBeispielTr": "Öğrenciler ve üniversiteliler yarım ücret öder."
+  },
+  {
+   "id": 31,
+   "de": "arbeitslos",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "işsiz",
+   "mevcutBeispiel": "Meine Mutter ist arbeitslos.",
+   "mevcutBeispielTr": "Annem işsiz."
+  },
+  {
+   "id": 559,
+   "de": "der Ausländer",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-",
+   "mevcutTr": "yabancı (kişi), yabancı uyruklu",
+   "mevcutBeispiel": "SInd Sie Ausländerin?",
+   "mevcutBeispielTr": "Yabancı mısınız?",
+   "cakisan": [
+    "ausländisch (A1)",
+    "fremd (A1)"
+   ]
+  },
+  {
+   "id": 27,
+   "de": "die Apotheke",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "eczane",
+   "mevcutBeispiel": "Aspirin? Das bekommen Sie in der Apotheke.",
+   "mevcutBeispielTr": "Aspirin mi? Onu eczaneden alabilirsiniz."
+  },
+  {
+   "id": 629,
+   "de": "der Eintritt",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "giriş, giriş ücreti",
+   "mevcutBeispiel": "Der Preis für den Eintritt ist 5 Euro.",
+   "mevcutBeispielTr": "Giriş ücreti 5 euro.",
+   "cakisan": [
+    "der Eingang (A1)",
+    "die Einführung (B1)",
+    "der Zugang (B1)"
+   ]
+  },
+  {
+   "id": 566,
+   "de": "automatisch",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "otomatik olarak",
+   "mevcutBeispiel": "Du musst nichts machen. Das geht automatisch.",
+   "mevcutBeispielTr": "Hiçbir şey yapmana gerek yok. Otomatik oluyor."
+  },
+  {
+   "id": 725,
+   "de": "männlich",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "erkek, eril",
+   "mevcutBeispiel": "Kreuzen Sie bitte an: „weiblich“ oder „männlich“.",
+   "mevcutBeispielTr": "Lütfen işaretleyin: \"kadın\" mı \"erkek\" mi.",
+   "cakisan": [
+    "der Mann (A1)"
+   ]
+  },
+  {
+   "id": 382,
+   "de": "regnen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yağmur yağmak",
+   "mevcutBeispiel": "Es regnet oft bei uns.",
+   "mevcutBeispielTr": "Bizim oralarda sık sık yağmur yağar."
+  },
+  {
+   "id": 138,
+   "de": "das Fach",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -er",
+   "mevcutTr": "ders, alan",
+   "mevcutBeispiel": "Chemie ist mein Lieblingsfach.",
+   "mevcutBeispielTr": "Kimya en sevdiğim ders.",
+   "cakisan": [
+    "der Unterricht (A1)",
+    "das Schulfach (A2)"
+   ]
+  },
+  {
+   "id": 348,
+   "de": "die Note",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "not (okul notu)",
+   "mevcutBeispiel": "Hast du gute Noten in Englisch?",
+   "mevcutBeispielTr": "İngilizceden notların iyi mi?",
+   "cakisan": [
+    "die Notiz (A2)",
+    "der Vermerk (C1)",
+    "die Anmerkung (B2)"
+   ]
+  },
+  {
+   "id": 686,
+   "de": "der Herd",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ocak (mutfak)",
+   "mevcutBeispiel": "In der neuen Küche fehlt noch der Herd.",
+   "mevcutBeispielTr": "Yeni mutfakta bir tek ocak eksik."
+  }
+ ]
+}

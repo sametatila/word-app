@@ -1,0 +1,523 @@
+{
+ "paket": "c1-024",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6403,
+   "de": "verfassungswidrig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "anayasaya aykırı",
+   "mevcutBeispiel": "Der Gerichtshof erklärte die Regelung für verfassungswidrig.",
+   "mevcutBeispielTr": "Mahkeme, düzenlemeyi anayasaya aykırı buldu."
+  },
+  {
+   "id": 6404,
+   "de": "ausdrücklich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "açıkça, sarih biçimde",
+   "mevcutBeispiel": "Das Gesetz verbietet diese Praxis ausdrücklich.",
+   "mevcutBeispielTr": "Yasa, bu uygulamayı açıkça yasaklıyor."
+  },
+  {
+   "id": 6405,
+   "de": "unbeschadet",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "saklı kalmak kaydıyla, halel gelmeksizin",
+   "mevcutBeispiel": "Unbeschadet dieser Regelung bleiben ältere Ansprüche bestehen.",
+   "mevcutBeispielTr": "Bu düzenleme saklı kalmak kaydıyla eski hak talepleri geçerliliğini korur."
+  },
+  {
+   "id": 6406,
+   "de": "hinreichend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yeterli, kâfi",
+   "mevcutBeispiel": "Für eine Anklage fehlt bislang ein hinreichender Tatverdacht.",
+   "mevcutBeispielTr": "İddianame için şimdilik yeterli suç şüphesi yok.",
+   "cakisan": [
+    "genug (A1)",
+    "ausreichend (B1)"
+   ]
+  },
+  {
+   "id": 6407,
+   "de": "unbestritten",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tartışmasız",
+   "mevcutBeispiel": "Der Sachverhalt ist zwischen den Parteien weitgehend unbestritten.",
+   "mevcutBeispielTr": "Olayın kendisi taraflar arasında büyük ölçüde tartışmasız.",
+   "cakisan": [
+    "unumstritten (C1)"
+   ]
+  },
+  {
+   "id": 6408,
+   "de": "die Resozialisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Resozialisierungen",
+   "mevcutTr": "topluma yeniden kazandırma, ıslah",
+   "mevcutBeispiel": "Der offene Vollzug soll die Resozialisierung der Gefangenen fördern.",
+   "mevcutBeispielTr": "Açık infaz, mahkûmların topluma yeniden kazandırılmasını desteklemeyi amaçlar."
+  },
+  {
+   "id": 6409,
+   "de": "die Rückfallquote",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rückfallquoten",
+   "mevcutTr": "tekrar suç işleme oranı",
+   "mevcutBeispiel": "Bei jungen Männern liegt die Rückfallquote deutlich über dem Durchschnitt.",
+   "mevcutBeispielTr": "Genç erkeklerde tekrar suç işleme oranı ortalamanın belirgin biçimde üzerinde."
+  },
+  {
+   "id": 6410,
+   "de": "die Delinquenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "suçluluk, suça yönelim",
+   "mevcutBeispiel": "Frühe Delinquenz hängt oft mit brüchigen familiären Bindungen zusammen.",
+   "mevcutBeispielTr": "Erken yaştaki suça yönelim çoğu kez kırılgan aile bağlarıyla ilişkilidir."
+  },
+  {
+   "id": 6411,
+   "de": "der Straftäter",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Straftäter",
+   "mevcutTr": "suç faili, suçlu",
+   "mevcutBeispiel": "Viele Straftäter stammen aus sozial hoch belasteten Wohnvierteln.",
+   "mevcutBeispielTr": "Suç faillerinin çoğu sosyal açıdan ağır yük altındaki mahallelerden geliyor."
+  },
+  {
+   "id": 6412,
+   "de": "der Strafvollzug",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ceza infazı, cezaevi düzeni",
+   "mevcutBeispiel": "Der moderne Strafvollzug orientiert sich am Ziel der Wiedereingliederung.",
+   "mevcutBeispielTr": "Modern ceza infazı, topluma yeniden katılma hedefini esas alır."
+  },
+  {
+   "id": 6413,
+   "de": "die Haftanstalt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Haftanstalten",
+   "mevcutTr": "cezaevi, tutukevi",
+   "mevcutBeispiel": "In der überfüllten Haftanstalt teilen sich drei Männer eine Zelle.",
+   "mevcutBeispielTr": "Aşırı dolu cezaevinde üç adam bir hücreyi paylaşıyor."
+  },
+  {
+   "id": 6414,
+   "de": "der Freiheitsentzug",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "özgürlükten yoksun bırakma",
+   "mevcutBeispiel": "Freiheitsentzug gilt als letztes Mittel und nicht als Regelsanktion.",
+   "mevcutBeispielTr": "Özgürlükten yoksun bırakma son çare sayılır, olağan yaptırım değil."
+  },
+  {
+   "id": 6415,
+   "de": "die Führungsaufsicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Führungsaufsichten",
+   "mevcutTr": "tahliye sonrası denetim",
+   "mevcutBeispiel": "Nach der Entlassung stand er fünf Jahre unter Führungsaufsicht.",
+   "mevcutBeispielTr": "Tahliyesinden sonra beş yıl boyunca denetim altında kaldı."
+  },
+  {
+   "id": 6416,
+   "de": "die Inhaftierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Inhaftierungen",
+   "mevcutTr": "hapsetme, tutuklama",
+   "mevcutBeispiel": "Die lange Inhaftierung hat seine sozialen Kontakte fast völlig zerstört.",
+   "mevcutBeispielTr": "Uzun süreli hapis, sosyal bağlarını neredeyse tümüyle yok etti."
+  },
+  {
+   "id": 6417,
+   "de": "der Insasse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Insassen",
+   "mevcutTr": "mahkûm, kurum sakini",
+   "mevcutBeispiel": "Jeder dritte Insasse leidet unter einer unbehandelten Suchterkrankung.",
+   "mevcutBeispielTr": "Her üç mahkûmdan biri tedavi edilmemiş bir bağımlılık hastalığı yaşıyor."
+  },
+  {
+   "id": 6418,
+   "de": "die Vollzugslockerung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vollzugslockerungen",
+   "mevcutTr": "infaz koşullarında gevşetme",
+   "mevcutBeispiel": "Vollzugslockerungen werden nur nach sorgfältiger Prüfung gewährt.",
+   "mevcutBeispielTr": "İnfaz koşullarındaki gevşetmeler ancak dikkatli bir incelemeden sonra tanınır."
+  },
+  {
+   "id": 6419,
+   "de": "die Sicherungsverwahrung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "güvenlik tedbiri olarak alıkoyma",
+   "mevcutBeispiel": "Die Sicherungsverwahrung bleibt unter Fachleuten heftig umstritten.",
+   "mevcutBeispielTr": "Güvenlik amaçlı alıkoyma uzmanlar arasında hâlâ şiddetle tartışılıyor."
+  },
+  {
+   "id": 6420,
+   "de": "die Wiedereingliederung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wiedereingliederungen",
+   "mevcutTr": "topluma yeniden uyum sağlama",
+   "mevcutBeispiel": "Ohne Wohnung und Arbeit scheitert die Wiedereingliederung meistens.",
+   "mevcutBeispielTr": "Konut ve iş olmadan topluma yeniden uyum çoğunlukla başarısız olur."
+  },
+  {
+   "id": 6421,
+   "de": "die Stigmatisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stigmatisierungen",
+   "mevcutTr": "damgalama",
+   "mevcutBeispiel": "Die Stigmatisierung Entlassener erschwert jede berufliche Perspektive.",
+   "mevcutBeispielTr": "Tahliye edilenlerin damgalanması her mesleki ufku zorlaştırıyor."
+  },
+  {
+   "id": 6422,
+   "de": "die Subkultur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Subkulturen",
+   "mevcutTr": "alt kültür",
+   "mevcutBeispiel": "Hinter Gittern entsteht rasch eine eigene Subkultur mit strengen Regeln.",
+   "mevcutBeispielTr": "Parmaklıklar ardında katı kuralları olan kendine özgü bir alt kültür hızla oluşur."
+  },
+  {
+   "id": 6423,
+   "de": "die Verwahrlosung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bakımsızlık, ihmale terk edilmişlik",
+   "mevcutBeispiel": "Die Verwahrlosung ganzer Stadtteile begünstigt kleinere Eigentumsdelikte.",
+   "mevcutBeispielTr": "Bütün semtlerin bakımsız kalması küçük mal varlığı suçlarını kolaylaştırıyor."
+  },
+  {
+   "id": 6424,
+   "de": "die Gewaltbereitschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şiddete yatkınlık",
+   "mevcutBeispiel": "Die Gewaltbereitschaft steigt, wenn Alkohol und Gruppendruck zusammenkommen.",
+   "mevcutBeispielTr": "Alkol ile grup baskısı bir araya geldiğinde şiddete yatkınlık artıyor."
+  },
+  {
+   "id": 6425,
+   "de": "der Opferschutz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mağdurun korunması",
+   "mevcutBeispiel": "Der Opferschutz wurde lange gegenüber der Täterperspektive vernachlässigt.",
+   "mevcutBeispielTr": "Mağdurun korunması uzun süre fail bakış açısının gölgesinde kaldı."
+  },
+  {
+   "id": 6426,
+   "de": "die Viktimisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Viktimisierungen",
+   "mevcutTr": "mağdurlaştırma, mağdur olma",
+   "mevcutBeispiel": "Wiederholte Viktimisierung trifft vor allem sozial isolierte Menschen.",
+   "mevcutBeispielTr": "Tekrarlanan mağduriyet özellikle toplumsal olarak yalnızlaşmış insanları vuruyor."
+  },
+  {
+   "id": 6427,
+   "de": "die Sühne",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kefaret, günahın ödenmesi",
+   "mevcutBeispiel": "Der Gedanke der Sühne prägt bis heute unser Strafverständnis.",
+   "mevcutBeispielTr": "Kefaret düşüncesi ceza anlayışımızı bugün hâlâ belirliyor."
+  },
+  {
+   "id": 6428,
+   "de": "der Strafzweck",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Strafzwecke",
+   "mevcutTr": "cezanın amacı",
+   "mevcutBeispiel": "Über den eigentlichen Strafzweck streiten Fachleute seit Jahrhunderten.",
+   "mevcutBeispielTr": "Cezanın asıl amacı üzerinde uzmanlar yüzyıllardır tartışıyor."
+  },
+  {
+   "id": 6429,
+   "de": "die Generalprävention",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "genel önleme",
+   "mevcutBeispiel": "Die Generalprävention zielt auf die Allgemeinheit, nicht auf den Einzelnen.",
+   "mevcutBeispielTr": "Genel önleme bireyi değil, toplumun bütününü hedefler."
+  },
+  {
+   "id": 6430,
+   "de": "die Spezialprävention",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "özel önleme",
+   "mevcutBeispiel": "Therapieangebote im Vollzug dienen vor allem der Spezialprävention.",
+   "mevcutBeispielTr": "İnfaz sırasındaki terapi olanakları öncelikle özel önlemeye hizmet eder."
+  },
+  {
+   "id": 6431,
+   "de": "das Dunkelfeld",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dunkelfelder",
+   "mevcutTr": "karanlık alan, kayıtlara geçmeyen suçlar",
+   "mevcutBeispiel": "Bei häuslicher Gewalt ist das Dunkelfeld besonders groß.",
+   "mevcutBeispielTr": "Aile içi şiddette kayıtlara geçmeyen alan özellikle geniştir."
+  },
+  {
+   "id": 6432,
+   "de": "die Kriminalstatistik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kriminalstatistiken",
+   "mevcutTr": "suç istatistiği",
+   "mevcutBeispiel": "Die Kriminalstatistik bildet nur angezeigte Taten ab.",
+   "mevcutBeispielTr": "Suç istatistiği yalnızca ihbar edilen fiilleri yansıtır."
+  },
+  {
+   "id": 6433,
+   "de": "die Anzeigebereitschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ihbar etme eğilimi",
+   "mevcutBeispiel": "Eine steigende Anzeigebereitschaft kann höhere Fallzahlen vortäuschen.",
+   "mevcutBeispielTr": "Artan ihbar eğilimi, vaka sayılarının yükseldiği izlenimini yaratabilir."
+  },
+  {
+   "id": 6434,
+   "de": "die Devianz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sapma, normdan sapan davranış",
+   "mevcutBeispiel": "Devianz wird erst durch gesellschaftliche Reaktion zum Problem.",
+   "mevcutBeispielTr": "Sapma ancak toplumsal tepkiyle birlikte soruna dönüşür.",
+   "cakisan": [
+    "die Abweichung (B2)"
+   ]
+  },
+  {
+   "id": 6435,
+   "de": "der Normverstoß",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Normverstöße",
+   "mevcutTr": "norm ihlali",
+   "mevcutBeispiel": "Nicht jeder Normverstoß wird strafrechtlich verfolgt.",
+   "mevcutBeispielTr": "Her norm ihlali cezai olarak takip edilmez."
+  },
+  {
+   "id": 6436,
+   "de": "die Anomie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Anomien",
+   "mevcutTr": "anomi, normsuzluk",
+   "mevcutBeispiel": "Durkheim erklärte steigende Kriminalität mit gesellschaftlicher Anomie.",
+   "mevcutBeispielTr": "Durkheim artan suçluluğu toplumsal normsuzlukla açıklıyordu."
+  },
+  {
+   "id": 6437,
+   "de": "die Selbstkontrolle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "özdenetim",
+   "mevcutBeispiel": "Geringe Selbstkontrolle gilt als stabiler Prädiktor für spätere Straftaten.",
+   "mevcutBeispielTr": "Düşük özdenetim, sonraki suçlar için istikrarlı bir gösterge sayılır."
+  },
+  {
+   "id": 6438,
+   "de": "die Tatgelegenheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Tatgelegenheiten",
+   "mevcutTr": "suç işleme fırsatı",
+   "mevcutBeispiel": "Bessere Beleuchtung verringert die Tatgelegenheit in dunklen Unterführungen.",
+   "mevcutBeispielTr": "Daha iyi aydınlatma karanlık alt geçitlerde suç fırsatını azaltır."
+  },
+  {
+   "id": 6439,
+   "de": "der Risikofaktor",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Risikofaktoren",
+   "mevcutTr": "risk faktörü, risk etkeni",
+   "mevcutBeispiel": "Schulabbruch zählt zu den stärksten Risikofaktoren im Jugendalter.",
+   "mevcutBeispielTr": "Okulu bırakmak, ergenlik çağının en güçlü risk etkenlerinden biridir."
+  },
+  {
+   "id": 6440,
+   "de": "die Gefährlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tehlikelilik",
+   "mevcutBeispiel": "Die Gefährlichkeit eines Menschen lässt sich nie zuverlässig vorhersagen.",
+   "mevcutBeispielTr": "Bir insanın tehlikeliliği hiçbir zaman güvenilir biçimde öngörülemez."
+  },
+  {
+   "id": 6441,
+   "de": "die Jugendkriminalität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gençlik suçluluğu",
+   "mevcutBeispiel": "Jugendkriminalität ist meist episodenhaft und verliert sich mit dem Erwachsenwerden.",
+   "mevcutBeispielTr": "Gençlik suçluluğu çoğunlukla geçicidir ve yetişkinlikle birlikte kaybolur."
+  },
+  {
+   "id": 6442,
+   "de": "die Beschaffungskriminalität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uyuşturucu temini amaçlı suçlar",
+   "mevcutBeispiel": "Ein großer Teil der Einbrüche geht auf Beschaffungskriminalität zurück.",
+   "mevcutBeispielTr": "Hırsızlıkların büyük bölümü madde temini amaçlı suçlardan kaynaklanıyor."
+  },
+  {
+   "id": 6443,
+   "de": "die Entkriminalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entkriminalisierungen",
+   "mevcutTr": "suç olmaktan çıkarma",
+   "mevcutBeispiel": "Die Entkriminalisierung leichter Drogen entlastet die Behörden spürbar.",
+   "mevcutBeispielTr": "Hafif uyuşturucuların suç olmaktan çıkarılması kurumların yükünü hissedilir biçimde azaltıyor."
+  },
+  {
+   "id": 6444,
+   "de": "die Einzelhaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hücre hapsi, tek kişilik hücrede tutulma",
+   "mevcutBeispiel": "Monatelange Einzelhaft hinterlässt tiefe psychische Spuren.",
+   "mevcutBeispielTr": "Aylarca süren tecrit derin ruhsal izler bırakıyor."
+  },
+  {
+   "id": 6445,
+   "de": "die Repression",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Repressionen",
+   "mevcutTr": "baskı, bastırma politikası",
+   "mevcutBeispiel": "Reine Repression ohne soziale Maßnahmen verschiebt das Problem nur.",
+   "mevcutBeispielTr": "Sosyal önlemler olmadan salt baskı sorunu yalnızca öteler.",
+   "cakisan": [
+    "der Druck (B1)",
+    "die Unterdrückung (C1)"
+   ]
+  },
+  {
+   "id": 6446,
+   "de": "die Perspektivlosigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geleceksizlik, umutsuzluk",
+   "mevcutBeispiel": "Perspektivlosigkeit ist ein häufiger Nährboden für dauerhafte Straffälligkeit.",
+   "mevcutBeispielTr": "Geleceksizlik, kalıcı suçluluğun sık rastlanan besleyici zeminidir."
+  },
+  {
+   "id": 6447,
+   "de": "die Kriminalitätsfurcht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "suç korkusu",
+   "mevcutBeispiel": "Die Kriminalitätsfurcht älterer Menschen übersteigt ihr tatsächliches Risiko.",
+   "mevcutBeispielTr": "Yaşlıların suç korkusu gerçek risklerini fazlasıyla aşıyor."
+  },
+  {
+   "id": 6448,
+   "de": "die Verrohung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kabalaşma, vahşileşme",
+   "mevcutBeispiel": "Manche beklagen eine allgemeine Verrohung des öffentlichen Umgangs.",
+   "mevcutBeispielTr": "Kimileri kamusal ilişkilerde genel bir kabalaşmadan yakınıyor."
+  },
+  {
+   "id": 6449,
+   "de": "einsperren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat eingesperrt",
+   "mevcutTr": "hapsetmek, kapatmak",
+   "mevcutBeispiel": "Wer Menschen jahrelang einsperrt, muss auch an ihre Rückkehr denken.",
+   "mevcutBeispielTr": "İnsanları yıllarca hapseden, onların dönüşünü de düşünmek zorundadır."
+  },
+  {
+   "id": 6450,
+   "de": "büßen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gebüßt",
+   "mevcutTr": "bedelini ödemek, cezasını çekmek",
+   "mevcutBeispiel": "Er musste für einen einzigen Abend jahrelang büßen.",
+   "mevcutBeispielTr": "Tek bir akşamın bedelini yıllarca ödemek zorunda kaldı."
+  },
+  {
+   "id": 6451,
+   "de": "abgleiten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist abgeglitten",
+   "mevcutTr": "kaymak, sürüklenmek",
+   "mevcutBeispiel": "Nach dem Jobverlust glitt er allmählich in die Illegalität ab.",
+   "mevcutBeispielTr": "İşini kaybettikten sonra yavaş yavaş yasa dışılığa sürüklendi.",
+   "cakisan": [
+    "rutschen (A2)"
+   ]
+  },
+  {
+   "id": 6452,
+   "de": "straucheln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist gestrauchelt",
+   "mevcutTr": "yoldan çıkmak, tökezlemek",
+   "mevcutBeispiel": "Wer einmal gestrauchelt ist, verdient eine zweite Chance.",
+   "mevcutBeispielTr": "Bir kez yoldan çıkmış olan ikinci bir şansı hak eder."
+  }
+ ]
+}

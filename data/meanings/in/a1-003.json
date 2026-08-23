@@ -1,0 +1,600 @@
+{
+ "paket": "a1-003",
+ "niveau": "A1",
+ "kelimeler": [
+  {
+   "id": 405,
+   "de": "schön",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "güzel",
+   "mevcutBeispiel": "Mein Zimmer ist sehr schön und gemütlich.",
+   "mevcutBeispielTr": "Odam çok güzel ve rahat.",
+   "cakisan": [
+    "hübsch (A1)"
+   ]
+  },
+  {
+   "id": 1,
+   "de": "ab",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "-den itibaren, -den beri",
+   "mevcutBeispiel": "Ab morgen haben wir Ferien.",
+   "mevcutBeispielTr": "Yarından itibaren tatildeyiz."
+  },
+  {
+   "id": 187,
+   "de": "gerade",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "şu anda, tam şimdi",
+   "mevcutBeispiel": "Was machst du gerade?",
+   "mevcutBeispielTr": "Şu anda ne yapıyorsun?",
+   "cakisan": [
+    "zurzeit (A1)",
+    "momentan (A2)"
+   ]
+  },
+  {
+   "id": 182,
+   "de": "das Geld",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "para",
+   "mevcutBeispiel": "Ich habe nicht genug Geld.",
+   "mevcutBeispielTr": "Yeterince param yok."
+  },
+  {
+   "id": 110,
+   "de": "durch",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "içinden, aracılığıyla",
+   "mevcutBeispiel": "Wir fahren durch die Stadt.",
+   "mevcutBeispielTr": "Şehrin içinden geçiyoruz."
+  },
+  {
+   "id": 737,
+   "de": "die Mutter",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-ü",
+   "mevcutTr": "anne",
+   "mevcutBeispiel": "Frau Berghäuser ist die Mutter von Michaela.",
+   "mevcutBeispielTr": "Frau Berghäuser, Michaela'nın annesi."
+  },
+  {
+   "id": 71,
+   "de": "besser",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "daha iyi",
+   "mevcutBeispiel": "Hoffentlich geht es dir bald besser.",
+   "mevcutBeispielTr": "Umarım yakında daha iyi olursun."
+  },
+  {
+   "id": 355,
+   "de": "ohne",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "-siz, olmadan",
+   "mevcutBeispiel": "Ein Sonntag ohne meine Freunde ist langweilig.",
+   "mevcutBeispielTr": "Arkadaşlarım olmadan bir pazar günü sıkıcıdır."
+  },
+  {
+   "id": 219,
+   "de": "helfen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yardım etmek",
+   "mevcutBeispiel": "Können Sie mir helfen, bitte?",
+   "mevcutBeispielTr": "Bana yardım edebilir misiniz lütfen?",
+   "cakisan": [
+    "nachhelfen (A2)",
+    "mithelfen (A2)"
+   ]
+  },
+  {
+   "id": 152,
+   "de": "finden",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "bulmak, düşünmek",
+   "mevcutBeispiel": "Ich kann die Zeitung nicht finden./ Ich finde deinen Pullover schön.",
+   "mevcutBeispielTr": "Gazeteyi bulamıyorum. / Kazağını güzel buluyorum."
+  },
+  {
+   "id": 288,
+   "de": "lange",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "uzun süre, uzun zamandır",
+   "mevcutBeispiel": "Wartest du schon lange?/Ich bin schon lange hier.",
+   "mevcutBeispielTr": "Uzun zamandır mı bekliyorsun? / Uzun süredir buradayım."
+  },
+  {
+   "id": 107,
+   "de": "dort",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "orada",
+   "mevcutBeispiel": "Du gehst in die Stadt? Und was machst du dort?",
+   "mevcutBeispielTr": "Şehre mi gidiyorsun? Peki orada ne yapacaksın?",
+   "cakisan": [
+    "da (A1)"
+   ]
+  },
+  {
+   "id": 494,
+   "de": "weiter",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "daha ileri, devam ederek",
+   "mevcutBeispiel": "Der Bus fährt nicht weiter.",
+   "mevcutBeispielTr": "Otobüs daha ileri gitmiyor."
+  },
+  {
+   "id": 177,
+   "de": "geben",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "vermek, bulunmak",
+   "mevcutBeispiel": "Geben Sie mir bitte zwei Fahrkarten./ Was gibt es heute im Fernsehen?/ Gibt es hier auch ein Theater?",
+   "mevcutBeispielTr": "Bana iki bilet verin lütfen. / Bugün televizyonda ne var? / Burada tiyatro da var mı?",
+   "cakisan": [
+    "erteilen (B2)",
+    "verabreichen (C1)"
+   ]
+  },
+  {
+   "id": 791,
+   "de": "seit",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "-den beri",
+   "mevcutBeispiel": "Ich wohne seit drei Jahren in Köln.",
+   "mevcutBeispielTr": "Üç yıldır Köln'de oturuyorum."
+  },
+  {
+   "id": 198,
+   "de": "gleich",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hemen, aynı",
+   "mevcutBeispiel": "Er kommt gleich./Das ist mir gleich.",
+   "mevcutBeispielTr": "Hemen geliyor. / Benim için fark etmez.",
+   "cakisan": [
+    "sofort (A1)",
+    "umgehend (B2)"
+   ]
+  },
+  {
+   "id": 387,
+   "de": "richtig",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "doğru",
+   "mevcutBeispiel": "Die Antwort ist nicht richtig.",
+   "mevcutBeispielTr": "Cevap doğru değil.",
+   "cakisan": [
+    "wahr (A1)",
+    "korrekt (B1)"
+   ]
+  },
+  {
+   "id": 357,
+   "de": "die Ordnung",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "düzen",
+   "mevcutBeispiel": "Das ist in Ordnung./Kannst du hier Ordnung machen?",
+   "mevcutBeispielTr": "Sorun değil, tamamdır. / Burayı düzenleyebilir misin?"
+  },
+  {
+   "id": 228,
+   "de": "hören",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "duymak, dinlemek",
+   "mevcutBeispiel": "Hörst du gern Musik?",
+   "mevcutBeispielTr": "Müzik dinlemeyi sever misin?"
+  },
+  {
+   "id": 308,
+   "de": "das Mädchen",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-",
+   "mevcutTr": "kız, kız çocuk",
+   "mevcutBeispiel": "Die Mädchen spielen auch Fußball.",
+   "mevcutBeispielTr": "Kızlar da futbol oynuyor."
+  },
+  {
+   "id": 797,
+   "de": "sollen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "gerekmek, -meli",
+   "mevcutBeispiel": "Soll ich kommen? Was soll ich mitbringen?",
+   "mevcutBeispielTr": "Geleyim mi? Yanımda ne getireyim?"
+  },
+  {
+   "id": 214,
+   "de": "das Haus",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -er",
+   "mevcutTr": "ev",
+   "mevcutBeispiel": "Ich bin zu Haus./Ich gehe nach Haus./ Da ist unser Haus.",
+   "mevcutBeispielTr": "Evdeyim. / Eve gidiyorum. / İşte evimiz.",
+   "cakisan": [
+    "das Zuhause (B1)"
+   ]
+  },
+  {
+   "id": 166,
+   "de": "der Freund",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-e",
+   "mevcutTr": "arkadaş, erkek arkadaş",
+   "mevcutBeispiel": "Mein bester Freund heißt Ivan.",
+   "mevcutBeispielTr": "En iyi arkadaşımın adı Ivan.",
+   "cakisan": [
+    "die Freundin (A1)"
+   ]
+  },
+  {
+   "id": 469,
+   "de": "unser",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "-e",
+   "mevcutTr": "bizim",
+   "mevcutBeispiel": "Das ist unser neues Auto. (vergl. Grammatik)",
+   "mevcutBeispielTr": "Bu bizim yeni arabamız."
+  },
+  {
+   "id": 134,
+   "de": "essen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yemek, yemek yemek",
+   "mevcutBeispiel": "Was wollt ihr essen?",
+   "mevcutBeispielTr": "Ne yemek istiyorsunuz?",
+   "cakisan": [
+    "das Essen (A1)",
+    "das Gericht (A2)",
+    "fressen (B1)",
+    "Speise (B1)"
+   ]
+  },
+  {
+   "id": 135,
+   "de": "das Essen",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-",
+   "mevcutTr": "yemek, öğün",
+   "mevcutBeispiel": "Wie war das Essen in Deutschland?",
+   "mevcutBeispielTr": "Almanya'da yemekler nasıldı?",
+   "cakisan": [
+    "essen (A1)",
+    "das Gericht (A2)",
+    "fressen (B1)",
+    "Speise (B1)"
+   ]
+  },
+  {
+   "id": 18,
+   "de": "die Angst",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "ä, -e",
+   "mevcutTr": "korku",
+   "mevcutBeispiel": "Hab keine Angst! Ich habe Angst vor großen Hunden.",
+   "mevcutBeispielTr": "Korkma! Büyük köpeklerden korkarım.",
+   "cakisan": [
+    "der Schreck(en) (B1)"
+   ]
+  },
+  {
+   "id": 81,
+   "de": "bleiben",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kalmak",
+   "mevcutBeispiel": "Wir bleiben zu Hause.",
+   "mevcutBeispielTr": "Evde kalıyoruz."
+  },
+  {
+   "id": 530,
+   "de": "zusammen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "birlikte",
+   "mevcutBeispiel": "Wir machen zusammen Hausaufgaben.",
+   "mevcutBeispielTr": "Ödevleri birlikte yapıyoruz."
+  },
+  {
+   "id": 848,
+   "de": "die Welt",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "dünya",
+   "mevcutBeispiel": "Es gibt viele Probleme auf der Welt.",
+   "mevcutBeispielTr": "Dünyada birçok sorun var."
+  },
+  {
+   "id": 828,
+   "de": "unter",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "altında",
+   "mevcutBeispiel": "Unter uns wohnt eine Familie mit drei Kindern.",
+   "mevcutBeispielTr": "Altımızda üç çocuklu bir aile oturuyor.",
+   "cakisan": [
+    "unterhalb (A2)"
+   ]
+  },
+  {
+   "id": 402,
+   "de": "schnell",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hızlı, çabuk",
+   "mevcutBeispiel": "Warum fährst du so schnell?",
+   "mevcutBeispielTr": "Neden bu kadar hızlı gidiyorsun?"
+  },
+  {
+   "id": 818,
+   "de": "tot",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ölü",
+   "mevcutBeispiel": "Sein Vater ist schon lange tot.",
+   "mevcutBeispielTr": "Babası öleli çok oldu.",
+   "cakisan": [
+    "der Tote (B1)",
+    "die Tote (B1)"
+   ]
+  },
+  {
+   "id": 338,
+   "de": "nehmen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "almak",
+   "mevcutBeispiel": "Nehmen Sie den Bus zum Marktplatz.",
+   "mevcutBeispielTr": "Pazar meydanına giden otobüse binin.",
+   "cakisan": [
+    "bekommen (A1)",
+    "kriegen (A1)",
+    "einnehmen (B1)",
+    "empfangen (B1)",
+    "erhalten (B1)",
+    "entnehmen (C1)",
+    "einholen (C1)"
+   ]
+  },
+  {
+   "id": 197,
+   "de": "glauben",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "sanmak, inanmak, düşünmek",
+   "mevcutBeispiel": "Ich glaube, Karin spricht sehr gut Englisch.",
+   "mevcutBeispielTr": "Sanırım Karin çok iyi İngilizce konuşuyor.",
+   "cakisan": [
+    "vermuten (B1)"
+   ]
+  },
+  {
+   "id": 88,
+   "de": "bringen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "getirmek",
+   "mevcutBeispiel": "Ich bringe dir die Bücher morgen.",
+   "mevcutBeispielTr": "Kitapları sana yarın getiririm.",
+   "cakisan": [
+    "holen (A1)"
+   ]
+  },
+  {
+   "id": 185,
+   "de": "genug",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yeterli, yeterince",
+   "mevcutBeispiel": "Es ist noch genug Pizza da. Möchtest du noch ein Stück? Ich verdiene nicht genug.",
+   "mevcutBeispielTr": "Daha yeterince pizza var. Bir dilim daha ister misin? Yeterince kazanmıyorum.",
+   "cakisan": [
+    "ausreichend (B1)",
+    "hinreichend (C1)"
+   ]
+  },
+  {
+   "id": 86,
+   "de": "brauchen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ihtiyaç duymak, gerekmek",
+   "mevcutBeispiel": "Ich brauche einen Taschenrechner.",
+   "mevcutBeispielTr": "Bir hesap makinesine ihtiyacım var.",
+   "cakisan": [
+    "benötigen (B1)"
+   ]
+  },
+  {
+   "id": 661,
+   "de": "gegen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "karşı",
+   "mevcutBeispiel": "Fahr nicht gegen den Baum! Ich bin gegen diese Lösung. Wer spielt gegen wen?",
+   "mevcutBeispielTr": "Ağaca çarpma! Ben bu çözüme karşıyım. Kim kime karşı oynuyor?"
+  },
+  {
+   "id": 735,
+   "de": "der Moment",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "an, dakika",
+   "mevcutBeispiel": "Moment mal bitte! Einen Moment bitte.",
+   "mevcutBeispielTr": "Bir dakika lütfen! Bir saniye.",
+   "cakisan": [
+    "der Augenblick (B1)"
+   ]
+  },
+  {
+   "id": 248,
+   "de": "der Junge",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "erkek çocuk, oğlan",
+   "mevcutBeispiel": "Der Junge ist neu in unserer Klasse.",
+   "mevcutBeispielTr": "Oğlan sınıfımıza yeni geldi.",
+   "cakisan": [
+    "der Bub (B1)"
+   ]
+  },
+  {
+   "id": 332,
+   "de": "die Musik",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "(Sg.)",
+   "mevcutTr": "müzik",
+   "mevcutBeispiel": "Ich höre gern Disco-Musik.",
+   "mevcutBeispielTr": "Disko müziği dinlemeyi severim."
+  },
+  {
+   "id": 29,
+   "de": "die Arbeit",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "iş, çalışma",
+   "mevcutBeispiel": "War die Physikarbeit schwer?",
+   "mevcutBeispielTr": "Fizik sınavı zor muydu?",
+   "cakisan": [
+    "der Job (A1)",
+    "die Stelle (A1)",
+    "die Beschäftigung (B1)"
+   ]
+  },
+  {
+   "id": 162,
+   "de": "fragen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "sormak",
+   "mevcutBeispiel": "Ich möchte etwas fragen.",
+   "mevcutBeispielTr": "Bir şey sormak istiyorum."
+  },
+  {
+   "id": 220,
+   "de": "der Herr",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "bay, efendi",
+   "mevcutBeispiel": "Sind Sie Herr Braunmüller?",
+   "mevcutBeispielTr": "Siz Bay Braunmüller mısınız?"
+  },
+  {
+   "id": 143,
+   "de": "die Familie",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "aile",
+   "mevcutBeispiel": "Er hat eine große Familie.",
+   "mevcutBeispielTr": "Büyük bir ailesi var."
+  },
+  {
+   "id": 486,
+   "de": "warten",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "beklemek",
+   "mevcutBeispiel": "Wartest du schon lange?",
+   "mevcutBeispielTr": "Uzun zamandır mı bekliyorsun?",
+   "cakisan": [
+    "erwarten (B1)"
+   ]
+  },
+  {
+   "id": 345,
+   "de": "niemand",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hiç kimse",
+   "mevcutBeispiel": "Kann mir niemand helfen?",
+   "mevcutBeispielTr": "Kimse bana yardım edemez mi?"
+  },
+  {
+   "id": 419,
+   "de": "sofort",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hemen, derhal",
+   "mevcutBeispiel": "Warte, ich komme sofort!",
+   "mevcutBeispielTr": "Bekle, hemen geliyorum!",
+   "cakisan": [
+    "gleich (A1)",
+    "umgehend (B2)"
+   ]
+  },
+  {
+   "id": 119,
+   "de": "einmal",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "bir kere, bir defa",
+   "mevcutBeispiel": "Kannst du mir das noch einmal erklären?",
+   "mevcutBeispielTr": "Bunu bana bir kez daha açıklayabilir misin?"
+  }
+ ]
+}

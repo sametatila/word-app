@@ -1,0 +1,533 @@
+{
+ "paket": "c1-014",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 5903,
+   "de": "die Sichtachse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sichtachsen",
+   "mevcutTr": "görüş aksı, bakış ekseni",
+   "mevcutBeispiel": "Der Neubau verstellt die historische Sichtachse zum Dom.",
+   "mevcutBeispielTr": "Yeni bina katedrale uzanan tarihî görüş aksını kapatıyor."
+  },
+  {
+   "id": 5904,
+   "de": "die Monumentalität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "anıtsallık, heybet",
+   "mevcutBeispiel": "Die Monumentalität des Baus wirkt heute eher einschüchternd als erhaben.",
+   "mevcutBeispielTr": "Yapının anıtsallığı bugün yüceden çok ürkütücü geliyor."
+  },
+  {
+   "id": 5905,
+   "de": "der Funktionalismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "işlevselcilik",
+   "mevcutBeispiel": "Der strenge Funktionalismus der Nachkriegszeit übersah das Bedürfnis nach Schönheit.",
+   "mevcutBeispielTr": "Savaş sonrasının katı işlevselciliği güzellik ihtiyacını gözden kaçırdı."
+  },
+  {
+   "id": 5906,
+   "de": "die Postmoderne",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "postmodernizm, postmodern dönem",
+   "mevcutBeispiel": "In der Postmoderne kehrten Farbe und Ironie an die Fassaden zurück.",
+   "mevcutBeispielTr": "Postmodern dönemde renk ve ironi cephelere geri döndü."
+  },
+  {
+   "id": 5907,
+   "de": "die Materialität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "malzeme niteliği, malzemesellik",
+   "mevcutBeispiel": "Die raue Materialität des Betons prägt den ganzen Raum.",
+   "mevcutBeispielTr": "Betonun ham malzeme niteliği bütün mekâna damgasını vuruyor."
+  },
+  {
+   "id": 5908,
+   "de": "die Aufenthaltsqualität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mekânda vakit geçirme niteliği, yaşanabilirlik",
+   "mevcutBeispiel": "Ohne Schatten und Bänke fehlt dem Platz jede Aufenthaltsqualität.",
+   "mevcutBeispielTr": "Gölge ve bank olmadan meydanda vakit geçirilebilecek hiçbir nitelik kalmıyor."
+  },
+  {
+   "id": 5909,
+   "de": "die Barrierefreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "engelsiz erişim, erişilebilirlik",
+   "mevcutBeispiel": "Barrierefreiheit wurde beim Umbau des Bahnhofs endlich mitgedacht.",
+   "mevcutBeispielTr": "Gar yenilenirken engelsiz erişim nihayet hesaba katıldı."
+  },
+  {
+   "id": 5910,
+   "de": "das Moratorium",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Moratorien",
+   "mevcutTr": "moratoryum, geçici durdurma kararı",
+   "mevcutBeispiel": "Der Stadtrat verhängte ein Moratorium für weitere Hochhäuser.",
+   "mevcutBeispielTr": "Belediye meclisi yeni gökdelenler için bir moratoryum ilan etti."
+  },
+  {
+   "id": 5911,
+   "de": "der Baustopp",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Baustopps",
+   "mevcutTr": "inşaatın durdurulması",
+   "mevcutBeispiel": "Ein Fund aus der Römerzeit führte zum sofortigen Baustopp.",
+   "mevcutBeispielTr": "Roma dönemine ait bir buluntu inşaatın derhâl durdurulmasına yol açtı."
+  },
+  {
+   "id": 5912,
+   "de": "die Urbanität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kentlilik, kentsel nitelik",
+   "mevcutBeispiel": "Echte Urbanität entsteht nicht allein durch bauliche Dichte.",
+   "mevcutBeispielTr": "Gerçek kentlilik yalnızca yapısal yoğunlukla oluşmaz."
+  },
+  {
+   "id": 5913,
+   "de": "die Raumordnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mekânsal planlama, bölge düzenlemesi",
+   "mevcutBeispiel": "Die Raumordnung des Landes bremst neue Einkaufszentren auf der grünen Wiese.",
+   "mevcutBeispielTr": "Eyaletin mekânsal planlaması kır alanlarındaki yeni alışveriş merkezlerini frenliyor."
+  },
+  {
+   "id": 5914,
+   "de": "das Erbbaurecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erbbaurechte",
+   "mevcutTr": "üst hakkı, uzun süreli arsa kullanım hakkı",
+   "mevcutBeispiel": "Die Stadt vergibt das Grundstück nur noch im Erbbaurecht.",
+   "mevcutBeispielTr": "Şehir arsayı artık yalnızca üst hakkı yoluyla veriyor."
+  },
+  {
+   "id": 5915,
+   "de": "der Immobilienmarkt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Immobilienmärkte",
+   "mevcutTr": "gayrimenkul piyasası",
+   "mevcutBeispiel": "Der überhitzte Immobilienmarkt treibt selbst Gutverdienende aus der Stadt.",
+   "mevcutBeispielTr": "Aşırı ısınan gayrimenkul piyasası iyi kazananları bile şehirden çıkarıyor."
+  },
+  {
+   "id": 5916,
+   "de": "die Gemeinnützigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kamu yararına olma, kamu yararı statüsü",
+   "mevcutBeispiel": "Mit der Abschaffung der Gemeinnützigkeit verschwand der soziale Wohnungsbau.",
+   "mevcutBeispielTr": "Kamu yararı statüsünün kaldırılmasıyla sosyal konut üretimi de yok oldu."
+  },
+  {
+   "id": 5917,
+   "de": "die Hitzeinsel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hitzeinseln",
+   "mevcutTr": "ısı adası",
+   "mevcutBeispiel": "Dicht bebaute Viertel werden im Sommer zu regelrechten Hitzeinseln.",
+   "mevcutBeispielTr": "Sık yapılaşmış mahalleler yazın adeta birer ısı adasına dönüşüyor."
+  },
+  {
+   "id": 5918,
+   "de": "die Klimaanpassung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iklime uyum",
+   "mevcutBeispiel": "Klimaanpassung heißt in der Stadt vor allem Entsiegeln und Begrünen.",
+   "mevcutBeispielTr": "Kentte iklime uyum, her şeyden önce betonu kaldırmak ve yeşillendirmek demek."
+  },
+  {
+   "id": 5919,
+   "de": "die Verkehrswende",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ulaşım dönüşümü",
+   "mevcutBeispiel": "Ohne Verkehrswende bleibt jede Klimastrategie der Stadt bloßes Papier.",
+   "mevcutBeispielTr": "Ulaşım dönüşümü olmadan şehrin her iklim stratejisi kâğıt üstünde kalır."
+  },
+  {
+   "id": 5920,
+   "de": "der Rückbau",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sökme, kısmi yıkım",
+   "mevcutBeispiel": "Der Rückbau der Stadtautobahn schuf Platz für einen Park.",
+   "mevcutBeispielTr": "Şehir otoyolunun sökülmesi bir parka yer açtı."
+  },
+  {
+   "id": 5921,
+   "de": "die Umnutzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Umnutzungen",
+   "mevcutTr": "yeniden işlevlendirme, işlev değişikliği",
+   "mevcutBeispiel": "Die Umnutzung der Kirche zur Bibliothek stieß auf heftigen Widerstand.",
+   "mevcutBeispielTr": "Kilisenin kütüphane olarak yeniden işlevlendirilmesi sert bir direnişle karşılaştı."
+  },
+  {
+   "id": 5922,
+   "de": "die Konversion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konversionen",
+   "mevcutTr": "sivil kullanıma dönüştürme, dönüşüm",
+   "mevcutBeispiel": "Die Konversion der Kaserne dauert deutlich länger als geplant.",
+   "mevcutBeispielTr": "Kışlanın sivil kullanıma dönüştürülmesi planlanandan epey uzun sürüyor."
+  },
+  {
+   "id": 5923,
+   "de": "die Enteignung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Enteignungen",
+   "mevcutTr": "kamulaştırma, istimlak",
+   "mevcutBeispiel": "Eine Enteignung großer Wohnungskonzerne halten manche Juristen für zulässig.",
+   "mevcutBeispielTr": "Bazı hukukçular büyük konut şirketlerinin kamulaştırılmasını hukuken mümkün görüyor."
+  },
+  {
+   "id": 5924,
+   "de": "der Milieuschutz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sosyal doku koruması, mahalle koruma statüsü",
+   "mevcutBeispiel": "Der Milieuschutz soll die alteingesessenen Mieter im Viertel halten.",
+   "mevcutBeispielTr": "Sosyal doku koruması, eskiden beri oturan kiracıları mahallede tutmayı amaçlıyor."
+  },
+  {
+   "id": 5925,
+   "de": "entwerfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entworfen",
+   "mevcutTr": "tasarlamak, taslağını çizmek",
+   "mevcutBeispiel": "Sie entwarf das Rathaus als bewusst zurückhaltenden Baukörper.",
+   "mevcutBeispielTr": "Belediye binasını bilinçli olarak geri planda duran bir kütle olarak tasarladı.",
+   "cakisan": [
+    "konzipieren (C1)"
+   ]
+  },
+  {
+   "id": 5926,
+   "de": "revitalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat revitalisiert",
+   "mevcutTr": "canlandırmak, yeniden hayat vermek",
+   "mevcutBeispiel": "Kleine Läden sollen das verödete Zentrum wieder revitalisieren.",
+   "mevcutBeispielTr": "Küçük dükkânların ıssızlaşan merkezi yeniden canlandırması bekleniyor.",
+   "cakisan": [
+    "wiederbeleben (C1)"
+   ]
+  },
+  {
+   "id": 5927,
+   "de": "restaurieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat restauriert",
+   "mevcutTr": "restore etmek, aslına uygun onarmak",
+   "mevcutBeispiel": "Die Stuckdecke wurde nach alten Fotografien restauriert.",
+   "mevcutBeispielTr": "Alçı tavan eski fotoğraflara dayanılarak restore edildi."
+  },
+  {
+   "id": 5928,
+   "de": "ausweisen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgewiesen",
+   "mevcutTr": "(alan olarak) ilan etmek, tahsis etmek",
+   "mevcutBeispiel": "Die Gemeinde hat das ganze Ufer als Schutzgebiet ausgewiesen.",
+   "mevcutBeispielTr": "Belediye kıyının tamamını koruma alanı olarak ilan etti.",
+   "cakisan": [
+    "verkünden (C1)"
+   ]
+  },
+  {
+   "id": 5929,
+   "de": "ansiedeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angesiedelt",
+   "mevcutTr": "yerleştirmek, konumlandırmak",
+   "mevcutBeispiel": "Im Erdgeschoss will die Stadt Gewerbe und Cafés ansiedeln.",
+   "mevcutBeispielTr": "Şehir, zemin katta ticari birimler ve kafeler yerleştirmek istiyor.",
+   "cakisan": [
+    "unterbringen (C1)",
+    "aufstellen (A2)",
+    "verstauen (A2)"
+   ]
+  },
+  {
+   "id": 5930,
+   "de": "gliedern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gegliedert",
+   "mevcutTr": "bölümlere ayırmak, düzenlemek",
+   "mevcutBeispiel": "Vorsprünge gliedern die lange Fassade in ruhige Abschnitte.",
+   "mevcutBeispielTr": "Çıkmalar uzun cepheyi sakin bölümlere ayırıyor."
+  },
+  {
+   "id": 5931,
+   "de": "akzentuieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat akzentuiert",
+   "mevcutTr": "vurgulamak, öne çıkarmak (biçim, tasarım yoluyla)",
+   "mevcutBeispiel": "Ein roter Sockel akzentuiert den Eingang des Gebäudes.",
+   "mevcutBeispielTr": "Kırmızı bir kaide binanın girişini öne çıkarıyor.",
+   "cakisan": [
+    "hervorheben (C1)",
+    "betonen (A2)"
+   ]
+  },
+  {
+   "id": 5932,
+   "de": "dominieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat dominiert",
+   "mevcutTr": "hâkim olmak, baskın gelmek",
+   "mevcutBeispiel": "Der Büroturm dominiert die Silhouette der ganzen Innenstadt.",
+   "mevcutBeispielTr": "Ofis kulesi bütün şehir merkezinin siluetine hâkim.",
+   "cakisan": [
+    "vorherrschen (C1)"
+   ]
+  },
+  {
+   "id": 5933,
+   "de": "entkernen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entkernt",
+   "mevcutTr": "içini boşaltmak, iç yapısını sökmek",
+   "mevcutBeispiel": "Das Kaufhaus wurde entkernt und komplett neu aufgeteilt.",
+   "mevcutBeispielTr": "Mağazanın içi tamamen boşaltıldı ve baştan bölümlendi.",
+   "cakisan": [
+    "aushöhlen (C1)"
+   ]
+  },
+  {
+   "id": 5934,
+   "de": "umwidmen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat umgewidmet",
+   "mevcutTr": "tahsis amacını değiştirmek, başka amaca ayırmak",
+   "mevcutBeispiel": "Der Parkplatz wurde kurzerhand zu einer Spielfläche umgewidmet.",
+   "mevcutBeispielTr": "Otopark hiç vakit kaybedilmeden oyun alanı olarak yeniden tahsis edildi."
+  },
+  {
+   "id": 5935,
+   "de": "verwahrlosen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist verwahrlost",
+   "mevcutTr": "bakımsız kalmak, kendi hâline terk edilmek",
+   "mevcutBeispiel": "Die Anlage verwahrloste, seit die Stadt kein Geld mehr hatte.",
+   "mevcutBeispielTr": "Şehrin parası kalmadığından beri tesis bakımsızlığa terk edildi."
+  },
+  {
+   "id": 5936,
+   "de": "verfallen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist verfallen",
+   "mevcutTr": "harabeye dönmek, çökmek",
+   "mevcutBeispiel": "Das Herrenhaus verfiel, bis ein Verein es endlich übernahm.",
+   "mevcutBeispielTr": "Konak, bir dernek nihayet devralana kadar harabeye döndü."
+  },
+  {
+   "id": 5937,
+   "de": "verorten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verortet",
+   "mevcutTr": "konumlandırmak, bir yere oturtmak",
+   "mevcutBeispiel": "Der Kritiker verortet den Bau zwischen Brutalismus und Klassizismus.",
+   "mevcutBeispielTr": "Eleştirmen yapıyı brütalizmle klasisizm arasında bir yere oturtuyor."
+  },
+  {
+   "id": 5938,
+   "de": "deregulieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat dereguliert",
+   "mevcutTr": "kuralsızlaştırmak, serbestleştirmek",
+   "mevcutBeispiel": "Wer den Wohnungsmarkt dereguliert, überlässt ihn allein der Rendite.",
+   "mevcutBeispielTr": "Konut piyasasını kuralsızlaştıran onu tümüyle getiri hesabına terk eder."
+  },
+  {
+   "id": 5939,
+   "de": "städtebaulich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şehircilik açısından, kentsel tasarıma ilişkin",
+   "mevcutBeispiel": "Städtebaulich ist der Entwurf schlüssiger als architektonisch.",
+   "mevcutBeispielTr": "Şehircilik açısından tasarım, mimari açıdan olduğundan daha tutarlı."
+  },
+  {
+   "id": 5940,
+   "de": "maßstäblich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ölçek bakımından, ölçeğe uygun",
+   "mevcutBeispiel": "Der Anbau ist maßstäblich viel zu groß für die enge Gasse.",
+   "mevcutBeispielTr": "Ek yapı, dar sokağın ölçeğine göre fazlasıyla büyük."
+  },
+  {
+   "id": 5941,
+   "de": "kleinteilig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "küçük parçalı, ince dokulu",
+   "mevcutBeispiel": "Die kleinteilige Erdgeschosszone macht die Straße lebendig.",
+   "mevcutBeispielTr": "Küçük birimlerden oluşan zemin kat dokusu sokağı canlı kılıyor."
+  },
+  {
+   "id": 5942,
+   "de": "monoton",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tekdüze, monoton",
+   "mevcutBeispiel": "Die endlosen Reihenhäuser wirken auf Dauer ausgesprochen monoton.",
+   "mevcutBeispielTr": "Sonu gelmeyen sıra evler uzun vadede son derece tekdüze görünüyor.",
+   "cakisan": [
+    "eintönig (B2)"
+   ]
+  },
+  {
+   "id": 5943,
+   "de": "gesichtslos",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kimliksiz, karaktersiz",
+   "mevcutBeispiel": "Zwischen Autobahn und Gewerbepark wirkt der Ort völlig gesichtslos.",
+   "mevcutBeispielTr": "Otoyolla sanayi parkı arasında kalan yer tamamen kimliksiz görünüyor."
+  },
+  {
+   "id": 5944,
+   "de": "autogerecht",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "otomobil odaklı, araca göre düzenlenmiş",
+   "mevcutBeispiel": "Die autogerechte Stadt der Sechzigerjahre gilt heute als Irrweg.",
+   "mevcutBeispielTr": "Altmışlı yılların otomobil odaklı kenti bugün yanlış bir yol sayılıyor."
+  },
+  {
+   "id": 5945,
+   "de": "repräsentativ",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gösterişli, temsil niteliği taşıyan",
+   "mevcutBeispiel": "Das Foyer sollte vor allem repräsentativ wirken.",
+   "mevcutBeispielTr": "Fuayenin her şeyden önce gösterişli durması isteniyordu."
+  },
+  {
+   "id": 5946,
+   "de": "unwirtlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yaşanması güç, ıssız ve soğuk",
+   "mevcutBeispiel": "Bei Wind wird der weite Vorplatz ausgesprochen unwirtlich.",
+   "mevcutBeispielTr": "Rüzgârlı havada geniş ön meydan iyice yaşanmaz hâle geliyor."
+  },
+  {
+   "id": 5947,
+   "de": "wuchtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iri kütleli, ağır ve heybetli",
+   "mevcutBeispiel": "Der wuchtige Sockel erdrückt die zierlichen Nachbarhäuser förmlich.",
+   "mevcutBeispielTr": "İri kütleli kaide, yanındaki narin evleri adeta eziyor."
+  },
+  {
+   "id": 5948,
+   "de": "die Bildungsgerechtigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eğitimde adalet, eğitim eşitliği",
+   "mevcutBeispiel": "Ohne gezielte Förderung bleibt Bildungsgerechtigkeit ein leeres Versprechen.",
+   "mevcutBeispielTr": "Hedefli destek olmadan eğitimde adalet boş bir vaat olarak kalır."
+  },
+  {
+   "id": 5949,
+   "de": "die Bildungsungleichheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bildungsungleichheiten",
+   "mevcutTr": "eğitim eşitsizliği",
+   "mevcutBeispiel": "Die Studie belegt, dass die Bildungsungleichheit seit Jahren kaum abnimmt.",
+   "mevcutBeispielTr": "Araştırma, eğitim eşitsizliğinin yıllardır neredeyse hiç azalmadığını ortaya koyuyor."
+  },
+  {
+   "id": 5950,
+   "de": "der Bildungsaufstieg",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bildungsaufstiege",
+   "mevcutTr": "eğitim yoluyla sosyal yükseliş",
+   "mevcutBeispiel": "Für Kinder aus Arbeiterfamilien bleibt der Bildungsaufstieg die Ausnahme.",
+   "mevcutBeispielTr": "İşçi ailelerinin çocukları için eğitimle yükselmek hâlâ istisna."
+  },
+  {
+   "id": 5951,
+   "de": "die Bildungsexpansion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eğitimin yaygınlaşması, okullaşmanın genişlemesi",
+   "mevcutBeispiel": "Die Bildungsexpansion hat die Zahl der Studierenden vervielfacht.",
+   "mevcutBeispielTr": "Eğitimin yaygınlaşması öğrenci sayısını kat kat artırdı."
+  },
+  {
+   "id": 5952,
+   "de": "die Bildungsrendite",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bildungsrenditen",
+   "mevcutTr": "eğitimin getirisi",
+   "mevcutBeispiel": "Ökonomen berechnen die Bildungsrendite eines zusätzlichen Schuljahres.",
+   "mevcutBeispielTr": "İktisatçılar fazladan bir okul yılının eğitim getirisini hesaplıyor."
+  }
+ ]
+}

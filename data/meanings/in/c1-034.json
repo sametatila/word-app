@@ -1,0 +1,554 @@
+{
+ "paket": "c1-034",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6903,
+   "de": "nominieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat nominiert",
+   "mevcutTr": "aday göstermek",
+   "mevcutBeispiel": "Die Partei nominierte überraschend eine parteilose Kandidatin.",
+   "mevcutBeispielTr": "Parti sürpriz biçimde partisiz bir kadın adayı gösterdi."
+  },
+  {
+   "id": 6904,
+   "de": "entmachten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entmachtet",
+   "mevcutTr": "yetkisiz bırakmak, iktidardan düşürmek",
+   "mevcutBeispiel": "Die Reform entmachtet die Kammer faktisch zugunsten der Regierung.",
+   "mevcutBeispielTr": "Reform, meclisi hükümet lehine fiilen yetkisiz bırakıyor."
+  },
+  {
+   "id": 6905,
+   "de": "aushöhlen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgehöhlt",
+   "mevcutTr": "içini boşaltmak, işlevsiz kılmak",
+   "mevcutBeispiel": "Zahlreiche Ausnahmen höhlen den Schutz der Verfassung nach und nach aus.",
+   "mevcutBeispielTr": "Sayısız istisna, anayasanın koruyuculuğunu yavaş yavaş içten boşaltıyor.",
+   "cakisan": [
+    "entkernen (C1)"
+   ]
+  },
+  {
+   "id": 6906,
+   "de": "parlamentarisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "parlamenter, meclise ilişkin",
+   "mevcutBeispiel": "Der Untersuchungsausschuss ist ein scharfes parlamentarisches Kontrollinstrument.",
+   "mevcutBeispielTr": "Araştırma komisyonu keskin bir parlamenter denetim aracıdır."
+  },
+  {
+   "id": 6907,
+   "de": "hoheitlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kamu otoritesine dayalı, egemenlik yetkisiyle",
+   "mevcutBeispiel": "Diese Aufgaben darf allein der Staat hoheitlich wahrnehmen.",
+   "mevcutBeispielTr": "Bu görevleri yalnızca devlet kamu otoritesi olarak yerine getirebilir."
+  },
+  {
+   "id": 6908,
+   "de": "weisungsgebunden",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "talimata bağlı",
+   "mevcutBeispiel": "Die Staatsanwaltschaft ist gegenüber dem Justizministerium weisungsgebunden.",
+   "mevcutBeispielTr": "Savcılık, Adalet Bakanlığı'nın talimatlarına bağlıdır."
+  },
+  {
+   "id": 6909,
+   "de": "populistisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "popülist",
+   "mevcutBeispiel": "Mit populistischen Parolen lassen sich komplexe Probleme nicht lösen.",
+   "mevcutBeispielTr": "Popülist sloganlarla karmaşık sorunlar çözülemez."
+  },
+  {
+   "id": 6910,
+   "de": "das Erinnerungsvermögen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hatırlama yetisi, anımsama gücü",
+   "mevcutBeispiel": "Mit zunehmendem Alter lässt das Erinnerungsvermögen allmählich nach.",
+   "mevcutBeispielTr": "Yaş ilerledikçe hatırlama yetisi yavaş yavaş zayıflar."
+  },
+  {
+   "id": 6911,
+   "de": "die Verzerrung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verzerrungen",
+   "mevcutTr": "çarpıtma, sapma",
+   "mevcutBeispiel": "Systematische Verzerrungen im Denken lassen sich kaum vollständig vermeiden.",
+   "mevcutBeispielTr": "Düşüncedeki sistematik sapmalardan tümüyle kaçınmak neredeyse imkânsızdır."
+  },
+  {
+   "id": 6912,
+   "de": "die Voreingenommenheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Voreingenommenheiten",
+   "mevcutTr": "peşin hüküm, taraflılık",
+   "mevcutBeispiel": "Die Studie untersucht, wie Voreingenommenheit die Bewertung von Bewerbern verfälscht.",
+   "mevcutBeispielTr": "Çalışma, peşin hükmün aday değerlendirmesini nasıl bozduğunu inceliyor."
+  },
+  {
+   "id": 6913,
+   "de": "die Entscheidungsfindung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Entscheidungsfindungen",
+   "mevcutTr": "karar verme süreci",
+   "mevcutBeispiel": "Unter Zeitdruck folgt die Entscheidungsfindung eher einfachen Faustregeln.",
+   "mevcutBeispielTr": "Zaman baskısı altında karar verme süreci daha çok basit kestirmeleri izler."
+  },
+  {
+   "id": 6914,
+   "de": "das Bewusstsein",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bilinç, farkındalık",
+   "mevcutBeispiel": "Wie aus neuronaler Aktivität Bewusstsein entsteht, ist bis heute ungeklärt.",
+   "mevcutBeispielTr": "Nöral etkinlikten bilincin nasıl doğduğu bugün hâlâ aydınlatılamamıştır."
+  },
+  {
+   "id": 6915,
+   "de": "das Bedürfnis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bedürfnisse",
+   "mevcutTr": "ihtiyaç, gereksinim",
+   "mevcutBeispiel": "Das Bedürfnis nach Anerkennung treibt viele Menschen unbemerkt an.",
+   "mevcutBeispielTr": "Takdir edilme ihtiyacı birçok insanı fark ettirmeden yönlendirir.",
+   "cakisan": [
+    "der Bedarf (B1)"
+   ]
+  },
+  {
+   "id": 6916,
+   "de": "der Reiz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Reize",
+   "mevcutTr": "uyaran, uyarıcı",
+   "mevcutBeispiel": "Das Gehirn filtert die meisten Reize aus, bevor sie bewusst werden.",
+   "mevcutBeispielTr": "Beyin, uyaranların çoğunu bilince ulaşmadan önce süzer."
+  },
+  {
+   "id": 6917,
+   "de": "der Denkfehler",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Denkfehler",
+   "mevcutTr": "düşünme hatası, akıl yürütme yanlışı",
+   "mevcutBeispiel": "Dieser Denkfehler tritt selbst bei erfahrenen Fachleuten regelmäßig auf.",
+   "mevcutBeispielTr": "Bu düşünme hatası deneyimli uzmanlarda bile düzenli olarak görülür."
+  },
+  {
+   "id": 6918,
+   "de": "das Urteilsvermögen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "muhakeme yetisi, yargı gücü",
+   "mevcutBeispiel": "Starke Emotionen trüben das Urteilsvermögen mehr, als uns lieb ist.",
+   "mevcutBeispielTr": "Güçlü duygular muhakeme yetisini hoşumuza gidenden fazla bulandırır."
+  },
+  {
+   "id": 6919,
+   "de": "das Selbstbild",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Selbstbilder",
+   "mevcutTr": "benlik imgesi, kendilik algısı",
+   "mevcutBeispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein.",
+   "mevcutBeispielTr": "Onun benlik imgesi meslektaşlarının izlenimiyle pek örtüşmüyor."
+  },
+  {
+   "id": 6920,
+   "de": "die Identität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Identitäten",
+   "mevcutTr": "kimlik",
+   "mevcutBeispiel": "In der Jugend wird die eigene Identität immer wieder neu ausgehandelt.",
+   "mevcutBeispielTr": "Gençlikte kişinin kendi kimliği durmadan yeniden müzakere edilir.",
+   "cakisan": [
+    "der Ausweis (A1)"
+   ]
+  },
+  {
+   "id": 6921,
+   "de": "die Konditionierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konditionierungen",
+   "mevcutTr": "koşullanma, şartlanma",
+   "mevcutBeispiel": "Pawlow zeigte die Konditionierung anhand eines einfachen Glockensignals.",
+   "mevcutBeispielTr": "Pavlov koşullanmayı basit bir zil sinyaliyle gösterdi."
+  },
+  {
+   "id": 6922,
+   "de": "die Verstärkung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verstärkungen",
+   "mevcutTr": "pekiştirme, takviye",
+   "mevcutBeispiel": "Positive Verstärkung wirkt langfristig besser als jede Form von Strafe.",
+   "mevcutBeispielTr": "Olumlu pekiştirme uzun vadede her tür cezadan daha iyi işler."
+  },
+  {
+   "id": 6923,
+   "de": "das Belohnungssystem",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Belohnungssysteme",
+   "mevcutTr": "ödül sistemi",
+   "mevcutBeispiel": "Soziale Netzwerke sprechen gezielt das Belohnungssystem im Gehirn an.",
+   "mevcutBeispielTr": "Sosyal ağlar beyindeki ödül sistemini bilinçli olarak hedefler."
+  },
+  {
+   "id": 6924,
+   "de": "die Neurose",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Neurosen",
+   "mevcutTr": "nevroz",
+   "mevcutBeispiel": "Der Begriff Neurose gilt in der heutigen Diagnostik als überholt.",
+   "mevcutBeispielTr": "Nevroz kavramı bugünkü tanı sisteminde geçerliliğini yitirmiş sayılır."
+  },
+  {
+   "id": 6925,
+   "de": "die Bewältigungsstrategie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bewältigungsstrategien",
+   "mevcutTr": "başa çıkma stratejisi",
+   "mevcutBeispiel": "Humor ist für viele eine erstaunlich wirksame Bewältigungsstrategie.",
+   "mevcutBeispielTr": "Mizah birçok kişi için şaşırtıcı derecede etkili bir başa çıkma stratejisidir."
+  },
+  {
+   "id": 6926,
+   "de": "der Abwehrmechanismus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abwehrmechanismen",
+   "mevcutTr": "savunma mekanizması",
+   "mevcutBeispiel": "Leugnen ist ein Abwehrmechanismus, der kurzfristig entlastet.",
+   "mevcutBeispielTr": "İnkâr, kısa vadede rahatlatan bir savunma mekanizmasıdır."
+  },
+  {
+   "id": 6927,
+   "de": "die Projektion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Projektionen",
+   "mevcutTr": "yansıtma",
+   "mevcutBeispiel": "Wer ständig Neid unterstellt, betreibt womöglich selbst eine Projektion.",
+   "mevcutBeispielTr": "Sürekli kıskançlık isnat eden kişi belki de kendisi yansıtma yapıyordur."
+  },
+  {
+   "id": 6928,
+   "de": "die Übertragung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Übertragungen",
+   "mevcutTr": "aktarım",
+   "mevcutBeispiel": "In der Analyse richtet sich die Übertragung oft auf den Therapeuten.",
+   "mevcutBeispielTr": "Analizde aktarım çoğu zaman terapiste yönelir.",
+   "cakisan": [
+    "die Überlieferung (C1)"
+   ]
+  },
+  {
+   "id": 6929,
+   "de": "die Verhaltenstherapie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verhaltenstherapien",
+   "mevcutTr": "davranış terapisi",
+   "mevcutBeispiel": "Die Verhaltenstherapie setzt weniger an der Kindheit als an aktuellen Mustern an.",
+   "mevcutBeispielTr": "Davranış terapisi çocukluktan çok güncel örüntülere odaklanır."
+  },
+  {
+   "id": 6930,
+   "de": "die Psychoanalyse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "psikanaliz",
+   "mevcutBeispiel": "Die Psychoanalyse hat unser Bild vom Seelenleben nachhaltig verändert.",
+   "mevcutBeispielTr": "Psikanaliz, ruhsal yaşama dair bakışımızı kalıcı biçimde değiştirdi."
+  },
+  {
+   "id": 6931,
+   "de": "das Krankheitsbild",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Krankheitsbilder",
+   "mevcutTr": "hastalık tablosu, klinik tablo",
+   "mevcutBeispiel": "Das Krankheitsbild äußert sich bei Kindern anders als bei Erwachsenen.",
+   "mevcutBeispielTr": "Hastalık tablosu çocuklarda yetişkinlerdekinden farklı belirti verir."
+  },
+  {
+   "id": 6932,
+   "de": "die Bindungstheorie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bindungstheorien",
+   "mevcutTr": "bağlanma kuramı",
+   "mevcutBeispiel": "Die Bindungstheorie erklärt, warum frühe Beziehungen so prägend wirken.",
+   "mevcutBeispielTr": "Bağlanma kuramı erken ilişkilerin neden bu denli belirleyici olduğunu açıklar."
+  },
+  {
+   "id": 6933,
+   "de": "die Ablösung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ablösungen",
+   "mevcutTr": "ayrışma, kopuş",
+   "mevcutBeispiel": "Die Ablösung vom Elternhaus verläuft selten ohne Konflikte.",
+   "mevcutBeispielTr": "Aile evinden ayrışma nadiren çatışmasız geçer.",
+   "cakisan": [
+    "die Segregation (C1)",
+    "die Zersetzung (C1)",
+    "die Verwitterung (C1)"
+   ]
+  },
+  {
+   "id": 6934,
+   "de": "die Anpassungsfähigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "uyum yeteneği, uyum sağlama becerisi",
+   "mevcutBeispiel": "Die Anpassungsfähigkeit des Menschen an neue Umgebungen ist bemerkenswert.",
+   "mevcutBeispielTr": "İnsanın yeni ortamlara uyum yeteneği dikkate değerdir."
+  },
+  {
+   "id": 6935,
+   "de": "die Widerstandsfähigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dayanıklılık, psikolojik sağlamlık",
+   "mevcutBeispiel": "Stabile Beziehungen stärken die psychische Widerstandsfähigkeit erheblich.",
+   "mevcutBeispielTr": "İstikrarlı ilişkiler ruhsal dayanıklılığı belirgin biçimde güçlendirir.",
+   "cakisan": [
+    "die Belastbarkeit (B2)",
+    "die Resilienz (C1)",
+    "die Ausdauer (B2)"
+   ]
+  },
+  {
+   "id": 6936,
+   "de": "die Selbstregulation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "öz düzenleme, kendini düzenleme",
+   "mevcutBeispiel": "Kinder lernen Selbstregulation vor allem durch verlässliche Bezugspersonen.",
+   "mevcutBeispielTr": "Çocuklar öz düzenlemeyi en çok güvenilir bakım verenler aracılığıyla öğrenir."
+  },
+  {
+   "id": 6937,
+   "de": "die Impulskontrolle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dürtü kontrolü",
+   "mevcutBeispiel": "Müdigkeit schwächt die Impulskontrolle deutlich stärker als vermutet.",
+   "mevcutBeispielTr": "Yorgunluk dürtü kontrolünü sanılandan çok daha fazla zayıflatır."
+  },
+  {
+   "id": 6938,
+   "de": "die Frustration",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Frustrationen",
+   "mevcutTr": "hayal kırıklığı, engellenmişlik",
+   "mevcutBeispiel": "Anhaltende Frustration schlägt nicht selten in Aggression um.",
+   "mevcutBeispielTr": "Süregelen engellenmişlik duygusu çoğu zaman saldırganlığa dönüşür.",
+   "cakisan": [
+    "die Enttäuschung (B1)"
+   ]
+  },
+  {
+   "id": 6939,
+   "de": "der Affekt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Affekte",
+   "mevcutTr": "duygulanım, ani duygu patlaması",
+   "mevcutBeispiel": "Im Affekt getroffene Entscheidungen bereut man meistens später.",
+   "mevcutBeispielTr": "Ani duygu patlamasıyla verilen kararlardan çoğunlukla sonradan pişman olunur."
+  },
+  {
+   "id": 6940,
+   "de": "die Emotion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Emotionen",
+   "mevcutTr": "duygu",
+   "mevcutBeispiel": "Emotionen liefern Informationen, die dem Verstand allein entgehen.",
+   "mevcutBeispielTr": "Duygular, yalnızca akla gizli kalan bilgiler sunar.",
+   "cakisan": [
+    "das Gefühl (B1)"
+   ]
+  },
+  {
+   "id": 6941,
+   "de": "die Abneigung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abneigungen",
+   "mevcutTr": "hoşlanmama, antipati, tiksinti",
+   "mevcutBeispiel": "Seine Abneigung gegen große Gruppen wurde mit den Jahren stärker.",
+   "mevcutBeispielTr": "Kalabalık gruplara karşı hoşnutsuzluğu yıllar içinde arttı."
+  },
+  {
+   "id": 6942,
+   "de": "die Scham",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "utanç",
+   "mevcutBeispiel": "Scham hindert viele Betroffene daran, überhaupt Hilfe zu suchen.",
+   "mevcutBeispielTr": "Utanç, birçok kişinin yardım aramasının önüne geçer."
+  },
+  {
+   "id": 6943,
+   "de": "abspeichern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgespeichert",
+   "mevcutTr": "kaydetmek, belleğe almak",
+   "mevcutBeispiel": "Das Gehirn speichert vor allem emotional geladene Szenen dauerhaft ab.",
+   "mevcutBeispielTr": "Beyin özellikle duygusal yüklü sahneleri kalıcı olarak belleğe alır.",
+   "cakisan": [
+    "speichern (A2)",
+    "verzeichnen (B2)",
+    "erfassen (B2)"
+   ]
+  },
+  {
+   "id": 6944,
+   "de": "ausblenden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgeblendet",
+   "mevcutTr": "görmezden gelmek, dikkate almamak",
+   "mevcutBeispiel": "Im Gespräch blenden wir störende Geräusche fast vollständig aus.",
+   "mevcutBeispielTr": "Konuşma sırasında rahatsız edici sesleri neredeyse tümüyle dikkate almayız."
+  },
+  {
+   "id": 6945,
+   "de": "steuern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gesteuert",
+   "mevcutTr": "yönlendirmek, yönetmek",
+   "mevcutBeispiel": "Erwartungen steuern die Wahrnehmung stärker, als uns bewusst ist.",
+   "mevcutBeispielTr": "Beklentiler algıyı farkında olduğumuzdan daha güçlü yönlendirir."
+  },
+  {
+   "id": 6946,
+   "de": "hemmen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gehemmt",
+   "mevcutTr": "engellemek, ketlemek",
+   "mevcutBeispiel": "Zu strenge Kritik hemmt die Kreativität von Schülern erheblich.",
+   "mevcutBeispielTr": "Aşırı sert eleştiri öğrencilerin yaratıcılığını ciddi ölçüde ketler.",
+   "cakisan": [
+    "behindern (B1)",
+    "unterbinden (C1)",
+    "sperren (B2)",
+    "blockieren (B2)"
+   ]
+  },
+  {
+   "id": 6947,
+   "de": "hervorrufen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat hervorgerufen",
+   "mevcutTr": "meydana getirmek, doğurmak",
+   "mevcutBeispiel": "Widersprüchliche Botschaften rufen bei Kindern große Verunsicherung hervor.",
+   "mevcutBeispielTr": "Çelişkili mesajlar çocuklarda büyük bir güvensizlik doğurur."
+  },
+  {
+   "id": 6948,
+   "de": "bewirken",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bewirkt",
+   "mevcutTr": "yol açmak, sağlamak, meydana getirmek",
+   "mevcutBeispiel": "Schon kleine Veränderungen im Alltag bewirken oft erstaunlich viel.",
+   "mevcutBeispielTr": "Günlük hayattaki küçük değişiklikler bile çoğu zaman şaşırtıcı ölçüde etki eder."
+  },
+  {
+   "id": 6949,
+   "de": "sich hineinversetzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich hineinversetzt",
+   "mevcutTr": "kendini birinin yerine koymak",
+   "mevcutBeispiel": "Erst ab etwa vier Jahren können Kinder sich in andere hineinversetzen.",
+   "mevcutBeispielTr": "Çocuklar ancak dört yaş civarında kendilerini başkasının yerine koyabilir."
+  },
+  {
+   "id": 6950,
+   "de": "deuten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gedeutet",
+   "mevcutTr": "yorumlamak, anlamlandırmak",
+   "mevcutBeispiel": "Dasselbe Verhalten wird je nach Erwartung völlig anders gedeutet.",
+   "mevcutBeispielTr": "Aynı davranış, beklentiye göre bambaşka yorumlanır.",
+   "cakisan": [
+    "interpretieren (C1)",
+    "kommentieren (C1)"
+   ]
+  },
+  {
+   "id": 6951,
+   "de": "überschätzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überschätzt",
+   "mevcutTr": "abartmak, olduğundan fazla görmek",
+   "mevcutBeispiel": "Anfänger überschätzen ihr Können häufig, Fachleute eher das Gegenteil.",
+   "mevcutBeispielTr": "Yeni başlayanlar becerilerini sıkça abartır, uzmanlar ise tersini yapar.",
+   "cakisan": [
+    "übertreiben (B1)",
+    "dramatisieren (C1)",
+    "aufbauschen (C1)"
+   ]
+  },
+  {
+   "id": 6952,
+   "de": "zwanghaft",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "takıntılı, saplantılı",
+   "mevcutBeispiel": "Sein zwanghaftes Kontrollieren der Türen kostete ihn jeden Abend Zeit.",
+   "mevcutBeispielTr": "Kapıları takıntılı biçimde kontrol etmesi her akşam zamanını alıyordu."
+  }
+ ]
+}

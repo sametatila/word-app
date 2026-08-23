@@ -1,0 +1,557 @@
+{
+ "paket": "b2-003",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 3757,
+   "de": "die Vorspeise",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Vorspeisen",
+   "mevcutTr": "ordövr, ön yemek",
+   "mevcutBeispiel": "Als Vorspeise nehme ich heute einen Salat.",
+   "mevcutBeispielTr": "Başlangıç olarak bugün salata alacağım."
+  },
+  {
+   "id": 3422,
+   "de": "das Aussterben",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "nur Singular",
+   "mevcutTr": "soyu tükenme",
+   "mevcutBeispiel": "Der Klimawandel beschleunigt das Aussterben vieler Arten.",
+   "mevcutBeispielTr": "İklim değişikliği birçok türün yok oluşunu hızlandırıyor."
+  },
+  {
+   "id": 3867,
+   "de": "formulieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "formuliert, hat formuliert",
+   "mevcutTr": "ifade etmek, dile getirmek",
+   "mevcutBeispiel": "Sie hat ihre Kritik sehr diplomatisch formuliert.",
+   "mevcutBeispielTr": "Eleştirisini çok diplomatik bir dille ifade etti."
+  },
+  {
+   "id": 3272,
+   "de": "der Wandel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "değişim, dönüşüm",
+   "mevcutBeispiel": "Der gesellschaftliche Wandel verläuft rasant.",
+   "mevcutBeispielTr": "Toplumsal dönüşüm baş döndürücü bir hızla ilerliyor."
+  },
+  {
+   "id": 3196,
+   "de": "der Umsatz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Umsätze",
+   "mevcutTr": "ciro",
+   "mevcutBeispiel": "Der Umsatz ist im letzten Quartal um zehn Prozent gestiegen.",
+   "mevcutBeispielTr": "Ciro geçen çeyrekte yüzde on arttı."
+  },
+  {
+   "id": 3741,
+   "de": "der Mietvertrag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Mietverträge",
+   "mevcutTr": "kira sözleşmesi",
+   "mevcutBeispiel": "Wir haben gestern den Mietvertrag unterschrieben.",
+   "mevcutBeispielTr": "Dün kira sözleşmesini imzaladık."
+  },
+  {
+   "id": 3374,
+   "de": "rücksichtsvoll",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "saygılı, düşünceli",
+   "mevcutBeispiel": "Sein rücksichtsvolles Verhalten wurde von allen geschätzt.",
+   "mevcutBeispielTr": "Düşünceli davranışları herkes tarafından takdir edildi.",
+   "cakisan": [
+    "respektvoll (A2)"
+   ]
+  },
+  {
+   "id": 3369,
+   "de": "zurückhaltend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çekingen, mesafeli",
+   "mevcutBeispiel": "Bei Fremden verhält er sich eher zurückhaltend.",
+   "mevcutBeispielTr": "Yabancıların yanında daha çok çekingen davranır.",
+   "cakisan": [
+    "zaghaft (C1)"
+   ]
+  },
+  {
+   "id": 3433,
+   "de": "die Hypothese",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Hypothesen",
+   "mevcutTr": "hipotez, varsayım",
+   "mevcutBeispiel": "Die Wissenschaftler wollen ihre Hypothese überprüfen.",
+   "mevcutBeispielTr": "Bilim insanları hipotezlerini sınamak istiyor."
+  },
+  {
+   "id": 3283,
+   "de": "der Abgeordnete",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Abgeordneten",
+   "mevcutTr": "milletvekili",
+   "mevcutBeispiel": "Der Abgeordnete stimmte gegen den Gesetzentwurf.",
+   "mevcutBeispielTr": "Milletvekili kanun tasarısına karşı oy kullandı."
+  },
+  {
+   "id": 3838,
+   "de": "der Dolmetscher",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Dolmetscher",
+   "mevcutTr": "tercüman",
+   "mevcutBeispiel": "Beim Amt stand ein Dolmetscher zur Verfügung.",
+   "mevcutBeispielTr": "Dairede bir tercüman hazır bulunuyordu."
+  },
+  {
+   "id": 3326,
+   "de": "der Staatsbürger",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Staatsbürger",
+   "mevcutTr": "vatandaş, yurttaş",
+   "mevcutBeispiel": "Jeder Staatsbürger hat das Recht auf freie Meinungsäußerung.",
+   "mevcutBeispielTr": "Her vatandaşın düşüncesini özgürce ifade etme hakkı vardır.",
+   "cakisan": [
+    "der Bürger (B1)",
+    "die Bürgerin (B1)"
+   ]
+  },
+  {
+   "id": 3389,
+   "de": "das Selbstbewusstsein",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "özgüven, öz farkındalık",
+   "mevcutBeispiel": "Positive Erfahrungen stärken das Selbstbewusstsein.",
+   "mevcutBeispielTr": "Olumlu deneyimler özgüveni güçlendirir.",
+   "cakisan": [
+    "die Selbstsicherheit (B2)",
+    "das Selbstvertrauen (B2)"
+   ]
+  },
+  {
+   "id": 3381,
+   "de": "die Versöhnung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Versöhnungen",
+   "mevcutTr": "barışma",
+   "mevcutBeispiel": "Nach Jahren des Streits kam es endlich zur Versöhnung.",
+   "mevcutBeispielTr": "Yıllar süren kavganın ardından sonunda barıştılar."
+  },
+  {
+   "id": 3328,
+   "de": "die Erschöpfung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tükenme, bitkinlik",
+   "mevcutBeispiel": "Nach der Prüfungsphase litt sie unter starker Erschöpfung.",
+   "mevcutBeispielTr": "Sınav döneminin ardından ağır bir bitkinlik yaşadı."
+  },
+  {
+   "id": 3212,
+   "de": "die Zuständigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Zuständigkeiten",
+   "mevcutTr": "yetki alanı, sorumluluk",
+   "mevcutBeispiel": "Die Zuständigkeiten der einzelnen Abteilungen sind klar geregelt.",
+   "mevcutBeispielTr": "Her bölümün yetki alanları açıkça düzenlenmiş durumda.",
+   "cakisan": [
+    "der Zuständigkeitsbereich (C1)"
+   ]
+  },
+  {
+   "id": 3810,
+   "de": "einschätzen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "schätzt ein, hat eingeschätzt",
+   "mevcutTr": "değerlendirmek, tahmin etmek",
+   "mevcutBeispiel": "Experten schätzen die aktuelle Lage als kritisch ein.",
+   "mevcutBeispielTr": "Uzmanlar mevcut durumu kritik olarak değerlendiriyor.",
+   "cakisan": [
+    "beurteilen (B2)",
+    "auswerten (B2)",
+    "verwerten (B2)",
+    "bewerten (A2)"
+   ]
+  },
+  {
+   "id": 3340,
+   "de": "der Rückfall",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rückfälle",
+   "mevcutTr": "nüksetme, tekrarlama",
+   "mevcutBeispiel": "Ein Rückfall in alte Gewohnheiten ist keine Seltenheit.",
+   "mevcutBeispielTr": "Eski alışkanlıklara geri dönmek hiç de nadir değildir."
+  },
+  {
+   "id": 3830,
+   "de": "die Ausdrucksweise",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausdrucksweisen",
+   "mevcutTr": "ifade tarzı, anlatım biçimi",
+   "mevcutBeispiel": "Seine Ausdrucksweise wirkt sehr gewählt und höflich.",
+   "mevcutBeispielTr": "İfade tarzı çok seçkin ve kibar."
+  },
+  {
+   "id": 3344,
+   "de": "genesen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "genest, ist genesen",
+   "mevcutTr": "iyileşmek, şifa bulmak",
+   "mevcutBeispiel": "Der Patient ist vollständig genesen.",
+   "mevcutBeispielTr": "Hasta tamamen iyileşti.",
+   "cakisan": [
+    "sich bessern (B2)"
+   ]
+  },
+  {
+   "id": 3359,
+   "de": "die Zurückhaltung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çekingenlik, temkinlilik",
+   "mevcutBeispiel": "Seine Zurückhaltung wirkte auf manche unnahbar.",
+   "mevcutBeispielTr": "Çekingenliği bazılarına mesafeli göründü."
+  },
+  {
+   "id": 3767,
+   "de": "der Zeitvertreib",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "vakit geçirme, eğlence",
+   "mevcutBeispiel": "Kartenspielen ist bei uns ein beliebter Zeitvertreib.",
+   "mevcutBeispielTr": "Kâğıt oynamak bizde sevilen bir vakit geçirme yoludur."
+  },
+  {
+   "id": 3845,
+   "de": "die Bewertung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bewertungen",
+   "mevcutTr": "değerlendirme, notlandırma",
+   "mevcutBeispiel": "Die Bewertung der Hausarbeit erfolgt nach festen Kriterien.",
+   "mevcutBeispielTr": "Dönem ödevi belirli ölçütlere göre notlandırılır.",
+   "cakisan": [
+    "die Auswertung (C1)",
+    "die Einschätzung (B2)",
+    "die Beurteilung (B2)",
+    "die Evaluierung (C1)",
+    "die Begutachtung (C1)"
+   ]
+  },
+  {
+   "id": 3358,
+   "de": "verzweifeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "verzweifelt, ist verzweifelt",
+   "mevcutTr": "umutsuzluğa kapılmak",
+   "mevcutBeispiel": "Bitte verzweifle nicht an dieser Aufgabe.",
+   "mevcutBeispielTr": "Lütfen bu görev yüzünden umutsuzluğa kapılma."
+  },
+  {
+   "id": 3452,
+   "de": "überfüllt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "aşırı kalabalık",
+   "mevcutBeispiel": "Die Bahn war zur Stoßzeit völlig überfüllt.",
+   "mevcutBeispielTr": "Tren, yoğun saatte tıklım tıklımdı."
+  },
+  {
+   "id": 3881,
+   "de": "ausführlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ayrıntılı, detaylı",
+   "mevcutBeispiel": "Bitte beschreiben Sie Ihre Motivation ausführlich.",
+   "mevcutBeispielTr": "Lütfen motivasyonunuzu ayrıntılı biçimde anlatın."
+  },
+  {
+   "id": 3428,
+   "de": "gedeihen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "gedeiht, ist gediehen",
+   "mevcutTr": "gelişmek, serpilmek",
+   "mevcutBeispiel": "In diesem Klima gedeihen die Pflanzen besonders gut.",
+   "mevcutBeispielTr": "Bu iklimde bitkiler özellikle iyi gelişiyor."
+  },
+  {
+   "id": 3443,
+   "de": "die Infrastruktur",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Infrastrukturen",
+   "mevcutTr": "altyapı",
+   "mevcutBeispiel": "Die Stadt investiert in eine moderne Infrastruktur.",
+   "mevcutBeispielTr": "Şehir modern bir altyapıya yatırım yapıyor."
+  },
+  {
+   "id": 3280,
+   "de": "die Opposition",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "muhalefet",
+   "mevcutBeispiel": "Die Opposition kritisiert den Gesetzentwurf scharf.",
+   "mevcutBeispielTr": "Muhalefet kanun tasarısını sert biçimde eleştiriyor."
+  },
+  {
+   "id": 3866,
+   "de": "missverstehen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "missversteht, hat missverstanden",
+   "mevcutTr": "yanlış anlamak",
+   "mevcutBeispiel": "Bitte entschuldigen Sie, ich habe Sie missverstanden.",
+   "mevcutBeispielTr": "Kusura bakmayın, sizi yanlış anlamışım."
+  },
+  {
+   "id": 3220,
+   "de": "der Lieferant",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Lieferanten",
+   "mevcutTr": "tedarikçi",
+   "mevcutBeispiel": "Wegen Lieferengpässen sucht die Firma einen neuen Lieferanten.",
+   "mevcutBeispielTr": "Tedarik sıkıntıları yüzünden firma yeni bir tedarikçi arıyor.",
+   "cakisan": [
+    "der Zulieferer (B2)"
+   ]
+  },
+  {
+   "id": 3863,
+   "de": "die Verlängerung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verlängerungen",
+   "mevcutTr": "uzatma, süre uzatımı",
+   "mevcutBeispiel": "Für die Verlängerung des Visums braucht man mehrere Unterlagen.",
+   "mevcutBeispielTr": "Vize uzatması için birkaç belge gerekiyor."
+  },
+  {
+   "id": 3376,
+   "de": "verlässlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "güvenilir",
+   "mevcutBeispiel": "Ein verlässlicher Freund steht auch in schweren Zeiten bei.",
+   "mevcutBeispielTr": "Güvenilir bir dost zor zamanlarda da yanında olur.",
+   "cakisan": [
+    "zuverlässig (B1)",
+    "glaubwürdig (B2)"
+   ]
+  },
+  {
+   "id": 3271,
+   "de": "die Solidarität",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "dayanışma",
+   "mevcutBeispiel": "Solidarität zeigt sich besonders in schwierigen Zeiten.",
+   "mevcutBeispielTr": "Dayanışma kendini en çok zor zamanlarda gösterir."
+  },
+  {
+   "id": 3224,
+   "de": "die Bilanz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Bilanzen",
+   "mevcutTr": "bilanço",
+   "mevcutBeispiel": "Die Bilanz zeigt deutlich, dass die Firma profitabel arbeitet.",
+   "mevcutBeispielTr": "Bilanço, şirketin kârlı çalıştığını açıkça gösteriyor."
+  },
+  {
+   "id": 3227,
+   "de": "der Investor",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Investoren",
+   "mevcutTr": "yatırımcı",
+   "mevcutBeispiel": "Ein ausländischer Investor will das Start-up finanziell unterstützen.",
+   "mevcutBeispielTr": "Yabancı bir yatırımcı, girişime finansal destek vermek istiyor."
+  },
+  {
+   "id": 3768,
+   "de": "die Mitgliedschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Mitgliedschaften",
+   "mevcutTr": "üyelik",
+   "mevcutBeispiel": "Ich habe eine Mitgliedschaft im Fitnessstudio abgeschlossen.",
+   "mevcutBeispielTr": "Spor salonuna üyelik yaptırdım."
+  },
+  {
+   "id": 3324,
+   "de": "die Kompetenz",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Kompetenzen",
+   "mevcutTr": "yetkinlik, beceri",
+   "mevcutBeispiel": "Digitale Kompetenzen werden in der Schule immer wichtiger.",
+   "mevcutBeispielTr": "Dijital yetkinlikler okulda giderek önem kazanıyor."
+  },
+  {
+   "id": 3875,
+   "de": "durchfallen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "fällt durch, ist durchgefallen",
+   "mevcutTr": "başarısız olmak, kalmak",
+   "mevcutBeispiel": "Leider ist sie bei der Klausur durchgefallen.",
+   "mevcutBeispielTr": "Maalesef yazılı sınavda kaldı.",
+   "cakisan": [
+    "scheitern an (B2)",
+    "scheitern (B2)"
+   ]
+  },
+  {
+   "id": 3400,
+   "de": "der Algorithmus",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Algorithmen",
+   "mevcutTr": "algoritma",
+   "mevcutBeispiel": "Der Algorithmus sortiert die Daten in wenigen Sekunden.",
+   "mevcutBeispielTr": "Algoritma verileri birkaç saniyede sıralıyor."
+  },
+  {
+   "id": 3749,
+   "de": "die Zutat",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Zutaten",
+   "mevcutTr": "malzeme (yemek için)",
+   "mevcutBeispiel": "Für den Kuchen brauchen wir noch einige Zutaten.",
+   "mevcutBeispielTr": "Kek için birkaç malzeme daha lazım.",
+   "cakisan": [
+    "das Material (B1)",
+    "der Werkstoff (B2)"
+   ]
+  },
+  {
+   "id": 3373,
+   "de": "einfühlsam",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "anlayışlı, empatik",
+   "mevcutBeispiel": "Die Therapeutin ging sehr einfühlsam mit ihr um.",
+   "mevcutBeispielTr": "Terapist ona çok anlayışlı davrandı.",
+   "cakisan": [
+    "verständnisvoll (A2)"
+   ]
+  },
+  {
+   "id": 3341,
+   "de": "das Wohlbefinden",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "iyi hissetme hâli",
+   "mevcutBeispiel": "Ausreichend Schlaf fördert das allgemeine Wohlbefinden.",
+   "mevcutBeispielTr": "Yeterli uyku, genel olarak iyi hissetmeyi destekler."
+  },
+  {
+   "id": 3809,
+   "de": "vernachlässigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "vernachlässigt, hat vernachlässigt",
+   "mevcutTr": "ihmal etmek",
+   "mevcutBeispiel": "Er vernachlässigt seine Gesundheit wegen der Arbeit.",
+   "mevcutBeispielTr": "İş yüzünden sağlığını ihmal ediyor."
+  },
+  {
+   "id": 3742,
+   "de": "die Renovierung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Renovierungen",
+   "mevcutTr": "tadilat, yenileme",
+   "mevcutBeispiel": "Die Renovierung dauert leider länger als geplant.",
+   "mevcutBeispielTr": "Tadilat ne yazık ki planlanandan uzun sürüyor."
+  },
+  {
+   "id": 3203,
+   "de": "der Vorgesetzte",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Vorgesetzten",
+   "mevcutTr": "amir, üst",
+   "mevcutBeispiel": "Sie bespricht jedes Problem zuerst mit ihrem direkten Vorgesetzten.",
+   "mevcutBeispielTr": "Her sorunu önce doğrudan bağlı olduğu amiriyle konuşuyor."
+  },
+  {
+   "id": 3206,
+   "de": "der Aufsichtsrat",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Aufsichtsräte",
+   "mevcutTr": "denetim kurulu",
+   "mevcutBeispiel": "Der Aufsichtsrat muss der Übernahme noch zustimmen.",
+   "mevcutBeispielTr": "Denetim kurulunun devralmayı henüz onaylaması gerekiyor."
+  },
+  {
+   "id": 3859,
+   "de": "das Empfehlungsschreiben",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Empfehlungsschreiben",
+   "mevcutTr": "referans mektubu",
+   "mevcutBeispiel": "Ein Empfehlungsschreiben des Professors stärkt die Bewerbung.",
+   "mevcutBeispielTr": "Profesörden alınan referans mektubu başvuruyu güçlendirir."
+  },
+  {
+   "id": 3765,
+   "de": "der Sonnenbrand",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Sonnenbrände",
+   "mevcutTr": "güneş yanığı",
+   "mevcutBeispiel": "Ohne Sonnencreme bekommt man am Strand schnell einen Sonnenbrand.",
+   "mevcutBeispielTr": "Güneş kremi olmadan plajda insan çabucak güneş yanığı olur."
+  },
+  {
+   "id": 3204,
+   "de": "die Belegschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "die Belegschaften",
+   "mevcutTr": "çalışanlar, personel",
+   "mevcutBeispiel": "Die gesamte Belegschaft wurde über die Umstrukturierung informiert.",
+   "mevcutBeispielTr": "Tüm personel, yeniden yapılanma hakkında bilgilendirildi."
+  }
+ ]
+}

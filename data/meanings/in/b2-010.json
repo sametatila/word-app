@@ -1,0 +1,557 @@
+{
+ "paket": "b2-010",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4093,
+   "de": "die Berufsgenossenschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Berufsgenossenschaften",
+   "mevcutTr": "meslek kazaları sigorta kurumu",
+   "mevcutBeispiel": "Die Berufsgenossenschaft zahlt die Behandlung nach einem Unfall im Betrieb.",
+   "mevcutBeispielTr": "İşyerindeki bir kazadan sonra tedaviyi meslek sigortası kurumu karşılıyor."
+  },
+  {
+   "id": 4094,
+   "de": "einarbeiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingearbeitet",
+   "mevcutTr": "işe alıştırmak, oryantasyon yapmak",
+   "mevcutBeispiel": "Eine erfahrene Kollegin arbeitet die neuen Mitglieder des Teams ein.",
+   "mevcutBeispielTr": "Deneyimli bir meslektaş ekibin yeni üyelerini işe alıştırıyor."
+  },
+  {
+   "id": 4095,
+   "de": "anlernen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angelernt",
+   "mevcutTr": "iş başında öğretmek, yetiştirmek",
+   "mevcutBeispiel": "Für diese Tätigkeit werden die Hilfskräfte in zwei Tagen angelernt.",
+   "mevcutBeispielTr": "Bu iş için yardımcı elemanlar iki günde yetiştiriliyor."
+  },
+  {
+   "id": 4096,
+   "de": "abmahnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgemahnt",
+   "mevcutTr": "yazılı uyarı vermek, ihtar etmek",
+   "mevcutBeispiel": "Der Chef hat ihn wegen wiederholter Verspätungen schriftlich abgemahnt.",
+   "mevcutBeispielTr": "Patron, tekrarlanan gecikmeler yüzünden ona yazılı uyarı verdi."
+  },
+  {
+   "id": 4097,
+   "de": "freistellen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat freigestellt",
+   "mevcutTr": "izinli saymak, işten muaf tutmak",
+   "mevcutBeispiel": "Für die Prüfung wurde sie eine Woche lang von der Arbeit freigestellt.",
+   "mevcutBeispielTr": "Sınav için bir hafta boyunca işten izinli sayıldı."
+  },
+  {
+   "id": 4098,
+   "de": "anwerben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angeworben",
+   "mevcutTr": "eleman temin etmek, işe çekmek",
+   "mevcutBeispiel": "Das Unternehmen wirbt gezielt Ingenieure aus dem Ausland an.",
+   "mevcutBeispielTr": "Şirket bilinçli olarak yurt dışından mühendis kazanmaya çalışıyor."
+  },
+  {
+   "id": 4099,
+   "de": "beaufsichtigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beaufsichtigt",
+   "mevcutTr": "denetlemek, gözetim altında tutmak",
+   "mevcutBeispiel": "Ein Meister beaufsichtigt die Arbeiten an der neuen Maschine.",
+   "mevcutBeispielTr": "Bir usta yeni makinedeki çalışmaları denetliyor.",
+   "cakisan": [
+    "überwachen (B2)"
+   ]
+  },
+  {
+   "id": 4100,
+   "de": "einweisen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingewiesen",
+   "mevcutTr": "bilgilendirmek, işin nasıl yapılacağını göstermek",
+   "mevcutBeispiel": "Alle Beschäftigten werden vor dem ersten Einsatz gründlich eingewiesen.",
+   "mevcutBeispielTr": "Bütün çalışanlar ilk görevden önce ayrıntılı biçimde bilgilendiriliyor.",
+   "cakisan": [
+    "informieren (B1)"
+   ]
+  },
+  {
+   "id": 4101,
+   "de": "schulen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschult",
+   "mevcutTr": "eğitmek, kurs vermek",
+   "mevcutBeispiel": "Die Mitarbeiter werden jedes Jahr im Umgang mit Kundendaten geschult.",
+   "mevcutBeispielTr": "Çalışanlar her yıl müşteri verileriyle çalışma konusunda eğitiliyor."
+  },
+  {
+   "id": 4102,
+   "de": "zumuten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zugemutet",
+   "mevcutTr": "katlanmasını beklemek, reva görmek",
+   "mevcutBeispiel": "So lange Schichten kann man niemandem auf Dauer zumuten.",
+   "mevcutBeispielTr": "Bu kadar uzun vardiyalar uzun vadede kimseden beklenemez."
+  },
+  {
+   "id": 4103,
+   "de": "kooperieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat kooperiert",
+   "mevcutTr": "işbirliği yapmak",
+   "mevcutBeispiel": "Die beiden Abteilungen kooperieren bei der Einführung der Software.",
+   "mevcutBeispielTr": "İki departman yazılımın devreye alınmasında işbirliği yapıyor."
+  },
+  {
+   "id": 4104,
+   "de": "umstrukturieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat umstrukturiert",
+   "mevcutTr": "yeniden yapılandırmak",
+   "mevcutBeispiel": "Der Konzern will die Verwaltung im kommenden Jahr umstrukturieren.",
+   "mevcutBeispielTr": "Holding gelecek yıl idari birimi yeniden yapılandırmak istiyor."
+  },
+  {
+   "id": 4105,
+   "de": "rationalisieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat rationalisiert",
+   "mevcutTr": "verimlilik için küçültmek, akılcılaştırmak",
+   "mevcutBeispiel": "Durch die Automatisierung wurden ganze Arbeitsbereiche rationalisiert.",
+   "mevcutBeispielTr": "Otomasyon sayesinde bütün çalışma alanları verimlilik adına küçültüldü."
+  },
+  {
+   "id": 4106,
+   "de": "koordinieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat koordiniert",
+   "mevcutTr": "koordine etmek, eşgüdüm sağlamak",
+   "mevcutBeispiel": "Sie koordiniert die Termine zwischen Produktion und Vertrieb.",
+   "mevcutBeispielTr": "Üretim ile satış arasındaki randevuları o koordine ediyor."
+  },
+  {
+   "id": 4107,
+   "de": "beurteilen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beurteilt",
+   "mevcutTr": "değerlendirmek, hakkında hüküm vermek",
+   "mevcutBeispiel": "Vorgesetzte beurteilen die Leistung ihrer Teams einmal im Jahr.",
+   "mevcutBeispielTr": "Amirler ekiplerinin performansını yılda bir kez değerlendiriyor.",
+   "cakisan": [
+    "einschätzen (B2)",
+    "auswerten (B2)",
+    "verwerten (B2)",
+    "bewerten (A2)"
+   ]
+  },
+  {
+   "id": 4108,
+   "de": "vorlegen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat vorgelegt",
+   "mevcutTr": "ibraz etmek, gösterip sunmak (belge)",
+   "mevcutBeispiel": "Bitte legen Sie am ersten Arbeitstag Ihre Zeugnisse im Original vor.",
+   "mevcutBeispielTr": "Lütfen ilk iş gününde belgelerinizin asıllarını ibraz edin."
+  },
+  {
+   "id": 4109,
+   "de": "ausscheiden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist ausgeschieden",
+   "mevcutTr": "ayrılmak, işten çıkmak",
+   "mevcutBeispiel": "Zum Jahresende scheidet der langjährige Geschäftsführer aus dem Unternehmen aus.",
+   "mevcutBeispielTr": "Yıl sonunda uzun yıllardır görevdeki genel müdür şirketten ayrılıyor.",
+   "cakisan": [
+    "sich trennen (B1)",
+    "wegfahren (A2)"
+   ]
+  },
+  {
+   "id": 4110,
+   "de": "antreten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angetreten",
+   "mevcutTr": "göreve başlamak, işe başlamak",
+   "mevcutBeispiel": "Sie tritt ihre neue Stelle in der Verwaltung schon nächsten Montag an.",
+   "mevcutBeispielTr": "İdaredeki yeni işine daha gelecek pazartesi başlıyor."
+  },
+  {
+   "id": 4111,
+   "de": "absichern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgesichert",
+   "mevcutTr": "güvence altına almak, teminat altına almak",
+   "mevcutBeispiel": "Der Vertrag sichert die Beschäftigten für den Fall einer Insolvenz ab.",
+   "mevcutBeispielTr": "Sözleşme çalışanları bir iflas durumuna karşı güvence altına alıyor."
+  },
+  {
+   "id": 4112,
+   "de": "einhalten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingehalten",
+   "mevcutTr": "uymak, riayet etmek",
+   "mevcutBeispiel": "Die gesetzlichen Ruhepausen müssen in jeder Schicht eingehalten werden.",
+   "mevcutBeispielTr": "Yasal dinlenme molalarına her vardiyada uyulmak zorundadır.",
+   "cakisan": [
+    "passen (A2)",
+    "sich richten nach (B2)"
+   ]
+  },
+  {
+   "id": 4113,
+   "de": "verstoßen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verstoßen",
+   "mevcutTr": "ihlal etmek, aykırı davranmak",
+   "mevcutBeispiel": "Wer gegen die Betriebsordnung verstößt, muss mit Konsequenzen rechnen.",
+   "mevcutBeispielTr": "İşyeri yönetmeliğini ihlal eden kişi sonuçlarına katlanmayı beklemelidir."
+  },
+  {
+   "id": 4114,
+   "de": "mitwirken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat mitgewirkt",
+   "mevcutTr": "katkıda bulunmak, iştirak etmek",
+   "mevcutBeispiel": "An der Erarbeitung des Sozialplans haben mehrere Gremien mitgewirkt.",
+   "mevcutBeispielTr": "Sosyal planın hazırlanmasına birçok kurul katkıda bulundu.",
+   "cakisan": [
+    "beitragen zu (B2)"
+   ]
+  },
+  {
+   "id": 4115,
+   "de": "mitbestimmen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat mitbestimmt",
+   "mevcutTr": "birlikte karar vermek, söz sahibi olmak",
+   "mevcutBeispiel": "Bei der Gestaltung der Dienstpläne dürfen die Beschäftigten mitbestimmen.",
+   "mevcutBeispielTr": "Vardiya çizelgelerinin düzenlenmesinde çalışanlar da söz sahibi olabiliyor."
+  },
+  {
+   "id": 4116,
+   "de": "betriebsbedingt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "işletme gereği, işletmesel nedenli",
+   "mevcutBeispiel": "Zwanzig Stellen wurden betriebsbedingt gestrichen.",
+   "mevcutBeispielTr": "İşletme gerekçesiyle yirmi kadro kaldırıldı."
+  },
+  {
+   "id": 4117,
+   "de": "überqualifiziert",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "aşırı nitelikli, pozisyona göre fazla donanımlı",
+   "mevcutBeispiel": "Man lehnte ihn ab, weil er für die Stelle überqualifiziert sei.",
+   "mevcutBeispielTr": "Pozisyon için fazla nitelikli olduğu gerekçesiyle reddedildi."
+  },
+  {
+   "id": 4118,
+   "de": "durchsetzungsfähig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kendini kabul ettirebilen, dediğini yaptırabilen",
+   "mevcutBeispiel": "Für diese Position suchen wir eine durchsetzungsfähige Persönlichkeit.",
+   "mevcutBeispielTr": "Bu pozisyon için kendini kabul ettirebilen bir kişilik arıyoruz."
+  },
+  {
+   "id": 4119,
+   "de": "gewissenhaft",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "titiz, özenli, vicdanlı",
+   "mevcutBeispiel": "Sie erledigt auch die langweiligsten Aufgaben gewissenhaft.",
+   "mevcutBeispielTr": "En sıkıcı görevleri bile titizlikle yerine getiriyor.",
+   "cakisan": [
+    "akribisch (C1)"
+   ]
+  },
+  {
+   "id": 4120,
+   "de": "engagiert",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kendini işine adamış, gayretli",
+   "mevcutBeispiel": "Der Betriebsrat setzt sich engagiert für die jüngeren Kollegen ein.",
+   "mevcutBeispielTr": "İşyeri kurulu genç meslektaşlar için gayretle mücadele ediyor."
+  },
+  {
+   "id": 4121,
+   "de": "ehrenamtlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gönüllü, fahri",
+   "mevcutBeispiel": "Viele Mitglieder der Kommission arbeiten rein ehrenamtlich.",
+   "mevcutBeispielTr": "Komisyon üyelerinin çoğu tamamen gönüllü olarak çalışıyor."
+  },
+  {
+   "id": 4122,
+   "de": "unentgeltlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ücretsiz, karşılıksız",
+   "mevcutBeispiel": "Die Schulungen stehen den Beschäftigten unentgeltlich zur Verfügung.",
+   "mevcutBeispielTr": "Eğitimler çalışanların ücretsiz olarak hizmetindedir.",
+   "cakisan": [
+    "kostenlos (A2)",
+    "gebührenfrei (B2)",
+    "unbezahlt (C1)"
+   ]
+  },
+  {
+   "id": 4123,
+   "de": "erwerbstätig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çalışan, gelir getiren bir işte olan",
+   "mevcutBeispiel": "In dieser Altersgruppe sind mehr als achtzig Prozent erwerbstätig.",
+   "mevcutBeispielTr": "Bu yaş grubunda yüzde sekseni aşkın kısım çalışıyor.",
+   "cakisan": [
+    "der Mitarbeiter (A2)",
+    "berufstätig (B1)"
+   ]
+  },
+  {
+   "id": 4124,
+   "de": "nebenberuflich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yan iş olarak, asıl mesleğin yanında",
+   "mevcutBeispiel": "Nebenberuflich gibt er abends Kurse an der Volkshochschule.",
+   "mevcutBeispielTr": "Yan iş olarak akşamları halk eğitim merkezinde kurs veriyor."
+  },
+  {
+   "id": 4125,
+   "de": "belastbar",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "stres altında çalışabilen, dayanıklı",
+   "mevcutBeispiel": "Wer im Schichtbetrieb arbeitet, muss körperlich und seelisch belastbar sein.",
+   "mevcutBeispielTr": "Vardiyalı çalışan kişinin bedenen ve ruhen dayanıklı olması gerekir."
+  },
+  {
+   "id": 4126,
+   "de": "erheblich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "önemli ölçüde, hatırı sayılır",
+   "mevcutBeispiel": "Die Kosten sind im letzten Quartal erheblich gestiegen.",
+   "mevcutBeispielTr": "Maliyetler son çeyrekte önemli ölçüde arttı."
+  },
+  {
+   "id": 4127,
+   "de": "geringfügig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "cüzi, önemsiz, az miktarda",
+   "mevcutBeispiel": "Die Abweichung vom Plan war nur geringfügig.",
+   "mevcutBeispielTr": "Plandan sapma yalnızca çok azdı."
+  },
+  {
+   "id": 4128,
+   "de": "mittelmäßig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "vasat, orta karar",
+   "mevcutBeispiel": "Der Film erhielt von den Kritikern nur mittelmäßige Bewertungen.",
+   "mevcutBeispielTr": "Film eleştirmenlerden yalnızca vasat notlar aldı."
+  },
+  {
+   "id": 4129,
+   "de": "überwiegend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ağırlıklı olarak, çoğunlukla",
+   "mevcutBeispiel": "Die Teilnehmer kamen überwiegend aus kleineren Betrieben.",
+   "mevcutBeispielTr": "Katılımcılar ağırlıklı olarak küçük işletmelerden geliyordu."
+  },
+  {
+   "id": 4130,
+   "de": "beträchtlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "epey, hayli, kayda değer",
+   "mevcutBeispiel": "Das Projekt verschlang einen beträchtlichen Teil des Budgets.",
+   "mevcutBeispielTr": "Proje bütçenin epey büyük bir kısmını yuttu."
+  },
+  {
+   "id": 4131,
+   "de": "spürbar",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hissedilir, gözle görülür",
+   "mevcutBeispiel": "Die Nachfrage hat sich seit dem Frühjahr spürbar belebt.",
+   "mevcutBeispielTr": "Talep ilkbahardan bu yana hissedilir ölçüde canlandı."
+  },
+  {
+   "id": 4132,
+   "de": "merklich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "belirgin biçimde, fark edilir ölçüde",
+   "mevcutBeispiel": "Das Tempo der Verhandlungen hat merklich abgenommen.",
+   "mevcutBeispielTr": "Müzakerelerin hızı belirgin biçimde azaldı."
+  },
+  {
+   "id": 4133,
+   "de": "drastisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sert, çarpıcı, köklü",
+   "mevcutBeispiel": "Die Behörde hat die Gebühren drastisch angehoben.",
+   "mevcutBeispielTr": "Kurum harçları çarpıcı biçimde yükseltti.",
+   "cakisan": [
+    "hart (A2)",
+    "streng (A2)",
+    "schroff (C1)",
+    "steif (A2)"
+   ]
+  },
+  {
+   "id": 4134,
+   "de": "rapide",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hızla, süratle",
+   "mevcutBeispiel": "Die Zahl der Bewerbungen ist rapide gesunken.",
+   "mevcutBeispielTr": "Başvuru sayısı hızla düştü."
+  },
+  {
+   "id": 4135,
+   "de": "allmählich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yavaş yavaş, giderek",
+   "mevcutBeispiel": "Die Spannungen im Team lösten sich allmählich auf.",
+   "mevcutBeispielTr": "Ekipteki gerginlikler yavaş yavaş çözüldü."
+  },
+  {
+   "id": 4136,
+   "de": "stetig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "istikrarlı, sürekli, düzenli",
+   "mevcutBeispiel": "Der Verein verzeichnet seit Jahren einen stetigen Zulauf.",
+   "mevcutBeispielTr": "Dernek yıllardır istikrarlı bir katılım artışı kaydediyor."
+  },
+  {
+   "id": 4137,
+   "de": "sprunghaft",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sıçramalı, ani, düzensiz",
+   "mevcutBeispiel": "Die Preise entwickelten sich in diesem Jahr sprunghaft.",
+   "mevcutBeispielTr": "Fiyatlar bu yıl sıçramalı bir seyir izledi."
+  },
+  {
+   "id": 4138,
+   "de": "unzureichend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yetersiz",
+   "mevcutBeispiel": "Die Begründung des Antrags war völlig unzureichend.",
+   "mevcutBeispielTr": "Başvurunun gerekçesi tamamen yetersizdi."
+  },
+  {
+   "id": 4139,
+   "de": "übermäßig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "aşırı, ölçüsüz",
+   "mevcutBeispiel": "Übermäßiger Konsum von Zucker schadet der Gesundheit.",
+   "mevcutBeispielTr": "Aşırı şeker tüketimi sağlığa zarar verir.",
+   "cakisan": [
+    "extrem (B1)"
+   ]
+  },
+  {
+   "id": 4140,
+   "de": "nahezu",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "neredeyse, hemen hemen",
+   "mevcutBeispiel": "Die Halle war am Eröffnungsabend nahezu leer.",
+   "mevcutBeispielTr": "Salon açılış akşamı neredeyse boştu.",
+   "cakisan": [
+    "fast (A2)",
+    "beinahe (B1)"
+   ]
+  },
+  {
+   "id": 4141,
+   "de": "schätzungsweise",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tahminen, yaklaşık olarak",
+   "mevcutBeispiel": "An der Demonstration nahmen schätzungsweise zehntausend Menschen teil.",
+   "mevcutBeispielTr": "Gösteriye tahminen on bin kişi katıldı."
+  },
+  {
+   "id": 4142,
+   "de": "vergleichsweise",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nispeten, kıyaslandığında",
+   "mevcutBeispiel": "Die Mieten sind hier vergleichsweise niedrig geblieben.",
+   "mevcutBeispielTr": "Kiralar burada nispeten düşük kaldı.",
+   "cakisan": [
+    "relativ (B1)"
+   ]
+  }
+ ]
+}

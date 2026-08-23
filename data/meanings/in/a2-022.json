@@ -1,0 +1,532 @@
+{
+ "paket": "a2-022",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 8038,
+   "de": "ausschalten",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "schaltet aus, hat ausgeschaltet",
+   "mevcutTr": "kapatmak (cihaz)",
+   "mevcutBeispiel": "Schalte bitte den Fernseher aus, ich möchte schlafen.",
+   "mevcutBeispielTr": "Lütfen televizyonu kapat, uyumak istiyorum.",
+   "cakisan": [
+    "(herunter-)fahren (B1)",
+    "absperren (A2)"
+   ]
+  },
+  {
+   "id": 8039,
+   "de": "die Zusage",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "olumlu cevap, kabul",
+   "mevcutBeispiel": "Wir warten noch auf deine Zusage für die Hochzeit.",
+   "mevcutBeispielTr": "Düğün için hâlâ senin olumlu cevabını bekliyoruz."
+  },
+  {
+   "id": 8040,
+   "de": "die Absage",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "olumsuz cevap, iptal",
+   "mevcutBeispiel": "Leider habe ich eine Absage von der Firma bekommen.",
+   "mevcutBeispielTr": "Maalesef firmadan olumsuz bir cevap aldım."
+  },
+  {
+   "id": 8041,
+   "de": "sich absprechen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "spricht sich ab, hat sich abgesprochen",
+   "mevcutTr": "sözleşmek, aralarında anlaşmak",
+   "mevcutBeispiel": "Wir müssen uns wegen des Termins noch absprechen.",
+   "mevcutBeispielTr": "Randevu konusunda henüz kendi aramızda anlaşmamız gerekiyor."
+  },
+  {
+   "id": 8042,
+   "de": "die Vereinbarung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "anlaşma, mutabakat",
+   "mevcutBeispiel": "Wir haben eine Vereinbarung über die Miete getroffen.",
+   "mevcutBeispielTr": "Kira konusunda bir anlaşmaya vardık.",
+   "cakisan": [
+    "die Verständigung (B2)",
+    "die Absprache (B2)"
+   ]
+  },
+  {
+   "id": 8043,
+   "de": "das Anmeldeformular",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "kayıt formu, başvuru formu",
+   "mevcutBeispiel": "Bitte füllen Sie das Anmeldeformular in Druckbuchstaben aus.",
+   "mevcutBeispielTr": "Lütfen kayıt formunu matbaa harfleriyle doldurun."
+  },
+  {
+   "id": 8044,
+   "de": "der Fahrschein",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "bilet, yol bileti",
+   "mevcutBeispiel": "Ich habe meinen Fahrschein am Automaten gekauft.",
+   "mevcutBeispielTr": "Biletimi otomattan aldım.",
+   "cakisan": [
+    "die Fahrkarte (A1)",
+    "das Billett (B1)"
+   ]
+  },
+  {
+   "id": 8045,
+   "de": "das Abteil",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "kompartıman",
+   "mevcutBeispiel": "In unserem Abteil sitzen noch zwei Personen.",
+   "mevcutBeispielTr": "Bizim kompartımanımızda iki kişi daha oturuyor."
+  },
+  {
+   "id": 8046,
+   "de": "der Schaffner",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kondüktör, biletçi",
+   "mevcutBeispiel": "Der Schaffner möchte unsere Tickets sehen.",
+   "mevcutBeispielTr": "Kondüktör biletlerimizi görmek istiyor."
+  },
+  {
+   "id": 8047,
+   "de": "die Bushaltestelle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "otobüs durağı",
+   "mevcutBeispiel": "Die Bushaltestelle ist gleich vor dem Supermarkt.",
+   "mevcutBeispielTr": "Otobüs durağı hemen süpermarketin önünde."
+  },
+  {
+   "id": 8048,
+   "de": "der Busbahnhof",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "otogar",
+   "mevcutBeispiel": "Der Bus nach Hamburg fährt am Busbahnhof ab.",
+   "mevcutBeispielTr": "Hamburg otobüsü otogardan kalkıyor."
+  },
+  {
+   "id": 8049,
+   "de": "die Endstation",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "son durak",
+   "mevcutBeispiel": "Wir müssen bis zur Endstation fahren.",
+   "mevcutBeispielTr": "Son durağa kadar gitmemiz gerekiyor."
+  },
+  {
+   "id": 8050,
+   "de": "die Ankunftszeit",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "varış saati",
+   "mevcutBeispiel": "Weißt du die Ankunftszeit von dem Zug?",
+   "mevcutBeispielTr": "Trenin varış saatini biliyor musun?"
+  },
+  {
+   "id": 8051,
+   "de": "der Sitzplatz",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "oturma yeri, koltuk",
+   "mevcutBeispiel": "Im Bus war kein Sitzplatz mehr frei.",
+   "mevcutBeispielTr": "Otobüste boş koltuk kalmamıştı."
+  },
+  {
+   "id": 8052,
+   "de": "die Zugfahrt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "tren yolculuğu",
+   "mevcutBeispiel": "Die Zugfahrt nach München dauert vier Stunden.",
+   "mevcutBeispielTr": "Münih'e tren yolculuğu dört saat sürüyor."
+  },
+  {
+   "id": 8053,
+   "de": "der Lokführer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "tren makinisti",
+   "mevcutBeispiel": "Mein Onkel arbeitet als Lokführer.",
+   "mevcutBeispielTr": "Amcam tren makinisti olarak çalışıyor."
+  },
+  {
+   "id": 8054,
+   "de": "der Flugbegleiter",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kabin görevlisi",
+   "mevcutBeispiel": "Der Flugbegleiter bringt uns Wasser.",
+   "mevcutBeispielTr": "Kabin görevlisi bize su getiriyor."
+  },
+  {
+   "id": 8055,
+   "de": "die Bordkarte",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "biniş kartı",
+   "mevcutBeispiel": "Bitte zeigen Sie mir Ihre Bordkarte.",
+   "mevcutBeispielTr": "Lütfen bana biniş kartınızı gösterin."
+  },
+  {
+   "id": 8056,
+   "de": "das Handgepäck",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "el bagajı",
+   "mevcutBeispiel": "Ich nehme nur Handgepäck mit.",
+   "mevcutBeispielTr": "Yanıma sadece el bagajı alıyorum."
+  },
+  {
+   "id": 8057,
+   "de": "der Rückflug",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "dönüş uçuşu",
+   "mevcutBeispiel": "Unser Rückflug ist am Sonntagabend.",
+   "mevcutBeispielTr": "Dönüş uçuşumuz pazar akşamı."
+  },
+  {
+   "id": 8058,
+   "de": "der Zwischenstopp",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "ara duraklama, aktarma molası",
+   "mevcutBeispiel": "Wir haben einen Zwischenstopp in Wien.",
+   "mevcutBeispielTr": "Viyana'da bir ara duraklamamız var."
+  },
+  {
+   "id": 8059,
+   "de": "einchecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "checkt ein, hat eingecheckt",
+   "mevcutTr": "check-in yapmak",
+   "mevcutBeispiel": "Wir müssen zwei Stunden vor dem Flug einchecken.",
+   "mevcutBeispielTr": "Uçuştan iki saat önce check-in yapmamız gerekiyor."
+  },
+  {
+   "id": 8060,
+   "de": "auschecken",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "checkt aus, hat ausgecheckt",
+   "mevcutTr": "otelden çıkış yapmak",
+   "mevcutBeispiel": "Im Hotel muss man bis elf Uhr auschecken.",
+   "mevcutBeispielTr": "Otelde saat on bire kadar çıkış yapmak gerekiyor."
+  },
+  {
+   "id": 8061,
+   "de": "die Sicherheitskontrolle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "güvenlik kontrolü",
+   "mevcutBeispiel": "An der Sicherheitskontrolle war eine lange Schlange.",
+   "mevcutBeispielTr": "Güvenlik kontrolünde uzun bir kuyruk vardı."
+  },
+  {
+   "id": 8062,
+   "de": "die Ausreise",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "ülkeden çıkış",
+   "mevcutBeispiel": "Bei der Ausreise braucht man einen gültigen Pass.",
+   "mevcutBeispielTr": "Ülkeden çıkışta geçerli bir pasaport gerekiyor."
+  },
+  {
+   "id": 8063,
+   "de": "die Passkontrolle",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "pasaport kontrolü",
+   "mevcutBeispiel": "An der Grenze gab es eine kurze Passkontrolle.",
+   "mevcutBeispielTr": "Sınırda kısa bir pasaport kontrolü oldu."
+  },
+  {
+   "id": 8064,
+   "de": "das Hotelzimmer",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "otel odası",
+   "mevcutBeispiel": "Unser Hotelzimmer liegt im dritten Stock.",
+   "mevcutBeispielTr": "Otel odamız üçüncü katta."
+  },
+  {
+   "id": 8065,
+   "de": "der Zimmerschlüssel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "oda anahtarı",
+   "mevcutBeispiel": "Ich habe den Zimmerschlüssel an der Rezeption abgegeben.",
+   "mevcutBeispielTr": "Oda anahtarını resepsiyona bıraktım."
+  },
+  {
+   "id": 8066,
+   "de": "der Gastgeber",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "ev sahibi",
+   "mevcutBeispiel": "Unser Gastgeber hat uns die Stadt gezeigt.",
+   "mevcutBeispielTr": "Ev sahibimiz bize şehri gezdirdi.",
+   "cakisan": [
+    "der Vermieter (A1)"
+   ]
+  },
+  {
+   "id": 8067,
+   "de": "der Campingplatz",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "kamp alanı",
+   "mevcutBeispiel": "Wir schlafen eine Woche auf dem Campingplatz.",
+   "mevcutBeispielTr": "Bir hafta kamp alanında uyuyoruz."
+  },
+  {
+   "id": 8068,
+   "de": "der Zeltplatz",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "çadır yeri",
+   "mevcutBeispiel": "Am See haben wir einen schönen Zeltplatz gefunden.",
+   "mevcutBeispielTr": "Gölün yanında güzel bir çadır yeri bulduk."
+  },
+  {
+   "id": 8069,
+   "de": "das Ferienhaus",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "yazlık ev, tatil evi",
+   "mevcutBeispiel": "Wir haben ein kleines Ferienhaus am Meer gemietet.",
+   "mevcutBeispielTr": "Deniz kenarında küçük bir tatil evi kiraladık."
+  },
+  {
+   "id": 8070,
+   "de": "die Anreise",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "gidiş yolculuğu, gidiş",
+   "mevcutBeispiel": "Die Anreise mit dem Auto dauert fünf Stunden.",
+   "mevcutBeispielTr": "Arabayla gidiş beş saat sürüyor."
+  },
+  {
+   "id": 8071,
+   "de": "die Abreise",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "hareket, yola çıkış",
+   "mevcutBeispiel": "Vor der Abreise räumen wir das Zimmer auf.",
+   "mevcutBeispielTr": "Yola çıkmadan önce odayı topluyoruz.",
+   "cakisan": [
+    "die Bewegung (B1)"
+   ]
+  },
+  {
+   "id": 8072,
+   "de": "abreisen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "reist ab, ist abgereist",
+   "mevcutTr": "yola çıkmak, ayrılmak",
+   "mevcutBeispiel": "Wir reisen morgen früh ab.",
+   "mevcutBeispielTr": "Yarın sabah erken yola çıkıyoruz.",
+   "cakisan": [
+    "losfahren (B1)",
+    "aufbrechen (B2)",
+    "losgehen (A2)"
+   ]
+  },
+  {
+   "id": 8073,
+   "de": "die Wegbeschreibung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "yol tarifi",
+   "mevcutBeispiel": "Kannst du mir eine kurze Wegbeschreibung schicken?",
+   "mevcutBeispielTr": "Bana kısa bir yol tarifi gönderebilir misin?"
+  },
+  {
+   "id": 8074,
+   "de": "die Landkarte",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "harita",
+   "mevcutBeispiel": "Opa sucht den Weg lieber auf einer Landkarte.",
+   "mevcutBeispielTr": "Dedem yolu daha çok haritadan bulmayı seviyor."
+  },
+  {
+   "id": 8075,
+   "de": "der Wegweiser",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "yön levhası",
+   "mevcutBeispiel": "Am Wegweiser gehen wir nach links.",
+   "mevcutBeispielTr": "Yön levhasında sola gidiyoruz."
+  },
+  {
+   "id": 8076,
+   "de": "die Abkürzung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "kestirme yol, kısaltma",
+   "mevcutBeispiel": "Durch den Park gibt es eine Abkürzung zum Bahnhof.",
+   "mevcutBeispielTr": "Parkın içinden gara giden bir kestirme yol var."
+  },
+  {
+   "id": 8077,
+   "de": "der Rückweg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "dönüş yolu",
+   "mevcutBeispiel": "Auf dem Rückweg kaufen wir noch Brot.",
+   "mevcutBeispielTr": "Dönüş yolunda bir de ekmek alırız."
+  },
+  {
+   "id": 8078,
+   "de": "der Hinweg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "gidiş yolu",
+   "mevcutBeispiel": "Auf dem Hinweg hat es die ganze Zeit geregnet.",
+   "mevcutBeispielTr": "Gidiş yolunda sürekli yağmur yağdı."
+  },
+  {
+   "id": 8079,
+   "de": "der Heimweg",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "eve dönüş yolu",
+   "mevcutBeispiel": "Auf dem Heimweg habe ich meine Nachbarin getroffen.",
+   "mevcutBeispielTr": "Eve dönüş yolunda komşumla karşılaştım."
+  },
+  {
+   "id": 8080,
+   "de": "die Reisetasche",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "seyahat çantası",
+   "mevcutBeispiel": "Meine Reisetasche ist schon fast voll.",
+   "mevcutBeispielTr": "Seyahat çantam neredeyse doldu bile."
+  },
+  {
+   "id": 8081,
+   "de": "der Reiseplan",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "seyahat planı",
+   "mevcutBeispiel": "Wir haben unseren Reiseplan noch einmal geändert.",
+   "mevcutBeispielTr": "Seyahat planımızı bir kez daha değiştirdik."
+  },
+  {
+   "id": 8082,
+   "de": "der Parkplatz",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "otopark, park yeri",
+   "mevcutBeispiel": "Vor dem Hotel gibt es einen großen Parkplatz.",
+   "mevcutBeispielTr": "Otelin önünde büyük bir otopark var."
+  },
+  {
+   "id": 8083,
+   "de": "der Kofferraum",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "bagaj (araba)",
+   "mevcutBeispiel": "Die Koffer passen alle in den Kofferraum.",
+   "mevcutBeispielTr": "Bavulların hepsi bagaja sığıyor.",
+   "cakisan": [
+    "das Gepäck (A1)"
+   ]
+  },
+  {
+   "id": 8084,
+   "de": "der Sicherheitsgurt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "emniyet kemeri",
+   "mevcutBeispiel": "Bitte legen Sie den Sicherheitsgurt an.",
+   "mevcutBeispielTr": "Lütfen emniyet kemerinizi takın."
+  },
+  {
+   "id": 8085,
+   "de": "das Lenkrad",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-er",
+   "mevcutTr": "direksiyon",
+   "mevcutBeispiel": "Halt das Lenkrad mit beiden Händen!",
+   "mevcutBeispielTr": "Direksiyonu iki elinle tut!"
+  },
+  {
+   "id": 8086,
+   "de": "die Hupe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "korna",
+   "mevcutBeispiel": "Die Hupe an meinem Auto ist kaputt.",
+   "mevcutBeispielTr": "Arabamın kornası bozuk."
+  },
+  {
+   "id": 8087,
+   "de": "der Mietwagen",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "kiralık araba",
+   "mevcutBeispiel": "Am Flughafen holen wir den Mietwagen ab.",
+   "mevcutBeispielTr": "Havaalanında kiralık arabayı alıyoruz."
+  }
+ ]
+}

@@ -1,0 +1,560 @@
+{
+ "paket": "c1-009",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 3985,
+   "de": "bagatellisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "bagatellisiert, hat bagatellisiert",
+   "mevcutTr": "önemsizleştirmek, küçümsemek",
+   "mevcutBeispiel": "Der Politiker bagatellisierte die Vorwürfe in der Pressekonferenz.",
+   "mevcutBeispielTr": "Politikacı, basın toplantısında suçlamaları önemsizleştirdi."
+  },
+  {
+   "id": 3986,
+   "de": "dramatisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "dramatisiert, hat dramatisiert",
+   "mevcutTr": "abartmak, dramatize etmek",
+   "mevcutBeispiel": "Die Boulevardpresse dramatisiert selbst kleinste Vorfälle.",
+   "mevcutBeispielTr": "Bulvar basını en küçük olayları bile dramatize ediyor.",
+   "cakisan": [
+    "übertreiben (B1)",
+    "aufbauschen (C1)",
+    "überschätzen (C1)"
+   ]
+  },
+  {
+   "id": 3987,
+   "de": "skandalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "skandalisiert, hat skandalisiert",
+   "mevcutTr": "skandal haline getirmek",
+   "mevcutBeispiel": "Die Medien skandalisierten den Vorfall, bevor die Fakten geklärt waren.",
+   "mevcutBeispielTr": "Medya, gerçekler netleşmeden olayı skandala dönüştürdü."
+  },
+  {
+   "id": 3989,
+   "de": "kaschieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "kaschiert, hat kaschiert",
+   "mevcutTr": "(kusuru, eksiği) gizlemek, üstünü örtmek",
+   "mevcutBeispiel": "Mit warmen Worten kaschierte er das eigentliche Problem.",
+   "mevcutBeispielTr": "Tatlı sözlerle asıl sorunu örtbas etti."
+  },
+  {
+   "id": 3990,
+   "de": "verharmlosen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verharmlost, hat verharmlost",
+   "mevcutTr": "zararsız göstermek, hafife almak",
+   "mevcutBeispiel": "Der Konzern verharmloste jahrelang die Risiken seiner Produkte.",
+   "mevcutBeispielTr": "Şirket, ürünlerinin risklerini yıllarca zararsız gösterdi."
+  },
+  {
+   "id": 3992,
+   "de": "gängeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "gängelt, hat gegängelt",
+   "mevcutTr": "sıkı kontrol altında tutmak",
+   "mevcutBeispiel": "Die Bürokratie gängelt kleine Unternehmen mit unnötigen Vorschriften.",
+   "mevcutBeispielTr": "Bürokrasi, küçük işletmeleri gereksiz kurallarla boğuyor."
+  },
+  {
+   "id": 3993,
+   "de": "entmündigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "entmündigt, hat entmündigt",
+   "mevcutTr": "ehliyetsiz kılmak, iradesini elinden almak",
+   "mevcutBeispiel": "Übermäßige Bevormundung entmündigt letztlich den mündigen Bürger.",
+   "mevcutBeispielTr": "Aşırı vesayet, sonunda reşit vatandaşı iradesizleştirir."
+  },
+  {
+   "id": 3994,
+   "de": "suggerieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "suggeriert, hat suggeriert",
+   "mevcutTr": "telkin etmek, ima etmek",
+   "mevcutBeispiel": "Die Werbung suggeriert, Glück sei käuflich.",
+   "mevcutBeispielTr": "Reklam, mutluluğun satın alınabileceğini telkin ediyor."
+  },
+  {
+   "id": 3995,
+   "de": "aufwiegeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "wiegelt auf, hat aufgewiegelt",
+   "mevcutTr": "kışkırtmak, ayaklandırmak",
+   "mevcutBeispiel": "Der Redner versuchte, die Menge gegen die Regierung aufzuwiegeln.",
+   "mevcutBeispielTr": "Konuşmacı, kalabalığı hükümete karşı kışkırtmaya çalıştı.",
+   "cakisan": [
+    "provozieren (C1)"
+   ]
+  },
+  {
+   "id": 3996,
+   "de": "verunglimpfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verunglimpft, hat verunglimpft",
+   "mevcutTr": "karalamak, itibarsızlaştırmak",
+   "mevcutBeispiel": "In Kommentaren wurde die Wissenschaftlerin wüst verunglimpft.",
+   "mevcutBeispielTr": "Yorumlarda bilim insanına ağır hakaretlerle saldırıldı.",
+   "cakisan": [
+    "diffamieren (C1)"
+   ]
+  },
+  {
+   "id": 3997,
+   "de": "diffamieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "diffamiert, hat diffamiert",
+   "mevcutTr": "karalamak, iftira atmak",
+   "mevcutBeispiel": "Politische Gegner werden in sozialen Medien oft diffamiert.",
+   "mevcutBeispielTr": "Siyasi rakipler sosyal medyada sık sık karalanıyor.",
+   "cakisan": [
+    "verunglimpfen (C1)"
+   ]
+  },
+  {
+   "id": 3998,
+   "de": "stigmatisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "stigmatisiert, hat stigmatisiert",
+   "mevcutTr": "damgalamak",
+   "mevcutBeispiel": "Psychische Erkrankungen werden in vielen Kulturen noch immer stigmatisiert.",
+   "mevcutBeispielTr": "Ruhsal hastalıklar birçok kültürde hâlâ damgalanıyor.",
+   "cakisan": [
+    "brandmarken (C1)"
+   ]
+  },
+  {
+   "id": 3999,
+   "de": "marginalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "marginalisiert, hat marginalisiert",
+   "mevcutTr": "ötekileştirmek, marjinalleştirmek",
+   "mevcutBeispiel": "Der Diskurs marginalisiert häufig die Stimmen der Betroffenen.",
+   "mevcutBeispielTr": "Tartışma, mağdurların seslerini çoğu zaman ötekileştiriyor."
+  },
+  {
+   "id": 4002,
+   "de": "problematisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "problematisiert, hat problematisiert",
+   "mevcutTr": "sorunsallaştırmak",
+   "mevcutBeispiel": "Die Studie problematisiert den unkritischen Umgang mit Algorithmen.",
+   "mevcutBeispielTr": "Araştırma, algoritmaların sorgulanmadan kullanılmasını sorunsallaştırıyor."
+  },
+  {
+   "id": 4003,
+   "de": "entmenschlichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "entmenschlicht, hat entmenschlicht",
+   "mevcutTr": "insanlıktan çıkarmak",
+   "mevcutBeispiel": "Kriegspropaganda entmenschlicht den Feind gezielt in der Sprache.",
+   "mevcutBeispielTr": "Savaş propagandası, düşmanı dil üzerinden bilinçli olarak insanlıktan çıkarır."
+  },
+  {
+   "id": 4006,
+   "de": "gewissenlos",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "vicdansız",
+   "mevcutBeispiel": "Er handelte in dieser Angelegenheit geradezu gewissenlos.",
+   "mevcutBeispielTr": "Bu meselede resmen vicdansızca davrandı.",
+   "cakisan": [
+    "skrupellos (C1)"
+   ]
+  },
+  {
+   "id": 4010,
+   "de": "weitreichend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geniş kapsamlı, uzun vadeli etkili",
+   "mevcutBeispiel": "Die Entscheidung hat weitreichende Folgen für kommende Generationen.",
+   "mevcutBeispielTr": "Karar, gelecek kuşaklar için geniş kapsamlı sonuçlar doğuruyor."
+  },
+  {
+   "id": 4011,
+   "de": "unumkehrbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "geri dönüşü olmayan",
+   "mevcutBeispiel": "Manche Umweltschäden gelten inzwischen als unumkehrbar.",
+   "mevcutBeispielTr": "Bazı çevre zararları artık geri döndürülemez sayılıyor."
+  },
+  {
+   "id": 4012,
+   "de": "tragfähig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sağlam, uygulanabilir, taşıyıcı",
+   "mevcutBeispiel": "Ein wirklich tragfähiges Konzept für die Energiewende fehlt bislang.",
+   "mevcutBeispielTr": "Enerji dönüşümü için gerçekten sürdürülebilir bir plan hâlâ yok.",
+   "cakisan": [
+    "fest (B1)",
+    "stichhaltig (C1)",
+    "heil (A2)",
+    "stabil (A2)"
+   ]
+  },
+  {
+   "id": 4019,
+   "de": "begünstigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "begünstigt, hat begünstigt",
+   "mevcutTr": "kolaylaştırmak, teşvik etmek",
+   "mevcutBeispiel": "Niedrige Zinsen begünstigen private Investitionen.",
+   "mevcutBeispielTr": "Düşük faizler özel yatırımları teşvik ediyor.",
+   "cakisan": [
+    "erleichtern (B1)"
+   ]
+  },
+  {
+   "id": 4021,
+   "de": "sich auszeichnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "zeichnet sich aus, hat sich ausgezeichnet",
+   "mevcutTr": "öne çıkmak, (bir özelliğiyle) dikkat çekmek",
+   "mevcutBeispiel": "Die Studie zeichnet sich durch hohe Präzision aus.",
+   "mevcutBeispielTr": "Çalışma, yüksek hassasiyetiyle öne çıkıyor."
+  },
+  {
+   "id": 4023,
+   "de": "einbüßen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "büßt ein, hat eingebüßt",
+   "mevcutTr": "kaybetmek, yitirmek",
+   "mevcutBeispiel": "Die Partei büßte bei der Wahl deutlich an Zustimmung ein.",
+   "mevcutBeispielTr": "Parti, seçimde ciddi oy kaybına uğradı.",
+   "cakisan": [
+    "verlieren (A2)"
+   ]
+  },
+  {
+   "id": 4024,
+   "de": "konzipieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "konzipiert, hat konzipiert",
+   "mevcutTr": "tasarlamak, kurgulamak",
+   "mevcutBeispiel": "Das Projekt wurde für ein internationales Publikum konzipiert.",
+   "mevcutBeispielTr": "Proje uluslararası bir kitle için tasarlandı.",
+   "cakisan": [
+    "entwerfen (C1)"
+   ]
+  },
+  {
+   "id": 4025,
+   "de": "verinnerlichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verinnerlicht, hat verinnerlicht",
+   "mevcutTr": "içselleştirmek, benimsemek",
+   "mevcutBeispiel": "Kinder verinnerlichen Werte vor allem durch Vorbilder.",
+   "mevcutBeispielTr": "Çocuklar değerleri en çok rol modeller üzerinden içselleştirir."
+  },
+  {
+   "id": 4026,
+   "de": "reglementieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "reglementiert, hat reglementiert",
+   "mevcutTr": "ayrıntılı kurallarla düzenlemek, kurallara bağlamak",
+   "mevcutBeispiel": "Der Markt wird durch strenge Vorschriften reglementiert.",
+   "mevcutBeispielTr": "Pazar, sıkı kurallarla düzenleniyor."
+  },
+  {
+   "id": 4027,
+   "de": "entkräften",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "entkräftet, hat entkräftet",
+   "mevcutTr": "çürütmek, geçersiz kılmak",
+   "mevcutBeispiel": "Die neuen Beweise entkräften das alte Argument vollständig.",
+   "mevcutBeispielTr": "Yeni kanıtlar eski savı tamamen çürütüyor.",
+   "cakisan": [
+    "widerlegen (C1)"
+   ]
+  },
+  {
+   "id": 4028,
+   "de": "verankern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verankert, hat verankert",
+   "mevcutTr": "(yasada, metinde) yer vermek, güvence altına almak",
+   "mevcutBeispiel": "Das Recht auf Bildung ist im Grundgesetz verankert.",
+   "mevcutBeispielTr": "Eğitim hakkı anayasada güvence altına alınmıştır."
+  },
+  {
+   "id": 4029,
+   "de": "ausufern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ufert aus, ist ausgeufert",
+   "mevcutTr": "kontrolden çıkmak, taşmak",
+   "mevcutBeispiel": "Die Debatte drohte in einen offenen Streit auszuufern.",
+   "mevcutBeispielTr": "Tartışma açık bir kavgaya dönüşme tehlikesi taşıyordu.",
+   "cakisan": [
+    "entgleisen (C1)"
+   ]
+  },
+  {
+   "id": 4035,
+   "de": "konterkarieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "konterkariert, hat konterkariert",
+   "mevcutTr": "boşa çıkarmak, ters etki yapmak",
+   "mevcutBeispiel": "Die Maßnahme konterkariert am Ende das eigentliche Ziel.",
+   "mevcutBeispielTr": "Önlem, sonunda asıl amacı boşa çıkarıyor.",
+   "cakisan": [
+    "unterlaufen (C1)"
+   ]
+  },
+  {
+   "id": 4036,
+   "de": "eruieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "eruiert, hat eruiert",
+   "mevcutTr": "araştırıp bulmak, tespit etmek",
+   "mevcutBeispiel": "Die Kommission soll die genauen Ursachen eruieren.",
+   "mevcutBeispielTr": "Komisyon, kesin nedenleri tespit edecek."
+  },
+  {
+   "id": 4037,
+   "de": "sich revanchieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "revanchiert sich, hat sich revanchiert",
+   "mevcutTr": "karşılığını vermek, teşekkür borcunu ödemek",
+   "mevcutBeispiel": "Er will sich für die großzügige Hilfe revanchieren.",
+   "mevcutBeispielTr": "Cömert yardımın karşılığını vermek istiyor.",
+   "cakisan": [
+    "sich auszahlen (C1)",
+    "honorieren (C1)"
+   ]
+  },
+  {
+   "id": 4038,
+   "de": "facettenreich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çok yönlü, çok boyutlu",
+   "mevcutBeispiel": "Das Thema ist überraschend facettenreich und komplex.",
+   "mevcutBeispielTr": "Konu şaşırtıcı derecede çok boyutlu ve karmaşık."
+  },
+  {
+   "id": 4039,
+   "de": "undurchsichtig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "anlaşılmaz, şeffaf olmayan",
+   "mevcutBeispiel": "Die Finanzierung des Projekts bleibt bis heute undurchsichtig.",
+   "mevcutBeispielTr": "Projenin finansmanı bugüne dek şeffaflıktan uzak.",
+   "cakisan": [
+    "unverständlich (A2)"
+   ]
+  },
+  {
+   "id": 4040,
+   "de": "akribisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "titiz, kılı kırk yaran",
+   "mevcutBeispiel": "Sie bereitet jede Präsentation akribisch und gründlich vor.",
+   "mevcutBeispielTr": "Her sunumu titizlikle ve derinlemesine hazırlıyor.",
+   "cakisan": [
+    "gewissenhaft (B2)"
+   ]
+  },
+  {
+   "id": 5687,
+   "de": "die Agrarsubvention",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Agrarsubventionen",
+   "mevcutTr": "tarım sübvansiyonu, tarımsal destek",
+   "mevcutBeispiel": "Die Agrarsubventionen fließen überwiegend an ohnehin große Betriebe.",
+   "mevcutBeispielTr": "Tarım sübvansiyonları ağırlıklı olarak zaten büyük olan işletmelere akıyor."
+  },
+  {
+   "id": 5688,
+   "de": "die Agrarwende",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tarımsal dönüşüm, tarımda paradigma değişimi",
+   "mevcutBeispiel": "Ohne verbindliche Ziele bleibt die Agrarwende ein leeres Versprechen.",
+   "mevcutBeispielTr": "Bağlayıcı hedefler olmadan tarımsal dönüşüm boş bir vaat olarak kalır."
+  },
+  {
+   "id": 5689,
+   "de": "die Agrarreform",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Agrarreformen",
+   "mevcutTr": "tarım reformu",
+   "mevcutBeispiel": "Die letzte Agrarreform hat die Verteilungsfrage kaum berührt.",
+   "mevcutBeispielTr": "Son tarım reformu bölüşüm sorununa neredeyse hiç dokunmadı."
+  },
+  {
+   "id": 5690,
+   "de": "die Agrarökologie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "agroekoloji, tarımsal ekoloji",
+   "mevcutBeispiel": "Die Agrarökologie versteht den Betrieb als Teil eines Ökosystems.",
+   "mevcutBeispielTr": "Agroekoloji, işletmeyi bir ekosistemin parçası olarak görür."
+  },
+  {
+   "id": 5691,
+   "de": "die Ernährungssouveränität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gıda egemenliği",
+   "mevcutBeispiel": "Ernährungssouveränität meint das Recht, die eigene Agrarpolitik zu bestimmen.",
+   "mevcutBeispielTr": "Gıda egemenliği, kendi tarım politikasını belirleme hakkı anlamına gelir."
+  },
+  {
+   "id": 5692,
+   "de": "das Ernährungssystem",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ernährungssysteme",
+   "mevcutTr": "gıda sistemi",
+   "mevcutBeispiel": "Das globale Ernährungssystem reagiert empfindlich auf politische Krisen.",
+   "mevcutBeispielTr": "Küresel gıda sistemi siyasi krizlere karşı hassas tepki veriyor."
+  },
+  {
+   "id": 5693,
+   "de": "der Flächenverbrauch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "arazi tüketimi, alan kullanımı",
+   "mevcutBeispiel": "Der Flächenverbrauch durch Siedlungen wächst schneller als geplant.",
+   "mevcutBeispielTr": "Yerleşim alanlarının yol açtığı arazi tüketimi planlanandan hızlı büyüyor."
+  },
+  {
+   "id": 5694,
+   "de": "die Direktzahlung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Direktzahlungen",
+   "mevcutTr": "doğrudan ödeme, doğrudan destek",
+   "mevcutBeispiel": "Die Direktzahlungen sollen künftig an ökologische Leistungen gekoppelt werden.",
+   "mevcutBeispielTr": "Doğrudan ödemeler bundan böyle çevresel hizmetlere bağlanacak."
+  },
+  {
+   "id": 5695,
+   "de": "die Bodenspekulation",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "arazi spekülasyonu",
+   "mevcutBeispiel": "Bodenspekulation treibt die Pachten in vielen Regionen nach oben.",
+   "mevcutBeispielTr": "Arazi spekülasyonu birçok bölgede kiraları yukarı çekiyor."
+  },
+  {
+   "id": 5696,
+   "de": "die Bodenfruchtbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "toprak verimliliği",
+   "mevcutBeispiel": "Der Erhalt der Bodenfruchtbarkeit wird selten als Gemeinwohlaufgabe verstanden.",
+   "mevcutBeispielTr": "Toprak verimliliğinin korunması nadiren bir kamu yararı görevi olarak görülüyor."
+  },
+  {
+   "id": 5697,
+   "de": "der Weltmarktpreis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Weltmarktpreise",
+   "mevcutTr": "dünya piyasa fiyatı",
+   "mevcutBeispiel": "Fallende Weltmarktpreise ruinieren kleine Erzeuger im globalen Süden.",
+   "mevcutBeispielTr": "Düşen dünya piyasa fiyatları küresel güneydeki küçük üreticileri iflasa sürüklüyor."
+  },
+  {
+   "id": 5698,
+   "de": "der Erzeugerpreis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erzeugerpreise",
+   "mevcutTr": "üretici fiyatı",
+   "mevcutBeispiel": "Die Erzeugerpreise decken bei vielen Höfen nicht einmal die Kosten.",
+   "mevcutBeispielTr": "Üretici fiyatları birçok çiftlikte maliyeti bile karşılamıyor."
+  },
+  {
+   "id": 5699,
+   "de": "die Preisvolatilität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "fiyat oynaklığı, fiyat dalgalanması",
+   "mevcutBeispiel": "Die Preisvolatilität auf den Rohstoffmärkten erschwert jede Investitionsplanung.",
+   "mevcutBeispielTr": "Emtia piyasalarındaki fiyat oynaklığı her türlü yatırım planlamasını zorlaştırıyor."
+  },
+  {
+   "id": 5700,
+   "de": "die Handelsliberalisierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Handelsliberalisierungen",
+   "mevcutTr": "ticaretin serbestleştirilmesi",
+   "mevcutBeispiel": "Die Handelsliberalisierung hat den Wettbewerbsdruck auf europäische Betriebe erhöht.",
+   "mevcutBeispielTr": "Ticaretin serbestleştirilmesi Avrupalı işletmeler üzerindeki rekabet baskısını artırdı."
+  },
+  {
+   "id": 5701,
+   "de": "die Marktordnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Marktordnungen",
+   "mevcutTr": "piyasa düzeni, piyasa düzenlemesi",
+   "mevcutBeispiel": "Ohne eine wirksame Marktordnung bleiben die Erzeuger dem Handel ausgeliefert.",
+   "mevcutBeispielTr": "Etkili bir piyasa düzeni olmadan üreticiler ticaretin insafına kalıyor."
+  },
+  {
+   "id": 5702,
+   "de": "die Wertschöpfungskette",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wertschöpfungsketten",
+   "mevcutTr": "değer zinciri",
+   "mevcutBeispiel": "In der Wertschöpfungskette bleibt beim Bauern der kleinste Anteil.",
+   "mevcutBeispielTr": "Değer zincirinde en küçük pay çiftçiye kalıyor."
+  }
+ ]
+}

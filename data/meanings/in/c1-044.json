@@ -1,0 +1,282 @@
+{
+ "paket": "c1-044",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 7403,
+   "de": "der Notfallplan",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Notfallpläne",
+   "mevcutTr": "acil durum planı",
+   "mevcutBeispiel": "Ein Notfallplan nützt wenig, wenn ihn niemand je geprobt hat.",
+   "mevcutBeispielTr": "Kimsenin prova etmediği bir acil durum planının pek faydası olmaz."
+  },
+  {
+   "id": 7404,
+   "de": "das Beharrungsvermögen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "atalet, değişime direnç",
+   "mevcutBeispiel": "Das Beharrungsvermögen der Institutionen bremst jede angekündigte Reform.",
+   "mevcutBeispielTr": "Kurumların değişime direnci, ilan edilen her reformu yavaşlatıyor."
+  },
+  {
+   "id": 7405,
+   "de": "die Erschütterung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erschütterungen",
+   "mevcutTr": "sarsıntı, sarsılma",
+   "mevcutBeispiel": "Das Vertrauen der Anleger hat eine schwere Erschütterung erlitten.",
+   "mevcutBeispielTr": "Yatırımcı güveni ağır bir sarsıntı geçirdi."
+  },
+  {
+   "id": 7406,
+   "de": "die Verwerfung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verwerfungen",
+   "mevcutTr": "çarpıklık, kırılma, dengesizlik",
+   "mevcutBeispiel": "Der Umbau der Wirtschaft führt zu sozialen Verwerfungen in ganzen Regionen.",
+   "mevcutBeispielTr": "Ekonominin dönüşümü, bütün bölgelerde toplumsal kırılmalara yol açıyor."
+  },
+  {
+   "id": 7407,
+   "de": "die Risikoscheu",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "riskten kaçınma eğilimi",
+   "mevcutBeispiel": "Übertriebene Risikoscheu kann selbst zu einem erheblichen Risiko werden.",
+   "mevcutBeispielTr": "Aşırı riskten kaçınma, kendisi ciddi bir riske dönüşebilir."
+  },
+  {
+   "id": 7408,
+   "de": "die Erwartungshaltung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erwartungshaltungen",
+   "mevcutTr": "beklenti, beklenti içinde olma",
+   "mevcutBeispiel": "Die Erwartungshaltung der Öffentlichkeit beeinflusst die Prognosen der Fachleute.",
+   "mevcutBeispielTr": "Kamuoyunun beklentisi uzmanların tahminlerini etkiliyor."
+  },
+  {
+   "id": 7409,
+   "de": "das Leitbild",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leitbilder",
+   "mevcutTr": "ideal model, yol gösterici ilke",
+   "mevcutBeispiel": "Ohne ein überzeugendes Leitbild bleibt jede Reform Stückwerk.",
+   "mevcutBeispielTr": "İnandırıcı bir ideal model olmadan her reform yarım kalır."
+  },
+  {
+   "id": 7410,
+   "de": "die Dystopie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dystopien",
+   "mevcutTr": "distopya, karanlık gelecek tasavvuru",
+   "mevcutBeispiel": "Der Roman zeichnet eine Dystopie, die unangenehm plausibel wirkt.",
+   "mevcutBeispielTr": "Roman, rahatsız edici derecede inandırıcı bir distopya çiziyor."
+  },
+  {
+   "id": 7411,
+   "de": "die Langzeitfolge",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Langzeitfolgen",
+   "mevcutTr": "uzun vadeli sonuç",
+   "mevcutBeispiel": "Über die Langzeitfolgen dieses Eingriffs weiß man bisher wenig.",
+   "mevcutBeispielTr": "Bu müdahalenin uzun vadeli sonuçları hakkında şimdiye dek az şey biliniyor."
+  },
+  {
+   "id": 7412,
+   "de": "die Vorkehrung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vorkehrungen",
+   "mevcutTr": "önlem, tedbir",
+   "mevcutBeispiel": "Die Kommune hat für den Ernstfall umfangreiche Vorkehrungen getroffen.",
+   "mevcutBeispielTr": "Belediye, olası kriz için kapsamlı önlemler aldı."
+  },
+  {
+   "id": 7413,
+   "de": "der Dominoeffekt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dominoeffekte",
+   "mevcutTr": "domino etkisi, zincirleme etki",
+   "mevcutBeispiel": "Der Ausfall eines Zulieferers löste einen Dominoeffekt in der Branche aus.",
+   "mevcutBeispielTr": "Bir tedarikçinin devre dışı kalması sektörde domino etkisi yarattı."
+  },
+  {
+   "id": 7414,
+   "de": "die Kurskorrektur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kurskorrekturen",
+   "mevcutTr": "rota düzeltmesi, yön değişikliği",
+   "mevcutBeispiel": "Eine frühe Kurskorrektur wäre billiger gewesen als die späte Rettung.",
+   "mevcutBeispielTr": "Erken bir rota düzeltmesi, geç kalmış kurtarmadan daha ucuza gelirdi."
+  },
+  {
+   "id": 7415,
+   "de": "die Erblast",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erblasten",
+   "mevcutTr": "geçmişten devralınan yük, miras kalan sorun",
+   "mevcutBeispiel": "Die kommende Regierung übernimmt eine schwere finanzielle Erblast.",
+   "mevcutBeispielTr": "Gelecek hükûmet ağır bir mali yükü devralıyor."
+  },
+  {
+   "id": 7416,
+   "de": "antizipieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat antizipiert",
+   "mevcutTr": "önceden sezmek, öngörmek",
+   "mevcutBeispiel": "Gute Planung antizipiert Widerstände, statt sie später zu beklagen.",
+   "mevcutBeispielTr": "İyi planlama, direnci sonradan yakınmak yerine önceden sezer."
+  },
+  {
+   "id": 7417,
+   "de": "ausloten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgelotet",
+   "mevcutTr": "yoklamak, sınırlarını araştırmak",
+   "mevcutBeispiel": "Die Kommission lotet aus, welche Maßnahmen politisch überhaupt durchsetzbar sind.",
+   "mevcutBeispielTr": "Komisyon, hangi tedbirlerin siyaseten uygulanabilir olduğunu yokluyor."
+  },
+  {
+   "id": 7418,
+   "de": "durchspielen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat durchgespielt",
+   "mevcutTr": "baştan sona düşünmek, senaryolarını denemek",
+   "mevcutBeispiel": "Im Krisenstab wurden alle denkbaren Verläufe einmal durchgespielt.",
+   "mevcutBeispielTr": "Kriz masasında akla gelebilecek bütün seyirler birer kez denendi."
+  },
+  {
+   "id": 7419,
+   "de": "ausbleiben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist ausgeblieben",
+   "mevcutTr": "gerçekleşmemek, gelmemek",
+   "mevcutBeispiel": "Der erhoffte Aufschwung ist auch in diesem Jahr ausgeblieben.",
+   "mevcutBeispielTr": "Umulan canlanma bu yıl da gerçekleşmedi."
+  },
+  {
+   "id": 7420,
+   "de": "umschlagen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist umgeschlagen",
+   "mevcutTr": "birdenbire tersine dönmek, aniden değişmek",
+   "mevcutBeispiel": "Die anfängliche Begeisterung ist rasch in Ernüchterung umgeschlagen.",
+   "mevcutBeispielTr": "Başlangıçtaki coşku hızla hayal kırıklığına dönüştü."
+  },
+  {
+   "id": 7421,
+   "de": "einkalkulieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat einkalkuliert",
+   "mevcutTr": "hesaba katmak, göz önünde bulundurmak",
+   "mevcutBeispiel": "Rückschläge sind in diesem Zeitplan bereits einkalkuliert.",
+   "mevcutBeispielTr": "Bu zaman planında aksaklıklar şimdiden hesaba katılmış."
+  },
+  {
+   "id": 7422,
+   "de": "herbeiführen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat herbeigeführt",
+   "mevcutTr": "sağlamak, gerçekleştirmek, yol açmak",
+   "mevcutBeispiel": "Eine Entscheidung sollte man herbeiführen, bevor die Lage kippt.",
+   "mevcutBeispielTr": "Durum devrilmeden önce bir karara varılmalı.",
+   "cakisan": [
+    "bereitstellen (C1)"
+   ]
+  },
+  {
+   "id": 7423,
+   "de": "veranschlagen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat veranschlagt",
+   "mevcutTr": "öngörmek, tahmini olarak belirlemek",
+   "mevcutBeispiel": "Für den Umbau sind fünf Jahre veranschlagt, realistisch sind acht.",
+   "mevcutBeispielTr": "Dönüşüm için beş yıl öngörülmüş, gerçekçisi sekiz.",
+   "cakisan": [
+    "prognostizieren (C1)"
+   ]
+  },
+  {
+   "id": 7424,
+   "de": "sich wappnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat sich gewappnet",
+   "mevcutTr": "hazırlıklı olmak, kendini donatmak",
+   "mevcutBeispiel": "Die Städte wappnen sich gegen immer längere Hitzeperioden.",
+   "mevcutBeispielTr": "Şehirler giderek uzayan sıcak dönemlere karşı hazırlanıyor."
+  },
+  {
+   "id": 7425,
+   "de": "unabsehbar",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kestirilemez, öngörülemez",
+   "mevcutBeispiel": "Ein Ausstieg hätte Folgen von unabsehbarer Tragweite.",
+   "mevcutBeispielTr": "Bir çekilmenin kapsamı kestirilemez sonuçları olurdu."
+  },
+  {
+   "id": 7426,
+   "de": "vorausschauend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ileriyi gören, öngörülü",
+   "mevcutBeispiel": "Vorausschauendes Handeln kostet heute Geld und spart morgen viel mehr.",
+   "mevcutBeispielTr": "Öngörülü davranmak bugün para götürür, yarın çok daha fazlasını kazandırır."
+  },
+  {
+   "id": 7427,
+   "de": "hypothetisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "varsayımsal, farazi",
+   "mevcutBeispiel": "Diese Zahlen sind rein hypothetisch und ersetzen keine Messung.",
+   "mevcutBeispielTr": "Bu rakamlar tamamen varsayımsal, ölçümün yerini tutmaz."
+  },
+  {
+   "id": 7428,
+   "de": "schleichend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sinsi, yavaş yavaş ilerleyen",
+   "mevcutBeispiel": "Der schleichende Verlust an Vertrauen fällt zunächst kaum auf.",
+   "mevcutBeispielTr": "Güvenin sinsice aşınması ilk başta neredeyse fark edilmiyor."
+  },
+  {
+   "id": 7429,
+   "de": "verhängnisvoll",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "vahim, uğursuz sonuçlara yol açan",
+   "mevcutBeispiel": "Das Zögern in den ersten Wochen erwies sich als verhängnisvoll.",
+   "mevcutBeispielTr": "İlk haftalardaki tereddüt vahim sonuçlar doğurdu."
+  }
+ ]
+}

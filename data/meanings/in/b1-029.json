@@ -1,0 +1,569 @@
+{
+ "paket": "b1-029",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 2572,
+   "de": "die Reklame",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "reklam",
+   "mevcutBeispiel": "Ich möchte keine Reklame im Briefkasten.",
+   "mevcutBeispielTr": "Posta kutuma reklam istemiyorum.",
+   "cakisan": [
+    "die Werbung (B1)"
+   ]
+  },
+  {
+   "id": 1609,
+   "de": "der Briefträger",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "→CH:dieBriefträgerin,-nen Pöstler",
+   "mevcutTr": "postacı",
+   "mevcutBeispiel": "War die Briefträgerin schon da?",
+   "mevcutBeispielTr": "Postacı geldi mi?",
+   "cakisan": [
+    "der Pöstler (B1)",
+    "der Postbote (A2)"
+   ]
+  },
+  {
+   "id": 1705,
+   "de": "eilen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "eilt, eilte, hat/ist geeilt",
+   "mevcutTr": "acelesi olmak, acil olmak; acele etmek",
+   "mevcutBeispiel": "Es eilt sehr. Bitte machen Sie schnell.",
+   "mevcutBeispielTr": "Çok acil. Lütfen hızlı olun."
+  },
+  {
+   "id": 2067,
+   "de": "der Hersteller",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "üretici",
+   "mevcutBeispiel": "- Ihr Handy ist kaputt? Wir schicken es an den Hersteller zurück und lassen es reparieren.",
+   "mevcutBeispielTr": "Telefonunuz mu bozuldu? Üreticiye geri gönderip tamir ettiriyoruz."
+  },
+  {
+   "id": 2606,
+   "de": "die Salbe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "merhem",
+   "mevcutBeispiel": "Diese Salbe gibt es nur auf Rezept.",
+   "mevcutBeispielTr": "Bu merhem yalnızca reçeteyle satılıyor."
+  },
+  {
+   "id": 1892,
+   "de": "fließend",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "akıcı, akan",
+   "mevcutBeispiel": "1. Mein Kollege spricht fließend Deutsch. 2. Zimmer mit fließendem Wasser.",
+   "mevcutBeispielTr": "1. İş arkadaşım akıcı Almanca konuşuyor. 2. Akar suyu olan oda."
+  },
+  {
+   "id": 1840,
+   "de": "der Fachmann",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "uzman, usta",
+   "mevcutBeispiel": "Meine Schwester ist Computerfachfrau.",
+   "mevcutBeispielTr": "Kız kardeşim bilgisayar uzmanı.",
+   "cakisan": [
+    "der Experte (B1)",
+    "der Spezialist (B1)",
+    "die Spezialistin (B1)"
+   ]
+  },
+  {
+   "id": 2901,
+   "de": "die Überweisung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "- en",
+   "mevcutTr": "havale, para transferi; sevk (doktordan)",
+   "mevcutBeispiel": "1. Sie können bar oder per Überweisung bezahlen. 2. Der Hausarzt hat mir eine Überweisung fürs Krankenhaus gegeben.",
+   "mevcutBeispielTr": "1. Nakit ya da havaleyle ödeyebilirsiniz. 2. Aile hekimim bana hastane için sevk verdi."
+  },
+  {
+   "id": 1888,
+   "de": "flexibel",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "esnek",
+   "mevcutBeispiel": "Meine Arbeitszeit ist flexibel.",
+   "mevcutBeispielTr": "Çalışma saatlerim esnek.",
+   "cakisan": [
+    "elastisch (C1)"
+   ]
+  },
+  {
+   "id": 1456,
+   "de": "aufwärts",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yukarı doğru",
+   "mevcutBeispiel": "1. Sie müssen gute Schuhe anziehen. Der Weg geht immer aufwärts. 2. In letzter Zeit geht es wieder aufwärts mit der Wirt",
+   "mevcutBeispielTr": "İyi ayakkabı giymelisiniz; yol sürekli yukarı çıkıyor."
+  },
+  {
+   "id": 2763,
+   "de": "steil",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "dik",
+   "mevcutBeispiel": "Die Straße zu unserem Haus ist sehr steil.",
+   "mevcutBeispielTr": "Evimize çıkan yol çok dik.",
+   "cakisan": [
+    "aufrecht (B2)"
+   ]
+  },
+  {
+   "id": 1623,
+   "de": "die Bürste",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "fırça",
+   "mevcutBeispiel": "1. Hast du eine Bürste? Meine Schuhe sind so schmutzig. 2. Ich brauche eine Bürste für meine Haare.",
+   "mevcutBeispielTr": "Fırçan var mı? Ayakkabılarım çok kirlendi.",
+   "cakisan": [
+    "der Pinsel (A2)"
+   ]
+  },
+  {
+   "id": 2317,
+   "de": "die Mappe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "dosya, evrak çantası",
+   "mevcutBeispiel": "Mein Pass ist in dieser Mappe.",
+   "mevcutBeispielTr": "Pasaportum bu dosyanın içinde.",
+   "cakisan": [
+    "die Datei (A2)",
+    "die Akte (B2)"
+   ]
+  },
+  {
+   "id": 1408,
+   "de": "anschaffen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "schafft an, schaffte an, hat angeschafft",
+   "mevcutTr": "edinmek, satın almak",
+   "mevcutBeispiel": "Wir haben uns neue Möbel angeschafft.",
+   "mevcutBeispielTr": "Kendimize yeni mobilyalar aldık.",
+   "cakisan": [
+    "sich aneignen (B2)"
+   ]
+  },
+  {
+   "id": 1550,
+   "de": "beschließen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "beschließt, beschloss, hat beschlossen",
+   "mevcutTr": "karar vermek",
+   "mevcutBeispiel": "Wir haben beschlossen, uns ein kleineres Auto zu kaufen.",
+   "mevcutBeispielTr": "Daha küçük bir araba almaya karar verdik.",
+   "cakisan": [
+    "entscheiden (B1)",
+    "sich entschließen (B1)",
+    "sich entscheiden für (B2)"
+   ]
+  },
+  {
+   "id": 2311,
+   "de": "mager",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yağsız, zayıf",
+   "mevcutBeispiel": "Bitte 1 kg mageres Fleisch.",
+   "mevcutBeispielTr": "1 kilo yağsız et lütfen."
+  },
+  {
+   "id": 1612,
+   "de": "die Broschüre",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "broşür",
+   "mevcutBeispiel": "In der Broschüre finden Sie die neuesten Informationen.",
+   "mevcutBeispielTr": "En güncel bilgileri broşürde bulabilirsiniz.",
+   "cakisan": [
+    "der Prospekt (A1)"
+   ]
+  },
+  {
+   "id": 1350,
+   "de": "das Abitur",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "CH: Matura",
+   "mevcutTr": "lise diploması, mezuniyet",
+   "mevcutBeispiel": "Meine Tochter hat gerade Abitur gemacht.",
+   "mevcutBeispielTr": "Kızım az önce lise diplomasını aldı."
+  },
+  {
+   "id": 1657,
+   "de": "der Dialekt",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "lehçe, şive",
+   "mevcutBeispiel": "Ich verstehe dich besser, wenn du nicht Dialekt sprichst.",
+   "mevcutBeispielTr": "Lehçe konuşmadığında seni daha iyi anlıyorum."
+  },
+  {
+   "id": 3011,
+   "de": "verschreiben",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verschreibt, verschrieb, hat verschrieben",
+   "mevcutTr": "reçete yazmak, ilaç yazmak",
+   "mevcutBeispiel": "Die Ärztin hat mir Tabletten verschrieben.",
+   "mevcutBeispielTr": "Doktor bana hap yazdı.",
+   "cakisan": [
+    "verordnen (B2)"
+   ]
+  },
+  {
+   "id": 2457,
+   "de": "der Ordner",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "klasör, dosya",
+   "mevcutBeispiel": "- Für meine Übungen im Deutschkurs habe ich mir einen Ordner gekauft.",
+   "mevcutBeispielTr": "Almanca kursundaki alıştırmalarım için kendime bir klasör aldım."
+  },
+  {
+   "id": 1687,
+   "de": "durchschnittlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ortalama olarak",
+   "mevcutBeispiel": "Die Preise sind im letzten Jahr um durchschnittlich 6 % gestiegen.",
+   "mevcutBeispielTr": "Fiyatlar geçen yıl ortalama yüzde 6 arttı."
+  },
+  {
+   "id": 2547,
+   "de": "realisieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "realisiert, realisierte, hat realisiert",
+   "mevcutTr": "gerçekleştirmek, farkına varmak",
+   "mevcutBeispiel": "1. Diese Pläne sind nicht zu realisieren. 2. Ich habe nicht realisiert, dass die Zeit schon um ist.",
+   "mevcutBeispielTr": "1. Bu planlar gerçekleştirilemez. 2. Sürenin dolduğunun farkına varmadım.",
+   "cakisan": [
+    "verwirklichen (B2)",
+    "durchführen (B2)"
+   ]
+  },
+  {
+   "id": 3101,
+   "de": "der Wetterbericht",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "hava durumu raporu",
+   "mevcutBeispiel": "Hast du schon den Wetterbericht gehört?",
+   "mevcutBeispielTr": "Hava durumu raporunu duydun mu?"
+  },
+  {
+   "id": 3043,
+   "de": "das Vitamin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "vitamin",
+   "mevcutBeispiel": "Der Arzt sagt, ich soll viele Vitamine essen.",
+   "mevcutBeispielTr": "Doktor bol bol vitamin almamı söylüyor."
+  },
+  {
+   "id": 1689,
+   "de": "duzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "duzt, duzte, hat geduzt",
+   "mevcutTr": "sen diye hitap etmek",
+   "mevcutBeispiel": "Wollen wir Du zueinander sagen? Ja, wir können uns gern duzen?",
+   "mevcutBeispielTr": "Birbirimize sen diyelim mi? Evet, seve seve senli benli konuşabiliriz."
+  },
+  {
+   "id": 3161,
+   "de": "zugehen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "geht zu, ging zu, ist zugegangen",
+   "mevcutTr": "kapanmak",
+   "mevcutBeispiel": "Die Tür geht nicht zu. Kannst du mir helfen?",
+   "mevcutBeispielTr": "Kapı kapanmıyor. Bana yardım eder misin?"
+  },
+  {
+   "id": 1545,
+   "de": "beschädigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "beschädigt, beschädigte, hat beschädigt",
+   "mevcutTr": "zarar vermek, hasar vermek",
+   "mevcutBeispiel": "Bitte machen Sie eine Liste davon, was die Einbrecher beschädigt haben.",
+   "mevcutBeispielTr": "Lütfen hırsızların nelere zarar verdiğinin bir listesini yapın.",
+   "cakisan": [
+    "schaden (B1)",
+    "schädigen (C1)"
+   ]
+  },
+  {
+   "id": 2721,
+   "de": "sparsam",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "tutumlu, ekonomik",
+   "mevcutBeispiel": "1. Wir haben fünf Kinder. Wir müssen sehr sparsam sein. 2. Mein Auto ist sehr sparsam. Es verbraucht nur 5 Liter auf 100",
+   "mevcutBeispielTr": "1. Beş çocuğumuz var, çok tutumlu olmak zorundayız. 2. Arabam çok ekonomik; 100 kilometrede sadece 5 litre yakıyor."
+  },
+  {
+   "id": 2622,
+   "de": "das Schaufenster",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "vitrin",
+   "mevcutBeispiel": "- Ich habe im Schaufenster eine schicke Bluse gesehen.",
+   "mevcutBeispielTr": "Vitrinde şık bir bluz gördüm."
+  },
+  {
+   "id": 2512,
+   "de": "die Praktikantin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "stajyer (kadın)",
+   "mevcutBeispiel": "Bei dieser Firma habe ich zwei Jahre als Praktikantin gearbeitet.",
+   "mevcutBeispielTr": "Bu şirkette iki yıl stajyer olarak çalıştım.",
+   "cakisan": [
+    "der Praktikant (B1)"
+   ]
+  },
+  {
+   "id": 2911,
+   "de": "die Umfrage",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "anket",
+   "mevcutBeispiel": "Wir machen eine Umfrage zum Thema Umweltschutz.",
+   "mevcutBeispielTr": "Çevre koruma konusunda bir anket yapıyoruz.",
+   "cakisan": [
+    "die Befragung (C1)"
+   ]
+  },
+  {
+   "id": 2822,
+   "de": "die Tastatur",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "klavye",
+   "mevcutBeispiel": "Die Tastatur an meinem Computer ist ganz neu.",
+   "mevcutBeispielTr": "Bilgisayarımın klavyesi yepyeni."
+  },
+  {
+   "id": 1949,
+   "de": "das Gebirge",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "dağlık bölge, sıradağlar",
+   "mevcutBeispiel": "Wir haben unseren Urlaub im Gebirge verbracht.",
+   "mevcutBeispielTr": "Tatilimizi dağlarda geçirdik."
+  },
+  {
+   "id": 2935,
+   "de": "unterlassen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "unterlässt, unterließ, hat unterlassen",
+   "mevcutTr": "kaçınmak, yapmamak",
+   "mevcutBeispiel": "Das Rauchen auf den Gängen ist zu unterlassen.",
+   "mevcutBeispielTr": "Koridorlarda sigara içilmemesi gerekmektedir.",
+   "cakisan": [
+    "vermeiden (B1)",
+    "meiden (B2)"
+   ]
+  },
+  {
+   "id": 2719,
+   "de": "sozial",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sosyal, toplumsal",
+   "mevcutBeispiel": "1. Das System ist nicht sozial. 2. Es gibt viele soziale Probleme.",
+   "mevcutBeispielTr": "1. Bu sistem sosyal değil. 2. Birçok toplumsal sorun var.",
+   "cakisan": [
+    "gesellig (B2)"
+   ]
+  },
+  {
+   "id": 1884,
+   "de": "die Fläche",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "yüzey, alan",
+   "mevcutBeispiel": "Unsere Wohnung hat eine Wohnfläche von 100 m².",
+   "mevcutBeispielTr": "Dairemizin kullanım alanı 100 metrekare."
+  },
+  {
+   "id": 1466,
+   "de": "die Aushilfe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "yardımcı eleman, geçici çalışan",
+   "mevcutBeispiel": "Wir suchen eine freundliche Aushilfe für unser Geschäft.",
+   "mevcutBeispielTr": "Mağazamız için güler yüzlü bir yardımcı eleman arıyoruz."
+  },
+  {
+   "id": 3122,
+   "de": "der Wohnsitz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "ikametgah, mesken",
+   "mevcutBeispiel": "Er hat einen festen Wohnsitz in dieser Stadt.",
+   "mevcutBeispielTr": "Bu şehirde sabit bir ikametgahı var.",
+   "cakisan": [
+    "der Wohnort (B1)"
+   ]
+  },
+  {
+   "id": 3191,
+   "de": "die Zwiebel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "soğan",
+   "mevcutBeispiel": "Eine Zwiebel in kleine Stücke schneiden und zusammen mit dem Fleisch braten.",
+   "mevcutBeispielTr": "Bir soğanı küçük parçalar hâlinde doğrayıp etle birlikte kavurun."
+  },
+  {
+   "id": 2720,
+   "de": "der Sozialarbeiter",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Sozialarbeiterin, -nen",
+   "mevcutTr": "sosyal hizmet uzmanı, sosyal çalışmacı",
+   "mevcutBeispiel": "- Die Sozialarbeiterin kommt einmal in der Woche.",
+   "mevcutBeispielTr": "Sosyal hizmet uzmanı haftada bir geliyor."
+  },
+  {
+   "id": 2290,
+   "de": "das Lexikon",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-Lexika",
+   "mevcutTr": "ansiklopedi, sözlük",
+   "mevcutBeispiel": "Wir könnten im Lexikon nachsehen.",
+   "mevcutBeispielTr": "Ansiklopediye bakabiliriz."
+  },
+  {
+   "id": 1713,
+   "de": "einerseits",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bir yandan",
+   "mevcutBeispiel": "Einerseits möchte ich die Reise gern machen, andererseits ist sie zu teuer.",
+   "mevcutBeispielTr": "Bir yandan bu yolculuğu çok yapmak istiyorum, öte yandan çok pahalı."
+  },
+  {
+   "id": 1475,
+   "de": "äußerlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "dıştan, harici",
+   "mevcutBeispiel": "Das Medikament dürfen Sie nur äußerlich anwenden.",
+   "mevcutBeispielTr": "Bu ilacı yalnızca haricen kullanabilirsiniz."
+  },
+  {
+   "id": 2640,
+   "de": "schminken",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "schminkt, schminkte, hat geschminkt",
+   "mevcutTr": "makyaj yapmak",
+   "mevcutBeispiel": "Du bist heute sehr schön geschminkt.",
+   "mevcutBeispielTr": "Bugün makyajın çok güzel olmuş."
+  },
+  {
+   "id": 2542,
+   "de": "der Raucher",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Raucherin, -nen",
+   "mevcutTr": "sigara içen kişi",
+   "mevcutBeispiel": "- 1. Gibt es hier ein Zimmer für Raucher? 2. Ich bin keine Raucherin. Ich bin Nichtraucherin.",
+   "mevcutBeispielTr": "1. Burada sigara içilen bir oda var mı? 2. Sigara içmem; sigara kullanmayan biriyim."
+  },
+  {
+   "id": 1733,
+   "de": "das Einschreiben",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "taahhütlü mektup",
+   "mevcutBeispiel": "Ich habe den Brief als Einschreiben geschickt.",
+   "mevcutBeispielTr": "Mektubu taahhütlü gönderdim."
+  },
+  {
+   "id": 1567,
+   "de": "die Betreuung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bakım (kişi, çocuk)",
+   "mevcutBeispiel": "Haben Sie eine Betreuung für Ihre Kinder?",
+   "mevcutBeispielTr": "Çocuklarınız için bir bakım imkânınız var mı?"
+  },
+  {
+   "id": 1704,
+   "de": "sich eignen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "eignet sich, eignete sich, hat sich geeignet",
+   "mevcutTr": "uygun olmak, elverişli olmak",
+   "mevcutBeispiel": "Dieses Hotel eignet sich besonders für Familien mit Kindern.",
+   "mevcutBeispielTr": "Bu otel özellikle çocuklu aileler için uygun."
+  },
+  {
+   "id": 2461,
+   "de": "der Vorort",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "banliyö, dış mahalle",
+   "mevcutBeispiel": "Mein Bruder wohnt in einem Vorort von Hamburg.",
+   "mevcutBeispielTr": "Kardeşim Hamburg'un bir banliyösünde oturuyor."
+  }
+ ]
+}

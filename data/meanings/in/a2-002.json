@@ -1,0 +1,617 @@
+{
+ "paket": "a2-002",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 940,
+   "de": "drüben",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "karşıda, öte tarafta",
+   "mevcutBeispiel": "Da drüben ist die Haltestelle.",
+   "mevcutBeispielTr": "Durak tam karşıda."
+  },
+  {
+   "id": 1159,
+   "de": "der Rest",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "geri kalan, kalan kısım, artık",
+   "mevcutBeispiel": "Hier sind 50 Euro. Den Rest gebe ich dir später. Es ist noch ein Rest Suppe da. Möchtest du noch?",
+   "mevcutBeispielTr": "İşte 50 euro. Kalanını sana sonra veririm. Biraz çorba kaldı. Daha ister misin?"
+  },
+  {
+   "id": 1055,
+   "de": "der Körper",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "vücut, beden",
+   "mevcutBeispiel": "Der Arzt sagt, ich muss etwas für meinen Körper tun, z. B. schwimmen oder Fahrrad fahren.",
+   "mevcutBeispielTr": "Doktor, vücudum için bir şeyler yapmam gerektiğini söylüyor; mesela yüzmek ya da bisiklete binmek."
+  },
+  {
+   "id": 1015,
+   "de": "hart",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sert",
+   "mevcutBeispiel": "Ich finde das Bett zu hart. Die Brötchen sind ja ganz hart.",
+   "mevcutBeispielTr": "Yatağı fazla sert buluyorum. Ekmekler iyice sertleşmiş.",
+   "cakisan": [
+    "streng (A2)",
+    "drastisch (B2)",
+    "schroff (C1)",
+    "steif (A2)"
+   ]
+  },
+  {
+   "id": 882,
+   "de": "außerdem",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ayrıca, bunun yanında",
+   "mevcutBeispiel": "Vier Brötchen, möchten Sie außerdem noch etwas?",
+   "mevcutBeispielTr": "Dört sandviç ekmeği; başka bir şey ister misiniz?",
+   "cakisan": [
+    "extra (B1)",
+    "zudem (A2)"
+   ]
+  },
+  {
+   "id": 865,
+   "de": "ändern",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "ändert, hat geändert",
+   "mevcutTr": "değiştirmek",
+   "mevcutBeispiel": "Das Wetter hat sich geändert. Wie kann ich mein Passwort ändern?",
+   "mevcutBeispielTr": "Hava değişti. Şifremi nasıl değiştirebilirim?",
+   "cakisan": [
+    "wechseln (A2)",
+    "tauschen (B1)",
+    "umtauschen (B1)",
+    "umstellen (B2)",
+    "umschreiben (B2)"
+   ]
+  },
+  {
+   "id": 1314,
+   "de": "wenigstens",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "en azından",
+   "mevcutBeispiel": "Ich habe keinen Hunger. - Ach, essen Sie wenigstens ein Stück Kuchen.",
+   "mevcutBeispielTr": "Aç değilim. - En azından bir dilim pasta yiyin.",
+   "cakisan": [
+    "zumindest (B1)"
+   ]
+  },
+  {
+   "id": 1295,
+   "de": "vorsichtig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dikkatli, tedbirli (tehlikeye karşı)",
+   "mevcutBeispiel": "Sei vorsichtig! Du musst vorsichtig fahren, es ist neblig.",
+   "mevcutBeispielTr": "Dikkatli ol! Dikkatli sürmen gerekiyor, hava sisli.",
+   "cakisan": [
+    "aufmerksam (B1)"
+   ]
+  },
+  {
+   "id": 1214,
+   "de": "stark",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "güçlü, kuvvetli, şiddetli",
+   "mevcutBeispiel": "Ich habe starke Kopfschmerzen. Es regnet stark. Der Kaffee ist sehr stark.",
+   "mevcutBeispielTr": "Şiddetli baş ağrım var. Şiddetli yağmur yağıyor. Kahve çok sert.",
+   "cakisan": [
+    "kräftig (B1)"
+   ]
+  },
+  {
+   "id": 1131,
+   "de": "die Person",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "kişi, şahıs",
+   "mevcutBeispiel": "Eintritt pro Person: 5 Euro.",
+   "mevcutBeispielTr": "Kişi başı giriş: 5 euro."
+  },
+  {
+   "id": 1181,
+   "de": "schlimm",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kötü, ciddi",
+   "mevcutBeispiel": "Kein Problem, das ist nicht so schlimm.",
+   "mevcutBeispielTr": "Sorun değil, o kadar da kötü değil.",
+   "cakisan": [
+    "schlecht (A1)"
+   ]
+  },
+  {
+   "id": 1087,
+   "de": "die Meinung",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "fikir, görüş, düşünce",
+   "mevcutBeispiel": "Meine Meinung zu dem Thema ist: … Was ist deine Meinung dazu? Ich habe meine Meinung geändert.",
+   "mevcutBeispielTr": "Bu konudaki görüşüm şu: … Senin bu konudaki fikrin ne? Fikrimi değiştirdim.",
+   "cakisan": [
+    "die Ahnung (A1)",
+    "die Idee (A1)",
+    "der Einfall (B1)"
+   ]
+  },
+  {
+   "id": 1233,
+   "de": "das Team",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-s",
+   "mevcutTr": "takım, ekip",
+   "mevcutBeispiel": "Ich arbeite gern in einem Team. Welches Fußballteam findest du am besten?",
+   "mevcutBeispielTr": "Ekip içinde çalışmayı severim. Sence en iyi futbol takımı hangisi?",
+   "cakisan": [
+    "die Mannschaft (A2)"
+   ]
+  },
+  {
+   "id": 1292,
+   "de": "vorher",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "önce, daha önce",
+   "mevcutBeispiel": "Ich komme mit ins Café. Vorher muss ich aber noch zur Bank.",
+   "mevcutBeispielTr": "Ben de kafeye geliyorum. Ama önce bankaya uğramam gerekiyor.",
+   "cakisan": [
+    "zuerst (A1)",
+    "zunächst (B1)"
+   ]
+  },
+  {
+   "id": 967,
+   "de": "fallen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "fällt, ist gefallen",
+   "mevcutTr": "düşmek",
+   "mevcutBeispiel": "Pass auf, das Glas fällt gleich vom Tisch.",
+   "mevcutBeispielTr": "Dikkat et, bardak masadan düşmek üzere.",
+   "cakisan": [
+    "stürzen (B1)",
+    "abrutschen (C1)"
+   ]
+  },
+  {
+   "id": 1023,
+   "de": "heraus",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "dışarı",
+   "mevcutBeispiel": "Möchtet ihr nicht rauskommen? Das Wetter ist so schön. Kannst du bitte den Müll rausbringen?",
+   "mevcutBeispielTr": "Dışarı çıkmak istemez misiniz? Hava çok güzel. Çöpü dışarı çıkarır mısın lütfen?",
+   "cakisan": [
+    "raus (B1)"
+   ]
+  },
+  {
+   "id": 1105,
+   "de": "die Nähe",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(Sg.)",
+   "mevcutTr": "yakın yer, civar",
+   "mevcutBeispiel": "Die Post ist in der Nähe vom Bahnhof.",
+   "mevcutBeispielTr": "Postane garın yakınında."
+  },
+  {
+   "id": 1135,
+   "de": "plötzlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "aniden, birdenbire",
+   "mevcutBeispiel": "Plötzlich war das Licht aus.",
+   "mevcutBeispielTr": "Birden ışık söndü."
+  },
+  {
+   "id": 996,
+   "de": "gefährlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tehlikeli",
+   "mevcutBeispiel": "Du darfst nicht bei Rot über die Straße gehen. Das ist gefährlich.",
+   "mevcutBeispielTr": "Kırmızı ışıkta karşıya geçmemelisin. Bu tehlikeli."
+  },
+  {
+   "id": 1051,
+   "de": "komisch",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "komik, garip, tuhaf",
+   "mevcutBeispiel": "Der Film war sehr komisch. Wir haben viel gelacht. Eine grüne Hose und gelbe Schuhe? Das sieht komisch aus. Das Essen sc",
+   "mevcutBeispielTr": "Film çok komikti. Çok güldük. Yeşil pantolonla sarı ayakkabı mı? Tuhaf görünüyor.",
+   "cakisan": [
+    "lustig (A1)"
+   ]
+  },
+  {
+   "id": 1248,
+   "de": "der Traum",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "hayal, rüya",
+   "mevcutBeispiel": "Ich möchte eine eigene Firma, das ist mein Traum.",
+   "mevcutBeispielTr": "Kendi firmamı istiyorum; hayalim bu."
+  },
+  {
+   "id": 903,
+   "de": "der Bescheid",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "(bekommen/ geben/sagen)",
+   "mevcutTr": "haber, bilgi",
+   "mevcutBeispiel": "Kann Lisa in Heidelberg studieren? - Sie weiß es noch nicht. Sie bekommt erst nächste Woche Bescheid. Kannst du mir bis ",
+   "mevcutBeispielTr": "Lisa Heidelberg'de okuyabilecek mi? - Henüz bilmiyor. Ancak gelecek hafta haber alacak.",
+   "cakisan": [
+    "die Nachricht (A1)",
+    "die Meldung (B1)",
+    "die Neuigkeit (B1)"
+   ]
+  },
+  {
+   "id": 1332,
+   "de": "das Ziel",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "hedef, amaç, varış noktası",
+   "mevcutBeispiel": "John läuft sehr schnell. Er war als erster am Ziel. Was ist dein Ziel im Leben?",
+   "mevcutBeispielTr": "John çok hızlı koşuyor. Hedefe ilk o vardı. Hayattaki amacın ne?"
+  },
+  {
+   "id": 1298,
+   "de": "wach",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "uyanık",
+   "mevcutBeispiel": "Bist du schon lange wach? Ich bin noch nicht ganz wach.",
+   "mevcutBeispielTr": "Uyanalı çok mu oldu? Ben daha tam uyanamadım."
+  },
+  {
+   "id": 873,
+   "de": "arm",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "fakir, yoksul",
+   "mevcutBeispiel": "Sie haben nicht viel Geld, sie sind arm.",
+   "mevcutBeispielTr": "Fazla paraları yok, fakirler."
+  },
+  {
+   "id": 869,
+   "de": "ansehen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "sieht an, hat angesehen",
+   "mevcutTr": "bakmak, izlemek, seyretmek",
+   "mevcutBeispiel": "Darf ich eure Urlaubsfotos ansehen? Ich sehe (mir) diese Sendung jeden Tag an.",
+   "mevcutBeispielTr": "Tatil fotoğraflarınıza bakabilir miyim? Bu programı her gün izliyorum.",
+   "cakisan": [
+    "betreuen (B1)",
+    "gucken (B1)",
+    "pflegen (B1)",
+    "schauen (B1)",
+    "sorgen (B1)",
+    "hüten (A2)"
+   ]
+  },
+  {
+   "id": 1019,
+   "de": "heiß",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sıcak",
+   "mevcutBeispiel": "Vorsicht, der Tee ist heiß! Mir ist heiß. Kannst du das Fenster öffnen?",
+   "mevcutBeispielTr": "Dikkat, çay sıcak! İçim sıcak bastı. Pencereyi açar mısın?",
+   "cakisan": [
+    "warm (A1)",
+    "die Hitze (B1)"
+   ]
+  },
+  {
+   "id": 1260,
+   "de": "unbedingt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "mutlaka, kesinlikle",
+   "mevcutBeispiel": "Ich muss unbedingt mit dir sprechen.",
+   "mevcutBeispielTr": "Seninle mutlaka konuşmam gerekiyor."
+  },
+  {
+   "id": 1261,
+   "de": "der Unfall",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "¨-e",
+   "mevcutTr": "kaza",
+   "mevcutBeispiel": "Ich hatte gestern einen Unfall. Wie ist der Unfall passiert?",
+   "mevcutBeispielTr": "Dün bir kaza geçirdim. Kaza nasıl oldu?",
+   "cakisan": [
+    "das Unglück (B1)"
+   ]
+  },
+  {
+   "id": 1238,
+   "de": "tief",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "derin",
+   "mevcutBeispiel": "Vorsicht, das Wasser ist tief!",
+   "mevcutBeispielTr": "Dikkat, su derin!"
+  },
+  {
+   "id": 1078,
+   "de": "lügen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "lügt, hat gelogen",
+   "mevcutTr": "yalan söylemek",
+   "mevcutBeispiel": "Du sollst nicht lügen. Glaub ihm nicht, er lügt.",
+   "mevcutBeispielTr": "Yalan söylememelisin. Ona inanma, yalan söylüyor.",
+   "cakisan": [
+    "anlügen (A2)"
+   ]
+  },
+  {
+   "id": 1320,
+   "de": "der Witz",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "şaka, fıkra",
+   "mevcutBeispiel": "Wir haben Witze erzählt und viel gelacht.",
+   "mevcutBeispielTr": "Fıkralar anlattık ve çok güldük."
+  },
+  {
+   "id": 1109,
+   "de": "neben",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yanında, yanına",
+   "mevcutBeispiel": "Neben mir ist noch ein Platz frei. Die Apotheke ist neben der Post.",
+   "mevcutBeispielTr": "Yanımda bir yer daha boş. Eczane postanenin yanında.",
+   "cakisan": [
+    "bei (A1)",
+    "daneben (A1)",
+    "dabei (B1)"
+   ]
+  },
+  {
+   "id": 1165,
+   "de": "der Rücken",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-",
+   "mevcutTr": "sırt",
+   "mevcutBeispiel": "Mein Rücken tut mir weh.",
+   "mevcutBeispielTr": "Sırtım ağrıyor."
+  },
+  {
+   "id": 1187,
+   "de": "schrecklich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "korkunç, berbat",
+   "mevcutBeispiel": "Ich finde ihren Rock schrecklich. Er sieht furchtbar aus! Ich finde den Film schrecklich. Er macht mir Angst.",
+   "mevcutBeispielTr": "Eteğini berbat buluyorum. Korkunç görünüyor! Filmi korkunç buluyorum; beni korkutuyor.",
+   "cakisan": [
+    "furchtbar (A2)"
+   ]
+  },
+  {
+   "id": 1173,
+   "de": "sauer",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ekşi; kızgın, sinirli",
+   "mevcutBeispiel": "Zitronen sind mir zu sauer. Was ist los? – Ich bin sauer. Ich muss am Wochenende zu Hause bleiben und darf nicht mit mei",
+   "mevcutBeispielTr": "Limonlar bana fazla ekşi geliyor. Ne oldu? – Kızgınım. Hafta sonu evde kalmam gerekiyor."
+  },
+  {
+   "id": 963,
+   "de": "erreichen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "erreicht, hat erreicht",
+   "mevcutTr": "ulaşmak, yetişmek, varmak",
+   "mevcutBeispiel": "Wenn wir uns beeilen, erreichen wir noch den Zug um acht Uhr. Bis 18 Uhr können Sie mich im Büro erreichen.",
+   "mevcutBeispielTr": "Acele edersek saat sekizdeki trene hâlâ yetişiriz. Saat 18'e kadar bana ofisten ulaşabilirsiniz."
+  },
+  {
+   "id": 1048,
+   "de": "die Kirche",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-n",
+   "mevcutTr": "kilise",
+   "mevcutBeispiel": "Diese Kirche ist fast 800 Jahre alt.",
+   "mevcutBeispielTr": "Bu kilise neredeyse 800 yıllık."
+  },
+  {
+   "id": 1152,
+   "de": "reich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "zengin",
+   "mevcutBeispiel": "Lotte ist reich. Sie hat sehr viel Geld.",
+   "mevcutBeispielTr": "Lotte zengin. Çok parası var."
+  },
+  {
+   "id": 1003,
+   "de": "das Gericht",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "yemek",
+   "mevcutBeispiel": "Mein Lieblingsgericht ist Pizza.",
+   "mevcutBeispielTr": "En sevdiğim yemek pizza.",
+   "cakisan": [
+    "essen (A1)",
+    "das Essen (A1)",
+    "fressen (B1)",
+    "Speise (B1)"
+   ]
+  },
+  {
+   "id": 1199,
+   "de": "singen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "singt, hat gesungen",
+   "mevcutTr": "şarkı söylemek",
+   "mevcutBeispiel": "1. Ich singe gern. 2. Ich kann heute nicht singen, ich bin erkältet.",
+   "mevcutBeispielTr": "Şarkı söylemeyi severim. Bugün şarkı söyleyemem, üşütmüşüm."
+  },
+  {
+   "id": 1052,
+   "de": "der Kontakt",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "iletişim, bağlantı",
+   "mevcutBeispiel": "Ich habe wenig Kontakt zu meinen Kollegen. Bitte schicken Sie mir Ihre Kontaktdaten!",
+   "mevcutBeispielTr": "İş arkadaşlarımla pek iletişimim yok. Lütfen bana iletişim bilgilerinizi gönderin!",
+   "cakisan": [
+    "die Kommunikation (B1)"
+   ]
+  },
+  {
+   "id": 998,
+   "de": "gegenüber",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "karşısında, karşı",
+   "mevcutBeispiel": "Die Post ist gegenüber vom Bahnhof. Die Hausnummer 84 ist gleich gegenüber.",
+   "mevcutBeispielTr": "Postane garın karşısında. 84 numaralı ev hemen karşıda.",
+   "cakisan": [
+    "angesichts (B2)"
+   ]
+  },
+  {
+   "id": 1321,
+   "de": "witzig",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "esprili, komik",
+   "mevcutBeispiel": "Warum lachst du? Ich finde das nicht witzig.",
+   "mevcutBeispielTr": "Neden gülüyorsun? Bunu komik bulmuyorum.",
+   "cakisan": [
+    "humorvoll (A2)"
+   ]
+  },
+  {
+   "id": 908,
+   "de": "der Besuch",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-e",
+   "mevcutTr": "ziyaret; misafir, konuk",
+   "mevcutBeispiel": "Wir bekommen am Wochenende Besuch. Ich mache einen Besuch im Krankenhaus.",
+   "mevcutBeispielTr": "Hafta sonu bize misafir gelecek. Hastanede bir ziyaret yapacağım."
+  },
+  {
+   "id": 1172,
+   "de": "sauber",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "temiz",
+   "mevcutBeispiel": "Bringen Sie mir bitte ein sauberes Glas!",
+   "mevcutBeispielTr": "Bana temiz bir bardak getirin lütfen!"
+  },
+  {
+   "id": 1113,
+   "de": "nervös",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "gergin, sinirli",
+   "mevcutBeispiel": "Bei Prüfungen bin ich immer sehr nervös.",
+   "mevcutBeispielTr": "Sınavlarda hep çok gergin olurum.",
+   "cakisan": [
+    "angespannt (C1)"
+   ]
+  },
+  {
+   "id": 1129,
+   "de": "passen",
+   "typ": "Verb",
+   "niveau": "A2",
+   "formen": "passt, hat gepasst",
+   "mevcutTr": "uymak, uygun olmak",
+   "mevcutBeispiel": "Die Bluse passt mir nicht. Welches Wort passt? Wählen Sie.",
+   "mevcutBeispielTr": "Bluz üzerime olmuyor. Hangi kelime uyuyor? Seçin.",
+   "cakisan": [
+    "sich richten nach (B2)",
+    "einhalten (B2)"
+   ]
+  },
+  {
+   "id": 1234,
+   "de": "teilen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "teilt hat geteilt",
+   "mevcutTr": "paylaşmak, bölmek",
+   "mevcutBeispiel": "Wollen wir die Pizza teilen? Mein Mann und ich teilen uns die Arbeit.",
+   "mevcutBeispielTr": "Pizzayı paylaşalım mı? Eşimle işi bölüşüyoruz.",
+   "cakisan": [
+    "posten (A2)"
+   ]
+  },
+  {
+   "id": 1200,
+   "de": "die Situation",
+   "typ": "Nomen",
+   "niveau": "A2",
+   "formen": "-en",
+   "mevcutTr": "durum",
+   "mevcutBeispiel": "Ich bin in einer schwierigen Situation. Ich weiß nicht, was ich tun soll. Lesen Sie die Anzeigen und die Aufgaben 11-15.",
+   "mevcutBeispielTr": "Zor bir durumdayım. Ne yapacağımı bilmiyorum.",
+   "cakisan": [
+    "der Fall (B1)",
+    "der Zustand (B1)"
+   ]
+  }
+ ]
+}

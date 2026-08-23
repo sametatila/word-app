@@ -1,0 +1,555 @@
+{
+ "paket": "b2-023",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4744,
+   "de": "die Wirbelsäule",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Wirbelsäulen",
+   "mevcutTr": "omurga",
+   "mevcutBeispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben.",
+   "mevcutBeispielTr": "Uzun süre oturmak omurgayı ağır kaldırmaktan daha çok yorar."
+  },
+  {
+   "id": 4745,
+   "de": "die Abwehrkräfte",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "vücut direnci, savunma gücü",
+   "mevcutBeispiel": "Frische Luft und Bewegung stärken die Abwehrkräfte im Winter.",
+   "mevcutBeispielTr": "Temiz hava ve hareket kışın vücut direncini güçlendirir."
+  },
+  {
+   "id": 4746,
+   "de": "die Essgewohnheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Essgewohnheiten",
+   "mevcutTr": "beslenme alışkanlığı",
+   "mevcutBeispiel": "Alte Essgewohnheiten lassen sich nur mit viel Geduld ändern.",
+   "mevcutBeispielTr": "Eski beslenme alışkanlıkları ancak çok sabırla değiştirilebilir."
+  },
+  {
+   "id": 4747,
+   "de": "die Verdauung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sindirim",
+   "mevcutBeispiel": "Nach dem üppigen Essen brauchte seine Verdauung eine Weile.",
+   "mevcutBeispielTr": "Ağır yemekten sonra sindirimi biraz zaman aldı."
+  },
+  {
+   "id": 4748,
+   "de": "der Heißhunger",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ani açlık krizi, kurt gibi acıkma",
+   "mevcutBeispiel": "Am späten Abend überfällt mich oft der Heißhunger auf Süßes.",
+   "mevcutBeispielTr": "Akşamın geç saatlerinde beni sık sık tatlı krizi basar."
+  },
+  {
+   "id": 4749,
+   "de": "die Sättigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sättigungen",
+   "mevcutTr": "doyma, tokluk",
+   "mevcutBeispiel": "Das Gefühl der Sättigung setzt erst nach zwanzig Minuten ein.",
+   "mevcutBeispielTr": "Tokluk hissi ancak yirmi dakika sonra başlar."
+  },
+  {
+   "id": 4750,
+   "de": "die Flüssigkeitszufuhr",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Flüssigkeitszufuhren",
+   "mevcutTr": "sıvı alımı",
+   "mevcutBeispiel": "An heißen Tagen ist eine ausreichende Flüssigkeitszufuhr besonders wichtig.",
+   "mevcutBeispielTr": "Sıcak günlerde yeterli sıvı alımı özellikle önemlidir."
+  },
+  {
+   "id": 4751,
+   "de": "das Genussmittel",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Genussmittel",
+   "mevcutTr": "keyif verici madde (kahve, alkol, sigara)",
+   "mevcutBeispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung.",
+   "mevcutBeispielTr": "Kahve ve alkol besin değil, keyif verici madde sayılır."
+  },
+  {
+   "id": 4752,
+   "de": "die Abhängigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Abhängigkeiten",
+   "mevcutTr": "bağımlılık",
+   "mevcutBeispiel": "Der Übergang vom Genuss zur Abhängigkeit verläuft oft unbemerkt.",
+   "mevcutBeispielTr": "Keyiften bağımlılığa geçiş çoğu zaman fark edilmeden olur.",
+   "cakisan": [
+    "die Sucht (B1)"
+   ]
+  },
+  {
+   "id": 4753,
+   "de": "der Biorhythmus",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Biorhythmen",
+   "mevcutTr": "biyolojik ritim",
+   "mevcutBeispiel": "Nachtschichten bringen den Biorhythmus komplett durcheinander.",
+   "mevcutBeispielTr": "Gece vardiyaları biyolojik ritmi tamamen alt üst eder."
+  },
+  {
+   "id": 4754,
+   "de": "das Nickerchen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Nickerchen",
+   "mevcutTr": "kısa uyku, şekerleme",
+   "mevcutBeispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
+   "mevcutBeispielTr": "Öğle yemeğinden sonraki kısa bir şekerleme insanı şaşırtıcı derecede diriltir."
+  },
+  {
+   "id": 4755,
+   "de": "die Leistungsfähigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "performans, verim gücü",
+   "mevcutBeispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen.",
+   "mevcutBeispielTr": "Öğleden sonra birçok insanda zihinsel performans düşer."
+  },
+  {
+   "id": 4756,
+   "de": "die Überlastung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Überlastungen",
+   "mevcutTr": "aşırı yüklenme, aşırı zorlanma",
+   "mevcutBeispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung.",
+   "mevcutBeispielTr": "Dizdeki ağrılar aşırı zorlanmanın klasik bir sonucu.",
+   "cakisan": [
+    "die Überforderung (B2)"
+   ]
+  },
+  {
+   "id": 4757,
+   "de": "die Vorsorge",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "koruyucu bakım, önlem",
+   "mevcutBeispiel": "Zur Vorsorge geht sie einmal im Jahr zum Zahnarzt.",
+   "mevcutBeispielTr": "Koruyucu bakım için yılda bir kez diş hekimine gidiyor."
+  },
+  {
+   "id": 4758,
+   "de": "der Trainingsplan",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Trainingspläne",
+   "mevcutTr": "antrenman programı",
+   "mevcutBeispiel": "Sein Trainingsplan sieht drei Einheiten pro Woche vor.",
+   "mevcutBeispielTr": "Antrenman programı haftada üç seans öngörüyor."
+  },
+  {
+   "id": 4759,
+   "de": "die Zerrung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zerrungen",
+   "mevcutTr": "kas zorlanması, incinme",
+   "mevcutBeispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung.",
+   "mevcutBeispielTr": "Isınmadan hemen kas zorlanması yaşarsın."
+  },
+  {
+   "id": 4760,
+   "de": "die Prellung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Prellungen",
+   "mevcutTr": "berelenme, ezik",
+   "mevcutBeispiel": "Der Sturz endete zum Glück nur mit einer Prellung.",
+   "mevcutBeispielTr": "Düşme neyse ki sadece bir berelenmeyle atlatıldı."
+  },
+  {
+   "id": 4761,
+   "de": "die Heilung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Heilungen",
+   "mevcutTr": "iyileşme, şifa",
+   "mevcutBeispiel": "Die Heilung des Bruchs dauerte länger als erwartet.",
+   "mevcutBeispielTr": "Kırığın iyileşmesi beklenenden uzun sürdü.",
+   "cakisan": [
+    "die Besserung (B1)",
+    "die Genesung (B2)"
+   ]
+  },
+  {
+   "id": 4762,
+   "de": "die Auszeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Auszeiten",
+   "mevcutTr": "mola, ara verme",
+   "mevcutBeispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit.",
+   "mevcutBeispielTr": "Stresli yılın ardından kendine uzunca bir mola verdi.",
+   "cakisan": [
+    "die Pause (A1)"
+   ]
+  },
+  {
+   "id": 4763,
+   "de": "die Achtsamkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Achtsamkeiten",
+   "mevcutTr": "farkındalık, dikkatli olma",
+   "mevcutBeispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht.",
+   "mevcutBeispielTr": "Biraz farkındalıkla bedenin ne zaman mola istediğini daha erken fark edersin."
+  },
+  {
+   "id": 4764,
+   "de": "die Körperhaltung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Körperhaltungen",
+   "mevcutTr": "duruş, vücut duruşu",
+   "mevcutBeispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen.",
+   "mevcutBeispielTr": "Ekran başındaki kötü duruş çoğu zaman boyun ağrısına yol açar."
+  },
+  {
+   "id": 4765,
+   "de": "das Körpergefühl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Körpergefühle",
+   "mevcutTr": "beden algısı, beden hissi",
+   "mevcutBeispiel": "Tanzen hat ihr ein ganz neues Körpergefühl gegeben.",
+   "mevcutBeispielTr": "Dans ona bambaşka bir beden algısı kazandırdı."
+  },
+  {
+   "id": 4766,
+   "de": "der Ausgleich",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausgleiche",
+   "mevcutTr": "denge sağlama, telafi",
+   "mevcutBeispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob.",
+   "mevcutBeispielTr": "Yüzmek onun için ofis işinin mükemmel dengeleyicisi."
+  },
+  {
+   "id": 4767,
+   "de": "die Nachtruhe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gece uykusu, gece dinlenmesi",
+   "mevcutBeispiel": "Der Lärm der Nachbarn stört regelmäßig meine Nachtruhe.",
+   "mevcutBeispielTr": "Komşuların gürültüsü gece uykumu düzenli olarak bölüyor."
+  },
+  {
+   "id": 4768,
+   "de": "der Tiefschlaf",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "derin uyku",
+   "mevcutBeispiel": "Im Tiefschlaf erholt sich der Körper am gründlichsten.",
+   "mevcutBeispielTr": "Beden en iyi derin uykuda toparlanır."
+  },
+  {
+   "id": 4769,
+   "de": "die Selbstdisziplin",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "öz disiplin",
+   "mevcutBeispiel": "Frühsport verlangt am Anfang eine Menge Selbstdisziplin.",
+   "mevcutBeispielTr": "Sabah sporu başlangıçta epeyce öz disiplin ister."
+  },
+  {
+   "id": 4770,
+   "de": "sich dehnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gedehnt",
+   "mevcutTr": "germe hareketi yapmak, esnemek (spor)",
+   "mevcutBeispiel": "Nach dem Laufen solltest du dich gründlich dehnen.",
+   "mevcutBeispielTr": "Koşudan sonra iyice germe hareketi yapmalısın."
+  },
+  {
+   "id": 4771,
+   "de": "sich verausgaben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verausgabt",
+   "mevcutTr": "kendini tüketmek, gücünü aşırı harcamak",
+   "mevcutBeispiel": "Er hat sich im ersten Kilometer völlig verausgabt.",
+   "mevcutBeispielTr": "İlk kilometrede kendini tamamen tüketti."
+  },
+  {
+   "id": 4772,
+   "de": "ermüden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist ermüdet",
+   "mevcutTr": "yorulmak, yormak",
+   "mevcutBeispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist.",
+   "mevcutBeispielTr": "Işık çok zayıf olduğunda gözler çabuk yorulur."
+  },
+  {
+   "id": 4773,
+   "de": "sich abgewöhnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgewöhnt",
+   "mevcutTr": "bir alışkanlığı bırakmak",
+   "mevcutBeispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt.",
+   "mevcutBeispielTr": "Geç saatte atıştırma alışkanlığını zorlukla bıraktım."
+  },
+  {
+   "id": 4774,
+   "de": "durchschlafen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat durchgeschlafen",
+   "mevcutTr": "kesintisiz uyumak",
+   "mevcutBeispiel": "Seit Wochen kann sie nachts nicht mehr durchschlafen.",
+   "mevcutBeispielTr": "Haftalardır geceleri kesintisiz uyuyamıyor."
+  },
+  {
+   "id": 4775,
+   "de": "stärken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gestärkt",
+   "mevcutTr": "güçlendirmek, kuvvetlendirmek",
+   "mevcutBeispiel": "Diese Übung stärkt vor allem den unteren Rücken.",
+   "mevcutBeispielTr": "Bu egzersiz özellikle bel bölgesini güçlendirir.",
+   "cakisan": [
+    "verstärken (B2)",
+    "ertüchtigen (C1)"
+   ]
+  },
+  {
+   "id": 4776,
+   "de": "verkrampfen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verkrampft",
+   "mevcutTr": "kasılmak, kramp girmek",
+   "mevcutBeispiel": "Beim Schwimmen ist ihm plötzlich die Wade verkrampft.",
+   "mevcutBeispielTr": "Yüzerken birden baldırına kramp girdi."
+  },
+  {
+   "id": 4777,
+   "de": "sich aufwärmen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgewärmt",
+   "mevcutTr": "ısınmak (spor öncesi)",
+   "mevcutBeispiel": "Vor dem Spiel wärmt sich die Mannschaft zwanzig Minuten auf.",
+   "mevcutBeispielTr": "Maçtan önce takım yirmi dakika ısınıyor."
+  },
+  {
+   "id": 4778,
+   "de": "zusammenbrechen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist zusammengebrochen",
+   "mevcutTr": "çökmek, yığılmak",
+   "mevcutBeispiel": "Kurz vor dem Ziel brach der Läufer erschöpft zusammen.",
+   "mevcutBeispielTr": "Bitişe az kala koşucu bitkin hâlde yere yığıldı.",
+   "cakisan": [
+    "einstürzen (B2)",
+    "abstürzen (B2)"
+   ]
+  },
+  {
+   "id": 4779,
+   "de": "zügeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gezügelt",
+   "mevcutTr": "dizginlemek, frenlemek",
+   "mevcutBeispiel": "Beim Buffet muss ich meinen Appetit wirklich zügeln.",
+   "mevcutBeispielTr": "Açık büfede iştahımı gerçekten dizginlemem gerekiyor."
+  },
+  {
+   "id": 4780,
+   "de": "unterdrücken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat unterdrückt",
+   "mevcutTr": "bastırmak, tutmak",
+   "mevcutBeispiel": "Im Meeting konnte er ein Gähnen kaum unterdrücken.",
+   "mevcutBeispielTr": "Toplantıda esnemesini zar zor bastırabildi.",
+   "cakisan": [
+    "verdrängen (B2)"
+   ]
+  },
+  {
+   "id": 4781,
+   "de": "sich aufraffen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgerafft",
+   "mevcutTr": "kendini toparlayıp harekete geçmek",
+   "mevcutBeispiel": "Abends kann ich mich kaum noch zum Sport aufraffen.",
+   "mevcutBeispielTr": "Akşamları kendimi zar zor spora ikna edebiliyorum."
+  },
+  {
+   "id": 4782,
+   "de": "durchhalten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat durchgehalten",
+   "mevcutTr": "dayanmak, sürdürmek",
+   "mevcutBeispiel": "Die letzten zwei Kilometer hat sie tapfer durchgehalten.",
+   "mevcutBeispielTr": "Son iki kilometreye cesurca dayandı.",
+   "cakisan": [
+    "beruhen (B2)",
+    "aushalten (B2)",
+    "sich berufen (C1)"
+   ]
+  },
+  {
+   "id": 4783,
+   "de": "umstellen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat umgestellt",
+   "mevcutTr": "değiştirmek, düzenini değiştirmek",
+   "mevcutBeispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt.",
+   "mevcutBeispielTr": "Teşhisten sonra beslenmesini tamamen değiştirdi.",
+   "cakisan": [
+    "ändern (A2)",
+    "wechseln (A2)",
+    "tauschen (B1)",
+    "umtauschen (B1)",
+    "umschreiben (B2)"
+   ]
+  },
+  {
+   "id": 4784,
+   "de": "meiden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gemieden",
+   "mevcutTr": "kaçınmak, uzak durmak",
+   "mevcutBeispiel": "Seit der Diät meidet sie Zucker fast vollständig.",
+   "mevcutBeispielTr": "Diyetten beri şekerden neredeyse tamamen uzak duruyor.",
+   "cakisan": [
+    "unterlassen (B1)",
+    "vermeiden (B1)"
+   ]
+  },
+  {
+   "id": 4785,
+   "de": "sich gönnen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gegönnt",
+   "mevcutTr": "kendine tanımak, kendine izin vermek",
+   "mevcutBeispiel": "Am Wochenende gönnt er sich eine lange Mittagspause.",
+   "mevcutBeispielTr": "Hafta sonu kendine uzun bir öğle molası tanıyor."
+  },
+  {
+   "id": 4786,
+   "de": "dösen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gedöst",
+   "mevcutTr": "uyuklamak, hafif uyuklamak",
+   "mevcutBeispiel": "Im Zug döste ich zwei Stunden vor mich hin.",
+   "mevcutBeispielTr": "Trende iki saat boyunca kendi hâlimde uyukladım."
+  },
+  {
+   "id": 4787,
+   "de": "ankurbeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angekurbelt",
+   "mevcutTr": "hızlandırmak, canlandırmak",
+   "mevcutBeispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an.",
+   "mevcutBeispielTr": "Sabah soğuk duş dolaşımı canlandırır.",
+   "cakisan": [
+    "beschleunigen (B2)"
+   ]
+  },
+  {
+   "id": 4788,
+   "de": "humpeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist gehumpelt",
+   "mevcutTr": "topallamak",
+   "mevcutBeispiel": "Nach dem Sturz humpelte er den ganzen Weg nach Hause.",
+   "mevcutBeispielTr": "Düştükten sonra eve kadar bütün yol topalladı."
+  },
+  {
+   "id": 4789,
+   "de": "ausgeruht",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "dinlenmiş, dinç",
+   "mevcutBeispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht.",
+   "mevcutBeispielTr": "Tatilden sonra nihayet yeniden dinç görünüyordu."
+  },
+  {
+   "id": 4790,
+   "de": "träge",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ağır, uyuşuk, hantal",
+   "mevcutBeispiel": "Nach dem schweren Essen fühlte ich mich richtig träge.",
+   "mevcutBeispielTr": "Ağır yemekten sonra kendimi iyice uyuşuk hissettim.",
+   "cakisan": [
+    "schwerwiegend (C1)"
+   ]
+  },
+  {
+   "id": 4791,
+   "de": "munter",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "zinde, neşeli, uyanık",
+   "mevcutBeispiel": "Nach zwei Tassen Kaffee war er wieder munter.",
+   "mevcutBeispielTr": "İki fincan kahveden sonra yeniden zinde oldu."
+  },
+  {
+   "id": 4792,
+   "de": "ausgewogen",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "dengeli",
+   "mevcutBeispiel": "Eine ausgewogene Ernährung ist wichtiger als jede Diät.",
+   "mevcutBeispielTr": "Dengeli bir beslenme her diyetten daha önemlidir."
+  },
+  {
+   "id": 4793,
+   "de": "seelisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ruhsal, manevi",
+   "mevcutBeispiel": "Dauerstress belastet den Menschen körperlich und seelisch.",
+   "mevcutBeispielTr": "Sürekli stres insanı hem bedensel hem ruhsal olarak yıpratır.",
+   "cakisan": [
+    "psychisch (B2)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,518 @@
+{
+ "paket": "c1-016",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6003,
+   "de": "leistungsbezogen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "performansa dayalı",
+   "mevcutBeispiel": "Ein Teil des Budgets wird leistungsbezogen vergeben.",
+   "mevcutBeispielTr": "Bütçenin bir kısmı performansa dayalı olarak dağıtılıyor."
+  },
+  {
+   "id": 6004,
+   "de": "interdisziplinär",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "disiplinler arası",
+   "mevcutBeispiel": "Interdisziplinäre Projekte haben es bei der Begutachtung oft schwer.",
+   "mevcutBeispielTr": "Disiplinler arası projeler değerlendirme aşamasında çoğu kez zorlanıyor."
+  },
+  {
+   "id": 6005,
+   "de": "herkunftsbedingt",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sosyal kökenden kaynaklanan",
+   "mevcutBeispiel": "Herkunftsbedingte Unterschiede zeigen sich schon in der Grundschule.",
+   "mevcutBeispielTr": "Sosyal kökenden kaynaklanan farklar daha ilkokulda ortaya çıkıyor."
+  },
+  {
+   "id": 6006,
+   "de": "zweckgebunden",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "belirli amaca bağlı, tahsisli",
+   "mevcutBeispiel": "Die zusätzlichen Gelder sind streng zweckgebunden und nicht übertragbar.",
+   "mevcutBeispielTr": "Ek ödenekler kesinlikle belirli bir amaca bağlı ve aktarılamaz."
+  },
+  {
+   "id": 6007,
+   "de": "ungeachtet",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "-e rağmen, dikkate almaksızın",
+   "mevcutBeispiel": "Ungeachtet aller Reformen bleibt der Zusammenhang zwischen Herkunft und Erfolg bestehen.",
+   "mevcutBeispielTr": "Bütün reformlara rağmen köken ile başarı arasındaki bağ sürüyor."
+  },
+  {
+   "id": 6008,
+   "de": "die Überalterung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "nüfusun yaşlanması, aşırı yaşlanma",
+   "mevcutBeispiel": "Die Überalterung der Gesellschaft stellt das Rentensystem vor kaum lösbare Probleme.",
+   "mevcutBeispielTr": "Toplumun aşırı yaşlanması, emeklilik sistemini neredeyse çözülemez sorunlarla karşı karşıya bırakıyor."
+  },
+  {
+   "id": 6009,
+   "de": "der Geburtenrückgang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Geburtenrückgänge",
+   "mevcutTr": "doğumlardaki düşüş, doğurganlık gerilemesi",
+   "mevcutBeispiel": "Der Geburtenrückgang macht sich zuerst in den Grundschulen bemerkbar.",
+   "mevcutBeispielTr": "Doğumlardaki düşüş kendini ilk olarak ilkokullarda hissettiriyor."
+  },
+  {
+   "id": 6010,
+   "de": "die Fruchtbarkeitsziffer",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fruchtbarkeitsziffern",
+   "mevcutTr": "doğurganlık hızı, doğurganlık oranı",
+   "mevcutBeispiel": "Die zusammengefasste Fruchtbarkeitsziffer liegt deutlich unter dem bestandserhaltenden Niveau.",
+   "mevcutBeispielTr": "Toplam doğurganlık hızı, nüfusu koruyacak düzeyin belirgin biçimde altında."
+  },
+  {
+   "id": 6011,
+   "de": "die Bevölkerungsprognose",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bevölkerungsprognosen",
+   "mevcutTr": "nüfus projeksiyonu, nüfus tahmini",
+   "mevcutBeispiel": "Jede Bevölkerungsprognose beruht auf Annahmen, die sich als falsch erweisen können.",
+   "mevcutBeispielTr": "Her nüfus projeksiyonu, yanlış çıkabilecek varsayımlara dayanır."
+  },
+  {
+   "id": 6012,
+   "de": "die Altersstruktur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Altersstrukturen",
+   "mevcutTr": "yaş yapısı, yaş dağılımı",
+   "mevcutBeispiel": "Die Altersstruktur der Belegschaft hat sich in zehn Jahren erheblich verschoben.",
+   "mevcutBeispielTr": "Personelin yaş yapısı on yılda hatırı sayılır ölçüde değişti."
+  },
+  {
+   "id": 6013,
+   "de": "die Abwanderung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abwanderungen",
+   "mevcutTr": "göç etme, dışarı göç",
+   "mevcutBeispiel": "Die Abwanderung gut ausgebildeter Fachkräfte kostet die Region ihre Zukunft.",
+   "mevcutBeispielTr": "İyi eğitimli uzmanların göç etmesi bölgeye geleceğine mal oluyor."
+  },
+  {
+   "id": 6014,
+   "de": "die Binnenwanderung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Binnenwanderungen",
+   "mevcutTr": "iç göç",
+   "mevcutBeispiel": "Die Binnenwanderung verläuft weiterhin von Ost nach West.",
+   "mevcutBeispielTr": "İç göç halen doğudan batıya doğru ilerliyor.",
+   "cakisan": [
+    "die Binnenmigration (C1)"
+   ]
+  },
+  {
+   "id": 6015,
+   "de": "die Sterblichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ölüm oranı, ölümlülük",
+   "mevcutBeispiel": "Die sinkende Sterblichkeit im hohen Alter verlängert die Rentenbezugsdauer.",
+   "mevcutBeispielTr": "İleri yaşta düşen ölüm oranı, emeklilik aylığı alınan süreyi uzatıyor."
+  },
+  {
+   "id": 6016,
+   "de": "die Kohorte",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kohorten",
+   "mevcutTr": "kuşak grubu, kohort",
+   "mevcutBeispiel": "Die geburtenstarken Kohorten der Sechzigerjahre gehen jetzt in den Ruhestand.",
+   "mevcutBeispielTr": "Altmışlı yılların kalabalık kuşakları şimdi emekliye ayrılıyor."
+  },
+  {
+   "id": 6017,
+   "de": "die Demografie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "demografi, nüfus bilimi",
+   "mevcutBeispiel": "Die Demografie liefert Argumente, aber sie ersetzt keine politische Entscheidung.",
+   "mevcutBeispielTr": "Demografi argüman sunar, ama siyasi bir kararın yerini tutmaz."
+  },
+  {
+   "id": 6018,
+   "de": "der Wanderungssaldo",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wanderungssalden",
+   "mevcutTr": "net göç, göç dengesi",
+   "mevcutBeispiel": "Nur ein positiver Wanderungssaldo hält die Einwohnerzahl derzeit stabil.",
+   "mevcutBeispielTr": "Şu anda nüfusu istikrarlı tutan tek şey artı yönlü net göç."
+  },
+  {
+   "id": 6019,
+   "de": "die Erwerbsquote",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erwerbsquoten",
+   "mevcutTr": "işgücüne katılım oranı",
+   "mevcutBeispiel": "Eine höhere Erwerbsquote der Frauen könnte den Rückgang teilweise auffangen.",
+   "mevcutBeispielTr": "Kadınların işgücüne katılım oranının artması düşüşü kısmen telafi edebilirdi."
+  },
+  {
+   "id": 6020,
+   "de": "das Rentenniveau",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rentenniveaus",
+   "mevcutTr": "emekli aylığı düzeyi",
+   "mevcutBeispiel": "Ein stabiles Rentenniveau ist ohne höhere Beiträge kaum zu halten.",
+   "mevcutBeispielTr": "Emekli aylığı düzeyini sabit tutmak, primler artmadan neredeyse imkânsız."
+  },
+  {
+   "id": 6021,
+   "de": "der Beitragssatz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beitragssätze",
+   "mevcutTr": "prim oranı, katkı payı oranı",
+   "mevcutBeispiel": "Der Beitragssatz zur Pflegeversicherung wurde erneut angehoben.",
+   "mevcutBeispielTr": "Bakım sigortası prim oranı yeniden yükseltildi."
+  },
+  {
+   "id": 6022,
+   "de": "das Umlageverfahren",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Umlageverfahren",
+   "mevcutTr": "dağıtım esaslı emeklilik sistemi (çalışanların primiyle ödeme)",
+   "mevcutBeispiel": "Das Umlageverfahren funktioniert nur, solange genügend Beitragszahler nachkommen.",
+   "mevcutBeispielTr": "Dağıtım esaslı sistem, ancak yeterince prim ödeyen geldiği sürece işler."
+  },
+  {
+   "id": 6023,
+   "de": "die Altersarmut",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yaşlılıkta yoksulluk",
+   "mevcutBeispiel": "Altersarmut trifft vor allem Frauen mit unterbrochenen Erwerbsbiografien.",
+   "mevcutBeispielTr": "Yaşlılıkta yoksulluk özellikle çalışma geçmişi kesintili kadınları vuruyor."
+  },
+  {
+   "id": 6024,
+   "de": "die Pflegebedürftigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bakıma muhtaçlık",
+   "mevcutBeispiel": "Die Zahl der Menschen mit Pflegebedürftigkeit wird sich bis 2050 verdoppeln.",
+   "mevcutBeispielTr": "Bakıma muhtaç insanların sayısı 2050'ye kadar ikiye katlanacak."
+  },
+  {
+   "id": 6025,
+   "de": "die Kinderlosigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çocuksuzluk",
+   "mevcutBeispiel": "Gewollte Kinderlosigkeit gilt längst nicht mehr als gesellschaftlicher Makel.",
+   "mevcutBeispielTr": "İsteyerek çocuksuz kalmak çoktandır toplumsal bir kusur sayılmıyor."
+  },
+  {
+   "id": 6026,
+   "de": "die Familienpolitik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aile politikası",
+   "mevcutBeispiel": "Eine wirksame Familienpolitik braucht Geld, Betreuungsplätze und flexible Arbeitszeiten.",
+   "mevcutBeispielTr": "Etkili bir aile politikası para, bakım kontenjanı ve esnek çalışma saati ister."
+  },
+  {
+   "id": 6027,
+   "de": "die Daseinsvorsorge",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "temel kamu hizmetlerinin sağlanması",
+   "mevcutBeispiel": "Der Staat ist auch in leeren Regionen zur Daseinsvorsorge verpflichtet.",
+   "mevcutBeispielTr": "Devlet, boşalmış bölgelerde de temel kamu hizmetlerini sağlamakla yükümlüdür."
+  },
+  {
+   "id": 6028,
+   "de": "das Szenario",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Szenarien",
+   "mevcutTr": "senaryo",
+   "mevcutBeispiel": "Selbst im optimistischen Szenario sinkt die Einwohnerzahl nach 2040.",
+   "mevcutBeispielTr": "İyimser senaryoda bile nüfus 2040'tan sonra azalıyor.",
+   "cakisan": [
+    "das Drehbuch (B2)"
+   ]
+  },
+  {
+   "id": 6029,
+   "de": "die Trendwende",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Trendwenden",
+   "mevcutTr": "eğilim değişimi, gidişatın tersine dönmesi",
+   "mevcutBeispiel": "Von einer echten Trendwende kann bei diesen Zahlen keine Rede sein.",
+   "mevcutBeispielTr": "Bu rakamlarla gerçek bir eğilim değişiminden söz edilemez."
+  },
+  {
+   "id": 6030,
+   "de": "die Regelaltersgrenze",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Regelaltersgrenzen",
+   "mevcutTr": "yasal emeklilik yaşı",
+   "mevcutBeispiel": "Eine Anhebung der Regelaltersgrenze stößt bei den Gewerkschaften auf Widerstand.",
+   "mevcutBeispielTr": "Yasal emeklilik yaşının yükseltilmesi sendikalarda direnişle karşılaşıyor."
+  },
+  {
+   "id": 6031,
+   "de": "die Frühverrentung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Frühverrentungen",
+   "mevcutTr": "erken emeklilik",
+   "mevcutBeispiel": "Jahrzehntelang galt Frühverrentung als bequemes Mittel gegen Arbeitslosigkeit.",
+   "mevcutBeispielTr": "Onlarca yıl boyunca erken emeklilik, işsizliğe karşı kolay bir çare sayıldı."
+  },
+  {
+   "id": 6032,
+   "de": "die Lebensarbeitszeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Lebensarbeitszeiten",
+   "mevcutTr": "çalışma ömrü, toplam çalışma süresi",
+   "mevcutBeispiel": "Eine längere Lebensarbeitszeit ist rechnerisch plausibel und politisch heikel.",
+   "mevcutBeispielTr": "Ömür boyu çalışma süresinin uzaması hesaben makul, siyaseten nazik bir konu."
+  },
+  {
+   "id": 6033,
+   "de": "das Solidarprinzip",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dayanışma ilkesi",
+   "mevcutBeispiel": "Das Solidarprinzip gerät unter Druck, wenn immer weniger einzahlen.",
+   "mevcutBeispielTr": "Giderek daha az kişi ödeme yaptığında dayanışma ilkesi baskı altına giriyor."
+  },
+  {
+   "id": 6034,
+   "de": "die Generationengerechtigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kuşaklar arası adalet",
+   "mevcutBeispiel": "Im Namen der Generationengerechtigkeit fordert er einen Umbau des Systems.",
+   "mevcutBeispielTr": "Kuşaklar arası adalet adına sistemin yeniden yapılandırılmasını talep ediyor."
+  },
+  {
+   "id": 6035,
+   "de": "die Finanzierungslücke",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Finanzierungslücken",
+   "mevcutTr": "finansman açığı",
+   "mevcutBeispiel": "Die Finanzierungslücke in der Pflegeversicherung wächst schneller als erwartet.",
+   "mevcutBeispielTr": "Bakım sigortasındaki finansman açığı beklenenden hızlı büyüyor."
+  },
+  {
+   "id": 6036,
+   "de": "die Bevölkerungspolitik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "nüfus politikası",
+   "mevcutBeispiel": "Jede Bevölkerungspolitik bewegt sich zwischen Anreiz und Übergriff.",
+   "mevcutBeispielTr": "Her nüfus politikası teşvik ile müdahale arasında gidip gelir."
+  },
+  {
+   "id": 6037,
+   "de": "die Reproduktion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "üreme, yeniden üretim",
+   "mevcutBeispiel": "Für die einfache Reproduktion einer Gesellschaft sind gut zwei Kinder nötig.",
+   "mevcutBeispielTr": "Bir toplumun kendini yenilemesi için iki çocuktan biraz fazlası gerekir."
+  },
+  {
+   "id": 6038,
+   "de": "die Haushaltsgröße",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Haushaltsgrößen",
+   "mevcutTr": "hane büyüklüğü",
+   "mevcutBeispiel": "Die durchschnittliche Haushaltsgröße ist auf unter zwei Personen gefallen.",
+   "mevcutBeispielTr": "Ortalama hane büyüklüğü iki kişinin altına düştü."
+  },
+  {
+   "id": 6039,
+   "de": "der Mehrgenerationenhaushalt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Mehrgenerationenhaushalte",
+   "mevcutTr": "çok kuşaklı hane",
+   "mevcutBeispiel": "Der Mehrgenerationenhaushalt ist in Westeuropa fast vollständig verschwunden.",
+   "mevcutBeispielTr": "Çok kuşaklı hane Batı Avrupa'da neredeyse tümüyle ortadan kalktı."
+  },
+  {
+   "id": 6040,
+   "de": "der Sozialstaat",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sozialstaaten",
+   "mevcutTr": "sosyal devlet",
+   "mevcutBeispiel": "Der Sozialstaat wurde für eine junge, wachsende Bevölkerung entworfen.",
+   "mevcutBeispielTr": "Sosyal devlet, genç ve büyüyen bir nüfus için tasarlanmıştı."
+  },
+  {
+   "id": 6041,
+   "de": "die Umverteilung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Umverteilungen",
+   "mevcutTr": "yeniden dağıtım",
+   "mevcutBeispiel": "Hinter der Rentenfrage steht immer eine Umverteilung zwischen den Generationen.",
+   "mevcutBeispielTr": "Emeklilik meselesinin ardında her zaman kuşaklar arası bir yeniden dağıtım vardır."
+  },
+  {
+   "id": 6042,
+   "de": "die Entvölkerung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "nüfusun boşalması, ıssızlaşma",
+   "mevcutBeispiel": "Die Entvölkerung ganzer Landstriche lässt sich kaum noch aufhalten.",
+   "mevcutBeispielTr": "Koca yörelerin boşalmasını artık durdurmak pek mümkün değil."
+  },
+  {
+   "id": 6043,
+   "de": "die Arbeitskräftereserve",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Arbeitskräftereserven",
+   "mevcutTr": "işgücü rezervi",
+   "mevcutBeispiel": "Die letzte große Arbeitskräftereserve sind ältere Beschäftigte und Teilzeitkräfte.",
+   "mevcutBeispielTr": "Son büyük işgücü rezervi, yaşlı çalışanlar ve yarı zamanlı personeldir."
+  },
+  {
+   "id": 6044,
+   "de": "die Rentenreform",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rentenreformen",
+   "mevcutTr": "emeklilik reformu",
+   "mevcutBeispiel": "Jede Rentenreform verschiebt Lasten, ohne sie wirklich zu beseitigen.",
+   "mevcutBeispielTr": "Her emeklilik reformu yükleri gerçekten ortadan kaldırmadan yalnızca kaydırır."
+  },
+  {
+   "id": 6045,
+   "de": "auswandern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist ausgewandert",
+   "mevcutTr": "göç etmek, ülkeden ayrılmak",
+   "mevcutBeispiel": "Jährlich wandern Zehntausende gut qualifizierte Akademiker aus.",
+   "mevcutBeispielTr": "Her yıl on binlerce nitelikli akademisyen ülkeden göç ediyor.",
+   "cakisan": [
+    "einwandern (B2)"
+   ]
+  },
+  {
+   "id": 6046,
+   "de": "prognostizieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat prognostiziert",
+   "mevcutTr": "öngörmek, tahmin etmek",
+   "mevcutBeispiel": "Das Institut prognostiziert einen Verlust von zwei Millionen Erwerbstätigen.",
+   "mevcutBeispielTr": "Enstitü, iki milyon çalışanın kaybedileceğini öngörüyor.",
+   "cakisan": [
+    "veranschlagen (C1)"
+   ]
+  },
+  {
+   "id": 6047,
+   "de": "hochrechnen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat hochgerechnet",
+   "mevcutTr": "çıkarım yaparak hesaplamak, projeksiyon yapmak",
+   "mevcutBeispiel": "Die Forscher haben die Stichprobe auf die Gesamtbevölkerung hochgerechnet.",
+   "mevcutBeispielTr": "Araştırmacılar örneklemi toplam nüfusa oranlayarak hesapladı."
+  },
+  {
+   "id": 6048,
+   "de": "fortschreiben",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat fortgeschrieben",
+   "mevcutTr": "sürdürerek güncellemek, aynı yönde ilerletmek",
+   "mevcutBeispiel": "Wer den heutigen Trend einfach fortschreibt, unterschätzt mögliche Brüche.",
+   "mevcutBeispielTr": "Bugünkü eğilimi olduğu gibi ileriye taşıyan, olası kırılmaları küçümser."
+  },
+  {
+   "id": 6049,
+   "de": "gegensteuern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gegengesteuert",
+   "mevcutTr": "karşı önlem almak, gidişata karşı koymak",
+   "mevcutBeispiel": "Die Kommunen versuchen mit günstigem Bauland gegenzusteuern.",
+   "mevcutBeispielTr": "Belediyeler ucuz arsa sunarak gidişata karşı koymaya çalışıyor."
+  },
+  {
+   "id": 6050,
+   "de": "verjüngen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verjüngt",
+   "mevcutTr": "gençleştirmek",
+   "mevcutBeispiel": "Kein Programm kann eine alternde Gesellschaft binnen weniger Jahre verjüngen.",
+   "mevcutBeispielTr": "Hiçbir program yaşlanan bir toplumu birkaç yılda gençleştiremez."
+  },
+  {
+   "id": 6051,
+   "de": "aufrechterhalten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aufrechterhalten",
+   "mevcutTr": "sürdürmek, ayakta tutmak",
+   "mevcutBeispiel": "Das jetzige Leistungsniveau lässt sich auf Dauer kaum aufrechterhalten.",
+   "mevcutBeispielTr": "Şimdiki hizmet düzeyini uzun vadede sürdürmek neredeyse imkânsız."
+  },
+  {
+   "id": 6052,
+   "de": "ausbluten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "ist ausgeblutet",
+   "mevcutTr": "kan kaybetmek, tükenmek",
+   "mevcutBeispiel": "Ohne Arbeitsplätze bluten die kleinen Gemeinden im Osten aus.",
+   "mevcutBeispielTr": "İş imkânı olmayınca doğudaki küçük beldeler kan kaybediyor."
+  }
+ ]
+}

@@ -1,0 +1,579 @@
+{
+ "paket": "c1-019",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6153,
+   "de": "die Skepsis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kuşku, şüphecilik",
+   "mevcutBeispiel": "Gegenüber solchen Prognosen ist eine gesunde Skepsis angebracht.",
+   "mevcutBeispielTr": "Bu tür öngörülere karşı sağlıklı bir kuşku yerinde olur.",
+   "cakisan": [
+    "der Argwohn (C1)"
+   ]
+  },
+  {
+   "id": 6154,
+   "de": "die Einseitigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Einseitigkeiten",
+   "mevcutTr": "tek yanlılık, taraflılık",
+   "mevcutBeispiel": "Man warf dem Bericht Einseitigkeit bei der Auswahl der Quellen vor.",
+   "mevcutBeispielTr": "Rapor, kaynak seçiminde tek yanlı olmakla suçlandı."
+  },
+  {
+   "id": 6155,
+   "de": "die Sachlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "nesnellik, konuya bağlı kalma",
+   "mevcutBeispiel": "Bei aller Leidenschaft sollten wir die Sachlichkeit nicht verlieren.",
+   "mevcutBeispielTr": "Bunca tutkuya rağmen nesnelliği kaybetmemeliyiz.",
+   "cakisan": [
+    "die Objektivität (B2)"
+   ]
+  },
+  {
+   "id": 6156,
+   "de": "die Andeutung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Andeutungen",
+   "mevcutTr": "ima, üstü kapalı söz",
+   "mevcutBeispiel": "Statt klarer Kritik blieb es bei vagen Andeutungen.",
+   "mevcutBeispielTr": "Açık eleştiri yerine iş belirsiz imalarda kaldı.",
+   "cakisan": [
+    "die Anspielung (C1)"
+   ]
+  },
+  {
+   "id": 6157,
+   "de": "die Ironie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ironi, alaycılık",
+   "mevcutBeispiel": "Die Ironie seiner Bemerkung entging der Hälfte des Publikums.",
+   "mevcutBeispielTr": "Sözündeki ironiyi izleyicilerin yarısı fark etmedi."
+  },
+  {
+   "id": 6158,
+   "de": "die Stringenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tutarlılık, mantıksal bütünlük",
+   "mevcutBeispiel": "Der Aufsatz besticht durch Stringenz und eine klare Gliederung.",
+   "mevcutBeispielTr": "Makale tutarlılığı ve net kurgusuyla etkiliyor.",
+   "cakisan": [
+    "die Kohärenz (C1)",
+    "die Konsistenz (C1)"
+   ]
+  },
+  {
+   "id": 6159,
+   "de": "die Prägnanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "özlülük, veciz anlatım",
+   "mevcutBeispiel": "Mit bewundernswerter Prägnanz fasste sie die gesamte Debatte zusammen.",
+   "mevcutBeispielTr": "Hayranlık verici bir özlülükle bütün tartışmayı özetledi."
+  },
+  {
+   "id": 6160,
+   "de": "die Redundanz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Redundanzen",
+   "mevcutTr": "gereksiz tekrar, fazlalık",
+   "mevcutBeispiel": "Der Text gewinnt deutlich, wenn man die zahlreichen Redundanzen streicht.",
+   "mevcutBeispielTr": "Sayısız gereksiz tekrar çıkarılırsa metin belirgin biçimde kazanır."
+  },
+  {
+   "id": 6161,
+   "de": "der Exkurs",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Exkurse",
+   "mevcutTr": "konu dışına sapma, ek açıklama",
+   "mevcutBeispiel": "Nach einem längeren Exkurs kehrte er zum eigentlichen Thema zurück.",
+   "mevcutBeispielTr": "Uzunca bir sapmanın ardından asıl konuya döndü."
+  },
+  {
+   "id": 6162,
+   "de": "das Resümee",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Resümees",
+   "mevcutTr": "özet, genel değerlendirme",
+   "mevcutBeispiel": "Zum Schluss zog die Moderatorin ein nüchternes Resümee.",
+   "mevcutBeispielTr": "Sonunda moderatör serinkanlı bir değerlendirme yaptı.",
+   "cakisan": [
+    "die Zusammenfassung (B2)"
+   ]
+  },
+  {
+   "id": 6163,
+   "de": "die Quintessenz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Quintessenzen",
+   "mevcutTr": "öz, can alıcı nokta",
+   "mevcutBeispiel": "Die Quintessenz seiner Rede passt in einen einzigen Satz.",
+   "mevcutBeispielTr": "Konuşmasının özü tek bir cümleye sığıyor."
+  },
+  {
+   "id": 6164,
+   "de": "die Kernaussage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kernaussagen",
+   "mevcutTr": "ana mesaj, temel sav",
+   "mevcutBeispiel": "Die Kernaussage der Studie wurde in den Medien stark verzerrt.",
+   "mevcutBeispielTr": "Çalışmanın ana mesajı medyada epeyce çarpıtıldı."
+  },
+  {
+   "id": 6165,
+   "de": "die Suggestivfrage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Suggestivfragen",
+   "mevcutTr": "yönlendirici soru",
+   "mevcutBeispiel": "Mit dieser Suggestivfrage lenkte der Journalist das ganze Gespräch.",
+   "mevcutBeispielTr": "Bu yönlendirici soruyla gazeteci bütün söyleşiyi yönlendirdi."
+  },
+  {
+   "id": 6166,
+   "de": "der Gemeinplatz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gemeinplätze",
+   "mevcutTr": "klişe, basmakalıp söz",
+   "mevcutBeispiel": "Seine Rede bestand fast ausschließlich aus abgegriffenen Gemeinplätzen.",
+   "mevcutBeispielTr": "Konuşması neredeyse tamamen eskimiş klişelerden ibaretti."
+  },
+  {
+   "id": 6167,
+   "de": "die Binsenweisheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Binsenweisheiten",
+   "mevcutTr": "herkesin bildiği gerçek, aşikâr şey",
+   "mevcutBeispiel": "Dass Bildung wichtig ist, gilt inzwischen als Binsenweisheit.",
+   "mevcutBeispielTr": "Eğitimin önemli olduğu artık herkesin bildiği bir şey sayılıyor."
+  },
+  {
+   "id": 6168,
+   "de": "zugestehen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat zugestanden",
+   "mevcutTr": "kabul etmek, hakkını teslim etmek",
+   "mevcutBeispiel": "Man muss ihm zugestehen, dass seine Zahlen korrekt sind.",
+   "mevcutBeispielTr": "Rakamlarının doğru olduğunu ona teslim etmek gerekir.",
+   "cakisan": [
+    "akzeptieren (B1)",
+    "annehmen (B1)",
+    "aufnehmen (B1)",
+    "zusagen (B1)",
+    "einräumen (C1)",
+    "konzedieren (C1)"
+   ]
+  },
+  {
+   "id": 6169,
+   "de": "folgern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gefolgert",
+   "mevcutTr": "sonuç çıkarmak, çıkarımda bulunmak",
+   "mevcutBeispiel": "Daraus folgerte der Autor voreilig einen kausalen Zusammenhang.",
+   "mevcutBeispielTr": "Yazar bundan aceleyle nedensel bir bağ sonucunu çıkardı.",
+   "cakisan": [
+    "schlussfolgern (C1)"
+   ]
+  },
+  {
+   "id": 6170,
+   "de": "bezweifeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bezweifelt",
+   "mevcutTr": "kuşku duymak, şüphe etmek",
+   "mevcutBeispiel": "Niemand bezweifelt die Fakten, wohl aber ihre Deutung.",
+   "mevcutBeispielTr": "Kimse olgulardan kuşku duymuyor, ama yorumlarından duyuyor."
+  },
+  {
+   "id": 6171,
+   "de": "differenzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat differenziert",
+   "mevcutTr": "ayrım yapmak, ince ayrıma gitmek",
+   "mevcutBeispiel": "An dieser Stelle müssen wir sehr genau differenzieren.",
+   "mevcutBeispielTr": "Bu noktada çok dikkatli bir ayrım yapmalıyız."
+  },
+  {
+   "id": 6172,
+   "de": "anführen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angeführt",
+   "mevcutTr": "öne sürmek, örnek göstermek, zikretmek",
+   "mevcutBeispiel": "Als Beleg führte er eine ältere Studie aus Schweden an.",
+   "mevcutBeispielTr": "Kanıt olarak İsveç'ten eski bir çalışmayı öne sürdü.",
+   "cakisan": [
+    "postulieren (C1)"
+   ]
+  },
+  {
+   "id": 6173,
+   "de": "vorbringen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vorgebracht",
+   "mevcutTr": "ileri sürmek, dile getirmek",
+   "mevcutBeispiel": "Gegen diesen Vorschlag hat bislang niemand ernsthafte Bedenken vorgebracht.",
+   "mevcutBeispielTr": "Bu öneriye karşı şimdiye dek kimse ciddi bir çekince ileri sürmedi."
+  },
+  {
+   "id": 6174,
+   "de": "beipflichten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat beigepflichtet",
+   "mevcutTr": "hak vermek, katılmak",
+   "mevcutBeispiel": "In diesem Punkt kann ich meinem Vorredner nur beipflichten.",
+   "mevcutBeispielTr": "Bu noktada benden önce konuşana ancak hak verebilirim."
+  },
+  {
+   "id": 6175,
+   "de": "entgegenhalten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entgegengehalten",
+   "mevcutTr": "karşı olarak ileri sürmek, karşılık vermek",
+   "mevcutBeispiel": "Dem hielt die Kritikerin eine ganze Reihe neuerer Studien entgegen.",
+   "mevcutBeispielTr": "Eleştirmen buna karşı bir dizi yeni çalışmayı ileri sürdü."
+  },
+  {
+   "id": 6176,
+   "de": "monieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat moniert",
+   "mevcutTr": "kusur bulmak, eleştirmek",
+   "mevcutBeispiel": "Mehrere Gutachter monierten die unklare Fragestellung der Arbeit.",
+   "mevcutBeispielTr": "Birkaç hakem çalışmanın belirsiz soru kurgusunu eleştirdi.",
+   "cakisan": [
+    "beanstanden (B2)"
+   ]
+  },
+  {
+   "id": 6177,
+   "de": "plädieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat plädiert",
+   "mevcutTr": "savunmak, taraf olmak",
+   "mevcutBeispiel": "Die Fachleute plädieren für ein deutlich behutsameres Vorgehen.",
+   "mevcutBeispielTr": "Uzmanlar çok daha temkinli bir yaklaşımı savunuyor.",
+   "cakisan": [
+    "sich einsetzen für (B2)"
+   ]
+  },
+  {
+   "id": 6178,
+   "de": "konzedieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat konzediert",
+   "mevcutTr": "kabul etmek, teslim etmek",
+   "mevcutBeispiel": "Selbst seine Gegner konzedieren ihm eine gewisse gedankliche Konsequenz.",
+   "mevcutBeispielTr": "Rakipleri bile ona belli bir düşünsel tutarlılığı teslim ediyor.",
+   "cakisan": [
+    "akzeptieren (B1)",
+    "annehmen (B1)",
+    "aufnehmen (B1)",
+    "zusagen (B1)",
+    "einräumen (C1)",
+    "zugestehen (C1)"
+   ]
+  },
+  {
+   "id": 6179,
+   "de": "revidieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat revidiert",
+   "mevcutTr": "gözden geçirmek, düzeltmek",
+   "mevcutBeispiel": "Angesichts neuer Daten musste sie ihre These revidieren.",
+   "mevcutBeispielTr": "Yeni veriler karşısında tezini gözden geçirmek zorunda kaldı.",
+   "cakisan": [
+    "sichten (C1)",
+    "durchgehen (A2)"
+   ]
+  },
+  {
+   "id": 6180,
+   "de": "nahelegen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat nahegelegt",
+   "mevcutTr": "düşündürmek, işaret etmek, telkin etmek",
+   "mevcutBeispiel": "Die Befunde legen einen ganz anderen Schluss nahe.",
+   "mevcutBeispielTr": "Bulgular tamamen başka bir sonuca işaret ediyor."
+  },
+  {
+   "id": 6181,
+   "de": "indes",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ne var ki, oysa, bununla birlikte",
+   "mevcutBeispiel": "Sein Einwand klang plausibel, entbehrte indes jeder empirischen Grundlage.",
+   "mevcutBeispielTr": "İtirazı makul geliyordu, ne var ki hiçbir ampirik temeli yoktu."
+  },
+  {
+   "id": 6182,
+   "de": "hingegen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "buna karşılık, ise",
+   "mevcutBeispiel": "Die erste Studie bestätigt den Effekt, die zweite hingegen nicht.",
+   "mevcutBeispielTr": "İlk çalışma etkiyi doğruluyor, ikincisi ise doğrulamıyor.",
+   "cakisan": [
+    "im Gegenzug (C1)"
+   ]
+  },
+  {
+   "id": 6183,
+   "de": "folglich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dolayısıyla, bu nedenle",
+   "mevcutBeispiel": "Die Prämisse ist falsch, folglich bricht die ganze Argumentation zusammen.",
+   "mevcutBeispielTr": "Öncül yanlış, dolayısıyla bütün argümantasyon çöküyor.",
+   "cakisan": [
+    "mithin (C1)"
+   ]
+  },
+  {
+   "id": 6184,
+   "de": "freilich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gerçi, ne var ki, elbette",
+   "mevcutBeispiel": "Der Vergleich ist reizvoll, trägt freilich nur bedingt.",
+   "mevcutBeispielTr": "Karşılaştırma cazip, gerçi ancak sınırlı ölçüde geçerli.",
+   "cakisan": [
+    "zwar (B1)"
+   ]
+  },
+  {
+   "id": 6185,
+   "de": "wenngleich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "her ne kadar, -sa da",
+   "mevcutBeispiel": "Seine Kritik ist berechtigt, wenngleich sie deutlich zu scharf ausfällt.",
+   "mevcutBeispielTr": "Eleştirisi yerinde, her ne kadar fazlasıyla sert olsa da.",
+   "cakisan": [
+    "obgleich (C1)"
+   ]
+  },
+  {
+   "id": 6186,
+   "de": "mitnichten",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "asla, hiç de değil",
+   "mevcutBeispiel": "Damit ist die entscheidende Frage mitnichten beantwortet.",
+   "mevcutBeispielTr": "Bununla belirleyici soru hiç de yanıtlanmış olmuyor.",
+   "cakisan": [
+    "nie (A1)",
+    "keineswegs (C1)"
+   ]
+  },
+  {
+   "id": 6187,
+   "de": "vermeintlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sözde, güya, öyle sanılan",
+   "mevcutBeispiel": "Der vermeintliche Widerspruch löst sich bei genauerer Betrachtung auf.",
+   "mevcutBeispielTr": "Sözde çelişki daha yakından bakılınca ortadan kalkıyor.",
+   "cakisan": [
+    "sogenannte (B1)"
+   ]
+  },
+  {
+   "id": 6188,
+   "de": "fadenscheinig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sudan, asılsız, inandırıcılıktan uzak",
+   "mevcutBeispiel": "Mit fadenscheinigen Argumenten versuchte er, die Kritik abzuwehren.",
+   "mevcutBeispielTr": "Sudan argümanlarla eleştiriyi savuşturmaya çalıştı."
+  },
+  {
+   "id": 6189,
+   "de": "stichhaltig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sağlam, tutarlı, geçerli",
+   "mevcutBeispiel": "Für diese Annahme gibt es bislang kein stichhaltiges Argument.",
+   "mevcutBeispielTr": "Bu varsayım için şimdiye dek sağlam bir argüman yok.",
+   "cakisan": [
+    "fest (B1)",
+    "tragfähig (C1)",
+    "heil (A2)",
+    "stabil (A2)"
+   ]
+  },
+  {
+   "id": 6190,
+   "de": "zweifelsohne",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hiç kuşkusuz, şüphesiz",
+   "mevcutBeispiel": "Sie war zweifelsohne die klügste Rednerin des Abends.",
+   "mevcutBeispielTr": "O, hiç kuşkusuz akşamın en zeki konuşmacısıydı."
+  },
+  {
+   "id": 6191,
+   "de": "implizit",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "örtük, dolaylı, zımni",
+   "mevcutBeispiel": "Diese Kritik war in seinem Vortrag nur implizit enthalten.",
+   "mevcutBeispielTr": "Bu eleştiri sunumunda yalnızca örtük biçimde yer alıyordu."
+  },
+  {
+   "id": 6192,
+   "de": "der Netzausbau",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şebeke genişletme, şebeke yatırımı",
+   "mevcutBeispiel": "Ohne einen zügigen Netzausbau bleibt der erzeugte Strom im Norden liegen.",
+   "mevcutBeispielTr": "Şebeke hızla genişletilmezse üretilen elektrik kuzeyde sıkışıp kalır."
+  },
+  {
+   "id": 6193,
+   "de": "das Netzentgelt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Netzentgelte",
+   "mevcutTr": "şebeke kullanım bedeli, iletim ücreti",
+   "mevcutBeispiel": "Steigende Netzentgelte treffen vor allem Haushalte mit geringem Einkommen.",
+   "mevcutBeispielTr": "Artan şebeke bedelleri en çok düşük gelirli haneleri vuruyor."
+  },
+  {
+   "id": 6194,
+   "de": "die Netzstabilität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şebeke istikrarı",
+   "mevcutBeispiel": "Bei schwankender Einspeisung wird die Netzstabilität zur eigentlichen Herausforderung.",
+   "mevcutBeispielTr": "Dalgalı besleme durumunda asıl zorluk şebeke istikrarı oluyor."
+  },
+  {
+   "id": 6195,
+   "de": "das Übertragungsnetz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Übertragungsnetze",
+   "mevcutTr": "iletim şebekesi",
+   "mevcutBeispiel": "Das Übertragungsnetz stammt in weiten Teilen noch aus den siebziger Jahren.",
+   "mevcutBeispielTr": "İletim şebekesinin büyük bölümü hâlâ yetmişli yıllardan kalma."
+  },
+  {
+   "id": 6196,
+   "de": "die Grundlast",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Grundlasten",
+   "mevcutTr": "baz yük, temel yük",
+   "mevcutBeispiel": "Wer deckt künftig die Grundlast, wenn die alten Kraftwerke wegfallen?",
+   "mevcutBeispielTr": "Eski santraller devreden çıkarsa baz yükü bundan sonra kim karşılayacak?"
+  },
+  {
+   "id": 6197,
+   "de": "die Spitzenlast",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Spitzenlasten",
+   "mevcutTr": "puant yük, tepe yük",
+   "mevcutBeispiel": "An kalten Winterabenden erreicht die Spitzenlast regelmäßig kritische Werte.",
+   "mevcutBeispielTr": "Soğuk kış akşamlarında puant yük düzenli olarak kritik değerlere ulaşıyor."
+  },
+  {
+   "id": 6198,
+   "de": "die Einspeisung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Einspeisungen",
+   "mevcutTr": "şebekeye besleme, elektrik verme",
+   "mevcutBeispiel": "Die Einspeisung aus privaten Anlagen hat sich binnen fünf Jahren verdoppelt.",
+   "mevcutBeispielTr": "Özel tesislerden şebekeye verilen elektrik beş yılda ikiye katlandı."
+  },
+  {
+   "id": 6199,
+   "de": "die Speicherkapazität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Speicherkapazitäten",
+   "mevcutTr": "depolama kapasitesi",
+   "mevcutBeispiel": "Ohne zusätzliche Speicherkapazität lässt sich der Überschuss kaum sinnvoll nutzen.",
+   "mevcutBeispielTr": "Ek depolama kapasitesi olmadan fazla üretimi anlamlı biçimde kullanmak güç."
+  },
+  {
+   "id": 6200,
+   "de": "der Stromausfall",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stromausfälle",
+   "mevcutTr": "elektrik kesintisi",
+   "mevcutBeispiel": "Ein großflächiger Stromausfall würde die Debatte über Reservekraftwerke sofort verändern.",
+   "mevcutBeispielTr": "Geniş çaplı bir elektrik kesintisi yedek santral tartışmasını anında değiştirirdi."
+  },
+  {
+   "id": 6201,
+   "de": "die Kapazitätsreserve",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kapazitätsreserven",
+   "mevcutTr": "kapasite yedeği, yedek kapasite",
+   "mevcutBeispiel": "Die Kapazitätsreserve wird nur in ausgewiesenen Notlagen überhaupt abgerufen.",
+   "mevcutBeispielTr": "Kapasite yedeği yalnızca tanımlanmış acil durumlarda devreye alınıyor."
+  },
+  {
+   "id": 6202,
+   "de": "der Investitionszyklus",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Investitionszyklen",
+   "mevcutTr": "yatırım döngüsü",
+   "mevcutBeispiel": "Im Energiesektor umfasst ein Investitionszyklus leicht drei Jahrzehnte.",
+   "mevcutBeispielTr": "Enerji sektöründe bir yatırım döngüsü rahatlıkla otuz yılı bulur."
+  }
+ ]
+}

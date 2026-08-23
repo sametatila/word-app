@@ -1,0 +1,561 @@
+{
+ "paket": "b2-027",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4945,
+   "de": "die Verschwörungstheorie",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verschwörungstheorien",
+   "mevcutTr": "komplo teorisi",
+   "mevcutBeispiel": "Im Netz kursieren zahlreiche Verschwörungstheorien über den Vorfall.",
+   "mevcutBeispielTr": "İnternette olayla ilgili çok sayıda komplo teorisi dolaşıyor."
+  },
+  {
+   "id": 4946,
+   "de": "das Urheberrecht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Urheberrechte",
+   "mevcutTr": "telif hakkı",
+   "mevcutBeispiel": "Wer fremde Fotos ohne Erlaubnis nutzt, verletzt das Urheberrecht.",
+   "mevcutBeispielTr": "Başkasının fotoğraflarını izinsiz kullanan kişi telif hakkını ihlal eder."
+  },
+  {
+   "id": 4947,
+   "de": "das Impressum",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Impressen",
+   "mevcutTr": "künye, yasal bilgi sayfası",
+   "mevcutBeispiel": "Jede deutsche Webseite braucht ein vollständiges Impressum.",
+   "mevcutBeispielTr": "Her Alman internet sitesinin eksiksiz bir künyeye ihtiyacı vardır."
+  },
+  {
+   "id": 4948,
+   "de": "die Plattform",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Plattformen",
+   "mevcutTr": "platform",
+   "mevcutBeispiel": "Die Plattform löschte den Beitrag wegen verletzender Sprache.",
+   "mevcutBeispielTr": "Platform, incitici dil nedeniyle paylaşımı sildi."
+  },
+  {
+   "id": 4949,
+   "de": "der Nutzer",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Nutzer",
+   "mevcutTr": "kullanıcı",
+   "mevcutBeispiel": "Viele Nutzer beschweren sich über die neue Datenschutzerklärung.",
+   "mevcutBeispielTr": "Birçok kullanıcı yeni gizlilik sözleşmesinden şikâyetçi.",
+   "cakisan": [
+    "der Benutzer (A2)"
+   ]
+  },
+  {
+   "id": 4950,
+   "de": "die Wortwahl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sözcük seçimi, kullanılan ifadeler",
+   "mevcutBeispiel": "Seine Wortwahl in der Debatte war für viele zu scharf.",
+   "mevcutBeispielTr": "Tartışmadaki sözcük seçimi birçok kişi için fazla sertti."
+  },
+  {
+   "id": 4951,
+   "de": "der Tonfall",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Tonfälle",
+   "mevcutTr": "ses tonu, üslup",
+   "mevcutBeispiel": "An ihrem Tonfall merkte man sofort, dass sie verärgert war.",
+   "mevcutBeispielTr": "Ses tonundan kızgın olduğu hemen anlaşılıyordu."
+  },
+  {
+   "id": 4952,
+   "de": "die Podiumsdiskussion",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Podiumsdiskussionen",
+   "mevcutTr": "panel tartışması, panel",
+   "mevcutBeispiel": "Bei der Podiumsdiskussion saßen Vertreter aller Parteien auf der Bühne.",
+   "mevcutBeispielTr": "Panelde sahnede bütün partilerin temsilcileri oturuyordu."
+  },
+  {
+   "id": 4953,
+   "de": "die Ansprache",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ansprachen",
+   "mevcutTr": "konuşma, hitap",
+   "mevcutBeispiel": "Die Ansprache des Bürgermeisters dauerte kaum zehn Minuten.",
+   "mevcutBeispielTr": "Belediye başkanının konuşması on dakikayı zor buldu.",
+   "cakisan": [
+    "die Rede (B1)",
+    "der Vortrag (B1)"
+   ]
+  },
+  {
+   "id": 4954,
+   "de": "die Körpersprache",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "beden dili",
+   "mevcutBeispiel": "Seine Körpersprache verriet mehr als seine vorsichtigen Worte.",
+   "mevcutBeispielTr": "Beden dili, temkinli sözlerinden daha fazlasını ele veriyordu."
+  },
+  {
+   "id": 4955,
+   "de": "der Blickkontakt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Blickkontakte",
+   "mevcutTr": "göz teması",
+   "mevcutBeispiel": "Halten Sie während des Vorstellungsgesprächs ruhig Blickkontakt.",
+   "mevcutBeispielTr": "İş görüşmesi sırasında sakin biçimde göz teması kurun."
+  },
+  {
+   "id": 4956,
+   "de": "die Titelseite",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Titelseiten",
+   "mevcutTr": "kapak sayfası, birinci sayfa",
+   "mevcutBeispiel": "Der Skandal stand tagelang auf der Titelseite aller Blätter.",
+   "mevcutBeispielTr": "Skandal günlerce bütün gazetelerin birinci sayfasındaydı."
+  },
+  {
+   "id": 4957,
+   "de": "die Medienlandschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Medienlandschaften",
+   "mevcutTr": "medya ortamı, medya dünyası",
+   "mevcutBeispiel": "Die digitale Medienlandschaft hat sich in zehn Jahren völlig verändert.",
+   "mevcutBeispielTr": "Dijital medya ortamı on yılda tamamen değişti."
+  },
+  {
+   "id": 4958,
+   "de": "die Aufmerksamkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Aufmerksamkeiten",
+   "mevcutTr": "dikkat, ilgi",
+   "mevcutBeispiel": "Mit dieser Überschrift wollte das Magazin vor allem Aufmerksamkeit erregen.",
+   "mevcutBeispielTr": "Dergi bu başlıkla her şeyden önce dikkat çekmek istiyordu.",
+   "cakisan": [
+    "die Achtung (A1)",
+    "die Vorsicht (A1)"
+   ]
+  },
+  {
+   "id": 4959,
+   "de": "die Empörung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Empörungen",
+   "mevcutTr": "öfke, infial, tepki",
+   "mevcutBeispiel": "Die Äußerung des Ministers löste im Netz große Empörung aus.",
+   "mevcutBeispielTr": "Bakanın sözleri internette büyük bir infiale yol açtı.",
+   "cakisan": [
+    "die Wut (B2)",
+    "der Zorn (B2)"
+   ]
+  },
+  {
+   "id": 4960,
+   "de": "der Leserbrief",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Leserbriefe",
+   "mevcutTr": "okur mektubu",
+   "mevcutBeispiel": "Zu dem Artikel erschienen in der nächsten Ausgabe mehrere Leserbriefe.",
+   "mevcutBeispielTr": "Yazıya ilişkin bir sonraki sayıda birkaç okur mektubu yayımlandı."
+  },
+  {
+   "id": 4961,
+   "de": "der Werbespot",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Werbespots",
+   "mevcutTr": "reklam filmi, reklam spotu",
+   "mevcutBeispiel": "Der Werbespot läuft jeden Abend vor den Nachrichten.",
+   "mevcutBeispielTr": "Reklam filmi her akşam haberlerden önce yayınlanıyor."
+  },
+  {
+   "id": 4962,
+   "de": "das Sprachrohr",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Sprachrohre",
+   "mevcutTr": "sözcü, sesini duyuran araç",
+   "mevcutBeispiel": "Die Zeitschrift gilt als Sprachrohr der jungen Generation.",
+   "mevcutBeispielTr": "Dergi, genç kuşağın sesi olarak görülüyor."
+  },
+  {
+   "id": 4963,
+   "de": "der Gesprächspartner",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Gesprächspartner",
+   "mevcutTr": "muhatap, görüşülen kişi",
+   "mevcutBeispiel": "Mein Gesprächspartner wollte seinen Namen nicht nennen.",
+   "mevcutBeispielTr": "Görüştüğüm kişi adının açıklanmasını istemedi.",
+   "cakisan": [
+    "der Ansprechpartner (B2)"
+   ]
+  },
+  {
+   "id": 4964,
+   "de": "die Zuspitzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zuspitzungen",
+   "mevcutTr": "keskinleştirme, tırmandırma",
+   "mevcutBeispiel": "Die Zuspitzung der Überschrift verzerrte den Inhalt des Berichts.",
+   "mevcutBeispielTr": "Başlığın abartılı keskinliği raporun içeriğini çarpıttı."
+  },
+  {
+   "id": 4965,
+   "de": "die Vermutung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Vermutungen",
+   "mevcutTr": "tahmin, varsayım",
+   "mevcutBeispiel": "Bisher gibt es nur Vermutungen über die Ursache des Ausfalls.",
+   "mevcutBeispielTr": "Arızanın nedeni hakkında şimdilik yalnızca tahminler var.",
+   "cakisan": [
+    "die Schätzung (C1)"
+   ]
+  },
+  {
+   "id": 4966,
+   "de": "verbreiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verbreitet",
+   "mevcutTr": "yaymak, yaygınlaştırmak",
+   "mevcutBeispiel": "Unbekannte verbreiteten das gefälschte Video über mehrere Kanäle.",
+   "mevcutBeispielTr": "Kimliği belirsiz kişiler sahte videoyu birkaç kanaldan yaydı."
+  },
+  {
+   "id": 4967,
+   "de": "übertragen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat übertragen",
+   "mevcutTr": "yayınlamak (radyo, TV), aktarmak, devretmek",
+   "mevcutBeispiel": "Das Finale wird in mehr als vierzig Länder übertragen.",
+   "mevcutBeispielTr": "Final kırktan fazla ülkeye canlı olarak aktarılıyor."
+  },
+  {
+   "id": 4968,
+   "de": "bekanntgeben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bekanntgegeben",
+   "mevcutTr": "duyurmak, açıklamak",
+   "mevcutBeispiel": "Das Unternehmen gab die Zahlen erst nach Börsenschluss bekannt.",
+   "mevcutBeispielTr": "Şirket rakamları ancak borsa kapandıktan sonra açıkladı.",
+   "cakisan": [
+    "bekannt geben (B1)",
+    "ansagen (A2)"
+   ]
+  },
+  {
+   "id": 4969,
+   "de": "enthüllen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat enthüllt",
+   "mevcutTr": "ifşa etmek, ortaya çıkarmak",
+   "mevcutBeispiel": "Zwei Reporter enthüllten die Verbindungen zwischen Firma und Behörde.",
+   "mevcutBeispielTr": "İki muhabir şirketle kurum arasındaki bağlantıları ifşa etti."
+  },
+  {
+   "id": 4970,
+   "de": "aufdecken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgedeckt",
+   "mevcutTr": "açığa çıkarmak, deşifre etmek",
+   "mevcutBeispiel": "Die Recherche deckte gravierende Mängel in der Aufsicht auf.",
+   "mevcutBeispielTr": "Araştırma denetimdeki ciddi eksiklikleri açığa çıkardı.",
+   "cakisan": [
+    "freisetzen (C1)"
+   ]
+  },
+  {
+   "id": 4971,
+   "de": "befragen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat befragt",
+   "mevcutTr": "soru sormak, görüşünü almak",
+   "mevcutBeispiel": "Für die Studie wurden zweitausend Menschen telefonisch befragt.",
+   "mevcutBeispielTr": "Çalışma için iki bin kişiye telefonla soru soruldu."
+  },
+  {
+   "id": 4972,
+   "de": "zitieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zitiert",
+   "mevcutTr": "alıntı yapmak, aktarmak",
+   "mevcutBeispiel": "Die Zeitung zitiert einen Mitarbeiter, der anonym bleiben möchte.",
+   "mevcutBeispielTr": "Gazete, kimliğinin gizli kalmasını isteyen bir çalışandan alıntı yapıyor."
+  },
+  {
+   "id": 4973,
+   "de": "verfassen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verfasst",
+   "mevcutTr": "kaleme almak, yazmak",
+   "mevcutBeispiel": "Sie hat den Bericht über die Sitzung in zwei Stunden verfasst.",
+   "mevcutBeispielTr": "Toplantıyla ilgili raporu iki saatte kaleme aldı."
+  },
+  {
+   "id": 4974,
+   "de": "redigieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat redigiert",
+   "mevcutTr": "redakte etmek, metni düzeltmek",
+   "mevcutBeispiel": "Der Text muss vor dem Druck noch einmal redigiert werden.",
+   "mevcutBeispielTr": "Metnin baskıdan önce bir kez daha redakte edilmesi gerekiyor."
+  },
+  {
+   "id": 4975,
+   "de": "verschweigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verschwiegen",
+   "mevcutTr": "gizlemek, söylememek",
+   "mevcutBeispiel": "Die Behörde hat wichtige Details über den Unfall verschwiegen.",
+   "mevcutBeispielTr": "Kurum, kazayla ilgili önemli ayrıntıları gizledi.",
+   "cakisan": [
+    "verhehlen (C1)"
+   ]
+  },
+  {
+   "id": 4976,
+   "de": "dementieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat dementiert",
+   "mevcutTr": "yalanlamak, tekzip etmek",
+   "mevcutBeispiel": "Der Sprecher dementierte die Meldung noch am selben Abend.",
+   "mevcutBeispielTr": "Sözcü haberi daha aynı akşam yalanladı."
+  },
+  {
+   "id": 4977,
+   "de": "andeuten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angedeutet",
+   "mevcutTr": "ima etmek, üstü kapalı belirtmek",
+   "mevcutBeispiel": "In dem Interview deutete sie einen baldigen Wechsel an.",
+   "mevcutBeispielTr": "Röportajda yakın zamanda bir değişiklik olacağını ima etti.",
+   "cakisan": [
+    "anspielen (C1)",
+    "insinuieren (C1)"
+   ]
+  },
+  {
+   "id": 4978,
+   "de": "verlinken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verlinkt",
+   "mevcutTr": "bağlantı vermek, link vermek",
+   "mevcutBeispiel": "Bitte verlinken Sie die Originalquelle unter dem Artikel.",
+   "mevcutBeispielTr": "Lütfen yazının altında orijinal kaynağa bağlantı verin."
+  },
+  {
+   "id": 4979,
+   "de": "schildern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschildert",
+   "mevcutTr": "anlatmak, betimlemek",
+   "mevcutBeispiel": "Augenzeugen schilderten den Ablauf des Abends sehr unterschiedlich.",
+   "mevcutBeispielTr": "Görgü tanıkları akşamın gidişatını çok farklı biçimlerde anlattı.",
+   "cakisan": [
+    "erzählen (A1)"
+   ]
+  },
+  {
+   "id": 4980,
+   "de": "wiedergeben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat wiedergegeben",
+   "mevcutTr": "aktarmak, yansıtmak",
+   "mevcutBeispiel": "Der Artikel gibt die Aussagen des Ministers nur verkürzt wieder.",
+   "mevcutBeispielTr": "Yazı, bakanın sözlerini yalnızca kısaltarak aktarıyor.",
+   "cakisan": [
+    "vermitteln (B2)",
+    "weitergeben (C1)"
+   ]
+  },
+  {
+   "id": 4981,
+   "de": "sich austauschen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich ausgetauscht",
+   "mevcutTr": "fikir alışverişinde bulunmak",
+   "mevcutBeispiel": "In dem Forum tauschen sich Betroffene über ihre Erfahrungen aus.",
+   "mevcutBeispielTr": "Forumda mağdurlar deneyimleri hakkında fikir alışverişinde bulunuyor."
+  },
+  {
+   "id": 4982,
+   "de": "sich äußern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich geäußert",
+   "mevcutTr": "görüş bildirmek, açıklama yapmak",
+   "mevcutBeispiel": "Zu den Vorwürfen wollte sich der Verlag bisher nicht äußern.",
+   "mevcutBeispielTr": "Yayınevi suçlamalar hakkında şimdiye dek açıklama yapmak istemedi."
+  },
+  {
+   "id": 4983,
+   "de": "erwidern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erwidert",
+   "mevcutTr": "karşılık vermek, yanıtlamak",
+   "mevcutBeispiel": "Auf die Kritik erwiderte er nur mit einem knappen Satz.",
+   "mevcutBeispielTr": "Eleştiriye yalnızca kısa bir cümleyle karşılık verdi.",
+   "cakisan": [
+    "entgegnen (C1)"
+   ]
+  },
+  {
+   "id": 4984,
+   "de": "aufgreifen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgegriffen",
+   "mevcutTr": "ele almak, gündeme taşımak",
+   "mevcutBeispiel": "Mehrere Sender griffen das Thema am nächsten Morgen auf.",
+   "mevcutBeispielTr": "Birkaç kanal konuyu ertesi sabah gündemine aldı.",
+   "cakisan": [
+    "sich auseinandersetzen (B2)"
+   ]
+  },
+  {
+   "id": 4985,
+   "de": "kursieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat kursiert",
+   "mevcutTr": "dolaşmak, elden ele yayılmak",
+   "mevcutBeispiel": "Seit Tagen kursiert ein Video von der Sitzung im Internet.",
+   "mevcutBeispielTr": "Günlerdir internette toplantıya ait bir video dolaşıyor."
+  },
+  {
+   "id": 4986,
+   "de": "journalistisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gazetecilikle ilgili, gazetecilik açısından",
+   "mevcutBeispiel": "Der Beitrag entspricht nicht den journalistischen Standards des Hauses.",
+   "mevcutBeispielTr": "Yazı, kurumun gazetecilik standartlarına uymuyor."
+  },
+  {
+   "id": 4987,
+   "de": "sachlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nesnel, ölçülü",
+   "mevcutBeispiel": "Trotz der Aufregung blieb die Diskussion erstaunlich sachlich.",
+   "mevcutBeispielTr": "Bütün gerginliğe rağmen tartışma şaşırtıcı biçimde ölçülü kaldı.",
+   "cakisan": [
+    "objektiv (B2)"
+   ]
+  },
+  {
+   "id": 4988,
+   "de": "reißerisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "abartılı, sansasyonel",
+   "mevcutBeispiel": "Die reißerische Überschrift passte kaum zum nüchternen Inhalt.",
+   "mevcutBeispielTr": "Sansasyonel başlık, sakin içeriğe pek uymuyordu."
+  },
+  {
+   "id": 4989,
+   "de": "anschaulich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "somut, canlı, anlaşılır",
+   "mevcutBeispiel": "Die Grafik erklärt den Zusammenhang sehr anschaulich.",
+   "mevcutBeispielTr": "Grafik, bağlantıyı çok anlaşılır biçimde açıklıyor."
+  },
+  {
+   "id": 4990,
+   "de": "vertraulich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gizli, mahrem",
+   "mevcutBeispiel": "Diese Unterlagen sind vertraulich und dürfen nicht weitergegeben werden.",
+   "mevcutBeispielTr": "Bu belgeler gizlidir ve başkalarına iletilemez.",
+   "cakisan": [
+    "geheim (B1)",
+    "latent (C1)"
+   ]
+  },
+  {
+   "id": 4991,
+   "de": "anonym",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "isimsiz, kimliği gizli",
+   "mevcutBeispiel": "Der Hinweis kam von einem anonym gebliebenen Mitarbeiter.",
+   "mevcutBeispielTr": "İhbar, kimliği gizli kalan bir çalışandan geldi."
+  },
+  {
+   "id": 4992,
+   "de": "wörtlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kelimesi kelimesine, birebir",
+   "mevcutBeispiel": "Die Passage wurde wörtlich aus dem Protokoll übernommen.",
+   "mevcutBeispielTr": "Bu bölüm tutanaktan kelimesi kelimesine alınmış."
+  },
+  {
+   "id": 4993,
+   "de": "sinngemäß",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "anlamca, mealen",
+   "mevcutBeispiel": "Er sagte sinngemäß, dass die Entscheidung längst gefallen sei.",
+   "mevcutBeispielTr": "Mealen, kararın çoktan verilmiş olduğunu söyledi."
+  },
+  {
+   "id": 4994,
+   "de": "nonverbal",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sözsüz, sözel olmayan",
+   "mevcutBeispiel": "Ein großer Teil unserer Verständigung läuft nonverbal ab.",
+   "mevcutBeispielTr": "İletişimimizin büyük bir kısmı sözsüz biçimde gerçekleşir."
+  }
+ ]
+}

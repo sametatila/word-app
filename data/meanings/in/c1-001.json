@@ -1,0 +1,587 @@
+{
+ "paket": "c1-001",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 4042,
+   "de": "dennoch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yine de, buna rağmen",
+   "mevcutBeispiel": "Es regnete stark, dennoch ging sie spazieren.",
+   "mevcutBeispielTr": "Şiddetli yağmura rağmen yürüyüşe çıktı.",
+   "cakisan": [
+    "trotzdem (B1)",
+    "gleichwohl (C1)",
+    "nichtsdestotrotz (C1)",
+    "immerhin (A2)"
+   ]
+  },
+  {
+   "id": 3549,
+   "de": "die Anklage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Anklagen",
+   "mevcutTr": "suçlama, kamu davası",
+   "mevcutBeispiel": "Die Staatsanwaltschaft erhob Anklage wegen Untreue.",
+   "mevcutBeispielTr": "Savcılık, güveni kötüye kullanmaktan iddianame düzenledi.",
+   "cakisan": [
+    "der Vorwurf (B1)"
+   ]
+  },
+  {
+   "id": 3568,
+   "de": "die Verfügung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verfügungen",
+   "mevcutTr": "emir, idari karar",
+   "mevcutBeispiel": "Die Verfügung des Amtes wurde umgehend vollzogen.",
+   "mevcutBeispielTr": "Dairenin kararı derhâl uygulandı."
+  },
+  {
+   "id": 3613,
+   "de": "die Tragödie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Tragödien",
+   "mevcutTr": "trajedi",
+   "mevcutBeispiel": "Die griechische Tragödie behandelt das Schicksal des Menschen.",
+   "mevcutBeispielTr": "Antik Yunan trajedisi insanın kaderini işler."
+  },
+  {
+   "id": 3612,
+   "de": "das Drama",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Dramen",
+   "mevcutTr": "dram, tiyatro oyunu",
+   "mevcutBeispiel": "Das Drama thematisiert den inneren Konflikt des Protagonisten.",
+   "mevcutBeispielTr": "Oyun, başkahramanın iç çatışmasını konu alıyor."
+  },
+  {
+   "id": 3535,
+   "de": "die Klage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Klagen",
+   "mevcutTr": "dava",
+   "mevcutBeispiel": "Die Klage wurde vom Landgericht als unbegründet abgewiesen.",
+   "mevcutBeispielTr": "Dava, eyalet mahkemesince dayanaksız bulunarak reddedildi.",
+   "cakisan": [
+    "der Prozess (B1)",
+    "das Verfahren (B2)"
+   ]
+  },
+  {
+   "id": 3883,
+   "de": "die Strategie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Strategien",
+   "mevcutTr": "strateji",
+   "mevcutBeispiel": "Die Geschäftsführung hat eine neue Strategie entwickelt.",
+   "mevcutBeispielTr": "Yönetim yeni bir strateji geliştirdi."
+  },
+  {
+   "id": 3547,
+   "de": "die Bestimmung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bestimmungen",
+   "mevcutTr": "hüküm, düzenleme",
+   "mevcutBeispiel": "Die gesetzliche Bestimmung trat rückwirkend in Kraft.",
+   "mevcutBeispielTr": "Yasal düzenleme geriye dönük olarak yürürlüğe girdi."
+  },
+  {
+   "id": 3474,
+   "de": "die Annahme",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Annahmen",
+   "mevcutTr": "varsayım, kabul",
+   "mevcutBeispiel": "Die Annahme erwies sich im Nachhinein als falsch.",
+   "mevcutBeispielTr": "Varsayımın sonradan yanlış olduğu ortaya çıktı."
+  },
+  {
+   "id": 3536,
+   "de": "die Berufung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Berufungen",
+   "mevcutTr": "istinaf",
+   "mevcutBeispiel": "Der Anwalt legte gegen das Urteil Berufung ein.",
+   "mevcutBeispielTr": "Avukat karara karşı istinafa başvurdu."
+  },
+  {
+   "id": 3523,
+   "de": "keineswegs",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "asla, kesinlikle değil",
+   "mevcutBeispiel": "Die Ergebnisse sind keineswegs eindeutig zu interpretieren.",
+   "mevcutBeispielTr": "Sonuçlar kesinlikle tek bir biçimde yorumlanamaz.",
+   "cakisan": [
+    "nie (A1)",
+    "mitnichten (C1)"
+   ]
+  },
+  {
+   "id": 3897,
+   "de": "die Sackgasse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sackgassen",
+   "mevcutTr": "çıkmaz",
+   "mevcutBeispiel": "Die Verhandlungen gerieten in eine Sackgasse.",
+   "mevcutBeispielTr": "Müzakereler çıkmaza girdi."
+  },
+  {
+   "id": 3596,
+   "de": "der Verband",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verbände",
+   "mevcutTr": "birlik, meslek örgütü",
+   "mevcutBeispiel": "Der Verband vertritt die Interessen der gesamten Branche.",
+   "mevcutBeispielTr": "Birlik, bütün sektörün çıkarlarını temsil ediyor."
+  },
+  {
+   "id": 3730,
+   "de": "sofern",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eğer, şu şartla ki",
+   "mevcutBeispiel": "Sofern nichts dazwischenkommt, beginnt das Projekt pünktlich.",
+   "mevcutBeispielTr": "Araya bir şey girmezse proje zamanında başlayacak.",
+   "cakisan": [
+    "wenn (A2)",
+    "falls (B1)"
+   ]
+  },
+  {
+   "id": 3557,
+   "de": "die Aufsicht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aufsichten",
+   "mevcutTr": "denetim",
+   "mevcutBeispiel": "Die Aufsicht über die Banken liegt bei der Behörde.",
+   "mevcutBeispielTr": "Bankaların denetimi bu kuruma aittir."
+  },
+  {
+   "id": 3593,
+   "de": "das Ministerium",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ministerien",
+   "mevcutTr": "bakanlık",
+   "mevcutBeispiel": "Das Ministerium erarbeitete einen umstrittenen neuen Gesetzentwurf.",
+   "mevcutBeispielTr": "Bakanlık, tartışmalı yeni bir kanun tasarısı hazırladı."
+  },
+  {
+   "id": 3479,
+   "de": "die Perspektive",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Perspektiven",
+   "mevcutTr": "bakış açısı, perspektif",
+   "mevcutBeispiel": "Die Studie eröffnet eine neue Perspektive auf das Thema.",
+   "mevcutBeispielTr": "Çalışma konuya yeni bir bakış açısı getiriyor.",
+   "cakisan": [
+    "der Standpunkt (B1)",
+    "der Blickwinkel (C1)",
+    "die Sichtweise (C1)"
+   ]
+  },
+  {
+   "id": 3530,
+   "de": "vielmehr",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "daha doğrusu, aksine",
+   "mevcutBeispiel": "Es geht nicht um Zustimmung, vielmehr um kritische Auseinandersetzung.",
+   "mevcutBeispielTr": "Mesele onaylamak değil; aksine, eleştirel biçimde tartışmak."
+  },
+  {
+   "id": 3644,
+   "de": "der Mythos",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Mythen",
+   "mevcutTr": "mit, efsane",
+   "mevcutBeispiel": "Der Mythos von Prometheus fasziniert bis heute die Menschheit.",
+   "mevcutBeispielTr": "Prometheus miti insanlığı bugün bile büyülüyor."
+  },
+  {
+   "id": 3594,
+   "de": "der Ausschuss",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ausschüsse",
+   "mevcutTr": "komisyon, kurul",
+   "mevcutBeispiel": "Der Ausschuss berät derzeit über den Gesetzesvorschlag.",
+   "mevcutBeispielTr": "Komisyon şu sıralar yasa önerisini görüşüyor.",
+   "cakisan": [
+    "die Kommission (C1)",
+    "die Provision (B2)"
+   ]
+  },
+  {
+   "id": 3597,
+   "de": "die Kommission",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kommissionen",
+   "mevcutTr": "komisyon",
+   "mevcutBeispiel": "Die Kommission legte ihren Abschlussbericht dem Parlament vor.",
+   "mevcutBeispielTr": "Komisyon nihai raporunu meclise sundu.",
+   "cakisan": [
+    "der Ausschuss (C1)",
+    "die Provision (B2)"
+   ]
+  },
+  {
+   "id": 3614,
+   "de": "die Komödie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Komödien",
+   "mevcutTr": "komedi",
+   "mevcutBeispiel": "Die Komödie entlarvt gesellschaftliche Missstände mit feinem Humor.",
+   "mevcutBeispielTr": "Komedi, toplumsal aksaklıkları ince bir mizahla gözler önüne seriyor."
+  },
+  {
+   "id": 3709,
+   "de": "der Anschein",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "görünüş, izlenim",
+   "mevcutBeispiel": "Allem Anschein nach wird das Projekt verschoben.",
+   "mevcutBeispielTr": "Görünüşe bakılırsa proje ertelenecek."
+  },
+  {
+   "id": 4044,
+   "de": "gewissermaßen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bir bakıma, adeta",
+   "mevcutBeispiel": "Er ist gewissermaßen der geistige Gründer des Projekts.",
+   "mevcutBeispielTr": "O, bir bakıma projenin fikir babası."
+  },
+  {
+   "id": 3538,
+   "de": "der Beschluss",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Beschlüsse",
+   "mevcutTr": "karar (mahkeme, kurul)",
+   "mevcutBeispiel": "Der Beschluss des Gerichts ist sofort vollstreckbar.",
+   "mevcutBeispielTr": "Mahkemenin kararı derhâl icra edilebilir."
+  },
+  {
+   "id": 3624,
+   "de": "die Aufklärung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "–",
+   "mevcutTr": "Aydınlanma",
+   "mevcutBeispiel": "Die Aufklärung stellte die Vernunft über religiöse Autorität.",
+   "mevcutBeispielTr": "Aydınlanma, aklı dini otoritenin üzerine koydu."
+  },
+  {
+   "id": 3572,
+   "de": "einreichen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "reicht ein, hat eingereicht",
+   "mevcutTr": "sunmak, ibraz etmek",
+   "mevcutBeispiel": "Die Unterlagen sind vollständig und fristgerecht einzureichen.",
+   "mevcutBeispielTr": "Belgeler eksiksiz ve süresi içinde sunulmalıdır.",
+   "cakisan": [
+    "anbieten (A1)",
+    "bieten (B1)",
+    "präsentieren (B1)",
+    "vortragen (B2)",
+    "einbringen (B2)",
+    "darbieten (C1)"
+   ]
+  },
+  {
+   "id": 3573,
+   "de": "übermitteln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "übermittelt, hat übermittelt",
+   "mevcutTr": "iletmek",
+   "mevcutBeispiel": "Die Daten wurden elektronisch an das Amt übermittelt.",
+   "mevcutBeispielTr": "Veriler daireye elektronik ortamda iletildi.",
+   "cakisan": [
+    "ausrichten (B1)",
+    "mitteilen (B1)",
+    "weiterleiten (B2)"
+   ]
+  },
+  {
+   "id": 3545,
+   "de": "das Gutachten",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gutachten",
+   "mevcutTr": "bilirkişi raporu",
+   "mevcutBeispiel": "Das Gutachten bestätigte die Fahrlässigkeit des Angeklagten.",
+   "mevcutBeispielTr": "Bilirkişi raporu, sanığın ihmalini doğruladı."
+  },
+  {
+   "id": 3505,
+   "de": "belegen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "belegt, hat belegt",
+   "mevcutTr": "kanıtlamak, belgelemek",
+   "mevcutBeispiel": "Die Ergebnisse belegen den vermuteten Zusammenhang eindeutig.",
+   "mevcutBeispielTr": "Sonuçlar, varsayılan bağlantıyı açıkça kanıtlıyor.",
+   "cakisan": [
+    "beweisen (B1)"
+   ]
+  },
+  {
+   "id": 3963,
+   "de": "der Sündenbock",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sündenböcke",
+   "mevcutTr": "günah keçisi",
+   "mevcutBeispiel": "Migranten dienen manchen Populisten als bequemer Sündenbock.",
+   "mevcutBeispielTr": "Göçmenler, bazı popülistler için kullanışlı bir günah keçisi."
+  },
+  {
+   "id": 4020,
+   "de": "veranlassen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "veranlasst, hat veranlasst",
+   "mevcutTr": "-e sebep olmak, talimat vermek",
+   "mevcutBeispiel": "Der Vorfall veranlasste eine gründliche Untersuchung.",
+   "mevcutBeispielTr": "Olay, kapsamlı bir soruşturma başlatılmasına yol açtı."
+  },
+  {
+   "id": 4032,
+   "de": "nachvollziehen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "vollzieht nach, hat nachvollzogen",
+   "mevcutTr": "anlamak, izini sürmek",
+   "mevcutBeispiel": "Ich kann seine Entscheidung nur schwer nachvollziehen.",
+   "mevcutBeispielTr": "Kararını anlamakta epey zorlanıyorum.",
+   "cakisan": [
+    "verstehen (A1)",
+    "kapieren (A2)"
+   ]
+  },
+  {
+   "id": 3938,
+   "de": "die Übernahme",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Übernahmen",
+   "mevcutTr": "devralma, satın alma",
+   "mevcutBeispiel": "Die feindliche Übernahme konnte in letzter Minute abgewehrt werden.",
+   "mevcutBeispielTr": "Düşmanca devralma girişimi son dakikada püskürtüldü."
+  },
+  {
+   "id": 3469,
+   "de": "der Widerspruch",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Widersprüche",
+   "mevcutTr": "çelişki, itiraz",
+   "mevcutBeispiel": "Die Ergebnisse stehen im Widerspruch zur bisherigen Theorie.",
+   "mevcutBeispielTr": "Sonuçlar, bugüne kadarki teoriyle çelişiyor."
+  },
+  {
+   "id": 4030,
+   "de": "abstreiten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "streitet ab, hat abgestritten",
+   "mevcutTr": "inkar etmek, yadsımak",
+   "mevcutBeispiel": "Der Zeuge stritt jede Beteiligung entschieden ab.",
+   "mevcutBeispielTr": "Tanık, her türlü ilgisini kesin bir dille inkâr etti."
+  },
+  {
+   "id": 4034,
+   "de": "abwenden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "wendet ab, hat abgewendet",
+   "mevcutTr": "önlemek, savuşturmak",
+   "mevcutBeispiel": "Die Regierung konnte die drohende Krise gerade noch abwenden.",
+   "mevcutBeispielTr": "Hükümet, yaklaşan krizi son anda önleyebildi.",
+   "cakisan": [
+    "verhindern (B1)",
+    "vorbeugen (B2)"
+   ]
+  },
+  {
+   "id": 3600,
+   "de": "die Institution",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Institutionen",
+   "mevcutTr": "kurum",
+   "mevcutBeispiel": "Die Institution genießt in der Bevölkerung nach wie vor hohes Vertrauen.",
+   "mevcutBeispielTr": "Kurum, halk nezdinde hâlâ yüksek bir güven görüyor."
+  },
+  {
+   "id": 3464,
+   "de": "die Schlussfolgerung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schlussfolgerungen",
+   "mevcutTr": "sonuç çıkarma, çıkarım",
+   "mevcutBeispiel": "Aus den Daten lässt sich keine eindeutige Schlussfolgerung ziehen.",
+   "mevcutBeispielTr": "Verilerden net bir çıkarım yapılamıyor."
+  },
+  {
+   "id": 3544,
+   "de": "die Vollmacht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vollmachten",
+   "mevcutTr": "vekalet, vekaletname",
+   "mevcutBeispiel": "Er erteilte seinem Anwalt eine umfassende Vollmacht.",
+   "mevcutBeispielTr": "Avukatına geniş kapsamlı bir vekaletname verdi.",
+   "cakisan": [
+    "die Vertretung (B1)"
+   ]
+  },
+  {
+   "id": 3462,
+   "de": "die These",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Thesen",
+   "mevcutTr": "tez, sav",
+   "mevcutBeispiel": "Der Autor vertritt in seiner Arbeit eine gewagte These.",
+   "mevcutBeispielTr": "Yazar, çalışmasında cesur bir tez savunuyor."
+  },
+  {
+   "id": 3670,
+   "de": "erwägen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "erwägt, hat erwogen",
+   "mevcutTr": "düşünmek, göz önünde bulundurmak",
+   "mevcutBeispiel": "Wir sollten erwägen, den Vertrag frühzeitig zu kündigen.",
+   "mevcutBeispielTr": "Sözleşmeyi erken feshetmeyi düşünmeliyiz.",
+   "cakisan": [
+    "denken (A1)",
+    "nachdenken (B1)",
+    "überlegen (B1)"
+   ]
+  },
+  {
+   "id": 3929,
+   "de": "rekrutieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "rekrutiert, hat rekrutiert",
+   "mevcutTr": "işe almak",
+   "mevcutBeispiel": "Das Unternehmen rekrutiert verstärkt im Ausland.",
+   "mevcutBeispielTr": "Şirket ağırlıklı olarak yurt dışından eleman alıyor.",
+   "cakisan": [
+    "einstellen (B1)"
+   ]
+  },
+  {
+   "id": 3988,
+   "de": "entlarven",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "entlarvt, hat entlarvt",
+   "mevcutTr": "maskesini düşürmek, ifşa etmek",
+   "mevcutBeispiel": "Die Recherche entlarvte das Unternehmen als Umweltsünder.",
+   "mevcutBeispielTr": "Araştırma, şirketin çevre düşmanı yüzünü ortaya çıkardı."
+  },
+  {
+   "id": 3524,
+   "de": "zumal",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hele ki, özellikle de (çünkü)",
+   "mevcutBeispiel": "Die Studie überzeugt, zumal sie auf einer großen Stichprobe beruht.",
+   "mevcutBeispielTr": "Çalışma ikna edici, hele büyük bir örnekleme dayandığı düşünülürse."
+  },
+  {
+   "id": 3707,
+   "de": "der Spielraum",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Spielräume",
+   "mevcutTr": "manevra alanı, esneklik",
+   "mevcutBeispiel": "Der Verhandlungsführer hat wenig finanziellen Spielraum.",
+   "mevcutBeispielTr": "Müzakereciye mali açıdan pek manevra alanı kalmıyor."
+  },
+  {
+   "id": 3623,
+   "de": "der Kontext",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kontexte",
+   "mevcutTr": "bağlam",
+   "mevcutBeispiel": "Ohne den historischen Kontext bleibt das Gedicht unverständlich.",
+   "mevcutBeispielTr": "Tarihsel bağlam olmadan bu şiir anlaşılmaz kalır.",
+   "cakisan": [
+    "der Sinnzusammenhang (C1)"
+   ]
+  },
+  {
+   "id": 4017,
+   "de": "gewährleisten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "gewährleistet, hat gewährleistet",
+   "mevcutTr": "garanti etmek, güvence altına almak",
+   "mevcutBeispiel": "Der Staat muss die Sicherheit der Bürger gewährleisten.",
+   "mevcutBeispielTr": "Devlet, vatandaşların güvenliğini güvence altına almak zorunda.",
+   "cakisan": [
+    "garantieren (B1)"
+   ]
+  },
+  {
+   "id": 3703,
+   "de": "der Anhaltspunkt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Anhaltspunkte",
+   "mevcutTr": "ipucu, dayanak noktası",
+   "mevcutBeispiel": "Es gibt keinen Anhaltspunkt für diese Vermutung.",
+   "mevcutBeispielTr": "Bu tahmini destekleyecek hiçbir ipucu yok.",
+   "cakisan": [
+    "der Hinweis (B1)"
+   ]
+  },
+  {
+   "id": 3513,
+   "de": "hinterfragen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hinterfragt, hat hinterfragt",
+   "mevcutTr": "sorgulamak",
+   "mevcutBeispiel": "Man sollte etablierte Theorien immer wieder kritisch hinterfragen.",
+   "mevcutBeispielTr": "Yerleşik teoriler sürekli eleştirel biçimde sorgulanmalı.",
+   "cakisan": [
+    "abrufen (B2)"
+   ]
+  }
+ ]
+}

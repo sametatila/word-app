@@ -1,0 +1,596 @@
+{
+ "paket": "b1-015",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 2841,
+   "de": "das Tempo",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "hız, tempo",
+   "mevcutBeispiel": "1. Hier darfst du nur Tempo 30 fahren. 2. Achtung, hier ist eine Tempo-30-Zone!",
+   "mevcutBeispielTr": "1. Burada en fazla 30 hızla gidebilirsin. 2. Dikkat, burası 30 km hız bölgesi!",
+   "cakisan": [
+    "die Geschwindigkeit (B1)"
+   ]
+  },
+  {
+   "id": 2931,
+   "de": "unterbrechen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "unterbricht, unterbrach, hat unterbrochen",
+   "mevcutTr": "kesmek, sözünü kesmek, ara vermek",
+   "mevcutBeispiel": "1. Wir unterbrechen die Sendung für eine wichtige Nachricht. 2. Bitte unterbrich mich nicht, wenn ich spreche.",
+   "mevcutBeispielTr": "1. Önemli bir haber için yayına ara veriyoruz. 2. Konuşurken lütfen sözümü kesme.",
+   "cakisan": [
+    "sich schneiden (B1)",
+    "schlachten (B2)",
+    "einbehalten (B2)",
+    "zuschneiden (B2)",
+    "schneiden (A2)",
+    "fällen (A2)"
+   ]
+  },
+  {
+   "id": 2815,
+   "de": "das Tal",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er",
+   "mevcutTr": "vadi",
+   "mevcutBeispiel": "Unser Dorf liegt in einem Tal.",
+   "mevcutBeispielTr": "Köyümüz bir vadide."
+  },
+  {
+   "id": 2691,
+   "de": "sichern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "sichert, sicherte, hat gesichert",
+   "mevcutTr": "yedeklemek, güvence altına almak",
+   "mevcutBeispiel": "Du musst immer alle Daten im Computer sichern.",
+   "mevcutBeispielTr": "Bilgisayardaki bütün verileri her zaman yedeklemelisin."
+  },
+  {
+   "id": 2991,
+   "de": "sich verlaufen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verläuft sich, verlief sich, hat sich verlaufen",
+   "mevcutTr": "yolunu kaybetmek",
+   "mevcutBeispiel": "Gestern haben wir uns im Wald verlaufen. Wir haben erst eine Stunde später den richtigen Weg gefunden.",
+   "mevcutBeispielTr": "Dün ormanda yolumuzu kaybettik. Doğru yolu ancak bir saat sonra bulabildik.",
+   "cakisan": [
+    "sich verirren (B2)"
+   ]
+  },
+  {
+   "id": 2537,
+   "de": "der Rand",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er",
+   "mevcutTr": "kenar",
+   "mevcutBeispiel": "Wir wohnen am Rand der Innenstadt. Dort ist es billiger und ruhiger.",
+   "mevcutBeispielTr": "Şehir merkezinin kenarında oturuyoruz. Orası daha ucuz ve sakin."
+  },
+  {
+   "id": 2958,
+   "de": "der Abschied",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "veda",
+   "mevcutBeispiel": "Der Abschied von meinen Freunden fiel mir schwer.",
+   "mevcutBeispielTr": "Arkadaşlarımdan ayrılmak bana zor geldi."
+  },
+  {
+   "id": 1533,
+   "de": "benötigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "benötigt, benötigte, hat benötigt",
+   "mevcutTr": "ihtiyaç duymak, gerektirmek",
+   "mevcutBeispiel": "Sagen Sie Bescheid, wenn Sie noch etwas benötigen.",
+   "mevcutBeispielTr": "Başka bir şeye ihtiyacınız olursa haber verin.",
+   "cakisan": [
+    "brauchen (A1)"
+   ]
+  },
+  {
+   "id": 1388,
+   "de": "das Amt",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er",
+   "mevcutTr": "daire, kurum, resmi makam",
+   "mevcutBeispiel": "Das Arbeitsamt befindet sich neben dem Busbahnhof.",
+   "mevcutBeispielTr": "İş bulma kurumu otogarın yanında.",
+   "cakisan": [
+    "die Wohnung (A1)",
+    "der Kreis (B1)"
+   ]
+  },
+  {
+   "id": 1512,
+   "de": "der Beginn",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "başlangıç",
+   "mevcutBeispiel": "Zu Beginn der Stunde begrüßt die Lehrerin ihre Schüler.",
+   "mevcutBeispielTr": "Dersin başında öğretmen öğrencilerini selamlıyor.",
+   "cakisan": [
+    "der Anfang (A1)"
+   ]
+  },
+  {
+   "id": 1562,
+   "de": "bestrafen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "bestraft, bestrafte, hat bestraft",
+   "mevcutTr": "cezalandırmak",
+   "mevcutBeispiel": "Zu schnelles Fahren wird streng bestraft.",
+   "mevcutBeispielTr": "Aşırı hız ağır şekilde cezalandırılır.",
+   "cakisan": [
+    "ahnden (B2)"
+   ]
+  },
+  {
+   "id": 2588,
+   "de": "riesig",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "devasa, kocaman",
+   "mevcutBeispiel": "1. Die Stadt ist riesig. 2. Ich habe mich über das Geschenk riesig gefreut.",
+   "mevcutBeispielTr": "1. Şehir devasa. 2. Hediyeye çok sevindim.",
+   "cakisan": [
+    "gigantisch (A2)"
+   ]
+  },
+  {
+   "id": 2321,
+   "de": "die Marke",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "marka, pul (posta)",
+   "mevcutBeispiel": "1. Ich brauche bitte fünf Briefmarken zu 1 Euro. 2. Markenschuhe sind mir zu teuer.",
+   "mevcutBeispielTr": "1. 1 euroluk beş pul rica ediyorum. 2. Markalı ayakkabılar bana fazla pahalı."
+  },
+  {
+   "id": 2089,
+   "de": "höflich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kibar, nazik",
+   "mevcutBeispiel": "Unser Nachbar ist sehr höflich. Er sagt immer als Erster Guten Tag.",
+   "mevcutBeispielTr": "Komşumuz çok kibar; günaydın demeyi hiç ihmal etmez.",
+   "cakisan": [
+    "nett (A1)"
+   ]
+  },
+  {
+   "id": 2575,
+   "de": "die Religion",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "din",
+   "mevcutBeispiel": "Religion ist für manche Menschen sehr wichtig.",
+   "mevcutBeispielTr": "Din, bazı insanlar için çok önemlidir."
+  },
+  {
+   "id": 3057,
+   "de": "vorhaben",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "hat vor, hatte vor, hat vorgehabt",
+   "mevcutTr": "planlamak, niyetinde olmak",
+   "mevcutBeispiel": "Haben Sie morgen Abend schon etwas vor?",
+   "mevcutBeispielTr": "Yarın akşam için bir planınız var mı?",
+   "cakisan": [
+    "planen (A2)"
+   ]
+  },
+  {
+   "id": 2472,
+   "de": "die Patientin",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-nen",
+   "mevcutTr": "hasta (kadın)",
+   "mevcutBeispiel": "Ich bin Patientin bei Dr. Hausner. Ich möchte bitte einen Termin.",
+   "mevcutBeispielTr": "Dr. Hausner'in hastasıyım. Bir randevu rica ediyorum.",
+   "cakisan": [
+    "krank (A1)",
+    "der Patient (B1)"
+   ]
+  },
+  {
+   "id": 2417,
+   "de": "die Nichte",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "yeğen (kız)",
+   "mevcutBeispiel": "Die Tasche ist ein Geschenk von meiner Nichte.",
+   "mevcutBeispielTr": "Çanta, yeğenimin hediyesi.",
+   "cakisan": [
+    "der Neffe (B1)"
+   ]
+  },
+  {
+   "id": 3035,
+   "de": "verzichten",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verzichtet, verzichtete, hat verzichtet",
+   "mevcutTr": "vazgeçmek",
+   "mevcutBeispiel": "Ich verzichte heute auf den Kaffee.",
+   "mevcutBeispielTr": "Bugün kahve içmiyorum.",
+   "cakisan": [
+    "aufgeben (B1)",
+    "absehen (C1)",
+    "entsagen (C1)"
+   ]
+  },
+  {
+   "id": 2233,
+   "de": "die Krankenschwester",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "hemşire (kadın)",
+   "mevcutBeispiel": "Meine Cousine möchte gern Krankenschwester werden.",
+   "mevcutBeispielTr": "Kuzenim hemşire olmak istiyor."
+  },
+  {
+   "id": 2810,
+   "de": "das Symbol",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "sembol, simge",
+   "mevcutBeispiel": "1. Das Herz ist ein Symbol für die Liebe. 2. Auf dem Bildschirm finden Sie viele Symbole.",
+   "mevcutBeispielTr": "1. Kalp, aşkın sembolüdür. 2. Ekranda birçok simge göreceksiniz."
+  },
+  {
+   "id": 1846,
+   "de": "das Fahrzeug",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "araç, taşıt",
+   "mevcutBeispiel": "Wem gehört das Fahrzeug?",
+   "mevcutBeispielTr": "Bu araç kimin?"
+  },
+  {
+   "id": 2877,
+   "de": "die Tropfen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "(Pl.)",
+   "mevcutTr": "damla",
+   "mevcutBeispiel": "1. Hast du die Tropfen schon genommen? 2. Wegen der paar Regentropfen brauchst du doch keinen Schirm.",
+   "mevcutBeispielTr": "1. Damlaları aldın mı? 2. Üç beş damla yağmur için şemsiyeye gerek yok ki."
+  },
+  {
+   "id": 1372,
+   "de": "die Aktion",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "kampanya, etkinlik, eylem",
+   "mevcutBeispiel": "Die Stadt sollte eine Aktion für Familien planen.",
+   "mevcutBeispielTr": "Şehir, aileler için bir kampanya planlamalı.",
+   "cakisan": [
+    "die Kampagne (B2)"
+   ]
+  },
+  {
+   "id": 3178,
+   "de": "der Zuschauer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Zuschauerin, -nen",
+   "mevcutTr": "izleyici, seyirci",
+   "mevcutBeispiel": "- Liebe Zuschauer, wir wünschen Ihnen gute Unterhaltung.",
+   "mevcutBeispielTr": "Sevgili izleyiciler, iyi seyirler dileriz."
+  },
+  {
+   "id": 1710,
+   "de": "der Einbruch",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "hırsızlık, ev soygunu",
+   "mevcutBeispiel": "In der Urlaubszeit gibt es viele Wohnungseinbrüche.",
+   "mevcutBeispielTr": "Tatil döneminde çok sayıda ev soygunu oluyor.",
+   "cakisan": [
+    "der Diebstahl (B2)"
+   ]
+  },
+  {
+   "id": 1524,
+   "de": "beißen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "beißt, biss, hat gebissen",
+   "mevcutTr": "ısırmak",
+   "mevcutBeispiel": "Pass auf, dass dich der Hund nicht beißt!",
+   "mevcutBeispielTr": "Dikkat et, köpek seni ısırmasın!"
+  },
+  {
+   "id": 2744,
+   "de": "stammen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "stammt, stammte, hat gestammt",
+   "mevcutTr": "-den gelmek, kökeni olmak",
+   "mevcutBeispiel": "Ich stamme aus einer kleinen Stadt an der Donau.",
+   "mevcutBeispielTr": "Tuna kıyısında küçük bir şehirdenim.",
+   "cakisan": [
+    "entstammen (C1)"
+   ]
+  },
+  {
+   "id": 2225,
+   "de": "das Kostüm",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "kostüm",
+   "mevcutBeispiel": "In dem Film tragen die Leute bunte Kostüme.",
+   "mevcutBeispielTr": "Filmde insanlar rengârenk kostümler giyiyor."
+  },
+  {
+   "id": 2027,
+   "de": "grüßen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "grüßt, grüßte, hat gegrüßt",
+   "mevcutTr": "selamlamak",
+   "mevcutBeispiel": "1. Wer war die Frau, die du eben gegrüßt hast? 2. Ich soll Sie von Frau Meier grüßen.",
+   "mevcutBeispielTr": "1. Az önce selam verdiğin kadın kimdi? 2. Meier Hanım'ın size selamı var.",
+   "cakisan": [
+    "begrüßen (B1)"
+   ]
+  },
+  {
+   "id": 1760,
+   "de": "entdecken",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "entdeckt, entdeckte, hat entdeckt",
+   "mevcutTr": "keşfetmek, fark etmek",
+   "mevcutBeispiel": "Ich habe in deinem Brief noch ein paar Fehler entdeckt.",
+   "mevcutBeispielTr": "Mektubunda birkaç hata daha buldum.",
+   "cakisan": [
+    "erkunden (B2)"
+   ]
+  },
+  {
+   "id": 1820,
+   "de": "erschrecken",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "erschrickt, erschrak, ist erschrocken/ jdn. erschrecken, erschreckt, erschreckte, hat erschreckt",
+   "mevcutTr": "korkmak, ürkmek, korkutmak",
+   "mevcutBeispiel": "1. Du hast richtig krank ausgesehen. Ich war ganz erschrocken. 2. Hast du mich aber erschreckt! 3. Entschuldigung. Ich w",
+   "mevcutBeispielTr": "1. Gerçekten hasta görünüyordun; çok korktum. 2. Beni amma da korkuttun!",
+   "cakisan": [
+    "sich fürchten (B1)"
+   ]
+  },
+  {
+   "id": 3024,
+   "de": "vertreten",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "vertritt, vertrat, hat vertreten",
+   "mevcutTr": "temsil etmek, vekalet etmek",
+   "mevcutBeispiel": "Wer vertritt Sie, wenn Sie Urlaub machen?",
+   "mevcutBeispielTr": "Siz tatildeyken yerinize kim bakıyor?"
+  },
+  {
+   "id": 2241,
+   "de": "die Krise",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "kriz",
+   "mevcutBeispiel": "Die Wirtschaft steckt in einer schweren Krise.",
+   "mevcutBeispielTr": "Ekonomi ağır bir krizin içinde."
+  },
+  {
+   "id": 2996,
+   "de": "der Verlierer",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "die Verliererin, -nen",
+   "mevcutTr": "kaybeden",
+   "mevcutBeispiel": "- Sie ist eine gute Verliererin.",
+   "mevcutBeispielTr": "O, kaybetmesini bilen biri."
+  },
+  {
+   "id": 2521,
+   "de": "der Profi",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s",
+   "mevcutTr": "profesyonel, uzman",
+   "mevcutBeispiel": "Keine Angst. Mein Bruder kann die Heizung bestimmt reparieren. Er ist doch ein Profi.",
+   "mevcutBeispielTr": "Korkma. Kardeşim kaloriferi kesin tamir eder. O işin uzmanı."
+  },
+  {
+   "id": 2809,
+   "de": "die Summe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "toplam, meblağ, tutar",
+   "mevcutBeispiel": "Die Summe scheint mir zu hoch!",
+   "mevcutBeispielTr": "Bu tutar bana çok yüksek geliyor!",
+   "cakisan": [
+    "gesamt- (B1)",
+    "insgesamt (B1)"
+   ]
+  },
+  {
+   "id": 2408,
+   "de": "nebenbei",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bunun yanı sıra, ayrıca",
+   "mevcutBeispiel": "1. Mein Freund studiert Geschichte. Und nebenbei arbeitet er in einer Kneipe. 2. Ich mache die Hausarbeit und nebenbei h",
+   "mevcutBeispielTr": "1. Arkadaşım tarih okuyor; yanı sıra bir barda çalışıyor. 2. Ev işlerini yapıyorum, bir yandan da müzik dinliyorum."
+  },
+  {
+   "id": 2407,
+   "de": "der Nebel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "sis",
+   "mevcutBeispiel": "1. Wegen Nebels konnten wir gestern nicht in Frankfurt landen. 2. Fahren Sie bei Nebel besonders vorsichtig!",
+   "mevcutBeispielTr": "1. Sis yüzünden dün Frankfurt'a inemedik. 2. Siste özellikle dikkatli sürün!"
+  },
+  {
+   "id": 2151,
+   "de": "der Kanal",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "kanal",
+   "mevcutBeispiel": "Mit Kabel bekommen Sie über 30 Fernsehkanäle.",
+   "mevcutBeispielTr": "Kabloluyla 30'dan fazla televizyon kanalı çekiyor.",
+   "cakisan": [
+    "der Sender (B1)"
+   ]
+  },
+  {
+   "id": 1571,
+   "de": "betrügen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "betrügt, betrog, hat betrogen",
+   "mevcutTr": "aldatmak, dolandırmak",
+   "mevcutBeispiel": "1. Ich würde meine Familie niemals betrügen. 2. Die Rechnung stimmt nicht. Der Kellner hat mich betrogen.",
+   "mevcutBeispielTr": "Ailemi asla aldatmam.",
+   "cakisan": [
+    "täuschen (B2)"
+   ]
+  },
+  {
+   "id": 2007,
+   "de": "glatt",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kaygan, düz",
+   "mevcutBeispiel": "Fahr vorsichtig! Es ist glatt.",
+   "mevcutBeispielTr": "Dikkatli sür! Yollar kaygan.",
+   "cakisan": [
+    "rutschig (A2)"
+   ]
+  },
+  {
+   "id": 1483,
+   "de": "der Autor",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "yazar (erkek)",
+   "mevcutBeispiel": "Diese Autorin hat in diesem Jahr schon zwei Bücher geschrieben.",
+   "mevcutBeispielTr": "Bu yazar daha bu yıl iki kitap yazdı.",
+   "cakisan": [
+    "die Autorin (B1)",
+    "der Schriftsteller (B1)"
+   ]
+  },
+  {
+   "id": 2025,
+   "de": "gründlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "esaslı, iyice, derinlemesine",
+   "mevcutBeispiel": "1. Ich möchte die Wohnung gründlich reinigen, bevor der Besuch kommt. 2. Waschen Sie sich gründlich die Hände.",
+   "mevcutBeispielTr": "1. Misafirler gelmeden evi iyice temizlemek istiyorum. 2. Ellerinizi iyice yıkayın."
+  },
+  {
+   "id": 1762,
+   "de": "die Entfernung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "mesafe, uzaklık",
+   "mevcutBeispiel": "Aus dieser Entfernung ist das nicht zu erkennen.",
+   "mevcutBeispielTr": "Bu mesafeden o seçilemiyor.",
+   "cakisan": [
+    "die Distanz (B1)",
+    "die Strecke (B1)"
+   ]
+  },
+  {
+   "id": 3181,
+   "de": "zuständig",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yetkili, sorumlu",
+   "mevcutBeispiel": "Wir haben ein Problem mit der Heizung. Wer ist dafür zuständig?",
+   "mevcutBeispielTr": "Kaloriferle ilgili bir sorunumuz var. Bundan kim sorumlu?"
+  },
+  {
+   "id": 1492,
+   "de": "das Bargeld",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "nakit para",
+   "mevcutBeispiel": "Ich habe kein Bargeld mehr.",
+   "mevcutBeispielTr": "Hiç nakit param kalmadı."
+  },
+  {
+   "id": 2440,
+   "de": "öffentlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kamusal, genel, halka açık",
+   "mevcutBeispiel": "1. In der Stadt fahre ich immer mit öffentlichen Verkehrsmitteln. 2. In öffentlichen Gebäuden darf man nicht rauchen.",
+   "mevcutBeispielTr": "1. Şehir içinde her zaman toplu taşımayla giderim. 2. Kamu binalarında sigara içmek yasak."
+  },
+  {
+   "id": 2177,
+   "de": "das Kissen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "yastık",
+   "mevcutBeispiel": "Ohne Kopfkissen kann ich nicht schlafen.",
+   "mevcutBeispielTr": "Yastıksız uyuyamam."
+  },
+  {
+   "id": 1981,
+   "de": "gerecht",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "adil",
+   "mevcutBeispiel": "Lass uns den Kuchen gerecht verteilen.",
+   "mevcutBeispielTr": "Pastayı adil paylaşalım.",
+   "cakisan": [
+    "fair (B1)"
+   ]
+  }
+ ]
+}

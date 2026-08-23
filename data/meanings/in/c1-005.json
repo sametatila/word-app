@@ -1,0 +1,524 @@
+{
+ "paket": "c1-005",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 3511,
+   "de": "resümieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "resümiert, hat resümiert",
+   "mevcutTr": "özetlemek",
+   "mevcutBeispiel": "Zum Abschluss resümiert die Autorin die wichtigsten Ergebnisse.",
+   "mevcutBeispielTr": "Yazar, sonunda en önemli bulguları özetliyor.",
+   "cakisan": [
+    "zusammenfassen (B1)"
+   ]
+  },
+  {
+   "id": 3512,
+   "de": "thematisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "thematisiert, hat thematisiert",
+   "mevcutTr": "konu edinmek, ele almak",
+   "mevcutBeispiel": "Der Vortrag thematisiert die ethischen Grenzen der Forschung.",
+   "mevcutBeispielTr": "Konuşma, araştırmanın etik sınırlarını konu ediniyor."
+  },
+  {
+   "id": 3514,
+   "de": "relativieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "relativiert, hat relativiert",
+   "mevcutTr": "göreceleştirmek",
+   "mevcutBeispiel": "Neue Befunde relativieren die bisherige Einschätzung erheblich.",
+   "mevcutBeispielTr": "Yeni bulgular, önceki değerlendirmeyi büyük ölçüde göreceleştiriyor."
+  },
+  {
+   "id": 3515,
+   "de": "verallgemeinern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "verallgemeinert, hat verallgemeinert",
+   "mevcutTr": "genellemek",
+   "mevcutBeispiel": "Man darf Einzelfälle nicht vorschnell verallgemeinern.",
+   "mevcutBeispielTr": "Tekil vakalar aceleyle genellenmemeli."
+  },
+  {
+   "id": 3517,
+   "de": "konkretisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "konkretisiert, hat konkretisiert",
+   "mevcutTr": "somutlaştırmak, netleştirmek",
+   "mevcutBeispiel": "Die vage Fragestellung wurde im Verlauf konkretisiert.",
+   "mevcutBeispielTr": "Muğlak araştırma sorusu süreç içinde netleştirildi.",
+   "cakisan": [
+    "verkörpern (C1)"
+   ]
+  },
+  {
+   "id": 3519,
+   "de": "paraphrasieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "paraphrasiert, hat paraphrasiert",
+   "mevcutTr": "başka sözcüklerle ifade etmek",
+   "mevcutBeispiel": "In der Zusammenfassung wird der Originaltext paraphrasiert.",
+   "mevcutBeispielTr": "Özet bölümünde özgün metin başka sözcüklerle aktarılıyor."
+  },
+  {
+   "id": 3521,
+   "de": "mithin",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dolayısıyla, bu nedenle",
+   "mevcutBeispiel": "Die Stichprobe war klein, mithin sind die Ergebnisse nur bedingt aussagekräftig.",
+   "mevcutBeispielTr": "Örneklem küçüktü; dolayısıyla sonuçlar ancak sınırlı ölçüde anlamlı.",
+   "cakisan": [
+    "folglich (C1)"
+   ]
+  },
+  {
+   "id": 3528,
+   "de": "infolgedessen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "bunun sonucunda, bu yüzden",
+   "mevcutBeispiel": "Die Stichprobe war verzerrt, infolgedessen sind die Resultate fragwürdig.",
+   "mevcutBeispielTr": "Örneklem çarpıktı; bunun sonucunda bulgular tartışmalı."
+  },
+  {
+   "id": 3532,
+   "de": "fundiert",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dayanaklı, sağlam temelli",
+   "mevcutBeispiel": "Die Autorin argumentiert fundiert und nachvollziehbar.",
+   "mevcutBeispielTr": "Yazar sağlam temelli ve izlenebilir biçimde tartışıyor."
+  },
+  {
+   "id": 3533,
+   "de": "empirisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ampirik, gözleme dayalı",
+   "mevcutBeispiel": "Die Aussage stützt sich auf empirisch erhobene Daten.",
+   "mevcutBeispielTr": "İddia, deneysel olarak toplanmış verilere dayanıyor."
+  },
+  {
+   "id": 3534,
+   "de": "mutmaßlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "varsayılan, tahmin edilen",
+   "mevcutBeispiel": "Der mutmaßliche Zusammenhang konnte nicht bestätigt werden.",
+   "mevcutBeispielTr": "Öne sürülen bağlantı doğrulanamadı."
+  },
+  {
+   "id": 3540,
+   "de": "die Verjährung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verjährungen",
+   "mevcutTr": "zamanaşımı",
+   "mevcutBeispiel": "Der Anspruch unterliegt der dreijährigen Verjährung.",
+   "mevcutBeispielTr": "Talep, üç yıllık zamanaşımına tabidir."
+  },
+  {
+   "id": 3548,
+   "de": "der Straftatbestand",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Straftatbestände",
+   "mevcutTr": "suç unsuru",
+   "mevcutBeispiel": "Der Straftatbestand des Betrugs war eindeutig erfüllt.",
+   "mevcutBeispielTr": "Dolandırıcılık suçunun unsurları açıkça oluşmuştu."
+  },
+  {
+   "id": 3555,
+   "de": "die Verwaltungsvorschrift",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verwaltungsvorschriften",
+   "mevcutTr": "idari talimat",
+   "mevcutBeispiel": "Die Verwaltungsvorschrift konkretisiert das Gesetz.",
+   "mevcutBeispielTr": "İdari talimat, yasayı somutlaştırıyor."
+  },
+  {
+   "id": 3559,
+   "de": "die Ermächtigung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ermächtigungen",
+   "mevcutTr": "yetkilendirme, izin",
+   "mevcutBeispiel": "Das Gesetz enthält eine Ermächtigung zum Erlass von Verordnungen.",
+   "mevcutBeispielTr": "Yasa, yönetmelik çıkarma yetkisi içeriyor."
+  },
+  {
+   "id": 3560,
+   "de": "der Amtsträger",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Amtsträger",
+   "mevcutTr": "kamu görevlisi",
+   "mevcutBeispiel": "Amtsträger unterliegen einer besonderen Verschwiegenheitspflicht.",
+   "mevcutBeispielTr": "Kamu görevlileri özel bir sır saklama yükümlülüğüne tabidir."
+  },
+  {
+   "id": 3562,
+   "de": "die Kompetenzverteilung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kompetenzverteilungen",
+   "mevcutTr": "yetki dağılımı",
+   "mevcutBeispiel": "Die Kompetenzverteilung zwischen Bund und Ländern ist komplex.",
+   "mevcutBeispielTr": "Federal devletle eyaletler arasındaki yetki dağılımı karmaşıktır."
+  },
+  {
+   "id": 3563,
+   "de": "der Verwaltungsakt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verwaltungsakte",
+   "mevcutTr": "idari işlem",
+   "mevcutBeispiel": "Der Verwaltungsakt wurde fristgerecht angefochten.",
+   "mevcutBeispielTr": "İdari işleme süresi içinde itiraz edildi."
+  },
+  {
+   "id": 3565,
+   "de": "bevollmächtigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "bevollmächtigt, hat bevollmächtigt",
+   "mevcutTr": "yetkilendirmek",
+   "mevcutBeispiel": "Der Vorstand bevollmächtigte den Geschäftsführer zur Unterzeichnung.",
+   "mevcutBeispielTr": "Yönetim kurulu, genel müdürü imza atmaya yetkilendirdi.",
+   "cakisan": [
+    "ermächtigen (C1)"
+   ]
+  },
+  {
+   "id": 3567,
+   "de": "die Ausschlussfrist",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ausschlussfristen",
+   "mevcutTr": "hak düşürücü süre",
+   "mevcutBeispiel": "Nach Ablauf der Ausschlussfrist ist der Anspruch erloschen.",
+   "mevcutBeispielTr": "Hak düşürücü süre dolunca talep hakkı ortadan kalktı."
+  },
+  {
+   "id": 3570,
+   "de": "die Rechtsbehelfsbelehrung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rechtsbehelfsbelehrungen",
+   "mevcutTr": "itiraz yolları bildirimi",
+   "mevcutBeispiel": "Ohne Rechtsbehelfsbelehrung beginnt die Frist nicht zu laufen.",
+   "mevcutBeispielTr": "İtiraz yolları bildirimi yapılmadan süre işlemeye başlamaz."
+  },
+  {
+   "id": 3571,
+   "de": "die Zustellung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Zustellungen",
+   "mevcutTr": "tebligat",
+   "mevcutBeispiel": "Die Zustellung des Bescheids erfolgte per Einschreiben.",
+   "mevcutBeispielTr": "Kararın tebligatı iadeli taahhütlü mektupla yapıldı."
+  },
+  {
+   "id": 3575,
+   "de": "das Aktenzeichen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Aktenzeichen",
+   "mevcutTr": "dosya numarası",
+   "mevcutBeispiel": "Bitte geben Sie das Aktenzeichen in Ihrer Korrespondenz an.",
+   "mevcutBeispielTr": "Yazışmalarınızda lütfen dosya numarasını belirtin."
+  },
+  {
+   "id": 3576,
+   "de": "formlos",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "şekle bağlı olmayan, biçim şartı aranmayan",
+   "mevcutBeispiel": "Ein formloser Antrag genügt in diesem besonderen Fall.",
+   "mevcutBeispielTr": "Bu özel durumda şekle bağlı olmayan bir başvuru yeterli."
+  },
+  {
+   "id": 3577,
+   "de": "rechtsverbindlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "hukuken bağlayıcı",
+   "mevcutBeispiel": "Erst die Unterschrift macht das Dokument rechtsverbindlich.",
+   "mevcutBeispielTr": "Belgeyi hukuken bağlayıcı kılan ancak imzadır."
+  },
+  {
+   "id": 3578,
+   "de": "der Staatshaushalt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Staatshaushalte",
+   "mevcutTr": "devlet bütçesi",
+   "mevcutBeispiel": "Der Staatshaushalt wies im vergangenen Jahr ein hohes Defizit auf.",
+   "mevcutBeispielTr": "Devlet bütçesi geçen yıl yüksek bir açık verdi."
+  },
+  {
+   "id": 3580,
+   "de": "die Subvention",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Subventionen",
+   "mevcutTr": "devlet desteği, sübvansiyon",
+   "mevcutBeispiel": "Die Subventionen für die heimische Industrie wurden gekürzt.",
+   "mevcutBeispielTr": "Yerli sanayiye verilen devlet destekleri kısıldı."
+  },
+  {
+   "id": 3581,
+   "de": "die Konjunkturpolitik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Konjunkturpolitiken",
+   "mevcutTr": "konjonktür politikası",
+   "mevcutBeispiel": "Die Konjunkturpolitik zielt auf die Stabilisierung der Wirtschaft ab.",
+   "mevcutBeispielTr": "Konjonktür politikası, ekonomiyi istikrara kavuşturmayı amaçlıyor."
+  },
+  {
+   "id": 3582,
+   "de": "die Geldpolitik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Geldpolitiken",
+   "mevcutTr": "para politikası",
+   "mevcutBeispiel": "Die Geldpolitik der Notenbank beeinflusst maßgeblich die Zinssätze.",
+   "mevcutBeispielTr": "Merkez bankasının para politikası faiz oranlarını belirleyici ölçüde etkiler."
+  },
+  {
+   "id": 3583,
+   "de": "der Leitzins",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Leitzinsen",
+   "mevcutTr": "politika faizi",
+   "mevcutBeispiel": "Die Notenbank erhöhte den Leitzins um einen halben Prozentpunkt.",
+   "mevcutBeispielTr": "Merkez bankası politika faizini yarım puan artırdı."
+  },
+  {
+   "id": 3584,
+   "de": "die Staatsverschuldung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Staatsverschuldungen",
+   "mevcutTr": "kamu borcu",
+   "mevcutBeispiel": "Die Staatsverschuldung erreichte einen historischen Höchststand.",
+   "mevcutBeispielTr": "Kamu borcu tarihi bir zirveye ulaştı."
+  },
+  {
+   "id": 3585,
+   "de": "das Wirtschaftswachstum",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wirtschaftswachstum",
+   "mevcutTr": "ekonomik büyüme",
+   "mevcutBeispiel": "Das Wirtschaftswachstum verlangsamte sich im letzten Jahr merklich.",
+   "mevcutBeispielTr": "Ekonomik büyüme geçen yıl gözle görülür biçimde yavaşladı."
+  },
+  {
+   "id": 3586,
+   "de": "die Deregulierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Deregulierungen",
+   "mevcutTr": "deregülasyon",
+   "mevcutBeispiel": "Die Deregulierung des Marktes führte zu mehr Wettbewerb.",
+   "mevcutBeispielTr": "Piyasanın deregülasyonu rekabeti artırdı."
+  },
+  {
+   "id": 3587,
+   "de": "die Marktwirtschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Marktwirtschaften",
+   "mevcutTr": "piyasa ekonomisi",
+   "mevcutBeispiel": "Die soziale Marktwirtschaft verbindet Wettbewerb mit sozialer Absicherung.",
+   "mevcutBeispielTr": "Sosyal piyasa ekonomisi, rekabeti sosyal güvenceyle birleştirir."
+  },
+  {
+   "id": 3588,
+   "de": "der Strukturwandel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Strukturwandel",
+   "mevcutTr": "yapısal değişim",
+   "mevcutBeispiel": "Der Strukturwandel trifft besonders die alten Industrieregionen.",
+   "mevcutBeispielTr": "Yapısal değişim en çok eski sanayi bölgelerini vuruyor."
+  },
+  {
+   "id": 3589,
+   "de": "die Kaufkraft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kaufkräfte",
+   "mevcutTr": "satın alma gücü",
+   "mevcutBeispiel": "Die steigenden Preise mindern spürbar die Kaufkraft der Verbraucher.",
+   "mevcutBeispielTr": "Artan fiyatlar tüketicilerin satın alma gücünü hissedilir ölçüde azaltıyor."
+  },
+  {
+   "id": 3590,
+   "de": "das Bruttoinlandsprodukt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bruttoinlandsprodukte",
+   "mevcutTr": "gayri safi yurtiçi hasıla",
+   "mevcutBeispiel": "Das Bruttoinlandsprodukt wuchs im Vergleich zum Vorjahr deutlich.",
+   "mevcutBeispielTr": "Gayri safi yurtiçi hasıla bir önceki yıla göre belirgin arttı."
+  },
+  {
+   "id": 3591,
+   "de": "fiskalisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "mali, maliyeye ilişkin",
+   "mevcutBeispiel": "Die fiskalische Disziplin der Regierung wurde international gelobt.",
+   "mevcutBeispielTr": "Hükümetin mali disiplini uluslararası alanda övüldü.",
+   "cakisan": [
+    "finanziell (B1)"
+   ]
+  },
+  {
+   "id": 3592,
+   "de": "konjunkturell",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "konjonktürel",
+   "mevcutBeispiel": "Der Rückgang der Nachfrage war rein konjunkturell bedingt.",
+   "mevcutBeispielTr": "Talepteki düşüş tamamen konjonktürel nedenlerden kaynaklanıyordu."
+  },
+  {
+   "id": 3598,
+   "de": "das Kuratorium",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kuratorien",
+   "mevcutTr": "mütevelli heyeti, yönetim kurulu",
+   "mevcutBeispiel": "Das Kuratorium entscheidet über die Vergabe der Fördermittel.",
+   "mevcutBeispielTr": "Mütevelli heyeti, teşvik fonlarının dağıtımına karar veriyor."
+  },
+  {
+   "id": 3599,
+   "de": "die Körperschaft",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Körperschaften",
+   "mevcutTr": "tüzel kişilik, kurum",
+   "mevcutBeispiel": "Die Körperschaft des öffentlichen Rechts genießt besondere Rechte.",
+   "mevcutBeispielTr": "Kamu hukuku tüzel kişiliği özel haklardan yararlanır."
+  },
+  {
+   "id": 3601,
+   "de": "der Amtsinhaber",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Amtsinhaber",
+   "mevcutTr": "makam sahibi, görevdeki kişi",
+   "mevcutBeispiel": "Der Amtsinhaber wurde für eine weitere Amtszeit bestätigt.",
+   "mevcutBeispielTr": "Görevdeki isim bir dönem daha görev yapmak üzere yeniden seçildi."
+  },
+  {
+   "id": 3602,
+   "de": "die Selbstverwaltung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Selbstverwaltungen",
+   "mevcutTr": "özyönetim",
+   "mevcutBeispiel": "Die kommunale Selbstverwaltung ist im Grundgesetz verankert.",
+   "mevcutBeispielTr": "Yerel özyönetim anayasada güvence altına alınmıştır."
+  },
+  {
+   "id": 3606,
+   "de": "die Doktrin",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Doktrinen",
+   "mevcutTr": "doktrin, öğreti",
+   "mevcutBeispiel": "Die philosophische Doktrin wurde von Generationen weitergegeben.",
+   "mevcutBeispielTr": "Bu felsefi öğreti kuşaktan kuşağa aktarıldı."
+  },
+  {
+   "id": 3608,
+   "de": "die Avantgarde",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Avantgarden",
+   "mevcutTr": "avangart, öncü sanat akımı",
+   "mevcutBeispiel": "Die Avantgarde brach bewusst mit den ästhetischen Konventionen.",
+   "mevcutBeispielTr": "Avangard, estetik kalıplarla bilinçli olarak bağını kopardı.",
+   "cakisan": [
+    "avantgardistisch (C1)"
+   ]
+  },
+  {
+   "id": 3609,
+   "de": "der Kanon",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kanons",
+   "mevcutTr": "kanon, klasikler listesi",
+   "mevcutBeispiel": "Der literarische Kanon wird ständig neu verhandelt und erweitert.",
+   "mevcutBeispielTr": "Edebi kanon sürekli yeniden tartışılıyor ve genişletiliyor."
+  },
+  {
+   "id": 3610,
+   "de": "die Rezension",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rezensionen",
+   "mevcutTr": "eleştiri yazısı, tanıtım yazısı",
+   "mevcutBeispiel": "Die Rezension lobte die stilistische Finesse des Romans.",
+   "mevcutBeispielTr": "Eleştiri yazısı, romanın üslup inceliğini övüyordu."
+  },
+  {
+   "id": 3611,
+   "de": "der Essayist",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Essayisten",
+   "mevcutTr": "deneme yazarı",
+   "mevcutBeispiel": "Der Essayist beleuchtet gesellschaftliche Fragen mit scharfem Verstand.",
+   "mevcutBeispielTr": "Deneme yazarı toplumsal meseleleri keskin bir zekâyla ele alıyor."
+  },
+  {
+   "id": 3616,
+   "de": "die Novelle",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Novellen",
+   "mevcutTr": "uzun hikaye, novella",
+   "mevcutBeispiel": "Die Novelle konzentriert sich auf ein einziges dramatisches Ereignis.",
+   "mevcutBeispielTr": "Novella, tek bir dramatik olaya odaklanır."
+  },
+  {
+   "id": 3617,
+   "de": "die Erzählperspektive",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erzählperspektiven",
+   "mevcutTr": "anlatı bakış açısı",
+   "mevcutBeispiel": "Die Erzählperspektive wechselt mehrfach zwischen den Figuren.",
+   "mevcutBeispielTr": "Anlatı bakış açısı karakterler arasında birkaç kez değişiyor."
+  }
+ ]
+}

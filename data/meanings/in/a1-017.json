@@ -1,0 +1,406 @@
+{
+ "paket": "a1-017",
+ "niveau": "A1",
+ "kelimeler": [
+  {
+   "id": 705,
+   "de": "kulturell",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kültürel",
+   "mevcutBeispiel": "Ich bin kulturell interessiert. Ich gehe oft ins Museum.",
+   "mevcutBeispielTr": "Kültüre meraklıyım. Sık sık müzeye giderim."
+  },
+  {
+   "id": 544,
+   "de": "die Anrede",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hitap",
+   "mevcutBeispiel": "Schreiben Sie auch eine Anrede und einen Gruß.",
+   "mevcutBeispielTr": "Bir hitap ve bir selamlama da yazın."
+  },
+  {
+   "id": 375,
+   "de": "der Radiergummi",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-s",
+   "mevcutTr": "silgi",
+   "mevcutBeispiel": "Gibst du mir deinen Radiergummi?",
+   "mevcutBeispielTr": "Silgini verir misin?"
+  },
+  {
+   "id": 15,
+   "de": "andere",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "diğer, başka",
+   "mevcutBeispiel": "Gefällt dir die Jacke? / Nein, die andere finde ich schöner.",
+   "mevcutBeispielTr": "Ceket hoşuna gitti mi? / Hayır, diğerini daha güzel buluyorum."
+  },
+  {
+   "id": 41,
+   "de": "auf sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "açık olmak (dükkân, kapı)",
+   "mevcutBeispiel": "Das Fenster ist auf.",
+   "mevcutBeispielTr": "Pencere açık."
+  },
+  {
+   "id": 48,
+   "de": "aus sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "bitmiş olmak, sona ermek",
+   "mevcutBeispiel": "Um ein Uhr ist die Schule aus.",
+   "mevcutBeispielTr": "Okul saat birde bitiyor."
+  },
+  {
+   "id": 122,
+   "de": "einverstanden sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "aynı fikirde olmak, hemfikir olmak",
+   "mevcutBeispiel": "Bist du einverstanden?",
+   "mevcutBeispielTr": "Aynı fikirde misin?"
+  },
+  {
+   "id": 150,
+   "de": "fertig sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "hazır olmak, bitmiş olmak",
+   "mevcutBeispiel": "Ich bin schon fertig.",
+   "mevcutBeispielTr": "Ben çoktan bitirdim."
+  },
+  {
+   "id": 193,
+   "de": "geschlossen sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kapalı olmak",
+   "mevcutBeispiel": "Die Apotheke ist heute geschlossen.",
+   "mevcutBeispielTr": "Eczane bugün kapalı.",
+   "cakisan": [
+    "zu sein (A1)"
+   ]
+  },
+  {
+   "id": 267,
+   "de": "die Klassenarbeit",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "sınav, yazılı sınav",
+   "mevcutBeispiel": "Ich muss lernen, morgen schreiben wir eine Klassenarbeit.",
+   "mevcutBeispielTr": "Ders çalışmam lazım, yarın yazılımız var.",
+   "cakisan": [
+    "die Prüfung (A1)",
+    "die Schularbeit (B1)"
+   ]
+  },
+  {
+   "id": 303,
+   "de": "Lieblings-",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "favori, en sevilen",
+   "mevcutBeispiel": "Mein Lieblingsfach ist Sozialkunde.",
+   "mevcutBeispielTr": "En sevdiğim ders sosyal bilgiler."
+  },
+  {
+   "id": 379,
+   "de": "recht haben",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "haklı olmak",
+   "mevcutBeispiel": "Du hast (nicht) recht.",
+   "mevcutBeispielTr": "Haklısın. / Haklı değilsin."
+  },
+  {
+   "id": 423,
+   "de": "spazieren gehen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yürüyüşe çıkmak",
+   "mevcutBeispiel": "Wollen wir spazieren gehen?",
+   "mevcutBeispielTr": "Yürüyüşe çıkalım mı?"
+  },
+  {
+   "id": 446,
+   "de": "Tennis spielen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "tenis oynamak",
+   "mevcutBeispiel": "Er spielt gut Tennis.",
+   "mevcutBeispielTr": "İyi tenis oynuyor."
+  },
+  {
+   "id": 468,
+   "de": "und so weiter",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ve saire, vesaire",
+   "mevcutBeispiel": "usw.",
+   "mevcutBeispielTr": "vs. (ve saire)"
+  },
+  {
+   "id": 492,
+   "de": "weh tun",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "acımak, ağrımak",
+   "mevcutBeispiel": "Mein Kopf tut so weh.",
+   "mevcutBeispielTr": "Başım çok ağrıyor.",
+   "cakisan": [
+    "wehtun (A2)"
+   ]
+  },
+  {
+   "id": 495,
+   "de": "welche",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "-er, -e, -s",
+   "mevcutTr": "hangi",
+   "mevcutBeispiel": "Welche CD möchtest du?",
+   "mevcutBeispielTr": "Hangi CD'yi istersin?"
+  },
+  {
+   "id": 504,
+   "de": "wie viel",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ne kadar, kaç",
+   "mevcutBeispiel": "Wie viel kostet das?",
+   "mevcutBeispielTr": "Bu ne kadar?",
+   "cakisan": [
+    "wie viel(e) (B1)"
+   ]
+  },
+  {
+   "id": 528,
+   "de": "zum Beispiel",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "örneğin",
+   "mevcutBeispiel": "Mein Freund hat viele Hobbys, zum Beispiel Kochen, Lesen und Tanzen.",
+   "mevcutBeispielTr": "Arkadaşımın birçok hobisi var; örneğin yemek yapmak, okumak ve dans etmek.",
+   "cakisan": [
+    "beispielsweise (A2)"
+   ]
+  },
+  {
+   "id": 531,
+   "de": "zu sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "kapalı olmak (günlük dil)",
+   "mevcutBeispiel": "Die Bibliothek ist in den Ferien zu.",
+   "mevcutBeispielTr": "Kütüphane tatilde kapalı.",
+   "cakisan": [
+    "geschlossen sein (A1)"
+   ]
+  },
+  {
+   "id": 538,
+   "de": "anklicken",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "tıklamak",
+   "mevcutBeispiel": "Da musst du dieses Wort anklicken.",
+   "mevcutBeispielTr": "Bu kelimeye tıklaman gerekiyor.",
+   "cakisan": [
+    "klicken (B1)"
+   ]
+  },
+  {
+   "id": 540,
+   "de": "ankreuzen",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "işaretlemek, çarpı koymak",
+   "mevcutBeispiel": "Auf dem Formular müssen Sie an mehreren Stellen etwas ankreuzen.",
+   "mevcutBeispielTr": "Formda birkaç yeri işaretlemeniz gerekiyor.",
+   "cakisan": [
+    "markieren (B1)"
+   ]
+  },
+  {
+   "id": 549,
+   "de": "an sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "açık olmak (cihaz, ışık)",
+   "mevcutBeispiel": "Heute Nacht war das Licht an.",
+   "mevcutBeispielTr": "Bu gece ışık açıktı."
+  },
+  {
+   "id": 560,
+   "de": "ausländisch",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yabancı (ülkeye ait)",
+   "mevcutBeispiel": "Leider habe ich nur ausländisches Geld.",
+   "mevcutBeispielTr": "Maalesef yanımda yalnızca yabancı para var.",
+   "cakisan": [
+    "der Ausländer (A1)",
+    "fremd (A1)"
+   ]
+  },
+  {
+   "id": 610,
+   "de": "diese",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "bu",
+   "mevcutBeispiel": "Ich nehme lieber diesen Kuchen.",
+   "mevcutBeispielTr": "Ben bu pastadan alayım.",
+   "cakisan": [
+    "der (A1)"
+   ]
+  },
+  {
+   "id": 640,
+   "de": "der Familienstand",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "medeni hâl",
+   "mevcutBeispiel": "Bei „Familienstand“ musst du „ledig“ ankreuzen.",
+   "mevcutBeispielTr": "\"Medeni hâl\" kısmında \"bekâr\" seçeneğini işaretlemelisin.",
+   "cakisan": [
+    "der Personenstand (B1)",
+    "der Zivilstand (B1)"
+   ]
+  },
+  {
+   "id": 659,
+   "de": "das Geburtsjahr",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "doğum yılı",
+   "mevcutBeispiel": "Das Geburtsjahr Ihres Sohnes, bitte?",
+   "mevcutBeispielTr": "Oğlunuzun doğum yılı lütfen?"
+  },
+  {
+   "id": 679,
+   "de": "die Halbpension",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "yarım pansiyon",
+   "mevcutBeispiel": "Möchten Sie Vollpension oder Halbpension?",
+   "mevcutBeispielTr": "Tam pansiyon mu yarım pansiyon mu istersiniz?"
+  },
+  {
+   "id": 697,
+   "de": "die Kreditkarte",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-n",
+   "mevcutTr": "kredi kartı",
+   "mevcutBeispiel": "Kann ich mit Kreditkarte bezahlen?",
+   "mevcutBeispielTr": "Kredi kartıyla ödeyebilir miyim?"
+  },
+  {
+   "id": 717,
+   "de": "letzte",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "son, sonuncu, geçen (letzte Woche)",
+   "mevcutBeispiel": "Morgen ist der letzte Kurstag.",
+   "mevcutBeispielTr": "Yarın kursun son günü.",
+   "cakisan": [
+    "das Ende (A1)",
+    "der Schluss (A1)"
+   ]
+  },
+  {
+   "id": 728,
+   "de": "meiste",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "çoğu, en çok",
+   "mevcutBeispiel": "Die meisten Norddeutschen sind sehr groß.",
+   "mevcutBeispielTr": "Kuzey Almanların çoğu çok uzun boylu."
+  },
+  {
+   "id": 761,
+   "de": "Rad fahren",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "bisiklete binmek",
+   "mevcutBeispiel": "Das Kind kann schon Rad fahren.",
+   "mevcutBeispielTr": "Çocuk bisiklete binmeyi biliyor artık."
+  },
+  {
+   "id": 774,
+   "de": "die S-Bahn",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "-en",
+   "mevcutTr": "banliyö treni",
+   "mevcutBeispiel": "Ich nehme lieber die S-Bahn.",
+   "mevcutBeispielTr": "Banliyö trenine binmeyi tercih ederim."
+  },
+  {
+   "id": 789,
+   "de": "die Sehenswürdigkeit",
+   "typ": "Nomen",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "görülmeye değer yer, turistik yer",
+   "mevcutBeispiel": "-en Welche Sehenswürdigkeiten gibt es in Frankfurt?",
+   "mevcutBeispielTr": "Frankfurt'ta hangi görülmeye değer yerler var?"
+  },
+  {
+   "id": 790,
+   "de": "weg sein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "gitmiş olmak",
+   "mevcutBeispiel": "Herr Meier ist schon weg.",
+   "mevcutBeispielTr": "Bay Meier çoktan gitti."
+  },
+  {
+   "id": 844,
+   "de": "was für ein",
+   "typ": "Sonstiges",
+   "niveau": "A1",
+   "formen": "",
+   "mevcutTr": "ne tür bir, nasıl bir",
+   "mevcutBeispiel": "Was für eine Farbe möchten Sie?",
+   "mevcutBeispielTr": "Nasıl bir renk istersiniz?"
+  }
+ ]
+}

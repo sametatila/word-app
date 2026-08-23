@@ -1,0 +1,578 @@
+{
+ "paket": "b2-011",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4143,
+   "de": "mangelhaft",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kusurlu, eksik, yetersiz",
+   "mevcutBeispiel": "Die Dokumentation der Versuche war mangelhaft.",
+   "mevcutBeispielTr": "Deneylerin belgelenmesi kusurluydu."
+  },
+  {
+   "id": 4144,
+   "de": "hervorragend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "mükemmel, üstün, çok iyi",
+   "mevcutBeispiel": "Sie hat die Prüfung mit einem hervorragenden Ergebnis bestanden.",
+   "mevcutBeispielTr": "Sınavı mükemmel bir sonuçla geçti.",
+   "cakisan": [
+    "ausgezeichnet (B1)",
+    "perfekt (B1)"
+   ]
+  },
+  {
+   "id": 4145,
+   "de": "akzeptabel",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kabul edilebilir, makul",
+   "mevcutBeispiel": "Für diesen Preis ist die Qualität durchaus akzeptabel.",
+   "mevcutBeispielTr": "Bu fiyata kalite gayet kabul edilebilir."
+  },
+  {
+   "id": 4146,
+   "de": "vielfältig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çeşitli, çok yönlü",
+   "mevcutBeispiel": "Die Ursachen des Problems sind vielfältig und schwer zu trennen.",
+   "mevcutBeispielTr": "Sorunun nedenleri çeşitli ve birbirinden ayrılması zor.",
+   "cakisan": [
+    "abwechslungsreich (B2)"
+   ]
+  },
+  {
+   "id": 4147,
+   "de": "signifikant",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "anlamlı, kayda değer",
+   "mevcutBeispiel": "Zwischen beiden Gruppen bestand kein signifikanter Unterschied.",
+   "mevcutBeispielTr": "İki grup arasında anlamlı bir fark yoktu.",
+   "cakisan": [
+    "sinnvoll (B1)",
+    "aussagekräftig (C1)"
+   ]
+  },
+  {
+   "id": 4148,
+   "de": "konstant",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sabit, değişmeyen",
+   "mevcutBeispiel": "Die Temperatur blieb über Stunden konstant.",
+   "mevcutBeispielTr": "Sıcaklık saatlerce sabit kaldı."
+  },
+  {
+   "id": 4149,
+   "de": "enorm",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "muazzam, çok büyük",
+   "mevcutBeispiel": "Der Aufwand für die Umstellung war enorm.",
+   "mevcutBeispielTr": "Geçiş için harcanan emek muazzamdı."
+  },
+  {
+   "id": 4150,
+   "de": "dürftig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "cılız, kıt, yetersiz",
+   "mevcutBeispiel": "Die Ausbeute des Versuchs fiel ziemlich dürftig aus.",
+   "mevcutBeispielTr": "Deneyin verimi oldukça cılız çıktı."
+  },
+  {
+   "id": 4151,
+   "de": "vereinzelt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tek tük, münferit",
+   "mevcutBeispiel": "Vereinzelt gab es Kritik an dem neuen Verfahren.",
+   "mevcutBeispielTr": "Yeni yönteme tek tük eleştiri geldi."
+  },
+  {
+   "id": 4152,
+   "de": "überschaubar",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sınırlı, kolayca kavranabilir",
+   "mevcutBeispiel": "Der finanzielle Schaden blieb bislang überschaubar.",
+   "mevcutBeispielTr": "Mali zarar şimdilik sınırlı kaldı.",
+   "cakisan": [
+    "begrenzt (B1)"
+   ]
+  },
+  {
+   "id": 4153,
+   "de": "nennenswert",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kayda değer, anmaya değer",
+   "mevcutBeispiel": "Nennenswerte Fortschritte gab es in diesem Bereich nicht.",
+   "mevcutBeispielTr": "Bu alanda kayda değer bir ilerleme olmadı."
+  },
+  {
+   "id": 4154,
+   "de": "zusehends",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gözle görülür biçimde, gitgide",
+   "mevcutBeispiel": "Die Lage auf dem Wohnungsmarkt spitzt sich zusehends zu.",
+   "mevcutBeispielTr": "Konut piyasasındaki durum gitgide keskinleşiyor."
+  },
+  {
+   "id": 4155,
+   "de": "sukzessive",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kademeli olarak, peyderpey",
+   "mevcutBeispiel": "Die Förderung wird in den nächsten Jahren sukzessive zurückgefahren.",
+   "mevcutBeispielTr": "Destek önümüzdeki yıllarda kademeli olarak azaltılacak."
+  },
+  {
+   "id": 4156,
+   "de": "schrittweise",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "adım adım, aşamalı olarak",
+   "mevcutBeispiel": "Die strengen Regeln sollen schrittweise gelockert werden.",
+   "mevcutBeispielTr": "Sıkı kuralların adım adım gevşetilmesi planlanıyor."
+  },
+  {
+   "id": 4157,
+   "de": "überproportional",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "orantısız biçimde fazla, orantısız yüksek",
+   "mevcutBeispiel": "Junge Familien sind von den Kosten überproportional betroffen.",
+   "mevcutBeispielTr": "Genç aileler maliyetlerden orantısız biçimde fazla etkileniyor."
+  },
+  {
+   "id": 4158,
+   "de": "ausschlaggebend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "belirleyici, tayin edici",
+   "mevcutBeispiel": "Für die Entscheidung war letztlich der Preis ausschlaggebend.",
+   "mevcutBeispielTr": "Karar için nihayetinde fiyat belirleyici oldu.",
+   "cakisan": [
+    "maßgeblich (B2)"
+   ]
+  },
+  {
+   "id": 4159,
+   "de": "lückenhaft",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "eksik, boşluklarla dolu",
+   "mevcutBeispiel": "Die Angaben in der Akte sind an mehreren Stellen lückenhaft.",
+   "mevcutBeispielTr": "Dosyadaki bilgiler birçok yerde eksik."
+  },
+  {
+   "id": 4160,
+   "de": "einwandfrei",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "kusursuz, sorunsuz",
+   "mevcutBeispiel": "Das Gerät funktionierte während der gesamten Prüfung einwandfrei.",
+   "mevcutBeispielTr": "Cihaz test boyunca kusursuz çalıştı."
+  },
+  {
+   "id": 4161,
+   "de": "bestenfalls",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "en iyi ihtimalle, olsa olsa",
+   "mevcutBeispiel": "Die Einsparung beträgt bestenfalls ein paar hundert Franken.",
+   "mevcutBeispielTr": "Tasarruf en iyi ihtimalle birkaç yüz frank tutar."
+  },
+  {
+   "id": 4162,
+   "de": "sich verschärfen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich verschärft",
+   "mevcutTr": "keskinleşmek, ağırlaşmak",
+   "mevcutBeispiel": "Der Wettbewerb in der Branche hat sich deutlich verschärft.",
+   "mevcutBeispielTr": "Sektördeki rekabet belirgin biçimde sertleşti."
+  },
+  {
+   "id": 4163,
+   "de": "steigern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gesteigert",
+   "mevcutTr": "artırmak, yükseltmek (kademeli olarak)",
+   "mevcutBeispiel": "Der Betrieb konnte seinen Absatz um zwölf Prozent steigern.",
+   "mevcutBeispielTr": "İşletme satışlarını yüzde on iki artırmayı başardı.",
+   "cakisan": [
+    "erhöhen (B1)"
+   ]
+  },
+  {
+   "id": 4164,
+   "de": "senken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gesenkt",
+   "mevcutTr": "düşürmek, indirmek",
+   "mevcutBeispiel": "Die Bank hat die Zinsen zum zweiten Mal gesenkt.",
+   "mevcutBeispielTr": "Banka faizleri ikinci kez indirdi."
+  },
+  {
+   "id": 4165,
+   "de": "schrumpfen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist geschrumpft",
+   "mevcutTr": "küçülmek, daralmak",
+   "mevcutBeispiel": "Die Zahl der Mitglieder ist in zehn Jahren stark geschrumpft.",
+   "mevcutBeispielTr": "Üye sayısı on yılda büyük ölçüde azaldı."
+  },
+  {
+   "id": 4166,
+   "de": "stagnieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat stagniert",
+   "mevcutTr": "durgunlaşmak, yerinde saymak",
+   "mevcutBeispiel": "Die Löhne stagnieren in dieser Branche seit Jahren.",
+   "mevcutBeispielTr": "Bu sektörde ücretler yıllardır yerinde sayıyor."
+  },
+  {
+   "id": 4167,
+   "de": "zurückgehen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist zurückgegangen",
+   "mevcutTr": "azalmak, gerilemek",
+   "mevcutBeispiel": "Die Unfallzahlen sind im vergangenen Jahr deutlich zurückgegangen.",
+   "mevcutBeispielTr": "Kaza sayıları geçen yıl belirgin biçimde geriledi.",
+   "cakisan": [
+    "nachlassen (B2)"
+   ]
+  },
+  {
+   "id": 4168,
+   "de": "übertreffen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat übertroffen",
+   "mevcutTr": "aşmak, geçmek, geride bırakmak",
+   "mevcutBeispiel": "Das Ergebnis hat alle Erwartungen der Geschäftsleitung übertroffen.",
+   "mevcutBeispielTr": "Sonuç yönetimin bütün beklentilerini aştı.",
+   "cakisan": [
+    "transzendieren (C1)",
+    "überschreiten (B2)",
+    "überziehen (B2)"
+   ]
+  },
+  {
+   "id": 4169,
+   "de": "überschreiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat überschritten",
+   "mevcutTr": "aşmak, sınırı geçmek",
+   "mevcutBeispiel": "Der Lärmpegel überschreitet nachts den erlaubten Wert.",
+   "mevcutBeispielTr": "Gürültü düzeyi geceleri izin verilen değeri aşıyor.",
+   "cakisan": [
+    "transzendieren (C1)",
+    "übertreffen (B2)",
+    "überziehen (B2)"
+   ]
+  },
+  {
+   "id": 4170,
+   "de": "einstufen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingestuft",
+   "mevcutTr": "sınıflandırmak, derecelendirmek",
+   "mevcutBeispiel": "Der Fall wurde von der Behörde als dringend eingestuft.",
+   "mevcutBeispielTr": "Vaka kurum tarafından acil olarak sınıflandırıldı."
+  },
+  {
+   "id": 4171,
+   "de": "würdigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gewürdigt",
+   "mevcutTr": "takdir etmek, değerini teslim etmek",
+   "mevcutBeispiel": "Die Jury würdigte vor allem den Mut der Autorin.",
+   "mevcutBeispielTr": "Jüri her şeyden çok yazarın cesaretini takdir etti."
+  },
+  {
+   "id": 4172,
+   "de": "beanstanden",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beanstandet",
+   "mevcutTr": "kusur bulmak, itiraz etmek",
+   "mevcutBeispiel": "Der Prüfer beanstandete mehrere Posten in der Abrechnung.",
+   "mevcutBeispielTr": "Denetçi hesaptaki birkaç kalemi kusurlu buldu.",
+   "cakisan": [
+    "monieren (C1)"
+   ]
+  },
+  {
+   "id": 4173,
+   "de": "sich verschlechtern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich verschlechtert",
+   "mevcutTr": "kötüleşmek, fenalaşmak",
+   "mevcutBeispiel": "Der Zustand des Gebäudes hat sich rasch verschlechtert.",
+   "mevcutBeispielTr": "Binanın durumu hızla kötüleşti."
+  },
+  {
+   "id": 4174,
+   "de": "sich verdoppeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich verdoppelt",
+   "mevcutTr": "iki katına çıkmak",
+   "mevcutBeispiel": "Die Zahl der Anfragen hat sich innerhalb eines Jahres verdoppelt.",
+   "mevcutBeispielTr": "Talep sayısı bir yıl içinde iki katına çıktı."
+  },
+  {
+   "id": 4175,
+   "de": "halbieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat halbiert",
+   "mevcutTr": "yarıya indirmek, ikiye bölmek",
+   "mevcutBeispiel": "Die Firma will ihren Energieverbrauch bis 2030 halbieren.",
+   "mevcutBeispielTr": "Şirket enerji tüketimini 2030'a kadar yarıya indirmek istiyor."
+  },
+  {
+   "id": 4176,
+   "de": "ausgleichen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgeglichen",
+   "mevcutTr": "dengelemek, telafi etmek",
+   "mevcutBeispiel": "Die Einnahmen im Sommer gleichen die Verluste im Winter aus.",
+   "mevcutBeispielTr": "Yazın elde edilen gelirler kıştaki zararları dengeliyor."
+  },
+  {
+   "id": 4177,
+   "de": "sich belaufen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich belaufen",
+   "mevcutTr": "tutmak, (bir miktarı) bulmak, -e ulaşmak",
+   "mevcutBeispiel": "Der Schaden beläuft sich auf mehrere hunderttausend Franken.",
+   "mevcutBeispielTr": "Zarar birkaç yüz bin frangı buluyor.",
+   "cakisan": [
+    "kosten (A1)",
+    "greifen (B1)",
+    "betragen (B2)"
+   ]
+  },
+  {
+   "id": 4178,
+   "de": "betragen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat betragen",
+   "mevcutTr": "tutmak, etmek, olmak",
+   "mevcutBeispiel": "Die Wartezeit beträgt derzeit rund drei Wochen.",
+   "mevcutBeispielTr": "Bekleme süresi şu anda yaklaşık üç hafta.",
+   "cakisan": [
+    "kosten (A1)",
+    "greifen (B1)",
+    "sich belaufen (B2)"
+   ]
+  },
+  {
+   "id": 4179,
+   "de": "gewichten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gewichtet",
+   "mevcutTr": "ağırlıklandırmak, önem derecesi vermek",
+   "mevcutBeispiel": "Die Prüfung gewichtet die schriftliche Leistung doppelt.",
+   "mevcutBeispielTr": "Sınav yazılı performansı iki kat ağırlıklı sayıyor."
+  },
+  {
+   "id": 4180,
+   "de": "nachlassen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat nachgelassen",
+   "mevcutTr": "azalmak, hafiflemek, zayıflamak",
+   "mevcutBeispiel": "Gegen Abend ließ der Wind deutlich nach.",
+   "mevcutBeispielTr": "Akşama doğru rüzgâr belirgin biçimde hafifledi.",
+   "cakisan": [
+    "zurückgehen (B2)"
+   ]
+  },
+  {
+   "id": 4181,
+   "de": "zulegen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zugelegt",
+   "mevcutTr": "artmak, artırmak, yükselmek",
+   "mevcutBeispiel": "Der Anbieter hat bei den Nutzerzahlen kräftig zugelegt.",
+   "mevcutBeispielTr": "Sağlayıcı kullanıcı sayılarında ciddi biçimde arttı.",
+   "cakisan": [
+    "sich häufen (C1)"
+   ]
+  },
+  {
+   "id": 4182,
+   "de": "sich abschwächen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat sich abgeschwächt",
+   "mevcutTr": "zayıflamak, hız kesmek",
+   "mevcutBeispiel": "Das Wachstum hat sich im zweiten Halbjahr abgeschwächt.",
+   "mevcutBeispielTr": "Büyüme yılın ikinci yarısında hız kesti."
+  },
+  {
+   "id": 4183,
+   "de": "verstärken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verstärkt",
+   "mevcutTr": "güçlendirmek, artırmak, pekiştirmek",
+   "mevcutBeispiel": "Die Gemeinde will die Kontrollen an Wochenenden verstärken.",
+   "mevcutBeispielTr": "Belediye hafta sonları denetimleri artırmak istiyor.",
+   "cakisan": [
+    "stärken (B2)",
+    "ertüchtigen (C1)"
+   ]
+  },
+  {
+   "id": 4184,
+   "de": "ausweiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ausgeweitet",
+   "mevcutTr": "genişletmek, yaymak",
+   "mevcutBeispiel": "Der Betrieb hat sein Angebot auf drei Kantone ausgeweitet.",
+   "mevcutBeispielTr": "İşletme hizmetini üç kantona genişletti.",
+   "cakisan": [
+    "erweitern (B2)",
+    "ausbauen (B2)"
+   ]
+  },
+  {
+   "id": 4185,
+   "de": "eindämmen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat eingedämmt",
+   "mevcutTr": "sınırlamak, önüne geçmek, frenlemek",
+   "mevcutBeispiel": "Mit strengen Auflagen will die Stadt den Verkehr eindämmen.",
+   "mevcutBeispielTr": "Kent sıkı koşullarla trafiğin önüne geçmek istiyor.",
+   "cakisan": [
+    "beschränken (B1)",
+    "eingrenzen (C1)",
+    "einschränken (B2)"
+   ]
+  },
+  {
+   "id": 4186,
+   "de": "ermitteln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat ermittelt",
+   "mevcutTr": "tespit etmek, belirlemek, saptamak",
+   "mevcutBeispiel": "Die Kommission ermittelte den Mittelwert aller eingegangenen Angebote.",
+   "mevcutBeispielTr": "Komisyon gelen bütün tekliflerin ortalamasını hesapladı.",
+   "cakisan": [
+    "feststellen (B1)",
+    "konstatieren (C1)"
+   ]
+  },
+  {
+   "id": 4187,
+   "de": "aufwerten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgewertet",
+   "mevcutTr": "değerini artırmak, itibarını yükseltmek",
+   "mevcutBeispiel": "Der neue Bahnhof hat das ganze Quartier aufgewertet.",
+   "mevcutBeispielTr": "Yeni istasyon bütün mahallenin değerini artırdı."
+  },
+  {
+   "id": 4188,
+   "de": "beziffern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beziffert",
+   "mevcutTr": "rakamla belirtmek, miktarını vermek",
+   "mevcutBeispiel": "Die Versicherung beziffert den Schaden auf zwei Millionen.",
+   "mevcutBeispielTr": "Sigorta zararı iki milyon olarak belirtiyor."
+  },
+  {
+   "id": 4189,
+   "de": "die Zunahme",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zunahmen",
+   "mevcutTr": "artış, çoğalma",
+   "mevcutBeispiel": "Die Statistik zeigt eine deutliche Zunahme der Fernarbeit.",
+   "mevcutBeispielTr": "İstatistik uzaktan çalışmada belirgin bir artış gösteriyor.",
+   "cakisan": [
+    "die Erhöhung (B1)"
+   ]
+  },
+  {
+   "id": 4190,
+   "de": "der Rückgang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rückgänge",
+   "mevcutTr": "düşüş, gerileme",
+   "mevcutBeispiel": "Der Rückgang der Besucherzahlen bereitet dem Museum Sorgen.",
+   "mevcutBeispielTr": "Ziyaretçi sayılarındaki düşüş müzeyi kaygılandırıyor."
+  },
+  {
+   "id": 4191,
+   "de": "der Umfang",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Umfänge",
+   "mevcutTr": "kapsam, hacim, boyut",
+   "mevcutBeispiel": "Der Umfang der Arbeiten war zu Beginn nicht absehbar.",
+   "mevcutBeispielTr": "İşlerin kapsamı başlangıçta öngörülemiyordu."
+  },
+  {
+   "id": 4192,
+   "de": "der Anteil",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Anteile",
+   "mevcutTr": "pay, oran, hisse",
+   "mevcutBeispiel": "Der Anteil erneuerbarer Energien wächst seit Jahren.",
+   "mevcutBeispielTr": "Yenilenebilir enerjilerin payı yıllardır büyüyor."
+  }
+ ]
+}

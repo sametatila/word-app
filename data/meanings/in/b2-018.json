@@ -1,0 +1,554 @@
+{
+ "paket": "b2-018",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4493,
+   "de": "aufbringen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgebracht",
+   "mevcutTr": "denkleştirmek, parayı bulmak",
+   "mevcutBeispiel": "Die nötige Summe konnte die Familie nicht rechtzeitig aufbringen.",
+   "mevcutBeispielTr": "Aile gerekli meblağı zamanında denkleştiremedi.",
+   "cakisan": [
+    "angleichen (C1)"
+   ]
+  },
+  {
+   "id": 4494,
+   "de": "bewilligen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bewilligt",
+   "mevcutTr": "onaylamak, tahsis etmek",
+   "mevcutBeispiel": "Die Behörde hat den Antrag auf Wohngeld schließlich bewilligt.",
+   "mevcutBeispielTr": "Kurum, kira yardımı başvurusunu sonunda onayladı.",
+   "cakisan": [
+    "bestätigen (A2)",
+    "genehmigen (B1)",
+    "absegnen (B2)",
+    "ratifizieren (C1)",
+    "billigen (C1)"
+   ]
+  },
+  {
+   "id": 4495,
+   "de": "aufkommen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist aufgekommen",
+   "mevcutTr": "masrafını üstlenmek, karşılamak",
+   "mevcutBeispiel": "Für die Reparatur muss der Vermieter aufkommen.",
+   "mevcutBeispielTr": "Tamir masrafını ev sahibi karşılamak zorunda."
+  },
+  {
+   "id": 4496,
+   "de": "einbehalten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat einbehalten",
+   "mevcutTr": "kesmek, alıkoymak",
+   "mevcutBeispiel": "Der Arbeitgeber behält die Steuern direkt vom Lohn ein.",
+   "mevcutBeispielTr": "İşveren vergileri doğrudan maaştan kesiyor.",
+   "cakisan": [
+    "sich schneiden (B1)",
+    "unterbrechen (B1)",
+    "schlachten (B2)",
+    "zuschneiden (B2)",
+    "schneiden (A2)",
+    "fällen (A2)"
+   ]
+  },
+  {
+   "id": 4497,
+   "de": "anlegen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat angelegt",
+   "mevcutTr": "yatırım yapmak, para yatırmak",
+   "mevcutBeispiel": "Sie hat ihr Erspartes langfristig in Fonds angelegt.",
+   "mevcutBeispielTr": "Birikimini uzun vadeli olarak fonlara yatırdı.",
+   "cakisan": [
+    "investieren (B2)"
+   ]
+  },
+  {
+   "id": 4498,
+   "de": "zurücklegen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zurückgelegt",
+   "mevcutTr": "kenara koymak, biriktirmek",
+   "mevcutBeispiel": "Jeden Monat legt er hundert Euro für Notfälle zurück.",
+   "mevcutBeispielTr": "Her ay acil durumlar için yüz euro kenara koyuyor."
+  },
+  {
+   "id": 4499,
+   "de": "veranlagen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat veranlagt",
+   "mevcutTr": "vergilendirmek, vergi tarh etmek",
+   "mevcutBeispiel": "Ehepaare können sich gemeinsam oder getrennt veranlagen lassen.",
+   "mevcutBeispielTr": "Evli çiftler birlikte ya da ayrı vergilendirilebilir.",
+   "cakisan": [
+    "besteuern (C1)"
+   ]
+  },
+  {
+   "id": 4500,
+   "de": "aufzehren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aufgezehrt",
+   "mevcutTr": "tüketmek, bitirmek",
+   "mevcutBeispiel": "Die hohen Nebenkosten zehren sein ganzes Gehalt auf.",
+   "mevcutBeispielTr": "Yüksek ek giderler bütün maaşını yiyip bitiriyor.",
+   "cakisan": [
+    "konsumieren (B1)",
+    "verbrauchen (B1)",
+    "erschöpfen (C1)"
+   ]
+  },
+  {
+   "id": 4501,
+   "de": "gebührenfrei",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ücretsiz, masrafsız",
+   "mevcutBeispiel": "Überweisungen innerhalb Europas sind bei dieser Bank gebührenfrei.",
+   "mevcutBeispielTr": "Bu bankada Avrupa içi havaleler masrafsız.",
+   "cakisan": [
+    "kostenlos (A2)",
+    "unentgeltlich (B2)",
+    "unbezahlt (C1)"
+   ]
+  },
+  {
+   "id": 4502,
+   "de": "rückwirkend",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "geriye dönük, geçmişe etkili",
+   "mevcutBeispiel": "Die Erhöhung gilt rückwirkend ab dem ersten Januar.",
+   "mevcutBeispielTr": "Zam bir Ocak'tan itibaren geriye dönük geçerli."
+  },
+  {
+   "id": 4503,
+   "de": "vierteljährlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "üç ayda bir, üç aylık",
+   "mevcutBeispiel": "Der Beitrag kann monatlich oder vierteljährlich gezahlt werden.",
+   "mevcutBeispielTr": "Aidat aylık ya da üç aylık olarak ödenebilir."
+  },
+  {
+   "id": 4504,
+   "de": "zinslos",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "faizsiz",
+   "mevcutBeispiel": "Der Betrieb gewährte ihr ein zinsloses Darlehen über zwei Jahre.",
+   "mevcutBeispielTr": "İşletme ona iki yıllık faizsiz bir kredi verdi."
+  },
+  {
+   "id": 4505,
+   "de": "ungedeckt",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "karşılıksız, teminatsız",
+   "mevcutBeispiel": "Ein ungedeckter Scheck kann teure Folgen für den Aussteller haben.",
+   "mevcutBeispielTr": "Karşılıksız çekin, düzenleyeni için pahalı sonuçları olabilir."
+  },
+  {
+   "id": 4506,
+   "de": "kostspielig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "masraflı, pahalıya mal olan",
+   "mevcutBeispiel": "Der Rechtsstreit erwies sich als überraschend kostspielig.",
+   "mevcutBeispielTr": "Hukuki mücadele beklenmedik ölçüde masraflı çıktı."
+  },
+  {
+   "id": 4507,
+   "de": "unwiderruflich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "geri alınamaz, dönülemez",
+   "mevcutBeispiel": "Nach der Bestätigung ist die Zahlung unwiderruflich.",
+   "mevcutBeispielTr": "Onaydan sonra ödeme geri alınamaz."
+  },
+  {
+   "id": 4508,
+   "de": "anteilig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "oransal, pay oranında",
+   "mevcutBeispiel": "Die Heizkosten werden anteilig nach Wohnfläche auf alle umgelegt.",
+   "mevcutBeispielTr": "Isıtma giderleri konut alanına göre orantılı olarak herkese dağıtılıyor."
+  },
+  {
+   "id": 4509,
+   "de": "bargeldlos",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nakitsiz",
+   "mevcutBeispiel": "In vielen Cafés kann man inzwischen nur noch bargeldlos zahlen.",
+   "mevcutBeispielTr": "Birçok kafede artık yalnızca nakitsiz ödeme yapılabiliyor."
+  },
+  {
+   "id": 4510,
+   "de": "vorzeitig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "erken, vadesinden önce",
+   "mevcutBeispiel": "Wer den Kredit vorzeitig ablöst, muss eine Entschädigung zahlen.",
+   "mevcutBeispielTr": "Krediyi vadesinden önce kapatan bir tazminat ödemek zorunda.",
+   "cakisan": [
+    "früh (A1)"
+   ]
+  },
+  {
+   "id": 4511,
+   "de": "die Geborgenheit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "güven duygusu, huzur, sıcak yuva hissi",
+   "mevcutBeispiel": "Kinder brauchen vor allem Geborgenheit in den ersten Lebensjahren.",
+   "mevcutBeispielTr": "Çocukların ilk yıllarda en çok ihtiyaç duyduğu şey güven duygusudur."
+  },
+  {
+   "id": 4512,
+   "de": "die Fürsorge",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "özen, ilgi, bakım",
+   "mevcutBeispiel": "Ohne die Fürsorge seiner Tochter könnte er nicht allein wohnen.",
+   "mevcutBeispielTr": "Kızının ilgisi olmasa tek başına yaşayamazdı."
+  },
+  {
+   "id": 4513,
+   "de": "die Partnerschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Partnerschaften",
+   "mevcutTr": "birliktelik, ilişki, ortaklık",
+   "mevcutBeispiel": "Eine gleichberechtigte Partnerschaft setzt offene Gespräche voraus.",
+   "mevcutBeispielTr": "Eşit bir birliktelik açık konuşmayı gerektirir."
+  },
+  {
+   "id": 4514,
+   "de": "das Missverständnis",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Missverständnisse",
+   "mevcutTr": "yanlış anlaşılma, yanlış anlama",
+   "mevcutBeispiel": "Der ganze Streit beruhte auf einem einfachen Missverständnis.",
+   "mevcutBeispielTr": "Bütün kavga basit bir yanlış anlaşılmadan çıkmıştı."
+  },
+  {
+   "id": 4515,
+   "de": "die Wertschätzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "değer verme, takdir",
+   "mevcutBeispiel": "Viele Pflegekräfte vermissen die Wertschätzung der Gesellschaft.",
+   "mevcutBeispielTr": "Birçok bakım görevlisi toplumun takdirini göremiyor."
+  },
+  {
+   "id": 4516,
+   "de": "das Selbstwertgefühl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Selbstwertgefühle",
+   "mevcutTr": "özsaygı, benlik saygısı",
+   "mevcutBeispiel": "Ständige Kritik kann das Selbstwertgefühl eines Kindes zerstören.",
+   "mevcutBeispielTr": "Sürekli eleştiri bir çocuğun öz değer duygusunu yıkabilir."
+  },
+  {
+   "id": 4517,
+   "de": "die Persönlichkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Persönlichkeiten",
+   "mevcutTr": "kişilik, şahsiyet",
+   "mevcutBeispiel": "Die Persönlichkeit eines Menschen entwickelt sich ein Leben lang.",
+   "mevcutBeispielTr": "İnsanın kişiliği ömür boyu gelişmeye devam eder."
+  },
+  {
+   "id": 4518,
+   "de": "die Verhaltensweise",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Verhaltensweisen",
+   "mevcutTr": "davranış biçimi, davranış tarzı",
+   "mevcutBeispiel": "Solche Verhaltensweisen lernen Kinder meistens von ihren Eltern.",
+   "mevcutBeispielTr": "Çocuklar bu tür davranış biçimlerini çoğunlukla ailelerinden öğrenir."
+  },
+  {
+   "id": 4519,
+   "de": "die Neigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Neigungen",
+   "mevcutTr": "eğilim, meyil",
+   "mevcutBeispiel": "Er hat eine Neigung dazu, Konflikte einfach zu ignorieren.",
+   "mevcutBeispielTr": "Çatışmaları görmezden gelme eğilimi var.",
+   "cakisan": [
+    "die Tendenz (B2)",
+    "der Hang (C1)"
+   ]
+  },
+  {
+   "id": 4520,
+   "de": "die Veranlagung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Veranlagungen",
+   "mevcutTr": "yatkınlık, doğuştan gelen özellik",
+   "mevcutBeispiel": "Ob Ängstlichkeit vererbt wird oder nicht, hängt auch von der Veranlagung ab.",
+   "mevcutBeispielTr": "Kaygılı olmanın kalıtsal olup olmadığı yatkınlıkla da ilgilidir."
+  },
+  {
+   "id": 4521,
+   "de": "die Ungeduld",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "sabırsızlık",
+   "mevcutBeispiel": "Seine Ungeduld gegenüber den Kindern bereut er inzwischen.",
+   "mevcutBeispielTr": "Çocuklara karşı sabırsızlığından artık pişman."
+  },
+  {
+   "id": 4522,
+   "de": "der Zorn",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "öfke, hiddet",
+   "mevcutBeispiel": "Sie ließ ihren Zorn an den falschen Menschen aus.",
+   "mevcutBeispielTr": "Öfkesini yanlış insanlardan çıkardı.",
+   "cakisan": [
+    "die Wut (B2)",
+    "die Empörung (B2)"
+   ]
+  },
+  {
+   "id": 4523,
+   "de": "das Schuldgefühl",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Schuldgefühle",
+   "mevcutTr": "suçluluk duygusu",
+   "mevcutBeispiel": "Nach der Trennung plagten sie starke Schuldgefühle.",
+   "mevcutBeispielTr": "Ayrılıktan sonra onu güçlü suçluluk duyguları rahatsız etti."
+  },
+  {
+   "id": 4524,
+   "de": "das Mitleid",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "acıma, merhamet",
+   "mevcutBeispiel": "Er will Unterstützung, aber kein Mitleid von seinen Freunden.",
+   "mevcutBeispielTr": "Arkadaşlarından destek istiyor ama acınmak istemiyor."
+  },
+  {
+   "id": 4525,
+   "de": "die Ausgrenzung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ausgrenzungen",
+   "mevcutTr": "dışlama, dışlanma",
+   "mevcutBeispiel": "Viele Jugendliche erleben Ausgrenzung schon in der Schule.",
+   "mevcutBeispielTr": "Birçok genç dışlanmayı daha okulda yaşıyor."
+  },
+  {
+   "id": 4526,
+   "de": "die Zugehörigkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "aidiyet, mensubiyet",
+   "mevcutBeispiel": "Das Gefühl der Zugehörigkeit ist für die Integration entscheidend.",
+   "mevcutBeispielTr": "Aidiyet duygusu uyum sürecinde belirleyicidir."
+  },
+  {
+   "id": 4527,
+   "de": "die Hilfsbereitschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yardımseverlik",
+   "mevcutBeispiel": "Nach dem Hochwasser war die Hilfsbereitschaft in der Region enorm.",
+   "mevcutBeispielTr": "Selden sonra bölgedeki yardımseverlik muazzamdı."
+  },
+  {
+   "id": 4528,
+   "de": "die Nächstenliebe",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "insan sevgisi, kardeşlik sevgisi, hayırseverlik",
+   "mevcutBeispiel": "Der Verein lebt von Nächstenliebe und ehrenamtlichem Einsatz.",
+   "mevcutBeispielTr": "Dernek insan sevgisi ve gönüllü emekle ayakta duruyor."
+  },
+  {
+   "id": 4529,
+   "de": "das Pflegeheim",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Pflegeheime",
+   "mevcutTr": "bakımevi, huzurevi",
+   "mevcutBeispiel": "Die Familie konnte sich nicht auf ein Pflegeheim einigen.",
+   "mevcutBeispielTr": "Aile bir bakımevi konusunda anlaşamadı."
+  },
+  {
+   "id": 4530,
+   "de": "die Einsamkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yalnızlık",
+   "mevcutBeispiel": "Einsamkeit im Alter gilt inzwischen als ernstes gesundheitliches Risiko.",
+   "mevcutBeispielTr": "Yaşlılıkta yalnızlık artık ciddi bir sağlık riski sayılıyor."
+  },
+  {
+   "id": 4531,
+   "de": "die Geburtenrate",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Geburtenraten",
+   "mevcutTr": "doğum oranı",
+   "mevcutBeispiel": "Die Geburtenrate ist im vergangenen Jahrzehnt deutlich gesunken.",
+   "mevcutBeispielTr": "Doğum oranı son on yılda belirgin biçimde düştü."
+  },
+  {
+   "id": 4532,
+   "de": "die Kinderbetreuung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "çocuk bakımı",
+   "mevcutBeispiel": "Ohne bezahlbare Kinderbetreuung können viele Mütter nicht arbeiten.",
+   "mevcutBeispielTr": "Uygun fiyatlı çocuk bakımı olmadan birçok anne çalışamıyor."
+  },
+  {
+   "id": 4533,
+   "de": "der Erziehungsstil",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Erziehungsstile",
+   "mevcutTr": "çocuk yetiştirme tarzı, terbiye anlayışı",
+   "mevcutBeispiel": "Die Eltern streiten oft über den richtigen Erziehungsstil.",
+   "mevcutBeispielTr": "Anne baba sık sık doğru çocuk yetiştirme tarzı üzerine tartışıyor."
+  },
+  {
+   "id": 4534,
+   "de": "die Autorität",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Autoritäten",
+   "mevcutTr": "otorite, saygınlık",
+   "mevcutBeispiel": "Er hat als Vater längst jede Autorität verloren.",
+   "mevcutBeispielTr": "Baba olarak otoritesini çoktan kaybetti."
+  },
+  {
+   "id": 4535,
+   "de": "der Gehorsam",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "itaat, söz dinleme",
+   "mevcutBeispiel": "Früher galt blinder Gehorsam als wichtigste Tugend eines Kindes.",
+   "mevcutBeispielTr": "Eskiden körü körüne itaat bir çocuğun en önemli erdemi sayılırdı."
+  },
+  {
+   "id": 4536,
+   "de": "die Pubertät",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ergenlik, buluğ çağı",
+   "mevcutBeispiel": "In der Pubertät ziehen sich viele Jugendliche von den Eltern zurück.",
+   "mevcutBeispielTr": "Ergenlikte birçok genç anne babasından uzaklaşır."
+  },
+  {
+   "id": 4537,
+   "de": "das Sorgerecht",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "velayet",
+   "mevcutBeispiel": "Nach der Scheidung stritten beide Eltern um das Sorgerecht.",
+   "mevcutBeispielTr": "Boşanmadan sonra iki taraf da velayet için mücadele etti."
+  },
+  {
+   "id": 4538,
+   "de": "der Unterhalt",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "nafaka, geçim masrafı",
+   "mevcutBeispiel": "Der Vater zahlt monatlich Unterhalt für seine beiden Kinder.",
+   "mevcutBeispielTr": "Baba iki çocuğu için aylık nafaka ödüyor."
+  },
+  {
+   "id": 4539,
+   "de": "die Rollenverteilung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rollenverteilungen",
+   "mevcutTr": "rol dağılımı, görev paylaşımı",
+   "mevcutBeispiel": "Die traditionelle Rollenverteilung im Haushalt hat sich kaum verändert.",
+   "mevcutBeispielTr": "Evdeki geleneksel rol dağılımı neredeyse hiç değişmedi."
+  },
+  {
+   "id": 4540,
+   "de": "die Gleichberechtigung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "hak eşitliği, eşitlik",
+   "mevcutBeispiel": "Von echter Gleichberechtigung sind wir beim Gehalt noch weit entfernt.",
+   "mevcutBeispielTr": "Maaş konusunda gerçek hak eşitliğinden hâlâ çok uzağız."
+  },
+  {
+   "id": 4541,
+   "de": "die Emanzipation",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "özgürleşme, kadının kurtuluşu",
+   "mevcutBeispiel": "Die Emanzipation der Frauen veränderte die Familienstrukturen grundlegend.",
+   "mevcutBeispielTr": "Kadınların özgürleşmesi aile yapılarını kökten değiştirdi."
+  },
+  {
+   "id": 4542,
+   "de": "die Überforderung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "aşırı yüklenme, altından kalkamama",
+   "mevcutBeispiel": "Viele junge Eltern klagen über ständige Überforderung im Alltag.",
+   "mevcutBeispielTr": "Birçok genç ebeveyn günlük hayatta sürekli yükün altında ezildiğinden yakınıyor.",
+   "cakisan": [
+    "die Überlastung (B2)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,599 @@
+{
+ "paket": "b1-007",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 1443,
+   "de": "aufgeben",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "gibt auf, gab auf, hat aufgegeben",
+   "mevcutTr": "vazgeçmek, pes etmek, postaya vermek",
+   "mevcutBeispiel": "1. Ich habe auf der Post ein Paket aufgegeben. 2. Man darf nie aufgeben. Es gibt immer eine Hoffnung.",
+   "mevcutBeispielTr": "Postaneden bir paket gönderdim.",
+   "cakisan": [
+    "verzichten (B1)",
+    "absehen (C1)",
+    "entsagen (C1)"
+   ]
+  },
+  {
+   "id": 2260,
+   "de": "das Lager",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "depo, ambar",
+   "mevcutBeispiel": "1. Ich weiß nicht, ob wir diesen Schuh in Ihrer Größe haben. Ich sehe mal im Lager nach. 2. Unsere Kinder fahren im Somm",
+   "mevcutBeispielTr": "1. Bu ayakkabının sizin numaranız var mı bilmiyorum, depoya bir bakayım. 2. Çocuklarımız yazın kampa gidiyor."
+  },
+  {
+   "id": 1557,
+   "de": "besprechen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "bespricht, besprach, hat besprochen",
+   "mevcutTr": "görüşmek, tartışmak",
+   "mevcutBeispiel": "Wir müssen noch genau besprechen, wann wir losfahren und was wir mitnehmen.",
+   "mevcutBeispielTr": "Ne zaman yola çıkacağımızı ve yanımıza ne alacağımızı daha ayrıntılı konuşmamız gerek."
+  },
+  {
+   "id": 2392,
+   "de": "nachher",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sonra, daha sonra",
+   "mevcutBeispiel": "Ich rufe nachher nochmal an.",
+   "mevcutBeispielTr": "Sonra tekrar ararım.",
+   "cakisan": [
+    "dann (A1)"
+   ]
+  },
+  {
+   "id": 1938,
+   "de": "der Gang",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "koridor, geçit, vites",
+   "mevcutBeispiel": "1. Wir warten draußen im Gang. ( → D, CH: Korridor; D: Flur) 2. Schalten Sie bitte jetzt in den dritten Gang. 3. Was möc",
+   "mevcutBeispielTr": "1. Dışarıda, koridorda bekliyoruz. 2. Şimdi üçüncü vitese geçin lütfen.",
+   "cakisan": [
+    "der Flur (B1)",
+    "der Korridor (B1)"
+   ]
+  },
+  {
+   "id": 2761,
+   "de": "stehlen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "stiehlt, stahl, hat gestohlen",
+   "mevcutTr": "çalmak",
+   "mevcutBeispiel": "Gestern hat mir jemand im Zug meine Uhr gestohlen.",
+   "mevcutBeispielTr": "Dün trende biri saatimi çaldı.",
+   "cakisan": [
+    "klingeln (B1)"
+   ]
+  },
+  {
+   "id": 1662,
+   "de": "der Dienst",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "hizmet, nöbet",
+   "mevcutBeispiel": "1. Als Krankenschwester habe ich oft Frühdienst. 2. Morgen habe ich Dienst. Deshalb kann ich nicht kommen.",
+   "mevcutBeispielTr": "Hemşire olarak sık sık sabah nöbetim oluyor.",
+   "cakisan": [
+    "der Service (A2)",
+    "die Dienstleistung (B2)"
+   ]
+  },
+  {
+   "id": 1685,
+   "de": "durcheinander",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "karmakarışık, dağınık",
+   "mevcutBeispiel": "3. Wir haben den ganzen Mai durch geheizt. 4. Wir haben unsere Wohnung durch einen Freund bekommen. 1. Alle meine Sachen",
+   "mevcutBeispielTr": "Bütün eşyalarım karmakarışık."
+  },
+  {
+   "id": 1666,
+   "de": "der Direktor",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "müdür (erkek)",
+   "mevcutBeispiel": "Ich möchte gern mit dem Direktor sprechen.",
+   "mevcutBeispielTr": "Müdürle görüşmek istiyorum.",
+   "cakisan": [
+    "die Direktorin (B1)",
+    "der Leiter (B1)"
+   ]
+  },
+  {
+   "id": 2160,
+   "de": "die Karriere",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "kariyer",
+   "mevcutBeispiel": "Mein Bruder hat große Pläne. Er will Karriere machen.",
+   "mevcutBeispielTr": "Ağabeyimin büyük planları var; kariyer yapmak istiyor.",
+   "cakisan": [
+    "die Laufbahn (B2)"
+   ]
+  },
+  {
+   "id": 1801,
+   "de": "die Erinnerung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "anı, hatıra",
+   "mevcutBeispiel": "An diese Zeit habe ich viele schöne Erinnerungen.",
+   "mevcutBeispielTr": "O döneme dair çok güzel anılarım var."
+  },
+  {
+   "id": 2308,
+   "de": "lösen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "löst, löste, hat gelöst",
+   "mevcutTr": "çözmek, satın almak",
+   "mevcutBeispiel": "1. Wir müssen dieses Problem lösen. 2. Sie können die Fahrkarten auch am Automaten lösen.",
+   "mevcutBeispielTr": "1. Bu sorunu çözmemiz gerekiyor. 2. Biletleri otomattan da alabilirsiniz.",
+   "cakisan": [
+    "entschlüsseln (C1)"
+   ]
+  },
+  {
+   "id": 3190,
+   "de": "der Zweifel",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "şüphe, kuşku",
+   "mevcutBeispiel": "1. Da ist ohne Zweifel die beste Lösung. 2. Allmählich bekomme ich Zweifel daran.",
+   "mevcutBeispielTr": "1. Bu şüphesiz en iyi çözüm. 2. Yavaş yavaş bundan şüphe duymaya başlıyorum.",
+   "cakisan": [
+    "der Verdacht (B1)"
+   ]
+  },
+  {
+   "id": 1766,
+   "de": "entlassen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "entlässt, entließ, hat entlassen",
+   "mevcutTr": "taburcu etmek, işten çıkarmak",
+   "mevcutBeispiel": "1. Die Operation ist gut gelaufen. Wir können Sie nächste Woche aus dem Krankenhaus entlassen. 2. Die Firma hat viele Mi",
+   "mevcutBeispielTr": "Ameliyat iyi geçti; sizi gelecek hafta hastaneden taburcu edebiliriz."
+  },
+  {
+   "id": 2812,
+   "de": "die Szene",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "sahne (film/oyunda bir bölüm), ortam, camia",
+   "mevcutBeispiel": "1. In dieser Szene des Films stirbt der Held. 2. Ich kenne mich in der Szene nicht aus. Ich bin zu alt. 3. Bitte mach ke",
+   "mevcutBeispielTr": "1. Filmin bu sahnesinde kahraman ölüyor. 2. Bu camiayı hiç bilmiyorum, ben çok yaşlıyım. 3. Lütfen olay çıkarma."
+  },
+  {
+   "id": 2494,
+   "de": "die Pflicht",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "görev, yükümlülük",
+   "mevcutBeispiel": "Als Autofahrer müssen Sie eine Versicherung haben. Das ist Pflicht.",
+   "mevcutBeispielTr": "Araç sürücüsü olarak sigortanız olmak zorunda. Bu bir yükümlülük.",
+   "cakisan": [
+    "die Aufgabe (A1)"
+   ]
+  },
+  {
+   "id": 2416,
+   "de": "neulich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "geçenlerde, geçen gün",
+   "mevcutBeispiel": "Ich war neulich bei der Bank und habe einen alten Freund getroffen.",
+   "mevcutBeispielTr": "Geçen gün bankadaydım ve eski bir arkadaşımla karşılaştım.",
+   "cakisan": [
+    "kürzlich (B1)"
+   ]
+  },
+  {
+   "id": 1506,
+   "de": "sich beeilen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "beeilt sich, beeilte sich, hat sich beeilt",
+   "mevcutTr": "acele etmek",
+   "mevcutBeispiel": "Wir müssen uns beeilen. Sonst verpassen wir den Zug.",
+   "mevcutBeispielTr": "Acele etmemiz gerek, yoksa treni kaçıracağız."
+  },
+  {
+   "id": 2195,
+   "de": "das Knie",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "diz",
+   "mevcutBeispiel": "Ich habe mich am Knie verletzt. Jetzt kann ich nicht laufen.",
+   "mevcutBeispielTr": "Dizimi incittim; şimdi yürüyemiyorum."
+  },
+  {
+   "id": 2663,
+   "de": "der Schutz",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "koruma",
+   "mevcutBeispiel": "1. Das ist ein guter Schutz gegen Kälte. 2. Alle reden heute über den Schutz der Umwelt.",
+   "mevcutBeispielTr": "1. Bu, soğuğa karşı iyi bir koruma. 2. Bugün herkes çevre korumadan bahsediyor."
+  },
+  {
+   "id": 3099,
+   "de": "weshalb",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "niçin, neden",
+   "mevcutBeispiel": "1. Weshalb rufst du an? 2. Ich bekomme Besuch, weshalb ich leider nicht zur Party gehen werde.",
+   "mevcutBeispielTr": "1. Neden arıyorsun? 2. Misafirim gelecek, bu yüzden maalesef partiye gelemeyeceğim."
+  },
+  {
+   "id": 2255,
+   "de": "der Kuss",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "öpücük",
+   "mevcutBeispiel": "Gib der Mama einen Kuss!",
+   "mevcutBeispielTr": "Annene bir öpücük ver!"
+  },
+  {
+   "id": 2985,
+   "de": "verhindern",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verhindert, verhinderte, hat verhindert",
+   "mevcutTr": "önlemek, engellemek",
+   "mevcutBeispiel": "Wir konnten den Unfall nicht verhindern.",
+   "mevcutBeispielTr": "Kazayı önleyemedik.",
+   "cakisan": [
+    "abwenden (C1)",
+    "vorbeugen (B2)"
+   ]
+  },
+  {
+   "id": 1806,
+   "de": "die Erklärung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "açıklama, beyanname",
+   "mevcutBeispiel": "1. Hast du schon die Steuererklärung gemacht? 2. Die Erklärung der Lehrerin ist besser als die Erklärung im Buch.",
+   "mevcutBeispielTr": "1. Vergi beyannameni verdin mi? 2. Öğretmenin açıklaması kitaptaki açıklamadan daha iyi.",
+   "cakisan": [
+    "die Beschreibung (B1)",
+    "die Offenlegung (C1)"
+   ]
+  },
+  {
+   "id": 3036,
+   "de": "das Video",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-s",
+   "mevcutTr": "video",
+   "mevcutBeispiel": "1. Ich habe den Film auf Video aufgenommen. 2. Lass uns ein Video vom Fest machen!",
+   "mevcutBeispielTr": "1. Filmi videoya kaydettim. 2. Kutlamada bir video çekelim!"
+  },
+  {
+   "id": 2988,
+   "de": "verlangen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "verlangt, verlangte, hat verlangt",
+   "mevcutTr": "istemek, talep etmek",
+   "mevcutBeispiel": "1. Jeden Tag Überstunden? Das können Sie nicht verlangen. 2. Wie viel verlangen Sie für das Auto? 3. Frau Müller, Sie we",
+   "mevcutBeispielTr": "1. Her gün fazla mesai mi? Bunu talep edemezsiniz. 2. Araba için ne kadar istiyorsunuz? 3. Bayan Müller, telefonda sizi istiyorlar.",
+   "cakisan": [
+    "wollen (A1)",
+    "möchten (A1)",
+    "sich wünschen (B1)"
+   ]
+  },
+  {
+   "id": 2676,
+   "de": "selbstverständlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "tabii ki, kuşkusuz",
+   "mevcutBeispiel": "Selbstverständlich sagen wir Ihnen sofort Bescheid.",
+   "mevcutBeispielTr": "Tabii ki size hemen haber veririz."
+  },
+  {
+   "id": 2046,
+   "de": "hassen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "hasst, hasste, hat gehasst",
+   "mevcutTr": "nefret etmek",
+   "mevcutBeispiel": "1. Ich hasse Autofahren. 2. Ich hasse es, zu spät zu kommen.",
+   "mevcutBeispielTr": "1. Araba kullanmaktan nefret ederim. 2. Geç kalmaktan nefret ederim."
+  },
+  {
+   "id": 1951,
+   "de": "gebrauchen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "gebraucht, gebrauchte, hat gebraucht",
+   "mevcutTr": "kullanmak",
+   "mevcutBeispiel": "1. Wir können diese Möbel gut gebrauchen. 2. Ich habe den Wagen gebraucht gekauft. 3. Ich suche eine gebrauchte Waschmas",
+   "mevcutBeispielTr": "1. Bu mobilyaları iyi değerlendirebiliriz. 2. Arabayı ikinci el aldım. 3. İkinci el bir çamaşır makinesi arıyorum.",
+   "cakisan": [
+    "benutzen (A1)",
+    "nutzen (B1)",
+    "verwenden (B1)",
+    "lenken (A2)"
+   ]
+  },
+  {
+   "id": 2656,
+   "de": "die Schulden",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "(Pl.)",
+   "mevcutTr": "borçlar",
+   "mevcutBeispiel": "Jetzt habe ich alle meine Schulden bezahlt.",
+   "mevcutBeispielTr": "Artık bütün borçlarımı ödedim."
+  },
+  {
+   "id": 2019,
+   "de": "die Grenze",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "sınır",
+   "mevcutBeispiel": "An der Grenze musst du deinen Ausweis zeigen.",
+   "mevcutBeispielTr": "Sınırda kimliğini göstermen gerekiyor."
+  },
+  {
+   "id": 2475,
+   "de": "peinlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "utanç verici, mahcup edici",
+   "mevcutBeispiel": "1. Das muss dir nicht peinlich sein. 2. Das war eine peinliche Situation.",
+   "mevcutBeispielTr": "1. Bundan utanmana gerek yok. 2. Utanç verici bir durumdu."
+  },
+  {
+   "id": 1903,
+   "de": "die Form",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "şekil, biçim",
+   "mevcutBeispiel": "1. Diese Schuhe haben eine schöne Form. 2. Ich möchte für den Geburtstag einen Kuchen backen. Kannst du mir eine Backfor",
+   "mevcutBeispielTr": "1. Bu ayakkabıların şekli çok güzel. 2. Doğum günü için pasta yapmak istiyorum. Bana bir kek kalıbı verebilir misin?"
+  },
+  {
+   "id": 2917,
+   "de": "umsonst",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "bedava, boşuna",
+   "mevcutBeispiel": "1. Ich musste nichts bezahlen. Die Reparatur war umsonst.",
+   "mevcutBeispielTr": "Hiçbir şey ödemem gerekmedi; tamirat bedavaydı.",
+   "cakisan": [
+    "gratis (B1)"
+   ]
+  },
+  {
+   "id": 2421,
+   "de": "nirgendwo",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "hiçbir yerde",
+   "mevcutBeispiel": "Die Schlüssel kann ich nirgendwo finden.",
+   "mevcutBeispielTr": "Anahtarları hiçbir yerde bulamıyorum.",
+   "cakisan": [
+    "nirgends (A2)"
+   ]
+  },
+  {
+   "id": 2374,
+   "de": "der Mond",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "ay",
+   "mevcutBeispiel": "Bei Vollmond kann ich nicht schlafen.",
+   "mevcutBeispielTr": "Dolunayda uyuyamıyorum."
+  },
+  {
+   "id": 1645,
+   "de": "die Daten",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "(Plural)",
+   "mevcutTr": "veriler",
+   "mevcutBeispiel": "Wir haben alle Ihre Daten im Computer.",
+   "mevcutBeispielTr": "Bütün verileriniz bilgisayarımızda kayıtlı."
+  },
+  {
+   "id": 2694,
+   "de": "der Sieg",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "zafer, galibiyet",
+   "mevcutBeispiel": "Unsere Mannschaft hat gewonnen. Wir freuen uns über den Sieg.",
+   "mevcutBeispielTr": "Takımımız kazandı. Galibiyete seviniyoruz."
+  },
+  {
+   "id": 2613,
+   "de": "satt",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "tok, doymuş",
+   "mevcutBeispiel": "Möchten Sie noch etwas? – Nein danke, ich bin satt.",
+   "mevcutBeispielTr": "Bir şey daha ister misiniz? – Hayır teşekkürler, doydum."
+  },
+  {
+   "id": 2043,
+   "de": "handeln",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "handelt, handelte, hat gehandelt",
+   "mevcutTr": "ticaret yapmak, söz konusu olmak",
+   "mevcutBeispiel": "1. Herr Huber hat ein kleines Geschäft. Er handelt mit Obst und Gemüse. 2. Kann ich Sie bitte mal sprechen? – Worum hand",
+   "mevcutBeispielTr": "1. Huber Bey'in küçük bir dükkânı var; meyve sebze ticareti yapıyor. 2. Sizinle görüşebilir miyim? – Konu nedir?"
+  },
+  {
+   "id": 2666,
+   "de": "schweigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "schweigt, schwieg, hat geschwiegen",
+   "mevcutTr": "susmak",
+   "mevcutBeispiel": "Sie sprach viel, aber ihr Mann schwieg den ganzen Abend lang.",
+   "mevcutBeispielTr": "Kadın çok konuştu ama kocası bütün akşam sustu."
+  },
+  {
+   "id": 2618,
+   "de": "der Schatten",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "gölge",
+   "mevcutBeispiel": "Gestern hatten wir 25 Grad im Schatten.",
+   "mevcutBeispielTr": "Dün gölgede 25 derece vardı."
+  },
+  {
+   "id": 2827,
+   "de": "die Tatsache",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "gerçek, olgu",
+   "mevcutBeispiel": "Das widerspricht den Tatsachen.",
+   "mevcutBeispielTr": "Bu, gerçeklerle çelişiyor.",
+   "cakisan": [
+    "echt (A2)",
+    "die Wahrheit (B1)",
+    "die Wirklichkeit (B1)"
+   ]
+  },
+  {
+   "id": 2191,
+   "de": "klopfen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "klopft, klopfte, hat geklopft",
+   "mevcutTr": "vurmak, kapıyı çalmak",
+   "mevcutBeispiel": "1. Da klopft jemand ans Fenster. 2. Hat es nicht eben geklopft? 3. Bitte klopfen Sie an.",
+   "mevcutBeispielTr": "1. Biri cama vuruyor. 2. Az önce kapı çalınmadı mı? 3. Lütfen kapıyı çalın.",
+   "cakisan": [
+    "schlagen (B1)"
+   ]
+  },
+  {
+   "id": 1679,
+   "de": "der Dreck",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kir, pislik",
+   "mevcutBeispiel": "1. Iss den Apfel nicht! Der lag im Dreck. 2. Ich konnte vor lauter Dreck auf dem Fenster nichts sehen. 3. Kümmere dich u",
+   "mevcutBeispielTr": "Elmayı yeme! Pisliğin içinde duruyordu.",
+   "cakisan": [
+    "der Schmutz (B1)"
+   ]
+  },
+  {
+   "id": 2377,
+   "de": "die Mühe",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çaba, zahmet",
+   "mevcutBeispiel": "1. Vielen Dank für Ihre Mühe. 2. Mit ein bisschen mehr Mühe können wir das schaffen.",
+   "mevcutBeispielTr": "1. Emeğiniz için çok teşekkürler. 2. Biraz daha çabayla bunu başarabiliriz.",
+   "cakisan": [
+    "die Bemühung (B2)",
+    "das Streben (C1)"
+   ]
+  },
+  {
+   "id": 2196,
+   "de": "der Knochen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-",
+   "mevcutTr": "kemik",
+   "mevcutBeispiel": "Ich bin hingefallen. Jetzt tun mir alle Knochen weh.",
+   "mevcutBeispielTr": "Düştüm; şimdi her yerim ağrıyor."
+  },
+  {
+   "id": 1692,
+   "de": "ebenso",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "aynı şekilde, keza",
+   "mevcutBeispiel": "Schöne Feiertage. – Danke, ebenso.",
+   "mevcutBeispielTr": "İyi bayramlar! – Teşekkürler, size de.",
+   "cakisan": [
+    "ebenfalls (B1)",
+    "gleichfalls (B1)"
+   ]
+  },
+  {
+   "id": 1583,
+   "de": "bieten",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "bietet, bot, hat geboten",
+   "mevcutTr": "sunmak, teklif etmek",
+   "mevcutBeispiel": "1. Er hat mir für den alten Wagen noch 800 Euro geboten. 2. Die Firma bietet ihren Mitarbeitern die Möglichkeit, Sprachk",
+   "mevcutBeispielTr": "Eski araba için bana 800 Euro teklif etti.",
+   "cakisan": [
+    "anbieten (A1)",
+    "präsentieren (B1)",
+    "einreichen (C1)",
+    "vortragen (B2)",
+    "einbringen (B2)",
+    "darbieten (C1)"
+   ]
+  },
+  {
+   "id": 1518,
+   "de": "behandeln",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "behandelt, behandelte, hat behandelt",
+   "mevcutTr": "tedavi etmek, davranmak",
+   "mevcutBeispiel": "1. Welcher Arzt hat Sie bis jetzt behandelt? 2. So lasse ich mich von Ihnen nicht länger behandeln.",
+   "mevcutBeispielTr": "Şimdiye kadar sizi hangi doktor tedavi etti?",
+   "cakisan": [
+    "versorgen (B2)"
+   ]
+  }
+ ]
+}

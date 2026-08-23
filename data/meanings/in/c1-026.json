@@ -1,0 +1,530 @@
+{
+ "paket": "c1-026",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 6503,
+   "de": "das Repertoire",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Repertoires",
+   "mevcutTr": "repertuvar, dağarcık",
+   "mevcutBeispiel": "Das Repertoire des Hauses umfasst kaum zeitgenössische Stücke.",
+   "mevcutBeispielTr": "Kurumun repertuvarı neredeyse hiç çağdaş oyun içermiyor."
+  },
+  {
+   "id": 6504,
+   "de": "der Spannungsbogen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Spannungsbögen",
+   "mevcutTr": "gerilim yayı, gerilim eğrisi",
+   "mevcutBeispiel": "Im dritten Akt bricht der Spannungsbogen völlig zusammen.",
+   "mevcutBeispielTr": "Üçüncü perdede gerilim eğrisi tamamen çöküyor."
+  },
+  {
+   "id": 6505,
+   "de": "die Katharsis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "katarsis, arınma",
+   "mevcutBeispiel": "Das Stück verweigert dem Publikum jede tröstliche Katharsis.",
+   "mevcutBeispielTr": "Oyun, seyirciye her türlü teselli edici katarsisi esirgiyor."
+  },
+  {
+   "id": 6506,
+   "de": "das Pathos",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "patos, coşkulu duygu yükü",
+   "mevcutBeispiel": "Das Pathos der Schlussszene wirkt heute unfreiwillig komisch.",
+   "mevcutBeispielTr": "Final sahnesinin patosu bugün istemeden komik duruyor."
+  },
+  {
+   "id": 6507,
+   "de": "die Groteske",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Grotesken",
+   "mevcutTr": "grotesk, gülünç-ürkütücü olan",
+   "mevcutBeispiel": "Die Tragödie kippt im letzten Bild in eine Groteske.",
+   "mevcutBeispielTr": "Trajedi son tabloda groteske dönüşüyor."
+  },
+  {
+   "id": 6508,
+   "de": "die Persiflage",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Persiflagen",
+   "mevcutTr": "alaycı taklit, hicivli öykünme",
+   "mevcutBeispiel": "Der Film ist eine bissige Persiflage auf den Kunstbetrieb.",
+   "mevcutBeispielTr": "Film, sanat camiasına yönelik zehir zemberek bir taklit."
+  },
+  {
+   "id": 6509,
+   "de": "die Abstraktion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Abstraktionen",
+   "mevcutTr": "soyutlama",
+   "mevcutBeispiel": "Der Weg zur Abstraktion vollzog sich bei ihm allmählich.",
+   "mevcutBeispielTr": "Soyutlamaya giden yol onda yavaş yavaş gerçekleşti."
+  },
+  {
+   "id": 6510,
+   "de": "die Hochkultur",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hochkulturen",
+   "mevcutTr": "yüksek kültür",
+   "mevcutBeispiel": "Die Trennung von Hochkultur und Unterhaltung erodiert zusehends.",
+   "mevcutBeispielTr": "Yüksek kültür ile eğlence arasındaki ayrım gözle görülür biçimde aşınıyor."
+  },
+  {
+   "id": 6511,
+   "de": "die Kunstfreiheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sanat özgürlüğü",
+   "mevcutBeispiel": "Die Kunstfreiheit endet dort nicht, wo jemand sich ärgert.",
+   "mevcutBeispielTr": "Sanat özgürlüğü, birileri sinirlendi diye sona ermez."
+  },
+  {
+   "id": 6512,
+   "de": "darbieten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat dargeboten",
+   "mevcutTr": "sunmak, icra etmek",
+   "mevcutBeispiel": "Das Quartett bot die späten Streichquartette hinreißend dar.",
+   "mevcutBeispielTr": "Dörtlü, geç dönem yaylı kuartetlerini büyüleyici biçimde icra etti.",
+   "cakisan": [
+    "anbieten (A1)",
+    "bieten (B1)",
+    "präsentieren (B1)",
+    "einreichen (C1)",
+    "vortragen (B2)",
+    "einbringen (B2)"
+   ]
+  },
+  {
+   "id": 6513,
+   "de": "einstudieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat einstudiert",
+   "mevcutTr": "çalışıp hazırlamak, prova ederek öğrenmek",
+   "mevcutBeispiel": "Der Chor studiert das Requiem seit Monaten ein.",
+   "mevcutBeispielTr": "Koro aylardır requiem'i çalışıyor."
+  },
+  {
+   "id": 6514,
+   "de": "entschlüsseln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entschlüsselt",
+   "mevcutTr": "çözmek, deşifre etmek",
+   "mevcutBeispiel": "Die Symbolik des Altarbildes lässt sich kaum vollständig entschlüsseln.",
+   "mevcutBeispielTr": "Sunak resminin simgeciliği tam olarak çözülemiyor.",
+   "cakisan": [
+    "lösen (B1)"
+   ]
+  },
+  {
+   "id": 6515,
+   "de": "nachempfinden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat nachempfunden",
+   "mevcutTr": "kendini yerine koyup hissetmek, duygusunu paylaşmak",
+   "mevcutBeispiel": "Der Zuschauer soll die Verzweiflung der Figur nachempfinden.",
+   "mevcutBeispielTr": "Seyircinin karakterin çaresizliğini içinde duyması bekleniyor."
+  },
+  {
+   "id": 6516,
+   "de": "überhöhen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überhöht",
+   "mevcutTr": "yüceltmek, abartarak büyütmek",
+   "mevcutBeispiel": "Die Regie überhöht den Alltag zum antiken Ritual.",
+   "mevcutBeispielTr": "Reji, gündelik olanı antik bir ritüele yüceltiyor.",
+   "cakisan": [
+    "glorifizieren (C1)"
+   ]
+  },
+  {
+   "id": 6517,
+   "de": "skizzieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat skizziert",
+   "mevcutTr": "taslağını çizmek, ana hatlarıyla anlatmak",
+   "mevcutBeispiel": "Der Kurator skizzierte den Aufbau der Schau in wenigen Sätzen.",
+   "mevcutBeispielTr": "Küratör serginin kurgusunu birkaç cümleyle özetledi."
+  },
+  {
+   "id": 6518,
+   "de": "vertonen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat vertont",
+   "mevcutTr": "bestelemek, müziğe uyarlamak",
+   "mevcutBeispiel": "Er hat mehrere Gedichte der Romantik neu vertont.",
+   "mevcutBeispielTr": "Romantik dönemden birkaç şiiri yeniden besteledi."
+  },
+  {
+   "id": 6519,
+   "de": "rezitieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat rezitiert",
+   "mevcutTr": "ezberden okumak, şiir okumak",
+   "mevcutBeispiel": "Die Schauspielerin rezitierte den Monolog ohne jedes Pathos.",
+   "mevcutBeispielTr": "Oyuncu tiradı hiçbir abartıya kaçmadan okudu."
+  },
+  {
+   "id": 6520,
+   "de": "kuratieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat kuratiert",
+   "mevcutTr": "küratörlüğünü yapmak, seçkiyi düzenlemek",
+   "mevcutBeispiel": "Sie kuratiert die Biennale zum zweiten Mal.",
+   "mevcutBeispielTr": "Bienalin küratörlüğünü ikinci kez yapıyor."
+  },
+  {
+   "id": 6521,
+   "de": "versteigern",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat versteigert",
+   "mevcutTr": "açık artırmayla satmak",
+   "mevcutBeispiel": "Der Nachlass des Malers wird im Herbst versteigert.",
+   "mevcutBeispielTr": "Ressamın terekesi sonbaharda açık artırmayla satılacak."
+  },
+  {
+   "id": 6522,
+   "de": "provozieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat provoziert",
+   "mevcutTr": "kışkırtmak, tepki uyandırmak",
+   "mevcutBeispiel": "Die Installation provoziert bewusst den bürgerlichen Kunstgeschmack.",
+   "mevcutBeispielTr": "Yerleştirme, burjuva sanat beğenisini bilinçli olarak kışkırtıyor.",
+   "cakisan": [
+    "aufwiegeln (C1)"
+   ]
+  },
+  {
+   "id": 6523,
+   "de": "irritieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat irritiert",
+   "mevcutTr": "şaşırtmak, kafa karıştırmak",
+   "mevcutBeispiel": "Der abrupte Stilwechsel irritierte selbst wohlwollende Kritiker.",
+   "mevcutBeispielTr": "Ani üslup değişimi iyi niyetli eleştirmenleri bile şaşırttı.",
+   "cakisan": [
+    "überraschen (B1)"
+   ]
+  },
+  {
+   "id": 6524,
+   "de": "ergreifen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ergriffen",
+   "mevcutTr": "derinden etkilemek, sarsmak",
+   "mevcutBeispiel": "Die schlichte Schlussarie ergriff das ganze Haus.",
+   "mevcutBeispielTr": "Yalın final aryası bütün salonu derinden etkiledi."
+  },
+  {
+   "id": 6525,
+   "de": "karikieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat karikiert",
+   "mevcutTr": "karikatürize etmek, abartarak alay etmek",
+   "mevcutBeispiel": "Die Aufführung karikiert den Kunstbetrieb bis zur Kenntlichkeit.",
+   "mevcutBeispielTr": "Gösteri, sanat camiasını tanınacak kadar karikatürize ediyor."
+  },
+  {
+   "id": 6526,
+   "de": "rezensieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat rezensiert",
+   "mevcutTr": "eleştiri yazmak, değerlendirmek",
+   "mevcutBeispiel": "Sie rezensiert seit Jahren Ausstellungen für eine Wochenzeitung.",
+   "mevcutBeispielTr": "Yıllardır bir haftalık gazete için sergi eleştirileri yazıyor."
+  },
+  {
+   "id": 6527,
+   "de": "experimentell",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "deneysel",
+   "mevcutBeispiel": "Das Festival zeigt vor allem experimentelles Musiktheater.",
+   "mevcutBeispielTr": "Festival ağırlıklı olarak deneysel müzikli tiyatro gösteriyor."
+  },
+  {
+   "id": 6528,
+   "de": "epigonal",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "öykünmeci, ustasını taklit eden",
+   "mevcutBeispiel": "Seine frühen Bilder wirken noch reichlich epigonal.",
+   "mevcutBeispielTr": "Erken dönem resimleri hâlâ epeyce öykünmeci duruyor."
+  },
+  {
+   "id": 6529,
+   "de": "subtil",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ince, sezdirmeden işleyen",
+   "mevcutBeispiel": "Die Kritik an der Institution ist hier sehr subtil formuliert.",
+   "mevcutBeispielTr": "Kuruma yönelik eleştiri burada çok ince biçimde dile getirilmiş.",
+   "cakisan": [
+    "dünn (A2)",
+    "schlank (B1)"
+   ]
+  },
+  {
+   "id": 6530,
+   "de": "doppelbödig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "iki anlamlı, çift katmanlı",
+   "mevcutBeispiel": "Der scheinbar harmlose Text ist zutiefst doppelbödig.",
+   "mevcutBeispielTr": "Görünüşte masum olan metin son derece çift katmanlı."
+  },
+  {
+   "id": 6531,
+   "de": "hintergründig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "derin anlamlı, alt metinli",
+   "mevcutBeispiel": "Ihr Humor ist leise und hintergründig statt laut.",
+   "mevcutBeispielTr": "Mizahı gürültülü değil, sessiz ve alt metinli."
+  },
+  {
+   "id": 6532,
+   "de": "opulent",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "görkemli, bol ve gösterişli",
+   "mevcutBeispiel": "Die opulente Ausstattung erdrückt den schmalen Text.",
+   "mevcutBeispielTr": "Görkemli donanım, ince metni eziyor."
+  },
+  {
+   "id": 6533,
+   "de": "eindringlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "etkileyici, akılda kalıcı biçimde güçlü",
+   "mevcutBeispiel": "Der Dokumentarfilm schildert das Milieu eindringlich und ohne Kitsch.",
+   "mevcutBeispielTr": "Belgesel, o çevreyi çarpıcı ve kitsch'e kaçmadan anlatıyor."
+  },
+  {
+   "id": 6534,
+   "de": "sperrig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "zor lokma, kolay tüketilmeyen",
+   "mevcutBeispiel": "Sein sperriges Spätwerk fand erst posthum Anerkennung.",
+   "mevcutBeispielTr": "Zorlu geç dönem yapıtları ancak ölümünden sonra kabul gördü."
+  },
+  {
+   "id": 6535,
+   "de": "elitär",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "seçkinci, elitist",
+   "mevcutBeispiel": "Dem Haus wird seit Langem ein elitäres Programm vorgeworfen.",
+   "mevcutBeispielTr": "Kuruma uzun süredir seçkinci bir program yürüttüğü eleştirisi yöneltiliyor."
+  },
+  {
+   "id": 6536,
+   "de": "der Erzähler",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erzähler",
+   "mevcutTr": "anlatıcı",
+   "mevcutBeispiel": "Der Erzähler bleibt in diesem Roman auffallend distanziert.",
+   "mevcutBeispielTr": "Bu romanda anlatıcı dikkat çekecek kadar mesafeli kalıyor."
+  },
+  {
+   "id": 6537,
+   "de": "der Handlungsstrang",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Handlungsstränge",
+   "mevcutTr": "olay örgüsü kolu, yan olay dizisi",
+   "mevcutBeispiel": "Die beiden Handlungsstränge laufen erst im letzten Kapitel zusammen.",
+   "mevcutBeispielTr": "İki olay örgüsü kolu ancak son bölümde birleşiyor."
+  },
+  {
+   "id": 6538,
+   "de": "das Stilmittel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Stilmittel",
+   "mevcutTr": "üslup aracı, söz sanatı",
+   "mevcutBeispiel": "Die Wiederholung ist hier ein bewusst eingesetztes Stilmittel.",
+   "mevcutBeispielTr": "Yineleme burada bilinçli olarak kullanılmış bir üslup aracıdır."
+  },
+  {
+   "id": 6539,
+   "de": "die Metapher",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Metaphern",
+   "mevcutTr": "metafor, eğretileme",
+   "mevcutBeispiel": "Seine Metaphern wirken auf mich etwas abgenutzt.",
+   "mevcutBeispielTr": "Metaforları bana biraz aşınmış geliyor."
+  },
+  {
+   "id": 6540,
+   "de": "das Gleichnis",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gleichnisse",
+   "mevcutTr": "kıssa, benzetme öyküsü",
+   "mevcutBeispiel": "Der Prediger erklärte den Gedanken anhand eines alten Gleichnisses.",
+   "mevcutBeispielTr": "Vaiz düşünceyi eski bir kıssayla açıkladı."
+  },
+  {
+   "id": 6541,
+   "de": "das Nachwort",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nachworte",
+   "mevcutTr": "sonsöz",
+   "mevcutBeispiel": "Im Nachwort beschreibt die Übersetzerin ihre wichtigsten Entscheidungen.",
+   "mevcutBeispielTr": "Sonsözde çevirmen en önemli tercihlerini anlatıyor."
+  },
+  {
+   "id": 6542,
+   "de": "die Fußnote",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Fußnoten",
+   "mevcutTr": "dipnot",
+   "mevcutBeispiel": "Die entscheidende Quelle versteckt sich in einer knappen Fußnote.",
+   "mevcutBeispielTr": "Belirleyici kaynak kısacık bir dipnotta gizli."
+  },
+  {
+   "id": 6543,
+   "de": "das Manuskript",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Manuskripte",
+   "mevcutTr": "el yazması, (basılmamış) metin",
+   "mevcutBeispiel": "Das Manuskript lag jahrzehntelang unbeachtet im Archiv.",
+   "mevcutBeispielTr": "Müsvedde onlarca yıl arşivde fark edilmeden durdu."
+  },
+  {
+   "id": 6544,
+   "de": "der Urheber",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Urheber",
+   "mevcutTr": "eser sahibi, yaratıcı",
+   "mevcutBeispiel": "Der Urheber des Textes blieb über Jahrzehnte unbekannt.",
+   "mevcutBeispielTr": "Metnin sahibi onlarca yıl boyunca bilinmedi."
+  },
+  {
+   "id": 6545,
+   "de": "der Wortlaut",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "metnin tam ifadesi, lafız",
+   "mevcutBeispiel": "Der genaue Wortlaut des Briefes lässt sich nicht mehr feststellen.",
+   "mevcutBeispielTr": "Mektubun tam metni artık saptanamıyor."
+  },
+  {
+   "id": 6546,
+   "de": "der Sprachwandel",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "dil değişimi",
+   "mevcutBeispiel": "Sprachwandel vollzieht sich langsam und meist unbemerkt.",
+   "mevcutBeispielTr": "Dil değişimi yavaş ve çoğunlukla fark edilmeden gerçekleşir."
+  },
+  {
+   "id": 6547,
+   "de": "die Mundart",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Mundarten",
+   "mevcutTr": "yöresel ağız, şive",
+   "mevcutBeispiel": "In seinen Gedichten mischt er Hochdeutsch und heimatliche Mundart.",
+   "mevcutBeispielTr": "Şiirlerinde standart Almancayla memleket şivesini harmanlıyor."
+  },
+  {
+   "id": 6548,
+   "de": "die Chronik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Chroniken",
+   "mevcutTr": "vakayiname, kronik",
+   "mevcutBeispiel": "Die Chronik des Klosters reicht bis ins zwölfte Jahrhundert zurück.",
+   "mevcutBeispielTr": "Manastırın vakayinamesi on ikinci yüzyıla kadar uzanıyor."
+  },
+  {
+   "id": 6549,
+   "de": "der Nachruf",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nachrufe",
+   "mevcutTr": "anma yazısı, ölüm yazısı",
+   "mevcutBeispiel": "Der Nachruf würdigt vor allem ihre späten Gedichte.",
+   "mevcutBeispielTr": "Anma yazısı özellikle onun geç dönem şiirlerini öne çıkarıyor."
+  },
+  {
+   "id": 6550,
+   "de": "das Sprichwort",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sprichwörter",
+   "mevcutTr": "atasözü",
+   "mevcutBeispiel": "Das Sprichwort trifft die Lage besser als jede Erklärung.",
+   "mevcutBeispielTr": "Atasözü durumu her açıklamadan daha iyi anlatıyor."
+  },
+  {
+   "id": 6551,
+   "de": "die Mehrdeutigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Mehrdeutigkeiten",
+   "mevcutTr": "çok anlamlılık, muğlaklık",
+   "mevcutBeispiel": "Die Mehrdeutigkeit des Schlusses hat die Kritik lange beschäftigt.",
+   "mevcutBeispielTr": "Sonun çok anlamlılığı eleştirmenleri uzun süre meşgul etti."
+  },
+  {
+   "id": 6552,
+   "de": "der Reim",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Reime",
+   "mevcutTr": "kafiye, uyak",
+   "mevcutBeispiel": "Der Dichter verzichtet in seinen späten Texten auf Reime.",
+   "mevcutBeispielTr": "Şair geç dönem metinlerinde kafiyeden vazgeçiyor."
+  }
+ ]
+}

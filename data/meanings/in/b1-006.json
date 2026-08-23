@@ -1,0 +1,612 @@
+{
+ "paket": "b1-006",
+ "niveau": "B1",
+ "kelimeler": [
+  {
+   "id": 1603,
+   "de": "brechen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "bricht, brach, hat gebrochen",
+   "mevcutTr": "kırmak, kırılmak",
+   "mevcutBeispiel": "1. Er hat sich beim Skifahren verletzt, sein Bein ist gebrochen. 2. Ich habe mir im Urlaub das Bein gebrochen.",
+   "mevcutBeispielTr": "Kayak yaparken sakatlandı; bacağı kırıldı."
+  },
+  {
+   "id": 3143,
+   "de": "der Zeitpunkt",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "- e",
+   "mevcutTr": "zaman, an",
+   "mevcutBeispiel": "Er ist krank. Das ist kein guter Zeitpunkt für einen Besuch.",
+   "mevcutBeispielTr": "Hasta; ziyaret için iyi bir zaman değil.",
+   "cakisan": [
+    "die Zeit (A1)"
+   ]
+  },
+  {
+   "id": 1684,
+   "de": "der Druck",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "baskı, basınç",
+   "mevcutBeispiel": "1. Mit einem Knopfdruck schaltet man das Gerät ein. 2. Wie hoch muss der Druck in den vorderen Reifen sein?",
+   "mevcutBeispielTr": "Cihaz bir düğmeye basılarak açılıyor.",
+   "cakisan": [
+    "die Repression (C1)",
+    "die Unterdrückung (C1)"
+   ]
+  },
+  {
+   "id": 1452,
+   "de": "der Auftrag",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "sipariş, görev",
+   "mevcutBeispiel": "1. Ich komme im Auftrag von Frau Müller und soll Ihnen diesen Brief geben. 2. Im Moment hat die Firma besonders viele Au",
+   "mevcutBeispielTr": "Müller Hanım adına geliyorum; size bu mektubu verecektim.",
+   "cakisan": [
+    "die Bestellung (A2)"
+   ]
+  },
+  {
+   "id": 2431,
+   "de": "nutzen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "nutzt, nutzte, hat genutzt",
+   "mevcutTr": "kullanmak, yararlanmak",
+   "mevcutBeispiel": "Ich möchte das schöne Wetter nutzen und spazieren gehen.",
+   "mevcutBeispielTr": "Güzel havayı değerlendirip yürüyüşe çıkmak istiyorum.",
+   "cakisan": [
+    "benutzen (A1)",
+    "gebrauchen (B1)",
+    "verwenden (B1)",
+    "lenken (A2)"
+   ]
+  },
+  {
+   "id": 3131,
+   "de": "sich wünschen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "wünscht, wünschte, hat gewünscht",
+   "mevcutTr": "(kendine) istemek, arzu etmek",
+   "mevcutBeispiel": "1. Ich wünsche Ihnen alles Gute. 2. Was wünschst du dir zum Geburtstag? 3. Wünsch mir Glück!",
+   "mevcutBeispielTr": "1. Size her şeyin gönlünüzce olmasını dilerim. 2. Doğum günün için ne istiyorsun? 3. Bana şans dile!",
+   "cakisan": [
+    "wollen (A1)",
+    "möchten (A1)",
+    "verlangen (B1)"
+   ]
+  },
+  {
+   "id": 2961,
+   "de": "die Verantwortung",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "sorumluluk",
+   "mevcutBeispiel": "Sie tragen die Verantwortung für Ihre Kinder.",
+   "mevcutBeispielTr": "Çocuklarınızın sorumluluğu sizde.",
+   "cakisan": [
+    "die Verantwortlichkeit (C1)"
+   ]
+  },
+  {
+   "id": 2100,
+   "de": "der Hut",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "şapka",
+   "mevcutBeispiel": "Sie sollten im Sommer nicht ohne Hut in die Sonne gehen.",
+   "mevcutBeispielTr": "Yazın güneşe şapkasız çıkmamalısınız."
+  },
+  {
+   "id": 2258,
+   "de": "lächeln",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "lächelt, lächelte, hat gelächelt",
+   "mevcutTr": "gülümsemek",
+   "mevcutBeispiel": "Schauen Sie in die Kamera. Bitte lächeln!",
+   "mevcutBeispielTr": "Kameraya bakın. Lütfen gülümseyin!"
+  },
+  {
+   "id": 3058,
+   "de": "vorhin",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "az önce, biraz önce",
+   "mevcutBeispiel": "Vorhin hat Heidrun angerufen. Du sollst sie zurückrufen.",
+   "mevcutBeispielTr": "Az önce Heidrun aradı. Onu geri araman gerekiyor.",
+   "cakisan": [
+    "eben (B1)"
+   ]
+  },
+  {
+   "id": 1815,
+   "de": "ernsthaft",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "ciddi, ciddi bir şekilde",
+   "mevcutBeispiel": "Ich überlege ernsthaft, ob ich in eine andere Stadt ziehen soll.",
+   "mevcutBeispielTr": "Başka bir şehre taşınmayı ciddi ciddi düşünüyorum.",
+   "cakisan": [
+    "ernst (B1)",
+    "gravierend (C1)"
+   ]
+  },
+  {
+   "id": 2224,
+   "de": "die Kosten",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "(Pl.)",
+   "mevcutTr": "masraf, gider, maliyet",
+   "mevcutBeispiel": "Die Kosten für die Reise bekomme ich von der Firma.",
+   "mevcutBeispielTr": "Yolculuk masraflarını şirket karşılıyor."
+  },
+  {
+   "id": 2450,
+   "de": "die Operation",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "ameliyat",
+   "mevcutBeispiel": "Seit der Operation kann ich mein Knie nicht mehr bewegen.",
+   "mevcutBeispielTr": "Ameliyattan beri dizimi oynatamıyorum."
+  },
+  {
+   "id": 1635,
+   "de": "das Dach",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-er",
+   "mevcutTr": "çatı",
+   "mevcutBeispiel": "1. Wir müssen das Dach reparieren lassen. 2. Wir wohnen direkt unter dem Dach.",
+   "mevcutBeispielTr": "Çatıyı tamir ettirmemiz gerekiyor."
+  },
+  {
+   "id": 1897,
+   "de": "die Folge",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "sonuç, netice",
+   "mevcutBeispiel": "Die Folgen des Unfalls waren schlimm.",
+   "mevcutBeispielTr": "Kazanın sonuçları ağır oldu.",
+   "cakisan": [
+    "das Ergebnis (A1)",
+    "das Fazit (C1)"
+   ]
+  },
+  {
+   "id": 1642,
+   "de": "dankbar",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "minnettar",
+   "mevcutBeispiel": "Ich bin Ihnen sehr dankbar für Ihre Hilfe.",
+   "mevcutBeispielTr": "Yardımınız için size çok minnettarım."
+  },
+  {
+   "id": 2386,
+   "de": "der Mut",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "cesaret",
+   "mevcutBeispiel": "Man braucht viel Mut, um in einem fremden Land ganz neu anzufangen.",
+   "mevcutBeispielTr": "Yabancı bir ülkede sıfırdan başlamak için çok cesaret gerekir."
+  },
+  {
+   "id": 2811,
+   "de": "das System",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "sistem",
+   "mevcutBeispiel": "1. Welches Betriebssystem hast du? 2. Ich kenne Ihr System nicht. Können Sie es mir erklären?",
+   "mevcutBeispielTr": "1. Hangi işletim sistemini kullanıyorsun? 2. Sizin sisteminizi bilmiyorum. Bana açıklayabilir misiniz?",
+   "cakisan": [
+    "die Anlage (B1)"
+   ]
+  },
+  {
+   "id": 1677,
+   "de": "dorthin",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "oraya",
+   "mevcutBeispiel": "Deine Tasche kannst du dorthin stellen.",
+   "mevcutBeispielTr": "Çantanı oraya koyabilirsin.",
+   "cakisan": [
+    "hin (A2)",
+    "dahin (B1)"
+   ]
+  },
+  {
+   "id": 2892,
+   "de": "überprüfen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "überprüft, überprüfte, hat überprüft",
+   "mevcutTr": "kontrol etmek, denetlemek",
+   "mevcutBeispiel": "Bitte überprüfen Sie, ob Ihr Name richtig geschrieben ist.",
+   "mevcutBeispielTr": "Lütfen adınızın doğru yazılıp yazılmadığını kontrol edin.",
+   "cakisan": [
+    "kontrollieren (A2)",
+    "prüfen (A2)"
+   ]
+  },
+  {
+   "id": 1578,
+   "de": "der Beweis",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "kanıt, delil",
+   "mevcutBeispiel": "Haben Sie dafür Beweise?",
+   "mevcutBeispielTr": "Bunun için kanıtınız var mı?",
+   "cakisan": [
+    "die Evidenz (C1)"
+   ]
+  },
+  {
+   "id": 1932,
+   "de": "funktionieren",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "funktioniert, funktionierte, hat funktioniert",
+   "mevcutTr": "çalışmak, işlemek",
+   "mevcutBeispiel": "1. Können Sie mir bitte mal zeigen, wie der Automat funktioniert? 2. Unsere Ehe funktioniert nicht mehr.",
+   "mevcutBeispielTr": "1. Otomatın nasıl çalıştığını gösterebilir misiniz? 2. Evliliğimiz artık yürümüyor.",
+   "cakisan": [
+    "arbeiten (A1)"
+   ]
+  },
+  {
+   "id": 2589,
+   "de": "das Risiko",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "Risiken",
+   "mevcutTr": "risk",
+   "mevcutBeispiel": "Ich nehme keinen Kredit auf. Das Risiko ist mir zu hoch.",
+   "mevcutBeispielTr": "Kredi çekmiyorum. Risk bana göre çok yüksek."
+  },
+  {
+   "id": 2059,
+   "de": "der Held",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "kahraman",
+   "mevcutBeispiel": "1. Er spielt gern den Helden. 2. Sie ist die Heldin des Tages.",
+   "mevcutBeispielTr": "1. Kahraman rolü oynamayı seviyor. 2. O, günün kahramanı."
+  },
+  {
+   "id": 2516,
+   "de": "prima",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "harika, mükemmel",
+   "mevcutBeispiel": "Mit diesen Leuten verstehe ich mich prima.",
+   "mevcutBeispielTr": "Bu insanlarla çok iyi anlaşıyorum.",
+   "cakisan": [
+    "toll (A1)",
+    "wunderbar (A1)",
+    "fantastisch (A2)",
+    "super (A2)",
+    "klasse (B1)"
+   ]
+  },
+  {
+   "id": 1994,
+   "de": "die Gewalt",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-en",
+   "mevcutTr": "şiddet, zor",
+   "mevcutBeispiel": "1. Ich mag keine Filme, in denen Gewalt vorkommt. 2. Die Tür ließ sich nur mit Gewalt öffnen.",
+   "mevcutBeispielTr": "1. İçinde şiddet olan filmleri sevmem. 2. Kapı ancak zorla açılabildi."
+  },
+  {
+   "id": 2390,
+   "de": "nachdenken",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "denkt nach, dachte nach, hat nachgedacht",
+   "mevcutTr": "düşünmek",
+   "mevcutBeispiel": "Ich weiß nicht, was ich machen soll. Ich muss nachdenken.",
+   "mevcutBeispielTr": "Ne yapacağımı bilmiyorum. Düşünmem lazım.",
+   "cakisan": [
+    "denken (A1)",
+    "überlegen (B1)",
+    "erwägen (C1)"
+   ]
+  },
+  {
+   "id": 2855,
+   "de": "das Tor",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "büyük kapı (giriş, avlu kapısı), gol",
+   "mevcutBeispiel": "1. Hinter dem Tor geht es zur Fabrik. 2. Die Mannschaft konnte vier Tore schießen.",
+   "mevcutBeispielTr": "1. Kapının arkasından fabrikaya geçiliyor. 2. Takım dört gol atabildi."
+  },
+  {
+   "id": 2600,
+   "de": "die Runde",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "tur; (bir arada oturan) grup",
+   "mevcutBeispiel": "1. Ich laufe jeden Tag fünf Runden im Park. 2. Wir müssen über die Probleme sprechen. Am besten mit allen in einer Runde",
+   "mevcutBeispielTr": "1. Her gün parkta beş tur koşuyorum. 2. Sorunları konuşmamız gerekiyor. En iyisi herkesle bir arada.",
+   "cakisan": [
+    "der Rundgang (A2)",
+    "die Tour (A2)",
+    "die Rundfahrt (B1)",
+    "die Rundreise (B2)"
+   ]
+  },
+  {
+   "id": 2077,
+   "de": "hinterlassen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "hinterlässt, hinterließ, hat hinterlassen",
+   "mevcutTr": "geride bırakmak (mesaj, iz)",
+   "mevcutBeispiel": "Möchten Sie eine Nachricht hinterlassen?",
+   "mevcutBeispielTr": "Mesaj bırakmak ister misiniz?"
+  },
+  {
+   "id": 1997,
+   "de": "das Gewissen",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "vicdan",
+   "mevcutBeispiel": "Ich habe deinen Geburtstag vergessen. Ich habe ein ganz schlechtes Gewissen.",
+   "mevcutBeispielTr": "Doğum gününü unuttum. Vicdanım hiç rahat değil."
+  },
+  {
+   "id": 2764,
+   "de": "der Stein",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-e",
+   "mevcutTr": "taş",
+   "mevcutBeispiel": "Die Kinder werfen Steine ins Wasser.",
+   "mevcutBeispielTr": "Çocuklar suya taş atıyor."
+  },
+  {
+   "id": 1436,
+   "de": "atmen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "atmet, atmete, hat geatmet",
+   "mevcutTr": "nefes almak",
+   "mevcutBeispiel": "Er hat eine Erkältung und kann nicht durch die Nase atmen.",
+   "mevcutBeispielTr": "Soğuk algınlığı var, burnundan nefes alamıyor."
+  },
+  {
+   "id": 2856,
+   "de": "der Tote",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "ölü, ölen kişi (erkek)",
+   "mevcutBeispiel": "Bei dem Unfall gab es zwei Tote.",
+   "mevcutBeispielTr": "Kazada iki kişi hayatını kaybetti.",
+   "cakisan": [
+    "tot (A1)",
+    "die Tote (B1)"
+   ]
+  },
+  {
+   "id": 2857,
+   "de": "die Tote",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "-n",
+   "mevcutTr": "ölü, ölen kişi (kadın)",
+   "mevcutBeispiel": "Bei dem Unfall gab es zwei Tote.",
+   "mevcutBeispielTr": "Kazada iki kişi hayatını kaybetti.",
+   "cakisan": [
+    "tot (A1)",
+    "der Tote (B1)"
+   ]
+  },
+  {
+   "id": 2889,
+   "de": "überlegen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "überlegt, überlegte, hat überlegt",
+   "mevcutTr": "düşünmek, düşünüp taşınmak",
+   "mevcutBeispiel": "1. Ich kann mich nicht entscheiden. Ich muss mir das noch überlegen. 2. Ich habe mir überlegt, ein Auto zu kaufen.",
+   "mevcutBeispielTr": "1. Karar veremiyorum; bunu biraz daha düşünmem gerek. 2. Bir araba almayı düşünüyorum.",
+   "cakisan": [
+    "denken (A1)",
+    "nachdenken (B1)",
+    "erwägen (C1)"
+   ]
+  },
+  {
+   "id": 2793,
+   "de": "der Streit",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "kavga, tartışma",
+   "mevcutBeispiel": "Ich möchte keinen Streit mit den Nachbarn.",
+   "mevcutBeispielTr": "Komşularla kavga etmek istemiyorum."
+  },
+  {
+   "id": 2254,
+   "de": "küssen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "küsst, küsste, hat geküsst",
+   "mevcutTr": "öpmek",
+   "mevcutBeispiel": "1. Er nahm sie in die Arme und küsste sie. 2. Beim Verabschieden haben wir uns alle geküsst.",
+   "mevcutBeispielTr": "1. Onu kollarına alıp öptü. 2. Vedalaşırken hepimiz öpüştük."
+  },
+  {
+   "id": 2265,
+   "de": "längst",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çoktan, çoktan beri",
+   "mevcutBeispiel": "Wann reparierst du die Heizung. – Die habe ich schon längst repariert.",
+   "mevcutBeispielTr": "Kaloriferi ne zaman tamir edeceksin? – Onu çoktan tamir ettim.",
+   "cakisan": [
+    "schon (A1)",
+    "bereits (B1)"
+   ]
+  },
+  {
+   "id": 2424,
+   "de": "normalerweise",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "normalde, genellikle",
+   "mevcutBeispiel": "Wann haben Sie normalerweise Pause?",
+   "mevcutBeispielTr": "Normalde molanız ne zaman?"
+  },
+  {
+   "id": 2543,
+   "de": "rauf",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "yukarı",
+   "mevcutBeispiel": "1. Hier ist die Treppe, also los, schnell rauf! 2. Möchtest du nicht raufkommen?",
+   "mevcutBeispielTr": "1. Merdiven burada, hadi çabuk yukarı! 2. Yukarı gelmek istemez misin?"
+  },
+  {
+   "id": 1544,
+   "de": "beruhigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "beruhigt, beruhigte, hat beruhigt",
+   "mevcutTr": "sakinleştirmek, yatıştırmak",
+   "mevcutBeispiel": "1. Beruhigen Sie sich bitte. Es ist alles in Ordnung. 2. Ich kann Sie beruhigen. Ihrem Sohn ist nichts passiert.",
+   "mevcutBeispielTr": "Lütfen sakin olun, her şey yolunda."
+  },
+  {
+   "id": 2762,
+   "de": "steigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "steigt, stieg, ist gestiegen",
+   "mevcutTr": "yükselmek, artmak, çıkmak",
+   "mevcutBeispiel": "1. Die Preise für Milch und Gemüse sind schon wieder gestiegen. 2. Gegen Abend ist das Fieber wieder gestiegen.",
+   "mevcutBeispielTr": "1. Süt ve sebze fiyatları yine arttı. 2. Akşama doğru ateşi yine yükseldi.",
+   "cakisan": [
+    "ansteigen (B2)"
+   ]
+  },
+  {
+   "id": 3180,
+   "de": "der Zustand",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "durum, hâl (bir şeyin, bir yerin içinde bulunduğu hâl)",
+   "mevcutBeispiel": "Als wir in die Wohnung eingezogen sind, war sie in sehr schlechtem Zustand.",
+   "mevcutBeispielTr": "Daireye taşındığımızda çok kötü durumdaydı.",
+   "cakisan": [
+    "die Situation (A2)",
+    "der Fall (B1)"
+   ]
+  },
+  {
+   "id": 1723,
+   "de": "sich einigen",
+   "typ": "Verb",
+   "niveau": "B1",
+   "formen": "einigt sich, einigte sich, hat sich geeinigt",
+   "mevcutTr": "anlaşmak, uzlaşmak",
+   "mevcutBeispiel": "Jeder hat einen anderen Vorschlag. Wir können uns leider nicht einigen.",
+   "mevcutBeispielTr": "Herkesin farklı bir önerisi var; maalesef anlaşamıyoruz.",
+   "cakisan": [
+    "sich verständigen (B2)"
+   ]
+  },
+  {
+   "id": 3157,
+   "de": "der Zufall",
+   "typ": "Nomen",
+   "niveau": "B1",
+   "formen": "¨-e",
+   "mevcutTr": "rastlantı, tesadüf",
+   "mevcutBeispiel": "1. So ein Zufall, dass ich dich hier treffe. 2. Durch Zufall habe ich gehört, dass die Wohnung frei ist.",
+   "mevcutBeispielTr": "1. Seninle burada karşılaşmam ne tesadüf! 2. Dairenin boş olduğunu tesadüfen duydum."
+  },
+  {
+   "id": 1847,
+   "de": "fair",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "adil, dürüst",
+   "mevcutBeispiel": "Ich finde, unsere Mannschaft hat sehr fair gespielt.",
+   "mevcutBeispielTr": "Bence takımımız çok adil oynadı.",
+   "cakisan": [
+    "gerecht (B1)"
+   ]
+  },
+  {
+   "id": 2671,
+   "de": "seitdem",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "o zamandan beri",
+   "mevcutBeispiel": "Ich bin vor zwei Jahren nach Deutschland gekommen. Seitdem lerne ich Deutsch.",
+   "mevcutBeispielTr": "İki yıl önce Almanya'ya geldim. O zamandan beri Almanca öğreniyorum.",
+   "cakisan": [
+    "seither (A2)"
+   ]
+  },
+  {
+   "id": 3073,
+   "de": "wahnsinnig",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "çılgın, deli, çok",
+   "mevcutBeispiel": "1. Du fährst viel zu schnell. Bist du wahnsinnig?! 2. Diese Musik gefällt mir wahnsinnig gut.",
+   "mevcutBeispielTr": "1. Çok hızlı gidiyorsun, deli misin?! 2. Bu müzik inanılmaz hoşuma gidiyor.",
+   "cakisan": [
+    "verrückt (A1)"
+   ]
+  },
+  {
+   "id": 1371,
+   "de": "ähnlich",
+   "typ": "Sonstiges",
+   "niveau": "B1",
+   "formen": "",
+   "mevcutTr": "benzer",
+   "mevcutBeispiel": "1. Emilia ist in einer ganz ähnlichen Situation wie ich. 2. Oleg sieht seinem Bruder sehr ähnlich.",
+   "mevcutBeispielTr": "Emilia benimkine çok benzer bir durumda."
+  }
+ ]
+}

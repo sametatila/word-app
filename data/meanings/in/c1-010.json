@@ -1,0 +1,525 @@
+{
+ "paket": "c1-010",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 5703,
+   "de": "die Landflucht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kırdan kente göç",
+   "mevcutBeispiel": "Die Landflucht junger Menschen entleert ganze Landstriche.",
+   "mevcutBeispielTr": "Gençlerin kırdan kente göçü koca bölgeleri boşaltıyor."
+  },
+  {
+   "id": 5704,
+   "de": "die Hofnachfolge",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Hofnachfolgen",
+   "mevcutTr": "çiftliğin devri, çiftlikte kuşak değişimi",
+   "mevcutBeispiel": "Bei jedem zweiten Betrieb ist die Hofnachfolge völlig ungeklärt.",
+   "mevcutBeispielTr": "Her iki işletmeden birinde çiftliğin devri tamamen belirsiz."
+  },
+  {
+   "id": 5705,
+   "de": "der Pestizideinsatz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Pestizideinsätze",
+   "mevcutTr": "pestisit kullanımı",
+   "mevcutBeispiel": "Der Pestizideinsatz soll bis zum Ende des Jahrzehnts halbiert werden.",
+   "mevcutBeispielTr": "Pestisit kullanımının on yılın sonuna dek yarıya indirilmesi hedefleniyor."
+  },
+  {
+   "id": 5706,
+   "de": "die Nitratbelastung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nitratbelastungen",
+   "mevcutTr": "nitrat kirliliği, nitrat yükü",
+   "mevcutBeispiel": "Die Nitratbelastung des Grundwassers überschreitet vielerorts die Grenzwerte.",
+   "mevcutBeispielTr": "Yeraltı suyundaki nitrat kirliliği birçok yerde sınır değerleri aşıyor."
+  },
+  {
+   "id": 5707,
+   "de": "die Biodiversität",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "biyoçeşitlilik",
+   "mevcutBeispiel": "Der Verlust an Biodiversität schreitet auf Agrarflächen besonders schnell voran.",
+   "mevcutBeispielTr": "Biyoçeşitlilik kaybı tarım alanlarında özellikle hızlı ilerliyor."
+  },
+  {
+   "id": 5708,
+   "de": "der Nachhaltigkeitsstandard",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nachhaltigkeitsstandards",
+   "mevcutTr": "sürdürülebilirlik standardı",
+   "mevcutBeispiel": "Freiwillige Nachhaltigkeitsstandards ersetzen keine verbindliche Regulierung.",
+   "mevcutBeispielTr": "Gönüllü sürdürülebilirlik standartları bağlayıcı düzenlemenin yerini tutmaz."
+  },
+  {
+   "id": 5709,
+   "de": "die Herkunftskennzeichnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Herkunftskennzeichnungen",
+   "mevcutTr": "menşe etiketlemesi, köken bildirimi",
+   "mevcutBeispiel": "Eine verpflichtende Herkunftskennzeichnung würde regionale Erzeuger deutlich stärken.",
+   "mevcutBeispielTr": "Zorunlu bir menşe etiketlemesi bölgesel üreticileri belirgin biçimde güçlendirirdi."
+  },
+  {
+   "id": 5710,
+   "de": "die Rückverfolgbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "izlenebilirlik",
+   "mevcutBeispiel": "Die Rückverfolgbarkeit endet oft schon beim ersten Zwischenhändler.",
+   "mevcutBeispielTr": "İzlenebilirlik çoğu zaman daha ilk aracıda son buluyor."
+  },
+  {
+   "id": 5711,
+   "de": "die Versorgungssicherheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "arz güvenliği, tedarik güvenliği",
+   "mevcutBeispiel": "Versorgungssicherheit wird derzeit als Argument gegen strengere Auflagen benutzt.",
+   "mevcutBeispielTr": "Arz güvenliği şu sıralar daha sıkı koşullara karşı bir argüman olarak kullanılıyor."
+  },
+  {
+   "id": 5712,
+   "de": "der Ökolandbau",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "organik tarım",
+   "mevcutBeispiel": "Der Ökolandbau wächst langsamer, als die Politik es versprochen hatte.",
+   "mevcutBeispielTr": "Organik tarım siyasetin vaat ettiğinden daha yavaş büyüyor."
+  },
+  {
+   "id": 5713,
+   "de": "das Ordnungsrecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "düzenleyici hukuk, emredici mevzuat",
+   "mevcutBeispiel": "Anreize allein genügen nicht, irgendwann greift das Ordnungsrecht.",
+   "mevcutBeispielTr": "Yalnızca teşvikler yetmez, bir noktada düzenleyici hukuk devreye girer."
+  },
+  {
+   "id": 5714,
+   "de": "die Flurbereinigung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Flurbereinigungen",
+   "mevcutTr": "arazi toplulaştırması",
+   "mevcutBeispiel": "Die Flurbereinigung der Nachkriegszeit hat unzählige Hecken beseitigt.",
+   "mevcutBeispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalıyı ortadan kaldırdı."
+  },
+  {
+   "id": 5715,
+   "de": "die Landnahme",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Landnahmen",
+   "mevcutTr": "toprak gaspı, arazi ele geçirme",
+   "mevcutBeispiel": "Investoren betreiben in mehreren Ländern eine kaum regulierte Landnahme.",
+   "mevcutBeispielTr": "Yatırımcılar birçok ülkede neredeyse hiç denetlenmeyen bir toprak gaspı yürütüyor.",
+   "cakisan": [
+    "der Landraub (C1)"
+   ]
+  },
+  {
+   "id": 5716,
+   "de": "der Sortenschutz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çeşit koruma hakkı, ıslahçı hakkı",
+   "mevcutBeispiel": "Der Sortenschutz sichert Züchtern über Jahre exklusive Verwertungsrechte.",
+   "mevcutBeispielTr": "Çeşit koruma hakkı ıslahçılara yıllarca münhasır kullanım hakkı sağlıyor."
+  },
+  {
+   "id": 5717,
+   "de": "die Gentechnik",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "gen teknolojisi, genetik mühendisliği",
+   "mevcutBeispiel": "Über neue Gentechnik wird in Brüssel seit Jahren erbittert gestritten.",
+   "mevcutBeispielTr": "Yeni gen teknolojisi üzerine Brüksel'de yıllardır sert biçimde tartışılıyor."
+  },
+  {
+   "id": 5718,
+   "de": "das Nachbaurecht",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tohumu yeniden ekme hakkı",
+   "mevcutBeispiel": "Das Nachbaurecht der Bauern wurde durch Lizenzverträge schrittweise ausgehöhlt.",
+   "mevcutBeispielTr": "Çiftçilerin tohumu yeniden ekme hakkı lisans sözleşmeleriyle adım adım içi boşaltıldı."
+  },
+  {
+   "id": 5719,
+   "de": "der Tiertransport",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Tiertransporte",
+   "mevcutTr": "canlı hayvan nakli",
+   "mevcutBeispiel": "Lange Tiertransporte in Drittstaaten sind rechtlich kaum zu kontrollieren.",
+   "mevcutBeispielTr": "Üçüncü ülkelere yapılan uzun hayvan nakilleri hukuken neredeyse denetlenemiyor."
+  },
+  {
+   "id": 5720,
+   "de": "der Schlachtbetrieb",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schlachtbetriebe",
+   "mevcutTr": "mezbaha, kesimhane",
+   "mevcutBeispiel": "Wenige große Schlachtbetriebe bestimmen faktisch die Preise am Markt.",
+   "mevcutBeispielTr": "Birkaç büyük mezbaha piyasadaki fiyatları fiilen belirliyor."
+  },
+  {
+   "id": 5721,
+   "de": "die Milchquote",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Milchquoten",
+   "mevcutTr": "süt kotası",
+   "mevcutBeispiel": "Nach dem Ende der Milchquote brachen die Preise dramatisch ein.",
+   "mevcutBeispielTr": "Süt kotasının kalkmasının ardından fiyatlar dramatik biçimde çöktü."
+  },
+  {
+   "id": 5722,
+   "de": "die Überproduktion",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Überproduktionen",
+   "mevcutTr": "aşırı üretim",
+   "mevcutBeispiel": "Die Überproduktion wird über Exporte auf ärmere Märkte abgewälzt.",
+   "mevcutBeispielTr": "Aşırı üretim ihracat yoluyla daha yoksul pazarların sırtına yıkılıyor."
+  },
+  {
+   "id": 5723,
+   "de": "das Freihandelsabkommen",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Freihandelsabkommen",
+   "mevcutTr": "serbest ticaret anlaşması",
+   "mevcutBeispiel": "Das Freihandelsabkommen öffnet den Markt für billige Importe.",
+   "mevcutBeispielTr": "Serbest ticaret anlaşması pazarı ucuz ithalata açıyor."
+  },
+  {
+   "id": 5724,
+   "de": "die Wettbewerbsverzerrung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wettbewerbsverzerrungen",
+   "mevcutTr": "rekabetin bozulması, haksız rekabet",
+   "mevcutBeispiel": "Unterschiedliche Sozialstandards führen zu erheblichen Wettbewerbsverzerrungen.",
+   "mevcutBeispielTr": "Farklı sosyal standartlar ciddi rekabet bozulmalarına yol açıyor."
+  },
+  {
+   "id": 5725,
+   "de": "die Direktvermarktung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "doğrudan pazarlama, üreticiden satış",
+   "mevcutBeispiel": "Über die Direktvermarktung umgehen Höfe den Druck des Handels.",
+   "mevcutBeispielTr": "Doğrudan pazarlama sayesinde çiftlikler ticaretin baskısını aşıyor."
+  },
+  {
+   "id": 5726,
+   "de": "der Nutzungskonflikt",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Nutzungskonflikte",
+   "mevcutTr": "kullanım çatışması, arazi kullanımı uyuşmazlığı",
+   "mevcutBeispiel": "Zwischen Naturschutz und Energieerzeugung entstehen wachsende Nutzungskonflikte.",
+   "mevcutBeispielTr": "Doğa koruma ile enerji üretimi arasında giderek büyüyen kullanım çatışmaları doğuyor."
+  },
+  {
+   "id": 5727,
+   "de": "der Kleinbauer",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Kleinbauern",
+   "mevcutTr": "küçük çiftçi",
+   "mevcutBeispiel": "Kleinbauern ernähren weltweit einen erstaunlich großen Teil der Bevölkerung.",
+   "mevcutBeispielTr": "Küçük çiftçiler dünya nüfusunun şaşırtıcı derecede büyük bir kısmını doyuruyor."
+  },
+  {
+   "id": 5728,
+   "de": "brachliegen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat brachgelegen",
+   "mevcutTr": "atıl durmak, boş yatmak, nadasta olmak",
+   "mevcutBeispiel": "Tausende Hektar liegen aus rein spekulativen Gründen brach.",
+   "mevcutBeispielTr": "Binlerce hektar salt spekülatif nedenlerle atıl duruyor."
+  },
+  {
+   "id": 5729,
+   "de": "verpachten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verpachtet",
+   "mevcutTr": "kiraya vermek, icara vermek",
+   "mevcutBeispiel": "Die Gemeinde verpachtet ihre Flächen bevorzugt an ökologisch wirtschaftende Betriebe.",
+   "mevcutBeispielTr": "Belediye arazilerini öncelikle ekolojik üretim yapan işletmelere kiraya veriyor.",
+   "cakisan": [
+    "vermieten (A1)"
+   ]
+  },
+  {
+   "id": 5730,
+   "de": "entkoppeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat entkoppelt",
+   "mevcutTr": "bağını koparmak, ayrıştırmak",
+   "mevcutBeispiel": "Die Beihilfen wurden von der produzierten Menge entkoppelt.",
+   "mevcutBeispielTr": "Destekler üretilen miktardan ayrıştırıldı."
+  },
+  {
+   "id": 5731,
+   "de": "deklarieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat deklariert",
+   "mevcutTr": "beyan etmek, bildirmek",
+   "mevcutBeispiel": "Der Hersteller muss die Herkunft der Rohstoffe vollständig deklarieren.",
+   "mevcutBeispielTr": "Üretici hammaddelerin kökenini eksiksiz beyan etmek zorunda."
+  },
+  {
+   "id": 5732,
+   "de": "diversifizieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat diversifiziert",
+   "mevcutTr": "çeşitlendirmek",
+   "mevcutBeispiel": "Viele Betriebe diversifizieren ihre Einkommensquellen, um Krisen zu überstehen.",
+   "mevcutBeispielTr": "Birçok işletme krizleri atlatabilmek için gelir kaynaklarını çeşitlendiriyor."
+  },
+  {
+   "id": 5733,
+   "de": "auslaugen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat ausgelaugt",
+   "mevcutTr": "(toprağın) verimini tüketmek, çoraklaştırmak",
+   "mevcutBeispiel": "Jahrzehntelanger Maisanbau hat die Böden vollständig ausgelaugt.",
+   "mevcutBeispielTr": "Onlarca yıllık mısır ekimi toprakların verimini tamamen tüketti."
+  },
+  {
+   "id": 5734,
+   "de": "abschöpfen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgeschöpft",
+   "mevcutTr": "kaymağını almak, el koymak",
+   "mevcutBeispiel": "Der Zwischenhandel schöpft den größten Teil der Marge ab.",
+   "mevcutBeispielTr": "Aracı ticaret marjın en büyük kısmının kaymağını alıyor."
+  },
+  {
+   "id": 5735,
+   "de": "veredeln",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat veredelt",
+   "mevcutTr": "işleyip değerini artırmak, ıslah etmek",
+   "mevcutBeispiel": "Regional veredelte Produkte erzielen auf dem Markt höhere Preise.",
+   "mevcutBeispielTr": "Bölgesel olarak işlenmiş ürünler piyasada daha yüksek fiyat getiriyor."
+  },
+  {
+   "id": 5736,
+   "de": "beweiden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat beweidet",
+   "mevcutTr": "otlatmak, meraya çıkarmak",
+   "mevcutBeispiel": "Extensiv beweidete Wiesen beherbergen deutlich mehr Insektenarten.",
+   "mevcutBeispielTr": "Seyrek otlatılan çayırlar belirgin biçimde daha çok böcek türü barındırıyor."
+  },
+  {
+   "id": 5737,
+   "de": "kontaminieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat kontaminiert",
+   "mevcutTr": "bulaştırmak, kirletmek",
+   "mevcutBeispiel": "Abdrift kann benachbarte Felder unbeabsichtigt kontaminieren.",
+   "mevcutBeispielTr": "İlaç sürüklenmesi komşu tarlaları istemeden kirletebilir.",
+   "cakisan": [
+    "anstecken (B2)"
+   ]
+  },
+  {
+   "id": 5738,
+   "de": "aufkaufen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aufgekauft",
+   "mevcutTr": "toptan satın almak, kapatmak",
+   "mevcutBeispiel": "Fonds kaufen in Ostdeutschland ganze Betriebe samt Flächen auf.",
+   "mevcutBeispielTr": "Fonlar Doğu Almanya'da arazileriyle birlikte bütün işletmeleri satın alıyor."
+  },
+  {
+   "id": 5739,
+   "de": "verknappen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat verknappt",
+   "mevcutTr": "azaltmak, kıt hale getirmek",
+   "mevcutBeispiel": "Exportverbote verknappen das Angebot und treiben die Preise hoch.",
+   "mevcutBeispielTr": "İhracat yasakları arzı kıtlaştırıp fiyatları yukarı itiyor.",
+   "cakisan": [
+    "reduzieren (B1)",
+    "schmälern (C1)",
+    "verringern (A2)"
+   ]
+  },
+  {
+   "id": 5740,
+   "de": "überdüngen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat überdüngt",
+   "mevcutTr": "aşırı gübrelemek",
+   "mevcutBeispiel": "Wer die Felder überdüngt, belastet über Jahre das Grundwasser.",
+   "mevcutBeispielTr": "Tarlaları aşırı gübreleyen, yıllarca yeraltı suyunu kirletir."
+  },
+  {
+   "id": 5741,
+   "de": "anbauen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat angebaut",
+   "mevcutTr": "yetiştirmek, ekmek",
+   "mevcutBeispiel": "In der Region werden fast ausschließlich Energiepflanzen angebaut.",
+   "mevcutBeispielTr": "Bölgede neredeyse yalnızca enerji bitkileri yetiştiriliyor.",
+   "cakisan": [
+    "erziehen (B1)",
+    "züchten (C1)",
+    "ausbilden (A2)"
+   ]
+  },
+  {
+   "id": 5742,
+   "de": "flächendeckend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "her yeri kapsayan, yaygın",
+   "mevcutBeispiel": "Die Kontrollen finden bisher nicht flächendeckend statt.",
+   "mevcutBeispielTr": "Denetimler şimdiye dek her yeri kapsayacak biçimde yapılmıyor."
+  },
+  {
+   "id": 5743,
+   "de": "multifunktional",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "çok işlevli",
+   "mevcutBeispiel": "Die Landwirtschaft gilt als multifunktional, weil sie mehr als Nahrung liefert.",
+   "mevcutBeispielTr": "Tarım, gıdadan fazlasını sunduğu için çok işlevli sayılıyor."
+  },
+  {
+   "id": 5744,
+   "de": "importabhängig",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "ithalata bağımlı",
+   "mevcutBeispiel": "Bei Futtermitteln ist Europa nach wie vor stark importabhängig.",
+   "mevcutBeispielTr": "Yem konusunda Avrupa hâlâ büyük ölçüde ithalata bağımlı."
+  },
+  {
+   "id": 5745,
+   "de": "standortangepasst",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yöreye uyarlanmış, yetişme ortamına uygun",
+   "mevcutBeispiel": "Standortangepasste Sorten kommen mit Trockenheit deutlich besser zurecht.",
+   "mevcutBeispielTr": "Yöreye uyarlanmış çeşitler kuraklıkla belirgin biçimde daha iyi baş ediyor."
+  },
+  {
+   "id": 5746,
+   "de": "verbrauchernah",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tüketiciye yakın",
+   "mevcutBeispiel": "Verbrauchernahe Erzeugung verkürzt die Wege und schafft Vertrauen.",
+   "mevcutBeispielTr": "Tüketiciye yakın üretim mesafeleri kısaltıyor ve güven yaratıyor."
+  },
+  {
+   "id": 5747,
+   "de": "ländlich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "kırsal",
+   "mevcutBeispiel": "Der ländliche Raum verliert seit Jahren an Infrastruktur und Einfluss.",
+   "mevcutBeispielTr": "Kırsal alan yıllardır altyapı ve etki kaybediyor."
+  },
+  {
+   "id": 5748,
+   "de": "bodenschonend",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "toprağı koruyan, toprak dostu",
+   "mevcutBeispiel": "Bodenschonende Verfahren setzen sich nur langsam in der Praxis durch.",
+   "mevcutBeispielTr": "Toprağı koruyan yöntemler pratikte ancak yavaş yavaş yaygınlaşıyor."
+  },
+  {
+   "id": 5749,
+   "de": "ackerbaulich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "tarla tarımına ilişkin, ziraî",
+   "mevcutBeispiel": "Ackerbauliche Maßnahmen allein lösen das Problem der Verdichtung nicht.",
+   "mevcutBeispielTr": "Tarla tarımına ilişkin önlemler tek başına sıkışma sorununu çözmüyor."
+  },
+  {
+   "id": 5750,
+   "de": "das Ritual",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rituale",
+   "mevcutTr": "ritüel, tören",
+   "mevcutBeispiel": "Das Ritual markiert den Übergang vom Kind zum Erwachsenen.",
+   "mevcutBeispielTr": "Ritüel, çocukluktan yetişkinliğe geçişi işaretler."
+  },
+  {
+   "id": 5751,
+   "de": "das Brauchtum",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Brauchtümer",
+   "mevcutTr": "gelenek görenek, örf",
+   "mevcutBeispiel": "Das ländliche Brauchtum wird heute vor allem touristisch vermarktet.",
+   "mevcutBeispielTr": "Kırsal gelenek görenek bugün daha çok turistik olarak pazarlanıyor."
+  },
+  {
+   "id": 5752,
+   "de": "die Sitte",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Sitten",
+   "mevcutTr": "âdet, töre",
+   "mevcutBeispiel": "Fremde Sitten wirken oft nur deshalb befremdlich, weil Kontext fehlt.",
+   "mevcutBeispielTr": "Yabancı âdetler çoğu kez yalnızca bağlam eksik olduğu için tuhaf görünür."
+  }
+ ]
+}

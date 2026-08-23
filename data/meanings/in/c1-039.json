@@ -1,0 +1,542 @@
+{
+ "paket": "c1-039",
+ "niveau": "C1",
+ "kelimeler": [
+  {
+   "id": 7153,
+   "de": "bildungsfern",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "eğitimden uzak",
+   "mevcutBeispiel": "Der Begriff bildungsfern gilt vielen Fachleuten selbst als abwertend.",
+   "mevcutBeispielTr": "Eğitimden uzak nitelemesi pek çok uzmana göre kendisi aşağılayıcıdır."
+  },
+  {
+   "id": 7154,
+   "de": "ethnisch",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "etnik",
+   "mevcutBeispiel": "Die Statistik erfasst keine ethnisch definierten Kategorien.",
+   "mevcutBeispielTr": "İstatistik etnik olarak tanımlanmış kategorileri kaydetmiyor."
+  },
+  {
+   "id": 7155,
+   "de": "heterogen",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "türdeş olmayan, çeşitli",
+   "mevcutBeispiel": "Die Schülerschaft ist heute weit heterogener als vor dreißig Jahren.",
+   "mevcutBeispielTr": "Öğrenci kitlesi bugün otuz yıl öncesine göre çok daha çeşitli."
+  },
+  {
+   "id": 7156,
+   "de": "sesshaft",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "yerleşik",
+   "mevcutBeispiel": "Nach Jahren des Pendelns ist die Familie endlich sesshaft geworden.",
+   "mevcutBeispielTr": "Yıllarca gidip gelmenin ardından aile nihayet yerleşik hâle geldi."
+  },
+  {
+   "id": 7157,
+   "de": "obgleich",
+   "typ": "Sonstiges",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "her ne kadar, -e rağmen",
+   "mevcutBeispiel": "Obgleich die Zahlen sinken, hält sich die Angst hartnäckig.",
+   "mevcutBeispielTr": "Rakamlar düşmesine rağmen korku inatla varlığını sürdürüyor.",
+   "cakisan": [
+    "wenngleich (C1)"
+   ]
+  },
+  {
+   "id": 7158,
+   "de": "die Erhebung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Erhebungen",
+   "mevcutTr": "veri toplama, anket çalışması, araştırma",
+   "mevcutBeispiel": "Die Erhebung wurde in vier Bundesländern gleichzeitig durchgeführt.",
+   "mevcutBeispielTr": "Veri toplama çalışması dört eyalette eşzamanlı olarak yürütüldü.",
+   "cakisan": [
+    "die Datenerhebung (C1)"
+   ]
+  },
+  {
+   "id": 7159,
+   "de": "die Messung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Messungen",
+   "mevcutTr": "ölçüm",
+   "mevcutBeispiel": "Die zweite Messung bestätigte die Werte der ersten Reihe.",
+   "mevcutBeispielTr": "İkinci ölçüm ilk serinin değerlerini doğruladı."
+  },
+  {
+   "id": 7160,
+   "de": "die Streuung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Streuungen",
+   "mevcutTr": "dağılım genişliği, saçılım",
+   "mevcutBeispiel": "Die Streuung der Einzelwerte ist deutlich größer als erwartet.",
+   "mevcutBeispielTr": "Tekil değerlerin saçılımı beklenenden belirgin biçimde daha büyük."
+  },
+  {
+   "id": 7161,
+   "de": "die Schätzung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schätzungen",
+   "mevcutTr": "tahmin, kestirim",
+   "mevcutBeispiel": "Vorsichtige Schätzungen gehen von etwa zwölf Prozent aus.",
+   "mevcutBeispielTr": "İhtiyatlı tahminler yaklaşık yüzde on iki civarında bir oran öngörüyor.",
+   "cakisan": [
+    "die Vermutung (B2)"
+   ]
+  },
+  {
+   "id": 7162,
+   "de": "die Prognose",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Prognosen",
+   "mevcutTr": "öngörü, tahmin",
+   "mevcutBeispiel": "Die Prognose beruht auf Daten der vergangenen zehn Jahre.",
+   "mevcutBeispielTr": "Öngörü, geçmiş on yılın verilerine dayanıyor."
+  },
+  {
+   "id": 7163,
+   "de": "das Merkmal",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Merkmale",
+   "mevcutTr": "özellik, nitelik, değişken özellik",
+   "mevcutBeispiel": "Alter und Bildungsstand wurden als zentrale Merkmale erfasst.",
+   "mevcutBeispielTr": "Yaş ve eğitim düzeyi temel özellikler olarak kaydedildi.",
+   "cakisan": [
+    "die Eigenschaft (B2)"
+   ]
+  },
+  {
+   "id": 7164,
+   "de": "die Ausprägung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ausprägungen",
+   "mevcutTr": "alabileceği değer, düzey, görünüm biçimi",
+   "mevcutBeispiel": "Das Merkmal kann drei verschiedene Ausprägungen annehmen.",
+   "mevcutBeispielTr": "Bu özellik üç farklı düzeyde ortaya çıkabilir."
+  },
+  {
+   "id": 7165,
+   "de": "der Datensatz",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Datensätze",
+   "mevcutTr": "veri seti, veri kaydı",
+   "mevcutBeispiel": "Unvollständige Datensätze wurden vor der Analyse aussortiert.",
+   "mevcutBeispielTr": "Eksik veri kayıtları analizden önce ayıklandı."
+  },
+  {
+   "id": 7166,
+   "de": "die Befragung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Befragungen",
+   "mevcutTr": "anket, görüşme",
+   "mevcutBeispiel": "An der Befragung nahmen rund zweitausend Haushalte teil.",
+   "mevcutBeispielTr": "Ankete yaklaşık iki bin hane katıldı.",
+   "cakisan": [
+    "die Umfrage (B1)"
+   ]
+  },
+  {
+   "id": 7167,
+   "de": "die Wahrscheinlichkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Wahrscheinlichkeiten",
+   "mevcutTr": "olasılık, ihtimal",
+   "mevcutBeispiel": "Die Wahrscheinlichkeit eines Zufallsbefunds liegt unter fünf Prozent.",
+   "mevcutBeispielTr": "Rastlantısal bir bulgu olma olasılığı yüzde beşin altında."
+  },
+  {
+   "id": 7168,
+   "de": "die Häufigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Häufigkeiten",
+   "mevcutTr": "sıklık, frekans",
+   "mevcutBeispiel": "Die Häufigkeit solcher Fälle hat sich seit 2010 verdoppelt.",
+   "mevcutBeispielTr": "Bu tür vakaların sıklığı 2010'dan bu yana iki katına çıktı."
+  },
+  {
+   "id": 7169,
+   "de": "die Verteilung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Verteilungen",
+   "mevcutTr": "dağılım",
+   "mevcutBeispiel": "Die Verteilung der Einkommen ist stark nach rechts verschoben.",
+   "mevcutBeispielTr": "Gelirlerin dağılımı belirgin biçimde sağa kaymış durumda."
+  },
+  {
+   "id": 7170,
+   "de": "der Mittelwert",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Mittelwerte",
+   "mevcutTr": "ortalama değer",
+   "mevcutBeispiel": "Der Mittelwert verdeckt hier erhebliche Unterschiede zwischen den Gruppen.",
+   "mevcutBeispielTr": "Ortalama değer burada gruplar arasındaki büyük farkları gizliyor."
+  },
+  {
+   "id": 7171,
+   "de": "der Ausreißer",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Ausreißer",
+   "mevcutTr": "aykırı değer, uç değer",
+   "mevcutBeispiel": "Ein einzelner Ausreißer verschiebt den Durchschnitt spürbar nach oben.",
+   "mevcutBeispielTr": "Tek bir aykırı değer ortalamayı hissedilir biçimde yukarı çekiyor."
+  },
+  {
+   "id": 7172,
+   "de": "die Grundgesamtheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Grundgesamtheiten",
+   "mevcutTr": "evren, ana kütle",
+   "mevcutBeispiel": "Die Stichprobe bildet die Grundgesamtheit nur unzureichend ab.",
+   "mevcutBeispielTr": "Örneklem, evreni yeterince temsil etmiyor."
+  },
+  {
+   "id": 7173,
+   "de": "die Gültigkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Gültigkeiten",
+   "mevcutTr": "geçerlilik",
+   "mevcutBeispiel": "Die Gültigkeit des Verfahrens wurde in mehreren Studien geprüft.",
+   "mevcutBeispielTr": "Yöntemin geçerliliği birçok çalışmada sınandı."
+  },
+  {
+   "id": 7174,
+   "de": "der Schwellenwert",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Schwellenwerte",
+   "mevcutTr": "eşik değer",
+   "mevcutBeispiel": "Erst oberhalb dieses Schwellenwerts gilt der Effekt als bedeutsam.",
+   "mevcutBeispielTr": "Etki ancak bu eşik değerin üstünde anlamlı sayılıyor."
+  },
+  {
+   "id": 7175,
+   "de": "die Bezugsgröße",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Bezugsgrößen",
+   "mevcutTr": "referans büyüklük, karşılaştırma ölçütü",
+   "mevcutBeispiel": "Ohne klare Bezugsgröße bleibt die Prozentangabe wenig aussagekräftig.",
+   "mevcutBeispielTr": "Net bir referans büyüklük olmadan yüzde bilgisi pek bir şey ifade etmiyor."
+  },
+  {
+   "id": 7176,
+   "de": "die Versuchsanordnung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Versuchsanordnungen",
+   "mevcutTr": "deney düzeneği, deney tasarımı",
+   "mevcutBeispiel": "Die Versuchsanordnung erlaubt keine eindeutige Aussage über die Ursache.",
+   "mevcutBeispielTr": "Deney tasarımı, neden hakkında kesin bir yargıya izin vermiyor."
+  },
+  {
+   "id": 7177,
+   "de": "die Längsschnittstudie",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Längsschnittstudien",
+   "mevcutTr": "boylamsal çalışma, uzunlamasına araştırma",
+   "mevcutBeispiel": "Eine Längsschnittstudie begleitet dieselben Personen über viele Jahre.",
+   "mevcutBeispielTr": "Boylamsal bir çalışma aynı kişileri uzun yıllar boyunca izler."
+  },
+  {
+   "id": 7178,
+   "de": "die Metaanalyse",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Metaanalysen",
+   "mevcutTr": "meta-analiz",
+   "mevcutBeispiel": "Die Metaanalyse fasst die Befunde aus 34 Einzelstudien zusammen.",
+   "mevcutBeispielTr": "Meta-analiz 34 ayrı çalışmanın bulgularını bir araya getiriyor."
+  },
+  {
+   "id": 7179,
+   "de": "die Störgröße",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Störgrößen",
+   "mevcutTr": "karıştırıcı etken, gürültü faktörü",
+   "mevcutBeispiel": "Mögliche Störgrößen wurden im Modell statistisch herausgerechnet.",
+   "mevcutBeispielTr": "Olası karıştırıcı etkenler modelde istatistiksel olarak arındırıldı."
+  },
+  {
+   "id": 7180,
+   "de": "die Einflussgröße",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Einflussgrößen",
+   "mevcutTr": "etkileyen değişken, belirleyici etken",
+   "mevcutBeispiel": "Das Einkommen erweist sich als stärkste Einflussgröße im Modell.",
+   "mevcutBeispielTr": "Gelir, modeldeki en güçlü etken olarak öne çıkıyor."
+  },
+  {
+   "id": 7181,
+   "de": "die Variable",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Variablen",
+   "mevcutTr": "değişken",
+   "mevcutBeispiel": "Zwei Variablen erklären zusammen fast die Hälfte der Unterschiede.",
+   "mevcutBeispielTr": "İki değişken birlikte farkların neredeyse yarısını açıklıyor.",
+   "cakisan": [
+    "wechselhaft (B2)"
+   ]
+  },
+  {
+   "id": 7182,
+   "de": "der Parameter",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Parameter",
+   "mevcutTr": "parametre, ayar değeri",
+   "mevcutBeispiel": "Schon kleine Änderungen der Parameter verändern das Ergebnis erheblich.",
+   "mevcutBeispielTr": "Parametrelerdeki küçük değişiklikler bile sonucu önemli ölçüde değiştiriyor."
+  },
+  {
+   "id": 7183,
+   "de": "der Indikator",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Indikatoren",
+   "mevcutTr": "gösterge",
+   "mevcutBeispiel": "Die Arbeitslosenquote gilt als grober Indikator für die Wirtschaftslage.",
+   "mevcutBeispielTr": "İşsizlik oranı, ekonomik durumun kaba bir göstergesi sayılıyor.",
+   "cakisan": [
+    "die Kennzahl (B2)"
+   ]
+  },
+  {
+   "id": 7184,
+   "de": "der Koeffizient",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Koeffizienten",
+   "mevcutTr": "katsayı",
+   "mevcutBeispiel": "Der Koeffizient bleibt auch nach der Bereinigung deutlich positiv.",
+   "mevcutBeispielTr": "Katsayı, arındırmadan sonra da belirgin biçimde pozitif kalıyor."
+  },
+  {
+   "id": 7185,
+   "de": "die Unsicherheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Unsicherheiten",
+   "mevcutTr": "belirsizlik, kesinsizlik",
+   "mevcutBeispiel": "Die verbleibenden Unsicherheiten sollten offen benannt werden.",
+   "mevcutBeispielTr": "Geriye kalan belirsizlikler açıkça dile getirilmeli.",
+   "cakisan": [
+    "die Ungewissheit (C1)"
+   ]
+  },
+  {
+   "id": 7186,
+   "de": "die Robustheit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "sağlamlık, dayanıklılık",
+   "mevcutBeispiel": "Zusätzliche Tests bestätigen die Robustheit der berichteten Effekte.",
+   "mevcutBeispielTr": "Ek testler, bildirilen etkilerin sağlamlığını doğruluyor.",
+   "cakisan": [
+    "die Tragfähigkeit (C1)"
+   ]
+  },
+  {
+   "id": 7187,
+   "de": "der Rückschluss",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Rückschlüsse",
+   "mevcutTr": "çıkarım, sonuç çıkarma",
+   "mevcutBeispiel": "Aus einer einzigen Erhebung lassen sich kaum Rückschlüsse ziehen.",
+   "mevcutBeispielTr": "Tek bir araştırmadan pek çıkarım yapılamaz."
+  },
+  {
+   "id": 7188,
+   "de": "die Übertragbarkeit",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "",
+   "mevcutTr": "aktarılabilirlik, genellenebilirlik",
+   "mevcutBeispiel": "Die Übertragbarkeit der Ergebnisse auf andere Länder ist fraglich.",
+   "mevcutBeispielTr": "Sonuçların başka ülkelere aktarılabilirliği tartışmalı."
+  },
+  {
+   "id": 7189,
+   "de": "die Vorgehensweise",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Vorgehensweisen",
+   "mevcutTr": "izlenen yöntem, yaklaşım",
+   "mevcutBeispiel": "Die gewählte Vorgehensweise wird im Anhang ausführlich dokumentiert.",
+   "mevcutBeispielTr": "Seçilen yöntem ekte ayrıntılı olarak belgeleniyor."
+  },
+  {
+   "id": 7190,
+   "de": "das Signifikanzniveau",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Signifikanzniveaus",
+   "mevcutTr": "anlamlılık düzeyi",
+   "mevcutBeispiel": "Der Effekt bleibt auf dem üblichen Signifikanzniveau nachweisbar.",
+   "mevcutBeispielTr": "Etki, alışılmış anlamlılık düzeyinde saptanabilir kalıyor."
+  },
+  {
+   "id": 7191,
+   "de": "die Normierung",
+   "typ": "Nomen",
+   "niveau": "C1",
+   "formen": "Normierungen",
+   "mevcutTr": "standartlaştırma, normalleştirme",
+   "mevcutBeispiel": "Ohne Normierung sind die Werte der beiden Skalen nicht vergleichbar.",
+   "mevcutBeispielTr": "Normlaştırma olmadan iki ölçeğin değerleri karşılaştırılabilir değil.",
+   "cakisan": [
+    "die Standardisierung (C1)"
+   ]
+  },
+  {
+   "id": 7192,
+   "de": "bereinigen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat bereinigt",
+   "mevcutTr": "arındırmak, düzeltmek",
+   "mevcutBeispiel": "Die Zahlen sind um saisonale Effekte bereinigt worden.",
+   "mevcutBeispielTr": "Rakamlar mevsimsel etkilerden arındırıldı."
+  },
+  {
+   "id": 7193,
+   "de": "extrapolieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat extrapoliert",
+   "mevcutTr": "eğilimi ileriye taşımak, ekstrapolasyon yapmak",
+   "mevcutBeispiel": "Man sollte den Trend nicht unbesehen in die Zukunft extrapolieren.",
+   "mevcutBeispielTr": "Eğilim sorgusuzca geleceğe taşınmamalı."
+  },
+  {
+   "id": 7194,
+   "de": "validieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat validiert",
+   "mevcutTr": "geçerliliğini sınamak, doğrulamak",
+   "mevcutBeispiel": "Das Modell wurde anhand unabhängiger Daten validiert.",
+   "mevcutBeispielTr": "Model, bağımsız verilerle doğrulandı."
+  },
+  {
+   "id": 7195,
+   "de": "zurückführen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat zurückgeführt",
+   "mevcutTr": "bir nedene bağlamak, dayandırmak",
+   "mevcutBeispiel": "Der Rückgang wird vor allem auf die Alterung der Bevölkerung zurückgeführt.",
+   "mevcutBeispielTr": "Düşüş her şeyden önce nüfusun yaşlanmasına bağlanıyor."
+  },
+  {
+   "id": 7196,
+   "de": "unterschätzen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat unterschätzt",
+   "mevcutTr": "hafife almak, olduğundan az tahmin etmek",
+   "mevcutBeispiel": "Ältere Modelle haben das Tempo der Entwicklung deutlich unterschätzt.",
+   "mevcutBeispielTr": "Eski modeller gelişmenin hızını belirgin biçimde olduğundan az tahmin etti."
+  },
+  {
+   "id": 7197,
+   "de": "gegenüberstellen",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat gegenübergestellt",
+   "mevcutTr": "karşı karşıya koymak, karşılaştırmak",
+   "mevcutBeispiel": "Die Tabelle stellt die Werte beider Erhebungsjahre gegenüber.",
+   "mevcutBeispielTr": "Tablo, iki araştırma yılının değerlerini karşılaştırmalı olarak veriyor."
+  },
+  {
+   "id": 7198,
+   "de": "aggregieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat aggregiert",
+   "mevcutTr": "toplulaştırmak, bir araya toplamak",
+   "mevcutBeispiel": "Die Einzelangaben wurden auf Kreisebene aggregiert.",
+   "mevcutBeispielTr": "Tekil veriler ilçe düzeyinde toplulaştırıldı."
+  },
+  {
+   "id": 7199,
+   "de": "replizieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat repliziert",
+   "mevcutTr": "yinelemek, aynı koşullarda tekrarlamak",
+   "mevcutBeispiel": "Bislang konnte kein Team den Effekt erfolgreich replizieren.",
+   "mevcutBeispielTr": "Şimdiye dek hiçbir ekip etkiyi başarıyla yineleyemedi."
+  },
+  {
+   "id": 7200,
+   "de": "operationalisieren",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat operationalisiert",
+   "mevcutTr": "ölçülebilir hale getirmek, işlevsel tanıma dökmek",
+   "mevcutBeispiel": "Wie man Lebensqualität operationalisiert, bleibt umstritten.",
+   "mevcutBeispielTr": "Yaşam kalitesinin nasıl ölçülebilir kılınacağı tartışmalı kalıyor."
+  },
+  {
+   "id": 7201,
+   "de": "erhärten",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat erhärtet",
+   "mevcutTr": "pekiştirmek, kanıtlarla güçlendirmek",
+   "mevcutBeispiel": "Neuere Daten erhärten den Verdacht auf einen systematischen Fehler.",
+   "mevcutBeispielTr": "Yeni veriler, sistematik bir hata şüphesini güçlendiriyor.",
+   "cakisan": [
+    "festigen (B2)"
+   ]
+  },
+  {
+   "id": 7202,
+   "de": "abbilden",
+   "typ": "Verb",
+   "niveau": "C1",
+   "formen": "hat abgebildet",
+   "mevcutTr": "yansıtmak, temsil etmek",
+   "mevcutBeispiel": "Der Index bildet die tatsächliche Belastung nur unvollständig ab.",
+   "mevcutBeispielTr": "Endeks, gerçek yükü ancak eksik biçimde yansıtıyor.",
+   "cakisan": [
+    "widerspiegeln (C1)"
+   ]
+  }
+ ]
+}

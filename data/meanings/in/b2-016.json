@@ -1,0 +1,554 @@
+{
+ "paket": "b2-016",
+ "niveau": "B2",
+ "kelimeler": [
+  {
+   "id": 4393,
+   "de": "die Massentierhaltung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "endüstriyel hayvancılık, fabrika tipi hayvancılık",
+   "mevcutBeispiel": "Der Film zeigt schonungslos die Zustände in der Massentierhaltung.",
+   "mevcutBeispielTr": "Film, endüstriyel hayvancılıktaki koşulları acımasızca gösteriyor."
+  },
+  {
+   "id": 4394,
+   "de": "die Molkerei",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Molkereien",
+   "mevcutTr": "mandıra, süt fabrikası",
+   "mevcutBeispiel": "Die Molkerei holt die Milch jeden zweiten Tag vom Hof ab.",
+   "mevcutBeispielTr": "Mandıra sütü gün aşırı çiftlikten topluyor."
+  },
+  {
+   "id": 4395,
+   "de": "die Lagerung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Lagerungen",
+   "mevcutTr": "depolama, saklama",
+   "mevcutBeispiel": "Bei falscher Lagerung verlieren Äpfel schnell ihren Geschmack.",
+   "mevcutBeispielTr": "Yanlış depolamada elmalar tadını çabuk yitirir."
+  },
+  {
+   "id": 4396,
+   "de": "die Kühlkette",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kühlketten",
+   "mevcutTr": "soğuk zincir",
+   "mevcutBeispiel": "Wird die Kühlkette unterbrochen, ist die Ware nicht mehr sicher.",
+   "mevcutBeispielTr": "Soğuk zincir kırılırsa mal artık güvenli değildir."
+  },
+  {
+   "id": 4397,
+   "de": "der Zusatzstoff",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Zusatzstoffe",
+   "mevcutTr": "katkı maddesi",
+   "mevcutBeispiel": "Das Produkt kommt ganz ohne künstliche Zusatzstoffe aus.",
+   "mevcutBeispielTr": "Ürün hiç yapay katkı maddesi içermiyor."
+  },
+  {
+   "id": 4398,
+   "de": "der Rückruf",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Rückrufe",
+   "mevcutTr": "geri çağırma, ürün toplatma",
+   "mevcutBeispiel": "Der Hersteller startete einen Rückruf für mehrere Chargen Käse.",
+   "mevcutBeispielTr": "Üretici birkaç parti peynir için toplatma başlattı."
+  },
+  {
+   "id": 4399,
+   "de": "der Geschmacksverstärker",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Geschmacksverstärker",
+   "mevcutTr": "tat arttırıcı, lezzet arttırıcı",
+   "mevcutBeispiel": "In der Fertigsuppe stecken gleich mehrere Geschmacksverstärker.",
+   "mevcutBeispielTr": "Hazır çorbanın içinde birden fazla tat arttırıcı var."
+  },
+  {
+   "id": 4400,
+   "de": "die Mangelernährung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "yetersiz beslenme",
+   "mevcutBeispiel": "Auch in reichen Ländern leiden alte Menschen an Mangelernährung.",
+   "mevcutBeispielTr": "Zengin ülkelerde de yaşlılar yetersiz beslenmeden muzdarip."
+  },
+  {
+   "id": 4401,
+   "de": "die Unverträglichkeit",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Unverträglichkeiten",
+   "mevcutTr": "intolerans, tahammülsüzlük",
+   "mevcutBeispiel": "Bei einer Unverträglichkeit muss man die Zutatenliste genau lesen.",
+   "mevcutBeispielTr": "İntolerans durumunda içindekiler listesini dikkatle okumak gerekir."
+  },
+  {
+   "id": 4402,
+   "de": "das Allergen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Allergene",
+   "mevcutTr": "alerjen",
+   "mevcutBeispiel": "Die vierzehn wichtigsten Allergene müssen auf der Karte stehen.",
+   "mevcutBeispielTr": "En önemli on dört alerjen menüde belirtilmek zorunda."
+  },
+  {
+   "id": 4403,
+   "de": "der Ertrag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Erträge",
+   "mevcutTr": "verim, ürün miktarı, getiri",
+   "mevcutBeispiel": "Trotz der Trockenheit lag der Ertrag über dem Durchschnitt.",
+   "mevcutBeispielTr": "Kuraklığa rağmen verim ortalamanın üzerindeydi.",
+   "cakisan": [
+    "der Wirkungsgrad (B2)",
+    "die Ausbeute (B2)"
+   ]
+  },
+  {
+   "id": 4404,
+   "de": "das Saatgut",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "tohumluk, tohum",
+   "mevcutBeispiel": "Das Saatgut stammt aus einer regionalen Vermehrung.",
+   "mevcutBeispielTr": "Tohumluk yöresel bir üretimden geliyor."
+  },
+  {
+   "id": 4405,
+   "de": "schlachten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat geschlachtet",
+   "mevcutTr": "kesmek, boğazlamak",
+   "mevcutBeispiel": "Die Tiere werden erst in einem Betrieb weiter weg geschlachtet.",
+   "mevcutBeispielTr": "Hayvanlar ancak uzaktaki bir tesiste kesiliyor.",
+   "cakisan": [
+    "sich schneiden (B1)",
+    "unterbrechen (B1)",
+    "einbehalten (B2)",
+    "zuschneiden (B2)",
+    "schneiden (A2)",
+    "fällen (A2)"
+   ]
+  },
+  {
+   "id": 4406,
+   "de": "melken",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gemolken",
+   "mevcutTr": "sağmak",
+   "mevcutBeispiel": "Heute werden die Kühe von einem Roboter gemolken.",
+   "mevcutBeispielTr": "Bugünlerde inekler bir robot tarafından sağılıyor."
+  },
+  {
+   "id": 4407,
+   "de": "verarbeiten",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verarbeitet",
+   "mevcutTr": "işlemek, işleyip ürüne dönüştürmek",
+   "mevcutBeispiel": "Der Hof verarbeitet die Milch selbst zu Käse und Joghurt.",
+   "mevcutBeispielTr": "Çiftlik sütü kendisi peynire ve yoğurda dönüştürüyor.",
+   "cakisan": [
+    "bewirtschaften (B2)",
+    "durchnehmen (A2)"
+   ]
+  },
+  {
+   "id": 4408,
+   "de": "konservieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat konserviert",
+   "mevcutTr": "muhafaza etmek, konserve yapmak",
+   "mevcutBeispiel": "Früher konservierte man Gemüse vor allem mit Salz.",
+   "mevcutBeispielTr": "Eskiden sebze en çok tuzla muhafaza edilirdi."
+  },
+  {
+   "id": 4409,
+   "de": "verderben",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist verdorben",
+   "mevcutTr": "bozulmak, çürümek",
+   "mevcutBeispiel": "Bei dieser Hitze verdirbt das Fleisch innerhalb weniger Stunden.",
+   "mevcutBeispielTr": "Bu sıcakta et birkaç saat içinde bozuluyor.",
+   "cakisan": [
+    "kaputtgehen (B1)"
+   ]
+  },
+  {
+   "id": 4410,
+   "de": "wegwerfen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat weggeworfen",
+   "mevcutTr": "atmak, çöpe atmak",
+   "mevcutBeispiel": "Jeder Haushalt wirft im Jahr rund achtzig Kilo Essen weg.",
+   "mevcutBeispielTr": "Her hane yılda yaklaşık seksen kilo yiyeceği çöpe atıyor.",
+   "cakisan": [
+    "werfen (B1)"
+   ]
+  },
+  {
+   "id": 4411,
+   "de": "beliefern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat beliefert",
+   "mevcutTr": "mal sağlamak, tedarik etmek",
+   "mevcutBeispiel": "Der Betrieb beliefert mehrere Kantinen in der Stadt.",
+   "mevcutBeispielTr": "İşletme şehirdeki birçok yemekhaneye mal sağlıyor."
+  },
+  {
+   "id": 4412,
+   "de": "zertifizieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat zertifiziert",
+   "mevcutTr": "belgelendirmek, sertifikalandırmak",
+   "mevcutBeispiel": "Der Hof ist seit drei Jahren als ökologischer Betrieb zertifiziert.",
+   "mevcutBeispielTr": "Çiftlik üç yıldır organik işletme olarak belgelendirilmiş durumda."
+  },
+  {
+   "id": 4413,
+   "de": "subventionieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat subventioniert",
+   "mevcutTr": "sübvanse etmek, desteklemek",
+   "mevcutBeispiel": "Der Staat subventioniert kleine Höfe in benachteiligten Regionen.",
+   "mevcutBeispielTr": "Devlet, dezavantajlı bölgelerdeki küçük çiftlikleri sübvanse ediyor."
+  },
+  {
+   "id": 4414,
+   "de": "bewirtschaften",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat bewirtschaftet",
+   "mevcutTr": "işlemek, tarımını yapmak, idare etmek",
+   "mevcutBeispiel": "Die Familie bewirtschaftet knapp vierzig Hektar Ackerland.",
+   "mevcutBeispielTr": "Aile kırk hektara yakın tarım arazisini işliyor.",
+   "cakisan": [
+    "verarbeiten (B2)",
+    "durchnehmen (A2)"
+   ]
+  },
+  {
+   "id": 4415,
+   "de": "pflügen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gepflügt",
+   "mevcutTr": "çift sürmek, toprağı sürmek",
+   "mevcutBeispiel": "Im Herbst wird das Feld ein letztes Mal gepflügt.",
+   "mevcutBeispielTr": "Sonbaharda tarla son bir kez sürülüyor."
+  },
+  {
+   "id": 4416,
+   "de": "säen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gesät",
+   "mevcutTr": "ekmek, tohum atmak",
+   "mevcutBeispiel": "Wer zu früh sät, riskiert Verluste durch späten Frost.",
+   "mevcutBeispielTr": "Çok erken eken, geç donlar yüzünden kayıp riskine giriyor.",
+   "cakisan": [
+    "das Brot (A1)"
+   ]
+  },
+  {
+   "id": 4417,
+   "de": "verfüttern",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat verfüttert",
+   "mevcutTr": "yem olarak vermek",
+   "mevcutBeispiel": "Ein Teil des Getreides wird direkt an die Schweine verfüttert.",
+   "mevcutBeispielTr": "Tahılın bir kısmı doğrudan domuzlara yem olarak veriliyor."
+  },
+  {
+   "id": 4418,
+   "de": "mästen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gemästet",
+   "mevcutTr": "besiye çekmek, semirtmek",
+   "mevcutBeispiel": "Die Kälber werden nur wenige Monate lang gemästet.",
+   "mevcutBeispielTr": "Buzağılar yalnızca birkaç ay boyunca besiye çekiliyor."
+  },
+  {
+   "id": 4419,
+   "de": "keimen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist gekeimt",
+   "mevcutTr": "çimlenmek, filizlenmek",
+   "mevcutBeispiel": "Die Kartoffeln haben im warmen Keller schon gekeimt.",
+   "mevcutBeispielTr": "Patatesler sıcak bodrumda çoktan filizlenmiş."
+  },
+  {
+   "id": 4420,
+   "de": "schimmeln",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist geschimmelt",
+   "mevcutTr": "küflenmek",
+   "mevcutBeispiel": "Brot schimmelt in der Plastiktüte schneller als im Topf.",
+   "mevcutBeispielTr": "Ekmek plastik poşette kaptakinden daha çabuk küfleniyor."
+  },
+  {
+   "id": 4421,
+   "de": "gären",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "ist gegoren",
+   "mevcutTr": "mayalanmak, fermente olmak",
+   "mevcutBeispiel": "Der Kohl muss mehrere Wochen im Fass gären.",
+   "mevcutBeispielTr": "Lahananın fıçıda birkaç hafta mayalanması gerekiyor."
+  },
+  {
+   "id": 4422,
+   "de": "pasteurisieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat pasteurisiert",
+   "mevcutTr": "pastörize etmek",
+   "mevcutBeispiel": "Die Milch wird kurz erhitzt und damit pasteurisiert.",
+   "mevcutBeispielTr": "Süt kısaca ısıtılıyor ve böylece pastörize ediliyor."
+  },
+  {
+   "id": 4423,
+   "de": "abfüllen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat abgefüllt",
+   "mevcutTr": "doldurmak, şişelemek",
+   "mevcutBeispiel": "Der Saft wird noch am selben Tag in Flaschen abgefüllt.",
+   "mevcutBeispielTr": "Meyve suyu aynı gün şişelere dolduruluyor.",
+   "cakisan": [
+    "auffüllen (A2)",
+    "einschenken (A2)",
+    "füllen (A2)"
+   ]
+  },
+  {
+   "id": 4424,
+   "de": "aussortieren",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat aussortiert",
+   "mevcutTr": "ayıklamak, ayırıp çıkarmak",
+   "mevcutBeispiel": "Krumme Gurken werden schon im Betrieb aussortiert.",
+   "mevcutBeispielTr": "Eğri salatalıklar daha işletmede ayıklanıyor.",
+   "cakisan": [
+    "ausmisten (A2)"
+   ]
+  },
+  {
+   "id": 4425,
+   "de": "sättigen",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat gesättigt",
+   "mevcutTr": "doyurmak, tok tutmak",
+   "mevcutBeispiel": "Haferflocken sättigen länger als ein süßes Frühstück.",
+   "mevcutBeispielTr": "Yulaf ezmesi tatlı bir kahvaltıdan daha uzun süre tok tutuyor."
+  },
+  {
+   "id": 4426,
+   "de": "erwirtschaften",
+   "typ": "Verb",
+   "niveau": "B2",
+   "formen": "hat erwirtschaftet",
+   "mevcutTr": "kazanmak, elde etmek",
+   "mevcutBeispiel": "Der Hof erwirtschaftet den größten Teil seines Umsatzes im Hofladen.",
+   "mevcutBeispielTr": "Çiftlik cirosunun büyük bölümünü çiftlik dükkânından elde ediyor.",
+   "cakisan": [
+    "verdienen (A1)",
+    "siegen (B1)",
+    "erwerben (B2)"
+   ]
+  },
+  {
+   "id": 4427,
+   "de": "ökologisch",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "ekolojik, organik",
+   "mevcutBeispiel": "Der Betrieb arbeitet seit der Umstellung vollständig ökologisch.",
+   "mevcutBeispielTr": "İşletme dönüşümden bu yana tamamen ekolojik çalışıyor."
+  },
+  {
+   "id": 4428,
+   "de": "konventionell",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "geleneksel, klasik yöntemle yapılan",
+   "mevcutBeispiel": "Konventionell angebaute Ware ist im Schnitt deutlich billiger.",
+   "mevcutBeispielTr": "Geleneksel yöntemle yetiştirilen mal ortalamada belirgin şekilde daha ucuz.",
+   "cakisan": [
+    "traditionell (B1)"
+   ]
+  },
+  {
+   "id": 4429,
+   "de": "saisonal",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "mevsimlik, mevsimine göre",
+   "mevcutBeispiel": "Wer saisonal einkauft, spart Geld und schont das Klima.",
+   "mevcutBeispielTr": "Mevsimine göre alışveriş yapan hem para biriktirir hem iklimi korur."
+  },
+  {
+   "id": 4430,
+   "de": "artgerecht",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "türüne uygun",
+   "mevcutBeispiel": "Eine artgerechte Haltung braucht mehr Platz und mehr Personal.",
+   "mevcutBeispielTr": "Türüne uygun bir yetiştiricilik daha çok yer ve daha çok personel gerektirir."
+  },
+  {
+   "id": 4431,
+   "de": "fettarm",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "az yağlı",
+   "mevcutBeispiel": "Der Arzt hat ihr eine fettarme Kost empfohlen.",
+   "mevcutBeispielTr": "Doktor ona az yağlı bir beslenme önerdi."
+  },
+  {
+   "id": 4432,
+   "de": "gentechnikfrei",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "gen teknolojisi içermeyen, GDO'suz",
+   "mevcutBeispiel": "Das Futter für diese Hühner ist nachweislich gentechnikfrei.",
+   "mevcutBeispielTr": "Bu tavukların yemi kanıtlanmış biçimde GDO'suz."
+  },
+  {
+   "id": 4433,
+   "de": "zuckerhaltig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "şeker içeren, şekerli",
+   "mevcutBeispiel": "Zuckerhaltige Getränke sollen in Schulen künftig verschwinden.",
+   "mevcutBeispielTr": "Şeker içeren içecekler bundan böyle okullardan kaldırılacak."
+  },
+  {
+   "id": 4434,
+   "de": "ranzig",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "acılaşmış, ekşimiş",
+   "mevcutBeispiel": "Die Nüsse schmecken ranzig und gehören in den Müll.",
+   "mevcutBeispielTr": "Cevizlerin tadı acılaşmış, çöpe gitmeleri gerek."
+  },
+  {
+   "id": 4435,
+   "de": "reichlich",
+   "typ": "Sonstiges",
+   "niveau": "B2",
+   "formen": "",
+   "mevcutTr": "bol, bolca, epeyce",
+   "mevcutBeispiel": "In diesem Jahr gab es reichlich Obst aus der Region.",
+   "mevcutBeispielTr": "Bu yıl yöreden bol miktarda meyve çıktı."
+  },
+  {
+   "id": 4436,
+   "de": "das Darlehen",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Darlehen",
+   "mevcutTr": "kredi, borç para",
+   "mevcutBeispiel": "Die Bank hat uns ein zinsgünstiges Darlehen für den Hausbau gewährt.",
+   "mevcutBeispielTr": "Banka ev yapımı için bize düşük faizli bir kredi verdi.",
+   "cakisan": [
+    "der Kredit (A2)"
+   ]
+  },
+  {
+   "id": 4437,
+   "de": "die Ratenzahlung",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Ratenzahlungen",
+   "mevcutTr": "taksitle ödeme, taksit",
+   "mevcutBeispiel": "Bei Ratenzahlung fallen zusätzliche Kosten von acht Prozent an.",
+   "mevcutBeispielTr": "Taksitli ödemede yüzde sekiz ek maliyet doğuyor."
+  },
+  {
+   "id": 4438,
+   "de": "die Bürgschaft",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Bürgschaften",
+   "mevcutTr": "kefalet, kefillik",
+   "mevcutBeispiel": "Ohne die Bürgschaft der Eltern hätte er keine Wohnung bekommen.",
+   "mevcutBeispielTr": "Ailesinin kefaleti olmasaydı bir daire bulamazdı."
+  },
+  {
+   "id": 4439,
+   "de": "der Kontoauszug",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Kontoauszüge",
+   "mevcutTr": "hesap ekstresi, hesap dökümü",
+   "mevcutBeispiel": "Auf dem letzten Kontoauszug entdeckte sie eine unbekannte Abbuchung.",
+   "mevcutBeispielTr": "Son hesap ekstresinde tanımadığı bir kesinti fark etti."
+  },
+  {
+   "id": 4440,
+   "de": "die Lastschrift",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Lastschriften",
+   "mevcutTr": "otomatik ödeme talimatı, hesaptan tahsilat",
+   "mevcutBeispiel": "Die Miete wird jeden Monat per Lastschrift eingezogen.",
+   "mevcutBeispielTr": "Kira her ay otomatik ödeme talimatıyla tahsil ediliyor."
+  },
+  {
+   "id": 4441,
+   "de": "der Dauerauftrag",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Daueraufträge",
+   "mevcutTr": "düzenli ödeme talimatı",
+   "mevcutBeispiel": "Für die Versicherung habe ich einen Dauerauftrag eingerichtet.",
+   "mevcutBeispielTr": "Sigorta için düzenli ödeme talimatı verdim."
+  },
+  {
+   "id": 4442,
+   "de": "das Guthaben",
+   "typ": "Nomen",
+   "niveau": "B2",
+   "formen": "Guthaben",
+   "mevcutTr": "alacak, hesapta kalan artı bakiye",
+   "mevcutBeispiel": "Nach der Rückerstattung besteht auf deinem Konto ein kleines Guthaben.",
+   "mevcutBeispielTr": "İade sonrasında hesabında küçük bir bakiye kaldı."
+  }
+ ]
+}

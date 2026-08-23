@@ -1,0 +1,555 @@
+{
+ "paket": "a2-013",
+ "niveau": "A2",
+ "kelimeler": [
+  {
+   "id": 7588,
+   "de": "monatelang",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "aylarca",
+   "mevcutBeispiel": "Sie hat monatelang eine Wohnung gesucht.",
+   "mevcutBeispielTr": "Aylarca daire aradı."
+  },
+  {
+   "id": 7589,
+   "de": "morgens",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sabahları",
+   "mevcutBeispiel": "Morgens trinke ich immer einen Tee.",
+   "mevcutBeispielTr": "Sabahları hep bir çay içerim."
+  },
+  {
+   "id": 7590,
+   "de": "abends",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "akşamları",
+   "mevcutBeispiel": "Abends bin ich meistens zu müde zum Kochen.",
+   "mevcutBeispielTr": "Akşamları çoğunlukla yemek yapamayacak kadar yorgun oluyorum."
+  },
+  {
+   "id": 7591,
+   "de": "mittags",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "öğlenleri",
+   "mevcutBeispiel": "Mittags esse ich in der Kantine.",
+   "mevcutBeispielTr": "Öğlenleri yemekhanede yemek yiyorum."
+  },
+  {
+   "id": 7592,
+   "de": "nachts",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "geceleri",
+   "mevcutBeispiel": "Nachts ist es hier sehr ruhig.",
+   "mevcutBeispielTr": "Geceleri burası çok sakin oluyor."
+  },
+  {
+   "id": 7593,
+   "de": "sonntags",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "pazarları, pazar günleri",
+   "mevcutBeispiel": "Sonntags haben die Geschäfte geschlossen.",
+   "mevcutBeispielTr": "Pazarları dükkânlar kapalı."
+  },
+  {
+   "id": 7594,
+   "de": "gelegentlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ara sıra, fırsat buldukça",
+   "mevcutBeispiel": "Gelegentlich gehen wir zusammen schwimmen.",
+   "mevcutBeispielTr": "Ara sıra birlikte yüzmeye gidiyoruz."
+  },
+  {
+   "id": 7595,
+   "de": "mehrmals",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "birkaç kez, defalarca",
+   "mevcutBeispiel": "Ich habe dich mehrmals angerufen.",
+   "mevcutBeispielTr": "Seni birkaç kez aradım."
+  },
+  {
+   "id": 7596,
+   "de": "mehrfach",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "birden çok kez, tekrar tekrar",
+   "mevcutBeispiel": "Das Formular wurde mehrfach kontrolliert.",
+   "mevcutBeispielTr": "Form birden çok kez kontrol edildi."
+  },
+  {
+   "id": 7597,
+   "de": "wiederholt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "defalarca, üst üste",
+   "mevcutBeispiel": "Der Nachbar hat sich wiederholt über den Lärm beschwert.",
+   "mevcutBeispielTr": "Komşu gürültüden üst üste şikâyet etti."
+  },
+  {
+   "id": 7598,
+   "de": "stets",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "daima, her zaman",
+   "mevcutBeispiel": "Der Chef ist stets freundlich zu den Kunden.",
+   "mevcutBeispielTr": "Patron müşterilere daima nazik davranıyor."
+  },
+  {
+   "id": 7599,
+   "de": "andauernd",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sürekli, ha bire",
+   "mevcutBeispiel": "Mein Handy klingelt andauernd.",
+   "mevcutBeispielTr": "Telefonum sürekli çalıyor.",
+   "cakisan": [
+    "dauernd (B1)",
+    "ständig (B1)"
+   ]
+  },
+  {
+   "id": 7600,
+   "de": "ausnahmsweise",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "istisna olarak, bir kereliğine",
+   "mevcutBeispiel": "Heute darfst du ausnahmsweise länger fernsehen.",
+   "mevcutBeispielTr": "Bugün istisna olarak daha uzun televizyon izleyebilirsin."
+  },
+  {
+   "id": 7601,
+   "de": "vollkommen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "tamamen, büsbütün",
+   "mevcutBeispiel": "Nach dem Umzug war ich vollkommen erschöpft.",
+   "mevcutBeispielTr": "Taşınmadan sonra tamamen bitkindim.",
+   "cakisan": [
+    "total (A2)",
+    "komplett (B1)",
+    "völlig (B1)"
+   ]
+  },
+  {
+   "id": 7602,
+   "de": "äußerst",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "son derece, aşırı",
+   "mevcutBeispiel": "Die Prüfung war äußerst schwer.",
+   "mevcutBeispielTr": "Sınav son derece zordu."
+  },
+  {
+   "id": 7603,
+   "de": "einigermaßen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "az çok, idare eder ölçüde",
+   "mevcutBeispiel": "Ich spreche einigermaßen gut Deutsch.",
+   "mevcutBeispielTr": "Az çok iyi Almanca konuşuyorum."
+  },
+  {
+   "id": 7604,
+   "de": "genügend",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yeterince, kâfi miktarda",
+   "mevcutBeispiel": "Wir haben genügend Stühle für alle Gäste.",
+   "mevcutBeispielTr": "Bütün misafirler için yeterince sandalyemiz var."
+  },
+  {
+   "id": 7605,
+   "de": "teilweise",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "kısmen",
+   "mevcutBeispiel": "Die Rechnung wurde nur teilweise bezahlt.",
+   "mevcutBeispielTr": "Fatura yalnızca kısmen ödendi."
+  },
+  {
+   "id": 7606,
+   "de": "halbwegs",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "şöyle böyle, az çok",
+   "mevcutBeispiel": "Das Zimmer ist jetzt halbwegs sauber.",
+   "mevcutBeispielTr": "Oda şimdi şöyle böyle temiz."
+  },
+  {
+   "id": 7607,
+   "de": "größtenteils",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "büyük ölçüde, çoğunlukla",
+   "mevcutBeispiel": "Die Arbeit ist größtenteils fertig.",
+   "mevcutBeispielTr": "İş büyük ölçüde bitti.",
+   "cakisan": [
+    "weitgehend (C1)"
+   ]
+  },
+  {
+   "id": 7608,
+   "de": "etliche",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "epeyce, birçok",
+   "mevcutBeispiel": "Auf dem Markt gab es etliche gute Angebote.",
+   "mevcutBeispielTr": "Pazarda epeyce iyi teklif vardı."
+  },
+  {
+   "id": 7609,
+   "de": "hauptsächlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "başlıca, esas olarak",
+   "mevcutBeispiel": "Ich esse hauptsächlich Gemüse und Obst.",
+   "mevcutBeispielTr": "Başlıca sebze ve meyve yiyorum."
+  },
+  {
+   "id": 7610,
+   "de": "insbesondere",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "özellikle, bilhassa",
+   "mevcutBeispiel": "Der Kurs hilft insbesondere den Anfängern.",
+   "mevcutBeispielTr": "Kurs özellikle yeni başlayanlara yardımcı oluyor.",
+   "cakisan": [
+    "besonders (A1)",
+    "vor allem (B1)"
+   ]
+  },
+  {
+   "id": 7611,
+   "de": "erstens",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "birincisi, ilk olarak",
+   "mevcutBeispiel": "Erstens ist die Wohnung zu teuer, zweitens ist sie zu klein.",
+   "mevcutBeispielTr": "Birincisi daire çok pahalı, ikincisi çok küçük."
+  },
+  {
+   "id": 7612,
+   "de": "zweitens",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ikincisi",
+   "mevcutBeispiel": "Zweitens brauchen wir noch einen Tisch für die Küche.",
+   "mevcutBeispielTr": "İkincisi mutfak için bir masaya daha ihtiyacımız var."
+  },
+  {
+   "id": 7613,
+   "de": "drittens",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "üçüncüsü",
+   "mevcutBeispiel": "Drittens sollten wir früher losfahren.",
+   "mevcutBeispielTr": "Üçüncüsü daha erken yola çıkmalıyız."
+  },
+  {
+   "id": 7614,
+   "de": "daraufhin",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bunun üzerine",
+   "mevcutBeispiel": "Ich habe mich beschwert, daraufhin hat die Firma das Geld zurückgezahlt.",
+   "mevcutBeispielTr": "Şikâyet ettim, bunun üzerine firma parayı geri ödedi."
+  },
+  {
+   "id": 7615,
+   "de": "letztlich",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "sonuçta, nihayetinde",
+   "mevcutBeispiel": "Letztlich haben wir uns für das kleine Auto entschieden.",
+   "mevcutBeispielTr": "Sonuçta küçük arabayı seçtik."
+  },
+  {
+   "id": 7616,
+   "de": "noch mal",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bir daha, tekrar",
+   "mevcutBeispiel": "Kannst du das bitte nochmal erklären?",
+   "mevcutBeispielTr": "Bunu lütfen bir daha açıklayabilir misin?"
+  },
+  {
+   "id": 7617,
+   "de": "erneut",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yeniden, tekrardan",
+   "mevcutBeispiel": "Der Bus hatte erneut Verspätung.",
+   "mevcutBeispielTr": "Otobüs yeniden gecikti."
+  },
+  {
+   "id": 7618,
+   "de": "irgendwo",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bir yerde, herhangi bir yerde",
+   "mevcutBeispiel": "Mein Schlüssel muss irgendwo in der Tasche sein.",
+   "mevcutBeispielTr": "Anahtarım çantada bir yerde olmalı."
+  },
+  {
+   "id": 7619,
+   "de": "irgendwie",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bir şekilde, nasılsa",
+   "mevcutBeispiel": "Wir schaffen das irgendwie bis Freitag.",
+   "mevcutBeispielTr": "Bunu bir şekilde cumaya kadar hallederiz."
+  },
+  {
+   "id": 7620,
+   "de": "entweder",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ya (… ya da)",
+   "mevcutBeispiel": "Wir fahren entweder mit dem Zug oder mit dem Bus.",
+   "mevcutBeispielTr": "Ya trenle ya da otobüsle gideriz."
+  },
+  {
+   "id": 7621,
+   "de": "weder",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ne (… ne de)",
+   "mevcutBeispiel": "Ich habe weder Zeit noch Lust.",
+   "mevcutBeispielTr": "Ne vaktim ne de hevesim var.",
+   "cakisan": [
+    "was (A1)"
+   ]
+  },
+  {
+   "id": 7622,
+   "de": "sowohl",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "hem (… hem de)",
+   "mevcutBeispiel": "Sie spricht sowohl Türkisch als auch Deutsch.",
+   "mevcutBeispielTr": "Hem Türkçe hem de Almanca konuşuyor."
+  },
+  {
+   "id": 7623,
+   "de": "sowie",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ve ayrıca, ile birlikte",
+   "mevcutBeispiel": "Bitte bringen Sie Ihren Ausweis sowie ein Foto mit.",
+   "mevcutBeispielTr": "Lütfen kimliğinizi ve ayrıca bir fotoğraf getirin."
+  },
+  {
+   "id": 7624,
+   "de": "beziehungsweise",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ya da, daha doğrusu",
+   "mevcutBeispiel": "Der Kurs kostet 80 beziehungsweise 60 Euro für Studenten.",
+   "mevcutBeispielTr": "Kurs 80, öğrenciler için ise 60 avro tutuyor."
+  },
+  {
+   "id": 7625,
+   "de": "anstatt",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yerine",
+   "mevcutBeispiel": "Anstatt zu lernen, hat er den ganzen Tag gespielt.",
+   "mevcutBeispielTr": "Ders çalışmak yerine bütün gün oyun oynadı.",
+   "cakisan": [
+    "statt (B1)"
+   ]
+  },
+  {
+   "id": 7626,
+   "de": "desto",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "o kadar (je … desto: ne kadar … o kadar)",
+   "mevcutBeispiel": "Je früher wir losfahren, desto weniger Verkehr haben wir.",
+   "mevcutBeispielTr": "Ne kadar erken yola çıkarsak o kadar az trafiğe takılırız."
+  },
+  {
+   "id": 7627,
+   "de": "oberhalb",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "üstünde, yukarısında",
+   "mevcutBeispiel": "Das Restaurant liegt oberhalb des Sees.",
+   "mevcutBeispielTr": "Restoran gölün yukarısında bulunuyor.",
+   "cakisan": [
+    "auf (A1)"
+   ]
+  },
+  {
+   "id": 7628,
+   "de": "unterhalb",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "altında, aşağısında",
+   "mevcutBeispiel": "Unterhalb der Brücke gibt es einen Parkplatz.",
+   "mevcutBeispielTr": "Köprünün altında bir otopark var.",
+   "cakisan": [
+    "unter (A1)"
+   ]
+  },
+  {
+   "id": 7629,
+   "de": "aufgrund",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "nedeniyle, dolayısıyla",
+   "mevcutBeispiel": "Aufgrund des Schnees fällt der Unterricht aus.",
+   "mevcutBeispielTr": "Kar nedeniyle ders iptal."
+  },
+  {
+   "id": 7630,
+   "de": "mithilfe",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yardımıyla, sayesinde",
+   "mevcutBeispiel": "Mithilfe einer App finde ich jede Adresse.",
+   "mevcutBeispielTr": "Bir uygulama yardımıyla her adresi buluyorum."
+  },
+  {
+   "id": 7631,
+   "de": "zudem",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "ayrıca, üstelik",
+   "mevcutBeispiel": "Die Wohnung ist günstig, zudem liegt sie sehr zentral.",
+   "mevcutBeispielTr": "Daire ucuz, ayrıca çok merkezi bir yerde.",
+   "cakisan": [
+    "außerdem (A2)",
+    "extra (B1)"
+   ]
+  },
+  {
+   "id": 7632,
+   "de": "darum",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "bu yüzden, onun için",
+   "mevcutBeispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt.",
+   "mevcutBeispielTr": "Nakit param yoktu, bu yüzden kartla ödedim.",
+   "cakisan": [
+    "deshalb (A1)",
+    "daher (B1)",
+    "deswegen (B1)"
+   ]
+  },
+  {
+   "id": 7633,
+   "de": "stattdessen",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "onun yerine",
+   "mevcutBeispiel": "Der Kuchen war aus, stattdessen habe ich ein Eis genommen.",
+   "mevcutBeispielTr": "Pasta bitmişti, onun yerine dondurma aldım."
+  },
+  {
+   "id": 7634,
+   "de": "somit",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "böylece, dolayısıyla",
+   "mevcutBeispiel": "Der Vertrag ist unterschrieben und somit gültig.",
+   "mevcutBeispielTr": "Sözleşme imzalandı ve böylece geçerli oldu.",
+   "cakisan": [
+    "sodass (B1)"
+   ]
+  },
+  {
+   "id": 7635,
+   "de": "immerhin",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "yine de, hiç yoktan",
+   "mevcutBeispiel": "Der Zug war spät, aber immerhin hatte ich einen Sitzplatz.",
+   "mevcutBeispielTr": "Tren gecikti ama yine de oturacak yerim vardı.",
+   "cakisan": [
+    "trotzdem (B1)",
+    "gleichwohl (C1)",
+    "nichtsdestotrotz (C1)",
+    "dennoch (C1)"
+   ]
+  },
+  {
+   "id": 7636,
+   "de": "jedenfalls",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "her hâlükârda, ne olursa olsun",
+   "mevcutBeispiel": "Ich weiß nicht, ob er kommt, ich warte jedenfalls bis acht.",
+   "mevcutBeispielTr": "Gelir mi bilmiyorum, ben her hâlükârda sekize kadar bekliyorum."
+  },
+  {
+   "id": 7637,
+   "de": "beispielsweise",
+   "typ": "Sonstiges",
+   "niveau": "A2",
+   "formen": "",
+   "mevcutTr": "örneğin, söz gelimi",
+   "mevcutBeispiel": "Du kannst beispielsweise am Wochenende vorbeikommen.",
+   "mevcutBeispielTr": "Örneğin hafta sonu uğrayabilirsin.",
+   "cakisan": [
+    "zum Beispiel (A1)"
+   ]
+  }
+ ]
+}
