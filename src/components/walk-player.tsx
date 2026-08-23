@@ -132,7 +132,7 @@ const CONFIRM_SILENCE_MS = 7000;
  * kelimenin BAŞI kayda girmiyordu. Whisper baştan okuduğu için sonuç doğrudan
  * uydurma oluyordu.
  */
-const ANSWER_WINDOW_MS = 7000;
+const ANSWER_WINDOW_MS = 6000;
 /** Tarayıcı tanıyıcısı için sessizlik tavanı — ardından kayıt yolu deneniyor. */
 const BROWSER_SILENCE_MS = 4000;
 /** Kaç boş denemeden sonra tarayıcı tanıyıcısı bu oturumda bırakılır. */

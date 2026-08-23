@@ -69,20 +69,41 @@ const BUFFER_MS = 20_000;
  */
 const SPEECH_BYTES = 300;
 /**
- * Eşik ORTAMA göre ayarlanıyor.
+ * Eşik, pencerenin GÜRÜLTÜ TABANINA göre kuruluyor.
  *
- * Sabit eşik gerçek cihazda çalışmadı: sokakta, kafede ya da cepte hiçbir
- * parça 300 baytın altına inmiyor, dolayısıyla "konuşma bitti" hiç
- * anlaşılmıyor ve kayıt üst sınıra kadar bekliyordu. Kullanıcının gördüğü
- * "bekliyor da bekliyor" tam olarak buydu.
+ * Önceki sürüm tabanı pencerenin İLK parçalarından ölçüyordu ve varsayımı
+ * yanlıştı: kullanıcı okumanın bitişini duyar duymaz konuşmaya başlıyor, yani
+ * ilk parçalar sessizlik değil KONUŞMA oluyor. Taban konuşma seviyesine
+ * kuruluyor, hiçbir parça eşiği geçemiyor ve kayıt üst sınıra kadar
+ * bekliyordu. İzlemede görüldü: her cevap 7 saniyelik tavanı sonuna kadar
+ * doldurdu.
  *
- * Pencerenin ilk parçaları ortam gürültüsü sayılıyor (kullanıcı henüz
- * konuşmaya başlamamış oluyor) ve eşik onun katı olarak kuruluyor.
+ * Taban artık pencerenin tamamının alt yüzdeliği ve her turda yeniden
+ * hesaplanıyor: konuşma önce gelse bile, arkasından gelen sessizlik tabanı
+ * aşağı çekiyor ve o ana kadarki parçalar yeniden değerlendiriliyor.
  */
-const AMBIENT_SLICES = 3;
-const AMBIENT_FACTOR = 2.5;
+const FLOOR_PERCENTILE = 0.15;
+const FLOOR_FACTOR = 3;
 /** Konuşma bittikten sonra kaydın kapanması için beklenen sessiz parça sayısı. */
 const TAIL_SLICES = 4;
+/**
+ * Konuşma sayılması için gereken ARDIŞIK gürültülü parça.
+ *
+ * Tek bir gürültülü parça konuşma değil: bir tık, bir nefes ya da okumanın son
+ * hecesi de eşiği geçebiliyor. Tek parçaya güvenildiğinde kayıt kullanıcı daha
+ * ağzını açmadan "konuşma başladı, bitti" sayıp kapanıyordu.
+ */
+const MIN_SPEECH_SLICES = 2;
+/**
+ * Kayıt bu süreden önce kapanmıyor.
+ *
+ * Ön-pay okumanın ses kuyruğunu içeriyor ve o kuyruk eşiği geçebiliyor;
+ * ardından kullanıcının düşünme sessizliği geliyor ve kayıt daha cevap
+ * verilmeden kapanıyordu. Kullanıcının bildirdiği "mikrofon açıldığı gibi
+ * kapandı" tam olarak buydu. Alt sınır, konuşmaya başlamak için her koşulda
+ * bir pay bırakıyor.
+ */
+const MIN_LISTEN_MS = 1800;
 
 /** Tarayıcının kabul ettiği ilk kayıt biçimi. */
 function pickMime(): string {
@@ -219,6 +240,9 @@ export function closeMic() {
 export type ClipResult = { blob: Blob; ms: number } | null;
 
 export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> {
+  // Algılama penceresi ön-paydan SONRA başlıyor: ön-pay klibe giriyor ama
+  // "konuşma başladı" kararına karışmıyor, çünkü içinde okumanın kuyruğu var.
+  const detectFrom = Date.now();
   /*
     Kaydedici ölmüşse tur SESSİZCE bitmemeli.
 
@@ -237,38 +261,55 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
   const from = Date.now() - preRollMs;
   const deadline = Date.now() + maxMs;
 
+  /** Pencerenin o ana kadarki gürültü tabanı ve ondan türeyen eşik. */
+  const thresholdOf = (sizes: number[]): number => {
+    if (!sizes.length) return SPEECH_BYTES;
+    const sorted = [...sizes].sort((a, b) => a - b);
+    const floor = sorted[Math.floor(sorted.length * FLOOR_PERCENTILE)];
+    return Math.max(SPEECH_BYTES, Math.round(floor * FLOOR_FACTOR));
+  };
+
+  let threshold = SPEECH_BYTES;
+
   return new Promise<ClipResult>((resolve) => {
     let started = false;
-    let quiet = 0;
-    let seen = 0; // kaç parça incelendi
-    /** Ortama göre kurulan eşik; ilk parçalardan sonra sabitleniyor. */
-    let threshold = SPEECH_BYTES;
-    let ambientSet = false;
 
     const tick = () => {
       const slice = chunks.filter((c) => c.t >= from);
 
-      // İlk parçalar ortam ölçümü: kullanıcı henüz konuşmuyor.
-      if (!ambientSet && slice.length >= AMBIENT_SLICES) {
-        const sizes = slice.slice(0, AMBIENT_SLICES).map((c) => c.data.size).sort((a, b) => a - b);
-        const ambient = sizes[Math.floor(sizes.length / 2)];
-        threshold = Math.max(SPEECH_BYTES, Math.round(ambient * AMBIENT_FACTOR));
-        ambientSet = true;
-      }
-      // Yalnızca yeni gelen parçalara bakılıyor; aynı parça iki kez sayılırsa
-      // sessizlik sayacı yanlış dolardı.
-      for (let i = seen; i < slice.length; i++) {
-        const loud = slice[i].data.size >= threshold;
-        if (loud) {
-          started = true;
-          quiet = 0;
-        } else if (started) {
-          quiet++;
+      /*
+        Pencerenin TAMAMI her turda yeniden değerlendiriliyor.
+
+        Artımlı sayım daha ucuzdu ama taban değiştiğinde eski parçaların
+        kararı sabit kalıyordu: konuşmayla başlayan bir pencerede taban önce
+        yüksek kuruluyor, sonra sessizlikle düşüyor ve o parçaların yeniden
+        bakılması gerekiyor. Otuz parçayı yeniden taramanın bedeli yok.
+      */
+      // Eşik pencerenin TAMAMINDAN (ön-pay dâhil) hesaplanıyor: gürültü tabanı
+      // ne kadar çok örnekten çıkarsa o kadar isabetli.
+      threshold = thresholdOf(slice.map((c) => c.data.size));
+
+      // Karar ise yalnızca ön-pay SONRASINDAN veriliyor.
+      const heardWindow = slice.filter((c) => c.t >= detectFrom).map((c) => c.data.size);
+
+      let quiet = 0;
+      let run = 0;
+      started = false;
+      for (const size of heardWindow) {
+        if (size >= threshold) {
+          run++;
+          if (run >= MIN_SPEECH_SLICES) {
+            started = true;
+            quiet = 0;
+          }
+        } else {
+          run = 0;
+          if (started) quiet++;
         }
       }
-      seen = slice.length;
 
-      const finished = started && quiet >= TAIL_SLICES;
+      const elapsed = Date.now() - detectFrom;
+      const finished = started && quiet >= TAIL_SLICES && elapsed >= MIN_LISTEN_MS;
       if (!finished && Date.now() < deadline) {
         setTimeout(tick, SLICE_MS);
         return;
