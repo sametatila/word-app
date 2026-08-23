@@ -14,6 +14,7 @@ import {
   type Round,
   type SessionPayload,
   type SessionProgress,
+  type Wager,
 } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
@@ -21,6 +22,9 @@ import { LevelBadge } from "@/components/level-badge";
 import { prefetchGerman } from "@/components/speak-button";
 import { ChallengePlayer } from "@/components/challenge-player";
 import { Confetti, CountUp } from "@/components/celebrate";
+import { play, resetCombo } from "@/lib/sfx";
+import { fx } from "@/lib/fx";
+import { track } from "@/lib/track";
 import { FitBox } from "@/components/fit-box";
 import { AnswerPulse } from "@/components/answer-pulse";
 import { PushOptIn } from "@/components/push-optin";
@@ -28,6 +32,7 @@ import { ShareResult } from "@/components/share-result";
 import { GamePicker } from "@/components/game-picker";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
+import { ChallengeCard } from "@/components/challenge-card";
 import { QuestCard } from "@/components/quest-card";
 import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, PuzzleIcon, RefreshIcon } from "@/components/icons";
 
@@ -138,6 +143,33 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const stageStart = useRef({ index: 0, correct: 0, total: 0, xp: 0 });
   /** Tur bitmeden "şimdilik yeter" denildi mi — özetin başlığı buna bağlı. */
   const stoppedEarly = useRef(false);
+  /**
+   * Bahis.
+   *
+   * Etap sınırında isteğe bağlı olarak açılıyor: sonraki beş tur hatasız
+   * geçerse o etabın puanı ikiye katlanıyor, iki yanlışta etap hiç puan
+   * kazandırmamış oluyor. Ana turda kaybedilecek hiçbir şey olmadığı için
+   * kazanılacak bir şey de yoktu; gerilim buradan geliyor.
+   *
+   * Bayrak `ref` çünkü `handleDone` içinden okunuyor ve o geri çağrı her
+   * turda yeniden kurulmuyor — durum olarak tutulsaydı eski değeri görürdü.
+   */
+  const wagerOn = useRef(false);
+  /** Kapanan bahsin sonucu — etap kartında bir kez gösterilir. */
+  const [wagerResult, setWagerResult] = useState<number | null>(null);
+
+  /**
+   * "Oyun ortasındayım" sinyali.
+   *
+   * Rozet kutlaması kabukta duruyor ve tetikleyicisi her turdan sonra atılan
+   * `wortspiel:stats`. Sinyal olmasaydı tam ekran bir kutlama 7. turun
+   * ortasında belirir, kutlama olmaktan çıkıp kesinti olurdu. Kabuk bu
+   * bayrağı görünce kuyruğu tutuyor ve etap/özet ekranında salıyor.
+   */
+  useEffect(() => {
+    const playing = status === "playing" || status === "challenge" || status === "daily";
+    window.dispatchEvent(new CustomEvent("wortspiel:busy", { detail: { busy: playing } }));
+  }, [status]);
 
   const load = useCallback(
     async (opts: { extra?: boolean; fresh?: boolean; game?: PlayableGame | null } = {}) => {
@@ -151,6 +183,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     missed.current = [];
     marks.current = [];
     setCombo(0);
+    resetCombo();
+    play("start");
+    track("session_start");
+    wagerOn.current = false;
+    setWagerResult(null);
     bestCombo.current = 0;
     stoppedEarly.current = false;
     stageStart.current = { index: 0, correct: 0, total: 0, xp: 0 };
@@ -210,6 +247,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     missed.current = resumable.missed;
     startedAt.current = Date.now();
     setCombo(0);
+    resetCombo();
+    play("start");
+    track("session_resume", resumable.index);
+    wagerOn.current = false;
+    setWagerResult(null);
     stageStart.current = {
       index: resumable.index,
       correct: resumable.correct,
@@ -244,55 +286,60 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * Cevap üretmeyen adımlarda ("bunu zaten biliyorum") ilerleme tek başına
    * gider — yoksa diğer cihaz o turu bir kez daha sorar.
    */
-  const flush = useCallback(async (final: boolean, progress: SessionProgress | null) => {
-    const batch = pending.current;
-    if (!batch.length) {
-      if (progress) {
-        void fetch("/api/session", {
+  const flush = useCallback(
+    async (final: boolean, progress: SessionProgress | null, wager: Wager | null = null) => {
+      const batch = pending.current;
+      if (!batch.length) {
+        if (progress) {
+          void fetch("/api/session", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ day: localDay(), progress }),
+            keepalive: true,
+          }).catch(() => {
+            /* ilerleme bir sonraki turda yeniden gönderilir */
+          });
+        }
+        return null;
+      }
+      pending.current = [];
+      const seconds = Math.round((Date.now() - startedAt.current) / 1000);
+      try {
+        const res = await fetch("/api/answers", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ day: localDay(), progress }),
-          keepalive: true,
-        }).catch(() => {
-          /* ilerleme bir sonraki turda yeniden gönderilir */
+          body: JSON.stringify({
+            answers: batch,
+            day: localDay(),
+            seconds: final ? seconds : 0,
+            progress,
+            wager,
+          }),
         });
-      }
-      return null;
-    }
-    pending.current = [];
-    const seconds = Math.round((Date.now() - startedAt.current) / 1000);
-    try {
-      const res = await fetch("/api/answers", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          answers: batch,
-          day: localDay(),
-          seconds: final ? seconds : 0,
-          progress,
-        }),
-      });
-      if (!res.ok) {
-        pending.current = [...batch, ...pending.current]; // kaybetme, sonraki turda tekrar dene
+        if (!res.ok) {
+          pending.current = [...batch, ...pending.current]; // kaybetme, sonraki turda tekrar dene
+          setSaveWarning(true);
+          return null;
+        }
+        setSaveWarning(false);
+        const data = (await res.json()) as AnswerResult;
+        sessionXp.current += data.xpGained;
+        if (wager) setWagerResult(data.wagerXp ?? 0);
+        // üst bardaki seri/XP rozetlerini anında güncelle
+        window.dispatchEvent(
+          new CustomEvent("wortspiel:stats", {
+            detail: { xp: data.totalXp, streak: data.currentStreak },
+          }),
+        );
+        return data;
+      } catch {
+        pending.current = [...batch, ...pending.current];
         setSaveWarning(true);
         return null;
       }
-      setSaveWarning(false);
-      const data = (await res.json()) as AnswerResult;
-      sessionXp.current += data.xpGained;
-      // üst bardaki seri/XP rozetlerini anında güncelle
-      window.dispatchEvent(
-        new CustomEvent("wortspiel:stats", {
-          detail: { xp: data.totalXp, streak: data.currentStreak },
-        }),
-      );
-      return data;
-    } catch {
-      pending.current = [...batch, ...pending.current];
-      setSaveWarning(true);
-      return null;
-    }
-  }, []);
+    },
+    [],
+  );
 
   const handleDone = useCallback(
     async (round: Round, results: GameResult[]) => {
@@ -340,8 +387,24 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       // diye okur ve bir sonraki istekte yeni kuyruk kurar.
       const progress: SessionProgress = { ...next, index: nextIndex, missed: missed.current };
 
+      // Bahisli etap kapandı mı? Pay, o etapta kazanılan puanın istemci
+      // tahmini (doğru 10, yanlış 3). Sunucu ayrıca tavanlıyor; buradaki
+      // sayının işi bahsi ETABIN kendi büyüklüğüne bağlamak — sabit bir ödül,
+      // kısa etapta abartılı uzun etapta anlamsız olurdu.
+      const closing = isLast || nextIndex % STAGE_SIZE === 0;
+      const wager: Wager | null =
+        closing && wagerOn.current
+          ? {
+              correct: next.correct - stageStart.current.correct,
+              total: next.total - stageStart.current.total,
+              stake: next.xp - stageStart.current.xp,
+            }
+          : null;
+      if (wager) wagerOn.current = false;
+
       if (isLast) {
-        const res = await flush(true, progress);
+        track("session_done", next.correct);
+        const res = await flush(true, progress, wager);
         setResult(res ? { ...res, xpGained: sessionXp.current } : null);
         setStatus("done");
         return;
@@ -351,13 +414,16 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       // Sonuç ara turlarda da saklanıyor: kullanıcı etap sonunda durursa özet
       // ekranı güncel seriyi, günlük hedefi ve "yarın kaç kelime" bilgisini
       // gösterebilsin. Beklenmiyor — turlar arası gecikme yaratmamalı.
-      void flush(false, progress).then((res) => {
+      void flush(false, progress, wager).then((res) => {
         if (res) setResult({ ...res, xpGained: sessionXp.current });
       });
 
       // Etap sınırı: burada durmak da devam etmek de meşru. İlerleme zaten
       // sunucuya yazıldı, çıkan kullanıcı hiçbir şey kaybetmiyor.
-      if (nextIndex % STAGE_SIZE === 0) setStatus("stage");
+      if (nextIndex % STAGE_SIZE === 0) {
+        track("stage_done", nextIndex / STAGE_SIZE);
+        setStatus("stage");
+      }
     },
     [combo, flush, index, session, tally],
   );
@@ -436,7 +502,14 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           onStart={() => void startFresh()}
           onResume={resume}
           onPickGame={(game) => void load({ game, fresh: true })}
-          onDaily={() => setStatus("daily")}
+          onDaily={() => {
+            track("daily_play");
+            setStatus("daily");
+          }}
+          onChallenge={() => {
+            track("challenge_play");
+            setStatus("challenge");
+          }}
           leaderboard={leaderboard}
         />
       </Screen>
@@ -468,11 +541,15 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           total={tally.total - stageStart.current.total}
           bestCombo={bestCombo.current}
           remaining={session.rounds.length - index}
-          onContinue={() => {
+          wagerResult={wagerResult}
+          onContinue={(bet) => {
+            wagerOn.current = bet;
+            setWagerResult(null);
             stageStart.current = { index, correct: tally.correct, total: tally.total, xp: tally.xp };
             setStatus("playing");
           }}
           onStop={() => {
+            track("session_stop", index);
             stoppedEarly.current = true;
             setStatus("done");
           }}
@@ -493,7 +570,10 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
             router.refresh();
             void load();
           }}
-          onChallenge={() => setStatus("challenge")}
+          onChallenge={() => {
+            track("challenge_play");
+            setStatus("challenge");
+          }}
         />
       </Screen>
     );
@@ -627,6 +707,7 @@ function StartCard({
   onResume,
   onPickGame,
   onDaily,
+  onChallenge,
   leaderboard,
 }: {
   meta: SessionPayload["meta"];
@@ -639,6 +720,7 @@ function StartCard({
   onResume: () => void;
   onPickGame: (game: PlayableGame | null) => void;
   onDaily: () => void;
+  onChallenge: () => void;
   /** Sunucuda hazırlanan sıralama tablosu — yalnızca bu kartta görünür. */
   leaderboard?: ReactNode;
 }) {
@@ -647,6 +729,12 @@ function StartCard({
   const reviewCount = new Set(words.filter((w) => !w.isNew).map((w) => w.id)).size;
   const goalPct = Math.min(100, Math.round((meta.reviewsToday / Math.max(1, meta.dailyGoal)) * 100));
   const name = meta.displayName?.split(" ")[0];
+
+  // Kaç kişi bu kartı görüp hiç başlamadan çıkıyor — beşerli etaplar tam da
+  // bu ölçüm yüzünden eklenmişti ama ölçüm elle yapılmıştı. Artık akıyor.
+  useEffect(() => {
+    track("start_card", rounds.length);
+  }, [rounds.length]);
 
   return (
     <motion.div
@@ -768,6 +856,11 @@ function StartCard({
       {/* Günün turu oyun seçicinin ÜSTÜNDE: günde bir kez oynanan, herkesle
           aynı olan ve kaçırılınca geri gelmeyen tek şey bu. */}
       <DailyCard onPlay={onDaily} />
+      {/* Arena günün turunun hemen altında: ikisi de "bugün bir kez" hissi
+          taşıyor ama biri herkesle aynı sorular, diğeri kendi rekorunla
+          yarış. Oyun seçicinin üstünde duruyorlar çünkü ikisi de bir MOD
+          değil, bir OLAY. */}
+      <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} />
       {/* Görevler oyun seçicinin üstünde: biri hep beceriler ya da derslere
           götürüyor ve o bölümler bugüne kadar neredeyse hiç açılmamıştı. */}
       <QuestCard />
@@ -930,6 +1023,7 @@ function StageCard({
   total,
   bestCombo,
   remaining,
+  wagerResult,
   onContinue,
   onStop,
 }: {
@@ -939,10 +1033,21 @@ function StageCard({
   total: number;
   bestCombo: number;
   remaining: number;
-  onContinue: () => void;
+  /** Kapanan bahsin puan farkı; bahis oynanmadıysa null. */
+  wagerResult: number | null;
+  onContinue: (wager: boolean) => void;
   onStop: () => void;
 }) {
+  const [bet, setBet] = useState(false);
   const perfect = total > 0 && correct === total;
+
+  // Etabın kendi sesi var: tertemiz geçen etap oktavla taçlanan bir ezgi,
+  // normal etap kısa bir üçlü duyuruyor. Konfetiyle aynı eşiği kullanıyor ki
+  // göz ve kulak aynı şeyi söylesin.
+  useEffect(() => {
+    play(perfect ? "perfect" : "stage");
+  }, [perfect]);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.97 }}
@@ -980,9 +1085,73 @@ function StageCard({
           <Stat label="En uzun seri" value={bestCombo > 0 ? `${bestCombo}` : "—"} />
         </div>
 
+        {/* Kapanan bahsin sonucu. Üç hâl var ve üçü de açıkça söyleniyor:
+            kazanılan, boşa giden ve yanan. Sessizce eklenen/eksilen puan,
+            bahsi bir mekanik olmaktan çıkarıp gürültüye çevirirdi. */}
+        {wagerResult !== null ? (
+          <div
+            className="px-6 pt-4 text-center text-sm font-bold"
+            style={{
+              color:
+                wagerResult > 0
+                  ? "var(--color-mint-500)"
+                  : wagerResult < 0
+                    ? "var(--color-flame-500)"
+                    : "var(--text-muted)",
+            }}
+          >
+            {wagerResult > 0
+              ? `Bahis tuttu · +${wagerResult} XP`
+              : wagerResult < 0
+                ? `Bahis yandı · ${wagerResult} XP`
+                : "Bahis başa baş — bir yanlış yeter de artmaz da"}
+          </div>
+        ) : null}
+
         <div className="space-y-2 p-6 pt-4">
-          <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5 text-base">
-            Devam et · {remaining} tur kaldı
+          {/* Bahis anahtarı: kapalıysa oyun hiç değişmiyor. Açık olduğunda
+              ne kazanılacağı ve ne kaybedileceği aynı cümlede yazıyor —
+              gizli kuralı olan bir bahis, bahis değil tuzaktır. */}
+          <button
+            type="button"
+            onClick={() => {
+              setBet((b) => !b);
+              fx("tap");
+            }}
+            aria-pressed={bet}
+            className="flex w-full items-center gap-3 rounded-xl px-3.5 py-3 text-left transition-colors"
+            style={{
+              background: bet
+                ? "color-mix(in srgb, var(--color-flame-500) 12%, transparent)"
+                : "var(--surface-2)",
+              boxShadow: bet ? "inset 0 0 0 1.5px var(--color-flame-500)" : undefined,
+            }}
+          >
+            <span
+              className="flex h-5 w-9 shrink-0 items-center rounded-full p-0.5 transition-colors"
+              style={{ background: bet ? "var(--color-flame-500)" : "var(--border)" }}
+            >
+              <motion.span
+                layout
+                transition={{ type: "spring", stiffness: 500, damping: 32 }}
+                className="h-4 w-4 rounded-full bg-white"
+                style={{ marginLeft: bet ? "auto" : 0 }}
+              />
+            </span>
+            <span className="min-w-0">
+              <span className="block text-sm font-bold">Sonraki etapta bahse gir</span>
+              <span className="muted block text-xs">
+                Beşi de doğruysa etabın puanı iki katı; iki yanlışta etap puan kazandırmaz.
+                Önceki puanına dokunulmaz.
+              </span>
+            </span>
+          </button>
+
+          <button
+            onClick={() => onContinue(bet)}
+            className="btn btn-primary w-full px-5 py-3.5 text-base"
+          >
+            {bet ? `Bahisli devam · ${remaining} tur kaldı` : `Devam et · ${remaining} tur kaldı`}
           </button>
           <button onClick={onStop} className="btn btn-ghost w-full px-5 py-3">
             Şimdilik yeter
@@ -1025,6 +1194,12 @@ function SummaryCard({
   // doğruluğunun aksine gerçekten kazanılmış bir şey.
   const deserved = mastered > 0 || (accuracy >= 80 && tally.total >= 4);
 
+  // Oturumun kapanış sesi. Hak edilmiş turda yükselen ezgi, sıradan turda
+  // yumuşak bir kadans — ikisi de "bitti" diyor ama aynı tonda değil.
+  useEffect(() => {
+    play(deserved ? "perfect" : "finish");
+  }, [deserved]);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.96 }}
@@ -1056,6 +1231,22 @@ function SummaryCard({
           <Stat label="Kelime" value={String(tally.total)} />
           <Stat label="Seri" value={`${result?.currentStreak ?? 0}g`} />
         </div>
+
+        {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı
+            gösterilmeden tur bittiği için başka söylenecek yer yok. */}
+        {result?.wagerXp ? (
+          <div
+            className="border-b px-6 py-2.5 text-center text-sm font-bold"
+            style={{
+              borderColor: "var(--border)",
+              color: result.wagerXp > 0 ? "var(--color-mint-500)" : "var(--color-flame-500)",
+            }}
+          >
+            {result.wagerXp > 0
+              ? `Son etapta bahis tuttu · +${result.wagerXp} XP`
+              : `Son etapta bahis yandı · ${result.wagerXp} XP`}
+          </div>
+        ) : null}
 
         {result ? (
           <div className="px-6 pb-2">
