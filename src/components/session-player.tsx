@@ -30,11 +30,12 @@ import { AnswerPulse } from "@/components/answer-pulse";
 import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { GamePicker } from "@/components/game-picker";
+import { Mascot } from "@/components/mascot";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
 import { QuestCard } from "@/components/quest-card";
-import { AlertIcon, CheckIcon, ConfettiIcon, FlameIcon, PuzzleIcon, RefreshIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
 type Status =
   | "loading"
@@ -889,7 +890,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
   const content = {
     auth: {
       title: "Oturumun sona ermiş",
-      body: "Güvenlik için oturumun kapandı. İlerlemen kayıtlı — tekrar giriş yaptığında kaldığın yerden devam edersin.",
+      body: "İlerlemen kayıtlı — girince kaldığın yerden devam edersin.",
       action: (
         <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-3.5">
           Giriş yap
@@ -898,7 +899,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
     },
     db: {
       title: "Kelimeler yüklenemedi",
-      body: "Sunucuya ulaşıldı ama veriler alınamadı. Birkaç saniye sonra tekrar denemen genelde yeterli olur.",
+      body: "Birkaç saniye sonra tekrar denemek genelde yetiyor.",
       action: (
         <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
           <RefreshIcon size={18} /> Tekrar dene
@@ -907,7 +908,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
     },
     network: {
       title: "İnternet bağlantısı yok",
-      body: "Cihazının bağlantısı kesilmiş görünüyor. Bağlantını kontrol edip tekrar dene.",
+      body: "Bağlantını kontrol et.",
       action: (
         <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
           <RefreshIcon size={18} /> Tekrar dene
@@ -919,16 +920,8 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
   return (
     <div className="mx-auto w-full max-w-md">
       <div className="card p-6 text-center">
-        <div
-          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl"
-          style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
-            color: "var(--color-flame-500)",
-          }}
-        >
-          <AlertIcon size={22} />
-        </div>
-        <h2 className="text-lg font-bold">{content.title}</h2>
+        <Mascot mood="sad" size={96} className="mx-auto" />
+        <h2 className="mt-1 text-lg font-bold">{content.title}</h2>
         <p className="muted mt-2 text-sm">{content.body}</p>
         {content.action}
       </div>
@@ -961,15 +954,11 @@ function EmptyCard({
         className="mx-auto w-full max-w-md"
       >
         <div className="card p-8 text-center">
-          <div className="surface-2 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl text-[color:var(--color-brand-500)]">
-            <PuzzleIcon size={28} />
-          </div>
-          <h2 className="text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime yok</h2>
-          <p className="muted mt-2 text-sm">
-            Tek oyun modu yalnızca daha önce öğrendiğin kelimeleri tekrarlar; ayrıca her oyun
-            her kelimeyle oynanamıyor. Karışık tur yeni kelime de öğretir ve bütün kelimeleri
-            kullanır.
-          </p>
+          <Mascot mood="think" size={104} className="mx-auto" />
+          <h2 className="mt-1 text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime yok</h2>
+          {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
+              çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
+          <p className="muted mt-2 text-sm">Bu mod yalnızca öğrendiğin kelimeleri tekrarlar.</p>
           <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
             Karışık tura dön
           </button>
@@ -985,14 +974,9 @@ function EmptyCard({
       className="mx-auto w-full max-w-md"
     >
       <div className="card p-8 text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl brand-gradient text-white">
-          <CheckIcon size={30} />
-        </div>
-        <h2 className="text-xl font-bold">Günlük hedefini tamamladın</h2>
-        <p className="muted mt-2 text-sm">
-          Planlanan tekrarların bitti. İstersen burada durabilirsin — ya da yeni kelimelerle
-          devam edebilirsin, tekrar planın buna göre kendini ayarlar.
-        </p>
+        <Mascot mood="cheer" size={112} className="mx-auto" />
+        <h2 className="mt-1 text-xl font-bold">Günlük hedefini tamamladın</h2>
+        <p className="muted mt-2 text-sm">Planlanan tekrarların bitti.</p>
         {meta ? (
           <p className="muted mt-4 text-sm">
             Bugün <strong>{meta.reviewsToday}</strong> tekrar · <strong>{meta.newToday}</strong> yeni
@@ -1060,11 +1044,19 @@ function StageCard({
 
       <div className="card overflow-hidden">
         <div className="brand-gradient px-6 py-5 text-center text-white">
-          <p className="text-sm opacity-90">
+          <motion.div
+            initial={{ scale: 0.6, y: 10, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 250, damping: 16 }}
+            className="mx-auto w-fit"
+          >
+            <Mascot mood={perfect ? "cheer" : "happy"} size={72} />
+          </motion.div>
+          <p className="mt-1 text-sm opacity-90">
             Etap {stage} / {stages}
           </p>
-          <h2 className="mt-1 text-xl font-bold">
-            {perfect ? "Etap tertemiz geçti" : "Etap tamam"}
+          <h2 className="mt-0.5 text-xl font-bold">
+            {perfect ? "Tertemiz" : "Etap tamam"}
           </h2>
           <div className="mt-3 flex items-center justify-center gap-1.5">
             {Array.from({ length: stages }, (_, i) => (
@@ -1210,19 +1202,23 @@ function SummaryCard({
 
       <div className="card overflow-hidden">
         <div className="brand-gradient p-8 text-center text-white">
+          {/* Turun nasıl geçtiğini söyleyen şey artık bir simge değil, Erdi'nin
+              hâli: hak edilmiş turda kutluyor, iyi turda gülümsüyor, kötü turda
+              üzülüyor. Aynı bilgi bir cümleyle de yazılabilirdi ama okunması
+              gereken bir cümle olurdu; ifade bir bakışta anlaşılıyor. */}
           <motion.div
-            initial={{ scale: 0.5, rotate: -12 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 14 }}
-            className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20"
+            initial={{ scale: 0.6, y: 14, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 240, damping: 15 }}
+            className="mx-auto w-fit"
           >
-            <ConfettiIcon size={30} />
+            <Mascot mood={deserved ? "cheer" : accuracy >= 60 ? "happy" : "sad"} size={92} />
           </motion.div>
-          <h2 className="mt-3 text-2xl font-bold">
+          <h2 className="mt-2 text-2xl font-bold">
             {partial ? "Buraya kadar" : "Tur tamamlandı"}
           </h2>
           <p className="mt-1 text-sm opacity-90">
-            +<CountUp value={xp} /> XP kazandın
+            +<CountUp value={xp} /> XP
           </p>
         </div>
 
