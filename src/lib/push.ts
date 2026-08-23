@@ -1,8 +1,10 @@
 import "server-only";
 import webpush from "web-push";
-import { and, eq, inArray, lte, sql } from "drizzle-orm";
+import { and, desc, eq, gte, inArray, lt, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
+import { dailyStats, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
+import { weekStart } from "@/lib/session";
+import { shiftDay } from "@/lib/award";
 
 /**
  * Hatırlatma bildirimleri.
@@ -52,11 +54,25 @@ export type PushPayload = {
  * kaynağı bu tür metinler ve bir kez kapatılan izin geri gelmiyor. Her
  * bildirim kullanıcıya özgü bir sayı taşıyor.
  */
+/**
+ * Yakalanabilir sayılan en büyük fark.
+ *
+ * Haftalık tabloda öndekini geçmek ancak ULAŞILABİLİR olduğunda motive
+ * ediyor; 3.000 XP geride olan birine "seni geçti" demek bir hedef değil bir
+ * hüküm. Eşik yaklaşık bir oturumluk emek: bugün kapatılabilecek bir fark.
+ */
+const CATCHABLE_XP = 400;
+
 export function composeReminder(input: {
   name: string | null;
   streak: number;
   dueCount: number;
   level: string;
+  /**
+   * Haftalık tabloda hemen üstteki kişi ve aradaki fark. Yoksa null —
+   * tek kişilik bir tabloda rakip yoktur.
+   */
+  rival?: { name: string; gap: number } | null;
 }): PushPayload | null {
   const first = input.name?.trim().split(/\s+/)[0];
   const hey = first ? `${first}, ` : "";
@@ -68,6 +84,23 @@ export function composeReminder(input: {
         input.dueCount > 0
           ? `${hey}bugün ${input.dueCount} kelimenin tekrarı var. Birkaç dakika seriyi kurtarır.`
           : `${hey}bugün henüz çalışmadın. Kısa bir tur seriyi ayakta tutar.`,
+      url: "/learn",
+      tag: "reminder",
+    };
+  }
+
+  // Rakip, borcun ÜSTÜNDE ama serinin ALTINDA.
+  //
+  // Seri bugüne bağlı ve kaçırılırsa geri gelmiyor; tabloda geride kalmak ise
+  // hafta boyunca telafi edilebilir, o yüzden seriyi geçemez. Tekrar borcunun
+  // üstünde olmasının sebebi ise farklı: borç her gün aynı cümleyi kuruyor ve
+  // tekrarlanan bildirim en hızlı kapatılan bildirim. Rakip mesajı hem nadir
+  // (yalnızca fark yakalanabilirken çıkıyor) hem de her seferinde başka bir
+  // sayı taşıyor.
+  if (input.rival && input.rival.gap > 0 && input.rival.gap <= CATCHABLE_XP) {
+    return {
+      title: `${input.rival.name} bu hafta önde`,
+      body: `${hey}aradaki fark ${input.rival.gap} XP — bir turluk mesafe. Pazartesi tablo sıfırlanıyor.`,
       url: "/learn",
       tag: "reminder",
     };
@@ -235,6 +268,64 @@ export async function dueCounts(userIds: string[]): Promise<Map<string, number>>
  * konuşan sürücüde her kullanıcı için ayrı bir gidiş-dönüş demekti ve turu
  * fonksiyonun süre sınırına götüren şey buydu.
  */
+/**
+ * Haftalık tabloda kimin hemen üstünde kim var.
+ *
+ * Tek sorgu: herkesin bu haftaki XP'si bir kez okunuyor ve sıralama bellekte
+ * yapılıyor. Kullanıcı başına sorgu atmak, hatırlatma turunu kullanıcı
+ * sayısıyla doğru orantılı yavaşlatırdı — ki o turun zaten bir süre sınırı var.
+ *
+ * Bu hafta hiç çalışmamış birinin de rakibi var: tablonun en altındaki kişi.
+ * Fark büyük çıkarsa çağıran taraf zaten mesajı atmıyor.
+ */
+export async function weeklyRivals(
+  userIds: string[],
+  today: string,
+): Promise<Map<string, { name: string; gap: number }>> {
+  const out = new Map<string, { name: string; gap: number }>();
+  if (!userIds.length) return out;
+
+  const start = weekStart(today);
+  const end = shiftDay(start, 7);
+
+  const rows = await db
+    .select({
+      userId: dailyStats.userId,
+      name: profiles.displayName,
+      xp: sql<number>`sum(${dailyStats.xp})::int`,
+    })
+    .from(dailyStats)
+    .innerJoin(profiles, eq(profiles.userId, dailyStats.userId))
+    .where(and(gte(dailyStats.day, start), lt(dailyStats.day, end)))
+    .groupBy(dailyStats.userId, profiles.displayName)
+    .having(sql`sum(${dailyStats.xp}) > 0`)
+    .orderBy(desc(sql`sum(${dailyStats.xp})`));
+
+  if (rows.length < 2) return out; // tek kişilik tabloda rakip yok
+
+  const board = rows.map((r) => ({
+    userId: r.userId,
+    name: r.name?.trim().split(/\s+/)[0] || "Bir öğrenci",
+    xp: Number(r.xp),
+  }));
+  const mine = new Map(board.map((b) => [b.userId, b]));
+  const last = board[board.length - 1];
+
+  for (const id of userIds) {
+    const me = mine.get(id);
+    if (!me) {
+      // Bu hafta hiç puanı yok: hedef, tablonun en altındaki kişi.
+      if (last.userId !== id) out.set(id, { name: last.name, gap: last.xp });
+      continue;
+    }
+    const i = board.findIndex((b) => b.userId === id);
+    if (i <= 0) continue; // zirvedeyse geçilecek kimse yok
+    const above = board[i - 1];
+    out.set(id, { name: above.name, gap: Math.max(0, above.xp - me.xp) });
+  }
+  return out;
+}
+
 export async function runReminders() {
   if (!pushEnabled) return { targets: 0, sent: 0 };
 
@@ -248,9 +339,11 @@ export async function runReminders() {
     .set({ lastReminderDay: sql`(now() at time zone ${profiles.timezone})::date` })
     .where(inArray(profiles.userId, userIds));
 
-  const [due, subs] = await Promise.all([
+  const today = new Date().toISOString().slice(0, 10);
+  const [due, subs, rivals] = await Promise.all([
     dueCounts(userIds),
     db.select().from(pushSubscriptions).where(inArray(pushSubscriptions.userId, userIds)),
+    weeklyRivals(userIds, today),
   ]);
 
   const byUser = new Map<string, (typeof subs)[number][]>();
@@ -269,6 +362,7 @@ export async function runReminders() {
       streak: t.liveStreak,
       dueCount: due.get(t.userId) ?? 0,
       level: t.level,
+      rival: rivals.get(t.userId) ?? null,
     });
     if (!payload) continue;
     for (const sub of list) jobs.push(deliver(sub, payload));
