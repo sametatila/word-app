@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7888,
+    "tr": "müzik yapmak",
+    "en": "to make music",
+    "beispiel": "Am Wochenende musizieren wir zusammen im Wohnzimmer.",
+    "beispielTr": "Hafta sonu oturma odasında birlikte müzik yapıyoruz.",
+    "beispielEn": "On weekends we make music together in the living room."
+  },
+  {
+    "id": 7889,
+    "tr": "davul çalmak",
+    "en": "to drum",
+    "beispiel": "Der Junge trommelt laut auf einem alten Eimer.",
+    "beispielTr": "Çocuk eski bir kovanın üstünde yüksek sesle davul çalıyor.",
+    "beispielEn": "The boy drums loudly on an old bucket."
+  },
+  {
+    "id": 7890,
+    "tr": "sayfa çevirmek",
+    "en": "to leaf through",
+    "beispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift.",
+    "beispielTr": "Bekleme odasında dergi sayfalarını çevirmeyi severim.",
+    "beispielEn": "In the waiting room I like leafing through a magazine."
+  },
+  {
+    "id": 7891,
+    "tr": "ödünç almak",
+    "en": "to borrow",
+    "beispiel": "Ich möchte drei Bücher für zwei Wochen ausleihen.",
+    "beispielTr": "Üç kitabı iki haftalığına ödünç almak istiyorum.",
+    "beispielEn": "I would like to borrow three books for two weeks."
+  },
+  {
+    "id": 7892,
+    "tr": "sevinç çığlığı atmak",
+    "en": "to cheer",
+    "beispiel": "Die Fans jubeln nach dem zweiten Tor.",
+    "beispielTr": "Taraftarlar ikinci golden sonra sevinç çığlıkları atıyor.",
+    "beispielEn": "The fans cheer after the second goal."
+  },
+  {
+    "id": 7893,
+    "tr": "alkışlamak",
+    "en": "to clap",
+    "beispiel": "Nach dem Konzert hat das Publikum lange geklatscht.",
+    "beispielTr": "Konserden sonra seyirciler uzun uzun alkışladı.",
+    "beispielEn": "After the concert the audience clapped for a long time."
+  },
+  {
+    "id": 7894,
+    "tr": "ıslık çalmak",
+    "en": "to whistle",
+    "beispiel": "Mein Opa pfeift immer, wenn er gute Laune hat.",
+    "beispielTr": "Dedem keyfi yerindeyken hep ıslık çalar.",
+    "beispielEn": "My grandpa always whistles when he is in a good mood."
+  },
+  {
+    "id": 7895,
+    "tr": "sohbet etmek",
+    "en": "to chat",
+    "beispiel": "Nach dem Kurs plaudern wir noch im Café.",
+    "beispielTr": "Kurstan sonra kafede biraz sohbet ediyoruz.",
+    "beispielEn": "After class we chat in the café for a while."
+  },
+  {
+    "id": 7896,
+    "tr": "dolaşmak",
+    "en": "to stroll",
+    "beispiel": "Am Samstag bummeln wir gern durch die Altstadt.",
+    "beispielTr": "Cumartesileri eski şehirde dolaşmayı severiz.",
+    "beispielEn": "On Saturdays we like to stroll through the old town."
+  },
+  {
+    "id": 7897,
+    "tr": "denemek",
+    "en": "to try out",
+    "beispiel": "Ich möchte dieses Jahr eine neue Sportart ausprobieren.",
+    "beispielTr": "Bu yıl yeni bir spor dalı denemek istiyorum.",
+    "beispielEn": "This year I want to try out a new sport."
+  },
+  {
+    "id": 7898,
+    "tr": "izlemek",
+    "en": "to watch",
+    "beispiel": "Heute Abend schauen wir einen alten Film an.",
+    "beispielTr": "Bu akşam eski bir film izliyoruz.",
+    "beispielEn": "Tonight we are watching an old movie."
+  },
+  {
+    "id": 7899,
+    "tr": "germek",
+    "en": "to stretch",
+    "beispiel": "Nach dem Laufen dehne ich immer meine Beine.",
+    "beispielTr": "Koşudan sonra hep bacaklarımı gererim.",
+    "beispielEn": "After running I always stretch my legs."
+  },
+  {
+    "id": 7900,
+    "tr": "atletik",
+    "en": "athletic",
+    "beispiel": "Sein Bruder ist groß und sehr athletisch.",
+    "beispielTr": "Erkek kardeşi uzun boylu ve çok atletik.",
+    "beispielEn": "His brother is tall and very athletic."
+  },
+  {
+    "id": 7901,
+    "tr": "yaratıcı",
+    "en": "imaginative",
+    "beispiel": "Deine Geschenkidee ist wirklich einfallsreich.",
+    "beispielTr": "Hediye fikrin gerçekten yaratıcı.",
+    "beispielEn": "Your gift idea is really imaginative."
+  },
+  {
+    "id": 7902,
+    "tr": "haftalık",
+    "en": "weekly",
+    "beispiel": "Der Chor trifft sich wöchentlich am Mittwochabend.",
+    "beispielTr": "Koro haftada bir çarşamba akşamı buluşuyor.",
+    "beispielEn": "The choir meets weekly on Wednesday evening."
+  },
+  {
+    "id": 7903,
+    "tr": "günlük",
+    "en": "daily",
+    "beispiel": "Er spielt täglich eine Stunde Gitarre.",
+    "beispielTr": "Her gün bir saat gitar çalıyor.",
+    "beispielEn": "He plays guitar for an hour every day."
+  },
+  {
+    "id": 7904,
+    "tr": "öğleden sonraları",
+    "en": "in the afternoons",
+    "beispiel": "Nachmittags gehe ich mit den Kindern auf den Sportplatz.",
+    "beispielTr": "Öğleden sonraları çocuklarla spor sahasına giderim.",
+    "beispielEn": "In the afternoons I go to the sports field with the kids."
+  },
+  {
+    "id": 7905,
+    "tr": "formda",
+    "en": "fit",
+    "beispiel": "Meine Oma ist mit achtzig noch sehr fit.",
+    "beispielTr": "Babaannem seksen yaşında hâlâ çok formda.",
+    "beispielEn": "My grandma is still very fit at eighty."
+  },
+  {
+    "id": 7906,
+    "tr": "oyunbaz",
+    "en": "playful",
+    "beispiel": "Unser junger Hund ist noch sehr verspielt.",
+    "beispielTr": "Genç köpeğimiz hâlâ çok oyunbaz.",
+    "beispielEn": "Our young dog is still very playful."
+  },
+  {
+    "id": 7907,
+    "tr": "spor kulübü",
+    "en": "sports club",
+    "beispiel": "Mein Sohn ist seit einem Jahr in einem Sportverein.",
+    "beispielTr": "Oğlum bir yıldır bir spor kulübünde.",
+    "beispielEn": "My son has been in a sports club for a year."
+  },
+  {
+    "id": 7908,
+    "tr": "jimnastik salonu",
+    "en": "gymnasium",
+    "beispiel": "Bei Regen findet das Training in der Turnhalle statt.",
+    "beispielTr": "Yağmurda antrenman jimnastik salonunda yapılıyor.",
+    "beispielEn": "When it rains the training takes place in the gymnasium."
+  },
+  {
+    "id": 7909,
+    "tr": "fitness salonu",
+    "en": "gym",
+    "beispiel": "Ich gehe dreimal pro Woche ins Fitnessstudio.",
+    "beispielTr": "Haftada üç kez fitness salonuna gidiyorum.",
+    "beispielEn": "I go to the gym three times a week."
+  },
+  {
+    "id": 7910,
+    "tr": "kadın antrenör",
+    "en": "female coach",
+    "beispiel": "Unsere Trainerin erklärt die Übung noch einmal.",
+    "beispielTr": "Antrenörümüz hareketi bir kez daha açıklıyor.",
+    "beispielEn": "Our coach explains the exercise one more time."
+  },
+  {
+    "id": 7911,
+    "tr": "giriş bileti",
+    "en": "admission ticket",
+    "beispiel": "Die Eintrittskarte für das Konzert kostet zwanzig Euro.",
+    "beispielTr": "Konserin giriş bileti yirmi euro.",
+    "beispielEn": "The admission ticket for the concert costs twenty euros."
+  },
+  {
+    "id": 7912,
+    "tr": "keman",
+    "en": "violin",
+    "beispiel": "Meine Tochter lernt seit zwei Jahren Geige.",
+    "beispielTr": "Kızım iki yıldır keman öğreniyor.",
+    "beispielEn": "My daughter has been learning violin for two years."
+  },
+  {
+    "id": 7913,
+    "tr": "bateri",
+    "en": "drum set",
+    "beispiel": "Sein Schlagzeug steht im Keller, weil es so laut ist.",
+    "beispielTr": "Baterisi bodrumda duruyor, çünkü çok gürültülü.",
+    "beispielEn": "His drum set is in the basement because it is so loud."
+  },
+  {
+    "id": 7914,
+    "tr": "koro",
+    "en": "choir",
+    "beispiel": "Sie singt seit fünf Jahren in einem kleinen Chor.",
+    "beispielTr": "Beş yıldır küçük bir koroda şarkı söylüyor.",
+    "beispielEn": "She has been singing in a small choir for five years."
+  },
+  {
+    "id": 7915,
+    "tr": "kutu oyunu",
+    "en": "board game",
+    "beispiel": "Am Abend spielen wir oft ein Brettspiel mit den Kindern.",
+    "beispielTr": "Akşamları çocuklarla sık sık kutu oyunu oynuyoruz.",
+    "beispielEn": "In the evening we often play a board game with the kids."
+  },
+  {
+    "id": 7916,
+    "tr": "satranç",
+    "en": "chess",
+    "beispiel": "Mein Großvater hat mir Schach beigebracht.",
+    "beispielTr": "Satrancı bana dedem öğretti.",
+    "beispielEn": "My grandfather taught me chess."
+  },
+  {
+    "id": 7917,
+    "tr": "yapboz",
+    "en": "jigsaw puzzle",
+    "beispiel": "Das Puzzle hat tausend Teile und ist ziemlich schwer.",
+    "beispielTr": "Yapbozun bin parçası var ve epey zor.",
+    "beispielEn": "The puzzle has a thousand pieces and is quite hard."
+  },
+  {
+    "id": 7918,
+    "tr": "zar",
+    "en": "dice",
+    "beispiel": "Ein Würfel fehlt, deshalb können wir nicht anfangen.",
+    "beispielTr": "Bir zar eksik, bu yüzden başlayamıyoruz.",
+    "beispielEn": "One of the dice is missing so we cannot start."
+  },
+  {
+    "id": 7919,
+    "tr": "lunapark",
+    "en": "amusement park",
+    "beispiel": "Im Sommer fahren wir mit der Klasse in einen Freizeitpark.",
+    "beispielTr": "Yazın sınıfça bir lunaparka gidiyoruz.",
+    "beispielEn": "In summer we go to an amusement park with the class."
+  },
+  {
+    "id": 7920,
+    "tr": "kamp ateşi",
+    "en": "campfire",
+    "beispiel": "Am Lagerfeuer haben wir bis Mitternacht Lieder gesungen.",
+    "beispielTr": "Kamp ateşinin başında gece yarısına kadar şarkı söyledik.",
+    "beispielEn": "We sang songs by the campfire until midnight."
+  },
+  {
+    "id": 7921,
+    "tr": "boya fırçası",
+    "en": "paintbrush",
+    "beispiel": "Wasch bitte den Pinsel nach dem Malen aus.",
+    "beispielTr": "Lütfen boyadıktan sonra boya fırçasını yıka.",
+    "beispielEn": "Please wash out the paintbrush after painting."
+  },
+  {
+    "id": 7922,
+    "tr": "spor ayakkabısı",
+    "en": "sneaker",
+    "beispiel": "Für den Kurs brauchst du saubere Turnschuhe.",
+    "beispielTr": "Kurs için temiz spor ayakkabısı lazım.",
+    "beispielEn": "For the class you need clean sneakers."
+  },
+  {
+    "id": 7923,
+    "tr": "forma",
+    "en": "jersey",
+    "beispiel": "Er trägt das rote Trikot mit der Nummer neun.",
+    "beispielTr": "Dokuz numaralı kırmızı formayı giyiyor.",
+    "beispielEn": "He wears the red jersey with the number nine."
+  },
+  {
+    "id": 7924,
+    "tr": "kaleci",
+    "en": "goalkeeper",
+    "beispiel": "Unser Torwart hat heute sehr gut gespielt.",
+    "beispielTr": "Kalecimiz bugün çok iyi oynadı.",
+    "beispielEn": "Our goalkeeper played very well today."
+  },
+  {
+    "id": 7925,
+    "tr": "devre",
+    "en": "half",
+    "beispiel": "In der ersten Halbzeit war das Spiel langweilig.",
+    "beispielTr": "İlk devrede maç sıkıcıydı.",
+    "beispielEn": "In the first half the game was boring."
+  },
+  {
+    "id": 7926,
+    "tr": "kâğıt oyunu",
+    "en": "card game",
+    "beispiel": "Kennst du ein einfaches Kartenspiel für vier Personen?",
+    "beispielTr": "Dört kişilik basit bir kâğıt oyunu biliyor musun?",
+    "beispielEn": "Do you know an easy card game for four people?"
+  },
+  {
+    "id": 7927,
+    "tr": "dil",
+    "en": "tongue",
+    "beispiel": "Zeigen Sie mir bitte Ihre Zunge!",
+    "beispielTr": "Lütfen bana dilinizi gösterin!",
+    "beispielEn": "Please show me your tongue!"
+  },
+  {
+    "id": 7928,
+    "tr": "başparmak",
+    "en": "thumb",
+    "beispiel": "Beim Kochen habe ich mir den Daumen verletzt.",
+    "beispielTr": "Yemek yaparken başparmağımı yaraladım.",
+    "beispielEn": "I hurt my thumb while cooking."
+  },
+  {
+    "id": 7929,
+    "tr": "çene",
+    "en": "chin",
+    "beispiel": "Er ist gefallen und hat jetzt eine Wunde am Kinn.",
+    "beispielTr": "Düştü ve şimdi çenesinde bir yara var.",
+    "beispielEn": "He fell and now has a cut on his chin."
+  },
+  {
+    "id": 7930,
+    "tr": "alın",
+    "en": "forehead",
+    "beispiel": "Die Mutter legt dem Kind die Hand auf die Stirn.",
+    "beispielTr": "Anne elini çocuğun alnına koyuyor.",
+    "beispielEn": "The mother puts her hand on the child's forehead."
+  },
+  {
+    "id": 7931,
+    "tr": "yanak",
+    "en": "cheek",
+    "beispiel": "Nach dem Sport sind seine Wangen ganz rot.",
+    "beispielTr": "Spordan sonra yanakları kıpkırmızı.",
+    "beispielEn": "After sports his cheeks are all red."
+  },
+  {
+    "id": 7932,
+    "tr": "ayak parmağı",
+    "en": "toe",
+    "beispiel": "Ich bin gegen den Tisch gelaufen und mein Zeh tut weh.",
+    "beispielTr": "Masaya çarptım ve ayak parmağım ağrıyor.",
+    "beispielEn": "I walked into the table and my toe hurts."
+  },
+  {
+    "id": 7933,
+    "tr": "dirsek",
+    "en": "elbow",
+    "beispiel": "Ich habe mir den Ellenbogen am Tisch gestoßen.",
+    "beispielTr": "Dirseğimi masaya çarptım.",
+    "beispielEn": "I bumped my elbow on the table."
+  },
+  {
+    "id": 7934,
+    "tr": "ense",
+    "en": "nape",
+    "beispiel": "Nach der Arbeit am Computer tut mir der Nacken weh.",
+    "beispielTr": "Bilgisayarda çalıştıktan sonra ensem ağrıyor.",
+    "beispielEn": "My neck hurts after working at the computer."
+  },
+  {
+    "id": 7935,
+    "tr": "kalça",
+    "en": "hip",
+    "beispiel": "Meine Oma hat Schmerzen in der Hüfte.",
+    "beispielTr": "Babaannemin kalçasında ağrı var.",
+    "beispielEn": "My grandma has pain in her hip."
+  },
+  {
+    "id": 7936,
+    "tr": "akciğer",
+    "en": "lung",
+    "beispiel": "Rauchen ist schlecht für die Lunge.",
+    "beispielTr": "Sigara içmek akciğer için kötüdür.",
+    "beispielEn": "Smoking is bad for the lungs."
+  },
+  {
+    "id": 7937,
+    "tr": "karaciğer",
+    "en": "liver",
+    "beispiel": "Zu viel Alkohol schadet der Leber.",
+    "beispielTr": "Fazla alkol karaciğere zarar verir.",
+    "beispielEn": "Too much alcohol harms the liver."
+  }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 7938,
+  "tr": "ayak bileği",
+  "en": "ankle",
+  "beispiel": "Beim Fußball habe ich mir den Knöchel verletzt.",
+  "beispielTr": "Futbolda ayak bileğimi sakatladım.",
+  "beispielEn": "I hurt my ankle playing soccer."
+ },
+ {
+  "id": 7939,
+  "tr": "el bileği",
+  "en": "wrist",
+  "beispiel": "Mein Handgelenk tut weh, wenn ich schreibe.",
+  "beispielTr": "Yazarken el bileğim ağrıyor.",
+  "beispielEn": "My wrist hurts when I write."
+ },
+ {
+  "id": 7940,
+  "tr": "beyin",
+  "en": "brain",
+  "beispiel": "Schlaf ist wichtig für das Gehirn.",
+  "beispielTr": "Uyku beyin için önemlidir.",
+  "beispielEn": "Sleep is important for the brain."
+ },
+ {
+  "id": 7941,
+  "tr": "baş ağrısı",
+  "en": "headache",
+  "beispiel": "Ich habe seit gestern Kopfschmerzen und nehme eine Tablette.",
+  "beispielTr": "Dünden beri başım ağrıyor ve bir hap alıyorum.",
+  "beispielEn": "I've had a headache since yesterday and I'm taking a pill."
+ },
+ {
+  "id": 7942,
+  "tr": "boğaz ağrısı",
+  "en": "sore throat",
+  "beispiel": "Bei Halsschmerzen trinke ich immer Tee mit Honig.",
+  "beispielTr": "Boğazım ağrıdığında hep ballı çay içerim.",
+  "beispielEn": "When I have a sore throat, I always drink tea with honey."
+ },
+ {
+  "id": 7943,
+  "tr": "diş ağrısı",
+  "en": "toothache",
+  "beispiel": "Ich habe Zahnschmerzen und muss zum Zahnarzt.",
+  "beispielTr": "Dişim ağrıyor ve dişçiye gitmem gerek.",
+  "beispielEn": "I have a toothache and have to go to the dentist."
+ },
+ {
+  "id": 7944,
+  "tr": "sırt ağrısı",
+  "en": "back pain",
+  "beispiel": "Viele Menschen im Büro haben Rückenschmerzen.",
+  "beispielTr": "Ofisteki birçok insanın sırt ağrısı var.",
+  "beispielEn": "Many people in the office have back pain."
+ },
+ {
+  "id": 7945,
+  "tr": "ishal",
+  "en": "diarrhea",
+  "beispiel": "Nach dem Essen im Urlaub hatte ich Durchfall.",
+  "beispielTr": "Tatilde yemekten sonra ishal oldum.",
+  "beispielEn": "I had diarrhea after the meal on vacation."
+ },
+ {
+  "id": 7946,
+  "tr": "migren",
+  "en": "migraine",
+  "beispiel": "Meine Schwester hat oft Migräne und braucht dann Ruhe.",
+  "beispielTr": "Kız kardeşim sık sık migren olur ve sessizlik ister.",
+  "beispielEn": "My sister often gets migraines and then needs quiet."
+ },
+ {
+  "id": 7947,
+  "tr": "burun kanaması",
+  "en": "nosebleed",
+  "beispiel": "Mein Sohn hat im Winter oft Nasenbluten.",
+  "beispielTr": "Oğlumun kışın sık sık burnu kanar.",
+  "beispielEn": "My son often gets nosebleeds in winter."
+ },
+ {
+  "id": 7948,
+  "tr": "ambulans",
+  "en": "ambulance",
+  "beispiel": "Der Rettungswagen bringt den Mann ins Krankenhaus.",
+  "beispielTr": "Ambulans adamı hastaneye götürüyor.",
+  "beispielEn": "The ambulance is taking the man to the hospital."
+ },
+ {
+  "id": 7949,
+  "tr": "göz doktoru",
+  "en": "eye doctor",
+  "beispiel": "Der Augenarzt hat gesagt, ich brauche eine neue Brille.",
+  "beispielTr": "Göz doktoru yeni bir gözlüğe ihtiyacım olduğunu söyledi.",
+  "beispielEn": "The eye doctor said I need new glasses."
+ },
+ {
+  "id": 7950,
+  "tr": "çocuk doktoru",
+  "en": "pediatrician",
+  "beispiel": "Wir haben morgen einen Termin beim Kinderarzt.",
+  "beispielTr": "Yarın çocuk doktorunda randevumuz var.",
+  "beispielEn": "We have an appointment with the pediatrician tomorrow."
+ },
+ {
+  "id": 7951,
+  "tr": "hasta odası",
+  "en": "hospital room",
+  "beispiel": "Im Krankenzimmer liegen zwei Patienten.",
+  "beispielTr": "Hasta odasında iki hasta yatıyor.",
+  "beispielEn": "Two patients are lying in the hospital room."
+ },
+ {
+  "id": 7952,
+  "tr": "acil doktoru",
+  "en": "emergency doctor",
+  "beispiel": "Nach dem Unfall ist der Notarzt schnell gekommen.",
+  "beispielTr": "Kazadan sonra acil doktoru çabuk geldi.",
+  "beispielEn": "The emergency doctor came quickly after the accident."
+ },
+ {
+  "id": 7953,
+  "tr": "cerrah",
+  "en": "surgeon",
+  "beispiel": "Der Chirurg hat meinen Vater am Knie operiert.",
+  "beispielTr": "Cerrah babamı dizinden ameliyat etti.",
+  "beispielEn": "The surgeon operated on my father's knee."
+ },
+ {
+  "id": 7954,
+  "tr": "tedavi",
+  "en": "treatment",
+  "beispiel": "Die Behandlung dauert drei Wochen.",
+  "beispielTr": "Tedavi üç hafta sürüyor.",
+  "beispielEn": "The treatment lasts three weeks."
+ },
+ {
+  "id": 7955,
+  "tr": "kan örneği",
+  "en": "blood sample",
+  "beispiel": "Vor der Untersuchung nimmt die Schwester eine Blutprobe.",
+  "beispielTr": "Muayeneden önce hemşire kan örneği alıyor.",
+  "beispielEn": "The nurse takes a blood sample before the examination."
+ },
+ {
+  "id": 7956,
+  "tr": "öksürük şurubu",
+  "en": "cough syrup",
+  "beispiel": "Nimm abends einen Löffel Hustensaft.",
+  "beispielTr": "Akşamları bir kaşık öksürük şurubu al.",
+  "beispielEn": "Take a spoonful of cough syrup in the evening."
+ },
+ {
+  "id": 7957,
+  "tr": "göz damlası",
+  "en": "eye drops",
+  "beispiel": "Die Augentropfen bekomme ich ohne Rezept in der Apotheke.",
+  "beispielTr": "Göz damlasını eczaneden reçetesiz alıyorum.",
+  "beispielEn": "I get the eye drops without a prescription at the pharmacy."
+ },
+ {
+  "id": 7958,
+  "tr": "uyku hapı",
+  "en": "sleeping pill",
+  "beispiel": "Ohne Schlaftablette kann er kaum einschlafen.",
+  "beispielTr": "Uyku hapı olmadan zor uyuyor.",
+  "beispielEn": "He can hardly fall asleep without a sleeping pill."
+ },
+ {
+  "id": 7959,
+  "tr": "koltuk değneği",
+  "en": "crutch",
+  "beispiel": "Nach der Operation läuft sie mit Krücken.",
+  "beispielTr": "Ameliyattan sonra koltuk değnekleriyle yürüyor.",
+  "beispielEn": "She walks with crutches after the operation."
+ },
+ {
+  "id": 7960,
+  "tr": "tekerlekli sandalye",
+  "en": "wheelchair",
+  "beispiel": "Mein Nachbar sitzt seit dem Unfall im Rollstuhl.",
+  "beispielTr": "Komşum kazadan beri tekerlekli sandalyede.",
+  "beispielEn": "My neighbor has been in a wheelchair since the accident."
+ },
+ {
+  "id": 7961,
+  "tr": "alçı",
+  "en": "cast",
+  "beispiel": "Mein Arm ist gebrochen und jetzt im Gips.",
+  "beispielTr": "Kolum kırıldı ve şimdi alçıda.",
+  "beispielEn": "My arm is broken and now in a cast."
+ },
+ {
+  "id": 7962,
+  "tr": "aşı",
+  "en": "vaccine",
+  "beispiel": "In der Praxis gibt es einen neuen Impfstoff gegen Grippe.",
+  "beispielTr": "Muayenehanede gribe karşı yeni bir aşı var.",
+  "beispielEn": "There's a new flu vaccine at the doctor's office."
+ },
+ {
+  "id": 7963,
+  "tr": "kontakt lens",
+  "en": "contact lens",
+  "beispiel": "Ich trage lieber Kontaktlinsen als eine Brille.",
+  "beispielTr": "Gözlük yerine kontakt lens takmayı tercih ederim.",
+  "beispielEn": "I prefer wearing contact lenses to glasses."
+ },
+ {
+  "id": 7964,
+  "tr": "kan şekeri",
+  "en": "blood sugar",
+  "beispiel": "Mein Opa misst jeden Morgen seinen Blutzucker.",
+  "beispielTr": "Dedem her sabah kan şekerini ölçüyor.",
+  "beispielEn": "My grandpa measures his blood sugar every morning."
+ },
+ {
+  "id": 7965,
+  "tr": "masaj",
+  "en": "massage",
+  "beispiel": "Gegen die Schmerzen im Rücken hilft eine Massage.",
+  "beispielTr": "Sırt ağrısına masaj iyi geliyor.",
+  "beispielEn": "A massage helps against back pain."
+ },
+ {
+  "id": 7966,
+  "tr": "nabız",
+  "en": "pulse",
+  "beispiel": "Die Ärztin misst zuerst meinen Puls.",
+  "beispielTr": "Doktor önce nabzımı ölçüyor.",
+  "beispielEn": "The doctor takes my pulse first."
+ },
+ {
+  "id": 7967,
+  "tr": "ilk yardım",
+  "en": "first aid",
+  "beispiel": "Auf der Straße hat er Erste Hilfe geleistet.",
+  "beispielTr": "Sokakta ilk yardım yaptı.",
+  "beispielEn": "He gave first aid on the street."
+ },
+ {
+  "id": 7968,
+  "tr": "hapşırmak",
+  "en": "to sneeze",
+  "beispiel": "Ich muss die ganze Zeit niesen.",
+  "beispielTr": "Sürekli hapşırıyorum.",
+  "beispielEn": "I have to sneeze all the time."
+ },
+ {
+  "id": 7969,
+  "tr": "titremek",
+  "en": "to tremble",
+  "beispiel": "Meine Hände zittern, weil ich Fieber habe.",
+  "beispielTr": "Ateşim olduğu için ellerim titriyor.",
+  "beispielEn": "My hands are trembling because I have a fever."
+ },
+ {
+  "id": 7970,
+  "tr": "aşılamak",
+  "en": "to vaccinate",
+  "beispiel": "Der Arzt impft heute viele Kinder gegen Grippe.",
+  "beispielTr": "Doktor bugün birçok çocuğu gribe karşı aşılıyor.",
+  "beispielEn": "The doctor is vaccinating many children against the flu today."
+ },
+ {
+  "id": 7971,
+  "tr": "röntgen çekmek",
+  "en": "to x-ray",
+  "beispiel": "Im Krankenhaus haben sie meinen Fuß geröntgt.",
+  "beispielTr": "Hastanede ayağımın röntgenini çektiler.",
+  "beispielEn": "They x-rayed my foot at the hospital."
+ },
+ {
+  "id": 7972,
+  "tr": "hastalık kapmak",
+  "en": "to get infected",
+  "beispiel": "Bleib zu Hause, ich möchte mich nicht anstecken.",
+  "beispielTr": "Evde kal, hastalık kapmak istemiyorum.",
+  "beispielEn": "Stay home, I don't want to get infected."
+ },
+ {
+  "id": 7973,
+  "tr": "kendini hissetmek",
+  "en": "to feel",
+  "beispiel": "Heute fühle ich mich schon viel besser.",
+  "beispielTr": "Bugün kendimi çok daha iyi hissediyorum.",
+  "beispielEn": "I already feel much better today."
+ },
+ {
+  "id": 7974,
+  "tr": "yutmak",
+  "en": "to swallow",
+  "beispiel": "Mein Hals tut weh und ich kann kaum schlucken.",
+  "beispielTr": "Boğazım ağrıyor ve zor yutkunuyorum.",
+  "beispielEn": "My throat hurts and I can hardly swallow."
+ },
+ {
+  "id": 7975,
+  "tr": "soğutmak",
+  "en": "to cool",
+  "beispiel": "Kühle die Wunde sofort mit kaltem Wasser.",
+  "beispielTr": "Yarayı hemen soğuk suyla soğut.",
+  "beispielEn": "Cool the wound right away with cold water."
+ },
+ {
+  "id": 7976,
+  "tr": "uykusunu almak",
+  "en": "to sleep in",
+  "beispiel": "Am Wochenende möchte ich mich endlich ausschlafen.",
+  "beispielTr": "Hafta sonu nihayet uykumu almak istiyorum.",
+  "beispielEn": "I finally want to sleep in this weekend."
+ },
+ {
+  "id": 7977,
+  "tr": "başı dönen",
+  "en": "dizzy",
+  "beispiel": "Wenn ich zu schnell aufstehe, wird mir schwindlig.",
+  "beispielTr": "Çok hızlı ayağa kalkınca başım dönüyor.",
+  "beispielEn": "I get dizzy when I stand up too fast."
+ },
+ {
+  "id": 7978,
+  "tr": "sesi kısık",
+  "en": "hoarse",
+  "beispiel": "Nach dem Konzert war ich ganz heiser.",
+  "beispielTr": "Konserden sonra sesim tamamen kısılmıştı.",
+  "beispielEn": "I was completely hoarse after the concert."
+ },
+ {
+  "id": 7979,
+  "tr": "şişmiş",
+  "en": "swollen",
+  "beispiel": "Mein Fuß ist geschwollen und tut weh.",
+  "beispielTr": "Ayağım şişmiş ve ağrıyor.",
+  "beispielEn": "My foot is swollen and hurts."
+ },
+ {
+  "id": 7980,
+  "tr": "yaralı",
+  "en": "injured",
+  "beispiel": "Der Fahrer war nach dem Unfall schwer verletzt.",
+  "beispielTr": "Sürücü kazadan sonra ağır yaralıydı.",
+  "beispielEn": "The driver was badly injured after the accident."
+ },
+ {
+  "id": 7981,
+  "tr": "midesi bulanan",
+  "en": "nauseous",
+  "beispiel": "Im Bus ist mir immer übel.",
+  "beispielTr": "Otobüste hep midem bulanır.",
+  "beispielEn": "I always feel nauseous on the bus."
+ },
+ {
+  "id": 7982,
+  "tr": "acı verici",
+  "en": "painful",
+  "beispiel": "Die Behandlung war leider sehr schmerzhaft.",
+  "beispielTr": "Tedavi maalesef çok acı vericiydi.",
+  "beispielEn": "The treatment was unfortunately very painful."
+ },
+ {
+  "id": 7983,
+  "tr": "bulaşıcı",
+  "en": "contagious",
+  "beispiel": "Eine Grippe ist sehr ansteckend.",
+  "beispielTr": "Grip çok bulaşıcıdır.",
+  "beispielEn": "The flu is very contagious."
+ },
+ {
+  "id": 7984,
+  "tr": "baygın",
+  "en": "unconscious",
+  "beispiel": "In der Hitze ist die alte Frau ohnmächtig geworden.",
+  "beispielTr": "Sıcakta yaşlı kadın bayıldı.",
+  "beispielEn": "The old woman fainted in the heat."
+ },
+ {
+  "id": 7985,
+  "tr": "telefon numarası",
+  "en": "phone number",
+  "beispiel": "Kannst du mir bitte deine Telefonnummer geben?",
+  "beispielTr": "Bana telefon numaranı verebilir misin?",
+  "beispielEn": "Can you give me your phone number, please?"
+ },
+ {
+  "id": 7986,
+  "tr": "cep telefonu numarası",
+  "en": "cell phone number",
+  "beispiel": "Meine Handynummer hat sich letzte Woche geändert.",
+  "beispielTr": "Cep telefonu numaram geçen hafta değişti.",
+  "beispielEn": "My cell phone number changed last week."
+ },
+ {
+  "id": 7987,
+  "tr": "telefon görüşmesi",
+  "en": "phone conversation",
+  "beispiel": "Das Telefonat mit meinem Chef hat nur fünf Minuten gedauert.",
+  "beispielTr": "Patronumla telefon görüşmem sadece beş dakika sürdü.",
+  "beispielEn": "The phone conversation with my boss lasted only five minutes."
+ }
+]

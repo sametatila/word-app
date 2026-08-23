@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7588,
+    "tr": "aylarca",
+    "en": "for months",
+    "beispiel": "Sie hat monatelang eine Wohnung gesucht.",
+    "beispielTr": "Aylarca bir daire aradı.",
+    "beispielEn": "She looked for an apartment for months."
+  },
+  {
+    "id": 7589,
+    "tr": "sabahları",
+    "en": "in the morning",
+    "beispiel": "Morgens trinke ich immer einen Tee.",
+    "beispielTr": "Sabahları hep bir çay içerim.",
+    "beispielEn": "In the morning I always drink tea."
+  },
+  {
+    "id": 7590,
+    "tr": "akşamları",
+    "en": "in the evening",
+    "beispiel": "Abends bin ich meistens zu müde zum Kochen.",
+    "beispielTr": "Akşamları genelde yemek yapamayacak kadar yorgun oluyorum.",
+    "beispielEn": "In the evening I am usually too tired to cook."
+  },
+  {
+    "id": 7591,
+    "tr": "öğlenleri",
+    "en": "at noon",
+    "beispiel": "Mittags esse ich in der Kantine.",
+    "beispielTr": "Öğlenleri yemekhanede yemek yiyorum.",
+    "beispielEn": "At noon I eat in the cafeteria."
+  },
+  {
+    "id": 7592,
+    "tr": "geceleri",
+    "en": "at night",
+    "beispiel": "Nachts ist es hier sehr ruhig.",
+    "beispielTr": "Geceleri burası çok sakin oluyor.",
+    "beispielEn": "At night it is very quiet here."
+  },
+  {
+    "id": 7593,
+    "tr": "pazarları",
+    "en": "on Sundays",
+    "beispiel": "Sonntags haben die Geschäfte geschlossen.",
+    "beispielTr": "Pazarları dükkânlar kapalı oluyor.",
+    "beispielEn": "The shops are closed on Sundays."
+  },
+  {
+    "id": 7594,
+    "tr": "ara sıra",
+    "en": "occasionally",
+    "beispiel": "Gelegentlich gehen wir zusammen schwimmen.",
+    "beispielTr": "Ara sıra birlikte yüzmeye gidiyoruz.",
+    "beispielEn": "Occasionally we go swimming together."
+  },
+  {
+    "id": 7595,
+    "tr": "birkaç kez",
+    "en": "several times",
+    "beispiel": "Ich habe dich mehrmals angerufen.",
+    "beispielTr": "Seni birkaç kez aradım.",
+    "beispielEn": "I called you several times."
+  },
+  {
+    "id": 7596,
+    "tr": "birden çok kez",
+    "en": "multiple times",
+    "beispiel": "Wir haben das Formular mehrfach kontrolliert.",
+    "beispielTr": "Formu birden çok kez kontrol ettik.",
+    "beispielEn": "We checked the form multiple times."
+  },
+  {
+    "id": 7597,
+    "tr": "defalarca",
+    "en": "repeatedly",
+    "beispiel": "Der Nachbar hat sich wiederholt über den Lärm beschwert.",
+    "beispielTr": "Komşu gürültüden defalarca şikâyet etti.",
+    "beispielEn": "The neighbor complained about the noise repeatedly."
+  },
+  {
+    "id": 7598,
+    "tr": "daima",
+    "en": "always",
+    "beispiel": "Der Chef ist stets freundlich zu den Kunden.",
+    "beispielTr": "Patron müşterilere daima nazik davranıyor.",
+    "beispielEn": "The boss is always friendly to the customers."
+  },
+  {
+    "id": 7599,
+    "tr": "sürekli",
+    "en": "constantly",
+    "beispiel": "Mein Handy klingelt andauernd.",
+    "beispielTr": "Telefonum sürekli çalıyor.",
+    "beispielEn": "My phone rings constantly."
+  },
+  {
+    "id": 7600,
+    "tr": "istisna olarak",
+    "en": "as an exception",
+    "beispiel": "Heute darfst du ausnahmsweise länger fernsehen.",
+    "beispielTr": "Bugün istisna olarak daha uzun televizyon izleyebilirsin.",
+    "beispielEn": "Today you may watch TV longer as an exception."
+  },
+  {
+    "id": 7601,
+    "tr": "tamamen",
+    "en": "completely",
+    "beispiel": "Nach dem Umzug war ich vollkommen erschöpft.",
+    "beispielTr": "Taşınmadan sonra tamamen bitkindim.",
+    "beispielEn": "After the move I was completely exhausted."
+  },
+  {
+    "id": 7602,
+    "tr": "son derece",
+    "en": "extremely",
+    "beispiel": "Die Prüfung war äußerst schwer.",
+    "beispielTr": "Sınav son derece zordu.",
+    "beispielEn": "The exam was extremely difficult."
+  },
+  {
+    "id": 7603,
+    "tr": "az çok",
+    "en": "reasonably",
+    "beispiel": "Ich spreche einigermaßen gut Deutsch.",
+    "beispielTr": "Almancayı az çok iyi konuşuyorum.",
+    "beispielEn": "I speak German reasonably well."
+  },
+  {
+    "id": 7604,
+    "tr": "yeterince",
+    "en": "enough",
+    "beispiel": "Wir haben genügend Stühle für alle Gäste.",
+    "beispielTr": "Bütün misafirler için yeterince sandalyemiz var.",
+    "beispielEn": "We have enough chairs for all the guests."
+  },
+  {
+    "id": 7605,
+    "tr": "kısmen",
+    "en": "partly",
+    "beispiel": "Ich habe die Rechnung nur teilweise bezahlt.",
+    "beispielTr": "Faturayı sadece kısmen ödedim.",
+    "beispielEn": "I paid only part of the bill."
+  },
+  {
+    "id": 7606,
+    "tr": "şöyle böyle",
+    "en": "more or less",
+    "beispiel": "Das Zimmer ist jetzt halbwegs sauber.",
+    "beispielTr": "Oda şimdi şöyle böyle temiz.",
+    "beispielEn": "The room is more or less clean now."
+  },
+  {
+    "id": 7607,
+    "tr": "büyük ölçüde",
+    "en": "mostly",
+    "beispiel": "Die Arbeit ist größtenteils fertig.",
+    "beispielTr": "İş büyük ölçüde bitti.",
+    "beispielEn": "The work is mostly finished."
+  },
+  {
+    "id": 7608,
+    "tr": "epeyce",
+    "en": "quite a few",
+    "beispiel": "Auf dem Markt gibt es etliche gute Angebote.",
+    "beispielTr": "Pazarda epeyce iyi teklif var.",
+    "beispielEn": "There are quite a few good offers at the market."
+  },
+  {
+    "id": 7609,
+    "tr": "ağırlıklı olarak",
+    "en": "mainly",
+    "beispiel": "Ich esse hauptsächlich Gemüse und Obst.",
+    "beispielTr": "Ağırlıklı olarak sebze ve meyve yiyorum.",
+    "beispielEn": "I mainly eat vegetables and fruit."
+  },
+  {
+    "id": 7610,
+    "tr": "özellikle",
+    "en": "in particular",
+    "beispiel": "Der Kurs hilft insbesondere den Anfängern.",
+    "beispielTr": "Kurs özellikle yeni başlayanlara yardımcı oluyor.",
+    "beispielEn": "The course helps beginners in particular."
+  },
+  {
+    "id": 7611,
+    "tr": "birincisi",
+    "en": "firstly",
+    "beispiel": "Erstens ist die Wohnung zu teuer für mich.",
+    "beispielTr": "Birincisi, daire benim için çok pahalı.",
+    "beispielEn": "Firstly, the apartment is too expensive for me."
+  },
+  {
+    "id": 7612,
+    "tr": "ikincisi",
+    "en": "secondly",
+    "beispiel": "Zweitens brauchen wir noch einen Tisch für die Küche.",
+    "beispielTr": "İkincisi, mutfak için bir masaya daha ihtiyacımız var.",
+    "beispielEn": "Secondly, we still need a table for the kitchen."
+  },
+  {
+    "id": 7613,
+    "tr": "üçüncüsü",
+    "en": "thirdly",
+    "beispiel": "Drittens müssen wir früher losfahren.",
+    "beispielTr": "Üçüncüsü, daha erken yola çıkmalıyız.",
+    "beispielEn": "Thirdly, we have to leave earlier."
+  },
+  {
+    "id": 7614,
+    "tr": "bunun üzerine",
+    "en": "thereupon",
+    "beispiel": "Ich habe mich beschwert, daraufhin hat die Firma das Geld zurückgezahlt.",
+    "beispielTr": "Şikâyet ettim, bunun üzerine firma parayı geri ödedi.",
+    "beispielEn": "I complained, thereupon the company refunded the money."
+  },
+  {
+    "id": 7615,
+    "tr": "sonuçta",
+    "en": "ultimately",
+    "beispiel": "Letztlich haben wir uns für das kleine Auto entschieden.",
+    "beispielTr": "Sonuçta küçük arabayı seçtik.",
+    "beispielEn": "Ultimately we decided on the small car."
+  },
+  {
+    "id": 7616,
+    "tr": "bir daha",
+    "en": "one more time",
+    "beispiel": "Kannst du das bitte noch mal erklären?",
+    "beispielTr": "Bunu lütfen bir daha açıklayabilir misin?",
+    "beispielEn": "Can you explain that one more time please?"
+  },
+  {
+    "id": 7617,
+    "tr": "yeniden",
+    "en": "once again",
+    "beispiel": "Der Bus hatte erneut Verspätung.",
+    "beispielTr": "Otobüs yeniden gecikti.",
+    "beispielEn": "The bus was late once again."
+  },
+  {
+    "id": 7618,
+    "tr": "bir yerde",
+    "en": "somewhere",
+    "beispiel": "Mein Schlüssel muss irgendwo in der Tasche sein.",
+    "beispielTr": "Anahtarım çantada bir yerde olmalı.",
+    "beispielEn": "My key must be somewhere in the bag."
+  },
+  {
+    "id": 7619,
+    "tr": "bir şekilde",
+    "en": "somehow",
+    "beispiel": "Wir schaffen das irgendwie bis Freitag.",
+    "beispielTr": "Bunu bir şekilde cumaya kadar hallederiz.",
+    "beispielEn": "We will somehow manage it by Friday."
+  },
+  {
+    "id": 7620,
+    "tr": "ya",
+    "en": "either",
+    "beispiel": "Wir fahren entweder mit dem Zug oder mit dem Bus.",
+    "beispielTr": "Ya trenle ya da otobüsle gideriz.",
+    "beispielEn": "We will go either by train or by bus."
+  },
+  {
+    "id": 7621,
+    "tr": "ne",
+    "en": "neither",
+    "beispiel": "Ich habe weder Zeit noch Lust.",
+    "beispielTr": "Ne vaktim ne de hevesim var.",
+    "beispielEn": "I have neither time nor desire."
+  },
+  {
+    "id": 7622,
+    "tr": "hem",
+    "en": "both",
+    "beispiel": "Sie spricht sowohl Türkisch als auch Deutsch.",
+    "beispielTr": "Hem Türkçe hem de Almanca konuşuyor.",
+    "beispielEn": "She speaks both Turkish and German."
+  },
+  {
+    "id": 7623,
+    "tr": "ve ayrıca",
+    "en": "as well as",
+    "beispiel": "Bitte bringen Sie Ihren Ausweis sowie ein Foto mit.",
+    "beispielTr": "Lütfen kimliğinizi ve ayrıca bir fotoğraf getirin.",
+    "beispielEn": "Please bring your ID as well as a photo."
+  },
+  {
+    "id": 7624,
+    "tr": "daha doğrusu",
+    "en": "or rather",
+    "beispiel": "Das Konzert beginnt um acht, beziehungsweise um halb neun.",
+    "beispielTr": "Konser sekizde başlıyor, daha doğrusu sekiz buçukta.",
+    "beispielEn": "The concert starts at eight or rather at half past eight."
+  },
+  {
+    "id": 7625,
+    "tr": "yerine",
+    "en": "instead of",
+    "beispiel": "Anstatt zu lernen, hat er den ganzen Tag gespielt.",
+    "beispielTr": "Ders çalışmak yerine bütün gün oyun oynadı.",
+    "beispielEn": "Instead of studying he played all day."
+  },
+  {
+    "id": 7626,
+    "tr": "o kadar",
+    "en": "the",
+    "beispiel": "Je früher wir losfahren, desto weniger Verkehr haben wir.",
+    "beispielTr": "Ne kadar erken yola çıkarsak o kadar az trafiğe takılırız.",
+    "beispielEn": "The earlier we leave the less traffic we have."
+  },
+  {
+    "id": 7627,
+    "tr": "yukarısında",
+    "en": "above",
+    "beispiel": "Das Restaurant liegt oberhalb des Sees.",
+    "beispielTr": "Restoran gölün yukarısında bulunuyor.",
+    "beispielEn": "The restaurant is above the lake."
+  },
+  {
+    "id": 7628,
+    "tr": "aşağısında",
+    "en": "below",
+    "beispiel": "Unterhalb der Brücke gibt es einen Parkplatz.",
+    "beispielTr": "Köprünün aşağısında bir otopark var.",
+    "beispielEn": "There is a parking lot below the bridge."
+  },
+  {
+    "id": 7629,
+    "tr": "nedeniyle",
+    "en": "because of",
+    "beispiel": "Aufgrund des Schnees fällt der Unterricht aus.",
+    "beispielTr": "Kar nedeniyle ders iptal oldu.",
+    "beispielEn": "Because of the snow the class is canceled."
+  },
+  {
+    "id": 7630,
+    "tr": "yardımıyla",
+    "en": "with the help of",
+    "beispiel": "Mithilfe einer App finde ich jede Adresse.",
+    "beispielTr": "Bir uygulama yardımıyla her adresi buluyorum.",
+    "beispielEn": "With the help of an app I find every address."
+  },
+  {
+    "id": 7631,
+    "tr": "üstelik",
+    "en": "moreover",
+    "beispiel": "Die Wohnung ist günstig, zudem liegt sie sehr zentral.",
+    "beispielTr": "Daire ucuz, üstelik çok merkezi bir yerde.",
+    "beispielEn": "The apartment is cheap and moreover very central."
+  },
+  {
+    "id": 7632,
+    "tr": "bu yüzden",
+    "en": "therefore",
+    "beispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt.",
+    "beispielTr": "Nakit param yoktu, bu yüzden kartla ödedim.",
+    "beispielEn": "I had no cash, therefore I paid by card."
+  },
+  {
+    "id": 7633,
+    "tr": "onun yerine",
+    "en": "instead",
+    "beispiel": "Der Kuchen war alle, stattdessen habe ich ein Eis genommen.",
+    "beispielTr": "Pasta bitmişti, onun yerine dondurma aldım.",
+    "beispielEn": "The cake was gone, instead I got an ice cream."
+  },
+  {
+    "id": 7634,
+    "tr": "böylece",
+    "en": "thus",
+    "beispiel": "Ich habe alles bezahlt und bin somit fertig.",
+    "beispielTr": "Her şeyi ödedim ve böylece işim bitti.",
+    "beispielEn": "I have paid everything and thus I am done."
+  },
+  {
+    "id": 7635,
+    "tr": "yine de",
+    "en": "at least",
+    "beispiel": "Das Essen war teuer, aber immerhin war es lecker.",
+    "beispielTr": "Yemek pahalıydı ama yine de lezzetliydi.",
+    "beispielEn": "The food was expensive but at least it was tasty."
+  },
+  {
+    "id": 7636,
+    "tr": "her durumda",
+    "en": "in any case",
+    "beispiel": "Ich komme jedenfalls pünktlich zum Treffen.",
+    "beispielTr": "Ben her durumda buluşmaya vaktinde gelirim.",
+    "beispielEn": "In any case I will come to the meeting on time."
+  },
+  {
+    "id": 7637,
+    "tr": "örneğin",
+    "en": "for instance",
+    "beispiel": "Du kannst beispielsweise am Wochenende vorbeikommen.",
+    "beispielTr": "Örneğin hafta sonu uğrayabilirsin.",
+    "beispielEn": "You could stop by on the weekend for instance."
+  }
+]

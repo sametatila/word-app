@@ -1,0 +1,402 @@
+[
+  {
+    "id": 932,
+    "tr": "ki",
+    "en": "that",
+    "beispiel": "Ich hoffe, dass du bald kommst.",
+    "beispielTr": "Umarım yakında gelirsin.",
+    "beispielEn": "I hope you'll come soon."
+  },
+  {
+    "id": 1315,
+    "tr": "eğer",
+    "en": "if",
+    "beispiel": "Wenn es regnet, bleiben wir zu Hause.",
+    "beispielTr": "Yağmur yağarsa evde kalırız.",
+    "beispielEn": "If it rains, we'll stay home."
+  },
+  {
+    "id": 863,
+    "tr": "-den daha",
+    "en": "than",
+    "beispiel": "Mein Bruder ist größer als ich.",
+    "beispielTr": "Ağabeyim benden daha uzun.",
+    "beispielEn": "My brother is taller than me."
+  },
+  {
+    "id": 1306,
+    "tr": "kayıp",
+    "en": "gone",
+    "beispiel": "Meine Brille ist weg.",
+    "beispielTr": "Gözlüğüm kayıp.",
+    "beispielEn": "My glasses are gone."
+  },
+  {
+    "id": 1307,
+    "tr": "yol",
+    "en": "way",
+    "beispiel": "Können Sie mir den Weg zum Bahnhof zeigen?",
+    "beispielTr": "Bana gara giden yolu gösterebilir misiniz?",
+    "beispielEn": "Can you show me the way to the station?"
+  },
+  {
+    "id": 1311,
+    "tr": "çünkü",
+    "en": "because",
+    "beispiel": "Ich bleibe heute zu Hause, weil ich krank bin.",
+    "beispielTr": "Bugün evde kalıyorum çünkü hastayım.",
+    "beispielEn": "I'm staying home today because I'm sick."
+  },
+  {
+    "id": 992,
+    "tr": "bütün",
+    "en": "whole",
+    "beispiel": "Wir haben den ganzen Tag gearbeitet.",
+    "beispielTr": "Bütün gün çalıştık.",
+    "beispielEn": "We worked the whole day."
+  },
+  {
+    "id": 1086,
+    "tr": "demek istemek",
+    "en": "to mean",
+    "beispiel": "Was meinst du damit?",
+    "beispielTr": "Bununla ne demek istiyorsun?",
+    "beispielEn": "What do you mean by that?"
+  },
+  {
+    "id": 1001,
+    "tr": "tam olarak",
+    "en": "exactly",
+    "beispiel": "Es ist genau acht Uhr.",
+    "beispielTr": "Saat tam sekiz.",
+    "beispielEn": "It's exactly eight o'clock."
+  },
+  {
+    "id": 1151,
+    "tr": "konuşmak",
+    "en": "to talk",
+    "beispiel": "Mit meiner Freundin kann ich über alles reden.",
+    "beispielTr": "Kız arkadaşımla her şeyi konuşabiliyorum.",
+    "beispielEn": "I can talk about anything with my girlfriend."
+  },
+  {
+    "id": 1039,
+    "tr": "biri",
+    "en": "someone",
+    "beispiel": "Jemand hat mein Fahrrad genommen.",
+    "beispielTr": "Biri bisikletimi almış.",
+    "beispielEn": "Someone took my bike."
+  },
+  {
+    "id": 1124,
+    "tr": "çift",
+    "en": "pair",
+    "beispiel": "Ich brauche ein neues Paar Schuhe.",
+    "beispielTr": "Yeni bir çift ayakkabıya ihtiyacım var.",
+    "beispielEn": "I need a new pair of shoes."
+  },
+  {
+    "id": 1195,
+    "tr": "kendi",
+    "en": "oneself",
+    "beispiel": "Ich habe den Kuchen selbst gebacken.",
+    "beispielTr": "Pastayı kendim yaptım.",
+    "beispielEn": "I baked the cake myself."
+  },
+  {
+    "id": 1022,
+    "tr": "buraya",
+    "en": "over here",
+    "beispiel": "Komm bitte mal her!",
+    "beispielTr": "Lütfen buraya gel!",
+    "beispielEn": "Please come over here!"
+  },
+  {
+    "id": 1108,
+    "tr": "elbette",
+    "en": "of course",
+    "beispiel": "Natürlich helfen wir dir.",
+    "beispielTr": "Elbette sana yardım ederiz.",
+    "beispielEn": "Of course we'll help you."
+  },
+  {
+    "id": 1308,
+    "tr": "yüzünden",
+    "en": "because of",
+    "beispiel": "Wegen des Regens bleiben wir zu Hause.",
+    "beispielTr": "Yağmur yüzünden evde kalıyoruz.",
+    "beispielEn": "We're staying home because of the rain."
+  },
+  {
+    "id": 1028,
+    "tr": "oraya",
+    "en": "there",
+    "beispiel": "Ich gehe morgen nicht hin.",
+    "beispielTr": "Yarın oraya gitmiyorum.",
+    "beispielEn": "I'm not going there tomorrow."
+  },
+  {
+    "id": 964,
+    "tr": "ancak",
+    "en": "only",
+    "beispiel": "Der Film beginnt erst um acht.",
+    "beispielTr": "Film ancak sekizde başlıyor.",
+    "beispielEn": "The movie only starts at eight."
+  },
+  {
+    "id": 1204,
+    "tr": "yoksa",
+    "en": "otherwise",
+    "beispiel": "Beeil dich, sonst kommen wir zu spät!",
+    "beispielTr": "Acele et, yoksa geç kalacağız!",
+    "beispielEn": "Hurry up, otherwise we'll be late!"
+  },
+  {
+    "id": 929,
+    "tr": "orada olmak",
+    "en": "to be there",
+    "beispiel": "Beim Konzert war die ganze Familie dabei.",
+    "beispielTr": "Konserde bütün aile oradaydı.",
+    "beispielEn": "The whole family was there at the concert."
+  },
+  {
+    "id": 946,
+    "tr": "fark etmez",
+    "en": "doesn't matter",
+    "beispiel": "Das ist mir egal.",
+    "beispielTr": "Benim için fark etmez.",
+    "beispielEn": "It doesn't matter to me."
+  },
+  {
+    "id": 945,
+    "tr": "gerçek",
+    "en": "real",
+    "beispiel": "Ist das Bild ein echter Picasso?",
+    "beispielTr": "Bu tablo gerçek bir Picasso mu?",
+    "beispielEn": "Is this painting a real Picasso?"
+  },
+  {
+    "id": 1216,
+    "tr": "ölmek",
+    "en": "to die",
+    "beispiel": "Viele Menschen sterben an dieser Krankheit.",
+    "beispielTr": "Bu hastalıktan çok insan ölüyor.",
+    "beispielEn": "Many people die from this disease."
+  },
+  {
+    "id": 970,
+    "tr": "neredeyse",
+    "en": "almost",
+    "beispiel": "Ich habe fast alles verstanden.",
+    "beispielTr": "Neredeyse her şeyi anladım.",
+    "beispielEn": "I understood almost everything."
+  },
+  {
+    "id": 1289,
+    "tr": "bitmiş",
+    "en": "over",
+    "beispiel": "Der Sommer ist leider schon vorbei.",
+    "beispielTr": "Yaz maalesef çoktan bitti.",
+    "beispielEn": "Summer is unfortunately already over."
+  },
+  {
+    "id": 1029,
+    "tr": "arkasında",
+    "en": "behind",
+    "beispiel": "Hinter dem Haus ist ein großer Garten.",
+    "beispielTr": "Evin arkasında büyük bir bahçe var.",
+    "beispielEn": "There's a big garden behind the house."
+  },
+  {
+    "id": 1202,
+    "tr": "bile",
+    "en": "even",
+    "beispiel": "In den Bergen schneit es sogar.",
+    "beispielTr": "Dağlarda kar bile yağıyor.",
+    "beispielEn": "It's even snowing in the mountains."
+  },
+  {
+    "id": 1167,
+    "tr": "sessizlik",
+    "en": "quiet",
+    "beispiel": "In der Bibliothek brauchen wir Ruhe.",
+    "beispielTr": "Kütüphanede sessizliğe ihtiyacımız var.",
+    "beispielEn": "We need quiet in the library."
+  },
+  {
+    "id": 1284,
+    "tr": "denemek",
+    "en": "to try",
+    "beispiel": "Ich versuche es später noch einmal.",
+    "beispielTr": "Daha sonra bir kez daha deneyeceğim.",
+    "beispielEn": "I'll try again later."
+  },
+  {
+    "id": 866,
+    "tr": "başka türlü",
+    "en": "differently",
+    "beispiel": "Leider geht es nicht anders.",
+    "beispielTr": "Maalesef başka türlü olmuyor.",
+    "beispielEn": "Unfortunately it cannot be done differently."
+  },
+  {
+    "id": 1299,
+    "tr": "otomobil",
+    "en": "car",
+    "beispiel": "Mein Wagen steht in der Garage.",
+    "beispielTr": "Otomobilim garajda duruyor.",
+    "beispielEn": "My car is in the garage."
+  },
+  {
+    "id": 1005,
+    "tr": "yüz",
+    "en": "face",
+    "beispiel": "Wasch dir bitte das Gesicht!",
+    "beispielTr": "Lütfen yüzünü yıka!",
+    "beispielEn": "Please wash your face!"
+  },
+  {
+    "id": 935,
+    "tr": "nesne",
+    "en": "object",
+    "beispiel": "Was macht man mit diesem Ding?",
+    "beispielTr": "Bu nesne ne işe yarıyor?",
+    "beispielEn": "What do you do with this object?"
+  },
+  {
+    "id": 974,
+    "tr": "şenlik",
+    "en": "festival",
+    "beispiel": "Im Dorf gibt es jedes Jahr ein Fest.",
+    "beispielTr": "Köyde her yıl bir şenlik olur.",
+    "beispielEn": "There is a festival in the village every year."
+  },
+  {
+    "id": 881,
+    "tr": "dışında",
+    "en": "except",
+    "beispiel": "Alle sind gekommen außer Tom.",
+    "beispielTr": "Tom dışında herkes geldi.",
+    "beispielEn": "Everyone came except Tom."
+  },
+  {
+    "id": 1198,
+    "tr": "oturmak",
+    "en": "to sit down",
+    "beispiel": "Setz dich bitte hier neben mich!",
+    "beispielTr": "Lütfen buraya yanıma otur!",
+    "beispielEn": "Please sit down here next to me!"
+  },
+  {
+    "id": 1301,
+    "tr": "muhtemelen",
+    "en": "probably",
+    "beispiel": "Er kommt wahrscheinlich später.",
+    "beispielTr": "Muhtemelen daha sonra gelir.",
+    "beispielEn": "He'll probably come later."
+  },
+  {
+    "id": 1089,
+    "tr": "miktar",
+    "en": "amount",
+    "beispiel": "Wir haben eine große Menge Papier bestellt.",
+    "beispielTr": "Büyük miktarda kâğıt sipariş ettik.",
+    "beispielEn": "We ordered a large amount of paper."
+  },
+  {
+    "id": 922,
+    "tr": "ofis",
+    "en": "office",
+    "beispiel": "Ich arbeite in einem kleinen Büro.",
+    "beispielTr": "Küçük bir ofiste çalışıyorum.",
+    "beispielEn": "I work in a small office."
+  },
+  {
+    "id": 1175,
+    "tr": "başarmak",
+    "en": "to manage",
+    "beispiel": "Ich schaffe das nicht allein.",
+    "beispielTr": "Bunu tek başıma başaramıyorum.",
+    "beispielEn": "I can't manage this alone."
+  },
+  {
+    "id": 1287,
+    "tr": "dolu",
+    "en": "full",
+    "beispiel": "Morgens sind die Züge immer sehr voll.",
+    "beispielTr": "Sabahları trenler hep çok dolu olur.",
+    "beispielEn": "The trains are always very full in the morning."
+  },
+  {
+    "id": 936,
+    "tr": "doğrudan",
+    "en": "directly",
+    "beispiel": "Der Bus fährt direkt zum Bahnhof.",
+    "beispielTr": "Otobüs doğrudan gara gidiyor.",
+    "beispielEn": "The bus goes directly to the station."
+  },
+  {
+    "id": 1112,
+    "tr": "adlandırmak",
+    "en": "to name",
+    "beispiel": "Mein Freund heißt Alexander, aber alle nennen ihn Alex.",
+    "beispielTr": "Arkadaşımın adı Alexander ama herkes ona Alex diyor.",
+    "beispielEn": "My friend's name is Alexander, but everyone calls him Alex."
+  },
+  {
+    "id": 959,
+    "tr": "hatırlamak",
+    "en": "to remember",
+    "beispiel": "Erinnerst du dich an unseren Lehrer?",
+    "beispielTr": "Öğretmenimizi hatırlıyor musun?",
+    "beispielEn": "Do you remember our teacher?"
+  },
+  {
+    "id": 1278,
+    "tr": "kaybetmek",
+    "en": "to lose",
+    "beispiel": "Ich habe meinen Schlüssel verloren.",
+    "beispielTr": "Anahtarımı kaybettim.",
+    "beispielEn": "I've lost my key."
+  },
+  {
+    "id": 1166,
+    "tr": "çağırmak",
+    "en": "to call",
+    "beispiel": "Wir müssen sofort einen Arzt rufen.",
+    "beispielTr": "Hemen bir doktor çağırmalıyız.",
+    "beispielEn": "We have to call a doctor right away."
+  },
+  {
+    "id": 1227,
+    "tr": "süper",
+    "en": "great",
+    "beispiel": "Der Film war wirklich super.",
+    "beispielTr": "Film gerçekten süperdi.",
+    "beispielEn": "The movie was really great."
+  },
+  {
+    "id": 1243,
+    "tr": "tamamen",
+    "en": "totally",
+    "beispiel": "Ich habe die Prüfung total vergessen.",
+    "beispielTr": "Sınavı tamamen unuttum.",
+    "beispielEn": "I totally forgot the exam."
+  },
+  {
+    "id": 931,
+    "tr": "o zamanlar",
+    "en": "back then",
+    "beispiel": "Damals hatten wir noch kein Auto.",
+    "beispielTr": "O zamanlar arabamız yoktu.",
+    "beispielEn": "Back then we didn't have a car yet."
+  },
+  {
+    "id": 1027,
+    "tr": "gökyüzü",
+    "en": "sky",
+    "beispiel": "Heute ist der Himmel blau und klar.",
+    "beispielTr": "Bugün gökyüzü mavi ve berrak.",
+    "beispielEn": "The sky is blue and clear today."
+  }
+]

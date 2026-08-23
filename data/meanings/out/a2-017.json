@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7788,
+    "tr": "içecek menüsü",
+    "en": "drink menu",
+    "beispiel": "Der Kellner bringt uns gleich die Getränkekarte.",
+    "beispielTr": "Garson birazdan bize içecek menüsünü getirecek.",
+    "beispielEn": "The waiter will bring us the drink menu shortly."
+  },
+  {
+    "id": 7789,
+    "tr": "peçete",
+    "en": "napkin",
+    "beispiel": "Können Sie mir bitte noch eine Serviette bringen?",
+    "beispielTr": "Bana bir peçete daha getirebilir misiniz?",
+    "beispielEn": "Could you bring me another napkin, please?"
+  },
+  {
+    "id": 7790,
+    "tr": "tepsi",
+    "en": "tray",
+    "beispiel": "Sie trägt vier Gläser auf einem Tablett.",
+    "beispielTr": "Bir tepside dört bardak taşıyor.",
+    "beispielEn": "She is carrying four glasses on a tray."
+  },
+  {
+    "id": 7791,
+    "tr": "self servis",
+    "en": "self-service",
+    "beispiel": "Hier ist Selbstbedienung, das Essen holt man an der Theke.",
+    "beispielTr": "Burası self servis, yemeği tezgâhtan kendin alıyorsun.",
+    "beispielEn": "This is self-service, you get the food at the counter."
+  },
+  {
+    "id": 7792,
+    "tr": "sipariş",
+    "en": "order",
+    "beispiel": "Meine Bestellung kommt morgen mit der Post.",
+    "beispielTr": "Siparişim yarın postayla geliyor.",
+    "beispielEn": "My order arrives tomorrow by mail."
+  },
+  {
+    "id": 7793,
+    "tr": "kesmek",
+    "en": "to cut",
+    "beispiel": "Bitte schneide das Brot in dünne Scheiben.",
+    "beispielTr": "Lütfen ekmeği ince dilimler hâlinde kes.",
+    "beispielEn": "Please cut the bread into thin slices."
+  },
+  {
+    "id": 7794,
+    "tr": "soymak",
+    "en": "to peel",
+    "beispiel": "Ich schäle die Kartoffeln für das Abendessen.",
+    "beispielTr": "Akşam yemeği için patatesleri soyuyorum.",
+    "beispielEn": "I am peeling the potatoes for dinner."
+  },
+  {
+    "id": 7795,
+    "tr": "karıştırmak",
+    "en": "to stir",
+    "beispiel": "Ich rühre die Soße mit einem Löffel.",
+    "beispielTr": "Sosu bir kaşıkla karıştırıyorum.",
+    "beispielEn": "I am stirring the sauce with a spoon."
+  },
+  {
+    "id": 7796,
+    "tr": "ısıtmak",
+    "en": "to reheat",
+    "beispiel": "Ich wärme die Suppe von gestern auf.",
+    "beispielTr": "Dünkü çorbayı ısıtıyorum.",
+    "beispielEn": "I am reheating yesterday's soup."
+  },
+  {
+    "id": 7797,
+    "tr": "kurulamak",
+    "en": "to dry",
+    "beispiel": "Du wäschst ab und ich trockne die Teller ab.",
+    "beispielTr": "Sen bulaşıkları yıkıyorsun, ben de tabakları kuruluyorum.",
+    "beispielEn": "You wash the dishes and I dry the plates."
+  },
+  {
+    "id": 7798,
+    "tr": "sofra kurmak",
+    "en": "to set the table",
+    "beispiel": "Kannst du bitte den Tisch für vier Personen decken?",
+    "beispielTr": "Dört kişilik sofrayı kurabilir misin lütfen?",
+    "beispielEn": "Can you set the table for four people, please?"
+  },
+  {
+    "id": 7799,
+    "tr": "kapak",
+    "en": "lid",
+    "beispiel": "Leg den Deckel bitte auf den Topf.",
+    "beispielTr": "Kapağı lütfen tencerenin üstüne koy.",
+    "beispielEn": "Please put the lid on the pot."
+  },
+  {
+    "id": 7800,
+    "tr": "mikrodalga fırın",
+    "en": "microwave",
+    "beispiel": "Stell das Essen zwei Minuten in die Mikrowelle.",
+    "beispielTr": "Yemeği iki dakika mikrodalga fırına koy.",
+    "beispielEn": "Put the food in the microwave for two minutes."
+  },
+  {
+    "id": 7801,
+    "tr": "yemek kitabı",
+    "en": "cookbook",
+    "beispiel": "Meine Mutter hat mir ein Kochbuch geschenkt.",
+    "beispielTr": "Annem bana bir yemek kitabı hediye etti.",
+    "beispielEn": "My mother gave me a cookbook."
+  },
+  {
+    "id": 7802,
+    "tr": "gram",
+    "en": "gram",
+    "beispiel": "Ich brauche noch 200 Gramm Käse.",
+    "beispielTr": "200 gram peynire daha ihtiyacım var.",
+    "beispielEn": "I need another 200 grams of cheese."
+  },
+  {
+    "id": 7803,
+    "tr": "litre",
+    "en": "liter",
+    "beispiel": "Bring bitte zwei Liter Milch mit.",
+    "beispielTr": "Lütfen iki litre süt getir.",
+    "beispielEn": "Please bring two liters of milk."
+  },
+  {
+    "id": 7804,
+    "tr": "kilo",
+    "en": "kilo",
+    "beispiel": "Ein Kilo Tomaten kostet hier zwei Euro.",
+    "beispielTr": "Burada bir kilo domates iki avro.",
+    "beispielEn": "A kilo of tomatoes costs two euros here."
+  },
+  {
+    "id": 7805,
+    "tr": "paket",
+    "en": "pack",
+    "beispiel": "In der Packung sind zehn Teebeutel.",
+    "beispielTr": "Pakette on çay poşeti var.",
+    "beispielEn": "There are ten tea bags in the pack."
+  },
+  {
+    "id": 7806,
+    "tr": "bardak",
+    "en": "cup",
+    "beispiel": "Ich trinke jeden Morgen einen Becher Kaffee.",
+    "beispielTr": "Her sabah bir bardak kahve içiyorum.",
+    "beispielEn": "I drink a cup of coffee every morning."
+  },
+  {
+    "id": 7807,
+    "tr": "karton kutu",
+    "en": "cardboard box",
+    "beispiel": "Die Flaschen sind in einem großen Karton.",
+    "beispielTr": "Şişeler büyük bir karton kutunun içinde.",
+    "beispielEn": "The bottles are in a big cardboard box."
+  },
+  {
+    "id": 7808,
+    "tr": "terazi",
+    "en": "scale",
+    "beispiel": "Leg das Obst bitte auf die Waage.",
+    "beispielTr": "Meyveyi lütfen teraziye koy.",
+    "beispielEn": "Please put the fruit on the scale."
+  },
+  {
+    "id": 7809,
+    "tr": "tüp",
+    "en": "tube",
+    "beispiel": "Wir brauchen noch eine Tube Zahnpasta.",
+    "beispielTr": "Bir tüp diş macununa daha ihtiyacımız var.",
+    "beispielEn": "We need another tube of toothpaste."
+  },
+  {
+    "id": 7810,
+    "tr": "tasarruf bankası",
+    "en": "savings bank",
+    "beispiel": "Mein Konto ist bei der Sparkasse.",
+    "beispielTr": "Hesabım tasarruf bankasında.",
+    "beispielEn": "My account is at the savings bank."
+  },
+  {
+    "id": 7811,
+    "tr": "tasarruf cüzdanı",
+    "en": "savings book",
+    "beispiel": "Für meine Tochter habe ich ein Sparbuch eröffnet.",
+    "beispielTr": "Kızım için bir tasarruf cüzdanı açtırdım.",
+    "beispielEn": "I opened a savings book for my daughter."
+  },
+  {
+    "id": 7812,
+    "tr": "cüzdan",
+    "en": "wallet",
+    "beispiel": "Ich habe meinen Geldbeutel zu Hause vergessen.",
+    "beispielTr": "Cüzdanımı evde unuttum.",
+    "beispielEn": "I forgot my wallet at home."
+  },
+  {
+    "id": 7813,
+    "tr": "iade",
+    "en": "return",
+    "beispiel": "Die Rückgabe ist nur mit Kassenzettel möglich.",
+    "beispielTr": "İade sadece kasa fişiyle mümkün.",
+    "beispielEn": "Returns are only possible with a receipt."
+  },
+  {
+    "id": 7814,
+    "tr": "geri vermek",
+    "en": "to give back",
+    "beispiel": "Ich habe dir dein Buch gestern zurückgegeben.",
+    "beispielTr": "Kitabını sana dün geri verdim.",
+    "beispielEn": "I gave your book back to you yesterday."
+  },
+  {
+    "id": 7815,
+    "tr": "geri göndermek",
+    "en": "to send back",
+    "beispiel": "Ich möchte die Jacke zurückschicken, sie passt nicht.",
+    "beispielTr": "Ceketi geri göndermek istiyorum, bana olmadı.",
+    "beispielEn": "I want to send the jacket back, it doesn't fit."
+  },
+  {
+    "id": 7816,
+    "tr": "depozito",
+    "en": "deposit",
+    "beispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
+    "beispielTr": "Şişe için 25 sent depozito ödüyorsun.",
+    "beispielEn": "You pay a 25 cent deposit on the bottle."
+  },
+  {
+    "id": 7817,
+    "tr": "kayınvalide",
+    "en": "mother-in-law",
+    "beispiel": "Meine Schwiegermutter kocht jeden Sonntag für uns.",
+    "beispielTr": "Kayınvalidem her pazar bizim için yemek pişiriyor.",
+    "beispielEn": "My mother-in-law cooks for us every Sunday."
+  },
+  {
+    "id": 7818,
+    "tr": "kayınpeder",
+    "en": "father-in-law",
+    "beispiel": "Mein Schwiegervater hat mir im Garten geholfen.",
+    "beispielTr": "Kayınpederim bahçede bana yardım etti.",
+    "beispielEn": "My father-in-law helped me in the garden."
+  },
+  {
+    "id": 7819,
+    "tr": "damat",
+    "en": "son-in-law",
+    "beispiel": "Ihr Schwiegersohn arbeitet als Lehrer.",
+    "beispielTr": "Damadı öğretmen olarak çalışıyor.",
+    "beispielEn": "Her son-in-law works as a teacher."
+  },
+  {
+    "id": 7820,
+    "tr": "gelin",
+    "en": "daughter-in-law",
+    "beispiel": "Seine Schwiegertochter bringt immer Kuchen mit.",
+    "beispielTr": "Gelini her zaman kek getirir.",
+    "beispielEn": "His daughter-in-law always brings cake."
+  },
+  {
+    "id": 7821,
+    "tr": "torun",
+    "en": "grandchild",
+    "beispiel": "Meine Großeltern haben fünf Enkelkinder.",
+    "beispielTr": "Büyükannemle büyükbabamın beş torunu var.",
+    "beispielEn": "My grandparents have five grandchildren."
+  },
+  {
+    "id": 7822,
+    "tr": "nişan",
+    "en": "engagement",
+    "beispiel": "Wir feiern unsere Verlobung im Garten.",
+    "beispielTr": "Nişanımızı bahçede kutluyoruz.",
+    "beispielEn": "We are celebrating our engagement in the garden."
+  },
+  {
+    "id": 7823,
+    "tr": "gelin",
+    "en": "bride",
+    "beispiel": "Die Braut trägt ein weißes Kleid.",
+    "beispielTr": "Gelin beyaz bir elbise giyiyor.",
+    "beispielEn": "The bride is wearing a white dress."
+  },
+  {
+    "id": 7824,
+    "tr": "damat",
+    "en": "groom",
+    "beispiel": "Der Bräutigam wartet nervös vor der Kirche.",
+    "beispielTr": "Damat kilisenin önünde heyecanla bekliyor.",
+    "beispielEn": "The groom is waiting nervously outside the church."
+  },
+  {
+    "id": 7825,
+    "tr": "nikâh şahidi",
+    "en": "wedding witness",
+    "beispiel": "Mein bester Freund ist mein Trauzeuge.",
+    "beispielTr": "En iyi arkadaşım nikâh şahidim.",
+    "beispielEn": "My best friend is my wedding witness."
+  },
+  {
+    "id": 7826,
+    "tr": "cenaze töreni",
+    "en": "funeral",
+    "beispiel": "Die Beerdigung ist am Freitag um zehn Uhr.",
+    "beispielTr": "Cenaze töreni cuma günü saat onda.",
+    "beispielEn": "The funeral is on Friday at ten o'clock."
+  },
+  {
+    "id": 7827,
+    "tr": "aile kutlaması",
+    "en": "family celebration",
+    "beispiel": "Am Wochenende haben wir eine große Familienfeier.",
+    "beispielTr": "Hafta sonu büyük bir aile kutlamamız var.",
+    "beispielEn": "We have a big family celebration this weekend."
+  },
+  {
+    "id": 7828,
+    "tr": "çiçek buketi",
+    "en": "bouquet",
+    "beispiel": "Ich bringe der Gastgeberin einen Blumenstrauß mit.",
+    "beispielTr": "Ev sahibine bir çiçek buketi götürüyorum.",
+    "beispielEn": "I am bringing the host a bouquet."
+  },
+  {
+    "id": 7829,
+    "tr": "Noel ağacı",
+    "en": "Christmas tree",
+    "beispiel": "Der Weihnachtsbaum steht dieses Jahr im Wohnzimmer.",
+    "beispielTr": "Noel ağacı bu yıl oturma odasında duruyor.",
+    "beispielEn": "The Christmas tree is in the living room this year."
+  },
+  {
+    "id": 7830,
+    "tr": "sarılma",
+    "en": "hug",
+    "beispiel": "Eine Umarmung tut manchmal richtig gut.",
+    "beispielTr": "Bir sarılma bazen çok iyi geliyor.",
+    "beispielEn": "A hug sometimes feels really good."
+  },
+  {
+    "id": 7831,
+    "tr": "ikiz",
+    "en": "twin",
+    "beispiel": "Mein Bruder und ich sind Zwillinge.",
+    "beispielTr": "Kardeşimle ben ikiziz.",
+    "beispielEn": "My brother and I are twins."
+  },
+  {
+    "id": 7832,
+    "tr": "üvey anne",
+    "en": "stepmother",
+    "beispiel": "Seine Stiefmutter ist sehr nett zu ihm.",
+    "beispielTr": "Üvey annesi ona karşı çok iyi.",
+    "beispielEn": "His stepmother is very nice to him."
+  },
+  {
+    "id": 7833,
+    "tr": "bebek arabası",
+    "en": "stroller",
+    "beispiel": "Der Kinderwagen passt nicht in den Aufzug.",
+    "beispielTr": "Bebek arabası asansöre sığmıyor.",
+    "beispielEn": "The stroller doesn't fit in the elevator."
+  },
+  {
+    "id": 7834,
+    "tr": "bebek bezi",
+    "en": "diaper",
+    "beispiel": "Der Kleine braucht eine frische Windel.",
+    "beispielTr": "Küçüğün temiz bir bebek bezine ihtiyacı var.",
+    "beispielEn": "The little one needs a fresh diaper."
+  },
+  {
+    "id": 7835,
+    "tr": "dul kadın",
+    "en": "widow",
+    "beispiel": "Meine Nachbarin ist seit drei Jahren Witwe.",
+    "beispielTr": "Komşum üç yıldır dul.",
+    "beispielEn": "My neighbor has been a widow for three years."
+  },
+  {
+    "id": 7836,
+    "tr": "evlilik yıldönümü",
+    "en": "wedding anniversary",
+    "beispiel": "Zum Hochzeitstag schenkt mir mein Mann immer Rosen.",
+    "beispielTr": "Evlilik yıldönümünde kocam bana hep gül alır.",
+    "beispielEn": "My husband always gives me roses for our wedding anniversary."
+  },
+  {
+    "id": 7837,
+    "tr": "vaftiz çocuğu",
+    "en": "godchild",
+    "beispiel": "Mein Patenkind wird morgen sechs Jahre alt.",
+    "beispielTr": "Vaftiz çocuğum yarın altı yaşına giriyor.",
+    "beispielEn": "My godchild turns six tomorrow."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 940,
+    "tr": "karşıda",
+    "en": "over there",
+    "beispiel": "Da drüben ist die Haltestelle.",
+    "beispielTr": "Durak tam karşıda.",
+    "beispielEn": "The bus stop is over there."
+  },
+  {
+    "id": 1159,
+    "tr": "kalan",
+    "en": "rest",
+    "beispiel": "Den Rest gebe ich dir später.",
+    "beispielTr": "Kalanını sana sonra veririm.",
+    "beispielEn": "I'll give you the rest later."
+  },
+  {
+    "id": 1055,
+    "tr": "vücut",
+    "en": "body",
+    "beispiel": "Nach dem Sport tut mir der ganze Körper weh.",
+    "beispielTr": "Spordan sonra bütün vücudum ağrıyor.",
+    "beispielEn": "My whole body aches after sports."
+  },
+  {
+    "id": 1015,
+    "tr": "sert",
+    "en": "hard",
+    "beispiel": "Das Bett im Hotel war sehr hart.",
+    "beispielTr": "Oteldeki yatak çok sertti.",
+    "beispielEn": "The bed at the hotel was very hard."
+  },
+  {
+    "id": 882,
+    "tr": "ayrıca",
+    "en": "besides",
+    "beispiel": "Das Auto ist alt und außerdem zu teuer.",
+    "beispielTr": "Araba eski ve ayrıca çok pahalı.",
+    "beispielEn": "The car is old and, besides, too expensive."
+  },
+  {
+    "id": 865,
+    "tr": "değiştirmek",
+    "en": "to change",
+    "beispiel": "Ich möchte meinen Termin ändern.",
+    "beispielTr": "Randevumu değiştirmek istiyorum.",
+    "beispielEn": "I would like to change my appointment."
+  },
+  {
+    "id": 1314,
+    "tr": "en azından",
+    "en": "at least",
+    "beispiel": "Iss wenigstens ein Stück Kuchen!",
+    "beispielTr": "En azından bir dilim pasta ye!",
+    "beispielEn": "At least eat a piece of cake!"
+  },
+  {
+    "id": 1295,
+    "tr": "dikkatli",
+    "en": "careful",
+    "beispiel": "Fahr vorsichtig, es ist neblig!",
+    "beispielTr": "Dikkatli sür, hava sisli!",
+    "beispielEn": "Drive carefully, it's foggy!"
+  },
+  {
+    "id": 1214,
+    "tr": "güçlü",
+    "en": "strong",
+    "beispiel": "Mein großer Bruder ist sehr stark.",
+    "beispielTr": "Ağabeyim çok güçlü.",
+    "beispielEn": "My big brother is very strong."
+  },
+  {
+    "id": 1131,
+    "tr": "kişi",
+    "en": "person",
+    "beispiel": "Der Eintritt kostet fünf Euro pro Person.",
+    "beispielTr": "Giriş kişi başı beş euro.",
+    "beispielEn": "Admission costs five euros per person."
+  },
+  {
+    "id": 1181,
+    "tr": "fena",
+    "en": "bad",
+    "beispiel": "Kein Problem, das ist nicht so schlimm.",
+    "beispielTr": "Sorun değil, o kadar da fena değil.",
+    "beispielEn": "No problem, it's not that bad."
+  },
+  {
+    "id": 1087,
+    "tr": "görüş",
+    "en": "opinion",
+    "beispiel": "Was ist deine Meinung dazu?",
+    "beispielTr": "Bu konudaki görüşün ne?",
+    "beispielEn": "What is your opinion on this?"
+  },
+  {
+    "id": 1233,
+    "tr": "ekip",
+    "en": "team",
+    "beispiel": "Ich arbeite gern in einem Team.",
+    "beispielTr": "Ekip içinde çalışmayı severim.",
+    "beispielEn": "I like working in a team."
+  },
+  {
+    "id": 1292,
+    "tr": "önceden",
+    "en": "beforehand",
+    "beispiel": "Ruf mich bitte vorher an!",
+    "beispielTr": "Lütfen beni önceden ara!",
+    "beispielEn": "Please call me beforehand!"
+  },
+  {
+    "id": 967,
+    "tr": "düşmek",
+    "en": "to fall",
+    "beispiel": "Pass auf, das Glas fällt gleich vom Tisch.",
+    "beispielTr": "Dikkat et, bardak birazdan masadan düşecek.",
+    "beispielEn": "Watch out, the glass is about to fall off the table."
+  },
+  {
+    "id": 1023,
+    "tr": "dışarı",
+    "en": "out",
+    "beispiel": "Der Hund ist aus dem Haus herausgekommen.",
+    "beispielTr": "Köpek evden dışarı çıktı.",
+    "beispielEn": "The dog came out of the house."
+  },
+  {
+    "id": 1105,
+    "tr": "civar",
+    "en": "vicinity",
+    "beispiel": "Die Post ist in der Nähe vom Bahnhof.",
+    "beispielTr": "Postane garın yakınında.",
+    "beispielEn": "The post office is near the train station."
+  },
+  {
+    "id": 1135,
+    "tr": "aniden",
+    "en": "suddenly",
+    "beispiel": "Plötzlich ist das Licht ausgegangen.",
+    "beispielTr": "Işık aniden söndü.",
+    "beispielEn": "The light suddenly went out."
+  },
+  {
+    "id": 996,
+    "tr": "tehlikeli",
+    "en": "dangerous",
+    "beispiel": "Diese Straße ist für Kinder sehr gefährlich.",
+    "beispielTr": "Bu yol çocuklar için çok tehlikeli.",
+    "beispielEn": "This street is very dangerous for children."
+  },
+  {
+    "id": 1051,
+    "tr": "tuhaf",
+    "en": "strange",
+    "beispiel": "Das Essen schmeckt heute komisch.",
+    "beispielTr": "Yemeğin tadı bugün tuhaf.",
+    "beispielEn": "The food tastes strange today."
+  },
+  {
+    "id": 1248,
+    "tr": "rüya",
+    "en": "dream",
+    "beispiel": "Heute Nacht hatte ich einen schönen Traum.",
+    "beispielTr": "Bu gece güzel bir rüya gördüm.",
+    "beispielEn": "I had a nice dream last night."
+  },
+  {
+    "id": 903,
+    "tr": "haber",
+    "en": "notice",
+    "beispiel": "Sag mir bitte Bescheid, wenn du kommst.",
+    "beispielTr": "Geleceksen bana haber ver lütfen.",
+    "beispielEn": "Please let me know when you're coming."
+  },
+  {
+    "id": 1332,
+    "tr": "hedef",
+    "en": "goal",
+    "beispiel": "Was ist dein Ziel im Leben?",
+    "beispielTr": "Hayattaki hedefin ne?",
+    "beispielEn": "What is your goal in life?"
+  },
+  {
+    "id": 1298,
+    "tr": "uyanık",
+    "en": "awake",
+    "beispiel": "Bist du schon lange wach?",
+    "beispielTr": "Uyanalı çok mu oldu?",
+    "beispielEn": "Have you been awake long?"
+  },
+  {
+    "id": 873,
+    "tr": "fakir",
+    "en": "poor",
+    "beispiel": "Meine Familie war früher sehr arm.",
+    "beispielTr": "Ailem eskiden çok fakirdi.",
+    "beispielEn": "My family used to be very poor."
+  },
+  {
+    "id": 869,
+    "tr": "izlemek",
+    "en": "to watch",
+    "beispiel": "Wir sehen uns heute Abend einen Film an.",
+    "beispielTr": "Bu akşam bir film izleyeceğiz.",
+    "beispielEn": "We're watching a movie this evening."
+  },
+  {
+    "id": 1019,
+    "tr": "sıcak",
+    "en": "hot",
+    "beispiel": "Vorsicht, der Tee ist noch sehr heiß!",
+    "beispielTr": "Dikkat, çay hâlâ çok sıcak!",
+    "beispielEn": "Careful, the tea is still very hot!"
+  },
+  {
+    "id": 1260,
+    "tr": "mutlaka",
+    "en": "definitely",
+    "beispiel": "Ich muss unbedingt mit dir sprechen.",
+    "beispielTr": "Seninle mutlaka konuşmam gerekiyor.",
+    "beispielEn": "I definitely need to talk to you."
+  },
+  {
+    "id": 1261,
+    "tr": "kaza",
+    "en": "accident",
+    "beispiel": "Gestern hatte ich einen kleinen Unfall.",
+    "beispielTr": "Dün küçük bir kaza geçirdim.",
+    "beispielEn": "I had a small accident yesterday."
+  },
+  {
+    "id": 1238,
+    "tr": "derin",
+    "en": "deep",
+    "beispiel": "Vorsicht, das Wasser ist hier sehr tief!",
+    "beispielTr": "Dikkat, su burada çok derin!",
+    "beispielEn": "Careful, the water is very deep here!"
+  },
+  {
+    "id": 1078,
+    "tr": "yalan söylemek",
+    "en": "to lie",
+    "beispiel": "Glaub ihm nicht, er lügt!",
+    "beispielTr": "Ona inanma, yalan söylüyor!",
+    "beispielEn": "Don't believe him, he's lying!"
+  },
+  {
+    "id": 1320,
+    "tr": "şaka",
+    "en": "joke",
+    "beispiel": "Das war doch nur ein Witz!",
+    "beispielTr": "Sadece bir şakaydı!",
+    "beispielEn": "That was just a joke!"
+  },
+  {
+    "id": 1109,
+    "tr": "yanında",
+    "en": "next to",
+    "beispiel": "Die Apotheke ist neben der Post.",
+    "beispielTr": "Eczane postanenin yanında.",
+    "beispielEn": "The pharmacy is next to the post office."
+  },
+  {
+    "id": 1165,
+    "tr": "sırt",
+    "en": "back",
+    "beispiel": "Mein Rücken tut heute weh.",
+    "beispielTr": "Bugün sırtım ağrıyor.",
+    "beispielEn": "My back hurts today."
+  },
+  {
+    "id": 1187,
+    "tr": "korkunç",
+    "en": "terrible",
+    "beispiel": "Der Sturm gestern war wirklich schrecklich.",
+    "beispielTr": "Dünkü fırtına gerçekten korkunçtu.",
+    "beispielEn": "Yesterday's storm was really terrible."
+  },
+  {
+    "id": 1173,
+    "tr": "ekşi",
+    "en": "sour",
+    "beispiel": "Diese Zitronen sind mir zu sauer.",
+    "beispielTr": "Bu limonlar bana fazla ekşi geliyor.",
+    "beispielEn": "These lemons are too sour for me."
+  },
+  {
+    "id": 963,
+    "tr": "ulaşmak",
+    "en": "to reach",
+    "beispiel": "Sie können mich heute im Büro erreichen.",
+    "beispielTr": "Bugün bana ofisten ulaşabilirsiniz.",
+    "beispielEn": "You can reach me at the office today."
+  },
+  {
+    "id": 1048,
+    "tr": "kilise",
+    "en": "church",
+    "beispiel": "Diese Kirche ist fast 800 Jahre alt.",
+    "beispielTr": "Bu kilise neredeyse 800 yıllık.",
+    "beispielEn": "This church is almost 800 years old."
+  },
+  {
+    "id": 1152,
+    "tr": "zengin",
+    "en": "rich",
+    "beispiel": "Seine Familie ist sehr reich.",
+    "beispielTr": "Ailesi çok zengin.",
+    "beispielEn": "His family is very rich."
+  },
+  {
+    "id": 1003,
+    "tr": "yemek",
+    "en": "dish",
+    "beispiel": "In diesem Restaurant gibt es viele vegetarische Gerichte.",
+    "beispielTr": "Bu restoranda çok sayıda vejetaryen yemek var.",
+    "beispielEn": "This restaurant has many vegetarian dishes."
+  },
+  {
+    "id": 1199,
+    "tr": "şarkı söylemek",
+    "en": "to sing",
+    "beispiel": "Meine Tochter singt gern im Chor.",
+    "beispielTr": "Kızım koroda şarkı söylemeyi seviyor.",
+    "beispielEn": "My daughter likes singing in the choir."
+  },
+  {
+    "id": 1052,
+    "tr": "iletişim",
+    "en": "contact",
+    "beispiel": "Ich habe wenig Kontakt zu meinen Kollegen.",
+    "beispielTr": "İş arkadaşlarımla pek iletişimim yok.",
+    "beispielEn": "I have little contact with my colleagues."
+  },
+  {
+    "id": 998,
+    "tr": "karşısında",
+    "en": "opposite",
+    "beispiel": "Die Bäckerei ist gegenüber vom Bahnhof.",
+    "beispielTr": "Fırın garın karşısında.",
+    "beispielEn": "The bakery is opposite the train station."
+  },
+  {
+    "id": 1321,
+    "tr": "komik",
+    "en": "funny",
+    "beispiel": "Der neue Kollege ist wirklich witzig.",
+    "beispielTr": "Yeni iş arkadaşı gerçekten çok komik.",
+    "beispielEn": "The new colleague is really funny."
+  },
+  {
+    "id": 908,
+    "tr": "ziyaret",
+    "en": "visit",
+    "beispiel": "Der Besuch im Museum hat mir gut gefallen.",
+    "beispielTr": "Müze ziyareti çok hoşuma gitti.",
+    "beispielEn": "I really enjoyed the visit to the museum."
+  },
+  {
+    "id": 1172,
+    "tr": "temiz",
+    "en": "clean",
+    "beispiel": "Bringen Sie mir bitte ein sauberes Glas!",
+    "beispielTr": "Lütfen bana temiz bir bardak getirin!",
+    "beispielEn": "Please bring me a clean glass!"
+  },
+  {
+    "id": 1113,
+    "tr": "gergin",
+    "en": "nervous",
+    "beispiel": "Vor Prüfungen bin ich immer sehr nervös.",
+    "beispielTr": "Sınavlardan önce hep çok gergin olurum.",
+    "beispielEn": "I'm always very nervous before exams."
+  },
+  {
+    "id": 1129,
+    "tr": "uymak",
+    "en": "to fit",
+    "beispiel": "Die Hose passt mir nicht mehr.",
+    "beispielTr": "Pantolon artık bana uymuyor.",
+    "beispielEn": "The pants don't fit me anymore."
+  },
+  {
+    "id": 1234,
+    "tr": "paylaşmak",
+    "en": "to share",
+    "beispiel": "Wollen wir die Pizza teilen?",
+    "beispielTr": "Pizzayı paylaşalım mı?",
+    "beispielEn": "Shall we share the pizza?"
+  },
+  {
+    "id": 1200,
+    "tr": "durum",
+    "en": "situation",
+    "beispiel": "Ich bin gerade in einer schwierigen Situation.",
+    "beispielTr": "Şu anda zor bir durumdayım.",
+    "beispielEn": "I'm in a difficult situation right now."
+  }
+]

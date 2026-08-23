@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7838,
+    "tr": "büyütmek",
+    "en": "to raise",
+    "beispiel": "Sie will ihre drei Kinder allein großziehen.",
+    "beispielTr": "Üç çocuğunu tek başına büyütmek istiyor.",
+    "beispielEn": "She wants to raise her three children on her own."
+  },
+  {
+    "id": 7839,
+    "tr": "evlat edinmek",
+    "en": "to adopt",
+    "beispiel": "Das Paar möchte ein Kind adoptieren.",
+    "beispielTr": "Çift bir çocuk evlat edinmek istiyor.",
+    "beispielEn": "The couple wants to adopt a child."
+  },
+  {
+    "id": 7840,
+    "tr": "affetmek",
+    "en": "to forgive",
+    "beispiel": "Nach dem Streit hat sie ihrem Bruder vergeben.",
+    "beispielTr": "Kavgadan sonra kardeşini affetti.",
+    "beispielEn": "After the argument she forgave her brother."
+  },
+  {
+    "id": 7841,
+    "tr": "bir araya gelmek",
+    "en": "to come together",
+    "beispiel": "An Weihnachten kommt die ganze Familie zusammen.",
+    "beispielTr": "Noel'de bütün aile bir araya geliyor.",
+    "beispielEn": "At Christmas the whole family comes together."
+  },
+  {
+    "id": 7842,
+    "tr": "miras almak",
+    "en": "to inherit",
+    "beispiel": "Sie erbt von ihrer Tante ein altes Haus.",
+    "beispielTr": "Teyzesinden eski bir ev miras alıyor.",
+    "beispielEn": "She is inheriting an old house from her aunt."
+  },
+  {
+    "id": 7843,
+    "tr": "hayran olmak",
+    "en": "to admire",
+    "beispiel": "Ich bewundere meine Großmutter sehr.",
+    "beispielTr": "Büyükanneme çok hayranım.",
+    "beispielEn": "I admire my grandmother very much."
+  },
+  {
+    "id": 7844,
+    "tr": "ödüllendirmek",
+    "en": "to reward",
+    "beispiel": "Die Eltern belohnen ihre Kinder für gute Noten.",
+    "beispielTr": "Anne baba çocuklarını iyi notlar için ödüllendiriyor.",
+    "beispielEn": "The parents reward their children for good grades."
+  },
+  {
+    "id": 7845,
+    "tr": "bebeğin altını değiştirmek",
+    "en": "to change a diaper",
+    "beispiel": "Kannst du das Baby wickeln?",
+    "beispielTr": "Bebeğin altını değiştirebilir misin?",
+    "beispielEn": "Can you change the baby's diaper?"
+  },
+  {
+    "id": 7846,
+    "tr": "kadeh kaldırmak",
+    "en": "to toast",
+    "beispiel": "Wir stoßen auf das junge Paar an.",
+    "beispielTr": "Genç çift için kadeh kaldırıyoruz.",
+    "beispielEn": "We are toasting the young couple."
+  },
+  {
+    "id": 7847,
+    "tr": "süslemek",
+    "en": "to decorate",
+    "beispiel": "Die Kinder schmücken den Saal für die Feier.",
+    "beispielTr": "Çocuklar kutlama için salonu süslüyor.",
+    "beispielEn": "The children are decorating the hall for the party."
+  },
+  {
+    "id": 7848,
+    "tr": "benzemek",
+    "en": "to resemble",
+    "beispiel": "Meine Tochter ähnelt ihrer Oma sehr.",
+    "beispielTr": "Kızım büyükannesine çok benziyor.",
+    "beispielEn": "My daughter looks a lot like her grandmother."
+  },
+  {
+    "id": 7849,
+    "tr": "birlik olmak",
+    "en": "to stick together",
+    "beispiel": "In schweren Zeiten hält unsere Familie zusammen.",
+    "beispielTr": "Zor zamanlarda ailemiz birlik olur.",
+    "beispielEn": "In hard times our family sticks together."
+  },
+  {
+    "id": 7850,
+    "tr": "vaftiz etmek",
+    "en": "to baptize",
+    "beispiel": "Der Pfarrer tauft das Baby am Sonntag.",
+    "beispielTr": "Papaz bebeği pazar günü vaftiz ediyor.",
+    "beispielEn": "The priest is baptizing the baby on Sunday."
+  },
+  {
+    "id": 7851,
+    "tr": "sarılıp yatmak",
+    "en": "to cuddle",
+    "beispiel": "Abends kuscheln wir auf dem Sofa.",
+    "beispielTr": "Akşamları kanepede sarılıp yatıyoruz.",
+    "beispielEn": "In the evenings we cuddle on the sofa."
+  },
+  {
+    "id": 7852,
+    "tr": "yas tutmak",
+    "en": "to mourn",
+    "beispiel": "Die Familie trauert um den Großvater.",
+    "beispielTr": "Aile büyükbabanın ardından yas tutuyor.",
+    "beispielEn": "The family is mourning the grandfather."
+  },
+  {
+    "id": 7853,
+    "tr": "takdim etmek",
+    "en": "to present",
+    "beispiel": "Nach der Rede überreicht er der Braut ein Geschenk.",
+    "beispielTr": "Konuşmadan sonra geline bir hediye takdim ediyor.",
+    "beispielEn": "After the speech he presents the bride with a gift."
+  },
+  {
+    "id": 7854,
+    "tr": "ağırlamak",
+    "en": "to host",
+    "beispiel": "Sie bewirtet ihre Gäste mit Kuchen und Tee.",
+    "beispielTr": "Misafirlerini kek ve çayla ağırlıyor.",
+    "beispielEn": "She serves her guests cake and tea."
+  },
+  {
+    "id": 7855,
+    "tr": "göz kulak olmak",
+    "en": "to look after",
+    "beispiel": "Am Samstag hüte ich die Kinder meiner Schwester.",
+    "beispielTr": "Cumartesi kız kardeşimin çocuklarına göz kulak oluyorum.",
+    "beispielEn": "On Saturday I look after my sister's children."
+  },
+  {
+    "id": 7856,
+    "tr": "uğramak",
+    "en": "to stop by",
+    "beispiel": "Kannst du am Sonntag bei uns vorbeischauen?",
+    "beispielTr": "Pazar günü bize uğrayabilir misin?",
+    "beispielEn": "Can you stop by our place on Sunday?"
+  },
+  {
+    "id": 7857,
+    "tr": "geçinmek",
+    "en": "to get along",
+    "beispiel": "Ich komme mit meinen Nachbarn gut aus.",
+    "beispielTr": "Komşularımla iyi geçiniyorum.",
+    "beispielEn": "I get along well with my neighbors."
+  },
+  {
+    "id": 7858,
+    "tr": "birlikte yaşamak",
+    "en": "to live together",
+    "beispiel": "In diesem Haus leben drei Generationen zusammen.",
+    "beispielTr": "Bu evde üç kuşak birlikte yaşıyor.",
+    "beispielEn": "Three generations live together in this house."
+  },
+  {
+    "id": 7859,
+    "tr": "emzirmek",
+    "en": "to breastfeed",
+    "beispiel": "Die Mutter stillt ihr Baby noch.",
+    "beispielTr": "Anne bebeğini hâlâ emziriyor.",
+    "beispielEn": "The mother is still breastfeeding her baby."
+  },
+  {
+    "id": 7860,
+    "tr": "yanında olmak",
+    "en": "to stand by",
+    "beispiel": "Meine Freunde stehen mir immer bei.",
+    "beispielTr": "Arkadaşlarım her zaman yanımda olur.",
+    "beispielEn": "My friends always stand by me."
+  },
+  {
+    "id": 7861,
+    "tr": "çocuksuz",
+    "en": "childless",
+    "beispiel": "Das Ehepaar ist seit zehn Jahren kinderlos.",
+    "beispielTr": "Evli çift on yıldır çocuksuz.",
+    "beispielEn": "The couple has been childless for ten years."
+  },
+  {
+    "id": 7862,
+    "tr": "ayrı",
+    "en": "separated",
+    "beispiel": "Meine Eltern leben seit einem Jahr getrennt.",
+    "beispielTr": "Annemle babam bir yıldır ayrı yaşıyor.",
+    "beispielEn": "My parents have been living apart for a year."
+  },
+  {
+    "id": 7863,
+    "tr": "karşılıklı",
+    "en": "mutual",
+    "beispiel": "In einer Familie ist gegenseitige Hilfe wichtig.",
+    "beispielTr": "Bir ailede karşılıklı yardım önemlidir.",
+    "beispielEn": "In a family mutual help is important."
+  },
+  {
+    "id": 7864,
+    "tr": "şenlikli",
+    "en": "festive",
+    "beispiel": "Das ganze Haus sieht heute festlich aus.",
+    "beispielTr": "Bütün ev bugün şenlikli görünüyor.",
+    "beispielEn": "The whole house looks festive today."
+  },
+  {
+    "id": 7865,
+    "tr": "törensel",
+    "en": "solemn",
+    "beispiel": "Die Rede des Vaters war sehr feierlich.",
+    "beispielTr": "Babanın konuşması çok törenseldi.",
+    "beispielEn": "The father's speech was very solemn."
+  },
+  {
+    "id": 7866,
+    "tr": "eve düşkün",
+    "en": "home-loving",
+    "beispiel": "Mein Bruder ist sehr häuslich und kocht jeden Abend.",
+    "beispielTr": "Kardeşim çok eve düşkün ve her akşam yemek pişiriyor.",
+    "beispielEn": "My brother is very home-loving and cooks every evening."
+  },
+  {
+    "id": 7867,
+    "tr": "uslu",
+    "en": "well-behaved",
+    "beispiel": "Die Kinder waren beim Besuch sehr artig.",
+    "beispielTr": "Çocuklar ziyarette çok uslu durdular.",
+    "beispielEn": "The children were very well-behaved during the visit."
+  },
+  {
+    "id": 7868,
+    "tr": "yaramaz",
+    "en": "naughty",
+    "beispiel": "Der kleine Junge war heute sehr ungezogen.",
+    "beispielTr": "Küçük çocuk bugün çok yaramazdı.",
+    "beispielEn": "The little boy was very naughty today."
+  },
+  {
+    "id": 7869,
+    "tr": "sinir bozucu",
+    "en": "annoying",
+    "beispiel": "Mein kleiner Bruder ist manchmal richtig nervig.",
+    "beispielTr": "Küçük kardeşim bazen gerçekten sinir bozucu.",
+    "beispielEn": "My little brother is really annoying sometimes."
+  },
+  {
+    "id": 7870,
+    "tr": "bekâr",
+    "en": "unmarried",
+    "beispiel": "Meine Tante ist immer noch unverheiratet.",
+    "beispielTr": "Teyzem hâlâ bekâr.",
+    "beispielEn": "My aunt is still unmarried."
+  },
+  {
+    "id": 7871,
+    "tr": "kendi aralarında",
+    "en": "among themselves",
+    "beispiel": "Die Geschwister helfen sich untereinander.",
+    "beispielTr": "Kardeşler kendi aralarında yardımlaşıyor.",
+    "beispielEn": "The siblings help each other out."
+  },
+  {
+    "id": 7872,
+    "tr": "birbiri için",
+    "en": "for each other",
+    "beispiel": "Gute Freunde sind immer füreinander da.",
+    "beispielTr": "İyi arkadaşlar her zaman birbirinin yanındadır.",
+    "beispielEn": "Good friends are always there for each other."
+  },
+  {
+    "id": 7873,
+    "tr": "inatçı",
+    "en": "stubborn",
+    "beispiel": "Mein Opa ist manchmal sehr stur.",
+    "beispielTr": "Dedem bazen çok inatçıdır.",
+    "beispielEn": "My grandpa is sometimes very stubborn."
+  },
+  {
+    "id": 7874,
+    "tr": "şımarık",
+    "en": "spoiled",
+    "beispiel": "Seine kleine Schwester ist ziemlich verwöhnt.",
+    "beispielTr": "Küçük kız kardeşi epey şımarık.",
+    "beispielEn": "His little sister is pretty spoiled."
+  },
+  {
+    "id": 7875,
+    "tr": "yalnız yaşayan",
+    "en": "single",
+    "beispiel": "Sie ist alleinstehend und hat keine Kinder.",
+    "beispielTr": "Yalnız yaşıyor ve çocuğu yok.",
+    "beispielEn": "She is single and has no children."
+  },
+  {
+    "id": 7876,
+    "tr": "şefkatli",
+    "en": "caring",
+    "beispiel": "Meine Mutter ist sehr fürsorglich.",
+    "beispielTr": "Annem çok şefkatlidir.",
+    "beispielEn": "My mother is very caring."
+  },
+  {
+    "id": 7877,
+    "tr": "rahatlamak",
+    "en": "to relax",
+    "beispiel": "Nach der Arbeit entspanne ich mich gern mit Musik.",
+    "beispielTr": "İşten sonra müzikle rahatlamayı seviyorum.",
+    "beispielEn": "After work I like to relax with music."
+  },
+  {
+    "id": 7878,
+    "tr": "balık tutmak",
+    "en": "to fish",
+    "beispiel": "Mein Opa angelt jeden Sonntag am See.",
+    "beispielTr": "Dedem her pazar gölde balık tutuyor.",
+    "beispielEn": "My grandpa goes fishing at the lake every Sunday."
+  },
+  {
+    "id": 7879,
+    "tr": "jimnastik yapmak",
+    "en": "to do gymnastics",
+    "beispiel": "Die Kinder turnen zweimal pro Woche in der Schule.",
+    "beispielTr": "Çocuklar haftada iki kez okulda jimnastik yapıyor.",
+    "beispielEn": "The children do gymnastics twice a week at school."
+  },
+  {
+    "id": 7880,
+    "tr": "yelken yapmak",
+    "en": "to sail",
+    "beispiel": "Im Sommer segeln wir oft auf dem Bodensee.",
+    "beispielTr": "Yazın sık sık Bodensee'de yelken yapıyoruz.",
+    "beispielEn": "In summer we often sail on Lake Constance."
+  },
+  {
+    "id": 7881,
+    "tr": "zar atmak",
+    "en": "to roll the dice",
+    "beispiel": "Du bist dran, jetzt musst du würfeln.",
+    "beispielTr": "Sıra sende, şimdi zar atman gerekiyor.",
+    "beispielEn": "It's your turn, now you have to roll the dice."
+  },
+  {
+    "id": 7882,
+    "tr": "örgü örmek",
+    "en": "to knit",
+    "beispiel": "Meine Mutter strickt mir einen warmen Pullover.",
+    "beispielTr": "Annem bana sıcak bir kazak örüyor.",
+    "beispielEn": "My mother is knitting me a warm sweater."
+  },
+  {
+    "id": 7883,
+    "tr": "oyuna katılmak",
+    "en": "to join in",
+    "beispiel": "Darf ich bei eurem Spiel mitspielen?",
+    "beispielTr": "Oyununuza katılabilir miyim?",
+    "beispielEn": "Can I join in your game?"
+  },
+  {
+    "id": 7884,
+    "tr": "düzenlemek",
+    "en": "to organize",
+    "beispiel": "Unser Verein veranstaltet im Juni ein großes Sommerfest.",
+    "beispielTr": "Derneğimiz haziranda büyük bir yaz şenliği düzenliyor.",
+    "beispielEn": "Our club is organizing a big summer party in June."
+  },
+  {
+    "id": 7885,
+    "tr": "kafa dağıtmak",
+    "en": "to unwind",
+    "beispiel": "Beim Wandern kann ich richtig gut abschalten.",
+    "beispielTr": "Doğa yürüyüşünde gerçekten iyi kafa dağıtabiliyorum.",
+    "beispielEn": "I can really unwind well when hiking."
+  },
+  {
+    "id": 7886,
+    "tr": "kürek çekmek",
+    "en": "to row",
+    "beispiel": "Wir rudern mit dem Boot zur kleinen Insel.",
+    "beispielTr": "Kayıkla küçük adaya kürek çekiyoruz.",
+    "beispielEn": "We are rowing to the small island in the boat."
+  },
+  {
+    "id": 7887,
+    "tr": "boks yapmak",
+    "en": "to box",
+    "beispiel": "Mein Bruder boxt seit drei Jahren in einem Club.",
+    "beispielTr": "Kardeşim üç yıldır bir kulüpte boks yapıyor.",
+    "beispielEn": "My brother has been boxing at a club for three years."
+  }
+]

@@ -36,9 +36,23 @@ const flat = (t) =>
     .replace(/ß/g, "ss")
     .replace(/-/g, "");
 
-/** Çekimde kökten kopabilen ön ekler. */
+/**
+ * Çekimde kökten kopabilen ön ekler — **uzundan kısaya** sıralı.
+ *
+ * Sıra bir üslup meselesi değil: düzenli ifade alternatifleri soldan sağa
+ * denendiği için "zu" listede "zusammen"den önce gelince "zusammenkommen"
+ * maddesi "zu" + "sammenkommen" diye bölünüyor ve cümlede ayrı bir "zu"
+ * arandığı için doğru cümle ("Die Familie kommt zusammen.") reddediliyordu.
+ */
 const SEPARABLE =
-  /^(ab|an|auf|aus|bei|dabei|durch|ein|entgegen|fern|fest|fort|frei|gegenüber|heim|her|herunter|hin|hinaus|hoch|kaputt|los|mit|nach|nebenan|statt|teil|um|unter|vor|voraus|vorbei|vorher|weg|weh|weiter|wieder|zu|zurecht|zurück|zusammen|über)(.{3,})$/;
+  /^(gegenuber|hinunter|herunter|zusammen|entgegen|spazieren|nebenan|entlang|stehen|bleiben|kennen|sitzen|liegen|heruber|hinuber|herein|hinein|herauf|hinauf|voraus|vorbei|vorher|zurecht|heraus|hinaus|zuruck|kaputt|weiter|wieder|nieder|dabei|davon|daran|darauf|durch|statt|unter|drauf|fern|fest|fort|frei|heim|hoch|nach|teil|uber|dran|drin|wahr|warm|rein|raus|fern|frei|los|auf|aus|bei|ein|her|hin|mit|vor|weg|weh|ab|an|um|zu)(.{3,})$/;
+
+/**
+ * Ön ekler düzleştirilmiş biçimde yazılıyor (`zuruck`, `uber`, `gegenuber`):
+ * karşılaştırma umlautları düşürülmüş metin üzerinde yapılıyor ve umlautlu
+ * yazılan alternatifler hiçbir zaman eşleşmiyordu — `zurückfahren` maddesi
+ * bu yüzden ayrılabilir fiil olarak hiç tanınmadı.
+ */
 
 /**
  * Gövde ünlüsü çekimde tanınmayacak kadar değişen fiiller.
@@ -97,6 +111,25 @@ const IRREGULAR = {
   bieten: ["bot", "geboten"],
   vergessen: ["vergisst", "vergass"],
   empfehlen: ["empfiehlt", "empfahl", "empfohlen"],
+  // Ön ekli bileşiklerde gövde olarak aranan güçlü fiiller: "zurückbringen"
+  // → "zurückgebracht", "übertreiben" → "übertrieben". Ön ek ayrıldığında
+  // ya da ayrılmadığında gövde yine bu biçimlere giriyor.
+  treiben: ["trieb", "getrieben"],
+  brechen: ["bricht", "brach", "gebrochen"],
+  werfen: ["wirft", "warf", "geworfen"],
+  fangen: ["fing", "gefangen"],
+  laden: ["lud", "geladen"],
+  raten: ["riet", "geraten"],
+  schlagen: ["schlug", "geschlagen"],
+  halten: ["hielt", "gehalten"],
+  fallen: ["fiel", "gefallen"],
+  laufen: ["lief", "gelaufen"],
+  tragen: ["trug", "getragen"],
+  waschen: ["wusch", "gewaschen"],
+  springen: ["sprang", "gesprungen"],
+  sinken: ["sank", "gesunken"],
+  weisen: ["wies", "gewiesen"],
+  greifen: ["griff", "gegriffen"],
 };
 
 /**
@@ -134,6 +167,32 @@ function root(part) {
 }
 
 /**
+ * Ön ekli fiilin cümlede alabileceği bitişik biçimler.
+ *
+ * Üç ayrı durum var ve üçü de doğru Almanca:
+ *   ayrılabilir Perfekt   "zurückfahren"  → "ist zurück**ge**fahren"
+ *   ayrılmaz Perfekt      "übertreiben"   → "hat übertrieben"   (ge yok)
+ *   gövdesi güçlü fiil    "zurückbringen" → "hat zurückgebracht"
+ *
+ * Kök araması hiçbirini bulamıyordu ve ajanlar doğru Perfekt cümlelerini
+ * ayrılmış Präsens'e çevirmek zorunda kalıyordu — yani denetleyici, dilin
+ * doğal biçimini veriden çıkarıyordu.
+ */
+function prefixedForms(part) {
+  const bare = flat(part).replace(/[^a-z]/g, "");
+  const sep = bare.match(SEPARABLE);
+  if (!sep) return [];
+  const out = [];
+  const govde = root(sep[2]);
+  if (govde.length >= 3) out.push(`${sep[1]}ge${govde}`, `${sep[1]}${govde}`);
+  for (const form of IRREGULAR[sep[2]] ?? []) {
+    const f = flat(form).replace(/[^a-z]/g, "");
+    out.push(`${sep[1]}${f}`);
+  }
+  return out;
+}
+
+/**
  * Cümle kelimeyi taşıyor mu?
  *
  * Gevşek olması bilinçli: amaç iyi işi reddetmek değil, `lang` için
@@ -162,6 +221,9 @@ function contains(sentence, headword) {
     const r = root(part);
     if (!r) return true;
     if (varMi(r)) return true;
+
+    // Perfekt: "hat angerufen", "ist zurückgefahren", "hat übertrieben".
+    if (prefixedForms(part).some((f) => kok(f))) return true;
 
     // Ayrılabilir fiil: ön ek cümlenin sonuna kaçar ("Siehst du viel fern?").
     // Ön ekin ayrı bir kelime olarak bulunması şart, kök ise gövde olarak.
@@ -258,7 +320,11 @@ function denetle(paket) {
     if (/\s(ya da|veya)\s/i.test(tr)) H("çok anlamlı tr", `"${tr}" — "ya da" ile ikinci anlam`);
     if (tr.length > 40) H("uzun tr", `${tr.length} karakter: "${tr}"`);
     if (words_(tr) > 5) U("uzun tr", `${words_(tr)} kelime: "${tr}"`);
-    if (/^(bir |the |to )/i.test(tr)) U("şüpheli tr", `"${tr}"`);
+    // Belirsiz artikelin isim karşılığına sızması ("der Tisch → bir masa")
+    // gerçek bir kusur; ama "bir daha", "bir yerde", "bir araya gelmek" gibi
+    // deyimlerde "bir" kelimenin parçası. Kural yalnızca isimlerde geçerli.
+    if (k.typ === "Nomen" && /^bir\s/i.test(tr)) U("şüpheli tr", `"${tr}"`);
+    if (/^(the|a|an)\s/i.test(tr)) U("şüpheli tr", `"${tr}" — İngilizce sızmış olabilir`);
 
     /* en — tek karşılık, fiiller "to" ile */
     if (/[,;/]/.test(en)) H("çok anlamlı en", `"${en}"`);

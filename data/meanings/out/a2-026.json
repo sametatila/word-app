@@ -1,0 +1,402 @@
+[
+  {
+    "id": 8240,
+    "tr": "yuvarlanmak",
+    "en": "to roll",
+    "beispiel": "Der Ball ist unter das Auto gerollt.",
+    "beispielTr": "Top arabanın altına yuvarlandı.",
+    "beispielEn": "The ball rolled under the car."
+  },
+  {
+    "id": 8241,
+    "tr": "kaymak",
+    "en": "to slip",
+    "beispiel": "Im Winter rutschen die Autos oft auf der Straße.",
+    "beispielTr": "Kışın arabalar yolda sık sık kayıyor.",
+    "beispielEn": "In winter cars often slip on the road."
+  },
+  {
+    "id": 8242,
+    "tr": "zıplamak",
+    "en": "to hop",
+    "beispiel": "Die Kinder hüpfen im Garten herum.",
+    "beispielTr": "Çocuklar bahçede zıplayıp duruyor.",
+    "beispielEn": "The children are hopping around in the garden."
+  },
+  {
+    "id": 8243,
+    "tr": "araçla gitmek",
+    "en": "to drive there",
+    "beispiel": "Der Markt ist weit, wir fahren mit dem Bus hin.",
+    "beispielTr": "Pazar yeri uzak, oraya otobüsle gidiyoruz.",
+    "beispielEn": "The market is far, we take the bus there."
+  },
+  {
+    "id": 8244,
+    "tr": "geri dönmek",
+    "en": "to drive back",
+    "beispiel": "Wir wollen am Sonntag nach München zurückfahren.",
+    "beispielTr": "Pazar günü Münih'e geri dönmek istiyoruz.",
+    "beispielEn": "We want to drive back to Munich on Sunday."
+  },
+  {
+    "id": 8245,
+    "tr": "çekip gitmek",
+    "en": "to drive away",
+    "beispiel": "Nach dem Streit fährt er einfach weg.",
+    "beispielTr": "Kavgadan sonra öylece çekip gidiyor.",
+    "beispielEn": "After the argument he just drives away."
+  },
+  {
+    "id": 8246,
+    "tr": "yönlendirmek",
+    "en": "to steer",
+    "beispiel": "Sie lenkt das Auto vorsichtig in die Garage.",
+    "beispielTr": "Arabayı dikkatlice garaja yönlendiriyor.",
+    "beispielEn": "She steers the car carefully into the garage."
+  },
+  {
+    "id": 8247,
+    "tr": "nakletmek",
+    "en": "to transport",
+    "beispiel": "Die Firma transportiert die Möbel in die neue Wohnung.",
+    "beispielTr": "Firma mobilyaları yeni eve naklediyor.",
+    "beispielEn": "The company transports the furniture to the new apartment."
+  },
+  {
+    "id": 8248,
+    "tr": "ulaşmak",
+    "en": "to arrive",
+    "beispiel": "Das Paket trifft heute im Lager ein.",
+    "beispielTr": "Paket bugün depoya ulaşıyor.",
+    "beispielEn": "The package arrives at the warehouse today."
+  },
+  {
+    "id": 8249,
+    "tr": "götürmek",
+    "en": "to take away",
+    "beispiel": "Ich bringe den Müll schnell weg.",
+    "beispielTr": "Çöpü hemen götürüyorum.",
+    "beispielEn": "I'm taking the trash away quickly."
+  },
+  {
+    "id": 8250,
+    "tr": "geri götürmek",
+    "en": "to bring back",
+    "beispiel": "Kannst du die Bücher morgen zurückbringen?",
+    "beispielTr": "Kitapları yarın geri götürebilir misin?",
+    "beispielEn": "Can you bring the books back tomorrow?"
+  },
+  {
+    "id": 8251,
+    "tr": "geri çevirmek",
+    "en": "to send away",
+    "beispiel": "Der Kellner schickt den Gast einfach weg.",
+    "beispielTr": "Garson misafiri öylece geri çeviriyor.",
+    "beispielEn": "The waiter simply sends the guest away."
+  },
+  {
+    "id": 8252,
+    "tr": "gecikmek",
+    "en": "to be late",
+    "beispiel": "Der Zug nach Köln verspätet sich um zwanzig Minuten.",
+    "beispielTr": "Köln'e giden tren yirmi dakika gecikiyor.",
+    "beispielEn": "The train to Cologne is twenty minutes late."
+  },
+  {
+    "id": 8253,
+    "tr": "devam etmek",
+    "en": "to carry on",
+    "beispiel": "Nach der Pause machen wir mit der Arbeit weiter.",
+    "beispielTr": "Moladan sonra işe devam ediyoruz.",
+    "beispielEn": "After the break we carry on with the work."
+  },
+  {
+    "id": 8254,
+    "tr": "birlikte çalışmak",
+    "en": "to work together",
+    "beispiel": "Unser Team arbeitet gut mit der Technik zusammen.",
+    "beispielTr": "Ekibimiz teknik ekiple birlikte iyi çalışıyor.",
+    "beispielEn": "Our team works well together with the technicians."
+  },
+  {
+    "id": 8255,
+    "tr": "yardıma gitmek",
+    "en": "to help out",
+    "beispiel": "Am Samstag helfe ich im Laden aus.",
+    "beispielTr": "Cumartesi günü dükkâna yardıma gidiyorum.",
+    "beispielEn": "On Saturday I help out at the shop."
+  },
+  {
+    "id": 8256,
+    "tr": "paylaştırmak",
+    "en": "to divide up",
+    "beispiel": "Wir teilen die Arbeit unter drei Kollegen auf.",
+    "beispielTr": "İşi üç iş arkadaşı arasında paylaştırıyoruz.",
+    "beispielEn": "We divide the work up among three colleagues."
+  },
+  {
+    "id": 8257,
+    "tr": "sıralamak",
+    "en": "to sort",
+    "beispiel": "Ich sortiere die Rechnungen nach Datum.",
+    "beispielTr": "Faturaları tarihe göre sıralıyorum.",
+    "beispielEn": "I sort the invoices by date."
+  },
+  {
+    "id": 8258,
+    "tr": "istiflemek",
+    "en": "to stack",
+    "beispiel": "Der Praktikant stapelt die Kisten im Lager.",
+    "beispielTr": "Stajyer kutuları depoda istifliyor.",
+    "beispielEn": "The intern stacks the boxes in the warehouse."
+  },
+  {
+    "id": 8259,
+    "tr": "vidalamak",
+    "en": "to screw",
+    "beispiel": "Mein Bruder schraubt das Regal an die Wand.",
+    "beispielTr": "Kardeşim rafı duvara vidalıyor.",
+    "beispielEn": "My brother screws the shelf to the wall."
+  },
+  {
+    "id": 8260,
+    "tr": "çekiçlemek",
+    "en": "to hammer",
+    "beispiel": "Der Nachbar hämmert seit einer Stunde in der Garage.",
+    "beispielTr": "Komşu bir saattir garajda çekiçliyor.",
+    "beispielEn": "The neighbor has been hammering in the garage for an hour."
+  },
+  {
+    "id": 8261,
+    "tr": "sabitlemek",
+    "en": "to attach",
+    "beispiel": "Wir befestigen die Lampe über dem Tisch.",
+    "beispielTr": "Lambayı masanın üstüne sabitliyoruz.",
+    "beispielEn": "We attach the lamp above the table."
+  },
+  {
+    "id": 8262,
+    "tr": "kurmak",
+    "en": "to set up",
+    "beispiel": "Die Kollegen bauen das Zelt für das Fest auf.",
+    "beispielTr": "İş arkadaşları şenlik için çadırı kuruyor.",
+    "beispielEn": "The colleagues set up the tent for the party."
+  },
+  {
+    "id": 8263,
+    "tr": "dizmek",
+    "en": "to line up",
+    "beispiel": "Der Hausmeister stellt die Stühle im Saal auf.",
+    "beispielTr": "Kapıcı sandalyeleri salonda diziyor.",
+    "beispielEn": "The caretaker lines the chairs up in the hall."
+  },
+  {
+    "id": 8264,
+    "tr": "asmak",
+    "en": "to hang up",
+    "beispiel": "Meine Mutter hängt die Wäsche auf dem Balkon auf.",
+    "beispielTr": "Annem çamaşırları balkonda asıyor.",
+    "beispielEn": "My mother hangs the laundry up on the balcony."
+  },
+  {
+    "id": 8265,
+    "tr": "kazmak",
+    "en": "to dig",
+    "beispiel": "Die Arbeiter graben ein Loch für den neuen Baum.",
+    "beispielTr": "İşçiler yeni ağaç için bir çukur kazıyor.",
+    "beispielEn": "The workers are digging a hole for the new tree."
+  },
+  {
+    "id": 8266,
+    "tr": "süpürmek",
+    "en": "to sweep",
+    "beispiel": "Er fegt jeden Morgen den Hof.",
+    "beispielTr": "Her sabah avluyu süpürüyor.",
+    "beispielEn": "He sweeps the yard every morning."
+  },
+  {
+    "id": 8267,
+    "tr": "silmek",
+    "en": "to wipe off",
+    "beispiel": "Der Kellner wischt den Tisch schnell ab.",
+    "beispielTr": "Garson masayı hızlıca siliyor.",
+    "beispielEn": "The waiter quickly wipes off the table."
+  },
+  {
+    "id": 8268,
+    "tr": "katlamak",
+    "en": "to fold",
+    "beispiel": "Sie faltet die Handtücher und legt sie in den Schrank.",
+    "beispielTr": "Havluları katlıyor ve dolaba koyuyor.",
+    "beispielEn": "She folds the towels and puts them in the closet."
+  },
+  {
+    "id": 8269,
+    "tr": "elinden bırakmak",
+    "en": "to let go",
+    "beispiel": "Lass das Seil bitte nicht los!",
+    "beispielTr": "Lütfen ipi elinden bırakma!",
+    "beispielEn": "Please don't let go of the rope!"
+  },
+  {
+    "id": 8270,
+    "tr": "sürüklemek",
+    "en": "to drag",
+    "beispiel": "Der Hund schleppt den Ast durch den Garten.",
+    "beispielTr": "Köpek dalı bahçede sürüklüyor.",
+    "beispielEn": "The dog drags the branch through the garden."
+  },
+  {
+    "id": 8271,
+    "tr": "kaldırmak",
+    "en": "to lift",
+    "beispiel": "Hebst du den Tisch bitte kurz an?",
+    "beispielTr": "Masayı bir saniye kaldırır mısın?",
+    "beispielEn": "Could you lift the table for a moment?"
+  },
+  {
+    "id": 8272,
+    "tr": "yukarı kaldırmak",
+    "en": "to lift up",
+    "beispiel": "Der Vater hebt seine Tochter hoch.",
+    "beispielTr": "Baba kızını yukarı kaldırıyor.",
+    "beispielEn": "The father lifts his daughter up."
+  },
+  {
+    "id": 8273,
+    "tr": "uzanmak",
+    "en": "to lie down",
+    "beispiel": "Nach der Schicht lege ich mich eine Stunde hin.",
+    "beispielTr": "Vardiyadan sonra bir saat uzanıyorum.",
+    "beispielEn": "After my shift I lie down for an hour."
+  },
+  {
+    "id": 8274,
+    "tr": "oturmak",
+    "en": "to sit down",
+    "beispiel": "Setz dich bitte hier hin, der Arzt kommt gleich.",
+    "beispielTr": "Lütfen buraya otur, doktor birazdan geliyor.",
+    "beispielEn": "Please sit down here, the doctor is coming soon."
+  },
+  {
+    "id": 8275,
+    "tr": "oraya koymak",
+    "en": "to put down",
+    "beispiel": "Stell die Blumen bitte dort hin.",
+    "beispielTr": "Çiçekleri lütfen oraya koy.",
+    "beispielEn": "Please put the flowers down over there."
+  },
+  {
+    "id": 8276,
+    "tr": "depolamak",
+    "en": "to store",
+    "beispiel": "Wir lagern die Getränke im Keller.",
+    "beispielTr": "İçecekleri bodrumda depoluyoruz.",
+    "beispielEn": "We store the drinks in the basement."
+  },
+  {
+    "id": 8277,
+    "tr": "yerleştirmek",
+    "en": "to stow",
+    "beispiel": "Der Fahrer verstaut die Taschen im Kofferraum.",
+    "beispielTr": "Şoför çantaları bagaja yerleştiriyor.",
+    "beispielEn": "The driver stows the bags in the trunk."
+  },
+  {
+    "id": 8278,
+    "tr": "indirmek",
+    "en": "to unload",
+    "beispiel": "Die Männer laden die Möbel vor dem Haus ab.",
+    "beispielTr": "Adamlar mobilyaları evin önünde indiriyor.",
+    "beispielEn": "The men unload the furniture in front of the house."
+  },
+  {
+    "id": 8279,
+    "tr": "yüklemek",
+    "en": "to load",
+    "beispiel": "Wir beladen den Wagen mit Kisten.",
+    "beispielTr": "Arabayı kutularla yüklüyoruz.",
+    "beispielEn": "We load the car with boxes."
+  },
+  {
+    "id": 8280,
+    "tr": "toplamak",
+    "en": "to gather up",
+    "beispiel": "Der Lehrer sammelt die Hefte am Ende der Stunde ein.",
+    "beispielTr": "Öğretmen defterleri dersin sonunda topluyor.",
+    "beispielEn": "The teacher gathers up the notebooks at the end of class."
+  },
+  {
+    "id": 8281,
+    "tr": "toplayıp kaldırmak",
+    "en": "to clear away",
+    "beispiel": "Räum bitte die Werkzeuge nach der Arbeit weg.",
+    "beispielTr": "Lütfen işten sonra aletleri toplayıp kaldır.",
+    "beispielEn": "Please clear the tools away after work."
+  },
+  {
+    "id": 8282,
+    "tr": "doldurmak",
+    "en": "to fill",
+    "beispiel": "Sie füllt die Flasche mit kaltem Wasser.",
+    "beispielTr": "Şişeyi soğuk suyla dolduruyor.",
+    "beispielEn": "She fills the bottle with cold water."
+  },
+  {
+    "id": 8283,
+    "tr": "boşaltmak",
+    "en": "to empty",
+    "beispiel": "Der Hausmeister leert die Mülltonnen am Dienstag.",
+    "beispielTr": "Kapıcı çöp kovalarını salı günü boşaltıyor.",
+    "beispielEn": "The caretaker empties the trash cans on Tuesday."
+  },
+  {
+    "id": 8284,
+    "tr": "yana yatırmak",
+    "en": "to tilt",
+    "beispiel": "Kipp die Kiste bitte nicht zur Seite!",
+    "beispielTr": "Kutuyu lütfen yana yatırma!",
+    "beispielEn": "Please don't tilt the box to the side!"
+  },
+  {
+    "id": 8285,
+    "tr": "azaltmak",
+    "en": "to reduce",
+    "beispiel": "Der Chef verringert die Kosten für Papier.",
+    "beispielTr": "Patron kâğıt masraflarını azaltıyor.",
+    "beispielEn": "The boss reduces the costs for paper."
+  },
+  {
+    "id": 8286,
+    "tr": "sallanmak",
+    "en": "to swing",
+    "beispiel": "Das Kind schaukelt gern auf dem Spielplatz.",
+    "beispielTr": "Çocuk oyun alanında sallanmayı seviyor.",
+    "beispielEn": "The child likes to swing at the playground."
+  },
+  {
+    "id": 8287,
+    "tr": "yürüyüş yapmak",
+    "en": "to stroll",
+    "beispiel": "Am Nachmittag spazieren wir durch den Park.",
+    "beispielTr": "Öğleden sonra parkta yürüyüş yapıyoruz.",
+    "beispielEn": "In the afternoon we stroll through the park."
+  },
+  {
+    "id": 8288,
+    "tr": "vurgulamak",
+    "en": "to emphasize",
+    "beispiel": "Die Chefin betont, dass wir pünktlich sein müssen.",
+    "beispielTr": "Patron dakik olmamız gerektiğini vurguluyor.",
+    "beispielEn": "The boss emphasizes that we have to be on time."
+  },
+  {
+    "id": 8289,
+    "tr": "bahsetmek",
+    "en": "to mention",
+    "beispiel": "Er erwähnt seinen neuen Job nur kurz.",
+    "beispielTr": "Yeni işinden sadece kısaca bahsediyor.",
+    "beispielEn": "He mentions his new job only briefly."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 8189,
+    "tr": "kazımak",
+    "en": "to scrape off",
+    "beispiel": "Im Winter kratze ich das Eis vom Auto ab.",
+    "beispielTr": "Kışın arabanın buzunu kazıyorum.",
+    "beispielEn": "In winter I scrape the ice off the car."
+  },
+  {
+    "id": 8190,
+    "tr": "monte etmek",
+    "en": "to assemble",
+    "beispiel": "Wir bauen das neue Regal am Wochenende zusammen.",
+    "beispielTr": "Yeni rafı hafta sonu monte ediyoruz.",
+    "beispielEn": "We are assembling the new shelf this weekend."
+  },
+  {
+    "id": 8191,
+    "tr": "takmak",
+    "en": "to attach",
+    "beispiel": "Der Hausmeister bringt eine neue Lampe im Flur an.",
+    "beispielTr": "Kapıcı koridora yeni bir lamba takıyor.",
+    "beispielEn": "The caretaker attaches a new lamp in the hallway."
+  },
+  {
+    "id": 8192,
+    "tr": "etiketlemek",
+    "en": "to label",
+    "beispiel": "Ich beschrifte die Dosen mit einem dicken Stift.",
+    "beispielTr": "Kutuları kalın bir kalemle etiketliyorum.",
+    "beispielEn": "I label the jars with a thick marker."
+  },
+  {
+    "id": 8193,
+    "tr": "açmak",
+    "en": "to turn on",
+    "beispiel": "Am Abend schalte ich die Lampe im Wohnzimmer an.",
+    "beispielTr": "Akşamları oturma odasındaki lambayı açıyorum.",
+    "beispielEn": "In the evening I turn on the lamp in the living room."
+  },
+  {
+    "id": 8194,
+    "tr": "örtmek",
+    "en": "to cover",
+    "beispiel": "Beim Streichen decke ich den Boden mit Folie ab.",
+    "beispielTr": "Boya yaparken zemini naylonla örtüyorum.",
+    "beispielEn": "When painting I cover the floor with plastic sheeting."
+  },
+  {
+    "id": 8195,
+    "tr": "sıcak tutmak",
+    "en": "to keep warm",
+    "beispiel": "Ich möchte das Essen für meinen Mann warmhalten.",
+    "beispielTr": "Yemeği eşim için sıcak tutmak istiyorum.",
+    "beispielEn": "I want to keep the food warm for my husband."
+  },
+  {
+    "id": 8196,
+    "tr": "düğümlemek",
+    "en": "to knot",
+    "beispiel": "Sie knotet sich ein Tuch um den Hals.",
+    "beispielTr": "Boynuna bir eşarp düğümlüyor.",
+    "beispielEn": "She knots a scarf around her neck."
+  },
+  {
+    "id": 8197,
+    "tr": "uykuya dalmak",
+    "en": "to fall asleep",
+    "beispiel": "Abends schlafe ich oft vor dem Fernseher ein.",
+    "beispielTr": "Akşamları sık sık televizyonun önünde uykuya dalıyorum.",
+    "beispielEn": "In the evening I often fall asleep in front of the TV."
+  },
+  {
+    "id": 8199,
+    "tr": "uyuyakalmak",
+    "en": "to oversleep",
+    "beispiel": "Heute Morgen habe ich verschlafen und den Bus verpasst.",
+    "beispielTr": "Bu sabah uyuyakaldım ve otobüsü kaçırdım.",
+    "beispielEn": "This morning I overslept and missed the bus."
+  },
+  {
+    "id": 8200,
+    "tr": "uyandırmak",
+    "en": "to wake up",
+    "beispiel": "Jeden Morgen wecke ich meine Kinder um sieben auf.",
+    "beispielTr": "Her sabah çocuklarımı saat yedide uyandırıyorum.",
+    "beispielEn": "Every morning I wake my children at seven."
+  },
+  {
+    "id": 8201,
+    "tr": "uyanık kalmak",
+    "en": "to stay up",
+    "beispiel": "Am Wochenende bleiben die Kinder länger auf.",
+    "beispielTr": "Hafta sonu çocuklar daha uzun süre uyanık kalıyor.",
+    "beispielEn": "On the weekend the children stay up longer."
+  },
+  {
+    "id": 8202,
+    "tr": "gerinmek",
+    "en": "to stretch",
+    "beispiel": "Nach dem Aufstehen strecke ich mich am Fenster.",
+    "beispielTr": "Kalktıktan sonra pencerenin önünde geriniyorum.",
+    "beispielEn": "After getting up I stretch by the window."
+  },
+  {
+    "id": 8203,
+    "tr": "saçını taramak",
+    "en": "to comb one's hair",
+    "beispiel": "Jeden Morgen kämme ich mich vor dem Spiegel.",
+    "beispielTr": "Her sabah aynanın önünde saçımı tarıyorum.",
+    "beispielEn": "Every morning I comb my hair in front of the mirror."
+  },
+  {
+    "id": 8204,
+    "tr": "fön çekmek",
+    "en": "to blow-dry",
+    "beispiel": "Nach dem Duschen föhne ich meine Haare.",
+    "beispielTr": "Duştan sonra saçlarıma fön çekiyorum.",
+    "beispielEn": "After showering I blow-dry my hair."
+  },
+  {
+    "id": 8205,
+    "tr": "fırçalamak",
+    "en": "to brush",
+    "beispiel": "Vor der Arbeit bürste ich meine schwarzen Schuhe.",
+    "beispielTr": "İşten önce siyah ayakkabılarımı fırçalıyorum.",
+    "beispielEn": "Before work I brush my black shoes."
+  },
+  {
+    "id": 8206,
+    "tr": "üstünde denemek",
+    "en": "to try on",
+    "beispiel": "Im Geschäft probiere ich zuerst die blaue Jacke an.",
+    "beispielTr": "Mağazada önce mavi ceketi üstümde deniyorum.",
+    "beispielEn": "In the shop I first try on the blue jacket."
+  },
+  {
+    "id": 8207,
+    "tr": "para almak",
+    "en": "to take payment",
+    "beispiel": "Der Kellner kassiert das Geld direkt am Tisch.",
+    "beispielTr": "Garson parayı doğrudan masada alıyor.",
+    "beispielEn": "The waiter takes the payment right at the table."
+  },
+  {
+    "id": 8208,
+    "tr": "doldurmak",
+    "en": "to fill up",
+    "beispiel": "Der Verkäufer füllt die Regale im Laden auf.",
+    "beispielTr": "Satıcı mağazadaki rafları dolduruyor.",
+    "beispielEn": "The salesperson fills up the shelves in the shop."
+  },
+  {
+    "id": 8209,
+    "tr": "yeniden doldurmak",
+    "en": "to refill",
+    "beispiel": "Füll bitte das Salz nach, die Dose ist leer.",
+    "beispielTr": "Lütfen tuzu yeniden doldur, kutu boş.",
+    "beispielEn": "Please refill the salt, the tin is empty."
+  },
+  {
+    "id": 8210,
+    "tr": "koymak",
+    "en": "to pour",
+    "beispiel": "Meine Mutter schenkt uns nach dem Essen Tee ein.",
+    "beispielTr": "Annem yemekten sonra bize çay koyuyor.",
+    "beispielEn": "After the meal my mother pours us some tea."
+  },
+  {
+    "id": 8211,
+    "tr": "saklamak",
+    "en": "to store",
+    "beispiel": "Wir bewahren die Kartoffeln im kühlen Keller auf.",
+    "beispielTr": "Patatesleri serin bodrumda saklıyoruz.",
+    "beispielEn": "We store the potatoes in the cool cellar."
+  },
+  {
+    "id": 8212,
+    "tr": "toplamak",
+    "en": "to clear away",
+    "beispiel": "Nach dem Essen räume ich den Tisch ab.",
+    "beispielTr": "Yemekten sonra masayı topluyorum.",
+    "beispielEn": "After the meal I clear the table."
+  },
+  {
+    "id": 8213,
+    "tr": "sunmak",
+    "en": "to serve",
+    "beispiel": "Meine Frau richtet den Salat auf einem Teller an.",
+    "beispielTr": "Eşim salatayı bir tabakta sunuyor.",
+    "beispielEn": "My wife serves the salad on a plate."
+  },
+  {
+    "id": 8214,
+    "tr": "sürmek",
+    "en": "to apply",
+    "beispiel": "Jeden Abend trage ich Creme auf meine Hände auf.",
+    "beispielTr": "Her akşam ellerime krem sürüyorum.",
+    "beispielEn": "Every evening I apply cream to my hands."
+  },
+  {
+    "id": 8215,
+    "tr": "atıştırmak",
+    "en": "to snack",
+    "beispiel": "Die Kinder naschen heimlich von der Schokolade.",
+    "beispielTr": "Çocuklar gizlice çikolatadan atıştırıyor.",
+    "beispielEn": "The children secretly snack on the chocolate."
+  },
+  {
+    "id": 8216,
+    "tr": "dilimlemek",
+    "en": "to slice",
+    "beispiel": "Meine Mutter schneidet den Kuchen für uns auf.",
+    "beispielTr": "Annem pastayı bizim için dilimliyor.",
+    "beispielEn": "My mother slices the cake for us."
+  },
+  {
+    "id": 8217,
+    "tr": "sıkıca kapatmak",
+    "en": "to seal",
+    "beispiel": "Verschließ die Marmelade gut, sonst wird sie schlecht.",
+    "beispielTr": "Reçeli sıkıca kapat, yoksa bozulur.",
+    "beispielEn": "Seal the jam well, or it will spoil."
+  },
+  {
+    "id": 8218,
+    "tr": "üstünü örtmek",
+    "en": "to tuck in",
+    "beispiel": "Abends decke ich meinen Sohn im Bett zu.",
+    "beispielTr": "Akşamları oğlumun üstünü yatakta örtüyorum.",
+    "beispielEn": "In the evening I tuck my son into bed."
+  },
+  {
+    "id": 8219,
+    "tr": "çarşaf değiştirmek",
+    "en": "to change the sheets",
+    "beispiel": "Am Samstag beziehe ich alle Betten neu.",
+    "beispielTr": "Cumartesi bütün yatakların çarşaflarını değiştiriyorum.",
+    "beispielEn": "On Saturday I change the sheets on all the beds."
+  },
+  {
+    "id": 8220,
+    "tr": "parlatmak",
+    "en": "to polish",
+    "beispiel": "Vor dem Besuch poliere ich die Gläser.",
+    "beispielTr": "Misafirler gelmeden önce bardakları parlatıyorum.",
+    "beispielEn": "Before the visit I polish the glasses."
+  },
+  {
+    "id": 8221,
+    "tr": "kurmak",
+    "en": "to install",
+    "beispiel": "Der Handwerker montiert heute die neue Küche.",
+    "beispielTr": "Usta bugün yeni mutfağı kuruyor.",
+    "beispielEn": "The workman is installing the new kitchen today."
+  },
+  {
+    "id": 8222,
+    "tr": "onarmak",
+    "en": "to mend",
+    "beispiel": "Meine Mutter bessert die alte Hose aus.",
+    "beispielTr": "Annem eski pantolonu onarıyor.",
+    "beispielEn": "My mother mends the old trousers."
+  },
+  {
+    "id": 8223,
+    "tr": "küremek",
+    "en": "to shovel",
+    "beispiel": "Im Winter schaufeln wir den Schnee vor der Tür.",
+    "beispielTr": "Kışın kapının önündeki karı küreriz.",
+    "beispielEn": "In winter we shovel the snow in front of the door."
+  },
+  {
+    "id": 8224,
+    "tr": "yardım etmek",
+    "en": "to help out",
+    "beispiel": "Meine Kinder helfen im Haushalt jeden Tag mit.",
+    "beispielTr": "Çocuklarım ev işlerinde her gün yardım ediyor.",
+    "beispielEn": "My children help out at home every day."
+  },
+  {
+    "id": 8225,
+    "tr": "sırayla yapmak",
+    "en": "to take turns",
+    "beispiel": "Beim Kochen wechseln wir uns jeden Tag ab.",
+    "beispielTr": "Yemek pişirmeyi her gün sırayla yapıyoruz.",
+    "beispielEn": "We take turns cooking every day."
+  },
+  {
+    "id": 8226,
+    "tr": "yola çıkmak",
+    "en": "to set off",
+    "beispiel": "Wir gehen um sieben Uhr los.",
+    "beispielTr": "Saat yedide yola çıkıyoruz.",
+    "beispielEn": "We set off at seven o'clock."
+  },
+  {
+    "id": 8227,
+    "tr": "gitmek",
+    "en": "to leave",
+    "beispiel": "Meine Kollegin geht heute früher weg.",
+    "beispielTr": "İş arkadaşım bugün daha erken gidiyor.",
+    "beispielEn": "My colleague is leaving earlier today."
+  },
+  {
+    "id": 8228,
+    "tr": "kaçmak",
+    "en": "to run away",
+    "beispiel": "Unser Hund läuft im Park oft weg.",
+    "beispielTr": "Köpeğimiz parkta sık sık kaçıyor.",
+    "beispielEn": "Our dog often runs away in the park."
+  },
+  {
+    "id": 8229,
+    "tr": "geri gelmek",
+    "en": "to come back",
+    "beispiel": "Mein Vater kommt am Freitag aus Hamburg zurück.",
+    "beispielTr": "Babam cuma günü Hamburg'dan geri geliyor.",
+    "beispielEn": "My father comes back from Hamburg on Friday."
+  },
+  {
+    "id": 8230,
+    "tr": "oraya gitmek",
+    "en": "to go there",
+    "beispiel": "Das Konzert ist billig, wir gehen zusammen hin.",
+    "beispielTr": "Konser ucuz, oraya birlikte gidiyoruz.",
+    "beispielEn": "The concert is cheap, we are going there together."
+  },
+  {
+    "id": 8231,
+    "tr": "buraya gelmek",
+    "en": "to come here",
+    "beispiel": "Komm bitte kurz her, ich brauche deine Hilfe.",
+    "beispielTr": "Lütfen bir saniye buraya gel, yardımına ihtiyacım var.",
+    "beispielEn": "Please come here for a second, I need your help."
+  },
+  {
+    "id": 8232,
+    "tr": "içeri girmek",
+    "en": "to come in",
+    "beispiel": "Du kannst jetzt in mein Büro reinkommen.",
+    "beispielTr": "Şimdi büroma girebilirsin.",
+    "beispielEn": "You can come into my office now."
+  },
+  {
+    "id": 8233,
+    "tr": "dışarı çıkmak",
+    "en": "to go out",
+    "beispiel": "In der Pause bin ich kurz rausgegangen.",
+    "beispielTr": "Molada kısa bir süre dışarı çıktım.",
+    "beispielEn": "During the break I went outside for a moment."
+  },
+  {
+    "id": 8234,
+    "tr": "uğramak",
+    "en": "to come by",
+    "beispiel": "Der Techniker kommt morgen bei uns vorbei.",
+    "beispielTr": "Teknisyen yarın bize uğruyor.",
+    "beispielEn": "The technician is coming by tomorrow."
+  },
+  {
+    "id": 8235,
+    "tr": "geri dönmek",
+    "en": "to turn back",
+    "beispiel": "Es regnet stark, deshalb kehren wir um.",
+    "beispielTr": "Yağmur çok yağıyor, bu yüzden geri dönüyoruz.",
+    "beispielEn": "It is raining hard, so we are turning back."
+  },
+  {
+    "id": 8236,
+    "tr": "durmak",
+    "en": "to stop",
+    "beispiel": "Der Bus hält vor der Schule an.",
+    "beispielTr": "Otobüs okulun önünde duruyor.",
+    "beispielEn": "The bus stops in front of the school."
+  },
+  {
+    "id": 8237,
+    "tr": "olduğu yerde durmak",
+    "en": "to stand still",
+    "beispiel": "Kannst du kurz stehenbleiben?",
+    "beispielTr": "Kısa bir süre olduğun yerde durabilir misin?",
+    "beispielEn": "Can you stand still for a moment?"
+  },
+  {
+    "id": 8238,
+    "tr": "girmek",
+    "en": "to enter",
+    "beispiel": "Wir betreten das Haus durch die Hintertür.",
+    "beispielTr": "Eve arka kapıdan giriyoruz.",
+    "beispielEn": "We enter the house through the back door."
+  },
+  {
+    "id": 8239,
+    "tr": "gözden geçirmek",
+    "en": "to go through",
+    "beispiel": "Wir gehen die Liste noch einmal durch.",
+    "beispielTr": "Listeyi bir kez daha gözden geçiriyoruz.",
+    "beispielEn": "We are going through the list once more."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1213,
+    "tr": "ünlü",
+    "en": "celebrity",
+    "beispiel": "Diese Sängerin ist ein Star in Deutschland.",
+    "beispielTr": "Bu şarkıcı Almanya'da bir ünlü.",
+    "beispielEn": "This singer is a celebrity in Germany."
+  },
+  {
+    "id": 1267,
+    "tr": "muayene etmek",
+    "en": "to examine",
+    "beispiel": "Der Arzt hat mich gestern untersucht.",
+    "beispielTr": "Doktor beni dün muayene etti.",
+    "beispielEn": "The doctor examined me yesterday."
+  },
+  {
+    "id": 997,
+    "tr": "tersi",
+    "en": "opposite",
+    "beispiel": "Das Gegenteil von billig ist teuer.",
+    "beispielTr": "Ucuzun tersi pahalıdır.",
+    "beispielEn": "The opposite of cheap is expensive."
+  },
+  {
+    "id": 1176,
+    "tr": "keskin",
+    "en": "sharp",
+    "beispiel": "Pass auf, das Messer ist sehr scharf!",
+    "beispielTr": "Dikkat et, bıçak çok keskin!",
+    "beispielEn": "Be careful, the knife is very sharp!"
+  },
+  {
+    "id": 1145,
+    "tr": "proje",
+    "en": "project",
+    "beispiel": "Wir machen ein Projekt über Sehenswürdigkeiten in unserer Stadt.",
+    "beispielTr": "Şehrimizdeki gezilecek yerler hakkında bir proje yapıyoruz.",
+    "beispielEn": "We are doing a project about the sights in our city."
+  },
+  {
+    "id": 1338,
+    "tr": "en son",
+    "en": "last",
+    "beispiel": "Wann hast du ihn zuletzt gesehen?",
+    "beispielTr": "Onu en son ne zaman gördün?",
+    "beispielEn": "When did you last see him?"
+  },
+  {
+    "id": 1120,
+    "tr": "kulak",
+    "en": "ear",
+    "beispiel": "Die Musik ist zu laut für meine Ohren.",
+    "beispielTr": "Müzik kulaklarım için fazla yüksek.",
+    "beispielEn": "The music is too loud for my ears."
+  },
+  {
+    "id": 986,
+    "tr": "taze",
+    "en": "fresh",
+    "beispiel": "Das Brot ist noch ganz frisch.",
+    "beispielTr": "Ekmek hâlâ çok taze.",
+    "beispielEn": "The bread is still very fresh."
+  },
+  {
+    "id": 1142,
+    "tr": "tatmak",
+    "en": "to taste",
+    "beispiel": "Möchten Sie den Käse probieren?",
+    "beispielTr": "Peyniri tatmak ister misiniz?",
+    "beispielEn": "Would you like to taste the cheese?"
+  },
+  {
+    "id": 1293,
+    "tr": "önde",
+    "en": "in front",
+    "beispiel": "Wir sitzen im Kino gern vorne.",
+    "beispielTr": "Sinemada önde oturmayı severiz.",
+    "beispielEn": "We like to sit at the front in the cinema."
+  },
+  {
+    "id": 961,
+    "tr": "izin",
+    "en": "permission",
+    "beispiel": "Ohne Erlaubnis darfst du nicht fotografieren.",
+    "beispielTr": "İzin olmadan fotoğraf çekemezsin.",
+    "beispielEn": "You may not take photos without permission."
+  },
+  {
+    "id": 1126,
+    "tr": "toplamak",
+    "en": "to pack",
+    "beispiel": "Ich muss noch meinen Koffer packen.",
+    "beispielTr": "Daha valizimi toplamam gerekiyor.",
+    "beispielEn": "I still have to pack my suitcase."
+  },
+  {
+    "id": 1099,
+    "tr": "motor",
+    "en": "engine",
+    "beispiel": "Der Motor startet nicht mehr.",
+    "beispielTr": "Motor artık çalışmıyor.",
+    "beispielEn": "The engine doesn't start anymore."
+  },
+  {
+    "id": 900,
+    "tr": "dağ",
+    "en": "mountain",
+    "beispiel": "Wir fahren am Wochenende in die Berge.",
+    "beispielTr": "Hafta sonu dağlara gidiyoruz.",
+    "beispielEn": "We are going to the mountains this weekend."
+  },
+  {
+    "id": 1309,
+    "tr": "ağrımak",
+    "en": "to hurt",
+    "beispiel": "Mein Kopf tut heute sehr weh.",
+    "beispielTr": "Bugün başım çok ağrıyor.",
+    "beispielEn": "My head hurts a lot today."
+  },
+  {
+    "id": 1002,
+    "tr": "cihaz",
+    "en": "device",
+    "beispiel": "Wie funktioniert dieses Gerät?",
+    "beispielTr": "Bu cihaz nasıl çalışıyor?",
+    "beispielEn": "How does this device work?"
+  },
+  {
+    "id": 1037,
+    "tr": "ilgi duymak",
+    "en": "to be interested",
+    "beispiel": "Ich interessiere mich sehr für Fußball.",
+    "beispielTr": "Futbola çok ilgi duyuyorum.",
+    "beispielEn": "I am very interested in football."
+  },
+  {
+    "id": 1337,
+    "tr": "dinlemek",
+    "en": "to listen",
+    "beispiel": "Hör mir bitte kurz zu!",
+    "beispielTr": "Beni bir dinle lütfen!",
+    "beispielEn": "Please listen to me for a moment!"
+  },
+  {
+    "id": 1180,
+    "tr": "yatak odası",
+    "en": "bedroom",
+    "beispiel": "Unser Schlafzimmer ist sehr klein.",
+    "beispielTr": "Yatak odamız çok küçük.",
+    "beispielEn": "Our bedroom is very small."
+  },
+  {
+    "id": 1294,
+    "tr": "öneri",
+    "en": "suggestion",
+    "beispiel": "Hast du einen besseren Vorschlag?",
+    "beispielTr": "Daha iyi bir önerin var mı?",
+    "beispielEn": "Do you have a better suggestion?"
+  },
+  {
+    "id": 891,
+    "tr": "cevaplamak",
+    "en": "to answer",
+    "beispiel": "Können Sie meine Frage bitte beantworten?",
+    "beispielTr": "Sorumu cevaplayabilir misiniz lütfen?",
+    "beispielEn": "Could you please answer my question?"
+  },
+  {
+    "id": 934,
+    "tr": "net",
+    "en": "clear",
+    "beispiel": "Sprechen Sie bitte etwas deutlicher!",
+    "beispielTr": "Lütfen biraz daha net konuşun!",
+    "beispielEn": "Please speak a little more clearly!"
+  },
+  {
+    "id": 1249,
+    "tr": "rüya görmek",
+    "en": "to dream",
+    "beispiel": "Letzte Nacht habe ich schlecht geträumt.",
+    "beispielTr": "Dün gece kötü bir rüya gördüm.",
+    "beispielEn": "I had a bad dream last night."
+  },
+  {
+    "id": 1101,
+    "tr": "çöp",
+    "en": "trash",
+    "beispiel": "Bringst du bitte den Müll raus?",
+    "beispielTr": "Çöpü dışarı çıkarır mısın lütfen?",
+    "beispielEn": "Can you take the trash out, please?"
+  },
+  {
+    "id": 1094,
+    "tr": "öğle yemeği",
+    "en": "lunch",
+    "beispiel": "Was gibt es heute zum Mittagessen?",
+    "beispielTr": "Bugün öğle yemeğinde ne var?",
+    "beispielEn": "What is for lunch today?"
+  },
+  {
+    "id": 1162,
+    "tr": "etek",
+    "en": "skirt",
+    "beispiel": "Dieser Rock ist mir zu eng.",
+    "beispielTr": "Bu etek bana çok dar geldi.",
+    "beispielEn": "This skirt is too tight for me."
+  },
+  {
+    "id": 1279,
+    "tr": "kaçırmak",
+    "en": "to miss",
+    "beispiel": "Ich habe heute Morgen den Bus verpasst.",
+    "beispielTr": "Bu sabah otobüsü kaçırdım.",
+    "beispielEn": "I missed the bus this morning."
+  },
+  {
+    "id": 1021,
+    "tr": "gömlek",
+    "en": "shirt",
+    "beispiel": "Nick trägt heute ein neues Hemd.",
+    "beispielTr": "Nick bugün yeni bir gömlek giyiyor.",
+    "beispielEn": "Nick is wearing a new shirt today."
+  },
+  {
+    "id": 1138,
+    "tr": "pratik",
+    "en": "practical",
+    "beispiel": "Diese neue Tasche ist wirklich praktisch.",
+    "beispielTr": "Bu yeni çanta gerçekten pratik.",
+    "beispielEn": "This new bag is really practical."
+  },
+  {
+    "id": 1324,
+    "tr": "sayı",
+    "en": "number",
+    "beispiel": "Können Sie die Zahl bitte wiederholen?",
+    "beispielTr": "Sayıyı tekrar edebilir misiniz lütfen?",
+    "beispielEn": "Could you repeat the number, please?"
+  },
+  {
+    "id": 973,
+    "tr": "televizyon",
+    "en": "TV set",
+    "beispiel": "Mach bitte den Fernseher aus!",
+    "beispielTr": "Televizyonu kapat lütfen!",
+    "beispielEn": "Please turn off the TV!"
+  },
+  {
+    "id": 1305,
+    "tr": "değiştirmek",
+    "en": "to switch",
+    "beispiel": "Ich möchte meinen Platz wechseln.",
+    "beispielTr": "Yerimi değiştirmek istiyorum.",
+    "beispielEn": "I would like to switch seats."
+  },
+  {
+    "id": 1223,
+    "tr": "katı",
+    "en": "strict",
+    "beispiel": "Der Lehrer meiner Tochter ist sehr streng.",
+    "beispielTr": "Kızımın öğretmeni çok katı.",
+    "beispielEn": "My daughter's teacher is very strict."
+  },
+  {
+    "id": 1196,
+    "tr": "program",
+    "en": "show",
+    "beispiel": "Diese Sendung schaue ich jede Woche.",
+    "beispielTr": "Bu programı her hafta izliyorum.",
+    "beispielEn": "I watch this show every week."
+  },
+  {
+    "id": 1095,
+    "tr": "ilaç",
+    "en": "remedy",
+    "beispiel": "Haben Sie ein Mittel gegen Kopfschmerzen?",
+    "beispielTr": "Baş ağrısına karşı bir ilacınız var mı?",
+    "beispielEn": "Do you have a remedy for headaches?"
+  },
+  {
+    "id": 875,
+    "tr": "heyecan verici",
+    "en": "exciting",
+    "beispiel": "Der Film war wirklich aufregend.",
+    "beispielTr": "Film gerçekten heyecan vericiydi.",
+    "beispielEn": "The movie was really exciting."
+  },
+  {
+    "id": 1184,
+    "tr": "kar",
+    "en": "snow",
+    "beispiel": "Auf der Straße liegt viel Schnee.",
+    "beispielTr": "Yolda çok kar var.",
+    "beispielEn": "There is a lot of snow on the road."
+  },
+  {
+    "id": 918,
+    "tr": "gözlük",
+    "en": "glasses",
+    "beispiel": "Ohne meine Brille sehe ich nichts.",
+    "beispielTr": "Gözlüğüm olmadan hiçbir şey göremiyorum.",
+    "beispielEn": "I can't see anything without my glasses."
+  },
+  {
+    "id": 906,
+    "tr": "onaylamak",
+    "en": "to confirm",
+    "beispiel": "Bitte bestätigen Sie den Termin per E-Mail.",
+    "beispielTr": "Randevuyu lütfen e-posta ile onaylayın.",
+    "beispielEn": "Please confirm the appointment by email."
+  },
+  {
+    "id": 1088,
+    "tr": "çoğunlukla",
+    "en": "mostly",
+    "beispiel": "Meistens trinke ich morgens nur Kaffee.",
+    "beispielTr": "Sabahları çoğunlukla sadece kahve içerim.",
+    "beispielEn": "I mostly just drink coffee in the morning."
+  },
+  {
+    "id": 1224,
+    "tr": "stres",
+    "en": "stress",
+    "beispiel": "Ich habe bei der Arbeit viel Stress.",
+    "beispielTr": "İşte çok stres yaşıyorum.",
+    "beispielEn": "I have a lot of stress at work."
+  },
+  {
+    "id": 976,
+    "tr": "yağlı",
+    "en": "fatty",
+    "beispiel": "Die Wurst ist mir zu fett.",
+    "beispielTr": "Sosis bana fazla yağlı geldi.",
+    "beispielEn": "The sausage is too fatty for me."
+  },
+  {
+    "id": 1007,
+    "tr": "sağlık",
+    "en": "health",
+    "beispiel": "Sport ist gut für die Gesundheit.",
+    "beispielTr": "Spor sağlığa iyi gelir.",
+    "beispielEn": "Exercise is good for your health."
+  },
+  {
+    "id": 983,
+    "tr": "gönüllü",
+    "en": "voluntary",
+    "beispiel": "Sie arbeitet freiwillig in einem Tierheim.",
+    "beispielTr": "Bir hayvan barınağında gönüllü çalışıyor.",
+    "beispielEn": "She works voluntarily at an animal shelter."
+  },
+  {
+    "id": 1153,
+    "tr": "lastik",
+    "en": "tire",
+    "beispiel": "Ich brauche neue Reifen für mein Auto.",
+    "beispielTr": "Arabama yeni lastikler lazım.",
+    "beispielEn": "I need new tires for my car."
+  },
+  {
+    "id": 1074,
+    "tr": "teslim etmek",
+    "en": "to deliver",
+    "beispiel": "Wir liefern Ihnen den Schrank nach Hause.",
+    "beispielTr": "Dolabı evinize teslim ediyoruz.",
+    "beispielEn": "We will deliver the wardrobe to your home."
+  },
+  {
+    "id": 901,
+    "tr": "haber vermek",
+    "en": "to report",
+    "beispiel": "Alle Zeitungen berichten über den Unfall.",
+    "beispielTr": "Bütün gazeteler kazayı haber veriyor.",
+    "beispielEn": "All the newspapers are reporting on the accident."
+  },
+  {
+    "id": 1290,
+    "tr": "hazırlamak",
+    "en": "to prepare",
+    "beispiel": "Wir bereiten das Essen für die Party vor.",
+    "beispielTr": "Parti için yemekleri hazırlıyoruz.",
+    "beispielEn": "We are preparing the food for the party."
+  },
+  {
+    "id": 1336,
+    "tr": "şeker",
+    "en": "sugar",
+    "beispiel": "Trinken Sie den Tee mit oder ohne Zucker?",
+    "beispielTr": "Çayı şekerli mi içersiniz, şekersiz mi?",
+    "beispielEn": "Do you drink your tea with or without sugar?"
+  },
+  {
+    "id": 1079,
+    "tr": "mide",
+    "en": "stomach",
+    "beispiel": "Der Kaffee ist schlecht für meinen Magen.",
+    "beispielTr": "Kahve midem için kötü.",
+    "beispielEn": "Coffee is bad for my stomach."
+  }
+]

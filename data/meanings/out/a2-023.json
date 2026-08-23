@@ -1,0 +1,402 @@
+[
+ {
+  "id": 8088,
+  "tr": "ön koltuktaki yolcu",
+  "en": "front-seat passenger",
+  "beispiel": "Als Beifahrer lese ich die Karte.",
+  "beispielTr": "Ön koltuktaki yolcu olarak haritayı ben okuyorum.",
+  "beispielEn": "As the front-seat passenger I read the map."
+ },
+ {
+  "id": 8089,
+  "tr": "araba sürücüsü",
+  "en": "car driver",
+  "beispiel": "Der Autofahrer hat vor der Ampel gebremst.",
+  "beispielTr": "Araba sürücüsü ışıktan önce fren yaptı.",
+  "beispielEn": "The car driver braked before the traffic light."
+ },
+ {
+  "id": 8090,
+  "tr": "kaldırım",
+  "en": "sidewalk",
+  "beispiel": "Auf dem Bürgersteig darf man nicht parken.",
+  "beispielTr": "Kaldırıma park etmek yasaktır.",
+  "beispielEn": "You are not allowed to park on the sidewalk."
+ },
+ {
+  "id": 8091,
+  "tr": "çekiciyle çekmek",
+  "en": "to tow",
+  "beispiel": "Die Polizei lässt das Auto abschleppen.",
+  "beispielTr": "Polis arabayı çekiciyle çektiriyor.",
+  "beispielEn": "The police are having the car towed."
+ },
+ {
+  "id": 8092,
+  "tr": "dinlenme tesisi",
+  "en": "rest stop",
+  "beispiel": "An der nächsten Raststätte machen wir eine Pause.",
+  "beispielTr": "Bir sonraki dinlenme tesisinde mola veriyoruz.",
+  "beispielEn": "We will take a break at the next rest stop."
+ },
+ {
+  "id": 8093,
+  "tr": "karavan",
+  "en": "motorhome",
+  "beispiel": "Meine Eltern reisen im Sommer mit dem Wohnmobil.",
+  "beispielTr": "Ailem yazın karavanla seyahat ediyor.",
+  "beispielEn": "My parents travel by motorhome in the summer."
+ },
+ {
+  "id": 8094,
+  "tr": "birlikte gitmek",
+  "en": "to ride along",
+  "beispiel": "Darf ich bis zum Bahnhof mitfahren?",
+  "beispielTr": "Gara kadar sizinle gelebilir miyim?",
+  "beispielEn": "May I ride along to the station?"
+ },
+ {
+  "id": 8095,
+  "tr": "hatıra eşyası",
+  "en": "souvenir",
+  "beispiel": "Ich habe meiner Schwester ein kleines Andenken gekauft.",
+  "beispielTr": "Kız kardeşime küçük bir hatıra eşyası aldım.",
+  "beispielEn": "I bought my sister a small souvenir."
+ },
+ {
+  "id": 8096,
+  "tr": "mayo",
+  "en": "swim trunks",
+  "beispiel": "Hast du deine Badehose eingepackt?",
+  "beispielTr": "Mayonu bavula koydun mu?",
+  "beispielEn": "Did you pack your swim trunks?"
+ },
+ {
+  "id": 8097,
+  "tr": "tekne gezisi",
+  "en": "boat trip",
+  "beispiel": "Am Nachmittag machen wir eine Bootsfahrt auf dem See.",
+  "beispielTr": "Öğleden sonra gölde tekne gezisi yapıyoruz.",
+  "beispielEn": "In the afternoon we are taking a boat trip on the lake."
+ },
+ {
+  "id": 8098,
+  "tr": "dünya turu",
+  "en": "trip around the world",
+  "beispiel": "Mein Bruder träumt von einer Weltreise.",
+  "beispielTr": "Kardeşim dünya turu yapmayı hayal ediyor.",
+  "beispielEn": "My brother dreams of a trip around the world."
+ },
+ {
+  "id": 8099,
+  "tr": "güneş şemsiyesi",
+  "en": "parasol",
+  "beispiel": "Am Strand liegen wir unter dem Sonnenschirm.",
+  "beispielTr": "Plajda güneş şemsiyesinin altında uzanıyoruz.",
+  "beispielEn": "At the beach we lie under the parasol."
+ },
+ {
+  "id": 8100,
+  "tr": "sınıf gezisi",
+  "en": "class trip",
+  "beispiel": "Meine Tochter fährt nächste Woche auf Klassenfahrt.",
+  "beispielTr": "Kızım gelecek hafta sınıf gezisine gidiyor.",
+  "beispielEn": "My daughter is going on a class trip next week."
+ },
+ {
+  "id": 8101,
+  "tr": "ilkbahar",
+  "en": "spring",
+  "beispiel": "Im Frühling blühen die Bäume im Park.",
+  "beispielTr": "İlkbaharda parktaki ağaçlar çiçek açar.",
+  "beispielEn": "In spring the trees in the park bloom."
+ },
+ {
+  "id": 8102,
+  "tr": "yaz",
+  "en": "summer",
+  "beispiel": "Im Sommer gehen wir jeden Tag an den See.",
+  "beispielTr": "Yazın her gün göle gidiyoruz.",
+  "beispielEn": "In summer we go to the lake every day."
+ },
+ {
+  "id": 8103,
+  "tr": "sonbahar",
+  "en": "autumn",
+  "beispiel": "Im Herbst fallen die Blätter von den Bäumen.",
+  "beispielTr": "Sonbaharda yapraklar ağaçlardan düşer.",
+  "beispielEn": "In autumn the leaves fall from the trees."
+ },
+ {
+  "id": 8104,
+  "tr": "kış",
+  "en": "winter",
+  "beispiel": "Der Winter war dieses Jahr sehr kalt.",
+  "beispielTr": "Bu yıl kış çok soğuktu.",
+  "beispielEn": "The winter was very cold this year."
+ },
+ {
+  "id": 8105,
+  "tr": "mevsim",
+  "en": "season",
+  "beispiel": "Welche Jahreszeit magst du am liebsten?",
+  "beispielTr": "En çok hangi mevsimi seviyorsun?",
+  "beispielEn": "Which season do you like best?"
+ },
+ {
+  "id": 8106,
+  "tr": "semt",
+  "en": "district",
+  "beispiel": "Wir wohnen in einem ruhigen Stadtteil im Norden.",
+  "beispielTr": "Kuzeyde sakin bir semtte oturuyoruz.",
+  "beispielEn": "We live in a quiet district in the north."
+ },
+ {
+  "id": 8107,
+  "tr": "yaya yolu",
+  "en": "footpath",
+  "beispiel": "Der Gehweg vor dem Haus ist sehr schmal.",
+  "beispielTr": "Evin önündeki yaya yolu çok dar.",
+  "beispielEn": "The footpath in front of the house is very narrow."
+ },
+ {
+  "id": 8108,
+  "tr": "sokak lambası",
+  "en": "street lamp",
+  "beispiel": "Vor unserem Haus steht eine alte Laterne.",
+  "beispielTr": "Evimizin önünde eski bir sokak lambası var.",
+  "beispielEn": "There is an old street lamp in front of our house."
+ },
+ {
+  "id": 8109,
+  "tr": "çeşme",
+  "en": "fountain",
+  "beispiel": "Auf dem Marktplatz gibt es einen schönen Brunnen.",
+  "beispielTr": "Meydanda güzel bir çeşme var.",
+  "beispielEn": "There is a beautiful fountain in the market square."
+ },
+ {
+  "id": 8110,
+  "tr": "dere",
+  "en": "stream",
+  "beispiel": "Hinter dem Dorf fließt ein kleiner Bach.",
+  "beispielTr": "Köyün arkasında küçük bir dere akıyor.",
+  "beispielEn": "A small stream flows behind the village."
+ },
+ {
+  "id": 8111,
+  "tr": "gölet",
+  "en": "pond",
+  "beispiel": "Im Teich schwimmen viele Enten.",
+  "beispielTr": "Gölette birçok ördek yüzüyor.",
+  "beispielEn": "Many ducks are swimming in the pond."
+ },
+ {
+  "id": 8112,
+  "tr": "dal",
+  "en": "branch",
+  "beispiel": "Ein Vogel sitzt auf einem dünnen Zweig.",
+  "beispielTr": "Bir kuş ince bir dalın üstünde oturuyor.",
+  "beispielEn": "A bird is sitting on a thin branch."
+ },
+ {
+  "id": 8113,
+  "tr": "kök",
+  "en": "root",
+  "beispiel": "Die Wurzeln des Baumes sind sehr tief.",
+  "beispielTr": "Ağacın kökleri çok derin.",
+  "beispielEn": "The roots of the tree are very deep."
+ },
+ {
+  "id": 8114,
+  "tr": "arı",
+  "en": "bee",
+  "beispiel": "Eine Biene sitzt auf der gelben Blume.",
+  "beispielTr": "Sarı çiçeğin üstünde bir arı duruyor.",
+  "beispielEn": "A bee is sitting on the yellow flower."
+ },
+ {
+  "id": 8115,
+  "tr": "kurbağa",
+  "en": "frog",
+  "beispiel": "Am Teich haben wir einen grünen Frosch gesehen.",
+  "beispielTr": "Göletin kenarında yeşil bir kurbağa gördük.",
+  "beispielEn": "We saw a green frog at the pond."
+ },
+ {
+  "id": 8116,
+  "tr": "koyun",
+  "en": "sheep",
+  "beispiel": "Auf der Weide stehen zwanzig Schafe.",
+  "beispielTr": "Otlakta yirmi koyun duruyor.",
+  "beispielEn": "Twenty sheep are standing in the pasture."
+ },
+ {
+  "id": 8117,
+  "tr": "çöp sepeti",
+  "en": "wastebasket",
+  "beispiel": "Wirf das Papier bitte in den Papierkorb.",
+  "beispielTr": "Kâğıdı lütfen çöp sepetine at.",
+  "beispielEn": "Please throw the paper in the wastebasket."
+ },
+ {
+  "id": 8118,
+  "tr": "güneş ışığı",
+  "en": "sunshine",
+  "beispiel": "Im Garten sitzen wir gern im Sonnenschein.",
+  "beispielTr": "Bahçede güneş ışığında oturmayı seviyoruz.",
+  "beispielEn": "We like sitting in the sunshine in the garden."
+ },
+ {
+  "id": 8119,
+  "tr": "ikametgâh belgesi",
+  "en": "registration certificate",
+  "beispiel": "Der Vermieter möchte meine Meldebescheinigung sehen.",
+  "beispielTr": "Ev sahibi ikametgâh belgemi görmek istiyor.",
+  "beispielEn": "The landlord wants to see my registration certificate."
+ },
+ {
+  "id": 8120,
+  "tr": "devriye",
+  "en": "patrol",
+  "beispiel": "Die Polizei fährt nachts Streife im Park.",
+  "beispielTr": "Polis geceleri parkta devriye geziyor.",
+  "beispielEn": "The police patrol the park at night."
+ },
+ {
+  "id": 8121,
+  "tr": "kimliğini göstermek",
+  "en": "to identify oneself",
+  "beispiel": "Bei der Kontrolle musst du dich ausweisen.",
+  "beispielTr": "Kontrolde kimliğini göstermek zorundasın.",
+  "beispielEn": "You have to identify yourself at the check."
+ },
+ {
+  "id": 8123,
+  "tr": "esmek",
+  "en": "to blow",
+  "beispiel": "Am Meer weht heute ein starker Wind.",
+  "beispielTr": "Bugün denizde kuvvetli bir rüzgâr esiyor.",
+  "beispielEn": "A strong wind is blowing at the sea today."
+ },
+ {
+  "id": 8124,
+  "tr": "batmak",
+  "en": "to set",
+  "beispiel": "Am Meer geht die Sonne gerade unter.",
+  "beispielTr": "Denizde güneş şu anda batıyor.",
+  "beispielEn": "The sun is just setting at the sea."
+ },
+ {
+  "id": 8125,
+  "tr": "damgalamak",
+  "en": "to stamp",
+  "beispiel": "Die Frau am Schalter hat mein Formular gestempelt.",
+  "beispielTr": "Gişedeki kadın formumu damgaladı.",
+  "beispielEn": "The woman at the counter stamped my form."
+ },
+ {
+  "id": 8126,
+  "tr": "arama yapmak",
+  "en": "to search",
+  "beispiel": "Die Polizei hat den ganzen Park durchsucht.",
+  "beispielTr": "Polis bütün parkta arama yaptı.",
+  "beispielEn": "The police searched the whole park."
+ },
+ {
+  "id": 8127,
+  "tr": "kazıp çıkarmak",
+  "en": "to dig up",
+  "beispiel": "Der Hund gräbt im Garten einen Knochen aus.",
+  "beispielTr": "Köpek bahçede bir kemik kazıp çıkarıyor.",
+  "beispielEn": "The dog is digging up a bone in the garden."
+ },
+ {
+  "id": 8128,
+  "tr": "hasat etmek",
+  "en": "to harvest",
+  "beispiel": "Im Herbst ernten die Bauern die Äpfel.",
+  "beispielTr": "Sonbaharda çiftçiler elmaları hasat eder.",
+  "beispielEn": "In autumn the farmers harvest the apples."
+ },
+ {
+  "id": 8129,
+  "tr": "kordona almak",
+  "en": "to cordon off",
+  "beispiel": "Die Polizei sperrt die Straße nach dem Unfall ab.",
+  "beispielTr": "Polis kazadan sonra caddeyi kordona alıyor.",
+  "beispielEn": "The police are cordoning off the street after the accident."
+ },
+ {
+  "id": 8130,
+  "tr": "toplamak",
+  "en": "to pick",
+  "beispiel": "Die Kinder pflücken Blumen auf der Wiese.",
+  "beispielTr": "Çocuklar çayırda çiçek topluyor.",
+  "beispielEn": "The children are picking flowers in the meadow."
+ },
+ {
+  "id": 8131,
+  "tr": "havlamak",
+  "en": "to bark",
+  "beispiel": "Der Hund des Nachbarn bellt die ganze Nacht.",
+  "beispielTr": "Komşunun köpeği bütün gece havlıyor.",
+  "beispielEn": "The neighbor's dog barks all night."
+ },
+ {
+  "id": 8132,
+  "tr": "avlamak",
+  "en": "to hunt",
+  "beispiel": "Der Fuchs jagt nachts kleine Tiere.",
+  "beispielTr": "Tilki geceleri küçük hayvanları avlıyor.",
+  "beispielEn": "The fox hunts small animals at night."
+ },
+ {
+  "id": 8133,
+  "tr": "yakmak",
+  "en": "to burn",
+  "beispiel": "Im Garten darf man kein Laub verbrennen.",
+  "beispielTr": "Bahçede yaprak yakmak yasaktır.",
+  "beispielEn": "You are not allowed to burn leaves in the garden."
+ },
+ {
+  "id": 8134,
+  "tr": "temizlemek",
+  "en": "to clean up",
+  "beispiel": "Wir säubern den Strand von Plastik und Papier.",
+  "beispielTr": "Sahili plastikten ve kâğıttan temizliyoruz.",
+  "beispielEn": "We clean the beach of plastic and paper."
+ },
+ {
+  "id": 8135,
+  "tr": "tahmin etmek",
+  "en": "to forecast",
+  "beispiel": "Das Wetter kann man nicht genau vorhersagen.",
+  "beispielTr": "Hava durumunu kimse tam olarak tahmin edemez.",
+  "beispielEn": "Nobody can forecast the weather exactly."
+ },
+ {
+  "id": 8136,
+  "tr": "sürünmek",
+  "en": "to crawl",
+  "beispiel": "Eine Schnecke kriecht langsam über den Weg.",
+  "beispielTr": "Bir salyangoz yavaşça yolun üstünde sürünüyor.",
+  "beispielEn": "A snail is slowly crawling across the path."
+ },
+ {
+  "id": 8137,
+  "tr": "kavga etmek",
+  "en": "to argue",
+  "beispiel": "Die Nachbarn streiten oft über den Lärm.",
+  "beispielTr": "Komşular sık sık gürültü yüzünden kavga ediyor.",
+  "beispielEn": "The neighbors often argue about the noise."
+ },
+ {
+  "id": 8138,
+  "tr": "yaralamak",
+  "en": "to injure",
+  "beispiel": "Die Katze hat mich am Arm verletzt.",
+  "beispielTr": "Kedi kolumu yaraladı.",
+  "beispielEn": "The cat injured my arm."
+ }
+]

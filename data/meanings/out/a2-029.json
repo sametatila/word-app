@@ -1,0 +1,130 @@
+[
+  {
+    "id": 8390,
+    "tr": "alt kiracı",
+    "en": "subtenant",
+    "beispiel": "Wir suchen einen Untermieter für das kleine Zimmer.",
+    "beispielTr": "Küçük oda için bir alt kiracı arıyoruz.",
+    "beispielEn": "We are looking for a subtenant for the small room."
+  },
+  {
+    "id": 8391,
+    "tr": "derin dondurucu",
+    "en": "freezer",
+    "beispiel": "Das Brot liegt im Gefrierschrank.",
+    "beispielTr": "Ekmek derin dondurucuda duruyor.",
+    "beispielEn": "The bread is in the freezer."
+  },
+  {
+    "id": 8392,
+    "tr": "yorgan",
+    "en": "duvet",
+    "beispiel": "Im Winter brauche ich eine dicke Bettdecke.",
+    "beispielTr": "Kışın kalın bir yorgana ihtiyacım oluyor.",
+    "beispielEn": "In winter I need a thick duvet."
+  },
+  {
+    "id": 8393,
+    "tr": "yedek anahtar",
+    "en": "spare key",
+    "beispiel": "Der Ersatzschlüssel liegt bei meiner Nachbarin.",
+    "beispielTr": "Yedek anahtar komşumda duruyor.",
+    "beispielEn": "The spare key is at my neighbor's place."
+  },
+  {
+    "id": 8394,
+    "tr": "ütü",
+    "en": "iron",
+    "beispiel": "Vorsicht, das Bügeleisen ist noch heiß!",
+    "beispielTr": "Dikkat et, ütü hâlâ sıcak!",
+    "beispielEn": "Careful, the iron is still hot!"
+  },
+  {
+    "id": 8395,
+    "tr": "kitaplık",
+    "en": "bookshelf",
+    "beispiel": "Das Bücherregal ist schon wieder voll.",
+    "beispielTr": "Kitaplık yine doldu.",
+    "beispielEn": "The bookshelf is full again."
+  },
+  {
+    "id": 8396,
+    "tr": "yemek masası",
+    "en": "dining table",
+    "beispiel": "Am Esstisch haben sechs Personen Platz.",
+    "beispielTr": "Yemek masasında altı kişi oturabiliyor.",
+    "beispielEn": "Six people fit at the dining table."
+  },
+  {
+    "id": 8397,
+    "tr": "elektrik faturası",
+    "en": "electricity bill",
+    "beispiel": "Die Stromrechnung ist dieses Jahr sehr hoch.",
+    "beispielTr": "Elektrik faturası bu yıl çok yüksek.",
+    "beispielEn": "The electricity bill is very high this year."
+  },
+  {
+    "id": 8398,
+    "tr": "bulaşık makinesi",
+    "en": "dishwasher",
+    "beispiel": "Stell die Teller bitte in den Geschirrspüler.",
+    "beispielTr": "Tabakları lütfen bulaşık makinesine koy.",
+    "beispielEn": "Please put the plates in the dishwasher."
+  },
+  {
+    "id": 8399,
+    "tr": "çift kişilik yatak",
+    "en": "double bed",
+    "beispiel": "Im Schlafzimmer steht ein großes Doppelbett.",
+    "beispielTr": "Yatak odasında büyük bir çift kişilik yatak duruyor.",
+    "beispielEn": "There is a big double bed in the bedroom."
+  },
+  {
+    "id": 8400,
+    "tr": "radyatör",
+    "en": "radiator",
+    "beispiel": "Der Heizkörper im Bad wird nicht warm.",
+    "beispielTr": "Banyodaki radyatör ısınmıyor.",
+    "beispielEn": "The radiator in the bathroom doesn't get warm."
+  },
+  {
+    "id": 8401,
+    "tr": "sehpa",
+    "en": "coffee table",
+    "beispiel": "Die Zeitung liegt auf dem Couchtisch.",
+    "beispielTr": "Gazete sehpanın üstünde duruyor.",
+    "beispielEn": "The newspaper is on the coffee table."
+  },
+  {
+    "id": 8402,
+    "tr": "temizlik malzemesi",
+    "en": "cleaning product",
+    "beispiel": "Die Putzmittel stehen unter der Spüle.",
+    "beispielTr": "Temizlik malzemeleri evyenin altında duruyor.",
+    "beispielEn": "The cleaning products are under the sink."
+  },
+  {
+    "id": 8403,
+    "tr": "depo odası",
+    "en": "storage room",
+    "beispiel": "Das Fahrrad steht im Abstellraum.",
+    "beispielTr": "Bisiklet depo odasında duruyor.",
+    "beispielEn": "The bike is in the storage room."
+  },
+  {
+    "id": 8404,
+    "tr": "ev arayışı",
+    "en": "apartment search",
+    "beispiel": "Die Wohnungssuche in der Stadt ist sehr schwer.",
+    "beispielTr": "Şehirde ev aramak çok zor.",
+    "beispielEn": "The apartment search in the city is very hard."
+  },
+  {
+    "id": 8405,
+    "tr": "sıra ev",
+    "en": "row house",
+    "beispiel": "Meine Eltern wohnen in einem kleinen Reihenhaus.",
+    "beispielTr": "Annemle babam küçük bir sıra evde oturuyor.",
+    "beispielEn": "My parents live in a small row house."
+  }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 8340,
+  "tr": "atışmak",
+  "en": "to squabble",
+  "beispiel": "Die Kinder zanken sich um das neue Spielzeug.",
+  "beispielTr": "Çocuklar yeni oyuncak yüzünden atışıyor.",
+  "beispielEn": "The children are squabbling over the new toy."
+ },
+ {
+  "id": 8341,
+  "tr": "yemin etmek",
+  "en": "to swear",
+  "beispiel": "Ich schwöre dir, ich habe nichts davon gewusst.",
+  "beispielTr": "Yemin ederim, bundan hiç haberim yoktu.",
+  "beispielEn": "I swear to you, I knew nothing about it."
+ },
+ {
+  "id": 8342,
+  "tr": "hakaret etmek",
+  "en": "to insult",
+  "beispiel": "Im Bus beschimpft ein Mann den Fahrer.",
+  "beispielTr": "Otobüste bir adam şoföre hakaret ediyor.",
+  "beispielEn": "On the bus a man insults the driver."
+ },
+ {
+  "id": 8343,
+  "tr": "konuşmaya katılmak",
+  "en": "to join the conversation",
+  "beispiel": "Bei diesem Thema rede ich gern mit.",
+  "beispielTr": "Bu konuda konuşmaya seve seve katılırım.",
+  "beispielEn": "I like to join the conversation on this topic."
+ },
+ {
+  "id": 8344,
+  "tr": "göz kırpmak",
+  "en": "to wink",
+  "beispiel": "Mein Opa zwinkert mir über den Tisch zu.",
+  "beispielTr": "Dedem masanın üstünden bana göz kırpıyor.",
+  "beispielEn": "My grandpa winks at me across the table."
+ },
+ {
+  "id": 8345,
+  "tr": "hayran bırakmak",
+  "en": "to thrill",
+  "beispiel": "Der neue Film begeistert meine ganze Familie.",
+  "beispielTr": "Yeni film bütün ailemi hayran bırakıyor.",
+  "beispielEn": "The new movie thrills my whole family."
+ },
+ {
+  "id": 8346,
+  "tr": "başkasına söylemek",
+  "en": "to tell others",
+  "beispiel": "Sag das bitte nicht weiter, es ist ein Geheimnis!",
+  "beispielTr": "Bunu lütfen kimseye söyleme, bu bir sır!",
+  "beispielEn": "Please don't tell anyone, it's a secret!"
+ },
+ {
+  "id": 8347,
+  "tr": "yardımcı olmak",
+  "en": "to assist",
+  "beispiel": "Die Frau am Schalter hilft mir immer weiter.",
+  "beispielTr": "Gişedeki kadın bana her zaman yardımcı oluyor.",
+  "beispielEn": "The woman at the counter always assists me."
+ },
+ {
+  "id": 8348,
+  "tr": "birine yalan söylemek",
+  "en": "to lie to someone",
+  "beispiel": "Warum lügst du deine Eltern so oft an?",
+  "beispielTr": "Neden ailene bu kadar sık yalan söylüyorsun?",
+  "beispielEn": "Why do you lie to your parents so often?"
+ },
+ {
+  "id": 8349,
+  "tr": "kızdırmak",
+  "en": "to annoy",
+  "beispiel": "Seine Antwort verärgert die ganze Gruppe.",
+  "beispielTr": "Verdiği cevap bütün grubu kızdırıyor.",
+  "beispielEn": "His answer annoys the whole group."
+ },
+ {
+  "id": 8350,
+  "tr": "banyo",
+  "en": "bathroom",
+  "beispiel": "Das Badezimmer ist klein, aber sehr hell.",
+  "beispielTr": "Banyo küçük ama çok aydınlık.",
+  "beispielEn": "The bathroom is small but very bright."
+ },
+ {
+  "id": 8351,
+  "tr": "kova",
+  "en": "bucket",
+  "beispiel": "Ich hole einen Eimer mit warmem Wasser.",
+  "beispielTr": "Sıcak suyla dolu bir kova getiriyorum.",
+  "beispielEn": "I'm getting a bucket of warm water."
+ },
+ {
+  "id": 8352,
+  "tr": "fırın",
+  "en": "oven",
+  "beispiel": "Der Kuchen ist noch zehn Minuten im Ofen.",
+  "beispielTr": "Kek on dakika daha fırında kalacak.",
+  "beispielEn": "The cake is in the oven for ten more minutes."
+ },
+ {
+  "id": 8353,
+  "tr": "boyamak",
+  "en": "to paint",
+  "beispiel": "Wir wollen die Wände im Wohnzimmer weiß streichen.",
+  "beispielTr": "Oturma odasındaki duvarları beyaza boyamak istiyoruz.",
+  "beispielEn": "We want to paint the living room walls white."
+ },
+ {
+  "id": 8354,
+  "tr": "çekmece",
+  "en": "drawer",
+  "beispiel": "Die Löffel sind in der oberen Schublade.",
+  "beispielTr": "Kaşıklar üstteki çekmecede.",
+  "beispielEn": "The spoons are in the top drawer."
+ },
+ {
+  "id": 8355,
+  "tr": "şömine",
+  "en": "fireplace",
+  "beispiel": "Im Wohnzimmer gibt es einen alten Kamin.",
+  "beispielTr": "Oturma odasında eski bir şömine var.",
+  "beispielEn": "There is an old fireplace in the living room."
+ },
+ {
+  "id": 8356,
+  "tr": "kapı zili",
+  "en": "doorbell",
+  "beispiel": "Unsere Türklingel ist kaputt, bitte klopfen Sie.",
+  "beispielTr": "Kapı zilimiz bozuk, lütfen kapıyı çalın.",
+  "beispielEn": "Our doorbell is broken, please knock."
+ },
+ {
+  "id": 8357,
+  "tr": "tavan arası",
+  "en": "attic",
+  "beispiel": "Die alten Koffer stehen auf dem Dachboden.",
+  "beispielTr": "Eski bavullar tavan arasında duruyor.",
+  "beispielEn": "The old suitcases are in the attic."
+ },
+ {
+  "id": 8358,
+  "tr": "sokak kapısı",
+  "en": "front door",
+  "beispiel": "Bitte mach die Haustür abends zu.",
+  "beispielTr": "Lütfen akşamları sokak kapısını kapat.",
+  "beispielEn": "Please close the front door in the evening."
+ },
+ {
+  "id": 8359,
+  "tr": "şilte",
+  "en": "mattress",
+  "beispiel": "Die neue Matratze ist viel bequemer.",
+  "beispielTr": "Yeni şilte çok daha rahat.",
+  "beispielEn": "The new mattress is much more comfortable."
+ },
+ {
+  "id": 8360,
+  "tr": "süpürge",
+  "en": "broom",
+  "beispiel": "Der Besen steht hinter der Tür in der Küche.",
+  "beispielTr": "Süpürge mutfakta kapının arkasında duruyor.",
+  "beispielEn": "The broom is behind the door in the kitchen."
+ },
+ {
+  "id": 8361,
+  "tr": "misafir odası",
+  "en": "guest room",
+  "beispiel": "Meine Schwester schläft im Gästezimmer.",
+  "beispielTr": "Kız kardeşim misafir odasında uyuyor.",
+  "beispielEn": "My sister sleeps in the guest room."
+ },
+ {
+  "id": 8362,
+  "tr": "zemin",
+  "en": "floor",
+  "beispiel": "Der Fußboden im Flur ist aus Holz.",
+  "beispielTr": "Koridorun zemini ahşaptan.",
+  "beispielEn": "The floor in the hallway is made of wood."
+ },
+ {
+  "id": 8363,
+  "tr": "elektrikli süpürge",
+  "en": "vacuum cleaner",
+  "beispiel": "Der Staubsauger ist leider kaputt.",
+  "beispielTr": "Elektrikli süpürge maalesef bozuk.",
+  "beispielEn": "The vacuum cleaner is unfortunately broken."
+ },
+ {
+  "id": 8364,
+  "tr": "çamaşır makinesi",
+  "en": "washing machine",
+  "beispiel": "Die Waschmaschine steht im Keller.",
+  "beispielTr": "Çamaşır makinesi bodrumda duruyor.",
+  "beispielEn": "The washing machine is in the basement."
+ },
+ {
+  "id": 8365,
+  "tr": "çöp kovası",
+  "en": "trash can",
+  "beispiel": "Kannst du bitte den Mülleimer leeren?",
+  "beispielTr": "Çöp kovasını boşaltabilir misin lütfen?",
+  "beispielEn": "Can you empty the trash can, please?"
+ },
+ {
+  "id": 8366,
+  "tr": "çocuk odası",
+  "en": "children's room",
+  "beispiel": "Im Kinderzimmer liegen überall Spielsachen.",
+  "beispielTr": "Çocuk odasında her yerde oyuncak var.",
+  "beispielEn": "There are toys everywhere in the children's room."
+ },
+ {
+  "id": 8367,
+  "tr": "paspaslamak",
+  "en": "to mop",
+  "beispiel": "Am Samstag wische ich den Boden in der Küche.",
+  "beispielTr": "Cumartesi günü mutfakta yerleri paspaslıyorum.",
+  "beispielEn": "On Saturday I mop the kitchen floor."
+ },
+ {
+  "id": 8368,
+  "tr": "yemek odası",
+  "en": "dining room",
+  "beispiel": "Sonntags essen wir alle zusammen im Esszimmer.",
+  "beispielTr": "Pazarları hep birlikte yemek odasında yemek yiyoruz.",
+  "beispielEn": "On Sundays we all eat together in the dining room."
+ },
+ {
+  "id": 8369,
+  "tr": "lavabo",
+  "en": "sink",
+  "beispiel": "Das Waschbecken im Bad ist verstopft.",
+  "beispielTr": "Banyodaki lavabo tıkalı.",
+  "beispielEn": "The sink in the bathroom is clogged."
+ },
+ {
+  "id": 8370,
+  "tr": "evye",
+  "en": "kitchen sink",
+  "beispiel": "In der Spüle steht noch schmutziges Geschirr.",
+  "beispielTr": "Evyede hâlâ kirli bulaşık duruyor.",
+  "beispielEn": "There are still dirty dishes in the kitchen sink."
+ },
+ {
+  "id": 8371,
+  "tr": "vida",
+  "en": "screw",
+  "beispiel": "Ich brauche noch eine kleine Schraube für das Regal.",
+  "beispielTr": "Raf için küçük bir vidaya daha ihtiyacım var.",
+  "beispielEn": "I still need a small screw for the shelf."
+ },
+ {
+  "id": 8372,
+  "tr": "şifonyer",
+  "en": "dresser",
+  "beispiel": "Meine Socken sind in der Kommode im Schlafzimmer.",
+  "beispielTr": "Çoraplarım yatak odasındaki şifonyerde.",
+  "beispielEn": "My socks are in the dresser in the bedroom."
+ },
+ {
+  "id": 8373,
+  "tr": "tornavida",
+  "en": "screwdriver",
+  "beispiel": "Hast du einen Schraubenzieher für mich?",
+  "beispielTr": "Bana verecek bir tornavidan var mı?",
+  "beispielEn": "Do you have a screwdriver for me?"
+ },
+ {
+  "id": 8374,
+  "tr": "kurutma makinesi",
+  "en": "dryer",
+  "beispiel": "Die Handtücher sind noch im Trockner.",
+  "beispielTr": "Havlular hâlâ kurutma makinesinde.",
+  "beispielEn": "The towels are still in the dryer."
+ },
+ {
+  "id": 8375,
+  "tr": "gardırop",
+  "en": "wardrobe",
+  "beispiel": "Der Kleiderschrank ist zu klein für zwei Personen.",
+  "beispielTr": "Gardırop iki kişi için çok küçük.",
+  "beispielEn": "The wardrobe is too small for two people."
+ },
+ {
+  "id": 8376,
+  "tr": "havalandırmak",
+  "en": "to air out",
+  "beispiel": "Du musst das Zimmer jeden Morgen kurz lüften.",
+  "beispielTr": "Odayı her sabah kısaca havalandırman gerekiyor.",
+  "beispielEn": "You have to air out the room briefly every morning."
+ },
+ {
+  "id": 8377,
+  "tr": "ütülemek",
+  "en": "to iron",
+  "beispiel": "Am Abend bügle ich meine Hemden.",
+  "beispielTr": "Akşam gömleklerimi ütülüyorum.",
+  "beispielEn": "In the evening I iron my shirts."
+ },
+ {
+  "id": 8378,
+  "tr": "tabure",
+  "en": "stool",
+  "beispiel": "Setz dich bitte auf den Hocker neben dem Tisch.",
+  "beispielTr": "Lütfen masanın yanındaki tabureye otur.",
+  "beispielEn": "Please sit on the stool next to the table."
+ },
+ {
+  "id": 8379,
+  "tr": "ampul",
+  "en": "light bulb",
+  "beispiel": "Im Flur ist die Glühbirne kaputt.",
+  "beispielTr": "Koridordaki ampul bozuk.",
+  "beispielEn": "The light bulb in the hallway is broken."
+ },
+ {
+  "id": 8380,
+  "tr": "vantilatör",
+  "en": "fan",
+  "beispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator.",
+  "beispielTr": "Yazın yatak odasında vantilatöre ihtiyacımız oluyor.",
+  "beispielEn": "In summer we need a fan in the bedroom."
+ },
+ {
+  "id": 8381,
+  "tr": "komodin",
+  "en": "nightstand",
+  "beispiel": "Meine Brille liegt auf dem Nachttisch.",
+  "beispielTr": "Gözlüğüm komodinin üstünde duruyor.",
+  "beispielEn": "My glasses are on the nightstand."
+ },
+ {
+  "id": 8382,
+  "tr": "musluk",
+  "en": "faucet",
+  "beispiel": "Der Wasserhahn in der Küche tropft schon wieder.",
+  "beispielTr": "Mutfaktaki musluk yine damlıyor.",
+  "beispielEn": "The kitchen faucet is dripping again."
+ },
+ {
+  "id": 8383,
+  "tr": "kilidi açmak",
+  "en": "to unlock",
+  "beispiel": "Kannst du bitte die Wohnungstür aufschließen?",
+  "beispielTr": "Dairenin kapısını açabilir misin lütfen?",
+  "beispielEn": "Can you unlock the apartment door, please?"
+ },
+ {
+  "id": 8384,
+  "tr": "nevresim takımı",
+  "en": "bed linen",
+  "beispiel": "Ich wechsle jeden Samstag die Bettwäsche.",
+  "beispielTr": "Her cumartesi nevresim takımını değiştiriyorum.",
+  "beispielEn": "I change the bed linen every Saturday."
+ },
+ {
+  "id": 8385,
+  "tr": "metrekare",
+  "en": "square meter",
+  "beispiel": "Unsere Wohnung hat 65 Quadratmeter.",
+  "beispielTr": "Dairemiz 65 metrekare.",
+  "beispielEn": "Our apartment is 65 square meters."
+ },
+ {
+  "id": 8386,
+  "tr": "duvar kâğıdı",
+  "en": "wallpaper",
+  "beispiel": "Die alte Tapete gefällt mir überhaupt nicht.",
+  "beispielTr": "Eski duvar kâğıdını hiç beğenmiyorum.",
+  "beispielEn": "I don't like the old wallpaper at all."
+ },
+ {
+  "id": 8387,
+  "tr": "kahve makinesi",
+  "en": "coffee maker",
+  "beispiel": "Die Kaffeemaschine steht neben dem Kühlschrank.",
+  "beispielTr": "Kahve makinesi buzdolabının yanında duruyor.",
+  "beispielEn": "The coffee maker is next to the fridge."
+ },
+ {
+  "id": 8388,
+  "tr": "ışık düğmesi",
+  "en": "light switch",
+  "beispiel": "Der Lichtschalter ist links neben der Tür.",
+  "beispielTr": "Işık düğmesi kapının solunda.",
+  "beispielEn": "The light switch is to the left of the door."
+ },
+ {
+  "id": 8389,
+  "tr": "üst kat",
+  "en": "upper floor",
+  "beispiel": "Die Schlafzimmer sind im Obergeschoss.",
+  "beispielTr": "Yatak odaları üst katta.",
+  "beispielEn": "The bedrooms are on the upper floor."
+ }
+]

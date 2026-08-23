@@ -1,0 +1,402 @@
+[
+  {
+    "id": 8139,
+    "tr": "devirmek",
+    "en": "to fell",
+    "beispiel": "Im Winter haben sie den kranken Baum gefällt.",
+    "beispielTr": "Kışın hasta ağacı devirdiler.",
+    "beispielEn": "In winter they felled the sick tree."
+  },
+  {
+    "id": 8140,
+    "tr": "doğmak",
+    "en": "to rise",
+    "beispiel": "Im Sommer geht die Sonne schon um fünf Uhr auf.",
+    "beispielTr": "Yazın güneş daha saat beşte doğuyor.",
+    "beispielEn": "In summer the sun rises as early as five."
+  },
+  {
+    "id": 8141,
+    "tr": "donmak",
+    "en": "to freeze",
+    "beispiel": "Bei diesem Frost können die Blumen erfrieren.",
+    "beispielTr": "Bu ayazda çiçekler donabilir.",
+    "beispielEn": "In this frost the flowers could freeze."
+  },
+  {
+    "id": 8142,
+    "tr": "vızıldamak",
+    "en": "to buzz",
+    "beispiel": "Die Bienen summen den ganzen Tag im Garten.",
+    "beispielTr": "Arılar bütün gün bahçede vızıldıyor.",
+    "beispielEn": "The bees buzz in the garden all day."
+  },
+  {
+    "id": 8143,
+    "tr": "yeşil",
+    "en": "green",
+    "beispiel": "Im Frühling wird die Wiese wieder ganz grün.",
+    "beispielTr": "İlkbaharda çayır yine tamamen yeşil oluyor.",
+    "beispielEn": "In spring the meadow turns completely green again."
+  },
+  {
+    "id": 8144,
+    "tr": "canlı",
+    "en": "alive",
+    "beispiel": "Der Fisch im Eimer ist noch lebendig.",
+    "beispielTr": "Kovadaki balık hâlâ canlı.",
+    "beispielEn": "The fish in the bucket is still alive."
+  },
+  {
+    "id": 8145,
+    "tr": "serbest",
+    "en": "allowed",
+    "beispiel": "Hier ist Parken nur eine Stunde erlaubt.",
+    "beispielTr": "Burada park etmek sadece bir saat serbest.",
+    "beispielEn": "Parking here is allowed for one hour only."
+  },
+  {
+    "id": 8146,
+    "tr": "uysal",
+    "en": "tame",
+    "beispiel": "Die Ziegen auf dem Bauernhof sind ganz zahm.",
+    "beispielTr": "Çiftlikteki keçiler çok uysal.",
+    "beispielEn": "The goats on the farm are quite tame."
+  },
+  {
+    "id": 8147,
+    "tr": "şiddetli",
+    "en": "heavy",
+    "beispiel": "Gestern hatten wir einen heftigen Sturm.",
+    "beispielTr": "Dün şiddetli bir fırtına vardı.",
+    "beispielEn": "We had a heavy storm yesterday."
+  },
+  {
+    "id": 8148,
+    "tr": "zararsız",
+    "en": "harmless",
+    "beispiel": "Keine Angst, diese Spinne ist ganz harmlos.",
+    "beispielTr": "Korkma, bu örümcek tamamen zararsız.",
+    "beispielEn": "Don't worry, this spider is completely harmless."
+  },
+  {
+    "id": 8149,
+    "tr": "hareketli",
+    "en": "busy",
+    "beispiel": "Die Straße vor dem Bahnhof ist immer belebt.",
+    "beispielTr": "İstasyonun önündeki cadde hep hareketli.",
+    "beispielEn": "The street in front of the station is always busy."
+  },
+  {
+    "id": 8150,
+    "tr": "kaygan",
+    "en": "slippery",
+    "beispiel": "Nach dem Regen ist der Weg sehr rutschig.",
+    "beispielTr": "Yağmurdan sonra yol çok kaygan.",
+    "beispielEn": "After the rain the path is very slippery."
+  },
+  {
+    "id": 8151,
+    "tr": "tetikte",
+    "en": "alert",
+    "beispiel": "Der Hund ist nachts sehr wachsam.",
+    "beispielTr": "Köpek geceleri çok tetikte.",
+    "beispielEn": "The dog is very alert at night."
+  },
+  {
+    "id": 8152,
+    "tr": "yenilebilir",
+    "en": "edible",
+    "beispiel": "Nicht jeder Pilz im Wald ist essbar.",
+    "beispielTr": "Ormandaki her mantar yenilebilir değil.",
+    "beispielEn": "Not every mushroom in the forest is edible."
+  },
+  {
+    "id": 8153,
+    "tr": "organik",
+    "en": "organic",
+    "beispiel": "Dieses Gemüse kommt aus biologischem Anbau.",
+    "beispielTr": "Bu sebze organik tarımdan geliyor.",
+    "beispielEn": "This vegetable comes from organic farming."
+  },
+  {
+    "id": 8154,
+    "tr": "yerel",
+    "en": "local",
+    "beispiel": "Die örtliche Polizei hat uns sofort geholfen.",
+    "beispielTr": "Yerel polis bize hemen yardım etti.",
+    "beispielEn": "The local police helped us right away."
+  },
+  {
+    "id": 8155,
+    "tr": "gri",
+    "en": "gray",
+    "beispiel": "Der Himmel ist heute den ganzen Tag grau.",
+    "beispielTr": "Gökyüzü bugün bütün gün gri.",
+    "beispielEn": "The sky is gray all day today."
+  },
+  {
+    "id": 8156,
+    "tr": "ürkek",
+    "en": "shy",
+    "beispiel": "Rehe sind sehr scheu und laufen schnell weg.",
+    "beispielTr": "Karacalar çok ürkektir ve hemen kaçar.",
+    "beispielEn": "Deer are very shy and run away quickly."
+  },
+  {
+    "id": 8157,
+    "tr": "kirlenmiş",
+    "en": "polluted",
+    "beispiel": "Der Fluss ist an dieser Stelle stark verschmutzt.",
+    "beispielTr": "Nehir bu noktada çok kirlenmiş.",
+    "beispielEn": "The river is heavily polluted at this spot."
+  },
+  {
+    "id": 8158,
+    "tr": "rahatsız edici",
+    "en": "unpleasant",
+    "beispiel": "Der kalte Wind am Bahnhof war sehr unangenehm.",
+    "beispielTr": "İstasyondaki soğuk rüzgâr çok rahatsız ediciydi.",
+    "beispielEn": "The cold wind at the station was very unpleasant."
+  },
+  {
+    "id": 8159,
+    "tr": "eksiksiz",
+    "en": "complete",
+    "beispiel": "Bitte füllen Sie das Formular vollständig aus.",
+    "beispielTr": "Lütfen formu eksiksiz doldurun.",
+    "beispielEn": "Please fill out the form completely."
+  },
+  {
+    "id": 8160,
+    "tr": "yetkili",
+    "en": "authorized",
+    "beispiel": "Nur Anwohner sind berechtigt, hier zu parken.",
+    "beispielTr": "Sadece mahalle sakinleri burada park etmeye yetkili.",
+    "beispielEn": "Only residents are authorized to park here."
+  },
+  {
+    "id": 8161,
+    "tr": "düzleştirmek",
+    "en": "to smooth",
+    "beispiel": "Vor dem Essen glätte ich die Tischdecke.",
+    "beispielTr": "Yemekten önce masa örtüsünü düzleştiriyorum.",
+    "beispielEn": "Before the meal I smooth out the tablecloth."
+  },
+  {
+    "id": 8162,
+    "tr": "tozunu almak",
+    "en": "to dust",
+    "beispiel": "Am Samstag staube ich die Regale ab.",
+    "beispielTr": "Cumartesi günü rafların tozunu alıyorum.",
+    "beispielEn": "On Saturday I dust the shelves."
+  },
+  {
+    "id": 8163,
+    "tr": "ovalamak",
+    "en": "to scrub",
+    "beispiel": "Ich schrubbe den Boden im Bad mit einer Bürste.",
+    "beispielTr": "Banyodaki zemini bir fırçayla ovalıyorum.",
+    "beispielEn": "I scrub the bathroom floor with a brush."
+  },
+  {
+    "id": 8164,
+    "tr": "paspaslamak",
+    "en": "to mop",
+    "beispiel": "Nach dem Kochen wische ich den Boden auf.",
+    "beispielTr": "Yemek yaptıktan sonra yeri paspaslıyorum.",
+    "beispielEn": "After cooking I mop the floor."
+  },
+  {
+    "id": 8165,
+    "tr": "süpürmek",
+    "en": "to vacuum",
+    "beispiel": "Ich sauge jeden Freitag den Teppich im Wohnzimmer.",
+    "beispielTr": "Her cuma oturma odasındaki halıyı süpürüyorum.",
+    "beispielEn": "Every Friday I vacuum the living room carpet."
+  },
+  {
+    "id": 8166,
+    "tr": "içini boşaltmak",
+    "en": "to empty out",
+    "beispiel": "Nach dem Frühstück räume ich die Spülmaschine aus.",
+    "beispielTr": "Kahvaltıdan sonra bulaşık makinesinin içini boşaltıyorum.",
+    "beispielEn": "After breakfast I empty out the dishwasher."
+  },
+  {
+    "id": 8167,
+    "tr": "ayıklamak",
+    "en": "to declutter",
+    "beispiel": "Einmal im Jahr miste ich den Kleiderschrank aus.",
+    "beispielTr": "Yılda bir kez gardırobu ayıklıyorum.",
+    "beispielEn": "Once a year I declutter my wardrobe."
+  },
+  {
+    "id": 8168,
+    "tr": "boşaltmak",
+    "en": "to empty",
+    "beispiel": "Am Morgen leere ich den Briefkasten aus.",
+    "beispielTr": "Sabahleyin posta kutusunu boşaltıyorum.",
+    "beispielEn": "In the morning I empty the mailbox."
+  },
+  {
+    "id": 8169,
+    "tr": "karıştırmak",
+    "en": "to stir",
+    "beispiel": "Ich rühre die Suppe mit einem Löffel um.",
+    "beispielTr": "Çorbayı bir kaşıkla karıştırıyorum.",
+    "beispielEn": "I stir the soup with a spoon."
+  },
+  {
+    "id": 8170,
+    "tr": "kavurmak",
+    "en": "to roast",
+    "beispiel": "Ich röste die Nüsse kurz in der Pfanne.",
+    "beispielTr": "Fındıkları tavada kısa süre kavuruyorum.",
+    "beispielEn": "I roast the nuts briefly in the pan."
+  },
+  {
+    "id": 8171,
+    "tr": "yiyip bitirmek",
+    "en": "to eat up",
+    "beispiel": "Mein Sohn isst seinen Teller immer ganz auf.",
+    "beispielTr": "Oğlum tabağını hep tamamen bitiriyor.",
+    "beispielEn": "My son always eats up everything on his plate."
+  },
+  {
+    "id": 8172,
+    "tr": "doğramak",
+    "en": "to chop",
+    "beispiel": "Für die Soße hacke ich die Zwiebeln klein.",
+    "beispielTr": "Sos için soğanları ince doğruyorum.",
+    "beispielEn": "For the sauce I chop the onions finely."
+  },
+  {
+    "id": 8173,
+    "tr": "rendelemek",
+    "en": "to grate",
+    "beispiel": "Für die Nudeln reibe ich noch etwas Käse.",
+    "beispielTr": "Makarna için biraz peynir rendeliyorum.",
+    "beispielEn": "For the pasta I grate a little cheese."
+  },
+  {
+    "id": 8174,
+    "tr": "yoğurmak",
+    "en": "to knead",
+    "beispiel": "Für das Brot knete ich den Teig lange.",
+    "beispielTr": "Ekmek için hamuru uzun uzun yoğuruyorum.",
+    "beispielEn": "For the bread I knead the dough for a long time."
+  },
+  {
+    "id": 8175,
+    "tr": "sıkmak",
+    "en": "to squeeze",
+    "beispiel": "Zum Frühstück presse ich eine frische Orange.",
+    "beispielTr": "Kahvaltı için taze bir portakal sıkıyorum.",
+    "beispielEn": "For breakfast I squeeze a fresh orange."
+  },
+  {
+    "id": 8176,
+    "tr": "buzunu çözmek",
+    "en": "to defrost",
+    "beispiel": "Ich taue das Fleisch im Kühlschrank auf.",
+    "beispielTr": "Etin buzunu buzdolabında çözüyorum.",
+    "beispielEn": "I defrost the meat in the fridge."
+  },
+  {
+    "id": 8177,
+    "tr": "dondurmak",
+    "en": "to freeze",
+    "beispiel": "Wir frieren das restliche Brot ein.",
+    "beispielTr": "Kalan ekmeği donduruyoruz.",
+    "beispielEn": "We freeze the rest of the bread."
+  },
+  {
+    "id": 8178,
+    "tr": "suda bekletmek",
+    "en": "to soak",
+    "beispiel": "Die Bohnen weiche ich über Nacht ein.",
+    "beispielTr": "Fasulyeyi gece boyunca suda bekletiyorum.",
+    "beispielEn": "I soak the beans overnight."
+  },
+  {
+    "id": 8179,
+    "tr": "takmak",
+    "en": "to put on",
+    "beispiel": "Draußen setze ich immer eine Mütze auf.",
+    "beispielTr": "Dışarıda hep bere takıyorum.",
+    "beispielEn": "Outside I always put on a hat."
+  },
+  {
+    "id": 8180,
+    "tr": "bulaşık yıkamak",
+    "en": "to wash the dishes",
+    "beispiel": "Nach dem Essen spüle ich das Geschirr ab.",
+    "beispielTr": "Yemekten sonra bulaşıkları yıkıyorum.",
+    "beispielEn": "After the meal I wash the dishes."
+  },
+  {
+    "id": 8181,
+    "tr": "katlamak",
+    "en": "to fold",
+    "beispiel": "Meine Tochter legt die T-Shirts ordentlich zusammen.",
+    "beispielTr": "Kızım tişörtleri düzgünce katlıyor.",
+    "beispielEn": "My daughter folds the T-shirts neatly."
+  },
+  {
+    "id": 8182,
+    "tr": "yamamak",
+    "en": "to patch",
+    "beispiel": "Meine Oma flickt meine alte Hose mit Nadel und Faden.",
+    "beispielTr": "Babaannem eski pantolonumu iğne iplikle yamıyor.",
+    "beispielEn": "My grandma patches my old pants with needle and thread."
+  },
+  {
+    "id": 8183,
+    "tr": "tıkmak",
+    "en": "to stuff",
+    "beispiel": "Er stopft die Wäsche in den Koffer.",
+    "beispielTr": "Çamaşırları bavula tıkıyor.",
+    "beispielEn": "He stuffs the laundry into the suitcase."
+  },
+  {
+    "id": 8184,
+    "tr": "içip bitirmek",
+    "en": "to drink up",
+    "beispiel": "Trink bitte deinen Kaffee aus, wir müssen los.",
+    "beispielTr": "Lütfen kahveni bitir, hemen çıkmamız gerek.",
+    "beispielEn": "Please drink up your coffee, we have to go."
+  },
+  {
+    "id": 8185,
+    "tr": "çivilemek",
+    "en": "to nail",
+    "beispiel": "Er nagelt ein kleines Brett über die Tür.",
+    "beispielTr": "Kapının üstüne küçük bir tahta çiviliyor.",
+    "beispielEn": "He nails a small board above the door."
+  },
+  {
+    "id": 8186,
+    "tr": "testereyle kesmek",
+    "en": "to saw",
+    "beispiel": "Meine Eltern sägen im Garten Holz für den Ofen.",
+    "beispielTr": "Annemle babam bahçede soba için odun kesiyor.",
+    "beispielEn": "My parents saw wood for the stove in the garden."
+  },
+  {
+    "id": 8187,
+    "tr": "yağlamak",
+    "en": "to oil",
+    "beispiel": "Einmal im Jahr ölen wir die Türen.",
+    "beispielTr": "Yılda bir kez kapıları yağlıyoruz.",
+    "beispielEn": "Once a year we oil the doors."
+  },
+  {
+    "id": 8188,
+    "tr": "sürmek",
+    "en": "to spread",
+    "beispiel": "Morgens schmiere ich Butter auf mein Brot.",
+    "beispielTr": "Sabahları ekmeğime tereyağı sürüyorum.",
+    "beispielEn": "In the mornings I spread butter on my bread."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7738,
+    "tr": "okulda cezalı kalmak",
+    "en": "to stay after school",
+    "beispiel": "Weil er zu spät gekommen ist, muss er nachsitzen.",
+    "beispielTr": "Geç geldiği için okulda cezalı kalması gerekiyor.",
+    "beispielEn": "He has to stay after school because he came late."
+  },
+  {
+    "id": 7739,
+    "tr": "yaparak göstermek",
+    "en": "to demonstrate",
+    "beispiel": "Der Lehrer macht uns die Übung erst vor.",
+    "beispielTr": "Öğretmen alıştırmayı önce bize yaparak gösteriyor.",
+    "beispielEn": "The teacher demonstrates the exercise for us first."
+  },
+  {
+    "id": 7740,
+    "tr": "ezbere okumak",
+    "en": "to recite",
+    "beispiel": "Jedes Kind muss ein Gedicht aufsagen.",
+    "beispielTr": "Her çocuk bir şiir ezbere okumak zorunda.",
+    "beispielEn": "Every child has to recite a poem."
+  },
+  {
+    "id": 7741,
+    "tr": "kitabı açmak",
+    "en": "to open a book",
+    "beispiel": "Schlagt bitte das Buch auf Seite zwölf auf!",
+    "beispielTr": "Lütfen kitabı on ikinci sayfadan açın!",
+    "beispielEn": "Please open your books to page twelve!"
+  },
+  {
+    "id": 7742,
+    "tr": "okuyup bakmak",
+    "en": "to read up",
+    "beispiel": "Die Regel kannst du im Buch nachlesen.",
+    "beispielTr": "Kuralı kitaptan okuyup bakabilirsin.",
+    "beispielEn": "You can read up on the rule in the book."
+  },
+  {
+    "id": 7743,
+    "tr": "konuyu işlemek",
+    "en": "to cover",
+    "beispiel": "Wir nehmen im Unterricht gerade die Vergangenheit durch.",
+    "beispielTr": "Derste şu anda geçmiş zamanı işliyoruz.",
+    "beispielEn": "We are covering the past tense in class right now."
+  },
+  {
+    "id": 7744,
+    "tr": "odaklanmış",
+    "en": "focused",
+    "beispiel": "Nach der Pause arbeiten wir wieder konzentriert.",
+    "beispielTr": "Teneffüsten sonra yine odaklanarak çalışıyoruz.",
+    "beispielEn": "After the break we work with focus again."
+  },
+  {
+    "id": 7745,
+    "tr": "özenli",
+    "en": "thorough",
+    "beispiel": "Sie macht ihre Hausaufgaben immer sorgfältig.",
+    "beispielTr": "Ödevlerini her zaman özenle yapıyor.",
+    "beispielEn": "She always does her homework thoroughly."
+  },
+  {
+    "id": 7746,
+    "tr": "anlaşılmaz",
+    "en": "incomprehensible",
+    "beispiel": "Die Frage war für mich völlig unverständlich.",
+    "beispielTr": "Soru benim için tamamen anlaşılmazdı.",
+    "beispielEn": "The question was completely incomprehensible to me."
+  },
+  {
+    "id": 7747,
+    "tr": "yapılabilir",
+    "en": "doable",
+    "beispiel": "Die Prüfung war schwer, aber machbar.",
+    "beispielTr": "Sınav zordu ama yapılabilirdi.",
+    "beispielEn": "The exam was hard but doable."
+  },
+  {
+    "id": 7748,
+    "tr": "öğretici",
+    "en": "instructive",
+    "beispiel": "Der Ausflug ins Museum war sehr lehrreich.",
+    "beispielTr": "Müze gezisi çok öğreticiydi.",
+    "beispielEn": "The trip to the museum was very instructive."
+  },
+  {
+    "id": 7749,
+    "tr": "okunaklı",
+    "en": "legible",
+    "beispiel": "Bitte schreib deinen Namen leserlich!",
+    "beispielTr": "Lütfen adını okunaklı yaz!",
+    "beispielEn": "Please write your name legibly!"
+  },
+  {
+    "id": 7750,
+    "tr": "hatalı",
+    "en": "faulty",
+    "beispiel": "Meine Übersetzung war leider fehlerhaft.",
+    "beispielTr": "Çevirim maalesef hatalıydı.",
+    "beispielEn": "Unfortunately my translation was faulty."
+  },
+  {
+    "id": 7751,
+    "tr": "hevesli",
+    "en": "eager",
+    "beispiel": "Die Kinder üben eifrig für das Diktat.",
+    "beispielTr": "Çocuklar dikte için hevesle çalışıyor.",
+    "beispielEn": "The children are practicing eagerly for the dictation."
+  },
+  {
+    "id": 7752,
+    "tr": "hatasız",
+    "en": "flawless",
+    "beispiel": "Sein Diktat war fehlerfrei.",
+    "beispielTr": "Diktesi hatasızdı.",
+    "beispielEn": "His dictation was flawless."
+  },
+  {
+    "id": 7753,
+    "tr": "yıllık",
+    "en": "yearly",
+    "beispiel": "Die Schule macht jährlich einen Ausflug.",
+    "beispielTr": "Okul her yıl bir gezi düzenliyor.",
+    "beispielEn": "The school takes a trip every year."
+  },
+  {
+    "id": 7754,
+    "tr": "huzursuz",
+    "en": "restless",
+    "beispiel": "Die Klasse war heute sehr unruhig.",
+    "beispielTr": "Sınıf bugün çok huzursuzdu.",
+    "beispielEn": "The class was very restless today."
+  },
+  {
+    "id": 7755,
+    "tr": "öğleden önce",
+    "en": "before noon",
+    "beispiel": "Der Kurs findet vormittags statt.",
+    "beispielTr": "Kurs öğleden önce yapılıyor.",
+    "beispielEn": "The course takes place before noon."
+  },
+  {
+    "id": 7756,
+    "tr": "anlayışlı",
+    "en": "understanding",
+    "beispiel": "Der Direktor war sehr verständnisvoll.",
+    "beispielTr": "Müdür çok anlayışlıydı.",
+    "beispielEn": "The principal was very understanding."
+  },
+  {
+    "id": 7757,
+    "tr": "devlete ait",
+    "en": "state-run",
+    "beispiel": "Meine Kinder gehen auf eine staatliche Schule.",
+    "beispielTr": "Çocuklarım devlet okuluna gidiyor.",
+    "beispielEn": "My children go to a state school."
+  },
+  {
+    "id": 7758,
+    "tr": "ezbere",
+    "en": "by heart",
+    "beispiel": "Ich kann das Gedicht schon auswendig.",
+    "beispielTr": "Şiiri artık ezbere biliyorum.",
+    "beispielEn": "I already know the poem by heart."
+  },
+  {
+    "id": 7759,
+    "tr": "dil açısından",
+    "en": "linguistically",
+    "beispiel": "Sprachlich hat er sich sehr verbessert.",
+    "beispielTr": "Dil açısından çok gelişti.",
+    "beispielEn": "He has improved a lot linguistically."
+  },
+  {
+    "id": 7760,
+    "tr": "haftalık pazar",
+    "en": "weekly market",
+    "beispiel": "Am Samstag kaufe ich Obst auf dem Wochenmarkt.",
+    "beispielTr": "Cumartesi günü haftalık pazardan meyve alıyorum.",
+    "beispielEn": "On Saturday I buy fruit at the weekly market."
+  },
+  {
+    "id": 7761,
+    "tr": "pastane",
+    "en": "pastry shop",
+    "beispiel": "Die Torte kommt aus einer kleinen Konditorei.",
+    "beispielTr": "Bu pasta küçük bir pastaneden geliyor.",
+    "beispielEn": "The cake comes from a small pastry shop."
+  },
+  {
+    "id": 7762,
+    "tr": "ayakkabı mağazası",
+    "en": "shoe store",
+    "beispiel": "Das Schuhgeschäft hat heute bis 20 Uhr offen.",
+    "beispielTr": "Ayakkabı mağazası bugün saat 20'ye kadar açık.",
+    "beispielEn": "The shoe store is open until 8 p.m. today."
+  },
+  {
+    "id": 7763,
+    "tr": "büyük mağaza",
+    "en": "department store",
+    "beispiel": "Im Warenhaus gibt es Kleidung, Möbel und Spielzeug.",
+    "beispielTr": "Büyük mağazada kıyafet, mobilya ve oyuncak var.",
+    "beispielEn": "The department store has clothing, furniture and toys."
+  },
+  {
+    "id": 7764,
+    "tr": "alışveriş arabası",
+    "en": "shopping cart",
+    "beispiel": "Mein Einkaufswagen ist schon ganz voll.",
+    "beispielTr": "Alışveriş arabam şimdiden tamamen doldu.",
+    "beispielEn": "My shopping cart is already completely full."
+  },
+  {
+    "id": 7765,
+    "tr": "alışveriş listesi",
+    "en": "shopping list",
+    "beispiel": "Ohne Einkaufsliste vergesse ich immer etwas.",
+    "beispielTr": "Alışveriş listesi olmadan hep bir şey unutuyorum.",
+    "beispielEn": "Without a shopping list I always forget something."
+  },
+  {
+    "id": 7766,
+    "tr": "sepet",
+    "en": "basket",
+    "beispiel": "Leg die Äpfel bitte in den Korb.",
+    "beispielTr": "Elmaları lütfen sepete koy.",
+    "beispielEn": "Please put the apples in the basket."
+  },
+  {
+    "id": 7767,
+    "tr": "sürekli müşteri",
+    "en": "regular customer",
+    "beispiel": "Als Stammkunde bekomme ich hier zehn Prozent Rabatt.",
+    "beispielTr": "Sürekli müşteri olarak burada yüzde on indirim alıyorum.",
+    "beispielEn": "As a regular customer I get ten percent off here."
+  },
+  {
+    "id": 7768,
+    "tr": "kuyruk",
+    "en": "line",
+    "beispiel": "An der Kasse war eine lange Warteschlange.",
+    "beispielTr": "Kasada uzun bir kuyruk vardı.",
+    "beispielEn": "There was a long line at the checkout."
+  },
+  {
+    "id": 7769,
+    "tr": "kuyrukta beklemek",
+    "en": "to wait in line",
+    "beispiel": "An der Kasse müssen wir lange anstehen.",
+    "beispielTr": "Kasada uzun süre kuyrukta beklememiz gerekiyor.",
+    "beispielEn": "We have to wait in line for a long time at the checkout."
+  },
+  {
+    "id": 7770,
+    "tr": "fiyat etiketi",
+    "en": "price tag",
+    "beispiel": "Auf dem Preisschild steht 4,99 Euro.",
+    "beispielTr": "Fiyat etiketinde 4,99 avro yazıyor.",
+    "beispielEn": "The price tag says 4.99 euros."
+  },
+  {
+    "id": 7771,
+    "tr": "sezon sonu indirimi",
+    "en": "clearance sale",
+    "beispiel": "Im Schlussverkauf habe ich eine Jacke für 20 Euro gekauft.",
+    "beispielTr": "Sezon sonu indiriminde 20 avroya bir ceket aldım.",
+    "beispielEn": "I bought a jacket for 20 euros in the clearance sale."
+  },
+  {
+    "id": 7772,
+    "tr": "özel fiyat",
+    "en": "special price",
+    "beispiel": "Diese Woche gibt es Kaffee zum Sonderpreis.",
+    "beispielTr": "Bu hafta kahve özel fiyatla satılıyor.",
+    "beispielEn": "This week there is coffee at a special price."
+  },
+  {
+    "id": 7773,
+    "tr": "bozuk para",
+    "en": "small change",
+    "beispiel": "Hast du Kleingeld für den Einkaufswagen?",
+    "beispielTr": "Alışveriş arabası için bozuk paran var mı?",
+    "beispielEn": "Do you have small change for the shopping cart?"
+  },
+  {
+    "id": 7774,
+    "tr": "banknot",
+    "en": "banknote",
+    "beispiel": "Ich habe leider nur einen großen Geldschein dabei.",
+    "beispielTr": "Yanımda maalesef sadece büyük bir banknot var.",
+    "beispielEn": "Unfortunately I only have a large banknote with me."
+  },
+  {
+    "id": 7775,
+    "tr": "para üstü",
+    "en": "change",
+    "beispiel": "Die Verkäuferin hat mir das Wechselgeld gegeben.",
+    "beispielTr": "Satıcı bana para üstünü verdi.",
+    "beispielEn": "The saleswoman gave me my change."
+  },
+  {
+    "id": 7776,
+    "tr": "kasa fişi",
+    "en": "receipt",
+    "beispiel": "Ohne Kassenzettel kann ich die Hose nicht zurückbringen.",
+    "beispielTr": "Kasa fişi olmadan pantolonu geri götüremem.",
+    "beispielEn": "Without the receipt I cannot return the pants."
+  },
+  {
+    "id": 7777,
+    "tr": "kadın kasiyer",
+    "en": "female cashier",
+    "beispiel": "Die Kassiererin war sehr freundlich zu mir.",
+    "beispielTr": "Kadın kasiyer bana karşı çok nazikti.",
+    "beispielEn": "The cashier was very friendly to me."
+  },
+  {
+    "id": 7778,
+    "tr": "yoğurt",
+    "en": "yogurt",
+    "beispiel": "Zum Frühstück esse ich Joghurt mit Obst.",
+    "beispielTr": "Kahvaltıda meyveli yoğurt yiyorum.",
+    "beispielEn": "For breakfast I eat yogurt with fruit."
+  },
+  {
+    "id": 7779,
+    "tr": "hardal",
+    "en": "mustard",
+    "beispiel": "Möchtest du Senf oder Ketchup zur Wurst?",
+    "beispielTr": "Sosisin yanına hardal mı ketçap mı istersin?",
+    "beispielEn": "Would you like mustard or ketchup with your sausage?"
+  },
+  {
+    "id": 7780,
+    "tr": "sığır eti",
+    "en": "beef",
+    "beispiel": "Für die Suppe brauche ich ein halbes Kilo Rindfleisch.",
+    "beispielTr": "Çorba için yarım kilo sığır etine ihtiyacım var.",
+    "beispielEn": "I need half a kilo of beef for the soup."
+  },
+  {
+    "id": 7781,
+    "tr": "çıtır",
+    "en": "crispy",
+    "beispiel": "Das Brot vom Bäcker ist heute schön knusprig.",
+    "beispielTr": "Fırıncıdan aldığımız ekmek bugün çok çıtır.",
+    "beispielEn": "The bread from the bakery is really crispy today."
+  },
+  {
+    "id": 7782,
+    "tr": "stok",
+    "en": "supply",
+    "beispiel": "Wir haben noch einen Vorrat an Reis und Mehl.",
+    "beispielTr": "Hâlâ pirinç ve un stokumuz var.",
+    "beispielEn": "We still have a supply of rice and flour."
+  },
+  {
+    "id": 7783,
+    "tr": "hamur",
+    "en": "dough",
+    "beispiel": "Der Teig muss eine Stunde ruhen.",
+    "beispielTr": "Hamurun bir saat dinlenmesi gerekiyor.",
+    "beispielEn": "The dough has to rest for an hour."
+  },
+  {
+    "id": 7784,
+    "tr": "patates kızartması",
+    "en": "fries",
+    "beispiel": "Mein Sohn isst am liebsten Pommes mit Ketchup.",
+    "beispielTr": "Oğlum en çok ketçaplı patates kızartması yemeyi seviyor.",
+    "beispielEn": "My son likes fries with ketchup best."
+  },
+  {
+    "id": 7785,
+    "tr": "ana yemek",
+    "en": "main course",
+    "beispiel": "Als Hauptgericht nehme ich Fisch mit Kartoffeln.",
+    "beispielTr": "Ana yemek olarak patatesli balık alacağım.",
+    "beispielEn": "For the main course I will have fish with potatoes."
+  },
+  {
+    "id": 7786,
+    "tr": "günün yemeği",
+    "en": "dish of the day",
+    "beispiel": "Das Tagesgericht kostet heute nur 8 Euro.",
+    "beispielTr": "Günün yemeği bugün sadece 8 avro.",
+    "beispielEn": "The dish of the day costs only 8 euros today."
+  },
+  {
+    "id": 7787,
+    "tr": "garnitür",
+    "en": "side dish",
+    "beispiel": "Als Beilage gibt es Reis oder Salat.",
+    "beispielTr": "Garnitür olarak pilav ya da salata var.",
+    "beispielEn": "There is rice or salad as a side dish."
+  }
+]

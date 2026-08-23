@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1170,
+    "tr": "toplamak",
+    "en": "to collect",
+    "beispiel": "Im Herbst sammeln wir im Wald bunte Blätter.",
+    "beispielTr": "Sonbaharda ormanda rengârenk yapraklar topluyoruz.",
+    "beispielEn": "In autumn we collect colorful leaves in the forest."
+  },
+  {
+    "id": 1240,
+    "tr": "başlık",
+    "en": "title",
+    "beispiel": "Der Titel des Buches gefällt mir sehr.",
+    "beispielTr": "Kitabın başlığını çok beğendim.",
+    "beispielEn": "I really like the title of the book."
+  },
+  {
+    "id": 1206,
+    "tr": "biriktirmek",
+    "en": "to save",
+    "beispiel": "Ich spare für ein neues Fahrrad.",
+    "beispielTr": "Yeni bir bisiklet için para biriktiriyorum.",
+    "beispielEn": "I am saving up for a new bike."
+  },
+  {
+    "id": 1146,
+    "tr": "kontrol etmek",
+    "en": "to check",
+    "beispiel": "Bitte prüfen Sie die Rechnung noch einmal.",
+    "beispielTr": "Lütfen faturayı bir kez daha kontrol edin.",
+    "beispielEn": "Please check the invoice one more time."
+  },
+  {
+    "id": 1247,
+    "tr": "antrenman",
+    "en": "training",
+    "beispiel": "Das Training beginnt jeden Dienstag um sechs Uhr.",
+    "beispielTr": "Antrenman her salı saat altıda başlıyor.",
+    "beispielEn": "Training starts every Tuesday at six o'clock."
+  },
+  {
+    "id": 1244,
+    "tr": "tur",
+    "en": "tour",
+    "beispiel": "Wir haben eine Tour durch die Altstadt gemacht.",
+    "beispielTr": "Eski şehirde bir tur yaptık.",
+    "beispielEn": "We took a tour through the old town."
+  },
+  {
+    "id": 907,
+    "tr": "geçmek",
+    "en": "to pass",
+    "beispiel": "Ich habe die Prüfung endlich bestanden.",
+    "beispielTr": "Sınavı sonunda geçtim.",
+    "beispielEn": "I finally passed the exam."
+  },
+  {
+    "id": 1016,
+    "tr": "çirkin",
+    "en": "ugly",
+    "beispiel": "Ich finde diese Jacke wirklich hässlich.",
+    "beispielTr": "Bu ceketi gerçekten çirkin buluyorum.",
+    "beispielEn": "I think this jacket is really ugly."
+  },
+  {
+    "id": 955,
+    "tr": "dar",
+    "en": "tight",
+    "beispiel": "Diese Hose ist mir viel zu eng.",
+    "beispielTr": "Bu pantolon bana çok dar geliyor.",
+    "beispielEn": "These pants are way too tight for me."
+  },
+  {
+    "id": 1093,
+    "tr": "çalışan",
+    "en": "employee",
+    "beispiel": "Unsere Firma hat über hundert Mitarbeiter.",
+    "beispielTr": "Firmamızın yüzden fazla çalışanı var.",
+    "beispielEn": "Our company has more than a hundred employees."
+  },
+  {
+    "id": 1168,
+    "tr": "yuvarlak",
+    "en": "round",
+    "beispiel": "Der Tisch in der Küche ist rund.",
+    "beispielTr": "Mutfaktaki masa yuvarlak.",
+    "beispielEn": "The table in the kitchen is round."
+  },
+  {
+    "id": 1110,
+    "tr": "yan tarafta",
+    "en": "next door",
+    "beispiel": "Meine beste Freundin wohnt nebenan.",
+    "beispielTr": "En yakın arkadaşım yan tarafta oturuyor.",
+    "beispielEn": "My best friend lives next door."
+  },
+  {
+    "id": 1134,
+    "tr": "planlamak",
+    "en": "to plan",
+    "beispiel": "Wir planen eine Party für das Wochenende.",
+    "beispielTr": "Hafta sonu için bir parti planlıyoruz.",
+    "beispielEn": "We are planning a party for the weekend."
+  },
+  {
+    "id": 968,
+    "tr": "hayran",
+    "en": "fan",
+    "beispiel": "Mein Bruder ist ein großer Fan von Rammstein.",
+    "beispielTr": "Kardeşim Rammstein'ın büyük hayranı.",
+    "beispielEn": "My brother is a big Rammstein fan."
+  },
+  {
+    "id": 902,
+    "tr": "ünlü",
+    "en": "famous",
+    "beispiel": "Diese Sängerin ist in ganz Europa berühmt.",
+    "beispielTr": "Bu şarkıcı tüm Avrupa'da ünlü.",
+    "beispielEn": "This singer is famous all over Europe."
+  },
+  {
+    "id": 993,
+    "tr": "garaj",
+    "en": "garage",
+    "beispiel": "Das Auto steht in der Garage.",
+    "beispielTr": "Araba garajda duruyor.",
+    "beispielEn": "The car is in the garage."
+  },
+  {
+    "id": 1033,
+    "tr": "bilgi almak",
+    "en": "to get information",
+    "beispiel": "Ich möchte mich über den Kurs informieren.",
+    "beispielTr": "Kurs hakkında bilgi almak istiyorum.",
+    "beispielEn": "I would like to get information about the course."
+  },
+  {
+    "id": 972,
+    "tr": "kutlama",
+    "en": "celebration",
+    "beispiel": "Die Feier bei Anna war wirklich schön.",
+    "beispielTr": "Anna'daki kutlama gerçekten güzeldi.",
+    "beispielEn": "The celebration at Anna's was really nice."
+  },
+  {
+    "id": 1119,
+    "tr": "faydalı",
+    "en": "useful",
+    "beispiel": "Diese App ist für Reisen sehr nützlich.",
+    "beispielTr": "Bu uygulama seyahatlerde çok faydalı.",
+    "beispielEn": "This app is very useful for traveling."
+  },
+  {
+    "id": 1106,
+    "tr": "ıslak",
+    "en": "wet",
+    "beispiel": "Meine Jacke ist vom Regen ganz nass.",
+    "beispielTr": "Ceketim yağmurdan iyice ıslandı.",
+    "beispielEn": "My jacket is completely wet from the rain."
+  },
+  {
+    "id": 1047,
+    "tr": "kolye",
+    "en": "necklace",
+    "beispiel": "Meine Mutter trägt eine goldene Kette.",
+    "beispielTr": "Annem altın bir kolye takıyor.",
+    "beispielEn": "My mother is wearing a gold necklace."
+  },
+  {
+    "id": 1236,
+    "tr": "tabak",
+    "en": "plate",
+    "beispiel": "Stell die Teller bitte auf den Tisch!",
+    "beispielTr": "Tabakları lütfen masaya koy!",
+    "beispielEn": "Please put the plates on the table!"
+  },
+  {
+    "id": 1302,
+    "tr": "çamaşır",
+    "en": "laundry",
+    "beispiel": "Ich muss heute noch die Wäsche waschen.",
+    "beispielTr": "Bugün çamaşır yıkamam gerekiyor.",
+    "beispielEn": "I still have to do the laundry today."
+  },
+  {
+    "id": 904,
+    "tr": "tarif etmek",
+    "en": "to describe",
+    "beispiel": "Kannst du mir den Weg zum Bahnhof beschreiben?",
+    "beispielTr": "Bana gara giden yolu tarif edebilir misin?",
+    "beispielEn": "Can you describe the way to the station for me?"
+  },
+  {
+    "id": 1117,
+    "tr": "gerekli",
+    "en": "necessary",
+    "beispiel": "Eine Anmeldung ist für den Kurs nicht notwendig.",
+    "beispielTr": "Kurs için kayıt yaptırmak gerekli değil.",
+    "beispielEn": "Registration is not necessary for the course."
+  },
+  {
+    "id": 898,
+    "tr": "rahat",
+    "en": "comfortable",
+    "beispiel": "Das Sofa im Wohnzimmer ist sehr bequem.",
+    "beispielTr": "Oturma odasındaki kanepe çok rahat.",
+    "beispielEn": "The sofa in the living room is very comfortable."
+  },
+  {
+    "id": 1239,
+    "tr": "tavsiye",
+    "en": "tip",
+    "beispiel": "Hast du einen guten Tipp für mich?",
+    "beispielTr": "Bana iyi bir tavsiyen var mı?",
+    "beispielEn": "Do you have a good tip for me?"
+  },
+  {
+    "id": 1258,
+    "tr": "üstünü değiştirmek",
+    "en": "to change clothes",
+    "beispiel": "Ich muss mich vor dem Essen noch umziehen.",
+    "beispielTr": "Yemekten önce üstümü değiştirmem gerekiyor.",
+    "beispielEn": "I have to change clothes before dinner."
+  },
+  {
+    "id": 1253,
+    "tr": "tipik",
+    "en": "typical",
+    "beispiel": "Diese Musik ist typisch für Spanien.",
+    "beispielTr": "Bu müzik İspanya için tipik.",
+    "beispielEn": "This music is typical of Spain."
+  },
+  {
+    "id": 1262,
+    "tr": "üniversite",
+    "en": "university",
+    "beispiel": "Meine Schwester studiert an der Universität Hamburg.",
+    "beispielTr": "Kız kardeşim Hamburg Üniversitesi'nde okuyor.",
+    "beispielEn": "My sister studies at the University of Hamburg."
+  },
+  {
+    "id": 1232,
+    "tr": "takas etmek",
+    "en": "to exchange",
+    "beispiel": "Die Schüler tauschen ihre Sammelkarten in der Pause aus.",
+    "beispielTr": "Öğrenciler teneffüste oyun kartlarını takas ediyor.",
+    "beispielEn": "The students exchange their trading cards during the break."
+  },
+  {
+    "id": 1310,
+    "tr": "yumuşak",
+    "en": "soft",
+    "beispiel": "Das Bett im Hotel war sehr weich.",
+    "beispielTr": "Oteldeki yatak çok yumuşaktı.",
+    "beispielEn": "The bed in the hotel was very soft."
+  },
+  {
+    "id": 1054,
+    "tr": "konser",
+    "en": "concert",
+    "beispiel": "Für das Konzert am Samstag gibt es noch Karten.",
+    "beispielTr": "Cumartesi günkü konser için hâlâ bilet var.",
+    "beispielEn": "There are still tickets for the concert on Saturday."
+  },
+  {
+    "id": 1073,
+    "tr": "ödünç vermek",
+    "en": "to lend",
+    "beispiel": "Kannst du mir bitte zehn Euro leihen?",
+    "beispielTr": "Bana on euro ödünç verir misin?",
+    "beispielEn": "Can you lend me ten euros, please?"
+  },
+  {
+    "id": 1163,
+    "tr": "romantik",
+    "en": "romantic",
+    "beispiel": "Der Film gestern Abend war sehr romantisch.",
+    "beispielTr": "Dün akşamki film çok romantikti.",
+    "beispielEn": "The movie last night was very romantic."
+  },
+  {
+    "id": 1102,
+    "tr": "müze",
+    "en": "museum",
+    "beispiel": "Am Sonntag gehen wir ins Museum.",
+    "beispielTr": "Pazar günü müzeye gidiyoruz.",
+    "beispielEn": "On Sunday we are going to the museum."
+  },
+  {
+    "id": 1114,
+    "tr": "hiçbir yerde",
+    "en": "nowhere",
+    "beispiel": "Ich kann meine Brille nirgends finden.",
+    "beispielTr": "Gözlüğümü hiçbir yerde bulamıyorum.",
+    "beispielEn": "I cannot find my glasses anywhere."
+  },
+  {
+    "id": 1183,
+    "tr": "kirli",
+    "en": "dirty",
+    "beispiel": "Das Handtuch im Bad ist schmutzig.",
+    "beispielTr": "Banyodaki havlu kirli.",
+    "beispielEn": "The towel in the bathroom is dirty."
+  },
+  {
+    "id": 1217,
+    "tr": "çizme",
+    "en": "boot",
+    "beispiel": "Im Winter trage ich immer warme Stiefel.",
+    "beispielTr": "Kışın hep sıcak çizmeler giyerim.",
+    "beispielEn": "In winter I always wear warm boots."
+  },
+  {
+    "id": 1251,
+    "tr": "kuru",
+    "en": "dry",
+    "beispiel": "Meine Haare sind noch nicht ganz trocken.",
+    "beispielTr": "Saçlarım henüz tam kurumadı.",
+    "beispielEn": "My hair is not completely dry yet."
+  },
+  {
+    "id": 876,
+    "tr": "meslek eğitimi",
+    "en": "vocational training",
+    "beispiel": "Meine Tochter macht eine Ausbildung als Krankenschwester.",
+    "beispielTr": "Kızım hemşirelik eğitimi alıyor.",
+    "beispielEn": "My daughter is doing vocational training as a nurse."
+  },
+  {
+    "id": 1246,
+    "tr": "antrenman yapmak",
+    "en": "to train",
+    "beispiel": "Wir trainieren zweimal pro Woche im Verein.",
+    "beispielTr": "Kulüpte haftada iki kez antrenman yapıyoruz.",
+    "beispielEn": "We train twice a week at the club."
+  },
+  {
+    "id": 1049,
+    "tr": "yolunda gitmek",
+    "en": "to work out",
+    "beispiel": "Hoffentlich klappt alles mit der Wohnung.",
+    "beispielTr": "Umarım evle ilgili her şey yolunda gider.",
+    "beispielEn": "Hopefully everything works out with the apartment."
+  },
+  {
+    "id": 937,
+    "tr": "tartışmak",
+    "en": "to discuss",
+    "beispiel": "Wir haben lange über das Thema diskutiert.",
+    "beispielTr": "Konuyu uzun uzun tartıştık.",
+    "beispielEn": "We discussed the topic for a long time."
+  },
+  {
+    "id": 988,
+    "tr": "ehliyet",
+    "en": "driver's license",
+    "beispiel": "Mein Bruder hat gestern den Führerschein gemacht.",
+    "beispielTr": "Kardeşim dün ehliyetini aldı.",
+    "beispielEn": "My brother got his driver's license yesterday."
+  },
+  {
+    "id": 1121,
+    "tr": "çevrimiçi",
+    "en": "online",
+    "beispiel": "Ich bin heute Abend wieder online.",
+    "beispielTr": "Bu akşam yine çevrimiçi olacağım.",
+    "beispielEn": "I will be online again tonight."
+  },
+  {
+    "id": 1218,
+    "tr": "kalem",
+    "en": "pen",
+    "beispiel": "Kannst du mir bitte einen Stift geben?",
+    "beispielTr": "Bana bir kalem verir misin lütfen?",
+    "beispielEn": "Can you give me a pen, please?"
+  },
+  {
+    "id": 1038,
+    "tr": "röportaj",
+    "en": "interview",
+    "beispiel": "Im Radio läuft gerade ein Interview mit ihr.",
+    "beispielTr": "Radyoda şu an onunla bir röportaj var.",
+    "beispielEn": "There is an interview with her on the radio right now."
+  },
+  {
+    "id": 1333,
+    "tr": "sirk",
+    "en": "circus",
+    "beispiel": "Am Samstag gehen wir mit den Kindern in den Zirkus.",
+    "beispielTr": "Cumartesi çocuklarla sirke gidiyoruz.",
+    "beispielEn": "On Saturday we are going to the circus with the kids."
+  },
+  {
+    "id": 1160,
+    "tr": "tarif",
+    "en": "recipe",
+    "beispiel": "Kannst du mir das Rezept für den Kuchen geben?",
+    "beispielTr": "Bana pastanın tarifini verir misin?",
+    "beispielEn": "Can you give me the recipe for the cake?"
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7438,
+    "tr": "yapışkan",
+    "en": "sticky",
+    "beispiel": "Der Tisch ist noch klebrig vom Saft.",
+    "beispielTr": "Masa meyve suyundan hâlâ yapışkan.",
+    "beispielEn": "The table is still sticky from the juice."
+  },
+  {
+    "id": 7439,
+    "tr": "tozlu",
+    "en": "dusty",
+    "beispiel": "Die Bücher im Keller sind sehr staubig.",
+    "beispielTr": "Bodrumdaki kitaplar çok tozlu.",
+    "beispielEn": "The books in the basement are very dusty."
+  },
+  {
+    "id": 7440,
+    "tr": "parlak",
+    "en": "shiny",
+    "beispiel": "Nach dem Putzen ist der Boden richtig glänzend.",
+    "beispielTr": "Temizlikten sonra zemin gerçekten parlak.",
+    "beispielEn": "After cleaning, the floor is really shiny."
+  },
+  {
+    "id": 7441,
+    "tr": "mat",
+    "en": "matte",
+    "beispiel": "Wir haben die Wände matt gestrichen.",
+    "beispielTr": "Duvarları mat boyadık.",
+    "beispielEn": "We painted the walls matte."
+  },
+  {
+    "id": 7442,
+    "tr": "ahşap",
+    "en": "wooden",
+    "beispiel": "Auf dem Balkon steht ein hölzerner Stuhl.",
+    "beispielTr": "Balkonda ahşap bir sandalye duruyor.",
+    "beispielEn": "There is a wooden chair on the balcony."
+  },
+  {
+    "id": 7443,
+    "tr": "metalik",
+    "en": "metallic",
+    "beispiel": "Das Wasser hier schmeckt etwas metallisch.",
+    "beispielTr": "Buradaki suyun tadı biraz metalik.",
+    "beispielEn": "The water here tastes a bit metallic."
+  },
+  {
+    "id": 7444,
+    "tr": "su geçirmez",
+    "en": "waterproof",
+    "beispiel": "Meine neue Jacke ist zum Glück wasserdicht.",
+    "beispielTr": "Yeni montum neyse ki su geçirmez.",
+    "beispielEn": "Luckily my new jacket is waterproof."
+  },
+  {
+    "id": 7445,
+    "tr": "açık mavi",
+    "en": "light blue",
+    "beispiel": "Er trägt heute ein hellblaues Hemd.",
+    "beispielTr": "Bugün açık mavi bir gömlek giyiyor.",
+    "beispielEn": "He is wearing a light blue shirt today."
+  },
+  {
+    "id": 7446,
+    "tr": "koyu mavi",
+    "en": "dark blue",
+    "beispiel": "Der Koffer ist dunkelblau und ziemlich groß.",
+    "beispielTr": "Bavul koyu mavi ve oldukça büyük.",
+    "beispielEn": "The suitcase is dark blue and quite big."
+  },
+  {
+    "id": 7447,
+    "tr": "mavimsi",
+    "en": "bluish",
+    "beispiel": "Am Abend wird der Schnee bläulich.",
+    "beispielTr": "Akşam kar mavimsi oluyor.",
+    "beispielEn": "In the evening the snow turns bluish."
+  },
+  {
+    "id": 7448,
+    "tr": "kırmızımsı",
+    "en": "reddish",
+    "beispiel": "Ihre Haare sind rötlich, fast orange.",
+    "beispielTr": "Saçları kırmızımsı, neredeyse turuncu.",
+    "beispielEn": "Her hair is reddish, almost orange."
+  },
+  {
+    "id": 7449,
+    "tr": "sarımsı",
+    "en": "yellowish",
+    "beispiel": "Die alte Tischdecke ist schon gelblich.",
+    "beispielTr": "Eski masa örtüsü artık sarımsı.",
+    "beispielEn": "The old tablecloth is already yellowish."
+  },
+  {
+    "id": 7450,
+    "tr": "altın",
+    "en": "golden",
+    "beispiel": "Meine Oma trägt einen goldenen Ring.",
+    "beispielTr": "Babaannem altın bir yüzük takıyor.",
+    "beispielEn": "My grandma wears a golden ring."
+  },
+  {
+    "id": 7451,
+    "tr": "gümüş",
+    "en": "silver",
+    "beispiel": "Auf dem Tisch liegen silberne Löffel.",
+    "beispielTr": "Masanın üstünde gümüş kaşıklar duruyor.",
+    "beispielEn": "There are silver spoons on the table."
+  },
+  {
+    "id": 7452,
+    "tr": "tek renkli",
+    "en": "plain",
+    "beispiel": "Für das Büro kaufe ich lieber einfarbige Hemden.",
+    "beispielTr": "Ofis için tek renkli gömlekler tercih ediyorum.",
+    "beispielEn": "For the office I prefer plain shirts."
+  },
+  {
+    "id": 7453,
+    "tr": "çizgili",
+    "en": "striped",
+    "beispiel": "Er hat einen gestreiften Pullover an.",
+    "beispielTr": "Üstünde çizgili bir kazak var.",
+    "beispielEn": "He is wearing a striped sweater."
+  },
+  {
+    "id": 7454,
+    "tr": "kareli",
+    "en": "checked",
+    "beispiel": "Auf dem Tisch liegt eine karierte Decke.",
+    "beispielTr": "Masanın üstünde kareli bir örtü duruyor.",
+    "beispielEn": "There is a checked cloth on the table."
+  },
+  {
+    "id": 7455,
+    "tr": "arızalı",
+    "en": "faulty",
+    "beispiel": "Der Aufzug ist seit Montag defekt.",
+    "beispielTr": "Asansör pazartesiden beri arızalı.",
+    "beispielEn": "The elevator has been out of order since Monday."
+  },
+  {
+    "id": 7456,
+    "tr": "hasarlı",
+    "en": "damaged",
+    "beispiel": "Das Paket ist beschädigt bei mir angekommen.",
+    "beispielTr": "Paket bana hasarlı ulaştı.",
+    "beispielEn": "The package arrived damaged."
+  },
+  {
+    "id": 7457,
+    "tr": "kırık",
+    "en": "broken",
+    "beispiel": "Im Karton waren zwei zerbrochene Teller.",
+    "beispielTr": "Kutunun içinde iki kırık tabak vardı.",
+    "beispielEn": "There were two broken plates in the box."
+  },
+  {
+    "id": 7458,
+    "tr": "sağlam",
+    "en": "intact",
+    "beispiel": "Zum Glück sind alle Gläser heil geblieben.",
+    "beispielTr": "Neyse ki bütün bardaklar sağlam kaldı.",
+    "beispielEn": "Luckily all the glasses stayed intact."
+  },
+  {
+    "id": 7459,
+    "tr": "ikinci el",
+    "en": "used",
+    "beispiel": "Wir haben eine gebrauchte Waschmaschine gekauft.",
+    "beispielTr": "İkinci el bir çamaşır makinesi aldık.",
+    "beispielEn": "We bought a used washing machine."
+  },
+  {
+    "id": 7460,
+    "tr": "yıpranmış",
+    "en": "worn out",
+    "beispiel": "Der Teppich im Wohnzimmer ist schon abgenutzt.",
+    "beispielTr": "Oturma odasındaki halı iyice yıpranmış.",
+    "beispielEn": "The carpet in the living room is already worn out."
+  },
+  {
+    "id": 7461,
+    "tr": "paslı",
+    "en": "rusty",
+    "beispiel": "Im Garten steht ein rostiges Fahrrad.",
+    "beispielTr": "Bahçede paslı bir bisiklet duruyor.",
+    "beispielEn": "There is a rusty bike in the garden."
+  },
+  {
+    "id": 7462,
+    "tr": "sallanan",
+    "en": "wobbly",
+    "beispiel": "Setz dich nicht auf den Stuhl, er ist wackelig.",
+    "beispielTr": "O sandalyeye oturma, sallanıyor.",
+    "beispielEn": "Don't sit on that chair, it is wobbly."
+  },
+  {
+    "id": 7463,
+    "tr": "kırılgan",
+    "en": "fragile",
+    "beispiel": "Vorsicht, die Vase ist sehr zerbrechlich.",
+    "beispielTr": "Dikkat et, vazo çok kırılgan.",
+    "beispielEn": "Careful, the vase is very fragile."
+  },
+  {
+    "id": 7464,
+    "tr": "dayanıklı",
+    "en": "sturdy",
+    "beispiel": "Das Regal ist stabil und trägt viele Bücher.",
+    "beispielTr": "Raf dayanıklı ve çok kitap taşıyor.",
+    "beispielEn": "The shelf is sturdy and holds many books."
+  },
+  {
+    "id": 7465,
+    "tr": "doldurulmuş",
+    "en": "filled",
+    "beispiel": "Auf dem Tisch steht eine mit Wasser gefüllte Flasche.",
+    "beispielTr": "Masanın üstünde suyla doldurulmuş bir şişe duruyor.",
+    "beispielEn": "There is a bottle filled with water on the table."
+  },
+  {
+    "id": 7466,
+    "tr": "dağınık",
+    "en": "messy",
+    "beispiel": "Mein Zimmer ist heute sehr unordentlich.",
+    "beispielTr": "Odam bugün çok dağınık.",
+    "beispielEn": "My room is very messy today."
+  },
+  {
+    "id": 7467,
+    "tr": "bakımlı",
+    "en": "well-kept",
+    "beispiel": "Der Garten hinter dem Haus ist sehr gepflegt.",
+    "beispielTr": "Evin arkasındaki bahçe çok bakımlı.",
+    "beispielEn": "The garden behind the house is very well-kept."
+  },
+  {
+    "id": 7468,
+    "tr": "pis",
+    "en": "filthy",
+    "beispiel": "Deine Schuhe sind ganz dreckig.",
+    "beispielTr": "Ayakkabıların resmen pis.",
+    "beispielEn": "Your shoes are completely filthy."
+  },
+  {
+    "id": 7469,
+    "tr": "bozulmuş",
+    "en": "spoiled",
+    "beispiel": "Die Milch im Kühlschrank ist verdorben.",
+    "beispielTr": "Buzdolabındaki süt bozulmuş.",
+    "beispielEn": "The milk in the fridge is spoiled."
+  },
+  {
+    "id": 7470,
+    "tr": "küflü",
+    "en": "moldy",
+    "beispiel": "Das Brot ist nach einer Woche schimmelig.",
+    "beispielTr": "Ekmek bir hafta sonra küflü oluyor.",
+    "beispielEn": "After a week the bread is moldy."
+  },
+  {
+    "id": 7471,
+    "tr": "olağanüstü",
+    "en": "extraordinary",
+    "beispiel": "Das Hotel hatte eine außergewöhnliche Aussicht.",
+    "beispielTr": "Otelin olağanüstü bir manzarası vardı.",
+    "beispielEn": "The hotel had an extraordinary view."
+  },
+  {
+    "id": 7472,
+    "tr": "kaliteli",
+    "en": "classy",
+    "beispiel": "Der Ring sieht edel und teuer aus.",
+    "beispielTr": "Yüzük kaliteli ve pahalı görünüyor.",
+    "beispielEn": "The ring looks classy and expensive."
+  },
+  {
+    "id": 7473,
+    "tr": "sade",
+    "en": "simple",
+    "beispiel": "Das Zimmer ist schlicht und sehr gemütlich.",
+    "beispielTr": "Oda sade ve çok rahat.",
+    "beispielEn": "The room is simple and very cozy."
+  },
+  {
+    "id": 7474,
+    "tr": "özgün",
+    "en": "original",
+    "beispiel": "Dein Geschenk war wirklich originell.",
+    "beispielTr": "Hediyen gerçekten özgündü.",
+    "beispielEn": "Your present was really original."
+  },
+  {
+    "id": 7475,
+    "tr": "göze batmayan",
+    "en": "inconspicuous",
+    "beispiel": "Die Tasche ist klein und unauffällig.",
+    "beispielTr": "Çanta küçük ve göze batmıyor.",
+    "beispielEn": "The bag is small and inconspicuous."
+  },
+  {
+    "id": 7476,
+    "tr": "dikkat çekici",
+    "en": "striking",
+    "beispiel": "Sie trägt heute eine auffällige rote Jacke.",
+    "beispielTr": "Bugün dikkat çekici kırmızı bir ceket giyiyor.",
+    "beispielEn": "She is wearing a striking red jacket today."
+  },
+  {
+    "id": 7477,
+    "tr": "eski moda",
+    "en": "old-fashioned",
+    "beispiel": "Die Lampe im Flur sieht ziemlich altmodisch aus.",
+    "beispielTr": "Koridordaki lamba oldukça eski moda görünüyor.",
+    "beispielEn": "The lamp in the hallway looks quite old-fashioned."
+  },
+  {
+    "id": 7478,
+    "tr": "modaya uygun",
+    "en": "fashionable",
+    "beispiel": "Diese Brille ist gerade sehr modisch.",
+    "beispielTr": "Bu gözlük şu sıralar çok modaya uygun.",
+    "beispielEn": "These glasses are very fashionable right now."
+  },
+  {
+    "id": 7479,
+    "tr": "kullanışlı",
+    "en": "handy",
+    "beispiel": "Der kleine Koffer ist leicht und handlich.",
+    "beispielTr": "Küçük bavul hafif ve kullanışlı.",
+    "beispielEn": "The small suitcase is light and handy."
+  },
+  {
+    "id": 7480,
+    "tr": "buz gibi",
+    "en": "icy",
+    "beispiel": "Draußen weht ein eisiger Wind.",
+    "beispielTr": "Dışarıda buz gibi bir rüzgâr esiyor.",
+    "beispielEn": "An icy wind is blowing outside."
+  },
+  {
+    "id": 7481,
+    "tr": "ayazlı",
+    "en": "frosty",
+    "beispiel": "Die Nächte sind im Januar oft frostig.",
+    "beispielTr": "Ocakta geceler çoğu zaman ayazlı olur.",
+    "beispielEn": "The nights in January are often frosty."
+  },
+  {
+    "id": 7482,
+    "tr": "ılık",
+    "en": "lukewarm",
+    "beispiel": "Der Kaffee ist nur noch lauwarm.",
+    "beispielTr": "Kahve artık sadece ılık.",
+    "beispielEn": "The coffee is only lukewarm now."
+  },
+  {
+    "id": 7483,
+    "tr": "fırtınalı",
+    "en": "stormy",
+    "beispiel": "Gestern war das Wetter sehr stürmisch.",
+    "beispielTr": "Dün hava çok fırtınalıydı.",
+    "beispielEn": "The weather was very stormy yesterday."
+  },
+  {
+    "id": 7484,
+    "tr": "yağmurlu",
+    "en": "rainy",
+    "beispiel": "Im April ist es hier meistens regnerisch.",
+    "beispielTr": "Nisanda burası çoğunlukla yağmurlu olur.",
+    "beispielEn": "In April it is mostly rainy here."
+  },
+  {
+    "id": 7485,
+    "tr": "bulutlu",
+    "en": "overcast",
+    "beispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
+    "beispielTr": "Bugün gökyüzü bütün gün bulutlu kalacak.",
+    "beispielEn": "Today the sky stays overcast all day."
+  },
+  {
+    "id": 7486,
+    "tr": "cereyanlı",
+    "en": "drafty",
+    "beispiel": "Im Treppenhaus ist es immer zugig.",
+    "beispielTr": "Merdiven boşluğu her zaman cereyanlı olur.",
+    "beispielEn": "It is always drafty in the stairwell."
+  },
+  {
+    "id": 7487,
+    "tr": "boğucu",
+    "en": "stuffy",
+    "beispiel": "Im Bus war die Luft sehr stickig.",
+    "beispielTr": "Otobüste hava çok boğucuydu.",
+    "beispielEn": "The air on the bus was very stuffy."
+  }
+]

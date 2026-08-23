@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1024,
+    "tr": "içeri",
+    "en": "in",
+    "beispiel": "Kommen Sie bitte herein!",
+    "beispielTr": "Lütfen içeri girin!",
+    "beispielEn": "Please come in!"
+  },
+  {
+    "id": 990,
+    "tr": "korkunç",
+    "en": "terrible",
+    "beispiel": "Ich habe furchtbare Kopfschmerzen.",
+    "beispielTr": "Korkunç bir baş ağrım var.",
+    "beispielEn": "I have a terrible headache."
+  },
+  {
+    "id": 939,
+    "tr": "içeride",
+    "en": "inside",
+    "beispiel": "Bei diesem Wetter bleiben wir lieber drinnen.",
+    "beispielTr": "Bu havada içeride kalmayı tercih ederiz.",
+    "beispielEn": "In this weather we'd rather stay inside."
+  },
+  {
+    "id": 1191,
+    "tr": "domuz",
+    "en": "pig",
+    "beispiel": "Auf dem Bauernhof leben zehn Schweine.",
+    "beispielTr": "Çiftlikte on domuz yaşıyor.",
+    "beispielEn": "Ten pigs live on the farm."
+  },
+  {
+    "id": 1092,
+    "tr": "bıçak",
+    "en": "knife",
+    "beispiel": "Dieses Messer schneidet nicht gut.",
+    "beispielTr": "Bu bıçak iyi kesmiyor.",
+    "beispielEn": "This knife doesn't cut well."
+  },
+  {
+    "id": 1006,
+    "tr": "sağlıklı",
+    "en": "healthy",
+    "beispiel": "Obst und Gemüse sind sehr gesund.",
+    "beispielTr": "Meyve ve sebze çok sağlıklıdır.",
+    "beispielEn": "Fruit and vegetables are very healthy."
+  },
+  {
+    "id": 1141,
+    "tr": "başına",
+    "en": "per",
+    "beispiel": "Der Eintritt kostet 5 Euro pro Person.",
+    "beispielTr": "Giriş kişi başına 5 euro.",
+    "beispielEn": "Admission costs 5 euros per person."
+  },
+  {
+    "id": 1190,
+    "tr": "hamile",
+    "en": "pregnant",
+    "beispiel": "Meine Schwester ist im fünften Monat schwanger.",
+    "beispielTr": "Kız kardeşim beş aylık hamile.",
+    "beispielEn": "My sister is five months pregnant."
+  },
+  {
+    "id": 1192,
+    "tr": "zor",
+    "en": "difficult",
+    "beispiel": "Die Prüfung war nicht schwierig.",
+    "beispielTr": "Sınav zor değildi.",
+    "beispielEn": "The exam wasn't difficult."
+  },
+  {
+    "id": 969,
+    "tr": "muhteşem",
+    "en": "fantastic",
+    "beispiel": "Dein neues Kleid sieht fantastisch aus!",
+    "beispielTr": "Yeni elbisen muhteşem görünüyor!",
+    "beispielEn": "Your new dress looks fantastic!"
+  },
+  {
+    "id": 889,
+    "tr": "inşa etmek",
+    "en": "to build",
+    "beispiel": "Unsere Nachbarn bauen ein neues Haus.",
+    "beispielTr": "Komşularımız yeni bir ev inşa ediyor.",
+    "beispielEn": "Our neighbors are building a new house."
+  },
+  {
+    "id": 1014,
+    "tr": "asmak",
+    "en": "to hang",
+    "beispiel": "Ich habe das Bild an die Wand gehängt.",
+    "beispielTr": "Tabloyu duvara astım.",
+    "beispielEn": "I hung the picture on the wall."
+  },
+  {
+    "id": 1265,
+    "tr": "bir şeyler yapmak",
+    "en": "to do something",
+    "beispiel": "Wollen wir heute Abend etwas unternehmen?",
+    "beispielTr": "Bu akşam bir şeyler yapalım mı?",
+    "beispielEn": "Shall we do something tonight?"
+  },
+  {
+    "id": 894,
+    "tr": "bitirmek",
+    "en": "to finish",
+    "beispiel": "Du musst deine Ausbildung auf jeden Fall beenden.",
+    "beispielTr": "Meslek eğitimini kesinlikle bitirmelisin.",
+    "beispielEn": "You have to finish your training no matter what."
+  },
+  {
+    "id": 1193,
+    "tr": "deniz",
+    "en": "sea",
+    "beispiel": "Die See ist heute sehr ruhig.",
+    "beispielTr": "Deniz bugün çok sakin.",
+    "beispielEn": "The sea is very calm today."
+  },
+  {
+    "id": 1266,
+    "tr": "fark",
+    "en": "difference",
+    "beispiel": "Was ist der Unterschied zwischen diesen beiden Kursen?",
+    "beispielTr": "Bu iki kurs arasındaki fark ne?",
+    "beispielEn": "What is the difference between these two courses?"
+  },
+  {
+    "id": 1036,
+    "tr": "ilgi",
+    "en": "interest",
+    "beispiel": "Sie hat großes Interesse an moderner Kunst.",
+    "beispielTr": "Modern sanata büyük ilgisi var.",
+    "beispielEn": "She has a great interest in modern art."
+  },
+  {
+    "id": 1077,
+    "tr": "yalan",
+    "en": "lie",
+    "beispiel": "Das ist eine glatte Lüge!",
+    "beispielTr": "Bu düpedüz yalan!",
+    "beispielEn": "That's a downright lie!"
+  },
+  {
+    "id": 919,
+    "tr": "köprü",
+    "en": "bridge",
+    "beispiel": "Fahren Sie über die nächste Brücke!",
+    "beispielTr": "Bir sonraki köprüden geçin!",
+    "beispielEn": "Drive over the next bridge!"
+  },
+  {
+    "id": 1071,
+    "tr": "boş",
+    "en": "empty",
+    "beispiel": "Die Flasche ist schon wieder leer.",
+    "beispielTr": "Şişe yine boş.",
+    "beispielEn": "The bottle is empty again."
+  },
+  {
+    "id": 1045,
+    "tr": "bodrum",
+    "en": "basement",
+    "beispiel": "Die Waschmaschine steht unten im Keller.",
+    "beispielTr": "Çamaşır makinesi aşağıda bodrumda.",
+    "beispielEn": "The washing machine is down in the basement."
+  },
+  {
+    "id": 1312,
+    "tr": "ağlamak",
+    "en": "to cry",
+    "beispiel": "Warum weint das Baby denn so?",
+    "beispielTr": "Bebek neden böyle ağlıyor?",
+    "beispielEn": "Why is the baby crying like that?"
+  },
+  {
+    "id": 1182,
+    "tr": "şato",
+    "en": "castle",
+    "beispiel": "Wir haben am Sonntag ein Schloss besichtigt.",
+    "beispielTr": "Pazar günü bir şato gezdik.",
+    "beispielEn": "We visited a castle on Sunday."
+  },
+  {
+    "id": 1164,
+    "tr": "gül",
+    "en": "rose",
+    "beispiel": "Er schenkt seiner Freundin rote Rosen.",
+    "beispielTr": "Kız arkadaşına kırmızı güller hediye ediyor.",
+    "beispielEn": "He gives his girlfriend red roses."
+  },
+  {
+    "id": 925,
+    "tr": "kulüp",
+    "en": "club",
+    "beispiel": "Gibt es hier einen Club mit guter Musik?",
+    "beispielTr": "Buralarda müziği iyi bir kulüp var mı?",
+    "beispielEn": "Is there a club with good music here?"
+  },
+  {
+    "id": 1297,
+    "tr": "ileri",
+    "en": "forward",
+    "beispiel": "Fahren Sie bitte noch ein Stück vorwärts!",
+    "beispielTr": "Lütfen biraz daha ileri gidin!",
+    "beispielEn": "Please pull forward a little more!"
+  },
+  {
+    "id": 958,
+    "tr": "deneyim",
+    "en": "experience",
+    "beispiel": "Ich habe zehn Jahre Erfahrung in diesem Beruf.",
+    "beispielTr": "Bu meslekte on yıllık deneyimim var.",
+    "beispielEn": "I have ten years of experience in this job."
+  },
+  {
+    "id": 938,
+    "tr": "acil",
+    "en": "urgent",
+    "beispiel": "Bitte kommen Sie schnell, es ist dringend!",
+    "beispielTr": "Lütfen çabuk gelin, durum acil!",
+    "beispielEn": "Please come quickly, it's urgent!"
+  },
+  {
+    "id": 1221,
+    "tr": "rahatsız etmek",
+    "en": "to disturb",
+    "beispiel": "Darf ich Sie kurz stören?",
+    "beispielTr": "Sizi kısaca rahatsız edebilir miyim?",
+    "beispielEn": "May I disturb you for a moment?"
+  },
+  {
+    "id": 1031,
+    "tr": "pantolon",
+    "en": "pants",
+    "beispiel": "Diese Hose ist mir zu eng.",
+    "beispielTr": "Bu pantolon bana çok dar geliyor.",
+    "beispielEn": "These pants are too tight for me."
+  },
+  {
+    "id": 1107,
+    "tr": "doğa",
+    "en": "nature",
+    "beispiel": "Am Wochenende bin ich gern in der Natur.",
+    "beispielTr": "Hafta sonları doğada olmayı severim.",
+    "beispielEn": "On weekends I like being out in nature."
+  },
+  {
+    "id": 981,
+    "tr": "uçuş",
+    "en": "flight",
+    "beispiel": "Ich möchte einen Flug nach Kanada buchen.",
+    "beispielTr": "Kanada'ya bir uçuş rezervasyonu yapmak istiyorum.",
+    "beispielEn": "I'd like to book a flight to Canada."
+  },
+  {
+    "id": 1323,
+    "tr": "dilek",
+    "en": "wish",
+    "beispiel": "Zum Geburtstag hatte ich nur einen Wunsch.",
+    "beispielTr": "Doğum günümde tek bir dileğim vardı.",
+    "beispielEn": "For my birthday I had only one wish."
+  },
+  {
+    "id": 1154,
+    "tr": "sıra",
+    "en": "row",
+    "beispiel": "Wir sitzen in der dritten Reihe.",
+    "beispielTr": "Üçüncü sırada oturuyoruz.",
+    "beispielEn": "We're sitting in the third row."
+  },
+  {
+    "id": 1286,
+    "tr": "kuş",
+    "en": "bird",
+    "beispiel": "Morgens singen die Vögel sehr laut.",
+    "beispielTr": "Sabahları kuşlar çok yüksek sesle ötüyor.",
+    "beispielEn": "In the morning the birds sing very loudly."
+  },
+  {
+    "id": 1285,
+    "tr": "sözleşme",
+    "en": "contract",
+    "beispiel": "Ich muss den Vertrag noch unterschreiben.",
+    "beispielTr": "Sözleşmeyi daha imzalamam gerekiyor.",
+    "beispielEn": "I still have to sign the contract."
+  },
+  {
+    "id": 1050,
+    "tr": "akıllı",
+    "en": "smart",
+    "beispiel": "Lisa ist sehr klug und bekommt gute Noten.",
+    "beispielTr": "Lisa çok akıllı ve iyi notlar alıyor.",
+    "beispielEn": "Lisa is very smart and gets good grades."
+  },
+  {
+    "id": 883,
+    "tr": "dışında",
+    "en": "outside",
+    "beispiel": "Die Wohnung liegt etwas außerhalb der Stadt.",
+    "beispielTr": "Daire şehrin biraz dışında.",
+    "beispielEn": "The apartment is a little outside the city."
+  },
+  {
+    "id": 1189,
+    "tr": "zayıf",
+    "en": "weak",
+    "beispiel": "Nach der Grippe fühle ich mich noch schwach.",
+    "beispielTr": "Gripten sonra kendimi hâlâ zayıf hissediyorum.",
+    "beispielEn": "After the flu I still feel weak."
+  },
+  {
+    "id": 1090,
+    "tr": "aklında tutmak",
+    "en": "to memorize",
+    "beispiel": "Ich kann mir keine Zahlen merken.",
+    "beispielTr": "Sayıları aklımda tutamıyorum.",
+    "beispielEn": "I can't memorize numbers."
+  },
+  {
+    "id": 1256,
+    "tr": "çeviri",
+    "en": "translation",
+    "beispiel": "Ich brauche eine Übersetzung von meinem Zeugnis.",
+    "beispielTr": "Karnemin çevirisine ihtiyacım var.",
+    "beispielEn": "I need a translation of my school report."
+  },
+  {
+    "id": 1067,
+    "tr": "sanat",
+    "en": "art",
+    "beispiel": "Von moderner Kunst verstehe ich nichts.",
+    "beispielTr": "Modern sanattan hiç anlamam.",
+    "beispielEn": "I don't understand anything about modern art."
+  },
+  {
+    "id": 1059,
+    "tr": "hastalık",
+    "en": "illness",
+    "beispiel": "Diese Krankheit ist zum Glück nicht gefährlich.",
+    "beispielTr": "Neyse ki bu hastalık tehlikeli değil.",
+    "beispielEn": "Luckily this illness isn't dangerous."
+  },
+  {
+    "id": 870,
+    "tr": "takım elbise",
+    "en": "suit",
+    "beispiel": "Mein Mann kauft sich einen neuen Anzug.",
+    "beispielTr": "Eşim kendine yeni bir takım elbise alıyor.",
+    "beispielEn": "My husband is buying himself a new suit."
+  },
+  {
+    "id": 941,
+    "tr": "karanlık",
+    "en": "dark",
+    "beispiel": "Um sechs Uhr ist es schon dunkel.",
+    "beispielTr": "Saat altıda hava çoktan karanlık oluyor.",
+    "beispielEn": "At six o'clock it's already dark."
+  },
+  {
+    "id": 1053,
+    "tr": "kontrol etmek",
+    "en": "to check",
+    "beispiel": "Können Sie bitte das Öl kontrollieren?",
+    "beispielTr": "Yağı kontrol edebilir misiniz lütfen?",
+    "beispielEn": "Could you please check the oil?"
+  },
+  {
+    "id": 1144,
+    "tr": "program",
+    "en": "program",
+    "beispiel": "Dieses Programm im Radio interessiert mich nicht.",
+    "beispielTr": "Radyodaki bu program ilgimi çekmiyor.",
+    "beispielEn": "This program on the radio doesn't interest me."
+  },
+  {
+    "id": 1226,
+    "tr": "sandalye",
+    "en": "chair",
+    "beispiel": "Da hinten ist noch ein Stuhl frei.",
+    "beispielTr": "Arkada bir sandalye daha boş.",
+    "beispielEn": "There's still a free chair in the back."
+  },
+  {
+    "id": 878,
+    "tr": "dışarı çıkmak",
+    "en": "to go out",
+    "beispiel": "Gehen wir am Freitag zusammen aus?",
+    "beispielTr": "Cuma günü birlikte dışarı çıkalım mı?",
+    "beispielEn": "Shall we go out together on Friday?"
+  },
+  {
+    "id": 1300,
+    "tr": "seçmek",
+    "en": "to choose",
+    "beispiel": "Sie können zwischen zwei Menüs wählen.",
+    "beispielTr": "İki menü arasından seçim yapabilirsiniz.",
+    "beispielEn": "You can choose between two menus."
+  }
+]

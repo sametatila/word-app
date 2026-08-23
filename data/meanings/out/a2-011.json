@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7488,
+    "tr": "havadar",
+    "en": "airy",
+    "beispiel": "Das neue Büro ist hell und luftig.",
+    "beispielTr": "Yeni ofis aydınlık ve havadar.",
+    "beispielEn": "The new office is bright and airy."
+  },
+  {
+    "id": 7489,
+    "tr": "ısıtmalı",
+    "en": "heated",
+    "beispiel": "Die Garage ist im Winter nicht beheizt.",
+    "beispielTr": "Garaj kışın ısıtılmıyor.",
+    "beispielEn": "The garage is not heated in winter."
+  },
+  {
+    "id": 7490,
+    "tr": "iç açıcı olmayan",
+    "en": "unwelcoming",
+    "beispiel": "Das Wartezimmer war kalt und ungemütlich.",
+    "beispielTr": "Bekleme odası soğuk ve iç açıcı değildi.",
+    "beispielEn": "The waiting room was cold and unwelcoming."
+  },
+  {
+    "id": 7491,
+    "tr": "rahatsız",
+    "en": "uncomfortable",
+    "beispiel": "Diese Schuhe sind schön, aber unbequem.",
+    "beispielTr": "Bu ayakkabılar güzel ama rahatsız.",
+    "beispielEn": "These shoes are nice but uncomfortable."
+  },
+  {
+    "id": 7492,
+    "tr": "nefis",
+    "en": "delicious",
+    "beispiel": "Der Kuchen von deiner Mutter war köstlich.",
+    "beispielTr": "Annenin keki nefisti.",
+    "beispielEn": "Your mother's cake was delicious."
+  },
+  {
+    "id": 7493,
+    "tr": "baharatlı",
+    "en": "well-seasoned",
+    "beispiel": "Die Suppe ist schön würzig.",
+    "beispielTr": "Çorba güzel baharatlı olmuş.",
+    "beispielEn": "The soup is nicely seasoned."
+  },
+  {
+    "id": 7494,
+    "tr": "yavan",
+    "en": "bland",
+    "beispiel": "Ohne Salz schmeckt das Essen fad.",
+    "beispielTr": "Tuz olmadan yemek yavan oluyor.",
+    "beispielEn": "Without salt the food tastes bland."
+  },
+  {
+    "id": 7495,
+    "tr": "küf kokulu",
+    "en": "musty",
+    "beispiel": "Im Keller riecht es muffig.",
+    "beispielTr": "Bodrum küf kokuyor.",
+    "beispielEn": "The basement smells musty."
+  },
+  {
+    "id": 7496,
+    "tr": "pis kokan",
+    "en": "stinking",
+    "beispiel": "Vor dem Haus steht eine stinkende Mülltonne.",
+    "beispielTr": "Evin önünde pis kokan bir çöp kovası duruyor.",
+    "beispielEn": "There is a stinking trash can in front of the house."
+  },
+  {
+    "id": 7497,
+    "tr": "mis kokulu",
+    "en": "fragrant",
+    "beispiel": "Sie hat mir duftende Blumen mitgebracht.",
+    "beispielTr": "Bana mis kokulu çiçekler getirdi.",
+    "beispielEn": "She brought me fragrant flowers."
+  },
+  {
+    "id": 7498,
+    "tr": "boğuk",
+    "en": "muffled",
+    "beispiel": "Aus der Wohnung kommt ein dumpfes Geräusch.",
+    "beispielTr": "Daireden boğuk bir ses geliyor.",
+    "beispielEn": "A muffled noise is coming from the apartment."
+  },
+  {
+    "id": 7499,
+    "tr": "tiz",
+    "en": "shrill",
+    "beispiel": "Der Wecker hat einen schrillen Ton.",
+    "beispielTr": "Çalar saatin tiz bir sesi var.",
+    "beispielEn": "The alarm clock has a shrill tone."
+  },
+  {
+    "id": 7500,
+    "tr": "sabırlı",
+    "en": "patient",
+    "beispiel": "Meine Lehrerin ist sehr geduldig mit uns.",
+    "beispielTr": "Öğretmenim bize karşı çok sabırlı.",
+    "beispielEn": "My teacher is very patient with us."
+  },
+  {
+    "id": 7501,
+    "tr": "sabırsız",
+    "en": "impatient",
+    "beispiel": "Mein Bruder wird schnell ungeduldig, wenn er warten muss.",
+    "beispielTr": "Kardeşim beklemek zorunda kalınca çabuk sabırsızlanıyor.",
+    "beispielEn": "My brother gets impatient quickly when he has to wait."
+  },
+  {
+    "id": 7502,
+    "tr": "alçakgönüllü",
+    "en": "modest",
+    "beispiel": "Er ist reich, aber er lebt sehr bescheiden.",
+    "beispielTr": "Zengin ama çok alçakgönüllü yaşıyor.",
+    "beispielEn": "He is rich, but he lives very modestly."
+  },
+  {
+    "id": 7503,
+    "tr": "cimri",
+    "en": "stingy",
+    "beispiel": "Mein Onkel ist so geizig, dass er nie Trinkgeld gibt.",
+    "beispielTr": "Amcam o kadar cimri ki hiç bahşiş vermiyor.",
+    "beispielEn": "My uncle is so stingy that he never leaves a tip."
+  },
+  {
+    "id": 7504,
+    "tr": "bencil",
+    "en": "selfish",
+    "beispiel": "Sei nicht so egoistisch und teile die Schokolade!",
+    "beispielTr": "Bu kadar bencil olma ve çikolatayı paylaş!",
+    "beispielEn": "Don't be so selfish and share the chocolate!"
+  },
+  {
+    "id": 7505,
+    "tr": "yardımsever",
+    "en": "helpful",
+    "beispiel": "Unsere neuen Nachbarn sind sehr hilfsbereit.",
+    "beispielTr": "Yeni komşularımız çok yardımsever.",
+    "beispielEn": "Our new neighbors are very helpful."
+  },
+  {
+    "id": 7506,
+    "tr": "misafirperver",
+    "en": "hospitable",
+    "beispiel": "Die Familie war gastfreundlich und hat uns eingeladen.",
+    "beispielTr": "Aile misafirperverdi ve bizi davet etti.",
+    "beispielEn": "The family was hospitable and invited us over."
+  },
+  {
+    "id": 7507,
+    "tr": "utangaç",
+    "en": "shy",
+    "beispiel": "Als Kind war ich sehr schüchtern.",
+    "beispielTr": "Çocukken çok utangaçtım.",
+    "beispielEn": "As a child I was very shy."
+  },
+  {
+    "id": 7508,
+    "tr": "az konuşan",
+    "en": "quiet",
+    "beispiel": "Mein Vater ist ein schweigsamer Mann.",
+    "beispielTr": "Babam az konuşan bir adamdır.",
+    "beispielEn": "My father is a quiet man."
+  },
+  {
+    "id": 7509,
+    "tr": "kötü niyetli",
+    "en": "mean",
+    "beispiel": "Mein Nachbar ist manchmal richtig gemein.",
+    "beispielTr": "Komşum bazen gerçekten kötü niyetli oluyor.",
+    "beispielEn": "My neighbor is sometimes really mean."
+  },
+  {
+    "id": 7510,
+    "tr": "düzgün",
+    "en": "decent",
+    "beispiel": "Er ist ein anständiger Mensch und hilft immer.",
+    "beispielTr": "O düzgün bir insan ve her zaman yardım eder.",
+    "beispielEn": "He is a decent person and always helps."
+  },
+  {
+    "id": 7511,
+    "tr": "kuşkucu",
+    "en": "distrustful",
+    "beispiel": "Seit dem Streit ist sie mir gegenüber misstrauisch.",
+    "beispielTr": "Kavgadan beri bana karşı kuşkucu.",
+    "beispielEn": "Since the argument she is distrustful of me."
+  },
+  {
+    "id": 7512,
+    "tr": "imrenen",
+    "en": "envious",
+    "beispiel": "Meine Kollegin ist neidisch auf mein neues Auto.",
+    "beispielTr": "İş arkadaşım yeni arabama imreniyor.",
+    "beispielEn": "My colleague is envious of my new car."
+  },
+  {
+    "id": 7513,
+    "tr": "uslu",
+    "en": "well-behaved",
+    "beispiel": "Die Kinder waren heute den ganzen Tag brav.",
+    "beispielTr": "Çocuklar bugün bütün gün uslu durdu.",
+    "beispielEn": "The children were well-behaved all day today."
+  },
+  {
+    "id": 7514,
+    "tr": "saldırgan",
+    "en": "aggressive",
+    "beispiel": "Nach zwei Bier wird er leider aggressiv.",
+    "beispielTr": "İki biradan sonra maalesef saldırganlaşıyor.",
+    "beispielEn": "After two beers he unfortunately gets aggressive."
+  },
+  {
+    "id": 7515,
+    "tr": "barışçıl",
+    "en": "peaceful",
+    "beispiel": "Mein Großvater war ein friedlicher Mann.",
+    "beispielTr": "Dedem barışçıl bir adamdı.",
+    "beispielEn": "My grandfather was a peaceful man."
+  },
+  {
+    "id": 7516,
+    "tr": "saygılı",
+    "en": "respectful",
+    "beispiel": "Die Schüler sind respektvoll zu ihren Lehrern.",
+    "beispielTr": "Öğrenciler öğretmenlerine karşı saygılı.",
+    "beispielEn": "The students are respectful toward their teachers."
+  },
+  {
+    "id": 7517,
+    "tr": "düşüncesiz",
+    "en": "inconsiderate",
+    "beispiel": "Er fährt rücksichtslos und viel zu schnell.",
+    "beispielTr": "Düşüncesizce ve çok hızlı araba kullanıyor.",
+    "beispielEn": "He drives inconsiderately and much too fast."
+  },
+  {
+    "id": 7518,
+    "tr": "terbiyesiz",
+    "en": "impudent",
+    "beispiel": "Seine Antwort am Telefon war richtig unverschämt.",
+    "beispielTr": "Telefondaki cevabı gerçekten terbiyesizdi.",
+    "beispielEn": "His answer on the phone was really impudent."
+  },
+  {
+    "id": 7519,
+    "tr": "nezaketsiz",
+    "en": "impolite",
+    "beispiel": "Es ist unhöflich, beim Essen auf das Handy zu schauen.",
+    "beispielTr": "Yemek sırasında telefona bakmak nezaketsizliktir.",
+    "beispielEn": "It is impolite to look at your phone during a meal."
+  },
+  {
+    "id": 7520,
+    "tr": "sadakatsiz",
+    "en": "unfaithful",
+    "beispiel": "Sie hat ihn verlassen, weil er untreu war.",
+    "beispielTr": "Sadakatsiz olduğu için onu terk etti.",
+    "beispielEn": "She left him because he was unfaithful."
+  },
+  {
+    "id": 7521,
+    "tr": "bilerek",
+    "en": "on purpose",
+    "beispiel": "Er hat das Glas nicht absichtlich kaputt gemacht.",
+    "beispielTr": "Bardağı bilerek kırmadı.",
+    "beispielEn": "He did not break the glass on purpose."
+  },
+  {
+    "id": 7522,
+    "tr": "çaresiz",
+    "en": "helpless",
+    "beispiel": "Ohne meine Brille fühle ich mich völlig hilflos.",
+    "beispielTr": "Gözlüğüm olmadan kendimi tamamen çaresiz hissediyorum.",
+    "beispielEn": "Without my glasses I feel completely helpless."
+  },
+  {
+    "id": 7523,
+    "tr": "becerikli",
+    "en": "skillful",
+    "beispiel": "Meine Schwester ist sehr geschickt mit ihren Händen.",
+    "beispielTr": "Kız kardeşim elleriyle çok becerikli.",
+    "beispielEn": "My sister is very skillful with her hands."
+  },
+  {
+    "id": 7524,
+    "tr": "sakar",
+    "en": "clumsy",
+    "beispiel": "Ich bin so ungeschickt, mir fällt immer etwas herunter.",
+    "beispielTr": "O kadar sakarım ki elimden hep bir şey düşüyor.",
+    "beispielEn": "I am so clumsy that I keep dropping things."
+  },
+  {
+    "id": 7525,
+    "tr": "zeki",
+    "en": "clever",
+    "beispiel": "Das war eine schlaue Idee von dir.",
+    "beispielTr": "Bu zekice bir fikirdi.",
+    "beispielEn": "That was a clever idea of yours."
+  },
+  {
+    "id": 7526,
+    "tr": "yetenekli",
+    "en": "gifted",
+    "beispiel": "Mein Sohn ist musikalisch sehr begabt.",
+    "beispielTr": "Oğlum müzik konusunda çok yetenekli.",
+    "beispielEn": "My son is very gifted in music."
+  },
+  {
+    "id": 7527,
+    "tr": "yetenekli",
+    "en": "talented",
+    "beispiel": "Sie ist eine talentierte junge Fußballspielerin.",
+    "beispielTr": "O yetenekli genç bir futbolcu.",
+    "beispielEn": "She is a talented young soccer player."
+  },
+  {
+    "id": 7528,
+    "tr": "unutkan",
+    "en": "forgetful",
+    "beispiel": "Meine Oma ist im Alter sehr vergesslich geworden.",
+    "beispielTr": "Babaannem yaşlılıkta çok unutkan oldu.",
+    "beispielEn": "My grandma has become very forgetful with age."
+  },
+  {
+    "id": 7529,
+    "tr": "iyi kalpli",
+    "en": "good-natured",
+    "beispiel": "Unser Hausmeister ist ein gutmütiger alter Mann.",
+    "beispielTr": "Kapıcımız iyi kalpli yaşlı bir adam.",
+    "beispielEn": "Our caretaker is a good-natured old man."
+  },
+  {
+    "id": 7530,
+    "tr": "dakik olmayan",
+    "en": "unpunctual",
+    "beispiel": "Mein Kollege ist leider immer unpünktlich.",
+    "beispielTr": "İş arkadaşım ne yazık ki hiç dakik değil.",
+    "beispielEn": "My colleague is unfortunately never on time."
+  },
+  {
+    "id": 7531,
+    "tr": "telaşlı",
+    "en": "hectic",
+    "beispiel": "Im Büro war es heute sehr hektisch.",
+    "beispielTr": "Bugün ofis çok telaşlıydı.",
+    "beispielEn": "It was very hectic at the office today."
+  },
+  {
+    "id": 7532,
+    "tr": "havalı",
+    "en": "cool",
+    "beispiel": "Mit dieser Jacke siehst du sehr lässig aus.",
+    "beispielTr": "Bu ceketle çok havalı görünüyorsun.",
+    "beispielEn": "You look really cool in this jacket."
+  },
+  {
+    "id": 7533,
+    "tr": "hareketli",
+    "en": "lively",
+    "beispiel": "Unsere Tochter ist ein lebhaftes Kind.",
+    "beispielTr": "Kızımız hareketli bir çocuk.",
+    "beispielEn": "Our daughter is a lively child."
+  },
+  {
+    "id": 7534,
+    "tr": "çocukça",
+    "en": "childish",
+    "beispiel": "Mit vierzig ist so ein Streit einfach kindisch.",
+    "beispielTr": "Kırk yaşında böyle bir kavga düpedüz çocukça.",
+    "beispielEn": "At forty such an argument is just childish."
+  },
+  {
+    "id": 7535,
+    "tr": "sevimli",
+    "en": "charming",
+    "beispiel": "Der Kellner war sehr charmant zu den Gästen.",
+    "beispielTr": "Garson misafirlere karşı çok sevimliydi.",
+    "beispielEn": "The waiter was very charming to the guests."
+  },
+  {
+    "id": 7536,
+    "tr": "çekici",
+    "en": "attractive",
+    "beispiel": "Sie findet ihren neuen Kollegen sehr attraktiv.",
+    "beispielTr": "Yeni iş arkadaşını çok çekici buluyor.",
+    "beispielEn": "She finds her new colleague very attractive."
+  },
+  {
+    "id": 7537,
+    "tr": "düşünceli",
+    "en": "pensive",
+    "beispiel": "Nach dem Gespräch war mein Vater sehr nachdenklich.",
+    "beispielTr": "Konuşmadan sonra babam çok düşünceliydi.",
+    "beispielEn": "After the conversation my father was very pensive."
+  }
+]

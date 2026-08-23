@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7638,
+    "tr": "aksi takdirde",
+    "en": "otherwise",
+    "beispiel": "Ruf mich bitte an, ansonsten warte ich umsonst.",
+    "beispielTr": "Lütfen beni ara, aksi takdirde boşuna beklerim.",
+    "beispielEn": "Please call me, otherwise I'll be waiting for nothing."
+  },
+  {
+    "id": 7639,
+    "tr": "gerekirse",
+    "en": "if necessary",
+    "beispiel": "Notfalls nehmen wir ein Taxi zum Bahnhof.",
+    "beispielTr": "Gerekirse gara taksiyle gideriz.",
+    "beispielEn": "If necessary, we'll take a taxi to the station."
+  },
+  {
+    "id": 7640,
+    "tr": "fırıncı",
+    "en": "baker",
+    "beispiel": "Mein Vater ist Bäcker und steht jeden Morgen um vier auf.",
+    "beispielTr": "Babam fırıncı ve her sabah dörtte kalkıyor.",
+    "beispielEn": "My father is a baker and gets up at four every morning."
+  },
+  {
+    "id": 7641,
+    "tr": "kasiyer",
+    "en": "cashier",
+    "beispiel": "Der Kassierer im Supermarkt war heute sehr freundlich.",
+    "beispielTr": "Süpermarketteki kasiyer bugün çok kibardı.",
+    "beispielEn": "The cashier at the supermarket was very friendly today."
+  },
+  {
+    "id": 7642,
+    "tr": "elektrikçi",
+    "en": "electrician",
+    "beispiel": "Wir haben einen Elektriker gerufen, weil das Licht nicht geht.",
+    "beispielTr": "Işık çalışmadığı için bir elektrikçi çağırdık.",
+    "beispielEn": "We called an electrician because the light doesn't work."
+  },
+  {
+    "id": 7643,
+    "tr": "tesisatçı",
+    "en": "plumber",
+    "beispiel": "Der Klempner repariert morgen unsere Dusche.",
+    "beispielTr": "Tesisatçı yarın duşumuzu tamir edecek.",
+    "beispielEn": "The plumber is fixing our shower tomorrow."
+  },
+  {
+    "id": 7644,
+    "tr": "marangoz",
+    "en": "carpenter",
+    "beispiel": "Der Tischler baut mir einen neuen Schrank aus Holz.",
+    "beispielTr": "Marangoz bana ahşaptan yeni bir dolap yapıyor.",
+    "beispielEn": "The carpenter is building me a new wooden cupboard."
+  },
+  {
+    "id": 7645,
+    "tr": "bahçıvan",
+    "en": "gardener",
+    "beispiel": "Der Gärtner arbeitet im Sommer von früh bis spät.",
+    "beispielTr": "Bahçıvan yazın sabahtan akşama kadar çalışıyor.",
+    "beispielEn": "In summer the gardener works from dawn until late."
+  },
+  {
+    "id": 7646,
+    "tr": "otobüs şoförü",
+    "en": "bus driver",
+    "beispiel": "Der Busfahrer hat mir gesagt, dass ich hier aussteigen muss.",
+    "beispielTr": "Otobüs şoförü bana burada inmem gerektiğini söyledi.",
+    "beispielEn": "The bus driver told me that I have to get off here."
+  },
+  {
+    "id": 7647,
+    "tr": "taksi şoförü",
+    "en": "taxi driver",
+    "beispiel": "Mein Bruder arbeitet seit zwei Jahren als Taxifahrer.",
+    "beispielTr": "Ağabeyim iki yıldır taksi şoförü olarak çalışıyor.",
+    "beispielEn": "My brother has been working as a taxi driver for two years."
+  },
+  {
+    "id": 7648,
+    "tr": "eczacı",
+    "en": "pharmacist",
+    "beispiel": "Der Apotheker hat mir eine gute Salbe empfohlen.",
+    "beispielTr": "Eczacı bana iyi bir merhem tavsiye etti.",
+    "beispielEn": "The pharmacist recommended a good ointment to me."
+  },
+  {
+    "id": 7649,
+    "tr": "diş hekimi",
+    "en": "dentist",
+    "beispiel": "Ich habe am Montag einen Termin beim Zahnarzt.",
+    "beispielTr": "Pazartesi diş hekiminde randevum var.",
+    "beispielEn": "I have a dentist appointment on Monday."
+  },
+  {
+    "id": 7650,
+    "tr": "veteriner",
+    "en": "veterinarian",
+    "beispiel": "Unsere Katze ist krank und muss zum Tierarzt.",
+    "beispielTr": "Kedimiz hasta ve veterinere gitmesi gerekiyor.",
+    "beispielEn": "Our cat is sick and has to go to the veterinarian."
+  },
+  {
+    "id": 7651,
+    "tr": "itfaiyeci",
+    "en": "firefighter",
+    "beispiel": "Mein Sohn möchte später Feuerwehrmann werden.",
+    "beispielTr": "Oğlum ileride itfaiyeci olmak istiyor.",
+    "beispielEn": "My son wants to become a firefighter later on."
+  },
+  {
+    "id": 7652,
+    "tr": "postacı",
+    "en": "mailman",
+    "beispiel": "Der Postbote bringt die Pakete am Vormittag.",
+    "beispielTr": "Postacı paketleri öğleden önce getiriyor.",
+    "beispielEn": "The mailman brings the packages in the morning."
+  },
+  {
+    "id": 7653,
+    "tr": "inşaat işçisi",
+    "en": "construction worker",
+    "beispiel": "Die Bauarbeiter machen um zwölf Uhr Pause.",
+    "beispielTr": "İnşaat işçileri saat on ikide mola veriyor.",
+    "beispielEn": "The construction workers take a break at twelve."
+  },
+  {
+    "id": 7654,
+    "tr": "temizlikçi kadın",
+    "en": "cleaning lady",
+    "beispiel": "Die Putzfrau kommt zweimal in der Woche ins Büro.",
+    "beispielTr": "Temizlikçi kadın haftada iki kez ofise geliyor.",
+    "beispielEn": "The cleaning lady comes to the office twice a week."
+  },
+  {
+    "id": 7655,
+    "tr": "duvarcı",
+    "en": "bricklayer",
+    "beispiel": "Der Maurer hat die Wand in zwei Tagen gebaut.",
+    "beispielTr": "Duvarcı duvarı iki günde ördü.",
+    "beispielEn": "The bricklayer built the wall in two days."
+  },
+  {
+    "id": 7656,
+    "tr": "yazılımcı",
+    "en": "programmer",
+    "beispiel": "Als Programmierer sitze ich den ganzen Tag am Computer.",
+    "beispielTr": "Yazılımcı olarak bütün gün bilgisayar başında oturuyorum.",
+    "beispielEn": "As a programmer I sit at the computer all day."
+  },
+  {
+    "id": 7657,
+    "tr": "anaokulu öğretmeni",
+    "en": "preschool teacher",
+    "beispiel": "Der Erzieher spielt mit den Kindern draußen.",
+    "beispielTr": "Anaokulu öğretmeni çocuklarla dışarıda oynuyor.",
+    "beispielEn": "The preschool teacher is playing outside with the children."
+  },
+  {
+    "id": 7658,
+    "tr": "pilot",
+    "en": "pilot",
+    "beispiel": "Der Pilot begrüßt die Passagiere im Flugzeug.",
+    "beispielTr": "Pilot uçaktaki yolcuları selamlıyor.",
+    "beispielEn": "The pilot greets the passengers on the plane."
+  },
+  {
+    "id": 7659,
+    "tr": "muhasebeci",
+    "en": "accountant",
+    "beispiel": "Unser Buchhalter kontrolliert jeden Monat alle Rechnungen.",
+    "beispielTr": "Muhasebecimiz her ay bütün faturaları kontrol ediyor.",
+    "beispielEn": "Our accountant checks all the invoices every month."
+  },
+  {
+    "id": 7660,
+    "tr": "şube müdürü",
+    "en": "branch manager",
+    "beispiel": "Unser Filialleiter ist erst seit einem Monat hier.",
+    "beispielTr": "Şube müdürümüz sadece bir aydır burada.",
+    "beispielEn": "Our branch manager has only been here for a month."
+  },
+  {
+    "id": 7661,
+    "tr": "iş görüşmesi",
+    "en": "job interview",
+    "beispiel": "Ich habe morgen um zehn Uhr ein Bewerbungsgespräch.",
+    "beispielTr": "Yarın saat onda bir iş görüşmem var.",
+    "beispielEn": "I have a job interview tomorrow at ten."
+  },
+  {
+    "id": 7662,
+    "tr": "terfi",
+    "en": "promotion",
+    "beispiel": "Nach der Beförderung verdient sie viel mehr Geld.",
+    "beispielTr": "Terfiden sonra çok daha fazla para kazanıyor.",
+    "beispielEn": "After the promotion she earns a lot more money."
+  },
+  {
+    "id": 7663,
+    "tr": "iş bulma kurumu",
+    "en": "employment office",
+    "beispiel": "Er sucht beim Arbeitsamt nach einer neuen Stelle.",
+    "beispielTr": "İş bulma kurumunda yeni bir iş arıyor.",
+    "beispielEn": "He is looking for a new job at the employment office."
+  },
+  {
+    "id": 7664,
+    "tr": "ek iş",
+    "en": "side job",
+    "beispiel": "Am Wochenende habe ich einen Nebenjob in einem Café.",
+    "beispielTr": "Hafta sonu bir kafede ek işim var.",
+    "beispielEn": "On the weekend I have a side job at a café."
+  },
+  {
+    "id": 7665,
+    "tr": "çalışma masası",
+    "en": "desk",
+    "beispiel": "Auf meinem Schreibtisch liegen zu viele Papiere.",
+    "beispielTr": "Çalışma masamın üstünde çok fazla kâğıt var.",
+    "beispielEn": "There are too many papers on my desk."
+  },
+  {
+    "id": 7666,
+    "tr": "çalışma odası",
+    "en": "study",
+    "beispiel": "Mein Mann arbeitet oft in seinem Arbeitszimmer.",
+    "beispielTr": "Kocam sık sık çalışma odasında çalışıyor.",
+    "beispielEn": "My husband often works in his study."
+  },
+  {
+    "id": 7667,
+    "tr": "dosya dolabı",
+    "en": "filing cabinet",
+    "beispiel": "Die alten Verträge sind im Aktenschrank.",
+    "beispielTr": "Eski sözleşmeler dosya dolabında.",
+    "beispielEn": "The old contracts are in the filing cabinet."
+  },
+  {
+    "id": 7668,
+    "tr": "ataç",
+    "en": "paper clip",
+    "beispiel": "Kannst du mir bitte eine Büroklammer geben?",
+    "beispielTr": "Bana bir ataç verebilir misin lütfen?",
+    "beispielEn": "Can you give me a paper clip, please?"
+  },
+  {
+    "id": 7669,
+    "tr": "not defteri",
+    "en": "notepad",
+    "beispiel": "Ich schreibe die Telefonnummer in meinen Notizblock.",
+    "beispielTr": "Telefon numarasını not defterime yazıyorum.",
+    "beispielEn": "I'm writing the phone number in my notepad."
+  },
+  {
+    "id": 7670,
+    "tr": "depo",
+    "en": "warehouse",
+    "beispiel": "In der Lagerhalle ist es im Winter sehr kalt.",
+    "beispielTr": "Depoda kışın çok soğuk oluyor.",
+    "beispielEn": "It gets very cold in the warehouse in winter."
+  },
+  {
+    "id": 7671,
+    "tr": "kasap dükkânı",
+    "en": "butcher shop",
+    "beispiel": "In der Metzgerei kaufe ich immer frisches Fleisch.",
+    "beispielTr": "Kasap dükkânından hep taze et alırım.",
+    "beispielEn": "I always buy fresh meat at the butcher shop."
+  },
+  {
+    "id": 7672,
+    "tr": "kuaför salonu",
+    "en": "hair salon",
+    "beispiel": "Der Friseursalon ist montags immer geschlossen.",
+    "beispielTr": "Kuaför salonu pazartesileri hep kapalı.",
+    "beispielEn": "The hair salon is always closed on Mondays."
+  },
+  {
+    "id": 7673,
+    "tr": "muayenehane",
+    "en": "medical practice",
+    "beispiel": "In der Arztpraxis warten heute viele Patienten.",
+    "beispielTr": "Muayenehanede bugün birçok hasta bekliyor.",
+    "beispielEn": "Many patients are waiting at the medical practice today."
+  },
+  {
+    "id": 7674,
+    "tr": "öğle molası",
+    "en": "lunch break",
+    "beispiel": "In der Mittagspause esse ich meistens in der Kantine.",
+    "beispielTr": "Öğle molasında genellikle yemekhanede yemek yerim.",
+    "beispielEn": "During my lunch break I usually eat in the cafeteria."
+  },
+  {
+    "id": 7675,
+    "tr": "kahve molası",
+    "en": "coffee break",
+    "beispiel": "Wir machen um halb vier eine kurze Kaffeepause.",
+    "beispielTr": "Saat üç buçukta kısa bir kahve molası veriyoruz.",
+    "beispielEn": "We take a short coffee break at half past three."
+  },
+  {
+    "id": 7676,
+    "tr": "gece vardiyası",
+    "en": "night shift",
+    "beispiel": "Diese Woche habe ich Nachtschicht im Krankenhaus.",
+    "beispielTr": "Bu hafta hastanede gece vardiyasındayım.",
+    "beispielEn": "This week I have the night shift at the hospital."
+  },
+  {
+    "id": 7677,
+    "tr": "akşam vardiyası",
+    "en": "evening shift",
+    "beispiel": "Nach der Spätschicht komme ich erst um elf nach Hause.",
+    "beispielTr": "Akşam vardiyasından sonra eve ancak on birde geliyorum.",
+    "beispielEn": "After the evening shift I don't get home until eleven."
+  },
+  {
+    "id": 7678,
+    "tr": "iş günü",
+    "en": "workday",
+    "beispiel": "Heute war ein langer und schwerer Arbeitstag.",
+    "beispielTr": "Bugün uzun ve zor bir iş günüydü.",
+    "beispielEn": "Today was a long and hard workday."
+  },
+  {
+    "id": 7679,
+    "tr": "hafta sonu",
+    "en": "weekend",
+    "beispiel": "Am Wochenende muss ich zum Glück nicht arbeiten.",
+    "beispielTr": "Neyse ki hafta sonu çalışmam gerekmiyor.",
+    "beispielEn": "Luckily I don't have to work on the weekend."
+  },
+  {
+    "id": 7680,
+    "tr": "vardiya çizelgesi",
+    "en": "shift schedule",
+    "beispiel": "Der neue Dienstplan hängt schon an der Tür.",
+    "beispielTr": "Yeni vardiya çizelgesi çoktan kapıda asılı.",
+    "beispielEn": "The new shift schedule is already hanging on the door."
+  },
+  {
+    "id": 7681,
+    "tr": "izin günü",
+    "en": "vacation day",
+    "beispiel": "Ich habe dieses Jahr noch fünf Urlaubstage.",
+    "beispielTr": "Bu yıl daha beş izin günüm var.",
+    "beispielEn": "I still have five vacation days this year."
+  },
+  {
+    "id": 7682,
+    "tr": "kazanç",
+    "en": "earnings",
+    "beispiel": "Der Verdienst ist niedrig, aber die Arbeit macht Spaß.",
+    "beispielTr": "Kazanç az, ama iş keyifli.",
+    "beispielEn": "The earnings are low, but the work is fun."
+  },
+  {
+    "id": 7683,
+    "tr": "prim",
+    "en": "bonus",
+    "beispiel": "Im Dezember bekommen alle Mitarbeiter einen Bonus.",
+    "beispielTr": "Aralıkta bütün çalışanlar prim alıyor.",
+    "beispielEn": "In December all employees get a bonus."
+  },
+  {
+    "id": 7684,
+    "tr": "yılbaşı ikramiyesi",
+    "en": "Christmas bonus",
+    "beispiel": "Von meinem Weihnachtsgeld kaufe ich eine Waschmaschine.",
+    "beispielTr": "Yılbaşı ikramiyemle bir çamaşır makinesi alıyorum.",
+    "beispielEn": "I'm buying a washing machine with my Christmas bonus."
+  },
+  {
+    "id": 7685,
+    "tr": "hesap numarası",
+    "en": "account number",
+    "beispiel": "Bitte schreiben Sie Ihre Kontonummer auf das Formular.",
+    "beispielTr": "Lütfen hesap numaranızı forma yazın.",
+    "beispielEn": "Please write your account number on the form."
+  },
+  {
+    "id": 7686,
+    "tr": "iş arkadaşı",
+    "en": "coworker",
+    "beispiel": "Mein Arbeitskollege hilft mir bei schweren Aufgaben.",
+    "beispielTr": "İş arkadaşım zor işlerde bana yardım ediyor.",
+    "beispielEn": "My coworker helps me with difficult tasks."
+  },
+  {
+    "id": 7687,
+    "tr": "genel müdür",
+    "en": "managing director",
+    "beispiel": "Der Geschäftsführer kommt morgen in unsere Abteilung.",
+    "beispielTr": "Genel müdür yarın bizim bölüme geliyor.",
+    "beispielEn": "The managing director is coming to our department tomorrow."
+  }
+]

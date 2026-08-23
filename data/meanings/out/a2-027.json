@@ -1,0 +1,402 @@
+[
+ {
+  "id": 8290,
+  "tr": "laflamak",
+  "en": "to chat",
+  "beispiel": "Wir haben gestern lange am Telefon gequatscht.",
+  "beispielTr": "Dün telefonda uzun uzun lafladık.",
+  "beispielEn": "We chatted on the phone for a long time yesterday."
+ },
+ {
+  "id": 8291,
+  "tr": "fısıldamak",
+  "en": "to whisper",
+  "beispiel": "Meine Freundin flüstert mir die Antwort ins Ohr.",
+  "beispielTr": "Arkadaşım cevabı kulağıma fısıldıyor.",
+  "beispielEn": "My friend whispers the answer in my ear."
+ },
+ {
+  "id": 8292,
+  "tr": "haber vermek",
+  "en": "to notify",
+  "beispiel": "Wir benachrichtigen dich, wenn das Paket da ist.",
+  "beispielTr": "Paket gelince sana haber veririz.",
+  "beispielEn": "We will notify you when the package arrives."
+ },
+ {
+  "id": 8293,
+  "tr": "öğrenmek",
+  "en": "to find out",
+  "beispiel": "Ich will herausfinden, wie viel die Reparatur kostet.",
+  "beispielTr": "Tamirin ne kadar tuttuğunu öğrenmek istiyorum.",
+  "beispielEn": "I want to find out how much the repair costs."
+ },
+ {
+  "id": 8294,
+  "tr": "iç çekmek",
+  "en": "to sigh",
+  "beispiel": "Meine Mutter seufzt, wenn sie die Rechnung sieht.",
+  "beispielTr": "Annem faturayı görünce iç çekiyor.",
+  "beispielEn": "My mother sighs when she sees the bill."
+ },
+ {
+  "id": 8295,
+  "tr": "üzülmek",
+  "en": "to regret",
+  "beispiel": "Ich bedauere sehr, dass ich nicht kommen kann.",
+  "beispielTr": "Gelemeyeceğim için çok üzgünüm.",
+  "beispielEn": "I really regret that I cannot come."
+ },
+ {
+  "id": 8296,
+  "tr": "hayret etmek",
+  "en": "to be amazed",
+  "beispiel": "Die Kinder staunen über die große Torte.",
+  "beispielTr": "Çocuklar büyük pastaya hayret ediyor.",
+  "beispielEn": "The children are amazed at the big cake."
+ },
+ {
+  "id": 8297,
+  "tr": "iyi geçinmek",
+  "en": "to get along",
+  "beispiel": "Meine zwei Brüder vertragen sich endlich wieder.",
+  "beispielTr": "İki kardeşim sonunda yine iyi geçiniyor.",
+  "beispielEn": "My two brothers finally get along again."
+ },
+ {
+  "id": 8298,
+  "tr": "nişanlanmak",
+  "en": "to get engaged",
+  "beispiel": "Anna und Tom verloben sich im Sommer.",
+  "beispielTr": "Anna ile Tom yazın nişanlanıyor.",
+  "beispielEn": "Anna and Tom are getting engaged in the summer."
+ },
+ {
+  "id": 8299,
+  "tr": "e-posta atmak",
+  "en": "to email",
+  "beispiel": "Ich maile dir die Adresse heute Abend.",
+  "beispielTr": "Adresi bu akşam sana e-posta atarım.",
+  "beispielEn": "I will email you the address tonight."
+ },
+ {
+  "id": 8300,
+  "tr": "tehdit etmek",
+  "en": "to threaten",
+  "beispiel": "Der Nachbar droht uns mit der Polizei.",
+  "beispielTr": "Komşu bizi polisle tehdit ediyor.",
+  "beispielEn": "The neighbor is threatening us with the police."
+ },
+ {
+  "id": 8301,
+  "tr": "suçlamak",
+  "en": "to blame",
+  "beispiel": "Meine Eltern werfen mir meine Faulheit vor.",
+  "beispielTr": "Ailem tembelliğim yüzünden beni suçluyor.",
+  "beispielEn": "My parents blame me for my laziness."
+ },
+ {
+  "id": 8302,
+  "tr": "ulaşmak",
+  "en": "to get through",
+  "beispiel": "Ich komme bei der Hotline einfach nicht durch.",
+  "beispielTr": "Çağrı merkezine bir türlü ulaşamıyorum.",
+  "beispielEn": "I just cannot get through to the hotline."
+ },
+ {
+  "id": 8303,
+  "tr": "duyurmak",
+  "en": "to announce",
+  "beispiel": "Die Lehrerin sagt den Test für Freitag an.",
+  "beispielTr": "Öğretmen sınavı cuma günü için duyuruyor.",
+  "beispielEn": "The teacher announces the test for Friday."
+ },
+ {
+  "id": 8304,
+  "tr": "cevap yazmak",
+  "en": "to write back",
+  "beispiel": "Kannst du mir bitte heute zurückschreiben?",
+  "beispielTr": "Bugün bana cevap yazabilir misin?",
+  "beispielEn": "Can you write back to me today?"
+ },
+ {
+  "id": 8305,
+  "tr": "yanlış numara çevirmek",
+  "en": "to dial the wrong number",
+  "beispiel": "Entschuldigung, ich habe mich verwählt.",
+  "beispielTr": "Pardon, yanlış numara çevirdim.",
+  "beispielEn": "Sorry, I dialed the wrong number."
+ },
+ {
+  "id": 8306,
+  "tr": "hatta kalmak",
+  "en": "to hold the line",
+  "beispiel": "Können Sie bitte einen Moment dranbleiben?",
+  "beispielTr": "Bir dakika hatta kalabilir misiniz?",
+  "beispielEn": "Could you please hold the line for a moment?"
+ },
+ {
+  "id": 8307,
+  "tr": "alay etmek",
+  "en": "to laugh at",
+  "beispiel": "Niemand lacht dich wegen deiner Fehler aus.",
+  "beispielTr": "Hataların yüzünden kimse seninle alay etmiyor.",
+  "beispielEn": "Nobody laughs at you because of your mistakes."
+ },
+ {
+  "id": 8308,
+  "tr": "bağırmak",
+  "en": "to yell at",
+  "beispiel": "Der Chef schreit seine Mitarbeiter nie an.",
+  "beispielTr": "Patron çalışanlarına asla bağırmaz.",
+  "beispielEn": "The boss never yells at his employees."
+ },
+ {
+  "id": 8309,
+  "tr": "sözünü bitirmek",
+  "en": "to finish speaking",
+  "beispiel": "Lass mich bitte in Ruhe ausreden.",
+  "beispielTr": "Lütfen sözümü rahatça bitirmeme izin ver.",
+  "beispielEn": "Please let me finish what I am saying."
+ },
+ {
+  "id": 8310,
+  "tr": "kendini ifade etmek",
+  "en": "to express oneself",
+  "beispiel": "Auf Deutsch drücke ich mich noch langsam aus.",
+  "beispielTr": "Almanca kendimi hâlâ yavaş ifade ediyorum.",
+  "beispielEn": "I still express myself slowly in German."
+ },
+ {
+  "id": 8311,
+  "tr": "sinir etmek",
+  "en": "to annoy",
+  "beispiel": "Der laute Nachbar nervt mich jeden Abend.",
+  "beispielTr": "Gürültücü komşu her akşam sinirimi bozuyor.",
+  "beispielEn": "The loud neighbor annoys me every evening."
+ },
+ {
+  "id": 8312,
+  "tr": "arkadaş olmak",
+  "en": "to make friends",
+  "beispiel": "Im Kurs freundet sie sich schnell mit allen an.",
+  "beispielTr": "Kursta herkesle çabucak arkadaş oluyor.",
+  "beispielEn": "She quickly makes friends with everyone in the course."
+ },
+ {
+  "id": 8313,
+  "tr": "iletişime geçmek",
+  "en": "to contact",
+  "beispiel": "Bitte kontaktieren Sie uns per E-Mail.",
+  "beispielTr": "Lütfen bizimle e-posta yoluyla iletişime geçin.",
+  "beispielEn": "Please contact us by email."
+ },
+ {
+  "id": 8314,
+  "tr": "paylaşmak",
+  "en": "to post",
+  "beispiel": "Meine Schwester postet jeden Tag ein Foto.",
+  "beispielTr": "Kız kardeşim her gün bir fotoğraf paylaşıyor.",
+  "beispielEn": "My sister posts a photo every day."
+ },
+ {
+  "id": 8315,
+  "tr": "beğenmek",
+  "en": "to like",
+  "beispiel": "Mein Bruder likt alle meine Bilder sofort.",
+  "beispielTr": "Kardeşim bütün fotoğraflarımı hemen beğeniyor.",
+  "beispielEn": "My brother likes all my pictures right away."
+ },
+ {
+  "id": 8316,
+  "tr": "yollamak",
+  "en": "to send out",
+  "beispiel": "Ich verschicke die Einladungen morgen früh.",
+  "beispielTr": "Davetiyeleri yarın sabah yolluyorum.",
+  "beispielEn": "I am sending out the invitations tomorrow morning."
+ },
+ {
+  "id": 8317,
+  "tr": "göndermek",
+  "en": "to send over",
+  "beispiel": "Die Firma schickt mir den Vertrag heute zu.",
+  "beispielTr": "Firma sözleşmeyi bugün bana gönderiyor.",
+  "beispielEn": "The company is sending me the contract today."
+ },
+ {
+  "id": 8318,
+  "tr": "tanıtmak",
+  "en": "to demonstrate",
+  "beispiel": "Der Verkäufer führt uns das neue Handy vor.",
+  "beispielTr": "Satıcı bize yeni telefonu tanıtıyor.",
+  "beispielEn": "The salesman demonstrates the new phone for us."
+ },
+ {
+  "id": 8319,
+  "tr": "fark etmek",
+  "en": "to notice",
+  "beispiel": "Ich habe den Fehler gar nicht mitbekommen.",
+  "beispielTr": "Hatayı hiç fark etmedim.",
+  "beispielEn": "I did not notice the mistake at all."
+ },
+ {
+  "id": 8320,
+  "tr": "anlamak",
+  "en": "to get it",
+  "beispiel": "Jetzt kapiere ich die Regel endlich.",
+  "beispielTr": "Kuralı sonunda şimdi anlıyorum.",
+  "beispielEn": "Now I finally get the rule."
+ },
+ {
+  "id": 8321,
+  "tr": "kafasını karıştırmak",
+  "en": "to confuse",
+  "beispiel": "Die vielen Formulare verwirren mich total.",
+  "beispielTr": "Bunca form kafamı tamamen karıştırıyor.",
+  "beispielEn": "All these forms totally confuse me."
+ },
+ {
+  "id": 8322,
+  "tr": "doğru tahmin etmek",
+  "en": "to guess right",
+  "beispiel": "Er errät meine Antwort fast immer sofort.",
+  "beispielTr": "Cevabımı neredeyse her zaman hemen tahmin ediyor.",
+  "beispielEn": "He almost always guesses my answer immediately."
+ },
+ {
+  "id": 8323,
+  "tr": "sezmek",
+  "en": "to sense",
+  "beispiel": "Ich ahne schon, dass sie bald umzieht.",
+  "beispielTr": "Yakında taşınacağını şimdiden seziyorum.",
+  "beispielEn": "I already sense that she will move soon."
+ },
+ {
+  "id": 8324,
+  "tr": "cesaret etmek",
+  "en": "to dare",
+  "beispiel": "Sie traut sich nicht, den Chef zu fragen.",
+  "beispielTr": "Patrona sormaya cesaret edemiyor.",
+  "beispielEn": "She does not dare to ask the boss."
+ },
+ {
+  "id": 8325,
+  "tr": "dedikodu yapmak",
+  "en": "to gossip",
+  "beispiel": "Die Nachbarinnen tratschen jeden Morgen im Hof.",
+  "beispielTr": "Komşu kadınlar her sabah avluda dedikodu yapıyor.",
+  "beispielEn": "The neighbors gossip in the yard every morning."
+ },
+ {
+  "id": 8326,
+  "tr": "tercih etmek",
+  "en": "to prefer",
+  "beispiel": "Am Abend ziehe ich Tee dem Kaffee vor.",
+  "beispielTr": "Akşamları çayı kahveye tercih ediyorum.",
+  "beispielEn": "In the evening I prefer tea to coffee."
+ },
+ {
+  "id": 8327,
+  "tr": "kabullenmek",
+  "en": "to acknowledge",
+  "beispiel": "Er sieht seinen Fehler endlich ein.",
+  "beispielTr": "Hatasını sonunda kabulleniyor.",
+  "beispielEn": "He finally acknowledges his mistake."
+ },
+ {
+  "id": 8328,
+  "tr": "itiraf etmek",
+  "en": "to confess",
+  "beispiel": "Sie gesteht, dass sie das Buch vergessen hat.",
+  "beispielTr": "Kitabı unuttuğunu itiraf ediyor.",
+  "beispielEn": "She confesses that she forgot the book."
+ },
+ {
+  "id": 8329,
+  "tr": "endişe etmek",
+  "en": "to fear",
+  "beispiel": "Ich befürchte, dass wir zu spät kommen.",
+  "beispielTr": "Geç kalacağımızdan endişe ediyorum.",
+  "beispielEn": "I am afraid that we will be too late."
+ },
+ {
+  "id": 8330,
+  "tr": "neşelendirmek",
+  "en": "to cheer up",
+  "beispiel": "Ein Anruf von dir muntert mich sofort auf.",
+  "beispielTr": "Senden gelen bir telefon beni hemen neşelendiriyor.",
+  "beispielEn": "A call from you cheers me up right away."
+ },
+ {
+  "id": 8331,
+  "tr": "motive etmek",
+  "en": "to motivate",
+  "beispiel": "Meine Lehrerin motiviert uns jeden Tag neu.",
+  "beispielTr": "Öğretmenim bizi her gün yeniden motive ediyor.",
+  "beispielEn": "My teacher motivates us anew every day."
+ },
+ {
+  "id": 8332,
+  "tr": "flört etmek",
+  "en": "to flirt",
+  "beispiel": "Auf der Party flirtet er mit allen.",
+  "beispielTr": "Partide herkesle flört ediyor.",
+  "beispielEn": "He flirts with everyone at the party."
+ },
+ {
+  "id": 8333,
+  "tr": "emanet etmek",
+  "en": "to entrust",
+  "beispiel": "Ich vertraue dir meinen Schlüssel an.",
+  "beispielTr": "Anahtarımı sana emanet ediyorum.",
+  "beispielEn": "I am entrusting my key to you."
+ },
+ {
+  "id": 8334,
+  "tr": "baş sallamak",
+  "en": "to nod",
+  "beispiel": "Sie nickt nur und sagt kein Wort.",
+  "beispielTr": "Sadece başını sallıyor ve tek kelime etmiyor.",
+  "beispielEn": "She just nods and does not say a word."
+ },
+ {
+  "id": 8335,
+  "tr": "sırıtmak",
+  "en": "to grin",
+  "beispiel": "Warum grinst du die ganze Zeit so?",
+  "beispielTr": "Neden sürekli böyle sırıtıyorsun?",
+  "beispielEn": "Why are you grinning like that all the time?"
+ },
+ {
+  "id": 8336,
+  "tr": "haykırmak",
+  "en": "to yell",
+  "beispiel": "Der Trainer brüllt über den ganzen Platz.",
+  "beispielTr": "Antrenör bütün sahaya haykırıyor.",
+  "beispielEn": "The coach yells across the whole field."
+ },
+ {
+  "id": 8337,
+  "tr": "söylenmek",
+  "en": "to grumble",
+  "beispiel": "Mein Kollege meckert über jedes Essen.",
+  "beispielTr": "İş arkadaşım her yemek için söyleniyor.",
+  "beispielEn": "My colleague grumbles about every meal."
+ },
+ {
+  "id": 8338,
+  "tr": "sızlanmak",
+  "en": "to whine",
+  "beispiel": "Er jammert den ganzen Tag über die Hitze.",
+  "beispielTr": "Bütün gün sıcaktan sızlanıyor.",
+  "beispielEn": "He whines about the heat all day long."
+ },
+ {
+  "id": 8339,
+  "tr": "şikâyet etmek",
+  "en": "to complain",
+  "beispiel": "Die Gäste beklagen sich über den Lärm.",
+  "beispielTr": "Misafirler gürültüden şikâyet ediyor.",
+  "beispielEn": "The guests complain about the noise."
+ }
+]

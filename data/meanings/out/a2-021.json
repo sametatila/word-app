@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7988,
+    "tr": "telefon konuşması",
+    "en": "phone conversation",
+    "beispiel": "Nach dem Telefongespräch war meine Mutter viel ruhiger.",
+    "beispielTr": "Telefon konuşmasından sonra annem çok daha sakindi.",
+    "beispielEn": "After the phone conversation my mother was much calmer."
+  },
+  {
+    "id": 7989,
+    "tr": "telefon rehberi",
+    "en": "phone book",
+    "beispiel": "Die Nummer der Praxis steht im Telefonbuch.",
+    "beispielTr": "Muayenehanenin numarası telefon rehberinde yazıyor.",
+    "beispielEn": "The clinic's number is in the phone book."
+  },
+  {
+    "id": 7990,
+    "tr": "kısa mesaj",
+    "en": "text message",
+    "beispiel": "Ich schreibe dir später eine SMS.",
+    "beispielTr": "Sana daha sonra bir kısa mesaj yazarım.",
+    "beispielEn": "I'll send you a text message later."
+  },
+  {
+    "id": 7991,
+    "tr": "sesli mesaj",
+    "en": "voice message",
+    "beispiel": "Meine Oma schickt lieber eine Sprachnachricht als eine SMS.",
+    "beispielTr": "Babaannem kısa mesaj yerine sesli mesaj göndermeyi tercih ediyor.",
+    "beispielEn": "My grandma prefers sending a voice message to a text."
+  },
+  {
+    "id": 7992,
+    "tr": "zil sesi",
+    "en": "ringtone",
+    "beispiel": "Dein Klingelton ist wirklich sehr laut.",
+    "beispielTr": "Zil sesin gerçekten çok yüksek.",
+    "beispielEn": "Your ringtone is really very loud."
+  },
+  {
+    "id": 7993,
+    "tr": "telefonu kapatmak",
+    "en": "to hang up",
+    "beispiel": "Bitte leg nicht auf, ich bin gleich zurück.",
+    "beispielTr": "Lütfen telefonu kapatma, hemen döneceğim.",
+    "beispielEn": "Please don't hang up, I'll be right back."
+  },
+  {
+    "id": 7994,
+    "tr": "geri aramak",
+    "en": "to call back",
+    "beispiel": "Kannst du mich heute Abend zurückrufen?",
+    "beispielTr": "Bu akşam beni geri arayabilir misin?",
+    "beispielEn": "Could you call me back this evening?"
+  },
+  {
+    "id": 7995,
+    "tr": "akıllı telefon",
+    "en": "smartphone",
+    "beispiel": "Mein neues Smartphone hat eine sehr gute Kamera.",
+    "beispielTr": "Yeni akıllı telefonumun kamerası çok iyi.",
+    "beispielEn": "My new smartphone has a very good camera."
+  },
+  {
+    "id": 7996,
+    "tr": "batarya",
+    "en": "battery",
+    "beispiel": "Mein Akku ist fast leer.",
+    "beispielTr": "Bataryam neredeyse bitti.",
+    "beispielEn": "My battery is almost dead."
+  },
+  {
+    "id": 7997,
+    "tr": "şarj kablosu",
+    "en": "charging cable",
+    "beispiel": "Hast du ein Ladekabel für mein Handy?",
+    "beispielTr": "Telefonum için bir şarj kablon var mı?",
+    "beispielEn": "Do you have a charging cable for my phone?"
+  },
+  {
+    "id": 7998,
+    "tr": "dizüstü bilgisayar",
+    "en": "laptop",
+    "beispiel": "Ich nehme meinen Laptop mit ins Büro.",
+    "beispielTr": "Dizüstü bilgisayarımı ofise götürüyorum.",
+    "beispielEn": "I'm taking my laptop to the office."
+  },
+  {
+    "id": 7999,
+    "tr": "fare",
+    "en": "mouse",
+    "beispiel": "Die Maus von meinem Computer funktioniert nicht mehr.",
+    "beispielTr": "Bilgisayarımın faresi artık çalışmıyor.",
+    "beispielEn": "My computer mouse doesn't work anymore."
+  },
+  {
+    "id": 8000,
+    "tr": "kulaklık",
+    "en": "headphones",
+    "beispiel": "Im Zug höre ich Musik mit Kopfhörern.",
+    "beispielTr": "Trende kulaklıkla müzik dinliyorum.",
+    "beispielEn": "On the train I listen to music with headphones."
+  },
+  {
+    "id": 8001,
+    "tr": "mikrofon",
+    "en": "microphone",
+    "beispiel": "Dein Mikrofon ist aus, ich höre dich nicht.",
+    "beispielTr": "Mikrofonun kapalı, seni duymuyorum.",
+    "beispielEn": "Your microphone is off, I can't hear you."
+  },
+  {
+    "id": 8002,
+    "tr": "web kamerası",
+    "en": "webcam",
+    "beispiel": "Für den Videoanruf brauchst du eine Webcam.",
+    "beispielTr": "Görüntülü arama için bir web kamerasına ihtiyacın var.",
+    "beispielEn": "You need a webcam for the video call."
+  },
+  {
+    "id": 8003,
+    "tr": "tarayıcı",
+    "en": "scanner",
+    "beispiel": "Der Scanner steht neben dem Drucker.",
+    "beispielTr": "Tarayıcı yazıcının yanında duruyor.",
+    "beispielEn": "The scanner is next to the printer."
+  },
+  {
+    "id": 8004,
+    "tr": "taramak",
+    "en": "to scan",
+    "beispiel": "Bitte scannen Sie den Vertrag und schicken Sie ihn mir.",
+    "beispielTr": "Lütfen sözleşmeyi tarayın ve bana gönderin.",
+    "beispielEn": "Please scan the contract and send it to me."
+  },
+  {
+    "id": 8005,
+    "tr": "modem",
+    "en": "router",
+    "beispiel": "Der Router im Wohnzimmer ist kaputt.",
+    "beispielTr": "Oturma odasındaki modem bozuk.",
+    "beispielEn": "The router in the living room is broken."
+  },
+  {
+    "id": 8006,
+    "tr": "kablosuz internet",
+    "en": "wifi",
+    "beispiel": "Gibt es hier im Café ein kostenloses WLAN?",
+    "beispielTr": "Kafede ücretsiz kablosuz internet var mı?",
+    "beispielEn": "Is there free wifi here in the café?"
+  },
+  {
+    "id": 8007,
+    "tr": "yazılım",
+    "en": "software",
+    "beispiel": "Die neue Software ist einfach zu bedienen.",
+    "beispielTr": "Yeni yazılımın kullanımı kolay.",
+    "beispielEn": "The new software is easy to use."
+  },
+  {
+    "id": 8008,
+    "tr": "hafıza",
+    "en": "storage",
+    "beispiel": "Der Speicher von meinem Handy ist voll.",
+    "beispielTr": "Telefonumun hafızası dolu.",
+    "beispielEn": "My phone's storage is full."
+  },
+  {
+    "id": 8009,
+    "tr": "uygulama",
+    "en": "app",
+    "beispiel": "Ich habe eine neue App zum Deutschlernen.",
+    "beispielTr": "Almanca öğrenmek için yeni bir uygulamam var.",
+    "beispielEn": "I have a new app for learning German."
+  },
+  {
+    "id": 8010,
+    "tr": "güncelleme",
+    "en": "update",
+    "beispiel": "Das Update dauert ungefähr zehn Minuten.",
+    "beispielTr": "Güncelleme yaklaşık on dakika sürüyor.",
+    "beispielEn": "The update takes about ten minutes."
+  },
+  {
+    "id": 8011,
+    "tr": "internet sitesi",
+    "en": "website",
+    "beispiel": "Auf der Website der Schule findest du alle Termine.",
+    "beispielTr": "Okulun internet sitesinde bütün tarihleri bulabilirsin.",
+    "beispielEn": "You'll find all the dates on the school's website."
+  },
+  {
+    "id": 8012,
+    "tr": "kullanıcı",
+    "en": "user",
+    "beispiel": "Jeder Benutzer bekommt ein eigenes Passwort.",
+    "beispielTr": "Her kullanıcı kendine ait bir şifre alıyor.",
+    "beispielEn": "Every user gets their own password."
+  },
+  {
+    "id": 8013,
+    "tr": "kullanıcı adı",
+    "en": "username",
+    "beispiel": "Ich habe meinen Benutzernamen vergessen.",
+    "beispielTr": "Kullanıcı adımı unuttum.",
+    "beispielEn": "I forgot my username."
+  },
+  {
+    "id": 8014,
+    "tr": "çıkış yapmak",
+    "en": "to log out",
+    "beispiel": "Bitte melde dich am Computer ab.",
+    "beispielTr": "Lütfen bilgisayarda çıkış yap.",
+    "beispielEn": "Please log out of the computer."
+  },
+  {
+    "id": 8015,
+    "tr": "çevrimdışı",
+    "en": "offline",
+    "beispiel": "Mein Bruder war den ganzen Tag offline.",
+    "beispielTr": "Kardeşim bütün gün çevrimdışıydı.",
+    "beispielEn": "My brother was offline all day."
+  },
+  {
+    "id": 8016,
+    "tr": "sohbet",
+    "en": "chat",
+    "beispiel": "In unserem Chat schreiben wir jeden Tag.",
+    "beispielTr": "Sohbetimizde her gün yazışıyoruz.",
+    "beispielEn": "We write in our chat every day."
+  },
+  {
+    "id": 8017,
+    "tr": "profil",
+    "en": "profile",
+    "beispiel": "Auf meinem Profil ist ein Foto vom Urlaub.",
+    "beispielTr": "Profilimde tatilden bir fotoğraf var.",
+    "beispielEn": "There's a vacation photo on my profile."
+  },
+  {
+    "id": 8018,
+    "tr": "özçekim",
+    "en": "selfie",
+    "beispiel": "Wir haben vor dem Museum ein Selfie gemacht.",
+    "beispielTr": "Müzenin önünde bir özçekim yaptık.",
+    "beispielEn": "We took a selfie in front of the museum."
+  },
+  {
+    "id": 8019,
+    "tr": "ek",
+    "en": "attachment",
+    "beispiel": "Die Rechnung ist im Anhang.",
+    "beispielTr": "Fatura ekte.",
+    "beispielEn": "The invoice is in the attachment."
+  },
+  {
+    "id": 8020,
+    "tr": "konu başlığı",
+    "en": "subject line",
+    "beispiel": "Schreib bitte einen kurzen Betreff in die E-Mail.",
+    "beispielTr": "Lütfen e-postaya kısa bir konu başlığı yaz.",
+    "beispielEn": "Please write a short subject line in the email."
+  },
+  {
+    "id": 8021,
+    "tr": "istenmeyen posta",
+    "en": "spam",
+    "beispiel": "Diese Nachricht war leider Spam.",
+    "beispielTr": "Bu mesaj maalesef istenmeyen postaydı.",
+    "beispielEn": "This message was unfortunately spam."
+  },
+  {
+    "id": 8022,
+    "tr": "yollamak",
+    "en": "to send off",
+    "beispiel": "Ich schicke das Formular gleich ab.",
+    "beispielTr": "Formu hemen yolluyorum.",
+    "beispielEn": "I'm sending the form off right away."
+  },
+  {
+    "id": 8023,
+    "tr": "zarf",
+    "en": "envelope",
+    "beispiel": "Der Brief liegt in einem weißen Umschlag.",
+    "beispielTr": "Mektup beyaz bir zarfın içinde duruyor.",
+    "beispielEn": "The letter is in a white envelope."
+  },
+  {
+    "id": 8024,
+    "tr": "mektup kâğıdı",
+    "en": "writing paper",
+    "beispiel": "Meine Tante schreibt immer auf schönem Briefpapier.",
+    "beispielTr": "Teyzem her zaman güzel mektup kâğıdına yazar.",
+    "beispielEn": "My aunt always writes on nice writing paper."
+  },
+  {
+    "id": 8025,
+    "tr": "küçük paket",
+    "en": "small parcel",
+    "beispiel": "Für meine Schwester ist ein Päckchen gekommen.",
+    "beispielTr": "Kız kardeşime küçük bir paket geldi.",
+    "beispielEn": "A small parcel has arrived for my sister."
+  },
+  {
+    "id": 8026,
+    "tr": "posta ücreti",
+    "en": "postage",
+    "beispiel": "Das Porto für den Brief kostet einen Euro.",
+    "beispielTr": "Mektubun posta ücreti bir euro tutuyor.",
+    "beispielEn": "The postage for the letter costs one euro."
+  },
+  {
+    "id": 8027,
+    "tr": "postane",
+    "en": "post office",
+    "beispiel": "Das Postamt ist samstags nur bis zwölf Uhr offen.",
+    "beispielTr": "Postane cumartesileri sadece saat on ikiye kadar açık.",
+    "beispielEn": "The post office is only open until noon on Saturdays."
+  },
+  {
+    "id": 8028,
+    "tr": "posta kutusu",
+    "en": "post office box",
+    "beispiel": "Schicken Sie den Brief bitte an unser Postfach.",
+    "beispielTr": "Lütfen mektubu posta kutumuza gönderin.",
+    "beispielEn": "Please send the letter to our post office box."
+  },
+  {
+    "id": 8029,
+    "tr": "kapı numarası",
+    "en": "house number",
+    "beispiel": "Du hast die Hausnummer im Formular vergessen.",
+    "beispielTr": "Formda kapı numarasını unutmuşsun.",
+    "beispielEn": "You forgot the house number on the form."
+  },
+  {
+    "id": 8030,
+    "tr": "gazete yazısı",
+    "en": "newspaper article",
+    "beispiel": "Der Zeitungsartikel über unsere Stadt war sehr interessant.",
+    "beispielTr": "Şehrimizle ilgili gazete yazısı çok ilginçti.",
+    "beispielEn": "The newspaper article about our city was very interesting."
+  },
+  {
+    "id": 8031,
+    "tr": "günlük gazete",
+    "en": "daily newspaper",
+    "beispiel": "Mein Vater liest jeden Morgen die Tageszeitung.",
+    "beispielTr": "Babam her sabah günlük gazete okur.",
+    "beispielEn": "My father reads the daily newspaper every morning."
+  },
+  {
+    "id": 8032,
+    "tr": "yayın akışı",
+    "en": "TV schedule",
+    "beispiel": "Heute ist das Fernsehprogramm wirklich langweilig.",
+    "beispielTr": "Bugün yayın akışı gerçekten sıkıcı.",
+    "beispielEn": "The TV schedule is really boring today."
+  },
+  {
+    "id": 8033,
+    "tr": "televizyon programı",
+    "en": "TV show",
+    "beispiel": "Diese Fernsehsendung läuft immer am Sonntagabend.",
+    "beispielTr": "Bu televizyon programı hep pazar akşamı yayınlanıyor.",
+    "beispielEn": "This TV show always airs on Sunday evening."
+  },
+  {
+    "id": 8034,
+    "tr": "radyo istasyonu",
+    "en": "radio station",
+    "beispiel": "Im Auto höre ich immer denselben Radiosender.",
+    "beispielTr": "Arabada hep aynı radyo istasyonunu dinliyorum.",
+    "beispielEn": "In the car I always listen to the same radio station."
+  },
+  {
+    "id": 8035,
+    "tr": "podcast",
+    "en": "podcast",
+    "beispiel": "Beim Kochen höre ich gern einen Podcast.",
+    "beispielTr": "Yemek yaparken podcast dinlemeyi severim.",
+    "beispielEn": "I like listening to a podcast while cooking."
+  },
+  {
+    "id": 8036,
+    "tr": "ses seviyesi",
+    "en": "volume",
+    "beispiel": "Kannst du bitte die Lautstärke leiser stellen?",
+    "beispielTr": "Lütfen sesi biraz kısar mısın?",
+    "beispielEn": "Could you please turn the volume down?"
+  },
+  {
+    "id": 8037,
+    "tr": "kanal değiştirmek",
+    "en": "to switch channels",
+    "beispiel": "Bitte schalte auf einen anderen Sender um.",
+    "beispielTr": "Lütfen başka bir kanala geç.",
+    "beispielEn": "Please switch to a different channel."
+  }
+]

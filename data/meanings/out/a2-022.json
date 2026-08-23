@@ -1,0 +1,402 @@
+[
+  {
+    "id": 8038,
+    "tr": "kapatmak",
+    "en": "to turn off",
+    "beispiel": "Schalte bitte den Fernseher aus, ich möchte schlafen.",
+    "beispielTr": "Lütfen televizyonu kapat, uyumak istiyorum.",
+    "beispielEn": "Please turn off the TV, I want to sleep."
+  },
+  {
+    "id": 8039,
+    "tr": "olumlu cevap",
+    "en": "acceptance",
+    "beispiel": "Wir warten noch auf deine Zusage für die Hochzeit.",
+    "beispielTr": "Düğün için hâlâ olumlu cevabını bekliyoruz.",
+    "beispielEn": "We're still waiting for your acceptance for the wedding."
+  },
+  {
+    "id": 8040,
+    "tr": "olumsuz cevap",
+    "en": "rejection",
+    "beispiel": "Leider habe ich eine Absage von der Firma bekommen.",
+    "beispielTr": "Maalesef firmadan olumsuz bir cevap aldım.",
+    "beispielEn": "Unfortunately I got a rejection from the company."
+  },
+  {
+    "id": 8041,
+    "tr": "anlaşmak",
+    "en": "to coordinate",
+    "beispiel": "Wir müssen uns noch über den Termin absprechen.",
+    "beispielTr": "Randevu konusunda anlaşmamız gerekiyor.",
+    "beispielEn": "We still need to coordinate the appointment."
+  },
+  {
+    "id": 8042,
+    "tr": "anlaşma",
+    "en": "agreement",
+    "beispiel": "Wir haben eine Vereinbarung über die Miete getroffen.",
+    "beispielTr": "Kira konusunda bir anlaşmaya vardık.",
+    "beispielEn": "We reached an agreement about the rent."
+  },
+  {
+    "id": 8043,
+    "tr": "kayıt formu",
+    "en": "registration form",
+    "beispiel": "Bitte füllen Sie das Anmeldeformular aus.",
+    "beispielTr": "Lütfen kayıt formunu doldurun.",
+    "beispielEn": "Please fill out the registration form."
+  },
+  {
+    "id": 8044,
+    "tr": "bilet",
+    "en": "ticket",
+    "beispiel": "Ich habe meinen Fahrschein am Automaten gekauft.",
+    "beispielTr": "Biletimi otomattan aldım.",
+    "beispielEn": "I bought my ticket at the machine."
+  },
+  {
+    "id": 8045,
+    "tr": "kompartıman",
+    "en": "compartment",
+    "beispiel": "In unserem Abteil sitzen noch zwei Personen.",
+    "beispielTr": "Kompartımanımızda iki kişi daha oturuyor.",
+    "beispielEn": "There are two more people in our compartment."
+  },
+  {
+    "id": 8046,
+    "tr": "kondüktör",
+    "en": "conductor",
+    "beispiel": "Der Schaffner möchte unsere Tickets sehen.",
+    "beispielTr": "Kondüktör biletlerimizi görmek istiyor.",
+    "beispielEn": "The conductor wants to see our tickets."
+  },
+  {
+    "id": 8047,
+    "tr": "otobüs durağı",
+    "en": "bus stop",
+    "beispiel": "Die Bushaltestelle ist gleich vor dem Supermarkt.",
+    "beispielTr": "Otobüs durağı hemen süpermarketin önünde.",
+    "beispielEn": "The bus stop is right in front of the supermarket."
+  },
+  {
+    "id": 8048,
+    "tr": "otogar",
+    "en": "bus station",
+    "beispiel": "Der Bus nach Hamburg fährt am Busbahnhof ab.",
+    "beispielTr": "Hamburg otobüsü otogardan kalkıyor.",
+    "beispielEn": "The bus to Hamburg leaves from the bus station."
+  },
+  {
+    "id": 8049,
+    "tr": "son durak",
+    "en": "final stop",
+    "beispiel": "Wir müssen bis zur Endstation fahren.",
+    "beispielTr": "Son durağa kadar gitmemiz gerekiyor.",
+    "beispielEn": "We have to go to the final stop."
+  },
+  {
+    "id": 8050,
+    "tr": "varış saati",
+    "en": "arrival time",
+    "beispiel": "Weißt du die Ankunftszeit vom Zug?",
+    "beispielTr": "Trenin varış saatini biliyor musun?",
+    "beispielEn": "Do you know the arrival time of the train?"
+  },
+  {
+    "id": 8051,
+    "tr": "oturacak yer",
+    "en": "seat",
+    "beispiel": "Ich habe im Zug keinen Sitzplatz bekommen.",
+    "beispielTr": "Trende oturacak yer bulamadım.",
+    "beispielEn": "I didn't get a seat on the train."
+  },
+  {
+    "id": 8052,
+    "tr": "tren yolculuğu",
+    "en": "train ride",
+    "beispiel": "Die Zugfahrt nach München dauert vier Stunden.",
+    "beispielTr": "Münih'e tren yolculuğu dört saat sürüyor.",
+    "beispielEn": "The train ride to Munich takes four hours."
+  },
+  {
+    "id": 8053,
+    "tr": "makinist",
+    "en": "train driver",
+    "beispiel": "Mein Onkel arbeitet als Lokführer.",
+    "beispielTr": "Amcam makinist olarak çalışıyor.",
+    "beispielEn": "My uncle works as a train driver."
+  },
+  {
+    "id": 8054,
+    "tr": "kabin görevlisi",
+    "en": "flight attendant",
+    "beispiel": "Der Flugbegleiter bringt uns Wasser.",
+    "beispielTr": "Kabin görevlisi bize su getiriyor.",
+    "beispielEn": "The flight attendant is bringing us water."
+  },
+  {
+    "id": 8055,
+    "tr": "biniş kartı",
+    "en": "boarding pass",
+    "beispiel": "Bitte zeigen Sie mir Ihre Bordkarte.",
+    "beispielTr": "Lütfen bana biniş kartınızı gösterin.",
+    "beispielEn": "Please show me your boarding pass."
+  },
+  {
+    "id": 8056,
+    "tr": "el bagajı",
+    "en": "hand luggage",
+    "beispiel": "Ich nehme nur Handgepäck mit.",
+    "beispielTr": "Yanıma sadece el bagajı alıyorum.",
+    "beispielEn": "I'm only taking hand luggage."
+  },
+  {
+    "id": 8057,
+    "tr": "dönüş uçuşu",
+    "en": "return flight",
+    "beispiel": "Unser Rückflug ist am Sonntagabend.",
+    "beispielTr": "Dönüş uçuşumuz pazar akşamı.",
+    "beispielEn": "Our return flight is on Sunday evening."
+  },
+  {
+    "id": 8058,
+    "tr": "ara durak",
+    "en": "stopover",
+    "beispiel": "Wir haben einen Zwischenstopp in Wien.",
+    "beispielTr": "Viyana'da bir ara durağımız var.",
+    "beispielEn": "We have a stopover in Vienna."
+  },
+  {
+    "id": 8059,
+    "tr": "check-in yapmak",
+    "en": "to check in",
+    "beispiel": "Wir müssen zwei Stunden vor dem Flug einchecken.",
+    "beispielTr": "Uçuştan iki saat önce check-in yapmamız gerekiyor.",
+    "beispielEn": "We have to check in two hours before the flight."
+  },
+  {
+    "id": 8060,
+    "tr": "çıkış yapmak",
+    "en": "to check out",
+    "beispiel": "Im Hotel muss man bis elf Uhr auschecken.",
+    "beispielTr": "Otelde saat on bire kadar çıkış yapmak gerekiyor.",
+    "beispielEn": "At the hotel you have to check out by eleven."
+  },
+  {
+    "id": 8061,
+    "tr": "güvenlik kontrolü",
+    "en": "security check",
+    "beispiel": "An der Sicherheitskontrolle war eine lange Schlange.",
+    "beispielTr": "Güvenlik kontrolünde uzun bir kuyruk vardı.",
+    "beispielEn": "There was a long line at the security check."
+  },
+  {
+    "id": 8062,
+    "tr": "ülkeden çıkış",
+    "en": "exit from the country",
+    "beispiel": "Bei der Ausreise braucht man einen gültigen Pass.",
+    "beispielTr": "Ülkeden çıkışta geçerli bir pasaport gerekiyor.",
+    "beispielEn": "You need a valid passport to exit the country."
+  },
+  {
+    "id": 8063,
+    "tr": "pasaport kontrolü",
+    "en": "passport control",
+    "beispiel": "Die Passkontrolle am Flughafen hat lange gedauert.",
+    "beispielTr": "Havaalanındaki pasaport kontrolü uzun sürdü.",
+    "beispielEn": "The passport control at the airport took a long time."
+  },
+  {
+    "id": 8064,
+    "tr": "otel odası",
+    "en": "hotel room",
+    "beispiel": "Unser Hotelzimmer liegt im dritten Stock.",
+    "beispielTr": "Otel odamız üçüncü katta.",
+    "beispielEn": "Our hotel room is on the third floor."
+  },
+  {
+    "id": 8065,
+    "tr": "oda anahtarı",
+    "en": "room key",
+    "beispiel": "Ich habe den Zimmerschlüssel an der Rezeption abgegeben.",
+    "beispielTr": "Oda anahtarını resepsiyona bıraktım.",
+    "beispielEn": "I left the room key at the reception."
+  },
+  {
+    "id": 8066,
+    "tr": "ev sahibi",
+    "en": "host",
+    "beispiel": "Unser Gastgeber hat uns die Stadt gezeigt.",
+    "beispielTr": "Ev sahibimiz bize şehri gezdirdi.",
+    "beispielEn": "Our host showed us the city."
+  },
+  {
+    "id": 8067,
+    "tr": "kamp alanı",
+    "en": "campground",
+    "beispiel": "Wir bleiben eine Woche auf dem Campingplatz.",
+    "beispielTr": "Bir hafta kamp alanında kalıyoruz.",
+    "beispielEn": "We're staying at the campground for a week."
+  },
+  {
+    "id": 8068,
+    "tr": "çadır yeri",
+    "en": "tent site",
+    "beispiel": "Am See haben wir einen schönen Zeltplatz gefunden.",
+    "beispielTr": "Gölün kenarında güzel bir çadır yeri bulduk.",
+    "beispielEn": "We found a nice tent site by the lake."
+  },
+  {
+    "id": 8069,
+    "tr": "tatil evi",
+    "en": "vacation home",
+    "beispiel": "Wir haben ein kleines Ferienhaus am Meer gemietet.",
+    "beispielTr": "Deniz kenarında küçük bir tatil evi kiraladık.",
+    "beispielEn": "We rented a small vacation home by the sea."
+  },
+  {
+    "id": 8070,
+    "tr": "gidiş yolculuğu",
+    "en": "outward journey",
+    "beispiel": "Die Anreise mit dem Auto dauert fünf Stunden.",
+    "beispielTr": "Arabayla gidiş yolculuğu beş saat sürüyor.",
+    "beispielEn": "The outward journey by car takes five hours."
+  },
+  {
+    "id": 8071,
+    "tr": "yola çıkış",
+    "en": "departure",
+    "beispiel": "Vor der Abreise räumen wir das Zimmer auf.",
+    "beispielTr": "Yola çıkmadan önce odayı topluyoruz.",
+    "beispielEn": "We tidy up the room before departure."
+  },
+  {
+    "id": 8072,
+    "tr": "yola çıkmak",
+    "en": "to depart",
+    "beispiel": "Wir reisen morgen früh ab.",
+    "beispielTr": "Yarın sabah erken yola çıkıyoruz.",
+    "beispielEn": "We're leaving early tomorrow morning."
+  },
+  {
+    "id": 8073,
+    "tr": "yol tarifi",
+    "en": "directions",
+    "beispiel": "Kannst du mir eine kurze Wegbeschreibung schicken?",
+    "beispielTr": "Bana kısa bir yol tarifi gönderebilir misin?",
+    "beispielEn": "Can you send me quick directions?"
+  },
+  {
+    "id": 8074,
+    "tr": "harita",
+    "en": "map",
+    "beispiel": "Mein Opa sucht den Weg lieber auf der Landkarte.",
+    "beispielTr": "Dedem yolu haritadan bulmayı tercih ediyor.",
+    "beispielEn": "My grandpa prefers to find the way on a map."
+  },
+  {
+    "id": 8075,
+    "tr": "yön levhası",
+    "en": "signpost",
+    "beispiel": "Der Wegweiser zeigt den Weg zum Bahnhof.",
+    "beispielTr": "Yön levhası gara giden yolu gösteriyor.",
+    "beispielEn": "The signpost shows the way to the station."
+  },
+  {
+    "id": 8076,
+    "tr": "kestirme yol",
+    "en": "shortcut",
+    "beispiel": "Durch den Park gibt es eine Abkürzung zum Bahnhof.",
+    "beispielTr": "Parkın içinden gara giden bir kestirme yol var.",
+    "beispielEn": "There is a shortcut to the station through the park."
+  },
+  {
+    "id": 8077,
+    "tr": "dönüş yolu",
+    "en": "way back",
+    "beispiel": "Auf dem Rückweg kaufen wir noch Brot.",
+    "beispielTr": "Dönüş yolunda bir de ekmek alırız.",
+    "beispielEn": "We'll buy some bread on the way back."
+  },
+  {
+    "id": 8078,
+    "tr": "gidiş yolu",
+    "en": "way there",
+    "beispiel": "Auf dem Hinweg hat es die ganze Zeit geregnet.",
+    "beispielTr": "Gidiş yolunda sürekli yağmur yağdı.",
+    "beispielEn": "It rained the whole way there."
+  },
+  {
+    "id": 8079,
+    "tr": "eve dönüş yolu",
+    "en": "way home",
+    "beispiel": "Auf dem Heimweg habe ich meine Nachbarin getroffen.",
+    "beispielTr": "Eve dönüş yolunda komşumla karşılaştım.",
+    "beispielEn": "I ran into my neighbor on the way home."
+  },
+  {
+    "id": 8080,
+    "tr": "seyahat çantası",
+    "en": "travel bag",
+    "beispiel": "Meine Reisetasche ist schon fast voll.",
+    "beispielTr": "Seyahat çantam neredeyse doldu bile.",
+    "beispielEn": "My travel bag is almost full already."
+  },
+  {
+    "id": 8081,
+    "tr": "seyahat planı",
+    "en": "travel plan",
+    "beispiel": "Wir haben unseren Reiseplan noch einmal geändert.",
+    "beispielTr": "Seyahat planımızı bir kez daha değiştirdik.",
+    "beispielEn": "We changed our travel plan once again."
+  },
+  {
+    "id": 8082,
+    "tr": "otopark",
+    "en": "parking lot",
+    "beispiel": "Vor dem Hotel gibt es einen großen Parkplatz.",
+    "beispielTr": "Otelin önünde büyük bir otopark var.",
+    "beispielEn": "There is a big parking lot in front of the hotel."
+  },
+  {
+    "id": 8083,
+    "tr": "araba bagajı",
+    "en": "trunk",
+    "beispiel": "Die Koffer passen alle in den Kofferraum.",
+    "beispielTr": "Bavulların hepsi bagaja sığıyor.",
+    "beispielEn": "All the suitcases fit in the trunk."
+  },
+  {
+    "id": 8084,
+    "tr": "emniyet kemeri",
+    "en": "seat belt",
+    "beispiel": "Bitte legen Sie den Sicherheitsgurt an.",
+    "beispielTr": "Lütfen emniyet kemerinizi takın.",
+    "beispielEn": "Please fasten your seat belt."
+  },
+  {
+    "id": 8085,
+    "tr": "direksiyon",
+    "en": "steering wheel",
+    "beispiel": "Halt das Lenkrad mit beiden Händen!",
+    "beispielTr": "Direksiyonu iki elinle tut!",
+    "beispielEn": "Hold the steering wheel with both hands!"
+  },
+  {
+    "id": 8086,
+    "tr": "korna",
+    "en": "horn",
+    "beispiel": "Die Hupe an meinem Auto ist kaputt.",
+    "beispielTr": "Arabamın kornası bozuk.",
+    "beispielEn": "The horn on my car is broken."
+  },
+  {
+    "id": 8087,
+    "tr": "kiralık araba",
+    "en": "rental car",
+    "beispiel": "Am Flughafen holen wir den Mietwagen ab.",
+    "beispielTr": "Havaalanında kiralık arabayı alıyoruz.",
+    "beispielEn": "We're picking up the rental car at the airport."
+  }
+]

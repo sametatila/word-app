@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7688,
+    "tr": "danışman",
+    "en": "advisor",
+    "beispiel": "Der Berater von der Bank hat uns alles genau erklärt.",
+    "beispielTr": "Bankadaki danışman bize her şeyi ayrıntılı anlattı.",
+    "beispielEn": "The advisor from the bank explained everything to us in detail."
+  },
+  {
+    "id": 7689,
+    "tr": "işe gidiş yolu",
+    "en": "commute",
+    "beispiel": "Mein Arbeitsweg dauert jeden Morgen fast eine Stunde.",
+    "beispielTr": "İşe gidiş yolum her sabah neredeyse bir saat sürüyor.",
+    "beispielEn": "My commute takes almost an hour every morning."
+  },
+  {
+    "id": 7690,
+    "tr": "şirket arabası",
+    "en": "company car",
+    "beispiel": "Mit dem Firmenwagen fahre ich zu den Kunden.",
+    "beispielTr": "Şirket arabasıyla müşterilere gidiyorum.",
+    "beispielEn": "I drive to the customers in the company car."
+  },
+  {
+    "id": 7691,
+    "tr": "makam arabası",
+    "en": "official car",
+    "beispiel": "Mein Chef hat einen großen Dienstwagen bekommen.",
+    "beispielTr": "Patronum büyük bir makam arabası aldı.",
+    "beispielEn": "My boss got a big official car."
+  },
+  {
+    "id": 7692,
+    "tr": "iş seyahati",
+    "en": "business trip",
+    "beispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien.",
+    "beispielTr": "Babam gelecek hafta Viyana'ya iş seyahatine çıkıyor.",
+    "beispielEn": "Next week my father is going on a business trip to Vienna."
+  },
+  {
+    "id": 7693,
+    "tr": "görev seyahati",
+    "en": "official trip",
+    "beispiel": "Die Firma bezahlt das Hotel auf der Dienstreise.",
+    "beispielTr": "Şirket görev seyahatinde oteli ödüyor.",
+    "beispielEn": "The company pays for the hotel on the official trip."
+  },
+  {
+    "id": 7694,
+    "tr": "eğitim",
+    "en": "training",
+    "beispiel": "Am Dienstag habe ich eine Schulung für das neue Programm.",
+    "beispielTr": "Salı günü yeni program için bir eğitimim var.",
+    "beispielEn": "On Tuesday I have a training session for the new program."
+  },
+  {
+    "id": 7695,
+    "tr": "kalfa",
+    "en": "journeyman",
+    "beispiel": "Nach der Ausbildung arbeitet er als Geselle in einer Werkstatt.",
+    "beispielTr": "Meslek eğitiminden sonra bir atölyede kalfa olarak çalışıyor.",
+    "beispielEn": "After his training he works as a journeyman in a workshop."
+  },
+  {
+    "id": 7696,
+    "tr": "takım çalışması",
+    "en": "teamwork",
+    "beispiel": "In unserem Büro ist Teamarbeit sehr wichtig.",
+    "beispielTr": "Bizim ofiste takım çalışması çok önemli.",
+    "beispielEn": "Teamwork is very important in our office."
+  },
+  {
+    "id": 7697,
+    "tr": "iş kıyafeti",
+    "en": "workwear",
+    "beispiel": "Die Arbeitskleidung bekommen wir von der Firma.",
+    "beispielTr": "İş kıyafetini firmadan alıyoruz.",
+    "beispielEn": "We get our workwear from the company."
+  },
+  {
+    "id": 7698,
+    "tr": "eldiven",
+    "en": "glove",
+    "beispiel": "Bei dieser Arbeit musst du immer Handschuhe tragen.",
+    "beispielTr": "Bu işte her zaman eldiven takmalısın.",
+    "beispielEn": "You always have to wear gloves for this work."
+  },
+  {
+    "id": 7699,
+    "tr": "koruyucu gözlük",
+    "en": "safety goggles",
+    "beispiel": "In der Werkstatt trägt jeder eine Schutzbrille.",
+    "beispielTr": "Atölyede herkes koruyucu gözlük takıyor.",
+    "beispielEn": "Everyone wears safety goggles in the workshop."
+  },
+  {
+    "id": 7700,
+    "tr": "ilkokul",
+    "en": "primary school",
+    "beispiel": "Meine Tochter geht seit einem Jahr in die Grundschule.",
+    "beispielTr": "Kızım bir yıldır ilkokula gidiyor.",
+    "beispielEn": "My daughter has been going to primary school for a year."
+  },
+  {
+    "id": 7701,
+    "tr": "lise",
+    "en": "high school",
+    "beispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
+    "beispielTr": "Dördüncü sınıftan sonra liseye geçiyor.",
+    "beispielEn": "After fourth grade he moves on to high school."
+  },
+  {
+    "id": 7702,
+    "tr": "ortaokul",
+    "en": "middle school",
+    "beispiel": "Ich habe die Realschule mit guten Noten beendet.",
+    "beispielTr": "Ortaokulu iyi notlarla bitirdim.",
+    "beispielEn": "I finished middle school with good grades."
+  },
+  {
+    "id": 7703,
+    "tr": "derslik",
+    "en": "classroom",
+    "beispiel": "Das Klassenzimmer ist hell und hat große Fenster.",
+    "beispielTr": "Derslik aydınlık ve pencereleri büyük.",
+    "beispielEn": "The classroom is bright and has big windows."
+  },
+  {
+    "id": 7704,
+    "tr": "okul bahçesi",
+    "en": "schoolyard",
+    "beispiel": "In der Pause spielen die Kinder auf dem Schulhof.",
+    "beispielTr": "Teneffüste çocuklar okul bahçesinde oynuyor.",
+    "beispielEn": "The children play in the schoolyard during the break."
+  },
+  {
+    "id": 7705,
+    "tr": "okul çantası",
+    "en": "school bag",
+    "beispiel": "Meine Schultasche ist heute sehr schwer.",
+    "beispielTr": "Okul çantam bugün çok ağır.",
+    "beispielEn": "My school bag is very heavy today."
+  },
+  {
+    "id": 7706,
+    "tr": "ders kitabı",
+    "en": "textbook",
+    "beispiel": "Ich habe mein Schulbuch zu Hause vergessen.",
+    "beispielTr": "Ders kitabımı evde unuttum.",
+    "beispielEn": "I left my textbook at home."
+  },
+  {
+    "id": 7707,
+    "tr": "öğretim yılı",
+    "en": "school year",
+    "beispiel": "Das neue Schuljahr beginnt im September.",
+    "beispielTr": "Yeni öğretim yılı eylülde başlıyor.",
+    "beispielEn": "The new school year starts in September."
+  },
+  {
+    "id": 7708,
+    "tr": "sınıf arkadaşı",
+    "en": "classmate",
+    "beispiel": "Mein Mitschüler hilft mir bei den Hausaufgaben.",
+    "beispielTr": "Sınıf arkadaşım ödevlerimde bana yardım ediyor.",
+    "beispielEn": "My classmate helps me with the homework."
+  },
+  {
+    "id": 7709,
+    "tr": "okul dersi",
+    "en": "school subject",
+    "beispiel": "Mein liebstes Schulfach ist Musik.",
+    "beispielTr": "En sevdiğim okul dersi müzik.",
+    "beispielEn": "My favorite school subject is music."
+  },
+  {
+    "id": 7710,
+    "tr": "matematik",
+    "en": "math",
+    "beispiel": "In Mathematik habe ich eine gute Note bekommen.",
+    "beispielTr": "Matematikten iyi bir not aldım.",
+    "beispielEn": "I got a good grade in math."
+  },
+  {
+    "id": 7711,
+    "tr": "fizik",
+    "en": "physics",
+    "beispiel": "Am Montag haben wir zwei Stunden Physik.",
+    "beispielTr": "Pazartesi iki saat fizik dersimiz var.",
+    "beispielEn": "On Monday we have two hours of physics."
+  },
+  {
+    "id": 7712,
+    "tr": "kimya",
+    "en": "chemistry",
+    "beispiel": "In Chemie machen wir heute ein Experiment.",
+    "beispielTr": "Kimya dersinde bugün deney yapıyoruz.",
+    "beispielEn": "In chemistry we are doing an experiment today."
+  },
+  {
+    "id": 7713,
+    "tr": "spor salonu",
+    "en": "sports hall",
+    "beispiel": "Der Sportunterricht findet in der Sporthalle statt.",
+    "beispielTr": "Beden eğitimi dersi spor salonunda yapılıyor.",
+    "beispielEn": "Gym class takes place in the sports hall."
+  },
+  {
+    "id": 7714,
+    "tr": "dil bilgisi",
+    "en": "grammar",
+    "beispiel": "Die deutsche Grammatik ist am Anfang schwer.",
+    "beispielTr": "Almanca dil bilgisi başlangıçta zor.",
+    "beispielEn": "German grammar is hard at the beginning."
+  },
+  {
+    "id": 7715,
+    "tr": "sözcük",
+    "en": "vocabulary word",
+    "beispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
+    "beispielTr": "Her gün yirmi yeni sözcük öğreniyorum.",
+    "beispielEn": "I learn twenty new vocabulary words every day."
+  },
+  {
+    "id": 7716,
+    "tr": "cetvel",
+    "en": "ruler",
+    "beispiel": "Zeichne die Linie bitte mit einem Lineal.",
+    "beispielTr": "Çizgiyi lütfen bir cetvelle çiz.",
+    "beispielEn": "Please draw the line with a ruler."
+  },
+  {
+    "id": 7717,
+    "tr": "ders programı",
+    "en": "class schedule",
+    "beispiel": "Unser neuer Stundenplan hängt an der Tür.",
+    "beispielTr": "Yeni ders programımız kapıda asılı.",
+    "beispielEn": "Our new class schedule is hanging on the door."
+  },
+  {
+    "id": 7718,
+    "tr": "sınıf öğretmeni",
+    "en": "class teacher",
+    "beispiel": "Unser Klassenlehrer ist sehr nett.",
+    "beispielTr": "Sınıf öğretmenimiz çok kibar.",
+    "beispielEn": "Our class teacher is very nice."
+  },
+  {
+    "id": 7719,
+    "tr": "veli toplantısı",
+    "en": "parent-teacher meeting",
+    "beispiel": "Am Donnerstag ist in der Schule ein Elternabend.",
+    "beispielTr": "Perşembe günü okulda veli toplantısı var.",
+    "beispielEn": "There is a parent-teacher meeting at school on Thursday."
+  },
+  {
+    "id": 7720,
+    "tr": "uygulamalı bilimler yüksekokulu",
+    "en": "university of applied sciences",
+    "beispiel": "Sie studiert Informatik an einer Fachhochschule.",
+    "beispielTr": "Bir uygulamalı bilimler yüksekokulunda bilişim okuyor.",
+    "beispielEn": "She studies computer science at a university of applied sciences."
+  },
+  {
+    "id": 7721,
+    "tr": "çırak",
+    "en": "apprentice",
+    "beispiel": "Unser neuer Azubi lernt schnell.",
+    "beispielTr": "Yeni çırağımız çabuk öğreniyor.",
+    "beispielEn": "Our new apprentice learns fast."
+  },
+  {
+    "id": 7722,
+    "tr": "sınıf geçirmek",
+    "en": "to promote",
+    "beispiel": "Die Lehrerin hat ihn in die nächste Klasse versetzt.",
+    "beispielTr": "Öğretmen onu bir üst sınıfa geçirdi.",
+    "beispielEn": "The teacher promoted him to the next grade."
+  },
+  {
+    "id": 7723,
+    "tr": "sözlü sormak",
+    "en": "to quiz",
+    "beispiel": "Meine Mutter hört mich jeden Abend die Vokabeln ab.",
+    "beispielTr": "Annem her akşam bana kelimeleri sözlü soruyor.",
+    "beispielEn": "My mother quizzes me on the vocabulary every evening."
+  },
+  {
+    "id": 7724,
+    "tr": "ayak uydurmak",
+    "en": "to keep up",
+    "beispiel": "In diesem Kurs kann ich gut mithalten.",
+    "beispielTr": "Bu kursta iyi ayak uydurabiliyorum.",
+    "beispielEn": "I can keep up well in this course."
+  },
+  {
+    "id": 7725,
+    "tr": "öğretmek",
+    "en": "to teach",
+    "beispiel": "Mein Vater bringt mir das Schwimmen bei.",
+    "beispielTr": "Babam bana yüzmeyi öğretiyor.",
+    "beispielEn": "My father is teaching me how to swim."
+  },
+  {
+    "id": 7726,
+    "tr": "geliştirmek",
+    "en": "to improve",
+    "beispiel": "Ich möchte mein Deutsch im Kurs verbessern.",
+    "beispielTr": "Almancamı kursta geliştirmek istiyorum.",
+    "beispielEn": "I want to improve my German in the course."
+  },
+  {
+    "id": 7727,
+    "tr": "değerlendirmek",
+    "en": "to assess",
+    "beispiel": "Die Lehrerin bewertet unsere Aufsätze am Wochenende.",
+    "beispielTr": "Öğretmen kompozisyonlarımızı hafta sonu değerlendiriyor.",
+    "beispielEn": "The teacher assesses our essays over the weekend."
+  },
+  {
+    "id": 7728,
+    "tr": "ders vermek",
+    "en": "to teach",
+    "beispiel": "Er lehrt seit zehn Jahren an einer Schule.",
+    "beispielTr": "On yıldır bir okulda ders veriyor.",
+    "beispielEn": "He has been teaching at a school for ten years."
+  },
+  {
+    "id": 7729,
+    "tr": "yetiştirmek",
+    "en": "to train",
+    "beispiel": "Die Firma bildet jedes Jahr fünf junge Leute aus.",
+    "beispielTr": "Firma her yıl beş genci yetiştiriyor.",
+    "beispielEn": "The company trains five young people every year."
+  },
+  {
+    "id": 7730,
+    "tr": "sınava girmek",
+    "en": "to take an exam",
+    "beispiel": "Nächste Woche lege ich meine mündliche Prüfung ab.",
+    "beispielTr": "Gelecek hafta sözlü sınavıma gireceğim.",
+    "beispielEn": "Next week I will take my oral exam."
+  },
+  {
+    "id": 7731,
+    "tr": "eşleştirmek",
+    "en": "to match",
+    "beispiel": "Ordne die Wörter den richtigen Bildern zu!",
+    "beispielTr": "Kelimeleri doğru resimlerle eşleştir!",
+    "beispielEn": "Match the words with the correct pictures!"
+  },
+  {
+    "id": 7732,
+    "tr": "dağıtmak",
+    "en": "to hand out",
+    "beispiel": "Der Lehrer teilt die Blätter für den Test aus.",
+    "beispielTr": "Öğretmen sınav kâğıtlarını dağıtıyor.",
+    "beispielEn": "The teacher hands out the sheets for the test."
+  },
+  {
+    "id": 7733,
+    "tr": "ilerlemek",
+    "en": "to make progress",
+    "beispiel": "Im Deutschkurs komme ich langsam weiter.",
+    "beispielTr": "Almanca kursunda yavaş yavaş ilerliyorum.",
+    "beispielEn": "I am slowly making progress in the German course."
+  },
+  {
+    "id": 7734,
+    "tr": "takviye ders vermek",
+    "en": "to tutor",
+    "beispiel": "Meine Schwester hilft mir in Englisch nach.",
+    "beispielTr": "Ablam bana İngilizceden takviye ders veriyor.",
+    "beispielEn": "My sister tutors me in English."
+  },
+  {
+    "id": 7735,
+    "tr": "taklit etmek",
+    "en": "to imitate",
+    "beispiel": "Mein Sohn macht seinen großen Bruder nach.",
+    "beispielTr": "Oğlum ağabeyini taklit ediyor.",
+    "beispielEn": "My son imitates his big brother."
+  },
+  {
+    "id": 7736,
+    "tr": "baştan sona okumak",
+    "en": "to read through",
+    "beispiel": "Lies die Aufgabe in Ruhe durch!",
+    "beispielTr": "Soruyu sakince baştan sona oku!",
+    "beispielEn": "Read the task through calmly!"
+  },
+  {
+    "id": 7737,
+    "tr": "not tutmak",
+    "en": "to take notes",
+    "beispiel": "Im Unterricht schreibe ich immer mit.",
+    "beispielTr": "Derste her zaman not tutarım.",
+    "beispielEn": "I always take notes in class."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7538,
+    "tr": "yumuşak",
+    "en": "gentle",
+    "beispiel": "Die Krankenschwester hat eine sanfte Stimme.",
+    "beispielTr": "Hemşirenin yumuşak bir sesi var.",
+    "beispielEn": "The nurse has a gentle voice."
+  },
+  {
+    "id": 7539,
+    "tr": "sevgi dolu",
+    "en": "loving",
+    "beispiel": "Meine Großmutter war immer sehr liebevoll.",
+    "beispielTr": "Büyükannem her zaman çok sevgi doluydu.",
+    "beispielEn": "My grandmother was always very loving."
+  },
+  {
+    "id": 7540,
+    "tr": "şefkatli",
+    "en": "tender",
+    "beispiel": "Er hat sie zärtlich in den Arm genommen.",
+    "beispielTr": "Onu şefkatle kollarına aldı.",
+    "beispielEn": "He took her tenderly in his arms."
+  },
+  {
+    "id": 7541,
+    "tr": "esprili",
+    "en": "humorous",
+    "beispiel": "Unser Trainer ist ein humorvoller Mensch.",
+    "beispielTr": "Antrenörümüz esprili bir insan.",
+    "beispielEn": "Our coach is a humorous person."
+  },
+  {
+    "id": 7542,
+    "tr": "motive",
+    "en": "motivated",
+    "beispiel": "Die neue Praktikantin ist sehr motiviert.",
+    "beispielTr": "Yeni stajyer çok motive.",
+    "beispielEn": "The new intern is very motivated."
+  },
+  {
+    "id": 7543,
+    "tr": "karamsar",
+    "en": "pessimistic",
+    "beispiel": "Warum bist du immer so pessimistisch?",
+    "beispielTr": "Neden hep bu kadar karamsarsın?",
+    "beispielEn": "Why are you always so pessimistic?"
+  },
+  {
+    "id": 7544,
+    "tr": "şaşırmış",
+    "en": "surprised",
+    "beispiel": "Ich war überrascht, dich hier zu sehen.",
+    "beispielTr": "Seni burada görünce şaşırdım.",
+    "beispielEn": "I was surprised to see you here."
+  },
+  {
+    "id": 7545,
+    "tr": "şaşkın",
+    "en": "astonished",
+    "beispiel": "Alle waren erstaunt über sein gutes Deutsch.",
+    "beispielTr": "Herkes onun iyi Almancası karşısında şaşkındı.",
+    "beispielEn": "Everyone was astonished at his good German."
+  },
+  {
+    "id": 7546,
+    "tr": "endişeli",
+    "en": "worried",
+    "beispiel": "Die Eltern sind besorgt um ihren kranken Sohn.",
+    "beispielTr": "Anne baba hasta oğulları için endişeli.",
+    "beispielEn": "The parents are worried about their sick son."
+  },
+  {
+    "id": 7547,
+    "tr": "hayal kırıklığına uğramış",
+    "en": "disappointed",
+    "beispiel": "Ich bin enttäuscht, weil du nicht gekommen bist.",
+    "beispielTr": "Gelmediğin için hayal kırıklığına uğradım.",
+    "beispielEn": "I am disappointed because you did not come."
+  },
+  {
+    "id": 7548,
+    "tr": "heyecanlı",
+    "en": "excited",
+    "beispiel": "Die Kinder sind vor der Reise sehr aufgeregt.",
+    "beispielTr": "Çocuklar yolculuk öncesinde çok heyecanlı.",
+    "beispielEn": "The children are very excited before the trip."
+  },
+  {
+    "id": 7549,
+    "tr": "kafası karışmış",
+    "en": "confused",
+    "beispiel": "Nach der langen Erklärung war ich völlig verwirrt.",
+    "beispielTr": "Uzun açıklamadan sonra kafam tamamen karışmıştı.",
+    "beispielEn": "After the long explanation I was completely confused."
+  },
+  {
+    "id": 7550,
+    "tr": "kızgın",
+    "en": "annoyed",
+    "beispiel": "Der Kunde war über die späte Lieferung verärgert.",
+    "beispielTr": "Müşteri geç teslimat yüzünden kızgındı.",
+    "beispielEn": "The customer was annoyed about the late delivery."
+  },
+  {
+    "id": 7551,
+    "tr": "alınmış",
+    "en": "offended",
+    "beispiel": "Sie ist beleidigt, weil ich ihre Frisur nicht gelobt habe.",
+    "beispielTr": "Saç modelini övmediğim için alındı.",
+    "beispielEn": "She is offended because I did not praise her hairstyle."
+  },
+  {
+    "id": 7552,
+    "tr": "rahatlamış",
+    "en": "relaxed",
+    "beispiel": "Nach dem Urlaub sieht er sehr entspannt aus.",
+    "beispielTr": "Tatilden sonra çok rahatlamış görünüyor.",
+    "beispielEn": "He looks very relaxed after the vacation."
+  },
+  {
+    "id": 7553,
+    "tr": "içi rahatlamış",
+    "en": "relieved",
+    "beispiel": "Nach der Prüfung war ich sehr erleichtert.",
+    "beispielTr": "Sınavdan sonra içim çok rahatladı.",
+    "beispielEn": "I was very relieved after the exam."
+  },
+  {
+    "id": 7554,
+    "tr": "stresli",
+    "en": "stressed",
+    "beispiel": "Meine Kollegin ist diese Woche total gestresst.",
+    "beispielTr": "İş arkadaşım bu hafta çok stresli.",
+    "beispielEn": "My colleague is totally stressed this week."
+  },
+  {
+    "id": 7555,
+    "tr": "sıkılmış",
+    "en": "bored",
+    "beispiel": "Sie schaut gelangweilt aus dem Fenster.",
+    "beispielTr": "Sıkılmış bir hâlde pencereden dışarı bakıyor.",
+    "beispielEn": "She looks out of the window, bored."
+  },
+  {
+    "id": 7556,
+    "tr": "uykulu",
+    "en": "sleepy",
+    "beispiel": "Nach dem Mittagessen werde ich immer schläfrig.",
+    "beispielTr": "Öğle yemeğinden sonra hep uykum gelir.",
+    "beispielEn": "After lunch I always get sleepy."
+  },
+  {
+    "id": 7557,
+    "tr": "mutsuz",
+    "en": "unhappy",
+    "beispiel": "In seinem alten Job war er sehr unglücklich.",
+    "beispielTr": "Eski işinde çok mutsuzdu.",
+    "beispielEn": "He was very unhappy in his old job."
+  },
+  {
+    "id": 7558,
+    "tr": "memnuniyetsiz",
+    "en": "dissatisfied",
+    "beispiel": "Der Gast war mit dem Zimmer unzufrieden.",
+    "beispielTr": "Misafir odadan memnun değildi.",
+    "beispielEn": "The guest was dissatisfied with the room."
+  },
+  {
+    "id": 7559,
+    "tr": "adaletsiz",
+    "en": "unfair",
+    "beispiel": "Der Chef behandelt die Praktikanten ungerecht.",
+    "beispielTr": "Patron stajyerlere adaletsiz davranıyor.",
+    "beispielEn": "The boss treats the interns unfairly."
+  },
+  {
+    "id": 7560,
+    "tr": "nişanlı",
+    "en": "engaged",
+    "beispiel": "Meine Schwester ist seit einem Jahr verlobt.",
+    "beispielTr": "Kız kardeşim bir yıldır nişanlı.",
+    "beispielEn": "My sister has been engaged for a year."
+  },
+  {
+    "id": 7561,
+    "tr": "dul",
+    "en": "widowed",
+    "beispiel": "Meine Nachbarin ist seit zehn Jahren verwitwet.",
+    "beispielTr": "Komşum on yıldır dul.",
+    "beispielEn": "My neighbor has been widowed for ten years."
+  },
+  {
+    "id": 7562,
+    "tr": "reşit olmayan",
+    "en": "underage",
+    "beispiel": "Minderjährige Kinder dürfen keinen Alkohol kaufen.",
+    "beispielTr": "Reşit olmayan çocuklar alkol satın alamaz.",
+    "beispielEn": "Underage children may not buy alcohol."
+  },
+  {
+    "id": 7563,
+    "tr": "reşit",
+    "en": "of legal age",
+    "beispiel": "In Deutschland ist man mit 18 Jahren volljährig.",
+    "beispielTr": "Almanya'da insan 18 yaşında reşit olur.",
+    "beispielEn": "In Germany you are of legal age at 18."
+  },
+  {
+    "id": 7564,
+    "tr": "genç",
+    "en": "youthful",
+    "beispiel": "Mit sechzig hat er noch ein jugendliches Aussehen.",
+    "beispielTr": "Altmış yaşında hâlâ genç bir görünümü var.",
+    "beispielEn": "At sixty he still has a youthful appearance."
+  },
+  {
+    "id": 7565,
+    "tr": "deneyimsiz",
+    "en": "inexperienced",
+    "beispiel": "Der neue Fahrer ist noch sehr unerfahren.",
+    "beispielTr": "Yeni şoför henüz çok deneyimsiz.",
+    "beispielEn": "The new driver is still very inexperienced."
+  },
+  {
+    "id": 7566,
+    "tr": "emekli",
+    "en": "retired",
+    "beispiel": "Mein Onkel ist seit zwei Jahren pensioniert.",
+    "beispielTr": "Amcam iki yıldır emekli.",
+    "beispielEn": "My uncle has been retired for two years."
+  },
+  {
+    "id": 7567,
+    "tr": "engelli",
+    "en": "disabled",
+    "beispiel": "Der Platz vorne ist für behinderte Fahrgäste.",
+    "beispielTr": "Öndeki yer engelli yolcular içindir.",
+    "beispielEn": "The seat at the front is for disabled passengers."
+  },
+  {
+    "id": 7568,
+    "tr": "arkadaş",
+    "en": "friends",
+    "beispiel": "Wir sind seit der Schulzeit befreundet.",
+    "beispielTr": "Okul zamanından beri arkadaşız.",
+    "beispielEn": "We have been friends since school."
+  },
+  {
+    "id": 7569,
+    "tr": "tanıdık",
+    "en": "familiar",
+    "beispiel": "Seine Stimme kommt mir sehr vertraut vor.",
+    "beispielTr": "Sesi bana çok tanıdık geliyor.",
+    "beispielEn": "His voice sounds very familiar to me."
+  },
+  {
+    "id": 7570,
+    "tr": "bundan sonra",
+    "en": "from now on",
+    "beispiel": "Künftig arbeite ich nur noch vier Tage pro Woche.",
+    "beispielTr": "Bundan sonra haftada sadece dört gün çalışacağım.",
+    "beispielEn": "From now on I will work only four days a week."
+  },
+  {
+    "id": 7571,
+    "tr": "yakında",
+    "en": "shortly",
+    "beispiel": "Der neue Supermarkt öffnet demnächst.",
+    "beispielTr": "Yeni süpermarket yakında açılıyor.",
+    "beispielEn": "The new supermarket is opening shortly."
+  },
+  {
+    "id": 7572,
+    "tr": "şimdiye kadar",
+    "en": "so far",
+    "beispiel": "Bislang habe ich keine Antwort bekommen.",
+    "beispielTr": "Şimdiye kadar hiç cevap almadım.",
+    "beispielEn": "So far I have not received an answer."
+  },
+  {
+    "id": 7573,
+    "tr": "ondan önce",
+    "en": "before that",
+    "beispiel": "Um acht beginnt der Kurs, davor trinke ich einen Kaffee.",
+    "beispielTr": "Kurs sekizde başlıyor, ondan önce bir kahve içiyorum.",
+    "beispielEn": "The course starts at eight, before that I have a coffee."
+  },
+  {
+    "id": 7574,
+    "tr": "daha önce",
+    "en": "previously",
+    "beispiel": "Wir haben uns noch nie zuvor gesehen.",
+    "beispielTr": "Birbirimizi daha önce hiç görmedik.",
+    "beispielEn": "We have never seen each other before."
+  },
+  {
+    "id": 7575,
+    "tr": "ardından",
+    "en": "afterward",
+    "beispiel": "Wir essen zuerst, anschließend gehen wir ins Kino.",
+    "beispielTr": "Önce yemek yiyoruz, ardından sinemaya gidiyoruz.",
+    "beispielEn": "First we eat, afterward we go to the movies."
+  },
+  {
+    "id": 7576,
+    "tr": "en erken",
+    "en": "at the earliest",
+    "beispiel": "Der Arzt hat frühestens am Freitag einen Termin frei.",
+    "beispielTr": "Doktorun en erken cuma günü boş randevusu var.",
+    "beispielEn": "The doctor has an opening on Friday at the earliest."
+  },
+  {
+    "id": 7577,
+    "tr": "son zamanlarda",
+    "en": "lately",
+    "beispiel": "Neuerdings fährt mein Vater mit dem Fahrrad zur Arbeit.",
+    "beispielTr": "Son zamanlarda babam işe bisikletle gidiyor.",
+    "beispielEn": "Lately my father rides his bike to work."
+  },
+  {
+    "id": 7578,
+    "tr": "o zamandan beri",
+    "en": "since then",
+    "beispiel": "Sie ist letztes Jahr umgezogen und seither sehen wir uns selten.",
+    "beispielTr": "Geçen yıl taşındı ve o zamandan beri birbirimizi az görüyoruz.",
+    "beispielEn": "She moved last year and we have rarely seen each other since then."
+  },
+  {
+    "id": 7579,
+    "tr": "arada bir",
+    "en": "in between",
+    "beispiel": "Ich lerne drei Stunden und mache zwischendurch eine Pause.",
+    "beispielTr": "Üç saat çalışıyorum ve arada bir mola veriyorum.",
+    "beispielEn": "I study for three hours and take a break in between."
+  },
+  {
+    "id": 7580,
+    "tr": "şu anda",
+    "en": "at the moment",
+    "beispiel": "Momentan habe ich leider kein Geld für ein Auto.",
+    "beispielTr": "Şu anda maalesef araba için param yok.",
+    "beispielEn": "At the moment I unfortunately have no money for a car."
+  },
+  {
+    "id": 7581,
+    "tr": "şu sıralar",
+    "en": "at present",
+    "beispiel": "Derzeit sucht die Firma zwei neue Mitarbeiter.",
+    "beispielTr": "Şu sıralar firma iki yeni çalışan arıyor.",
+    "beispielEn": "At present the company is looking for two new employees."
+  },
+  {
+    "id": 7582,
+    "tr": "gündüzleri",
+    "en": "during the day",
+    "beispiel": "Tagsüber ist niemand zu Hause.",
+    "beispielTr": "Gündüzleri evde kimse olmuyor.",
+    "beispielEn": "During the day nobody is at home."
+  },
+  {
+    "id": 7583,
+    "tr": "şimdilik",
+    "en": "for now",
+    "beispiel": "Wir bleiben vorerst in der alten Wohnung.",
+    "beispielTr": "Şimdilik eski dairede kalıyoruz.",
+    "beispielEn": "For now we are staying in the old apartment."
+  },
+  {
+    "id": 7584,
+    "tr": "zaman zaman",
+    "en": "at times",
+    "beispiel": "Die Straße ist zeitweise gesperrt.",
+    "beispielTr": "Yol zaman zaman kapalı oluyor.",
+    "beispielEn": "The road is closed at times."
+  },
+  {
+    "id": 7585,
+    "tr": "yıllarca",
+    "en": "for years",
+    "beispiel": "Er hat jahrelang in der Schweiz gearbeitet.",
+    "beispielTr": "Yıllarca İsviçre'de çalıştı.",
+    "beispielEn": "He worked in Switzerland for years."
+  },
+  {
+    "id": 7586,
+    "tr": "saatlerce",
+    "en": "for hours",
+    "beispiel": "Wir haben stundenlang auf den Zug gewartet.",
+    "beispielTr": "Saatlerce treni bekledik.",
+    "beispielEn": "We waited for the train for hours."
+  },
+  {
+    "id": 7587,
+    "tr": "günlerce",
+    "en": "for days",
+    "beispiel": "Es hat tagelang geregnet.",
+    "beispielTr": "Günlerce yağmur yağdı.",
+    "beispielEn": "It rained for days."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1203,
+    "tr": "güneşli",
+    "en": "sunny",
+    "beispiel": "Morgen ist das Wetter wieder warm und sonnig.",
+    "beispielTr": "Yarın hava yine sıcak ve güneşli olacak.",
+    "beispielEn": "Tomorrow the weather will be warm and sunny again."
+  },
+  {
+    "id": 1161,
+    "tr": "sığır",
+    "en": "cattle",
+    "beispiel": "Auf der Weide stehen viele Rinder.",
+    "beispielTr": "Otlakta birçok sığır var.",
+    "beispielEn": "There are many cattle in the pasture."
+  },
+  {
+    "id": 1211,
+    "tr": "muayene saati",
+    "en": "consultation hour",
+    "beispiel": "Die Sprechstunde ist von neun bis zwölf.",
+    "beispielTr": "Muayene saatleri dokuzdan on ikiye kadar.",
+    "beispielEn": "The consultation hours are from nine to twelve."
+  },
+  {
+    "id": 1257,
+    "tr": "aktarma yapmak",
+    "en": "to change trains",
+    "beispiel": "Sie müssen in Mannheim umsteigen.",
+    "beispielTr": "Mannheim'da aktarma yapmanız gerekiyor.",
+    "beispielEn": "You have to change trains in Mannheim."
+  },
+  {
+    "id": 1062,
+    "tr": "polisiye",
+    "en": "crime novel",
+    "beispiel": "Miriam liest gern spannende Krimis.",
+    "beispielTr": "Miriam sürükleyici polisiyeler okumayı sever.",
+    "beispielEn": "Miriam likes reading exciting crime novels."
+  },
+  {
+    "id": 1288,
+    "tr": "voleybol",
+    "en": "volleyball",
+    "beispiel": "Im Sommer spielen wir oft Volleyball.",
+    "beispielTr": "Yazın sık sık voleybol oynarız.",
+    "beispielEn": "In summer we often play volleyball."
+  },
+  {
+    "id": 1118,
+    "tr": "makarna",
+    "en": "noodle",
+    "beispiel": "Heute Abend koche ich Nudeln mit Tomatensoße.",
+    "beispielTr": "Bu akşam domates soslu makarna pişiriyorum.",
+    "beispielEn": "Tonight I'm cooking noodles with tomato sauce."
+  },
+  {
+    "id": 895,
+    "tr": "gerekçelendirmek",
+    "en": "to justify",
+    "beispiel": "Bitte begründen Sie Ihre Meinung.",
+    "beispielTr": "Lütfen görüşünüzü gerekçelendirin.",
+    "beispielEn": "Please justify your opinion."
+  },
+  {
+    "id": 1229,
+    "tr": "tablet",
+    "en": "tablet",
+    "beispiel": "Meine Tochter liest gern auf dem Tablet.",
+    "beispielTr": "Kızım tablette okumayı seviyor.",
+    "beispielEn": "My daughter likes reading on the tablet."
+  },
+  {
+    "id": 1056,
+    "tr": "kozmetik",
+    "en": "cosmetics",
+    "beispiel": "Kosmetik können Sie im Erdgeschoss kaufen.",
+    "beispielTr": "Kozmetik ürünlerini zemin kattan alabilirsiniz.",
+    "beispielEn": "You can buy cosmetics on the ground floor."
+  },
+  {
+    "id": 911,
+    "tr": "bulutlu",
+    "en": "cloudy",
+    "beispiel": "Heute ist es bewölkt und ziemlich kühl.",
+    "beispielTr": "Bugün hava bulutlu ve oldukça serin.",
+    "beispielEn": "Today it's cloudy and quite cool."
+  },
+  {
+    "id": 1210,
+    "tr": "spor sahası",
+    "en": "sports field",
+    "beispiel": "Die Kinder spielen auf dem Sportplatz.",
+    "beispielTr": "Çocuklar spor sahasında oynuyor.",
+    "beispielEn": "The children are playing on the sports field."
+  },
+  {
+    "id": 1058,
+    "tr": "sağlık sigortası",
+    "en": "health insurance fund",
+    "beispiel": "Bei welcher Krankenkasse sind Sie?",
+    "beispielTr": "Hangi sağlık sigortasındasınız?",
+    "beispielEn": "Which health insurance fund are you with?"
+  },
+  {
+    "id": 1030,
+    "tr": "ana sayfa",
+    "en": "homepage",
+    "beispiel": "Auf der Homepage findest du alle Informationen.",
+    "beispielTr": "Bütün bilgileri ana sayfada bulabilirsin.",
+    "beispielEn": "You can find all the information on the homepage."
+  },
+  {
+    "id": 1139,
+    "tr": "uygun fiyatlı",
+    "en": "reasonably priced",
+    "beispiel": "Die Jacke ist sehr preiswert.",
+    "beispielTr": "Ceket çok uygun fiyatlı.",
+    "beispielEn": "The jacket is very reasonably priced."
+  },
+  {
+    "id": 1100,
+    "tr": "skuter",
+    "en": "scooter",
+    "beispiel": "Oskar fährt mit dem Motorroller zur Arbeit.",
+    "beispielTr": "Oskar işe skuterle gidiyor.",
+    "beispielEn": "Oskar rides his scooter to work."
+  },
+  {
+    "id": 1212,
+    "tr": "şehir haritası",
+    "en": "city map",
+    "beispiel": "Haben Sie einen Stadtplan von Salzburg?",
+    "beispielTr": "Salzburg şehir haritanız var mı?",
+    "beispielEn": "Do you have a city map of Salzburg?"
+  },
+  {
+    "id": 1322,
+    "tr": "çalıştay",
+    "en": "workshop",
+    "beispiel": "Am Freitag gibt es einen Workshop in unserer Firma.",
+    "beispielTr": "Cuma günü firmamızda bir çalıştay var.",
+    "beispielEn": "On Friday there's a workshop at our company."
+  },
+  {
+    "id": 1111,
+    "tr": "sisli",
+    "en": "foggy",
+    "beispiel": "Heute Morgen ist es sehr neblig.",
+    "beispielTr": "Bu sabah hava çok sisli.",
+    "beispielEn": "It's very foggy this morning."
+  },
+  {
+    "id": 1275,
+    "tr": "ulaşım aracı",
+    "en": "means of transportation",
+    "beispiel": "Welche Verkehrsmittel benutzen Sie oft?",
+    "beispielTr": "Hangi ulaşım araçlarını sık kullanıyorsunuz?",
+    "beispielEn": "Which means of transportation do you use often?"
+  },
+  {
+    "id": 924,
+    "tr": "yazışmak",
+    "en": "to chat",
+    "beispiel": "Luis chattet abends gern mit seinen Freunden.",
+    "beispielTr": "Luis akşamları arkadaşlarıyla yazışmayı sever.",
+    "beispielEn": "Luis likes chatting with his friends in the evening."
+  },
+  {
+    "id": 1026,
+    "tr": "indirmek",
+    "en": "to download",
+    "beispiel": "Du kannst die App kostenlos herunterladen.",
+    "beispielTr": "Uygulamayı ücretsiz indirebilirsin.",
+    "beispielEn": "You can download the app for free."
+  },
+  {
+    "id": 1041,
+    "tr": "gençlik yurdu",
+    "en": "youth hostel",
+    "beispiel": "Wir übernachten in einer Jugendherberge.",
+    "beispielTr": "Bir gençlik yurdunda kalıyoruz.",
+    "beispielEn": "We're staying at a youth hostel."
+  },
+  {
+    "id": 874,
+    "tr": "kesinlikle",
+    "en": "definitely",
+    "beispiel": "Ich komme auf jeden Fall zu deiner Party.",
+    "beispielTr": "Partine kesinlikle geleceğim.",
+    "beispielEn": "I'll definitely come to your party."
+  },
+  {
+    "id": 928,
+    "tr": "onun üzerine",
+    "en": "on it",
+    "beispiel": "Stell die Tasse bitte darauf.",
+    "beispielTr": "Fincanı lütfen onun üzerine koy.",
+    "beispielEn": "Please put the cup on it."
+  },
+  {
+    "id": 944,
+    "tr": "e-kitap",
+    "en": "e-book",
+    "beispiel": "Auf Reisen lese ich immer E-Books.",
+    "beispielTr": "Seyahatlerde hep e-kitap okurum.",
+    "beispielEn": "I always read e-books when I travel."
+  },
+  {
+    "id": 948,
+    "tr": "birkaç",
+    "en": "several",
+    "beispiel": "In diesem Text sind einige Fehler.",
+    "beispielTr": "Bu metinde birkaç hata var.",
+    "beispielEn": "There are several mistakes in this text."
+  },
+  {
+    "id": 952,
+    "tr": "tek tek",
+    "en": "individually",
+    "beispiel": "Bitte sprecht einzeln und nicht alle zusammen.",
+    "beispielTr": "Lütfen hepiniz birden değil, tek tek konuşun.",
+    "beispielEn": "Please speak one at a time, not all together."
+  },
+  {
+    "id": 960,
+    "tr": "üşütmüş olmak",
+    "en": "to have a cold",
+    "beispiel": "Lisa ist erkältet und bleibt zu Hause.",
+    "beispielTr": "Lisa üşütmüş ve evde kalıyor.",
+    "beispielEn": "Lisa has a cold and is staying home."
+  },
+  {
+    "id": 962,
+    "tr": "indirim",
+    "en": "reduction",
+    "beispiel": "Für Studenten und Rentner gibt es eine Ermäßigung.",
+    "beispielTr": "Öğrencilere ve emeklilere indirim var.",
+    "beispielEn": "There's a reduction for students and retirees."
+  },
+  {
+    "id": 977,
+    "tr": "formda olmak",
+    "en": "to be fit",
+    "beispiel": "Tom ist fit, weil er viel Sport macht.",
+    "beispielTr": "Tom formda çünkü çok spor yapıyor.",
+    "beispielEn": "Tom is fit because he plays a lot of sports."
+  },
+  {
+    "id": 989,
+    "tr": "kayıp eşyalar",
+    "en": "lost items",
+    "beispiel": "Dein Schlüssel liegt bei den Fundsachen.",
+    "beispielTr": "Anahtarın kayıp eşyalarda duruyor.",
+    "beispielEn": "Your key is with the lost items."
+  },
+  {
+    "id": 994,
+    "tr": "doğum",
+    "en": "birth",
+    "beispiel": "Bitte tragen Sie hier Ihren Geburtsort ein.",
+    "beispielTr": "Lütfen doğum yerinizi buraya yazın.",
+    "beispielEn": "Please enter your place of birth here."
+  },
+  {
+    "id": 995,
+    "tr": "sayın",
+    "en": "dear",
+    "beispiel": "Sehr geehrte Frau Meyer, vielen Dank für Ihre E-Mail.",
+    "beispielTr": "Sayın Bayan Meyer, e-postanız için çok teşekkürler.",
+    "beispielEn": "Dear Ms. Meyer, thank you very much for your email."
+  },
+  {
+    "id": 1011,
+    "tr": "geçerli olmak",
+    "en": "to be valid",
+    "beispiel": "Mein Pass ist nicht mehr gültig.",
+    "beispielTr": "Pasaportum artık geçerli değil.",
+    "beispielEn": "My passport is no longer valid."
+  },
+  {
+    "id": 1083,
+    "tr": "bazı",
+    "en": "some",
+    "beispiel": "Manche Nachbarn sind wirklich unfreundlich.",
+    "beispielTr": "Bazı komşular gerçekten cana yakın değil.",
+    "beispielEn": "Some neighbors are really unfriendly."
+  },
+  {
+    "id": 1125,
+    "tr": "birkaç",
+    "en": "a few",
+    "beispiel": "Wir fahren ein paar Tage ans Meer.",
+    "beispielTr": "Birkaç günlüğüne denize gidiyoruz.",
+    "beispielEn": "We're going to the seaside for a few days."
+  },
+  {
+    "id": 1136,
+    "tr": "patates kızartması",
+    "en": "french fries",
+    "beispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
+    "beispielTr": "Çocuklar ızgara sosisle patates kızartması yiyor.",
+    "beispielEn": "The kids are eating sausage with french fries."
+  },
+  {
+    "id": 1268,
+    "tr": "yolda olmak",
+    "en": "to be on the way",
+    "beispiel": "Ich bin schon unterwegs und komme gleich.",
+    "beispielTr": "Yoldayım, birazdan geliyorum.",
+    "beispielEn": "I'm already on my way and will be there soon."
+  },
+  {
+    "id": 1269,
+    "tr": "sözleşmiş olmak",
+    "en": "to have plans to meet",
+    "beispiel": "Ich bin heute Abend mit Anna verabredet.",
+    "beispielTr": "Bu akşam Anna ile sözleştim.",
+    "beispielEn": "I have plans to meet Anna this evening."
+  },
+  {
+    "id": 1331,
+    "tr": "giymek",
+    "en": "to put on",
+    "beispiel": "Ich ziehe mir eine Jacke an.",
+    "beispielTr": "Bir ceket giyiyorum.",
+    "beispielEn": "I'm putting on a jacket."
+  },
+  {
+    "id": 1339,
+    "tr": "geri dönmek",
+    "en": "to go back",
+    "beispiel": "Nach der Party fahren wir zurück.",
+    "beispielTr": "Partiden sonra geri dönüyoruz.",
+    "beispielEn": "After the party we drive back."
+  },
+  {
+    "id": 7430,
+    "tr": "minicik",
+    "en": "tiny",
+    "beispiel": "Unsere erste Wohnung war winzig.",
+    "beispielTr": "İlk evimiz minicikti.",
+    "beispielEn": "Our first apartment was tiny."
+  },
+  {
+    "id": 7431,
+    "tr": "devasa",
+    "en": "gigantic",
+    "beispiel": "Vor dem Bahnhof steht eine gigantische Uhr.",
+    "beispielTr": "Garın önünde devasa bir saat duruyor.",
+    "beispielEn": "There's a gigantic clock in front of the station."
+  },
+  {
+    "id": 7432,
+    "tr": "oval",
+    "en": "oval",
+    "beispiel": "Der Spiegel im Flur ist oval.",
+    "beispielTr": "Koridordaki ayna oval.",
+    "beispielEn": "The mirror in the hallway is oval."
+  },
+  {
+    "id": 7433,
+    "tr": "masif",
+    "en": "solid",
+    "beispiel": "Der Tisch ist aus massivem Holz.",
+    "beispielTr": "Masa masif ahşaptan.",
+    "beispielEn": "The table is made of solid wood."
+  },
+  {
+    "id": 7434,
+    "tr": "yumuşacık",
+    "en": "tender",
+    "beispiel": "Das Fleisch ist heute besonders zart.",
+    "beispielTr": "Et bugün özellikle yumuşacık.",
+    "beispielEn": "The meat is especially tender today."
+  },
+  {
+    "id": 7435,
+    "tr": "kaba",
+    "en": "coarse",
+    "beispiel": "Das Salz ist zu grob für den Salat.",
+    "beispielTr": "Tuz salata için fazla kaba.",
+    "beispielEn": "The salt is too coarse for the salad."
+  },
+  {
+    "id": 7436,
+    "tr": "sert",
+    "en": "stiff",
+    "beispiel": "Der neue Lederschuh ist noch sehr steif.",
+    "beispielTr": "Yeni deri ayakkabı hâlâ çok sert.",
+    "beispielEn": "The new leather shoe is still very stiff."
+  },
+  {
+    "id": 7437,
+    "tr": "pürüzlü",
+    "en": "rough",
+    "beispiel": "Die Wand ist rau und nicht gestrichen.",
+    "beispielTr": "Duvar pürüzlü ve boyanmamış.",
+    "beispielEn": "The wall is rough and unpainted."
+  }
+]
