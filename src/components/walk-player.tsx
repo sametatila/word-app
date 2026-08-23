@@ -9,7 +9,15 @@ import { parseConfirm } from "@/lib/voice-intent";
 import { cueListen } from "@/lib/lessons/cues";
 import { useWakeLock } from "@/components/use-wake-lock";
 import { startPocketAudio, stopPocketAudio, updatePocketTitle } from "@/components/pocket-audio";
-import { closeMic, micSupported, openMic, recordClip, sttAvailable, transcribe } from "@/components/pocket-mic";
+import {
+  closeMic,
+  micOpen,
+  micSupported,
+  openMic,
+  recordClip,
+  sttAvailable,
+  transcribe,
+} from "@/components/pocket-mic";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
@@ -179,6 +187,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const captureRef = useRef<"stt" | "browser">("browser");
   /** Tarayıcının kendi tanıyıcısı kullanılabiliyor mu — görünürken tercih edilen yol. */
   const browserRef = useRef(false);
+  /** Sunucuda yazıya çevirme açık mı — ekran kapanınca devreye girecek yol. */
+  const sttReady = useRef(false);
   /**
    * Tarayıcı tanıyıcısı üst üste kaç kez boş döndü.
    *
@@ -325,6 +335,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         const heard = await listen({
           lang: lang === "tr" ? "tr-TR" : "de-DE",
           silenceMs: Math.min(windowMs, BROWSER_SILENCE_MS),
+          maxMs: Math.min(windowMs, BROWSER_SILENCE_MS),
         });
         if (heard.alternatives.length) {
           browserMisses.current = 0;
@@ -334,7 +345,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         if (browserMisses.current >= BROWSER_GIVE_UP) browserRef.current = false;
       }
 
-      if (captureRef.current === "stt") {
+      // Kayıt yolu yalnızca ekran kapalıyken (ya da tanıyıcı hiç yokken).
+      if (sttReady.current && (!visible || !browserRef.current)) {
+        if (!micOpen() && !(await openMic())) return [];
         // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
         // pencere değil ÜST SINIR.
         const clip = await recordClip(windowMs);
@@ -625,16 +638,27 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     const permission = await requestMicrophone();
     if (permission === "denied") return setStatus("denied");
 
-    // Tarayıcı tanıyıcısı varsa görünürken O kullanılıyor: kısa cevaplarda
-    // daha iyi anlıyor, anında ve bedava.
     browserRef.current = Boolean(recognitionCtor());
 
-    // Kayıt yolu ekran kapandığında çalışan tek yol; ikisi birden kurulabilir.
-    const canStt = micSupported() && (await sttAvailable()) && (await openMic());
-    captureRef.current = canStt ? "stt" : "browser";
-    setCapture(canStt ? "stt" : "browser");
+    /*
+      Mikrofon GÖRÜNÜRKEN AÇILMIYOR ve sebebi ölçülmüş bir kusur.
 
-    if (!browserRef.current && !canStt) return setStatus("unsupported");
+      Önceki sürüm oturum başında `getUserMedia` ile mikrofonu açıp kaydediciyi
+      sürekli çalıştırıyordu. Aynı anda tarayıcının konuşma tanıyıcısı da
+      mikrofonu istiyor ve iki tüketici birbirini bozuyor: kullanıcı ekran
+      açıkken bile tanımanın belirgin biçimde kötüleştiğini bildirdi.
+
+      Artık sıra net: sayfa görünürken mikrofon tamamen tanıyıcının, kayıt yolu
+      hiç kurulmuyor. Ekran kapandığında (tanıyıcı zaten susuyor) mikrofon
+      açılıp kayıt devreye giriyor, ekran geri açılınca kapatılıyor.
+    */
+    sttReady.current = micSupported() && (await sttAvailable());
+    const startWithBrowser = browserRef.current;
+    if (!startWithBrowser && sttReady.current) await openMic();
+    captureRef.current = startWithBrowser ? "browser" : "stt";
+    setCapture(startWithBrowser ? "browser" : "stt");
+
+    if (!browserRef.current && !sttReady.current) return setStatus("unsupported");
 
     // Ekran kilidi ve sessiz döngü DOKUNUŞUN İÇİNDE kuruluyor: kullanıcı
     // hareketi olmadan çalmaya başlayan ses reddediliyor.
@@ -692,11 +716,27 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   useEffect(() => {
     if (status !== "playing") return;
     const onChange = () => {
-      if (document.visibilityState !== "hidden") return;
-      if (captureRef.current === "stt") return;
-      stopAll();
-      void release();
-      setStatus("paused");
+      const hidden = document.visibilityState === "hidden";
+      if (hidden) {
+        // Tanıyıcı burada zaten susuyor; mikrofon artık kayıt yolunun.
+        if (sttReady.current) {
+          captureRef.current = "stt";
+          setCapture("stt");
+          void openMic();
+          return;
+        }
+        // Kayıt yolu yoksa yapılacak bir şey yok: tur duruyor.
+        stopAll();
+        void release();
+        setStatus("paused");
+        return;
+      }
+      // Ekran geri açıldı: mikrofon tanıyıcıya bırakılıyor.
+      if (browserRef.current) {
+        closeMic();
+        captureRef.current = "browser";
+        setCapture("browser");
+      }
     };
     document.addEventListener("visibilitychange", onChange);
     return () => document.removeEventListener("visibilitychange", onChange);

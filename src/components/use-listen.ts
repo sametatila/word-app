@@ -39,6 +39,8 @@ export type ListenOptions = {
   pauseMs?: number;
   /** Hiç konuşulmazsa kaç ms sonra vazgeçilir. */
   silenceMs?: number;
+  /** Konuşma başladıktan sonra en fazla ne kadar dinlenir. */
+  maxMs?: number;
 };
 
 export function useListen() {
@@ -60,7 +62,7 @@ export function useListen() {
   }, []);
 
   const listen = useCallback(
-    ({ lang, pauseMs = 1400, silenceMs = 9000 }: ListenOptions): Promise<ListenResult> => {
+    ({ lang, pauseMs = 900, silenceMs = 9000, maxMs = 6000 }: ListenOptions): Promise<ListenResult> => {
       const Ctor = recognitionCtor();
       if (!Ctor) return Promise.resolve({ alternatives: [], confidences: [] });
 
@@ -77,12 +79,15 @@ export function useListen() {
         let delivered = false;
         let pause: ReturnType<typeof setTimeout> | null = null;
         let silence: ReturnType<typeof setTimeout> | null = null;
+        let cap: ReturnType<typeof setTimeout> | null = null;
 
         const clear = () => {
           if (pause) clearTimeout(pause);
           if (silence) clearTimeout(silence);
+          if (cap) clearTimeout(cap);
           pause = null;
           silence = null;
+          cap = null;
         };
 
         const deliver = () => {
@@ -113,6 +118,17 @@ export function useListen() {
           silence = null;
           if (pause) clearTimeout(pause);
           pause = setTimeout(() => r.stop(), pauseMs);
+
+          /*
+            Konuşma başladıktan sonra da bir ÜST SINIR gerekiyor.
+
+            Duraklama payı her ara sonuçta sıfırlanıyor; gürültülü bir ortamda
+            tanıyıcı ara sonuç üretmeyi sürdürdüğü sürece sayaç hiç dolmuyor ve
+            tur kapanmıyordu. Kullanıcının gördüğü "bekliyor da bekliyor" buydu.
+            Tavan yalnızca bir kez kuruluyor: her sonuçta yenilenseydi aynı
+            sonsuz döngü olurdu.
+          */
+          if (!cap) cap = setTimeout(() => r.stop(), maxMs);
         };
         r.onerror = deliver;
         r.onend = deliver;

@@ -68,6 +68,19 @@ const BUFFER_MS = 20_000;
  * ihtiyaç duyulan yerde çalışmıyordu.
  */
 const SPEECH_BYTES = 300;
+/**
+ * Eşik ORTAMA göre ayarlanıyor.
+ *
+ * Sabit eşik gerçek cihazda çalışmadı: sokakta, kafede ya da cepte hiçbir
+ * parça 300 baytın altına inmiyor, dolayısıyla "konuşma bitti" hiç
+ * anlaşılmıyor ve kayıt üst sınıra kadar bekliyordu. Kullanıcının gördüğü
+ * "bekliyor da bekliyor" tam olarak buydu.
+ *
+ * Pencerenin ilk parçaları ortam gürültüsü sayılıyor (kullanıcı henüz
+ * konuşmaya başlamamış oluyor) ve eşik onun katı olarak kuruluyor.
+ */
+const AMBIENT_SLICES = 3;
+const AMBIENT_FACTOR = 2.5;
 /** Konuşma bittikten sonra kaydın kapanması için beklenen sessiz parça sayısı. */
 const TAIL_SLICES = 4;
 
@@ -228,13 +241,24 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
     let started = false;
     let quiet = 0;
     let seen = 0; // kaç parça incelendi
+    /** Ortama göre kurulan eşik; ilk parçalardan sonra sabitleniyor. */
+    let threshold = SPEECH_BYTES;
+    let ambientSet = false;
 
     const tick = () => {
       const slice = chunks.filter((c) => c.t >= from);
+
+      // İlk parçalar ortam ölçümü: kullanıcı henüz konuşmuyor.
+      if (!ambientSet && slice.length >= AMBIENT_SLICES) {
+        const sizes = slice.slice(0, AMBIENT_SLICES).map((c) => c.data.size).sort((a, b) => a - b);
+        const ambient = sizes[Math.floor(sizes.length / 2)];
+        threshold = Math.max(SPEECH_BYTES, Math.round(ambient * AMBIENT_FACTOR));
+        ambientSet = true;
+      }
       // Yalnızca yeni gelen parçalara bakılıyor; aynı parça iki kez sayılırsa
       // sessizlik sayacı yanlış dolardı.
       for (let i = seen; i < slice.length; i++) {
-        const loud = slice[i].data.size >= SPEECH_BYTES;
+        const loud = slice[i].data.size >= threshold;
         if (loud) {
           started = true;
           quiet = 0;
@@ -263,14 +287,14 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
         karar vermesi doğru.
       */
       const all = chunks;
-      const loud = all.findIndex((c) => c.t >= from && c.data.size >= SPEECH_BYTES);
+      const loud = all.findIndex((c) => c.t >= from && c.data.size >= threshold);
 
       let first: number;
       if (loud >= 0) {
         // Konuşma bulundu: başını kaçırmamak için geriye yürünüyor. Kelimenin
         // ilk sesi (patlamalı ünsüz) çoğu zaman eşiğin altında kalıyor.
         first = loud;
-        while (first > 0 && all[first - 1].data.size >= SPEECH_BYTES) first--;
+        while (first > 0 && all[first - 1].data.size >= threshold) first--;
         first = Math.max(0, first - 2);
       } else {
         // Eşiğe takılan olmadı: pencerenin tamamı gönderiliyor.
