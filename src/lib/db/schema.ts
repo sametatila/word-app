@@ -355,6 +355,65 @@ export const questClaims = pgTable(
   (t) => [primaryKey({ columns: [t.userId, t.day, t.questId] })],
 );
 
+/**
+ * Kazanılmış rozetler.
+ *
+ * Yalnızca AÇILMA ANI yazılıyor; ilerlemenin kendisi burada tutulmuyor.
+ * Sebebi görev tablosundakiyle aynı: "1.000 kelime pekiştir" ilerlemesi zaten
+ * `user_words`'te, "100 ders bitir" `user_lessons`'ta duruyor. Aynı sayıyı
+ * ikinci bir yerde biriktirmek, er geç ayrışan iki sayı demek.
+ *
+ * Bu tasarımın bir yan faydası var: rozetler geriye dönük hesaplanabiliyor.
+ * Sistem yayına alındığında hiç kimse sıfırdan başlamıyor — herkes o güne
+ * kadar gerçekten yaptığı işin rozetlerini bir anda açıyor.
+ */
+export const achievements = pgTable(
+  "achievements",
+  {
+    userId: text("user_id").notNull(),
+    achievementId: text("achievement_id").notNull(),
+    unlockedAt: timestamp("unlocked_at", { withTimezone: true }).notNull().defaultNow(),
+    /** Kullanıcı kutlamayı gördü mü — görülmemiş rozet özet ekranında patlar. */
+    seen: boolean("seen").notNull().default(false),
+  },
+  (t) => [
+    primaryKey({ columns: [t.userId, t.achievementId] }),
+    index("achievements_user_idx").on(t.userId, t.unlockedAt),
+  ],
+);
+
+/**
+ * Ürün olayları.
+ *
+ * Bugüne kadarki her tasarım kararı ölçüme dayandı ama ölçüm elle SQL
+ * yazılarak yapıldı ve yalnızca ARDINDA iz bırakan şeyler görülebildi:
+ * cevaplar, dersler, XP. Görülemeyenler tam da en çok merak edilenlerdi —
+ * kaç kişi başlangıç kartını görüp hiç başlamadan çıktı, hangi sekmeye
+ * hiç dokunulmadı, bildirime tıklanıp uygulama açıldı mı.
+ *
+ * Tablo bilerek dar: kim, hangi gün, hangi olay, isteğe bağlı bir sayı.
+ * Serbest metin ya da jsonb yok — şema büyüdükçe kimsenin bakmadığı bir
+ * çöplüğe dönüşmesin. Kişisel veri de yok: olay adları sabit bir listeden
+ * geliyor.
+ */
+export const events = pgTable(
+  "events",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    day: date("day").notNull(),
+    /** Sabit listeden bir ad — bkz. lib/events.ts */
+    name: text("name").notNull(),
+    /** Olayla ilgili tek sayı (tur uzunluğu, sekme sırası…); yoksa 0. */
+    value: integer("value").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("events_user_idx").on(t.userId, t.createdAt),
+    index("events_name_day_idx").on(t.name, t.day),
+  ],
+);
+
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
