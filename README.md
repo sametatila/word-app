@@ -94,7 +94,10 @@ uygulama gibi tam ekran açılır (PWA).
   işaretlemek tanımadır, ağızdan çıkarmak dilin asıl kullanıldığı iş. Tur ekrandaki turun ta
   kendisi (aynı kuyruk, aynı uç), yani ekranda başlayıp kulakla devam edebilirsin; SRS, günlük
   hedef ve seri hiçbir şeyin farkında olmaz. Duyulmayan tur **yanlış sayılmaz** — sokaktaki
-  gürültü tekrar planını bozmamalı.
+  gürültü tekrar planını bozmamalı. Yirmi tur bitince **“devam edelim mi?”** sesli sorulur ve
+  “evet” demen yeter: telefonu çıkarmadan bir sonraki tura geçilir. Ekran açık tutulur (tarayıcı
+  kilitli telefonda mikrofonu susturuyor), uygulamadan çıkılırsa tur duraklar ve mikrofon
+  gerçekten çalışmıyorsa tur yanmadan durur.
 - **Modül sınavı (patron turu):** ders yolundaki her modülün sonunda, o modülün ~45 kelimesiyle
   süre baskılı bir sınav. Hayatta kalma turundan farkı bir **kaybetme koşulu** olması: 15 soruyu
   60 saniye içinde bitirmek zorundasın (doğru +3 sn, yanlış −5 sn). Geçilen modül yolda taç
@@ -254,7 +257,7 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (492 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (526 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
 sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
 tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını, modül sınavının
@@ -529,6 +532,15 @@ taşınınca ortaya bambaşka bir kullanım anı çıktı — yürürken, bulaş
 | Tur, ekrandaki turun ta kendisi | Ayrı bir "sesli mod ilerlemesi" kurmak aynı emeği ikinci bir yerde saymak olurdu; ekranda başlayıp kulakla devam etmek serbest |
 | Duyulmayan tur yanlış sayılmaz | Sokakta mikrofonun bir turu kaçırması olağan; onu hata yazmak kelimeyi gerçekten unutulduğu için değil gürültü yüzünden öne çekerdi |
 | Cevaplar `speak` adıyla kaydedilir | Yazma oyununun hanesine yazmak kolaydı ama profildeki oyun başarısı tablosunu bozardı: ikisi farklı beceri |
+
+Telefon cepteyken dört şey ayrıca çözülmek zorunda kaldı:
+
+| Sorun | Çözüm |
+|---|---|
+| Ekran kapanınca tanıyıcı susuyor | Ekran uyanık tutuluyor (`Screen Wake Lock`). Tarayıcıda **arka planda konuşma tanıma yok** — kilitli telefonda dinleyen bir sekme, mikrofonu görünmez biçimde açık tutmak olurdu; tek dürüst çözüm ekranın kapanmasını engellemek |
+| Uygulamadan çıkılınca tur yanıyor | Sayfa görünmez olunca tur duruyor. Önce her tur anında boş dönüyor ve yirmi soru saniyeler içinde "duyamadım" diye tükeniyordu |
+| Mikrofon bozukken tur yanıyor | Son dört turun üçü duyulmadıysa tur duruyor. Ölçüt bilerek "üst üste" değil: bozuk tanıyıcı arada çöp metin döndürüyor ve ardışıklık arayan bir sayaç onunla sıfırlanıyordu — ölçümde 45 saniyede altı tur yandı, sayaç hiç üçe ulaşmadı |
+| Tur bitince telefonu çıkarmak gerekiyor | "Devam edelim mi?" sesli soruluyor, cevap sesli alınıyor. Anlaşılmayan cevap ne evet ne hayır sayılıyor; soru bir kez tekrarlanıyor, sonra duruluyor |
 
 ### Modül sınavı
 
