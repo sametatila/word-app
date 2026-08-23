@@ -76,7 +76,7 @@ import {
   WeatherIcon,
   WrenchIcon,
 } from "@/components/icons";
-import { reducedMotion } from "@/lib/fx";
+import { useStill } from "@/lib/use-still";
 import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
 import type { Lesson, LessonIcon } from "@/lib/lessons/types";
 
@@ -589,7 +589,7 @@ function LessonNode({
   at: { x: number; y: number };
 }) {
   const Icon = ICONS[card.lesson.icon];
-  const still = reducedMotion();
+  const still = useStill();
 
   const circle: React.CSSProperties =
     state === "done"

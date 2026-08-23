@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { reducedMotion } from "@/lib/fx";
+import { useStill } from "@/lib/use-still";
 
 /**
  * Erdi — uygulamanın mirketi.
@@ -84,8 +84,15 @@ export function Mascot({
       width={size}
       height={(size * 210) / 172}
       className={className}
-      role="img"
-      aria-label="Erdi"
+      /*
+        Dekoratif. On üç kullanım yerinin hiçbirinde Erdi tek başına bilgi
+        taşımıyor — yanında her zaman aynı şeyi söyleyen bir başlık ya da
+        sonuç metni var. `role="img" aria-label="Erdi"` ekran okuyucuya her
+        kapanışta, her turun sonunda ve her seri kutlamasında "Erdi" dedirtiyordu;
+        bu bir bilgi değil, gürültü.
+      */
+      aria-hidden="true"
+      focusable="false"
     >
       {/* Yere düşen yumuşak gölge — karakteri havada asılı olmaktan kurtarıyor. */}
       <motion.ellipse
@@ -374,13 +381,6 @@ function Zzz() {
       ))}
     </g>
   );
-}
-
-/** Hareket azaltma tercihi — istemci tarafında, ilk boyamadan sonra okunuyor. */
-function useStill() {
-  const [still, setStill] = useState(false);
-  useEffect(() => setStill(reducedMotion()), []);
-  return still;
 }
 
 /**

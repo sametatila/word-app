@@ -187,13 +187,23 @@
   .verdict {
     border-radius: 1rem;
   }
+  /*
+    Metin karışımı %72 renk / %28 metin idi ve ölçümde açık temada doğru
+    şeridinin kontrastı 3.60 çıkıyordu — WCAG AA'nın normal metin eşiği 4.5 ve
+    şeridin yazısı 14 px kalın, yani "büyük metin" istisnasına da girmiyor.
+    Yeşilin açık zemin üstünde yeterince koyulaşmaması sorunun kaynağı.
+
+    %55'te ölçüm: açık temada 5.07 / 6.33, koyu temada 7.30 / 4.83 — dördü de
+    eşiğin üstünde. Renk kimliği korunuyor, yalnızca metin bir tık koyuluyor
+    (koyu temada bir tık açılıyor, çünkü karışımın diğer ucu tema metni).
+  */
   .verdict-correct {
     background: color-mix(in srgb, var(--color-mint-500) 16%, var(--surface));
-    color: color-mix(in srgb, var(--color-mint-500) 72%, var(--text));
+    color: color-mix(in srgb, var(--color-mint-500) 55%, var(--text));
   }
   .verdict-wrong {
     background: color-mix(in srgb, var(--color-rose-500) 16%, var(--surface));
-    color: color-mix(in srgb, var(--color-rose-500) 72%, var(--text));
+    color: color-mix(in srgb, var(--color-rose-500) 55%, var(--text));
   }
   .option-correct {
     border-color: var(--color-mint-500);
@@ -245,6 +255,19 @@
 
 /* Hareketi azalt tercihi: kutlamalar sessizleşir, arayüz çalışmaya devam eder. */
 @media (prefers-reduced-motion: reduce) {
+  /*
+    Sıralı açılan kart bölümleri (bkz. components/reveal).
+
+    Kural CSS'te, çünkü JavaScript tercihi ancak ilk boyamadan sonra
+    okuyabiliyor — sunucuyla aynı cevabı vermek zorunda, yoksa hydration
+    uyuşmuyor — ve o ana kadar animasyon çoktan başlamış oluyor. Burada
+    framer-motion'ın satır içi stili eziliyor: bölümler yerinde ve anında
+    görünüyor.
+  */
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
   .animate-pop,
   .animate-shake,
   .animate-glow {

@@ -6,7 +6,6 @@ import { AchievementBadge, TIER_COLOR, TIER_LABEL, type BadgeRow } from "@/compo
 import { Confetti } from "@/components/celebrate";
 import { play } from "@/lib/sfx";
 import { track } from "@/lib/track";
-import { reducedMotion } from "@/lib/fx";
 
 /**
  * Rozet açılış kutlaması.
@@ -179,7 +178,11 @@ export function AchievementUnlock() {
           backdropFilter: "blur(4px)",
         }}
       >
-        <Confetti fire={reducedMotion() ? 0 : 1} count={30} />
+        {/* Hareket azaltma kontrolü burada gereksizdi: Confetti zaten kendi
+            içinde tercihe bakıp hiç çizmiyor. Çift kontrol olmasının yanında
+            render sırasında okunuyordu ve sunucu/istemci ayrışmasına yol
+            açıyordu (bkz. lib/use-still). */}
+        <Confetti fire={1} count={30} />
         {view.kind === "batch" ? (
           <Card tier="legend">
             <p

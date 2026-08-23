@@ -16,7 +16,8 @@ import { AlertIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { parseReply } from "@/lib/chat-format";
 import { Confetti } from "@/components/celebrate";
-import { fx, reducedMotion } from "@/lib/fx";
+import { fx } from "@/lib/fx";
+import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/lessons/cues";
 import { judgeSpeech } from "@/lib/speech";
 import { tr as trSeg, type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
@@ -1454,9 +1455,16 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok
   );
 }
 
-/** Baloncukların ortak giriş animasyonu — hareket azaltma tercihine saygılı. */
-function bubbleEntrance() {
-  return reducedMotion()
+/**
+ * Baloncukların ortak giriş animasyonu — hareket azaltma tercihine saygılı.
+ *
+ * Tercihi kendisi okumuyor, parametre olarak alıyor: bu düz bir fonksiyon ve
+ * render sırasında çağrılıyor. `reducedMotion()` sunucuda her zaman `false`
+ * döndüğü için burada okumak, sunucunun ürettiği HTML ile tarayıcının ilk
+ * render'ını ayırıyordu (bkz. lib/use-still).
+ */
+function bubbleEntrance(still: boolean) {
+  return still
     ? {}
     : {
         initial: { opacity: 0, y: 10, scale: 0.97 },
@@ -1473,7 +1481,7 @@ function bubbleEntrance() {
  * nefes önce bu noktaların yerine geçiyor.
  */
 function TypingDots() {
-  const still = reducedMotion();
+  const still = useStill();
   return (
     <span className="flex items-center gap-1 px-0.5 py-1.5" aria-label="hazırlanıyor">
       {[0, 1, 2].map((i) => (
@@ -1491,7 +1499,7 @@ function TypingDots() {
 
 /** Okunmakta olan baloncuğun canlı ses çubukları — hoparlör simgesinin yerine. */
 function SpeakingBars({ inline = false }: { inline?: boolean }) {
-  const still = reducedMotion();
+  const still = useStill();
   return (
     <span
       className={`${inline ? "ml-1 inline-flex align-middle" : "flex"} h-7 w-7 shrink-0 items-center justify-center gap-0.5`}
@@ -1526,9 +1534,10 @@ function LectureBubble({
   ttsAvailable: boolean;
   speaking: boolean;
 }) {
+  const still = useStill();
   if (item.role === "user") {
     return (
-      <motion.div {...bubbleEntrance()} className="flex justify-end">
+      <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
           className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
           style={{ background: "var(--color-brand-500)" }}
@@ -1540,7 +1549,7 @@ function LectureBubble({
   }
   const hint = item.tone === "hint";
   return (
-    <motion.div {...bubbleEntrance()} className="flex items-end gap-1.5">
+    <motion.div {...bubbleEntrance(still)} className="flex items-end gap-1.5">
       <div
         className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm leading-relaxed"
         style={{
@@ -1554,7 +1563,7 @@ function LectureBubble({
         ) : (
           <motion.span
             className="inline"
-            {...(reducedMotion()
+            {...(still
               ? {}
               : {
                   initial: { opacity: 0, y: 4 },
@@ -1604,9 +1613,10 @@ function Bubble({
   speaking: boolean;
   ttsAvailable: boolean;
 }) {
+  const still = useStill();
   if (turn.role === "user") {
     return (
-      <motion.div {...bubbleEntrance()} className="flex justify-end">
+      <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
           className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
           style={{ background: "var(--color-brand-500)" }}
@@ -1619,7 +1629,7 @@ function Bubble({
 
   const { body, corrections } = parseReply(turn.content);
   return (
-    <motion.div {...bubbleEntrance()} className="flex flex-col items-start gap-1.5">
+    <motion.div {...bubbleEntrance(still)} className="flex flex-col items-start gap-1.5">
       <div
         className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm"
         style={{ background: "var(--surface-2)" }}

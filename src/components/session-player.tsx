@@ -32,7 +32,7 @@ import { ShareResult } from "@/components/share-result";
 import { GamePicker } from "@/components/game-picker";
 import { Mascot } from "@/components/mascot";
 import { MascotPop } from "@/components/mascot-pop";
-import { Stagger, StaggerItem } from "@/components/reveal";
+import { Stagger } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
@@ -1236,8 +1236,8 @@ function SummaryCard({
         ne olduğu ancak durup bakınca ayrılıyordu. Sıra okunma sırasıyla
         aynı: önce Erdi ve kazanılan XP, sonra sayılar, sonra ayrıntı.
       */}
-      <Stagger className="card overflow-hidden" gap={0.07}>
-        <StaggerItem className="brand-gradient p-8 text-center text-white">
+      <Stagger className="card overflow-hidden">
+        <div className="brand-gradient p-8 text-center text-white">
           {/* Turun nasıl geçtiğini söyleyen şey artık bir simge değil, Erdi'nin
               hâli: hak edilmiş turda kutluyor, iyi turda gülümsüyor, kötü turda
               üzülüyor. Aynı bilgi bir cümleyle de yazılabilirdi ama okunması
@@ -1256,13 +1256,13 @@ function SummaryCard({
           <p className="mt-1 text-sm opacity-90">
             +<CountUp value={xp} /> XP
           </p>
-        </StaggerItem>
+        </div>
 
-        <StaggerItem className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
+        <div className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
           <Stat label="Doğruluk" value={`%${accuracy}`} />
           <Stat label="Kelime" value={String(tally.total)} />
           <Stat label="Seri" value={`${result?.currentStreak ?? 0}g`} />
-        </StaggerItem>
+        </div>
 
         {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı
             gösterilmeden tur bittiği için başka söylenecek yer yok. */}
@@ -1392,7 +1392,7 @@ function SummaryCard({
             kalıcı olarak kapanır — ikinci şans yok. */}
         <PushOptIn streak={result?.currentStreak ?? 0} />
 
-        <StaggerItem className="space-y-2 p-6 pt-4">
+        <div className="space-y-2 p-6 pt-4">
           <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5">
             {partial ? "Tura geri dön" : "Devam et"}
           </button>
@@ -1406,7 +1406,7 @@ function SummaryCard({
             streak={result?.currentStreak ?? 0}
             level={level}
           />
-        </StaggerItem>
+        </div>
       </Stagger>
     </motion.div>
   );
