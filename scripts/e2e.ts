@@ -47,13 +47,20 @@ import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
-import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
+import { GAME_LABELS, PLAYABLE_GAMES, type Answer, type Round } from "../src/lib/types";
 import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";
 import { seededShuffle } from "../src/lib/shuffle";
 import { composeReminder, weeklyRivals } from "../src/lib/push";
+import {
+  BOSS_ROUNDS,
+  buildModuleBoss,
+  clearedModules,
+  moduleVocab,
+  recordBossClear,
+} from "../src/lib/lessons/boss";
 import { buildShareText } from "../src/components/share-result";
-import { achievements, events } from "../src/lib/db/schema";
+import { achievements, events, moduleClears } from "../src/lib/db/schema";
 import { track } from "../src/lib/events";
 
 const USER = "e2e-user";
@@ -86,6 +93,12 @@ function answersFor(rounds: Round[], correctRatio = 1): Answer[] {
 }
 
 async function reset() {
+  // Yeni tablolar da temizleniyor: rozetler ve modül geçişleri kalıcı
+  // kayıtlar ve ikinci koşuda önceki koşunun sonucunu "zaten açık" diye
+  // görüp testleri sessizce yanıltıyorlardı.
+  await db.delete(achievements).where(eq(achievements.userId, USER));
+  await db.delete(moduleClears).where(eq(moduleClears.userId, USER));
+  await db.delete(events).where(eq(events.userId, USER));
   await db.delete(reviews).where(eq(reviews.userId, USER));
   await db.delete(userWords).where(eq(userWords.userId, USER));
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
@@ -1314,8 +1327,12 @@ async function main() {
   check("aynı oyun üç tur içinde tekrarlanmıyor", withinWindow === 0, `(${withinWindow})`);
   const avgDistinct = distinctPerSession.reduce((a, b) => a + b, 0) / distinctPerSession.length;
   check("oturum başına en az 6 farklı oyun", avgDistinct >= 6, `(ortalama ${avgDistinct.toFixed(1)})`);
-  check("on oyun tanımlı", Object.keys(GAME_LABELS).length === 11, // + tanıtım kartı
+  // On oynanabilir oyun + tanıtım kartı + yürürken modunun sesli cevabı.
+  // `speak` bir oyun değil bir mod ama cevapları kendi adıyla kaydediliyor
+  // (bkz. lib/types), o yüzden etiketi var ve seçicide yok.
+  check("etiketler eksiksiz", Object.keys(GAME_LABELS).length === PLAYABLE_GAMES.length + 2,
     `(${Object.keys(GAME_LABELS).length})`);
+  check("speak oyun seçicide değil", !(PLAYABLE_GAMES as readonly string[]).includes("speak"));
 
   console.log("\n11i) Eğik çizgiyle ayrılmış örnek cümleler");
   check(
@@ -1733,7 +1750,49 @@ async function main() {
   await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-onde"));
   await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));
 
-  console.log("\n21) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n21) Modül sınavı — patron turu");
+  const heads = moduleVocab("de", "A1", 0);
+  check("modülün kelimeleri toplandı", heads.length >= 30, `(${heads.length})`);
+  check("artikel ayıklandı", !heads.some((h) => /^(der|die|das)\s/.test(h)));
+  check("hepsi küçük harf", heads.every((h) => h === h.toLocaleLowerCase("de-DE")));
+  check("tekrar yok", new Set(heads).size === heads.length);
+
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const boss = await buildModuleBoss(USER, "A1", 0);
+  check("sınav tam sayıda tur üretti", boss.rounds.length === BOSS_ROUNDS, `(${boss.rounds.length})`);
+  check("havuz yeterli", boss.pool >= 8, `(${boss.pool})`);
+  check("modül başlığı geliyor", boss.meta.title.length > 0, `(${boss.meta.title})`);
+  check("ders sayısı 10", boss.meta.lessonsTotal === 10, `(${boss.meta.lessonsTotal})`);
+  check("hiç ders bitmemişken 0", boss.meta.lessonsDone === 0);
+  check("henüz geçilmemiş", boss.meta.bestLeft === null);
+
+  // Sorular modülün kelimelerinden gelmeli — sınavın tek anlamı bu.
+  const bossWords = boss.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
+  const inModule = bossWords.filter((w) => heads.includes(w.de.toLocaleLowerCase("de-DE")));
+  check("bütün sorular modülün kelimelerinden", inModule.length === bossWords.length,
+    `(${inModule.length}/${bossWords.length})`);
+  check("tek bir oyun türüne düşmüyor", new Set(boss.rounds.map((r) => r.game)).size >= 3);
+
+  // Geçme kaydı: en iyi kalan süre korunuyor, düşük deneme rekoru bozmuyor.
+  const clear1 = await recordBossClear(USER, "A1", 0, 22);
+  check("ilk geçiş kaydedildi", clear1.bestLeft === 22 && clear1.isRecord);
+  const clear2 = await recordBossClear(USER, "A1", 0, 9);
+  check("düşük süre rekoru bozmuyor", clear2.bestLeft === 22 && !clear2.isRecord);
+  const clear3 = await recordBossClear(USER, "A1", 0, 31);
+  check("yeni rekor yazıldı", clear3.bestLeft === 31 && clear3.isRecord);
+
+  const map = await clearedModules(USER, "de");
+  check("geçilen modül haritada", map.get("A1:0") === 31, `(${map.get("A1:0")})`);
+  check("geçilmeyen modül haritada yok", map.get("A1:5") === undefined);
+
+  const again = await buildModuleBoss(USER, "A1", 0);
+  check("sınav rekoru geri veriyor", again.meta.bestLeft === 31);
+
+  const board21 = await achievementBoard(USER);
+  check("modül fatihi rozeti açıldı", board21.rows.find((r) => r.id === "boss1")?.unlocked === true);
+
+  console.log("\n22) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);

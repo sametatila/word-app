@@ -75,7 +75,7 @@ uygulama gibi tam ekran açılır (PWA).
 - **Öğrenci arması:** sıralamadaki gri baş-harf dairesi yerine kimlikten türetilen renkli arma
   (gradyan + desen). Sıfır depolama, sıfır ayar, herkes farklı; ilk üçün armasında madalya
   halkası var.
-- **Rozetler:** 37 rozet, yedi grupta (seri · kelime · oyunlar · dersler · beceriler · turlar ·
+- **Rozetler:** 41 rozet, yedi grupta (seri · kelime · oyunlar · dersler · beceriler · turlar ·
   keşif). İlerleme ayrı bir sayaçta biriktirilmiyor, mevcut tablolardan okunuyor — bunun sonucu
   rozetlerin **geriye dönük** olması: sistem açıldığı gün kimse sıfırdan başlamıyor. Kilitli
   rozetler gizlenmiyor, sönük duruyor ve altlarında "ne kadar kaldı" çubuğu var; gizlenmiş
@@ -89,6 +89,17 @@ uygulama gibi tam ekran açılır (PWA).
   sonuç sıradan bir skor değil, karşılaştırılabilir bir meydan okuma. Paylaşım metni bunu
   söylüyor ve puanı taşıyor — günün turunda kıyaslanan şey doğru sayısı değil puan, çünkü hız
   ve seri puana giriyor.
+- **Yürürken (ekransız) mod:** uygulamanın tamamı bir ekrana bakmayı gerektiriyordu. Bu modda
+  Türkçesini duyar, Almancasını söylersin — telefon cepte kalabilir. Yön bilerek üretim: şık
+  işaretlemek tanımadır, ağızdan çıkarmak dilin asıl kullanıldığı iş. Tur ekrandaki turun ta
+  kendisi (aynı kuyruk, aynı uç), yani ekranda başlayıp kulakla devam edebilirsin; SRS, günlük
+  hedef ve seri hiçbir şeyin farkında olmaz. Duyulmayan tur **yanlış sayılmaz** — sokaktaki
+  gürültü tekrar planını bozmamalı.
+- **Modül sınavı (patron turu):** ders yolundaki her modülün sonunda, o modülün ~45 kelimesiyle
+  süre baskılı bir sınav. Hayatta kalma turundan farkı bir **kaybetme koşulu** olması: 15 soruyu
+  60 saniye içinde bitirmek zorundasın (doğru +3 sn, yanlış −5 sn). Geçilen modül yolda taç
+  takar ve kalan en iyi süre rekor olarak kalır. Kaybedince hiçbir şey silinmez — cevaplar zaten
+  tekrar planına işlemiştir.
 - **Arena başlangıç ekranında:** hayatta kalma turuna tek giriş oturum ÖZETİYDİ, yani turu
   görebilmek için önce 20 turluk bir oturumu bitirmek gerekiyordu. Artık günün turunun hemen
   altında, rekorunla birlikte duruyor.
@@ -236,11 +247,11 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (463 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (483 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
 sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
-tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını ve ilerleme
-sorgularını gerçek PostgreSQL üzerinde doğrular.
+tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını, modül sınavının
+kelime havuzunu ve ilerleme sorgularını gerçek PostgreSQL üzerinde doğrular.
 
 ```bash
 # arayüzden oynayan öğrenci simülasyonu (dev sunucusu açıkken)
@@ -270,10 +281,12 @@ src/
     srs.ts                  tekrar motoru (saf fonksiyonlar)
     session.ts              kuyruk kurgusu, cevap işleme, haftalık sıralama, ilerleme
     sfx.ts                  oyun sesleri (WebAudio; dosya yok, tonlar yerinde üretilir)
-    achievements.ts         37 rozetin tanımı + mevcut tablolardan geriye dönük hesabı
+    achievements.ts         41 rozetin tanımı + mevcut tablolardan geriye dönük hesabı
     events.ts / track.ts    ürün olayları (sunucu yazımı / istemci göndericisi)
     xp.ts                   XP tablosu + bahis kuralı (tek referans noktası)
     lessons/characters.ts   rol yapma kadrosu — isimler katalog sırasından türer
+    lessons/boss.ts         modül sınavı: ders kelimelerinden süreli tur + geçme kaydı
+    shuffle.ts              tohumlu karıştırma (sunucu ve tarayıcı aynı sırayı üretsin)
     example.ts              örnek cümle ayıklama (numaralı liste + kısaltma farkındalığı)
     skills/                 beceri içeriği: types · meta · content/{a1..c1, zh-a1..zh-c1}
     db/schema.ts            words · profiles · user_words · reviews · daily_stats ·
@@ -285,6 +298,8 @@ src/
     skills/*.tsx            beceri hub'ı, okuma/dinleme/yazma çalıştırıcıları
     achievement-*.tsx       rozet duvarı, rozet görseli, açılış kutlaması
     avatar.tsx              kimlikten türetilen öğrenci arması
+    walk-player.tsx         ekransız sesli tur · use-listen.ts ortak dinleme döngüsü
+    boss-player.tsx         modül sınavı (süreli, kaybetme koşullu)
     leaderboard.tsx         haftalık sıralama
 data/
   app/words.json            Almanca tohumlama kaynağı (7.392 kelime, A1–C1)
@@ -472,7 +487,7 @@ cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
    Bedeli birkaç ek sorgu; karşılığı rozetlerin **geriye dönük** olması. Sistem açıldığı gün
    kimse sıfırdan başlamıyor.
 2. **Az ve zor.** Her şeye rozet veren sistemler *overjustification* etkisiyle içsel
-   motivasyonu düşürüyor. 37 rozetin çoğu aylara, birkaçı yıllara yayılıyor.
+   motivasyonu düşürüyor. 41 rozetin çoğu aylara, birkaçı yıllara yayılıyor.
 3. **Hiçbiri satın alınamaz.** Uygulamada para yok ve olmayacak; rozetin değeri buradan geliyor.
 
 Kutlama tek bir yerde duruyor (`app-shell.tsx` → `AchievementUnlock`) ve tetikleyicisi zaten var
@@ -494,6 +509,37 @@ gerilimi ana tura taşıyor:
 İki kural adil tutuyor: **tamamen isteğe bağlı** (bahse girmeyen için oyun hiç değişmez) ve
 **kayıp yalnızca o etaba ait** (dünkü emeğe dokunulmaz, toplam XP asla geriye gitmez). Pay
 istemciden geldiği için sunucuda tavanlı — `xpForWager` 250'yi geçen bir pay kabul etmiyor.
+
+### Yürürken modu
+
+Eller serbest konuşma döngüsü derslerde zaten çalışıyordu: cevap sesli okunuyor, okuma biter
+bitmez mikrofon kendiliğinden açılıyor, söylenen doğrudan gidiyor. Aynı döngü kelime turuna
+taşınınca ortaya bambaşka bir kullanım anı çıktı — yürürken, bulaşık yıkarken, otobüste.
+
+| Karar | Neden |
+|---|---|
+| Türkçe duy → Almanca söyle | Şık işaretlemek tanımadır; ağızdan çıkarmak ekrana bakmadan yapılabilecek tek alıştırma türü ve dilin asıl kullanıldığı iş |
+| Tur, ekrandaki turun ta kendisi | Ayrı bir "sesli mod ilerlemesi" kurmak aynı emeği ikinci bir yerde saymak olurdu; ekranda başlayıp kulakla devam etmek serbest |
+| Duyulmayan tur yanlış sayılmaz | Sokakta mikrofonun bir turu kaçırması olağan; onu hata yazmak kelimeyi gerçekten unutulduğu için değil gürültü yüzünden öne çekerdi |
+| Cevaplar `speak` adıyla kaydedilir | Yazma oyununun hanesine yazmak kolaydı ama profildeki oyun başarısı tablosunu bozardı: ikisi farklı beceri |
+
+### Modül sınavı
+
+On ders bitince hiçbir şey olmuyordu: pankartta bir kupa beliriyor, yol devam ediyordu. Sınav
+yola bir varış noktası koyuyor.
+
+Hayatta kalma turundan ayıran şey **kaybetme koşulu**. Orada amaç puanı büyütmek ve turun bir
+sonu yok; burada 15 soruyu süre bitmeden bitirmek zorundasın. Patron turu tam olarak budur —
+yenilebilir bir şey. Süre cömert başlıyor (60 sn) ama doğru yalnızca +3 sn kazandırıyor, yanlış
+−5 sn yakıyor: yani hız değil **isabet** kazandırıyor (hayatta kalma turunda tersi, çünkü orada
+amaç dayanmak).
+
+Sorular ders içeriğinden geliyor ama kelime tablosundan kuruluyor: ders `vocab`'ı yalnızca
+"das Frühstück / kahvaltı" ikilisi, oysa oyunların artikele, çoğula ve örnek cümleye ihtiyacı
+var. İkisi başlıktan eşleştiriliyor — eşleşme modül başına %64–98 (ortalama ~%86), yani her
+modülde 32–49 kelime kalıyor.
+
+Kaybedince hiçbir şey silinmiyor: cevaplar zaten tekrar planına işledi, kaybedilen tek şey taç.
 
 ### Ölçüm
 
