@@ -102,7 +102,23 @@ export function Mascot({
         ry="8"
         fill={INK}
         opacity="0.13"
-        animate={still ? {} : { rx: mood === "cheer" ? [42, 30, 42] : [42, 38, 42] }}
+        /*
+          `initial={false}` ve `rx`in HER ZAMAN hedefte olması bir üslup tercihi
+          değil, bir hatanın düzeltmesi: tarayıcı her açılışta
+          `<ellipse> attribute rx: Expected length, "undefined"` yazıyordu.
+
+          Sebep `rx`in bir CSS özelliği değil bir SVG ÖZNİTELİĞİ olması.
+          Hedeften çıkarıldığında (hareket azaltmada `animate` boşalıyordu) ya
+          da başlangıç değeri okunmak istendiğinde motion `rx`i stilden okumaya
+          çalışıyor, `undefined` buluyor ve onu olduğu gibi özniteliğe yazıyor.
+          Aynı dosyada ağız yolları (`motion.path d`) zaten bu yüzden
+          `initial={false}` kullanıyor — öznitelik animasyonlarının kuralı bu.
+
+          Durgun hâlde `rx` diziden çıkıp sabit 42 oluyor: anahtar hedefte
+          kalıyor, animasyon durmuş oluyor.
+        */
+        initial={false}
+        animate={{ rx: still ? 42 : mood === "cheer" ? [42, 30, 42] : [42, 38, 42] }}
         transition={{ duration: b.dur || 3, repeat: still || !b.dur ? 0 : Infinity, ease: "easeInOut" }}
       />
 
@@ -240,7 +256,12 @@ function Paws({ mood, still }: { mood: Mood; still: boolean }) {
   if (mood === "cheer") {
     return (
       <motion.g
-        animate={still ? {} : { y: [0, -6, 0] }}
+        /* Gölgedeki `rx` ile aynı kural: hedef boşaltılmıyor, durgun hâlde
+           sabitleniyor. Burada `y` bir dönüşüm olduğu için tabanı belli (0) ve
+           öznitelik hatası çıkmıyor — yine de iki yerde iki farklı kalıp
+           bırakmak, bir sonraki animasyonda aynı hatayı davet ederdi. */
+        initial={false}
+        animate={{ y: still ? 0 : [0, -6, 0] }}
         transition={{ duration: 0.62, repeat: still ? 0 : Infinity, ease: "easeInOut" }}
         fill={FUR_MID}
       >
