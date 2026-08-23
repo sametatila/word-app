@@ -745,16 +745,25 @@ function StartCard({
     >
       <div className="card overflow-hidden">
         <div className="brand-gradient px-6 py-5 text-white sm:py-7">
-          <p className="text-sm opacity-90">
-            {meta.currentStreak > 0
-              ? `${meta.currentStreak} günlük seridesin`
-              : "Bugün serini başlat"}
-          </p>
-          <div className="mt-1 flex items-center gap-2">
-            <h1 className="text-xl font-bold sm:text-2xl">{name ? `Hoş geldin, ${name}` : "Hoş geldin"}</h1>
-            <span className="rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
-              {meta.level}
-            </span>
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <p className="text-sm opacity-90">
+                {meta.currentStreak > 0
+                  ? `${meta.currentStreak} günlük seridesin`
+                  : "Bugün serini başlat"}
+              </p>
+              <div className="mt-1 flex items-center gap-2">
+                <h1 className="text-xl font-bold sm:text-2xl">
+                  {name ? `Hoş geldin, ${name}` : "Hoş geldin"}
+                </h1>
+                <span className="rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
+                  {meta.level}
+                </span>
+              </div>
+            </div>
+            {/* Erdi karşılamayı üstleniyor. Seri varsa keyfi yerinde, yoksa
+                bekliyor — "bugün serini başlat" cümlesinin altını çiziyor. */}
+            <Mascot mood={meta.currentStreak > 0 ? "happy" : "idle"} size={62} className="-my-2 shrink-0" />
           </div>
           <div className="mt-3 sm:mt-4">
             <div className="mb-1.5 flex justify-between text-xs font-semibold opacity-90">
@@ -799,8 +808,8 @@ function StartCard({
               </strong>
               <p className="muted mt-1 text-xs">
                 {meta.pacing === "review"
-                  ? `${meta.dueCount} kelimenin tekrarı birikmiş. Yeni kelime almak yalnızca borcu büyütürdü; bugün onları kapatıyoruz.`
-                  : `${meta.leeches} kelimede takılıyorsun. Yeni kelime sayısı yarıya indirildi ki bunlara yer kalsın.`}
+                  ? `${meta.dueCount} tekrar birikmiş — bugün onları kapatıyoruz.`
+                  : `${meta.leeches} kelimede takılıyorsun — yeni kelime yarıya indi.`}
               </p>
             </div>
           ) : null}
@@ -822,36 +831,25 @@ function StartCard({
             </button>
           )}
 
-          {/* Açıklayıcı metinler eylemin ALTINA alındı.
-              Küçük telefonlarda bu iki paragraf başlat düğmesini katlanın
-              altına itiyordu: kullanıcı başlamak için önce kaydırmak zorunda
-              kalıyordu. Bilgi değerli ama eylemi engellememeli. */}
-          <div className="mt-4 space-y-3">
-          <p className="muted text-center text-sm">
-            {reviewCount > 0
-              ? "Tekrar zamanı gelen kelimeler bu turda kendiliğinden karşına çıkacak — ayrıca bir şey yapman gerekmiyor."
-              : "Bu tur yeni kelimelerle başlıyor. Öğrendiklerin, unutmaya başladığın anda kendiliğinden geri gelecek."}
-          </p>
+          {/*
+            Butonun altında eskiden iki açıklama bloğu vardı ve ikisi de
+            sistemin NASIL çalıştığını anlatıyordu: tekrarların kendiliğinden
+            geleceği, zorluğun kelimeye göre seçildiği, seviyeyi yalnızca
+            kullanıcının değiştirdiği. Bunlar bir kez öğrenilen şeyler; her
+            açılışta okunmuyor, sadece kartı uzatıp başlat düğmesini aşağı
+            itiyordu. Geriye tek satır kaldı ve o da bir açıklama değil, bir
+            SAYI — kullanıcının biriktirdiği şey.
+          */}
           {meta.coverage.total > 0 ? (
-            <div
-              className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
-              style={{ background: "var(--surface-2)" }}
-            >
-              <span className="muted">{meta.level} havuzunda </span>
+            <p className="muted mt-4 text-center text-sm">
+              {meta.level} havuzunda{" "}
               <strong style={{ color: "var(--color-mint-500)" }}>
                 {meta.coverage.mastered.toLocaleString("tr-TR")}
               </strong>
-              <span className="muted">
-                {" / "}
-                {meta.coverage.total.toLocaleString("tr-TR")} kelime pekişti
-              </span>
-              <p className="muted mt-1 text-xs">
-                Her sorunun zorluğu o kelimeyi ne kadar bildiğine göre seçilir: yeni kelimede
-                şıklı tanıma, oturmuş kelimede yazma. Seviyeni yalnızca sen değiştirirsin.
-              </p>
-            </div>
+              {" / "}
+              {meta.coverage.total.toLocaleString("tr-TR")} kelime pekişti
+            </p>
           ) : null}
-          </div>
         </div>
       </div>
       {/* Günün turu oyun seçicinin ÜSTÜNDE: günde bir kez oynanan, herkesle

@@ -47,20 +47,6 @@ const ICONS: Record<PlayableGame, typeof LinkIcon> = {
   truefalse: CheckIcon,
 };
 
-/** Neyi ölçtüğü — hangi oyunun ne işe yaradığı seçim anında görünsün. */
-const WHAT: Record<PlayableGame, string> = {
-  match: "hızlı tanıma",
-  choice: "anlam ayırt etme",
-  artikel: "der / die / das",
-  cloze: "cümle içinde kullanım",
-  scramble: "yazım",
-  typing: "sıfırdan hatırlama",
-  order: "söz dizimi",
-  plural: "çoğul biçim",
-  listen: "dinleme",
-  truefalse: "hızlı karar",
-};
-
 export function GamePicker({
   active,
   onPick,
@@ -94,7 +80,7 @@ export function GamePicker({
               key={game}
               disabled={busy}
               onClick={() => onPick(on ? null : game)}
-              className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-left transition-colors disabled:opacity-50"
+              className="flex min-h-12 items-center gap-2.5 rounded-xl px-3 py-2 text-left transition-colors disabled:opacity-50"
               style={{
                 background: on
                   ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)"
@@ -108,10 +94,15 @@ export function GamePicker({
               >
                 <Icon size={18} />
               </span>
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-semibold">{GAME_LABELS[game]}</span>
-                <span className="muted block truncate text-[11px]">{WHAT[game]}</span>
-              </span>
+              {/* Yalnızca oyunun adı. Altında "hızlı tanıma", "söz dizimi" gibi
+                  birer açıklama satırı vardı; on oyunda on satır ediyordu ve
+                  adlar zaten kendilerini anlatıyor — Çoğul Bilmece'nin neyi
+                  ölçtüğünü söylemek için ikinci bir satır gerekmiyor. */}
+              {/* Ad kırpılmıyor, sarıyor. İki sütuna sığmayan adlar ("Doğru mu
+                  Yanlış mı") üç noktayla kesiliyordu ve kesik bir oyun adı,
+                  seçim listesinde tanınmıyor. Buton yüksekliği sabit tutuluyor
+                  ki ızgara satırları eşit kalsın. */}
+              <span className="min-w-0 text-sm font-semibold leading-tight">{GAME_LABELS[game]}</span>
             </button>
           );
         })}
