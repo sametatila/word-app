@@ -20,7 +20,7 @@ import { track } from "@/lib/track";
  * Anahtar açıldığında tek bir önizleme notası çalıyor: neyin açıldığını
  * duymadan anlamanın yolu yok.
  */
-export function SoundSettings() {
+export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
   // Sunucuda localStorage yok; ilk çizim varsayılanla yapılıp bağlanma
   // anında gerçek tercihle düzeltiliyor.
   const [on, setOn] = useState(true);
@@ -39,7 +39,8 @@ export function SoundSettings() {
   }
 
   return (
-    <section className="card p-5">
+    /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
+    <section className={bare ? "p-5" : "card p-5"}>
       <h2 className="mb-2 flex items-center gap-2 font-bold">
         <SpeakerIcon size={18} /> Oyun sesleri
       </h2>

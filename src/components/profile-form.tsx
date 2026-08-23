@@ -115,8 +115,20 @@ export function ProfileForm({
 
       {children}
 
+      {/*
+        AYARLAR İKİYE AYRILDI.
+
+        Önce beş ayrı kart vardı — "Ayarlar", "Uygulama olarak kur", davet, ses
+        ve bildirim — ve aralarına ilerleme kartları da karışıyordu. Hepsi aynı
+        ağırlıkta beyaz kutulardı, yani sayfa "önce bakılacak şeyler, sonra
+        değiştirilecek şeyler" diye okunmuyordu.
+
+        Şimdi iki başlık var: ÖĞRENME (turun nasıl kurulacağı) ve UYGULAMA
+        (cihazda nasıl çalışacağı). Aradaki fark kullanıcının aradığı şeyin
+        farkı: biri "günde kaç kelime", diğeri "sesi kapat".
+      */}
       <section className="card space-y-5 p-5">
-        <h2 className="font-bold">Ayarlar</h2>
+        <h2 className="font-bold">Öğrenme</h2>
 
         <div>
           <span className="muted mb-1.5 block text-sm font-semibold">Kursun</span>
@@ -253,21 +265,20 @@ export function ProfileForm({
         ) : null}
       </section>
 
-      {/* Kurulum burada kalıcı olarak duruyor: tarayıcının kendi önerisi bir
-          kez çıkıyor ve reddedilirse bir daha görünmüyor. Kullanıcı o noktadan
-          sonra uygulamayı nasıl kuracağını öğrenebileceği bir yer bulamıyordu. */}
-      <section className="card p-5">
-        <h2 className="mb-3 font-bold">Uygulama olarak kur</h2>
-        <InstallGuide tone="plain" />
+      {/* Uygulama ayarları tek kartta, ayırıcı çizgilerle. Sıra bir kuralı
+          izliyor: iPhone'da bildirim ancak uygulama ana ekrana eklenmişken
+          çalışıyor, o yüzden kurulum bildirimden önce geliyor. */}
+      <section className="card divide-y overflow-hidden" style={{ borderColor: "var(--border)" }}>
+        <div className="p-5">
+          <h2 className="mb-3 font-bold">Uygulama</h2>
+          <InstallGuide tone="plain" />
+        </div>
+        <SoundSettings bare />
+        <PushSettings bare />
       </section>
 
-      {/* Kurulumun hemen ardında: iPhone'da bildirim ancak uygulama ana
-          ekrana eklendikten sonra çalışıyor, iki bölümün sırası bunu anlatıyor. */}
+      {/* Davet kendi kartında kalıyor: bir ayar değil, bir çağrı. */}
       <InviteCard />
-
-      <SoundSettings />
-
-      <PushSettings />
 
       <section className="card p-5">
         <h2 className="mb-3 font-bold">Hesap</h2>

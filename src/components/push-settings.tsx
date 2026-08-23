@@ -24,7 +24,7 @@ import {
 
 type State = "loading" | "off" | "on" | "busy" | "unsupported" | "ios" | "denied";
 
-export function PushSettings() {
+export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
   const [state, setState] = useState<State>("loading");
   const [error, setError] = useState<string | null>(null);
 
@@ -64,7 +64,8 @@ export function PushSettings() {
   if (state === "loading") return null;
 
   return (
-    <section className="card p-5">
+    /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
+    <section className={bare ? "p-5" : "card p-5"}>
       <h2 className="mb-2 flex items-center gap-2 font-bold">
         <BellIcon size={18} /> Hatırlatmalar
       </h2>
