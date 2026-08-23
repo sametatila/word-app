@@ -555,10 +555,27 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 | Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |
 
 Yazıya çevirme `/api/stt` üzerinden, OpenAI uyumlu `audio/transcriptions` ucuyla: sıra
-**groq** (`whisper-large-v3-turbo`, ücretsiz katman günde 2.000 istek · 28.800 saniye ses),
-sonra **mistral** (`voxtral-mini-latest`). Hiçbiri yapılandırılmamışsa tarayıcının kendi
-tanıyıcısına düşülüyor — o da çalışıyor ama ekranın açık kalmasını istiyor ve arayüz bunu
-söylüyor.
+**groq** (`whisper-large-v3-turbo`), sonra **mistral** (`voxtral-mini-latest`). Hiçbiri
+yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor — o da çalışıyor ama ekranın
+açık kalmasını istiyor ve arayüz bunu söylüyor.
+
+**Ücretsiz katman yeter mi?** Bağlayıcı sınır jeton değil, istek sayısı. Groq'un ücretsiz
+katmanı günde **2.000 istek · 28.800 saniye ses**; bir yürüyüş turu ~22 cevap ve ~77 saniye
+ses demek:
+
+| | bir tur | günlük sınır | sınıra kaç tur |
+|---|---|---|---|
+| İstek | ~22 | 2.000 | **~90 tur** |
+| Ses | ~77 sn | 28.800 sn | ~370 tur |
+
+Yani sınır istek tarafında ve **hesabın tamamı için günde ~90 yürüyüş turu** ediyor. Sayaç
+`npm run report:events` çıktısında: her çağrı `stt_call` olarak yazılıyor, günün en yoğunları
+sınıra oranıyla listeleniyor — limite ne kadar yaklaşıldığı 429 gelmeden görülsün diye.
+
+Sesli cevap **sohbet jetonlarını harcamıyor**: Groq'ta yazıya çevirme ses saniyesiyle
+ölçülüyor, ders içi rol yapmanın jeton bütçesine dokunmuyor. Yalnızca `MISTRAL_API_KEY`
+varsa klipler oraya gider; `GROQ_API_KEY` eklemek hem ücretsiz hem de iki yükü birbirinden
+ayırır.
 
 İki koruma daha var:
 

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders } from "@/lib/chat-providers";
+import { track } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -55,6 +56,10 @@ export async function POST(req: Request) {
   if (!file || file.size === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
 
+  // Klip uzunluğu istemciden değil boyuttan tahmin ediliyor: opus ~16 kB/sn.
+  // Kesin olması gerekmiyor, sınıra ne kadar yaklaşıldığını görmeye yetiyor.
+  const seconds = Math.max(1, Math.min(60, file.size / 16_000));
+
   const failures: string[] = [];
   for (const provider of providers) {
     try {
@@ -78,6 +83,18 @@ export async function POST(req: Request) {
       }
       const data = (await res.json()) as { text?: string };
       const text = (data.text ?? "").trim();
+
+      /*
+        Her çağrı sayılıyor.
+
+        Ücretsiz katmanların bağlayıcı sınırı jeton değil İSTEK SAYISI (groq:
+        günde 2.000 istek ve 28.800 saniye ses). Sayaç olmadan limite ne kadar
+        yaklaşıldığı ancak 429 gelince öğrenilir — sağlayıcı kimliğini
+        kaydetmeyi de aynı ders yüzünden eklemiştik. Değer klibin saniyesi,
+        çünkü ikinci sınır o.
+      */
+      void track(userId, "stt_call", new Date().toISOString().slice(0, 10), Math.round(seconds));
+
       return NextResponse.json({ text, provider: provider.name, model: provider.model });
     } catch (err) {
       failures.push(`${provider.name}: ${(err as Error).message}`);
