@@ -127,6 +127,17 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   return (
     <GameShell
       label="Cümleyi Diz"
+      verdict={status === "playing" ? null : status}
+      feedback={
+        <span className="inline-flex flex-wrap items-center">
+          {status === "correct" ? "Harika! " : "Doğrusu: "}
+          <strong className="ml-1">
+            {answer.join(" ")}
+            {tail}
+          </strong>
+          <SpeakButton text={`${answer.join(" ")}${tail}`} size="sm" className="ml-1" />
+        </span>
+      }
       prompt={
         <span className="brand-text text-xl font-bold sm:text-2xl">
           {word.tr}
@@ -179,17 +190,6 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
             <span className="px-0.5 text-base font-semibold">{tail}</span>
           ) : null}
         </div>
-
-        {status === "wrong" ? (
-          <p className="muted -mt-3 text-center text-sm">
-            Doğrusu:{" "}
-            <strong className="brand-text">
-              {answer.join(" ")}
-              {tail}
-            </strong>
-            <SpeakButton text={`${answer.join(" ")}${tail}`} size="sm" className="ml-1 align-middle" />
-          </p>
-        ) : null}
 
         {/* Kelime havuzu — kullanılan kelime yerinde soluklaşır */}
         <div className="flex flex-wrap justify-center gap-2">

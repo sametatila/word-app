@@ -6,7 +6,7 @@ import { GameShell } from "./game-shell";
 import { shuffle, normalize, withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
-import { prefetchGerman, speakThen } from "@/components/speak-button";
+import { prefetchGerman, speakThen, SpeakButton } from "@/components/speak-button";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -136,6 +136,14 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   return (
     <GameShell
       label="Harf Bulmacası"
+      verdict={status === "playing" ? null : status}
+      feedback={
+        <span className="inline-flex items-center">
+          {status === "correct" ? "Harika! " : "Doğrusu: "}
+          <strong className="ml-1">{word.de}</strong>
+          <SpeakButton text={withArtikel(word)} size="sm" className="ml-1" />
+        </span>
+      }
       prompt={
         <span className="brand-text text-2xl font-bold sm:text-3xl">
           {word.tr}
@@ -175,12 +183,6 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
             );
           })}
         </div>
-
-        {status === "wrong" ? (
-          <p className="muted -mt-3 text-center text-sm">
-            Doğrusu: <strong className="brand-text">{word.de}</strong>
-          </p>
-        ) : null}
 
         {/* Harf havuzu — kutular yerinden oynamaz, kullanılan harf yerinde soluklaşır */}
         <div className={`flex flex-wrap justify-center ${compact ? "gap-1.5" : "gap-2"}`}>

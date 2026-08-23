@@ -53,7 +53,23 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   const wasRight = settled && answered === isTrue;
 
   return (
-    <GameShell label="Doğru mu Yanlış mı" prompt={<span className="muted text-base">Bu eşleşme doğru mu?</span>}>
+    <GameShell
+      label="Doğru mu Yanlış mı"
+      prompt={<span className="muted text-base">Bu eşleşme doğru mu?</span>}
+      verdict={!settled ? null : wasRight ? "correct" : "wrong"}
+      feedback={
+        <span>
+          {withArtikel(word)} ={" "}
+          <strong>{word.tr}</strong>
+          {word.en ? (
+            <span className="font-normal opacity-70" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
+    >
       <motion.div
         key={round.id}
         initial={{ opacity: 0, scale: 0.96 }}
@@ -108,21 +124,6 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
         </motion.button>
       </div>
 
-      {/* Yanlış iddiada gerçek karşılık gösterilir: tur bir şey öğretmeden kapanmasın. */}
-      <div className="mt-4 min-h-10 text-center text-sm">
-        {settled && !isTrue ? (
-          <p className="muted">
-            {withArtikel(word)} ={" "}
-            <strong className="text-[color:var(--color-mint-500)]">{word.tr}</strong>
-            {word.en ? (
-              <span className="opacity-60" lang="en">
-                {" "}
-                · {word.en}
-              </span>
-            ) : null}
-          </p>
-        ) : null}
-      </div>
     </GameShell>
   );
 }

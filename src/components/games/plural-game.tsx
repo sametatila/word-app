@@ -59,6 +59,13 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
   return (
     <GameShell
       label="Çoğul Bilmece"
+      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      feedback={
+        <span className="inline-flex items-center">
+          <strong>die {answer}</strong>
+          <SpeakButton text={`die ${answer}`} size="sm" className="ml-1" />
+        </span>
+      }
       prompt={
         <span className="inline-flex items-center gap-2">
           <span>
@@ -106,14 +113,6 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
         })}
       </div>
 
-      <div className="mt-4 min-h-10 text-center text-sm">
-        {picked ? (
-          <p className="muted">
-            <strong className="text-[color:var(--color-mint-500)]">die {answer}</strong>
-            <SpeakButton text={`die ${answer}`} size="sm" className="ml-1 align-middle" />
-          </p>
-        ) : null}
-      </div>
     </GameShell>
   );
 }

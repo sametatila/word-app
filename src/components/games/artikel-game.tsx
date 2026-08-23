@@ -53,6 +53,21 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
   return (
     <GameShell
       label="Artikel Yarışı"
+      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      feedback={
+        <span>
+          <strong>
+            {answer} {word.de}
+          </strong>{" "}
+          — {word.tr}
+          {word.en ? (
+            <span className="font-normal opacity-70" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
       prompt={<span className="brand-text text-3xl font-bold sm:text-4xl">{word.de}</span>}
     >
       <div className="grid grid-cols-3 gap-3">
@@ -77,23 +92,6 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
             </motion.button>
           );
         })}
-      </div>
-      {/* Anlam her zaman cevaptan sonra görünür: cinsi anlamdan kopuk ezberlememek için */}
-      <div className="mt-4 min-h-10 text-center text-sm">
-        {picked ? (
-          <motion.p initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="muted">
-            <strong className="text-[color:var(--color-mint-500)]">
-              {answer} {word.de}
-            </strong>{" "}
-            — {word.tr}
-            {word.en ? (
-              <span className="opacity-60" lang="en">
-                {" "}
-                · {word.en}
-              </span>
-            ) : null}
-          </motion.p>
-        ) : null}
       </div>
     </GameShell>
   );

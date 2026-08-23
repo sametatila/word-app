@@ -123,6 +123,19 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   return (
     <GameShell
       label="Yazarak Hatırla"
+      verdict={status === "idle" ? null : status}
+      feedback={
+        <span>
+          {status === "correct" ? "Harika! " : "Doğrusu: "}
+          <strong>{withArtikel(word)}</strong>
+          {word.en ? (
+            <span className="font-normal opacity-70" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
       prompt={
         <span className="brand-text text-2xl font-bold sm:text-3xl">
           {word.tr}
@@ -208,26 +221,6 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
         </p>
       ) : null}
 
-      {status === "correct" ? (
-        <motion.p
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="animate-pop mt-4 text-center text-lg font-semibold text-[color:var(--color-mint-500)]"
-        >
-          Harika! Doğru cevap
-        </motion.p>
-      ) : null}
-
-      {status === "wrong" ? (
-        <motion.p
-          initial={{ opacity: 0, y: -6 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-4 text-center text-sm"
-        >
-          <span className="muted">Doğrusu: </span>
-          <strong className="text-[color:var(--color-rose-500)]">{withArtikel(word)}</strong>
-        </motion.p>
-      ) : null}
     </GameShell>
   );
 }

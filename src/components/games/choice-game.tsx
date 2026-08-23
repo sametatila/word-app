@@ -69,6 +69,21 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // dili zaten görevi anlatıyor, fazladan metin ekranı yorar.
     <GameShell
       label="Doğru Anlam"
+      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      feedback={
+        // Şerit doğruda da doluyor: cevabı görmek kadar onu bir kez daha
+        // okumak da turun işi. Yanlışta düzeltme, doğruda pekiştirme.
+        <span>
+          {picked === answer ? "Doğru — " : "Doğrusu: "}
+          <strong>{answer}</strong>
+          {word.en ? (
+            <span className="font-normal opacity-70" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
       prompt={
         <span className="brand-text text-2xl font-bold sm:text-3xl">
           {question}
@@ -116,19 +131,6 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
           );
         })}
       </div>
-      {picked && picked !== answer ? (
-        <p className="muted mt-4 text-center text-sm">
-          Doğrusu: <strong className="text-[color:var(--color-mint-500)]">{answer}</strong>
-          {/* Almanca sorulan yönde ikinci dil doğru cevabın yanında durur:
-              şıklarda yeri yoktu, burada ise öğrenilecek şeyin bir parçası. */}
-          {deSide && word.en ? (
-            <span className="opacity-60" lang="en">
-              {" "}
-              · {word.en}
-            </span>
-          ) : null}
-        </p>
-      ) : null}
     </GameShell>
   );
 }

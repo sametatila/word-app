@@ -71,6 +71,15 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   return (
     <GameShell
       label="Kulaktan Tanı"
+      verdict={picked == null ? null : picked === word.tr ? "correct" : "wrong"}
+      feedback={
+        // Bu oyunda öğrenilen şey sesin YAZIMI: şeritte duyulan kelime
+        // yazıyla duruyor. Örnek cümle şeride girmiyor, kendi yerinde kalıyor
+        // — şerit tek bakışta okunan bir cevap.
+        <span>
+          <strong>{spoken}</strong> — {word.tr}
+        </span>
+      }
       prompt={
         speechAvailable ? (
           <span className="muted text-base">Duyduğun kelime ne demek?</span>

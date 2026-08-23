@@ -70,6 +70,18 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   return (
     <GameShell
       label="Cümleyi Tamamla"
+      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      feedback={
+        <span>
+          <strong>{answer}</strong> — {word.tr}
+          {word.en ? (
+            <span className="font-normal opacity-70" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
       prompt={
         <span>
           {before}
@@ -129,20 +141,6 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             </motion.button>
           );
         })}
-      </div>
-      {/* Anlam doğru cevapta da gösterilir: cümleyi anlamadan doldurmak öğretmez. */}
-      <div className="mt-4 min-h-10 text-center text-sm">
-        {picked ? (
-          <p className="muted">
-            <strong className="text-[color:var(--color-mint-500)]">{answer}</strong> — {word.tr}
-            {word.en ? (
-              <span className="opacity-60" lang="en">
-                {" "}
-                · {word.en}
-              </span>
-            ) : null}
-          </p>
-        ) : null}
       </div>
     </GameShell>
   );

@@ -177,6 +177,24 @@
     background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700));
     box-shadow: 0 6px 16px -8px var(--color-brand-600);
   }
+  /*
+   * Sonuç şeridi — ekranın dibindeki geri bildirim alanı.
+   *
+   * Şıkların rengiyle aynı aileden ama daha dolu bir zemin: şerit ekranın en
+   * altında, göz oraya kendiliğinden gitmiyor. Kenarlık yok — şerit bir şık
+   * değil, bir bildirim; kenarlık onu dokunulabilir gösterirdi.
+   */
+  .verdict {
+    border-radius: 1rem;
+  }
+  .verdict-correct {
+    background: color-mix(in srgb, var(--color-mint-500) 16%, var(--surface));
+    color: color-mix(in srgb, var(--color-mint-500) 72%, var(--text));
+  }
+  .verdict-wrong {
+    background: color-mix(in srgb, var(--color-rose-500) 16%, var(--surface));
+    color: color-mix(in srgb, var(--color-rose-500) 72%, var(--text));
+  }
   .option-correct {
     border-color: var(--color-mint-500);
     background: color-mix(in srgb, var(--color-mint-500) 14%, var(--surface));
