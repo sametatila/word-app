@@ -57,6 +57,15 @@ export function AchievementUnlock() {
   const running = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  /**
+   * Kutlamayı ekrana koyar ve ANCAK O ZAMAN "görüldü" işaretler.
+   *
+   * İşaretleme önce `check` içindeydi ve bir kusur taşıyordu: oyun ortasında
+   * açılan rozet beklemeye alınıyor, ama görülmüş sayıldığı için kullanıcı
+   * turu yarıda bırakıp çıkarsa kutlama bir daha hiç çıkmıyordu. Rozet
+   * duvarda açık duruyordu, yani kaybolan şey rozet değil ANI'ydı — ki
+   * kutlamanın tek varlık sebebi o.
+   */
   const present = useCallback((fresh: Fresh[]) => {
     // Kademesi yüksek olan önce: aynı anda "İlk kıvılcım" ve "Yüz gün"
     // açıldıysa ilk gösterilmesi gereken büyük olanıdır.
@@ -64,6 +73,16 @@ export function AchievementUnlock() {
     const sorted = [...fresh].sort((a, b) => (rank[a.tier] ?? 9) - (rank[b.tier] ?? 9));
     setView(sorted.length > MAX_SOLO ? { kind: "batch", items: sorted } : { kind: "solo", queue: sorted });
     play("unlock");
+    track("achievement_unlock", sorted.length);
+
+    // Ekrana konanların hepsi görüldü sayılıyor — toplu kartta sığmayan da
+    // dahil, çünkü sayısı kartta yazıyor ve kendileri duvarda açık duruyor.
+    void fetch("/api/achievements", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ seen: sorted.map((f) => f.id) }),
+      keepalive: true,
+    }).catch(() => {});
   }, []);
 
   const check = useCallback(async () => {
@@ -76,19 +95,15 @@ export function AchievementUnlock() {
       const fresh = data.fresh ?? [];
       if (!fresh.length) return;
 
-      track("achievement_unlock", fresh.length);
-
-      // Hepsi görüldü sayılıyor: gösterilemeyenler duvarda zaten açık duruyor
-      // ve ikinci kez patlaması kutlamayı gürültüye çevirirdi.
-      void fetch("/api/achievements", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ seen: fresh.map((f) => f.id) }),
-        keepalive: true,
-      }).catch(() => {});
-
-      if (busy) held.current = [...(held.current ?? []), ...fresh];
-      else present(fresh);
+      // Meşgulken bekletiliyor ve İŞARETLENMİYOR: gösterilmemiş bir kutlama
+      // görülmüş sayılmamalı. Kullanıcı turu bırakıp çıkarsa rozet bir sonraki
+      // açılışta kutlanır.
+      if (busy) {
+        const seen = new Set((held.current ?? []).map((f) => f.id));
+        held.current = [...(held.current ?? []), ...fresh.filter((f) => !seen.has(f.id))];
+      } else {
+        present(fresh);
+      }
     } catch {
       /* rozet kontrolü başarısızsa hiçbir şey olmaz */
     } finally {
