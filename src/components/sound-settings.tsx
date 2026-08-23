@@ -43,10 +43,13 @@ export function SoundSettings() {
       <h2 className="mb-2 flex items-center gap-2 font-bold">
         <SpeakerIcon size={18} /> Oyun sesleri
       </h2>
+      {/* Melodinin tarifi ("yükselen ton, alçalan nota, basamak basamak
+          yükselen perde") kalktı: hemen altında sesi dinleten bir düğme var,
+          yani ses yazıyla anlatılacak son şey. Kalan tek satır yazıyla
+          söylenmesi GEREKEN şeyi söylüyor — bu anahtarın telaffuzu
+          kapatmadığını, çünkü onu duymadan anlamanın yolu yok. */}
       <p className="muted text-sm">
-        Doğru cevapta yükselen kısa bir ton, yanlışta alçalan bir nota; üst üste doğru
-        gittikçe perde bir basamak yükseliyor. Etap, rekor ve rozet açılışlarının kendi
-        ezgisi var. Telaffuz sesi bundan ayrı — o her hâlükârda çalışmaya devam eder.
+        Telaffuz sesi bundan ayrı — bu anahtar kapalıyken de çalışır.
       </p>
       <button
         onClick={toggle}
