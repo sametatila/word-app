@@ -7,50 +7,63 @@ import { useStill } from "@/lib/use-still";
 /**
  * Erdi — uygulamanın mirketi.
  *
- * Mirketin Almancası **Erdmännchen**; adı oradan geliyor ve karakterin kendisi
- * de öyle seçildi. Mirket dikilip etrafı gözleyen, tetikte, meraklı bir hayvan
- * — yeni bir dilin içinde duran birinin hâli. Dik duruşu ayrıca ekranda dikey
- * bir alan kaplıyor, yani metnin yanına değil METNİN YERİNE konabiliyor.
+ * Mirketin Almancası **Erdmännchen**; ad oradan, karakter de öyle seçildi.
+ * Dikilip etrafı gözleyen, tetikte, meraklı bir hayvan — yeni bir dilin içinde
+ * duran birinin hâli. Dik duruşu ekranda dikey bir alan kaplıyor, yani metnin
+ * yanına değil METNİN YERİNE konabiliyor.
  *
- * ## Çizimin kuralları
+ * ## Anatomi neden bu kadar önemli
  *
- * Silüet önce geliyor: gövde tek akışkan bir form, kafa onun üstüne binen ve
- * burna doğru daralan bir damla. Parçaları yan yana dizmek — ilk denemede
- * yapılan buydu — karakteri "birleştirilmiş şekiller" gibi gösteriyor;
- * kollar gövdeye gömülüyor, kuyruk havada asılı kalıyordu.
+ * İlk çizim mirket değil, tanımsız bir orman hayvanı olmuştu: yuvarlak şişman
+ * gövde, yuvarlak kafa, kocaman yuvarlak kulaklar, kalın kısa kuyruk. Mirketi
+ * mirket yapan şeylerin hiçbiri yoktu. Bu sürümün omurgası dört karakteristik:
  *
- * Gözde AK var. Gözün tamamını koyu yapmak ifadeyi öldürüyor: bakış yönü
- * okunmuyor, şaşkınlıkla uykunun farkı kalmıyor. Ak + bebek + parıltı
- * üçlüsü bakışı yönlendirilebilir kılıyor ve karakterin canlılığının çoğu
- * oradan geliyor.
+ *   UZUN BOYUN     Kafa gövdenin üstüne oturmuyor, ondan YÜKSELİYOR. Dik
+ *                  duruşun bütün etkisi bu boşluktan geliyor; boyun olmadan
+ *                  karakter oturan bir hayvana benziyor.
+ *   İNCE GÖVDE     Dar omuz, hafif genişleyen karın. Şişman bir gövde ayıya
+ *                  benziyor; mirket bir çubuk gibi dik.
+ *   SİVRİ YÜZ      Geniş alın, burna doğru daralan çene. Yuvarlak yüz mirketi
+ *                  maymuna çeviriyor.
+ *   İNCE KUYRUK    Dipte kalın, uçta sivri, ucu koyu — ve gövdeden çıkıp
+ *                  yukarı kalkan bir eğri. Mirket kuyruğunu böyle taşıyor.
  *
- * Ön patiler göğüste birleşik: mirketin en tanınır duruşu bu. Aynı zamanda
- * animasyonun en işlek yeri — kutlamada havaya kalkıyor, düşünürken biri
- * çeneye gidiyor.
+ * Göz maskesi de yeniden çizildi: iki ayrı daire "gözlük" gibi duruyordu.
+ * Gerçekte gözü saran, dışa doğru incelen eğik bir bant.
  *
- * ## Neden bu kadar parça
+ * ## Hacim
  *
- * Duygu bir yüz ifadesinden ibaret değil. Üzgün mirketin başı eğiliyor,
- * kuyruğu düşüyor, kulakları yatıyor; sevinen mirket zıplıyor, kolları
- * kalkıyor, kuyruğu hızlanıyor. Kuyruk, gövde, patiler, baş, kulaklar,
- * kaşlar, göz kapakları, gözbebekleri, ağız ve yanaklar ayrı ayrı
- * oynatılabiliyor.
+ * Düz renk karakteri kâğıttan kesilmiş gibi gösteriyordu. Üç katman var ve
+ * hepsi ana silüetin İÇİNDE kalıyor: sağ kenardaki form gölgesi, boynun
+ * altındaki kafa gölgesi, karnın açık alanı. Kontur yok — kontur çizgisi
+ * karakteri çıkartmaya çevirir ve küçük boyutta kalınlaşıp yüzü yutar.
  *
- * Hareket azaltma tercihi açıkken duruş korunuyor ama döngüler duruyor:
- * ifade bilgi taşıyor, animasyon taşımıyor.
+ * ## Duygular
+ *
+ * `idle` `happy` `cheer` `sad` `think` `wow` `sleep`. Duygu bir yüz
+ * ifadesinden ibaret değil: üzgün mirketin başı eğiliyor, kuyruğu düşüyor,
+ * kulakları yatıyor, göz kapakları iniyor; sevinen mirket zıplıyor, kolları
+ * kalkıyor, kuyruğu hızlanıyor. Duruşlar döndürülerek değil AYRI çiziliyor —
+ * bir damlayı 130 derece çevirmek havaya kalkmış kol vermiyor.
+ *
+ * Hareket azaltma tercihinde duruş korunuyor, döngüler duruyor: ifade bilgi
+ * taşıyor, animasyon taşımıyor.
  */
 export type Mood = "idle" | "happy" | "cheer" | "sad" | "think" | "wow" | "sleep";
 
 /** Kürk ve yüz renkleri — karakterin kimliği, temaya göre değişmiyor. */
-const FUR = "#dcaa72";
-const FUR_MID = "#c8914f";
-const FUR_DARK = "#a97538";
-const BELLY = "#f6e6cb";
-const MASK = "#8a5f38";
-const TIP = "#4a3524";
-const INK = "#2f2430";
-const EAR = "#e9bd91";
-const BLUSH = "#ef8b81";
+const FUR = "#d9a86c";
+const FUR_SHADE = "#c08d51";
+const FUR_DEEP = "#a2703a";
+const BELLY = "#f6e7d0";
+const MASK = "#77502e";
+const TIP = "#42301f";
+const INK = "#2b2130";
+const EAR = "#e7bc92";
+const BLUSH = "#ee8b7f";
+
+const VB_W = 200;
+const VB_H = 272;
 
 export function Mascot({
   mood = "idle",
@@ -66,59 +79,42 @@ export function Mascot({
 
   const bob: Record<Mood, { y: number[] | number; rotate?: number[] | number; dur: number }> = {
     idle: { y: [0, -2, 0], dur: 3.6 },
-    happy: { y: [0, -8, 0], dur: 0.85 },
-    cheer: { y: [0, -15, 0], rotate: [0, -3, 3, 0], dur: 0.62 },
-    sad: { y: 4, dur: 0 },
+    happy: { y: [0, -9, 0], dur: 0.85 },
+    cheer: { y: [0, -17, 0], rotate: [0, -3, 3, 0], dur: 0.62 },
+    sad: { y: 5, dur: 0 },
     think: { y: 0, dur: 0 },
     wow: { y: -3, dur: 0 },
     sleep: { y: [0, 2, 0], dur: 4.4 },
   };
   const b = bob[mood];
 
-  const headTilt = mood === "sad" ? 5 : mood === "think" ? -8 : mood === "sleep" ? 9 : 0;
-  const earDrop = mood === "sad" ? 10 : mood === "wow" || mood === "cheer" ? -5 : 0;
+  // Baş eğimi boynun tepesinden dönüyor: kafanın kendi merkezinden döndürmek
+  // boynu koparıyordu.
+  const headTilt = mood === "sad" ? 6 : mood === "think" ? -9 : mood === "sleep" ? 10 : 0;
+  const earDrop = mood === "sad" ? 12 : mood === "wow" || mood === "cheer" ? -6 : 0;
 
   return (
     <svg
-      viewBox="-4 0 172 210"
+      viewBox={`0 0 ${VB_W} ${VB_H}`}
       width={size}
-      height={(size * 210) / 172}
+      height={(size * VB_H) / VB_W}
       className={className}
-      /*
-        Dekoratif. On üç kullanım yerinin hiçbirinde Erdi tek başına bilgi
-        taşımıyor — yanında her zaman aynı şeyi söyleyen bir başlık ya da
-        sonuç metni var. `role="img" aria-label="Erdi"` ekran okuyucuya her
-        kapanışta, her turun sonunda ve her seri kutlamasında "Erdi" dedirtiyordu;
-        bu bir bilgi değil, gürültü.
-      */
       aria-hidden="true"
       focusable="false"
     >
-      {/* Yere düşen yumuşak gölge — karakteri havada asılı olmaktan kurtarıyor. */}
+      {/* Yere düşen gölge — karakteri havada asılı olmaktan kurtarıyor.
+          `initial={false}` ve `rx`in her zaman hedefte olması zorunlu: `rx` bir
+          CSS özelliği değil SVG özniteliği, hedeften çıkarsa motion onu
+          "undefined" diye yazıyor. */}
       <motion.ellipse
-        cx="80"
-        cy="196"
-        rx="42"
-        ry="8"
+        cx="100"
+        cy="250"
+        rx="48"
+        ry="9"
         fill={INK}
-        opacity="0.13"
-        /*
-          `initial={false}` ve `rx`in HER ZAMAN hedefte olması bir üslup tercihi
-          değil, bir hatanın düzeltmesi: tarayıcı her açılışta
-          `<ellipse> attribute rx: Expected length, "undefined"` yazıyordu.
-
-          Sebep `rx`in bir CSS özelliği değil bir SVG ÖZNİTELİĞİ olması.
-          Hedeften çıkarıldığında (hareket azaltmada `animate` boşalıyordu) ya
-          da başlangıç değeri okunmak istendiğinde motion `rx`i stilden okumaya
-          çalışıyor, `undefined` buluyor ve onu olduğu gibi özniteliğe yazıyor.
-          Aynı dosyada ağız yolları (`motion.path d`) zaten bu yüzden
-          `initial={false}` kullanıyor — öznitelik animasyonlarının kuralı bu.
-
-          Durgun hâlde `rx` diziden çıkıp sabit 42 oluyor: anahtar hedefte
-          kalıyor, animasyon durmuş oluyor.
-        */
+        opacity="0.12"
         initial={false}
-        animate={{ rx: still ? 42 : mood === "cheer" ? [42, 30, 42] : [42, 38, 42] }}
+        animate={{ rx: still ? 48 : mood === "cheer" ? [48, 34, 48] : [48, 44, 48] }}
         transition={{ duration: b.dur || 3, repeat: still || !b.dur ? 0 : Infinity, ease: "easeInOut" }}
       />
 
@@ -129,81 +125,102 @@ export function Mascot({
             ? { duration: b.dur, repeat: still ? 0 : Infinity, ease: "easeInOut" }
             : { type: "spring", stiffness: 250, damping: 17 }
         }
-        style={{ originX: "80px", originY: "192px" }}
+        style={{ originX: "100px", originY: "244px" }}
       >
         <Tail mood={mood} still={still} />
 
-        {/* Kulaklar silüetin ARKASINDA: yarıları kafanın içinde kalıyor,
-            böylece yapıştırılmış gibi durmuyorlar. */}
-        <motion.g
-          style={{ originX: "80px", originY: "60px" }}
-          animate={{ rotate: earDrop }}
-          transition={{ type: "spring", stiffness: 220, damping: 14 }}
-        >
-          <ellipse cx="31" cy="46" rx="14" ry="12" fill={FUR_MID} />
-          <ellipse cx="31" cy="46" rx="7.5" ry="6" fill={EAR} />
-        </motion.g>
-        <motion.g
-          style={{ originX: "80px", originY: "60px" }}
-          animate={{ rotate: -earDrop }}
-          transition={{ type: "spring", stiffness: 220, damping: 14 }}
-        >
-          <ellipse cx="129" cy="46" rx="14" ry="12" fill={FUR_MID} />
-          <ellipse cx="129" cy="46" rx="7.5" ry="6" fill={EAR} />
-        </motion.g>
-
         {/*
-          SİLÜET — kafa, boyun ve gövde TEK bir yol.
-          Önceki denemede bunlar ayrı ovallerdi ve karakter "üst üste konmuş
-          şekiller" gibi duruyordu: kafa gövdeye oturmuyor, boyun hiç yok,
-          kardan adam hissi veriyordu. Tek yol mirketin gerçek duruşunu
-          veriyor — iri kafa, ince boyun, armut gövde.
+          SİLÜET — kafa, boyun ve gövde TEK yol.
+
+          Önce üç ayrı parçaydı ve birleşmiyorlardı: boyun yanlardan taşan bir
+          kutu gibi duruyor, kafa gövdenin üstüne konmuş gibi görünüyordu. Tek
+          yolda boyun bir DARALMA oluyor — kafadan çıkıp omuza açılan kesintisiz
+          bir hat.
         */}
         <path
-          d="M80 14C53 14 33 34 33 60c0 16 8 29 20 36-6 4-13 12-18 24-6 16-8 32-8 42 0 20 18 30 53 30s53-10 53-30c0-10-2-26-8-42-5-12-12-20-18-24 12-7 20-20 20-36 0-26-20-46-47-46z"
+          d="M100 18c-22 0-38 16-38 38 0 18 10 34 22 41 2 9 2 17 0 25-8 8-14 26-16 50-2 24-4 44-4 54 0 14 14 22 36 22s36-8 36-22c0-10-2-30-4-54-2-24-8-42-16-50-2-8-2-16 0-25 12-7 22-23 22-41 0-22-16-38-38-38z"
           fill={FUR}
         />
-
-        {/* Göğüs–karın önlüğü: kafanın altından karına inen tek açık alan.
-            Ayrı bir karın elipsi göbek gibi duruyordu. */}
+        {/* Form gölgesi — sağ kenar boyunca, ana silüetin içinde. */}
         <path
-          d="M80 106c-18 6-28 30-28 52 0 18 12 26 28 26s28-8 28-26c0-22-10-46-28-52z"
+          d="M100 18c-6 0-12 1-17 4 12 6 21 19 21 34 0 18-10 34-22 41-2 9-2 17 0 25 8 8 14 26 16 50 2 24 4 44 4 54 0 9-6 16-18 20 3 .4 7 .6 12 .6 22 0 36-8 36-22 0-10-2-30-4-54-2-24-8-42-16-50-2-8-2-16 0-25 12-7 22-23 22-41 0-22-16-38-38-38z"
+          fill={FUR_SHADE}
+          opacity="0.45"
+        />
+        {/* Göğüs–karın önlüğü — boynun altından karına inen tek açık alan. */}
+        <path
+          d="M100 128c-10 6-17 28-19 56-1 20 6 32 19 32s20-12 19-32c-2-28-9-50-19-56z"
           fill={BELLY}
         />
 
-        {/* Arka ayaklar — silüetin alt kenarından taşan iki çıkıntı. Silüetten
-            SONRA çiziliyor, yoksa gövdenin arkasında kalıp hiç görünmüyorlar. */}
-        <ellipse cx="60" cy="190" rx="15" ry="8" fill={FUR_DARK} />
-        <ellipse cx="100" cy="190" rx="15" ry="8" fill={FUR_DARK} />
+        <Arms mood={mood} still={still} />
 
-        <Paws mood={mood} still={still} />
+        {/* Arka ayaklar — tabanın altından taşan iki pati. */}
+        <ellipse cx="80" cy="248" rx="18" ry="10" fill={FUR_DEEP} />
+        <ellipse cx="120" cy="248" rx="18" ry="10" fill={FUR_DEEP} />
 
         <motion.g
-          style={{ originX: "80px", originY: "96px" }}
+          style={{ originX: "100px", originY: "112px" }}
           animate={{ rotate: headTilt }}
           transition={{ type: "spring", stiffness: 210, damping: 15 }}
         >
-          {/* Ağız çevresi — burnu ve ağzı taşıyan açık alan. */}
-          <ellipse cx="80" cy="82" rx="21" ry="16" fill={BELLY} opacity="0.9" />
+          {/* Kulaklar — küçük, kafanın yan kenarına yarı gömülü. Kafadan önce
+              çiziliyor ki kafa üstlerini örtsün. */}
+          <motion.g
+            style={{ originX: "100px", originY: "60px" }}
+            animate={{ rotate: earDrop }}
+            transition={{ type: "spring", stiffness: 220, damping: 14 }}
+          >
+            <ellipse cx="55" cy="47" rx="14" ry="12.5" fill={FUR_SHADE} />
+            <ellipse cx="56" cy="47" rx="7" ry="6" fill={EAR} />
+          </motion.g>
+          <motion.g
+            style={{ originX: "100px", originY: "60px" }}
+            animate={{ rotate: -earDrop }}
+            transition={{ type: "spring", stiffness: 220, damping: 14 }}
+          >
+            <ellipse cx="145" cy="47" rx="14" ry="12.5" fill={FUR_SHADE} />
+            <ellipse cx="144" cy="47" rx="7" ry="6" fill={EAR} />
+          </motion.g>
 
-          {/* Göz maskeleri — mirketin imzası; badem, eğik, yumuşak. */}
-          <ellipse cx="60" cy="56" rx="17" ry="13.5" fill={MASK} opacity="0.92" transform="rotate(-11 60 56)" />
-          <ellipse cx="100" cy="56" rx="17" ry="13.5" fill={MASK} opacity="0.92" transform="rotate(11 100 56)" />
+          {/* Çene altı gölgesi — kafayı boynun üstünden ayırıyor. */}
+          <path d="M84 92c4 6 10 10 16 10s12-4 16-10c-5 4-10 6-16 6s-11-2-16-6z" fill={FUR_SHADE} opacity="0.5" />
+          {/* Ağız çevresi — burnu ve ağzı taşıyan açık alan, aşağı doğru sivri. */}
+          <path d="M100 74c-12 0-19 9-19 20 0 11 9 20 19 20s19-9 19-20c0-11-7-20-19-20z" fill={BELLY} opacity="0.92" />
+
+          {/*
+            GÖZ MASKESİ — burun köprüsünde birleşip dışa doğru sivrilen iki badem.
+
+            İki elips denendi ve yine "gözlük" çıktı: göz büyük olduğu için
+            elipsten geriye ince bir çerçeve kalıyor ve o çerçeve cam gibi
+            okunuyor. Badem hem gözün üstünde ve altında daha kalın bir alan
+            bırakıyor hem de ortada birleştiği için tek bir bant olarak
+            görünüyor — maskeyi maske yapan şey bu.
+          */}
+          <path
+            d="M100 56c-8-8-21-12-33-9-11 3-16 14-11 23 5 10 18 14 28 9 7-3 13-9 16-15z"
+            fill={MASK}
+          />
+          <path
+            d="M100 56c8-8 21-12 33-9 11 3 16 14 11 23-5 10-18 14-28 9-7-3-13-9-16-15z"
+            fill={MASK}
+          />
 
           <Eyes mood={mood} blink={blink} />
           <Brows mood={mood} />
 
-          {/* Burun */}
+          {/* Burun — küçük, uçta yuvarlanan üçgen. */}
           <path
-            d="M80 70c-5 0-8.5 2.8-8.5 6.2 0 3.8 4 7.2 8.5 7.2s8.5-3.4 8.5-7.2c0-3.4-3.5-6.2-8.5-6.2z"
+            d="M100 84c-5.5 0-9 3-9 6.5 0 4 4.5 7.5 9 7.5s9-3.5 9-7.5c0-3.5-3.5-6.5-9-6.5z"
             fill={INK}
           />
+          <ellipse cx="96.5" cy="88" rx="2" ry="1.4" fill="#fff" opacity="0.5" />
           <Mouth mood={mood} />
 
           {(mood === "happy" || mood === "cheer") && (
-            <g opacity="0.45">
-              <ellipse cx="45" cy="75" rx="8" ry="4.5" fill={BLUSH} />
-              <ellipse cx="115" cy="75" rx="8" ry="4.5" fill={BLUSH} />
+            <g opacity="0.42">
+              <ellipse cx="66" cy="88" rx="9" ry="5" fill={BLUSH} />
+              <ellipse cx="134" cy="88" rx="9" ry="5" fill={BLUSH} />
             </g>
           )}
         </motion.g>
@@ -215,123 +232,142 @@ export function Mascot({
 }
 
 /**
- * Kuyruk.
+ * Kuyruk — dipte kalın, uçta sivri, ucu koyu.
  *
- * Dipte kalın, uçta ince, ucu koyu — mirket kuyruğu böyle. Sabit kalınlıkta
- * bir çizgi bunu veremiyordu, havada duran bir kablo gibi görünüyordu. Silüetten
- * ÖNCE çiziliyor: dibi gövdenin altında kalıyor, yani kuyruk gerçekten ona
- * bağlanıyor, yanına konmuş bir hilal olmuyor.
+ * Silüetten önce çiziliyor: dibi gövdenin altında kalıyor, yani gövdeye
+ * bağlanıyor, yanına konmuş bir hilal olmuyor. Varsayılan duruşta hafif dışa
+ * açık; tam arkada duran bir kuyruk gövdenin arkasında tamamen kayboluyordu.
  */
 function Tail({ mood, still }: { mood: Mood; still: boolean }) {
   const base = mood === "sad" ? 20 : mood === "cheer" ? 2 : 9;
   const swing = mood === "cheer" ? 9 : 4;
   return (
     <motion.g
-      style={{ originX: "114px", originY: "178px" }}
-      animate={still || mood === "sad" ? { rotate: base } : { rotate: [base - swing, base + swing, base - swing] }}
+      style={{ originX: "126px", originY: "212px" }}
+      animate={
+        still || mood === "sad"
+          ? { rotate: base }
+          : { rotate: [base - swing, base + swing, base - swing] }
+      }
       transition={{ duration: mood === "cheer" ? 0.5 : 3, repeat: still ? 0 : Infinity, ease: "easeInOut" }}
     >
       <path
-        d="M110 182c30-2 47-21 47-48 0-14-4-26-12-35l-14 10c5 7 9 16 9 25 0 17-12 30-30 32z"
-        fill={FUR_MID}
+        d="M120 222c26-2 44-18 48-40 4-24-2-48-14-62l-16 10c9 12 13 30 10 48-3 18-14 30-31 32z"
+        fill={FUR_SHADE}
       />
-      {/* Uç, ana yolun bittiği kenardan DEVAM ediyor. Ayrı bir yere konan koyu
-          leke, kuyruğun yanında duran kopuk bir çubuk gibi görünüyordu. */}
-      <path d="M145 99c-4-5-9-9-14-12l-11 13c4 2 8 5 12 9z" fill={TIP} />
+      {/* Uç, gövdenin bittiği kenardan DEVAM ediyor ve sivriliyor. Kesik bir
+          dikdörtgen, kuyruğun yanına konmuş ayrı bir çubuk gibi duruyordu. */}
+      <path d="M154 130c-2-7-5-13-10-18-3-4-8-2-9 3l-2 12z" fill={TIP} />
     </motion.g>
   );
 }
 
 /**
- * Ön patiler.
+ * Ön kollar — omuzdan çıkıp göğüste biten iki kısa kol.
  *
- * Duruşlar DÖNDÜRÜLMÜŞ değil, ayrı ayrı çizilmiş. Tek bir damlayı 136 derece
- * çevirmek havaya kalkmış bir kol vermiyor — ters dönmüş bir damla veriyor;
- * kolun dirseği, yönü ve kısalması ancak kendi yolunda anlatılabiliyor.
+ * Önce göğüsteki iki serbest damlaydı ve kol olarak okunmuyorlardı: gövdeye
+ * hiçbir yerden bağlanmıyor, karnın üstünde duran iki leke gibi görünüyorlardı.
+ * Şimdi omuzdan başlıyorlar, yani nereden çıktıkları belli.
  *
- * Göğüste birleşik duruş mirketin en tanınır hâli, kutlamada iki kol havada,
- * düşünürken sağ pati çenede.
+ * Duruşlar döndürülerek değil AYRI çiziliyor: bir damlayı 130 derece çevirmek
+ * havaya kalkmış bir kol vermiyor, ters dönmüş bir damla veriyor.
  */
-function Paws({ mood, still }: { mood: Mood; still: boolean }) {
+function Arms({ mood, still }: { mood: Mood; still: boolean }) {
   if (mood === "cheer") {
     return (
       <motion.g
-        /* Gölgedeki `rx` ile aynı kural: hedef boşaltılmıyor, durgun hâlde
-           sabitleniyor. Burada `y` bir dönüşüm olduğu için tabanı belli (0) ve
-           öznitelik hatası çıkmıyor — yine de iki yerde iki farklı kalıp
-           bırakmak, bir sonraki animasyonda aynı hatayı davet ederdi. */
-        initial={false}
-        animate={{ y: still ? 0 : [0, -6, 0] }}
+        fill={FUR_DEEP}
+        animate={still ? {} : { y: [0, -7, 0] }}
         transition={{ duration: 0.62, repeat: still ? 0 : Infinity, ease: "easeInOut" }}
-        fill={FUR_MID}
       >
-        <path d="M40 130c-12-11-18-26-15-38 2-8 10-9 13-2 6 11 11 24 12 34 1 8-6 12-10 6z" />
-        <path d="M120 130c12-11 18-26 15-38-2-8-10-9-13-2-6 11-11 24-12 34-1 8 6 12 10 6z" />
+        <path d="M80 160c-11-16-20-34-19-48 1-11 13-12 17-1 6 15 12 33 14 46 2 10-7 12-12 3z" />
+        <path d="M120 160c11-16 20-34 19-48-1-11-13-12-17-1-6 15-12 33-14 46-2 10 7 12 12 3z" />
       </motion.g>
     );
   }
   if (mood === "think") {
     return (
-      <g fill={FUR_MID}>
-        <path d="M68 108c5 0 9 4 9 10 0 8-4 15-9 15s-9-7-9-15c0-6 4-10 9-10z" />
+      <g fill={FUR_DEEP}>
+        <Arm side="left" />
         {/* Sağ kol göğüsten çeneye uzanıyor: dirsek aşağıda, el burnun altında. */}
-        <path d="M92 130c-4-6-4-14-1-20 3-7 9-15 14-19 4-3 9 0 8 5-1 5-4 10-7 14-4 6-5 14-6 20-1 4-6 4-8 0z" />
+        <path d="M120 180c-7-11-8-25-2-35 5-8 12-15 18-19 5-3 11 2 8 8-3 6-8 11-10 17-3 8-3 18-3 26 0 7-8 8-11 3z" />
       </g>
     );
   }
-  const drop = mood === "sad" ? 4 : 0;
+  const drop = mood === "sad" ? 6 : 0;
   return (
-    <g fill={FUR_MID}>
-      <path d={`M68 ${108 + drop}c5 0 9 4 9 10 0 8-4 15-9 15s-9-7-9-15c0-6 4-10 9-10z`} />
-      <path d={`M92 ${108 + drop}c5 0 9 4 9 10 0 8-4 15-9 15s-9-7-9-15c0-6 4-10 9-10z`} />
+    <g fill={FUR_DEEP}>
+      <Arm side="left" drop={drop} />
+      <Arm side="right" drop={drop} />
     </g>
   );
 }
 
 /**
- * Gözler.
+ * Tek kol — omuzdan içe kıvrılan bir kapsül, ucunda iki parmak çizgisi.
+ * Parmak çizgisi olmadan kol bir sosis gibi duruyor.
+ */
+function Arm({ side, drop = 0 }: { side: "left" | "right"; drop?: number }) {
+  const flip = side === "right" ? -1 : 1;
+  return (
+    <g transform={`translate(${side === "right" ? 200 : 0} ${drop}) scale(${flip} 1)`}>
+      <path d="M78 138c-9 6-13 22-11 38 1 11 9 17 15 13 6-4 8-16 7-27-1-10-4-19-6-24z" />
+      <path
+        d="M76 182c2 3 4 4 7 3"
+        fill="none"
+        stroke={TIP}
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        opacity="0.65"
+      />
+    </g>
+  );
+}
+
+/**
+ * Gözler — ak, bebek ve iki parlaklık.
  *
- * Ak + bebek + parıltı. Bakış yönü `look` ile kayıyor: düşünürken yana,
- * şaşırınca merkeze ve büyük. Kapalı hâller çizgi değil eğri — düz bir çizgi
- * kapalı göz değil, kapanmış bir perde gibi duruyor.
+ * Gözün tamamını koyu yapmak ifadeyi öldürüyor: bakış yönü okunmuyor,
+ * şaşkınlıkla uykunun farkı kalmıyor. İkinci küçük parlaklık gözü camlaştırıp
+ * canlandırıyor — tek parlaklık düz bir nokta gibi duruyor.
  */
 function Eyes({ mood, blink }: { mood: Mood; blink: boolean }) {
   if (mood === "sleep" || blink) {
     return (
-      <g stroke={INK} strokeWidth="3" strokeLinecap="round" fill="none">
-        <path d="M51 57q9 6 18 0" />
-        <path d="M91 57q9 6 18 0" />
+      <g stroke={INK} strokeWidth="3.4" strokeLinecap="round" fill="none">
+        <path d="M69 63q10 7 20 0" />
+        <path d="M111 63q10 7 20 0" />
       </g>
     );
   }
   if (mood === "cheer") {
-    // Sevinçten kısılan göz yukarı kavisli — kapalı göz değil, gülen göz.
     return (
-      <g stroke={INK} strokeWidth="3.4" strokeLinecap="round" fill="none">
-        <path d="M51 60q9-10 18 0" />
-        <path d="M91 60q9-10 18 0" />
+      <g stroke={INK} strokeWidth="3.8" strokeLinecap="round" fill="none">
+        <path d="M69 66q10-11 20 0" />
+        <path d="M111 66q10-11 20 0" />
       </g>
     );
   }
   const big = mood === "wow";
-  const rx = big ? 12 : 10.5;
+  const rx = big ? 11.5 : 10;
   const ry = big ? 12.5 : 11;
-  const pupil = big ? 5.2 : 6.2;
+  const pupil = big ? 5 : 6;
   const look = mood === "think" ? 4 : 0;
-  const lidY = mood === "sad" ? 2 : 0;
+  const lid = mood === "sad" ? 2 : 0;
   return (
     <g>
-      <ellipse cx="60" cy="56" rx={rx} ry={ry} fill="#fff" />
-      <ellipse cx="100" cy="56" rx={rx} ry={ry} fill="#fff" />
-      <circle cx={60 + look} cy={57 + lidY} r={pupil} fill={INK} />
-      <circle cx={100 + look} cy={57 + lidY} r={pupil} fill={INK} />
-      <circle cx={62.5 + look} cy={53.5 + lidY} r="2.4" fill="#fff" />
-      <circle cx={102.5 + look} cy={53.5 + lidY} r="2.4" fill="#fff" />
-      {/* Üzgünde üst kapak gözü kısmen örtüyor — kaş tek başına yetmiyor. */}
+      <ellipse cx="79" cy="62" rx={rx} ry={ry} fill="#fff" />
+      <ellipse cx="121" cy="62" rx={rx} ry={ry} fill="#fff" />
+      <circle cx={79 + look} cy={63 + lid} r={pupil} fill={INK} />
+      <circle cx={121 + look} cy={63 + lid} r={pupil} fill={INK} />
+      <circle cx={82 + look} cy={59 + lid} r="2.4" fill="#fff" />
+      <circle cx={124 + look} cy={59 + lid} r="2.4" fill="#fff" />
+      <circle cx={76 + look} cy={66 + lid} r="1.3" fill="#fff" opacity="0.75" />
+      <circle cx={118 + look} cy={66 + lid} r="1.3" fill="#fff" opacity="0.75" />
       {mood === "sad" && (
         <g fill={MASK}>
-          <path d="M49 56a11.5 11.5 0 0 1 23 0z" />
-          <path d="M89 56a11.5 11.5 0 0 1 23 0z" />
+          <path d="M68 62a11 11 0 0 1 22 0z" />
+          <path d="M110 62a11 11 0 0 1 22 0z" />
         </g>
       )}
     </g>
@@ -341,17 +377,17 @@ function Eyes({ mood, blink }: { mood: Mood; blink: boolean }) {
 /** Kaşlar — üzgünle şaşkını, meraklıyla uykuluyu ayıran iki kısa çizgi. */
 function Brows({ mood }: { mood: Mood }) {
   const shape: Record<Mood, [string, string]> = {
-    idle: ["M48 35q11-5 22-1", "M90 34q11-4 22 1"],
-    happy: ["M48 32q11-7 22-2", "M90 30q11-5 22 2"],
-    cheer: ["M48 29q11-9 22-2", "M90 27q11-6 22 2"],
-    sad: ["M48 39q11-10 22-2", "M90 36q11-7 22 2"],
-    think: ["M48 36q11-3 22 0", "M90 26q11-2 22 4"],
-    wow: ["M48 27q11-7 22-1", "M90 26q11-6 22 1"],
-    sleep: ["M48 36q11-4 22 0", "M90 36q11-4 22 0"],
+    idle: ["M65 37q13-6 25-1", "M110 36q13-5 25 1"],
+    happy: ["M65 33q13-8 25-2", "M110 31q13-6 25 2"],
+    cheer: ["M65 30q13-10 25-2", "M110 28q13-7 25 2"],
+    sad: ["M65 42q13-11 25-2", "M110 39q13-8 25 2"],
+    think: ["M65 39q13-3 25 0", "M110 27q13-2 25 4"],
+    wow: ["M65 28q13-8 25-1", "M110 27q13-7 25 1"],
+    sleep: ["M65 39q13-4 25 0", "M110 39q13-4 25 0"],
   };
   const [l, r] = shape[mood];
   return (
-    <g stroke={TIP} strokeWidth="3.6" strokeLinecap="round" fill="none">
+    <g stroke={TIP} strokeWidth="4" strokeLinecap="round" fill="none">
       <motion.path initial={false} animate={{ d: l }} d={l} />
       <motion.path initial={false} animate={{ d: r }} d={r} />
     </g>
@@ -361,25 +397,29 @@ function Brows({ mood }: { mood: Mood }) {
 /** Ağız — burnun altından inen çizgi ve ondan ayrılan iki eğri. */
 function Mouth({ mood }: { mood: Mood }) {
   if (mood === "cheer" || mood === "wow") {
-    const rx = mood === "cheer" ? 10 : 6.5;
-    const ry = mood === "cheer" ? 10.5 : 9;
+    const rx = mood === "cheer" ? 11 : 7;
+    const ry = mood === "cheer" ? 12 : 9.5;
     return (
       <g>
-        <ellipse cx="80" cy="95" rx={rx} ry={ry} fill={TIP} />
+        <ellipse cx="100" cy="112" rx={rx} ry={ry} fill={TIP} />
         {mood === "cheer" && (
-          <ellipse cx="80" cy="101" rx={rx * 0.55} ry={ry * 0.35} fill={BLUSH} opacity="0.85" />
+          <ellipse cx="100" cy="119" rx={rx * 0.55} ry={ry * 0.32} fill={BLUSH} opacity="0.85" />
         )}
       </g>
     );
   }
+  // Eğriler burnun hemen altında ve dar. Önce daha aşağıda ve genişti; iki
+  // uzun eğri burun altında bıyık gibi okunuyordu.
+  // Tek simetrik eğri. Burundan ayrılan İKİ eğri, ne kadar daraltılırsa
+  // daraltılsın burun altında bıyık gibi okunuyordu.
   const curves: Record<Mood, string> = {
-    idle: "M80 84v5M80 89q-7 6-13 1M80 89q7 6 13 1",
-    happy: "M80 84v5M80 89q-9 10-16 2M80 89q9 10 16 2",
+    idle: "M100 99v4M91 105q9 6 18 0",
+    happy: "M100 99v4M89 104q11 11 22 0",
     cheer: "",
-    sad: "M80 84v5M80 92q-8-4-13 2M80 92q8-4 13 2",
-    think: "M80 84v5M80 89q-7 5-12 2M80 89q6 2 11 1",
+    sad: "M100 99v4M91 110q9-8 18 0",
+    think: "M100 99v4M92 105q8 5 15 1",
     wow: "",
-    sleep: "M80 84v5M80 90q-6 4-9 1M80 90q6 4 9 1",
+    sleep: "M100 99v4M93 105q7 4 14 0",
   };
   return <path d={curves[mood]} fill="none" stroke={TIP} strokeWidth="3.4" strokeLinecap="round" />;
 }
@@ -387,14 +427,14 @@ function Mouth({ mood }: { mood: Mood }) {
 /** Uyku baloncukları. */
 function Zzz() {
   return (
-    <g fill={INK} opacity="0.5" fontSize="14" fontWeight="800" fontFamily="ui-sans-serif, system-ui">
+    <g fill={INK} opacity="0.5" fontSize="16" fontWeight="800" fontFamily="ui-sans-serif, system-ui">
       {[0, 1, 2].map((i) => (
         <motion.text
           key={i}
-          x={128 + i * 7}
-          y={40 - i * 11}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.7, 0], y: [0, -14, -24] }}
+          x={150 + i * 8}
+          y={40 - i * 12}
+          initial={false}
+          animate={{ opacity: [0, 0.7, 0], y: [0, -16, -28] }}
           transition={{ duration: 2.6, repeat: Infinity, delay: i * 0.8, ease: "easeOut" }}
         >
           z
@@ -405,10 +445,10 @@ function Zzz() {
 }
 
 /**
- * Göz kırpma.
+ * Göz kırpma — aralık rastgele.
  *
- * Sabit aralıkla kırpmak karakteri makineye çeviriyor; aralık rastgele
- * seçiliyor — canlı bir yüz düzensiz kırpar.
+ * Sabit aralıkla kırpmak karakteri makineye çeviriyor; canlı bir yüz düzensiz
+ * kırpar.
  */
 function useBlink(disabled: boolean) {
   const [blink, setBlink] = useState(false);

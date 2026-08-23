@@ -152,10 +152,13 @@ function VerdictBar({
               onu söylüyordu. Karakterin yüzü ise turun duygusunu taşıyor ve
               her turda tekrar eden bu an, uygulamanın en çok görülen anı.
 
-              Şeride tam oturuyor, taşmıyor. Taşırmak denendi ve karakter
-              şeridin ALTINDAN çıkıyordu — kutudan fırlamış değil, kutunun
-              içine sığmamış gibi duruyordu. Şeridi bir tık yükseltmek daha
-              temiz bir çözüm.
+              Şeride tam oturuyor, taşmıyor ve şeridi BÜYÜTMÜYOR: mirket dik
+              duran bir hayvan, yani çizim geniş değil uzun. 54 pikselde şerit
+              en az yüksekliğini 9 piksel aşıyor ve dokunma bölgesini yukarı
+              itiyordu; 48'de şeridin içinde kalıyor.
+
+              Taşırmak da denendi ve yanlıştı: karakter şeridin ALTINDAN
+              çıkıyor, kutudan fırlamış değil kutuya sığmamış gibi duruyordu.
             */}
             <motion.span
               initial={{ scale: 0.4, y: 14 }}
@@ -163,7 +166,7 @@ function VerdictBar({
               transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
               className="shrink-0"
             >
-              <Mascot mood={verdict === "correct" ? "happy" : "sad"} size={54} />
+              <Mascot mood={verdict === "correct" ? "happy" : "sad"} size={48} />
             </motion.span>
             <div className="min-w-0">{feedback}</div>
           </motion.div>
