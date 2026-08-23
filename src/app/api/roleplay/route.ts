@@ -5,6 +5,7 @@ import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
 import { streamRoleplay, type RoleplayTurn } from "@/lib/lessons/roleplay";
 import { logRoleplayTurn } from "@/lib/lessons/log";
+import { recordAiUsage } from "@/lib/ai-usage";
 
 export const dynamic = "force-dynamic";
 
@@ -62,7 +63,15 @@ export async function POST(req: Request) {
     const stream = new ReadableStream<Uint8Array>({
       async start(controller) {
         try {
-          for await (const delta of streamRoleplay(lesson, messages, (m) => (meta = m))) {
+          // Her deneme muhasebeye yazılıyor — düşen sağlayıcı dâhil. Zincir
+          // onu sessizce atladığı için, kaydedilmeyen bir hata hiç olmamış
+          // gibi duruyordu.
+          for await (const delta of streamRoleplay(
+            lesson,
+            messages,
+            (m) => (meta = m),
+            (r) => recordAiUsage(userId, { kind: "roleplay", ...r }),
+          )) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
           }

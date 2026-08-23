@@ -24,7 +24,6 @@ export const EVENT_NAMES = [
   "daily_play", // günün turu oynandı
   "challenge_play", // hayatta kalma turu oynandı
   "walk_start", // yürürken (ekransız) modu başlatıldı (value = kaçıncı turdan)
-  "stt_call", // bir ses klibi yazıya çevrildi (value = klip uzunluğu, saniye)
   "boss_play", // modül sınavına girildi (value = modül sırası)
   "boss_clear", // modül sınavı geçildi (value = kalan saniye)
   "quest_claim", // görev ödülü alındı

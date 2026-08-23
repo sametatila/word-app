@@ -1,5 +1,5 @@
 import "server-only";
-import { completeChat, type ChatMessage } from "@/lib/chat-providers";
+import { completeChat, type CallReport, type ChatMessage } from "@/lib/chat-providers";
 import { tidy } from "@/lib/coach-format";
 import { SPEECH_SYSTEM, DIALOGUE_SYSTEM } from "@/lib/coach-prompts";
 
@@ -50,6 +50,8 @@ export async function coachSpeech(
   missing: string[],
   /** Görevin kendi telaffuz ipucu — egzersizin hangi sesi çalıştırdığını söyler. */
   hint = "",
+  /** Her denemenin muhasebesi — başarısız olanlar dâhil. */
+  report?: CallReport,
 ): Promise<CoachHint> {
   const candidates = heard.filter(Boolean).slice(0, 3);
   if (!candidates.length) return { text: "" };
@@ -71,7 +73,7 @@ export async function coachSpeech(
     },
   ];
 
-  return { text: tidy(await completeChat(SPEECH_SYSTEM, messages, MAX_TOKENS)) };
+  return { text: tidy(await completeChat(SPEECH_SYSTEM, messages, MAX_TOKENS, report)) };
 }
 
 /**
@@ -88,6 +90,8 @@ export async function coachDialogue(
   cue: string,
   heard: string,
   expected: string[],
+  /** Her denemenin muhasebesi — başarısız olanlar dâhil. */
+  report?: CallReport,
 ): Promise<CoachHint> {
   if (!heard.trim()) return { text: "" };
 
@@ -106,5 +110,5 @@ export async function coachDialogue(
     },
   ];
 
-  return { text: tidy(await completeChat(DIALOGUE_SYSTEM, messages, MAX_TOKENS)) };
+  return { text: tidy(await completeChat(DIALOGUE_SYSTEM, messages, MAX_TOKENS, report)) };
 }

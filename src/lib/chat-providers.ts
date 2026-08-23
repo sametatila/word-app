@@ -129,6 +129,31 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
 /** Dakikalık hakkı geniş olanlar önce, günlük kotayla sınırlı olan en sonda. */
 const ORDER: ProviderName[] = ["mistral", "groq", "cerebras", "gemini", "openrouter"];
 
+/**
+ * Bir çağrının sonucu — muhasebe için.
+ *
+ * Başarılı ve BAŞARISIZ her deneme bildiriliyor. Zincir düşen sağlayıcıyı
+ * sessizce atladığı için, bildirilmeyen bir hata hiç olmamış gibi duruyor:
+ * her istekte 429 alan bir birincil dışarıdan "hiç kullanılmıyor" gibi
+ * görünüyordu, oysa her seferinde bir gidiş dönüş ve bir kullanıcı gecikmesi
+ * harcıyordu.
+ *
+ * Katman burada db'ye yazmıyor, yalnızca bildiriyor: sağlayıcı dosyası
+ * betiklerden de kullanılıyor (roleplay-eval, coach-eval) ve oraya veritabanı
+ * bağımlılığı taşımak testleri veritabanına bağlardı.
+ */
+export type CallReport = (r: {
+  provider: ProviderName;
+  model: string;
+  ok: boolean;
+  status: number;
+  ms: number;
+  error?: string;
+  promptTokens?: number;
+  completionTokens?: number;
+  limits?: Record<string, string>;
+}) => void;
+
 export type Provider = {
   name: ProviderName;
   model: string;
@@ -138,9 +163,15 @@ export type Provider = {
     messages: ChatMessage[],
     /** İlk parça gelmeden önce hangi sağlayıcının cevapladığını bildirir. */
     onMeta?: (meta: ProviderMeta) => void,
+    report?: CallReport,
   ) => AsyncGenerator<string>;
   /** Akışsız tek atış — koç düzeltmeleri gibi kısa, bölünmesi anlamsız işler. */
-  complete: (system: string, messages: ChatMessage[], maxTokens?: number) => Promise<string>;
+  complete: (
+    system: string,
+    messages: ChatMessage[],
+    maxTokens?: number,
+    report?: CallReport,
+  ) => Promise<string>;
 };
 
 /** Kısa sohbet turu: uzun cevap istemiyoruz, bekleme konuşmayı bozuyor. */
@@ -194,10 +225,12 @@ async function post(
   messages: ChatMessage[],
   stream: boolean,
   maxTokens: number,
+  report?: CallReport,
 ): Promise<Response> {
   const cfg = CATALOG[name];
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const startedAt = Date.now();
 
   let res: Response;
   try {
@@ -220,6 +253,15 @@ async function post(
     });
   } catch (err) {
     coolDown(name, ERROR_COOLDOWN_MS);
+    // Ağ hatası ya da zaman aşımı: HTTP durumu yok, 0 yazılıyor.
+    report?.({
+      provider: name,
+      model: modelFor(name),
+      ok: false,
+      status: 0,
+      ms: Date.now() - startedAt,
+      error: (err as Error).message,
+    });
     throw err;
   } finally {
     clearTimeout(timer);
@@ -231,8 +273,21 @@ async function post(
     if (res.status === 429) coolDown(name, retryAfterMs(res));
     else if (res.status >= 500) coolDown(name, ERROR_COOLDOWN_MS);
     const detail = await res.text().catch(() => "");
+    report?.({
+      provider: name,
+      model: modelFor(name),
+      ok: false,
+      status: res.status,
+      ms: Date.now() - startedAt,
+      error: detail.slice(0, 200),
+      limits: readLimits(res),
+    });
     throw new Error(`${name} ${res.status}: ${detail.slice(0, 200)}`);
   }
+  // Başarı burada bildirilmiyor: jeton sayısı ve kalan hak çağıranda biliniyor
+  // (akışta başlıklardan, akışsızda gövdeden). Süre oradan da ölçülebilsin
+  // diye başlangıç anı dönülüyor.
+  (res as Response & { startedAt?: number }).startedAt = startedAt;
   return res;
 }
 
@@ -311,10 +366,24 @@ async function* streamOpenAiCompatible(
   system: string,
   messages: ChatMessage[],
   onMeta?: (meta: ProviderMeta) => void,
+  report?: CallReport,
 ): AsyncGenerator<string> {
-  const res = await post(name, system, messages, true, MAX_TOKENS);
+  const res = await post(name, system, messages, true, MAX_TOKENS, report);
   if (!res.body) throw new Error(`${name}: gövdesiz yanıt`);
-  onMeta?.({ provider: name, model: modelFor(name), limits: readLimits(res) });
+  const limits = readLimits(res);
+  onMeta?.({ provider: name, model: modelFor(name), limits });
+  // Akışta jeton sayısı gelmiyor (son parçada isteyen sağlayıcılar var ama
+  // istek gövdesine bilinmeyen alan eklemek katı sağlayıcılarda 400 üretiyor).
+  // Ölçülen şey BAŞLIKLARA kadar geçen süre — kullanıcının beklediği gecikme
+  // de tam olarak o.
+  report?.({
+    provider: name,
+    model: modelFor(name),
+    ok: true,
+    status: res.status,
+    ms: Date.now() - ((res as Response & { startedAt?: number }).startedAt ?? Date.now()),
+    limits,
+  });
 
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
@@ -352,18 +421,50 @@ async function completeOpenAiCompatible(
   system: string,
   messages: ChatMessage[],
   maxTokens: number,
+  report?: CallReport,
 ): Promise<string> {
-  const res = await post(name, system, messages, false, maxTokens);
+  const res = await post(name, system, messages, false, maxTokens, report);
+  const startedAt = (res as Response & { startedAt?: number }).startedAt ?? Date.now();
+  const limits = readLimits(res);
   const data = (await res.json()) as {
     choices?: { message?: { content?: string } }[];
     error?: { message?: string };
+    // Akışsız yolda jeton sayısı gövdede geliyor — maliyetin tek gerçek ölçüsü.
+    usage?: { prompt_tokens?: number; completion_tokens?: number };
   };
+
+  const fail = (message: string) => {
+    report?.({
+      provider: name,
+      model: modelFor(name),
+      ok: false,
+      status: res.status,
+      ms: Date.now() - startedAt,
+      error: message,
+      limits,
+    });
+    return new Error(`${name}: ${message}`);
+  };
+
   if (data.error) {
     coolDown(name, ERROR_COOLDOWN_MS);
-    throw new Error(`${name}: ${data.error.message ?? "yanıt içi hata"}`);
+    throw fail(data.error.message ?? "yanıt içi hata");
   }
   const text = data.choices?.[0]?.message?.content?.trim();
-  if (!text) throw new Error(`${name}: boş yanıt`);
+  // 200 dönüp boş içerik vermek de bir başarısızlık: akıl yürütme modellerinde
+  // jeton bütçesi cevaba yer bırakmadığında tam olarak bu oluyordu.
+  if (!text) throw fail("boş yanıt");
+
+  report?.({
+    provider: name,
+    model: modelFor(name),
+    ok: true,
+    status: res.status,
+    ms: Date.now() - startedAt,
+    promptTokens: data.usage?.prompt_tokens,
+    completionTokens: data.usage?.completion_tokens,
+    limits,
+  });
   return text;
 }
 
@@ -376,9 +477,10 @@ function build(name: ProviderName): Provider {
     name,
     model: modelFor(name),
     freeTier: CATALOG[name].freeTier,
-    stream: (system, messages, onMeta) => streamOpenAiCompatible(name, system, messages, onMeta),
-    complete: (system, messages, maxTokens = MAX_TOKENS) =>
-      completeOpenAiCompatible(name, system, messages, maxTokens),
+    stream: (system, messages, onMeta, report) =>
+      streamOpenAiCompatible(name, system, messages, onMeta, report),
+    complete: (system, messages, maxTokens = MAX_TOKENS, report) =>
+      completeOpenAiCompatible(name, system, messages, maxTokens, report),
   };
 }
 
@@ -455,6 +557,7 @@ export async function completeChat(
   system: string,
   messages: ChatMessage[],
   maxTokens?: number,
+  report?: CallReport,
 ): Promise<string> {
   const providers = chatProviders();
   if (!providers.length) throw new Error("Sohbet sağlayıcısı tanımlı değil");
@@ -462,7 +565,7 @@ export async function completeChat(
   const failures: string[] = [];
   for (const provider of providers) {
     try {
-      return await provider.complete(system, messages, maxTokens);
+      return await provider.complete(system, messages, maxTokens, report);
     } catch (err) {
       failures.push(`${provider.name}: ${(err as Error).message}`);
     }

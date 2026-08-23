@@ -3,6 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { coachSpeech, coachDialogue } from "@/lib/coach";
 import { chatConfigured } from "@/lib/chat-providers";
+import { recordAiUsage } from "@/lib/ai-usage";
 
 export const dynamic = "force-dynamic";
 
@@ -49,7 +50,9 @@ export async function POST(req: Request) {
       if (!target || !heard.length) {
         return NextResponse.json({ error: "bad_request" }, { status: 400 });
       }
-      const hint = await coachSpeech(target, heard, list(b.missing), text(b.hint));
+      const hint = await coachSpeech(target, heard, list(b.missing), text(b.hint), (r) =>
+        recordAiUsage(userId, { kind: "coach", ...r }),
+      );
       return NextResponse.json({ text: hint.text });
     }
 
@@ -59,7 +62,9 @@ export async function POST(req: Request) {
       if (!ask || !heard) {
         return NextResponse.json({ error: "bad_request" }, { status: 400 });
       }
-      const hint = await coachDialogue(ask, text(b.cue), heard, list(b.expected));
+      const hint = await coachDialogue(ask, text(b.cue), heard, list(b.expected), (r) =>
+        recordAiUsage(userId, { kind: "coach", ...r }),
+      );
       return NextResponse.json({ text: hint.text });
     }
 

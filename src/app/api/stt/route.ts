@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders } from "@/lib/chat-providers";
-import { track } from "@/lib/events";
+import { recordAiUsage } from "@/lib/ai-usage";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -62,6 +62,7 @@ export async function POST(req: Request) {
 
   const failures: string[] = [];
   for (const provider of providers) {
+    const startedAt = Date.now();
     try {
       const body = new FormData();
       // Dosya adı uzantısı önemli: sağlayıcılar biçimi ondan anlıyor.
@@ -78,6 +79,17 @@ export async function POST(req: Request) {
         body,
       });
       if (!res.ok) {
+        const detail = await res.text().catch(() => "");
+        recordAiUsage(userId, {
+          kind: "stt",
+          provider: provider.name,
+          model: provider.model,
+          ok: false,
+          status: res.status,
+          ms: Date.now() - startedAt,
+          error: detail.slice(0, 200),
+          audioSeconds: Math.round(seconds),
+        });
         failures.push(`${provider.name}: ${res.status}`);
         continue;
       }
@@ -85,18 +97,35 @@ export async function POST(req: Request) {
       const text = (data.text ?? "").trim();
 
       /*
-        Her çağrı sayılıyor.
+        Her çağrı muhasebeye yazılıyor.
 
         Ücretsiz katmanların bağlayıcı sınırı jeton değil İSTEK SAYISI (groq:
         günde 2.000 istek ve 28.800 saniye ses). Sayaç olmadan limite ne kadar
         yaklaşıldığı ancak 429 gelince öğrenilir — sağlayıcı kimliğini
-        kaydetmeyi de aynı ders yüzünden eklemiştik. Değer klibin saniyesi,
-        çünkü ikinci sınır o.
+        kaydetmeyi de aynı ders yüzünden eklemiştik.
       */
-      void track(userId, "stt_call", new Date().toISOString().slice(0, 10), Math.round(seconds));
+      recordAiUsage(userId, {
+        kind: "stt",
+        provider: provider.name,
+        model: provider.model,
+        ok: true,
+        status: res.status,
+        ms: Date.now() - startedAt,
+        audioSeconds: Math.round(seconds),
+      });
 
       return NextResponse.json({ text, provider: provider.name, model: provider.model });
     } catch (err) {
+      recordAiUsage(userId, {
+        kind: "stt",
+        provider: provider.name,
+        model: provider.model,
+        ok: false,
+        status: 0,
+        ms: Date.now() - startedAt,
+        error: (err as Error).message,
+        audioSeconds: Math.round(seconds),
+      });
       failures.push(`${provider.name}: ${(err as Error).message}`);
     }
   }

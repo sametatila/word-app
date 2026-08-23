@@ -1,5 +1,5 @@
 import "server-only";
-import { chatProviders, type ChatMessage, type ProviderMeta } from "@/lib/chat-providers";
+import { chatProviders, type CallReport, type ChatMessage, type ProviderMeta } from "@/lib/chat-providers";
 import { CORRECTION_MARK, SUGGESTION_MARK } from "@/lib/chat-format";
 import type { Lesson } from "./types";
 import { lessonIndexInLevel } from "./index";
@@ -188,6 +188,8 @@ export async function* streamRoleplay(
   messages: RoleplayTurn[],
   /** Cevabı hangi sağlayıcının verdiği — kaydedilip sonradan sorulabilsin diye. */
   onMeta?: (meta: ProviderMeta) => void,
+  /** Her denemenin muhasebesi — başarısız olanlar dâhil. */
+  report?: CallReport,
 ): AsyncGenerator<string> {
   const providers = chatProviders();
   if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
@@ -204,7 +206,7 @@ export async function* streamRoleplay(
   for (const provider of providers) {
     let started = false;
     try {
-      for await (const delta of provider.stream(system, messages, onMeta)) {
+      for await (const delta of provider.stream(system, messages, onMeta, report)) {
         started = true;
         yield delta;
       }
