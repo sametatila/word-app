@@ -51,6 +51,8 @@ import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
 import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";
 import { seededShuffle } from "../src/lib/shuffle";
+import { composeReminder, weeklyRivals } from "../src/lib/push";
+import { buildShareText } from "../src/components/share-result";
 import { achievements, events } from "../src/lib/db/schema";
 import { track } from "../src/lib/events";
 
@@ -1670,7 +1672,68 @@ async function main() {
   seededShuffle(src, "z");
   check("kaynak dizi değişmiyor", src.join("") === "12345");
 
-  console.log("\n19) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n19) Hatırlatma metni — sıra ve eşikler");
+  const base = { name: "Samet Atila", level: "A2" };
+  const rival = { name: "Erdi", gap: 140 };
+
+  // Seri her şeyin üstünde: bugüne bağlı ve kaçırılırsa geri gelmiyor.
+  const withStreak = composeReminder({ ...base, streak: 6, dueCount: 30, rival });
+  check("seri rakibi de borcu da geçiyor", withStreak?.title.includes("6 günlük serin") === true);
+
+  // Rakip borcun üstünde ama serinin altında.
+  const withRival = composeReminder({ ...base, streak: 0, dueCount: 30, rival });
+  check("rakip tekrar borcunu geçiyor", withRival?.title === "Erdi bu hafta önde");
+  check("fark metinde geçiyor", withRival?.body.includes("140 XP") === true);
+  check("ada göre hitap ediliyor", withRival?.body.startsWith("Samet,") === true);
+
+  // Yakalanamayacak fark mesaj üretmiyor: hüküm değil hedef olmalı.
+  const farBehind = composeReminder({ ...base, streak: 0, dueCount: 30, rival: { name: "Erdi", gap: 5000 } });
+  check("ulaşılamaz fark rakip mesajı üretmiyor", farBehind?.title.includes("unutulmak üzere") === true);
+  const noGap = composeReminder({ ...base, streak: 0, dueCount: 0, rival: { name: "Erdi", gap: 0 } });
+  check("fark yoksa rakip mesajı yok", noGap?.title === "Bugün 5 dakika?");
+  const noRival = composeReminder({ ...base, streak: 0, dueCount: 12, rival: null });
+  check("rakipsizken borç mesajı", noRival?.title.includes("12 kelime") === true);
+
+  // Rakip sorgusu: haftalık tablodan hemen üstteki kişi.
+  await reset();
+  await ensureProfile(USER, "E2E");
+  await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));
+  await ensureProfile("e2e-onde", "Erdi Kaya");
+  const rDay = "2025-06-11"; // çarşamba
+  const rStart = "2025-06-09"; // pazartesi
+  await db.insert(dailyStats).values([
+    { userId: USER, day: rStart, reviews: 0, correct: 0, newWords: 0, xp: 300, seconds: 0 },
+    { userId: "e2e-onde", day: rStart, reviews: 0, correct: 0, newWords: 0, xp: 460, seconds: 0 },
+    // Geçen haftanın puanı tabloya girmemeli.
+    { userId: "e2e-onde", day: "2025-06-02", reviews: 0, correct: 0, newWords: 0, xp: 9000, seconds: 0 },
+  ]);
+  const rivalMap = await weeklyRivals([USER, "e2e-onde"], rDay);
+  check("hemen üstteki kişi bulundu", rivalMap.get(USER)?.name === "Erdi", `(${rivalMap.get(USER)?.name})`);
+  check("fark doğru", rivalMap.get(USER)?.gap === 160, `(${rivalMap.get(USER)?.gap})`);
+  check("zirvedekine rakip verilmiyor", rivalMap.get("e2e-onde") === undefined);
+
+  console.log("\n20) Paylaşılan metin — günün turu bir meydan okuma");
+  const marks = [true, true, false, true];
+  const sessionText = buildShareText({
+    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test",
+  });
+  check("sıradan tur kelime sayısı yazıyor", sessionText.includes("20 kelime"));
+  check("sıradan turda meydan okuma yok", !sessionText.includes("Aynı sorular"));
+
+  const dailyText = buildShareText({
+    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test",
+    kind: "daily", score: 1240,
+  });
+  check("günün turu başlıkta belli", dailyText.includes("Günün turu"));
+  check("puan yazıyor", dailyText.includes("1.240 puan"));
+  check("aynı sorular vurgusu var", dailyText.includes("Aynı sorular"));
+  check("adres her iki metinde de var", sessionText.includes("https://x.test") && dailyText.includes("https://x.test"));
+  check("kareler kelimeleri ele vermiyor", !dailyText.includes("A2 seviyesindeki kelime"));
+
+  await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-onde"));
+  await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));
+
+  console.log("\n21) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);

@@ -85,6 +85,10 @@ uygulama gibi tam ekran açılır (PWA).
   ikiye katlanıyor, iki yanlışta etap hiç puan kazandırmamış oluyor, tek yanlış başa baş.
   Kayıp yalnızca o etaba ait: dünkü birikime dokunulmuyor. Bahse girmeyen için oyun hiç
   değişmiyor.
+- **Günün turu bir düello:** o tur herkese aynı kelimeleri aynı sırayla verdiği için paylaşılan
+  sonuç sıradan bir skor değil, karşılaştırılabilir bir meydan okuma. Paylaşım metni bunu
+  söylüyor ve puanı taşıyor — günün turunda kıyaslanan şey doğru sayısı değil puan, çünkü hız
+  ve seri puana giriyor.
 - **Arena başlangıç ekranında:** hayatta kalma turuna tek giriş oturum ÖZETİYDİ, yani turu
   görebilmek için önce 20 turluk bir oturumu bitirmek gerekiyordu. Artık günün turunun hemen
   altında, rekorunla birlikte duruyor.
@@ -203,7 +207,11 @@ yerel saati `reminder_hour`'u geçmiş ve o gün hiç çalışmamış kullanıc�
 Pro planına geçilirse `schedule` saatliğe çekilebilir; başka değişiklik gerekmez.
 
 Kişi başına günde en fazla bir bildirim gider ve içeriği kullanıcının durumuna göre seçilir:
-serisi bugün kırılacaksa seri, tekrar borcu varsa kelime sayısı, ikisi de yoksa kısa bir davet.
+serisi bugün kırılacaksa seri, haftalık tabloda **yakalanabilir** mesafede bir rakip varsa o,
+tekrar borcu varsa kelime sayısı, hiçbiri yoksa kısa bir davet. Rakip mesajı serinin altında
+(seri bugüne bağlı ve kaçırılırsa geri gelmiyor) ama borcun üstünde: borç her gün aynı cümleyi
+kuruyor, rakip mesajı ise hem nadir hem de her seferinde başka bir sayı taşıyor. 400 XP'den
+geride olana gönderilmiyor — ulaşılamayan fark hedef değil hüküm olur.
 İzin, oturum özet ekranında — kullanıcı bir tur bitirdikten sonra — isteniyor; profilden
 kapatılabiliyor.
 
@@ -228,11 +236,11 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (446 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (463 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
 sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
-tohumlu karıştırmanın kararlılığını ve ilerleme sorgularını gerçek PostgreSQL üzerinde
-doğrular.
+tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını ve ilerleme
+sorgularını gerçek PostgreSQL üzerinde doğrular.
 
 ```bash
 # arayüzden oynayan öğrenci simülasyonu (dev sunucusu açıkken)
@@ -492,6 +500,11 @@ istemciden geldiği için sunucuda tavanlı — `xpForWager` 250'yi geçen bir p
 Bugüne kadarki kararlar ölçümle alındı ama ölçülebilen yalnızca ardında iz bırakan şeylerdi:
 cevaplar, dersler, XP. Görülemeyen sorular en çok merak edilenlerdi — kaç kişi başlangıç kartını
 görüp hiç başlamadan çıktı, hangi sekmeye hiç dokunulmadı.
+
+Okuma tarafı `npm run report:events` (varsayılan son 14 gün, `report:events 60` ile daha
+uzun): tur hunisi, "kartı görüp hiç başlamayan" oranı, sekme kullanımı ve günlük etkinlik.
+Sayılar hem olay hem kişi olarak veriliyor — yedi kişilik bir uygulamada "142 tur başladı"
+tek başına yanıltıcı, "142 tur · 4 kişi" değil.
 
 `events` tablosu bilerek dar: kim, hangi gün, hangi olay, isteğe bağlı bir sayı. Serbest metin ya
 da jsonb yok; olay adları `src/lib/events.ts` içindeki **kapalı listeden** doğrulanıyor, yoksa
