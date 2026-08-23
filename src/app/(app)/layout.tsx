@@ -1,12 +1,18 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
-import { getUserInfo, authEnabled } from "@/lib/auth/server";
+import { getSessionRead, authEnabled } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
-  const user = await getUserInfo();
+  const { user, failed } = await getSessionRead();
+  // Oturuma BAKILAMADI ile oturum YOK aynı şey değil. Auth sunucusuna bir
+  // anlık erişim sorununda kullanıcıyı giriş ekranına atmak, duran bir oturumu
+  // kendi elimizle bitirmek olur: çerez yerinde, kullanıcı çıkmadı, ama karşısına
+  // giriş formu geliyor. Burada yalnızca "yeniden dene" gösteriliyor.
+  if (!user && failed) return <SessionUnavailable />;
   if (!user) redirect(authEnabled ? "/login" : "/");
 
   let streak = 0;
@@ -31,8 +37,24 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (needsOnboarding) redirect("/setup");
 
   return (
-    <AppShell streak={streak} xp={xp} course={course} voice={voice}>
+    <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id}>
       {children}
     </AppShell>
+  );
+}
+
+/** Oturum sunucusuna ulaşılamadı — çıkış değil, geçici bir kesinti. */
+function SessionUnavailable() {
+  return (
+    <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center gap-4 px-6 text-center">
+      <h1 className="text-xl font-bold">Bağlantı kurulamadı</h1>
+      <p className="muted text-sm">
+        Hesabın açık, ama şu anda sunucuya ulaşılamıyor. Birkaç saniye sonra tekrar dene —
+        çıkış yapmana gerek yok.
+      </p>
+      <Link href="/learn" prefetch={false} className="btn btn-primary px-5 py-3">
+        Tekrar dene
+      </Link>
+    </div>
   );
 }

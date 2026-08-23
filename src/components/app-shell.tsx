@@ -7,6 +7,7 @@ import { useEffect, useState, type ReactNode, useRef } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
 import { InstallPrompt } from "./install-prompt";
+import { SessionKeeper } from "./session-keeper";
 import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark, ChatIcon } from "./icons";
 
 const NAV = [
@@ -23,12 +24,15 @@ export function AppShell({
   xp,
   course = "de",
   voice = null,
+  userId,
 }: {
   children: ReactNode;
   streak: number;
   xp: number;
   course?: string;
   voice?: string | null;
+  /** Oturumdaki hesap — oturumu tazeleyen ve hesap değişimini fark eden bileşen için. */
+  userId: string;
 }) {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
@@ -86,6 +90,10 @@ export function AppShell({
     // h-dvh + iç kaydırma: sayfa gövdesi kaymaz, yalnızca içerik alanı kayar.
     // Böylece oyun ekranları kalan alanı tam olarak bilir ve taşma olmaz.
     <div ref={shellRef} className="mx-auto flex h-dvh w-full max-w-6xl overflow-hidden">
+      {/* Kurs/ses aynasının yazılmasından önce çalışması gerekiyor: hesap
+          değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
+          etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
+      <SessionKeeper userId={userId} />
       <TopProgress />
       <InstallPrompt />
       {/* Masaüstü kenar çubuğu */}

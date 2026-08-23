@@ -26,7 +26,12 @@ export function AuthForm() {
 
     try {
       if (mode === "signin") {
-        const res = await authApi("sign-in/email", { email, password });
+        // `rememberMe` açık: oturum çerezi tarayıcı kapanınca silinen bir
+        // "oturum çerezi" değil, son kullanma tarihi olan kalıcı bir çerez
+        // olarak yazılıyor. Varsayılan da bu, ama ana ekrana eklenmiş
+        // uygulamada oturumun kapanmaması bu tek bayrağa bağlı olduğu için
+        // açıkça yazılıyor — sessizce değişmesi "her açılışta giriş" demek.
+        const res = await authApi("sign-in/email", { email, password, rememberMe: true });
         if (!res.ok) {
           // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
           if (isEmailNotVerified(res)) {
