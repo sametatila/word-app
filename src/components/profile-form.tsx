@@ -268,7 +268,7 @@ export function ProfileForm({
       {/* Uygulama ayarları tek kartta, ayırıcı çizgilerle. Sıra bir kuralı
           izliyor: iPhone'da bildirim ancak uygulama ana ekrana eklenmişken
           çalışıyor, o yüzden kurulum bildirimden önce geliyor. */}
-      <section className="card divide-y overflow-hidden" style={{ borderColor: "var(--border)" }}>
+      <section className="card divide-y divide-[color:var(--border)] overflow-hidden">
         <div className="p-5">
           <h2 className="mb-3 font-bold">Uygulama</h2>
           <InstallGuide tone="plain" />

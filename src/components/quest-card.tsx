@@ -95,9 +95,12 @@ export function QuestCard() {
   const claimable = board.quests.filter((q) => q.done >= q.target && !q.claimed).length;
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+    <section
+      /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası
+         ve zinciri `Stagger` yönetiyor (bkz. components/reveal). Kendi başına
+         belirdiğinde altı kart aynı anda ama farklı mesafelerle (kimi 8, kimi
+         14 piksel) açılıyordu — hepsi birden oynayan ama aynı ritmi tutmayan
+         bir hareket. */
       className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
     >
       <div
@@ -217,6 +220,6 @@ export function QuestCard() {
           +{flash} XP kazandın
         </motion.p>
       ) : null}
-    </motion.section>
+    </section>
   );
 }

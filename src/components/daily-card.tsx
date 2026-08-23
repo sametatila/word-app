@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
 
 /**
@@ -68,14 +67,27 @@ export function DailyCard({ onPlay, bare = false }: { onPlay: () => void; bare?:
     };
   }, []);
 
-  if (state.loading || (!state.played && !state.level)) return null;
+  // Yüklenirken satırın YERİ duruyor.
+  //
+  // Önce `null` dönüyordu ve bölümün içinde bir satır eksik başlıyordu: veri
+  // gelince satır en üste giriyor, altındaki her şey aşağı kayıyordu. Kullanıcı
+  // bunu "önce eski düzen geliyor, sonra yenisine atlıyor" diye görüyor —
+  // düzenin kendisi değişmiyor ama gözün gördüğü şey iki farklı düzen.
+  //
+  // Veri hiç yoksa (seviye de yok, oynanmış tur da) satır tamamen kalkıyor:
+  // orada gösterilecek bir şey gerçekten yok.
+  if (state.loading) return <DailyRowSkeleton bare={bare} />;
+  if (!state.played && !state.level) return null;
 
   const done = Boolean(state.played);
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+    <section
+      /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası
+         ve zinciri `Stagger` yönetiyor (bkz. components/reveal). Kendi başına
+         belirdiğinde altı kart aynı anda ama farklı mesafelerle (kimi 8, kimi
+         14 piksel) açılıyordu — hepsi birden oynayan ama aynı ritmi tutmayan
+         bir hareket. */
       /* `bare`: kendi kartını bırakıp bir bölümün satırı oluyor. Günün turu ve
          hayatta kalma turu aynı doğada iki olay; ikisini iki ayrı beyaz kutuya
          koymak onları birbirinden alakasız gösteriyordu. */
@@ -111,6 +123,32 @@ export function DailyCard({ onPlay, bare = false }: { onPlay: () => void; bare?:
           {done ? "Tabloyu gör" : "Oyna"}
         </button>
       </div>
-    </motion.section>
+    </section>
+  );
+}
+
+/**
+ * Günün turu satırının yer tutucusu — gerçek satırla aynı yükseklikte.
+ *
+ * Yükseklik uydurulmuyor: aynı yapı (11 birimlik simge kutusu, iki satır metin,
+ * dikey pay) sönük renklerle çiziliyor. Uydurulan bir yükseklik veriyle
+ * uyuşmadığında kayma yine oluyor, sadece daha az.
+ */
+function DailyRowSkeleton({ bare }: { bare?: boolean }) {
+  return (
+    <section className={bare ? "w-full" : "card mx-auto mt-4 w-full max-w-md overflow-hidden"}>
+      <div className="flex items-center gap-3 px-5 py-4">
+        <span className="surface-2 h-11 w-11 shrink-0 rounded-xl" />
+        {/* Alt metin İKİ çubuk: gerçek satırda "A1 seviyesindeki herkes aynı
+            kelimeler · tek hak" iki satıra sarıyor. Tek çubukla yer tutucu 14
+            piksel kısa kalıyor ve veri gelince altındaki satırlar o kadar
+            kayıyordu. */}
+        <div className="min-w-0 flex-1 space-y-1.5">
+          <div className="surface-2 h-4 w-28 rounded" />
+          <div className="surface-2 h-3 w-full max-w-52 rounded" />
+          <div className="surface-2 h-3 w-24 rounded" />
+        </div>
+      </div>
+    </section>
   );
 }

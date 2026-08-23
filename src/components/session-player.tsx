@@ -767,11 +767,16 @@ function StartCard({
   }, [rounds.length]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="mx-auto w-full max-w-md"
-    >
+    /*
+      Başlangıç ekranının bölümleri TEK zincirle açılıyor.
+
+      Önce her kart kendi giriş animasyonunu yapıyordu: altı bölüm aynı anda
+      ama farklı mesafelerle (kimi 8, kimi 14 piksel) beliriyordu — hepsi
+      birden oynayan ama aynı ritmi tutmayan bir hareket. Şimdi sıra okunma
+      sırasıyla aynı: karşılama, başka türlü oyna, görevler, oyun seçici,
+      sıralama.
+    */
+    <Stagger className="mx-auto w-full max-w-md">
       <div className="card overflow-hidden">
         <div className="brand-gradient px-6 py-5 text-white sm:py-7">
           <div className="flex items-start justify-between gap-3">
@@ -882,30 +887,35 @@ function StartCard({
         </div>
       </div>
       {/*
-        BUGÜN — günde bir kez olan, kaçırılınca geri gelmeyen iki şey.
+        BAŞKA TÜRLÜ OYNA — normal turdan farklı üç oynama şekli.
 
-        İkisi ayrı beyaz kutulardı ve sayfadaki diğer her kartla aynı ağırlığı
-        taşıyorlardı: başlangıç kartından sonra altı eşit kutu geliyor, hangisinin
-        bugüne özel bir OLAY, hangisinin her zaman orada duran bir MOD olduğu
-        ayırt edilmiyordu. Aynı doğadaki iki olay artık tek bölümde ve bölümün
-        bir adı var.
+        Üçü de ayrı beyaz kutulardı ve sayfadaki diğer her kartla aynı ağırlığı
+        taşıyorlardı: başlat düğmesinden sonra altı eşit kutu geliyor, hangisinin
+        turun başka bir şekli, hangisinin bir ayar olduğu ayırt edilmiyordu.
+
+        Başlık "Bugün" değil: günün turu ve hayatta kalma turu bugüne özel ama
+        yürürken modu değil — o her zaman orada duran bir oynama biçimi.
+        Üçünü birleştiren şey zamanları değil, normal turun yerine geçmeleri.
       */}
       <section className="card mx-auto mt-4 w-full max-w-md overflow-hidden">
-        <SectionTitle>Bugün</SectionTitle>
-        <div className="divide-y" style={{ borderColor: "var(--border)" }}>
+        <SectionTitle>Başka türlü oyna</SectionTitle>
+        {/* Renk `divide-[color:…]` ile veriliyor, sarmalayıcının `style`ı ile
+            değil: `border-color` miras alınmıyor, çocuklar `currentColor`a
+            düşüyor ve ayırıcılar metin rengiyle — yani neredeyse siyah —
+            çiziliyordu. */}
+        <div className="divide-y divide-[color:var(--border)]">
           <DailyCard onPlay={onDaily} bare />
           <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} bare />
+          <WalkCard onPlay={onWalk} bare />
         </div>
       </section>
+
       {/* Görevler kendi kartında: bugüne özel değil, açık kaldığı sürece duran
           bir hedef listesi. */}
       <QuestCard />
-      {/* Yürürken modu oyun seçicinin hemen üstünde: o da turun başka bir
-          yoldan oynanması, yani seçiciye en yakın akraba. */}
-      <WalkCard onPlay={onWalk} />
       <GamePicker active={onlyGame} onPick={onPickGame} />
       {leaderboard}
-    </motion.div>
+    </Stagger>
   );
 }
 

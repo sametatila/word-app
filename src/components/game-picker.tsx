@@ -63,9 +63,12 @@ export function GamePicker({
   // görünmesi gereken bir durum.
   const [open, setOpen] = useState(active != null);
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+    <section
+      /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası
+         ve zinciri `Stagger` yönetiyor (bkz. components/reveal). Kendi başına
+         belirdiğinde altı kart aynı anda ama farklı mesafelerle (kimi 8, kimi
+         14 piksel) açılıyordu — hepsi birden oynayan ama aynı ritmi tutmayan
+         bir hareket. */
       className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
     >
       {/*
@@ -153,6 +156,6 @@ export function GamePicker({
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </motion.section>
+    </section>
   );
 }

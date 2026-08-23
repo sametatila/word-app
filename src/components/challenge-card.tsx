@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { SparkIcon } from "@/components/icons";
 
 /**
@@ -17,9 +16,12 @@ import { SparkIcon } from "@/components/icons";
  */
 export function ChallengeCard({ best, onPlay, bare = false }: { best: number; onPlay: () => void; bare?: boolean }) {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+    <section
+      /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası
+         ve zinciri `Stagger` yönetiyor (bkz. components/reveal). Kendi başına
+         belirdiğinde altı kart aynı anda ama farklı mesafelerle (kimi 8, kimi
+         14 piksel) açılıyordu — hepsi birden oynayan ama aynı ritmi tutmayan
+         bir hareket. */
       className={bare ? "w-full" : "card mx-auto mt-3 w-full max-w-md overflow-hidden"}
     >
       <div className="flex items-center gap-3 px-5 py-4">
@@ -46,6 +48,6 @@ export function ChallengeCard({ best, onPlay, bare = false }: { best: number; on
           {best > 0 ? "Rekoru kır" : "Dene"}
         </button>
       </div>
-    </motion.section>
+    </section>
   );
 }
