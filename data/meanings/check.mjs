@@ -115,7 +115,9 @@ function forms(raw) {
       if (s) out.add(s);
     }
   }
-  return [...out];
+  // Başlığın kendisi dönüşlü zamirse ("sich") geriye hiçbir biçim kalmıyor ve
+  // boş liste her cümleyi reddediyordu: `[].some(...)` her zaman false.
+  return out.size ? [...out] : [raw.trim()];
 }
 
 /** Bir parçanın çekimli hâllerini yakalayan en kısa güvenli kök. */
@@ -225,7 +227,6 @@ function denetle(paket) {
     hatalar.push("  [yinelenen id] aynı madde birden çok kez yazılmış");
 
   const trSayaci = new Map();
-  const enSayaci = new Map();
 
   for (const k of src.kelimeler) {
     const r = byId.get(k.id);
@@ -295,8 +296,6 @@ function denetle(paket) {
 
     const trKey = tr.toLocaleLowerCase("tr-TR");
     trSayaci.set(trKey, [...(trSayaci.get(trKey) ?? []), de]);
-    const enKey = en.toLowerCase();
-    enSayaci.set(enKey, [...(enSayaci.get(enKey) ?? []), de]);
   }
 
   /* Paket içi ikizler: aynı Türkçe karşılığı alan iki kelime, İngilizcede de
@@ -349,6 +348,51 @@ for (const p of secili) {
     r.uyarilar.forEach((u) => console.log(u));
   } else if (secili.length === 1) {
     console.log(`${p}: ${r.madde} madde, temiz.`);
+  }
+}
+
+/**
+ * Paketler arası ayırt edilemez ikizler.
+ *
+ * Paket içi denetim bunu göremiyor: `man` A1'in ilk paketinde, `Mensch` çok
+ * sonrasında ve ikisi de "insan" almaya aday. Aynı Türkçe **ve** aynı
+ * İngilizce karşılığı alan iki farklı kelime hiçbir turda ayırt edilemez —
+ * çoktan seçmelide iki özdeş şık çıkar ve hangisi seçilirse seçilsin biri
+ * yanlış sayılır.
+ *
+ * Uyarı, hata değil: ikisi gerçekten eşanlamlıysa (anfangen/beginnen) aynı
+ * karşılığı almaları doğrudur ve zorlama bir ayrım Türkçeyi bozar.
+ */
+if (secili.length > 1) {
+  const kaynak = new Map();
+  for (const p of hepsi)
+    for (const k of JSON.parse(readFileSync(`${IN}/${p}.json`, "utf8")).kelimeler)
+      kaynak.set(k.id, k.de);
+
+  const gruplar = new Map();
+  for (const p of secili) {
+    if (!existsSync(`${OUT}/${p}.json`)) continue;
+    let rows;
+    try {
+      rows = JSON.parse(readFileSync(`${OUT}/${p}.json`, "utf8"));
+    } catch {
+      continue;
+    }
+    for (const r of rows) {
+      if (!r?.tr || !r?.en) continue;
+      const key = `${r.tr.toLocaleLowerCase("tr-TR")}|${r.en.toLowerCase()}`;
+      if (!gruplar.has(key)) gruplar.set(key, []);
+      gruplar.get(key).push(`${kaynak.get(r.id) ?? r.id} [${p}]`);
+    }
+  }
+
+  const ikizler = [...gruplar].filter(([, list]) => list.length > 1);
+  if (ikizler.length) {
+    console.log("\n── paketler arası ayırt edilemez ikizler ──");
+    for (const [key, list] of ikizler.slice(0, 40))
+      console.log(`  "${key.split("|")[0]}" / "${key.split("|")[1]}" = ${list.join(", ")}`);
+    if (ikizler.length > 40) console.log(`  … ve ${ikizler.length - 40} tane daha`);
+    uyari += ikizler.length;
   }
 }
 

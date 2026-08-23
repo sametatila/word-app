@@ -7,6 +7,8 @@ import { and, eq, notInArray, sql } from "drizzle-orm";
 import { cleanHeadword } from "../src/lib/headword";
 import { words } from "../src/lib/db/schema";
 import { firstExample } from "../src/lib/example";
+import { readMeanings } from "./apply-meanings";
+import { readZurichSentences } from "./apply-zurich-beispiel";
 
 /**
  * Züritüütsch kelime havuzunu Neon'a yükler.
@@ -119,17 +121,47 @@ async function main() {
     if (m) throw new Error(`Mojibake: id ${g.id} → "${m[0]}"`);
   }
 
+  /**
+   * Yenilenen Almanca anlamlar ve onlara denk gelen lehçe cümleleri.
+   *
+   * Kelime düzeyindeki karşılıklar (tr, en) iki kursta birebir aynı: aynı
+   * kelimenin Türkçesi lehçeye göre değişmiyor. Cümle çevirileri ise ancak
+   * lehçe cümlesi **aynı cümlenin** karşılığıysa devralınabiliyor; yeni hatta
+   * bu bir kural (bkz. data/zurich/beispiel/SPEC.md), yani devralma orada
+   * koşulsuz. Yenilenmemiş maddelerde eski ölçüt (sayı ve yer adı örtüşmesi)
+   * yürürlükte kalıyor.
+   */
+  const meanings = new Map(readMeanings().map((m) => [m.id, m]));
+  const zurichSentences = readZurichSentences();
+  if (meanings.size) console.log(`${meanings.size} yenilenmiş anlam okundu.`);
+  if (zurichSentences.size)
+    console.log(`${zurichSentences.size} yenilenmiş Züritüütsch cümle okundu.`);
+
   let droppedTr = 0;
   const values = gswRows.map((g) => {
     const src = srcById.get(g.id);
     if (!src) throw new Error(`Kaynakta olmayan id: ${g.id}`);
-    const gswSentence = g.beispiel?.trim() || null;
-    const deSentence = firstExample(src.beispiel);
-    let tr = gswSentence ? (beispielTr.get(g.id) ?? null) : null;
-    if (tr && deSentence && !translationFits(deSentence, gswSentence!)) {
-      tr = null;
-      droppedTr++;
+    const meaning = meanings.get(g.id);
+    const yeniCumle = zurichSentences.get(g.id)?.trim() || null;
+    const gswSentence = yeniCumle ?? g.beispiel?.trim() ?? null;
+
+    let tr: string | null;
+    let en: string | null;
+    if (yeniCumle && meaning) {
+      // Yeni hatta lehçe cümlesi Almanca cümlenin karşılığı olmak zorunda:
+      // çeviri koşulsuz devralınıyor.
+      tr = meaning.beispielTr;
+      en = meaning.beispielEn;
+    } else {
+      const deSentence = firstExample(src.beispiel);
+      tr = gswSentence ? (beispielTr.get(g.id) ?? null) : null;
+      en = null;
+      if (tr && deSentence && !translationFits(deSentence, gswSentence!)) {
+        tr = null;
+        droppedTr++;
+      }
     }
+
     return {
       id: ID_OFFSET + g.id,
       // Almanca tarafıyla aynı temizlik: tire bir ek işareti, kelimenin
@@ -137,12 +169,14 @@ async function main() {
       // biçimde gösteriyordu.
       de: cleanHeadword(g.gsw),
       artikel: g.artikel || null,
-      tr: src.tr,
+      tr: meaning?.tr ?? src.tr,
+      en: meaning?.en ?? null,
       formen: `HD: ${cleanHeadword(src.de)}`,
-      typ: inferTyp(src),
+      typ: inferTyp(meaning ? { ...src, tr: meaning.tr } : src),
       niveau: src.niveau.startsWith("A1") ? "A1" : src.niveau,
       beispiel: gswSentence,
       beispielTr: tr,
+      beispielEn: en,
       rank: src.rank ?? null,
       course: "gsw-zh",
     };
@@ -161,11 +195,13 @@ async function main() {
           de: sql`excluded.de`,
           artikel: sql`excluded.artikel`,
           tr: sql`excluded.tr`,
+          en: sql`excluded.en`,
           formen: sql`excluded.formen`,
           typ: sql`excluded.typ`,
           niveau: sql`excluded.niveau`,
           beispiel: sql`excluded.beispiel`,
           beispielTr: sql`excluded.beispiel_tr`,
+          beispielEn: sql`excluded.beispiel_en`,
           rank: sql`excluded.rank`,
           course: sql`excluded.course`,
         },

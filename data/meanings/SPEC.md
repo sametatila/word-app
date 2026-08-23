@@ -65,6 +65,24 @@ Bein      →  "bacak"                   Fuß       →  "ayak"
 Kelimeler gerçekten eşanlamlıysa (`anfangen` / `beginnen`) ikisi de aynı
 karşılığı alır; zorlama ayrım yaratma. İngilizce alan zaten ayırıyor.
 
+`cakisan` listesi **paketinin dışındaki** maddeleri de gösteriyor: `man` A1'in
+ilk paketinde, `Mensch` çok sonrasında ve ikisi de "insan" almaya aday. Kendi
+maddende en kesin karşılığı seçmen yeterli; diğerini düzeltmek senin işin değil.
+
+### Dilbilgisi maddeleri
+
+Bazı maddelerin Türkçede karşılığı yoktur, işlevi vardır. Orada dürüst cevap
+işlevin kendisidir:
+
+```
+der   →  "belirli artikel" / "the"
+```
+
+Kaynak bu maddeye "bu, şu" diyor ama `formen` alanı "die, das" — yani bu bir
+tanımlık maddesi. "bu" demek `Der Bus kommt gleich.` cümlesi için düpedüz
+yanlış olurdu. Bunu yalnızca gerçekten karşılığı olmayan maddelerde yap;
+"edat", "bağlaç" gibi tür adları çeviri yerine geçmez.
+
 ## `en` — tek doğal İngilizce karşılık
 
 Aynı kurallar: tek karşılık, virgül/parantez yok, küçük harf (özel isim değilse).
