@@ -13,6 +13,13 @@ node_modules/
 out/
 build/
 dist/
+# `out/` Next'in dışa aktarma dizini için var, ama deseni her seviyede
+# eşleşiyor ve veri hattının ÇIKTILARINI da yutuyordu. O dosyalar bir derleme
+# artığı değil, düzeltmelerin kendisi: veritabanı onlardan tohumlanıyor ve
+# repoda durmazlarsa ilk `db:seed` hepsini siler.
+!data/meanings/out/
+!data/zurich/beispiel/out/
+!data/review/out/
 *.tsbuildinfo
 next-env.d.ts
 

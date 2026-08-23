@@ -11,7 +11,14 @@
  * çalışır; ilk Almanca cümlenin karşılığı ilk Türkçe parçadır.
  */
 
-/** Sonundaki nokta cümleyi bitirmeyen kısaltmalar ("vor ca. 6000 Jahren"). */
+/**
+ * Sonundaki nokta cümleyi bitirmeyen kısaltmalar ("vor ca. 6000 Jahren").
+ *
+ * Liste üç dili birden kapsıyor çünkü aynı işlev üç alanda da çalışıyor:
+ * Almanca cümlede, Türkçe çevirisinde ve İngilizce çevirisinde. İngilizce
+ * eklendikten sonra "Mr. Schmidt kommt morgen." tipi cümleler noktadan
+ * bölünüp "Mr." olarak gösteriliyordu.
+ */
 const ABBREVIATIONS = new Set([
   "ca",
   "bzw",
@@ -38,6 +45,20 @@ const ABBREVIATIONS = new Set([
   "abb",
   "jh",
   "bspw",
+  // İngilizce
+  "mr",
+  "mrs",
+  "ms",
+  "jr",
+  "sr",
+  "vs",
+  "approx",
+  // Türkçe
+  "vb",
+  "bkz",
+  "sn",
+  "yy",
+  "örn",
 ]);
 
 /** "z. B." gibi tek harfli kısaltmalar da cümleyi bitirmez. */

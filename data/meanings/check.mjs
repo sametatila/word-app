@@ -22,14 +22,19 @@ const OUT = `${ROOT}data/meanings/out`;
 
 /* ── Almanca biçim yardımcıları ─────────────────────────────────────────── */
 
-/** Umlaut ve ß düzleştirilir: çekim gövde ünlüsünü değiştirir (Buch → Bücher). */
+/**
+ * Umlaut ve ß düzleştirilir: çekim gövde ünlüsünü değiştirir (Buch → Bücher).
+ * Tire de düşer — madde başlığı da cümle de tireli yazıldığı hâlde kök
+ * karşılaştırması tireyi atıp "sbahn" arıyor ve "S-Bahn" hiç bulunamıyordu.
+ */
 const flat = (t) =>
   String(t ?? "")
     .toLowerCase()
     .replace(/ä/g, "a")
     .replace(/ö/g, "o")
     .replace(/ü/g, "u")
-    .replace(/ß/g, "ss");
+    .replace(/ß/g, "ss")
+    .replace(/-/g, "");
 
 /** Çekimde kökten kopabilen ön ekler. */
 const SEPARABLE =
@@ -177,7 +182,8 @@ function contains(sentence, headword) {
 }
 
 /** Sonundaki nokta cümleyi bitirmeyen kısaltmalar. */
-const ABBR = /\b(z\.\s?B|bzw|usw|ca|Dr|Prof|Nr|etc|inkl|evtl|ggf|vgl|Mio|Mrd|St)\.$/i;
+const ABBR =
+  /\b(z\.\s?B|bzw|usw|ca|Dr|Prof|Nr|etc|inkl|evtl|ggf|vgl|Mio|Mrd|St|Mr|Mrs|Ms|Jr|Sr|vs|approx|vb|bkz|sn)\.$/i;
 
 function sentenceCount(text) {
   // Cümle sınırı: noktalama + boşluk + büyük harf. Kısaltmalar sayılmaz.
@@ -261,7 +267,17 @@ function denetle(paket) {
     if (TR_HARF.test(en)) H("dil karışması", `en alanında Türkçe harf: "${en}"`);
     if (en.toLocaleLowerCase("tr-TR") === tr.toLocaleLowerCase("tr-TR"))
       U("tr = en", `"${tr}" — ikisi aynı, alıntı kelime değilse hata`);
-    const fiilMi = k.typ === "Verb" || /(mek|mak)$/.test(tr);
+    /**
+     * Fiil mi?
+     *
+     * Türkçe mastar eki `-mek`/`-mak` ile bittiği için karşılık genelde bunu
+     * ele veriyor, ama Türkçede aynı ekle biten **isimler** de var: "ekmek"
+     * (das Brot) ve "yemek" (das Essen). Bunlar fiil sayılınca denetleyici
+     * `en` alanında "to …" istiyor ve ajanı `"to bread"` yazmaya ya da
+     * karşılığı bozmaya zorluyordu — nitekim iki pakette tam olarak bu oldu.
+     * Kaynak zaten isim diyorsa ek yanıltıcıdır ve kaynak kazanır.
+     */
+    const fiilMi = k.typ === "Verb" || (k.typ !== "Nomen" && /(mek|mak)$/.test(tr));
     if (fiilMi && !/^to\s/.test(en)) H("fiilde to yok", `"${en}" — fiiller "to …" biçiminde yazılır`);
     if (!fiilMi && /^to\s/.test(en)) U("fiil olmayanda to", `"${en}"`);
 
