@@ -28,6 +28,7 @@ export default async function ProfilePage() {
       <ProfileForm
         authEnabled={authEnabled}
         accountName={user.name}
+        userId={user.id}
         initial={{
           displayName: profile.displayName ?? "",
           dailyGoal: profile.dailyGoal,

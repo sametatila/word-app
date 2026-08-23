@@ -8,6 +8,9 @@ import { AlertIcon, CheckIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { PushSettings } from "@/components/push-settings";
+import { SoundSettings } from "@/components/sound-settings";
+import { InviteCard } from "@/components/invite-card";
+import { Avatar } from "@/components/avatar";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 
 type Initial = {
@@ -36,6 +39,7 @@ const LEVELS = [
 ];
 
 export function ProfileForm({
+  userId,
   initial,
   accountName,
   authEnabled,
@@ -43,6 +47,8 @@ export function ProfileForm({
 }: {
   initial: Initial;
   accountName: string | null;
+  /** Armanın türetildiği hesap kimliği — sıralamadakiyle aynı görünsün diye. */
+  userId: string;
   authEnabled: boolean;
   /** Başlık ile ayarlar arasına giren bölüm — ilerleme istatistikleri. */
   children?: ReactNode;
@@ -96,9 +102,9 @@ export function ProfileForm({
   return (
     <div className="mx-auto w-full max-w-3xl space-y-6">
       <header className="flex items-center gap-4">
-        <div className="brand-gradient flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-black text-white">
-          {(displayName || accountName || "W").slice(0, 1).toUpperCase()}
-        </div>
+        {/* Profildeki arma sıralamadakiyle AYNI: kullanıcı kendini tabloda
+            tanıyabilmeli. İki yerde iki farklı görsel kimlik, kimlik değildir. */}
+        <Avatar userId={userId} name={displayName || accountName} size={64} />
         <div>
           <h1 className="text-2xl font-bold">{displayName || accountName || "Öğrenci"}</h1>
           <p className="muted text-sm">
@@ -259,6 +265,10 @@ export function ProfileForm({
 
       {/* Kurulumun hemen ardında: iPhone'da bildirim ancak uygulama ana
           ekrana eklendikten sonra çalışıyor, iki bölümün sırası bunu anlatıyor. */}
+      <InviteCard />
+
+      <SoundSettings />
+
       <PushSettings />
 
       <section className="card p-5">
