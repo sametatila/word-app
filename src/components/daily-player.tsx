@@ -287,6 +287,8 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
           {/* Paylaşılan sonuç burada gerçekten bir şey ifade ediyor: karşı taraf
               aynı turu oynadıysa skorları doğrudan karşılaştırabiliyor. */}
           <ShareResult
+            kind="daily"
+            score={finalScore}
             marks={marks.current}
             total={finalTotal}
             accuracy={finalTotal ? Math.round((finalCorrect / finalTotal) * 100) : 0}

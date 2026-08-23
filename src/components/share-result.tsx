@@ -37,6 +37,18 @@ export function marksToGrid(marks: boolean[]): string {
   return rows.join("\n");
 }
 
+/**
+ * Paylaşılan metin.
+ *
+ * Günün turu ayrı bir metin alıyor ve bunun sebebi tek bir cümlede: o tur
+ * herkese AYNI kelimeleri aynı sırayla veriyor. Sıradan bir tur paylaşıldığında
+ * karşı taraf yalnızca bir sonuç görüyor; günün turu paylaşıldığında
+ * karşılaştırabileceği bir şey görüyor. Aradaki fark, bir sonuç ile bir meydan
+ * okuma arasındaki fark — ve paylaşımın işe yaradığı tek yer orası.
+ *
+ * Metinde skor da var çünkü günün turunda kıyaslanan şey doğru sayısı değil
+ * puan: hız ve seri puana giriyor, iki kişi 18/20 yapıp farklı puan alabiliyor.
+ */
 export function buildShareText(input: {
   marks: boolean[];
   total: number;
@@ -44,12 +56,24 @@ export function buildShareText(input: {
   streak: number;
   level: string;
   origin: string;
+  kind?: "session" | "daily";
+  /** Günün turunun puanı — yalnızca `kind: "daily"` için anlamlı. */
+  score?: number;
 }): string {
-  const lines = [`Wortspiel · ${input.level}`, marksToGrid(input.marks)];
-  const stats = [`${input.total} kelime`, `%${input.accuracy} doğru`];
-  if (input.streak > 0) stats.push(`🔥 ${input.streak} gün`);
-  lines.push(stats.join(" · "), "", input.origin);
-  return lines.filter((l) => l !== undefined).join("\n");
+  const daily = input.kind === "daily";
+  const head = daily ? `Wortspiel · Günün turu · ${input.level}` : `Wortspiel · ${input.level}`;
+  const lines = [head, marksToGrid(input.marks)];
+
+  const stats = daily
+    ? [`${input.score?.toLocaleString("tr-TR") ?? 0} puan`, `${input.total} soruda %${input.accuracy}`]
+    : [`${input.total} kelime`, `%${input.accuracy} doğru`];
+  if (input.streak > 0) stats.push(daily ? `⚡ ${input.streak} seri` : `🔥 ${input.streak} gün`);
+  lines.push(stats.join(" · "));
+
+  if (daily) lines.push("", `Aynı sorular ${input.level} seviyesindeki herkese aynı. Sen de dene:`);
+  else lines.push("");
+  lines.push(input.origin);
+  return lines.join("\n");
 }
 
 export function ShareResult({
@@ -58,12 +82,17 @@ export function ShareResult({
   accuracy,
   streak,
   level,
+  kind = "session",
+  score,
 }: {
   marks: boolean[];
   total: number;
   accuracy: number;
   streak: number;
   level: string;
+  /** Günün turu farklı bir metin üretir — bkz. `buildShareText`. */
+  kind?: "session" | "daily";
+  score?: number;
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -78,6 +107,8 @@ export function ShareResult({
       streak,
       level,
       origin: window.location.origin,
+      kind,
+      score,
     });
 
     // Telefonda sistemin kendi paylaşım sayfası açılır — WhatsApp, Instagram
