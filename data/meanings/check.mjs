@@ -166,6 +166,51 @@ function root(part) {
   return s;
 }
 
+/** Çekim ekleri — her biri ayrı ayrı denenir, biri kısa kök bırakırsa atlanır. */
+const SUFFIXES = ["ern", "eln", "en", "er", "es", "em", "st", "te", "n", "e", "s"];
+
+/**
+ * Bir parçanın aranacak kökleri — kırpılmamış hâli de dâhil.
+ *
+ * Tek bir kök yetmiyor çünkü kırpma bazen fazla götürüyor: "Wurst" fiil eki
+ * sanılan "-st" atılınca "wur"a iniyor ve "Currywurst" içinde bulunamıyordu.
+ * Bu, doğru bir cümlenin reddedilmesi demekti — ve reddedilen cümleyi ajan
+ * yeniden yazıyordu, yani denetleyici sağlam veriyi bozuyordu.
+ *
+ * Sınırsız kırpma tehlikeli olurdu: "Disco" üç harfe inseydi "Diskothek" de
+ * kabul edilirdi — oysa yakalanması gereken tam olarak o.
+ */
+function roots(part) {
+  const bare = flat(part).replace(/[^a-z]/g, "");
+  const out = new Set([bare]);
+  for (const suf of SUFFIXES) {
+    if (bare.endsWith(suf) && bare.length - suf.length >= 3) out.add(bare.slice(0, -suf.length));
+  }
+  return [...out].filter(Boolean);
+}
+
+/**
+ * Güçlü fiilin gövde ünlüsünün aldığı biçimler (Ablaut).
+ *
+ * Almancanın güçlü fiillerinde çekim ekini değil ünlüyü değiştirir:
+ * finden → fand → gefunden, sprechen → sprach → gesprochen. Düzensiz fiil
+ * listesi yalın maddeleri kurtarıyor ama ön ekli bileşiklerini kurtarmıyor —
+ * "verschwinden" ("ist verschwunden") ve "versprechen" ("hat versprochen")
+ * bu yüzden hiçbir doğal Perfekt cümlesinde bulunamıyordu.
+ *
+ * Yalnızca son gövde ünlüsü ve yalnızca iki Ablaut dizisi deneniyor
+ * (i→a/u, e→a/o): daha geniş bir tarama "Disco" ile "Diskothek"i birbirine
+ * karıştırma riskini geri getirirdi.
+ */
+function stemVariants(r) {
+  const out = [];
+  const son = r.search(/[ie](?=[^aeiou]*$)/);
+  if (son < 0) return out;
+  for (const v of r[son] === "i" ? ["a", "u"] : ["a", "o"])
+    out.push(r.slice(0, son) + v + r.slice(son + 1));
+  return out;
+}
+
 /**
  * Ön ekli fiilin cümlede alabileceği bitişik biçimler.
  *
@@ -220,10 +265,13 @@ function contains(sentence, headword) {
     const bare = flat(part).replace(/[^a-z]/g, "");
     const r = root(part);
     if (!r) return true;
-    if (varMi(r)) return true;
+    if (roots(part).some((c) => varMi(c))) return true;
 
     // Perfekt: "hat angerufen", "ist zurückgefahren", "hat übertrieben".
     if (prefixedForms(part).some((f) => kok(f))) return true;
+
+    // Ablaut: "ist verschwunden", "hat versprochen".
+    if (r.length >= 5 && stemVariants(r).some((f) => kok(f))) return true;
 
     // Ayrılabilir fiil: ön ek cümlenin sonuna kaçar ("Siehst du viel fern?").
     // Ön ekin ayrı bir kelime olarak bulunması şart, kök ise gövde olarak.

@@ -102,6 +102,13 @@ Zorunlu ölçütler:
    `Arzt` → `Arztes`). Ayrılabilir fiil cümlede bölünür ve bu doğrudur
    (`abfahren` → `"Der Zug fährt gleich ab."`). Ama başka bir kelimeyle
    değiştirilemez: `Disco` için `Diskothek`, `Arzt` için `Ärztin` **yanlıştır**.
+
+   Kelime **yalnızca bir bileşiğin içinde** de geçemez: `das Fach` için
+   `"Mein Lieblingsfach ist Mathe."`, `der Laden` için `"im Buchladen"`
+   yetmez. Sebebi mekanik: boşluk doldurma turu kelimeyi sözcük sınırıyla
+   arıyor ve bileşiğin ortasını boşluğa çeviremiyor — yani o madde hiç
+   boşluk doldurma turu üretmiyor. Denetleyici bunu yakalayamıyor; bakması
+   gereken sensin.
 2. **Tek cümle.** Numaralı derleme yok, eğik çizgiyle birleştirilmiş varyant
    listesi yok, `(vergl. Grammatik)` / `(siehe …)` gibi sözlük artığı yok.
 3. **4–12 kelime.** Telefonda tek satıra sığmalı ve cümle dizme turunda
