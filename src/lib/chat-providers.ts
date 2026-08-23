@@ -60,6 +60,15 @@ type ProviderConfig = {
    * isteği reddettirebilir.
    */
   reasoningEffort?: string;
+  /**
+   * Konuşmayı yazıya çeviren uç ve modeli.
+   *
+   * Yalnızca iki sağlayıcıda var. OpenAI uyumlu biçim aynı: çok parçalı gövde
+   * (`file` + `model`), `{baseUrl}/audio/transcriptions` adresi. Diğer üçünde
+   * bu uç olmadığı için alan boş kalıyor ve zincir onları atlıyor.
+   */
+  sttModel?: string;
+  sttEnvModel?: string;
 };
 
 const CATALOG: Record<ProviderName, ProviderConfig> = {
@@ -71,6 +80,8 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     envModel: "MISTRAL_MODEL",
     defaultModel: "mistral-medium-latest",
     freeTier: "50 istek/dk · 1B token/ay",
+    sttModel: "voxtral-mini-latest",
+    sttEnvModel: "MISTRAL_STT_MODEL",
   },
   groq: {
     // Ölçüm: en hızlısı (~191ms ilk parça) ama 12K token/dk — bir sohbet turu
@@ -80,6 +91,10 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     envModel: "GROQ_MODEL",
     defaultModel: "llama-3.3-70b-versatile",
     freeTier: "12K token/dk · 1000 istek/gün",
+    // Ücretsiz katmanı bu iş için fazlasıyla geniş: günde 2.000 istek ve
+    // 28.800 saniye ses. Bir yürüyüş turu ~20 saniyelik ses demek.
+    sttModel: "whisper-large-v3-turbo",
+    sttEnvModel: "GROQ_STT_MODEL",
   },
   cerebras: {
     // Ölçüm: kalite ve hız iyi, ama dakikada 5 istek. Günlük 1M token bu
@@ -394,6 +409,38 @@ export function chatProviders(): Provider[] {
 
 export function chatConfigured(): boolean {
   return chatProviders().length > 0;
+}
+
+export type SttProvider = { name: ProviderName; baseUrl: string; key: string; model: string };
+
+/**
+ * Konuşmayı yazıya çevirebilen sağlayıcılar, sırayla.
+ *
+ * Sohbet zinciriyle aynı mantık ama ayrı bir liste: her sağlayıcının bu ucu
+ * yok ve olanların sırası da farklı olmalı. Groq önde, çünkü ücretsiz katmanı
+ * bu iş için ölçüsüz geniş (günde 2.000 istek · 28.800 saniye ses) ve gecikme
+ * burada her şeyden önemli — kullanıcı cevabını söyledikten sonra beklediği
+ * her saniye yürüyüşün ritmini bozuyor.
+ */
+export function sttProviders(): SttProvider[] {
+  const order: ProviderName[] = ["groq", "mistral"];
+  const out: SttProvider[] = [];
+  for (const name of order) {
+    const cfg = CATALOG[name];
+    const key = process.env[cfg.envKey];
+    if (!key || !cfg.sttModel) continue;
+    out.push({
+      name,
+      baseUrl: cfg.baseUrl,
+      key,
+      model: (cfg.sttEnvModel && process.env[cfg.sttEnvModel]) || cfg.sttModel,
+    });
+  }
+  return out;
+}
+
+export function sttConfigured(): boolean {
+  return sttProviders().length > 0;
 }
 
 /**
