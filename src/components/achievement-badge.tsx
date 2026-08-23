@@ -107,7 +107,7 @@ export function AchievementBadge({
       type="button"
       onClick={onClick}
       aria-label={`${row.title}${row.unlocked ? "" : ` — ${row.hint}`}`}
-      className="group flex flex-col items-center gap-1.5 rounded-xl p-1 text-center transition-transform active:scale-95"
+      className="group flex flex-col items-center gap-1 rounded-xl p-1 text-center transition-transform active:scale-95"
     >
       <span
         className="relative flex items-center justify-center rounded-2xl"
@@ -146,7 +146,13 @@ export function AchievementBadge({
         className="flex w-full items-start justify-center text-[11px] font-bold leading-tight"
         style={{
           color: row.unlocked ? "var(--text)" : "var(--text-muted)",
-          minHeight: "2.1em",
+          /*
+            Yükseklik SABİT, en az değil. `minHeight` iki satırlık başlıkta
+            aşılıyordu (11px × 1.25 satır aralığı × 2 = 2.5em) ve o sütunun
+            ilerleme çubuğu tek satırlıkların 11 piksel altında kalıyordu —
+            bir ızgarada göze ilk çarpan şey bozuk hizadır.
+          */
+          height: "2.5em",
           overflow: "hidden",
           display: "-webkit-box",
           WebkitLineClamp: 2,
@@ -159,7 +165,10 @@ export function AchievementBadge({
       {/* Kilitli rozetin altında ilerleme: "ne kadar kaldı" bilgisi olmadan
           kilit yalnızca bir duvar; varken hedefe dönüşüyor. */}
       {!row.unlocked && row.done > 0 ? (
-        <span className="h-1 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+        <span
+          className="-mt-0.5 h-1 w-full overflow-hidden rounded-full"
+          style={{ background: "var(--surface-2)" }}
+        >
           <span className="block h-full rounded-full" style={{ width: `${pct}%`, background: color }} />
         </span>
       ) : null}
