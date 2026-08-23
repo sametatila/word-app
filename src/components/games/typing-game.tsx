@@ -5,13 +5,22 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { matchesAnswer, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
-import { fx } from "@/lib/fx";
+import { fx, vibrate } from "@/lib/fx";
+import { prefetchGerman, speakThen } from "@/components/speak-button";
 
 type TypingRound = Extract<Round, { game: "typing" }>;
 
 type Status = "idle" | "correct" | "wrong";
 
 const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
+
+/**
+ * Yanlış cevapta okumanın üstüne eklenen okuma payı.
+ *
+ * Yanlışta ekranda yeni bir bilgi beliriyor ("Doğrusu: …"); ses biter bitmez
+ * tur kapanırsa o satır okunamıyor. Doğruda böyle bir satır yok.
+ */
+const WRONG_TAIL_MS = 900;
 
 
 /**
@@ -52,7 +61,10 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     setHintShown(false);
     started.current = Date.now();
     inputRef.current?.focus();
-  }, [round.id]);
+    // Cevaptan sonra okunacak metin baştan belli: kelimenin doğru yazımı.
+    // Önden indirmek dokunuşla sesin başlaması arasındaki boşluğu kapatıyor.
+    prefetchGerman(withArtikel(word));
+  }, [round.id, word]);
 
   const letterCount = word.de.replace(/\s+/g, "").length;
   const firstLetter = word.de.trim().charAt(0).toUpperCase();
@@ -70,9 +82,22 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     ]);
     setStatus(correct ? "correct" : "wrong");
     const latencyMs = Date.now() - started.current;
-    const wait = correct ? 750 : 1500;
-    fx(correct ? "correct" : "wrong", wait);
-    setTimeout(() => onDone([{ wordId: word.id, correct, latencyMs, hintUsed }]), wait);
+
+    // Kelime cevaptan sonra HER ZAMAN sesli okunuyor — ve her zaman doğru
+    // yazımıyla, kullanıcının yazdığıyla değil. Bu oyun sıfırdan hatırlamayı
+    // çalıştırıyor; kelimeyi yazıp telaffuzunu hiç duymamak, diğer oyunların
+    // hepsinde kurulan yazım–ses bağını tam da en çok gerektiği yerde
+    // kopartıyordu. Yanlışta ses tek başına düzeltmenin kendisi oluyor.
+    //
+    // Süre de artık sabit değil: geçiş çizgisi okumanın gerçek uzunluğunda
+    // dolduruluyor, yoksa kısa kelimede boşuna bekleniyor, uzun kelimede ses
+    // yarıda kesiliyordu.
+    vibrate(correct ? "correct" : "wrong");
+    const tail = correct ? 0 : WRONG_TAIL_MS;
+    const finish = () => onDone([{ wordId: word.id, correct, latencyMs, hintUsed }]);
+    speakThen(withArtikel(word), () => setTimeout(finish, tail), {
+      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
+    });
   }
 
   function insertChar(char: string) {
