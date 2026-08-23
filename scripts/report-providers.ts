@@ -70,6 +70,27 @@ async function main() {
       }
     }
 
+    // "Doğru söyledim ama yanlış saydı" şikâyetinin tek cevabı bu liste:
+    // beklenen ile duyulan yan yana. Sorun telaffuzda mı, tanıyıcıda mı,
+    // yoksa kabul mantığında mı — ancak böyle ayrılıyor.
+    const mismatch = (await sql`
+      select expected, heard, provider, count(*)::int as n
+      from ai_usage
+      where kind = 'stt' and ok and expected is not null and heard is not null
+        and lower(regexp_replace(expected, '^(der|die|das) ', '')) <>
+            lower(regexp_replace(heard, '[.,!?]', '', 'g'))
+        and created_at > now() - interval '30 days'
+      group by 1, 2, 3 order by n desc limit 10
+    `) as Row[];
+    if (mismatch.length) {
+      console.log("\n  Beklenen ≠ duyulan (yazıya çevirme)");
+      for (const m of mismatch) {
+        console.log(
+          `    ${String(m.expected).padEnd(22)} → ${String(m.heard).padEnd(22)} ${String(m.n).padStart(3)} kez  (${m.provider})`,
+        );
+      }
+    }
+
     // Ücretsiz katmanın bağlayıcı sınırı istek sayısı; günlük en yoğunlar.
     const daily = (await sql`
       select day::text as gun, kind, count(*)::int as n, coalesce(sum(audio_seconds), 0)::int as ses

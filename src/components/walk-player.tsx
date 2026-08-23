@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useListen } from "@/components/use-listen";
-import { isSpeechCorrect, judgeSpeech } from "@/lib/speech";
+import { spokenMatches } from "@/components/games/types";
 import { parseConfirm } from "@/lib/voice-intent";
 import { cueListen } from "@/lib/lessons/cues";
 import { useWakeLock } from "@/components/use-wake-lock";
@@ -148,6 +148,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   /** Şu an sorulan şey bir kelime değil, "devam edelim mi?" onayı. */
   const [asking, setAsking] = useState(false);
   /**
+   * Tanıyıcının duyduğu metin.
+   *
+   * Ekranda gösteriliyor ve sebebi bir hata ayıklama kolaylığı değil, güven:
+   * "doğru söyledim ama yanlış saydı" şikâyetinin tek cevabı, ne duyduğunu
+   * göstermek. Kullanıcı kendi kulağıyla karşılaştırabildiğinde sorunun
+   * telaffuzunda mı yoksa tanıyıcıda mı olduğunu anında görüyor.
+   */
+  const [heardText, setHeardText] = useState("");
+  /**
    * Sesin nasıl yakalandığı. İkisi de ÖLÇÜYOR — fark yalnızca yöntem.
    *
    *   `stt`     — mikrofon `getUserMedia` ile açılıp açık tutuluyor, her cevap
@@ -276,11 +285,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * askıya alınıyor ve çözümleyici tam ihtiyaç duyulan yerde duruyor.
    */
   const hear = useCallback(
-    async (lang: "de" | "tr", windowMs: number): Promise<string[]> => {
+    async (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> => {
       if (captureRef.current === "stt") {
         const clip = await recordClip(windowMs);
         if (!clip) return [];
-        return transcribe(clip, lang);
+        return transcribe(clip, lang, expected);
       }
       const heard = await listen({
         lang: lang === "tr" ? "tr-TR" : "de-DE",
@@ -408,16 +417,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           setPhase("listening");
           cueListen();
           const askedAt = Date.now();
-          const heard = await hear("de", ANSWER_WINDOW_MS);
+          const heard = await hear("de", ANSWER_WINDOW_MS, target);
           if (!alive()) return;
 
           setPhase("judging");
-          const decision = judgeSpeech(target, heard, []);
-          // "Emin değilim" doğru sayılıyor: tanıyıcı hedefi alt sıralarda
-          // görmüşse kullanıcı büyük olasılıkla doğru söylemiştir ve şüpheden
-          // öğrencinin yararlanması gerekir.
-          const ok = isSpeechCorrect(decision) || decision.kind === "uncertain";
-          const unheard = decision.kind === "unheard";
+          // Kabul mantığı yazma oyunuyla AYNI (bkz. games/types, spokenMatches):
+          // artikel aranmıyor, umlaut katlanıyor, fazladan kelime bağışlanıyor.
+          // Önceki hâli `judgeSpeech`ti ve tek kelimelik cevapta çok katıydı:
+          // tanıyıcı artikeli düşürünce ("die Katze" → "Katze") doğru cevap
+          // yanlış sayılıyordu.
+          const said = heard.find((h) => h.trim()) ?? "";
+          const unheard = !said;
+          const ok = !unheard && spokenMatches(heard, [target, word.de]);
+          setHeardText(said);
 
           // Pencere her turda güncelleniyor: duyulan da duyulmayan da giriyor.
           heardLog.current.push(!unheard);
@@ -826,6 +838,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             <p className="muted mt-1 text-sm">
               {verdict === "correct" ? "Doğru" : verdict === "unheard" ? "Duyamadım" : prompt?.tr}
             </p>
+            {verdict === "wrong" && heardText ? (
+              <p className="muted mt-2 text-xs">
+                duyduğum: <span className="font-semibold">“{heardText}”</span>
+              </p>
+            ) : null}
           </>
         ) : (
           <>

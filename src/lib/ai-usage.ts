@@ -29,6 +29,9 @@ export type AiCallRecord = {
   completionTokens?: number;
   audioSeconds?: number;
   limits?: Record<string, string>;
+  /** Yazıya çevirmede beklenen hedef ve duyulan metin. */
+  expected?: string;
+  heard?: string;
 };
 
 /** Hata metni kısaltılıyor: ayıklamaya yeter, tabloyu şişirmez. */
@@ -51,6 +54,8 @@ export function recordAiUsage(userId: string | null, call: AiCallRecord): void {
         completionTokens: call.completionTokens ?? null,
         audioSeconds: call.audioSeconds ?? null,
         limits: call.limits && Object.keys(call.limits).length ? call.limits : null,
+        expected: call.expected?.slice(0, 120) ?? null,
+        heard: call.heard?.slice(0, 120) ?? null,
       });
     } catch (err) {
       console.error("[ai-usage] yazılamadı", call.kind, call.provider, err);

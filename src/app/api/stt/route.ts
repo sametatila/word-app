@@ -44,12 +44,16 @@ export async function POST(req: Request) {
 
   let file: File | null = null;
   let language = "de";
+  /** Beklenen cevap — yalnızca kayda geçiyor, karara etki etmiyor. */
+  let expected = "";
   try {
     const form = await req.formData();
     const f = form.get("audio");
     if (f instanceof File) file = f;
     const lang = form.get("language");
     if (typeof lang === "string" && /^[a-z]{2}$/.test(lang)) language = lang;
+    const want = form.get("expected");
+    if (typeof want === "string") expected = want.slice(0, 120);
   } catch {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
@@ -112,6 +116,8 @@ export async function POST(req: Request) {
         status: res.status,
         ms: Date.now() - startedAt,
         audioSeconds: Math.round(seconds),
+        expected,
+        heard: text,
       });
 
       return NextResponse.json({ text, provider: provider.name, model: provider.model });

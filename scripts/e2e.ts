@@ -27,6 +27,7 @@ import {
   foldSpelling,
   matchesAnswer,
   normalize,
+  spokenMatches,
 } from "../src/components/games/types";
 import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
@@ -1900,7 +1901,36 @@ async function main() {
 
   await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
 
-  console.log("\n25) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n25) Sesli cevabın kabulü — yazma oyunuyla aynı ölçü");
+  // Kullanıcının bildirdiği hata: "die Katze" dedi, tanıyıcı "Katze" yazdı,
+  // tur yanlış saydı. Sebep kabul mantığının yazma oyunundan katı olmasıydı.
+  const cat = ["die Katze"];
+  check("artikelli hâli", spokenMatches(["die Katze"], cat));
+  check("ARTİKELSİZ hâli de doğru", spokenMatches(["Katze"], cat));
+  check("yanlış artikel de doğru sayılıyor", spokenMatches(["der Katze"], cat));
+  check("noktalama bozmuyor", spokenMatches(["Die Katze."], cat));
+  check("fazladan kelime bağışlanıyor", spokenMatches(["ähm die Katze bitte"], cat));
+
+  check("umlaut katlanıyor", spokenMatches(["Fruehstueck"], ["das Frühstück"]));
+  check("ß katlanıyor", spokenMatches(["Strasse"], ["die Straße"]));
+  check("dönüşlü zamir isteğe bağlı", spokenMatches(["setzen"], ["sich setzen"]));
+
+  check("başka kelime yanlış", !spokenMatches(["der Hund"], cat));
+  check("boş metin yanlış", !spokenMatches([""], cat));
+  check("hiç aday yoksa yanlış", !spokenMatches([], cat));
+  // Kısa hedef uzun bir cümlenin içinde tesadüfen geçmemeli.
+  check("iki harfli hedef içermeyle eşleşmiyor", !spokenMatches(["das ist es gerçekten"], ["es"]));
+  check("iki harfli hedef tam eşleşmede doğru", spokenMatches(["es"], ["es"]));
+
+  // Yazma oyunuyla aynı sonucu vermesi gereken durumlar.
+  for (const said of ["die Katze", "Katze", "der Katze"]) {
+    check(
+      `"${said}" iki yolda da doğru`,
+      matchesAnswer(said, cat) === spokenMatches([said], cat),
+    );
+  }
+
+  console.log("\n26) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);

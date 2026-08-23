@@ -120,11 +120,17 @@ export function recordClip(ms: number): Promise<Blob | null> {
 }
 
 /** Kaydı sunucuya gönderip yazıya çevirir. Başarısızsa boş dizi. */
-export async function transcribe(clip: Blob, language = "de"): Promise<string[]> {
+export async function transcribe(
+  clip: Blob,
+  language = "de",
+  /** Beklenen cevap — karara etki etmiyor, yalnızca kayda geçiyor. */
+  expected = "",
+): Promise<string[]> {
   const form = new FormData();
   const ext = clip.type.includes("mp4") ? "mp4" : clip.type.includes("ogg") ? "ogg" : "webm";
   form.append("audio", clip, `clip.${ext}`);
   form.append("language", language);
+  if (expected) form.append("expected", expected);
   try {
     const res = await fetch("/api/stt", { method: "POST", body: form });
     if (!res.ok) return [];

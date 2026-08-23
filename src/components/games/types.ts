@@ -108,6 +108,44 @@ export function matchesAnswer(typed: string, candidates: string[]): boolean {
 }
 
 /**
+ * Söylenen cevap, verilen başlıklardan biriyle eşleşiyor mu?
+ *
+ * Yazılan cevaptan iki noktada ayrılıyor ve ikisi de ölçümden çıktı:
+ *
+ *   1. **Artikel aranmıyor.** Tanıyıcı tek kelimelik bir cevapta artikeli çok
+ *      sık düşürüyor: "die Katze" denip metne "Katze" olarak geçiyor ve tur
+ *      "doğrusu: die Katze" diyordu. Zaten bu turun sorusu "kedi Almanca ne"
+ *      — artikelin kendi oyunu var (Artikel Yarışı). `foldSpelling` baştaki
+ *      artikeli düşürdüğü için yanlış artikel de kabul ediliyor; burada
+ *      ölçülen şey o değil.
+ *   2. **Fazladan kelime bağışlanıyor.** Tanıyıcı "die Katze bitte" ya da
+ *      "ähm die Katze" yazabiliyor; hedef biçim söylenenin İÇİNDE geçiyorsa
+ *      cevap doğrudur. Yazarken böyle bir gürültü olmadığı için orada tam
+ *      eşleşme aranıyor.
+ *
+ * Kısa biçimlerde içerme aranmıyor: "es" gibi iki harfli bir hedef, uzun bir
+ * cümlenin içinde tesadüfen geçer ve her şeyi doğru sayardı.
+ */
+const CONTAINS_MIN = 3;
+
+export function spokenMatches(heard: string[], candidates: string[]): boolean {
+  const forms = candidates
+    .flatMap((c) => acceptedForms(c))
+    .map((f) => foldSpelling(f))
+    .filter(Boolean);
+  if (!forms.length) return false;
+
+  return heard.some((raw) => {
+    const said = foldSpelling(raw);
+    if (!said) return false;
+    return forms.some(
+      (form) =>
+        said === form || (form.length >= CONTAINS_MIN && ` ${said} `.includes(` ${form} `)),
+    );
+  });
+}
+
+/**
  * Bir madde başlığı için kabul edilebilir yazımların tamamı.
  *
  * Sözlük başlığı ile öğrencinin yazacağı şey aynı değildir. Başlık, birden çok

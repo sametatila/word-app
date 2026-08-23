@@ -485,6 +485,19 @@ export const aiUsage = pgTable(
     audioSeconds: integer("audio_seconds"),
     /** Sağlayıcının bildirdiği kalan hak (ham başlıklar). */
     limits: jsonb("limits").$type<Record<string, string>>(),
+    /**
+     * Yazıya çevirmede beklenen ve duyulan metin.
+     *
+     * "Doğru söyledim ama yanlış saydı" şikâyeti ancak bu ikisi yan yana
+     * görülünce çözülebiliyor: sorun telaffuzda mı, tanıyıcıda mı, yoksa
+     * kabul mantığında mı? Tahminle uğraşmanın bedeli bir tur boyunca
+     * ölçüldü — ilk seferinde artikelin düşmesi olduğu ancak koda bakarak
+     * anlaşıldı, veriye bakarak değil.
+     *
+     * Yalnızca tek kelimelik cevaplar; ses hiçbir zaman saklanmıyor.
+     */
+    expected: text("expected"),
+    heard: text("heard"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [

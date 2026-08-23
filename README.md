@@ -258,7 +258,7 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (536 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (552 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
 sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
 tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını, modül sınavının
@@ -550,6 +550,9 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 | Parça | Neden |
 |---|---|
 | Mikrofon oturum boyunca **bir kez** açılıp açık tutuluyor | Her tur yeniden açmak yarım saniyeye kadar gecikme ekliyor; daha önemlisi akış kapalıyken sekmenin arka planda canlı kalması için sebep kalmıyor |
+| Cevabın kabulü **yazma oyunuyla aynı** | Konuşma yolu daha katıydı: artikel zorunluydu, umlaut katlanmıyordu. Tanıyıcı tek kelimelik cevapta artikeli sık düşürüyor — "die Katze" denip metne "Katze" geçiyor ve tur "doğrusu: die Katze" diyordu. Artikelin kendi oyunu var; buranın sorusu "kedi Almanca ne" |
+| Duyulan metin **ekranda** | "Doğru söyledim ama yanlış saydı"nın tek cevabı ne duyulduğunu göstermek. Yanlış cevapta transkript yazıyor, sorunun telaffuzda mı tanıyıcıda mı olduğu anında görülüyor |
+| Beklenen ve duyulan **kaydediliyor** | Aynı soru sonradan da sorulabilsin diye: `report:providers` "beklenen ≠ duyulan" listesini veriyor. İlk seferinde sebebin artikel olduğu koda bakarak anlaşıldı, veriye bakarak değil |
 | Kayıt penceresi **sabit** (3,5 sn) | Sessizlik algılamak için WebAudio çözümleyicisi gerekiyor ama ekran kapanınca `AudioContext` askıya alınıyor — çözümleyici tam ihtiyaç duyulan yerde duruyor |
 | Sesler **ses öğesi** zinciriyle çalınıyor | Kilitlenince `AudioContext` askıya alınıyor, ses öğeleri çalmaya devam ediyor (podcast uygulamalarının çalışma biçimi) |
 | Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
