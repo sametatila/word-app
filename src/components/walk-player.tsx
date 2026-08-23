@@ -125,6 +125,10 @@ const CONFIRM_SILENCE_MS = 7000;
  * uydurma oluyordu.
  */
 const ANSWER_WINDOW_MS = 7000;
+/** Tarayıcı tanıyıcısı için sessizlik tavanı — ardından kayıt yolu deneniyor. */
+const BROWSER_SILENCE_MS = 4000;
+/** Kaç boş denemeden sonra tarayıcı tanıyıcısı bu oturumda bırakılır. */
+const BROWSER_GIVE_UP = 2;
 
 function localDay(): string {
   const d = new Date();
@@ -173,6 +177,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    */
   const [capture, setCapture] = useState<"stt" | "browser">("browser");
   const captureRef = useRef<"stt" | "browser">("browser");
+  /** Tarayıcının kendi tanıyıcısı kullanılabiliyor mu — görünürken tercih edilen yol. */
+  const browserRef = useRef(false);
+  /**
+   * Tarayıcı tanıyıcısı üst üste kaç kez boş döndü.
+   *
+   * Tanıyıcı "var" görünüp hiç sonuç vermeyebiliyor (ağ yok, motor kapalı,
+   * bazı tarayıcılarda sessizce düşüyor). O durumda her cevap önce onu bekler,
+   * sonra kayıt yolunu — yani süre ikiye katlanırdı. İki boş denemeden sonra
+   * oturum boyunca bırakılıyor.
+   */
+  const browserMisses = useRef(0);
   const [tally, setTally] = useState({ correct: 0, total: 0 });
 
   const { listen, cancel } = useListen();
@@ -288,19 +303,45 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    */
   const hear = useCallback(
     async (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> => {
-      if (captureRef.current === "stt") {
-        // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` artık
-        // sabit pencere değil ÜST SINIR. Hiç konuşma duyulmadıysa `null`
-        // dönüyor ve sunucuya istek bile gitmiyor.
-        const clip = await recordClip(windowMs);
-        if (!clip) return [];
-        return transcribe(clip.blob, lang, expected);
+      /*
+        Sıra: sayfa GÖRÜNÜRKEN önce tarayıcının kendi tanıyıcısı.
+
+        Ölçülebilir bir tercih değil, kullanılabilir bir gerçek: o tanıyıcı
+        kısa cevaplarda belirgin biçimde daha iyi anlıyor, anında cevap
+        veriyor ve hiçbir şeye mal olmuyor. Kayıt + sunucuda yazıya çevirme
+        yolu ise ekran kapandığında çalışabilen TEK yol — `SpeechRecognition`
+        sayfa görünmezken susuyor.
+
+        Yani ikisi rakip değil: biri kaliteyi, diğeri kapsamı veriyor. Boş
+        dönen tanıyıcının ardından kayıt yolu yine deneniyor, çünkü tek bir
+        turu kaybetmek gereksiz.
+      */
+      const visible = typeof document === "undefined" || document.visibilityState === "visible";
+
+      if (browserRef.current && visible) {
+        // Sessizlik tavanı burada daha dar: tanıyıcının kendi bitiş algısı var,
+        // tavan yalnızca hiç ses gelmediğinde devreye giriyor ve arkasından
+        // kayıt yolu deneneceği için uzun tutmanın bedeli iki kat bekleme.
+        const heard = await listen({
+          lang: lang === "tr" ? "tr-TR" : "de-DE",
+          silenceMs: Math.min(windowMs, BROWSER_SILENCE_MS),
+        });
+        if (heard.alternatives.length) {
+          browserMisses.current = 0;
+          return heard.alternatives;
+        }
+        browserMisses.current += 1;
+        if (browserMisses.current >= BROWSER_GIVE_UP) browserRef.current = false;
       }
-      const heard = await listen({
-        lang: lang === "tr" ? "tr-TR" : "de-DE",
-        silenceMs: windowMs,
-      });
-      return heard.alternatives;
+
+      if (captureRef.current === "stt") {
+        // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
+        // pencere değil ÜST SINIR.
+        const clip = await recordClip(windowMs);
+        if (clip) return transcribe(clip.blob, lang, expected);
+      }
+
+      return [];
     },
     [listen],
   );
@@ -580,19 +621,20 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       görünürken çalışıyor; anahtar gerektirmemesi karşılığında ekranın açık
       kalmasını istiyor.
     */
-    const canStt = micSupported() && (await sttAvailable());
-    if (canStt && (await openMic())) {
-      captureRef.current = "stt";
-      setCapture("stt");
-    } else {
-      const { requestMicrophone, recognitionCtor } = await import("@/components/microphone");
-      if (!recognitionCtor()) return setStatus("unsupported");
-      const permission = await requestMicrophone();
-      if (permission === "denied") return setStatus("denied");
-      if (permission === "unavailable") return setStatus("unsupported");
-      captureRef.current = "browser";
-      setCapture("browser");
-    }
+    const { requestMicrophone, recognitionCtor } = await import("@/components/microphone");
+    const permission = await requestMicrophone();
+    if (permission === "denied") return setStatus("denied");
+
+    // Tarayıcı tanıyıcısı varsa görünürken O kullanılıyor: kısa cevaplarda
+    // daha iyi anlıyor, anında ve bedava.
+    browserRef.current = Boolean(recognitionCtor());
+
+    // Kayıt yolu ekran kapandığında çalışan tek yol; ikisi birden kurulabilir.
+    const canStt = micSupported() && (await sttAvailable()) && (await openMic());
+    captureRef.current = canStt ? "stt" : "browser";
+    setCapture(canStt ? "stt" : "browser");
+
+    if (!browserRef.current && !canStt) return setStatus("unsupported");
 
     // Ekran kilidi ve sessiz döngü DOKUNUŞUN İÇİNDE kuruluyor: kullanıcı
     // hareketi olmadan çalmaya başlayan ses reddediliyor.

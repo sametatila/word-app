@@ -205,8 +205,22 @@ export function closeMic() {
  */
 export type ClipResult = { blob: Blob; ms: number } | null;
 
-export function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> {
-  if (!micOpen()) return Promise.resolve(null);
+export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> {
+  /*
+    Kaydedici ölmüşse tur SESSİZCE bitmemeli.
+
+    İlk sürüm burada `null` dönüyordu ve sonuç ağırdı: kaydedici bir kez
+    düştüğünde (ekran kapanması, sekmenin dondurulması) sonraki HER cevap
+    "duyamadım" oluyordu. Kullanıcının gördüğü şey buydu. Artık önce
+    toparlanmaya, olmazsa tek seferlik kayda düşülüyor — bir turu kaybetmek,
+    turun tamamını kaybetmekten iyi.
+  */
+  if (!micOpen()) {
+    if (!(await openMic())) return oneShotClip(maxMs);
+    // Kaydedici yeni kuruldu: başlık parçasının gelmesi için bir soluk.
+    await new Promise((r) => setTimeout(r, SLICE_MS * 2));
+    if (!micOpen() || !header) return oneShotClip(maxMs);
+  }
   const from = Date.now() - preRollMs;
   const deadline = Date.now() + maxMs;
 
@@ -236,28 +250,33 @@ export function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> 
         return;
       }
 
-      // Hiç konuşma duyulmadıysa istek bile atılmıyor: sessizliği Whisper'a
-      // vermek, ölçümde gördüğümüz uydurma cevapları ("Vielen Dank.",
-      // "Altyazı M.K.") üreten şeyin ta kendisi.
-      if (!started || !header) return resolve(null);
+      if (!header) return resolve(null);
 
       /*
-        Dilim GERİYE doğru da genişletiliyor.
+        Bayt eşiği YALNIZCA kırpmak için — reddetmek için değil.
 
-        Ön-pay sabit olsaydı, kullanıcı okumanın son hecesiyle birlikte
-        konuşmaya başladığında kelimenin başı yine dışarıda kalırdı — ölçümde
-        bunun sonucu doğrudan uydurma cevaptı ("Vielen Dank.", "Krater").
-        Burada ilk gürültülü parçadan geriye yürünüyor ve konuşma nerede
-        başladıysa oradan kesiliyor; tampon zaten elimizde olduğu için bedeli
-        yok.
+        İlk sürümde eşiğin altında kalan klip hiç gönderilmiyordu ve gerçek
+        cihazda sonuç "her cevap duyamadım" oldu. Eşik sentetik bir ses
+        cihazında ölçülmüştü (sessizlik 72, konuşma 3.880 bayt); gerçek
+        mikrofonun seviyesi, gürültü bastırması ve kodlayıcısı başka. Ölçüye
+        güvenip kullanıcıyı susturmaktansa, şüphede kalanı gönderip Whisper'ın
+        karar vermesi doğru.
       */
       const all = chunks;
-      let first = all.findIndex((c) => c.t >= from && c.data.size >= SPEECH_BYTES);
-      if (first < 0) return resolve(null);
-      while (first > 0 && all[first - 1].data.size >= SPEECH_BYTES) first--;
-      // Bir iki sessiz parça daha: kelimenin ilk sesi (patlamalı ünsüz) çoğu
-      // zaman eşiğin altında kalıyor.
-      first = Math.max(0, first - 2);
+      const loud = all.findIndex((c) => c.t >= from && c.data.size >= SPEECH_BYTES);
+
+      let first: number;
+      if (loud >= 0) {
+        // Konuşma bulundu: başını kaçırmamak için geriye yürünüyor. Kelimenin
+        // ilk sesi (patlamalı ünsüz) çoğu zaman eşiğin altında kalıyor.
+        first = loud;
+        while (first > 0 && all[first - 1].data.size >= SPEECH_BYTES) first--;
+        first = Math.max(0, first - 2);
+      } else {
+        // Eşiğe takılan olmadı: pencerenin tamamı gönderiliyor.
+        first = all.findIndex((c) => c.t >= from);
+        if (first < 0) return resolve(null);
+      }
 
       const parts = all.slice(first).map((c) => c.data);
       if (!parts.length) return resolve(null);
@@ -268,6 +287,50 @@ export function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> 
     };
 
     setTimeout(tick, SLICE_MS);
+  });
+}
+
+/**
+ * Tek seferlik kayıt — sürekli kaydedici kurulamadığında son çare.
+ *
+ * Sürekli kaydın bütün avantajlarını kaybediyor (kalkış gecikmesi geri
+ * geliyor), ama hiç kayıt yapamamaktan iyi.
+ */
+function oneShotClip(ms: number): Promise<ClipResult> {
+  if (!stream?.active) return Promise.resolve(null);
+  const type = pickMime();
+  let rec: MediaRecorder;
+  try {
+    rec = new MediaRecorder(stream, type ? { mimeType: type } : undefined);
+  } catch {
+    return Promise.resolve(null);
+  }
+  return new Promise<ClipResult>((resolve) => {
+    const parts: BlobPart[] = [];
+    let settled = false;
+    const done = (v: ClipResult) => {
+      if (settled) return;
+      settled = true;
+      resolve(v);
+    };
+    rec.ondataavailable = (e) => {
+      if (e.data.size) parts.push(e.data);
+    };
+    rec.onstop = () =>
+      done(parts.length ? { blob: new Blob(parts, { type: type || "audio/webm" }), ms } : null);
+    rec.onerror = () => done(null);
+    try {
+      rec.start();
+    } catch {
+      return done(null);
+    }
+    setTimeout(() => {
+      try {
+        if (rec.state !== "inactive") rec.stop();
+      } catch {
+        done(null);
+      }
+    }, ms);
   });
 }
 
