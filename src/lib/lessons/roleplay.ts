@@ -2,6 +2,8 @@ import "server-only";
 import { chatProviders, type ChatMessage, type ProviderMeta } from "@/lib/chat-providers";
 import { CORRECTION_MARK, SUGGESTION_MARK } from "@/lib/chat-format";
 import type { Lesson } from "./types";
+import { lessonIndexInLevel } from "./index";
+import { characterFor } from "./characters";
 
 /**
  * Rol yapma — dersin son ve asıl parçası.
@@ -37,13 +39,21 @@ export function roleplayPrompt(lesson: Lesson, opts?: { closing?: boolean }): st
       ? "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil."
       : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
 
+  // Karakterin adı isteme giriyor: adı olmayan bir muhatap her turda yeniden
+  // yabancı oluyor ve model de kendine "ich" dışında bir kimlik kuramıyordu.
+  // Ad dersin katalogdaki yerinden türüyor (bkz. characters.ts) — aynı modülde
+  // aynı kişi dönüyor, öğrenci onu tanıyor.
+  const who = characterFor(lesson, lessonIndexInLevel(lesson));
+
   const patterns = lesson.patterns.map((p) => `- ${p.de} — ${p.tr}`).join("\n");
   const vocab = lesson.vocab.map((v) => `${v.de} (${v.tr})`).join(", ");
 
   return `Sen bir Almanca dersinin konuşma pratiği bölümündesin. Öğrencinin ana dili Türkçe, seviyesi ${lesson.level}. ${dialect}
 
 ROLÜN
-${lesson.roleplay.partner} rolündesin.
+Adın ${who.name}. ${lesson.roleplay.partner} rolündesin — ${who.note}.
+Öğrenci adını sorarsa söyle. Kendini tanıtman gerekmiyorsa adını cümle içinde
+zorlama; sen bu sahnedeki gerçek bir kişisin, bir alıştırma değil.
 
 SAHNE
 ${lesson.roleplay.scene}

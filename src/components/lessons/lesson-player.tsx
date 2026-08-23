@@ -123,7 +123,14 @@ function parseJudgment(text: string): boolean | null {
   return yes;
 }
 
-export function LessonPlayer({ lesson }: { lesson: Lesson }) {
+export function LessonPlayer({
+  lesson,
+  character,
+}: {
+  lesson: Lesson;
+  /** Rol yapma muhatabının adı — sunucuda türetiliyor (lib/lessons/characters). */
+  character: { name: string; note: string };
+}) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("lecture");
 
@@ -1121,7 +1128,10 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
             className="card flex min-h-0 flex-1 flex-col overflow-hidden"
           >
             <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-              <p className="text-sm font-bold">{lesson.roleplay.partner}</p>
+              <p className="text-sm font-bold">
+                {character.name}
+                <span className="muted ml-1.5 font-semibold">· {lesson.roleplay.partner}</span>
+              </p>
               <p className="muted mt-0.5 text-xs leading-relaxed">{lesson.roleplay.scene}</p>
               <div className="mt-2 flex items-center justify-between gap-2">
                 <span className="muted text-xs tabular-nums">

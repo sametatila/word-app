@@ -77,3 +77,21 @@ export function lessonsFor(course: string): Lesson[] {
 export function findLesson(id: string): Lesson | undefined {
   return LESSONS.find((l) => l.id === id);
 }
+
+/**
+ * Dersin kendi seviyesindeki sırası (0 tabanlı).
+ *
+ * Modül pankartları ve rol yapma karakterleri bu sayıdan türüyor: katalogda
+ * dersler seviye seviye sıralı olduğu için modül = sıra / 10. Sayıyı dersin
+ * kendisine alan olarak yazmak, 500 derste tekrarlanan ama yalnızca iki
+ * ekranda kullanılan bir alan yaratırdı.
+ */
+export function lessonIndexInLevel(lesson: Lesson): number {
+  let i = 0;
+  for (const l of LESSONS) {
+    if (l.course !== lesson.course || l.level !== lesson.level) continue;
+    if (l.id === lesson.id) return i;
+    i++;
+  }
+  return 0;
+}
