@@ -19,7 +19,6 @@ dist/
 # repoda durmazlarsa ilk `db:seed` hepsini siler.
 !data/meanings/out/
 !data/zurich/beispiel/out/
-!data/review/out/
 *.tsbuildinfo
 next-env.d.ts
 
