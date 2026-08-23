@@ -1,0 +1,402 @@
+[
+  {
+    "id": 199,
+    "tr": "ray",
+    "en": "track",
+    "beispiel": "Auf Gleis drei steht ein alter Zug.",
+    "beispielTr": "Üç numaralı rayda eski bir tren duruyor.",
+    "beispielEn": "There is an old train on track three."
+  },
+  {
+    "id": 442,
+    "tr": "harçlık",
+    "en": "pocket money",
+    "beispiel": "Wie viel Taschengeld bekommst du?",
+    "beispielTr": "Ne kadar harçlık alıyorsun?",
+    "beispielEn": "How much pocket money do you get?"
+  },
+  {
+    "id": 82,
+    "tr": "kurşun kalem",
+    "en": "pencil",
+    "beispiel": "Hier ist dein Bleistift.",
+    "beispielTr": "İşte kurşun kalemin.",
+    "beispielEn": "Here is your pencil."
+  },
+  {
+    "id": 601,
+    "tr": "yaklaşık",
+    "en": "approximately",
+    "beispiel": "Von Mainz nach Frankfurt sind es circa fünfzig Kilometer.",
+    "beispielTr": "Mainz'dan Frankfurt'a yaklaşık elli kilometre var.",
+    "beispielEn": "It's approximately fifty kilometers from Mainz to Frankfurt."
+  },
+  {
+    "id": 216,
+    "tr": "defter",
+    "en": "notebook",
+    "beispiel": "Schreibt die Übung ins Heft.",
+    "beispielTr": "Alıştırmayı deftere yazın.",
+    "beispielEn": "Write the exercise in your notebook."
+  },
+  {
+    "id": 799,
+    "tr": "menü",
+    "en": "menu",
+    "beispiel": "Bringen Sie mir die Speisekarte, bitte.",
+    "beispielTr": "Bana menüyü getirin lütfen.",
+    "beispielEn": "Please bring me the menu."
+  },
+  {
+    "id": 367,
+    "tr": "kartpostal",
+    "en": "postcard",
+    "beispiel": "Wir schreiben ihm eine Postkarte.",
+    "beispielTr": "Ona bir kartpostal yazıyoruz.",
+    "beispielEn": "We are writing him a postcard."
+  },
+  {
+    "id": 3,
+    "tr": "kalkmak",
+    "en": "to depart",
+    "beispiel": "Der Zug fährt gleich ab.",
+    "beispielTr": "Tren birazdan kalkıyor.",
+    "beispielEn": "The train is leaving shortly."
+  },
+  {
+    "id": 824,
+    "tr": "havale etmek",
+    "en": "to transfer",
+    "beispiel": "Sie können das Geld auch überweisen.",
+    "beispielTr": "Parayı havale de edebilirsiniz.",
+    "beispielEn": "You can also transfer the money."
+  },
+  {
+    "id": 105,
+    "tr": "disko",
+    "en": "disco",
+    "beispiel": "Wir gehen heute Abend in die Disco.",
+    "beispielTr": "Bu akşam diskoya gidiyoruz.",
+    "beispielEn": "We're going to the disco tonight."
+  },
+  {
+    "id": 642,
+    "tr": "faks",
+    "en": "fax",
+    "beispiel": "Schicken Sie uns einfach ein Fax!",
+    "beispielTr": "Bize bir faks göndermeniz yeterli!",
+    "beispielEn": "Just send us a fax!"
+  },
+  {
+    "id": 255,
+    "tr": "patates",
+    "en": "potato",
+    "beispiel": "Ich möchte keine Kartoffeln.",
+    "beispielTr": "Patates istemiyorum.",
+    "beispielEn": "I don't want any potatoes."
+  },
+  {
+    "id": 597,
+    "tr": "hecelemek",
+    "en": "to spell",
+    "beispiel": "Bitte buchstabieren Sie Ihren Namen.",
+    "beispielTr": "Lütfen adınızı heceleyin.",
+    "beispielEn": "Please spell your name."
+  },
+  {
+    "id": 356,
+    "tr": "küpe",
+    "en": "earring",
+    "beispiel": "Sie trägt einen kleinen Ohrring.",
+    "beispielTr": "Küçük bir küpe takıyor.",
+    "beispielEn": "She is wearing a small earring."
+  },
+  {
+    "id": 792,
+    "tr": "serbest çalışan",
+    "en": "self-employed",
+    "beispiel": "Meine Schwester ist seit zwei Jahren selbstständig.",
+    "beispielTr": "Kız kardeşim iki yıldır serbest çalışıyor.",
+    "beispielEn": "My sister has been self-employed for two years."
+  },
+  {
+    "id": 617,
+    "tr": "yazıcı",
+    "en": "printer",
+    "beispiel": "Mein Drucker ist kaputt.",
+    "beispielTr": "Yazıcım bozuk.",
+    "beispielEn": "My printer is broken."
+  },
+  {
+    "id": 94,
+    "tr": "çizgi roman",
+    "en": "comic book",
+    "beispiel": "Liest du gern Comics?",
+    "beispielTr": "Çizgi roman okumayı sever misin?",
+    "beispielEn": "Do you like reading comic books?"
+  },
+  {
+    "id": 408,
+    "tr": "yüzme havuzu",
+    "en": "swimming pool",
+    "beispiel": "Im Sommer gehen wir oft ins Schwimmbad.",
+    "beispielTr": "Yazın sık sık yüzme havuzuna gideriz.",
+    "beispielEn": "In summer we often go to the swimming pool."
+  },
+  {
+    "id": 817,
+    "tr": "domates",
+    "en": "tomato",
+    "beispiel": "Die Tomate ist noch grün.",
+    "beispielTr": "Domates henüz yeşil.",
+    "beispielEn": "The tomato is still green."
+  },
+  {
+    "id": 61,
+    "tr": "el işi yapmak",
+    "en": "to do crafts",
+    "beispiel": "Basteln ist mein Hobby.",
+    "beispielTr": "El işi yapmak benim hobim.",
+    "beispielEn": "Doing crafts is my hobby."
+  },
+  {
+    "id": 713,
+    "tr": "bekâr",
+    "en": "single",
+    "beispiel": "Meine Schwester ist noch ledig.",
+    "beispielTr": "Kız kardeşim hâlâ bekâr.",
+    "beispielEn": "My sister is still single."
+  },
+  {
+    "id": 533,
+    "tr": "gönderen",
+    "en": "sender",
+    "beispiel": "Der Brief hat keinen Absender.",
+    "beispielTr": "Mektubun göndereni yok.",
+    "beispielEn": "The letter has no sender."
+  },
+  {
+    "id": 581,
+    "tr": "gezmek",
+    "en": "to visit",
+    "beispiel": "Ich möchte gern den Dom besichtigen.",
+    "beispielTr": "Katedrali gezmek istiyorum.",
+    "beispielEn": "I would like to visit the cathedral."
+  },
+  {
+    "id": 676,
+    "tr": "geçerli",
+    "en": "valid",
+    "beispiel": "Der Pass ist nicht mehr gültig.",
+    "beispielTr": "Pasaport artık geçerli değil.",
+    "beispielEn": "The passport is no longer valid."
+  },
+  {
+    "id": 322,
+    "tr": "maden suyu",
+    "en": "mineral water",
+    "beispiel": "Haben Sie auch Mineralwasser?",
+    "beispielTr": "Maden suyunuz da var mı?",
+    "beispielEn": "Do you have mineral water too?"
+  },
+  {
+    "id": 55,
+    "tr": "peron",
+    "en": "platform",
+    "beispiel": "Der Zug kommt auf Bahnsteig zehn an.",
+    "beispielTr": "Tren onuncu perona geliyor.",
+    "beispielEn": "The train arrives at platform ten."
+  },
+  {
+    "id": 596,
+    "tr": "harf",
+    "en": "letter",
+    "beispiel": "Diesen Buchstaben gibt es in meiner Sprache nicht.",
+    "beispielTr": "Bu harf benim dilimde yok.",
+    "beispielEn": "This letter doesn't exist in my language."
+  },
+  {
+    "id": 212,
+    "tr": "durak",
+    "en": "stop",
+    "beispiel": "Da ist die Haltestelle.",
+    "beispielTr": "Durak işte orada.",
+    "beispielEn": "There's the bus stop."
+  },
+  {
+    "id": 543,
+    "tr": "kayıt",
+    "en": "registration",
+    "beispiel": "Eine Anmeldung für diesen Kurs ist nicht mehr möglich.",
+    "beispielTr": "Bu kursa artık kayıt yapılamıyor.",
+    "beispielEn": "Registration for this course is no longer possible."
+  },
+  {
+    "id": 804,
+    "tr": "tramvay",
+    "en": "tram",
+    "beispiel": "Wo fährt die Straßenbahn ab?",
+    "beispielTr": "Tramvay nereden kalkıyor?",
+    "beispielEn": "Where does the tram leave from?"
+  },
+  {
+    "id": 316,
+    "tr": "pazar meydanı",
+    "en": "market square",
+    "beispiel": "Der Bus fährt zum Marktplatz.",
+    "beispielTr": "Otobüs pazar meydanına gidiyor.",
+    "beispielEn": "The bus goes to the market square."
+  },
+  {
+    "id": 767,
+    "tr": "seyahat acentesi",
+    "en": "travel agency",
+    "beispiel": "Mein Mann arbeitet im Reisebüro.",
+    "beispielTr": "Eşim seyahat acentesinde çalışıyor.",
+    "beispielEn": "My husband works at a travel agency."
+  },
+  {
+    "id": 281,
+    "tr": "tükenmez kalem",
+    "en": "ballpoint pen",
+    "beispiel": "Wo ist mein Kugelschreiber?",
+    "beispielTr": "Tükenmez kalemim nerede?",
+    "beispielEn": "Where is my ballpoint pen?"
+  },
+  {
+    "id": 594,
+    "tr": "pul",
+    "en": "stamp",
+    "beispiel": "Kaufst du bitte Briefmarken bei der Post?",
+    "beispielTr": "Postaneden pul alır mısın lütfen?",
+    "beispielEn": "Could you buy some stamps at the post office?"
+  },
+  {
+    "id": 843,
+    "tr": "alan kodu",
+    "en": "area code",
+    "beispiel": "Wie ist die Vorwahl von München?",
+    "beispielTr": "Münih'in alan kodu kaç?",
+    "beispielEn": "What is the area code for Munich?"
+  },
+  {
+    "id": 264,
+    "tr": "büfe",
+    "en": "kiosk",
+    "beispiel": "Am Kiosk bekommt man Zeitungen und Eis.",
+    "beispielTr": "Büfeden gazete ve dondurma alabilirsin.",
+    "beispielEn": "You can get newspapers and ice cream at the kiosk."
+  },
+  {
+    "id": 660,
+    "tr": "doğum yeri",
+    "en": "place of birth",
+    "beispiel": "Bitte schreiben Sie Ihren Geburtsort auf das Formular.",
+    "beispielTr": "Lütfen doğum yerinizi forma yazın.",
+    "beispielEn": "Please write your place of birth on the form."
+  },
+  {
+    "id": 630,
+    "tr": "tek kişilik oda",
+    "en": "single room",
+    "beispiel": "Haben Sie noch ein Einzelzimmer?",
+    "beispielTr": "Tek kişilik odanız var mı?",
+    "beispielEn": "Do you still have a single room?"
+  },
+  {
+    "id": 683,
+    "tr": "ev erkeği",
+    "en": "househusband",
+    "beispiel": "Mein Nachbar ist Hausmann.",
+    "beispielTr": "Komşum ev erkeği.",
+    "beispielEn": "My neighbor is a househusband."
+  },
+  {
+    "id": 768,
+    "tr": "gezi rehberi",
+    "en": "guidebook",
+    "beispiel": "Ich habe einen Reiseführer für Rom gekauft.",
+    "beispielTr": "Roma için bir gezi rehberi aldım.",
+    "beispielEn": "I bought a guidebook for Rome."
+  },
+  {
+    "id": 51,
+    "tr": "otomat",
+    "en": "vending machine",
+    "beispiel": "Ich hole mir eine Cola am Automaten.",
+    "beispielTr": "Otomattan kendime bir kola alıyorum.",
+    "beispielEn": "I'm getting myself a Coke from the vending machine."
+  },
+  {
+    "id": 372,
+    "tr": "bilgi yarışması",
+    "en": "quiz",
+    "beispiel": "Das ist ein Quiz für Kinder.",
+    "beispielTr": "Bu, çocuklar için bir bilgi yarışması.",
+    "beispielEn": "This is a quiz for children."
+  },
+  {
+    "id": 141,
+    "tr": "sefer tarifesi",
+    "en": "timetable",
+    "beispiel": "Da ist der Fahrplan!",
+    "beispielTr": "İşte sefer tarifesi!",
+    "beispielEn": "There's the timetable!"
+  },
+  {
+    "id": 161,
+    "tr": "fotoğraf makinesi",
+    "en": "camera",
+    "beispiel": "Sie hat einen teuren Fotoapparat.",
+    "beispielTr": "Pahalı bir fotoğraf makinesi var.",
+    "beispielEn": "She has an expensive camera."
+  },
+  {
+    "id": 144,
+    "tr": "soyadı",
+    "en": "last name",
+    "beispiel": "Mein Familienname ist Schmidt.",
+    "beispielTr": "Soyadım Schmidt.",
+    "beispielEn": "My last name is Schmidt."
+  },
+  {
+    "id": 215,
+    "tr": "ev ödevi",
+    "en": "homework",
+    "beispiel": "Wir machen zusammen Hausaufgaben.",
+    "beispielTr": "Ödevleri birlikte yapıyoruz.",
+    "beispielEn": "We're doing our homework together."
+  },
+  {
+    "id": 759,
+    "tr": "broşür",
+    "en": "brochure",
+    "beispiel": "Bitte schicken Sie mir einen Prospekt von Ihrem Hotel.",
+    "beispielTr": "Lütfen bana otelinizin broşürünü gönderin.",
+    "beispielEn": "Please send me a brochure of your hotel."
+  },
+  {
+    "id": 613,
+    "tr": "çift kişilik oda",
+    "en": "double room",
+    "beispiel": "Wollen Sie ein Doppelzimmer oder ein Einzelzimmer?",
+    "beispielTr": "Çift kişilik oda mı tek kişilik oda mı istersiniz?",
+    "beispielEn": "Would you like a double room or a single room?"
+  },
+  {
+    "id": 755,
+    "tr": "posta kodu",
+    "en": "zip code",
+    "beispiel": "Wie ist Ihre Postleitzahl?",
+    "beispielTr": "Posta kodunuz nedir?",
+    "beispielEn": "What is your zip code?"
+  },
+  {
+    "id": 650,
+    "tr": "havalanmak",
+    "en": "to take off",
+    "beispiel": "Unser Flugzeug fliegt um acht Uhr ab.",
+    "beispielTr": "Uçağımız saat sekizde havalanıyor.",
+    "beispielEn": "Our plane takes off at eight o'clock."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 221,
+    "tr": "içten",
+    "en": "warm",
+    "beispiel": "Unsere Nachbarn haben uns herzlich begrüßt.",
+    "beispielTr": "Komşularımız bizi içtenlikle karşıladı.",
+    "beispielEn": "Our neighbors welcomed us warmly."
+  },
+  {
+    "id": 373,
+    "tr": "tekerlek",
+    "en": "wheel",
+    "beispiel": "Das Auto hat vier Räder.",
+    "beispielTr": "Arabanın dört tekerleği var.",
+    "beispielEn": "The car has four wheels."
+  },
+  {
+    "id": 324,
+    "tr": "getirmek",
+    "en": "to bring along",
+    "beispiel": "Ich bringe dir etwas aus Italien mit.",
+    "beispielTr": "Sana İtalya'dan bir şey getireceğim.",
+    "beispielEn": "I'll bring you something from Italy."
+  },
+  {
+    "id": 637,
+    "tr": "yetişkin",
+    "en": "adult",
+    "beispiel": "Dieser Film ist nur für Erwachsene.",
+    "beispielTr": "Bu film sadece yetişkinler için.",
+    "beispielEn": "This movie is for adults only."
+  },
+  {
+    "id": 35,
+    "tr": "kadın doktor",
+    "en": "female doctor",
+    "beispiel": "Die Ärztin arbeitet im Krankenhaus.",
+    "beispielTr": "Kadın doktor hastanede çalışıyor.",
+    "beispielEn": "The doctor works at the hospital."
+  },
+  {
+    "id": 805,
+    "tr": "üniversitede okumak",
+    "en": "to study",
+    "beispiel": "Ich studiere Medizin in Berlin.",
+    "beispielTr": "Berlin'de tıp okuyorum.",
+    "beispielEn": "I study medicine in Berlin."
+  },
+  {
+    "id": 112,
+    "tr": "duş almak",
+    "en": "to shower",
+    "beispiel": "Ich dusche jeden Morgen kalt.",
+    "beispielTr": "Her sabah soğuk duş alıyorum.",
+    "beispielEn": "I take a cold shower every morning."
+  },
+  {
+    "id": 742,
+    "tr": "sıvı yağ",
+    "en": "oil",
+    "beispiel": "Ich brate die Kartoffeln in Öl.",
+    "beispielTr": "Patatesleri sıvı yağda kızartıyorum.",
+    "beispielEn": "I'm frying the potatoes in oil."
+  },
+  {
+    "id": 491,
+    "tr": "uyandırmak",
+    "en": "to wake up",
+    "beispiel": "Meine Mutter weckt mich jeden Morgen.",
+    "beispielTr": "Annem beni her sabah uyandırıyor.",
+    "beispielEn": "My mother wakes me up every morning."
+  },
+  {
+    "id": 539,
+    "tr": "varış",
+    "en": "arrival",
+    "beispiel": "Die Ankunft des Flugzeugs ist um acht.",
+    "beispielTr": "Uçağın varışı saat sekizde.",
+    "beispielEn": "The plane's arrival is at eight."
+  },
+  {
+    "id": 707,
+    "tr": "müşteri",
+    "en": "customer",
+    "beispiel": "Der Kunde bezahlt mit Karte.",
+    "beispielTr": "Müşteri kartla ödüyor.",
+    "beispielEn": "The customer is paying by card."
+  },
+  {
+    "id": 685,
+    "tr": "aydınlık",
+    "en": "bright",
+    "beispiel": "Die Wohnung ist sehr hell.",
+    "beispielTr": "Daire çok aydınlık.",
+    "beispielEn": "The apartment is very bright."
+  },
+  {
+    "id": 514,
+    "tr": "oturma odası",
+    "en": "living room",
+    "beispiel": "Ich mache die Hausaufgaben im Wohnzimmer.",
+    "beispielTr": "Ödevlerimi oturma odasında yapıyorum.",
+    "beispielEn": "I do my homework in the living room."
+  },
+  {
+    "id": 111,
+    "tr": "susuzluk",
+    "en": "thirst",
+    "beispiel": "Ich habe großen Durst.",
+    "beispielTr": "Çok susadım.",
+    "beispielEn": "I'm very thirsty."
+  },
+  {
+    "id": 358,
+    "tr": "paket",
+    "en": "package",
+    "beispiel": "Ist das Paket für mich?",
+    "beispielTr": "Bu paket benim için mi?",
+    "beispielEn": "Is that package for me?"
+  },
+  {
+    "id": 557,
+    "tr": "çıkış",
+    "en": "exit",
+    "beispiel": "Entschuldigung, wo ist der Ausgang?",
+    "beispielTr": "Affedersiniz, çıkış nerede?",
+    "beispielEn": "Excuse me, where is the exit?"
+  },
+  {
+    "id": 147,
+    "tr": "okul tatili",
+    "en": "school holidays",
+    "beispiel": "Die Ferien beginnen nächste Woche.",
+    "beispielTr": "Okul tatili haftaya başlıyor.",
+    "beispielEn": "The school holidays start next week."
+  },
+  {
+    "id": 268,
+    "tr": "piyano",
+    "en": "piano",
+    "beispiel": "Spielst du auch Klavier?",
+    "beispielTr": "Sen de piyano çalıyor musun?",
+    "beispielEn": "Do you play the piano too?"
+  },
+  {
+    "id": 400,
+    "tr": "tadı olmak",
+    "en": "to taste",
+    "beispiel": "Die Suppe schmeckt sehr gut.",
+    "beispielTr": "Çorbanın tadı çok güzel.",
+    "beispielEn": "The soup tastes very good."
+  },
+  {
+    "id": 551,
+    "tr": "stüdyo daire",
+    "en": "studio apartment",
+    "beispiel": "Wir haben ein Apartment gemietet.",
+    "beispielTr": "Bir stüdyo daire kiraladık.",
+    "beispielEn": "We rented a studio apartment."
+  },
+  {
+    "id": 785,
+    "tr": "ayakkabı",
+    "en": "shoe",
+    "beispiel": "Zieh die Schuhe aus!",
+    "beispielTr": "Ayakkabılarını çıkar!",
+    "beispielEn": "Take your shoes off!"
+  },
+  {
+    "id": 184,
+    "tr": "huzurlu",
+    "en": "cozy",
+    "beispiel": "Dein Zimmer ist sehr gemütlich.",
+    "beispielTr": "Odan çok huzurlu.",
+    "beispielEn": "Your room is very cozy."
+  },
+  {
+    "id": 121,
+    "tr": "binmek",
+    "en": "to get on",
+    "beispiel": "Wir steigen in den Bus ein.",
+    "beispielTr": "Otobüse biniyoruz.",
+    "beispielEn": "We're getting on the bus."
+  },
+  {
+    "id": 853,
+    "tr": "şu sıralar",
+    "en": "currently",
+    "beispiel": "Zurzeit habe ich sehr viel zu tun.",
+    "beispielTr": "Şu sıralar çok işim var.",
+    "beispielEn": "I'm very busy at the moment."
+  },
+  {
+    "id": 561,
+    "tr": "kapatmak",
+    "en": "to turn off",
+    "beispiel": "Mach bitte das Licht aus!",
+    "beispielTr": "Işığı kapat lütfen!",
+    "beispielEn": "Turn off the light, please!"
+  },
+  {
+    "id": 19,
+    "tr": "varmak",
+    "en": "to arrive",
+    "beispiel": "Wann kommt ihr in Berlin an?",
+    "beispielTr": "Berlin'e ne zaman varıyorsunuz?",
+    "beispielEn": "When do you arrive in Berlin?"
+  },
+  {
+    "id": 45,
+    "tr": "gezi",
+    "en": "trip",
+    "beispiel": "Wir machen mit der Schule einen Ausflug.",
+    "beispielTr": "Okulla birlikte geziye gidiyoruz.",
+    "beispielEn": "We're going on a trip with the school."
+  },
+  {
+    "id": 555,
+    "tr": "asansör",
+    "en": "elevator",
+    "beispiel": "In diesem Haus gibt es keinen Aufzug.",
+    "beispielTr": "Bu binada asansör yok.",
+    "beispielEn": "There is no elevator in this building."
+  },
+  {
+    "id": 830,
+    "tr": "imza",
+    "en": "signature",
+    "beispiel": "Hier fehlt noch Ihre Unterschrift.",
+    "beispielTr": "Burada imzanız eksik.",
+    "beispielEn": "Your signature is still missing here."
+  },
+  {
+    "id": 628,
+    "tr": "giriş",
+    "en": "entrance",
+    "beispiel": "Der Eingang ist um die Ecke.",
+    "beispielTr": "Giriş köşeyi dönünce.",
+    "beispielEn": "The entrance is around the corner."
+  },
+  {
+    "id": 772,
+    "tr": "tuz",
+    "en": "salt",
+    "beispiel": "Kannst du mir bitte das Salz geben?",
+    "beispielTr": "Tuzu uzatır mısın lütfen?",
+    "beispielEn": "Can you pass me the salt, please?"
+  },
+  {
+    "id": 599,
+    "tr": "kafe",
+    "en": "café",
+    "beispiel": "Sollen wir uns im Café treffen?",
+    "beispielTr": "Kafede buluşalım mı?",
+    "beispielEn": "Shall we meet at the café?"
+  },
+  {
+    "id": 77,
+    "tr": "ucuz",
+    "en": "cheap",
+    "beispiel": "Die Brötchen sind hier billig und gut.",
+    "beispielTr": "Buradaki ekmekler ucuz ve güzel.",
+    "beispielEn": "The rolls here are cheap and good."
+  },
+  {
+    "id": 69,
+    "tr": "dolu",
+    "en": "occupied",
+    "beispiel": "Der Platz ist leider besetzt.",
+    "beispielTr": "Bu yer maalesef dolu.",
+    "beispielEn": "Unfortunately, this seat is taken."
+  },
+  {
+    "id": 84,
+    "tr": "çiçek",
+    "en": "flower",
+    "beispiel": "Hier sind Blumen für dich.",
+    "beispielTr": "Bu çiçekler senin için.",
+    "beispielEn": "These flowers are for you."
+  },
+  {
+    "id": 757,
+    "tr": "muayenehane",
+    "en": "doctor's office",
+    "beispiel": "Die Praxis ist ab acht Uhr geöffnet.",
+    "beispielTr": "Muayenehane sekizden itibaren açık.",
+    "beispielEn": "The doctor's office opens at eight."
+  },
+  {
+    "id": 394,
+    "tr": "salata",
+    "en": "salad",
+    "beispiel": "Am Abend gibt es immer Salat.",
+    "beispielTr": "Akşamları her zaman salata olur.",
+    "beispielEn": "There is always salad in the evening."
+  },
+  {
+    "id": 795,
+    "tr": "kanepe",
+    "en": "sofa",
+    "beispiel": "Der Hund schläft auf dem Sofa.",
+    "beispielTr": "Köpek kanepede uyuyor.",
+    "beispielEn": "The dog is sleeping on the sofa."
+  },
+  {
+    "id": 598,
+    "tr": "tereyağı",
+    "en": "butter",
+    "beispiel": "Für mich bitte ein Brötchen mit Butter und Käse.",
+    "beispielTr": "Bana tereyağlı ve peynirli bir ekmek lütfen.",
+    "beispielEn": "A roll with butter and cheese for me, please."
+  },
+  {
+    "id": 392,
+    "tr": "meyve suyu",
+    "en": "juice",
+    "beispiel": "Möchtest du Wasser oder Saft?",
+    "beispielTr": "Su mu istersin, meyve suyu mu?",
+    "beispielEn": "Would you like water or juice?"
+  },
+  {
+    "id": 183,
+    "tr": "sebze",
+    "en": "vegetable",
+    "beispiel": "Ich esse sehr gern Gemüse.",
+    "beispielTr": "Sebze yemeyi çok severim.",
+    "beispielEn": "I really like eating vegetables."
+  },
+  {
+    "id": 175,
+    "tr": "futbol",
+    "en": "soccer",
+    "beispiel": "Am Nachmittag spielen wir Fußball.",
+    "beispielTr": "Öğleden sonra futbol oynuyoruz.",
+    "beispielEn": "We're playing soccer this afternoon."
+  },
+  {
+    "id": 520,
+    "tr": "diş",
+    "en": "tooth",
+    "beispiel": "Der Zahn tut mir schon seit einer Woche weh.",
+    "beispielTr": "Dişim bir haftadır ağrıyor.",
+    "beispielEn": "My tooth has been hurting for a week."
+  },
+  {
+    "id": 569,
+    "tr": "demiryolu",
+    "en": "railway",
+    "beispiel": "Die Bahn ist oft unpünktlich.",
+    "beispielTr": "Demiryolu sık sık gecikiyor.",
+    "beispielEn": "The railway is often late."
+  },
+  {
+    "id": 568,
+    "tr": "banyo yapmak",
+    "en": "to bathe",
+    "beispiel": "Nach der Arbeit bade ich gern.",
+    "beispielTr": "İşten sonra banyo yapmayı severim.",
+    "beispielEn": "After work I like to take a bath."
+  },
+  {
+    "id": 285,
+    "tr": "lamba",
+    "en": "lamp",
+    "beispiel": "Die Lampe ist kaputt.",
+    "beispielTr": "Lamba bozuk.",
+    "beispielEn": "The lamp is broken."
+  },
+  {
+    "id": 46,
+    "tr": "yurt dışı",
+    "en": "abroad",
+    "beispiel": "Meine Schwester lebt im Ausland.",
+    "beispielTr": "Kız kardeşim yurt dışında yaşıyor.",
+    "beispielEn": "My sister lives abroad."
+  },
+  {
+    "id": 188,
+    "tr": "dümdüz",
+    "en": "straight ahead",
+    "beispiel": "Gehen Sie hier immer geradeaus.",
+    "beispielTr": "Buradan hep dümdüz gidin.",
+    "beispielEn": "Keep going straight ahead here."
+  },
+  {
+    "id": 698,
+    "tr": "kasa",
+    "en": "checkout",
+    "beispiel": "Zahlen Sie bitte an der Kasse.",
+    "beispielTr": "Lütfen kasada ödeyin.",
+    "beispielEn": "Please pay at the checkout."
+  },
+  {
+    "id": 733,
+    "tr": "mobilya",
+    "en": "furniture",
+    "beispiel": "Eure Möbel sind sehr schön.",
+    "beispielTr": "Mobilyalarınız çok güzel.",
+    "beispielEn": "Your furniture is very nice."
+  }
+]

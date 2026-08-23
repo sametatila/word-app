@@ -278,7 +278,13 @@ function denetle(paket) {
      * Kaynak zaten isim diyorsa ek yanıltıcıdır ve kaynak kazanır.
      */
     const fiilMi = k.typ === "Verb" || (k.typ !== "Nomen" && /(mek|mak)$/.test(tr));
-    if (fiilMi && !/^to\s/.test(en)) H("fiilde to yok", `"${en}" — fiiller "to …" biçiminde yazılır`);
+    // Kip fiillerinin İngilizce karşılığı mastar almaz: "möchten" → "would
+    // like", "dürfen" → "may". Kural yalnızca "to …" kabul edince ajan
+    // möchten'e wollen ile birebir aynı karşılığı ("to want") vermek zorunda
+    // kaldı ve iki kelime hiçbir turda ayırt edilemez hâle geldi.
+    const fiilBicimi = /^(to|would|can|may|must|should|shall|might)\s/;
+    if (fiilMi && !fiilBicimi.test(en))
+      H("fiilde mastar yok", `"${en}" — fiiller "to …" (ya da kip fiili) biçiminde yazılır`);
     if (!fiilMi && /^to\s/.test(en)) U("fiil olmayanda to", `"${en}"`);
 
     /* beispiel — tek, tam, kelimeyi içeren cümle */

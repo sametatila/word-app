@@ -1,0 +1,290 @@
+[
+  {
+    "id": 705,
+    "tr": "kültürel",
+    "en": "cultural",
+    "beispiel": "Wir besuchen oft kulturelle Veranstaltungen in der Stadt.",
+    "beispielTr": "Şehirde sık sık kültürel etkinliklere gidiyoruz.",
+    "beispielEn": "We often go to cultural events in the city."
+  },
+  {
+    "id": 544,
+    "tr": "hitap",
+    "en": "salutation",
+    "beispiel": "In der E-Mail fehlt die Anrede.",
+    "beispielTr": "E-postada hitap eksik.",
+    "beispielEn": "The email is missing the salutation."
+  },
+  {
+    "id": 375,
+    "tr": "silgi",
+    "en": "eraser",
+    "beispiel": "Gibst du mir deinen Radiergummi?",
+    "beispielTr": "Silgini bana verir misin?",
+    "beispielEn": "Will you give me your eraser?"
+  },
+  {
+    "id": 15,
+    "tr": "diğer",
+    "en": "other",
+    "beispiel": "Die anderen Kinder spielen schon draußen.",
+    "beispielTr": "Diğer çocuklar çoktan dışarıda oynuyor.",
+    "beispielEn": "The other children are already playing outside."
+  },
+  {
+    "id": 41,
+    "tr": "açık olmak",
+    "en": "to be open",
+    "beispiel": "Der Supermarkt ist bis zehn Uhr auf.",
+    "beispielTr": "Süpermarket saat ona kadar açık.",
+    "beispielEn": "The supermarket is open until ten."
+  },
+  {
+    "id": 48,
+    "tr": "bitmek",
+    "en": "to be over",
+    "beispiel": "Der Film ist gleich aus.",
+    "beispielTr": "Film birazdan bitiyor.",
+    "beispielEn": "The film is over soon."
+  },
+  {
+    "id": 122,
+    "tr": "hemfikir olmak",
+    "en": "to agree",
+    "beispiel": "Ich bin mit deinem Vorschlag einverstanden.",
+    "beispielTr": "Önerinle hemfikirim.",
+    "beispielEn": "I agree with your suggestion."
+  },
+  {
+    "id": 150,
+    "tr": "hazır olmak",
+    "en": "to be ready",
+    "beispiel": "Das Essen ist gleich fertig.",
+    "beispielTr": "Yemek birazdan hazır olur.",
+    "beispielEn": "The food will be ready soon."
+  },
+  {
+    "id": 193,
+    "tr": "kapalı olmak",
+    "en": "to be closed",
+    "beispiel": "Die Apotheke ist heute geschlossen.",
+    "beispielTr": "Eczane bugün kapalı.",
+    "beispielEn": "The pharmacy is closed today."
+  },
+  {
+    "id": 267,
+    "tr": "yazılı sınav",
+    "en": "class test",
+    "beispiel": "Morgen schreiben wir eine Klassenarbeit in Mathe.",
+    "beispielTr": "Yarın matematikten yazılımız var.",
+    "beispielEn": "Tomorrow we have a math test."
+  },
+  {
+    "id": 303,
+    "tr": "favori",
+    "en": "favorite",
+    "beispiel": "Mein Lieblingsessen ist Pizza.",
+    "beispielTr": "Favori yemeğim pizza.",
+    "beispielEn": "My favorite food is pizza."
+  },
+  {
+    "id": 379,
+    "tr": "haklı olmak",
+    "en": "to be right",
+    "beispiel": "Du hast völlig recht.",
+    "beispielTr": "Kesinlikle haklısın.",
+    "beispielEn": "You are absolutely right."
+  },
+  {
+    "id": 423,
+    "tr": "yürüyüşe çıkmak",
+    "en": "to go for a walk",
+    "beispiel": "Wir gehen jeden Abend im Park spazieren.",
+    "beispielTr": "Her akşam parkta yürüyüşe çıkıyoruz.",
+    "beispielEn": "We go for a walk in the park every evening."
+  },
+  {
+    "id": 446,
+    "tr": "tenis oynamak",
+    "en": "to play tennis",
+    "beispiel": "Am Samstag spielen wir immer Tennis.",
+    "beispielTr": "Cumartesileri hep tenis oynarız.",
+    "beispielEn": "We always play tennis on Saturdays."
+  },
+  {
+    "id": 468,
+    "tr": "vesaire",
+    "en": "and so on",
+    "beispiel": "Wir brauchen Brot, Käse, Obst und so weiter.",
+    "beispielTr": "Ekmek, peynir, meyve vesaire lazım.",
+    "beispielEn": "We need bread, cheese, fruit and so on."
+  },
+  {
+    "id": 492,
+    "tr": "ağrımak",
+    "en": "to hurt",
+    "beispiel": "Nach dem Sport tut mir der Rücken weh.",
+    "beispielTr": "Spordan sonra sırtım ağrıyor.",
+    "beispielEn": "My back hurts after exercise."
+  },
+  {
+    "id": 495,
+    "tr": "hangi",
+    "en": "which",
+    "beispiel": "Welche Farbe magst du am liebsten?",
+    "beispielTr": "En çok hangi rengi seviyorsun?",
+    "beispielEn": "Which color do you like best?"
+  },
+  {
+    "id": 504,
+    "tr": "ne kadar",
+    "en": "how much",
+    "beispiel": "Wie viel kostet die Fahrkarte?",
+    "beispielTr": "Bilet ne kadar?",
+    "beispielEn": "How much is the ticket?"
+  },
+  {
+    "id": 528,
+    "tr": "örneğin",
+    "en": "for example",
+    "beispiel": "Ich mag Obst, zum Beispiel Äpfel und Birnen.",
+    "beispielTr": "Meyveyi severim, örneğin elmayı ve armudu.",
+    "beispielEn": "I like fruit, for example apples and pears."
+  },
+  {
+    "id": 531,
+    "tr": "kapalı olmak",
+    "en": "to be shut",
+    "beispiel": "Die Bibliothek ist in den Ferien zu.",
+    "beispielTr": "Kütüphane tatilde kapalı.",
+    "beispielEn": "The library is shut during the holidays."
+  },
+  {
+    "id": 538,
+    "tr": "tıklamak",
+    "en": "to click",
+    "beispiel": "Du musst zuerst den Link anklicken.",
+    "beispielTr": "Önce bağlantıya tıklaman gerekiyor.",
+    "beispielEn": "You have to click the link first."
+  },
+  {
+    "id": 540,
+    "tr": "işaretlemek",
+    "en": "to check",
+    "beispiel": "Bitte kreuzen Sie die richtige Antwort an.",
+    "beispielTr": "Lütfen doğru cevabı işaretleyin.",
+    "beispielEn": "Please check the correct answer."
+  },
+  {
+    "id": 549,
+    "tr": "çalışıyor olmak",
+    "en": "to be on",
+    "beispiel": "Der Computer ist noch an.",
+    "beispielTr": "Bilgisayar hâlâ çalışıyor.",
+    "beispielEn": "The computer is still on."
+  },
+  {
+    "id": 560,
+    "tr": "yabancı",
+    "en": "foreign",
+    "beispiel": "Leider habe ich nur ausländisches Geld.",
+    "beispielTr": "Maalesef yanımda sadece yabancı para var.",
+    "beispielEn": "Unfortunately I only have foreign money."
+  },
+  {
+    "id": 610,
+    "tr": "bu",
+    "en": "this",
+    "beispiel": "Diese Tasche gefällt mir sehr gut.",
+    "beispielTr": "Bu çanta çok hoşuma gidiyor.",
+    "beispielEn": "I really like this bag."
+  },
+  {
+    "id": 640,
+    "tr": "medeni hâl",
+    "en": "marital status",
+    "beispiel": "Bitte geben Sie auch Ihren Familienstand an.",
+    "beispielTr": "Lütfen medeni hâlinizi de belirtin.",
+    "beispielEn": "Please also state your marital status."
+  },
+  {
+    "id": 659,
+    "tr": "doğum yılı",
+    "en": "year of birth",
+    "beispiel": "Im Pass steht auch das Geburtsjahr.",
+    "beispielTr": "Pasaportta doğum yılı da yazıyor.",
+    "beispielEn": "The year of birth is also in the passport."
+  },
+  {
+    "id": 679,
+    "tr": "yarım pansiyon",
+    "en": "half board",
+    "beispiel": "Möchten Sie Vollpension oder Halbpension?",
+    "beispielTr": "Tam pansiyon mu yarım pansiyon mu istersiniz?",
+    "beispielEn": "Would you like full board or half board?"
+  },
+  {
+    "id": 697,
+    "tr": "kredi kartı",
+    "en": "credit card",
+    "beispiel": "Kann ich mit Kreditkarte bezahlen?",
+    "beispielTr": "Kredi kartıyla ödeyebilir miyim?",
+    "beispielEn": "Can I pay by credit card?"
+  },
+  {
+    "id": 717,
+    "tr": "son",
+    "en": "last",
+    "beispiel": "Der letzte Zug fährt um Mitternacht.",
+    "beispielTr": "Son tren gece yarısı kalkıyor.",
+    "beispielEn": "The last train leaves at midnight."
+  },
+  {
+    "id": 728,
+    "tr": "çoğu",
+    "en": "most",
+    "beispiel": "Die meisten Kinder mögen Schokolade.",
+    "beispielTr": "Çocukların çoğu çikolatayı sever.",
+    "beispielEn": "Most children like chocolate."
+  },
+  {
+    "id": 761,
+    "tr": "bisiklete binmek",
+    "en": "to ride a bike",
+    "beispiel": "Im Sommer fahre ich jeden Tag Rad.",
+    "beispielTr": "Yazın her gün bisiklete biniyorum.",
+    "beispielEn": "In summer I ride my bike every day."
+  },
+  {
+    "id": 774,
+    "tr": "banliyö treni",
+    "en": "commuter train",
+    "beispiel": "Die S-Bahn hält auch am Busbahnhof.",
+    "beispielTr": "Banliyö treni otogarda da duruyor.",
+    "beispielEn": "The commuter train also stops at the bus station."
+  },
+  {
+    "id": 789,
+    "tr": "turistik yer",
+    "en": "tourist attraction",
+    "beispiel": "Welche Sehenswürdigkeiten gibt es in Frankfurt?",
+    "beispielTr": "Frankfurt'ta hangi turistik yerler var?",
+    "beispielEn": "What tourist attractions are there in Frankfurt?"
+  },
+  {
+    "id": 790,
+    "tr": "gitmiş olmak",
+    "en": "to be gone",
+    "beispiel": "Der Bus ist leider schon weg.",
+    "beispielTr": "Otobüs maalesef çoktan gitti.",
+    "beispielEn": "Unfortunately the bus has already left."
+  },
+  {
+    "id": 844,
+    "tr": "ne tür bir",
+    "en": "what kind of",
+    "beispiel": "Was für ein Auto fährst du?",
+    "beispielTr": "Ne tür bir araba kullanıyorsun?",
+    "beispielEn": "What kind of car do you drive?"
+  }
+]

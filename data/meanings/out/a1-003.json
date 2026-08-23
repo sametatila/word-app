@@ -1,0 +1,402 @@
+[
+ {
+  "id": 405,
+  "tr": "güzel",
+  "en": "beautiful",
+  "beispiel": "Mein Zimmer ist sehr schön und gemütlich.",
+  "beispielTr": "Odam çok güzel ve rahat.",
+  "beispielEn": "My room is very nice and cozy."
+ },
+ {
+  "id": 1,
+  "tr": "-den itibaren",
+  "en": "from",
+  "beispiel": "Ab morgen haben wir Ferien.",
+  "beispielTr": "Yarından itibaren tatildeyiz.",
+  "beispielEn": "We're on vacation starting tomorrow."
+ },
+ {
+  "id": 187,
+  "tr": "şu anda",
+  "en": "right now",
+  "beispiel": "Was machst du gerade?",
+  "beispielTr": "Şu anda ne yapıyorsun?",
+  "beispielEn": "What are you doing right now?"
+ },
+ {
+  "id": 182,
+  "tr": "para",
+  "en": "money",
+  "beispiel": "Ich habe nicht genug Geld.",
+  "beispielTr": "Yeterince param yok.",
+  "beispielEn": "I don't have enough money."
+ },
+ {
+  "id": 110,
+  "tr": "içinden",
+  "en": "through",
+  "beispiel": "Wir fahren durch die Stadt.",
+  "beispielTr": "Şehrin içinden geçiyoruz.",
+  "beispielEn": "We're driving through the city."
+ },
+ {
+  "id": 737,
+  "tr": "anne",
+  "en": "mother",
+  "beispiel": "Meine Mutter arbeitet in einem Krankenhaus.",
+  "beispielTr": "Annem bir hastanede çalışıyor.",
+  "beispielEn": "My mother works at a hospital."
+ },
+ {
+  "id": 71,
+  "tr": "daha iyi",
+  "en": "better",
+  "beispiel": "Hoffentlich geht es dir bald besser.",
+  "beispielTr": "Umarım yakında daha iyi olursun.",
+  "beispielEn": "I hope you feel better soon."
+ },
+ {
+  "id": 355,
+  "tr": "olmadan",
+  "en": "without",
+  "beispiel": "Ein Sonntag ohne meine Freunde ist langweilig.",
+  "beispielTr": "Arkadaşlarım olmadan pazar günü sıkıcı geçiyor.",
+  "beispielEn": "A Sunday without my friends is boring."
+ },
+ {
+  "id": 219,
+  "tr": "yardım etmek",
+  "en": "to help",
+  "beispiel": "Können Sie mir bitte helfen?",
+  "beispielTr": "Bana yardım edebilir misiniz lütfen?",
+  "beispielEn": "Could you help me, please?"
+ },
+ {
+  "id": 152,
+  "tr": "bulmak",
+  "en": "to find",
+  "beispiel": "Ich kann die Zeitung nicht finden.",
+  "beispielTr": "Gazeteyi bulamıyorum.",
+  "beispielEn": "I can't find the newspaper."
+ },
+ {
+  "id": 288,
+  "tr": "uzun süre",
+  "en": "a long time",
+  "beispiel": "Das Konzert hat sehr lange gedauert.",
+  "beispielTr": "Konser çok uzun sürdü.",
+  "beispielEn": "The concert lasted a very long time."
+ },
+ {
+  "id": 107,
+  "tr": "orada",
+  "en": "there",
+  "beispiel": "Mein Bruder arbeitet dort in einem Café.",
+  "beispielTr": "Kardeşim orada bir kafede çalışıyor.",
+  "beispielEn": "My brother works in a cafe there."
+ },
+ {
+  "id": 494,
+  "tr": "daha ileri",
+  "en": "further",
+  "beispiel": "Der Bus fährt nicht weiter.",
+  "beispielTr": "Otobüs daha ileri gitmiyor.",
+  "beispielEn": "The bus doesn't go any further."
+ },
+ {
+  "id": 177,
+  "tr": "vermek",
+  "en": "to give",
+  "beispiel": "Geben Sie mir bitte zwei Fahrkarten.",
+  "beispielTr": "Bana iki bilet verin lütfen.",
+  "beispielEn": "Please give me two tickets."
+ },
+ {
+  "id": 791,
+  "tr": "-den beri",
+  "en": "since",
+  "beispiel": "Ich wohne seit drei Jahren in Köln.",
+  "beispielTr": "Üç yıldır Köln'de oturuyorum.",
+  "beispielEn": "I've lived in Cologne for three years."
+ },
+ {
+  "id": 198,
+  "tr": "birazdan",
+  "en": "in a moment",
+  "beispiel": "Der Film fängt gleich an.",
+  "beispielTr": "Film birazdan başlıyor.",
+  "beispielEn": "The movie starts in a moment."
+ },
+ {
+  "id": 387,
+  "tr": "doğru",
+  "en": "correct",
+  "beispiel": "Die Antwort ist nicht richtig.",
+  "beispielTr": "Cevap doğru değil.",
+  "beispielEn": "The answer is not correct."
+ },
+ {
+  "id": 357,
+  "tr": "düzen",
+  "en": "order",
+  "beispiel": "Ordnung ist meinem Vater sehr wichtig.",
+  "beispielTr": "Babam için düzen çok önemlidir.",
+  "beispielEn": "Order is very important to my father."
+ },
+ {
+  "id": 228,
+  "tr": "duymak",
+  "en": "to hear",
+  "beispiel": "Ich kann dich nicht gut hören.",
+  "beispielTr": "Seni iyi duyamıyorum.",
+  "beispielEn": "I can't hear you well."
+ },
+ {
+  "id": 308,
+  "tr": "kız",
+  "en": "girl",
+  "beispiel": "Die Mädchen spielen auch Fußball.",
+  "beispielTr": "Kızlar da futbol oynuyor.",
+  "beispielEn": "The girls play soccer too."
+ },
+ {
+  "id": 797,
+  "tr": "-meli",
+  "en": "should",
+  "beispiel": "Du sollst nicht so viel arbeiten.",
+  "beispielTr": "Bu kadar çok çalışmamalısın.",
+  "beispielEn": "You shouldn't work so much."
+ },
+ {
+  "id": 214,
+  "tr": "ev",
+  "en": "house",
+  "beispiel": "Wir haben ein kleines Haus gekauft.",
+  "beispielTr": "Küçük bir ev aldık.",
+  "beispielEn": "We bought a small house."
+ },
+ {
+  "id": 166,
+  "tr": "arkadaş",
+  "en": "friend",
+  "beispiel": "Mein bester Freund heißt Ivan.",
+  "beispielTr": "En iyi arkadaşımın adı Ivan.",
+  "beispielEn": "My best friend's name is Ivan."
+ },
+ {
+  "id": 469,
+  "tr": "bizim",
+  "en": "our",
+  "beispiel": "Das ist unser neues Auto.",
+  "beispielTr": "Bu bizim yeni arabamız.",
+  "beispielEn": "This is our new car."
+ },
+ {
+  "id": 134,
+  "tr": "yemek",
+  "en": "to eat",
+  "beispiel": "Was wollt ihr essen?",
+  "beispielTr": "Ne yemek istiyorsunuz?",
+  "beispielEn": "What do you want to eat?"
+ },
+ {
+  "id": 135,
+  "tr": "yemek",
+  "en": "food",
+  "beispiel": "Wie war das Essen in Deutschland?",
+  "beispielTr": "Almanya'da yemekler nasıldı?",
+  "beispielEn": "How was the food in Germany?"
+ },
+ {
+  "id": 18,
+  "tr": "korku",
+  "en": "fear",
+  "beispiel": "Ich habe Angst vor großen Hunden.",
+  "beispielTr": "Büyük köpeklerden korkuyorum.",
+  "beispielEn": "I'm afraid of big dogs."
+ },
+ {
+  "id": 81,
+  "tr": "kalmak",
+  "en": "to stay",
+  "beispiel": "Wir bleiben zu Hause.",
+  "beispielTr": "Evde kalıyoruz.",
+  "beispielEn": "We're staying home."
+ },
+ {
+  "id": 530,
+  "tr": "birlikte",
+  "en": "together",
+  "beispiel": "Wir machen zusammen Hausaufgaben.",
+  "beispielTr": "Ödevleri birlikte yapıyoruz.",
+  "beispielEn": "We do our homework together."
+ },
+ {
+  "id": 848,
+  "tr": "dünya",
+  "en": "world",
+  "beispiel": "Es gibt viele Probleme auf der Welt.",
+  "beispielTr": "Dünyada birçok sorun var.",
+  "beispielEn": "There are many problems in the world."
+ },
+ {
+  "id": 828,
+  "tr": "altında",
+  "en": "under",
+  "beispiel": "Unter uns wohnt eine Familie mit drei Kindern.",
+  "beispielTr": "Altımızda üç çocuklu bir aile oturuyor.",
+  "beispielEn": "A family with three children lives below us."
+ },
+ {
+  "id": 402,
+  "tr": "hızlı",
+  "en": "fast",
+  "beispiel": "Warum fährst du so schnell?",
+  "beispielTr": "Neden bu kadar hızlı gidiyorsun?",
+  "beispielEn": "Why are you driving so fast?"
+ },
+ {
+  "id": 818,
+  "tr": "ölü",
+  "en": "dead",
+  "beispiel": "Sein Vater ist schon lange tot.",
+  "beispielTr": "Babası uzun zaman önce öldü.",
+  "beispielEn": "His father has been dead for a long time."
+ },
+ {
+  "id": 338,
+  "tr": "almak",
+  "en": "to take",
+  "beispiel": "Nehmen Sie den Bus zum Marktplatz.",
+  "beispielTr": "Pazar meydanına giden otobüse binin.",
+  "beispielEn": "Take the bus to the market square."
+ },
+ {
+  "id": 197,
+  "tr": "inanmak",
+  "en": "to believe",
+  "beispiel": "Ich glaube dir nicht.",
+  "beispielTr": "Sana inanmıyorum.",
+  "beispielEn": "I don't believe you."
+ },
+ {
+  "id": 88,
+  "tr": "getirmek",
+  "en": "to bring",
+  "beispiel": "Ich bringe dir die Bücher morgen.",
+  "beispielTr": "Kitapları sana yarın getiririm.",
+  "beispielEn": "I'll bring you the books tomorrow."
+ },
+ {
+  "id": 185,
+  "tr": "yeterli",
+  "en": "enough",
+  "beispiel": "Wir haben noch genug Zeit.",
+  "beispielTr": "Hâlâ yeterince vaktimiz var.",
+  "beispielEn": "We still have enough time."
+ },
+ {
+  "id": 86,
+  "tr": "ihtiyaç duymak",
+  "en": "to need",
+  "beispiel": "Ich brauche einen Taschenrechner.",
+  "beispielTr": "Bir hesap makinesine ihtiyacım var.",
+  "beispielEn": "I need a calculator."
+ },
+ {
+  "id": 661,
+  "tr": "karşı",
+  "en": "against",
+  "beispiel": "Deutschland spielt heute gegen Spanien.",
+  "beispielTr": "Almanya bugün İspanya'ya karşı oynuyor.",
+  "beispielEn": "Germany plays against Spain today."
+ },
+ {
+  "id": 735,
+  "tr": "an",
+  "en": "moment",
+  "beispiel": "Das war ein schöner Moment.",
+  "beispielTr": "Güzel bir andı.",
+  "beispielEn": "That was a nice moment."
+ },
+ {
+  "id": 248,
+  "tr": "erkek çocuk",
+  "en": "boy",
+  "beispiel": "Der Junge ist neu in unserer Klasse.",
+  "beispielTr": "Oğlan sınıfımıza yeni geldi.",
+  "beispielEn": "The boy is new in our class."
+ },
+ {
+  "id": 332,
+  "tr": "müzik",
+  "en": "music",
+  "beispiel": "Ich höre gern klassische Musik.",
+  "beispielTr": "Klasik müzik dinlemeyi severim.",
+  "beispielEn": "I like listening to classical music."
+ },
+ {
+  "id": 29,
+  "tr": "iş",
+  "en": "work",
+  "beispiel": "Ich gehe um acht Uhr zur Arbeit.",
+  "beispielTr": "Saat sekizde işe gidiyorum.",
+  "beispielEn": "I go to work at eight o'clock."
+ },
+ {
+  "id": 162,
+  "tr": "sormak",
+  "en": "to ask",
+  "beispiel": "Ich möchte etwas fragen.",
+  "beispielTr": "Bir şey sormak istiyorum.",
+  "beispielEn": "I'd like to ask something."
+ },
+ {
+  "id": 220,
+  "tr": "bay",
+  "en": "gentleman",
+  "beispiel": "Meine Damen und Herren, herzlich willkommen!",
+  "beispielTr": "Sayın bayanlar ve baylar, hoş geldiniz!",
+  "beispielEn": "Ladies and gentlemen, welcome!"
+ },
+ {
+  "id": 143,
+  "tr": "aile",
+  "en": "family",
+  "beispiel": "Er hat eine große Familie.",
+  "beispielTr": "Büyük bir ailesi var.",
+  "beispielEn": "He has a big family."
+ },
+ {
+  "id": 486,
+  "tr": "beklemek",
+  "en": "to wait",
+  "beispiel": "Wartest du schon lange?",
+  "beispielTr": "Uzun zamandır mı bekliyorsun?",
+  "beispielEn": "Have you been waiting long?"
+ },
+ {
+  "id": 345,
+  "tr": "hiç kimse",
+  "en": "nobody",
+  "beispiel": "Kann mir niemand helfen?",
+  "beispielTr": "Kimse bana yardım edemez mi?",
+  "beispielEn": "Can't anyone help me?"
+ },
+ {
+  "id": 419,
+  "tr": "hemen",
+  "en": "immediately",
+  "beispiel": "Warte, ich komme sofort!",
+  "beispielTr": "Bekle, hemen geliyorum!",
+  "beispielEn": "Wait, I'm coming right away!"
+ },
+ {
+  "id": 119,
+  "tr": "bir kere",
+  "en": "once",
+  "beispiel": "Kannst du mir das noch einmal erklären?",
+  "beispielTr": "Bunu bana bir kez daha açıklayabilir misin?",
+  "beispielEn": "Can you explain that to me one more time?"
+ }
+]

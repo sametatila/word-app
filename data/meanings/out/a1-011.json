@@ -1,0 +1,402 @@
+[
+  {
+    "id": 634,
+    "tr": "bitmek",
+    "en": "to end",
+    "beispiel": "Die Straße endet hier.",
+    "beispielTr": "Yol burada bitiyor.",
+    "beispielEn": "The road ends here."
+  },
+  {
+    "id": 485,
+    "tr": "sıcak",
+    "en": "warm",
+    "beispiel": "Im Sommer ist es hier sehr warm.",
+    "beispielTr": "Yazın burası çok sıcak olur.",
+    "beispielEn": "It's very warm here in summer."
+  },
+  {
+    "id": 377,
+    "tr": "tahmin etmek",
+    "en": "to guess",
+    "beispiel": "Du musst die Zahl raten.",
+    "beispielTr": "Sayıyı tahmin etmen gerekiyor.",
+    "beispielEn": "You have to guess the number."
+  },
+  {
+    "id": 803,
+    "tr": "kat",
+    "en": "floor",
+    "beispiel": "Unsere Wohnung liegt im ersten Stock.",
+    "beispielTr": "Dairemiz birinci katta.",
+    "beispielEn": "Our apartment is on the first floor."
+  },
+  {
+    "id": 833,
+    "tr": "yasak",
+    "en": "forbidden",
+    "beispiel": "Hier ist Rauchen verboten.",
+    "beispielTr": "Burada sigara içmek yasak.",
+    "beispielEn": "Smoking is forbidden here."
+  },
+  {
+    "id": 168,
+    "tr": "güler yüzlü",
+    "en": "friendly",
+    "beispiel": "Unsere Nachbarn sind sehr freundlich.",
+    "beispielTr": "Komşularımız çok güler yüzlü.",
+    "beispielEn": "Our neighbors are very friendly."
+  },
+  {
+    "id": 762,
+    "tr": "sigara içmek",
+    "en": "to smoke",
+    "beispiel": "Mein Onkel raucht sehr viel.",
+    "beispielTr": "Amcam çok sigara içiyor.",
+    "beispielEn": "My uncle smokes a lot."
+  },
+  {
+    "id": 104,
+    "tr": "şişman",
+    "en": "fat",
+    "beispiel": "Meine Katze ist ziemlich dick.",
+    "beispielTr": "Kedim epey şişman.",
+    "beispielEn": "My cat is quite fat."
+  },
+  {
+    "id": 658,
+    "tr": "misafir",
+    "en": "guest",
+    "beispiel": "Am Wochenende haben wir Gäste.",
+    "beispielTr": "Hafta sonu misafirlerimiz var.",
+    "beispielEn": "We have guests this weekend."
+  },
+  {
+    "id": 452,
+    "tr": "tuvalet",
+    "en": "toilet",
+    "beispiel": "Wo ist die Toilette?",
+    "beispielTr": "Tuvalet nerede?",
+    "beispielEn": "Where is the toilet?"
+  },
+  {
+    "id": 562,
+    "tr": "ifade",
+    "en": "statement",
+    "beispiel": "Ist die Aussage richtig oder falsch?",
+    "beispielTr": "Bu ifade doğru mu yanlış mı?",
+    "beispielEn": "Is the statement true or false?"
+  },
+  {
+    "id": 447,
+    "tr": "pahalı",
+    "en": "expensive",
+    "beispiel": "Das Auto ist zu teuer.",
+    "beispielTr": "Araba fazla pahalı.",
+    "beispielEn": "The car is too expensive."
+  },
+  {
+    "id": 448,
+    "tr": "tiyatro",
+    "en": "theater",
+    "beispiel": "Am Samstag gehen wir ins Theater.",
+    "beispielTr": "Cumartesi tiyatroya gidiyoruz.",
+    "beispielEn": "We're going to the theater on Saturday."
+  },
+  {
+    "id": 381,
+    "tr": "yağmur",
+    "en": "rain",
+    "beispiel": "Ich mag den Regen nicht.",
+    "beispielTr": "Yağmuru sevmiyorum.",
+    "beispielEn": "I don't like the rain."
+  },
+  {
+    "id": 636,
+    "tr": "izin vermek",
+    "en": "to allow",
+    "beispiel": "Meine Eltern erlauben mir das nicht.",
+    "beispielTr": "Ailem buna izin vermiyor.",
+    "beispielEn": "My parents don't allow it."
+  },
+  {
+    "id": 157,
+    "tr": "havalimanı",
+    "en": "airport",
+    "beispiel": "Wir müssen um sieben Uhr am Flughafen sein.",
+    "beispielTr": "Saat yedide havalimanında olmamız gerekiyor.",
+    "beispielEn": "We have to be at the airport at seven."
+  },
+  {
+    "id": 638,
+    "tr": "şoför",
+    "en": "driver",
+    "beispiel": "Der Fahrer wartet vor dem Haus.",
+    "beispielTr": "Şoför evin önünde bekliyor.",
+    "beispielEn": "The driver is waiting in front of the house."
+  },
+  {
+    "id": 365,
+    "tr": "postane",
+    "en": "post office",
+    "beispiel": "Ich gehe schnell zur Post.",
+    "beispielTr": "Hemen postaneye gidiyorum.",
+    "beispielEn": "I'm just running to the post office."
+  },
+  {
+    "id": 645,
+    "tr": "eksik olmak",
+    "en": "to be missing",
+    "beispiel": "Auf dem Tisch fehlt ein Teller.",
+    "beispielTr": "Masada bir tabak eksik.",
+    "beispielEn": "There is a plate missing on the table."
+  },
+  {
+    "id": 409,
+    "tr": "yüzmek",
+    "en": "to swim",
+    "beispiel": "Ich kann gut schwimmen.",
+    "beispielTr": "İyi yüzerim.",
+    "beispielEn": "I can swim well."
+  },
+  {
+    "id": 787,
+    "tr": "öğrenci",
+    "en": "pupil",
+    "beispiel": "Die Schüler warten vor der Schule.",
+    "beispielTr": "Öğrenciler okulun önünde bekliyor.",
+    "beispielEn": "The pupils are waiting in front of the school."
+  },
+  {
+    "id": 672,
+    "tr": "beden",
+    "en": "size",
+    "beispiel": "Haben Sie das auch in Größe 40?",
+    "beispielTr": "Bunun 40 bedeni de var mı?",
+    "beispielEn": "Do you have this in size 40 too?"
+  },
+  {
+    "id": 764,
+    "tr": "fatura",
+    "en": "bill",
+    "beispiel": "Wir bezahlen die Rechnung am Freitag.",
+    "beispielTr": "Faturayı cuma günü ödeyeceğiz.",
+    "beispielEn": "We'll pay the bill on Friday."
+  },
+  {
+    "id": 33,
+    "tr": "makale",
+    "en": "article",
+    "beispiel": "Der Artikel in der Zeitung ist sehr interessant.",
+    "beispielTr": "Gazetedeki makale çok ilginç.",
+    "beispielEn": "The article in the newspaper is very interesting."
+  },
+  {
+    "id": 263,
+    "tr": "sinema",
+    "en": "cinema",
+    "beispiel": "Der neue Film läuft jetzt im Kino.",
+    "beispielTr": "Yeni film şimdi sinemada oynuyor.",
+    "beispielEn": "The new movie is playing in the cinema now."
+  },
+  {
+    "id": 741,
+    "tr": "açık",
+    "en": "open",
+    "beispiel": "Die Bäckerei ist am Sonntag geöffnet.",
+    "beispielTr": "Fırın pazar günü açık.",
+    "beispielEn": "The bakery is open on Sunday."
+  },
+  {
+    "id": 38,
+    "tr": "açmak",
+    "en": "to open",
+    "beispiel": "Kannst du bitte das Fenster aufmachen?",
+    "beispielTr": "Pencereyi açabilir misin lütfen?",
+    "beispielEn": "Can you open the window, please?"
+  },
+  {
+    "id": 385,
+    "tr": "tamir etmek",
+    "en": "to repair",
+    "beispiel": "Mein Vater kann das Fahrrad reparieren.",
+    "beispielTr": "Babam bisikleti tamir edebilir.",
+    "beispielEn": "My father can repair the bike."
+  },
+  {
+    "id": 829,
+    "tr": "imzalamak",
+    "en": "to sign",
+    "beispiel": "Wo muss ich unterschreiben?",
+    "beispielTr": "Nereyi imzalamam gerekiyor?",
+    "beispielEn": "Where do I have to sign?"
+  },
+  {
+    "id": 618,
+    "tr": "basmak",
+    "en": "to press",
+    "beispiel": "Bitte drücken Sie diesen Knopf.",
+    "beispielTr": "Lütfen bu düğmeye basın.",
+    "beispielEn": "Please press this button."
+  },
+  {
+    "id": 550,
+    "tr": "giyinmek",
+    "en": "to get dressed",
+    "beispiel": "Ich muss mich noch anziehen.",
+    "beispielTr": "Daha giyinmem lazım.",
+    "beispielEn": "I still have to get dressed."
+  },
+  {
+    "id": 62,
+    "tr": "karın",
+    "en": "belly",
+    "beispiel": "Seit gestern tut mir der Bauch weh.",
+    "beispielTr": "Dünden beri karnım ağrıyor.",
+    "beispielEn": "My belly has been hurting since yesterday."
+  },
+  {
+    "id": 747,
+    "tr": "belgeler",
+    "en": "documents",
+    "beispiel": "Haben Sie Ihre Papiere dabei?",
+    "beispielTr": "Belgeleriniz yanınızda mı?",
+    "beispielEn": "Do you have your documents with you?"
+  },
+  {
+    "id": 68,
+    "tr": "meslek",
+    "en": "profession",
+    "beispiel": "Was ist deine Mutter von Beruf?",
+    "beispielTr": "Annenin mesleği ne?",
+    "beispielEn": "What is your mother's profession?"
+  },
+  {
+    "id": 242,
+    "tr": "ceket",
+    "en": "jacket",
+    "beispiel": "Du brauchst eine Jacke, es ist kalt.",
+    "beispielTr": "Sana bir ceket lazım, hava soğuk.",
+    "beispielEn": "You need a jacket, it's cold."
+  },
+  {
+    "id": 732,
+    "tr": "orta",
+    "en": "middle",
+    "beispiel": "Der Tisch steht in der Mitte.",
+    "beispielTr": "Masa ortada duruyor.",
+    "beispielEn": "The table is in the middle."
+  },
+  {
+    "id": 849,
+    "tr": "hava",
+    "en": "weather",
+    "beispiel": "Heute ist das Wetter sehr schön.",
+    "beispielTr": "Bugün hava çok güzel.",
+    "beispielEn": "The weather is very nice today."
+  },
+  {
+    "id": 700,
+    "tr": "kıyafet",
+    "en": "clothing",
+    "beispiel": "Ich kaufe meine Kleidung im Internet.",
+    "beispielTr": "Kıyafetlerimi internetten alıyorum.",
+    "beispielEn": "I buy my clothes online."
+  },
+  {
+    "id": 89,
+    "tr": "ekmek",
+    "en": "bread",
+    "beispiel": "Wir müssen noch Brot kaufen.",
+    "beispielTr": "Bir de ekmek almamız gerek.",
+    "beispielEn": "We still need to buy bread."
+  },
+  {
+    "id": 746,
+    "tr": "kâğıt",
+    "en": "paper",
+    "beispiel": "Ich brauche noch ein Blatt Papier.",
+    "beispielTr": "Bana bir kâğıt daha lazım.",
+    "beispielEn": "I need another sheet of paper."
+  },
+  {
+    "id": 820,
+    "tr": "merdiven",
+    "en": "stairs",
+    "beispiel": "Wir nehmen die Treppe nach oben.",
+    "beispielTr": "Yukarıya merdivenden çıkıyoruz.",
+    "beispielEn": "We're taking the stairs up."
+  },
+  {
+    "id": 363,
+    "tr": "pizza",
+    "en": "pizza",
+    "beispiel": "Heute gibt es bei uns Pizza mit Tomaten und Käse.",
+    "beispielTr": "Bugün bizde domatesli peynirli pizza var.",
+    "beispielEn": "Today we're having pizza with tomatoes and cheese."
+  },
+  {
+    "id": 314,
+    "tr": "palto",
+    "en": "coat",
+    "beispiel": "Im Winter trage ich einen dicken Mantel.",
+    "beispielTr": "Kışın kalın bir palto giyerim.",
+    "beispielEn": "In winter I wear a thick coat."
+  },
+  {
+    "id": 384,
+    "tr": "ata binmek",
+    "en": "to ride a horse",
+    "beispiel": "Reiten ist mein Hobby.",
+    "beispielTr": "Ata binmek benim hobim.",
+    "beispielEn": "Horseback riding is my hobby."
+  },
+  {
+    "id": 261,
+    "tr": "tanışmak",
+    "en": "to meet",
+    "beispiel": "Möchtest du meine Freunde kennenlernen?",
+    "beispielTr": "Arkadaşlarımla tanışmak ister misin?",
+    "beispielEn": "Would you like to meet my friends?"
+  },
+  {
+    "id": 626,
+    "tr": "acele",
+    "en": "in a hurry",
+    "beispiel": "Hast du es eilig?",
+    "beispielTr": "Acelen mi var?",
+    "beispielEn": "Are you in a hurry?"
+  },
+  {
+    "id": 784,
+    "tr": "dolap",
+    "en": "cupboard",
+    "beispiel": "Die Gläser stehen im Schrank.",
+    "beispielTr": "Bardaklar dolapta.",
+    "beispielEn": "The glasses are in the cupboard."
+  },
+  {
+    "id": 118,
+    "tr": "davet",
+    "en": "invitation",
+    "beispiel": "Vielen Dank für die Einladung!",
+    "beispielTr": "Davet için çok teşekkürler!",
+    "beispielEn": "Thank you very much for the invitation!"
+  },
+  {
+    "id": 237,
+    "tr": "bilgi",
+    "en": "information",
+    "beispiel": "Hier kann man Informationen bekommen.",
+    "beispielTr": "Buradan bilgi alınabilir.",
+    "beispielEn": "You can get information here."
+  },
+  {
+    "id": 489,
+    "tr": "yıkamak",
+    "en": "to wash",
+    "beispiel": "Ich will meine Haare waschen.",
+    "beispielTr": "Saçımı yıkamak istiyorum.",
+    "beispielEn": "I want to wash my hair."
+  }
+]

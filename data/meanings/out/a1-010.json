@@ -1,0 +1,402 @@
+[
+  {
+    "id": 154,
+    "tr": "şişe",
+    "en": "bottle",
+    "beispiel": "Ich kaufe eine Flasche Wasser.",
+    "beispielTr": "Bir şişe su alıyorum.",
+    "beispielEn": "I'm buying a bottle of water."
+  },
+  {
+    "id": 727,
+    "tr": "deniz",
+    "en": "sea",
+    "beispiel": "Wir machen Urlaub am Meer.",
+    "beispielTr": "Tatili deniz kenarında geçiriyoruz.",
+    "beispielEn": "We're spending our holiday by the sea."
+  },
+  {
+    "id": 726,
+    "tr": "makine",
+    "en": "machine",
+    "beispiel": "Die Maschine ist schon wieder kaputt.",
+    "beispielTr": "Makine yine bozuldu.",
+    "beispielEn": "The machine is broken again."
+  },
+  {
+    "id": 575,
+    "tr": "bacak",
+    "en": "leg",
+    "beispiel": "Mein rechtes Bein tut weh.",
+    "beispielTr": "Sağ bacağım ağrıyor.",
+    "beispielEn": "My right leg hurts."
+  },
+  {
+    "id": 83,
+    "tr": "saçma",
+    "en": "stupid",
+    "beispiel": "Ich finde diese Idee echt blöd.",
+    "beispielTr": "Bu fikri gerçekten saçma buluyorum.",
+    "beispielEn": "I think this idea is really stupid."
+  },
+  {
+    "id": 171,
+    "tr": "kahvaltı",
+    "en": "breakfast",
+    "beispiel": "Zum Frühstück trinke ich Milch.",
+    "beispielTr": "Kahvaltıda süt içerim.",
+    "beispielEn": "I drink milk for breakfast."
+  },
+  {
+    "id": 39,
+    "tr": "dikkat etmek",
+    "en": "to pay attention",
+    "beispiel": "Im Unterricht passe ich immer gut auf.",
+    "beispielTr": "Derste her zaman iyi dikkat ederim.",
+    "beispielEn": "I always pay close attention in class."
+  },
+  {
+    "id": 655,
+    "tr": "sevinmek",
+    "en": "to be happy",
+    "beispiel": "Ich freue mich über dein Geschenk.",
+    "beispielTr": "Hediyene çok sevindim.",
+    "beispielEn": "I'm happy about your gift."
+  },
+  {
+    "id": 623,
+    "tr": "köşe",
+    "en": "corner",
+    "beispiel": "Der Supermarkt ist gleich um die Ecke.",
+    "beispielTr": "Süpermarket hemen köşede.",
+    "beispielEn": "The supermarket is just around the corner."
+  },
+  {
+    "id": 743,
+    "tr": "nine",
+    "en": "grandma",
+    "beispiel": "Meine Oma wohnt in einem kleinen Dorf.",
+    "beispielTr": "Ninem küçük bir köyde yaşıyor.",
+    "beispielEn": "My grandma lives in a small village."
+  },
+  {
+    "id": 724,
+    "tr": "çözüm",
+    "en": "solution",
+    "beispiel": "Die Lösung ist ganz einfach.",
+    "beispielTr": "Çözüm çok basit.",
+    "beispielEn": "The solution is very simple."
+  },
+  {
+    "id": 361,
+    "tr": "mola",
+    "en": "break",
+    "beispiel": "Jetzt machen wir eine Pause.",
+    "beispielTr": "Şimdi bir mola veriyoruz.",
+    "beispielEn": "We're taking a break now."
+  },
+  {
+    "id": 518,
+    "tr": "dilemek",
+    "en": "to wish",
+    "beispiel": "Ich wünsche dir schöne Ferien.",
+    "beispielTr": "Sana güzel bir tatil dilerim.",
+    "beispielEn": "I wish you a nice vacation."
+  },
+  {
+    "id": 669,
+    "tr": "derece",
+    "en": "degree",
+    "beispiel": "Heute haben wir dreißig Grad.",
+    "beispielTr": "Bugün hava otuz derece.",
+    "beispielEn": "It's thirty degrees today."
+  },
+  {
+    "id": 325,
+    "tr": "birlikte gelmek",
+    "en": "to come along",
+    "beispiel": "Kommst du heute Abend mit ins Kino?",
+    "beispielTr": "Bu akşam sinemaya benimle gelir misin?",
+    "beispielEn": "Are you coming along to the movies tonight?"
+  },
+  {
+    "id": 275,
+    "tr": "tutmak",
+    "en": "to cost",
+    "beispiel": "Das Buch kostet zwölf Euro.",
+    "beispielTr": "Kitap on iki avro tutuyor.",
+    "beispielEn": "The book costs twelve euros."
+  },
+  {
+    "id": 207,
+    "tr": "saç",
+    "en": "hair",
+    "beispiel": "Sie hat lange Haare.",
+    "beispielTr": "Uzun saçları var.",
+    "beispielEn": "She has long hair."
+  },
+  {
+    "id": 450,
+    "tr": "hayvan",
+    "en": "animal",
+    "beispiel": "Im Zoo gibt es viele Tiere.",
+    "beispielTr": "Hayvanat bahçesinde çok hayvan var.",
+    "beispielEn": "There are many animals at the zoo."
+  },
+  {
+    "id": 781,
+    "tr": "kapalı",
+    "en": "closed",
+    "beispiel": "Die Bank hat am Samstag geschlossen.",
+    "beispielTr": "Banka cumartesi kapalı.",
+    "beispielEn": "The bank is closed on Saturday."
+  },
+  {
+    "id": 449,
+    "tr": "konu",
+    "en": "topic",
+    "beispiel": "Über dieses Thema spreche ich nicht gern.",
+    "beispielTr": "Bu konu hakkında konuşmayı sevmiyorum.",
+    "beispielEn": "I don't like talking about this topic."
+  },
+  {
+    "id": 831,
+    "tr": "tatil",
+    "en": "vacation",
+    "beispiel": "Im Sommer fahren wir in Urlaub.",
+    "beispielTr": "Yazın tatile gidiyoruz.",
+    "beispielEn": "We're going on vacation in the summer."
+  },
+  {
+    "id": 63,
+    "tr": "ağaç",
+    "en": "tree",
+    "beispiel": "Die Bäume sind schon grün.",
+    "beispielTr": "Ağaçlar çoktan yeşerdi.",
+    "beispielEn": "The trees are already green."
+  },
+  {
+    "id": 715,
+    "tr": "öğretmen",
+    "en": "teacher",
+    "beispiel": "Mein Lehrer erklärt alles sehr gut.",
+    "beispielTr": "Öğretmenim her şeyi çok iyi anlatıyor.",
+    "beispielEn": "My teacher explains everything very well."
+  },
+  {
+    "id": 226,
+    "tr": "ummak",
+    "en": "to hope",
+    "beispiel": "Ich hoffe auf eine schnelle Antwort.",
+    "beispielTr": "Hızlı bir cevap umuyorum.",
+    "beispielEn": "I'm hoping for a quick reply."
+  },
+  {
+    "id": 257,
+    "tr": "kedi",
+    "en": "cat",
+    "beispiel": "Das ist Timmy, meine Katze.",
+    "beispielTr": "Bu Timmy, benim kedim.",
+    "beispielEn": "This is Timmy, my cat."
+  },
+  {
+    "id": 674,
+    "tr": "büyükbaba",
+    "en": "grandfather",
+    "beispiel": "Mein Großvater ist schon 80.",
+    "beispielTr": "Büyükbabam 80 yaşında.",
+    "beispielEn": "My grandfather is already 80."
+  },
+  {
+    "id": 386,
+    "tr": "restoran",
+    "en": "restaurant",
+    "beispiel": "Wir essen heute im Restaurant.",
+    "beispielTr": "Bugün restoranda yiyoruz.",
+    "beispielEn": "We're eating at a restaurant today."
+  },
+  {
+    "id": 53,
+    "tr": "banyo",
+    "en": "bathroom",
+    "beispiel": "Wir haben kein großes Bad.",
+    "beispielTr": "Büyük bir banyomuz yok.",
+    "beispielEn": "We don't have a big bathroom."
+  },
+  {
+    "id": 321,
+    "tr": "en az",
+    "en": "at least",
+    "beispiel": "Der Film dauert mindestens zwei Stunden.",
+    "beispielTr": "Film en az iki saat sürüyor.",
+    "beispielEn": "The movie lasts at least two hours."
+  },
+  {
+    "id": 153,
+    "tr": "balık",
+    "en": "fish",
+    "beispiel": "Ich mag keinen Fisch.",
+    "beispielTr": "Balık sevmem.",
+    "beispielEn": "I don't like fish."
+  },
+  {
+    "id": 278,
+    "tr": "kek",
+    "en": "cake",
+    "beispiel": "Zum Geburtstag backe ich einen Kuchen.",
+    "beispielTr": "Doğum günü için bir kek yapıyorum.",
+    "beispielEn": "I'm baking a cake for the birthday."
+  },
+  {
+    "id": 641,
+    "tr": "renk",
+    "en": "color",
+    "beispiel": "Die Farbe gefällt mir gut.",
+    "beispielTr": "Rengi çok beğendim.",
+    "beispielEn": "I really like the color."
+  },
+  {
+    "id": 176,
+    "tr": "bahçe",
+    "en": "garden",
+    "beispiel": "Wir suchen ein Haus mit Garten.",
+    "beispielTr": "Bahçeli bir ev arıyoruz.",
+    "beispielEn": "We're looking for a house with a garden."
+  },
+  {
+    "id": 701,
+    "tr": "bavul",
+    "en": "suitcase",
+    "beispiel": "Hast du den Koffer schon gepackt?",
+    "beispielTr": "Bavulu hazırladın mı?",
+    "beispielEn": "Have you packed the suitcase yet?"
+  },
+  {
+    "id": 282,
+    "tr": "kurs",
+    "en": "course",
+    "beispiel": "Der Kurs beginnt nächste Woche.",
+    "beispielTr": "Kurs gelecek hafta başlıyor.",
+    "beispielEn": "The course starts next week."
+  },
+  {
+    "id": 431,
+    "tr": "plaj",
+    "en": "beach",
+    "beispiel": "Wir spielen am Strand.",
+    "beispielTr": "Plajda oynuyoruz.",
+    "beispielEn": "We're playing on the beach."
+  },
+  {
+    "id": 290,
+    "tr": "sıkıcı",
+    "en": "boring",
+    "beispiel": "Der Film ist ziemlich langweilig.",
+    "beispielTr": "Film oldukça sıkıcı.",
+    "beispielEn": "The movie is pretty boring."
+  },
+  {
+    "id": 766,
+    "tr": "seyahat etmek",
+    "en": "to travel",
+    "beispiel": "Ich reise gern nach Spanien.",
+    "beispielTr": "İspanya'ya seyahat etmeyi severim.",
+    "beispielEn": "I like traveling to Spain."
+  },
+  {
+    "id": 812,
+    "tr": "randevu",
+    "en": "appointment",
+    "beispiel": "Am besten machen wir sofort einen Termin.",
+    "beispielTr": "En iyisi hemen bir randevu alalım.",
+    "beispielEn": "We'd better make an appointment right away."
+  },
+  {
+    "id": 376,
+    "tr": "radyo",
+    "en": "radio",
+    "beispiel": "Ich habe ein neues Radio.",
+    "beispielTr": "Yeni bir radyom var.",
+    "beispielEn": "I have a new radio."
+  },
+  {
+    "id": 159,
+    "tr": "nehir",
+    "en": "river",
+    "beispiel": "Der Rhein ist ein großer Fluss.",
+    "beispielTr": "Ren büyük bir nehirdir.",
+    "beispielEn": "The Rhine is a big river."
+  },
+  {
+    "id": 813,
+    "tr": "test",
+    "en": "test",
+    "beispiel": "Am Freitag haben wir einen Test.",
+    "beispielTr": "Cuma günü bir testimiz var.",
+    "beispielEn": "We have a test on Friday."
+  },
+  {
+    "id": 673,
+    "tr": "büyükanne",
+    "en": "grandmother",
+    "beispiel": "Meine Großmutter heißt Eva.",
+    "beispielTr": "Büyükannemin adı Eva.",
+    "beispielEn": "My grandmother's name is Eva."
+  },
+  {
+    "id": 428,
+    "tr": "dil",
+    "en": "language",
+    "beispiel": "Er spricht fünf Sprachen.",
+    "beispielTr": "Beş dil konuşuyor.",
+    "beispielEn": "He speaks five languages."
+  },
+  {
+    "id": 5,
+    "tr": "gidip almak",
+    "en": "to pick up",
+    "beispiel": "Ich hole dich am Bahnhof ab.",
+    "beispielTr": "Seni istasyondan alırım.",
+    "beispielEn": "I'll pick you up at the station."
+  },
+  {
+    "id": 776,
+    "tr": "parlamak",
+    "en": "to shine",
+    "beispiel": "Heute scheint wieder die Sonne.",
+    "beispielTr": "Bugün yine güneş parlıyor.",
+    "beispielEn": "The sun is shining again today."
+  },
+  {
+    "id": 744,
+    "tr": "dede",
+    "en": "grandpa",
+    "beispiel": "Mein Opa heißt Hans.",
+    "beispielTr": "Dedemin adı Hans.",
+    "beispielEn": "My grandpa's name is Hans."
+  },
+  {
+    "id": 42,
+    "tr": "kalkmak",
+    "en": "to get up",
+    "beispiel": "Um acht Uhr stehen wir auf.",
+    "beispielTr": "Saat sekizde kalkıyoruz.",
+    "beispielEn": "We get up at eight o'clock."
+  },
+  {
+    "id": 320,
+    "tr": "süt",
+    "en": "milk",
+    "beispiel": "Ich trinke jeden Morgen ein Glas Milch.",
+    "beispielTr": "Her sabah bir bardak süt içerim.",
+    "beispielEn": "I drink a glass of milk every morning."
+  },
+  {
+    "id": 271,
+    "tr": "yemek pişirmek",
+    "en": "to cook",
+    "beispiel": "Mein Vater kocht für uns.",
+    "beispielTr": "Babam bize yemek pişiriyor.",
+    "beispielEn": "My father cooks for us."
+  }
+]

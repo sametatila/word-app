@@ -1,0 +1,402 @@
+[
+  {
+    "id": 706,
+    "tr": "ilgilenmek",
+    "en": "to take care of",
+    "beispiel": "Jede Mutter kümmert sich um ihre kleinen Kinder.",
+    "beispielTr": "Her anne küçük çocuklarıyla ilgilenir.",
+    "beispielEn": "Every mother takes care of her small children."
+  },
+  {
+    "id": 709,
+    "tr": "gürültülü",
+    "en": "loud",
+    "beispiel": "Die Musik ist heute sehr laut.",
+    "beispielTr": "Müzik bugün çok gürültülü.",
+    "beispielEn": "The music is very loud today."
+  },
+  {
+    "id": 794,
+    "tr": "oturmak",
+    "en": "to sit",
+    "beispiel": "Wir sitzen im Garten und trinken Kaffee.",
+    "beispielTr": "Bahçede oturup kahve içiyoruz.",
+    "beispielEn": "We are sitting in the garden and drinking coffee."
+  },
+  {
+    "id": 783,
+    "tr": "anahtar",
+    "en": "key",
+    "beispiel": "Ich habe meinen Schlüssel zu Hause vergessen.",
+    "beispielTr": "Anahtarımı evde unuttum.",
+    "beispielEn": "I forgot my key at home."
+  },
+  {
+    "id": 360,
+    "tr": "olmak",
+    "en": "to happen",
+    "beispiel": "Der Unfall ist gestern Abend passiert.",
+    "beispielTr": "Kaza dün akşam oldu.",
+    "beispielEn": "The accident happened last night."
+  },
+  {
+    "id": 406,
+    "tr": "yazmak",
+    "en": "to write",
+    "beispiel": "Erika schreibt mir jeden Tag.",
+    "beispielTr": "Erika bana her gün yazıyor.",
+    "beispielEn": "Erika writes to me every day."
+  },
+  {
+    "id": 592,
+    "tr": "kızgın",
+    "en": "angry",
+    "beispiel": "Meine Mutter ist böse auf mich.",
+    "beispielTr": "Annem bana kızgın.",
+    "beispielEn": "My mother is angry with me."
+  },
+  {
+    "id": 480,
+    "tr": "tanıtmak",
+    "en": "to introduce",
+    "beispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
+    "beispielTr": "Size meslektaşımı tanıtabilir miyim?",
+    "beispielEn": "May I introduce my colleague to you?"
+  },
+  {
+    "id": 842,
+    "tr": "kendini tanıtmak",
+    "en": "to introduce oneself",
+    "beispiel": "Können Sie sich bitte kurz vorstellen?",
+    "beispielTr": "Kendinizi kısaca tanıtır mısınız?",
+    "beispielEn": "Could you introduce yourself briefly?"
+  },
+  {
+    "id": 513,
+    "tr": "daire",
+    "en": "apartment",
+    "beispiel": "Unsere Wohnung hat drei Zimmer.",
+    "beispielTr": "Dairemiz üç odalı.",
+    "beispielEn": "Our apartment has three rooms."
+  },
+  {
+    "id": 218,
+    "tr": "adı olmak",
+    "en": "to be called",
+    "beispiel": "Ich heiße Charlotte Meier.",
+    "beispielTr": "Adım Charlotte Meier.",
+    "beispielEn": "My name is Charlotte Meier."
+  },
+  {
+    "id": 277,
+    "tr": "hastane",
+    "en": "hospital",
+    "beispiel": "Meine Freundin ist im Krankenhaus.",
+    "beispielTr": "Arkadaşım hastanede.",
+    "beispielEn": "My friend is in the hospital."
+  },
+  {
+    "id": 266,
+    "tr": "sınıf",
+    "en": "class",
+    "beispiel": "In meiner Klasse sind zwanzig Kinder.",
+    "beispielTr": "Sınıfımda yirmi çocuk var.",
+    "beispielEn": "There are twenty children in my class."
+  },
+  {
+    "id": 454,
+    "tr": "taşımak",
+    "en": "to carry",
+    "beispiel": "Ich trage den Koffer für dich.",
+    "beispielTr": "Valizi senin için taşıyorum.",
+    "beispielEn": "I am carrying the suitcase for you."
+  },
+  {
+    "id": 70,
+    "tr": "özellikle",
+    "en": "especially",
+    "beispiel": "Das finde ich besonders interessant.",
+    "beispielTr": "Bunu özellikle ilginç buluyorum.",
+    "beispielEn": "I find this especially interesting."
+  },
+  {
+    "id": 777,
+    "tr": "göndermek",
+    "en": "to send",
+    "beispiel": "Bitte schicken Sie mir eine E-Mail.",
+    "beispielTr": "Lütfen bana bir e-posta gönderin.",
+    "beispielEn": "Please send me an email."
+  },
+  {
+    "id": 20,
+    "tr": "telefon etmek",
+    "en": "to call",
+    "beispiel": "Ich rufe dich morgen an.",
+    "beispielTr": "Seni yarın ararım.",
+    "beispielEn": "I will call you tomorrow."
+  },
+  {
+    "id": 736,
+    "tr": "ağız",
+    "en": "mouth",
+    "beispiel": "Öffnen Sie bitte den Mund.",
+    "beispielTr": "Lütfen ağzınızı açın.",
+    "beispielEn": "Please open your mouth."
+  },
+  {
+    "id": 284,
+    "tr": "gülmek",
+    "en": "to laugh",
+    "beispiel": "Lisa lacht immer viel.",
+    "beispielTr": "Lisa hep çok güler.",
+    "beispielEn": "Lisa always laughs a lot."
+  },
+  {
+    "id": 306,
+    "tr": "eğlenceli",
+    "en": "funny",
+    "beispiel": "Jan ist nett und lustig.",
+    "beispielTr": "Jan kibar ve eğlenceli biri.",
+    "beispielEn": "Jan is nice and funny."
+  },
+  {
+    "id": 708,
+    "tr": "dükkân",
+    "en": "shop",
+    "beispiel": "Der Laden macht um neun Uhr auf.",
+    "beispielTr": "Dükkân saat dokuzda açılıyor.",
+    "beispielEn": "The shop opens at nine o'clock."
+  },
+  {
+    "id": 666,
+    "tr": "ölmüş",
+    "en": "died",
+    "beispiel": "Mein Großvater ist letztes Jahr gestorben.",
+    "beispielTr": "Dedem geçen yıl öldü.",
+    "beispielEn": "My grandfather died last year."
+  },
+  {
+    "id": 298,
+    "tr": "okumak",
+    "en": "to read",
+    "beispiel": "Ich lese ein Buch von García Márquez.",
+    "beispielTr": "García Márquez'in bir kitabını okuyorum.",
+    "beispielEn": "I am reading a book by García Márquez."
+  },
+  {
+    "id": 190,
+    "tr": "mağaza",
+    "en": "store",
+    "beispiel": "Meine Mutter wartet vor dem Geschäft.",
+    "beispielTr": "Annem mağazanın önünde bekliyor.",
+    "beispielEn": "My mother is waiting in front of the store."
+  },
+  {
+    "id": 156,
+    "tr": "uçmak",
+    "en": "to fly",
+    "beispiel": "Wir fliegen nach Athen.",
+    "beispielTr": "Atina'ya uçuyoruz.",
+    "beispielEn": "We are flying to Athens."
+  },
+  {
+    "id": 782,
+    "tr": "bitiş",
+    "en": "end",
+    "beispiel": "Der Schluss vom Film ist sehr traurig.",
+    "beispielTr": "Filmin bitişi çok üzücü.",
+    "beispielEn": "The end of the film is very sad."
+  },
+  {
+    "id": 328,
+    "tr": "sevmek",
+    "en": "to like",
+    "beispiel": "Ich mag Kaffee mit Milch.",
+    "beispielTr": "Sütlü kahve severim.",
+    "beispielEn": "I like coffee with milk."
+  },
+  {
+    "id": 213,
+    "tr": "cep telefonu",
+    "en": "cell phone",
+    "beispiel": "Mein Handy ist leider kaputt.",
+    "beispielTr": "Cep telefonum maalesef bozuk.",
+    "beispielEn": "Unfortunately my cell phone is broken."
+  },
+  {
+    "id": 688,
+    "tr": "arkada",
+    "en": "at the back",
+    "beispiel": "Im Bus sitze ich immer hinten.",
+    "beispielTr": "Otobüste hep arkada otururum.",
+    "beispielEn": "On the bus I always sit at the back."
+  },
+  {
+    "id": 588,
+    "tr": "rica etmek",
+    "en": "to ask for",
+    "beispiel": "Darf ich Sie um etwas bitten?",
+    "beispielTr": "Sizden bir şey rica edebilir miyim?",
+    "beispielEn": "May I ask you for something?"
+  },
+  {
+    "id": 451,
+    "tr": "masa",
+    "en": "table",
+    "beispiel": "Das Essen steht schon auf dem Tisch.",
+    "beispielTr": "Yemek çoktan masada.",
+    "beispielEn": "The food is already on the table."
+  },
+  {
+    "id": 721,
+    "tr": "yatmak",
+    "en": "to lie",
+    "beispiel": "Um neun Uhr liegt Judith noch im Bett.",
+    "beispielTr": "Judith saat dokuzda hâlâ yatakta.",
+    "beispielEn": "At nine o'clock Judith is still in bed."
+  },
+  {
+    "id": 836,
+    "tr": "satmak",
+    "en": "to sell",
+    "beispiel": "Er verkauft sein altes Auto.",
+    "beispielTr": "Eski arabasını satıyor.",
+    "beispielEn": "He is selling his old car."
+  },
+  {
+    "id": 17,
+    "tr": "başlamak",
+    "en": "to start",
+    "beispiel": "Der Film fängt um acht Uhr an.",
+    "beispielTr": "Film saat sekizde başlıyor.",
+    "beispielEn": "The film starts at eight o'clock."
+  },
+  {
+    "id": 691,
+    "tr": "otel",
+    "en": "hotel",
+    "beispiel": "Im Urlaub sind wir in einem Hotel am Meer.",
+    "beispielTr": "Tatilde deniz kenarında bir oteldeyiz.",
+    "beispielEn": "On vacation we are in a hotel by the sea."
+  },
+  {
+    "id": 23,
+    "tr": "cevap",
+    "en": "answer",
+    "beispiel": "Weißt du die Antwort?",
+    "beispielTr": "Cevabı biliyor musun?",
+    "beispielEn": "Do you know the answer?"
+  },
+  {
+    "id": 195,
+    "tr": "kazanmak",
+    "en": "to win",
+    "beispiel": "Man kann hier eine Reise gewinnen.",
+    "beispielTr": "Burada bir seyahat kazanabilirsiniz.",
+    "beispielEn": "You can win a trip here."
+  },
+  {
+    "id": 109,
+    "tr": "aptal",
+    "en": "stupid",
+    "beispiel": "Mein Bruder ist nicht dumm.",
+    "beispielTr": "Kardeşim aptal değil.",
+    "beispielEn": "My brother is not stupid."
+  },
+  {
+    "id": 585,
+    "tr": "resim",
+    "en": "picture",
+    "beispiel": "Hast du ein Bild von deinem Sohn?",
+    "beispielTr": "Oğlunun bir resmi var mı?",
+    "beispielEn": "Do you have a picture of your son?"
+  },
+  {
+    "id": 341,
+    "tr": "yeni",
+    "en": "new",
+    "beispiel": "Ist der Computer neu?",
+    "beispielTr": "Bilgisayar yeni mi?",
+    "beispielEn": "Is the computer new?"
+  },
+  {
+    "id": 75,
+    "tr": "ödemek",
+    "en": "to pay for",
+    "beispiel": "Wo muss ich bezahlen?",
+    "beispielTr": "Nerede ödemem gerekiyor?",
+    "beispielEn": "Where do I have to pay?"
+  },
+  {
+    "id": 43,
+    "tr": "göz",
+    "en": "eye",
+    "beispiel": "Seine Augen sind grün.",
+    "beispielTr": "Gözleri yeşil.",
+    "beispielEn": "His eyes are green."
+  },
+  {
+    "id": 835,
+    "tr": "evli",
+    "en": "married",
+    "beispiel": "Ich bin verheiratet und habe drei Kinder.",
+    "beispielTr": "Evliyim ve üç çocuğum var.",
+    "beispielEn": "I am married and have three children."
+  },
+  {
+    "id": 146,
+    "tr": "pencere",
+    "en": "window",
+    "beispiel": "Ich möchte einen Platz am Fenster.",
+    "beispielTr": "Pencere kenarında bir yer istiyorum.",
+    "beispielEn": "I would like a seat by the window."
+  },
+  {
+    "id": 852,
+    "tr": "ödemek",
+    "en": "to pay",
+    "beispiel": "Wir möchten bitte zusammen zahlen.",
+    "beispielTr": "Hesabı birlikte ödemek istiyoruz.",
+    "beispielEn": "We would like to pay together."
+  },
+  {
+    "id": 16,
+    "tr": "başlangıç",
+    "en": "beginning",
+    "beispiel": "Am Anfang ist das Buch langweilig.",
+    "beispielTr": "Kitap başlangıçta sıkıcı.",
+    "beispielEn": "The book is boring at the beginning."
+  },
+  {
+    "id": 714,
+    "tr": "koymak",
+    "en": "to lay",
+    "beispiel": "Legen Sie das Buch auf den Tisch.",
+    "beispielTr": "Kitabı masanın üzerine koyun.",
+    "beispielEn": "Lay the book on the table."
+  },
+  {
+    "id": 353,
+    "tr": "açık",
+    "en": "open",
+    "beispiel": "Jetzt ist die Tür offen.",
+    "beispielTr": "Kapı şimdi açık.",
+    "beispielEn": "The door is open now."
+  },
+  {
+    "id": 584,
+    "tr": "bira",
+    "en": "beer",
+    "beispiel": "Noch ein Bier bitte.",
+    "beispielTr": "Bir bira daha lütfen.",
+    "beispielEn": "Another beer please."
+  },
+  {
+    "id": 748,
+    "tr": "partner",
+    "en": "partner",
+    "beispiel": "Mein Partner kocht heute Abend.",
+    "beispielTr": "Partnerim bu akşam yemek yapıyor.",
+    "beispielEn": "My partner is cooking tonight."
+  }
+]
