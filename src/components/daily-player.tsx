@@ -9,7 +9,8 @@ import { FitBox } from "@/components/fit-box";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
 import { ShareResult } from "@/components/share-result";
-import { AlertIcon, FlameIcon, TrophyIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 
 /**
  * Günün turu.
@@ -270,8 +271,11 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       <Confetti fire={1} />
       <div className="card overflow-hidden">
         <div className="brand-gradient p-8 text-center text-white">
-          <TrophyIcon size={30} />
-          <h2 className="mt-2 text-2xl font-bold">
+          {/* Günün turu da bir kapanış anı: kelime turu, oyun içindeki sonuç
+              şeridi, beceri egzersizi ve ders aynı karakterle kapanıyor.
+              Kupa simgesi bunun dışında kalan tek yerdi. */}
+          <Mascot mood="cheer" size={88} className="mx-auto" />
+          <h2 className="mt-1 text-2xl font-bold">
             <CountUp value={finalScore} /> puan
           </h2>
           <p className="mt-1 text-sm opacity-90">

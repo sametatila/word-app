@@ -11,7 +11,8 @@ import { AnswerPulse } from "@/components/answer-pulse";
 import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
 import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
-import { AlertIcon, FlameIcon, TrophyIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 
 /** Başlangıç süresi kısa: süreyi doğru cevaplarla kazanırsın. */
 const START_SECONDS = 40;
@@ -302,9 +303,9 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         <RecordChime fire={isRecord} />
         <Confetti fire={isRecord ? 1 : 0} count={40} />
         <div className="text-center">
-          <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl text-white">
-            <TrophyIcon size={26} />
-          </div>
+          {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
+              kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
+          <Mascot mood={isRecord ? "cheer" : "happy"} size={96} className="mx-auto" />
           <h2 className="text-3xl font-black">
             <CountUp value={score} /> <span className="text-lg font-bold">puan</span>
           </h2>
