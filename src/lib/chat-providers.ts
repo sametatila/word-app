@@ -236,10 +236,29 @@ export type ProviderMeta = {
   limits: Record<string, string>;
 };
 
-function readLimits(res: Response): Record<string, string> {
+/**
+ * Cevabın bildirdiği kalan hak.
+ *
+ * Eşleştirici önce yalnızca "ratelimit" içeren başlıklara bakıyordu ve ÖLÇÜM
+ * bunun çalışmadığını gösterdi: 30 gerçek turun otuzunda da alan boş `{}`
+ * yazılmıştı. Sağlayıcı adı ve model doğru kaydedildiğine göre sorun kayıt
+ * yolunda değil, eşleştiricideydi — kullandığımız sağlayıcı hakkını o
+ * yazımla bildirmiyor.
+ *
+ * Sağlayıcılar bu başlıkları standartlaştırmadı: kimi `x-ratelimit-*`, kimi
+ * `ratelimitbysize-*`, kimi `x-request-limit-remaining` yazıyor; 429'da ise
+ * asıl işe yarayan `retry-after` oluyor. Liste bu yüzden ada değil ANLAMA
+ * bakıyor. Yakalanan başlık sayısı azsa gürültü de az; hiçbir şey
+ * yakalanmıyorsa alan yine boş kalır ama en azından sebebi "dar desen"
+ * olmaz.
+ */
+const LIMIT_HINTS = ["ratelimit", "rate-limit", "remaining", "quota", "retry-after", "reset"];
+
+export function readLimits(res: { headers: Headers }): Record<string, string> {
   const out: Record<string, string> = {};
   res.headers.forEach((value, key) => {
-    if (key.toLowerCase().includes("ratelimit")) out[key.toLowerCase()] = value;
+    const k = key.toLowerCase();
+    if (LIMIT_HINTS.some((hint) => k.includes(hint))) out[k] = value;
   });
   return out;
 }

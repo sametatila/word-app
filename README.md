@@ -155,6 +155,13 @@ CEREBRAS_API_KEY="..."          # önerilen: ücretsizlerin en hızlısı, 1M to
 # MISTRAL_API_KEY="..."         # 1B token/ay ama ~2 RPM — taşma yedeği
 ```
 
+Hangi sağlayıcının gerçekten cevapladığı `npm run report:providers` ile görülür. Buna ihtiyaç
+zincirin sessiz çalışmasından doğdu: anahtarı olmayan sağlayıcı atlanıyor, uygulama sorunsuz
+çalışıyor ve birincil sağlayıcı hiç çağrılmamış olabiliyor — sağlayıcının kendi panelinde
+kullanım sıfır görününce sorunun anahtarda mı yoksa zincirin başka bir sağlayıcıya
+düşmesinde mi olduğu ayırt edilemiyordu. Cevap `roleplay_logs` tablosunda: her tur hangi
+sağlayıcı ve modelle verildiyse oraya, bildirilen kalan hakla birlikte yazılıyor.
+
 Rol yapma üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
 Cerebras → Groq → Mistral). Üçü de OpenAI uyumlu olduğu için tek istemci yetiyor; sıra
 hıza göre kurulu, çünkü konuşmada gecikme her şeyden önemli. Birincil düşerse yedeğe
@@ -247,7 +254,7 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (483 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (492 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
 sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
 tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını, modül sınavının

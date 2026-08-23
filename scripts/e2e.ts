@@ -43,7 +43,7 @@ import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
 import { scoredSteps } from "../src/lib/lessons/types";
 import { lessonBoard, nextLesson, recordLesson, weakRules } from "../src/lib/lessons/progress";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
-import { chatConfigured, chatProviders } from "../src/lib/chat-providers";
+import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
@@ -1792,7 +1792,36 @@ async function main() {
   const board21 = await achievementBoard(USER);
   check("modül fatihi rozeti açıldı", board21.rows.find((r) => r.id === "boss1")?.unlocked === true);
 
-  console.log("\n22) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n22) Kalan hak başlıkları — sağlayıcı ne yazarsa yazsın yakalanmalı");
+  // Ölçüm: eski desen yalnızca "ratelimit" arıyordu ve 30 gerçek turun
+  // otuzunda da alan boş kaldı. Sağlayıcılar bu başlıkları standartlaştırmadı,
+  // o yüzden test farklı yazımları birlikte kontrol ediyor.
+  const headers = (o: Record<string, string>) => ({ headers: new Headers(o) });
+  const openai = readLimits(headers({
+    "x-ratelimit-remaining-requests": "58",
+    "x-ratelimit-reset-tokens": "6s",
+    "content-type": "application/json",
+  }));
+  check("x-ratelimit-* yakalanıyor", openai["x-ratelimit-remaining-requests"] === "58");
+  check("reset başlığı yakalanıyor", openai["x-ratelimit-reset-tokens"] === "6s");
+  check("alakasız başlık alınmıyor", openai["content-type"] === undefined);
+
+  const mistralStyle = readLimits(headers({ "ratelimitbysize-remaining": "19000" }));
+  check("ratelimitbysize-* yakalanıyor", mistralStyle["ratelimitbysize-remaining"] === "19000");
+
+  const dashed = readLimits(headers({ "x-rate-limit-remaining": "3" }));
+  check("tireli yazım yakalanıyor", dashed["x-rate-limit-remaining"] === "3");
+
+  const retry = readLimits(headers({ "retry-after": "12" }));
+  check("429'un retry-after'ı yakalanıyor", retry["retry-after"] === "12");
+
+  const quota = readLimits(headers({ "x-quota-remaining": "100" }));
+  check("kota başlığı yakalanıyor", quota["x-quota-remaining"] === "100");
+
+  check("başlık yoksa boş nesne", Object.keys(readLimits(headers({ server: "x" }))).length === 0);
+  check("adlar küçük harfe indiriliyor", readLimits(headers({ "X-RateLimit-Remaining": "7" }))["x-ratelimit-remaining"] === "7");
+
+  console.log("\n23) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);
