@@ -441,6 +441,58 @@ export const moduleClears = pgTable(
   (t) => [primaryKey({ columns: [t.userId, t.course, t.level, t.moduleIndex] })],
 );
 
+/**
+ * AI çağrılarının kaydı.
+ *
+ * `roleplay_logs` yalnızca BAŞARILI bir rol yapma turunun sağlayıcısını
+ * tutuyordu ve süreli bir teşhis penceresiydi. Üç şey görünmüyordu:
+ *
+ *   1. **Hatalar.** Zincir sırayla deniyor ve düşen sağlayıcı sessizce
+ *      atlanıyor. Her istekte 429 alan bir birincil, dışarıdan bakınca
+ *      "hiç kullanılmıyor" gibi görünüyordu — oysa her seferinde bir gidiş
+ *      dönüş ve bir kullanıcı gecikmesi harcıyordu.
+ *   2. **Koç ve yazıya çevirme.** Rol yapmanın dışındaki çağrılar hiç
+ *      kaydedilmiyordu, yani kullanımın bir kısmı ölçünün dışındaydı.
+ *   3. **Maliyetin bileşenleri.** Jeton sayısı, ses saniyesi ve gecikme
+ *      yoktu; "hangi model daha pahalı, hangisi daha yavaş" sorusu
+ *      cevaplanamıyordu.
+ *
+ * Bu tablo kalıcı ve dar: analiz için gereken sayılar var, konuşmanın
+ * kendisi yok. Metin `roleplay_logs`ta duruyor ve orada süreli kalmaya devam
+ * ediyor — ikisi farklı işler, biri teşhis biri muhasebe.
+ */
+export const aiUsage = pgTable(
+  "ai_usage",
+  {
+    id: serial("id").primaryKey(),
+    /** Kim tetikledi — arka plan işlerinde boş. */
+    userId: text("user_id"),
+    day: date("day").notNull(),
+    /** roleplay · coach · stt */
+    kind: text("kind").notNull(),
+    provider: text("provider").notNull(),
+    model: text("model").notNull(),
+    ok: boolean("ok").notNull(),
+    /** HTTP durumu; ağ hatasında 0. */
+    status: integer("status").notNull().default(0),
+    /** Kısa hata metni — ayıklamak için, tam gövde değil. */
+    error: text("error"),
+    /** İlk cevaba kadar geçen süre (ms). */
+    ms: integer("ms").notNull().default(0),
+    promptTokens: integer("prompt_tokens"),
+    completionTokens: integer("completion_tokens"),
+    /** Yazıya çevirmede klibin uzunluğu. */
+    audioSeconds: integer("audio_seconds"),
+    /** Sağlayıcının bildirdiği kalan hak (ham başlıklar). */
+    limits: jsonb("limits").$type<Record<string, string>>(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("ai_usage_day_idx").on(t.day, t.kind),
+    index("ai_usage_provider_idx").on(t.provider, t.createdAt),
+  ],
+);
+
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
