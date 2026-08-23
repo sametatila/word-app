@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
-import type { Round } from "@/lib/types";
+import type { Option, Round } from "@/lib/types";
+import { MeaningText } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, speakThen } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
@@ -35,10 +36,10 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     return () => clearTimeout(s);
   }, [round.id, deSide, question, answer]);
 
-  function choose(opt: string) {
+  function choose(opt: Option) {
     if (picked) return;
-    setPicked(opt);
-    const correct = opt === answer;
+    setPicked(opt.text);
+    const correct = opt.text === answer;
     const latencyMs = Date.now() - started.current;
     // Türkçeden Almancaya yönde Almanca olan taraf cevaptır; seçim yapılınca
     // her zaman DOĞRU karşılık okunuyor, seçilen değil — yanlış cevabı sesli
@@ -68,30 +69,47 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // dili zaten görevi anlatıyor, fazladan metin ekranı yorar.
     <GameShell
       label="Doğru Anlam"
-      prompt={<span className="brand-text text-2xl font-bold sm:text-3xl">{question}</span>}
+      prompt={
+        <span className="brand-text text-2xl font-bold sm:text-3xl">
+          {question}
+          {/* Türkçeden Almancaya yönde soru bir anlamdır; İngilizcesi burada
+              ayırt edici olarak duruyor ("o" tek başına üç kelimeye uyar). */}
+          {!deSide && word.en ? (
+            <span className="block text-base font-normal opacity-60" lang="en">
+              {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
     >
       <div className="grid gap-3">
         {options.map((opt, i) => {
-          const isAnswer = opt === answer;
+          const isAnswer = opt.text === answer;
           const state =
-            picked == null ? "" : isAnswer ? "option-correct" : opt === picked ? "option-wrong" : "";
+            picked == null
+              ? ""
+              : isAnswer
+                ? "option-correct"
+                : opt.text === picked
+                  ? "option-wrong"
+                  : "";
           return (
             <motion.button
-              key={`${opt}-${i}`}
+              key={`${opt.text}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}
-              className={`option flex items-center justify-between gap-3 px-4 py-3.5 text-left text-base font-medium ${state} ${
-                picked === opt && !isAnswer ? "animate-shake" : ""
-              } ${picked === opt && isAnswer ? "animate-glow" : ""}`}
+              className={`option flex items-center justify-between gap-3 px-4 py-3 text-left font-medium ${state} ${
+                picked === opt.text && !isAnswer ? "animate-shake" : ""
+              } ${picked === opt.text && isAnswer ? "animate-glow" : ""}`}
             >
-              <span>{opt}</span>
+              <MeaningText tr={opt.text} en={opt.sub} />
               {/* Seçim sonucu simgeyle de anlatılır: renk körlüğünde de okunur. */}
               {picked != null && isAnswer ? (
                 <CheckIcon size={18} className="shrink-0 text-[color:var(--color-mint-500)]" />
-              ) : picked === opt ? (
+              ) : picked === opt.text ? (
                 <XIcon size={18} className="shrink-0 text-[color:var(--color-rose-500)]" />
               ) : null}
             </motion.button>
@@ -101,6 +119,14 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
       {picked && picked !== answer ? (
         <p className="muted mt-4 text-center text-sm">
           Doğrusu: <strong className="text-[color:var(--color-mint-500)]">{answer}</strong>
+          {/* Almanca sorulan yönde ikinci dil doğru cevabın yanında durur:
+              şıklarda yeri yoktu, burada ise öğrenilecek şeyin bir parçası. */}
+          {deSide && word.en ? (
+            <span className="opacity-60" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}
         </p>
       ) : null}
     </GameShell>

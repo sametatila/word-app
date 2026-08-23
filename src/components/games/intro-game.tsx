@@ -6,6 +6,7 @@ import { GameShell } from "./game-shell";
 import { grammarNote, typLabel, withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
+import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakGerman } from "@/components/speak-button";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
@@ -24,6 +25,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   const started = useRef(Date.now());
   const example = firstExample(word.beispiel);
   const exampleTr = firstExample(word.beispielTr);
+  const exampleEn = firstExample(word.beispielEn);
 
   useEffect(() => {
     started.current = Date.now();
@@ -80,6 +82,13 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           className="mt-4 text-xl font-semibold text-[color:var(--color-brand-500)]"
         >
           {word.tr}
+          {/* İngilizce Türkçenin altında, bir kademe küçük: kartın merkezinde
+              hâlâ tek bir karşılık var, ikincisi onu doğrulayan satır. */}
+          {word.en ? (
+            <span className="mt-0.5 block text-base font-normal opacity-70" lang="en">
+              {word.en}
+            </span>
+          ) : null}
         </motion.p>
 
         {example ? (
@@ -94,9 +103,11 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
               {example}
               <SpeakButton text={example} size="sm" />
             </span>
-            {exampleTr ? (
-              <span className="mt-1 block not-italic opacity-80">{exampleTr}</span>
-            ) : null}
+            <SentenceTranslation
+              tr={exampleTr}
+              en={exampleEn}
+              className="mt-1 not-italic opacity-80"
+            />
           </motion.p>
         ) : null}
       </motion.div>

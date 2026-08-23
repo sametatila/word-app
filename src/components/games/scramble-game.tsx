@@ -136,7 +136,18 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   return (
     <GameShell
       label="Harf Bulmacası"
-      prompt={<span className="brand-text text-2xl font-bold sm:text-3xl">{word.tr}</span>}
+      prompt={
+        <span className="brand-text text-2xl font-bold sm:text-3xl">
+          {word.tr}
+          {/* Karıştırılmış harflerden kelimeyi kuran şey anlam; anlam Türkçede
+              başka bir kelimeyle çakışıyorsa İngilizce satır ayırıyor. */}
+          {word.en ? (
+            <span className="block text-base font-normal opacity-60" lang="en">
+              {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
     >
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-7">
         {/* Cevap yuvaları — sayısı ve konumu sabit */}

@@ -86,6 +86,12 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
               {answer} {word.de}
             </strong>{" "}
             — {word.tr}
+            {word.en ? (
+              <span className="opacity-60" lang="en">
+                {" "}
+                · {word.en}
+              </span>
+            ) : null}
           </motion.p>
         ) : null}
       </div>

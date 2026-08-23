@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { dailyScores, profiles, words } from "@/lib/db/schema";
 import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
-import type { GameId, Round, RoundWord } from "@/lib/types";
+import type { GameId, Option, Round, RoundWord } from "@/lib/types";
 
 /**
  * Günün ortak turu.
@@ -65,11 +65,13 @@ function toRoundWord(w: typeof words.$inferSelect): RoundWord {
     de: w.de,
     artikel: w.artikel,
     tr: w.tr,
+    en: w.en,
     typ: w.typ,
     niveau: w.niveau,
     formen: w.formen,
     beispiel: w.beispiel,
     beispielTr: w.beispielTr,
+    beispielEn: w.beispielEn,
     isNew: false,
   };
 }
@@ -155,11 +157,24 @@ function makeDailyRound(
       return { id: nextId(), game: "listen", word, options: seededOptions(word, pool, "de-tr", rand) };
     case "truefalse": {
       const isTrue = rand() < 0.5;
-      if (isTrue) return { id: nextId(), game: "truefalse", word, claim: word.tr, isTrue: true };
+      if (isTrue)
+        return {
+          id: nextId(),
+          game: "truefalse",
+          word,
+          claim: { text: word.tr, sub: word.en },
+          isTrue: true,
+        };
       const others = pool.filter((p) => p.id !== word.id && p.tr !== word.tr);
       if (!others.length) return null;
       const wrong = others[Math.floor(rand() * others.length)];
-      return { id: nextId(), game: "truefalse", word, claim: wrong.tr, isTrue: false };
+      return {
+        id: nextId(),
+        game: "truefalse",
+        word,
+        claim: { text: wrong.tr, sub: wrong.en },
+        isTrue: false,
+      };
     }
     case "scramble":
       return { id: nextId(), game: "scramble", word };
@@ -179,6 +194,7 @@ function makeDailyRound(
         word,
         sentence: blanked.sentence,
         sentenceTr: word.beispielTr,
+        sentenceEn: word.beispielEn,
         answer: blanked.answer,
         options: shuffleSeeded([blanked.answer, ...wrong], rand),
       };
@@ -205,15 +221,22 @@ function seededOptions(
   pool: (typeof words.$inferSelect)[],
   direction: "de-tr" | "tr-de",
   rand: () => number,
-): string[] {
-  const correct = direction === "de-tr" ? word.tr : word.de;
-  const others = pool
-    .filter((p) => p.id !== word.id)
-    .map((p) => (direction === "de-tr" ? p.tr : p.de))
-    .filter((v) => v && v !== correct);
-  const unique = [...new Set(others)];
-  const distractors = shuffleSeeded(unique, rand).slice(0, 3);
-  return shuffleSeeded([correct, ...distractors], rand);
+): Option[] {
+  // Anlam sorulan yönde şık iki dillidir; Almanca sorulan yönde ikinci satır
+  // yoktur — orada sorulan şey anlam değil, kelimenin kendisi.
+  const label = (p: { de: string; tr: string; en: string | null }): Option =>
+    direction === "de-tr" ? { text: p.tr, sub: p.en } : { text: p.de, sub: null };
+  const correct = label(word);
+  const seen = new Set([correct.text]);
+  const distractors: Option[] = [];
+  for (const p of pool) {
+    if (p.id === word.id) continue;
+    const option = label(p);
+    if (!option.text || seen.has(option.text)) continue;
+    seen.add(option.text);
+    distractors.push(option);
+  }
+  return shuffleSeeded([correct, ...shuffleSeeded(distractors, rand).slice(0, 3)], rand);
 }
 
 /** Cümledeki hedef kelimeyi boşluğa çevirir. */

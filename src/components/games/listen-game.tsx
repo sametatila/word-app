@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
-import type { Round } from "@/lib/types";
+import type { Option, Round } from "@/lib/types";
+import { MeaningText, SentenceTranslation } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
@@ -41,10 +42,10 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     return () => clearTimeout(t);
   }, [round.id, spoken]);
 
-  function choose(option: string) {
+  function choose(option: Option) {
     if (picked) return;
-    setPicked(option);
-    const isCorrect = option === word.tr;
+    setPicked(option.text);
+    const isCorrect = option.text === word.tr;
     const latencyMs = Date.now() - started.current;
     const wait = isCorrect ? 1400 : 2600;
     fx(isCorrect ? "correct" : "wrong", wait);
@@ -64,6 +65,8 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   }
 
   const example = firstExample(word.beispiel);
+  const exampleTr = firstExample(word.beispielTr);
+  const exampleEn = firstExample(word.beispielEn);
 
   return (
     <GameShell
@@ -102,22 +105,28 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {options.map((option, i) => {
-          const isAnswer = option === word.tr;
+          const isAnswer = option.text === word.tr;
           const state =
-            picked == null ? "" : isAnswer ? "option-correct" : option === picked ? "option-wrong" : "";
+            picked == null
+              ? ""
+              : isAnswer
+                ? "option-correct"
+                : option.text === picked
+                  ? "option-wrong"
+                  : "";
           return (
             <motion.button
-              key={`${option}-${i}`}
+              key={`${option.text}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(option)}
-              className={`option flex min-h-14 items-center justify-center px-4 py-3 text-center text-base font-medium ${state} ${
-                picked === option && !isAnswer ? "animate-shake" : ""
+              className={`option flex min-h-14 items-center justify-center px-4 py-3 text-center font-medium ${state} ${
+                picked === option.text && !isAnswer ? "animate-shake" : ""
               }`}
             >
-              {option}
+              <MeaningText tr={option.text} en={option.sub} align="center" />
             </motion.button>
           );
         })}
@@ -129,6 +138,13 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
           <>
             <p className="brand-text text-lg font-bold">{spoken}</p>
             {example ? <p className="muted mt-1 text-xs italic">{example}</p> : null}
+            {/* Cümlenin çevirisi ancak cevaptan sonra: önce gösterilseydi
+                sorunun cevabını ele verirdi. */}
+            <SentenceTranslation
+              tr={exampleTr}
+              en={exampleEn}
+              className="muted mt-0.5 text-xs"
+            />
           </>
         ) : null}
       </div>

@@ -16,6 +16,7 @@ import type {
   RoundWord,
   SessionPayload,
   SessionProgress,
+  Option,
 } from "@/lib/types";
 
 const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"];
@@ -170,10 +171,12 @@ function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): RoundWord {
     de: w.de,
     artikel: w.artikel,
     tr: w.tr,
+    en: w.en,
     typ: w.typ,
     niveau: w.niveau,
     beispiel: w.beispiel,
     beispielTr: w.beispielTr,
+    beispielEn: w.beispielEn,
     formen: w.formen,
     isNew,
   };
@@ -470,6 +473,23 @@ export async function loadSession(
       .where(eq(sessionState.userId, userId));
     const rounds = saved?.rounds as Round[] | undefined;
     /**
+     * Kayıtlı tur bugünün biçiminde mi?
+     *
+     * Turlar jsonb olarak duruyor, yani şeması sürüm değiştirdiğinde eski
+     * satırlar olduğu gibi geri geliyor. Şıklar düz metinken iki dilli nesneye
+     * dönüştü; eski bir satır geri verilseydi oyun şıkları hiç çizemez ve
+     * kullanıcı boş bir turda kalırdı. Yarım kalan bir turu atmak, kırık bir
+     * turu göstermekten iyidir — bedeli tek bir turun baştan kurulması.
+     */
+    const currentShape =
+      !Array.isArray(rounds) ||
+      rounds.every((r) => {
+        if (r.game === "choice" || r.game === "listen")
+          return r.options.every((o) => typeof o === "object" && o !== null && "text" in o);
+        if (r.game === "truefalse") return typeof r.claim === "object" && r.claim !== null;
+        return true;
+      });
+    /**
      * Kayıtlı tur, istenen oyun moduna ait mi?
      *
      * Tek oyun seçiliyken yarım kalmış KARIŞIK turu vermek seçimi görmezden
@@ -485,6 +505,7 @@ export async function loadSession(
     if (
       saved &&
       matchesMode &&
+      currentShape &&
       saved.day === today &&
       saved.course === profile.course &&
       Array.isArray(rounds) &&
@@ -768,7 +789,7 @@ function makeRound(
     case "truefalse": {
       // Yarı yarıya doğru/yanlış: ne "hep doğru" ne "hep yanlış" ezberi kurulsun.
       const isTrue = Math.random() < 0.5;
-      const claim = isTrue ? word.tr : pickFalseClaim(word, pool);
+      const claim = isTrue ? { text: word.tr, sub: word.en } : pickFalseClaim(word, pool);
       if (!claim) return null;
       return { id: nextId(), game: "truefalse", word, claim, isTrue };
     }
@@ -798,6 +819,7 @@ function makeRound(
         answer: built.answer,
         tail: built.tail,
         sentenceTr: firstExample(word.beispielTr),
+        sentenceEn: firstExample(word.beispielEn),
       };
     }
     case "cloze": {
@@ -810,10 +832,13 @@ function makeRound(
         sentence: cloze.sentence,
         // Cümle ilk örnekten kurulduğu için çeviri de ilk parçadan alınır.
         sentenceTr: firstExample(word.beispielTr),
+        sentenceEn: firstExample(word.beispielEn),
         answer: cloze.answer,
+        // Bu turda şıklar Almanca biçimlerdir, anlam değil: ikinci dil satırı
+        // yok, çeldirici üreticisinden yalnızca metin alınıyor.
         options: shuffle([
           cloze.answer,
-          ...pickDistractors(word, pool, 3, (p) => p.de),
+          ...pickDistractors(word, pool, 3, (p) => ({ text: p.de, sub: null })).map((o) => o.text),
         ]),
       };
     }
@@ -904,41 +929,59 @@ function similarity(a: string, b: string): number {
   return prefix * 3 + suffix * 2 - lenPenalty;
 }
 
+/** Bir adayın ekranda göreceği iki satır — üstte karar satırı, altta İngilizce. */
+type Labeler = (p: {
+  de: string;
+  tr: string;
+  en: string | null;
+  artikel: string | null;
+}) => Option;
+
 /** Hedefe en çok benzeyen adaylardan rastgele `count` tane döndürür. */
 function pickDistractors(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
   count: number,
-  label: (p: { de: string; tr: string; artikel: string | null }) => string,
-): string[] {
+  label: Labeler,
+): Option[] {
   const target = label(word);
-  const seen = new Set([target]);
-  const scored: { text: string; score: number }[] = [];
+  const seen = new Set([target.text]);
+  const scored: { option: Option; score: number }[] = [];
 
   for (const p of pool) {
-    const text = label(p);
-    if (p.id === word.id || seen.has(text)) continue;
-    seen.add(text);
+    const option = label(p);
+    if (p.id === word.id || seen.has(option.text)) continue;
+    seen.add(option.text);
     const typBonus = p.typ === word.typ ? 6 : 0;
-    const trBonus = similarity(p.tr.split(",")[0], word.tr.split(",")[0]) / 2;
-    scored.push({ text, score: similarity(p.de, word.de) + typBonus + trBonus });
+    const trBonus = similarity(p.tr, word.tr) / 2;
+    scored.push({ option, score: similarity(p.de, word.de) + typBonus + trBonus });
   }
 
   scored.sort((a, b) => b.score - a.score);
   // En yakın 10 aday arasından rastgele seç: zorluk yüksek, tekrar eden şık yok.
   return shuffle(scored.slice(0, Math.max(count, 10)))
     .slice(0, count)
-    .map((c) => c.text);
+    .map((c) => c.option);
 }
 
-/** Bir maddenin virgülle ayrılmış anlamları, karşılaştırılabilir hâlde. */
-function meanings(tr: string): Set<string> {
-  return new Set(
-    tr
-      .split(",")
-      .map((m) => m.trim().toLocaleLowerCase("tr-TR"))
-      .filter(Boolean),
-  );
+/**
+ * Bir maddenin anlamları, karşılaştırılabilir hâlde.
+ *
+ * Kelime başına tek karşılık yazıldıktan sonra bu çoğu maddede tek elemanlı
+ * bir küme; virgüllü ayırma yine de duruyor çünkü havuz seviye seviye
+ * yenileniyor ve henüz sırası gelmemiş maddelerde eski çok anlamlı biçim
+ * geçerli. İngilizce de kümeye giriyor: Türkçesi aynı ama İngilizcesi farklı
+ * iki kelime ("öğrenci" = Schüler / Student) ikili kararda birbirinin doğru
+ * karşılığı sayılmamalı.
+ */
+function meanings(word: { tr: string; en: string | null }): Set<string> {
+  const out = new Set<string>();
+  for (const part of word.tr.split(",")) {
+    const m = part.trim().toLocaleLowerCase("tr-TR");
+    if (m) out.add(m);
+  }
+  if (word.en) out.add(word.en.trim().toLowerCase());
+  return out;
 }
 
 /**
@@ -956,34 +999,40 @@ function meanings(tr: string): Set<string> {
 function pickFalseClaim(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
-): string | null {
-  const own = meanings(word.tr);
-  const scored: { text: string; score: number }[] = [];
+): Option | null {
+  const own = meanings(word);
+  const scored: { option: Option; score: number }[] = [];
   const seen = new Set<string>([word.tr]);
 
   for (const p of pool) {
     if (p.id === word.id || seen.has(p.tr)) continue;
-    const other = meanings(p.tr);
+    const other = meanings(p);
     if ([...other].some((m) => own.has(m))) continue; // ortak anlam varsa iddia yanlış sayılamaz
     seen.add(p.tr);
     const typBonus = p.typ === word.typ ? 6 : 0;
-    scored.push({ text: p.tr, score: similarity(p.de, word.de) + typBonus });
+    scored.push({
+      option: { text: p.tr, sub: p.en },
+      score: similarity(p.de, word.de) + typBonus,
+    });
   }
   if (!scored.length) return null;
 
   scored.sort((a, b) => b.score - a.score);
-  return shuffle(scored.slice(0, 12))[0]?.text ?? null;
+  return shuffle(scored.slice(0, 12))[0]?.option ?? null;
 }
 
-/** Şıklar sorunun yönüne göre Türkçe ya da Almanca üretilir. */
+/** Şıklar sorunun yönüne göre iki dilli anlam ya da Almanca biçim olur. */
 function optionsFor(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
   direction: "de-tr" | "tr-de" = "de-tr",
-): string[] {
+): Option[] {
   // Almanca şıklarda artikel de görünür: "die Apotheke" kelimenin bir parçasıdır.
-  const label = (p: { de: string; tr: string; artikel: string | null }) =>
-    direction === "de-tr" ? p.tr : p.artikel ? `${p.artikel} ${p.de}` : p.de;
+  // O yönde ikinci satır yok — orada sorulan şey anlam değil, kelimenin kendisi.
+  const label: Labeler = (p) =>
+    direction === "de-tr"
+      ? { text: p.tr, sub: p.en }
+      : { text: p.artikel ? `${p.artikel} ${p.de}` : p.de, sub: null };
   return shuffle([label(word), ...pickDistractors(word, pool, 3, label)]);
 }
 

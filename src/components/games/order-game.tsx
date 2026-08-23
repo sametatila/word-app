@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, speakThen, SpeakButton } from "@/components/speak-button";
 
@@ -26,7 +27,7 @@ type Token = { id: number; text: string };
  * yuvayla çizilir. Böylece dokunulacak hedef tur boyunca sabit kalır.
  */
 export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
-  const { word, tokens, answer, tail, sentenceTr } = round;
+  const { word, tokens, answer, tail, sentenceTr, sentenceEn } = round;
 
   const pool = useMemo<Token[]>(() => tokens.map((text, id) => ({ id, text })), [tokens]);
   const [placed, setPlaced] = useState<Token[]>([]);
@@ -126,8 +127,21 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   return (
     <GameShell
       label="Cümleyi Diz"
-      prompt={<span className="brand-text text-xl font-bold sm:text-2xl">{word.tr}</span>}
-      hint={sentenceTr ? <span className="italic">{sentenceTr}</span> : undefined}
+      prompt={
+        <span className="brand-text text-xl font-bold sm:text-2xl">
+          {word.tr}
+          {word.en ? (
+            <span className="block text-sm font-normal opacity-60" lang="en">
+              {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
+      hint={
+        sentenceTr || sentenceEn ? (
+          <SentenceTranslation tr={sentenceTr} en={sentenceEn} className="italic" />
+        ) : undefined
+      }
     >
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6">
         {/* Cevap alanı — yuva sayısı sabit, konumlar oynamaz */}

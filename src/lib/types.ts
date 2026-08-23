@@ -51,20 +51,48 @@ export type RoundWord = {
   id: number;
   de: string;
   artikel: string | null;
+  /** Kelimenin tek doğal Türkçe karşılığı. */
   tr: string;
+  /**
+   * Aynı kelimenin tek doğal İngilizce karşılığı.
+   *
+   * Ekranda Türkçenin altında duruyor ve yalnızca ikinci bir çeviri değil, bir
+   * ayırt edici: Türkçede birbirine çöken kelimeler burada ayrışıyor
+   * (er/sie/es üçü de "o", ama he/she/it). Bu yüzden veri tarafında
+   * parantezli açıklamalara gerek kalmadı.
+   *
+   * Null olabilir: yenileme seviye seviye ilerliyor ve henüz sırası gelmemiş
+   * kelimeler İngilizcesiz kalıyor. Arayüz bu durumda tek satır gösteriyor.
+   */
+  en: string | null;
   typ: string;
   niveau: string;
   beispiel: string | null;
   /** Örnek cümlenin doğal Türkçe çevirisi (varsa). */
   beispielTr: string | null;
+  /** Aynı cümlenin doğal İngilizce çevirisi (varsa). */
+  beispielEn: string | null;
   formen: string | null;
   isNew: boolean;
 };
 
+/**
+ * Çoktan seçmeli bir şık.
+ *
+ * İki satır: `text` kararın verildiği satır, `sub` altındaki küçük satır.
+ * Anlam sorulan turlarda `text` Türkçe, `sub` İngilizcedir; Almanca biçimin
+ * sorulduğu turlarda `sub` boştur — orada ikinci bir dil yoktur, kelimenin
+ * kendisi vardır.
+ *
+ * Şıkların düz metin yerine nesne olmasının sebebi eşitlik: doğru cevap
+ * `text` üzerinden karşılaştırılıyor, İngilizce satır kararın parçası değil.
+ */
+export type Option = { text: string; sub: string | null };
+
 export type Round =
   | { id: string; game: "intro"; word: RoundWord }
   | { id: string; game: "match"; words: RoundWord[] }
-  | { id: string; game: "choice"; word: RoundWord; options: string[]; direction: "de-tr" | "tr-de" }
+  | { id: string; game: "choice"; word: RoundWord; options: Option[]; direction: "de-tr" | "tr-de" }
   | { id: string; game: "artikel"; word: RoundWord }
   | {
       id: string;
@@ -73,6 +101,8 @@ export type Round =
       sentence: string;
       /** Cümlenin Türkçe çevirisi — seçim yaparken bağlamı anlamayı kolaylaştırır. */
       sentenceTr: string | null;
+      /** Aynı cümlenin İngilizce çevirisi. */
+      sentenceEn: string | null;
       answer: string;
       options: string[];
     }
@@ -89,6 +119,7 @@ export type Round =
       /** Cümle sonundaki noktalama ayrı durur: son kelimeyi ele vermesin. */
       tail: string;
       sentenceTr: string | null;
+      sentenceEn: string | null;
     }
   | {
       id: string;
@@ -102,15 +133,15 @@ export type Round =
       id: string;
       game: "listen";
       word: RoundWord;
-      /** Türkçe şıklar; doğru cevap kelimenin kendi karşılığıdır. */
-      options: string[];
+      /** İki dilli şıklar; doğru cevap kelimenin kendi karşılığıdır. */
+      options: Option[];
     }
   | {
       id: string;
       game: "truefalse";
       word: RoundWord;
       /** Öne sürülen anlam — kelimenin kendi karşılığı ya da başka bir kelimenin. */
-      claim: string;
+      claim: Option;
       isTrue: boolean;
     };
 
@@ -132,7 +163,7 @@ export type SessionProgress = {
 };
 
 /** Oturum özetinde gösterilen, o turda yanlış bilinen kelime. */
-export type MissedWord = { id: number; de: string; tr: string };
+export type MissedWord = { id: number; de: string; tr: string; en: string | null };
 
 export type SessionPayload = {
   rounds: Round[];

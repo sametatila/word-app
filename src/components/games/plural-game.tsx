@@ -68,7 +68,18 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
           <SpeakButton text={`${word.artikel ?? ""} ${word.de}`.trim()} size="sm" />
         </span>
       }
-      hint={`${word.tr} — çoğulu hangisi?`}
+      hint={
+        <span>
+          {word.tr}
+          {word.en ? (
+            <span className="opacity-60" lang="en">
+              {" "}
+              · {word.en}
+            </span>
+          ) : null}{" "}
+          — çoğulu hangisi?
+        </span>
+      }
     >
       <div className="grid grid-cols-2 gap-3">
         {options.map((option, i) => {

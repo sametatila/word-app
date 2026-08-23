@@ -111,13 +111,18 @@ async function main() {
   check("choice şıkları 4 adet ve doğru cevabı içeriyor",
     s1.rounds.filter((r) => r.game === "choice").every((r) =>
       r.game === "choice" && r.options.length === 4 &&
-      r.options.includes(
+      r.options.some((o) => o.text === (
         r.direction === "de-tr"
           ? r.word.tr
           : r.word.artikel
             ? `${r.word.artikel} ${r.word.de}`
-            : r.word.de,
-      )));
+            : r.word.de
+      ))));
+  // Anlam sorulan yönde şık iki dillidir; Almanca sorulan yönde ikinci satır
+  // olmamalı — orada sorulan şey anlam değil, kelimenin kendisi.
+  check("tr-de yönünde şıklarda ikinci dil satırı yok",
+    s1.rounds.filter((r) => r.game === "choice" && r.direction === "tr-de").every((r) =>
+      r.game === "choice" && r.options.every((o) => o.sub === null)));
 
   console.log("\n3) Cevapların kaydı ve SRS");
   const a1 = answersFor(s1.rounds, 1);
@@ -1361,7 +1366,7 @@ async function main() {
   }
   check("ikili karar turu üretiliyor", tfRounds.length > 0, `(${tfRounds.length})`);
   check("doğru iddia kelimenin kendi karşılığı",
-    tfRounds.filter((r) => r.isTrue).every((r) => r.claim === r.word.tr));
+    tfRounds.filter((r) => r.isTrue).every((r) => r.claim.text === r.word.tr));
   // Asıl adalet kuralı: yanlış iddia, kelimenin geçerli bir anlamı olmamalı.
   const meaningsOf = (tr: string) =>
     new Set(tr.split(",").map((m) => m.trim().toLocaleLowerCase("tr-TR")).filter(Boolean));
@@ -1369,7 +1374,7 @@ async function main() {
     "yanlış iddia kelimenin başka bir anlamı değil",
     tfRounds
       .filter((r) => !r.isTrue)
-      .every((r) => ![...meaningsOf(r.claim)].some((m) => meaningsOf(r.word.tr).has(m))),
+      .every((r) => ![...meaningsOf(r.claim.text)].some((m) => meaningsOf(r.word.tr).has(m))),
   );
   const trueCount = tfRounds.filter((r) => r.isTrue).length;
   check("doğru ve yanlış iddialar karışık geliyor",
@@ -1397,10 +1402,11 @@ async function main() {
   check("ses turu üretiliyor", listenRound !== null);
   if (listenRound) {
     check("dört şık var", listenRound.options.length === 4, `(${listenRound.options.length})`);
-    check("doğru karşılık şıklarda", listenRound.options.includes(listenRound.word.tr));
+    check("doğru karşılık şıklarda",
+      listenRound.options.some((o) => o.text === listenRound!.word.tr));
     check("şıklar Türkçe (Almanca biçim sızmıyor)",
-      !listenRound.options.includes(listenRound.word.de),
-      `(${listenRound.options.join(", ")})`);
+      !listenRound.options.some((o) => o.text === listenRound!.word.de),
+      `(${listenRound.options.map((o) => o.text).join(", ")})`);
   }
 
   console.log("\n11f) Çoğul Bilmece turu");
@@ -1471,7 +1477,7 @@ async function main() {
     correct: 2,
     total: 3,
     xp: 26,
-    missed: [{ id: 1, de: "das Haus", tr: "ev" }],
+    missed: [{ id: 1, de: "das Haus", tr: "ev", en: "house" }],
   });
   const browser2 = await loadSession(USER, dayS);
   check("diğer cihaz kaldığı turdan devam ediyor", browser2.resume?.index === 3);

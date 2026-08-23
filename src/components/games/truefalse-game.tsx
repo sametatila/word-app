@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { MeaningText } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
 import { speakGerman, SpeakButton } from "@/components/speak-button";
@@ -77,7 +78,9 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
           <span className="muted text-xs uppercase tracking-wide">demek</span>
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
         </div>
-        <p className="text-xl font-semibold sm:text-2xl">{claim}</p>
+        <div className="flex justify-center font-semibold">
+          <MeaningText tr={claim.text} en={claim.sub} size="lg" align="center" />
+        </div>
       </motion.div>
 
       <div className="mx-auto mt-6 grid w-full max-w-md grid-cols-2 gap-3">
@@ -111,6 +114,12 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
           <p className="muted">
             {withArtikel(word)} ={" "}
             <strong className="text-[color:var(--color-mint-500)]">{word.tr}</strong>
+            {word.en ? (
+              <span className="opacity-60" lang="en">
+                {" "}
+                · {word.en}
+              </span>
+            ) : null}
           </p>
         ) : null}
       </div>

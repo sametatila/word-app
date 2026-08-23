@@ -6,16 +6,19 @@ import { motion } from "framer-motion";
 import { SpeakButton } from "@/components/speak-button";
 import { grammarNote, typLabel } from "@/components/games/types";
 import { firstExample } from "@/lib/example";
+import { SentenceTranslation } from "@/components/meaning-text";
 
 export type WordRow = {
   id: number;
   de: string;
   artikel: string | null;
   tr: string;
+  en: string | null;
   typ: string;
   niveau: string;
   beispiel: string | null;
   beispielTr: string | null;
+  beispielEn: string | null;
   formen: string | null;
   intervalDays: number | null;
   dueAt: string | null;
@@ -121,7 +124,7 @@ export function WordList({
         <input
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          placeholder="Almanca veya Türkçe ara…"
+          placeholder="Almanca, Türkçe veya İngilizce ara…"
           className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand-400)]"
         />
         <div className="flex flex-wrap items-center gap-2">
@@ -161,6 +164,7 @@ export function WordList({
             const note = grammarNote({ ...r, isNew: false });
             const example = firstExample(r.beispiel);
             const exampleTr = firstExample(r.beispielTr);
+            const exampleEn = firstExample(r.beispielEn);
             return (
               <motion.li
                 key={r.id}
@@ -180,7 +184,18 @@ export function WordList({
                       ) : null}
                       {r.de}
                     </p>
-                    <p className="muted truncate text-sm">{r.tr}</p>
+                    <p className="muted truncate text-sm">
+                      {r.tr}
+                      {/* İngilizce aynı satırda, ayraçla: liste satırı zaten
+                          iki satır (Almanca + karşılık); üçüncü satır listeyi
+                          taramayı zorlaştırırdı. */}
+                      {r.en ? (
+                        <span className="opacity-60" lang="en">
+                          {" "}
+                          · {r.en}
+                        </span>
+                      ) : null}
+                    </p>
                   </div>
                   <span className="shrink-0 text-xs font-semibold" style={{ color: st.tone }}>
                     {st.label}
@@ -205,7 +220,11 @@ export function WordList({
                     {example ? (
                       <>
                         <p className="muted mt-2 italic">{example}</p>
-                        {exampleTr ? <p className="muted mt-0.5 text-sm">{exampleTr}</p> : null}
+                        <SentenceTranslation
+                          tr={exampleTr}
+                          en={exampleEn}
+                          className="muted mt-0.5 text-sm"
+                        />
                       </>
                     ) : null}
                     <p className="muted mt-2 text-xs">

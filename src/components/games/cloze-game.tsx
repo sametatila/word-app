@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
+import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakThen } from "@/components/speak-button";
 
@@ -19,7 +20,7 @@ const WRONG_TAIL_MS = 900;
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
 export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
-  const { word, sentence, sentenceTr, answer, options } = round;
+  const { word, sentence, sentenceTr, sentenceEn, answer, options } = round;
   const [before, after] = sentence.split("_____");
 
   const [picked, setPicked] = useState<string | null>(null);
@@ -101,7 +102,11 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
         </span>
       }
       /* Cümlenin çevirisi baştan gösterilir: bağlamı anlamak seçimi kolaylaştırır. */
-      hint={sentenceTr ? <span className="italic">{sentenceTr}</span> : undefined}
+      hint={
+        sentenceTr || sentenceEn ? (
+          <SentenceTranslation tr={sentenceTr} en={sentenceEn} className="italic" />
+        ) : undefined
+      }
     >
       <div className="grid grid-cols-2 gap-3">
         {options.map((opt, i) => {
@@ -130,6 +135,12 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
         {picked ? (
           <p className="muted">
             <strong className="text-[color:var(--color-mint-500)]">{answer}</strong> — {word.tr}
+            {word.en ? (
+              <span className="opacity-60" lang="en">
+                {" "}
+                · {word.en}
+              </span>
+            ) : null}
           </p>
         ) : null}
       </div>

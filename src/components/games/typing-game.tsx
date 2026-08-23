@@ -123,7 +123,16 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   return (
     <GameShell
       label="Yazarak Hatırla"
-      prompt={<span className="brand-text text-2xl font-bold sm:text-3xl">{word.tr}</span>}
+      prompt={
+        <span className="brand-text text-2xl font-bold sm:text-3xl">
+          {word.tr}
+          {word.en ? (
+            <span className="block text-base font-normal opacity-60" lang="en">
+              {word.en}
+            </span>
+          ) : null}
+        </span>
+      }
       hint={
         <div className="flex items-center justify-center gap-2">
           <span className="surface-2 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">

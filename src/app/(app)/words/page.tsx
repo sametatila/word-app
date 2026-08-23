@@ -37,7 +37,9 @@ export default async function WordsPage({
   }
   if (q) {
     const like = `%${q}%`;
-    const cond = or(ilike(words.de, like), ilike(words.tr, like));
+    // Arama İngilizceyi de kapsıyor: kelimeyi "table" diye arayan biri
+    // Türkçesini bilmek zorunda kalmasın.
+    const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like));
     if (cond) filters.push(cond);
   }
   if (level) filters.push(eq(words.niveau, level));
@@ -53,10 +55,12 @@ export default async function WordsPage({
         de: words.de,
         artikel: words.artikel,
         tr: words.tr,
+        en: words.en,
         typ: words.typ,
         niveau: words.niveau,
         beispiel: words.beispiel,
         beispielTr: words.beispielTr,
+        beispielEn: words.beispielEn,
         formen: words.formen,
         intervalDays: userWords.intervalDays,
         dueAt: userWords.dueAt,
@@ -82,10 +86,12 @@ export default async function WordsPage({
       de: r.de,
       artikel: r.artikel,
       tr: r.tr,
+      en: r.en,
       typ: r.typ,
       niveau: r.niveau,
       beispiel: r.beispiel,
       beispielTr: r.beispielTr,
+      beispielEn: r.beispielEn,
       formen: r.formen,
       intervalDays: r.intervalDays,
       dueAt: r.dueAt ? r.dueAt.toISOString() : null,

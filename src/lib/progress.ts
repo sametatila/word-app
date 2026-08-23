@@ -27,7 +27,14 @@ export function parseProgress(value: unknown): SessionProgress | null {
       const m = raw as Record<string, unknown>;
       if (typeof m.id !== "number" || !Number.isInteger(m.id)) continue;
       if (typeof m.de !== "string" || typeof m.tr !== "string") continue;
-      missed.push({ id: m.id, de: m.de.slice(0, 120), tr: m.tr.slice(0, 200) });
+      missed.push({
+        id: m.id,
+        de: m.de.slice(0, 120),
+        tr: m.tr.slice(0, 200),
+        // İngilizce sonradan eklendi: eski kayıtlarda yok ve olmaması bir
+        // hata değil, yalnızca tek satır gösterilmesi demek.
+        en: typeof m.en === "string" ? m.en.slice(0, 200) : null,
+      });
     }
   }
 

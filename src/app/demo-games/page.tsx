@@ -13,78 +13,91 @@ import { PluralGame } from "@/components/games/plural-game";
 import { ListenGame } from "@/components/games/listen-game";
 import { TrueFalseGame } from "@/components/games/truefalse-game";
 
-const w = (id: number, de: string, artikel: string | null, tr: string): RoundWord => ({
+const w = (
+  id: number,
+  de: string,
+  artikel: string | null,
+  tr: string,
+  en: string,
+): RoundWord => ({
   id,
   de,
   artikel,
   tr,
+  en,
   typ: artikel ? "Nomen" : "Verb",
   niveau: "A1",
   beispiel: `Ich sehe ${de} jeden Tag.`,
   beispielTr: `Her gün ${tr} görüyorum.`,
+  beispielEn: `I see the ${en} every day.`,
   formen: artikel ? "-e" : "hat gemacht",
   isNew: false,
 });
 
+/** İki dilli şık kısaltması — demo turlarını okunur tutar. */
+const o = (text: string, sub: string | null = null) => ({ text, sub });
+
 const ROUNDS: Round[] = [
-  { id: "d1", game: "intro", word: w(1, "Frühstück", "das", "kahvaltı") },
+  { id: "d1", game: "intro", word: w(1, "Frühstück", "das", "kahvaltı", "breakfast") },
   {
     id: "d2",
     game: "choice",
-    word: w(2, "Bahnhof", "der", "tren istasyonu"),
-    options: ["tren istasyonu", "kitap", "pencere", "kahvaltı"],
+    word: w(2, "Bahnhof", "der", "tren istasyonu", "train station"),
+    options: [o("tren istasyonu", "train station"), o("kitap", "book"), o("pencere", "window"), o("kahvaltı", "breakfast")],
     direction: "de-tr",
   },
   {
     id: "d3",
     game: "match",
     words: [
-      w(3, "Haus", "das", "ev"),
-      w(4, "Buch", "das", "kitap"),
-      w(5, "Straße", "die", "cadde"),
-      w(6, "Wasser", "das", "su"),
-      w(7, "Tür", "die", "kapı"),
+      w(3, "Haus", "das", "ev", "house"),
+      w(4, "Buch", "das", "kitap", "book"),
+      w(5, "Straße", "die", "cadde", "street"),
+      w(6, "Wasser", "das", "su", "water"),
+      w(7, "Tür", "die", "kapı", "door"),
     ],
   },
-  { id: "d4", game: "artikel", word: w(8, "Fenster", "das", "pencere") },
-  { id: "d5", game: "scramble", word: w(9, "Schlüssel", "der", "anahtar") },
-  { id: "d6", game: "typing", word: w(10, "arbeiten", null, "çalışmak"), alternatives: ["schaffen"] },
+  { id: "d4", game: "artikel", word: w(8, "Fenster", "das", "pencere", "window") },
+  { id: "d5", game: "scramble", word: w(9, "Schlüssel", "der", "anahtar", "key") },
+  { id: "d6", game: "typing", word: w(10, "arbeiten", null, "çalışmak", "to work"), alternatives: ["schaffen"] },
   {
     id: "d7",
     game: "cloze",
-    word: w(11, "Zug", "der", "tren"),
+    word: w(11, "Zug", "der", "tren", "train"),
     sentence: "Der _____ fährt um acht Uhr ab.",
     sentenceTr: "Tren saat sekizde kalkıyor.",
+    sentenceEn: "The train leaves at eight.",
     answer: "Zug",
     options: ["Zug", "Hund", "Tisch", "Baum"],
   },
   {
     id: "d8",
     game: "order",
-    word: w(12, "Bahnhof", "der", "tren istasyonu"),
+    word: w(12, "Bahnhof", "der", "tren istasyonu", "train station"),
     tokens: ["am", "Ich", "dich", "hole", "Bahnhof"],
     answer: ["Ich", "hole", "dich", "am", "Bahnhof"],
     tail: ".",
     sentenceTr: "Seni tren istasyonundan alacağım.",
+    sentenceEn: "I'll pick you up at the train station.",
   },
   {
     id: "d9",
     game: "plural",
-    word: w(13, "Arzt", "der", "doktor"),
+    word: w(13, "Arzt", "der", "doktor", "doctor"),
     answer: "Ärzte",
     options: ["Ärzte", "Ärzten", "Arzt", "Ärzter"],
   },
   {
     id: "d10",
     game: "listen",
-    word: w(14, "Schlüssel", "der", "anahtar"),
-    options: ["anahtar", "kapı", "pencere", "masa"],
+    word: w(14, "Schlüssel", "der", "anahtar", "key"),
+    options: [o("anahtar", "key"), o("kapı", "door"), o("pencere", "window"), o("masa", "table")],
   },
   {
     id: "d11",
     game: "truefalse",
-    word: w(15, "Fenster", "das", "pencere"),
-    claim: "kapı",
+    word: w(15, "Fenster", "das", "pencere", "window"),
+    claim: o("kapı", "door"),
     isTrue: false,
   },
 ];

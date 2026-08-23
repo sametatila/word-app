@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
+import { MeaningText } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
 import { speakGerman } from "@/components/speak-button";
 
 type MatchRound = Extract<Round, { game: "match" }>;
 
-type RightItem = { wordId: number; tr: string };
+type RightItem = { wordId: number; tr: string; en: string | null };
 
 export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const { words } = round;
@@ -28,7 +29,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const doneRef = useRef(false);
 
   useEffect(() => {
-    setRightItems(shuffle(words.map((w) => ({ wordId: w.id, tr: w.tr }))));
+    setRightItems(shuffle(words.map((w) => ({ wordId: w.id, tr: w.tr, en: w.en }))));
     setSelectedLeft(null);
     setSelectedRightIdx(null);
     setMatched(new Set());
@@ -153,11 +154,11 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
                 transition={{ delay: i * 0.05, duration: 0.28 }}
                 disabled={isMatched}
                 onClick={() => chooseRight(i)}
-                className={`option min-h-14 px-3 py-3 text-left text-sm font-semibold sm:text-base ${state} ${
+                className={`option min-h-14 px-3 py-3 text-left font-semibold ${state} ${
                   isWrong ? "animate-shake" : ""
                 }`}
               >
-                {item.tr}
+                <MeaningText tr={item.tr} en={item.en} size="sm" />
               </motion.button>
             );
           })}
