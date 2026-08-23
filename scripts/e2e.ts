@@ -61,7 +61,8 @@ import {
   recordBossClear,
 } from "../src/lib/lessons/boss";
 import { buildShareText } from "../src/components/share-result";
-import { achievements, events, moduleClears } from "../src/lib/db/schema";
+import { achievements, aiUsage, events, moduleClears } from "../src/lib/db/schema";
+import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
 
 const USER = "e2e-user";
@@ -98,6 +99,7 @@ async function reset() {
   // kayıtlar ve ikinci koşuda önceki koşunun sonucunu "zaten açık" diye
   // görüp testleri sessizce yanıltıyorlardı.
   await db.delete(achievements).where(eq(achievements.userId, USER));
+  await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
   await db.delete(moduleClears).where(eq(moduleClears.userId, USER));
   await db.delete(events).where(eq(events.userId, USER));
   await db.delete(reviews).where(eq(reviews.userId, USER));
@@ -1852,7 +1854,53 @@ async function main() {
     `(${foldTurkish("Şİmdİlİk ÇOĞU")})`);
   check("noktalama düşüyor", foldTurkish("Evet, devam!") === "evet devam");
 
-  console.log("\n24) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n24) AI muhasebesi — başarısız denemeler de yazılıyor");
+  await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
+
+  recordAiUsage(USER, {
+    kind: "roleplay", provider: "mistral", model: "mistral-medium-latest",
+    ok: true, status: 200, ms: 840, promptTokens: 420, completionTokens: 180,
+    limits: { "x-ratelimit-remaining-requests": "48" },
+  });
+  recordAiUsage(USER, {
+    kind: "stt", provider: "groq", model: "whisper-large-v3-turbo",
+    ok: false, status: 429, ms: 120, error: "rate limit exceeded", audioSeconds: 4,
+  });
+  // Yazma bilerek beklenmiyor (muhasebe, muhasebesi tutulan işi bekletmemeli);
+  // testin okumadan önce kısa bir soluk alması gerekiyor.
+  await new Promise((r) => setTimeout(r, 400));
+
+  const usage = await db.select().from(aiUsage).where(eq(aiUsage.userId, USER));
+  check("iki çağrı da yazıldı", usage.length === 2, `(${usage.length})`);
+  const okRow = usage.find((u) => u.ok);
+  const failRow = usage.find((u) => !u.ok);
+  check("başarılı çağrı jetonları taşıyor", okRow?.promptTokens === 420 && okRow?.completionTokens === 180);
+  check("kalan hak başlığı saklandı", okRow?.limits?.["x-ratelimit-remaining-requests"] === "48");
+  check("gecikme yazıldı", okRow?.ms === 840);
+  // Asıl mesele bu: düşen sağlayıcı zincirde sessizce atlanıyor, kaydedilmezse
+  // hiç olmamış gibi duruyor.
+  check("BAŞARISIZ deneme de yazıldı", failRow !== undefined);
+  check("hata durumu ve metni var", failRow?.status === 429 && failRow?.error === "rate limit exceeded");
+  check("ses saniyesi yazıldı", failRow?.audioSeconds === 4);
+  check("iş türü ayrışıyor", new Set(usage.map((u) => u.kind)).size === 2);
+  check("gün alanı dolu", usage.every((u) => Boolean(u.day)));
+
+  // Uzun hata metni kısaltılıyor: ayıklamaya yeter, tabloyu şişirmez.
+  recordAiUsage(USER, {
+    kind: "coach", provider: "groq", model: "x", ok: false, error: "e".repeat(900),
+  });
+  await new Promise((r) => setTimeout(r, 400));
+  const longError = (await db.select().from(aiUsage).where(eq(aiUsage.userId, USER)))
+    .find((u) => u.kind === "coach");
+  check(
+    "uzun hata kısaltıldı",
+    (longError?.error?.length ?? 0) <= 300,
+    `(${longError?.error?.length})`,
+  );
+
+  await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
+
+  console.log("\n25) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);

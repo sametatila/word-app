@@ -258,7 +258,7 @@ npm run test:seed
 npm run test:e2e
 ```
 
-E2E testi (526 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
+E2E testi (536 kontrol) oturum kurgusunu, SRS zamanlamasını, yanlış cevap davranışını, streak
 mantığını, sıklık sıralamasını, eşanlamlı kabulünü, "zaten biliyorum" akışını, bahsin puan
 sınırlarını, haftalık sıralamanın pencere hesabını, rozetlerin geriye dönük açılmasını,
 tohumlu karıştırmanın kararlılığını, hatırlatma metinlerinin sırasını, modül sınavının
@@ -294,6 +294,7 @@ src/
     sfx.ts                  oyun sesleri (WebAudio; dosya yok, tonlar yerinde üretilir)
     achievements.ts         41 rozetin tanımı + mevcut tablolardan geriye dönük hesabı
     events.ts / track.ts    ürün olayları (sunucu yazımı / istemci göndericisi)
+    ai-usage.ts             AI çağrılarının muhasebesi (hatalar dâhil)
     xp.ts                   XP tablosu + bahis kuralı (tek referans noktası)
     lessons/characters.ts   rol yapma kadrosu — isimler katalog sırasından türer
     lessons/boss.ts         modül sınavı: ders kelimelerinden süreli tur + geçme kaydı
@@ -558,6 +559,13 @@ Yazıya çevirme `/api/stt` üzerinden, OpenAI uyumlu `audio/transcriptions` ucu
 **groq** (`whisper-large-v3-turbo`), sonra **mistral** (`voxtral-mini-latest`). Hiçbiri
 yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor — o da çalışıyor ama ekranın
 açık kalmasını istiyor ve arayüz bunu söylüyor.
+
+Her AI çağrısı — **başarısız denemeler dâhil** — `ai_usage` tablosuna yazılıyor: iş türü
+(roleplay · coach · stt), sağlayıcı, model, HTTP durumu, gecikme, jeton sayısı, ses saniyesi ve
+sağlayıcının bildirdiği kalan hak. Hatalar özellikle önemli, çünkü zincir düşen sağlayıcıyı
+sessizce atlıyor: her istekte 429 alan bir birincil, yalnızca başarıya bakan bir raporda "hiç
+kullanılmıyor" gibi görünür — oysa her seferinde bir gidiş dönüş ve bir kullanıcı gecikmesi
+harcar. `npm run report:providers` hepsini okuyor.
 
 **Ücretsiz katman yeter mi?** Bağlayıcı sınır jeton değil, istek sayısı. Groq'un ücretsiz
 katmanı günde **2.000 istek · 28.800 saniye ses**; bir yürüyüş turu ~22 cevap ve ~77 saniye

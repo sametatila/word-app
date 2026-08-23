@@ -127,28 +127,6 @@ async function main() {
     }
   }
 
-  // ── Yazıya çevirme kullanımı ───────────────────────────────────────
-  // Ücretsiz katmanların bağlayıcı sınırı jeton değil İSTEK SAYISI. Groq'un
-  // ücretsiz katmanı günde 2.000 istek ve 28.800 saniye ses; burada günlük
-  // en yüksek kullanım ikisiyle birlikte gösteriliyor ki limite ne kadar
-  // yaklaşıldığı 429 gelmeden görülsün.
-  const stt = (await sql`
-    select day::text as gun, count(*)::int as istek, sum(value)::int as saniye
-    from events where name = 'stt_call' and day >= current_date - ${days}::int
-    group by 1 order by istek desc limit 5
-  `) as Row[];
-  if (stt.length) {
-    console.log("\nSesli cevap · yazıya çevirme (günün en yoğunları)");
-    console.log("  gün          istek / 2.000    ses sn / 28.800");
-    for (const r of stt) {
-      const i = Number(r.istek), sec = Number(r.saniye ?? 0);
-      console.log(
-        `  ${r.gun}   ${String(i).padStart(5)} (%${Math.round((i / 2000) * 100)})` +
-          `      ${String(sec).padStart(6)} (%${Math.round((sec / 28800) * 100)})`,
-      );
-    }
-  }
-
   // ── Günlük etkinlik ────────────────────────────────────────────────
   const daily = (await sql`
     select day::text as day, count(*)::int as n, count(distinct user_id)::int as people
