@@ -17,28 +17,30 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
  * veriliyor — küçültülmüş ama yine de kesik bir ekran, tam boyutlu ama
  * kaydırılabilir bir ekrandan kötü.
  *
- * ## İçerik neden tam ortada değil
+ * ## Boşluğu kim paylaştırıyor
  *
- * Artan boşluk telefonda eşit paylaşılmıyor: dörtte üçü üste, dörtte biri alta
- * gidiyor. Sebep tek elle kullanım. Telefon tek elle tutulurken başparmağın
- * rahat ulaştığı alan ekranın alt yarısı; dikey ortalanmış bir oyun kartında
- * şıklar ekranın tam ortasında duruyor ve üsttekilere uzanmak için ya elin
- * kayması ya ikinci elin gerekmesi gerekiyordu. Oysa oyun ekranı baştan sona
- * dokunmaktan ibaret — okunacak tek şey soru, dokunulacak şey ise şıkların
- * hepsi.
+ * Telefonda artan boşluk BURADA paylaştırılmıyor — içeriğe bırakılıyor. Oyun
+ * kartı kendi içinde okuma ve dokunma bölgelerine ayrılıyor ve boşluğu o iki
+ * bölge arasında dağıtıyor (bkz. games/game-shell). Bunun için içeriğin kalan
+ * alanı GÖRMESİ gerekiyor: iç kutuya `min-height: 100%` veriliyor.
  *
- * Tamamen alta yapıştırmak yerine altta bir pay bırakılıyor: alt gezinme
- * çubuğuna değen bir şık, cevap verirken sekme değiştirme riski demek.
+ * `min-height` — `flex-1` DEĞİL, ve fark ölçümde. Esneyen bir kutu her zaman
+ * alan boyunda olur; içerik taşsa bile kutunun kendi yüksekliği değişmez ve
+ * `scrollHeight` "tam sığıyor" demeye devam eder. Denendi: küçük ekranlarda
+ * küçültme hiç devreye girmiyor, şıklar sessizce kırpılıyordu — 320×480'de
+ * dört şıkkın üçü ekran dışında kalıyordu. `min-height` ise yalnızca ALT
+ * sınır koyuyor: içerik sığıyorsa kutu alanı dolduruyor (kart boşluğu
+ * paylaştırabiliyor), taşıyorsa kutu içerikle birlikte büyüyor ve ölçüm
+ * taşmayı olduğu gibi görüyor.
  *
- * `md`den itibaren (tablet/masaüstü) ortalamaya dönülüyor: orada ulaşım diye
- * bir sorun yok, imleç her yere aynı uzaklıkta ve alta itilmiş bir kart
- * yalnızca dengesiz görünürdü.
+ * `md`den itibaren bu alt sınır kalkıyor: kutu yine içerik boyunda ve
+ * `justify-center` ile ortalanıyor. Masaüstünde ulaşım diye bir sorun yok,
+ * ikiye bölünmüş bir kart yalnızca dağınık görünürdü.
  *
- * Boşluk `justify-*` ile değil, iki esneyen boşluk öğesiyle paylaşılıyor.
- * Sebebi taşma hâli: içerik sığmayıp küçültüldüğünde ölçek dönüşümü kutunun
- * MERKEZİNDEN uygulanıyor ve doğru görünmesi için kutunun da ortalanmış olması
- * gerekiyor. Esneyen boşluklar yalnızca artı boşluk varken büyüyor; boşluk
- * eksiye düştüğünde sıfırlanıp sahneyi `justify-center`e bırakıyorlar.
+ * Küçültme kutunun TEPESİNDEN uygulanıyor. Ortadan uygulamak yalnızca kutu da
+ * ortalanmışken doğru sonuç veriyor; alanı dolduran kutu ortalanmıyor. Bu
+ * yüzden küçültme devredeyken hizalama da başa alınıyor. İki durumda da sonuç
+ * aynı: küçültülmüş içerik alanın tam üstünden başlayıp tam altında bitiyor.
  */
 export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: number }) {
   const outer = useRef<HTMLDivElement>(null);
@@ -92,24 +94,25 @@ export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: nu
     <div
       ref={outer}
       className={`flex min-h-0 flex-1 flex-col ${
-        scrolls ? "overflow-y-auto overscroll-contain" : "justify-center overflow-hidden"
-      }`}
+        scrolls ? "overflow-y-auto overscroll-contain" : "overflow-hidden"
+      } ${scale < 1 ? "justify-start" : "justify-center"}`}
     >
-      {/* Üstteki boşluk alttakinin üç katı: içerik başparmağın ulaştığı yere
-          iniyor. Kaydırma moduna geçildiğinde boşluk paylaşımı anlamsız —
-          orada içerik zaten ekrandan taşıyor. */}
-      {scrolls ? null : <div aria-hidden className="grow-[3] md:grow" />}
       <div
         ref={inner}
+        // `shrink-0` şart: açık bir `min-height` yazmak, esnek kutunun içeriğin
+        // altına inmesini engelleyen otomatik en-az-boyutu devre dışı bırakıyor.
+        // Onsuz kutu alan boyuna kadar EZİLİYOR, içerik sessizce taşıyor ve
+        // `scrollHeight` yine "tam sığıyor" diyor — küçültme hiç devreye
+        // girmiyordu.
+        className="flex min-h-full shrink-0 flex-col md:min-h-0"
         style={{
           transform: scale < 1 ? `scale(${scale})` : undefined,
-          transformOrigin: "center center",
+          transformOrigin: "top center",
           transition: "transform .2s ease-out",
         }}
       >
         {children}
       </div>
-      {scrolls ? null : <div aria-hidden className="grow" />}
     </div>
   );
 }
