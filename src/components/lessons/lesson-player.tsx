@@ -803,7 +803,24 @@ export function LessonPlayer({ lesson }: { lesson: Lesson }) {
           roleplayDone,
         }),
       });
-      if (res.ok) setSaved((await res.json()) as { passed: boolean; nextDays: number });
+      if (res.ok) {
+        const data = (await res.json()) as {
+          passed: boolean;
+          nextDays: number;
+          xpGained: number;
+          currentStreak: number;
+          totalXp: number;
+        };
+        setSaved(data);
+        // Üst bardaki XP/seri rozetleri ve rozet kontrolü bu olayı dinliyor.
+        // Ders bölümü bunu dispatch etmiyordu: puan kazanılıyor ama ekranda
+        // hiçbir şey değişmiyordu.
+        window.dispatchEvent(
+          new CustomEvent("wortspiel:stats", {
+            detail: { xp: data.totalXp, streak: data.currentStreak },
+          }),
+        );
+      }
     } catch {
       // Kayıt başarısızsa özet yine gösteriliyor.
     }

@@ -118,7 +118,13 @@ export async function recordLesson(
   /** Kullanıcının yerel günü — XP ve seri buna işlenir. */
   today: string,
   seconds = 0,
-): Promise<{ passed: boolean; nextDays: number; xpGained: number; currentStreak: number }> {
+): Promise<{
+  passed: boolean;
+  nextDays: number;
+  xpGained: number;
+  currentStreak: number;
+  totalXp: number;
+}> {
   const total = scoredSteps(lesson);
   const passed = roleplayDone && total > 0 && correct / total >= PASS_RATIO;
 
@@ -177,7 +183,16 @@ export async function recordLesson(
 
   const award = await awardActivity(userId, today, gained, seconds);
 
-  return { passed, nextDays, xpGained: award.xpGained, currentStreak: award.currentStreak };
+  // `totalXp` de dönüyor: ders bitince üst bardaki XP rozeti güncellenmiyordu
+  // ve öğrenci kazandığı puanı ancak sayfayı yenileyince görüyordu — dersin
+  // "sayılmadığı" hissi tam olarak buradan geliyordu.
+  return {
+    passed,
+    nextDays,
+    xpGained: award.xpGained,
+    currentStreak: award.currentStreak,
+    totalXp: award.totalXp,
+  };
 }
 
 /**
