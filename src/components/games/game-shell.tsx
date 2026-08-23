@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckIcon, XIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -134,21 +134,37 @@ function VerdictBar({
   if (!feedback) return null;
 
   return (
-    <div className="mt-4 min-h-16 shrink-0">
+    <div className="mt-4 min-h-[4.5rem] shrink-0">
       <AnimatePresence initial={false}>
         {verdict ? (
           <motion.div
             key={verdict}
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            className={`verdict flex min-h-16 items-center gap-3 px-4 py-3 text-left text-sm font-semibold ${
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className={`verdict flex min-h-[4.5rem] items-center gap-1 py-1 pl-1 pr-4 text-left text-sm font-semibold ${
               verdict === "correct" ? "verdict-correct" : "verdict-wrong"
             }`}
           >
-            <span className="shrink-0">
-              {verdict === "correct" ? <CheckIcon size={20} /> : <XIcon size={20} />}
-            </span>
+            {/*
+              Şeritteki tepki bir onay/çarpı simgesi değil, Erdi'nin kendisi.
+              Simge yalnızca "doğru" ya da "yanlış" diyor; renk ve metin zaten
+              onu söylüyordu. Karakterin yüzü ise turun duygusunu taşıyor ve
+              her turda tekrar eden bu an, uygulamanın en çok görülen anı.
+
+              Şeride tam oturuyor, taşmıyor. Taşırmak denendi ve karakter
+              şeridin ALTINDAN çıkıyordu — kutudan fırlamış değil, kutunun
+              içine sığmamış gibi duruyordu. Şeridi bir tık yükseltmek daha
+              temiz bir çözüm.
+            */}
+            <motion.span
+              initial={{ scale: 0.4, y: 14 }}
+              animate={{ scale: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
+              className="shrink-0"
+            >
+              <Mascot mood={verdict === "correct" ? "happy" : "sad"} size={54} />
+            </motion.span>
             <div className="min-w-0">{feedback}</div>
           </motion.div>
         ) : null}
