@@ -4,6 +4,7 @@ import { ensureProfile } from "@/lib/session";
 import { lessonBoard, lessonCount, nextLesson, weakRules } from "@/lib/lessons/progress";
 import { scoredSteps } from "@/lib/lessons/types";
 import { LessonHub, type HubCard } from "@/components/lessons/lesson-hub";
+import { clearedModules } from "@/lib/lessons/boss";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +22,8 @@ export default async function LessonsPage() {
   const board = await lessonBoard(userId, profile.course);
   const next = await nextLesson(userId, profile.course, profile.level);
   const weak = await weakRules(userId);
+  // Geçilmiş modül sınavları — yol haritasındaki taç buradan.
+  const cleared = Object.fromEntries(await clearedModules(userId, profile.course));
 
   const cards: HubCard[] = board.map((c) => ({
     lesson: c.lesson,
@@ -45,6 +48,7 @@ export default async function LessonsPage() {
       weak={weak}
       total={lessonCount(profile.course)}
       userLevel={profile.level}
+      cleared={cleared}
     />
   );
 }

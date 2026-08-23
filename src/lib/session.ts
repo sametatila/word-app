@@ -167,7 +167,7 @@ function mixByType(candidates: (typeof words.$inferSelect)[], limit: number) {
   return out.length ? out : candidates.slice(0, limit);
 }
 
-function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): RoundWord {
+export function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): RoundWord {
   return {
     id: w.id,
     de: w.de,
@@ -758,7 +758,15 @@ function pickRound(
   return { id: nextId(), game: "choice", word, options: optionsFor(word, pool), direction: "de-tr" };
 }
 
-function makeRound(
+/**
+ * Tek bir tur kurar.
+ *
+ * Dışa açık, çünkü modül sınavı (lib/lessons/boss.ts) aynı oyunları kendi
+ * kelime havuzuyla kuruyor. İkinci bir tur üreteci yazmak, çeldirici
+ * seçiminden yön kararına kadar her şeyi ikinci kez — ve er geç farklı —
+ * uygulamak demekti.
+ */
+export function makeRound(
   game: Round["game"],
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],

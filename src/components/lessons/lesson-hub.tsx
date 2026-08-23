@@ -26,6 +26,7 @@ import {
   DogIcon,
   FamilyIcon,
   FilmIcon,
+  FlameIcon,
   FlagIcon,
   FlowerIcon,
   FoodIcon,
@@ -236,6 +237,7 @@ export function LessonHub({
   weak,
   total,
   userLevel,
+  cleared = {},
 }: {
   cards: HubCard[];
   next: string | null;
@@ -244,6 +246,8 @@ export function LessonHub({
   total: number;
   /** Kullanıcının seçtiği seviye — yolun başlangıç noktası. */
   userLevel: string;
+  /** Geçilmiş modül sınavları: "A1:2" → kalan en iyi süre. */
+  cleared?: Record<string, number>;
 }) {
   const doneCount = cards.filter((c) => c.done).length;
   const pct = total ? Math.round((doneCount / total) * 100) : 0;
@@ -358,6 +362,17 @@ export function LessonHub({
                     size={nodes.length}
                   />
                   <ModulePath nodes={nodes} />
+                  {/* Modülün sonundaki sınav: yolun varış noktası. Modül
+                      bitmeden de açık — yoldaki kilitler gibi bu da görsel bir
+                      sıralama iması, engel değil. */}
+                  <ModuleBoss
+                    level={level}
+                    moduleIdx={mi}
+                    accent={accent}
+                    done={nodes.filter((n) => n.card.done).length}
+                    size={nodes.length}
+                    bestLeft={cleared[`${level}:${mi}`] ?? null}
+                  />
                 </div>
               );
             })}
@@ -366,6 +381,81 @@ export function LessonHub({
       })}
 
       <ReturnToActive targetId={next ? `lesson-node-${next}` : null} />
+    </div>
+  );
+}
+
+/**
+ * Modül sınavı düğümü — yolun sonundaki patron.
+ *
+ * On ders bitince hiçbir şey OLMUYORDU: pankartta bir kupa beliriyor, yol
+ * devam ediyordu. Sınav yolun sonuna bir varış noktası koyuyor ve modülün
+ * kelimelerini bir arada, süre baskısı altında kullandırıyor.
+ *
+ * Modül bitmeden de açık. Ders yolundaki kilitler de dokunmayı engellemiyor
+ * (bkz. dosya başındaki not) — burada da aynı ilke: kilit bir sıralama iması,
+ * duvar değil. Hazır olmayan girer, zorlanır, döner.
+ */
+function ModuleBoss({
+  level,
+  moduleIdx,
+  accent,
+  done,
+  size,
+  bestLeft,
+}: {
+  level: string;
+  moduleIdx: number;
+  accent: string;
+  done: number;
+  size: number;
+  /** Geçildiyse kalan en iyi süre; geçilmediyse null. */
+  bestLeft: number | null;
+}) {
+  const ready = size > 0 && done >= size;
+  const cleared = bestLeft !== null;
+  const tone = cleared ? "var(--color-mint-500)" : ready ? accent : "var(--text-muted)";
+
+  return (
+    <div className="mb-6 flex flex-col items-center">
+      {/* Yolun son parçası sınava bağlanıyor: düğüm havada durmasın. */}
+      <span
+        className="h-6 w-1 rounded-full"
+        style={{ background: ready ? tone : "var(--border)", opacity: ready ? 0.5 : 1 }}
+      />
+      <Link
+        href={`/lessons/sinav/${level}/${moduleIdx}`}
+        className="flex w-full max-w-sm items-center gap-3 rounded-2xl px-4 py-3 transition-transform active:scale-[0.98]"
+        style={{
+          background: cleared
+            ? "color-mix(in srgb, var(--color-mint-500) 12%, var(--surface))"
+            : ready
+              ? `color-mix(in srgb, ${accent} 12%, var(--surface))`
+              : "var(--surface-2)",
+          border: `1px solid color-mix(in srgb, ${tone} 30%, transparent)`,
+          opacity: ready || cleared ? 1 : 0.75,
+        }}
+      >
+        <span
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+          style={{ background: `color-mix(in srgb, ${tone} 18%, transparent)`, color: tone }}
+        >
+          {cleared ? <TrophyIcon size={20} /> : <FlameIcon size={20} />}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-sm font-bold">Modül sınavı</span>
+          <span className="muted block text-xs">
+            {cleared
+              ? `Geçildi · en iyi ${bestLeft} sn kalan`
+              : ready
+                ? "15 soru, 60 saniye — modülün kelimeleriyle"
+                : `Önce dersler: ${done}/${size}`}
+          </span>
+        </span>
+        <span className="shrink-0 text-xs font-bold" style={{ color: tone }}>
+          {cleared ? "tekrar" : "gir"}
+        </span>
+      </Link>
     </div>
   );
 }

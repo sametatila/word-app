@@ -8,6 +8,7 @@ import {
   profiles,
   reviews,
   userLessons,
+  moduleClears,
   userSkills,
   userWords,
   words,
@@ -60,6 +61,7 @@ export type Metric =
   | "earlyAnswers"
   | "bestDayReviews"
   | "activeDays"
+  | "bossClears"
   | "courses";
 
 export type Group = "seri" | "kelime" | "oyun" | "ders" | "beceri" | "tur" | "keşif";
@@ -115,6 +117,8 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "lesson10", title: "Bir modül", hint: "10 dersi tamamla", icon: "SchoolIcon", tier: "bronze", group: "ders", metric: "lessons", target: 10 },
   { id: "lesson50", title: "Yarı yol", hint: "50 dersi tamamla", icon: "SchoolIcon", tier: "gold", group: "ders", metric: "lessons", target: 50 },
   { id: "lesson100", title: "Bir seviye", hint: "100 dersi tamamla", icon: "MountainIcon", tier: "legend", group: "ders", metric: "lessons", target: 100 },
+  { id: "boss1", title: "Modül fatihi", hint: "Bir modül sınavını süre bitmeden geç", icon: "FlagIcon", tier: "silver", group: "ders", metric: "bossClears", target: 1 },
+  { id: "boss10", title: "Sınav ustası", hint: "10 modül sınavını geç", icon: "FlagIcon", tier: "gold", group: "ders", metric: "bossClears", target: 10 },
 
   // ——— Beceri ————————————————————————————————————————————————————
   { id: "skill1", title: "Dört beceri", hint: "Bir beceri alıştırmasını bitir", icon: "CompassIcon", tier: "bronze", group: "beceri", metric: "skills", target: 1 },
@@ -169,6 +173,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     gameRows,
     lessonRow,
     skillRow,
+    bossRow,
     dailyRow,
     hourRow,
     dayRow,
@@ -192,6 +197,11 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))),
 
     db.select({ n: sql<number>`count(*)::int` }).from(userSkills).where(eq(userSkills.userId, userId)),
+
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(moduleClears)
+      .where(eq(moduleClears.userId, userId)),
 
     db
       .select({
@@ -253,6 +263,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     earlyAnswers: Number(hourRow[0]?.early ?? 0),
     bestDayReviews: Number(dayRow[0]?.best ?? 0),
     activeDays: Number(dayRow[0]?.days ?? 0),
+    bossClears: Number(bossRow[0]?.n ?? 0),
     courses,
   };
 }

@@ -414,6 +414,33 @@ export const events = pgTable(
   ],
 );
 
+/**
+ * Modül sınavı (patron turu) kayıtları.
+ *
+ * Ders yolundaki her modül on dersten oluşuyor ve sonunda süre baskılı bir
+ * sınav var. Tutulan şey skor değil GEÇME: sınavın bir kaybetme koşulu var
+ * (süre biterse kaybedilir) ve yol haritasında bir kez geçilmiş modül taç
+ * takıyor. En iyi kalan süre de saklanıyor — tekrar girmek için bir sebep.
+ *
+ * Ayrı tablo, çünkü ölçüsü derslerinkinden farklı: `user_lessons` "bu dersi
+ * çalıştın mı" diyor, burası "modülün tamamını süreye karşı kullanabildin mi".
+ */
+export const moduleClears = pgTable(
+  "module_clears",
+  {
+    userId: text("user_id").notNull(),
+    course: text("course").notNull(),
+    level: text("level").notNull(),
+    /** Modülün seviyedeki sırası, 0 tabanlı. */
+    moduleIndex: integer("module_index").notNull(),
+    /** Geçildiğinde kalan en yüksek süre (saniye) — rekor budur. */
+    bestLeft: integer("best_left").notNull().default(0),
+    attempts: integer("attempts").notNull().default(1),
+    clearedAt: timestamp("cleared_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.course, t.level, t.moduleIndex] })],
+);
+
 export type Word = typeof words.$inferSelect;
 export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
