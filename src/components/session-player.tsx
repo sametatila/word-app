@@ -881,16 +881,24 @@ function StartCard({
           ) : null}
         </div>
       </div>
-      {/* Günün turu oyun seçicinin ÜSTÜNDE: günde bir kez oynanan, herkesle
-          aynı olan ve kaçırılınca geri gelmeyen tek şey bu. */}
-      <DailyCard onPlay={onDaily} />
-      {/* Arena günün turunun hemen altında: ikisi de "bugün bir kez" hissi
-          taşıyor ama biri herkesle aynı sorular, diğeri kendi rekorunla
-          yarış. Oyun seçicinin üstünde duruyorlar çünkü ikisi de bir MOD
-          değil, bir OLAY. */}
-      <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} />
-      {/* Görevler oyun seçicinin üstünde: biri hep beceriler ya da derslere
-          götürüyor ve o bölümler bugüne kadar neredeyse hiç açılmamıştı. */}
+      {/*
+        BUGÜN — günde bir kez olan, kaçırılınca geri gelmeyen iki şey.
+
+        İkisi ayrı beyaz kutulardı ve sayfadaki diğer her kartla aynı ağırlığı
+        taşıyorlardı: başlangıç kartından sonra altı eşit kutu geliyor, hangisinin
+        bugüne özel bir OLAY, hangisinin her zaman orada duran bir MOD olduğu
+        ayırt edilmiyordu. Aynı doğadaki iki olay artık tek bölümde ve bölümün
+        bir adı var.
+      */}
+      <section className="card mx-auto mt-4 w-full max-w-md overflow-hidden">
+        <SectionTitle>Bugün</SectionTitle>
+        <div className="divide-y" style={{ borderColor: "var(--border)" }}>
+          <DailyCard onPlay={onDaily} bare />
+          <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} bare />
+        </div>
+      </section>
+      {/* Görevler kendi kartında: bugüne özel değil, açık kaldığı sürece duran
+          bir hedef listesi. */}
       <QuestCard />
       {/* Yürürken modu oyun seçicinin hemen üstünde: o da turun başka bir
           yoldan oynanması, yani seçiciye en yakın akraba. */}
@@ -1409,6 +1417,21 @@ function SummaryCard({
         </div>
       </Stagger>
     </motion.div>
+  );
+}
+
+/**
+ * Bölüm başlığı — kartın neyi topladığını söyleyen tek satır.
+ *
+ * Başlangıç ekranında altı kart alt alta duruyordu ve hepsi aynı ağırlıktaydı;
+ * hangisinin bugüne özel bir olay, hangisinin her zaman orada duran bir ayar
+ * olduğu okunmuyordu. Başlık o ayrımı kuruyor.
+ */
+function SectionTitle({ children }: { children: ReactNode }) {
+  return (
+    <div className="border-b px-5 py-2.5" style={{ borderColor: "var(--border)" }}>
+      <h2 className="muted text-xs font-bold uppercase tracking-wide">{children}</h2>
+    </div>
   );
 }
 

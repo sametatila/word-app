@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { PLAYABLE_GAMES, GAME_LABELS, type PlayableGame } from "@/lib/types";
 import {
   BookIcon,
@@ -14,6 +15,7 @@ import {
   TagIcon,
   TargetIcon,
   XIcon,
+  ChevronIcon,
 } from "@/components/icons";
 
 /**
@@ -57,20 +59,49 @@ export function GamePicker({
   onPick: (game: PlayableGame | null) => void;
   busy?: boolean;
 }) {
+  // Seçili oyun varsa açık: o zaman ızgara bir seçenek listesi değil, ekranda
+  // görünmesi gereken bir durum.
+  const [open, setOpen] = useState(active != null);
   return (
     <motion.section
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
     >
-      <div
-        className="flex items-baseline justify-between border-b px-5 py-3.5"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <h2 className="font-bold">Tek oyun oyna</h2>
-        <span className="muted text-xs">20 tur · yalnızca tekrar</span>
-      </div>
+      {/*
+        Kapalı açılıyor.
 
+        On oyunluk ızgara her açılışta 240 pikselden fazla yer kaplıyordu ve
+        başlangıç ekranının en uzun parçasıydı — ama tek oyun modu her gün
+        kullanılan bir şey değil, ara sıra yapılan bir SEÇİM. Kapalıyken bölüm
+        tek satır; seçili bir oyun varsa kendiliğinden açık geliyor, çünkü o
+        zaman seçim ekranda görünmesi gereken bir DURUM.
+      */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between px-5 py-3.5 text-left"
+      >
+        <span className="font-bold">
+          {active ? GAME_LABELS[active] : "Tek oyun oyna"}
+        </span>
+        <span className="muted flex items-center gap-1.5 text-xs">
+          {active ? "seçili" : "20 tur · yalnızca tekrar"}
+          <ChevronIcon size={16} className={open ? "rotate-180 transition-transform" : "transition-transform"} />
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open ? (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t"
+            style={{ borderColor: "var(--border)" }}
+          >
       <div className="grid grid-cols-2 gap-2 p-3">
         {PLAYABLE_GAMES.map((game) => {
           const Icon = ICONS[game];
@@ -119,6 +150,9 @@ export function GamePicker({
           </button>
         </div>
       ) : null}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </motion.section>
   );
 }

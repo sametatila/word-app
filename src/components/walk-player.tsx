@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useListen } from "@/components/use-listen";
 import { isSpeechCorrect, judgeSpeech } from "@/lib/speech";
+import { parseConfirm } from "@/lib/voice-intent";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
@@ -32,6 +33,17 @@ import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "
  * Cevaplar `speak` adıyla kaydediliyor. Yazma oyununun hanesine yazmak
  * kolaydı ama profil ekranındaki oyun başarısı tablosunu bozardı: ikisi
  * farklı beceri.
+ *
+ * Telefon cepteyken üç şey ayrıca çözülmek zorunda kaldı:
+ *
+ *   - **Ekran kapanınca tanıyıcı susuyor.** Tarayıcıda arka planda konuşma
+ *     tanıma yok; kilitli telefonda dinleyen bir sekme, mikrofonu görünmez
+ *     biçimde açık tutmak olurdu. Tek dürüst çözüm ekranın kapanmasını
+ *   - **Sayfa görünmez olursa tur yanmamalı.** Başka bir uygulamaya geçilince
+ *     tanıyıcı anında boş dönüyordu ve yirmi tur saniyeler içinde "duyamadım"
+ *     diye tükeniyordu. Görünürlük gidince tur DURUYOR.
+ *   - **Tur bitince telefonu çıkarmak gerekmemeli.** Oturum sonunda soru sesli
+ *     soruluyor ve cevap sesli alınıyor: "devam edelim mi?" → "evet".
  */
 
 type Status =
@@ -79,6 +91,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [phase, setPhase] = useState<Phase>("speaking");
   const [prompt, setPrompt] = useState<{ tr: string; de: string } | null>(null);
   const [verdict, setVerdict] = useState<"correct" | "wrong" | "unheard" | null>(null);
+  /** Şu an sorulan şey bir kelime değil, "devam edelim mi?" onayı. */
+  const [asking, setAsking] = useState(false);
   const [tally, setTally] = useState({ correct: 0, total: 0 });
 
   const { listen, cancel } = useListen();
@@ -87,7 +101,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const startedAt = useRef(Date.now());
   const pending = useRef<Answer[]>([]);
   const missed = useRef<SessionProgress["missed"]>([]);
+  /** Sunucudaki oturuma ait sayaç — kaydedilen ilerleme bundan yazılıyor. */
   const tallyRef = useRef({ correct: 0, total: 0 });
+  /**
+   * Yürüyüşün tamamına ait sayaç.
+   *
+   * Ayrı tutuluyor çünkü ikisi farklı şeyi ölçüyor: sunucuya yazılan ilerleme
+   * O oturumun ilerlemesi olmak zorunda (yoksa ikinci oturum 20/20 dolu
+   * başlar), ekranda görülmesi gereken ise kullanıcının bu yürüyüşte toplam
+   * ne yaptığı.
+   */
+  const walkRef = useRef({ correct: 0, total: 0, sessions: 1 });
+  /** Son turların duyuldu/duyulmadı geçmişi — pencere bunun üstünde. */
+  const heardLog = useRef<boolean[]>([]);
   /** Okumanın bitişini bekleyen söz — iptal edilirse elle çözülür. */
   const speakDone = useRef<(() => void) | null>(null);
 
@@ -169,6 +195,57 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   useEffect(() => () => stopAll(), [stopAll]);
 
+  /** Sunucudan taze bir tur — oturum bitince devam etmek için. */
+  const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
+    try {
+      const res = await fetch("/api/session", { cache: "no-store" });
+      if (!res.ok) return null;
+      return (await res.json()) as SessionPayload;
+    } catch {
+      return null;
+    }
+  }, []);
+
+  /**
+   * "Devam edelim mi?" — sesli sorulur, sesli cevaplanır.
+   *
+   * Anlaşılmayan cevap EVET ya da HAYIR sayılmıyor, soru bir kez
+   * tekrarlanıyor. Emin olunamayan bir cevabı evet saymak kullanıcıyı
+   * istemediği bir tura sokar, hayır saymak turu sessizce bitirir; ikisi de
+   * tekrar sormaktan kötü.
+   */
+  const askContinue = useCallback(
+    async (correct: number, total: number): Promise<"yes" | "no"> => {
+      const summary =
+        total > 0 ? `Tur bitti. ${total} sorudan ${correct} doğru.` : "Tur bitti.";
+      setAsking(true);
+      setVerdict(null);
+      try {
+      for (let attempt = 0; attempt < 2; attempt++) {
+        setPhase("speaking");
+        setPrompt(null);
+        await say([
+          {
+            lang: "tr",
+            text: attempt === 0 ? `${summary} Devam edelim mi?` : "Devam edelim mi? Evet ya da hayır de.",
+          },
+        ]);
+        setPhase("listening");
+        const heard = await listen({ lang: "tr-TR", silenceMs: CONFIRM_SILENCE_MS });
+        const intent = parseConfirm(heard.alternatives[0] ?? "");
+        if (intent === "yes") return "yes";
+        if (intent === "no") return "no";
+      }
+      // İki kez sorulup anlaşılmadıysa durmak doğru: cevap veremeyen kişi
+      // büyük olasılıkla artık orada değil.
+      return "no";
+      } finally {
+        setAsking(false);
+      }
+    },
+    [listen, say],
+  );
+
   // ── Turun kendisi ──────────────────────────────────────────────────
 
   const loop = useCallback(
@@ -248,7 +325,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             correct: tallyRef.current.correct + (ok ? 1 : 0),
             total: tallyRef.current.total + 1,
           };
-          setTally({ ...tallyRef.current });
+          walkRef.current.correct += ok ? 1 : 0;
+          walkRef.current.total += 1;
+          // Ekranda yürüyüşün toplamı görünüyor: kullanıcı için anlamlı olan
+          // "bu yürüyüşte ne yaptım", sunucudaki oturumun sayacı değil.
+          setTally({ correct: walkRef.current.correct, total: walkRef.current.total });
 
           if (!ok) {
             if (!missed.current.some((m) => m.id === word.id)) {
@@ -267,25 +348,54 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         }
 
         pending.current.push(...results);
-        const last = i >= rounds.length - 1;
+        const last = i >= current.length - 1;
         await flush(last, {
           correct: tallyRef.current.correct,
           total: tallyRef.current.total,
           xp: tallyRef.current.correct * 10,
-          index: last ? rounds.length : i + 1,
+          index: last ? current.length : i + 1,
           missed: missed.current,
         });
         if (!alive()) return;
       }
 
       if (!alive()) return;
-      setPhase("speaking");
-      await say([{ lang: "tr", text: "Tur bitti. Aferin." }]);
       play("finish");
-      setStatus("done");
       track("session_done", tallyRef.current.correct);
+
+      const again = await askContinue(tallyRef.current.correct, tallyRef.current.total);
+      if (!alive()) return;
+      if (again === "no") {
+        setPhase("speaking");
+        await say([{ lang: "tr", text: "Tamam, iyi günler." }]);
+        setStatus("done");
+        return;
+      }
+
+      setPhase("speaking");
+      await say([{ lang: "tr", text: "Devam ediyoruz." }]);
+      const next = await fetchSession();
+      if (!alive()) return;
+      if (!next?.rounds.length) {
+        await say([{ lang: "tr", text: "Bugünlük tekrar kalmadı." }]);
+        setStatus("done");
+        return;
+      }
+
+      // Sunucudaki oturum sayacı sıfırlanıyor, yürüyüşün toplamı devam ediyor.
+      current = next.rounds;
+      start = 0;
+      setSession(next);
+      setIndex(0);
+      tallyRef.current = { correct: 0, total: 0 };
+      missed.current = [];
+      walkRef.current.sessions += 1;
+      startedAt.current = Date.now();
+      resetCombo();
+      play("start");
+      }
     },
-    [flush, listen, say],
+    [askContinue, fetchSession, flush, listen, release, say],
   );
 
   async function start(from: number) {
@@ -374,6 +484,28 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           Türkçesini duyacaksın, Almancasını söyleyeceksin. Ekrana bakmana gerek yok —
           telefonu cebine koyabilirsin. Yanlışta doğrusu okunur, duyulmayan tur atlanır.
         </p>
+        <ul className="muted mt-2 space-y-1 text-sm leading-relaxed">
+          <li>
+            · Tur bitince <strong>“devam edelim mi?”</strong> diye sorulur; “evet” ya da “hayır”
+            demen yeter, telefonu çıkarman gerekmez.
+          </li>
+          <li>
+            ·{" "}
+              ? "Ekran açık tutulur, çünkü telefon kilitlenince tarayıcı mikrofonu susturuyor."
+              : "Bu tarayıcı ekranı açık tutmayı desteklemiyor; telefon kilitlenirse tur duraklar."}
+          </li>
+        </ul>
+        {status === "paused" ? (
+          <p
+            className="mt-3 rounded-xl px-3 py-2.5 text-sm"
+            style={{
+              background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
+              color: "var(--color-flame-500)",
+            }}
+          >
+            Ses gelmediği ya da uygulamadan çıkıldığı için durduruldu. Cevapların kaydedildi.
+          </p>
+        ) : null}
         <div className="mt-4 rounded-xl px-3 py-2.5 text-center text-sm" style={{ background: "var(--surface-2)" }}>
           <span className="muted">Kaldığın yer: </span>
           <strong>{Math.min(index + 1, total)}</strong>
@@ -389,9 +521,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "done")
     return (
       <Frame>
-        <h2 className="text-2xl font-bold">Tur bitti</h2>
+        <h2 className="text-2xl font-bold">Yürüyüş bitti</h2>
         <p className="mt-2 text-sm" style={{ color: "var(--color-mint-500)" }}>
           {tally.correct}/{tally.total} doğru
+          {walkRef.current.sessions > 1 ? ` · ${walkRef.current.sessions} tur` : ""}
         </p>
         <p className="muted mt-2 text-sm">
           Cevapların kaydedildi: tekrar planın, günlük hedefin ve serin güncellendi.
@@ -416,7 +549,22 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         animate={{ opacity: 1, y: 0 }}
         className="flex min-h-[9rem] flex-col items-center justify-center text-center"
       >
-        {phase === "listening" ? (
+        {asking ? (
+          <>
+            <motion.span
+              animate={phase === "listening" ? { scale: [1, 1.15, 1] } : {}}
+              transition={{ repeat: Infinity, duration: 1.4 }}
+              className="flex h-16 w-16 items-center justify-center rounded-full"
+              style={{ background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)", color: "var(--color-mint-500)" }}
+            >
+              <MicIcon size={28} />
+            </motion.span>
+            <p className="mt-3 text-lg font-bold">Devam edelim mi?</p>
+            <p className="muted mt-1 text-sm">
+              {phase === "listening" ? "“evet” ya da “hayır” de" : "…"}
+            </p>
+          </>
+        ) : phase === "listening" ? (
           <>
             <motion.span
               animate={{ scale: [1, 1.15, 1] }}

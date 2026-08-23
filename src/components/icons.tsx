@@ -238,6 +238,13 @@ export const InfoIcon = (p: IconProps) => (
 );
 
 /** Geri */
+/** Açılır bölümlerin ok işareti — açıkken 180 derece döner. */
+export const ChevronIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M6 9.5 12 15.5 18 9.5" />
+  </Svg>
+);
+
 export const ArrowLeftIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M19.5 12h-15M10.5 6 4.5 12l6 6" />

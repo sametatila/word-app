@@ -28,7 +28,7 @@ function localDay(): string {
   ).padStart(2, "0")}`;
 }
 
-export function DailyCard({ onPlay }: { onPlay: () => void }) {
+export function DailyCard({ onPlay, bare = false }: { onPlay: () => void; bare?: boolean }) {
   const [state, setState] = useState<State>({
     loading: true,
     played: null,
@@ -76,7 +76,10 @@ export function DailyCard({ onPlay }: { onPlay: () => void }) {
     <motion.section
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
+      /* `bare`: kendi kartını bırakıp bir bölümün satırı oluyor. Günün turu ve
+         hayatta kalma turu aynı doğada iki olay; ikisini iki ayrı beyaz kutuya
+         koymak onları birbirinden alakasız gösteriyordu. */
+      className={bare ? "w-full" : "card mx-auto mt-4 w-full max-w-md overflow-hidden"}
     >
       <div className="flex items-center gap-3 px-5 py-4">
         <span

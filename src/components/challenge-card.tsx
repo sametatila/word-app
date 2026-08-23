@@ -15,12 +15,12 @@ import { SparkIcon } from "@/components/icons";
  * bir başlık; "rekorun 1.240" ise bir davet. Rekoru olmayan için de metin
  * farklı: kırılacak bir rekor yoksa kurulacak bir rekor vardır.
  */
-export function ChallengeCard({ best, onPlay }: { best: number; onPlay: () => void }) {
+export function ChallengeCard({ best, onPlay, bare = false }: { best: number; onPlay: () => void; bare?: boolean }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className="card mx-auto mt-3 w-full max-w-md overflow-hidden"
+      className={bare ? "w-full" : "card mx-auto mt-3 w-full max-w-md overflow-hidden"}
     >
       <div className="flex items-center gap-3 px-5 py-4">
         <span

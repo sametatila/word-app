@@ -51,6 +51,7 @@ import { GAME_LABELS, PLAYABLE_GAMES, type Answer, type Round } from "../src/lib
 import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";
 import { seededShuffle } from "../src/lib/shuffle";
+import { foldTurkish, parseConfirm } from "../src/lib/voice-intent";
 import { composeReminder, weeklyRivals } from "../src/lib/push";
 import {
   BOSS_ROUNDS,
@@ -1821,7 +1822,37 @@ async function main() {
   check("başlık yoksa boş nesne", Object.keys(readLimits(headers({ server: "x" }))).length === 0);
   check("adlar küçük harfe indiriliyor", readLimits(headers({ "X-RateLimit-Remaining": "7" }))["x-ratelimit-remaining"] === "7");
 
-  console.log("\n23) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  console.log("\n23) Sesli onay — telefonu cepten çıkarmadan devam");
+  // Yürürken modunda tur bitince "devam edelim mi?" sesli soruluyor. Cevabın
+  // niyete çevrilmesi bu modun elle dokunulmadan çalışıp çalışmadığını
+  // belirliyor, o yüzden asıl test edilmesi gereken yer burası.
+  const yes = ["evet", "Evet", "devam", "devam edelim", "devam et", "olur", "tamam",
+    "hadi", "tabii", "peki", "evet devam edelim", "Devam edelim!", "varım"];
+  for (const t of yes) check(`evet: "${t}"`, parseConfirm(t) === "yes", `(${parseConfirm(t)})`);
+
+  const no = ["hayır", "Hayır", "yeter", "dur", "bitir", "yok", "kapat",
+    "şimdilik yeter", "istemiyorum", "devam etmeyelim", "gerek yok", "olmaz"];
+  for (const t of no) check(`hayır: "${t}"`, parseConfirm(t) === "no", `(${parseConfirm(t)})`);
+
+  // Olumsuzlama olumlu sözcüğü İÇERDİĞİNDE de doğru okunmalı — bu eşleştiricinin
+  // en kolay bozulduğu yer.
+  check("\"devam etmeyelim\" evet sayılmıyor", parseConfirm("devam etmeyelim") === "no");
+  check("\"devam istemiyorum\" evet sayılmıyor", parseConfirm("devam istemiyorum") === "no");
+
+  // Kısa sözcük başka bir kelimenin içinde geçiyorsa yakalanmamalı.
+  check("\"durum\" hayır sayılmıyor", parseConfirm("durum ne") !== "no", `(${parseConfirm("durum ne")})`);
+  check("\"konduruyor\" hayır sayılmıyor", parseConfirm("konduruyor") !== "no");
+
+  // Anlaşılmayan cevap ne evet ne hayır: çağıran taraf soruyu tekrarlıyor.
+  check("alakasız söz null", parseConfirm("hava çok güzel") === null);
+  check("boş metin null", parseConfirm("") === null);
+  check("sadece boşluk null", parseConfirm("   ") === null);
+
+  check("aksanlar katlanıyor", foldTurkish("Şİmdİlİk ÇOĞU") === "simdilik cogu",
+    `(${foldTurkish("Şİmdİlİk ÇOĞU")})`);
+  check("noktalama düşüyor", foldTurkish("Evet, devam!") === "evet devam");
+
+  console.log("\n24) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
   await db.delete(events).where(eq(events.userId, USER));
   await track(USER, "session_start", monday);
   await track(USER, "stage_done", monday, 2);
