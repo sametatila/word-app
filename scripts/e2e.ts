@@ -9,6 +9,8 @@ import { dailyStats, profiles, reviews, sessionState, userLessons, userSkills, u
 import {
   buildChallenge,
   buildSession,
+  getLeaderboard,
+  weekStart,
   clearSessionState,
   loadSession,
   recordChallengeScore,
@@ -46,6 +48,10 @@ import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
 import { GAME_LABELS, type Answer, type Round } from "../src/lib/types";
+import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
+import { xpForWager } from "../src/lib/xp";
+import { achievements, events } from "../src/lib/db/schema";
+import { track } from "../src/lib/events";
 
 const USER = "e2e-user";
 let failures = 0;
@@ -1521,7 +1527,139 @@ async function main() {
   const chal = await buildChallenge(USER);
   check("rekor meydan okuma verisiyle geliyor", chal.best === 200, `(${chal.best})`);
 
+  console.log("\n15) Bahis — isteğe bağlı risk, yalnızca etabın kendi puanı");
+  check("hatasız etap payı ikiye katlıyor", xpForWager(5, 5, 60) === 60);
+  check("tek yanlış başa baş", xpForWager(4, 5, 60) === 0);
+  check("iki yanlış etabı yakıyor", xpForWager(3, 5, 60) === -60);
+  check("üç yanlış da aynı: fazlası cezalandırmıyor", xpForWager(2, 5, 60) === -60);
+  check("pay tavanlı — abartılı istek puan basamıyor", xpForWager(5, 5, 99999) === 250);
+  check("negatif pay sıfırlanıyor", xpForWager(5, 5, -40) === 0);
+  check("boş etap bahis üretmiyor", xpForWager(0, 0, 60) === 0);
+
+  // Bahis kaybı toplam XP'yi geriye götürmemeli: en fazla o etap boşa gider.
   await reset();
+  const dayW = "2025-04-01";
+  const sW = await buildSession(USER, dayW);
+  const beforeW = await ensureProfile(USER);
+  const lost = await submitAnswers(USER, answersFor(sW.rounds.slice(0, 2), 0), dayW, 30, {
+    correct: 0,
+    total: 5,
+    stake: 250,
+  });
+  const afterW = await ensureProfile(USER);
+  check("kayıp toplam XP'yi eksiye düşürmüyor", lost.xpGained === 0, `(${lost.xpGained})`);
+  check("bahis farkı ayrıca dönüyor", lost.wagerXp === -250, `(${lost.wagerXp})`);
+  check(
+    "önceki birikim korunuyor",
+    afterW.totalXp >= beforeW.totalXp,
+    `(${beforeW.totalXp} → ${afterW.totalXp})`,
+  );
+
+  const dayW2 = "2025-04-02";
+  const sW2 = await buildSession(USER, dayW2);
+  const won = await submitAnswers(USER, answersFor(sW2.rounds.slice(0, 2), 1), dayW2, 30, {
+    correct: 5,
+    total: 5,
+    stake: 50,
+  });
+  check("kazanılan bahis puana ekleniyor", won.wagerXp === 50 && won.xpGained > 50);
+
+  console.log("\n16) Haftalık sıralama — pazartesi sıfırlanır");
+  check("pazartesi kendi haftasının başı", weekStart("2025-04-07") === "2025-04-07");
+  check("salı bir gün geriye bakıyor", weekStart("2025-04-08") === "2025-04-07");
+  check("pazar aynı haftada kalıyor", weekStart("2025-04-13") === "2025-04-07");
+  check("bir sonraki pazartesi yeni hafta", weekStart("2025-04-14") === "2025-04-14");
+
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const monday = "2025-04-07";
+  const sunday = "2025-04-13";
+  const prevWeek = "2025-04-06"; // önceki pazar — tabloya girmemeli
+  await db.insert(dailyStats).values([
+    { userId: USER, day: prevWeek, reviews: 0, correct: 0, newWords: 0, xp: 9000, seconds: 0 },
+    { userId: USER, day: monday, reviews: 0, correct: 0, newWords: 0, xp: 120, seconds: 0 },
+    { userId: USER, day: sunday, reviews: 0, correct: 0, newWords: 0, xp: 80, seconds: 0 },
+  ]);
+  await ensureProfile("e2e-rival");
+  await db.insert(dailyStats).values({
+    userId: "e2e-rival",
+    day: monday,
+    reviews: 0,
+    correct: 0,
+    newWords: 0,
+    xp: 500,
+    seconds: 0,
+  });
+
+  const board = await getLeaderboard(USER, sunday);
+  const mine = board.rows.find((r) => r.isMe);
+  check("hafta başı pazartesi", board.start === monday, `(${board.start})`);
+  check("pazar günü son gün", board.daysLeft === 1, `(${board.daysLeft})`);
+  check("yalnızca bu haftanın XP'si sayılıyor", mine?.xp === 200, `(${mine?.xp})`);
+  check("önceki haftanın 9.000 XP'si taşınmıyor", (mine?.xp ?? 0) < 9000);
+  check("rakip önde sıralanıyor", board.rows[0]?.userId === "e2e-rival");
+  check("kendi satırı her hâlükârda var", Boolean(mine));
+
+  const emptyWeek = await getLeaderboard(USER, "2025-05-05");
+  check(
+    "hiç çalışılmamış haftada kendi satırı 1. sırada",
+    emptyWeek.rows.length === 1 && emptyWeek.rows[0].isMe && emptyWeek.rows[0].xp === 0,
+  );
+  check("yeni hafta yedi gün", emptyWeek.daysLeft === 7, `(${emptyWeek.daysLeft})`);
+
+  console.log("\n17) Rozetler — geriye dönük, mevcut tablolardan");
+  await reset();
+  await ensureProfile(USER, "E2E");
+  await db.delete(achievements).where(eq(achievements.userId, USER));
+  const fresh0 = await achievementBoard(USER);
+  check("sıfır kullanıcıda hiçbir rozet açık değil", fresh0.unlockedCount === 0);
+  check("kilitli rozetler yine de listeleniyor", fresh0.rows.length > 20);
+  check("tüm rozetlerin hedefi pozitif", fresh0.rows.every((r) => r.target > 0));
+  check(
+    "rozet kimlikleri benzersiz",
+    new Set(fresh0.rows.map((r) => r.id)).size === fresh0.rows.length,
+  );
+
+  // Geriye dönük hesap: profildeki seri rozeti oyun oynamadan açmalı.
+  await db.update(profiles).set({ longestStreak: 7 }).where(eq(profiles.userId, USER));
+  const afterStreak = await achievementBoard(USER);
+  const badge3 = afterStreak.rows.find((r) => r.id === "streak3");
+  const badge7 = afterStreak.rows.find((r) => r.id === "streak7");
+  const badge30 = afterStreak.rows.find((r) => r.id === "streak30");
+  check("3 günlük rozet geriye dönük açıldı", badge3?.unlocked === true);
+  check("7 günlük rozet geriye dönük açıldı", badge7?.unlocked === true);
+  check("30 günlük rozet kilitli kaldı", badge30?.unlocked === false);
+  check("kilitli rozette ilerleme görünüyor", badge30?.done === 7, `(${badge30?.done})`);
+  check("açılan rozetler kutlama kuyruğuna girdi", afterStreak.fresh.some((f) => f.id === "streak7"));
+  check("açılma anı kaydedildi", badge7?.unlockedAt !== null);
+
+  // Kutlama bir kez: görüldü işaretlenince kuyruk boşalıyor.
+  await markAchievementsSeen(USER, afterStreak.fresh.map((f) => f.id));
+  const afterSeen = await achievementBoard(USER);
+  check("görülen rozet tekrar patlamıyor", afterSeen.fresh.length === 0);
+  check("rozet açık kalmaya devam ediyor", afterSeen.unlockedCount === afterStreak.unlockedCount);
+
+  // Aynı rozet iki kez yazılamaz (birincil anahtar).
+  const rowsBefore = await db
+    .select()
+    .from(achievements)
+    .where(eq(achievements.userId, USER));
+  await achievementBoard(USER);
+  const rowsAfter = await db.select().from(achievements).where(eq(achievements.userId, USER));
+  check("tekrar hesaplamak kayıt çoğaltmıyor", rowsBefore.length === rowsAfter.length);
+
+  console.log("\n18) Olay tablosu — ölçüm ölçtüğü şeyi bozmuyor");
+  await db.delete(events).where(eq(events.userId, USER));
+  await track(USER, "session_start", monday);
+  await track(USER, "stage_done", monday, 2);
+  const evRows = await db.select().from(events).where(eq(events.userId, USER));
+  check("olaylar yazıldı", evRows.length === 2);
+  check("değer taşınıyor", evRows.some((e) => e.name === "stage_done" && e.value === 2));
+
+  await reset();
+  await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));
+  await db.delete(profiles).where(eq(profiles.userId, "e2e-rival"));
+  await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-rival"));
   await pool.end();
 
   console.log(failures === 0 ? "\n✅ TÜM TESTLER GEÇTİ" : `\n❌ ${failures} test başarısız`);
