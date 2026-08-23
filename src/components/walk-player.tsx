@@ -113,16 +113,18 @@ const UNHEARD_LIMIT = 3;
 const CONFIRM_SILENCE_MS = 7000;
 
 /**
- * Cevap için açık kalan pencere.
+ * Cevap için beklenen en uzun süre.
  *
- * Kayıt yolunda bu SABİT bir süre: mikrofon bu kadar kaydediyor, sonra klip
- * yazıya çevriliyor. Kısa olursa uzun bir cevabın sonu kesiliyor, uzun olursa
- * her tur gereksiz bekliyor. Bir kelime ya da kısa bir öbek için üç buçuk
- * saniye rahat yetiyor.
+ * Artık sabit bir pencere DEĞİL, üst sınır: kayıt konuşma bitince kendiliğinden
+ * kapanıyor (bkz. pocket-mic). Bu yüzden cömert olabiliyor — düşünmesi gereken
+ * kullanıcı beklenirken, hızlı cevap veren beklemiyor.
  *
- * Tarayıcı tanıyıcısı yolunda aynı sayı sessizlik tavanı olarak kullanılıyor.
+ * Önceki 3,5 saniyelik sabit pencere sorunun ta kendisiydi: kullanıcı Türkçeyi
+ * duyar duymaz konuşmaya başlıyor, kaydedici henüz ayağa kalkmamış oluyor ve
+ * kelimenin BAŞI kayda girmiyordu. Whisper baştan okuduğu için sonuç doğrudan
+ * uydurma oluyordu.
  */
-const ANSWER_WINDOW_MS = 3500;
+const ANSWER_WINDOW_MS = 7000;
 
 function localDay(): string {
   const d = new Date();
@@ -287,9 +289,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const hear = useCallback(
     async (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> => {
       if (captureRef.current === "stt") {
+        // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` artık
+        // sabit pencere değil ÜST SINIR. Hiç konuşma duyulmadıysa `null`
+        // dönüyor ve sunucuya istek bile gitmiyor.
         const clip = await recordClip(windowMs);
         if (!clip) return [];
-        return transcribe(clip, lang, expected);
+        return transcribe(clip.blob, lang, expected);
       }
       const heard = await listen({
         lang: lang === "tr" ? "tr-TR" : "de-DE",

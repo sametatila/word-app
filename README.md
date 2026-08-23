@@ -549,11 +549,13 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 
 | Parça | Neden |
 |---|---|
-| Mikrofon oturum boyunca **bir kez** açılıp açık tutuluyor | Her tur yeniden açmak yarım saniyeye kadar gecikme ekliyor; daha önemlisi akış kapalıyken sekmenin arka planda canlı kalması için sebep kalmıyor |
+| Mikrofon **ve kaydedici** oturum boyunca durmadan çalışıyor | Her tur yeniden başlatmak kalkış gecikmesi ekliyordu ve kullanıcı Türkçeyi duyar duymaz konuşmaya başladığı için kelimenin BAŞI kayda girmiyordu. Ölçüldü: başı kesik ses Whisper'da doğrudan uydurmaya dönüyor (`der Weg` → "Vielen Dank.", `der Großvater` → "Krater"), sonu kesik ses ise sorunsuz. Açık akış ayrıca sekmenin arka planda canlı kalmasının en güçlü güvencesi |
+| Cevaplar **halka tampondan** kesiliyor | Kaydedici sürekli döndüğü için kalkış gecikmesi yok; dilim geriye doğru da genişletilerek konuşmanın gerçek başı yakalanıyor |
+| Konuşmanın bitişi **bayt boyutundan** anlaşılıyor | Chrome'un kaydedicisi opus'u değişken hızda kodluyor: 200 ms'lik parça sessizlikte **72 bayt**, konuşmada **3.880 bayt**. Elli kattan fazla fark ve WebAudio gerektirmiyor — ekran kapanınca `AudioContext` askıya alındığı için çözümleyiciye dayalı bir çözüm tam ihtiyaç duyulan yerde çalışmazdı |
+| Hiç konuşma duyulmazsa **istek atılmıyor** | Sessizliği Whisper'a vermek uydurma cevabın ta kendisi. `no_speech_prob` bu ayrımı yapmıyor — ölçüldü, sessizlik de konuşma da 0.000 döndürüyor |
 | Cevabın kabulü **yazma oyunuyla aynı** | Konuşma yolu daha katıydı: artikel zorunluydu, umlaut katlanmıyordu. Tanıyıcı tek kelimelik cevapta artikeli sık düşürüyor — "die Katze" denip metne "Katze" geçiyor ve tur "doğrusu: die Katze" diyordu. Artikelin kendi oyunu var; buranın sorusu "kedi Almanca ne" |
 | Duyulan metin **ekranda** | "Doğru söyledim ama yanlış saydı"nın tek cevabı ne duyulduğunu göstermek. Yanlış cevapta transkript yazıyor, sorunun telaffuzda mı tanıyıcıda mı olduğu anında görülüyor |
 | Beklenen ve duyulan **kaydediliyor** | Aynı soru sonradan da sorulabilsin diye: `report:providers` "beklenen ≠ duyulan" listesini veriyor. İlk seferinde sebebin artikel olduğu koda bakarak anlaşıldı, veriye bakarak değil |
-| Kayıt penceresi **sabit** (3,5 sn) | Sessizlik algılamak için WebAudio çözümleyicisi gerekiyor ama ekran kapanınca `AudioContext` askıya alınıyor — çözümleyici tam ihtiyaç duyulan yerde duruyor |
 | Sesler **ses öğesi** zinciriyle çalınıyor | Kilitlenince `AudioContext` askıya alınıyor, ses öğeleri çalmaya devam ediyor (podcast uygulamalarının çalışma biçimi) |
 | Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
 | Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |

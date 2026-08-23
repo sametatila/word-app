@@ -14,13 +14,62 @@
  * canlı kalması için bir sebep kalmıyor. Açık bir yakalama, tarayıcının
  * sekmeyi dondurmamasının en güçlü güvencesi.
  *
- * Kayıt penceresi SABİT. Sessizlik algılamak için WebAudio çözümleyicisi
- * kullanılabilirdi ama ekran kapandığında `AudioContext` askıya alınıyor ve
- * çözümleyici duruyor — yani tam ihtiyaç duyulan yerde çalışmıyor. Sabit
- * pencere biraz daha az duyarlı, buna karşılık her koşulda aynı davranıyor.
+ * Kaydedici de oturum boyunca DURMADAN çalışıyor ve cevaplar halka tampondan
+ * kesiliyor. Sebebi ölçüldü: önceki sürüm her cevap için `MediaRecorder`
+ * kurup başlatıyordu ve arada bir kalkış gecikmesi vardı. Kullanıcı Türkçeyi
+ * duyar duymaz konuşmaya başladığı için kelimenin BAŞI kayda girmiyordu.
+ *
+ * Whisper'a başı kesik ses vermek en kötü girdi: baştan okuyor, baş yoksa
+ * uyduruyor. Aynı seslerle yapılan deney bunu birebir gösterdi —
+ *
+ *   tam ses          → "Der Weg", "Die Katze", "der Großvater"   (6/6)
+ *   sonu kesik ses   → "Der Weg", "Die Katze", "der Großvater"   (6/6)
+ *   BAŞI kesik ses   → "Vielen Dank.", "Vielen Dank.", "Krater"
+ *
+ * Gerçek kullanımda görülen "der Weg → Ja, das ist", "Großvater →
+ * Wolfsfatter" tam olarak üçüncü satır. Sağlayıcının suçu değil: doğru sesle
+ * Groq 6/6 ve 130 ms.
+ *
+ * Sürekli kayıtta kalkış gecikmesi yok; üstelik ön-pay ile okumanın bitişinden
+ * biraz ÖNCESİ de alınabiliyor, yani erken başlayan cevap da tam giriyor.
  */
 
 let stream: MediaStream | null = null;
+let recorder: MediaRecorder | null = null;
+/**
+ * Halka tampon.
+ *
+ * `t` parçanın ELİMİZE geçtiği an. Dilim sınırları bu damgalara göre
+ * seçiliyor; 200 ms'lik parçalarda hata payı da o kadar.
+ */
+let chunks: { t: number; data: Blob }[] = [];
+/**
+ * İlk parça ayrı tutuluyor: webm başlığı yalnızca onda var. Ortadan alınan
+ * bir dilim tek başına geçerli bir dosya değil, başına bu eklenmek zorunda.
+ */
+let header: Blob | null = null;
+let mime = "";
+
+/** Parça uzunluğu — dilim çözünürlüğü bu. */
+const SLICE_MS = 200;
+/** Tamponda tutulan en fazla süre; gerisi düşüyor. */
+const BUFFER_MS = 20_000;
+
+/**
+ * Bir parçanın "konuşma" sayılması için gereken bayt.
+ *
+ * Ölçüldü: Chrome'un kaydedicisi opus'u değişken hızda kodluyor ve 200 ms'lik
+ * bir parça sessizlikte **72 bayt**, konuşmada **3.880 bayt**. Elli kattan
+ * fazla fark; eşik ikisinin ortasında değil, sessizliğin epey üstünde ve
+ * konuşmanın çok altında duruyor.
+ *
+ * Bu ölçüt WebAudio gerektirmiyor — önemi burada: telefon kilitlendiğinde
+ * `AudioContext` askıya alınıyor ve çözümleyiciye dayalı bir çözüm tam
+ * ihtiyaç duyulan yerde çalışmıyordu.
+ */
+const SPEECH_BYTES = 300;
+/** Konuşma bittikten sonra kaydın kapanması için beklenen sessiz parça sayısı. */
+const TAIL_SLICES = 4;
 
 /** Tarayıcının kabul ettiği ilk kayıt biçimi. */
 function pickMime(): string {
@@ -52,23 +101,86 @@ export function micSupported(): boolean {
  */
 export async function openMic(): Promise<boolean> {
   if (!micSupported()) return false;
-  if (stream?.active) return true;
+  if (stream?.active && recorder?.state === "recording") return true;
   try {
-    stream = await navigator.mediaDevices.getUserMedia({
-      audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-    });
-    return true;
+    if (!stream?.active) {
+      stream = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+      });
+    }
+    return startRecorder();
   } catch {
-    stream = null;
+    closeMic();
     return false;
   }
 }
 
+/** Sürekli kaydı başlatır ve halka tamponu doldurmaya başlar. */
+function startRecorder(): boolean {
+  if (!stream?.active) return false;
+  if (recorder?.state === "recording") return true;
+  mime = pickMime();
+  try {
+    recorder = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
+  } catch {
+    recorder = null;
+    return false;
+  }
+  chunks = [];
+  header = null;
+
+  recorder.ondataavailable = (e) => {
+    if (!e.data.size) return;
+    // İlk parça başlık: saklanıyor ve tampona girmiyor, yoksa her dilimde iki
+    // kez yer alırdı.
+    if (!header) {
+      header = e.data;
+      return;
+    }
+    const now = Date.now();
+    chunks.push({ t: now, data: e.data });
+    const cutoff = now - BUFFER_MS;
+    while (chunks.length && chunks[0].t < cutoff) chunks.shift();
+  };
+  // Kaydedici kendiliğinden durursa (sekme dondu, cihaz değişti) yeniden
+  // kuruluyor: durmuş bir kaydedici sessizce boş klip üretirdi.
+  recorder.onerror = () => restart();
+  recorder.onstop = () => {
+    if (stream?.active) restart();
+  };
+
+  try {
+    recorder.start(SLICE_MS);
+    return true;
+  } catch {
+    recorder = null;
+    return false;
+  }
+}
+
+function restart() {
+  recorder = null;
+  header = null;
+  chunks = [];
+  if (stream?.active) startRecorder();
+}
+
 export function micOpen(): boolean {
-  return Boolean(stream?.active);
+  return Boolean(stream?.active) && recorder?.state === "recording";
 }
 
 export function closeMic() {
+  try {
+    if (recorder && recorder.state !== "inactive") {
+      recorder.onstop = null;
+      recorder.stop();
+    }
+  } catch {
+    /* zaten durmuş olabilir */
+  }
+  recorder = null;
+  header = null;
+  chunks = [];
   stream?.getTracks().forEach((t) => t.stop());
   stream = null;
 }
@@ -79,43 +191,83 @@ export function closeMic() {
  * `null` dönmesi "kayıt yapılamadı" demek — çağıran taraf bunu duyulmamış
  * cevaptan ayırt edebilsin diye boş bir blob dönülmüyor.
  */
-export function recordClip(ms: number): Promise<Blob | null> {
-  if (!stream?.active) return Promise.resolve(null);
-  const mime = pickMime();
-  let rec: MediaRecorder;
-  try {
-    rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-  } catch {
-    return Promise.resolve(null);
-  }
+/**
+ * Cevap klibi: şu andan itibaren `ms` kadar bekleyip, biraz da ÖNCESİNİ
+ * alarak tampondan keser.
+ *
+ * Ön-pay olmasaydı, okumanın son hecesiyle birlikte konuşmaya başlayan
+ * kullanıcının kelimesi başından kesilirdi — ölçümde bunun sonucu doğrudan
+ * halüsinasyondu ("Vielen Dank.", "Krater"). İçine yalnızca okumanın sessiz
+ * kuyruğu giriyor, o da tanımayı bozmuyor.
+ *
+ * `null` dönmesi "kayıt yapılamadı" demek; çağıran taraf bunu duyulmamış
+ * cevaptan ayırt edebilsin diye boş blob dönülmüyor.
+ */
+export type ClipResult = { blob: Blob; ms: number } | null;
 
-  return new Promise<Blob | null>((resolve) => {
-    const chunks: BlobPart[] = [];
-    let settled = false;
-    const done = (value: Blob | null) => {
-      if (settled) return;
-      settled = true;
-      resolve(value);
-    };
+export function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> {
+  if (!micOpen()) return Promise.resolve(null);
+  const from = Date.now() - preRollMs;
+  const deadline = Date.now() + maxMs;
 
-    rec.ondataavailable = (e) => {
-      if (e.data.size) chunks.push(e.data);
-    };
-    rec.onstop = () => done(chunks.length ? new Blob(chunks, { type: mime || "audio/webm" }) : null);
-    rec.onerror = () => done(null);
+  return new Promise<ClipResult>((resolve) => {
+    let started = false;
+    let quiet = 0;
+    let seen = 0; // kaç parça incelendi
 
-    try {
-      rec.start();
-    } catch {
-      return done(null);
-    }
-    setTimeout(() => {
-      try {
-        if (rec.state !== "inactive") rec.stop();
-      } catch {
-        done(null);
+    const tick = () => {
+      const slice = chunks.filter((c) => c.t >= from);
+      // Yalnızca yeni gelen parçalara bakılıyor; aynı parça iki kez sayılırsa
+      // sessizlik sayacı yanlış dolardı.
+      for (let i = seen; i < slice.length; i++) {
+        const loud = slice[i].data.size >= SPEECH_BYTES;
+        if (loud) {
+          started = true;
+          quiet = 0;
+        } else if (started) {
+          quiet++;
+        }
       }
-    }, ms);
+      seen = slice.length;
+
+      const finished = started && quiet >= TAIL_SLICES;
+      if (!finished && Date.now() < deadline) {
+        setTimeout(tick, SLICE_MS);
+        return;
+      }
+
+      // Hiç konuşma duyulmadıysa istek bile atılmıyor: sessizliği Whisper'a
+      // vermek, ölçümde gördüğümüz uydurma cevapları ("Vielen Dank.",
+      // "Altyazı M.K.") üreten şeyin ta kendisi.
+      if (!started || !header) return resolve(null);
+
+      /*
+        Dilim GERİYE doğru da genişletiliyor.
+
+        Ön-pay sabit olsaydı, kullanıcı okumanın son hecesiyle birlikte
+        konuşmaya başladığında kelimenin başı yine dışarıda kalırdı — ölçümde
+        bunun sonucu doğrudan uydurma cevaptı ("Vielen Dank.", "Krater").
+        Burada ilk gürültülü parçadan geriye yürünüyor ve konuşma nerede
+        başladıysa oradan kesiliyor; tampon zaten elimizde olduğu için bedeli
+        yok.
+      */
+      const all = chunks;
+      let first = all.findIndex((c) => c.t >= from && c.data.size >= SPEECH_BYTES);
+      if (first < 0) return resolve(null);
+      while (first > 0 && all[first - 1].data.size >= SPEECH_BYTES) first--;
+      // Bir iki sessiz parça daha: kelimenin ilk sesi (patlamalı ünsüz) çoğu
+      // zaman eşiğin altında kalıyor.
+      first = Math.max(0, first - 2);
+
+      const parts = all.slice(first).map((c) => c.data);
+      if (!parts.length) return resolve(null);
+      resolve({
+        blob: new Blob([header, ...parts], { type: mime || "audio/webm" }),
+        ms: parts.length * SLICE_MS,
+      });
+    };
+
+    setTimeout(tick, SLICE_MS);
   });
 }
 
