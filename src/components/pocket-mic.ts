@@ -133,20 +133,55 @@ export function micSupported(): boolean {
  * telefonun kumaşa sürtünmesi ve sokak gürültüsü karşısında yazıya çevirmeyi
  * belirgin biçimde kolaylaştırıyor.
  */
+/**
+ * Mikrofonu AÇIK ama SUSTURULMUŞ hâlde alır.
+ *
+ * Sıra hayati: gerçek telefonda ekran kilitlendikten SONRA `getUserMedia`
+ * reddediliyor. Kullanıcı ekranı kapattığında mikrofonu açmaya çalışan bir
+ * akış, isteği anında düşürüp cevabı "duyamadım" yazıyordu — hem de mikrofon
+ * açılma sesiyle aynı anda, çünkü hiç kayıt başlamıyordu.
+ *
+ * Bu yüzden akış oturum başında, ekran AÇIKKEN alınıyor. Ama tarayıcının
+ * konuşma tanıyıcısıyla çekişmemesi için parçalar kapatılıyor: izin ve cihaz
+ * elimizde kalıyor, ses akmıyor. Ekran kapandığında yalnızca açılması yetiyor.
+ */
 export async function openMic(): Promise<boolean> {
   if (!micSupported()) return false;
-  if (stream?.active && recorder?.state === "recording") return true;
+  if (stream?.active) return true;
   try {
-    if (!stream?.active) {
-      stream = await navigator.mediaDevices.getUserMedia({
-        audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-      });
-    }
-    return startRecorder();
+    stream = await navigator.mediaDevices.getUserMedia({
+      audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+    });
+    // Varsayılan susturulmuş: kayıt yolu istendiğinde açılıyor.
+    stream.getAudioTracks().forEach((t) => (t.enabled = false));
+    return true;
   } catch {
     closeMic();
     return false;
   }
+}
+
+/** Kayıt yolunu açar: parçalar açılır ve sürekli kayıt başlar. */
+export function activateMic(): boolean {
+  if (!stream?.active) return false;
+  stream.getAudioTracks().forEach((t) => (t.enabled = true));
+  return startRecorder();
+}
+
+/** Kayıt yolunu kapatır ama akışı BIRAKMAZ — ekran yeniden kapanabilir. */
+export function deactivateMic() {
+  try {
+    if (recorder && recorder.state !== "inactive") {
+      recorder.onstop = null;
+      recorder.stop();
+    }
+  } catch {
+    /* zaten durmuş olabilir */
+  }
+  recorder = null;
+  header = null;
+  chunks = [];
+  stream?.getAudioTracks().forEach((t) => (t.enabled = false));
 }
 
 /** Sürekli kaydı başlatır ve halka tamponu doldurmaya başlar. */
@@ -199,8 +234,14 @@ function restart() {
   if (stream?.active) startRecorder();
 }
 
+/** Kayıt yolu şu anda dönüyor mu. */
 export function micOpen(): boolean {
   return Boolean(stream?.active) && recorder?.state === "recording";
+}
+
+/** Akış elimizde mi — ekran kapanınca açılabilir mi. */
+export function micHeld(): boolean {
+  return Boolean(stream?.active);
 }
 
 export function closeMic() {
@@ -253,9 +294,12 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
     turun tamamını kaybetmekten iyi.
   */
   if (!micOpen()) {
-    if (!(await openMic())) return oneShotClip(maxMs);
-    // Kaydedici yeni kuruldu: başlık parçasının gelmesi için bir soluk.
-    await new Promise((r) => setTimeout(r, SLICE_MS * 2));
+    // Akış elimizdeyse yalnızca etkinleştirmek yetiyor; yoksa açmayı deniyoruz
+    // (ekran kapalıyken reddedilebilir, o yüzden asıl açılış oturum başında).
+    if (!micHeld() && !(await openMic())) return oneShotClip(maxMs);
+    activateMic();
+    // Başlık parçasının gelmesi için bir soluk.
+    await new Promise((r) => setTimeout(r, SLICE_MS * 3));
     if (!micOpen() || !header) return oneShotClip(maxMs);
   }
   const from = Date.now() - preRollMs;
