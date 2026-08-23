@@ -10,6 +10,7 @@
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx scripts/apply-migration.ts",
+    "report:events": "tsx scripts/report-events.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
     "db:seed:zurich": "tsx scripts/seed-zurich.ts",
