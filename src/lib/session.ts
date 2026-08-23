@@ -197,11 +197,16 @@ export async function buildSession(
    */
   metaOnly = false,
   /**
-   * Tek oyunlu tur: verilirse bütün turlar bu oyundan kurulur.
+   * Tek oyunlu tur: verilirse bütün turlar bu oyundan kurulur ve tur
+   * **yalnızca tekrardan** oluşur — yeni kelime alınmaz.
    *
-   * Kuyruk değişmiyor — kelimeler yine tekrar zamanı gelenlerden ve gün
-   * kontenjanındaki yenilerden geliyor. Oyun seçmek öğrenme planının dışına
-   * çıkmak değil, aynı planı sevilen oyunla yürütmek.
+   * Tek oyun modu bir öğretme değil, bir pekiştirme aracı. Yeni bir kelimeyi
+   * tek bir oyunla tanıştırmak öğretmiyor: kelime önce tanıtım kartıyla
+   * açılmalı, sonra kolaydan zora birkaç farklı oyunla dokunulmalı. "20 tur
+   * Artikel Yarışı" istemek bunun yerine geçemez; orada istenen şey bilinen
+   * kelimeleri sevilen oyunla tazelemek. Bu yüzden günlük yeni kelime
+   * kontenjanı burada hiç harcanmıyor: kullanıcı tek oyunla ne kadar
+   * oynarsa oynasın, karışık tura döndüğünde yeni kelimeleri onu bekliyor.
    */
   only?: GameId,
 ): Promise<SessionPayload> {
@@ -297,7 +302,8 @@ export async function buildSession(
   // dolduracak kadar yeni kelime her hâlükârda gelir (tek turluk oturum olmaz).
   const deficit = Math.max(0, 8 - dueRows.length);
   // Her yeni kelime iki tur üretir (tanıtım + oyun), 10 tanesi 20 turu doldurur.
-  const newLimit = Math.min(10, Math.max(newBudget, deficit));
+  // Tek oyun modunda hiç yeni kelime yok: o tur baştan sona tekrar (bkz. `only`).
+  const newLimit = only ? 0 : Math.min(10, Math.max(newBudget, deficit));
 
   // Henüz hiç görülmemiş kelimeler: id listesini taşımak yerine NOT EXISTS.
   let newRows: (typeof words.$inferSelect)[] = [];
@@ -366,8 +372,20 @@ export async function buildSession(
   const thin = dueWords.length + newWords.length < 6;
   const needMature = Math.max(0, MIN_MATURE - matureCount);
 
-  if (thin || needMature > 0) {
-    const want = thin ? 10 - dueWords.length - newWords.length : needMature;
+  /**
+   * Tek oyun modunun kuyruk açığı.
+   *
+   * Bu modda turu dolduracak tek kaynak tekrarlar: yeni kelime alınmıyor ve
+   * tanıtım kartı da yok, yani kuyruktaki her madde bir tur demek. Üstelik her
+   * kelimeye her oyun kurulamıyor (çoğulu okunamayan isim, örnek cümlesi
+   * olmayan kelime, artikelsiz madde) ve kurulamayan kelime atlanıyor. Bu
+   * yüzden kuyruk tur sayısının iki katına kadar geniş tutuluyor — eleme
+   * sonrası geriye yine dolu bir tur kalsın.
+   */
+  const onlyDeficit = only ? Math.max(0, ROUNDS_PER_SESSION * 2 - dueWords.length) : 0;
+
+  if (thin || needMature > 0 || onlyDeficit > 0) {
+    const want = onlyDeficit || (thin ? 10 - dueWords.length - newWords.length : needMature);
     const early = await db
       .select({ w: words, uw: userWords })
       .from(userWords)
@@ -380,7 +398,11 @@ export async function buildSession(
           sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
           // Çeşitlilik için çekiyorsak yalnızca oturmuş kelime işe yarıyor:
           // erken çekilen bir "fresh" kelime aynı tanıma oyunlarını doğurur.
-          thin ? sql`true` : sql`${userWords.correctStreak} >= 2 and ${userWords.intervalDays} >= 1`,
+          // Tek oyun modunda böyle bir eleme yok: orada oyun zaten seçili ve
+          // amaç görülmüş her kelimeyi tazelemek.
+          thin || only
+            ? sql`true`
+            : sql`${userWords.correctStreak} >= 2 and ${userWords.intervalDays} >= 1`,
         ),
       )
       .orderBy(asc(userWords.dueAt))
@@ -440,17 +462,29 @@ export async function loadSession(
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
 
-  // "Yeni kelimelerle devam et" ve tek oyun seçimi bilerek yeni bir tur ister;
-  // kayıtlıyı ezer. Oyun seçen kullanıcıya yarım kalmış karışık turu vermek,
-  // seçimini görmezden gelmek olurdu.
-  if (!extra && !only) {
+  // "Yeni kelimelerle devam et" bilerek yeni bir tur ister; kayıtlıyı ezer.
+  if (!extra) {
     const [saved] = await db
       .select()
       .from(sessionState)
       .where(eq(sessionState.userId, userId));
     const rounds = saved?.rounds as Round[] | undefined;
+    /**
+     * Kayıtlı tur, istenen oyun moduna ait mi?
+     *
+     * Tek oyun seçiliyken yarım kalmış KARIŞIK turu vermek seçimi görmezden
+     * gelmek olurdu; bu yüzden eskiden `only` verildiğinde kayıtlı tur her
+     * hâlükârda atılıyordu. Ama artık oyun seçimi kalıcı: kullanıcı seçtiği
+     * modda kalıyor ve uygulamayı her açışında tur baştan kurulsaydı, tek
+     * oyun modunda "kaldığın yerden devam" diye bir şey kalmazdı. Ayrım
+     * kayıtlı turun kendisinden okunuyor — turların hepsi o oyundansa o tur
+     * zaten bu seçimin turudur.
+     */
+    const matchesMode =
+      !only || (Array.isArray(rounds) && rounds.length > 0 && rounds.every((r) => r.game === only));
     if (
       saved &&
+      matchesMode &&
       saved.day === today &&
       saved.course === profile.course &&
       Array.isArray(rounds) &&
@@ -539,11 +573,8 @@ export async function clearSessionState(userId: string) {
  * arka arkaya tekrarlanmasını engelleyerek monotonluğu kırar.
  *
  * `only` verilirse tur tek bir oyundan kurulur — "20 tur Artikel Yarışı"
- * gibi. Kuyruk değişmiyor: kelimeler yine tekrar zamanı gelenlerden ve gün
- * kontenjanındaki yenilerden geliyor, yeni kelime yine tanıtım kartıyla
- * açılıyor. Değişen tek şey hangi oyunun sorulduğu. Böylece oyun seçmek
- * öğrenme planının dışına çıkmak değil, aynı planı sevdiği oyunla yürütmek
- * oluyor.
+ * gibi. O modda kuyruk yalnızca tekrarlardan gelir (bkz. buildSession):
+ * `fresh` boştur, dolayısıyla tanıtım kartı da hiç oluşmaz.
  */
 function composeRounds(
   due: QueueItem[],
@@ -573,17 +604,11 @@ function composeRounds(
 
   // Eşleştirme yalnız oynanıyorsa tur BAŞKA türlü kuruluyor: her tur beşer
   // kelime tükettiği için kuyruk beşerli bloklara bölünüyor ve oyun sayısı
-  // kelime sayısıyla sınırlanıyor.
+  // kelime sayısıyla sınırlanıyor. Beşe tamamlanmayan artık bırakılıyor —
+  // dört kelimelik bir eşleştirme turu oyunun kendisi olmaz.
   if (only === "match") {
-    const playable = merged.filter((m) => !m.intro);
-    for (const item of merged) {
-      if (rounds.length >= ROUNDS_PER_SESSION) break;
-      // Yeni kelimeler yine önce tanıtılıyor: hiç görülmemiş kelimeyi
-      // eşleştirmeye zorlamak oyun değil bilmece olurdu.
-      if (item.intro) rounds.push({ id: nextId(), game: "intro", word: item.word });
-    }
-    for (let i = 0; i + 5 <= playable.length && rounds.length < ROUNDS_PER_SESSION; i += 5) {
-      rounds.push({ id: nextId(), game: "match", words: playable.slice(i, i + 5).map((m) => m.word) });
+    for (let i = 0; i + 5 <= merged.length && rounds.length < ROUNDS_PER_SESSION; i += 5) {
+      rounds.push({ id: nextId(), game: "match", words: merged.slice(i, i + 5).map((m) => m.word) });
     }
     return rounds;
   }

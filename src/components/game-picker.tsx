@@ -24,10 +24,14 @@ import {
  * eksik olan **tercih**ti: sevdiği oyunu oynamak isteyen kullanıcının onu
  * isteyebileceği bir yer yoktu.
  *
- * Seçim öğrenme planının dışına çıkarmıyor: kelimeler yine tekrar kuyruğundan
- * ve gün kontenjanındaki yenilerden geliyor, yeni kelime yine tanıtım kartıyla
- * açılıyor (bkz. session.ts composeRounds). Değişen tek şey hangi oyunun
- * sorulduğu.
+ * Tek oyun modu bir PEKİŞTİRME aracı: turu yalnızca daha önce öğrenilmiş
+ * kelimeler dolduruyor, yeni kelime alınmıyor (bkz. session.ts buildSession).
+ * Yeni bir kelimeyi tek bir oyunla tanıştırmak öğretmiyor — kelime önce
+ * tanıtılmalı, sonra kolaydan zora birkaç farklı oyunla dokunulmalı; o iş
+ * karışık turun işi.
+ *
+ * Seçim kalıcı: kullanıcı değiştirene kadar her açılışta seçtiği modda
+ * devam ediyor.
  */
 
 const ICONS: Record<PlayableGame, typeof LinkIcon> = {
@@ -78,7 +82,7 @@ export function GamePicker({
         style={{ borderColor: "var(--border)" }}
       >
         <h2 className="font-bold">Tek oyun oyna</h2>
-        <span className="muted text-xs">20 tur · aynı tekrar planı</span>
+        <span className="muted text-xs">20 tur · yalnızca tekrar</span>
       </div>
 
       <div className="grid grid-cols-2 gap-2 p-3">

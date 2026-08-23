@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   GAME_LABELS,
+  PLAYABLE_GAMES,
   type Answer,
   type AnswerResult,
   type MissedWord,
@@ -53,6 +54,36 @@ type Status =
  */
 const STAGE_SIZE = 5;
 
+/**
+ * Seçilen oyun modunun cihazdaki yeri.
+ *
+ * Seçim önce yalnızca bileşenin belleğindeydi ve uygulamayı kapatmak (ya da
+ * başka bir sekmeye geçip dönmek) onu siliyordu: kullanıcı "Artikel Yarışı"
+ * seçiyor, ertesi açılışta kendini karışık turda buluyordu. Oyun modu bir
+ * tercih — kullanıcı değiştirene kadar geçerli kalmalı.
+ */
+const GAME_MODE_KEY = "wortspiel-game-mode";
+
+function readGameMode(): PlayableGame | null {
+  try {
+    const raw = localStorage.getItem(GAME_MODE_KEY);
+    return raw && (PLAYABLE_GAMES as readonly string[]).includes(raw)
+      ? (raw as PlayableGame)
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeGameMode(game: PlayableGame | null) {
+  try {
+    if (game) localStorage.setItem(GAME_MODE_KEY, game);
+    else localStorage.removeItem(GAME_MODE_KEY);
+  } catch {
+    /* depolama kapalıysa seçim yalnızca bu oturum boyunca geçerli olur */
+  }
+}
+
 type ErrorKind = "auth" | "db" | "network";
 
 function localDay(): string {
@@ -82,6 +113,16 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const [resumable, setResumable] = useState<SessionProgress | null>(null);
   /** Tek oyunlu tur seçiliyse o oyun; karışık turda null. */
   const [onlyGame, setOnlyGame] = useState<PlayableGame | null>(null);
+  /**
+   * Seçimin `load` tarafından okunabilen kopyası.
+   *
+   * `load` bilerek kimliği sabit bir geri çağrı (bkz. aşağıdaki bağımlılık
+   * notu) ve bu yüzden içinden okuduğu durum ilk render'daki değerde donuyordu:
+   * seçim yapılsa bile `load()` her zaman `null` görüyor, yani tur bitip
+   * "devam et" denildiğinde kullanıcı sessizce karışık tura düşüyordu. Ref
+   * kimliği değiştirmeden güncel değeri taşıyor.
+   */
+  const onlyGameRef = useRef<PlayableGame | null>(null);
   /**
    * Üst üste doğru sayısı ve turun en iyisi.
    *
@@ -114,8 +155,10 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     stoppedEarly.current = false;
     stageStart.current = { index: 0, correct: 0, total: 0, xp: 0 };
     // Seçim `undefined` ise dokunulmuyor, `null` ise karışık tura dönülüyor.
-    const game = opts.game === undefined ? onlyGame : opts.game;
+    const game = opts.game === undefined ? onlyGameRef.current : opts.game;
+    onlyGameRef.current = game;
     setOnlyGame(game);
+    writeGameMode(game);
     try {
       // "Yeni tura başla" önce kayıtlı turu atar, sonra yenisini ister.
       if (opts.fresh) await fetch("/api/session", { method: "DELETE" });
@@ -146,16 +189,16 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       return null;
     }
   },
-    // `onlyGame` bilerek bağımlılık değil: seçim her çağrıda parametreyle
-    // geliyor ve okunan değer yalnızca "dokunma" durumunda kullanılıyor.
-    // Bağımlılık olsaydı her seçim `load`'u yeniden kurar ve açılıştaki
-    // etkiyi tetikleyip turu ikinci kez isterdi.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Seçim bağımlılık DEĞİL: bağımlılık olsaydı her seçim `load`'u yeniden
+    // kurar, açılıştaki etkiyi tetikler ve turu ikinci kez isterdi. Güncel
+    // değer ref üzerinden okunuyor (bkz. `onlyGameRef`).
     [],
   );
 
   useEffect(() => {
-    void load();
+    // Açılışta cihazdaki tercih geri yükleniyor: kullanıcı hangi modda
+    // bıraktıysa orada devam ediyor.
+    void load({ game: readGameMode() });
   }, [load]);
 
   /** Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar. */
@@ -263,7 +306,12 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         for (const r of results.filter((x) => !x.correct)) {
           const w = ws.find((x) => x.id === r.wordId);
           if (w && !missed.current.some((m) => m.id === w.id)) {
-            missed.current.push({ id: w.id, de: w.artikel ? `${w.artikel} ${w.de}` : w.de, tr: w.tr });
+            missed.current.push({
+              id: w.id,
+              de: w.artikel ? `${w.artikel} ${w.de}` : w.de,
+              tr: w.tr,
+              en: w.en,
+            });
           }
         }
       }
@@ -806,10 +854,12 @@ function EmptyCard({
   onExtra: () => void;
   onMixed: () => void;
 }) {
-  // Tek oyun seçiliyken boş dönmesinin sebebi hedefin tamamlanması değil,
-  // o oyunun kurulabileceği kelimenin kalmaması: Çoğul Bilmece çoğulu olan
-  // isim, Cümleyi Tamamla örnek cümlesi olan kelime ister. İki durumu aynı
-  // metinle anlatmak kullanıcıyı yanıltırdı.
+  // Tek oyun seçiliyken boş dönmesinin sebebi hedefin tamamlanması değil.
+  // İki sebepten biri: bu mod yalnızca daha önce görülmüş kelimeleri
+  // tekrarlıyor ve tekrarlanacak kelime henüz yok, ya da o oyun kuyruktaki
+  // kelimelerin hiçbirine kurulamıyor (Çoğul Bilmece çoğulu olan isim,
+  // Cümleyi Tamamla örnek cümlesi olan kelime ister). İkisini de "hedefini
+  // tamamladın" diye anlatmak kullanıcıyı yanıltırdı.
   if (onlyGame) {
     return (
       <motion.div
@@ -821,16 +871,14 @@ function EmptyCard({
           <div className="surface-2 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl text-[color:var(--color-brand-500)]">
             <PuzzleIcon size={28} />
           </div>
-          <h2 className="text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime kalmadı</h2>
+          <h2 className="text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime yok</h2>
           <p className="muted mt-2 text-sm">
-            Bu oyun her kelimeyle oynanamıyor — bugünün kuyruğunda uygun kelime yok. Karışık
-            tur bütün kelimeleri kullanır.
+            Tek oyun modu yalnızca daha önce öğrendiğin kelimeleri tekrarlar; ayrıca her oyun
+            her kelimeyle oynanamıyor. Karışık tur yeni kelime de öğretir ve bütün kelimeleri
+            kullanır.
           </p>
           <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
             Karışık tura dön
-          </button>
-          <button onClick={onExtra} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            Yeni kelimelerle devam et
           </button>
         </div>
       </motion.div>
@@ -1103,7 +1151,14 @@ function SummaryCard({
                   className="flex items-baseline justify-between gap-3 rounded-xl px-3 py-2 text-sm surface-2"
                 >
                   <span className="font-semibold">{w.de}</span>
-                  <span className="muted truncate text-right">{w.tr}</span>
+                  <span className="muted min-w-0 text-right">
+                    <span className="block truncate">{w.tr}</span>
+                    {w.en ? (
+                      <span className="block truncate text-xs opacity-70" lang="en">
+                        {w.en}
+                      </span>
+                    ) : null}
+                  </span>
                 </li>
               ))}
             </ul>
