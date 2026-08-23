@@ -10,6 +10,7 @@ import { FitBox } from "@/components/fit-box";
 import { AnswerPulse } from "@/components/answer-pulse";
 import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
 import { vibrate } from "@/lib/fx";
+import { play, resetCombo } from "@/lib/sfx";
 import { AlertIcon, FlameIcon, TrophyIcon } from "@/components/icons";
 
 /** Başlangıç süresi kısa: süreyi doğru cevaplarla kazanırsın. */
@@ -19,6 +20,8 @@ const FAST_BONUS_MS = 1500; // 3,5 saniyenin altında cevaplandıysa ek
 const PENALTY_MS = 4000; // yanlış cevap
 const FAST_LIMIT_MS = 3500;
 const MAX_SECONDS = 75; // süre sonsuza uzamasın
+/** Sayacın kırmızıya döndüğü ve saniyede bir uyarı tıkının başladığı eşik. */
+const DANGER_SECONDS = 8;
 
 /** Üst üste doğrularda puan çarpanı — asıl heyecan burada. */
 function multiplier(combo: number): number {
@@ -126,9 +129,19 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   // eklemeleri sayacı kaydırmaz.
   useEffect(() => {
     if (status !== "playing") return;
+    // Son saniyelerin sesi. Sayaç ekranın üstünde ama oyun ekranın ortasında
+    // oynanıyor: süre bittiğini gören değil, DUYAN kullanıcı hızlanıyor.
+    // Tık saniyede bir, yalnızca kritik eşiğin altında.
+    let lastTick = Infinity;
     const tick = () => {
       const remaining = (deadline.current - Date.now()) / 1000;
       setLeft(Math.max(0, remaining));
+      const whole = Math.ceil(remaining);
+      if (remaining > 0 && remaining <= DANGER_SECONDS && whole !== lastTick) {
+        lastTick = whole;
+        play("danger");
+      }
+      if (remaining > DANGER_SECONDS) lastTick = Infinity;
       if (remaining <= 0) void finish();
     };
     const t = setInterval(tick, 100);
@@ -137,6 +150,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
 
   function start() {
     finished.current = false;
+    resetCombo();
+    play("start");
     deadline.current = Date.now() + START_SECONDS * 1000;
     setLeft(START_SECONDS);
     // Bir önceki turun rekoru artık "mevcut rekor" olur.
@@ -284,6 +299,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
     return (
       <Frame>
+        <RecordChime fire={isRecord} />
         <Confetti fire={isRecord ? 1 : 0} count={40} />
         <div className="text-center">
           <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl text-white">
@@ -320,7 +336,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   const round = data!.rounds[index];
   const tier = data!.tiers[index] ?? 1;
   const pct = Math.min(100, (left / START_SECONDS) * 100);
-  const urgent = left <= 8;
+  const urgent = left <= DANGER_SECONDS;
   const mult = multiplier(combo);
 
   return (
@@ -443,4 +459,19 @@ function Frame({ children }: { children: React.ReactNode }) {
       </p>
     </motion.div>
   );
+}
+
+/**
+ * Bitiş sesi.
+ *
+ * Sonuç kartı bir bileşen değil `if` dalı olduğu için içine `useEffect`
+ * konulamıyordu (koşullu hook). Sesi taşıyan küçük bir bileşen bu kısıtı
+ * çözüyor ve rekorun sesini konfetiyle aynı koşula bağlıyor: göz ne
+ * görüyorsa kulak onu duyuyor.
+ */
+function RecordChime({ fire }: { fire: boolean }) {
+  useEffect(() => {
+    play(fire ? "record" : "finish");
+  }, [fire]);
+  return null;
 }

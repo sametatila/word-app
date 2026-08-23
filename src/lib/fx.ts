@@ -1,10 +1,18 @@
 /**
- * Dokunsal ve görsel anlık geri bildirim.
+ * Dokunsal, işitsel ve görsel anlık geri bildirim.
  *
- * Oyunlar cevabı aldığı anda `fx()` çağırır: telefon kısa bir titreşim verir ve
- * arayüzde "cevabın alındı, sıradakine geçiliyor" çizgisi başlar. Böylece
- * kullanıcı seçiminin kaydedilip kaydedilmediğinden emin olur.
+ * Oyunlar cevabı aldığı anda `fx()` çağırır: telefon kısa bir titreşim verir,
+ * ses efekti çalar ve arayüzde "cevabın alındı, sıradakine geçiliyor" çizgisi
+ * başlar. Böylece kullanıcı seçiminin kaydedilip kaydedilmediğinden emin olur.
+ *
+ * Ses buraya, `vibrate()` içine bağlandı — on oyunun hepsi ve dersler cevabı
+ * aldığı anda ya `vibrate()` ya da onu zaten çağıran `fx()` üzerinden geçiyor.
+ * Tek geçit olması, on bir çağrı yerini tek tek dolaşmadan bütün uygulamayı
+ * seslendirmeyi mümkün kıldı; `sfx` tarafındaki kısa yineleme penceresi de
+ * ikisini birden çağıran oyunlarda sesin iki kez çıkmasını engelliyor.
  */
+
+import { play } from "@/lib/sfx";
 
 export type FxKind = "correct" | "wrong" | "tap";
 
@@ -25,6 +33,10 @@ export function reducedMotion(): boolean {
 }
 
 export function vibrate(kind: FxKind) {
+  // Ses önce: titreşim API'si bazı tarayıcılarda sessizce reddediliyor ve
+  // erken dönüş sesi de yutardı. Masaüstünde titreşim hiç yok — geri
+  // bildirimin tek kaldığı yer burası.
+  play(kind);
   if (typeof navigator === "undefined" || !("vibrate" in navigator)) return;
   try {
     navigator.vibrate(PATTERN[kind]);

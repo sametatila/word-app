@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
 import { track } from "@/lib/track";
+import { play } from "@/lib/sfx";
 
 /**
  * Günün görevleri kartı.
@@ -69,6 +70,7 @@ export function QuestCard() {
         setBoard({ quests: out.quests, allDone: out.allDone, allClaimed: out.allClaimed });
         if (out.xp > 0) {
           track("quest_claim", out.xp);
+          play("unlock");
           setFlash(out.xp);
           setTimeout(() => setFlash(0), 2400);
           // Üst bardaki XP rozeti anında güncellensin. Seri de gerçek
