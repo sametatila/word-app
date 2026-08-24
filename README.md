@@ -571,6 +571,31 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 | Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
 | Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |
 
+#### Mikrofon açıkken ses kalitesi
+
+Mikrofon oturum boyunca açık tutuluyor (ekran kilitlendikten sonra yeniden
+istemek reddedildiği için) ve bunun bir yan etkisi vardı: turun TAMAMI boyunca
+çalan her şey bozuk duyuluyordu — Bluetooth kulaklıkta telefon görüşmesi sesi,
+hoparlörde incelmiş ve boğuklaşmış bir çıkış.
+
+Sebep `echoCancellation`. Masum bir istek değil: Android/Chrome yankı
+bastırmayı gördüğünde yakalamayı "konuşma" yoluna alıyor ve o yol ÇIKIŞI da
+içine çekiyor. Bluetooth'ta A2DP bırakılıp HFP'ye düşülüyor (16 kHz, tek
+kanal); hoparlörde de çıkış voice yoluna geçiyor.
+
+| Parça | Neden |
+|---|---|
+| Yankı bastırma **kapalı** | Bedeli burada küçük: kulaklıkta hoparlörden mikrofona giden yol zaten yok, hoparlörde de kayıt okuma BİTTİKTEN sonra başlıyor. Karşılığında çıkış kalitesi turun tamamında korunuyor |
+| Gürültü bastırma ve kazanç denetimi **açık** | İkisi yazılımda çalışıyor ve çıkış yolunu değiştirmiyor; cepteki telefonun kumaşa sürtünmesi ve sokak gürültüsü karşısında yazıya çevirmeyi belirgin biçimde kolaylaştırıyor |
+| Kısıt **şart koşuluyor**, sonra gevşetiliyor | Düz değer yalnızca "tercih" sayılıyor ve sessizce yok sayılabiliyor; ilk deneme `exact` ile kapalı olmasını zorunlu kılıyor. Cihaz yapamıyorsa sırayla gevşetiliyor — hiç akış alamamak, kalitesiz akıştan kötü |
+| Ne alındığı **kaydediliyor** | İstemek ile almak aynı şey değil. Her turda `walk_capture` olayı yankı bastırmanın gerçekte açık kalıp kalmadığını yazıyor; ses şikâyetinde tahmin etmeye gerek kalmıyor |
+| Üretilen sesler **48 kHz/16 bit** | Sessiz döngü ve mikrofon bipi 8 kHz/8 bit'ti. Sessiz döngü oturum boyunca DURMADAN çalıyor: ses yolunun neden bozulduğu aranırken elenmesi gereken ilk şüphelilerden, bip de 8 bitte kaba duyuluyordu |
+
+Bluetooth kulaklıkta sorun bundan sonra da sürerse kalan tek sebep, Chrome'un
+kulaklığın KENDİ mikrofonunu açmak için SCO bağlantısı kurmasıdır; onun tek
+çaresi girişi telefonun dahili mikrofonuna sabitlemek — cepteki telefonda
+konuşmayı kumaşın arkasından dinlemek demek olduğu için bilerek yapılmadı.
+
 #### Donmayan döngü
 
 Ekran kapalıyken kalan şikâyet artık yanlış cevap değil, HİÇBİR cevaptı: kelime okunmuyor,
