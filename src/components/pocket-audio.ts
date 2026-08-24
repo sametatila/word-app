@@ -39,34 +39,45 @@ let silent: HTMLAudioElement | null = null;
 let keepAlive = false;
 
 /**
- * Bir saniyelik sessiz WAV.
+ * WAV üreteci — 48 kHz, 16 bit, tek kanal.
  *
- * Dosya olarak eklenmedi: 8 kHz, 8 bit, tek kanal bir saniyelik sessizlik
- * sekiz kilobayt ve çalışma anında üretmek hem depoyu hem de bir ağ isteğini
- * gereksiz kılıyor.
+ * Dosya olarak eklenmedi: çalışma anında üretmek hem depoyu hem bir ağ
+ * isteğini gereksiz kılıyor.
+ *
+ * Oran ve derinlik bilerek cihazın kendi oranında: önceki hâl 8 kHz/8 bit'ti
+ * ve iki yerde birden kullanılıyordu — biri oturum boyunca DURMADAN çalan
+ * sessiz döngü. Telefon görüşmesi oranında sürekli açık bir çıkış akışı, ses
+ * yolunun neden bozulduğunu ararken elenmesi gereken ilk şüphelilerden. Bipin
+ * kendisi de 8 bitte kaba duyuluyordu.
+ *
+ * `fill` örneği üretir; verilmezse sessizlik.
  */
-function silentTrack(): string {
-  const rate = 8000;
-  const samples = rate; // 1 sn
-  const buf = new ArrayBuffer(44 + samples);
+function wavUrl(ms: number, fill?: (i: number, rate: number) => number): string {
+  const rate = 48_000;
+  const samples = Math.round((rate * ms) / 1000);
+  const bytes = samples * 2;
+  const buf = new ArrayBuffer(44 + bytes);
   const view = new DataView(buf);
   const ascii = (offset: number, text: string) => {
     for (let i = 0; i < text.length; i++) view.setUint8(offset + i, text.charCodeAt(i));
   };
   ascii(0, "RIFF");
-  view.setUint32(4, 36 + samples, true);
+  view.setUint32(4, 36 + bytes, true);
   ascii(8, "WAVEfmt ");
   view.setUint32(16, 16, true); // fmt bloğu uzunluğu
   view.setUint16(20, 1, true); // PCM
   view.setUint16(22, 1, true); // tek kanal
   view.setUint32(24, rate, true);
-  view.setUint32(28, rate, true); // bayt/sn
-  view.setUint16(32, 1, true); // blok hizası
-  view.setUint16(34, 8, true); // bit derinliği
+  view.setUint32(28, rate * 2, true); // bayt/sn
+  view.setUint16(32, 2, true); // blok hizası
+  view.setUint16(34, 16, true); // bit derinliği
   ascii(36, "data");
-  view.setUint32(40, samples, true);
-  // 8 bit PCM'de sessizlik 0 değil 128'dir (işaretsiz).
-  new Uint8Array(buf, 44).fill(128);
+  view.setUint32(40, bytes, true);
+  if (fill) {
+    for (let i = 0; i < samples; i++) {
+      view.setInt16(44 + i * 2, Math.max(-32768, Math.min(32767, Math.round(fill(i, rate)))), true);
+    }
+  }
   return URL.createObjectURL(new Blob([buf], { type: "audio/wav" }));
 }
 
@@ -78,37 +89,14 @@ function silentTrack(): string {
  * yerde susuyorlar. Cepteki kullanıcı mikrofonun açıldığını yalnızca kulağıyla
  * anlayabiliyor; işaret duyulmazsa ya boşluğa konuşuyor ya da sessizce
  * bekliyor.
- *
- * Öğe yolu askıya alınmıyor, o yüzden bip de burada üretiliyor: 8 kHz, 8 bit,
- * tek kanal, kısa bir sinüs. Bir dosya eklemeye değmez.
  */
-function beepTrack(freq: number, ms: number): string {
-  const rate = 8000;
-  const samples = Math.round((rate * ms) / 1000);
-  const buf = new ArrayBuffer(44 + samples);
-  const view = new DataView(buf);
-  const ascii = (offset: number, text: string) => {
-    for (let i = 0; i < text.length; i++) view.setUint8(offset + i, text.charCodeAt(i));
-  };
-  ascii(0, "RIFF");
-  view.setUint32(4, 36 + samples, true);
-  ascii(8, "WAVEfmt ");
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint16(22, 1, true);
-  view.setUint32(24, rate, true);
-  view.setUint32(28, rate, true);
-  view.setUint16(32, 1, true);
-  view.setUint16(34, 8, true);
-  ascii(36, "data");
-  view.setUint32(40, samples, true);
-  const pcm = new Uint8Array(buf, 44);
-  for (let i = 0; i < samples; i++) {
-    // Kenarlar yumuşatılıyor: sert başlayan bir kare kulakta "tık" oluyor.
-    const fade = Math.min(1, i / 64, (samples - i) / 64);
-    pcm[i] = 128 + Math.round(56 * fade * Math.sin((2 * Math.PI * freq * i) / rate));
-  }
-  return URL.createObjectURL(new Blob([buf], { type: "audio/wav" }));
+function beepUrl(freq: number, ms: number): string {
+  return wavUrl(ms, (i, rate) => {
+    const n = Math.round((rate * ms) / 1000);
+    // Kenarlar yumuşatılıyor: sert başlayan bir ton kulakta "tık" oluyor.
+    const fade = Math.min(1, i / 480, (n - i) / 480);
+    return 9000 * fade * Math.sin((2 * Math.PI * freq * i) / rate);
+  });
 }
 
 let cue: HTMLAudioElement | null = null;
@@ -117,7 +105,7 @@ let cue: HTMLAudioElement | null = null;
 export function pocketCue() {
   if (typeof window === "undefined") return;
   if (!cue) {
-    cue = new Audio(beepTrack(880, 140));
+    cue = new Audio(beepUrl(880, 140));
     cue.preload = "auto";
   }
   try {
@@ -144,7 +132,7 @@ export function startPocketAudio(title: string, controls: PocketControls = {}) {
   if (typeof window === "undefined") return;
   keepAlive = true;
   if (!silent) {
-    silent = new Audio(silentTrack());
+    silent = new Audio(wavUrl(1000));
     silent.loop = true;
     silent.preload = "auto";
     // Duyulmaması gerekiyor ama SIFIR olmamalı: bazı tarayıcılar tamamen

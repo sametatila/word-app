@@ -129,12 +129,34 @@ export function micSupported(): boolean {
 }
 
 /**
- * Mikrofonu açar ve açık tutar.
+ * Yakalama kısıtları — ses ÇIKIŞINI bozmayacak biçimde.
  *
- * Ses işleme açık bırakıldı: yankı/gürültü bastırma ve kazanç denetimi, cepteki
- * telefonun kumaşa sürtünmesi ve sokak gürültüsü karşısında yazıya çevirmeyi
- * belirgin biçimde kolaylaştırıyor.
+ * `echoCancellation` masum bir istek değil: Android/Chrome yankı bastırmayı
+ * gördüğünde yakalamayı "konuşma" yoluna alıyor ve o yol ÇIKIŞI da içine
+ * çekiyor. Sonuç, mikrofon açık kaldığı sürece çalan her şeyin bozulması —
+ * Bluetooth kulaklıkta A2DP bırakılıp HFP'ye düşülüyor (16 kHz, tek kanal:
+ * telefon görüşmesi sesi), hoparlörde de çıkış incelip boğuklaşıyor. Mikrofon
+ * oturum boyunca açık tutulduğu için bu, turun TAMAMI boyunca sürüyordu.
+ *
+ * Yankı bastırmadan vazgeçmenin bedeli burada küçük: kulaklıkta hoparlörden
+ * mikrofona giden yol zaten yok, hoparlörde de kayıt okuma BİTTİKTEN sonra
+ * başlıyor. Karşılığında çıkış kalitesi turun tamamında korunuyor.
+ *
+ * Gürültü bastırma ve kazanç denetimi KALIYOR: ikisi yazılımda çalışıyor,
+ * çıkış yolunu değiştirmiyor ve cepteki telefonun kumaşa sürtünmesi ile sokak
+ * gürültüsü karşısında yazıya çevirmeyi belirgin biçimde kolaylaştırıyor.
+ *
+ * Sıra bir geri çekilme merdiveni: ilki yankı bastırmanın gerçekten kapalı
+ * olmasını ŞART koşuyor (düz değer yalnızca "tercih" sayılır ve sessizce
+ * yok sayılabilir), cihaz bunu yapamıyorsa sırayla gevşetiliyor. Hiç akış
+ * alamamak, kalitesiz akıştan kötü.
  */
+const CAPTURE_TRIES: MediaTrackConstraints[] = [
+  { echoCancellation: { exact: false }, noiseSuppression: true, autoGainControl: true },
+  { echoCancellation: false },
+  {},
+];
+
 /**
  * Mikrofonu AÇIK ama SUSTURULMUŞ hâlde alır.
  *
@@ -150,17 +172,28 @@ export function micSupported(): boolean {
 export async function openMic(): Promise<boolean> {
   if (!micSupported()) return false;
   if (stream?.active) return true;
-  try {
-    stream = await navigator.mediaDevices.getUserMedia({
-      audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
-    });
-    // Varsayılan susturulmuş: kayıt yolu istendiğinde açılıyor.
-    stream.getAudioTracks().forEach((t) => (t.enabled = false));
-    return true;
-  } catch {
-    closeMic();
-    return false;
+  for (const audio of CAPTURE_TRIES) {
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio });
+      // Varsayılan susturulmuş: kayıt yolu istendiğinde açılıyor.
+      stream.getAudioTracks().forEach((t) => (t.enabled = false));
+      return true;
+    } catch {
+      closeMic();
+    }
   }
+  return false;
+}
+
+/**
+ * Akışın gerçekte hangi kısıtlarla açıldığı.
+ *
+ * İstemek ile almak aynı şey değil: `exact` dışındaki kısıtlar sessizce yok
+ * sayılabiliyor ve cihazın ne yaptığı ancak buradan görülüyor. Ses kalitesi
+ * şikâyetinde ilk bakılacak yer burası.
+ */
+export function micSettings(): MediaTrackSettings | null {
+  return stream?.getAudioTracks()[0]?.getSettings() ?? null;
 }
 
 /** Kayıt yolunu açar: parçalar açılır ve sürekli kayıt başlar. */
