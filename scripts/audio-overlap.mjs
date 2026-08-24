@@ -12,6 +12,15 @@
  * susturuyordu. Yarım kalmış bir anlatım ikincide çalmaya devam ediyor ve
  * oyunun sesi onun üstüne biniyordu.
  *
+ * İkinci denetim SIZINTI: yürürken modu arka planda kalmak için sessiz bir ses
+ * döngüsü çalıyor ve o döngünün kendini yeniden başlatan bir gözcüsü var.
+ * Moddan "geri dön" düğmesine basmadan çıkılınca (alt gezinmeden başka bir
+ * sekmeye geçmek) döngü çalmaya devam ediyordu — durdurulamayan, sürekli açık
+ * bir çıkış akışı. Uygulamanın geri kalanının sesi onun üstüne biniyor.
+ *
+ * Sızıntı yalnızca UYGULAMA İÇİ gezinmeyle görülüyor: tam sayfa yüklemesi her
+ * şeyi zaten yok ediyor ve hatayı gizliyor.
+ *
  * Ölçüm dışarıdan: `HTMLMediaElement` çalma/durdurma olayları sayılıyor,
  * uygulamaya hiçbir şey eklenmiyor.
  */
@@ -40,14 +49,27 @@ const SESSION = {
 
 const browser = await chromium.launch({
   executablePath: process.env.WALK_CHROME,
-  args: ["--autoplay-policy=no-user-gesture-required"],
+  // Sahte mikrofon: sızıntı denetimi yürürken modunu gerçekten başlatmayı
+  // gerektiriyor ve mod mikrofon olmadan açılmıyor.
+  args: [
+    "--use-fake-device-for-media-stream",
+    "--use-fake-ui-for-media-stream",
+    "--autoplay-policy=no-user-gesture-required",
+  ],
 });
-const ctx = await browser.newContext({ viewport: { width: 412, height: 915 }, isMobile: true, hasTouch: true });
+const ctx = await browser.newContext({
+  permissions: ["microphone"],
+  viewport: { width: 412, height: 915 },
+  isMobile: true,
+  hasTouch: true,
+});
 
 await ctx.addInitScript(() => {
+  window.__media = new Set();
   window.__audio = [];
   const p0 = HTMLMediaElement.prototype.play;
   HTMLMediaElement.prototype.play = function (...a) {
+    window.__media.add(this);
     window.__audio.push({ t: Date.now(), kind: "element.play", src: String(this.src).slice(-60), id: this.__id ??= Math.random().toString(36).slice(2, 6) });
     this.addEventListener("ended", () => window.__audio.push({ t: Date.now(), kind: "element.ended", id: this.__id }), { once: true });
     return p0.apply(this, a);
@@ -77,6 +99,42 @@ await page.route("**/api/session**", (r) =>
   r.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(SESSION) }));
 await page.route("**/api/answers**", (r) =>
   r.fulfill({ status: 200, contentType: "application/json", body: '{"totalXp":0,"currentStreak":1}' }));
+
+await page.route("**/api/stt**", (r) =>
+  r.request().method() === "GET"
+    ? r.fulfill({ status: 200, contentType: "application/json", body: '{"configured":true}' })
+    : r.fulfill({ status: 200, contentType: "application/json", body: '{"text":"der Weg","confidence":0.9}' }));
+
+await page.goto(`${BASE}/learn`, { waitUntil: "domcontentloaded" });
+
+// ── 1) Sızıntı: yürürken modundan çıkınca sessiz döngü duruyor mu ──────
+const liveLoops = () =>
+  page.evaluate(() =>
+    [...window.__media].filter((m) => !m.paused && !m.ended && m.loop).length,
+  );
+await page
+  .locator("section", { hasText: "Türkçesini duy, Almancasını söyle" })
+  .last()
+  .getByRole("button", { name: "Başla" })
+  .click({ timeout: 20000 });
+await page.getByRole("button", { name: /Kulaklığı tak, başla|Devam et/ }).click({ timeout: 20000 });
+await page.waitForTimeout(4000);
+const during = await liveLoops();
+if (during === 0) {
+  // Mod hiç başlamadıysa denetim bir şey söylemiyor; sessizce "geçti" demek
+  // en kötüsü olurdu.
+  bad = true;
+  console.log("  → yürürken modu başlamadı: sızıntı denetimi yapılamadı");
+}
+// "Geri dön"e BASMADAN çıkış — asıl yol bu.
+await page.getByRole("link", { name: "Kelimeler" }).first().click({ timeout: 15000 });
+await page.waitForTimeout(2500);
+const leftOver = await liveLoops();
+console.log(`\n──── SIZINTI ────\n  modun içinde çalan döngü: ${during} · çıktıktan sonra: ${leftOver}`);
+if (leftOver > 0) {
+  bad = true;
+  console.log("  → sessiz döngü modun dışında çalmaya devam ediyor");
+}
 
 await page.goto(`${BASE}/learn`, { waitUntil: "domcontentloaded" });
 await page.getByRole("button", { name: /turluk oturuma başla|Devam et/ }).first().click({ timeout: 20000 });
@@ -120,5 +178,7 @@ await probe("YAZMA (karşılaştırma)", async () => {
 
 await browser.close();
 
-console.log(`\n${bad ? "KALDI — sesler üst üste biniyor" : "GEÇTİ — hiçbir noktada iki ses aynı anda çalmadı"}`);
+console.log(
+  `\n${bad ? "KALDI — ses hijyeni bozuk (üst üste binme ya da sızıntı)" : "GEÇTİ — ses üst üste binmiyor, moddan çıkınca bırakılıyor"}`,
+);
 process.exit(bad ? 1 : 0);

@@ -596,6 +596,24 @@ kulaklığın KENDİ mikrofonunu açmak için SCO bağlantısı kurmasıdır; on
 çaresi girişi telefonun dahili mikrofonuna sabitlemek — cepteki telefonda
 konuşmayı kumaşın arkasından dinlemek demek olduğu için bilerek yapılmadı.
 
+#### Ses hijyeni
+
+"Boş bir odada yankılı gibi geliyor" ve "kelimeyi söylerkenki kalite artık
+hiçbirinde yok" — ikisi de ses kalitesi şikâyeti gibi duruyor ama ikisi de
+mekanik hata. Aynı anda çalan ikinci bir ses, kulakta kaliteyi düşüren bir
+şeye dönüşüyor.
+
+| Parça | Neden |
+|---|---|
+| Konuşma yolu **iki öğeyi birden** susturuyor | Uygulama iki ses öğesi kullanıyor; parça zinciri (ders anlatımı, yürürken modu) ikisini sırayla çalıyor. Oyunların konuşma yolu ise yalnızca birincisini susturuyordu ve yarım kalmış bir anlatım ikincide çalmayı sürdürüyordu. Susturmanın diğer bütün yolları zaten ikisini de durduruyordu; eksik olan tek yol, oyunların TAMAMININ kullandığı yoldu |
+| Dinleme alıştırması da **paylaşılanları** susturuyor | Kendi `Audio` nesnesini kuruyor ve yalnızca kendi sesini durduruyordu |
+| Sessiz döngü **modun dışına taşmıyor** | Yürürken modu arka planda kalmak için sessiz bir ses çalıyor ve o döngünün kendini yeniden başlatan bir gözcüsü var. "Geri dön" düğmesine basmadan çıkılınca (alt gezinmeden başka bir sekmeye geçmek) döngü çalmaya devam ediyordu: durdurulamayan, sürekli açık bir çıkış akışı. Ölçüldü — düzeltmeden önce mod dışında çalmayı sürdürüyor, sonra bırakılıyor |
+| Arka plan gözcüsü **çalan sesi kesmiyor** | `onplaying` kaçırılırsa hâlâ çalan bir parçanın üstüne sıradakini başlatabiliyordu. Ölçüt `paused` değil `currentTime`: `play()` çağrılır çağrılmaz `paused` false oluyor, ses hiç akmasa bile — ilk hâli ona bakıyordu ve ağ takıldığında gözcüyü tamamen devre dışı bırakıyordu |
+
+`npm run test:audio` ikisini birden ölçüyor: aynı anda çalan öğe sayısı ve
+moddan çıkınca kalan döngü. Sızıntı yalnızca UYGULAMA İÇİ gezinmeyle görülüyor —
+tam sayfa yüklemesi her şeyi zaten yok ediyor ve hatayı gizliyor.
+
 #### Bekleme ve yanlış duyma
 
 Üç şikâyet aynı turdan çıktı: mikrofon çok bekliyor, bipi beklemeden
