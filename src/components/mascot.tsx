@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
 
@@ -69,6 +70,15 @@ const CLIP: Record<Mood, { file: string; aspect: number }> = {
   wave: { file: "wave", aspect: 2 / 3 },
 };
 
+/*
+  Boşta bekleme tek klip olunca hareket ezberleniyor: beş idle klibi rastgele
+  sırayla birbirine bağlanıyor (aynısı üst üste gelmez). Zincir dikişsiz,
+  çünkü hepsi last_image = base ile üretildi: her klip AYNI nötr duruşta
+  başlayıp bitiyor; hangi sırayla oynarlarsa oynasınlar geçiş görünmez.
+*/
+const IDLE_CLIPS = ["lookaround", "idle-dog", "idle-stretch", "idle-scratch", "idle-tail"];
+const IDLE_MS = 5083; // 61 kare @ 12fps — bir klibin tam süresi
+
 export function Mascot({
   mood = "idle",
   size = 132,
@@ -79,7 +89,30 @@ export function Mascot({
   className?: string;
 }) {
   const still = useStill();
+  const [idleClip, setIdleClip] = useState(IDLE_CLIPS[0]);
+
+  useEffect(() => {
+    if (mood !== "idle" || still) return;
+    const t = setTimeout(() => {
+      setIdleClip((cur) => {
+        const rest = IDLE_CLIPS.filter((c) => c !== cur);
+        return rest[Math.floor(Math.random() * rest.length)];
+      });
+    }, IDLE_MS);
+    return () => clearTimeout(t);
+  }, [mood, still, idleClip]);
+
+  // Sıradaki idle klibi ilk geçişte takılmasın diye hepsi önden ısıtılıyor.
+  useEffect(() => {
+    if (mood !== "idle" || still) return;
+    for (const c of IDLE_CLIPS) {
+      const img = new window.Image();
+      img.src = `/anim/${c}.webp`;
+    }
+  }, [mood, still]);
+
   const clip = CLIP[mood];
+  const file = mood === "idle" ? idleClip : clip.file;
 
   return (
     <div
@@ -108,8 +141,8 @@ export function Mascot({
           gösteriyor; yeni öğe temiz başlıyor ve döngü baştan oynuyor.
         */
         <img
-          key={mood}
-          src={`/anim/${clip.file}.webp`}
+          key={file}
+          src={`/anim/${file}.webp`}
           alt=""
           className="block h-full w-full object-contain"
           draggable={false}

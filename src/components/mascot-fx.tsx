@@ -7,31 +7,27 @@ import { useStill } from "@/lib/use-still";
 /**
  * Erdi'nin ortam sürprizleri — oyun oynanırken araya giren eğlence anları.
  *
- * İki sürpriz var ve ikisi de SEYREK: sürpriz sık tekrar ederse süs olmaktan
- * çıkıp gürültüye dönüşüyor.
- *
  *   YÜRÜYÜŞ   Rastgele bir anda ekranın altından bir uçtan girip öbür uçtan
  *             çıkıyor. Süre hıza değil EKRAN GENİŞLİĞİNE bağlı: dar telefonda
- *             kısa, geniş ekranda uzun yürüyor ama adımlarının hızı hep aynı —
- *             süreyi sabitlemek geniş ekranda karakteri kaydırak gibi
- *             kaydırıyordu. Klipler yerinde yürüme döngüsü; yer değiştirmeyi
- *             bu bileşen veriyor. walk-left klibi 3. saniyeden, walk-right
- *             2. saniyeden başlar; baştaki "öne dönük durup profile dönme"
- *             girişi paketleme sırasında atıldı ve döngü, başlangıç karesine
- *             en çok benzeyen karede kesildiği için dikişsiz.
+ *             kısa, geniş ekranda uzun yürüyor ama adım hızı hep aynı.
+ *             Klipler yerinde yürüme döngüsü; yer değiştirmeyi bu bileşen verir.
  *
- *   DİKİZLEME Daha da seyrek: ekranın yan kenarından, gövdesinin yarısı
- *             dışarıda kalacak şekilde uzanıp "aa, bu ne yapıyormuş?" diye
- *             bakıp kayboluyor. Klip sağ kenara göre üretildi; sol kenar
- *             aynalanmış kopyayı kullanıyor.
+ *   DİKİZLEME Daha seyrek: yan kenardan, gövdesinin yarısı dışarıda kalacak
+ *             şekilde uzanıp "aa, bu ne yapıyormuş?" diye bakıp kayboluyor.
+ *
+ * ## Zamanlama neden modül kapsamında
+ *
+ * İlk sürüm geri sayımı bileşen state'inde tutuyordu ve kullanıcı sürprizleri
+ * HİÇ göremedi: oyun ekranları tur/durum geçişlerinde bileşeni yeniden kuruyor
+ * ve her kuruluş sayacı sıfırlıyordu — sayaç hiçbir zaman dolmuyordu. Üstelik
+ * ilk yürüyüşten sonra yenisi de planlanmıyordu. Randevu zamanları artık modül
+ * değişkeninde: yeniden kuruluş geri sayımı ETKİLEMEZ, her olay bitince
+ * sıradaki randevu kurulur. Bileşen saniyede bir "randevu geldi mi?" diye
+ * bakar; sekme arka plandaysa randevu bir sonraki bakışa sarkar.
  *
  * Her ikisi de `pointer-events-none`: mirket ekrandan geçerken hiçbir dokunma
- * hedefini PERDELEMEZ — cevap vermeye çalışan kullanıcının tıklamasını yiyen
- * bir süs, süs değil tuzaktır. Aynı nedenle nav çubuğunun üstünde ama diyalog
- * katmanlarının altında (z-30) duruyorlar.
- *
- * Hareket azaltma tercihinde ikisi de hiç çıkmıyor: bunlar bilgi taşımayan,
- * salt hareketten ibaret süsler.
+ * hedefini PERDELEMEZ. Nav çubuğunun üstünde ama diyalog katmanlarının
+ * altında (z-30) dururlar. Hareket azaltma tercihinde hiç çıkmazlar.
  */
 export function MascotFx() {
   const still = useStill();
@@ -44,38 +40,31 @@ export function MascotFx() {
   );
 }
 
-/** ms cinsinden rastgele aralık. */
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
+
+/* Randevular — bileşen yeniden kurulsa da yaşamaya devam eder. */
+let walkNextAt = 0;
+let peekNextAt = 0;
 
 /** Yürüme hızı (CSS px/sn) — süre ekran genişliğinden türetiliyor. */
 const WALK_SPEED = 95;
-const WALK_H = 76; // görüntülenen yükseklik (px); klipler 300px, retina payı bol
+const WALK_H = 76;
 
 function Walker() {
   const [walk, setWalk] = useState<{ dir: "ltr" | "rtl"; dur: number; w: number } | null>(null);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    const schedule = (first: boolean) => {
-      timer = setTimeout(() => {
-        // Sekme arka plandaysa sürprizi harcama; kısa süre sonra tekrar bak.
-        if (document.hidden) {
-          schedule(false);
-          return;
-        }
-        const w = window.innerWidth;
-        setWalk({
-          dir: Math.random() < 0.5 ? "ltr" : "rtl",
-          dur: (w + 2 * 140) / WALK_SPEED,
-          w,
-        });
-      }, rand(first ? 45_000 : 100_000, first ? 150_000 : 260_000));
-    };
-    schedule(true);
-    return () => clearTimeout(timer);
-  }, []);
+    if (walkNextAt === 0) walkNextAt = Date.now() + rand(15_000, 60_000);
+    const tick = setInterval(() => {
+      if (walk || document.hidden || Date.now() < walkNextAt) return;
+      const w = window.innerWidth;
+      const dur = (w + 2 * 140) / WALK_SPEED;
+      walkNextAt = Date.now() + dur * 1000 + rand(90_000, 210_000);
+      setWalk({ dir: Math.random() < 0.5 ? "ltr" : "rtl", dur, w });
+    }, 1000);
+    return () => clearInterval(tick);
+  }, [walk]);
 
-  // Yürüyüş bitince kaybol ve bir sonrakini bekle (effect yeniden kurulur).
   useEffect(() => {
     if (!walk) return;
     const t = setTimeout(() => setWalk(null), walk.dur * 1000 + 400);
@@ -110,19 +99,14 @@ function Peeker() {
   const [side, setSide] = useState<"left" | "right" | null>(null);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    const schedule = () => {
-      timer = setTimeout(() => {
-        if (document.hidden) {
-          schedule();
-          return;
-        }
-        setSide(Math.random() < 0.5 ? "left" : "right");
-      }, rand(240_000, 540_000));
-    };
-    schedule();
-    return () => clearTimeout(timer);
-  }, []);
+    if (peekNextAt === 0) peekNextAt = Date.now() + rand(60_000, 150_000);
+    const tick = setInterval(() => {
+      if (side || document.hidden || Date.now() < peekNextAt) return;
+      peekNextAt = Date.now() + PEEK_MS + rand(150_000, 330_000);
+      setSide(Math.random() < 0.5 ? "left" : "right");
+    }, 1000);
+    return () => clearInterval(tick);
+  }, [side]);
 
   useEffect(() => {
     if (!side) return;

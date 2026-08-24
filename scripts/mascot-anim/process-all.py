@@ -31,6 +31,10 @@ CLIPS = {
     "think":      (None, 540, None),
     "sad":        (None, 540, None),
     "sleep":      (None, 540, None),
+    "idle-dog":     (None, 540, None),
+    "idle-stretch": (None, 540, None),
+    "idle-scratch": (None, 540, None),
+    "idle-tail":    (None, 540, None),
     "dance":      (None, 300, None),
     "walk-right": (2.0, 300, None),
     "walk-left":  (3.0, 300, None),
@@ -148,7 +152,7 @@ def pack(name, files, out, height, flip=False):
             im = im.transpose(Image.FLIP_LEFT_RIGHT)
         im.save(tmp / f"s{i:03d}.png")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-framerate", "12", "-i", str(tmp / "s%03d.png"),
-                    "-c:v", "libwebp_anim", "-lossless", "0", "-q:v", "60",
+                    "-c:v", "libwebp_anim", "-lossless", "0", "-q:v", "42",
                     "-compression_level", "6", "-loop", "0", "-pix_fmt", "yuva420p", str(out)], check=True)
     print(f"  {out.name}: {out.stat().st_size // 1024} KB, {len(kept)} kare")
 

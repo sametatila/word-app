@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mascot, type Mood } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
+
+/** Kutlama çeşitleri — hep aynı klip kutlamayı ezberletiyor, aralarında dönüyor. */
+const CHEERS: Mood[] = ["cheer", "dance", "happy"];
 
 /**
  * Ekranın kenarından girip kaybolan Erdi.
@@ -35,6 +38,13 @@ export function MascotPop({
 }) {
   const [show, setShow] = useState(false);
   const still = useStill();
+  /* Varsayılan kutlamada her tetikte rastgele bir kutlama klibi seçilir;
+     çağıran açıkça başka bir duygu istediyse ona dokunulmaz. */
+  const shown = useMemo<Mood>(
+    () => (mood === "cheer" ? CHEERS[Math.floor(Math.random() * CHEERS.length)] : mood),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [trigger, mood]
+  );
 
   useEffect(() => {
     if (!trigger) return;
@@ -77,7 +87,8 @@ export function MascotPop({
             ...(side === "right" ? { right: 8 } : { left: 8 }),
           }}
         >
-          <Mascot mood={mood} size={92} />
+          {/* Dans klibi geniş tuvalde: aynı görsel ağırlık için biraz daha geniş. */}
+          <Mascot mood={shown} size={shown === "dance" ? 132 : 92} />
         </motion.div>
       ) : null}
     </AnimatePresence>
