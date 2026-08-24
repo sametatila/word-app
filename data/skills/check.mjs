@@ -24,8 +24,20 @@ const OUT = `${ROOT}data/skills/out`;
 
 const TR_HARF = /[ıİğĞşŞ]/;
 
-/** Kalıplarda eğik çizgi ve üç nokta Almancadakini yansıtır; çok anlamlılık değil. */
-const kalipMi = (de) => /[…/]|\s/.test(de);
+/**
+ * Madde bir **şablon** mu?
+ *
+ * Şablonlarda ("mein Sohn / meine Tochter …", "Sehr geehrte Frau …,") çeviri
+ * Almancadaki çizgiyi, üç noktayı ve virgülü yansıtır; orada virgül çok
+ * anlamlılık işareti değil. Aynı maddeler metinde de birebir geçmez, parça
+ * parça geçer.
+ *
+ * Ölçüt Almanca başlığın **kendi** noktalaması. Önce "boşluk varsa şablondur"
+ * denmişti ve bu artikelli her ismi ("die Wohnung") kapsıyordu — yani
+ * sözlükçenin çoğunda iki denetim birden sessizce kapalıydı. Pilot paketi
+ * üreten ajan fark etti.
+ */
+const sablonMu = (de) => /[…/,]/.test(de);
 
 function denetle(paket) {
   const src = JSON.parse(readFileSync(`${IN}/${paket}.json`, "utf8"));
@@ -81,7 +93,7 @@ function denetle(paket) {
 
         // Cümle çevirilerinde tek karşılık kuralı geçmez; kelime ve
         // kalıplarda geçer, ama kalıbın kendi içinde çizgi olabilir.
-        if (alanAdi !== "tasks" && !kalipMi(k.de)) {
+        if (alanAdi !== "tasks" && !sablonMu(k.de)) {
           if (/,/.test(tr)) H("çok anlamlı tr", `${k.de} → "${tr}"`);
           if (/,/.test(en)) H("çok anlamlı en", `${k.de} → "${en}"`);
         }
@@ -98,7 +110,7 @@ function denetle(paket) {
     // Sözlükçe kelimesi metinde gerçekten geçiyor mu?
     if (e.metin) {
       for (const g of e.gloss ?? []) {
-        if (kalipMi(g.de)) continue; // kalıplar cümlede parça parça geçer
+        if (sablonMu(g.de)) continue; // şablonlar metinde parça parça geçer
         if (!contains(e.metin, g.de)) U("metinde yok", `"${g.de}" egzersiz metninde bulunamadı`);
       }
     }
