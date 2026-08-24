@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "frei haben",
-     "mevcutTr": "boş olmak, izinli olmak"
+     "mevcutTr": "boş olmak"
     },
     {
      "de": "das Kino",
@@ -45,7 +45,7 @@
     },
     {
      "de": "Viele Grüße",
-     "mevcutTr": "sevgiler (mesaj sonu kalıbı)"
+     "mevcutTr": "sevgiler"
     }
    ]
   },
@@ -100,7 +100,7 @@
     },
     {
      "de": "die Nebenkosten",
-     "mevcutTr": "yan giderler (aidat, ısınma vb.)",
+     "mevcutTr": "yan giderler",
      "havuz": {
       "tr": "yan giderler",
       "en": "utility costs"
@@ -116,7 +116,7 @@
     },
     {
      "de": "die Besichtigung",
-     "mevcutTr": "daireyi gezip görme",
+     "mevcutTr": "gezme",
      "havuz": {
       "tr": "gezme",
       "en": "viewing"
@@ -167,7 +167,7 @@
     },
     {
      "de": "der Kuchen",
-     "mevcutTr": "pasta, kek",
+     "mevcutTr": "kek",
      "havuz": {
       "tr": "kek",
       "en": "cake"
@@ -175,7 +175,7 @@
     },
     {
      "de": "mitbringen",
-     "mevcutTr": "yanında getirmek",
+     "mevcutTr": "getirmek",
      "havuz": {
       "tr": "getirmek",
       "en": "to bring along"
@@ -202,7 +202,7 @@
    "gloss": [
     {
      "de": "die Öffnungszeiten",
-     "mevcutTr": "açılış saatleri"
+     "mevcutTr": "çalışma saatleri"
     },
     {
      "de": "geschlossen",
@@ -214,7 +214,7 @@
     },
     {
      "de": "das Angebot",
-     "mevcutTr": "indirim, kampanya",
+     "mevcutTr": "indirim",
      "havuz": {
       "tr": "teklif",
       "en": "offer"
@@ -265,11 +265,11 @@
     },
     {
      "de": "der Anfänger",
-     "mevcutTr": "başlangıç seviyesindeki kişi"
+     "mevcutTr": "yeni başlayan"
     },
     {
      "de": "der Kursleiter",
-     "mevcutTr": "kurs öğretmeni",
+     "mevcutTr": "kurs eğitmeni",
      "havuz": {
       "tr": "kurs eğitmeni",
       "en": "course instructor"
@@ -324,7 +324,7 @@
     },
     {
      "de": "der Hauptbahnhof",
-     "mevcutTr": "ana tren garı",
+     "mevcutTr": "ana gar",
      "havuz": {
       "tr": "ana gar",
       "en": "central station"
@@ -340,7 +340,7 @@
     },
     {
      "de": "abfahren",
-     "mevcutTr": "kalkmak, hareket etmek",
+     "mevcutTr": "kalkmak",
      "havuz": {
       "tr": "kalkmak",
       "en": "to depart"
@@ -391,7 +391,7 @@
     },
     {
      "de": "der Karton",
-     "mevcutTr": "koli",
+     "mevcutTr": "karton kutu",
      "havuz": {
       "tr": "karton kutu",
       "en": "cardboard box"
@@ -411,7 +411,7 @@
     },
     {
      "de": "klingeln",
-     "mevcutTr": "zile basmak",
+     "mevcutTr": "zil çalmak",
      "havuz": {
       "tr": "zil çalmak",
       "en": "to ring"
@@ -419,7 +419,7 @@
     },
     {
      "de": "der Kuchen",
-     "mevcutTr": "kek, pasta",
+     "mevcutTr": "kek",
      "havuz": {
       "tr": "kek",
       "en": "cake"
@@ -478,7 +478,7 @@
     },
     {
      "de": "mitbringen",
-     "mevcutTr": "yanında getirmek",
+     "mevcutTr": "getirmek",
      "havuz": {
       "tr": "getirmek",
       "en": "to bring along"
@@ -486,7 +486,7 @@
     },
     {
      "de": "pünktlich",
-     "mevcutTr": "dakik, zamanında",
+     "mevcutTr": "dakik",
      "havuz": {
       "tr": "dakik",
       "en": "punctual"
