@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6503,
+    "tr": "repertuvar",
+    "en": "repertoire",
+    "beispiel": "Dieses Stück steht seit zwanzig Jahren im Repertoire.",
+    "beispielTr": "Bu oyun yirmi yıldır repertuvarda.",
+    "beispielEn": "This play has been in the repertoire for twenty years."
+  },
+  {
+    "id": 6504,
+    "tr": "gerilim eğrisi",
+    "en": "arc of suspense",
+    "beispiel": "Im dritten Akt bricht der Spannungsbogen völlig zusammen.",
+    "beispielTr": "Üçüncü perdede gerilim eğrisi tamamen çöküyor.",
+    "beispielEn": "In the third act the arc of suspense collapses completely."
+  },
+  {
+    "id": 6505,
+    "tr": "katarsis",
+    "en": "catharsis",
+    "beispiel": "Das Stück verweigert dem Publikum jede tröstliche Katharsis.",
+    "beispielTr": "Oyun seyirciye hiçbir teselli edici katarsis sunmuyor.",
+    "beispielEn": "The play denies the audience any comforting catharsis."
+  },
+  {
+    "id": 6506,
+    "tr": "abartılı duygusallık",
+    "en": "pathos",
+    "beispiel": "Das Pathos der Schlussszene wirkt heute unfreiwillig komisch.",
+    "beispielTr": "Final sahnesinin abartılı duygusallığı bugün istemeden komik duruyor.",
+    "beispielEn": "The pathos of the closing scene seems unintentionally funny today."
+  },
+  {
+    "id": 6507,
+    "tr": "grotesk",
+    "en": "grotesque",
+    "beispiel": "Die Tragödie kippt im letzten Bild in eine Groteske.",
+    "beispielTr": "Trajedi son sahnede bir groteske dönüşüyor.",
+    "beispielEn": "In the final scene the tragedy turns into a grotesque."
+  },
+  {
+    "id": 6508,
+    "tr": "alaycı taklit",
+    "en": "spoof",
+    "beispiel": "Der Film ist eine bissige Persiflage auf den Kunstbetrieb.",
+    "beispielTr": "Film, sanat dünyasına yönelik iğneleyici bir taklit.",
+    "beispielEn": "The film is a biting spoof of the art world."
+  },
+  {
+    "id": 6509,
+    "tr": "soyutlama",
+    "en": "abstraction",
+    "beispiel": "Der Maler wandte sich erst spät der Abstraktion zu.",
+    "beispielTr": "Ressam soyutlamaya ancak geç bir dönemde yöneldi.",
+    "beispielEn": "The painter turned to abstraction only late in life."
+  },
+  {
+    "id": 6510,
+    "tr": "yüksek kültür",
+    "en": "high culture",
+    "beispiel": "Der Sender spart bei der Hochkultur und zeigt Quizshows.",
+    "beispielTr": "Kanal yüksek kültürden kısıp yarışma programları yayınlıyor.",
+    "beispielEn": "The channel cuts back on high culture and airs quiz shows."
+  },
+  {
+    "id": 6511,
+    "tr": "sanat özgürlüğü",
+    "en": "artistic freedom",
+    "beispiel": "Das Gericht berief sich in seinem Urteil auf die Kunstfreiheit.",
+    "beispielTr": "Mahkeme kararında sanat özgürlüğüne dayandı.",
+    "beispielEn": "In its ruling the court invoked artistic freedom."
+  },
+  {
+    "id": 6512,
+    "tr": "icra etmek",
+    "en": "to perform",
+    "beispiel": "Das Quartett bot die späten Streichquartette hinreißend dar.",
+    "beispielTr": "Dörtlü, geç dönem yaylı kuartetlerini büyüleyici biçimde icra etti.",
+    "beispielEn": "The quartet performed the late string quartets magnificently."
+  },
+  {
+    "id": 6513,
+    "tr": "prova etmek",
+    "en": "to rehearse",
+    "beispiel": "Der Chor studiert das Requiem seit Monaten ein.",
+    "beispielTr": "Koro aylardır Requiem'i prova ediyor.",
+    "beispielEn": "The choir has been rehearsing the requiem for months."
+  },
+  {
+    "id": 6514,
+    "tr": "deşifre etmek",
+    "en": "to decipher",
+    "beispiel": "Forscher haben die Inschrift auf dem Grabstein endlich entschlüsselt.",
+    "beispielTr": "Araştırmacılar mezar taşındaki yazıtı sonunda deşifre etti.",
+    "beispielEn": "Researchers have finally deciphered the inscription on the gravestone."
+  },
+  {
+    "id": 6515,
+    "tr": "kendini yerine koymak",
+    "en": "to empathize with",
+    "beispiel": "Ich kann deine Wut in dieser Situation gut nachempfinden.",
+    "beispielTr": "Bu durumdaki öfkeni kendimi yerine koyup gayet iyi anlıyorum.",
+    "beispielEn": "I can really empathize with your anger in this situation."
+  },
+  {
+    "id": 6516,
+    "tr": "yüceltmek",
+    "en": "to elevate",
+    "beispiel": "Die Regie überhöht den Alltag zum antiken Ritual.",
+    "beispielTr": "Reji, gündelik hayatı antik bir ritüele yüceltiyor.",
+    "beispielEn": "The staging elevates everyday life into an ancient ritual."
+  },
+  {
+    "id": 6517,
+    "tr": "taslağını çizmek",
+    "en": "to sketch",
+    "beispiel": "Sie skizzierte den Entwurf schnell auf eine Serviette.",
+    "beispielTr": "Tasarımın taslağını çabucak bir peçeteye çizdi.",
+    "beispielEn": "She quickly sketched the design on a napkin."
+  },
+  {
+    "id": 6518,
+    "tr": "bestelemek",
+    "en": "to set to music",
+    "beispiel": "Er hat mehrere Gedichte der Romantik neu vertont.",
+    "beispielTr": "Romantik dönemden birkaç şiiri yeniden besteledi.",
+    "beispielEn": "He has set several Romantic poems to music again."
+  },
+  {
+    "id": 6519,
+    "tr": "ezberden okumak",
+    "en": "to recite",
+    "beispiel": "Der Junge rezitierte das Gedicht fehlerfrei vor der Klasse.",
+    "beispielTr": "Çocuk şiiri sınıfın önünde hatasız ezberden okudu.",
+    "beispielEn": "The boy recited the poem flawlessly in front of the class."
+  },
+  {
+    "id": 6520,
+    "tr": "küratörlüğünü yapmak",
+    "en": "to curate",
+    "beispiel": "Sie kuratiert die Biennale zum zweiten Mal.",
+    "beispielTr": "Bienalin küratörlüğünü ikinci kez yapıyor.",
+    "beispielEn": "She is curating the biennial for the second time."
+  },
+  {
+    "id": 6521,
+    "tr": "açık artırmayla satmak",
+    "en": "to auction off",
+    "beispiel": "Der Nachlass des Malers wird im Herbst versteigert.",
+    "beispielTr": "Ressamın mirası sonbaharda açık artırmayla satılacak.",
+    "beispielEn": "The painter's estate will be auctioned off in the fall."
+  },
+  {
+    "id": 6522,
+    "tr": "kışkırtmak",
+    "en": "to provoke",
+    "beispiel": "Mit dem Plakat wollte der Künstler die Kirche provozieren.",
+    "beispielTr": "Sanatçı bu afişle kiliseyi kışkırtmak istedi.",
+    "beispielEn": "With the poster the artist wanted to provoke the church."
+  },
+  {
+    "id": 6523,
+    "tr": "kafa karıştırmak",
+    "en": "to confuse",
+    "beispiel": "Der abrupte Stilwechsel irritierte selbst wohlwollende Kritiker.",
+    "beispielTr": "Ani üslup değişimi iyi niyetli eleştirmenlerin bile kafasını karıştırdı.",
+    "beispielEn": "The abrupt change of style confused even sympathetic critics."
+  },
+  {
+    "id": 6524,
+    "tr": "derinden etkilemek",
+    "en": "to move deeply",
+    "beispiel": "Die schlichte Schlussarie ergriff das ganze Haus.",
+    "beispielTr": "Yalın final aryası bütün salonu derinden etkiledi.",
+    "beispielEn": "The plain closing aria moved the whole audience deeply."
+  },
+  {
+    "id": 6525,
+    "tr": "karikatürleştirmek",
+    "en": "to caricature",
+    "beispiel": "Der Zeichner karikiert den Minister mit riesigen Ohren.",
+    "beispielTr": "Çizer bakanı kocaman kulaklarla karikatürleştiriyor.",
+    "beispielEn": "The cartoonist caricatures the minister with huge ears."
+  },
+  {
+    "id": 6526,
+    "tr": "eleştiri yazmak",
+    "en": "to review",
+    "beispiel": "Sie rezensiert seit Jahren Ausstellungen für eine Wochenzeitung.",
+    "beispielTr": "Yıllardır haftalık bir gazete için sergi eleştirileri yazıyor.",
+    "beispielEn": "She has reviewed exhibitions for a weekly paper for years."
+  },
+  {
+    "id": 6527,
+    "tr": "deneysel",
+    "en": "experimental",
+    "beispiel": "Das Festival zeigt vor allem experimentelles Musiktheater.",
+    "beispielTr": "Festival ağırlıklı olarak deneysel müzik tiyatrosu gösteriyor.",
+    "beispielEn": "The festival mainly shows experimental music theater."
+  },
+  {
+    "id": 6528,
+    "tr": "öykünmeci",
+    "en": "derivative",
+    "beispiel": "Seine frühen Bilder wirken noch reichlich epigonal.",
+    "beispielTr": "Erken dönem resimleri hâlâ epeyce öykünmeci duruyor.",
+    "beispielEn": "His early pictures still seem quite derivative."
+  },
+  {
+    "id": 6529,
+    "tr": "incelikli",
+    "en": "subtle",
+    "beispiel": "Der Regisseur kritisiert die Kirche subtil, aber unmissverständlich.",
+    "beispielTr": "Yönetmen kiliseyi incelikli ama açık biçimde eleştiriyor.",
+    "beispielEn": "The director criticizes the church subtly but unmistakably."
+  },
+  {
+    "id": 6530,
+    "tr": "çift anlamlı",
+    "en": "ambiguous",
+    "beispiel": "Der scheinbar harmlose Text ist zutiefst doppelbödig.",
+    "beispielTr": "Görünüşte masum olan metin son derece çift anlamlı.",
+    "beispielEn": "The seemingly harmless text is deeply ambiguous."
+  },
+  {
+    "id": 6531,
+    "tr": "derin anlamlı",
+    "en": "subtly profound",
+    "beispiel": "Ihr Humor ist leise und hintergründig statt laut.",
+    "beispielTr": "Mizahı gürültülü değil, sessiz ve derin anlamlı.",
+    "beispielEn": "Her humor is quiet and subtly profound rather than loud."
+  },
+  {
+    "id": 6532,
+    "tr": "görkemli",
+    "en": "opulent",
+    "beispiel": "Die opulente Ausstattung erdrückt den schmalen Text.",
+    "beispielTr": "Görkemli sahne donanımı ince metni eziyor.",
+    "beispielEn": "The opulent set design overwhelms the slender text."
+  },
+  {
+    "id": 6533,
+    "tr": "çarpıcı",
+    "en": "powerful",
+    "beispiel": "Der Dokumentarfilm schildert das Milieu eindringlich und ohne Kitsch.",
+    "beispielTr": "Belgesel o çevreyi çarpıcı biçimde ve kitsch'e kaçmadan anlatıyor.",
+    "beispielEn": "The documentary portrays the milieu powerfully and without kitsch."
+  },
+  {
+    "id": 6534,
+    "tr": "zorlu",
+    "en": "difficult",
+    "beispiel": "Sein sperriges Spätwerk fand erst posthum Anerkennung.",
+    "beispielTr": "Zorlu geç dönem yapıtları ancak ölümünden sonra kabul gördü.",
+    "beispielEn": "His difficult late work found recognition only after his death."
+  },
+  {
+    "id": 6535,
+    "tr": "seçkinci",
+    "en": "elitist",
+    "beispiel": "Viele werfen dem Opernhaus ein elitäres Programm vor.",
+    "beispielTr": "Birçok kişi opera binasını seçkinci bir program sunmakla suçluyor.",
+    "beispielEn": "Many accuse the opera house of an elitist program."
+  },
+  {
+    "id": 6536,
+    "tr": "anlatıcı",
+    "en": "narrator",
+    "beispiel": "Der Erzähler bleibt in diesem Roman auffallend distanziert.",
+    "beispielTr": "Bu romanda anlatıcı dikkat çekecek kadar mesafeli kalıyor.",
+    "beispielEn": "In this novel the narrator remains strikingly detached."
+  },
+  {
+    "id": 6537,
+    "tr": "olay örgüsü kolu",
+    "en": "plot strand",
+    "beispiel": "Die beiden Handlungsstränge laufen erst im letzten Kapitel zusammen.",
+    "beispielTr": "İki olay örgüsü kolu ancak son bölümde birleşiyor.",
+    "beispielEn": "The two plot strands come together only in the last chapter."
+  },
+  {
+    "id": 6538,
+    "tr": "üslup aracı",
+    "en": "stylistic device",
+    "beispiel": "Diese Wiederholung setzt der Autor als Stilmittel ein.",
+    "beispielTr": "Yazar bu yinelemeyi bir üslup aracı olarak kullanıyor.",
+    "beispielEn": "The author uses this repetition as a stylistic device."
+  },
+  {
+    "id": 6539,
+    "tr": "metafor",
+    "en": "metaphor",
+    "beispiel": "Seine Metaphern wirken auf mich etwas abgenutzt.",
+    "beispielTr": "Metaforları bana biraz aşınmış geliyor.",
+    "beispielEn": "His metaphors strike me as somewhat worn out."
+  },
+  {
+    "id": 6540,
+    "tr": "kıssa",
+    "en": "parable",
+    "beispiel": "Der Prediger erklärte den Gedanken anhand eines alten Gleichnisses.",
+    "beispielTr": "Vaiz düşünceyi eski bir kıssayla açıkladı.",
+    "beispielEn": "The preacher explained the idea using an old parable."
+  },
+  {
+    "id": 6541,
+    "tr": "sonsöz",
+    "en": "afterword",
+    "beispiel": "Im Nachwort beschreibt die Übersetzerin ihre wichtigsten Entscheidungen.",
+    "beispielTr": "Sonsözde çevirmen en önemli tercihlerini anlatıyor.",
+    "beispielEn": "In the afterword the translator describes her main decisions."
+  },
+  {
+    "id": 6542,
+    "tr": "dipnot",
+    "en": "footnote",
+    "beispiel": "Die entscheidende Quelle versteckt sich in einer knappen Fußnote.",
+    "beispielTr": "Belirleyici kaynak kısacık bir dipnotta gizli.",
+    "beispielEn": "The decisive source is hidden in a brief footnote."
+  },
+  {
+    "id": 6543,
+    "tr": "el yazması",
+    "en": "manuscript",
+    "beispiel": "Das Manuskript lag jahrzehntelang unbeachtet im Archiv.",
+    "beispielTr": "El yazması onlarca yıl arşivde fark edilmeden durdu.",
+    "beispielEn": "The manuscript lay unnoticed in the archive for decades."
+  },
+  {
+    "id": 6544,
+    "tr": "eser sahibi",
+    "en": "originator",
+    "beispiel": "Der Urheber des Textes blieb über Jahrzehnte unbekannt.",
+    "beispielTr": "Metnin eser sahibi onlarca yıl boyunca bilinmedi.",
+    "beispielEn": "The originator of the text remained unknown for decades."
+  },
+  {
+    "id": 6545,
+    "tr": "birebir ifade",
+    "en": "exact wording",
+    "beispiel": "Den genauen Wortlaut des Briefes kennt heute niemand mehr.",
+    "beispielTr": "Mektubun birebir ifadesini bugün artık kimse bilmiyor.",
+    "beispielEn": "Nobody knows the exact wording of the letter anymore."
+  },
+  {
+    "id": 6546,
+    "tr": "dil değişimi",
+    "en": "language change",
+    "beispiel": "Der Sprachwandel zeigt sich am deutlichsten in der Jugendsprache.",
+    "beispielTr": "Dil değişimi en açık biçimde gençlerin dilinde görülüyor.",
+    "beispielEn": "Language change shows most clearly in youth slang."
+  },
+  {
+    "id": 6547,
+    "tr": "yöresel ağız",
+    "en": "local dialect",
+    "beispiel": "In seinen Gedichten mischt er Hochdeutsch und heimatliche Mundart.",
+    "beispielTr": "Şiirlerinde standart Almancayla memleket ağzını harmanlıyor.",
+    "beispielEn": "In his poems he mixes standard German with his local dialect."
+  },
+  {
+    "id": 6548,
+    "tr": "vakayiname",
+    "en": "chronicle",
+    "beispiel": "Die Chronik des Klosters reicht bis ins zwölfte Jahrhundert zurück.",
+    "beispielTr": "Manastırın vakayinamesi on ikinci yüzyıla kadar uzanıyor.",
+    "beispielEn": "The monastery's chronicle goes back to the twelfth century."
+  },
+  {
+    "id": 6549,
+    "tr": "anma yazısı",
+    "en": "obituary",
+    "beispiel": "Der Nachruf würdigt vor allem ihre späten Gedichte.",
+    "beispielTr": "Anma yazısı özellikle onun geç dönem şiirlerini övüyor.",
+    "beispielEn": "The obituary praises above all her late poems."
+  },
+  {
+    "id": 6550,
+    "tr": "atasözü",
+    "en": "proverb",
+    "beispiel": "Meine Großmutter hatte für jede Lage ein Sprichwort.",
+    "beispielTr": "Büyükannemin her duruma uygun bir atasözü vardı.",
+    "beispielEn": "My grandmother had a proverb for every situation."
+  },
+  {
+    "id": 6551,
+    "tr": "çok anlamlılık",
+    "en": "ambiguity",
+    "beispiel": "Die Mehrdeutigkeit des Schlusses hat die Kritik lange beschäftigt.",
+    "beispielTr": "Sonun çok anlamlılığı eleştirmenleri uzun süre meşgul etti.",
+    "beispielEn": "The ambiguity of the ending long occupied the critics."
+  },
+  {
+    "id": 6552,
+    "tr": "kafiye",
+    "en": "rhyme",
+    "beispiel": "Der Dichter verzichtet in seinen späten Texten auf Reime.",
+    "beispielTr": "Şair geç dönem metinlerinde kafiyeden vazgeçiyor.",
+    "beispielEn": "In his late texts the poet does without rhyme."
+  }
+]

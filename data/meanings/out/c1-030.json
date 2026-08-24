@@ -1,0 +1,402 @@
+[
+ {
+  "id": 6703,
+  "tr": "cezasızlık",
+  "en": "impunity",
+  "beispiel": "Jahrzehntelange Straflosigkeit hat das Vertrauen in die Justiz zerstört.",
+  "beispielTr": "Onlarca yıl süren cezasızlık yargıya olan güveni yok etti.",
+  "beispielEn": "Decades of impunity destroyed public trust in the courts."
+ },
+ {
+  "id": 6704,
+  "tr": "işkence",
+  "en": "torture",
+  "beispiel": "Der Häftling berichtete vor Gericht von wochenlanger Folter.",
+  "beispielTr": "Tutuklu, mahkemede haftalarca gördüğü işkenceyi anlattı.",
+  "beispielEn": "The prisoner told the court about weeks of torture."
+ },
+ {
+  "id": 6705,
+  "tr": "kötü muamele",
+  "en": "mistreatment",
+  "beispiel": "Ärzte bestätigten Spuren schwerer Misshandlungen während der Haft.",
+  "beispielTr": "Doktorlar gözaltıda ağır kötü muamele izleri olduğunu doğruladı.",
+  "beispielEn": "Doctors confirmed traces of severe mistreatment during custody."
+ },
+ {
+  "id": 6706,
+  "tr": "keyfilik",
+  "en": "arbitrariness",
+  "beispiel": "Die Richterin nannte die Entscheidung des Amtes reine Willkür.",
+  "beispielTr": "Hâkim, dairenin kararını tam bir keyfilik olarak nitelendirdi.",
+  "beispielEn": "The judge called the agency's decision purely arbitrary."
+ },
+ {
+  "id": 6707,
+  "tr": "taşkınlık",
+  "en": "assault",
+  "beispiel": "Übergriffe der Sicherheitskräfte wurden monatelang gar nicht untersucht.",
+  "beispielTr": "Güvenlik güçlerinin taşkınlıkları aylarca hiç soruşturulmadı.",
+  "beispielEn": "Assaults by the security forces went uninvestigated for months."
+ },
+ {
+  "id": 6708,
+  "tr": "bastırma",
+  "en": "suppression",
+  "beispiel": "Die Unterdrückung der Proteste wurde weltweit scharf kritisiert.",
+  "beispielTr": "Protestoların bastırılması dünya çapında sert biçimde eleştirildi.",
+  "beispielEn": "The suppression of the protests drew sharp criticism worldwide."
+ },
+ {
+  "id": 6709,
+  "tr": "özel raportör",
+  "en": "special rapporteur",
+  "beispiel": "Der Sonderberichterstatter durfte die Gefängnisse nur unter Auflagen besuchen.",
+  "beispielTr": "Özel raportör cezaevlerini yalnızca belli koşullarla ziyaret edebildi.",
+  "beispielEn": "The special rapporteur could visit the prisons only under conditions."
+ },
+ {
+  "id": 6710,
+  "tr": "suçlamak",
+  "en": "to indict",
+  "beispiel": "Zwei ehemalige Minister wurden wegen schwerer Verbrechen angeklagt.",
+  "beispielTr": "İki eski bakan ağır suçlar nedeniyle resmen suçlandı.",
+  "beispielEn": "Two former ministers were indicted for serious crimes."
+ },
+ {
+  "id": 6711,
+  "tr": "talep etmek",
+  "en": "to demand",
+  "beispiel": "Die Angehörigen fordern seit Jahren Aufklärung und Entschädigung ein.",
+  "beispielTr": "Yakınları yıllardır gerçeğin açığa çıkmasını ve tazminat talep ediyor.",
+  "beispielEn": "The families have been demanding answers and compensation for years."
+ },
+ {
+  "id": 6712,
+  "tr": "infaz etmek",
+  "en": "to enforce",
+  "beispiel": "Das Urteil wurde erst nach zwei Jahren vollstreckt.",
+  "beispielTr": "Karar ancak iki yıl sonra infaz edildi.",
+  "beispielEn": "The judgment was not enforced until two years later."
+ },
+ {
+  "id": 6713,
+  "tr": "elinden almak",
+  "en": "to revoke",
+  "beispiel": "Dem Sportler wurde die Goldmedaille wegen Dopings aberkannt.",
+  "beispielTr": "Sporcunun altın madalyası doping nedeniyle elinden alındı.",
+  "beispielEn": "The athlete's gold medal was revoked for doping."
+ },
+ {
+  "id": 6714,
+  "tr": "tazmin etmek",
+  "en": "to compensate",
+  "beispiel": "Die Fluggesellschaft entschädigte alle Passagiere für den verspäteten Flug.",
+  "beispielTr": "Havayolu şirketi rötarlı uçuş için bütün yolcuları tazmin etti.",
+  "beispielEn": "The airline compensated all passengers for the delayed flight."
+ },
+ {
+  "id": 6715,
+  "tr": "dokunulmaz",
+  "en": "inviolable",
+  "beispiel": "Der erste Artikel des Grundgesetzes erklärt die Menschenwürde für unantastbar.",
+  "beispielTr": "Anayasanın ilk maddesi insan onurunu dokunulmaz ilan eder.",
+  "beispielEn": "The first article of the constitution declares human dignity inviolable."
+ },
+ {
+  "id": 6716,
+  "tr": "devredilemez",
+  "en": "inalienable",
+  "beispiel": "Die Erklärung nennt Freiheit und Gleichheit unveräußerliche Rechte.",
+  "beispielTr": "Bildirge özgürlük ve eşitliği devredilemez haklar olarak sayıyor.",
+  "beispielEn": "The declaration calls freedom and equality inalienable rights."
+ },
+ {
+  "id": 6717,
+  "tr": "sistematik",
+  "en": "systematic",
+  "beispiel": "Der Ermittler ging systematisch jede Spur noch einmal durch.",
+  "beispielTr": "Müfettiş her ipucunu sistematik biçimde bir kez daha gözden geçirdi.",
+  "beispielEn": "The investigator systematically went through every lead again."
+ },
+ {
+  "id": 6718,
+  "tr": "istisnasız",
+  "en": "without exception",
+  "beispiel": "Alle Schüler haben die Prüfung ausnahmslos bestanden.",
+  "beispielTr": "Bütün öğrenciler istisnasız sınavı geçti.",
+  "beispielEn": "All the students passed the exam without exception."
+ },
+ {
+  "id": 6719,
+  "tr": "korunmaya muhtaç",
+  "en": "vulnerable",
+  "beispiel": "Unbegleitete Kinder gelten im Asylverfahren als besonders schutzbedürftig.",
+  "beispielTr": "Refakatsiz çocuklar iltica sürecinde özellikle korunmaya muhtaç sayılır.",
+  "beispielEn": "Unaccompanied children count as especially vulnerable in the asylum process."
+ },
+ {
+  "id": 6720,
+  "tr": "bölünmez",
+  "en": "indivisible",
+  "beispiel": "Laut Testament bleibt das Grundstück unteilbar in Familienbesitz.",
+  "beispielTr": "Vasiyete göre arsa bölünmez biçimde aile mülkiyetinde kalıyor.",
+  "beispielEn": "Under the will the property stays indivisible in family ownership."
+ },
+ {
+  "id": 6721,
+  "tr": "entropi",
+  "en": "entropy",
+  "beispiel": "Der Professor erklärte die Entropie am Beispiel eines Eiswürfels.",
+  "beispielTr": "Profesör entropiyi bir buz küpü örneğiyle anlattı.",
+  "beispielEn": "The professor explained entropy using an ice cube."
+ },
+ {
+  "id": 6722,
+  "tr": "yerçekimi",
+  "en": "gravity",
+  "beispiel": "Auf dem Mond ist die Schwerkraft viel schwächer als hier.",
+  "beispielTr": "Ay'da yerçekimi buradakinden çok daha zayıftır.",
+  "beispielEn": "On the moon gravity is much weaker than here."
+ },
+ {
+  "id": 6723,
+  "tr": "maddenin hâli",
+  "en": "state of matter",
+  "beispiel": "Wasser kommt auf der Erde in allen drei Aggregatzuständen vor.",
+  "beispielTr": "Su yeryüzünde her üç hâlde de bulunur.",
+  "beispielEn": "Water occurs on Earth in all three states of matter."
+ },
+ {
+  "id": 6724,
+  "tr": "atom çekirdeği",
+  "en": "atomic nucleus",
+  "beispiel": "Bei der Spaltung eines Atomkerns wird enorm viel Energie frei.",
+  "beispielTr": "Bir atom çekirdeğinin bölünmesiyle muazzam bir enerji açığa çıkar.",
+  "beispielEn": "Splitting an atomic nucleus releases an enormous amount of energy."
+ },
+ {
+  "id": 6725,
+  "tr": "yarılanma ömrü",
+  "en": "half-life",
+  "beispiel": "Dieses Isotop hat eine Halbwertszeit von mehreren tausend Jahren.",
+  "beispielTr": "Bu izotopun yarılanma ömrü birkaç bin yıldır.",
+  "beispielEn": "This isotope has a half-life of several thousand years."
+ },
+ {
+  "id": 6726,
+  "tr": "radyoaktivite",
+  "en": "radioactivity",
+  "beispiel": "Die Radioaktivität im Boden wird seit dem Unfall regelmäßig gemessen.",
+  "beispielTr": "Topraktaki radyoaktivite kazadan bu yana düzenli olarak ölçülüyor.",
+  "beispielEn": "Radioactivity in the soil has been measured regularly since the accident."
+ },
+ {
+  "id": 6727,
+  "tr": "radyasyon",
+  "en": "radiation",
+  "beispiel": "Die Atmosphäre schützt uns vor einem Großteil der kosmischen Strahlung.",
+  "beispielTr": "Atmosfer bizi kozmik radyasyonun büyük bölümünden korur.",
+  "beispielEn": "The atmosphere shields us from most cosmic radiation."
+ },
+ {
+  "id": 6728,
+  "tr": "dalga boyu",
+  "en": "wavelength",
+  "beispiel": "Rotes Licht hat eine größere Wellenlänge als blaues Licht.",
+  "beispielTr": "Kırmızı ışığın dalga boyu mavi ışıktan daha büyüktür.",
+  "beispielEn": "Red light has a longer wavelength than blue light."
+ },
+ {
+  "id": 6729,
+  "tr": "frekans",
+  "en": "frequency",
+  "beispiel": "Fledermäuse orientieren sich mit Tönen sehr hoher Frequenz.",
+  "beispielTr": "Yarasalar çok yüksek frekanslı seslerle yön buluyor.",
+  "beispielEn": "Bats navigate using sounds of very high frequency."
+ },
+ {
+  "id": 6730,
+  "tr": "titreşim",
+  "en": "vibration",
+  "beispiel": "Der Sensor misst selbst kleinste Schwingungen der Brücke.",
+  "beispielTr": "Sensör köprünün en küçük titreşimlerini bile ölçüyor.",
+  "beispielEn": "The sensor measures even the tiniest vibrations of the bridge."
+ },
+ {
+  "id": 6731,
+  "tr": "rezonans",
+  "en": "resonance",
+  "beispiel": "Bei dieser Frequenz gerät das Glas in Resonanz.",
+  "beispielTr": "Bu frekansta cam rezonansa giriyor.",
+  "beispielEn": "At this frequency the glass goes into resonance."
+ },
+ {
+  "id": 6732,
+  "tr": "eylemsizlik",
+  "en": "inertia",
+  "beispiel": "Beim Bremsen spürt man die Trägheit des eigenen Körpers.",
+  "beispielTr": "Fren yapınca insan kendi bedeninin eylemsizliğini hisseder.",
+  "beispielEn": "When braking you feel the inertia of your own body."
+ },
+ {
+  "id": 6733,
+  "tr": "sürtünme",
+  "en": "friction",
+  "beispiel": "Auf nassem Asphalt ist die Reibung der Reifen geringer.",
+  "beispielTr": "Islak asfaltta lastiklerin sürtünmesi daha azdır.",
+  "beispielEn": "On wet asphalt the friction of the tires is lower."
+ },
+ {
+  "id": 6734,
+  "tr": "ivme",
+  "en": "acceleration",
+  "beispiel": "Beim Start des Flugzeugs drückt dich die Beschleunigung in den Sitz.",
+  "beispielTr": "Uçak kalkarken ivme seni koltuğa doğru bastırıyor.",
+  "beispielEn": "During takeoff the acceleration presses you into your seat."
+ },
+ {
+  "id": 6735,
+  "tr": "kaldırma kuvveti",
+  "en": "buoyancy",
+  "beispiel": "Im Salzwasser ist der Auftrieb größer als im Süßwasser.",
+  "beispielTr": "Tuzlu suda kaldırma kuvveti tatlı sudakinden daha büyüktür.",
+  "beispielEn": "In salt water the buoyancy is greater than in fresh water."
+ },
+ {
+  "id": 6736,
+  "tr": "yoğunluk",
+  "en": "density",
+  "beispiel": "Öl schwimmt oben, weil es eine geringere Dichte hat.",
+  "beispielTr": "Yağ üstte kalır, çünkü yoğunluğu daha düşüktür.",
+  "beispielEn": "Oil floats on top because it has a lower density."
+ },
+ {
+  "id": 6737,
+  "tr": "manyetik alan",
+  "en": "magnetic field",
+  "beispiel": "Ein starkes Magnetfeld kann alte Festplatten sofort löschen.",
+  "beispielTr": "Güçlü bir manyetik alan eski sabit diskleri anında siler.",
+  "beispielEn": "A strong magnetic field can erase old hard drives instantly."
+ },
+ {
+  "id": 6738,
+  "tr": "iletkenlik",
+  "en": "conductivity",
+  "beispiel": "Kupfer wird wegen seiner hohen Leitfähigkeit für Kabel verwendet.",
+  "beispielTr": "Bakır, yüksek iletkenliği sayesinde kablolarda kullanılıyor.",
+  "beispielEn": "Copper is used for cables because of its high conductivity."
+ },
+ {
+  "id": 6739,
+  "tr": "etkileşim",
+  "en": "interaction",
+  "beispiel": "Zwischen den beiden Medikamenten sind gefährliche Wechselwirkungen möglich.",
+  "beispielTr": "İki ilaç arasında tehlikeli etkileşimler görülebilir.",
+  "beispielEn": "Dangerous interactions between the two drugs are possible."
+ },
+ {
+  "id": 6740,
+  "tr": "parçacık",
+  "en": "particle",
+  "beispiel": "In der Luft schweben winzige Teilchen aus Staub.",
+  "beispielTr": "Havada minicik toz parçacıkları asılı duruyor.",
+  "beispielEn": "Tiny particles of dust float in the air."
+ },
+ {
+  "id": 6741,
+  "tr": "katalizör",
+  "en": "catalyst",
+  "beispiel": "Ohne Katalysator läuft die Reaktion im Labor viel langsamer.",
+  "beispielTr": "Katalizör olmadan tepkime laboratuvarda çok daha yavaş ilerliyor.",
+  "beispielEn": "Without a catalyst the reaction runs much slower in the lab."
+ },
+ {
+  "id": 6742,
+  "tr": "oksitlenme",
+  "en": "oxidation",
+  "beispiel": "Rost entsteht durch die langsame Oxidation von Eisen.",
+  "beispielTr": "Pas, demirin yavaş yavaş oksitlenmesiyle oluşur.",
+  "beispielEn": "Rust forms through the slow oxidation of iron."
+ },
+ {
+  "id": 6743,
+  "tr": "yanma",
+  "en": "combustion",
+  "beispiel": "Bei der Verbrennung von Kohle wird viel Kohlendioxid frei.",
+  "beispielTr": "Kömürün yanmasıyla çok miktarda karbondioksit açığa çıkıyor.",
+  "beispielEn": "The combustion of coal releases a lot of carbon dioxide."
+ },
+ {
+  "id": 6744,
+  "tr": "mayalanma",
+  "en": "fermentation",
+  "beispiel": "Im Keller hat die Gärung des Weins schon begonnen.",
+  "beispielTr": "Mahzende şarabın mayalanması çoktan başladı.",
+  "beispielEn": "In the cellar the fermentation of the wine has already begun."
+ },
+ {
+  "id": 6745,
+  "tr": "çürüme",
+  "en": "decomposition",
+  "beispiel": "Die Zersetzung der Blätter im Waldboden dauert Monate.",
+  "beispielTr": "Orman toprağındaki yaprakların çürümesi aylar sürüyor.",
+  "beispielEn": "The decomposition of leaves in forest soil takes months."
+ },
+ {
+  "id": 6746,
+  "tr": "kaynama noktası",
+  "en": "boiling point",
+  "beispiel": "In den Bergen liegt der Siedepunkt von Wasser niedriger.",
+  "beispielTr": "Dağlarda suyun kaynama noktası daha düşüktür.",
+  "beispielEn": "In the mountains the boiling point of water is lower."
+ },
+ {
+  "id": 6747,
+  "tr": "kristal",
+  "en": "crystal",
+  "beispiel": "Am Boden des Glases wuchsen kleine weiße Kristalle.",
+  "beispielTr": "Bardağın dibinde küçük beyaz kristaller oluştu.",
+  "beispielEn": "Small white crystals grew at the bottom of the glass."
+ },
+ {
+  "id": 6748,
+  "tr": "oksijen",
+  "en": "oxygen",
+  "beispiel": "In großer Höhe enthält die Luft weniger Sauerstoff.",
+  "beispielTr": "Yüksek irtifada hava daha az oksijen içerir.",
+  "beispielEn": "At high altitude the air contains less oxygen."
+ },
+ {
+  "id": 6749,
+  "tr": "buharlaşma",
+  "en": "evaporation",
+  "beispiel": "Durch die Verdunstung verliert der See im Sommer Wasser.",
+  "beispielTr": "Göl yazın buharlaşma yüzünden su kaybediyor.",
+  "beispielEn": "The lake loses water in summer through evaporation."
+ },
+ {
+  "id": 6750,
+  "tr": "aşınma",
+  "en": "weathering",
+  "beispiel": "Frost und Regen beschleunigen die Verwitterung der alten Mauer.",
+  "beispielTr": "Don ve yağmur eski duvarın aşınmasını hızlandırıyor.",
+  "beispielEn": "Frost and rain speed up the weathering of the old wall."
+ },
+ {
+  "id": 6751,
+  "tr": "ortak yaşam",
+  "en": "symbiosis",
+  "beispiel": "In der Flechte leben Pilz und Alge in Symbiose.",
+  "beispielTr": "Likende mantar ve yosun ortak yaşam sürer.",
+  "beispielEn": "In lichen, fungus and alga live in symbiosis."
+ },
+ {
+  "id": 6752,
+  "tr": "mutasyon",
+  "en": "mutation",
+  "beispiel": "Eine einzige Mutation kann das Medikament wirkungslos machen.",
+  "beispielTr": "Tek bir mutasyon ilacı etkisiz hâle getirebilir.",
+  "beispielEn": "A single mutation can make the drug ineffective."
+ }
+]

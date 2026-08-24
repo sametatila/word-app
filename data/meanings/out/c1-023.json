@@ -1,0 +1,402 @@
+[
+ {
+  "id": 6353,
+  "tr": "içtihat",
+  "en": "case law",
+  "beispiel": "Seit dem Urteil hat sich die Rechtsprechung spürbar geändert.",
+  "beispielTr": "O karardan bu yana içtihat belirgin biçimde değişti.",
+  "beispielEn": "Since that ruling, case law has changed noticeably."
+ },
+ {
+  "id": 6354,
+  "tr": "hukuk kaynağı",
+  "en": "source of law",
+  "beispiel": "Der Anwalt nannte im Gutachten drei einschlägige Rechtsquellen.",
+  "beispielTr": "Avukat, mütalaada konuyla ilgili üç hukuk kaynağı saydı.",
+  "beispielEn": "In the opinion the lawyer named three relevant sources of law."
+ },
+ {
+  "id": 6355,
+  "tr": "hukukun geliştirilmesi",
+  "en": "judicial lawmaking",
+  "beispiel": "Hier hat das Gericht eindeutig Rechtsfortbildung betrieben.",
+  "beispielTr": "Mahkeme burada açıkça hukukun geliştirilmesi yoluna gitti.",
+  "beispielEn": "Here the court has clearly engaged in judicial lawmaking."
+ },
+ {
+  "id": 6356,
+  "tr": "hukuk güvenliği",
+  "en": "legal certainty",
+  "beispiel": "Ohne klare Fristen gibt es für Mieter keine Rechtssicherheit.",
+  "beispielTr": "Açık süreler olmadan kiracılar için hukuk güvenliği yok.",
+  "beispielEn": "Without clear deadlines there is no legal certainty for tenants."
+ },
+ {
+  "id": 6357,
+  "tr": "hukuki sonuç",
+  "en": "legal consequence",
+  "beispiel": "Diese Kündigung hat für beide Seiten unangenehme Rechtsfolgen.",
+  "beispielTr": "Bu fesih, iki taraf için de tatsız hukuki sonuçlar doğuruyor.",
+  "beispielEn": "This termination has unpleasant legal consequences for both sides."
+ },
+ {
+  "id": 6358,
+  "tr": "hukuk boşluğu",
+  "en": "gap in the law",
+  "beispiel": "Bei Drohnen über Privatgrundstücken klafft noch eine Rechtslücke.",
+  "beispielTr": "Özel arazilerin üzerindeki dronlar konusunda hâlâ bir hukuk boşluğu var.",
+  "beispielEn": "There is still a gap in the law on drones over private property."
+ },
+ {
+  "id": 6359,
+  "tr": "hukuki pozitivizm",
+  "en": "legal positivism",
+  "beispiel": "Im Seminar verteidigte sie den Rechtspositivismus gegen alle Einwände.",
+  "beispielTr": "Seminerde hukuki pozitivizmi bütün itirazlara karşı savundu.",
+  "beispielEn": "In the seminar she defended legal positivism against every objection."
+ },
+ {
+  "id": 6360,
+  "tr": "yargı yolu",
+  "en": "legal recourse",
+  "beispiel": "Nach der zweiten Absage blieb ihm nur der Rechtsweg.",
+  "beispielTr": "İkinci ret cevabından sonra ona yalnızca yargı yolu kaldı.",
+  "beispielEn": "After the second refusal only legal recourse was left to him."
+ },
+ {
+  "id": 6361,
+  "tr": "hukuk düzeni",
+  "en": "legal order",
+  "beispiel": "Solche Verträge kennt unsere Rechtsordnung bisher nicht.",
+  "beispielTr": "Hukuk düzenimiz böyle sözleşmeleri şimdiye kadar tanımıyor.",
+  "beispielEn": "Our legal order does not yet recognize such contracts."
+ },
+ {
+  "id": 6362,
+  "tr": "hukuki değer",
+  "en": "legal interest",
+  "beispiel": "Mit dem Verbot schützt der Staat ein wichtiges Rechtsgut.",
+  "beispielTr": "Devlet bu yasakla önemli bir hukuki değeri koruyor.",
+  "beispielEn": "With this ban the state protects an important legal interest."
+ },
+ {
+  "id": 6363,
+  "tr": "hukuk felsefesi",
+  "en": "philosophy of law",
+  "beispiel": "Sie hat ihre Doktorarbeit in Rechtsphilosophie geschrieben.",
+  "beispielTr": "Doktora tezini hukuk felsefesi alanında yazdı.",
+  "beispielEn": "She wrote her doctoral thesis in philosophy of law."
+ },
+ {
+  "id": 6364,
+  "tr": "hukuk dogmatiği",
+  "en": "legal doctrine",
+  "beispiel": "Für die Praxis ist ihm die Rechtsdogmatik zu abstrakt.",
+  "beispielTr": "Ona göre hukuk dogmatiği uygulama için fazla soyut.",
+  "beispielEn": "For practice he finds legal doctrine too abstract."
+ },
+ {
+  "id": 6365,
+  "tr": "adalet duygusu",
+  "en": "sense of justice",
+  "beispiel": "Das milde Urteil verletzte das Rechtsempfinden vieler Beobachter.",
+  "beispielTr": "Hafif karar, birçok gözlemcinin adalet duygusunu zedeledi.",
+  "beispielEn": "The lenient verdict offended many observers' sense of justice."
+ },
+ {
+  "id": 6366,
+  "tr": "ölçülülük",
+  "en": "proportionality",
+  "beispiel": "Das Gericht prüfte die Verhältnismäßigkeit der Hausdurchsuchung.",
+  "beispielTr": "Mahkeme, ev aramasının ölçülülüğünü inceledi.",
+  "beispielEn": "The court examined the proportionality of the house search."
+ },
+ {
+  "id": 6367,
+  "tr": "kuvvetler ayrılığı",
+  "en": "separation of powers",
+  "beispiel": "Mit diesem Erlass verletzt die Regierung die Gewaltenteilung.",
+  "beispielTr": "Hükümet bu kararnameyle kuvvetler ayrılığını çiğniyor.",
+  "beispielEn": "With this decree the government violates the separation of powers."
+ },
+ {
+  "id": 6368,
+  "tr": "anayasa şikâyeti",
+  "en": "constitutional complaint",
+  "beispiel": "Gegen das neue Gesetz haben Studenten Verfassungsbeschwerde erhoben.",
+  "beispielTr": "Öğrenciler yeni yasaya karşı anayasa şikâyetinde bulundu.",
+  "beispielEn": "Students filed a constitutional complaint against the new law."
+ },
+ {
+  "id": 6369,
+  "tr": "norm denetimi",
+  "en": "judicial review",
+  "beispiel": "Die Opposition beantragte eine Normenkontrolle in Karlsruhe.",
+  "beispielTr": "Muhalefet, Karlsruhe'de norm denetimi başvurusunda bulundu.",
+  "beispielEn": "The opposition applied for judicial review in Karlsruhe."
+ },
+ {
+  "id": 6370,
+  "tr": "yasama süreci",
+  "en": "legislative process",
+  "beispiel": "Das Gesetzgebungsverfahren zieht sich schon über zwei Jahre hin.",
+  "beispielTr": "Yasama süreci şimdiden iki yılı aşkın süredir sürüncemede.",
+  "beispielEn": "The legislative process has already dragged on for two years."
+ },
+ {
+  "id": 6371,
+  "tr": "emsal karar",
+  "en": "precedent",
+  "beispiel": "Dieses Urteil wird für viele ähnliche Fälle zum Präjudiz.",
+  "beispielTr": "Bu karar, benzer birçok dava için emsal olacak.",
+  "beispielEn": "This ruling will become a precedent for many similar cases."
+ },
+ {
+  "id": 6372,
+  "tr": "keyfilik yasağı",
+  "en": "ban on arbitrariness",
+  "beispiel": "Mit dieser Ungleichbehandlung verstößt das Amt gegen das Willkürverbot.",
+  "beispielTr": "İdare bu eşitsiz muameleyle keyfilik yasağını çiğniyor.",
+  "beispielEn": "With this unequal treatment the office breaches the ban on arbitrariness."
+ },
+ {
+  "id": 6373,
+  "tr": "takdir alanı",
+  "en": "margin of discretion",
+  "beispiel": "Bei der Höhe der Strafe hat der Richter einen Ermessensspielraum.",
+  "beispielTr": "Cezanın miktarını belirlerken hâkimin bir takdir alanı vardır.",
+  "beispielEn": "In setting the penalty the judge has a margin of discretion."
+ },
+ {
+  "id": 6374,
+  "tr": "ceza miktarı",
+  "en": "sentence",
+  "beispiel": "Über das Strafmaß entscheidet das Gericht erst nächste Woche.",
+  "beispielTr": "Ceza miktarına mahkeme ancak gelecek hafta karar verecek.",
+  "beispielEn": "The court will decide on the sentence only next week."
+ },
+ {
+  "id": 6375,
+  "tr": "masumiyet karinesi",
+  "en": "presumption of innocence",
+  "beispiel": "Die Zeitung hat mit dem Foto die Unschuldsvermutung verletzt.",
+  "beispielTr": "Gazete, o fotoğrafla masumiyet karinesini ihlal etti.",
+  "beispielEn": "With that photo the newspaper violated the presumption of innocence."
+ },
+ {
+  "id": 6376,
+  "tr": "görevi kötüye kullanma",
+  "en": "abuse of office",
+  "beispiel": "Gegen den Bürgermeister läuft ein Verfahren wegen Amtsmissbrauchs.",
+  "beispielTr": "Belediye başkanı hakkında görevi kötüye kullanmaktan dava sürüyor.",
+  "beispielEn": "Proceedings against the mayor for abuse of office are under way."
+ },
+ {
+  "id": 6377,
+  "tr": "yanlılık",
+  "en": "bias",
+  "beispiel": "Wegen möglicher Befangenheit zog sich der Richter zurück.",
+  "beispielTr": "Olası yanlılık nedeniyle hâkim davadan çekildi.",
+  "beispielEn": "The judge withdrew because of possible bias."
+ },
+ {
+  "id": 6378,
+  "tr": "temel ilke",
+  "en": "guiding principle",
+  "beispiel": "Ihr oberster Leitsatz ist die Gleichbehandlung aller Mandanten.",
+  "beispielTr": "Onun en temel ilkesi bütün müvekkillere eşit davranmaktır.",
+  "beispielEn": "Her highest guiding principle is equal treatment of all clients."
+ },
+ {
+  "id": 6379,
+  "tr": "suçun unsurları",
+  "en": "elements of the offense",
+  "beispiel": "Dieses Verhalten erfüllt den Tatbestand der Nötigung.",
+  "beispielTr": "Bu davranış, zorlama suçunun unsurlarını taşıyor.",
+  "beispielEn": "This conduct meets the elements of the offense of coercion."
+ },
+ {
+  "id": 6380,
+  "tr": "örf ve âdet hukuku",
+  "en": "customary law",
+  "beispiel": "In diesem Dorf gilt beim Wasser bis heute Gewohnheitsrecht.",
+  "beispielTr": "Bu köyde su konusunda bugün hâlâ örf ve âdet hukuku geçerli.",
+  "beispielEn": "In this village customary law still governs water use today."
+ },
+ {
+  "id": 6381,
+  "tr": "doğal hukuk",
+  "en": "natural law",
+  "beispiel": "Er begründete seinen Widerstand mit dem Naturrecht.",
+  "beispielTr": "Direnişini doğal hukuka dayandırdı.",
+  "beispielEn": "He justified his resistance by appealing to natural law."
+ },
+ {
+  "id": 6382,
+  "tr": "meşruiyet",
+  "en": "legitimacy",
+  "beispiel": "Nach der gefälschten Wahl fehlt der Regierung jede Legitimität.",
+  "beispielTr": "Hileli seçimden sonra hükümetin hiçbir meşruiyeti kalmadı.",
+  "beispielEn": "After the rigged election the government lacks all legitimacy."
+ },
+ {
+  "id": 6383,
+  "tr": "kasıt",
+  "en": "intent",
+  "beispiel": "Dem Angeklagten konnte kein Vorsatz nachgewiesen werden.",
+  "beispielTr": "Sanığın kastı kanıtlanamadı.",
+  "beispielEn": "No intent could be proven against the defendant."
+ },
+ {
+  "id": 6384,
+  "tr": "ihmal",
+  "en": "negligence",
+  "beispiel": "Der Unfall geht auf grobe Fahrlässigkeit des Fahrers zurück.",
+  "beispielTr": "Kaza, sürücünün ağır ihmalinden kaynaklanıyor.",
+  "beispielEn": "The accident was caused by the driver's gross negligence."
+ },
+ {
+  "id": 6385,
+  "tr": "meşru müdafaa",
+  "en": "self-defense",
+  "beispiel": "Der Angeklagte handelte nach Ansicht des Gerichts in Notwehr.",
+  "beispielTr": "Mahkemeye göre sanık meşru müdafaa hâlinde hareket etti.",
+  "beispielEn": "In the court's view the defendant acted in self-defense."
+ },
+ {
+  "id": 6386,
+  "tr": "insan onuru",
+  "en": "human dignity",
+  "beispiel": "Solche Zustände im Heim verletzen die Menschenwürde der Bewohner.",
+  "beispielTr": "Yurttaki bu koşullar, sakinlerin insan onurunu çiğniyor.",
+  "beispielEn": "Such conditions in the home violate the residents' human dignity."
+ },
+ {
+  "id": 6387,
+  "tr": "eşitlik ilkesi",
+  "en": "principle of equality",
+  "beispiel": "Beim Kindergeld beruft sie sich auf den Gleichheitsgrundsatz.",
+  "beispielTr": "Çocuk parası konusunda eşitlik ilkesine dayanıyor.",
+  "beispielEn": "On child benefits she invokes the principle of equality."
+ },
+ {
+  "id": 6388,
+  "tr": "temel hakka müdahale",
+  "en": "interference with a basic right",
+  "beispiel": "Die Videoüberwachung im Park ist ein klarer Grundrechtseingriff.",
+  "beispielTr": "Parktaki kamera gözetimi, temel haklara açık bir müdahaledir.",
+  "beispielEn": "The video surveillance in the park is a clear interference with a basic right."
+ },
+ {
+  "id": 6389,
+  "tr": "başlangıç metni",
+  "en": "preamble",
+  "beispiel": "Die Präambel des Vertrags nennt die gemeinsamen Ziele.",
+  "beispielTr": "Sözleşmenin başlangıç metni ortak hedefleri sayıyor.",
+  "beispielEn": "The preamble of the treaty names the shared goals."
+ },
+ {
+  "id": 6390,
+  "tr": "hakkaniyet",
+  "en": "equity",
+  "beispiel": "Der Schiedsrichter entschied den Streit nach Billigkeit.",
+  "beispielTr": "Hakem, uyuşmazlığı hakkaniyete göre çözdü.",
+  "beispielEn": "The arbitrator decided the dispute according to equity."
+ },
+ {
+  "id": 6391,
+  "tr": "irade serbestisi",
+  "en": "private autonomy",
+  "beispiel": "Solche Klauseln schränken die Privatautonomie der Mieter stark ein.",
+  "beispielTr": "Bu tür maddeler, kiracıların irade serbestisini ciddi biçimde kısıtlıyor.",
+  "beispielEn": "Such clauses severely restrict the tenants' private autonomy."
+ },
+ {
+  "id": 6392,
+  "tr": "yargı erki",
+  "en": "judiciary",
+  "beispiel": "Der Präsident besetzt die Judikative mit eigenen Leuten.",
+  "beispielTr": "Cumhurbaşkanı, yargı erkini kendi adamlarıyla dolduruyor.",
+  "beispielEn": "The president is filling the judiciary with his own people."
+ },
+ {
+  "id": 6393,
+  "tr": "yargı yetkisi",
+  "en": "jurisdiction",
+  "beispiel": "Für Botschafter gilt die deutsche Gerichtsbarkeit nicht.",
+  "beispielTr": "Büyükelçiler Alman yargı yetkisine tabi değildir.",
+  "beispielEn": "German jurisdiction does not apply to ambassadors."
+ },
+ {
+  "id": 6394,
+  "tr": "kapsamına sokmak",
+  "en": "to subsume",
+  "beispiel": "Der Richter subsumierte den Fall unter die passende Norm.",
+  "beispielTr": "Hâkim, olayı uygun normun kapsamına soktu.",
+  "beispielEn": "The judge subsumed the case under the fitting provision."
+ },
+ {
+  "id": 6395,
+  "tr": "reddetmek",
+  "en": "to dismiss",
+  "beispiel": "Der Bundesgerichtshof verwarf die Revision als unbegründet.",
+  "beispielTr": "Federal Yüksek Mahkeme, temyizi dayanaksız bularak reddetti.",
+  "beispielEn": "The Federal Court of Justice dismissed the appeal as unfounded."
+ },
+ {
+  "id": 6396,
+  "tr": "kanunlaştırmak",
+  "en": "to codify",
+  "beispiel": "Das Zivilrecht wurde im neunzehnten Jahrhundert kodifiziert.",
+  "beispielTr": "Medeni hukuk, on dokuzuncu yüzyılda kanunlaştırıldı.",
+  "beispielEn": "Civil law was codified in the nineteenth century."
+ },
+ {
+  "id": 6397,
+  "tr": "beraat ettirmek",
+  "en": "to acquit",
+  "beispiel": "Das Gericht sprach den Angeklagten aus Mangel an Beweisen frei.",
+  "beispielTr": "Mahkeme, delil yetersizliğinden sanığı beraat ettirdi.",
+  "beispielEn": "The court acquitted the defendant for lack of evidence."
+ },
+ {
+  "id": 6398,
+  "tr": "yükümlülüğünde olmak",
+  "en": "to be incumbent on",
+  "beispiel": "Die Beweislast obliegt in diesem Verfahren der Anklage.",
+  "beispielTr": "Bu davada ispat yükümlülüğü iddia makamına aittir.",
+  "beispielEn": "In this trial the burden of proof lies with the prosecution."
+ },
+ {
+  "id": 6399,
+  "tr": "başvurmak",
+  "en": "to draw on",
+  "beispiel": "Zur Begründung zog das Gericht ältere Urteile heran.",
+  "beispielTr": "Mahkeme, gerekçesinde daha eski kararlara başvurdu.",
+  "beispielEn": "The court drew on older rulings for its reasoning."
+ },
+ {
+  "id": 6400,
+  "tr": "ilan etmek",
+  "en": "to announce",
+  "beispiel": "Das Urteil wird am kommenden Dienstag öffentlich verkündet.",
+  "beispielTr": "Karar, önümüzdeki salı günü aleni olarak ilan edilecek.",
+  "beispielEn": "The verdict will be announced publicly next Tuesday."
+ },
+ {
+  "id": 6401,
+  "tr": "atfetmek",
+  "en": "to impute",
+  "beispiel": "Den Schaden rechnet das Gericht dem Unternehmen zu.",
+  "beispielTr": "Mahkeme, zararı şirkete atfediyor.",
+  "beispielEn": "The court imputes the damage to the company."
+ },
+ {
+  "id": 6402,
+  "tr": "kınamak",
+  "en": "to reprimand",
+  "beispiel": "Der Richter rügte das Verhalten des Anwalts deutlich.",
+  "beispielTr": "Hâkim, avukatın davranışını açıkça kınadı.",
+  "beispielEn": "The judge clearly reprimanded the lawyer's conduct."
+ }
+]
