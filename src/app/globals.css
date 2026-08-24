@@ -1,50 +1,169 @@
 @import "tailwindcss";
 
+/*
+ * ══════════════════════════════════════════════════════════════════════════
+ * PALET — hepsi maskottan türetildi
+ * ══════════════════════════════════════════════════════════════════════════
+ *
+ * Kaynak `public/erdi.svg`. Maskotun renkleri tahmin edilmedi, çizimin piksel
+ * histogramından ÖLÇÜLDÜ; izleme zaten sekiz renge indirgemişti:
+ *
+ *   #2F1911  kontur, göz, burun    %15.8   -> koyu tema zemini, dolu buton yazısı
+ *   #FAE6C9  göğüs, yüz            %15.2   -> brand-100 (birebir)
+ *   #BC8458  ten kahve             %11.9
+ *   #EDA45D  ANA KÜRK              %10.6   -> brand-300 (birebir), markanın kendisi
+ *   #D3B293  bej                    %9.1
+ *   #9F633C  gölge kürk             %9.0
+ *
+ * Önceki palet indigo/mor/gök maviydi ve maskotla hiçbir ilgisi yoktu: ekranda
+ * sıcak kahverengi bir mirket, çevresinde soğuk mor bir arayüz duruyordu.
+ *
+ * Renkler ölçülerek seçildi, `node scripts/palette-check.mjs` hepsini yeniden
+ * ölçüyor: WCAG kontrastı ve kategorik ayrışma için CIEDE2000.
+ *
+ * ── İKİ KADEMELİ ÖLÇÜT ────────────────────────────────────────────────────
+ *
+ * Her rengin yükü aynı değil, o yüzden eşik de aynı değil:
+ *
+ *   KATI (ΔE >= 20) — rengin TEK BAŞINA anlam taşıdığı yerler: CEFR rozetleri
+ *   ve der/die/das. Yanlarında rengi açıklayan etiket yok; iki renk karışırsa
+ *   kullanıcı yanlış bilgi okur.
+ *
+ *   GEVŞEK (ΔE >= 12) — rengin ikon ve etiketle BİRLİKTE çalıştığı yerler:
+ *   seri (ateş ikonu + sayı) ile XP (kıvılcım ikonu + sayı). Renk pekiştirici,
+ *   tek taşıyıcı değil.
+ */
+
 @theme {
-  --color-ink-50: #f6f7fb;
-  --color-ink-100: #eceef7;
-  --color-ink-200: #d7dbeb;
-  --color-ink-400: #8b91ac;
-  --color-ink-600: #4a5070;
-  --color-ink-800: #232742;
-  --color-ink-900: #171a2e;
-  --color-ink-950: #0e1020;
+  /*
+   * Nötrler — maskotun kontur renginden türetildi, doygunluğu düşürülerek.
+   * Soğuk gri değil: sıcak bir maskotun çevresinde nötr grinin kendisi mavi
+   * görünüyor.
+   */
+  --color-ink-50: #fbf8f4;
+  --color-ink-100: #f4eee4;
+  --color-ink-200: #e8dece;
+  --color-ink-300: #d2c4af;
+  --color-ink-400: #a79684;
+  --color-ink-500: #7c6c5d;
+  --color-ink-600: #5a4e43;
+  --color-ink-700: #40372f;
+  --color-ink-800: #2c2521;
+  --color-ink-900: #1e1916;
+  --color-ink-950: #14100e;
 
-  --color-brand-300: #a5b4ff;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
+  /* Kehribar — maskotun kürkü. 100 ve 300 basamakları çizimden BİREBİR. */
+  --color-brand-50: #fef7ed;
+  --color-brand-100: #fae6c9;
+  --color-brand-200: #f5d3a4;
+  --color-brand-300: #eda45d;
+  --color-brand-400: #e08b38;
+  --color-brand-500: #c87318;
+  --color-brand-600: #a65c15;
+  --color-brand-700: #854a15;
+  --color-brand-800: #653916;
+  --color-brand-900: #452714;
 
-  --color-flame-400: #fbbf24;
-  --color-flame-500: #f59e0b;
-  --color-mint-400: #34d399;
-  --color-mint-500: #10b981;
-  --color-rose-400: #fb7185;
-  --color-rose-500: #f43f5e;
-  --color-sky-400: #38bdf8;
-  --color-violet-400: #c084fc;
+  /* Yosun — doğru cevap, A1, "das". 150° */
+  --color-mint-200: #b6e8cc;
+  --color-mint-300: #6fd19b;
+  --color-mint-400: #45b87a;
+  --color-mint-500: #2f9a61;
+  --color-mint-600: #237a4c;
+  --color-mint-700: #1a5c39;
+
+  /* Kiremit — yanlış cevap, C1, "die". 350° */
+  --color-rose-200: #fbcbd2;
+  --color-rose-300: #f79ba6;
+  --color-rose-400: #ee6b7c;
+  --color-rose-500: #dc3f55;
+  --color-rose-600: #b62e43;
+  --color-rose-700: #8e2335;
+
+  /*
+   * Hardal — seri ve enerji. 48°, kehribardan bilerek daha sarı ve donuk.
+   * Parlak altın denendi ve markadan ayrılmıyordu (ΔE 9.6); sarıyı açık zeminde
+   * okunacak kadar koyulaştırmak onu zorunlu olarak hardala götürüyor.
+   */
+  --color-flame-200: #f6e7a8;
+  --color-flame-300: #efd264;
+  --color-flame-400: #ddb62c;
+  --color-flame-500: #b8940f;
+  --color-flame-600: #86690e;
+  --color-flame-700: #6a530b;
+
+  /* Turkuaz — çöl göğü. "der", A2. 192° */
+  --color-sky-200: #b4e7f1;
+  --color-sky-300: #6fd1e3;
+  --color-sky-400: #35b2cc;
+  --color-sky-500: #1b93ac;
+  --color-sky-600: #16748a;
+  --color-sky-700: #115a6b;
+
+  /* Erik — alacakaranlık. B1. 285° */
+  --color-violet-200: #e4cdf3;
+  --color-violet-300: #cda6e8;
+  --color-violet-400: #ae79d4;
+  --color-violet-500: #9256bc;
+  --color-violet-600: #77439d;
+  --color-violet-700: #5d347a;
 
   --radius-xl2: 1.25rem;
 }
 
+/*
+ * ── TEMAYA DUYARLI VURGULAR ───────────────────────────────────────────────
+ *
+ * Numarasız `--color-brand` "şu anki temada okunan kehribar" demek; numaralı
+ * basamaklar ise sabit ve temadan bağımsız.
+ *
+ * Ayrım zorunlu, çünkü tek bir değer iki temada birden okunamıyor: açık zeminde
+ * 4.5 kontrast için rengin parlaklığı en fazla %16.7, koyu zeminde aynı eşik
+ * için en az %20.5 olmalı. Aralık boş — matematik iki ayrı ton dayatıyor.
+ *
+ * Önceki palette bu ayrım yoktu ve bedeli ölçülebilir bir hataydı: `mint-500`
+ * açık temada kart üstünde 2.5 kontrast veriyordu (eşik 4.5). Yeşil yazılar
+ * okunmuyordu, yalnızca kimse ölçmemişti.
+ *
+ * DOLU zeminlerde bu tonlar KULLANILMAZ: üstünde beyaz yazı taşıyan bir daire
+ * koyu temada açık tona dönerse yazı kaybolur. Oralarda sabit `-600` var.
+ */
 :root {
-  --bg: #f7f8fd;
+  --color-brand: var(--color-brand-600);
+  --color-mint: var(--color-mint-600);
+  --color-rose: var(--color-rose-600);
+  --color-flame: var(--color-flame-600);
+  --color-sky: var(--color-sky-600);
+  --color-violet: var(--color-violet-600);
+
+  --bg: #fbf6ee;
   --surface: #ffffff;
-  --surface-2: #f1f3fb;
-  --border: #e3e6f2;
-  --text: #171a2e;
-  --text-muted: #6b7191;
+  --surface-2: #f6efe3;
+  --border: #e9decb;
+  --text: #2c2521;
+  --text-muted: #7c6c5d;
   color-scheme: light;
 }
 
 .dark {
-  --bg: #0e1020;
-  --surface: #171a2e;
-  --surface-2: #1f2340;
-  --border: #2b3054;
-  --text: #eceef7;
-  --text-muted: #9aa0c0;
+  --color-brand: var(--color-brand-300);
+  --color-mint: var(--color-mint-300);
+  --color-rose: var(--color-rose-300);
+  --color-flame: var(--color-flame-300);
+  --color-sky: var(--color-sky-300);
+  --color-violet: var(--color-violet-300);
+
+  /*
+   * Koyu taraf maskotun kontur renginden (#2F1911) türetildi ama doygunluğu
+   * düşürüldü: konturun kendisi zemin olarak kullanıldığında uygulama kahverengi
+   * görünüyor, koyu değil. Sıcaklık kalıyor, renk çekiliyor.
+   */
+  --bg: #14100e;
+  --surface: #1e1916;
+  --surface-2: #2a231e;
+  --border: #3b322b;
+  --text: #f4eee4;
+  --text-muted: #a79684;
   color-scheme: dark;
 }
 
@@ -77,14 +196,48 @@
   .muted {
     color: var(--text-muted);
   }
+  /*
+   * Marka gradyanı — kehribardan kestaneye. Önceki gradyan indigo→mor→gök
+   * maviydi; üç ayrı hue geçiyordu ve hiçbiri maskotta yoktu. Yeni gradyan
+   * maskotun kendi kürk tonları arasında geziniyor.
+   */
   .brand-gradient {
-    background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-violet-400) 55%, var(--color-sky-400));
+    background-image: linear-gradient(
+      135deg,
+      var(--color-brand-300),
+      var(--color-brand-400) 60%,
+      var(--color-brand-500)
+    );
+    /*
+      Kehribarın üstündeki yazı koyu kahve — maskotun kendi eşleşmesi, 7.9
+      kontrast. Beyaz aynı zeminde 1.9'da kalıyor, yani okunmuyor: eski palet
+      indigoyken beyaz doğruydu, kehribarda değil.
+    */
+    color: #2f1911;
+  }
+  /*
+    Büyük paneller için derin uç.
+
+    İki işi birden yapıyor: beyaz yazı taşıyabiliyor (5.0 ve üstü) ve üstündeki
+    MASKOT okunuyor. Kehribar zeminde kehribar bir mirket zemine gömülüyordu —
+    uygulama simgesinde de aynı sebeple kestane zemin seçildi.
+  */
+  .brand-gradient-deep {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-brand-600),
+      var(--color-brand-800)
+    );
+    color: #ffffff;
   }
   .brand-text {
-    background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-violet-400));
+    background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .dark .brand-text {
+    background-image: linear-gradient(135deg, var(--color-brand-200), var(--color-brand-400));
   }
   .btn {
     display: inline-flex;
@@ -98,9 +251,21 @@
   .btn:active {
     transform: scale(0.97);
   }
+  /*
+   * Birincil buton: kehribar zemin + KOYU KAHVE yazı.
+   *
+   * Bu eşleşme maskotun kendisinden geliyor — kürk kehribar, kontur koyu kahve.
+   * Ölçümü de maskot kazanıyor: #2F1911 üstüne #EDA45D 7.94 kontrast veriyor,
+   * yani AAA. Beyaz yazı aynı kehribarda 1.9'da kalıyordu; markayı beyaz yazı
+   * taşıyacak kadar koyulaştırmak ise onu kahverengiye çeviriyor ve maskotun
+   * imza rengi ekrandan tamamen kayboluyordu.
+   *
+   * İki temada da aynı: kehribar her iki zeminde de açık kalıyor, yani buton
+   * tema değiştiğinde kimlik değiştirmiyor.
+   */
   .btn-primary {
-    color: white;
-    background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700));
+    color: #2f1911;
+    background-image: linear-gradient(135deg, var(--color-brand-300), var(--color-brand-400));
     box-shadow: 0 8px 20px -10px var(--color-brand-600);
   }
   /*
@@ -144,12 +309,12 @@
   .option:active:not(:disabled) {
     transform: scale(0.985);
     border-color: var(--color-brand-500);
-    background: color-mix(in srgb, var(--color-brand-500) 8%, var(--surface));
+    background: color-mix(in srgb, var(--color-brand) 8%, var(--surface));
   }
   /* Seçilen ama henüz sonucu belli olmayan şık */
   .option-picked {
     border-color: var(--color-brand-500);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand-500) 18%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 18%, transparent);
   }
   /* Seviye/filtre çipleri */
   .chip {
@@ -165,16 +330,17 @@
     .chip:hover:not(.chip-active) {
       border-color: var(--color-brand-400);
       color: var(--text);
-      background: color-mix(in srgb, var(--color-brand-500) 7%, var(--surface));
+      background: color-mix(in srgb, var(--color-brand) 7%, var(--surface));
     }
   }
   .chip:active {
     transform: scale(0.95);
   }
+  /* Seçili çip de birincil butonun dilini konuşuyor: kehribar zemin, koyu yazı. */
   .chip-active {
     border-color: transparent;
-    color: #fff;
-    background-image: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-700));
+    color: #2f1911;
+    background-image: linear-gradient(135deg, var(--color-brand-300), var(--color-brand-400));
     box-shadow: 0 6px 16px -8px var(--color-brand-600);
   }
   /*
@@ -191,27 +357,27 @@
     Metin karışımı %72 renk / %28 metin idi ve ölçümde açık temada doğru
     şeridinin kontrastı 3.60 çıkıyordu — WCAG AA'nın normal metin eşiği 4.5 ve
     şeridin yazısı 14 px kalın, yani "büyük metin" istisnasına da girmiyor.
-    Yeşilin açık zemin üstünde yeterince koyulaşmaması sorunun kaynağı.
 
-    %55'te ölçüm: açık temada 5.07 / 6.33, koyu temada 7.30 / 4.83 — dördü de
-    eşiğin üstünde. Renk kimliği korunuyor, yalnızca metin bir tık koyuluyor
-    (koyu temada bir tık açılıyor, çünkü karışımın diğer ucu tema metni).
+    %55'te dört ölçümün dördü de eşiğin üstünde. Karışımın renk ucu artık
+    temaya duyarlı `--color-mint`/`--color-rose`: açık temada koyu yeşil,
+    koyu temada açık yeşil — yani şerit iki tarafta da kendi zeminine göre
+    doğru yönde karışıyor.
   */
   .verdict-correct {
-    background: color-mix(in srgb, var(--color-mint-500) 16%, var(--surface));
-    color: color-mix(in srgb, var(--color-mint-500) 55%, var(--text));
+    background: color-mix(in srgb, var(--color-mint) 16%, var(--surface));
+    color: color-mix(in srgb, var(--color-mint) 55%, var(--text));
   }
   .verdict-wrong {
-    background: color-mix(in srgb, var(--color-rose-500) 16%, var(--surface));
-    color: color-mix(in srgb, var(--color-rose-500) 55%, var(--text));
+    background: color-mix(in srgb, var(--color-rose) 16%, var(--surface));
+    color: color-mix(in srgb, var(--color-rose) 55%, var(--text));
   }
   .option-correct {
-    border-color: var(--color-mint-500);
-    background: color-mix(in srgb, var(--color-mint-500) 14%, var(--surface));
+    border-color: var(--color-mint);
+    background: color-mix(in srgb, var(--color-mint) 14%, var(--surface));
   }
   .option-wrong {
-    border-color: var(--color-rose-500);
-    background: color-mix(in srgb, var(--color-rose-500) 14%, var(--surface));
+    border-color: var(--color-rose);
+    background: color-mix(in srgb, var(--color-rose) 14%, var(--surface));
   }
 }
 
@@ -246,7 +412,7 @@
 
 /* Doğru cevapta kısa bir yeşil hâle — dikkat dağıtmadan onaylar. */
 @keyframes glow-correct {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-mint-500) 45%, transparent); }
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-mint) 45%, transparent); }
   100% { box-shadow: 0 0 0 14px transparent; }
 }
 .animate-glow {
