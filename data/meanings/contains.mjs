@@ -356,6 +356,13 @@ function forms(raw) {
       const s = alt
         .replace(/^\s*(der|die|das)\s+/i, "")
         .replace(/\bsich\b/gi, " ")
+        // Yer tutucular madde başlığının parçası, aranacak kelime değil.
+        // `contains` çok parçalı başlıkta her parçayı ayrı ayrı arıyor ve
+        // "etwas"/"jemandem" metinde geçmediği için fiil apaçık dururken
+        // madde "metinde yok" sayılıyordu: `etwas revidieren` maddesi
+        // "revidieren" fiilinin kendi cümlesinde bulunamıyordu. C1
+        // sözlükçesinde bu kalıp yoğun — tek pakette sekiz yanlış ret.
+        .replace(/\b(jemandem|jemanden|jemandes|jemand|etwas)\b/gi, " ")
         .replace(/[.,]+$/, "")
         .replace(/\s+/g, " ")
         .trim();
@@ -451,7 +458,11 @@ function stemVariants(r) {
   if (son >= 0)
     // e → i de gerekli: Präsens 3. tekil şahısta gövde inceliyor
     // (bewerben → bewirbt, sprechen → spricht, helfen → hilft).
-    for (const v of r[son] === "i" ? ["a", "u"] : r[son] === "a" ? ["u", "ie", "i"] : ["a", "o", "i"])
+    for (const v of r[son] === "i"
+      ? ["a", "u"]
+      : r[son] === "a"
+        ? ["u", "ie", "i"]
+        : ["a", "o", "i"])
       out.push(r.slice(0, son) + v + r.slice(son + 1));
   return out;
 }
