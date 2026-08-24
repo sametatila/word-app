@@ -536,7 +536,24 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     speakDone.current = null;
   }, [cancel]);
 
-  useEffect(() => () => stopAll(), [stopAll]);
+  /*
+    Sökülürken arka plan katmanı da bırakılıyor.
+
+    `stopAll` yalnızca döngüyü ve okumayı durduruyordu; sessiz döngü sesi ile
+    mikrofon açık kalıyordu. Kullanıcı "geri dön" düğmesine basmadan çıkarsa
+    (sekme değişimi, geri gitme, uygulamanın başka bir yerine geçme) o ses
+    OTURUM BOYUNCA çalmaya devam ediyor — üstelik kendini yeniden başlatan bir
+    gözcüsü var, yani duraklatılamıyor bile. Uygulamanın geri kalanının sesi
+    onun üstüne biniyor.
+  */
+  useEffect(
+    () => () => {
+      stopAll();
+      stopPocketAudio();
+      closeMic();
+    },
+    [stopAll],
+  );
 
   // Kurulum yoklaması: cevabı beklerken hiçbir şey engellenmiyor, yalnızca
   // başlangıç ekranındaki söz doğru olsun diye.

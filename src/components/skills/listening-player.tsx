@@ -1,5 +1,6 @@
 "use client";
 
+import { stopSpeaking } from "@/components/speak-button";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { CefrLevel, ListeningExercise } from "@/lib/skills/types";
@@ -71,6 +72,16 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
   }
 
   function stop() {
+    /*
+      Uygulamanın DİĞER sesi de susturuluyor.
+
+      Bu oyuncu kendi `Audio` nesnesini kuruyor ve yalnızca kendi sesini
+      durduruyordu. Oysa ders anlatımı ve kelime turu paylaşılan iki ses
+      öğesini kullanıyor; oradan yarım kalmış bir okuma varsa bu oyuncunun
+      sesi onun ÜSTÜNE biniyor ve iki ses aynı anda duyuluyor. Kullanıcının
+      "yankılı" dediği şey bu.
+    */
+    stopSpeaking();
     window.speechSynthesis?.cancel();
     if (audioRef.current) {
       audioRef.current.onended = null;
@@ -124,7 +135,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
       return;
     }
     const synth = window.speechSynthesis;
-    synth.cancel();
+    stop();
     setPlaying(true);
     exercise.segments.forEach((seg, i) => {
       const u = makeUtterance(seg.text, seg.speaker, slowNow);
@@ -148,7 +159,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
     }
     if (available === false) return;
     const synth = window.speechSynthesis;
-    synth.cancel();
+    stop();
     setPlaying(true);
     setSegIdx(i);
     const seg = exercise.segments[i];

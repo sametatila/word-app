@@ -598,7 +598,31 @@ function chainWithElements(
     if (background) {
       // Önce yalnızca BAŞLAMASI bekleniyor; ses akmaya başlayınca tavan
       // parçanın kendi süresine göre yeniden kuruluyor.
-      disarm = afterMs(SEGMENT_START_MS, next);
+      /*
+        Başlama gözcüsü ÇALAN sesi kesmemeli.
+
+        `onplaying` olayı kaçırılabiliyor (öğe paylaşıldığı için başka bir
+        okuma araya girip işleyiciyi değiştirebiliyor). Gözcü o durumda hâlâ
+        çalan bir parçanın üstüne sıradakini başlatırdı — iki parça aynı anda,
+        yani yankı. Gerçekten sessizse ilerliyor, çalıyorsa payı yeniliyor.
+      */
+      const startGuard = () => {
+        if (moved || token !== mine) return;
+        /*
+          Ölçüt `paused` DEĞİL, sesin ilerlemiş olması.
+
+          `play()` çağrılır çağrılmaz `paused` false oluyor — ses hiç akmasa,
+          istek ağda asılı kalsa bile. Ona bakan bir koruma, gözcüyü tam
+          gerekli olduğu durumda (ağ takıldı, ses hiç gelmiyor) devre dışı
+          bırakıyordu. `currentTime` ise yalnızca gerçekten çalarken ilerliyor.
+        */
+        if (el.currentTime > 0 && !el.ended) {
+          disarm = afterMs(SEGMENT_CAP_MS, next);
+          return;
+        }
+        next();
+      };
+      disarm = afterMs(SEGMENT_START_MS, startGuard);
       el.onplaying = () => {
         if (moved || token !== mine) return;
         disarm();
@@ -762,7 +786,22 @@ function play(
     speakWithBrowser(clean, voice, course, onEnd, slow);
   };
 
-  audio.pause();
+  /*
+    İKİ öğe birden susturuluyor.
+
+    Buradaki tek satır uzun süre `audio.pause()` idi, yani yalnızca birinci
+    öğe. İkinci öğeyi ise parça zinciri kullanıyor (ders anlatımı ve yürürken
+    modu, bkz. chainWithElements) ve o zincir yarıda kaldığında ikinci öğe
+    ÇALMAYA DEVAM ediyordu. Ardından bir oyun turu konuşunca iki ses üst üste
+    biniyor: aynı sesin hafif kaymış iki kopyası, yani "boş bir odada yankı".
+
+    Susturmanın diğer bütün yolları (stopSpeaking, speakSegments, iptal
+    işlevleri) zaten ikisini de durduruyordu; eksik olan yalnızca bu yoldu ve
+    oyunların TAMAMI bu yoldan konuşuyor.
+  */
+  stopActiveChain();
+  element?.pause();
+  extra?.pause();
   audio.onended = finish;
   audio.onerror = fallback;
   // Süre, ses ÇALMAYA BAŞLADIĞI anda bildiriliyor — üstveri indiği anda değil.
