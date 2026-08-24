@@ -79,6 +79,9 @@ const CLIP: Record<Mood, { file: string; aspect: number }> = {
 const IDLE_CLIPS = ["lookaround", "idle-dog", "idle-stretch", "idle-scratch", "idle-tail"];
 const IDLE_MS = 5083; // 61 kare @ 12fps — bir klibin tam süresi
 
+/** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
+const STICKY: Mood[] = ["sad", "sleep", "dance"];
+
 export function Mascot({
   mood = "idle",
   size = 132,
@@ -90,9 +93,29 @@ export function Mascot({
 }) {
   const still = useStill();
   const [idleClip, setIdleClip] = useState(IDLE_CLIPS[0]);
+  /*
+    Duygu bir SELAMLAMA, kalıcı bir durum değil: klip bir tur oynadıktan sonra
+    maskot kendiliğinden idle rotasyonuna geçer. Bunsuz uzun yaşayan her yer
+    (seri kutusu, ana sayfa, sonuç kartları) aynı klibi sonsuza dek döndürüyordu.
+    Kısa ömürlü kullanımlar (cevap şeridi ~1.5 sn) bir turu zaten göremeden
+    kapanır, etkilenmez. İstisnalar STICKY'de: sad ve sleep birer duygu DURUMU
+    (üzgünün neşeyle boşta gezinmesi tonu bozar), dance ise geniş tuvalli —
+    dikey idle'lara geçmek kadraj oranını zıplatırdı.
+  */
+  const drifts = mood !== "idle" && !STICKY.includes(mood);
+  const [drifted, setDrifted] = useState(false);
 
   useEffect(() => {
-    if (mood !== "idle" || still) return;
+    setDrifted(false);
+    if (!drifts || still) return;
+    const t = setTimeout(() => setDrifted(true), IDLE_MS);
+    return () => clearTimeout(t);
+  }, [mood, drifts, still]);
+
+  const inIdle = mood === "idle" || (drifts && drifted);
+
+  useEffect(() => {
+    if (!inIdle || still) return;
     const t = setTimeout(() => {
       setIdleClip((cur) => {
         const rest = IDLE_CLIPS.filter((c) => c !== cur);
@@ -100,19 +123,19 @@ export function Mascot({
       });
     }, IDLE_MS);
     return () => clearTimeout(t);
-  }, [mood, still, idleClip]);
+  }, [inIdle, still, idleClip]);
 
   // Sıradaki idle klibi ilk geçişte takılmasın diye hepsi önden ısıtılıyor.
   useEffect(() => {
-    if (mood !== "idle" || still) return;
+    if (still || (mood !== "idle" && !drifts)) return;
     for (const c of IDLE_CLIPS) {
       const img = new window.Image();
       img.src = `/anim/${c}.webp`;
     }
-  }, [mood, still]);
+  }, [mood, drifts, still]);
 
   const clip = CLIP[mood];
-  const file = mood === "idle" ? idleClip : clip.file;
+  const file = inIdle ? idleClip : clip.file;
 
   return (
     <div
