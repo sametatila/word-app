@@ -48,17 +48,18 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Türkçede ünlünün uzunluğu anlamı değiştirmez; Almancada değiştirir. Aynı ünlü kısa ya da uzun olduğunda karşına bambaşka bir kelime çıkar.",
     gloss: [
-      { de: "die Stadt / der Staat", tr: "şehir / devlet" },
-      { de: "in / ihn", tr: "içinde / onu" },
-      { de: "offen / der Ofen", tr: "açık / fırın" },
-      { de: "füllen / fühlen", tr: "doldurmak / hissetmek" },
-      { de: "die Hölle / die Höhle", tr: "cehennem / mağara" },
+      { de: "die Stadt / der Staat", tr: "şehir / devlet", en: "city / state" },
+      { de: "in / ihn", tr: "içinde / onu", en: "in / him" },
+      { de: "offen / der Ofen", tr: "açık / fırın", en: "open / oven" },
+      { de: "füllen / fühlen", tr: "doldurmak / hissetmek", en: "to fill / to feel" },
+      { de: "die Hölle / die Höhle", tr: "cehennem / mağara", en: "hell / cave" },
     ],
     minutes: 6,
     tasks: [
       {
         de: "Ich wohne in der Stadt.",
         tr: "Şehirde oturuyorum.",
+        en: "I live in the city.",
         hint: "„Stadt“ta a KISA: ŞTAT. Uzatırsan „Staat“ (devlet) olur.",
         confusions: [
           {
@@ -71,6 +72,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Der Staat zahlt das.",
         tr: "Bunu devlet ödüyor.",
+        en: "The state pays for that.",
         hint: "Burada tam tersi: „Staat“ta a UZUN — ŞTAAT. İki a'yı da duy.",
         confusions: [
           {
@@ -83,6 +85,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich kenne ihn gut.",
         tr: "Onu iyi tanıyorum.",
+        en: "I know him well.",
         hint: "„ihn“de i UZUN: İİN. „in“ ise kısacıktır.",
         confusions: [
           {
@@ -95,6 +98,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Das Fenster ist offen.",
         tr: "Pencere açık.",
+        en: "The window is open.",
         hint: "„offen“de o KISA ve ardından çift f gelir: OF-fen.",
         confusions: [
           {
@@ -107,6 +111,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich fühle mich gut.",
         tr: "Kendimi iyi hissediyorum.",
+        en: "I feel good.",
         hint: "Buradaki ü Türkçedeki ü ile aynı — tek fark UZUN olması: FÜÜ-le.",
         confusions: [
           {
@@ -119,6 +124,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Wir haben eine Höhle gefunden.",
         tr: "Bir mağara bulduk.",
+        en: "We found a cave.",
         hint: "„Höhle“de ö uzun (HÖÖ-le); „Hölle“de kısa. Ö sesi ikisinde de aynı.",
         confusions: [
           {
@@ -140,17 +146,18 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Bu üç harf Almancada Türkçedekinden farklı okunur: w = v, v = f, z = ts. En sık yapılan hata bunlar.",
     gloss: [
-      { de: "das Wasser", tr: "su" },
-      { de: "wohnen", tr: "oturmak" },
-      { de: "der Vater", tr: "baba" },
-      { de: "die Zeit", tr: "zaman" },
-      { de: "zwei", tr: "iki" },
+      { de: "das Wasser", tr: "su", en: "water" },
+      { de: "wohnen", tr: "oturmak", en: "to live" },
+      { de: "der Vater", tr: "baba", en: "father" },
+      { de: "die Zeit", tr: "zaman", en: "time" },
+      { de: "zwei", tr: "iki", en: "two" },
     ],
     minutes: 5,
     tasks: [
       {
         de: "Wasser",
         tr: "su",
+        en: "water",
         hint: "„w“ harfi Türkçe „v“ gibi okunur: VAsser.",
         confusions: [
           {
@@ -163,6 +170,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Wo wohnen Sie?",
         tr: "Nerede oturuyorsunuz?",
+        en: "Where do you live?",
         confusions: [
           {
             heard: ["Bohnen", "wollen", "kommen"],
@@ -174,6 +182,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Mein Vater ist Lehrer.",
         tr: "Babam öğretmen.",
+        en: "My father is a teacher.",
         hint: "„v“ harfi f gibi okunur: FAA-ter.",
         confusions: [
           {
@@ -186,6 +195,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich habe keine Zeit.",
         tr: "Vaktim yok.",
+        en: "I have no time.",
         hint: "„z“ = ts. Dilin ucu dişlere değsin: TSAYT.",
         confusions: [
           {
@@ -198,6 +208,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "zwei Kinder",
         tr: "iki çocuk",
+        en: "two children",
         confusions: [
           {
             heard: ["Schwein", "schwer", "sei"],
@@ -209,6 +220,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Wir wohnen zusammen in Wien.",
         tr: "Viyana'da birlikte oturuyoruz.",
+        en: "We live together in Vienna.",
         hint: "„Wien“ VEEN diye okunur — „Wein“ (şarap) ile karıştırma.",
         confusions: [
           {
@@ -240,17 +252,18 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "İkilinin ikinci harfi sesi belirler: „ie“ uzun i, „ei“ ise ay. Harfleri tek tek okursan kelime değişir — hepsi gerçek kelime olduğu için hata fark edilmeden geçer.",
     gloss: [
-      { de: "die Reise / der Riese", tr: "yolculuk / dev" },
-      { de: "die Wiese / die Weise", tr: "çayır / biçim" },
-      { de: "sie / sei", tr: "o, onlar / ol (emir)" },
-      { de: "bieten", tr: "sunmak" },
-      { de: "beide", tr: "her ikisi" },
+      { de: "die Reise / der Riese", tr: "yolculuk / dev", en: "journey / giant" },
+      { de: "die Wiese / die Weise", tr: "çayır / biçim", en: "meadow / manner" },
+      { de: "sie / sei", tr: "onlar / ol", en: "they / be" },
+      { de: "bieten", tr: "sunmak", en: "to offer" },
+      { de: "beide", tr: "her ikisi", en: "both" },
     ],
     minutes: 6,
     tasks: [
       {
         de: "Die Reise war sehr schön.",
         tr: "Yolculuk çok güzeldi.",
+        en: "The journey was very nice.",
         hint: "„Reise“de „ei“ var → RAY-ze. „Riese“ (dev) ise Rİİ-ze.",
         confusions: [
           {
@@ -263,6 +276,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Der Riese war sehr groß.",
         tr: "Dev çok büyüktü.",
+        en: "The giant was very big.",
         hint: "Şimdi tersi: „Riese“de „ie“ var → Rİİ-ze, uzun i.",
         confusions: [
           {
@@ -275,6 +289,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Die Kühe stehen auf der Wiese.",
         tr: "İnekler çayırda duruyor.",
+        en: "The cows are standing in the meadow.",
         hint: "„Wiese“ = Vİİ-ze. „Weise“ (biçim, yol) ise VAY-ze.",
         confusions: [
           {
@@ -287,6 +302,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Auf diese Weise geht es schneller.",
         tr: "Bu şekilde daha hızlı oluyor.",
+        en: "This way it goes faster.",
         hint: "„Weise“de „ei“ → VAY-ze. Aynı cümledeki „diese“ ise Dİİ-ze.",
         confusions: [
           {
@@ -299,6 +315,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Sie bieten uns einen guten Preis.",
         tr: "Bize iyi bir fiyat sunuyorlar.",
+        en: "They are offering us a good price.",
         hint: "„bieten“ = Bİİ-ten. „beide“ (her ikisi) ile karıştırma: BAY-de.",
         confusions: [
           {
@@ -311,6 +328,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Beide Kinder sind hier.",
         tr: "Her iki çocuk da burada.",
+        en: "Both children are here.",
         hint: "„beide“ = BAY-de. Aynı cümlede „hier“ ise HİİR — iki kural yan yana.",
         confusions: [
           {
@@ -333,17 +351,18 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Almancada iki ayrı „ch“ var: ince ünlülerden sonra yumuşak (ich), kalın ünlülerden sonra gırtlaktan (auch). Türkçede ikisi de yok.",
     gloss: [
-      { de: "nicht", tr: "değil" },
-      { de: "die Milch", tr: "süt" },
-      { de: "auch", tr: "de, da" },
-      { de: "das Buch", tr: "kitap" },
-      { de: "die Küche", tr: "mutfak" },
+      { de: "nicht", tr: "değil", en: "not" },
+      { de: "die Milch", tr: "süt", en: "milk" },
+      { de: "auch", tr: "de", en: "also" },
+      { de: "das Buch", tr: "kitap", en: "book" },
+      { de: "die Küche", tr: "mutfak", en: "kitchen" },
     ],
     minutes: 6,
     tasks: [
       {
         de: "Ich bin nicht müde.",
         tr: "Yorgun değilim.",
+        en: "I am not tired.",
         hint: "„nicht“teki ch yumuşaktır — Türkçe „ş“ ya da „k“ değil. Dilin ortası damağa yaklaşır.",
         confusions: [
           {
@@ -356,6 +375,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich trinke gern Milch.",
         tr: "Süt içmeyi severim.",
+        en: "I like drinking milk.",
         confusions: [
           {
             heard: ["Milz", "mild"],
@@ -367,6 +387,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich lese auch ein Buch.",
         tr: "Ben de bir kitap okuyorum.",
+        en: "I am reading a book too.",
         hint: "Burada ch gırtlaktan: „auch“ ve „Buch“ta boğazın arkası çalışır.",
         confusions: [
           {
@@ -379,6 +400,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Die Küche ist klein.",
         tr: "Mutfak küçük.",
+        en: "The kitchen is small.",
         confusions: [
           {
             heard: ["Kuchen", "Kirche"],
@@ -390,6 +412,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Natürlich, sehr gern!",
         tr: "Tabii ki, memnuniyetle!",
+        en: "Of course, gladly!",
         confusions: [
           {
             heard: ["Natur", "naturell"],
@@ -401,6 +424,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich möchte noch einen Kaffee.",
         tr: "Bir kahve daha istiyorum.",
+        en: "I would like another coffee.",
         hint: "„ich“ yumuşak, „noch“ gırtlaktan — iki ch sesi aynı cümlede.",
         confusions: [
           {
@@ -423,17 +447,18 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Kelime başındaki sp/st „şp/şt“ okunur. Ayrıca ünlü uzunluğu anlam ayırır: „Stadt“ (şehir) ile „Staat“ (devlet) aynı değil.",
     gloss: [
-      { de: "die Stadt", tr: "şehir" },
-      { de: "der Staat", tr: "devlet" },
-      { de: "sprechen", tr: "konuşmak" },
-      { de: "der Sport", tr: "spor" },
-      { de: "spät", tr: "geç" },
+      { de: "die Stadt", tr: "şehir", en: "city" },
+      { de: "der Staat", tr: "devlet", en: "state" },
+      { de: "sprechen", tr: "konuşmak", en: "to speak" },
+      { de: "der Sport", tr: "spor", en: "sport" },
+      { de: "spät", tr: "geç", en: "late" },
     ],
     minutes: 6,
     tasks: [
       {
         de: "Ich spreche ein bisschen Deutsch.",
         tr: "Biraz Almanca konuşuyorum.",
+        en: "I speak a little German.",
         hint: "Kelime başındaki „sp“ = şp: ŞPREH-e.",
         confusions: [
           {
@@ -446,6 +471,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Die Stadt ist sehr groß.",
         tr: "Şehir çok büyük.",
+        en: "The city is very big.",
         confusions: [
           {
             heard: ["Staat", "statt", "Start"],
@@ -457,6 +483,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Ich treibe gern Sport.",
         tr: "Spor yapmayı severim.",
+        en: "I like doing sport.",
         confusions: [
           {
             heard: ["Spur", "Sorte"],
@@ -468,6 +495,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Es ist schon spät.",
         tr: "Vakit geç oldu.",
+        en: "It is already late.",
         hint: "Burada „schon“ (zaten) doğru — „schön“ değil. „spät“ ise uzun okunur.",
         confusions: [
           {
@@ -480,6 +508,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Wir stehen am Bahnhof.",
         tr: "Tren istasyonunda duruyoruz.",
+        en: "We are standing at the train station.",
         confusions: [
           {
             heard: ["sehen", "gehen"],
@@ -491,6 +520,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Verstehen Sie mich?",
         tr: "Beni anlıyor musunuz?",
+        en: "Do you understand me?",
         hint: "Buradaki „st“ kelime başında değil ama „ver-stehen“ birleşik olduğu için yine şt okunur.",
         confusions: [
           {
@@ -521,17 +551,18 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Almanca „z“ her yerde ts'dir — kelime başında da, ortasında da, sonunda da. Türkçedeki gibi z söylersen karşındaki başka bir kelime duyar.",
     gloss: [
-      { de: "heizen / heißen", tr: "ısıtmak / adı olmak" },
-      { de: "reizen / reisen", tr: "tahriş etmek / seyahat etmek" },
-      { de: "ganz / die Gans", tr: "tamamen / kaz" },
-      { de: "kurz / der Kurs", tr: "kısa / kurs" },
-      { de: "die Zahl / der Saal", tr: "sayı / salon" },
+      { de: "heizen / heißen", tr: "ısıtmak / adı olmak", en: "to heat / to be called" },
+      { de: "reizen / reisen", tr: "tahriş etmek / seyahat etmek", en: "to irritate / to travel" },
+      { de: "ganz / die Gans", tr: "tamamen / kaz", en: "completely / goose" },
+      { de: "kurz / der Kurs", tr: "kısa / kurs", en: "short / course" },
+      { de: "die Zahl / der Saal", tr: "sayı / salon", en: "number / hall" },
     ],
     minutes: 7,
     tasks: [
       {
         de: "Wir heizen im Winter mit Gas.",
         tr: "Kışın gazla ısıtıyoruz.",
+        en: "In winter we heat with gas.",
         hint: "„heizen“ = HAY-tsen. Dilin ucu dişlere değip t ve s birlikte çıkar.",
         confusions: [
           {
@@ -544,6 +575,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Wir reisen jedes Jahr nach Italien.",
         tr: "Her yıl İtalya'ya seyahat ediyoruz.",
+        en: "We travel to Italy every year.",
         hint: "Burada „s“ var, ts değil: RAY-zen. „reizen“ ise RAY-tsen.",
         confusions: [
           {
@@ -556,6 +588,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Das ist ganz einfach.",
         tr: "Bu gayet basit.",
+        en: "That is quite simple.",
         hint: "„ganz“ın sonu ts: GANTS. Sadece z dersen „Gans“ (kaz) olur.",
         confusions: [
           {
@@ -571,6 +604,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Die Pause war viel zu kurz.",
         tr: "Mola çok kısaydı.",
+        en: "The break was much too short.",
         hint: "„kurz“un sonu ts: KURTS. Sadece s dersen „Kurs“ (kurs) olur.",
         confusions: [
           {
@@ -583,6 +617,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Der Kurs beginnt am Montag.",
         tr: "Kurs pazartesi başlıyor.",
+        en: "The course starts on Monday.",
         hint: "Şimdi tersi: „Kurs“ta ts yok, düz s var — KURS.",
         confusions: [
           {
@@ -595,6 +630,7 @@ export const speaking: SpeakingDrillExercise[] = [
       {
         de: "Bitte nennen Sie mir die Zahl.",
         tr: "Lütfen bana sayıyı söyleyin.",
+        en: "Please tell me the number.",
         hint: "„Zahl“ = TSAAL, uzun a ile. „Saal“ (salon) ise ZAAL.",
         confusions: [
           {
@@ -622,22 +658,24 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Ünlüden sonraki „h“ okunmaz — önündeki ünlüyü uzatır. Türkçede h her zaman söylenir, bu yüzden en sık atlanan kurallardan biri.",
     gloss: [
-      { de: "gehen", tr: "gitmek" },
-      { de: "sehen", tr: "görmek" },
-      { de: "die Uhr", tr: "saat" },
-      { de: "wahr", tr: "doğru, gerçek" },
-      { de: "ihn", tr: "onu" },
+      { de: "gehen", tr: "gitmek", en: "to go" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "die Uhr", tr: "saat", en: "clock" },
+      { de: "wahr", tr: "doğru", en: "true" },
+      { de: "ihn", tr: "onu", en: "him" },
     ],
     minutes: 6,
     tasks: [
       {
         de: "Wir gehen nach Hause.",
         tr: "Eve gidiyoruz.",
+        en: "We are going home.",
         hint: "„gehen“ = GEE-en. Ortadaki h söylenmez, e uzar. Baştaki „Hause“daki h ise okunur.",
       },
       {
         de: "Ich kann dich sehen.",
         tr: "Seni görebiliyorum.",
+        en: "I can see you.",
         hint: "„sehen“ = ZEE-en. h yok, uzun e var. Baştaki s ise z gibi okunur.",
         confusions: [
           {
@@ -649,17 +687,20 @@ export const speaking: SpeakingDrillExercise[] = [
       },
       {
         de: "Wie spät ist es auf deiner Uhr?",
-        tr: "Saatinde saat kaç?",
+        tr: "Senin saatinde saat kaç?",
+        en: "What time is it on your clock?",
         hint: "„Uhr“ = UUR, tek uzun u. h'yi söylemeye çalışma.",
       },
       {
         de: "Das ist nicht wahr.",
         tr: "Bu doğru değil.",
+        en: "That is not true.",
         hint: "„wahr“ = VAAR. h okunmaz, a uzar — „war“ (idi) ile aynı duyulur ama yazımı farklı.",
       },
       {
         de: "Ich habe ihn gestern gesehen.",
         tr: "Onu dün gördüm.",
+        en: "I saw him yesterday.",
         hint: "„ihn“ = İİN, uzun i. „in“ (içinde) ise kısacık — fark yalnızca uzunlukta.",
         confusions: [
           {
@@ -693,37 +734,42 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Kelime sonundaki vurgusuz „-er“ belirgin bir „er“ değil, neredeyse „a“dır: Vater = FAA-ta. Aksanı en çok ele veren ayrıntı bu.",
     gloss: [
-      { de: "der Vater", tr: "baba" },
-      { de: "die Mutter", tr: "anne" },
-      { de: "die Schwester", tr: "kız kardeş" },
-      { de: "besser", tr: "daha iyi" },
-      { de: "immer", tr: "her zaman" },
+      { de: "der Vater", tr: "baba", en: "father" },
+      { de: "die Mutter", tr: "anne", en: "mother" },
+      { de: "die Schwester", tr: "kız kardeş", en: "sister" },
+      { de: "besser", tr: "daha iyi", en: "better" },
+      { de: "immer", tr: "her zaman", en: "always" },
     ],
     minutes: 6,
     tasks: [
       {
         de: "Mein Vater und meine Mutter wohnen hier.",
         tr: "Babam ve annem burada oturuyor.",
+        en: "My father and my mother live here.",
         hint: "FAA-ta ve MU-ta. Sonlardaki r'yi yuvarlama, ağzın gevşesin.",
       },
       {
         de: "Meine Schwester ist Lehrerin.",
         tr: "Kız kardeşim öğretmen.",
+        en: "My sister is a teacher.",
         hint: "ŞVES-ta. „Lehrerin“de ise vurgu LEE'de ve ortadaki -er- yine hafif.",
       },
       {
         de: "Heute geht es mir besser.",
         tr: "Bugün daha iyiyim.",
+        en: "I am feeling better today.",
         hint: "BES-sa. Çift s ünlüyü kısaltıyor, sondaki -er ise neredeyse a.",
       },
       {
         de: "Er kommt immer zu spät.",
         tr: "O her zaman geç geliyor.",
+        en: "He always comes too late.",
         hint: "İ-ma. Cümledeki „Er“ ise vurgulu ve tam okunur — aynı harfler, farklı ses.",
       },
       {
         de: "Der Winter war dieses Jahr sehr kalt.",
         tr: "Bu yıl kış çok soğuktu.",
+        en: "The winter was very cold this year.",
         hint: "VİN-ta. „Der“ de hafif: DEA gibi. Üç ayrı -er sesi var, üçü de kısa.",
       },
     ],
@@ -753,47 +799,53 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Bu kelimeler Türkçede de var, çünkü iki dil de Fransızcadan almış. Tuzak da orada: tanıdık geldikleri için Türkçe alışkanlığıyla okunuyorlar. Vurguları da yerli Almanca kelimelerin tersine son hecede.",
     gloss: [
-      { de: "die Universität", tr: "üniversite" },
-      { de: "das Restaurant", tr: "restoran" },
-      { de: "der Ingenieur", tr: "mühendis" },
-      { de: "der Journalist", tr: "gazeteci" },
-      { de: "die Garage", tr: "garaj" },
+      { de: "die Universität", tr: "üniversite", en: "university" },
+      { de: "das Restaurant", tr: "restoran", en: "restaurant" },
+      { de: "der Ingenieur", tr: "mühendis", en: "engineer" },
+      { de: "der Journalist", tr: "gazeteci", en: "journalist" },
+      { de: "die Garage", tr: "garaj", en: "garage" },
     ],
     minutes: 7,
     tasks: [
       {
         de: "Ich studiere an der Universität.",
         tr: "Üniversitede okuyorum.",
+        en: "I study at the university.",
         hint:
           "Vurgu SON hecede: uni-ver-zi-TÄT. Türkçedeki „üniversite“ gibi ortaya vurma, ve „v“ burada v okunur (alıntı olduğu için f değil).",
       },
       {
         de: "Wir essen heute im Restaurant.",
-        tr: "Bugün restoranda yiyoruz.",
+        tr: "Bugün restoranda yemek yiyoruz.",
+        en: "We are eating at the restaurant today.",
         hint:
           "Res-to-RANG. Sondaki „nt“ Fransızcadaki gibi genizden ve neredeyse yutulur; Türkçedeki „restoran“dan farkı bu.",
       },
       {
         de: "Mein Bruder ist Ingenieur.",
-        tr: "Kardeşim mühendis.",
+        tr: "Erkek kardeşim mühendis.",
+        en: "My brother is an engineer.",
         hint:
           "In-je-NİÖR. Baştaki „In“ genizden, „g“ Fransız j'si gibi. Türkçedeki „mühendis“ hiç yardımcı olmuyor, kelime tamamen başka.",
       },
       {
         de: "Sie arbeitet als Journalistin.",
-        tr: "O gazeteci olarak çalışıyor.",
+        tr: "Gazeteci olarak çalışıyor.",
+        en: "She works as a journalist.",
         hint:
           "Jur-na-LİS-tin. Baştaki „J“ burada Almanca y sesi değil, Fransız j'si — Türkçedeki „jurnal“ ile aynı ses.",
       },
       {
         de: "Das Auto steht in der Garage.",
-        tr: "Araba garajda.",
+        tr: "Araba garajda duruyor.",
+        en: "The car is in the garage.",
         hint:
           "Ga-RAA-je. Sondaki „ge“ yine Fransız j'si; Türkçedeki „garaj“a yakın ama sonu açık kalır.",
       },
       {
         de: "Der Chef hat den Termin verschoben.",
         tr: "Patron randevuyu erteledi.",
+        en: "The boss postponed the appointment.",
         hint:
           "ŞEF — Almancada „Ch“ burada ş okunur, „ch“ sesi değil. „Termin“de vurgu ise son hecede: ter-MİİN.",
       },
@@ -823,41 +875,46 @@ export const speaking: SpeakingDrillExercise[] = [
     intro:
       "Kelime sonundaki b, d, g sertleşir (Tag = TAAK). Ama çekimlenip ünlü eklenince yumuşak hâline döner (Tage = TAA-ge). Kuralın kolay kısmı ilki, zor kısmı ikincisi.",
     gloss: [
-      { de: "der Tag / die Tage", tr: "gün / günler" },
-      { de: "der Hund / die Hunde", tr: "köpek / köpekler" },
-      { de: "gelb / gelbe", tr: "sarı / sarı (çekimli)" },
-      { de: "das Kind / die Kinder", tr: "çocuk / çocuklar" },
-      { de: "der Berg / die Berge", tr: "dağ / dağlar" },
+      { de: "der Tag / die Tage", tr: "gün / günler", en: "day / days" },
+      { de: "der Hund / die Hunde", tr: "köpek / köpekler", en: "dog / dogs" },
+      { de: "gelb / gelbe", tr: "sarı", en: "yellow" },
+      { de: "das Kind / die Kinder", tr: "çocuk / çocuklar", en: "child / children" },
+      { de: "der Berg / die Berge", tr: "dağ / dağlar", en: "mountain / mountains" },
     ],
     minutes: 7,
     tasks: [
       {
         de: "Der Tag war lang, aber die Tage davor waren kurz.",
         tr: "Gün uzundu ama ondan önceki günler kısaydı.",
+        en: "The day was long, but the days before it were short.",
         hint:
           "„Tag“ = TAAK (sert), „Tage“ = TAA-ge (yumuşak). Aynı cümlede ikisi de var; farkı duyur.",
       },
       {
         de: "Der Hund bellt, die Hunde schlafen.",
         tr: "Köpek havlıyor, köpekler uyuyor.",
+        en: "The dog is barking, the dogs are sleeping.",
         hint:
           "„Hund“ = HUNT, „Hunde“ = HUN-de. Sonuna ünlü gelince d geri geliyor.",
       },
       {
         de: "Das Kind spielt mit den anderen Kindern.",
         tr: "Çocuk diğer çocuklarla oynuyor.",
+        en: "The child is playing with the other children.",
         hint:
           "„Kind“ = KİNT, „Kindern“ = KİN-dern. Çoğulda d yumuşak.",
       },
       {
         de: "Der Berg ist hoch, die Berge sind höher.",
         tr: "Dağ yüksek, dağlar daha yüksek.",
+        en: "The mountain is high, the mountains are higher.",
         hint:
           "„Berg“ = BERK, „Berge“ = BER-ge. „höher“de ise h okunmaz, ö uzar.",
       },
       {
         de: "Das Auto ist gelb, ich mag gelbe Autos.",
         tr: "Araba sarı, sarı arabaları severim.",
+        en: "The car is yellow, I like yellow cars.",
         hint:
           "„gelb“ = GELP, „gelbe“ = GEL-be. Sıfat çekimlenince b geri dönüyor.",
       },
