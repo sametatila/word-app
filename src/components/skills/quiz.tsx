@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
+import { GlossEntry } from "./gloss-entry";
 import { speakGerman } from "@/components/speak-button";
 import { CheckIcon, InfoIcon, XIcon } from "@/components/icons";
 
@@ -121,9 +122,7 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
                 title="Telaffuzu dinle"
                 className="chip px-3 py-1.5 text-xs"
               >
-                <strong className="text-[color:var(--text)]">{g.de}</strong>
-                <span className="mx-1 opacity-50">·</span>
-                {g.tr}
+                <GlossEntry g={g} />
               </button>
             ))}
           </div>

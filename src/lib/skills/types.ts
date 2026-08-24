@@ -11,8 +11,34 @@ import type { DialogueTurn } from "@/lib/dialogue";
 export type SkillId = "reading" | "listening" | "writing" | "speaking";
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
-/** Egzersize özel küçük sözlükçe: metindeki kilit kelimeler. */
-export type Gloss = { de: string; tr: string };
+/**
+ * Egzersize özel küçük sözlükçe: metindeki kilit kelimeler.
+ *
+ * `tr` ve `en` **tek** doğal karşılıktır — kelime havuzundaki kuralın aynısı.
+ * Ama sözlükçe havuzdan bir noktada ayrılıyor: karşılık, kelimenin sözlükteki
+ * birinci anlamı değil **bu metindeki** anlamı olmalı. Alışveriş ilanındaki
+ * `das Angebot` "teklif" değil "indirim"dir. Anlam havuzdakiyle aynıysa
+ * havuzun sözcüğü birebir kullanılır: aynı kelimeye iki ekranda iki farklı
+ * karşılık vermek uygulamayı kendisiyle çelişir hâle getiriyordu (895
+ * maddenin 392'sinde durum buydu).
+ *
+ * `hd` ve `note` bilgiyi `tr`'nin içinden çıkarıyor. Züritüütsch kursunda
+ * karşılığın yanında Hochdeutsch köprüsü gerekiyor ("daire (Wohnung)") ve
+ * bazı kelimelerin karşılığı yok, açıklaması var ("Znüni — kuşluk yemeği,
+ * saat 9 civarı"). İkisi de öğrencinin ihtiyacı olan şey; parantez içinde
+ * çeviriye yapıştırılınca karşılık tek olmaktan çıkıyordu.
+ */
+export type Gloss = {
+  de: string;
+  /** Tek doğal Türkçe karşılık — bu metindeki anlamıyla. */
+  tr: string;
+  /** Aynı anlamın tek doğal İngilizce karşılığı. */
+  en?: string;
+  /** Züritüütsch maddelerinde Hochdeutsch biçimi ("Wohnung"). */
+  hd?: string;
+  /** Karşılığı olmayan kültür kelimelerinde kısa Türkçe not. */
+  note?: string;
+};
 
 export type SkillQuestion = {
   /** Soru — Almanca (Goethe tarzı). Seviyeye uygun sadelikte yazılır. */
@@ -120,6 +146,8 @@ export type SpeakingTask = {
   de: string;
   /** Türkçe karşılığı — uyaran olarak önce bu gösterilir. */
   tr: string;
+  /** Aynı cümlenin doğal İngilizce karşılığı. */
+  en?: string;
   /** Türkçe telaffuz ipucu (isteğe bağlı). */
   hint?: string;
   confusions?: SpeechConfusion[];

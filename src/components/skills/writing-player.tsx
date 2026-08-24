@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { glossTitle } from "./gloss-entry";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { CheckIcon } from "@/components/icons";
@@ -341,7 +342,7 @@ function FreeTask({
                 key={p.de}
                 type="button"
                 onClick={() => insert(p.de + " ")}
-                title={p.tr}
+                title={glossTitle(p)}
                 className="chip px-2.5 py-1 text-xs"
               >
                 {p.de}

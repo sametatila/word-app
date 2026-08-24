@@ -239,7 +239,14 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
           </div>
 
           {/* Uyaran Türkçe: önce ne söyleyeceğini bil, sonra nasıl söyleneceğini duy. */}
-          <p className="text-center text-base font-semibold">{task.tr}</p>
+          <p className="text-center text-base font-semibold">
+            {task.tr}
+            {task.en ? (
+              <span className="mt-0.5 block text-sm font-normal opacity-60" lang="en">
+                {task.en}
+              </span>
+            ) : null}
+          </p>
           <div className="mt-2 flex items-center justify-center gap-2">
             <p className="brand-text text-center text-xl font-bold sm:text-2xl">{task.de}</p>
             <SpeakButton text={task.de} />
@@ -360,7 +367,14 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
             {exercise.gloss.map((g) => (
               <li key={g.de} className="flex items-baseline justify-between gap-2 text-sm">
                 <span className="font-semibold">{g.de}</span>
-                <span className="muted truncate text-right">{g.tr}</span>
+                <span className="muted min-w-0 text-right">
+                  <span className="block truncate">{g.tr}</span>
+                  {g.en ? (
+                    <span className="block truncate text-xs opacity-70" lang="en">
+                      {g.en}
+                    </span>
+                  ) : null}
+                </span>
               </li>
             ))}
           </ul>

@@ -368,7 +368,14 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
                   {done ? <CheckIcon size={10} /> : null}
                 </span>
                 <span className={done ? "font-semibold" : "muted"}>{t.de}</span>
-                <span className="muted ml-auto truncate text-right text-xs">{t.tr}</span>
+                <span className="muted ml-auto min-w-0 text-right text-xs">
+                  <span className="block truncate">{t.tr}</span>
+                  {t.en ? (
+                    <span className="block truncate opacity-70" lang="en">
+                      {t.en}
+                    </span>
+                  ) : null}
+                </span>
               </li>
             );
           })}
