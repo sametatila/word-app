@@ -498,6 +498,16 @@ export const aiUsage = pgTable(
      */
     expected: text("expected"),
     heard: text("heard"),
+    /**
+     * Tanıyıcının kendi güveni (0–1), veren sağlayıcılarda.
+     *
+     * Eşiği tahminle koymamak için tutuluyor. "Arkadaki konuşmaları da
+     * algılıyor, başka dillerde kelimeler duyduğunu iddia ediyor" şikâyetinin
+     * cevabı bu sayıda: gerçek cevaplarla uydurmaların değerleri yan yana
+     * görülmeden hangi eşiğin doğru olduğu bilinemez. Daha önce eşik ölçmeden
+     * kondu ve gerçek cihazda "her cevap duyamadım"a dönüştü.
+     */
+    confidence: real("confidence"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [

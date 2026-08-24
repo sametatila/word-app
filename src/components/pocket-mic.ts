@@ -515,6 +515,8 @@ function oneShotClip(ms: number): Promise<ClipResult> {
 const STT_TIMEOUT_MS = 8_000;
 /** Yalnızca "yapılandırılmış mı" sorusu — kısa tutulabilir. */
 const PROBE_TIMEOUT_MS = 5_000;
+/** Bunun altındaki güven, duyulmamış sayılıyor. Bkz. `transcribe`. */
+const MIN_CONFIDENCE = 0.4;
 
 /** Kaydı sunucuya gönderip yazıya çevirir. Başarısızsa boş dizi. */
 export async function transcribe(
@@ -538,9 +540,25 @@ export async function transcribe(
       signal: AbortSignal.timeout(STT_TIMEOUT_MS),
     });
     if (!res.ok) return [];
-    const data = (await res.json()) as { text?: string };
+    const data = (await res.json()) as { text?: string; confidence?: number };
     const text = (data.text ?? "").trim();
-    return text ? [text] : [];
+    if (!text) return [];
+    /*
+      Güveni düşük metin, metin sayılmıyor.
+
+      Tanıyıcı gürültüyü ve arkadan gelen konuşmayı da kelimeye çeviriyor —
+      duyacak bir şey verilince duyuyor ve bazen başka bir dilde duyuyor.
+      Ayırt eden şey metnin kendisi değil, tanıyıcının o metne ne kadar
+      inandığı: gerçek bir cevapta değer yüksek, uydurmada belirgin biçimde
+      düşük.
+
+      Eşik BİLEREK gevşek. Daha önce bir eşik ölçülmeden konmuştu ve gerçek
+      cihazda "her cevap duyamadım"a dönüşmüştü; o yüzden burada yalnızca açık
+      çöp eleniyor. Her çağrının güveni `ai_usage`'a yazılıyor, yani eşik bir
+      dahaki sefere tahminle değil veriyle sıkılacak.
+    */
+    if (typeof data.confidence === "number" && data.confidence < MIN_CONFIDENCE) return [];
+    return [text];
   } catch {
     return [];
   }

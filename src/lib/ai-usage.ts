@@ -32,6 +32,8 @@ export type AiCallRecord = {
   /** Yazıya çevirmede beklenen hedef ve duyulan metin. */
   expected?: string;
   heard?: string;
+  /** Tanıyıcının kendi güveni (0–1), veren sağlayıcılarda. */
+  confidence?: number;
 };
 
 /** Hata metni kısaltılıyor: ayıklamaya yeter, tabloyu şişirmez. */
@@ -56,6 +58,7 @@ export function recordAiUsage(userId: string | null, call: AiCallRecord): void {
         limits: call.limits && Object.keys(call.limits).length ? call.limits : null,
         expected: call.expected?.slice(0, 120) ?? null,
         heard: call.heard?.slice(0, 120) ?? null,
+        confidence: typeof call.confidence === "number" ? call.confidence : null,
       });
     } catch (err) {
       console.error("[ai-usage] yazılamadı", call.kind, call.provider, err);

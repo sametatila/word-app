@@ -126,13 +126,23 @@ export async function POST(req: Request) {
       }
       const data = (await res.json()) as {
         text?: string;
-        results?: { channels?: { alternatives?: { transcript?: string }[] }[] };
+        results?: {
+          channels?: { alternatives?: { transcript?: string; confidence?: number }[] }[];
+        };
       };
+      const best = data.results?.channels?.[0]?.alternatives?.[0];
       const text = (
-        provider.dialect === "deepgram"
-          ? (data.results?.channels?.[0]?.alternatives?.[0]?.transcript ?? "")
-          : (data.text ?? "")
+        provider.dialect === "deepgram" ? (best?.transcript ?? "") : (data.text ?? "")
       ).trim();
+      /*
+        Tanıyıcının kendi güveni — veren sağlayıcılarda.
+
+        Gürültüyü ve arkadan gelen konuşmayı kelimeye çevirmek tanıyıcının
+        doğası: duyacak bir şey verilince duyuyor. Ayırt eden şey metin değil,
+        tanıyıcının o metne ne kadar inandığı. Whisper biçimi bunu vermiyor;
+        orada `undefined` kalıyor ve süzme uygulanmıyor.
+      */
+      const confidence = provider.dialect === "deepgram" ? best?.confidence : undefined;
 
       /*
         Her çağrı muhasebeye yazılıyor.
@@ -152,9 +162,15 @@ export async function POST(req: Request) {
         audioSeconds: Math.round(seconds),
         expected,
         heard: text,
+        confidence,
       });
 
-      return NextResponse.json({ text, provider: provider.name, model: provider.model });
+      return NextResponse.json({
+        text,
+        confidence,
+        provider: provider.name,
+        model: provider.model,
+      });
     } catch (err) {
       recordAiUsage(userId, {
         kind: "stt",
