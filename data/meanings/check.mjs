@@ -328,6 +328,13 @@ function contains(sentence, headword) {
       if (govde.length >= 3 && kok(govde)) return true;
       const irrSep = IRREGULAR[sep[2]] ?? IRREGULAR[`${sep[2]}en`];
       if (irrSep?.some((f) => varMi(flat(f)))) return true;
+      // Gövdesi kısa olanlar ("einüben" → "übt … ein"). `root()` iki harften
+      // kısa sonuçlarda kırpılmamış hâle geri döndüğü için buradaki gövde
+      // ("ub") hiç üretilmiyor ve "übt" bulunamıyordu. Ön ekin cümlede ayrı
+      // bir kelime olarak durduğu zaten doğrulandı; bu güçlü bir işaret
+      // olduğu için gövde kelime BAŞI olarak aranıyor.
+      const kisa = flat(sep[2]).replace(/[^a-z]/g, "").replace(/(en|n)$/, "");
+      if (kisa.length >= 2 && bas(kisa)) return true;
     }
 
     // Güçlü fiiller: gövde ünlüsü değiştiği için kök araması işe yaramıyor.
