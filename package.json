@@ -25,6 +25,7 @@
     "test:seed": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/seed-test.ts",
     "test:sql": "tsx scripts/sqlcheck.ts",
     "test:playtest": "node scripts/playtest.mjs 330",
+    "test:walk": "node scripts/walk-pocket.mjs",
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",
     "db:check": "tsx scripts/schema-check.ts",

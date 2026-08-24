@@ -571,6 +571,31 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 | Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
 | Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |
 
+#### Donmayan döngü
+
+Ekran kapalıyken kalan şikâyet artık yanlış cevap değil, HİÇBİR cevaptı: kelime okunmuyor,
+"duyamadım" bile denmiyor, sıradakine geçilmiyor. Tur bir `await` zinciri olduğu için tek bir
+adımın takılması tamamını sessizce dondurmaya yetiyordu — ve gizli sayfada takılabilecek adım
+çoktu.
+
+| Parça | Neden |
+|---|---|
+| Zaman aşımları **medya nabzına** bağlı | Gizli sayfada `setTimeout` dakikada bire kısılıyor, yani zaman aşımını zamanlayıcıyla kurmak korumayı tam gerektiği anda kaybetmek demek. Kısılan zamanın kendisi değil uyandırma: vade `Date.now()` ile tutuluyor, işletme ise eline geçen her olayda oluyor — çalan sesin `timeupdate`i (saniyede dört, medya iş parçacığından), kaydedicinin 200 ms'lik parçaları ve kısıtlı da olsa aralık |
+| Cevap penceresi de aynı nabızla | `recordClip` her 200 ms'de bir `setTimeout` ile dönüyordu ve ekran kapanınca duruyordu: kayıt hiç kapanmıyor, pencere üst sınıra kadar sessiz bekliyordu. Ölçüldü: düzeltmeden önce ekran kapalıyken sunucuya giden kayıt **sıfır**, sonrasında her soru için bir tane |
+| Her adımın **üst sınırı** var | Okuma 30 sn, dinleme pencere + 15 sn, ağ istekleri 8–10 sn. Süre dolarsa "duyulmadı" sayılıyor — duyulmayan tur zaten yanlış sayılmıyor, yani bedeli bir tur; donmanın bedeli ise turun tamamı |
+| Parça **başlamazsa** beklenmiyor | Çalmaya başlamış ama bitmeyen parça uzun sürebilir, hiç başlamayan parça gelmiyordur. Başlama payı 4,5 sn, sonrası parçanın kendi süresi + pay |
+| Arka planda **tarayıcı sentezi yok** | Telefon kilitliyken `speechSynthesis` konuşmuyor VE `onend` vermiyor; yedek diye oraya düşmek sesi kurtarmıyor, üstüne zinciri sonsuza dek asıyordu. Arka planda çalınamayan parça atlanıyor |
+| Mikrofon işareti **ses öğesiyle** | İşaret WebAudio ile üretiliyordu ve ekran kapanınca `AudioContext` askıda: cepteki kullanıcı mikrofonun açıldığını yalnızca kulağıyla anlayabiliyor |
+| Sessiz döngü **kendini toparlıyor** | Arka planın taşıyıcı direği o: durursa hem zamanlayıcılar kısılıyor hem nabız gidiyor. Gelen çağrı ya da ses odağının kaybı durdurabiliyor; `onpause` yeniden başlatıyor |
+| Durmak zorunda kalınırsa **sesle söyleniyor** | Sunucuda yazıya çevirme yoksa ekran kapalıyken cevap duyulamıyor ve tur durmak zorunda. Eskiden bu sessizce oluyordu: kullanıcı telefonu çıkarana kadar turun durduğunu bilmiyordu |
+
+Altı arıza senaryosu `npm run test:walk -- <senaryo>` ile koşuluyor (`ok`, `stt-off`,
+`stt-hang`, `stt-500`, `tts-hang`, `tts-500`). Test gerçek tarayıcıda gerçek uygulamayı
+oynatıyor ve ekran kapanmasını taklit ederken **gerçek kısıtları** kuruyor: `getUserMedia`
+gizliyken reddediliyor, zamanlayıcılar dakikada bire kısılıyor. İkisi de masaüstü Chrome'da
+kendiliğinden olmuyor; eklenmezse test yalancı bir "geçti" veriyor — bu bölümdeki hataların
+çoğu tam olarak öyle gözden kaçmıştı.
+
 Yazıya çevirme `/api/stt` üzerinden. Sıra **deepgram** (`nova-3`), sonra **groq**
 (`whisper-large-v3-turbo`), sonra **mistral** (`voxtral-mini-latest`). Hiçbiri
 yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor.
