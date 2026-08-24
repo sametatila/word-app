@@ -151,10 +151,22 @@ export function AchievementWall() {
         />
       </div>
 
-      {/* Sekmeler kartın kenarlarına taşıyor: kaydırılabilir olduğu, şeridin
-          kesilmesinden anlaşılıyor. Her sekme kendi ilerlemesini taşıyor, yani
-          bütün resim tek bakışta görünüyor — duvarı açmaya gerek kalmadan. */}
-      <div className="-mx-5 mb-3 flex gap-1.5 overflow-x-auto px-5 pb-1">
+      {/*
+        Sekmeler kartın kenarlarına taşıyor: kaydırılabilir olduğu, şeridin
+        kesilmesinden anlaşılıyor. Her sekme kendi ilerlemesini taşıyor, yani
+        bütün resim tek bakışta görünüyor — duvarı açmaya gerek kalmadan.
+
+        Sağdaki pay `padding` ile DEĞİL, sondaki boşluk öğesiyle veriliyor.
+        Sebep tarayıcı davranışı: yatay kaydırılan bir esnek kutuda sağ dolgu
+        kaydırma alanına katılmıyor, yani sonuna kadar kaydırıldığında son sekme
+        kartın sağ duvarına değiyordu. Soldaki pay dolguyla kalabiliyor çünkü
+        orada aynı sorun yok.
+
+        Genişliği 20 değil 14 piksel: aradaki `gap-1.5` de payın parçası. 20
+        verildiğinde sağ boşluk 26 piksele çıkıyor ve altındaki rozet ızgarasıyla
+        hizayı kaçırıyordu — ölçüldü, ikisi de artık kartın 21 piksel içinde.
+      */}
+      <div className="no-scrollbar -mx-5 mb-3 flex gap-1.5 overflow-x-auto pl-5 pb-1">
         <Tab active={tab === NEXT_TAB} onClick={() => setTab(NEXT_TAB)} label={nextLabel} />
         {GROUP_ORDER.map((g) => {
           const rows = board.rows.filter((r) => r.group === g);
@@ -171,6 +183,7 @@ export function AchievementWall() {
             />
           );
         })}
+        <span aria-hidden className="w-3.5 shrink-0" />
       </div>
 
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-7">

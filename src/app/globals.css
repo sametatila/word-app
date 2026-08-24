@@ -281,6 +281,25 @@
   }
 }
 
+/*
+ * Yatay kaydırılan şeritlerde çubuğu gizler.
+ *
+ * Çubuk yalnızca masaüstünde görünüyor (dokunmatikte zaten üste binen, sönen
+ * bir çubuk var) ve şeridin altında duran gri bir kuşak olarak duruyordu —
+ * kartın içinde bir arayüz parçası gibi, oysa orada kaydırma zaten şeridin
+ * KESİLMESİNDEN anlaşılıyor.
+ *
+ * Kaydırmanın kendisi kalkmıyor: tekerlek, sürükleme ve klavye çalışmaya devam
+ * ediyor. Gizlenen yalnızca çubuğun görüntüsü.
+ */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Mobil güvenli alan */
 .safe-bottom {
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));

@@ -229,7 +229,7 @@ function Heatmap({ byDay, today }: { byDay: Map<string, DayRow>; today: string }
   }
 
   return (
-    <div className="flex gap-1 overflow-x-auto pb-1">
+    <div className="no-scrollbar flex gap-1 overflow-x-auto pb-1">
       {weeks.map((week, wi) => (
         <div key={wi} className="flex flex-col gap-1">
           {week.map((day) => {
