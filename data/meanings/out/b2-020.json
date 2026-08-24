@@ -149,7 +149,7 @@
     "en": "shortness of breath",
     "beispiel": "Bei plötzlicher Atemnot sollten Sie sofort den Notruf wählen.",
     "beispielTr": "Ani nefes darlığında hemen acil servisi aramalısınız.",
-    "beispielEn": "If you suddenly get shortness of breath, call an ambulance."
+    "beispielEn": "If you suddenly get short of breath, call an ambulance right away."
   },
   {
     "id": 4613,
@@ -292,7 +292,7 @@
     "tr": "ortalama ömür",
     "en": "life expectancy",
     "beispiel": "Die Lebenserwartung ist in den letzten Jahrzehnten deutlich gestiegen.",
-    "beispielTr": "Ortalama ömür son on yıllarda belirgin biçimde arttı.",
+    "beispielTr": "Ortalama ömür son onlarca yılda belirgin biçimde arttı.",
     "beispielEn": "Life expectancy has risen sharply over the last decades."
   },
   {
@@ -308,7 +308,7 @@
     "tr": "uyku bozukluğu",
     "en": "sleep disorder",
     "beispiel": "Seit dem Umzug plagen ihn heftige Schlafstörungen.",
-    "beispielTr": "Taşınmadan beri ağır uyku bozuklukları çekiyor.",
+    "beispielTr": "Taşındığından beri ciddi uyku bozuklukları yaşıyor.",
     "beispielEn": "Since the move he has had severe sleep disorders."
   },
   {

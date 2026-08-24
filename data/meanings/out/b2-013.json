@@ -20,7 +20,7 @@
     "tr": "meslek yolu",
     "en": "career path",
     "beispiel": "Nach dem Referendariat begann seine Laufbahn als Lehrer.",
-    "beispielTr": "Stajyerlik döneminden sonra öğretmenlik kariyeri başladı.",
+    "beispielTr": "Stajyerlik döneminden sonra öğretmenlik mesleğine başladı.",
     "beispielEn": "After the traineeship his career as a teacher began."
   },
   {
@@ -37,7 +37,7 @@
     "en": "test anxiety",
     "beispiel": "Gegen ihre Prüfungsangst hilft ihr eine einfache Atemübung.",
     "beispielTr": "Sınav kaygısına karşı ona basit bir nefes egzersizi iyi geliyor.",
-    "beispielEn": "A simple breathing exercise helps her against her test anxiety."
+    "beispielEn": "A simple breathing exercise helps her with her test anxiety."
   },
   {
     "id": 4248,
@@ -108,7 +108,7 @@
     "tr": "belgelemek",
     "en": "to prove",
     "beispiel": "Alle Bewerber müssen ihre Deutschkenntnisse durch ein Zertifikat nachweisen.",
-    "beispielTr": "Bütün adaylar Almanca bilgisini bir sertifikayla belgelemek zorunda.",
+    "beispielTr": "Bütün adaylar Almanca bilgilerini bir sertifikayla belgelemek zorunda.",
     "beispielEn": "All applicants have to prove their German with a certificate."
   },
   {
@@ -141,7 +141,7 @@
     "en": "to explain in detail",
     "beispiel": "Bitte erläutern Sie Ihre Methode in wenigen Sätzen.",
     "beispielTr": "Lütfen yönteminizi birkaç cümleyle açıklayın.",
-    "beispielEn": "Please explain your method in detail in a few sentences."
+    "beispielEn": "Please explain your method in a few sentences."
   },
   {
     "id": 4261,
@@ -265,10 +265,10 @@
   },
   {
     "id": 4276,
-    "tr": "öğrenmeye meraklı",
+    "tr": "bilgiye aç",
     "en": "inquisitive",
     "beispiel": "Wissbegierige Kinder stellen den ganzen Tag Fragen.",
-    "beispielTr": "Öğrenmeye meraklı çocuklar bütün gün soru sorar.",
+    "beispielTr": "Bilgiye aç çocuklar bütün gün soru sorar.",
     "beispielEn": "Inquisitive children ask questions all day long."
   },
   {
