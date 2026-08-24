@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4293,
+    "tr": "arşiv birimi",
+    "en": "registry",
+    "beispiel": "Alte Akten lagern seit Jahren unten in der Registratur.",
+    "beispielTr": "Eski dosyalar yıllardır aşağıdaki arşiv biriminde duruyor.",
+    "beispielEn": "Old files have been sitting in the registry for years."
+  },
+  {
+    "id": 4294,
+    "tr": "gelen evrak",
+    "en": "incoming mail",
+    "beispiel": "Jeden Morgen sortiert sie zuerst den Posteingang der Abteilung.",
+    "beispielTr": "Her sabah önce bölümün gelen evrakını ayırıyor.",
+    "beispielEn": "Every morning she sorts the department's incoming mail first."
+  },
+  {
+    "id": 4295,
+    "tr": "dağıtım listesi",
+    "en": "distribution list",
+    "beispiel": "Setzen Sie die Rechtsabteilung bitte mit auf den Verteiler.",
+    "beispielTr": "Lütfen hukuk birimini de dağıtım listesine ekleyin.",
+    "beispielEn": "Please add the legal department to the distribution list."
+  },
+  {
+    "id": 4296,
+    "tr": "genelge",
+    "en": "circular",
+    "beispiel": "Im letzten Rundschreiben ging es um die neuen Arbeitszeiten.",
+    "beispielTr": "Son genelgenin konusu yeni çalışma saatleriydi.",
+    "beispielEn": "The last circular was about the new working hours."
+  },
+  {
+    "id": 4297,
+    "tr": "dosya notu",
+    "en": "memo",
+    "beispiel": "Zu dem Telefonat habe ich eine kurze Aktennotiz verfasst.",
+    "beispielTr": "Bu telefon görüşmesi için kısa bir dosya notu yazdım.",
+    "beispielEn": "I wrote a short memo about the phone call."
+  },
+  {
+    "id": 4298,
+    "tr": "ön çalışma",
+    "en": "preparatory work",
+    "beispiel": "Ohne die Zuarbeit der Fachbereiche wird der Bericht nicht fertig.",
+    "beispielTr": "Uzman birimlerin ön çalışması olmadan rapor bitmez.",
+    "beispielEn": "Without the preparatory work of the departments the report won't be finished."
+  },
+  {
+    "id": 4299,
+    "tr": "mutabakat",
+    "en": "arrangement",
+    "beispiel": "Nach Absprache mit dem Kunden verschieben wir den Liefertermin.",
+    "beispielTr": "Müşteriyle mutabakat sağlayıp teslim tarihini erteliyoruz.",
+    "beispielEn": "By arrangement with the client we're moving the delivery date."
+  },
+  {
+    "id": 4300,
+    "tr": "harekete geçme gereği",
+    "en": "need for action",
+    "beispiel": "Bei den Lieferzeiten sehen wir dringenden Handlungsbedarf.",
+    "beispielTr": "Teslim sürelerinde acil harekete geçme gereği görüyoruz.",
+    "beispielEn": "We see an urgent need for action on delivery times."
+  },
+  {
+    "id": 4301,
+    "tr": "açıklığa kavuşturma ihtiyacı",
+    "en": "need for clarification",
+    "beispiel": "Zu den Kosten besteht noch erheblicher Klärungsbedarf.",
+    "beispielTr": "Maliyetler konusunda hâlâ ciddi bir açıklığa kavuşturma ihtiyacı var.",
+    "beispielEn": "There's still considerable need for clarification about the costs."
+  },
+  {
+    "id": 4302,
+    "tr": "darboğaz",
+    "en": "bottleneck",
+    "beispiel": "Im Sommer gibt es regelmäßig personelle Engpässe.",
+    "beispielTr": "Yazın düzenli olarak personel darboğazları yaşanıyor.",
+    "beispielEn": "In summer there are regular staff bottlenecks."
+  },
+  {
+    "id": 4303,
+    "tr": "zaman aralığı",
+    "en": "time window",
+    "beispiel": "Für die Umstellung bleibt uns nur ein enges Zeitfenster.",
+    "beispielTr": "Geçiş için elimizde yalnızca dar bir zaman aralığı var.",
+    "beispielEn": "We only have a narrow time window for the switch."
+  },
+  {
+    "id": 4304,
+    "tr": "yedek süre",
+    "en": "buffer time",
+    "beispiel": "Plane für die Endabnahme unbedingt etwas Pufferzeit ein.",
+    "beispielTr": "Son kabul için mutlaka biraz yedek süre planla.",
+    "beispielEn": "Definitely plan some buffer time for the final inspection."
+  },
+  {
+    "id": 4305,
+    "tr": "önceliklendirme",
+    "en": "prioritization",
+    "beispiel": "Ohne klare Priorisierung verzetteln wir uns in Kleinigkeiten.",
+    "beispielTr": "Net bir önceliklendirme olmadan ayrıntılarda boğuluyoruz.",
+    "beispielEn": "Without clear prioritization we get lost in small details."
+  },
+  {
+    "id": 4306,
+    "tr": "aciliyet",
+    "en": "urgency",
+    "beispiel": "Die Aufgaben werden nach ihrer Dringlichkeit sortiert.",
+    "beispielTr": "Görevler aciliyetlerine göre sıralanıyor.",
+    "beispielEn": "The tasks are sorted by their urgency."
+  },
+  {
+    "id": 4307,
+    "tr": "iş akışı",
+    "en": "workflow",
+    "beispiel": "Die neuen Formulare haben unsere Arbeitsabläufe deutlich vereinfacht.",
+    "beispielTr": "Yeni formlar iş akışlarımızı belirgin biçimde kolaylaştırdı.",
+    "beispielEn": "The new forms have clearly simplified our workflows."
+  },
+  {
+    "id": 4308,
+    "tr": "iş süreci",
+    "en": "business process",
+    "beispiel": "Wir wollen unsere Geschäftsprozesse endlich digitalisieren.",
+    "beispielTr": "İş süreçlerimizi artık dijitalleştirmek istiyoruz.",
+    "beispielEn": "We finally want to digitize our business processes."
+  },
+  {
+    "id": 4309,
+    "tr": "sorumluluk alanı",
+    "en": "area of responsibility",
+    "beispiel": "Die Budgetplanung fällt nicht in meinen Verantwortungsbereich.",
+    "beispielTr": "Bütçe planlaması benim sorumluluk alanıma girmiyor.",
+    "beispielEn": "Budget planning doesn't fall within my area of responsibility."
+  },
+  {
+    "id": 4310,
+    "tr": "vekâlet",
+    "en": "deputizing",
+    "beispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung.",
+    "beispielTr": "İzindeyken vekâleti Kern Hanım üstleniyor.",
+    "beispielEn": "While I'm on vacation Ms. Kern is deputizing for me."
+  },
+  {
+    "id": 4311,
+    "tr": "görev dağılımı",
+    "en": "division of tasks",
+    "beispiel": "Über die Aufgabenverteilung im Team gab es einige Diskussionen.",
+    "beispielTr": "Ekipteki görev dağılımı üzerine epey tartışma çıktı.",
+    "beispielEn": "There were quite a few discussions about the division of tasks."
+  },
+  {
+    "id": 4312,
+    "tr": "talimat",
+    "en": "instruction",
+    "beispiel": "Er hat die Unterlagen auf Weisung der Leitung vernichtet.",
+    "beispielTr": "Belgeleri yönetimin talimatıyla imha etti.",
+    "beispielEn": "He destroyed the documents on instruction from management."
+  },
+  {
+    "id": 4313,
+    "tr": "şart",
+    "en": "requirement",
+    "beispiel": "An die Vorgaben der Zentrale müssen sich alle halten.",
+    "beispielTr": "Merkezin koyduğu şartlara herkesin uyması gerekiyor.",
+    "beispielEn": "Everyone has to comply with the requirements from headquarters."
+  },
+  {
+    "id": 4314,
+    "tr": "yönerge",
+    "en": "guideline",
+    "beispiel": "Für Dienstreisen gelten seit Januar strengere Richtlinien.",
+    "beispielTr": "Görev seyahatleri için ocaktan beri daha sıkı yönergeler geçerli.",
+    "beispielEn": "Stricter guidelines have applied to business trips since January."
+  },
+  {
+    "id": 4315,
+    "tr": "standart form",
+    "en": "standard form",
+    "beispiel": "Den Antrag reichen Sie bitte auf dem beiliegenden Formblatt ein.",
+    "beispielTr": "Başvuruyu lütfen ekteki standart formla verin.",
+    "beispielEn": "Please submit the application on the enclosed standard form."
+  },
+  {
+    "id": 4316,
+    "tr": "taslak",
+    "en": "draft",
+    "beispiel": "Der erste Entwurf des Vertrags geht morgen an die Rechtsabteilung.",
+    "beispielTr": "Sözleşmenin ilk taslağı yarın hukuk birimine gidiyor.",
+    "beispielEn": "The first draft of the contract goes to the legal department tomorrow."
+  },
+  {
+    "id": 4317,
+    "tr": "sürüm",
+    "en": "version",
+    "beispiel": "Bitte arbeiten Sie nur mit der aktuellen Fassung des Handbuchs.",
+    "beispielTr": "Lütfen yalnızca el kitabının güncel sürümüyle çalışın.",
+    "beispielEn": "Please work only with the current version of the manual."
+  },
+  {
+    "id": 4318,
+    "tr": "onay",
+    "en": "approval",
+    "beispiel": "Ohne die Freigabe des Vorstands drucken wir nichts.",
+    "beispielTr": "Yönetim kurulunun onayı olmadan hiçbir şey basmıyoruz.",
+    "beispielEn": "Without approval from the board we don't print anything."
+  },
+  {
+    "id": 4319,
+    "tr": "geri bildirim",
+    "en": "feedback",
+    "beispiel": "Ich warte noch auf die Rückmeldung aus dem Einkauf.",
+    "beispielTr": "Hâlâ satın alma biriminden geri bildirim bekliyorum.",
+    "beispielEn": "I'm still waiting for feedback from purchasing."
+  },
+  {
+    "id": 4320,
+    "tr": "sapma",
+    "en": "deviation",
+    "beispiel": "Jede Abweichung vom Zeitplan muss schriftlich begründet werden.",
+    "beispielTr": "Takvimden her sapma yazılı olarak gerekçelendirilmeli.",
+    "beispielEn": "Every deviation from the schedule must be justified in writing."
+  },
+  {
+    "id": 4321,
+    "tr": "gösterge",
+    "en": "metric",
+    "beispiel": "Die wichtigsten Kennzahlen stehen auf der ersten Seite des Berichts.",
+    "beispielTr": "En önemli göstergeler raporun ilk sayfasında yer alıyor.",
+    "beispielEn": "The most important metrics are on the report's first page."
+  },
+  {
+    "id": 4322,
+    "tr": "belgeleme",
+    "en": "documentation",
+    "beispiel": "Eine saubere Dokumentation spart bei Rückfragen viel Zeit.",
+    "beispielTr": "Düzgün bir belgeleme, sonradan gelen sorularda çok zaman kazandırır.",
+    "beispielEn": "Clean documentation saves a lot of time when questions come up."
+  },
+  {
+    "id": 4323,
+    "tr": "uzlaşı",
+    "en": "consensus",
+    "beispiel": "Nach langer Diskussion fanden die Abteilungen endlich einen Konsens.",
+    "beispielTr": "Uzun tartışmadan sonra bölümler nihayet bir uzlaşıya vardı.",
+    "beispielEn": "After a long discussion the departments finally reached a consensus."
+  },
+  {
+    "id": 4324,
+    "tr": "çekince",
+    "en": "reservation",
+    "beispiel": "Gegen den neuen Plan hatte niemand ernsthafte Vorbehalte.",
+    "beispielTr": "Yeni plana kimsenin ciddi bir çekincesi yoktu.",
+    "beispielEn": "Nobody had serious reservations about the new plan."
+  },
+  {
+    "id": 4325,
+    "tr": "kapasite kullanımı",
+    "en": "utilization",
+    "beispiel": "Die Auslastung der Maschinen liegt bei achtzig Prozent.",
+    "beispielTr": "Makinelerin kapasite kullanımı yüzde seksen seviyesinde.",
+    "beispielEn": "Machine utilization is at eighty percent."
+  },
+  {
+    "id": 4326,
+    "tr": "kapasite",
+    "en": "capacity",
+    "beispiel": "Für zusätzliche Aufgaben haben wir derzeit keine freien Kapazitäten.",
+    "beispielTr": "Ek görevler için şu anda boş kapasitemiz yok.",
+    "beispielEn": "We currently have no free capacity for additional tasks."
+  },
+  {
+    "id": 4327,
+    "tr": "randevu çakışması",
+    "en": "scheduling conflict",
+    "beispiel": "Wegen einer Terminüberschneidung kann ich erst später dazukommen.",
+    "beispielTr": "Randevu çakışması yüzünden ancak daha sonra katılabilirim.",
+    "beispielEn": "Because of a scheduling conflict I can only join later."
+  },
+  {
+    "id": 4328,
+    "tr": "toplantıya çağırmak",
+    "en": "to convene",
+    "beispiel": "Der Betriebsrat hat für Freitag eine Versammlung einberufen.",
+    "beispielTr": "İşçi temsilciliği cuma günü için toplantı çağrısı yaptı.",
+    "beispielEn": "The works council has convened a meeting for Friday."
+  },
+  {
+    "id": 4329,
+    "tr": "görevlendirmek",
+    "en": "to commission",
+    "beispiel": "Man hat eine externe Firma mit der Auswertung beauftragt.",
+    "beispielTr": "Değerlendirme işiyle dışarıdan bir firma görevlendirildi.",
+    "beispielEn": "An external firm was commissioned to do the analysis."
+  },
+  {
+    "id": 4330,
+    "tr": "sırayla bitirmek",
+    "en": "to work through",
+    "beispiel": "Bis Mittag hat sie die halbe Liste abgearbeitet.",
+    "beispielTr": "Öğlene kadar listenin yarısını bitirmişti.",
+    "beispielEn": "By noon she had worked through half the list."
+  },
+  {
+    "id": 4331,
+    "tr": "tarih belirlemek",
+    "en": "to schedule",
+    "beispiel": "Die Abnahme ist auf den zweiten Mai terminiert.",
+    "beispielTr": "Kabul işlemi için iki mayıs tarihi belirlendi.",
+    "beispielEn": "The handover is scheduled for the second of May."
+  },
+  {
+    "id": 4332,
+    "tr": "yapılandırmak",
+    "en": "to structure",
+    "beispiel": "Wir müssen die Besprechungen besser strukturieren.",
+    "beispielTr": "Toplantıları daha iyi yapılandırmamız gerekiyor.",
+    "beispielEn": "We need to structure the meetings better."
+  },
+  {
+    "id": 4333,
+    "tr": "tek elde toplamak",
+    "en": "to consolidate",
+    "beispiel": "Wir bündeln alle Anfragen in einem gemeinsamen Postfach.",
+    "beispielTr": "Bütün talepleri ortak bir posta kutusunda topluyoruz.",
+    "beispielEn": "We consolidate all inquiries in one shared mailbox."
+  },
+  {
+    "id": 4334,
+    "tr": "iletmek",
+    "en": "to forward",
+    "beispiel": "Ich habe deine Anfrage an die Fachabteilung weitergeleitet.",
+    "beispielTr": "Talebini ilgili uzman birime ilettim.",
+    "beispielEn": "I forwarded your request to the specialist department."
+  },
+  {
+    "id": 4335,
+    "tr": "arşivlemek",
+    "en": "to archive",
+    "beispiel": "Abgeschlossene Vorgänge werden nach einem Jahr archiviert.",
+    "beispielTr": "Kapanan işlemler bir yıl sonra arşivleniyor.",
+    "beispielEn": "Completed cases are archived after a year."
+  },
+  {
+    "id": 4336,
+    "tr": "onaylamak",
+    "en": "to sign off",
+    "beispiel": "Die Leitung muss das Konzept noch absegnen.",
+    "beispielTr": "Konsepti bir de yönetimin onaylaması gerekiyor.",
+    "beispielEn": "Management still has to sign off on the concept."
+  },
+  {
+    "id": 4337,
+    "tr": "üstelemek",
+    "en": "to press",
+    "beispiel": "Wenn niemand antwortet, hake ich morgen noch einmal nach.",
+    "beispielTr": "Kimse cevap vermezse yarın bir daha üstelerim.",
+    "beispielEn": "If nobody answers I'll press them again tomorrow."
+  },
+  {
+    "id": 4338,
+    "tr": "takip etmek",
+    "en": "to follow up",
+    "beispiel": "Beim Kunden sollten wir nächste Woche höflich nachfassen.",
+    "beispielTr": "Müşteriyi önümüzdeki hafta nazikçe takip etmeliyiz.",
+    "beispielEn": "We should politely follow up with the client next week."
+  },
+  {
+    "id": 4339,
+    "tr": "ihtar etmek",
+    "en": "to demand",
+    "beispiel": "Die Zentrale hat die fehlenden Berichte bereits zweimal angemahnt.",
+    "beispielTr": "Merkez, eksik raporları çoktan iki kez ihtar etti.",
+    "beispielEn": "Headquarters has already demanded the missing reports twice."
+  },
+  {
+    "id": 4340,
+    "tr": "süreyi aşmak",
+    "en": "to overrun",
+    "beispiel": "Der Referent hat seine Redezeit um zehn Minuten überzogen.",
+    "beispielTr": "Konuşmacı konuşma süresini on dakika aştı.",
+    "beispielEn": "The speaker overran his speaking time by ten minutes."
+  },
+  {
+    "id": 4341,
+    "tr": "sonraya bırakmak",
+    "en": "to put off",
+    "beispiel": "Unangenehme Aufgaben schiebt er gern bis Freitag auf.",
+    "beispielTr": "Sevmediği işleri cumaya bırakmayı seviyor.",
+    "beispielEn": "He likes to put off unpleasant tasks until Friday."
+  },
+  {
+    "id": 4342,
+    "tr": "yükünü hafifletmek",
+    "en": "to relieve",
+    "beispiel": "Eine zusätzliche Kraft würde das ganze Sekretariat entlasten.",
+    "beispielTr": "Ek bir eleman tüm sekreterliğin yükünü hafifletirdi.",
+    "beispielEn": "An extra assistant would relieve the whole office."
+  }
+]

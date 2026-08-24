@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4343,
+  "tr": "hızlandırmak",
+  "en": "to speed up",
+  "beispiel": "Die neue Software hat die Bearbeitung deutlich beschleunigt.",
+  "beispielTr": "Yeni yazılım işlemleri belirgin biçimde hızlandırdı.",
+  "beispielEn": "The new software has sped up processing considerably."
+ },
+ {
+  "id": 4344,
+  "tr": "hayata geçirmek",
+  "en": "to implement",
+  "beispiel": "Die Vorschläge aus der Sitzung wollen wir bis Herbst umsetzen.",
+  "beispielTr": "Toplantıdaki önerileri sonbahara kadar hayata geçirmek istiyoruz.",
+  "beispielEn": "We want to implement the suggestions from the meeting by autumn."
+ },
+ {
+  "id": 4345,
+  "tr": "yürütmek",
+  "en": "to carry out",
+  "beispiel": "Die Untersuchung wird von einem unabhängigen Labor durchgeführt.",
+  "beispielTr": "İnceleme bağımsız bir laboratuvar tarafından yürütülüyor.",
+  "beispielEn": "The investigation is carried out by an independent lab."
+ },
+ {
+  "id": 4346,
+  "tr": "izlemek",
+  "en": "to monitor",
+  "beispiel": "Kameras überwachen den Eingang rund um die Uhr.",
+  "beispielTr": "Kameralar girişi gece gündüz izliyor.",
+  "beispielEn": "Cameras monitor the entrance around the clock."
+ },
+ {
+  "id": 4347,
+  "tr": "derhâl",
+  "en": "immediately",
+  "beispiel": "Änderungen sind der Personalabteilung unverzüglich mitzuteilen.",
+  "beispielTr": "Değişiklikler insan kaynaklarına derhâl bildirilmelidir.",
+  "beispielEn": "Changes must be reported to HR immediately."
+ },
+ {
+  "id": 4348,
+  "tr": "baş sorumlu",
+  "en": "in charge",
+  "beispiel": "Unsere Abteilung ist bei diesem Projekt federführend.",
+  "beispielTr": "Bu projede baş sorumlu bizim bölümümüz.",
+  "beispielEn": "Our department is in charge of this project."
+ },
+ {
+  "id": 4349,
+  "tr": "kısa sürede",
+  "en": "promptly",
+  "beispiel": "Bitte beantworten Sie die Anfrage möglichst zeitnah.",
+  "beispielTr": "Lütfen talebi mümkün olduğunca kısa sürede yanıtlayın.",
+  "beispielEn": "Please answer the inquiry as promptly as possible."
+ },
+ {
+  "id": 4350,
+  "tr": "son anda",
+  "en": "at short notice",
+  "beispiel": "Der Termin wurde kurzfristig auf Donnerstag verlegt.",
+  "beispielTr": "Randevu son anda perşembeye alındı.",
+  "beispielEn": "The appointment was moved to Thursday at short notice."
+ },
+ {
+  "id": 4351,
+  "tr": "hızlıca",
+  "en": "swiftly",
+  "beispiel": "Wenn alle mitziehen, kommen wir zügig voran.",
+  "beispielTr": "Herkes katkı verirse hızlıca ilerleriz.",
+  "beispielEn": "If everyone pitches in, we move ahead swiftly."
+ },
+ {
+  "id": 4352,
+  "tr": "kesintisiz",
+  "en": "unbroken",
+  "beispiel": "Die Kühlkette muss vom Hof bis zum Laden lückenlos sein.",
+  "beispielTr": "Soğuk zincir çiftlikten mağazaya kadar kesintisiz olmalı.",
+  "beispielEn": "The cold chain must stay unbroken from farm to store."
+ },
+ {
+  "id": 4353,
+  "tr": "sorunsuz",
+  "en": "smooth",
+  "beispiel": "Die Übergabe an das neue Team verlief reibungslos.",
+  "beispielTr": "Yeni ekibe devir teslim sorunsuz geçti.",
+  "beispielEn": "The handover to the new team went smoothly."
+ },
+ {
+  "id": 4354,
+  "tr": "öncelikli",
+  "en": "primary",
+  "beispiel": "Beschwerden von Kunden werden vorrangig bearbeitet.",
+  "beispielTr": "Müşteri şikâyetleri öncelikli olarak ele alınır.",
+  "beispielEn": "Customer complaints are handled as a priority."
+ },
+ {
+  "id": 4355,
+  "tr": "bölümler arası",
+  "en": "cross-departmental",
+  "beispiel": "Für solche Fragen brauchen wir eine abteilungsübergreifende Arbeitsgruppe.",
+  "beispielTr": "Bu tür sorular için bölümler arası bir çalışma grubu gerekiyor.",
+  "beispielEn": "For such questions we need a cross-departmental working group."
+ },
+ {
+  "id": 4356,
+  "tr": "süresinde",
+  "en": "on schedule",
+  "beispiel": "Die Unterlagen gingen termingerecht bei der Behörde ein.",
+  "beispielTr": "Belgeler kuruma süresinde ulaştı.",
+  "beispielEn": "The documents reached the authority on schedule."
+ },
+ {
+  "id": 4357,
+  "tr": "ekim",
+  "en": "cultivation",
+  "beispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch.",
+  "beispielTr": "Bu topraklarda mısır ekimi artık pek kârlı değil.",
+  "beispielEn": "Growing corn on these soils barely pays off anymore."
+ },
+ {
+  "id": 4358,
+  "tr": "hayvancılık",
+  "en": "livestock farming",
+  "beispiel": "In dieser Region lebt fast jeder zweite Betrieb von der Viehzucht.",
+  "beispielTr": "Bu bölgede işletmelerin neredeyse yarısı hayvancılıkla geçiniyor.",
+  "beispielEn": "In this region almost every second farm lives off livestock."
+ },
+ {
+  "id": 4359,
+  "tr": "çiftlik hayvanı",
+  "en": "farm animal",
+  "beispiel": "Für Nutztiere gelten strengere Vorschriften als für Haustiere.",
+  "beispielTr": "Çiftlik hayvanları için ev hayvanlarından daha katı kurallar geçerli.",
+  "beispielEn": "Stricter rules apply to farm animals than to pets."
+ },
+ {
+  "id": 4360,
+  "tr": "gübre",
+  "en": "fertilizer",
+  "beispiel": "Zu viel Dünger belastet das Grundwasser in der ganzen Gegend.",
+  "beispielTr": "Aşırı gübre bütün yörenin yeraltı suyunu kirletiyor.",
+  "beispielEn": "Too much fertilizer pollutes the groundwater in the whole area."
+ },
+ {
+  "id": 4361,
+  "tr": "besin maddesi",
+  "en": "nutrient",
+  "beispiel": "Beim langen Kochen gehen viele Nährstoffe verloren.",
+  "beispielTr": "Uzun süre pişirince birçok besin maddesi kayboluyor.",
+  "beispielEn": "Many nutrients are lost when you cook for a long time."
+ },
+ {
+  "id": 4362,
+  "tr": "lif",
+  "en": "fiber",
+  "beispiel": "Vollkornbrot enthält deutlich mehr Ballaststoffe als Weißbrot.",
+  "beispielTr": "Tam tahıllı ekmek beyaz ekmekten çok daha fazla lif içerir.",
+  "beispielEn": "Whole grain bread contains far more fiber than white bread."
+ },
+ {
+  "id": 4363,
+  "tr": "protein",
+  "en": "protein",
+  "beispiel": "Linsen sind eine günstige Quelle für pflanzliches Eiweiß.",
+  "beispielTr": "Mercimek, bitkisel protein için ucuz bir kaynaktır.",
+  "beispielEn": "Lentils are a cheap source of plant protein."
+ },
+ {
+  "id": 4364,
+  "tr": "tahıl",
+  "en": "grain",
+  "beispiel": "Das Getreide wurde wegen des Regens zu spät geerntet.",
+  "beispielTr": "Tahıl, yağmur yüzünden çok geç hasat edildi.",
+  "beispielEn": "The grain was harvested too late because of the rain."
+ },
+ {
+  "id": 4365,
+  "tr": "baklagil",
+  "en": "legume",
+  "beispiel": "Hülsenfrüchte verbessern nebenbei die Qualität des Bodens.",
+  "beispielTr": "Baklagiller ayrıca toprağın kalitesini de iyileştirir.",
+  "beispielEn": "Legumes also improve the quality of the soil."
+ },
+ {
+  "id": 4366,
+  "tr": "üretici",
+  "en": "producer",
+  "beispiel": "Vom Endpreis bleibt dem Erzeuger oft nur ein kleiner Teil.",
+  "beispielTr": "Nihai fiyattan üreticiye çoğu zaman küçük bir pay kalır.",
+  "beispielEn": "Of the final price the producer often keeps only a small share."
+ },
+ {
+  "id": 4367,
+  "tr": "ambalaj",
+  "en": "packaging",
+  "beispiel": "Die neue Verpackung besteht vollständig aus recyceltem Papier.",
+  "beispielTr": "Yeni ambalaj tamamen geri dönüştürülmüş kâğıttan yapılıyor.",
+  "beispielEn": "The new packaging is made entirely of recycled paper."
+ },
+ {
+  "id": 4368,
+  "tr": "etiketleme",
+  "en": "labeling",
+  "beispiel": "Eine klare Kennzeichnung der Herkunft ist seit Januar Pflicht.",
+  "beispielTr": "Menşe ülkenin açıkça etiketlenmesi ocaktan beri zorunlu.",
+  "beispielEn": "Clear labeling of the origin has been mandatory since January."
+ },
+ {
+  "id": 4369,
+  "tr": "etiket",
+  "en": "label",
+  "beispiel": "Auf dem Etikett stehen alle Zutaten in absteigender Menge.",
+  "beispielTr": "Etikette bütün içerikler miktarı azalan sırayla yazıyor.",
+  "beispielEn": "All ingredients are listed on the label by decreasing amount."
+ },
+ {
+  "id": 4370,
+  "tr": "tavsiye edilen tüketim tarihi",
+  "en": "best-before date",
+  "beispiel": "Viele Joghurts sind nach dem Mindesthaltbarkeitsdatum noch genießbar.",
+  "beispielTr": "Birçok yoğurt, tavsiye edilen tüketim tarihinden sonra da yenebilir.",
+  "beispielEn": "Many yogurts are still edible after the best-before date."
+ },
+ {
+  "id": 4371,
+  "tr": "tüketicinin korunması",
+  "en": "consumer protection",
+  "beispiel": "Wegen des Verbraucherschutzes musste die Firma die Werbung ändern.",
+  "beispielTr": "Tüketicinin korunması nedeniyle firma reklamını değiştirmek zorunda kaldı.",
+  "beispielEn": "Because of consumer protection the company had to change its ad."
+ },
+ {
+  "id": 4372,
+  "tr": "çeşit",
+  "en": "variety",
+  "beispiel": "Alte Sorten sind robuster, bringen aber weniger Ernte.",
+  "beispielTr": "Eski çeşitler daha dayanıklı ama daha az ürün veriyor.",
+  "beispielEn": "Old varieties are hardier but yield less."
+ },
+ {
+  "id": 4373,
+  "tr": "kooperatif",
+  "en": "cooperative",
+  "beispiel": "Die Milchbauern haben sich zu einer Genossenschaft zusammengeschlossen.",
+  "beispielTr": "Sütçü çiftçiler bir kooperatif çatısı altında birleşti.",
+  "beispielEn": "The dairy farmers have joined forces in a cooperative."
+ },
+ {
+  "id": 4374,
+  "tr": "aracı",
+  "en": "middleman",
+  "beispiel": "Ohne Zwischenhändler bleibt den Bauern ein höherer Anteil.",
+  "beispielTr": "Aracı olmadan çiftçilere daha yüksek bir pay kalıyor.",
+  "beispielEn": "Without middlemen the farmers keep a bigger share."
+ },
+ {
+  "id": 4375,
+  "tr": "pazarlama",
+  "en": "marketing",
+  "beispiel": "Die Vermarktung regionaler Produkte läuft über eine eigene Plattform.",
+  "beispielTr": "Yöresel ürünlerin pazarlaması kendi platformu üzerinden yürüyor.",
+  "beispielEn": "The marketing of regional products runs through its own platform."
+ },
+ {
+  "id": 4376,
+  "tr": "satış",
+  "en": "sales",
+  "beispiel": "Der Absatz von Hafermilch ist im letzten Jahr stark gestiegen.",
+  "beispielTr": "Yulaf sütünün satışı geçen yıl büyük ölçüde arttı.",
+  "beispielEn": "Sales of oat milk rose sharply last year."
+ },
+ {
+  "id": 4377,
+  "tr": "gıda israfı",
+  "en": "food waste",
+  "beispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt.",
+  "beispielTr": "Gıda israfına karşı en çok evde iyi planlama yardımcı oluyor.",
+  "beispielEn": "Against food waste, better planning at home helps most of all."
+ },
+ {
+  "id": 4378,
+  "tr": "atık bertarafı",
+  "en": "disposal",
+  "beispiel": "Die Entsorgung der abgelaufenen Ware kostet den Supermarkt viel Geld.",
+  "beispielTr": "Tarihi geçmiş malların bertarafı süpermarkete pahalıya mal oluyor.",
+  "beispielEn": "Disposing of the expired goods costs the supermarket a lot of money."
+ },
+ {
+  "id": 4379,
+  "tr": "çiftçi",
+  "en": "farmer",
+  "beispiel": "Immer weniger Landwirte finden einen Nachfolger für ihren Hof.",
+  "beispielTr": "Giderek daha az çiftçi çiftliğini devralacak birini bulabiliyor.",
+  "beispielEn": "Fewer and fewer farmers find a successor for their farm."
+ },
+ {
+  "id": 4380,
+  "tr": "damga",
+  "en": "seal",
+  "beispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
+  "beispielTr": "Yeşil damga tek başına hayvancılık hakkında bir şey söylemiyor.",
+  "beispielEn": "The green seal alone says nothing about how the animals are kept."
+ },
+ {
+  "id": 4381,
+  "tr": "kalıntı",
+  "en": "residue",
+  "beispiel": "In den Proben fanden die Prüfer keine Rückstände von Pestiziden.",
+  "beispielTr": "Numunelerde denetçiler hiçbir pestisit kalıntısı bulmadı.",
+  "beispielEn": "In the samples the inspectors found no pesticide residues."
+ },
+ {
+  "id": 4382,
+  "tr": "tarım ilacı",
+  "en": "pesticide",
+  "beispiel": "Der Einsatz bestimmter Pestizide ist in der EU inzwischen verboten.",
+  "beispielTr": "Bazı tarım ilaçlarının kullanımı AB'de artık yasak.",
+  "beispielEn": "The use of certain pesticides is now banned in the EU."
+ },
+ {
+  "id": 4383,
+  "tr": "bitki koruma ilacı",
+  "en": "plant protection product",
+  "beispiel": "Neue Pflanzenschutzmittel müssen ein langes Zulassungsverfahren durchlaufen.",
+  "beispielTr": "Yeni bitki koruma ilaçları uzun bir ruhsat sürecinden geçer.",
+  "beispielEn": "New plant protection products have to go through a long approval process."
+ },
+ {
+  "id": 4384,
+  "tr": "zararlı böcek",
+  "en": "pest",
+  "beispiel": "Gegen diesen Schädling hilft nur eine frühe Behandlung.",
+  "beispielTr": "Bu zararlı böceğe karşı sadece erken ilaçlama işe yarar.",
+  "beispielEn": "Only early treatment helps against this pest."
+ },
+ {
+  "id": 4385,
+  "tr": "yabani ot",
+  "en": "weed",
+  "beispiel": "Im Garten muss ich ständig das Unkraut jäten.",
+  "beispielTr": "Bahçede sürekli yabani otları yolmam gerekiyor.",
+  "beispielEn": "In the garden I constantly have to pull weeds."
+ },
+ {
+  "id": 4386,
+  "tr": "sulama",
+  "en": "irrigation",
+  "beispiel": "Ohne künstliche Bewässerung wäre hier kein Gemüseanbau möglich.",
+  "beispielTr": "Yapay sulama olmadan burada sebze yetiştirmek mümkün olmazdı.",
+  "beispielEn": "Without artificial irrigation no vegetables could be grown here."
+ },
+ {
+  "id": 4387,
+  "tr": "kötü hasat",
+  "en": "crop failure",
+  "beispiel": "Nach der zweiten Missernte in Folge gab der Betrieb auf.",
+  "beispielTr": "Üst üste ikinci kötü hasattan sonra işletme işi bıraktı.",
+  "beispielEn": "After the second crop failure in a row the farm gave up."
+ },
+ {
+  "id": 4388,
+  "tr": "ekim nöbeti",
+  "en": "crop rotation",
+  "beispiel": "Eine durchdachte Fruchtfolge hält den Acker über Jahre fruchtbar.",
+  "beispielTr": "İyi düşünülmüş bir ekim nöbeti tarlayı yıllarca verimli tutar.",
+  "beispielEn": "A well-planned crop rotation keeps the field fertile for years."
+ },
+ {
+  "id": 4389,
+  "tr": "tek ürün tarımı",
+  "en": "monoculture",
+  "beispiel": "Monokulturen sind besonders anfällig für Krankheiten und Insekten.",
+  "beispielTr": "Tek ürün tarımı hastalıklara ve böceklere karşı çok savunmasızdır.",
+  "beispielEn": "Monocultures are especially vulnerable to diseases and insects."
+ },
+ {
+  "id": 4390,
+  "tr": "erozyon",
+  "en": "erosion",
+  "beispiel": "Hecken am Feldrand schützen die Hänge vor Erosion.",
+  "beispielTr": "Tarla kenarındaki çalılar yamaçları erozyondan korur.",
+  "beispielEn": "Hedges along the field edge protect the slopes from erosion."
+ },
+ {
+  "id": 4391,
+  "tr": "mera",
+  "en": "pasture",
+  "beispiel": "Im Sommer stehen die Kühe den ganzen Tag auf der Weide.",
+  "beispielTr": "Yazın inekler bütün gün merada duruyor.",
+  "beispielEn": "In summer the cows are out on the pasture all day."
+ },
+ {
+  "id": 4392,
+  "tr": "hayvan refahı",
+  "en": "animal welfare",
+  "beispiel": "Für mehr Tierwohl wären viele Kunden bereit, mehr zu zahlen.",
+  "beispielTr": "Daha iyi hayvan refahı için birçok müşteri fazla ödemeye razı olurdu.",
+  "beispielEn": "For better animal welfare many customers would be willing to pay more."
+ }
+]

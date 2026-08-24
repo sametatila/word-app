@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3199,
+  "tr": "iflas",
+  "en": "insolvency",
+  "beispiel": "Wegen hoher Schulden musste die Firma Insolvenz anmelden.",
+  "beispielTr": "Yüksek borçlar yüzünden şirket iflas başvurusu yapmak zorunda kaldı.",
+  "beispielEn": "Because of high debts the company had to file for insolvency."
+ },
+ {
+  "id": 3404,
+  "tr": "yenilik",
+  "en": "innovation",
+  "beispiel": "Die Firma investiert stark in technologische Innovation.",
+  "beispielTr": "Şirket teknolojik yeniliğe büyük yatırım yapıyor.",
+  "beispielEn": "The company invests heavily in technological innovation."
+ },
+ {
+  "id": 3435,
+  "tr": "molekül",
+  "en": "molecule",
+  "beispiel": "Die Forscher haben das Molekül künstlich hergestellt.",
+  "beispielTr": "Araştırmacılar molekülü yapay olarak üretti.",
+  "beispielEn": "The researchers produced the molecule artificially."
+ },
+ {
+  "id": 3237,
+  "tr": "tüketici",
+  "en": "consumer",
+  "beispiel": "Steigende Preise belasten vor allem einkommensschwache Verbraucher.",
+  "beispielTr": "Artan fiyatlar en çok dar gelirli tüketicileri zorluyor.",
+  "beispielEn": "Rising prices hit low-income consumers the hardest."
+ },
+ {
+  "id": 3307,
+  "tr": "nesnellik",
+  "en": "objectivity",
+  "beispiel": "Die Objektivität der Presse wird häufig angezweifelt.",
+  "beispielTr": "Basının nesnelliği sık sık sorgulanıyor.",
+  "beispielEn": "The objectivity of the press is often questioned."
+ },
+ {
+  "id": 3818,
+  "tr": "belirgin",
+  "en": "pronounced",
+  "beispiel": "Sie hat ein ausgeprägtes Interesse an fremden Sprachen.",
+  "beispielTr": "Yabancı dillere karşı belirgin bir ilgisi var.",
+  "beispielEn": "She has a pronounced interest in foreign languages."
+ },
+ {
+  "id": 3424,
+  "tr": "bitki örtüsü",
+  "en": "vegetation",
+  "beispiel": "Die Vegetation der Region hat sich stark verändert.",
+  "beispielTr": "Bölgenin bitki örtüsü büyük ölçüde değişti.",
+  "beispielEn": "The vegetation of the region has changed a lot."
+ },
+ {
+  "id": 3250,
+  "tr": "kaydetmek",
+  "en": "to record",
+  "beispiel": "Das Unternehmen verzeichnet in diesem Quartal einen deutlichen Gewinnanstieg.",
+  "beispielTr": "Şirket bu çeyrekte belirgin bir kâr artışı kaydediyor.",
+  "beispielEn": "The company records a clear rise in profits this quarter."
+ },
+ {
+  "id": 3862,
+  "tr": "işlem memuru",
+  "en": "case worker",
+  "beispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
+  "beispielTr": "İlgili işlem memuru başvuruyu inceliyor.",
+  "beispielEn": "The responsible case worker is reviewing the application."
+ },
+ {
+  "id": 3409,
+  "tr": "iklim değişikliği",
+  "en": "climate change",
+  "beispiel": "Der Klimawandel bedroht viele Küstenregionen weltweit.",
+  "beispielTr": "İklim değişikliği dünya genelinde birçok kıyı bölgesini tehdit ediyor.",
+  "beispielEn": "Climate change threatens many coastal regions worldwide."
+ },
+ {
+  "id": 3860,
+  "tr": "belge",
+  "en": "certificate",
+  "beispiel": "Für die Anmeldung braucht man eine Bescheinigung der Uni.",
+  "beispielTr": "Kayıt için üniversiteden bir belge gerekiyor.",
+  "beispielEn": "You need a certificate from the university to register."
+ },
+ {
+  "id": 3403,
+  "tr": "arayüz",
+  "en": "interface",
+  "beispiel": "Die neue Schnittstelle verbindet beide Programme reibungslos.",
+  "beispielTr": "Yeni arayüz iki programı sorunsuz biçimde birbirine bağlıyor.",
+  "beispielEn": "The new interface connects both programs smoothly."
+ },
+ {
+  "id": 3427,
+  "tr": "doğal afet",
+  "en": "natural disaster",
+  "beispiel": "Die Naturkatastrophe hat ganze Dörfer zerstört.",
+  "beispielTr": "Doğal afet köyleri baştan başa yıktı.",
+  "beispielEn": "The natural disaster destroyed entire villages."
+ },
+ {
+  "id": 3740,
+  "tr": "yan giderler",
+  "en": "utility costs",
+  "beispiel": "Die Nebenkosten sind im letzten Jahr deutlich gestiegen.",
+  "beispielTr": "Yan giderler geçen yıl belirgin biçimde arttı.",
+  "beispielEn": "Utility costs rose noticeably last year."
+ },
+ {
+  "id": 3414,
+  "tr": "geri dönüştürmek",
+  "en": "to recycle",
+  "beispiel": "In dieser Stadt wird fast der ganze Müll recycelt.",
+  "beispielTr": "Bu şehirde çöpün neredeyse tamamı geri dönüştürülüyor.",
+  "beispielEn": "In this city almost all the trash is recycled."
+ },
+ {
+  "id": 3387,
+  "tr": "bastırma",
+  "en": "repression",
+  "beispiel": "Ihre ständige Verdrängung der Krankheit machte alles schlimmer.",
+  "beispielTr": "Hastalığı sürekli bastırması her şeyi daha da kötüleştirdi.",
+  "beispielEn": "Her constant repression of the illness made everything worse."
+ },
+ {
+  "id": 3236,
+  "tr": "ekonomik canlanma",
+  "en": "upturn",
+  "beispiel": "Nach der Krise erlebte die Branche einen überraschenden Aufschwung.",
+  "beispielTr": "Krizin ardından sektör beklenmedik bir canlanma yaşadı.",
+  "beispielEn": "After the crisis the industry saw a surprising upturn."
+ },
+ {
+  "id": 3365,
+  "tr": "güvenilirlik",
+  "en": "reliability",
+  "beispiel": "Seine Zuverlässigkeit machte ihn zum idealen Kollegen.",
+  "beispielTr": "Güvenilirliği onu ideal bir iş arkadaşı yaptı.",
+  "beispielEn": "His reliability made him the ideal colleague."
+ },
+ {
+  "id": 3817,
+  "tr": "sürdürülebilir",
+  "en": "sustainable",
+  "beispiel": "Die Firma setzt konsequent auf eine nachhaltige Produktion.",
+  "beispielTr": "Şirket kararlılıkla sürdürülebilir üretime yöneliyor.",
+  "beispielEn": "The company consistently relies on sustainable production."
+ },
+ {
+  "id": 3242,
+  "tr": "birleşmek",
+  "en": "to merge",
+  "beispiel": "Die beiden Banken sind letztes Jahr zu einem großen Institut fusioniert.",
+  "beispielTr": "İki banka geçen yıl birleşerek büyük bir kurum oldu.",
+  "beispielEn": "The two banks merged into one large institution last year."
+ },
+ {
+  "id": 3302,
+  "tr": "ifade özgürlüğü",
+  "en": "freedom of speech",
+  "beispiel": "In diesem Land ist die Meinungsfreiheit stark eingeschränkt.",
+  "beispielTr": "Bu ülkede ifade özgürlüğü ciddi biçimde kısıtlı.",
+  "beispielEn": "In this country freedom of speech is severely restricted."
+ },
+ {
+  "id": 3750,
+  "tr": "baharatlamak",
+  "en": "to season",
+  "beispiel": "Sie würzt die Suppe gern mit frischem Ingwer.",
+  "beispielTr": "Çorbayı taze zencefille baharatlamayı seviyor.",
+  "beispielEn": "She likes to season the soup with fresh ginger."
+ },
+ {
+  "id": 3325,
+  "tr": "dezavantajlı",
+  "en": "disadvantaged",
+  "beispiel": "Benachteiligte Kinder brauchen zusätzliche Unterstützung in der Schule.",
+  "beispielTr": "Dezavantajlı çocukların okulda ek desteğe ihtiyacı var.",
+  "beispielEn": "Disadvantaged children need extra support at school."
+ },
+ {
+  "id": 3197,
+  "tr": "getiri",
+  "en": "yield",
+  "beispiel": "Diese Aktie bringt eine höhere Rendite als das Sparkonto.",
+  "beispielTr": "Bu hisse tasarruf hesabından daha yüksek getiri sağlıyor.",
+  "beispielEn": "This stock brings a higher yield than the savings account."
+ },
+ {
+  "id": 3762,
+  "tr": "turist rehberi",
+  "en": "tour guide",
+  "beispiel": "Ein Fremdenführer zeigte uns die historische Altstadt.",
+  "beispielTr": "Bir turist rehberi bize tarihi eski şehri gezdirdi.",
+  "beispielEn": "A tour guide showed us the historic old town."
+ },
+ {
+  "id": 3748,
+  "tr": "karıştırmak",
+  "en": "to browse",
+  "beispiel": "Sie stöbert am liebsten in den Regalen des Buchladens.",
+  "beispielTr": "En çok kitapçının raflarını karıştırmayı seviyor.",
+  "beispielEn": "She loves browsing the shelves of the bookstore."
+ },
+ {
+  "id": 3330,
+  "tr": "bulaşma",
+  "en": "infection",
+  "beispiel": "Um eine Ansteckung zu vermeiden, trug sie eine Maske.",
+  "beispielTr": "Hastalık bulaşmasın diye maske taktı.",
+  "beispielEn": "She wore a mask to avoid infection."
+ },
+ {
+  "id": 3198,
+  "tr": "hisse senedi piyasası",
+  "en": "stock market",
+  "beispiel": "Nach der schlechten Nachricht reagierte der Aktienmarkt nervös.",
+  "beispielTr": "Kötü haberin ardından hisse senedi piyasası gergin tepki verdi.",
+  "beispielEn": "After the bad news the stock market reacted nervously."
+ },
+ {
+  "id": 3245,
+  "tr": "devretmek",
+  "en": "to delegate",
+  "beispiel": "Ein guter Chef delegiert Aufgaben und kontrolliert nicht jedes Detail.",
+  "beispielTr": "İyi bir patron görevleri devreder, her ayrıntıyı denetlemez.",
+  "beispielEn": "A good boss delegates tasks and does not control every detail."
+ },
+ {
+  "id": 3193,
+  "tr": "iş sözleşmesi",
+  "en": "employment contract",
+  "beispiel": "Bevor sie anfängt, muss sie den Arbeitsvertrag genau durchlesen.",
+  "beispielTr": "İşe başlamadan önce iş sözleşmesini dikkatle okuması gerekiyor.",
+  "beispielEn": "Before she starts she has to read the employment contract carefully."
+ },
+ {
+  "id": 3231,
+  "tr": "döviz kuru",
+  "en": "exchange rate",
+  "beispiel": "Der schwankende Wechselkurs erschwert die Planung im Auslandsgeschäft.",
+  "beispielTr": "Dalgalanan döviz kuru yurt dışı işlerinde planlamayı zorlaştırıyor.",
+  "beispielEn": "The fluctuating exchange rate complicates planning in foreign trade."
+ },
+ {
+  "id": 3413,
+  "tr": "kaynak",
+  "en": "resource",
+  "beispiel": "Wir müssen natürliche Ressourcen sparsamer nutzen.",
+  "beispielTr": "Doğal kaynakları daha tutumlu kullanmalıyız.",
+  "beispielEn": "We have to use natural resources more sparingly."
+ },
+ {
+  "id": 3246,
+  "tr": "iyileştirmek",
+  "en": "to optimize",
+  "beispiel": "Die Abteilung soll die internen Arbeitsabläufe deutlich optimieren.",
+  "beispielTr": "Bölümün iç iş akışlarını belirgin biçimde iyileştirmesi gerekiyor.",
+  "beispielEn": "The department should significantly optimize its internal workflows."
+ },
+ {
+  "id": 3314,
+  "tr": "sınır dışı etme",
+  "en": "deportation",
+  "beispiel": "Die Abschiebung wurde vom Gericht vorerst gestoppt.",
+  "beispielTr": "Sınır dışı işlemi mahkeme tarafından şimdilik durduruldu.",
+  "beispielEn": "The deportation was stopped by the court for now."
+ },
+ {
+  "id": 3279,
+  "tr": "devlet başkanı",
+  "en": "head of state",
+  "beispiel": "Das Staatsoberhaupt hielt eine Rede zur Lage der Nation.",
+  "beispielTr": "Devlet başkanı ülkenin durumu üzerine bir konuşma yaptı.",
+  "beispielEn": "The head of state gave a speech about the country's situation."
+ },
+ {
+  "id": 3448,
+  "tr": "konut",
+  "en": "housing",
+  "beispiel": "In Großstädten fehlt es zunehmend an bezahlbarem Wohnraum.",
+  "beispielTr": "Büyük şehirlerde uygun fiyatlı konut giderek azalıyor.",
+  "beispielEn": "Affordable housing is increasingly lacking in big cities."
+ },
+ {
+  "id": 3851,
+  "tr": "bitirme tezi",
+  "en": "thesis",
+  "beispiel": "Für die Abschlussarbeit braucht sie noch drei Monate.",
+  "beispielTr": "Bitirme tezi için üç aya daha ihtiyacı var.",
+  "beispielEn": "She needs three more months for her thesis."
+ },
+ {
+  "id": 3739,
+  "tr": "bakım",
+  "en": "upkeep",
+  "beispiel": "Die Instandhaltung des alten Hauses kostet viel Geld.",
+  "beispielTr": "Eski evin bakımı çok paraya mal oluyor.",
+  "beispielEn": "The upkeep of the old house costs a lot of money."
+ },
+ {
+  "id": 3826,
+  "tr": "çaba",
+  "en": "effort",
+  "beispiel": "Trotz aller Bemühungen blieb der gewünschte Erfolg aus.",
+  "beispielTr": "Bütün çabalara rağmen istenen başarı gelmedi.",
+  "beispielEn": "Despite all efforts the desired success did not come."
+ },
+ {
+  "id": 3200,
+  "tr": "konjonktür",
+  "en": "economic climate",
+  "beispiel": "Bei guter Konjunktur stellen viele Unternehmen neue Mitarbeiter ein.",
+  "beispielTr": "Konjonktür iyiyken birçok şirket yeni çalışan alıyor.",
+  "beispielEn": "When the economic climate is good many companies hire new staff."
+ },
+ {
+  "id": 3201,
+  "tr": "iş piyasası",
+  "en": "job market",
+  "beispiel": "Der Arbeitsmarkt für IT-Fachkräfte ist zurzeit sehr angespannt.",
+  "beispielTr": "BT uzmanları için iş piyasası şu sıralar çok gergin.",
+  "beispielEn": "The job market for IT specialists is very tight right now."
+ },
+ {
+  "id": 3211,
+  "tr": "hedef anlaşması",
+  "en": "target agreement",
+  "beispiel": "In der Zielvereinbarung wurde ein Umsatzziel für das Jahr festgelegt.",
+  "beispielTr": "Hedef anlaşmasında yıl için bir ciro hedefi belirlendi.",
+  "beispielEn": "A sales target for the year was set in the target agreement."
+ },
+ {
+  "id": 3215,
+  "tr": "sosyal güvenlik kesintisi",
+  "en": "social security contribution",
+  "beispiel": "Vom Bruttolohn werden Steuern und Sozialabgaben automatisch abgezogen.",
+  "beispielTr": "Brüt maaştan vergiler ve sosyal güvenlik kesintileri otomatik düşülüyor.",
+  "beispielEn": "Taxes and social security contributions are deducted automatically from the gross wage."
+ },
+ {
+  "id": 3216,
+  "tr": "nitelikli eleman eksikliği",
+  "en": "skilled labor shortage",
+  "beispiel": "Der Fachkräftemangel trifft besonders die Pflege- und IT-Branche.",
+  "beispielTr": "Nitelikli eleman eksikliği en çok bakım ve BT sektörünü vuruyor.",
+  "beispielEn": "The shortage of skilled workers hits nursing and IT especially hard."
+ },
+ {
+  "id": 3217,
+  "tr": "dijitalleşme",
+  "en": "digitalization",
+  "beispiel": "Die Digitalisierung verändert viele klassische Berufsbilder grundlegend.",
+  "beispielTr": "Dijitalleşme birçok klasik mesleği kökten değiştiriyor.",
+  "beispielEn": "Digitalization is fundamentally changing many traditional professions."
+ },
+ {
+  "id": 3219,
+  "tr": "şube",
+  "en": "branch",
+  "beispiel": "Die Firma hat inzwischen Niederlassungen in fünf verschiedenen Ländern.",
+  "beispielTr": "Firmanın artık beş farklı ülkede şubesi var.",
+  "beispielEn": "The company now has branches in five different countries."
+ },
+ {
+  "id": 3221,
+  "tr": "tedarik zinciri",
+  "en": "supply chain",
+  "beispiel": "Die globale Lieferkette wurde durch die Krise stark unterbrochen.",
+  "beispielTr": "Küresel tedarik zinciri kriz yüzünden ciddi biçimde kesintiye uğradı.",
+  "beispielEn": "The global supply chain was badly disrupted by the crisis."
+ },
+ {
+  "id": 3222,
+  "tr": "pazar payı",
+  "en": "market share",
+  "beispiel": "Der Konzern konnte seinen Marktanteil im letzten Jahr deutlich ausbauen.",
+  "beispielTr": "Şirketler grubu geçen yıl pazar payını belirgin biçimde artırdı.",
+  "beispielEn": "The corporation clearly expanded its market share last year."
+ },
+ {
+  "id": 3223,
+  "tr": "yıl sonu bilançosu",
+  "en": "annual financial statement",
+  "beispiel": "Der Jahresabschluss wird derzeit von der Buchhaltung erstellt.",
+  "beispielTr": "Yıl sonu bilançosu şu anda muhasebe tarafından hazırlanıyor.",
+  "beispielEn": "The annual financial statement is currently being prepared by accounting."
+ },
+ {
+  "id": 3225,
+  "tr": "borçlanma",
+  "en": "indebtedness",
+  "beispiel": "Die hohe Verschuldung des Unternehmens bereitet den Investoren Sorgen.",
+  "beispielTr": "Şirketin yüksek borçlanması yatırımcıları endişelendiriyor.",
+  "beispielEn": "The company's high indebtedness worries the investors."
+ }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3877,
+  "tr": "üniversiteye kayıt olmak",
+  "en": "to enroll",
+  "beispiel": "Neue Studierende müssen sich online immatrikulieren.",
+  "beispielTr": "Yeni öğrenciler kayıtlarını internetten yaptırmak zorunda.",
+  "beispielEn": "New students have to enroll online."
+ },
+ {
+  "id": 3879,
+  "tr": "iki dilli",
+  "en": "bilingual",
+  "beispiel": "Die Familie erzieht ihre Kinder zweisprachig.",
+  "beispielTr": "Aile çocuklarını iki dilli yetiştiriyor.",
+  "beispielEn": "The family is raising their children bilingually."
+ },
+ {
+  "id": 3880,
+  "tr": "süresinde",
+  "en": "by the deadline",
+  "beispiel": "Der Antrag muss fristgerecht eingereicht werden.",
+  "beispielTr": "Başvurunun süresinde yapılması gerekiyor.",
+  "beispielEn": "The application has to be submitted by the deadline."
+ },
+ {
+  "id": 3882,
+  "tr": "bağlayıcı",
+  "en": "binding",
+  "beispiel": "Die Anmeldung ist ab sofort verbindlich.",
+  "beispielTr": "Kayıt bu andan itibaren bağlayıcı.",
+  "beispielEn": "The registration is binding from now on."
+ },
+ {
+  "id": 4047,
+  "tr": "toplu iş sözleşmesi",
+  "en": "collective agreement",
+  "beispiel": "Der neue Tarifvertrag gilt für alle Beschäftigten der Branche.",
+  "beispielTr": "Yeni toplu iş sözleşmesi sektördeki bütün çalışanları kapsıyor.",
+  "beispielEn": "The new collective agreement covers everyone in the industry."
+ },
+ {
+  "id": 4048,
+  "tr": "işveren",
+  "en": "employer",
+  "beispiel": "Mein Arbeitgeber übernimmt die Kosten für die Weiterbildung.",
+  "beispielTr": "İşverenim eğitim masraflarını karşılıyor.",
+  "beispielEn": "My employer covers the cost of the training."
+ },
+ {
+  "id": 4049,
+  "tr": "çalışan",
+  "en": "employee",
+  "beispiel": "Jeder Arbeitnehmer hat Anspruch auf bezahlten Urlaub.",
+  "beispielTr": "Her çalışanın ücretli izin hakkı var.",
+  "beispielEn": "Every employee is entitled to paid vacation."
+ },
+ {
+  "id": 4050,
+  "tr": "insan kaynakları",
+  "en": "human resources",
+  "beispiel": "Wenden Sie sich mit Ihren Fragen bitte an die Personalabteilung.",
+  "beispielTr": "Sorularınız için lütfen insan kaynaklarına başvurun.",
+  "beispielEn": "Please contact human resources with your questions."
+ },
+ {
+  "id": 4051,
+  "tr": "nitelikli eleman",
+  "en": "skilled worker",
+  "beispiel": "In der Pflege fehlen seit Jahren ausgebildete Fachkräfte.",
+  "beispielTr": "Bakım sektöründe yıllardır nitelikli eleman eksiği var.",
+  "beispielEn": "The care sector has lacked skilled workers for years."
+ },
+ {
+  "id": 4052,
+  "tr": "yönetici",
+  "en": "executive",
+  "beispiel": "Als Führungskraft muss man auch unangenehme Entscheidungen treffen.",
+  "beispielTr": "Yönetici olarak hoş olmayan kararlar da almak zorundasın.",
+  "beispielEn": "As an executive you also have to make unpleasant decisions."
+ },
+ {
+  "id": 4053,
+  "tr": "bölüm müdürü",
+  "en": "department head",
+  "beispiel": "Der Abteilungsleiter hat den Urlaubsantrag noch nicht unterschrieben.",
+  "beispielTr": "Bölüm müdürü izin dilekçesini henüz imzalamadı.",
+  "beispielEn": "The department head hasn't signed the vacation request yet."
+ },
+ {
+  "id": 4054,
+  "tr": "çırak",
+  "en": "trainee",
+  "beispiel": "Die Firma stellt in diesem Jahr zwölf Auszubildende ein.",
+  "beispielTr": "Firma bu yıl on iki çırak alıyor.",
+  "beispielEn": "The company is hiring twelve trainees this year."
+ },
+ {
+  "id": 4055,
+  "tr": "çalışma ortamı",
+  "en": "work atmosphere",
+  "beispiel": "Seit dem Wechsel der Leitung hat sich das Arbeitsklima deutlich verbessert.",
+  "beispielTr": "Yönetim değiştiğinden beri çalışma ortamı gözle görülür şekilde düzeldi.",
+  "beispielEn": "The work atmosphere has clearly improved since the management changed."
+ },
+ {
+  "id": 4056,
+  "tr": "çalışma süresi",
+  "en": "working hours",
+  "beispiel": "Die wöchentliche Arbeitszeit wurde auf 38 Stunden gesenkt.",
+  "beispielTr": "Haftalık çalışma süresi 38 saate indirildi.",
+  "beispielEn": "The weekly working hours were cut to 38."
+ },
+ {
+  "id": 4057,
+  "tr": "esnek mesai",
+  "en": "flextime",
+  "beispiel": "Dank der Gleitzeit kann ich meine Kinder morgens zur Schule bringen.",
+  "beispielTr": "Esnek mesai sayesinde sabahları çocuklarımı okula bırakabiliyorum.",
+  "beispielEn": "Thanks to flextime I can take my kids to school."
+ },
+ {
+  "id": 4058,
+  "tr": "vardiyalı çalışma",
+  "en": "shift work",
+  "beispiel": "Ständige Schichtarbeit belastet auf Dauer den Schlafrhythmus.",
+  "beispielTr": "Sürekli vardiyalı çalışma uzun vadede uyku düzenini bozuyor.",
+  "beispielEn": "Constant shift work strains your sleep rhythm over time."
+ },
+ {
+  "id": 4059,
+  "tr": "kısa çalışma",
+  "en": "short-time work",
+  "beispiel": "Während der Krise musste der Betrieb Kurzarbeit anmelden.",
+  "beispielTr": "Kriz sırasında işletme kısa çalışmaya başvurmak zorunda kaldı.",
+  "beispielEn": "During the crisis the company had to register short-time work."
+ },
+ {
+  "id": 4060,
+  "tr": "deneme süresi",
+  "en": "probation period",
+  "beispiel": "In der Probezeit kann der Vertrag mit kurzer Frist beendet werden.",
+  "beispielTr": "Deneme süresinde sözleşme kısa bir ihbarla sona erdirilebilir.",
+  "beispielEn": "During the probation period the contract can be ended on short notice."
+ },
+ {
+  "id": 4061,
+  "tr": "süre sınırlaması",
+  "en": "fixed term",
+  "beispiel": "Viele junge Wissenschaftler leiden unter der ständigen Befristung ihrer Stellen.",
+  "beispielTr": "Birçok genç bilim insanı kadrolarındaki süre sınırlamasından şikâyetçi.",
+  "beispielEn": "Many young scientists suffer from the constant fixed terms of their positions."
+ },
+ {
+  "id": 4062,
+  "tr": "kadrolu iş",
+  "en": "permanent position",
+  "beispiel": "Nach zwei Praktika bekam sie endlich eine Festanstellung.",
+  "beispielTr": "İki stajdan sonra nihayet kadrolu bir işe girdi.",
+  "beispielEn": "After two internships she finally got a permanent position."
+ },
+ {
+  "id": 4063,
+  "tr": "ücret",
+  "en": "compensation",
+  "beispiel": "Über die Höhe der Vergütung wird im zweiten Gespräch verhandelt.",
+  "beispielTr": "Ücretin miktarı ikinci görüşmede konuşulacak.",
+  "beispielEn": "The amount of the compensation is negotiated in the second interview."
+ },
+ {
+  "id": 4064,
+  "tr": "saat ücreti",
+  "en": "hourly wage",
+  "beispiel": "Der Stundenlohn liegt in dieser Branche deutlich unter dem Durchschnitt.",
+  "beispielTr": "Bu sektörde saat ücreti ortalamanın epey altında.",
+  "beispielEn": "In this industry the hourly wage is well below average."
+ },
+ {
+  "id": 4065,
+  "tr": "ücret ödemesinin sürmesi",
+  "en": "continued pay",
+  "beispiel": "Im Krankheitsfall besteht sechs Wochen lang Anspruch auf Lohnfortzahlung.",
+  "beispielTr": "Hastalık hâlinde altı hafta boyunca ücret ödemesi sürer.",
+  "beispielEn": "In case of illness there is a right to continued pay for six weeks."
+ },
+ {
+  "id": 4066,
+  "tr": "prim",
+  "en": "bonus",
+  "beispiel": "Für das gute Jahresergebnis erhielten alle Beschäftigten eine Prämie.",
+  "beispielTr": "İyi giden yıl için bütün çalışanlar prim aldı.",
+  "beispielEn": "All employees got a bonus for the good annual results."
+ },
+ {
+  "id": 4067,
+  "tr": "ihbar süresi",
+  "en": "notice period",
+  "beispiel": "Die Kündigungsfrist beträgt in meinem Fall drei Monate zum Quartalsende.",
+  "beispielTr": "Benim durumumda ihbar süresi çeyrek sonuna kadar üç ay.",
+  "beispielEn": "In my case the notice period is three months to the end of the quarter."
+ },
+ {
+  "id": 4068,
+  "tr": "karşılıklı fesih anlaşması",
+  "en": "termination agreement",
+  "beispiel": "Statt einer Klage einigten sich beide Seiten auf einen Aufhebungsvertrag.",
+  "beispielTr": "Dava yerine iki taraf karşılıklı bir fesih anlaşmasında uzlaştı.",
+  "beispielEn": "Instead of a lawsuit both sides agreed on a termination agreement."
+ },
+ {
+  "id": 4069,
+  "tr": "çalışma belgesi",
+  "en": "employment reference",
+  "beispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
+  "beispielTr": "İyi niyetle yazılmış bir çalışma belgesi sonraki başvuruyu kolaylaştırır.",
+  "beispielEn": "A favorably worded employment reference makes the next application easier."
+ },
+ {
+  "id": 4070,
+  "tr": "iş ilanı",
+  "en": "job ad",
+  "beispiel": "In der Stellenanzeige stand nichts über das Gehalt.",
+  "beispielTr": "İş ilanında maaşla ilgili hiçbir şey yazmıyordu.",
+  "beispielEn": "The job ad said nothing about the salary."
+ },
+ {
+  "id": 4071,
+  "tr": "aranan nitelikler",
+  "en": "job requirements",
+  "beispiel": "Sein Lebenslauf passt genau auf das Anforderungsprofil der Stelle.",
+  "beispielTr": "Özgeçmişi pozisyonun aradığı niteliklere tam olarak uyuyor.",
+  "beispielEn": "His resume matches the job requirements exactly."
+ },
+ {
+  "id": 4072,
+  "tr": "seçim süreci",
+  "en": "selection process",
+  "beispiel": "Das Auswahlverfahren zog sich über mehrere Wochen hin.",
+  "beispielTr": "Seçim süreci haftalarca uzayıp gitti.",
+  "beispielEn": "The selection process dragged on for several weeks."
+ },
+ {
+  "id": 4073,
+  "tr": "yetenek testi",
+  "en": "aptitude test",
+  "beispiel": "Vor der Einladung müssen alle Kandidaten einen Eignungstest absolvieren.",
+  "beispielTr": "Davetten önce bütün adayların bir yetenek testine girmesi gerekiyor.",
+  "beispielEn": "All candidates have to take an aptitude test before the invitation."
+ },
+ {
+  "id": 4074,
+  "tr": "referans",
+  "en": "reference",
+  "beispiel": "Bitte geben Sie zwei Referenzen aus früheren Anstellungen an.",
+  "beispielTr": "Lütfen önceki işlerinizden iki referans belirtin.",
+  "beispielEn": "Please give two references from previous jobs."
+ },
+ {
+  "id": 4075,
+  "tr": "özlük dosyası",
+  "en": "personnel file",
+  "beispiel": "Die Abmahnung wurde in die Personalakte aufgenommen.",
+  "beispielTr": "Uyarı yazısı özlük dosyasına işlendi.",
+  "beispielEn": "The written warning was added to the personnel file."
+ },
+ {
+  "id": 4076,
+  "tr": "iş deneyimi",
+  "en": "work experience",
+  "beispiel": "Für diese Position wird mehrjährige Berufserfahrung im Ausland erwartet.",
+  "beispielTr": "Bu pozisyon için yurt dışında birkaç yıllık iş deneyimi bekleniyor.",
+  "beispielEn": "Several years of work experience abroad are expected for this position."
+ },
+ {
+  "id": 4077,
+  "tr": "yükselme fırsatı",
+  "en": "chance of promotion",
+  "beispiel": "In kleinen Betrieben sind die Aufstiegschancen oft begrenzt.",
+  "beispielTr": "Küçük işletmelerde yükselme fırsatları çoğu zaman sınırlıdır.",
+  "beispielEn": "In small companies the chances of promotion are often limited."
+ },
+ {
+  "id": 4078,
+  "tr": "kendi işini kurma",
+  "en": "self-employment",
+  "beispiel": "Nach zehn Jahren im Konzern wagte er den Schritt in die Selbstständigkeit.",
+  "beispielTr": "On yıl holdinde çalıştıktan sonra kendi işini kurma adımını attı.",
+  "beispielEn": "After ten years in the corporation he took the step into self-employment."
+ },
+ {
+  "id": 4079,
+  "tr": "işsizlik maaşı",
+  "en": "unemployment benefit",
+  "beispiel": "Sie bezog ein halbes Jahr lang Arbeitslosengeld, bevor sie etwas fand.",
+  "beispielTr": "Bir iş bulana kadar altı ay işsizlik maaşı aldı.",
+  "beispielEn": "She collected unemployment benefits for six months before she found something."
+ },
+ {
+  "id": 4080,
+  "tr": "sosyal sigorta",
+  "en": "social insurance",
+  "beispiel": "Die Beiträge zur Sozialversicherung werden direkt vom Gehalt abgezogen.",
+  "beispielTr": "Sosyal sigorta primleri doğrudan maaştan kesiliyor.",
+  "beispielEn": "The social insurance contributions are deducted straight from the salary."
+ },
+ {
+  "id": 4081,
+  "tr": "işyeri emekliliği",
+  "en": "company pension",
+  "beispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
+  "beispielTr": "Yasal emekli aylığının yanında küçük bir işyeri emekliliği alıyor.",
+  "beispielEn": "Besides the state pension he gets a small company pension."
+ },
+ {
+  "id": 4082,
+  "tr": "emeklilik birikimi",
+  "en": "retirement savings",
+  "beispiel": "Mit der privaten Altersvorsorge sollte man möglichst früh beginnen.",
+  "beispielTr": "Bireysel emeklilik birikimine mümkün olduğunca erken başlamak gerekir.",
+  "beispielEn": "You should start your private retirement savings as early as possible."
+ },
+ {
+  "id": 4083,
+  "tr": "ebeveyn izni",
+  "en": "parental leave",
+  "beispiel": "Immer mehr Väter nehmen inzwischen mehrere Monate Elternzeit.",
+  "beispielTr": "Artık giderek daha çok baba aylarca ebeveyn izni kullanıyor.",
+  "beispielEn": "More and more fathers now take several months of parental leave."
+ },
+ {
+  "id": 4084,
+  "tr": "analık izni",
+  "en": "maternity leave",
+  "beispiel": "Während des Mutterschutzes darf der Betrieb ihr nicht kündigen.",
+  "beispielTr": "Analık izni süresince işletme onu işten çıkaramaz.",
+  "beispielEn": "During maternity leave the company may not fire her."
+ },
+ {
+  "id": 4085,
+  "tr": "izin hakkı",
+  "en": "vacation entitlement",
+  "beispiel": "Der gesetzliche Urlaubsanspruch beträgt mindestens zwanzig Arbeitstage.",
+  "beispielTr": "Yasal izin hakkı en az yirmi iş günüdür.",
+  "beispielEn": "The statutory vacation entitlement is at least twenty working days."
+ },
+ {
+  "id": 4086,
+  "tr": "işyeri anlaşması",
+  "en": "works agreement",
+  "beispiel": "Eine neue Betriebsvereinbarung regelt die Arbeit im Homeoffice.",
+  "beispielTr": "Yeni bir işyeri anlaşması evden çalışmayı düzenliyor.",
+  "beispielEn": "A new works agreement regulates working from home."
+ },
+ {
+  "id": 4087,
+  "tr": "çıkarların temsili",
+  "en": "representation of interests",
+  "beispiel": "Ohne eine starke Interessenvertretung haben die Beschäftigten kaum Einfluss.",
+  "beispielTr": "Güçlü bir çıkar temsili olmadan çalışanların neredeyse hiç etkisi olmaz.",
+  "beispielEn": "Without a strong representation of interests employees have hardly any influence."
+ },
+ {
+  "id": 4088,
+  "tr": "uyarı grevi",
+  "en": "warning strike",
+  "beispiel": "Ein zweistündiger Warnstreik legte den gesamten Nahverkehr lahm.",
+  "beispielTr": "İki saatlik bir uyarı grevi bütün toplu taşımayı felç etti.",
+  "beispielEn": "A two-hour warning strike paralyzed the whole local transit system."
+ },
+ {
+  "id": 4089,
+  "tr": "işçi mücadelesi",
+  "en": "labor dispute",
+  "beispiel": "Der Arbeitskampf dauerte drei Wochen und kostete Millionen.",
+  "beispielTr": "İşçi mücadelesi üç hafta sürdü ve milyonlara mal oldu.",
+  "beispielEn": "The labor dispute lasted three weeks and cost millions."
+ },
+ {
+  "id": 4090,
+  "tr": "iş güvenliği",
+  "en": "occupational safety",
+  "beispiel": "Die Aufsichtsbehörde prüft regelmäßig den Arbeitsschutz im Betrieb.",
+  "beispielTr": "Denetim kurumu işletmedeki iş güvenliğini düzenli olarak denetliyor.",
+  "beispielEn": "The supervisory authority regularly inspects occupational safety at the company."
+ },
+ {
+  "id": 4091,
+  "tr": "iş kazası",
+  "en": "workplace accident",
+  "beispiel": "Jeder Arbeitsunfall muss innerhalb weniger Tage gemeldet werden.",
+  "beispielTr": "Her iş kazası birkaç gün içinde bildirilmek zorunda.",
+  "beispielEn": "Every workplace accident has to be reported within a few days."
+ },
+ {
+  "id": 4092,
+  "tr": "güvenlik kuralı",
+  "en": "safety regulation",
+  "beispiel": "Wer die Sicherheitsvorschriften missachtet, gefährdet auch seine Kollegen.",
+  "beispielTr": "Güvenlik kurallarını hiçe sayan, iş arkadaşlarını da tehlikeye atar.",
+  "beispielEn": "Whoever ignores the safety regulations also endangers their colleagues."
+ }
+]

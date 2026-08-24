@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3228,
+    "tr": "hissedar",
+    "en": "shareholder",
+    "beispiel": "Die Aktionäre stimmten auf der Hauptversammlung über die Fusion ab.",
+    "beispielTr": "Hissedarlar genel kurulda birleşme için oy kullandı.",
+    "beispielEn": "The shareholders voted on the merger at the annual meeting."
+  },
+  {
+    "id": 3229,
+    "tr": "temettü",
+    "en": "dividend",
+    "beispiel": "Am Jahresende zahlt das Unternehmen seinen Aktionären eine Dividende.",
+    "beispielTr": "Şirket yıl sonunda hissedarlarına temettü ödüyor.",
+    "beispielEn": "At the end of the year the company pays its shareholders a dividend."
+  },
+  {
+    "id": 3230,
+    "tr": "faiz oranı",
+    "en": "interest rate",
+    "beispiel": "Die Bank hat den Zinssatz für Kredite erneut gesenkt.",
+    "beispielTr": "Banka kredi faiz oranını yeniden düşürdü.",
+    "beispielEn": "The bank has lowered the interest rate on loans again."
+  },
+  {
+    "id": 3232,
+    "tr": "vergi yükü",
+    "en": "tax burden",
+    "beispiel": "Viele Unternehmer beklagen sich über die hohe Steuerlast in Deutschland.",
+    "beispielTr": "Birçok girişimci Almanya'daki yüksek vergi yükünden şikâyetçi.",
+    "beispielEn": "Many business owners complain about the high tax burden in Germany."
+  },
+  {
+    "id": 3233,
+    "tr": "ihracat oranı",
+    "en": "export ratio",
+    "beispiel": "Die Exportquote der deutschen Industrie liegt traditionell sehr hoch.",
+    "beispielTr": "Alman sanayisinin ihracat oranı geleneksel olarak çok yüksek.",
+    "beispielEn": "The export ratio of German industry is traditionally very high."
+  },
+  {
+    "id": 3234,
+    "tr": "ticaret ortağı",
+    "en": "trading partner",
+    "beispiel": "China zählt seit Jahren zu den wichtigsten Handelspartnern Deutschlands.",
+    "beispielTr": "Çin yıllardır Almanya'nın en önemli ticaret ortakları arasında.",
+    "beispielEn": "For years China has been one of Germany's most important trading partners."
+  },
+  {
+    "id": 3243,
+    "tr": "borçlanmak",
+    "en": "to go into debt",
+    "beispiel": "Durch die falschen Investitionen hat sich die Firma stark verschuldet.",
+    "beispielTr": "Yanlış yatırımlar yüzünden şirket ağır biçimde borçlandı.",
+    "beispielEn": "The company went deeply into debt because of the wrong investments."
+  },
+  {
+    "id": 3247,
+    "tr": "dış kaynağa vermek",
+    "en": "to outsource",
+    "beispiel": "Die Firma hat ihre Buchhaltung an ein externes Büro ausgelagert.",
+    "beispielTr": "Firma muhasebesini dışarıdan bir büroya verdi.",
+    "beispielEn": "The company outsourced its accounting to an external office."
+  },
+  {
+    "id": 3248,
+    "tr": "hak kazanmak",
+    "en": "to qualify",
+    "beispiel": "Die Mannschaft hat sich für das Finale qualifiziert.",
+    "beispielTr": "Takım finale çıkma hakkı kazandı.",
+    "beispielEn": "The team has qualified for the final."
+  },
+  {
+    "id": 3252,
+    "tr": "kârlı",
+    "en": "profitable",
+    "beispiel": "Das neue Geschäftsmodell ist inzwischen wirklich rentabel.",
+    "beispielTr": "Yeni iş modeli artık gerçekten kârlı.",
+    "beispielEn": "The new business model is really profitable now."
+  },
+  {
+    "id": 3253,
+    "tr": "rekabetçi",
+    "en": "competitive",
+    "beispiel": "Um wettbewerbsfähig zu bleiben, muss die Firma ständig investieren.",
+    "beispielTr": "Firma rekabetçi kalmak için sürekli yatırım yapmak zorunda.",
+    "beispielEn": "To stay competitive, the company has to invest constantly."
+  },
+  {
+    "id": 3254,
+    "tr": "iflas etmiş",
+    "en": "insolvent",
+    "beispiel": "Nach dem Umsatzeinbruch war das Unternehmen praktisch insolvent.",
+    "beispielTr": "Cirodaki çöküşün ardından şirket fiilen iflas etmişti.",
+    "beispielEn": "After the collapse in sales the company was practically insolvent."
+  },
+  {
+    "id": 3255,
+    "tr": "konjonktüre bağlı",
+    "en": "cyclical",
+    "beispiel": "Die Baubranche ist stark konjunkturabhängig und leidet in Krisen.",
+    "beispielTr": "İnşaat sektörü konjonktüre çok bağlı ve krizlerde zarar görüyor.",
+    "beispielEn": "The construction sector is highly cyclical and suffers in crises."
+  },
+  {
+    "id": 3256,
+    "tr": "kendi sorumluluğunda",
+    "en": "autonomous",
+    "beispiel": "In dieser Position arbeitet man sehr eigenverantwortlich.",
+    "beispielTr": "Bu pozisyonda insan büyük ölçüde kendi sorumluluğunda çalışıyor.",
+    "beispielEn": "In this position you work very autonomously."
+  },
+  {
+    "id": 3257,
+    "tr": "sektörde alışılmış",
+    "en": "industry-standard",
+    "beispiel": "Das Gehalt ist branchenüblich und wird jährlich angepasst.",
+    "beispielTr": "Maaş sektörde alışılmış düzeyde ve her yıl güncelleniyor.",
+    "beispielEn": "The salary is industry-standard and is adjusted every year."
+  },
+  {
+    "id": 3258,
+    "tr": "süreli",
+    "en": "fixed-term",
+    "beispiel": "Ihr erster Arbeitsvertrag war auf ein Jahr befristet.",
+    "beispielTr": "İlk iş sözleşmesi bir yıl süreliydi.",
+    "beispielEn": "Her first employment contract was limited to one year."
+  },
+  {
+    "id": 3259,
+    "tr": "süresiz",
+    "en": "permanent",
+    "beispiel": "Nach der Probezeit erhielt er einen unbefristeten Arbeitsvertrag.",
+    "beispielTr": "Deneme süresinden sonra süresiz iş sözleşmesi aldı.",
+    "beispielEn": "After the probation period he got a permanent contract."
+  },
+  {
+    "id": 3261,
+    "tr": "kâr getiren",
+    "en": "lucrative",
+    "beispiel": "Der Verkauf der alten Lagerhalle war äußerst gewinnbringend.",
+    "beispielTr": "Eski deponun satışı büyük kâr getirdi.",
+    "beispielEn": "Selling the old warehouse was extremely lucrative."
+  },
+  {
+    "id": 3262,
+    "tr": "sivil toplum",
+    "en": "civil society",
+    "beispiel": "Die Zivilgesellschaft setzt sich aktiv für Menschenrechte ein.",
+    "beispielTr": "Sivil toplum insan hakları için etkin biçimde mücadele ediyor.",
+    "beispielEn": "Civil society actively campaigns for human rights."
+  },
+  {
+    "id": 3263,
+    "tr": "nüfus grubu",
+    "en": "population group",
+    "beispiel": "Verschiedene Bevölkerungsgruppen leben hier seit Jahrzehnten zusammen.",
+    "beispielTr": "Farklı nüfus grupları burada onlarca yıldır bir arada yaşıyor.",
+    "beispielEn": "Different population groups have lived here together for decades."
+  },
+  {
+    "id": 3264,
+    "tr": "eşitsizlik",
+    "en": "inequality",
+    "beispiel": "Die soziale Ungleichheit nimmt in vielen Ländern zu.",
+    "beispielTr": "Sosyal eşitsizlik birçok ülkede artıyor.",
+    "beispielEn": "Social inequality is increasing in many countries."
+  },
+  {
+    "id": 3267,
+    "tr": "açık görüşlülük",
+    "en": "openness to the world",
+    "beispiel": "Die Stadt ist stolz auf ihre Weltoffenheit und Vielfalt.",
+    "beispielTr": "Şehir açık görüşlülüğüyle ve çeşitliliğiyle gurur duyuyor.",
+    "beispielEn": "The city is proud of its openness to the world and its diversity."
+  },
+  {
+    "id": 3268,
+    "tr": "topluma uyum",
+    "en": "integration into society",
+    "beispiel": "Die Eingliederung von Neuankömmlingen dauert oft mehrere Jahre.",
+    "beispielTr": "Yeni gelenlerin topluma uyumu çoğu zaman yıllar alıyor.",
+    "beispielEn": "The integration of newcomers into society often takes years."
+  },
+  {
+    "id": 3274,
+    "tr": "gönüllü görev",
+    "en": "volunteer work",
+    "beispiel": "Sie übt ihr Ehrenamt bei der Feuerwehr aus.",
+    "beispielTr": "İtfaiyedeki gönüllü görevini sürdürüyor.",
+    "beispielEn": "She does her volunteer work at the fire department."
+  },
+  {
+    "id": 3275,
+    "tr": "gönüllü çalışmak",
+    "en": "to volunteer",
+    "beispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
+    "beispielTr": "Yıllardır çevre koruması için gönüllü çalışıyor.",
+    "beispielEn": "She has volunteered for environmental protection for years."
+  },
+  {
+    "id": 3277,
+    "tr": "seçime katılım",
+    "en": "voter turnout",
+    "beispiel": "Die Wahlbeteiligung lag diesmal bei knapp sechzig Prozent.",
+    "beispielTr": "Seçime katılım bu kez yüzde altmışın biraz altında kaldı.",
+    "beispielEn": "Voter turnout was just under sixty percent this time."
+  },
+  {
+    "id": 3278,
+    "tr": "seçim bölgesi",
+    "en": "constituency",
+    "beispiel": "Der Kandidat gewann seinen Wahlkreis nur ganz knapp.",
+    "beispielTr": "Aday kendi seçim bölgesini kıl payı kazandı.",
+    "beispielEn": "The candidate won his constituency by a very narrow margin."
+  },
+  {
+    "id": 3281,
+    "tr": "kanun tasarısı",
+    "en": "draft law",
+    "beispiel": "Der Gesetzentwurf wurde im Parlament kontrovers diskutiert.",
+    "beispielTr": "Kanun tasarısı mecliste hararetle tartışıldı.",
+    "beispielEn": "The draft law was hotly debated in parliament."
+  },
+  {
+    "id": 3284,
+    "tr": "hukuk devleti",
+    "en": "constitutional state",
+    "beispiel": "Ein funktionierender Rechtsstaat schützt die Bürger vor Willkür.",
+    "beispielTr": "İşleyen bir hukuk devleti vatandaşları keyfîlikten korur.",
+    "beispielEn": "A functioning constitutional state protects citizens from arbitrary rule."
+  },
+  {
+    "id": 3290,
+    "tr": "güven bunalımı",
+    "en": "crisis of confidence",
+    "beispiel": "Die Partei steckt nach dem Skandal in einer tiefen Vertrauenskrise.",
+    "beispielTr": "Parti skandalın ardından derin bir güven bunalımında.",
+    "beispielEn": "After the scandal the party is in a deep crisis of confidence."
+  },
+  {
+    "id": 3301,
+    "tr": "medya okuryazarlığı",
+    "en": "media literacy",
+    "beispiel": "Medienkompetenz sollte schon in der Schule vermittelt werden.",
+    "beispielTr": "Medya okuryazarlığı daha okulda kazandırılmalı.",
+    "beispielEn": "Media literacy should be taught as early as school."
+  },
+  {
+    "id": 3308,
+    "tr": "taraflı",
+    "en": "biased",
+    "beispiel": "Der Artikel wurde von Kritikern als tendenziös bezeichnet.",
+    "beispielTr": "Makale eleştirmenlerce taraflı olarak nitelendirildi.",
+    "beispielEn": "Critics called the article biased."
+  },
+  {
+    "id": 3309,
+    "tr": "yanlış bilgi",
+    "en": "false information",
+    "beispiel": "Fehlinformationen verbreiten sich im Internet rasend schnell.",
+    "beispielTr": "Yanlış bilgiler internette çok hızlı yayılıyor.",
+    "beispielEn": "False information spreads extremely fast on the internet."
+  },
+  {
+    "id": 3310,
+    "tr": "mülteci",
+    "en": "refugee",
+    "beispiel": "Viele Geflüchtete suchen in Europa ein neues Zuhause.",
+    "beispielTr": "Birçok mülteci Avrupa'da yeni bir yuva arıyor.",
+    "beispielEn": "Many refugees are looking for a new home in Europe."
+  },
+  {
+    "id": 3311,
+    "tr": "geldiği ülke",
+    "en": "country of origin",
+    "beispiel": "Viele Migranten pflegen weiterhin Kontakt zu ihrem Herkunftsland.",
+    "beispielTr": "Birçok göçmen geldiği ülkeyle bağını sürdürüyor.",
+    "beispielEn": "Many migrants still keep in touch with their country of origin."
+  },
+  {
+    "id": 3312,
+    "tr": "göçmen kökeni",
+    "en": "migration background",
+    "beispiel": "Viele Schüler in der Klasse haben einen Migrationshintergrund.",
+    "beispielTr": "Sınıftaki birçok öğrenci göçmen kökenli.",
+    "beispielEn": "Many pupils in the class have a migration background."
+  },
+  {
+    "id": 3315,
+    "tr": "ülkeye göç etmek",
+    "en": "to immigrate",
+    "beispiel": "Seine Großeltern sind in den sechziger Jahren eingewandert.",
+    "beispielTr": "Büyükanne ve büyükbabası altmışlı yıllarda bu ülkeye göç etmiş.",
+    "beispielEn": "His grandparents immigrated in the sixties."
+  },
+  {
+    "id": 3317,
+    "tr": "entegre olmak",
+    "en": "to integrate",
+    "beispiel": "Er hat sich schnell in die neue Gesellschaft integriert.",
+    "beispielTr": "Yeni topluma hızla entegre oldu.",
+    "beispielEn": "He integrated into the new society quickly."
+  },
+  {
+    "id": 3318,
+    "tr": "vatandaşlık",
+    "en": "citizenship",
+    "beispiel": "Sie beantragte nach zehn Jahren die deutsche Staatsangehörigkeit.",
+    "beispielTr": "On yılın sonunda Alman vatandaşlığına başvurdu.",
+    "beispielEn": "After ten years she applied for German citizenship."
+  },
+  {
+    "id": 3319,
+    "tr": "vatandaşlığa almak",
+    "en": "to naturalize",
+    "beispiel": "Der Staat bürgert jedes Jahr Tausende Ausländer ein.",
+    "beispielTr": "Devlet her yıl binlerce yabancıyı vatandaşlığa alıyor.",
+    "beispielEn": "Every year the state naturalizes thousands of foreigners."
+  },
+  {
+    "id": 3320,
+    "tr": "eğitim sistemi",
+    "en": "education system",
+    "beispiel": "Das Bildungssystem muss dringend reformiert werden.",
+    "beispielTr": "Eğitim sisteminin acilen reformdan geçmesi gerekiyor.",
+    "beispielEn": "The education system urgently needs to be reformed."
+  },
+  {
+    "id": 3321,
+    "tr": "fırsat eşitliği",
+    "en": "equal opportunity",
+    "beispiel": "Chancengleichheit in der Bildung ist noch nicht erreicht.",
+    "beispielTr": "Eğitimde fırsat eşitliği henüz sağlanabilmiş değil.",
+    "beispielEn": "Equal opportunity in education has not been achieved yet."
+  },
+  {
+    "id": 3323,
+    "tr": "eğitim politikası",
+    "en": "education policy",
+    "beispiel": "Die Bildungspolitik unterscheidet sich stark zwischen den Bundesländern.",
+    "beispielTr": "Eğitim politikası eyaletten eyalete büyük farklılık gösteriyor.",
+    "beispielEn": "Education policy differs greatly from state to state."
+  },
+  {
+    "id": 3327,
+    "tr": "söz hakkı",
+    "en": "codetermination",
+    "beispiel": "Im Betriebsrat kämpfen die Mitarbeiter um mehr Mitbestimmung.",
+    "beispielTr": "İşyeri kurulunda çalışanlar daha çok söz hakkı için mücadele ediyor.",
+    "beispielEn": "In the works council the employees are fighting for more codetermination."
+  },
+  {
+    "id": 3332,
+    "tr": "kas gerginliği",
+    "en": "muscle tension",
+    "beispiel": "Die Verspannung im Nacken kam vom langen Sitzen.",
+    "beispielTr": "Ensedeki kas gerginliği uzun süre oturmaktan kaynaklandı.",
+    "beispielEn": "The tension in his neck came from sitting too long."
+  },
+  {
+    "id": 3333,
+    "tr": "uyku eksikliği",
+    "en": "lack of sleep",
+    "beispiel": "Nach Wochen mit Schlafmangel machte er ständig Fehler.",
+    "beispielTr": "Haftalarca süren uyku eksikliğinden sonra sürekli hata yapıyordu.",
+    "beispielEn": "After weeks of sleep deprivation he kept making mistakes."
+  },
+  {
+    "id": 3337,
+    "tr": "bağışıklık savunması",
+    "en": "immune defense",
+    "beispiel": "Vitamin C soll die Immunabwehr unterstützen.",
+    "beispielTr": "C vitamininin bağışıklık savunmasını desteklediği söyleniyor.",
+    "beispielEn": "Vitamin C is said to support the immune defense."
+  },
+  {
+    "id": 3339,
+    "tr": "strese dayanıklılık",
+    "en": "stress tolerance",
+    "beispiel": "Der Job verlangt eine hohe Belastbarkeit und gute Nerven.",
+    "beispielTr": "Bu iş yüksek strese dayanıklılık ve sağlam sinir istiyor.",
+    "beispielEn": "The job demands high stress tolerance and strong nerves."
+  },
+  {
+    "id": 3343,
+    "tr": "kendini kollamak",
+    "en": "to take it easy",
+    "beispiel": "Nach der Operation sollte er sich noch etwas schonen.",
+    "beispielTr": "Ameliyattan sonra bir süre daha kendini kollamalı.",
+    "beispielEn": "After the operation he should take it easy for a while."
+  },
+  {
+    "id": 3357,
+    "tr": "özlem duymak",
+    "en": "to yearn",
+    "beispiel": "Er sehnt sich nach mehr Ruhe im Alltag.",
+    "beispielTr": "Gündelik hayatında daha çok huzura özlem duyuyor.",
+    "beispielEn": "He yearns for more peace in everyday life."
+  }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4493,
+  "tr": "denkleştirmek",
+  "en": "to raise",
+  "beispiel": "Die nötige Summe konnte die Familie nicht rechtzeitig aufbringen.",
+  "beispielTr": "Aile gerekli parayı zamanında denkleştiremedi.",
+  "beispielEn": "The family could not raise the necessary sum in time."
+ },
+ {
+  "id": 4494,
+  "tr": "onaylamak",
+  "en": "to approve",
+  "beispiel": "Die Behörde hat den Antrag auf Wohngeld schließlich bewilligt.",
+  "beispielTr": "Kurum, kira yardımı başvurusunu sonunda onayladı.",
+  "beispielEn": "The authority finally approved the housing benefit application."
+ },
+ {
+  "id": 4495,
+  "tr": "karşılamak",
+  "en": "to cover",
+  "beispiel": "Für die Reparatur muss der Vermieter aufkommen.",
+  "beispielTr": "Tamir masrafını ev sahibi karşılamak zorunda.",
+  "beispielEn": "The landlord has to cover the repair costs."
+ },
+ {
+  "id": 4496,
+  "tr": "alıkoymak",
+  "en": "to withhold",
+  "beispiel": "Die Kaution darf der Vermieter nicht einfach einbehalten.",
+  "beispielTr": "Ev sahibi depozitoyu öylece alıkoyamaz.",
+  "beispielEn": "The landlord may not simply withhold the deposit."
+ },
+ {
+  "id": 4497,
+  "tr": "yatırmak",
+  "en": "to invest",
+  "beispiel": "Sie hat ihr Erspartes langfristig in Fonds angelegt.",
+  "beispielTr": "Birikimini uzun vadeli olarak fonlara yatırdı.",
+  "beispielEn": "She invested her savings in funds for the long term."
+ },
+ {
+  "id": 4498,
+  "tr": "biriktirmek",
+  "en": "to set aside",
+  "beispiel": "Jeden Monat legt er hundert Euro für Notfälle zurück.",
+  "beispielTr": "Her ay acil durumlar için yüz euro biriktiriyor.",
+  "beispielEn": "Every month he sets aside a hundred euros for emergencies."
+ },
+ {
+  "id": 4499,
+  "tr": "vergilendirmek",
+  "en": "to assess",
+  "beispiel": "Ehepaare können sich gemeinsam oder getrennt veranlagen lassen.",
+  "beispielTr": "Evli çiftler birlikte ya da ayrı vergilendirilebilir.",
+  "beispielEn": "Married couples can be assessed jointly or separately."
+ },
+ {
+  "id": 4500,
+  "tr": "yiyip bitirmek",
+  "en": "to eat up",
+  "beispiel": "Die hohen Nebenkosten zehren sein ganzes Gehalt auf.",
+  "beispielTr": "Yüksek ek giderler bütün maaşını yiyip bitiriyor.",
+  "beispielEn": "The high extra costs eat up his entire salary."
+ },
+ {
+  "id": 4501,
+  "tr": "masrafsız",
+  "en": "free of charge",
+  "beispiel": "Überweisungen innerhalb Europas sind bei dieser Bank gebührenfrei.",
+  "beispielTr": "Bu bankada Avrupa içi havaleler masrafsız.",
+  "beispielEn": "Transfers within Europe are free of charge at this bank."
+ },
+ {
+  "id": 4502,
+  "tr": "geriye dönük",
+  "en": "retroactive",
+  "beispiel": "Die Erhöhung gilt rückwirkend ab dem ersten Januar.",
+  "beispielTr": "Zam bir Ocak'tan itibaren geriye dönük geçerli.",
+  "beispielEn": "The increase applies retroactively from the first of January."
+ },
+ {
+  "id": 4503,
+  "tr": "üç ayda bir",
+  "en": "quarterly",
+  "beispiel": "Der Beitrag kann monatlich oder vierteljährlich gezahlt werden.",
+  "beispielTr": "Aidat aylık ya da üç ayda bir ödenebilir.",
+  "beispielEn": "The contribution can be paid monthly or quarterly."
+ },
+ {
+  "id": 4504,
+  "tr": "faizsiz",
+  "en": "interest-free",
+  "beispiel": "Der Betrieb gewährte ihr ein zinsloses Darlehen über zwei Jahre.",
+  "beispielTr": "İşletme ona iki yıllığına faizsiz bir kredi verdi.",
+  "beispielEn": "The company granted her an interest-free loan for two years."
+ },
+ {
+  "id": 4505,
+  "tr": "karşılıksız",
+  "en": "uncovered",
+  "beispiel": "Ein ungedeckter Scheck kann teure Folgen für den Aussteller haben.",
+  "beispielTr": "Karşılıksız bir çekin, düzenleyeni için pahalı sonuçları olabilir.",
+  "beispielEn": "A bad check can have expensive consequences for the issuer."
+ },
+ {
+  "id": 4506,
+  "tr": "masraflı",
+  "en": "costly",
+  "beispiel": "Der Rechtsstreit erwies sich als überraschend kostspielig.",
+  "beispielTr": "Dava beklenmedik ölçüde masraflı çıktı.",
+  "beispielEn": "The lawsuit turned out to be surprisingly costly."
+ },
+ {
+  "id": 4507,
+  "tr": "geri alınamaz",
+  "en": "irrevocable",
+  "beispiel": "Nach der Bestätigung ist die Zahlung unwiderruflich.",
+  "beispielTr": "Onaydan sonra ödeme geri alınamaz.",
+  "beispielEn": "Once confirmed, the payment is irrevocable."
+ },
+ {
+  "id": 4508,
+  "tr": "orantılı",
+  "en": "proportional",
+  "beispiel": "Die Heizkosten werden anteilig nach Wohnfläche auf alle umgelegt.",
+  "beispielTr": "Isıtma giderleri konut alanına göre orantılı olarak paylaştırılıyor.",
+  "beispielEn": "The heating costs are split proportionally according to floor space."
+ },
+ {
+  "id": 4509,
+  "tr": "nakitsiz",
+  "en": "cashless",
+  "beispiel": "In vielen Cafés kann man inzwischen nur noch bargeldlos zahlen.",
+  "beispielTr": "Birçok kafede artık yalnızca nakitsiz ödeme yapılabiliyor.",
+  "beispielEn": "These days many cafés only take cashless payment."
+ },
+ {
+  "id": 4510,
+  "tr": "vaktinden önce",
+  "en": "early",
+  "beispiel": "Wer den Kredit vorzeitig ablöst, muss eine Entschädigung zahlen.",
+  "beispielTr": "Krediyi vaktinden önce kapatanlar tazminat ödemek zorunda.",
+  "beispielEn": "Anyone who pays off the loan early must pay a penalty."
+ },
+ {
+  "id": 4511,
+  "tr": "güven duygusu",
+  "en": "sense of security",
+  "beispiel": "Kinder brauchen vor allem Geborgenheit in den ersten Lebensjahren.",
+  "beispielTr": "Çocuklar ilk yıllarda en çok güven duygusuna ihtiyaç duyar.",
+  "beispielEn": "Children need a sense of security most in their early years."
+ },
+ {
+  "id": 4512,
+  "tr": "ilgi",
+  "en": "care",
+  "beispiel": "Ohne die Fürsorge seiner Tochter könnte er nicht allein wohnen.",
+  "beispielTr": "Kızının ilgisi olmasa tek başına yaşayamazdı.",
+  "beispielEn": "Without his daughter's care he could not live alone."
+ },
+ {
+  "id": 4513,
+  "tr": "birliktelik",
+  "en": "partnership",
+  "beispiel": "Eine gleichberechtigte Partnerschaft setzt offene Gespräche voraus.",
+  "beispielTr": "Eşit bir birliktelik açık konuşmayı gerektirir.",
+  "beispielEn": "An equal partnership requires open conversations."
+ },
+ {
+  "id": 4514,
+  "tr": "yanlış anlaşılma",
+  "en": "misunderstanding",
+  "beispiel": "Der ganze Streit beruhte auf einem einfachen Missverständnis.",
+  "beispielTr": "Bütün kavga basit bir yanlış anlaşılmadan çıkmıştı.",
+  "beispielEn": "The whole argument came from a simple misunderstanding."
+ },
+ {
+  "id": 4515,
+  "tr": "takdir",
+  "en": "appreciation",
+  "beispiel": "Viele Pflegekräfte vermissen die Wertschätzung der Gesellschaft.",
+  "beispielTr": "Birçok bakım görevlisi toplumun takdirini göremiyor.",
+  "beispielEn": "Many care workers miss society's appreciation."
+ },
+ {
+  "id": 4516,
+  "tr": "özsaygı",
+  "en": "self-esteem",
+  "beispiel": "Ständige Kritik kann das Selbstwertgefühl eines Kindes zerstören.",
+  "beispielTr": "Sürekli eleştiri bir çocuğun özsaygısını yıkabilir.",
+  "beispielEn": "Constant criticism can destroy a child's self-esteem."
+ },
+ {
+  "id": 4517,
+  "tr": "kişilik",
+  "en": "personality",
+  "beispiel": "Die Persönlichkeit eines Menschen entwickelt sich ein Leben lang.",
+  "beispielTr": "İnsanın kişiliği ömür boyu gelişmeye devam eder.",
+  "beispielEn": "A person's personality keeps developing throughout life."
+ },
+ {
+  "id": 4518,
+  "tr": "davranış biçimi",
+  "en": "behavior pattern",
+  "beispiel": "Solche Verhaltensweisen lernen Kinder meistens von ihren Eltern.",
+  "beispielTr": "Çocuklar bu tür davranış biçimlerini çoğunlukla ailelerinden öğrenir.",
+  "beispielEn": "Children usually learn such behavior patterns from their parents."
+ },
+ {
+  "id": 4519,
+  "tr": "eğilim",
+  "en": "inclination",
+  "beispiel": "Er hat eine Neigung dazu, Konflikte einfach zu ignorieren.",
+  "beispielTr": "Çatışmaları görmezden gelme eğilimi var.",
+  "beispielEn": "He has an inclination to simply ignore conflicts."
+ },
+ {
+  "id": 4520,
+  "tr": "yatkınlık",
+  "en": "predisposition",
+  "beispiel": "Eine erbliche Veranlagung erhöht das Risiko für diese Krankheit.",
+  "beispielTr": "Kalıtsal bir yatkınlık bu hastalık riskini artırıyor.",
+  "beispielEn": "A hereditary predisposition raises the risk of this disease."
+ },
+ {
+  "id": 4521,
+  "tr": "sabırsızlık",
+  "en": "impatience",
+  "beispiel": "Seine Ungeduld gegenüber den Kindern bereut er inzwischen.",
+  "beispielTr": "Çocuklara karşı sabırsızlığından artık pişman.",
+  "beispielEn": "He now regrets his impatience with the children."
+ },
+ {
+  "id": 4522,
+  "tr": "öfke",
+  "en": "anger",
+  "beispiel": "Sie ließ ihren Zorn an den falschen Menschen aus.",
+  "beispielTr": "Öfkesini yanlış insanlardan çıkardı.",
+  "beispielEn": "She took her anger out on the wrong people."
+ },
+ {
+  "id": 4523,
+  "tr": "suçluluk duygusu",
+  "en": "feeling of guilt",
+  "beispiel": "Nach der Trennung plagten sie starke Schuldgefühle.",
+  "beispielTr": "Ayrılıktan sonra güçlü suçluluk duyguları onu rahat bırakmadı.",
+  "beispielEn": "After the breakup strong feelings of guilt tormented her."
+ },
+ {
+  "id": 4524,
+  "tr": "acıma",
+  "en": "pity",
+  "beispiel": "Er will Unterstützung, aber kein Mitleid von seinen Freunden.",
+  "beispielTr": "Arkadaşlarından destek istiyor ama acınmak istemiyor.",
+  "beispielEn": "He wants support from his friends but not pity."
+ },
+ {
+  "id": 4525,
+  "tr": "dışlama",
+  "en": "exclusion",
+  "beispiel": "Viele Jugendliche erleben Ausgrenzung schon in der Schule.",
+  "beispielTr": "Birçok genç dışlanmayı daha okulda yaşıyor.",
+  "beispielEn": "Many young people experience exclusion already at school."
+ },
+ {
+  "id": 4526,
+  "tr": "aidiyet",
+  "en": "belonging",
+  "beispiel": "Im Verein spürte sie zum ersten Mal echte Zugehörigkeit.",
+  "beispielTr": "Dernekte ilk kez gerçek bir aidiyet hissetti.",
+  "beispielEn": "At the club she felt real belonging for the first time."
+ },
+ {
+  "id": 4527,
+  "tr": "yardımseverlik",
+  "en": "willingness to help",
+  "beispiel": "Nach dem Hochwasser war die Hilfsbereitschaft in der Region enorm.",
+  "beispielTr": "Selden sonra bölgedeki yardımseverlik muazzamdı.",
+  "beispielEn": "After the flood the willingness to help in the region was enormous."
+ },
+ {
+  "id": 4528,
+  "tr": "insan sevgisi",
+  "en": "charity",
+  "beispiel": "Der Verein lebt von Nächstenliebe und ehrenamtlichem Einsatz.",
+  "beispielTr": "Dernek insan sevgisi ve gönüllü emekle ayakta duruyor.",
+  "beispielEn": "The association lives on charity and volunteer work."
+ },
+ {
+  "id": 4529,
+  "tr": "bakımevi",
+  "en": "nursing home",
+  "beispiel": "Die Familie konnte sich nicht auf ein Pflegeheim einigen.",
+  "beispielTr": "Aile bir bakımevi konusunda anlaşamadı.",
+  "beispielEn": "The family could not agree on a nursing home."
+ },
+ {
+  "id": 4530,
+  "tr": "yalnızlık",
+  "en": "loneliness",
+  "beispiel": "Einsamkeit im Alter gilt inzwischen als ernstes gesundheitliches Risiko.",
+  "beispielTr": "Yaşlılıkta yalnızlık artık ciddi bir sağlık riski sayılıyor.",
+  "beispielEn": "Loneliness in old age now counts as a serious health risk."
+ },
+ {
+  "id": 4531,
+  "tr": "doğum oranı",
+  "en": "birth rate",
+  "beispiel": "Die Geburtenrate ist im vergangenen Jahrzehnt deutlich gesunken.",
+  "beispielTr": "Doğum oranı son on yılda belirgin biçimde düştü.",
+  "beispielEn": "The birth rate has fallen sharply over the past decade."
+ },
+ {
+  "id": 4532,
+  "tr": "çocuk bakımı",
+  "en": "childcare",
+  "beispiel": "Ohne bezahlbare Kinderbetreuung können viele Mütter nicht arbeiten.",
+  "beispielTr": "Uygun fiyatlı çocuk bakımı olmadan birçok anne çalışamıyor.",
+  "beispielEn": "Without affordable childcare many mothers cannot work."
+ },
+ {
+  "id": 4533,
+  "tr": "çocuk yetiştirme tarzı",
+  "en": "parenting style",
+  "beispiel": "Die Eltern streiten oft über den richtigen Erziehungsstil.",
+  "beispielTr": "Anne baba doğru çocuk yetiştirme tarzı konusunda sık sık tartışıyor.",
+  "beispielEn": "The parents often argue about the right parenting style."
+ },
+ {
+  "id": 4534,
+  "tr": "otorite",
+  "en": "authority",
+  "beispiel": "Er hat als Vater längst jede Autorität verloren.",
+  "beispielTr": "Baba olarak otoritesini çoktan kaybetti.",
+  "beispielEn": "As a father he lost all authority long ago."
+ },
+ {
+  "id": 4535,
+  "tr": "itaat",
+  "en": "obedience",
+  "beispiel": "Früher galt blinder Gehorsam als wichtigste Tugend eines Kindes.",
+  "beispielTr": "Eskiden körü körüne itaat bir çocuğun en önemli erdemi sayılırdı.",
+  "beispielEn": "Blind obedience used to count as a child's most important virtue."
+ },
+ {
+  "id": 4536,
+  "tr": "ergenlik",
+  "en": "puberty",
+  "beispiel": "In der Pubertät ziehen sich viele Jugendliche von den Eltern zurück.",
+  "beispielTr": "Ergenlikte birçok genç anne babasından uzaklaşır.",
+  "beispielEn": "In puberty many teenagers withdraw from their parents."
+ },
+ {
+  "id": 4537,
+  "tr": "velayet",
+  "en": "custody",
+  "beispiel": "Nach der Scheidung stritten beide Eltern um das Sorgerecht.",
+  "beispielTr": "Boşanmadan sonra anne baba velayet için mücadele etti.",
+  "beispielEn": "After the divorce both parents fought over custody."
+ },
+ {
+  "id": 4538,
+  "tr": "nafaka",
+  "en": "child support",
+  "beispiel": "Der Vater zahlt monatlich Unterhalt für seine beiden Kinder.",
+  "beispielTr": "Baba iki çocuğu için her ay nafaka ödüyor.",
+  "beispielEn": "The father pays monthly child support for his two children."
+ },
+ {
+  "id": 4539,
+  "tr": "rol dağılımı",
+  "en": "division of roles",
+  "beispiel": "Die traditionelle Rollenverteilung im Haushalt hat sich kaum verändert.",
+  "beispielTr": "Evdeki geleneksel rol dağılımı neredeyse hiç değişmedi.",
+  "beispielEn": "The traditional division of roles at home has hardly changed."
+ },
+ {
+  "id": 4540,
+  "tr": "hak eşitliği",
+  "en": "equal rights",
+  "beispiel": "Von echter Gleichberechtigung sind wir beim Gehalt noch weit entfernt.",
+  "beispielTr": "Maaş konusunda gerçek hak eşitliğinden hâlâ çok uzağız.",
+  "beispielEn": "When it comes to pay we are still far from equal rights."
+ },
+ {
+  "id": 4541,
+  "tr": "özgürleşme",
+  "en": "emancipation",
+  "beispiel": "Die Emanzipation der Frauen veränderte die Familienstrukturen grundlegend.",
+  "beispielTr": "Kadınların özgürleşmesi aile yapılarını kökten değiştirdi.",
+  "beispielEn": "The emancipation of women fundamentally changed family structures."
+ },
+ {
+  "id": 4542,
+  "tr": "altından kalkamama",
+  "en": "being overwhelmed",
+  "beispiel": "Viele junge Eltern klagen über ständige Überforderung im Alltag.",
+  "beispielTr": "Birçok genç ebeveyn gündelik hayatın altından kalkamamaktan yakınıyor.",
+  "beispielEn": "Many young parents complain about feeling constantly overwhelmed."
+ }
+]

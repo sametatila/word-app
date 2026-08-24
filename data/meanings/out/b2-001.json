@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3372,
+    "tr": "soğukkanlı",
+    "en": "composed",
+    "beispiel": "Er blieb gelassen, obwohl alle anderen in Panik gerieten.",
+    "beispielTr": "Herkes paniğe kapılmışken o soğukkanlı kaldı.",
+    "beispielEn": "He stayed composed while everyone else panicked."
+  },
+  {
+    "id": 3265,
+    "tr": "adalet",
+    "en": "justice",
+    "beispiel": "Die Opfer warten seit Jahren auf Gerechtigkeit.",
+    "beispielTr": "Mağdurlar yıllardır adalet bekliyor.",
+    "beispielEn": "The victims have been waiting years for justice."
+  },
+  {
+    "id": 3436,
+    "tr": "hücre",
+    "en": "cell",
+    "beispiel": "Unter dem Mikroskop teilte sich die Zelle langsam.",
+    "beispielTr": "Mikroskobun altında hücre yavaşça bölündü.",
+    "beispielEn": "Under the microscope the cell slowly divided."
+  },
+  {
+    "id": 3296,
+    "tr": "kaynak",
+    "en": "source",
+    "beispiel": "Der Journalist wollte seine Quelle nicht verraten.",
+    "beispielTr": "Gazeteci kaynağını açıklamak istemedi.",
+    "beispielEn": "The journalist would not reveal his source."
+  },
+  {
+    "id": 3345,
+    "tr": "öfke",
+    "en": "rage",
+    "beispiel": "Vor Wut warf er sein Handy gegen die Wand.",
+    "beispielTr": "Öfkeden telefonunu duvara fırlattı.",
+    "beispielEn": "In a rage he threw his phone against the wall."
+  },
+  {
+    "id": 3736,
+    "tr": "mesele",
+    "en": "matter",
+    "beispiel": "Das ist eine rein private Angelegenheit.",
+    "beispielTr": "Bu tamamen özel bir mesele.",
+    "beispielEn": "That is a purely private matter."
+  },
+  {
+    "id": 3238,
+    "tr": "müzakere etmek",
+    "en": "to negotiate",
+    "beispiel": "Die Gewerkschaft verhandelt seit Wochen über höhere Löhne.",
+    "beispielTr": "Sendika haftalardır daha yüksek ücretler için müzakere ediyor.",
+    "beispielEn": "The union has been negotiating higher wages for weeks."
+  },
+  {
+    "id": 3289,
+    "tr": "direniş",
+    "en": "resistance",
+    "beispiel": "Die Bewohner leisteten erbitterten Widerstand gegen das Projekt.",
+    "beispielTr": "Sakinler projeye karşı şiddetli bir direniş gösterdi.",
+    "beispielEn": "The residents put up fierce resistance to the project."
+  },
+  {
+    "id": 3378,
+    "tr": "cömert",
+    "en": "generous",
+    "beispiel": "Sie ist bekannt für ihr großzügiges Trinkgeld.",
+    "beispielTr": "Cömert bahşişleriyle tanınıyor.",
+    "beispielEn": "She is known for her generous tips."
+  },
+  {
+    "id": 3833,
+    "tr": "müzakere",
+    "en": "negotiation",
+    "beispiel": "Die Verhandlungen zwischen den beiden Firmen sind gescheitert.",
+    "beispielTr": "İki şirket arasındaki müzakereler başarısız oldu.",
+    "beispielEn": "The negotiations between the two companies collapsed."
+  },
+  {
+    "id": 3743,
+    "tr": "depozito",
+    "en": "deposit",
+    "beispiel": "Die Kaution bekommst du beim Auszug zurück.",
+    "beispielTr": "Depozitoyu taşınırken geri alacaksın.",
+    "beispielEn": "You will get the deposit back when you move out."
+  },
+  {
+    "id": 3460,
+    "tr": "komşuluk",
+    "en": "neighborhood",
+    "beispiel": "Eine gute Nachbarschaft ist mehr wert als Geld.",
+    "beispielTr": "İyi komşuluk paradan daha değerlidir.",
+    "beispielEn": "Good neighborly relations are worth more than money."
+  },
+  {
+    "id": 3285,
+    "tr": "anayasa",
+    "en": "constitution",
+    "beispiel": "Die Meinungsfreiheit ist in der Verfassung verankert.",
+    "beispielTr": "İfade özgürlüğü anayasada güvence altına alınmıştır.",
+    "beispielEn": "Freedom of expression is enshrined in the constitution."
+  },
+  {
+    "id": 3869,
+    "tr": "hakim olmak",
+    "en": "to master",
+    "beispiel": "Sie beherrscht drei Fremdsprachen fließend.",
+    "beispielTr": "Üç yabancı dile akıcı biçimde hakim.",
+    "beispielEn": "She has a fluent command of three foreign languages."
+  },
+  {
+    "id": 3351,
+    "tr": "şefkat",
+    "en": "compassion",
+    "beispiel": "Der Arzt zeigte viel Mitgefühl für die Angehörigen.",
+    "beispielTr": "Doktor, hasta yakınlarına büyük şefkat gösterdi.",
+    "beispielEn": "The doctor showed great compassion for the relatives."
+  },
+  {
+    "id": 3399,
+    "tr": "hissetmek",
+    "en": "to feel",
+    "beispiel": "Nach dem Streit empfand sie nur noch Gleichgültigkeit.",
+    "beispielTr": "Kavgadan sonra artık yalnızca ilgisizlik hissediyordu.",
+    "beispielEn": "After the argument she felt nothing but indifference."
+  },
+  {
+    "id": 3305,
+    "tr": "skandal",
+    "en": "scandal",
+    "beispiel": "Der Skandal um die Spenden erschütterte die Partei.",
+    "beispielTr": "Bağışlarla ilgili skandal partiyi sarstı.",
+    "beispielEn": "The scandal over the donations shook the party."
+  },
+  {
+    "id": 3342,
+    "tr": "yara izi",
+    "en": "scar",
+    "beispiel": "Die Narbe an seiner Stirn ist kaum noch sichtbar.",
+    "beispielTr": "Alnındaki yara izi artık neredeyse görünmüyor.",
+    "beispielEn": "The scar on his forehead is barely visible now."
+  },
+  {
+    "id": 3194,
+    "tr": "yönetim kurulu",
+    "en": "board",
+    "beispiel": "Der Vorstand entscheidet morgen über die neue Strategie.",
+    "beispielTr": "Yönetim kurulu yarın yeni strateji hakkında karar verecek.",
+    "beispielEn": "The board decides on the new strategy tomorrow."
+  },
+  {
+    "id": 3865,
+    "tr": "resmî izin",
+    "en": "permit",
+    "beispiel": "Ohne Genehmigung darf hier nicht gebaut werden.",
+    "beispielTr": "Resmî izin olmadan burada inşaat yapılamaz.",
+    "beispielEn": "Without a permit nothing may be built here."
+  },
+  {
+    "id": 3819,
+    "tr": "makul",
+    "en": "reasonable",
+    "beispiel": "Der Preis für die Wohnung scheint mir angemessen.",
+    "beispielTr": "Daire için istenen fiyat bana makul geliyor.",
+    "beispielEn": "The price for the apartment seems reasonable to me."
+  },
+  {
+    "id": 3346,
+    "tr": "kıskançlık",
+    "en": "jealousy",
+    "beispiel": "Seine Eifersucht hat die Beziehung am Ende zerstört.",
+    "beispielTr": "Kıskançlığı sonunda ilişkiyi mahvetti.",
+    "beispielEn": "His jealousy destroyed the relationship in the end."
+  },
+  {
+    "id": 3335,
+    "tr": "teşhis",
+    "en": "diagnosis",
+    "beispiel": "Die Diagnose stand erst nach vielen Tests fest.",
+    "beispielTr": "Teşhis ancak birçok testten sonra kesinleşti.",
+    "beispielEn": "The diagnosis was certain only after many tests."
+  },
+  {
+    "id": 3350,
+    "tr": "sevgi",
+    "en": "affection",
+    "beispiel": "Seine Zuneigung zu ihr wuchs mit jedem Tag.",
+    "beispielTr": "Ona duyduğu sevgi her geçen gün büyüdü.",
+    "beispielEn": "His affection for her grew with every day."
+  },
+  {
+    "id": 3218,
+    "tr": "konum",
+    "en": "location",
+    "beispiel": "Der neue Standort liegt direkt an der Autobahn.",
+    "beispielTr": "Yeni konum otoyolun hemen yanında.",
+    "beispielEn": "The new location is right next to the highway."
+  },
+  {
+    "id": 3808,
+    "tr": "aşmak",
+    "en": "to overcome",
+    "beispiel": "Sie hat ihre Angst vor dem Fliegen überwunden.",
+    "beispielTr": "Uçak korkusunu aştı.",
+    "beispielEn": "She has overcome her fear of flying."
+  },
+  {
+    "id": 3751,
+    "tr": "tatlı",
+    "en": "dessert",
+    "beispiel": "Zum Nachtisch gibt es heute Schokoladenkuchen.",
+    "beispielTr": "Bugün tatlı olarak çikolatalı kek var.",
+    "beispielEn": "For dessert today there is chocolate cake."
+  },
+  {
+    "id": 3348,
+    "tr": "çaresizlik",
+    "en": "despair",
+    "beispiel": "Aus Verzweiflung rief sie mitten in der Nacht an.",
+    "beispielTr": "Çaresizlikten gecenin bir yarısı telefon etti.",
+    "beispielEn": "Out of despair she called in the middle of the night."
+  },
+  {
+    "id": 3756,
+    "tr": "servis etmek",
+    "en": "to serve",
+    "beispiel": "Das Frühstück wird ab sieben Uhr serviert.",
+    "beispielTr": "Kahvaltı saat yediden itibaren servis ediliyor.",
+    "beispielEn": "Breakfast is served from seven o'clock."
+  },
+  {
+    "id": 3299,
+    "tr": "manipüle etmek",
+    "en": "to manipulate",
+    "beispiel": "Fotos lassen sich heute leicht manipulieren.",
+    "beispielTr": "Fotoğraflar bugün kolayca manipüle edilebiliyor.",
+    "beispielEn": "Photos can easily be manipulated these days."
+  },
+  {
+    "id": 3347,
+    "tr": "özlem",
+    "en": "longing",
+    "beispiel": "Die Sehnsucht nach der Heimat wurde immer größer.",
+    "beispielTr": "Memleket özlemi giderek büyüdü.",
+    "beispielEn": "The longing for home kept growing."
+  },
+  {
+    "id": 3775,
+    "tr": "istifa etmek",
+    "en": "to resign",
+    "beispiel": "Der Trainer ist nach der Niederlage zurückgetreten.",
+    "beispielTr": "Antrenör, yenilginin ardından istifa etti.",
+    "beispielEn": "The coach resigned after the defeat."
+  },
+  {
+    "id": 3355,
+    "tr": "pişmanlık",
+    "en": "remorse",
+    "beispiel": "Er zeigte vor Gericht keine Reue.",
+    "beispielTr": "Mahkemede hiç pişmanlık göstermedi.",
+    "beispielEn": "He showed no remorse in court."
+  },
+  {
+    "id": 3394,
+    "tr": "davranış",
+    "en": "conduct",
+    "beispiel": "Sein freundlicher Umgang mit Kunden fällt allen auf.",
+    "beispielTr": "Müşterilere karşı nazik davranışı herkesin dikkatini çekiyor.",
+    "beispielEn": "His friendly conduct toward customers stands out to everyone."
+  },
+  {
+    "id": 3240,
+    "tr": "yatırım yapmak",
+    "en": "to invest",
+    "beispiel": "Die Firma investiert kräftig in neue Technologien.",
+    "beispielTr": "Şirket yeni teknolojilere büyük yatırım yapıyor.",
+    "beispielEn": "The company is investing heavily in new technologies."
+  },
+  {
+    "id": 3778,
+    "tr": "aydınlatmak",
+    "en": "to clear up",
+    "beispiel": "Die Polizei konnte den Fall bis heute nicht aufklären.",
+    "beispielTr": "Polis olayı bugüne kadar aydınlatamadı.",
+    "beispielEn": "The police have not cleared up the case yet."
+  },
+  {
+    "id": 3391,
+    "tr": "itici güç",
+    "en": "drive",
+    "beispiel": "Ihm fehlte der innere Antrieb, weiterzumachen.",
+    "beispielTr": "Devam etmek için içindeki itici güç eksikti.",
+    "beispielEn": "He lacked the inner drive to keep going."
+  },
+  {
+    "id": 3286,
+    "tr": "tartışma",
+    "en": "debate",
+    "beispiel": "Im Parlament entbrannte eine hitzige Debatte.",
+    "beispielTr": "Mecliste ateşli bir tartışma başladı.",
+    "beispielEn": "A heated debate broke out in parliament."
+  },
+  {
+    "id": 3755,
+    "tr": "yöresel yemek",
+    "en": "specialty",
+    "beispiel": "Diese Spezialität solltest du unbedingt probieren.",
+    "beispielTr": "Bu yöresel yemeği mutlaka denemelisin.",
+    "beispielEn": "You should definitely try this local specialty."
+  },
+  {
+    "id": 3415,
+    "tr": "israf",
+    "en": "waste",
+    "beispiel": "Diese Verschwendung von Lebensmitteln macht mich wütend.",
+    "beispielTr": "Bu gıda israfı beni çok kızdırıyor.",
+    "beispielEn": "This waste of food makes me really angry."
+  },
+  {
+    "id": 3334,
+    "tr": "şikâyet",
+    "en": "complaint",
+    "beispiel": "Der Kunde reichte eine schriftliche Beschwerde ein.",
+    "beispielTr": "Müşteri yazılı bir şikâyette bulundu.",
+    "beispielEn": "The customer filed a written complaint."
+  },
+  {
+    "id": 3392,
+    "tr": "travma",
+    "en": "trauma",
+    "beispiel": "Das Trauma aus der Kindheit belastet ihn bis heute.",
+    "beispielTr": "Çocukluk travması onu bugün bile etkiliyor.",
+    "beispielEn": "The trauma from his childhood still weighs on him."
+  },
+  {
+    "id": 3349,
+    "tr": "rahatlama",
+    "en": "relief",
+    "beispiel": "Nach der guten Nachricht spürte sie große Erleichterung.",
+    "beispielTr": "İyi haberden sonra büyük bir rahatlama hissetti.",
+    "beispielEn": "After the good news she felt great relief."
+  },
+  {
+    "id": 3361,
+    "tr": "hırs",
+    "en": "ambition",
+    "beispiel": "Ihr Ehrgeiz hat sie ganz nach oben gebracht.",
+    "beispielTr": "Hırsı onu en tepeye kadar taşıdı.",
+    "beispielEn": "Her ambition took her all the way to the top."
+  },
+  {
+    "id": 3226,
+    "tr": "yatırım",
+    "en": "investment",
+    "beispiel": "Die Investition in neue Maschinen hat sich gelohnt.",
+    "beispielTr": "Yeni makinelere yapılan yatırım işe yaradı.",
+    "beispielEn": "The investment in new machines has paid off."
+  },
+  {
+    "id": 3293,
+    "tr": "yolsuzluk",
+    "en": "corruption",
+    "beispiel": "Korruption zerstört das Vertrauen in den Staat.",
+    "beispielTr": "Yolsuzluk devlete duyulan güveni yok ediyor.",
+    "beispielEn": "Corruption destroys people's trust in the state."
+  },
+  {
+    "id": 3431,
+    "tr": "tehdit etmek",
+    "en": "to threaten",
+    "beispiel": "Die Dürre bedroht die Existenz vieler Bauern.",
+    "beispielTr": "Kuraklık birçok çiftçinin geçimini tehdit ediyor.",
+    "beispielEn": "The drought threatens the livelihood of many farmers."
+  },
+  {
+    "id": 3353,
+    "tr": "mahcubiyet",
+    "en": "embarrassment",
+    "beispiel": "Vor Verlegenheit wusste er nicht, wohin er schauen sollte.",
+    "beispielTr": "Mahcubiyetten nereye bakacağını bilemedi.",
+    "beispielEn": "Out of embarrassment he did not know where to look."
+  },
+  {
+    "id": 3393,
+    "tr": "yük",
+    "en": "burden",
+    "beispiel": "Die ständige Belastung im Job machte ihn krank.",
+    "beispielTr": "İşteki sürekli yük onu hasta etti.",
+    "beispielEn": "The constant burden at work made him ill."
+  },
+  {
+    "id": 3379,
+    "tr": "bağ",
+    "en": "bond",
+    "beispiel": "Die Bindung zwischen den beiden Schwestern ist stark.",
+    "beispielTr": "İki kardeş arasındaki bağ çok güçlü.",
+    "beispielEn": "The bond between the two sisters is strong."
+  }
+]

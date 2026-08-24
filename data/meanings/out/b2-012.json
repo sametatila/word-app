@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4193,
+  "tr": "dalgalanma",
+  "en": "fluctuation",
+  "beispiel": "Starke Schwankungen der Preise erschweren die Planung.",
+  "beispielTr": "Fiyatlardaki büyük dalgalanmalar planlamayı zorlaştırıyor.",
+  "beispielEn": "Big price fluctuations make planning difficult."
+ },
+ {
+  "id": 4194,
+  "tr": "fazla",
+  "en": "surplus",
+  "beispiel": "Die Gemeinde schloss das Jahr mit einem kleinen Überschuss ab.",
+  "beispielTr": "Belediye yılı küçük bir fazlayla kapattı.",
+  "beispielEn": "The town closed the year with a small surplus."
+ },
+ {
+  "id": 4195,
+  "tr": "ölçüt",
+  "en": "criterion",
+  "beispiel": "Das wichtigste Kriterium bei der Auswahl war die Erfahrung.",
+  "beispielTr": "Seçimde en önemli ölçüt deneyimdi.",
+  "beispielEn": "The most important criterion in the selection was experience."
+ },
+ {
+  "id": 4196,
+  "tr": "eğilim",
+  "en": "trend",
+  "beispiel": "Die Zahlen zeigen eine klare Tendenz nach oben.",
+  "beispielTr": "Rakamlar yukarı yönlü net bir eğilim gösteriyor.",
+  "beispielEn": "The figures show a clear upward trend."
+ },
+ {
+  "id": 4197,
+  "tr": "oran",
+  "en": "rate",
+  "beispiel": "Die Quote der Ausbildungsabbrüche ist leicht gestiegen.",
+  "beispielTr": "Eğitimi yarıda bırakma oranı hafifçe yükseldi.",
+  "beispielEn": "The dropout rate in vocational training has risen slightly."
+ },
+ {
+  "id": 4198,
+  "tr": "aralık",
+  "en": "range",
+  "beispiel": "Die Preise liegen in einer Spanne von zehn bis zwanzig Euro.",
+  "beispielTr": "Fiyatlar on ile yirmi euro aralığında.",
+  "beispielEn": "The prices are in a range from ten to twenty euros."
+ },
+ {
+  "id": 4199,
+  "tr": "büyüklük mertebesi",
+  "en": "order of magnitude",
+  "beispiel": "Die Kosten bewegen sich in der Größenordnung von zwei Millionen.",
+  "beispielTr": "Maliyetler iki milyon mertebesinde seyrediyor.",
+  "beispielEn": "The costs are in the order of two million."
+ },
+ {
+  "id": 4200,
+  "tr": "uçurum",
+  "en": "gap",
+  "beispiel": "Zwischen Stadt und Land besteht ein deutliches Gefälle bei den Löhnen.",
+  "beispielTr": "Şehir ile kır arasında ücretlerde belirgin bir uçurum var.",
+  "beispielEn": "There is a clear gap in wages between city and countryside."
+ },
+ {
+  "id": 4201,
+  "tr": "üst sınır",
+  "en": "upper limit",
+  "beispiel": "Für die Beiträge gilt eine gesetzliche Obergrenze.",
+  "beispielTr": "Katkı payları için yasal bir üst sınır var.",
+  "beispielEn": "There is a legal upper limit for the contributions."
+ },
+ {
+  "id": 4202,
+  "tr": "kayıp",
+  "en": "loss",
+  "beispiel": "Der Sturm führte zu erheblichen Einbußen bei der Ernte.",
+  "beispielTr": "Fırtına hasatta ciddi kayıplara yol açtı.",
+  "beispielEn": "The storm caused serious losses to the harvest."
+ },
+ {
+  "id": 4203,
+  "tr": "yelpaze",
+  "en": "spectrum",
+  "beispiel": "Die Bandbreite der Meinungen im Publikum war beachtlich.",
+  "beispielTr": "Dinleyicilerdeki görüş yelpazesi dikkat çekiciydi.",
+  "beispielEn": "The spectrum of opinions in the audience was remarkable."
+ },
+ {
+  "id": 4204,
+  "tr": "eşik",
+  "en": "threshold",
+  "beispiel": "Die Arbeitslosigkeit liegt knapp unter der kritischen Schwelle.",
+  "beispielTr": "İşsizlik kritik eşiğin hemen altında.",
+  "beispielEn": "Unemployment is just below the critical threshold."
+ },
+ {
+  "id": 4205,
+  "tr": "kurs",
+  "en": "training course",
+  "beispiel": "Der Lehrgang dauert sechs Wochen und endet mit einer Prüfung.",
+  "beispielTr": "Kurs altı hafta sürüyor ve bir sınavla bitiyor.",
+  "beispielEn": "The training course lasts six weeks and ends with an exam."
+ },
+ {
+  "id": 4206,
+  "tr": "meslek okulu",
+  "en": "vocational school",
+  "beispiel": "Zweimal pro Woche besucht sie die Berufsschule in Hamburg.",
+  "beispielTr": "Haftada iki kez Hamburg'daki meslek okuluna gidiyor.",
+  "beispielEn": "Twice a week she attends the vocational school in Hamburg."
+ },
+ {
+  "id": 4207,
+  "tr": "üniversitede yer",
+  "en": "university place",
+  "beispiel": "Er hat endlich einen Studienplatz für Medizin bekommen.",
+  "beispielTr": "Sonunda tıp bölümünde bir yer kazandı.",
+  "beispielEn": "He finally got a university place in medicine."
+ },
+ {
+  "id": 4208,
+  "tr": "fakülte",
+  "en": "faculty",
+  "beispiel": "Die juristische Fakultät zieht im Herbst in ein neues Gebäude.",
+  "beispielTr": "Hukuk fakültesi sonbaharda yeni bir binaya taşınıyor.",
+  "beispielEn": "The law faculty is moving into a new building in the fall."
+ },
+ {
+  "id": 4209,
+  "tr": "öğrenim ücreti",
+  "en": "tuition fee",
+  "beispiel": "In vielen Bundesländern zahlen Studierende keine Studiengebühren mehr.",
+  "beispielTr": "Birçok eyalette öğrenciler artık öğrenim ücreti ödemiyor.",
+  "beispielEn": "In many states students no longer pay tuition fees."
+ },
+ {
+  "id": 4210,
+  "tr": "eğitim yolu",
+  "en": "educational path",
+  "beispiel": "Der zweite Bildungsweg steht auch Berufstätigen offen.",
+  "beispielTr": "İkinci eğitim yolu çalışanlara da açık.",
+  "beispielEn": "The second educational path is also open to working people."
+ },
+ {
+  "id": 4211,
+  "tr": "okul diploması",
+  "en": "school diploma",
+  "beispiel": "Ohne Schulabschluss ist die Suche nach einer Lehrstelle schwierig.",
+  "beispielTr": "Okul diploması olmadan çıraklık yeri aramak zordur.",
+  "beispielEn": "Without a school diploma it is hard to find an apprenticeship."
+ },
+ {
+  "id": 4212,
+  "tr": "uzmanlık alanı",
+  "en": "field of study",
+  "beispiel": "Nach zwei Semestern wechselte er die Fachrichtung.",
+  "beispielTr": "İki dönem sonra uzmanlık alanını değiştirdi.",
+  "beispielEn": "After two semesters he changed his field of study."
+ },
+ {
+  "id": 4213,
+  "tr": "beceri",
+  "en": "skill",
+  "beispiel": "Im Praktikum erwerben die Auszubildenden praktische Fertigkeiten.",
+  "beispielTr": "Stajda çıraklar pratik beceriler ediniyor.",
+  "beispielEn": "During the internship the trainees acquire practical skills."
+ },
+ {
+  "id": 4214,
+  "tr": "üniversiteye giriş yeterliliği",
+  "en": "university entrance qualification",
+  "beispiel": "Ohne Hochschulreife wird er an keiner Uni angenommen.",
+  "beispielTr": "Üniversiteye giriş yeterliliği olmadan onu hiçbir üniversite kabul etmez.",
+  "beispielEn": "Without a university entrance qualification no university will take him."
+ },
+ {
+  "id": 4215,
+  "tr": "uygulama bağı",
+  "en": "practical relevance",
+  "beispiel": "Vielen Studiengängen fehlt es an echtem Praxisbezug.",
+  "beispielTr": "Birçok bölümde gerçek bir uygulama bağı yok.",
+  "beispielEn": "Many degree programs lack real practical relevance."
+ },
+ {
+  "id": 4216,
+  "tr": "öğretmen",
+  "en": "teacher",
+  "beispiel": "An der Schule fehlen seit Monaten ausgebildete Lehrkräfte.",
+  "beispielTr": "Okulda aylardır eğitimli öğretmen eksiği var.",
+  "beispielEn": "The school has been short of trained teachers for months."
+ },
+ {
+  "id": 4217,
+  "tr": "kavrayış",
+  "en": "comprehension",
+  "beispiel": "Sie hat eine schnelle Auffassungsgabe und lernt mühelos.",
+  "beispielTr": "Kavrayışı hızlıdır ve zorlanmadan öğrenir.",
+  "beispielEn": "She catches on quickly and learns effortlessly."
+ },
+ {
+  "id": 4218,
+  "tr": "öğrenme yöntemi",
+  "en": "learning method",
+  "beispiel": "Welche Lernmethode passt, muss jeder selbst herausfinden.",
+  "beispielTr": "Hangi öğrenme yönteminin uyduğunu herkes kendi bulmalı.",
+  "beispielEn": "Everyone has to find out for themselves which learning method fits."
+ },
+ {
+  "id": 4219,
+  "tr": "ana hatlar",
+  "en": "outline",
+  "beispiel": "Der Professor bemängelte die unklare Gliederung der Arbeit.",
+  "beispielTr": "Profesör çalışmanın ana hatlarını belirsiz buldu.",
+  "beispielEn": "The professor criticized the unclear outline of the paper."
+ },
+ {
+  "id": 4220,
+  "tr": "kaynak gösterimi",
+  "en": "source citation",
+  "beispiel": "Ohne korrekte Quellenangaben wird die Arbeit nicht bewertet.",
+  "beispielTr": "Doğru kaynak gösterimi olmadan çalışma değerlendirilmez.",
+  "beispielEn": "Without correct source citations the paper is not graded."
+ },
+ {
+  "id": 4221,
+  "tr": "intihal",
+  "en": "plagiarism",
+  "beispiel": "Die Universität entzog ihm wegen eines Plagiats den Titel.",
+  "beispielTr": "Üniversite intihal nedeniyle unvanını geri aldı.",
+  "beispielEn": "The university stripped him of his title for plagiarism."
+ },
+ {
+  "id": 4222,
+  "tr": "kayıt süresi",
+  "en": "registration deadline",
+  "beispiel": "Die Anmeldefrist für das Wintersemester läuft am Freitag ab.",
+  "beispielTr": "Kış dönemi kayıt süresi cuma günü doluyor.",
+  "beispielEn": "The registration deadline for the winter semester expires on Friday."
+ },
+ {
+  "id": 4223,
+  "tr": "doktora öğrencisi",
+  "en": "doctoral student",
+  "beispiel": "Der Doktorand stellte seine Ergebnisse im Kolloquium vor.",
+  "beispielTr": "Doktora öğrencisi sonuçlarını kolokyumda sundu.",
+  "beispielEn": "The doctoral student presented his results at the colloquium."
+ },
+ {
+  "id": 4224,
+  "tr": "kontenjan sınırlaması",
+  "en": "admission restriction",
+  "beispiel": "Für Psychologie gilt an fast allen Universitäten eine Zulassungsbeschränkung.",
+  "beispielTr": "Psikoloji için neredeyse tüm üniversitelerde kontenjan sınırlaması var.",
+  "beispielEn": "Almost all universities have an admission restriction for psychology."
+ },
+ {
+  "id": 4225,
+  "tr": "not ortalaması",
+  "en": "average grade",
+  "beispiel": "Seine Durchschnittsnote reichte für den gewünschten Studiengang nicht.",
+  "beispielTr": "Not ortalaması istediği bölüm için yetmedi.",
+  "beispielEn": "His average grade was not enough for the program he wanted."
+ },
+ {
+  "id": 4226,
+  "tr": "zorunlu eğitim",
+  "en": "compulsory education",
+  "beispiel": "In Deutschland besteht die Schulpflicht bis zum sechzehnten Lebensjahr.",
+  "beispielTr": "Almanya'da zorunlu eğitim on altı yaşına kadar sürer.",
+  "beispielEn": "In Germany compulsory education lasts until the age of sixteen."
+ },
+ {
+  "id": 4227,
+  "tr": "çıraklık sözleşmesi",
+  "en": "apprenticeship contract",
+  "beispiel": "Der Betrieb schloss mit ihr einen dreijährigen Lehrvertrag.",
+  "beispielTr": "İşletme onunla üç yıllık bir çıraklık sözleşmesi imzaladı.",
+  "beispielEn": "The company signed a three-year apprenticeship contract with her."
+ },
+ {
+  "id": 4228,
+  "tr": "çıraklık yeri",
+  "en": "apprenticeship position",
+  "beispiel": "In der Region bleiben viele Ausbildungsplätze unbesetzt.",
+  "beispielTr": "Bölgede birçok çıraklık yeri boş kalıyor.",
+  "beispielEn": "In the region many apprenticeship positions remain unfilled."
+ },
+ {
+  "id": 4229,
+  "tr": "ustalık sınavı",
+  "en": "master craftsman exam",
+  "beispiel": "Nach der Meisterprüfung darf er selbst Lehrlinge ausbilden.",
+  "beispielTr": "Ustalık sınavından sonra kendi çıraklarını yetiştirebilir.",
+  "beispielEn": "After the master craftsman exam he may train apprentices himself."
+ },
+ {
+  "id": 4230,
+  "tr": "meslek değiştirme eğitimi",
+  "en": "retraining",
+  "beispiel": "Das Arbeitsamt finanziert ihm eine Umschulung zum Pfleger.",
+  "beispielTr": "İş kurumu ona bakıcılık için meslek değiştirme eğitimini finanse ediyor.",
+  "beispielEn": "The employment office is funding his retraining as a caregiver."
+ },
+ {
+  "id": 4231,
+  "tr": "bilgi eksiği",
+  "en": "knowledge gap",
+  "beispiel": "Der Test deckte erhebliche Wissenslücken in Mathematik auf.",
+  "beispielTr": "Test matematikte ciddi bilgi eksikleri ortaya çıkardı.",
+  "beispielEn": "The test revealed serious knowledge gaps in math."
+ },
+ {
+  "id": 4232,
+  "tr": "eğitim izni",
+  "en": "educational leave",
+  "beispiel": "Sie nahm eine Woche Bildungsurlaub für einen Sprachkurs.",
+  "beispielTr": "Bir dil kursu için bir hafta eğitim izni aldı.",
+  "beispielEn": "She took a week of educational leave for a language course."
+ },
+ {
+  "id": 4233,
+  "tr": "akşam okulu",
+  "en": "night school",
+  "beispiel": "Er besucht die Abendschule, um seinen Realschulabschluss zu machen.",
+  "beispielTr": "Ortaokul diplomasını almak için akşam okuluna gidiyor.",
+  "beispielEn": "He goes to night school to get his secondary school diploma."
+ },
+ {
+  "id": 4234,
+  "tr": "uzaktan eğitim",
+  "en": "distance learning",
+  "beispiel": "Neben dem Job macht sie ein Fernstudium in Informatik.",
+  "beispielTr": "İşinin yanı sıra bilişim alanında uzaktan eğitim görüyor.",
+  "beispielEn": "Besides her job she studies computer science by distance learning."
+ },
+ {
+  "id": 4235,
+  "tr": "halk eğitim merkezi",
+  "en": "adult education center",
+  "beispiel": "Die Volkshochschule bietet im Herbst neue Sprachkurse an.",
+  "beispielTr": "Halk eğitim merkezi sonbaharda yeni dil kursları açıyor.",
+  "beispielEn": "The adult education center is offering new language courses in the fall."
+ },
+ {
+  "id": 4236,
+  "tr": "devamsızlık",
+  "en": "absence",
+  "beispiel": "Wegen zu vieler Fehlzeiten wurde er nicht zugelassen.",
+  "beispielTr": "Aşırı devamsızlık yüzünden sınava alınmadı.",
+  "beispielEn": "He was not admitted to the exam because of too many absences."
+ },
+ {
+  "id": 4237,
+  "tr": "sınıf geçme",
+  "en": "grade promotion",
+  "beispiel": "Seine Versetzung in die nächste Klasse ist gefährdet.",
+  "beispielTr": "Bir üst sınıfa geçmesi tehlikede.",
+  "beispielEn": "His promotion to the next grade is at risk."
+ },
+ {
+  "id": 4238,
+  "tr": "yetişkin eğitimi",
+  "en": "adult education",
+  "beispiel": "Sie unterrichtet seit zehn Jahren in der Erwachsenenbildung.",
+  "beispielTr": "On yıldır yetişkin eğitiminde ders veriyor.",
+  "beispielEn": "She has been teaching in adult education for ten years."
+ },
+ {
+  "id": 4239,
+  "tr": "ders notu",
+  "en": "lecture notes",
+  "beispiel": "Er lieh sich die Mitschriften der letzten Vorlesung aus.",
+  "beispielTr": "Son dersin notlarını ödünç aldı.",
+  "beispielEn": "He borrowed the lecture notes from the last class."
+ },
+ {
+  "id": 4240,
+  "tr": "yetenek",
+  "en": "gift",
+  "beispiel": "Ihre musikalische Begabung zeigte sich schon im Kindergarten.",
+  "beispielTr": "Müzik yeteneği daha anaokulunda belli oldu.",
+  "beispielEn": "Her musical gift was obvious already in kindergarten."
+ },
+ {
+  "id": 4241,
+  "tr": "diploma",
+  "en": "graduation certificate",
+  "beispiel": "Das Abschlusszeugnis wird im Original bei der Bewerbung verlangt.",
+  "beispielTr": "Başvuruda diplomanın aslı isteniyor.",
+  "beispielEn": "The original graduation certificate is required with the application."
+ },
+ {
+  "id": 4242,
+  "tr": "odak",
+  "en": "focus",
+  "beispiel": "Der Schwerpunkt seiner Arbeit liegt auf erneuerbaren Energien.",
+  "beispielTr": "Çalışmasının odağında yenilenebilir enerjiler var.",
+  "beispielEn": "The focus of his work is on renewable energy."
+ }
+]

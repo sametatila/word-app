@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3757,
+    "tr": "başlangıç yemeği",
+    "en": "appetizer",
+    "beispiel": "Als Vorspeise nehme ich heute einen Salat.",
+    "beispielTr": "Bugün başlangıç olarak salata alacağım.",
+    "beispielEn": "As an appetizer I'll have a salad today."
+  },
+  {
+    "id": 3422,
+    "tr": "yok oluş",
+    "en": "extinction",
+    "beispiel": "Der Klimawandel beschleunigt das Aussterben vieler Arten.",
+    "beispielTr": "İklim değişikliği birçok türün yok oluşunu hızlandırıyor.",
+    "beispielEn": "Climate change is accelerating the extinction of many species."
+  },
+  {
+    "id": 3867,
+    "tr": "ifade etmek",
+    "en": "to phrase",
+    "beispiel": "Sie hat ihre Kritik sehr diplomatisch formuliert.",
+    "beispielTr": "Eleştirisini çok diplomatik bir dille ifade etti.",
+    "beispielEn": "She phrased her criticism very diplomatically."
+  },
+  {
+    "id": 3272,
+    "tr": "değişim",
+    "en": "change",
+    "beispiel": "Der gesellschaftliche Wandel verläuft rasant.",
+    "beispielTr": "Toplumsal değişim baş döndürücü bir hızla ilerliyor.",
+    "beispielEn": "Social change is happening at a rapid pace."
+  },
+  {
+    "id": 3196,
+    "tr": "ciro",
+    "en": "revenue",
+    "beispiel": "Der Umsatz ist im letzten Quartal um zehn Prozent gestiegen.",
+    "beispielTr": "Ciro geçen çeyrekte yüzde on arttı.",
+    "beispielEn": "Revenue rose by ten percent last quarter."
+  },
+  {
+    "id": 3741,
+    "tr": "kira sözleşmesi",
+    "en": "lease",
+    "beispiel": "Wir haben gestern den Mietvertrag unterschrieben.",
+    "beispielTr": "Dün kira sözleşmesini imzaladık.",
+    "beispielEn": "We signed the lease yesterday."
+  },
+  {
+    "id": 3374,
+    "tr": "düşünceli",
+    "en": "considerate",
+    "beispiel": "Sein rücksichtsvolles Verhalten wurde von allen geschätzt.",
+    "beispielTr": "Düşünceli davranışı herkes tarafından takdir edildi.",
+    "beispielEn": "His considerate behavior was appreciated by everyone."
+  },
+  {
+    "id": 3369,
+    "tr": "çekingen",
+    "en": "reserved",
+    "beispiel": "Bei Fremden verhält er sich eher zurückhaltend.",
+    "beispielTr": "Yabancıların yanında biraz çekingen davranır.",
+    "beispielEn": "He acts rather reserved around strangers."
+  },
+  {
+    "id": 3433,
+    "tr": "hipotez",
+    "en": "hypothesis",
+    "beispiel": "Die Wissenschaftler wollen ihre Hypothese überprüfen.",
+    "beispielTr": "Bilim insanları hipotezlerini sınamak istiyor.",
+    "beispielEn": "The scientists want to test their hypothesis."
+  },
+  {
+    "id": 3283,
+    "tr": "milletvekili",
+    "en": "member of parliament",
+    "beispiel": "Der Abgeordnete stimmte gegen den Gesetzentwurf.",
+    "beispielTr": "Milletvekili kanun tasarısına karşı oy kullandı.",
+    "beispielEn": "The member of parliament voted against the bill."
+  },
+  {
+    "id": 3838,
+    "tr": "tercüman",
+    "en": "interpreter",
+    "beispiel": "Bei der Behörde half uns ein Dolmetscher.",
+    "beispielTr": "Resmi dairede bir tercüman bize yardım etti.",
+    "beispielEn": "An interpreter helped us at the government office."
+  },
+  {
+    "id": 3326,
+    "tr": "vatandaş",
+    "en": "citizen",
+    "beispiel": "Jeder Staatsbürger hat das Recht auf freie Meinungsäußerung.",
+    "beispielTr": "Her vatandaşın düşüncesini özgürce ifade etme hakkı vardır.",
+    "beispielEn": "Every citizen has the right to freedom of expression."
+  },
+  {
+    "id": 3389,
+    "tr": "özgüven",
+    "en": "self-confidence",
+    "beispiel": "Der Sport hat ihr Selbstbewusstsein deutlich gestärkt.",
+    "beispielTr": "Spor onun özgüvenini epeyce güçlendirdi.",
+    "beispielEn": "Sports have clearly strengthened her self-confidence."
+  },
+  {
+    "id": 3381,
+    "tr": "barışma",
+    "en": "reconciliation",
+    "beispiel": "Nach Jahren des Streits kam es endlich zur Versöhnung.",
+    "beispielTr": "Yıllar süren kavganın ardından sonunda barıştılar.",
+    "beispielEn": "After years of conflict they finally reconciled."
+  },
+  {
+    "id": 3328,
+    "tr": "bitkinlik",
+    "en": "exhaustion",
+    "beispiel": "Nach der Prüfungsphase litt sie unter starker Erschöpfung.",
+    "beispielTr": "Sınav döneminin ardından ağır bir bitkinlik yaşadı.",
+    "beispielEn": "After the exam period she suffered from severe exhaustion."
+  },
+  {
+    "id": 3212,
+    "tr": "yetki alanı",
+    "en": "responsibility",
+    "beispiel": "Die Zuständigkeiten der einzelnen Abteilungen sind klar geregelt.",
+    "beispielTr": "Her bölümün yetki alanları açıkça belirlenmiş.",
+    "beispielEn": "The responsibilities of the individual departments are clearly defined."
+  },
+  {
+    "id": 3810,
+    "tr": "değerlendirmek",
+    "en": "to assess",
+    "beispiel": "Experten schätzen die aktuelle Lage als kritisch ein.",
+    "beispielTr": "Uzmanlar mevcut durumu kritik olarak değerlendiriyor.",
+    "beispielEn": "Experts assess the current situation as critical."
+  },
+  {
+    "id": 3340,
+    "tr": "nüks",
+    "en": "relapse",
+    "beispiel": "Nach der Therapie hatte er leider einen Rückfall.",
+    "beispielTr": "Terapiden sonra maalesef bir nüks yaşadı.",
+    "beispielEn": "After the therapy he unfortunately had a relapse."
+  },
+  {
+    "id": 3830,
+    "tr": "ifade tarzı",
+    "en": "way of speaking",
+    "beispiel": "Seine Ausdrucksweise wirkt sehr gewählt und höflich.",
+    "beispielTr": "İfade tarzı çok seçkin ve kibar.",
+    "beispielEn": "His way of speaking seems very refined and polite."
+  },
+  {
+    "id": 3344,
+    "tr": "iyileşmek",
+    "en": "to recover",
+    "beispiel": "Der Patient ist vollständig genesen.",
+    "beispielTr": "Hasta tamamen iyileşti.",
+    "beispielEn": "The patient has fully recovered."
+  },
+  {
+    "id": 3359,
+    "tr": "çekingenlik",
+    "en": "reserve",
+    "beispiel": "Seine Zurückhaltung wirkte auf manche unnahbar.",
+    "beispielTr": "Çekingenliği bazılarına mesafeli göründü.",
+    "beispielEn": "His reserve struck some people as aloof."
+  },
+  {
+    "id": 3767,
+    "tr": "vakit geçirme",
+    "en": "pastime",
+    "beispiel": "Kartenspielen ist bei uns ein beliebter Zeitvertreib.",
+    "beispielTr": "Kâğıt oynamak bizde sevilen bir vakit geçirme yoludur.",
+    "beispielEn": "Playing cards is a popular pastime in our family."
+  },
+  {
+    "id": 3845,
+    "tr": "değerlendirme",
+    "en": "evaluation",
+    "beispiel": "Die Bewertung der Hausarbeit erfolgt nach festen Kriterien.",
+    "beispielTr": "Dönem ödevi sabit ölçütlere göre değerlendirilir.",
+    "beispielEn": "The term paper is evaluated according to fixed criteria."
+  },
+  {
+    "id": 3358,
+    "tr": "umutsuzluğa kapılmak",
+    "en": "to despair",
+    "beispiel": "Sie verzweifelte fast an der schwierigen Prüfung.",
+    "beispielTr": "Zor sınav yüzünden neredeyse umutsuzluğa kapılacaktı.",
+    "beispielEn": "She almost despaired over the difficult exam."
+  },
+  {
+    "id": 3452,
+    "tr": "aşırı kalabalık",
+    "en": "overcrowded",
+    "beispiel": "Die Bahn war zur Stoßzeit völlig überfüllt.",
+    "beispielTr": "Tren yoğun saatte tıklım tıklımdı.",
+    "beispielEn": "The train was completely overcrowded at rush hour."
+  },
+  {
+    "id": 3881,
+    "tr": "ayrıntılı",
+    "en": "detailed",
+    "beispiel": "Er hat mir alles ausführlich erklärt.",
+    "beispielTr": "Bana her şeyi ayrıntılı olarak anlattı.",
+    "beispielEn": "He explained everything to me in detail."
+  },
+  {
+    "id": 3428,
+    "tr": "gelişmek",
+    "en": "to thrive",
+    "beispiel": "In diesem Klima gedeihen die Pflanzen besonders gut.",
+    "beispielTr": "Bu iklimde bitkiler özellikle iyi gelişiyor.",
+    "beispielEn": "Plants thrive especially well in this climate."
+  },
+  {
+    "id": 3443,
+    "tr": "altyapı",
+    "en": "infrastructure",
+    "beispiel": "Die Stadt investiert in eine moderne Infrastruktur.",
+    "beispielTr": "Şehir modern bir altyapıya yatırım yapıyor.",
+    "beispielEn": "The city is investing in modern infrastructure."
+  },
+  {
+    "id": 3280,
+    "tr": "muhalefet",
+    "en": "opposition",
+    "beispiel": "Die Opposition kritisiert den Haushaltsplan scharf.",
+    "beispielTr": "Muhalefet bütçe planını sert biçimde eleştiriyor.",
+    "beispielEn": "The opposition sharply criticizes the budget plan."
+  },
+  {
+    "id": 3866,
+    "tr": "yanlış anlamak",
+    "en": "to misunderstand",
+    "beispiel": "Bitte entschuldigen Sie, ich habe Sie missverstanden.",
+    "beispielTr": "Kusura bakmayın, sizi yanlış anlamışım.",
+    "beispielEn": "I'm sorry, I misunderstood you."
+  },
+  {
+    "id": 3220,
+    "tr": "tedarikçi",
+    "en": "supplier",
+    "beispiel": "Wegen Lieferengpässen sucht die Firma einen neuen Lieferanten.",
+    "beispielTr": "Tedarik sıkıntıları yüzünden firma yeni bir tedarikçi arıyor.",
+    "beispielEn": "Because of supply shortages the company is seeking a new supplier."
+  },
+  {
+    "id": 3863,
+    "tr": "uzatma",
+    "en": "extension",
+    "beispiel": "Für die Verlängerung des Visums braucht man mehrere Unterlagen.",
+    "beispielTr": "Vize uzatması için birkaç belge gerekiyor.",
+    "beispielEn": "You need several documents for the visa extension."
+  },
+  {
+    "id": 3376,
+    "tr": "güvenilir",
+    "en": "reliable",
+    "beispiel": "Wir brauchen einen verlässlichen Partner für dieses Projekt.",
+    "beispielTr": "Bu proje için güvenilir bir ortağa ihtiyacımız var.",
+    "beispielEn": "We need a reliable partner for this project."
+  },
+  {
+    "id": 3271,
+    "tr": "dayanışma",
+    "en": "solidarity",
+    "beispiel": "Solidarität zeigt sich besonders in schwierigen Zeiten.",
+    "beispielTr": "Dayanışma kendini en çok zor zamanlarda gösterir.",
+    "beispielEn": "Solidarity shows itself most in difficult times."
+  },
+  {
+    "id": 3224,
+    "tr": "bilanço",
+    "en": "balance sheet",
+    "beispiel": "Die Bilanz zeigt deutlich, dass die Firma profitabel arbeitet.",
+    "beispielTr": "Bilanço, şirketin kârlı çalıştığını açıkça gösteriyor.",
+    "beispielEn": "The balance sheet clearly shows that the company is profitable."
+  },
+  {
+    "id": 3227,
+    "tr": "yatırımcı",
+    "en": "investor",
+    "beispiel": "Ein ausländischer Investor will das Start-up finanziell unterstützen.",
+    "beispielTr": "Yabancı bir yatırımcı girişime finansal destek vermek istiyor.",
+    "beispielEn": "A foreign investor wants to support the start-up financially."
+  },
+  {
+    "id": 3768,
+    "tr": "üyelik",
+    "en": "membership",
+    "beispiel": "Ich habe eine Mitgliedschaft im Fitnessstudio abgeschlossen.",
+    "beispielTr": "Spor salonuna üyelik yaptırdım.",
+    "beispielEn": "I signed up for a gym membership."
+  },
+  {
+    "id": 3324,
+    "tr": "yetkinlik",
+    "en": "competence",
+    "beispiel": "Digitale Kompetenzen werden in der Schule immer wichtiger.",
+    "beispielTr": "Dijital yetkinlikler okulda giderek daha çok önem kazanıyor.",
+    "beispielEn": "Digital competencies are becoming more and more important at school."
+  },
+  {
+    "id": 3875,
+    "tr": "sınavda kalmak",
+    "en": "to fail",
+    "beispiel": "Leider ist sie bei der Klausur durchgefallen.",
+    "beispielTr": "Maalesef yazılı sınavda kaldı.",
+    "beispielEn": "Unfortunately she failed the exam."
+  },
+  {
+    "id": 3400,
+    "tr": "algoritma",
+    "en": "algorithm",
+    "beispiel": "Der Algorithmus sortiert die Daten in wenigen Sekunden.",
+    "beispielTr": "Algoritma verileri birkaç saniyede sıralıyor.",
+    "beispielEn": "The algorithm sorts the data in a few seconds."
+  },
+  {
+    "id": 3749,
+    "tr": "malzeme",
+    "en": "ingredient",
+    "beispiel": "Für den Kuchen brauchen wir noch einige Zutaten.",
+    "beispielTr": "Kek için birkaç malzeme daha lazım.",
+    "beispielEn": "We still need a few ingredients for the cake."
+  },
+  {
+    "id": 3373,
+    "tr": "empatik",
+    "en": "empathetic",
+    "beispiel": "Sie ist eine sehr einfühlsame Zuhörerin.",
+    "beispielTr": "O çok empatik bir dinleyici.",
+    "beispielEn": "She is a very empathetic listener."
+  },
+  {
+    "id": 3341,
+    "tr": "iyilik hâli",
+    "en": "well-being",
+    "beispiel": "Ausreichend Schlaf fördert das allgemeine Wohlbefinden.",
+    "beispielTr": "Yeterli uyku genel iyilik hâlini destekler.",
+    "beispielEn": "Enough sleep promotes overall well-being."
+  },
+  {
+    "id": 3809,
+    "tr": "ihmal etmek",
+    "en": "to neglect",
+    "beispiel": "Er vernachlässigt seine Gesundheit wegen der Arbeit.",
+    "beispielTr": "İş yüzünden sağlığını ihmal ediyor.",
+    "beispielEn": "He neglects his health because of work."
+  },
+  {
+    "id": 3742,
+    "tr": "tadilat",
+    "en": "renovation",
+    "beispiel": "Die Renovierung dauert leider länger als geplant.",
+    "beispielTr": "Tadilat ne yazık ki planlanandan uzun sürüyor.",
+    "beispielEn": "The renovation is unfortunately taking longer than planned."
+  },
+  {
+    "id": 3203,
+    "tr": "amir",
+    "en": "supervisor",
+    "beispiel": "Sie bespricht jedes Problem zuerst mit ihrem direkten Vorgesetzten.",
+    "beispielTr": "Her sorunu önce doğrudan bağlı olduğu amiriyle konuşuyor.",
+    "beispielEn": "She discusses every problem with her direct supervisor first."
+  },
+  {
+    "id": 3206,
+    "tr": "denetim kurulu",
+    "en": "supervisory board",
+    "beispiel": "Der Aufsichtsrat muss der Übernahme noch zustimmen.",
+    "beispielTr": "Devralmayı denetim kurulunun da onaylaması gerekiyor.",
+    "beispielEn": "The supervisory board still has to approve the takeover."
+  },
+  {
+    "id": 3859,
+    "tr": "referans mektubu",
+    "en": "letter of recommendation",
+    "beispiel": "Für die Bewerbung brauche ich ein Empfehlungsschreiben.",
+    "beispielTr": "Başvuru için bir referans mektubuna ihtiyacım var.",
+    "beispielEn": "I need a letter of recommendation for the application."
+  },
+  {
+    "id": 3765,
+    "tr": "güneş yanığı",
+    "en": "sunburn",
+    "beispiel": "Ohne Sonnencreme bekommt man am Strand schnell einen Sonnenbrand.",
+    "beispielTr": "Güneş kremi olmadan plajda insan çabucak güneş yanığı olur.",
+    "beispielEn": "Without sunscreen you quickly get a sunburn at the beach."
+  },
+  {
+    "id": 3204,
+    "tr": "personel",
+    "en": "workforce",
+    "beispiel": "Die gesamte Belegschaft wurde über die Umstrukturierung informiert.",
+    "beispielTr": "Tüm personel yeniden yapılanma hakkında bilgilendirildi.",
+    "beispielEn": "The entire workforce was informed about the restructuring."
+  }
+]

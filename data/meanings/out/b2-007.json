@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3366,
+  "tr": "özgüven",
+  "en": "self-assurance",
+  "beispiel": "Mit wachsender Selbstsicherheit trat sie vor das Publikum.",
+  "beispielTr": "Artan bir özgüvenle seyircinin karşısına çıktı.",
+  "beispielEn": "With growing self-assurance she stepped in front of the audience."
+ },
+ {
+  "id": 3367,
+  "tr": "hassasiyet",
+  "en": "sensitivity",
+  "beispiel": "Seine Empfindlichkeit gegenüber Kritik überraschte mich.",
+  "beispielTr": "Eleştiriye karşı hassasiyeti beni şaşırttı.",
+  "beispielEn": "His sensitivity to criticism surprised me."
+ },
+ {
+  "id": 3368,
+  "tr": "karakter özelliği",
+  "en": "character trait",
+  "beispiel": "Neugier ist ein typischer Charakterzug von ihm.",
+  "beispielTr": "Merak, onun tipik bir karakter özelliğidir.",
+  "beispielEn": "Curiosity is a typical character trait of his."
+ },
+ {
+  "id": 3380,
+  "tr": "yabancılaşma",
+  "en": "estrangement",
+  "beispiel": "Die Entfremdung zwischen den Eltern und dem Sohn wuchs.",
+  "beispielTr": "Anne babayla oğul arasındaki yabancılaşma giderek arttı.",
+  "beispielEn": "The estrangement between the parents and the son grew."
+ },
+ {
+  "id": 3382,
+  "tr": "barışmak",
+  "en": "to reconcile",
+  "beispiel": "Die Geschwister haben sich nach dem Streit versöhnt.",
+  "beispielTr": "Kardeşler kavgadan sonra barıştı.",
+  "beispielEn": "The siblings made up after the argument."
+ },
+ {
+  "id": 3383,
+  "tr": "yabancılaşmak",
+  "en": "to become estranged",
+  "beispiel": "Die Freunde haben sich im Laufe der Jahre entfremdet.",
+  "beispielTr": "Arkadaşlar yıllar içinde birbirine yabancılaştı.",
+  "beispielEn": "The friends became estranged over the years."
+ },
+ {
+  "id": 3384,
+  "tr": "kafa yormak",
+  "en": "to grapple with",
+  "beispiel": "Er musste sich intensiv mit dem Konflikt auseinandersetzen.",
+  "beispielTr": "Bu çatışma üzerine uzun uzun kafa yormak zorunda kaldı.",
+  "beispielEn": "He had to grapple with the conflict intensively."
+ },
+ {
+  "id": 3388,
+  "tr": "şekillenme",
+  "en": "imprinting",
+  "beispiel": "Die frühkindliche Prägung beeinflusst das spätere Verhalten.",
+  "beispielTr": "Erken çocukluktaki şekillenme sonraki davranışları etkiliyor.",
+  "beispielEn": "Early childhood imprinting influences later behavior."
+ },
+ {
+  "id": 3390,
+  "tr": "başa çıkma",
+  "en": "coping",
+  "beispiel": "Die Bewältigung der Krise hat uns viel Kraft gekostet.",
+  "beispielTr": "Krizle başa çıkmak bizi çok yordu.",
+  "beispielEn": "Coping with the crisis cost us a lot of strength."
+ },
+ {
+  "id": 3398,
+  "tr": "yansımak",
+  "en": "to have an effect",
+  "beispiel": "Stress kann sich negativ auf die Gesundheit auswirken.",
+  "beispielTr": "Stres sağlığa olumsuz yansıyabilir.",
+  "beispielEn": "Stress can have a negative effect on health."
+ },
+ {
+  "id": 3402,
+  "tr": "veri koruma",
+  "en": "data protection",
+  "beispiel": "Der Datenschutz spielt bei neuen Apps eine wichtige Rolle.",
+  "beispielTr": "Yeni uygulamalarda veri koruması önemli bir rol oynuyor.",
+  "beispielEn": "Data protection plays an important role in new apps."
+ },
+ {
+  "id": 3405,
+  "tr": "yarı iletken",
+  "en": "semiconductor",
+  "beispiel": "Ohne Halbleiter könnten moderne Computer nicht funktionieren.",
+  "beispielTr": "Yarı iletkenler olmadan modern bilgisayarlar çalışamazdı.",
+  "beispielEn": "Without semiconductors modern computers could not work."
+ },
+ {
+  "id": 3406,
+  "tr": "otomatikleştirmek",
+  "en": "to automate",
+  "beispiel": "Die Fabrik will ihre Produktion vollständig automatisieren.",
+  "beispielTr": "Fabrika üretimini tamamen otomatikleştirmek istiyor.",
+  "beispielEn": "The factory wants to automate its production completely."
+ },
+ {
+  "id": 3407,
+  "tr": "ağa bağlamak",
+  "en": "to network",
+  "beispiel": "Smarte Geräte lassen sich heutzutage einfach vernetzen.",
+  "beispielTr": "Akıllı cihazlar günümüzde kolayca ağa bağlanabiliyor.",
+  "beispielEn": "Smart devices can easily be networked these days."
+ },
+ {
+  "id": 3408,
+  "tr": "kablosuz",
+  "en": "wireless",
+  "beispiel": "Die Kopfhörer übertragen den Ton völlig drahtlos.",
+  "beispielTr": "Kulaklıklar sesi tamamen kablosuz aktarıyor.",
+  "beispielEn": "The headphones transmit the sound completely wirelessly."
+ },
+ {
+  "id": 3410,
+  "tr": "sürdürülebilirlik",
+  "en": "sustainability",
+  "beispiel": "Nachhaltigkeit wird für viele Unternehmen immer wichtiger.",
+  "beispielTr": "Sürdürülebilirlik birçok şirket için giderek önem kazanıyor.",
+  "beispielEn": "Sustainability is becoming more and more important for many companies."
+ },
+ {
+  "id": 3411,
+  "tr": "sera etkisi",
+  "en": "greenhouse effect",
+  "beispiel": "Der Treibhauseffekt verstärkt die globale Erwärmung.",
+  "beispielTr": "Sera etkisi küresel ısınmayı güçlendiriyor.",
+  "beispielEn": "The greenhouse effect intensifies global warming."
+ },
+ {
+  "id": 3412,
+  "tr": "emisyon",
+  "en": "emission",
+  "beispiel": "Die Stadt will die Emissionen des Verkehrs deutlich senken.",
+  "beispielTr": "Şehir, trafikten kaynaklanan emisyonları belirgin ölçüde azaltmak istiyor.",
+  "beispielEn": "The city wants to reduce traffic emissions significantly."
+ },
+ {
+  "id": 3416,
+  "tr": "yenilenebilir",
+  "en": "renewable",
+  "beispiel": "Immer mehr Strom stammt aus erneuerbaren Energien.",
+  "beispielTr": "Elektriğin giderek daha büyük kısmı yenilenebilir enerjiden geliyor.",
+  "beispielEn": "More and more electricity comes from renewable energy."
+ },
+ {
+  "id": 3417,
+  "tr": "çevre dostu",
+  "en": "environmentally friendly",
+  "beispiel": "Viele Kunden bevorzugen mittlerweile umweltfreundliche Produkte.",
+  "beispielTr": "Artık birçok müşteri çevre dostu ürünleri tercih ediyor.",
+  "beispielEn": "Many customers now prefer environmentally friendly products."
+ },
+ {
+  "id": 3418,
+  "tr": "karbon salımı",
+  "en": "carbon emissions",
+  "beispiel": "Der CO2-Ausstoß der Industrie sinkt nur langsam.",
+  "beispielTr": "Sanayinin karbon salımı ancak yavaş yavaş düşüyor.",
+  "beispielEn": "The carbon emissions of industry are falling only slowly."
+ },
+ {
+  "id": 3419,
+  "tr": "güneş enerjisi",
+  "en": "solar energy",
+  "beispiel": "Solarenergie deckt inzwischen einen großen Teil des Bedarfs.",
+  "beispielTr": "Güneş enerjisi artık ihtiyacın büyük bölümünü karşılıyor.",
+  "beispielEn": "Solar energy now covers a large part of the demand."
+ },
+ {
+  "id": 3420,
+  "tr": "rüzgar enerjisi",
+  "en": "wind power",
+  "beispiel": "Die Region setzt stark auf Windkraft und Solaranlagen.",
+  "beispielTr": "Bölge ağırlıklı olarak rüzgar enerjisine ve güneş panellerine yöneliyor.",
+  "beispielEn": "The region relies heavily on wind power and solar panels."
+ },
+ {
+  "id": 3421,
+  "tr": "tür çeşitliliği",
+  "en": "biodiversity",
+  "beispiel": "Der Regenwald bietet eine enorme Artenvielfalt.",
+  "beispielTr": "Yağmur ormanı muazzam bir tür çeşitliliği barındırıyor.",
+  "beispielEn": "The rainforest is home to enormous biodiversity."
+ },
+ {
+  "id": 3426,
+  "tr": "permafrost",
+  "en": "permafrost",
+  "beispiel": "Der auftauende Permafrost setzt gefährliches Methan frei.",
+  "beispielTr": "Çözülen permafrost tehlikeli metan gazını açığa çıkarıyor.",
+  "beispielEn": "The thawing permafrost releases dangerous methane."
+ },
+ {
+  "id": 3429,
+  "tr": "sulamak",
+  "en": "to irrigate",
+  "beispiel": "Die Bauern bewässern die Felder mit modernen Anlagen.",
+  "beispielTr": "Çiftçiler tarlaları modern sistemlerle suluyor.",
+  "beispielEn": "The farmers irrigate the fields with modern systems."
+ },
+ {
+  "id": 3438,
+  "tr": "toplu taşıma",
+  "en": "local public transport",
+  "beispiel": "Der öffentliche Nahverkehr wird in der Stadt ausgebaut.",
+  "beispielTr": "Şehirde toplu taşıma ağı genişletiliyor.",
+  "beispielEn": "Local public transport is being expanded in the city."
+ },
+ {
+  "id": 3439,
+  "tr": "trafik felci",
+  "en": "traffic gridlock",
+  "beispiel": "Der Unfall führte zu einem totalen Verkehrskollaps.",
+  "beispielTr": "Kaza, trafiğin tamamen felç olmasına yol açtı.",
+  "beispielEn": "The accident led to complete traffic gridlock."
+ },
+ {
+  "id": 3441,
+  "tr": "elektrikli ulaşım",
+  "en": "electric mobility",
+  "beispiel": "Die Elektromobilität wächst in den Städten rasant.",
+  "beispielTr": "Elektrikli ulaşım şehirlerde hızla yaygınlaşıyor.",
+  "beispielEn": "Electric mobility is growing rapidly in the cities."
+ },
+ {
+  "id": 3442,
+  "tr": "şarj istasyonu",
+  "en": "charging station",
+  "beispiel": "An dieser Ladestation kann man E-Autos aufladen.",
+  "beispielTr": "Bu şarj istasyonunda elektrikli arabalar şarj edilebiliyor.",
+  "beispielEn": "You can charge electric cars at this charging station."
+ },
+ {
+  "id": 3444,
+  "tr": "trafik yoğunluğu",
+  "en": "traffic density",
+  "beispiel": "Die Verkehrsdichte nimmt zur Hauptverkehrszeit deutlich zu.",
+  "beispielTr": "Trafik yoğunluğu yoğun saatlerde belirgin biçimde artıyor.",
+  "beispielEn": "Traffic density increases noticeably during rush hour."
+ },
+ {
+  "id": 3447,
+  "tr": "şehir planlaması",
+  "en": "urban planning",
+  "beispiel": "Die moderne Stadtplanung berücksichtigt den Klimaschutz.",
+  "beispielTr": "Modern şehir planlaması iklim korumasını da gözetiyor.",
+  "beispielEn": "Modern urban planning takes climate protection into account."
+ },
+ {
+  "id": 3449,
+  "tr": "kira artışı",
+  "en": "rent increase",
+  "beispiel": "Der starke Mietanstieg trifft vor allem junge Familien.",
+  "beispielTr": "Sert kira artışı en çok genç aileleri vuruyor.",
+  "beispielEn": "The steep rent increase hits young families especially hard."
+ },
+ {
+  "id": 3450,
+  "tr": "soylulaştırma",
+  "en": "gentrification",
+  "beispiel": "Die Gentrifizierung verändert das Viertel spürbar.",
+  "beispielTr": "Soylulaştırma semti gözle görülür biçimde değiştiriyor.",
+  "beispielEn": "Gentrification is visibly changing the neighborhood."
+ },
+ {
+  "id": 3451,
+  "tr": "mahalle",
+  "en": "residential area",
+  "beispiel": "Das Wohnviertel wurde in den letzten Jahren saniert.",
+  "beispielTr": "Mahalle son yıllarda baştan sona yenilendi.",
+  "beispielEn": "The residential area was renovated in recent years."
+ },
+ {
+  "id": 3454,
+  "tr": "metropol bölgesi",
+  "en": "metropolitan area",
+  "beispiel": "Im Ballungsraum leben Millionen Menschen auf engem Raum.",
+  "beispielTr": "Metropol bölgesinde milyonlarca insan dar bir alanda yaşıyor.",
+  "beispielEn": "Millions of people live in a small space in the metropolitan area."
+ },
+ {
+  "id": 3455,
+  "tr": "nüfus yoğunluğu",
+  "en": "population density",
+  "beispiel": "Die Bevölkerungsdichte ist im Zentrum besonders hoch.",
+  "beispielTr": "Nüfus yoğunluğu merkezde özellikle yüksek.",
+  "beispielEn": "The population density is particularly high in the center."
+ },
+ {
+  "id": 3456,
+  "tr": "yoğunlaştırmak",
+  "en": "to densify",
+  "beispiel": "Die Stadt will die Bebauung im Zentrum verdichten.",
+  "beispielTr": "Şehir, merkezdeki yapılaşmayı yoğunlaştırmak istiyor.",
+  "beispielEn": "The city wants to densify development in the center."
+ },
+ {
+  "id": 3457,
+  "tr": "konut sıkıntısı",
+  "en": "housing shortage",
+  "beispiel": "Die Wohnungsnot verschärft sich in vielen Metropolen.",
+  "beispielTr": "Konut sıkıntısı birçok metropolde daha da ağırlaşıyor.",
+  "beispielEn": "The housing shortage is getting worse in many big cities."
+ },
+ {
+  "id": 3458,
+  "tr": "elden geçirmek",
+  "en": "to refurbish",
+  "beispiel": "Die Stadt lässt die alten Gebäude energetisch sanieren.",
+  "beispielTr": "Şehir, eski binaları enerji açısından elden geçirtiyor.",
+  "beispielEn": "The city is having the old buildings refurbished for energy efficiency."
+ },
+ {
+  "id": 3459,
+  "tr": "yeşil alan",
+  "en": "green space",
+  "beispiel": "Neue Grünflächen sollen das Stadtklima verbessern.",
+  "beispielTr": "Yeni yeşil alanların şehir iklimini iyileştirmesi bekleniyor.",
+  "beispielEn": "New green spaces are meant to improve the city climate."
+ },
+ {
+  "id": 3733,
+  "tr": "yapılacak iş",
+  "en": "errand",
+  "beispiel": "Ich muss heute noch ein paar Erledigungen machen.",
+  "beispielTr": "Bugün halletmem gereken birkaç iş daha var.",
+  "beispielEn": "I still have a few errands to run today."
+ },
+ {
+  "id": 3734,
+  "tr": "alışmak",
+  "en": "to get used to",
+  "beispiel": "Ich habe mich schnell an den neuen Alltag gewöhnt.",
+  "beispielTr": "Yeni günlük düzene çabuk alıştım.",
+  "beispielEn": "I quickly got used to the new daily routine."
+ },
+ {
+  "id": 3737,
+  "tr": "zaman darlığı",
+  "en": "lack of time",
+  "beispiel": "Aus Zeitmangel schaffe ich das heute nicht.",
+  "beispielTr": "Zaman darlığından bunu bugün yetiştiremeyeceğim.",
+  "beispielEn": "I won't manage that today for lack of time."
+ },
+ {
+  "id": 3738,
+  "tr": "uğraşmak",
+  "en": "to occupy oneself with",
+  "beispiel": "Sie beschäftigt sich in ihrer Freizeit mit Fotografie.",
+  "beispielTr": "Boş zamanlarında fotoğrafçılıkla uğraşıyor.",
+  "beispielEn": "She spends her free time on photography."
+ },
+ {
+  "id": 3744,
+  "tr": "paylaşımlı ev",
+  "en": "shared apartment",
+  "beispiel": "Sie lebt seit zwei Jahren in einer Wohngemeinschaft.",
+  "beispielTr": "İki yıldır paylaşımlı bir evde yaşıyor.",
+  "beispielEn": "She has been living in a shared apartment for two years."
+ },
+ {
+  "id": 3747,
+  "tr": "kasa fişi",
+  "en": "receipt",
+  "beispiel": "Bewahren Sie den Kassenbon für einen Umtausch auf.",
+  "beispielTr": "Değişim için kasa fişini saklayın.",
+  "beispielEn": "Keep the receipt in case you want to exchange something."
+ },
+ {
+  "id": 3753,
+  "tr": "doyurucu",
+  "en": "hearty",
+  "beispiel": "Nach der Wanderung wollten wir etwas Deftiges essen.",
+  "beispielTr": "Yürüyüşten sonra doyurucu bir şeyler yemek istedik.",
+  "beispielEn": "After the hike we wanted to eat something hearty."
+ },
+ {
+  "id": 3754,
+  "tr": "tuzlu",
+  "en": "savory",
+  "beispiel": "Ich esse lieber herzhafte als süße Speisen.",
+  "beispielTr": "Tatlı yiyeceklerdense tuzlu olanları tercih ederim.",
+  "beispielEn": "I prefer savory dishes to sweet ones."
+ },
+ {
+  "id": 3759,
+  "tr": "rezervasyon",
+  "en": "booking",
+  "beispiel": "Die Buchung des Hotels war ganz unkompliziert.",
+  "beispielTr": "Otel rezervasyonu gayet kolay oldu.",
+  "beispielEn": "Booking the hotel was completely straightforward."
+ }
+]

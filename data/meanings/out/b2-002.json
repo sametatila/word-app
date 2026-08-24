@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3812,
+    "tr": "mümkün kılmak",
+    "en": "to enable",
+    "beispiel": "Das Stipendium ermöglicht ihr ein Studium im Ausland.",
+    "beispielTr": "Burs ona yurt dışında okuma imkânı sağlıyor.",
+    "beispielEn": "The scholarship enables her to study abroad."
+  },
+  {
+    "id": 3752,
+    "tr": "servis",
+    "en": "service",
+    "beispiel": "Für die freundliche Bedienung haben wir ein gutes Trinkgeld gegeben.",
+    "beispielTr": "Güler yüzlü servis için iyi bir bahşiş bıraktık.",
+    "beispielEn": "We left a good tip for the friendly service."
+  },
+  {
+    "id": 3276,
+    "tr": "seçim kampanyası",
+    "en": "election campaign",
+    "beispiel": "Der Wahlkampf wurde in diesem Jahr besonders aggressiv geführt.",
+    "beispielTr": "Seçim kampanyası bu yıl özellikle sert geçti.",
+    "beispielEn": "The election campaign was especially aggressive this year."
+  },
+  {
+    "id": 3820,
+    "tr": "kayıtsız",
+    "en": "indifferent",
+    "beispiel": "Er zuckte nur mit den Schultern und blieb gleichgültig.",
+    "beispielTr": "Sadece omuz silkti ve kayıtsız kaldı.",
+    "beispielEn": "He just shrugged and remained indifferent."
+  },
+  {
+    "id": 3354,
+    "tr": "kıskançlık",
+    "en": "envy",
+    "beispiel": "Sein Erfolg weckte bei einigen Kollegen Neid.",
+    "beispielTr": "Başarısı bazı meslektaşlarında kıskançlık uyandırdı.",
+    "beispielEn": "His success stirred envy among some colleagues."
+  },
+  {
+    "id": 3813,
+    "tr": "genişletmek",
+    "en": "to expand",
+    "beispiel": "Das Unternehmen will sein Angebot deutlich erweitern.",
+    "beispielTr": "Şirket ürün yelpazesini ciddi biçimde genişletmek istiyor.",
+    "beispielEn": "The company wants to expand its range significantly."
+  },
+  {
+    "id": 3331,
+    "tr": "döngü",
+    "en": "cycle",
+    "beispiel": "Er steckt in einem Kreislauf aus Schulden und Krediten.",
+    "beispielTr": "Borç ve kredi döngüsüne sıkışıp kalmış durumda.",
+    "beispielEn": "He is stuck in a cycle of debt and loans."
+  },
+  {
+    "id": 3445,
+    "tr": "kaçınmak",
+    "en": "to dodge",
+    "beispiel": "Er weicht solchen Fragen im Interview immer aus.",
+    "beispielTr": "Röportajda bu tür sorulardan hep kaçınıyor.",
+    "beispielEn": "He always dodges such questions in interviews."
+  },
+  {
+    "id": 3841,
+    "tr": "kabul",
+    "en": "admission",
+    "beispiel": "Ohne gute Noten bekommst du keine Zulassung zum Studium.",
+    "beispielTr": "İyi notların olmadan üniversiteye kabul alamazsın.",
+    "beispielEn": "Without good grades you won't get admission to university."
+  },
+  {
+    "id": 3239,
+    "tr": "terfi ettirmek",
+    "en": "to promote",
+    "beispiel": "Nach fünf Jahren wurde sie endlich zur Abteilungsleiterin befördert.",
+    "beispielTr": "Beş yıl sonra nihayet bölüm müdürlüğüne terfi ettirildi.",
+    "beispielEn": "After five years she was finally promoted to department head."
+  },
+  {
+    "id": 3777,
+    "tr": "taviz vermek",
+    "en": "to give in",
+    "beispiel": "Die Eltern geben dem Kind viel zu oft nach.",
+    "beispielTr": "Anne baba çocuğa fazlasıyla sık taviz veriyor.",
+    "beispielEn": "The parents give in to the child far too often."
+  },
+  {
+    "id": 3434,
+    "tr": "bulgu",
+    "en": "finding",
+    "beispiel": "Die neuen Erkenntnisse der Studie überraschten die Forscher.",
+    "beispielTr": "Araştırmanın yeni bulguları bilim insanlarını şaşırttı.",
+    "beispielEn": "The new findings of the study surprised the researchers."
+  },
+  {
+    "id": 3827,
+    "tr": "gecikme",
+    "en": "delay",
+    "beispiel": "Wegen technischer Probleme kam es zu einer langen Verzögerung.",
+    "beispielTr": "Teknik sorunlar yüzünden uzun bir gecikme yaşandı.",
+    "beispielEn": "There was a long delay because of technical problems."
+  },
+  {
+    "id": 3849,
+    "tr": "üniversite dersi",
+    "en": "lecture",
+    "beispiel": "In der Vorlesung habe ich kaum etwas verstanden.",
+    "beispielTr": "Derste neredeyse hiçbir şey anlamadım.",
+    "beispielEn": "I barely understood anything in the lecture."
+  },
+  {
+    "id": 3370,
+    "tr": "hırslı",
+    "en": "ambitious",
+    "beispiel": "Sie gilt als sehr ehrgeizige Studentin.",
+    "beispielTr": "Çok hırslı bir öğrenci olarak biliniyor.",
+    "beispielEn": "She is considered a very ambitious student."
+  },
+  {
+    "id": 3329,
+    "tr": "iyileşme",
+    "en": "recovery",
+    "beispiel": "Der Arzt wünschte ihm eine schnelle Genesung.",
+    "beispielTr": "Doktor ona çabuk iyileşmesini diledi.",
+    "beispielEn": "The doctor wished him a quick recovery."
+  },
+  {
+    "id": 3375,
+    "tr": "yüzeysel",
+    "en": "superficial",
+    "beispiel": "Ihre Freundschaft blieb lange Zeit eher oberflächlich.",
+    "beispielTr": "Arkadaşlıkları uzun süre yüzeysel kaldı.",
+    "beispielEn": "Their friendship stayed rather superficial for a long time."
+  },
+  {
+    "id": 3364,
+    "tr": "cömertlik",
+    "en": "generosity",
+    "beispiel": "Ihre Großzügigkeit war in der ganzen Nachbarschaft bekannt.",
+    "beispielTr": "Cömertliği bütün mahallede biliniyordu.",
+    "beispielEn": "Her generosity was known throughout the neighborhood."
+  },
+  {
+    "id": 3395,
+    "tr": "üstesinden gelmek",
+    "en": "to cope with",
+    "beispiel": "Sie hat die Krise erstaunlich gut bewältigt.",
+    "beispielTr": "Krizin üstesinden şaşırtıcı derecede iyi geldi.",
+    "beispielEn": "She coped with the crisis remarkably well."
+  },
+  {
+    "id": 3202,
+    "tr": "şirket birleşmesi",
+    "en": "merger",
+    "beispiel": "Die Fusion der beiden Konzerne wurde gestern offiziell bestätigt.",
+    "beispielTr": "İki büyük şirketin birleşmesi dün resmen doğrulandı.",
+    "beispielEn": "The merger of the two corporations was confirmed yesterday."
+  },
+  {
+    "id": 3385,
+    "tr": "bilinçaltı",
+    "en": "subconscious",
+    "beispiel": "Träume geben oft Einblick in unser Unterbewusstsein.",
+    "beispielTr": "Rüyalar çoğu zaman bilinçaltımıza ışık tutar.",
+    "beispielEn": "Dreams often give insight into our subconscious."
+  },
+  {
+    "id": 3288,
+    "tr": "gösteri yapmak",
+    "en": "to protest",
+    "beispiel": "Die Studenten demonstrieren gegen die Studiengebühren.",
+    "beispielTr": "Öğrenciler harçlara karşı gösteri yapıyor.",
+    "beispielEn": "The students are protesting against tuition fees."
+  },
+  {
+    "id": 3292,
+    "tr": "yozlaşmış",
+    "en": "corrupt",
+    "beispiel": "Mehrere Beamte wurden als korrupt entlarvt.",
+    "beispielTr": "Birkaç memurun yozlaşmış olduğu ortaya çıkarıldı.",
+    "beispielEn": "Several officials were exposed as corrupt."
+  },
+  {
+    "id": 3291,
+    "tr": "ittifak",
+    "en": "alliance",
+    "beispiel": "Die beiden Parteien schlossen ein Bündnis.",
+    "beispielTr": "İki parti bir ittifak kurdu.",
+    "beispielEn": "The two parties formed an alliance."
+  },
+  {
+    "id": 3828,
+    "tr": "değerlendirme",
+    "en": "assessment",
+    "beispiel": "Meiner Einschätzung nach wird sich die Lage bald bessern.",
+    "beispielTr": "Benim değerlendirmeme göre durum yakında düzelecek.",
+    "beispielEn": "In my assessment the situation will improve soon."
+  },
+  {
+    "id": 3306,
+    "tr": "nesnel",
+    "en": "objective",
+    "beispiel": "Als Richterin muss sie immer objektiv bleiben.",
+    "beispielTr": "Hâkim olarak her zaman nesnel kalmak zorunda.",
+    "beispielEn": "As a judge she always has to stay objective."
+  },
+  {
+    "id": 3437,
+    "tr": "bilimsel",
+    "en": "scientific",
+    "beispiel": "Diese Behauptung ist wissenschaftlich nicht bewiesen.",
+    "beispielTr": "Bu iddia bilimsel olarak kanıtlanmış değil.",
+    "beispielEn": "This claim has not been scientifically proven."
+  },
+  {
+    "id": 3295,
+    "tr": "manşet",
+    "en": "headline",
+    "beispiel": "Der Skandal beherrschte tagelang die Schlagzeilen.",
+    "beispielTr": "Skandal günlerce manşetlerden inmedi.",
+    "beispielEn": "The scandal dominated the headlines for days."
+  },
+  {
+    "id": 3430,
+    "tr": "organizma",
+    "en": "organism",
+    "beispiel": "Manche Organismen überleben selbst in extremer Kälte.",
+    "beispielTr": "Bazı organizmalar aşırı soğukta bile hayatta kalır.",
+    "beispielEn": "Some organisms survive even in extreme cold."
+  },
+  {
+    "id": 3195,
+    "tr": "maaş zammı",
+    "en": "pay raise",
+    "beispiel": "Nach der Beförderung bekam er eine deutliche Gehaltserhöhung.",
+    "beispielTr": "Terfiden sonra maaşına ciddi bir zam aldı.",
+    "beispielEn": "After the promotion he got a significant pay raise."
+  },
+  {
+    "id": 3362,
+    "tr": "alçakgönüllülük",
+    "en": "modesty",
+    "beispiel": "Trotz seines Erfolgs bewahrte er seine Bescheidenheit.",
+    "beispielTr": "Başarısına rağmen alçakgönüllülüğünü korudu.",
+    "beispielEn": "Despite his success he kept his modesty."
+  },
+  {
+    "id": 3360,
+    "tr": "özellik",
+    "en": "characteristic",
+    "beispiel": "Ehrlichkeit zählt zu seinen wichtigsten Eigenschaften.",
+    "beispielTr": "Dürüstlük, onun en önemli özelliklerinden biridir.",
+    "beispielEn": "Honesty is one of his most important characteristics."
+  },
+  {
+    "id": 3213,
+    "tr": "kıdem tazminatı",
+    "en": "severance pay",
+    "beispiel": "Bei der Kündigung erhielt er eine Abfindung von drei Monatsgehältern.",
+    "beispielTr": "İşten çıkarılırken üç maaş tutarında kıdem tazminatı aldı.",
+    "beispielEn": "When he was let go he received three months of severance pay."
+  },
+  {
+    "id": 3850,
+    "tr": "dönem ödevi",
+    "en": "term paper",
+    "beispiel": "Die Hausarbeit muss bis Semesterende abgegeben werden.",
+    "beispielTr": "Dönem ödevinin sömestr sonuna kadar teslim edilmesi gerekiyor.",
+    "beispielEn": "The term paper has to be handed in by the end of the semester."
+  },
+  {
+    "id": 3386,
+    "tr": "algı",
+    "en": "perception",
+    "beispiel": "Nach dem Unfall war seine Wahrnehmung kurz gestört.",
+    "beispielTr": "Kazadan sonra algısı kısa süre bozuldu.",
+    "beispielEn": "After the accident his perception was briefly impaired."
+  },
+  {
+    "id": 3832,
+    "tr": "açıklama",
+    "en": "statement",
+    "beispiel": "Die Universität gab eine offizielle Stellungnahme ab.",
+    "beispielTr": "Üniversite resmi bir açıklama yaptı.",
+    "beispielEn": "The university issued an official statement."
+  },
+  {
+    "id": 3825,
+    "tr": "tartışma",
+    "en": "dispute",
+    "beispiel": "Es kam zu einer heftigen Auseinandersetzung zwischen den Nachbarn.",
+    "beispielTr": "Komşular arasında sert bir tartışma çıktı.",
+    "beispielEn": "A fierce dispute broke out between the neighbors."
+  },
+  {
+    "id": 3297,
+    "tr": "inandırıcı",
+    "en": "credible",
+    "beispiel": "Die Zeitung gilt allgemein als glaubwürdige Quelle.",
+    "beispielTr": "Bu gazete genelde inandırıcı bir kaynak sayılıyor.",
+    "beispielEn": "The newspaper is generally considered a credible source."
+  },
+  {
+    "id": 3298,
+    "tr": "inandırıcılık",
+    "en": "credibility",
+    "beispiel": "Die Glaubwürdigkeit der Presse steht zunehmend infrage.",
+    "beispielTr": "Basının inandırıcılığı giderek daha çok sorgulanıyor.",
+    "beispielEn": "The credibility of the press is increasingly questioned."
+  },
+  {
+    "id": 3300,
+    "tr": "manipülasyon",
+    "en": "manipulation",
+    "beispiel": "Die Manipulation der Wähler ist ein ernstes Problem.",
+    "beispielTr": "Seçmenlerin manipülasyonu ciddi bir sorundur.",
+    "beispielEn": "The manipulation of voters is a serious problem."
+  },
+  {
+    "id": 3336,
+    "tr": "belirti",
+    "en": "symptom",
+    "beispiel": "Die ersten Symptome traten schon vor Tagen auf.",
+    "beispielTr": "İlk belirtiler günler önce ortaya çıkmıştı.",
+    "beispielEn": "The first symptoms appeared days ago."
+  },
+  {
+    "id": 3814,
+    "tr": "hayata geçirmek",
+    "en": "to realize",
+    "beispiel": "Er hat sich seinen Traum vom eigenen Café verwirklicht.",
+    "beispielTr": "Kendi kafesini açma hayalini hayata geçirdi.",
+    "beispielEn": "He has realized his dream of his own café."
+  },
+  {
+    "id": 3396,
+    "tr": "bastırmak",
+    "en": "to repress",
+    "beispiel": "Er verdrängte die unangenehme Erinnerung jahrelang.",
+    "beispielTr": "O tatsız anıyı yıllarca bastırdı.",
+    "beispielEn": "He repressed the unpleasant memory for years."
+  },
+  {
+    "id": 3316,
+    "tr": "göçmen",
+    "en": "immigrant",
+    "beispiel": "Viele Einwanderer erhoffen sich hier eine bessere Zukunft.",
+    "beispielTr": "Birçok göçmen burada daha iyi bir gelecek umuyor.",
+    "beispielEn": "Many immigrants hope for a better future here."
+  },
+  {
+    "id": 3273,
+    "tr": "norm",
+    "en": "norm",
+    "beispiel": "Wer gegen soziale Normen verstößt, wird schnell ausgegrenzt.",
+    "beispielTr": "Toplumsal normları çiğneyen biri çabuk dışlanır.",
+    "beispielEn": "Anyone who breaks social norms is quickly excluded."
+  },
+  {
+    "id": 3377,
+    "tr": "fevri",
+    "en": "impulsive",
+    "beispiel": "Seine impulsive Art führte oft zu Missverständnissen.",
+    "beispielTr": "Fevri tavırları sık sık yanlış anlaşılmalara yol açtı.",
+    "beispielEn": "His impulsive manner often led to misunderstandings."
+  },
+  {
+    "id": 3425,
+    "tr": "kuraklık",
+    "en": "drought",
+    "beispiel": "Die anhaltende Dürre gefährdet die gesamte Ernte.",
+    "beispielTr": "Süregelen kuraklık bütün hasadı tehlikeye atıyor.",
+    "beispielEn": "The ongoing drought threatens the entire harvest."
+  },
+  {
+    "id": 3872,
+    "tr": "edinmek",
+    "en": "to acquire",
+    "beispiel": "Er hat sich diese Fähigkeiten in der Praxis erworben.",
+    "beispielTr": "Bu becerileri iş üstünde edindi.",
+    "beispielEn": "He acquired these skills on the job."
+  },
+  {
+    "id": 3397,
+    "tr": "algılamak",
+    "en": "to perceive",
+    "beispiel": "Kinder nehmen Spannungen zwischen den Eltern genau wahr.",
+    "beispielTr": "Çocuklar anne baba arasındaki gerginliği çok iyi algılar.",
+    "beispielEn": "Children perceive tension between their parents very clearly."
+  },
+  {
+    "id": 3304,
+    "tr": "araştırmak",
+    "en": "to research",
+    "beispiel": "Der Journalist recherchierte monatelang zu diesem Fall.",
+    "beispielTr": "Gazeteci bu olayı aylarca araştırdı.",
+    "beispielEn": "The journalist researched this case for months."
+  }
+]

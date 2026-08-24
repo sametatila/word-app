@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4393,
+  "tr": "endüstriyel hayvancılık",
+  "en": "factory farming",
+  "beispiel": "Der Film zeigt schonungslos die Zustände in der Massentierhaltung.",
+  "beispielTr": "Film, endüstriyel hayvancılıktaki koşulları acımasızca gösteriyor.",
+  "beispielEn": "The film shows the conditions in factory farming in brutal detail."
+ },
+ {
+  "id": 4394,
+  "tr": "mandıra",
+  "en": "dairy",
+  "beispiel": "Die Molkerei holt die Milch jeden zweiten Tag vom Hof ab.",
+  "beispielTr": "Mandıra sütü gün aşırı çiftlikten alıyor.",
+  "beispielEn": "The dairy picks up the milk from the farm every other day."
+ },
+ {
+  "id": 4395,
+  "tr": "depolama",
+  "en": "storage",
+  "beispiel": "Bei falscher Lagerung verlieren Äpfel schnell ihren Geschmack.",
+  "beispielTr": "Yanlış depolamada elmalar tadını çabuk yitirir.",
+  "beispielEn": "With the wrong storage apples quickly lose their flavor."
+ },
+ {
+  "id": 4396,
+  "tr": "soğuk zincir",
+  "en": "cold chain",
+  "beispiel": "Wird die Kühlkette unterbrochen, ist die Ware nicht mehr sicher.",
+  "beispielTr": "Soğuk zincir kırılırsa mal artık güvenli olmaz.",
+  "beispielEn": "If the cold chain is broken, the goods are no longer safe."
+ },
+ {
+  "id": 4397,
+  "tr": "katkı maddesi",
+  "en": "additive",
+  "beispiel": "Das Produkt kommt ganz ohne künstliche Zusatzstoffe aus.",
+  "beispielTr": "Ürün hiçbir yapay katkı maddesi kullanmadan üretiliyor.",
+  "beispielEn": "The product gets by completely without artificial additives."
+ },
+ {
+  "id": 4398,
+  "tr": "toplatma",
+  "en": "recall",
+  "beispiel": "Der Hersteller startete einen Rückruf für mehrere Chargen Käse.",
+  "beispielTr": "Üretici birkaç parti peynir için toplatma başlattı.",
+  "beispielEn": "The manufacturer launched a recall for several batches of cheese."
+ },
+ {
+  "id": 4399,
+  "tr": "lezzet artırıcı",
+  "en": "flavor enhancer",
+  "beispiel": "In der Fertigsuppe stecken gleich mehrere Geschmacksverstärker.",
+  "beispielTr": "Hazır çorbanın içinde birden fazla lezzet artırıcı var.",
+  "beispielEn": "There are several flavor enhancers in the instant soup."
+ },
+ {
+  "id": 4400,
+  "tr": "yetersiz beslenme",
+  "en": "malnutrition",
+  "beispiel": "Auch in reichen Ländern leiden alte Menschen an Mangelernährung.",
+  "beispielTr": "Zengin ülkelerde de yaşlılar yetersiz beslenme çekiyor.",
+  "beispielEn": "Even in rich countries old people suffer from malnutrition."
+ },
+ {
+  "id": 4401,
+  "tr": "intolerans",
+  "en": "intolerance",
+  "beispiel": "Bei einer Unverträglichkeit muss man die Zutatenliste genau lesen.",
+  "beispielTr": "İntolerans varsa içindekiler listesini dikkatle okumak gerekir.",
+  "beispielEn": "With an intolerance you have to read the ingredient list carefully."
+ },
+ {
+  "id": 4402,
+  "tr": "alerjen",
+  "en": "allergen",
+  "beispiel": "Die vierzehn wichtigsten Allergene müssen auf der Karte stehen.",
+  "beispielTr": "En önemli on dört alerjen menüde belirtilmek zorunda.",
+  "beispielEn": "The fourteen main allergens have to be listed on the menu."
+ },
+ {
+  "id": 4403,
+  "tr": "verim",
+  "en": "yield",
+  "beispiel": "Trotz der Trockenheit lag der Ertrag über dem Durchschnitt.",
+  "beispielTr": "Kuraklığa rağmen verim ortalamanın üzerindeydi.",
+  "beispielEn": "Despite the drought the yield was above average."
+ },
+ {
+  "id": 4404,
+  "tr": "tohumluk",
+  "en": "seed",
+  "beispiel": "Der Bauer bestellt das Saatgut schon im Januar.",
+  "beispielTr": "Çiftçi tohumluğu daha ocak ayında sipariş ediyor.",
+  "beispielEn": "The farmer orders the seed as early as January."
+ },
+ {
+  "id": 4405,
+  "tr": "hayvan kesmek",
+  "en": "to slaughter",
+  "beispiel": "Die Tiere werden auf dem Hof selbst geschlachtet.",
+  "beispielTr": "Hayvanlar çiftliğin kendisinde kesiliyor.",
+  "beispielEn": "The animals are slaughtered on the farm itself."
+ },
+ {
+  "id": 4406,
+  "tr": "sağmak",
+  "en": "to milk",
+  "beispiel": "Zweimal am Tag melkt der Bauer seine Kühe.",
+  "beispielTr": "Çiftçi ineklerini günde iki kez sağıyor.",
+  "beispielEn": "The farmer milks his cows twice a day."
+ },
+ {
+  "id": 4407,
+  "tr": "işlemek",
+  "en": "to process",
+  "beispiel": "Der Hof verarbeitet die Milch selbst zu Käse und Joghurt.",
+  "beispielTr": "Çiftlik sütü kendisi işleyip peynir ve yoğurt yapıyor.",
+  "beispielEn": "The farm processes the milk into cheese and yogurt itself."
+ },
+ {
+  "id": 4408,
+  "tr": "muhafaza etmek",
+  "en": "to preserve",
+  "beispiel": "Früher konservierte man Gemüse vor allem mit Salz.",
+  "beispielTr": "Eskiden sebzeler en çok tuzla muhafaza edilirdi.",
+  "beispielEn": "People used to preserve vegetables mainly with salt."
+ },
+ {
+  "id": 4409,
+  "tr": "bozulmak",
+  "en": "to spoil",
+  "beispiel": "Ohne Kühlung verderben Erdbeeren schon nach einem Tag.",
+  "beispielTr": "Soğutulmadan çilekler bir gün içinde bozuluyor.",
+  "beispielEn": "Without refrigeration strawberries spoil after just one day."
+ },
+ {
+  "id": 4410,
+  "tr": "çöpe atmak",
+  "en": "to throw away",
+  "beispiel": "Jeder Haushalt wirft im Jahr rund achtzig Kilo Essen weg.",
+  "beispielTr": "Her hane yılda yaklaşık seksen kilo yiyeceği çöpe atıyor.",
+  "beispielEn": "Every household throws away about eighty kilos of food a year."
+ },
+ {
+  "id": 4411,
+  "tr": "mal sağlamak",
+  "en": "to supply",
+  "beispiel": "Der Betrieb beliefert mehrere Kantinen in der Stadt.",
+  "beispielTr": "İşletme şehirdeki birkaç yemekhaneye mal sağlıyor.",
+  "beispielEn": "The company supplies several canteens in the city."
+ },
+ {
+  "id": 4412,
+  "tr": "belgelendirmek",
+  "en": "to certify",
+  "beispiel": "Der Hof ist seit drei Jahren als ökologischer Betrieb zertifiziert.",
+  "beispielTr": "Çiftlik üç yıldır organik işletme olarak belgelendirilmiş.",
+  "beispielEn": "The farm has been certified as an organic operation for three years."
+ },
+ {
+  "id": 4413,
+  "tr": "sübvanse etmek",
+  "en": "to subsidize",
+  "beispiel": "Der Staat subventioniert kleine Höfe in benachteiligten Regionen.",
+  "beispielTr": "Devlet, dezavantajlı bölgelerdeki küçük çiftlikleri sübvanse ediyor.",
+  "beispielEn": "The state subsidizes small farms in disadvantaged regions."
+ },
+ {
+  "id": 4414,
+  "tr": "ekip biçmek",
+  "en": "to farm",
+  "beispiel": "Die Familie bewirtschaftet knapp vierzig Hektar Ackerland.",
+  "beispielTr": "Aile kırk hektara yakın tarlayı ekip biçiyor.",
+  "beispielEn": "The family farms almost forty hectares of cropland."
+ },
+ {
+  "id": 4415,
+  "tr": "çift sürmek",
+  "en": "to plow",
+  "beispiel": "Im Herbst wird das Feld ein letztes Mal gepflügt.",
+  "beispielTr": "Sonbaharda tarla son bir kez sürülüyor.",
+  "beispielEn": "In autumn the field is plowed one last time."
+ },
+ {
+  "id": 4416,
+  "tr": "ekmek",
+  "en": "to sow",
+  "beispiel": "Wenn der Boden trocken genug ist, säen wir den Weizen.",
+  "beispielTr": "Toprak yeterince kuruyunca buğdayı ekiyoruz.",
+  "beispielEn": "When the soil is dry enough, we sow the wheat."
+ },
+ {
+  "id": 4417,
+  "tr": "yem olarak vermek",
+  "en": "to feed",
+  "beispiel": "Ein Teil des Getreides wird direkt an die Schweine verfüttert.",
+  "beispielTr": "Tahılın bir kısmı doğrudan domuzlara yem olarak veriliyor.",
+  "beispielEn": "Part of the grain is fed directly to the pigs."
+ },
+ {
+  "id": 4418,
+  "tr": "besiye çekmek",
+  "en": "to fatten",
+  "beispiel": "Die Kälber werden nur wenige Monate lang gemästet.",
+  "beispielTr": "Buzağılar yalnızca birkaç ay besiye çekiliyor.",
+  "beispielEn": "The calves are fattened for only a few months."
+ },
+ {
+  "id": 4419,
+  "tr": "çimlenmek",
+  "en": "to sprout",
+  "beispiel": "Die Kartoffeln haben im warmen Keller schon gekeimt.",
+  "beispielTr": "Patatesler sıcak bodrumda çoktan çimlenmiş.",
+  "beispielEn": "The potatoes have already sprouted in the warm cellar."
+ },
+ {
+  "id": 4420,
+  "tr": "küflenmek",
+  "en": "to go moldy",
+  "beispiel": "Brot schimmelt in der Plastiktüte schneller als im Brotkasten.",
+  "beispielTr": "Ekmek plastik poşette ekmek kutusundakinden daha çabuk küfleniyor.",
+  "beispielEn": "Bread goes moldy faster in a plastic bag than in a bread box."
+ },
+ {
+  "id": 4421,
+  "tr": "mayalanmak",
+  "en": "to ferment",
+  "beispiel": "Der Kohl muss mehrere Wochen im Fass gären.",
+  "beispielTr": "Lahananın fıçıda birkaç hafta mayalanması gerekiyor.",
+  "beispielEn": "The cabbage has to ferment in the barrel for several weeks."
+ },
+ {
+  "id": 4422,
+  "tr": "pastörize etmek",
+  "en": "to pasteurize",
+  "beispiel": "Die Milch wird kurz erhitzt und damit pasteurisiert.",
+  "beispielTr": "Süt kısa süre ısıtılıyor ve böylece pastörize ediliyor.",
+  "beispielEn": "The milk is briefly heated and thus pasteurized."
+ },
+ {
+  "id": 4423,
+  "tr": "şişelemek",
+  "en": "to bottle",
+  "beispiel": "Der Saft wird noch am selben Tag in Flaschen abgefüllt.",
+  "beispielTr": "Meyve suyu daha aynı gün şişelere dolduruluyor.",
+  "beispielEn": "The juice is bottled on the very same day."
+ },
+ {
+  "id": 4424,
+  "tr": "ayıklamak",
+  "en": "to sort out",
+  "beispiel": "Krumme Gurken werden schon im Betrieb aussortiert.",
+  "beispielTr": "Eğri salatalıklar daha işletmede ayıklanıyor.",
+  "beispielEn": "Crooked cucumbers are sorted out at the plant already."
+ },
+ {
+  "id": 4425,
+  "tr": "tok tutmak",
+  "en": "to fill up",
+  "beispiel": "Haferflocken sättigen länger als ein süßes Frühstück.",
+  "beispielTr": "Yulaf ezmesi tatlı bir kahvaltıdan daha uzun tok tutar.",
+  "beispielEn": "Oatmeal fills you up longer than a sweet breakfast."
+ },
+ {
+  "id": 4426,
+  "tr": "kazanmak",
+  "en": "to generate",
+  "beispiel": "Der Hof erwirtschaftet den größten Teil seines Umsatzes im Hofladen.",
+  "beispielTr": "Çiftlik cirosunun büyük bölümünü çiftlik dükkânında kazanıyor.",
+  "beispielEn": "The farm generates most of its revenue in the farm shop."
+ },
+ {
+  "id": 4427,
+  "tr": "ekolojik",
+  "en": "ecological",
+  "beispiel": "Der Betrieb arbeitet seit der Umstellung vollständig ökologisch.",
+  "beispielTr": "İşletme dönüşümden bu yana tamamen ekolojik çalışıyor.",
+  "beispielEn": "Since the switch the business works completely ecologically."
+ },
+ {
+  "id": 4428,
+  "tr": "geleneksel",
+  "en": "conventional",
+  "beispiel": "Konventionell angebaute Ware ist im Schnitt deutlich billiger.",
+  "beispielTr": "Geleneksel yöntemle yetişen ürün ortalamada çok daha ucuz.",
+  "beispielEn": "Conventionally grown produce is on average much cheaper."
+ },
+ {
+  "id": 4429,
+  "tr": "mevsimlik",
+  "en": "seasonal",
+  "beispiel": "Wer saisonal einkauft, spart Geld und schont das Klima.",
+  "beispielTr": "Mevsimine göre alışveriş yapan hem tasarruf eder hem iklimi korur.",
+  "beispielEn": "Whoever shops seasonally saves money and protects the climate."
+ },
+ {
+  "id": 4430,
+  "tr": "türüne uygun",
+  "en": "species-appropriate",
+  "beispiel": "Eine artgerechte Haltung braucht mehr Platz und mehr Personal.",
+  "beispielTr": "Türüne uygun bir yetiştiricilik daha çok yer ve personel ister.",
+  "beispielEn": "Species-appropriate husbandry needs more space and more staff."
+ },
+ {
+  "id": 4431,
+  "tr": "az yağlı",
+  "en": "low-fat",
+  "beispiel": "Der Arzt hat ihr eine fettarme Kost empfohlen.",
+  "beispielTr": "Doktor ona az yağlı bir beslenme önerdi.",
+  "beispielEn": "The doctor recommended a low-fat diet for her."
+ },
+ {
+  "id": 4432,
+  "tr": "GDO'suz",
+  "en": "GMO-free",
+  "beispiel": "Das Futter für diese Hühner ist nachweislich gentechnikfrei.",
+  "beispielTr": "Bu tavukların yemi kanıtlanmış biçimde GDO'suz.",
+  "beispielEn": "The feed for these chickens is verifiably GMO-free."
+ },
+ {
+  "id": 4433,
+  "tr": "şekerli",
+  "en": "sugary",
+  "beispiel": "Zuckerhaltige Getränke sollen in Schulen künftig verschwinden.",
+  "beispielTr": "Şekerli içecekler bundan böyle okullardan kaldırılacak.",
+  "beispielEn": "Sugary drinks are to disappear from schools in the future."
+ },
+ {
+  "id": 4434,
+  "tr": "acımış",
+  "en": "rancid",
+  "beispiel": "Die Nüsse schmecken ranzig und gehören in den Müll.",
+  "beispielTr": "Cevizlerin tadı acımış, çöpe atılmaları gerek.",
+  "beispielEn": "The nuts taste rancid and belong in the trash."
+ },
+ {
+  "id": 4435,
+  "tr": "bol",
+  "en": "plenty",
+  "beispiel": "In diesem Jahr gab es reichlich Obst aus der Region.",
+  "beispielTr": "Bu yıl yöreden bol miktarda meyve çıktı.",
+  "beispielEn": "This year there was plenty of fruit from the region."
+ },
+ {
+  "id": 4436,
+  "tr": "kredi",
+  "en": "loan",
+  "beispiel": "Die Bank hat uns ein zinsgünstiges Darlehen für den Hausbau gewährt.",
+  "beispielTr": "Banka bize ev yapımı için düşük faizli bir kredi verdi.",
+  "beispielEn": "The bank granted us a low-interest loan to build the house."
+ },
+ {
+  "id": 4437,
+  "tr": "taksitle ödeme",
+  "en": "installment payment",
+  "beispiel": "Bei Ratenzahlung fallen zusätzliche Kosten von acht Prozent an.",
+  "beispielTr": "Taksitle ödemede yüzde sekiz ek maliyet çıkıyor.",
+  "beispielEn": "With installment payment there are extra costs of eight percent."
+ },
+ {
+  "id": 4438,
+  "tr": "kefalet",
+  "en": "guarantee",
+  "beispiel": "Ohne die Bürgschaft der Eltern hätte er keine Wohnung bekommen.",
+  "beispielTr": "Ailesinin kefaleti olmasaydı daire bulamazdı.",
+  "beispielEn": "Without his parents' guarantee he would not have gotten an apartment."
+ },
+ {
+  "id": 4439,
+  "tr": "hesap ekstresi",
+  "en": "bank statement",
+  "beispiel": "Auf dem letzten Kontoauszug entdeckte sie eine unbekannte Abbuchung.",
+  "beispielTr": "Son hesap ekstresinde tanımadığı bir kesinti fark etti.",
+  "beispielEn": "On the last bank statement she found an unfamiliar charge."
+ },
+ {
+  "id": 4440,
+  "tr": "otomatik ödeme",
+  "en": "direct debit",
+  "beispiel": "Die Miete wird jeden Monat per Lastschrift eingezogen.",
+  "beispielTr": "Kira her ay otomatik ödemeyle hesaptan çekiliyor.",
+  "beispielEn": "The rent is collected by direct debit every month."
+ },
+ {
+  "id": 4441,
+  "tr": "düzenli ödeme talimatı",
+  "en": "standing order",
+  "beispiel": "Für die Versicherung habe ich einen Dauerauftrag eingerichtet.",
+  "beispielTr": "Sigorta için düzenli ödeme talimatı verdim.",
+  "beispielEn": "I set up a standing order for the insurance."
+ },
+ {
+  "id": 4442,
+  "tr": "bakiye",
+  "en": "credit balance",
+  "beispiel": "Auf der Karte ist noch ein Guthaben von zehn Euro.",
+  "beispielTr": "Kartta hâlâ on euroluk bir bakiye var.",
+  "beispielEn": "There is still a credit of ten euros on the card."
+ }
+]

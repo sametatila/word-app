@@ -1,0 +1,406 @@
+[
+ {
+  "id": 4443,
+  "tr": "birikim",
+  "en": "savings",
+  "beispiel": "Die Familie hat ihre Ersparnisse in die Renovierung gesteckt.",
+  "beispielTr": "Aile birikimlerini tadilata yatırdı.",
+  "beispielEn": "The family put their savings into the renovation."
+ },
+ {
+  "id": 4444,
+  "tr": "bütçe planı",
+  "en": "budget plan",
+  "beispiel": "Der Stadtrat verabschiedet den Haushaltsplan für das kommende Jahr.",
+  "beispielTr": "Belediye meclisi gelecek yılın bütçe planını onaylıyor.",
+  "beispielEn": "The city council approves the budget plan for next year."
+ },
+ {
+  "id": 4445,
+  "tr": "gecikme ücreti",
+  "en": "late fee",
+  "beispiel": "Wer zu spät zahlt, muss mit einer Mahngebühr rechnen.",
+  "beispielTr": "Geç ödeyen, gecikme ücretini göze almalı.",
+  "beispielEn": "Anyone who pays late has to expect a late fee."
+ },
+ {
+  "id": 4446,
+  "tr": "ödeme süresi",
+  "en": "payment deadline",
+  "beispiel": "Die Zahlungsfrist läuft am Ende des Monats ab.",
+  "beispielTr": "Ödeme süresi ay sonunda doluyor.",
+  "beispielEn": "The payment deadline expires at the end of the month."
+ },
+ {
+  "id": 4447,
+  "tr": "vade",
+  "en": "due date",
+  "beispiel": "Bei Fälligkeit der Rechnung wird der Betrag automatisch abgezogen.",
+  "beispielTr": "Faturanın vadesi geldiğinde tutar otomatik olarak çekiliyor.",
+  "beispielEn": "When the invoice falls due, the amount is deducted automatically."
+ },
+ {
+  "id": 4448,
+  "tr": "ödeme gecikmesi",
+  "en": "payment default",
+  "beispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor.",
+  "beispielTr": "Ödeme gecikmesinde şirket yasal yollara başvurma hakkını saklı tutuyor.",
+  "beispielEn": "If payment is delayed, the company reserves the right to take legal action."
+ },
+ {
+  "id": 4449,
+  "tr": "haciz",
+  "en": "seizure",
+  "beispiel": "Nach dem Urteil drohte ihm die Pfändung seines Gehalts.",
+  "beispielTr": "Karardan sonra maaşına haciz gelme tehlikesi doğdu.",
+  "beispielEn": "After the ruling he faced the seizure of his wages."
+ },
+ {
+  "id": 4450,
+  "tr": "alacaklı",
+  "en": "creditor",
+  "beispiel": "Die Gläubiger stimmten dem Sanierungsplan der Firma schließlich zu.",
+  "beispielTr": "Alacaklılar sonunda şirketin yeniden yapılanma planını onayladı.",
+  "beispielEn": "The creditors finally approved the company's restructuring plan."
+ },
+ {
+  "id": 4451,
+  "tr": "borçlu",
+  "en": "debtor",
+  "beispiel": "Der Schuldner konnte die vereinbarten Raten nicht mehr aufbringen.",
+  "beispielTr": "Borçlu, kararlaştırılan taksitleri artık ödeyemez oldu.",
+  "beispielEn": "The debtor could no longer come up with the agreed installments."
+ },
+ {
+  "id": 4452,
+  "tr": "ödeme gücü",
+  "en": "creditworthiness",
+  "beispiel": "Vor der Vergabe prüft die Bank sorgfältig die Bonität des Kunden.",
+  "beispielTr": "Banka kredi vermeden önce müşterinin ödeme gücünü dikkatle inceliyor.",
+  "beispielEn": "Before granting the loan, the bank carefully checks the customer's creditworthiness."
+ }
+,
+ {
+  "id": 4453,
+  "tr": "ipotek",
+  "en": "mortgage",
+  "beispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro.",
+  "beispielTr": "Evin üzerinde hâlâ 200.000 euroluk bir ipotek var.",
+  "beispielEn": "There is still a mortgage of 200,000 euros on the house."
+ },
+ {
+  "id": 4454,
+  "tr": "hisse senedi",
+  "en": "share",
+  "beispiel": "Die Aktien des Konzerns verloren nach der Meldung deutlich an Wert.",
+  "beispielTr": "Şirketin hisseleri haberin ardından belirgin biçimde değer kaybetti.",
+  "beispielEn": "The group's shares lost significant value after the announcement."
+ },
+ {
+  "id": 4455,
+  "tr": "menkul kıymet",
+  "en": "security",
+  "beispiel": "Er hat sein Erbe in sichere Wertpapiere investiert.",
+  "beispielTr": "Mirasını güvenli menkul kıymetlere yatırdı.",
+  "beispielEn": "He invested his inheritance in safe securities."
+ },
+ {
+  "id": 4456,
+  "tr": "spekülasyon",
+  "en": "speculation",
+  "beispiel": "Die Spekulation mit Wohnraum treibt die Mieten in die Höhe.",
+  "beispielTr": "Konut üzerinden spekülasyon kiraları yukarı çekiyor.",
+  "beispielEn": "Speculation in housing is driving rents up."
+ },
+ {
+  "id": 4457,
+  "tr": "hesap bakiyesi",
+  "en": "account balance",
+  "beispiel": "Kurz vor Monatsende sieht er lieber nicht auf den Kontostand.",
+  "beispielTr": "Ay sonuna doğru hesap bakiyesine bakmamayı tercih ediyor.",
+  "beispielEn": "Just before the end of the month he'd rather not look at his account balance."
+ },
+ {
+  "id": 4458,
+  "tr": "muafiyet tutarı",
+  "en": "tax allowance",
+  "beispiel": "Bis zu diesem Freibetrag bleiben Kapitalerträge völlig unversteuert.",
+  "beispielTr": "Bu muafiyet tutarına kadar sermaye gelirleri vergilendirilmiyor.",
+  "beispielEn": "Up to this tax allowance, capital gains remain completely untaxed."
+ },
+ {
+  "id": 4459,
+  "tr": "kesinti",
+  "en": "levy",
+  "beispiel": "Von seinem Lohn gehen fast vierzig Prozent für Abgaben ab.",
+  "beispielTr": "Maaşının neredeyse yüzde kırkı kesintilere gidiyor.",
+  "beispielEn": "Almost forty percent of his wages goes to levies."
+ },
+ {
+  "id": 4460,
+  "tr": "gelir vergisi",
+  "en": "income tax",
+  "beispiel": "Selbstständige zahlen die Einkommensteuer meist in vierteljährlichen Vorauszahlungen.",
+  "beispielTr": "Serbest çalışanlar gelir vergisini genellikle üç aylık peşin ödemelerle yatırır.",
+  "beispielEn": "The self-employed usually pay income tax in quarterly advance payments."
+ },
+ {
+  "id": 4461,
+  "tr": "vergi dairesi",
+  "en": "tax office",
+  "beispiel": "Das Finanzamt hat seinen Einspruch gegen den Bescheid zurückgewiesen.",
+  "beispielTr": "Vergi dairesi, karara yaptığı itirazı reddetti.",
+  "beispielEn": "The tax office rejected his objection to the assessment."
+ },
+ {
+  "id": 4462,
+  "tr": "vergi kaçırma",
+  "en": "tax evasion",
+  "beispiel": "Wegen Steuerhinterziehung wurde der Unternehmer zu einer Geldstrafe verurteilt.",
+  "beispielTr": "İş insanı vergi kaçırmaktan para cezasına çarptırıldı.",
+  "beispielEn": "The entrepreneur was fined for tax evasion."
+ }
+,
+ {
+  "id": 4463,
+  "tr": "sözleşme süresi",
+  "en": "contract term",
+  "beispiel": "Die Vertragslaufzeit beträgt zwei Jahre und verlängert sich automatisch.",
+  "beispielTr": "Sözleşme süresi iki yıl ve kendiliğinden uzuyor.",
+  "beispielEn": "The contract term is two years and renews automatically."
+ },
+ {
+  "id": 4464,
+  "tr": "poliçe",
+  "en": "policy",
+  "beispiel": "In der Police steht genau, welche Schäden ersetzt werden.",
+  "beispielTr": "Poliçede hangi hasarların karşılanacağı tam olarak yazıyor.",
+  "beispielEn": "The policy states exactly which damages are covered."
+ },
+ {
+  "id": 4465,
+  "tr": "katılım payı",
+  "en": "deductible",
+  "beispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden.",
+  "beispielTr": "Bu tarifede hasar başına katılım payı 300 euro.",
+  "beispielEn": "With this plan the deductible is 300 euros per claim."
+ },
+ {
+  "id": 4466,
+  "tr": "sorumluluk sigortası",
+  "en": "liability insurance",
+  "beispiel": "Den zerbrochenen Spiegel übernimmt zum Glück meine Haftpflicht.",
+  "beispielTr": "Kırılan aynayı neyse ki sorumluluk sigortam karşılıyor.",
+  "beispielEn": "Luckily my liability insurance covers the broken mirror."
+ },
+ {
+  "id": 4467,
+  "tr": "emeklilik sigortası",
+  "en": "pension insurance",
+  "beispiel": "In die gesetzliche Rentenversicherung zahlt jeder Angestellte automatisch ein.",
+  "beispielTr": "Yasal emeklilik sigortasına her çalışan otomatik olarak prim öder.",
+  "beispielEn": "Every employee pays into the statutory pension insurance automatically."
+ },
+ {
+  "id": 4468,
+  "tr": "iş göremezlik",
+  "en": "occupational disability",
+  "beispiel": "Gegen Berufsunfähigkeit sollte man sich früh versichern lassen.",
+  "beispielTr": "İş göremezliğe karşı erken yaşta sigorta yaptırmak gerekir.",
+  "beispielEn": "You should insure yourself against occupational disability early."
+ },
+ {
+  "id": 4469,
+  "tr": "emeklilik",
+  "en": "retirement",
+  "beispiel": "Nach vierzig Berufsjahren geht sie im Herbst in den Ruhestand.",
+  "beispielTr": "Kırk yıllık çalışma hayatının ardından sonbaharda emekli oluyor.",
+  "beispielEn": "After forty years of work she retires in the fall."
+ },
+ {
+  "id": 4470,
+  "tr": "destek",
+  "en": "subsidy",
+  "beispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss.",
+  "beispielTr": "Yeni kalorifer için devlet desteği veriliyor.",
+  "beispielEn": "There is a government subsidy for the new heating system."
+ },
+ {
+  "id": 4471,
+  "tr": "tazminat",
+  "en": "damages",
+  "beispiel": "Der Mieter fordert Schadenersatz für die beschädigten Möbel.",
+  "beispielTr": "Kiracı zarar gören mobilyalar için tazminat talep ediyor.",
+  "beispielEn": "The tenant is claiming damages for the ruined furniture."
+ },
+ {
+  "id": 4472,
+  "tr": "başvuru sahibi",
+  "en": "applicant",
+  "beispiel": "Der Antragsteller muss seine Einkünfte der letzten drei Monate nachweisen.",
+  "beispielTr": "Başvuru sahibi son üç aylık gelirini belgelemek zorunda.",
+  "beispielEn": "The applicant must prove his income for the last three months."
+ }
+,
+ {
+  "id": 4473,
+  "tr": "komisyon",
+  "en": "commission",
+  "beispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
+  "beispielTr": "Emlakçı satış bedelinin yüzde üçü kadar komisyon alıyor.",
+  "beispielEn": "The agent gets a commission of three percent of the purchase price."
+ },
+ {
+  "id": 4474,
+  "tr": "sermaye",
+  "en": "capital",
+  "beispiel": "Für die Gründung fehlt ihm schlicht das nötige Kapital.",
+  "beispielTr": "Şirketi kurmak için gereken sermaye onda yok.",
+  "beispielEn": "He simply lacks the capital needed to start the business."
+ },
+ {
+  "id": 4475,
+  "tr": "servet",
+  "en": "fortune",
+  "beispiel": "Sein Vermögen ist breit über mehrere Anlageformen verteilt.",
+  "beispielTr": "Serveti birçok yatırım aracına geniş biçimde dağılmış.",
+  "beispielEn": "His fortune is spread widely across several types of investment."
+ },
+ {
+  "id": 4476,
+  "tr": "likidite",
+  "en": "liquidity",
+  "beispiel": "Trotz voller Auftragsbücher fehlt dem Betrieb die Liquidität.",
+  "beispielTr": "Sipariş defteri dolu olsa da işletmenin likiditesi yok.",
+  "beispielEn": "Despite full order books, the company lacks liquidity."
+ },
+ {
+  "id": 4477,
+  "tr": "fiyat teklifi",
+  "en": "cost estimate",
+  "beispiel": "Vor der Reparatur bat sie um einen schriftlichen Kostenvoranschlag.",
+  "beispielTr": "Tamirden önce yazılı bir fiyat teklifi istedi.",
+  "beispielEn": "Before the repair she asked for a written cost estimate."
+ },
+ {
+  "id": 4478,
+  "tr": "para birimi",
+  "en": "currency",
+  "beispiel": "Die Währung des Landes verliert seit Monaten an Wert.",
+  "beispielTr": "Ülkenin para birimi aylardır değer kaybediyor.",
+  "beispielEn": "The country's currency has been losing value for months."
+ },
+ {
+  "id": 4479,
+  "tr": "bütçe",
+  "en": "budget",
+  "beispiel": "Der Etat für Kultur wurde in diesem Jahr erneut gekürzt.",
+  "beispielTr": "Kültür bütçesi bu yıl yine kısıldı.",
+  "beispielEn": "The budget for culture was cut again this year."
+ },
+ {
+  "id": 4480,
+  "tr": "muhasebe",
+  "en": "bookkeeping",
+  "beispiel": "Eine ordentliche Buchführung erspart am Jahresende viel Ärger.",
+  "beispielTr": "Düzgün bir muhasebe yıl sonunda insanı çok dertten kurtarır.",
+  "beispielEn": "Proper bookkeeping saves a lot of trouble at the end of the year."
+ },
+ {
+  "id": 4481,
+  "tr": "kapatmak",
+  "en": "to pay off",
+  "beispiel": "In zwölf Jahren hatte das Paar den gesamten Kredit getilgt.",
+  "beispielTr": "Çift on iki yılda kredinin tamamını kapattı.",
+  "beispielEn": "In twelve years the couple had paid off the entire loan."
+ },
+ {
+  "id": 4482,
+  "tr": "hesaptan çekmek",
+  "en": "to debit",
+  "beispiel": "Der Beitrag wird jeweils zum Ersten des Monats abgebucht.",
+  "beispielTr": "Aidat her ayın birinde hesaptan çekiliyor.",
+  "beispielEn": "The fee is debited on the first of each month."
+ }
+,
+ {
+  "id": 4483,
+  "tr": "artırmak",
+  "en": "to top up",
+  "beispiel": "Die Regierung will die Zuschüsse für Familien deutlich aufstocken.",
+  "beispielTr": "Hükümet ailelere verilen destekleri belirgin biçimde artırmak istiyor.",
+  "beispielEn": "The government wants to top up family subsidies considerably."
+ },
+ {
+  "id": 4484,
+  "tr": "değersizleştirmek",
+  "en": "to devalue",
+  "beispiel": "Eine hohe Inflation entwertet die Ersparnisse der kleinen Sparer.",
+  "beispielTr": "Yüksek enflasyon küçük tasarruf sahiplerinin birikimlerini değersizleştiriyor.",
+  "beispielEn": "High inflation devalues the savings of small savers."
+ },
+ {
+  "id": 4485,
+  "tr": "harcamak",
+  "en": "to expend",
+  "beispiel": "Für die Sanierung mussten sie erhebliche Mittel aufwenden.",
+  "beispielTr": "Tadilat için hatırı sayılır bir kaynak harcamak zorunda kaldılar.",
+  "beispielEn": "They had to expend considerable funds on the renovation."
+ },
+ {
+  "id": 4486,
+  "tr": "geri ödemek",
+  "en": "to reimburse",
+  "beispiel": "Die Kasse erstattet die Kosten für die Behandlung vollständig.",
+  "beispielTr": "Sigorta, tedavi masraflarını eksiksiz olarak geri ödüyor.",
+  "beispielEn": "The insurer reimburses the treatment costs in full."
+ },
+ {
+  "id": 4487,
+  "tr": "ödemek",
+  "en": "to settle",
+  "beispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag.",
+  "beispielTr": "Lütfen ödenmemiş faturayı önümüzdeki cumaya kadar ödeyin.",
+  "beispielEn": "Please settle the outstanding invoice by next Friday."
+ },
+ {
+  "id": 4488,
+  "tr": "yatırmak",
+  "en": "to pay",
+  "beispiel": "Für den Grundbucheintrag ist eine Gebühr zu entrichten.",
+  "beispielTr": "Tapu kaydı için bir harç yatırmak gerekiyor.",
+  "beispielEn": "A fee has to be paid for the land register entry."
+ },
+ {
+  "id": 4489,
+  "tr": "vergiden düşmek",
+  "en": "to deduct",
+  "beispiel": "Das Arbeitszimmer kann sie teilweise von der Steuer absetzen.",
+  "beispielTr": "Çalışma odasını kısmen vergiden düşebiliyor.",
+  "beispielEn": "She can partly deduct her home office from her taxes."
+ },
+ {
+  "id": 4490,
+  "tr": "hesaplamak",
+  "en": "to calculate",
+  "beispiel": "Der Betrieb hat die Preise offenbar zu knapp kalkuliert.",
+  "beispielTr": "İşletme fiyatları belli ki fazla dar hesaplamış.",
+  "beispielEn": "The company evidently calculated its prices too tightly."
+ },
+ {
+  "id": 4491,
+  "tr": "mahsup etmek",
+  "en": "to offset",
+  "beispiel": "Die Anzahlung wird mit der Schlussrechnung verrechnet.",
+  "beispielTr": "Peşinat, son faturadan mahsup edilecek.",
+  "beispielEn": "The down payment will be offset against the final invoice."
+ },
+ {
+  "id": 4492,
+  "tr": "dağıtmak",
+  "en": "to spread",
+  "beispiel": "Wer sein Risiko streut, verliert bei einem Kurssturz weniger.",
+  "beispielTr": "Riskini dağıtan kişi ani düşüşte daha az kaybeder.",
+  "beispielEn": "Whoever spreads their risk loses less in a market crash."
+ }
+]

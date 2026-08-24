@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4143,
+    "tr": "yetersiz",
+    "en": "inadequate",
+    "beispiel": "Seine Vorbereitung auf die Prüfung war mangelhaft.",
+    "beispielTr": "Sınava hazırlığı yetersizdi.",
+    "beispielEn": "His preparation for the exam was inadequate."
+  },
+  {
+    "id": 4144,
+    "tr": "olağanüstü",
+    "en": "outstanding",
+    "beispiel": "Der Koch hat gestern ein hervorragendes Menü serviert.",
+    "beispielTr": "Aşçı dün olağanüstü bir menü sundu.",
+    "beispielEn": "The chef served an outstanding menu yesterday."
+  },
+  {
+    "id": 4145,
+    "tr": "kabul edilebilir",
+    "en": "acceptable",
+    "beispiel": "Für diesen Preis ist die Qualität durchaus akzeptabel.",
+    "beispielTr": "Bu fiyata kalite gayet kabul edilebilir.",
+    "beispielEn": "For this price the quality is quite acceptable."
+  },
+  {
+    "id": 4146,
+    "tr": "çeşitli",
+    "en": "varied",
+    "beispiel": "Die Aufgaben in diesem Beruf sind sehr vielfältig.",
+    "beispielTr": "Bu meslekteki görevler çok çeşitli.",
+    "beispielEn": "The tasks in this job are very varied."
+  },
+  {
+    "id": 4147,
+    "tr": "anlamlı",
+    "en": "significant",
+    "beispiel": "Zwischen beiden Gruppen bestand kein signifikanter Unterschied.",
+    "beispielTr": "İki grup arasında anlamlı bir fark yoktu.",
+    "beispielEn": "There was no significant difference between the two groups."
+  },
+  {
+    "id": 4148,
+    "tr": "sabit",
+    "en": "constant",
+    "beispiel": "Die Temperatur blieb über Stunden konstant.",
+    "beispielTr": "Sıcaklık saatlerce sabit kaldı.",
+    "beispielEn": "The temperature stayed constant for hours."
+  },
+  {
+    "id": 4149,
+    "tr": "muazzam",
+    "en": "enormous",
+    "beispiel": "Der Aufwand für den Umzug war enorm.",
+    "beispielTr": "Taşınma için harcanan emek muazzamdı.",
+    "beispielEn": "The effort for the move was enormous."
+  },
+  {
+    "id": 4150,
+    "tr": "cılız",
+    "en": "meager",
+    "beispiel": "Sein Referat war inhaltlich ziemlich dürftig.",
+    "beispielTr": "Sunumu içerik bakımından oldukça cılızdı.",
+    "beispielEn": "His presentation was rather thin in content."
+  },
+  {
+    "id": 4151,
+    "tr": "tek tük",
+    "en": "sporadic",
+    "beispiel": "Vereinzelt gab es Kritik an dem neuen Verfahren.",
+    "beispielTr": "Yeni yönteme tek tük eleştiri geldi.",
+    "beispielEn": "There was sporadic criticism of the new procedure."
+  },
+  {
+    "id": 4152,
+    "tr": "sınırlı",
+    "en": "manageable",
+    "beispiel": "Der finanzielle Schaden blieb bislang überschaubar.",
+    "beispielTr": "Mali zarar şimdilik sınırlı kaldı.",
+    "beispielEn": "So far the financial damage has stayed manageable."
+  },
+  {
+    "id": 4153,
+    "tr": "kayda değer",
+    "en": "notable",
+    "beispiel": "Nennenswerte Fortschritte gab es in diesem Bereich nicht.",
+    "beispielTr": "Bu alanda kayda değer bir ilerleme olmadı.",
+    "beispielEn": "There was no notable progress in this area."
+  },
+  {
+    "id": 4154,
+    "tr": "gitgide",
+    "en": "increasingly",
+    "beispiel": "Der Kranke wurde zusehends schwächer.",
+    "beispielTr": "Hasta gitgide zayıfladı.",
+    "beispielEn": "The patient became increasingly weak."
+  },
+  {
+    "id": 4155,
+    "tr": "kademeli olarak",
+    "en": "gradually",
+    "beispiel": "Die Förderung wird in den nächsten Jahren sukzessive zurückgefahren.",
+    "beispielTr": "Destek önümüzdeki yıllarda kademeli olarak azaltılacak.",
+    "beispielEn": "The funding will be gradually reduced over the coming years."
+  },
+  {
+    "id": 4156,
+    "tr": "adım adım",
+    "en": "step by step",
+    "beispiel": "Die strengen Regeln sollen schrittweise gelockert werden.",
+    "beispielTr": "Sıkı kuralların adım adım gevşetilmesi planlanıyor.",
+    "beispielEn": "The strict rules are to be relaxed step by step."
+  },
+  {
+    "id": 4157,
+    "tr": "orantısız",
+    "en": "disproportionate",
+    "beispiel": "Junge Familien sind von den Kosten überproportional betroffen.",
+    "beispielTr": "Genç aileler maliyetlerden orantısız biçimde etkileniyor.",
+    "beispielEn": "Young families are disproportionately affected by the costs."
+  },
+  {
+    "id": 4158,
+    "tr": "belirleyici",
+    "en": "decisive",
+    "beispiel": "Für die Entscheidung war letztlich der Preis ausschlaggebend.",
+    "beispielTr": "Kararda nihayetinde fiyat belirleyici oldu.",
+    "beispielEn": "In the end the price was the decisive factor."
+  },
+  {
+    "id": 4159,
+    "tr": "eksik",
+    "en": "patchy",
+    "beispiel": "Seine Kenntnisse in Mathematik sind ziemlich lückenhaft.",
+    "beispielTr": "Matematik bilgisi epey eksik.",
+    "beispielEn": "His knowledge of math is rather patchy."
+  },
+  {
+    "id": 4160,
+    "tr": "kusursuz",
+    "en": "flawless",
+    "beispiel": "Das Gerät funktionierte während der ganzen Prüfung einwandfrei.",
+    "beispielTr": "Cihaz test boyunca kusursuz çalıştı.",
+    "beispielEn": "The device worked flawlessly throughout the whole test."
+  },
+  {
+    "id": 4161,
+    "tr": "en iyi ihtimalle",
+    "en": "at best",
+    "beispiel": "Das Konzert war bestenfalls durchschnittlich.",
+    "beispielTr": "Konser en iyi ihtimalle vasattı.",
+    "beispielEn": "The concert was mediocre at best."
+  },
+  {
+    "id": 4162,
+    "tr": "sertleşmek",
+    "en": "to intensify",
+    "beispiel": "Der Wettbewerb in der Branche hat sich deutlich verschärft.",
+    "beispielTr": "Sektördeki rekabet belirgin biçimde sertleşti.",
+    "beispielEn": "Competition in the industry has intensified considerably."
+  },
+  {
+    "id": 4163,
+    "tr": "artırmak",
+    "en": "to increase",
+    "beispiel": "Der Betrieb konnte seinen Absatz um zwölf Prozent steigern.",
+    "beispielTr": "İşletme satışlarını yüzde on iki artırmayı başardı.",
+    "beispielEn": "The company managed to increase its sales by twelve percent."
+  },
+  {
+    "id": 4164,
+    "tr": "düşürmek",
+    "en": "to lower",
+    "beispiel": "Die Bank hat die Zinsen zum zweiten Mal gesenkt.",
+    "beispielTr": "Banka faizleri ikinci kez düşürdü.",
+    "beispielEn": "The bank has lowered interest rates for the second time."
+  },
+  {
+    "id": 4165,
+    "tr": "küçülmek",
+    "en": "to shrink",
+    "beispiel": "Der Pullover ist beim Waschen stark geschrumpft.",
+    "beispielTr": "Kazak yıkamada iyice küçüldü.",
+    "beispielEn": "The sweater shrank a lot in the wash."
+  },
+  {
+    "id": 4166,
+    "tr": "yerinde saymak",
+    "en": "to stagnate",
+    "beispiel": "Die Löhne stagnieren in dieser Branche seit Jahren.",
+    "beispielTr": "Bu sektörde ücretler yıllardır yerinde sayıyor.",
+    "beispielEn": "Wages in this industry have stagnated for years."
+  },
+  {
+    "id": 4167,
+    "tr": "gerilemek",
+    "en": "to decline",
+    "beispiel": "Die Unfallzahlen sind im vergangenen Jahr deutlich zurückgegangen.",
+    "beispielTr": "Kaza sayıları geçen yıl belirgin biçimde geriledi.",
+    "beispielEn": "The number of accidents declined markedly last year."
+  },
+  {
+    "id": 4168,
+    "tr": "geride bırakmak",
+    "en": "to surpass",
+    "beispiel": "Ihre Leistung hat alle anderen im Team übertroffen.",
+    "beispielTr": "Performansı takımdaki diğer herkesi geride bıraktı.",
+    "beispielEn": "Her performance surpassed everyone else on the team."
+  },
+  {
+    "id": 4169,
+    "tr": "aşmak",
+    "en": "to exceed",
+    "beispiel": "Der Lärmpegel überschreitet nachts den erlaubten Wert.",
+    "beispielTr": "Gürültü düzeyi geceleri izin verilen değeri aşıyor.",
+    "beispielEn": "At night the noise level exceeds the permitted value."
+  },
+  {
+    "id": 4170,
+    "tr": "sınıflandırmak",
+    "en": "to classify",
+    "beispiel": "Die Behörde hat den Fall als dringend eingestuft.",
+    "beispielTr": "Kurum vakayı acil olarak sınıflandırdı.",
+    "beispielEn": "The authority classified the case as urgent."
+  },
+  {
+    "id": 4171,
+    "tr": "takdir etmek",
+    "en": "to appreciate",
+    "beispiel": "Die Jury würdigte vor allem den Mut der Autorin.",
+    "beispielTr": "Jüri her şeyden çok yazarın cesaretini takdir etti.",
+    "beispielEn": "The jury above all appreciated the author's courage."
+  },
+  {
+    "id": 4172,
+    "tr": "kusur bulmak",
+    "en": "to object to",
+    "beispiel": "Der Prüfer beanstandete mehrere Posten in der Abrechnung.",
+    "beispielTr": "Denetçi hesaptaki birkaç kalemde kusur buldu.",
+    "beispielEn": "The auditor objected to several items in the statement."
+  },
+  {
+    "id": 4173,
+    "tr": "kötüleşmek",
+    "en": "to worsen",
+    "beispiel": "Der Zustand des Patienten hat sich über Nacht verschlechtert.",
+    "beispielTr": "Hastanın durumu bir gecede kötüleşti.",
+    "beispielEn": "The patient's condition worsened overnight."
+  },
+  {
+    "id": 4174,
+    "tr": "iki katına çıkmak",
+    "en": "to double",
+    "beispiel": "Die Zahl der Anfragen hat sich innerhalb eines Jahres verdoppelt.",
+    "beispielTr": "Talep sayısı bir yıl içinde iki katına çıktı.",
+    "beispielEn": "The number of inquiries doubled within a year."
+  },
+  {
+    "id": 4175,
+    "tr": "yarıya indirmek",
+    "en": "to halve",
+    "beispiel": "Die Firma will ihren Stromverbrauch bis 2030 halbieren.",
+    "beispielTr": "Şirket elektrik tüketimini 2030'a kadar yarıya indirmek istiyor.",
+    "beispielEn": "The company wants to halve its electricity use by 2030."
+  },
+  {
+    "id": 4176,
+    "tr": "dengelemek",
+    "en": "to balance out",
+    "beispiel": "Die Einnahmen im Sommer gleichen die Verluste im Winter aus.",
+    "beispielTr": "Yazın elde edilen gelirler kıştaki zararları dengeliyor.",
+    "beispielEn": "Summer earnings balance out the winter losses."
+  },
+  {
+    "id": 4177,
+    "tr": "ulaşmak",
+    "en": "to come to",
+    "beispiel": "Der Schaden beläuft sich auf mehrere hunderttausend Franken.",
+    "beispielTr": "Zarar birkaç yüz bin franga ulaşıyor.",
+    "beispielEn": "The damage comes to several hundred thousand francs."
+  },
+  {
+    "id": 4178,
+    "tr": "tutmak",
+    "en": "to amount to",
+    "beispiel": "Die Rechnung beträgt insgesamt achtzig Franken.",
+    "beispielTr": "Hesap toplam seksen frank tutuyor.",
+    "beispielEn": "The bill amounts to eighty francs in total."
+  },
+  {
+    "id": 4179,
+    "tr": "ağırlık vermek",
+    "en": "to weight",
+    "beispiel": "Die Prüfung gewichtet den schriftlichen Teil doppelt.",
+    "beispielTr": "Sınav yazılı bölüme iki kat ağırlık veriyor.",
+    "beispielEn": "The exam weights the written part twice as much."
+  },
+  {
+    "id": 4180,
+    "tr": "hafiflemek",
+    "en": "to subside",
+    "beispiel": "Die Schmerzen haben nach der Spritze langsam nachgelassen.",
+    "beispielTr": "Ağrılar iğneden sonra yavaş yavaş hafifledi.",
+    "beispielEn": "The pain gradually subsided after the injection."
+  },
+  {
+    "id": 4181,
+    "tr": "artmak",
+    "en": "to go up",
+    "beispiel": "Die Zahl der Zuschauer hat zuletzt wieder zugelegt.",
+    "beispielTr": "İzleyici sayısı son zamanlarda yeniden arttı.",
+    "beispielEn": "The number of viewers has gone up again recently."
+  },
+  {
+    "id": 4182,
+    "tr": "zayıflamak",
+    "en": "to weaken",
+    "beispiel": "Das Wachstum hat sich im zweiten Halbjahr abgeschwächt.",
+    "beispielTr": "Büyüme yılın ikinci yarısında zayıfladı.",
+    "beispielEn": "Growth weakened in the second half of the year."
+  },
+  {
+    "id": 4183,
+    "tr": "güçlendirmek",
+    "en": "to reinforce",
+    "beispiel": "Die Mauer wurde mit Stahl verstärkt.",
+    "beispielTr": "Duvar çelikle güçlendirildi.",
+    "beispielEn": "The wall was reinforced with steel."
+  },
+  {
+    "id": 4184,
+    "tr": "genişletmek",
+    "en": "to expand",
+    "beispiel": "Der Betrieb hat sein Angebot auf drei Kantone ausgeweitet.",
+    "beispielTr": "İşletme sunduğu hizmeti üç kantona genişletti.",
+    "beispielEn": "The company has expanded its services to three cantons."
+  },
+  {
+    "id": 4185,
+    "tr": "önüne geçmek",
+    "en": "to curb",
+    "beispiel": "Mit strengen Auflagen will die Stadt den Verkehr eindämmen.",
+    "beispielTr": "Kent sıkı koşullarla trafiğin önüne geçmek istiyor.",
+    "beispielEn": "With strict rules the city wants to curb traffic."
+  },
+  {
+    "id": 4186,
+    "tr": "belirlemek",
+    "en": "to determine",
+    "beispiel": "Die Polizei konnte den Halter des Wagens ermitteln.",
+    "beispielTr": "Polis aracın sahibini belirleyebildi.",
+    "beispielEn": "The police were able to determine the owner of the car."
+  },
+  {
+    "id": 4187,
+    "tr": "değerini artırmak",
+    "en": "to enhance",
+    "beispiel": "Der neue Bahnhof hat das ganze Quartier aufgewertet.",
+    "beispielTr": "Yeni tren istasyonu bütün mahallenin değerini artırdı.",
+    "beispielEn": "The new station has enhanced the whole neighborhood."
+  },
+  {
+    "id": 4188,
+    "tr": "rakamla belirtmek",
+    "en": "to put a figure on",
+    "beispiel": "Die Versicherung beziffert den Schaden auf zwei Millionen.",
+    "beispielTr": "Sigorta zararı iki milyon olarak belirtiyor.",
+    "beispielEn": "The insurer puts the damage at two million."
+  },
+  {
+    "id": 4189,
+    "tr": "artış",
+    "en": "increase",
+    "beispiel": "Die Statistik zeigt eine deutliche Zunahme der Fernarbeit.",
+    "beispielTr": "İstatistik uzaktan çalışmada belirgin bir artış gösteriyor.",
+    "beispielEn": "The statistics show a clear increase in remote work."
+  },
+  {
+    "id": 4190,
+    "tr": "düşüş",
+    "en": "decline",
+    "beispiel": "Der Rückgang der Besucherzahlen bereitet dem Museum Sorgen.",
+    "beispielTr": "Ziyaretçi sayısındaki düşüş müzeyi kaygılandırıyor.",
+    "beispielEn": "The decline in visitor numbers worries the museum."
+  },
+  {
+    "id": 4191,
+    "tr": "kapsam",
+    "en": "scope",
+    "beispiel": "Der Umfang der Arbeiten war zu Beginn unklar.",
+    "beispielTr": "İşlerin kapsamı başlangıçta belirsizdi.",
+    "beispielEn": "The scope of the work was unclear at the start."
+  },
+  {
+    "id": 4192,
+    "tr": "pay",
+    "en": "share",
+    "beispiel": "Der Anteil der Frauen im Vorstand ist gestiegen.",
+    "beispielTr": "Yönetim kurulundaki kadınların payı arttı.",
+    "beispielEn": "The share of women on the board has risen."
+  }
+]

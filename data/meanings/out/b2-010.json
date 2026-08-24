@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4093,
+  "tr": "meslek sigortası kurumu",
+  "en": "occupational accident insurer",
+  "beispiel": "Die Berufsgenossenschaft zahlt die Behandlung nach einem Unfall im Betrieb.",
+  "beispielTr": "Bir iş kazasından sonra tedaviyi meslek sigortası kurumu karşılıyor.",
+  "beispielEn": "The accident insurance fund pays for treatment after an accident at work."
+ },
+ {
+  "id": 4094,
+  "tr": "işe alıştırmak",
+  "en": "to onboard",
+  "beispiel": "Eine erfahrene Kollegin arbeitet die neuen Mitglieder des Teams ein.",
+  "beispielTr": "Deneyimli bir meslektaş ekibin yeni üyelerini işe alıştırıyor.",
+  "beispielEn": "An experienced colleague is onboarding the new members of the team."
+ },
+ {
+  "id": 4095,
+  "tr": "iş başında yetiştirmek",
+  "en": "to train on the job",
+  "beispiel": "Für diese Tätigkeit werden die Hilfskräfte in zwei Tagen angelernt.",
+  "beispielTr": "Bu iş için yardımcı elemanlar iki günde iş başında yetiştiriliyor.",
+  "beispielEn": "For this work the helpers are trained on the job in two days."
+ },
+ {
+  "id": 4096,
+  "tr": "yazılı uyarı vermek",
+  "en": "to give a written warning",
+  "beispiel": "Der Chef hat ihn wegen wiederholter Verspätungen schriftlich abgemahnt.",
+  "beispielTr": "Patron, tekrarlanan gecikmeler yüzünden ona yazılı uyarı verdi.",
+  "beispielEn": "The boss gave him a written warning for turning up late again and again."
+ },
+ {
+  "id": 4097,
+  "tr": "izinli saymak",
+  "en": "to give time off",
+  "beispiel": "Für die Prüfung wurde sie eine Woche lang von der Arbeit freigestellt.",
+  "beispielTr": "Sınav için bir hafta boyunca işten izinli sayıldı.",
+  "beispielEn": "She was given a week off work for the exam."
+ },
+ {
+  "id": 4098,
+  "tr": "eleman toplamak",
+  "en": "to recruit",
+  "beispiel": "Das Unternehmen will gezielt Ingenieure aus dem Ausland anwerben.",
+  "beispielTr": "Şirket özellikle yurt dışından mühendis toplamak istiyor.",
+  "beispielEn": "The company deliberately wants to recruit engineers from abroad."
+ },
+ {
+  "id": 4099,
+  "tr": "gözetmek",
+  "en": "to supervise",
+  "beispiel": "Ein Meister beaufsichtigt die Arbeiten an der neuen Maschine.",
+  "beispielTr": "Bir usta yeni makinedeki çalışmaları gözetiyor.",
+  "beispielEn": "A foreman supervises the work on the new machine."
+ },
+ {
+  "id": 4100,
+  "tr": "işi göstermek",
+  "en": "to brief",
+  "beispiel": "Alle Beschäftigten werden vor dem ersten Einsatz gründlich eingewiesen.",
+  "beispielTr": "Bütün çalışanlara ilk görevden önce işin nasıl yapılacağı ayrıntılı biçimde gösteriliyor.",
+  "beispielEn": "All employees are briefed thoroughly before their first assignment."
+ },
+ {
+  "id": 4101,
+  "tr": "eğitmek",
+  "en": "to train",
+  "beispiel": "Die Mitarbeiter werden jedes Jahr im Umgang mit Kundendaten geschult.",
+  "beispielTr": "Çalışanlar her yıl müşteri verilerinin kullanımı konusunda eğitiliyor.",
+  "beispielEn": "The staff are trained every year in handling customer data."
+ },
+ {
+  "id": 4102,
+  "tr": "katlanmasını beklemek",
+  "en": "to ask too much of",
+  "beispiel": "So lange Schichten kann man niemandem auf Dauer zumuten.",
+  "beispielTr": "Bu kadar uzun vardiyalara kimsenin uzun vadede katlanması beklenemez.",
+  "beispielEn": "Nobody can be expected to put up with such long shifts for good."
+ },
+ {
+  "id": 4103,
+  "tr": "işbirliği yapmak",
+  "en": "to cooperate",
+  "beispiel": "Die beiden Abteilungen kooperieren bei der Einführung der Software.",
+  "beispielTr": "İki bölüm yazılımın devreye alınmasında işbirliği yapıyor.",
+  "beispielEn": "The two departments are cooperating on the rollout of the software."
+ },
+ {
+  "id": 4104,
+  "tr": "yeniden yapılandırmak",
+  "en": "to restructure",
+  "beispiel": "Der Konzern will die Verwaltung im kommenden Jahr umstrukturieren.",
+  "beispielTr": "Holding gelecek yıl idari birimi yeniden yapılandırmak istiyor.",
+  "beispielEn": "The group wants to restructure its administration next year."
+ },
+ {
+  "id": 4105,
+  "tr": "verimlilik için küçültmek",
+  "en": "to streamline",
+  "beispiel": "Durch die Automatisierung wurden ganze Arbeitsbereiche rationalisiert.",
+  "beispielTr": "Otomasyon yüzünden bütün çalışma alanları verimlilik adına küçültüldü.",
+  "beispielEn": "Whole areas of work were streamlined away through automation."
+ },
+ {
+  "id": 4106,
+  "tr": "koordine etmek",
+  "en": "to coordinate",
+  "beispiel": "Sie koordiniert die Termine zwischen Produktion und Vertrieb.",
+  "beispielTr": "Üretim ile satış arasındaki randevuları o koordine ediyor.",
+  "beispielEn": "She coordinates the appointments between production and sales."
+ },
+ {
+  "id": 4107,
+  "tr": "değerlendirmek",
+  "en": "to assess",
+  "beispiel": "Vorgesetzte beurteilen die Leistung ihrer Teams einmal im Jahr.",
+  "beispielTr": "Amirler ekiplerinin performansını yılda bir kez değerlendiriyor.",
+  "beispielEn": "Managers assess the performance of their teams once a year."
+ },
+ {
+  "id": 4108,
+  "tr": "sunmak",
+  "en": "to present",
+  "beispiel": "Bitte legen Sie am ersten Arbeitstag Ihre Zeugnisse im Original vor.",
+  "beispielTr": "Lütfen ilk iş gününde belgelerinizin asıllarını sunun.",
+  "beispielEn": "Please present the originals of your certificates on your first day."
+ },
+ {
+  "id": 4109,
+  "tr": "işten ayrılmak",
+  "en": "to leave a job",
+  "beispiel": "Zum Jahresende scheidet der langjährige Geschäftsführer aus dem Unternehmen aus.",
+  "beispielTr": "Yıl sonunda uzun yıllardır görevdeki genel müdür şirketten ayrılıyor.",
+  "beispielEn": "At the end of the year the long-serving managing director is leaving the company."
+ },
+ {
+  "id": 4110,
+  "tr": "göreve başlamak",
+  "en": "to take up a post",
+  "beispiel": "Sie hat ihre neue Stelle in der Verwaltung gestern angetreten.",
+  "beispielTr": "İdaredeki yeni görevine dün başladı.",
+  "beispielEn": "She took up her new post in the administration yesterday."
+ },
+ {
+  "id": 4111,
+  "tr": "güvence altına almak",
+  "en": "to safeguard",
+  "beispiel": "Der Vertrag sichert die Beschäftigten für den Fall einer Insolvenz ab.",
+  "beispielTr": "Sözleşme çalışanları olası bir iflasa karşı güvence altına alıyor.",
+  "beispielEn": "The contract safeguards the employees in case of insolvency."
+ },
+ {
+  "id": 4112,
+  "tr": "uymak",
+  "en": "to comply with",
+  "beispiel": "Die gesetzlichen Ruhepausen müssen in jeder Schicht eingehalten werden.",
+  "beispielTr": "Yasal dinlenme molalarına her vardiyada uyulması gerekiyor.",
+  "beispielEn": "The legal rest breaks have to be observed on every shift."
+ },
+ {
+  "id": 4113,
+  "tr": "ihlal etmek",
+  "en": "to violate",
+  "beispiel": "Wer gegen die Betriebsordnung verstößt, muss mit Konsequenzen rechnen.",
+  "beispielTr": "İşyeri yönetmeliğini ihlal eden, sonuçlarını göze almalıdır.",
+  "beispielEn": "Anyone who violates the company rules must expect consequences."
+ },
+ {
+  "id": 4114,
+  "tr": "yer almak",
+  "en": "to take part",
+  "beispiel": "An der Erarbeitung des Sozialplans haben mehrere Gremien mitgewirkt.",
+  "beispielTr": "Sosyal planın hazırlanmasında birçok kurul yer aldı.",
+  "beispielEn": "Several committees took part in drawing up the social plan."
+ },
+ {
+  "id": 4115,
+  "tr": "söz sahibi olmak",
+  "en": "to have a say",
+  "beispiel": "Bei der Gestaltung der Dienstpläne dürfen die Beschäftigten mitbestimmen.",
+  "beispielTr": "Vardiya çizelgeleri düzenlenirken çalışanlar da söz sahibi olabiliyor.",
+  "beispielEn": "The employees get a say in how the shift schedules are drawn up."
+ },
+ {
+  "id": 4116,
+  "tr": "işletme gereği",
+  "en": "for operational reasons",
+  "beispiel": "Zwanzig Stellen wurden betriebsbedingt gestrichen.",
+  "beispielTr": "İşletme gereği yirmi kadro kaldırıldı.",
+  "beispielEn": "Twenty positions were cut for operational reasons."
+ },
+ {
+  "id": 4117,
+  "tr": "fazla nitelikli",
+  "en": "overqualified",
+  "beispiel": "Man lehnte ihn ab, weil er für die Stelle überqualifiziert sei.",
+  "beispielTr": "Pozisyon için fazla nitelikli olduğu gerekçesiyle reddedildi.",
+  "beispielEn": "They turned him down because he was overqualified for the job."
+ },
+ {
+  "id": 4118,
+  "tr": "dediğini yaptırabilen",
+  "en": "assertive",
+  "beispiel": "Für diese Position suchen wir eine durchsetzungsfähige Persönlichkeit.",
+  "beispielTr": "Bu pozisyon için dediğini yaptırabilen bir kişilik arıyoruz.",
+  "beispielEn": "For this position we are looking for an assertive personality."
+ },
+ {
+  "id": 4119,
+  "tr": "özenli",
+  "en": "conscientious",
+  "beispiel": "Sie erledigt auch die langweiligsten Aufgaben gewissenhaft.",
+  "beispielTr": "En sıkıcı görevleri bile özenle yerine getiriyor.",
+  "beispielEn": "She handles even the most boring tasks conscientiously."
+ },
+ {
+  "id": 4120,
+  "tr": "gayretli",
+  "en": "dedicated",
+  "beispiel": "Der Betriebsrat setzt sich engagiert für die jüngeren Kollegen ein.",
+  "beispielTr": "İşyeri kurulu genç meslektaşları için gayretle mücadele ediyor.",
+  "beispielEn": "The works council is a dedicated advocate for the younger colleagues."
+ },
+ {
+  "id": 4121,
+  "tr": "gönüllü",
+  "en": "voluntary",
+  "beispiel": "Viele Mitglieder der Kommission arbeiten rein ehrenamtlich.",
+  "beispielTr": "Komisyon üyelerinin çoğu tamamen gönüllü olarak çalışıyor.",
+  "beispielEn": "Many members of the commission work purely on a voluntary basis."
+ },
+ {
+  "id": 4122,
+  "tr": "bedelsiz",
+  "en": "free of charge",
+  "beispiel": "Die Schulungen stehen den Beschäftigten unentgeltlich zur Verfügung.",
+  "beispielTr": "Eğitimler çalışanlara bedelsiz sunuluyor.",
+  "beispielEn": "The training courses are available to employees free of charge."
+ },
+ {
+  "id": 4123,
+  "tr": "iş sahibi",
+  "en": "gainfully employed",
+  "beispiel": "In dieser Altersgruppe sind mehr als achtzig Prozent erwerbstätig.",
+  "beispielTr": "Bu yaş grubunda yüzde sekseni aşkın kişi iş sahibi.",
+  "beispielEn": "In this age group more than eighty percent are in paid work."
+ },
+ {
+  "id": 4124,
+  "tr": "yan iş olarak",
+  "en": "as a sideline",
+  "beispiel": "Nebenberuflich gibt er abends Kurse an der Volkshochschule.",
+  "beispielTr": "Yan iş olarak akşamları halk eğitim merkezinde kurs veriyor.",
+  "beispielEn": "As a sideline he teaches evening courses at the adult education center."
+ },
+ {
+  "id": 4125,
+  "tr": "dayanıklı",
+  "en": "resilient",
+  "beispiel": "Wer im Schichtbetrieb arbeitet, muss körperlich und seelisch belastbar sein.",
+  "beispielTr": "Vardiyalı çalışan kişinin bedenen ve ruhen dayanıklı olması gerekir.",
+  "beispielEn": "Anyone working shifts has to be physically and mentally resilient."
+ },
+ {
+  "id": 4126,
+  "tr": "önemli ölçüde",
+  "en": "considerably",
+  "beispiel": "Die Kosten sind im letzten Quartal erheblich gestiegen.",
+  "beispielTr": "Maliyetler son çeyrekte önemli ölçüde arttı.",
+  "beispielEn": "Costs rose considerably in the last quarter."
+ },
+ {
+  "id": 4127,
+  "tr": "cüzi",
+  "en": "slight",
+  "beispiel": "Die Abweichung vom Plan war nur geringfügig.",
+  "beispielTr": "Plandan sapma yalnızca cüzi düzeydeydi.",
+  "beispielEn": "The deviation from the plan was only slight."
+ },
+ {
+  "id": 4128,
+  "tr": "vasat",
+  "en": "mediocre",
+  "beispiel": "Der Film erhielt von den Kritikern nur mittelmäßige Bewertungen.",
+  "beispielTr": "Film eleştirmenlerden yalnızca vasat notlar aldı.",
+  "beispielEn": "The film got only mediocre reviews from the critics."
+ },
+ {
+  "id": 4129,
+  "tr": "ağırlıklı olarak",
+  "en": "predominantly",
+  "beispiel": "Die Teilnehmer kamen überwiegend aus kleineren Betrieben.",
+  "beispielTr": "Katılımcılar ağırlıklı olarak küçük işletmelerden geliyordu.",
+  "beispielEn": "The participants came predominantly from smaller companies."
+ },
+ {
+  "id": 4130,
+  "tr": "kayda değer",
+  "en": "considerable",
+  "beispiel": "Das Projekt verschlang einen beträchtlichen Teil des Budgets.",
+  "beispielTr": "Proje bütçenin kayda değer bir kısmını yuttu.",
+  "beispielEn": "The project swallowed a considerable part of the budget."
+ },
+ {
+  "id": 4131,
+  "tr": "hissedilir",
+  "en": "noticeable",
+  "beispiel": "Die Nachfrage hat sich seit dem Frühjahr spürbar belebt.",
+  "beispielTr": "Talep ilkbahardan bu yana hissedilir ölçüde canlandı.",
+  "beispielEn": "Demand has picked up noticeably since the spring."
+ },
+ {
+  "id": 4132,
+  "tr": "belirgin",
+  "en": "perceptible",
+  "beispiel": "Das Tempo der Verhandlungen hat merklich abgenommen.",
+  "beispielTr": "Müzakerelerin hızı belirgin biçimde azaldı.",
+  "beispielEn": "The pace of the negotiations has slowed perceptibly."
+ },
+ {
+  "id": 4133,
+  "tr": "çarpıcı",
+  "en": "drastic",
+  "beispiel": "Die Behörde hat die Gebühren drastisch angehoben.",
+  "beispielTr": "Kurum harçları çarpıcı biçimde yükseltti.",
+  "beispielEn": "The authority raised the fees drastically."
+ },
+ {
+  "id": 4134,
+  "tr": "hızla",
+  "en": "rapidly",
+  "beispiel": "Die Zahl der Bewerbungen ist rapide gesunken.",
+  "beispielTr": "Başvuru sayısı hızla düştü.",
+  "beispielEn": "The number of applications has fallen rapidly."
+ },
+ {
+  "id": 4135,
+  "tr": "yavaş yavaş",
+  "en": "gradually",
+  "beispiel": "Die Spannungen im Team lösten sich allmählich auf.",
+  "beispielTr": "Ekipteki gerginlikler yavaş yavaş dağıldı.",
+  "beispielEn": "The tensions in the team gradually eased."
+ },
+ {
+  "id": 4136,
+  "tr": "istikrarlı",
+  "en": "steady",
+  "beispiel": "Der Verein verzeichnet seit Jahren einen stetigen Zulauf.",
+  "beispielTr": "Dernek yıllardır istikrarlı bir katılım artışı kaydediyor.",
+  "beispielEn": "The club has recorded a steady influx of members for years."
+ },
+ {
+  "id": 4137,
+  "tr": "sıçramalı",
+  "en": "erratic",
+  "beispiel": "Die Preise entwickelten sich in diesem Jahr sprunghaft.",
+  "beispielTr": "Fiyatlar bu yıl sıçramalı bir seyir izledi.",
+  "beispielEn": "Prices moved erratically over the course of this year."
+ },
+ {
+  "id": 4138,
+  "tr": "yetersiz",
+  "en": "inadequate",
+  "beispiel": "Die Begründung des Antrags war völlig unzureichend.",
+  "beispielTr": "Başvurunun gerekçesi tamamen yetersizdi.",
+  "beispielEn": "The reasons given in the application were completely inadequate."
+ },
+ {
+  "id": 4139,
+  "tr": "aşırı",
+  "en": "excessive",
+  "beispiel": "Er trinkt übermäßig viel Kaffee, wenn er Stress hat.",
+  "beispielTr": "Stresliyken aşırı miktarda kahve içiyor.",
+  "beispielEn": "He drinks excessive amounts of coffee when he is stressed."
+ },
+ {
+  "id": 4140,
+  "tr": "hemen hemen",
+  "en": "virtually",
+  "beispiel": "Die Halle war am Eröffnungsabend nahezu leer.",
+  "beispielTr": "Salon açılış akşamı hemen hemen boştu.",
+  "beispielEn": "The hall was virtually empty on the opening night."
+ },
+ {
+  "id": 4141,
+  "tr": "tahminen",
+  "en": "roughly",
+  "beispiel": "An der Demonstration nahmen schätzungsweise zehntausend Menschen teil.",
+  "beispielTr": "Gösteriye tahminen on bin kişi katıldı.",
+  "beispielEn": "Roughly ten thousand people took part in the demonstration."
+ },
+ {
+  "id": 4142,
+  "tr": "görece",
+  "en": "comparatively",
+  "beispiel": "Die Mieten sind hier vergleichsweise niedrig geblieben.",
+  "beispielTr": "Kiralar burada görece düşük kaldı.",
+  "beispielEn": "Rents here have remained comparatively low."
+ }
+]

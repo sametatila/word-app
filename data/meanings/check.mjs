@@ -34,7 +34,11 @@ const flat = (t) =>
     .replace(/ö/g, "o")
     .replace(/ü/g, "u")
     .replace(/ß/g, "ss")
-    .replace(/-/g, "");
+    .replace(/-/g, "")
+    // Rakamlar da düşer: kök kurulurken harf dışı her şey atılıyordu ama cümle
+    // rakamı koruyordu, yani iki taraf farklı normalleştiriliyordu ve
+    // "CO2-Ausstoß" kendi cümlesinde bulunamıyordu.
+    .replace(/\d/g, "");
 
 /**
  * Çekimde kökten kopabilen ön ekler — **uzundan kısaya** sıralı.
@@ -45,7 +49,7 @@ const flat = (t) =>
  * arandığı için doğru cümle ("Die Familie kommt zusammen.") reddediliyordu.
  */
 const SEPARABLE =
-  /^(gegenuber|hinunter|herunter|zusammen|entgegen|spazieren|nebenan|entlang|stehen|bleiben|kennen|sitzen|liegen|heruber|hinuber|herein|hinein|herauf|hinauf|voraus|vorbei|vorher|zurecht|heraus|hinaus|zuruck|kaputt|weiter|wieder|nieder|dabei|davon|daran|darauf|durch|statt|unter|drauf|fern|fest|fort|frei|heim|hoch|nach|teil|uber|dran|drin|wahr|warm|rein|raus|fern|frei|los|auf|aus|bei|ein|her|hin|mit|vor|weg|weh|ab|an|um|zu)(.{3,})$/;
+  /^(auseinander|gegenuber|hinunter|herunter|zusammen|entgegen|spazieren|nebenan|entlang|stehen|bleiben|kennen|sitzen|liegen|heruber|hinuber|herein|hinein|herauf|hinauf|voraus|vorbei|vorher|zurecht|heraus|hinaus|zuruck|kaputt|weiter|wieder|nieder|dabei|davon|daran|darauf|durch|statt|unter|drauf|fern|fest|fort|frei|heim|hoch|nach|teil|uber|dran|drin|wahr|warm|rein|raus|fern|frei|los|auf|aus|bei|ein|her|hin|mit|vor|weg|weh|ab|an|um|zu)(.{3,})$/;
 
 /**
  * Ön ekler düzleştirilmiş biçimde yazılıyor (`zuruck`, `uber`, `gegenuber`):
@@ -222,7 +226,9 @@ function stemVariants(r) {
 
   const son = r.search(/[ie](?=[^aeiou]*$)/);
   if (son >= 0)
-    for (const v of r[son] === "i" ? ["a", "u"] : ["a", "o"])
+    // e → i de gerekli: Präsens 3. tekil şahısta gövde inceliyor
+    // (bewerben → bewirbt, sprechen → spricht, helfen → hilft).
+    for (const v of r[son] === "i" ? ["a", "u"] : ["a", "o", "i"])
       out.push(r.slice(0, son) + v + r.slice(son + 1));
   return out;
 }
@@ -245,7 +251,16 @@ function prefixedForms(part) {
   if (!sep) return [];
   const out = [];
   const govde = root(sep[2]);
-  if (govde.length >= 3) out.push(`${sep[1]}ge${govde}`, `${sep[1]}${govde}`);
+  // "ge" Perfekt ortacı, "zu" ise mastar: ikisi de ön ek ile gövdenin arasına
+  // giriyor ("ist abgeschoben", "um abzuschieben"). `zu`'lu mastar B2'den
+  // itibaren çok yaygın ve tanınmadığında ajan doğal biçimden kaçınıyordu.
+  //
+  // Gövde ayrıca güçlü fiil olabiliyor ve ön ekle Ablaut aynı anda oluyor:
+  // "ausweichen" → "ist ausgewichen". Ön ek ile ünlü değişimi ayrı ayrı
+  // işlendiğinde bu biçim hiçbir kurala uymuyordu.
+  if (govde.length >= 3)
+    for (const g of [govde, ...stemVariants(govde)])
+      out.push(`${sep[1]}ge${g}`, `${sep[1]}zu${g}`, `${sep[1]}${g}`);
   for (const form of IRREGULAR[sep[2]] ?? []) {
     const f = flat(form).replace(/[^a-z]/g, "");
     out.push(`${sep[1]}${f}`);
@@ -287,7 +302,9 @@ function contains(sentence, headword) {
     if (prefixedForms(part).some((f) => kok(f))) return true;
 
     // Ablaut: "ist verschwunden", "hat versprochen".
-    if (r.length >= 5 && stemVariants(r).some((f) => kok(f))) return true;
+    // Eşik dörde iniyor: "melken" kökü ("melk") beş harften kısa olduğu için
+    // Ablaut hiç denenmiyordu ve "gemolken" bulunamıyordu.
+    if (r.length >= 4 && stemVariants(r).some((f) => kok(f))) return true;
 
     // Ayrılabilir fiil: ön ek cümlenin sonuna kaçar ("Siehst du viel fern?").
     // Ön ekin ayrı bir kelime olarak bulunması şart, kök ise gövde olarak.

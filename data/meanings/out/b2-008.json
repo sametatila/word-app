@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3761,
+    "tr": "iptal",
+    "en": "cancellation",
+    "beispiel": "Die Stornierung ist bis 24 Stunden vorher kostenlos.",
+    "beispielTr": "İptal, 24 saat öncesine kadar ücretsiz.",
+    "beispielEn": "Cancellation is free up to 24 hours in advance."
+  },
+  {
+    "id": 3764,
+    "tr": "tatil evi",
+    "en": "vacation rental",
+    "beispiel": "Wir haben eine Ferienwohnung direkt am Meer gemietet.",
+    "beispielTr": "Denizin hemen kıyısında bir tatil evi kiraladık.",
+    "beispielEn": "We rented a vacation rental right by the sea."
+  },
+  {
+    "id": 3766,
+    "tr": "boş zaman etkinliği",
+    "en": "leisure activity",
+    "beispiel": "Lesen ist meine liebste Freizeitbeschäftigung im Winter.",
+    "beispielTr": "Kışın en sevdiğim boş zaman etkinliği kitap okumak.",
+    "beispielEn": "Reading is my favorite leisure activity in winter."
+  },
+  {
+    "id": 3770,
+    "tr": "boş vakit",
+    "en": "leisure",
+    "beispiel": "Endlich habe ich Muße, ein gutes Buch zu lesen.",
+    "beispielTr": "Sonunda güzel bir kitap okuyacak boş vaktim var.",
+    "beispielEn": "I finally have the leisure to read a good book."
+  },
+  {
+    "id": 3771,
+    "tr": "dayandırmak",
+    "en": "to attribute",
+    "beispiel": "Der Erfolg lässt sich auf harte Arbeit zurückführen.",
+    "beispielTr": "Bu başarı sıkı çalışmaya dayandırılabilir.",
+    "beispielEn": "The success can be attributed to hard work."
+  },
+  {
+    "id": 3772,
+    "tr": "katkıda bulunmak",
+    "en": "to contribute",
+    "beispiel": "Freiwillige Helfer haben zu diesem Erfolg beigetragen.",
+    "beispielTr": "Gönüllüler bu başarıya katkıda bulundu.",
+    "beispielEn": "Volunteers contributed to this success."
+  },
+  {
+    "id": 3773,
+    "tr": "kendini kabul ettirmek",
+    "en": "to assert oneself",
+    "beispiel": "Gegen ihre älteren Brüder setzt sie sich immer durch.",
+    "beispielTr": "Ağabeylerine karşı her zaman kendini kabul ettirir.",
+    "beispielEn": "She always asserts herself against her older brothers."
+  },
+  {
+    "id": 3774,
+    "tr": "ele almak",
+    "en": "to engage with",
+    "beispiel": "Wir müssen uns intensiv mit diesem Problem auseinandersetzen.",
+    "beispielTr": "Bu sorunu enine boyuna ele almamız gerekiyor.",
+    "beispielEn": "We have to engage with this problem thoroughly."
+  },
+  {
+    "id": 3779,
+    "tr": "dayanmak",
+    "en": "to be based on",
+    "beispiel": "Die Theorie beruht auf jahrelangen Forschungen.",
+    "beispielTr": "Kuram, yıllar süren araştırmalara dayanıyor.",
+    "beispielEn": "The theory is based on years of research."
+  },
+  {
+    "id": 3780,
+    "tr": "oluşmak",
+    "en": "to consist of",
+    "beispiel": "Das Team besteht aus zehn Mitgliedern.",
+    "beispielTr": "Takım on kişiden oluşuyor.",
+    "beispielEn": "The team consists of ten members."
+  },
+  {
+    "id": 3783,
+    "tr": "başvurmak",
+    "en": "to apply",
+    "beispiel": "Sie hat sich um ein Stipendium im Ausland beworben.",
+    "beispielTr": "Yurt dışında bir burs için başvurdu.",
+    "beispielEn": "She applied for a scholarship abroad."
+  },
+  {
+    "id": 3786,
+    "tr": "güvenmek",
+    "en": "to rely on",
+    "beispiel": "Du kannst dich jederzeit auf meine Hilfe verlassen.",
+    "beispielTr": "Yardımıma her zaman güvenebilirsin.",
+    "beispielEn": "You can always rely on my help."
+  },
+  {
+    "id": 3787,
+    "tr": "atıfta bulunmak",
+    "en": "to refer to",
+    "beispiel": "Der Autor bezieht sich auf eine ältere Studie.",
+    "beispielTr": "Yazar daha eski bir çalışmaya atıfta bulunuyor.",
+    "beispielEn": "The author refers to an older study."
+  },
+  {
+    "id": 3788,
+    "tr": "gönüllü çalışmak",
+    "en": "to volunteer",
+    "beispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
+    "beispielTr": "Yıllardır çevre koruma için gönüllü çalışıyor.",
+    "beispielEn": "For years she has volunteered for environmental protection."
+  },
+  {
+    "id": 3789,
+    "tr": "örnek almak",
+    "en": "to model oneself on",
+    "beispiel": "Junge Designer orientieren sich oft an bekannten Vorbildern.",
+    "beispielTr": "Genç tasarımcılar çoğu zaman tanınmış isimleri örnek alır.",
+    "beispielEn": "Young designers often model themselves on well-known figures."
+  },
+  {
+    "id": 3790,
+    "tr": "göre hareket etmek",
+    "en": "to go by",
+    "beispiel": "Wir richten uns ganz nach euren Wünschen.",
+    "beispielTr": "Tamamen sizin isteklerinize göre hareket ediyoruz.",
+    "beispielEn": "We will go entirely by your wishes."
+  },
+  {
+    "id": 3792,
+    "tr": "dikkat çekmek",
+    "en": "to point out",
+    "beispiel": "Der Arzt weist auf die Risiken der Behandlung hin.",
+    "beispielTr": "Doktor tedavinin risklerine dikkat çekiyor.",
+    "beispielEn": "The doctor points out the risks of the treatment."
+  },
+  {
+    "id": 3793,
+    "tr": "kaynaklanmak",
+    "en": "to result from",
+    "beispiel": "Der Streit resultierte aus einem einfachen Missverständnis.",
+    "beispielTr": "Kavga basit bir yanlış anlamadan kaynaklandı.",
+    "beispielEn": "The argument resulted from a simple misunderstanding."
+  },
+  {
+    "id": 3795,
+    "tr": "eğiliminde olmak",
+    "en": "to tend to",
+    "beispiel": "Er neigt dazu, kleine Probleme zu übertreiben.",
+    "beispielTr": "Küçük sorunları abartma eğilimindedir.",
+    "beispielEn": "He tends to exaggerate small problems."
+  },
+  {
+    "id": 3796,
+    "tr": "sahip olmak",
+    "en": "to have at one's disposal",
+    "beispiel": "Die Firma verfügt über modernste Technik.",
+    "beispielTr": "Şirket en modern teknolojiye sahip.",
+    "beispielEn": "The company has cutting-edge technology at its disposal."
+  },
+  {
+    "id": 3798,
+    "tr": "muzdarip olmak",
+    "en": "to suffer from",
+    "beispiel": "Sie leidet seit Jahren an einer seltenen Krankheit.",
+    "beispielTr": "Yıllardır nadir bir hastalıktan muzdarip.",
+    "beispielEn": "She has suffered from a rare disease for years."
+  },
+  {
+    "id": 3800,
+    "tr": "hatırlamak",
+    "en": "to remember",
+    "beispiel": "Ich erinnere mich kaum an meine frühe Kindheit.",
+    "beispielTr": "Erken çocukluğumu neredeyse hiç hatırlamıyorum.",
+    "beispielEn": "I barely remember my early childhood."
+  },
+  {
+    "id": 3802,
+    "tr": "karar vermek",
+    "en": "to decide on",
+    "beispiel": "Wir haben uns für die günstigere Variante entschieden.",
+    "beispielTr": "Daha ucuz olan seçenekte karar kıldık.",
+    "beispielEn": "We decided on the cheaper option."
+  },
+  {
+    "id": 3804,
+    "tr": "mücadele etmek",
+    "en": "to stand up for",
+    "beispiel": "Die Organisation setzt sich für Menschenrechte ein.",
+    "beispielTr": "Örgüt insan hakları için mücadele ediyor.",
+    "beispielEn": "The organization stands up for human rights."
+  },
+  {
+    "id": 3805,
+    "tr": "odaklanmak",
+    "en": "to focus on",
+    "beispiel": "Er muss sich besser auf die Prüfung konzentrieren.",
+    "beispielTr": "Sınava daha iyi odaklanması gerekiyor.",
+    "beispielEn": "He needs to focus better on the exam."
+  },
+  {
+    "id": 3815,
+    "tr": "başarısız olmak",
+    "en": "to fail",
+    "beispiel": "Das Projekt ist letztendlich an fehlendem Geld gescheitert.",
+    "beispielTr": "Proje sonunda paranın yetmemesi yüzünden başarısız oldu.",
+    "beispielEn": "The project ultimately failed because of missing funds."
+  },
+  {
+    "id": 3816,
+    "tr": "kabullenmek",
+    "en": "to come to terms with",
+    "beispiel": "Sie musste sich mit dem Verlust ihres Jobs abfinden.",
+    "beispielTr": "İşini kaybetmeyi kabullenmek zorunda kaldı.",
+    "beispielEn": "She had to come to terms with losing her job."
+  },
+  {
+    "id": 3834,
+    "tr": "yabancı dil bilgisi",
+    "en": "foreign language skill",
+    "beispiel": "Gute Fremdsprachenkenntnisse sind für das Praktikum wichtig.",
+    "beispielTr": "İyi yabancı dil bilgisi staj için önemli.",
+    "beispielEn": "Good foreign language skills matter for the internship."
+  },
+  {
+    "id": 3836,
+    "tr": "dil seviyesi",
+    "en": "language level",
+    "beispiel": "Für das Studium wird das Sprachniveau B2 verlangt.",
+    "beispielTr": "Bu bölüm için B2 dil seviyesi isteniyor.",
+    "beispielEn": "The program requires a B2 language level."
+  },
+  {
+    "id": 3837,
+    "tr": "dil sınavı",
+    "en": "language exam",
+    "beispiel": "Ohne bestandene Sprachprüfung ist keine Immatrikulation möglich.",
+    "beispielTr": "Dil sınavını geçmeden üniversiteye kayıt yapılamıyor.",
+    "beispielEn": "Without a passed language exam there is no enrollment."
+  },
+  {
+    "id": 3839,
+    "tr": "öğrenme stratejisi",
+    "en": "learning strategy",
+    "beispiel": "Eine gute Lernstrategie erleichtert die Prüfungsvorbereitung.",
+    "beispielTr": "İyi bir öğrenme stratejisi sınav hazırlığını kolaylaştırır.",
+    "beispielEn": "A good learning strategy makes exam preparation easier."
+  },
+  {
+    "id": 3840,
+    "tr": "kendi kendine çalışma",
+    "en": "self-study",
+    "beispiel": "Vieles muss man im Selbststudium nachholen.",
+    "beispielTr": "Çoğu şeyi kendi kendine çalışarak tamamlamak gerekiyor.",
+    "beispielEn": "A lot has to be made up through self-study."
+  },
+  {
+    "id": 3842,
+    "tr": "sınav yönetmeliği",
+    "en": "exam regulations",
+    "beispiel": "Die Prüfungsordnung regelt alle Modalitäten der Klausur.",
+    "beispielTr": "Sınav yönetmeliği, sınavın bütün ayrıntılarını düzenler.",
+    "beispielEn": "The exam regulations govern every detail of the test."
+  },
+  {
+    "id": 3843,
+    "tr": "bütünleme sınavı",
+    "en": "retake exam",
+    "beispiel": "Wer durchfällt, kann an der Wiederholungsprüfung teilnehmen.",
+    "beispielTr": "Sınavda kalan öğrenci bütünleme sınavına girebilir.",
+    "beispielEn": "Anyone who fails may take the retake exam."
+  },
+  {
+    "id": 3846,
+    "tr": "sınav kurulu",
+    "en": "examination board",
+    "beispiel": "Der Prüfungsausschuss entscheidet über die Anerkennung.",
+    "beispielTr": "Derslerin denkliğine sınav kurulu karar verir.",
+    "beispielEn": "The examination board decides on the recognition of credits."
+  },
+  {
+    "id": 3847,
+    "tr": "üniversiteye kayıt",
+    "en": "enrollment",
+    "beispiel": "Die Immatrikulation muss bis Ende September erfolgen.",
+    "beispielTr": "Üniversiteye kaydın eylül sonuna kadar yapılması gerekiyor.",
+    "beispielEn": "Enrollment must be completed by the end of September."
+  },
+  {
+    "id": 3848,
+    "tr": "üniversite kaydını sildirme",
+    "en": "disenrollment",
+    "beispiel": "Nach dem Abschluss erfolgt die Exmatrikulation automatisch.",
+    "beispielTr": "Mezuniyetin ardından üniversite kaydı kendiliğinden siliniyor.",
+    "beispielEn": "After graduation the disenrollment happens automatically."
+  },
+  {
+    "id": 3852,
+    "tr": "bölüm",
+    "en": "degree program",
+    "beispiel": "Der Studiengang ist sehr praxisorientiert aufgebaut.",
+    "beispielTr": "Bölüm, uygulamaya çok ağırlık veren bir yapıda.",
+    "beispielEn": "The degree program is built to be very hands-on."
+  },
+  {
+    "id": 3853,
+    "tr": "kabul şartı",
+    "en": "admission requirement",
+    "beispiel": "Deutschkenntnisse sind eine wichtige Zulassungsvoraussetzung.",
+    "beispielTr": "Almanca bilgisi önemli bir kabul şartıdır.",
+    "beispielEn": "German skills are an important admission requirement."
+  },
+  {
+    "id": 3854,
+    "tr": "staj yeri",
+    "en": "internship position",
+    "beispiel": "Er hat endlich eine passende Praktikumsstelle gefunden.",
+    "beispielTr": "Sonunda kendine uygun bir staj yeri buldu.",
+    "beispielEn": "He finally found a suitable internship position."
+  },
+  {
+    "id": 3855,
+    "tr": "staj belgesi",
+    "en": "internship certificate",
+    "beispiel": "Am Ende erhält jeder Praktikant ein Praktikumszeugnis.",
+    "beispielTr": "Staj sonunda her stajyere bir staj belgesi verilir.",
+    "beispielEn": "At the end every intern receives an internship certificate."
+  },
+  {
+    "id": 3856,
+    "tr": "başvuru evrakı",
+    "en": "application document",
+    "beispiel": "Die vollständigen Bewerbungsunterlagen müssen fristgerecht eingehen.",
+    "beispielTr": "Eksiksiz başvuru evrakının süresi içinde ulaşması gerekiyor.",
+    "beispielEn": "The complete application documents must arrive on time."
+  },
+  {
+    "id": 3858,
+    "tr": "başvuru süresi",
+    "en": "application deadline",
+    "beispiel": "Die Bewerbungsfrist läuft Ende des Monats ab.",
+    "beispielTr": "Başvuru süresi ay sonunda doluyor.",
+    "beispielEn": "The application deadline expires at the end of the month."
+  },
+  {
+    "id": 3861,
+    "tr": "çıkış bildirimi",
+    "en": "deregistration",
+    "beispiel": "Bei einem Umzug ist eine Abmeldung erforderlich.",
+    "beispielTr": "Taşınırken çıkış bildirimi yapmak zorunlu.",
+    "beispielEn": "A deregistration is required when you move."
+  },
+  {
+    "id": 3864,
+    "tr": "tasdik",
+    "en": "certification",
+    "beispiel": "Für die Beglaubigung der Kopie fällt eine Gebühr an.",
+    "beispielTr": "Kopyanın tasdiki için ücret alınıyor.",
+    "beispielEn": "There is a fee for the certification of the copy."
+  },
+  {
+    "id": 3868,
+    "tr": "iletişim kurmak",
+    "en": "to communicate",
+    "beispiel": "Wir konnten uns notfalls auf Englisch verständigen.",
+    "beispielTr": "Gerektiğinde İngilizce iletişim kurabildik.",
+    "beispielEn": "If needed, we could communicate in English."
+  },
+  {
+    "id": 3870,
+    "tr": "tercümanlık yapmak",
+    "en": "to interpret",
+    "beispiel": "Er hat beim Termin für die Familie gedolmetscht.",
+    "beispielTr": "Randevuda ailesi için tercümanlık yaptı.",
+    "beispielEn": "He interpreted for the family at the appointment."
+  },
+  {
+    "id": 3871,
+    "tr": "edinmek",
+    "en": "to acquire",
+    "beispiel": "Innerhalb eines Jahres hat sie sich die Sprache angeeignet.",
+    "beispielTr": "Bir yıl içinde dili edindi.",
+    "beispielEn": "She acquired the language within a year."
+  },
+  {
+    "id": 3874,
+    "tr": "kendini geliştirmek",
+    "en": "to take further training",
+    "beispiel": "Lehrer müssen sich regelmäßig fortbilden.",
+    "beispielTr": "Öğretmenlerin düzenli olarak kendini geliştirmesi gerekiyor.",
+    "beispielEn": "Teachers have to take further training regularly."
+  },
+  {
+    "id": 3876,
+    "tr": "notlandırmak",
+    "en": "to grade",
+    "beispiel": "Die Hausarbeit wird von zwei Dozenten benotet.",
+    "beispielTr": "Dönem ödevi iki öğretim görevlisi tarafından notlandırılıyor.",
+    "beispielEn": "The term paper is graded by two instructors."
+  }
+]

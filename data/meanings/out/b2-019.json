@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4543,
+    "tr": "arka çıkma",
+    "en": "backing",
+    "beispiel": "In der Krise fand sie großen Rückhalt in ihrer Familie.",
+    "beispielTr": "Kriz döneminde ailesi ona arka çıktı.",
+    "beispielEn": "In the crisis she found strong backing in her family."
+  },
+  {
+    "id": 4544,
+    "tr": "şefkat",
+    "en": "affection",
+    "beispiel": "Alte Menschen brauchen mehr Zuwendung, als viele Angehörige glauben.",
+    "beispielTr": "Yaşlılar birçok yakınının sandığından daha fazla şefkate ihtiyaç duyar.",
+    "beispielEn": "Older people need more affection than many relatives believe."
+  },
+  {
+    "id": 4545,
+    "tr": "reddetme",
+    "en": "rejection",
+    "beispiel": "Seine offene Ablehnung des neuen Partners belastete die Beziehung.",
+    "beispielTr": "Yeni partneri açıkça reddetmesi ilişkiyi zorladı.",
+    "beispielEn": "His open rejection of the new partner strained the relationship."
+  },
+  {
+    "id": 4546,
+    "tr": "hayranlık",
+    "en": "admiration",
+    "beispiel": "Der Junge blickte mit Bewunderung zu seinem älteren Bruder auf.",
+    "beispielTr": "Çocuk ağabeyine hayranlıkla baktı.",
+    "beispielEn": "The boy looked up to his older brother with admiration."
+  },
+  {
+    "id": 4547,
+    "tr": "çekememezlik",
+    "en": "resentment",
+    "beispiel": "Zwischen den Geschwistern herrschte jahrelang stille Missgunst.",
+    "beispielTr": "Kardeşler arasında yıllarca sessiz bir çekememezlik hüküm sürdü.",
+    "beispielEn": "For years a quiet resentment reigned between the siblings."
+  },
+  {
+    "id": 4548,
+    "tr": "dönüm noktası",
+    "en": "turning point",
+    "beispiel": "Die Geburt des ersten Kindes war ein Wendepunkt in ihrem Leben.",
+    "beispielTr": "İlk çocuğun doğumu hayatında bir dönüm noktası oldu.",
+    "beispielEn": "The birth of the first child was a turning point in her life."
+  },
+  {
+    "id": 4549,
+    "tr": "gönüllü hizmet",
+    "en": "voluntary service",
+    "beispiel": "Nach dem Abitur leistet er ein Jahr Freiwilligendienst im Altenheim.",
+    "beispielTr": "Liseden sonra bir yıl huzurevinde gönüllü hizmet yapıyor.",
+    "beispielEn": "After school he does a year of voluntary service at a nursing home."
+  },
+  {
+    "id": 4550,
+    "tr": "yaşlılık günleri",
+    "en": "twilight years",
+    "beispiel": "Sie möchte ihren Lebensabend in der Nähe der Enkel verbringen.",
+    "beispielTr": "Yaşlılık günlerini torunlarının yakınında geçirmek istiyor.",
+    "beispielEn": "She wants to spend her twilight years near her grandchildren."
+  },
+  {
+    "id": 4551,
+    "tr": "güven ihlali",
+    "en": "breach of trust",
+    "beispiel": "Für sie war die Lüge ein unverzeihlicher Vertrauensbruch.",
+    "beispielTr": "Ona göre bu yalan affedilmez bir güven ihlaliydi.",
+    "beispielEn": "For her the lie was an unforgivable breach of trust."
+  },
+  {
+    "id": 4552,
+    "tr": "empati",
+    "en": "empathy",
+    "beispiel": "Ohne Empathie lassen sich solche Konflikte kaum lösen.",
+    "beispielTr": "Empati olmadan bu tür çatışmalar zor çözülür.",
+    "beispielEn": "Without empathy such conflicts can hardly be resolved."
+  },
+  {
+    "id": 4553,
+    "tr": "kendine hâkim olma",
+    "en": "self-control",
+    "beispiel": "Es kostete ihn viel Selbstbeherrschung, ruhig zu bleiben.",
+    "beispielTr": "Sakin kalabilmek için epey kendine hâkim olması gerekti.",
+    "beispielEn": "It took him a lot of self-control to stay calm."
+  },
+  {
+    "id": 4554,
+    "tr": "irade gücü",
+    "en": "willpower",
+    "beispiel": "Mit erstaunlicher Willenskraft hat sie ihre Sucht überwunden.",
+    "beispielTr": "Şaşırtıcı bir irade gücüyle bağımlılığını yendi.",
+    "beispielEn": "With astonishing willpower she overcame her addiction."
+  },
+  {
+    "id": 4555,
+    "tr": "bağlılık",
+    "en": "bond",
+    "beispiel": "Trotz der Entfernung blieb eine tiefe Verbundenheit zwischen ihnen.",
+    "beispielTr": "Mesafeye rağmen aralarında derin bir bağlılık kaldı.",
+    "beispielEn": "Despite the distance a deep bond remained between them."
+  },
+  {
+    "id": 4556,
+    "tr": "iyimserlik",
+    "en": "optimism",
+    "beispiel": "Trotz der Diagnose hat er seine Zuversicht nicht verloren.",
+    "beispielTr": "Teşhise rağmen iyimserliğini yitirmedi.",
+    "beispielEn": "Despite the diagnosis he has not lost his optimism."
+  },
+  {
+    "id": 4557,
+    "tr": "kendini gerçekleştirme",
+    "en": "self-fulfillment",
+    "beispiel": "Für viele steht heute die Selbstverwirklichung über der Familienplanung.",
+    "beispielTr": "Bugün birçok kişi için kendini gerçekleştirmek aile kurmaktan önce geliyor.",
+    "beispielEn": "For many people today self-fulfillment comes before starting a family."
+  },
+  {
+    "id": 4558,
+    "tr": "şımartmak",
+    "en": "to spoil",
+    "beispiel": "Die Großeltern verwöhnen die Kinder jedes Wochenende mit Geschenken.",
+    "beispielTr": "Büyükanne ve büyükbaba her hafta sonu çocukları hediyelerle şımartıyor.",
+    "beispielEn": "The grandparents spoil the children with presents every weekend."
+  },
+  {
+    "id": 4559,
+    "tr": "cesaretlendirmek",
+    "en": "to encourage",
+    "beispiel": "Der Lehrer ermutigte sie, sich für den Kurs zu bewerben.",
+    "beispielTr": "Öğretmen onu kursa başvurması için cesaretlendirdi.",
+    "beispielEn": "The teacher encouraged her to apply for the course."
+  },
+  {
+    "id": 4560,
+    "tr": "teselli etmek",
+    "en": "to comfort",
+    "beispiel": "Sie tröstete ihre Freundin nach der schmerzhaften Trennung.",
+    "beispielTr": "Acı ayrılıktan sonra arkadaşını teselli etti.",
+    "beispielEn": "She comforted her friend after the painful breakup."
+  },
+  {
+    "id": 4561,
+    "tr": "biçimlendirmek",
+    "en": "to shape",
+    "beispiel": "Die Erfahrungen der Kindheit prägen uns bis ins hohe Alter.",
+    "beispielTr": "Çocukluk deneyimleri bizi ileri yaşlara kadar biçimlendirir.",
+    "beispielEn": "Childhood experiences shape us well into old age."
+  },
+  {
+    "id": 4562,
+    "tr": "güvenmemek",
+    "en": "to distrust",
+    "beispiel": "Nach dem Vorfall misstraute er allen Nachbarn.",
+    "beispielTr": "Olaydan sonra bütün komşularına güvenmez oldu.",
+    "beispielEn": "After the incident he distrusted all the neighbors."
+  },
+  {
+    "id": 4563,
+    "tr": "pişman olmak",
+    "en": "to regret",
+    "beispiel": "Sie bereut es, damals so hart mit ihrem Sohn gewesen zu sein.",
+    "beispielTr": "O zamanlar oğluna bu kadar sert davrandığına pişman.",
+    "beispielEn": "She regrets having been so hard on her son back then."
+  },
+  {
+    "id": 4564,
+    "tr": "utanmak",
+    "en": "to be ashamed",
+    "beispiel": "Der Junge schämte sich für das Verhalten seines Vaters.",
+    "beispielTr": "Çocuk babasının davranışından utandı.",
+    "beispielEn": "The boy was ashamed of his father's behavior."
+  },
+  {
+    "id": 4565,
+    "tr": "uyum sağlamak",
+    "en": "to adapt",
+    "beispiel": "Nicht jeder will sich den Erwartungen der Gruppe anpassen.",
+    "beispielTr": "Herkes grubun beklentilerine uyum sağlamak istemez.",
+    "beispielEn": "Not everyone wants to adapt to the group's expectations."
+  },
+  {
+    "id": 4566,
+    "tr": "saygı duymak",
+    "en": "to respect",
+    "beispiel": "Eltern sollten die Grenzen ihrer erwachsenen Kinder respektieren.",
+    "beispielTr": "Ebeveynler yetişkin çocuklarının sınırlarına saygı duymalı.",
+    "beispielEn": "Parents should respect the boundaries of their adult children."
+  },
+  {
+    "id": 4567,
+    "tr": "katlanmak",
+    "en": "to endure",
+    "beispiel": "Diese ständigen Vorwürfe hält auf Dauer niemand aus.",
+    "beispielTr": "Bu sürekli suçlamalara uzun vadede kimse katlanamaz.",
+    "beispielEn": "Nobody can put up with these constant reproaches for long."
+  },
+  {
+    "id": 4568,
+    "tr": "bağış yapmak",
+    "en": "to donate",
+    "beispiel": "Die Gemeinde spendete für die Betreuung obdachloser Familien.",
+    "beispielTr": "Cemaat evsiz ailelerin bakımı için bağış yaptı.",
+    "beispielEn": "The parish donated money for the care of homeless families."
+  },
+  {
+    "id": 4569,
+    "tr": "arabuluculuk yapmak",
+    "en": "to mediate",
+    "beispiel": "Die Großmutter schlichtete den Streit zwischen den Geschwistern.",
+    "beispielTr": "Büyükanne kardeşler arasındaki kavgada arabuluculuk yaptı.",
+    "beispielEn": "The grandmother mediated the quarrel between the siblings."
+  },
+  {
+    "id": 4570,
+    "tr": "büyümek",
+    "en": "to grow up",
+    "beispiel": "Sie ist bei ihren Großeltern auf dem Land aufgewachsen.",
+    "beispielTr": "Köyde büyükanne ve büyükbabasının yanında büyüdü.",
+    "beispielEn": "She grew up with her grandparents in the countryside."
+  },
+  {
+    "id": 4571,
+    "tr": "yaşlanmak",
+    "en": "to age",
+    "beispiel": "Die Bevölkerung altert schneller, als die Politik erwartet hatte.",
+    "beispielTr": "Nüfus siyasetin beklediğinden daha hızlı yaşlanıyor.",
+    "beispielEn": "The population is aging faster than politicians expected."
+  },
+  {
+    "id": 4572,
+    "tr": "bozuşmak",
+    "en": "to fall out",
+    "beispiel": "Die beiden Brüder haben sich wegen des Erbes zerstritten.",
+    "beispielTr": "İki kardeş miras yüzünden bozuştu.",
+    "beispielEn": "The two brothers fell out over the inheritance."
+  },
+  {
+    "id": 4573,
+    "tr": "kendini feda etmek",
+    "en": "to sacrifice oneself",
+    "beispiel": "Jahrelang hat sie sich für ihre pflegebedürftige Mutter aufgeopfert.",
+    "beispielTr": "Yıllarca bakıma muhtaç annesi için kendini feda etti.",
+    "beispielEn": "For years she sacrificed herself for her mother, who needed care."
+  },
+  {
+    "id": 4574,
+    "tr": "korumak",
+    "en": "to protect",
+    "beispiel": "Er wollte seine kleine Schwester vor jeder Enttäuschung beschützen.",
+    "beispielTr": "Küçük kız kardeşini her hayal kırıklığından korumak istiyordu.",
+    "beispielEn": "He wanted to protect his little sister from every disappointment."
+  },
+  {
+    "id": 4575,
+    "tr": "ikaz etmek",
+    "en": "to admonish",
+    "beispiel": "Die Erzieherin ermahnte die Kinder mehrmals zur Rücksicht.",
+    "beispielTr": "Öğretmen çocukları birkaç kez saygılı olmaları için ikaz etti.",
+    "beispielEn": "The teacher admonished the children several times to be considerate."
+  },
+  {
+    "id": 4576,
+    "tr": "geri çekilmek",
+    "en": "to withdraw",
+    "beispiel": "Seit dem Verlust zieht er sich immer mehr von Freunden zurück.",
+    "beispielTr": "Kaybından beri arkadaş çevresinden giderek daha çok çekiliyor.",
+    "beispielEn": "Since the loss he has withdrawn more and more from his friends."
+  },
+  {
+    "id": 4577,
+    "tr": "empati kurmak",
+    "en": "to empathize",
+    "beispiel": "Als Therapeutin kann sie mit ihren Klienten wirklich mitfühlen.",
+    "beispielTr": "Terapist olarak danışanlarıyla gerçekten empati kurabiliyor.",
+    "beispielEn": "As a therapist she can truly empathize with her clients."
+  },
+  {
+    "id": 4578,
+    "tr": "hoşgörülü",
+    "en": "lenient",
+    "beispiel": "Bei den Enkeln ist er viel nachsichtiger als früher bei den Kindern.",
+    "beispielTr": "Torunlarına karşı eskiden çocuklarına olduğundan çok daha hoşgörülü.",
+    "beispielEn": "With his grandchildren he is far more lenient than with his own children."
+  },
+  {
+    "id": 4579,
+    "tr": "kıskanç",
+    "en": "jealous",
+    "beispiel": "Das ältere Kind reagierte eifersüchtig auf das neue Geschwisterchen.",
+    "beispielTr": "Büyük çocuk yeni kardeşine kıskançlıkla tepki verdi.",
+    "beispielEn": "The older child reacted jealously to the new baby sibling."
+  },
+  {
+    "id": 4580,
+    "tr": "açık fikirli",
+    "en": "open-minded",
+    "beispiel": "Für ihr Alter ist sie erstaunlich aufgeschlossen gegenüber neuen Ideen.",
+    "beispielTr": "Yaşına göre yeni fikirlere şaşırtıcı derecede açık.",
+    "beispielEn": "For her age she is remarkably open to new ideas."
+  },
+  {
+    "id": 4581,
+    "tr": "özgüvenli",
+    "en": "self-confident",
+    "beispiel": "Lob im Elternhaus macht Kinder langfristig selbstbewusster.",
+    "beispielTr": "Evde takdir görmek çocukları uzun vadede daha özgüvenli yapar.",
+    "beispielEn": "Praise at home makes children more self-confident in the long run."
+  },
+  {
+    "id": 4582,
+    "tr": "çocuğunu tek başına büyüten",
+    "en": "single-parent",
+    "beispiel": "Alleinerziehende Mütter sind besonders oft von Armut bedroht.",
+    "beispielTr": "Çocuğunu tek başına büyüten anneler özellikle sık yoksulluk tehdidi altında.",
+    "beispielEn": "Single mothers are especially often threatened by poverty."
+  },
+  {
+    "id": 4583,
+    "tr": "kişiler arası",
+    "en": "interpersonal",
+    "beispiel": "Die meisten Probleme im Team sind rein zwischenmenschlicher Natur.",
+    "beispielTr": "Ekipteki sorunların çoğu tamamen kişiler arası nitelikte.",
+    "beispielEn": "Most problems in the team are purely interpersonal."
+  },
+  {
+    "id": 4584,
+    "tr": "sokulgan",
+    "en": "sociable",
+    "beispiel": "Ihr Mann ist eher still, sie dagegen sehr gesellig.",
+    "beispielTr": "Kocası daha sessiz, o ise oldukça sokulgan.",
+    "beispielEn": "Her husband is rather quiet, whereas she is very sociable."
+  },
+  {
+    "id": 4585,
+    "tr": "kaprisli",
+    "en": "moody",
+    "beispiel": "In den letzten Wochen ist er ungewöhnlich launisch geworden.",
+    "beispielTr": "Son haftalarda alışılmadık biçimde kaprisli oldu.",
+    "beispielEn": "In recent weeks he has become unusually moody."
+  },
+  {
+    "id": 4586,
+    "tr": "kin tutan",
+    "en": "unforgiving",
+    "beispiel": "Sie ist nicht nachtragend, aber vergessen wird sie das nie.",
+    "beispielTr": "Kin tutan biri değil ama bunu asla unutmayacak.",
+    "beispielEn": "She doesn't hold grudges, but she will never forget this."
+  },
+  {
+    "id": 4587,
+    "tr": "yan etki",
+    "en": "side effect",
+    "beispiel": "Das Medikament hat bei vielen Patienten unangenehme Nebenwirkungen.",
+    "beispielTr": "İlacın birçok hastada rahatsız edici yan etkileri var.",
+    "beispielEn": "The medication has unpleasant side effects in many patients."
+  },
+  {
+    "id": 4588,
+    "tr": "aşı",
+    "en": "vaccination",
+    "beispiel": "Die Impfung gegen Grippe wird älteren Menschen dringend empfohlen.",
+    "beispielTr": "Grip aşısı yaşlılara önemle tavsiye ediliyor.",
+    "beispielEn": "The flu vaccination is strongly recommended for older people."
+  },
+  {
+    "id": 4589,
+    "tr": "katkı payı",
+    "en": "copayment",
+    "beispiel": "Für dieses Medikament fällt eine Zuzahlung von fünf Euro an.",
+    "beispielTr": "Bu ilaç için beş euro katkı payı ödeniyor.",
+    "beispielEn": "For this medication there is a copayment of five euros."
+  },
+  {
+    "id": 4591,
+    "tr": "rehabilitasyon",
+    "en": "rehabilitation",
+    "beispiel": "Nach der Operation beginnt eine mehrwöchige Rehabilitation am Meer.",
+    "beispielTr": "Ameliyattan sonra deniz kenarında haftalarca sürecek bir rehabilitasyon başlıyor.",
+    "beispielEn": "After the operation several weeks of rehabilitation by the sea begin."
+  },
+  {
+    "id": 4592,
+    "tr": "depresyon",
+    "en": "depression",
+    "beispiel": "Seit dem Umzug kämpft er mit einer schweren Depression.",
+    "beispielTr": "Taşınmadan beri ağır bir depresyonla boğuşuyor.",
+    "beispielEn": "Since the move he has been struggling with severe depression."
+  },
+  {
+    "id": 4593,
+    "tr": "kaygı bozukluğu",
+    "en": "anxiety disorder",
+    "beispiel": "Ihre Angststörung lässt sich mit Gesprächstherapie gut behandeln.",
+    "beispielTr": "Kaygı bozukluğu konuşma terapisiyle iyi tedavi edilebiliyor.",
+    "beispielEn": "Her anxiety disorder can be treated well with talk therapy."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4594,
+    "tr": "rıza",
+    "en": "consent",
+    "beispiel": "Ohne schriftliche Einwilligung darf der Arzt nicht operieren.",
+    "beispielTr": "Yazılı rıza olmadan doktor ameliyat yapamaz.",
+    "beispielEn": "Without written consent the doctor may not operate."
+  },
+  {
+    "id": 4595,
+    "tr": "tetkik sonucu",
+    "en": "test result",
+    "beispiel": "Der Befund war zum Glück völlig unauffällig.",
+    "beispielTr": "Tetkik sonucu neyse ki tamamen temiz çıktı.",
+    "beispielEn": "Luckily the test result was completely normal."
+  },
+  {
+    "id": 4596,
+    "tr": "tansiyon",
+    "en": "blood pressure",
+    "beispiel": "Mein Vater misst seinen Blutdruck jeden Morgen vor dem Frühstück.",
+    "beispielTr": "Babam her sabah kahvaltıdan önce tansiyonunu ölçüyor.",
+    "beispielEn": "My father measures his blood pressure every morning before breakfast."
+  },
+  {
+    "id": 4597,
+    "tr": "hareketsizlik",
+    "en": "lack of exercise",
+    "beispiel": "Bewegungsmangel im Büroalltag schadet dem Rücken auf Dauer.",
+    "beispielTr": "Ofis hayatındaki hareketsizlik uzun vadede bele zarar veriyor.",
+    "beispielEn": "Lack of exercise at a desk job harms your back over time."
+  },
+  {
+    "id": 4598,
+    "tr": "fazla kilo",
+    "en": "excess weight",
+    "beispiel": "Starkes Übergewicht erhöht das Risiko für Diabetes deutlich.",
+    "beispielTr": "Aşırı kilo diyabet riskini belirgin ölçüde artırıyor.",
+    "beispielEn": "Excess weight clearly increases the risk of diabetes."
+  },
+  {
+    "id": 4599,
+    "tr": "yoksunluk",
+    "en": "withdrawal",
+    "beispiel": "Der Entzug war hart, aber er hat es geschafft.",
+    "beispielTr": "Yoksunluk dönemi zordu ama üstesinden geldi.",
+    "beispielEn": "The withdrawal was tough, but he made it."
+  },
+  {
+    "id": 4600,
+    "tr": "hastalık etkeni",
+    "en": "pathogen",
+    "beispiel": "Der Erreger wird vor allem über die Hände weitergegeben.",
+    "beispielTr": "Hastalık etkeni özellikle eller yoluyla bulaşıyor.",
+    "beispielEn": "The pathogen is passed on mainly through the hands."
+  },
+  {
+    "id": 4601,
+    "tr": "iltihap",
+    "en": "inflammation",
+    "beispiel": "Die Entzündung im Knie ist nach zwei Wochen zurückgegangen.",
+    "beispielTr": "Dizdeki iltihap iki hafta sonra geriledi.",
+    "beispielEn": "The inflammation in the knee subsided after two weeks."
+  },
+  {
+    "id": 4602,
+    "tr": "ilaç",
+    "en": "drug",
+    "beispiel": "Neue Arzneimittel werden vor der Zulassung jahrelang geprüft.",
+    "beispielTr": "Yeni ilaçlar ruhsat almadan önce yıllarca test ediliyor.",
+    "beispielEn": "New drugs are tested for years before approval."
+  },
+  {
+    "id": 4603,
+    "tr": "dozaj",
+    "en": "dosage",
+    "beispiel": "Bitte halten Sie sich genau an die vorgeschriebene Dosierung.",
+    "beispielTr": "Lütfen belirtilen dozaja tam olarak uyun.",
+    "beispielEn": "Please stick exactly to the prescribed dosage."
+  },
+  {
+    "id": 4604,
+    "tr": "prospektüs",
+    "en": "package insert",
+    "beispiel": "Lesen Sie die Packungsbeilage, bevor Sie die Tabletten nehmen.",
+    "beispielTr": "Hapları almadan önce prospektüsü okuyun.",
+    "beispielEn": "Read the package insert before you take the tablets."
+  },
+  {
+    "id": 4605,
+    "tr": "etken madde",
+    "en": "active ingredient",
+    "beispiel": "Beide Tabletten enthalten denselben Wirkstoff, kosten aber unterschiedlich viel.",
+    "beispielTr": "İki hap da aynı etken maddeyi içeriyor ama fiyatları farklı.",
+    "beispielEn": "Both pills have the same active ingredient but different prices."
+  },
+  {
+    "id": 4606,
+    "tr": "alerji",
+    "en": "allergy",
+    "beispiel": "Im Frühling macht ihm seine Allergie besonders zu schaffen.",
+    "beispielTr": "İlkbaharda alerjisi onu iyice zorluyor.",
+    "beispielEn": "In spring his allergy really gets to him."
+  },
+  {
+    "id": 4607,
+    "tr": "müdahale",
+    "en": "procedure",
+    "beispiel": "Der Eingriff dauert nur zwanzig Minuten und gilt als harmlos.",
+    "beispielTr": "Müdahale sadece yirmi dakika sürüyor ve zararsız sayılıyor.",
+    "beispielEn": "The procedure takes only twenty minutes and is considered harmless."
+  },
+  {
+    "id": 4608,
+    "tr": "narkoz",
+    "en": "anesthesia",
+    "beispiel": "Nach der Narkose fühlte sie sich noch stundenlang benommen.",
+    "beispielTr": "Narkozdan sonra saatlerce kendini sersem hissetti.",
+    "beispielEn": "After the anesthesia she felt groggy for hours."
+  },
+  {
+    "id": 4609,
+    "tr": "baygınlık",
+    "en": "fainting",
+    "beispiel": "Aus der Ohnmacht erwachte er erst im Krankenwagen.",
+    "beispielTr": "Baygınlıktan ancak ambulansta uyandı.",
+    "beispielEn": "He didn't come to until he was in the ambulance."
+  },
+  {
+    "id": 4610,
+    "tr": "baş dönmesi",
+    "en": "dizziness",
+    "beispiel": "Beim schnellen Aufstehen bekomme ich manchmal Schwindel.",
+    "beispielTr": "Hızlı ayağa kalkınca bazen başım dönüyor.",
+    "beispielEn": "When I stand up quickly I sometimes get dizzy."
+  },
+  {
+    "id": 4611,
+    "tr": "mide bulantısı",
+    "en": "nausea",
+    "beispiel": "Die Übelkeit trat kurz nach der ersten Tablette auf.",
+    "beispielTr": "Mide bulantısı ilk haptan kısa süre sonra başladı.",
+    "beispielEn": "The nausea started shortly after the first tablet."
+  },
+  {
+    "id": 4612,
+    "tr": "nefes darlığı",
+    "en": "shortness of breath",
+    "beispiel": "Bei plötzlicher Atemnot sollten Sie sofort den Notruf wählen.",
+    "beispielTr": "Ani nefes darlığında hemen acil servisi aramalısınız.",
+    "beispielEn": "If you suddenly get shortness of breath, call an ambulance."
+  },
+  {
+    "id": 4613,
+    "tr": "istirahat raporu",
+    "en": "sick note",
+    "beispiel": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben.",
+    "beispielTr": "Doktor bana üç günlük istirahat raporu verdi.",
+    "beispielEn": "The doctor gave me a sick note for three days."
+  },
+  {
+    "id": 4614,
+    "tr": "sağlık raporu",
+    "en": "medical certificate",
+    "beispiel": "Für den Sportunterricht braucht mein Sohn ein ärztliches Attest.",
+    "beispielTr": "Beden eğitimi dersi için oğlumun sağlık raporuna ihtiyacı var.",
+    "beispielEn": "My son needs a medical certificate for gym class."
+  },
+  {
+    "id": 4615,
+    "tr": "yatak istirahati",
+    "en": "bed rest",
+    "beispiel": "Der Arzt verschrieb ihr eine Woche strenge Bettruhe.",
+    "beispielTr": "Doktor ona bir hafta sıkı yatak istirahati yazdı.",
+    "beispielEn": "The doctor prescribed her a week of strict bed rest."
+  },
+  {
+    "id": 4616,
+    "tr": "kontrol muayenesi",
+    "en": "checkup",
+    "beispiel": "Ab vierzig zahlt die Kasse jährlich eine Vorsorgeuntersuchung.",
+    "beispielTr": "Kırk yaşından sonra sigorta yılda bir kontrol muayenesini karşılıyor.",
+    "beispielEn": "From forty on, the insurer pays for a yearly checkup."
+  },
+  {
+    "id": 4617,
+    "tr": "erken teşhis",
+    "en": "early detection",
+    "beispiel": "Bei Krebs entscheidet die Früherkennung oft über die Heilungschancen.",
+    "beispielTr": "Kanserde iyileşme şansını çoğu zaman erken teşhis belirliyor.",
+    "beispielEn": "With cancer, early detection often decides the chances of recovery."
+  },
+  {
+    "id": 4618,
+    "tr": "aile hekimi",
+    "en": "family doctor",
+    "beispiel": "Mein Hausarzt kennt meine Krankengeschichte seit zwanzig Jahren.",
+    "beispielTr": "Aile hekimim yirmi yıldır hastalık geçmişimi biliyor.",
+    "beispielEn": "My family doctor has known my medical history for twenty years."
+  },
+  {
+    "id": 4619,
+    "tr": "uzman doktor",
+    "en": "specialist",
+    "beispiel": "Auf einen Termin beim Facharzt wartet man hier ewig.",
+    "beispielTr": "Burada uzman doktordan randevu almak bir ömür sürüyor.",
+    "beispielEn": "Here you wait forever for an appointment with a specialist."
+  },
+  {
+    "id": 4620,
+    "tr": "bakım görevlisi",
+    "en": "care worker",
+    "beispiel": "In vielen Kliniken fehlen ausgebildete Pflegekräfte für die Nachtschicht.",
+    "beispielTr": "Birçok klinikte gece vardiyası için eğitimli bakım görevlisi bulunamıyor.",
+    "beispielEn": "Many clinics lack trained care workers for the night shift."
+  },
+  {
+    "id": 4621,
+    "tr": "sağlık görevlisi",
+    "en": "paramedic",
+    "beispiel": "Die Sanitäter waren schon nach sechs Minuten vor Ort.",
+    "beispielTr": "Sağlık görevlileri altı dakika içinde olay yerindeydi.",
+    "beispielEn": "The paramedics were on the scene within six minutes."
+  },
+  {
+    "id": 4622,
+    "tr": "acil yardım servisi",
+    "en": "ambulance service",
+    "beispiel": "Der Rettungsdienst wurde noch in der Nacht alarmiert.",
+    "beispielTr": "Acil yardım servisi daha gece vakti göreve çağrıldı.",
+    "beispielEn": "The ambulance service was called out that same night."
+  },
+  {
+    "id": 4623,
+    "tr": "bekleme odası",
+    "en": "waiting room",
+    "beispiel": "Im Wartezimmer saßen an diesem Morgen fast zwanzig Patienten.",
+    "beispielTr": "O sabah bekleme odasında neredeyse yirmi hasta oturuyordu.",
+    "beispielEn": "That morning almost twenty patients sat in the waiting room."
+  },
+  {
+    "id": 4624,
+    "tr": "destek grubu",
+    "en": "support group",
+    "beispiel": "In der Selbsthilfegruppe spricht er offen über seine Krankheit.",
+    "beispielTr": "Destek grubunda hastalığı hakkında açıkça konuşuyor.",
+    "beispielEn": "In the support group he speaks openly about his illness."
+  },
+  {
+    "id": 4625,
+    "tr": "sağlık sistemi",
+    "en": "healthcare system",
+    "beispiel": "Das deutsche Gesundheitswesen steht vor großen finanziellen Problemen.",
+    "beispielTr": "Alman sağlık sistemi büyük mali sorunlarla karşı karşıya.",
+    "beispielEn": "The German healthcare system faces major financial problems."
+  },
+  {
+    "id": 4626,
+    "tr": "masrafın karşılanması",
+    "en": "cost coverage",
+    "beispiel": "Die Kasse hat die Kostenübernahme für die Brille abgelehnt.",
+    "beispielTr": "Sigorta gözlüğün masrafını karşılamayı reddetti.",
+    "beispielEn": "The insurer refused to cover the cost of the glasses."
+  },
+  {
+    "id": 4627,
+    "tr": "karantina",
+    "en": "quarantine",
+    "beispiel": "Nach dem positiven Test musste die ganze Familie in Quarantäne.",
+    "beispielTr": "Pozitif testten sonra bütün aile karantinaya girmek zorunda kaldı.",
+    "beispielEn": "After the positive test the whole family had to quarantine."
+  },
+  {
+    "id": 4628,
+    "tr": "pandemi",
+    "en": "pandemic",
+    "beispiel": "Während der Pandemie arbeiteten viele Ärzte an der Belastungsgrenze.",
+    "beispielTr": "Pandemi sırasında birçok doktor dayanma sınırında çalıştı.",
+    "beispielEn": "During the pandemic many doctors worked at their limit."
+  },
+  {
+    "id": 4629,
+    "tr": "bağışıklık sistemi",
+    "en": "immune system",
+    "beispiel": "Schlafmangel schwächt das Immunsystem stärker als viele denken.",
+    "beispielTr": "Uykusuzluk bağışıklık sistemini sanılandan daha çok zayıflatıyor.",
+    "beispielEn": "Lack of sleep weakens the immune system more than people think."
+  },
+  {
+    "id": 4630,
+    "tr": "ortalama ömür",
+    "en": "life expectancy",
+    "beispiel": "Die Lebenserwartung ist in den letzten Jahrzehnten deutlich gestiegen.",
+    "beispielTr": "Ortalama ömür son on yıllarda belirgin biçimde arttı.",
+    "beispielEn": "Life expectancy has risen sharply over the last decades."
+  },
+  {
+    "id": 4631,
+    "tr": "sakinleştirici",
+    "en": "sedative",
+    "beispiel": "Beruhigungsmittel sollte man niemals ohne ärztlichen Rat nehmen.",
+    "beispielTr": "Sakinleştirici asla doktora danışmadan alınmamalı.",
+    "beispielEn": "You should never take a sedative without medical advice."
+  },
+  {
+    "id": 4632,
+    "tr": "uyku bozukluğu",
+    "en": "sleep disorder",
+    "beispiel": "Seit dem Umzug plagen ihn heftige Schlafstörungen.",
+    "beispielTr": "Taşınmadan beri ağır uyku bozuklukları çekiyor.",
+    "beispielEn": "Since the move he has had severe sleep disorders."
+  },
+  {
+    "id": 4633,
+    "tr": "iyileşmek",
+    "en": "to heal",
+    "beispiel": "Die Wunde ist ohne Narbe vollständig geheilt.",
+    "beispielTr": "Yara iz bırakmadan tamamen iyileşti.",
+    "beispielEn": "The wound healed completely without a scar."
+  },
+  {
+    "id": 4634,
+    "tr": "hafifletmek",
+    "en": "to relieve",
+    "beispiel": "Diese Salbe lindert den Juckreiz schon nach wenigen Minuten.",
+    "beispielTr": "Bu merhem kaşıntıyı birkaç dakika içinde hafifletiyor.",
+    "beispielEn": "This ointment relieves the itching within a few minutes."
+  },
+  {
+    "id": 4635,
+    "tr": "bakmak",
+    "en": "to look after",
+    "beispiel": "Er versorgt seine kranke Mutter seit drei Jahren.",
+    "beispielTr": "Üç yıldır hasta annesine bakıyor.",
+    "beispielEn": "He has been looking after his sick mother for three years."
+  },
+  {
+    "id": 4636,
+    "tr": "hastaneye kaldırmak",
+    "en": "to hospitalize",
+    "beispiel": "Der Patient wurde gestern Abend mit hohem Fieber eingeliefert.",
+    "beispielTr": "Hasta dün akşam yüksek ateşle hastaneye kaldırıldı.",
+    "beispielEn": "The patient was hospitalized last night with a high fever."
+  },
+  {
+    "id": 4637,
+    "tr": "reçete yazmak",
+    "en": "to prescribe",
+    "beispiel": "Der Arzt verordnete ihm sechs Wochen Krankengymnastik.",
+    "beispielTr": "Doktor ona altı hafta fizik tedavi yazdı.",
+    "beispielEn": "The doctor prescribed him six weeks of physical therapy."
+  },
+  {
+    "id": 4638,
+    "tr": "bulaştırmak",
+    "en": "to infect",
+    "beispiel": "Ich möchte im Büro niemanden mit meiner Erkältung anstecken.",
+    "beispielTr": "Ofiste kimseye soğuk algınlığımı bulaştırmak istemiyorum.",
+    "beispielEn": "I don't want to infect anyone at the office with my cold."
+  },
+  {
+    "id": 4639,
+    "tr": "aşırı yüklemek",
+    "en": "to overload",
+    "beispiel": "Wer den Rücken ständig überlastet, bekommt früher oder später Probleme.",
+    "beispielTr": "Belini sürekli aşırı yükleyen er ya da geç sorun yaşar.",
+    "beispielEn": "Anyone who constantly overloads their back will have problems."
+  },
+  {
+    "id": 4640,
+    "tr": "katlanmak",
+    "en": "to endure",
+    "beispiel": "Die Schmerzen waren kaum noch zu ertragen.",
+    "beispielTr": "Ağrılara artık neredeyse katlanılamıyordu.",
+    "beispielEn": "The pain was almost unbearable."
+  },
+  {
+    "id": 4641,
+    "tr": "netleştirmek",
+    "en": "to clarify",
+    "beispiel": "Ich muss mit dem Chef noch abklären, ob das geht.",
+    "beispielTr": "Bunun mümkün olup olmadığını patronla netleştirmem lazım.",
+    "beispielEn": "I still have to clarify with my boss whether that works."
+  },
+  {
+    "id": 4642,
+    "tr": "reddetmek",
+    "en": "to refuse",
+    "beispiel": "Der Patient verweigerte die Behandlung aus religiösen Gründen.",
+    "beispielTr": "Hasta dini nedenlerle tedaviyi reddetti.",
+    "beispielEn": "The patient refused the treatment for religious reasons."
+  },
+  {
+    "id": 4643,
+    "tr": "kötüleştirmek",
+    "en": "to worsen",
+    "beispiel": "Das lange Warten hat seinen Zustand noch verschlimmert.",
+    "beispielTr": "Uzun bekleyiş durumunu daha da kötüleştirdi.",
+    "beispielEn": "The long wait made his condition even worse."
+  }
+]

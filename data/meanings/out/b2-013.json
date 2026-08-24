@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4243,
+    "tr": "zorunlu ders",
+    "en": "required subject",
+    "beispiel": "Statistik ist in diesem Studiengang ein Pflichtfach.",
+    "beispielTr": "İstatistik bu bölümde zorunlu bir ders.",
+    "beispielEn": "Statistics is a required subject in this program."
+  },
+  {
+    "id": 4244,
+    "tr": "meslek geçmişi",
+    "en": "career background",
+    "beispiel": "Im Vorstellungsgespräch schilderte sie ihren beruflichen Werdegang.",
+    "beispielTr": "Mülakatta mesleki geçmişini anlattı.",
+    "beispielEn": "In the interview she described her career background."
+  },
+  {
+    "id": 4245,
+    "tr": "meslek yolu",
+    "en": "career path",
+    "beispiel": "Nach dem Referendariat begann seine Laufbahn als Lehrer.",
+    "beispielTr": "Stajyerlik döneminden sonra öğretmenlik kariyeri başladı.",
+    "beispielEn": "After the traineeship his career as a teacher began."
+  },
+  {
+    "id": 4246,
+    "tr": "başarı baskısı",
+    "en": "pressure to perform",
+    "beispiel": "Der Leistungsdruck an Gymnasien nimmt seit Jahren zu.",
+    "beispielTr": "Liselerdeki başarı baskısı yıllardır artıyor.",
+    "beispielEn": "The pressure to perform at high schools keeps rising."
+  },
+  {
+    "id": 4247,
+    "tr": "sınav kaygısı",
+    "en": "test anxiety",
+    "beispiel": "Gegen ihre Prüfungsangst hilft ihr eine einfache Atemübung.",
+    "beispielTr": "Sınav kaygısına karşı ona basit bir nefes egzersizi iyi geliyor.",
+    "beispielEn": "A simple breathing exercise helps her against her test anxiety."
+  },
+  {
+    "id": 4248,
+    "tr": "doktora",
+    "en": "doctorate",
+    "beispiel": "Nach der Promotion arbeitete sie in der Forschung weiter.",
+    "beispielTr": "Doktoradan sonra araştırmada çalışmayı sürdürdü.",
+    "beispielEn": "After her doctorate she continued working in research."
+  },
+  {
+    "id": 4249,
+    "tr": "mezun",
+    "en": "graduate",
+    "beispiel": "Die meisten Absolventen finden innerhalb eines Jahres eine Stelle.",
+    "beispielTr": "Mezunların çoğu bir yıl içinde iş buluyor.",
+    "beispielEn": "Most graduates find a job within a year."
+  },
+  {
+    "id": 4250,
+    "tr": "öğretim görevlisi",
+    "en": "lecturer",
+    "beispiel": "Der Dozent verschob das Seminar auf nächsten Dienstag.",
+    "beispielTr": "Öğretim görevlisi semineri gelecek salıya erteledi.",
+    "beispielEn": "The lecturer moved the seminar to next Tuesday."
+  },
+  {
+    "id": 4251,
+    "tr": "aklına kazımak",
+    "en": "to memorize",
+    "beispiel": "Die Formeln muss man sich vor der Klausur einprägen.",
+    "beispielTr": "Formülleri sınavdan önce aklına kazımak gerekiyor.",
+    "beispielEn": "You have to memorize the formulas before the exam."
+  },
+  {
+    "id": 4252,
+    "tr": "telafi etmek",
+    "en": "to catch up on",
+    "beispiel": "Den verpassten Stoff holt sie am Wochenende nach.",
+    "beispielTr": "Kaçırdığı konuları hafta sonu telafi ediyor.",
+    "beispielEn": "She catches up on the missed material over the weekend."
+  },
+  {
+    "id": 4253,
+    "tr": "sorarak yoklamak",
+    "en": "to quiz",
+    "beispiel": "Der Vater fragt seinen Sohn jeden Abend die Vokabeln ab.",
+    "beispielTr": "Baba her akşam oğluna kelimeleri soruyor.",
+    "beispielEn": "The father quizzes his son on vocabulary every evening."
+  },
+  {
+    "id": 4254,
+    "tr": "aktarmak",
+    "en": "to convey",
+    "beispiel": "Der Kurs vermittelt die Grundlagen des wissenschaftlichen Arbeitens.",
+    "beispielTr": "Kurs bilimsel çalışmanın temellerini aktarıyor.",
+    "beispielEn": "The course conveys the basics of academic work."
+  },
+  {
+    "id": 4255,
+    "tr": "uzmanlaşmak",
+    "en": "to specialize",
+    "beispiel": "Nach dem Studium hat er sich auf Steuerrecht spezialisiert.",
+    "beispielTr": "Öğreniminden sonra vergi hukukunda uzmanlaştı.",
+    "beispielEn": "After his studies he specialized in tax law."
+  },
+  {
+    "id": 4256,
+    "tr": "belgelemek",
+    "en": "to prove",
+    "beispiel": "Alle Bewerber müssen ihre Deutschkenntnisse durch ein Zertifikat nachweisen.",
+    "beispielTr": "Bütün adaylar Almanca bilgisini bir sertifikayla belgelemek zorunda.",
+    "beispielEn": "All applicants have to prove their German with a certificate."
+  },
+  {
+    "id": 4257,
+    "tr": "öğrenmek",
+    "en": "to learn",
+    "beispiel": "Sie hat ihren Beruf in einem kleinen Betrieb erlernt.",
+    "beispielTr": "Mesleğini küçük bir işletmede öğrendi.",
+    "beispielEn": "She learned her trade at a small company."
+  },
+  {
+    "id": 4258,
+    "tr": "pekiştirmek",
+    "en": "to reinforce",
+    "beispiel": "Regelmäßige Übungen festigen das Gelernte dauerhaft.",
+    "beispielTr": "Düzenli alıştırmalar öğrenilenleri kalıcı olarak pekiştirir.",
+    "beispielEn": "Regular practice reinforces what has been learned."
+  },
+  {
+    "id": 4259,
+    "tr": "kavramak",
+    "en": "to grasp",
+    "beispiel": "Erst im dritten Anlauf begriff er die Aufgabe.",
+    "beispielTr": "Ancak üçüncü denemede soruyu kavradı.",
+    "beispielEn": "Only on the third try did he grasp the task."
+  },
+  {
+    "id": 4260,
+    "tr": "açıklamak",
+    "en": "to explain in detail",
+    "beispiel": "Bitte erläutern Sie Ihre Methode in wenigen Sätzen.",
+    "beispielTr": "Lütfen yönteminizi birkaç cümleyle açıklayın.",
+    "beispielEn": "Please explain your method in detail in a few sentences."
+  },
+  {
+    "id": 4261,
+    "tr": "dersi asmak",
+    "en": "to skip class",
+    "beispiel": "Er hat den ganzen Monat den Sportunterricht geschwänzt.",
+    "beispielTr": "Bütün ay beden dersini astı.",
+    "beispielEn": "He skipped gym class the whole month."
+  },
+  {
+    "id": 4262,
+    "tr": "başarısız olmak",
+    "en": "to fail",
+    "beispiel": "Sein Versuch, das Studium abzuschließen, ist zweimal gescheitert.",
+    "beispielTr": "Öğrenimini bitirme çabası iki kez başarısız oldu.",
+    "beispielEn": "His attempt to finish his studies failed twice."
+  },
+  {
+    "id": 4263,
+    "tr": "yarıda bırakmak",
+    "en": "to break off",
+    "beispiel": "Aus finanziellen Gründen brach sie das Studium ab.",
+    "beispielTr": "Maddi nedenlerle öğrenimini yarıda bıraktı.",
+    "beispielEn": "She broke off her studies for financial reasons."
+  },
+  {
+    "id": 4264,
+    "tr": "açığı kapatmak",
+    "en": "to catch up",
+    "beispiel": "Nach der Krankheit holte er den Stoff schnell auf.",
+    "beispielTr": "Hastalıktan sonra konu açığını hızla kapattı.",
+    "beispielEn": "After his illness he quickly caught up with the material."
+  },
+  {
+    "id": 4265,
+    "tr": "sunum yapmak",
+    "en": "to give a talk",
+    "beispiel": "Morgen referiert sie über die Reformen im Bildungswesen.",
+    "beispielTr": "Yarın eğitim alanındaki reformlar üzerine sunum yapacak.",
+    "beispielEn": "Tomorrow she is giving a talk on the education reforms."
+  },
+  {
+    "id": 4266,
+    "tr": "sunmak",
+    "en": "to present",
+    "beispiel": "Jede Gruppe trägt ihre Ergebnisse in zehn Minuten vor.",
+    "beispielTr": "Her grup sonuçlarını on dakikada sunuyor.",
+    "beispielEn": "Each group presents its results in ten minutes."
+  },
+  {
+    "id": 4267,
+    "tr": "geçerli saymak",
+    "en": "to credit",
+    "beispiel": "Die Hochschule rechnet ihm die bisherigen Leistungen an.",
+    "beispielTr": "Yüksekokul onun önceki derslerini geçerli sayıyor.",
+    "beispielEn": "The university credits his previous coursework."
+  },
+  {
+    "id": 4268,
+    "tr": "çözümlemek",
+    "en": "to analyze",
+    "beispiel": "Die Ergebnisse der Umfrage werden im Seminar ausgewertet.",
+    "beispielTr": "Anketin sonuçları seminerde çözümlenecek.",
+    "beispielEn": "The survey results will be analyzed in the seminar."
+  },
+  {
+    "id": 4269,
+    "tr": "ineklemek",
+    "en": "to cram",
+    "beispiel": "Vor dem Examen büffelte er wochenlang Vokabeln.",
+    "beispielTr": "Sınavdan önce haftalarca kelime ezberleyip durdu.",
+    "beispielEn": "Before the exam he crammed vocabulary for weeks."
+  },
+  {
+    "id": 4270,
+    "tr": "yol göstermek",
+    "en": "to instruct",
+    "beispiel": "Erfahrene Kollegen leiten die neuen Auszubildenden geduldig an.",
+    "beispielTr": "Deneyimli meslektaşlar yeni çıraklara sabırla yol gösteriyor.",
+    "beispielEn": "Experienced colleagues patiently instruct the new trainees."
+  },
+  {
+    "id": 4271,
+    "tr": "alıştırma yapmak",
+    "en": "to practice",
+    "beispiel": "Die Klasse hat den Dialog für die Prüfung eingeübt.",
+    "beispielTr": "Sınıf sınav için diyaloğun alıştırmasını yaptı.",
+    "beispielEn": "The class practiced the dialogue for the exam."
+  },
+  {
+    "id": 4272,
+    "tr": "okulla ilgili",
+    "en": "school-related",
+    "beispiel": "Seine schulischen Leistungen haben sich deutlich verbessert.",
+    "beispielTr": "Okuldaki başarısı gözle görülür biçimde arttı.",
+    "beispielEn": "His school performance has improved noticeably."
+  },
+  {
+    "id": 4273,
+    "tr": "akademik",
+    "en": "academic",
+    "beispiel": "Für die Stelle wird ein akademischer Abschluss vorausgesetzt.",
+    "beispielTr": "Bu pozisyon için akademik bir derece şart koşuluyor.",
+    "beispielEn": "An academic degree is required for the position."
+  },
+  {
+    "id": 4274,
+    "tr": "uygulamaya dönük",
+    "en": "hands-on",
+    "beispiel": "Der Unterricht ist praxisnah und arbeitet mit echten Fällen.",
+    "beispielTr": "Ders uygulamaya dönük ve gerçek örneklerle işleniyor.",
+    "beispielEn": "The class is hands-on and works with real cases."
+  },
+  {
+    "id": 4275,
+    "tr": "öğrenmeye istekli",
+    "en": "willing to learn",
+    "beispiel": "Der Betrieb sucht lernbereite junge Leute ohne Vorkenntnisse.",
+    "beispielTr": "İşletme ön bilgisi olmayan, öğrenmeye istekli gençler arıyor.",
+    "beispielEn": "The company is looking for young people willing to learn."
+  },
+  {
+    "id": 4276,
+    "tr": "öğrenmeye meraklı",
+    "en": "inquisitive",
+    "beispiel": "Wissbegierige Kinder stellen den ganzen Tag Fragen.",
+    "beispielTr": "Öğrenmeye meraklı çocuklar bütün gün soru sorar.",
+    "beispielEn": "Inquisitive children ask questions all day long."
+  },
+  {
+    "id": 4277,
+    "tr": "zorlu",
+    "en": "demanding",
+    "beispiel": "Der Kurs ist anspruchsvoll und verlangt tägliche Vorbereitung.",
+    "beispielTr": "Kurs zorlu ve her gün hazırlık gerektiriyor.",
+    "beispielEn": "The course is demanding and requires daily preparation."
+  },
+  {
+    "id": 4278,
+    "tr": "çalışırken yapılan",
+    "en": "while working",
+    "beispiel": "Sie macht einen berufsbegleitenden Master in Betriebswirtschaft.",
+    "beispielTr": "Çalışırken işletme alanında yüksek lisans yapıyor.",
+    "beispielEn": "She is doing a master's in business while working."
+  },
+  {
+    "id": 4279,
+    "tr": "ileri düzey",
+    "en": "advanced",
+    "beispiel": "Der Kurs richtet sich an fortgeschrittene Teilnehmer.",
+    "beispielTr": "Kurs ileri düzey katılımcılara yönelik.",
+    "beispielEn": "The course is aimed at advanced learners."
+  },
+  {
+    "id": 4280,
+    "tr": "azimli",
+    "en": "determined",
+    "beispiel": "Zielstrebig arbeitete sie auf ihren Abschluss hin.",
+    "beispielTr": "Azimle mezuniyeti için çalıştı.",
+    "beispielEn": "She worked toward her degree with determination."
+  },
+  {
+    "id": 4281,
+    "tr": "gündem",
+    "en": "agenda",
+    "beispiel": "Die Tagesordnung wird eine Woche vor der Sitzung verschickt.",
+    "beispielTr": "Gündem, toplantıdan bir hafta önce gönderiliyor.",
+    "beispielEn": "The agenda is sent out a week before the meeting."
+  },
+  {
+    "id": 4282,
+    "tr": "tutanak",
+    "en": "minutes",
+    "beispiel": "Wer schreibt heute das Protokoll der Besprechung?",
+    "beispielTr": "Bugünkü toplantının tutanağını kim yazacak?",
+    "beispielEn": "Who is taking the minutes of the meeting today?"
+  },
+  {
+    "id": 4283,
+    "tr": "söz talebi",
+    "en": "request to speak",
+    "beispiel": "Gibt es zu diesem Punkt noch weitere Wortmeldungen?",
+    "beispielTr": "Bu madde hakkında söz almak isteyen var mı?",
+    "beispielEn": "Are there any more requests to speak on this point?"
+  },
+  {
+    "id": 4284,
+    "tr": "oturum başkanlığı",
+    "en": "chairing",
+    "beispiel": "Die Sitzungsleitung übernimmt in dieser Woche der Abteilungsleiter.",
+    "beispielTr": "Bu hafta oturum başkanlığını bölüm müdürü üstleniyor.",
+    "beispielEn": "This week the department head is chairing the meeting."
+  },
+  {
+    "id": 4285,
+    "tr": "süre uzatımı",
+    "en": "deadline extension",
+    "beispiel": "Wir haben beim Kunden eine Fristverlängerung um zwei Wochen erreicht.",
+    "beispielTr": "Müşteriden iki haftalık bir süre uzatımı aldık.",
+    "beispielEn": "We got a two-week deadline extension from the client."
+  },
+  {
+    "id": 4286,
+    "tr": "kilometre taşı",
+    "en": "milestone",
+    "beispiel": "Der erste Meilenstein des Projekts ist termingerecht erreicht worden.",
+    "beispielTr": "Projenin ilk kilometre taşına zamanında ulaşıldı.",
+    "beispielEn": "The project's first milestone was reached on schedule."
+  },
+  {
+    "id": 4287,
+    "tr": "proje görev tanımı",
+    "en": "project charter",
+    "beispiel": "Der Projektauftrag wurde gestern vom Vorstand unterschrieben.",
+    "beispielTr": "Proje görev tanımı dün yönetim kurulunca imzalandı.",
+    "beispielEn": "The project charter was signed by the board yesterday."
+  },
+  {
+    "id": 4288,
+    "tr": "iş paketi",
+    "en": "work package",
+    "beispiel": "Jedes Arbeitspaket hat einen festen Verantwortlichen im Team.",
+    "beispielTr": "Her iş paketinin ekipte belirli bir sorumlusu var.",
+    "beispielEn": "Every work package has a fixed owner on the team."
+  },
+  {
+    "id": 4289,
+    "tr": "ara rapor",
+    "en": "interim report",
+    "beispiel": "Der Zwischenbericht liegt der Geschäftsführung seit Montag vor.",
+    "beispielTr": "Ara rapor pazartesiden beri yönetimin elinde.",
+    "beispielEn": "The interim report has been with management since Monday."
+  },
+  {
+    "id": 4290,
+    "tr": "mevcut durum",
+    "en": "status",
+    "beispiel": "Bitte informieren Sie mich kurz über den aktuellen Sachstand.",
+    "beispielTr": "Lütfen beni güncel durum hakkında kısaca bilgilendirin.",
+    "beispielEn": "Please give me a brief update on the current status."
+  },
+  {
+    "id": 4291,
+    "tr": "işlem",
+    "en": "process",
+    "beispiel": "Der ganze Vorgang dauert nur wenige Minuten.",
+    "beispielTr": "Bütün işlem sadece birkaç dakika sürüyor.",
+    "beispielEn": "The whole process only takes a few minutes."
+  },
+  {
+    "id": 4292,
+    "tr": "dosyalama",
+    "en": "filing",
+    "beispiel": "Die digitale Ablage ist inzwischen übersichtlicher als der Aktenschrank.",
+    "beispielTr": "Dijital dosyalama artık evrak dolabından daha düzenli.",
+    "beispielEn": "The digital filing is now tidier than the file cabinet."
+  }
+]
