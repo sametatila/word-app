@@ -217,7 +217,12 @@
     },
     {
      "de": "übercho",
-     "mevcutTr": "almak (bekommen)"
+     "mevcutTr": "almak (bekommen)",
+     "havuz": {
+      "tr": "almak",
+      "en": "to get"
+     },
+     "hdAdayi": "bekommen"
     },
     {
      "de": "d Versicherigscharte",
@@ -311,7 +316,12 @@
     },
     {
      "de": "zügle",
-     "mevcutTr": "taşınmak (umziehen)"
+     "mevcutTr": "taşınmak (umziehen)",
+     "havuz": {
+      "tr": "taşınmak",
+      "en": "to move"
+     },
+     "hdAdayi": "umziehen"
     },
     {
      "de": "d Gebüür",
@@ -338,7 +348,12 @@
     },
     {
      "de": "de Nääbel",
-     "mevcutTr": "sis (Nebel)"
+     "mevcutTr": "sis (Nebel)",
+     "havuz": {
+      "tr": "sis",
+      "en": "fog"
+     },
+     "hdAdayi": "Nebel"
     },
     {
      "de": "ufhäitere",
@@ -358,7 +373,12 @@
     },
     {
      "de": "chüel",
-     "mevcutTr": "serin (kühl)"
+     "mevcutTr": "serin (kühl)",
+     "havuz": {
+      "tr": "serin",
+      "en": "cool"
+     },
+     "hdAdayi": "kühl"
     }
    ]
   }

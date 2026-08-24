@@ -151,7 +151,7 @@
     },
     {
      "de": "sie / sei",
-     "mevcutTr": "o, onlar / ol (emir)"
+     "mevcutTr": "onlar / ol"
     },
     {
      "de": "bieten",
@@ -224,7 +224,7 @@
     },
     {
      "de": "auch",
-     "mevcutTr": "de, da",
+     "mevcutTr": "de",
      "havuz": {
       "tr": "de",
       "en": "also"
@@ -439,7 +439,7 @@
     },
     {
      "de": "wahr",
-     "mevcutTr": "doğru, gerçek",
+     "mevcutTr": "doğru",
      "havuz": {
       "tr": "doğru",
       "en": "true"
@@ -461,7 +461,7 @@
     },
     {
      "de": "Wie spät ist es auf deiner Uhr?",
-     "mevcutTr": "Saatinde saat kaç?"
+     "mevcutTr": "Senin saatinde saat kaç?"
     },
     {
      "de": "Das ist nicht wahr.",

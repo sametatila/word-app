@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "das Wetter",
-     "mevcutTr": "hava durumu",
+     "mevcutTr": "hava",
      "havuz": {
       "tr": "hava",
       "en": "weather"
@@ -45,7 +45,7 @@
     },
     {
      "de": "drinnen",
-     "mevcutTr": "içeride, kapalı alanda",
+     "mevcutTr": "içeride",
      "havuz": {
       "tr": "içeride",
       "en": "inside"
@@ -53,7 +53,7 @@
     },
     {
      "de": "abholen",
-     "mevcutTr": "gelip almak",
+     "mevcutTr": "gidip almak",
      "havuz": {
       "tr": "gidip almak",
       "en": "to pick up"
@@ -80,7 +80,7 @@
    "gloss": [
     {
      "de": "das Angebot",
-     "mevcutTr": "indirim, kampanya",
+     "mevcutTr": "indirim",
      "havuz": {
       "tr": "teklif",
       "en": "offer"
@@ -139,7 +139,7 @@
    "gloss": [
     {
      "de": "der Hausmeister",
-     "mevcutTr": "kapıcı, bina görevlisi",
+     "mevcutTr": "kapıcı",
      "havuz": {
       "tr": "kapıcı",
       "en": "janitor"
@@ -155,7 +155,7 @@
     },
     {
      "de": "wegwerfen",
-     "mevcutTr": "atmak",
+     "mevcutTr": "çöpe atmak",
      "havuz": {
       "tr": "çöpe atmak",
       "en": "to throw away"
@@ -202,7 +202,7 @@
     },
     {
      "de": "das Vollkornbrot",
-     "mevcutTr": "tam buğday ekmeği"
+     "mevcutTr": "tam tahıllı ekmek"
     },
     {
      "de": "die Scheibe",
@@ -222,7 +222,7 @@
     },
     {
      "de": "das macht …",
-     "mevcutTr": "tutarı … eder"
+     "mevcutTr": "… eder"
     },
     {
      "de": "das Kleingeld",
@@ -245,7 +245,7 @@
    "gloss": [
     {
      "de": "die Ansage",
-     "mevcutTr": "anons",
+     "mevcutTr": "duyuru",
      "havuz": {
       "tr": "duyuru",
       "en": "announcement"
@@ -277,7 +277,7 @@
     },
     {
      "de": "das Angebot",
-     "mevcutTr": "kampanya, indirim",
+     "mevcutTr": "indirim",
      "havuz": {
       "tr": "teklif",
       "en": "offer"
@@ -312,7 +312,7 @@
    "gloss": [
     {
      "de": "der Advent",
-     "mevcutTr": "Noel öncesi dört hafta"
+     "mevcutTr": "Noel öncesi dönem"
     },
     {
      "de": "der Kalender",
@@ -395,7 +395,7 @@
     },
     {
      "de": "der Geburtstag",
-     "mevcutTr": "doğum tarihi / doğum günü",
+     "mevcutTr": "doğum günü",
      "havuz": {
       "tr": "doğum günü",
       "en": "birthday"
@@ -403,7 +403,7 @@
     },
     {
      "de": "frei",
-     "mevcutTr": "boş (randevu)",
+     "mevcutTr": "boş",
      "havuz": {
       "tr": "boş",
       "en": "free"
@@ -446,7 +446,7 @@
     },
     {
      "de": "endlich",
-     "mevcutTr": "nihayet",
+     "mevcutTr": "sonunda",
      "havuz": {
       "tr": "sonunda",
       "en": "finally"
@@ -454,7 +454,7 @@
     },
     {
      "de": "fertig",
-     "mevcutTr": "hazır, bitmiş",
+     "mevcutTr": "hazır",
      "havuz": {
       "tr": "hazır",
       "en": "ready"
@@ -470,7 +470,7 @@
     },
     {
      "de": "scharf",
-     "mevcutTr": "acı (yemek)",
+     "mevcutTr": "acı",
      "havuz": {
       "tr": "keskin",
       "en": "sharp"
@@ -486,7 +486,7 @@
     },
     {
      "de": "gegen",
-     "mevcutTr": "…e doğru (saat)",
+     "mevcutTr": "civarında",
      "havuz": {
       "tr": "karşı",
       "en": "against"

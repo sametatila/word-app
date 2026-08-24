@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "der Aushang",
-     "mevcutTr": "duyuru, ilan"
+     "mevcutTr": "ilan"
     },
     {
      "de": "die Nachbarn einladen",
@@ -41,7 +41,7 @@
     },
     {
      "de": "aufbauen",
-     "mevcutTr": "kurmak (masa, çadır)",
+     "mevcutTr": "kurmak",
      "havuz": {
       "tr": "kurmak",
       "en": "to set up"
@@ -49,7 +49,7 @@
     },
     {
      "de": "aufräumen",
-     "mevcutTr": "toplamak, temizlemek",
+     "mevcutTr": "toplamak",
      "havuz": {
       "tr": "toplamak",
       "en": "to tidy up"
@@ -57,7 +57,7 @@
     },
     {
      "de": "die Lautstärke",
-     "mevcutTr": "ses düzeyi",
+     "mevcutTr": "ses seviyesi",
      "havuz": {
       "tr": "ses seviyesi",
       "en": "volume"
@@ -91,7 +91,7 @@
     },
     {
      "de": "Über eine kurze Antwort würde ich mich freuen.",
-     "mevcutTr": "Kısa bir yanıta sevinirim."
+     "mevcutTr": "Kısa bir yanıt alırsam sevinirim."
     }
    ]
   },
@@ -114,7 +114,7 @@
     },
     {
      "de": "meiner Meinung nach",
-     "mevcutTr": "bence, benim görüşüme göre"
+     "mevcutTr": "bence"
     },
     {
      "de": "einerseits … andererseits",
@@ -138,13 +138,13 @@
     },
     {
      "de": "es kommt darauf an",
-     "mevcutTr": "duruma bağlı, -e bağlı"
+     "mevcutTr": "duruma bağlı"
     }
    ],
    "phrases": [
     {
      "de": "Ich habe lange über diese Frage nachgedacht.",
-     "mevcutTr": "Bu soruyu uzun uzun düşündüm."
+     "mevcutTr": "Bu soru üzerinde uzun uzun düşündüm."
     },
     {
      "de": "Meiner Meinung nach …",
@@ -156,7 +156,7 @@
     },
     {
      "de": "Ich habe die Erfahrung gemacht, dass …",
-     "mevcutTr": "Şu deneyimi yaşadım: …"
+     "mevcutTr": "Benim deneyimim şu ki …"
     },
     {
      "de": "Deshalb habe ich mir feste Regeln gesetzt.",
@@ -191,7 +191,7 @@
     },
     {
      "de": "absagen",
-     "mevcutTr": "iptal etmek, katılamayacağını bildirmek",
+     "mevcutTr": "iptal etmek",
      "havuz": {
       "tr": "iptal etmek",
       "en": "to cancel"
@@ -207,7 +207,7 @@
     },
     {
      "de": "die Unterlagen",
-     "mevcutTr": "belgeler, dokümanlar",
+     "mevcutTr": "belgeler",
      "havuz": {
       "tr": "belgeler",
       "en": "documents"
@@ -257,11 +257,11 @@
     },
     {
      "de": "Ich würde die Aufgaben zu Hause bearbeiten.",
-     "mevcutTr": "Ödevleri evde çalışırım."
+     "mevcutTr": "Alıştırmaları evde yaparım."
     },
     {
      "de": "Vielen Dank für Ihr Verständnis.",
-     "mevcutTr": "Anlayışınız için çok teşekkürler."
+     "mevcutTr": "Anlayışınız için çok teşekkür ederim."
     }
    ]
   },
@@ -276,7 +276,7 @@
    "gloss": [
     {
      "de": "autofrei",
-     "mevcutTr": "arabasız, trafiğe kapalı"
+     "mevcutTr": "arabasız"
     },
     {
      "de": "die Innenstadt",
@@ -288,7 +288,7 @@
     },
     {
      "de": "sperren für",
-     "mevcutTr": "(trafiğe) kapatmak"
+     "mevcutTr": "kapatmak"
     },
     {
      "de": "die Luftqualität",
@@ -296,11 +296,11 @@
     },
     {
      "de": "öffentliche Verkehrsmittel",
-     "mevcutTr": "toplu taşıma araçları"
+     "mevcutTr": "toplu taşıma"
     },
     {
      "de": "der Handwerker",
-     "mevcutTr": "zanaatkâr, usta",
+     "mevcutTr": "usta",
      "havuz": {
       "tr": "usta",
       "en": "craftsman"
@@ -316,7 +316,7 @@
     },
     {
      "de": "die Alternative",
-     "mevcutTr": "alternatif, seçenek",
+     "mevcutTr": "alternatif",
      "havuz": {
       "tr": "alternatif",
       "en": "alternative"
@@ -361,7 +361,7 @@
    "gloss": [
     {
      "de": "der Mangel",
-     "mevcutTr": "kusur, arıza",
+     "mevcutTr": "kusur",
      "havuz": {
       "tr": "eksiklik",
       "en": "lack"
@@ -389,7 +389,7 @@
     },
     {
      "de": "mehrfach",
-     "mevcutTr": "birçok kez",
+     "mevcutTr": "birden çok kez",
      "havuz": {
       "tr": "birden çok kez",
       "en": "multiple times"
@@ -405,7 +405,7 @@
     },
     {
      "de": "auffordern",
-     "mevcutTr": "talep etmek, çağrıda bulunmak",
+     "mevcutTr": "talep etmek",
      "havuz": {
       "tr": "istemek",
       "en": "to ask"
@@ -500,7 +500,7 @@
    "phrases": [
     {
      "de": "Ich habe den Beitrag von … gelesen.",
-     "mevcutTr": "…'in yazısını okudum."
+     "mevcutTr": "…'in gönderisini okudum."
     },
     {
      "de": "Meiner Meinung nach …",
@@ -543,7 +543,7 @@
     },
     {
      "de": "peinlich",
-     "mevcutTr": "utandırıcı",
+     "mevcutTr": "utanç verici",
      "havuz": {
       "tr": "utanç verici",
       "en": "embarrassing"
@@ -579,7 +579,7 @@
     },
     {
      "de": "inzwischen",
-     "mevcutTr": "bu arada, artık",
+     "mevcutTr": "artık",
      "havuz": {
       "tr": "bu arada",
       "en": "meanwhile"
@@ -601,7 +601,7 @@
     },
     {
      "de": "Zum Glück hat … freundlich reagiert.",
-     "mevcutTr": "Neyse ki … kibar davrandı."
+     "mevcutTr": "Neyse ki … kibar bir tepki verdi."
     },
     {
      "de": "Inzwischen mache ich es so: …",
@@ -644,7 +644,7 @@
     },
     {
      "de": "die Nachbarschaft",
-     "mevcutTr": "mahalle, komşuluk",
+     "mevcutTr": "komşuluk",
      "havuz": {
       "tr": "komşuluk",
       "en": "neighborhood"
@@ -682,7 +682,7 @@
     },
     {
      "de": "Kommen Sie gern vorbei.",
-     "mevcutTr": "Buyurun, uğrayın."
+     "mevcutTr": "Çekinmeden uğrayın."
     }
    ]
   }

@@ -29,7 +29,7 @@
     },
     {
      "de": "mitbringen",
-     "mevcutTr": "yanında getirmek",
+     "mevcutTr": "getirmek",
      "havuz": {
       "tr": "getirmek",
       "en": "to bring along"
@@ -49,7 +49,7 @@
     },
     {
      "de": "sich freuen auf",
-     "mevcutTr": "-i iple çekmek"
+     "mevcutTr": "dört gözle beklemek"
     }
    ],
    "phrases": [
@@ -71,7 +71,7 @@
     },
     {
      "de": "Ich freue mich schon auf die Party.",
-     "mevcutTr": "Partiyi şimdiden iple çekiyorum."
+     "mevcutTr": "Partiyi şimdiden dört gözle bekliyorum."
     },
     {
      "de": "Bis Samstag!",
@@ -114,7 +114,7 @@
     },
     {
      "de": "besichtigen",
-     "mevcutTr": "gezip görmek",
+     "mevcutTr": "gezmek",
      "havuz": {
       "tr": "gezmek",
       "en": "to visit"
@@ -122,7 +122,7 @@
     },
     {
      "de": "erlaubt",
-     "mevcutTr": "izinli",
+     "mevcutTr": "serbest",
      "havuz": {
       "tr": "serbest",
       "en": "allowed"
@@ -130,17 +130,17 @@
     },
     {
      "de": "sich interessieren für",
-     "mevcutTr": "-e ilgi duymak"
+     "mevcutTr": "ilgilenmek"
     },
     {
      "de": "die Vermieterin",
-     "mevcutTr": "ev sahibi (kadın)"
+     "mevcutTr": "ev sahibi"
     }
    ],
    "phrases": [
     {
      "de": "Sehr geehrte Frau Weber, ...",
-     "mevcutTr": "Sayın Bayan Weber, ... (resmi hitap)"
+     "mevcutTr": "Sayın Weber Hanım, ..."
     },
     {
      "de": "Ich interessiere mich für die Wohnung.",
@@ -164,7 +164,7 @@
     },
     {
      "de": "Mit freundlichen Grüßen",
-     "mevcutTr": "Saygılarımla (resmi kapanış)"
+     "mevcutTr": "Saygılarımla"
     }
    ]
   },
@@ -221,7 +221,7 @@
    "phrases": [
     {
      "de": "Sehr geehrter Herr Krause, ...",
-     "mevcutTr": "Sayın Bay Krause, ... (resmi hitap)"
+     "mevcutTr": "Sayın Krause Bey, ..."
     },
     {
      "de": "Ich bin leider krank.",
@@ -237,7 +237,7 @@
     },
     {
      "de": "Die Krankmeldung schicke ich Ihnen morgen.",
-     "mevcutTr": "Raporu size yarın gönderirim."
+     "mevcutTr": "Hastalık raporunu size yarın gönderirim."
     },
     {
      "de": "Mit freundlichen Grüßen",
@@ -272,7 +272,7 @@
     },
     {
      "de": "baden",
-     "mevcutTr": "denize girmek, yüzmek",
+     "mevcutTr": "denize girmek",
      "havuz": {
       "tr": "banyo yapmak",
       "en": "to bathe"
@@ -284,7 +284,7 @@
     },
     {
      "de": "der Ausflug",
-     "mevcutTr": "gezi, tur",
+     "mevcutTr": "gezi",
      "havuz": {
       "tr": "gezi",
       "en": "trip"
@@ -300,7 +300,7 @@
     },
     {
      "de": "das Wetter",
-     "mevcutTr": "hava durumu",
+     "mevcutTr": "hava",
      "havuz": {
       "tr": "hava",
       "en": "weather"
@@ -345,7 +345,7 @@
    "gloss": [
     {
      "de": "der Antrag",
-     "mevcutTr": "başvuru, talep",
+     "mevcutTr": "başvuru",
      "havuz": {
       "tr": "başvuru",
       "en": "application"
@@ -353,7 +353,7 @@
     },
     {
      "de": "der Anhang",
-     "mevcutTr": "ek (dosya)",
+     "mevcutTr": "ek",
      "havuz": {
       "tr": "ek",
       "en": "attachment"
@@ -361,7 +361,7 @@
     },
     {
      "de": "einreichen",
-     "mevcutTr": "sunmak, teslim etmek",
+     "mevcutTr": "sunmak",
      "havuz": {
       "tr": "sunmak",
       "en": "to submit"
@@ -377,7 +377,7 @@
     },
     {
      "de": "die Rückmeldung",
-     "mevcutTr": "geri dönüş",
+     "mevcutTr": "geri bildirim",
      "havuz": {
       "tr": "geri bildirim",
       "en": "feedback"
@@ -407,7 +407,7 @@
     },
     {
      "de": "ich möchte einen Zuschuss beantragen.",
-     "mevcutTr": "Katkı payı talep etmek istiyorum."
+     "mevcutTr": "katkı payı talep etmek istiyorum."
     },
     {
      "de": "Im Anhang finden Sie …",
@@ -442,7 +442,7 @@
     },
     {
      "de": "absagen",
-     "mevcutTr": "reddetmek, katılamayacağını bildirmek",
+     "mevcutTr": "reddetmek",
      "havuz": {
       "tr": "iptal etmek",
       "en": "to cancel"
@@ -450,7 +450,7 @@
     },
     {
      "de": "zusagen",
-     "mevcutTr": "kabul etmek",
+     "mevcutTr": "olumlu yanıt vermek",
      "havuz": {
       "tr": "olumlu yanıt vermek",
       "en": "to accept"
@@ -466,7 +466,7 @@
     },
     {
      "de": "mitbringen",
-     "mevcutTr": "yanında getirmek",
+     "mevcutTr": "getirmek",
      "havuz": {
       "tr": "getirmek",
       "en": "to bring along"
@@ -488,7 +488,7 @@
    "phrases": [
     {
      "de": "Vielen Dank für die Einladung.",
-     "mevcutTr": "Davet için teşekkürler."
+     "mevcutTr": "Davet için çok teşekkürler."
     },
     {
      "de": "Ich komme gern.",
@@ -519,7 +519,7 @@
    "gloss": [
     {
      "de": "das Fest",
-     "mevcutTr": "bayram, kutlama",
+     "mevcutTr": "bayram",
      "havuz": {
       "tr": "şenlik",
       "en": "festival"
@@ -593,7 +593,7 @@
     },
     {
      "de": "Das ist ähnlich wie …",
-     "mevcutTr": "Bu … gibi benzer."
+     "mevcutTr": "Bu …'e benzer."
     },
     {
      "de": "Anders als in Deutschland …",

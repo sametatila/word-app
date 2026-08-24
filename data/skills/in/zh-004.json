@@ -13,7 +13,12 @@
    "gloss": [
     {
      "de": "häisse",
-     "mevcutTr": "adında olmak (heißen)"
+     "mevcutTr": "adında olmak (heißen)",
+     "havuz": {
+      "tr": "adı olmak",
+      "en": "to be called"
+     },
+     "hdAdayi": "heißen"
     },
     {
      "de": "choo us",
@@ -74,7 +79,12 @@
    "gloss": [
     {
      "de": "läider",
-     "mevcutTr": "maalesef (leider)"
+     "mevcutTr": "maalesef (leider)",
+     "havuz": {
+      "tr": "maalesef",
+      "en": "unfortunately"
+     },
+     "hdAdayi": "leider"
     },
     {
      "de": "chrank",
@@ -127,15 +137,30 @@
    "gloss": [
     {
      "de": "chaufe",
-     "mevcutTr": "satın almak (kaufen)"
+     "mevcutTr": "satın almak (kaufen)",
+     "havuz": {
+      "tr": "satın almak",
+      "en": "to buy"
+     },
+     "hdAdayi": "kaufen"
     },
     {
      "de": "de Zmorge",
-     "mevcutTr": "kahvaltı (Frühstück)"
+     "mevcutTr": "kahvaltı (Frühstück)",
+     "havuz": {
+      "tr": "kahvaltı",
+      "en": "breakfast"
+     },
+     "hdAdayi": "Frühstück"
     },
     {
      "de": "de Chääs",
-     "mevcutTr": "peynir (Käse)"
+     "mevcutTr": "peynir (Käse)",
+     "havuz": {
+      "tr": "peynir",
+      "en": "cheese"
+     },
+     "hdAdayi": "Käse"
     },
     {
      "de": "choche",
@@ -188,7 +213,12 @@
     },
     {
      "de": "ufschtaa",
-     "mevcutTr": "kalkmak (aufstehen)"
+     "mevcutTr": "kalkmak (aufstehen)",
+     "havuz": {
+      "tr": "kalkmak",
+      "en": "to get up"
+     },
+     "hdAdayi": "aufstehen"
     },
     {
      "de": "viertel ab",

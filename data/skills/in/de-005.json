@@ -84,11 +84,11 @@
     },
     {
      "de": "das Becken",
-     "mevcutTr": "havuz (bölümü)"
+     "mevcutTr": "havuz"
     },
     {
      "de": "der Eintritt",
-     "mevcutTr": "giriş (ücreti)",
+     "mevcutTr": "giriş ücreti",
      "havuz": {
       "tr": "giriş ücreti",
       "en": "admission"
@@ -139,7 +139,7 @@
     },
     {
      "de": "die Nebenkosten",
-     "mevcutTr": "yan giderler (aidat vb.)",
+     "mevcutTr": "yan giderler",
      "havuz": {
       "tr": "yan giderler",
       "en": "utility costs"
@@ -147,7 +147,7 @@
     },
     {
      "de": "der Keller",
-     "mevcutTr": "bodrum, kiler",
+     "mevcutTr": "bodrum",
      "havuz": {
       "tr": "bodrum",
       "en": "basement"
@@ -159,7 +159,7 @@
     },
     {
      "de": "erlaubt",
-     "mevcutTr": "izinli, serbest",
+     "mevcutTr": "serbest",
      "havuz": {
       "tr": "serbest",
       "en": "allowed"
@@ -167,7 +167,7 @@
     },
     {
      "de": "die Besichtigung",
-     "mevcutTr": "daireyi gezme, görme",
+     "mevcutTr": "gezme",
      "havuz": {
       "tr": "gezme",
       "en": "viewing"
@@ -273,7 +273,7 @@
     },
     {
      "de": "die Verkäuferin",
-     "mevcutTr": "satış elemanı (kadın)",
+     "mevcutTr": "kadın satıcı",
      "havuz": {
       "tr": "kadın satıcı",
       "en": "saleswoman"
@@ -289,7 +289,7 @@
     },
     {
      "de": "der Kontakt",
-     "mevcutTr": "iletişim, temas",
+     "mevcutTr": "iletişim",
      "havuz": {
       "tr": "iletişim",
       "en": "contact"
@@ -356,7 +356,7 @@
     },
     {
      "de": "sorgen für",
-     "mevcutTr": "-i üstlenmek, sağlamak"
+     "mevcutTr": "-i sağlamak"
     },
     {
      "de": "der Nachtisch",
@@ -403,7 +403,7 @@
    "gloss": [
     {
      "de": "die Stelle",
-     "mevcutTr": "iş, pozisyon",
+     "mevcutTr": "iş",
      "havuz": {
       "tr": "iş",
       "en": "position"
@@ -435,7 +435,7 @@
     },
     {
      "de": "die Teilzeit",
-     "mevcutTr": "yarı zamanlı",
+     "mevcutTr": "yarı zamanlı çalışma",
      "havuz": {
       "tr": "yarı zamanlı çalışma",
       "en": "part-time work"
@@ -470,7 +470,7 @@
    "gloss": [
     {
      "de": "die Krankenkasse",
-     "mevcutTr": "sağlık sigortası kurumu",
+     "mevcutTr": "sağlık sigortası",
      "havuz": {
       "tr": "sağlık sigortası",
       "en": "health insurance fund"
@@ -478,7 +478,7 @@
     },
     {
      "de": "der Beitrag",
-     "mevcutTr": "prim, aidat",
+     "mevcutTr": "prim",
      "havuz": {
       "tr": "aidat",
       "en": "membership fee"
@@ -486,7 +486,7 @@
     },
     {
      "de": "der Nachweis",
-     "mevcutTr": "belge, kanıt",
+     "mevcutTr": "kanıt",
      "havuz": {
       "tr": "kanıt",
       "en": "proof"
@@ -494,7 +494,7 @@
     },
     {
      "de": "die Frist",
-     "mevcutTr": "süre, son tarih",
+     "mevcutTr": "son tarih",
      "havuz": {
       "tr": "son tarih",
       "en": "deadline"
@@ -502,7 +502,7 @@
     },
     {
      "de": "einreichen",
-     "mevcutTr": "teslim etmek",
+     "mevcutTr": "sunmak",
      "havuz": {
       "tr": "sunmak",
       "en": "to submit"
@@ -510,7 +510,7 @@
     },
     {
      "de": "der Zuschuss",
-     "mevcutTr": "katkı payı",
+     "mevcutTr": "destek",
      "havuz": {
       "tr": "destek",
       "en": "subsidy"

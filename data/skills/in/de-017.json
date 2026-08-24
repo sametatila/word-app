@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "die Vergabe",
-     "mevcutTr": "verme, tahsis"
+     "mevcutTr": "tahsis"
     },
     {
      "de": "die Urteilskraft",
@@ -41,11 +41,11 @@
     },
     {
      "de": "jemandem etwas zurechnen",
-     "mevcutTr": "birine atfetmek"
+     "mevcutTr": "atfetmek"
     },
     {
      "de": "die Bonität",
-     "mevcutTr": "kredi itibarı",
+     "mevcutTr": "ödeme gücü",
      "havuz": {
       "tr": "ödeme gücü",
       "en": "creditworthiness"
@@ -53,7 +53,7 @@
     },
     {
      "de": "strukturschwach",
-     "mevcutTr": "yapısal olarak zayıf (bölge)",
+     "mevcutTr": "yapısal olarak zayıf",
      "havuz": {
       "tr": "yapısal olarak zayıf",
       "en": "structurally weak"
@@ -61,19 +61,19 @@
     },
     {
      "de": "etwas fortschreiben",
-     "mevcutTr": "sürdürmek, devam ettirmek"
+     "mevcutTr": "sürdürmek"
     },
     {
      "de": "wohlfeil",
-     "mevcutTr": "ucuz, kolaycı (mecazi)"
+     "mevcutTr": "kolaycı"
     },
     {
      "de": "einklagbar",
-     "mevcutTr": "dava yoluyla talep edilebilir"
+     "mevcutTr": "dava edilebilir"
     },
     {
      "de": "etwas revidieren",
-     "mevcutTr": "gözden geçirip düzeltmek"
+     "mevcutTr": "gözden geçirmek"
     }
    ]
   },
@@ -96,19 +96,19 @@
     },
     {
      "de": "händeringend",
-     "mevcutTr": "büyük bir çaresizlikle, acilen"
+     "mevcutTr": "çaresizce"
     },
     {
      "de": "ernüchternd",
-     "mevcutTr": "hayal kırıklığına uğratan"
+     "mevcutTr": "hayal kırıklığı yaratan"
     },
     {
      "de": "etwas verzahnen",
-     "mevcutTr": "birbirine geçirmek, bütünleştirmek"
+     "mevcutTr": "bütünleştirmek"
     },
     {
      "de": "aufholen",
-     "mevcutTr": "arayı kapatmak",
+     "mevcutTr": "açığı kapatmak",
      "havuz": {
       "tr": "açığı kapatmak",
       "en": "to catch up"
@@ -116,7 +116,7 @@
     },
     {
      "de": "die Fachkraft",
-     "mevcutTr": "uzman eleman",
+     "mevcutTr": "nitelikli eleman",
      "havuz": {
       "tr": "nitelikli eleman",
       "en": "skilled worker"
@@ -132,7 +132,7 @@
     },
     {
      "de": "die Aufbewahrung",
-     "mevcutTr": "muhafaza; (burada) çocuk bekletme"
+     "mevcutTr": "çocuk bekletme"
     },
     {
      "de": "verbindlich",
@@ -171,7 +171,7 @@
     },
     {
      "de": "nachrücken",
-     "mevcutTr": "yerine gelmek, arkadan yetişmek",
+     "mevcutTr": "yerine geçmek",
      "havuz": {
       "tr": "yerine geçmek",
       "en": "to move up"
@@ -179,7 +179,7 @@
     },
     {
      "de": "die Wertschöpfung",
-     "mevcutTr": "katma değer üretimi",
+     "mevcutTr": "katma değer",
      "havuz": {
       "tr": "katma değer",
       "en": "value creation"
@@ -195,7 +195,7 @@
     },
     {
      "de": "der Zuzug",
-     "mevcutTr": "göçle gelen nüfus",
+     "mevcutTr": "gelip yerleşme",
      "havuz": {
       "tr": "gelip yerleşme",
       "en": "influx"
@@ -203,7 +203,7 @@
     },
     {
      "de": "die Nahversorgung",
-     "mevcutTr": "yerel temel hizmetler"
+     "mevcutTr": "yerel temel hizmet"
     },
     {
      "de": "überzogen",
@@ -211,7 +211,7 @@
     },
     {
      "de": "personennah",
-     "mevcutTr": "insana dönük (hizmet)"
+     "mevcutTr": "insana dönük"
     },
     {
      "de": "die Erwerbsbeteiligung",
@@ -219,7 +219,7 @@
     },
     {
      "de": "die Stellschraube",
-     "mevcutTr": "ayar vidası; müdahale kaldıracı"
+     "mevcutTr": "kaldıraç"
     },
     {
      "de": "das Zusammenspiel",
@@ -242,7 +242,7 @@
     },
     {
      "de": "das Defizit",
-     "mevcutTr": "eksiklik",
+     "mevcutTr": "açık",
      "havuz": {
       "tr": "açık",
       "en": "deficit"
@@ -270,7 +270,7 @@
     },
     {
      "de": "das Sprachregister",
-     "mevcutTr": "dil kesiti, register"
+     "mevcutTr": "dil kesiti"
     },
     {
      "de": "die Bildungssprache",
@@ -278,7 +278,7 @@
     },
     {
      "de": "etwas verkennen",
-     "mevcutTr": "yanlış değerlendirmek, görememek"
+     "mevcutTr": "yanlış değerlendirmek"
     },
     {
      "de": "die Ressource",
@@ -290,7 +290,7 @@
     },
     {
      "de": "das Selbstverständnis",
-     "mevcutTr": "öz algı, kendini tanımlama",
+     "mevcutTr": "kendini algılayış",
      "havuz": {
       "tr": "kendini algılayış",
       "en": "self-conception"
@@ -309,7 +309,7 @@
    "gloss": [
     {
      "de": "die Teilhabe",
-     "mevcutTr": "katılım, pay alma",
+     "mevcutTr": "katılım",
      "havuz": {
       "tr": "katılım",
       "en": "participation"
@@ -321,15 +321,15 @@
     },
     {
      "de": "die Schwellenangst",
-     "mevcutTr": "eşik korkusu, çekingenlik"
+     "mevcutTr": "eşik korkusu"
     },
     {
      "de": "etwas bespielen",
-     "mevcutTr": "(bir mekânı) etkinlikle doldurmak"
+     "mevcutTr": "etkinlikle doldurmak"
     },
     {
      "de": "die Zumutung",
-     "mevcutTr": "zorlayıcı talep, külfet",
+     "mevcutTr": "eziyet",
      "havuz": {
       "tr": "eziyet",
       "en": "imposition"
@@ -337,7 +337,7 @@
     },
     {
      "de": "die Kontemplation",
-     "mevcutTr": "derin düşünme, temaşa"
+     "mevcutTr": "derin düşünme"
     },
     {
      "de": "verwechselbar",
@@ -345,7 +345,7 @@
     },
     {
      "de": "die Kennzahl",
-     "mevcutTr": "performans göstergesi",
+     "mevcutTr": "gösterge",
      "havuz": {
       "tr": "gösterge",
       "en": "metric"
@@ -353,7 +353,7 @@
     },
     {
      "de": "der Selbstzweck",
-     "mevcutTr": "kendinde amaç",
+     "mevcutTr": "kendi başına amaç",
      "havuz": {
       "tr": "kendi başına amaç",
       "en": "end in itself"
@@ -361,7 +361,7 @@
     },
     {
      "de": "etwas preisgeben",
-     "mevcutTr": "feda etmek, elden çıkarmak"
+     "mevcutTr": "feda etmek"
     },
     {
      "de": "die Ermäßigung",
@@ -400,7 +400,7 @@
     },
     {
      "de": "das Schlagwort",
-     "mevcutTr": "moda kavram, slogan"
+     "mevcutTr": "moda kavram"
     },
     {
      "de": "die Rückverlagerung",
@@ -408,7 +408,7 @@
     },
     {
      "de": "stagnieren",
-     "mevcutTr": "durağanlaşmak",
+     "mevcutTr": "yerinde saymak",
      "havuz": {
       "tr": "yerinde saymak",
       "en": "to stagnate"
@@ -416,7 +416,7 @@
     },
     {
      "de": "die Verflechtung",
-     "mevcutTr": "iç içe geçmişlik",
+     "mevcutTr": "iç içe geçme",
      "havuz": {
       "tr": "iç içe geçme",
       "en": "entanglement"
@@ -444,7 +444,7 @@
     },
     {
      "de": "vollmundig",
-     "mevcutTr": "iddialı, abartılı (söylem)"
+     "mevcutTr": "iddialı"
     },
     {
      "de": "die Neuordnung",
@@ -471,7 +471,7 @@
     },
     {
      "de": "der Auftrag",
-     "mevcutTr": "iş, sipariş",
+     "mevcutTr": "görev",
      "havuz": {
       "tr": "görev",
       "en": "assignment"
@@ -479,7 +479,7 @@
     },
     {
      "de": "die Vorlage",
-     "mevcutTr": "asıl metin, kaynak",
+     "mevcutTr": "kaynak metin",
      "havuz": {
       "tr": "şablon",
       "en": "template"
@@ -495,7 +495,7 @@
     },
     {
      "de": "die Zumutung",
-     "mevcutTr": "katlanılması güç şey",
+     "mevcutTr": "eziyet",
      "havuz": {
       "tr": "eziyet",
       "en": "imposition"
@@ -503,7 +503,7 @@
     },
     {
      "de": "sich anmaßen",
-     "mevcutTr": "haddini aşmak",
+     "mevcutTr": "kendinde hak görmek",
      "havuz": {
       "tr": "kendinde hak görmek",
       "en": "to presume"
@@ -515,7 +515,7 @@
     },
     {
      "de": "abwägen",
-     "mevcutTr": "tartmak",
+     "mevcutTr": "ölçüp biçmek",
      "havuz": {
       "tr": "ölçüp biçmek",
       "en": "to weigh up"
@@ -534,11 +534,11 @@
    "gloss": [
     {
      "de": "freiberuflich",
-     "mevcutTr": "serbest meslek olarak"
+     "mevcutTr": "serbest çalışan"
     },
     {
      "de": "die Scheinselbstständigkeit",
-     "mevcutTr": "sahte bağımsızlık"
+     "mevcutTr": "sahte bağımsız çalışma"
     },
     {
      "de": "das Nutzungsrecht",
@@ -546,7 +546,7 @@
     },
     {
      "de": "einräumen",
-     "mevcutTr": "tanımak (hak)",
+     "mevcutTr": "hak tanımak",
      "havuz": {
       "tr": "kabul etmek",
       "en": "to concede"
@@ -562,7 +562,7 @@
     },
     {
      "de": "der Verzug",
-     "mevcutTr": "temerrüt, gecikme"
+     "mevcutTr": "temerrüt"
     },
     {
      "de": "abtreten",
@@ -574,7 +574,7 @@
     },
     {
      "de": "unwirksam",
-     "mevcutTr": "geçersiz",
+     "mevcutTr": "hükümsüz",
      "havuz": {
       "tr": "hükümsüz",
       "en": "void"
@@ -582,7 +582,7 @@
     },
     {
      "de": "die Vergütung",
-     "mevcutTr": "ücretlendirme",
+     "mevcutTr": "ücret",
      "havuz": {
       "tr": "ücret",
       "en": "compensation"

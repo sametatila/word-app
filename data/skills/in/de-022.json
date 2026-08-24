@@ -59,19 +59,19 @@
     },
     {
      "de": "Wir essen heute im Restaurant.",
-     "mevcutTr": "Bugün restoranda yiyoruz."
+     "mevcutTr": "Bugün restoranda yemek yiyoruz."
     },
     {
      "de": "Mein Bruder ist Ingenieur.",
-     "mevcutTr": "Kardeşim mühendis."
+     "mevcutTr": "Erkek kardeşim mühendis."
     },
     {
      "de": "Sie arbeitet als Journalistin.",
-     "mevcutTr": "O gazeteci olarak çalışıyor."
+     "mevcutTr": "Gazeteci olarak çalışıyor."
     },
     {
      "de": "Das Auto steht in der Garage.",
-     "mevcutTr": "Araba garajda."
+     "mevcutTr": "Araba garajda duruyor."
     },
     {
      "de": "Der Chef hat den Termin verschoben.",
@@ -98,7 +98,7 @@
     },
     {
      "de": "gelb / gelbe",
-     "mevcutTr": "sarı / sarı (çekimli)"
+     "mevcutTr": "sarı"
     },
     {
      "de": "das Kind / die Kinder",
@@ -143,7 +143,7 @@
    "gloss": [
     {
      "de": "bestellen",
-     "mevcutTr": "sipariş vermek",
+     "mevcutTr": "sipariş etmek",
      "havuz": {
       "tr": "sipariş etmek",
       "en": "to order"
@@ -167,7 +167,7 @@
     },
     {
      "de": "der Kuchen",
-     "mevcutTr": "kek, pasta",
+     "mevcutTr": "kek",
      "havuz": {
       "tr": "kek",
       "en": "cake"
@@ -177,7 +177,7 @@
    "targets": [
     {
      "de": "Ich hätte gern …",
-     "mevcutTr": "… istiyorum (kibar)"
+     "mevcutTr": "… istiyorum"
     },
     {
      "de": "mit Milch / ohne Zucker",
@@ -269,11 +269,11 @@
    "gloss": [
     {
      "de": "die Schmerzen",
-     "mevcutTr": "ağrılar"
+     "mevcutTr": "ağrı"
     },
     {
      "de": "der Hals",
-     "mevcutTr": "boğaz, boyun",
+     "mevcutTr": "boğaz",
      "havuz": {
       "tr": "boyun",
       "en": "neck"
@@ -354,7 +354,7 @@
     },
     {
      "de": "die Stelle",
-     "mevcutTr": "pozisyon, iş",
+     "mevcutTr": "iş",
      "havuz": {
       "tr": "iş",
       "en": "position"
@@ -380,7 +380,7 @@
     },
     {
      "de": "Ich stelle mir … vor.",
-     "mevcutTr": "… düşünüyorum (beklenti)."
+     "mevcutTr": "… düşünüyorum."
     },
     {
      "de": "Ich hätte eine Frage.",
@@ -399,7 +399,7 @@
    "gloss": [
     {
      "de": "meiner Meinung nach",
-     "mevcutTr": "bence, bana göre"
+     "mevcutTr": "bence"
     },
     {
      "de": "das sehe ich anders",

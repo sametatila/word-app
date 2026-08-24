@@ -17,19 +17,39 @@
     },
     {
      "de": "d Chuchi",
-     "mevcutTr": "mutfak (die Küche)"
+     "mevcutTr": "mutfak (die Küche)",
+     "havuz": {
+      "tr": "mutfak",
+      "en": "kitchen"
+     },
+     "hdAdayi": "die Küche"
     },
     {
      "de": "de Chäs",
-     "mevcutTr": "peynir (der Käse)"
+     "mevcutTr": "peynir (der Käse)",
+     "havuz": {
+      "tr": "peynir",
+      "en": "cheese"
+     },
+     "hdAdayi": "der Käse"
     },
     {
      "de": "chli",
-     "mevcutTr": "küçük (klein)"
+     "mevcutTr": "küçük (klein)",
+     "havuz": {
+      "tr": "küçük",
+      "en": "small"
+     },
+     "hdAdayi": "klein"
     },
     {
      "de": "cho",
-     "mevcutTr": "gelmek (kommen)"
+     "mevcutTr": "gelmek (kommen)",
+     "havuz": {
+      "tr": "gelmek",
+      "en": "to come"
+     },
+     "hdAdayi": "kommen"
     }
    ],
    "tasks": [
@@ -66,23 +86,48 @@
    "gloss": [
     {
      "de": "d Ziit",
-     "mevcutTr": "zaman (die Zeit)"
+     "mevcutTr": "zaman (die Zeit)",
+     "havuz": {
+      "tr": "zaman",
+      "en": "time"
+     },
+     "hdAdayi": "die Zeit"
     },
     {
      "de": "s Huus",
-     "mevcutTr": "ev (das Haus)"
+     "mevcutTr": "ev (das Haus)",
+     "havuz": {
+      "tr": "ev",
+      "en": "house"
+     },
+     "hdAdayi": "das Haus"
     },
     {
      "de": "d Lüüt",
-     "mevcutTr": "insanlar (die Leute)"
+     "mevcutTr": "insanlar (die Leute)",
+     "havuz": {
+      "tr": "insanlar",
+      "en": "people"
+     },
+     "hdAdayi": "die Leute"
     },
     {
      "de": "wiit",
-     "mevcutTr": "uzak (weit)"
+     "mevcutTr": "uzak (weit)",
+     "havuz": {
+      "tr": "uzak",
+      "en": "far"
+     },
+     "hdAdayi": "weit"
     },
     {
      "de": "de Bruef",
-     "mevcutTr": "meslek (der Beruf)"
+     "mevcutTr": "meslek (der Beruf)",
+     "havuz": {
+      "tr": "meslek",
+      "en": "profession"
+     },
+     "hdAdayi": "der Beruf"
     }
    ],
    "tasks": [
@@ -123,7 +168,12 @@
     },
     {
      "de": "s Meitli",
-     "mevcutTr": "kız (das Mädchen)"
+     "mevcutTr": "kız (das Mädchen)",
+     "havuz": {
+      "tr": "kız",
+      "en": "girl"
+     },
+     "hdAdayi": "das Mädchen"
     },
     {
      "de": "s Chäschtli",
@@ -131,11 +181,21 @@
     },
     {
      "de": "würkli",
-     "mevcutTr": "gerçekten (wirklich)"
+     "mevcutTr": "gerçekten (wirklich)",
+     "havuz": {
+      "tr": "gerçekten",
+      "en": "really"
+     },
+     "hdAdayi": "wirklich"
     },
     {
      "de": "fründli",
-     "mevcutTr": "cana yakın (freundlich)"
+     "mevcutTr": "cana yakın (freundlich)",
+     "havuz": {
+      "tr": "güler yüzlü",
+      "en": "friendly"
+     },
+     "hdAdayi": "freundlich"
     }
    ],
    "tasks": [
@@ -384,11 +444,21 @@
    "gloss": [
     {
      "de": "de Lade",
-     "mevcutTr": "dükkân (der Laden)"
+     "mevcutTr": "dükkân (der Laden)",
+     "havuz": {
+      "tr": "dükkân",
+      "en": "shop"
+     },
+     "hdAdayi": "der Laden"
     },
     {
      "de": "de Chäs",
-     "mevcutTr": "peynir (der Käse)"
+     "mevcutTr": "peynir (der Käse)",
+     "havuz": {
+      "tr": "peynir",
+      "en": "cheese"
+     },
+     "hdAdayi": "der Käse"
     },
     {
      "de": "s Brot",
@@ -404,7 +474,12 @@
     },
     {
      "de": "zäme",
-     "mevcutTr": "toplam, birlikte (zusammen)"
+     "mevcutTr": "toplam, birlikte (zusammen)",
+     "havuz": {
+      "tr": "birlikte",
+      "en": "together"
+     },
+     "hdAdayi": "zusammen"
     }
    ],
    "targets": [

@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "der Verein",
-     "mevcutTr": "dernek, kulüp",
+     "mevcutTr": "dernek",
      "havuz": {
       "tr": "dernek",
       "en": "club"
@@ -37,7 +37,7 @@
     },
     {
      "de": "ehrenamtlich",
-     "mevcutTr": "gönüllü (ücretsiz)",
+     "mevcutTr": "gönüllü",
      "havuz": {
       "tr": "gönüllü",
       "en": "voluntary"
@@ -53,7 +53,7 @@
     },
     {
      "de": "gemeinsam",
-     "mevcutTr": "birlikte",
+     "mevcutTr": "ortak",
      "havuz": {
       "tr": "ortak",
       "en": "common"
@@ -100,7 +100,7 @@
     },
     {
      "de": "der Fahrer",
-     "mevcutTr": "sürücü",
+     "mevcutTr": "şoför",
      "havuz": {
       "tr": "şoför",
       "en": "driver"
@@ -108,7 +108,7 @@
     },
     {
      "de": "die Anfrage",
-     "mevcutTr": "talep, soru"
+     "mevcutTr": "talep"
     },
     {
      "de": "flexibel",
@@ -175,7 +175,7 @@
     },
     {
      "de": "kündigen",
-     "mevcutTr": "fesh etmek, işten ayrılmak",
+     "mevcutTr": "feshetmek",
      "havuz": {
       "tr": "istifa etmek",
       "en": "to quit"
@@ -210,7 +210,7 @@
    "gloss": [
     {
      "de": "die Verbindung",
-     "mevcutTr": "bağlantı, sefer",
+     "mevcutTr": "bağlantı",
      "havuz": {
       "tr": "bağlantı",
       "en": "connection"
@@ -234,7 +234,7 @@
     },
     {
      "de": "die Abfahrt",
-     "mevcutTr": "kalkış",
+     "mevcutTr": "yola çıkış",
      "havuz": {
       "tr": "yola çıkış",
       "en": "departure"
@@ -250,7 +250,7 @@
     },
     {
      "de": "reservieren",
-     "mevcutTr": "yer ayırtmak",
+     "mevcutTr": "ayırtmak",
      "havuz": {
       "tr": "ayırtmak",
       "en": "to reserve"
@@ -301,11 +301,11 @@
     },
     {
      "de": "die Sprechstundenhilfe",
-     "mevcutTr": "muayenehane asistanı"
+     "mevcutTr": "muayenehane sekreteri"
     },
     {
      "de": "die Versichertenkarte",
-     "mevcutTr": "sağlık sigortası kartı",
+     "mevcutTr": "sigorta kartı",
      "havuz": {
       "tr": "sigorta kartı",
       "en": "insurance card"
@@ -313,7 +313,7 @@
     },
     {
      "de": "passen",
-     "mevcutTr": "uymak, uygun olmak",
+     "mevcutTr": "uymak",
      "havuz": {
       "tr": "uymak",
       "en": "to fit"
@@ -356,7 +356,7 @@
     },
     {
      "de": "absagen",
-     "mevcutTr": "iptal etmek, vazgeçmek",
+     "mevcutTr": "iptal etmek",
      "havuz": {
       "tr": "iptal etmek",
       "en": "to cancel"
@@ -364,7 +364,7 @@
     },
     {
      "de": "der Transporter",
-     "mevcutTr": "nakliye aracı"
+     "mevcutTr": "kamyonet"
     },
     {
      "de": "der Schrank",
@@ -399,7 +399,7 @@
    "gloss": [
     {
      "de": "stattfinden",
-     "mevcutTr": "gerçekleşmek, yapılmak",
+     "mevcutTr": "gerçekleşmek",
      "havuz": {
       "tr": "gerçekleşmek",
       "en": "to take place"
@@ -427,7 +427,7 @@
     },
     {
      "de": "zurzeit",
-     "mevcutTr": "şu anda",
+     "mevcutTr": "şu sıralar",
      "havuz": {
       "tr": "şu sıralar",
       "en": "currently"
@@ -443,7 +443,7 @@
     },
     {
      "de": "halten",
-     "mevcutTr": "durmak (araç)",
+     "mevcutTr": "durmak",
      "havuz": {
       "tr": "durmak",
       "en": "to stop"
@@ -486,7 +486,7 @@
     },
     {
      "de": "das Gewitter",
-     "mevcutTr": "fırtına, gök gürültülü sağanak",
+     "mevcutTr": "gök gürültülü fırtına",
      "havuz": {
       "tr": "gök gürültülü fırtına",
       "en": "thunderstorm"

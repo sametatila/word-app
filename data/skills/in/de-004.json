@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "heißen",
-     "mevcutTr": "adında olmak",
+     "mevcutTr": "adı olmak",
      "havuz": {
       "tr": "adı olmak",
       "en": "to be called"
@@ -21,11 +21,11 @@
     },
     {
      "de": "kommen aus",
-     "mevcutTr": "…den gelmek, …li olmak"
+     "mevcutTr": "…den gelmek"
     },
     {
      "de": "wohnen",
-     "mevcutTr": "oturmak, ikamet etmek",
+     "mevcutTr": "oturmak",
      "havuz": {
       "tr": "oturmak",
       "en": "to live"
@@ -51,11 +51,11 @@
     },
     {
      "de": "Ich komme aus …",
-     "mevcutTr": "…den geliyorum / …liyim"
+     "mevcutTr": "…'den geliyorum"
     },
     {
      "de": "Ich wohne in …",
-     "mevcutTr": "…de oturuyorum"
+     "mevcutTr": "…'de oturuyorum"
     },
     {
      "de": "Ich arbeite als …",
@@ -67,7 +67,7 @@
     },
     {
      "de": "Bis bald!",
-     "mevcutTr": "Görüşürüz!"
+     "mevcutTr": "Yakında görüşürüz!"
     }
    ]
   },
@@ -132,7 +132,7 @@
     },
     {
      "de": "Viele Grüße",
-     "mevcutTr": "Sevgiler (mesaj sonu)"
+     "mevcutTr": "Selamlar"
     }
    ]
   },
@@ -179,7 +179,7 @@
     },
     {
      "de": "mitbringen",
-     "mevcutTr": "yanında getirmek",
+     "mevcutTr": "getirmek",
      "havuz": {
       "tr": "getirmek",
       "en": "to bring along"
@@ -359,7 +359,7 @@
     },
     {
      "de": "ist seit … krank",
-     "mevcutTr": "… beri hasta"
+     "mevcutTr": "…'den beri hasta"
     },
     {
      "de": "Bitte entschuldigen Sie …",
@@ -406,7 +406,7 @@
     },
     {
      "de": "die Staatsangehörigkeit",
-     "mevcutTr": "uyruk",
+     "mevcutTr": "vatandaşlık",
      "havuz": {
       "tr": "vatandaşlık",
       "en": "citizenship"
@@ -452,7 +452,7 @@
     },
     {
      "de": "Vielen Dank und viele Grüße",
-     "mevcutTr": "Teşekkürler, selamlar"
+     "mevcutTr": "Teşekkürler ve selamlar"
     }
    ]
   },
@@ -495,7 +495,7 @@
     },
     {
      "de": "wandern",
-     "mevcutTr": "doğa yürüyüşü yapmak",
+     "mevcutTr": "yürüyüş yapmak",
      "havuz": {
       "tr": "yürüyüş yapmak",
       "en": "to hike"
@@ -521,7 +521,7 @@
     },
     {
      "de": "Wir sind seit … hier.",
-     "mevcutTr": "…'dir buradayız."
+     "mevcutTr": "…'den beri buradayız."
     },
     {
      "de": "Das Wetter ist …",

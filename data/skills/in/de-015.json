@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "die Zuwanderung",
-     "mevcutTr": "göç (bir ülkeye)",
+     "mevcutTr": "göç",
      "havuz": {
       "tr": "göç",
       "en": "immigration"
@@ -21,19 +21,19 @@
     },
     {
      "de": "die Arbeitskraft",
-     "mevcutTr": "iş gücü, çalışan"
+     "mevcutTr": "çalışan"
     },
     {
      "de": "die Lücke",
-     "mevcutTr": "açık, boşluk"
+     "mevcutTr": "açık"
     },
     {
      "de": "das Handwerk",
-     "mevcutTr": "zanaat, esnaflık sektörü"
+     "mevcutTr": "zanaat sektörü"
     },
     {
      "de": "der Auszubildende",
-     "mevcutTr": "çırak, meslek öğrencisi",
+     "mevcutTr": "çırak",
      "havuz": {
       "tr": "çırak",
       "en": "trainee"
@@ -41,7 +41,7 @@
     },
     {
      "de": "das Verfahren",
-     "mevcutTr": "resmi işlem, prosedür",
+     "mevcutTr": "prosedür",
      "havuz": {
       "tr": "dava",
       "en": "case"
@@ -49,11 +49,11 @@
     },
     {
      "de": "die Anwerbung",
-     "mevcutTr": "yurt dışından eleman kazanma"
+     "mevcutTr": "işe alım"
     },
     {
      "de": "die Anerkennung",
-     "mevcutTr": "denklik, tanınma",
+     "mevcutTr": "tanınma",
      "havuz": {
       "tr": "tanınma",
       "en": "recognition"
@@ -61,7 +61,7 @@
     },
     {
      "de": "der Abschluss",
-     "mevcutTr": "diploma, mezuniyet",
+     "mevcutTr": "diploma",
      "havuz": {
       "tr": "mezuniyet",
       "en": "graduation"
@@ -69,7 +69,7 @@
     },
     {
      "de": "abwandern",
-     "mevcutTr": "göç edip ayrılmak"
+     "mevcutTr": "göç edip gitmek"
     },
     {
      "de": "gestalten",
@@ -92,7 +92,7 @@
    "gloss": [
     {
      "de": "der Zahlungsverkehr",
-     "mevcutTr": "ödeme trafiği, ödeme sistemleri"
+     "mevcutTr": "ödeme sistemi"
     },
     {
      "de": "das Zahlungsmittel",
@@ -112,7 +112,7 @@
     },
     {
      "de": "versagen",
-     "mevcutTr": "çalışmamak, iflas etmek (teknik)",
+     "mevcutTr": "arıza yapmak",
      "havuz": {
       "tr": "başarısız olmak",
       "en": "to fail"
@@ -155,7 +155,7 @@
    "gloss": [
     {
      "de": "der Quellenschutz",
-     "mevcutTr": "kaynak koruma",
+     "mevcutTr": "kaynak gizliliği",
      "havuz": {
       "tr": "kaynak gizliliği",
       "en": "source protection"
@@ -163,7 +163,7 @@
     },
     {
      "de": "die Zusage",
-     "mevcutTr": "söz, taahhüt",
+     "mevcutTr": "olumlu cevap",
      "havuz": {
       "tr": "olumlu cevap",
       "en": "acceptance"
@@ -171,7 +171,7 @@
     },
     {
      "de": "nachvollziehbar",
-     "mevcutTr": "anlaşılır, izlenebilir",
+     "mevcutTr": "makul",
      "havuz": {
       "tr": "makul",
       "en": "understandable"
@@ -187,7 +187,7 @@
     },
     {
      "de": "belastbar",
-     "mevcutTr": "sağlam, dayanıklı (kanıt)",
+     "mevcutTr": "sağlam",
      "havuz": {
       "tr": "dayanıklı",
       "en": "resilient"
@@ -195,7 +195,7 @@
     },
     {
      "de": "abwägen",
-     "mevcutTr": "tartmak",
+     "mevcutTr": "ölçüp biçmek",
      "havuz": {
       "tr": "ölçüp biçmek",
       "en": "to weigh up"
@@ -254,7 +254,7 @@
     },
     {
      "de": "die Perspektive",
-     "mevcutTr": "gelecek beklentisi",
+     "mevcutTr": "bakış açısı",
      "havuz": {
       "tr": "bakış açısı",
       "en": "perspective"
@@ -262,7 +262,7 @@
     },
     {
      "de": "einen Schritt zugehen",
-     "mevcutTr": "adım atmak, yaklaşmak"
+     "mevcutTr": "bir adım atmak"
     },
     {
      "de": "verbindlich",
@@ -289,7 +289,7 @@
     },
     {
      "de": "der Anteil",
-     "mevcutTr": "oran, pay",
+     "mevcutTr": "pay",
      "havuz": {
       "tr": "pay",
       "en": "share"
@@ -313,7 +313,7 @@
     },
     {
      "de": "das Gegenmittel",
-     "mevcutTr": "panzehir, çözüm"
+     "mevcutTr": "panzehir"
     },
     {
      "de": "die Einordnung",
@@ -344,15 +344,15 @@
    "gloss": [
     {
      "de": "gendern",
-     "mevcutTr": "dili cinsiyet açısından kapsayıcı kullanmak"
+     "mevcutTr": "cinsiyete duyarlı dil kullanmak"
     },
     {
      "de": "die Sprachpflege",
-     "mevcutTr": "dil bakımı, dili koruma"
+     "mevcutTr": "dili koruma"
     },
     {
      "de": "der Sprachwandel",
-     "mevcutTr": "dilin değişimi",
+     "mevcutTr": "dil değişimi",
      "havuz": {
       "tr": "dil değişimi",
       "en": "language change"
@@ -360,7 +360,7 @@
     },
     {
      "de": "die Vorschrift",
-     "mevcutTr": "zorunluluk, kural",
+     "mevcutTr": "kural",
      "havuz": {
       "tr": "yönetmelik",
       "en": "regulation"
@@ -372,7 +372,7 @@
     },
     {
      "de": "die Ablehnung",
-     "mevcutTr": "reddediş",
+     "mevcutTr": "reddetme",
      "havuz": {
       "tr": "reddetme",
       "en": "rejection"
@@ -384,7 +384,7 @@
     },
     {
      "de": "sich durchsetzen",
-     "mevcutTr": "yerleşmek, kabul görmek",
+     "mevcutTr": "yerleşmek",
      "havuz": {
       "tr": "kendini kabul ettirmek",
       "en": "to assert oneself"
@@ -403,7 +403,7 @@
    "gloss": [
     {
      "de": "der Betriebsrat",
-     "mevcutTr": "işyeri temsilciliği",
+     "mevcutTr": "işçi konseyi",
      "havuz": {
       "tr": "işçi konseyi",
       "en": "works council"
@@ -411,7 +411,7 @@
     },
     {
      "de": "die Mitbestimmung",
-     "mevcutTr": "ortak karar hakkı",
+     "mevcutTr": "söz hakkı",
      "havuz": {
       "tr": "söz hakkı",
       "en": "codetermination"
@@ -419,7 +419,7 @@
     },
     {
      "de": "die Versetzung",
-     "mevcutTr": "görev yeri değişikliği",
+     "mevcutTr": "görev değişikliği",
      "havuz": {
       "tr": "sınıf geçme",
       "en": "grade promotion"
@@ -439,7 +439,7 @@
     },
     {
      "de": "die Schweigepflicht",
-     "mevcutTr": "gizlilik yükümlülüğü",
+     "mevcutTr": "sır saklama yükümlülüğü",
      "havuz": {
       "tr": "sır saklama yükümlülüğü",
       "en": "confidentiality"
@@ -455,7 +455,7 @@
     },
     {
      "de": "eskalieren",
-     "mevcutTr": "büyütmek, üst mercie taşımak",
+     "mevcutTr": "çığırından çıkmak",
      "havuz": {
       "tr": "çığırından çıkmak",
       "en": "to escalate"
@@ -482,7 +482,7 @@
     },
     {
      "de": "die Berichterstattung",
-     "mevcutTr": "haberler, yayın",
+     "mevcutTr": "habercilik",
      "havuz": {
       "tr": "habercilik",
       "en": "reporting"
@@ -498,7 +498,7 @@
     },
     {
      "de": "die Konsequenz",
-     "mevcutTr": "sonuç, alınan tedbir"
+     "mevcutTr": "sonuç"
     },
     {
      "de": "die Prüfung",
@@ -510,7 +510,7 @@
     },
     {
      "de": "extern",
-     "mevcutTr": "dışarıdan, bağımsız"
+     "mevcutTr": "dışarıdan"
     },
     {
      "de": "rückwirkend",

@@ -25,7 +25,7 @@
     },
     {
      "de": "der Umgang mit",
-     "mevcutTr": "(bir şeyle) başa çıkma, kullanma biçimi"
+     "mevcutTr": "kullanma biçimi"
     },
     {
      "de": "die Ablenkung",
@@ -33,7 +33,7 @@
     },
     {
      "de": "das Miteinander",
-     "mevcutTr": "birlikte yaşam, sosyal ilişki",
+     "mevcutTr": "birliktelik",
      "havuz": {
       "tr": "birbiriyle",
       "en": "with each other"
@@ -41,7 +41,7 @@
     },
     {
      "de": "vermitteln",
-     "mevcutTr": "öğretmek, kazandırmak",
+     "mevcutTr": "aktarmak",
      "havuz": {
       "tr": "aktarmak",
       "en": "to convey"
@@ -57,7 +57,7 @@
     },
     {
      "de": "pauschal",
-     "mevcutTr": "toptan, ayrım gözetmeyen",
+     "mevcutTr": "toptan",
      "havuz": {
       "tr": "her şey dahil",
       "en": "all-inclusive"
@@ -65,33 +65,33 @@
     },
     {
      "de": "überreizt",
-     "mevcutTr": "aşırı uyarılmış, gergin"
+     "mevcutTr": "aşırı uyarılmış"
     }
    ],
    "phrases": [
     {
      "de": "Einerseits …, andererseits …",
-     "mevcutTr": "Bir yandan…, öte yandan…"
+     "mevcutTr": "Bir yandan …, öte yandan …"
     },
     {
      "de": "Ich halte … für …",
-     "mevcutTr": "…'yi … olarak değerlendiriyorum"
+     "mevcutTr": "…'yi … olarak görüyorum"
     },
     {
      "de": "Statt … zu verbieten",
-     "mevcutTr": "…'yi yasaklamak yerine"
+     "mevcutTr": "… yasaklamak yerine"
     },
     {
      "de": "Zum einen …, zum anderen …",
-     "mevcutTr": "Birincisi…, ikincisi…"
+     "mevcutTr": "Birincisi …, ikincisi …"
     },
     {
      "de": "Es lässt sich kaum kontrollieren",
-     "mevcutTr": "Denetlenmesi neredeyse imkânsız"
+     "mevcutTr": "Bunu denetlemek neredeyse imkânsız"
     },
     {
      "de": "Meiner Meinung nach",
-     "mevcutTr": "Bence, benim görüşüme göre"
+     "mevcutTr": "Bence"
     },
     {
      "de": "Ein sinnvoller Kompromiss wäre …",
@@ -138,7 +138,7 @@
     },
     {
      "de": "zusichern",
-     "mevcutTr": "söz vermek, taahhüt etmek",
+     "mevcutTr": "taahhüt etmek",
      "havuz": {
       "tr": "taahhüt etmek",
       "en": "to assure"
@@ -146,7 +146,7 @@
     },
     {
      "de": "die Nachfrage",
-     "mevcutTr": "sorma, üsteleme",
+     "mevcutTr": "sorma",
      "havuz": {
       "tr": "talep",
       "en": "demand"
@@ -154,7 +154,7 @@
     },
     {
      "de": "die Frist",
-     "mevcutTr": "süre, mühlet",
+     "mevcutTr": "son tarih",
      "havuz": {
       "tr": "son tarih",
       "en": "deadline"
@@ -162,7 +162,7 @@
     },
     {
      "de": "erstatten",
-     "mevcutTr": "iade etmek (para)",
+     "mevcutTr": "geri ödemek",
      "havuz": {
       "tr": "geri ödemek",
       "en": "to reimburse"
@@ -170,11 +170,11 @@
     },
     {
      "de": "vom Kauf zurücktreten",
-     "mevcutTr": "satın almadan cayma"
+     "mevcutTr": "satın almadan caymak"
     },
     {
      "de": "einschalten",
-     "mevcutTr": "devreye sokmak (kurumu)",
+     "mevcutTr": "devreye sokmak",
      "havuz": {
       "tr": "açmak",
       "en": "to turn on"
@@ -192,11 +192,11 @@
    "phrases": [
     {
      "de": "Ich wende mich an Sie, weil …",
-     "mevcutTr": "Size şu nedenle başvuruyorum…"
+     "mevcutTr": "Şu nedenle size başvuruyorum: …"
     },
     {
      "de": "Leider musste ich feststellen, dass …",
-     "mevcutTr": "Maalesef şunu tespit ettim ki…"
+     "mevcutTr": "Maalesef şunu fark ettim: …"
     },
     {
      "de": "Trotz mehrmaliger Nachfrage",
@@ -212,11 +212,11 @@
     },
     {
      "de": "Andernfalls sehe ich mich gezwungen, …",
-     "mevcutTr": "Aksi halde … zorunda kalacağım"
+     "mevcutTr": "Aksi hâlde … zorunda kalacağım"
     },
     {
      "de": "den Kaufpreis in voller Höhe erstatten",
-     "mevcutTr": "satış bedelini tam olarak iade etmek"
+     "mevcutTr": "satış bedelini tam olarak geri ödemek"
     },
     {
      "de": "Ich erwarte Ihre Rückmeldung",
@@ -239,11 +239,11 @@
    "gloss": [
     {
      "de": "die Sperrung",
-     "mevcutTr": "kapatma, trafiğe kapama"
+     "mevcutTr": "kapatma"
     },
     {
      "de": "der Einzelhandel",
-     "mevcutTr": "perakende sektörü, esnaf",
+     "mevcutTr": "perakende",
      "havuz": {
       "tr": "perakende",
       "en": "retail"
@@ -263,7 +263,7 @@
     },
     {
      "de": "die Aufenthaltsqualität",
-     "mevcutTr": "mekânda vakit geçirme kalitesi",
+     "mevcutTr": "mekân kalitesi",
      "havuz": {
       "tr": "mekân kalitesi",
       "en": "quality of stay"
@@ -287,41 +287,41 @@
     },
     {
      "de": "profitieren von",
-     "mevcutTr": "(bir şeyden) yarar sağlamak"
+     "mevcutTr": "yararlanmak"
     }
    ],
    "phrases": [
     {
      "de": "Mit großem Interesse habe ich Ihren Artikel gelesen",
-     "mevcutTr": "Yazınızı büyük ilgiyle okudum"
+     "mevcutTr": "Yazınızı büyük bir ilgiyle okudum"
     },
     {
      "de": "Ich teile die Auffassung, dass …",
-     "mevcutTr": "…görüşüne katılıyorum"
+     "mevcutTr": "… görüşünü paylaşıyorum"
     },
     {
      "de": "Es steht außer Frage, dass …",
-     "mevcutTr": "…olduğu tartışma götürmez"
+     "mevcutTr": "… olduğu tartışmasız"
     },
     {
      "de": "Dabei wird übersehen, dass …",
-     "mevcutTr": "Burada gözden kaçırılan şu ki…"
+     "mevcutTr": "Burada gözden kaçırılan şu: …"
     },
     {
      "de": "Zwar …, jedoch …",
-     "mevcutTr": "Gerçi…, ancak…"
+     "mevcutTr": "Gerçi …, ancak …"
     },
     {
      "de": "Entscheidend ist aus meiner Sicht …",
-     "mevcutTr": "Bana göre belirleyici olan…"
+     "mevcutTr": "Bana göre belirleyici olan …"
     },
     {
      "de": "Abschließend möchte ich vorschlagen, …",
-     "mevcutTr": "Son olarak şunu önermek isterim…"
+     "mevcutTr": "Son olarak şunu önermek isterim: …"
     },
     {
      "de": "Davon würden beide Seiten profitieren",
-     "mevcutTr": "Bundan iki taraf da kazançlı çıkardı"
+     "mevcutTr": "Bundan iki taraf da kazançlı çıkar"
     }
    ]
   },
@@ -340,7 +340,7 @@
     },
     {
      "de": "das Pendeln",
-     "mevcutTr": "işe gidiş geliş",
+     "mevcutTr": "işe gidip gelmek",
      "havuz": {
       "tr": "işe gidip gelmek",
       "en": "to commute"
@@ -348,7 +348,7 @@
     },
     {
      "de": "unterbrechen",
-     "mevcutTr": "bölmek, kesmek",
+     "mevcutTr": "bölmek",
      "havuz": {
       "tr": "sözünü kesmek",
       "en": "to interrupt"
@@ -364,7 +364,7 @@
     },
     {
      "de": "Anschluss finden",
-     "mevcutTr": "ortama uyum sağlamak, kaynaşmak"
+     "mevcutTr": "kaynaşmak"
     },
     {
      "de": "ineinander übergehen",
@@ -372,7 +372,7 @@
     },
     {
      "de": "sich bewähren",
-     "mevcutTr": "kendini kanıtlamak, işe yaradığı görülmek",
+     "mevcutTr": "kendini kanıtlamak",
      "havuz": {
       "tr": "kendini kanıtlamak",
       "en": "to prove itself"
@@ -398,7 +398,7 @@
     },
     {
      "de": "Ein großer Vorteil besteht darin, dass …",
-     "mevcutTr": "Büyük bir avantaj şudur ki…"
+     "mevcutTr": "Büyük bir avantajı şu: …"
     },
     {
      "de": "Allerdings hat die Sache auch Schattenseiten",
@@ -406,19 +406,19 @@
     },
     {
      "de": "Hinzu kommt, dass …",
-     "mevcutTr": "Buna ek olarak…"
+     "mevcutTr": "Buna ek olarak …"
     },
     {
      "de": "Aus meiner Sicht",
-     "mevcutTr": "Benim açımdan"
+     "mevcutTr": "Bana göre"
     },
     {
      "de": "Die Lösung liegt in …",
-     "mevcutTr": "Çözüm …'dadır"
+     "mevcutTr": "Çözüm …'da yatıyor"
     },
     {
      "de": "Es hat sich bewährt, dass …",
-     "mevcutTr": "…'nın işe yaradığı görüldü"
+     "mevcutTr": "Şunun işe yaradığı görüldü: …"
     },
     {
      "de": "rund um die Uhr erreichbar sein",
@@ -491,15 +491,15 @@
    "phrases": [
     {
      "de": "Hiermit lege ich Widerspruch gegen … ein.",
-     "mevcutTr": "…'e itiraz ediyorum."
+     "mevcutTr": "İşbu yazıyla …'e itiraz ediyorum."
     },
     {
      "de": "Aktenzeichen: …",
-     "mevcutTr": "Dosya no: …"
+     "mevcutTr": "Dosya numarası: …"
     },
     {
      "de": "Zur Begründung führe ich aus:",
-     "mevcutTr": "Gerekçe olarak şunu belirtirim:"
+     "mevcutTr": "Gerekçe olarak şunları belirtiyorum:"
     },
     {
      "de": "Als Nachweis füge ich … bei.",
@@ -526,7 +526,7 @@
    "gloss": [
     {
      "de": "die Erörterung",
-     "mevcutTr": "tartışma yazısı",
+     "mevcutTr": "irdeleme",
      "havuz": {
       "tr": "irdeleme",
       "en": "discussion"
@@ -542,7 +542,7 @@
     },
     {
      "de": "abwägen",
-     "mevcutTr": "tartmak",
+     "mevcutTr": "ölçüp biçmek",
      "havuz": {
       "tr": "ölçüp biçmek",
       "en": "to weigh up"
@@ -558,7 +558,7 @@
     },
     {
      "de": "letztlich",
-     "mevcutTr": "nihayetinde",
+     "mevcutTr": "sonuçta",
      "havuz": {
       "tr": "sonuçta",
       "en": "ultimately"
@@ -566,7 +566,7 @@
     },
     {
      "de": "die Schlussfolgerung",
-     "mevcutTr": "sonuç",
+     "mevcutTr": "çıkarım",
      "havuz": {
       "tr": "çıkarım",
       "en": "conclusion"
@@ -580,7 +580,7 @@
     },
     {
      "de": "Für … spricht zunächst, dass …",
-     "mevcutTr": "…'in lehine önce şu var: …"
+     "mevcutTr": "…'in lehine ilk olarak şu var: …"
     },
     {
      "de": "Ein weiteres Argument ist …",
@@ -588,15 +588,15 @@
     },
     {
      "de": "Dagegen wird eingewendet, dass …",
-     "mevcutTr": "Buna karşı … itirazı yapılıyor."
+     "mevcutTr": "Buna karşı şu itiraz yapılıyor: …"
     },
     {
      "de": "Dieses Argument hat einen berechtigten Kern, aber …",
-     "mevcutTr": "Bu argümanın haklı bir çekirdeği var ama …"
+     "mevcutTr": "Bu argümanın haklı bir yanı var ama …"
     },
     {
      "de": "Nach Abwägung aller Punkte …",
-     "mevcutTr": "Her şeyi tarttıktan sonra …"
+     "mevcutTr": "Bütün noktaları tarttıktan sonra …"
     }
    ]
   },
@@ -611,7 +611,7 @@
    "gloss": [
     {
      "de": "die Erinnerungskultur",
-     "mevcutTr": "anma kültürü",
+     "mevcutTr": "hatırlama kültürü",
      "havuz": {
       "tr": "hatırlama kültürü",
       "en": "memory culture"
@@ -619,7 +619,7 @@
     },
     {
      "de": "die Haltung",
-     "mevcutTr": "tutum, duruş"
+     "mevcutTr": "tutum"
     },
     {
      "de": "die Geste",
@@ -627,7 +627,7 @@
     },
     {
      "de": "beiläufig",
-     "mevcutTr": "yan yollu, farkında olmadan",
+     "mevcutTr": "laf arasında",
      "havuz": {
       "tr": "laf arasında",
       "en": "casually"
@@ -647,7 +647,7 @@
     },
     {
      "de": "angemessen",
-     "mevcutTr": "yerinde, uygun",
+     "mevcutTr": "makul",
      "havuz": {
       "tr": "makul",
       "en": "reasonable"
@@ -655,7 +655,7 @@
     },
     {
      "de": "die Gegenwart",
-     "mevcutTr": "bugün, şimdiki zaman"
+     "mevcutTr": "bugün"
     }
    ],
    "phrases": [
@@ -665,7 +665,7 @@
     },
     {
      "de": "Man könnte einwenden, dass …",
-     "mevcutTr": "…diye itiraz edilebilir."
+     "mevcutTr": "Şöyle bir itiraz gelebilir: …"
     },
     {
      "de": "Genau darin liegt der Punkt.",
@@ -692,7 +692,7 @@
    "gloss": [
     {
      "de": "der Vorwurf",
-     "mevcutTr": "iddia",
+     "mevcutTr": "suçlama",
      "havuz": {
       "tr": "suçlama",
       "en": "accusation"
@@ -712,7 +712,7 @@
     },
     {
      "de": "bestätigen",
-     "mevcutTr": "doğrulamak",
+     "mevcutTr": "onaylamak",
      "havuz": {
       "tr": "onaylamak",
       "en": "to confirm"
@@ -744,7 +744,7 @@
     },
     {
      "de": "nachweisen",
-     "mevcutTr": "kanıtlamak",
+     "mevcutTr": "belgelemek",
      "havuz": {
       "tr": "belgelemek",
       "en": "to prove"
@@ -766,7 +766,7 @@
     },
     {
      "de": "Das Unternehmen weist die Vorwürfe zurück.",
-     "mevcutTr": "Şirket iddiaları reddediyor."
+     "mevcutTr": "Şirket suçlamaları reddediyor."
     },
     {
      "de": "Ein kausaler Zusammenhang lässt sich nicht nachweisen.",

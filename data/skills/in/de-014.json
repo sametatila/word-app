@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "der Stolperstein",
-     "mevcutTr": "tökezleme taşı (anıt)"
+     "mevcutTr": "tökezleme taşı"
     },
     {
      "de": "das Denkmal",
@@ -25,7 +25,7 @@
     },
     {
      "de": "die Erinnerung",
-     "mevcutTr": "hatıra, anma",
+     "mevcutTr": "anı",
      "havuz": {
       "tr": "anı",
       "en": "memory"
@@ -33,7 +33,7 @@
     },
     {
      "de": "verschleppen",
-     "mevcutTr": "sürüklemek, zorla götürmek"
+     "mevcutTr": "zorla götürmek"
     },
     {
      "de": "die Messingplatte",
@@ -45,7 +45,7 @@
     },
     {
      "de": "der Widerstand",
-     "mevcutTr": "direniş, karşı çıkış",
+     "mevcutTr": "direniş",
      "havuz": {
       "tr": "direniş",
       "en": "resistance"
@@ -53,7 +53,7 @@
     },
     {
      "de": "die Verlegung",
-     "mevcutTr": "döşeme, yerleştirme"
+     "mevcutTr": "döşeme"
     }
    ]
   },
@@ -72,7 +72,7 @@
     },
     {
      "de": "die Produktivität",
-     "mevcutTr": "verimlilik",
+     "mevcutTr": "üretkenlik",
      "havuz": {
       "tr": "üretkenlik",
       "en": "productivity"
@@ -80,7 +80,7 @@
     },
     {
      "de": "die Belastung",
-     "mevcutTr": "yük, baskı",
+     "mevcutTr": "yük",
      "havuz": {
       "tr": "yük",
       "en": "burden"
@@ -88,7 +88,7 @@
     },
     {
      "de": "der Ausgleich",
-     "mevcutTr": "denge, telafi",
+     "mevcutTr": "denge",
      "havuz": {
       "tr": "denge",
       "en": "counterbalance"
@@ -104,7 +104,7 @@
     },
     {
      "de": "verdichten",
-     "mevcutTr": "sıkıştırmak (iş yükünü)",
+     "mevcutTr": "yoğunlaştırmak",
      "havuz": {
       "tr": "yoğunlaştırmak",
       "en": "to densify"
@@ -123,7 +123,7 @@
    "gloss": [
     {
      "de": "die Stellungnahme",
-     "mevcutTr": "açıklama, görüş bildirme",
+     "mevcutTr": "açıklama",
      "havuz": {
       "tr": "açıklama",
       "en": "statement"
@@ -131,7 +131,7 @@
     },
     {
      "de": "die Unterstellung",
-     "mevcutTr": "asılsız isnat",
+     "mevcutTr": "asılsız suçlama",
      "havuz": {
       "tr": "asılsız suçlama",
       "en": "insinuation"
@@ -214,7 +214,7 @@
     },
     {
      "de": "der Betriebsrat",
-     "mevcutTr": "işyeri temsilciliği",
+     "mevcutTr": "işçi konseyi",
      "havuz": {
       "tr": "işçi konseyi",
       "en": "works council"
@@ -222,7 +222,7 @@
     },
     {
      "de": "protokollieren",
-     "mevcutTr": "kayıt altına almak",
+     "mevcutTr": "kayda geçirmek",
      "havuz": {
       "tr": "kayda geçirmek",
       "en": "to log"
@@ -265,7 +265,7 @@
     },
     {
      "de": "hereinfallen auf",
-     "mevcutTr": "(bir şeye) kanmak"
+     "mevcutTr": "kanmak"
     },
     {
      "de": "auslösen",
@@ -285,7 +285,7 @@
     },
     {
      "de": "weiterleiten",
-     "mevcutTr": "iletmek, paylaşıp yaymak",
+     "mevcutTr": "iletmek",
      "havuz": {
       "tr": "iletmek",
       "en": "to forward"
@@ -309,7 +309,7 @@
     },
     {
      "de": "die Rückwärtssuche",
-     "mevcutTr": "tersine (görsel) arama"
+     "mevcutTr": "tersine arama"
     },
     {
      "de": "bewerten",
@@ -372,7 +372,7 @@
     },
     {
      "de": "das Defizit",
-     "mevcutTr": "açık, eksik",
+     "mevcutTr": "açık",
      "havuz": {
       "tr": "açık",
       "en": "deficit"
@@ -380,7 +380,7 @@
     },
     {
      "de": "verschieben",
-     "mevcutTr": "kaydırmak, ertelemek",
+     "mevcutTr": "kaydırmak",
      "havuz": {
       "tr": "ertelemek",
       "en": "to postpone"
@@ -400,11 +400,11 @@
     },
     {
      "de": "abraten von",
-     "mevcutTr": "(bir şeyi) yapmamayı önermek"
+     "mevcutTr": "önermemek"
     },
     {
      "de": "die Ursache",
-     "mevcutTr": "neden, sebep",
+     "mevcutTr": "sebep",
      "havuz": {
       "tr": "sebep",
       "en": "cause"
@@ -435,7 +435,7 @@
     },
     {
      "de": "abgeben",
-     "mevcutTr": "(dışarı) vermek, salmak",
+     "mevcutTr": "salmak",
      "havuz": {
       "tr": "teslim etmek",
       "en": "to hand in"
@@ -455,7 +455,7 @@
     },
     {
      "de": "die Fassade",
-     "mevcutTr": "bina cephesi",
+     "mevcutTr": "cephe",
      "havuz": {
       "tr": "cephe",
       "en": "facade"
@@ -483,7 +483,7 @@
     },
     {
      "de": "die Mittel",
-     "mevcutTr": "kaynaklar, ödenek",
+     "mevcutTr": "ödenek",
      "havuz": {
       "tr": "ilaç",
       "en": "remedy"
@@ -506,7 +506,7 @@
     },
     {
      "de": "die Bilanz",
-     "mevcutTr": "bilanço, genel sonuç",
+     "mevcutTr": "bilanço",
      "havuz": {
       "tr": "bilanço",
       "en": "balance sheet"
@@ -514,11 +514,11 @@
     },
     {
      "de": "die Einschränkung",
-     "mevcutTr": "kısıtlama, çekince"
+     "mevcutTr": "sınırlama"
     },
     {
      "de": "die Produktivität",
-     "mevcutTr": "verimlilik",
+     "mevcutTr": "üretkenlik",
      "havuz": {
       "tr": "üretkenlik",
       "en": "productivity"
@@ -538,7 +538,7 @@
     },
     {
      "de": "der Ablauf",
-     "mevcutTr": "iş akışı, süreç",
+     "mevcutTr": "işleyiş",
      "havuz": {
       "tr": "işleyiş",
       "en": "process"
@@ -546,7 +546,7 @@
     },
     {
      "de": "streichen",
-     "mevcutTr": "kesmek, iptal etmek",
+     "mevcutTr": "kesmek",
      "havuz": {
       "tr": "boyamak",
       "en": "to paint"
@@ -554,11 +554,11 @@
     },
     {
      "de": "übertragen auf",
-     "mevcutTr": "(bir şeye) genellemek, aktarmak"
+     "mevcutTr": "genellemek"
     },
     {
      "de": "flächendeckend",
-     "mevcutTr": "ülke çapında, yaygın",
+     "mevcutTr": "her yeri kapsayan",
      "havuz": {
       "tr": "her yeri kapsayan",
       "en": "across the board"

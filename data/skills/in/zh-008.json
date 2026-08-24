@@ -98,7 +98,12 @@
     },
     {
      "de": "de Hauswart",
-     "mevcutTr": "kapıcı, bina görevlisi (Abwart)"
+     "mevcutTr": "kapıcı, bina görevlisi (Abwart)",
+     "havuz": {
+      "tr": "kapıcı",
+      "en": "caretaker"
+     },
+     "hdAdayi": "Abwart"
     },
     {
      "de": "vorbiicho",
@@ -159,7 +164,12 @@
     },
     {
      "de": "gsee",
-     "mevcutTr": "görmek (sehen) / gesehen"
+     "mevcutTr": "görmek (sehen) / gesehen",
+     "havuz": {
+      "tr": "görmek",
+      "en": "to see"
+     },
+     "hdAdayi": "sehen"
     },
     {
      "de": "z Fuess",

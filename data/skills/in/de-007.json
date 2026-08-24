@@ -21,7 +21,7 @@
     },
     {
      "de": "leer",
-     "mevcutTr": "boş, bitmiş",
+     "mevcutTr": "boş",
      "havuz": {
       "tr": "boş",
       "en": "empty"
@@ -37,7 +37,7 @@
     },
     {
      "de": "die Rechnung",
-     "mevcutTr": "fatura, fiş",
+     "mevcutTr": "fatura",
      "havuz": {
       "tr": "fatura",
       "en": "bill"
@@ -45,7 +45,7 @@
     },
     {
      "de": "die Werkstatt",
-     "mevcutTr": "tamir atölyesi, servis",
+     "mevcutTr": "tamirhane",
      "havuz": {
       "tr": "tamirhane",
       "en": "repair shop"
@@ -76,7 +76,7 @@
    "gloss": [
     {
      "de": "die Verspätung",
-     "mevcutTr": "rötar, gecikme",
+     "mevcutTr": "gecikme",
      "havuz": {
       "tr": "gecikme",
       "en": "delay"
@@ -84,7 +84,7 @@
     },
     {
      "de": "die Abfahrt",
-     "mevcutTr": "kalkış",
+     "mevcutTr": "yola çıkış",
      "havuz": {
       "tr": "yola çıkış",
       "en": "departure"
@@ -92,7 +92,7 @@
     },
     {
      "de": "das Gleis",
-     "mevcutTr": "peron, ray",
+     "mevcutTr": "peron",
      "havuz": {
       "tr": "ray",
       "en": "track"
@@ -116,7 +116,7 @@
     },
     {
      "de": "das Bordrestaurant",
-     "mevcutTr": "tren restoranı"
+     "mevcutTr": "yemekli vagon"
     },
     {
      "de": "die Reisenden",
@@ -159,7 +159,7 @@
     },
     {
      "de": "die Unterlagen",
-     "mevcutTr": "evraklar",
+     "mevcutTr": "belgeler",
      "havuz": {
       "tr": "belgeler",
       "en": "documents"
@@ -167,7 +167,7 @@
     },
     {
      "de": "das Zeugnis",
-     "mevcutTr": "belge, referans",
+     "mevcutTr": "belge",
      "havuz": {
       "tr": "karne",
       "en": "report card"
@@ -175,7 +175,7 @@
     },
     {
      "de": "sich melden",
-     "mevcutTr": "haber vermek, aramak"
+     "mevcutTr": "haber vermek"
     },
     {
      "de": "der Eingang",
@@ -198,7 +198,7 @@
    "gloss": [
     {
      "de": "die Nebenkosten",
-     "mevcutTr": "yan giderler (ısınma, su…)",
+     "mevcutTr": "yan giderler",
      "havuz": {
       "tr": "yan giderler",
       "en": "utility costs"
@@ -269,7 +269,7 @@
     },
     {
      "de": "umtauschen",
-     "mevcutTr": "değiştirmek (ürün)",
+     "mevcutTr": "değiştirmek",
      "havuz": {
       "tr": "değiştirmek",
       "en": "to exchange"
@@ -277,7 +277,7 @@
     },
     {
      "de": "der Kassenbon",
-     "mevcutTr": "fiş",
+     "mevcutTr": "kasa fişi",
      "havuz": {
       "tr": "kasa fişi",
       "en": "receipt"
@@ -356,7 +356,7 @@
     },
     {
      "de": "sich gewöhnen an",
-     "mevcutTr": "…e alışmak",
+     "mevcutTr": "alışmak",
      "havuz": {
       "tr": "alışmak",
       "en": "to get used to"
@@ -438,7 +438,7 @@
    "gloss": [
     {
      "de": "der Empfang",
-     "mevcutTr": "resepsiyon, ön büro",
+     "mevcutTr": "resepsiyon",
      "havuz": {
       "tr": "resepsiyon",
       "en": "reception"
@@ -446,7 +446,7 @@
     },
     {
      "de": "die Kollegin",
-     "mevcutTr": "kadın iş arkadaşı",
+     "mevcutTr": "kadın meslektaş",
      "havuz": {
       "tr": "kadın meslektaş",
       "en": "female colleague"
@@ -466,7 +466,7 @@
     },
     {
      "de": "der Feierabend",
-     "mevcutTr": "mesai bitişi",
+     "mevcutTr": "iş çıkışı",
      "havuz": {
       "tr": "iş çıkışı",
       "en": "quitting time"

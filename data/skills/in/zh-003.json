@@ -60,7 +60,12 @@
     },
     {
      "de": "gää",
-     "mevcutTr": "vermek (geben)"
+     "mevcutTr": "vermek (geben)",
+     "havuz": {
+      "tr": "vermek",
+      "en": "to give"
+     },
+     "hdAdayi": "geben"
     },
     {
      "de": "Bis gliich!",

@@ -25,11 +25,11 @@
     },
     {
      "de": "das Waldsterben",
-     "mevcutTr": "orman ölümü (1980'ler)"
+     "mevcutTr": "orman ölümü"
     },
     {
      "de": "die Monokultur",
-     "mevcutTr": "tek tür ekim",
+     "mevcutTr": "monokültür",
      "havuz": {
       "tr": "tek ürün tarımı",
       "en": "monoculture"
@@ -57,7 +57,7 @@
     },
     {
      "de": "ernüchternd",
-     "mevcutTr": "ayıltıcı, hayal kırıklığı yaratan"
+     "mevcutTr": "ayıltıcı"
     }
    ]
   },
@@ -72,7 +72,7 @@
    "gloss": [
     {
      "de": "die Aussage",
-     "mevcutTr": "ifade, önerme",
+     "mevcutTr": "ifade",
      "havuz": {
       "tr": "ifade",
       "en": "statement"
@@ -88,7 +88,7 @@
     },
     {
      "de": "einschränken",
-     "mevcutTr": "sınırlandırmak",
+     "mevcutTr": "kısıtlamak",
      "havuz": {
       "tr": "kısıtlamak",
       "en": "to restrict"
@@ -104,7 +104,7 @@
     },
     {
      "de": "nahelegen",
-     "mevcutTr": "düşündürmek, ima etmek",
+     "mevcutTr": "işaret etmek",
      "havuz": {
       "tr": "işaret etmek",
       "en": "to suggest"
@@ -120,7 +120,7 @@
     },
     {
      "de": "die Korrelation",
-     "mevcutTr": "ilişki, bağıntı",
+     "mevcutTr": "korelasyon",
      "havuz": {
       "tr": "korelasyon",
       "en": "correlation"
@@ -151,7 +151,7 @@
     },
     {
      "de": "die Legitimation",
-     "mevcutTr": "meşruiyet",
+     "mevcutTr": "meşrulaştırma",
      "havuz": {
       "tr": "meşrulaştırma",
       "en": "legitimization"
@@ -183,7 +183,7 @@
     },
     {
      "de": "verkürzen",
-     "mevcutTr": "kısaltmak, basitleştirmek",
+     "mevcutTr": "kısaltmak",
      "havuz": {
       "tr": "kısaltmak",
       "en": "to shorten"
@@ -191,11 +191,11 @@
     },
     {
      "de": "die Aneignung",
-     "mevcutTr": "sahiplenme, temellük"
+     "mevcutTr": "sahiplenme"
     },
     {
      "de": "sich entziehen",
-     "mevcutTr": "kaçınmak, sıyrılmak"
+     "mevcutTr": "kaçınmak"
     },
     {
      "de": "die Redlichkeit",
@@ -234,7 +234,7 @@
     },
     {
      "de": "die Bemessungsgrundlage",
-     "mevcutTr": "hesaplama tabanı"
+     "mevcutTr": "matrah"
     },
     {
      "de": "der Mindestbeitrag",
@@ -242,7 +242,7 @@
     },
     {
      "de": "die Rückkehr",
-     "mevcutTr": "geri dönüş",
+     "mevcutTr": "dönüş",
      "havuz": {
       "tr": "dönüş",
       "en": "return"
@@ -273,7 +273,7 @@
     },
     {
      "de": "die Zustimmung",
-     "mevcutTr": "onay, kabul",
+     "mevcutTr": "onay",
      "havuz": {
       "tr": "onay",
       "en": "consent"
@@ -344,7 +344,7 @@
     },
     {
      "de": "die Baulücke",
-     "mevcutTr": "yapı boşluğu, boş parsel"
+     "mevcutTr": "boş parsel"
     },
     {
      "de": "etwas aufstocken",
@@ -352,7 +352,7 @@
     },
     {
      "de": "die Versiegelung",
-     "mevcutTr": "zemini betonla kaplama",
+     "mevcutTr": "betonlaşma",
      "havuz": {
       "tr": "betonlaşma",
       "en": "soil sealing"
@@ -372,11 +372,11 @@
     },
     {
      "de": "der Bestand",
-     "mevcutTr": "mevcut yapı stoku"
+     "mevcutTr": "yapı stoku"
     },
     {
      "de": "der Leerstand",
-     "mevcutTr": "boş duran konut/bina",
+     "mevcutTr": "boş kalma",
      "havuz": {
       "tr": "boş kalma",
       "en": "vacancy"
@@ -384,7 +384,7 @@
     },
     {
      "de": "die Umnutzung",
-     "mevcutTr": "işlev değişikliği",
+     "mevcutTr": "yeniden işlevlendirme",
      "havuz": {
       "tr": "yeniden işlevlendirme",
       "en": "change of use"
@@ -427,7 +427,7 @@
     },
     {
      "de": "die Haftung",
-     "mevcutTr": "yasal sorumluluk",
+     "mevcutTr": "sorumluluk",
      "havuz": {
       "tr": "sorumluluk",
       "en": "liability"
@@ -435,7 +435,7 @@
     },
     {
      "de": "das Werkzeug",
-     "mevcutTr": "araç",
+     "mevcutTr": "alet",
      "havuz": {
       "tr": "alet",
       "en": "tool"
@@ -443,7 +443,7 @@
     },
     {
      "de": "die Zulassung",
-     "mevcutTr": "ruhsat, onay",
+     "mevcutTr": "ruhsat",
      "havuz": {
       "tr": "kabul",
       "en": "admission"
@@ -451,7 +451,7 @@
     },
     {
      "de": "der Befund",
-     "mevcutTr": "bulgu",
+     "mevcutTr": "tetkik sonucu",
      "havuz": {
       "tr": "tetkik sonucu",
       "en": "test result"
@@ -463,7 +463,7 @@
     },
     {
      "de": "die Entlastung",
-     "mevcutTr": "yük hafifletme",
+     "mevcutTr": "rahatlama",
      "havuz": {
       "tr": "rahatlama",
       "en": "relief"
@@ -482,7 +482,7 @@
    "gloss": [
     {
      "de": "die Landflucht",
-     "mevcutTr": "kırsaldan kente göç",
+     "mevcutTr": "kırdan kente göç",
      "havuz": {
       "tr": "kırdan kente göç",
       "en": "rural exodus"
@@ -494,7 +494,7 @@
     },
     {
      "de": "der Wegzug",
-     "mevcutTr": "göç edip gitme"
+     "mevcutTr": "göçüp gitme"
     },
     {
      "de": "die Überalterung",
@@ -510,7 +510,7 @@
     },
     {
      "de": "der Glasfaseranschluss",
-     "mevcutTr": "fiber internet bağlantısı"
+     "mevcutTr": "fiber optik bağlantı"
     },
     {
      "de": "der Gemeinschaftsraum",
@@ -526,7 +526,7 @@
     },
     {
      "de": "tragfähig",
-     "mevcutTr": "sürdürülebilir, taşıyıcı",
+     "mevcutTr": "sağlam",
      "havuz": {
       "tr": "uygulanabilir",
       "en": "viable"
@@ -542,7 +542,7 @@
     },
     {
      "de": "verhalten",
-     "mevcutTr": "temkinli, ölçülü",
+     "mevcutTr": "ölçülü",
      "havuz": {
       "tr": "davranış",
       "en": "behavior"

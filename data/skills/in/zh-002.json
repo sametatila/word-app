@@ -209,7 +209,12 @@
     },
     {
      "de": "choschte",
-     "mevcutTr": "fiyatı … olmak (kosten)"
+     "mevcutTr": "fiyatı … olmak (kosten)",
+     "havuz": {
+      "tr": "tutmak",
+      "en": "to cost"
+     },
+     "hdAdayi": "kosten"
     },
     {
      "de": "zrugg",
@@ -236,11 +241,21 @@
     },
     {
      "de": "d Verspaatig",
-     "mevcutTr": "rötar, gecikme (Verspätung)"
+     "mevcutTr": "rötar, gecikme (Verspätung)",
+     "havuz": {
+      "tr": "gecikme",
+      "en": "delay"
+     },
+     "hdAdayi": "Verspätung"
     },
     {
      "de": "d Aazäig",
-     "mevcutTr": "gösterge, pano (Anzeige)"
+     "mevcutTr": "gösterge, pano (Anzeige)",
+     "havuz": {
+      "tr": "ilan",
+      "en": "ad"
+     },
+     "hdAdayi": "Anzeige"
     },
     {
      "de": "go schaffe",
@@ -252,7 +267,12 @@
     },
     {
      "de": "näb",
-     "mevcutTr": "yanında (neben)"
+     "mevcutTr": "yanında (neben)",
+     "havuz": {
+      "tr": "yanında",
+      "en": "next to"
+     },
+     "hdAdayi": "neben"
     },
     {
      "de": "Ade",
@@ -271,7 +291,12 @@
    "gloss": [
     {
      "de": "de Märt",
-     "mevcutTr": "pazar (Markt)"
+     "mevcutTr": "pazar (Markt)",
+     "havuz": {
+      "tr": "pazar",
+      "en": "market"
+     },
+     "hdAdayi": "Markt"
     },
     {
      "de": "s Rüebli",
@@ -350,7 +375,12 @@
     },
     {
      "de": "drucke",
-     "mevcutTr": "basmak (drücken)"
+     "mevcutTr": "basmak (drücken)",
+     "havuz": {
+      "tr": "basmak",
+      "en": "to press"
+     },
+     "hdAdayi": "drücken"
     }
    ]
   }

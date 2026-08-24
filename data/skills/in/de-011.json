@@ -29,7 +29,7 @@
     },
     {
      "de": "der Empfang",
-     "mevcutTr": "danışma, resepsiyon",
+     "mevcutTr": "resepsiyon",
      "havuz": {
       "tr": "resepsiyon",
       "en": "reception"
@@ -69,7 +69,7 @@
     },
     {
      "de": "das Niveau",
-     "mevcutTr": "seviye, düzey"
+     "mevcutTr": "seviye"
     }
    ]
   },
@@ -92,7 +92,7 @@
     },
     {
      "de": "die Studie",
-     "mevcutTr": "bilimsel araştırma",
+     "mevcutTr": "araştırma",
      "havuz": {
       "tr": "araştırma",
       "en": "study"
@@ -136,7 +136,7 @@
     },
     {
      "de": "sinnvoll",
-     "mevcutTr": "mantıklı, anlamlı",
+     "mevcutTr": "mantıklı",
      "havuz": {
       "tr": "mantıklı",
       "en": "sensible"
@@ -187,7 +187,7 @@
     },
     {
      "de": "die Belege",
-     "mevcutTr": "belgeler, fişler"
+     "mevcutTr": "fişler"
     },
     {
      "de": "aufbewahren",
@@ -199,7 +199,7 @@
     },
     {
      "de": "die Rücklage",
-     "mevcutTr": "kenara ayrılan para",
+     "mevcutTr": "yedek akçe",
      "havuz": {
       "tr": "yedek akçe",
       "en": "reserve"
@@ -222,7 +222,7 @@
    "gloss": [
     {
      "de": "der Handwerker",
-     "mevcutTr": "usta, zanaatkâr",
+     "mevcutTr": "usta",
      "havuz": {
       "tr": "usta",
       "en": "craftsman"
@@ -238,7 +238,7 @@
     },
     {
      "de": "der Kostenvoranschlag",
-     "mevcutTr": "keşif, fiyat teklifi",
+     "mevcutTr": "fiyat teklifi",
      "havuz": {
       "tr": "fiyat teklifi",
       "en": "cost estimate"
@@ -258,7 +258,7 @@
     },
     {
      "de": "ausgebucht",
-     "mevcutTr": "dolu, yeri yok",
+     "mevcutTr": "tamamen dolu",
      "havuz": {
       "tr": "tamamen dolu",
       "en": "fully booked"
@@ -266,7 +266,7 @@
     },
     {
      "de": "der Auftrag",
-     "mevcutTr": "iş, sipariş",
+     "mevcutTr": "iş",
      "havuz": {
       "tr": "görev",
       "en": "assignment"
@@ -293,7 +293,7 @@
    "gloss": [
     {
      "de": "der Beitrag",
-     "mevcutTr": "haber, program parçası",
+     "mevcutTr": "haber",
      "havuz": {
       "tr": "aidat",
       "en": "membership fee"
@@ -301,7 +301,7 @@
     },
     {
      "de": "der Versuch",
-     "mevcutTr": "deneme, pilot uygulama",
+     "mevcutTr": "deneme",
      "havuz": {
       "tr": "deneme",
       "en": "attempt"
@@ -329,7 +329,7 @@
     },
     {
      "de": "die Auswertung",
-     "mevcutTr": "değerlendirme",
+     "mevcutTr": "analiz",
      "havuz": {
       "tr": "analiz",
       "en": "analysis"
@@ -372,7 +372,7 @@
     },
     {
      "de": "die Verabredung",
-     "mevcutTr": "randevu, buluşma",
+     "mevcutTr": "buluşma",
      "havuz": {
       "tr": "buluşma",
       "en": "date"
@@ -380,11 +380,11 @@
     },
     {
      "de": "akademisches Viertel",
-     "mevcutTr": "üniversitede 15 dk gecikme geleneği"
+     "mevcutTr": "akademik çeyrek"
     },
     {
      "de": "unhöflich",
-     "mevcutTr": "kaba",
+     "mevcutTr": "nezaketsiz",
      "havuz": {
       "tr": "nezaketsiz",
       "en": "impolite"
@@ -404,7 +404,7 @@
     },
     {
      "de": "entschuldigen",
-     "mevcutTr": "özür dilemek",
+     "mevcutTr": "affetmek",
      "havuz": {
       "tr": "affetmek",
       "en": "to excuse"
@@ -439,7 +439,7 @@
     },
     {
      "de": "sich angegriffen fühlen",
-     "mevcutTr": "saldırıya uğramış hissetmek"
+     "mevcutTr": "kendini saldırıya uğramış hissetmek"
     },
     {
      "de": "die Absicht",
@@ -459,7 +459,7 @@
     },
     {
      "de": "klären",
-     "mevcutTr": "açıklığa kavuşturmak",
+     "mevcutTr": "netleştirmek",
      "havuz": {
       "tr": "netleştirmek",
       "en": "to clarify"
@@ -467,7 +467,7 @@
     },
     {
      "de": "zugeben",
-     "mevcutTr": "kabul etmek",
+     "mevcutTr": "itiraf etmek",
      "havuz": {
       "tr": "itiraf etmek",
       "en": "to admit"
@@ -475,7 +475,7 @@
     },
     {
      "de": "abmachen",
-     "mevcutTr": "kararlaştırmak",
+     "mevcutTr": "anlaşmak",
      "havuz": {
       "tr": "anlaşmak",
       "en": "to agree"
@@ -502,7 +502,7 @@
     },
     {
      "de": "der Andrang",
-     "mevcutTr": "yoğunluk, kalabalık",
+     "mevcutTr": "izdiham",
      "havuz": {
       "tr": "izdiham",
       "en": "rush"
@@ -534,7 +534,7 @@
     },
     {
      "de": "aufgeben",
-     "mevcutTr": "vazgeçmek",
+     "mevcutTr": "pes etmek",
      "havuz": {
       "tr": "pes etmek",
       "en": "to give up"

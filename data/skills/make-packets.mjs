@@ -99,8 +99,21 @@ for (const course of ["de", "gsw-zh"]) {
         intro: e.intro,
         metin: govde(e),
         gloss: (e.gloss ?? []).map((g) => {
-          const h = havuzda(g.de);
-          return { de: g.de, mevcutTr: g.tr, ...(h ? { havuz: h } : {}) };
+          // Lehçe biçim Almanca havuzda birebir yok ("d Wohnig" ↔ "Wohnung"),
+          // o yüzden Züritüütsch maddelerinin yalnızca %18'i ipucu alıyordu.
+          // Ama Hochdeutsch biçim çoğu zaman mevcut çevirinin parantezinde
+          // duruyor ("daire (Wohnung)") — tam da `hd` alanına taşınacak bilgi.
+          // Parantez Türkçe açıklama da taşıyabiliyor; havuzda karşılığı
+          // bulunması adayın gerçekten Almanca olduğunun kendi süzgeci.
+          const paren = /\(([^)]+)\)/.exec(g.tr ?? "")?.[1]?.trim();
+          const köprü = paren && !/[ıİğĞşŞ]/.test(paren) ? havuzda(paren) : null;
+          const h = havuzda(g.de) ?? köprü;
+          return {
+            de: g.de,
+            mevcutTr: g.tr,
+            ...(h ? { havuz: h } : {}),
+            ...(köprü && !havuzda(g.de) ? { hdAdayi: paren } : {}),
+          };
         }),
       };
       if (e.skill === "writing") {

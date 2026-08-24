@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "das Gerät",
-     "mevcutTr": "cihaz, alet",
+     "mevcutTr": "cihaz",
      "havuz": {
       "tr": "cihaz",
       "en": "device"
@@ -29,7 +29,7 @@
     },
     {
      "de": "ehrenamtlich",
-     "mevcutTr": "gönüllü olarak",
+     "mevcutTr": "gönüllü",
      "havuz": {
       "tr": "gönüllü",
       "en": "voluntary"
@@ -49,7 +49,7 @@
     },
     {
      "de": "das Werkzeug",
-     "mevcutTr": "takım, alet edevat",
+     "mevcutTr": "alet",
      "havuz": {
       "tr": "alet",
       "en": "tool"
@@ -73,7 +73,7 @@
     },
     {
      "de": "der Freiwillige",
-     "mevcutTr": "gönüllü (kişi)"
+     "mevcutTr": "gönüllü"
     },
     {
      "de": "sich auskennen mit",
@@ -96,7 +96,7 @@
     },
     {
      "de": "verbringen",
-     "mevcutTr": "(zaman) geçirmek",
+     "mevcutTr": "geçirmek",
      "havuz": {
       "tr": "geçirmek",
       "en": "to spend"
@@ -104,7 +104,7 @@
     },
     {
      "de": "feststellen",
-     "mevcutTr": "fark etmek, saptamak",
+     "mevcutTr": "fark etmek",
      "havuz": {
       "tr": "tespit etmek",
       "en": "to determine"
@@ -112,7 +112,7 @@
     },
     {
      "de": "die Verabredung",
-     "mevcutTr": "buluşma, sözleşilen randevu",
+     "mevcutTr": "buluşma",
      "havuz": {
       "tr": "buluşma",
       "en": "date"
@@ -128,7 +128,7 @@
     },
     {
      "de": "das Fazit",
-     "mevcutTr": "sonuç, çıkarım",
+     "mevcutTr": "sonuç",
      "havuz": {
       "tr": "sonuç",
       "en": "conclusion"
@@ -144,7 +144,7 @@
     },
     {
      "de": "sich lohnen",
-     "mevcutTr": "değmek, zahmete değer olmak",
+     "mevcutTr": "değmek",
      "havuz": {
       "tr": "değmek",
       "en": "to be worth it"
@@ -179,7 +179,7 @@
     },
     {
      "de": "die Redaktion",
-     "mevcutTr": "yazı işleri, redaksiyon",
+     "mevcutTr": "yazı işleri",
      "havuz": {
       "tr": "yazı işleri",
       "en": "editorial office"
@@ -187,7 +187,7 @@
     },
     {
      "de": "betreuen",
-     "mevcutTr": "ilgilenmek, rehberlik etmek",
+     "mevcutTr": "ilgilenmek",
      "havuz": {
       "tr": "ilgilenmek",
       "en": "to look after"
@@ -195,7 +195,7 @@
     },
     {
      "de": "bearbeiten",
-     "mevcutTr": "işlemek, düzenlemek",
+     "mevcutTr": "düzenlemek",
      "havuz": {
       "tr": "işleme almak",
       "en": "to process"
@@ -203,7 +203,7 @@
     },
     {
      "de": "der Beitrag",
-     "mevcutTr": "yazı, katkı",
+     "mevcutTr": "yazı",
      "havuz": {
       "tr": "aidat",
       "en": "membership fee"
@@ -219,7 +219,7 @@
     },
     {
      "de": "der Nahverkehr",
-     "mevcutTr": "şehir içi toplu taşıma",
+     "mevcutTr": "toplu taşıma",
      "havuz": {
       "tr": "toplu taşıma",
       "en": "local public transport"
@@ -278,7 +278,7 @@
     },
     {
      "de": "einpacken",
-     "mevcutTr": "paketlemek, yanına almak",
+     "mevcutTr": "paketlemek",
      "havuz": {
       "tr": "paketlemek",
       "en": "to wrap up"
@@ -341,15 +341,15 @@
     },
     {
      "de": "die Anwohnerin",
-     "mevcutTr": "(o sokakta oturan) kadın sakin"
+     "mevcutTr": "mahalle sakini"
     },
     {
      "de": "die Geschäftsleute",
-     "mevcutTr": "esnaf, iş insanları"
+     "mevcutTr": "esnaf"
     },
     {
      "de": "befürchten",
-     "mevcutTr": "endişe etmek, korkmak",
+     "mevcutTr": "endişe etmek",
      "havuz": {
       "tr": "endişe etmek",
       "en": "to fear"
@@ -357,7 +357,7 @@
     },
     {
      "de": "das Gegenteil",
-     "mevcutTr": "tam tersi",
+     "mevcutTr": "tersi",
      "havuz": {
       "tr": "tersi",
       "en": "opposite"
@@ -389,7 +389,7 @@
     },
     {
      "de": "zu Fuß unterwegs sein",
-     "mevcutTr": "yaya olarak hareket etmek"
+     "mevcutTr": "yaya olarak dolaşmak"
     }
    ]
   },
@@ -436,7 +436,7 @@
     },
     {
      "de": "die Bewerbung",
-     "mevcutTr": "iş başvurusu",
+     "mevcutTr": "başvuru",
      "havuz": {
       "tr": "başvuru",
       "en": "application"
@@ -452,15 +452,15 @@
     },
     {
      "de": "verteilen auf",
-     "mevcutTr": "bölüştürmek, dağıtmak"
+     "mevcutTr": "bir şeye yaymak"
     },
     {
      "de": "das Handwerk",
-     "mevcutTr": "zanaat, el işi meslekleri"
+     "mevcutTr": "zanaat"
     },
     {
      "de": "erledigen",
-     "mevcutTr": "halletmek, bitirmek",
+     "mevcutTr": "halletmek",
      "havuz": {
       "tr": "halletmek",
       "en": "to take care of"
@@ -511,7 +511,7 @@
     },
     {
      "de": "sich lohnen",
-     "mevcutTr": "değmek, kâr etmek",
+     "mevcutTr": "değmek",
      "havuz": {
       "tr": "değmek",
       "en": "to be worth it"
@@ -527,7 +527,7 @@
     },
     {
      "de": "abraten",
-     "mevcutTr": "vazgeçirmeye çalışmak",
+     "mevcutTr": "tavsiye etmemek",
      "havuz": {
       "tr": "tavsiye etmemek",
       "en": "to advise against"
@@ -535,7 +535,7 @@
     },
     {
      "de": "die Genehmigung",
-     "mevcutTr": "izin, ruhsat",
+     "mevcutTr": "resmî izin",
      "havuz": {
       "tr": "resmî izin",
       "en": "permit"
@@ -554,7 +554,7 @@
    "gloss": [
     {
      "de": "das Gewerbe",
-     "mevcutTr": "ticari faaliyet",
+     "mevcutTr": "ticari işletme",
      "havuz": {
       "tr": "ticari işletme",
       "en": "business"
@@ -566,7 +566,7 @@
     },
     {
      "de": "die Gebühr",
-     "mevcutTr": "harç",
+     "mevcutTr": "ücret",
      "havuz": {
       "tr": "ücret",
       "en": "fee"
@@ -574,7 +574,7 @@
     },
     {
      "de": "das Führungszeugnis",
-     "mevcutTr": "adli sicil belgesi",
+     "mevcutTr": "adli sicil kaydı",
      "havuz": {
       "tr": "adli sicil kaydı",
       "en": "criminal record certificate"
@@ -602,7 +602,7 @@
     },
     {
      "de": "automatisch",
-     "mevcutTr": "otomatik olarak",
+     "mevcutTr": "otomatik",
      "havuz": {
       "tr": "otomatik",
       "en": "automatic"

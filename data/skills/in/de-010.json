@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "duzen",
-     "mevcutTr": "„du“ diye hitap etmek",
+     "mevcutTr": "sen diye hitap etmek",
      "havuz": {
       "tr": "sen diye hitap etmek",
       "en": "to address informally"
@@ -21,11 +21,11 @@
     },
     {
      "de": "siezen",
-     "mevcutTr": "„Sie“ diye hitap etmek"
+     "mevcutTr": "siz diye hitap etmek"
     },
     {
      "de": "anbieten",
-     "mevcutTr": "teklif etmek",
+     "mevcutTr": "sunmak",
      "havuz": {
       "tr": "sunmak",
       "en": "to offer"
@@ -41,7 +41,7 @@
     },
     {
      "de": "unhöflich",
-     "mevcutTr": "kaba",
+     "mevcutTr": "nezaketsiz",
      "havuz": {
       "tr": "nezaketsiz",
       "en": "impolite"
@@ -179,7 +179,7 @@
     },
     {
      "de": "die Voraussetzung",
-     "mevcutTr": "koşul, önşart",
+     "mevcutTr": "ön koşul",
      "havuz": {
       "tr": "ön koşul",
       "en": "prerequisite"
@@ -198,7 +198,7 @@
    "gloss": [
     {
      "de": "das Arbeitszeugnis",
-     "mevcutTr": "iş referans belgesi",
+     "mevcutTr": "çalışma belgesi",
      "havuz": {
       "tr": "çalışma belgesi",
       "en": "employment reference"
@@ -214,7 +214,7 @@
     },
     {
      "de": "stets",
-     "mevcutTr": "her zaman",
+     "mevcutTr": "daima",
      "havuz": {
       "tr": "daima",
       "en": "always"
@@ -230,7 +230,7 @@
     },
     {
      "de": "der Code",
-     "mevcutTr": "şifre, gizli dil"
+     "mevcutTr": "şifre"
     },
     {
      "de": "wohlwollend",
@@ -269,7 +269,7 @@
     },
     {
      "de": "der Eintritt",
-     "mevcutTr": "giriş (ücreti)",
+     "mevcutTr": "giriş ücreti",
      "havuz": {
       "tr": "giriş ücreti",
       "en": "admission"
@@ -297,7 +297,7 @@
     },
     {
      "de": "mittelalterlich",
-     "mevcutTr": "orta çağa ait"
+     "mevcutTr": "ortaçağa ait"
     },
     {
      "de": "die Haltestelle",
@@ -309,15 +309,15 @@
     },
     {
      "de": "gesperrt",
-     "mevcutTr": "(trafiğe) kapalı"
+     "mevcutTr": "trafiğe kapalı"
     },
     {
      "de": "die Abendkasse",
-     "mevcutTr": "gişe (etkinlik günü açılan)"
+     "mevcutTr": "gişe"
     },
     {
      "de": "ausverkauft",
-     "mevcutTr": "tükenmiş, satılıp bitmiş",
+     "mevcutTr": "tükenmiş",
      "havuz": {
       "tr": "biletleri tükenmiş",
       "en": "sold out"
@@ -352,7 +352,7 @@
     },
     {
      "de": "sich engagieren",
-     "mevcutTr": "gönüllü olarak çalışmak",
+     "mevcutTr": "gönüllü çalışmak",
      "havuz": {
       "tr": "gönüllü çalışmak",
       "en": "to volunteer"
@@ -360,7 +360,7 @@
     },
     {
      "de": "die Lebensmittel",
-     "mevcutTr": "gıda maddeleri",
+     "mevcutTr": "gıda",
      "havuz": {
       "tr": "gıda",
       "en": "groceries"
@@ -423,7 +423,7 @@
     },
     {
      "de": "die Fläche",
-     "mevcutTr": "alan, arazi",
+     "mevcutTr": "alan",
      "havuz": {
       "tr": "alan",
       "en": "area"
@@ -431,11 +431,11 @@
     },
     {
      "de": "der Aushang",
-     "mevcutTr": "duyuru, ilan"
+     "mevcutTr": "duyuru"
     },
     {
      "de": "das Treppenhaus",
-     "mevcutTr": "merdiven boşluğu, apartman girişi",
+     "mevcutTr": "merdiven boşluğu",
      "havuz": {
       "tr": "merdiven boşluğu",
       "en": "stairwell"
@@ -443,7 +443,7 @@
     },
     {
      "de": "sich kümmern um",
-     "mevcutTr": "ilgilenmek, bakmak"
+     "mevcutTr": "ilgilenmek"
     },
     {
      "de": "der Haushalt",
@@ -455,7 +455,7 @@
     },
     {
      "de": "das Beet",
-     "mevcutTr": "tarh, ekim yatağı",
+     "mevcutTr": "tarh",
      "havuz": {
       "tr": "tarh",
       "en": "garden bed"
@@ -463,15 +463,15 @@
     },
     {
      "de": "anpflanzen",
-     "mevcutTr": "ekmek, dikmek"
+     "mevcutTr": "dikmek"
     },
     {
      "de": "vertrocknen",
-     "mevcutTr": "kuruyup gitmek"
+     "mevcutTr": "kurumak"
     },
     {
      "de": "verlockend",
-     "mevcutTr": "cazip, çekici"
+     "mevcutTr": "cazip"
     }
    ]
   },
@@ -486,7 +486,7 @@
    "gloss": [
     {
      "de": "das Lagerhaus",
-     "mevcutTr": "depo binası, antrepo"
+     "mevcutTr": "depo binası"
     },
     {
      "de": "der Backstein",
@@ -526,7 +526,7 @@
     },
     {
      "de": "die Ware",
-     "mevcutTr": "mal, ürün",
+     "mevcutTr": "mal",
      "havuz": {
       "tr": "mal",
       "en": "goods"
@@ -538,11 +538,11 @@
     },
     {
      "de": "die Vitrine",
-     "mevcutTr": "vitrin, cam dolap"
+     "mevcutTr": "vitrin"
     },
     {
      "de": "der Aufenthalt",
-     "mevcutTr": "kalış, ziyaret",
+     "mevcutTr": "kalış",
      "havuz": {
       "tr": "kalış",
       "en": "stay"

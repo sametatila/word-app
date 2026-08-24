@@ -33,11 +33,11 @@
     },
     {
      "de": "anmelden",
-     "mevcutTr": "kaydettirmek"
+     "mevcutTr": "kaydolmak"
     },
     {
      "de": "gebraucht",
-     "mevcutTr": "kullanılmış, ikinci el",
+     "mevcutTr": "ikinci el",
      "havuz": {
       "tr": "ikinci el",
       "en": "used"
@@ -100,7 +100,7 @@
     },
     {
      "de": "die Stunde",
-     "mevcutTr": "saat, ders saati",
+     "mevcutTr": "saat",
      "havuz": {
       "tr": "saat",
       "en": "hour"
@@ -116,7 +116,7 @@
     },
     {
      "de": "melden",
-     "mevcutTr": "haber vermek, ulaşmak",
+     "mevcutTr": "iletişime geçmek",
      "havuz": {
       "tr": "bildirmek",
       "en": "to report"
@@ -143,7 +143,7 @@
     },
     {
      "de": "das Paket",
-     "mevcutTr": "paket, kargo",
+     "mevcutTr": "paket",
      "havuz": {
       "tr": "paket",
       "en": "package"
@@ -202,7 +202,7 @@
    "gloss": [
     {
      "de": "die Hausordnung",
-     "mevcutTr": "bina kuralları",
+     "mevcutTr": "apartman kuralları",
      "havuz": {
       "tr": "apartman kuralları",
       "en": "house rules"
@@ -210,7 +210,7 @@
     },
     {
      "de": "die Ruhezeit",
-     "mevcutTr": "sessizlik saatleri"
+     "mevcutTr": "sessizlik saati"
     },
     {
      "de": "der Müll",
@@ -222,7 +222,7 @@
     },
     {
      "de": "trennen",
-     "mevcutTr": "ayırmak"
+     "mevcutTr": "ayrıştırmak"
     },
     {
      "de": "die Waschküche",
@@ -238,7 +238,7 @@
     },
     {
      "de": "erlaubt",
-     "mevcutTr": "izinli",
+     "mevcutTr": "serbest",
      "havuz": {
       "tr": "serbest",
       "en": "allowed"
@@ -368,7 +368,7 @@
     },
     {
      "de": "wählen",
-     "mevcutTr": "(numara) çevirmek",
+     "mevcutTr": "numara çevirmek",
      "havuz": {
       "tr": "seçmek",
       "en": "to choose"
@@ -376,7 +376,7 @@
     },
     {
      "de": "Auf Wiederhören",
-     "mevcutTr": "hoşça kalın (telefonda)"
+     "mevcutTr": "hoşça kalın"
     }
    ]
   },
@@ -415,7 +415,7 @@
     },
     {
      "de": "die Verspätung",
-     "mevcutTr": "rötar, gecikme",
+     "mevcutTr": "gecikme",
      "havuz": {
       "tr": "gecikme",
       "en": "delay"
@@ -423,7 +423,7 @@
     },
     {
      "de": "starten",
-     "mevcutTr": "kalkmak (uçak)",
+     "mevcutTr": "kalkmak",
      "havuz": {
       "tr": "başlamak",
       "en": "to start"
@@ -446,7 +446,7 @@
    "gloss": [
     {
      "de": "bestellen",
-     "mevcutTr": "sipariş vermek",
+     "mevcutTr": "sipariş etmek",
      "havuz": {
       "tr": "sipariş etmek",
       "en": "to order"
@@ -458,7 +458,7 @@
     },
     {
      "de": "das Hähnchen",
-     "mevcutTr": "tavuk",
+     "mevcutTr": "piliç",
      "havuz": {
       "tr": "piliç",
       "en": "chicken"
@@ -466,7 +466,7 @@
     },
     {
      "de": "der Reis",
-     "mevcutTr": "pirinç, pilav",
+     "mevcutTr": "pilav",
      "havuz": {
       "tr": "pirinç",
       "en": "rice"

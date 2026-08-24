@@ -60,11 +60,21 @@
     },
     {
      "de": "de Chreis",
-     "mevcutTr": "Zürih'te ilçe/bölge (Kreis)"
+     "mevcutTr": "Zürih'te ilçe/bölge (Kreis)",
+     "havuz": {
+      "tr": "çember",
+      "en": "circle"
+     },
+     "hdAdayi": "Kreis"
     },
     {
      "de": "d Wohnig",
-     "mevcutTr": "daire (Wohnung)"
+     "mevcutTr": "daire (Wohnung)",
+     "havuz": {
+      "tr": "daire",
+      "en": "apartment"
+     },
+     "hdAdayi": "Wohnung"
     },
     {
      "de": "inbegriffe",
@@ -80,7 +90,12 @@
     },
     {
      "de": "aalüte",
-     "mevcutTr": "telefon etmek (anrufen)"
+     "mevcutTr": "telefon etmek (anrufen)",
+     "havuz": {
+      "tr": "telefon etmek",
+      "en": "to call"
+     },
+     "hdAdayi": "anrufen"
     },
     {
      "de": "d Bsichtigung",
@@ -99,7 +114,12 @@
    "gloss": [
     {
      "de": "s Geburi",
-     "mevcutTr": "doğum günü (Geburtstag)"
+     "mevcutTr": "doğum günü (Geburtstag)",
+     "havuz": {
+      "tr": "doğum günü",
+      "en": "birthday"
+     },
+     "hdAdayi": "Geburtstag"
     },
     {
      "de": "dihäi",
@@ -119,7 +139,12 @@
     },
     {
      "de": "öb",
-     "mevcutTr": "… -ıp -madığı (ob)"
+     "mevcutTr": "… -ıp -madığı (ob)",
+     "havuz": {
+      "tr": "acaba",
+      "en": "whether"
+     },
+     "hdAdayi": "ob"
     },
     {
      "de": "sich fröie uf",
@@ -150,7 +175,12 @@
     },
     {
      "de": "de Chaschte",
-     "mevcutTr": "kutu, dolap (Kasten)"
+     "mevcutTr": "kutu, dolap (Kasten)",
+     "havuz": {
+      "tr": "kasa",
+      "en": "case"
+     },
+     "hdAdayi": "Kasten"
     },
     {
      "de": "d Iigangstür",
@@ -177,7 +207,12 @@
     },
     {
      "de": "s Gricht",
-     "mevcutTr": "yemek (Gericht)"
+     "mevcutTr": "yemek (Gericht)",
+     "havuz": {
+      "tr": "yemek",
+      "en": "dish"
+     },
+     "hdAdayi": "Gericht"
     },
     {
      "de": "d Mundart",
@@ -189,7 +224,12 @@
     },
     {
      "de": "d Aamäldig",
-     "mevcutTr": "kayıt (Anmeldung)"
+     "mevcutTr": "kayıt (Anmeldung)",
+     "havuz": {
+      "tr": "kayıt",
+      "en": "registration"
+     },
+     "hdAdayi": "Anmeldung"
     },
     {
      "de": "de Schalter",
@@ -228,7 +268,12 @@
     },
     {
      "de": "s Gläis",
-     "mevcutTr": "ray, peron (Gleis)"
+     "mevcutTr": "ray, peron (Gleis)",
+     "havuz": {
+      "tr": "ray",
+      "en": "track"
+     },
+     "hdAdayi": "Gleis"
     },
     {
      "de": "umbaue",
@@ -259,7 +304,12 @@
    "gloss": [
     {
      "de": "de Chindsgi",
-     "mevcutTr": "anaokulu (Kindergarten)"
+     "mevcutTr": "anaokulu (Kindergarten)",
+     "havuz": {
+      "tr": "anaokulu",
+      "en": "kindergarten"
+     },
+     "hdAdayi": "Kindergarten"
     },
     {
      "de": "de Turnsack",

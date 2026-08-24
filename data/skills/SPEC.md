@@ -64,6 +64,12 @@ sonra  { de: "d Wohnig", tr: "daire", en: "apartment", hd: "Wohnung" }
 `hd` yalnızca Almanca biçimi taşır — açıklama değil, tek kelime ya da kısa
 ifade. Lehçe biçim ile Hochdeutsch aynıysa `hd` yazma.
 
+Pakette bazı maddelerde `hdAdayi` göreceksin. Bu, mevcut çevirinin parantezinden
+çıkarılmış ve kelime havuzunda karşılığı bulunmuş bir Hochdeutsch **adayıdır** —
+o maddenin `havuz` ipucu da oradan geliyor. Aday, doğrulanmış bir bilgi değil:
+lehçe maddesiyle gerçekten örtüşüyorsa `hd` olarak kullan, örtüşmüyorsa yok say
+ve durumu bildir.
+
 ## `note` — karşılığı olmayan kelimeler
 
 Bazı kelimelerin Türkçede karşılığı yok, açıklaması var. Bunlar ağırlıkla

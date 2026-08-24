@@ -142,7 +142,12 @@
    "gloss": [
     {
      "de": "d Ferie",
-     "mevcutTr": "tatil (Ferien)"
+     "mevcutTr": "tatil (Ferien)",
+     "havuz": {
+      "tr": "okul tatili",
+      "en": "school holidays"
+     },
+     "hdAdayi": "Ferien"
     },
     {
      "de": "s Schiff",
@@ -158,7 +163,12 @@
     },
     {
      "de": "gschtern",
-     "mevcutTr": "dün (gestern)"
+     "mevcutTr": "dün (gestern)",
+     "havuz": {
+      "tr": "dün",
+      "en": "yesterday"
+     },
+     "hdAdayi": "gestern"
     },
     {
      "de": "s Wätter",

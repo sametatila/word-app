@@ -123,7 +123,12 @@
     },
     {
      "de": "s Gymi",
-     "mevcutTr": "lise (Gymnasium)"
+     "mevcutTr": "lise (Gymnasium)",
+     "havuz": {
+      "tr": "lise",
+      "en": "high school"
+     },
+     "hdAdayi": "Gymnasium"
     },
     {
      "de": "de Betrieb",

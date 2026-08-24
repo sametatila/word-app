@@ -13,7 +13,7 @@
    "gloss": [
     {
      "de": "die Erhebung",
-     "mevcutTr": "anket, araştırma",
+     "mevcutTr": "araştırma",
      "havuz": {
       "tr": "veri toplama",
       "en": "data collection"
@@ -21,7 +21,7 @@
     },
     {
      "de": "die Bequemlichkeit",
-     "mevcutTr": "rahatlık, konfor"
+     "mevcutTr": "rahatlık"
     },
     {
      "de": "die Abhängigkeit",
@@ -33,7 +33,7 @@
     },
     {
      "de": "abwägen",
-     "mevcutTr": "tartmak, ölçüp biçmek",
+     "mevcutTr": "ölçüp biçmek",
      "havuz": {
       "tr": "ölçüp biçmek",
       "en": "to weigh up"
@@ -41,11 +41,11 @@
     },
     {
      "de": "umschlagen in",
-     "mevcutTr": "(bir şeye) dönüşmek"
+     "mevcutTr": "dönüşmek"
     },
     {
      "de": "offenlegen",
-     "mevcutTr": "açıklamak, şeffaflaştırmak",
+     "mevcutTr": "açıklamak",
      "havuz": {
       "tr": "açıklamak",
       "en": "to disclose"
@@ -57,11 +57,11 @@
     },
     {
      "de": "der Verzicht",
-     "mevcutTr": "vazgeçme, feragat"
+     "mevcutTr": "vazgeçme"
     },
     {
      "de": "vermitteln",
-     "mevcutTr": "aktarmak, kazandırmak",
+     "mevcutTr": "aktarmak",
      "havuz": {
       "tr": "aktarmak",
       "en": "to convey"
@@ -77,7 +77,7 @@
     },
     {
      "de": "zugeschnitten auf",
-     "mevcutTr": "(bir şeye) göre uyarlanmış"
+     "mevcutTr": "uyarlanmış"
     }
    ]
   },
@@ -100,11 +100,11 @@
     },
     {
      "de": "das Erdreich",
-     "mevcutTr": "toprak, zemin"
+     "mevcutTr": "toprak"
     },
     {
      "de": "entziehen",
-     "mevcutTr": "çekmek, almak",
+     "mevcutTr": "çekmek",
      "havuz": {
       "tr": "geri almak",
       "en": "to revoke"
@@ -112,7 +112,7 @@
     },
     {
      "de": "die Anschaffung",
-     "mevcutTr": "satın alma, edinme"
+     "mevcutTr": "satın alma"
     },
     {
      "de": "gedämmt",
@@ -120,7 +120,7 @@
     },
     {
      "de": "sanieren",
-     "mevcutTr": "(binayı) yenilemek",
+     "mevcutTr": "elden geçirmek",
      "havuz": {
       "tr": "elden geçirmek",
       "en": "to refurbish"
@@ -140,7 +140,7 @@
     },
     {
      "de": "die Stückzahl",
-     "mevcutTr": "üretim adedi",
+     "mevcutTr": "adet",
      "havuz": {
       "tr": "adet",
       "en": "quantity"
@@ -148,7 +148,7 @@
     },
     {
      "de": "die Vorgabe",
-     "mevcutTr": "yasal şart, direktif",
+     "mevcutTr": "şart",
      "havuz": {
       "tr": "şart",
       "en": "requirement"
@@ -156,7 +156,7 @@
     },
     {
      "de": "hinauslaufen auf",
-     "mevcutTr": "sonuçta (bir şeye) varmak"
+     "mevcutTr": "sonuçta bir şeye varmak"
     }
    ]
   },
@@ -187,7 +187,7 @@
     },
     {
      "de": "abschalten",
-     "mevcutTr": "kafayı işten koparmak",
+     "mevcutTr": "kafa dağıtmak",
      "havuz": {
       "tr": "kafa dağıtmak",
       "en": "to unwind"
@@ -199,7 +199,7 @@
     },
     {
      "de": "erfassen",
-     "mevcutTr": "kayıt altına almak",
+     "mevcutTr": "kaydetmek",
      "havuz": {
       "tr": "kaydetmek",
       "en": "to record"
@@ -215,11 +215,11 @@
     },
     {
      "de": "die Stechuhr",
-     "mevcutTr": "mesai saati kartı, puantaj saati"
+     "mevcutTr": "puantaj saati"
     },
     {
      "de": "die Befragung",
-     "mevcutTr": "anket, soruşturma",
+     "mevcutTr": "anket",
      "havuz": {
       "tr": "anket",
       "en": "survey"
@@ -270,7 +270,7 @@
     },
     {
      "de": "zu kurz greifen",
-     "mevcutTr": "yetersiz kalmak (argüman)"
+     "mevcutTr": "yetersiz kalmak"
     },
     {
      "de": "langlebig",
@@ -282,15 +282,15 @@
     },
     {
      "de": "sich rechnen",
-     "mevcutTr": "kârlı olmak, hesabı tutmak"
+     "mevcutTr": "kârlı olmak"
     },
     {
      "de": "die Umsetzung",
-     "mevcutTr": "uygulama, hayata geçirme"
+     "mevcutTr": "uygulama"
     },
     {
      "de": "erproben",
-     "mevcutTr": "denemek, sınamak",
+     "mevcutTr": "sınamak",
      "havuz": {
       "tr": "sınamak",
       "en": "to test out"
@@ -313,7 +313,7 @@
     },
     {
      "de": "aufwachsen",
-     "mevcutTr": "(bir ortamda) büyümek",
+     "mevcutTr": "büyümek",
      "havuz": {
       "tr": "büyümek",
       "en": "to grow up"
@@ -329,7 +329,7 @@
     },
     {
      "de": "die Förderung",
-     "mevcutTr": "destek, teşvik",
+     "mevcutTr": "destek",
      "havuz": {
       "tr": "teşvik",
       "en": "funding"
@@ -337,7 +337,7 @@
     },
     {
      "de": "flächendeckend",
-     "mevcutTr": "ülke/bölge çapında, yaygın",
+     "mevcutTr": "her yeri kapsayan",
      "havuz": {
       "tr": "her yeri kapsayan",
       "en": "across the board"
@@ -345,7 +345,7 @@
     },
     {
      "de": "die Herkunftssprache",
-     "mevcutTr": "köken dili, ana dil",
+     "mevcutTr": "köken dili",
      "havuz": {
       "tr": "köken dili",
       "en": "heritage language"
@@ -361,7 +361,7 @@
     },
     {
      "de": "der Handlungsbedarf",
-     "mevcutTr": "eylem ihtiyacı",
+     "mevcutTr": "harekete geçme gereği",
      "havuz": {
       "tr": "harekete geçme gereği",
       "en": "need for action"
@@ -377,7 +377,7 @@
     },
     {
      "de": "heterogen",
-     "mevcutTr": "karma, türdeş olmayan",
+     "mevcutTr": "heterojen",
      "havuz": {
       "tr": "heterojen",
       "en": "heterogeneous"
@@ -389,7 +389,7 @@
     },
     {
      "de": "die Fortbildung",
-     "mevcutTr": "hizmet içi eğitim",
+     "mevcutTr": "mesleki eğitim",
      "havuz": {
       "tr": "mesleki eğitim",
       "en": "further training"
@@ -420,7 +420,7 @@
     },
     {
      "de": "die Verkehrsberuhigung",
-     "mevcutTr": "trafiği yavaşlatma önlemleri"
+     "mevcutTr": "trafiği yavaşlatma"
     },
     {
      "de": "die Höchstgeschwindigkeit",
@@ -444,7 +444,7 @@
     },
     {
      "de": "entfallen",
-     "mevcutTr": "iptal olmak, kalkmak"
+     "mevcutTr": "kalkmak"
     },
     {
      "de": "gewährleisten",
@@ -475,7 +475,7 @@
    "gloss": [
     {
      "de": "der Hinweis",
-     "mevcutTr": "ihbar, ipucu",
+     "mevcutTr": "ihbar",
      "havuz": {
       "tr": "ipucu",
       "en": "clue"
@@ -483,7 +483,7 @@
     },
     {
      "de": "anonym",
-     "mevcutTr": "isimsiz",
+     "mevcutTr": "anonim",
      "havuz": {
       "tr": "anonim",
       "en": "anonymous"
@@ -491,7 +491,7 @@
     },
     {
      "de": "die Leiharbeit",
-     "mevcutTr": "ödünç/taşeron işçilik"
+     "mevcutTr": "kiralık işçilik"
     },
     {
      "de": "die Schicht",
@@ -511,7 +511,7 @@
     },
     {
      "de": "der Vorwurf",
-     "mevcutTr": "iddia, suçlama",
+     "mevcutTr": "suçlama",
      "havuz": {
       "tr": "suçlama",
       "en": "accusation"
@@ -519,7 +519,7 @@
     },
     {
      "de": "belegen",
-     "mevcutTr": "belgelemek",
+     "mevcutTr": "kanıtlamak",
      "havuz": {
       "tr": "kanıtlamak",
       "en": "to substantiate"
@@ -570,7 +570,7 @@
     },
     {
      "de": "die Sozialauswahl",
-     "mevcutTr": "sosyal kriter seçimi"
+     "mevcutTr": "sosyal seçim"
     },
     {
      "de": "die Klage",
@@ -582,7 +582,7 @@
     },
     {
      "de": "die Abfindung",
-     "mevcutTr": "tazminat",
+     "mevcutTr": "kıdem tazminatı",
      "havuz": {
       "tr": "kıdem tazminatı",
       "en": "severance pay"
@@ -590,7 +590,7 @@
     },
     {
      "de": "die Frist",
-     "mevcutTr": "süre",
+     "mevcutTr": "son tarih",
      "havuz": {
       "tr": "son tarih",
       "en": "deadline"
