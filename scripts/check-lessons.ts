@@ -23,7 +23,7 @@ function check(name: string, ok: boolean, extra = "") {
 function warn(name: string, ok: boolean, extra = "") {
   if (ok) return;
   warns++;
-  console.log(`⚠ ${name} ${extra}`.trimEnd());
+  console.log(`! ${name} ${extra}`.trimEnd());
 }
 
 const repeatsOf = (l: Lesson) =>

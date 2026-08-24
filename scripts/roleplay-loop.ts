@@ -79,7 +79,7 @@ async function main() {
     const at = bodies.findIndex((prev) => similar(prev, body));
     if (at >= 0) {
       repeats.push(`${i + 1}↔${at}`);
-      console.log(`     ⚠ ${at}. turun tekrarı`);
+      console.log(`     ! ${at}. turun tekrarı`);
     }
     bodies.push(body);
     await new Promise((r) => setTimeout(r, Number(process.env.EVAL_DELAY_MS) || 900));

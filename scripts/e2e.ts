@@ -1962,7 +1962,7 @@ async function main() {
   await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-rival"));
   await pool.end();
 
-  console.log(failures === 0 ? "\n✅ TÜM TESTLER GEÇTİ" : `\n❌ ${failures} test başarısız`);
+  console.log(failures === 0 ? "\nTÜM TESTLER GEÇTİ" : `\n${failures} TEST BAŞARISIZ`);
   process.exit(failures === 0 ? 0 : 1);
 }
 

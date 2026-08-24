@@ -7,9 +7,9 @@
  * tablo basılır. Amaç genel bir "model iyi mi" testi değil — **bu uygulamanın
  * bağlı olduğu davranışları** ölçmek:
  *
- *   1. İşaret sözleşmesi — her turda 3 öneri (💬) geliyor mu? Gelmezse öneri
+ *   1. İşaret sözleşmesi — her turda 3 öneri satırı geliyor mu? Gelmezse öneri
  *      şeridi sessizce boş kalır ve sohbetin en önemli UX parçası ölür.
- *   2. Düzeltme isabeti — senaryoya bilerek yerleştirilmiş hataları (✏️)
+ *   2. Düzeltme isabeti — senaryoya bilerek yerleştirilmiş hataları
  *      yakalıyor mu, doğru cümleye yanlış düzeltme yapıştırıyor mu?
  *   3. Karakter bütünlüğü — Almanca (ä ö ü ß) ve Türkçe (ç ğ ı ö ş ü) harfleri
  *      bozuluyor mu? EğitimKit'te Llama'nın Türkçe token bozulması için ayrı
@@ -175,7 +175,7 @@ async function evaluate(provider: Provider, pools: ReturnType<typeof levelPools>
         if (msg.includes("429") && attempt < 4) {
           attempt++;
           s.throttled++;
-          process.stdout.write(" ⏳");
+          process.stdout.write(" .");
           await new Promise((r) => setTimeout(r, 20_000));
           continue;
         }
@@ -258,10 +258,10 @@ async function main() {
     const sugAll = s.suggestions.filter((n) => n === 3).length;
     const sugNone = s.suggestions.filter((n) => n === 0).length;
     console.log(
-      `  öneri (💬)      : ${sugAll}/${s.turns} turda tam 3 · ${sugNone} turda hiç yok`,
+      `  öneri           : ${sugAll}/${s.turns} turda tam 3 · ${sugNone} turda hiç yok`,
     );
     console.log(
-      `  düzeltme (✏️)   : ${s.fixesCaught}/${s.fixesExpected} hata yakalandı · ` +
+      `  düzeltme        : ${s.fixesCaught}/${s.fixesExpected} hata yakalandı · ` +
         `${s.falseFixes}/${s.cleanTurns} doğru cümleye yanlış düzeltme`,
     );
     console.log(

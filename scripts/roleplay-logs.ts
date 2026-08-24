@@ -151,7 +151,7 @@ async function main() {
     console.log(
       `\n${"─".repeat(76)}\n${head.name ?? head.userId} · ${head.lessonId} · ` +
         `${head.at.toISOString().slice(0, 16).replace("T", " ")} · ${turns.length} tur` +
-        (repeats.length ? `  ⚠ TEKRAR: ${repeats.join(", ")}. turda` : ""),
+        (repeats.length ? `  ! TEKRAR: ${repeats.join(", ")}. turda` : ""),
     );
     for (const t of turns) {
       const { body, corrections, suggestions } = parseReply(t.reply);

@@ -30,7 +30,10 @@ export function marksToGrid(marks: boolean[]): string {
     rows.push(
       shown
         .slice(i, i + PER_ROW)
-        .map((ok) => (ok ? "🟩" : "🟥"))
+        // Dolu/boş kare, renkli emoji değil: emoji her platformda ayrı
+        // çiziliyor ve bazı istemcilerde hiç çizilmiyor. Desen dolulukla
+        // okunuyor, renge ihtiyacı yok.
+        .map((ok) => (ok ? "■" : "□"))
         .join(""),
     );
   }
@@ -67,7 +70,7 @@ export function buildShareText(input: {
   const stats = daily
     ? [`${input.score?.toLocaleString("tr-TR") ?? 0} puan`, `${input.total} soruda %${input.accuracy}`]
     : [`${input.total} kelime`, `%${input.accuracy} doğru`];
-  if (input.streak > 0) stats.push(daily ? `⚡ ${input.streak} seri` : `🔥 ${input.streak} gün`);
+  if (input.streak > 0) stats.push(daily ? `${input.streak} seri` : `${input.streak} gün seri`);
   lines.push(stats.join(" · "));
 
   if (daily) lines.push("", `Aynı sorular ${input.level} seviyesindeki herkese aynı. Sen de dene:`);

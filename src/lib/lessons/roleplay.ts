@@ -17,7 +17,7 @@ import { characterFor } from "./characters";
  * kalmıyor. Sahne belli, muhatabın kim olduğu belli, hangi yapıyı kurması
  * gerektiği belli. Serbest sohbetin en pahalı sorunu boş sayfaydı.
  *
- * Biçim sohbetten devralındı (✏️ düzeltme, 💬 öneri) çünkü ölçülerek
+ * Biçim sohbetten devralındı (satır başında düzeltme ve öneri işareti) çünkü ölçülerek
  * oturmuştu: küçük modeller JSON şemasını düşürüyor ama tek karakterlik
  * işaretleri koruyor.
  */

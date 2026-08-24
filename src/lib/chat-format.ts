@@ -11,8 +11,14 @@
  * kaybolurdu — ekranda eksilen bir şey olmaz, sadece bir daha hiç görünmezdi.
  */
 
-export const CORRECTION_MARK = "✏️";
-export const SUGGESTION_MARK = "💬";
+/*
+ * İşaretler emoji DEĞİL: emoji her platformda ayrı çiziliyor, bazı küçük
+ * modeller varyasyon seçicisini (U+FE0F) düşürüp işareti bozuyor ve arayüz
+ * emojisiz bir dil kullanıyor. Köşeli parantezli ASCII etiket hem her modelde
+ * birebir üretiliyor hem de bir cümlenin başında kazara oluşamıyor.
+ */
+export const CORRECTION_MARK = "[FIX]";
+export const SUGGESTION_MARK = "[SAY]";
 
 export type ParsedReply = {
   /** Konuşmanın kendisi. */
