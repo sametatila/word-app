@@ -1,0 +1,502 @@
+{
+ "paket": "de-019",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "c1-l5",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Englisch als Wissenschaftssprache: Gewinn oder Verlust?",
+   "genre": "Konferans",
+   "intro": "Bu üniversite konuşmasında bilimin İngilizceleşmesinin kazanç ve kayıp hanelerini konuşmacının nasıl tarttığını izle.",
+   "metin": "Sehr geehrte Damen und Herren, noch vor hundert Jahren war Deutsch eine führende Wissenschaftssprache – wer in Chemie oder Physik mitreden wollte, las deutsche Fachzeitschriften. Heute erscheinen über 95 Prozent der naturwissenschaftlichen Veröffentlichungen weltweit auf Englisch. Die Frage meines Vortrags lautet: Was gewinnen wir dadurch, und was verlieren wir?\nBeginnen wir mit den Gewinnen, denn sie sind erheblich. Eine gemeinsame Verkehrssprache macht Forschung weltweit anschlussfähig. Eine Doktorandin in Ankara, ein Labor in Seoul und eine Arbeitsgruppe in Leipzig können ohne Verzögerung aufeinander aufbauen. Diesen Zugewinn an Austausch und Überprüfbarkeit sollte niemand kleinreden, der internationale Zusammenarbeit ernst nimmt.\nDoch der Preis wird selten beziffert. Sprachwissenschaftler nennen ihn Domänenverlust: Eine Sprache, in der nicht mehr geforscht wird, hört allmählich auf, neue Fachbegriffe zu bilden. Wo das Deutsche keine eigenen Begriffe mehr entwickelt, können wir wissenschaftliche Sachverhalte irgendwann nur noch auf Englisch präzise verhandeln – im Labor mag das verschmerzbar sein, in der Gesellschaft ist es das nicht.\nDenn Wissenschaft hat eine Rechenschaftspflicht gegenüber denen, die sie finanzieren. Ob Impfstoffe, Energiewende oder künstliche Intelligenz: Die öffentliche Debatte über Forschung findet in der Landessprache statt. Wenn Fachleute ihre eigenen Ergebnisse nicht mehr allgemeinverständlich auf Deutsch erklären können, entsteht genau die Distanz zwischen Wissenschaft und Öffentlichkeit, über die wir uns anschließend beklagen.\nHinzu kommt ein oft übersehener Befund aus der Lehr-Lern-Forschung: Studierende verarbeiten komplexe Inhalte in ihrer Erstsprache nachweislich tiefer. Wer die Lehre vollständig anglisiert, erleichtert den internationalen Austausch – und erschwert zugleich einem Teil der eigenen Studierenden das Verstehen.\nMein Plädoyer ist daher kein nostalgisches. Publizieren wir auf Englisch, wo die Fachwelt unser Publikum ist. Aber lehren, erklären und debattieren wir auch in der Landessprache – nicht aus Traditionspflege, sondern weil eine Demokratie nur über Wissenschaft streiten kann, die sie sprachlich erreicht. Vielen Dank.",
+   "gloss": [
+    {
+     "de": "die Wissenschaftssprache",
+     "mevcutTr": "bilim dili"
+    },
+    {
+     "de": "die Fachzeitschrift",
+     "mevcutTr": "akademik dergi",
+     "havuz": {
+      "tr": "bilimsel dergi",
+      "en": "specialist journal"
+     }
+    },
+    {
+     "de": "der Austausch",
+     "mevcutTr": "alışveriş, iletişim"
+    },
+    {
+     "de": "der Domänenverlust",
+     "mevcutTr": "alan kaybı (dilin bir alandan çekilmesi)"
+    },
+    {
+     "de": "die Begriffsbildung",
+     "mevcutTr": "kavram oluşturma"
+    },
+    {
+     "de": "etwas verkümmern lassen",
+     "mevcutTr": "körelmeye bırakmak"
+    },
+    {
+     "de": "die Rechenschaftspflicht",
+     "mevcutTr": "hesap verme yükümlülüğü",
+     "havuz": {
+      "tr": "hesap verme yükümlülüğü",
+      "en": "accountability"
+     }
+    },
+    {
+     "de": "der Steuerzahler",
+     "mevcutTr": "vergi mükellefi"
+    },
+    {
+     "de": "die Erstsprache",
+     "mevcutTr": "ana dil, birinci dil"
+    },
+    {
+     "de": "das Plädoyer",
+     "mevcutTr": "savunma konuşması, çağrı"
+    }
+   ]
+  },
+  {
+   "id": "c1-l6",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Tablets für alle – und dann?",
+   "genre": "Panel",
+   "intro": "Okullarda dijitalleşme panelinde bir eğitim araştırmacısı ile bir öğretmen sahadaki gerçeği tartışıyor — ortak vardıkları formülü yakala.",
+   "metin": "Moderator: Willkommen zu unserer Runde über die digitale Schule. Milliarden aus dem Digitalpakt sind ausgegeben, viele Klassenzimmer flächendeckend mit Tablets ausgestattet. Frau Doktor Kaya, Sie haben die Lernwirkung untersucht. Hat sich die Investition gelohnt?\nDoktor Kaya: Die unbequeme Antwort lautet: Das Gerät allein bewirkt nichts. Wir haben 120 Schulen über vier Jahre begleitet. Dort, wo Tablets lediglich das Arbeitsblatt ersetzten, blieben die Leistungen unverändert – in Mathematik gingen sie teilweise sogar leicht zurück, vor allem durch Ablenkung. Deutliche Lernzuwächse fanden wir nur an Schulen, die zuerst ein didaktisches Konzept entwickelt und dann die Technik angeschafft haben. Die Reihenfolge ist entscheidend.\nModerator: Herr Brandt, Sie unterrichten seit zwanzig Jahren an einer Gesamtschule in Dortmund. Deckt sich das mit Ihrer Erfahrung?\nHerr Brandt: Vollkommen. Bei uns kamen vor drei Jahren 800 Tablets an – aber keine einzige Stunde Fortbildung, wie man damit sinnvoll unterrichtet. Ein halbes Jahr lang verstaubten die Koffer im Keller. Und niemand hatte an die Wartung gedacht: Ich bin Mathematiklehrer und nebenbei unbezahlter Techniker für 800 Geräte. Was mich an der Debatte stört, ist ihre Schieflage: Diskutiert wird über Endgeräte, nicht über Unterricht.\nDoktor Kaya: Das bestätigen unsere Daten. Der stärkste Einzelfaktor war nicht die Zahl der Geräte, sondern die Zahl der Fortbildungsstunden pro Lehrkraft. Überspitzt gesagt: Ein Euro für Fortbildung bringt mehr Lernwirkung als drei Euro für Hardware.\nHerr Brandt: Wobei ich die Geräte nicht verteufeln möchte. Wenn meine Schüler Messdaten im Physikunterricht selbst auswerten oder ein Erklärvideo für die Parallelklasse produzieren, passiert genau das, was Unterricht soll: Sie denken selbst. Das Tablet ist dann Werkzeug – nicht Belohnung und nicht Babysitter.\nModerator: Technik folgt dem Konzept, nicht umgekehrt – das scheint mir das Fazit dieser Runde. Vielen Dank Ihnen beiden.",
+   "gloss": [
+    {
+     "de": "die Ausstattung",
+     "mevcutTr": "donanım"
+    },
+    {
+     "de": "flächendeckend",
+     "mevcutTr": "her yeri kapsayan",
+     "havuz": {
+      "tr": "her yeri kapsayan",
+      "en": "across the board"
+     }
+    },
+    {
+     "de": "der Mehrwert",
+     "mevcutTr": "katma değer"
+    },
+    {
+     "de": "die Ablenkung",
+     "mevcutTr": "dikkat dağınıklığı"
+    },
+    {
+     "de": "das Endgerät",
+     "mevcutTr": "uç cihaz (tablet, dizüstü)",
+     "havuz": {
+      "tr": "uç cihaz",
+      "en": "end device"
+     }
+    },
+    {
+     "de": "die Fortbildung",
+     "mevcutTr": "hizmet içi eğitim",
+     "havuz": {
+      "tr": "mesleki eğitim",
+      "en": "further training"
+     }
+    },
+    {
+     "de": "das Konzept",
+     "mevcutTr": "kavramsal plan, konsept"
+    },
+    {
+     "de": "etwas verstauben",
+     "mevcutTr": "tozlanmak, atıl kalmak"
+    },
+    {
+     "de": "die Wartung",
+     "mevcutTr": "bakım",
+     "havuz": {
+      "tr": "bakım",
+      "en": "maintenance"
+     }
+    },
+    {
+     "de": "die Lernwirkung",
+     "mevcutTr": "öğrenme etkisi"
+    },
+    {
+     "de": "didaktisch",
+     "mevcutTr": "öğretim yöntemine ilişkin"
+    }
+   ]
+  },
+  {
+   "id": "c1-l7",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Redaktionsgespräch",
+   "genre": "Toplantı",
+   "intro": "Hikâyenin devamı: yayınevinde çeviri tartışması masaya yatırılıyor. Kimin hangi çıkarı savunduğunu izle.",
+   "metin": "Programmleiter: Wir haben drei Optionen: schweigen, eine kurze Erwiderung, oder Miriam schreibt selbst. Ich bin für Option eins. In vier Wochen redet niemand mehr darüber.\nPresse: Das halte ich für falsch. Aussitzen funktioniert, wenn niemand nachlegt. Hier legen drei Feuilletons nach, und zwei davon haben Miriam gar nicht gelesen — die zitieren einander.\nMiriam: Und einer von ihnen hat recht.\nProgrammleiter: In welchem Punkt?\nMiriam: Bei den Kürzungen. Ich habe in drei Kapiteln lange Sätze zerlegt. Das war eine Entscheidung über den Text hinweg, und sie war falsch.\nProgrammleiter: Wenn wir das zugeben, ist die Schlagzeile morgen: „Verlag räumt Fehler ein.“\nPresse: Und wenn wir es nicht zugeben, ist die Schlagzeile in drei Wochen: „Verlag wusste davon.“ Die zweite ist teurer.\nMiriam: Mir geht es nicht um die Schlagzeile. Wenn die zweite Auflage die Stellen korrigiert und wir die Liste veröffentlichen, ist es kein Eingeständnis, sondern Arbeit. So lesen es die Leute, die den Text kennen.\nProgrammleiter: Und der andere Vorwurf? Dass Sie das Buch nicht hätten übersetzen sollen?\nMiriam: Dem widerspreche ich, und zwar öffentlich. Aber getrennt. Wenn ich beides in einem Text verteidige, klingt das Zugeständnis wie eine Taktik.\nPresse: Damit kann ich arbeiten.\nProgrammleiter: Gut. Dann Option drei — aber der Text geht vorher über meinen Tisch.",
+   "gloss": [
+    {
+     "de": "die Auflage",
+     "mevcutTr": "baskı",
+     "havuz": {
+      "tr": "tiraj",
+      "en": "circulation"
+     }
+    },
+    {
+     "de": "die Erwiderung",
+     "mevcutTr": "yanıt, karşılık"
+    },
+    {
+     "de": "die Deutungshoheit",
+     "mevcutTr": "yorum tekeli",
+     "havuz": {
+      "tr": "yorum tekeli",
+      "en": "interpretive authority"
+     }
+    },
+    {
+     "de": "eskalieren",
+     "mevcutTr": "tırmandırmak",
+     "havuz": {
+      "tr": "çığırından çıkmak",
+      "en": "to escalate"
+     }
+    },
+    {
+     "de": "die Fußnote",
+     "mevcutTr": "dipnot",
+     "havuz": {
+      "tr": "dipnot",
+      "en": "footnote"
+     }
+    },
+    {
+     "de": "aussitzen",
+     "mevcutTr": "oturup geçmesini beklemek"
+    },
+    {
+     "de": "der Imageschaden",
+     "mevcutTr": "itibar zararı"
+    },
+    {
+     "de": "einlenken",
+     "mevcutTr": "geri adım atmak",
+     "havuz": {
+      "tr": "geri adım atmak",
+      "en": "to relent"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-l8",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Vortrag: Warum Übersetzungen altern",
+   "genre": "Konferans",
+   "intro": "Neden orijinal eskimezken çevirisi eskir? Edebiyat üzerine bir konuşma — tezin nasıl kurulduğuna dikkat et.",
+   "metin": "Referent: Es gibt eine Beobachtung, die jede Leserin gemacht hat und die trotzdem selten erklärt wird: Originale altern langsamer als ihre Übersetzungen. Ein Roman von 1890 wirkt alt, aber stimmig. Seine Übersetzung von 1955 wirkt oft einfach falsch.\nReferent: Die übliche Erklärung lautet: Sprache verändert sich. Das ist richtig und erklärt zu wenig. Denn die Sprache des Originals verändert sich ebenso — nur hat das Original eine Instanz, die die Übersetzung nicht hat: Es ist selbst der Maßstab. Ein alter Satz von Fontane ist nicht veraltet, er ist Fontane.\nReferent: Eine Übersetzung dagegen ist immer auch ein Dokument ihrer eigenen Zeit. Sie enthält nicht nur den fremden Text, sondern die Vorstellung ihrer Epoche davon, wie Literatur zu klingen hat. Die Nachkriegsübersetzungen sind glatter, höflicher, moralisch eindeutiger als ihre Originale — nicht aus Unfähigkeit, sondern weil der Zeitgeschmack im Text verankert wurde.\nReferent: Daraus folgt, dass jede Übersetzung zwei Alterungsprozesse durchläuft: den der Sprache und den der Normen. Der zweite ist der schnellere.\nReferent: Das erklärt auch, warum Neuübersetzungen selten „genauer“ sind, wie oft behauptet wird. Sie sind anders falsch — nach unseren Maßstäben besser, für spätere Leser genauso datiert. Wer eine Neuübersetzung als endgültig verkauft, hat den eigenen Befund nicht verstanden.\nReferent: Ich schließe mit einer Einschränkung. Alles Gesagte gilt für Prosa. Bei Lyrik verhält es sich anders, und bei Gebrauchstexten gar nicht — eine Bedienungsanleitung altert nicht, sie wird ungültig. Wer meine These prüfen will, prüfe sie am Roman.",
+   "gloss": [
+    {
+     "de": "altern",
+     "mevcutTr": "eskimek, yaşlanmak",
+     "havuz": {
+      "tr": "yaşlanmak",
+      "en": "to age"
+     }
+    },
+    {
+     "de": "die Norm",
+     "mevcutTr": "norm",
+     "havuz": {
+      "tr": "norm",
+      "en": "norm"
+     }
+    },
+    {
+     "de": "der Zeitgeschmack",
+     "mevcutTr": "dönemin beğenisi"
+    },
+    {
+     "de": "die Vorlage",
+     "mevcutTr": "kaynak metin",
+     "havuz": {
+      "tr": "şablon",
+      "en": "template"
+     }
+    },
+    {
+     "de": "die Instanz",
+     "mevcutTr": "merci, otorite",
+     "havuz": {
+      "tr": "merci",
+      "en": "authority"
+     }
+    },
+    {
+     "de": "verankert",
+     "mevcutTr": "yerleşik, sabitlenmiş"
+    },
+    {
+     "de": "die Neuübersetzung",
+     "mevcutTr": "yeni çeviri"
+    },
+    {
+     "de": "unweigerlich",
+     "mevcutTr": "kaçınılmaz olarak",
+     "havuz": {
+      "tr": "kaçınılmaz olarak",
+      "en": "inevitably"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-l9",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Podiumsdiskussion: Wem gehört die Stadt?",
+   "genre": "Sınav formatı",
+   "intro": "C1 dinleme sınavının uzun formatı: üç konuşmacı, kısmen örtüşen görüşler. Kimin neyi kabul edip neyi reddettiğini ayır.",
+   "metin": "Moderatorin: Frau Kowal, Sie fordern strengere Regeln für Vermieter. Was genau?\nKowal: Zwei Dinge. Erstens ein wirksames Verbot von Leerstand über sechs Monate — mit Bußgeldern, die weh tun. Zweitens eine Obergrenze bei Neuvermietung, nicht nur bei bestehenden Verträgen. Ohne das zweite ist das erste wirkungslos.\nModeratorin: Herr Brandt?\nBrandt: Beim Leerstand bin ich sofort dabei. Wer eine Wohnung jahrelang leer stehen lässt, spekuliert, und dafür gibt es kein Argument. Bei der Obergrenze halte ich es für einen Fehler: Sie senkt die Rendite genau dort, wo wir Investitionen brauchen, nämlich im Bestand.\nKowal: Das ist das Standardargument, und es wird seit fünfzehn Jahren durch die Praxis nicht bestätigt. Saniert wird dort, wo man die Kosten weitergeben kann — nicht dort, wo es nötig ist.\nModeratorin: Frau Demir, Sie forschen dazu. Wer hat recht?\nDemir: Beide teilweise, was unbefriedigend klingt, aber der Datenlage entspricht. Mietobergrenzen wirken kurzfristig und zuverlässig für die, die drin wohnen. Sie senken mittelfristig die Zahl der angebotenen Wohnungen, und zwar messbar. Die eigentliche Frage ist deshalb nicht ob, sondern wie lange und mit welcher Begleitmaßnahme.\nBrandt: Das ist der Punkt: Es wird nie eine Begleitmaßnahme beschlossen.\nDemir: Da stimme ich Ihnen zu. In fast allen Fällen, die ich untersucht habe, wurde reguliert und nicht gebaut. Das ist aber ein politisches Versäumnis, kein ökonomisches Gesetz.\nKowal: Damit kann ich leben. Regulierung plus Neubau — nur eben nicht Neubau als Ausrede, um zwanzig Jahre nichts zu tun.",
+   "gloss": [
+    {
+     "de": "der Leerstand",
+     "mevcutTr": "boş duran konut",
+     "havuz": {
+      "tr": "boş kalma",
+      "en": "vacancy"
+     }
+    },
+    {
+     "de": "die Enteignung",
+     "mevcutTr": "kamulaştırma",
+     "havuz": {
+      "tr": "kamulaştırma",
+      "en": "expropriation"
+     }
+    },
+    {
+     "de": "die Rendite",
+     "mevcutTr": "getiri",
+     "havuz": {
+      "tr": "getiri",
+      "en": "yield"
+     }
+    },
+    {
+     "de": "der Bestand",
+     "mevcutTr": "mevcut stok"
+    },
+    {
+     "de": "die Nachverdichtung",
+     "mevcutTr": "mevcut alanda yoğunlaştırma"
+    },
+    {
+     "de": "der Anreiz",
+     "mevcutTr": "teşvik"
+    },
+    {
+     "de": "regulieren",
+     "mevcutTr": "düzenlemek",
+     "havuz": {
+      "tr": "düzenlemek",
+      "en": "to regulate"
+     }
+    },
+    {
+     "de": "die Umsetzung",
+     "mevcutTr": "uygulama"
+    }
+   ]
+  },
+  {
+   "id": "c1-l10",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Verhandlung mit dem Verlag",
+   "genre": "Görüşme",
+   "intro": "Serbest çalışanın en zor konuşması: telif ve koşullar. Miriam sonraki kitap için pazarlık ediyor.",
+   "metin": "Verlag: Wir bieten 24 Euro pro Normseite. Das ist unser Standard.\nMiriam: Für einen Text dieser Schwierigkeit ist das zu wenig. 28 wären angemessen. Und ich möchte über die Beteiligung sprechen.\nVerlag: Eine Beteiligung geben wir erst ab 5.000 verkauften Exemplaren.\nMiriam: Das letzte Buch hat 9.000 verkauft. Die Schwelle ist also nicht das Problem — die Frage ist der Satz danach.\nVerlag: 0,5 Prozent.\nMiriam: Üblich ist ein Prozent, und bei diesem Titel bringe ich die Debatte mit. Das ist Aufmerksamkeit, für die Sie sonst zahlen müssten.\nVerlag: Die Debatte war nicht ausschließlich angenehm.\nMiriam: Nein. Aber Sie haben die zweite Auflage verkauft, nicht trotz ihr.\nVerlag: Ich kann 26 und 0,75 Prozent. Beim Vorschuss bleiben wir bei der Hälfte bei Vertragsschluss.\nMiriam: Einverstanden — unter einer Bedingung: Mein Name kommt aufs Cover, nicht nur ins Impressum. Das kostet Sie nichts.\nVerlag: Es kostet uns eine Diskussion mit der Gestaltung. Aber gut. Aufs Cover.\nMiriam: Dann sind wir uns einig.",
+   "gloss": [
+    {
+     "de": "das Honorar",
+     "mevcutTr": "telif ücreti"
+    },
+    {
+     "de": "die Beteiligung",
+     "mevcutTr": "pay, hasılat payı",
+     "havuz": {
+      "tr": "pay",
+      "en": "stake"
+     }
+    },
+    {
+     "de": "die Normseite",
+     "mevcutTr": "standart sayfa (çeviri birimi)"
+    },
+    {
+     "de": "die Nennung",
+     "mevcutTr": "adının anılması"
+    },
+    {
+     "de": "der Vorschuss",
+     "mevcutTr": "avans"
+    },
+    {
+     "de": "die Klausel",
+     "mevcutTr": "madde",
+     "havuz": {
+      "tr": "sözleşme maddesi",
+      "en": "clause"
+     }
+    },
+    {
+     "de": "nachverhandeln",
+     "mevcutTr": "yeniden pazarlık etmek"
+    },
+    {
+     "de": "das Zugeständnis",
+     "mevcutTr": "taviz",
+     "havuz": {
+      "tr": "taviz",
+      "en": "concession"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-l11",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Podcast: Humor auf Deutsch",
+   "genre": "Podcast",
+   "intro": "„Almanların mizah anlayışı yok“ klişesi. Bir dilbilimci bunun neden bir çeviri sorunu olduğunu anlatıyor.",
+   "metin": "Host: Das Klischee ist international: Deutsche haben keinen Humor. Woher kommt das?\nLinguistin: Zum großen Teil aus der Struktur der Sprache — und aus dem Englischen als Vergleichsmaßstab. Britischer Humor lebt von Untertreibung und davon, dass man am Ende eines Satzes noch nicht weiß, wohin er läuft. Das Deutsche stellt das Verb oft ans Ende oder trennt es. Der Satz ist erst spät entschieden, aber wenn er entschieden ist, ist er eindeutig.\nHost: Das klingt eher nach einem Vorteil für Pointen.\nLinguistin: Für die Pointe ja. Für die Ironie nein. Ironie braucht Mehrdeutigkeit, die stehen bleibt. Ein deutscher Satz erzwingt Klarheit — deshalb wird Ironie im Deutschen häufiger markiert, durch Ton, durch Partikeln, notfalls durch ein „ironisch gemeint“. Was markiert ist, wirkt weniger elegant.\nHost: Und die Partikeln? „doch“, „mal“, „eben“ …\nLinguistin: Das ist das eigentlich Komische am Klischee. Das Deutsche hat eines der feinsten Systeme, um Haltung in einen Satz zu legen — genau das, was Humor braucht. „Das hast du ja toll gemacht“ ist ohne „ja“ ein Lob. Nur überlebt das keine Übersetzung. Wer Deutsche auf Englisch erlebt, erlebt sie ohne ihre Werkzeuge.\nHost: Also ein Übersetzungsproblem, kein Charakterproblem.\nLinguistin: Weitgehend, ja. Wobei ich eine Sache einräume: Es gibt eine Vorliebe für Wortspiele, die anderswo als schwach gilt. Kalauer haben hier eine Toleranz, die ich selbst nicht ganz erklären kann.",
+   "gloss": [
+    {
+     "de": "der Humor",
+     "mevcutTr": "mizah",
+     "havuz": {
+      "tr": "espri anlayışı",
+      "en": "sense of humor"
+     }
+    },
+    {
+     "de": "die Ironie",
+     "mevcutTr": "ironi",
+     "havuz": {
+      "tr": "ironi",
+      "en": "irony"
+     }
+    },
+    {
+     "de": "die Untertreibung",
+     "mevcutTr": "küçümseyerek anlatma",
+     "havuz": {
+      "tr": "hafife alma",
+      "en": "understatement"
+     }
+    },
+    {
+     "de": "das Wortspiel",
+     "mevcutTr": "kelime oyunu",
+     "havuz": {
+      "tr": "kelime oyunu",
+      "en": "pun"
+     }
+    },
+    {
+     "de": "eindeutig",
+     "mevcutTr": "tek anlamlı",
+     "havuz": {
+      "tr": "net",
+      "en": "clear"
+     }
+    },
+    {
+     "de": "die Pointe",
+     "mevcutTr": "espri noktası"
+    },
+    {
+     "de": "die Verzögerung",
+     "mevcutTr": "gecikme",
+     "havuz": {
+      "tr": "gecikme",
+      "en": "delay"
+     }
+    },
+    {
+     "de": "das Vorurteil",
+     "mevcutTr": "önyargı",
+     "havuz": {
+      "tr": "önyargı",
+      "en": "prejudice"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-l12",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Die Preisrede",
+   "genre": "Konuşma",
+   "intro": "Hikâyenin sonu: Miriam çeviri ödülü alıyor. Bir teşekkür konuşmasının nasıl kurulduğunu ve nerede risk aldığını dinle.",
+   "metin": "Miriam: Vielen Dank. Ich habe lange überlegt, ob ich diesen Preis annehmen kann, und ich will offen sagen, warum.\nMiriam: Vor einem Jahr wurde mir öffentlich vorgeworfen, dieses Buch nicht übersetzen zu dürfen. Ein Teil dieser Kritik war unfair, und ein Teil war richtig. Wenn ich heute hier stehe und nur den fairen Teil erwähne, mache ich es mir zu leicht.\nMiriam: Der richtige Teil lautete: Ich habe an drei Stellen geglättet, weil ich dem deutschen Publikum weniger zugetraut habe, als es verdient. Das ist ein Fehler, den man nicht mit Können erklären kann, sondern nur mit Vorsicht. Ich habe ihn korrigiert, und die Liste der Korrekturen ist veröffentlicht. Ich sage das hier, weil ein Preis der schlechteste Moment ist, um so etwas zu verschweigen.\nMiriam: Der unfaire Teil lautete: Wer bestimmte Erfahrungen nicht gemacht hat, soll schweigen. Dem widerspreche ich weiterhin. Übersetzung ist keine Vertretung. Sie ist der Versuch, jemanden hörbar zu machen, der ohne sie nicht gehört würde — und dieser Versuch ist immer ein Eingriff. Wer das nicht aushält, sollte keine Bücher übersetzen. Wer es nicht bemerkt, erst recht nicht.\nMiriam: Ich danke der Jury dafür, dass sie ein Buch ausgezeichnet hat, über das gestritten wurde. Das ist mutiger, als es klingt: Es wäre leichter gewesen, einen unstrittigen Titel zu wählen.\nMiriam: Und ich danke einer Person, die heute nicht hier sein kann, weil sie 2019 gestorben ist. Sie hat den Roman geschrieben, für den ich hier stehe. Der Preis gehört ihr. Ich habe ihn nur ins Deutsche gebracht.",
+   "gloss": [
+    {
+     "de": "die Preisrede",
+     "mevcutTr": "ödül konuşması"
+    },
+    {
+     "de": "die Jury",
+     "mevcutTr": "jüri",
+     "havuz": {
+      "tr": "jüri",
+      "en": "jury"
+     }
+    },
+    {
+     "de": "verdanken",
+     "mevcutTr": "borçlu olmak"
+    },
+    {
+     "de": "die Sichtbarkeit",
+     "mevcutTr": "görünürlük"
+    },
+    {
+     "de": "die Zumutung",
+     "mevcutTr": "külfet, katlanılası şey",
+     "havuz": {
+      "tr": "eziyet",
+      "en": "imposition"
+     }
+    },
+    {
+     "de": "der Anlass",
+     "mevcutTr": "vesile"
+    },
+    {
+     "de": "beharren",
+     "mevcutTr": "ısrar etmek",
+     "havuz": {
+      "tr": "ısrar etmek",
+      "en": "to insist"
+     }
+    },
+    {
+     "de": "die Genugtuung",
+     "mevcutTr": "tatmin, hakkın teslimi"
+    }
+   ]
+  }
+ ]
+}

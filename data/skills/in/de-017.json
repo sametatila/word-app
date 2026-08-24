@@ -1,0 +1,594 @@
+{
+ "paket": "de-017",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "c1-r1",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Die Verantwortungslücke",
+   "genre": "Deneme",
+   "intro": "Algoritmalar karar veriyor — ama yanıldıklarında sorumluluğu kim üstleniyor? Bu fikir yazısında yazarın savını ve ince ayrımlarını yakala.",
+   "metin": "Ob bei der Vergabe von Krediten, der Vorauswahl von Bewerbungen oder der Diagnose seltener Krankheiten – algorithmische Systeme treffen längst Entscheidungen, die tief in Lebensläufe eingreifen. Ihre Befürworter verweisen auf Effizienz und vermeintliche Objektivität; wer je einem voreingenommenen Sachbearbeiter gegenübersaß, mag der Maschine sogar mehr Fairness zutrauen. Doch dieser Vertrauensvorschuss beruht auf einer folgenreichen Verwechslung: Rechenleistung ist nicht Urteilskraft.\n\nDas Kernproblem lässt sich als Verantwortungslücke beschreiben. Irrt ein menschlicher Entscheider, kann er zur Rechenschaft gezogen werden; irrt ein lernendes System, verteilt sich die Verantwortung auf Entwickler, Betreiber und Datenlieferanten, bis sie am Ende niemandem mehr zuzurechnen ist. Die Technikphilosophin Judith Aschmann hat dafür das Bild der „organisierten Unverantwortlichkeit“ geprägt: Je komplexer das System, desto leichter fällt es jedem Beteiligten, auf die anderen zu verweisen.\n\nEmpirisch ist das Problem keineswegs marginal. Eine Untersuchung des Karlsruher Instituts für Technikfolgenabschätzung wertete im vergangenen Jahr rund 1.200 automatisierte Kreditentscheidungen aus und stellte fest, dass Antragsteller aus strukturschwachen Stadtteilen bei gleicher Bonität signifikant häufiger abgelehnt wurden. Der Fehler lag nicht im Code, sondern in den historischen Daten, die vergangene Diskriminierung schlicht fortschrieben. Besonders brisant: Die Betroffenen erfuhren in der Regel gar nicht, dass eine Maschine über sie geurteilt hatte – ein Widerspruch war damit faktisch ausgeschlossen.\n\nDaraus folgt nicht, algorithmische Systeme zu verbieten; eine solche Forderung wäre so wohlfeil wie wirkungslos. Zu verlangen ist vielmehr eine einklagbare Rechenschaftspflicht: Wer automatisierte Entscheidungen einsetzt, muss sie erklären, unabhängig überprüfen lassen und im Zweifel revidieren können. Die europäische KI-Verordnung weist in diese Richtung, bleibt bei den Sanktionen jedoch halbherzig. Solange sich Verantwortung im Geflecht der Zuständigkeiten verliert, gilt: Nicht die künstliche Intelligenz ist das eigentliche Risiko, sondern die menschliche Bequemlichkeit, ihr das Urteil zu überlassen.",
+   "gloss": [
+    {
+     "de": "die Vergabe",
+     "mevcutTr": "verme, tahsis"
+    },
+    {
+     "de": "die Urteilskraft",
+     "mevcutTr": "muhakeme gücü"
+    },
+    {
+     "de": "voreingenommen",
+     "mevcutTr": "önyargılı",
+     "havuz": {
+      "tr": "önyargılı",
+      "en": "biased"
+     }
+    },
+    {
+     "de": "der Vertrauensvorschuss",
+     "mevcutTr": "peşin güven"
+    },
+    {
+     "de": "die Rechenschaft",
+     "mevcutTr": "hesap verme",
+     "havuz": {
+      "tr": "hesap verme",
+      "en": "accountability"
+     }
+    },
+    {
+     "de": "jemandem etwas zurechnen",
+     "mevcutTr": "birine atfetmek"
+    },
+    {
+     "de": "die Bonität",
+     "mevcutTr": "kredi itibarı",
+     "havuz": {
+      "tr": "ödeme gücü",
+      "en": "creditworthiness"
+     }
+    },
+    {
+     "de": "strukturschwach",
+     "mevcutTr": "yapısal olarak zayıf (bölge)",
+     "havuz": {
+      "tr": "yapısal olarak zayıf",
+      "en": "structurally weak"
+     }
+    },
+    {
+     "de": "etwas fortschreiben",
+     "mevcutTr": "sürdürmek, devam ettirmek"
+    },
+    {
+     "de": "wohlfeil",
+     "mevcutTr": "ucuz, kolaycı (mecazi)"
+    },
+    {
+     "de": "einklagbar",
+     "mevcutTr": "dava yoluyla talep edilebilir"
+    },
+    {
+     "de": "etwas revidieren",
+     "mevcutTr": "gözden geçirip düzeltmek"
+    }
+   ]
+  },
+  {
+   "id": "c1-r2",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Ganztagsschule: Mehr als Aufbewahrung?",
+   "genre": "Bilimsel makale",
+   "intro": "Almanya'daki tam gün okul reformunu inceleyen bu makalede araştırma bulgularıyla siyasi vaatler arasındaki gerilimi çözümle.",
+   "metin": "Ab dem Schuljahr 2026/27 haben Grundschulkinder in Deutschland einen Rechtsanspruch auf Ganztagsbetreuung – ein bildungspolitisches Großprojekt, das Eltern entlasten und Chancengleichheit fördern soll. Doch während die Kommunen händeringend Räume und Personal suchen, mehren sich die Zweifel, ob der Ausbau hält, was die Politik verspricht.\n\nNeue Befunde liefert die Langzeitstudie „LernZeit“ des Bamberger Instituts für Bildungsverläufe, die seit 2018 rund 9.400 Schülerinnen und Schüler begleitet. Das zentrale Ergebnis wirkt zunächst ernüchternd: Der bloße Besuch einer Ganztagsschule verbessert die Leistungen in Deutsch und Mathematik im Durchschnitt kaum. Entscheidend sei nicht die dort verbrachte Zeit, sondern deren Gestaltung, betont Studienleiterin Carolin Weidner. Erst wenn Unterricht, Förderung und Freizeitangebote systematisch verzahnt würden und qualifiziertes Personal die Lernbegleitung übernehme, zeigten sich messbare Effekte – dann allerdings deutliche: Kinder aus einkommensschwachen Familien holten in gut strukturierten Ganztagsschulen binnen zwei Jahren etwa ein halbes Schuljahr auf.\n\nGenau hier liegt das Dilemma. Nach Schätzungen des Deutschen Jugendinstituts fehlen bis 2030 mindestens 30.000 pädagogische Fachkräfte, um den Rechtsanspruch überhaupt zu erfüllen – von Qualität ist dabei noch gar nicht die Rede. Viele Träger behelfen sich bereits heute mit ungelerntem Personal und gekürzten Angeboten; mancherorts besteht der „Ganztag“ aus wenig mehr als beaufsichtigtem Warten.\n\nKritiker sprechen deshalb von einem drohenden Etikettenschwindel: Wo Ganztag draufstehe, dürfe nicht bloße Aufbewahrung drinstecken. Die Studienautoren plädieren dafür, den weiteren Ausbau an verbindliche Qualitätsstandards zu koppeln, statt allein die Zahl der Plätze zu zählen. Andernfalls drohe ein bitteres Paradox: Gut situierte Familien wichen auf private Angebote aus, während öffentliche Schulen in benachteiligten Vierteln mit unbesetzten Stellen kämpften – und ausgerechnet jene Kinder leer ausgingen, denen der Ganztag am meisten nützen könnte.",
+   "gloss": [
+    {
+     "de": "der Rechtsanspruch",
+     "mevcutTr": "yasal hak",
+     "havuz": {
+      "tr": "yasal hak",
+      "en": "legal claim"
+     }
+    },
+    {
+     "de": "händeringend",
+     "mevcutTr": "büyük bir çaresizlikle, acilen"
+    },
+    {
+     "de": "ernüchternd",
+     "mevcutTr": "hayal kırıklığına uğratan"
+    },
+    {
+     "de": "etwas verzahnen",
+     "mevcutTr": "birbirine geçirmek, bütünleştirmek"
+    },
+    {
+     "de": "aufholen",
+     "mevcutTr": "arayı kapatmak",
+     "havuz": {
+      "tr": "açığı kapatmak",
+      "en": "to catch up"
+     }
+    },
+    {
+     "de": "die Fachkraft",
+     "mevcutTr": "uzman eleman",
+     "havuz": {
+      "tr": "nitelikli eleman",
+      "en": "skilled worker"
+     }
+    },
+    {
+     "de": "der Etikettenschwindel",
+     "mevcutTr": "etiket aldatmacası",
+     "havuz": {
+      "tr": "etiket aldatmacası",
+      "en": "false labeling"
+     }
+    },
+    {
+     "de": "die Aufbewahrung",
+     "mevcutTr": "muhafaza; (burada) çocuk bekletme"
+    },
+    {
+     "de": "verbindlich",
+     "mevcutTr": "bağlayıcı",
+     "havuz": {
+      "tr": "bağlayıcı",
+      "en": "binding"
+     }
+    },
+    {
+     "de": "leer ausgehen",
+     "mevcutTr": "eli boş kalmak"
+    },
+    {
+     "de": "auf etwas ausweichen",
+     "mevcutTr": "bir alternatife yönelmek"
+    }
+   ]
+  },
+  {
+   "id": "c1-r3",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Arbeitsmarkt 2035: Die Lücke",
+   "genre": "Kurumsal rapor",
+   "intro": "Bir araştırma merkezinin işgücü piyasası raporundan bu bölümde sayıları, bölgesel farkları ve önerilen önlem paketini takip et.",
+   "metin": "Der deutsche Arbeitsmarkt steht vor der tiefgreifendsten Umwälzung seit der Wiedervereinigung. Nach Berechnungen des Mannheimer Zentrums für Arbeitsmarktanalysen scheiden bis 2035 rund 7,2 Millionen Erwerbstätige altersbedingt aus dem Berufsleben aus, während nur etwa 5,1 Millionen junge Menschen nachrücken. Die Lücke von über zwei Millionen Arbeitskräften trifft eine Volkswirtschaft, deren Wohlstandsmodell auf industrieller Wertschöpfung und einem dichten Netz mittelständischer Betriebe beruht.\n\nDie Folgen sind bereits heute messbar. In der Pflege bleibt gegenwärtig jede sechste Stelle unbesetzt; im Handwerk warten Kunden im Schnitt neun Wochen auf einen Termin. Bemerkenswert ist dabei die regionale Asymmetrie: Während Ballungsräume wie München oder Leipzig ihre Erwerbsbevölkerung durch Zuzug weitgehend stabil halten, verlieren ländliche Kreise vor allem in Ostdeutschland bis 2035 voraussichtlich ein Viertel ihrer Arbeitskräfte – mit entsprechenden Folgen für Nahversorgung, Steuerbasis und kommunale Infrastruktur.\n\nAls Gegenmittel wird häufig die Automatisierung angeführt. Der Bericht dämpft jedoch überzogene Erwartungen: Zwar ließen sich nach den Modellrechnungen bis zu 1,5 Millionen Stellen durch Digitalisierung und Robotik kompensieren, doch konzentriere sich dieses Potenzial auf standardisierbare Tätigkeiten in Industrie und Verwaltung. In personennahen Dienstleistungen – der Pflege, der Erziehung, dem Gesundheitswesen – stoße die Technik an offenkundige Grenzen; gerade dort aber wachse der Bedarf am schnellsten.\n\nDie Autoren plädieren daher für ein Maßnahmenbündel: eine qualifizierte Zuwanderung von jährlich mindestens 400.000 Personen, eine höhere Erwerbsbeteiligung von Frauen durch den konsequenten Ausbau der Kinderbetreuung sowie flexiblere Übergänge in den Ruhestand. Keine dieser Stellschrauben reiche für sich genommen aus; erst ihr Zusammenspiel könne die Lücke annähernd schließen. Der Bericht endet mit einer unbequemen Feststellung: Der demografische Wandel sei keine ferne Prognose mehr, sondern betriebswirtschaftlicher Alltag – und wer ihn weiterhin als Zukunftsthema behandle, habe die Gegenwart nicht verstanden.",
+   "gloss": [
+    {
+     "de": "die Umwälzung",
+     "mevcutTr": "köklü dönüşüm"
+    },
+    {
+     "de": "altersbedingt",
+     "mevcutTr": "yaşa bağlı"
+    },
+    {
+     "de": "nachrücken",
+     "mevcutTr": "yerine gelmek, arkadan yetişmek",
+     "havuz": {
+      "tr": "yerine geçmek",
+      "en": "to move up"
+     }
+    },
+    {
+     "de": "die Wertschöpfung",
+     "mevcutTr": "katma değer üretimi",
+     "havuz": {
+      "tr": "katma değer",
+      "en": "value creation"
+     }
+    },
+    {
+     "de": "der Ballungsraum",
+     "mevcutTr": "metropol bölgesi",
+     "havuz": {
+      "tr": "metropol bölgesi",
+      "en": "metropolitan area"
+     }
+    },
+    {
+     "de": "der Zuzug",
+     "mevcutTr": "göçle gelen nüfus",
+     "havuz": {
+      "tr": "gelip yerleşme",
+      "en": "influx"
+     }
+    },
+    {
+     "de": "die Nahversorgung",
+     "mevcutTr": "yerel temel hizmetler"
+    },
+    {
+     "de": "überzogen",
+     "mevcutTr": "abartılı"
+    },
+    {
+     "de": "personennah",
+     "mevcutTr": "insana dönük (hizmet)"
+    },
+    {
+     "de": "die Erwerbsbeteiligung",
+     "mevcutTr": "işgücüne katılım"
+    },
+    {
+     "de": "die Stellschraube",
+     "mevcutTr": "ayar vidası; müdahale kaldıracı"
+    },
+    {
+     "de": "das Zusammenspiel",
+     "mevcutTr": "birlikte işleyiş"
+    }
+   ]
+  },
+  {
+   "id": "c1-r4",
+   "skill": "reading",
+   "level": "C1",
+   "title": "„Kein Kind denkt in nur einer Sprache“",
+   "genre": "Röportaj",
+   "intro": "Dil bilimci Prof. Ayla Demir'le çok dillilik ve kimlik üzerine bu röportajda konuşmacının tezlerini ve itirazlara verdiği yanıtları izle.",
+   "metin": "Frau Professor Demir, Sie behaupten, Mehrsprachigkeit werde in Deutschland noch immer als Problem behandelt. Ist dieser Vorwurf nicht längst überholt?\n\nDemir: Leider nein. In Sonntagsreden gilt Mehrsprachigkeit als Reichtum, im Schulalltag dagegen oft als Störfaktor. Entscheidend ist dabei, um welche Sprachen es geht: Ein Kind, das Englisch und Französisch spricht, wird bewundert; ein Kind, das Türkisch oder Arabisch mitbringt, gilt schnell als förderbedürftig. Das ist keine Frage der Sprachen selbst, sondern ihres gesellschaftlichen Prestiges.\n\nKritiker wenden ein, dass Kinder zuerst sicher Deutsch lernen sollten, bevor die Familiensprache gefördert wird.\n\nDemir: Diese Entgegensetzung verkennt, wie Spracherwerb funktioniert. Vier Jahrzehnte Forschung belegen: Wer seine Herkunftssprache gut beherrscht, lernt die Umgebungssprache nicht langsamer, sondern in der Regel schneller, weil grammatisches Wissen und Begriffsbildung übertragbar sind. Unsere Frankfurter Längsschnittstudie mit 2.300 Grundschulkindern zeigt zudem: Wird die Familiensprache systematisch einbezogen, verbessern sich mittelfristig auch die Deutschleistungen. Was Kindern tatsächlich schadet, ist nicht die zweite Sprache, sondern das Signal, ein Teil ihrer selbst sei in der Schule unerwünscht.\n\nWas bedeutet das für die Identität der Kinder?\n\nDemir: Sprache ist nie nur Werkzeug, sie ist Selbstverständnis. Wer die Sprache der Großeltern geringschätzt, geringschätzt einen Teil der Biografie des Kindes. Viele meiner Studierenden erzählen, sie hätten sich jahrelang für ihr Türkisch geschämt und es erst an der Universität als Ressource entdeckt. Diese verlorenen Jahre sind vermeidbar.\n\nWas müsste sich konkret ändern?\n\nDemir: Dreierlei. Herkunftssprachlicher Unterricht muss reguläres, benotetes Schulfach werden statt Randstunde am Nachmittag. Lehrkräfte brauchen in der Ausbildung verpflichtende Module zur Mehrsprachigkeitsdidaktik. Und wir sollten aufhören, Bildungssprache und Familiensprache gegeneinander auszuspielen: Ziel ist nicht weniger Deutsch, sondern mehr Sprachbewusstsein insgesamt. Ein Kind, das zwischen Registern und Sprachen wechseln kann, hat genau die Kompetenz erworben, die wir sonst teuer in Fremdsprachenkursen einzukaufen versuchen.",
+   "gloss": [
+    {
+     "de": "die Mehrsprachigkeit",
+     "mevcutTr": "çok dillilik"
+    },
+    {
+     "de": "das Defizit",
+     "mevcutTr": "eksiklik",
+     "havuz": {
+      "tr": "açık",
+      "en": "deficit"
+     }
+    },
+    {
+     "de": "die Herkunftssprache",
+     "mevcutTr": "köken dili",
+     "havuz": {
+      "tr": "köken dili",
+      "en": "heritage language"
+     }
+    },
+    {
+     "de": "etwas belegen",
+     "mevcutTr": "kanıtlamak"
+    },
+    {
+     "de": "das Sprachprestige",
+     "mevcutTr": "dil prestiji"
+    },
+    {
+     "de": "geringschätzen",
+     "mevcutTr": "küçümsemek"
+    },
+    {
+     "de": "das Sprachregister",
+     "mevcutTr": "dil kesiti, register"
+    },
+    {
+     "de": "die Bildungssprache",
+     "mevcutTr": "akademik dil"
+    },
+    {
+     "de": "etwas verkennen",
+     "mevcutTr": "yanlış değerlendirmek, görememek"
+    },
+    {
+     "de": "die Ressource",
+     "mevcutTr": "kaynak",
+     "havuz": {
+      "tr": "kaynak",
+      "en": "resource"
+     }
+    },
+    {
+     "de": "das Selbstverständnis",
+     "mevcutTr": "öz algı, kendini tanımlama",
+     "havuz": {
+      "tr": "kendini algılayış",
+      "en": "self-conception"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-r5",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Das Museum als Mitmachzone",
+   "genre": "Kültür eleştirisi",
+   "intro": "Bir kültür eleştirmeni, müzelerdeki „katılım“ modasını mercek altına alıyor — eleştirinin nerede keskinleştiğine, nerede kendini sınırladığına dikkat et.",
+   "metin": "Kaum ein Begriff wird in deutschen Museen derzeit häufiger beschworen als „Teilhabe“. Besucher sollen nicht mehr betrachten, sondern mitmachen: Selfie-Stationen im Barocksaal, Abstimmungsterminals neben der Videokunst, Workshops, in denen jeder „seine eigene Geschichte“ erzählen darf. Die Verheißung dahinter ist sympathisch – das Museum, einst Tempel des Bildungsbürgertums, öffnet sich endlich allen. Wer wollte dagegen sein?\n\nUnd tatsächlich: Die Kritik an der alten Ehrfurchtsarchitektur war berechtigt. Museen, deren Schwellenangst höher lag als ihre Besucherzahlen, haben ihren öffentlichen Auftrag verfehlt. Dass Häuser wie das Essener Industriemuseum Zollstern heute Schichtarbeiter, Schulklassen und Nachbarschaftsinitiativen erreichen, ist ein Gewinn, den niemand ernsthaft bestreiten kann.\n\nDoch inzwischen kippt die Bewegung ins Gegenteil. Wo jede Ausstellung zur „Erlebniswelt“ bespielt wird, verschwindet ausgerechnet das, was das Museum von allen anderen Orten unterscheidet: die Erlaubnis zur langsamen, konzentrierten Wahrnehmung. Kunst ist auch eine Zumutung – sie verlangt Zeit, Irritation, mitunter Langeweile, aus der erst Aufmerksamkeit entsteht. Ein Haus, das jede Reibung durch Interaktionsangebote glättet, behandelt seine Besucher nicht als mündiges Publikum, sondern als Kundschaft, deren Verweildauer optimiert werden muss. Das Ergebnis sind Ausstellungen, die sich weltweit zum Verwechseln ähneln: dieselben Touchscreens, dieselben Mitmachwände, dieselbe freundliche Belanglosigkeit.\n\nDie Ursache liegt weniger bei den Kuratoren als bei den Kennzahlen. Wer seine Förderung über Besucherstatistiken und „Interaktionsraten“ rechtfertigen muss, programmiert eben das, was sich zählen lässt. Teilhabe aber ist kein Selbstzweck und schon gar kein Klickmaß; sie bemisst sich daran, ob Menschen das Haus anders verlassen, als sie es betreten haben. Ein Museum, das seine Eigenzeit preisgibt, um niemanden zu überfordern, unterfordert am Ende alle – und verspielt gerade jenes Vertrauen in die Urteilsfähigkeit seines Publikums, das echte Öffnung erst möglich machen würde.",
+   "gloss": [
+    {
+     "de": "die Teilhabe",
+     "mevcutTr": "katılım, pay alma",
+     "havuz": {
+      "tr": "katılım",
+      "en": "participation"
+     }
+    },
+    {
+     "de": "die Verheißung",
+     "mevcutTr": "vaat"
+    },
+    {
+     "de": "die Schwellenangst",
+     "mevcutTr": "eşik korkusu, çekingenlik"
+    },
+    {
+     "de": "etwas bespielen",
+     "mevcutTr": "(bir mekânı) etkinlikle doldurmak"
+    },
+    {
+     "de": "die Zumutung",
+     "mevcutTr": "zorlayıcı talep, külfet",
+     "havuz": {
+      "tr": "eziyet",
+      "en": "imposition"
+     }
+    },
+    {
+     "de": "die Kontemplation",
+     "mevcutTr": "derin düşünme, temaşa"
+    },
+    {
+     "de": "verwechselbar",
+     "mevcutTr": "birbirinden ayırt edilemez"
+    },
+    {
+     "de": "die Kennzahl",
+     "mevcutTr": "performans göstergesi",
+     "havuz": {
+      "tr": "gösterge",
+      "en": "metric"
+     }
+    },
+    {
+     "de": "der Selbstzweck",
+     "mevcutTr": "kendinde amaç",
+     "havuz": {
+      "tr": "kendi başına amaç",
+      "en": "end in itself"
+     }
+    },
+    {
+     "de": "etwas preisgeben",
+     "mevcutTr": "feda etmek, elden çıkarmak"
+    },
+    {
+     "de": "die Ermäßigung",
+     "mevcutTr": "indirim",
+     "havuz": {
+      "tr": "indirim",
+      "en": "reduction"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-r6",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Slowbalisierung: Das Ende einer Illusion?",
+   "genre": "Analiz",
+   "intro": "Küreselleşme geri mi çekiliyor, yoksa biçim mi değiştiriyor? Bu ekonomi analizinde yazarın verilerle kurduğu ayrımları çöz.",
+   "metin": "Als im Frühjahr 2021 ein quergestelltes Containerschiff den Suezkanal blockierte, wurde das Bild binnen Stunden zur Metapher: Die Weltwirtschaft, so schien es, hatte sich in ihrer eigenen Effizienz verkeilt. Seither hat das Schlagwort von der „Deglobalisierung“ Konjunktur. Pandemie, Kriege und Handelskonflikte, heißt es, beendeten das Zeitalter der grenzenlosen Arbeitsteilung; die Zukunft gehöre der heimischen Fabrik. Doch ein nüchterner Blick auf die Daten erzählt eine kompliziertere Geschichte.\n\nRichtig ist: Der Welthandel wächst seit gut einem Jahrzehnt langsamer als die Weltwirtschaft – Ökonomen sprechen von „Slowbalisierung“. Richtig ist auch, dass Regierungen Halbleiter, Arzneimittel und Batterien inzwischen als strategische Güter behandeln und ihre Produktion mit Milliardensubventionen ins eigene Land holen. Von einer breiten Rückverlagerung kann dennoch keine Rede sein. Nach einer Auswertung des Kieler Instituts für Weltwirtschaftsforschung haben von 1.800 befragten europäischen Industrieunternehmen lediglich vier Prozent Produktion tatsächlich zurückgeholt; mehr als ein Drittel hat stattdessen seine Lieferanten diversifiziert – weg von der Konzentration auf ein einzelnes Land, hin zu einem Netz aus mehreren Standorten.\n\nWas sich verändert, ist also weniger das Ausmaß als die Landkarte der Verflechtung. An die Stelle der reinen Kostenlogik tritt eine geopolitische: Gehandelt wird zunehmend mit Partnern, die als politisch verlässlich gelten – „Friendshoring“ nennt das die Fachdebatte. Für Deutschland, dessen Wohlstand wie in kaum einem anderen Land am Export hängt, ist das eine unbequeme Neuordnung: Sicherheit kostet Effizienz, und die Rechnung zahlen zunächst die Verbraucher.\n\nDie vollmundige Rede vom Ende der Globalisierung verfehlt daher den Kern. Die weltwirtschaftliche Verflechtung verschwindet nicht, sie wird neu sortiert – langsamer, teurer, politischer. Wer diesen Unterschied ignoriert, dem entgehen die eigentlichen Fragen: Welche Abhängigkeiten sind tragbar, welche nicht? Und wer entscheidet darüber – Märkte oder Parlamente?",
+   "gloss": [
+    {
+     "de": "die Lieferkette",
+     "mevcutTr": "tedarik zinciri",
+     "havuz": {
+      "tr": "tedarik zinciri",
+      "en": "supply chain"
+     }
+    },
+    {
+     "de": "die Arbeitsteilung",
+     "mevcutTr": "iş bölümü",
+     "havuz": {
+      "tr": "iş bölümü",
+      "en": "division of labor"
+     }
+    },
+    {
+     "de": "das Schlagwort",
+     "mevcutTr": "moda kavram, slogan"
+    },
+    {
+     "de": "die Rückverlagerung",
+     "mevcutTr": "üretimi geri taşıma"
+    },
+    {
+     "de": "stagnieren",
+     "mevcutTr": "durağanlaşmak",
+     "havuz": {
+      "tr": "yerinde saymak",
+      "en": "to stagnate"
+     }
+    },
+    {
+     "de": "die Verflechtung",
+     "mevcutTr": "iç içe geçmişlik",
+     "havuz": {
+      "tr": "iç içe geçme",
+      "en": "entanglement"
+     }
+    },
+    {
+     "de": "geopolitisch",
+     "mevcutTr": "jeopolitik"
+    },
+    {
+     "de": "die Abhängigkeit",
+     "mevcutTr": "bağımlılık",
+     "havuz": {
+      "tr": "bağımlılık",
+      "en": "dependence"
+     }
+    },
+    {
+     "de": "etwas diversifizieren",
+     "mevcutTr": "çeşitlendirmek"
+    },
+    {
+     "de": "die Standortentscheidung",
+     "mevcutTr": "yer seçimi kararı"
+    },
+    {
+     "de": "vollmundig",
+     "mevcutTr": "iddialı, abartılı (söylem)"
+    },
+    {
+     "de": "die Neuordnung",
+     "mevcutTr": "yeniden düzenleme"
+    }
+   ]
+  },
+  {
+   "id": "c1-r7",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Der Auftrag",
+   "genre": "Deneme",
+   "intro": "Çevirmen Miriam, zor bir kitabı üstlenip üstlenmemeyi düşünüyor. Kendi mesleği üzerine yazdığı bu deneme, C1'de takip edeceğin hikâyenin başlangıcı.",
+   "metin": "Der Verlag hat angerufen. Es geht um einen Roman aus dem Libanon, 340 Seiten, drei Monate Zeit, und die Autorin ist tot.\n\nMan hält das für einen Vorteil. Niemand widerspricht, niemand ruft nachts an und fragt, warum ein Satz jetzt anders klingt. In Wahrheit ist es das Gegenteil: Wo keine Autorin mehr antwortet, entscheidet die Übersetzerin allein, und diese Freiheit ist eine Zumutung.\n\nDenn die alte Frage — Treue oder Klang — ist falsch gestellt. Es gibt keine treue Übersetzung, die nicht klingt, weil ein Satz, der im Deutschen hölzern steht, im Arabischen eben nicht hölzern gestanden hat. Wer wörtlich überträgt, überträgt gerade nicht das, was da war: Er überträgt die Wörter und verliert den Ton. Und wer nur den Ton sucht, schreibt am Ende sein eigenes Buch.\n\nDazu kommt ein zweites Problem, über das öffentlich selten gesprochen wird. Dieser Roman spielt in einem Krieg, den ich nicht erlebt habe, in einer Stadt, in der ich zwei Wochen war. Ich kann die Sprache. Ob ich den Widerhall höre, den ein bestimmter Straßenname bei einer Leserin in Beirut auslöst, weiß ich nicht — und ich werde es nicht wissen.\n\nMan könnte daraus schließen, dass ich absagen sollte. Ich glaube, das wäre die bequemste und die falscheste Antwort. Nicht zu übersetzen heißt nicht, den Text zu schützen; es heißt, ihn unlesbar zu lassen. Jede Übersetzung ist ein Eingriff. Die Frage ist nicht, ob man sich etwas anmaßt, sondern ob man weiß, dass man es tut.\n\nIch sage zu. Und ich werde im Nachwort schreiben, was ich nicht wissen konnte.",
+   "gloss": [
+    {
+     "de": "die Übersetzung",
+     "mevcutTr": "çeviri",
+     "havuz": {
+      "tr": "çeviri",
+      "en": "translation"
+     }
+    },
+    {
+     "de": "der Auftrag",
+     "mevcutTr": "iş, sipariş",
+     "havuz": {
+      "tr": "görev",
+      "en": "assignment"
+     }
+    },
+    {
+     "de": "die Vorlage",
+     "mevcutTr": "asıl metin, kaynak",
+     "havuz": {
+      "tr": "şablon",
+      "en": "template"
+     }
+    },
+    {
+     "de": "die Treue",
+     "mevcutTr": "sadakat"
+    },
+    {
+     "de": "der Klang",
+     "mevcutTr": "tını"
+    },
+    {
+     "de": "die Zumutung",
+     "mevcutTr": "katlanılması güç şey",
+     "havuz": {
+      "tr": "eziyet",
+      "en": "imposition"
+     }
+    },
+    {
+     "de": "sich anmaßen",
+     "mevcutTr": "haddini aşmak",
+     "havuz": {
+      "tr": "kendinde hak görmek",
+      "en": "to presume"
+     }
+    },
+    {
+     "de": "der Widerhall",
+     "mevcutTr": "yankı"
+    },
+    {
+     "de": "abwägen",
+     "mevcutTr": "tartmak",
+     "havuz": {
+      "tr": "ölçüp biçmek",
+      "en": "to weigh up"
+     }
+    }
+   ]
+  },
+  {
+   "id": "c1-r8",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Freiberuflich in Deutschland: die Fallen im Vertrag",
+   "genre": "Rehber",
+   "intro": "Serbest çalışanların sözleşmelerinde kritik olan maddeler. Almanya'da bağımsız çalışmanın hukuki gerçekliği.",
+   "metin": "Wer in Deutschland freiberuflich arbeitet, unterschreibt oft Verträge, die von großen Auftraggebern formuliert wurden. Vier Punkte lohnen dabei besondere Aufmerksamkeit.\n\nErstens die Nutzungsrechte. Üblich ist die Formulierung, man räume „sämtliche Nutzungsrechte zeitlich, räumlich und inhaltlich unbeschränkt“ ein. Das bedeutet: Der Auftraggeber darf das Werk beliebig verwenden, verändern und weiterverkaufen, ohne erneut zu zahlen. Für eine einmalige Vergütung ist das oft unangemessen — verhandelbar ist es fast immer, wenn man es anspricht.\n\nZweitens die Haftung. Klauseln, die eine unbegrenzte Haftung vorsehen, sind in vorformulierten Verträgen häufig unwirksam, weil sie den Vertragspartner unangemessen benachteiligen. Verlassen sollte man sich darauf nicht: Ein Prozess über die Wirksamkeit kostet Zeit und Geld, die Freiberufler selten haben.\n\nDrittens der Zahlungsverzug. Ohne besondere Vereinbarung gilt gesetzlich eine Frist von 30 Tagen; danach dürfen Verzugszinsen berechnet werden. Viele Verträge verlängern diese Frist auf 60 oder 90 Tage — legal, aber ein erheblicher Nachteil bei der Liquidität.\n\nViertens, und am wichtigsten: die Scheinselbstständigkeit. Wer über längere Zeit fast nur für einen Auftraggeber arbeitet, feste Arbeitszeiten hat und in dessen Organisation eingebunden ist, gilt sozialversicherungsrechtlich möglicherweise als Angestellter — unabhängig davon, was im Vertrag steht. Die Nachzahlungen treffen zwar zuerst den Auftraggeber, aber das Ende der Zusammenarbeit trifft den Auftragnehmer.\n\nWer unsicher ist, kann bei der Deutschen Rentenversicherung ein Statusfeststellungsverfahren beantragen. Es dauert einige Monate und schafft Rechtssicherheit — auch wenn viele es meiden, weil das Ergebnis unbequem sein könnte.",
+   "gloss": [
+    {
+     "de": "freiberuflich",
+     "mevcutTr": "serbest meslek olarak"
+    },
+    {
+     "de": "die Scheinselbstständigkeit",
+     "mevcutTr": "sahte bağımsızlık"
+    },
+    {
+     "de": "das Nutzungsrecht",
+     "mevcutTr": "kullanım hakkı"
+    },
+    {
+     "de": "einräumen",
+     "mevcutTr": "tanımak (hak)",
+     "havuz": {
+      "tr": "kabul etmek",
+      "en": "to concede"
+     }
+    },
+    {
+     "de": "die Haftung",
+     "mevcutTr": "sorumluluk",
+     "havuz": {
+      "tr": "sorumluluk",
+      "en": "liability"
+     }
+    },
+    {
+     "de": "der Verzug",
+     "mevcutTr": "temerrüt, gecikme"
+    },
+    {
+     "de": "abtreten",
+     "mevcutTr": "devretmek",
+     "havuz": {
+      "tr": "devretmek",
+      "en": "to assign"
+     }
+    },
+    {
+     "de": "unwirksam",
+     "mevcutTr": "geçersiz",
+     "havuz": {
+      "tr": "hükümsüz",
+      "en": "void"
+     }
+    },
+    {
+     "de": "die Vergütung",
+     "mevcutTr": "ücretlendirme",
+     "havuz": {
+      "tr": "ücret",
+      "en": "compensation"
+     }
+    }
+   ]
+  }
+ ]
+}

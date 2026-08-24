@@ -1,0 +1,690 @@
+{
+ "paket": "de-008",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "a2-w1",
+   "skill": "writing",
+   "level": "A2",
+   "title": "Eine Einladung beantworten",
+   "genre": "E-posta",
+   "intro": "Bir doğum günü davetine nazikçe cevap yazmayı çalışıyorsun: teşekkür, durum, öneri.",
+   "metin": "Vielen Dank für deine Einladung.\n\nLeider kann ich am Samstag nicht kommen, weil ich arbeiten muss.\n\nVielleicht können wir uns nächste Woche treffen.\n\nHallo!\n\nIch feiere am Samstag meinen Geburtstag und mache eine kleine Party bei mir zu Hause. Wir fangen um 18 Uhr an. Kommst du auch? Kannst du vielleicht etwas zu essen mitbringen?\n\nViele Grüße\nLena\n\nHallo Lena,\n\nvielen Dank für die Einladung! Ich komme sehr gern zu deiner Party. Leider muss ich am Samstag bis 18 Uhr arbeiten, deshalb komme ich erst um 19 Uhr. Ich bringe einen Nudelsalat und etwas zu trinken mit. Ich freue mich schon auf die Party!\n\nViele Grüße\nDeniz",
+   "gloss": [
+    {
+     "de": "die Einladung",
+     "mevcutTr": "davet",
+     "havuz": {
+      "tr": "davet",
+      "en": "invitation"
+     }
+    },
+    {
+     "de": "feiern",
+     "mevcutTr": "kutlamak",
+     "havuz": {
+      "tr": "kutlamak",
+      "en": "to celebrate"
+     }
+    },
+    {
+     "de": "mitbringen",
+     "mevcutTr": "yanında getirmek",
+     "havuz": {
+      "tr": "getirmek",
+      "en": "to bring along"
+     }
+    },
+    {
+     "de": "leider",
+     "mevcutTr": "maalesef",
+     "havuz": {
+      "tr": "maalesef",
+      "en": "unfortunately"
+     }
+    },
+    {
+     "de": "sich treffen",
+     "mevcutTr": "buluşmak"
+    },
+    {
+     "de": "sich freuen auf",
+     "mevcutTr": "-i iple çekmek"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Vielen Dank für die Einladung.",
+     "mevcutTr": "Davet için çok teşekkürler."
+    },
+    {
+     "de": "Ich komme gern.",
+     "mevcutTr": "Seve seve gelirim."
+    },
+    {
+     "de": "Leider kann ich erst um ... kommen.",
+     "mevcutTr": "Maalesef ancak saat ...'te gelebilirim."
+    },
+    {
+     "de": "Ich bringe ... mit.",
+     "mevcutTr": "Yanımda ... getiririm."
+    },
+    {
+     "de": "Ich freue mich schon auf die Party.",
+     "mevcutTr": "Partiyi şimdiden iple çekiyorum."
+    },
+    {
+     "de": "Bis Samstag!",
+     "mevcutTr": "Cumartesi görüşürüz!"
+    }
+   ]
+  },
+  {
+   "id": "a2-w2",
+   "skill": "writing",
+   "level": "A2",
+   "title": "E-Mail an die Vermieterin",
+   "genre": "Resmi e-posta",
+   "intro": "Beğendiğin bir kiralık daire ilanına resmi bir e-posta ile başvuruyorsun.",
+   "metin": "Ich habe Ihre Anzeige im Internet gelesen.\n\nIst die Wohnung noch frei?\n\nIch möchte die Wohnung gern besichtigen.\n\n2-Zimmer-Wohnung in der Südstadt, 54 Quadratmeter, mit Balkon. 680 Euro plus Nebenkosten, frei ab dem 1. Oktober. Kontakt: Frau Weber, wohnung-weber@mailbox.de\n\nSehr geehrte Frau Weber,\n\nich habe Ihre Anzeige im Internet gelesen und interessiere mich sehr für die Wohnung. Ich heiße Emre Aydın, ich bin 29 Jahre alt und arbeite als Krankenpfleger in Nürnberg. Ich habe noch eine Frage: Sind Haustiere erlaubt? Ich habe eine kleine Katze. Kann ich die Wohnung am Samstag besichtigen?\n\nMit freundlichen Grüßen\nEmre Aydın",
+   "gloss": [
+    {
+     "de": "die Anzeige",
+     "mevcutTr": "ilan",
+     "havuz": {
+      "tr": "ilan",
+      "en": "ad"
+     }
+    },
+    {
+     "de": "die Miete",
+     "mevcutTr": "kira",
+     "havuz": {
+      "tr": "kira",
+      "en": "rent"
+     }
+    },
+    {
+     "de": "die Nebenkosten",
+     "mevcutTr": "yan giderler",
+     "havuz": {
+      "tr": "yan giderler",
+      "en": "utility costs"
+     }
+    },
+    {
+     "de": "besichtigen",
+     "mevcutTr": "gezip görmek",
+     "havuz": {
+      "tr": "gezmek",
+      "en": "to visit"
+     }
+    },
+    {
+     "de": "erlaubt",
+     "mevcutTr": "izinli",
+     "havuz": {
+      "tr": "serbest",
+      "en": "allowed"
+     }
+    },
+    {
+     "de": "sich interessieren für",
+     "mevcutTr": "-e ilgi duymak"
+    },
+    {
+     "de": "die Vermieterin",
+     "mevcutTr": "ev sahibi (kadın)"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Sehr geehrte Frau Weber, ...",
+     "mevcutTr": "Sayın Bayan Weber, ... (resmi hitap)"
+    },
+    {
+     "de": "Ich interessiere mich für die Wohnung.",
+     "mevcutTr": "Daireyle ilgileniyorum."
+    },
+    {
+     "de": "Ich arbeite als ...",
+     "mevcutTr": "... olarak çalışıyorum."
+    },
+    {
+     "de": "Ich habe noch eine Frage: ...",
+     "mevcutTr": "Bir sorum daha var: ..."
+    },
+    {
+     "de": "Sind Haustiere erlaubt?",
+     "mevcutTr": "Evcil hayvan serbest mi?"
+    },
+    {
+     "de": "Kann ich die Wohnung besichtigen?",
+     "mevcutTr": "Daireyi gezebilir miyim?"
+    },
+    {
+     "de": "Mit freundlichen Grüßen",
+     "mevcutTr": "Saygılarımla (resmi kapanış)"
+    }
+   ]
+  },
+  {
+   "id": "a2-w3",
+   "skill": "writing",
+   "level": "A2",
+   "title": "Krankmeldung an den Chef",
+   "genre": "Resmi e-posta",
+   "intro": "Hastasın ve işe gidemiyorsun — şefine kısa, resmi bir bildirim yazacaksın.",
+   "metin": "Ich kann heute leider nicht zur Arbeit kommen.\n\nIch habe seit gestern Abend Fieber.\n\nDer Arzt hat gesagt, dass ich zu Hause bleiben soll.\n\nSehr geehrter Herr Krause,\n\nich bin leider krank und kann heute nicht zur Arbeit kommen. Ich habe Fieber und starke Kopfschmerzen. Heute Vormittag gehe ich zum Arzt. Ich glaube, dass ich am Donnerstag wieder arbeiten kann. Die Krankmeldung schicke ich Ihnen morgen per E-Mail.\n\nMit freundlichen Grüßen\nSelin Arslan",
+   "gloss": [
+    {
+     "de": "krank",
+     "mevcutTr": "hasta",
+     "havuz": {
+      "tr": "hasta",
+      "en": "sick"
+     }
+    },
+    {
+     "de": "das Fieber",
+     "mevcutTr": "ateş",
+     "havuz": {
+      "tr": "ateş",
+      "en": "fever"
+     }
+    },
+    {
+     "de": "die Kopfschmerzen",
+     "mevcutTr": "baş ağrısı",
+     "havuz": {
+      "tr": "baş ağrısı",
+      "en": "headache"
+     }
+    },
+    {
+     "de": "die Krankmeldung",
+     "mevcutTr": "hastalık raporu"
+    },
+    {
+     "de": "der Arzt",
+     "mevcutTr": "doktor",
+     "havuz": {
+      "tr": "doktor",
+      "en": "doctor"
+     }
+    },
+    {
+     "de": "zu Hause bleiben",
+     "mevcutTr": "evde kalmak"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Sehr geehrter Herr Krause, ...",
+     "mevcutTr": "Sayın Bay Krause, ... (resmi hitap)"
+    },
+    {
+     "de": "Ich bin leider krank.",
+     "mevcutTr": "Maalesef hastayım."
+    },
+    {
+     "de": "Ich kann heute nicht zur Arbeit kommen.",
+     "mevcutTr": "Bugün işe gelemiyorum."
+    },
+    {
+     "de": "Ich gehe heute zum Arzt.",
+     "mevcutTr": "Bugün doktora gidiyorum."
+    },
+    {
+     "de": "Die Krankmeldung schicke ich Ihnen morgen.",
+     "mevcutTr": "Raporu size yarın gönderirim."
+    },
+    {
+     "de": "Mit freundlichen Grüßen",
+     "mevcutTr": "Saygılarımla"
+    }
+   ]
+  },
+  {
+   "id": "a2-w4",
+   "skill": "writing",
+   "level": "A2",
+   "title": "E-Mail aus dem Urlaub",
+   "genre": "E-posta",
+   "intro": "Tatilden döndün ve Alman arkadaşına neler yaşadığını Perfekt ile anlatacaksın.",
+   "metin": "Letzte Woche war ich mit meiner Familie in Antalya.\n\nDas Wetter war jeden Tag sonnig und warm.\n\nWir haben im Meer gebadet und die Altstadt besichtigt.\n\nLieber Paul,\n\nwie geht es dir? Ich war zwei Wochen mit meiner Familie in Izmir. Das Wetter war super, fast jeden Tag Sonne! Wir haben im Meer gebadet und einen Ausflug nach Ephesos gemacht. Am besten hat mir das Essen gefallen, frischer Fisch direkt am Hafen. Ich habe viele Fotos gemacht und zeige sie dir bald.\n\nViele Grüße\nBaran",
+   "gloss": [
+    {
+     "de": "der Urlaub",
+     "mevcutTr": "tatil",
+     "havuz": {
+      "tr": "tatil",
+      "en": "vacation"
+     }
+    },
+    {
+     "de": "das Meer",
+     "mevcutTr": "deniz",
+     "havuz": {
+      "tr": "deniz",
+      "en": "sea"
+     }
+    },
+    {
+     "de": "baden",
+     "mevcutTr": "denize girmek, yüzmek",
+     "havuz": {
+      "tr": "banyo yapmak",
+      "en": "to bathe"
+     }
+    },
+    {
+     "de": "die Altstadt",
+     "mevcutTr": "eski şehir"
+    },
+    {
+     "de": "der Ausflug",
+     "mevcutTr": "gezi, tur",
+     "havuz": {
+      "tr": "gezi",
+      "en": "trip"
+     }
+    },
+    {
+     "de": "gefallen",
+     "mevcutTr": "hoşuna gitmek",
+     "havuz": {
+      "tr": "hoşuna gitmek",
+      "en": "to like"
+     }
+    },
+    {
+     "de": "das Wetter",
+     "mevcutTr": "hava durumu",
+     "havuz": {
+      "tr": "hava",
+      "en": "weather"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich war eine Woche in ...",
+     "mevcutTr": "Bir hafta ...'deydim."
+    },
+    {
+     "de": "Das Wetter war super.",
+     "mevcutTr": "Hava harikaydı."
+    },
+    {
+     "de": "Wir haben ... besucht.",
+     "mevcutTr": "...'i ziyaret ettik."
+    },
+    {
+     "de": "Am besten hat mir ... gefallen.",
+     "mevcutTr": "En çok ... hoşuma gitti."
+    },
+    {
+     "de": "Ich habe viele Fotos gemacht.",
+     "mevcutTr": "Bir sürü fotoğraf çektim."
+    },
+    {
+     "de": "Nächstes Jahr möchte ich wieder dorthin.",
+     "mevcutTr": "Gelecek yıl yine oraya gitmek istiyorum."
+    }
+   ]
+  },
+  {
+   "id": "a2-w5",
+   "skill": "writing",
+   "level": "A2",
+   "title": "E-Mail an die Krankenkasse",
+   "genre": "Resmî yazı",
+   "intro": "a2-r8'deki mektuba cevap yazacaksın: belgeleri gönderiyor ve bir soru soruyorsun. Resmî ama sade.",
+   "metin": "Im Anhang schicke ich die Rechnung und das Rezept.\n\nIch habe die Brille am 12. Mai gekauft.\n\nKönnen Sie mir sagen, wann ich das Geld bekomme?\n\nSehr geehrte Damen und Herren,\n\nmein Name ist Pelin Aydın, meine Versichertennummer ist K 4471 9902.\n\nIch möchte den Zuschuss für meine Brille beantragen. Ich habe die Brille am 12. Mai gekauft. Im Anhang schicke ich die Rechnung und das Rezept von meiner Augenärztin.\n\nKönnen Sie mir sagen, wann ich das Geld bekomme und ob Sie noch etwas brauchen?\n\nVielen Dank für Ihre Hilfe.\n\nMit freundlichen Grüßen\nPelin Aydın",
+   "gloss": [
+    {
+     "de": "der Antrag",
+     "mevcutTr": "başvuru, talep",
+     "havuz": {
+      "tr": "başvuru",
+      "en": "application"
+     }
+    },
+    {
+     "de": "der Anhang",
+     "mevcutTr": "ek (dosya)",
+     "havuz": {
+      "tr": "ek",
+      "en": "attachment"
+     }
+    },
+    {
+     "de": "einreichen",
+     "mevcutTr": "sunmak, teslim etmek",
+     "havuz": {
+      "tr": "sunmak",
+      "en": "to submit"
+     }
+    },
+    {
+     "de": "die Rechnung",
+     "mevcutTr": "fatura",
+     "havuz": {
+      "tr": "fatura",
+      "en": "bill"
+     }
+    },
+    {
+     "de": "die Rückmeldung",
+     "mevcutTr": "geri dönüş",
+     "havuz": {
+      "tr": "geri bildirim",
+      "en": "feedback"
+     }
+    },
+    {
+     "de": "die Versichertennummer",
+     "mevcutTr": "sigorta numarası"
+    },
+    {
+     "de": "überweisen",
+     "mevcutTr": "havale etmek",
+     "havuz": {
+      "tr": "havale etmek",
+      "en": "to transfer"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Sehr geehrte Damen und Herren,",
+     "mevcutTr": "Sayın yetkili,"
+    },
+    {
+     "de": "meine Versichertennummer ist …",
+     "mevcutTr": "sigorta numaram …"
+    },
+    {
+     "de": "ich möchte einen Zuschuss beantragen.",
+     "mevcutTr": "Katkı payı talep etmek istiyorum."
+    },
+    {
+     "de": "Im Anhang finden Sie …",
+     "mevcutTr": "Ekte … bulacaksınız."
+    },
+    {
+     "de": "Können Sie mir sagen, ob …",
+     "mevcutTr": "… olup olmadığını söyleyebilir misiniz?"
+    },
+    {
+     "de": "Mit freundlichen Grüßen",
+     "mevcutTr": "Saygılarımla"
+    }
+   ]
+  },
+  {
+   "id": "a2-w6",
+   "skill": "writing",
+   "level": "A2",
+   "title": "Auf eine Einladung antworten",
+   "genre": "Sınav formatı",
+   "intro": "Goethe A2 yazma görevinin tam formatı: bir davete cevap ver, üç noktaya değin — teşekkür, kabul/ret ve bir öneri veya soru.",
+   "metin": "Vielen Dank für die Einladung.\n\nLeider kann ich nicht vor acht Uhr kommen.\n\nIch kann einen Salat mitbringen.\n\nLiebe Ceyda,\n\nvielen Dank für die Einladung! Ich komme sehr gern.\n\nLeider kann ich nicht vor acht Uhr kommen, weil ich bis 19 Uhr arbeite. Ist das okay? Dann bin ich gegen halb neun bei dir.\n\nSoll ich etwas mitbringen? Ich kann einen Salat machen oder einen Kuchen kaufen. Sag mir einfach Bescheid.\n\nIch freue mich auf den Abend!\n\nLiebe Grüße\nPelin",
+   "gloss": [
+    {
+     "de": "die Einladung",
+     "mevcutTr": "davet",
+     "havuz": {
+      "tr": "davet",
+      "en": "invitation"
+     }
+    },
+    {
+     "de": "absagen",
+     "mevcutTr": "reddetmek, katılamayacağını bildirmek",
+     "havuz": {
+      "tr": "iptal etmek",
+      "en": "to cancel"
+     }
+    },
+    {
+     "de": "zusagen",
+     "mevcutTr": "kabul etmek",
+     "havuz": {
+      "tr": "olumlu yanıt vermek",
+      "en": "to accept"
+     }
+    },
+    {
+     "de": "leider",
+     "mevcutTr": "maalesef",
+     "havuz": {
+      "tr": "maalesef",
+      "en": "unfortunately"
+     }
+    },
+    {
+     "de": "mitbringen",
+     "mevcutTr": "yanında getirmek",
+     "havuz": {
+      "tr": "getirmek",
+      "en": "to bring along"
+     }
+    },
+    {
+     "de": "der Vorschlag",
+     "mevcutTr": "öneri",
+     "havuz": {
+      "tr": "öneri",
+      "en": "suggestion"
+     }
+    },
+    {
+     "de": "sich freuen auf",
+     "mevcutTr": "dört gözle beklemek"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Vielen Dank für die Einladung.",
+     "mevcutTr": "Davet için teşekkürler."
+    },
+    {
+     "de": "Ich komme gern.",
+     "mevcutTr": "Seve seve gelirim."
+    },
+    {
+     "de": "Leider kann ich nicht kommen, weil …",
+     "mevcutTr": "Maalesef gelemem çünkü …"
+    },
+    {
+     "de": "Soll ich etwas mitbringen?",
+     "mevcutTr": "Bir şey getireyim mi?"
+    },
+    {
+     "de": "Ich freue mich auf …",
+     "mevcutTr": "…'i dört gözle bekliyorum."
+    }
+   ]
+  },
+  {
+   "id": "a2-w7",
+   "skill": "writing",
+   "level": "A2",
+   "title": "Ein Fest beschreiben",
+   "genre": "Kültür",
+   "intro": "Kendi ülkendeki bir bayramı ya da kutlamayı bir Alman arkadaşına anlatacaksın — kültür karşılaştırması yazma pratiğinin en verimli konusudur.",
+   "metin": "Dieses Fest dauert drei Tage.\n\nAm Morgen besuchen wir alle Verwandten.\n\nDie Kinder bekommen Geld als Geschenk.\n\nHallo Jonas,\n\ndu hast mich nach unseren Festen gefragt. Das wichtigste ist das Zuckerfest, auf Türkisch „Bayram“. Es kommt nach dem Fastenmonat Ramadan und dauert drei Tage.\n\nAm Morgen besuchen wir alle Verwandten — zuerst die ältesten. Man küsst ihnen die Hand, und die Kinder bekommen Geld als Geschenk. Danach isst man zusammen, und es gibt sehr viele Süßigkeiten. Deshalb heißt es Zuckerfest.\n\nDas ist ähnlich wie Weihnachten bei euch: Familie, Essen, Geschenke. Anders als in Deutschland besucht man aber nicht nur die eigene Familie, sondern auch die Nachbarn — und niemand meldet sich vorher an.\n\nWann feiert ihr eigentlich am meisten, Weihnachten oder Silvester?\n\nViele Grüße\nPelin",
+   "gloss": [
+    {
+     "de": "das Fest",
+     "mevcutTr": "bayram, kutlama",
+     "havuz": {
+      "tr": "sıkı",
+      "en": "tight"
+     }
+    },
+    {
+     "de": "feiern",
+     "mevcutTr": "kutlamak",
+     "havuz": {
+      "tr": "kutlamak",
+      "en": "to celebrate"
+     }
+    },
+    {
+     "de": "die Verwandten",
+     "mevcutTr": "akrabalar"
+    },
+    {
+     "de": "der Brauch",
+     "mevcutTr": "gelenek",
+     "havuz": {
+      "tr": "gelenek",
+      "en": "custom"
+     }
+    },
+    {
+     "de": "dauern",
+     "mevcutTr": "sürmek",
+     "havuz": {
+      "tr": "sürmek",
+      "en": "to last"
+     }
+    },
+    {
+     "de": "das Geschenk",
+     "mevcutTr": "hediye",
+     "havuz": {
+      "tr": "hediye",
+      "en": "gift"
+     }
+    },
+    {
+     "de": "ähnlich",
+     "mevcutTr": "benzer",
+     "havuz": {
+      "tr": "benzer",
+      "en": "similar"
+     }
+    },
+    {
+     "de": "der Unterschied",
+     "mevcutTr": "fark",
+     "havuz": {
+      "tr": "fark",
+      "en": "difference"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Bei uns feiert man …",
+     "mevcutTr": "Bizde … kutlanır."
+    },
+    {
+     "de": "Das Fest dauert …",
+     "mevcutTr": "Bayram … sürer."
+    },
+    {
+     "de": "Zuerst … , danach …",
+     "mevcutTr": "Önce … , sonra …"
+    },
+    {
+     "de": "Das ist ähnlich wie …",
+     "mevcutTr": "Bu … gibi benzer."
+    },
+    {
+     "de": "Anders als in Deutschland …",
+     "mevcutTr": "Almanya'dan farklı olarak …"
+    }
+   ]
+  },
+  {
+   "id": "a2-w8",
+   "skill": "writing",
+   "level": "A2",
+   "title": "Pelin schreibt nach dem ersten Tag",
+   "genre": "Mesaj",
+   "intro": "Hikâyenin son parçası: Pelin'in yerine geçip ilk iş gününü anlatan mesajı yazacaksın (a2-l12'yi dinlediysen malzemen var).",
+   "metin": "Am Morgen war ich sehr nervös.\n\nMeine Kollegin hat mir alles gezeigt.\n\nIch habe einen Fehler gemacht, aber niemand war böse.\n\nHey Ceyda,\n\nich habe es geschafft — erster Tag vorbei!\n\nAm Morgen war ich sehr nervös und viel zu früh da. Meine Chefin, Frau Kern, hat mir alles gezeigt: den Empfang, die Kasse und das Lager. Danach durfte ich schon selbst am Telefon sprechen.\n\nDabei habe ich einen Fehler gemacht — ich habe zweimal „Wie bitte?“ gesagt. Aber niemand war böse. Meine Kollegin Marlies hat gelacht und gesagt, sie macht das nach zwanzig Jahren auch noch.\n\nDas Schwerste waren die Namen von den Medikamenten. Ich habe mir zwölf aufgeschrieben.\n\nJetzt bin ich müde, aber auch ein bisschen stolz. Am Samstag koche ich für dich!\n\nBis dann\nPelin",
+   "gloss": [
+    {
+     "de": "der erste Tag",
+     "mevcutTr": "ilk gün"
+    },
+    {
+     "de": "nervös",
+     "mevcutTr": "gergin",
+     "havuz": {
+      "tr": "gergin",
+      "en": "nervous"
+     }
+    },
+    {
+     "de": "sich vorstellen",
+     "mevcutTr": "kendini tanıtmak",
+     "havuz": {
+      "tr": "kendini tanıtmak",
+      "en": "to introduce oneself"
+     }
+    },
+    {
+     "de": "die Aufgabe",
+     "mevcutTr": "görev",
+     "havuz": {
+      "tr": "görev",
+      "en": "task"
+     }
+    },
+    {
+     "de": "der Fehler",
+     "mevcutTr": "hata",
+     "havuz": {
+      "tr": "hata",
+      "en": "mistake"
+     }
+    },
+    {
+     "de": "helfen",
+     "mevcutTr": "yardım etmek",
+     "havuz": {
+      "tr": "yardım etmek",
+      "en": "to help"
+     }
+    },
+    {
+     "de": "sich freuen",
+     "mevcutTr": "sevinmek",
+     "havuz": {
+      "tr": "sevinmek",
+      "en": "to be happy"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich habe es geschafft!",
+     "mevcutTr": "Başardım!"
+    },
+    {
+     "de": "Am Morgen war ich …",
+     "mevcutTr": "Sabah … idim."
+    },
+    {
+     "de": "Zuerst … , dann …",
+     "mevcutTr": "Önce … , sonra …"
+    },
+    {
+     "de": "Das Schwerste war …",
+     "mevcutTr": "En zoru … idi."
+    },
+    {
+     "de": "Jetzt bin ich müde, aber …",
+     "mevcutTr": "Şimdi yorgunum ama …"
+    }
+   ]
+  }
+ ]
+}

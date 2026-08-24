@@ -1,0 +1,414 @@
+{
+ "paket": "zh-019",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-c1-l5",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Satire: D Wuche im Rückspiegel",
+   "genre": "Mizah",
+   "intro": "Radyoda haftalık mizah köşesini dinleyeceksin. Zor olan kelimeler değil — ironiyi anlamak. Söylenenin tersinin kastedildiği yerlere dikkat et.",
+   "metin": "Sprecherin: Guete Morge. D Wuche im Rückspiegel — was passiert isch, und was mir drus gmacht händ.\nSprecherin: Di grooss Nachricht: De Stadtrat hät en Entschäid troffe. Nöd über s Thema, sondern über s Verfahre. Es wird e Arbetsgruppe iigsetzt, wo bis im Herbscht prüeft, öb me e Vernäämlassig mues mache. Fortschritt.\nSprecherin: S Thema übrigens: d Velospure a de Seestrass. Diskutiert siit zwölf Jaar. Zwölf Jaar — das isch ungfähr d Ziit, wo es Chind bruucht, zum vom Chindsgi bis is Gymi z choo. S Chind isch underdesse dört. D Velospur nöd.\nSprecherin: Grossi Empöörig hät s au ggää: Es Restaurant am See hät s Menü uf achtezwänzg Franke erhöcht. Zwäi Täg lang isch s Internet vollständig zämebroche. Am dritte Tag hät niemert meh drüber gredt, und am vierte händ alli wider dört zmittag ggässe.\nSprecherin: Und zum Schluss di guet Nachricht: S Papier vo de Arbetsgruppe vo letschtem Jaar isch fertig. Es empfilt, e Arbetsgruppe iizsetze.\nSprecherin: So, das isch d Wuche gsii. Nächschti Wuche wider — es passiert sicher wider nüüt, und mir berichted uusführlich drüber.",
+   "gloss": [
+    {
+     "de": "de Rückspiegel",
+     "mevcutTr": "dikiz aynası"
+    },
+    {
+     "de": "d Ironie",
+     "mevcutTr": "ironi",
+     "havuz": {
+      "tr": "ironi",
+      "en": "irony"
+     }
+    },
+    {
+     "de": "d Vernäämlassig",
+     "mevcutTr": "görüş alma süreci (siyasi)"
+    },
+    {
+     "de": "d Arbetsgruppe",
+     "mevcutTr": "çalışma grubu"
+    },
+    {
+     "de": "verschiebe",
+     "mevcutTr": "ertelemek"
+    },
+    {
+     "de": "de Fortschritt",
+     "mevcutTr": "ilerleme",
+     "havuz": {
+      "tr": "ilerleme",
+      "en": "progress"
+     }
+    },
+    {
+     "de": "s Papier",
+     "mevcutTr": "rapor, belge",
+     "havuz": {
+      "tr": "kâğıt",
+      "en": "paper"
+     }
+    },
+    {
+     "de": "d Empöörig",
+     "mevcutTr": "infial, öfke"
+    },
+    {
+     "de": "sich beruhige",
+     "mevcutTr": "yatışmak"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l6",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Interview mit ere Schriftstellerin",
+   "genre": "Röportaj",
+   "intro": "Lehçeyle yazan bir yazarla yapılan röportajı dinleyeceksin: dil, kimlik ve piyasa üzerine.",
+   "metin": "Journalischtin: Frau Aebischer, Si schriibed uf Mundart. De Markt derfür isch chlii. Warum?\nAebischer: Wil ich s nöd anderscht cha. Ich han zwäi Büecher uf Hochdüütsch gschriibe, und beidi sind korräkt. Korräkt isch s Schlimmschte, wo me über es Buech cha säge.\nJournalischtin: Was isch uf Mundart anderscht?\nAebischer: S Rhythmus. Uf Hochdüütsch dänk ich a d Regle, uf Mundart dänk ich a d Person, wo redt. Und Mundart hät Wörter für Zwüschetöön, wo im Hochdüütsche fehled — für das, wo öpper säit, wänn er eigentlich öppis anders meint.\nJournalischtin: Kritiker säged, Mundartliteratur seig automatisch näch am Kitsch.\nAebischer: Dää Vorwurf isch nöd dumm. D Gfaar existiert — wil Mundart Näächi erzüügt, und Näächi ohni Widerstand wird Kitsch. Mini Antwort isch nöd, weniger Mundart z schriibe, sondern d Figure härter z mache. Wär uf Mundart schriibt, mues gägenaa arbete, nöd mitschwümme.\nJournalischtin: Und de Verlag? Übersetzige, Uusland …\nAebischer: Do isch d Ussicht ehrlich: chlii. Mis letschte Buech isch in Düütschland nöd erschine, und ich verstaan s. Das isch de Priis, und ich han en bewusst zaalt. Was ich nöd akzeptiere, isch d Frag, öb sich das lohnt. Es lohnt sich nöd. Es stimmt.",
+   "gloss": [
+    {
+     "de": "d Schriftstellerin",
+     "mevcutTr": "kadın yazar"
+    },
+    {
+     "de": "de Verlag",
+     "mevcutTr": "yayınevi",
+     "havuz": {
+      "tr": "yayınevi",
+      "en": "publisher"
+     }
+    },
+    {
+     "de": "s Publikum",
+     "mevcutTr": "okur kitlesi",
+     "havuz": {
+      "tr": "seyirci",
+      "en": "audience"
+     }
+    },
+    {
+     "de": "de Markt",
+     "mevcutTr": "piyasa",
+     "havuz": {
+      "tr": "pazar",
+      "en": "market"
+     }
+    },
+    {
+     "de": "d Näächi",
+     "mevcutTr": "yakınlık"
+    },
+    {
+     "de": "de Kitsch",
+     "mevcutTr": "kitsch, ucuz duygusallık"
+    },
+    {
+     "de": "de Zwang",
+     "mevcutTr": "zorunluluk"
+    },
+    {
+     "de": "d Ussicht",
+     "mevcutTr": "ihtimal, görünüm"
+    },
+    {
+     "de": "de Verzicht",
+     "mevcutTr": "vazgeçiş"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l7",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Nach de Kommission",
+   "genre": "Sohbet",
+   "intro": "Hikâyenin devamı: Nadia görüşmeden sonra bir arkadaşıyla konuşuyor — asıl mesele soru değil, ne yapılacağı.",
+   "metin": "Rahel: Und? Wie isch s gsii?\nNadia: Drei Frage waren normal. Di vierti nöd: Öb ich mich meh als Schwiizerin oder meh als Marokkanerin fühl.\nRahel: Das dörfed si nöd.\nNadia: Genau. Ich han s abglehnt, ruhig. Und d Protokollführerin hät sälber iigwändet, dass d Frag gäge d Wegleitig verstoosst.\nRahel: Denn isch ja alles guet gloffe.\nNadia: Für mich scho — d Empfehlig isch positiv. Aber jetz frog ich mich, öb ich e Beschwerd iiriche söll. Nöd für mich. Für di nächschti Person.\nRahel: Und was schpricht degäge?\nNadia: Erschtens: S Verfaare isch no nöd fertig. De Gmeindsrat mues no zuestimme. Zwäitens frog ich mich, öb ich s wäge em Prinzip mach oder wäge em Ärger.\nRahel: Isch das nöd s Gliiche?\nNadia: Nöd ganz. Wänn ich s wäge em Ärger mach, schriib ich anders — schärfer, und denn gaat s um mich statt um d Frag.\nRahel: Und wänn du wartisch, bis alles dure isch?\nNadia: Denn hät s meh Gwicht und weniger Risiko. Aber es tönt au bequem: Ich reklamiere, wänn s mich nüüt meh koschtet.\nRahel: Villicht isch bequem und richtig nöd immer es Widerspruch.\nNadia: Villicht nöd. Ich schriib s trotzdem — aber nach em Entschäid.",
+   "gloss": [
+    {
+     "de": "d Wegleitig",
+     "mevcutTr": "yönerge"
+    },
+    {
+     "de": "sich berüefe uf",
+     "mevcutTr": "…e dayanmak"
+    },
+    {
+     "de": "de Trotz",
+     "mevcutTr": "inat",
+     "havuz": {
+      "tr": "rağmen",
+      "en": "despite"
+     }
+    },
+    {
+     "de": "eskaliere",
+     "mevcutTr": "büyütmek"
+    },
+    {
+     "de": "d Konsequänz",
+     "mevcutTr": "sonuç, yaptırım"
+    },
+    {
+     "de": "d Beschwerd",
+     "mevcutTr": "şikâyet"
+    },
+    {
+     "de": "s Prinzip",
+     "mevcutTr": "ilke"
+    },
+    {
+     "de": "d Abwägig",
+     "mevcutTr": "tartma"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l8",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Vortrag: Wie Mythe entstönd",
+   "genre": "Konferans",
+   "intro": "Ulusal anlatılar nasıl kurulur ve neden düzeltilmesi zordur? Tezi ve sınırını izle.",
+   "metin": "Referent: Ich fang mit ere Beobachtig aa, wo Historiker frustriert: Es Mythos lat sich nöd durch Fakte widerlege. Me cha zeige, dass es nöd stimmt — und es überläbt trotzdem.\nReferent: De Grund isch, dass Mythe nöd primär Information sind, sondern Funktion. Si beantworted e Frag, wo e Gsellschaft hät. Wär nur d Information korrigiert, hät d Frag nöd berüehrt — und d Frag bliibt.\nReferent: Es Biispil: De Tell beantwortet d Frag, warum e chliini Gmeinschaft sich gäge e grösseri Macht dörf wehre. Das isch e reali Frag für e chliine Staat. Wär säit «Tell hät nie gläbt», hät die Frag nöd beantwortet, nur d Antwort gnoo.\nReferent: Drus folgt öppis Praktisches: Mythe wärded nöd ersetzt dur Fakte, sondern dur anderi Erzählige. Wär e Nationalmythos verändere will, mues e Gschicht aabüüte, wo di gliich Funktion erfüllt — nöd nur e Fussnote.\nReferent: Ich säg das nöd als Kritik a de Wüsseschaft. Fakte prüefe isch üsi Uufgab. Aber d Erwartig, dass e Korrektur automatisch wirkt, isch naiv — und si füehrt zu Frustration und zu Verachtig gägenüber de Lüüt, wo am Mythos festhalted.\nReferent: Und e Iischränkig: Alles Gsäite gilt für Mythe mit ere positive Funktion. Bi Mythe, wo primär zum Uusgränze dienet, wirkt di gliich Analyse — aber d Schlussfolgerig cha nöd sii, me söll ne e schööneri Gschicht anbüüte.",
+   "gloss": [
+    {
+     "de": "de Mythos",
+     "mevcutTr": "mit",
+     "havuz": {
+      "tr": "efsane",
+      "en": "myth"
+     }
+    },
+    {
+     "de": "d Erzählig",
+     "mevcutTr": "anlatı"
+    },
+    {
+     "de": "d Funktion",
+     "mevcutTr": "işlev"
+    },
+    {
+     "de": "widerlege",
+     "mevcutTr": "çürütmek"
+    },
+    {
+     "de": "d Korrektur",
+     "mevcutTr": "düzeltme"
+    },
+    {
+     "de": "s Bedürfnis",
+     "mevcutTr": "ihtiyaç",
+     "havuz": {
+      "tr": "ihtiyaç",
+      "en": "need"
+     }
+    },
+    {
+     "de": "d Deutigshoheit",
+     "mevcutTr": "yorum tekeli"
+    },
+    {
+     "de": "d Iischränkig",
+     "mevcutTr": "çekince"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l9",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Podium: Wär ghört dezue?",
+   "genre": "Sınav formatı",
+   "intro": "Üç konuşmacı, kısmen örtüşen görüşler. Kimin nerede geri adım attığını ve neyi reddettiğini ayır.",
+   "metin": "Moderatorin: Frau Vogt, Si wänd s Verfaare vereinheitliche. Was schtört Si am hütige System?\nVogt: Dass s gliiche Gsuech i de äine Gmeind aagnoo und i de andere abglehnt wird. Das isch nöd Föderalismus, das isch Willkür. Wär i de Gmeind A wohnt, hät Glück — und das isch käi Basis für es Bürgerrächt.\nModeratorin: Herr Aebi?\nAebi: Ich verteidige d Gmeindezueschtändigkäit, aber nöd d Willkür. D Gmeind kennt d Lüüt — das isch en Wert. Wär siit zää Jaar im Turnverein isch, gseet me. En Kanton gseet en Ordner.\nVogt: Und wär im Turnverein nöd isch, wil er zwäi Job hät? De gseet me nöd. Ihres Argumänt belohnt e bestimmti Art z läbe.\nAebi: Dää Punkt raum ich ii. Er isch stark. Aber d Konsequänz cha nöd sii, dass niemert meh d Lüüt kennt — sondern dass mir definiere, was zellt.\nModeratorin: Frau Studer, Si forsched dezue.\nStuder: D Date sind ziemlich eindüütig: Wo schriftlichi Kriterie existiered, sinked d Underschid zwüsche Gruppe deutlich. Wo si fehled, entschäided anderi Sache mit — Name, Uusseh, mängisch de Beruef.\nAebi: Also gäbed Si de Frau Vogt rächt.\nStuder: I dem Punkt ja. I me andere nöd: Vereinheitlichig alläi macht s Verfaare nöd grächt. Es macht s nur vergliichbar. Was drin staat, isch e politischi Frag — und die cha ich Ine nöd abnää.",
+   "gloss": [
+    {
+     "de": "s Bürgerrächt",
+     "mevcutTr": "vatandaşlık"
+    },
+    {
+     "de": "d Hürde",
+     "mevcutTr": "engel, eşik"
+    },
+    {
+     "de": "d Willkür",
+     "mevcutTr": "keyfîlik",
+     "havuz": {
+      "tr": "keyfilik",
+      "en": "arbitrariness"
+     }
+    },
+    {
+     "de": "s Kriterium",
+     "mevcutTr": "ölçüt",
+     "havuz": {
+      "tr": "ölçüt",
+      "en": "criterion"
+     }
+    },
+    {
+     "de": "vereinheitliche",
+     "mevcutTr": "standartlaştırmak"
+    },
+    {
+     "de": "d Näächi",
+     "mevcutTr": "yakınlık"
+    },
+    {
+     "de": "de Föderalismus",
+     "mevcutTr": "federalizm",
+     "havuz": {
+      "tr": "federalizm",
+      "en": "federalism"
+     }
+    },
+    {
+     "de": "d Uusgränzig",
+     "mevcutTr": "dışlama"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l10",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Bim Notar",
+   "genre": "Danışma",
+   "intro": "Noterde bir vekâlet belgesi hazırlanıyor. Hukuki dilin nasıl sadeleştirildiğine dikkat et.",
+   "metin": "Notar: Si wänd en Vorsorgeuuftrag. Bevor mir schriibe: Häsch Si sich überleit, öb äi Person alles mache söll oder öb Si träne wänd?\nNadia: Was isch üblicher?\nNotar: Beides chunt vor. Vill Lüüt gänd d Personesorg — also Behandlig, Wonig, Betreuig — a d Familie, und d Vermögesverwaltig a öpper mit Erfaarig. Das cha di gliich Person sii, mues aber nöd.\nNadia: Und wänn di Person sälber nöd cha? En Unfall, e Chrankheit?\nNotar: Drum setzt me immer e Ersatzperson ii. Ohni die chunt trotzdem d Behörde is Spiel — genau das, wo Si vermeide wänd.\nNadia: Mini Schwöschter würd ich für beides nää.\nNotar: Guet. Denn schriibed mir e Klausel zum Interessekonflikt ii: Wänn s um es Gschäft zwüsche Ihre und ihre goot — zum Bispil de Verchauf vo Ihrer Wonig a si sälber — bruucht s d Zueschtimmig vo de Behörde.\nNadia: Isch das nöd es Misstraue?\nNotar: Es isch Schutz — für Si und für si. Wänn spöter öpper us de Familie reklamiert, cha si zäige, dass es kontrolliert worde isch.\nNadia: Und wo bliibt s Dokumänt?\nNotar: S Original bi Ine. Ich mäld em Ziviilschtandsamt, wo s hinterlait isch — denn findet s d Behörde im Ernstfall innerhalb vo Täg statt Mönet.",
+   "gloss": [
+    {
+     "de": "de Notar",
+     "mevcutTr": "noter",
+     "havuz": {
+      "tr": "noter",
+      "en": "notary"
+     }
+    },
+    {
+     "de": "de Vorsorgeuuftrag",
+     "mevcutTr": "vekâlet belgesi"
+    },
+    {
+     "de": "d Urteilsunfähigkäit",
+     "mevcutTr": "ayırt etme gücünün kaybı"
+    },
+    {
+     "de": "d Vermögesverwaltig",
+     "mevcutTr": "malvarlığı yönetimi"
+    },
+    {
+     "de": "d Ersatzperson",
+     "mevcutTr": "yedek kişi"
+    },
+    {
+     "de": "de Interessekonflikt",
+     "mevcutTr": "çıkar çatışması"
+    },
+    {
+     "de": "beurkunde",
+     "mevcutTr": "resmî belgeye bağlamak"
+    },
+    {
+     "de": "hinterlege",
+     "mevcutTr": "tevdi etmek"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l11",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Radio: S Understatement",
+   "genre": "Radyo sohbeti",
+   "intro": "İsviçre'de abartmamak bir erdem mi yoksa bir kaçış mı? İronik ama düşünen bir sohbet.",
+   "metin": "Host: Frau Kaufmann, Si händ es Buech über s Schwiizer Understatement gschriibe. Isch es e Tugend?\nKaufmann: Es isch zerscht emal e Regle. Wär hier öppis erreicht hät, säit «es lauft ganz guet». Wär e Firma mit dreihundert Aagschtellte hät, säit «es chliises Gschäft».\nHost: Und das isch positiv?\nKaufmann: Es hät e sozial Funktion: Es haltet d Unterschid unsichtbar. I me Land ohni grossi Gesten wirkt Prahle nöd nur unagnäm, es wirkt gfährlich — es zäigt, wo öpper stoot.\nHost: Si säged „unsichtbar“, nöd „chliiner“.\nKaufmann: Genau, und das isch de Kärn. Understatement reduziert d Unterschid nöd — es tarnt si. Wär s beherrscht, ghört dezue. Wär s nöd cha, fallt uuf — und das trifft vor allem Lüüt, wo nöd hier ufgwachse sind.\nHost: Also es Machtinstrumänt?\nKaufmann: Nöd absichtlich. Aber es funktioniert wie äis. Wär i me Bewerbigsgspröch säit «ich han das Projäkt gläitet», wirkt bi eus schnäll überheblich. Wär säit «ich han debii mitgschaffet», wirkt sympathisch — und wird underschätzt.\nHost: Was ratet Si?\nKaufmann: Nöd, dass me sich verstellt. Nur, dass me d Regle kennt. Und ich mach e Iischränkig: Ich beschriib e Norm, ich verteidige si nöd. Es git Situatione — Loonverhandlige — wo si de falsche Lüüt schadet.",
+   "gloss": [
+    {
+     "de": "s Understatement",
+     "mevcutTr": "abartmama, küçümseyerek anlatma"
+    },
+    {
+     "de": "d Zruckhaltig",
+     "mevcutTr": "çekingenlik"
+    },
+    {
+     "de": "prahle",
+     "mevcutTr": "övünmek"
+    },
+    {
+     "de": "d Bescheidenheit",
+     "mevcutTr": "alçakgönüllülük",
+     "havuz": {
+      "tr": "alçakgönüllülük",
+      "en": "modesty"
+     }
+    },
+    {
+     "de": "d Tarnig",
+     "mevcutTr": "kamuflaj"
+    },
+    {
+     "de": "de Statuts",
+     "mevcutTr": "statü"
+    },
+    {
+     "de": "unsichtbar",
+     "mevcutTr": "görünmez"
+    },
+    {
+     "de": "d Iischränkig",
+     "mevcutTr": "çekince"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l12",
+   "skill": "listening",
+   "level": "C1",
+   "title": "S Telefon vo de Gmeind",
+   "genre": "Telefon",
+   "intro": "Hikâyenin sonu: karar geldi. Konuşmanın nerede bittiğine dikkat et — Nadia bir şey daha söylüyor.",
+   "metin": "Gmeindschreiber: Frau H.? Meier, Gmeindsverwaltig. De Gmeindsrat hät Ihrem Gsuech zuegschtimmt. Härzlichi Gratulation.\nNadia: Merci. Das isch … merci vilmal.\nGmeindschreiber: S Kantonale bruucht na öppe zwäi Mönet, das isch Formsach. D Iiburgerigsfiir isch im Novämber.\nNadia: Guet. Ich han na öppis, wänn Si churz Ziit händ.\nGmeindschreiber: Sicher.\nNadia: I mim Gspröch isch e Frag gschtellt worde, wo laut Wegleitig nöd zuelässig isch — öb ich mich meh als Schwiizerin oder als Marokkanerin fühl. Ihri Protokollführerin hät s sälber festghalte.\nGmeindschreiber: Das han ich gläse, ja.\nNadia: Ich schriib drum e Beschwerd. Nöd wäge mim Fall — de isch ja positiv usegange. Sondern wäge de nächschte Person, wo die Frag überchunt und nöd weiss, dass si si darf ablehne.\nGmeindschreiber: Ich verstand s. Und ehrlich gsäit: Es isch üs lieber, Si schriibed s, als dass mir s intern «regle». Ich läge s em Präsidium vor.\nNadia: Ich han dänkt, Si wäred verärgeret.\nGmeindschreiber: Nei. Mir händ die Wegleitig ja sälber underschriibe. Wänn si nöd gilt, isch si nüüt wärt.\nNadia: Denn schick ich s nächschti Wuche.",
+   "gloss": [
+    {
+     "de": "de Entschäid",
+     "mevcutTr": "karar"
+    },
+    {
+     "de": "d Zueschtimmig",
+     "mevcutTr": "onay"
+    },
+    {
+     "de": "d Iiburgerigsfiir",
+     "mevcutTr": "vatandaşlık töreni"
+    },
+    {
+     "de": "d Rückmäldig",
+     "mevcutTr": "geri bildirim"
+    },
+    {
+     "de": "d Wegleitig",
+     "mevcutTr": "yönerge"
+    },
+    {
+     "de": "aapasse",
+     "mevcutTr": "uyarlamak"
+    },
+    {
+     "de": "d Beschwerd",
+     "mevcutTr": "şikâyet"
+    },
+    {
+     "de": "zuegää",
+     "mevcutTr": "kabul etmek"
+    }
+   ]
+  }
+ ]
+}

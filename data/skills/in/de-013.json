@@ -1,0 +1,602 @@
+{
+ "paket": "de-013",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "b2-r1",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Künstliche Intelligenz: Alltagshelfer oder stiller Bevormunder?",
+   "genre": "Köşe yazısı",
+   "intro": "Bir gazete yazarının yapay zekânın günlük hayattaki yeri üzerine görüş yazısını okuyacaksın; yazarın tutumuna dikkat et.",
+   "metin": "Wer heute morgens aufwacht, hat oft schon mit künstlicher Intelligenz zu tun, bevor der erste Kaffee getrunken ist: Die Nachrichten-App sortiert Schlagzeilen, der Sprachassistent liest den Kalender vor, und die Navigations-App schlägt eine Route vor, die angeblich zwölf Minuten spart. Laut einer aktuellen Erhebung des Digitalverbands Bitkom nutzen bereits 68 Prozent der Deutschen mindestens einmal täglich KI-gestützte Anwendungen – häufig, ohne es zu merken.\n\nDass diese Entwicklung Vorteile bringt, ist unbestritten. Routineaufgaben werden automatisiert, Informationen schneller gefunden, und wer eine Fremdsprache lernt, bekommt Übungen, die auf das eigene Niveau zugeschnitten sind. Problematisch wird es jedoch dort, wo Bequemlichkeit in Abhängigkeit umschlägt. Wer jede Entscheidung – vom Abendessen bis zur Urlaubsplanung – einem Algorithmus überlässt, verlernt allmählich, selbst abzuwägen.\n\nHinzu kommt ein zweites Problem: die mangelnde Transparenz. Von den Anbietern wird selten offengelegt, nach welchen Kriterien ihre Systeme Empfehlungen aussprechen. Der Verbraucherzentrale Bundesverband fordert deshalb seit Langem eine Kennzeichnungspflicht für KI-generierte Inhalte – bislang vergeblich.\n\nEin Verzicht auf künstliche Intelligenz wäre trotzdem der falsche Weg; er wäre ungefähr so sinnvoll wie der Verzicht auf Elektrizität. Entscheidend ist vielmehr ein bewusster Umgang: KI sollte uns Arbeit abnehmen, nicht das Denken. Wer versteht, wie die Systeme funktionieren, kann sie nutzen, ohne sich von ihnen steuern zu lassen. Genau dieses Verständnis müsste bereits in der Schule vermittelt werden – und zwar nicht irgendwann, sondern jetzt.",
+   "gloss": [
+    {
+     "de": "die Erhebung",
+     "mevcutTr": "anket, araştırma",
+     "havuz": {
+      "tr": "veri toplama",
+      "en": "data collection"
+     }
+    },
+    {
+     "de": "die Bequemlichkeit",
+     "mevcutTr": "rahatlık, konfor"
+    },
+    {
+     "de": "die Abhängigkeit",
+     "mevcutTr": "bağımlılık",
+     "havuz": {
+      "tr": "bağımlılık",
+      "en": "dependence"
+     }
+    },
+    {
+     "de": "abwägen",
+     "mevcutTr": "tartmak, ölçüp biçmek",
+     "havuz": {
+      "tr": "ölçüp biçmek",
+      "en": "to weigh up"
+     }
+    },
+    {
+     "de": "umschlagen in",
+     "mevcutTr": "(bir şeye) dönüşmek"
+    },
+    {
+     "de": "offenlegen",
+     "mevcutTr": "açıklamak, şeffaflaştırmak",
+     "havuz": {
+      "tr": "açıklamak",
+      "en": "to disclose"
+     }
+    },
+    {
+     "de": "die Kennzeichnungspflicht",
+     "mevcutTr": "etiketleme zorunluluğu"
+    },
+    {
+     "de": "der Verzicht",
+     "mevcutTr": "vazgeçme, feragat"
+    },
+    {
+     "de": "vermitteln",
+     "mevcutTr": "aktarmak, kazandırmak",
+     "havuz": {
+      "tr": "aktarmak",
+      "en": "to convey"
+     }
+    },
+    {
+     "de": "unbestritten",
+     "mevcutTr": "tartışmasız",
+     "havuz": {
+      "tr": "tartışmasız",
+      "en": "undisputed"
+     }
+    },
+    {
+     "de": "zugeschnitten auf",
+     "mevcutTr": "(bir şeye) göre uyarlanmış"
+    }
+   ]
+  },
+  {
+   "id": "b2-r2",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Wärmepumpen: Wie Heizen klimafreundlich wird",
+   "genre": "Popüler bilim makalesi",
+   "intro": "Isı pompası teknolojisini anlatan popüler bilim makalesini okuyacaksın; sayılara ve araştırma sonuçlarına dikkat et.",
+   "metin": "In deutschen Heizungskellern vollzieht sich derzeit ein leiser Wandel: Immer mehr Haushalte ersetzen ihre Gas- oder Ölheizung durch eine Wärmepumpe. Nach Angaben des Bundesverbands Wärmepumpe wurden allein im vergangenen Jahr rund 350.000 Geräte installiert – ein Rekordwert, auch wenn die Nachfrage zuletzt wieder leicht zurückgegangen ist.\n\nDas Prinzip der Technik ist älter, als viele vermuten: Eine Wärmepumpe funktioniert im Grunde wie ein umgekehrter Kühlschrank. Sie entzieht der Umgebung – der Luft, dem Erdreich oder dem Grundwasser – Wärme und bringt diese mithilfe von Strom auf ein höheres Temperaturniveau. Aus einer Kilowattstunde Strom können so drei bis vier Kilowattstunden Heizwärme gewonnen werden. Wird der Strom aus erneuerbaren Quellen erzeugt, heizt das Haus nahezu klimaneutral.\n\nKritiker wenden ein, die Geräte seien in der Anschaffung zu teuer und für ältere, schlecht gedämmte Gebäude ungeeignet. Eine Untersuchung des Fraunhofer-Instituts für Solare Energiesysteme kommt allerdings zu einem anderen Ergebnis: Selbst in unsanierten Altbauten arbeiteten die getesteten Anlagen überwiegend effizient, wenn auch mit höheren Betriebskosten. Entscheidend sei weniger das Baujahr des Hauses als die richtige Planung der Anlage.\n\nFachleute rechnen damit, dass die Preise in den kommenden Jahren sinken werden, sobald die Produktion in größere Stückzahlen geht. Wer heute baut oder saniert, kommt an der Technologie ohnehin kaum vorbei: Ab 2028 müssen neue Heizungen in den meisten Fällen zu 65 Prozent mit erneuerbaren Energien betrieben werden – eine Vorgabe, die faktisch auf die Wärmepumpe hinausläuft.",
+   "gloss": [
+    {
+     "de": "die Wärmepumpe",
+     "mevcutTr": "ısı pompası",
+     "havuz": {
+      "tr": "ısı pompası",
+      "en": "heat pump"
+     }
+    },
+    {
+     "de": "das Erdreich",
+     "mevcutTr": "toprak, zemin"
+    },
+    {
+     "de": "entziehen",
+     "mevcutTr": "çekmek, almak",
+     "havuz": {
+      "tr": "geri almak",
+      "en": "to revoke"
+     }
+    },
+    {
+     "de": "die Anschaffung",
+     "mevcutTr": "satın alma, edinme"
+    },
+    {
+     "de": "gedämmt",
+     "mevcutTr": "yalıtılmış"
+    },
+    {
+     "de": "sanieren",
+     "mevcutTr": "(binayı) yenilemek",
+     "havuz": {
+      "tr": "elden geçirmek",
+      "en": "to refurbish"
+     }
+    },
+    {
+     "de": "die Betriebskosten",
+     "mevcutTr": "işletme giderleri"
+    },
+    {
+     "de": "einwenden",
+     "mevcutTr": "itiraz etmek",
+     "havuz": {
+      "tr": "itiraz etmek",
+      "en": "to object"
+     }
+    },
+    {
+     "de": "die Stückzahl",
+     "mevcutTr": "üretim adedi",
+     "havuz": {
+      "tr": "adet",
+      "en": "quantity"
+     }
+    },
+    {
+     "de": "die Vorgabe",
+     "mevcutTr": "yasal şart, direktif",
+     "havuz": {
+      "tr": "şart",
+      "en": "requirement"
+     }
+    },
+    {
+     "de": "hinauslaufen auf",
+     "mevcutTr": "sonuçta (bir şeye) varmak"
+    }
+   ]
+  },
+  {
+   "id": "b2-r3",
+   "skill": "reading",
+   "level": "B2",
+   "title": "„Vertrauen ist die neue Stechuhr“ – Gespräch mit einer Arbeitsforscherin",
+   "genre": "Röportaj",
+   "intro": "Bir çalışma sosyoloğuyla ev ofis kültürü üzerine yapılmış gazete röportajını okuyacaksın; uzmanın nüanslı görüşlerini yakala.",
+   "metin": "Seit der Pandemie arbeitet gut ein Viertel der Beschäftigten in Deutschland zumindest teilweise von zu Hause. Die Arbeitssoziologin Prof. Dr. Miriam Brandt von der Universität Bremen erforscht, wie sich dadurch unsere Arbeitskultur verändert.\n\nFrau Brandt, viele Unternehmen holen ihre Beschäftigten gerade zurück ins Büro. Ist das Homeoffice ein Auslaufmodell?\n\nNein, davon kann keine Rede sein. Richtig ist, dass einige große Konzerne wieder Anwesenheitspflichten eingeführt haben. Unsere Daten zeigen aber, dass hybride Modelle – etwa zwei bis drei Bürotage pro Woche – inzwischen der Normalfall sind. Eine vollständige Rückkehr zur alten Präsenzkultur halte ich für ausgeschlossen.\n\nKritiker sagen, zu Hause werde weniger gearbeitet.\n\nDas Gegenteil ist häufig der Fall. In unserer Befragung von 4.000 Beschäftigten gaben viele an, im Homeoffice konzentrierter zu arbeiten und Pausen eher ausfallen zu lassen. Das eigentliche Risiko ist nicht Faulheit, sondern Entgrenzung: Wenn der Laptop im Wohnzimmer steht, fällt es schwer, abends abzuschalten.\n\nWas empfehlen Sie Unternehmen?\n\nErstens klare Regeln: Erreichbarkeit muss definiert, Überstunden müssen erfasst werden. Zweitens sollte das Büro attraktiver werden – als Ort der Begegnung, nicht der Kontrolle. Und drittens brauchen Führungskräfte ein neues Verständnis ihrer Rolle: Wer Leistung nur daran misst, wer am längsten am Schreibtisch sitzt, hat die Entwicklung verschlafen. Vertrauen ist, wenn Sie so wollen, die neue Stechuhr.\n\nUnd die Beschäftigten selbst?\n\nSie sollten bewusst Grenzen ziehen: feste Arbeitszeiten, ein eigener Arbeitsplatz, und nach Feierabend bleibt der Laptop zu. Homeoffice ist eine Chance – aber nur für die, die sich selbst gut organisieren können.",
+   "gloss": [
+    {
+     "de": "das Auslaufmodell",
+     "mevcutTr": "modası geçen model"
+    },
+    {
+     "de": "die Anwesenheitspflicht",
+     "mevcutTr": "ofiste bulunma zorunluluğu"
+    },
+    {
+     "de": "die Entgrenzung",
+     "mevcutTr": "sınırların silinmesi",
+     "havuz": {
+      "tr": "sınırların silinmesi",
+      "en": "blurring of boundaries"
+     }
+    },
+    {
+     "de": "abschalten",
+     "mevcutTr": "kafayı işten koparmak",
+     "havuz": {
+      "tr": "kafa dağıtmak",
+      "en": "to unwind"
+     }
+    },
+    {
+     "de": "die Erreichbarkeit",
+     "mevcutTr": "ulaşılabilirlik"
+    },
+    {
+     "de": "erfassen",
+     "mevcutTr": "kayıt altına almak",
+     "havuz": {
+      "tr": "kaydetmek",
+      "en": "to record"
+     }
+    },
+    {
+     "de": "die Führungskraft",
+     "mevcutTr": "yönetici",
+     "havuz": {
+      "tr": "yönetici",
+      "en": "executive"
+     }
+    },
+    {
+     "de": "die Stechuhr",
+     "mevcutTr": "mesai saati kartı, puantaj saati"
+    },
+    {
+     "de": "die Befragung",
+     "mevcutTr": "anket, soruşturma",
+     "havuz": {
+      "tr": "anket",
+      "en": "survey"
+     }
+    },
+    {
+     "de": "Grenzen ziehen",
+     "mevcutTr": "sınır koymak"
+    }
+   ]
+  },
+  {
+   "id": "b2-r4",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Das Recht auf Reparatur – ein überfälliger Schritt",
+   "genre": "Köşe yazısı",
+   "intro": "AB'nin yeni „onarım hakkı“ düzenlemesini değerlendiren bir köşe yazısını okuyacaksın; yazarın hem desteğini hem çekincelerini ayırt et.",
+   "metin": "Wenn der Akku schlappmacht oder das Display splittert, landet das Smartphone in Deutschland im Durchschnitt nach knapp drei Jahren in der Schublade – oder gleich im Müll. Rund 22 Kilogramm Elektroschrott produziert jeder Mensch in der Europäischen Union pro Jahr; nur ein Bruchteil davon wird recycelt. Dass die EU nun ein Recht auf Reparatur beschlossen hat, ist deshalb überfällig.\n\nKünftig müssen Hersteller bestimmte Geräte – von der Waschmaschine bis zum Handy – auch nach Ablauf der Garantie zu angemessenen Preisen reparieren und Ersatzteile über Jahre bereithalten. Verbraucherinnen und Verbraucher sollen zudem transparent darüber informiert werden, wie leicht sich ein Produkt reparieren lässt.\n\nSkeptiker befürchten steigende Preise, weil die Hersteller die zusätzlichen Kosten weitergeben würden. Dieses Argument greift jedoch zu kurz. Erstens zeigen Erfahrungen aus Frankreich, wo ein Reparaturindex bereits seit 2021 gilt, dass viele Firmen ihre Produkte daraufhin langlebiger konstruiert haben. Zweitens rechnet sich Reparieren auch volkswirtschaftlich: Nach einer Studie des Umweltbundesamts könnten durch längere Nutzungsdauern jährlich Rohstoffe im Wert von mehreren Milliarden Euro eingespart werden.\n\nEntscheidend wird allerdings die Umsetzung sein. Solange eine Reparatur fast so viel kostet wie ein Neugerät, wird sich das Verhalten der Mehrheit kaum ändern. Sinnvoll wären deshalb ergänzende Maßnahmen wie ein bundesweiter Reparaturbonus, wie ihn Thüringen bereits erprobt hat. Das Recht auf Reparatur ist ein wichtiger Anfang – mehr aber auch nicht.",
+   "gloss": [
+    {
+     "de": "der Elektroschrott",
+     "mevcutTr": "elektronik atık"
+    },
+    {
+     "de": "der Bruchteil",
+     "mevcutTr": "küçük bir kısım"
+    },
+    {
+     "de": "überfällig",
+     "mevcutTr": "çoktan gecikmiş"
+    },
+    {
+     "de": "der Hersteller",
+     "mevcutTr": "üretici",
+     "havuz": {
+      "tr": "üretici",
+      "en": "manufacturer"
+     }
+    },
+    {
+     "de": "das Ersatzteil",
+     "mevcutTr": "yedek parça",
+     "havuz": {
+      "tr": "yedek parça",
+      "en": "spare part"
+     }
+    },
+    {
+     "de": "zu kurz greifen",
+     "mevcutTr": "yetersiz kalmak (argüman)"
+    },
+    {
+     "de": "langlebig",
+     "mevcutTr": "uzun ömürlü"
+    },
+    {
+     "de": "die Nutzungsdauer",
+     "mevcutTr": "kullanım süresi"
+    },
+    {
+     "de": "sich rechnen",
+     "mevcutTr": "kârlı olmak, hesabı tutmak"
+    },
+    {
+     "de": "die Umsetzung",
+     "mevcutTr": "uygulama, hayata geçirme"
+    },
+    {
+     "de": "erproben",
+     "mevcutTr": "denemek, sınamak",
+     "havuz": {
+      "tr": "sınamak",
+      "en": "to test out"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b2-r5",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Mehrsprachigkeit an deutschen Schulen: Ergebnisse des Bildungsberichts",
+   "genre": "Rapor özeti",
+   "intro": "Ulusal eğitim raporunun okullardaki çok dillilik bölümünün resmi özetini okuyacaksın; bulgular ile öneriler arasındaki farka dikkat et.",
+   "metin": "Der aktuelle nationale Bildungsbericht, der im Auftrag der Kultusministerkonferenz erstellt wurde, widmet der sprachlichen Vielfalt an deutschen Schulen erstmals ein eigenes Kapitel. Die wichtigsten Ergebnisse werden im Folgenden zusammengefasst.\n\nInzwischen wächst mehr als ein Drittel der Schülerinnen und Schüler mit mindestens einer weiteren Sprache neben dem Deutschen auf; in Großstädten liegt der Anteil teilweise über fünfzig Prozent. Am häufigsten vertreten sind Türkisch, Russisch, Arabisch und Polnisch. Entgegen einer verbreiteten Annahme wirkt sich Mehrsprachigkeit dem Bericht zufolge nicht negativ auf den Schulerfolg aus. Entscheidend seien vielmehr die soziale Lage der Familie und die Qualität der sprachlichen Förderung.\n\nKritisch bewertet der Bericht die ungleiche Verteilung der Fördermittel. Während einige Bundesländer flächendeckend Sprachförderprogramme ab dem Kindergarten anbieten, wird andernorts erst in der Grundschule mit gezielter Förderung begonnen – nach Ansicht der Autorinnen und Autoren zu spät. Empfohlen wird außerdem, die Herkunftssprachen stärker in den Unterricht einzubeziehen: Wer seine Erstsprache gut beherrsche, lerne in der Regel auch die Zweitsprache Deutsch schneller.\n\nHandlungsbedarf sieht der Bericht schließlich bei der Lehrerbildung. Nur etwa jede fünfte Lehrkraft fühlt sich nach eigener Aussage ausreichend auf den Unterricht in sprachlich heterogenen Klassen vorbereitet. Gefordert werden daher verpflichtende Fortbildungen sowie mehr Lehrkräfte, die selbst eine Einwanderungsgeschichte haben. Der vollständige Bericht kann auf der Internetseite der Kultusministerkonferenz heruntergeladen werden.",
+   "gloss": [
+    {
+     "de": "die Vielfalt",
+     "mevcutTr": "çeşitlilik"
+    },
+    {
+     "de": "aufwachsen",
+     "mevcutTr": "(bir ortamda) büyümek",
+     "havuz": {
+      "tr": "büyümek",
+      "en": "to grow up"
+     }
+    },
+    {
+     "de": "die Annahme",
+     "mevcutTr": "varsayım",
+     "havuz": {
+      "tr": "varsayım",
+      "en": "assumption"
+     }
+    },
+    {
+     "de": "die Förderung",
+     "mevcutTr": "destek, teşvik",
+     "havuz": {
+      "tr": "teşvik",
+      "en": "funding"
+     }
+    },
+    {
+     "de": "flächendeckend",
+     "mevcutTr": "ülke/bölge çapında, yaygın",
+     "havuz": {
+      "tr": "her yeri kapsayan",
+      "en": "across the board"
+     }
+    },
+    {
+     "de": "die Herkunftssprache",
+     "mevcutTr": "köken dili, ana dil",
+     "havuz": {
+      "tr": "köken dili",
+      "en": "heritage language"
+     }
+    },
+    {
+     "de": "einbeziehen",
+     "mevcutTr": "dahil etmek",
+     "havuz": {
+      "tr": "dahil etmek",
+      "en": "to include"
+     }
+    },
+    {
+     "de": "der Handlungsbedarf",
+     "mevcutTr": "eylem ihtiyacı",
+     "havuz": {
+      "tr": "harekete geçme gereği",
+      "en": "need for action"
+     }
+    },
+    {
+     "de": "die Lehrkraft",
+     "mevcutTr": "öğretmen",
+     "havuz": {
+      "tr": "öğretmen",
+      "en": "teacher"
+     }
+    },
+    {
+     "de": "heterogen",
+     "mevcutTr": "karma, türdeş olmayan",
+     "havuz": {
+      "tr": "heterojen",
+      "en": "heterogeneous"
+     }
+    },
+    {
+     "de": "verpflichtend",
+     "mevcutTr": "zorunlu"
+    },
+    {
+     "de": "die Fortbildung",
+     "mevcutTr": "hizmet içi eğitim",
+     "havuz": {
+      "tr": "mesleki eğitim",
+      "en": "further training"
+     }
+    }
+   ]
+  },
+  {
+   "id": "b2-r6",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Schreiben der Stadtverwaltung: Umgestaltung der Lindenstraße",
+   "genre": "Resmi yazışma",
+   "intro": "Belediyenin mahalle sakinlerine gönderdiği resmi bilgilendirme yazısını okuyacaksın; alınan kararları ve tarihleri not et.",
+   "metin": "Sehr geehrte Anwohnerinnen und Anwohner der Lindenstraße,\n\nmit diesem Schreiben möchten wir Sie über die geplante Umgestaltung Ihrer Straße informieren, die vom Stadtrat am 14. März beschlossen wurde.\n\nWie Ihnen bekannt sein dürfte, wird die Lindenstraße täglich von rund 8.000 Fahrzeugen befahren, obwohl sie ursprünglich als reine Wohnstraße angelegt wurde. Bei einer Verkehrszählung im vergangenen Herbst wurde zudem festgestellt, dass die zulässige Höchstgeschwindigkeit von 30 Kilometern pro Stunde von fast der Hälfte der Fahrzeuge überschritten wird. Auf Beschwerden aus der Anwohnerschaft hin wurde daher ein Konzept zur Verkehrsberuhigung erarbeitet.\n\nVorgesehen sind folgende Maßnahmen: Die Fahrbahn wird auf Höhe der Grundschule verengt, an drei Stellen werden Hochbeete mit Sitzgelegenheiten errichtet, und zwanzig zusätzliche Fahrradbügel werden installiert. Darüber hinaus entfallen zwölf Parkplätze, wofür im Parkhaus an der Bergstraße vergünstigte Dauerstellplätze für Anwohner eingerichtet werden.\n\nDie Bauarbeiten beginnen voraussichtlich am 2. September und werden etwa vier Monate dauern. Während dieser Zeit ist mit Einschränkungen zu rechnen; die Zufahrt zu den Wohnhäusern bleibt jedoch jederzeit gewährleistet.\n\nAm Donnerstag, dem 21. August, findet um 18 Uhr im Bürgerhaus eine Informationsveranstaltung statt, bei der das Planungsteam Ihre Fragen beantwortet. Um Anmeldung unter der unten angegebenen Telefonnummer wird gebeten.\n\nMit freundlichen Grüßen\nIhr Amt für Stadtentwicklung",
+   "gloss": [
+    {
+     "de": "die Umgestaltung",
+     "mevcutTr": "yeniden düzenleme"
+    },
+    {
+     "de": "der Anwohner",
+     "mevcutTr": "mahalle sakini",
+     "havuz": {
+      "tr": "mahalle sakini",
+      "en": "local resident"
+     }
+    },
+    {
+     "de": "die Verkehrsberuhigung",
+     "mevcutTr": "trafiği yavaşlatma önlemleri"
+    },
+    {
+     "de": "die Höchstgeschwindigkeit",
+     "mevcutTr": "azami hız"
+    },
+    {
+     "de": "überschreiten",
+     "mevcutTr": "aşmak",
+     "havuz": {
+      "tr": "aşmak",
+      "en": "to exceed"
+     }
+    },
+    {
+     "de": "die Maßnahme",
+     "mevcutTr": "önlem"
+    },
+    {
+     "de": "verengen",
+     "mevcutTr": "daraltmak"
+    },
+    {
+     "de": "entfallen",
+     "mevcutTr": "iptal olmak, kalkmak"
+    },
+    {
+     "de": "gewährleisten",
+     "mevcutTr": "güvence altına almak",
+     "havuz": {
+      "tr": "güvence altına almak",
+      "en": "to ensure"
+     }
+    },
+    {
+     "de": "die Zufahrt",
+     "mevcutTr": "araç girişi"
+    },
+    {
+     "de": "vergünstigt",
+     "mevcutTr": "indirimli"
+    }
+   ]
+  },
+  {
+   "id": "b2-r7",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Ein anonymer Hinweis",
+   "genre": "E-posta",
+   "intro": "Bir yerel gazetenin haber merkezine gelen isimsiz ihbar. Gazeteci Nora'nın araştırması buradan başlıyor.",
+   "metin": "Betreff: Bitte lesen Sie das\n\nSehr geehrte Frau Weiß,\n\nich schreibe Ihnen anonym und ich weiß, dass das den Wert meiner Aussage senkt. Bitte lesen Sie trotzdem weiter.\n\nIch arbeite seit vier Jahren im Logistikzentrum Nordkamp, über eine Leihfirma. Offiziell haben wir dieselben Rechte wie die Festangestellten. In der Praxis läuft es anders.\n\nUnsere Schichten werden mit 7,5 Stunden geplant, aber die Zeit zum Umziehen und zum Weg zur Halle zählt nicht — das sind täglich rund 25 Minuten, die niemand bezahlt. Wer sich beschwert, bekommt im nächsten Monat weniger Schichten. Nicht null, nur weniger. Das lässt sich nie beweisen, aber jeder kennt zwei, drei Namen, bei denen es passiert ist.\n\nIch kann Ihnen Schichtpläne von sechs Monaten schicken. Namen sind darauf, deshalb müsste ich sie vorher schwärzen. Was ich nicht kann: mit Ihnen unter meinem Namen sprechen. Ich habe zwei Kinder, und meine Verlängerung wird im März entschieden.\n\nWenn Sie das für zu dünn halten, verstehe ich es. Aber vielleicht fragen Sie einmal nach, wie viele Leiharbeiter dort im letzten Jahr keine Verlängerung bekommen haben — und wann sie sich vorher beschwert haben.\n\nMit freundlichen Grüßen\nEine Mitarbeiterin",
+   "gloss": [
+    {
+     "de": "der Hinweis",
+     "mevcutTr": "ihbar, ipucu",
+     "havuz": {
+      "tr": "ipucu",
+      "en": "clue"
+     }
+    },
+    {
+     "de": "anonym",
+     "mevcutTr": "isimsiz",
+     "havuz": {
+      "tr": "anonim",
+      "en": "anonymous"
+     }
+    },
+    {
+     "de": "die Leiharbeit",
+     "mevcutTr": "ödünç/taşeron işçilik"
+    },
+    {
+     "de": "die Schicht",
+     "mevcutTr": "vardiya",
+     "havuz": {
+      "tr": "toplumsal katman",
+      "en": "social stratum"
+     }
+    },
+    {
+     "de": "die Pause",
+     "mevcutTr": "mola",
+     "havuz": {
+      "tr": "mola",
+      "en": "break"
+     }
+    },
+    {
+     "de": "der Vorwurf",
+     "mevcutTr": "iddia, suçlama",
+     "havuz": {
+      "tr": "suçlama",
+      "en": "accusation"
+     }
+    },
+    {
+     "de": "belegen",
+     "mevcutTr": "belgelemek",
+     "havuz": {
+      "tr": "kanıtlamak",
+      "en": "to substantiate"
+     }
+    },
+    {
+     "de": "die Kündigung",
+     "mevcutTr": "işten çıkarma",
+     "havuz": {
+      "tr": "işten çıkarma",
+      "en": "termination"
+     }
+    },
+    {
+     "de": "sich melden",
+     "mevcutTr": "iletişime geçmek"
+    }
+   ]
+  },
+  {
+   "id": "b2-r8",
+   "skill": "reading",
+   "level": "B2",
+   "title": "Kündigung: Was wirklich gilt",
+   "genre": "Rehber",
+   "intro": "Almanya'da iş güvencesinin nasıl işlediğini anlatan bir rehber yazı — çoğu kişinin yanlış bildiği konu.",
+   "metin": "Der wichtigste Satz zuerst: In Betrieben mit mehr als zehn Beschäftigten und nach sechs Monaten im Job gilt der Kündigungsschutz. Ein Arbeitgeber kann dann nicht einfach kündigen, weil ihm jemand nicht passt — er braucht einen Grund, den ein Gericht akzeptiert.\n\nEs gibt drei zulässige Gründe. Personenbedingt heißt meist längere Krankheit. Verhaltensbedingt bedeutet, dass jemand Regeln verletzt — hier ist fast immer eine Abmahnung nötig, und zwar für genau dasselbe Verhalten. Betriebsbedingt heißt, dass der Arbeitsplatz wegfällt. In diesem Fall muss der Arbeitgeber eine Sozialauswahl treffen: Alter, Betriebszugehörigkeit, Unterhaltspflichten und Schwerbehinderung entscheiden, wer bleibt — nicht die Leistung.\n\nDer zweite wichtige Punkt ist die Frist. Wer gegen eine Kündigung vorgehen will, hat dafür drei Wochen ab Zugang des Schreibens. Diese Frist ist hart: Danach gilt die Kündigung als wirksam, auch wenn sie rechtswidrig war.\n\nEin verbreiteter Irrtum betrifft die Abfindung. Es gibt keinen allgemeinen Anspruch darauf. In der Praxis wird sie trotzdem oft gezahlt — nicht aus Freundlichkeit, sondern weil ein Prozess für den Arbeitgeber teuer und unsicher ist. Deshalb ist die Klage in vielen Fällen weniger ein Kampf um den Arbeitsplatz als eine Verhandlung über Geld.\n\nWer eine Kündigung erhält, sollte zwei Dinge sofort tun: sich innerhalb von drei Tagen bei der Agentur für Arbeit melden und die Frist im Kalender markieren. Alles andere kann warten.",
+   "gloss": [
+    {
+     "de": "der Kündigungsschutz",
+     "mevcutTr": "iş güvencesi"
+    },
+    {
+     "de": "die Abmahnung",
+     "mevcutTr": "yazılı uyarı"
+    },
+    {
+     "de": "betriebsbedingt",
+     "mevcutTr": "işletme gereği",
+     "havuz": {
+      "tr": "işletme gereği",
+      "en": "for operational reasons"
+     }
+    },
+    {
+     "de": "verhaltensbedingt",
+     "mevcutTr": "davranış nedeniyle"
+    },
+    {
+     "de": "die Sozialauswahl",
+     "mevcutTr": "sosyal kriter seçimi"
+    },
+    {
+     "de": "die Klage",
+     "mevcutTr": "dava",
+     "havuz": {
+      "tr": "dava",
+      "en": "lawsuit"
+     }
+    },
+    {
+     "de": "die Abfindung",
+     "mevcutTr": "tazminat",
+     "havuz": {
+      "tr": "kıdem tazminatı",
+      "en": "severance pay"
+     }
+    },
+    {
+     "de": "die Frist",
+     "mevcutTr": "süre",
+     "havuz": {
+      "tr": "son tarih",
+      "en": "deadline"
+     }
+    }
+   ]
+  }
+ ]
+}

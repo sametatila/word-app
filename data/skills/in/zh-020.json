@@ -1,0 +1,574 @@
+{
+ "paket": "zh-020",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-c1-w1",
+   "skill": "writing",
+   "level": "C1",
+   "title": "Din Komentar: Autofräis Zäntrum?",
+   "genre": "Forum yorumu",
+   "intro": "Yerel haber sitesinde 'Zürih merkezi arabasız olsun mu?' tartışması kızışmış. Önce iki kalıp cümleyi kur, sonra kendi yorumunu Züritüütsch yaz — lehçede yorum yazmak, Zürih internetinin gündelik gerçeği.",
+   "metin": "Für mich isch klaar: S Zäntrum mues autofräi wärde, wil me mit em Tram und em Velo überall schnäll aanechunt.\n\nD Ladebsitzer händ Angscht vor weniger Umsatz, aber d Schtudie zäiged, dass Fuessgänger meh poschte.\n\n«Blick uf Züri» mäldet: De Gmäindraat wott s Zäntrum vo Züri bis zwäituusigdriissg autofräi mache. Uusnaame git's für Liferige, Taxi und Lüüt mit Behinderig. D Parkhüüser am Rand vo de Schtadt bliibed offe. D Ladebsitzer warned vor weniger Umsatz, de VCS redt vo meh Läbesqualität.\n\nIch bi klaar defüür. Ehrlich gsäit verschtaan ich d Uufregig nöd: Mir rede vomene Zäntrum, wo s Tram scho hüt alli zwoo Minuute fáart, und d Parkhüüser am Rand bliibed ja offe. Wär würkli mues, chunt also immer no aane.\n\nD Ladebsitzer warned vor weniger Umsatz – aber d Erfarig us andere Schtedt zäigt s Gägetäil: Wo d Lüüt z Fuess underwägs sind, blibed si lenger, lueged i d Schaufänschter und poschted am Schluss meh. En Parkplatz vor em Lade bringt äin Chund, e schööni Gass bringt hundert.\n\nMin Voorschlag wär, dass me nöd bis zwäituusigdriissg wartet, sondern scho jetz jede Summer d Gasse für es paar Mönet zuemacht. Dänn gseet jede sälber, was das für s Quartier häisst – und am Schluss profitiered alli devoo.",
+   "gloss": [
+    {
+     "de": "autofräi",
+     "mevcutTr": "arabasız, araç trafiğine kapalı"
+    },
+    {
+     "de": "de Umsatz",
+     "mevcutTr": "ciro",
+     "havuz": {
+      "tr": "ciro",
+      "en": "revenue"
+     }
+    },
+    {
+     "de": "poschte",
+     "mevcutTr": "alışveriş yapmak (İsviçre)"
+    },
+    {
+     "de": "de Fuessgänger",
+     "mevcutTr": "yaya"
+    },
+    {
+     "de": "de Ladebsitzer",
+     "mevcutTr": "dükkân sahibi"
+    },
+    {
+     "de": "d Uusnaam",
+     "mevcutTr": "istisna"
+    },
+    {
+     "de": "liifere",
+     "mevcutTr": "teslimat yapmak"
+    },
+    {
+     "de": "s Parkhuus",
+     "mevcutTr": "katlı otopark"
+    },
+    {
+     "de": "d Läbesqualität",
+     "mevcutTr": "yaşam kalitesi"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ehrlich gsäit verschtaan ich d Uufregig nöd.",
+     "mevcutTr": "Açıkçası bu telaşı anlamıyorum."
+    },
+    {
+     "de": "Ich bi klaar defüür / degäge.",
+     "mevcutTr": "Ben açıkça lehindeyim / karşıyım."
+    },
+    {
+     "de": "Was me debii nöd vergässe döörf: …",
+     "mevcutTr": "Bu arada unutulmaması gereken: …"
+    },
+    {
+     "de": "D Erfarig us andere Schtedt zäigt, dass …",
+     "mevcutTr": "Başka şehirlerin deneyimi gösteriyor ki …"
+    },
+    {
+     "de": "Min Voorschlag wär, dass …",
+     "mevcutTr": "Benim önerim şu olurdu: …"
+    },
+    {
+     "de": "Am Schluss profitiered alli devoo.",
+     "mevcutTr": "Sonuçta bundan herkes kazançlı çıkar."
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w2",
+   "skill": "writing",
+   "level": "C1",
+   "title": "Gägerede: En Iiwand ernscht nää",
+   "genre": "Tartışma yazısı",
+   "intro": "C1'de asıl beceri, karşı görüşü en güçlü hâliyle kurup ondan sonra yanıt vermektir. Bunu yazacaksın.",
+   "metin": "I sinere stärchschte Form würd dää Iiwand so tööne:\n\nDas schtaan ich zue, aber d Schlussfolgerig folgt drus nöd.\n\nS Argumänt setzt vorus, was es erscht müesst bewiise.\n\nZum Iiwand, Mundart im Chindergarte seig es Hindernis für Chind mit ere andere Erschtsprooch:\n\nI sinere stärchschte Form würd dää Iiwand so tööne: E Familie chunt us Syrie, s Chind lernt zwäi Jaar Mundart, und denn, i de erschte Klass, wächslet alles uf Hochdüütsch. Was es glernt hät, gilt döt nur zum Halbe. Es verlüürt Ziit, wo di andere scho vorus sind — und zwar genau di Chind, wo am wenigschte händ.\n\nDas schtaan ich zue. D Zaale gänd em rächt: De Übergang chunt für die Chind härter als für di andere, und wer das bestriitet, hät nie e Klass gseh.\n\nS Problem lit aber nöd bi de Mundart, sondern bim Übergang sälber. Wer d Mundart uus em Chindergarte nimmt, löst de Bruch nöd — er verschiebt en. Denn lernt s Chind zwäi Jaar Hochdüütsch und schtaat nachhär uf em Pauseplatz vor ere Sprooch, wo niemert im Underricht gredt hät. S Argumänt setzt vorus, was es erscht müesst bewiise: dass s Chind nume äi Ziel uf äi Mal cha haa.\n\nWär e reini Hochdüütsch-Lösig will, mues au säge, wie s Chind denn zu de andere Chind chunt. Bis do e Antwort da isch, chum ich zum Schluss, dass mir nöd d Mundart müend abschaffe, sondern de Übergang begleite: bewusst, benennt und mit Ziit.",
+   "gloss": [
+    {
+     "de": "d Gägerede",
+     "mevcutTr": "karşı konuşma, yanıt"
+    },
+    {
+     "de": "de Iiwand",
+     "mevcutTr": "itiraz"
+    },
+    {
+     "de": "zuegschtaa",
+     "mevcutTr": "kabul etmek"
+    },
+    {
+     "de": "entchräfte",
+     "mevcutTr": "çürütmek"
+    },
+    {
+     "de": "d Prämiss",
+     "mevcutTr": "öncül, varsayım"
+    },
+    {
+     "de": "unterstelle",
+     "mevcutTr": "isnat etmek"
+    },
+    {
+     "de": "differenziere",
+     "mevcutTr": "ayrım yapmak"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "I sinere stärchschte Form würd dää Iiwand so tööne: …",
+     "mevcutTr": "Bu itirazın en güçlü hâli şöyle olurdu: …"
+    },
+    {
+     "de": "Das schtaan ich zue.",
+     "mevcutTr": "Bunu kabul ediyorum."
+    },
+    {
+     "de": "S Problem lit nöd döt, sondern …",
+     "mevcutTr": "Sorun orada değil, …"
+    },
+    {
+     "de": "S Argumänt setzt vorus, was es erscht müesst bewiise.",
+     "mevcutTr": "Argüman kanıtlaması gerekeni varsayıyor."
+    },
+    {
+     "de": "Wär das behauptet, mues au säge, …",
+     "mevcutTr": "Bunu iddia eden şunu da söylemeli: …"
+    },
+    {
+     "de": "Drum chum ich zum Schluss, dass …",
+     "mevcutTr": "Bu yüzden … sonucuna varıyorum."
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w3",
+   "skill": "writing",
+   "level": "C1",
+   "title": "Zämefassig und Stellignaam",
+   "genre": "Özet + görüş",
+   "intro": "İki adımlı bir metin yazacaksın: önce nesnel bir özet, sonra açıkça ayrılmış kendi görüşün. C1'de bu ayrımın görünür olması esastır.",
+   "metin": "De Text vertritt d These, dass di direkt Demokratie Legitimation erzüügt.\n\nSowiit d Zämefassig; jetz zu minere äigene Iischätzig.\n\nIm Gägesatz zum Autor setz ich d Gwichtig anderscht.\n\nDe Text vertritt d These, dass di direkt Demokratie käi Garantie für gscheiti, aber äini für aakzeptierti Entschäid isch. Als Beleg füehrt er zwäi Mechanisme aa: Wär sälber entschäidet, akzeptiert au unaagnämi Resultat, und s Referändum wirkt scho, bevor s brucht wird, wil jedi Regierig vo Aafang aa breiter verhandlet. Dem stellt de Autor zwäi Choschte gägenüber. Erschtens s Tempo: Es Gsetz bruucht zää Jaar oder meh, und s Biispil Frauestimmrächt zäigt, dass e Minderhäit cha blockiere. Zwäitens de Schutz vo Minderhäite: E Volksabschtimmig kennt käi Begründigspflicht, es Parlamänt scho. Sini Schlussfolgerig isch nöd d Abschaffig, sondern Ehrlichkäit über das, wo s System läischtet.\n\nSowiit d Zämefassig; jetz zu minere äigene Iischätzig.\n\nIn däm Punkt bin ich mit em Autor iiverstande, wil de Underschid zwüsche «gscheit» und «aakzeptiert» tatsächlich s ganze Missverständnis erklärt. Wär vo ere Abschtimmig s bescht Resultat erwartet, hät s System falsch verstande.\n\nIm Gägesatz zum Autor setz ich aber d Gwichtig anderscht. Er behandlet Tempo und Minderhäiteschutz als zwäi gliichwertigi Poschte. Das sind si nöd. Langsamkäit chunt spöter zrugg — es Gsetz cha me i zää Jaar na immer mache. E Minderhäit, wo ihres Rächt zwänzg Jaar lang nöd hät, überchunt die Ziit nie zrugg. Das isch käi Frag vo de Gschwindigkäit, sondern vo de Substanz.\n\nMis Fazit isch drum ängers als sis: Direkti Demokratie bruucht Gränze, wo si nöd sälber cha setze — und genau die z definiere isch d offeni Uufgab, wo de Text nöd aapackt.",
+   "gloss": [
+    {
+     "de": "d Stellignaam",
+     "mevcutTr": "görüş bildirme"
+    },
+    {
+     "de": "de Kärnpunkt",
+     "mevcutTr": "ana nokta"
+    },
+    {
+     "de": "objektiv",
+     "mevcutTr": "nesnel",
+     "havuz": {
+      "tr": "nesnel",
+      "en": "objective"
+     }
+    },
+    {
+     "de": "abgränze",
+     "mevcutTr": "sınırını çizmek, ayırmak"
+    },
+    {
+     "de": "d Gwichtig",
+     "mevcutTr": "ağırlıklandırma"
+    },
+    {
+     "de": "s Fazit",
+     "mevcutTr": "sonuç",
+     "havuz": {
+      "tr": "sonuç",
+      "en": "conclusion"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "De Text vertritt d These, dass …",
+     "mevcutTr": "Metin … tezini savunuyor."
+    },
+    {
+     "de": "Als Beleg füehrt er … aa.",
+     "mevcutTr": "Kanıt olarak …'i öne sürüyor."
+    },
+    {
+     "de": "Sowiit d Zämefassig; jetz zu minere äigene Iischätzig.",
+     "mevcutTr": "Özet buraya kadar; şimdi kendi değerlendirmem."
+    },
+    {
+     "de": "In däm Punkt bin ich mit em Autor iiverstande, wil …",
+     "mevcutTr": "Bu noktada yazarla hemfikirim, çünkü …"
+    },
+    {
+     "de": "Im Gägesatz zum Autor setz ich d Gwichtig anderscht.",
+     "mevcutTr": "Yazarın aksine ağırlığı farklı koyuyorum."
+    },
+    {
+     "de": "Mis Fazit isch drum …",
+     "mevcutTr": "Dolayısıyla sonucum …"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w4",
+   "skill": "writing",
+   "level": "C1",
+   "title": "Persönliche Text: Zwüsche zwo Sprooche",
+   "genre": "Deneme",
+   "intro": "Kişisel ama düşünen bir metin yazacaksın: kendi dil deneyimini bir teze bağlayacaksın. C1'de anlatı ve düşünce iç içe geçer.",
+   "metin": "Lang han ich irgendwo zwüsche zwo Sprooche gläbt.\n\nErsch spöter han ich ufghört, das als Mangel z gseh.\n\nÄi einzigi Anekdote isch na käi These.\n\nIch erinnere mi na genau a de Momänt. Ich bi drü Mönet z Züri gsii, im Coop a de Kasse, und d Frau hät mi öppis gfrögt. Ich han s Wort nöd verstande. Si hät s wiederholt — gliich schnäll, gliich fründlich. Ich han gnickt. Si hät gnickt. Ich bi ggange und han nöd gwüsst, zu was ich grad ja gsäit han.\n\nI dem Momänt han ich nöd Wuet gschpürt und au nöd Truur. Ich han mi gschämt. Und zwar nöd wäge de Sprooch, sondern wäge em Nicke. Ich han so tue, als ob — und das isch di erschti Sprooch gsii, wo ich do gschproche han.\n\nHüt gsee ich das anderscht. Was ich domals als Verluscht erläbt han, isch en Zueschtand gsii, wo di mäischte Lüüt uf de Wält kenned: Me isch nöd i de äinte und nöd i de andere Sprooch ganz dihäi. Ersch spöter han ich ufghört, das als Mangel z gseh. Wär zwüsche zwo Sprooche schtaat, ghört öppis, wo di andere nüme ghöred — d Näht, d Stelle, wo e Sprooch entschäidet, was si nöd säit.\n\nAber ich wett vorsichtig sii: Äi einzigi Anekdote isch na käi These. Ich han e Uufenthaltsbewilligung, en Job und Lüüt, wo warted, bis ich en Satz fertig han. Wär das nöd hät, für dää isch de Zwüscheruum käi Ort zum Nachdänke, sondern äifach en Ort ohni Bode. Vo dört us tönt s Ganze anderscht — und dää Text wär nöd vo mir z schriibe.",
+   "gloss": [
+    {
+     "de": "d Zueghörigkäit",
+     "mevcutTr": "aidiyet"
+    },
+    {
+     "de": "de Bruch",
+     "mevcutTr": "kırılma, kopuş",
+     "havuz": {
+      "tr": "kopuş",
+      "en": "break"
+     }
+    },
+    {
+     "de": "de Zwüscheruum",
+     "mevcutTr": "ara alan"
+    },
+    {
+     "de": "d Anekdote",
+     "mevcutTr": "anekdot"
+    },
+    {
+     "de": "verallgemeinere",
+     "mevcutTr": "genellemek"
+    },
+    {
+     "de": "sich schäme",
+     "mevcutTr": "utanmak"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich erinnere mi na genau a …",
+     "mevcutTr": "… hâlâ tam olarak hatırlıyorum."
+    },
+    {
+     "de": "I dem Momänt han ich gmerkt, dass …",
+     "mevcutTr": "O anda … olduğunu fark ettim."
+    },
+    {
+     "de": "Hüt gsee ich das anderscht.",
+     "mevcutTr": "Bugün buna başka türlü bakıyorum."
+    },
+    {
+     "de": "Was ich drus glernt han, isch …",
+     "mevcutTr": "Bundan çıkardığım …"
+    },
+    {
+     "de": "Äi einzigi Anekdote isch na käi These.",
+     "mevcutTr": "Tek bir anekdot henüz bir tez değildir."
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w5",
+   "skill": "writing",
+   "level": "C1",
+   "title": "E Iigab a d Gmeind",
+   "genre": "Resmî yazı",
+   "intro": "Hikâyedeki şikâyeti sen yazacaksın: kurumu suçlamadan, kişisel öfke olmadan, düzeltilebilir bir noktaya odaklanarak.",
+   "metin": "Mini Iigab betrifft nöd mis äige Verfaare.\n\nDie Frag verstoosst gäge Ziffer 4.2 vo de Wegleitig.\n\nIch beaatrage, dass d Kommissionsmitglieder uf d Wegleitig hingwiise wärded.\n\nSehr geehrti Damen und Herre\n\nMit dere Iigab wend ich uf en Vorgang im Iiburgerigsverfaare hiiwiise. Mini Iigab betrifft nöd mis äige Verfaare — dää isch positiv abgschlosse worde.\n\nAm 14. Mai isch mir a de Kommissionssitzig folgendi Frag gschtellt worde: öb ich mich meh als Schwiizerin oder meh als Marokkanerin fühli. D Protokollführerin hät im Protokoll sälber festghalte, dass die Frag nöd de kantonale Wegleitig entspricht.\n\nDie Frag verstoosst gäge Ziffer 4.2 vo de Wegleitig, wo Frage über persönlichi Iischtellige, Religion und Identität uusschliesst. Si isch au sachlich nöd prüefbar: E Antwort druf cha weder richtig no falsch sii, was si für es Verfaare untauglich macht.\n\nIch beaatrage:\n1. dass d Kommissionsmitglieder vor de nächschte Sitzigsrundi uf Ziffer 4.2 hingwiise wärded;\n2. dass i de Iiladig zum Gspröch stoot, welli Frage nöd zuelässig sind — damit Gsuechsteller wüssed, dass si e Antwort dörfed ablehne.\n\nEs gaat mir nöd um Schuld. E einzelni Frag isch schnäll gstellt. Es gaat mir drum, dass di nächschti Person nöd s Gfühl hät, si müessi antworte, zum nöd unhöflich z wirke.\n\nFründlichi Grüess\nNadia H.",
+   "gloss": [
+    {
+     "de": "d Iigab",
+     "mevcutTr": "resmî dilekçe"
+    },
+    {
+     "de": "d Wegleitig",
+     "mevcutTr": "yönerge"
+    },
+    {
+     "de": "d Zueschtändigkäit",
+     "mevcutTr": "yetki"
+    },
+    {
+     "de": "beaatrage",
+     "mevcutTr": "talep etmek"
+    },
+    {
+     "de": "sachlich",
+     "mevcutTr": "nesnel",
+     "havuz": {
+      "tr": "ölçülü",
+      "en": "matter-of-fact"
+     }
+    },
+    {
+     "de": "d Wiederholig vermeide",
+     "mevcutTr": "tekrarını önlemek"
+    },
+    {
+     "de": "de Verstoss",
+     "mevcutTr": "ihlal"
+    },
+    {
+     "de": "d Empfehlig",
+     "mevcutTr": "tavsiye"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Mit dere Iigab wend ich uf … hiiwiise.",
+     "mevcutTr": "Bu dilekçeyle …'e dikkat çekmek istiyorum."
+    },
+    {
+     "de": "Mini Iigab betrifft nöd mis äige Verfaare.",
+     "mevcutTr": "Dilekçem kendi dosyamla ilgili değil."
+    },
+    {
+     "de": "Am … isch mir folgendi Frag gschtellt worde: …",
+     "mevcutTr": "…tarihinde bana şu soru soruldu: …"
+    },
+    {
+     "de": "Die Frag verstoosst gäge …",
+     "mevcutTr": "Bu soru …'e aykırı."
+    },
+    {
+     "de": "Ich beaatrage, dass …",
+     "mevcutTr": "… talep ediyorum."
+    },
+    {
+     "de": "Es gaat mir nöd um Schuld, sondern um d Wiederholig.",
+     "mevcutTr": "Mesele suç değil, tekrarı."
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w6",
+   "skill": "writing",
+   "level": "C1",
+   "title": "Stellignaam mit Date",
+   "genre": "Sınav formatı",
+   "intro": "C1 yazma görevinin en zoru: bir veriyi doğru okuyup üzerine görüş kurmak — abartmadan, ama arkasına saklanmadan.",
+   "metin": "Us de Erhebig gaat hervor, dass de Aateil uf 31 Prozänt gschtiige isch.\n\nDie Zaal säit weniger, als es uf de erschte Blick schiint.\n\nTrotzdem lat sich d Tendänz nöd ignoriere.\n\nUs de Erhebig gaat hervor, dass Gsuech vo Persone mit eme nöd-europäische Name i de gliiche Gmeind hüüfiger abglehnt wärded — bi vergliichbarer Uufenthaltsduur, Sprachkenntnis und Iikomme. Bemerkenswert isch dabii weniger de Underschid sälber als sini Verteilig: Er isch dört am gröschte, wo käi schriftliche Kriterie existiered, und fascht verschwunde, wo d Dossiers anonymisiert vorgläit wärded.\n\nGrad die zwäit Beobachtig macht di häufigschti Gägenerklärig schwach. Wär argumentiert, di Betroffene seiged «weniger integriert», mues erkläre, warum de gliich Underschid verschwindet, sobald de Name nöd meh sichtbar isch.\n\nDänkbar wär allerdings au, dass sich Gsuechsteller underschidlich vorbereited oder erscht spöter iiriched — das wär e Erklärig vor em Verfaare, nöd i dem.\n\nWas d Zaale nöd zäiged, isch d Ebene: Si säged nöd, öb de Underschid bi de Kommission entstaat, bi de Verwaltig oder scho bi de Beratig. Wär drus «diskriminierendi Kommissione» macht, liest meh, als dosteet.\n\nIch halt s drum für verfehlt, us dere Studie e Aaklag gäge einzelni Gremie z mache — und ebeso verfehlt, si mit Hiiwiis uf die Unsicherhäit z entkräfte. Sinnvoller schiint mer, di äi Massnaam z nää, wo d Date direkt schtützed: verbindlichi schriftlichi Kriterie und, wo s gaat, anonymisierti Dossierprüefig. Das entschäidet nöd, wär iiburgeret wird — es entschäidet, dass de Name nöd mitentschäidet.",
+   "gloss": [
+    {
+     "de": "d Erhebig",
+     "mevcutTr": "araştırma"
+    },
+    {
+     "de": "de Aateil",
+     "mevcutTr": "oran"
+    },
+    {
+     "de": "hervorgaa us",
+     "mevcutTr": "…den anlaşılmak"
+    },
+    {
+     "de": "relativiere",
+     "mevcutTr": "görecelileştirmek"
+    },
+    {
+     "de": "d Uussagchraft",
+     "mevcutTr": "açıklayıcılık gücü"
+    },
+    {
+     "de": "zruckhaltend",
+     "mevcutTr": "temkinli"
+    },
+    {
+     "de": "überinterpretiere",
+     "mevcutTr": "aşırı yorumlamak"
+    },
+    {
+     "de": "d Schlussfolgerig",
+     "mevcutTr": "çıkarım"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Us de Erhebig gaat hervor, dass …",
+     "mevcutTr": "Araştırmadan … anlaşılıyor."
+    },
+    {
+     "de": "Bemerkenswert isch dabii weniger …, sondern …",
+     "mevcutTr": "Dikkat çeken … değil, …"
+    },
+    {
+     "de": "Dänkbar wär allerdings au, dass …",
+     "mevcutTr": "Ancak … olması da düşünülebilir."
+    },
+    {
+     "de": "Was d Zaale nöd zäiged, isch …",
+     "mevcutTr": "Rakamların göstermediği …"
+    },
+    {
+     "de": "Ich halt s drum für verfehlt, …",
+     "mevcutTr": "Bu yüzden …'i yanlış buluyorum."
+    },
+    {
+     "de": "Sinnvoller schiint mer …",
+     "mevcutTr": "Bana daha anlamlı gelen …"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w7",
+   "skill": "writing",
+   "level": "C1",
+   "title": "Kolumne: Zueghörigkäit",
+   "genre": "Köşe yazısı",
+   "intro": "Aidiyet üzerine kişisel ama düşünen bir köşe yazısı. Büyük laftan kaçınmak, C1'de asıl beceridir.",
+   "metin": "Zueghörigkäit fangt döt aa, wo niemert meh frogt.\n\nIch würd s gärn als These schriibe, aber ich han nur äi Szene.\n\nVillicht isch genau das di ehrlichschti Form.\n\nIch erinnere mi na genau a de Momänt, wo mich s Formular gfrogt hät, siit wänn ich i de Gmeind wohn. Nüün Jaar. Ich han die Zaal aagluegt und nöd glaubt — nöd wil si falsch gsii isch, sondern wil si sich nöd nach nüün Jaar aagfühlt hät.\n\nI dem Momänt han ich gmerkt, dass Zueghörigkäit nöd i Jaar messbar isch, aber trotzdem i Jaar bewiise wärde mues. Das isch de Widerspruch, wo jedes Verfaare mit sich träit: Es cha nur zelle, was sich zelle laat.\n\nMe könnt drus schliesse, dass s Verfaare falsch isch. Ich glaub das nöd. Es wär schlimmer, wänn öpper nach Sympathie entschäide würd. E Zaal isch dumm, aber si isch für alli gliich dumm.\n\nIch wett aber vorsichtig sii: Ich schriib das mit ere Niederlassigsbewilligung im Sack und mit eme Job, wo mer erlaubt, en halbe Tag frei z nää für e Sitzig. Wär das nöd hät, für dää isch das gliiche Verfaare käi Formalität, sondern es Risiko.\n\nMis Fazit isch drum bschäidener, als d Kolumne verspricht: Zueghörigkäit fangt nöd a dem Tag aa, wo me de Pass überchunt. Si fangt döt aa, wo niemert eim meh frogt, siit wänn me da isch — und dää Tag schtaat uf käim Formular.",
+   "gloss": [
+    {
+     "de": "d Zueghörigkäit",
+     "mevcutTr": "aidiyet"
+    },
+    {
+     "de": "d Anekdote",
+     "mevcutTr": "anekdot"
+    },
+    {
+     "de": "verallgemeinere",
+     "mevcutTr": "genellemek"
+    },
+    {
+     "de": "s Pathos",
+     "mevcutTr": "abartılı duygusallık",
+     "havuz": {
+      "tr": "abartılı duygusallık",
+      "en": "pathos"
+     }
+    },
+    {
+     "de": "de Bruch",
+     "mevcutTr": "kırılma",
+     "havuz": {
+      "tr": "kopuş",
+      "en": "break"
+     }
+    },
+    {
+     "de": "beiläufig",
+     "mevcutTr": "yan yollu, farkında olmadan",
+     "havuz": {
+      "tr": "laf arasında",
+      "en": "casually"
+     }
+    },
+    {
+     "de": "d Iischränkig",
+     "mevcutTr": "sınır, çekince"
+    },
+    {
+     "de": "s Fazit",
+     "mevcutTr": "sonuç",
+     "havuz": {
+      "tr": "sonuç",
+      "en": "conclusion"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich erinnere mi na genau a …",
+     "mevcutTr": "… hâlâ tam olarak hatırlıyorum."
+    },
+    {
+     "de": "I dem Momänt han ich gmerkt, dass …",
+     "mevcutTr": "O anda … fark ettim."
+    },
+    {
+     "de": "Me könnt drus schliesse, dass …",
+     "mevcutTr": "Buradan … çıkarılabilir."
+    },
+    {
+     "de": "Ich wett aber vorsichtig sii: …",
+     "mevcutTr": "Ama temkinli olmak isterim: …"
+    },
+    {
+     "de": "Mis Fazit isch drum bschäidener: …",
+     "mevcutTr": "Sonucum bu yüzden daha mütevazı: …"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-w8",
+   "skill": "writing",
+   "level": "C1",
+   "title": "D Red a de Iiburgerigsfiir",
+   "genre": "Konuşma metni",
+   "intro": "Hikâyenin son parçası: Nadia'nın yerine geçip törendeki kısa konuşmayı yazacaksın — teşekkürün içine bir düşünce ve bir itiraz koyarak.",
+   "metin": "Ich han die Red nöd äifach gfunde.\n\nEn Täil vo de Kritik isch berächtigt gsii, en Täil nöd.\n\nIch übernimm hüt es Rächt, nöd e Meinig.\n\nIch han die Red nöd äifach gfunde, und ich säg au warum.\n\nVor eme Jaar bin ich vor ere Kommission gsässe, wo entschide hät, öb zwänzg Jaar reiched. Das isch käi aagnämi Erfaarig gsii. Trotzdem: En Täil vo dem Verfaare isch berächtigt gsii. Es prüeft nöd, öb me sympathisch isch, sondern öb me d Regle vo dem Land kennt und träit. Das isch mir liber als es Verfaare, wo nach Gfühl entschäidet.\n\nEn andere Täil isch es nöd gsii. Mir isch e Frag gstellt worde, wo laut de äigene Wegleitig nöd hät dörfe gstellt wärde. Ich han si abglehnt, und ich han das nachhär schriftlich gmäldet — nöd wäge mir, sondern wäge de nächschte Person. Dra halt ich fescht.\n\nEs gaat dabii nöd um mich. Es gaat drum, dass e Gmeinschaft, wo Regle uufschriibt, sich au dra haltet, wänn s unbequem isch. Das isch nöd es Detail — das isch de ganz Underschid zwüsche Rächt und Wohlwolle.\n\nIch bedanke mich bi de Protokollführerin vo de Kommission. Si hät i dem Momänt öppis ufgschriibe, wo si nöd hät müesse ufschriibe. Das isch d chliinschti und wichtigschti Form vo Zivilcourage, wo s git.\n\nIch übernimm hüt es Rächt, nöd e Meinig. Und ich fröi mi druf, s z bruuche.",
+   "gloss": [
+    {
+     "de": "d Fiir",
+     "mevcutTr": "tören"
+    },
+    {
+     "de": "d Red",
+     "mevcutTr": "konuşma"
+    },
+    {
+     "de": "sich bedanke",
+     "mevcutTr": "teşekkür etmek"
+    },
+    {
+     "de": "s Pathos",
+     "mevcutTr": "duygusal abartı",
+     "havuz": {
+      "tr": "abartılı duygusallık",
+      "en": "pathos"
+     }
+    },
+    {
+     "de": "beharre uf",
+     "mevcutTr": "…de ısrar etmek"
+    },
+    {
+     "de": "iiraume",
+     "mevcutTr": "kabul etmek"
+    },
+    {
+     "de": "widme",
+     "mevcutTr": "ithaf etmek"
+    },
+    {
+     "de": "d Verpflichtig",
+     "mevcutTr": "yükümlülük"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich han die Red nöd äifach gfunde.",
+     "mevcutTr": "Bu konuşmayı kolay bulmadım."
+    },
+    {
+     "de": "En Täil vo de Kritik isch berächtigt gsii.",
+     "mevcutTr": "Eleştirinin bir kısmı haklıydı."
+    },
+    {
+     "de": "Dra halt ich fescht.",
+     "mevcutTr": "Bunda ısrarlıyım."
+    },
+    {
+     "de": "Es gaat dabii nöd um mich, sondern um …",
+     "mevcutTr": "Mesele ben değilim, …"
+    },
+    {
+     "de": "Ich bedanke mich bi … derfür, dass …",
+     "mevcutTr": "…'e … için teşekkür ederim."
+    },
+    {
+     "de": "Ich übernimm hüt es Rächt, nöd e Meinig.",
+     "mevcutTr": "Bugün bir hakkı devralıyorum, bir görüşü değil."
+    }
+   ]
+  }
+ ]
+}

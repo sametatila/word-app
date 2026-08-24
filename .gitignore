@@ -60,6 +60,7 @@ yarn-error.log*
 pnpm-debug.log*
 .tmp-agent
 
+
 # --- veritabanı yerel dosyaları ---
 *.sqlite
 *.sqlite3
@@ -75,3 +76,5 @@ pgdata/
 .DS_Store
 Thumbs.db
 desktop.ini
+data/skills/.exercises.json
+data/skills/.verify.json

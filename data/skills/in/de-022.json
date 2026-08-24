@@ -1,0 +1,441 @@
+{
+ "paket": "de-022",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "c1-s1",
+   "skill": "speaking",
+   "level": "C1",
+   "title": "Fremdwörter",
+   "genre": "Ses çalışması",
+   "intro": "Bu kelimeler Türkçede de var, çünkü iki dil de Fransızcadan almış. Tuzak da orada: tanıdık geldikleri için Türkçe alışkanlığıyla okunuyorlar. Vurguları da yerli Almanca kelimelerin tersine son hecede.",
+   "metin": "Ich studiere an der Universität.\nWir essen heute im Restaurant.\nMein Bruder ist Ingenieur.\nSie arbeitet als Journalistin.\nDas Auto steht in der Garage.\nDer Chef hat den Termin verschoben.",
+   "gloss": [
+    {
+     "de": "die Universität",
+     "mevcutTr": "üniversite",
+     "havuz": {
+      "tr": "üniversite",
+      "en": "university"
+     }
+    },
+    {
+     "de": "das Restaurant",
+     "mevcutTr": "restoran",
+     "havuz": {
+      "tr": "restoran",
+      "en": "restaurant"
+     }
+    },
+    {
+     "de": "der Ingenieur",
+     "mevcutTr": "mühendis",
+     "havuz": {
+      "tr": "mühendis",
+      "en": "engineer"
+     }
+    },
+    {
+     "de": "der Journalist",
+     "mevcutTr": "gazeteci",
+     "havuz": {
+      "tr": "gazeteci",
+      "en": "journalist"
+     }
+    },
+    {
+     "de": "die Garage",
+     "mevcutTr": "garaj",
+     "havuz": {
+      "tr": "garaj",
+      "en": "garage"
+     }
+    }
+   ],
+   "tasks": [
+    {
+     "de": "Ich studiere an der Universität.",
+     "mevcutTr": "Üniversitede okuyorum."
+    },
+    {
+     "de": "Wir essen heute im Restaurant.",
+     "mevcutTr": "Bugün restoranda yiyoruz."
+    },
+    {
+     "de": "Mein Bruder ist Ingenieur.",
+     "mevcutTr": "Kardeşim mühendis."
+    },
+    {
+     "de": "Sie arbeitet als Journalistin.",
+     "mevcutTr": "O gazeteci olarak çalışıyor."
+    },
+    {
+     "de": "Das Auto steht in der Garage.",
+     "mevcutTr": "Araba garajda."
+    },
+    {
+     "de": "Der Chef hat den Termin verschoben.",
+     "mevcutTr": "Patron randevuyu erteledi."
+    }
+   ]
+  },
+  {
+   "id": "b2-s2",
+   "skill": "speaking",
+   "level": "B2",
+   "title": "Auslautverhärtung",
+   "genre": "Ses çalışması",
+   "intro": "Kelime sonundaki b, d, g sertleşir (Tag = TAAK). Ama çekimlenip ünlü eklenince yumuşak hâline döner (Tage = TAA-ge). Kuralın kolay kısmı ilki, zor kısmı ikincisi.",
+   "metin": "Der Tag war lang, aber die Tage davor waren kurz.\nDer Hund bellt, die Hunde schlafen.\nDas Kind spielt mit den anderen Kindern.\nDer Berg ist hoch, die Berge sind höher.\nDas Auto ist gelb, ich mag gelbe Autos.",
+   "gloss": [
+    {
+     "de": "der Tag / die Tage",
+     "mevcutTr": "gün / günler"
+    },
+    {
+     "de": "der Hund / die Hunde",
+     "mevcutTr": "köpek / köpekler"
+    },
+    {
+     "de": "gelb / gelbe",
+     "mevcutTr": "sarı / sarı (çekimli)"
+    },
+    {
+     "de": "das Kind / die Kinder",
+     "mevcutTr": "çocuk / çocuklar"
+    },
+    {
+     "de": "der Berg / die Berge",
+     "mevcutTr": "dağ / dağlar"
+    }
+   ],
+   "tasks": [
+    {
+     "de": "Der Tag war lang, aber die Tage davor waren kurz.",
+     "mevcutTr": "Gün uzundu ama ondan önceki günler kısaydı."
+    },
+    {
+     "de": "Der Hund bellt, die Hunde schlafen.",
+     "mevcutTr": "Köpek havlıyor, köpekler uyuyor."
+    },
+    {
+     "de": "Das Kind spielt mit den anderen Kindern.",
+     "mevcutTr": "Çocuk diğer çocuklarla oynuyor."
+    },
+    {
+     "de": "Der Berg ist hoch, die Berge sind höher.",
+     "mevcutTr": "Dağ yüksek, dağlar daha yüksek."
+    },
+    {
+     "de": "Das Auto ist gelb, ich mag gelbe Autos.",
+     "mevcutTr": "Araba sarı, sarı arabaları severim."
+    }
+   ]
+  },
+  {
+   "id": "a2-d1",
+   "skill": "speaking",
+   "level": "A2",
+   "title": "Im Café",
+   "genre": "Diyalog",
+   "intro": "Garson seninle konuşuyor. Sorularına yüksek sesle Almanca cevap ver — ne dediğine göre konuşma farklı ilerler.",
+   "metin": "",
+   "gloss": [
+    {
+     "de": "bestellen",
+     "mevcutTr": "sipariş vermek",
+     "havuz": {
+      "tr": "sipariş etmek",
+      "en": "to order"
+     }
+    },
+    {
+     "de": "die Rechnung",
+     "mevcutTr": "hesap",
+     "havuz": {
+      "tr": "fatura",
+      "en": "bill"
+     }
+    },
+    {
+     "de": "bar zahlen",
+     "mevcutTr": "nakit ödemek"
+    },
+    {
+     "de": "mit Karte",
+     "mevcutTr": "kartla"
+    },
+    {
+     "de": "der Kuchen",
+     "mevcutTr": "kek, pasta",
+     "havuz": {
+      "tr": "kek",
+      "en": "cake"
+     }
+    }
+   ],
+   "targets": [
+    {
+     "de": "Ich hätte gern …",
+     "mevcutTr": "… istiyorum (kibar)"
+    },
+    {
+     "de": "mit Milch / ohne Zucker",
+     "mevcutTr": "sütlü / şekersiz"
+    },
+    {
+     "de": "Was empfehlen Sie?",
+     "mevcutTr": "Ne tavsiye edersiniz?"
+    },
+    {
+     "de": "Die Rechnung, bitte.",
+     "mevcutTr": "Hesap, lütfen."
+    },
+    {
+     "de": "Ich zahle bar / mit Karte.",
+     "mevcutTr": "Nakit / kartla ödüyorum."
+    }
+   ]
+  },
+  {
+   "id": "a1-d1",
+   "skill": "speaking",
+   "level": "A1",
+   "title": "Nach dem Weg fragen",
+   "genre": "Diyalog",
+   "intro": "Sokakta birine yol soruyorsun. Yüksek sesle Almanca cevap ver — ne dediğine göre konuşma değişir.",
+   "metin": "",
+   "gloss": [
+    {
+     "de": "der Bahnhof",
+     "mevcutTr": "tren istasyonu",
+     "havuz": {
+      "tr": "tren istasyonu",
+      "en": "train station"
+     }
+    },
+    {
+     "de": "die Apotheke",
+     "mevcutTr": "eczane",
+     "havuz": {
+      "tr": "eczane",
+      "en": "pharmacy"
+     }
+    },
+    {
+     "de": "geradeaus",
+     "mevcutTr": "dümdüz",
+     "havuz": {
+      "tr": "dümdüz",
+      "en": "straight ahead"
+     }
+    },
+    {
+     "de": "links / rechts",
+     "mevcutTr": "sol / sağ"
+    },
+    {
+     "de": "zu Fuß",
+     "mevcutTr": "yürüyerek"
+    }
+   ],
+   "targets": [
+    {
+     "de": "Entschuldigung, wo ist …?",
+     "mevcutTr": "Affedersiniz, … nerede?"
+    },
+    {
+     "de": "Wie komme ich zum …?",
+     "mevcutTr": "…'a nasıl giderim?"
+    },
+    {
+     "de": "Ist es weit?",
+     "mevcutTr": "Uzak mı?"
+    },
+    {
+     "de": "Vielen Dank!",
+     "mevcutTr": "Çok teşekkürler!"
+    }
+   ]
+  },
+  {
+   "id": "b1-d1",
+   "skill": "speaking",
+   "level": "B1",
+   "title": "Beim Arzt",
+   "genre": "Diyalog",
+   "intro": "Doktordasın. Şikâyetini yüksek sesle Almanca anlat — ne dediğine göre doktor farklı sorular soruyor.",
+   "metin": "",
+   "gloss": [
+    {
+     "de": "die Schmerzen",
+     "mevcutTr": "ağrılar"
+    },
+    {
+     "de": "der Hals",
+     "mevcutTr": "boğaz, boyun",
+     "havuz": {
+      "tr": "boyun",
+      "en": "neck"
+     }
+    },
+    {
+     "de": "das Fieber",
+     "mevcutTr": "ateş",
+     "havuz": {
+      "tr": "ateş",
+      "en": "fever"
+     }
+    },
+    {
+     "de": "das Rezept",
+     "mevcutTr": "reçete",
+     "havuz": {
+      "tr": "tarif",
+      "en": "recipe"
+     }
+    },
+    {
+     "de": "sich ausruhen",
+     "mevcutTr": "dinlenmek",
+     "havuz": {
+      "tr": "dinlenmek",
+      "en": "to rest"
+     }
+    }
+   ],
+   "targets": [
+    {
+     "de": "Ich habe … schmerzen.",
+     "mevcutTr": "…m ağrıyor."
+    },
+    {
+     "de": "Seit … Tagen.",
+     "mevcutTr": "… gündür."
+    },
+    {
+     "de": "Ich habe Fieber.",
+     "mevcutTr": "Ateşim var."
+    },
+    {
+     "de": "Brauche ich ein Rezept?",
+     "mevcutTr": "Reçeteye ihtiyacım var mı?"
+    }
+   ]
+  },
+  {
+   "id": "b2-d1",
+   "skill": "speaking",
+   "level": "B2",
+   "title": "Vorstellungsgespräch",
+   "genre": "Diyalog",
+   "intro": "Bir iş görüşmesindesin. Sorulara yüksek sesle Almanca cevap ver — gerçek bir görüşmenin sırasıyla ilerliyor.",
+   "metin": "",
+   "gloss": [
+    {
+     "de": "die Erfahrung",
+     "mevcutTr": "deneyim",
+     "havuz": {
+      "tr": "deneyim",
+      "en": "experience"
+     }
+    },
+    {
+     "de": "die Stärke",
+     "mevcutTr": "güçlü yön"
+    },
+    {
+     "de": "das Gehalt",
+     "mevcutTr": "maaş",
+     "havuz": {
+      "tr": "maaş",
+      "en": "salary"
+     }
+    },
+    {
+     "de": "die Stelle",
+     "mevcutTr": "pozisyon, iş",
+     "havuz": {
+      "tr": "iş",
+      "en": "position"
+     }
+    },
+    {
+     "de": "sich bewerben",
+     "mevcutTr": "başvurmak",
+     "havuz": {
+      "tr": "başvurmak",
+      "en": "to apply"
+     }
+    }
+   ],
+   "targets": [
+    {
+     "de": "Ich habe … Jahre Erfahrung.",
+     "mevcutTr": "… yıllık deneyimim var."
+    },
+    {
+     "de": "Meine Stärke ist …",
+     "mevcutTr": "Güçlü yönüm …"
+    },
+    {
+     "de": "Ich stelle mir … vor.",
+     "mevcutTr": "… düşünüyorum (beklenti)."
+    },
+    {
+     "de": "Ich hätte eine Frage.",
+     "mevcutTr": "Bir sorum olacak."
+    }
+   ]
+  },
+  {
+   "id": "c1-d1",
+   "skill": "speaking",
+   "level": "C1",
+   "title": "Eine Meinung äußern",
+   "genre": "Diyalog",
+   "intro": "Bir tartışmadasın. Katılabilir, kısmen katılabilir ya da karşı çıkabilirsin — önemli olan bunu Almancada nasıl söylediğin.",
+   "metin": "",
+   "gloss": [
+    {
+     "de": "meiner Meinung nach",
+     "mevcutTr": "bence, bana göre"
+    },
+    {
+     "de": "das sehe ich anders",
+     "mevcutTr": "ben farklı görüyorum"
+    },
+    {
+     "de": "einerseits … andererseits",
+     "mevcutTr": "bir yandan … öte yandan"
+    },
+    {
+     "de": "da haben Sie recht",
+     "mevcutTr": "bu konuda haklısınız"
+    },
+    {
+     "de": "ich bezweifle, dass …",
+     "mevcutTr": "… olduğundan şüpheliyim"
+    }
+   ],
+   "targets": [
+    {
+     "de": "Meiner Meinung nach …",
+     "mevcutTr": "Bence …"
+    },
+    {
+     "de": "Das sehe ich anders.",
+     "mevcutTr": "Ben farklı görüyorum."
+    },
+    {
+     "de": "Einerseits …, andererseits …",
+     "mevcutTr": "Bir yandan …, öte yandan …"
+    },
+    {
+     "de": "Da haben Sie recht, aber …",
+     "mevcutTr": "Haklısınız, ama …"
+    }
+   ]
+  }
+ ]
+}

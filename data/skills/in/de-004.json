@@ -1,0 +1,626 @@
+{
+ "paket": "de-004",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "a1-w1",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Sich vorstellen",
+   "genre": "Tanışma",
+   "intro": "Kendini tanıtmayı çalışacaksın: önce cümleler kur, sonra kısa bir forum mesajı yaz.",
+   "metin": "Ich heiße Elif und komme aus Izmir.\n\nIch wohne in Berlin in einer kleinen Wohnung.\n\nIch arbeite als Lehrerin.\n\nHallo zusammen! Ich heiße Emre und ich komme aus der Türkei, aus Ankara. Jetzt wohne ich in Hamburg. Ich arbeite als Ingenieur. Meine Hobbys sind Fußball und Kochen. Ich lerne Deutsch für die Arbeit. Bis bald! Emre",
+   "gloss": [
+    {
+     "de": "heißen",
+     "mevcutTr": "adında olmak",
+     "havuz": {
+      "tr": "adı olmak",
+      "en": "to be called"
+     }
+    },
+    {
+     "de": "kommen aus",
+     "mevcutTr": "…den gelmek, …li olmak"
+    },
+    {
+     "de": "wohnen",
+     "mevcutTr": "oturmak, ikamet etmek",
+     "havuz": {
+      "tr": "oturmak",
+      "en": "to live"
+     }
+    },
+    {
+     "de": "arbeiten als",
+     "mevcutTr": "… olarak çalışmak"
+    },
+    {
+     "de": "das Hobby",
+     "mevcutTr": "hobi",
+     "havuz": {
+      "tr": "hobi",
+      "en": "hobby"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich heiße …",
+     "mevcutTr": "Benim adım …"
+    },
+    {
+     "de": "Ich komme aus …",
+     "mevcutTr": "…den geliyorum / …liyim"
+    },
+    {
+     "de": "Ich wohne in …",
+     "mevcutTr": "…de oturuyorum"
+    },
+    {
+     "de": "Ich arbeite als …",
+     "mevcutTr": "… olarak çalışıyorum"
+    },
+    {
+     "de": "Mein Hobby ist …",
+     "mevcutTr": "Hobim …"
+    },
+    {
+     "de": "Bis bald!",
+     "mevcutTr": "Görüşürüz!"
+    }
+   ]
+  },
+  {
+   "id": "a1-w2",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Eine Nachricht an einen Freund",
+   "genre": "Mesaj",
+   "intro": "Arkadaşlarla plan yapmayı çalışacaksın: cümleler kur, sonra bir davete cevap yaz.",
+   "metin": "Wir gehen morgen ins Kino.\n\nUm wie viel Uhr treffen wir uns?\n\nLeider kann ich heute nicht kommen.\n\nHallo! Kommst du am Samstag zu meiner Party? Sie beginnt um 18 Uhr. Liebe Grüße, Jonas\n\nHallo Jonas, danke für deine Einladung! Aber ich kann am Samstag leider nicht kommen. Ich muss am Abend arbeiten. Hast du am Sonntag Zeit? Wir können zusammen Kaffee trinken. Viele Grüße, Selin",
+   "gloss": [
+    {
+     "de": "sich treffen",
+     "mevcutTr": "buluşmak"
+    },
+    {
+     "de": "die Einladung",
+     "mevcutTr": "davet",
+     "havuz": {
+      "tr": "davet",
+      "en": "invitation"
+     }
+    },
+    {
+     "de": "leider",
+     "mevcutTr": "maalesef",
+     "havuz": {
+      "tr": "maalesef",
+      "en": "unfortunately"
+     }
+    },
+    {
+     "de": "die Zeit haben",
+     "mevcutTr": "vakti olmak"
+    },
+    {
+     "de": "vorschlagen",
+     "mevcutTr": "önermek",
+     "havuz": {
+      "tr": "önermek",
+      "en": "to suggest"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Danke für deine Einladung!",
+     "mevcutTr": "Davetin için teşekkürler!"
+    },
+    {
+     "de": "Ich kann leider nicht kommen.",
+     "mevcutTr": "Maalesef gelemiyorum."
+    },
+    {
+     "de": "Ich muss arbeiten.",
+     "mevcutTr": "Çalışmam gerekiyor."
+    },
+    {
+     "de": "Hast du am Sonntag Zeit?",
+     "mevcutTr": "Pazar günü vaktin var mı?"
+    },
+    {
+     "de": "Viele Grüße",
+     "mevcutTr": "Sevgiler (mesaj sonu)"
+    }
+   ]
+  },
+  {
+   "id": "a1-w3",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Essen und Einkaufen",
+   "genre": "Günlük yaşam",
+   "intro": "Alışveriş ve yemek cümleleri kuracak, sonra bir arkadaşını akşam yemeğine davet edeceksin.",
+   "metin": "Ich möchte ein Kilo Tomaten kaufen.\n\nZum Frühstück esse ich Brot und Käse.\n\nTrinkst du Tee oder Kaffee?\n\nLiebe Mia, ich lade dich zum Abendessen ein. Hast du am Freitag um 19 Uhr Zeit? Ich koche Nudeln mit Tomatensoße und einen Salat. Bring bitte einen Nachtisch mit. Ich freue mich! Bis Freitag! Deine Aylin",
+   "gloss": [
+    {
+     "de": "kaufen",
+     "mevcutTr": "satın almak",
+     "havuz": {
+      "tr": "satın almak",
+      "en": "to buy"
+     }
+    },
+    {
+     "de": "das Frühstück",
+     "mevcutTr": "kahvaltı",
+     "havuz": {
+      "tr": "kahvaltı",
+      "en": "breakfast"
+     }
+    },
+    {
+     "de": "kochen",
+     "mevcutTr": "yemek pişirmek",
+     "havuz": {
+      "tr": "yemek pişirmek",
+      "en": "to cook"
+     }
+    },
+    {
+     "de": "der Nachtisch",
+     "mevcutTr": "tatlı",
+     "havuz": {
+      "tr": "tatlı",
+      "en": "dessert"
+     }
+    },
+    {
+     "de": "mitbringen",
+     "mevcutTr": "yanında getirmek",
+     "havuz": {
+      "tr": "getirmek",
+      "en": "to bring along"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich lade dich zum Abendessen ein.",
+     "mevcutTr": "Seni akşam yemeğine davet ediyorum."
+    },
+    {
+     "de": "Ich koche …",
+     "mevcutTr": "… pişiriyorum"
+    },
+    {
+     "de": "Hast du Zeit?",
+     "mevcutTr": "Vaktin var mı?"
+    },
+    {
+     "de": "Bring bitte … mit.",
+     "mevcutTr": "Lütfen … getir."
+    },
+    {
+     "de": "Bis Freitag!",
+     "mevcutTr": "Cumaya görüşürüz!"
+    }
+   ]
+  },
+  {
+   "id": "a1-w4",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Meine Wohnung, mein Alltag",
+   "genre": "Günlük yaşam",
+   "intro": "Ev ve günlük rutin cümleleri kuracak, sonra yeni evini bir arkadaşına anlatacaksın.",
+   "metin": "Meine Wohnung ist klein, aber sehr schön.\n\nIch fahre mit dem Bus zur Arbeit.\n\nAm Abend sehe ich fern.\n\nHallo Tom, ich habe eine neue Wohnung in München! Sie hat zwei Zimmer, eine Küche und einen kleinen Balkon. Die Wohnung ist hell und liegt im Zentrum. Willst du mich besuchen? Du kannst am Samstag kommen. Viele Grüße, Deniz",
+   "gloss": [
+    {
+     "de": "die Wohnung",
+     "mevcutTr": "daire",
+     "havuz": {
+      "tr": "daire",
+      "en": "apartment"
+     }
+    },
+    {
+     "de": "das Schlafzimmer",
+     "mevcutTr": "yatak odası",
+     "havuz": {
+      "tr": "yatak odası",
+      "en": "bedroom"
+     }
+    },
+    {
+     "de": "hell",
+     "mevcutTr": "aydınlık",
+     "havuz": {
+      "tr": "aydınlık",
+      "en": "bright"
+     }
+    },
+    {
+     "de": "die Arbeit",
+     "mevcutTr": "iş",
+     "havuz": {
+      "tr": "iş",
+      "en": "work"
+     }
+    },
+    {
+     "de": "fernsehen",
+     "mevcutTr": "televizyon izlemek",
+     "havuz": {
+      "tr": "televizyon",
+      "en": "television"
+     }
+    },
+    {
+     "de": "besuchen",
+     "mevcutTr": "ziyaret etmek",
+     "havuz": {
+      "tr": "ziyaret etmek",
+      "en": "to visit"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich habe eine neue Wohnung.",
+     "mevcutTr": "Yeni bir dairem var."
+    },
+    {
+     "de": "Die Wohnung hat zwei Zimmer.",
+     "mevcutTr": "Dairenin iki odası var."
+    },
+    {
+     "de": "Sie liegt im Zentrum.",
+     "mevcutTr": "Merkezde bulunuyor."
+    },
+    {
+     "de": "Willst du mich besuchen?",
+     "mevcutTr": "Beni ziyaret etmek ister misin?"
+    },
+    {
+     "de": "Du kannst am Wochenende kommen.",
+     "mevcutTr": "Hafta sonu gelebilirsin."
+    }
+   ]
+  },
+  {
+   "id": "a1-w5",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Eine Entschuldigung für die Schule",
+   "genre": "Resmî yazı",
+   "intro": "Almanya'da çocuğu okula gitmeyen her veli bunu yazar: kısa, resmî bir mazeret notu.",
+   "metin": "Mein Sohn Karim ist heute krank.\n\nEr hat Fieber und kann nicht in die Schule kommen.\n\nBitte entschuldigen Sie sein Fehlen heute.\n\nSehr geehrte Frau Berger,\n\nmein Sohn Karim Haddad aus der Klasse 3b ist seit gestern krank. Er hat Fieber und kann heute und morgen nicht in die Schule kommen. Bitte entschuldigen Sie sein Fehlen.\n\nAm Donnerstag ist er hoffentlich wieder da.\n\nMit freundlichen Grüßen\nAmir Haddad\n14. Mai",
+   "gloss": [
+    {
+     "de": "die Entschuldigung",
+     "mevcutTr": "mazeret yazısı",
+     "havuz": {
+      "tr": "özür",
+      "en": "apology"
+     }
+    },
+    {
+     "de": "krank",
+     "mevcutTr": "hasta",
+     "havuz": {
+      "tr": "hasta",
+      "en": "sick"
+     }
+    },
+    {
+     "de": "das Fieber",
+     "mevcutTr": "ateş",
+     "havuz": {
+      "tr": "ateş",
+      "en": "fever"
+     }
+    },
+    {
+     "de": "der Unterricht",
+     "mevcutTr": "ders",
+     "havuz": {
+      "tr": "ders",
+      "en": "class"
+     }
+    },
+    {
+     "de": "fehlen",
+     "mevcutTr": "devamsızlık yapmak",
+     "havuz": {
+      "tr": "eksik olmak",
+      "en": "to be missing"
+     }
+    },
+    {
+     "de": "die Unterschrift",
+     "mevcutTr": "imza",
+     "havuz": {
+      "tr": "imza",
+      "en": "signature"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Sehr geehrte Frau …,",
+     "mevcutTr": "Sayın … Hanım,"
+    },
+    {
+     "de": "mein Sohn / meine Tochter …",
+     "mevcutTr": "oğlum / kızım …"
+    },
+    {
+     "de": "ist seit … krank",
+     "mevcutTr": "… beri hasta"
+    },
+    {
+     "de": "Bitte entschuldigen Sie …",
+     "mevcutTr": "Lütfen … mazur görün."
+    },
+    {
+     "de": "Mit freundlichen Grüßen",
+     "mevcutTr": "Saygılarımla"
+    }
+   ]
+  },
+  {
+   "id": "a1-w6",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Formular und kurze Nachricht",
+   "genre": "Sınav formatı",
+   "intro": "Goethe A1 yazma bölümünün iki görevi: kısa bilgi alanlarını doldurmak ve üç noktaya değinen kısa bir mesaj yazmak. İkisini de burada çalışacaksın.",
+   "metin": "Ich möchte mich für einen Deutschkurs anmelden.\n\nIch habe abends nach 18 Uhr Zeit.\n\nBitte schreiben Sie mir den Preis.\n\nGuten Tag,\n\nich möchte mich für einen Deutschkurs A2 anmelden. Ich arbeite bis 17 Uhr, deshalb habe ich nur abends nach 18 Uhr Zeit — am besten am Montag und Mittwoch.\n\nWie viel kostet der Kurs und wann beginnt er? Bitte schreiben Sie mir auch, wie lange er dauert.\n\nVielen Dank und viele Grüße\nAmir Haddad",
+   "gloss": [
+    {
+     "de": "das Formular",
+     "mevcutTr": "form",
+     "havuz": {
+      "tr": "form",
+      "en": "form"
+     }
+    },
+    {
+     "de": "der Familienname",
+     "mevcutTr": "soyadı",
+     "havuz": {
+      "tr": "soyadı",
+      "en": "last name"
+     }
+    },
+    {
+     "de": "der Vorname",
+     "mevcutTr": "ad",
+     "havuz": {
+      "tr": "ad",
+      "en": "first name"
+     }
+    },
+    {
+     "de": "die Staatsangehörigkeit",
+     "mevcutTr": "uyruk",
+     "havuz": {
+      "tr": "vatandaşlık",
+      "en": "citizenship"
+     }
+    },
+    {
+     "de": "der Kurs",
+     "mevcutTr": "kurs",
+     "havuz": {
+      "tr": "kurs",
+      "en": "course"
+     }
+    },
+    {
+     "de": "anmelden",
+     "mevcutTr": "kaydolmak"
+    },
+    {
+     "de": "die Uhrzeit",
+     "mevcutTr": "saat"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Guten Tag,",
+     "mevcutTr": "İyi günler,"
+    },
+    {
+     "de": "Ich möchte mich für … anmelden.",
+     "mevcutTr": "… için kaydolmak istiyorum."
+    },
+    {
+     "de": "Ich habe am … Zeit.",
+     "mevcutTr": "… günü vaktim var."
+    },
+    {
+     "de": "Wie viel kostet der Kurs?",
+     "mevcutTr": "Kurs ne kadar?"
+    },
+    {
+     "de": "Wann beginnt der Kurs?",
+     "mevcutTr": "Kurs ne zaman başlıyor?"
+    },
+    {
+     "de": "Vielen Dank und viele Grüße",
+     "mevcutTr": "Teşekkürler, selamlar"
+    }
+   ]
+  },
+  {
+   "id": "a1-w7",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Eine Postkarte",
+   "genre": "Kültür",
+   "intro": "Almanya'da hâlâ yaşayan bir gelenek: tatilden kartpostal yollamak. Kısa, sıcak ve birkaç cümlelik.",
+   "metin": "Wir sind seit einer Woche an der Ostsee.\n\nDas Wetter ist super und wir schwimmen jeden Tag.\n\nAm Samstag fahren wir nach Hause.\n\nLiebe Sofia,\n\nliebe Grüße aus Rügen! Wir sind seit einer Woche an der Ostsee. Das Wetter ist super — nur am Montag hat es geregnet. Wir schwimmen jeden Tag und gestern sind wir vier Stunden gewandert.\n\nAm Samstag fahren wir nach Hause. Dann erzähle ich alles.\n\nBis bald!\nAmir",
+   "gloss": [
+    {
+     "de": "die Postkarte",
+     "mevcutTr": "kartpostal",
+     "havuz": {
+      "tr": "kartpostal",
+      "en": "postcard"
+     }
+    },
+    {
+     "de": "der Urlaub",
+     "mevcutTr": "tatil",
+     "havuz": {
+      "tr": "tatil",
+      "en": "vacation"
+     }
+    },
+    {
+     "de": "das Wetter",
+     "mevcutTr": "hava",
+     "havuz": {
+      "tr": "hava",
+      "en": "weather"
+     }
+    },
+    {
+     "de": "die Ostsee",
+     "mevcutTr": "Baltık Denizi"
+    },
+    {
+     "de": "wandern",
+     "mevcutTr": "doğa yürüyüşü yapmak",
+     "havuz": {
+      "tr": "yürüyüş yapmak",
+      "en": "to hike"
+     }
+    },
+    {
+     "de": "die Grüße",
+     "mevcutTr": "selamlar"
+    },
+    {
+     "de": "schicken",
+     "mevcutTr": "göndermek",
+     "havuz": {
+      "tr": "göndermek",
+      "en": "to send"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Liebe Grüße aus …",
+     "mevcutTr": "…'den sevgiler"
+    },
+    {
+     "de": "Wir sind seit … hier.",
+     "mevcutTr": "…'dir buradayız."
+    },
+    {
+     "de": "Das Wetter ist …",
+     "mevcutTr": "Hava …"
+    },
+    {
+     "de": "Wir gehen jeden Tag …",
+     "mevcutTr": "Her gün … gidiyoruz."
+    },
+    {
+     "de": "Am … kommen wir zurück.",
+     "mevcutTr": "… günü dönüyoruz."
+    },
+    {
+     "de": "Bis bald!",
+     "mevcutTr": "Yakında görüşürüz!"
+    }
+   ]
+  },
+  {
+   "id": "a1-w8",
+   "skill": "writing",
+   "level": "A1",
+   "title": "Antwort an Frau Wagner",
+   "genre": "Mesaj",
+   "intro": "Hikâyenin son bölümü: Frau Wagner'in notuna (a1-r11) cevap yazacaksın. Teşekkür, kabul ve bir soru.",
+   "metin": "Vielen Dank für das Paket.\n\nDen Tisch nehme ich gern.\n\nPasst es Ihnen heute Abend um 18 Uhr?\n\nLiebe Frau Wagner,\n\nvielen Dank für das Paket! Das ist sehr nett von Ihnen.\n\nDen Tisch nehme ich gern — ich habe wirklich noch keinen. Passt es Ihnen heute Abend um 18 Uhr? Dann hole ich beides ab.\n\nUnd ja, ich trinke sehr gern Tee. In Syrien trinken wir ihn süß und stark.\n\nBis später!\nAmir (Wohnung 7)",
+   "gloss": [
+    {
+     "de": "sich bedanken",
+     "mevcutTr": "teşekkür etmek",
+     "havuz": {
+      "tr": "teşekkür etmek",
+      "en": "to thank"
+     }
+    },
+    {
+     "de": "annehmen",
+     "mevcutTr": "kabul etmek",
+     "havuz": {
+      "tr": "varsaymak",
+      "en": "to assume"
+     }
+    },
+    {
+     "de": "gern",
+     "mevcutTr": "memnuniyetle",
+     "havuz": {
+      "tr": "severek",
+      "en": "gladly"
+     }
+    },
+    {
+     "de": "passen",
+     "mevcutTr": "uymak",
+     "havuz": {
+      "tr": "uymak",
+      "en": "to fit"
+     }
+    },
+    {
+     "de": "abholen",
+     "mevcutTr": "gidip almak",
+     "havuz": {
+      "tr": "gidip almak",
+      "en": "to pick up"
+     }
+    },
+    {
+     "de": "wirklich",
+     "mevcutTr": "gerçekten",
+     "havuz": {
+      "tr": "gerçekten",
+      "en": "really"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Vielen Dank für …",
+     "mevcutTr": "… için çok teşekkürler."
+    },
+    {
+     "de": "Das ist sehr nett von Ihnen.",
+     "mevcutTr": "Bu çok nazik bir davranış."
+    },
+    {
+     "de": "Den Tisch nehme ich gern.",
+     "mevcutTr": "Masayı memnuniyetle alırım."
+    },
+    {
+     "de": "Ich komme heute um … vorbei.",
+     "mevcutTr": "Bugün saat …'de uğrarım."
+    },
+    {
+     "de": "Bis später!",
+     "mevcutTr": "Sonra görüşürüz!"
+    }
+   ]
+  }
+ ]
+}

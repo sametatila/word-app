@@ -1,0 +1,522 @@
+{
+ "paket": "de-006",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "a2-r9",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Warum sind alle im Verein?",
+   "genre": "Kültür",
+   "intro": "Almanya'da 600.000'den fazla dernek var. Bu kısa yazı, neden herkesin bir derneğe üye olduğunu anlatıyor.",
+   "metin": "In Deutschland gibt es mehr als 600.000 Vereine. Fast jeder zweite Mensch ist Mitglied in einem — oft ohne viel darüber nachzudenken.\n\nEs gibt Sportvereine, Musikvereine, Gartenvereine, Katzenvereine. Es gibt sogar einen Verein für Menschen, die alte Traktoren reparieren.\n\nWarum? Ein Verein ist billig: Der Beitrag liegt oft bei 5 bis 15 Euro im Monat. Dafür bekommt man einen Platz, Trainer, Material — und Leute.\n\nWichtiger ist aber etwas anderes: Vereine funktionieren ehrenamtlich. Niemand verdient Geld. Der Trainer ist Busfahrer, die Kassenwartin arbeitet in der Apotheke. Auch die freiwillige Feuerwehr in kleinen Städten ist ein Verein — ohne sie gäbe es dort keine Feuerwehr.\n\nFür neue Menschen im Land ist der Verein oft der schnellste Weg zu Kontakten. Man muss nicht gut Deutsch sprechen, um zusammen Fußball zu spielen. Und nach dem Training gibt es fast immer ein Grillfest, bei dem geredet wird.",
+   "gloss": [
+    {
+     "de": "der Verein",
+     "mevcutTr": "dernek, kulüp",
+     "havuz": {
+      "tr": "dernek",
+      "en": "club"
+     }
+    },
+    {
+     "de": "das Mitglied",
+     "mevcutTr": "üye",
+     "havuz": {
+      "tr": "üye",
+      "en": "member"
+     }
+    },
+    {
+     "de": "der Beitrag",
+     "mevcutTr": "aidat",
+     "havuz": {
+      "tr": "aidat",
+      "en": "membership fee"
+     }
+    },
+    {
+     "de": "ehrenamtlich",
+     "mevcutTr": "gönüllü (ücretsiz)",
+     "havuz": {
+      "tr": "gönüllü",
+      "en": "voluntary"
+     }
+    },
+    {
+     "de": "die Feuerwehr",
+     "mevcutTr": "itfaiye",
+     "havuz": {
+      "tr": "itfaiye",
+      "en": "fire department"
+     }
+    },
+    {
+     "de": "gemeinsam",
+     "mevcutTr": "birlikte",
+     "havuz": {
+      "tr": "ortak",
+      "en": "common"
+     }
+    },
+    {
+     "de": "das Grillfest",
+     "mevcutTr": "mangal partisi"
+    }
+   ]
+  },
+  {
+   "id": "a2-r10",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Fünf Anzeigen — was passt?",
+   "genre": "Sınav formatı",
+   "intro": "Goethe A2 okuma bölümünün eşleştirme görevi: kısa ilanlar ve kimin neye ihtiyacı olduğu. Önce hepsini oku.",
+   "metin": "A) UMZUGSHILFE — 2 starke Studenten, Samstag und Sonntag frei. Mit Transporter. 25 €/Stunde. Tel. 0177 45 45 45\n\nB) NACHHILFE MATHE — Klasse 5–10, auch online. Erste Stunde kostenlos. Frau Öztürk, 0160 12 34 56\n\nC) FAHRRADREPARATUR im Hof — jeden Mittwoch 16–19 Uhr. Kleine Reparaturen gratis, Sie zahlen nur Material. Nachbarschaftsinitiative Lindenstraße\n\nD) SUCHE FAHRER für Lieferungen, Führerschein B nötig. Abends 17–21 Uhr, flexibel. Pizzeria Bella, bitte persönlich vorbeikommen\n\nE) DEUTSCH SPRECHEN im Café — jeden Donnerstag 18 Uhr, Café Klara. Kein Kurs, nur reden. Kostenlos, ohne Anmeldung.",
+   "gloss": [
+    {
+     "de": "die Nachhilfe",
+     "mevcutTr": "özel ders",
+     "havuz": {
+      "tr": "özel ders",
+      "en": "tutoring"
+     }
+    },
+    {
+     "de": "die Reparatur",
+     "mevcutTr": "tamir",
+     "havuz": {
+      "tr": "tamir",
+      "en": "repair"
+     }
+    },
+    {
+     "de": "der Umzug",
+     "mevcutTr": "taşınma",
+     "havuz": {
+      "tr": "taşınma",
+      "en": "move"
+     }
+    },
+    {
+     "de": "der Fahrer",
+     "mevcutTr": "sürücü",
+     "havuz": {
+      "tr": "şoför",
+      "en": "driver"
+     }
+    },
+    {
+     "de": "die Anfrage",
+     "mevcutTr": "talep, soru"
+    },
+    {
+     "de": "flexibel",
+     "mevcutTr": "esnek",
+     "havuz": {
+      "tr": "esnek",
+      "en": "flexible"
+     }
+    },
+    {
+     "de": "kostenlos",
+     "mevcutTr": "ücretsiz",
+     "havuz": {
+      "tr": "ücretsiz",
+      "en": "free of charge"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2-r11",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Pelins Arbeitsvertrag",
+   "genre": "Sözleşme",
+   "intro": "Hikâyenin devamı: Pelin işi aldı. İlk iş sözleşmesinin önemli maddelerini okuyacaksın.",
+   "metin": "ARBEITSVERTRAG (Auszug)\n\nzwischen Apotheke am Markt und Frau Pelin Aydın\n\n§1 Beginn: 1. September. Die Probezeit dauert sechs Monate.\n\n§2 Arbeitszeit: 25 Stunden pro Woche, Montag bis Donnerstag, 8:30–15:00 Uhr.\n\n§3 Gehalt: 2.150 Euro brutto pro Monat. Das Gehalt kommt am letzten Werktag des Monats.\n\n§4 Urlaub: 24 Tage im Jahr. Der Urlaub muss vier Wochen vorher angemeldet werden.\n\n§5 Überstunden: Überstunden werden mit Freizeit ausgeglichen, nicht bezahlt.\n\n§6 Krankheit: Bitte melden Sie sich am ersten Tag vor 8 Uhr. Ab dem dritten Tag brauchen wir eine Krankmeldung vom Arzt.\n\n§7 Kündigung: In der Probezeit zwei Wochen, danach drei Monate zum Monatsende.",
+   "gloss": [
+    {
+     "de": "der Arbeitsvertrag",
+     "mevcutTr": "iş sözleşmesi",
+     "havuz": {
+      "tr": "iş sözleşmesi",
+      "en": "employment contract"
+     }
+    },
+    {
+     "de": "die Probezeit",
+     "mevcutTr": "deneme süresi",
+     "havuz": {
+      "tr": "deneme süresi",
+      "en": "probation period"
+     }
+    },
+    {
+     "de": "das Gehalt",
+     "mevcutTr": "maaş",
+     "havuz": {
+      "tr": "maaş",
+      "en": "salary"
+     }
+    },
+    {
+     "de": "brutto",
+     "mevcutTr": "brüt"
+    },
+    {
+     "de": "der Urlaub",
+     "mevcutTr": "izin",
+     "havuz": {
+      "tr": "tatil",
+      "en": "vacation"
+     }
+    },
+    {
+     "de": "kündigen",
+     "mevcutTr": "fesh etmek, işten ayrılmak",
+     "havuz": {
+      "tr": "istifa etmek",
+      "en": "to quit"
+     }
+    },
+    {
+     "de": "die Überstunde",
+     "mevcutTr": "fazla mesai",
+     "havuz": {
+      "tr": "fazla mesai",
+      "en": "overtime"
+     }
+    },
+    {
+     "de": "der Feiertag",
+     "mevcutTr": "resmî tatil",
+     "havuz": {
+      "tr": "resmî tatil",
+      "en": "public holiday"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2-r12",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Ihre Verbindung",
+   "genre": "Seyahat bilgisi",
+   "intro": "Deutsche Bahn'ın verdiği yolculuk planını okuyacaksın — aktarmalı bir seyahat.",
+   "metin": "IHRE VERBINDUNG — Freitag, 12. Juli\n\nBremen Hbf ab 07:14 · ICE 645 · Gleis 3\nHannover Hbf an 08:22\n\nUmsteigen: 11 Minuten\n\nHannover Hbf ab 08:33 · ICE 692 · Gleis 8\nMünchen Hbf an 12:47\n\nSitzplatz reserviert: Wagen 24, Platz 61 (Fenster, Großraum)\n\nPreis: 68,90 € (mit BahnCard 25)\n\nHinweis: Bei einer Verspätung von mehr als 20 Minuten am Ziel können Sie Geld zurückverlangen. Ihre Fahrkarte gilt dann auch in einem späteren Zug.\n\nFahrräder: nur mit extra Karte, im ICE nicht möglich.",
+   "gloss": [
+    {
+     "de": "die Verbindung",
+     "mevcutTr": "bağlantı, sefer",
+     "havuz": {
+      "tr": "bağlantı",
+      "en": "connection"
+     }
+    },
+    {
+     "de": "umsteigen",
+     "mevcutTr": "aktarma yapmak",
+     "havuz": {
+      "tr": "aktarma yapmak",
+      "en": "to change trains"
+     }
+    },
+    {
+     "de": "die Ankunft",
+     "mevcutTr": "varış",
+     "havuz": {
+      "tr": "varış",
+      "en": "arrival"
+     }
+    },
+    {
+     "de": "die Abfahrt",
+     "mevcutTr": "kalkış",
+     "havuz": {
+      "tr": "yola çıkış",
+      "en": "departure"
+     }
+    },
+    {
+     "de": "der Wagen",
+     "mevcutTr": "vagon",
+     "havuz": {
+      "tr": "otomobil",
+      "en": "car"
+     }
+    },
+    {
+     "de": "reservieren",
+     "mevcutTr": "yer ayırtmak",
+     "havuz": {
+      "tr": "ayırtmak",
+      "en": "to reserve"
+     }
+    },
+    {
+     "de": "die Ermäßigung",
+     "mevcutTr": "indirim",
+     "havuz": {
+      "tr": "indirim",
+      "en": "reduction"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2-l1",
+   "skill": "listening",
+   "level": "A2",
+   "title": "Ein Termin beim Arzt",
+   "genre": "Diyalog",
+   "intro": "Frau Kaya doktor muayenehanesini arıyor — randevunun gününe ve saatine kulak ver.",
+   "metin": "Frau Kaya: Guten Morgen, Praxis Doktor Lehmann? Mein Name ist Kaya. Ich habe seit zwei Tagen starke Halsschmerzen und Fieber. Kann ich heute noch einen Termin bekommen?\nSprechstundenhilfe: Guten Morgen, Frau Kaya. Heute ist es leider sehr voll. Ich kann Ihnen aber morgen früh um 8 Uhr 30 einen Termin geben.\nFrau Kaya: Hmm, morgen früh muss ich arbeiten. Geht es auch am Nachmittag?\nSprechstundenhilfe: Einen Moment bitte. Ja, morgen um 15 Uhr 15 ist noch etwas frei.\nFrau Kaya: Das passt gut. Muss ich etwas mitbringen?\nSprechstundenhilfe: Bitte bringen Sie Ihre Versichertenkarte mit. Und wenn das Fieber heute noch höher wird, rufen Sie bitte sofort wieder an.\nFrau Kaya: Das mache ich. Vielen Dank, auf Wiederhören!",
+   "gloss": [
+    {
+     "de": "die Halsschmerzen",
+     "mevcutTr": "boğaz ağrısı",
+     "havuz": {
+      "tr": "boğaz ağrısı",
+      "en": "sore throat"
+     }
+    },
+    {
+     "de": "das Fieber",
+     "mevcutTr": "ateş",
+     "havuz": {
+      "tr": "ateş",
+      "en": "fever"
+     }
+    },
+    {
+     "de": "der Termin",
+     "mevcutTr": "randevu",
+     "havuz": {
+      "tr": "randevu",
+      "en": "appointment"
+     }
+    },
+    {
+     "de": "die Sprechstundenhilfe",
+     "mevcutTr": "muayenehane asistanı"
+    },
+    {
+     "de": "die Versichertenkarte",
+     "mevcutTr": "sağlık sigortası kartı",
+     "havuz": {
+      "tr": "sigorta kartı",
+      "en": "insurance card"
+     }
+    },
+    {
+     "de": "passen",
+     "mevcutTr": "uymak, uygun olmak",
+     "havuz": {
+      "tr": "uymak",
+      "en": "to fit"
+     }
+    },
+    {
+     "de": "voll",
+     "mevcutTr": "dolu",
+     "havuz": {
+      "tr": "dolu",
+      "en": "full"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2-l2",
+   "skill": "listening",
+   "level": "A2",
+   "title": "Nachricht auf dem Anrufbeantworter",
+   "genre": "Telesekreter",
+   "intro": "Jonas, arkadaşı Deniz'in telesekreterine mesaj bırakıyor — ondan ne istiyor?",
+   "metin": "Hallo Deniz, hier ist Jonas. Du weißt ja, ich ziehe am Samstag in meine neue Wohnung in der Gartenstraße um. Leider hat mein Bruder jetzt abgesagt, weil er krank ist. Kannst du mir vielleicht beim Umzug helfen?\nWir wollen um 9 Uhr anfangen, der Transporter kommt schon um halb 9. Es gibt nicht so viele Möbel, nur das Sofa und der Schrank sind schwer.\nAls Dankeschön bestelle ich für alle Pizza, und am Abend machen wir eine kleine Einweihungsparty. Ruf mich bitte bis Donnerstag zurück, meine Nummer hast du ja. Danke dir, tschüss!",
+   "gloss": [
+    {
+     "de": "umziehen",
+     "mevcutTr": "taşınmak",
+     "havuz": {
+      "tr": "taşınmak",
+      "en": "to move"
+     }
+    },
+    {
+     "de": "der Umzug",
+     "mevcutTr": "taşınma",
+     "havuz": {
+      "tr": "taşınma",
+      "en": "move"
+     }
+    },
+    {
+     "de": "absagen",
+     "mevcutTr": "iptal etmek, vazgeçmek",
+     "havuz": {
+      "tr": "iptal etmek",
+      "en": "to cancel"
+     }
+    },
+    {
+     "de": "der Transporter",
+     "mevcutTr": "nakliye aracı"
+    },
+    {
+     "de": "der Schrank",
+     "mevcutTr": "dolap",
+     "havuz": {
+      "tr": "dolap",
+      "en": "cupboard"
+     }
+    },
+    {
+     "de": "die Einweihungsparty",
+     "mevcutTr": "yeni ev partisi"
+    },
+    {
+     "de": "zurückrufen",
+     "mevcutTr": "geri aramak",
+     "havuz": {
+      "tr": "geri aramak",
+      "en": "to call back"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2-l3",
+   "skill": "listening",
+   "level": "A2",
+   "title": "Familientag im Technikmuseum",
+   "genre": "Radyo duyurusu",
+   "intro": "Radyoda hafta sonu için bir etkinlik önerisi var — fiyatlara ve ulaşım bilgisine dikkat.",
+   "metin": "Und hier noch ein Tipp für das Wochenende: Am Sonntag findet im Museum für Technik der große Familientag statt. Von 10 bis 17 Uhr können Kinder und Erwachsene alte Autos, Flugzeuge und Roboter ansehen.\nUm 11 Uhr und um 14 Uhr gibt es eine Führung für Kinder ab 6 Jahren. Der Eintritt kostet für Erwachsene 7 Euro, Kinder zahlen an diesem Tag nichts.\nAchtung: Das Parkhaus am Museum ist zurzeit geschlossen. Kommen Sie deshalb am besten mit der Straßenbahn, die Linien 3 und 7 halten direkt vor dem Museum. Alle Informationen finden Sie auch im Internet.",
+   "gloss": [
+    {
+     "de": "stattfinden",
+     "mevcutTr": "gerçekleşmek, yapılmak",
+     "havuz": {
+      "tr": "gerçekleşmek",
+      "en": "to take place"
+     }
+    },
+    {
+     "de": "die Führung",
+     "mevcutTr": "rehberli tur",
+     "havuz": {
+      "tr": "rehberli tur",
+      "en": "guided tour"
+     }
+    },
+    {
+     "de": "der Eintritt",
+     "mevcutTr": "giriş ücreti",
+     "havuz": {
+      "tr": "giriş ücreti",
+      "en": "admission"
+     }
+    },
+    {
+     "de": "das Parkhaus",
+     "mevcutTr": "katlı otopark"
+    },
+    {
+     "de": "zurzeit",
+     "mevcutTr": "şu anda",
+     "havuz": {
+      "tr": "şu sıralar",
+      "en": "currently"
+     }
+    },
+    {
+     "de": "die Straßenbahn",
+     "mevcutTr": "tramvay",
+     "havuz": {
+      "tr": "tramvay",
+      "en": "tram"
+     }
+    },
+    {
+     "de": "halten",
+     "mevcutTr": "durmak (araç)",
+     "havuz": {
+      "tr": "durmak",
+      "en": "to stop"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2-l4",
+   "skill": "listening",
+   "level": "A2",
+   "title": "Jeden Morgen im Park",
+   "genre": "Röportaj",
+   "intro": "Bir muhabir, her sabah koşan Herr Öztürk ile konuşuyor — bu alışkanlık nasıl başlamış?",
+   "metin": "Reporterin: Herr Öztürk, Sie laufen jeden Morgen hier im Park. Seit wann machen Sie das?\nHerr Öztürk: Seit ungefähr drei Jahren. Mein Arzt hat gesagt, dass ich mehr Sport machen soll. Am Anfang bin ich nur zehn Minuten gelaufen, heute laufe ich jeden Morgen eine halbe Stunde.\nReporterin: Laufen Sie auch im Winter?\nHerr Öztürk: Ja, natürlich. Wenn es schneit, laufe ich langsamer, aber ich bleibe nicht zu Hause. Nur bei Gewitter mache ich Pause.\nReporterin: Und was ist Ihr nächstes Ziel?\nHerr Öztürk: Im Oktober möchte ich beim Stadtlauf mitmachen, das sind zehn Kilometer. Mein Sohn läuft auch mit, er ist schneller als ich.",
+   "gloss": [
+    {
+     "de": "laufen",
+     "mevcutTr": "koşmak",
+     "havuz": {
+      "tr": "yürümek",
+      "en": "to walk"
+     }
+    },
+    {
+     "de": "ungefähr",
+     "mevcutTr": "yaklaşık",
+     "havuz": {
+      "tr": "yaklaşık",
+      "en": "approximately"
+     }
+    },
+    {
+     "de": "schneien",
+     "mevcutTr": "kar yağmak",
+     "havuz": {
+      "tr": "kar yağmak",
+      "en": "to snow"
+     }
+    },
+    {
+     "de": "das Gewitter",
+     "mevcutTr": "fırtına, gök gürültülü sağanak",
+     "havuz": {
+      "tr": "gök gürültülü fırtına",
+      "en": "thunderstorm"
+     }
+    },
+    {
+     "de": "das Ziel",
+     "mevcutTr": "hedef",
+     "havuz": {
+      "tr": "hedef",
+      "en": "goal"
+     }
+    },
+    {
+     "de": "mitmachen",
+     "mevcutTr": "katılmak",
+     "havuz": {
+      "tr": "katılmak",
+      "en": "to join in"
+     }
+    },
+    {
+     "de": "der Stadtlauf",
+     "mevcutTr": "şehir koşusu"
+    },
+    {
+     "de": "schneller als",
+     "mevcutTr": "-den daha hızlı"
+    }
+   ]
+  }
+ ]
+}

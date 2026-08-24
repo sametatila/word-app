@@ -1,0 +1,330 @@
+{
+ "paket": "zh-001",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-a1-r1",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Träffe mer üs am Bellevue?",
+   "genre": "Mesaj",
+   "intro": "Lara'nın arkadaşı Deniz'e lehçeyle yazdığı bir WhatsApp mesajını okuyacaksın.",
+   "metin": "Hoi Deniz! Wie gaats der? Ich ha morn am Namitag frei. S Wätter isch schöön — wämmer zäme an See gaa? Mir träffed üs am zwäi am Bellevue, bi de Tramhaltstell. Ich nime s Velo, du chasch mit em Tram Nummere 4 choo. Nachhär gömmer no es Glace ässe. Mini Kollegin Anna chunt au mit. Schriib mer bitte bis hüt am Aabig!\n\nLiebi Grüess\nLara",
+   "gloss": [
+    {
+     "de": "Wie gaats der?",
+     "mevcutTr": "Nasılsın? (wie geht es dir)"
+    },
+    {
+     "de": "de Namitag",
+     "mevcutTr": "öğleden sonra (Nachmittag)"
+    },
+    {
+     "de": "an See gaa",
+     "mevcutTr": "göle gitmek"
+    },
+    {
+     "de": "d Tramhaltstell",
+     "mevcutTr": "tramvay durağı"
+    },
+    {
+     "de": "s Velo",
+     "mevcutTr": "bisiklet (İsviçre'de Fahrrad yerine)",
+     "havuz": {
+      "tr": "bisiklet",
+      "en": "bicycle"
+     }
+    },
+    {
+     "de": "d Glace",
+     "mevcutTr": "dondurma (İsviçre'de Eis yerine)"
+    },
+    {
+     "de": "de Aabig",
+     "mevcutTr": "akşam (Abend)"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r2",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Zimmer z Züri z vermiete",
+   "genre": "İlan",
+   "intro": "Zürih'in 4. bölgesinde (Chreis 4) kiralık bir oda ilanı okuyacaksın.",
+   "metin": "Schööns Zimmer i de Stadt Züri z vermiete, im Chreis 4. S Zimmer isch 18 Quadratmeter grooss und hät en grosse Balkon. D Wohnig isch im dritte Stock, mit Lift. D Miete isch 850 Franke im Monet, alles inbegriffe. D Tramhaltstell isch nur zwäi Minute z Fuess ewägg. Käi Huustier! Frei ab em 1. Septämber.\n\nHäsch Intresse? Denn lüt em Herr Huber aa: 044 123 45 67. Bsichtigung am Samschtig vo de zääni bis am zwölfi.",
+   "gloss": [
+    {
+     "de": "z vermiete",
+     "mevcutTr": "kiralık (zu vermieten)"
+    },
+    {
+     "de": "de Chreis",
+     "mevcutTr": "Zürih'te ilçe/bölge (Kreis)"
+    },
+    {
+     "de": "d Wohnig",
+     "mevcutTr": "daire (Wohnung)"
+    },
+    {
+     "de": "inbegriffe",
+     "mevcutTr": "dahil (giderler kiraya dahil)"
+    },
+    {
+     "de": "ewägg",
+     "mevcutTr": "uzakta (entfernt/weg)"
+    },
+    {
+     "de": "s Huustier",
+     "mevcutTr": "evcil hayvan"
+    },
+    {
+     "de": "aalüte",
+     "mevcutTr": "telefon etmek (anrufen)"
+    },
+    {
+     "de": "d Bsichtigung",
+     "mevcutTr": "evi gezip görme"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r3",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Iiladig zum Geburi",
+   "genre": "E-posta",
+   "intro": "Lena, arkadaşı Sara'yı doğum günü partisine çağırıyor. Davetiyeyi okuyacaksın.",
+   "metin": "Liebi Sara\n\nAm Samschtig wird ich drissg! Drum mach ich e chlini Party bi mir dihäi. Es gaat am sibni am Aabig los. Mini Adrässe: Langstrass 42, im zwäite Schtock.\n\nZum Ässe git s Pizza und Salaat. Öppis z trinke bringed d Gescht sälber mit. Bitte nimm kä Gschänk mit — chum äifach!\n\nChasch mer bis am Mittwuch säge, öb du chunsch? Ich fröi mi uf di.\n\nLiebi Grüess\nLena",
+   "gloss": [
+    {
+     "de": "s Geburi",
+     "mevcutTr": "doğum günü (Geburtstag)"
+    },
+    {
+     "de": "dihäi",
+     "mevcutTr": "evde (zu Hause)"
+    },
+    {
+     "de": "es gaat … los",
+     "mevcutTr": "… başlıyor"
+    },
+    {
+     "de": "de Schtock",
+     "mevcutTr": "kat"
+    },
+    {
+     "de": "s Gschänk",
+     "mevcutTr": "hediye"
+    },
+    {
+     "de": "öb",
+     "mevcutTr": "… -ıp -madığı (ob)"
+    },
+    {
+     "de": "sich fröie uf",
+     "mevcutTr": "dört gözle beklemek"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r4",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Nöii Öffnigsziite",
+   "genre": "Duyuru",
+   "intro": "Mahalle kütüphanesinin kapısına asılan yeni çalışma saatleri duyurusunu okuyacaksın.",
+   "metin": "Liebi Bsuecherinne und Bsuecher\n\nAb em erschte Oktober händ mir nöii Öffnigsziite:\n\nMäändig: gschlosse\nZischtig bis Friitig: 9 bis 19 Uhr\nSamschtig: 9 bis 16 Uhr\nSunntig: gschlosse\n\nD Büecher chöned Si au usserhalb vo de Öffnigsziite zruggbringe: de Chaschte isch näb de Iigangstür.\n\nAchtung: Am 24. Dezämber isch d Bibliothek de ganz Tag zue.\n\nIhres Bibliothekstiim",
+   "gloss": [
+    {
+     "de": "d Öffnigsziite",
+     "mevcutTr": "açılış saatleri"
+    },
+    {
+     "de": "gschlosse / zue",
+     "mevcutTr": "kapalı"
+    },
+    {
+     "de": "zruggbringe",
+     "mevcutTr": "geri getirmek"
+    },
+    {
+     "de": "de Chaschte",
+     "mevcutTr": "kutu, dolap (Kasten)"
+    },
+    {
+     "de": "d Iigangstür",
+     "mevcutTr": "giriş kapısı"
+    },
+    {
+     "de": "usserhalb",
+     "mevcutTr": "dışında"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r5",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Kurs im Quartierzäntrum",
+   "genre": "Program",
+   "intro": "Wipkingen semt merkezinin sonbahar kurs programını okuyacaksın.",
+   "metin": "Kurs im Quartierzäntrum Wipkinge — Herbscht\n\nChoche für Aafänger\nMäändig, 18.30–20.30 · 8 Aabig · 240 Franke\nMir choched äifachi Grichte us de ganze Wält.\n\nZüritüütsch für Aaglernti\nMittwuch, 19.00–20.30 · 10 Aabig · 200 Franke\nFür alli, wo scho Hochdüütsch chönd und jetz d Mundart wänd verstaa.\n\nYoga am Morge\nFriitig, 7.00–8.00 · 12 Mal · 180 Franke\n\nAamäldig online oder am Schalter, bis zwäi Wuche vor em Aafang. Lüüt mit em Kulturlegi überchömed drissg Prozänt Rabatt.",
+   "gloss": [
+    {
+     "de": "de Aafänger",
+     "mevcutTr": "yeni başlayan"
+    },
+    {
+     "de": "s Gricht",
+     "mevcutTr": "yemek (Gericht)"
+    },
+    {
+     "de": "d Mundart",
+     "mevcutTr": "lehçe",
+     "havuz": {
+      "tr": "yöresel ağız",
+      "en": "dialect"
+     }
+    },
+    {
+     "de": "d Aamäldig",
+     "mevcutTr": "kayıt (Anmeldung)"
+    },
+    {
+     "de": "de Schalter",
+     "mevcutTr": "gişe",
+     "havuz": {
+      "tr": "gişe",
+      "en": "counter"
+     }
+    },
+    {
+     "de": "de Rabatt",
+     "mevcutTr": "indirim",
+     "havuz": {
+      "tr": "indirim",
+      "en": "discount"
+     }
+    },
+    {
+     "de": "s Kulturlegi",
+     "mevcutTr": "düşük gelirliler için kültür kartı (İsviçre)"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r6",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Information für üsi Fahrgäscht",
+   "genre": "Duyuru",
+   "intro": "Zürih toplu taşımasının (VBZ) duraklara astığı yol çalışması duyurusunu okuyacaksın.",
+   "metin": "Liebi Fahrgäscht\n\nVom 3. bis am 17. Juli baued mir d Gläis am Central um. S Tram Nummere 6 und 10 fahred i dere Ziit nöd bis zum Central.\n\nStatt em Tram fahrt en Bus. De Bus haltet vor em Hauptbahnhof, uf de andere Strasseziite.\n\nBitte rächned mit zää Minute meh Ziit. S Billett giltet au im Bus.\n\nMir entschuldiged üs für d Umständ.\nVerchehrsbetriib Züri",
+   "gloss": [
+    {
+     "de": "de Fahrgascht",
+     "mevcutTr": "yolcu"
+    },
+    {
+     "de": "s Gläis",
+     "mevcutTr": "ray, peron (Gleis)"
+    },
+    {
+     "de": "umbaue",
+     "mevcutTr": "yenilemek, tadilat yapmak"
+    },
+    {
+     "de": "gälte",
+     "mevcutTr": "geçerli olmak"
+    },
+    {
+     "de": "rächne mit",
+     "mevcutTr": "hesaba katmak"
+    },
+    {
+     "de": "d Umständ",
+     "mevcutTr": "zahmet, rahatsızlık"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r7",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Willkomme im Chindsgi",
+   "genre": "Mektup",
+   "intro": "Zürih'te anaokulundan gelen hoş geldin mektubu. A1'de takip edeceğin hikâyenin başlangıcı.",
+   "metin": "Liebi Frau Yıldız\n\nMir fröied üs uf de Kerem! De erscht Tag isch am Määndig, em 19. Auguscht, am nüüni.\n\nWas de Kerem bruucht:\n– Finkli für s Zimmer\n– en Turnsack mit Turnschueh\n– jede Tag es Znüni (käi Süessigkäite, bitte)\n– e Flasche Wasser\n\nBitte alles aaschriibe mit em Name. Es git bi eus zwölf Chind und sächs händ e rot Flasche.\n\nAm erschte Tag chönd Si bis am halbi zäni bliibe. Nachhär isch s für d Chind äifacher ohni d Eltere.\n\nDe Elteraabig isch am 3. Septämber am achti.\n\nHärzlichi Grüess\nFrau Suter, Chindsgi Hardau",
+   "gloss": [
+    {
+     "de": "de Chindsgi",
+     "mevcutTr": "anaokulu (Kindergarten)"
+    },
+    {
+     "de": "de Turnsack",
+     "mevcutTr": "spor torbası"
+    },
+    {
+     "de": "s Znüni",
+     "mevcutTr": "kuşluk atıştırmalığı"
+    },
+    {
+     "de": "aaschriibe",
+     "mevcutTr": "üzerine ad yazmak"
+    },
+    {
+     "de": "de Finkli",
+     "mevcutTr": "ev terliği (çocuk)"
+    },
+    {
+     "de": "abgää",
+     "mevcutTr": "teslim etmek"
+    },
+    {
+     "de": "de Elteraabig",
+     "mevcutTr": "veli toplantısı"
+    }
+   ]
+  },
+  {
+   "id": "zh-a1-r8",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Was ghört is Znüni?",
+   "genre": "Bilgi yazısı",
+   "intro": "İsviçre'de her okulda asılı olan liste: kuşluk molasında ne yenir. Küçük ama günlük hayatın merkezinde.",
+   "metin": "S Znüni — es paar Tipps\n\nGuet sind: Brot, Chääs, es Rüebli, en Öpfel, e Banane, Nüss, Jogurt.\n\nWeniger guet: Schoggistängeli, Chips, Gipfeli mit Schoggi. Süessi Getränk sind bi eus verbote — s Wasser git s gratis am Znünibrunne.\n\nBitte s Znüni imene Böxli mitgää, nöd im Plastiksäckli. Mir wänd weniger Abfall.\n\nWichtig: Es paar Chind händ e Nussallergie. Drum bitte käi Nüss, wänn Ihres Chind i de Gruppe Sunne isch.\n\nDe Zvieri isch nöd nötig — d Chind sind am zwäi scho dihäi.",
+   "gloss": [
+    {
+     "de": "s Znüni",
+     "mevcutTr": "kuşluk yemeği (saat 9 civarı)"
+    },
+    {
+     "de": "de Zvieri",
+     "mevcutTr": "ikindi atıştırmalığı (saat 4)"
+    },
+    {
+     "de": "s Gmües",
+     "mevcutTr": "sebze"
+    },
+    {
+     "de": "d Nuss",
+     "mevcutTr": "fındık, ceviz"
+    },
+    {
+     "de": "s Böxli",
+     "mevcutTr": "küçük kutu"
+    },
+    {
+     "de": "verbote",
+     "mevcutTr": "yasak"
+    },
+    {
+     "de": "de Znünibrunne",
+     "mevcutTr": "okuldaki su çeşmesi"
+    }
+   ]
+  }
+ ]
+}

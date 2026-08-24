@@ -1,0 +1,498 @@
+{
+ "paket": "de-003",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "a1-l5",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Eine Nachricht von Deniz",
+   "genre": "Mesaj",
+   "intro": "Deniz, arkadaşı Ceren'in telesekreterine yarınki plan hakkında mesaj bırakıyor.",
+   "metin": "Deniz: Hallo Ceren, hier ist Deniz. Wir wollen doch morgen zusammen in den Park gehen. Aber das Wetter wird leider schlecht. Es regnet morgen den ganzen Tag und es sind nur 12 Grad. Ich habe eine Idee: Wir gehen ins Schwimmbad! Das Schwimmbad ist ja drinnen. Es kostet 4 Euro. Ich hole dich um 11 Uhr mit dem Auto ab. Ruf mich bitte zurück. Tschüss!",
+   "gloss": [
+    {
+     "de": "das Wetter",
+     "mevcutTr": "hava durumu",
+     "havuz": {
+      "tr": "hava",
+      "en": "weather"
+     }
+    },
+    {
+     "de": "regnen",
+     "mevcutTr": "yağmur yağmak",
+     "havuz": {
+      "tr": "yağmur yağmak",
+      "en": "to rain"
+     }
+    },
+    {
+     "de": "das Grad",
+     "mevcutTr": "derece",
+     "havuz": {
+      "tr": "derece",
+      "en": "degree"
+     }
+    },
+    {
+     "de": "das Schwimmbad",
+     "mevcutTr": "yüzme havuzu",
+     "havuz": {
+      "tr": "yüzme havuzu",
+      "en": "swimming pool"
+     }
+    },
+    {
+     "de": "drinnen",
+     "mevcutTr": "içeride, kapalı alanda",
+     "havuz": {
+      "tr": "içeride",
+      "en": "inside"
+     }
+    },
+    {
+     "de": "abholen",
+     "mevcutTr": "gelip almak",
+     "havuz": {
+      "tr": "gidip almak",
+      "en": "to pick up"
+     }
+    },
+    {
+     "de": "zurückrufen",
+     "mevcutTr": "geri aramak",
+     "havuz": {
+      "tr": "geri aramak",
+      "en": "to call back"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l6",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Durchsage im Supermarkt",
+   "genre": "Anons",
+   "intro": "Bir süpermarketin günün kampanyalarını duyurduğu anonsu dinleyeceksin.",
+   "metin": "Liebe Kundinnen und Kunden, herzlich willkommen! Heute haben wir viele Angebote für Sie. Frische Erdbeeren aus Spanien: 500 Gramm für nur 1 Euro 99. Käse aus Frankreich: 100 Gramm für 1 Euro 29. Und an unserer Fleischtheke: Hähnchen, das Kilo für 3 Euro 49. Unser Markt schließt heute um 20 Uhr. Die Kasse 5 ist geschlossen, bitte gehen Sie zu den Kassen 1 bis 4. Wir wünschen Ihnen einen schönen Einkauf!",
+   "gloss": [
+    {
+     "de": "das Angebot",
+     "mevcutTr": "indirim, kampanya",
+     "havuz": {
+      "tr": "teklif",
+      "en": "offer"
+     }
+    },
+    {
+     "de": "die Erdbeere",
+     "mevcutTr": "çilek"
+    },
+    {
+     "de": "der Käse",
+     "mevcutTr": "peynir",
+     "havuz": {
+      "tr": "peynir",
+      "en": "cheese"
+     }
+    },
+    {
+     "de": "die Fleischtheke",
+     "mevcutTr": "et reyonu"
+    },
+    {
+     "de": "schließen",
+     "mevcutTr": "kapanmak",
+     "havuz": {
+      "tr": "kapatmak",
+      "en": "to close"
+     }
+    },
+    {
+     "de": "die Kasse",
+     "mevcutTr": "kasa",
+     "havuz": {
+      "tr": "kasa",
+      "en": "checkout"
+     }
+    },
+    {
+     "de": "der Einkauf",
+     "mevcutTr": "alışveriş",
+     "havuz": {
+      "tr": "alışveriş",
+      "en": "shopping"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l7",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Herr Klose erklärt den Müll",
+   "genre": "Diyalog",
+   "intro": "Hikâyenin üçüncü bölümü: Amir çöpü yanlış kovaya atmış, kapıcı Herr Klose açıklıyor.",
+   "metin": "Herr Klose: Guten Morgen! Sie sind der neue Nachbar, oder?\nAmir: Ja, guten Morgen. Amir. Ich wohne oben, im dritten Stock.\nHerr Klose: Klose, Hausmeister. Sagen Sie mal — war das Ihr Müll gestern? Die Joghurtbecher in der braunen Tonne?\nAmir: Oh. Ja, vielleicht. Ist das falsch?\nHerr Klose: Ja, aber kein Problem. Braun ist für Bio: Essen, Obst, Gemüse. Plastik kommt in den gelben Sack.\nAmir: Und Papier?\nHerr Klose: Blaue Tonne. Und Glas nicht ins Haus — der Container ist an der Ecke, neben der Bäckerei.\nAmir: Das sind viele Farben.\nHerr Klose: Ja. Aber Sie lernen das schnell. Und wenn Sie fragen wollen: Wohnung 1, ich bin fast immer da.",
+   "gloss": [
+    {
+     "de": "der Hausmeister",
+     "mevcutTr": "kapıcı, bina görevlisi",
+     "havuz": {
+      "tr": "kapıcı",
+      "en": "janitor"
+     }
+    },
+    {
+     "de": "die Tonne",
+     "mevcutTr": "çöp konteyneri"
+    },
+    {
+     "de": "der Joghurtbecher",
+     "mevcutTr": "yoğurt kabı"
+    },
+    {
+     "de": "wegwerfen",
+     "mevcutTr": "atmak",
+     "havuz": {
+      "tr": "çöpe atmak",
+      "en": "to throw away"
+     }
+    },
+    {
+     "de": "falsch",
+     "mevcutTr": "yanlış",
+     "havuz": {
+      "tr": "yanlış",
+      "en": "wrong"
+     }
+    },
+    {
+     "de": "die Strafe",
+     "mevcutTr": "ceza",
+     "havuz": {
+      "tr": "ceza",
+      "en": "punishment"
+     }
+    },
+    {
+     "de": "kein Problem",
+     "mevcutTr": "sorun değil"
+    }
+   ]
+  },
+  {
+   "id": "a1-l8",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Beim Bäcker",
+   "genre": "Diyalog",
+   "intro": "Fırında sipariş: Almanya'da günün en sık tekrarlanan konuşmalarından biri.",
+   "metin": "Verkäuferin: Guten Morgen! Was darf es sein?\nAmir: Guten Morgen. Vier Brötchen, bitte.\nVerkäuferin: Gerne. Sonst noch etwas?\nAmir: Ja, ein Vollkornbrot. Können Sie es schneiden?\nVerkäuferin: Natürlich. Dicke oder dünne Scheiben?\nAmir: Dünne, bitte.\nVerkäuferin: So. Das macht sechs Euro achtzig.\nAmir: Ich habe leider nur einen Zwanziger.\nVerkäuferin: Kein Problem. Dreizehn Euro zwanzig zurück. Schönen Tag!",
+   "gloss": [
+    {
+     "de": "das Brötchen",
+     "mevcutTr": "küçük ekmek",
+     "havuz": {
+      "tr": "küçük ekmek",
+      "en": "bread roll"
+     }
+    },
+    {
+     "de": "das Vollkornbrot",
+     "mevcutTr": "tam buğday ekmeği"
+    },
+    {
+     "de": "die Scheibe",
+     "mevcutTr": "dilim",
+     "havuz": {
+      "tr": "dilim",
+      "en": "slice"
+     }
+    },
+    {
+     "de": "geschnitten",
+     "mevcutTr": "dilimlenmiş"
+    },
+    {
+     "de": "sonst noch etwas?",
+     "mevcutTr": "başka bir şey?"
+    },
+    {
+     "de": "das macht …",
+     "mevcutTr": "tutarı … eder"
+    },
+    {
+     "de": "das Kleingeld",
+     "mevcutTr": "bozuk para",
+     "havuz": {
+      "tr": "bozuk para",
+      "en": "small change"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l9",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Drei Ansagen",
+   "genre": "Sınav formatı",
+   "intro": "Goethe A1 dinleme bölümünün klasik görevi: üç kısa anons, her birine bir soru. Her anonsu ayrı dinleyebilirsin.",
+   "metin": "Ansage 1: Achtung auf Gleis 5: Der Zug nach Hamburg, Abfahrt 14:12 Uhr, hat heute etwa zehn Minuten Verspätung.\nAnsage 2: Liebe Kunden, unser Markt schließt heute um 18 Uhr, nicht um 20 Uhr. Bitte kommen Sie zur Kasse. Morgen sind wir wieder normal für Sie da.\nAnsage 3: Information für unsere Gäste: Das Schwimmbad ist heute nur bis 15 Uhr geöffnet. Der Grund ist ein Kinderfest. Der Eintritt ist ab 13 Uhr frei.",
+   "gloss": [
+    {
+     "de": "die Ansage",
+     "mevcutTr": "anons",
+     "havuz": {
+      "tr": "duyuru",
+      "en": "announcement"
+     }
+    },
+    {
+     "de": "der Gleis",
+     "mevcutTr": "peron",
+     "havuz": {
+      "tr": "ray",
+      "en": "track"
+     }
+    },
+    {
+     "de": "die Verspätung",
+     "mevcutTr": "gecikme",
+     "havuz": {
+      "tr": "gecikme",
+      "en": "delay"
+     }
+    },
+    {
+     "de": "geschlossen",
+     "mevcutTr": "kapalı",
+     "havuz": {
+      "tr": "kapalı",
+      "en": "closed"
+     }
+    },
+    {
+     "de": "das Angebot",
+     "mevcutTr": "kampanya, indirim",
+     "havuz": {
+      "tr": "teklif",
+      "en": "offer"
+     }
+    },
+    {
+     "de": "die Kasse",
+     "mevcutTr": "kasa",
+     "havuz": {
+      "tr": "kasa",
+      "en": "checkout"
+     }
+    },
+    {
+     "de": "der Ausgang",
+     "mevcutTr": "çıkış",
+     "havuz": {
+      "tr": "çıkış",
+      "en": "exit"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l10",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Was ist ein Adventskalender?",
+   "genre": "Kültür",
+   "intro": "Aralık ayında her Alman evinde görünen şey: Advent takvimi. Kısa bir açıklama dinleyeceksin.",
+   "metin": "Lena: Amir, hast du schon einen Adventskalender?\nAmir: Einen was? Ein Kalender für Dezember?\nLena: Fast. Er hat 24 kleine Türchen. Vom 1. bis zum 24. Dezember machst du jeden Tag ein Türchen auf.\nAmir: Und was ist drin?\nLena: Meistens Schokolade. Für Kinder oft ein kleines Spielzeug. Manche Familien basteln ihn selbst und schreiben kleine Texte hinein.\nAmir: Auch für Erwachsene?\nLena: Klar! Mein Mann hat einen mit Kaffee, jeden Tag eine andere Sorte. Meine Mutter macht einen mit Tee.\nAmir: Und wenn man zwei Türchen an einem Tag aufmacht?\nLena: Dann sagen die Kinder, du hast betrogen. Das ist eine ernste Sache.",
+   "gloss": [
+    {
+     "de": "der Advent",
+     "mevcutTr": "Noel öncesi dört hafta"
+    },
+    {
+     "de": "der Kalender",
+     "mevcutTr": "takvim",
+     "havuz": {
+      "tr": "takvim",
+      "en": "calendar"
+     }
+    },
+    {
+     "de": "das Türchen",
+     "mevcutTr": "küçük kapak"
+    },
+    {
+     "de": "aufmachen",
+     "mevcutTr": "açmak",
+     "havuz": {
+      "tr": "açmak",
+      "en": "to open"
+     }
+    },
+    {
+     "de": "die Schokolade",
+     "mevcutTr": "çikolata",
+     "havuz": {
+      "tr": "çikolata",
+      "en": "chocolate"
+     }
+    },
+    {
+     "de": "basteln",
+     "mevcutTr": "el işi yapmak",
+     "havuz": {
+      "tr": "el işi yapmak",
+      "en": "to do crafts"
+     }
+    },
+    {
+     "de": "sich freuen",
+     "mevcutTr": "sevinmek",
+     "havuz": {
+      "tr": "sevinmek",
+      "en": "to be happy"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l11",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Einen Termin absagen",
+   "genre": "Telefon",
+   "intro": "Amir doktor randevusunu iptal ediyor. Telefon konuşmasını dinleyeceksin.",
+   "metin": "Praxis: Praxis Dr. Neumann, Schmidt am Apparat. Guten Tag.\nAmir: Guten Tag. Hier ist Amir Haddad. Ich habe morgen um 9 Uhr einen Termin. Leider kann ich nicht kommen.\nPraxis: Kein Problem. Wie ist Ihr Geburtsdatum, bitte?\nAmir: Der zwölfte Vierte, neunzehnhundertsechsundneunzig.\nPraxis: Danke. Möchten Sie den Termin verschieben?\nAmir: Ja, gerne. Haben Sie etwas am Nachmittag?\nPraxis: Am Donnerstag um 15:30 Uhr wäre frei. Oder Freitag um 16 Uhr.\nAmir: Donnerstag passt besser.\nPraxis: Gut, Donnerstag 15:30 Uhr. Bringen Sie bitte Ihre Versichertenkarte mit.",
+   "gloss": [
+    {
+     "de": "die Praxis",
+     "mevcutTr": "muayenehane",
+     "havuz": {
+      "tr": "muayenehane",
+      "en": "doctor's office"
+     }
+    },
+    {
+     "de": "absagen",
+     "mevcutTr": "iptal etmek",
+     "havuz": {
+      "tr": "iptal etmek",
+      "en": "to cancel"
+     }
+    },
+    {
+     "de": "verschieben",
+     "mevcutTr": "ertelemek",
+     "havuz": {
+      "tr": "ertelemek",
+      "en": "to postpone"
+     }
+    },
+    {
+     "de": "der Geburtstag",
+     "mevcutTr": "doğum tarihi / doğum günü",
+     "havuz": {
+      "tr": "doğum günü",
+      "en": "birthday"
+     }
+    },
+    {
+     "de": "frei",
+     "mevcutTr": "boş (randevu)",
+     "havuz": {
+      "tr": "boş",
+      "en": "free"
+     }
+    },
+    {
+     "de": "passen",
+     "mevcutTr": "uymak",
+     "havuz": {
+      "tr": "uymak",
+      "en": "to fit"
+     }
+    },
+    {
+     "de": "die Versichertenkarte",
+     "mevcutTr": "sigorta kartı",
+     "havuz": {
+      "tr": "sigorta kartı",
+      "en": "insurance card"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l12",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Amir lädt ein",
+   "genre": "Sesli mesaj",
+   "intro": "Hikâyenin dördüncü bölümü: Amir yerleşti ve komşularını davet ediyor. Sesli mesajı dinleyeceksin.",
+   "metin": "Amir: Hallo Frau Wagner, hier ist Amir aus dem dritten Stock.\nAmir: Die Wohnung ist endlich fertig. Der Tisch von Ihrem Sohn steht jetzt in der Küche — er ist perfekt, vielen Dank noch einmal.\nAmir: Ich möchte Sie am Samstag zum Essen einladen, gegen 18 Uhr. Ich koche etwas aus Syrien. Nicht scharf, keine Sorge.\nAmir: Herrn Klose habe ich auch gefragt. Er kommt, glaube ich — er hat gesagt: „Mal sehen.“\nAmir: Sagen Sie mir bis Donnerstag Bescheid? Bis bald!",
+   "gloss": [
+    {
+     "de": "einladen",
+     "mevcutTr": "davet etmek",
+     "havuz": {
+      "tr": "davet etmek",
+      "en": "to invite"
+     }
+    },
+    {
+     "de": "endlich",
+     "mevcutTr": "nihayet",
+     "havuz": {
+      "tr": "sonunda",
+      "en": "finally"
+     }
+    },
+    {
+     "de": "fertig",
+     "mevcutTr": "hazır, bitmiş",
+     "havuz": {
+      "tr": "hazır",
+      "en": "ready"
+     }
+    },
+    {
+     "de": "kochen",
+     "mevcutTr": "yemek pişirmek",
+     "havuz": {
+      "tr": "yemek pişirmek",
+      "en": "to cook"
+     }
+    },
+    {
+     "de": "scharf",
+     "mevcutTr": "acı (yemek)",
+     "havuz": {
+      "tr": "keskin",
+      "en": "sharp"
+     }
+    },
+    {
+     "de": "Bescheid sagen",
+     "mevcutTr": "haber vermek",
+     "havuz": {
+      "tr": "haber vermek",
+      "en": "to let know"
+     }
+    },
+    {
+     "de": "gegen",
+     "mevcutTr": "…e doğru (saat)",
+     "havuz": {
+      "tr": "karşı",
+      "en": "against"
+     }
+    }
+   ]
+  }
+ ]
+}

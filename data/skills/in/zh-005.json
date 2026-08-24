@@ -1,0 +1,362 @@
+{
+ "paket": "zh-005",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-a2-r1",
+   "skill": "reading",
+   "level": "A2",
+   "title": "WG-Zimmer z Züri-Wiedike",
+   "genre": "İlan",
+   "intro": "Zürih Wiedikon'da bir öğrenci evinin (WG) oda ilanını okuyacaksın.",
+   "metin": "Schööns Zimmer i de 3er-WG z Züri-Wiedike frei. S Zimmer isch 16 Quadratmeter grooss und hät en Balkon. Mir sind zwoo Studäntine und sind vil dihäi. D Miete isch 780 Franke im Monet, alles inklusiv. S Tram Nummere 9 halted grad vor em Huus, und de Bahnhof Wiedike isch nu füüf Minuute z Fuess ewäg. Mir sueched öpper, wo gärn zäme chocht und am Aabig nöd z lut Musig loset. Es Huustier isch leider nöd erlaubt. S Zimmer isch ab em 1. Oktober frei.\n\nHäsch Intresse? Dänn schriib eus es Mail bis am Friitig. D Bsichtigung isch am Samschtig am Namittag.",
+   "gloss": [
+    {
+     "de": "s Zimmer",
+     "mevcutTr": "oda",
+     "havuz": {
+      "tr": "oda",
+      "en": "room"
+     }
+    },
+    {
+     "de": "d Miete",
+     "mevcutTr": "kira",
+     "havuz": {
+      "tr": "kira",
+      "en": "rent"
+     }
+    },
+    {
+     "de": "sueche",
+     "mevcutTr": "aramak"
+    },
+    {
+     "de": "s Huustier",
+     "mevcutTr": "evcil hayvan"
+    },
+    {
+     "de": "erlaubt",
+     "mevcutTr": "izinli, serbest",
+     "havuz": {
+      "tr": "serbest",
+      "en": "allowed"
+     }
+    },
+    {
+     "de": "z Fuess",
+     "mevcutTr": "yürüyerek"
+    },
+    {
+     "de": "d Bsichtigung",
+     "mevcutTr": "evi gezip görme"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r2",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Wanderig uf de Üetliberg",
+   "genre": "Mesaj",
+   "intro": "Nadja'nın arkadaşı Selin'e yazdığı hafta sonu yürüyüş planını okuyacaksın.",
+   "metin": "Hoi Selin! Wie gaats der? Am Sunntig mached mir e chliini Wanderig uf de Üetliberg. Mir träffed eus am zäni am Hauptbahnhof und näämed s Züügli bis uf d Station Üetliberg. Vo dört laufed mir öppe e halbi Stund bis zum Gipfel. S Wätter söll schöön werde! Obe hät me e tolli Ussicht uf d Stadt und de See. Ich nime es Picknick mit — chasch du öppis z Trinke mitnää? Wänns rägnet, gömmer statt däm is Museum. Gib mer bitte bis am Friitig Bschäid.\n\nLiebi Grüess\nNadja",
+   "gloss": [
+    {
+     "de": "d Wanderig",
+     "mevcutTr": "doğa yürüyüşü"
+    },
+    {
+     "de": "sich träffe",
+     "mevcutTr": "buluşmak"
+    },
+    {
+     "de": "s Züügli",
+     "mevcutTr": "küçük tren (Uetlibergbahn)"
+    },
+    {
+     "de": "d Ussicht",
+     "mevcutTr": "manzara"
+    },
+    {
+     "de": "mitnää",
+     "mevcutTr": "yanında getirmek"
+    },
+    {
+     "de": "rägne",
+     "mevcutTr": "yağmur yağmak"
+    },
+    {
+     "de": "Bschäid gää",
+     "mevcutTr": "haber vermek"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r3",
+   "skill": "reading",
+   "level": "A2",
+   "title": "D Waschchuchi-Ornig",
+   "genre": "Duyuru",
+   "intro": "Bir Zürih apartmanında çamaşırhane kurallarını okuyacaksın — İsviçre'de ev hayatının klasik konusu.",
+   "metin": "Liebi Bewohnerinne und Bewohner\n\nDamit s i de Waschchuchi rund lauft, gäled ab sofort die Regle:\n\n1. Jedi Wonig hät zwäi Waschtäg im Monet. De Waschplan hanget näb de Tür.\n2. Wäsche vo de Maschine nää, sobald si fertig isch. Nach ere halbe Stund darf öpper anders si uselaa.\n3. De Tumbler-Filter nach jedem Bruuch putze — susch trochnet er schlächt.\n4. Am Sunntig und nach de zäni am Aabig wird nöd gwäsche.\n5. Zum Schluss: Bode wüsche und s Fänschter zuemache.\n\nWänn Ihre Tag emal nöd passt, chönd Si mit ere andere Partei tuusche — machend s äifach under enand ab.\n\nBsete Dank\nD Huusverwaltig",
+   "gloss": [
+    {
+     "de": "d Waschchuchi",
+     "mevcutTr": "çamaşırhane (Waschküche)"
+    },
+    {
+     "de": "de Waschplan",
+     "mevcutTr": "çamaşır sırası çizelgesi"
+    },
+    {
+     "de": "de Tumbler",
+     "mevcutTr": "kurutma makinesi (İsviçre)"
+    },
+    {
+     "de": "putze",
+     "mevcutTr": "temizlemek"
+    },
+    {
+     "de": "s Sigel",
+     "mevcutTr": "işaret, plaka"
+    },
+    {
+     "de": "abmache",
+     "mevcutTr": "anlaşmak, kararlaştırmak"
+    },
+    {
+     "de": "s Fänschter",
+     "mevcutTr": "pencere"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r4",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Grüess us de Ferie",
+   "genre": "Kart",
+   "intro": "Sara, Vierwaldstättersee'den arkadaşına tatil kartı yazmış. Kartı okuyacaksın.",
+   "metin": "Liebi Fatma\n\nGrüess us Luzärn! Mir sind sit em Määndig da und s gfallt üs sehr guet. S Hotel isch chlii, aber ganz näb em See.\n\nGschtern sind mir mit em Schiff über de See gfahre und denn uf de Rigi ufe. D Uussicht vo obe isch der Wahnsinn — me gseet d Bärge und de ganz See.\n\nHüt rägnet s läider, drum bliibed mir i de Stadt und gönd is Verchehrshuus. Morn wämmer no e chlini Wanderig mache, wänn s Wätter besser wird.\n\nAm Sunntig sind mir wider z Züri. Denn verzell ich der alles!\n\nLiebi Grüess\nSara",
+   "gloss": [
+    {
+     "de": "d Ferie",
+     "mevcutTr": "tatil (Ferien)"
+    },
+    {
+     "de": "s Schiff",
+     "mevcutTr": "gemi, vapur",
+     "havuz": {
+      "tr": "gemi",
+      "en": "ship"
+     }
+    },
+    {
+     "de": "d Wanderig",
+     "mevcutTr": "doğa yürüyüşü"
+    },
+    {
+     "de": "gschtern",
+     "mevcutTr": "dün (gestern)"
+    },
+    {
+     "de": "s Wätter",
+     "mevcutTr": "hava"
+    },
+    {
+     "de": "rägne",
+     "mevcutTr": "yağmur yağmak"
+    },
+    {
+     "de": "de Bärg",
+     "mevcutTr": "dağ"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r5",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Summer i de Badi",
+   "genre": "Program",
+   "intro": "Zürih'te bir açık hava havuzunun (Badi) yaz programını okuyacaksın.",
+   "metin": "Badi Utoquai — Summerprogramm\n\nOffe: Määndig bis Sunntig, 9 bis 20 Uhr. Bi schlächtem Wätter bliibt d Badi zue.\n\nIitrittsgäld: Erwachsni 8 Franke, Chind bis 16 gratis. S Summerabo choschtet 120 Franke und giltet i allne Badine vo de Stadt.\n\nFrüehschwümme: Zischtig und Dunschtig ab de sächsi am Morge, nume mit em Abo.\n\nUf de Liegwiese hät s zwäi Grillplätzli. Si chönd nöd reserviert wärde — wär zerscht chunt, chunt zerscht dra.\n\nS Bistro hät bis am nüüni offe. Am Mittwuch am Aabig git s Musig.",
+   "gloss": [
+    {
+     "de": "d Badi",
+     "mevcutTr": "açık hava havuzu / plaj (İsviçre)"
+    },
+    {
+     "de": "s Iitrittsgäld",
+     "mevcutTr": "giriş ücreti"
+    },
+    {
+     "de": "s Abo",
+     "mevcutTr": "abonman"
+    },
+    {
+     "de": "de Iigang",
+     "mevcutTr": "giriş"
+    },
+    {
+     "de": "gratis",
+     "mevcutTr": "ücretsiz",
+     "havuz": {
+      "tr": "bedava",
+      "en": "free"
+     }
+    },
+    {
+     "de": "s Grillplätzli",
+     "mevcutTr": "mangal alanı"
+    },
+    {
+     "de": "d Liegwiese",
+     "mevcutTr": "güneşlenme çimenliği"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r6",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Uushilf im Café gsuecht",
+   "genre": "İlan",
+   "intro": "Zürih'te bir kafenin yarı zamanlı eleman ilanını okuyacaksın.",
+   "metin": "Café Sträähl im Chreis 6 suecht ab September e Uushilf.\n\nArbetsziite: Friitig und Samschtig, 8 bis 14 Uhr. Öppe zwölf Stund i de Wuche.\n\nDini Ufgabe: Gescht bediene, Kafi mache, abruume und d Chuchi suuber haa.\n\nMir wünsched üs: Erfaarig im Service isch schöön, aber käi Muess. Wichtiger sind Fründlichkäit und dass du zueverlässig bisch. Tüütsch bruuchsch, Mundart muesch nöd perfekt rede — bi eus lernsch si schnäll.\n\nLoon: 26 Franke Stundeloon.\n\nMäld di mit eme churze Mail bi de Frau Brunner: job@cafestraehl.ch. Mir mälded üs innerhalb vo ere Wuche.",
+   "gloss": [
+    {
+     "de": "d Uushilf",
+     "mevcutTr": "yardımcı eleman"
+    },
+    {
+     "de": "sueche",
+     "mevcutTr": "aramak"
+    },
+    {
+     "de": "de Loon",
+     "mevcutTr": "ücret, maaş"
+    },
+    {
+     "de": "d Erfaarig",
+     "mevcutTr": "deneyim"
+    },
+    {
+     "de": "zueverlässig",
+     "mevcutTr": "güvenilir"
+    },
+    {
+     "de": "sich mälde",
+     "mevcutTr": "başvurmak, haber vermek"
+    },
+    {
+     "de": "de Stundeloon",
+     "mevcutTr": "saat ücreti"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r7",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Achtzg Lüüt a de Bsichtigung",
+   "genre": "Mesaj",
+   "intro": "Deniz ilk ev gezmesine gitti ve arkadaşına yazıyor. A2'de takip edeceğin hikâyenin başlangıcı.",
+   "metin": "Hoi Murat\n\nIch chume grad vo de erschte Bsichtigung. Du glaubsch mer s nöd: Es sind öppe achtzg Lüüt do gsii. Für drei Zimmer.\n\nMe hät i de Schlange gwartet, denn isch me sibe Minute dure d Wonig gloffe, und am Uusgang hät e Frau vo de Verwaltig d Dossiers iigsammlet. Käi Gspröch, käi Frag. Nur: „Merci, mir mälded üs.“\n\nEs Dossier bruuchsch komplett: Loonuuszüüg, Betriibigsuszug, Kopie vom Uuswiis. Wär s nöd debii hät, chunt gar nöd i Frag. Ich han s zum Glück gha.\n\nD Wonig sälber isch okay gsii. Chlii, aber häll, und s Tram isch vor de Tür.\n\nIch gib mir drei Mönet. Wänn s bis denn nöd klappt, sueche mir usserhalb.\n\nLiebi Grüess\nDeniz",
+   "gloss": [
+    {
+     "de": "d Bsichtigung",
+     "mevcutTr": "ev gezme randevusu"
+    },
+    {
+     "de": "d Schlange",
+     "mevcutTr": "kuyruk",
+     "havuz": {
+      "tr": "yılan",
+      "en": "snake"
+     }
+    },
+    {
+     "de": "s Dossier",
+     "mevcutTr": "başvuru dosyası"
+    },
+    {
+     "de": "de Betriibigsuszug",
+     "mevcutTr": "icra kaydı belgesi"
+    },
+    {
+     "de": "d Chance",
+     "mevcutTr": "şans",
+     "havuz": {
+      "tr": "şans",
+      "en": "chance"
+     }
+    },
+    {
+     "de": "uufgää",
+     "mevcutTr": "vazgeçmek"
+    },
+    {
+     "de": "wiitersueche",
+     "mevcutTr": "aramaya devam etmek"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r8",
+   "skill": "reading",
+   "level": "A2",
+   "title": "S Dossier für e Wonig",
+   "genre": "Rehber",
+   "intro": "Zürih'te ev bulmanın asıl sınavı: dosya. Neyin gerektiğini anlatan bir rehber.",
+   "metin": "Wär z Züri e Wonig suecht, konkurriert mit vilne. Es vollständigs Dossier isch drum wichtiger als es schöns Aaschriibe.\n\nDas ghört immer dezue:\n– Aamäldigsformular vo de Verwaltig, komplett uusgfüllt\n– Kopie vom Uuswiis oder Pass (mit Uufenthaltsbewilligung)\n– di letschte drei Loonuuszüüg\n– en aktuelle Betriibigsuszug (nöd elter als drei Mönet, choschtet 17 Franke)\n– d Referänz vom letschte Vermieter mit Telefonnummere\n\nWas hilft, aber nöd nötig isch: es churzes Schriibe über eu sälber. Zwäi, drei Sätz gnüeged — wär ihr sind, was ihr schaffed, wie vill Lüüt iizieht.\n\nDrei praktischi Punkt:\n\n1. Mached s Dossier äimal als PDF und schicked immer s gliiche. So verlüüred ihr käi Ziit.\n2. D Kaution isch mäischtens drei Monetsmiete. Es git au Firme, wo si versichered — das isch tüürer, aber me mues nöd alles uf äimal haa.\n3. E Absaag isch normal. Di mäischte Lüüt bruuched zwänzg bis vierzg Bewärbige. Das häisst nöd, dass öppis mit eu nöd stimmt.",
+   "gloss": [
+    {
+     "de": "s Dossier",
+     "mevcutTr": "başvuru dosyası"
+    },
+    {
+     "de": "de Loonuuszug",
+     "mevcutTr": "maaş bordrosu"
+    },
+    {
+     "de": "de Betriibigsuszug",
+     "mevcutTr": "icra takibi kaydı"
+    },
+    {
+     "de": "d Referänz",
+     "mevcutTr": "referans"
+    },
+    {
+     "de": "de Vermieter",
+     "mevcutTr": "ev sahibi",
+     "havuz": {
+      "tr": "ev sahibi",
+      "en": "landlord"
+     }
+    },
+    {
+     "de": "d Kaution",
+     "mevcutTr": "depozito",
+     "havuz": {
+      "tr": "depozito",
+      "en": "deposit"
+     }
+    },
+    {
+     "de": "vollständig",
+     "mevcutTr": "eksiksiz",
+     "havuz": {
+      "tr": "eksiksiz",
+      "en": "complete"
+     }
+    },
+    {
+     "de": "d Absaag",
+     "mevcutTr": "ret"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,498 @@
+{
+ "paket": "de-002",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "a1-r9",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Flohmarkt im Stadtpark",
+   "genre": "Duyuru",
+   "intro": "Almanya'nın en sevilen hafta sonu geleneklerinden biri: bit pazarı. Parktaki duyuruyu okuyacaksın.",
+   "metin": "FLOHMARKT IM STADTPARK\nSamstag, 8. Juni, 9–16 Uhr\n\nAlles ist gebraucht: Bücher, Kleidung, Fahrräder, Spielzeug, Geschirr.\n\nSie möchten selbst verkaufen? Ein Stand kostet 15 Euro (3 Meter). Bitte bis Mittwoch anmelden: flohmarkt@stadtpark-verein.de\n\nWichtig: Kein Verkauf von neuen Waren. Bitte bringen Sie Ihren eigenen Tisch mit.\n\nFür Kinder unter 14 ist der Stand kostenlos.\n\nEssen und Kaffee gibt es am Eingang Nord.\n\nBei Regen: Der Flohmarkt ist am Sonntag.",
+   "gloss": [
+    {
+     "de": "der Flohmarkt",
+     "mevcutTr": "bit pazarı",
+     "havuz": {
+      "tr": "bit pazarı",
+      "en": "flea market"
+     }
+    },
+    {
+     "de": "verkaufen",
+     "mevcutTr": "satmak",
+     "havuz": {
+      "tr": "satmak",
+      "en": "to sell"
+     }
+    },
+    {
+     "de": "der Stand",
+     "mevcutTr": "tezgâh"
+    },
+    {
+     "de": "anmelden",
+     "mevcutTr": "kaydettirmek"
+    },
+    {
+     "de": "gebraucht",
+     "mevcutTr": "kullanılmış, ikinci el",
+     "havuz": {
+      "tr": "ikinci el",
+      "en": "used"
+     }
+    },
+    {
+     "de": "die Kasse",
+     "mevcutTr": "kasa",
+     "havuz": {
+      "tr": "kasa",
+      "en": "checkout"
+     }
+    },
+    {
+     "de": "bei Regen",
+     "mevcutTr": "yağmur olursa"
+    }
+   ]
+  },
+  {
+   "id": "a1-r10",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Vier Anzeigen — wer passt?",
+   "genre": "Sınav formatı",
+   "intro": "Goethe A1 sınavındaki klasik görev: kısa ilanları okuyup kimin neye ihtiyacı olduğunu eşleştirmek. Önce ilanları oku, sonra soruları çöz.",
+   "metin": "A) Deutsch lernen? Ich bin Studentin und gebe Unterricht. 12 Euro pro Stunde. Nur am Wochenende. Tel. 0176 555 12 12\n\nB) Fahrrad zu verkaufen, blau, 3 Jahre alt, fährt gut. 60 Euro. Nur Abholung, kein Versand. Tel. 0171 888 40 40\n\nC) Wir suchen eine Person für den Garten. Samstag, 4 Stunden, 15 Euro pro Stunde. Bitte bei Familie Roth melden: 0421 55 66 77\n\nD) Kinderbetreuung: Ich passe montags und mittwochs nachmittags auf Ihr Kind auf. Ich habe Erfahrung. Tel. 0160 222 33 44",
+   "gloss": [
+    {
+     "de": "die Anzeige",
+     "mevcutTr": "ilan",
+     "havuz": {
+      "tr": "ilan",
+      "en": "ad"
+     }
+    },
+    {
+     "de": "suchen",
+     "mevcutTr": "aramak",
+     "havuz": {
+      "tr": "aramak",
+      "en": "to look for"
+     }
+    },
+    {
+     "de": "der Unterricht",
+     "mevcutTr": "ders",
+     "havuz": {
+      "tr": "ders",
+      "en": "class"
+     }
+    },
+    {
+     "de": "abholen",
+     "mevcutTr": "gidip almak",
+     "havuz": {
+      "tr": "gidip almak",
+      "en": "to pick up"
+     }
+    },
+    {
+     "de": "die Stunde",
+     "mevcutTr": "saat, ders saati",
+     "havuz": {
+      "tr": "saat",
+      "en": "hour"
+     }
+    },
+    {
+     "de": "günstig",
+     "mevcutTr": "uygun fiyatlı",
+     "havuz": {
+      "tr": "uygun fiyatlı",
+      "en": "affordable"
+     }
+    },
+    {
+     "de": "melden",
+     "mevcutTr": "haber vermek, ulaşmak",
+     "havuz": {
+      "tr": "bildirmek",
+      "en": "to report"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r11",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Ein Zettel von Frau Wagner",
+   "genre": "Not",
+   "intro": "Hikâyenin ikinci bölümü: Amir eve gelince kapısında bir not buluyor.",
+   "metin": "Lieber Herr Amir,\n\nheute war der Postbote da. Sie waren nicht zu Hause, also habe ich Ihr Paket angenommen. Es ist bei mir.\n\nIch bin ab 17 Uhr da. Klingeln Sie einfach — zweimal, dann weiß ich, dass Sie es sind.\n\nUnd noch etwas: Sie haben doch keinen Tisch, oder? Mein Sohn hat einen kleinen Tisch im Keller. Er braucht ihn nicht mehr. Wenn Sie wollen, gehört er Ihnen.\n\nTrinken Sie Tee? Ich habe immer welchen da.\n\nIhre Nachbarin\nH. Wagner (Wohnung 3)",
+   "gloss": [
+    {
+     "de": "der Zettel",
+     "mevcutTr": "not kâğıdı",
+     "havuz": {
+      "tr": "not kâğıdı",
+      "en": "note"
+     }
+    },
+    {
+     "de": "das Paket",
+     "mevcutTr": "paket, kargo",
+     "havuz": {
+      "tr": "paket",
+      "en": "package"
+     }
+    },
+    {
+     "de": "annehmen",
+     "mevcutTr": "teslim almak",
+     "havuz": {
+      "tr": "varsaymak",
+      "en": "to assume"
+     }
+    },
+    {
+     "de": "vorbeikommen",
+     "mevcutTr": "uğramak",
+     "havuz": {
+      "tr": "uğramak",
+      "en": "to come by"
+     }
+    },
+    {
+     "de": "die Tasse",
+     "mevcutTr": "fincan",
+     "havuz": {
+      "tr": "fincan",
+      "en": "cup"
+     }
+    },
+    {
+     "de": "leihen",
+     "mevcutTr": "ödünç vermek",
+     "havuz": {
+      "tr": "ödünç vermek",
+      "en": "to lend"
+     }
+    },
+    {
+     "de": "der Schlüssel",
+     "mevcutTr": "anahtar",
+     "havuz": {
+      "tr": "anahtar",
+      "en": "key"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r12",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Die Hausordnung",
+   "genre": "Kurallar",
+   "intro": "Almanya'da her binada asılı olan metin: ev kuralları. Amir'in binasındaki listeyi okuyacaksın.",
+   "metin": "HAUSORDNUNG — Lindenstraße 8\n\n1. Ruhezeiten: 22–7 Uhr und sonntags den ganzen Tag. Bitte keine Waschmaschine und keine laute Musik.\n\n2. Müll: Bitte trennen! Gelber Sack (Plastik), blaue Tonne (Papier), braune Tonne (Bio), graue Tonne (Rest). Glas kommt in den Container an der Ecke.\n\n3. Waschküche: Jede Wohnung hat einen Tag. Der Plan hängt an der Tür. Bitte die Maschine nach dem Waschen sauber machen.\n\n4. Fahrräder: nur im Keller, nicht im Treppenhaus.\n\n5. Grillen auf dem Balkon ist verboten. Im Garten ist es erlaubt — bitte vorher bei den Nachbarn Bescheid sagen.\n\n6. Fragen? Hausmeister Klose, Wohnung 1, oder 0421 33 44 55.",
+   "gloss": [
+    {
+     "de": "die Hausordnung",
+     "mevcutTr": "bina kuralları",
+     "havuz": {
+      "tr": "apartman kuralları",
+      "en": "house rules"
+     }
+    },
+    {
+     "de": "die Ruhezeit",
+     "mevcutTr": "sessizlik saatleri"
+    },
+    {
+     "de": "der Müll",
+     "mevcutTr": "çöp",
+     "havuz": {
+      "tr": "çöp",
+      "en": "trash"
+     }
+    },
+    {
+     "de": "trennen",
+     "mevcutTr": "ayırmak"
+    },
+    {
+     "de": "die Waschküche",
+     "mevcutTr": "çamaşırhane"
+    },
+    {
+     "de": "der Keller",
+     "mevcutTr": "bodrum",
+     "havuz": {
+      "tr": "bodrum",
+      "en": "basement"
+     }
+    },
+    {
+     "de": "erlaubt",
+     "mevcutTr": "izinli",
+     "havuz": {
+      "tr": "serbest",
+      "en": "allowed"
+     }
+    },
+    {
+     "de": "verboten",
+     "mevcutTr": "yasak",
+     "havuz": {
+      "tr": "yasak",
+      "en": "forbidden"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l1",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Auf dem Markt",
+   "genre": "Diyalog",
+   "intro": "Lena manavda alışveriş yapıyor; satıcıyla konuşmasını dinleyeceksin.",
+   "metin": "Verkäufer: Guten Tag! Kann ich Ihnen helfen?\nLena: Ja, gern. Ich suche Äpfel.\nVerkäufer: Ja, hier bitte. Ein Kilo kostet 2 Euro 50.\nLena: Gut, dann nehme ich zwei Kilo. Und haben Sie auch frisches Brot?\nVerkäufer: Nein, leider nicht. Aber die Bäckerei ist gleich neben dem Markt.\nLena: Ah, danke. Dann zahle ich nur die Äpfel. Hier sind 5 Euro.\nVerkäufer: Vielen Dank und auf Wiedersehen!",
+   "gloss": [
+    {
+     "de": "suchen",
+     "mevcutTr": "aramak",
+     "havuz": {
+      "tr": "aramak",
+      "en": "to look for"
+     }
+    },
+    {
+     "de": "der Apfel",
+     "mevcutTr": "elma",
+     "havuz": {
+      "tr": "elma",
+      "en": "apple"
+     }
+    },
+    {
+     "de": "das Kilo",
+     "mevcutTr": "kilo",
+     "havuz": {
+      "tr": "kilo",
+      "en": "kilo"
+     }
+    },
+    {
+     "de": "frisch",
+     "mevcutTr": "taze",
+     "havuz": {
+      "tr": "taze",
+      "en": "fresh"
+     }
+    },
+    {
+     "de": "leider",
+     "mevcutTr": "maalesef",
+     "havuz": {
+      "tr": "maalesef",
+      "en": "unfortunately"
+     }
+    },
+    {
+     "de": "zahlen",
+     "mevcutTr": "ödemek",
+     "havuz": {
+      "tr": "ödemek",
+      "en": "to pay"
+     }
+    },
+    {
+     "de": "die Bäckerei",
+     "mevcutTr": "fırın",
+     "havuz": {
+      "tr": "fırın",
+      "en": "bakery"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-l2",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Anruf bei der Arztpraxis",
+   "genre": "Telesekreter",
+   "intro": "Bir doktor muayenehanesinin telesekreter kaydını dinleyeceksin.",
+   "metin": "Guten Tag. Hier ist die Praxis von Doktor Meyer. Unsere Praxis ist von Montag bis Freitag von 8 bis 12 Uhr geöffnet, am Dienstag und Donnerstag auch von 15 bis 18 Uhr. Am Mittwochnachmittag ist die Praxis geschlossen. Möchten Sie einen Termin? Dann rufen Sie bitte am Vormittag an oder schreiben Sie uns eine E-Mail. In Notfällen wählen Sie bitte die 112. Vielen Dank und auf Wiederhören.",
+   "gloss": [
+    {
+     "de": "die Praxis",
+     "mevcutTr": "muayenehane",
+     "havuz": {
+      "tr": "muayenehane",
+      "en": "doctor's office"
+     }
+    },
+    {
+     "de": "geöffnet",
+     "mevcutTr": "açık",
+     "havuz": {
+      "tr": "açık",
+      "en": "open"
+     }
+    },
+    {
+     "de": "der Termin",
+     "mevcutTr": "randevu",
+     "havuz": {
+      "tr": "randevu",
+      "en": "appointment"
+     }
+    },
+    {
+     "de": "der Vormittag",
+     "mevcutTr": "öğleden önce"
+    },
+    {
+     "de": "der Notfall",
+     "mevcutTr": "acil durum",
+     "havuz": {
+      "tr": "acil durum",
+      "en": "emergency"
+     }
+    },
+    {
+     "de": "wählen",
+     "mevcutTr": "(numara) çevirmek",
+     "havuz": {
+      "tr": "seçmek",
+      "en": "to choose"
+     }
+    },
+    {
+     "de": "Auf Wiederhören",
+     "mevcutTr": "hoşça kalın (telefonda)"
+    }
+   ]
+  },
+  {
+   "id": "a1-l3",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Durchsage am Flughafen",
+   "genre": "Anons",
+   "intro": "Havaalanında İstanbul uçuşuyla ilgili bir anons dinleyeceksin.",
+   "metin": "Achtung, eine wichtige Durchsage für alle Passagiere nach Istanbul. Der Flug TK 1624 hat 40 Minuten Verspätung. Das Flugzeug startet nicht um 14:20 Uhr, sondern um 15 Uhr. Bitte gehen Sie erst um 14:15 Uhr zum Gate. Achtung, das Gate ist neu: Der Flug startet heute von Gate B12, nicht von Gate B7. Wir wünschen Ihnen einen guten Flug.",
+   "gloss": [
+    {
+     "de": "die Durchsage",
+     "mevcutTr": "anons",
+     "havuz": {
+      "tr": "anons",
+      "en": "announcement"
+     }
+    },
+    {
+     "de": "der Passagier",
+     "mevcutTr": "yolcu",
+     "havuz": {
+      "tr": "yolcu",
+      "en": "passenger"
+     }
+    },
+    {
+     "de": "der Flug",
+     "mevcutTr": "uçuş",
+     "havuz": {
+      "tr": "uçuş",
+      "en": "flight"
+     }
+    },
+    {
+     "de": "die Verspätung",
+     "mevcutTr": "rötar, gecikme",
+     "havuz": {
+      "tr": "gecikme",
+      "en": "delay"
+     }
+    },
+    {
+     "de": "starten",
+     "mevcutTr": "kalkmak (uçak)",
+     "havuz": {
+      "tr": "başlamak",
+      "en": "to start"
+     }
+    },
+    {
+     "de": "das Gate",
+     "mevcutTr": "biniş kapısı"
+    }
+   ]
+  },
+  {
+   "id": "a1-l4",
+   "skill": "listening",
+   "level": "A1",
+   "title": "Im Restaurant",
+   "genre": "Diyalog",
+   "intro": "Emre ile bir garson arasındaki restoran konuşmasını dinleyeceksin.",
+   "metin": "Kellner: Guten Abend! Was möchten Sie bestellen?\nEmre: Guten Abend. Ich nehme die Tomatensuppe und danach das Hähnchen mit Reis.\nKellner: Gern. Und was möchten Sie trinken?\nEmre: Ein Mineralwasser, bitte. Und meine Frau nimmt den Salat mit Käse und einen Apfelsaft.\nKellner: Also eine Tomatensuppe, ein Hähnchen mit Reis, ein Salat mit Käse, ein Mineralwasser und ein Apfelsaft. Kommt sofort!\nEmre: Danke schön! Ach, eine Frage: Wo sind die Toiletten?\nKellner: Gleich links neben der Bar.",
+   "gloss": [
+    {
+     "de": "bestellen",
+     "mevcutTr": "sipariş vermek",
+     "havuz": {
+      "tr": "sipariş etmek",
+      "en": "to order"
+     }
+    },
+    {
+     "de": "die Tomatensuppe",
+     "mevcutTr": "domates çorbası"
+    },
+    {
+     "de": "das Hähnchen",
+     "mevcutTr": "tavuk",
+     "havuz": {
+      "tr": "piliç",
+      "en": "chicken"
+     }
+    },
+    {
+     "de": "der Reis",
+     "mevcutTr": "pirinç, pilav",
+     "havuz": {
+      "tr": "pirinç",
+      "en": "rice"
+     }
+    },
+    {
+     "de": "der Apfelsaft",
+     "mevcutTr": "elma suyu"
+    },
+    {
+     "de": "sofort",
+     "mevcutTr": "hemen",
+     "havuz": {
+      "tr": "hemen",
+      "en": "immediately"
+     }
+    },
+    {
+     "de": "die Toilette",
+     "mevcutTr": "tuvalet",
+     "havuz": {
+      "tr": "tuvalet",
+      "en": "toilet"
+     }
+    }
+   ]
+  }
+ ]
+}

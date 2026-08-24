@@ -1,0 +1,55 @@
+{
+ "paket": "zh-022",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-a1-d1",
+   "skill": "speaking",
+   "level": "A1",
+   "title": "Sich vorstelle",
+   "genre": "Diyalog",
+   "intro": "Biriyle yeni tanışıyorsun. Züritüütsch cevap ver — Hochdeutsch de anlaşılır ama lehçeyi dene.",
+   "metin": "",
+   "gloss": [
+    {
+     "de": "Grüezi",
+     "mevcutTr": "merhaba (resmî)"
+    },
+    {
+     "de": "Wie gaht's?",
+     "mevcutTr": "Nasılsın? (Wie geht es?)"
+    },
+    {
+     "de": "ich chume vo",
+     "mevcutTr": "…-dan geliyorum (ich komme aus)"
+    },
+    {
+     "de": "ich schaffe",
+     "mevcutTr": "çalışıyorum (ich arbeite)"
+    },
+    {
+     "de": "Freut mi",
+     "mevcutTr": "Memnun oldum (Freut mich)"
+    }
+   ],
+   "targets": [
+    {
+     "de": "Ich heisse …",
+     "mevcutTr": "Adım …"
+    },
+    {
+     "de": "Ich chume vo …",
+     "mevcutTr": "…-danım."
+    },
+    {
+     "de": "Ich schaffe als …",
+     "mevcutTr": "… olarak çalışıyorum."
+    },
+    {
+     "de": "Freut mi!",
+     "mevcutTr": "Memnun oldum!"
+    }
+   ]
+  }
+ ]
+}

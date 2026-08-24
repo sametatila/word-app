@@ -1,0 +1,458 @@
+{
+ "paket": "zh-018",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-c1-r9",
+   "skill": "reading",
+   "level": "C1",
+   "title": "De Tell und sini Rissi",
+   "genre": "Kültür denemesi",
+   "intro": "Bir ulusal mit nasıl işler ve nerede çatlar? Wilhelm Tell üzerinden İsviçre'nin kendi anlatısına bakış.",
+   "metin": "Es git kä Bewiis, dass de Wilhelm Tell gläbt hät. Di erschti schriftlichi Erwähnig chunt öppe hundertfüfzg Jaar nach de Ereignis, wo si beschriibt, und ganz ähnlichi Gschichte git s z Dänemark scho vorher. Das isch under Historiker unbestritte — und es ändert praktisch nüüt.\n\nDe Grund isch, dass de Tell nie es historisches, sondern immer es politischs Argumänt gsii isch. Sini Gschicht säit: E Obrigkäit, wo Underwerfig verlangt, verlüürt s Rächt uf Gehorsam. Das isch e Idee, wo me bruuche cha — und si isch bruucht worde, vo sehr verschiidene Siite.\n\nIm 18. Jaarhundert isch de Tell es Symbol vo de Uufklärig gsii, im 19. äis vo de liberale Nationalbewegig. D Nazis händ Schiller sis Schtuck 1941 verbote, wil s ne unbequem worde isch — und gliichziitig händ Schwiizer Rächtskonservativi de Tell für sich reklamiert. Wär en Mythos brucht, entschäidet nöd, was er bedüütet.\n\nHüt zäigt sich de intressantischt Riss. Di äi Läsig macht us em Tell en Verteidiger vom Bestehende: Mir wänd bliibe, wie mir sind. Di ander läst di gliich Gschicht als Ufforderig zum Ungehorsam gägenüber jedere Macht — au gägenüber de äigene.\n\nBeidi Läsige sind textlich möglich, und genau das isch de Punkt. E Nation, wo sich uf en Mythos beruft, mues sich entschäide, welle Satz drus si mitnimmt. Es isch en Underschid, öb me säit: «Mir händ üs immer gwehrt» — oder: «Mir wehred üs, wänn s nötig isch.» S Erschte isch e Beruehigig. S Zwäite isch e Uufgab.",
+   "gloss": [
+    {
+     "de": "de Mythos",
+     "mevcutTr": "mit, efsane",
+     "havuz": {
+      "tr": "efsane",
+      "en": "myth"
+     }
+    },
+    {
+     "de": "d Quelle",
+     "mevcutTr": "kaynak",
+     "havuz": {
+      "tr": "kaynak",
+      "en": "source"
+     }
+    },
+    {
+     "de": "belege",
+     "mevcutTr": "belgelemek"
+    },
+    {
+     "de": "d Widerständigkäit",
+     "mevcutTr": "direngenlik"
+    },
+    {
+     "de": "d Obrigkäit",
+     "mevcutTr": "otorite"
+    },
+    {
+     "de": "vereinnahme",
+     "mevcutTr": "sahiplenmek, araçsallaştırmak"
+    },
+    {
+     "de": "d Deutig",
+     "mevcutTr": "yorum"
+    },
+    {
+     "de": "de Riss",
+     "mevcutTr": "çatlak"
+    },
+    {
+     "de": "s Selbstbild",
+     "mevcutTr": "kendilik imgesi",
+     "havuz": {
+      "tr": "benlik algısı",
+      "en": "self-image"
+     }
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-r10",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Was de Text nöd säit",
+   "genre": "Sınav formatı",
+   "intro": "C1'in asıl zorluğu: metnin söylediğiyle ima ettiğini ayırmak. Yoğun bir metin ve çıkarım soruları.",
+   "metin": "E vill zitierti Undersuechig zur Iiburgerig chunt zu me klare Befund: Gsuech vo Persone mit eme nöd-europäische Name wärded i de gliiche Gmeind hüüfiger abglehnt als sölchi mit eme europäische — au bi vergliichbarer Uufenthaltsduur, Sprachkenntnis und Iikomme.\n\nD Studie ziet drus aber nöd de Schluss, wo vill Schlagziile drus zoge händ. Si haltet uusdrücklich fescht, dass si nöd cha bestimme, uf welere Ebene de Underschid entstaat: bi de Kommission, bi de Verwaltig, wo s Dossier vorbereitet, oder scho vorher — will Persone mit gwüsse Name sich anders vorbereited oder erscht spöter es Gsuech iiriched.\n\nZwo Beobachtige schpräched trotzdem für en Effekt uf de Entschäidebene. Erschtens isch de Underschid i Gmeinde ohni schriftlichi Kriterie deutlich grösser als i sölchne mit ere feschte Checkliste. Zwäitens verschwindet er fascht ganz dört, wo d Kommission d Dossiers anonymisiert überchunt.\n\nD Autorinne warned uusdrücklich vor de Empfehlig, wo am hüüfigschte us ihrer Arbet abgleitet wird — dass Bewärber sich «besser vorbereite» sölled. Die Empfehlig behandli es strukturells Problem als individuells. Wänn s Resultat vom Verfaare devo abhänkt, wär s Dossier prüeft und wie, seig das en Befund über s Verfaare, nöd über d Bewärber.",
+   "gloss": [
+    {
+     "de": "d Uussag",
+     "mevcutTr": "önerme, ifade"
+    },
+    {
+     "de": "implizit",
+     "mevcutTr": "örtük",
+     "havuz": {
+      "tr": "örtük",
+      "en": "implicit"
+     }
+    },
+    {
+     "de": "iischränke",
+     "mevcutTr": "sınırlandırmak"
+    },
+    {
+     "de": "de Befund",
+     "mevcutTr": "bulgu",
+     "havuz": {
+      "tr": "tetkik sonucu",
+      "en": "test result"
+     }
+    },
+    {
+     "de": "nahelege",
+     "mevcutTr": "ima etmek"
+    },
+    {
+     "de": "d Korrelation",
+     "mevcutTr": "bağıntı",
+     "havuz": {
+      "tr": "korelasyon",
+      "en": "correlation"
+     }
+    },
+    {
+     "de": "de Rückschluss",
+     "mevcutTr": "çıkarım",
+     "havuz": {
+      "tr": "çıkarım",
+      "en": "inference"
+     }
+    },
+    {
+     "de": "vorschnäll",
+     "mevcutTr": "aceleci"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-r11",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Protokoll: S Gspröch bi de Gmeind",
+   "genre": "Tutanak",
+   "intro": "Hikâyenin devamı: Nadia komisyon görüşmesine girdi. Tutanağı ve onun eklediği notu okuyacaksın.",
+   "metin": "PROTOKOLL — Iiburgerigskommission Gmeind X — 14. Mai\nGsuechstellerin: Nadia H., 43, siit 21 Jaar i de Schwiiz, siit 9 Jaar i de Gmeind\nAawesend: drei Mitglieder, äi Protokollführerin\n\nFRAG 1 (Herr B.): Wie heisst de Gmeindspräsident?\nANTWORT: Korrekt beantwortet.\n\nFRAG 2 (Frau L.): Wie funktioniert d Abfallentsorgig i üsere Gmeind?\nANTWORT: Korrekt und uusführlich beantwortet.\n\nFRAG 3 (Herr B.): Was mached Si, wänn Ihri Tochter am Sunntig will Fuessball spile und d Nachbere reklamiere?\nANTWORT: D Gsuechstellerin säit, si würd zerscht mit de Nachbere rede und en Ziitpunkt abmache. Uf Nachfrag, öb si s Spile verbüüte würd: Nöd grundsätzlich; d Ruhezyt gälti, aber es Quartier ohni Chinderlärm seig au käis Ziel.\n\nFRAG 4 (Herr B.): Fühled Si sich meh als Schwiizerin oder meh als Marokkanerin?\nANTWORT: D Gsuechstellerin lehnt d Frag ab. Si säit, si beantworti gärn alles zu de Läbensverhältnis i de Gmeind, aber nöd Frage über s innerlich Fühle.\n\nBEMERKIG VO DE PROTOKOLLFÜHRERIN: Frag 4 entspricht nöd de kantonale Wegleitig (Ziffer 4.2: käi Frage über persönlichi Iischtellige, Religion oder Identität). D Kommission wird druf hingwiise.\n\nEMPFEHLIG: Zueschtimmig (2 defür, 1 Enthaltig).\n\nBEMERKIG VO DE GSUECHSTELLERIN (uf Wunsch protokolliert):\nIch bedanke mich für s Gspröch. Ich möcht festhalte, dass ich Frag 4 nöd us Trotz nöd beantwortet han, sondern well si nöd zum Verfaare ghört. Ich hoffe, dass die Bemerkig nöd als fehlendi Zueghörigkäit uusgleit wird — es isch s Gägetäil: Wär d Regle kennt, beruft sich druf.\n\nN. H.",
+   "gloss": [
+    {
+     "de": "d Kommission",
+     "mevcutTr": "komisyon",
+     "havuz": {
+      "tr": "komisyon",
+      "en": "commission"
+     }
+    },
+    {
+     "de": "s Protokoll",
+     "mevcutTr": "tutanak",
+     "havuz": {
+      "tr": "tutanak",
+      "en": "minutes"
+     }
+    },
+    {
+     "de": "d Frag stelle",
+     "mevcutTr": "soru sormak"
+    },
+    {
+     "de": "d Antwort",
+     "mevcutTr": "cevap",
+     "havuz": {
+      "tr": "cevap",
+      "en": "answer"
+     }
+    },
+    {
+     "de": "de Iidruck",
+     "mevcutTr": "izlenim"
+    },
+    {
+     "de": "d Empfehlig",
+     "mevcutTr": "tavsiye"
+    },
+    {
+     "de": "d Bemerkig",
+     "mevcutTr": "not, şerh"
+    },
+    {
+     "de": "sachlich",
+     "mevcutTr": "nesnel",
+     "havuz": {
+      "tr": "ölçülü",
+      "en": "matter-of-fact"
+     }
+    },
+    {
+     "de": "d Zueschtimmig",
+     "mevcutTr": "onay"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-r12",
+   "skill": "reading",
+   "level": "C1",
+   "title": "Vorsorgeuuftrag und Patientenverfüegig",
+   "genre": "Rehber",
+   "intro": "Kimse konuşmak istemez ama herkesi ilgilendirir: karar veremeyecek duruma gelirsen kim karar verir?",
+   "metin": "Wär nöd meh urteilsfähig isch, cha nöd meh entschäide — nöd über Behandlige, nöd über Gäld, nöd über d Wonig. D Frag isch nur, wär s statt eim macht.\n\nOhni Dokumänt gilt e gsetzlichi Ornig. Ehegatte und iigetrageni Partner dörfed di alltäglichi Verwaltig übernää; für alles Wiitergehende chunt d Erwachsenenschutzbehörde is Spiel. Bi unverhürate Paare — au nach zwänzg Jaar zäme — git s kä automatischi Vertretig. Das isch de Punkt, wo di mäischte überrascht sind.\n\nZwäi Dokumänt ändered das.\n\nDe Vorsorgeuuftrag bestimmt, wär im Fall vo de Urteilsunfähigkäit d Personesorg, d Vermögesverwaltig und d Vertretung im Rächtsverchehr übernimmt. Er mues entweder vo Aafang bis Schluss vo Hand gschriibe, datiert und unterschriibe sii — oder notariell beurkundet. E Datei am Computer gilt nöd.\n\nD Patientenverfüegig regelt d medizinischi Siite: welli Behandlige me will und welli nöd, und wär im Zwiifelsfall entschäidet. Si mues nöd handschriftlich sii, aber datiert und unterschriibe.\n\nEntschäidend isch d Auffindbarkäit. Es Dokumänt im Ordner dihäi hilft nüüt, wänn s im Spital niemert kennt. Me cha de Vorsorgeuuftrag bim Ziviilschtandsamt iiträge laa und d Patientenverfüegig uf de Versichertekarte vermerke.\n\nUnd es Letschts: Beidi Dokumänt sölled alli paar Jaar durgluegt wärde. Was me mit vierzgi über Intensivmedizin dänkt, isch mit sibzgi nöd unbedingt no s Gliiche.",
+   "gloss": [
+    {
+     "de": "de Vorsorgeuuftrag",
+     "mevcutTr": "vekâlet belgesi (ehliyetsizlik hâli için)"
+    },
+    {
+     "de": "d Patientenverfüegig",
+     "mevcutTr": "hasta talimatı"
+    },
+    {
+     "de": "d Urteilsfähigkäit",
+     "mevcutTr": "ayırt etme gücü"
+    },
+    {
+     "de": "d Erwachsenenschutzbehörde",
+     "mevcutTr": "yetişkin koruma makamı (KESB)"
+    },
+    {
+     "de": "d Vertretig",
+     "mevcutTr": "temsil"
+    },
+    {
+     "de": "handschriftlich",
+     "mevcutTr": "elle yazılmış"
+    },
+    {
+     "de": "notariell",
+     "mevcutTr": "noter onaylı"
+    },
+    {
+     "de": "hinterlege",
+     "mevcutTr": "tevdi etmek, kaydettirmek"
+    },
+    {
+     "de": "d Wirksamkäit",
+     "mevcutTr": "geçerlilik"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l1",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Podium: Wäm ghöört Züri?",
+   "genre": "Panel",
+   "intro": "Kentsel yoğunlaşma ve kira artışı üzerine bir panel: mahalle derneğinden Rossi ile belediye meclisi üyesi Keller karşı karşıya. İki tarafın argümanlarını ve sayıları not al.",
+   "metin": "Moderatorin: Grüezi mitenand und härzlich willkomme zum Podium «Wäm ghöört Züri?». Bi mir sind d Schtadträtin Eva Keller und de Marco Rossi vom Quartierverein Ussersiil. Herr Rossi, Sii säged, s Quartier verlüürt sini Seel. Was mäined Sii dermit?\nRossi: Lueged Sii sich doch um: Wo früener en Beck und e Beiz gsii sind, hät's hüt es Fitness-Schtudio und en Coworking-Space. D Lüüt, wo daa uufgwachse sind, chönd sich d Miete nüme läischte. Wänn en alte Block saniert wird, zaled d Mieter nachhär s Doppelte – oder si müend gaa.\nKeller: Ich verschtaa de Ärger, aber mir dörfed äis nöd vergässe: Züri wachst. Jedes Jaar chömed tuusigi vo nöie Lüüt i d Schtadt. Wänn mir nöd verdichted, schtiiged d Priis erscht rächt. Drum baut d Schtadt sälber – mir händ s Ziel, dass bis zwäituusigfüfzg äin Drittel vo de Wonige gmäinnützig isch.\nRossi: Das Ziel töönt guet, aber s Tempo schtimmt nöd. Und Verdichtig häisst i de Praxis oft: En günschtige Altbau abriisse und tüüri Nöibaute aanesetze. Das isch kä Wonigspolitik, das isch Rendite.\nKeller: Da mues ich widerschpräche. Ohni privati Inveschtore chönd mir gar nöd gnueg baue. D Lösig isch nöd entweder-oder: Mir bruuched bäides, gmäinnützigi und privati Wonige. Und mir bruuched Regle – zum Biischpil en bessere Schutz für d Mieter bi Sanierige.\nRossi: Ich säg's eso: Es Quartier isch me als Bode und Beton. Wänn am Schluss nu no verdient wird und niemert me daa läbt, wo s Quartier träit, dänn hät Züri öppis verloore, wo me mit käm Gäld cha zruggchaufe.",
+   "gloss": [
+    {
+     "de": "d Verdichtig",
+     "mevcutTr": "kentsel yoğunlaştırma (aynı alana daha çok konut)"
+    },
+    {
+     "de": "sanieren",
+     "mevcutTr": "yenilemek, esaslı onarmak",
+     "havuz": {
+      "tr": "elden geçirmek",
+      "en": "to refurbish"
+     }
+    },
+    {
+     "de": "sich öppis läischte",
+     "mevcutTr": "bir şeyi karşılayabilmek"
+    },
+    {
+     "de": "gmäinnützig",
+     "mevcutTr": "kâr amacı gütmeyen (konut)"
+    },
+    {
+     "de": "abriisse",
+     "mevcutTr": "yıkmak"
+    },
+    {
+     "de": "d Rendite",
+     "mevcutTr": "getiri, kâr",
+     "havuz": {
+      "tr": "getiri",
+      "en": "yield"
+     }
+    },
+    {
+     "de": "de Inveschtor",
+     "mevcutTr": "yatırımcı"
+    },
+    {
+     "de": "widerschpräche",
+     "mevcutTr": "karşı çıkmak, itiraz etmek"
+    },
+    {
+     "de": "d Beiz",
+     "mevcutTr": "meyhane, mahalle lokantası"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l2",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Radiogschprööch: D Zuekunft vom Dialäkt",
+   "genre": "Radyo sohbeti",
+   "intro": "Bir dilbilimciyle radyo sohbeti: gençler lehçeyi bozuyor mu, yazılı lehçe patlaması ne anlama geliyor? Araştırmacının her klişeye verdiği cevabı not al.",
+   "metin": "Moderator: Guete Morge mitenand. Hüt bi öis im Schtudio: d Sprachwüsseschaftlere Lea Brunner vo de Uni Züri. Frau Brunner, mini Muetter behauptet, d Jugend chöni käs richtigs Züritüütsch me. Hät si rächt?\nBrunner: Ihri Muetter isch in guete Gsellschaft – die Klag isch über hundert Jaar alt. Was schtimmt: De Dialäkt veränderet sich. Was nöd schtimmt: dass er verschwindt. Im Gägetäil – d Jugendliche schriibed hüt de ganz Tag Mundart, i de Chats, uf de soziale Medie. So vil gschribnigs Züritüütsch hät's no nie gää.\nModerator: Aber es git ja kä offizielli Rächtschriibig für d Mundart. Isch das käs Problem?\nBrunner: Für d Lüüt offesichtlich nöd: Jede schriibt, wie's für ihn töönt, und me verschtaat sich trotzdem. Spannend isch öppis anders. D Regione gliiched sich aa – Wörter, wo früener nu z Bärn oder z Basel bruucht worde sind, ghöört me hüt au z Züri, und umgcheert. D Forschig redt vomene Dialäkt-Usgliich.\nModerator: Und was isch mit em Änglisch? «Nice», «safe», «cringe» – ghöört das jetz au zum Züritüütsch?\nBrunner: Warum nöd? Vor hundert Jaar hät me französischi Wörter uufgnaa – s Trottoir, s Billett, de Coiffeur. Hüt sind's halt änglischi. En Sprach, wo Läänwörter uufnimmt, isch nöd chrank, si isch läbig. Chrank wär si erscht, wänn d Chind ganz uufhöre würded, si z rede – und devoo simer z Züri wiit ewäg.",
+   "gloss": [
+    {
+     "de": "d Sprachwüsseschaft",
+     "mevcutTr": "dilbilim"
+    },
+    {
+     "de": "behaupte",
+     "mevcutTr": "iddia etmek"
+    },
+    {
+     "de": "d Rächtschriibig",
+     "mevcutTr": "imla, yazım kuralları"
+    },
+    {
+     "de": "sich aagliiche",
+     "mevcutTr": "birbirine benzeşmek"
+    },
+    {
+     "de": "de Usgliich",
+     "mevcutTr": "dengelenme, eşitlenme"
+    },
+    {
+     "de": "s Läänwort",
+     "mevcutTr": "alıntı kelime"
+    },
+    {
+     "de": "uufnää",
+     "mevcutTr": "içine almak"
+    },
+    {
+     "de": "im Gägetäil",
+     "mevcutTr": "tam tersine"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l3",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Streitgspröch: Bruucht Kultur Subvention?",
+   "genre": "Tartışma",
+   "intro": "Kültür bütçesi üzerine sert bir tartışmayı dinleyeceksin. Kimin hangi noktada geri adım attığına dikkat et.",
+   "metin": "Moderator: Herr Lüthi, Si wänd s Kulturbudget vo de Stadt halbiere. Warum?\nLüthi: Wil ich s ungrächt finde. Mir nämed Gäld vo Lüüt, wo nie is Theater gönd, und gänd s Iistituzione, wo vo eme chliine Publikum bsuecht wärded. Bildigsbürgertum, zaalt vo allne.\nModerator: Frau Signer, stimmt di Beschriibig?\nSigner: S Zaalebild stimmt, d Schlussfolgerig nöd. Ja, s Opernhuus hät es chliineres Publikum als s Fuessballstadion. Nume: Mir subventioniered s Stadion au — über Infrastruktur, Sicherheit, Verchehr. De Underschid isch, dass me s dört nöd Subvention nennt.\nLüthi: Das isch en Ablänkig.\nSigner: Nei, das isch de Kärn. Wänn Si Markt wänd, denn konsequänt: Denn zaalt de Fuessballclub sini Polizeiiisätz sälber. Wänd Si das?\nLüthi: … Ich mues iigschtaa, dass ich das nöd ganz durdänkt han.\nModerator: Frau Signer, aber s Argumänt mit em Publikum bliibt: Wär gaat i die Vorstellige?\nSigner: Und das isch üsi Uufgab, do han ich em Herr Lüthi rächt z gää. Wär Subvention überchunt, mues au für Zuegang sorge — Priis, Ziite, Sprooch, Schuelprogramm. Es Huus, wo nur en Kräis bedienet, hät s Argumänt gäge sich sälber.\nLüthi: Wänn s dört ane gaat, chan ich mit ere Reduktion statt ere Halbierig läbe. Aber i wott messbari Ziel, nöd Absichtserklärige.\nSigner: Debii bin ich.",
+   "gloss": [
+    {
+     "de": "d Subvention",
+     "mevcutTr": "kamu desteği",
+     "havuz": {
+      "tr": "sübvansiyon",
+      "en": "subsidy"
+     }
+    },
+    {
+     "de": "de Stüürzaaler",
+     "mevcutTr": "vergi mükellefi"
+    },
+    {
+     "de": "de Markt",
+     "mevcutTr": "piyasa",
+     "havuz": {
+      "tr": "pazar",
+      "en": "market"
+     }
+    },
+    {
+     "de": "d Nachfrag",
+     "mevcutTr": "talep"
+    },
+    {
+     "de": "d Elite",
+     "mevcutTr": "seçkinler",
+     "havuz": {
+      "tr": "seçkinler",
+      "en": "elite"
+     }
+    },
+    {
+     "de": "s Publikum",
+     "mevcutTr": "seyirci",
+     "havuz": {
+      "tr": "seyirci",
+      "en": "audience"
+     }
+    },
+    {
+     "de": "de Zuegang",
+     "mevcutTr": "erişim"
+    },
+    {
+     "de": "d Rändite",
+     "mevcutTr": "getiri"
+    },
+    {
+     "de": "iigschtaa",
+     "mevcutTr": "kabul etmek"
+    }
+   ]
+  },
+  {
+   "id": "zh-c1-l4",
+   "skill": "listening",
+   "level": "C1",
+   "title": "Vortrag: Was Dialäkt mit em Hirn macht",
+   "genre": "Konferans",
+   "intro": "Bir dilbilim konferansının açılış bölümünü dinleyeceksin: tez, kanıt ve sınırların nasıl kurulduğunu izle.",
+   "metin": "Referentin: Ich fange mit ere Frag aa, wo mir jedes Mal gschtellt wird: Isch Dialäkt e Sprooch oder nume e Variante? Sprachwüsseschaftlich isch d Antwort langwiilig — d Gränze isch politisch, nöd linguistisch.\nReferentin: Interessanter isch, was im Chopf passiert. Bi eus i de Düütschschwiiz läbed d Lüüt in ere Situation, wo mir Diglossie nenned: Mundart im Gspröch, Hochdüütsch im Gschriibene. Nöd zwäi Sprooche — zwäi Ruum.\nReferentin: Jetz d Studie. Mir händ zwäihundertvierzg Schüelerinne und Schüeler us em Kanton Züri und us Baden-Württeberg verglichte. Uufgab: Zwüsche zwäi Sprachmodi hin und her wächsle, under Ziitdruck.\nReferentin: S Ergebnis: D Schwiizer Gruppe isch bim Wächsle im Schnitt hundertzwänzg Millisekunde schneller gsii. Statistisch signifikant, aber — und das isch wichtig — de Effäkt isch chlii. Er erklärt öppe drü Prozänt vo de Underschid.\nReferentin: Ich betone das, wil söttigi Ergebnis gärn falsch zitiert wärded. Us «drü Prozänt» wird i de Ziitig «Dialäkt macht schlau». Das säit d Studie nöd, und ich säg s au nöd.\nReferentin: Was si säit, isch bschäidener und trotzdem relevant: Wär täglich zwüsche Modi wächslet, üebt e Fähigkäit, wo unabhängig vo Intelligänz isch. Das gilt für Dialäktschprecher gnau wie für zwäisprachigi Chind — s isch käi Schwiizer Sunderfall.\nReferentin: Und zum Schluss e Iischränkig, wo mir wichtig isch: Üsi Stichprob isch stadtnah und bildigsnah. Für s Land und für anderi Schichte händ mir käi Date. Wär drus e allgemeini Uussag macht, macht das gäge üse Rat.",
+   "gloss": [
+    {
+     "de": "de Vortrag",
+     "mevcutTr": "konferans, sunum",
+     "havuz": {
+      "tr": "sunum",
+      "en": "presentation"
+     }
+    },
+    {
+     "de": "d Studie",
+     "mevcutTr": "araştırma",
+     "havuz": {
+      "tr": "araştırma",
+      "en": "study"
+     }
+    },
+    {
+     "de": "s Ergebnis",
+     "mevcutTr": "sonuç",
+     "havuz": {
+      "tr": "sonuç",
+      "en": "result"
+     }
+    },
+    {
+     "de": "de Effäkt",
+     "mevcutTr": "etki"
+    },
+    {
+     "de": "d Stichprob",
+     "mevcutTr": "örneklem"
+    },
+    {
+     "de": "überschätze",
+     "mevcutTr": "abartmak"
+    },
+    {
+     "de": "s Vorurtäil",
+     "mevcutTr": "önyargı"
+    },
+    {
+     "de": "de Nachwiis",
+     "mevcutTr": "kanıt"
+    },
+    {
+     "de": "vorsichtig",
+     "mevcutTr": "temkinli",
+     "havuz": {
+      "tr": "dikkatli",
+      "en": "careful"
+     }
+    }
+   ]
+  }
+ ]
+}

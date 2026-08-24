@@ -1,0 +1,506 @@
+{
+ "paket": "de-001",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "a1-r1",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Gehen wir ins Kino?",
+   "genre": "Mesaj",
+   "intro": "Sofia'nın arkadaşı Murat'a yazdığı bir WhatsApp mesajını okuyacaksın.",
+   "metin": "Hallo Murat! Wie geht es dir? Ich habe heute frei. Wollen wir zusammen ins Kino gehen? Der Film beginnt um 20 Uhr. Wir können uns um 19:30 Uhr vor dem Kino treffen. Danach essen wir vielleicht eine Pizza. Meine Schwester Lena kommt auch mit. Schreib mir bitte bis 17 Uhr!\n\nViele Grüße\nSofia",
+   "gloss": [
+    {
+     "de": "frei haben",
+     "mevcutTr": "boş olmak, izinli olmak"
+    },
+    {
+     "de": "das Kino",
+     "mevcutTr": "sinema",
+     "havuz": {
+      "tr": "sinema",
+      "en": "cinema"
+     }
+    },
+    {
+     "de": "sich treffen",
+     "mevcutTr": "buluşmak"
+    },
+    {
+     "de": "danach",
+     "mevcutTr": "ondan sonra",
+     "havuz": {
+      "tr": "ondan sonra",
+      "en": "afterwards"
+     }
+    },
+    {
+     "de": "mitkommen",
+     "mevcutTr": "birlikte gelmek",
+     "havuz": {
+      "tr": "birlikte gelmek",
+      "en": "to come along"
+     }
+    },
+    {
+     "de": "Viele Grüße",
+     "mevcutTr": "sevgiler (mesaj sonu kalıbı)"
+    }
+   ]
+  },
+  {
+   "id": "a1-r2",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Wohnung zu vermieten",
+   "genre": "İlan",
+   "intro": "Köln'de kiralık bir daire ilanı okuyacaksın.",
+   "metin": "Schöne 2-Zimmer-Wohnung in Köln-Ehrenfeld zu vermieten. 54 Quadratmeter, mit Balkon und neuer Küche. Die Wohnung liegt im dritten Stock. Miete: 650 Euro pro Monat plus Nebenkosten. Die U-Bahn ist nur 5 Minuten zu Fuß entfernt. Keine Haustiere! Frei ab 1. September.\n\nHaben Sie Interesse? Rufen Sie Herrn Weber an: 0221 456789. Besichtigung am Samstag von 10 bis 12 Uhr.",
+   "gloss": [
+    {
+     "de": "vermieten",
+     "mevcutTr": "kiraya vermek",
+     "havuz": {
+      "tr": "kiraya vermek",
+      "en": "to rent out"
+     }
+    },
+    {
+     "de": "die Wohnung",
+     "mevcutTr": "daire",
+     "havuz": {
+      "tr": "daire",
+      "en": "apartment"
+     }
+    },
+    {
+     "de": "der Balkon",
+     "mevcutTr": "balkon",
+     "havuz": {
+      "tr": "balkon",
+      "en": "balcony"
+     }
+    },
+    {
+     "de": "der Stock",
+     "mevcutTr": "kat",
+     "havuz": {
+      "tr": "kat",
+      "en": "floor"
+     }
+    },
+    {
+     "de": "die Miete",
+     "mevcutTr": "kira",
+     "havuz": {
+      "tr": "kira",
+      "en": "rent"
+     }
+    },
+    {
+     "de": "die Nebenkosten",
+     "mevcutTr": "yan giderler (aidat, ısınma vb.)",
+     "havuz": {
+      "tr": "yan giderler",
+      "en": "utility costs"
+     }
+    },
+    {
+     "de": "das Haustier",
+     "mevcutTr": "evcil hayvan",
+     "havuz": {
+      "tr": "evcil hayvan",
+      "en": "pet"
+     }
+    },
+    {
+     "de": "die Besichtigung",
+     "mevcutTr": "daireyi gezip görme",
+     "havuz": {
+      "tr": "gezme",
+      "en": "viewing"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r3",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Einladung zum Geburtstag",
+   "genre": "E-posta",
+   "intro": "Julia'nın arkadaşı Ayşe'ye gönderdiği doğum günü davetini okuyacaksın.",
+   "metin": "Liebe Ayşe,\n\nam Sonntag habe ich Geburtstag. Ich werde 30 Jahre alt! Ich mache eine kleine Party bei mir zu Hause. Wir grillen im Garten und meine Mutter macht einen Kuchen. Die Party beginnt um 15 Uhr. Kannst du kommen? Bring bitte einen Salat mit. Meine Adresse: Gartenstraße 12.\n\nBis Sonntag!\nDeine Julia",
+   "gloss": [
+    {
+     "de": "der Geburtstag",
+     "mevcutTr": "doğum günü",
+     "havuz": {
+      "tr": "doğum günü",
+      "en": "birthday"
+     }
+    },
+    {
+     "de": "die Party",
+     "mevcutTr": "parti",
+     "havuz": {
+      "tr": "parti",
+      "en": "party"
+     }
+    },
+    {
+     "de": "grillen",
+     "mevcutTr": "mangal yapmak",
+     "havuz": {
+      "tr": "mangal yapmak",
+      "en": "to grill"
+     }
+    },
+    {
+     "de": "der Garten",
+     "mevcutTr": "bahçe",
+     "havuz": {
+      "tr": "bahçe",
+      "en": "garden"
+     }
+    },
+    {
+     "de": "der Kuchen",
+     "mevcutTr": "pasta, kek",
+     "havuz": {
+      "tr": "kek",
+      "en": "cake"
+     }
+    },
+    {
+     "de": "mitbringen",
+     "mevcutTr": "yanında getirmek",
+     "havuz": {
+      "tr": "getirmek",
+      "en": "to bring along"
+     }
+    },
+    {
+     "de": "die Adresse",
+     "mevcutTr": "adres",
+     "havuz": {
+      "tr": "adres",
+      "en": "address"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r4",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Neue Öffnungszeiten",
+   "genre": "Duyuru",
+   "intro": "Bir süpermarketin kapısına asılmış duyuruyu okuyacaksın.",
+   "metin": "Liebe Kundinnen und Kunden!\n\nAb Montag, dem 4. Mai, haben wir neue Öffnungszeiten: Montag bis Freitag von 8 bis 21 Uhr, Samstag von 9 bis 20 Uhr. Am Sonntag ist unser Markt geschlossen.\n\nDiese Woche im Angebot: 1 Kilo Tomaten für nur 1,99 Euro und Mineralwasser für 0,49 Euro. Die Bäckerei im Markt öffnet schon um 7 Uhr.\n\nIhr REWE-Team in der Bahnhofstraße",
+   "gloss": [
+    {
+     "de": "die Öffnungszeiten",
+     "mevcutTr": "açılış saatleri"
+    },
+    {
+     "de": "geschlossen",
+     "mevcutTr": "kapalı",
+     "havuz": {
+      "tr": "kapalı",
+      "en": "closed"
+     }
+    },
+    {
+     "de": "das Angebot",
+     "mevcutTr": "indirim, kampanya",
+     "havuz": {
+      "tr": "teklif",
+      "en": "offer"
+     }
+    },
+    {
+     "de": "das Mineralwasser",
+     "mevcutTr": "maden suyu",
+     "havuz": {
+      "tr": "maden suyu",
+      "en": "mineral water"
+     }
+    },
+    {
+     "de": "die Bäckerei",
+     "mevcutTr": "fırın",
+     "havuz": {
+      "tr": "fırın",
+      "en": "bakery"
+     }
+    },
+    {
+     "de": "der Kunde",
+     "mevcutTr": "müşteri",
+     "havuz": {
+      "tr": "müşteri",
+      "en": "customer"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r5",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Kurse an der Volkshochschule",
+   "genre": "Program",
+   "intro": "Bir halk eğitim merkezinin sonbahar kurs programını okuyacaksın.",
+   "metin": "Volkshochschule Bremen — Kurse im Herbst\n\nDeutsch A1 für Anfänger: Montag und Mittwoch, 18:00 bis 19:30 Uhr, Raum 204. Kursleiterin: Frau Schmidt. Preis: 120 Euro.\n\nKochkurs „Italienische Küche“: Freitag, 17:00 bis 20:00 Uhr, Küche im Erdgeschoss. Preis: 45 Euro pro Abend.\n\nYoga für Anfänger: Dienstag, 9:00 bis 10:00 Uhr. Der Kurs ist leider schon voll.\n\nAnmeldung im Büro (Raum 101) oder auf unserer Webseite.",
+   "gloss": [
+    {
+     "de": "die Volkshochschule",
+     "mevcutTr": "halk eğitim merkezi",
+     "havuz": {
+      "tr": "halk eğitim merkezi",
+      "en": "adult education center"
+     }
+    },
+    {
+     "de": "der Anfänger",
+     "mevcutTr": "başlangıç seviyesindeki kişi"
+    },
+    {
+     "de": "der Kursleiter",
+     "mevcutTr": "kurs öğretmeni",
+     "havuz": {
+      "tr": "kurs eğitmeni",
+      "en": "course instructor"
+     }
+    },
+    {
+     "de": "das Erdgeschoss",
+     "mevcutTr": "zemin kat",
+     "havuz": {
+      "tr": "zemin kat",
+      "en": "ground floor"
+     }
+    },
+    {
+     "de": "voll",
+     "mevcutTr": "dolu",
+     "havuz": {
+      "tr": "dolu",
+      "en": "full"
+     }
+    },
+    {
+     "de": "die Anmeldung",
+     "mevcutTr": "kayıt",
+     "havuz": {
+      "tr": "kayıt",
+      "en": "registration"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r6",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Information für unsere Fahrgäste",
+   "genre": "Duyuru",
+   "intro": "Metro istasyonuna asılmış bir yolcu bilgilendirme duyurusunu okuyacaksın.",
+   "metin": "Information für unsere Fahrgäste\n\nVom 10. bis 14. Juni fährt die U-Bahn-Linie U3 nicht zwischen Hauptbahnhof und Stadtpark. Wir bauen neue Gleise. Bitte nehmen Sie den Bus 47. Der Bus fährt alle 10 Minuten vom Hauptbahnhof ab. Die Fahrt dauert circa 20 Minuten. Ihre Tickets für die U-Bahn sind auch im Bus gültig. Wir danken für Ihr Verständnis.\n\nIhre Verkehrsbetriebe München",
+   "gloss": [
+    {
+     "de": "der Fahrgast",
+     "mevcutTr": "yolcu",
+     "havuz": {
+      "tr": "yolcu",
+      "en": "passenger"
+     }
+    },
+    {
+     "de": "die U-Bahn-Linie",
+     "mevcutTr": "metro hattı"
+    },
+    {
+     "de": "der Hauptbahnhof",
+     "mevcutTr": "ana tren garı",
+     "havuz": {
+      "tr": "ana gar",
+      "en": "central station"
+     }
+    },
+    {
+     "de": "das Gleis",
+     "mevcutTr": "ray",
+     "havuz": {
+      "tr": "ray",
+      "en": "track"
+     }
+    },
+    {
+     "de": "abfahren",
+     "mevcutTr": "kalkmak, hareket etmek",
+     "havuz": {
+      "tr": "kalkmak",
+      "en": "to depart"
+     }
+    },
+    {
+     "de": "dauern",
+     "mevcutTr": "sürmek",
+     "havuz": {
+      "tr": "sürmek",
+      "en": "to last"
+     }
+    },
+    {
+     "de": "gültig",
+     "mevcutTr": "geçerli",
+     "havuz": {
+      "tr": "geçerli",
+      "en": "valid"
+     }
+    },
+    {
+     "de": "das Verständnis",
+     "mevcutTr": "anlayış",
+     "havuz": {
+      "tr": "anlayış",
+      "en": "understanding"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r7",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Der erste Tag",
+   "genre": "Mesaj",
+   "intro": "Amir yeni şehrine taşındı ve kardeşine yazıyor. Bu, A1'de takip edeceğin hikâyenin ilk bölümü.",
+   "metin": "Hallo Karim!\n\nIch bin da. Die Wohnung ist klein, aber hell. Ich habe noch keinen Tisch und kein Sofa — nur zwölf Kartons und ein Bett.\n\nHeute Morgen hat es geklingelt. Eine Nachbarin, Frau Wagner. Sie wohnt unter mir. Sie hatte einen Kuchen dabei und hat gesagt: „Willkommen im Haus.“ Ich war so überrascht, ich habe nur „danke“ gesagt.\n\nMorgen gehe ich zum Bürgeramt. Ich muss mich anmelden.\n\nIch bin sehr müde, aber es geht mir gut.\n\nDein Amir",
+   "gloss": [
+    {
+     "de": "umziehen",
+     "mevcutTr": "taşınmak",
+     "havuz": {
+      "tr": "taşınmak",
+      "en": "to move"
+     }
+    },
+    {
+     "de": "der Karton",
+     "mevcutTr": "koli",
+     "havuz": {
+      "tr": "karton kutu",
+      "en": "cardboard box"
+     }
+    },
+    {
+     "de": "das Bett",
+     "mevcutTr": "yatak",
+     "havuz": {
+      "tr": "yatak",
+      "en": "bed"
+     }
+    },
+    {
+     "de": "der Nachbar / die Nachbarin",
+     "mevcutTr": "komşu"
+    },
+    {
+     "de": "klingeln",
+     "mevcutTr": "zile basmak",
+     "havuz": {
+      "tr": "zil çalmak",
+      "en": "to ring"
+     }
+    },
+    {
+     "de": "der Kuchen",
+     "mevcutTr": "kek, pasta",
+     "havuz": {
+      "tr": "kek",
+      "en": "cake"
+     }
+    },
+    {
+     "de": "müde",
+     "mevcutTr": "yorgun",
+     "havuz": {
+      "tr": "yorgun",
+      "en": "tired"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a1-r8",
+   "skill": "reading",
+   "level": "A1",
+   "title": "Ihr Termin beim Bürgeramt",
+   "genre": "Resmî yazı",
+   "intro": "Almanya'ya taşınan herkesin ilk yazısı: ikamet kaydı randevu onayı. Amir'in aldığı belgeyi okuyacaksın.",
+   "metin": "Stadt Bremen — Bürgeramt Mitte\n\nIhr Termin: Dienstag, 14. Mai, 10:20 Uhr\nZimmer 214, 2. Stock\nGrund: Anmeldung\n\nBitte bringen Sie mit:\n• Ihren Pass oder Personalausweis\n• Den Mietvertrag\n• Das Formular „Wohnungsgeberbestätigung“ von Ihrem Vermieter\n\nBitte kommen Sie pünktlich. Nach 10 Minuten ist Ihr Termin nicht mehr gültig.\n\nSie können nicht kommen? Bitte sagen Sie online ab: www.bremen.de/termine\n\nDie Anmeldung ist kostenlos.",
+   "gloss": [
+    {
+     "de": "der Termin",
+     "mevcutTr": "randevu",
+     "havuz": {
+      "tr": "randevu",
+      "en": "appointment"
+     }
+    },
+    {
+     "de": "die Anmeldung",
+     "mevcutTr": "ikamet kaydı",
+     "havuz": {
+      "tr": "kayıt",
+      "en": "registration"
+     }
+    },
+    {
+     "de": "der Ausweis",
+     "mevcutTr": "kimlik",
+     "havuz": {
+      "tr": "kimlik",
+      "en": "ID card"
+     }
+    },
+    {
+     "de": "der Mietvertrag",
+     "mevcutTr": "kira sözleşmesi",
+     "havuz": {
+      "tr": "kira sözleşmesi",
+      "en": "lease"
+     }
+    },
+    {
+     "de": "mitbringen",
+     "mevcutTr": "yanında getirmek",
+     "havuz": {
+      "tr": "getirmek",
+      "en": "to bring along"
+     }
+    },
+    {
+     "de": "pünktlich",
+     "mevcutTr": "dakik, zamanında",
+     "havuz": {
+      "tr": "dakik",
+      "en": "punctual"
+     }
+    },
+    {
+     "de": "absagen",
+     "mevcutTr": "iptal etmek",
+     "havuz": {
+      "tr": "iptal etmek",
+      "en": "to cancel"
+     }
+    }
+   ]
+  }
+ ]
+}

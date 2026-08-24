@@ -1,0 +1,386 @@
+{
+ "paket": "zh-009",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-b1-r1",
+   "skill": "reading",
+   "level": "B1",
+   "title": "Quartierfäscht im Innehoof",
+   "genre": "Duyuru",
+   "intro": "Mahalle derneğinin bina girişine astığı şenlik duyurusunu okuyacaksın.",
+   "metin": "Grüezi mitenand!\n\nAm Samschtig, 14. Juni, fiired mir wider s Quartierfäscht im Innehoof a de Roseschtraass 12. Ab de Zwölfi git s Zmittag vom Grill — Würscht, Salaat und Glace für d Chind. De Quartierverein stellt Tisch und Bänk uf, aber mir bruuched na Hälfer für s Ufbaue am Morge und s Ufruume am Aabig.\n\nWär cha hälfe, söll sich bitte bis am Mittwuch bi de Frau Meier mälde (044 271 35 80). Bi Räge findet s Fäscht im Gmeindssaal statt. D Musig spilt ab de Sächsi, und um di Nüüni isch fertig — mir wänd d Nachbare nöd störe.\n\nAlli sind härzlich iiglade, au d Chind und d Grosseltere!",
+   "gloss": [
+    {
+     "de": "s Quartier",
+     "mevcutTr": "mahalle, semt",
+     "havuz": {
+      "tr": "semt",
+      "en": "neighborhood"
+     }
+    },
+    {
+     "de": "de Innehoof",
+     "mevcutTr": "iç avlu"
+    },
+    {
+     "de": "de Hälfer",
+     "mevcutTr": "yardımcı, gönüllü"
+    },
+    {
+     "de": "s Ufbaue",
+     "mevcutTr": "kurulum (masa, çadır kurma)"
+    },
+    {
+     "de": "s Ufruume",
+     "mevcutTr": "toplama, temizlik"
+    },
+    {
+     "de": "sich mälde",
+     "mevcutTr": "haber vermek, kaydolmak"
+    },
+    {
+     "de": "de Gmeindssaal",
+     "mevcutTr": "mahalle/cemaat salonu"
+    },
+    {
+     "de": "iiglade",
+     "mevcutTr": "davetli"
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r2",
+   "skill": "reading",
+   "level": "B1",
+   "title": "Mir züügled — wär hilft?",
+   "genre": "Mesaj",
+   "intro": "Sandro'nun arkadaş grubuna attığı taşınma mesajını okuyacaksın.",
+   "metin": "Hoi zäme!\n\nÄndi Monet isch es sowiit: Mir züügled vo Örlike uf Wiedike, a d Bertaschtraass 8. De Zügelwage chunt am Samschtig am Achti, und mir sueched na zwäi, drüü Lüüt, wo chönd hälfe träge. Es git natürli Znüni und Zmittag für alli Hälfer — d Pizza gaat uf üüs!\n\nS Klavier bliibt zum Glück da, das übernimmt de Nachmieter. Wär am Samschtig käi Ziit hät, cha au scho am Friitig bim Chischte packe hälfe.\n\nBitte gänd mir bis am Donnschtig Bschäid, damit ich cha plane. Merci vilmal und bis gli!\n\nSandro",
+   "gloss": [
+    {
+     "de": "züügle",
+     "mevcutTr": "taşınmak (İsviçre'ye özgü fiil)"
+    },
+    {
+     "de": "de Zügelwage",
+     "mevcutTr": "taşınma kamyoneti"
+    },
+    {
+     "de": "d Chischte",
+     "mevcutTr": "koli, kutu"
+    },
+    {
+     "de": "de Nachmieter",
+     "mevcutTr": "sonraki kiracı",
+     "havuz": {
+      "tr": "sonraki kiracı",
+      "en": "next tenant"
+     }
+    },
+    {
+     "de": "de Znüni",
+     "mevcutTr": "kuşluk atıştırması (İsviçre)"
+    },
+    {
+     "de": "Bschäid gää",
+     "mevcutTr": "haber vermek"
+    },
+    {
+     "de": "träge",
+     "mevcutTr": "taşımak",
+     "havuz": {
+      "tr": "uyuşuk",
+      "en": "sluggish"
+     }
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r3",
+   "skill": "reading",
+   "level": "B1",
+   "title": "Nöii Homeoffice-Reglig",
+   "genre": "E-posta",
+   "intro": "Bir Zürih şirketinin ekibine gönderdiği yeni evden çalışma düzeni e-postasını okuyacaksın.",
+   "metin": "Liebs Team\n\nNach de Umfrag im Früelig händ mir d Homeoffice-Reglig aapasst. Ab em erschte Mai gilt Folgends:\n\nJedi und jede hät Aaspruch uf zwäi Homeoffice-Täg i de Wuche. Wie mir die verteiled, mached mir im Team ab — wichtig isch nume, dass am Zischtig alli da sind. De Zischtig isch üse Präsänztag: Sitzige, Uusbildig und alles, wo me besser persönlich macht, lauft a dem Tag.\n\nWär meh als zwäi Täg dihäi schaffe wott, redt mit em Vorgsetzte. Uusnaame git s, aber si müend en Grund haa — zum Bispil en lange Aarbetswäg oder e Betreuigsufgab.\n\nNöi isch au: D Arbetsziit wird nöd meh pro Tag, sondern pro Wuche zellt. Wer am Mittwuch früener ufhört und am Dunschtig lenger macht, mues niemert um Erlaubnis frööge.\n\nWichtig bliibt: Mir sind erreichbar zwüsche de nüüni und de füfi. Wer i dere Ziit nöd cha, säit s vorane im Team-Chat.\n\nMerci für euere Iisatz\nD Gschäftsleitig",
+   "gloss": [
+    {
+     "de": "d Reglig",
+     "mevcutTr": "düzenleme, kural"
+    },
+    {
+     "de": "de Aaspruch",
+     "mevcutTr": "hak"
+    },
+    {
+     "de": "abmache",
+     "mevcutTr": "kararlaştırmak"
+    },
+    {
+     "de": "d Sitzig",
+     "mevcutTr": "toplantı"
+    },
+    {
+     "de": "d Präsänz",
+     "mevcutTr": "ofiste bulunma"
+    },
+    {
+     "de": "d Uusnaam",
+     "mevcutTr": "istisna"
+    },
+    {
+     "de": "gälte",
+     "mevcutTr": "geçerli olmak"
+    },
+    {
+     "de": "de Iisatz",
+     "mevcutTr": "çaba, katkı"
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r4",
+   "skill": "reading",
+   "level": "B1",
+   "title": "S Velo erooberet d Stadt",
+   "genre": "Gazete haberi",
+   "intro": "Zürih'te bisiklet kullanımının artışını anlatan bir yerel gazete haberini okuyacaksın.",
+   "metin": "Z Züri wird immer meh Velo gfahre. D Zellig vo de Stadt zäigt: Im letschte Jaar sind uf de wichtigschte Achse öppe füfezwänzg Prozänt meh Velo underwägs gsii als vor füf Jaar. Am stärchschte zuegnaa hät s uf de Route em Limmat naa.\n\nD Stadt erklärt sich das mit em Uusbau: I de letschte drei Jaar sind vierzäh Kilometer nöii Velospure entstande, viili devo baulich trennt vom Autoverchehr. „Wär sich sicher fühlt, fahrt au“, säit d Projäktleiterin Andrea Wyss.\n\nEs git aber au Kritik. S Gwärb bemängelet, dass für d Velospure Parkplätz verschwunde sind. „Üsi Chundschaft chunt vo usserhalb und bruucht s Auto“, säit en Ladebsitzer us em Chreis 3.\n\nE Umfrag under Ladebsitzer im Chreis 4 zäigt es anders Bild: Zwäi Dritel händ käi Umsatzverluscht gschpürt, äine vo drüü sogar meh Chundschaft. D Stadt wott jetz au i de Ussequartier wiiterbaue — dört isch s Netz bis hüt am schwächschte.",
+   "gloss": [
+    {
+     "de": "erooberä",
+     "mevcutTr": "fethetmek, ele geçirmek"
+    },
+    {
+     "de": "d Zellig",
+     "mevcutTr": "sayım"
+    },
+    {
+     "de": "zuegnaa",
+     "mevcutTr": "artmış (zugenommen)"
+    },
+    {
+     "de": "d Velospur",
+     "mevcutTr": "bisiklet şeridi"
+    },
+    {
+     "de": "de Uusbau",
+     "mevcutTr": "genişletme, inşa"
+    },
+    {
+     "de": "d Kritik",
+     "mevcutTr": "eleştiri",
+     "havuz": {
+      "tr": "eleştiri",
+      "en": "criticism"
+     }
+    },
+    {
+     "de": "de Parkplatz",
+     "mevcutTr": "otopark yeri",
+     "havuz": {
+      "tr": "otopark",
+      "en": "parking lot"
+     }
+    },
+    {
+     "de": "d Umfrag",
+     "mevcutTr": "anket"
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r5",
+   "skill": "reading",
+   "level": "B1",
+   "title": "Rezykliere z Züri",
+   "genre": "Rehber",
+   "intro": "Zürih'te çöp ve geri dönüşüm kuralları — yeni gelenlerin en çok hata yaptığı konu. Rehberi okuyacaksın.",
+   "metin": "Wer nöi z Züri isch, staunt zerscht: Abfall choschtet Gäld — aber nöd alle.\n\nNormale Abfall ghört i de Züri-Sack. De Sack choschtet meh als en normale, wil d Gebüür scho drin isch. Wer sin Abfall imene andere Sack usestellt, riskiert e Buess vo hundert Franke oder meh. D Sack wärded am Abfuhrtag am Morge vor de sibni usegstellt, nöd am Aabig vorher — susch chömed d Füchs.\n\nGratis isch hingäge alles, wo me rezykliert: Glas, Metall und Textilie bringt me a d Sammelstell im Quartier. Papier und Chartongg wärded zämebunde vor s Huus gstellt — aber nume a de Täg, wo im Abfuhrkaländer staned. De Kaländer chunt jedes Jaar mit de Poscht und isch au online.\n\nPET und Batterie nimmt jede Lade zrugg, wo si verchauft. Für alte Elektro giltet s gliich: Wer Elektro verchauft, mues es au zruggnää — au wänn me s Grät dört nöd kauft hät.\n\nGrossi Sache wie Möbel hollt d Stadt gäge Bezaalig ab. Wer s sälber uf d Entsorgigsstell bringt, zaalt weniger.",
+   "gloss": [
+    {
+     "de": "de Chübel",
+     "mevcutTr": "kova, çöp kovası"
+    },
+    {
+     "de": "de Züri-Sack",
+     "mevcutTr": "resmî çöp poşeti (ücreti içinde)"
+    },
+    {
+     "de": "d Buess",
+     "mevcutTr": "para cezası"
+    },
+    {
+     "de": "d Sammelstell",
+     "mevcutTr": "toplama noktası"
+    },
+    {
+     "de": "gratis",
+     "mevcutTr": "ücretsiz",
+     "havuz": {
+      "tr": "bedava",
+      "en": "free"
+     }
+    },
+    {
+     "de": "de Chartongg",
+     "mevcutTr": "karton"
+    },
+    {
+     "de": "abgää",
+     "mevcutTr": "teslim etmek, bırakmak"
+    },
+    {
+     "de": "zämebinde",
+     "mevcutTr": "bağlamak, demet yapmak"
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r6",
+   "skill": "reading",
+   "level": "B1",
+   "title": "Wie lern ich Mundart?",
+   "genre": "Forum",
+   "intro": "Bir dil forumunda lehçe öğrenmeye çalışan birinin sorusu ve üç yanıtı okuyacaksın.",
+   "metin": "MERVE_ZH: Ich wohne sit zwäi Jaar z Züri und ha s Tüütsch-Zertifikat B1. Trotzdem verstaan ich i de Pause im Gschäft fascht nüüt. Alli wächsled zwar uf Hochdüütsch, wänn ich debii bi — aber das isch mer fascht na unagnämer. Wie händ ihr das gmacht?\n\nBRUNO64: Zerscht emal: Das isch normal, und es lit nöd a dir. Mundart verstaa und Mundart rede sind zwäi ganz verschiideni Sache. Fang mit em Verstaa aa und säg de Lüüt äifach: „Redet ruig Schwiizerdüütsch, ich verstaan s scho.“ Di mäischte fröied sich sogar.\n\nLINA_M: Mir hät Radio ghölfe — aber nöd d Nachrichte, die sind uf Hochdüütsch. Nimm Sändige, wo d Lüüt äifach schwätzed. Am Aafang verstaasch drei Wörter, nach eme halbe Jaar de halb Satz. Und lueg Serie us de Schwiiz mit Undertitel.\n\nTOBI: Ich würd s andersch mache: Suech der äi Person, wo mit dir nume Mundart redt. Bi mir isch das min Nachbar gsii. Zwänzg Minute am Tag, immer s gliiche Thema — s Wätter, de Fuessball, egal. Nach drei Mönet han ich gmerkt, dass ich sälber aafange rede. Wichtig: Perfäkti Uussprooch bruuchsch nöd. Niemert erwartet, dass du tönsch wie z Züri ufgwachse.",
+   "gloss": [
+    {
+     "de": "de Biitrag",
+     "mevcutTr": "gönderi, katkı"
+    },
+    {
+     "de": "verstaa",
+     "mevcutTr": "anlamak"
+    },
+    {
+     "de": "d Hemmig",
+     "mevcutTr": "çekingenlik"
+    },
+    {
+     "de": "aafange",
+     "mevcutTr": "başlamak"
+    },
+    {
+     "de": "sich gwöhne a",
+     "mevcutTr": "…e alışmak"
+    },
+    {
+     "de": "de Alltag",
+     "mevcutTr": "günlük hayat",
+     "havuz": {
+      "tr": "günlük hayat",
+      "en": "everyday life"
+     }
+    },
+    {
+     "de": "d Uussprooch",
+     "mevcutTr": "telaffuz"
+    },
+    {
+     "de": "s Vorbild",
+     "mevcutTr": "örnek, model"
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r7",
+   "skill": "reading",
+   "level": "B1",
+   "title": "S Kündigungsschriibe",
+   "genre": "Resmî yazı",
+   "intro": "Yusuf dairesinden çıkıyor. Fesih mektubu ve yönetimin cevabı — İsviçre kira hukukunun en pratik köşesi.",
+   "metin": "SCHRIIBE VOM YUSUF — 20. Mai\n\nSehr geehrti Frau Bächtold\n\nHiermit kündige ich d 3-Zimmer-Wonig a de Bertastrass 9, 2. Schtock, uf de nächschtmögliche Termin, also uf de 30. Septämber.\n\nIch würd aber gärn scho im Juli uszüge. Wänn ich Ine Nachmieter vorschlaa, wo zumuetbar sind, würd ich gärn vorziitig us em Vertrag.\n\nFründlichi Grüess\nYusuf Demir\n\n\nANTWORT — 26. Mai\n\nGuete Tag Herr Demir\n\nMir bestätiged Ihri Kündigung uf de 30. Septämber. Bitte beachted Si: Kündigunge müend iigschriibe verschickt wärde — mir akzeptiered Ihres Mail als Vorabinformation, s Original erwarted mir bis am 31. Mai.\n\nZum vorziitige Uszug: Si chönd üs Nachmieter vorschlaa. Zumuetbar häisst, dass si zaalungsfähig sind und de Vertrag zu de gliiche Konditione übernämed. Mir prüefed jede Vorschlag innerhalb vo zää Täg.\n\nWichtig: Bis en zumuetbare Nachmieter da isch, haftet Si für d Miete. Es git kä automatischi Befreiig, nur will Si früener uszüged.\n\nFründlichi Grüess\nR. Bächtold",
+   "gloss": [
+    {
+     "de": "kündige",
+     "mevcutTr": "sözleşmeyi feshetmek"
+    },
+    {
+     "de": "de Kündigungstermin",
+     "mevcutTr": "fesih tarihi"
+    },
+    {
+     "de": "d Frischt",
+     "mevcutTr": "süre"
+    },
+    {
+     "de": "iigschriibe",
+     "mevcutTr": "iadeli taahhütlü"
+    },
+    {
+     "de": "de Nachmieter",
+     "mevcutTr": "devralacak kiracı",
+     "havuz": {
+      "tr": "sonraki kiracı",
+      "en": "next tenant"
+     }
+    },
+    {
+     "de": "zumuetbar",
+     "mevcutTr": "kabul edilebilir"
+    },
+    {
+     "de": "vorziitig",
+     "mevcutTr": "erken, vadesinden önce"
+    },
+    {
+     "de": "hafte",
+     "mevcutTr": "sorumlu olmak"
+    }
+   ]
+  },
+  {
+   "id": "zh-b1-r8",
+   "skill": "reading",
+   "level": "B1",
+   "title": "D Wonigsabgab",
+   "genre": "Rehber",
+   "intro": "İsviçre'de daireyi teslim etmek bir tören gibidir: liste, kontrol, tutanak. Ne kontrol edildiğini anlatan rehber.",
+   "metin": "Bi de Abgab lauft d Verwaltig mit ere Lischte dur d Wonig und schriibt es Protokoll. Was drin staat, entschäidet, wie vill vo de Kaution zruggchunt.\n\nDe wichtigscht Underschid isch: normali Abnutzig gäge Schade. Für normali Abnutzig haftet me nöd. E Wand, wo nach acht Jaar nöd meh wiiss isch, isch normal. Es Loch i de Wand isch es nöd.\n\nDezue git s d Läbensduurtabälle. Jedes Täil hät e erwarteti Läbensduur: Teppich zää Jaar, Farbe a de Wand ächt Jaar, Chuchiabdeckig zwänzg. Wär nach sibe Jaar en Teppich beschädigt, zaalt nöd de ganz Teppich, sondern nur s letschte Jaar — also en Zäänteil.\n\nD Endreinigung mues «bsenraini» sii. Was das genau häisst, staat mängisch im Vertrag: Bode gwüsche, Chuchi und Bad putzt, Backofe suuber, Fänschter gputzt, Silikonfugen ohni Schimmel.\n\nVill Lüüt nämed e Putzfirma mit Abnaamegarantie. Die choschtet öppe 600 bis 900 Franke für e 3-Zimmer-Wonig — und die Firma chunt nomal, wänn d Verwaltig öppis reklamiert. Ohni Garantie isch s billiger, aber s Risiko lit bi eu.\n\nUnterschriibed Si s Protokoll nur, wänn Si iiverstande sind. Si dörfed „mit Vorbehalt“ dezueschriibe — das schadet nöd und ghaltet Ihri Rächt offe.",
+   "gloss": [
+    {
+     "de": "d Abgab",
+     "mevcutTr": "teslim"
+    },
+    {
+     "de": "s Protokoll",
+     "mevcutTr": "tutanak",
+     "havuz": {
+      "tr": "tutanak",
+      "en": "minutes"
+     }
+    },
+    {
+     "de": "de Mangel",
+     "mevcutTr": "kusur, hasar",
+     "havuz": {
+      "tr": "eksiklik",
+      "en": "lack"
+     }
+    },
+    {
+     "de": "d Abnutzig",
+     "mevcutTr": "normal yıpranma"
+    },
+    {
+     "de": "d Läbensduur",
+     "mevcutTr": "kullanım ömrü"
+    },
+    {
+     "de": "hafte für",
+     "mevcutTr": "…den sorumlu olmak"
+    },
+    {
+     "de": "d Endreinigung",
+     "mevcutTr": "son temizlik"
+    },
+    {
+     "de": "de Abzug",
+     "mevcutTr": "kesinti"
+    }
+   ]
+  }
+ ]
+}

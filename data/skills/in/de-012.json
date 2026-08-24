@@ -1,0 +1,690 @@
+{
+ "paket": "de-012",
+ "course": "de",
+ "egzersizler": [
+  {
+   "id": "b1-w1",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Ein Fest für die Nachbarschaft",
+   "genre": "Yarı resmi e-posta",
+   "intro": "Komşularınla bir mahalle şenliği planlıyorsun — önce cümle kur, sonra bina yönetimine izin e-postası yaz.",
+   "metin": "Ich hänge einen Aushang auf, um die Nachbarn einzuladen.\n\nEs wäre schön, wenn jeder etwas zu essen mitbringen würde.\n\nSehr geehrte Frau Winter,\n\nich wohne seit drei Jahren in der Gartenstraße 5 und schreibe Ihnen im Namen mehrerer Nachbarn. Wir möchten am Samstag, dem 14. Juni, ein kleines Nachbarschaftsfest organisieren, damit sich die Bewohner besser kennenlernen. Deshalb möchte ich Sie fragen, ob wir dafür den Innenhof benutzen dürfen.\n\nWir würden Tische und Bänke selbst aufbauen und den Hof am Abend natürlich wieder aufräumen. Es wäre schön, wenn Sie uns außerdem sagen könnten, ob es Regeln zur Lautstärke gibt.\n\nÜber eine kurze Antwort bis Ende Mai würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nDeniz Aksoy",
+   "gloss": [
+    {
+     "de": "der Aushang",
+     "mevcutTr": "duyuru, ilan"
+    },
+    {
+     "de": "die Nachbarn einladen",
+     "mevcutTr": "komşuları davet etmek"
+    },
+    {
+     "de": "der Innenhof",
+     "mevcutTr": "iç avlu"
+    },
+    {
+     "de": "die Hausverwaltung",
+     "mevcutTr": "bina yönetimi",
+     "havuz": {
+      "tr": "bina yönetimi",
+      "en": "property management"
+     }
+    },
+    {
+     "de": "die Erlaubnis",
+     "mevcutTr": "izin",
+     "havuz": {
+      "tr": "izin",
+      "en": "permission"
+     }
+    },
+    {
+     "de": "aufbauen",
+     "mevcutTr": "kurmak (masa, çadır)",
+     "havuz": {
+      "tr": "kurmak",
+      "en": "to set up"
+     }
+    },
+    {
+     "de": "aufräumen",
+     "mevcutTr": "toplamak, temizlemek",
+     "havuz": {
+      "tr": "toplamak",
+      "en": "to tidy up"
+     }
+    },
+    {
+     "de": "die Lautstärke",
+     "mevcutTr": "ses düzeyi",
+     "havuz": {
+      "tr": "ses seviyesi",
+      "en": "volume"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich schreibe Ihnen, weil …",
+     "mevcutTr": "Size yazıyorum çünkü …"
+    },
+    {
+     "de": "Wir möchten gern … organisieren.",
+     "mevcutTr": "… düzenlemek istiyoruz."
+    },
+    {
+     "de": "Ich möchte Sie fragen, ob …",
+     "mevcutTr": "Size … olup olmadığını sormak istiyorum."
+    },
+    {
+     "de": "Dürften wir dafür … benutzen?",
+     "mevcutTr": "Bunun için … kullanabilir miyiz acaba?"
+    },
+    {
+     "de": "Es wäre schön, wenn …",
+     "mevcutTr": "… olursa çok iyi olur."
+    },
+    {
+     "de": "Wir würden natürlich alles wieder aufräumen.",
+     "mevcutTr": "Elbette her şeyi yeniden toplarız."
+    },
+    {
+     "de": "Über eine kurze Antwort würde ich mich freuen.",
+     "mevcutTr": "Kısa bir yanıta sevinirim."
+    }
+   ]
+  },
+  {
+   "id": "b1-w2",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Soziale Netzwerke: Fluch oder Segen?",
+   "genre": "Forum",
+   "intro": "Bir internet forumunda sosyal medya tartışmasına katılıyorsun — görüşünü gerekçeleriyle yaz.",
+   "metin": "Meiner Meinung nach verbringen viele Menschen zu viel Zeit online.\n\nIch folge nur Seiten, die mich wirklich interessieren.\n\nImmer mehr Menschen löschen ihre Social-Media-Konten. Brauchen wir soziale Netzwerke wirklich? Was meint ihr? — Beitrag von Markus82 im Forum „Digitales Leben“\n\nIch habe lange über diese Frage nachgedacht, weil ich selbst viel Zeit am Handy verbringe. Meiner Meinung nach sind soziale Netzwerke weder gut noch schlecht. Es kommt darauf an, wie man sie benutzt.\n\nEinerseits bleibe ich durch Instagram mit meiner Familie in der Türkei in Kontakt, was mir sehr wichtig ist. Andererseits merke ich, dass ich oft ohne Grund durch Videos scrolle und danach müde bin.\n\nDeshalb habe ich mir feste Regeln gesetzt: keine Apps vor der Arbeit und keine Benachrichtigungen am Abend. Ich würde jedem empfehlen, die eigene Bildschirmzeit einmal pro Woche zu kontrollieren. Ganz löschen möchte ich meine Konten aber nicht.",
+   "gloss": [
+    {
+     "de": "das soziale Netzwerk",
+     "mevcutTr": "sosyal ağ"
+    },
+    {
+     "de": "das Konto löschen",
+     "mevcutTr": "hesabı silmek"
+    },
+    {
+     "de": "meiner Meinung nach",
+     "mevcutTr": "bence, benim görüşüme göre"
+    },
+    {
+     "de": "einerseits … andererseits",
+     "mevcutTr": "bir yandan … öte yandan"
+    },
+    {
+     "de": "die Benachrichtigung",
+     "mevcutTr": "bildirim"
+    },
+    {
+     "de": "die Bildschirmzeit",
+     "mevcutTr": "ekran süresi"
+    },
+    {
+     "de": "empfehlen",
+     "mevcutTr": "tavsiye etmek",
+     "havuz": {
+      "tr": "tavsiye etmek",
+      "en": "to recommend"
+     }
+    },
+    {
+     "de": "es kommt darauf an",
+     "mevcutTr": "duruma bağlı, -e bağlı"
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich habe lange über diese Frage nachgedacht.",
+     "mevcutTr": "Bu soruyu uzun uzun düşündüm."
+    },
+    {
+     "de": "Meiner Meinung nach …",
+     "mevcutTr": "Bence …"
+    },
+    {
+     "de": "Einerseits …, andererseits …",
+     "mevcutTr": "Bir yandan …, öte yandan …"
+    },
+    {
+     "de": "Ich habe die Erfahrung gemacht, dass …",
+     "mevcutTr": "Şu deneyimi yaşadım: …"
+    },
+    {
+     "de": "Deshalb habe ich mir feste Regeln gesetzt.",
+     "mevcutTr": "Bu yüzden kendime kesin kurallar koydum."
+    },
+    {
+     "de": "Ich würde jedem empfehlen, …",
+     "mevcutTr": "Herkese … tavsiye ederim."
+    },
+    {
+     "de": "Es kommt darauf an, wie man es benutzt.",
+     "mevcutTr": "Nasıl kullandığına bağlı."
+    }
+   ]
+  },
+  {
+   "id": "b1-w3",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Absage an die Kursleiterin",
+   "genre": "Yarı resmi e-posta",
+   "intro": "Sınav hazırlık dersine katılamayacaksın — kurs öğretmenine durumu açıklayan bir e-posta yaz.",
+   "metin": "Der Kurs wurde wegen der Ferien um eine Woche verschoben.\n\nKönnten Sie mir bitte die Unterlagen per E-Mail schicken?\n\nSehr geehrte Frau Berger,\n\nleider kann ich am kommenden Freitag nicht an der Prüfungsvorbereitung teilnehmen, weil ich an diesem Tag einen wichtigen Termin bei meinem Arbeitgeber habe. Das tut mir sehr leid, denn dieser Unterricht ist kurz vor der Prüfung besonders wichtig.\n\nWäre es möglich, dass Sie mir die Übungsblätter per E-Mail schicken? Ich würde die Aufgaben am Wochenende zu Hause bearbeiten. Falls etwas unklar ist, könnte ich am Montag ein paar Minuten früher kommen und Ihnen Fragen stellen.\n\nVielen Dank für Ihr Verständnis.\n\nMit freundlichen Grüßen\nMurat Şahin",
+   "gloss": [
+    {
+     "de": "die Prüfungsvorbereitung",
+     "mevcutTr": "sınav hazırlığı"
+    },
+    {
+     "de": "teilnehmen an",
+     "mevcutTr": "katılmak"
+    },
+    {
+     "de": "absagen",
+     "mevcutTr": "iptal etmek, katılamayacağını bildirmek",
+     "havuz": {
+      "tr": "iptal etmek",
+      "en": "to cancel"
+     }
+    },
+    {
+     "de": "verschieben",
+     "mevcutTr": "ertelemek",
+     "havuz": {
+      "tr": "ertelemek",
+      "en": "to postpone"
+     }
+    },
+    {
+     "de": "die Unterlagen",
+     "mevcutTr": "belgeler, dokümanlar",
+     "havuz": {
+      "tr": "belgeler",
+      "en": "documents"
+     }
+    },
+    {
+     "de": "das Übungsblatt",
+     "mevcutTr": "alıştırma kâğıdı"
+    },
+    {
+     "de": "der Arbeitgeber",
+     "mevcutTr": "işveren",
+     "havuz": {
+      "tr": "işveren",
+      "en": "employer"
+     }
+    },
+    {
+     "de": "das Verständnis",
+     "mevcutTr": "anlayış",
+     "havuz": {
+      "tr": "anlayış",
+      "en": "understanding"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Leider kann ich am … nicht teilnehmen.",
+     "mevcutTr": "Maalesef … günü katılamıyorum."
+    },
+    {
+     "de": "Das tut mir sehr leid.",
+     "mevcutTr": "Bunun için çok üzgünüm."
+    },
+    {
+     "de": "Ich habe an diesem Tag einen wichtigen Termin.",
+     "mevcutTr": "O gün önemli bir randevum var."
+    },
+    {
+     "de": "Wäre es möglich, dass …?",
+     "mevcutTr": "… mümkün olur mu acaba?"
+    },
+    {
+     "de": "Könnten Sie mir … schicken?",
+     "mevcutTr": "Bana … gönderebilir misiniz?"
+    },
+    {
+     "de": "Ich würde die Aufgaben zu Hause bearbeiten.",
+     "mevcutTr": "Ödevleri evde çalışırım."
+    },
+    {
+     "de": "Vielen Dank für Ihr Verständnis.",
+     "mevcutTr": "Anlayışınız için çok teşekkürler."
+    }
+   ]
+  },
+  {
+   "id": "b1-w4",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Autofreie Innenstadt: Ja oder Nein?",
+   "genre": "Forum",
+   "intro": "Şehir portalındaki arabasız şehir merkezi tartışmasına görüşünle katıl.",
+   "metin": "Die Innenstadt sollte am Wochenende für Autos gesperrt werden.\n\nWenn die Busse billiger wären, würden mehr Menschen sie benutzen.\n\nUnsere Stadt diskutiert: Soll die Innenstadt für private Autos gesperrt werden? Schreiben Sie uns Ihre Meinung! — Umfrage auf dem Stadtportal Ludwigsburg\n\nIn meiner Heimatstadt gibt es seit einem Jahr einen autofreien Sonntag pro Monat, und ich finde diese Idee großartig. Meiner Meinung nach sollten noch mehr Städte das ausprobieren.\n\nDer wichtigste Grund ist für mich die Luftqualität. Außerdem ist es viel angenehmer, durch die Stadt zu laufen, wenn keine Autos fahren. Kinder können sicher mit dem Rad fahren, und die Cafés stellen ihre Tische auf die Straße.\n\nNatürlich brauchen manche Menschen das Auto, zum Beispiel Handwerker oder Familien mit kleinen Kindern. Deshalb schlage ich vor, dass Busse und Bahnen an diesen Tagen kostenlos fahren. So hätte jeder eine gute Alternative.",
+   "gloss": [
+    {
+     "de": "autofrei",
+     "mevcutTr": "arabasız, trafiğe kapalı"
+    },
+    {
+     "de": "die Innenstadt",
+     "mevcutTr": "şehir merkezi",
+     "havuz": {
+      "tr": "şehir merkezi",
+      "en": "city center"
+     }
+    },
+    {
+     "de": "sperren für",
+     "mevcutTr": "(trafiğe) kapatmak"
+    },
+    {
+     "de": "die Luftqualität",
+     "mevcutTr": "hava kalitesi"
+    },
+    {
+     "de": "öffentliche Verkehrsmittel",
+     "mevcutTr": "toplu taşıma araçları"
+    },
+    {
+     "de": "der Handwerker",
+     "mevcutTr": "zanaatkâr, usta",
+     "havuz": {
+      "tr": "usta",
+      "en": "craftsman"
+     }
+    },
+    {
+     "de": "vorschlagen",
+     "mevcutTr": "önermek",
+     "havuz": {
+      "tr": "önermek",
+      "en": "to suggest"
+     }
+    },
+    {
+     "de": "die Alternative",
+     "mevcutTr": "alternatif, seçenek",
+     "havuz": {
+      "tr": "alternatif",
+      "en": "alternative"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich finde diese Idee großartig.",
+     "mevcutTr": "Bu fikri harika buluyorum."
+    },
+    {
+     "de": "Der wichtigste Grund ist für mich …",
+     "mevcutTr": "Benim için en önemli neden …"
+    },
+    {
+     "de": "Außerdem …",
+     "mevcutTr": "Ayrıca …"
+    },
+    {
+     "de": "Natürlich brauchen manche Menschen das Auto.",
+     "mevcutTr": "Elbette bazı insanların arabaya ihtiyacı var."
+    },
+    {
+     "de": "Deshalb schlage ich vor, dass …",
+     "mevcutTr": "Bu yüzden … öneriyorum."
+    },
+    {
+     "de": "So hätte jeder eine gute Alternative.",
+     "mevcutTr": "Böylece herkesin iyi bir alternatifi olurdu."
+    }
+   ]
+  },
+  {
+   "id": "b1-w5",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Beschwerde an den Vermieter",
+   "genre": "Resmî yazı",
+   "intro": "Almanya'da kiracı hakkını yazıyla arar. Somut, tarihli ve süre veren bir şikâyet mektubu yazacaksın.",
+   "metin": "Die Heizung funktioniert seit dem 3. Januar nicht.\n\nIch habe Ihnen das zweimal telefonisch mitgeteilt.\n\nIch setze Ihnen eine Frist bis zum 15. Januar.\n\nSehr geehrter Herr Bach,\n\nhiermit möchte ich Sie darauf hinweisen, dass die Heizung in meiner Wohnung seit dem 3. Januar nicht funktioniert. In den Zimmern sind es morgens nur 15 Grad.\n\nIch habe Sie bereits am 4. und am 9. Januar telefonisch informiert. Beide Male wurde mir ein Termin mit dem Hausmeister zugesagt, der bisher nicht stattgefunden hat.\n\nDie Wohnung ist dadurch kaum nutzbar. Mein Sohn ist sechs Jahre alt und war letzte Woche erkältet.\n\nIch fordere Sie auf, den Mangel zu beheben, und setze Ihnen eine Frist bis zum 15. Januar. Sollte bis dahin nichts geschehen, werde ich die Miete entsprechend mindern.\n\nÜber eine kurze Rückmeldung würde ich mich freuen.\n\nMit freundlichen Grüßen\nTarek Haddad",
+   "gloss": [
+    {
+     "de": "der Mangel",
+     "mevcutTr": "kusur, arıza",
+     "havuz": {
+      "tr": "eksiklik",
+      "en": "lack"
+     }
+    },
+    {
+     "de": "beheben",
+     "mevcutTr": "gidermek",
+     "havuz": {
+      "tr": "gidermek",
+      "en": "to fix"
+     }
+    },
+    {
+     "de": "die Frist setzen",
+     "mevcutTr": "süre vermek"
+    },
+    {
+     "de": "die Mietminderung",
+     "mevcutTr": "kira indirimi",
+     "havuz": {
+      "tr": "kira indirimi",
+      "en": "rent reduction"
+     }
+    },
+    {
+     "de": "mehrfach",
+     "mevcutTr": "birçok kez",
+     "havuz": {
+      "tr": "birden çok kez",
+      "en": "multiple times"
+     }
+    },
+    {
+     "de": "der Nachweis",
+     "mevcutTr": "kanıt",
+     "havuz": {
+      "tr": "kanıt",
+      "en": "proof"
+     }
+    },
+    {
+     "de": "auffordern",
+     "mevcutTr": "talep etmek, çağrıda bulunmak",
+     "havuz": {
+      "tr": "istemek",
+      "en": "to ask"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "hiermit möchte ich Sie darauf hinweisen, dass …",
+     "mevcutTr": "bu vesileyle … olduğunu bildirmek isterim."
+    },
+    {
+     "de": "Ich habe Sie bereits am … informiert.",
+     "mevcutTr": "Sizi … tarihinde zaten bilgilendirmiştim."
+    },
+    {
+     "de": "Die Wohnung ist dadurch …",
+     "mevcutTr": "Bu nedenle daire …"
+    },
+    {
+     "de": "Ich fordere Sie auf, … zu beheben.",
+     "mevcutTr": "…'i gidermenizi talep ediyorum."
+    },
+    {
+     "de": "Ich setze Ihnen eine Frist bis zum …",
+     "mevcutTr": "Size …'e kadar süre veriyorum."
+    },
+    {
+     "de": "Mit freundlichen Grüßen",
+     "mevcutTr": "Saygılarımla"
+    }
+   ]
+  },
+  {
+   "id": "b1-w6",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Forumsbeitrag mit Meinung",
+   "genre": "Sınav formatı",
+   "intro": "B1 sınavının klasik yazma görevi: bir forum yazısına kendi görüşünle cevap ver — görüş, gerekçe, örnek ve öneri.",
+   "metin": "Meiner Meinung nach sollten Schulen Handys nicht verbieten.\n\nEinerseits lenkt das ab, andererseits hilft es auch beim Lernen.\n\nDeshalb schlage ich vor, dass es klare Regeln gibt.\n\nIch habe den Beitrag von Lisa93 gelesen und finde die Frage sehr interessant.\n\nMeiner Meinung nach sollten Hausaufgaben nicht abgeschafft, aber deutlich reduziert werden. Der wichtigste Grund ist die Zeit: Viele Kinder sind bis 16 Uhr in der Schule und danach noch zwei Stunden am Schreibtisch. Der zweite Grund ist die Ungerechtigkeit — wer Eltern hat, die helfen können, ist klar im Vorteil.\n\nBei mir war es so, dass ich in Mathematik nie Hilfe bekommen habe. Meine Eltern hatten die Themen selbst nie gelernt. Ich habe die Aufgaben trotzdem gemacht, aber oft falsch, und niemand hat es gemerkt.\n\nNatürlich gibt es auch gute Gründe für Hausaufgaben: Man wiederholt den Stoff und lernt, selbstständig zu arbeiten.\n\nDeshalb schlage ich vor, dass es zwei- bis dreimal pro Woche kleine Aufgaben gibt und dafür in der Schule eine feste Lernstunde. So hätten alle Kinder die gleiche Chance.",
+   "gloss": [
+    {
+     "de": "der Beitrag",
+     "mevcutTr": "gönderi",
+     "havuz": {
+      "tr": "aidat",
+      "en": "membership fee"
+     }
+    },
+    {
+     "de": "die Meinung",
+     "mevcutTr": "görüş",
+     "havuz": {
+      "tr": "görüş",
+      "en": "opinion"
+     }
+    },
+    {
+     "de": "der Vorteil",
+     "mevcutTr": "avantaj",
+     "havuz": {
+      "tr": "avantaj",
+      "en": "advantage"
+     }
+    },
+    {
+     "de": "der Nachteil",
+     "mevcutTr": "dezavantaj",
+     "havuz": {
+      "tr": "dezavantaj",
+      "en": "disadvantage"
+     }
+    },
+    {
+     "de": "meiner Meinung nach",
+     "mevcutTr": "bence"
+    },
+    {
+     "de": "einerseits … andererseits",
+     "mevcutTr": "bir yandan … öte yandan"
+    },
+    {
+     "de": "vorschlagen",
+     "mevcutTr": "önermek",
+     "havuz": {
+      "tr": "önermek",
+      "en": "to suggest"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ich habe den Beitrag von … gelesen.",
+     "mevcutTr": "…'in yazısını okudum."
+    },
+    {
+     "de": "Meiner Meinung nach …",
+     "mevcutTr": "Bence …"
+    },
+    {
+     "de": "Der wichtigste Grund ist …",
+     "mevcutTr": "En önemli neden …"
+    },
+    {
+     "de": "Bei mir war es so, dass …",
+     "mevcutTr": "Bende şöyle oldu: …"
+    },
+    {
+     "de": "Natürlich gibt es auch …",
+     "mevcutTr": "Elbette … de var."
+    },
+    {
+     "de": "Deshalb schlage ich vor, dass …",
+     "mevcutTr": "Bu yüzden … öneriyorum."
+    }
+   ]
+  },
+  {
+   "id": "b1-w7",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Duzen oder siezen — deine Erfahrung",
+   "genre": "Kültür",
+   "intro": "b1-r9'daki konuyu kendi deneyiminle yazacaksın: bir yanlış anlaşılma, ne öğrendiğin ve bir tavsiye.",
+   "metin": "Am Anfang habe ich alle geduzt.\n\nNiemand hat etwas gesagt, aber mir ist etwas aufgefallen.\n\nInzwischen frage ich, wenn ich unsicher bin.\n\nAls ich neu hier war, habe ich in meinem ersten Job alle geduzt — auch den Chef. Im Lager haben das alle so gemacht, und ich dachte, das ist überall gleich.\n\nDann kam ein Termin mit einer Kundin, einer älteren Frau. Ich habe gesagt: „Kannst du mir kurz die Nummer geben?“ Sie hat einen Moment nichts gesagt. Danach hat sie sehr betont „Sie“ zu mir gesagt, in jedem Satz.\n\nDas war mir sehr peinlich. Ich habe mich den ganzen Tag schlecht gefühlt, obwohl niemand mich kritisiert hat.\n\nSpäter hat mir eine Kollegin erklärt, dass es nicht am Alter liegt, sondern an der Situation: intern anders als mit Kunden. Zum Glück hat sie freundlich reagiert und nicht gelacht.\n\nInzwischen mache ich es so: Ich sieze, bis mir das „du“ angeboten wird. Wenn ich unsicher bin, frage ich einfach.\n\nMein Rat wäre: Fragen ist nie peinlich. Falsch duzen kann man nicht zurücknehmen.",
+   "gloss": [
+    {
+     "de": "die Erfahrung",
+     "mevcutTr": "deneyim",
+     "havuz": {
+      "tr": "deneyim",
+      "en": "experience"
+     }
+    },
+    {
+     "de": "peinlich",
+     "mevcutTr": "utandırıcı",
+     "havuz": {
+      "tr": "utanç verici",
+      "en": "embarrassing"
+     }
+    },
+    {
+     "de": "reagieren",
+     "mevcutTr": "tepki vermek",
+     "havuz": {
+      "tr": "tepki vermek",
+      "en": "to react"
+     }
+    },
+    {
+     "de": "der Rat",
+     "mevcutTr": "tavsiye",
+     "havuz": {
+      "tr": "tavsiye",
+      "en": "advice"
+     }
+    },
+    {
+     "de": "sich unsicher fühlen",
+     "mevcutTr": "kendini emin hissetmemek"
+    },
+    {
+     "de": "auffallen",
+     "mevcutTr": "dikkat çekmek",
+     "havuz": {
+      "tr": "dikkat çekmek",
+      "en": "to stand out"
+     }
+    },
+    {
+     "de": "inzwischen",
+     "mevcutTr": "bu arada, artık",
+     "havuz": {
+      "tr": "bu arada",
+      "en": "meanwhile"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Als ich neu hier war, …",
+     "mevcutTr": "Buraya yeni geldiğimde …"
+    },
+    {
+     "de": "Ich wusste nicht, ob …",
+     "mevcutTr": "… olup olmadığını bilmiyordum."
+    },
+    {
+     "de": "Das war mir sehr peinlich.",
+     "mevcutTr": "Çok utandım."
+    },
+    {
+     "de": "Zum Glück hat … freundlich reagiert.",
+     "mevcutTr": "Neyse ki … kibar davrandı."
+    },
+    {
+     "de": "Inzwischen mache ich es so: …",
+     "mevcutTr": "Artık şöyle yapıyorum: …"
+    },
+    {
+     "de": "Mein Rat wäre: …",
+     "mevcutTr": "Tavsiyem şu olurdu: …"
+    }
+   ]
+  },
+  {
+   "id": "b1-w8",
+   "skill": "writing",
+   "level": "B1",
+   "title": "Einladung zur Eröffnung",
+   "genre": "Duyuru",
+   "intro": "Hikâyenin son parçası: Tarek'in yerine geçip kafenin açılış davetini yazacaksın — mahalleye asılacak bir metin.",
+   "metin": "Ich lade Sie herzlich zu meiner Eröffnung ein.\n\nDen ganzen Tag gibt es kostenlos Tee und Süßigkeiten.\n\nWenn Sie nicht kommen können, kommen Sie gern an einem anderen Tag vorbei.\n\nLiebe Nachbarinnen und Nachbarn,\n\nmein Name ist Tarek Haddad, und ab dem 12. September gibt es in der Lindenstraße 6 etwas Neues: das Café Sahar, mit syrischem Frühstück.\n\nZur Eröffnung am Samstag lade ich Sie herzlich ein. An diesem Tag gibt es den ganzen Tag kostenlos Tee und Süßigkeiten, und ab 15 Uhr spielt eine kleine Band aus dem Viertel.\n\nIch koche seit sechs Jahren in dieser Stadt, aber immer in fremden Küchen. Jetzt endlich in meiner eigenen — und zwar in dem Viertel, in dem ich selbst wohne.\n\nWenn Sie am Samstag keine Zeit haben, kommen Sie gern an einem anderen Tag vorbei. Wir haben von Dienstag bis Sonntag ab 8 Uhr geöffnet.\n\nIch freue mich darauf, Sie kennenzulernen.\n\nTarek Haddad",
+   "gloss": [
+    {
+     "de": "die Eröffnung",
+     "mevcutTr": "açılış",
+     "havuz": {
+      "tr": "açılış",
+      "en": "opening"
+     }
+    },
+    {
+     "de": "herzlich einladen",
+     "mevcutTr": "içtenlikle davet etmek"
+    },
+    {
+     "de": "der Anlass",
+     "mevcutTr": "vesile"
+    },
+    {
+     "de": "kosten (probieren)",
+     "mevcutTr": "tatmak"
+    },
+    {
+     "de": "die Nachbarschaft",
+     "mevcutTr": "mahalle, komşuluk",
+     "havuz": {
+      "tr": "komşuluk",
+      "en": "neighborhood"
+     }
+    },
+    {
+     "de": "sich freuen auf",
+     "mevcutTr": "dört gözle beklemek"
+    },
+    {
+     "de": "vorbeikommen",
+     "mevcutTr": "uğramak",
+     "havuz": {
+      "tr": "uğramak",
+      "en": "to come by"
+     }
+    }
+   ],
+   "phrases": [
+    {
+     "de": "Ab dem … gibt es …",
+     "mevcutTr": "…'den itibaren … var."
+    },
+    {
+     "de": "Ich lade Sie herzlich ein.",
+     "mevcutTr": "Sizi içtenlikle davet ediyorum."
+    },
+    {
+     "de": "An diesem Tag …",
+     "mevcutTr": "O gün …"
+    },
+    {
+     "de": "Ich freue mich darauf, Sie kennenzulernen.",
+     "mevcutTr": "Sizinle tanışmayı dört gözle bekliyorum."
+    },
+    {
+     "de": "Kommen Sie gern vorbei.",
+     "mevcutTr": "Buyurun, uğrayın."
+    }
+   ]
+  }
+ ]
+}

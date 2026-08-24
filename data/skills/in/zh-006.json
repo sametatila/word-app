@@ -1,0 +1,366 @@
+{
+ "paket": "zh-006",
+ "course": "gsw-zh",
+ "egzersizler": [
+  {
+   "id": "zh-a2-r9",
+   "skill": "reading",
+   "level": "A2",
+   "title": "De Zügeltermin",
+   "genre": "Kültür",
+   "intro": "İsviçre'de neredeyse herkes aynı iki günde taşınır. Bunun nedenini anlatan kısa bir yazı.",
+   "metin": "Wär im März oder im Septämber dur Züri lauft, gseet überall Zügelwäge. Das isch käi Zuefall.\n\nI de mäischte Mietverträg staat, dass me nur uf bestimmti Termin cha kündige — mäischtens de 31. März und de 30. Septämber. Dezue chunt e Kündigigsfrischt vo drei Mönet. Wär also im Septämber uszieht, mues bis Ändi Juni kündige.\n\nD Folg: Alli zügled am gliiche Tag. Zügelfirme sind Mönet vorher usbuecht, und en Lieferwage z miete am 31. März isch fascht unmöglich.\n\nFür Nöiaakömmlig isch das komisch. Es hät aber en Vortäil: Wär e Wonig suecht, findet grad vor dene Termin am mäischte Aagebot.\n\nEn Tipp: Wänn ihr chönd, zügled ihr am Tag vorher oder am Tag nachhär. D Priise sind tüüfer und ihr händ Ziit für d Übergab.",
+   "gloss": [
+    {
+     "de": "de Zügeltermin",
+     "mevcutTr": "resmî taşınma tarihi"
+    },
+    {
+     "de": "zügle",
+     "mevcutTr": "taşınmak"
+    },
+    {
+     "de": "kündige",
+     "mevcutTr": "sözleşmeyi feshetmek"
+    },
+    {
+     "de": "d Frischt",
+     "mevcutTr": "süre"
+    },
+    {
+     "de": "de Zügelwage",
+     "mevcutTr": "nakliye aracı"
+    },
+    {
+     "de": "usbuecht",
+     "mevcutTr": "dolu, yer kalmamış"
+    },
+    {
+     "de": "d Übergab",
+     "mevcutTr": "teslim"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r10",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Füf Aazäige",
+   "genre": "Sınav formatı",
+   "intro": "Kısa ilanlar ve kimin neye ihtiyacı olduğu. Önce hepsini oku, sonra eşleştir.",
+   "metin": "A) Zimmer im Untermiet, möbliert, Chreis 3. Befristet für sächs Mönet, ab 1. Oktober. 890 Franke inkl. Nur für Studänte. Tel. 079 331 22 11\n\nB) 2-Zimmer-Wonig, Chreis 11, 1'450 Franke. Per sofort. Kä Huustier. Bsichtigung am Zischtig am sibni. Verwaltung Hubmann, 044 311 55 00\n\nC) Suechen Nachmiete für mini 3-Zimmer-Wonig im Chreis 4 ab 1. April, 1'980 Franke. Balkon, Lift. Schriibed mer: nachmiete.chreis4@mail.ch\n\nD) Parkfäld i de Tiefgarage z vermiete, Chreis 6, 180 Franke im Monet. Sofort frei. Tel. 076 900 41 41\n\nE) WG suecht neus Mitglied, 27 m², Chreis 5, 1'050 Franke. Mir sind drü Lüüt zwüsche 24 und 31. Bsichtigung nach Abmachig: wg-limmat@mail.ch",
+   "gloss": [
+    {
+     "de": "möbliert",
+     "mevcutTr": "eşyalı",
+     "havuz": {
+      "tr": "mobilyalı",
+      "en": "furnished"
+     }
+    },
+    {
+     "de": "s Untermiet",
+     "mevcutTr": "kiracıdan kiralama"
+    },
+    {
+     "de": "befristet",
+     "mevcutTr": "süreli",
+     "havuz": {
+      "tr": "süreli",
+      "en": "fixed-term"
+     }
+    },
+    {
+     "de": "s Parkfäld",
+     "mevcutTr": "park yeri"
+    },
+    {
+     "de": "d Nachmiete",
+     "mevcutTr": "devralan kiracı"
+    },
+    {
+     "de": "per sofort",
+     "mevcutTr": "hemen"
+    },
+    {
+     "de": "s Zimmer",
+     "mevcutTr": "oda",
+     "havuz": {
+      "tr": "oda",
+      "en": "room"
+     }
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r11",
+   "skill": "reading",
+   "level": "A2",
+   "title": "D Absaag — und denn s Mail",
+   "genre": "E-posta",
+   "intro": "Hikâyenin devamı: Deniz on dört ret aldı. Sonra beklemediği bir mesaj geldi.",
+   "metin": "MAIL 1 — 4. Februar\n\nGuete Tag Herr Yılmaz\n\nBesten Dank für Ihres Interässe a de Wonig a de Zurlindenstrass 22. Mir händ üs läider für e anderi Bewärbig entschäide.\n\nMir wünsched Ine wiiterhin vill Erfolg bi de Suechi.\n\nFründlichi Grüess\nVerwaltung Hubmann\n\n\nMAIL 2 — 26. Februar\n\nGuete Tag Herr Yılmaz\n\nSi händ sich im Dezämber uf d 3-Zimmer-Wonig a de Bertastrass 9 beworbe. Damals händ mir e anderi Partei gnoo — die hät jetz aber churzfrischtig abgsäit.\n\nWänn Si na Interässe händ, chönted Si d Wonig ab em 1. April übernää. D Miete isch wie im Inserat: 1'760 Franke inkl.\n\nBitte gänd Si mir bis am Friitig Bschäid. Wänn s passt, mached mir de Vertrag nächschti Wuche und d Schlüsselübergab am 30. März.\n\nFründlichi Grüess\nR. Bächtold, Verwaltung Nord",
+   "gloss": [
+    {
+     "de": "d Absaag",
+     "mevcutTr": "ret"
+    },
+    {
+     "de": "leider",
+     "mevcutTr": "maalesef",
+     "havuz": {
+      "tr": "maalesef",
+      "en": "unfortunately"
+     }
+    },
+    {
+     "de": "sich entschäide",
+     "mevcutTr": "karar vermek"
+    },
+    {
+     "de": "d Zuesaag",
+     "mevcutTr": "olumlu cevap"
+    },
+    {
+     "de": "de Vertrag",
+     "mevcutTr": "sözleşme",
+     "havuz": {
+      "tr": "sözleşme",
+      "en": "contract"
+     }
+    },
+    {
+     "de": "unterschriibe",
+     "mevcutTr": "imzalamak"
+    },
+    {
+     "de": "d Schlüsselübergab",
+     "mevcutTr": "anahtar teslimi"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-r12",
+   "skill": "reading",
+   "level": "A2",
+   "title": "Prämie und Franchise",
+   "genre": "Bilgi yazısı",
+   "intro": "İsviçre'de sağlık sigortası zorunludur ve iki sayı her şeyi belirler: prim ve muafiyet.",
+   "metin": "D Grundversicherig isch für alli obligatorisch. Was si zaalt, isch überall s Gliiche — nur de Priis isch verschiide. Drum lohnt sich vergliiche.\n\nZwo Zaale sind wichtig:\n\nD Prämie zaalsch jede Monet, au wänn du nie zum Arzt gaasch. Z Züri sind das für Erwachsni öppe 400 bis 500 Franke.\n\nD Franchise isch de Betrag, wo du sälber zaalsch, bevor d Kasse öppis übernimmt. Du chasch zwüsche 300 und 2'500 Franke wähle. Hööchi Franchise häisst: tüüfi Prämie, aber du zaalsch meh sälber.\n\nD Fuuschtregel: Wär gsund isch und sälte zum Arzt gaat, nimmt e hööchi Franchise. Wär regelmässig Behandlige bruucht, nimmt e tüüfi.\n\nWichtig: D Kasse cha me nur uf Ändi Jaar wächsle, und me mues bis am 30. Novämber kündige.\n\nWänn d Prämie z hööch isch für s Iikomme, cha me e Prämieverbilligung beaatrage. Vill Lüüt wüssed das nöd und zaaled z vill.",
+   "gloss": [
+    {
+     "de": "d Chrankekasse",
+     "mevcutTr": "sağlık sigortası"
+    },
+    {
+     "de": "d Prämie",
+     "mevcutTr": "aylık prim",
+     "havuz": {
+      "tr": "prim",
+      "en": "bonus"
+     }
+    },
+    {
+     "de": "d Franchise",
+     "mevcutTr": "yıllık muafiyet tutarı"
+    },
+    {
+     "de": "de Selbstbehalt",
+     "mevcutTr": "katılım payı"
+    },
+    {
+     "de": "obligatorisch",
+     "mevcutTr": "zorunlu"
+    },
+    {
+     "de": "wächsle",
+     "mevcutTr": "değiştirmek"
+    },
+    {
+     "de": "d Prämieverbilligung",
+     "mevcutTr": "prim desteği"
+    },
+    {
+     "de": "d Rächnig",
+     "mevcutTr": "fatura"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-l1",
+   "skill": "listening",
+   "level": "A2",
+   "title": "En Termin bim Dokter",
+   "genre": "Diyalog",
+   "intro": "Frau Yıldız muayenehaneyi arıyor — randevunun gününe ve saatine kulak ver.",
+   "metin": "Frau Yıldız: Grüezi, isch das d Praxis vom Dokter Huber? Ich häisse Yıldız. Ich ha siit geschter Halsweh und Fieber. Chan ich hüt na en Termin übercho?\nPraxisassistäntin: Grüezi Frau Yıldız. Hüt isch es leider ganz voll. Aber morn am halbi nüüni chan ich Ihne en Termin gää.\nFrau Yıldız: Hmm, morn am Morge mues ich schaffe. Gaats au am Namittag?\nPraxisassistäntin: En Momänt bitte … Ja, morn am viertel ab drüü isch na öppis frei.\nFrau Yıldız: Das passt guet. Mues ich öppis mitbringe?\nPraxisassistäntin: Bitte bringed Si Ihri Versicherigscharte mit. Und wänn s Fieber hüt na höcher wird, lüted Si bitte grad wider aa.\nFrau Yıldız: Mach ich. Merci vilmal, uf Widerlose!",
+   "gloss": [
+    {
+     "de": "s Halsweh",
+     "mevcutTr": "boğaz ağrısı"
+    },
+    {
+     "de": "s Fieber",
+     "mevcutTr": "ateş",
+     "havuz": {
+      "tr": "ateş",
+      "en": "fever"
+     }
+    },
+    {
+     "de": "de Termin",
+     "mevcutTr": "randevu",
+     "havuz": {
+      "tr": "randevu",
+      "en": "appointment"
+     }
+    },
+    {
+     "de": "übercho",
+     "mevcutTr": "almak (bekommen)"
+    },
+    {
+     "de": "d Versicherigscharte",
+     "mevcutTr": "sağlık sigortası kartı"
+    },
+    {
+     "de": "aalüte",
+     "mevcutTr": "telefon etmek"
+    },
+    {
+     "de": "voll",
+     "mevcutTr": "dolu",
+     "havuz": {
+      "tr": "dolu",
+      "en": "full"
+     }
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-l2",
+   "skill": "listening",
+   "level": "A2",
+   "title": "Mit em Tram zum Zoo",
+   "genre": "Diyalog",
+   "intro": "Selin, Zürih'te tramvay ve bilet soruyor — hat numarasına ve fiyata dikkat et.",
+   "metin": "Selin: Grüezi! Ich mues zum Zoo. Weles Tram nimm ich am beschte?\nHerr Frei: Grüezi! Si nämed s Tram Nummere säx bis a d Ändstation Zoo. Es faart grad da vorne ab.\nSelin: Und was für es Billett bruuch ich?\nHerr Frei: Für d Stadt Züri bruuched Si es Billett für zwoo Zone. Das choschtet vier Franke sächzg und gilt äi Stund.\nSelin: Chan ich s Billett au mit em Handy chaufe?\nHerr Frei: Ja, mit de ZVV-App gaats ganz eifach. Aber chaufed Sis, bevor Si iistiiged — susch gits bi de Kontrolle e Buess.\nSelin: Guet z wüsse! Und wie lang gaats bis zum Zoo?\nHerr Frei: Öppe zwänzg Minuute. Bim Zoo müend Si dänn na es chliises Stück de Bärg uf laufe.\nSelin: Merci vilmal für d Hilf!",
+   "gloss": [
+    {
+     "de": "s Billett",
+     "mevcutTr": "bilet",
+     "havuz": {
+      "tr": "bilet",
+      "en": "ticket"
+     }
+    },
+    {
+     "de": "d Zone",
+     "mevcutTr": "bölge (ZVV tarife bölgesi)",
+     "havuz": {
+      "tr": "bölge",
+      "en": "zone"
+     }
+    },
+    {
+     "de": "gälte",
+     "mevcutTr": "geçerli olmak"
+    },
+    {
+     "de": "iistiige",
+     "mevcutTr": "binmek"
+    },
+    {
+     "de": "d Buess",
+     "mevcutTr": "para cezası"
+    },
+    {
+     "de": "d Ändstation",
+     "mevcutTr": "son durak"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-l3",
+   "skill": "listening",
+   "level": "A2",
+   "title": "Aamäldig im Chräiszbüro",
+   "genre": "Diyalog",
+   "intro": "Zürih'e taşınan Murat, ikamet kaydı için semt bürosunda. Görevliyle konuşmasını dinleyeceksin.",
+   "metin": "Beamtin: Grüezi, was cha ich für Si tue?\nMurat: Grüezi. Ich bi neu z Züri züglet und möcht mi aamälde.\nBeamtin: Gärn. Händ Si de Uuswiis und de Miatvertrag debii?\nMurat: Ja, beides han ich da. Bruuched Si na öppis?\nBeamtin: En Nochwiis vo de Chrankekasse. Wänn Si na käini händ: Si händ drei Mönet Ziit, das z regle.\nMurat: Guet. Und was choschtet d Aamäldig?\nBeamtin: Zwänzg Franke. Si chönd mit Karte zaale. De Uuswiis überchömed Si i öppe zää Täg mit de Poscht.\nMurat: Merci vilmal!",
+   "gloss": [
+    {
+     "de": "sich aamälde",
+     "mevcutTr": "ikamet kaydı yaptırmak"
+    },
+    {
+     "de": "de Uuswiis",
+     "mevcutTr": "kimlik"
+    },
+    {
+     "de": "de Miatvertrag",
+     "mevcutTr": "kira sözleşmesi"
+    },
+    {
+     "de": "d Chrankekasse",
+     "mevcutTr": "sağlık sigortası (İsviçre'de zorunlu)"
+    },
+    {
+     "de": "d Frischt",
+     "mevcutTr": "süre, mühlet"
+    },
+    {
+     "de": "zügle",
+     "mevcutTr": "taşınmak (umziehen)"
+    },
+    {
+     "de": "d Gebüür",
+     "mevcutTr": "harç, ücret"
+    }
+   ]
+  },
+  {
+   "id": "zh-a2-l4",
+   "skill": "listening",
+   "level": "A2",
+   "title": "D Wättervorhersaag",
+   "genre": "Radyo",
+   "intro": "Radyoda hafta sonu hava tahminini dinleyeceksin.",
+   "metin": "Und jetz s Wätter für s Wuchenänd.\nAm Samschtig am Morge hät s im Flachland na Nääbel. Gäge Mittag häiteret s uf und d Sunne chunt.\nD Temperature stiiged uf zwänzgedrüü Grad — für de Oktober rächt warm.\nAm Sunntig chömed vo Weschte her Wulche. Am Namitag mues me mit eme Gwitter rächne.\nI de Nacht uf Määndig wird s chüeler: nume na achti bis zää Grad.",
+   "gloss": [
+    {
+     "de": "d Vorhersaag",
+     "mevcutTr": "tahmin"
+    },
+    {
+     "de": "d Wulche",
+     "mevcutTr": "bulut"
+    },
+    {
+     "de": "de Nääbel",
+     "mevcutTr": "sis (Nebel)"
+    },
+    {
+     "de": "ufhäitere",
+     "mevcutTr": "açmak (hava)"
+    },
+    {
+     "de": "de Grad",
+     "mevcutTr": "derece",
+     "havuz": {
+      "tr": "derece",
+      "en": "degree"
+     }
+    },
+    {
+     "de": "s Gwitter",
+     "mevcutTr": "fırtına, gök gürültülü sağanak"
+    },
+    {
+     "de": "chüel",
+     "mevcutTr": "serin (kühl)"
+    }
+   ]
+  }
+ ]
+}
