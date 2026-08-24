@@ -85,7 +85,18 @@ const SPEECH_BYTES = 300;
  * aşağı çekiyor ve o ana kadarki parçalar yeniden değerlendiriliyor.
  */
 const FLOOR_PERCENTILE = 0.15;
-const FLOOR_FACTOR = 3;
+/**
+ * Gürültü tabanının kaç katı konuşma sayılıyor.
+ *
+ * Üçten ikiye indi ve sebebi ölçüm: gerçek yürüyüş kayıtlarında klip süreleri
+ * neredeyse hep 6–7 saniyeydi, yani pencere HİÇ erken kapanmıyordu. Sokakta
+ * taban yüksek olduğu için üç katı hiç aşılmıyor, konuşma hiç "başlamış"
+ * sayılmıyor ve her cevapta üst sınıra kadar bekleniyordu — kullanıcının "çok
+ * bekliyor" dediği şey buydu. Erken kapanmaya karşı zaten üç ayrı koruma var
+ * (işaret körlüğü, iki ardışık dilim, en kısa dinleme), yani gevşetmenin
+ * bedeli o taraftan karşılanıyor.
+ */
+const FLOOR_FACTOR = 2;
 /** Konuşma bittikten sonra kaydın kapanması için beklenen sessiz parça sayısı. */
 const TAIL_SLICES = 3;
 /**
@@ -106,6 +117,14 @@ const MIN_SPEECH_SLICES = 2;
  * bir pay bırakıyor.
  */
 const MIN_LISTEN_MS = 1200;
+
+/**
+ * İşaretin algılamaya karışmadığı süre.
+ *
+ * Bip 140 ms ama çalması ve mikrofona dönmesi biraz sürüyor; pay bunun için.
+ * Klibe girmesi zararsız — zararlı olan, "konuşma başladı" sanılması.
+ */
+const CUE_BLIND_MS = 350;
 
 /** Tarayıcının kabul ettiği ilk kayıt biçimi. */
 function pickMime(): string {
@@ -319,9 +338,19 @@ export function closeMic() {
 export type ClipResult = { blob: Blob; ms: number } | null;
 
 export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> {
-  // Algılama penceresi ön-paydan SONRA başlıyor: ön-pay klibe giriyor ama
-  // "konuşma başladı" kararına karışmıyor, çünkü içinde okumanın kuyruğu var.
-  const detectFrom = Date.now();
+  /*
+    Algılama penceresi ön-paydan ve İŞARETTEN sonra başlıyor.
+
+    Ön-pay klibe giriyor ama "konuşma başladı" kararına karışmıyor, çünkü
+    içinde okumanın kuyruğu var. Aynısı mikrofon işareti için de gerekli ve
+    bunu gerçek yürüyüş verisi gösterdi: bip 140 ms sürüyor, yani iki dilime
+    yayılabiliyor ve "iki ardışık gürültülü dilim" koşulunu tek başına
+    karşılıyor. Ardından kullanıcı daha konuşmaya başlamadan gelen sessizlik
+    kuyruğu dolduruyor ve kayıt bir saniyede kapanıyordu — sahadaki bir
+    saniyelik ve BOŞ dönen kliplerin hepsi buydu (die Heimat, schlafen, hallo,
+    der Termin...).
+  */
+  const detectFrom = Date.now() + CUE_BLIND_MS;
   /*
     Kaydedici ölmüşse tur SESSİZCE bitmemeli.
 
@@ -415,16 +444,30 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
         karar vermesi doğru.
       */
       const all = chunks;
+      /*
+        Pencerenin ilk parçası — klibin ASLA gerisine geçemeyeceği sınır.
+
+        Geriye yürüme buna bağlanmasa ne olduğu gerçek yürüyüş verisinde
+        görüldü: altı saniyelik pencere için 16 ve 17 SANİYELİK klipler gitti
+        ve içlerinde önceki cevaplar vardı ("dabei sein" sorulurken "der weg
+        dabei sein", "schlafen" sorulurken "wie machst schlafen" duyuldu).
+        Sebep, sokakta gürültü tabanının yüksek olması: neredeyse her parça
+        eşiği geçiyor, geriye yürüme de durmadan yirmi saniyelik tamponun
+        başına kadar gidiyordu.
+      */
+      const windowStart = all.findIndex((c) => c.t >= from);
+      if (windowStart < 0) return resolve(null);
       const loud = all.findIndex((c) => c.t >= from && c.data.size >= threshold);
 
       let first: number;
       let last: number;
       if (loud >= 0) {
         // Konuşma bulundu: başını kaçırmamak için geriye yürünüyor. Kelimenin
-        // ilk sesi (patlamalı ünsüz) çoğu zaman eşiğin altında kalıyor.
+        // ilk sesi (patlamalı ünsüz) çoğu zaman eşiğin altında kalıyor —
+        // ama pencerenin gerisine ASLA geçilmiyor.
         first = loud;
-        while (first > 0 && all[first - 1].data.size >= threshold) first--;
-        first = Math.max(0, first - 2);
+        while (first > windowStart && all[first - 1].data.size >= threshold) first--;
+        first = Math.max(windowStart, first - 2);
 
         /*
           Klibin SONU da kırpılıyor.
@@ -445,8 +488,7 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
         // Eşiğe takılan olmadı: pencerenin tamamı gönderiliyor. Reddetmek
         // ölçüldü ve gerçek cihazda "her cevap duyamadım" oldu — karar
         // tanıyıcıya bırakılıyor (bkz. aşağıdaki not).
-        first = all.findIndex((c) => c.t >= from);
-        if (first < 0) return resolve(null);
+        first = windowStart;
         last = all.length - 1;
       }
 
