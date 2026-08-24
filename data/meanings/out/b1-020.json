@@ -1,0 +1,402 @@
+[
+ {
+  "id": 2276,
+  "tr": "çıraklık",
+  "en": "apprenticeship",
+  "beispiel": "Mein Cousin will eine dreijährige Lehre machen.",
+  "beispielTr": "Kuzenim üç yıllık bir çıraklık yapmak istiyor.",
+  "beispielEn": "My cousin wants to do a three-year apprenticeship."
+ },
+ {
+  "id": 2518,
+  "tr": "üretim",
+  "en": "production",
+  "beispiel": "Die Produktion von Käse dauert oft viele Wochen.",
+  "beispielTr": "Peynir üretimi çoğu zaman haftalarca sürer.",
+  "beispielEn": "The production of cheese often takes many weeks."
+ },
+ {
+  "id": 1597,
+  "tr": "kanamak",
+  "en": "to bleed",
+  "beispiel": "Meine Hand blutet, weil ich mich geschnitten habe.",
+  "beispielTr": "Elim kanıyor, çünkü kendimi kestim.",
+  "beispielEn": "My hand is bleeding because I cut myself."
+ },
+ {
+  "id": 1501,
+  "tr": "talep",
+  "en": "demand",
+  "beispiel": "An diesem Produkt besteht großer Bedarf.",
+  "beispielTr": "Bu ürüne büyük talep var.",
+  "beispielEn": "There is a great demand for this product."
+ },
+ {
+  "id": 2112,
+  "tr": "içerik",
+  "en": "content",
+  "beispiel": "Geben Sie den Inhalt der Packung in kochendes Wasser.",
+  "beispielTr": "Paketin içeriğini kaynar suya dökün.",
+  "beispielEn": "Pour the contents of the packet into boiling water."
+ },
+ {
+  "id": 2113,
+  "tr": "dahil",
+  "en": "including",
+  "beispiel": "Der Zimmerpreis ist inklusive Frühstück.",
+  "beispielTr": "Oda fiyatına kahvaltı dahil.",
+  "beispielEn": "The room price includes breakfast."
+ },
+ {
+  "id": 1560,
+  "tr": "teyit",
+  "en": "confirmation",
+  "beispiel": "Ich brauche eine schriftliche Bestätigung für das Amt.",
+  "beispielTr": "Kurum için yazılı bir teyit gerekiyor.",
+  "beispielEn": "I need a written confirmation for the government office."
+ },
+ {
+  "id": 3088,
+  "tr": "dünya çapında",
+  "en": "worldwide",
+  "beispiel": "Unsere Produkte werden weltweit verkauft.",
+  "beispielTr": "Ürünlerimiz dünya çapında satılıyor.",
+  "beispielEn": "Our products are sold worldwide."
+ },
+ {
+  "id": 1532,
+  "tr": "çaba göstermek",
+  "en": "to make an effort",
+  "beispiel": "Er hat sich sehr bemüht, alles rechtzeitig zu schaffen.",
+  "beispielTr": "Her şeyi zamanında yetiştirmek için çok çaba gösterdi.",
+  "beispielEn": "He made a great effort to finish everything on time."
+ },
+ {
+  "id": 2111,
+  "tr": "mühendis",
+  "en": "engineer",
+  "beispiel": "Mein Bruder arbeitet als Ingenieur bei einer Autofirma.",
+  "beispielTr": "Kardeşim bir otomobil firmasında mühendis olarak çalışıyor.",
+  "beispielEn": "My brother works as an engineer at a car company."
+ },
+ {
+  "id": 1737,
+  "tr": "üye olmak",
+  "en": "to join",
+  "beispiel": "Letztes Jahr bin ich in einen Sportverein eingetreten.",
+  "beispielTr": "Geçen yıl bir spor kulübüne üye oldum.",
+  "beispielEn": "Last year I joined a sports club."
+ },
+ {
+  "id": 3183,
+  "tr": "onay",
+  "en": "consent",
+  "beispiel": "Wir brauchen Ihre Zustimmung, um Ihnen Werbung zu schicken.",
+  "beispielTr": "Size reklam gönderebilmemiz için onayınıza ihtiyacımız var.",
+  "beispielEn": "We need your consent to send you advertising."
+ },
+ {
+  "id": 1672,
+  "tr": "belge",
+  "en": "document",
+  "beispiel": "Hast du alle Dokumente für die Anmeldung dabei?",
+  "beispielTr": "Kayıt için bütün belgeler yanında mı?",
+  "beispielEn": "Do you have all the documents for the registration?"
+ },
+ {
+  "id": 1438,
+  "tr": "kalış",
+  "en": "stay",
+  "beispiel": "Mein Aufenthalt in Berlin hat drei Monate gedauert.",
+  "beispielTr": "Berlin'deki kalışım üç ay sürdü.",
+  "beispielEn": "My stay in Berlin lasted three months."
+ },
+ {
+  "id": 2344,
+  "tr": "ölçmek",
+  "en": "to measure",
+  "beispiel": "Der Arzt hat meinen Blutdruck zweimal gemessen.",
+  "beispielTr": "Doktor tansiyonumu iki kez ölçtü.",
+  "beispielEn": "The doctor measured my blood pressure twice."
+ },
+ {
+  "id": 2727,
+  "tr": "özel",
+  "en": "special",
+  "beispiel": "Ich suche einen ganz speziellen Ring für meine Freundin.",
+  "beispielTr": "Kız arkadaşım için çok özel bir yüzük arıyorum.",
+  "beispielEn": "I'm looking for a very special ring for my girlfriend."
+ },
+ {
+  "id": 2066,
+  "tr": "köken",
+  "en": "origin",
+  "beispiel": "Viele Leute fragen mich nach meiner Herkunft.",
+  "beispielTr": "Birçok kişi bana kökenimi soruyor.",
+  "beispielEn": "Many people ask me about my origins."
+ },
+ {
+  "id": 1876,
+  "tr": "nemli",
+  "en": "damp",
+  "beispiel": "Die Wäsche ist noch feucht, weil es geregnet hat.",
+  "beispielTr": "Yağmur yağdığı için çamaşırlar hâlâ nemli.",
+  "beispielEn": "The laundry is still damp because it rained."
+ },
+ {
+  "id": 2797,
+  "tr": "araştırma",
+  "en": "study",
+  "beispiel": "Eine neue Studie zeigt, dass die Umweltverschmutzung zunimmt.",
+  "beispielTr": "Yeni bir araştırma çevre kirliliğinin arttığını gösteriyor.",
+  "beispielEn": "A new study shows that pollution is increasing."
+ },
+ {
+  "id": 1942,
+  "tr": "vestiyer",
+  "en": "coat check",
+  "beispiel": "Die Mäntel bitte an der Garderobe abgeben.",
+  "beispielTr": "Paltoları lütfen vestiyere bırakın.",
+  "beispielEn": "Please leave your coats at the coat check."
+ },
+ {
+  "id": 3047,
+  "tr": "birbirinden",
+  "en": "from each other",
+  "beispiel": "Wir haben lange nichts voneinander gehört.",
+  "beispielTr": "Uzun zamandır birbirimizden haber almadık.",
+  "beispielEn": "We haven't heard from each other in a long time."
+ },
+ {
+  "id": 3115,
+  "tr": "lokantacı",
+  "en": "innkeeper",
+  "beispiel": "Der Wirt hat uns noch ein Bier gebracht.",
+  "beispielTr": "Lokantacı bize bir bira daha getirdi.",
+  "beispielEn": "The innkeeper brought us another beer."
+ },
+ {
+  "id": 2163,
+  "tr": "kasa",
+  "en": "case",
+  "beispiel": "Wir haben einen Kasten Bier für die Party gekauft.",
+  "beispielTr": "Parti için bir kasa bira aldık.",
+  "beispielEn": "We bought a case of beer for the party."
+ },
+ {
+  "id": 2607,
+  "tr": "salon",
+  "en": "salon",
+  "beispiel": "Sie arbeitet als Friseurin in einem Salon.",
+  "beispielTr": "Bir salonda kuaför olarak çalışıyor.",
+  "beispielEn": "She works as a hairdresser in a salon."
+ },
+ {
+  "id": 3068,
+  "tr": "sunum",
+  "en": "presentation",
+  "beispiel": "Ihr Vortrag war sehr interessant.",
+  "beispielTr": "Sunumunuz çok ilginçti.",
+  "beispielEn": "Your presentation was very interesting."
+ },
+ {
+  "id": 1401,
+  "tr": "korkak",
+  "en": "fearful",
+  "beispiel": "Meine Mutter ist etwas ängstlich und geht selten allein aus.",
+  "beispielTr": "Annem biraz korkaktır ve nadiren yalnız dışarı çıkar.",
+  "beispielEn": "My mother is a bit fearful and rarely goes out alone."
+ },
+ {
+  "id": 2571,
+  "tr": "temizlemek",
+  "en": "to clean",
+  "beispiel": "Ich möchte diesen Anzug reinigen lassen.",
+  "beispielTr": "Bu takım elbiseyi temizletmek istiyorum.",
+  "beispielEn": "I would like to have this suit cleaned."
+ },
+ {
+  "id": 1525,
+  "tr": "aidat",
+  "en": "membership fee",
+  "beispiel": "Der Beitrag für den Sportverein beträgt 34 Euro.",
+  "beispielTr": "Spor kulübünün aidatı 34 euro.",
+  "beispielEn": "The membership fee for the sports club is 34 euros."
+ },
+ {
+  "id": 2496,
+  "tr": "piknik",
+  "en": "picnic",
+  "beispiel": "Am Sonntag machen wir ein Picknick im Park.",
+  "beispielTr": "Pazar günü parkta piknik yapacağız.",
+  "beispielEn": "On Sunday we're having a picnic in the park."
+ },
+ {
+  "id": 2045,
+  "tr": "tüccar",
+  "en": "merchant",
+  "beispiel": "Der Händler verkauft seine Waren auf dem Markt.",
+  "beispielTr": "Tüccar mallarını pazarda satıyor.",
+  "beispielEn": "The merchant sells his goods at the market."
+ },
+ {
+  "id": 2174,
+  "tr": "mum",
+  "en": "candle",
+  "beispiel": "Für den Geburtstagstisch brauchen wir viele Blumen und Kerzen.",
+  "beispielTr": "Doğum günü masası için bir sürü çiçek ve mum lazım.",
+  "beispielEn": "We need lots of flowers and candles for the birthday table."
+ },
+ {
+  "id": 2746,
+  "tr": "bakış açısı",
+  "en": "point of view",
+  "beispiel": "Von seinem Standpunkt aus hat er recht.",
+  "beispielTr": "Kendi bakış açısından haklı.",
+  "beispielEn": "From his point of view he is right."
+ },
+ {
+  "id": 2846,
+  "tr": "teorik",
+  "en": "theoretical",
+  "beispiel": "Ich habe die theoretische Prüfung bestanden.",
+  "beispielTr": "Teorik sınavı geçtim.",
+  "beispielEn": "I passed the theoretical exam."
+ },
+ {
+  "id": 2665,
+  "tr": "hamilelik",
+  "en": "pregnancy",
+  "beispiel": "Sie dürfen während der Schwangerschaft nicht rauchen.",
+  "beispielTr": "Hamilelik sırasında sigara içmemelisiniz.",
+  "beispielEn": "You must not smoke during pregnancy."
+ },
+ {
+  "id": 3189,
+  "tr": "şüphe etmek",
+  "en": "to doubt",
+  "beispiel": "Ich zweifle nicht daran, dass Sie recht haben.",
+  "beispielTr": "Haklı olduğunuzdan hiç şüphe etmiyorum.",
+  "beispielEn": "I don't doubt that you are right."
+ },
+ {
+  "id": 1602,
+  "tr": "rosto",
+  "en": "roast",
+  "beispiel": "Der Braten im Ofen duftet wirklich fantastisch.",
+  "beispielTr": "Fırındaki rosto gerçekten mis gibi kokuyor.",
+  "beispielEn": "The roast in the oven smells fantastic."
+ },
+ {
+  "id": 2476,
+  "tr": "pansiyon",
+  "en": "guesthouse",
+  "beispiel": "Im Urlaub haben wir in einer kleinen Pension gewohnt.",
+  "beispielTr": "Tatilde küçük bir pansiyonda kaldık.",
+  "beispielEn": "On vacation we stayed in a small guesthouse."
+ },
+ {
+  "id": 2315,
+  "tr": "ressam",
+  "en": "painter",
+  "beispiel": "Picasso ist vielleicht der bekannteste Maler des Jahrhunderts.",
+  "beispielTr": "Picasso belki de yüzyılın en tanınmış ressamı.",
+  "beispielEn": "Picasso is perhaps the most famous painter of the century."
+ },
+ {
+  "id": 2505,
+  "tr": "kadın polis",
+  "en": "policewoman",
+  "beispiel": "Die Polizistin hat meinen Ausweis kontrolliert.",
+  "beispielTr": "Kadın polis kimliğimi kontrol etti.",
+  "beispielEn": "The policewoman checked my ID."
+ },
+ {
+  "id": 1445,
+  "tr": "saklamak",
+  "en": "to keep",
+  "beispiel": "Die Quittung müssen Sie gut aufheben.",
+  "beispielTr": "Fişi iyi saklamanız gerekiyor.",
+  "beispielEn": "You have to keep the receipt carefully."
+ },
+ {
+  "id": 1749,
+  "tr": "zarif",
+  "en": "elegant",
+  "beispiel": "Ich finde dein Kleid sehr elegant.",
+  "beispielTr": "Elbiseni çok zarif buluyorum.",
+  "beispielEn": "I think your dress is very elegant."
+ },
+ {
+  "id": 1591,
+  "tr": "solgun",
+  "en": "pale",
+  "beispiel": "Du siehst heute ganz blass aus.",
+  "beispielTr": "Bugün çok solgun görünüyorsun.",
+  "beispielEn": "You look really pale today."
+ },
+ {
+  "id": 2867,
+  "tr": "buluşma yeri",
+  "en": "meeting point",
+  "beispiel": "Unser Treffpunkt ist um 17 Uhr am Hauptbahnhof.",
+  "beispielTr": "Buluşma yerimiz saat 17'de ana tren garı.",
+  "beispielEn": "Our meeting point is the main train station at five."
+ },
+ {
+  "id": 2651,
+  "tr": "yazı",
+  "en": "writing",
+  "beispiel": "Ich kann deine Schrift leider nicht lesen.",
+  "beispielTr": "Maalesef yazını okuyamıyorum.",
+  "beispielEn": "Unfortunately I can't read your writing."
+ },
+ {
+  "id": 2220,
+  "tr": "bedensel",
+  "en": "physical",
+  "beispiel": "Körperliche Arbeit macht mir nichts aus.",
+  "beispielTr": "Bedensel iş beni hiç rahatsız etmez.",
+  "beispielEn": "Physical work doesn't bother me."
+ },
+ {
+  "id": 1494,
+  "tr": "pil",
+  "en": "battery",
+  "beispiel": "Bringst du bitte Batterien für die Kamera mit?",
+  "beispielTr": "Kamera için pil getirir misin?",
+  "beispielEn": "Could you bring batteries for the camera?"
+ },
+ {
+  "id": 1485,
+  "tr": "küvet",
+  "en": "bathtub",
+  "beispiel": "Nach einem langen Arbeitstag setzte sie sich in die Badewanne.",
+  "beispielTr": "Uzun bir iş gününün ardından küvete girdi.",
+  "beispielEn": "After a long day at work she got into the bathtub."
+ },
+ {
+  "id": 1682,
+  "tr": "uyuşturucu",
+  "en": "drug",
+  "beispiel": "Nimmst du etwa Drogen?",
+  "beispielTr": "Yoksa uyuşturucu mu kullanıyorsun?",
+  "beispielEn": "Are you taking drugs?"
+ },
+ {
+  "id": 2756,
+  "tr": "sokmak",
+  "en": "to sting",
+  "beispiel": "Im Garten wurde ich von einer Biene gestochen.",
+  "beispielTr": "Bahçede beni bir arı soktu.",
+  "beispielEn": "I was stung by a bee in the garden."
+ },
+ {
+  "id": 2432,
+  "tr": "işe yaramak",
+  "en": "to be useful",
+  "beispiel": "Die Tabletten haben leider gar nichts genützt.",
+  "beispielTr": "Haplar maalesef hiçbir işe yaramadı.",
+  "beispielEn": "Unfortunately the pills were no use at all."
+ }
+]

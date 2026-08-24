@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1603,
+  "tr": "kırmak",
+  "en": "to break",
+  "beispiel": "Beim Skifahren hat er sich das Bein gebrochen.",
+  "beispielTr": "Kayak yaparken bacağını kırdı.",
+  "beispielEn": "He broke his leg while skiing."
+ },
+ {
+  "id": 3143,
+  "tr": "zaman",
+  "en": "point in time",
+  "beispiel": "Das ist gerade kein guter Zeitpunkt für ein Gespräch.",
+  "beispielTr": "Şu an konuşmak için uygun bir zaman değil.",
+  "beispielEn": "This isn't a good time for a conversation."
+ },
+ {
+  "id": 1684,
+  "tr": "baskı",
+  "en": "pressure",
+  "beispiel": "Im Büro stehe ich ständig unter Druck.",
+  "beispielTr": "Ofiste sürekli baskı altındayım.",
+  "beispielEn": "At work I am constantly under pressure."
+ },
+ {
+  "id": 1452,
+  "tr": "görev",
+  "en": "assignment",
+  "beispiel": "Ich habe den Auftrag, alle Kunden anzurufen.",
+  "beispielTr": "Görevim bütün müşterileri aramak.",
+  "beispielEn": "My assignment is to call all the customers."
+ },
+ {
+  "id": 2431,
+  "tr": "yararlanmak",
+  "en": "to make use of",
+  "beispiel": "Ich möchte das schöne Wetter nutzen und spazieren gehen.",
+  "beispielTr": "Güzel havadan yararlanıp yürüyüşe çıkmak istiyorum.",
+  "beispielEn": "I want to make use of the nice weather and go for a walk."
+ },
+ {
+  "id": 3131,
+  "tr": "istemek",
+  "en": "to wish for",
+  "beispiel": "Was wünschst du dir zum Geburtstag?",
+  "beispielTr": "Doğum günün için ne istiyorsun?",
+  "beispielEn": "What do you wish for on your birthday?"
+ },
+ {
+  "id": 2961,
+  "tr": "sorumluluk",
+  "en": "responsibility",
+  "beispiel": "Für dieses Projekt trage ich die Verantwortung.",
+  "beispielTr": "Bu projenin sorumluluğu bende.",
+  "beispielEn": "I bear the responsibility for this project."
+ },
+ {
+  "id": 2100,
+  "tr": "şapka",
+  "en": "hat",
+  "beispiel": "Sie sollten im Sommer nicht ohne Hut in die Sonne gehen.",
+  "beispielTr": "Yazın güneşe şapkasız çıkmamalısınız.",
+  "beispielEn": "You shouldn't go into the sun without a hat in summer."
+ },
+ {
+  "id": 2258,
+  "tr": "gülümsemek",
+  "en": "to smile",
+  "beispiel": "Sie lächelte freundlich und gab mir die Hand.",
+  "beispielTr": "Nazikçe gülümsedi ve elimi sıktı.",
+  "beispielEn": "She smiled kindly and shook my hand."
+ },
+ {
+  "id": 3058,
+  "tr": "az önce",
+  "en": "a little while ago",
+  "beispiel": "Vorhin hat Heidrun angerufen und nach dir gefragt.",
+  "beispielTr": "Az önce Heidrun aradı ve seni sordu.",
+  "beispielEn": "Heidrun called a little while ago and asked about you."
+ },
+ {
+  "id": 1815,
+  "tr": "ciddi ciddi",
+  "en": "seriously",
+  "beispiel": "Er denkt ernsthaft daran, seinen Job zu kündigen.",
+  "beispielTr": "İşini bırakmayı ciddi ciddi düşünüyor.",
+  "beispielEn": "He is seriously thinking about quitting his job."
+ },
+ {
+  "id": 2224,
+  "tr": "masraf",
+  "en": "costs",
+  "beispiel": "Die Kosten für die Reparatur übernimmt die Versicherung.",
+  "beispielTr": "Tamir masraflarını sigorta karşılıyor.",
+  "beispielEn": "The insurance covers the repair costs."
+ },
+ {
+  "id": 2450,
+  "tr": "ameliyat",
+  "en": "surgery",
+  "beispiel": "Seit der Operation kann ich mein Knie kaum bewegen.",
+  "beispielTr": "Ameliyattan beri dizimi zor oynatıyorum.",
+  "beispielEn": "Since the surgery I can hardly move my knee."
+ },
+ {
+  "id": 1635,
+  "tr": "çatı",
+  "en": "roof",
+  "beispiel": "Wir müssen das Dach reparieren lassen.",
+  "beispielTr": "Çatıyı tamir ettirmemiz gerekiyor.",
+  "beispielEn": "We have to get the roof repaired."
+ },
+ {
+  "id": 1897,
+  "tr": "sonuç",
+  "en": "consequence",
+  "beispiel": "Die Folgen des Unfalls waren schlimmer als erwartet.",
+  "beispielTr": "Kazanın sonuçları beklenenden ağır oldu.",
+  "beispielEn": "The consequences of the accident were worse than expected."
+ },
+ {
+  "id": 1642,
+  "tr": "minnettar",
+  "en": "grateful",
+  "beispiel": "Ich bin Ihnen sehr dankbar für Ihre Hilfe.",
+  "beispielTr": "Yardımınız için size çok minnettarım.",
+  "beispielEn": "I am very grateful for your help."
+ },
+ {
+  "id": 2386,
+  "tr": "cesaret",
+  "en": "courage",
+  "beispiel": "Sie hatte den Mut, ihre Meinung offen zu sagen.",
+  "beispielTr": "Fikrini açıkça söyleyecek cesareti vardı.",
+  "beispielEn": "She had the courage to say her opinion openly."
+ },
+ {
+  "id": 2811,
+  "tr": "sistem",
+  "en": "system",
+  "beispiel": "Unser System speichert alle Daten automatisch.",
+  "beispielTr": "Sistemimiz bütün verileri otomatik olarak kaydediyor.",
+  "beispielEn": "Our system saves all the data automatically."
+ },
+ {
+  "id": 1677,
+  "tr": "oraya",
+  "en": "there",
+  "beispiel": "Deine Tasche kannst du dorthin stellen.",
+  "beispielTr": "Çantanı oraya koyabilirsin.",
+  "beispielEn": "You can put your bag over there."
+ },
+ {
+  "id": 2892,
+  "tr": "gözden geçirmek",
+  "en": "to check",
+  "beispiel": "Ich habe den Vertrag noch einmal genau überprüft.",
+  "beispielTr": "Sözleşmeyi bir kez daha dikkatlice gözden geçirdim.",
+  "beispielEn": "I checked the contract carefully once more."
+ },
+ {
+  "id": 1578,
+  "tr": "kanıt",
+  "en": "proof",
+  "beispiel": "Für diese Behauptung gibt es keinen Beweis.",
+  "beispielTr": "Bu iddia için hiçbir kanıt yok.",
+  "beispielEn": "There is no proof for this claim."
+ },
+ {
+  "id": 1932,
+  "tr": "çalışmak",
+  "en": "to function",
+  "beispiel": "Der Automat funktioniert leider nicht mehr.",
+  "beispielTr": "Otomat maalesef artık çalışmıyor.",
+  "beispielEn": "Unfortunately the machine doesn't work anymore."
+ },
+ {
+  "id": 2589,
+  "tr": "risk",
+  "en": "risk",
+  "beispiel": "Das Risiko ist mir einfach zu hoch.",
+  "beispielTr": "Risk bana göre fazla yüksek.",
+  "beispielEn": "The risk is simply too high for me."
+ },
+ {
+  "id": 2059,
+  "tr": "kahraman",
+  "en": "hero",
+  "beispiel": "Für seine Tochter ist er ein echter Held.",
+  "beispielTr": "Kızı için o gerçek bir kahraman.",
+  "beispielEn": "For his daughter he is a real hero."
+ },
+ {
+  "id": 2516,
+  "tr": "harika",
+  "en": "terrific",
+  "beispiel": "Deine Idee finde ich prima!",
+  "beispielTr": "Fikrini harika buluyorum!",
+  "beispielEn": "I think your idea is terrific!"
+ },
+ {
+  "id": 1994,
+  "tr": "şiddet",
+  "en": "violence",
+  "beispiel": "In diesem Film kommt zu viel Gewalt vor.",
+  "beispielTr": "Bu filmde çok fazla şiddet var.",
+  "beispielEn": "There is too much violence in this movie."
+ },
+ {
+  "id": 2390,
+  "tr": "düşünmek",
+  "en": "to think about",
+  "beispiel": "Ich muss über deinen Vorschlag noch einmal nachdenken.",
+  "beispielTr": "Önerini bir kez daha düşünmem gerek.",
+  "beispielEn": "I have to think about your suggestion again."
+ },
+ {
+  "id": 2855,
+  "tr": "gol",
+  "en": "goal",
+  "beispiel": "Er hat in der zweiten Halbzeit ein Tor geschossen.",
+  "beispielTr": "İkinci yarıda bir gol attı.",
+  "beispielEn": "He scored a goal in the second half."
+ },
+ {
+  "id": 2600,
+  "tr": "tur",
+  "en": "lap",
+  "beispiel": "Ich laufe jeden Morgen drei Runden im Park.",
+  "beispielTr": "Her sabah parkta üç tur koşuyorum.",
+  "beispielEn": "Every morning I run three laps in the park."
+ },
+ {
+  "id": 2077,
+  "tr": "bırakmak",
+  "en": "to leave behind",
+  "beispiel": "Möchten Sie eine Nachricht hinterlassen?",
+  "beispielTr": "Mesaj bırakmak ister misiniz?",
+  "beispielEn": "Would you like to leave a message?"
+ },
+ {
+  "id": 1997,
+  "tr": "vicdan",
+  "en": "conscience",
+  "beispiel": "Ich habe ein schlechtes Gewissen, weil ich gelogen habe.",
+  "beispielTr": "Yalan söylediğim için vicdanım rahat değil.",
+  "beispielEn": "I have a bad conscience because I lied."
+ },
+ {
+  "id": 2764,
+  "tr": "taş",
+  "en": "stone",
+  "beispiel": "Die Kinder werfen Steine ins Wasser.",
+  "beispielTr": "Çocuklar suya taş atıyor.",
+  "beispielEn": "The children are throwing stones into the water."
+ },
+ {
+  "id": 1436,
+  "tr": "nefes almak",
+  "en": "to breathe",
+  "beispiel": "Wegen der Erkältung kann er kaum durch die Nase atmen.",
+  "beispielTr": "Soğuk algınlığı yüzünden burnundan zor nefes alıyor.",
+  "beispielEn": "Because of his cold he can hardly breathe through his nose."
+ },
+ {
+  "id": 2856,
+  "tr": "ölü adam",
+  "en": "dead man",
+  "beispiel": "Der Tote wurde erst am nächsten Morgen entdeckt.",
+  "beispielTr": "Ölü adam ancak ertesi sabah bulundu.",
+  "beispielEn": "The dead man was found only the next morning."
+ },
+ {
+  "id": 2857,
+  "tr": "ölü kadın",
+  "en": "dead woman",
+  "beispiel": "Die Tote wurde am Ufer des Flusses gefunden.",
+  "beispielTr": "Ölü kadın nehir kıyısında bulundu.",
+  "beispielEn": "The dead woman was found on the riverbank."
+ },
+ {
+  "id": 2889,
+  "tr": "düşünüp taşınmak",
+  "en": "to consider",
+  "beispiel": "Ich muss mir das noch einmal in Ruhe überlegen.",
+  "beispielTr": "Bunu bir kez daha düşünüp taşınmam gerek.",
+  "beispielEn": "I need to think it over calmly once more."
+ },
+ {
+  "id": 2793,
+  "tr": "kavga",
+  "en": "argument",
+  "beispiel": "Wegen des Lärms gab es Streit mit den Nachbarn.",
+  "beispielTr": "Gürültü yüzünden komşularla kavga çıktı.",
+  "beispielEn": "The noise caused an argument with the neighbors."
+ },
+ {
+  "id": 2254,
+  "tr": "öpmek",
+  "en": "to kiss",
+  "beispiel": "Er nahm sie in die Arme und küsste sie.",
+  "beispielTr": "Onu kollarına alıp öptü.",
+  "beispielEn": "He took her in his arms and kissed her."
+ },
+ {
+  "id": 2265,
+  "tr": "çoktan",
+  "en": "long ago",
+  "beispiel": "Die Rechnung habe ich schon längst bezahlt.",
+  "beispielTr": "Faturayı çoktan ödedim.",
+  "beispielEn": "I paid that bill long ago."
+ },
+ {
+  "id": 2424,
+  "tr": "normalde",
+  "en": "usually",
+  "beispiel": "Normalerweise stehe ich um sechs Uhr auf.",
+  "beispielTr": "Normalde saat altıda kalkarım.",
+  "beispielEn": "I usually get up at six o'clock."
+ },
+ {
+  "id": 2543,
+  "tr": "yukarı",
+  "en": "up",
+  "beispiel": "Komm doch kurz rauf, ich koche Kaffee!",
+  "beispielTr": "Yukarı gel biraz, kahve yapıyorum!",
+  "beispielEn": "Come up for a bit, I'm making coffee!"
+ },
+ {
+  "id": 1544,
+  "tr": "sakinleştirmek",
+  "en": "to calm",
+  "beispiel": "Die Mutter konnte das weinende Kind schnell beruhigen.",
+  "beispielTr": "Anne ağlayan çocuğu çabucak sakinleştirdi.",
+  "beispielEn": "The mother quickly calmed the crying child."
+ },
+ {
+  "id": 2762,
+  "tr": "yükselmek",
+  "en": "to rise",
+  "beispiel": "Die Mieten sind in den letzten Jahren stark gestiegen.",
+  "beispielTr": "Kiralar son yıllarda çok yükseldi.",
+  "beispielEn": "Rents have risen sharply in recent years."
+ },
+ {
+  "id": 3180,
+  "tr": "durum",
+  "en": "condition",
+  "beispiel": "Das Haus war in einem ziemlich schlechten Zustand.",
+  "beispielTr": "Ev oldukça kötü bir durumdaydı.",
+  "beispielEn": "The house was in pretty bad condition."
+ },
+ {
+  "id": 1723,
+  "tr": "anlaşmak",
+  "en": "to agree",
+  "beispiel": "Am Ende konnten wir uns auf einen Preis einigen.",
+  "beispielTr": "Sonunda bir fiyat üzerinde anlaştık.",
+  "beispielEn": "In the end we agreed on a price."
+ },
+ {
+  "id": 3157,
+  "tr": "tesadüf",
+  "en": "coincidence",
+  "beispiel": "So ein Zufall, dass wir uns hier treffen!",
+  "beispielTr": "Burada karşılaşmamız ne tesadüf!",
+  "beispielEn": "What a coincidence that we meet here!"
+ },
+ {
+  "id": 1847,
+  "tr": "adil",
+  "en": "fair",
+  "beispiel": "Ich finde, unsere Mannschaft hat sehr fair gespielt.",
+  "beispielTr": "Bence takımımız çok adil oynadı.",
+  "beispielEn": "I think our team played very fairly."
+ },
+ {
+  "id": 2671,
+  "tr": "o zamandan beri",
+  "en": "ever since",
+  "beispiel": "Ich habe geheiratet und bin seitdem viel glücklicher.",
+  "beispielTr": "Evlendim ve o zamandan beri çok daha mutluyum.",
+  "beispielEn": "I got married and I've been much happier ever since."
+ },
+ {
+  "id": 3073,
+  "tr": "inanılmaz",
+  "en": "incredibly",
+  "beispiel": "Die neue Wohnung ist wahnsinnig teuer.",
+  "beispielTr": "Yeni daire inanılmaz pahalı.",
+  "beispielEn": "The new apartment is incredibly expensive."
+ },
+ {
+  "id": 1371,
+  "tr": "benzer",
+  "en": "similar",
+  "beispiel": "Emilia ist in einer ganz ähnlichen Situation.",
+  "beispielTr": "Emilia çok benzer bir durumda.",
+  "beispielEn": "Emilia is in a very similar situation."
+ }
+]

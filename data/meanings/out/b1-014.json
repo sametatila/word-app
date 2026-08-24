@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1389,
+    "tr": "eğlenmek",
+    "en": "to have fun",
+    "beispiel": "Auf der Party haben wir uns richtig gut amüsiert.",
+    "beispielTr": "Partide gerçekten çok eğlendik.",
+    "beispielEn": "We really had a great time at the party."
+  },
+  {
+    "id": 2454,
+    "tr": "düzenli",
+    "en": "tidy",
+    "beispiel": "Ihr Schreibtisch sieht immer sehr ordentlich aus.",
+    "beispielTr": "Masası her zaman çok düzenli görünüyor.",
+    "beispielEn": "Her desk always looks very tidy."
+  },
+  {
+    "id": 2402,
+    "tr": "yaklaşmak",
+    "en": "to approach",
+    "beispiel": "Der Zug nähert sich langsam dem Bahnhof.",
+    "beispielTr": "Tren yavaşça istasyona yaklaşıyor.",
+    "beispielEn": "The train is slowly approaching the station."
+  },
+  {
+    "id": 1353,
+    "tr": "kilo vermek",
+    "en": "to lose weight",
+    "beispiel": "Seit Januar habe ich sechs Kilo abgenommen.",
+    "beispielTr": "Ocaktan beri altı kilo verdim.",
+    "beispielEn": "I have lost six kilos since January."
+  },
+  {
+    "id": 2155,
+    "tr": "bölüm",
+    "en": "chapter",
+    "beispiel": "Ich habe gestern das letzte Kapitel gelesen.",
+    "beispielTr": "Dün son bölümü okudum.",
+    "beispielEn": "I read the last chapter yesterday."
+  },
+  {
+    "id": 1495,
+    "tr": "inşaat",
+    "en": "construction",
+    "beispiel": "Der Bau der neuen Brücke dauert zwei Jahre.",
+    "beispielTr": "Yeni köprünün inşaatı iki yıl sürüyor.",
+    "beispielEn": "The construction of the new bridge takes two years."
+  },
+  {
+    "id": 1607,
+    "tr": "yanmak",
+    "en": "to burn",
+    "beispiel": "Die Kerze brennt noch auf dem Tisch.",
+    "beispielTr": "Mum masada hâlâ yanıyor.",
+    "beispielEn": "The candle is still burning on the table."
+  },
+  {
+    "id": 1821,
+    "tr": "değiştirmek",
+    "en": "to replace",
+    "beispiel": "Die kaputte Scheibe muss bald ersetzt werden.",
+    "beispielTr": "Kırık cam yakında değiştirilmeli.",
+    "beispielEn": "The broken pane has to be replaced soon."
+  },
+  {
+    "id": 2082,
+    "tr": "sıcak",
+    "en": "heat",
+    "beispiel": "Bei dieser Hitze kann ich nicht schlafen.",
+    "beispielTr": "Bu sıcakta uyuyamıyorum.",
+    "beispielEn": "I can't sleep in this heat."
+  },
+  {
+    "id": 2730,
+    "tr": "oyuncak",
+    "en": "toy",
+    "beispiel": "Zu Weihnachten wünschen sich die Kinder vor allem Spielzeug.",
+    "beispielTr": "Çocuklar Noel'de en çok oyuncak istiyor.",
+    "beispielEn": "At Christmas children mostly wish for toys."
+  },
+  {
+    "id": 3123,
+    "tr": "yün",
+    "en": "wool",
+    "beispiel": "Dieser Pullover ist aus reiner Wolle.",
+    "beispielTr": "Bu kazak saf yünden.",
+    "beispielEn": "This sweater is made of pure wool."
+  },
+  {
+    "id": 3155,
+    "tr": "bölge",
+    "en": "zone",
+    "beispiel": "In dieser Zone darf man nicht parken.",
+    "beispielTr": "Bu bölgede park etmek yasak.",
+    "beispielEn": "You are not allowed to park in this zone."
+  },
+  {
+    "id": 1772,
+    "tr": "kararlı",
+    "en": "determined",
+    "beispiel": "Ich bin fest entschlossen, diese Ausbildung fertigzumachen.",
+    "beispielTr": "Bu eğitimi bitirmeye kesin kararlıyım.",
+    "beispielEn": "I am firmly determined to finish this training."
+  },
+  {
+    "id": 2641,
+    "tr": "takı",
+    "en": "jewelry",
+    "beispiel": "Sie trägt heute Abend teuren Schmuck.",
+    "beispielTr": "Bu akşam pahalı takılar takıyor.",
+    "beispielEn": "She is wearing expensive jewelry tonight."
+  },
+  {
+    "id": 2103,
+    "tr": "yasa dışı",
+    "en": "illegal",
+    "beispiel": "Ohne Papiere zu arbeiten ist in Deutschland illegal.",
+    "beispielTr": "Belgesiz çalışmak Almanya'da yasa dışıdır.",
+    "beispielEn": "Working without papers is illegal in Germany."
+  },
+  {
+    "id": 2767,
+    "tr": "vergi",
+    "en": "tax",
+    "beispiel": "Wir müssen jedes Jahr mehr Steuern zahlen.",
+    "beispielTr": "Her yıl daha çok vergi ödemek zorundayız.",
+    "beispielEn": "Every year we have to pay more taxes."
+  },
+  {
+    "id": 2788,
+    "tr": "güzergâh",
+    "en": "route",
+    "beispiel": "Auf dieser Strecke fahren nur wenige Züge.",
+    "beispielTr": "Bu güzergâhta çok az tren işliyor.",
+    "beispielEn": "Only a few trains run on this route."
+  },
+  {
+    "id": 2256,
+    "tr": "sahil",
+    "en": "coast",
+    "beispiel": "Unser Dorf liegt direkt an der Küste.",
+    "beispielTr": "Köyümüz tam sahil kenarında.",
+    "beispielEn": "Our village lies right on the coast."
+  },
+  {
+    "id": 1894,
+    "tr": "hol",
+    "en": "hallway",
+    "beispiel": "Die Schuhe stehen alle im Flur.",
+    "beispielTr": "Ayakkabıların hepsi holde duruyor.",
+    "beispielEn": "The shoes are all in the hallway."
+  },
+  {
+    "id": 2269,
+    "tr": "kamyon",
+    "en": "truck",
+    "beispiel": "Auf der Autobahn fahren heute viele Laster.",
+    "beispielTr": "Bugün otoyolda birçok kamyon gidiyor.",
+    "beispielEn": "Many trucks are driving on the highway today."
+  },
+  {
+    "id": 2624,
+    "tr": "kadın oyuncu",
+    "en": "actress",
+    "beispiel": "Diese Schauspielerin hat schon viele Preise gewonnen.",
+    "beispielTr": "Bu kadın oyuncu şimdiden birçok ödül kazandı.",
+    "beispielEn": "This actress has already won many awards."
+  },
+  {
+    "id": 2376,
+    "tr": "motosiklet",
+    "en": "motorcycle",
+    "beispiel": "Oskar fährt jeden Tag mit dem Motorrad zur Arbeit.",
+    "beispielTr": "Oskar her gün işe motosikletle gidiyor.",
+    "beispielEn": "Oskar rides his motorcycle to work every day."
+  },
+  {
+    "id": 1776,
+    "tr": "hayal kırıklığına uğratmak",
+    "en": "to disappoint",
+    "beispiel": "Sein Verhalten hat mich sehr enttäuscht.",
+    "beispielTr": "Davranışı beni çok hayal kırıklığına uğrattı.",
+    "beispielEn": "His behavior disappointed me a lot."
+  },
+  {
+    "id": 1885,
+    "tr": "leke",
+    "en": "stain",
+    "beispiel": "Du hast einen Fleck auf der Bluse.",
+    "beispielTr": "Bluzunda bir leke var.",
+    "beispielEn": "You have a stain on your blouse."
+  },
+  {
+    "id": 1758,
+    "tr": "erkek torun",
+    "en": "grandson",
+    "beispiel": "Mein Enkel kommt jeden Sonntag zu Besuch.",
+    "beispielTr": "Torunum her pazar ziyarete geliyor.",
+    "beispielEn": "My grandson comes to visit every Sunday."
+  },
+  {
+    "id": 1476,
+    "tr": "manzara",
+    "en": "view",
+    "beispiel": "Von diesem Turm hat man eine tolle Aussicht.",
+    "beispielTr": "Bu kuleden harika bir manzara var.",
+    "beispielEn": "You have a great view from this tower."
+  },
+  {
+    "id": 3091,
+    "tr": "reklam",
+    "en": "advertising",
+    "beispiel": "Im Fernsehen läuft viel zu viel Werbung.",
+    "beispielTr": "Televizyonda çok fazla reklam var.",
+    "beispielEn": "There is far too much advertising on television."
+  },
+  {
+    "id": 2842,
+    "tr": "halı",
+    "en": "carpet",
+    "beispiel": "Im Wohnzimmer liegt ein alter türkischer Teppich.",
+    "beispielTr": "Oturma odasında eski bir Türk halısı var.",
+    "beispielEn": "There is an old Turkish carpet in the living room."
+  },
+  {
+    "id": 2044,
+    "tr": "ticaret",
+    "en": "trade",
+    "beispiel": "Der Handel mit gebrauchten Autos läuft gut.",
+    "beispielTr": "İkinci el araba ticareti iyi gidiyor.",
+    "beispielEn": "The trade in used cars is going well."
+  },
+  {
+    "id": 2862,
+    "tr": "antrenör",
+    "en": "coach",
+    "beispiel": "Der neue Trainer ist bei allen beliebt.",
+    "beispielTr": "Yeni antrenör herkes tarafından seviliyor.",
+    "beispielEn": "The new coach is popular with everyone."
+  },
+  {
+    "id": 2307,
+    "tr": "silmek",
+    "en": "to delete",
+    "beispiel": "Ich habe die Datei aus Versehen gelöscht.",
+    "beispielTr": "Dosyayı yanlışlıkla sildim.",
+    "beispielEn": "I deleted the file by accident."
+  },
+  {
+    "id": 2860,
+    "tr": "gelenek",
+    "en": "tradition",
+    "beispiel": "Eine große Hochzeit mit vielen Leuten ist bei uns Tradition.",
+    "beispielTr": "Bizde kalabalık bir düğün gelenektir.",
+    "beispielEn": "A big wedding with many guests is a tradition for us."
+  },
+  {
+    "id": 1843,
+    "tr": "yetenek",
+    "en": "ability",
+    "beispiel": "Sie hat die Fähigkeit, andere zu überzeugen.",
+    "beispielTr": "Başkalarını ikna etme yeteneği var.",
+    "beispielEn": "She has the ability to convince others."
+  },
+  {
+    "id": 2361,
+    "tr": "bildirmek",
+    "en": "to inform",
+    "beispiel": "Den Prüfungstermin teilen wir Ihnen später mit.",
+    "beispielTr": "Sınav tarihini size daha sonra bildireceğiz.",
+    "beispielEn": "We will inform you of the exam date later."
+  },
+  {
+    "id": 3017,
+    "tr": "anlayış",
+    "en": "understanding",
+    "beispiel": "Wir bitten um Ihr Verständnis für die Verspätung.",
+    "beispielTr": "Gecikme için anlayışınızı rica ediyoruz.",
+    "beispielEn": "We ask for your understanding regarding the delay."
+  },
+  {
+    "id": 1734,
+    "tr": "görevlendirmek",
+    "en": "to assign",
+    "beispiel": "Die Firma setzt ihn als Berater ein.",
+    "beispielTr": "Şirket onu danışman olarak görevlendiriyor.",
+    "beispielEn": "The company is assigning him as a consultant."
+  },
+  {
+    "id": 1996,
+    "tr": "kâr",
+    "en": "profit",
+    "beispiel": "Die Firma hat letztes Jahr wenig Gewinn gemacht.",
+    "beispielTr": "Şirket geçen yıl az kâr etti.",
+    "beispielEn": "The company made little profit last year."
+  },
+  {
+    "id": 2489,
+    "tr": "dikmek",
+    "en": "to plant",
+    "beispiel": "Im Garten haben wir einen Apfelbaum gepflanzt.",
+    "beispielTr": "Bahçeye bir elma ağacı diktik.",
+    "beispielEn": "We planted an apple tree in the garden."
+  },
+  {
+    "id": 2370,
+    "tr": "model",
+    "en": "model",
+    "beispiel": "Dieses Modell gefällt mir überhaupt nicht.",
+    "beispielTr": "Bu model hiç hoşuma gitmiyor.",
+    "beispielEn": "I don't like this model at all."
+  },
+  {
+    "id": 1989,
+    "tr": "hız",
+    "en": "speed",
+    "beispiel": "Das Auto fuhr mit zu hoher Geschwindigkeit.",
+    "beispielTr": "Araba aşırı hızla gidiyordu.",
+    "beispielEn": "The car was driving at too high a speed."
+  },
+  {
+    "id": 3007,
+    "tr": "yükümlü",
+    "en": "obliged",
+    "beispiel": "Sie sind verpflichtet, den Unfall sofort zu melden.",
+    "beispielTr": "Kazayı hemen bildirmekle yükümlüsünüz.",
+    "beispielEn": "You are obliged to report the accident immediately."
+  },
+  {
+    "id": 2318,
+    "tr": "masal",
+    "en": "fairy tale",
+    "beispiel": "Meine Großmutter hat uns viele Märchen erzählt.",
+    "beispielTr": "Büyükannem bize çok masal anlatırdı.",
+    "beispielEn": "My grandmother told us many fairy tales."
+  },
+  {
+    "id": 2095,
+    "tr": "tepe",
+    "en": "hill",
+    "beispiel": "Von diesem Hügel sieht man das ganze Dorf.",
+    "beispielTr": "Bu tepeden bütün köy görünüyor.",
+    "beispielEn": "From this hill you can see the whole village."
+  },
+  {
+    "id": 1594,
+    "tr": "şimşek",
+    "en": "lightning",
+    "beispiel": "Der Blitz hat gestern einen Baum getroffen.",
+    "beispielTr": "Dün şimşek bir ağaca çarptı.",
+    "beispielEn": "Lightning struck a tree yesterday."
+  },
+  {
+    "id": 1448,
+    "tr": "dikkatli",
+    "en": "attentive",
+    "beispiel": "Die Schüler hörten dem Vortrag aufmerksam zu.",
+    "beispielTr": "Öğrenciler sunumu dikkatle dinlediler.",
+    "beispielEn": "The students listened attentively to the talk."
+  },
+  {
+    "id": 1978,
+    "tr": "kuşak",
+    "en": "generation",
+    "beispiel": "In diesem Haus leben drei Generationen zusammen.",
+    "beispielTr": "Bu evde üç kuşak bir arada yaşıyor.",
+    "beispielEn": "Three generations live together in this house."
+  },
+  {
+    "id": 1470,
+    "tr": "iletmek",
+    "en": "to pass on",
+    "beispiel": "Soll ich ihm etwas von dir ausrichten?",
+    "beispielTr": "Ona senden bir şey ileteyim mi?",
+    "beispielEn": "Should I pass on a message from you?"
+  },
+  {
+    "id": 1467,
+    "tr": "istisna",
+    "en": "exception",
+    "beispiel": "Für dich mache ich gern eine Ausnahme.",
+    "beispielTr": "Senin için seve seve bir istisna yaparım.",
+    "beispielEn": "For you I will gladly make an exception."
+  },
+  {
+    "id": 2805,
+    "tr": "düşmek",
+    "en": "to fall down",
+    "beispiel": "Meine Oma ist auf der Treppe gestürzt.",
+    "beispielTr": "Babaannem merdivende düştü.",
+    "beispielEn": "My grandma fell down on the stairs."
+  },
+  {
+    "id": 2064,
+    "tr": "meydan okuma",
+    "en": "challenge",
+    "beispiel": "Der neue Job ist eine große Herausforderung.",
+    "beispielTr": "Yeni iş büyük bir meydan okuma.",
+    "beispielEn": "The new job is a big challenge."
+  }
+]

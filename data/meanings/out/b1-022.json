@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2079,
+    "tr": "dikkat çekmek",
+    "en": "to point out",
+    "beispiel": "Ich möchte auf ein Problem hinweisen.",
+    "beispielTr": "Bir soruna dikkat çekmek istiyorum.",
+    "beispielEn": "I would like to point out a problem."
+  },
+  {
+    "id": 2803,
+    "tr": "sesi kapalı",
+    "en": "muted",
+    "beispiel": "Bitte stell dein Handy auf stumm.",
+    "beispielTr": "Lütfen telefonunu sessize al.",
+    "beispielEn": "Please put your phone on mute."
+  },
+  {
+    "id": 1497,
+    "tr": "dikkate almak",
+    "en": "to observe",
+    "beispiel": "Bitte beachten Sie die Öffnungszeiten.",
+    "beispielTr": "Lütfen çalışma saatlerini dikkate alın.",
+    "beispielEn": "Please observe the opening hours."
+  },
+  {
+    "id": 1464,
+    "tr": "harcama",
+    "en": "expense",
+    "beispiel": "Unsere Ausgaben für Lebensmittel sind stark gestiegen.",
+    "beispielTr": "Yiyecek harcamalarımız epeyce arttı.",
+    "beispielEn": "Our food expenses have risen sharply."
+  },
+  {
+    "id": 2243,
+    "tr": "eleştiri",
+    "en": "criticism",
+    "beispiel": "An seinem Vorschlag gab es viel Kritik.",
+    "beispielTr": "Önerisine çok eleştiri geldi.",
+    "beispielEn": "There was a lot of criticism of his proposal."
+  },
+  {
+    "id": 1358,
+    "tr": "bölüm",
+    "en": "section",
+    "beispiel": "Lesen Sie bitte den zweiten Abschnitt.",
+    "beispielTr": "Lütfen ikinci bölümü okuyun.",
+    "beispielEn": "Please read the second section."
+  },
+  {
+    "id": 1995,
+    "tr": "sendika",
+    "en": "labor union",
+    "beispiel": "Die Gewerkschaft vertritt die Interessen der Arbeitnehmer.",
+    "beispielTr": "Sendika, çalışanların çıkarlarını savunuyor.",
+    "beispielEn": "The union represents the interests of the employees."
+  },
+  {
+    "id": 2807,
+    "tr": "bağımlı",
+    "en": "addicted",
+    "beispiel": "Mein Bruder ist süchtig nach Computerspielen.",
+    "beispielTr": "Kardeşim bilgisayar oyunlarına bağımlı.",
+    "beispielEn": "My brother is addicted to computer games."
+  },
+  {
+    "id": 2208,
+    "tr": "çatışma",
+    "en": "conflict",
+    "beispiel": "Der Konflikt zwischen den beiden Ländern dauert an.",
+    "beispielTr": "İki ülke arasındaki çatışma sürüyor.",
+    "beispielEn": "The conflict between the two countries continues."
+  },
+  {
+    "id": 2611,
+    "tr": "şarkıcı",
+    "en": "singer",
+    "beispiel": "Der Sänger hat gestern ein neues Album veröffentlicht.",
+    "beispielTr": "Şarkıcı dün yeni bir albüm çıkardı.",
+    "beispielEn": "The singer released a new album yesterday."
+  },
+  {
+    "id": 1653,
+    "tr": "tatlı",
+    "en": "dessert",
+    "beispiel": "Nach dem Essen gab es noch ein leckeres Dessert.",
+    "beispielTr": "Yemekten sonra nefis bir tatlı da vardı.",
+    "beispielEn": "After dinner there was also a delicious dessert."
+  },
+  {
+    "id": 1646,
+    "tr": "süre",
+    "en": "duration",
+    "beispiel": "Die Dauer der Reise beträgt etwa drei Stunden.",
+    "beispielTr": "Yolculuğun süresi yaklaşık üç saat.",
+    "beispielEn": "The duration of the trip is about three hours."
+  },
+  {
+    "id": 2327,
+    "tr": "tamirci",
+    "en": "mechanic",
+    "beispiel": "Der Mechaniker hat den Motor schnell repariert.",
+    "beispielTr": "Tamirci motoru çabucak onardı.",
+    "beispielEn": "The mechanic repaired the engine quickly."
+  },
+  {
+    "id": 3083,
+    "tr": "çalar saat",
+    "en": "alarm clock",
+    "beispiel": "Mein Wecker klingelt jeden Morgen um sechs.",
+    "beispielTr": "Çalar saatim her sabah altıda çalıyor.",
+    "beispielEn": "My alarm clock rings at six every morning."
+  },
+  {
+    "id": 1966,
+    "tr": "nesne",
+    "en": "object",
+    "beispiel": "Im Museum darf man die Gegenstände nicht anfassen.",
+    "beispielTr": "Müzede nesnelere dokunmak yasak.",
+    "beispielEn": "In the museum you must not touch the objects."
+  },
+  {
+    "id": 2200,
+    "tr": "kadın aşçı",
+    "en": "female cook",
+    "beispiel": "Die Köchin arbeitet seit zehn Jahren in diesem Restaurant.",
+    "beispielTr": "Aşçı on yıldır bu restoranda çalışıyor.",
+    "beispielEn": "The cook has worked in this restaurant for ten years."
+  },
+  {
+    "id": 1980,
+    "tr": "yetmek",
+    "en": "to be enough",
+    "beispiel": "Eine kleine Wohnung genügt mir völlig.",
+    "beispielTr": "Bana küçük bir daire fazlasıyla yetiyor.",
+    "beispielEn": "A small apartment is completely enough for me."
+  },
+  {
+    "id": 2963,
+    "tr": "yasaklamak",
+    "en": "to forbid",
+    "beispiel": "Ich werde meinen Kindern das Rauchen verbieten.",
+    "beispielTr": "Çocuklarıma sigara içmeyi yasaklayacağım.",
+    "beispielEn": "I will forbid my children to smoke."
+  },
+  {
+    "id": 2821,
+    "tr": "mendil",
+    "en": "tissue",
+    "beispiel": "Hast du ein Taschentuch für mich?",
+    "beispielTr": "Bana bir mendil verir misin?",
+    "beispielEn": "Do you have a tissue for me?"
+  },
+  {
+    "id": 2893,
+    "tr": "karşıya geçmek",
+    "en": "to cross",
+    "beispiel": "Wir überqueren die Straße an der Ampel.",
+    "beispielTr": "Caddeyi ışıklardan karşıya geçiyoruz.",
+    "beispielEn": "We cross the street at the traffic light."
+  },
+  {
+    "id": 1584,
+    "tr": "ekran",
+    "en": "screen",
+    "beispiel": "Der Text auf dem Bildschirm ist zu klein.",
+    "beispielTr": "Ekrandaki yazı çok küçük.",
+    "beispielEn": "The text on the screen is too small."
+  },
+  {
+    "id": 2669,
+    "tr": "terlemek",
+    "en": "to sweat",
+    "beispiel": "Beim Sport schwitze ich immer sehr stark.",
+    "beispielTr": "Spor yaparken hep çok terlerim.",
+    "beispielEn": "I always sweat a lot when I exercise."
+  },
+  {
+    "id": 2420,
+    "tr": "düşük",
+    "en": "low",
+    "beispiel": "Die Mieten sind hier erstaunlich niedrig.",
+    "beispielTr": "Buradaki kiralar şaşırtıcı derecede düşük.",
+    "beispielEn": "The rents here are surprisingly low."
+  },
+  {
+    "id": 2186,
+    "tr": "klima",
+    "en": "air conditioner",
+    "beispiel": "Im Hotelzimmer funktionierte die Klimaanlage leider nicht.",
+    "beispielTr": "Otel odasındaki klima ne yazık ki çalışmıyordu.",
+    "beispielEn": "Unfortunately the air conditioner in the hotel room did not work."
+  },
+  {
+    "id": 2697,
+    "tr": "düşmek",
+    "en": "to drop",
+    "beispiel": "Die Preise für Benzin sind deutlich gesunken.",
+    "beispielTr": "Benzin fiyatları belirgin biçimde düştü.",
+    "beispielEn": "Gas prices have dropped noticeably."
+  },
+  {
+    "id": 1907,
+    "tr": "sürdürmek",
+    "en": "to continue",
+    "beispiel": "Wir setzen die Diskussion morgen fort.",
+    "beispielTr": "Tartışmayı yarın sürdüreceğiz.",
+    "beispielEn": "We will continue the discussion tomorrow."
+  },
+  {
+    "id": 1877,
+    "tr": "çakmak",
+    "en": "lighter",
+    "beispiel": "Hast du ein Feuerzeug dabei?",
+    "beispielTr": "Yanında çakmak var mı?",
+    "beispielEn": "Do you have a lighter with you?"
+  },
+  {
+    "id": 2787,
+    "tr": "trafik cezası",
+    "en": "traffic ticket",
+    "beispiel": "Ich habe schon wieder einen Strafzettel bekommen.",
+    "beispielTr": "Yine trafik cezası yedim.",
+    "beispielEn": "I got another traffic ticket."
+  },
+  {
+    "id": 1688,
+    "tr": "susamış",
+    "en": "thirsty",
+    "beispiel": "Nach dem Spiel waren alle Kinder durstig.",
+    "beispielTr": "Maçtan sonra bütün çocuklar susamıştı.",
+    "beispielEn": "After the game all the children were thirsty."
+  },
+  {
+    "id": 2274,
+    "tr": "özgeçmiş",
+    "en": "resume",
+    "beispiel": "Hast du den Lebenslauf für die Bewerbung schon geschrieben?",
+    "beispielTr": "Başvuru için özgeçmişini yazdın mı?",
+    "beispielEn": "Have you already written the resume for the application?"
+  },
+  {
+    "id": 2574,
+    "tr": "nispeten",
+    "en": "relatively",
+    "beispiel": "Die Wohnung ist relativ groß, aber sehr teuer.",
+    "beispielTr": "Daire nispeten büyük ama çok pahalı.",
+    "beispielEn": "The apartment is relatively big but very expensive."
+  },
+  {
+    "id": 2597,
+    "tr": "anlayış",
+    "en": "consideration",
+    "beispiel": "Bitte nehmen Sie Rücksicht auf die Nachbarn.",
+    "beispielTr": "Lütfen komşulara karşı anlayışlı olun.",
+    "beispielEn": "Please be considerate of the neighbors."
+  },
+  {
+    "id": 3103,
+    "tr": "karşı çıkmak",
+    "en": "to contradict",
+    "beispiel": "Niemand hat dem Chef in der Sitzung widersprochen.",
+    "beispielTr": "Toplantıda kimse patrona karşı çıkmadı.",
+    "beispielEn": "Nobody contradicted the boss in the meeting."
+  },
+  {
+    "id": 1411,
+    "tr": "konuşmaya başlamak",
+    "en": "to approach",
+    "beispiel": "Auf der Party hat mich ein Fremder angesprochen.",
+    "beispielTr": "Partide bir yabancı benimle konuşmaya başladı.",
+    "beispielEn": "A stranger approached me at the party."
+  },
+  {
+    "id": 2604,
+    "tr": "krema",
+    "en": "cream",
+    "beispiel": "Ich hätte gern ein Stück Torte mit Sahne.",
+    "beispielTr": "Kremalı bir dilim pasta rica ediyorum.",
+    "beispielEn": "I would like a piece of cake with cream."
+  },
+  {
+    "id": 2391,
+    "tr": "talep",
+    "en": "demand",
+    "beispiel": "Die Nachfrage nach kleinen Wohnungen ist groß.",
+    "beispielTr": "Küçük dairelere talep büyük.",
+    "beispielEn": "The demand for small apartments is high."
+  },
+  {
+    "id": 2414,
+    "tr": "yeni haber",
+    "en": "news",
+    "beispiel": "Hast du schon die Neuigkeiten von Anna gehört?",
+    "beispielTr": "Anna'yla ilgili yeni haberleri duydun mu?",
+    "beispielEn": "Have you heard the news about Anna yet?"
+  },
+  {
+    "id": 2679,
+    "tr": "dönem",
+    "en": "semester",
+    "beispiel": "Im nächsten Semester belege ich zwei neue Kurse.",
+    "beispielTr": "Gelecek dönem iki yeni ders alacağım.",
+    "beispielEn": "Next semester I am taking two new courses."
+  },
+  {
+    "id": 1844,
+    "tr": "feribot",
+    "en": "ferry",
+    "beispiel": "Wir fahren mit der Fähre nach Dänemark.",
+    "beispielTr": "Danimarka'ya feribotla gidiyoruz.",
+    "beispielEn": "We are taking the ferry to Denmark."
+  },
+  {
+    "id": 1910,
+    "tr": "fotoğrafçı",
+    "en": "photographer",
+    "beispiel": "Der Fotograf hat uns bei der Hochzeit begleitet.",
+    "beispielTr": "Fotoğrafçı düğünde bize eşlik etti.",
+    "beispielEn": "The photographer accompanied us at the wedding."
+  },
+  {
+    "id": 2549,
+    "tr": "gerçekçi",
+    "en": "realistic",
+    "beispiel": "Deine Pläne sind leider nicht sehr realistisch.",
+    "beispielTr": "Planların maalesef pek gerçekçi değil.",
+    "beispielEn": "Your plans are unfortunately not very realistic."
+  },
+  {
+    "id": 2162,
+    "tr": "kaset",
+    "en": "cassette",
+    "beispiel": "Früher haben wir Musik auf Kassetten aufgenommen.",
+    "beispielTr": "Eskiden müzikleri kasetlere kaydederdik.",
+    "beispielEn": "We used to record music on cassettes."
+  },
+  {
+    "id": 2152,
+    "tr": "aday",
+    "en": "candidate",
+    "beispiel": "Wie viele Kandidaten kommen zur Prüfung?",
+    "beispielTr": "Sınava kaç aday geliyor?",
+    "beispielEn": "How many candidates are coming to the exam?"
+  },
+  {
+    "id": 2648,
+    "tr": "not almak",
+    "en": "to write down",
+    "beispiel": "Ich habe mir deine Telefonnummer aufgeschrieben.",
+    "beispielTr": "Telefon numaranı not aldım.",
+    "beispielEn": "I wrote down your phone number."
+  },
+  {
+    "id": 2561,
+    "tr": "raf",
+    "en": "shelf",
+    "beispiel": "Das Buch steht im Regal oben rechts.",
+    "beispielTr": "Kitap rafın sağ üstünde duruyor.",
+    "beispielEn": "The book is on the shelf at the top right."
+  },
+  {
+    "id": 1918,
+    "tr": "barış",
+    "en": "peace",
+    "beispiel": "Nach dem Krieg herrschte endlich wieder Frieden.",
+    "beispielTr": "Savaştan sonra sonunda yeniden barış geldi.",
+    "beispielEn": "After the war there was finally peace again."
+  },
+  {
+    "id": 3153,
+    "tr": "faiz",
+    "en": "interest",
+    "beispiel": "Für den Kredit zahlen wir hohe Zinsen.",
+    "beispielTr": "Kredi için yüksek faiz ödüyoruz.",
+    "beispielEn": "We pay high interest on the loan."
+  },
+  {
+    "id": 3177,
+    "tr": "ek olarak",
+    "en": "additionally",
+    "beispiel": "Für das Gepäck müssen Sie zusätzlich zahlen.",
+    "beispielTr": "Bagaj için ek olarak ödeme yapmanız gerekiyor.",
+    "beispielEn": "You have to pay extra for the luggage."
+  },
+  {
+    "id": 2612,
+    "tr": "kadın şarkıcı",
+    "en": "female singer",
+    "beispiel": "Diese Sängerin hat eine wunderschöne Stimme.",
+    "beispielTr": "Bu şarkıcının sesi çok güzel.",
+    "beispielEn": "This singer has a beautiful voice."
+  },
+  {
+    "id": 1643,
+    "tr": "canlandırmak",
+    "en": "to portray",
+    "beispiel": "Der Schauspieler kann diese Rolle sehr gut darstellen.",
+    "beispielTr": "Oyuncu bu rolü çok iyi canlandırabiliyor.",
+    "beispielEn": "The actor can portray this role very well."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1644,
+    "tr": "tasvir",
+    "en": "depiction",
+    "beispiel": "Ihr Buch enthält eine klare Darstellung dieser Probleme.",
+    "beispielTr": "Kitabında bu sorunların açık bir tasviri var.",
+    "beispielEn": "Her book contains a clear depiction of these problems."
+  },
+  {
+    "id": 2739,
+    "tr": "bulaşık yıkamak",
+    "en": "to do the dishes",
+    "beispiel": "Hast du das Geschirr schon gespült?",
+    "beispielTr": "Bulaşıkları yıkadın mı?",
+    "beispielEn": "Have you done the dishes yet?"
+  },
+  {
+    "id": 1923,
+    "tr": "son tarih",
+    "en": "deadline",
+    "beispiel": "Die Frist für die Anmeldung ist leider abgelaufen.",
+    "beispielTr": "Kayıt için son tarih ne yazık ki geçti.",
+    "beispielEn": "The deadline for registration has unfortunately passed."
+  },
+  {
+    "id": 1813,
+    "tr": "beslenme",
+    "en": "nutrition",
+    "beispiel": "Ich achte sehr auf eine gesunde Ernährung.",
+    "beispielTr": "Sağlıklı beslenmeye çok dikkat ediyorum.",
+    "beispielEn": "I pay close attention to healthy nutrition."
+  },
+  {
+    "id": 1617,
+    "tr": "teneke kutu",
+    "en": "tin",
+    "beispiel": "Im Regal steht noch eine Büchse Bohnen.",
+    "beispielTr": "Rafta bir teneke kutu fasulye daha var.",
+    "beispielEn": "There's still a tin of beans on the shelf."
+  },
+  {
+    "id": 3041,
+    "tr": "kartvizit",
+    "en": "business card",
+    "beispiel": "Darf ich Ihnen meine Visitenkarte geben?",
+    "beispielTr": "Size kartvizitimi verebilir miyim?",
+    "beispielEn": "May I give you my business card?"
+  },
+  {
+    "id": 2550,
+    "tr": "araştırma",
+    "en": "research",
+    "beispiel": "Für diesen Bericht war viel Recherche nötig.",
+    "beispielTr": "Bu rapor için çok araştırma gerekti.",
+    "beispielEn": "A lot of research was needed for this report."
+  },
+  {
+    "id": 1405,
+    "tr": "kılavuz",
+    "en": "manual",
+    "beispiel": "In der Anleitung steht, wie man das Gerät anschließt.",
+    "beispielTr": "Kılavuzda cihazın nasıl bağlanacağı yazıyor.",
+    "beispielEn": "The manual explains how to connect the device."
+  },
+  {
+    "id": 2297,
+    "tr": "dudak",
+    "en": "lip",
+    "beispiel": "Bei der Kälte werden meine Lippen ganz trocken.",
+    "beispielTr": "Soğukta dudaklarım kupkuru oluyor.",
+    "beispielEn": "In the cold my lips get really dry."
+  },
+  {
+    "id": 1651,
+    "tr": "anıt",
+    "en": "monument",
+    "beispiel": "In der Stadtmitte steht ein berühmtes Denkmal.",
+    "beispielTr": "Şehir merkezinde ünlü bir anıt var.",
+    "beispielEn": "There's a famous monument in the city center."
+  },
+  {
+    "id": 1716,
+    "tr": "fikir",
+    "en": "idea",
+    "beispiel": "Meine Schwester hat immer gute Einfälle.",
+    "beispielTr": "Kız kardeşimin hep iyi fikirleri olur.",
+    "beispielEn": "My sister always has good ideas."
+  },
+  {
+    "id": 2725,
+    "tr": "uzman",
+    "en": "specialist",
+    "beispiel": "Mein Hausarzt hat mich zu einem Spezialisten geschickt.",
+    "beispielTr": "Aile hekimim beni bir uzmana yönlendirdi.",
+    "beispielEn": "My family doctor sent me to a specialist."
+  },
+  {
+    "id": 1520,
+    "tr": "engellemek",
+    "en": "to obstruct",
+    "beispiel": "Bitte parken Sie so, dass Sie niemanden behindern.",
+    "beispielTr": "Lütfen kimseyi engellemeyecek şekilde park edin.",
+    "beispielEn": "Please park so that you don't obstruct anyone."
+  },
+  {
+    "id": 3138,
+    "tr": "pense",
+    "en": "pliers",
+    "beispiel": "Um das Fahrrad zu reparieren, brauchst du eine Zange.",
+    "beispielTr": "Bisikleti tamir etmek için pense lazım.",
+    "beispielEn": "You need pliers to repair the bike."
+  },
+  {
+    "id": 1773,
+    "tr": "çöpe atmak",
+    "en": "to dispose of",
+    "beispiel": "Wo kann ich meine alte Kaffeemaschine entsorgen?",
+    "beispielTr": "Eski kahve makinemi nereye atabilirim?",
+    "beispielEn": "Where can I dispose of my old coffee machine?"
+  },
+  {
+    "id": 2714,
+    "tr": "hediyelik eşya",
+    "en": "souvenir",
+    "beispiel": "Ich habe ein Souvenir aus Wien mitgebracht.",
+    "beispielTr": "Viyana'dan bir hediyelik eşya getirdim.",
+    "beispielEn": "I brought a souvenir back from Vienna."
+  },
+  {
+    "id": 1799,
+    "tr": "dinlenme",
+    "en": "rest",
+    "beispiel": "Nach dem Stress brauche ich dringend etwas Erholung.",
+    "beispielTr": "Bu stresten sonra acilen biraz dinlenmeye ihtiyacım var.",
+    "beispielEn": "After all this stress I badly need some rest."
+  },
+  {
+    "id": 1442,
+    "tr": "sahnelemek",
+    "en": "to perform",
+    "beispiel": "Die Kinder führen zu Weihnachten ein Theaterstück auf.",
+    "beispielTr": "Çocuklar Noel'de bir tiyatro oyunu sahneliyor.",
+    "beispielEn": "The children are performing a play at Christmas."
+  },
+  {
+    "id": 3111,
+    "tr": "el sallamak",
+    "en": "to wave",
+    "beispiel": "Sie stand am Fenster und winkte zum Abschied.",
+    "beispielTr": "Pencerede durup veda için el salladı.",
+    "beispielEn": "She stood at the window and waved goodbye."
+  },
+  {
+    "id": 1673,
+    "tr": "gök gürlemek",
+    "en": "to thunder",
+    "beispiel": "Hörst du, wie es draußen donnert?",
+    "beispielTr": "Dışarıda gök gürlediğini duyuyor musun?",
+    "beispielEn": "Do you hear it thundering outside?"
+  },
+  {
+    "id": 2104,
+    "tr": "atıştırmalık",
+    "en": "snack",
+    "beispiel": "Es ist Zeit für einen kleinen Imbiss.",
+    "beispielTr": "Küçük bir atıştırmalık vakti geldi.",
+    "beispielEn": "It's time for a small snack."
+  },
+  {
+    "id": 1870,
+    "tr": "belirlemek",
+    "en": "to set",
+    "beispiel": "Habt ihr den Termin für die Hochzeit schon festgelegt?",
+    "beispielTr": "Düğün tarihini belirlediniz mi?",
+    "beispielEn": "Have you already set the date for the wedding?"
+  },
+  {
+    "id": 2249,
+    "tr": "yapay",
+    "en": "artificial",
+    "beispiel": "Bei künstlichem Licht kann ich schlecht lesen.",
+    "beispielTr": "Yapay ışıkta iyi okuyamıyorum.",
+    "beispielEn": "I can't read well in artificial light."
+  },
+  {
+    "id": 1462,
+    "tr": "otoyol çıkışı",
+    "en": "highway exit",
+    "beispiel": "Wir müssen an der nächsten Ausfahrt raus.",
+    "beispielTr": "Bir sonraki çıkıştan çıkmamız gerekiyor.",
+    "beispielEn": "We have to get off at the next exit."
+  },
+  {
+    "id": 2396,
+    "tr": "dezavantaj",
+    "en": "disadvantage",
+    "beispiel": "Der einzige Nachteil ist die schlechte Verkehrsanbindung.",
+    "beispielTr": "Tek dezavantajı ulaşımın kötü olması.",
+    "beispielEn": "The only disadvantage is the poor transport connection."
+  },
+  {
+    "id": 2119,
+    "tr": "kurmak",
+    "en": "to install",
+    "beispiel": "Ich muss das Programm noch auf dem Laptop installieren.",
+    "beispielTr": "Programı dizüstü bilgisayara kurmam gerekiyor.",
+    "beispielEn": "I still have to install the program on the laptop."
+  },
+  {
+    "id": 2524,
+    "tr": "protesto etmek",
+    "en": "to protest",
+    "beispiel": "Viele Menschen protestierten gegen den Bau der Autobahn.",
+    "beispielTr": "Birçok insan otoyol inşaatını protesto etti.",
+    "beispielEn": "Many people protested against the construction of the highway."
+  },
+  {
+    "id": 2765,
+    "tr": "damga",
+    "en": "stamp",
+    "beispiel": "Der Stempel im Pass ist kaum zu lesen.",
+    "beispielTr": "Pasaporttaki damga zor okunuyor.",
+    "beispielEn": "The stamp in the passport is hard to read."
+  },
+  {
+    "id": 2964,
+    "tr": "yasak",
+    "en": "ban",
+    "beispiel": "Das Verbot gilt seit dem ersten Januar.",
+    "beispielTr": "Yasak 1 Ocak'tan beri geçerli.",
+    "beispielEn": "The ban has been in force since January first."
+  },
+  {
+    "id": 1618,
+    "tr": "açık büfe",
+    "en": "buffet",
+    "beispiel": "Im Hotel gibt es jeden Morgen ein Buffet.",
+    "beispielTr": "Otelde her sabah açık büfe var.",
+    "beispielEn": "The hotel has a buffet every morning."
+  },
+  {
+    "id": 2158,
+    "tr": "karnaval",
+    "en": "carnival",
+    "beispiel": "Im Februar feiern wir in Köln Karneval.",
+    "beispielTr": "Şubatta Köln'de karnaval kutluyoruz.",
+    "beispielEn": "In February we celebrate carnival in Cologne."
+  },
+  {
+    "id": 1398,
+    "tr": "yakın akraba",
+    "en": "relative",
+    "beispiel": "Ein Angehöriger des Patienten wartet draußen.",
+    "beispielTr": "Hastanın yakın bir akrabası dışarıda bekliyor.",
+    "beispielEn": "A relative of the patient is waiting outside."
+  },
+  {
+    "id": 1399,
+    "tr": "kadın akraba",
+    "en": "female relative",
+    "beispiel": "Die Angehörige des Verletzten wurde sofort benachrichtigt.",
+    "beispielTr": "Yaralının kadın akrabası hemen haberdar edildi.",
+    "beispielEn": "The injured man's female relative was notified immediately."
+  },
+  {
+    "id": 2456,
+    "tr": "düzenlemek",
+    "en": "to organize",
+    "beispiel": "Am Wochenende habe ich meine Papiere geordnet.",
+    "beispielTr": "Hafta sonu evraklarımı düzenledim.",
+    "beispielEn": "I organized my papers over the weekend."
+  },
+  {
+    "id": 1792,
+    "tr": "gerektirmek",
+    "en": "to require",
+    "beispiel": "Diese Arbeit erfordert viel Geduld und Konzentration.",
+    "beispielTr": "Bu iş çok sabır ve dikkat gerektiriyor.",
+    "beispielEn": "This job requires a lot of patience and concentration."
+  },
+  {
+    "id": 3042,
+    "tr": "vize",
+    "en": "visa",
+    "beispiel": "Mein Visum gilt nur noch drei Monate.",
+    "beispielTr": "Vizem sadece üç ay daha geçerli.",
+    "beispielEn": "My visa is only valid for three more months."
+  },
+  {
+    "id": 2987,
+    "tr": "yayınevi",
+    "en": "publisher",
+    "beispiel": "In welchem Verlag ist das Buch erschienen?",
+    "beispielTr": "Kitap hangi yayınevinden çıktı?",
+    "beispielEn": "Which publisher published this book?"
+  },
+  {
+    "id": 1944,
+    "tr": "lokanta",
+    "en": "inn",
+    "beispiel": "Im Dorf gibt es ein gemütliches Gasthaus.",
+    "beispielTr": "Köyde şirin bir lokanta var.",
+    "beispielEn": "There's a cozy inn in the village."
+  },
+  {
+    "id": 1566,
+    "tr": "bakıcı",
+    "en": "caregiver",
+    "beispiel": "Der Betreuer der Kinder ist sehr nett.",
+    "beispielTr": "Çocukların bakıcısı çok iyi biri.",
+    "beispielEn": "The children's caregiver is very nice."
+  },
+  {
+    "id": 3105,
+    "tr": "tekrar",
+    "en": "repetition",
+    "beispiel": "Durch ständige Wiederholung lernt man neue Wörter.",
+    "beispielTr": "Sürekli tekrarla yeni kelimeler öğrenilir.",
+    "beispielEn": "You learn new words through constant repetition."
+  },
+  {
+    "id": 2087,
+    "tr": "çiftlik",
+    "en": "farm",
+    "beispiel": "Meine Großeltern hatten früher einen Bauernhof.",
+    "beispielTr": "Dedemlerin eskiden bir çiftliği vardı.",
+    "beispielEn": "My grandparents used to have a farm."
+  },
+  {
+    "id": 2300,
+    "tr": "övmek",
+    "en": "to praise",
+    "beispiel": "Der Lehrer lobte mich vor der ganzen Klasse.",
+    "beispielTr": "Öğretmen beni bütün sınıfın önünde övdü.",
+    "beispielEn": "The teacher praised me in front of the whole class."
+  },
+  {
+    "id": 2553,
+    "tr": "hukuki",
+    "en": "legal",
+    "beispiel": "In rechtlichen Fragen beraten wir Sie gern.",
+    "beispielTr": "Hukuki konularda size seve seve danışmanlık yaparız.",
+    "beispielEn": "We're happy to advise you on legal matters."
+  },
+  {
+    "id": 2379,
+    "tr": "çöp konteyneri",
+    "en": "garbage can",
+    "beispiel": "Die Mülltonne wird jeden Donnerstag geleert.",
+    "beispielTr": "Çöp konteyneri her perşembe boşaltılıyor.",
+    "beispielEn": "The garbage can is emptied every Thursday."
+  },
+  {
+    "id": 1394,
+    "tr": "tanımak",
+    "en": "to recognize",
+    "beispiel": "Meine Ausbildung wird in Deutschland nicht anerkannt.",
+    "beispielTr": "Aldığım eğitim Almanya'da tanınmıyor.",
+    "beispielEn": "My training isn't recognized in Germany."
+  },
+  {
+    "id": 1947,
+    "tr": "hamur işi",
+    "en": "pastry",
+    "beispiel": "Zum Kaffee gab es frisches Gebäck.",
+    "beispielTr": "Kahvenin yanında taze hamur işi vardı.",
+    "beispielEn": "There was fresh pastry with the coffee."
+  },
+  {
+    "id": 1665,
+    "tr": "diploma",
+    "en": "diploma",
+    "beispiel": "Wo kann ich mein Diplom abholen?",
+    "beispielTr": "Diplomamı nereden alabilirim?",
+    "beispielEn": "Where can I pick up my diploma?"
+  },
+  {
+    "id": 1720,
+    "tr": "uygulamaya koymak",
+    "en": "to introduce",
+    "beispiel": "Die Firma hat letztes Jahr ein neues System eingeführt.",
+    "beispielTr": "Şirket geçen yıl yeni bir sistemi uygulamaya koydu.",
+    "beispielEn": "The company introduced a new system last year."
+  },
+  {
+    "id": 1484,
+    "tr": "kadın yazar",
+    "en": "female author",
+    "beispiel": "Die Autorin liest heute Abend aus ihrem neuen Roman.",
+    "beispielTr": "Kadın yazar bu akşam yeni romanından okuyacak.",
+    "beispielEn": "The author is reading from her new novel tonight."
+  },
+  {
+    "id": 2164,
+    "tr": "katalog",
+    "en": "catalog",
+    "beispiel": "Ich habe mir aus dem Katalog eine Hose bestellt.",
+    "beispielTr": "Katalogdan kendime bir pantolon sipariş ettim.",
+    "beispielEn": "I ordered a pair of pants from the catalog."
+  }
+]

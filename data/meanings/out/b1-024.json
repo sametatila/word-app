@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1818,
+  "tr": "açılış",
+  "en": "opening",
+  "beispiel": "Die Eröffnung des neuen Museums war ein großes Fest.",
+  "beispielTr": "Yeni müzenin açılışı büyük bir şölendi.",
+  "beispielEn": "The opening of the new museum was a big celebration."
+ },
+ {
+  "id": 2021,
+  "tr": "mangal",
+  "en": "grill",
+  "beispiel": "Am Wochenende stellen wir den Grill in den Garten.",
+  "beispielTr": "Hafta sonu mangalı bahçeye kuracağız.",
+  "beispielEn": "This weekend we're putting the grill in the garden."
+ },
+ {
+  "id": 2742,
+  "tr": "stadyum",
+  "en": "stadium",
+  "beispiel": "Am Samstag gehen wir ins Stadion, weil unsere Mannschaft spielt.",
+  "beispielTr": "Cumartesi stadyuma gidiyoruz çünkü takımımız oynuyor.",
+  "beispielEn": "On Saturday we're going to the stadium because our team is playing."
+ },
+ {
+  "id": 2791,
+  "tr": "grev",
+  "en": "strike",
+  "beispiel": "Wegen des Streiks fielen gestern alle Flüge aus.",
+  "beispielTr": "Grev yüzünden dün bütün uçuşlar iptal oldu.",
+  "beispielEn": "All flights were canceled yesterday because of the strike."
+ },
+ {
+  "id": 2247,
+  "tr": "işten çıkarma",
+  "en": "termination",
+  "beispiel": "Nach zehn Jahren bekam er plötzlich die Kündigung.",
+  "beispielTr": "On yıl sonra birdenbire işten çıkarıldı.",
+  "beispielEn": "After ten years he suddenly got his termination notice."
+ },
+ {
+  "id": 1396,
+  "tr": "belirtmek",
+  "en": "to state",
+  "beispiel": "Bitte geben Sie Ihre genaue Adresse an.",
+  "beispielTr": "Lütfen tam adresinizi belirtin.",
+  "beispielEn": "Please state your exact address."
+ },
+ {
+  "id": 2514,
+  "tr": "sunum",
+  "en": "presentation",
+  "beispiel": "Für ihre Präsentation hat sie eine gute Note bekommen.",
+  "beispielTr": "Sunumundan iyi bir not aldı.",
+  "beispielEn": "She got a good grade for her presentation."
+ },
+ {
+  "id": 3001,
+  "tr": "aracılık",
+  "en": "mediation",
+  "beispiel": "Der Streit wurde durch die Vermittlung eines Kollegen beendet.",
+  "beispielTr": "Tartışma bir meslektaşın aracılığıyla sona erdi.",
+  "beispielEn": "The dispute was ended through a colleague's mediation."
+ },
+ {
+  "id": 1624,
+  "tr": "diş fırçası",
+  "en": "toothbrush",
+  "beispiel": "Ich brauche eine neue Zahnbürste.",
+  "beispielTr": "Yeni bir diş fırçasına ihtiyacım var.",
+  "beispielEn": "I need a new toothbrush."
+ },
+ {
+  "id": 3185,
+  "tr": "güvenilir",
+  "en": "reliable",
+  "beispiel": "Unser neuer Mitarbeiter ist fleißig und sehr zuverlässig.",
+  "beispielTr": "Yeni çalışanımız çalışkan ve çok güvenilir.",
+  "beispielEn": "Our new employee is hardworking and very reliable."
+ },
+ {
+  "id": 3069,
+  "tr": "suçlama",
+  "en": "accusation",
+  "beispiel": "Sie machte ihm heftige Vorwürfe wegen des Unfalls.",
+  "beispielTr": "Kaza yüzünden ona ağır suçlamalar yöneltti.",
+  "beispielEn": "She made harsh accusations against him over the accident."
+ },
+ {
+  "id": 2060,
+  "tr": "kadın kahraman",
+  "en": "heroine",
+  "beispiel": "Im Film ist eine junge Ärztin die Heldin.",
+  "beispielTr": "Filmin kahramanı genç bir kadın doktor.",
+  "beispielEn": "In the film a young doctor is the heroine."
+ },
+ {
+  "id": 2839,
+  "tr": "katılımcı",
+  "en": "participant",
+  "beispiel": "Die Teilnehmer des Kurses kommen aus verschiedenen Ländern.",
+  "beispielTr": "Kursun katılımcıları farklı ülkelerden geliyor.",
+  "beispielEn": "The participants in the course come from different countries."
+ },
+ {
+  "id": 2267,
+  "tr": "can sıkıntısı",
+  "en": "boredom",
+  "beispiel": "Aus Langeweile habe ich den ganzen Nachmittag ferngesehen.",
+  "beispielTr": "Can sıkıntısından bütün öğleden sonra televizyon izledim.",
+  "beispielEn": "Out of boredom I watched TV the whole afternoon."
+ },
+ {
+  "id": 1473,
+  "tr": "yalnızca",
+  "en": "exclusively",
+  "beispiel": "Dieser Parkplatz ist ausschließlich für Kunden reserviert.",
+  "beispielTr": "Bu otopark yalnızca müşterilere ayrılmıştır.",
+  "beispielEn": "This parking lot is reserved exclusively for customers."
+ },
+ {
+  "id": 2849,
+  "tr": "evcil hayvan",
+  "en": "pet",
+  "beispiel": "In unserer Wohnung sind Haustiere leider nicht erlaubt.",
+  "beispielTr": "Dairemizde ne yazık ki evcil hayvan yasak.",
+  "beispielEn": "Unfortunately pets are not allowed in our apartment."
+ },
+ {
+  "id": 1866,
+  "tr": "uzaktan kumanda",
+  "en": "remote control",
+  "beispiel": "Hast du die Fernbedienung für den Fernseher gesehen?",
+  "beispielTr": "Televizyonun uzaktan kumandasını gördün mü?",
+  "beispielEn": "Have you seen the remote control for the TV?"
+ },
+ {
+  "id": 2844,
+  "tr": "teras",
+  "en": "terrace",
+  "beispiel": "Bei gutem Wetter frühstücken wir auf der Terrasse.",
+  "beispielTr": "Hava güzel olunca terasta kahvaltı yaparız.",
+  "beispielEn": "When the weather is nice we have breakfast on the terrace."
+ },
+ {
+  "id": 2672,
+  "tr": "sekreter",
+  "en": "secretary",
+  "beispiel": "Der neue Sekretär hat sich gestern vorgestellt.",
+  "beispielTr": "Yeni sekreter dün kendini tanıttı.",
+  "beispielEn": "The new secretary introduced himself yesterday."
+ },
+ {
+  "id": 3085,
+  "tr": "reddetmek",
+  "en": "to refuse",
+  "beispiel": "Er weigerte sich, die Papiere zu unterschreiben.",
+  "beispielTr": "Belgeleri imzalamayı reddetti.",
+  "beispielEn": "He refused to sign the papers."
+ },
+ {
+  "id": 1564,
+  "tr": "tutar",
+  "en": "amount",
+  "beispiel": "Bitte überweisen Sie den Betrag auf unser Konto.",
+  "beispielTr": "Lütfen tutarı hesabımıza havale edin.",
+  "beispielEn": "Please transfer the amount to our account."
+ },
+ {
+  "id": 1439,
+  "tr": "dikkat çekmek",
+  "en": "to stand out",
+  "beispiel": "Der neue Kollege fällt durch seine Kleidung auf.",
+  "beispielTr": "Yeni iş arkadaşı kıyafetiyle dikkat çekiyor.",
+  "beispielEn": "The new colleague stands out because of his clothes."
+ },
+ {
+  "id": 1559,
+  "tr": "iyileşme",
+  "en": "recovery",
+  "beispiel": "Ich wünsche dir eine schnelle Besserung!",
+  "beispielTr": "Sana çabuk bir iyileşme diliyorum!",
+  "beispielEn": "I wish you a quick recovery!"
+ },
+ {
+  "id": 1608,
+  "tr": "posta kutusu",
+  "en": "mailbox",
+  "beispiel": "Hol bitte die Zeitung aus dem Briefkasten.",
+  "beispielTr": "Lütfen gazeteyi posta kutusundan al.",
+  "beispielEn": "Please get the newspaper from the mailbox."
+ },
+ {
+  "id": 2050,
+  "tr": "ev hanımı",
+  "en": "homemaker",
+  "beispiel": "Seit der Geburt des Kindes ist sie Hausfrau.",
+  "beispielTr": "Çocuk doğduğundan beri ev hanımı.",
+  "beispielEn": "She has been a homemaker since the child was born."
+ },
+ {
+  "id": 2647,
+  "tr": "korku",
+  "en": "fright",
+  "beispiel": "Ich habe einen großen Schreck bekommen.",
+  "beispielTr": "Çok büyük bir korku yaşadım.",
+  "beispielEn": "I got a really big fright."
+ },
+ {
+  "id": 2951,
+  "tr": "vazo",
+  "en": "vase",
+  "beispiel": "Hast du eine Vase für die Blumen?",
+  "beispielTr": "Çiçekler için vazon var mı?",
+  "beispielEn": "Do you have a vase for the flowers?"
+ },
+ {
+  "id": 2140,
+  "tr": "her biri",
+  "en": "each",
+  "beispiel": "Die drei Zimmer kosten jeweils vierhundert Euro.",
+  "beispielTr": "Üç odanın her biri dört yüz euro.",
+  "beispielEn": "The three rooms cost four hundred euros each."
+ },
+ {
+  "id": 1708,
+  "tr": "zorla girmek",
+  "en": "to break in",
+  "beispiel": "Gestern Nacht ist jemand in unsere Wohnung eingebrochen.",
+  "beispielTr": "Dün gece birisi dairemize zorla girdi.",
+  "beispielEn": "Someone broke into our apartment last night."
+ },
+ {
+  "id": 2333,
+  "tr": "çoğunluk",
+  "en": "majority",
+  "beispiel": "Die Mehrheit der Studenten wohnt noch bei den Eltern.",
+  "beispielTr": "Öğrencilerin çoğunluğu hâlâ ailesiyle yaşıyor.",
+  "beispielEn": "The majority of students still live with their parents."
+ },
+ {
+  "id": 3066,
+  "tr": "iş görüşmesi",
+  "en": "job interview",
+  "beispiel": "Morgen habe ich ein Vorstellungsgespräch bei einer Bank.",
+  "beispielTr": "Yarın bir bankada iş görüşmem var.",
+  "beispielEn": "Tomorrow I have a job interview at a bank."
+ },
+ {
+  "id": 1419,
+  "tr": "uygulamak",
+  "en": "to apply",
+  "beispiel": "Diese Salbe muss man dreimal täglich anwenden.",
+  "beispielTr": "Bu merhemi günde üç kez uygulamak gerekiyor.",
+  "beispielEn": "You have to apply this ointment three times a day."
+ },
+ {
+  "id": 2778,
+  "tr": "pis kokmak",
+  "en": "to stink",
+  "beispiel": "Der Müll in der Küche stinkt furchtbar.",
+  "beispielTr": "Mutfaktaki çöp berbat kokuyor.",
+  "beispielEn": "The garbage in the kitchen stinks terribly."
+ },
+ {
+  "id": 2940,
+  "tr": "farklı",
+  "en": "different",
+  "beispiel": "Die Preise sind in den Geschäften sehr unterschiedlich.",
+  "beispielTr": "Fiyatlar mağazadan mağazaya çok farklı.",
+  "beispielEn": "Prices are very different from store to store."
+ },
+ {
+  "id": 2468,
+  "tr": "yolcu",
+  "en": "passenger",
+  "beispiel": "Die Passagiere müssen jetzt zum Flugsteig gehen.",
+  "beispielTr": "Yolcuların şimdi uçuş kapısına gitmesi gerekiyor.",
+  "beispielEn": "The passengers have to go to the gate now."
+ },
+ {
+  "id": 2349,
+  "tr": "kiracı",
+  "en": "tenant",
+  "beispiel": "Der neue Mieter zieht am Montag ein.",
+  "beispielTr": "Yeni kiracı pazartesi taşınıyor.",
+  "beispielEn": "The new tenant is moving in on Monday."
+ },
+ {
+  "id": 1379,
+  "tr": "genel",
+  "en": "general",
+  "beispiel": "Wir haben nur über allgemeine Probleme gesprochen.",
+  "beispielTr": "Sadece genel sorunlar hakkında konuştuk.",
+  "beispielEn": "We only talked about general problems."
+ },
+ {
+  "id": 2016,
+  "tr": "tebrik",
+  "en": "congratulations",
+  "beispiel": "Herzliche Gratulation zu deinem neuen Job!",
+  "beispielTr": "Yeni işin için yürekten tebrikler!",
+  "beispielEn": "Warm congratulations on your new job!"
+ },
+ {
+  "id": 1982,
+  "tr": "düşük",
+  "en": "low",
+  "beispiel": "Die Chancen auf einen Sieg sind leider gering.",
+  "beispielTr": "Kazanma şansı ne yazık ki düşük.",
+  "beispielEn": "Unfortunately the chances of winning are low."
+ },
+ {
+  "id": 2235,
+  "tr": "yaratıcı",
+  "en": "creative",
+  "beispiel": "Wir brauchen eine kreative Lösung für dieses Problem.",
+  "beispielTr": "Bu sorun için yaratıcı bir çözüme ihtiyacımız var.",
+  "beispielEn": "We need a creative solution for this problem."
+ },
+ {
+  "id": 1433,
+  "tr": "can sıkıcı",
+  "en": "annoying",
+  "beispiel": "Der Zug hat schon wieder Verspätung, das ist ärgerlich.",
+  "beispielTr": "Tren yine rötar yaptı, bu çok can sıkıcı.",
+  "beispielEn": "The train is late again, that's annoying."
+ },
+ {
+  "id": 1791,
+  "tr": "gerekli",
+  "en": "required",
+  "beispiel": "Für diesen Job ist ein Führerschein erforderlich.",
+  "beispielTr": "Bu iş için ehliyet gerekli.",
+  "beispielEn": "A driver's license is required for this job."
+ },
+ {
+  "id": 2722,
+  "tr": "en geç",
+  "en": "at the latest",
+  "beispiel": "Ich muss spätestens um neun Uhr im Büro sein.",
+  "beispielTr": "En geç dokuzda ofiste olmam gerekiyor.",
+  "beispielEn": "I have to be at the office by nine at the latest."
+ },
+ {
+  "id": 2490,
+  "tr": "yara bandı",
+  "en": "bandage",
+  "beispiel": "Ich brauche ein Pflaster für meinen Finger.",
+  "beispielTr": "Parmağım için bir yara bandına ihtiyacım var.",
+  "beispielEn": "I need a bandage for my finger."
+ },
+ {
+  "id": 2621,
+  "tr": "izlemek",
+  "en": "to watch",
+  "beispiel": "Möchtest du beim Fußballspiel zuschauen?",
+  "beispielTr": "Futbol maçını izlemek ister misin?",
+  "beispielEn": "Would you like to watch the soccer game?"
+ },
+ {
+  "id": 1362,
+  "tr": "oy vermek",
+  "en": "to vote",
+  "beispiel": "Morgen stimmen wir über den neuen Vorschlag ab.",
+  "beispielTr": "Yarın yeni öneri hakkında oy vereceğiz.",
+  "beispielEn": "Tomorrow we'll vote on the new proposal."
+ },
+ {
+  "id": 2331,
+  "tr": "un",
+  "en": "flour",
+  "beispiel": "Für den Kuchen brauchen wir noch Mehl.",
+  "beispielTr": "Kek için biraz daha una ihtiyacımız var.",
+  "beispielEn": "We still need flour for the cake."
+ },
+ {
+  "id": 1393,
+  "tr": "değişiklik",
+  "en": "change",
+  "beispiel": "Im Vertrag müssen wir eine kleine Änderung machen.",
+  "beispielTr": "Sözleşmede küçük bir değişiklik yapmamız gerekiyor.",
+  "beispielEn": "We have to make a small change to the contract."
+ },
+ {
+  "id": 1725,
+  "tr": "gelir",
+  "en": "income",
+  "beispiel": "Mit meinem Einkommen kann ich gut leben.",
+  "beispielTr": "Gelirimle rahat rahat geçinebiliyorum.",
+  "beispielEn": "I can live well on my income."
+ },
+ {
+  "id": 1416,
+  "tr": "çabalamak",
+  "en": "to make an effort",
+  "beispiel": "Für diese Prüfung musst du dich mehr anstrengen.",
+  "beispielTr": "Bu sınav için daha çok çabalaman gerekiyor.",
+  "beispielEn": "You have to make more of an effort for this exam."
+ }
+]

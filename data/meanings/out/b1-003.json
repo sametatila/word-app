@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2620,
+    "tr": "bakmak",
+    "en": "to look",
+    "beispiel": "Schau mal, da vorne ist noch ein Platz frei.",
+    "beispielTr": "Baksana, şu ilerde bir yer daha boş.",
+    "beispielEn": "Look, there's still a free seat up front."
+  },
+  {
+    "id": 1985,
+    "tr": "olmak",
+    "en": "to happen",
+    "beispiel": "Niemand weiß genau, was in jener Nacht geschehen ist.",
+    "beispielTr": "O gece tam olarak ne olduğunu kimse bilmiyor.",
+    "beispielEn": "Nobody knows exactly what happened that night."
+  },
+  {
+    "id": 3034,
+    "tr": "affedersiniz",
+    "en": "excuse me",
+    "beispiel": "Verzeihung, ich habe die falsche Nummer gewählt.",
+    "beispielTr": "Affedersiniz, yanlış numarayı aradım.",
+    "beispielEn": "Excuse me, I dialed the wrong number."
+  },
+  {
+    "id": 2481,
+    "tr": "mükemmel",
+    "en": "perfect",
+    "beispiel": "Die Reiseorganisation war perfekt.",
+    "beispielTr": "Gezinin organizasyonu mükemmeldi.",
+    "beispielEn": "The organization of the trip was perfect."
+  },
+  {
+    "id": 2429,
+    "tr": "gerekli",
+    "en": "necessary",
+    "beispiel": "Wenn es nötig ist, rufe ich dich sofort an.",
+    "beispielTr": "Gerekirse seni hemen ararım.",
+    "beispielEn": "If it's necessary, I'll call you right away."
+  },
+  {
+    "id": 2828,
+    "tr": "gerçekten",
+    "en": "actually",
+    "beispiel": "Die Hose ist tatsächlich zu klein, obwohl sie so groß aussieht.",
+    "beispielTr": "Pantolon büyük görünse de gerçekten çok küçük.",
+    "beispielEn": "The pants are actually too small, although they look so big."
+  },
+  {
+    "id": 1896,
+    "tr": "takip etmek",
+    "en": "to follow",
+    "beispiel": "Folgen Sie bitte der Reiseleiterin zum Bus.",
+    "beispielTr": "Lütfen tur rehberini otobüse kadar takip edin.",
+    "beispielEn": "Please follow the tour guide to the bus."
+  },
+  {
+    "id": 1517,
+    "tr": "saklamak",
+    "en": "to keep",
+    "beispiel": "Darf ich die Zeitschrift behalten?",
+    "beispielTr": "Dergi bende kalabilir mi?",
+    "beispielEn": "May I keep the magazine?"
+  },
+  {
+    "id": 2139,
+    "tr": "hiç",
+    "en": "ever",
+    "beispiel": "Hast du jemals von diesem Problem gehört?",
+    "beispielTr": "Bu sorunu hiç duydun mu?",
+    "beispielEn": "Have you ever heard of this problem?"
+  },
+  {
+    "id": 2337,
+    "tr": "usta",
+    "en": "master",
+    "beispiel": "Wenn du nicht weiterkommst, frag doch den Meister.",
+    "beispielTr": "Bir yerde takılırsan ustaya sorsana.",
+    "beispielEn": "If you get stuck, just ask the master."
+  },
+  {
+    "id": 2150,
+    "tr": "mücadele",
+    "en": "fight",
+    "beispiel": "Im Schulbus gibt es immer einen Kampf um die Sitzplätze.",
+    "beispielTr": "Okul servisinde koltuklar için hep bir mücadele olur.",
+    "beispielEn": "On the school bus there's always a fight over the seats."
+  },
+  {
+    "id": 2438,
+    "tr": "rağmen",
+    "en": "although",
+    "beispiel": "Obwohl meine Kollegin krank ist, geht sie arbeiten.",
+    "beispielTr": "İş arkadaşım hasta olmasına rağmen işe gidiyor.",
+    "beispielEn": "Although my colleague is sick, she goes to work."
+  },
+  {
+    "id": 2945,
+    "tr": "yolda",
+    "en": "on the way",
+    "beispiel": "Warte kurz auf mich, ich bin schon unterwegs.",
+    "beispielTr": "Biraz bekle beni, çoktan yoldayım.",
+    "beispielEn": "Wait for me a moment, I'm already on my way."
+  },
+  {
+    "id": 1432,
+    "tr": "sıkıntı",
+    "en": "trouble",
+    "beispiel": "Heute hatte ich Ärger mit meinem Chef.",
+    "beispielTr": "Bugün patronumla sıkıntı yaşadım.",
+    "beispielEn": "Today I had trouble with my boss."
+  },
+  {
+    "id": 1637,
+    "tr": "buna karşı",
+    "en": "against it",
+    "beispiel": "Alle waren dafür, aber ich war dagegen.",
+    "beispielTr": "Herkes bunu destekledi ama ben buna karşıydım.",
+    "beispielEn": "Everyone was in favor, but I was against it."
+  },
+  {
+    "id": 1769,
+    "tr": "karar",
+    "en": "decision",
+    "beispiel": "Diese wichtige Entscheidung möchte ich zuerst mit meinem Mann besprechen.",
+    "beispielTr": "Bu önemli kararı önce eşimle konuşmak istiyorum.",
+    "beispielEn": "I'd like to discuss this important decision with my husband first."
+  },
+  {
+    "id": 2564,
+    "tr": "düzenlemek",
+    "en": "to regulate",
+    "beispiel": "Weil die Ampel kaputt ist, regelt ein Polizist den Verkehr.",
+    "beispielTr": "Trafik lambası bozuk olduğu için trafiği bir polis düzenliyor.",
+    "beispielEn": "Since the traffic light is broken, a police officer regulates the traffic."
+  },
+  {
+    "id": 1853,
+    "tr": "yakalamak",
+    "en": "to catch",
+    "beispiel": "Unsere Katze hat schon wieder eine Maus gefangen.",
+    "beispielTr": "Kedimiz yine bir fare yakaladı.",
+    "beispielEn": "Our cat has caught a mouse again."
+  },
+  {
+    "id": 2745,
+    "tr": "sürekli",
+    "en": "constantly",
+    "beispiel": "Mein Nachbar beschwert sich ständig über den Lärm.",
+    "beispielTr": "Komşum sürekli gürültüden şikâyet ediyor.",
+    "beispielEn": "My neighbor constantly complains about the noise."
+  },
+  {
+    "id": 1959,
+    "tr": "tehlike",
+    "en": "danger",
+    "beispiel": "Im Gebirge kann Nebel eine große Gefahr sein.",
+    "beispielTr": "Dağlarda sis büyük bir tehlike olabilir.",
+    "beispielEn": "In the mountains, fog can be a great danger."
+  },
+  {
+    "id": 1361,
+    "tr": "kesinlikle",
+    "en": "absolutely",
+    "beispiel": "Was Sie da sagen, ist absolut falsch.",
+    "beispielTr": "Söyledikleriniz kesinlikle yanlış.",
+    "beispielEn": "What you're saying is absolutely wrong."
+  },
+  {
+    "id": 1457,
+    "tr": "an",
+    "en": "moment",
+    "beispiel": "In dem Augenblick klingelte plötzlich mein Handy.",
+    "beispielTr": "Tam o anda telefonum birden çaldı.",
+    "beispielEn": "At that moment my phone suddenly rang."
+  },
+  {
+    "id": 1576,
+    "tr": "hareket",
+    "en": "movement",
+    "beispiel": "Bei jeder Bewegung tut mir die Schulter weh.",
+    "beispielTr": "Her harekette omzum ağrıyor.",
+    "beispielEn": "My shoulder hurts with every movement."
+  },
+  {
+    "id": 1421,
+    "tr": "avukat",
+    "en": "lawyer",
+    "beispiel": "Ich zahle nichts, bevor ich mit meinem Anwalt gesprochen habe.",
+    "beispielTr": "Avukatımla konuşmadan hiçbir şey ödemem.",
+    "beispielEn": "I won't pay anything before I've spoken with my lawyer."
+  },
+  {
+    "id": 1882,
+    "tr": "parmak",
+    "en": "finger",
+    "beispiel": "Alessandro hat sich in den Finger geschnitten.",
+    "beispielTr": "Alessandro parmağını kesti.",
+    "beispielEn": "Alessandro cut his finger."
+  },
+  {
+    "id": 1698,
+    "tr": "evlilik",
+    "en": "marriage",
+    "beispiel": "Sie hat zwei Kinder aus erster Ehe.",
+    "beispielTr": "İlk evliliğinden iki çocuğu var.",
+    "beispielEn": "She has two children from her first marriage."
+  },
+  {
+    "id": 2592,
+    "tr": "rol",
+    "en": "role",
+    "beispiel": "Die Schauspielerin hat ihre Rolle sehr gut gespielt.",
+    "beispielTr": "Oyuncu rolünü çok iyi oynadı.",
+    "beispielEn": "The actress played her role very well."
+  },
+  {
+    "id": 3162,
+    "tr": "yuva",
+    "en": "home",
+    "beispiel": "Hier fühle ich mich wohl, das ist mein Zuhause.",
+    "beispielTr": "Burada kendimi iyi hissediyorum, burası benim yuvam.",
+    "beispielEn": "I feel good here; this is my home."
+  },
+  {
+    "id": 2131,
+    "tr": "bir gün",
+    "en": "someday",
+    "beispiel": "Irgendwann möchte ich einmal nach Japan reisen.",
+    "beispielTr": "Bir gün Japonya'ya gitmek istiyorum.",
+    "beispielEn": "Someday I'd like to travel to Japan."
+  },
+  {
+    "id": 1589,
+    "tr": "şimdiye kadar",
+    "en": "so far",
+    "beispiel": "Bisher hat sich niemand auf die Anzeige gemeldet.",
+    "beispielTr": "Şimdiye kadar ilana kimse başvurmadı.",
+    "beispielEn": "So far nobody has responded to the ad."
+  },
+  {
+    "id": 2631,
+    "tr": "ateş etmek",
+    "en": "to shoot",
+    "beispiel": "Der Jäger schießt nie auf junge Tiere.",
+    "beispielTr": "Avcı genç hayvanlara asla ateş etmez.",
+    "beispielEn": "The hunter never shoots at young animals."
+  },
+  {
+    "id": 2806,
+    "tr": "bağımlılık",
+    "en": "addiction",
+    "beispiel": "Computerspiele können bei Jugendlichen zur Sucht werden.",
+    "beispielTr": "Bilgisayar oyunları gençlerde bağımlılığa dönüşebilir.",
+    "beispielEn": "Video games can become an addiction for teenagers."
+  },
+  {
+    "id": 1639,
+    "tr": "oraya",
+    "en": "there",
+    "beispiel": "Der Weg dahin dauert ungefähr zwanzig Minuten.",
+    "beispielTr": "Oraya giden yol yaklaşık yirmi dakika sürüyor.",
+    "beispielEn": "The way there takes about twenty minutes."
+  },
+  {
+    "id": 2215,
+    "tr": "kontrol",
+    "en": "check",
+    "beispiel": "An den Grenzen gibt es kaum noch Kontrollen.",
+    "beispielTr": "Sınırlarda artık neredeyse hiç kontrol yok.",
+    "beispielEn": "There are hardly any checks at the borders."
+  },
+  {
+    "id": 2633,
+    "tr": "vurmak",
+    "en": "to hit",
+    "beispiel": "Sie schlug mit der Faust auf den Tisch.",
+    "beispielTr": "Yumruğunu masaya vurdu.",
+    "beispielEn": "She hit the table with her fist."
+  },
+  {
+    "id": 3132,
+    "tr": "öfkeli",
+    "en": "angry",
+    "beispiel": "Warum bist du so wütend auf mich?",
+    "beispielTr": "Bana neden bu kadar öfkelisin?",
+    "beispielEn": "Why are you so angry with me?"
+  },
+  {
+    "id": 1577,
+    "tr": "kanıtlamak",
+    "en": "to prove",
+    "beispiel": "Wir können beweisen, dass Sie bei Rot gefahren sind.",
+    "beispielTr": "Kırmızı ışıkta geçtiğinizi kanıtlayabiliriz.",
+    "beispielEn": "We can prove that you drove through a red light."
+  },
+  {
+    "id": 3165,
+    "tr": "en azından",
+    "en": "at least",
+    "beispiel": "Er hat sich zumindest für die Verspätung entschuldigt.",
+    "beispielTr": "En azından geciktiği için özür diledi.",
+    "beispielEn": "At least he apologized for being late."
+  },
+  {
+    "id": 2966,
+    "tr": "bağlantı",
+    "en": "connection",
+    "beispiel": "Die Verbindung war schlecht, deshalb habe ich nichts verstanden.",
+    "beispielTr": "Bağlantı kötüydü, bu yüzden hiçbir şey anlamadım.",
+    "beispielEn": "The connection was bad, so I didn't understand anything."
+  },
+  {
+    "id": 2587,
+    "tr": "yön",
+    "en": "direction",
+    "beispiel": "In welche Richtung muss ich zum Bahnhof fahren?",
+    "beispielTr": "İstasyona gitmek için hangi yöne gitmeliyim?",
+    "beispielEn": "Which direction do I have to go to the station?"
+  },
+  {
+    "id": 2259,
+    "tr": "konum",
+    "en": "location",
+    "beispiel": "Wir suchen eine Wohnung in zentraler Lage.",
+    "beispielTr": "Merkezi konumda bir daire arıyoruz.",
+    "beispielEn": "We're looking for an apartment in a central location."
+  },
+  {
+    "id": 2717,
+    "tr": "zaten",
+    "en": "anyway",
+    "beispiel": "Gib mir den Brief, ich gehe sowieso zur Post.",
+    "beispielTr": "Mektubu bana ver, zaten postaneye gidiyorum.",
+    "beispielEn": "Give me the letter, I'm going to the post office anyway."
+  },
+  {
+    "id": 2226,
+    "tr": "güç",
+    "en": "strength",
+    "beispiel": "Für diese Arbeit braucht man viel Kraft.",
+    "beispielTr": "Bu iş için çok güç gerekiyor.",
+    "beispielEn": "This work requires a lot of strength."
+  },
+  {
+    "id": 1491,
+    "tr": "bar",
+    "en": "bar",
+    "beispiel": "Setzen wir uns doch an die Bar!",
+    "beispielTr": "Hadi bara oturalım!",
+    "beispielEn": "Let's sit at the bar!"
+  },
+  {
+    "id": 1582,
+    "tr": "ilişki",
+    "en": "relationship",
+    "beispiel": "Wir haben eine gute Beziehung zu unseren Nachbarn.",
+    "beispielTr": "Komşularımızla iyi bir ilişkimiz var.",
+    "beispielEn": "We have a good relationship with our neighbors."
+  },
+  {
+    "id": 2298,
+    "tr": "liste",
+    "en": "list",
+    "beispiel": "Schreib bitte eine Liste für den Einkauf.",
+    "beispielTr": "Alışveriş için bir liste yaz lütfen.",
+    "beispielEn": "Please write a list for the shopping."
+  },
+  {
+    "id": 2995,
+    "tr": "aşık",
+    "en": "in love",
+    "beispiel": "Ich bin seit einem Monat in Francesco verliebt.",
+    "beispielTr": "Bir aydır Francesco'ya aşığım.",
+    "beispielEn": "I've been in love with Francesco for a month."
+  },
+  {
+    "id": 1600,
+    "tr": "tekne",
+    "en": "boat",
+    "beispiel": "An diesem See kann man Boote mieten.",
+    "beispielTr": "Bu gölde tekne kiralanabiliyor.",
+    "beispielEn": "You can rent boats at this lake."
+  },
+  {
+    "id": 2678,
+    "tr": "garip",
+    "en": "strange",
+    "beispiel": "Es ist seltsam, dass mein Bruder noch nicht hier ist.",
+    "beispielTr": "Kardeşimin hâlâ burada olmaması garip.",
+    "beispielEn": "It's strange that my brother isn't here yet."
+  },
+  {
+    "id": 2819,
+    "tr": "teyze",
+    "en": "aunt",
+    "beispiel": "Meine Tante besucht uns jedes Jahr im Sommer.",
+    "beispielTr": "Teyzem her yıl yazın bizi ziyaret ediyor.",
+    "beispielEn": "My aunt visits us every summer."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2572,
+    "tr": "reklam",
+    "en": "advertisement",
+    "beispiel": "Ich möchte keine Reklame im Briefkasten.",
+    "beispielTr": "Posta kutuma reklam istemiyorum.",
+    "beispielEn": "I don't want any ads in my mailbox."
+  },
+  {
+    "id": 1609,
+    "tr": "postacı",
+    "en": "mail carrier",
+    "beispiel": "Der Briefträger hat das Paket beim Nachbarn abgegeben.",
+    "beispielTr": "Postacı paketi komşuya bıraktı.",
+    "beispielEn": "The mail carrier left the package with the neighbor."
+  },
+  {
+    "id": 1705,
+    "tr": "acele etmek",
+    "en": "to rush",
+    "beispiel": "Er eilte zum Bahnhof, um den Zug zu erreichen.",
+    "beispielTr": "Treni yakalamak için gara doğru acele etti.",
+    "beispielEn": "He rushed to the station to catch the train."
+  },
+  {
+    "id": 2067,
+    "tr": "üretici",
+    "en": "manufacturer",
+    "beispiel": "Wir haben das kaputte Handy an den Hersteller geschickt.",
+    "beispielTr": "Bozuk telefonu üreticiye gönderdik.",
+    "beispielEn": "We sent the broken phone to the manufacturer."
+  },
+  {
+    "id": 2606,
+    "tr": "merhem",
+    "en": "ointment",
+    "beispiel": "Diese Salbe gibt es nur auf Rezept.",
+    "beispielTr": "Bu merhem sadece reçeteyle alınıyor.",
+    "beispielEn": "This ointment is only available with a prescription."
+  },
+  {
+    "id": 1892,
+    "tr": "akıcı",
+    "en": "fluent",
+    "beispiel": "Mein Kollege spricht fließend Deutsch.",
+    "beispielTr": "İş arkadaşım akıcı Almanca konuşuyor.",
+    "beispielEn": "My colleague speaks fluent German."
+  },
+  {
+    "id": 1840,
+    "tr": "uzman",
+    "en": "expert",
+    "beispiel": "Diese Reparatur sollte lieber ein Fachmann übernehmen.",
+    "beispielTr": "Bu tamiri bir uzmana bırakmak daha iyi.",
+    "beispielEn": "This repair is better left to an expert."
+  },
+  {
+    "id": 2901,
+    "tr": "havale",
+    "en": "bank transfer",
+    "beispiel": "Sie können bar oder per Überweisung bezahlen.",
+    "beispielTr": "Nakit ya da havaleyle ödeyebilirsiniz.",
+    "beispielEn": "You can pay in cash or by bank transfer."
+  },
+  {
+    "id": 1888,
+    "tr": "esnek",
+    "en": "flexible",
+    "beispiel": "Meine Arbeitszeit ist flexibel.",
+    "beispielTr": "Çalışma saatlerim esnek.",
+    "beispielEn": "My working hours are flexible."
+  },
+  {
+    "id": 1456,
+    "tr": "yukarı doğru",
+    "en": "upward",
+    "beispiel": "Der Weg geht ab hier immer aufwärts.",
+    "beispielTr": "Yol buradan itibaren hep yukarı doğru gidiyor.",
+    "beispielEn": "From here on the path goes steadily upward."
+  },
+  {
+    "id": 2763,
+    "tr": "dik",
+    "en": "steep",
+    "beispiel": "Die Straße zu unserem Haus ist sehr steil.",
+    "beispielTr": "Evimize çıkan yol çok dik.",
+    "beispielEn": "The road up to our house is very steep."
+  },
+  {
+    "id": 1623,
+    "tr": "fırça",
+    "en": "brush",
+    "beispiel": "Ich brauche eine neue Bürste für meine Haare.",
+    "beispielTr": "Saçlarım için yeni bir fırçaya ihtiyacım var.",
+    "beispielEn": "I need a new brush for my hair."
+  },
+  {
+    "id": 2317,
+    "tr": "dosya",
+    "en": "folder",
+    "beispiel": "Die Unterlagen liegen in der blauen Mappe.",
+    "beispielTr": "Belgeler mavi dosyanın içinde.",
+    "beispielEn": "The documents are in the blue folder."
+  },
+  {
+    "id": 1408,
+    "tr": "edinmek",
+    "en": "to purchase",
+    "beispiel": "Wir haben uns endlich eine neue Waschmaschine angeschafft.",
+    "beispielTr": "Sonunda yeni bir çamaşır makinesi edindik.",
+    "beispielEn": "We finally purchased a new washing machine."
+  },
+  {
+    "id": 1550,
+    "tr": "karar vermek",
+    "en": "to decide",
+    "beispiel": "Sie beschließt, im Sommer nach Spanien zu fliegen.",
+    "beispielTr": "Yazın İspanya'ya uçmaya karar veriyor.",
+    "beispielEn": "She decides to fly to Spain in the summer."
+  },
+  {
+    "id": 2311,
+    "tr": "yağsız",
+    "en": "lean",
+    "beispiel": "Ich hätte gern ein Kilo mageres Fleisch.",
+    "beispielTr": "Bir kilo yağsız et rica ediyorum.",
+    "beispielEn": "I'd like a kilo of lean meat."
+  },
+  {
+    "id": 1612,
+    "tr": "broşür",
+    "en": "brochure",
+    "beispiel": "In der Broschüre finden Sie alle wichtigen Informationen.",
+    "beispielTr": "Bütün önemli bilgileri broşürde bulabilirsiniz.",
+    "beispielEn": "You'll find all the important information in the brochure."
+  },
+  {
+    "id": 1350,
+    "tr": "lise diploması",
+    "en": "high school diploma",
+    "beispiel": "Meine Tochter hat letztes Jahr ihr Abitur gemacht.",
+    "beispielTr": "Kızım geçen yıl lise diplomasını aldı.",
+    "beispielEn": "My daughter got her high school diploma last year."
+  },
+  {
+    "id": 1657,
+    "tr": "lehçe",
+    "en": "dialect",
+    "beispiel": "Ich verstehe dich besser, wenn du keinen Dialekt sprichst.",
+    "beispielTr": "Lehçe konuşmadığında seni daha iyi anlıyorum.",
+    "beispielEn": "I understand you better when you don't speak dialect."
+  },
+  {
+    "id": 3011,
+    "tr": "reçete yazmak",
+    "en": "to prescribe",
+    "beispiel": "Der Arzt verschreibt mir Tabletten gegen die Schmerzen.",
+    "beispielTr": "Doktor ağrılarım için bana hap yazıyor.",
+    "beispielEn": "The doctor is prescribing pills for my pain."
+  },
+  {
+    "id": 2457,
+    "tr": "klasör",
+    "en": "binder",
+    "beispiel": "Für den Deutschkurs habe ich mir einen Ordner gekauft.",
+    "beispielTr": "Almanca kursu için kendime bir klasör aldım.",
+    "beispielEn": "I bought myself a binder for the German course."
+  },
+  {
+    "id": 1687,
+    "tr": "ortalama olarak",
+    "en": "on average",
+    "beispiel": "Die Preise sind letztes Jahr um durchschnittlich sechs Prozent gestiegen.",
+    "beispielTr": "Fiyatlar geçen yıl ortalama olarak yüzde altı arttı.",
+    "beispielEn": "Prices rose by an average of six percent last year."
+  },
+  {
+    "id": 2547,
+    "tr": "fark etmek",
+    "en": "to realize",
+    "beispiel": "Ich habe gar nicht realisiert, dass du schon da bist.",
+    "beispielTr": "Senin çoktan burada olduğunu hiç fark etmemişim.",
+    "beispielEn": "I didn't even realize you were already here."
+  },
+  {
+    "id": 3101,
+    "tr": "hava raporu",
+    "en": "weather report",
+    "beispiel": "Hast du heute schon den Wetterbericht gehört?",
+    "beispielTr": "Bugün hava raporunu dinledin mi?",
+    "beispielEn": "Have you heard the weather report today?"
+  },
+  {
+    "id": 3043,
+    "tr": "vitamin",
+    "en": "vitamin",
+    "beispiel": "Obst und Gemüse enthalten viele wichtige Vitamine.",
+    "beispielTr": "Meyve ve sebzede birçok önemli vitamin bulunur.",
+    "beispielEn": "Fruit and vegetables contain many important vitamins."
+  },
+  {
+    "id": 1689,
+    "tr": "sen diye hitap etmek",
+    "en": "to address informally",
+    "beispiel": "Wollen wir uns nicht einfach duzen?",
+    "beispielTr": "Birbirimize sen desek olmaz mı?",
+    "beispielEn": "Shouldn't we just address each other informally?"
+  },
+  {
+    "id": 3161,
+    "tr": "kapanmak",
+    "en": "to shut",
+    "beispiel": "Der Koffer geht nicht zu, er ist zu voll.",
+    "beispielTr": "Bavul kapanmıyor, çok dolu.",
+    "beispielEn": "The suitcase won't shut, it's too full."
+  },
+  {
+    "id": 1545,
+    "tr": "hasar vermek",
+    "en": "to damage",
+    "beispiel": "Der Sturm hat mehrere Autos schwer beschädigt.",
+    "beispielTr": "Fırtına birkaç arabaya ağır hasar verdi.",
+    "beispielEn": "The storm badly damaged several cars."
+  },
+  {
+    "id": 2721,
+    "tr": "tutumlu",
+    "en": "thrifty",
+    "beispiel": "Meine Großmutter war ihr Leben lang sehr sparsam.",
+    "beispielTr": "Babaannem hayatı boyunca çok tutumluydu.",
+    "beispielEn": "My grandmother was very thrifty all her life."
+  },
+  {
+    "id": 2622,
+    "tr": "vitrin",
+    "en": "shop window",
+    "beispiel": "Ich habe im Schaufenster eine schicke Bluse gesehen.",
+    "beispielTr": "Vitrinde şık bir bluz gördüm.",
+    "beispielEn": "I saw a stylish blouse in the shop window."
+  },
+  {
+    "id": 2512,
+    "tr": "stajyer",
+    "en": "intern",
+    "beispiel": "Bei dieser Firma habe ich als Praktikantin gearbeitet.",
+    "beispielTr": "Bu şirkette stajyer olarak çalıştım.",
+    "beispielEn": "I worked as an intern at this company."
+  },
+  {
+    "id": 2911,
+    "tr": "anket",
+    "en": "survey",
+    "beispiel": "Wir machen eine Umfrage zum Thema Umweltschutz.",
+    "beispielTr": "Çevre koruma konusunda bir anket yapıyoruz.",
+    "beispielEn": "We're doing a survey on environmental protection."
+  },
+  {
+    "id": 2822,
+    "tr": "klavye",
+    "en": "keyboard",
+    "beispiel": "Die Tastatur meines Laptops funktioniert nicht mehr.",
+    "beispielTr": "Dizüstü bilgisayarımın klavyesi artık çalışmıyor.",
+    "beispielEn": "My laptop's keyboard doesn't work anymore."
+  },
+  {
+    "id": 1949,
+    "tr": "dağlık bölge",
+    "en": "mountain range",
+    "beispiel": "Im Sommer wandern wir gern im Gebirge.",
+    "beispielTr": "Yazın dağlık bölgede yürüyüş yapmayı severiz.",
+    "beispielEn": "In summer we like hiking in the mountains."
+  },
+  {
+    "id": 2935,
+    "tr": "kaçınmak",
+    "en": "to refrain",
+    "beispiel": "Bitte unterlassen Sie das Rauchen im Treppenhaus.",
+    "beispielTr": "Lütfen merdiven boşluğunda sigara içmekten kaçının.",
+    "beispielEn": "Please refrain from smoking in the stairwell."
+  },
+  {
+    "id": 2719,
+    "tr": "sosyal",
+    "en": "social",
+    "beispiel": "In dieser Stadt gibt es viele soziale Probleme.",
+    "beispielTr": "Bu şehirde birçok sosyal sorun var.",
+    "beispielEn": "There are many social problems in this city."
+  },
+  {
+    "id": 1884,
+    "tr": "alan",
+    "en": "area",
+    "beispiel": "Die Wohnung hat eine Fläche von 80 Quadratmetern.",
+    "beispielTr": "Dairenin alanı 80 metrekare.",
+    "beispielEn": "The apartment has an area of 80 square meters."
+  },
+  {
+    "id": 1466,
+    "tr": "yardımcı eleman",
+    "en": "temporary worker",
+    "beispiel": "Wir suchen eine freundliche Aushilfe für unser Geschäft.",
+    "beispielTr": "Mağazamız için güler yüzlü bir yardımcı eleman arıyoruz.",
+    "beispielEn": "We're looking for a friendly temporary worker for our shop."
+  },
+  {
+    "id": 3122,
+    "tr": "ikametgah",
+    "en": "residence",
+    "beispiel": "Er hat seinen festen Wohnsitz in München.",
+    "beispielTr": "Daimi ikametgahı Münih'te bulunuyor.",
+    "beispielEn": "He has his permanent residence in Munich."
+  },
+  {
+    "id": 3191,
+    "tr": "soğan",
+    "en": "onion",
+    "beispiel": "Schneide die Zwiebel bitte in kleine Würfel.",
+    "beispielTr": "Soğanı lütfen küçük küpler hâlinde doğra.",
+    "beispielEn": "Please cut the onion into small cubes."
+  },
+  {
+    "id": 2720,
+    "tr": "sosyal hizmet uzmanı",
+    "en": "social worker",
+    "beispiel": "Der Sozialarbeiter kümmert sich um die Familie.",
+    "beispielTr": "Sosyal hizmet uzmanı aileyle ilgileniyor.",
+    "beispielEn": "The social worker is looking after the family."
+  },
+  {
+    "id": 2290,
+    "tr": "ansiklopedi",
+    "en": "encyclopedia",
+    "beispiel": "Schlag das Wort doch im Lexikon nach.",
+    "beispielTr": "Kelimeye bir de ansiklopediden bak.",
+    "beispielEn": "Just look the word up in the encyclopedia."
+  },
+  {
+    "id": 1713,
+    "tr": "bir yandan",
+    "en": "on the one hand",
+    "beispiel": "Einerseits will ich mitfahren, andererseits fehlt mir das Geld.",
+    "beispielTr": "Bir yandan gelmek istiyorum, öte yandan param yok.",
+    "beispielEn": "On the one hand I want to come, on the other I can't afford it."
+  },
+  {
+    "id": 1475,
+    "tr": "dıştan",
+    "en": "external",
+    "beispiel": "Das Medikament darf man nur äußerlich anwenden.",
+    "beispielTr": "Bu ilaç sadece dıştan kullanılabilir.",
+    "beispielEn": "This medication may only be used externally."
+  },
+  {
+    "id": 2640,
+    "tr": "makyaj yapmak",
+    "en": "to put on makeup",
+    "beispiel": "Meine Schwester schminkt sich jeden Morgen sehr sorgfältig.",
+    "beispielTr": "Kız kardeşim her sabah özenle makyaj yapıyor.",
+    "beispielEn": "My sister puts on her makeup carefully every morning."
+  },
+  {
+    "id": 2542,
+    "tr": "sigara içen kişi",
+    "en": "smoker",
+    "beispiel": "Mein Vater war früher ein starker Raucher.",
+    "beispielTr": "Babam eskiden çok sigara içerdi.",
+    "beispielEn": "My father used to be a heavy smoker."
+  },
+  {
+    "id": 1733,
+    "tr": "taahhütlü mektup",
+    "en": "registered letter",
+    "beispiel": "Ich habe den Vertrag als Einschreiben geschickt.",
+    "beispielTr": "Sözleşmeyi taahhütlü olarak gönderdim.",
+    "beispielEn": "I sent the contract by registered letter."
+  },
+  {
+    "id": 1567,
+    "tr": "bakım",
+    "en": "care",
+    "beispiel": "Meine Mutter übernimmt die Betreuung der Kinder.",
+    "beispielTr": "Çocukların bakımını annem üstleniyor.",
+    "beispielEn": "My mother takes care of the children."
+  },
+  {
+    "id": 1704,
+    "tr": "uygun olmak",
+    "en": "to be suitable",
+    "beispiel": "Dieses Hotel eignet sich besonders für Familien mit Kindern.",
+    "beispielTr": "Bu otel özellikle çocuklu aileler için uygun.",
+    "beispielEn": "This hotel is especially suitable for families with children."
+  },
+  {
+    "id": 2461,
+    "tr": "banliyö",
+    "en": "suburb",
+    "beispiel": "Mein Bruder wohnt in einem Vorort von Hamburg.",
+    "beispielTr": "Kardeşim Hamburg'un bir banliyösünde oturuyor.",
+    "beispielEn": "My brother lives in a suburb of Hamburg."
+  }
+]

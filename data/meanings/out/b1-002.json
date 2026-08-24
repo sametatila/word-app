@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1867,
+  "tr": "sıkı",
+  "en": "tight",
+  "beispiel": "Der Knoten ist so fest, dass ich ihn nicht öffnen kann.",
+  "beispielTr": "Düğüm o kadar sıkı ki açamıyorum.",
+  "beispielEn": "The knot is so tight that I cannot open it."
+ },
+ {
+  "id": 2169,
+  "tr": "zar zor",
+  "en": "hardly",
+  "beispiel": "Ich kann dich kaum verstehen.",
+  "beispielTr": "Seni zar zor anlıyorum.",
+  "beispielEn": "I can hardly understand you."
+ },
+ {
+  "id": 2557,
+  "tr": "konuşma",
+  "en": "speech",
+  "beispiel": "Der Präsident hat eine lange Rede gehalten.",
+  "beispielTr": "Cumhurbaşkanı uzun bir konuşma yaptı.",
+  "beispielEn": "The president gave a long speech."
+ },
+ {
+  "id": 2710,
+  "tr": "aksine",
+  "en": "but rather",
+  "beispiel": "Wir fahren nicht heute, sondern morgen.",
+  "beispielTr": "Bugün değil, yarın yola çıkıyoruz.",
+  "beispielEn": "We are not leaving today, but tomorrow."
+ },
+ {
+  "id": 2583,
+  "tr": "kurtarmak",
+  "en": "to rescue",
+  "beispiel": "Die Feuerwehr konnte alle Bewohner rechtzeitig retten.",
+  "beispielTr": "İtfaiye bütün sakinleri zamanında kurtarabildi.",
+  "beispielEn": "The fire brigade rescued all residents in time."
+ },
+ {
+  "id": 2074,
+  "tr": "buraya",
+  "en": "over here",
+  "beispiel": "Komm bitte mal kurz hierher!",
+  "beispielTr": "Lütfen bir saniye buraya gel!",
+  "beispielEn": "Please come over here for a moment!"
+ },
+ {
+  "id": 1540,
+  "tr": "çoktan",
+  "en": "already",
+  "beispiel": "Frau Kaiser hat bereits dreimal angerufen.",
+  "beispielTr": "Kaiser Hanım çoktan üç kez aradı.",
+  "beispielEn": "Ms. Kaiser has already called three times."
+ },
+ {
+  "id": 2880,
+  "tr": "yine de",
+  "en": "nevertheless",
+  "beispiel": "Es regnete, trotzdem gingen wir spazieren.",
+  "beispielTr": "Yağmur yağıyordu, yine de yürüyüşe çıktık.",
+  "beispielEn": "It was raining, but we went for a walk anyway."
+ },
+ {
+  "id": 2824,
+  "tr": "eylem",
+  "en": "deed",
+  "beispiel": "Für diese Tat wurde er hart bestraft.",
+  "beispielTr": "Bu eylem yüzünden ağır bir ceza aldı.",
+  "beispielEn": "He was punished severely for this deed."
+ },
+ {
+  "id": 2209,
+  "tr": "kral",
+  "en": "king",
+  "beispiel": "Der König hat das neue Gesetz unterschrieben.",
+  "beispielTr": "Kral yeni yasayı imzaladı.",
+  "beispielEn": "The king signed the new law."
+ },
+ {
+  "id": 1641,
+  "tr": "ondan sonra",
+  "en": "afterwards",
+  "beispiel": "Zuerst gehen wir einkaufen, danach kochen wir zusammen.",
+  "beispielTr": "Önce alışverişe gideceğiz, ondan sonra birlikte yemek yapacağız.",
+  "beispielEn": "First we go shopping, and afterwards we cook together."
+ },
+ {
+  "id": 1654,
+  "tr": "bu yüzden",
+  "en": "therefore",
+  "beispiel": "Ich hatte keine Zeit, deswegen habe ich nicht angerufen.",
+  "beispielTr": "Zamanım yoktu, bu yüzden aramadım.",
+  "beispielEn": "I had no time, therefore I did not call."
+ },
+ {
+  "id": 1800,
+  "tr": "hatırlatmak",
+  "en": "to remind",
+  "beispiel": "Bitte erinnern Sie mich noch einmal an den Termin.",
+  "beispielTr": "Lütfen randevuyu bana bir kez daha hatırlatın.",
+  "beispielEn": "Please remind me about the appointment once more."
+ },
+ {
+  "id": 3046,
+  "tr": "tamamen",
+  "en": "completely",
+  "beispiel": "Ich habe den Termin völlig vergessen.",
+  "beispielTr": "Randevuyu tamamen unutmuşum.",
+  "beispielEn": "I completely forgot the appointment."
+ },
+ {
+  "id": 2309,
+  "tr": "hava",
+  "en": "air",
+  "beispiel": "Mach bitte das Fenster auf, ich brauche frische Luft.",
+  "beispielTr": "Lütfen pencereyi aç, temiz havaya ihtiyacım var.",
+  "beispielEn": "Please open the window, I need some fresh air."
+ },
+ {
+  "id": 3151,
+  "tr": "çekmek",
+  "en": "to pull",
+  "beispiel": "Sie müssen an der Tür ziehen, nicht drücken.",
+  "beispielTr": "Kapıyı itmeniz değil, çekmeniz gerekiyor.",
+  "beispielEn": "You have to pull the door, not push it."
+ },
+ {
+  "id": 3012,
+  "tr": "kaybolmak",
+  "en": "to disappear",
+  "beispiel": "In dieser Wohnung verschwinden meine Schlüssel ständig.",
+  "beispielTr": "Bu evde anahtarlarım sürekli kayboluyor.",
+  "beispielEn": "My keys keep disappearing in this apartment."
+ },
+ {
+  "id": 3187,
+  "tr": "gerçi",
+  "en": "admittedly",
+  "beispiel": "Diese Schuhe sind zwar teuer, aber sehr bequem.",
+  "beispielTr": "Bu ayakkabılar gerçi pahalı ama çok rahat.",
+  "beispielEn": "These shoes are admittedly expensive, but very comfortable."
+ },
+ {
+  "id": 3095,
+  "tr": "değerinde",
+  "en": "worth",
+  "beispiel": "Das alte Auto ist vielleicht noch tausend Euro wert.",
+  "beispielTr": "Eski araba belki hâlâ bin euro eder.",
+  "beispielEn": "The old car is perhaps still worth a thousand euros."
+ },
+ {
+  "id": 3096,
+  "tr": "değer",
+  "en": "value",
+  "beispiel": "Der Wert dieser Wohnung ist stark gestiegen.",
+  "beispielTr": "Bu dairenin değeri epey arttı.",
+  "beispielEn": "The value of this apartment has risen sharply."
+ },
+ {
+  "id": 2447,
+  "tr": "amca",
+  "en": "uncle",
+  "beispiel": "Nächste Woche besuche ich meinen Onkel in Berlin.",
+  "beispielTr": "Gelecek hafta Berlin'de amcamı ziyaret edeceğim.",
+  "beispielEn": "Next week I will visit my uncle in Berlin."
+ },
+ {
+  "id": 3072,
+  "tr": "seçim",
+  "en": "choice",
+  "beispiel": "Sie haben die Wahl zwischen zwei Angeboten.",
+  "beispielTr": "İki teklif arasında seçim yapabilirsiniz.",
+  "beispielEn": "You have a choice between two offers."
+ },
+ {
+  "id": 3022,
+  "tr": "güvenmek",
+  "en": "to trust",
+  "beispiel": "Du kannst mir vertrauen, ich sage nichts weiter.",
+  "beispielTr": "Bana güvenebilirsin, kimseye bir şey söylemem.",
+  "beispielEn": "You can trust me, I will not tell anyone."
+ },
+ {
+  "id": 3023,
+  "tr": "güven",
+  "en": "trust",
+  "beispiel": "Nach dieser Lüge habe ich das Vertrauen verloren.",
+  "beispielTr": "Bu yalandan sonra güvenimi kaybettim.",
+  "beispielEn": "After that lie I lost my trust."
+ },
+ {
+  "id": 2389,
+  "tr": "-dikten sonra",
+  "en": "after",
+  "beispiel": "Nachdem wir gegessen hatten, sind wir spazieren gegangen.",
+  "beispielTr": "Yemek yedikten sonra yürüyüşe çıktık.",
+  "beispielEn": "After we had eaten, we went for a walk."
+ },
+ {
+  "id": 1962,
+  "tr": "duygu",
+  "en": "feeling",
+  "beispiel": "Sie konnte ihre Gefühle nicht mehr verstecken.",
+  "beispielTr": "Duygularını artık saklayamıyordu.",
+  "beispielEn": "She could no longer hide her feelings."
+ },
+ {
+  "id": 2127,
+  "tr": "ilgilenen",
+  "en": "interested",
+  "beispiel": "Sind Sie noch an der Wohnung interessiert?",
+  "beispielTr": "Daireyle hâlâ ilgileniyor musunuz?",
+  "beispielEn": "Are you still interested in the apartment?"
+ },
+ {
+  "id": 1976,
+  "tr": "aynen",
+  "en": "just like",
+  "beispiel": "Mein Bruder sieht genauso aus wie mein Vater.",
+  "beispielTr": "Kardeşim aynen babama benziyor.",
+  "beispielEn": "My brother looks just like my father."
+ },
+ {
+  "id": 3163,
+  "tr": "gelecek",
+  "en": "future",
+  "beispiel": "In Zukunft werde ich vorsichtiger sein.",
+  "beispielTr": "Gelecekte daha dikkatli olacağım.",
+  "beispielEn": "In the future I will be more careful."
+ },
+ {
+  "id": 1781,
+  "tr": "dünya",
+  "en": "earth",
+  "beispiel": "Die Erde dreht sich um die Sonne.",
+  "beispielTr": "Dünya Güneş'in etrafında döner.",
+  "beispielEn": "The earth revolves around the sun."
+ },
+ {
+  "id": 1700,
+  "tr": "daha çok",
+  "en": "rather",
+  "beispiel": "Ich trinke eher Tee als Kaffee.",
+  "beispielTr": "Ben kahveden çok çay içerim.",
+  "beispielEn": "I drink tea rather than coffee."
+ },
+ {
+  "id": 1961,
+  "tr": "hapishane",
+  "en": "prison",
+  "beispiel": "Er wurde zu fünf Jahren Gefängnis verurteilt.",
+  "beispielTr": "Beş yıl hapis cezasına çarptırıldı.",
+  "beispielEn": "He was sentenced to five years in prison."
+ },
+ {
+  "id": 2451,
+  "tr": "kurban",
+  "en": "victim",
+  "beispiel": "Bei dem Unfall gab es zum Glück keine Opfer.",
+  "beispielTr": "Kazada şans eseri hiç kurban olmadı.",
+  "beispielEn": "Fortunately there were no victims in the accident."
+ },
+ {
+  "id": 2649,
+  "tr": "resmî yazı",
+  "en": "letter",
+  "beispiel": "Haben Sie mein Schreiben vom dritten März erhalten?",
+  "beispielTr": "Üç Mart tarihli yazımı aldınız mı?",
+  "beispielEn": "Did you receive my letter dated the third of March?"
+ },
+ {
+  "id": 3020,
+  "tr": "deneme",
+  "en": "attempt",
+  "beispiel": "Beim zweiten Versuch hat es endlich geklappt.",
+  "beispielTr": "İkinci denemede sonunda işe yaradı.",
+  "beispielEn": "It finally worked on the second attempt."
+ },
+ {
+  "id": 2703,
+  "tr": "-ir -mez",
+  "en": "as soon as",
+  "beispiel": "Sobald ich den Termin weiß, gebe ich Bescheid.",
+  "beispielTr": "Randevuyu öğrenir öğrenmez haber veririm.",
+  "beispielEn": "As soon as I know the date, I will let you know."
+ },
+ {
+  "id": 2180,
+  "tr": "şahane",
+  "en": "awesome",
+  "beispiel": "Ich finde unseren neuen Lehrer wirklich klasse.",
+  "beispielTr": "Yeni öğretmenimizi gerçekten şahane buluyorum.",
+  "beispielEn": "I think our new teacher is really awesome."
+ },
+ {
+  "id": 2698,
+  "tr": "anlam",
+  "en": "sense",
+  "beispiel": "Es hat keinen Sinn, jetzt noch zu diskutieren.",
+  "beispielTr": "Şimdi tartışmanın bir anlamı yok.",
+  "beispielEn": "There is no sense in discussing this now."
+ },
+ {
+  "id": 1786,
+  "tr": "öğrenmek",
+  "en": "to find out",
+  "beispiel": "Wann erfahren wir das Ergebnis der Prüfung?",
+  "beispielTr": "Sınav sonucunu ne zaman öğreneceğiz?",
+  "beispielEn": "When will we find out the result of the exam?"
+ },
+ {
+  "id": 2781,
+  "tr": "gururlu",
+  "en": "proud",
+  "beispiel": "Meine Eltern sind stolz auf mich.",
+  "beispielTr": "Ailem benimle gurur duyuyor.",
+  "beispielEn": "My parents are proud of me."
+ },
+ {
+  "id": 2707,
+  "tr": "-dığı sürece",
+  "en": "as long as",
+  "beispiel": "Solange Sie Fieber haben, dürfen Sie nicht arbeiten.",
+  "beispielTr": "Ateşiniz olduğu sürece çalışmamalısınız.",
+  "beispielEn": "As long as you have a fever, you must not work."
+ },
+ {
+  "id": 1928,
+  "tr": "hissetmek",
+  "en": "to feel",
+  "beispiel": "Nach dem Urlaub fühle ich mich viel besser.",
+  "beispielTr": "Tatilden sonra kendimi çok daha iyi hissediyorum.",
+  "beispielEn": "After the holiday I feel much better."
+ },
+ {
+  "id": 1599,
+  "tr": "yer",
+  "en": "floor",
+  "beispiel": "Die Bücher lagen alle auf dem Boden.",
+  "beispielTr": "Kitapların hepsi yerde duruyordu.",
+  "beispielEn": "The books were all lying on the floor."
+ },
+ {
+  "id": 2775,
+  "tr": "ses",
+  "en": "voice",
+  "beispiel": "Ich habe dich sofort an der Stimme erkannt.",
+  "beispielTr": "Seni hemen sesinden tanıdım.",
+  "beispielEn": "I recognized you immediately by your voice."
+ },
+ {
+  "id": 2772,
+  "tr": "sessiz",
+  "en": "silent",
+  "beispiel": "Im Wald war es ganz still.",
+  "beispielTr": "Ormanda ortalık tamamen sessizdi.",
+  "beispielEn": "It was completely silent in the forest."
+ },
+ {
+  "id": 2690,
+  "tr": "güvenlik",
+  "en": "safety",
+  "beispiel": "Die Sicherheit der Kinder ist uns besonders wichtig.",
+  "beispielTr": "Çocukların güvenliği bizim için çok önemli.",
+  "beispielEn": "The safety of the children is especially important to us."
+ },
+ {
+  "id": 2149,
+  "tr": "mücadele etmek",
+  "en": "to fight",
+  "beispiel": "Die Frauen kämpfen seit Jahren für gleiche Rechte.",
+  "beispielTr": "Kadınlar yıllardır eşit haklar için mücadele ediyor.",
+  "beispielEn": "Women have been fighting for equal rights for years."
+ },
+ {
+  "id": 3148,
+  "tr": "eşya",
+  "en": "stuff",
+  "beispiel": "Räum bitte dein ganzes Zeug aus dem Flur!",
+  "beispielTr": "Lütfen bütün eşyanı koridordan kaldır!",
+  "beispielEn": "Please clear all your stuff out of the hallway!"
+ },
+ {
+  "id": 2926,
+  "tr": "inanılmaz",
+  "en": "incredible",
+  "beispiel": "Es ist unglaublich, wie schnell die Zeit vergeht.",
+  "beispielTr": "Zamanın ne kadar çabuk geçtiği inanılmaz.",
+  "beispielEn": "It is incredible how quickly time passes."
+ },
+ {
+  "id": 1929,
+  "tr": "yönetmek",
+  "en": "to lead",
+  "beispiel": "Frau Meyer führt den Betrieb seit zehn Jahren.",
+  "beispielTr": "Meyer Hanım işletmeyi on yıldır yönetiyor.",
+  "beispielEn": "Ms. Meyer has led the company for ten years."
+ }
+]

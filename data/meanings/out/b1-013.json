@@ -1,0 +1,402 @@
+[
+ {
+  "id": 2218,
+  "tr": "kopya",
+  "en": "copy",
+  "beispiel": "Machst du mir bitte eine Kopie?",
+  "beispielTr": "Bana bir kopya çıkarır mısın lütfen?",
+  "beispielEn": "Could you make me a copy, please?"
+ },
+ {
+  "id": 2925,
+  "tr": "alışılmadık",
+  "en": "unusual",
+  "beispiel": "Ich finde diese Speise ungewöhnlich, aber sie schmeckt gut.",
+  "beispielTr": "Bu yemeği alışılmadık buluyorum ama lezzetli.",
+  "beispielEn": "I find this dish unusual, but it tastes good."
+ },
+ {
+  "id": 2083,
+  "tr": "yükseklik",
+  "en": "height",
+  "beispiel": "Der Turm hat eine Höhe von hundert Metern.",
+  "beispielTr": "Kulenin yüksekliği yüz metre.",
+  "beispielEn": "The tower has a height of a hundred meters."
+ },
+ {
+  "id": 2085,
+  "tr": "en fazla",
+  "en": "at most",
+  "beispiel": "Ich kann höchstens eine Viertelstunde bleiben.",
+  "beispielTr": "En fazla çeyrek saat kalabilirim.",
+  "beispielEn": "I can stay fifteen minutes at most."
+ },
+ {
+  "id": 1474,
+  "tr": "dıştan",
+  "en": "on the outside",
+  "beispiel": "Wir haben das Schloss nur von außen gesehen.",
+  "beispielTr": "Şatoyu yalnızca dıştan gördük.",
+  "beispielEn": "We only saw the castle from the outside."
+ },
+ {
+  "id": 1652,
+  "tr": "aynı",
+  "en": "the same",
+  "beispiel": "Wir arbeiten seit Jahren bei derselben Firma.",
+  "beispielTr": "Yıllardır aynı firmada çalışıyoruz.",
+  "beispielEn": "We have worked at the same company for years."
+ },
+ {
+  "id": 3166,
+  "tr": "öncelikle",
+  "en": "first of all",
+  "beispiel": "Zunächst möchte ich alle herzlich begrüßen.",
+  "beispielTr": "Öncelikle herkesi içtenlikle selamlamak istiyorum.",
+  "beispielEn": "First of all, I would like to welcome everyone."
+ },
+ {
+  "id": 2834,
+  "tr": "teknoloji",
+  "en": "technology",
+  "beispiel": "Die neue Technologie hat unsere Arbeit stark verändert.",
+  "beispielTr": "Yeni teknoloji işimizi büyük ölçüde değiştirdi.",
+  "beispielEn": "The new technology has changed our work a lot."
+ },
+ {
+  "id": 2916,
+  "tr": "o kadar",
+  "en": "the more",
+  "beispiel": "Je mehr wir üben, umso besser werden wir.",
+  "beispielTr": "Ne kadar çok pratik yaparsak o kadar iyi oluruz.",
+  "beispielEn": "The more we practice, the better we get."
+ },
+ {
+  "id": 2053,
+  "tr": "kaldırmak",
+  "en": "to lift",
+  "beispiel": "Das Paket ist zu schwer, ich kann es nicht heben.",
+  "beispielTr": "Paket çok ağır, kaldıramıyorum.",
+  "beispielEn": "The package is too heavy, I can't lift it."
+ },
+ {
+  "id": 2199,
+  "tr": "aşçı",
+  "en": "cook",
+  "beispiel": "Mein Bruder arbeitet als Koch in einem Restaurant.",
+  "beispielTr": "Kardeşim bir restoranda aşçı olarak çalışıyor.",
+  "beispielEn": "My brother works as a cook in a restaurant."
+ },
+ {
+  "id": 2165,
+  "tr": "felaket",
+  "en": "disaster",
+  "beispiel": "Der Urlaub war eine einzige Katastrophe.",
+  "beispielTr": "Tatil tam bir felaketti.",
+  "beispielEn": "The vacation was a complete disaster."
+ },
+ {
+  "id": 3014,
+  "tr": "sigorta",
+  "en": "insurance",
+  "beispiel": "Sie müssen den Unfall der Versicherung melden.",
+  "beispielTr": "Kazayı sigortaya bildirmeniz gerekiyor.",
+  "beispielEn": "You have to report the accident to the insurance company."
+ },
+ {
+  "id": 2831,
+  "tr": "takas etmek",
+  "en": "to swap",
+  "beispiel": "Tauschst du dein Brot gegen meinen Apfel?",
+  "beispielTr": "Ekmeğini benim elmamla takas eder misin?",
+  "beispielEn": "Will you swap your bread for my apple?"
+ },
+ {
+  "id": 1735,
+  "tr": "işe almak",
+  "en": "to hire",
+  "beispiel": "Die Firma will dieses Jahr drei neue Leute einstellen.",
+  "beispielTr": "Firma bu yıl üç yeni eleman işe alacak.",
+  "beispielEn": "The company wants to hire three new people this year."
+ },
+ {
+  "id": 2545,
+  "tr": "tepki vermek",
+  "en": "to react",
+  "beispiel": "Ich habe dem Vermieter geschrieben, aber er hat nicht reagiert.",
+  "beispielTr": "Ev sahibine yazdım ama hiç tepki vermedi.",
+  "beispielEn": "I wrote to the landlord, but he never reacted."
+ },
+ {
+  "id": 2682,
+  "tr": "göndermek",
+  "en": "to send",
+  "beispiel": "Bitte senden Sie uns die Unterlagen per E-Mail.",
+  "beispielTr": "Lütfen belgeleri bize e-postayla gönderin.",
+  "beispielEn": "Please send us the documents by email."
+ },
+ {
+  "id": 2580,
+  "tr": "muhabir",
+  "en": "reporter",
+  "beispiel": "Der Reporter stellte dem Minister eine unangenehme Frage.",
+  "beispielTr": "Muhabir bakana rahatsız edici bir soru sordu.",
+  "beispielEn": "The reporter asked the minister an awkward question."
+ },
+ {
+  "id": 2617,
+  "tr": "vites değiştirmek",
+  "en": "to shift gears",
+  "beispiel": "An der Ampel musst du in den ersten Gang schalten.",
+  "beispielTr": "Işıklarda birinci vitese geçmen gerekiyor.",
+  "beispielEn": "At the traffic light you have to shift into first gear."
+ },
+ {
+  "id": 1998,
+  "tr": "alışmak",
+  "en": "to get used to",
+  "beispiel": "Wir haben uns schnell an das Leben hier gewöhnt.",
+  "beispielTr": "Buradaki hayata çabuk alıştık.",
+  "beispielEn": "We quickly got used to life here."
+ },
+ {
+  "id": 2629,
+  "tr": "itmek",
+  "en": "to push",
+  "beispiel": "Mein Fahrrad war kaputt, ich musste es schieben.",
+  "beispielTr": "Bisikletim bozuktu, itmek zorunda kaldım.",
+  "beispielEn": "My bike was broken, so I had to push it."
+ },
+ {
+  "id": 1819,
+  "tr": "bitkin",
+  "en": "exhausted",
+  "beispiel": "Nach der langen Wanderung waren wir völlig erschöpft.",
+  "beispielTr": "Uzun yürüyüşten sonra tamamen bitkindik.",
+  "beispielEn": "After the long hike we were completely exhausted."
+ },
+ {
+  "id": 2829,
+  "tr": "sağır",
+  "en": "deaf",
+  "beispiel": "Meine Großmutter ist auf einem Ohr taub.",
+  "beispielTr": "Büyükannem bir kulağından sağır.",
+  "beispielEn": "My grandmother is deaf in one ear."
+ },
+ {
+  "id": 1675,
+  "tr": "iki kat",
+  "en": "double",
+  "beispiel": "Wir mussten den doppelten Preis bezahlen.",
+  "beispielTr": "İki kat fiyat ödemek zorunda kaldık.",
+  "beispielEn": "We had to pay double the price."
+ },
+ {
+  "id": 2976,
+  "tr": "karşılaştırma",
+  "en": "comparison",
+  "beispiel": "Der Vergleich der Preise hat sich gelohnt.",
+  "beispielTr": "Fiyatları karşılaştırmak işe yaradı.",
+  "beispielEn": "Comparing the prices was worth it."
+ },
+ {
+  "id": 2271,
+  "tr": "ruh hali",
+  "en": "mood",
+  "beispiel": "Gestern hatte mein Chef richtig schlechte Laune.",
+  "beispielTr": "Dün patronumun morali çok bozuktu.",
+  "beispielEn": "My boss was in a really bad mood yesterday."
+ },
+ {
+  "id": 2529,
+  "tr": "oyuncak bebek",
+  "en": "doll",
+  "beispiel": "Unsere Tochter bekommt zum Geburtstag eine Puppe.",
+  "beispielTr": "Kızımız doğum gününde bir oyuncak bebek alacak.",
+  "beispielEn": "Our daughter is getting a doll for her birthday."
+ },
+ {
+  "id": 2885,
+  "tr": "alıştırma",
+  "en": "exercise",
+  "beispiel": "Diese Übung war für mich viel zu schwer.",
+  "beispielTr": "Bu alıştırma benim için fazlasıyla zordu.",
+  "beispielEn": "This exercise was far too hard for me."
+ },
+ {
+  "id": 1630,
+  "tr": "kanepe",
+  "en": "couch",
+  "beispiel": "Am Abend liege ich gern auf der Couch.",
+  "beispielTr": "Akşamları kanepeye uzanmayı severim.",
+  "beispielEn": "In the evening I like lying on the couch."
+ },
+ {
+  "id": 1632,
+  "tr": "kuzin",
+  "en": "cousin",
+  "beispiel": "Meine Cousine wohnt seit einem Jahr in Brasilien.",
+  "beispielTr": "Kuzinim bir yıldır Brezilya'da yaşıyor.",
+  "beispielEn": "My cousin has been living in Brazil for a year."
+ },
+ {
+  "id": 1460,
+  "tr": "ifade",
+  "en": "expression",
+  "beispiel": "Diesen Ausdruck habe ich noch nie gehört.",
+  "beispielTr": "Bu ifadeyi daha önce hiç duymamıştım.",
+  "beispielEn": "I have never heard this expression before."
+ },
+ {
+  "id": 2198,
+  "tr": "düğme",
+  "en": "button",
+  "beispiel": "An meiner Jacke fehlt ein Knopf.",
+  "beispielTr": "Ceketimin bir düğmesi eksik.",
+  "beispielEn": "A button is missing from my jacket."
+ },
+ {
+  "id": 2056,
+  "tr": "gizlice",
+  "en": "secretly",
+  "beispiel": "Ich habe gehört, dass mein Sohn heimlich raucht.",
+  "beispielTr": "Oğlumun gizlice sigara içtiğini duydum.",
+  "beispielEn": "I heard that my son smokes secretly."
+ },
+ {
+  "id": 2699,
+  "tr": "anlamsız",
+  "en": "pointless",
+  "beispiel": "Es ist sinnlos, jetzt noch darüber zu streiten.",
+  "beispielTr": "Şimdi bu konuda tartışmak anlamsız.",
+  "beispielEn": "It is pointless to argue about it now."
+ },
+ {
+  "id": 2412,
+  "tr": "ağ",
+  "en": "net",
+  "beispiel": "Der Fischer zog das Netz aus dem Wasser.",
+  "beispielTr": "Balıkçı ağı sudan çıkardı.",
+  "beispielEn": "The fisherman pulled the net out of the water."
+ },
+ {
+  "id": 1437,
+  "tr": "nefes",
+  "en": "breath",
+  "beispiel": "Bitte halten Sie kurz den Atem an.",
+  "beispielTr": "Lütfen kısa bir süre nefesinizi tutun.",
+  "beispielEn": "Please hold your breath for a moment."
+ },
+ {
+  "id": 1413,
+  "tr": "çalıştırmak",
+  "en": "to turn on",
+  "beispiel": "Können Sie bitte die Heizung anstellen?",
+  "beispielTr": "Kaloriferi çalıştırabilir misiniz lütfen?",
+  "beispielEn": "Could you turn on the heating, please?"
+ },
+ {
+  "id": 2912,
+  "tr": "civar",
+  "en": "surroundings",
+  "beispiel": "In der Umgebung von Berlin gibt es viele Seen.",
+  "beispielTr": "Berlin civarında birçok göl var.",
+  "beispielEn": "There are many lakes around Berlin."
+ },
+ {
+  "id": 1779,
+  "tr": "geliştirmek",
+  "en": "to develop",
+  "beispiel": "Die Firma hat ein neues Produkt entwickelt.",
+  "beispielTr": "Firma yeni bir ürün geliştirdi.",
+  "beispielEn": "The company has developed a new product."
+ },
+ {
+  "id": 2683,
+  "tr": "kanal",
+  "en": "channel",
+  "beispiel": "Welchen Sender siehst du am liebsten?",
+  "beispielTr": "En çok hangi kanalı izliyorsun?",
+  "beispielEn": "Which channel do you like watching most?"
+ },
+ {
+  "id": 2080,
+  "tr": "ipucu",
+  "en": "clue",
+  "beispiel": "Die Polizei sucht Hinweise zu dem Unfall.",
+  "beispielTr": "Polis kazayla ilgili ipucu arıyor.",
+  "beispielEn": "The police are looking for clues about the accident."
+ },
+ {
+  "id": 1500,
+  "tr": "teşekkür etmek",
+  "en": "to thank",
+  "beispiel": "Ich möchte mich herzlich für Ihre Hilfe bedanken.",
+  "beispielTr": "Yardımınız için içtenlikle teşekkür etmek istiyorum.",
+  "beispielEn": "I would like to thank you warmly for your help."
+ },
+ {
+  "id": 2955,
+  "tr": "sözleşmiş",
+  "en": "having plans",
+  "beispiel": "Tut mir leid, ich bin heute Abend schon verabredet.",
+  "beispielTr": "Kusura bakma, bu akşam sözüm var.",
+  "beispielEn": "Sorry, I already have plans this evening."
+ },
+ {
+  "id": 2292,
+  "tr": "teslimat",
+  "en": "delivery",
+  "beispiel": "Sie bezahlen erst bei der Lieferung.",
+  "beispielTr": "Ödemeyi ancak teslimatta yapıyorsunuz.",
+  "beispielEn": "You only pay on delivery."
+ },
+ {
+  "id": 2673,
+  "tr": "kadın sekreter",
+  "en": "secretary",
+  "beispiel": "Die Sekretärin verbindet Sie mit dem Chef.",
+  "beispielTr": "Sekreter sizi patrona bağlayacak.",
+  "beispielEn": "The secretary will put you through to the boss."
+ },
+ {
+  "id": 2874,
+  "tr": "sadık",
+  "en": "loyal",
+  "beispiel": "Herr Maier ist seit Jahren ein treuer Kunde.",
+  "beispielTr": "Bay Maier yıllardır sadık bir müşterimiz.",
+  "beispielEn": "Mr. Maier has been a loyal customer for years."
+ },
+ {
+  "id": 2508,
+  "tr": "olumlu",
+  "en": "positive",
+  "beispiel": "Wir haben eine positive Nachricht für Sie.",
+  "beispielTr": "Sizin için olumlu bir haberimiz var.",
+  "beispielEn": "We have some positive news for you."
+ },
+ {
+  "id": 2486,
+  "tr": "personel",
+  "en": "staff",
+  "beispiel": "Dieser Eingang ist nur für das Personal.",
+  "beispielTr": "Bu giriş yalnızca personel içindir.",
+  "beispielEn": "This entrance is for staff only."
+ },
+ {
+  "id": 3113,
+  "tr": "etki",
+  "en": "effect",
+  "beispiel": "Welche Wirkung hat dieses Medikament?",
+  "beispielTr": "Bu ilacın etkisi nedir?",
+  "beispielEn": "What effect does this medicine have?"
+ },
+ {
+  "id": 2848,
+  "tr": "terapi",
+  "en": "therapy",
+  "beispiel": "Die Therapie hat geholfen, mir geht es besser.",
+  "beispielTr": "Terapi işe yaradı, artık daha iyiyim.",
+  "beispielEn": "The therapy helped, and I feel better now."
+ }
+]

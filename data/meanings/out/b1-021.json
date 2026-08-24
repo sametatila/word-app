@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2660,
+    "tr": "kase",
+    "en": "bowl",
+    "beispiel": "Gibst du mir bitte eine Schüssel für den Salat?",
+    "beispielTr": "Salata için bana bir kase verir misin?",
+    "beispielEn": "Could you pass me a bowl for the salad?"
+  },
+  {
+    "id": 2102,
+    "tr": "ideal",
+    "en": "ideal",
+    "beispiel": "Eine Wohnung mit Garten wäre für uns ideal.",
+    "beispielTr": "Bahçeli bir daire bizim için ideal olurdu.",
+    "beispielEn": "An apartment with a garden would be ideal for us."
+  },
+  {
+    "id": 2008,
+    "tr": "sana da",
+    "en": "likewise",
+    "beispiel": "Ich wünsche dir gleichfalls einen schönen Urlaub.",
+    "beispielTr": "Sana da iyi tatiller dilerim.",
+    "beispielEn": "I wish you a nice vacation as well."
+  },
+  {
+    "id": 3097,
+    "tr": "değersiz",
+    "en": "worthless",
+    "beispiel": "Diese alten Geldscheine sind heute völlig wertlos.",
+    "beispielTr": "Bu eski banknotlar bugün tamamen değersiz.",
+    "beispielEn": "These old banknotes are completely worthless today."
+  },
+  {
+    "id": 2413,
+    "tr": "ağ",
+    "en": "network",
+    "beispiel": "Soziale Netzwerke sind für viele Firmen wichtig.",
+    "beispielTr": "Sosyal ağlar birçok şirket için önemli.",
+    "beispielEn": "Social networks are important for many companies."
+  },
+  {
+    "id": 1775,
+    "tr": "oluşmak",
+    "en": "to arise",
+    "beispiel": "Bei der Diskussion sind viele Missverständnisse entstanden.",
+    "beispielTr": "Tartışmada birçok yanlış anlaşılma oluştu.",
+    "beispielEn": "Many misunderstandings arose during the discussion."
+  },
+  {
+    "id": 2713,
+    "tr": "sos",
+    "en": "sauce",
+    "beispiel": "Gibst du mir bitte mal die Soße?",
+    "beispielTr": "Sosu uzatır mısın lütfen?",
+    "beispielEn": "Could you pass me the sauce?"
+  },
+  {
+    "id": 1829,
+    "tr": "eğitim",
+    "en": "upbringing",
+    "beispiel": "Heute kümmern sich auch viele Väter um die Erziehung der Kinder.",
+    "beispielTr": "Bugün birçok baba da çocukların eğitimiyle ilgileniyor.",
+    "beispielEn": "Today many fathers also take care of the children's upbringing."
+  },
+  {
+    "id": 2120,
+    "tr": "enstitü",
+    "en": "institute",
+    "beispiel": "Sie arbeitet an einem Institut für Klimaforschung.",
+    "beispielTr": "Bir iklim araştırmaları enstitüsünde çalışıyor.",
+    "beispielEn": "She works at an institute for climate research."
+  },
+  {
+    "id": 2539,
+    "tr": "tıraş olmak",
+    "en": "to shave",
+    "beispiel": "Er rasiert sich jeden Morgen vor der Arbeit.",
+    "beispielTr": "Her sabah işten önce tıraş oluyor.",
+    "beispielEn": "He shaves every morning before work."
+  },
+  {
+    "id": 1883,
+    "tr": "düz",
+    "en": "flat",
+    "beispiel": "Für die Arbeit brauche ich flache Schuhe.",
+    "beispielTr": "İş için düz ayakkabılara ihtiyacım var.",
+    "beispielEn": "I need flat shoes for work."
+  },
+  {
+    "id": 1709,
+    "tr": "hırsız",
+    "en": "burglar",
+    "beispiel": "Die Einbrecher sind durch das Fenster eingestiegen.",
+    "beispielTr": "Hırsızlar pencereden içeri girmiş.",
+    "beispielEn": "The burglars got in through the window."
+  },
+  {
+    "id": 1895,
+    "tr": "sıvı",
+    "en": "liquid",
+    "beispiel": "Nehmen Sie das Medikament mit viel Flüssigkeit ein.",
+    "beispielTr": "İlacı bol sıvıyla alın.",
+    "beispielEn": "Take the medication with plenty of liquid."
+  },
+  {
+    "id": 2252,
+    "tr": "viraj",
+    "en": "curve",
+    "beispiel": "In dieser Kurve passieren oft schwere Unfälle.",
+    "beispielTr": "Bu virajda sık sık ağır kazalar oluyor.",
+    "beispielEn": "Serious accidents often happen on this curve."
+  },
+  {
+    "id": 2442,
+    "tr": "yayımlamak",
+    "en": "to publish",
+    "beispiel": "Das Buch wurde gestern veröffentlicht.",
+    "beispielTr": "Kitap dün yayımlandı.",
+    "beispielEn": "The book was published yesterday."
+  },
+  {
+    "id": 2565,
+    "tr": "bölge",
+    "en": "region",
+    "beispiel": "In dieser Region sind die Mieten sehr hoch.",
+    "beispielTr": "Bu bölgede kiralar çok yüksek.",
+    "beispielEn": "Rents are very high in this region."
+  },
+  {
+    "id": 1937,
+    "tr": "galeri",
+    "en": "gallery",
+    "beispiel": "In der Galerie wird morgen eine Ausstellung eröffnet.",
+    "beispielTr": "Galeride yarın bir sergi açılıyor.",
+    "beispielEn": "An exhibition opens at the gallery tomorrow."
+  },
+  {
+    "id": 1759,
+    "tr": "kız torun",
+    "en": "granddaughter",
+    "beispiel": "Meine Enkelin geht seit September in die Schule.",
+    "beispielTr": "Kız torunum eylülden beri okula gidiyor.",
+    "beispielEn": "My granddaughter has been going to school since September."
+  },
+  {
+    "id": 2141,
+    "tr": "gazeteci",
+    "en": "journalist",
+    "beispiel": "Der Journalist hat den Minister lange interviewt.",
+    "beispielTr": "Gazeteci bakanla uzun bir röportaj yaptı.",
+    "beispielEn": "The journalist interviewed the minister at length."
+  },
+  {
+    "id": 1926,
+    "tr": "meyve",
+    "en": "fruit",
+    "beispiel": "Früchte kaufe ich am liebsten auf dem Markt.",
+    "beispielTr": "Meyveyi en çok pazardan almayı severim.",
+    "beispielEn": "I like buying fruit at the market best."
+  },
+  {
+    "id": 2406,
+    "tr": "ulusal",
+    "en": "national",
+    "beispiel": "Das Museum ist von nationaler Bedeutung.",
+    "beispielTr": "Müze ulusal öneme sahip.",
+    "beispielEn": "The museum is of national importance."
+  },
+  {
+    "id": 2266,
+    "tr": "sıkılmak",
+    "en": "to be bored",
+    "beispiel": "Ich habe mich im Museum ziemlich gelangweilt.",
+    "beispielTr": "Müzede epey sıkıldım.",
+    "beispielEn": "I was pretty bored at the museum."
+  },
+  {
+    "id": 1920,
+    "tr": "kuaför",
+    "en": "hairdresser",
+    "beispiel": "Ich muss dringend mal wieder zum Friseur.",
+    "beispielTr": "Acilen kuaföre gitmem lazım.",
+    "beispielEn": "I really need to go to the hairdresser again."
+  },
+  {
+    "id": 1656,
+    "tr": "diyet",
+    "en": "diet",
+    "beispiel": "Seit zwei Wochen macht sie eine strenge Diät.",
+    "beispielTr": "İki haftadır sıkı bir diyet yapıyor.",
+    "beispielEn": "She has been on a strict diet for two weeks."
+  },
+  {
+    "id": 1850,
+    "tr": "vadesi gelmiş",
+    "en": "due",
+    "beispiel": "Die Rechnung ist Ende des Monats fällig.",
+    "beispielTr": "Faturanın vadesi ay sonunda doluyor.",
+    "beispielEn": "The bill is due at the end of the month."
+  },
+  {
+    "id": 2194,
+    "tr": "meyhane",
+    "en": "pub",
+    "beispiel": "Nach der Arbeit treffen wir uns in der Kneipe.",
+    "beispielTr": "İşten sonra meyhanede buluşuyoruz.",
+    "beispielEn": "After work we meet at the pub."
+  },
+  {
+    "id": 1777,
+    "tr": "hayal kırıklığı",
+    "en": "disappointment",
+    "beispiel": "Das Endspiel war eine große Enttäuschung.",
+    "beispielTr": "Final maçı büyük bir hayal kırıklığıydı.",
+    "beispielEn": "The final was a big disappointment."
+  },
+  {
+    "id": 2881,
+    "tr": "bez",
+    "en": "cloth",
+    "beispiel": "Wisch den Tisch bitte mit einem feuchten Tuch ab.",
+    "beispielTr": "Masayı lütfen nemli bir bezle sil.",
+    "beispielEn": "Please wipe the table with a damp cloth."
+  },
+  {
+    "id": 1469,
+    "tr": "yeterli",
+    "en": "sufficient",
+    "beispiel": "Ihre Deutschkenntnisse sind für diese Stelle ausreichend.",
+    "beispielTr": "Almanca bilginiz bu pozisyon için yeterli.",
+    "beispielEn": "Your German is sufficient for this position."
+  },
+  {
+    "id": 2294,
+    "tr": "gazoz",
+    "en": "soda",
+    "beispiel": "Die Kinder trinken am liebsten Limonade.",
+    "beispielTr": "Çocuklar en çok gazoz içmeyi seviyor.",
+    "beispielEn": "The children like drinking soda best."
+  },
+  {
+    "id": 1728,
+    "tr": "döşemek",
+    "en": "to furnish",
+    "beispiel": "Ich habe meine Wohnung selbst eingerichtet.",
+    "beispielTr": "Evimi kendim döşedim.",
+    "beispielEn": "I furnished my apartment myself."
+  },
+  {
+    "id": 1739,
+    "tr": "şehir sakini",
+    "en": "inhabitant",
+    "beispiel": "Viele Einwohner der Stadt sind gegen das Projekt.",
+    "beispielTr": "Şehir sakinlerinin çoğu projeye karşı.",
+    "beispielEn": "Many inhabitants of the city are against the project."
+  },
+  {
+    "id": 2573,
+    "tr": "rekor",
+    "en": "record",
+    "beispiel": "Sie hat den Rekord im Schwimmen gebrochen.",
+    "beispielTr": "Yüzmede rekoru kırdı.",
+    "beispielEn": "She broke the record in swimming."
+  },
+  {
+    "id": 1731,
+    "tr": "açmak",
+    "en": "to turn on",
+    "beispiel": "Können Sie bitte die Heizung einschalten?",
+    "beispielTr": "Kaloriferi açar mısınız lütfen?",
+    "beispielEn": "Could you turn on the heating?"
+  },
+  {
+    "id": 2591,
+    "tr": "fırın",
+    "en": "oven",
+    "beispiel": "Die Pizza ist ganz frisch aus dem Rohr.",
+    "beispielTr": "Pizza fırından yeni çıktı.",
+    "beispielEn": "The pizza is fresh out of the oven."
+  },
+  {
+    "id": 2661,
+    "tr": "sallamak",
+    "en": "to shake",
+    "beispiel": "Er schüttelte traurig den Kopf.",
+    "beispielTr": "Üzgün üzgün başını salladı.",
+    "beispielEn": "He shook his head sadly."
+  },
+  {
+    "id": 1987,
+    "tr": "cinsiyet",
+    "en": "gender",
+    "beispiel": "Bitte geben Sie Ihr Geschlecht im Formular an.",
+    "beispielTr": "Lütfen formda cinsiyetinizi belirtin.",
+    "beispielEn": "Please state your gender on the form."
+  },
+  {
+    "id": 2949,
+    "tr": "aslında",
+    "en": "originally",
+    "beispiel": "Ursprünglich wollte ich in einem Restaurant arbeiten.",
+    "beispielTr": "Aslında bir restoranda çalışmak istiyordum.",
+    "beispielEn": "Originally I wanted to work in a restaurant."
+  },
+  {
+    "id": 1670,
+    "tr": "mesafe",
+    "en": "distance",
+    "beispiel": "Unsere Firma transportiert Waren über große Distanzen.",
+    "beispielTr": "Şirketimiz malları uzun mesafelere taşıyor.",
+    "beispielEn": "Our company transports goods over long distances."
+  },
+  {
+    "id": 1755,
+    "tr": "tavsiye",
+    "en": "recommendation",
+    "beispiel": "Ich rufe auf Empfehlung einer Freundin an.",
+    "beispielTr": "Bir arkadaşımın tavsiyesi üzerine arıyorum.",
+    "beispielEn": "I'm calling on the recommendation of a friend."
+  },
+  {
+    "id": 2299,
+    "tr": "edebiyat",
+    "en": "literature",
+    "beispiel": "Ich interessiere mich für moderne Literatur.",
+    "beispielTr": "Modern edebiyata ilgi duyuyorum.",
+    "beispielEn": "I'm interested in modern literature."
+  },
+  {
+    "id": 2532,
+    "tr": "boydan boya",
+    "en": "across",
+    "beispiel": "Ich fahre jeden Tag quer durch die Stadt.",
+    "beispielTr": "Her gün şehri boydan boya geçiyorum.",
+    "beispielEn": "Every day I drive right across the city."
+  },
+  {
+    "id": 1390,
+    "tr": "analiz etmek",
+    "en": "to analyze",
+    "beispiel": "Die Forscher analysieren die Daten sehr genau.",
+    "beispielTr": "Araştırmacılar verileri çok dikkatli analiz ediyor.",
+    "beispielEn": "The researchers are analyzing the data very carefully."
+  },
+  {
+    "id": 1414,
+    "tr": "çalışan",
+    "en": "employee",
+    "beispiel": "Björn ist Angestellter in einem Reisebüro.",
+    "beispielTr": "Björn bir seyahat acentesinde çalışıyor.",
+    "beispielEn": "Björn is an employee at a travel agency."
+  },
+  {
+    "id": 1415,
+    "tr": "kadın çalışan",
+    "en": "female employee",
+    "beispiel": "Die Angestellte hat mir am Schalter geholfen.",
+    "beispielTr": "Gişedeki çalışan bana yardım etti.",
+    "beispielEn": "The employee at the counter helped me."
+  },
+  {
+    "id": 1767,
+    "tr": "işten çıkarma",
+    "en": "dismissal",
+    "beispiel": "Seine Entlassung kam für alle überraschend.",
+    "beispielTr": "İşten çıkarılması herkes için sürpriz oldu.",
+    "beispielEn": "His dismissal came as a surprise to everyone."
+  },
+  {
+    "id": 2517,
+    "tr": "üretmek",
+    "en": "to produce",
+    "beispiel": "Unsere Firma produziert Feuerzeuge.",
+    "beispielTr": "Şirketimiz çakmak üretiyor.",
+    "beispielEn": "Our company produces lighters."
+  },
+  {
+    "id": 1891,
+    "tr": "akmak",
+    "en": "to flow",
+    "beispiel": "Dieser Fluss fließt in die Nordsee.",
+    "beispielTr": "Bu nehir Kuzey Denizi'ne dökülüyor.",
+    "beispielEn": "This river flows into the North Sea."
+  },
+  {
+    "id": 1941,
+    "tr": "garanti",
+    "en": "guarantee",
+    "beispiel": "Auf die Waschmaschine haben Sie ein Jahr Garantie.",
+    "beispielTr": "Çamaşır makinesinin bir yıl garantisi var.",
+    "beispielEn": "The washing machine comes with a one-year guarantee."
+  },
+  {
+    "id": 2401,
+    "tr": "dikmek",
+    "en": "to sew",
+    "beispiel": "Meine Mutter näht ihre Kleider selbst.",
+    "beispielTr": "Annem elbiselerini kendisi dikiyor.",
+    "beispielEn": "My mother sews her own clothes."
+  }
+]

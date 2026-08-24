@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1826,
+    "tr": "beklemek",
+    "en": "to expect",
+    "beispiel": "Ich erwarte einen wichtigen Anruf aus Berlin.",
+    "beispielTr": "Berlin'den önemli bir telefon bekliyorum.",
+    "beispielEn": "I'm expecting an important call from Berlin."
+  },
+  {
+    "id": 3128,
+    "tr": "mucize",
+    "en": "miracle",
+    "beispiel": "Es ist ein Wunder, dass niemand verletzt wurde.",
+    "beispielTr": "Kimsenin yaralanmaması tam bir mucize.",
+    "beispielEn": "It's a miracle that nobody got hurt."
+  },
+  {
+    "id": 3003,
+    "tr": "muhtemelen",
+    "en": "presumably",
+    "beispiel": "Vermutlich sagt er die Wahrheit.",
+    "beispielTr": "Muhtemelen doğruyu söylüyor.",
+    "beispielEn": "He is presumably telling the truth."
+  },
+  {
+    "id": 2528,
+    "tr": "nokta",
+    "en": "point",
+    "beispiel": "Diesen Punkt haben wir noch nicht besprochen.",
+    "beispielTr": "Bu noktayı henüz konuşmadık.",
+    "beispielEn": "We haven't discussed this point yet."
+  },
+  {
+    "id": 3008,
+    "tr": "ele vermek",
+    "en": "to give away",
+    "beispiel": "Sein Blick verriet mir, dass er gelogen hatte.",
+    "beispielTr": "Bakışları bana yalan söylediğini ele verdi.",
+    "beispielEn": "His look gave away that he had lied."
+  },
+  {
+    "id": 2675,
+    "tr": "kendi",
+    "en": "oneself",
+    "beispiel": "Das kannst du auch selber machen.",
+    "beispielTr": "Bunu kendin de yapabilirsin.",
+    "beispielEn": "You can do that yourself too."
+  },
+  {
+    "id": 2052,
+    "tr": "cilt",
+    "en": "skin",
+    "beispiel": "Haben Sie eine Creme für trockene Haut?",
+    "beispielTr": "Kuru ciltler için kreminiz var mı?",
+    "beispielEn": "Do you have a cream for dry skin?"
+  },
+  {
+    "id": 1663,
+    "tr": "bu sefer",
+    "en": "this time",
+    "beispiel": "Diesmal möchte ich lieber zu Hause bleiben.",
+    "beispielTr": "Bu sefer evde kalmayı tercih ederim.",
+    "beispielEn": "This time I'd rather stay at home."
+  },
+  {
+    "id": 2483,
+    "tr": "kişisel",
+    "en": "personal",
+    "beispiel": "Das ist nur meine persönliche Meinung.",
+    "beispielTr": "Bu sadece benim kişisel görüşüm.",
+    "beispielEn": "That's just my personal opinion."
+  },
+  {
+    "id": 2404,
+    "tr": "çünkü",
+    "en": "because",
+    "beispiel": "Ich muss leider gehen, ich habe nämlich noch einen Termin.",
+    "beispielTr": "Maalesef gitmem gerek, çünkü başka bir randevum var.",
+    "beispielEn": "I have to leave, because I still have an appointment."
+  },
+  {
+    "id": 2519,
+    "tr": "profesör",
+    "en": "professor",
+    "beispiel": "Der Professor hält heute einen Vortrag über Goethe.",
+    "beispielTr": "Profesör bugün Goethe üzerine bir konferans veriyor.",
+    "beispielEn": "The professor is giving a lecture on Goethe today."
+  },
+  {
+    "id": 2405,
+    "tr": "burun",
+    "en": "nose",
+    "beispiel": "Mir läuft die Nase, weil ich erkältet bin.",
+    "beispielTr": "Üşüttüğüm için burnum akıyor.",
+    "beispielEn": "My nose is running because I have a cold."
+  },
+  {
+    "id": 1834,
+    "tr": "sonsuz",
+    "en": "eternal",
+    "beispiel": "Diese Freundschaft wird hoffentlich ewig halten.",
+    "beispielTr": "Bu dostluk umarım sonsuza kadar sürer.",
+    "beispielEn": "Hopefully this friendship will last forever."
+  },
+  {
+    "id": 2895,
+    "tr": "sürpriz",
+    "en": "surprise",
+    "beispiel": "Ich habe eine kleine Überraschung für dich.",
+    "beispielTr": "Senin için küçük bir sürprizim var.",
+    "beispielEn": "I have a little surprise for you."
+  },
+  {
+    "id": 1967,
+    "tr": "sır",
+    "en": "secret",
+    "beispiel": "Kannst du ein Geheimnis für dich behalten?",
+    "beispielTr": "Bir sırrı kendine saklayabilir misin?",
+    "beispielEn": "Can you keep a secret to yourself?"
+  },
+  {
+    "id": 2011,
+    "tr": "altın",
+    "en": "gold",
+    "beispiel": "Dieser Ring ist aus echtem Gold.",
+    "beispielTr": "Bu yüzük gerçek altından.",
+    "beispielEn": "This ring is made of real gold."
+  },
+  {
+    "id": 1810,
+    "tr": "halletmek",
+    "en": "to take care of",
+    "beispiel": "Ich muss noch ein paar Dinge erledigen.",
+    "beispielTr": "Halletmem gereken birkaç iş daha var.",
+    "beispielEn": "I still have a few things to take care of."
+  },
+  {
+    "id": 2632,
+    "tr": "uyku",
+    "en": "sleep",
+    "beispiel": "Genügend Schlaf ist wichtig für die Gesundheit.",
+    "beispielTr": "Yeterli uyku sağlık için önemli.",
+    "beispielEn": "Enough sleep is important for your health."
+  },
+  {
+    "id": 3129,
+    "tr": "çok güzel",
+    "en": "gorgeous",
+    "beispiel": "Sie trug ein wunderschönes Kleid auf der Hochzeit.",
+    "beispielTr": "Düğünde çok güzel bir elbise giymişti.",
+    "beispielEn": "She wore a gorgeous dress at the wedding."
+  },
+  {
+    "id": 2906,
+    "tr": "bu arada",
+    "en": "by the way",
+    "beispiel": "Übrigens, kennst du schon die neuen Nachbarn?",
+    "beispielTr": "Bu arada, yeni komşuları tanıdın mı?",
+    "beispielEn": "By the way, have you met the new neighbors?"
+  },
+  {
+    "id": 2054,
+    "tr": "eve",
+    "en": "home",
+    "beispiel": "Nach der Arbeit fahre ich sofort heim.",
+    "beispielTr": "İşten sonra hemen eve giderim.",
+    "beispielEn": "After work I go straight home."
+  },
+  {
+    "id": 2055,
+    "tr": "yurt",
+    "en": "home",
+    "beispiel": "Das Kind ist in einem Heim aufgewachsen.",
+    "beispielTr": "Çocuk bir yurtta büyüdü.",
+    "beispielEn": "The child grew up in a children's home."
+  },
+  {
+    "id": 1575,
+    "tr": "hareket ettirmek",
+    "en": "to move",
+    "beispiel": "Ich kann meinen Arm nicht mehr bewegen.",
+    "beispielTr": "Kolumu artık hareket ettiremiyorum.",
+    "beispielEn": "I can't move my arm anymore."
+  },
+  {
+    "id": 2088,
+    "tr": "umut",
+    "en": "hope",
+    "beispiel": "Wir haben die Hoffnung noch nicht aufgegeben.",
+    "beispielTr": "Umudumuzu henüz kaybetmedik.",
+    "beispielEn": "We haven't given up hope yet."
+  },
+  {
+    "id": 2757,
+    "tr": "koymak",
+    "en": "to put",
+    "beispiel": "Ich habe den Schlüssel in die Tasche gesteckt.",
+    "beispielTr": "Anahtarı çantanın içine koydum.",
+    "beispielEn": "I put the key into my bag."
+  },
+  {
+    "id": 1768,
+    "tr": "karar vermek",
+    "en": "to decide",
+    "beispiel": "Das kann ich nicht allein entscheiden.",
+    "beispielTr": "Buna tek başıma karar veremem.",
+    "beispielEn": "I can't decide that on my own."
+  },
+  {
+    "id": 2359,
+    "tr": "birbiriyle",
+    "en": "with each other",
+    "beispiel": "Wir sollten offen miteinander reden.",
+    "beispielTr": "Birbirimizle açık açık konuşmalıyız.",
+    "beispielEn": "We should talk openly with each other."
+  },
+  {
+    "id": 2106,
+    "tr": "-erek",
+    "en": "by",
+    "beispiel": "Du kannst die Datei öffnen, indem du hier klickst.",
+    "beispielTr": "Dosyayı buraya tıklayarak açabilirsin.",
+    "beispielEn": "You can open the file by clicking here."
+  },
+  {
+    "id": 2371,
+    "tr": "imkân",
+    "en": "possibility",
+    "beispiel": "Hast du die Möglichkeit, etwas früher zu kommen?",
+    "beispielTr": "Biraz daha erken gelme imkânın var mı?",
+    "beispielEn": "Is there any possibility you could come a bit earlier?"
+  },
+  {
+    "id": 2974,
+    "tr": "geçmiş",
+    "en": "past",
+    "beispiel": "In der Vergangenheit war vieles einfacher.",
+    "beispielTr": "Geçmişte çoğu şey daha kolaydı.",
+    "beispielEn": "Many things were easier in the past."
+  },
+  {
+    "id": 1444,
+    "tr": "alıkoymak",
+    "en": "to hold up",
+    "beispiel": "Entschuldigung, ich will Sie nicht länger aufhalten.",
+    "beispielTr": "Kusura bakmayın, sizi daha fazla alıkoymak istemem.",
+    "beispielEn": "Sorry, I don't want to hold you up any longer."
+  },
+  {
+    "id": 1991,
+    "tr": "toplum",
+    "en": "society",
+    "beispiel": "Unsere Gesellschaft hat sich stark verändert.",
+    "beispielTr": "Toplumumuz çok değişti.",
+    "beispielEn": "Our society has changed a great deal."
+  },
+  {
+    "id": 3018,
+    "tr": "saklanmak",
+    "en": "to hide",
+    "beispiel": "Die Kinder verstecken sich hinter dem Sofa.",
+    "beispielTr": "Çocuklar kanepenin arkasına saklanıyor.",
+    "beispielEn": "The children are hiding behind the sofa."
+  },
+  {
+    "id": 2657,
+    "tr": "suçlu",
+    "en": "guilty",
+    "beispiel": "Das Gericht hat ihn für schuldig erklärt.",
+    "beispielTr": "Mahkeme onu suçlu buldu.",
+    "beispielEn": "The court found him guilty."
+  },
+  {
+    "id": 2662,
+    "tr": "korumak",
+    "en": "to protect",
+    "beispiel": "Diese Impfung schützt vor einer schweren Grippe.",
+    "beispielTr": "Bu aşı ağır bir gripten korur.",
+    "beispielEn": "This vaccination protects against severe flu."
+  },
+  {
+    "id": 1795,
+    "tr": "almak",
+    "en": "to receive",
+    "beispiel": "Gestern haben wir Ihre Bewerbung erhalten.",
+    "beispielTr": "Başvurunuzu dün aldık.",
+    "beispielEn": "We received your application yesterday."
+  },
+  {
+    "id": 1946,
+    "tr": "bina",
+    "en": "building",
+    "beispiel": "In diesem Gebäude sind nur Büros.",
+    "beispielTr": "Bu binada sadece ofisler var.",
+    "beispielEn": "There are only offices in this building."
+  },
+  {
+    "id": 3139,
+    "tr": "işaret",
+    "en": "sign",
+    "beispiel": "Bitte fangen Sie erst an, wenn ich Ihnen ein Zeichen gebe.",
+    "beispielTr": "Lütfen ben size işaret verince başlayın.",
+    "beispielEn": "Please don't start until I give you a sign."
+  },
+  {
+    "id": 2585,
+    "tr": "hâkim",
+    "en": "judge",
+    "beispiel": "Der Richter hat noch kein Urteil gesprochen.",
+    "beispielTr": "Hâkim henüz kararını açıklamadı.",
+    "beispielEn": "The judge has not passed a verdict yet."
+  },
+  {
+    "id": 2977,
+    "tr": "eğlenmek",
+    "en": "to enjoy oneself",
+    "beispiel": "Auf der Party haben wir uns sehr vergnügt.",
+    "beispielTr": "Partide çok eğlendik.",
+    "beispielEn": "We really enjoyed ourselves at the party."
+  },
+  {
+    "id": 2978,
+    "tr": "keyif",
+    "en": "pleasure",
+    "beispiel": "Es ist ein Vergnügen, dir beim Kochen zuzusehen.",
+    "beispielTr": "Seni yemek yaparken izlemek büyük bir keyif.",
+    "beispielEn": "It is a pleasure to watch you cook."
+  },
+  {
+    "id": 1378,
+    "tr": "ancak",
+    "en": "however",
+    "beispiel": "Wir können uns treffen, allerdings erst am Nachmittag.",
+    "beispielTr": "Buluşabiliriz, ancak öğleden sonra olur.",
+    "beispielEn": "We can meet, though only in the afternoon."
+  },
+  {
+    "id": 2540,
+    "tr": "tavsiye",
+    "en": "advice",
+    "beispiel": "Können Sie mir einen guten Rat geben?",
+    "beispielTr": "Bana iyi bir tavsiye verebilir misiniz?",
+    "beispielEn": "Can you give me some good advice?"
+  },
+  {
+    "id": 1370,
+    "tr": "Dikkat!",
+    "en": "watch out",
+    "beispiel": "Achtung, hier endet die Straße!",
+    "beispielTr": "Dikkat, yol burada bitiyor!",
+    "beispielEn": "Watch out, the road ends here!"
+  },
+  {
+    "id": 2752,
+    "tr": "yerine",
+    "en": "instead of",
+    "beispiel": "Ich nehme lieber Tee statt Kaffee.",
+    "beispielTr": "Kahve yerine çay tercih ederim.",
+    "beispielEn": "I'd rather have tea instead of coffee."
+  },
+  {
+    "id": 2891,
+    "tr": "devralmak",
+    "en": "to take over",
+    "beispiel": "Nächstes Jahr übernehme ich die Firma meines Vaters.",
+    "beispielTr": "Gelecek yıl babamın şirketini devralacağım.",
+    "beispielEn": "Next year I'm taking over my father's company."
+  },
+  {
+    "id": 1964,
+    "tr": "civar",
+    "en": "area",
+    "beispiel": "Die Schule muss hier in der Gegend sein.",
+    "beispielTr": "Okul bu civarda bir yerde olmalı.",
+    "beispielEn": "The school must be somewhere around here."
+  },
+  {
+    "id": 1805,
+    "tr": "tanımak",
+    "en": "to recognize",
+    "beispiel": "An der Stimme erkenne ich ihn sofort.",
+    "beispielTr": "Onu sesinden hemen tanırım.",
+    "beispielEn": "I recognize him right away by his voice."
+  },
+  {
+    "id": 2960,
+    "tr": "sorumlu",
+    "en": "responsible",
+    "beispiel": "Sie sind für Ihre Kinder verantwortlich.",
+    "beispielTr": "Çocuklarınızdan siz sorumlusunuz.",
+    "beispielEn": "You are responsible for your children."
+  },
+  {
+    "id": 3146,
+    "tr": "yok etmek",
+    "en": "to destroy",
+    "beispiel": "Der Krieg hat die ganze Stadt zerstört.",
+    "beispielTr": "Savaş bütün şehri yok etti.",
+    "beispielEn": "The war destroyed the entire city."
+  }
+]

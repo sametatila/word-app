@@ -1,0 +1,402 @@
+[
+ {
+  "id": 2010,
+  "tr": "aynı anda",
+  "en": "at the same time",
+  "beispiel": "Ich kann nicht alles gleichzeitig machen.",
+  "beispielTr": "Her şeyi aynı anda yapamam.",
+  "beispielEn": "I can't do everything at the same time."
+ },
+ {
+  "id": 2097,
+  "tr": "aç",
+  "en": "hungry",
+  "beispiel": "Nach dem Training war ich richtig hungrig.",
+  "beispielTr": "Antrenmandan sonra fena hâlde acıkmıştım.",
+  "beispielEn": "I was really hungry after the workout."
+ },
+ {
+  "id": 3192,
+  "tr": "zorlamak",
+  "en": "to force",
+  "beispiel": "Niemand kann dich zwingen, den Vertrag zu unterschreiben.",
+  "beispielTr": "Kimse seni sözleşmeyi imzalamaya zorlayamaz.",
+  "beispielEn": "Nobody can force you to sign the contract."
+ },
+ {
+  "id": 2942,
+  "tr": "desteklemek",
+  "en": "to support",
+  "beispiel": "Sie unterstützen mich, wo sie nur können.",
+  "beispielTr": "Ellerinden geldiğince beni destekliyorlar.",
+  "beispielEn": "They support me wherever they can."
+ },
+ {
+  "id": 2556,
+  "tr": "zamanında",
+  "en": "on time",
+  "beispiel": "Wir sind rechtzeitig am Bahnhof angekommen.",
+  "beispielTr": "Gara zamanında vardık.",
+  "beispielEn": "We got to the station on time."
+ },
+ {
+  "id": 1449,
+  "tr": "kaydetmek",
+  "en": "to record",
+  "beispiel": "Wir haben das Konzert mit dem Handy aufgenommen.",
+  "beispielTr": "Konseri telefonla kaydettik.",
+  "beispielEn": "We recorded the concert on our phone."
+ },
+ {
+  "id": 2635,
+  "tr": "yılan",
+  "en": "snake",
+  "beispiel": "Im Zoo haben wir eine riesige Schlange gesehen.",
+  "beispielTr": "Hayvanat bahçesinde kocaman bir yılan gördük.",
+  "beispielEn": "We saw a huge snake at the zoo."
+ },
+ {
+  "id": 2101,
+  "tr": "kulübe",
+  "en": "hut",
+  "beispiel": "Wir übernachten in der Hütte auf dem Berg.",
+  "beispielTr": "Dağdaki kulübede geceleyeceğiz.",
+  "beispielEn": "We are spending the night in the hut on the mountain."
+ },
+ {
+  "id": 2603,
+  "tr": "çuval",
+  "en": "sack",
+  "beispiel": "Er trug einen Sack Kartoffeln in den Keller.",
+  "beispielTr": "Bir çuval patatesi bodruma taşıdı.",
+  "beispielEn": "He carried a sack of potatoes to the basement."
+ },
+ {
+  "id": 1711,
+  "tr": "net",
+  "en": "clear",
+  "beispiel": "Das Ergebnis der Wahl war völlig eindeutig.",
+  "beispielTr": "Seçim sonucu tamamen netti.",
+  "beispielEn": "The result of the election was completely clear."
+ },
+ {
+  "id": 2933,
+  "tr": "sohbet",
+  "en": "conversation",
+  "beispiel": "Wir hatten gestern eine lange Unterhaltung über Politik.",
+  "beispielTr": "Dün siyaset üzerine uzun bir sohbet ettik.",
+  "beispielEn": "We had a long conversation about politics yesterday."
+ },
+ {
+  "id": 2023,
+  "tr": "kurmak",
+  "en": "to found",
+  "beispiel": "Frau Bauer hat eine eigene Firma gegründet.",
+  "beispielTr": "Bauer Hanım kendi şirketini kurdu.",
+  "beispielEn": "Ms. Bauer founded her own company."
+ },
+ {
+  "id": 2415,
+  "tr": "meraklı",
+  "en": "curious",
+  "beispiel": "Die Nachbarn sind ziemlich neugierig.",
+  "beispielTr": "Komşular epey meraklı.",
+  "beispielEn": "The neighbors are quite curious."
+ },
+ {
+  "id": 2286,
+  "tr": "yönetim",
+  "en": "management",
+  "beispiel": "Herr Meier übernimmt im Juli die Leitung der Abteilung.",
+  "beispielTr": "Bay Meier temmuzda bölümün yönetimini devralıyor.",
+  "beispielEn": "Mr. Meier takes over the management of the department in July."
+ },
+ {
+  "id": 1461,
+  "tr": "birbirinden ayrı",
+  "en": "apart",
+  "beispiel": "Wir wohnen nicht weit auseinander.",
+  "beispielTr": "Birbirimizden uzak oturmuyoruz.",
+  "beispielEn": "We don't live far apart."
+ },
+ {
+  "id": 1915,
+  "tr": "yemek",
+  "en": "to feed",
+  "beispiel": "Hat der Hund schon etwas zu fressen bekommen?",
+  "beispielTr": "Köpek yiyecek bir şey aldı mı?",
+  "beispielEn": "Has the dog had something to eat yet?"
+ },
+ {
+  "id": 2780,
+  "tr": "kumaş",
+  "en": "fabric",
+  "beispiel": "Der Stoff für das Kleid war ziemlich teuer.",
+  "beispielTr": "Elbisenin kumaşı epey pahalıydı.",
+  "beispielEn": "The fabric for the dress was quite expensive."
+ },
+ {
+  "id": 3040,
+  "tr": "virüs",
+  "en": "virus",
+  "beispiel": "Ich habe mal wieder einen Virus auf meinem Computer.",
+  "beispielTr": "Bilgisayarıma yine virüs bulaştı.",
+  "beispielEn": "I've got a virus on my computer again."
+ },
+ {
+  "id": 3004,
+  "tr": "mantıklı",
+  "en": "sensible",
+  "beispiel": "Das ist ein ganz vernünftiger Vorschlag.",
+  "beispielTr": "Bu gayet mantıklı bir öneri.",
+  "beispielEn": "That is a perfectly sensible suggestion."
+ },
+ {
+  "id": 2018,
+  "tr": "tutmak",
+  "en": "to grab",
+  "beispiel": "Das Kind griff nach meiner Hand.",
+  "beispielTr": "Çocuk elimi tuttu.",
+  "beispielEn": "The child grabbed my hand."
+ },
+ {
+  "id": 2480,
+  "tr": "yoluyla",
+  "en": "by",
+  "beispiel": "Ich schicke Ihnen den Vertrag per E-Mail.",
+  "beispielTr": "Sözleşmeyi size e-posta yoluyla gönderiyorum.",
+  "beispielEn": "I'll send you the contract by email."
+ },
+ {
+  "id": 2360,
+  "tr": "üye",
+  "en": "member",
+  "beispiel": "Für Mitglieder ist der Eintritt zum Konzert gratis.",
+  "beispielTr": "Üyeler için konsere giriş ücretsiz.",
+  "beispielEn": "Admission to the concert is free for members."
+ },
+ {
+  "id": 1864,
+  "tr": "tarla",
+  "en": "field",
+  "beispiel": "Auf diesem Feld wächst im Sommer Mais.",
+  "beispielTr": "Bu tarlada yazın mısır yetişiyor.",
+  "beispielEn": "Corn grows in this field in the summer."
+ },
+ {
+  "id": 1519,
+  "tr": "iddia etmek",
+  "en": "to claim",
+  "beispiel": "Er behauptet, dass er nichts davon gewusst hat.",
+  "beispielTr": "Bundan haberi olmadığını iddia ediyor.",
+  "beispielEn": "He claims that he knew nothing about it."
+ },
+ {
+  "id": 3080,
+  "tr": "uyarmak",
+  "en": "to warn",
+  "beispiel": "Die Polizei warnte vor Taschendieben in der Innenstadt.",
+  "beispielTr": "Polis şehir merkezindeki yankesicilere karşı uyardı.",
+  "beispielEn": "The police warned about pickpockets in the city center."
+ },
+ {
+  "id": 2273,
+  "tr": "lezzetli",
+  "en": "delicious",
+  "beispiel": "Das Essen war sehr lecker.",
+  "beispielTr": "Yemek çok lezzetliydi.",
+  "beispielEn": "The food was really delicious."
+ },
+ {
+  "id": 2190,
+  "tr": "klinik",
+  "en": "clinic",
+  "beispiel": "Ich muss in die Klinik, um meinen kranken Onkel zu besuchen.",
+  "beispielTr": "Hasta amcamı ziyaret etmek için kliniğe gitmem gerekiyor.",
+  "beispielEn": "I have to go to the clinic to visit my sick uncle."
+ },
+ {
+  "id": 1659,
+  "tr": "yoğun",
+  "en": "dense",
+  "beispiel": "Der Nebel war so dicht, dass wir langsam fuhren.",
+  "beispielTr": "Sis o kadar yoğundu ki yavaş gittik.",
+  "beispielEn": "The fog was so dense that we drove slowly."
+ },
+ {
+  "id": 1507,
+  "tr": "bulunmak",
+  "en": "to be located",
+  "beispiel": "Das Bord-Bistro befindet sich in der Mitte des Zuges.",
+  "beispielTr": "Yemekli vagon trenin ortasında bulunuyor.",
+  "beispielEn": "The on-board bistro is in the middle of the train."
+ },
+ {
+  "id": 1621,
+  "tr": "vatandaş",
+  "en": "citizen",
+  "beispiel": "EU-Bürgerinnen und Bürger können überall in Europa arbeiten.",
+  "beispielTr": "AB vatandaşları Avrupa'nın her yerinde çalışabilir.",
+  "beispielEn": "EU citizens can work anywhere in Europe."
+ },
+ {
+  "id": 2041,
+  "tr": "çekiç",
+  "en": "hammer",
+  "beispiel": "Kannst du mir kurz deinen Hammer leihen?",
+  "beispielTr": "Çekicini bir dakikalığına ödünç verir misin?",
+  "beispielEn": "Can you lend me your hammer for a minute?"
+ },
+ {
+  "id": 2501,
+  "tr": "siyaset",
+  "en": "politics",
+  "beispiel": "Ich interessiere mich nicht für Politik.",
+  "beispielTr": "Siyasetle hiç ilgilenmiyorum.",
+  "beispielEn": "I'm not interested in politics."
+ },
+ {
+  "id": 2132,
+  "tr": "yanılmak",
+  "en": "to be mistaken",
+  "beispiel": "Du irrst dich, das war letzte Woche.",
+  "beispielTr": "Yanılıyorsun, o geçen haftaydı.",
+  "beispielEn": "You're mistaken, that was last week."
+ },
+ {
+  "id": 2234,
+  "tr": "ambulans",
+  "en": "ambulance",
+  "beispiel": "Wir mussten sofort einen Krankenwagen rufen.",
+  "beispielTr": "Hemen bir ambulans çağırmak zorunda kaldık.",
+  "beispielEn": "We had to call an ambulance right away."
+ },
+ {
+  "id": 1761,
+  "tr": "kaldırmak",
+  "en": "to remove",
+  "beispiel": "Der Müll muss dringend entfernt werden.",
+  "beispielTr": "Çöpün acilen kaldırılması gerekiyor.",
+  "beispielEn": "The garbage needs to be removed urgently."
+ },
+ {
+  "id": 1790,
+  "tr": "başarılı",
+  "en": "successful",
+  "beispiel": "Mein Großvater war ein erfolgreicher Geschäftsmann.",
+  "beispielTr": "Büyükbabam başarılı bir iş adamıydı.",
+  "beispielEn": "My grandfather was a successful businessman."
+ },
+ {
+  "id": 2285,
+  "tr": "yönetici",
+  "en": "manager",
+  "beispiel": "Unser neuer Leiter kommt aus München.",
+  "beispielTr": "Yeni yöneticimiz Münih'ten geliyor.",
+  "beispielEn": "Our new manager is from Munich."
+ },
+ {
+  "id": 2287,
+  "tr": "merdiven",
+  "en": "ladder",
+  "beispiel": "Er stellte die Leiter an die Wand.",
+  "beispielTr": "Merdiveni duvara dayadı.",
+  "beispielEn": "He leaned the ladder against the wall."
+ },
+ {
+  "id": 2167,
+  "tr": "satın alma",
+  "en": "purchase",
+  "beispiel": "Der neue Esstisch war ein guter Kauf.",
+  "beispielTr": "Yeni yemek masası iyi bir alışveriş oldu.",
+  "beispielEn": "The new dining table was a good purchase."
+ },
+ {
+  "id": 3093,
+  "tr": "eser",
+  "en": "work",
+  "beispiel": "Das Museum zeigt die frühen Werke des Künstlers.",
+  "beispielTr": "Müze sanatçının erken dönem eserlerini sergiliyor.",
+  "beispielEn": "The museum is showing the artist's early works."
+ },
+ {
+  "id": 1753,
+  "tr": "karşılamak",
+  "en": "to welcome",
+  "beispiel": "Die Gäste wurden sehr herzlich empfangen.",
+  "beispielTr": "Konuklar çok içten karşılandı.",
+  "beispielEn": "The guests were welcomed very warmly."
+ },
+ {
+  "id": 3188,
+  "tr": "amaç",
+  "en": "purpose",
+  "beispiel": "Zu welchem Zweck brauchen Sie das Formular?",
+  "beispielTr": "Bu formu hangi amaçla istiyorsunuz?",
+  "beispielEn": "For what purpose do you need this form?"
+ },
+ {
+  "id": 1650,
+  "tr": "düşünce",
+  "en": "thought",
+  "beispiel": "Der Gedanke an den Umzug macht mich nervös.",
+  "beispielTr": "Taşınma düşüncesi beni geriyor.",
+  "beispielEn": "The thought of moving makes me nervous."
+ },
+ {
+  "id": 2090,
+  "tr": "ahşap",
+  "en": "wood",
+  "beispiel": "Möchten Sie ein Regal aus Holz oder aus Metall?",
+  "beispielTr": "Ahşap mı yoksa metal raf mı istersiniz?",
+  "beispielEn": "Would you like a shelf made of wood or metal?"
+ },
+ {
+  "id": 2627,
+  "tr": "boşanma",
+  "en": "divorce",
+  "beispiel": "Wann war die Scheidung?",
+  "beispielTr": "Boşanma ne zamandı?",
+  "beispielEn": "When was the divorce?"
+ },
+ {
+  "id": 1493,
+  "tr": "sakal",
+  "en": "beard",
+  "beispiel": "John trägt jetzt einen Bart.",
+  "beispielTr": "John artık sakallı.",
+  "beispielEn": "John has a beard now."
+ },
+ {
+  "id": 1511,
+  "tr": "hayran",
+  "en": "thrilled",
+  "beispiel": "Die Kinder waren von der Vorstellung begeistert.",
+  "beispielTr": "Çocuklar gösteriye hayran kaldı.",
+  "beispielEn": "The children were thrilled by the show."
+ },
+ {
+  "id": 2715,
+  "tr": "kadarıyla",
+  "en": "as far as",
+  "beispiel": "Soviel ich weiß, hat dieses Restaurant heute Ruhetag.",
+  "beispielTr": "Bildiğim kadarıyla bu restoran bugün kapalı.",
+  "beispielEn": "As far as I know, this restaurant is closed today."
+ },
+ {
+  "id": 2777,
+  "tr": "ruh hali",
+  "en": "mood",
+  "beispiel": "Er ist heute in schlechter Stimmung.",
+  "beispielTr": "Bugün morali bozuk.",
+  "beispielEn": "He is in a bad mood today."
+ },
+ {
+  "id": 2248,
+  "tr": "sanatçı",
+  "en": "artist",
+  "beispiel": "In diesem Viertel wohnen viele junge Künstler.",
+  "beispielTr": "Bu mahallede birçok genç sanatçı oturuyor.",
+  "beispielEn": "Many young artists live in this neighborhood."
+ }
+]

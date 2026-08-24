@@ -1,0 +1,378 @@
+[
+  {
+    "id": 2598,
+    "tr": "havuç",
+    "en": "carrot",
+    "beispiel": "Für die Suppe brauche ich noch zwei Rüebli.",
+    "beispielTr": "Çorba için iki havuç daha lazım.",
+    "beispielEn": "I need two more carrots for the soup."
+  },
+  {
+    "id": 2626,
+    "tr": "boşanmak",
+    "en": "to get divorced",
+    "beispiel": "Meine Nachbarn haben sich letztes Jahr scheiden lassen.",
+    "beispielTr": "Komşularım geçen yıl boşandı.",
+    "beispielEn": "My neighbors got divorced last year."
+  },
+  {
+    "id": 2658,
+    "tr": "yazılı sınav",
+    "en": "written exam",
+    "beispiel": "Morgen schreiben wir eine Schularbeit in Mathematik.",
+    "beispielTr": "Yarın matematikten yazılı sınavımız var.",
+    "beispielEn": "Tomorrow we have a written exam in math."
+  },
+  {
+    "id": 2664,
+    "tr": "mantar",
+    "en": "mushroom",
+    "beispiel": "Im Herbst gehen wir gern Schwammerl suchen.",
+    "beispielTr": "Sonbaharda mantar toplamaya gitmeyi severiz.",
+    "beispielEn": "In the fall we like to go mushroom picking."
+  },
+  {
+    "id": 2667,
+    "tr": "kayın-",
+    "en": "in-law",
+    "beispiel": "Meine Schwiegermutter kocht besser als ich.",
+    "beispielTr": "Kayınvalidem benden daha iyi yemek yapıyor.",
+    "beispielEn": "My mother-in-law cooks better than I do."
+  },
+  {
+    "id": 2670,
+    "tr": "Kuzey Denizi",
+    "en": "North Sea",
+    "beispiel": "Im Sommer fahren wir jedes Jahr an die Nordsee.",
+    "beispielTr": "Yazın her yıl Kuzey Denizi'ne gideriz.",
+    "beispielEn": "In summer we go to the North Sea every year."
+  },
+  {
+    "id": 2681,
+    "tr": "küçük ekmek",
+    "en": "bread roll",
+    "beispiel": "Ich hole schnell ein paar Semmeln zum Frühstück.",
+    "beispielTr": "Kahvaltı için hemen birkaç küçük ekmek alıyorum.",
+    "beispielEn": "I'll quickly get a few rolls for breakfast."
+  },
+  {
+    "id": 2687,
+    "tr": "garson",
+    "en": "waiter",
+    "beispiel": "Der Serviceangestellte bringt uns die Getränke.",
+    "beispielTr": "Garson içeceklerimizi getiriyor.",
+    "beispielEn": "The waiter is bringing us our drinks."
+  },
+  {
+    "id": 2706,
+    "tr": "sözde",
+    "en": "so-called",
+    "beispiel": "Wo bleiben denn deine sogenannten Freunde?",
+    "beispielTr": "Peki senin şu sözde arkadaşların nerede kaldı?",
+    "beispielEn": "So where are those so-called friends of yours?"
+  },
+  {
+    "id": 2708,
+    "tr": "böyle",
+    "en": "such",
+    "beispiel": "Solche Schuhe finde ich toll.",
+    "beispielTr": "Böyle ayakkabıları çok beğeniyorum.",
+    "beispielEn": "I really like shoes like these."
+  },
+  {
+    "id": 2709,
+    "tr": "indirim",
+    "en": "special offer",
+    "beispiel": "Die Jacke war ein Sonderangebot und kostete zwanzig Euro.",
+    "beispielTr": "Ceket indirimdeydi ve yirmi euro tuttu.",
+    "beispielEn": "The jacket was on special offer and cost twenty euros."
+  },
+  {
+    "id": 2716,
+    "tr": "o kadar çok",
+    "en": "so much",
+    "beispiel": "Ich habe so viel gegessen, dass mir schlecht ist.",
+    "beispielTr": "O kadar çok yedim ki midem bulandı.",
+    "beispielEn": "I ate so much that I feel sick."
+  },
+  {
+    "id": 2718,
+    "tr": "hem … hem de",
+    "en": "both … and",
+    "beispiel": "Sowohl Sie als auch Ihre Frau müssen unterschreiben.",
+    "beispielTr": "Hem sizin hem de eşinizin imzalaması gerekiyor.",
+    "beispielEn": "Both you and your wife have to sign."
+  },
+  {
+    "id": 2723,
+    "tr": "yiyecek",
+    "en": "dish",
+    "beispiel": "Im Restaurant werden nur regionale Speisen serviert.",
+    "beispielTr": "Restoranda sadece yöresel yiyecekler servis ediliyor.",
+    "beispielEn": "The restaurant only serves regional dishes."
+  },
+  {
+    "id": 2736,
+    "tr": "ikinci dil",
+    "en": "second language",
+    "beispiel": "Deutsch ist seine Zweitsprache.",
+    "beispielTr": "Almanca onun ikinci dili.",
+    "beispielEn": "German is his second language."
+  },
+  {
+    "id": 2743,
+    "tr": "belediyeye ait",
+    "en": "municipal",
+    "beispiel": "Ich gehe gern in die städtische Bibliothek.",
+    "beispielTr": "Belediye kütüphanesine gitmeyi seviyorum.",
+    "beispielEn": "I like going to the municipal library."
+  },
+  {
+    "id": 2760,
+    "tr": "durmak",
+    "en": "to come to a stop",
+    "beispiel": "Meine Uhr ist gestern Nacht stehen geblieben.",
+    "beispielTr": "Saatim dün gece durdu.",
+    "beispielEn": "My watch stopped last night."
+  },
+  {
+    "id": 2771,
+    "tr": "üslup açısından",
+    "en": "stylistically",
+    "beispiel": "Der Text ist stilistisch sehr schön.",
+    "beispielTr": "Metin üslup açısından çok güzel.",
+    "beispielEn": "The text is stylistically very nice."
+  },
+  {
+    "id": 2773,
+    "tr": "merdiven",
+    "en": "staircase",
+    "beispiel": "Meine Oma kann nicht mehr gut Stiegen steigen.",
+    "beispielTr": "Babaannem artık merdiven çıkmakta zorlanıyor.",
+    "beispielEn": "My grandma can't climb stairs well anymore."
+  },
+  {
+    "id": 2774,
+    "tr": "merdiven boşluğu",
+    "en": "stairwell",
+    "beispiel": "Im Stiegenhaus brennt seit Tagen kein Licht.",
+    "beispielTr": "Merdiven boşluğunda günlerdir ışık yanmıyor.",
+    "beispielEn": "The light in the stairwell hasn't worked for days."
+  },
+  {
+    "id": 2799,
+    "tr": "erkek öğrenci",
+    "en": "male student",
+    "beispiel": "Der Studierende wohnt noch bei seinen Eltern.",
+    "beispielTr": "Öğrenci hâlâ ailesinin yanında yaşıyor.",
+    "beispielEn": "The student still lives with his parents."
+  },
+  {
+    "id": 2800,
+    "tr": "kadın öğrenci",
+    "en": "female student",
+    "beispiel": "Die Studierende jobbt neben dem Studium in einem Café.",
+    "beispielTr": "Öğrenci okurken bir kafede çalışıyor.",
+    "beispielEn": "The student works in a café alongside her studies."
+  },
+  {
+    "id": 2808,
+    "tr": "bağımlılık yapan madde",
+    "en": "addictive substance",
+    "beispiel": "Manche Medikamente sind auch Suchtmittel.",
+    "beispielTr": "Bazı ilaçlar aynı zamanda bağımlılık yapan maddelerdir.",
+    "beispielEn": "Some medications are addictive substances too."
+  },
+  {
+    "id": 2835,
+    "tr": "çayı demlenmeye bırakmak",
+    "en": "to let tea steep",
+    "beispiel": "Diesen Tee sollte man zehn Minuten ziehen lassen.",
+    "beispielTr": "Bu çayı on dakika demlenmeye bırakmak gerekir.",
+    "beispielEn": "You should let this tea steep for ten minutes."
+  },
+  {
+    "id": 2850,
+    "tr": "hayvanat bahçesi",
+    "en": "animal park",
+    "beispiel": "Wollen wir am Samstag mit den Kindern in den Tierpark gehen?",
+    "beispielTr": "Cumartesi çocuklarla hayvanat bahçesine gidelim mi?",
+    "beispielEn": "Shall we go to the animal park with the kids on Saturday?"
+  },
+  {
+    "id": 2863,
+    "tr": "tramvay",
+    "en": "tram",
+    "beispiel": "Fahren wir mit dem Tram oder mit dem Bus?",
+    "beispielTr": "Tramvayla mı gidelim yoksa otobüsle mi?",
+    "beispielEn": "Shall we take the tram or the bus?"
+  },
+  {
+    "id": 2871,
+    "tr": "ayrı yaşamak",
+    "en": "to live apart",
+    "beispiel": "Er lebt seit einem Jahr getrennt von seiner Frau.",
+    "beispielTr": "Bir yıldır eşinden ayrı yaşıyor.",
+    "beispielEn": "He has been living apart from his wife for a year."
+  },
+  {
+    "id": 2878,
+    "tr": "kaldırım",
+    "en": "sidewalk",
+    "beispiel": "Auf dem Trottoir darf man nicht Velo fahren.",
+    "beispielTr": "Kaldırımda bisiklet sürmek yasak.",
+    "beispielEn": "You are not allowed to ride a bike on the sidewalk."
+  },
+  {
+    "id": 2899,
+    "tr": "fazla mesai",
+    "en": "overtime",
+    "beispiel": "Ich muss diese Woche viele Überstunden machen.",
+    "beispielTr": "Bu hafta çok fazla mesai yapmam gerekiyor.",
+    "beispielEn": "I have to work a lot of overtime this week."
+  },
+  {
+    "id": 2900,
+    "tr": "abartmak",
+    "en": "to exaggerate",
+    "beispiel": "Er übertreibt immer, wenn er von seiner Reise erzählt.",
+    "beispielTr": "Gezisini anlatırken hep abartıyor.",
+    "beispielEn": "He always exaggerates when he talks about his trip."
+  },
+  {
+    "id": 2909,
+    "tr": "-mek için",
+    "en": "in order to",
+    "beispiel": "Um gesund zu bleiben, musst du Sport machen.",
+    "beispielTr": "Sağlıklı kalmak için spor yapman gerekir.",
+    "beispielEn": "You have to do sports in order to stay healthy."
+  },
+  {
+    "id": 2919,
+    "tr": "değişim",
+    "en": "exchange",
+    "beispiel": "Ein Umtausch ist leider nur mit Kassenbon möglich.",
+    "beispielTr": "Değişim maalesef sadece fişle mümkün.",
+    "beispielEn": "An exchange is unfortunately only possible with the receipt."
+  },
+  {
+    "id": 2923,
+    "tr": "olumsuzluk öneki",
+    "en": "un-",
+    "beispiel": "Mit der Vorsilbe „un-“ wird ein Wort verneint.",
+    "beispielTr": "„Un-“ ön ekiyle bir kelime olumsuz yapılır.",
+    "beispielEn": "The prefix un- makes a word negative."
+  },
+  {
+    "id": 2953,
+    "tr": "bisiklet",
+    "en": "bicycle",
+    "beispiel": "Sie fährt jeden Morgen mit dem Velo zur Arbeit.",
+    "beispielTr": "Her sabah işe bisikletle gidiyor.",
+    "beispielEn": "She rides her bike to work every morning."
+  },
+  {
+    "id": 2999,
+    "tr": "kiraya verme",
+    "en": "rental",
+    "beispiel": "Mit der Vermietung von Wohnungen verdient er viel Geld.",
+    "beispielTr": "Daireleri kiraya vererek çok para kazanıyor.",
+    "beispielEn": "He earns a lot of money renting out apartments."
+  },
+  {
+    "id": 3006,
+    "tr": "yemek vermek",
+    "en": "to cater for",
+    "beispiel": "Im Hotel wurden wir sehr gut verpflegt.",
+    "beispielTr": "Otelde bize çok iyi yemek verildi.",
+    "beispielEn": "The hotel catered for us very well."
+  },
+  {
+    "id": 3039,
+    "tr": "sanal",
+    "en": "virtual",
+    "beispiel": "Auf dieser Website kann man an einer virtuellen Stadtrundfahrt teilnehmen.",
+    "beispielTr": "Bu web sitesinde sanal bir şehir turuna katılabilirsiniz.",
+    "beispielEn": "On this website you can take a virtual city tour."
+  },
+  {
+    "id": 3048,
+    "tr": "özellikle",
+    "en": "above all",
+    "beispiel": "Ich mag alle Jahreszeiten, vor allem den Herbst.",
+    "beispielTr": "Bütün mevsimleri severim, özellikle de sonbaharı.",
+    "beispielEn": "I like all the seasons, above all the fall."
+  },
+  {
+    "id": 3055,
+    "tr": "ön",
+    "en": "front",
+    "beispiel": "In den vorderen Reihen sind noch Plätze frei.",
+    "beispielTr": "Ön sıralarda hâlâ boş yer var.",
+    "beispielEn": "There are still free seats in the front rows."
+  },
+  {
+    "id": 3084,
+    "tr": "ne … ne de",
+    "en": "neither … nor",
+    "beispiel": "Wir haben weder Zeit noch Geld für Urlaub.",
+    "beispielTr": "Tatil için ne zamanımız var ne de paramız.",
+    "beispielEn": "We have neither time nor money for a vacation."
+  },
+  {
+    "id": 3087,
+    "tr": "mesleki eğitim",
+    "en": "further training",
+    "beispiel": "Ich möchte nächstes Jahr eine Weiterbildung machen.",
+    "beispielTr": "Gelecek yıl bir mesleki eğitim almak istiyorum.",
+    "beispielEn": "I would like to do further training next year."
+  },
+  {
+    "id": 3110,
+    "tr": "kaç tane",
+    "en": "how many",
+    "beispiel": "Wie viele Kinder haben Sie?",
+    "beispielTr": "Kaç çocuğunuz var?",
+    "beispielEn": "How many children do you have?"
+  },
+  {
+    "id": 3137,
+    "tr": "diş macunu",
+    "en": "toothpaste",
+    "beispiel": "Die neue Zahncreme riecht sehr gut.",
+    "beispielTr": "Yeni diş macunu çok güzel kokuyor.",
+    "beispielEn": "The new toothpaste smells really nice."
+  },
+  {
+    "id": 3140,
+    "tr": "trafik işareti",
+    "en": "traffic sign",
+    "beispiel": "Meine Kinder lernen in der Schule die Verkehrszeichen.",
+    "beispielTr": "Çocuklarım okulda trafik işaretlerini öğreniyor.",
+    "beispielEn": "My children are learning the traffic signs at school."
+  },
+  {
+    "id": 3154,
+    "tr": "medeni hâl",
+    "en": "marital status",
+    "beispiel": "Beim Zivilstand musst du hier „ledig“ ankreuzen.",
+    "beispielTr": "Medeni hâl kısmında „bekâr“ seçeneğini işaretlemelisin.",
+    "beispielEn": "For marital status you have to check single here."
+  },
+  {
+    "id": 3168,
+    "tr": "kibrit",
+    "en": "match",
+    "beispiel": "Hast du ein Zündholz für die Kerzen?",
+    "beispielTr": "Mumlar için kibritin var mı?",
+    "beispielEn": "Do you have a match for the candles?"
+  },
+  {
+    "id": 3186,
+    "tr": "ara öğün",
+    "en": "snack",
+    "beispiel": "Nach der Schule gibt es ein kleines Zvieri.",
+    "beispielTr": "Okuldan sonra küçük bir ara öğün var.",
+    "beispielEn": "After school there is a small snack."
+  }
+]

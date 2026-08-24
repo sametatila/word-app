@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1724,
+  "tr": "alışveriş",
+  "en": "shopping",
+  "beispiel": "Nach dem Einkauf tranken wir noch einen Kaffee.",
+  "beispielTr": "Alışverişten sonra bir kahve içtik.",
+  "beispielEn": "After shopping we had a coffee."
+ },
+ {
+  "id": 2898,
+  "tr": "çevirmen",
+  "en": "translator",
+  "beispiel": "Der Übersetzer arbeitet seit Jahren für unseren Verlag.",
+  "beispielTr": "Çevirmen yıllardır yayınevimiz için çalışıyor.",
+  "beispielEn": "The translator has worked for our publisher for years."
+ },
+ {
+  "id": 1403,
+  "tr": "duyurmak",
+  "en": "to announce",
+  "beispiel": "Die Firma hat gestern neue Preise angekündigt.",
+  "beispielTr": "Şirket dün yeni fiyatları duyurdu.",
+  "beispielEn": "The company announced new prices yesterday."
+ },
+ {
+  "id": 1477,
+  "tr": "telaffuz",
+  "en": "pronunciation",
+  "beispiel": "Deine Aussprache ist besser geworden, seit du hier lebst.",
+  "beispielTr": "Burada yaşamaya başladığından beri telaffuzun düzeldi.",
+  "beispielEn": "Your pronunciation has improved since you've been living here."
+ },
+ {
+  "id": 1802,
+  "tr": "üşütmek",
+  "en": "to catch a cold",
+  "beispiel": "Zieh dich warm an, sonst erkältest du dich.",
+  "beispielTr": "Kalın giyin, yoksa üşütürsün.",
+  "beispielEn": "Dress warmly, or you'll catch a cold."
+ },
+ {
+  "id": 3116,
+  "tr": "kadın lokantacı",
+  "en": "landlady",
+  "beispiel": "Die Wirtin hat uns einen Tisch am Fenster reserviert.",
+  "beispielTr": "Kadın lokantacı bize pencere kenarında bir masa ayırdı.",
+  "beispielEn": "The landlady reserved a table by the window for us."
+ },
+ {
+  "id": 1953,
+  "tr": "ücret",
+  "en": "fee",
+  "beispiel": "Die Gebühr für den Kurs beträgt hundert Euro.",
+  "beispielTr": "Kursun ücreti yüz Euro.",
+  "beispielEn": "The fee for the course is a hundred euros."
+ },
+ {
+  "id": 2638,
+  "tr": "dar",
+  "en": "narrow",
+  "beispiel": "Der Weg ist zu schmal für zwei Autos.",
+  "beispielTr": "Yol iki araba için fazla dar.",
+  "beispielEn": "The path is too narrow for two cars."
+ },
+ {
+  "id": 2579,
+  "tr": "haber programı",
+  "en": "news report",
+  "beispiel": "Gestern lief eine spannende Reportage über Afrika.",
+  "beispielTr": "Dün Afrika hakkında heyecanlı bir haber programı vardı.",
+  "beispielEn": "Yesterday there was an exciting news report about Africa."
+ },
+ {
+  "id": 1763,
+  "tr": "karşıdan gelmek",
+  "en": "to come toward",
+  "beispiel": "Auf der Treppe kam mir der Nachbar entgegen.",
+  "beispielTr": "Merdivende komşum karşıdan geliyordu.",
+  "beispielEn": "On the stairs my neighbor came toward me."
+ },
+ {
+  "id": 2467,
+  "tr": "paralel",
+  "en": "parallel",
+  "beispiel": "Die Goethestraße verläuft parallel zur Hauptstraße.",
+  "beispielTr": "Goethe Caddesi ana caddeye paralel uzanıyor.",
+  "beispielEn": "Goethe Street runs parallel to the main street."
+ },
+ {
+  "id": 2734,
+  "tr": "yabancı dil",
+  "en": "foreign language",
+  "beispiel": "In der Schule lernt jedes Kind eine Fremdsprache.",
+  "beispielTr": "Okulda her çocuk bir yabancı dil öğreniyor.",
+  "beispielEn": "At school every child learns a foreign language."
+ },
+ {
+  "id": 1827,
+  "tr": "öykü",
+  "en": "short story",
+  "beispiel": "Diese Erzählung habe ich als Kind oft gelesen.",
+  "beispielTr": "Bu öyküyü çocukken sık sık okurdum.",
+  "beispielEn": "I often read this short story as a child."
+ },
+ {
+  "id": 1565,
+  "tr": "ilgilenmek",
+  "en": "to look after",
+  "beispiel": "Wer betreut die Kinder, wenn du arbeitest?",
+  "beispielTr": "Sen çalışırken çocuklarla kim ilgileniyor?",
+  "beispielEn": "Who looks after the children when you are working?"
+ },
+ {
+  "id": 2159,
+  "tr": "havuç",
+  "en": "carrot",
+  "beispiel": "Für die Suppe brauche ich noch zwei Karotten.",
+  "beispielTr": "Çorba için iki havuç daha lazım.",
+  "beispielEn": "I need two more carrots for the soup."
+ },
+ {
+  "id": 2403,
+  "tr": "gıda",
+  "en": "foodstuff",
+  "beispiel": "In der Region fehlen Nahrungsmittel und sauberes Wasser.",
+  "beispielTr": "Bölgede gıda ve temiz su eksik.",
+  "beispielEn": "In the region foodstuffs and clean water are lacking."
+ },
+ {
+  "id": 2506,
+  "tr": "popüler",
+  "en": "popular",
+  "beispiel": "Diese Sängerin ist bei Jugendlichen sehr populär.",
+  "beispielTr": "Bu şarkıcı gençler arasında çok popüler.",
+  "beispielEn": "This singer is very popular among young people."
+ },
+ {
+  "id": 2081,
+  "tr": "tarihi",
+  "en": "historical",
+  "beispiel": "Die Altstadt hat viele historische Gebäude.",
+  "beispielTr": "Eski şehirde birçok tarihi bina var.",
+  "beispielEn": "The old town has many historical buildings."
+ },
+ {
+  "id": 1441,
+  "tr": "talep",
+  "en": "request",
+  "beispiel": "Wir haben eine schriftliche Aufforderung zur Zahlung bekommen.",
+  "beispielTr": "Yazılı bir ödeme talebi aldık.",
+  "beispielEn": "We received a written request for payment."
+ },
+ {
+  "id": 1593,
+  "tr": "şimşek çakmak",
+  "en": "to flash",
+  "beispiel": "Als es blitzte, hatte das Kind Angst.",
+  "beispielTr": "Şimşek çaktığında çocuk korktu.",
+  "beispielEn": "When the lightning flashed, the child was scared."
+ },
+ {
+  "id": 1529,
+  "tr": "fiş",
+  "en": "receipt",
+  "beispiel": "Bewahren Sie den Beleg auf, falls Sie umtauschen möchten.",
+  "beispielTr": "Değişim yapmak isterseniz fişi saklayın.",
+  "beispielEn": "Keep the receipt in case you want to exchange it."
+ },
+ {
+  "id": 1509,
+  "tr": "tatmin edici",
+  "en": "satisfactory",
+  "beispiel": "Sein Vorschlag war für alle befriedigend.",
+  "beispielTr": "Önerisi herkes için tatmin ediciydi.",
+  "beispielEn": "His proposal was satisfactory for everyone."
+ },
+ {
+  "id": 2768,
+  "tr": "kabin görevlisi",
+  "en": "flight attendant",
+  "beispiel": "Der Steward brachte uns Wasser und Kopfhörer.",
+  "beispielTr": "Kabin görevlisi bize su ve kulaklık getirdi.",
+  "beispielEn": "The flight attendant brought us water and headphones."
+ },
+ {
+  "id": 3044,
+  "tr": "tam zamanlı çalışma",
+  "en": "full-time work",
+  "beispiel": "Nach der Elternzeit arbeitet sie wieder in Vollzeit.",
+  "beispielTr": "Doğum izninden sonra yine tam zamanlı çalışıyor.",
+  "beispielEn": "After parental leave she is working full-time again."
+ },
+ {
+  "id": 1440,
+  "tr": "istemek",
+  "en": "to ask",
+  "beispiel": "Der Lehrer forderte mich auf, lauter zu sprechen.",
+  "beispielTr": "Öğretmen benden daha yüksek sesle konuşmamı istedi.",
+  "beispielEn": "The teacher asked me to speak louder."
+ },
+ {
+  "id": 1909,
+  "tr": "forum",
+  "en": "forum",
+  "beispiel": "In diesem Forum findest du Antworten auf deine Fragen.",
+  "beispielTr": "Bu forumda sorularının cevaplarını bulursun.",
+  "beispielEn": "In this forum you will find answers to your questions."
+ },
+ {
+  "id": 1649,
+  "tr": "süslemek",
+  "en": "to decorate",
+  "beispiel": "Wir haben den Saal für die Hochzeit dekoriert.",
+  "beispielTr": "Salonu düğün için süsledik.",
+  "beispielEn": "We decorated the hall for the wedding."
+ },
+ {
+  "id": 2354,
+  "tr": "azınlık",
+  "en": "minority",
+  "beispiel": "In unserer Firma sind Frauen leider in der Minderheit.",
+  "beispielTr": "Şirketimizde kadınlar maalesef azınlıkta.",
+  "beispielEn": "In our company women are unfortunately in the minority."
+ },
+ {
+  "id": 3050,
+  "tr": "ön koşul",
+  "en": "prerequisite",
+  "beispiel": "Gute Deutschkenntnisse sind Voraussetzung für diese Stelle.",
+  "beispielTr": "İyi Almanca bilgisi bu iş için ön koşul.",
+  "beispielEn": "Good German skills are a prerequisite for this job."
+ },
+ {
+  "id": 1427,
+  "tr": "işsizlik",
+  "en": "unemployment",
+  "beispiel": "Die Arbeitslosigkeit ist in dieser Region stark gestiegen.",
+  "beispielTr": "Bu bölgede işsizlik ciddi biçimde arttı.",
+  "beispielEn": "Unemployment has risen sharply in this region."
+ },
+ {
+  "id": 2355,
+  "tr": "çok küçük",
+  "en": "minimal",
+  "beispiel": "Der Unterschied zwischen den beiden Angeboten ist minimal.",
+  "beispielTr": "İki teklif arasındaki fark çok küçük.",
+  "beispielEn": "The difference between the two offers is minimal."
+ },
+ {
+  "id": 2751,
+  "tr": "istatistiksel",
+  "en": "statistical",
+  "beispiel": "Statistisch gesehen leben Frauen länger als Männer.",
+  "beispielTr": "İstatistiksel olarak kadınlar erkeklerden uzun yaşıyor.",
+  "beispielEn": "Statistically women live longer than men."
+ },
+ {
+  "id": 2608,
+  "tr": "tuzlu",
+  "en": "salty",
+  "beispiel": "Die Suppe ist mir viel zu salzig.",
+  "beispielTr": "Çorba bana göre çok fazla tuzlu.",
+  "beispielEn": "The soup is far too salty for me."
+ },
+ {
+  "id": 1797,
+  "tr": "zam",
+  "en": "increase",
+  "beispiel": "Die Erhöhung der Miete kam für uns überraschend.",
+  "beispielTr": "Kira zammı bizim için sürpriz oldu.",
+  "beispielEn": "The rent increase came as a surprise to us."
+ },
+ {
+  "id": 2559,
+  "tr": "sunum",
+  "en": "presentation",
+  "beispiel": "Morgen halte ich ein Referat über den Klimawandel.",
+  "beispielTr": "Yarın iklim değişikliği üzerine bir sunum yapacağım.",
+  "beispielEn": "Tomorrow I am giving a presentation about climate change."
+ },
+ {
+  "id": 2645,
+  "tr": "şnitzel",
+  "en": "schnitzel",
+  "beispiel": "Ich nehme ein Schnitzel mit Pommes, bitte.",
+  "beispielTr": "Ben patates kızartmasıyla bir şnitzel alayım, lütfen.",
+  "beispielEn": "I will have a schnitzel with fries, please."
+ },
+ {
+  "id": 2219,
+  "tr": "fotokopi makinesi",
+  "en": "copier",
+  "beispiel": "Der Kopierer im Büro ist schon wieder kaputt.",
+  "beispielTr": "Ofisteki fotokopi makinesi yine bozuldu.",
+  "beispielEn": "The copier in the office is broken again."
+ },
+ {
+  "id": 2918,
+  "tr": "değiştirmek",
+  "en": "to exchange",
+  "beispiel": "Kann ich diese Bluse gegen eine größere umtauschen?",
+  "beispielTr": "Bu bluzu daha büyük bir bedenle değiştirebilir miyim?",
+  "beispielEn": "Can I exchange this blouse for a bigger one?"
+ },
+ {
+  "id": 2058,
+  "tr": "ısıtmak",
+  "en": "to heat",
+  "beispiel": "Im Winter heizen wir mit Holz.",
+  "beispielTr": "Kışın odunla ısıtıyoruz.",
+  "beispielEn": "In winter we heat with wood."
+ },
+ {
+  "id": 3077,
+  "tr": "doğa yürüyüşü",
+  "en": "hike",
+  "beispiel": "Am Sonntag machen wir eine Wanderung in den Bergen.",
+  "beispielTr": "Pazar günü dağlarda doğa yürüyüşü yapacağız.",
+  "beispielEn": "On Sunday we are going on a hike in the mountains."
+ },
+ {
+  "id": 2967,
+  "tr": "tüketmek",
+  "en": "to consume",
+  "beispiel": "Der alte Kühlschrank verbraucht zu viel Strom.",
+  "beispielTr": "Eski buzdolabı çok fazla elektrik tüketiyor.",
+  "beispielEn": "The old fridge consumes too much electricity."
+ },
+ {
+  "id": 1750,
+  "tr": "elektrikli",
+  "en": "electric",
+  "beispiel": "Ich putze meine Zähne mit einer elektrischen Zahnbürste.",
+  "beispielTr": "Dişlerimi elektrikli fırçayla fırçalıyorum.",
+  "beispielEn": "I brush my teeth with an electric toothbrush."
+ },
+ {
+  "id": 2668,
+  "tr": "zorluk",
+  "en": "difficulty",
+  "beispiel": "Ich hatte große Schwierigkeiten, einen Parkplatz zu finden.",
+  "beispielTr": "Park yeri bulmakta çok zorluk çektim.",
+  "beispielEn": "I had great difficulty finding a parking space."
+ },
+ {
+  "id": 2426,
+  "tr": "acil çıkış",
+  "en": "emergency exit",
+  "beispiel": "Der Notausgang befindet sich hinter der Treppe.",
+  "beispielTr": "Acil çıkış merdivenin arkasında.",
+  "beispielEn": "The emergency exit is behind the stairs."
+ },
+ {
+  "id": 2491,
+  "tr": "erik",
+  "en": "plum",
+  "beispiel": "Im Garten sind die Pflaumen endlich reif.",
+  "beispielTr": "Bahçedeki erikler nihayet olgunlaştı.",
+  "beispielEn": "The plums in the garden are finally ripe."
+ },
+ {
+  "id": 2367,
+  "tr": "hareketli",
+  "en": "mobile",
+  "beispiel": "Mit dem Fahrrad bin ich in der Stadt sehr mobil.",
+  "beispielTr": "Bisikletle şehirde çok rahat hareket ediyorum.",
+  "beispielEn": "With a bike I am very mobile in the city."
+ },
+ {
+  "id": 2511,
+  "tr": "stajyer",
+  "en": "intern",
+  "beispiel": "Unser neuer Praktikant lernt sehr schnell.",
+  "beispielTr": "Yeni stajyerimiz çok çabuk öğreniyor.",
+  "beispielEn": "Our new intern learns very quickly."
+ },
+ {
+  "id": 2353,
+  "tr": "hafif",
+  "en": "mild",
+  "beispiel": "Die Soße ist mild, du kannst sie ruhig probieren.",
+  "beispielTr": "Sos hafif, rahatça deneyebilirsin.",
+  "beispielEn": "The sauce is mild, you can safely try it."
+ },
+ {
+  "id": 3005,
+  "tr": "paketlemek",
+  "en": "to package",
+  "beispiel": "Die Gläser müssen gut verpackt werden.",
+  "beispielTr": "Bardakların iyi paketlenmesi gerekiyor.",
+  "beispielEn": "The glasses have to be packaged well."
+ },
+ {
+  "id": 2684,
+  "tr": "yaşlılar",
+  "en": "seniors",
+  "beispiel": "Der Computerkurs ist besonders für Senioren gedacht.",
+  "beispielTr": "Bilgisayar kursu özellikle yaşlılar için düşünülmüş.",
+  "beispielEn": "The computer course is intended especially for seniors."
+ }
+]

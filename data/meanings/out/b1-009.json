@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1535,
+  "tr": "gözlemlemek",
+  "en": "to observe",
+  "beispiel": "Der Biologe beobachtet die Tiere jeden Tag.",
+  "beispielTr": "Biyolog hayvanları her gün gözlemliyor.",
+  "beispielEn": "The biologist observes the animals every day."
+ },
+ {
+  "id": 1712,
+  "tr": "izlenim",
+  "en": "impression",
+  "beispiel": "Ich hatte den Eindruck, dass er müde war.",
+  "beispielTr": "Onun yorgun olduğu izlenimine kapıldım.",
+  "beispielEn": "I had the impression that he was tired."
+ },
+ {
+  "id": 2737,
+  "tr": "atlamak",
+  "en": "to jump",
+  "beispiel": "Mein Sohn ist ins kalte Wasser gesprungen.",
+  "beispielTr": "Oğlum soğuk suya atladı.",
+  "beispielEn": "My son jumped into the cold water."
+ },
+ {
+  "id": 2126,
+  "tr": "ilgilendirmek",
+  "en": "to interest",
+  "beispiel": "Das Thema Umweltschutz interessiert mich sehr.",
+  "beispielTr": "Çevre koruma konusu beni çok ilgilendiriyor.",
+  "beispielEn": "The topic of environmental protection interests me a lot."
+ },
+ {
+  "id": 1889,
+  "tr": "kaçmak",
+  "en": "to flee",
+  "beispiel": "Viele Menschen mussten vor dem Krieg fliehen.",
+  "beispielTr": "Birçok insan savaştan kaçmak zorunda kaldı.",
+  "beispielEn": "Many people had to flee from the war."
+ },
+ {
+  "id": 1917,
+  "tr": "arkadaşlık",
+  "en": "friendship",
+  "beispiel": "Unsere Freundschaft hält schon seit zwanzig Jahren.",
+  "beispielTr": "Arkadaşlığımız yirmi yıldır sürüyor.",
+  "beispielEn": "Our friendship has lasted twenty years now."
+ },
+ {
+  "id": 1948,
+  "tr": "alan",
+  "en": "field",
+  "beispiel": "Auf dem Gebiet der Medizin gibt es große Fortschritte.",
+  "beispielTr": "Tıp alanında büyük ilerlemeler var.",
+  "beispielEn": "There is great progress in the field of medicine."
+ },
+ {
+  "id": 2138,
+  "tr": "ancak",
+  "en": "however",
+  "beispiel": "Er hat sich beworben, bekam jedoch keine Antwort.",
+  "beispielTr": "Başvurdu ancak hiç cevap alamadı.",
+  "beispielEn": "He applied but did not receive any answer."
+ },
+ {
+  "id": 2523,
+  "tr": "şerefe",
+  "en": "cheers",
+  "beispiel": "Prost, auf euer Glück und eure Gesundheit!",
+  "beispielTr": "Şerefe, mutluluğunuza ve sağlığınıza!",
+  "beispielEn": "Cheers, to your happiness and your health!"
+ },
+ {
+  "id": 1614,
+  "tr": "göğüs",
+  "en": "chest",
+  "beispiel": "Ich habe seit gestern Schmerzen in der Brust.",
+  "beispielTr": "Dünden beri göğsümde ağrı var.",
+  "beispielEn": "I have had chest pain since yesterday."
+ },
+ {
+  "id": 3107,
+  "tr": "vahşi",
+  "en": "wild",
+  "beispiel": "In diesem Wald leben noch wilde Tiere.",
+  "beispielTr": "Bu ormanda hâlâ vahşi hayvanlar yaşıyor.",
+  "beispielEn": "Wild animals still live in this forest."
+ },
+ {
+  "id": 2869,
+  "tr": "ayrılmak",
+  "en": "to separate",
+  "beispiel": "Meine Schwester hat sich von ihrem Mann getrennt.",
+  "beispielTr": "Kız kardeşim kocasından ayrıldı.",
+  "beispielEn": "My sister separated from her husband."
+ },
+ {
+  "id": 2004,
+  "tr": "zehir",
+  "en": "poison",
+  "beispiel": "Das Gift dieser Schlange kann tödlich sein.",
+  "beispielTr": "Bu yılanın zehri öldürücü olabilir.",
+  "beispielEn": "This snake's poison can be deadly."
+ },
+ {
+  "id": 3000,
+  "tr": "özlemek",
+  "en": "to miss",
+  "beispiel": "Seit sie weg ist, vermisse ich sie sehr.",
+  "beispielTr": "O gittiğinden beri onu çok özlüyorum.",
+  "beispielEn": "Since she left, I miss her a lot."
+ },
+ {
+  "id": 1808,
+  "tr": "deneyimlemek",
+  "en": "to experience",
+  "beispiel": "Auf der Reise haben wir viel Schönes erlebt.",
+  "beispielTr": "Yolculukta çok güzel şeyler deneyimledik.",
+  "beispielEn": "We experienced many beautiful things on the trip."
+ },
+ {
+  "id": 1954,
+  "tr": "doğum",
+  "en": "birth",
+  "beispiel": "Wir gratulieren euch herzlich zur Geburt eurer Tochter!",
+  "beispielTr": "Kızınızın doğumunu içtenlikle kutlarız!",
+  "beispielEn": "Congratulations on the birth of your daughter!"
+ },
+ {
+  "id": 1648,
+  "tr": "battaniye",
+  "en": "blanket",
+  "beispiel": "Kannst du mir bitte noch eine Decke bringen?",
+  "beispielTr": "Bana bir battaniye daha getirebilir misin?",
+  "beispielEn": "Could you bring me another blanket, please?"
+ },
+ {
+  "id": 2728,
+  "tr": "ayna",
+  "en": "mirror",
+  "beispiel": "Sie schaut jeden Morgen lange in den Spiegel.",
+  "beispielTr": "Her sabah aynada uzun uzun kendine bakıyor.",
+  "beispielEn": "She looks at herself in the mirror every morning."
+ },
+ {
+  "id": 2562,
+  "tr": "kural",
+  "en": "rule",
+  "beispiel": "Im Verkehr müssen alle Regeln beachtet werden.",
+  "beispielTr": "Trafikte bütün kurallara uyulmalı.",
+  "beispielEn": "All the rules must be followed in traffic."
+ },
+ {
+  "id": 2028,
+  "tr": "bakmak",
+  "en": "to look",
+  "beispiel": "Guck mal, es schneit draußen!",
+  "beispielTr": "Baksana, dışarıda kar yağıyor!",
+  "beispielEn": "Look, it's snowing outside!"
+ },
+ {
+  "id": 2785,
+  "tr": "ceza",
+  "en": "punishment",
+  "beispiel": "Für diese Tat bekam er eine harte Strafe.",
+  "beispielTr": "Bu suçtan dolayı ağır bir ceza aldı.",
+  "beispielEn": "He got a harsh punishment for this crime."
+ },
+ {
+  "id": 2015,
+  "tr": "çimen",
+  "en": "grass",
+  "beispiel": "Wir lagen den ganzen Nachmittag im Gras.",
+  "beispielTr": "Bütün öğleden sonra çimenlerde uzandık.",
+  "beispielEn": "We lay in the grass all afternoon."
+ },
+ {
+  "id": 2749,
+  "tr": "istasyon",
+  "en": "station",
+  "beispiel": "Sie müssen an der nächsten Station aussteigen.",
+  "beispielTr": "Bir sonraki istasyonda inmeniz gerekiyor.",
+  "beispielEn": "You have to get off at the next station."
+ },
+ {
+  "id": 2078,
+  "tr": "sonradan",
+  "en": "afterwards",
+  "beispiel": "Hinterher hat er sich für alles entschuldigt.",
+  "beispielTr": "Sonradan her şey için özür diledi.",
+  "beispielEn": "Afterwards he apologized for everything."
+ },
+ {
+  "id": 2179,
+  "tr": "netleştirmek",
+  "en": "to clarify",
+  "beispiel": "Wir müssen diese Frage vor dem Treffen klären.",
+  "beispielTr": "Bu soruyu toplantıdan önce netleştirmeliyiz.",
+  "beispielEn": "We have to clarify this question before the meeting."
+ },
+ {
+  "id": 2847,
+  "tr": "teori",
+  "en": "theory",
+  "beispiel": "In der Theorie klingt der Plan sehr gut.",
+  "beispielTr": "Teoride plan kulağa çok iyi geliyor.",
+  "beispielEn": "In theory the plan sounds very good."
+ },
+ {
+  "id": 2427,
+  "tr": "acil durum",
+  "en": "emergency",
+  "beispiel": "Im Notfall rufen Sie bitte diese Nummer an.",
+  "beispielTr": "Acil durumda lütfen bu numarayı arayın.",
+  "beispielEn": "In an emergency, please call this number."
+ },
+ {
+  "id": 2630,
+  "tr": "eğri",
+  "en": "crooked",
+  "beispiel": "Das Bild an der Wand hängt ganz schief.",
+  "beispielTr": "Duvardaki tablo iyice eğri duruyor.",
+  "beispielEn": "The picture on the wall is hanging crooked."
+ },
+ {
+  "id": 1502,
+  "tr": "anlam",
+  "en": "meaning",
+  "beispiel": "Das Wort hat inzwischen eine neue Bedeutung.",
+  "beispielTr": "Kelime artık yeni bir anlam kazandı.",
+  "beispielEn": "The word has a new meaning now."
+ },
+ {
+  "id": 2794,
+  "tr": "elektrik",
+  "en": "electricity",
+  "beispiel": "Wie kann man im Haushalt Strom sparen?",
+  "beispielTr": "Evde elektrikten nasıl tasarruf edilir?",
+  "beispielEn": "How can you save electricity at home?"
+ },
+ {
+  "id": 2816,
+  "tr": "yetenek",
+  "en": "talent",
+  "beispiel": "Sie hat ein großes Talent für Musik.",
+  "beispielTr": "Müziğe karşı büyük bir yeteneği var.",
+  "beispielEn": "She has a great talent for music."
+ },
+ {
+  "id": 2868,
+  "tr": "uğraşmak",
+  "en": "to do",
+  "beispiel": "Welchen Sport treibst du in deiner Freizeit?",
+  "beispielTr": "Boş zamanında hangi sporla uğraşıyorsun?",
+  "beispielEn": "What sport do you do in your free time?"
+ },
+ {
+  "id": 1465,
+  "tr": "harika",
+  "en": "excellent",
+  "beispiel": "Das Essen im Hotel war wirklich ausgezeichnet.",
+  "beispielTr": "Oteldeki yemekler gerçekten harikaydı.",
+  "beispielEn": "The food at the hotel was truly excellent."
+ },
+ {
+  "id": 2825,
+  "tr": "fail",
+  "en": "perpetrator",
+  "beispiel": "Die Polizei hat den Täter endlich gefasst.",
+  "beispielTr": "Polis faili sonunda yakaladı.",
+  "beispielEn": "The police finally caught the perpetrator."
+ },
+ {
+  "id": 1660,
+  "tr": "hırsız",
+  "en": "thief",
+  "beispiel": "Ein Dieb hat mir die Tasche gestohlen.",
+  "beispielTr": "Bir hırsız çantamı çaldı.",
+  "beispielEn": "A thief stole my bag."
+ },
+ {
+  "id": 2444,
+  "tr": "resmi",
+  "en": "official",
+  "beispiel": "Sie bekommen von uns eine offizielle Einladung.",
+  "beispielTr": "Bizden resmi bir davetiye alacaksınız.",
+  "beispielEn": "You will receive an official invitation from us."
+ },
+ {
+  "id": 1661,
+  "tr": "hizmet etmek",
+  "en": "to serve",
+  "beispiel": "Dieser Raum dient uns als Lager.",
+  "beispielTr": "Bu oda bize depo olarak hizmet ediyor.",
+  "beispielEn": "This room serves us as a storage space."
+ },
+ {
+  "id": 1647,
+  "tr": "sürekli",
+  "en": "constantly",
+  "beispiel": "Er kommt dauernd zu spät zur Arbeit.",
+  "beispielTr": "İşe sürekli geç kalıyor.",
+  "beispielEn": "He is constantly late for work."
+ },
+ {
+  "id": 1988,
+  "tr": "tat",
+  "en": "taste",
+  "beispiel": "Diese Suppe hat einen sehr scharfen Geschmack.",
+  "beispielTr": "Bu çorbanın tadı çok acı.",
+  "beispielEn": "This soup has a very spicy taste."
+ },
+ {
+  "id": 2474,
+  "tr": "şanssızlık",
+  "en": "bad luck",
+  "beispiel": "Im Urlaub hatten wir Pech mit dem Wetter.",
+  "beispielTr": "Tatilde hava konusunda şanssızdık.",
+  "beispielEn": "We had bad luck with the weather on vacation."
+ },
+ {
+  "id": 2623,
+  "tr": "aktör",
+  "en": "actor",
+  "beispiel": "Dieser Schauspieler ist in Deutschland sehr bekannt.",
+  "beispielTr": "Bu aktör Almanya'da çok tanınıyor.",
+  "beispielEn": "This actor is very well known in Germany."
+ },
+ {
+  "id": 2527,
+  "tr": "seyirci",
+  "en": "audience",
+  "beispiel": "Das Publikum war von dem Konzert begeistert.",
+  "beispielTr": "Seyirciler konserden çok etkilendi.",
+  "beispielEn": "The audience was thrilled by the concert."
+ },
+ {
+  "id": 1943,
+  "tr": "gaz",
+  "en": "gas",
+  "beispiel": "Wir kochen zu Hause mit Gas.",
+  "beispielTr": "Evde gazla pişiriyoruz.",
+  "beispielEn": "We cook with gas at home."
+ },
+ {
+  "id": 2804,
+  "tr": "fırtına",
+  "en": "storm",
+  "beispiel": "Der Sturm hat gestern viele Bäume umgeworfen.",
+  "beispielTr": "Fırtına dün birçok ağacı devirdi.",
+  "beispielEn": "The storm knocked over many trees yesterday."
+ },
+ {
+  "id": 3112,
+  "tr": "etki etmek",
+  "en": "to take effect",
+  "beispiel": "Die Tabletten haben leider nicht gewirkt.",
+  "beispielTr": "Haplar maalesef etki etmedi.",
+  "beispielEn": "Unfortunately the pills did not take effect."
+ },
+ {
+  "id": 2747,
+  "tr": "başlamak",
+  "en": "to start",
+  "beispiel": "Das Rennen startet um zehn Uhr.",
+  "beispielTr": "Yarış saat onda başlıyor.",
+  "beispielEn": "The race starts at ten o'clock."
+ },
+ {
+  "id": 1869,
+  "tr": "sıkıca tutmak",
+  "en": "to hold tight",
+  "beispiel": "Halt dich am Geländer gut fest!",
+  "beispielTr": "Korkuluğa sıkıca tutun!",
+  "beispielEn": "Hold on tight to the railing!"
+ },
+ {
+  "id": 1968,
+  "tr": "gizli",
+  "en": "secret",
+  "beispiel": "Der Plan muss noch geheim bleiben.",
+  "beispielTr": "Plan şimdilik gizli kalmalı.",
+  "beispielEn": "The plan must remain secret for now."
+ },
+ {
+  "id": 1363,
+  "tr": "departman",
+  "en": "department",
+  "beispiel": "Meine Kollegin arbeitet in einer anderen Abteilung.",
+  "beispielTr": "İş arkadaşım başka bir departmanda çalışıyor.",
+  "beispielEn": "My colleague works in a different department."
+ },
+ {
+  "id": 3100,
+  "tr": "bahse girmek",
+  "en": "to bet",
+  "beispiel": "Wir haben gewettet, dass sie wieder zu spät kommt.",
+  "beispielTr": "Yine geç kalacağına bahse girdik.",
+  "beispielEn": "We bet that she would be late again."
+ }
+]

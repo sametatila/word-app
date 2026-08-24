@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3071,
+  "tr": "büyümek",
+  "en": "to grow",
+  "beispiel": "Mein Sohn ist im letzten Jahr stark gewachsen.",
+  "beispielTr": "Oğlum geçen yıl epey büyüdü.",
+  "beispielEn": "My son grew a lot last year."
+ },
+ {
+  "id": 2950,
+  "tr": "hüküm",
+  "en": "verdict",
+  "beispiel": "Das Urteil des Gerichts erscheint mir viel zu hart.",
+  "beispielTr": "Mahkemenin hükmü bana fazlasıyla sert geliyor.",
+  "beispielEn": "The court's verdict seems far too harsh to me."
+ },
+ {
+  "id": 2997,
+  "tr": "kayıp",
+  "en": "loss",
+  "beispiel": "Der Verlust seiner Stelle traf ihn sehr hart.",
+  "beispielTr": "İşini kaybetmesi onu çok sarstı.",
+  "beispielEn": "Losing his job hit him very hard."
+ },
+ {
+  "id": 2659,
+  "tr": "omuz",
+  "en": "shoulder",
+  "beispiel": "Ich habe Schmerzen in der rechten Schulter.",
+  "beispielTr": "Sağ omzum ağrıyor.",
+  "beispielEn": "I have pain in my right shoulder."
+ },
+ {
+  "id": 3032,
+  "tr": "kullanmak",
+  "en": "to use",
+  "beispiel": "Dieses Wort wird heute nur selten verwendet.",
+  "beispielTr": "Bu kelime bugün pek az kullanılıyor.",
+  "beispielEn": "This word is rarely used today."
+ },
+ {
+  "id": 1875,
+  "tr": "yağ",
+  "en": "fat",
+  "beispiel": "Man sollte nicht so viel Fett essen.",
+  "beispielTr": "İnsan bu kadar çok yağ yememeli.",
+  "beispielEn": "One shouldn't eat so much fat."
+ },
+ {
+  "id": 1369,
+  "tr": "dikkat etmek",
+  "en": "to pay attention",
+  "beispiel": "Achten Sie bitte darauf, dass die Tür abgeschlossen ist.",
+  "beispielTr": "Lütfen kapının kilitli olmasına dikkat edin.",
+  "beispielEn": "Please make sure that the door is locked."
+ },
+ {
+  "id": 2000,
+  "tr": "alışkın",
+  "en": "used to",
+  "beispiel": "Ich bin gewohnt, früh ins Bett zu gehen.",
+  "beispielTr": "Erken yatmaya alışkınım.",
+  "beispielEn": "I am used to going to bed early."
+ },
+ {
+  "id": 1455,
+  "tr": "uyanmak",
+  "en": "to wake up",
+  "beispiel": "Von dem Lärm bin ich aufgewacht.",
+  "beispielTr": "Gürültüden uyandım.",
+  "beispielEn": "The noise woke me up."
+ },
+ {
+  "id": 2929,
+  "tr": "üniforma",
+  "en": "uniform",
+  "beispiel": "An dieser Schule tragen alle Schüler eine Uniform.",
+  "beispielTr": "Bu okulda bütün öğrenciler üniforma giyiyor.",
+  "beispielEn": "At this school all students wear a uniform."
+ },
+ {
+  "id": 1342,
+  "tr": "macera",
+  "en": "adventure",
+  "beispiel": "Unser Urlaub in Afrika war ein echtes Abenteuer.",
+  "beispielTr": "Afrika'daki tatilimiz gerçek bir maceraydı.",
+  "beispielEn": "Our vacation in Africa was a real adventure."
+ },
+ {
+  "id": 3149,
+  "tr": "tanık",
+  "en": "witness",
+  "beispiel": "Die Polizei sucht noch Zeugen für den Unfall.",
+  "beispielTr": "Polis kaza için hâlâ tanık arıyor.",
+  "beispielEn": "The police are still looking for witnesses."
+ },
+ {
+  "id": 2548,
+  "tr": "gerçeklik",
+  "en": "reality",
+  "beispiel": "Die Realität sieht leider ganz anders aus.",
+  "beispielTr": "Gerçeklik ne yazık ki bambaşka.",
+  "beispielEn": "Unfortunately, reality looks quite different."
+ },
+ {
+  "id": 2441,
+  "tr": "kamuoyu",
+  "en": "public",
+  "beispiel": "Von solchen Plänen erfährt die Öffentlichkeit nur selten.",
+  "beispielTr": "Kamuoyu böyle planları çok nadir öğrenir.",
+  "beispielEn": "The public rarely learns about such plans."
+ },
+ {
+  "id": 2968,
+  "tr": "suçlu",
+  "en": "criminal",
+  "beispiel": "Die Polizei hat den Verbrecher gestern verhaftet.",
+  "beispielTr": "Polis suçluyu dün tutukladı.",
+  "beispielEn": "The police arrested the criminal yesterday."
+ },
+ {
+  "id": 2957,
+  "tr": "vedalaşmak",
+  "en": "to say goodbye",
+  "beispiel": "Es ist schon spät, ich möchte mich verabschieden.",
+  "beispielTr": "Saat geç oldu, artık vedalaşmak istiyorum.",
+  "beispielEn": "It is already late, I would like to say goodbye."
+ },
+ {
+  "id": 1418,
+  "tr": "başvuru",
+  "en": "application",
+  "beispiel": "Haben Sie den Antrag für das Wohngeld schon ausgefüllt?",
+  "beispielTr": "Kira yardımı başvurusunu doldurdunuz mu?",
+  "beispielEn": "Have you already filled out the housing benefit application?"
+ },
+ {
+  "id": 2972,
+  "tr": "şüphe",
+  "en": "suspicion",
+  "beispiel": "Ich habe den Verdacht, dass er uns belügt.",
+  "beispielTr": "Bize yalan söylediğine dair bir şüphem var.",
+  "beispielEn": "I have a suspicion that he is lying to us."
+ },
+ {
+  "id": 2471,
+  "tr": "hasta",
+  "en": "patient",
+  "beispiel": "Der Patient wartet schon seit einer Stunde.",
+  "beispielTr": "Hasta bir saattir bekliyor.",
+  "beispielEn": "The patient has been waiting for an hour."
+ },
+ {
+  "id": 2686,
+  "tr": "dizi",
+  "en": "series",
+  "beispiel": "Meine Tochter schaut jeden Abend eine neue Serie.",
+  "beispielTr": "Kızım her akşam yeni bir dizi izliyor.",
+  "beispielEn": "My daughter watches a new series every evening."
+ },
+ {
+  "id": 2221,
+  "tr": "doğru",
+  "en": "correct",
+  "beispiel": "Ich habe die Rechnung geprüft, alles ist korrekt.",
+  "beispielTr": "Faturayı kontrol ettim, her şey doğru.",
+  "beispielEn": "I checked the bill, everything is correct."
+ },
+ {
+  "id": 2644,
+  "tr": "kendini kesmek",
+  "en": "to cut oneself",
+  "beispiel": "Ich habe mich beim Kochen in den Finger geschnitten.",
+  "beispielTr": "Yemek yaparken parmağımı kestim.",
+  "beispielEn": "I cut my finger while cooking."
+ },
+ {
+  "id": 3119,
+  "tr": "bilim",
+  "en": "science",
+  "beispiel": "Die Wissenschaft hat dieses Rätsel noch nicht gelöst.",
+  "beispielTr": "Bilim bu gizemi henüz çözebilmiş değil.",
+  "beispielEn": "Science has not solved this mystery yet."
+ },
+ {
+  "id": 2947,
+  "tr": "sebep",
+  "en": "cause",
+  "beispiel": "Die Ursache des Brandes ist noch nicht bekannt.",
+  "beispielTr": "Yangının sebebi henüz bilinmiyor.",
+  "beispielEn": "The cause of the fire is not known yet."
+ },
+ {
+  "id": 1538,
+  "tr": "alan",
+  "en": "area",
+  "beispiel": "In welchem Bereich möchten Sie später arbeiten?",
+  "beispielTr": "İleride hangi alanda çalışmak istiyorsunuz?",
+  "beispielEn": "Which area would you like to work in later?"
+ },
+ {
+  "id": 2335,
+  "tr": "bana uyar",
+  "en": "fine by me",
+  "beispiel": "Meinetwegen kannst du heute das Auto haben.",
+  "beispielTr": "Bana uyar, arabayı bugün alabilirsin.",
+  "beispielEn": "Fine by me, you can have the car today."
+ },
+ {
+  "id": 1482,
+  "tr": "evden çıkmak",
+  "en": "to move out",
+  "beispiel": "Meine Nachbarn sind letzte Woche ausgezogen.",
+  "beispielTr": "Komşularım geçen hafta evden çıktı.",
+  "beispielEn": "My neighbors moved out last week."
+ },
+ {
+  "id": 3038,
+  "tr": "semt",
+  "en": "neighborhood",
+  "beispiel": "Wir wohnen in einem sehr ruhigen Viertel.",
+  "beispielTr": "Çok sakin bir semtte oturuyoruz.",
+  "beispielEn": "We live in a very quiet neighborhood."
+ },
+ {
+  "id": 2593,
+  "tr": "roman",
+  "en": "novel",
+  "beispiel": "Sie liest gerade einen spannenden Roman.",
+  "beispielTr": "Şu an heyecanlı bir roman okuyor.",
+  "beispielEn": "She is reading an exciting novel right now."
+ },
+ {
+  "id": 1793,
+  "tr": "yerine getirmek",
+  "en": "to fulfill",
+  "beispiel": "Sie müssen den Vertrag in allen Punkten erfüllen.",
+  "beispielTr": "Sözleşmeyi bütün maddeleriyle yerine getirmelisiniz.",
+  "beispielEn": "You must fulfill the contract in every respect."
+ },
+ {
+  "id": 1754,
+  "tr": "resepsiyon",
+  "en": "reception",
+  "beispiel": "Geben Sie den Schlüssel bitte am Empfang ab.",
+  "beispielTr": "Anahtarı lütfen resepsiyona bırakın.",
+  "beispielEn": "Please leave the key at the reception."
+ },
+ {
+  "id": 2770,
+  "tr": "tarz",
+  "en": "style",
+  "beispiel": "Sie schreibt in einem sehr klaren Stil.",
+  "beispielTr": "Çok anlaşılır bir tarzda yazıyor.",
+  "beispielEn": "She writes in a very clear style."
+ },
+ {
+  "id": 1717,
+  "tr": "etki",
+  "en": "influence",
+  "beispiel": "Das Wetter hat großen Einfluss auf meine Stimmung.",
+  "beispielTr": "Havanın ruh hâlim üzerinde büyük etkisi var.",
+  "beispielEn": "The weather has a big influence on my mood."
+ },
+ {
+  "id": 1933,
+  "tr": "korkmak",
+  "en": "to be afraid",
+  "beispiel": "Sie fürchtet sich vor großen Hunden.",
+  "beispielTr": "Büyük köpeklerden korkuyor.",
+  "beispielEn": "She is afraid of big dogs."
+ },
+ {
+  "id": 2701,
+  "tr": "koltuk",
+  "en": "seat",
+  "beispiel": "Stellen Sie den Sitz bitte richtig ein.",
+  "beispielTr": "Koltuğu lütfen doğru şekilde ayarlayın.",
+  "beispielEn": "Please adjust the seat properly."
+ },
+ {
+  "id": 3067,
+  "tr": "avantaj",
+  "en": "advantage",
+  "beispiel": "Der Vorteil dieser Wohnung ist die zentrale Lage.",
+  "beispielTr": "Bu dairenin avantajı merkezî konumu.",
+  "beispielEn": "The advantage of this apartment is its central location."
+ },
+ {
+  "id": 2766,
+  "tr": "yıldız",
+  "en": "star",
+  "beispiel": "Heute Nacht sieht man besonders viele Sterne.",
+  "beispielTr": "Bu gece özellikle çok yıldız görünüyor.",
+  "beispielEn": "Tonight you can see especially many stars."
+ },
+ {
+  "id": 3114,
+  "tr": "gerçek",
+  "en": "reality",
+  "beispiel": "In Wirklichkeit war alles ganz anders.",
+  "beispielTr": "Gerçekte her şey bambaşkaydı.",
+  "beispielEn": "In reality everything was completely different."
+ },
+ {
+  "id": 2237,
+  "tr": "çember",
+  "en": "circle",
+  "beispiel": "Die Kinder sitzen im Kreis auf dem Boden.",
+  "beispielTr": "Çocuklar yerde çember şeklinde oturuyor.",
+  "beispielEn": "The children are sitting in a circle on the floor."
+ },
+ {
+  "id": 2783,
+  "tr": "arıza",
+  "en": "malfunction",
+  "beispiel": "Wegen einer technischen Störung fällt der Zug aus.",
+  "beispielTr": "Teknik bir arıza yüzünden tren iptal edildi.",
+  "beispielEn": "The train is canceled because of a technical malfunction."
+ },
+ {
+  "id": 2387,
+  "tr": "cesur",
+  "en": "brave",
+  "beispiel": "Es war sehr mutig von dir, das zu sagen.",
+  "beispielTr": "Bunu söylemen çok cesurcaydı.",
+  "beispielEn": "It was very brave of you to say that."
+ },
+ {
+  "id": 1471,
+  "tr": "dinlenmek",
+  "en": "to rest",
+  "beispiel": "Nach der Arbeit ruhe ich mich gern aus.",
+  "beispielTr": "İşten sonra dinlenmeyi severim.",
+  "beispielEn": "After work I like to rest."
+ },
+ {
+  "id": 2927,
+  "tr": "felaket",
+  "en": "disaster",
+  "beispiel": "Bei dem Unglück wurden viele Menschen verletzt.",
+  "beispielTr": "Felakette çok sayıda insan yaralandı.",
+  "beispielEn": "Many people were injured in the disaster."
+ },
+ {
+  "id": 3120,
+  "tr": "bilim insanı",
+  "en": "scientist",
+  "beispiel": "Die Wissenschaftler haben eine neue Methode entwickelt.",
+  "beispielTr": "Bilim insanları yeni bir yöntem geliştirdi.",
+  "beispielEn": "The scientists have developed a new method."
+ },
+ {
+  "id": 2546,
+  "tr": "tepki",
+  "en": "reaction",
+  "beispiel": "Seine Reaktion auf die Nachricht hat mich überrascht.",
+  "beispielTr": "Haberi duyunca verdiği tepki beni şaşırttı.",
+  "beispielEn": "His reaction to the news surprised me."
+ },
+ {
+  "id": 1508,
+  "tr": "muaf",
+  "en": "exempt",
+  "beispiel": "Studenten sind von diesen Gebühren befreit.",
+  "beispielTr": "Öğrenciler bu harçlardan muaftır.",
+  "beispielEn": "Students are exempt from these fees."
+ },
+ {
+  "id": 2284,
+  "tr": "yönetmek",
+  "en": "to lead",
+  "beispiel": "Wer leitet dieses Projekt eigentlich?",
+  "beispielTr": "Bu projeyi aslında kim yönetiyor?",
+  "beispielEn": "Who is actually leading this project?"
+ },
+ {
+  "id": 2928,
+  "tr": "ürkütücü",
+  "en": "creepy",
+  "beispiel": "Das alte Haus sieht wirklich unheimlich aus.",
+  "beispielTr": "Bu eski ev gerçekten ürkütücü görünüyor.",
+  "beispielEn": "The old house really looks creepy."
+ },
+ {
+  "id": 1838,
+  "tr": "aşırı",
+  "en": "extreme",
+  "beispiel": "Die Prüfung war extrem schwer.",
+  "beispielTr": "Sınav aşırı zordu.",
+  "beispielEn": "The exam was extremely difficult."
+ },
+ {
+  "id": 2754,
+  "tr": "toz",
+  "en": "dust",
+  "beispiel": "Auf den Möbeln liegt überall Staub.",
+  "beispielTr": "Mobilyaların her yeri toz içinde.",
+  "beispielEn": "There is dust all over the furniture."
+ }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2520,
+    "tr": "kadın profesör",
+    "en": "female professor",
+    "beispiel": "Unsere Nachbarin ist Professorin an der Universität.",
+    "beispielTr": "Komşumuz üniversitede profesör.",
+    "beispielEn": "Our neighbor is a professor at the university."
+  },
+  {
+    "id": 2382,
+    "tr": "müziğe yetenekli",
+    "en": "musical",
+    "beispiel": "Sie ist sehr musikalisch und spielt Klavier.",
+    "beispielTr": "Müziğe çok yetenekli ve piyano çalıyor.",
+    "beispielEn": "She is very musical and plays the piano."
+  },
+  {
+    "id": 3169,
+    "tr": "kilo almak",
+    "en": "to gain weight",
+    "beispiel": "Ich habe im Urlaub zwei Kilo zugenommen.",
+    "beispielTr": "Tatilde iki kilo aldım.",
+    "beispielEn": "I gained two kilos on vacation."
+  },
+  {
+    "id": 1794,
+    "tr": "tamamlamak",
+    "en": "to complete",
+    "beispiel": "Ergänzen Sie bitte die fehlenden Angaben.",
+    "beispielTr": "Lütfen eksik bilgileri tamamlayın.",
+    "beispielEn": "Please complete the missing information."
+  },
+  {
+    "id": 1902,
+    "tr": "teşvik",
+    "en": "funding",
+    "beispiel": "Für das Projekt bekommen wir eine Förderung von der Stadt.",
+    "beispielTr": "Proje için şehirden teşvik alıyoruz.",
+    "beispielEn": "We get funding from the city for the project."
+  },
+  {
+    "id": 1616,
+    "tr": "kitapçı",
+    "en": "bookstore",
+    "beispiel": "Das Buch bekommst du in jeder guten Buchhandlung.",
+    "beispielTr": "Bu kitabı her iyi kitapçıda bulabilirsin.",
+    "beispielEn": "You can get that book in any good bookstore."
+  },
+  {
+    "id": 2313,
+    "tr": "ihtar",
+    "en": "payment reminder",
+    "beispiel": "Wenn du die Rechnung nicht pünktlich bezahlst, bekommst du eine Mahnung.",
+    "beispielTr": "Faturayı zamanında ödemezsen ihtar alırsın.",
+    "beispielEn": "If you don't pay the bill on time, you get a reminder."
+  },
+  {
+    "id": 1934,
+    "tr": "yaya",
+    "en": "pedestrian",
+    "beispiel": "Dieser Weg ist nur für Fußgänger.",
+    "beispielTr": "Bu yol yalnızca yayalar için.",
+    "beispielEn": "This path is for pedestrians only."
+  },
+  {
+    "id": 1683,
+    "tr": "kozmetik mağazası",
+    "en": "drugstore",
+    "beispiel": "Zahnpasta und Shampoo kaufe ich in der Drogerie.",
+    "beispielTr": "Diş macunu ve şampuanı kozmetik mağazasından alıyorum.",
+    "beispielEn": "I buy toothpaste and shampoo at the drugstore."
+  },
+  {
+    "id": 3134,
+    "tr": "çok sayıda",
+    "en": "numerous",
+    "beispiel": "Zu unserem Fest kamen zahlreiche Gäste.",
+    "beispielTr": "Şenliğimize çok sayıda misafir geldi.",
+    "beispielEn": "Numerous guests came to our party."
+  },
+  {
+    "id": 3164,
+    "tr": "gelecekte",
+    "en": "in future",
+    "beispiel": "Ich bitte dich, zukünftig früher zu kommen.",
+    "beispielTr": "Gelecekte daha erken gelmeni rica ediyorum.",
+    "beispielEn": "I ask you to come earlier in future."
+  },
+  {
+    "id": 2121,
+    "tr": "entegre etmek",
+    "en": "to integrate",
+    "beispiel": "Die Firma will neue Mitarbeiter besser integrieren.",
+    "beispielTr": "Şirket yeni çalışanları daha iyi entegre etmek istiyor.",
+    "beispielEn": "The company wants to integrate new employees better."
+  },
+  {
+    "id": 1707,
+    "tr": "tek yönlü yol",
+    "en": "one-way street",
+    "beispiel": "Die Goethestraße ist jetzt eine Einbahnstraße.",
+    "beispielTr": "Goethe Caddesi artık tek yönlü bir yol.",
+    "beispielEn": "Goethe Street is a one-way street now."
+  },
+  {
+    "id": 1774,
+    "tr": "rahatlatıcı",
+    "en": "relaxing",
+    "beispiel": "Der Urlaub am Meer war sehr entspannend.",
+    "beispielTr": "Deniz kenarındaki tatil çok rahatlatıcıydı.",
+    "beispielEn": "The vacation by the sea was very relaxing."
+  },
+  {
+    "id": 1622,
+    "tr": "kadın vatandaş",
+    "en": "female citizen",
+    "beispiel": "Als deutsche Bürgerin darf sie hier wählen.",
+    "beispielTr": "Alman vatandaşı olarak burada oy kullanabilir.",
+    "beispielEn": "As a German citizen she is allowed to vote here."
+  },
+  {
+    "id": 1752,
+    "tr": "elektronik",
+    "en": "electronic",
+    "beispiel": "Wir speichern alle Dokumente nur noch elektronisch.",
+    "beispielTr": "Bütün belgeleri artık yalnızca elektronik ortamda saklıyoruz.",
+    "beispielEn": "We now store all documents only electronically."
+  },
+  {
+    "id": 1627,
+    "tr": "şık",
+    "en": "stylish",
+    "beispiel": "Ich finde dein Kleid sehr schick.",
+    "beispielTr": "Elbiseni çok şık buluyorum.",
+    "beispielEn": "I think your dress is very stylish."
+  },
+  {
+    "id": 2530,
+    "tr": "nitelik",
+    "en": "qualification",
+    "beispiel": "Für diese Stelle haben Sie sehr gute Qualifikationen.",
+    "beispielTr": "Bu pozisyon için çok iyi niteliklere sahipsiniz.",
+    "beispielEn": "You have very good qualifications for this position."
+  },
+  {
+    "id": 2837,
+    "tr": "yarı zamanlı çalışma",
+    "en": "part-time work",
+    "beispiel": "Ich arbeite im Moment nur Teilzeit.",
+    "beispielTr": "Şu anda sadece yarı zamanlı çalışıyorum.",
+    "beispielEn": "I only work part-time at the moment."
+  },
+  {
+    "id": 2418,
+    "tr": "sigara içmeyen",
+    "en": "nonsmoker",
+    "beispiel": "In unserer Familie sind alle Nichtraucher.",
+    "beispielTr": "Ailemizde kimse sigara içmez.",
+    "beispielEn": "Everyone in our family is a nonsmoker."
+  },
+  {
+    "id": 1719,
+    "tr": "eklemek",
+    "en": "to insert",
+    "beispiel": "Bitte fügen Sie hier ein Foto ein.",
+    "beispielTr": "Lütfen buraya bir fotoğraf ekleyin.",
+    "beispielEn": "Please insert a photo here."
+  },
+  {
+    "id": 2029,
+    "tr": "jimnastik",
+    "en": "gymnastics",
+    "beispiel": "Ich mache jeden Morgen Gymnastik.",
+    "beispielTr": "Her sabah jimnastik yapıyorum.",
+    "beispielEn": "I do gymnastics every morning."
+  },
+  {
+    "id": 1407,
+    "tr": "ilan",
+    "en": "classified ad",
+    "beispiel": "Ich habe alle Annoncen gelesen, aber die Wohnungen sind zu teuer.",
+    "beispielTr": "Bütün ilanları okudum ama daireler çok pahalı.",
+    "beispielEn": "I read all the ads, but the apartments are too expensive."
+  },
+  {
+    "id": 2854,
+    "tr": "hoşgörülü",
+    "en": "tolerant",
+    "beispiel": "Unsere Nachbarn sind zum Glück sehr tolerant.",
+    "beispielTr": "Komşularımız neyse ki çok hoşgörülü.",
+    "beispielEn": "Luckily our neighbors are very tolerant."
+  },
+  {
+    "id": 3175,
+    "tr": "özetlemek",
+    "en": "to summarize",
+    "beispiel": "Können Sie das bitte kurz zusammenfassen?",
+    "beispielTr": "Bunu lütfen kısaca özetler misiniz?",
+    "beispielEn": "Could you briefly summarize this, please?"
+  },
+  {
+    "id": 2560,
+    "tr": "reform",
+    "en": "reform",
+    "beispiel": "Die Regierung plant für nächstes Jahr eine große Reform.",
+    "beispielTr": "Hükümet gelecek yıl için büyük bir reform planlıyor.",
+    "beispielEn": "The government is planning a big reform for next year."
+  },
+  {
+    "id": 2232,
+    "tr": "erkek hemşire",
+    "en": "male nurse",
+    "beispiel": "Mein Bruder arbeitet als Krankenpfleger im Krankenhaus.",
+    "beispielTr": "Ağabeyim hastanede hemşire olarak çalışıyor.",
+    "beispielEn": "My brother works as a nurse in the hospital."
+  },
+  {
+    "id": 2969,
+    "tr": "kadın suçlu",
+    "en": "female criminal",
+    "beispiel": "Die Polizei hat die Verbrecherin gestern verhaftet.",
+    "beispielTr": "Polis suçlu kadını dün tutukladı.",
+    "beispielEn": "The police arrested the female criminal yesterday."
+  },
+  {
+    "id": 1384,
+    "tr": "huzurevi",
+    "en": "nursing home",
+    "beispiel": "Meine Oma wohnt seit einem Jahr im Altenheim.",
+    "beispielTr": "Babaannem bir yıldır huzurevinde kalıyor.",
+    "beispielEn": "My grandma has lived in a nursing home for a year."
+  },
+  {
+    "id": 1352,
+    "tr": "anlaşmak",
+    "en": "to agree",
+    "beispiel": "Wir hatten doch abgemacht, dass du die Getränke besorgst.",
+    "beispielTr": "Hani içecekleri senin alacağında anlaşmıştık.",
+    "beispielEn": "We had agreed that you would bring the drinks."
+  },
+  {
+    "id": 2795,
+    "tr": "uzun çorap",
+    "en": "stocking",
+    "beispiel": "Im Winter trage ich immer dicke Strümpfe.",
+    "beispielTr": "Kışın hep kalın çoraplar giyerim.",
+    "beispielEn": "In winter I always wear thick stockings."
+  },
+  {
+    "id": 1459,
+    "tr": "çıktı almak",
+    "en": "to print out",
+    "beispiel": "Kann ich das auf deinem Drucker ausdrucken?",
+    "beispielTr": "Bunun çıktısını senin yazıcından alabilir miyim?",
+    "beispielEn": "Can I print this out on your printer?"
+  },
+  {
+    "id": 2470,
+    "tr": "pasif",
+    "en": "passive",
+    "beispiel": "Mein Sohn ist im Unterricht sehr passiv.",
+    "beispielTr": "Oğlum derste çok pasif kalıyor.",
+    "beispielEn": "My son is very passive in class."
+  },
+  {
+    "id": 2758,
+    "tr": "priz",
+    "en": "outlet",
+    "beispiel": "In diesem Zimmer gibt es nur eine Steckdose.",
+    "beispielTr": "Bu odada sadece bir priz var.",
+    "beispielEn": "There is only one outlet in this room."
+  },
+  {
+    "id": 2245,
+    "tr": "tükenmez kalem",
+    "en": "pen",
+    "beispiel": "Hast du einen Kuli für mich?",
+    "beispielTr": "Bana bir tükenmez kalemin var mı?",
+    "beispielEn": "Do you have a pen for me?"
+  },
+  {
+    "id": 2685,
+    "tr": "dikey",
+    "en": "vertical",
+    "beispiel": "Ziehen Sie bitte eine senkrechte Linie.",
+    "beispielTr": "Lütfen dikey bir çizgi çizin.",
+    "beispielEn": "Please draw a vertical line."
+  },
+  {
+    "id": 2394,
+    "tr": "sözlüğe bakmak",
+    "en": "to look up",
+    "beispiel": "Dieses Wort musst du im Wörterbuch nachschlagen.",
+    "beispielTr": "Bu kelimeye sözlükten bakman lazım.",
+    "beispielEn": "You have to look this word up in the dictionary."
+  },
+  {
+    "id": 1771,
+    "tr": "karar vermek",
+    "en": "to make up one's mind",
+    "beispiel": "Endlich entschließt er sich, den Job zu wechseln.",
+    "beispielTr": "Sonunda iş değiştirmeye karar veriyor.",
+    "beispielEn": "He finally makes up his mind to change jobs."
+  },
+  {
+    "id": 2378,
+    "tr": "çöp toplama",
+    "en": "garbage collection",
+    "beispiel": "Die Müllabfuhr kommt zweimal pro Woche.",
+    "beispielTr": "Çöp haftada iki kez toplanıyor.",
+    "beispielEn": "The garbage is collected twice a week."
+  },
+  {
+    "id": 2122,
+    "tr": "entegrasyon",
+    "en": "integration",
+    "beispiel": "Gute Deutschkenntnisse helfen bei der Integration.",
+    "beispielTr": "İyi Almanca bilgisi entegrasyonda yardımcı olur.",
+    "beispielEn": "Good German skills help with integration."
+  },
+  {
+    "id": 1727,
+    "tr": "gelir",
+    "en": "revenue",
+    "beispiel": "Unsere Einnahmen waren diesen Monat höher als sonst.",
+    "beispielTr": "Bu ay gelirimiz her zamankinden yüksekti.",
+    "beispielEn": "Our revenue was higher this month than usual."
+  },
+  {
+    "id": 2858,
+    "tr": "turizm",
+    "en": "tourism",
+    "beispiel": "In dieser Gegend lebt fast jeder vom Tourismus.",
+    "beispielTr": "Bu bölgede neredeyse herkes turizmden geçiniyor.",
+    "beispielEn": "In this area almost everyone lives off tourism."
+  },
+  {
+    "id": 2213,
+    "tr": "tüketim",
+    "en": "consumption",
+    "beispiel": "Der Konsum von Fleisch ist stark gestiegen.",
+    "beispielTr": "Et tüketimi çok arttı.",
+    "beispielEn": "Meat consumption has risen sharply."
+  },
+  {
+    "id": 2890,
+    "tr": "konaklama",
+    "en": "overnight stay",
+    "beispiel": "Die Übernachtung mit Frühstück kostet 90 Euro.",
+    "beispielTr": "Kahvaltı dâhil konaklama 90 avro tutuyor.",
+    "beispielEn": "An overnight stay with breakfast costs 90 euros."
+  },
+  {
+    "id": 2484,
+    "tr": "kimlik bilgileri",
+    "en": "personal details",
+    "beispiel": "Mein Kollege nimmt gleich Ihre Personalien auf.",
+    "beispielTr": "Meslektaşım birazdan kimlik bilgilerinizi alacak.",
+    "beispielEn": "My colleague will take your personal details shortly."
+  },
+  {
+    "id": 3179,
+    "tr": "ek ücret",
+    "en": "surcharge",
+    "beispiel": "Für diesen Zug müssen Sie einen Zuschlag zahlen.",
+    "beispielTr": "Bu tren için ek ücret ödemeniz gerekiyor.",
+    "beispielEn": "You have to pay a surcharge for this train."
+  },
+  {
+    "id": 2915,
+    "tr": "alternatif yol",
+    "en": "detour",
+    "beispiel": "Wegen des Unfalls gibt es eine Umleitung.",
+    "beispielTr": "Kaza yüzünden alternatif yol kullanılıyor.",
+    "beispielEn": "There is a detour because of the accident."
+  },
+  {
+    "id": 2105,
+    "tr": "ithalat",
+    "en": "import",
+    "beispiel": "Der Import von Kaffee ist teurer geworden.",
+    "beispielTr": "Kahve ithalatı pahalılaştı.",
+    "beispielEn": "The import of coffee has become more expensive."
+  },
+  {
+    "id": 2897,
+    "tr": "başlık",
+    "en": "headline",
+    "beispiel": "Die Überschrift passt nicht zum Inhalt des Artikels.",
+    "beispielTr": "Başlık, makalenin içeriğine uymuyor.",
+    "beispielEn": "The headline doesn't match the content of the article."
+  },
+  {
+    "id": 3051,
+    "tr": "tahminen",
+    "en": "expected",
+    "beispiel": "Der Zug hat voraussichtlich 20 Minuten Verspätung.",
+    "beispielTr": "Trenin tahminen 20 dakika rötarı var.",
+    "beispielEn": "The train is expected to be 20 minutes late."
+  }
+]

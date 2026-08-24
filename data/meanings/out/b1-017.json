@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2870,
+    "tr": "ayrılık",
+    "en": "separation",
+    "beispiel": "Nach der Trennung ist sie nach Berlin gezogen.",
+    "beispielTr": "Ayrılıktan sonra Berlin'e taşındı.",
+    "beispielEn": "After the separation she moved to Berlin."
+  },
+  {
+    "id": 2272,
+    "tr": "hoparlör",
+    "en": "speaker",
+    "beispiel": "Der Lautsprecher ist kaputt, deshalb hört man nichts.",
+    "beispielTr": "Hoparlör bozuk, bu yüzden hiçbir şey duyulmuyor.",
+    "beispielEn": "The speaker is broken, so you can't hear anything."
+  },
+  {
+    "id": 1831,
+    "tr": "kat",
+    "en": "floor",
+    "beispiel": "Unser Büro liegt in der dritten Etage.",
+    "beispielTr": "Ofisimiz üçüncü katta.",
+    "beispielEn": "Our office is on the third floor."
+  },
+  {
+    "id": 3021,
+    "tr": "dağıtmak",
+    "en": "to distribute",
+    "beispiel": "Die Lehrerin hat die Arbeitsblätter an alle verteilt.",
+    "beispielTr": "Öğretmen çalışma kâğıtlarını herkese dağıttı.",
+    "beispielEn": "The teacher distributed the worksheets to everyone."
+  },
+  {
+    "id": 2886,
+    "tr": "ezmek",
+    "en": "to run over",
+    "beispiel": "Der Fahrer hat gestern eine Katze überfahren.",
+    "beispielTr": "Sürücü dün bir kediyi ezdi.",
+    "beispielEn": "The driver ran over a cat yesterday."
+  },
+  {
+    "id": 1527,
+    "tr": "tanıdık",
+    "en": "acquaintance",
+    "beispiel": "Eine Bekannte von mir arbeitet bei der Post.",
+    "beispielTr": "Bir tanıdığım postanede çalışıyor.",
+    "beispielEn": "An acquaintance of mine works at the post office."
+  },
+  {
+    "id": 2705,
+    "tr": "bu yüzden",
+    "en": "so that",
+    "beispiel": "Es regnete stark, sodass wir zu Hause blieben.",
+    "beispielTr": "Şiddetli yağmur yağdı, bu yüzden evde kaldık.",
+    "beispielEn": "It rained heavily, so we stayed at home."
+  },
+  {
+    "id": 2012,
+    "tr": "golf",
+    "en": "golf",
+    "beispiel": "Mein Chef spielt jeden Samstag Golf.",
+    "beispielTr": "Patronum her cumartesi golf oynuyor.",
+    "beispielEn": "My boss plays golf every Saturday."
+  },
+  {
+    "id": 2937,
+    "tr": "ders vermek",
+    "en": "to teach",
+    "beispiel": "Mein Onkel unterrichtet seit zehn Jahren Deutsch.",
+    "beispielTr": "Amcam on yıldır Almanca dersi veriyor.",
+    "beispielEn": "My uncle has been teaching German for ten years."
+  },
+  {
+    "id": 1796,
+    "tr": "artırmak",
+    "en": "to increase",
+    "beispiel": "Die Firma hat die Preise schon wieder erhöht.",
+    "beispielTr": "Şirket fiyatları yine artırdı.",
+    "beispielEn": "The company has increased its prices again."
+  },
+  {
+    "id": 2513,
+    "tr": "sunmak",
+    "en": "to present",
+    "beispiel": "Morgen präsentiere ich unser Projekt vor dem Team.",
+    "beispielTr": "Yarın projemizi ekibe sunacağım.",
+    "beispielEn": "Tomorrow I will present our project to the team."
+  },
+  {
+    "id": 3176,
+    "tr": "bağlantı",
+    "en": "connection",
+    "beispiel": "Zwischen den beiden Fällen gibt es keinen Zusammenhang.",
+    "beispielTr": "İki olay arasında hiçbir bağlantı yok.",
+    "beispielEn": "There is no connection between the two cases."
+  },
+  {
+    "id": 2830,
+    "tr": "dalmak",
+    "en": "to dive",
+    "beispiel": "Im Urlaub sind wir jeden Tag tauchen gegangen.",
+    "beispielTr": "Tatilde her gün dalmaya gittik.",
+    "beispielEn": "On vacation we went diving every day."
+  },
+  {
+    "id": 2398,
+    "tr": "iğne",
+    "en": "needle",
+    "beispiel": "Ich brauche eine Nadel, um den Knopf anzunähen.",
+    "beispielTr": "Düğmeyi dikmek için bir iğneye ihtiyacım var.",
+    "beispielEn": "I need a needle to sew the button on."
+  },
+  {
+    "id": 2875,
+    "tr": "bahşiş",
+    "en": "tip",
+    "beispiel": "Wir haben dem Kellner fünf Euro Trinkgeld gegeben.",
+    "beispielTr": "Garsona beş avro bahşiş verdik.",
+    "beispielEn": "We gave the waiter a five-euro tip."
+  },
+  {
+    "id": 2609,
+    "tr": "bütün",
+    "en": "all",
+    "beispiel": "Sämtliche Fenster müssen während der Fahrt geschlossen bleiben.",
+    "beispielTr": "Yolculuk boyunca bütün pencereler kapalı kalmalı.",
+    "beispielEn": "All windows must stay closed during the trip."
+  },
+  {
+    "id": 2538,
+    "tr": "çim",
+    "en": "lawn",
+    "beispiel": "Der Rasen muss dringend gemäht werden.",
+    "beispielTr": "Çimlerin acilen biçilmesi gerekiyor.",
+    "beispielEn": "The lawn urgently needs to be mowed."
+  },
+  {
+    "id": 2098,
+    "tr": "korna çalmak",
+    "en": "to honk",
+    "beispiel": "Vor dem Krankenhaus darf man nicht hupen.",
+    "beispielTr": "Hastanenin önünde korna çalmak yasak.",
+    "beispielEn": "You must not honk in front of the hospital."
+  },
+  {
+    "id": 1729,
+    "tr": "dekorasyon",
+    "en": "furnishings",
+    "beispiel": "Die Einrichtung der Wohnung gefällt mir sehr gut.",
+    "beispielTr": "Evin dekorasyonu çok hoşuma gidiyor.",
+    "beispielEn": "I really like the furnishings in the apartment."
+  },
+  {
+    "id": 2973,
+    "tr": "şüpheli",
+    "en": "suspicious",
+    "beispiel": "Die Tür stand offen, das kam mir verdächtig vor.",
+    "beispielTr": "Kapı açıktı, bu bana şüpheli geldi.",
+    "beispielEn": "The door stood open, which seemed suspicious to me."
+  },
+  {
+    "id": 1387,
+    "tr": "alternatif",
+    "en": "alternative",
+    "beispiel": "Auf dieser Strecke ist der Zug eine gute Alternative.",
+    "beispielTr": "Bu güzergâhta tren iyi bir alternatif.",
+    "beispielEn": "On this route the train is a good alternative."
+  },
+  {
+    "id": 1835,
+    "tr": "uzman",
+    "en": "expert",
+    "beispiel": "Bei Computern bin ich wirklich kein Experte.",
+    "beispielTr": "Bilgisayar konusunda gerçekten uzman değilim.",
+    "beispielEn": "I'm really not an expert when it comes to computers."
+  },
+  {
+    "id": 2463,
+    "tr": "okyanus",
+    "en": "ocean",
+    "beispiel": "Das Schiff fährt über den Atlantischen Ozean.",
+    "beispielTr": "Gemi Atlas Okyanusu'nu aşıyor.",
+    "beispielEn": "The ship crosses the Atlantic Ocean."
+  },
+  {
+    "id": 2428,
+    "tr": "acil çağrı",
+    "en": "emergency call",
+    "beispiel": "Nach dem Unfall hat sie sofort den Notruf gewählt.",
+    "beispielTr": "Kazadan sonra hemen acil çağrı numarasını aradı.",
+    "beispielEn": "After the accident she immediately made an emergency call."
+  },
+  {
+    "id": 1605,
+    "tr": "fren yapmak",
+    "en": "to brake",
+    "beispiel": "Ich musste stark bremsen, weil ein Hund auf die Straße lief.",
+    "beispielTr": "Bir köpek yola çıktığı için sert fren yapmak zorunda kaldım.",
+    "beispielEn": "I had to brake hard because a dog ran onto the road."
+  },
+  {
+    "id": 2047,
+    "tr": "sık",
+    "en": "frequent",
+    "beispiel": "Kopfschmerzen sind bei Schülern ein häufiges Problem.",
+    "beispielTr": "Baş ağrısı öğrencilerde sık görülen bir sorun.",
+    "beispielEn": "Headaches are a frequent problem among students."
+  },
+  {
+    "id": 1417,
+    "tr": "yorucu",
+    "en": "exhausting",
+    "beispiel": "Der Umzug war anstrengender, als ich gedacht hatte.",
+    "beispielTr": "Taşınmak sandığımdan daha yorucuydu.",
+    "beispielEn": "The move was more exhausting than I had expected."
+  },
+  {
+    "id": 2171,
+    "tr": "garson",
+    "en": "waiter",
+    "beispiel": "Der Kellner hat uns die Speisekarte gebracht.",
+    "beispielTr": "Garson bize menüyü getirdi.",
+    "beispielEn": "The waiter brought us the menu."
+  },
+  {
+    "id": 2883,
+    "tr": "poşet",
+    "en": "bag",
+    "beispiel": "Brauchen Sie eine Tüte für den Einkauf?",
+    "beispielTr": "Alışverişiniz için poşet ister misiniz?",
+    "beispielEn": "Do you need a bag for your shopping?"
+  },
+  {
+    "id": 1899,
+    "tr": "talep etmek",
+    "en": "to demand",
+    "beispiel": "Die Gewerkschaft fordert höhere Löhne für alle Beschäftigten.",
+    "beispielTr": "Sendika bütün çalışanlar için daha yüksek maaş talep ediyor.",
+    "beispielEn": "The union is demanding higher wages for all employees."
+  },
+  {
+    "id": 1412,
+    "tr": "hak",
+    "en": "claim",
+    "beispiel": "Nach fünf Jahren haben Sie Anspruch auf mehr Urlaub.",
+    "beispielTr": "Beş yıldan sonra daha fazla izin hakkınız var.",
+    "beispielEn": "After five years you are entitled to more vacation."
+  },
+  {
+    "id": 3098,
+    "tr": "değerli",
+    "en": "valuable",
+    "beispiel": "Der Ring meiner Großmutter ist sehr wertvoll.",
+    "beispielTr": "Büyükannemin yüzüğü çok değerli.",
+    "beispielEn": "My grandmother's ring is very valuable."
+  },
+  {
+    "id": 2202,
+    "tr": "iletişim",
+    "en": "communication",
+    "beispiel": "Die Kommunikation zwischen den Abteilungen läuft sehr gut.",
+    "beispielTr": "Bölümler arasındaki iletişim çok iyi işliyor.",
+    "beispielEn": "Communication between the departments works very well."
+  },
+  {
+    "id": 2449,
+    "tr": "ameliyat etmek",
+    "en": "to operate on",
+    "beispiel": "Der Arzt muss das Knie sofort operieren.",
+    "beispielTr": "Doktorun dizi hemen ameliyat etmesi gerekiyor.",
+    "beispielEn": "The doctor has to operate on the knee immediately."
+  },
+  {
+    "id": 2577,
+    "tr": "emekli maaşı",
+    "en": "pension",
+    "beispiel": "Sie bekommt seit zwei Jahren eine kleine Rente.",
+    "beispielTr": "İki yıldır küçük bir emekli maaşı alıyor.",
+    "beispielEn": "She has been receiving a small pension for two years."
+  },
+  {
+    "id": 1822,
+    "tr": "yedek",
+    "en": "replacement",
+    "beispiel": "Wir suchen dringend Ersatz für die kranke Kollegin.",
+    "beispielTr": "Hasta olan meslektaşımızın yerine acilen yedek arıyoruz.",
+    "beispielEn": "We urgently need a replacement for our sick colleague."
+  },
+  {
+    "id": 3150,
+    "tr": "tanık",
+    "en": "witness",
+    "beispiel": "Die Zeugin hat den Unfall genau beschrieben.",
+    "beispielTr": "Tanık kazayı ayrıntılı olarak anlattı.",
+    "beispielEn": "The witness described the accident in detail."
+  },
+  {
+    "id": 1404,
+    "tr": "ek",
+    "en": "attachment",
+    "beispiel": "In der Anlage finden Sie meinen Lebenslauf.",
+    "beispielTr": "Ekte özgeçmişimi bulabilirsiniz.",
+    "beispielEn": "You will find my resume in the attachment."
+  },
+  {
+    "id": 2738,
+    "tr": "şırınga",
+    "en": "syringe",
+    "beispiel": "Die Krankenschwester hat die Spritze schon vorbereitet.",
+    "beispielTr": "Hemşire şırıngayı çoktan hazırladı.",
+    "beispielEn": "The nurse has already prepared the syringe."
+  },
+  {
+    "id": 2908,
+    "tr": "sarılmak",
+    "en": "to hug",
+    "beispiel": "Zum Abschied hat sie ihre Mutter lange umarmt.",
+    "beispielTr": "Vedalaşırken annesine uzun uzun sarıldı.",
+    "beispielEn": "She hugged her mother for a long time when saying goodbye."
+  },
+  {
+    "id": 2383,
+    "tr": "müzisyen",
+    "en": "musician",
+    "beispiel": "Mein Bruder möchte später Musiker werden.",
+    "beispielTr": "Kardeşim ileride müzisyen olmak istiyor.",
+    "beispielEn": "My brother wants to become a musician later on."
+  },
+  {
+    "id": 1530,
+    "tr": "hakaret etmek",
+    "en": "to insult",
+    "beispiel": "Er hat seinen Kollegen vor allen beleidigt.",
+    "beispielTr": "Herkesin önünde meslektaşına hakaret etti.",
+    "beispielEn": "He insulted his colleague in front of everyone."
+  },
+  {
+    "id": 3130,
+    "tr": "şaşırmak",
+    "en": "to be surprised",
+    "beispiel": "Ich wundere mich, dass er noch nicht da ist.",
+    "beispielTr": "Onun hâlâ gelmemiş olmasına şaşırıyorum.",
+    "beispielEn": "I'm surprised that he isn't here yet."
+  },
+  {
+    "id": 1718,
+    "tr": "etkilemek",
+    "en": "to influence",
+    "beispiel": "Das Wetter hat unsere Entscheidung stark beeinflusst.",
+    "beispielTr": "Hava durumu kararımızı çok etkiledi.",
+    "beispielEn": "The weather strongly influenced our decision."
+  },
+  {
+    "id": 1505,
+    "tr": "şart",
+    "en": "condition",
+    "beispiel": "Wenn Sie unsere Bedingungen akzeptieren, unterschreiben wir morgen.",
+    "beispielTr": "Şartlarımızı kabul ederseniz yarın imzalarız.",
+    "beispielEn": "If you accept our conditions, we will sign tomorrow."
+  },
+  {
+    "id": 1431,
+    "tr": "sinirlenmek",
+    "en": "to get annoyed",
+    "beispiel": "Ich ärgere mich jeden Morgen über den Stau.",
+    "beispielTr": "Her sabah trafik yüzünden sinirleniyorum.",
+    "beispielEn": "I get annoyed about the traffic jam every morning."
+  },
+  {
+    "id": 2210,
+    "tr": "rekabet",
+    "en": "competition",
+    "beispiel": "In dieser Branche ist die Konkurrenz sehr groß.",
+    "beispielTr": "Bu sektörde rekabet çok büyük.",
+    "beispielEn": "The competition is very tough in this industry."
+  },
+  {
+    "id": 2123,
+    "tr": "zekâ",
+    "en": "intelligence",
+    "beispiel": "Delfine sind für ihre hohe Intelligenz bekannt.",
+    "beispielTr": "Yunuslar yüksek zekâlarıyla bilinir.",
+    "beispielEn": "Dolphins are known for their high intelligence."
+  },
+  {
+    "id": 2345,
+    "tr": "metal",
+    "en": "metal",
+    "beispiel": "Die Kiste ist aus Metall und ziemlich schwer.",
+    "beispielTr": "Kutu metalden ve oldukça ağır.",
+    "beispielEn": "The box is made of metal and quite heavy."
+  },
+  {
+    "id": 1356,
+    "tr": "iptal etmek",
+    "en": "to cancel",
+    "beispiel": "Ich muss unser Treffen leider absagen, weil ich krank bin.",
+    "beispielTr": "Hasta olduğum için buluşmamızı maalesef iptal etmek zorundayım.",
+    "beispielEn": "I have to cancel our meeting because I'm sick."
+  }
+]

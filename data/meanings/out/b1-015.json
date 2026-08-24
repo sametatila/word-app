@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2841,
+    "tr": "tempo",
+    "en": "pace",
+    "beispiel": "Bei diesem Tempo werden wir nie fertig.",
+    "beispielTr": "Bu tempoyla asla bitiremeyiz.",
+    "beispielEn": "At this pace we will never finish."
+  },
+  {
+    "id": 2931,
+    "tr": "sözünü kesmek",
+    "en": "to interrupt",
+    "beispiel": "Bitte unterbrich mich nicht, wenn ich spreche.",
+    "beispielTr": "Lütfen konuşurken sözümü kesme.",
+    "beispielEn": "Please don't interrupt me while I'm speaking."
+  },
+  {
+    "id": 2815,
+    "tr": "vadi",
+    "en": "valley",
+    "beispiel": "Unser Dorf liegt in einem Tal.",
+    "beispielTr": "Köyümüz bir vadide.",
+    "beispielEn": "Our village lies in a valley."
+  },
+  {
+    "id": 2691,
+    "tr": "yedeklemek",
+    "en": "to back up",
+    "beispiel": "Du solltest deine Daten regelmäßig sichern.",
+    "beispielTr": "Verilerini düzenli olarak yedeklemelisin.",
+    "beispielEn": "You should back up your data regularly."
+  },
+  {
+    "id": 2991,
+    "tr": "yolunu kaybetmek",
+    "en": "to get lost",
+    "beispiel": "Im Wald haben wir uns völlig verlaufen.",
+    "beispielTr": "Ormanda tamamen yolumuzu kaybettik.",
+    "beispielEn": "We got completely lost in the woods."
+  },
+  {
+    "id": 2537,
+    "tr": "kenar",
+    "en": "edge",
+    "beispiel": "Wir wohnen am Rand der Stadt.",
+    "beispielTr": "Şehrin kenarında oturuyoruz.",
+    "beispielEn": "We live on the edge of the city."
+  },
+  {
+    "id": 2958,
+    "tr": "veda",
+    "en": "farewell",
+    "beispiel": "Der Abschied von meinen Freunden fiel mir schwer.",
+    "beispielTr": "Arkadaşlarıma veda etmek bana zor geldi.",
+    "beispielEn": "Saying goodbye to my friends was hard for me."
+  },
+  {
+    "id": 1533,
+    "tr": "ihtiyaç duymak",
+    "en": "to require",
+    "beispiel": "Sagen Sie Bescheid, wenn Sie noch etwas benötigen.",
+    "beispielTr": "Başka bir şeye ihtiyacınız olursa haber verin.",
+    "beispielEn": "Let us know if you require anything else."
+  },
+  {
+    "id": 1388,
+    "tr": "resmi daire",
+    "en": "government office",
+    "beispiel": "Ich muss morgen zum Amt gehen.",
+    "beispielTr": "Yarın resmi daireye gitmem gerekiyor.",
+    "beispielEn": "I have to go to the government office tomorrow."
+  },
+  {
+    "id": 1512,
+    "tr": "başlangıç",
+    "en": "beginning",
+    "beispiel": "Zu Beginn der Stunde begrüßt die Lehrerin ihre Schüler.",
+    "beispielTr": "Dersin başında öğretmen öğrencilerini selamlıyor.",
+    "beispielEn": "At the beginning of the lesson the teacher greets her students."
+  },
+  {
+    "id": 1562,
+    "tr": "cezalandırmak",
+    "en": "to punish",
+    "beispiel": "Zu schnelles Fahren wird streng bestraft.",
+    "beispielTr": "Aşırı hız ağır şekilde cezalandırılır.",
+    "beispielEn": "Speeding is punished severely."
+  },
+  {
+    "id": 2588,
+    "tr": "kocaman",
+    "en": "huge",
+    "beispiel": "Der Garten hinter dem Haus ist riesig.",
+    "beispielTr": "Evin arkasındaki bahçe kocaman.",
+    "beispielEn": "The garden behind the house is huge."
+  },
+  {
+    "id": 2321,
+    "tr": "marka",
+    "en": "brand",
+    "beispiel": "Diese Marke ist bei Jugendlichen sehr beliebt.",
+    "beispielTr": "Bu marka gençler arasında çok popüler.",
+    "beispielEn": "This brand is very popular among young people."
+  },
+  {
+    "id": 2089,
+    "tr": "kibar",
+    "en": "polite",
+    "beispiel": "Unser Nachbar ist immer sehr höflich.",
+    "beispielTr": "Komşumuz her zaman çok kibardır.",
+    "beispielEn": "Our neighbor is always very polite."
+  },
+  {
+    "id": 2575,
+    "tr": "din",
+    "en": "religion",
+    "beispiel": "Religion ist für manche Menschen sehr wichtig.",
+    "beispielTr": "Din bazı insanlar için çok önemlidir.",
+    "beispielEn": "Religion is very important to some people."
+  },
+  {
+    "id": 3057,
+    "tr": "niyetinde olmak",
+    "en": "to intend",
+    "beispiel": "Wir haben vor, im Sommer nach Italien zu fahren.",
+    "beispielTr": "Yazın İtalya'ya gitme niyetindeyiz.",
+    "beispielEn": "We intend to go to Italy in the summer."
+  },
+  {
+    "id": 2472,
+    "tr": "kadın hasta",
+    "en": "female patient",
+    "beispiel": "Die Patientin wartet schon eine halbe Stunde.",
+    "beispielTr": "Hasta yarım saattir bekliyor.",
+    "beispielEn": "The patient has been waiting for half an hour."
+  },
+  {
+    "id": 2417,
+    "tr": "kız yeğen",
+    "en": "niece",
+    "beispiel": "Meine Nichte kommt morgen zu Besuch.",
+    "beispielTr": "Kız yeğenim yarın ziyarete geliyor.",
+    "beispielEn": "My niece is coming to visit tomorrow."
+  },
+  {
+    "id": 3035,
+    "tr": "vazgeçmek",
+    "en": "to do without",
+    "beispiel": "Auf mein Auto möchte ich nicht verzichten.",
+    "beispielTr": "Arabamdan vazgeçmek istemiyorum.",
+    "beispielEn": "I don't want to do without my car."
+  },
+  {
+    "id": 2233,
+    "tr": "hemşire",
+    "en": "nurse",
+    "beispiel": "Meine Cousine möchte gern Krankenschwester werden.",
+    "beispielTr": "Kuzenim hemşire olmak istiyor.",
+    "beispielEn": "My cousin wants to become a nurse."
+  },
+  {
+    "id": 2810,
+    "tr": "sembol",
+    "en": "symbol",
+    "beispiel": "Das Herz ist ein Symbol für die Liebe.",
+    "beispielTr": "Kalp, aşkın sembolüdür.",
+    "beispielEn": "The heart is a symbol of love."
+  },
+  {
+    "id": 1846,
+    "tr": "araç",
+    "en": "vehicle",
+    "beispiel": "Wem gehört das Fahrzeug?",
+    "beispielTr": "Bu araç kimin?",
+    "beispielEn": "Whose vehicle is this?"
+  },
+  {
+    "id": 2877,
+    "tr": "damla",
+    "en": "drops",
+    "beispiel": "Hast du die Tropfen schon genommen?",
+    "beispielTr": "Damlaları aldın mı?",
+    "beispielEn": "Have you already taken the drops?"
+  },
+  {
+    "id": 1372,
+    "tr": "kampanya",
+    "en": "campaign",
+    "beispiel": "Die Stadt plant eine Aktion für junge Familien.",
+    "beispielTr": "Şehir, genç aileler için bir kampanya planlıyor.",
+    "beispielEn": "The city is planning a campaign for young families."
+  },
+  {
+    "id": 3178,
+    "tr": "izleyici",
+    "en": "viewer",
+    "beispiel": "Liebe Zuschauer, wir wünschen Ihnen gute Unterhaltung.",
+    "beispielTr": "Sevgili izleyiciler, iyi seyirler dileriz.",
+    "beispielEn": "Dear viewers, we hope you enjoy the show."
+  },
+  {
+    "id": 1710,
+    "tr": "ev soygunu",
+    "en": "burglary",
+    "beispiel": "Bei uns gab es letzte Woche einen Einbruch.",
+    "beispielTr": "Geçen hafta evimize hırsız girdi.",
+    "beispielEn": "There was a burglary at our place last week."
+  },
+  {
+    "id": 1524,
+    "tr": "ısırmak",
+    "en": "to bite",
+    "beispiel": "Pass auf, dass dich der Hund nicht beißt!",
+    "beispielTr": "Dikkat et, köpek seni ısırmasın!",
+    "beispielEn": "Watch out, don't let the dog bite you!"
+  },
+  {
+    "id": 2744,
+    "tr": "-den gelmek",
+    "en": "to come from",
+    "beispiel": "Meine Familie stammt aus einem kleinen Dorf.",
+    "beispielTr": "Ailem küçük bir köyden geliyor.",
+    "beispielEn": "My family comes from a small village."
+  },
+  {
+    "id": 2225,
+    "tr": "kostüm",
+    "en": "costume",
+    "beispiel": "Im Film tragen die Leute bunte Kostüme.",
+    "beispielTr": "Filmde insanlar rengârenk kostümler giyiyor.",
+    "beispielEn": "In the film the people wear colorful costumes."
+  },
+  {
+    "id": 2027,
+    "tr": "selamlamak",
+    "en": "to greet",
+    "beispiel": "Wer war die Frau, die du eben gegrüßt hast?",
+    "beispielTr": "Az önce selam verdiğin kadın kimdi?",
+    "beispielEn": "Who was the woman you just greeted?"
+  },
+  {
+    "id": 1760,
+    "tr": "keşfetmek",
+    "en": "to discover",
+    "beispiel": "Auf der Reise haben wir ein schönes Dorf entdeckt.",
+    "beispielTr": "Yolculukta güzel bir köy keşfettik.",
+    "beispielEn": "On the trip we discovered a beautiful village."
+  },
+  {
+    "id": 1820,
+    "tr": "korkutmak",
+    "en": "to scare",
+    "beispiel": "Entschuldigung, ich wollte dich nicht erschrecken.",
+    "beispielTr": "Özür dilerim, seni korkutmak istemedim.",
+    "beispielEn": "Sorry, I didn't want to scare you."
+  },
+  {
+    "id": 3024,
+    "tr": "temsil etmek",
+    "en": "to represent",
+    "beispiel": "Der Anwalt vertritt seinen Mandanten vor Gericht.",
+    "beispielTr": "Avukat, müvekkilini mahkemede temsil ediyor.",
+    "beispielEn": "The lawyer represents his client in court."
+  },
+  {
+    "id": 2241,
+    "tr": "kriz",
+    "en": "crisis",
+    "beispiel": "Die Wirtschaft steckt in einer schweren Krise.",
+    "beispielTr": "Ekonomi ağır bir krizin içinde.",
+    "beispielEn": "The economy is in a serious crisis."
+  },
+  {
+    "id": 2996,
+    "tr": "kaybeden",
+    "en": "loser",
+    "beispiel": "Der Verlierer musste die Rechnung bezahlen.",
+    "beispielTr": "Kaybeden hesabı ödemek zorunda kaldı.",
+    "beispielEn": "The loser had to pay the bill."
+  },
+  {
+    "id": 2521,
+    "tr": "profesyonel",
+    "en": "professional",
+    "beispiel": "Sie spielt Tennis wie ein echter Profi.",
+    "beispielTr": "Gerçek bir profesyonel gibi tenis oynuyor.",
+    "beispielEn": "She plays tennis like a real professional."
+  },
+  {
+    "id": 2809,
+    "tr": "tutar",
+    "en": "sum",
+    "beispiel": "Die Summe auf der Rechnung scheint mir zu hoch.",
+    "beispielTr": "Faturadaki tutar bana çok yüksek geliyor.",
+    "beispielEn": "The sum on the bill seems too high to me."
+  },
+  {
+    "id": 2408,
+    "tr": "bir yandan",
+    "en": "on the side",
+    "beispiel": "Er studiert Geschichte und arbeitet nebenbei in einer Kneipe.",
+    "beispielTr": "Tarih okuyor, bir yandan da bir barda çalışıyor.",
+    "beispielEn": "He studies history and works in a pub on the side."
+  },
+  {
+    "id": 2407,
+    "tr": "sis",
+    "en": "fog",
+    "beispiel": "Fahren Sie bei Nebel besonders vorsichtig!",
+    "beispielTr": "Siste özellikle dikkatli sürün!",
+    "beispielEn": "Drive especially carefully in fog!"
+  },
+  {
+    "id": 2151,
+    "tr": "kanal",
+    "en": "channel",
+    "beispiel": "Auf welchem Kanal läuft das Spiel heute?",
+    "beispielTr": "Maç bugün hangi kanalda?",
+    "beispielEn": "Which channel is the game on today?"
+  },
+  {
+    "id": 1571,
+    "tr": "aldatmak",
+    "en": "to deceive",
+    "beispiel": "Ich würde meine Familie niemals betrügen.",
+    "beispielTr": "Ailemi asla aldatmam.",
+    "beispielEn": "I would never deceive my family."
+  },
+  {
+    "id": 2007,
+    "tr": "kaygan",
+    "en": "slippery",
+    "beispiel": "Fahr vorsichtig, die Straßen sind glatt!",
+    "beispielTr": "Dikkatli sür, yollar kaygan!",
+    "beispielEn": "Drive carefully, the roads are slippery!"
+  },
+  {
+    "id": 1483,
+    "tr": "yazar",
+    "en": "author",
+    "beispiel": "Der Autor liest heute Abend aus seinem Buch.",
+    "beispielTr": "Yazar bu akşam kitabından okuyacak.",
+    "beispielEn": "The author is reading from his book tonight."
+  },
+  {
+    "id": 2025,
+    "tr": "iyice",
+    "en": "thoroughly",
+    "beispiel": "Ich möchte die Wohnung gründlich putzen.",
+    "beispielTr": "Evi iyice temizlemek istiyorum.",
+    "beispielEn": "I want to clean the apartment thoroughly."
+  },
+  {
+    "id": 1762,
+    "tr": "uzaklık",
+    "en": "distance",
+    "beispiel": "Aus dieser Entfernung kann ich nichts erkennen.",
+    "beispielTr": "Bu uzaklıktan hiçbir şey seçemiyorum.",
+    "beispielEn": "I can't make out anything from this distance."
+  },
+  {
+    "id": 3181,
+    "tr": "sorumlu",
+    "en": "in charge",
+    "beispiel": "Wer ist für die Heizung zuständig?",
+    "beispielTr": "Kaloriferden kim sorumlu?",
+    "beispielEn": "Who is in charge of the heating?"
+  },
+  {
+    "id": 1492,
+    "tr": "nakit",
+    "en": "cash",
+    "beispiel": "Ich habe leider kein Bargeld dabei.",
+    "beispielTr": "Maalesef yanımda hiç nakit yok.",
+    "beispielEn": "Unfortunately I don't have any cash with me."
+  },
+  {
+    "id": 2440,
+    "tr": "halka açık",
+    "en": "public",
+    "beispiel": "In öffentlichen Gebäuden darf man nicht rauchen.",
+    "beispielTr": "Halka açık binalarda sigara içmek yasak.",
+    "beispielEn": "Smoking is forbidden in public buildings."
+  },
+  {
+    "id": 2177,
+    "tr": "yastık",
+    "en": "pillow",
+    "beispiel": "Das Kissen ist mir viel zu weich.",
+    "beispielTr": "Yastık bana çok yumuşak geliyor.",
+    "beispielEn": "The pillow is much too soft for me."
+  },
+  {
+    "id": 1981,
+    "tr": "adil",
+    "en": "just",
+    "beispiel": "Wir sollten den Kuchen gerecht verteilen.",
+    "beispielTr": "Pastayı adil bir şekilde paylaşmalıyız.",
+    "beispielEn": "We should divide the cake fairly."
+  }
+]

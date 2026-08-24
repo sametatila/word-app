@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3016,
+    "tr": "anlaşılır",
+    "en": "understandable",
+    "beispiel": "Ich finde deine Reaktion völlig verständlich.",
+    "beispielTr": "Tepkini gayet anlaşılır buluyorum.",
+    "beispielEn": "I find your reaction completely understandable."
+  },
+  {
+    "id": 2109,
+    "tr": "enfeksiyon",
+    "en": "infection",
+    "beispiel": "Der Arzt hat eine Infektion festgestellt.",
+    "beispielTr": "Doktor bir enfeksiyon tespit etti.",
+    "beispielEn": "The doctor diagnosed an infection."
+  },
+  {
+    "id": 1451,
+    "tr": "sinirlendirmek",
+    "en": "to annoy",
+    "beispiel": "Es regt mich auf, dass er ständig zu spät kommt.",
+    "beispielTr": "Sürekli geç kalması beni sinirlendiriyor.",
+    "beispielEn": "It annoys me that he is always late."
+  },
+  {
+    "id": 3002,
+    "tr": "tahmin etmek",
+    "en": "to suspect",
+    "beispiel": "Ich vermute, dass sie den Termin vergessen hat.",
+    "beispielTr": "Randevuyu unuttuğunu tahmin ediyorum.",
+    "beispielEn": "I suspect she forgot the appointment."
+  },
+  {
+    "id": 1580,
+    "tr": "oturan kişi",
+    "en": "resident",
+    "beispiel": "Alle Bewohner des Hauses wurden informiert.",
+    "beispielTr": "Binada oturan herkes bilgilendirildi.",
+    "beispielEn": "All residents of the building were informed."
+  },
+  {
+    "id": 3030,
+    "tr": "kadın akraba",
+    "en": "female relative",
+    "beispiel": "Meine Verwandte aus München kommt morgen zu Besuch.",
+    "beispielTr": "Münih'teki kadın akrabam yarın ziyarete geliyor.",
+    "beispielEn": "My relative from Munich is coming to visit tomorrow."
+  },
+  {
+    "id": 2230,
+    "tr": "hasta",
+    "en": "sick man",
+    "beispiel": "Der Kranke muss noch eine Woche im Bett bleiben.",
+    "beispielTr": "Hastanın bir hafta daha yatakta kalması gerekiyor.",
+    "beispielEn": "The sick man has to stay in bed another week."
+  },
+  {
+    "id": 2231,
+    "tr": "kadın hasta",
+    "en": "sick woman",
+    "beispiel": "Die Kranke wurde gestern operiert.",
+    "beispielTr": "Kadın hasta dün ameliyat edildi.",
+    "beispielEn": "The sick woman was operated on yesterday."
+  },
+  {
+    "id": 2907,
+    "tr": "kıyı",
+    "en": "shore",
+    "beispiel": "Die Kinder spielten am Ufer des Sees.",
+    "beispielTr": "Çocuklar göl kıyısında oynadılar.",
+    "beispielEn": "The children played on the shore of the lake."
+  },
+  {
+    "id": 1458,
+    "tr": "eğitimli",
+    "en": "trained",
+    "beispiel": "Für diesen Beruf müssen Sie gut ausgebildet sein.",
+    "beispielTr": "Bu meslek için iyi eğitim almış olmanız gerekir.",
+    "beispielEn": "For this profession you must be well trained."
+  },
+  {
+    "id": 3013,
+    "tr": "sigortalamak",
+    "en": "to insure",
+    "beispiel": "Wollen Sie Ihr Gepäck versichern?",
+    "beispielTr": "Bagajınızı sigortalatmak ister misiniz?",
+    "beispielEn": "Would you like to insure your luggage?"
+  },
+  {
+    "id": 2625,
+    "tr": "dilim",
+    "en": "slice",
+    "beispiel": "Ich hätte gern fünf Scheiben Käse.",
+    "beispielTr": "Beş dilim peynir istiyorum.",
+    "beispielEn": "I would like five slices of cheese."
+  },
+  {
+    "id": 2206,
+    "tr": "konferans",
+    "en": "conference",
+    "beispiel": "Die Konferenz findet in Raum 19 statt.",
+    "beispielTr": "Konferans 19 numaralı salonda yapılacak.",
+    "beispielEn": "The conference takes place in room 19."
+  },
+  {
+    "id": 2146,
+    "tr": "kabin",
+    "en": "cabin",
+    "beispiel": "Unsere Kabine auf dem Schiff war sehr klein.",
+    "beispielTr": "Gemideki kabinimiz çok küçüktü.",
+    "beispielEn": "Our cabin on the ship was very small."
+  },
+  {
+    "id": 1626,
+    "tr": "kadın patron",
+    "en": "female boss",
+    "beispiel": "Ich muss zuerst meine Chefin fragen.",
+    "beispielTr": "Önce patronuma sormam gerek.",
+    "beispielEn": "I have to ask my boss first."
+  },
+  {
+    "id": 1347,
+    "tr": "bağımlı",
+    "en": "dependent",
+    "beispiel": "Gregor ist finanziell von seinen Eltern abhängig.",
+    "beispielTr": "Gregor maddi olarak ailesine bağımlı.",
+    "beispielEn": "Gregor is financially dependent on his parents."
+  },
+  {
+    "id": 1958,
+    "tr": "uygun",
+    "en": "suitable",
+    "beispiel": "Dieses Spiel ist nicht für Kinder unter drei Jahren geeignet.",
+    "beispielTr": "Bu oyun üç yaşından küçük çocuklar için uygun değil.",
+    "beispielEn": "This game is not suitable for children under three."
+  },
+  {
+    "id": 3061,
+    "tr": "yüksek sesle okumak",
+    "en": "to read aloud",
+    "beispiel": "Ich lese meinen Kindern oft etwas vor.",
+    "beispielTr": "Çocuklarıma sık sık bir şeyler okurum.",
+    "beispielEn": "I often read something aloud to my children."
+  },
+  {
+    "id": 1423,
+    "tr": "ihbar etmek",
+    "en": "to report",
+    "beispiel": "Wenn Sie hier parken, zeige ich Sie an.",
+    "beispielTr": "Buraya park ederseniz sizi ihbar ederim.",
+    "beispielEn": "If you park here, I will report you."
+  },
+  {
+    "id": 3009,
+    "tr": "toplantı",
+    "en": "assembly",
+    "beispiel": "Der Minister hielt bei der Versammlung eine Rede.",
+    "beispielTr": "Bakan toplantıda bir konuşma yaptı.",
+    "beispielEn": "The minister gave a speech at the assembly."
+  },
+  {
+    "id": 2602,
+    "tr": "salon",
+    "en": "hall",
+    "beispiel": "Für unsere Familienfeier haben wir einen kleinen Saal gemietet.",
+    "beispielTr": "Aile kutlamamız için küçük bir salon kiraladık.",
+    "beispielEn": "We rented a small hall for our family celebration."
+  },
+  {
+    "id": 3117,
+    "tr": "ekonomi",
+    "en": "economy",
+    "beispiel": "Die Wirtschaft in diesem Land wächst wieder.",
+    "beispielTr": "Bu ülkedeki ekonomi yeniden büyüyor.",
+    "beispielEn": "The economy in this country is growing again."
+  },
+  {
+    "id": 2356,
+    "tr": "karıştırmak",
+    "en": "to mix",
+    "beispiel": "Zuerst musst du Mehl und Zucker mischen.",
+    "beispielTr": "Önce unu ve şekeri karıştırman gerek.",
+    "beispielEn": "First you have to mix flour and sugar."
+  },
+  {
+    "id": 1812,
+    "tr": "beslemek",
+    "en": "to feed",
+    "beispiel": "Die Mutter ernährt ihr Baby mit Muttermilch.",
+    "beispielTr": "Anne bebeğini anne sütüyle besliyor.",
+    "beispielEn": "The mother feeds her baby with breast milk."
+  },
+  {
+    "id": 1732,
+    "tr": "dahil",
+    "en": "including",
+    "beispiel": "Alles zusammen kostet 200 Euro einschließlich Fahrtkosten.",
+    "beispielTr": "Hepsi birlikte, yol masrafları dahil 200 Euro tutuyor.",
+    "beispielEn": "Altogether it costs 200 euros including travel expenses."
+  },
+  {
+    "id": 2182,
+    "tr": "tırmanmak",
+    "en": "to climb",
+    "beispiel": "Die Kinder sind auf den Baum geklettert.",
+    "beispielTr": "Çocuklar ağaca tırmandı.",
+    "beispielEn": "The children climbed up the tree."
+  },
+  {
+    "id": 3174,
+    "tr": "iş birliği",
+    "en": "cooperation",
+    "beispiel": "Die Zusammenarbeit mit dem neuen Team läuft gut.",
+    "beispielTr": "Yeni ekiple iş birliği iyi gidiyor.",
+    "beispielEn": "The cooperation with the new team is going well."
+  },
+  {
+    "id": 1940,
+    "tr": "garanti etmek",
+    "en": "to guarantee",
+    "beispiel": "Ich kann Ihnen nicht garantieren, dass das Gerät nächste Woche fertig ist.",
+    "beispielTr": "Cihazın gelecek haftaya hazır olacağını size garanti edemem.",
+    "beispielEn": "I cannot guarantee that the device will be ready next week."
+  },
+  {
+    "id": 2833,
+    "tr": "teknik",
+    "en": "technical",
+    "beispiel": "Es gab ein technisches Problem mit dem Drucker.",
+    "beispielTr": "Yazıcıda teknik bir sorun vardı.",
+    "beispielEn": "There was a technical problem with the printer."
+  },
+  {
+    "id": 2263,
+    "tr": "iniş",
+    "en": "landing",
+    "beispiel": "Bei der Landung müssen Sie sich anschnallen.",
+    "beispielTr": "İniş sırasında kemerinizi bağlamanız gerekiyor.",
+    "beispielEn": "You have to fasten your seatbelt during the landing."
+  },
+  {
+    "id": 2091,
+    "tr": "bal",
+    "en": "honey",
+    "beispiel": "Ich esse gern Brötchen mit Honig und Butter zum Frühstück.",
+    "beispielTr": "Kahvaltıda bal ve tereyağlı ekmek yemeyi severim.",
+    "beispielEn": "I like eating rolls with honey and butter for breakfast."
+  },
+  {
+    "id": 3027,
+    "tr": "mahkûm etmek",
+    "en": "to sentence",
+    "beispiel": "Das Gericht hat den Täter zu einer Geldstrafe verurteilt.",
+    "beispielTr": "Mahkeme faili para cezasına mahkûm etti.",
+    "beispielEn": "The court sentenced the offender to a fine."
+  },
+  {
+    "id": 1878,
+    "tr": "itfaiye",
+    "en": "fire department",
+    "beispiel": "Die Feuerwehr löschte das Feuer sehr schnell.",
+    "beispielTr": "İtfaiye yangını çok çabuk söndürdü.",
+    "beispielEn": "The fire department put out the fire very quickly."
+  },
+  {
+    "id": 3025,
+    "tr": "temsilci",
+    "en": "representative",
+    "beispiel": "Der Vertreter der Firma kommt morgen zu uns.",
+    "beispielTr": "Firmanın temsilcisi yarın bize geliyor.",
+    "beispielEn": "The company's representative is coming to us tomorrow."
+  },
+  {
+    "id": 2051,
+    "tr": "kapıcı",
+    "en": "janitor",
+    "beispiel": "Der Hausmeister hat mir beim Umzug geholfen.",
+    "beispielTr": "Kapıcı taşınmamda bana yardım etti.",
+    "beispielEn": "The janitor helped me with the move."
+  },
+  {
+    "id": 2628,
+    "tr": "banknot",
+    "en": "banknote",
+    "beispiel": "Kannst du mir einen Schein in Münzen wechseln?",
+    "beispielTr": "Bana bir banknotu bozuk parayla değiştirebilir misin?",
+    "beispielEn": "Can you change a banknote into coins for me?"
+  },
+  {
+    "id": 2172,
+    "tr": "kadın garson",
+    "en": "waitress",
+    "beispiel": "Ich bin Kellnerin von Beruf.",
+    "beispielTr": "Mesleğim garsonluk.",
+    "beispielEn": "I am a waitress by profession."
+  },
+  {
+    "id": 2118,
+    "tr": "toplamda",
+    "en": "in total",
+    "beispiel": "Insgesamt haben sich 20 Teilnehmer für die Prüfung angemeldet.",
+    "beispielTr": "Sınava toplamda 20 katılımcı kaydoldu.",
+    "beispielEn": "In total, 20 participants registered for the exam."
+  },
+  {
+    "id": 2316,
+    "tr": "eksiklik",
+    "en": "lack",
+    "beispiel": "In dieser Stadt gibt es einen großen Mangel an Wohnungen.",
+    "beispielTr": "Bu şehirde büyük bir konut eksikliği var.",
+    "beispielEn": "In this city there is a great lack of housing."
+  },
+  {
+    "id": 2201,
+    "tr": "kadın meslektaş",
+    "en": "female colleague",
+    "beispiel": "Meine neue Kollegin ist sehr freundlich.",
+    "beispielTr": "Yeni meslektaşım çok cana yakın.",
+    "beispielEn": "My new colleague is very friendly."
+  },
+  {
+    "id": 1787,
+    "tr": "icat etmek",
+    "en": "to invent",
+    "beispiel": "Wer hat eigentlich das Telefon erfunden?",
+    "beispielTr": "Telefonu aslında kim icat etti?",
+    "beispielEn": "Who actually invented the telephone?"
+  },
+  {
+    "id": 1816,
+    "tr": "hasat",
+    "en": "harvest",
+    "beispiel": "Die Ernte ist dieses Jahr besonders gut ausgefallen.",
+    "beispielTr": "Hasat bu yıl özellikle iyi oldu.",
+    "beispielEn": "The harvest turned out especially good this year."
+  },
+  {
+    "id": 2173,
+    "tr": "plaka",
+    "en": "license plate",
+    "beispiel": "Das Auto hat ein Schweizer Kennzeichen.",
+    "beispielTr": "Arabanın İsviçre plakası var.",
+    "beispielEn": "The car has a Swiss license plate."
+  },
+  {
+    "id": 2693,
+    "tr": "galip gelmek",
+    "en": "to win",
+    "beispiel": "Unsere Mannschaft hat gestern klar gesiegt.",
+    "beispielTr": "Takımımız dün açık ara galip geldi.",
+    "beispielEn": "Our team won clearly yesterday."
+  },
+  {
+    "id": 1678,
+    "tr": "konserve kutusu",
+    "en": "can",
+    "beispiel": "Ich habe noch eine Dose Bohnen.",
+    "beispielTr": "Bir konserve fasulyem daha var.",
+    "beispielEn": "I still have a can of beans."
+  },
+  {
+    "id": 3079,
+    "tr": "sıcaklık",
+    "en": "warmth",
+    "beispiel": "Die Wärme der Sonne tut mir gut.",
+    "beispielTr": "Güneşin sıcaklığı bana iyi geliyor.",
+    "beispielEn": "The warmth of the sun does me good."
+  },
+  {
+    "id": 2310,
+    "tr": "dergi",
+    "en": "magazine",
+    "beispiel": "Jugendliche lesen dieses Magazin gern.",
+    "beispielTr": "Gençler bu dergiyi severek okuyor.",
+    "beispielEn": "Young people like reading this magazine."
+  },
+  {
+    "id": 2227,
+    "tr": "kuvvetli",
+    "en": "strong",
+    "beispiel": "Er ist kräftig genug, um den Schrank zu tragen.",
+    "beispielTr": "Dolabı taşıyacak kadar kuvvetli.",
+    "beispielEn": "He is strong enough to carry the cupboard."
+  },
+  {
+    "id": 2388,
+    "tr": "kadın komşu",
+    "en": "female neighbor",
+    "beispiel": "Meine Nachbarin gießt meine Blumen, wenn ich verreise.",
+    "beispielTr": "Seyahate çıktığımda komşum çiçeklerimi suluyor.",
+    "beispielEn": "My neighbor waters my flowers when I travel."
+  },
+  {
+    "id": 2399,
+    "tr": "çivi",
+    "en": "nail",
+    "beispiel": "Kannst du den Nagel in die Wand schlagen?",
+    "beispielTr": "Çiviyi duvara çakabilir misin?",
+    "beispielEn": "Can you hammer the nail into the wall?"
+  }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 1970,
+  "tr": "bankamatik",
+  "en": "ATM",
+  "beispiel": "Der Geldautomat am Bahnhof ist leider kaputt.",
+  "beispielTr": "Gardaki bankamatik maalesef bozuk.",
+  "beispielEn": "The ATM at the station is unfortunately broken."
+ },
+ {
+  "id": 1845,
+  "tr": "taşıt yolu",
+  "en": "roadway",
+  "beispiel": "Auf der Fahrbahn lag ein umgestürzter Baum.",
+  "beispielTr": "Taşıt yolunda devrilmiş bir ağaç duruyordu.",
+  "beispielEn": "A fallen tree was lying on the roadway."
+ },
+ {
+  "id": 2347,
+  "tr": "metropol",
+  "en": "metropolis",
+  "beispiel": "Istanbul ist eine Metropole, die niemals schläft.",
+  "beispielTr": "İstanbul, hiç uyumayan bir metropol.",
+  "beispielEn": "Istanbul is a metropolis that never sleeps."
+ },
+ {
+  "id": 2117,
+  "tr": "gazete ilanı",
+  "en": "newspaper ad",
+  "beispiel": "Wir haben ein Inserat in der Zeitung aufgegeben.",
+  "beispielTr": "Gazeteye bir ilan verdik.",
+  "beispielEn": "We placed an ad in the newspaper."
+ },
+ {
+  "id": 2002,
+  "tr": "baharat",
+  "en": "spice",
+  "beispiel": "Ohne die richtigen Gewürze schmeckt das Essen fade.",
+  "beispielTr": "Doğru baharatlar olmadan yemek yavan oluyor.",
+  "beispielEn": "Without the right spices the food tastes bland."
+ },
+ {
+  "id": 1391,
+  "tr": "sağlayıcı",
+  "en": "provider",
+  "beispiel": "Ich habe den Anbieter gewechselt, weil er zu teuer war.",
+  "beispielTr": "Sağlayıcıyı değiştirdim çünkü çok pahalıydı.",
+  "beispielEn": "I switched providers because mine was too expensive."
+ },
+ {
+  "id": 2755,
+  "tr": "elektrikli süpürgeyle süpürmek",
+  "en": "to vacuum",
+  "beispiel": "Am Samstag staubsauge ich immer die ganze Wohnung.",
+  "beispielTr": "Cumartesileri hep bütün evi elektrikli süpürgeyle süpürürüm.",
+  "beispielEn": "On Saturdays I always vacuum the whole apartment."
+ },
+ {
+  "id": 2726,
+  "tr": "kadın uzman",
+  "en": "female specialist",
+  "beispiel": "Meine Hausärztin hat mich zu einer Spezialistin überwiesen.",
+  "beispielTr": "Aile hekimim beni bir kadın uzmana sevk etti.",
+  "beispielEn": "My family doctor referred me to a female specialist."
+ },
+ {
+  "id": 2270,
+  "tr": "disk sürücüsü",
+  "en": "disk drive",
+  "beispiel": "Mein neuer Laptop hat kein Laufwerk mehr.",
+  "beispielTr": "Yeni dizüstü bilgisayarımda artık disk sürücüsü yok.",
+  "beispielEn": "My new laptop no longer has a disk drive."
+ },
+ {
+  "id": 2366,
+  "tr": "mobilyalı",
+  "en": "furnished",
+  "beispiel": "Wir haben eine möblierte Wohnung in der Altstadt gemietet.",
+  "beispielTr": "Eski şehirde mobilyalı bir daire kiraladık.",
+  "beispielEn": "We rented a furnished apartment in the old town."
+ },
+ {
+  "id": 1397,
+  "tr": "bilgi",
+  "en": "detail",
+  "beispiel": "Ohne genaue Angaben können wir Ihren Antrag nicht bearbeiten.",
+  "beispielTr": "Kesin bilgiler olmadan başvurunuzu işleme alamayız.",
+  "beispielEn": "Without exact details we cannot process your application."
+ },
+ {
+  "id": 2921,
+  "tr": "çevre koruma",
+  "en": "environmental protection",
+  "beispiel": "Für den Umweltschutz müsste die Regierung mehr tun.",
+  "beispielTr": "Hükümetin çevre koruma için daha çok şey yapması gerekirdi.",
+  "beispielEn": "The government should do more for environmental protection."
+ },
+ {
+  "id": 1504,
+  "tr": "kullanım kılavuzu",
+  "en": "instruction manual",
+  "beispiel": "Die Bedienungsanleitung ist leider nur auf Japanisch.",
+  "beispielTr": "Kullanım kılavuzu maalesef sadece Japonca.",
+  "beispielEn": "Unfortunately the instruction manual is only in Japanese."
+ },
+ {
+  "id": 1345,
+  "tr": "egzoz gazı",
+  "en": "exhaust fumes",
+  "beispiel": "Alte Autos stoßen besonders viele Abgase aus.",
+  "beispielTr": "Eski arabalar özellikle çok egzoz gazı salıyor.",
+  "beispielEn": "Old cars emit especially large amounts of exhaust fumes."
+ },
+ {
+  "id": 2566,
+  "tr": "bölgesel",
+  "en": "regional",
+  "beispiel": "Im Supermarkt kaufe ich am liebsten regionale Produkte.",
+  "beispielTr": "Markette en çok bölgesel ürünleri almayı severim.",
+  "beispielEn": "At the supermarket I prefer to buy regional products."
+ },
+ {
+  "id": 1430,
+  "tr": "kadın mimar",
+  "en": "female architect",
+  "beispiel": "Die Architektin hat uns die neuen Pläne erklärt.",
+  "beispielTr": "Kadın mimar bize yeni planları açıkladı.",
+  "beispielEn": "The architect explained the new plans to us."
+ },
+ {
+  "id": 2643,
+  "tr": "kirletmek",
+  "en": "to pollute",
+  "beispiel": "Der Fluss wurde jahrelang von der Fabrik verschmutzt.",
+  "beispielTr": "Nehir yıllarca fabrika tarafından kirletildi.",
+  "beispielEn": "The river was polluted by the factory for years."
+ },
+ {
+  "id": 1426,
+  "tr": "çalışma izni",
+  "en": "work permit",
+  "beispiel": "Ohne Arbeitserlaubnis darf sie hier nicht arbeiten.",
+  "beispielTr": "Çalışma izni olmadan burada çalışamaz.",
+  "beispielEn": "Without a work permit she is not allowed to work here."
+ },
+ {
+  "id": 1785,
+  "tr": "meydana gelmek",
+  "en": "to occur",
+  "beispiel": "Der Unfall ereignete sich am frühen Morgen.",
+  "beispielTr": "Kaza sabahın erken saatlerinde meydana geldi.",
+  "beispielEn": "The accident occurred early in the morning."
+ },
+ {
+  "id": 2340,
+  "tr": "üniversite yemekhanesi",
+  "en": "student cafeteria",
+  "beispiel": "Mittags essen wir meistens in der Mensa.",
+  "beispielTr": "Öğlenleri çoğunlukla üniversite yemekhanesinde yiyoruz.",
+  "beispielEn": "At noon we usually eat in the student cafeteria."
+ },
+ {
+  "id": 1569,
+  "tr": "işçi konseyi",
+  "en": "works council",
+  "beispiel": "Der Betriebsrat verhandelt gerade über die neuen Arbeitszeiten.",
+  "beispielTr": "İşçi konseyi şu anda yeni çalışma saatlerini görüşüyor.",
+  "beispielEn": "The works council is currently negotiating the new working hours."
+ },
+ {
+  "id": 2696,
+  "tr": "siz diye hitap etmek",
+  "en": "to address formally",
+  "beispiel": "Im Büro siezen wir uns alle.",
+  "beispielTr": "Ofiste hepimiz birbirimize siz diye hitap ediyoruz.",
+  "beispielEn": "At the office we all address each other formally."
+ },
+ {
+  "id": 1341,
+  "tr": "şekil",
+  "en": "figure",
+  "beispiel": "Auf der Abbildung sieht man den Aufbau des Geräts.",
+  "beispielTr": "Şekilde cihazın yapısı görülüyor.",
+  "beispielEn": "The figure shows how the device is built."
+ },
+ {
+  "id": 2328,
+  "tr": "kadın tamirci",
+  "en": "female mechanic",
+  "beispiel": "Die Mechanikerin hat den Motor schnell repariert.",
+  "beispielTr": "Kadın tamirci motoru çabucak onardı.",
+  "beispielEn": "The mechanic repaired the engine quickly."
+ },
+ {
+  "id": 3070,
+  "tr": "yatay",
+  "en": "horizontal",
+  "beispiel": "Ziehen Sie bitte einen waagerechten Strich.",
+  "beispielTr": "Lütfen yatay bir çizgi çizin.",
+  "beispielEn": "Please draw a horizontal line."
+ },
+ {
+  "id": 1671,
+  "tr": "kadın doktor",
+  "en": "female doctor",
+  "beispiel": "Unsere neue Doktorin ist sehr freundlich und geduldig.",
+  "beispielTr": "Yeni kadın doktorumuz çok güler yüzlü ve sabırlı.",
+  "beispielEn": "Our new doctor is very friendly and patient."
+ },
+ {
+  "id": 2319,
+  "tr": "margarin",
+  "en": "margarine",
+  "beispiel": "Zum Backen nehme ich lieber Margarine als Butter.",
+  "beispielTr": "Kek yaparken tereyağı yerine margarin kullanırım.",
+  "beispielEn": "For baking I prefer margarine to butter."
+ },
+ {
+  "id": 2601,
+  "tr": "tur",
+  "en": "sightseeing tour",
+  "beispiel": "Am ersten Tag haben wir eine Rundfahrt durch die Stadt gemacht.",
+  "beispielTr": "İlk gün şehirde bir tur yaptık.",
+  "beispielEn": "On the first day we took a tour through the city."
+ },
+ {
+  "id": 1354,
+  "tr": "abone olmak",
+  "en": "to subscribe",
+  "beispiel": "Meine Eltern abonnieren seit Jahren dieselbe Zeitung.",
+  "beispielTr": "Ailem yıllardır aynı gazeteye abone.",
+  "beispielEn": "My parents have subscribed to the same newspaper for years."
+ },
+ {
+  "id": 1355,
+  "tr": "abonelik",
+  "en": "subscription",
+  "beispiel": "Ich habe mein Abonnement gestern gekündigt.",
+  "beispielTr": "Aboneliğimi dün iptal ettim.",
+  "beispielEn": "I canceled my subscription yesterday."
+ },
+ {
+  "id": 1359,
+  "tr": "gönderen",
+  "en": "female sender",
+  "beispiel": "Auf dem Umschlag fehlt der Name der Absenderin.",
+  "beispielTr": "Zarfın üzerinde gönderenin adı yok.",
+  "beispielEn": "The sender's name is missing on the envelope."
+ },
+ {
+  "id": 1364,
+  "tr": "kapıcı",
+  "en": "caretaker",
+  "beispiel": "Der Abwart repariert im Keller die kaputte Waschmaschine.",
+  "beispielTr": "Kapıcı bodrumda bozuk çamaşır makinesini tamir ediyor.",
+  "beispielEn": "The caretaker is fixing the broken washing machine in the basement."
+ },
+ {
+  "id": 1365,
+  "tr": "kadın kapıcı",
+  "en": "female caretaker",
+  "beispiel": "Die Abwartin hat den Hausflur frisch geputzt.",
+  "beispielTr": "Kadın kapıcı bina koridorunu yeni temizledi.",
+  "beispielEn": "The caretaker has just cleaned the hallway."
+ },
+ {
+  "id": 1377,
+  "tr": "hepsinden",
+  "en": "of all",
+  "beispiel": "Am allerbesten schmeckt der Kuchen von meiner Oma.",
+  "beispielTr": "Hepsinden lezzetlisi babaannemin yaptığı kek.",
+  "beispielEn": "My grandma's cake tastes the best of all."
+ },
+ {
+  "id": 1383,
+  "tr": "sanki",
+  "en": "as if",
+  "beispiel": "Er tut so, als ob wir nie darüber gesprochen hätten.",
+  "beispielTr": "Sanki bunu hiç konuşmamışız gibi davranıyor.",
+  "beispielEn": "He acts as if we had never talked about it."
+ },
+ {
+  "id": 1386,
+  "tr": "alternatif",
+  "en": "alternative",
+  "beispiel": "Wir brauchen alternative Energien.",
+  "beispielTr": "Alternatif enerjilere ihtiyacımız var.",
+  "beispielEn": "We need alternative energy sources."
+ },
+ {
+  "id": 1424,
+  "tr": "kayısı",
+  "en": "apricot",
+  "beispiel": "Schmecken dir die Aprikosen?",
+  "beispielTr": "Kayısıları beğendin mi?",
+  "beispielEn": "Do you like the apricots?"
+ },
+ {
+  "id": 1479,
+  "tr": "seçmek",
+  "en": "to pick out",
+  "beispiel": "Such dir etwas Schönes aus!",
+  "beispielTr": "Kendine güzel bir şey seç!",
+  "beispielEn": "Pick out something nice for yourself!"
+ },
+ {
+  "id": 1488,
+  "tr": "bankamatik",
+  "en": "cash machine",
+  "beispiel": "Ich hebe hundert Euro am Bankomaten ab.",
+  "beispielTr": "Bankamatikten yüz euro çekiyorum.",
+  "beispielEn": "I am withdrawing a hundred euros from the cash machine."
+ },
+ {
+  "id": 1489,
+  "tr": "banka kodu",
+  "en": "bank code",
+  "beispiel": "Für die Überweisung brauche ich deine Bankleitzahl.",
+  "beispielTr": "Havale için banka koduna ihtiyacım var.",
+  "beispielEn": "I need your bank code for the transfer."
+ },
+ {
+  "id": 1490,
+  "tr": "banka kartı",
+  "en": "debit card",
+  "beispiel": "Kann ich mit der Bankomat-Karte bezahlen?",
+  "beispielTr": "Banka kartıyla ödeyebilir miyim?",
+  "beispielEn": "Can I pay with the debit card?"
+ },
+ {
+  "id": 1528,
+  "tr": "duyurmak",
+  "en": "to announce",
+  "beispiel": "Den Prüfungsort geben wir Ihnen noch rechtzeitig bekannt.",
+  "beispielTr": "Sınav yerini size zamanında duyuracağız.",
+  "beispielEn": "We will announce the exam location to you in good time."
+ },
+ {
+  "id": 1543,
+  "tr": "çalışan",
+  "en": "employed",
+  "beispiel": "Meine Mutter ist seit zwanzig Jahren berufstätig.",
+  "beispielTr": "Annem yirmi yıldır çalışıyor.",
+  "beispielEn": "My mother has been employed for twenty years."
+ },
+ {
+  "id": 1548,
+  "tr": "haber vermek",
+  "en": "to let know",
+  "beispiel": "Sag mir bitte rechtzeitig Bescheid!",
+  "beispielTr": "Bana lütfen zamanında haber ver!",
+  "beispielEn": "Please let me know in time!"
+ },
+ {
+  "id": 1549,
+  "tr": "haber vermek",
+  "en": "to inform",
+  "beispiel": "Kannst du mir bis morgen Bescheid geben?",
+  "beispielTr": "Yarına kadar bana haber verebilir misin?",
+  "beispielEn": "Can you let me know by tomorrow?"
+ },
+ {
+  "id": 1555,
+  "tr": "özel",
+  "en": "special",
+  "beispiel": "Heute ist ein ganz besonderer Tag für uns.",
+  "beispielTr": "Bugün bizim için çok özel bir gün.",
+  "beispielEn": "Today is a very special day for us."
+ },
+ {
+  "id": 1570,
+  "tr": "kadın işçi temsilcisi",
+  "en": "female works council member",
+  "beispiel": "Die Betriebsrätin setzt sich für die Kollegen ein.",
+  "beispielTr": "Kadın işçi temsilcisi meslektaşları için mücadele ediyor.",
+  "beispielEn": "The works council member stands up for her colleagues."
+ },
+ {
+  "id": 1581,
+  "tr": "bina sakini",
+  "en": "female resident",
+  "beispiel": "Die Bewohnerin aus dem dritten Stock hat sich beschwert.",
+  "beispielTr": "Üçüncü kattaki bina sakini şikâyet etti.",
+  "beispielEn": "The resident from the third floor complained."
+ },
+ {
+  "id": 1585,
+  "tr": "bilet",
+  "en": "ticket",
+  "beispiel": "Ein Billett für die Fähre kostet zwölf Franken.",
+  "beispielTr": "Feribot bileti on iki frank.",
+  "beispielEn": "A ticket for the ferry costs twelve francs."
+ },
+ {
+  "id": 1587,
+  "tr": "organik",
+  "en": "organic",
+  "beispiel": "Bioprodukte sind meistens teurer als normale Lebensmittel.",
+  "beispielTr": "Organik ürünler genelde normal gıdalardan daha pahalı.",
+  "beispielEn": "Organic products are usually more expensive than regular food."
+ }
+]

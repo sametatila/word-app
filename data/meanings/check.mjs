@@ -204,10 +204,26 @@ function roots(part) {
  */
 function stemVariants(r) {
   const out = [];
+
+  // Ünlü ikilisi değişen sınıflar. Tek harf değiştirmek bunları yakalamıyor
+  // ve iki ayrı ajan doğal Perfekt cümlesini ("hat beschlossen",
+  // "hat verschrieben") kurup denetleyiciye takıldığı için Präsens'e
+  // çevirmek zorunda kaldı — yani kural, dilin tipik biçimini veriden
+  // çıkarıyordu.
+  const ciftler = [
+    ["ie", "o"], // schließen → schloss, fliegen → flog, verlieren → verlor
+    ["ei", "ie"], // schreiben → schrieb, bleiben → blieb
+    ["ei", "i"], // schneiden → schnitt, greifen → griff
+  ];
+  for (const [from, to] of ciftler) {
+    const i = r.lastIndexOf(from);
+    if (i >= 0) out.push(r.slice(0, i) + to + r.slice(i + from.length));
+  }
+
   const son = r.search(/[ie](?=[^aeiou]*$)/);
-  if (son < 0) return out;
-  for (const v of r[son] === "i" ? ["a", "u"] : ["a", "o"])
-    out.push(r.slice(0, son) + v + r.slice(son + 1));
+  if (son >= 0)
+    for (const v of r[son] === "i" ? ["a", "u"] : ["a", "o"])
+      out.push(r.slice(0, son) + v + r.slice(son + 1));
   return out;
 }
 

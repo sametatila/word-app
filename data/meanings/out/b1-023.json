@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2503,
+    "tr": "siyasi",
+    "en": "political",
+    "beispiel": "Wir haben gestern lange über politische Themen diskutiert.",
+    "beispielTr": "Dün uzun uzun siyasi konuları tartıştık.",
+    "beispielEn": "Yesterday we talked about political topics for a long time."
+  },
+  {
+    "id": 2500,
+    "tr": "plastik",
+    "en": "plastic",
+    "beispiel": "Diese Flasche ist aus Plastik.",
+    "beispielTr": "Bu şişe plastikten yapılmış.",
+    "beispielEn": "This bottle is made of plastic."
+  },
+  {
+    "id": 2275,
+    "tr": "deri",
+    "en": "leather",
+    "beispiel": "Die Jacke ist aus echtem Leder.",
+    "beispielTr": "Ceket gerçek deriden yapılmış.",
+    "beispielEn": "The jacket is made of real leather."
+  },
+  {
+    "id": 2642,
+    "tr": "kir",
+    "en": "dirt",
+    "beispiel": "Du hast Schmutz an deinen Schuhen.",
+    "beispielTr": "Ayakkabılarında kir var.",
+    "beispielEn": "You have dirt on your shoes."
+  },
+  {
+    "id": 1999,
+    "tr": "alışkanlık",
+    "en": "habit",
+    "beispiel": "Aus alter Gewohnheit trinke ich morgens Kaffee.",
+    "beispielTr": "Eski bir alışkanlıkla sabahları kahve içiyorum.",
+    "beispielEn": "Out of old habit I drink coffee in the morning."
+  },
+  {
+    "id": 3141,
+    "tr": "çizim",
+    "en": "drawing",
+    "beispiel": "Sie hat eine schöne Zeichnung von unserem Haus gemacht.",
+    "beispielTr": "Evimizin güzel bir çizimini yaptı.",
+    "beispielEn": "She made a beautiful drawing of our house."
+  },
+  {
+    "id": 1908,
+    "tr": "devam",
+    "en": "continuation",
+    "beispiel": "Die Fortsetzung der Geschichte findest du auf Seite zwölf.",
+    "beispielTr": "Hikâyenin devamını on ikinci sayfada bulursun.",
+    "beispielEn": "You will find the continuation of the story on page twelve."
+  },
+  {
+    "id": 2411,
+    "tr": "sinir",
+    "en": "nerve",
+    "beispiel": "Bei dem Unfall wurde ein Nerv verletzt.",
+    "beispielTr": "Kazada bir sinir zedelendi.",
+    "beispielEn": "A nerve was injured in the accident."
+  },
+  {
+    "id": 2492,
+    "tr": "bakımını yapmak",
+    "en": "to care for",
+    "beispiel": "Sie pflegt ihre kranke Mutter seit zwei Jahren.",
+    "beispielTr": "İki yıldır hasta annesinin bakımını yapıyor.",
+    "beispielEn": "She has been caring for her sick mother for two years."
+  },
+  {
+    "id": 1764,
+    "tr": "içermek",
+    "en": "to contain",
+    "beispiel": "Diese Schokolade enthält nur wenig Zucker.",
+    "beispielTr": "Bu çikolata çok az şeker içeriyor.",
+    "beispielEn": "This chocolate contains only a little sugar."
+  },
+  {
+    "id": 1824,
+    "tr": "oluşturmak",
+    "en": "to create",
+    "beispiel": "Ich habe eine Liste mit allen Terminen erstellt.",
+    "beispielTr": "Bütün randevuları içeren bir liste oluşturdum.",
+    "beispielEn": "I created a list with all the appointments."
+  },
+  {
+    "id": 2223,
+    "tr": "düzeltmek",
+    "en": "to correct",
+    "beispiel": "Der Lehrer hat meine Fehler korrigiert.",
+    "beispielTr": "Öğretmen hatalarımı düzeltti.",
+    "beispielEn": "The teacher corrected my mistakes."
+  },
+  {
+    "id": 2533,
+    "tr": "makbuz",
+    "en": "receipt",
+    "beispiel": "Brauchen Sie eine Quittung für den Einkauf?",
+    "beispielTr": "Alışveriş için makbuz ister misiniz?",
+    "beispielEn": "Do you need a receipt for the purchase?"
+  },
+  {
+    "id": 1373,
+    "tr": "aktivite",
+    "en": "activity",
+    "beispiel": "Im Sommer bietet die Stadt viele Aktivitäten an.",
+    "beispielTr": "Yazın şehir birçok aktivite sunuyor.",
+    "beispielEn": "In summer the city offers many activities."
+  },
+  {
+    "id": 2144,
+    "tr": "genç kız",
+    "en": "teenage girl",
+    "beispiel": "Eine Jugendliche hat mir den Weg gezeigt.",
+    "beispielTr": "Genç bir kız bana yolu gösterdi.",
+    "beispielEn": "A teenage girl showed me the way."
+  },
+  {
+    "id": 1972,
+    "tr": "başarılı olmak",
+    "en": "to succeed",
+    "beispiel": "Es ist mir gelungen, ihn zu überzeugen.",
+    "beispielTr": "Onu ikna etmeyi başardım.",
+    "beispielEn": "I managed to convince him."
+  },
+  {
+    "id": 2903,
+    "tr": "inanç",
+    "en": "conviction",
+    "beispiel": "Sie hat ihre Überzeugung nie aufgegeben.",
+    "beispielTr": "İnancından hiç vazgeçmedi.",
+    "beispielEn": "She never gave up her conviction."
+  },
+  {
+    "id": 2798,
+    "tr": "üniversite öğrencisi",
+    "en": "female student",
+    "beispiel": "Die Studentin jobbt neben dem Studium in einem Café.",
+    "beispielTr": "Üniversite öğrencisi okurken bir kafede çalışıyor.",
+    "beispielEn": "The student works in a café alongside her studies."
+  },
+  {
+    "id": 2181,
+    "tr": "yapıştırmak",
+    "en": "to glue",
+    "beispiel": "Ich klebe das Foto in mein Album.",
+    "beispielTr": "Fotoğrafı albümüme yapıştırıyorum.",
+    "beispielEn": "I am gluing the photo into my album."
+  },
+  {
+    "id": 3054,
+    "tr": "hazırlık",
+    "en": "preparation",
+    "beispiel": "Die Vorbereitung auf die Prüfung dauert Wochen.",
+    "beispielTr": "Sınav hazırlığı haftalar sürüyor.",
+    "beispielEn": "The preparation for the exam takes weeks."
+  },
+  {
+    "id": 1868,
+    "tr": "sabit disk",
+    "en": "hard drive",
+    "beispiel": "Meine Festplatte ist schon wieder voll.",
+    "beispielTr": "Sabit diskim yine doldu.",
+    "beispielEn": "My hard drive is full again."
+  },
+  {
+    "id": 2692,
+    "tr": "görünür",
+    "en": "visible",
+    "beispiel": "Von hier ist der Turm gut sichtbar.",
+    "beispielTr": "Kule buradan iyi görünüyor.",
+    "beispielEn": "The tower is clearly visible from here."
+  },
+  {
+    "id": 3064,
+    "tr": "yönetmelik",
+    "en": "regulation",
+    "beispiel": "Die neue Vorschrift gilt ab dem ersten Januar.",
+    "beispielTr": "Yeni yönetmelik bir Ocak'ta yürürlüğe giriyor.",
+    "beispielEn": "The new regulation takes effect on January first."
+  },
+  {
+    "id": 2920,
+    "tr": "çevre",
+    "en": "environment",
+    "beispiel": "Alte Autos schaden der Umwelt sehr.",
+    "beispielTr": "Eski arabalar çevreye çok zarar veriyor.",
+    "beispielEn": "Old cars harm the environment a lot."
+  },
+  {
+    "id": 3142,
+    "tr": "satır",
+    "en": "line",
+    "beispiel": "Das Wort steht in der dritten Zeile.",
+    "beispielTr": "Kelime üçüncü satırda.",
+    "beispielEn": "The word is in the third line."
+  },
+  {
+    "id": 2688,
+    "tr": "koltuk",
+    "en": "armchair",
+    "beispiel": "Er saß den ganzen Abend im Sessel.",
+    "beispielTr": "Bütün akşam koltukta oturdu.",
+    "beispielEn": "He sat in the armchair all evening."
+  },
+  {
+    "id": 1343,
+    "tr": "atık",
+    "en": "waste",
+    "beispiel": "Der Abfall wird jeden Dienstag abgeholt.",
+    "beispielTr": "Atıklar her salı toplanıyor.",
+    "beispielEn": "The waste is collected every Tuesday."
+  },
+  {
+    "id": 2188,
+    "tr": "zil",
+    "en": "doorbell",
+    "beispiel": "Unsere Klingel funktioniert seit gestern nicht.",
+    "beispielTr": "Zilimiz dünden beri çalışmıyor.",
+    "beispielEn": "Our doorbell has not worked since yesterday."
+  },
+  {
+    "id": 2264,
+    "tr": "uzunluk",
+    "en": "length",
+    "beispiel": "Der Tisch hat eine Länge von zwei Metern.",
+    "beispielTr": "Masanın uzunluğu iki metre.",
+    "beispielEn": "The table is two meters long."
+  },
+  {
+    "id": 1472,
+    "tr": "dışlamak",
+    "en": "to exclude",
+    "beispiel": "Wir wollen niemanden aus der Gruppe ausschließen.",
+    "beispielTr": "Kimseyi gruptan dışlamak istemiyoruz.",
+    "beispielEn": "We do not want to exclude anyone from the group."
+  },
+  {
+    "id": 1748,
+    "tr": "demiryolu",
+    "en": "railway",
+    "beispiel": "Die Eisenbahn wurde vor hundert Jahren gebaut.",
+    "beispielTr": "Demiryolu yüz yıl önce yapıldı.",
+    "beispielEn": "The railway was built a hundred years ago."
+  },
+  {
+    "id": 2244,
+    "tr": "eleştirel",
+    "en": "critical",
+    "beispiel": "Der Journalist stellte sehr kritische Fragen.",
+    "beispielTr": "Gazeteci çok eleştirel sorular sordu.",
+    "beispielEn": "The journalist asked very critical questions."
+  },
+  {
+    "id": 1809,
+    "tr": "deneyim",
+    "en": "experience",
+    "beispiel": "Die Reise nach Island war ein tolles Erlebnis.",
+    "beispielTr": "İzlanda yolculuğu harika bir deneyimdi.",
+    "beispielEn": "The trip to Iceland was a great experience."
+  },
+  {
+    "id": 2569,
+    "tr": "sıralama",
+    "en": "order",
+    "beispiel": "Die Reihenfolge der Namen ist alphabetisch.",
+    "beispielTr": "İsimlerin sıralaması alfabetik.",
+    "beispielEn": "The order of the names is alphabetical."
+  },
+  {
+    "id": 1487,
+    "tr": "bale",
+    "en": "ballet",
+    "beispiel": "Meine Tochter tanzt seit drei Jahren Ballett.",
+    "beispielTr": "Kızım üç yıldır bale yapıyor.",
+    "beispielEn": "My daughter has been doing ballet for three years."
+  },
+  {
+    "id": 1880,
+    "tr": "finanse etmek",
+    "en": "to finance",
+    "beispiel": "Ich weiß nicht, wie ich das Auto finanzieren soll.",
+    "beispielTr": "Arabayı nasıl finanse edeceğimi bilmiyorum.",
+    "beispielEn": "I do not know how to finance the car."
+  },
+  {
+    "id": 1521,
+    "tr": "resmi daire",
+    "en": "authority",
+    "beispiel": "Sie erhalten ein Schreiben von der zuständigen Behörde.",
+    "beispielTr": "Yetkili daireden bir yazı alacaksınız.",
+    "beispielEn": "You will receive a letter from the responsible authority."
+  },
+  {
+    "id": 3031,
+    "tr": "birbirine karıştırmak",
+    "en": "to mix up",
+    "beispiel": "Ich habe die beiden Brüder verwechselt.",
+    "beispielTr": "İki kardeşi birbirine karıştırdım.",
+    "beispielEn": "I mixed up the two brothers."
+  },
+  {
+    "id": 2980,
+    "tr": "büyütmek",
+    "en": "to enlarge",
+    "beispiel": "Können Sie das Foto etwas vergrößern?",
+    "beispielTr": "Fotoğrafı biraz büyütebilir misiniz?",
+    "beispielEn": "Could you enlarge the photo a little?"
+  },
+  {
+    "id": 1402,
+    "tr": "üzerinde olmak",
+    "en": "to be wearing",
+    "beispiel": "Gestern hatte Julia ein rotes Kleid an.",
+    "beispielTr": "Dün Julia'nın üzerinde kırmızı bir elbise vardı.",
+    "beispielEn": "Yesterday Julia was wearing a red dress."
+  },
+  {
+    "id": 2453,
+    "tr": "orkestra",
+    "en": "orchestra",
+    "beispiel": "Auf unserer Hochzeit hat ein kleines Orchester gespielt.",
+    "beispielTr": "Düğünümüzde küçük bir orkestra çaldı.",
+    "beispielEn": "A small orchestra played at our wedding."
+  },
+  {
+    "id": 3028,
+    "tr": "yönetim",
+    "en": "administration",
+    "beispiel": "Bitte wenden Sie sich an die Verwaltung.",
+    "beispielTr": "Lütfen yönetime başvurun.",
+    "beispielEn": "Please contact the administration."
+  },
+  {
+    "id": 2092,
+    "tr": "dinleyici",
+    "en": "listener",
+    "beispiel": "Viele Hörer haben bei der Sendung angerufen.",
+    "beispielTr": "Programa birçok dinleyici telefon etti.",
+    "beispielEn": "Many listeners called in during the show."
+  },
+  {
+    "id": 3060,
+    "tr": "geçici",
+    "en": "temporary",
+    "beispiel": "Das ist nur eine vorläufige Entscheidung.",
+    "beispielTr": "Bu sadece geçici bir karar.",
+    "beispielEn": "This is only a temporary decision."
+  },
+  {
+    "id": 1804,
+    "tr": "soğuk algınlığı",
+    "en": "cold",
+    "beispiel": "Du hast eine schlimme Erkältung!",
+    "beispielTr": "Kötü bir soğuk algınlığın var!",
+    "beispielEn": "You have a bad cold!"
+  },
+  {
+    "id": 2435,
+    "tr": "garson",
+    "en": "waiter",
+    "beispiel": "Der Ober hat uns die Speisekarte gebracht.",
+    "beispielTr": "Garson bize menüyü getirdi.",
+    "beispielEn": "The waiter brought us the menu."
+  },
+  {
+    "id": 2375,
+    "tr": "monitör",
+    "en": "monitor",
+    "beispiel": "Ich habe mir einen größeren Monitor gekauft.",
+    "beispielTr": "Kendime daha büyük bir monitör aldım.",
+    "beispielEn": "I bought myself a bigger monitor."
+  },
+  {
+    "id": 1925,
+    "tr": "meyve",
+    "en": "fruit",
+    "beispiel": "Wie heißt diese Frucht auf Deutsch?",
+    "beispielTr": "Bu meyvenin Almancası ne?",
+    "beispielEn": "What is this fruit called in German?"
+  },
+  {
+    "id": 2541,
+    "tr": "öğüt",
+    "en": "advice",
+    "beispiel": "Mein Bruder gibt mir immer gute Ratschläge.",
+    "beispielTr": "Kardeşim bana hep iyi öğütler verir.",
+    "beispielEn": "My brother always gives me good advice."
+  },
+  {
+    "id": 2124,
+    "tr": "yoğun",
+    "en": "intensive",
+    "beispiel": "Wir haben uns intensiv auf die Prüfung vorbereitet.",
+    "beispielTr": "Sınava yoğun bir şekilde hazırlandık.",
+    "beispielEn": "We prepared intensively for the exam."
+  }
+]

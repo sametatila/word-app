@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2125,
+    "tr": "yoğun kurs",
+    "en": "intensive course",
+    "beispiel": "Der Intensivkurs findet täglich von 9 bis 12 Uhr statt.",
+    "beispielTr": "Yoğun kurs her gün 9'dan 12'ye kadar sürüyor.",
+    "beispielEn": "The intensive course takes place daily from 9 to 12."
+  },
+  {
+    "id": 2128,
+    "tr": "kültürlerarası",
+    "en": "intercultural",
+    "beispiel": "Wir haben in der Sprachschule ein interkulturelles Fest gefeiert.",
+    "beispielTr": "Dil okulunda kültürlerarası bir şenlik düzenledik.",
+    "beispielEn": "We celebrated an intercultural festival at the language school."
+  },
+  {
+    "id": 2130,
+    "tr": "herhangi bir",
+    "en": "any",
+    "beispiel": "Ruf mich an, wenn du irgendein Problem hast.",
+    "beispielTr": "Herhangi bir sorun olursa beni ara.",
+    "beispielEn": "Call me if you have any problem."
+  },
+  {
+    "id": 2133,
+    "tr": "ara öğün",
+    "en": "snack",
+    "beispiel": "Es ist Zeit für eine kleine Jause.",
+    "beispielTr": "Küçük bir ara öğün vakti geldi.",
+    "beispielEn": "It's time for a little snack."
+  },
+  {
+    "id": 2135,
+    "tr": "ne kadar… o kadar…",
+    "en": "the … the …",
+    "beispiel": "Je länger ich Deutsch lerne, desto besser verstehe ich.",
+    "beispielTr": "Almancayı ne kadar uzun öğrenirsem o kadar iyi anlıyorum.",
+    "beispielEn": "The longer I study German, the better I understand it."
+  },
+  {
+    "id": 2137,
+    "tr": "her seferinde",
+    "en": "every time",
+    "beispiel": "Inge erzählt die Geschichte jedes Mal anders.",
+    "beispielTr": "Inge hikâyeyi her seferinde farklı anlatıyor.",
+    "beispielEn": "Inge tells the story differently every time."
+  },
+  {
+    "id": 2161,
+    "tr": "çipli kart",
+    "en": "chip card",
+    "beispiel": "Ich habe eine Chipkarte für diesen Automaten.",
+    "beispielTr": "Bu otomat için çipli kartım var.",
+    "beispielEn": "I have a chip card for this machine."
+  },
+  {
+    "id": 2166,
+    "tr": "kendine almak",
+    "en": "to buy oneself something",
+    "beispiel": "Ich habe mir etwas Schönes zum Geburtstag gekauft.",
+    "beispielTr": "Doğum günüm için kendime güzel bir şey aldım.",
+    "beispielEn": "I bought myself something nice for my birthday."
+  },
+  {
+    "id": 2192,
+    "tr": "hamur köftesi",
+    "en": "dumpling",
+    "beispiel": "Zum Braten gibt es Klöße und Rotkohl.",
+    "beispielTr": "Rostonun yanında hamur köftesi ve kırmızı lahana var.",
+    "beispielEn": "With the roast there are dumplings and red cabbage."
+  },
+  {
+    "id": 2214,
+    "tr": "vadesiz hesap",
+    "en": "checking account",
+    "beispiel": "Mein Girokonto kostet gar nichts.",
+    "beispielTr": "Vadesiz hesabım tamamen ücretsiz.",
+    "beispielEn": "My checking account costs nothing at all."
+  },
+  {
+    "id": 2228,
+    "tr": "motorlu taşıt",
+    "en": "motor vehicle",
+    "beispiel": "Auf dieser Straße sind Kraftfahrzeuge nicht erlaubt.",
+    "beispielTr": "Bu yolda motorlu taşıtlar yasak.",
+    "beispielEn": "Motor vehicles are not allowed on this street."
+  },
+  {
+    "id": 2240,
+    "tr": "kriminal polis",
+    "en": "criminal police",
+    "beispiel": "Ein Nachbar von uns arbeitet bei der Kriminalpolizei.",
+    "beispielTr": "Komşularımızdan biri kriminal poliste çalışıyor.",
+    "beispielEn": "One of our neighbors works for the criminal police."
+  },
+  {
+    "id": 2251,
+    "tr": "kurs eğitmeni",
+    "en": "course instructor",
+    "beispiel": "Unser Kursleiter erklärt die Grammatik immer sehr geduldig.",
+    "beispielTr": "Kurs eğitmenimiz dilbilgisini hep büyük sabırla anlatıyor.",
+    "beispielEn": "Our course instructor always explains the grammar very patiently."
+  },
+  {
+    "id": 2257,
+    "tr": "zarf",
+    "en": "envelope",
+    "beispiel": "Ich hätte gern 50 Kuverts und Briefmarken dazu.",
+    "beispielTr": "50 zarf ve yanına pul rica ediyorum.",
+    "beispielEn": "I'd like 50 envelopes and some stamps as well."
+  },
+  {
+    "id": 2277,
+    "tr": "çıraklık yeri",
+    "en": "apprenticeship",
+    "beispiel": "Es sind noch viele Lehrstellen frei.",
+    "beispielTr": "Hâlâ birçok çıraklık yeri boş.",
+    "beispielEn": "There are still many apprenticeship positions open."
+  },
+  {
+    "id": 2280,
+    "tr": "üzgün olmak",
+    "en": "to be sorry",
+    "beispiel": "Es tut mir leid, dass ich zu spät gekommen bin.",
+    "beispielTr": "Geç geldiğim için üzgünüm.",
+    "beispielEn": "I'm sorry that I came late."
+  },
+  {
+    "id": 2296,
+    "tr": "sol",
+    "en": "left",
+    "beispiel": "Er hat sich das linke Bein gebrochen.",
+    "beispielTr": "Sol bacağını kırdı.",
+    "beispielEn": "He broke his left leg."
+  },
+  {
+    "id": 2320,
+    "tr": "kayısı",
+    "en": "apricot",
+    "beispiel": "Schmecken dir die Marillen?",
+    "beispielTr": "Kayısıları beğendin mi?",
+    "beispielEn": "Do you like the apricots?"
+  },
+  {
+    "id": 2324,
+    "tr": "lise bitirme sınavı",
+    "en": "school leaving exam",
+    "beispiel": "Meine Tochter hat gerade die Matura gemacht.",
+    "beispielTr": "Kızım daha yeni lise bitirme sınavını verdi.",
+    "beispielEn": "My daughter has just finished her school leaving exam."
+  },
+  {
+    "id": 2334,
+    "tr": "katma değer vergisi",
+    "en": "value added tax",
+    "beispiel": "Die Mehrwertsteuer beträgt in Deutschland 19 Prozent.",
+    "beispielTr": "Almanya'da katma değer vergisi yüzde 19.",
+    "beispielEn": "In Germany the value added tax is 19 percent."
+  },
+  {
+    "id": 2350,
+    "tr": "göçmen",
+    "en": "migrant",
+    "beispiel": "Viele Migranten kommen aus Osteuropa.",
+    "beispielTr": "Birçok göçmen Doğu Avrupa'dan geliyor.",
+    "beispielEn": "Many migrants come from Eastern Europe."
+  },
+  {
+    "id": 2351,
+    "tr": "göçmen kadın",
+    "en": "female migrant",
+    "beispiel": "Die Migrantin arbeitet seit drei Jahren als Krankenschwester.",
+    "beispielTr": "Göçmen kadın üç yıldır hemşire olarak çalışıyor.",
+    "beispielEn": "The migrant woman has been working as a nurse for three years."
+  },
+  {
+    "id": 2352,
+    "tr": "göç",
+    "en": "migration",
+    "beispiel": "Gestern gab es im Fernsehen eine Diskussion zum Thema Migration.",
+    "beispielTr": "Dün televizyonda göç konulu bir tartışma vardı.",
+    "beispielEn": "Yesterday there was a discussion about migration on TV."
+  },
+  {
+    "id": 2357,
+    "tr": "olumsuzluk ön eki",
+    "en": "negative prefix",
+    "beispiel": "Das Misstrauen zwischen den beiden Parteien ist groß.",
+    "beispielTr": "İki parti arasındaki güvensizlik büyük.",
+    "beispielEn": "The mistrust between the two parties is great."
+  },
+  {
+    "id": 2363,
+    "tr": "orta",
+    "en": "middle",
+    "beispiel": "In den mittleren Reihen sind noch Plätze frei.",
+    "beispielTr": "Orta sıralarda hâlâ boş yer var.",
+    "beispielEn": "There are still free seats in the middle rows."
+  },
+  {
+    "id": 2368,
+    "tr": "sesli mesaj kutusu",
+    "en": "voicemail",
+    "beispiel": "Ich habe zwei Nachrichten auf meiner Mobilbox.",
+    "beispielTr": "Sesli mesaj kutumda iki mesaj var.",
+    "beispielEn": "I have two messages on my voicemail."
+  },
+  {
+    "id": 2369,
+    "tr": "hareketlilik",
+    "en": "mobility",
+    "beispiel": "Sprachen zu lernen fördert die Mobilität.",
+    "beispielTr": "Dil öğrenmek hareketliliği artırır.",
+    "beispielEn": "Learning languages increases mobility."
+  },
+  {
+    "id": 2373,
+    "tr": "havuç",
+    "en": "carrot",
+    "beispiel": "Hasen fressen gern Möhren.",
+    "beispielTr": "Tavşanlar havucu severek yer.",
+    "beispielEn": "Rabbits love to eat carrots."
+  },
+  {
+    "id": 2385,
+    "tr": "müsli",
+    "en": "muesli",
+    "beispiel": "Zum Frühstück gibt es Müsli mit Obst.",
+    "beispielTr": "Kahvaltıda meyveli müsli var.",
+    "beispielEn": "For breakfast there is muesli with fruit."
+  },
+  {
+    "id": 2419,
+    "tr": "sigara içmeyen kadın",
+    "en": "female nonsmoker",
+    "beispiel": "Meine Schwester ist Nichtraucherin und macht viel Sport.",
+    "beispielTr": "Kız kardeşim sigara içmez ve çok spor yapar.",
+    "beispielEn": "My sister is a nonsmoker and does a lot of sport."
+  },
+  {
+    "id": 2425,
+    "tr": "acil servis",
+    "en": "emergency room",
+    "beispiel": "Die Notaufnahme ist gleich hier links.",
+    "beispielTr": "Acil servis hemen şurada, solda.",
+    "beispielEn": "The emergency room is right here on the left."
+  },
+  {
+    "id": 2434,
+    "tr": "üst",
+    "en": "upper",
+    "beispiel": "Die Wohnung im oberen Stockwerk ist vermietet.",
+    "beispielTr": "Üst kattaki daire kiraya verildi.",
+    "beispielEn": "The apartment on the upper floor has been rented out."
+  },
+  {
+    "id": 2436,
+    "tr": "krema",
+    "en": "cream",
+    "beispiel": "Zu den Erdbeeren gibt es frisches Obers.",
+    "beispielTr": "Çileklerin yanında taze krema var.",
+    "beispielEn": "There is fresh cream with the strawberries."
+  },
+  {
+    "id": 2446,
+    "tr": "ekolojik",
+    "en": "eco-",
+    "beispiel": "Wir kaufen unser Gemüse meistens im Ökoladen.",
+    "beispielTr": "Sebzemizi çoğunlukla ekolojik marketten alıyoruz.",
+    "beispielEn": "We usually buy our vegetables at the eco store."
+  },
+  {
+    "id": 2455,
+    "tr": "muayenehane",
+    "en": "doctor's office",
+    "beispiel": "Die Ordination ist heute leider geschlossen.",
+    "beispielTr": "Muayenehane bugün maalesef kapalı.",
+    "beispielEn": "The doctor's office is unfortunately closed today."
+  },
+  {
+    "id": 2466,
+    "tr": "domates",
+    "en": "tomato",
+    "beispiel": "Kauf bitte noch Paradeiser auf dem Markt.",
+    "beispielTr": "Pazardan bir de domates al lütfen.",
+    "beispielEn": "Please buy some tomatoes at the market too."
+  },
+  {
+    "id": 2469,
+    "tr": "kadın yolcu",
+    "en": "female passenger",
+    "beispiel": "Eine Passagierin hat ihren Koffer im Zug vergessen.",
+    "beispielTr": "Bir kadın yolcu bavulunu trende unuttu.",
+    "beispielEn": "A female passenger left her suitcase on the train."
+  },
+  {
+    "id": 2473,
+    "tr": "her şey dahil",
+    "en": "all-inclusive",
+    "beispiel": "Sie haben die Reise pauschal gebucht.",
+    "beispielTr": "Geziyi her şey dahil olarak rezerve ettiler.",
+    "beispielEn": "They booked the trip as an all-inclusive package."
+  },
+  {
+    "id": 2477,
+    "tr": "emekliye ayrılmak",
+    "en": "to retire",
+    "beispiel": "Ich gehe Ende des Jahres in Pension.",
+    "beispielTr": "Yıl sonunda emekliye ayrılıyorum.",
+    "beispielEn": "I'm retiring at the end of the year."
+  },
+  {
+    "id": 2478,
+    "tr": "emekliye çıkmak",
+    "en": "to retire",
+    "beispiel": "Mein Chef wird nächsten Sommer pensioniert.",
+    "beispielTr": "Patronum önümüzdeki yaz emekliye çıkıyor.",
+    "beispielEn": "My boss is retiring next summer."
+  },
+  {
+    "id": 2479,
+    "tr": "emekli",
+    "en": "pensioner",
+    "beispiel": "Mein Großvater ist seit fünf Jahren Pensionist.",
+    "beispielTr": "Dedem beş yıldır emekli.",
+    "beispielEn": "My grandfather has been a pensioner for five years."
+  },
+  {
+    "id": 2482,
+    "tr": "peron",
+    "en": "platform",
+    "beispiel": "Der Zug nach Bern fährt auf Perron 3 ab.",
+    "beispielTr": "Bern treni üçüncü perondan kalkıyor.",
+    "beispielEn": "The train to Bern leaves from platform 3."
+  },
+  {
+    "id": 2485,
+    "tr": "medeni hâl",
+    "en": "marital status",
+    "beispiel": "Im Formular musst du deinen Personenstand angeben.",
+    "beispielTr": "Formda medeni hâlini belirtmen gerekiyor.",
+    "beispielEn": "You have to state your marital status on the form."
+  },
+  {
+    "id": 2509,
+    "tr": "postacı",
+    "en": "mailman",
+    "beispiel": "War der Pöstler heute schon da?",
+    "beispielTr": "Postacı bugün geldi mi?",
+    "beispielEn": "Has the mailman been here today?"
+  },
+  {
+    "id": 2510,
+    "tr": "tavuk",
+    "en": "chicken",
+    "beispiel": "Zum Mittagessen gibt es Poulet mit Reis.",
+    "beispielTr": "Öğle yemeğinde pilavlı tavuk var.",
+    "beispielEn": "For lunch there is chicken with rice."
+  },
+  {
+    "id": 2522,
+    "tr": "profesyonel sporcu",
+    "en": "professional athlete",
+    "beispiel": "Mein Sohn möchte Profisportler werden.",
+    "beispielTr": "Oğlum profesyonel sporcu olmak istiyor.",
+    "beispielEn": "My son wants to become a professional athlete."
+  },
+  {
+    "id": 2536,
+    "tr": "kaymak",
+    "en": "cream",
+    "beispiel": "Zum Apfelkuchen serviert man in der Schweiz Rahm.",
+    "beispielTr": "İsviçre'de elmalı pastanın yanında kaymak servis edilir.",
+    "beispielEn": "In Switzerland apple cake is served with cream."
+  },
+  {
+    "id": 2555,
+    "tr": "sağ",
+    "en": "right",
+    "beispiel": "Ich habe mir den rechten Arm gebrochen.",
+    "beispielTr": "Sağ kolumu kırdım.",
+    "beispielEn": "I broke my right arm."
+  },
+  {
+    "id": 2578,
+    "tr": "emekli olmak",
+    "en": "to retire",
+    "beispiel": "Mein Nachbar ist mit 63 in Rente gegangen.",
+    "beispielTr": "Komşum 63 yaşında emekli oldu.",
+    "beispielEn": "My neighbor retired at 63."
+  },
+  {
+    "id": 2594,
+    "tr": "dönüş yolculuğu",
+    "en": "return trip",
+    "beispiel": "Auf der Rückfahrt besuche ich meine Eltern.",
+    "beispielTr": "Dönüş yolunda annemlere uğrayacağım.",
+    "beispielEn": "On the return trip I'll visit my parents."
+  }
+]

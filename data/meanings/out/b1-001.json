@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2314,
+    "tr": "kez",
+    "en": "time",
+    "beispiel": "Ich habe das schon ein paar Mal gemacht.",
+    "beispielTr": "Bunu daha önce birkaç kez yaptım.",
+    "beispielEn": "I've done that a few times already."
+  },
+  {
+    "id": 2305,
+    "tr": "hadi",
+    "en": "come on",
+    "beispiel": "Los, wir müssen jetzt wirklich gehen!",
+    "beispielTr": "Hadi, artık gerçekten gitmemiz gerekiyor!",
+    "beispielEn": "Come on, we really have to go now!"
+  },
+  {
+    "id": 3118,
+    "tr": "bilgi",
+    "en": "knowledge",
+    "beispiel": "Sein Wissen über Pflanzen ist beeindruckend.",
+    "beispielTr": "Bitkiler hakkındaki bilgisi etkileyici.",
+    "beispielEn": "His knowledge of plants is impressive."
+  },
+  {
+    "id": 1640,
+    "tr": "diye",
+    "en": "so that",
+    "beispiel": "Beeil dich, damit wir nicht zu spät kommen.",
+    "beispielTr": "Geç kalmayalım diye acele et.",
+    "beispielEn": "Hurry up so we're not late."
+  },
+  {
+    "id": 2430,
+    "tr": "artık",
+    "en": "now",
+    "beispiel": "Nun müssen wir eine Entscheidung treffen.",
+    "beispielTr": "Artık bir karar vermemiz gerekiyor.",
+    "beispielEn": "Now we have to make a decision."
+  },
+  {
+    "id": 2013,
+    "tr": "tanrı",
+    "en": "god",
+    "beispiel": "Glaubst du an Gott?",
+    "beispielTr": "Sen Tanrı'ya inanıyor musun?",
+    "beispielEn": "Do you believe in God?"
+  },
+  {
+    "id": 3121,
+    "tr": "galiba",
+    "en": "probably",
+    "beispiel": "Das wird wohl etwas länger dauern als geplant.",
+    "beispielTr": "Bu galiba planlanandan biraz uzun sürecek.",
+    "beispielEn": "That will probably take a bit longer than planned."
+  },
+  {
+    "id": 2291,
+    "tr": "aşk",
+    "en": "love",
+    "beispiel": "Wir haben aus Liebe geheiratet.",
+    "beispielTr": "Biz aşk için evlendik.",
+    "beispielEn": "We married for love."
+  },
+  {
+    "id": 2433,
+    "tr": "acaba",
+    "en": "whether",
+    "beispiel": "Ich weiß noch nicht, ob ich kommen kann.",
+    "beispielTr": "Gelip gelemeyeceğimi henüz bilmiyorum.",
+    "beispielEn": "I don't know yet whether I can come."
+  },
+  {
+    "id": 2544,
+    "tr": "dışarı",
+    "en": "out",
+    "beispiel": "Bei dem Wetter will ich nicht raus.",
+    "beispielTr": "Bu havada dışarı çıkmak istemiyorum.",
+    "beispielEn": "I don't want to go out in this weather."
+  },
+  {
+    "id": 3109,
+    "tr": "niye",
+    "en": "why",
+    "beispiel": "Wieso hast du mir nichts davon gesagt?",
+    "beispielTr": "Niye bana bundan hiç söz etmedin?",
+    "beispielEn": "Why didn't you tell me anything about it?"
+  },
+  {
+    "id": 1939,
+    "tr": "hiç",
+    "en": "at all",
+    "beispiel": "Davon habe ich gar nichts gewusst.",
+    "beispielTr": "Bundan hiç haberim yoktu.",
+    "beispielEn": "I knew nothing about that at all."
+  },
+  {
+    "id": 2552,
+    "tr": "hak",
+    "en": "right",
+    "beispiel": "Jeder hat das Recht auf seine eigene Meinung.",
+    "beispielTr": "Herkesin kendi görüşüne hakkı vardır.",
+    "beispielEn": "Everyone has a right to their own opinion."
+  },
+  {
+    "id": 2554,
+    "tr": "haklı",
+    "en": "correct",
+    "beispiel": "Da haben Sie völlig recht.",
+    "beispielTr": "Bu konuda tamamen haklısınız.",
+    "beispielEn": "You're absolutely correct about that."
+  },
+  {
+    "id": 1636,
+    "tr": "bunun için",
+    "en": "for it",
+    "beispiel": "Wir haben leider kein Geld dafür.",
+    "beispielTr": "Maalesef bunun için paramız yok.",
+    "beispielEn": "Unfortunately we have no money for it."
+  },
+  {
+    "id": 2570,
+    "tr": "saf",
+    "en": "pure",
+    "beispiel": "Der Pullover ist aus reiner Wolle.",
+    "beispielTr": "Kazak saf yünden yapılmış.",
+    "beispielEn": "The sweater is made of pure wool."
+  },
+  {
+    "id": 1634,
+    "tr": "yanında",
+    "en": "with one",
+    "beispiel": "Hast du zufällig einen Stift dabei?",
+    "beispielTr": "Yanında kalem var mı acaba?",
+    "beispielEn": "Do you happen to have a pen with you?"
+  },
+  {
+    "id": 1574,
+    "tr": "-meden önce",
+    "en": "before",
+    "beispiel": "Bevor wir gehen, möchte ich noch etwas essen.",
+    "beispielTr": "Gitmeden önce bir şeyler yemek istiyorum.",
+    "beispielEn": "Before we go, I'd like to eat something."
+  },
+  {
+    "id": 2038,
+    "tr": "işte",
+    "en": "just",
+    "beispiel": "Da kann man halt nichts machen.",
+    "beispielTr": "Yapacak bir şey yok işte.",
+    "beispielEn": "There's just nothing you can do."
+  },
+  {
+    "id": 2040,
+    "tr": "dayanak",
+    "en": "support",
+    "beispiel": "Seine Familie gibt ihm den nötigen Halt.",
+    "beispielTr": "Ailesi ona gereken dayanağı veriyor.",
+    "beispielEn": "His family gives him the support he needs."
+  },
+  {
+    "id": 1849,
+    "tr": "durum",
+    "en": "case",
+    "beispiel": "Was würden Sie in diesem Fall tun?",
+    "beispielTr": "Bu durumda siz ne yapardınız?",
+    "beispielEn": "What would you do in this case?"
+  },
+  {
+    "id": 1703,
+    "tr": "aslında",
+    "en": "actually",
+    "beispiel": "Eigentlich wollten wir heute ins Kino gehen.",
+    "beispielTr": "Aslında bugün sinemaya gitmek istiyorduk.",
+    "beispielEn": "We actually wanted to go to the movies today."
+  },
+  {
+    "id": 2069,
+    "tr": "kapatmak",
+    "en": "to shut down",
+    "beispiel": "Zum Schluss musst du den Computer herunterfahren.",
+    "beispielTr": "En son bilgisayarı kapatman gerekiyor.",
+    "beispielEn": "At the end you have to shut down the computer."
+  },
+  {
+    "id": 1539,
+    "tr": "hazır",
+    "en": "ready",
+    "beispiel": "Ich bin jederzeit bereit, dir zu helfen.",
+    "beispielTr": "Sana yardım etmeye her an hazırım.",
+    "beispielEn": "I'm ready to help you any time."
+  },
+  {
+    "id": 2711,
+    "tr": "sağlamak",
+    "en": "to ensure",
+    "beispiel": "Können Sie bitte dafür sorgen, dass die Heizung funktioniert?",
+    "beispielTr": "Kaloriferin çalışmasını sağlayabilir misiniz lütfen?",
+    "beispielEn": "Could you please make sure the heating works?"
+  },
+  {
+    "id": 3152,
+    "tr": "oldukça",
+    "en": "quite",
+    "beispiel": "Ich musste beim Arzt ziemlich lange warten.",
+    "beispielTr": "Doktorda oldukça uzun beklemek zorunda kaldım.",
+    "beispielEn": "I had to wait quite a long time at the doctor's."
+  },
+  {
+    "id": 2134,
+    "tr": "başına",
+    "en": "per",
+    "beispiel": "Der Eintritt kostet acht Euro je Person.",
+    "beispielTr": "Giriş kişi başına sekiz Euro.",
+    "beispielEn": "Admission costs eight euros per person."
+  },
+  {
+    "id": 2887,
+    "tr": "zaten",
+    "en": "even",
+    "beispiel": "Hast du überhaupt Zeit für so etwas?",
+    "beispielTr": "Senin böyle bir şeye zaten vaktin var mı?",
+    "beispielEn": "Do you even have time for something like that?"
+  },
+  {
+    "id": 2024,
+    "tr": "sebep",
+    "en": "reason",
+    "beispiel": "Aus welchem Grund haben Sie gekündigt?",
+    "beispielTr": "Hangi sebeple işten ayrıldınız?",
+    "beispielEn": "For what reason did you quit your job?"
+  },
+  {
+    "id": 2852,
+    "tr": "ölüm",
+    "en": "death",
+    "beispiel": "Ich habe ihn kurz vor seinem Tod besucht.",
+    "beispielTr": "Onu ölümünden kısa süre önce ziyaret ettim.",
+    "beispielEn": "I visited him shortly before his death."
+  },
+  {
+    "id": 1434,
+    "tr": "tür",
+    "en": "type",
+    "beispiel": "Diese Art von Musik gefällt mir nicht.",
+    "beispielTr": "Bu tür müzik hoşuma gitmiyor.",
+    "beispielEn": "I don't like this type of music."
+  },
+  {
+    "id": 1832,
+    "tr": "yaklaşık",
+    "en": "roughly",
+    "beispiel": "Von hier sind es etwa zwanzig Kilometer.",
+    "beispielTr": "Buradan yaklaşık yirmi kilometre var.",
+    "beispielEn": "It's roughly twenty kilometers from here."
+  },
+  {
+    "id": 3074,
+    "tr": "gerçek",
+    "en": "truth",
+    "beispiel": "Sag mir bitte endlich die Wahrheit.",
+    "beispielTr": "Lütfen bana artık gerçeği söyle.",
+    "beispielEn": "Please tell me the truth at last."
+  },
+  {
+    "id": 1561,
+    "tr": "kesinlikle",
+    "en": "definitely",
+    "beispiel": "Das hat sie bestimmt nicht so gemeint.",
+    "beispielTr": "Bunu kesinlikle o anlamda söylemedi.",
+    "beispielEn": "She definitely didn't mean it that way."
+  },
+  {
+    "id": 2654,
+    "tr": "kabahat",
+    "en": "fault",
+    "beispiel": "Es ist nicht meine Schuld, dass das nicht geklappt hat.",
+    "beispielTr": "Bu işin yürümemesi benim kabahatim değil.",
+    "beispielEn": "It's not my fault that this didn't work out."
+  },
+  {
+    "id": 2655,
+    "tr": "kusurlu",
+    "en": "at fault",
+    "beispiel": "Ich hatte einen Unfall, aber ich war nicht schuld.",
+    "beispielTr": "Kaza yaptım ama kusur bende değildi.",
+    "beispielEn": "I had an accident, but I wasn't at fault."
+  },
+  {
+    "id": 2990,
+    "tr": "terk etmek",
+    "en": "to leave",
+    "beispiel": "Sie hat die Stadt vor einem Jahr verlassen.",
+    "beispielTr": "Şehri bir yıl önce terk etti.",
+    "beispielEn": "She left the city a year ago."
+  },
+  {
+    "id": 1814,
+    "tr": "ciddi",
+    "en": "serious",
+    "beispiel": "Der starke Verkehr ist ein ernstes Problem.",
+    "beispielTr": "Yoğun trafik ciddi bir sorun.",
+    "beispielEn": "Heavy traffic is a serious problem."
+  },
+  {
+    "id": 1690,
+    "tr": "az önce",
+    "en": "just now",
+    "beispiel": "Ich bin eben erst angekommen.",
+    "beispielTr": "Daha az önce geldim.",
+    "beispielEn": "I just arrived a moment ago."
+  },
+  {
+    "id": 3075,
+    "tr": "-ken",
+    "en": "while",
+    "beispiel": "Während ich arbeite, höre ich oft Musik.",
+    "beispielTr": "Çalışırken sık sık müzik dinlerim.",
+    "beispielEn": "While I work, I often listen to music."
+  },
+  {
+    "id": 1625,
+    "tr": "şans",
+    "en": "chance",
+    "beispiel": "Mein Mann hat gute Chancen auf die Stelle.",
+    "beispielTr": "Eşimin bu işi alma şansı yüksek.",
+    "beispielEn": "My husband has a good chance at the job."
+  },
+  {
+    "id": 2239,
+    "tr": "savaş",
+    "en": "war",
+    "beispiel": "In diesem Land herrscht immer noch Krieg.",
+    "beispielTr": "Bu ülkede hâlâ savaş sürüyor.",
+    "beispielEn": "There is still war in this country."
+  },
+  {
+    "id": 2884,
+    "tr": "tip",
+    "en": "guy",
+    "beispiel": "Mein neuer Nachbar ist ein netter Typ.",
+    "beispielTr": "Yeni komşum iyi bir tip.",
+    "beispielEn": "My new neighbor is a nice guy."
+  },
+  {
+    "id": 1851,
+    "tr": "şayet",
+    "en": "if",
+    "beispiel": "Falls es regnet, machen wir kein Picknick.",
+    "beispielTr": "Şayet yağmur yağarsa piknik yapmayız.",
+    "beispielEn": "If it rains, we won't have a picnic."
+  },
+  {
+    "id": 1595,
+    "tr": "yalnızca",
+    "en": "just",
+    "beispiel": "Ich will nichts kaufen, ich schaue mich bloß um.",
+    "beispielTr": "Bir şey almak istemiyorum, yalnızca bakınıyorum.",
+    "beispielEn": "I don't want to buy anything, I'm just looking."
+  },
+  {
+    "id": 2836,
+    "tr": "parça",
+    "en": "part",
+    "beispiel": "Dieses Teil müssen wir erst bestellen.",
+    "beispielTr": "Bu parçayı önce sipariş etmemiz gerekiyor.",
+    "beispielEn": "We have to order this part first."
+  },
+  {
+    "id": 2712,
+    "tr": "endişe",
+    "en": "worry",
+    "beispiel": "Mach dir keine Sorgen um mich.",
+    "beispielTr": "Benim için endişelenme.",
+    "beispielEn": "Don't worry about me."
+  },
+  {
+    "id": 1598,
+    "tr": "kan",
+    "en": "blood",
+    "beispiel": "Der Verletzte hat viel Blut verloren.",
+    "beispielTr": "Yaralı çok kan kaybetti.",
+    "beispielEn": "The injured man lost a lot of blood."
+  },
+  {
+    "id": 1701,
+    "tr": "dürüst",
+    "en": "honest",
+    "beispiel": "Sei bitte ehrlich zu mir.",
+    "beispielTr": "Lütfen bana karşı dürüst ol.",
+    "beispielEn": "Please be honest with me."
+  },
+  {
+    "id": 2070,
+    "tr": "kalp",
+    "en": "heart",
+    "beispiel": "Vor Aufregung klopfte mir das Herz.",
+    "beispielTr": "Heyecandan kalbim küt küt atıyordu.",
+    "beispielEn": "My heart was pounding with excitement."
+  }
+]

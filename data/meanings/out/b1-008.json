@@ -1,0 +1,402 @@
+[
+ {
+  "id": 2879,
+  "tr": "rağmen",
+  "en": "despite",
+  "beispiel": "Trotz des Regens sind wir spazieren gegangen.",
+  "beispielTr": "Yağmura rağmen yürüyüşe çıktık.",
+  "beispielEn": "We went for a walk despite the rain."
+ },
+ {
+  "id": 1406,
+  "tr": "varsaymak",
+  "en": "to assume",
+  "beispiel": "Ich nehme an, dass er heute nicht kommt.",
+  "beispielTr": "Bugün gelmeyeceğini varsayıyorum.",
+  "beispielEn": "I assume that he won't come today."
+ },
+ {
+  "id": 1825,
+  "tr": "yetişkin",
+  "en": "grown-up",
+  "beispiel": "Unsere Tochter ist jetzt erwachsen und wohnt allein.",
+  "beispielTr": "Kızımız artık yetişkin oldu ve tek başına yaşıyor.",
+  "beispielEn": "Our daughter is grown up now and lives alone."
+ },
+ {
+  "id": 1979,
+  "tr": "tadını çıkarmak",
+  "en": "to enjoy",
+  "beispiel": "Ich genieße den Kaffee auf dem Balkon.",
+  "beispielTr": "Balkonda kahvemin tadını çıkarıyorum.",
+  "beispielEn": "I enjoy my coffee on the balcony."
+ },
+ {
+  "id": 2203,
+  "tr": "eksiksiz",
+  "en": "complete",
+  "beispiel": "Meine Sammlung ist endlich komplett.",
+  "beispielTr": "Koleksiyonum sonunda eksiksiz oldu.",
+  "beispielEn": "My collection is finally complete."
+ },
+ {
+  "id": 3049,
+  "tr": "önden",
+  "en": "ahead",
+  "beispiel": "Geht ihr schon voraus, wir kommen später nach.",
+  "beispielTr": "Siz önden gidin, biz sonra geliriz.",
+  "beispielEn": "You go ahead, we will come later."
+ },
+ {
+  "id": 1513,
+  "tr": "eşlik etmek",
+  "en": "to accompany",
+  "beispiel": "Darf ich dich zum Bahnhof begleiten?",
+  "beispielTr": "Sana istasyona kadar eşlik edebilir miyim?",
+  "beispielEn": "May I accompany you to the station?"
+ },
+ {
+  "id": 2216,
+  "tr": "konsantre olmak",
+  "en": "to concentrate",
+  "beispiel": "Ich muss mich jetzt auf die Prüfung konzentrieren.",
+  "beispielTr": "Şimdi sınava konsantre olmam gerekiyor.",
+  "beispielEn": "I have to concentrate on the exam now."
+ },
+ {
+  "id": 2902,
+  "tr": "ikna etmek",
+  "en": "to convince",
+  "beispiel": "Seine Argumente haben mich völlig überzeugt.",
+  "beispielTr": "Argümanları beni tamamen ikna etti.",
+  "beispielEn": "His arguments convinced me completely."
+ },
+ {
+  "id": 1376,
+  "tr": "alkol",
+  "en": "alcohol",
+  "beispiel": "Vor der Fahrt darfst du keinen Alkohol trinken.",
+  "beispielTr": "Yolculuktan önce alkol içmemelisin.",
+  "beispielEn": "You must not drink alcohol before driving."
+ },
+ {
+  "id": 1601,
+  "tr": "elçilik",
+  "en": "embassy",
+  "beispiel": "Das Visum habe ich von der Botschaft bekommen.",
+  "beispielTr": "Vizeyi elçilikten aldım.",
+  "beispielEn": "I got the visa from the embassy."
+ },
+ {
+  "id": 1890,
+  "tr": "kaçış",
+  "en": "escape",
+  "beispiel": "Dem Gefangenen gelang die Flucht aus dem Gefängnis.",
+  "beispielTr": "Mahkûm hapishaneden kaçmayı başardı.",
+  "beispielEn": "The prisoner managed to escape from prison."
+ },
+ {
+  "id": 2332,
+  "tr": "birkaç",
+  "en": "several",
+  "beispiel": "Ich habe mehrere Bewerbungen geschrieben, aber keine Antwort bekommen.",
+  "beispielTr": "Birkaç iş başvurusu yaptım ama hiç cevap gelmedi.",
+  "beispielEn": "I sent several applications but got no reply."
+ },
+ {
+  "id": 3136,
+  "tr": "saymak",
+  "en": "to count",
+  "beispiel": "Mein Sohn kann schon bis hundert zählen.",
+  "beispielTr": "Oğlum şimdiden yüze kadar sayabiliyor.",
+  "beispielEn": "My son can already count to a hundred."
+ },
+ {
+  "id": 2116,
+  "tr": "içinde",
+  "en": "within",
+  "beispiel": "Sie müssen sich innerhalb einer Woche anmelden.",
+  "beispielTr": "Bir hafta içinde kayıt yaptırmanız gerekiyor.",
+  "beispielEn": "You have to register within a week."
+ },
+ {
+  "id": 1592,
+  "tr": "kör",
+  "en": "blind",
+  "beispiel": "Mein Nachbar ist seit seiner Geburt blind.",
+  "beispielTr": "Komşum doğuştan kör.",
+  "beispielEn": "My neighbor has been blind since birth."
+ },
+ {
+  "id": 1360,
+  "tr": "niyet",
+  "en": "intention",
+  "beispiel": "Ich habe nicht die Absicht, hier zu bleiben.",
+  "beispielTr": "Burada kalmak gibi bir niyetim yok.",
+  "beispielEn": "I have no intention of staying here."
+ },
+ {
+  "id": 2992,
+  "tr": "yaralanmak",
+  "en": "to get hurt",
+  "beispiel": "Ich habe mich beim Sport am Knie verletzt.",
+  "beispielTr": "Spor yaparken dizimden yaralandım.",
+  "beispielEn": "I hurt my knee while playing sports."
+ },
+ {
+  "id": 2343,
+  "tr": "tuhaf",
+  "en": "strange",
+  "beispiel": "Gestern Abend hörte ich ein merkwürdiges Geräusch.",
+  "beispielTr": "Dün akşam tuhaf bir ses duydum.",
+  "beispielEn": "Last night I heard a strange noise."
+ },
+ {
+  "id": 3065,
+  "tr": "seans",
+  "en": "showing",
+  "beispiel": "Die nächste Vorstellung beginnt um acht Uhr.",
+  "beispielTr": "Bir sonraki seans saat sekizde başlıyor.",
+  "beispielEn": "The next showing starts at eight."
+ },
+ {
+  "id": 2943,
+  "tr": "destek",
+  "en": "support",
+  "beispiel": "Ohne deine Unterstützung hätte ich es nicht geschafft.",
+  "beispielTr": "Senin desteğin olmasaydı başaramazdım.",
+  "beispielEn": "Without your support I would not have made it."
+ },
+ {
+  "id": 2959,
+  "tr": "değişmek",
+  "en": "to change",
+  "beispiel": "Die Stadt hat sich in zehn Jahren stark verändert.",
+  "beispielTr": "Şehir on yılda çok değişti.",
+  "beispielEn": "The city has changed a lot in ten years."
+ },
+ {
+  "id": 2302,
+  "tr": "gevşek",
+  "en": "loose",
+  "beispiel": "Die Schraube ist locker und muss festgezogen werden.",
+  "beispielTr": "Vida gevşek ve sıkılması gerekiyor.",
+  "beispielEn": "The screw is loose and needs to be tightened."
+ },
+ {
+  "id": 1631,
+  "tr": "kuzen",
+  "en": "cousin",
+  "beispiel": "Mein Cousin arbeitet seit zwei Jahren in Wien.",
+  "beispielTr": "Kuzenim iki yıldır Viyana'da çalışıyor.",
+  "beispielEn": "My cousin has been working in Vienna for two years."
+ },
+ {
+  "id": 1730,
+  "tr": "yalnız",
+  "en": "lonely",
+  "beispiel": "Seit dem Umzug fühlt sie sich oft einsam.",
+  "beispielTr": "Taşındığından beri kendini sık sık yalnız hissediyor.",
+  "beispielEn": "Since the move she often feels lonely."
+ },
+ {
+  "id": 2193,
+  "tr": "kıt",
+  "en": "scarce",
+  "beispiel": "Das Trinkwasser ist in dieser Region knapp.",
+  "beispielTr": "Bu bölgede içme suyu kıt.",
+  "beispielEn": "Drinking water is scarce in this region."
+ },
+ {
+  "id": 1691,
+  "tr": "aynı şekilde",
+  "en": "likewise",
+  "beispiel": "Ich sehe das ebenfalls so.",
+  "beispielTr": "Ben de aynı şekilde düşünüyorum.",
+  "beispielEn": "I see it the same way."
+ },
+ {
+  "id": 2136,
+  "tr": "her zaman",
+  "en": "anytime",
+  "beispiel": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.",
+  "beispielTr": "Yardıma ihtiyacın olursa beni her zaman arayabilirsin.",
+  "beispielEn": "You can call me anytime if you need help."
+ },
+ {
+  "id": 2204,
+  "tr": "karmaşık",
+  "en": "complicated",
+  "beispiel": "Die Anleitung war so kompliziert, dass niemand sie verstand.",
+  "beispielTr": "Kullanım kılavuzu o kadar karmaşıktı ki kimse anlamadı.",
+  "beispielEn": "The instructions were so complicated that nobody understood them."
+ },
+ {
+  "id": 2741,
+  "tr": "hissetmek",
+  "en": "to feel",
+  "beispiel": "Ich spürte plötzlich einen starken Schmerz im Rücken.",
+  "beispielTr": "Birden sırtımda şiddetli bir ağrı hissettim.",
+  "beispielEn": "I suddenly felt a sharp pain in my back."
+ },
+ {
+  "id": 2820,
+  "tr": "dans",
+  "en": "dance",
+  "beispiel": "Der erste Tanz auf der Hochzeit war wunderschön.",
+  "beispielTr": "Düğündeki ilk dans çok güzeldi.",
+  "beispielEn": "The first dance at the wedding was beautiful."
+ },
+ {
+  "id": 2782,
+  "tr": "durdurmak",
+  "en": "to stop",
+  "beispiel": "Die Polizei stoppte den Wagen an der Grenze.",
+  "beispielTr": "Polis arabayı sınırda durdurdu.",
+  "beispielEn": "The police stopped the car at the border."
+ },
+ {
+  "id": 3159,
+  "tr": "erişim",
+  "en": "access",
+  "beispiel": "Ohne Passwort hast du keinen Zugang zum Netzwerk.",
+  "beispielTr": "Şifre olmadan ağa erişimin olmaz.",
+  "beispielEn": "Without a password you have no access to the network."
+ },
+ {
+  "id": 2129,
+  "tr": "bu arada",
+  "en": "meanwhile",
+  "beispiel": "Ich koche, du kannst inzwischen den Tisch decken.",
+  "beispielTr": "Ben yemek yapıyorum, sen bu arada masayı hazırla.",
+  "beispielEn": "I am cooking, and meanwhile you can set the table."
+ },
+ {
+  "id": 2515,
+  "tr": "basın",
+  "en": "press",
+  "beispiel": "Die Presse berichtete ausführlich über den Unfall.",
+  "beispielTr": "Basın kazayı ayrıntılı olarak haber yaptı.",
+  "beispielEn": "The press reported on the accident in detail."
+ },
+ {
+  "id": 1956,
+  "tr": "sabır",
+  "en": "patience",
+  "beispiel": "Für diese Arbeit braucht man viel Geduld.",
+  "beispielTr": "Bu iş çok sabır ister.",
+  "beispielEn": "This work requires a lot of patience."
+ },
+ {
+  "id": 1619,
+  "tr": "sahne",
+  "en": "stage",
+  "beispiel": "Die Sängerin betrat die Bühne und alle klatschten.",
+  "beispielTr": "Şarkıcı sahneye çıktı ve herkes alkışladı.",
+  "beispielEn": "The singer walked onto the stage and everyone clapped."
+ },
+ {
+  "id": 2677,
+  "tr": "nadiren",
+  "en": "rarely",
+  "beispiel": "Wir gehen nur selten ins Kino.",
+  "beispielTr": "Sinemaya çok nadir gideriz.",
+  "beispielEn": "We rarely go to the cinema."
+ },
+ {
+  "id": 2330,
+  "tr": "tıp",
+  "en": "medicine",
+  "beispiel": "Meine Tochter möchte in Berlin Medizin studieren.",
+  "beispielTr": "Kızım Berlin'de tıp okumak istiyor.",
+  "beispielEn": "My daughter wants to study medicine in Berlin."
+ },
+ {
+  "id": 2981,
+  "tr": "tutuklamak",
+  "en": "to arrest",
+  "beispiel": "Der Dieb wurde noch am selben Abend verhaftet.",
+  "beispielTr": "Hırsız daha aynı akşam tutuklandı.",
+  "beispielEn": "The thief was arrested that same evening."
+ },
+ {
+  "id": 2526,
+  "tr": "dava",
+  "en": "trial",
+  "beispiel": "Der Prozess gegen den Bankräuber beginnt morgen.",
+  "beispielTr": "Banka soyguncusunun davası yarın başlıyor.",
+  "beispielEn": "The trial against the bank robber starts tomorrow."
+ },
+ {
+  "id": 1523,
+  "tr": "az kalsın",
+  "en": "nearly",
+  "beispiel": "Ich hätte beinahe meinen Schlüssel im Büro vergessen.",
+  "beispielTr": "Az kalsın anahtarımı ofiste unutuyordum.",
+  "beispielEn": "I nearly forgot my key at the office."
+ },
+ {
+  "id": 2086,
+  "tr": "avlu",
+  "en": "courtyard",
+  "beispiel": "Die Kinder spielen am liebsten im Hof.",
+  "beispielTr": "Çocuklar en çok avluda oynamayı seviyor.",
+  "beispielEn": "The children like playing in the courtyard best."
+ },
+ {
+  "id": 1374,
+  "tr": "kabul etmek",
+  "en": "to accept",
+  "beispiel": "Ich kann diese Bedingungen leider nicht akzeptieren.",
+  "beispielTr": "Bu şartları maalesef kabul edemem.",
+  "beispielEn": "Unfortunately I cannot accept these conditions."
+ },
+ {
+  "id": 2913,
+  "tr": "başa çıkmak",
+  "en": "to handle",
+  "beispiel": "Mit schwierigen Kunden kann sie gut umgehen.",
+  "beispielTr": "Zor müşterilerle başa çıkmayı iyi biliyor.",
+  "beispielEn": "She handles difficult customers well."
+ },
+ {
+  "id": 2176,
+  "tr": "sandık",
+  "en": "crate",
+  "beispiel": "Die alten Bücher liegen in einer Kiste im Keller.",
+  "beispielTr": "Eski kitaplar bodrumda bir sandıkta duruyor.",
+  "beispielEn": "The old books are in a crate in the basement."
+ },
+ {
+  "id": 2262,
+  "tr": "inmek",
+  "en": "to land",
+  "beispiel": "Unser Flugzeug ist pünktlich in Hamburg gelandet.",
+  "beispielTr": "Uçağımız Hamburg'a zamanında indi.",
+  "beispielEn": "Our plane landed in Hamburg on time."
+ },
+ {
+  "id": 2944,
+  "tr": "muayene",
+  "en": "examination",
+  "beispiel": "Morgen habe ich eine Untersuchung beim Hausarzt.",
+  "beispielTr": "Yarın aile hekiminde muayenem var.",
+  "beispielEn": "Tomorrow I have an examination at the doctor's."
+ },
+ {
+  "id": 1375,
+  "tr": "alarm",
+  "en": "alarm",
+  "beispiel": "Bei Alarm müssen alle das Gebäude sofort verlassen.",
+  "beispielTr": "Alarm çaldığında herkes binayı hemen terk etmeli.",
+  "beispielEn": "In case of alarm everyone must leave the building immediately."
+ },
+ {
+  "id": 1837,
+  "tr": "fazladan",
+  "en": "extra",
+  "beispiel": "Für das Gepäck musst du extra bezahlen.",
+  "beispielTr": "Bagaj için fazladan ödeme yapman gerekiyor.",
+  "beispielEn": "You have to pay extra for the luggage."
+ }
+]

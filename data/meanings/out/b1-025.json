@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2586,
+    "tr": "kadın hâkim",
+    "en": "female judge",
+    "beispiel": "Die Richterin hat das Urteil noch nicht gesprochen.",
+    "beispielTr": "Hâkim kararını henüz açıklamadı.",
+    "beispielEn": "The judge has not delivered the verdict yet."
+  },
+  {
+    "id": 1429,
+    "tr": "mimar",
+    "en": "architect",
+    "beispiel": "Der Architekt hat das neue Museum entworfen.",
+    "beispielTr": "Mimar yeni müzeyi tasarladı.",
+    "beispielEn": "The architect designed the new museum."
+  },
+  {
+    "id": 1606,
+    "tr": "fren",
+    "en": "brake",
+    "beispiel": "Du musst unbedingt die Bremsen kontrollieren lassen.",
+    "beispielTr": "Frenleri mutlaka kontrol ettirmelisin.",
+    "beispielEn": "You really have to get the brakes checked."
+  },
+  {
+    "id": 1828,
+    "tr": "yetiştirmek",
+    "en": "to raise",
+    "beispiel": "Kinder zu erziehen ist nicht immer leicht.",
+    "beispielTr": "Çocuk yetiştirmek her zaman kolay değil.",
+    "beispielEn": "Raising children is not always easy."
+  },
+  {
+    "id": 1514,
+    "tr": "sınırlı",
+    "en": "limited",
+    "beispiel": "Die Zahl der Plätze ist stark begrenzt.",
+    "beispielTr": "Yer sayısı oldukça sınırlı.",
+    "beispielEn": "The number of places is very limited."
+  },
+  {
+    "id": 1447,
+    "tr": "eritmek",
+    "en": "to dissolve",
+    "beispiel": "Die Tablette bitte in Wasser auflösen.",
+    "beispielTr": "Tableti lütfen suda eritin.",
+    "beispielEn": "Please dissolve the tablet in water."
+  },
+  {
+    "id": 2306,
+    "tr": "yola çıkmak",
+    "en": "to set off",
+    "beispiel": "Wir fahren morgen früh um sechs los.",
+    "beispielTr": "Yarın sabah altıda yola çıkıyoruz.",
+    "beispielEn": "We're setting off at six tomorrow morning."
+  },
+  {
+    "id": 1863,
+    "tr": "resmî tatil",
+    "en": "public holiday",
+    "beispiel": "Der erste Mai ist ein gesetzlicher Feiertag.",
+    "beispielTr": "Bir Mayıs resmî tatildir.",
+    "beispielEn": "The first of May is a public holiday."
+  },
+  {
+    "id": 1348,
+    "tr": "para çekmek",
+    "en": "to withdraw",
+    "beispiel": "Ich habe zweihundert Euro vom Konto abgehoben.",
+    "beispielTr": "Hesaptan iki yüz euro çektim.",
+    "beispielEn": "I withdrew two hundred euros from the account."
+  },
+  {
+    "id": 2851,
+    "tr": "klavyede yazmak",
+    "en": "to type",
+    "beispiel": "Wie schnell kannst du tippen?",
+    "beispielTr": "Ne kadar hızlı yazabiliyorsun?",
+    "beispielEn": "How fast can you type?"
+  },
+  {
+    "id": 2183,
+    "tr": "tıklamak",
+    "en": "to click",
+    "beispiel": "Du musst zweimal auf den Link klicken.",
+    "beispielTr": "Bağlantıya iki kez tıklaman gerekiyor.",
+    "beispielEn": "You have to click the link twice."
+  },
+  {
+    "id": 3106,
+    "tr": "tartmak",
+    "en": "to weigh",
+    "beispiel": "Der Verkäufer wiegt den Käse an der Theke.",
+    "beispielTr": "Satıcı peyniri tezgâhta tartıyor.",
+    "beispielEn": "The clerk weighs the cheese at the counter."
+  },
+  {
+    "id": 2142,
+    "tr": "kadın gazeteci",
+    "en": "female journalist",
+    "beispiel": "Meine Tochter möchte Journalistin werden.",
+    "beispielTr": "Kızım gazeteci olmak istiyor.",
+    "beispielEn": "My daughter wants to become a journalist."
+  },
+  {
+    "id": 2680,
+    "tr": "seminer",
+    "en": "seminar",
+    "beispiel": "Ich möchte dieses Seminar unbedingt besuchen.",
+    "beispielTr": "Bu seminere mutlaka katılmak istiyorum.",
+    "beispielEn": "I definitely want to attend this seminar."
+  },
+  {
+    "id": 1480,
+    "tr": "seçmek",
+    "en": "to select",
+    "beispiel": "Bitte wählen Sie ein sicheres Passwort aus.",
+    "beispielTr": "Lütfen güvenli bir şifre seçin.",
+    "beispielEn": "Please select a secure password."
+  },
+  {
+    "id": 2639,
+    "tr": "ağrı kesici",
+    "en": "painkiller",
+    "beispiel": "Der Arzt hat mir ein Schmerzmittel verschrieben.",
+    "beispielTr": "Doktor bana bir ağrı kesici yazdı.",
+    "beispielEn": "The doctor prescribed me a painkiller."
+  },
+  {
+    "id": 1667,
+    "tr": "kadın müdür",
+    "en": "female director",
+    "beispiel": "Unsere Direktorin hält morgen eine Rede.",
+    "beispielTr": "Müdürümüz yarın bir konuşma yapacak.",
+    "beispielEn": "Our director is giving a speech tomorrow."
+  },
+  {
+    "id": 2558,
+    "tr": "azaltmak",
+    "en": "to reduce",
+    "beispiel": "Wir haben unsere Preise deutlich reduziert.",
+    "beispielTr": "Fiyatlarımızı belirgin biçimde azalttık.",
+    "beispielEn": "We have reduced our prices significantly."
+  },
+  {
+    "id": 1811,
+    "tr": "kolaylaştırmak",
+    "en": "to make easier",
+    "beispiel": "Das Internet erleichtert mir die Arbeit sehr.",
+    "beispielTr": "İnternet işimi çok kolaylaştırıyor.",
+    "beispielEn": "The internet makes my work much easier."
+  },
+  {
+    "id": 2326,
+    "tr": "en fazla",
+    "en": "at most",
+    "beispiel": "Die Fahrt dauert maximal zwei Stunden.",
+    "beispielTr": "Yolculuk en fazla iki saat sürer.",
+    "beispielEn": "The trip takes two hours at most."
+  },
+  {
+    "id": 2452,
+    "tr": "iyimser",
+    "en": "optimistic",
+    "beispiel": "Ich bin ziemlich optimistisch, dass es klappt.",
+    "beispielTr": "İşin yürüyeceği konusunda oldukça iyimserim.",
+    "beispielEn": "I'm fairly optimistic that it will work out."
+  },
+  {
+    "id": 3184,
+    "tr": "malzemeler",
+    "en": "ingredients",
+    "beispiel": "Welche Zutaten braucht man für diesen Kuchen?",
+    "beispielTr": "Bu kek için hangi malzemeler gerekiyor?",
+    "beispielEn": "What ingredients do you need for this cake?"
+  },
+  {
+    "id": 1881,
+    "tr": "mali",
+    "en": "financial",
+    "beispiel": "Meinem Neffen geht es finanziell jetzt besser.",
+    "beispielTr": "Yeğenim mali açıdan artık daha iyi durumda.",
+    "beispielEn": "My nephew is doing better financially now."
+  },
+  {
+    "id": 3167,
+    "tr": "kibrit",
+    "en": "match",
+    "beispiel": "Ich hätte gern eine Schachtel Zünder.",
+    "beispielTr": "Bir kutu kibrit istiyorum.",
+    "beispielEn": "I'd like a box of matches."
+  },
+  {
+    "id": 2222,
+    "tr": "koridor",
+    "en": "corridor",
+    "beispiel": "Wir warten draußen im Korridor.",
+    "beispielTr": "Dışarıda koridorda bekliyoruz.",
+    "beispielEn": "We're waiting outside in the corridor."
+  },
+  {
+    "id": 2704,
+    "tr": "çorap",
+    "en": "sock",
+    "beispiel": "Im Winter brauche ich warme Socken.",
+    "beispielTr": "Kışın kalın çoraplara ihtiyacım oluyor.",
+    "beispielEn": "In winter I need warm socks."
+  },
+  {
+    "id": 1463,
+    "tr": "iptal olmak",
+    "en": "to be canceled",
+    "beispiel": "Nächste Woche fällt der Kurs aus.",
+    "beispielTr": "Gelecek hafta kurs iptal edildi.",
+    "beispielEn": "The course is canceled next week."
+  },
+  {
+    "id": 2499,
+    "tr": "planlama",
+    "en": "planning",
+    "beispiel": "Die Planung für das Sommerfest ist fast fertig.",
+    "beispielTr": "Yaz şenliğinin planlaması neredeyse bitti.",
+    "beispielEn": "The planning for the summer party is almost done."
+  },
+  {
+    "id": 2507,
+    "tr": "cüzdan",
+    "en": "wallet",
+    "beispiel": "Ich habe nur Kleingeld in meinem Portemonnaie.",
+    "beispielTr": "Cüzdanımda sadece bozuk para var.",
+    "beispielEn": "I only have coins in my wallet."
+  },
+  {
+    "id": 2817,
+    "tr": "benzin almak",
+    "en": "to fill up",
+    "beispiel": "Wir müssen vor der Autobahn noch tanken.",
+    "beispielTr": "Otoyola girmeden önce benzin almalıyız.",
+    "beispielEn": "We have to fill up before the highway."
+  },
+  {
+    "id": 1537,
+    "tr": "hesaplamak",
+    "en": "to calculate",
+    "beispiel": "Die Kosten für die Fahrt müssen erst berechnet werden.",
+    "beispielTr": "Yol masrafının önce hesaplanması gerekiyor.",
+    "beispielEn": "The cost of the trip has to be calculated first."
+  },
+  {
+    "id": 3108,
+    "tr": "çayır",
+    "en": "meadow",
+    "beispiel": "Vor unserem Haus liegt eine große Wiese.",
+    "beispielTr": "Evimizin önünde büyük bir çayır var.",
+    "beispielEn": "There is a big meadow in front of our house."
+  },
+  {
+    "id": 2488,
+    "tr": "karabiber",
+    "en": "pepper",
+    "beispiel": "Bringen Sie uns bitte Pfeffer und Salz.",
+    "beispielTr": "Bize karabiber ve tuz getirin lütfen.",
+    "beispielEn": "Please bring us pepper and salt."
+  },
+  {
+    "id": 2753,
+    "tr": "trafik sıkışıklığı",
+    "en": "traffic jam",
+    "beispiel": "Wir standen eine Stunde im Stau.",
+    "beispielTr": "Bir saat trafikte kaldık.",
+    "beispielEn": "We were stuck in traffic for an hour."
+  },
+  {
+    "id": 2005,
+    "tr": "zehirli",
+    "en": "poisonous",
+    "beispiel": "Vorsicht, diese Beeren sind giftig!",
+    "beispielTr": "Dikkat, bu meyveler zehirli!",
+    "beispielEn": "Careful, these berries are poisonous!"
+  },
+  {
+    "id": 2348,
+    "tr": "kasap",
+    "en": "butcher",
+    "beispiel": "Dieser Metzger hat sehr gute Wurst.",
+    "beispielTr": "Bu kasabın sosisleri çok iyi.",
+    "beispielEn": "This butcher has really good sausage."
+  },
+  {
+    "id": 1658,
+    "tr": "diyalog",
+    "en": "dialogue",
+    "beispiel": "Sie hören jetzt einen kurzen Dialog.",
+    "beispielTr": "Şimdi kısa bir diyalog dinleyeceksiniz.",
+    "beispielEn": "You will now hear a short dialogue."
+  },
+  {
+    "id": 2733,
+    "tr": "sporcu",
+    "en": "athlete",
+    "beispiel": "Mein Bruder ist ein guter Sportler.",
+    "beispielTr": "Kardeşim iyi bir sporcu.",
+    "beispielEn": "My brother is a good athlete."
+  },
+  {
+    "id": 1499,
+    "tr": "başvurmak",
+    "en": "to apply for",
+    "beispiel": "Hast du schon einen neuen Pass beantragt?",
+    "beispielTr": "Yeni pasaport için başvurdun mu?",
+    "beispielEn": "Have you already applied for a new passport?"
+  },
+  {
+    "id": 2525,
+    "tr": "protesto",
+    "en": "protest",
+    "beispiel": "Alle Proteste haben nichts genützt.",
+    "beispielTr": "Bütün protestolar işe yaramadı.",
+    "beispielEn": "None of the protests did any good."
+  },
+  {
+    "id": 2465,
+    "tr": "arıza",
+    "en": "breakdown",
+    "beispiel": "Kurz vor München hatten wir eine Panne.",
+    "beispielTr": "Münih'e az kala arabamız arıza yaptı.",
+    "beispielEn": "We had a breakdown just before Munich."
+  },
+  {
+    "id": 1340,
+    "tr": "dönmek",
+    "en": "to turn",
+    "beispiel": "An der nächsten Kreuzung müssen Sie links abbiegen.",
+    "beispielTr": "Bir sonraki kavşaktan sola dönmeniz gerekiyor.",
+    "beispielEn": "At the next intersection you have to turn left."
+  },
+  {
+    "id": 2205,
+    "tr": "uzlaşma",
+    "en": "compromise",
+    "beispiel": "Wir müssen endlich einen Kompromiss finden.",
+    "beispielTr": "Sonunda bir uzlaşma bulmamız gerekiyor.",
+    "beispielEn": "We finally have to find a compromise."
+  },
+  {
+    "id": 2108,
+    "tr": "sanayi",
+    "en": "industry",
+    "beispiel": "In dieser Gegend gibt es viel Industrie.",
+    "beispielTr": "Bu bölgede çok sanayi var.",
+    "beispielEn": "There is a lot of industry in this area."
+  },
+  {
+    "id": 2042,
+    "tr": "usta",
+    "en": "craftsman",
+    "beispiel": "Morgen kommen die Handwerker zu uns.",
+    "beispielTr": "Yarın ustalar bize geliyor.",
+    "beispielEn": "The craftsmen are coming to our place tomorrow."
+  },
+  {
+    "id": 1478,
+    "tr": "sergilemek",
+    "en": "to exhibit",
+    "beispiel": "Im Schaufenster sind Winterschuhe ausgestellt.",
+    "beispielTr": "Vitrinde kışlık ayakkabılar sergileniyor.",
+    "beispielEn": "Winter shoes are on display in the window."
+  },
+  {
+    "id": 2487,
+    "tr": "tava",
+    "en": "pan",
+    "beispiel": "Ich brate die Eier in der Pfanne.",
+    "beispielTr": "Yumurtaları tavada kızartıyorum.",
+    "beispielEn": "I'm frying the eggs in the pan."
+  },
+  {
+    "id": 1803,
+    "tr": "nezleli",
+    "en": "having a cold",
+    "beispiel": "Ich bin stark erkältet und bleibe im Bett.",
+    "beispielTr": "Fena hâlde üşüttüm, yatakta kalıyorum.",
+    "beispielEn": "I have a bad cold and I'm staying in bed."
+  },
+  {
+    "id": 2185,
+    "tr": "iklim",
+    "en": "climate",
+    "beispiel": "Alle sagen, dass sich das Klima ändert.",
+    "beispielTr": "Herkes iklimin değiştiğini söylüyor.",
+    "beispielEn": "Everyone says that the climate is changing."
+  },
+  {
+    "id": 2876,
+    "tr": "kurutmak",
+    "en": "to dry",
+    "beispiel": "Ich habe mir nach dem Duschen die Haare getrocknet.",
+    "beispielTr": "Duştan sonra saçımı kuruttum.",
+    "beispielEn": "I dried my hair after the shower."
+  }
+]

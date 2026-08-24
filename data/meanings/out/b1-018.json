@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2840,
+    "tr": "sıcaklık",
+    "en": "temperature",
+    "beispiel": "Die Temperatur ist über Nacht stark gesunken.",
+    "beispielTr": "Sıcaklık gece boyunca iyice düştü.",
+    "beispielEn": "The temperature dropped sharply overnight."
+  },
+  {
+    "id": 2993,
+    "tr": "yaralanma",
+    "en": "injury",
+    "beispiel": "Zum Glück ist die Verletzung nicht so schlimm.",
+    "beispielTr": "Neyse ki yaralanma o kadar ciddi değil.",
+    "beispielEn": "Luckily the injury is not that serious."
+  },
+  {
+    "id": 1420,
+    "tr": "hazır bulunan",
+    "en": "present",
+    "beispiel": "Bei der Sitzung waren alle Mitarbeiter anwesend.",
+    "beispielTr": "Toplantıda bütün çalışanlar hazır bulunuyordu.",
+    "beispielEn": "All the employees were present at the meeting."
+  },
+  {
+    "id": 2448,
+    "tr": "opera",
+    "en": "opera",
+    "beispiel": "Gestern Abend waren wir in der Oper.",
+    "beispielTr": "Dün akşam operadaydık.",
+    "beispielEn": "We were at the opera last night."
+  },
+  {
+    "id": 1351,
+    "tr": "reddetmek",
+    "en": "to reject",
+    "beispiel": "Er hat meinen Vorschlag ohne Begründung abgelehnt.",
+    "beispielTr": "Teklifimi hiçbir gerekçe göstermeden reddetti.",
+    "beispielEn": "He rejected my proposal without giving a reason."
+  },
+  {
+    "id": 2148,
+    "tr": "soğuk",
+    "en": "cold",
+    "beispiel": "Bei dieser Kälte bleibe ich lieber zu Hause.",
+    "beispielTr": "Bu soğukta evde kalmayı tercih ederim.",
+    "beispielEn": "In this cold I would rather stay home."
+  },
+  {
+    "id": 1395,
+    "tr": "başlangıçta",
+    "en": "at first",
+    "beispiel": "Anfangs war alles neu und ziemlich anstrengend.",
+    "beispielTr": "Başlangıçta her şey yeni ve epey yorucuydu.",
+    "beispielEn": "At first everything was new and quite exhausting."
+  },
+  {
+    "id": 3029,
+    "tr": "akraba",
+    "en": "related",
+    "beispiel": "Sind Sie mit Frau Meyer verwandt?",
+    "beispielTr": "Bayan Meyer'le akraba mısınız?",
+    "beispielEn": "Are you related to Mrs. Meyer?"
+  },
+  {
+    "id": 1784,
+    "tr": "olay",
+    "en": "event",
+    "beispiel": "Das Konzert war ein großes Ereignis für die Stadt.",
+    "beispielTr": "Konser şehir için büyük bir olaydı.",
+    "beispielEn": "The concert was a big event for the city."
+  },
+  {
+    "id": 2339,
+    "tr": "bildirim",
+    "en": "report",
+    "beispiel": "Die Meldung über den Unfall war zum Glück falsch.",
+    "beispielTr": "Kazayla ilgili bildirim neyse ki yanlıştı.",
+    "beispielEn": "Luckily the report about the accident was false."
+  },
+  {
+    "id": 2939,
+    "tr": "ayırt etmek",
+    "en": "to distinguish",
+    "beispiel": "Auf dem Foto kann man euch kaum unterscheiden.",
+    "beispielTr": "Fotoğrafta ikinizi ayırt etmek çok zor.",
+    "beispielEn": "In the photo one can hardly tell you apart."
+  },
+  {
+    "id": 2497,
+    "tr": "hap",
+    "en": "pill",
+    "beispiel": "Der Arzt hat mir neue Pillen verschrieben.",
+    "beispielTr": "Doktor bana yeni haplar yazdı.",
+    "beispielEn": "The doctor prescribed me new pills."
+  },
+  {
+    "id": 1874,
+    "tr": "tespit etmek",
+    "en": "to determine",
+    "beispiel": "Wir haben festgestellt, dass die Rechnung falsch war.",
+    "beispielTr": "Faturanın yanlış olduğunu tespit ettik.",
+    "beispielEn": "We determined that the invoice was wrong."
+  },
+  {
+    "id": 2531,
+    "tr": "semt",
+    "en": "neighborhood",
+    "beispiel": "Wir wohnen in einem ruhigen Quartier von Zürich.",
+    "beispielTr": "Zürih'in sakin bir semtinde oturuyoruz.",
+    "beispielEn": "We live in a quiet neighborhood of Zurich."
+  },
+  {
+    "id": 2865,
+    "tr": "nakliye",
+    "en": "transport",
+    "beispiel": "Der Transport der Möbel hat viel gekostet.",
+    "beispielTr": "Mobilyaların nakliyesi çok pahalıya mal oldu.",
+    "beispielEn": "The transport of the furniture cost a lot."
+  },
+  {
+    "id": 2596,
+    "tr": "geriye doğru",
+    "en": "backward",
+    "beispiel": "Ich bin rückwärts aus der Garage gefahren.",
+    "beispielTr": "Garajdan geri geri çıktım.",
+    "beispielEn": "I backed out of the garage."
+  },
+  {
+    "id": 1975,
+    "tr": "topluluk",
+    "en": "community",
+    "beispiel": "Die Gemeinschaft im Dorf hat uns sehr geholfen.",
+    "beispielTr": "Köydeki topluluk bize çok yardım etti.",
+    "beispielEn": "The community in the village helped us a lot."
+  },
+  {
+    "id": 2568,
+    "tr": "olgun",
+    "en": "ripe",
+    "beispiel": "Die Bananen sind noch nicht ganz reif.",
+    "beispielTr": "Muzlar henüz tam olgunlaşmamış.",
+    "beispielEn": "The bananas are not quite ripe yet."
+  },
+  {
+    "id": 1531,
+    "tr": "fark etmek",
+    "en": "to notice",
+    "beispiel": "Ich habe gar nicht bemerkt, dass du gekommen bist.",
+    "beispielTr": "Geldiğini hiç fark etmedim.",
+    "beispielEn": "I did not notice at all that you had come."
+  },
+  {
+    "id": 1481,
+    "tr": "seçenek",
+    "en": "selection",
+    "beispiel": "Das Geschäft hat eine große Auswahl an Schuhen.",
+    "beispielTr": "Mağazada geniş bir ayakkabı seçeneği var.",
+    "beispielEn": "The store has a large selection of shoes."
+  },
+  {
+    "id": 1558,
+    "tr": "toplantı",
+    "en": "meeting",
+    "beispiel": "Herr Schmidt ist noch in einer Besprechung.",
+    "beispielTr": "Schmidt Bey hâlâ toplantıda.",
+    "beispielEn": "Mr. Schmidt is still in a meeting."
+  },
+  {
+    "id": 1674,
+    "tr": "gök gürültüsü",
+    "en": "thunder",
+    "beispiel": "Der Donner kam erst lange nach dem Blitz.",
+    "beispielTr": "Gök gürültüsü şimşekten epey sonra geldi.",
+    "beispielEn": "The thunder came long after the lightning."
+  },
+  {
+    "id": 1906,
+    "tr": "ilerleme",
+    "en": "progress",
+    "beispiel": "Beim Deutschlernen habe ich große Fortschritte gemacht.",
+    "beispielTr": "Almanca öğrenirken büyük ilerleme kaydettim.",
+    "beispielEn": "I have made great progress in learning German."
+  },
+  {
+    "id": 1862,
+    "tr": "iş çıkışı",
+    "en": "quitting time",
+    "beispiel": "Nach Feierabend gehen wir oft noch ein Bier trinken.",
+    "beispielTr": "İş çıkışında genelde bir bira içmeye gideriz.",
+    "beispielEn": "After work we often go for a beer."
+  },
+  {
+    "id": 1726,
+    "tr": "ilaç almak",
+    "en": "to take",
+    "beispiel": "Sie müssen die Tabletten dreimal täglich einnehmen.",
+    "beispielTr": "Tabletleri günde üç kez almanız gerekiyor.",
+    "beispielEn": "You have to take the tablets three times a day."
+  },
+  {
+    "id": 2364,
+    "tr": "artık",
+    "en": "by now",
+    "beispiel": "Mittlerweile habe ich mich an die Arbeit gewöhnt.",
+    "beispielTr": "Artık bu işe alıştım.",
+    "beispielEn": "By now I have gotten used to the job."
+  },
+  {
+    "id": 2168,
+    "tr": "alıcı",
+    "en": "buyer",
+    "beispiel": "Für den alten Tisch habe ich schon einen Käufer.",
+    "beispielTr": "Eski masa için çoktan bir alıcı buldum.",
+    "beispielEn": "I already have a buyer for the old table."
+  },
+  {
+    "id": 2099,
+    "tr": "öksürük",
+    "en": "cough",
+    "beispiel": "Haben Sie ein Medikament gegen Husten?",
+    "beispielTr": "Öksürüğe karşı bir ilacınız var mı?",
+    "beispielEn": "Do you have a medicine for a cough?"
+  },
+  {
+    "id": 3133,
+    "tr": "sayı",
+    "en": "number",
+    "beispiel": "Die Anzahl der Teilnehmer war größer als erwartet.",
+    "beispielTr": "Katılımcı sayısı beklenenden fazlaydı.",
+    "beispielEn": "The number of participants was larger than expected."
+  },
+  {
+    "id": 3059,
+    "tr": "olmak",
+    "en": "to occur",
+    "beispiel": "So ein Fehler darf nicht noch einmal vorkommen.",
+    "beispielTr": "Böyle bir hata bir daha olmamalı.",
+    "beispielEn": "Such a mistake must not occur again."
+  },
+  {
+    "id": 1409,
+    "tr": "takmak",
+    "en": "to plug in",
+    "beispiel": "Wo kann ich hier meinen Laptop anschließen?",
+    "beispielTr": "Dizüstü bilgisayarımı burada nereye takabilirim?",
+    "beispielEn": "Where can I plug in my laptop here?"
+  },
+  {
+    "id": 1788,
+    "tr": "icat",
+    "en": "invention",
+    "beispiel": "Die Erfindung des Buchdrucks veränderte die ganze Welt.",
+    "beispielTr": "Matbaanın icadı bütün dünyayı değiştirdi.",
+    "beispielEn": "The invention of printing changed the whole world."
+  },
+  {
+    "id": 2914,
+    "tr": "tam tersi",
+    "en": "the other way around",
+    "beispiel": "In Wirklichkeit war es genau umgekehrt.",
+    "beispielTr": "Gerçekte durum tam tersiydi.",
+    "beispielEn": "In reality it was exactly the other way around."
+  },
+  {
+    "id": 1620,
+    "tr": "kale",
+    "en": "castle",
+    "beispiel": "Von der Burg hat man einen tollen Ausblick.",
+    "beispielTr": "Kaleden harika bir manzara görünüyor.",
+    "beispielEn": "From the castle you have a great view."
+  },
+  {
+    "id": 1912,
+    "tr": "arsız",
+    "en": "cheeky",
+    "beispiel": "Sei nicht so frech zu deiner Mutter!",
+    "beispielTr": "Annene karşı bu kadar arsız olma!",
+    "beispielEn": "Do not be so cheeky to your mother!"
+  },
+  {
+    "id": 2818,
+    "tr": "benzin istasyonu",
+    "en": "gas station",
+    "beispiel": "Wo ist hier die nächste Tankstelle?",
+    "beispielTr": "Buralarda en yakın benzin istasyonu nerede?",
+    "beispielEn": "Where is the nearest gas station around here?"
+  },
+  {
+    "id": 1973,
+    "tr": "geçerli olmak",
+    "en": "to be valid",
+    "beispiel": "Ab Januar wird der neue Preis gelten.",
+    "beispielTr": "Ocaktan itibaren yeni fiyat geçerli olacak.",
+    "beispielEn": "The new price will be valid from January."
+  },
+  {
+    "id": 2372,
+    "tr": "mümkün olduğunca",
+    "en": "as much as possible",
+    "beispiel": "Sagen Sie mir möglichst bald Bescheid.",
+    "beispielTr": "Mümkün olduğunca çabuk bana haber verin.",
+    "beispielEn": "Let me know as soon as possible."
+  },
+  {
+    "id": 2381,
+    "tr": "madeni para",
+    "en": "coin",
+    "beispiel": "Der Automat nimmt nur Münzen.",
+    "beispielTr": "Otomat sadece madeni para kabul ediyor.",
+    "beispielEn": "The machine only takes coins."
+  },
+  {
+    "id": 2605,
+    "tr": "sezon",
+    "en": "season",
+    "beispiel": "In dieser Saison sind die Preise am höchsten.",
+    "beispielTr": "Bu sezonda fiyatlar en yüksek seviyede.",
+    "beispielEn": "In this season the prices are the highest."
+  },
+  {
+    "id": 1798,
+    "tr": "iyileşmek",
+    "en": "to recover",
+    "beispiel": "Nach der Operation hat er sich schnell erholt.",
+    "beispielTr": "Ameliyattan sonra çabuk iyileşti.",
+    "beispielEn": "He recovered quickly after the operation."
+  },
+  {
+    "id": 1553,
+    "tr": "şikayet etmek",
+    "en": "to complain",
+    "beispiel": "Wo können wir uns über den Lärm beschweren?",
+    "beispielTr": "Gürültüden nereye şikâyette bulunabiliriz?",
+    "beispielEn": "Where can we complain about the noise?"
+  },
+  {
+    "id": 2948,
+    "tr": "neden olmak",
+    "en": "to cause",
+    "beispiel": "Der Sturm hat große Schäden verursacht.",
+    "beispielTr": "Fırtına büyük hasara neden oldu.",
+    "beispielEn": "The storm caused great damage."
+  },
+  {
+    "id": 2563,
+    "tr": "düzenli",
+    "en": "regular",
+    "beispiel": "Er geht regelmäßig zweimal pro Woche schwimmen.",
+    "beispielTr": "Düzenli olarak haftada iki kez yüzmeye gidiyor.",
+    "beispielEn": "He goes swimming regularly twice a week."
+  },
+  {
+    "id": 2312,
+    "tr": "öğün",
+    "en": "meal",
+    "beispiel": "Nach jeder Mahlzeit putze ich mir die Zähne.",
+    "beispielTr": "Her öğünden sonra dişlerimi fırçalarım.",
+    "beispielEn": "I brush my teeth after every meal."
+  },
+  {
+    "id": 2178,
+    "tr": "yakınmak",
+    "en": "to complain of",
+    "beispiel": "Sie klagt seit Tagen über starke Kopfschmerzen.",
+    "beispielTr": "Günlerdir şiddetli baş ağrısından yakınıyor.",
+    "beispielEn": "She has been complaining of a bad headache for days."
+  },
+  {
+    "id": 2017,
+    "tr": "bedava",
+    "en": "free",
+    "beispiel": "Die Reparatur machen wir gratis für Sie.",
+    "beispielTr": "Onarımı sizin için bedava yapıyoruz.",
+    "beispielEn": "We will do the repair for free."
+  },
+  {
+    "id": 1546,
+    "tr": "çalıştırmak",
+    "en": "to employ",
+    "beispiel": "Die Firma beschäftigt mehr als hundert Mitarbeiter.",
+    "beispielTr": "Firma yüzden fazla kişi çalıştırıyor.",
+    "beispielEn": "The company employs more than a hundred people."
+  },
+  {
+    "id": 1346,
+    "tr": "bağlı olmak",
+    "en": "to depend",
+    "beispiel": "Ob wir kommen, hängt vom Wetter ab.",
+    "beispielTr": "Gelip gelmeyeceğimiz havaya bağlı.",
+    "beispielEn": "Whether we come depends on the weather."
+  },
+  {
+    "id": 1542,
+    "tr": "mesleki",
+    "en": "professional",
+    "beispiel": "Beruflich hat sie in Berlin viel erreicht.",
+    "beispielTr": "Mesleki olarak Berlin'de çok şey başardı.",
+    "beispielEn": "Professionally she has achieved a lot in Berlin."
+  }
+]

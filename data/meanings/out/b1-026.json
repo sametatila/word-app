@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2289,
+    "tr": "okur",
+    "en": "reader",
+    "beispiel": "Viele Leser haben sich über den Artikel beschwert.",
+    "beispielTr": "Birçok okur makaleden şikâyet etti.",
+    "beispielEn": "Many readers complained about the article."
+  },
+  {
+    "id": 2293,
+    "tr": "asansör",
+    "en": "elevator",
+    "beispiel": "Der Lift ist seit gestern kaputt.",
+    "beispielTr": "Asansör dünden beri bozuk.",
+    "beispielEn": "The elevator has been broken since yesterday."
+  },
+  {
+    "id": 1554,
+    "tr": "işgal etmek",
+    "en": "to occupy",
+    "beispiel": "Die Demonstranten haben das Gebäude besetzt.",
+    "beispielTr": "Göstericiler binayı işgal etti.",
+    "beispielEn": "The protesters occupied the building."
+  },
+  {
+    "id": 2217,
+    "tr": "kopyalamak",
+    "en": "to copy",
+    "beispiel": "Kannst du mir diesen Artikel kopieren?",
+    "beispielTr": "Bu makaleyi benim için kopyalayabilir misin?",
+    "beispielEn": "Can you copy this article for me?"
+  },
+  {
+    "id": 1536,
+    "tr": "danışmanlık",
+    "en": "consultation",
+    "beispiel": "Die Beratung beim Anwalt war kostenlos.",
+    "beispielTr": "Avukatın verdiği danışmanlık ücretsizdi.",
+    "beispielEn": "The consultation with the lawyer was free."
+  },
+  {
+    "id": 2534,
+    "tr": "indirim",
+    "en": "discount",
+    "beispiel": "Sie bekommen zehn Prozent Rabatt.",
+    "beispielTr": "Yüzde on indirim alıyorsunuz.",
+    "beispielEn": "You get a ten percent discount."
+  },
+  {
+    "id": 2954,
+    "tr": "sözleşmek",
+    "en": "to arrange to meet",
+    "beispiel": "Wir haben uns für Samstag im Café verabredet.",
+    "beispielTr": "Cumartesi günü kafede buluşmak için sözleştik.",
+    "beispielEn": "We arranged to meet at the café on Saturday."
+  },
+  {
+    "id": 2493,
+    "tr": "hastabakıcı",
+    "en": "caregiver",
+    "beispiel": "Mein Bruder arbeitet als Pfleger in einem Altersheim.",
+    "beispielTr": "Kardeşim bir huzurevinde hastabakıcı olarak çalışıyor.",
+    "beispielEn": "My brother works as a caregiver in a nursing home."
+  },
+  {
+    "id": 1901,
+    "tr": "teşvik etmek",
+    "en": "to promote",
+    "beispiel": "Die Stadt fördert junge Künstler mit Stipendien.",
+    "beispielTr": "Şehir genç sanatçıları burslarla teşvik ediyor.",
+    "beispielEn": "The city promotes young artists with scholarships."
+  },
+  {
+    "id": 2246,
+    "tr": "kadın müşteri",
+    "en": "female customer",
+    "beispiel": "Eine Kundin wollte die Schuhe zurückgeben.",
+    "beispielTr": "Bir kadın müşteri ayakkabıları iade etmek istedi.",
+    "beispielEn": "A female customer wanted to return the shoes."
+  },
+  {
+    "id": 1714,
+    "tr": "araç girişi",
+    "en": "driveway",
+    "beispiel": "Bitte parken Sie nicht vor der Einfahrt.",
+    "beispielTr": "Lütfen araç girişinin önüne park etmeyin.",
+    "beispielEn": "Please don't park in front of the driveway."
+  },
+  {
+    "id": 1686,
+    "tr": "ortalama",
+    "en": "average",
+    "beispiel": "Im Durchschnitt brauche ich zwanzig Minuten zur Arbeit.",
+    "beispielTr": "İşe gitmem ortalama yirmi dakika sürüyor.",
+    "beispielEn": "On average I need twenty minutes to get to work."
+  },
+  {
+    "id": 2975,
+    "tr": "boşuna",
+    "en": "in vain",
+    "beispiel": "Ich habe vergeblich versucht, dich anzurufen.",
+    "beispielTr": "Boşuna seni aramaya çalıştım.",
+    "beispielEn": "I tried in vain to call you."
+  },
+  {
+    "id": 1770,
+    "tr": "berabere",
+    "en": "tied",
+    "beispiel": "Das Spiel endete unentschieden.",
+    "beispielTr": "Maç berabere bitti.",
+    "beispielEn": "The game ended in a tie."
+  },
+  {
+    "id": 2184,
+    "tr": "tıklama",
+    "en": "click",
+    "beispiel": "Mit einem Klick kannst du das Bild speichern.",
+    "beispielTr": "Tek tıklamayla resmi kaydedebilirsin.",
+    "beispielEn": "You can save the picture with one click."
+  },
+  {
+    "id": 2057,
+    "tr": "memleket özlemi",
+    "en": "homesickness",
+    "beispiel": "Im ersten Jahr hatte sie großes Heimweh.",
+    "beispielTr": "İlk yıl büyük bir memleket özlemi çekti.",
+    "beispielEn": "In her first year she was very homesick."
+  },
+  {
+    "id": 2872,
+    "tr": "merdiven boşluğu",
+    "en": "stairwell",
+    "beispiel": "Im Treppenhaus ist kein Licht.",
+    "beispielTr": "Merdiven boşluğunda ışık yok.",
+    "beispielEn": "There's no light in the stairwell."
+  },
+  {
+    "id": 1604,
+    "tr": "genişlik",
+    "en": "width",
+    "beispiel": "Der Schrank hat eine Breite von einem Meter.",
+    "beispielTr": "Dolabın genişliği bir metre.",
+    "beispielEn": "The closet is one meter wide."
+  },
+  {
+    "id": 2700,
+    "tr": "mantıklı",
+    "en": "sensible",
+    "beispiel": "Es wäre sinnvoll, früher loszufahren.",
+    "beispielTr": "Daha erken yola çıkmak mantıklı olurdu.",
+    "beispielEn": "It would make sense to leave earlier."
+  },
+  {
+    "id": 2759,
+    "tr": "fiş",
+    "en": "plug",
+    "beispiel": "Der Stecker passt nicht in diese Steckdose.",
+    "beispielTr": "Fiş bu prize uymuyor.",
+    "beispielEn": "The plug doesn't fit in this outlet."
+  },
+  {
+    "id": 1468,
+    "tr": "yetmek",
+    "en": "to be enough",
+    "beispiel": "Das Geld muss bis Ende des Monats ausreichen.",
+    "beispielTr": "Paranın ay sonuna kadar yetmesi gerek.",
+    "beispielEn": "The money has to last until the end of the month."
+  },
+  {
+    "id": 2211,
+    "tr": "konsolosluk",
+    "en": "consulate",
+    "beispiel": "Ein Visum bekommst du auch im Konsulat.",
+    "beispielTr": "Vizeyi konsolosluktan da alabilirsin.",
+    "beispielEn": "You can also get a visa at the consulate."
+  },
+  {
+    "id": 2581,
+    "tr": "rezervasyon",
+    "en": "reservation",
+    "beispiel": "Was kostet eine Reservierung?",
+    "beispielTr": "Rezervasyon ne kadar?",
+    "beispielEn": "How much does a reservation cost?"
+  },
+  {
+    "id": 3135,
+    "tr": "ödeme",
+    "en": "payment",
+    "beispiel": "Bitte geben Sie bei der Zahlung die Rechnungsnummer an.",
+    "beispielTr": "Ödeme yaparken lütfen fatura numarasını belirtin.",
+    "beispielEn": "Please state the invoice number with your payment."
+  },
+  {
+    "id": 1446,
+    "tr": "şarj etmek",
+    "en": "to charge",
+    "beispiel": "Ich muss mein Handy noch aufladen.",
+    "beispielTr": "Telefonumu şarj etmem gerek.",
+    "beispielEn": "I still need to charge my phone."
+  },
+  {
+    "id": 1586,
+    "tr": "biyoloji",
+    "en": "biology",
+    "beispiel": "Meine Freundin studiert Biologie.",
+    "beispielTr": "Kız arkadaşım biyoloji okuyor.",
+    "beispielEn": "My girlfriend studies biology."
+  },
+  {
+    "id": 2989,
+    "tr": "uzatmak",
+    "en": "to extend",
+    "beispiel": "Mein Visum wurde um drei Monate verlängert.",
+    "beispielTr": "Vizem üç ay uzatıldı.",
+    "beispielEn": "My visa was extended by three months."
+  },
+  {
+    "id": 2242,
+    "tr": "eleştirmek",
+    "en": "to criticize",
+    "beispiel": "Der Chef hat meine Arbeit vor allen kritisiert.",
+    "beispielTr": "Patron işimi herkesin önünde eleştirdi.",
+    "beispielEn": "The boss criticized my work in front of everyone."
+  },
+  {
+    "id": 2003,
+    "tr": "sulamak",
+    "en": "to water",
+    "beispiel": "Kannst du meine Blumen gießen, wenn ich weg bin?",
+    "beispielTr": "Ben yokken çiçeklerimi sulayabilir misin?",
+    "beispielEn": "Can you water my flowers while I'm away?"
+  },
+  {
+    "id": 2636,
+    "tr": "ince",
+    "en": "slim",
+    "beispiel": "In diesem Kleid wirkst du sehr schlank.",
+    "beispielTr": "Bu elbiseyle çok ince görünüyorsun.",
+    "beispielEn": "You look very slim in this dress."
+  },
+  {
+    "id": 1596,
+    "tr": "çiçek açmak",
+    "en": "to bloom",
+    "beispiel": "Im Garten blühen schon die ersten Blumen.",
+    "beispielTr": "Bahçede ilk çiçekler açmış bile.",
+    "beispielEn": "The first flowers are already blooming in the garden."
+  },
+  {
+    "id": 2731,
+    "tr": "sivri",
+    "en": "pointed",
+    "beispiel": "Das Messer hat eine spitze Klinge.",
+    "beispielTr": "Bıçağın sivri bir ucu var.",
+    "beispielEn": "The knife has a pointed blade."
+  },
+  {
+    "id": 1368,
+    "tr": "yok",
+    "en": "absent",
+    "beispiel": "Zwei Schüler sind heute abwesend.",
+    "beispielTr": "Bugün iki öğrenci yok.",
+    "beispielEn": "Two students are absent today."
+  },
+  {
+    "id": 1563,
+    "tr": "katılmak",
+    "en": "to participate",
+    "beispiel": "Viele Studenten haben sich an der Diskussion beteiligt.",
+    "beispielTr": "Birçok öğrenci tartışmaya katıldı.",
+    "beispielEn": "Many students took part in the discussion."
+  },
+  {
+    "id": 1699,
+    "tr": "evli çift",
+    "en": "married couple",
+    "beispiel": "Das Ehepaar unter uns hat zwei Kinder.",
+    "beispielTr": "Alt katımızdaki evli çiftin iki çocuğu var.",
+    "beispielEn": "The married couple below us has two children."
+  },
+  {
+    "id": 2789,
+    "tr": "kibrit",
+    "en": "match",
+    "beispiel": "Hast du ein Streichholz für die Kerze?",
+    "beispielTr": "Mum için kibritin var mı?",
+    "beispielEn": "Do you have a match for the candle?"
+  },
+  {
+    "id": 1900,
+    "tr": "talep",
+    "en": "demand",
+    "beispiel": "Die Gewerkschaft hat ihre Forderungen klar formuliert.",
+    "beispielTr": "Sendika taleplerini açıkça dile getirdi.",
+    "beispielEn": "The union clearly stated its demands."
+  },
+  {
+    "id": 3170,
+    "tr": "başa çıkmak",
+    "en": "to cope",
+    "beispiel": "Mit dem neuen Programm komme ich gut zurecht.",
+    "beispielTr": "Yeni programla iyi başa çıkıyorum.",
+    "beispielEn": "I'm coping well with the new program."
+  },
+  {
+    "id": 2154,
+    "tr": "yemekhane",
+    "en": "cafeteria",
+    "beispiel": "In unserer Kantine kann man günstig essen.",
+    "beispielTr": "Yemekhanemizde ucuza yemek yenebiliyor.",
+    "beispielEn": "You can eat cheaply in our cafeteria."
+  },
+  {
+    "id": 2979,
+    "tr": "keyifli",
+    "en": "cheerful",
+    "beispiel": "Er war den ganzen Abend vergnügt.",
+    "beispielTr": "Bütün akşam keyifliydi.",
+    "beispielEn": "He was cheerful all evening."
+  },
+  {
+    "id": 1579,
+    "tr": "başvurmak",
+    "en": "to apply",
+    "beispiel": "Ich habe mich um diese Stelle beworben.",
+    "beispielTr": "Bu pozisyona başvurdum.",
+    "beispielEn": "I applied for this position."
+  },
+  {
+    "id": 1435,
+    "tr": "sığınma",
+    "en": "asylum",
+    "beispiel": "Die Familie hat in Deutschland Asyl beantragt.",
+    "beispielTr": "Aile Almanya'da sığınma başvurusu yaptı.",
+    "beispielEn": "The family applied for asylum in Germany."
+  },
+  {
+    "id": 2322,
+    "tr": "işaretlemek",
+    "en": "to mark",
+    "beispiel": "Bitte markieren Sie die wichtigsten Stellen im Text.",
+    "beispielTr": "Lütfen metindeki en önemli yerleri işaretleyin.",
+    "beispielEn": "Please mark the most important passages in the text."
+  },
+  {
+    "id": 1410,
+    "tr": "emniyet kemerini bağlamak",
+    "en": "to buckle up",
+    "beispiel": "Die Kinder müssen sich hinten anschnallen.",
+    "beispielTr": "Çocuklar arkada emniyet kemerlerini bağlamak zorunda.",
+    "beispielEn": "The children have to buckle up in the back."
+  },
+  {
+    "id": 1893,
+    "tr": "flüt",
+    "en": "flute",
+    "beispiel": "Sie spielt sehr schön Flöte.",
+    "beispielTr": "Çok güzel flüt çalıyor.",
+    "beispielEn": "She plays the flute beautifully."
+  },
+  {
+    "id": 2342,
+    "tr": "menü",
+    "en": "set menu",
+    "beispiel": "Das Menü des Tages kostet zwölf Euro.",
+    "beispielTr": "Günün menüsü on iki euro.",
+    "beispielEn": "The set menu of the day costs twelve euros."
+  },
+  {
+    "id": 1919,
+    "tr": "üşümek",
+    "en": "to be cold",
+    "beispiel": "Wenn Sie frieren, mache ich das Fenster zu.",
+    "beispielTr": "Üşüyorsanız pencereyi kapatırım.",
+    "beispielEn": "If you're cold, I'll close the window."
+  },
+  {
+    "id": 1977,
+    "tr": "onaylamak",
+    "en": "to approve",
+    "beispiel": "Mein Chef hat meinen Urlaub genehmigt.",
+    "beispielTr": "Patronum iznimi onayladı.",
+    "beispielEn": "My boss approved my vacation."
+  },
+  {
+    "id": 1380,
+    "tr": "günlük hayat",
+    "en": "everyday life",
+    "beispiel": "Im Alltag bleibt mir wenig Zeit zum Lesen.",
+    "beispielTr": "Günlük hayatta okumaya çok az vaktim kalıyor.",
+    "beispielEn": "In everyday life I have little time to read."
+  },
+  {
+    "id": 3144,
+    "tr": "kamp yapmak",
+    "en": "to camp",
+    "beispiel": "Ich habe noch nie gezeltet.",
+    "beispielTr": "Daha hiç kamp yapmadım.",
+    "beispielEn": "I have never camped before."
+  }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 2845,
+  "tr": "test etmek",
+  "en": "to test",
+  "beispiel": "Wir testen das neue Programm noch zwei Wochen.",
+  "beispielTr": "Yeni programı iki hafta daha test edeceğiz.",
+  "beispielEn": "We'll test the new program for two more weeks."
+ },
+ {
+  "id": 1454,
+  "tr": "sahne performansı",
+  "en": "performance",
+  "beispiel": "Nach dem Auftritt haben die Musiker lange gefeiert.",
+  "beispielTr": "Sahne performansından sonra müzisyenler uzun süre kutlama yaptı.",
+  "beispielEn": "After the performance the musicians celebrated for a long time."
+ },
+ {
+  "id": 1963,
+  "tr": "rakip",
+  "en": "opponent",
+  "beispiel": "Unser Gegner war viel stärker als erwartet.",
+  "beispielTr": "Rakibimiz beklediğimizden çok daha güçlüydü.",
+  "beispielEn": "Our opponent was much stronger than expected."
+ },
+ {
+  "id": 3127,
+  "tr": "yara",
+  "en": "wound",
+  "beispiel": "Die Wunde ist zum Glück nicht sehr tief.",
+  "beispielTr": "Neyse ki yara çok derin değil.",
+  "beispielEn": "Luckily the wound isn't very deep."
+ },
+ {
+  "id": 2295,
+  "tr": "hat",
+  "en": "line",
+  "beispiel": "Die Linie 8 fährt direkt zum Hauptbahnhof.",
+  "beispielTr": "8 numaralı hat doğrudan ana gara gidiyor.",
+  "beispielEn": "Line 8 goes straight to the main station."
+ },
+ {
+  "id": 1496,
+  "tr": "çiftçi",
+  "en": "farmer",
+  "beispiel": "Der Bauer steht jeden Morgen um vier Uhr auf.",
+  "beispielTr": "Çiftçi her sabah saat dörtte kalkıyor.",
+  "beispielEn": "The farmer gets up at four every morning."
+ },
+ {
+  "id": 2238,
+  "tr": "çarpı işareti",
+  "en": "cross",
+  "beispiel": "Machen Sie bitte ein Kreuz in das richtige Feld.",
+  "beispielTr": "Lütfen doğru kutuya bir çarpı koyun.",
+  "beispielEn": "Please put a cross in the correct box."
+ },
+ {
+  "id": 2729,
+  "tr": "oyuncu",
+  "en": "player",
+  "beispiel": "Beim Fußball stehen elf Spieler auf dem Platz.",
+  "beispielTr": "Futbolda sahada on bir oyuncu bulunur.",
+  "beispielEn": "In soccer eleven players are on the field."
+ },
+ {
+  "id": 2956,
+  "tr": "buluşma",
+  "en": "date",
+  "beispiel": "Ich habe um drei eine Verabredung mit Klaus.",
+  "beispielTr": "Saat üçte Klaus'la buluşmam var.",
+  "beispielEn": "I have a date with Klaus at three."
+ },
+ {
+  "id": 2910,
+  "tr": "arkasına dönmek",
+  "en": "to turn around",
+  "beispiel": "Als ich rief, drehte er sich sofort um.",
+  "beispielTr": "Seslendiğimde hemen arkasına döndü.",
+  "beispielEn": "When I called, he turned around right away."
+ },
+ {
+  "id": 2410,
+  "tr": "olumsuz",
+  "en": "negative",
+  "beispiel": "Du solltest nicht alles so negativ sehen.",
+  "beispielTr": "Her şeyi bu kadar olumsuz görmemelisin.",
+  "beispielEn": "You shouldn't see everything so negatively."
+ },
+ {
+  "id": 2970,
+  "tr": "bir yerini yakmak",
+  "en": "to burn oneself",
+  "beispiel": "Pass auf, sonst verbrennst du dich am Herd!",
+  "beispielTr": "Dikkat et, yoksa ocakta elini yakarsın!",
+  "beispielEn": "Be careful, or you'll burn yourself on the stove!"
+ },
+ {
+  "id": 2278,
+  "tr": "kadın öğretmen",
+  "en": "female teacher",
+  "beispiel": "Unsere neue Lehrerin ist sehr freundlich.",
+  "beispielTr": "Yeni öğretmenimiz çok cana yakın biri.",
+  "beispielEn": "Our new teacher is very friendly."
+ },
+ {
+  "id": 3089,
+  "tr": "U dönüşü yapmak",
+  "en": "to make a U-turn",
+  "beispiel": "Hier dürfen Sie leider nicht wenden.",
+  "beispielTr": "Burada maalesef U dönüşü yapamazsınız.",
+  "beispielEn": "Unfortunately you can't make a U-turn here."
+ },
+ {
+  "id": 2748,
+  "tr": "başlangıç",
+  "en": "start",
+  "beispiel": "Der Start des Rennens wurde um eine Stunde verschoben.",
+  "beispielTr": "Yarışın başlangıcı bir saat ertelendi.",
+  "beispielEn": "The start of the race was postponed by an hour."
+ },
+ {
+  "id": 2610,
+  "tr": "kum",
+  "en": "sand",
+  "beispiel": "Die Kinder spielen den ganzen Tag im Sand.",
+  "beispielTr": "Çocuklar bütün gün kumda oynuyor.",
+  "beispielEn": "The children play in the sand all day."
+ },
+ {
+  "id": 2595,
+  "tr": "dönüş",
+  "en": "return",
+  "beispiel": "Nach seiner Rückkehr hat er stundenlang erzählt.",
+  "beispielTr": "Dönüşünden sonra saatlerce anlattı.",
+  "beispielEn": "After his return he talked for hours."
+ },
+ {
+  "id": 2031,
+  "tr": "liman",
+  "en": "harbor",
+  "beispiel": "Vom Hafen aus sieht man die großen Schiffe.",
+  "beispielTr": "Limandan büyük gemiler görünüyor.",
+  "beispielEn": "From the harbor you can see the big ships."
+ },
+ {
+  "id": 2175,
+  "tr": "çocukluk",
+  "en": "childhood",
+  "beispiel": "Meine Kindheit habe ich auf dem Land verbracht.",
+  "beispielTr": "Çocukluğumu köyde geçirdim.",
+  "beispielEn": "I spent my childhood in the countryside."
+ },
+ {
+  "id": 2998,
+  "tr": "kaçınmak",
+  "en": "to avoid",
+  "beispiel": "Der Arzt sagt, ich soll Stress vermeiden.",
+  "beispielTr": "Doktor stresten kaçınmam gerektiğini söylüyor.",
+  "beispielEn": "The doctor says I should avoid stress."
+ },
+ {
+  "id": 1839,
+  "tr": "fabrika",
+  "en": "factory",
+  "beispiel": "In dieser Fabrik werden Autoteile hergestellt.",
+  "beispielTr": "Bu fabrikada otomobil parçaları üretiliyor.",
+  "beispielEn": "Car parts are made in this factory."
+ },
+ {
+  "id": 1400,
+  "tr": "hoş",
+  "en": "pleasant",
+  "beispiel": "Wir hatten einen sehr angenehmen Abend zusammen.",
+  "beispielTr": "Birlikte çok hoş bir akşam geçirdik.",
+  "beispielEn": "We had a very pleasant evening together."
+ },
+ {
+  "id": 2189,
+  "tr": "kulağa gelmek",
+  "en": "to sound",
+  "beispiel": "Das klingt nach einem richtig guten Plan.",
+  "beispielTr": "Kulağa gerçekten iyi bir plan gibi geliyor.",
+  "beispielEn": "That sounds like a really good plan."
+ },
+ {
+  "id": 1450,
+  "tr": "kayıt",
+  "en": "recording",
+  "beispiel": "Die Aufnahme läuft, bitte seid jetzt leise.",
+  "beispielTr": "Kayıt sürüyor, lütfen sessiz olun.",
+  "beispielEn": "The recording is running, please be quiet now."
+ },
+ {
+  "id": 2110,
+  "tr": "bilgilendirmek",
+  "en": "to inform",
+  "beispiel": "Wir informieren Sie rechtzeitig über die neuen Termine.",
+  "beispielTr": "Yeni tarihleri size zamanında bildireceğiz.",
+  "beispielEn": "We will inform you about the new dates in time."
+ },
+ {
+  "id": 2143,
+  "tr": "gençlik",
+  "en": "youth",
+  "beispiel": "In meiner Jugend habe ich viel Sport gemacht.",
+  "beispielTr": "Gençliğimde çok spor yapardım.",
+  "beispielEn": "I did a lot of sports in my youth."
+ },
+ {
+  "id": 1534,
+  "tr": "benzin",
+  "en": "gasoline",
+  "beispiel": "Das Benzin ist schon wieder teurer geworden.",
+  "beispielTr": "Benzin yine daha da pahalandı.",
+  "beispielEn": "Gasoline has gotten more expensive again."
+ },
+ {
+  "id": 2325,
+  "tr": "duvar",
+  "en": "wall",
+  "beispiel": "Die Kinder sind über die Mauer geklettert.",
+  "beispielTr": "Çocuklar duvara tırmanıp karşıya geçti.",
+  "beispielEn": "The children climbed over the wall."
+ },
+ {
+  "id": 1357,
+  "tr": "mezuniyet",
+  "en": "graduation",
+  "beispiel": "Nach dem Abschluss will sie im Ausland studieren.",
+  "beispielTr": "Mezuniyetten sonra yurt dışında okumak istiyor.",
+  "beispielEn": "After graduation she wants to study abroad."
+ },
+ {
+  "id": 2832,
+  "tr": "teknoloji",
+  "en": "technology",
+  "beispiel": "Von moderner Technik verstehe ich leider wenig.",
+  "beispielTr": "Modern teknolojiden ne yazık ki pek anlamıyorum.",
+  "beispielEn": "Unfortunately I don't understand much about modern technology."
+ },
+ {
+  "id": 1706,
+  "tr": "acele",
+  "en": "hurry",
+  "beispiel": "Ich bin in Eile und muss gleich los.",
+  "beispielTr": "Acelem var, hemen çıkmam gerek.",
+  "beispielEn": "I'm in a hurry and have to leave right away."
+ },
+ {
+  "id": 2114,
+  "tr": "içte",
+  "en": "on the inside",
+  "beispiel": "Die Jacke ist innen mit Fell gefüttert.",
+  "beispielTr": "Ceketin içi kürkle kaplanmış.",
+  "beispielEn": "The jacket is lined with fur on the inside."
+ },
+ {
+  "id": 2001,
+  "tr": "genellikle",
+  "en": "usually",
+  "beispiel": "Um diese Zeit ist er gewöhnlich zu Hause.",
+  "beispielTr": "Bu saatlerde genellikle evde olur.",
+  "beispielEn": "He's usually at home around this time."
+ },
+ {
+  "id": 3078,
+  "tr": "mal",
+  "en": "goods",
+  "beispiel": "Die Ware wird morgen früh geliefert.",
+  "beispielTr": "Mal yarın sabah teslim edilecek.",
+  "beispielEn": "The goods will be delivered tomorrow morning."
+ },
+ {
+  "id": 1879,
+  "tr": "vücut yapısı",
+  "en": "figure",
+  "beispiel": "Sie hat eine tolle Figur, obwohl sie viel isst.",
+  "beispielTr": "Çok yemesine rağmen çok fit bir vücudu var.",
+  "beispielEn": "She has a great figure even though she eats a lot."
+ },
+ {
+  "id": 2253,
+  "tr": "kısa süre önce",
+  "en": "recently",
+  "beispiel": "Wir haben uns erst kürzlich kennengelernt.",
+  "beispielTr": "Daha kısa süre önce tanıştık.",
+  "beispielEn": "We only met each other recently."
+ },
+ {
+  "id": 2323,
+  "tr": "malzeme",
+  "en": "material",
+  "beispiel": "Aus welchem Material ist der Schrank gemacht?",
+  "beispielTr": "Dolap hangi malzemeden yapılmış?",
+  "beispielEn": "What material is the closet made of?"
+ },
+ {
+  "id": 1715,
+  "tr": "aklına gelmek",
+  "en": "to come to mind",
+  "beispiel": "Mir fällt sein Name gerade nicht ein.",
+  "beispielTr": "Şu an adı aklıma gelmiyor.",
+  "beispielEn": "His name doesn't come to mind right now."
+ },
+ {
+  "id": 1854,
+  "tr": "hayal gücü",
+  "en": "imagination",
+  "beispiel": "Kinder haben oft eine unglaubliche Fantasie.",
+  "beispielTr": "Çocukların hayal gücü çoğu zaman inanılmazdır.",
+  "beispielEn": "Children often have an incredible imagination."
+ },
+ {
+  "id": 1516,
+  "tr": "karşılamak",
+  "en": "to welcome",
+  "beispiel": "Der Gastgeber begrüßte alle Gäste an der Tür.",
+  "beispielTr": "Ev sahibi bütün misafirleri kapıda karşıladı.",
+  "beispielEn": "The host welcomed all the guests at the door."
+ },
+ {
+  "id": 2894,
+  "tr": "şaşırtmak",
+  "en": "to surprise",
+  "beispiel": "Deine Nachricht hat mich wirklich überrascht.",
+  "beispielTr": "Mesajın beni gerçekten şaşırttı.",
+  "beispielEn": "Your message really surprised me."
+ },
+ {
+  "id": 2934,
+  "tr": "belgeler",
+  "en": "documents",
+  "beispiel": "Bitte schicken Sie mir alle Unterlagen per Post.",
+  "beispielTr": "Lütfen bütün belgeleri bana postayla gönderin.",
+  "beispielEn": "Please send me all the documents by mail."
+ },
+ {
+  "id": 2268,
+  "tr": "gürültü",
+  "en": "noise",
+  "beispiel": "Der Lärm von der Baustelle stört mich sehr.",
+  "beispielTr": "İnşaattan gelen gürültü beni çok rahatsız ediyor.",
+  "beispielEn": "The noise from the construction site really bothers me."
+ },
+ {
+  "id": 1425,
+  "tr": "işçi",
+  "en": "worker",
+  "beispiel": "Die Arbeiter streiken seit drei Wochen für mehr Lohn.",
+  "beispielTr": "İşçiler üç haftadır daha yüksek ücret için grev yapıyor.",
+  "beispielEn": "The workers have been on strike for higher pay for three weeks."
+ },
+ {
+  "id": 2096,
+  "tr": "espri anlayışı",
+  "en": "sense of humor",
+  "beispiel": "Ich mag ihn, weil er so viel Humor hat.",
+  "beispielTr": "Onu seviyorum çünkü espri anlayışı çok iyi.",
+  "beispielEn": "I like him because he has such a good sense of humor."
+ },
+ {
+  "id": 2458,
+  "tr": "organizasyon",
+  "en": "organization",
+  "beispiel": "Die Organisation des Festes hat gut geklappt.",
+  "beispielTr": "Şenliğin organizasyonu çok iyi gitti.",
+  "beispielEn": "The organization of the party went well."
+ },
+ {
+  "id": 2801,
+  "tr": "stüdyo",
+  "en": "studio",
+  "beispiel": "Die Band nimmt ihr neues Album im Studio auf.",
+  "beispielTr": "Grup yeni albümünü stüdyoda kaydediyor.",
+  "beispielEn": "The band is recording their new album in the studio."
+ },
+ {
+  "id": 2459,
+  "tr": "asıl nüsha",
+  "en": "original",
+  "beispiel": "Das Original bleibt bei uns, Sie bekommen eine Kopie.",
+  "beispielTr": "Asıl nüsha bizde kalıyor, size bir kopya veriyoruz.",
+  "beispielEn": "The original stays with us, you get a copy."
+ },
+ {
+  "id": 2460,
+  "tr": "orijinal",
+  "en": "genuine",
+  "beispiel": "Ist die Uhr original oder nur eine gute Kopie?",
+  "beispielTr": "Saat orijinal mi, yoksa iyi bir kopya mı?",
+  "beispielEn": "Is the watch genuine or just a good copy?"
+ },
+ {
+  "id": 2965,
+  "tr": "bağlamak",
+  "en": "to connect",
+  "beispiel": "Die neue Brücke verbindet die beiden Stadtteile.",
+  "beispielTr": "Yeni köprü iki semti birbirine bağlıyor.",
+  "beispielEn": "The new bridge connects the two parts of town."
+ }
+]

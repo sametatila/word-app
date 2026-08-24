@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1443,
+    "tr": "pes etmek",
+    "en": "to give up",
+    "beispiel": "Gib nicht auf, du schaffst das bestimmt!",
+    "beispielTr": "Pes etme, bunu kesinlikle başaracaksın!",
+    "beispielEn": "Don't give up, you'll definitely manage it!"
+  },
+  {
+    "id": 2260,
+    "tr": "depo",
+    "en": "warehouse",
+    "beispiel": "Wir haben noch genug Ware im Lager.",
+    "beispielTr": "Depoda hâlâ yeterince mal var.",
+    "beispielEn": "We still have enough goods in the warehouse."
+  },
+  {
+    "id": 1557,
+    "tr": "görüşmek",
+    "en": "to discuss",
+    "beispiel": "Wir müssen noch genau besprechen, wann wir losfahren und was wir mitnehmen.",
+    "beispielTr": "Ne zaman yola çıkacağımızı ve ne götüreceğimizi ayrıntılı görüşmemiz gerek.",
+    "beispielEn": "We still need to discuss exactly when we leave and what we take."
+  },
+  {
+    "id": 2392,
+    "tr": "daha sonra",
+    "en": "later",
+    "beispiel": "Ich rufe dich nachher noch mal an.",
+    "beispielTr": "Seni daha sonra tekrar ararım.",
+    "beispielEn": "I'll call you again later."
+  },
+  {
+    "id": 1938,
+    "tr": "vites",
+    "en": "gear",
+    "beispiel": "Schalten Sie bitte in den dritten Gang.",
+    "beispielTr": "Lütfen üçüncü vitese geçin.",
+    "beispielEn": "Please shift into third gear."
+  },
+  {
+    "id": 2761,
+    "tr": "çalmak",
+    "en": "to steal",
+    "beispiel": "In diesem Viertel stehlen Diebe oft Fahrräder.",
+    "beispielTr": "Bu mahallede hırsızlar sık sık bisiklet çalıyor.",
+    "beispielEn": "Thieves often steal bicycles in this neighborhood."
+  },
+  {
+    "id": 1662,
+    "tr": "nöbet",
+    "en": "duty",
+    "beispiel": "Morgen habe ich Dienst und kann nicht kommen.",
+    "beispielTr": "Yarın nöbetim var, o yüzden gelemem.",
+    "beispielEn": "I'm on duty tomorrow, so I can't come."
+  },
+  {
+    "id": 1685,
+    "tr": "karmakarışık",
+    "en": "messy",
+    "beispiel": "Nach der Party war die ganze Wohnung durcheinander.",
+    "beispielTr": "Partiden sonra bütün ev karmakarışıktı.",
+    "beispielEn": "After the party the whole apartment was a mess."
+  },
+  {
+    "id": 1666,
+    "tr": "müdür",
+    "en": "director",
+    "beispiel": "Ich möchte gern mit dem Direktor sprechen.",
+    "beispielTr": "Müdürle görüşmek istiyorum.",
+    "beispielEn": "I'd like to speak with the director."
+  },
+  {
+    "id": 2160,
+    "tr": "kariyer",
+    "en": "career",
+    "beispiel": "Mein Bruder will unbedingt Karriere machen.",
+    "beispielTr": "Ağabeyim mutlaka kariyer yapmak istiyor.",
+    "beispielEn": "My brother is determined to have a career."
+  },
+  {
+    "id": 1801,
+    "tr": "anı",
+    "en": "memory",
+    "beispiel": "An diese Zeit habe ich viele schöne Erinnerungen.",
+    "beispielTr": "O döneme dair çok güzel anılarım var.",
+    "beispielEn": "I have many fond memories of that time."
+  },
+  {
+    "id": 2308,
+    "tr": "çözmek",
+    "en": "to solve",
+    "beispiel": "Wir müssen dieses Problem gemeinsam lösen.",
+    "beispielTr": "Bu sorunu birlikte çözmemiz gerekiyor.",
+    "beispielEn": "We have to solve this problem together."
+  },
+  {
+    "id": 3190,
+    "tr": "şüphe",
+    "en": "doubt",
+    "beispiel": "Sie hatte Zweifel, ob die Entscheidung richtig war.",
+    "beispielTr": "Kararın doğru olup olmadığından şüphe duyuyordu.",
+    "beispielEn": "She had doubts about whether the decision was right."
+  },
+  {
+    "id": 1766,
+    "tr": "işten çıkarmak",
+    "en": "to fire",
+    "beispiel": "Die Firma hat letztes Jahr viele Mitarbeiter entlassen.",
+    "beispielTr": "Şirket geçen yıl birçok çalışanı işten çıkardı.",
+    "beispielEn": "The company fired many employees last year."
+  },
+  {
+    "id": 2812,
+    "tr": "sahne",
+    "en": "scene",
+    "beispiel": "In dieser Szene des Films stirbt der Held.",
+    "beispielTr": "Filmin bu sahnesinde kahraman ölüyor.",
+    "beispielEn": "The hero dies in this scene of the film."
+  },
+  {
+    "id": 2494,
+    "tr": "yükümlülük",
+    "en": "duty",
+    "beispiel": "Jeder Bürger hat Rechte und Pflichten.",
+    "beispielTr": "Her vatandaşın hakları ve yükümlülükleri vardır.",
+    "beispielEn": "Every citizen has rights and duties."
+  },
+  {
+    "id": 2416,
+    "tr": "geçen gün",
+    "en": "the other day",
+    "beispiel": "Neulich habe ich einen alten Freund getroffen.",
+    "beispielTr": "Geçen gün eski bir arkadaşımla karşılaştım.",
+    "beispielEn": "The other day I ran into an old friend."
+  },
+  {
+    "id": 1506,
+    "tr": "acele etmek",
+    "en": "to hurry",
+    "beispiel": "Wir müssen uns beeilen, sonst verpassen wir den Zug.",
+    "beispielTr": "Acele etmemiz gerek, yoksa treni kaçırırız.",
+    "beispielEn": "We have to hurry, otherwise we'll miss the train."
+  },
+  {
+    "id": 2195,
+    "tr": "diz",
+    "en": "knee",
+    "beispiel": "Beim Fußball habe ich mich am Knie verletzt.",
+    "beispielTr": "Futbol oynarken dizimi sakatladım.",
+    "beispielEn": "I injured my knee playing football."
+  },
+  {
+    "id": 2663,
+    "tr": "koruma",
+    "en": "protection",
+    "beispiel": "Diese Creme bietet guten Schutz gegen die Sonne.",
+    "beispielTr": "Bu krem güneşe karşı iyi bir koruma sağlıyor.",
+    "beispielEn": "This cream provides good protection against the sun."
+  },
+  {
+    "id": 3099,
+    "tr": "niçin",
+    "en": "why",
+    "beispiel": "Weshalb hast du gestern nicht angerufen?",
+    "beispielTr": "Dün niçin aramadın?",
+    "beispielEn": "Why didn't you call yesterday?"
+  },
+  {
+    "id": 2255,
+    "tr": "öpücük",
+    "en": "kiss",
+    "beispiel": "Gib der Mama einen Kuss!",
+    "beispielTr": "Annene bir öpücük ver!",
+    "beispielEn": "Give mommy a kiss!"
+  },
+  {
+    "id": 2985,
+    "tr": "engellemek",
+    "en": "to prevent",
+    "beispiel": "Wir konnten den Unfall leider nicht verhindern.",
+    "beispielTr": "Kazayı maalesef engelleyemedik.",
+    "beispielEn": "Unfortunately we couldn't prevent the accident."
+  },
+  {
+    "id": 1806,
+    "tr": "açıklama",
+    "en": "explanation",
+    "beispiel": "Die Erklärung des Lehrers war sehr verständlich.",
+    "beispielTr": "Öğretmenin açıklaması çok anlaşılırdı.",
+    "beispielEn": "The teacher's explanation was very clear."
+  },
+  {
+    "id": 3036,
+    "tr": "video",
+    "en": "video",
+    "beispiel": "Lass uns ein Video von der Feier machen!",
+    "beispielTr": "Kutlamadan bir video çekelim!",
+    "beispielEn": "Let's make a video of the celebration!"
+  },
+  {
+    "id": 2988,
+    "tr": "talep etmek",
+    "en": "to demand",
+    "beispiel": "Für die Reparatur verlangt die Werkstatt zu viel.",
+    "beispielTr": "Servis tamirat için çok fazla ücret talep ediyor.",
+    "beispielEn": "The garage is demanding too much for the repair."
+  },
+  {
+    "id": 2676,
+    "tr": "tabii ki",
+    "en": "of course",
+    "beispiel": "Selbstverständlich sagen wir Ihnen sofort Bescheid.",
+    "beispielTr": "Tabii ki size hemen haber veririz.",
+    "beispielEn": "Of course we'll let you know right away."
+  },
+  {
+    "id": 2046,
+    "tr": "nefret etmek",
+    "en": "to hate",
+    "beispiel": "Ich hasse es, morgens früh aufzustehen.",
+    "beispielTr": "Sabah erken kalkmaktan nefret ediyorum.",
+    "beispielEn": "I hate getting up early in the morning."
+  },
+  {
+    "id": 1951,
+    "tr": "kullanmak",
+    "en": "to make use of",
+    "beispiel": "Diese alten Möbel können wir gut gebrauchen.",
+    "beispielTr": "Bu eski mobilyaları rahatlıkla kullanabiliriz.",
+    "beispielEn": "We can make good use of this old furniture."
+  },
+  {
+    "id": 2656,
+    "tr": "borçlar",
+    "en": "debts",
+    "beispiel": "Jetzt habe ich alle meine Schulden bezahlt.",
+    "beispielTr": "Artık bütün borçlarımı ödedim.",
+    "beispielEn": "Now I've paid off all my debts."
+  },
+  {
+    "id": 2019,
+    "tr": "sınır",
+    "en": "border",
+    "beispiel": "An der Grenze musst du deinen Ausweis zeigen.",
+    "beispielTr": "Sınırda kimliğini göstermen gerekiyor.",
+    "beispielEn": "You have to show your ID at the border."
+  },
+  {
+    "id": 2475,
+    "tr": "utanç verici",
+    "en": "embarrassing",
+    "beispiel": "Das war eine wirklich peinliche Situation.",
+    "beispielTr": "Gerçekten utanç verici bir durumdu.",
+    "beispielEn": "That was a really embarrassing situation."
+  },
+  {
+    "id": 1903,
+    "tr": "şekil",
+    "en": "shape",
+    "beispiel": "Diese Schuhe haben eine schöne Form.",
+    "beispielTr": "Bu ayakkabıların şekli güzel.",
+    "beispielEn": "These shoes have a nice shape."
+  },
+  {
+    "id": 2917,
+    "tr": "boşuna",
+    "en": "in vain",
+    "beispiel": "Wir haben umsonst auf ihn gewartet.",
+    "beispielTr": "Onu boşuna bekledik.",
+    "beispielEn": "We waited for him in vain."
+  },
+  {
+    "id": 2421,
+    "tr": "hiçbir yerde",
+    "en": "nowhere",
+    "beispiel": "Meine Schlüssel kann ich nirgendwo finden.",
+    "beispielTr": "Anahtarlarımı hiçbir yerde bulamıyorum.",
+    "beispielEn": "I can't find my keys anywhere."
+  },
+  {
+    "id": 2374,
+    "tr": "ay",
+    "en": "moon",
+    "beispiel": "Heute Nacht scheint der Mond besonders hell.",
+    "beispielTr": "Bu gece ay pırıl pırıl parlıyor.",
+    "beispielEn": "The moon is shining especially bright tonight."
+  },
+  {
+    "id": 1645,
+    "tr": "veriler",
+    "en": "data",
+    "beispiel": "Wir haben alle Ihre Daten im Computer.",
+    "beispielTr": "Bütün verileriniz bilgisayarımızda kayıtlı.",
+    "beispielEn": "We have all your data on the computer."
+  },
+  {
+    "id": 2694,
+    "tr": "zafer",
+    "en": "victory",
+    "beispiel": "Nach dem Spiel feierten alle den Sieg.",
+    "beispielTr": "Maçtan sonra herkes zaferi kutladı.",
+    "beispielEn": "After the game everyone celebrated the victory."
+  },
+  {
+    "id": 2613,
+    "tr": "tok",
+    "en": "full",
+    "beispiel": "Nein danke, ich bin schon satt.",
+    "beispielTr": "Hayır teşekkürler, karnım tok.",
+    "beispielEn": "No thanks, I'm already full."
+  },
+  {
+    "id": 2043,
+    "tr": "ticaret yapmak",
+    "en": "to trade",
+    "beispiel": "Herr Huber handelt mit Obst und Gemüse.",
+    "beispielTr": "Huber Bey meyve ve sebze ticareti yapıyor.",
+    "beispielEn": "Mr. Huber trades in fruit and vegetables."
+  },
+  {
+    "id": 2666,
+    "tr": "susmak",
+    "en": "to stay silent",
+    "beispiel": "Bei diesem Thema schweigt er lieber.",
+    "beispielTr": "Bu konuda susmayı tercih ediyor.",
+    "beispielEn": "He prefers to stay silent on this topic."
+  },
+  {
+    "id": 2618,
+    "tr": "gölge",
+    "en": "shadow",
+    "beispiel": "Der Baum wirft einen langen Schatten auf die Wiese.",
+    "beispielTr": "Ağaç çimenliğin üzerine uzun bir gölge düşürüyor.",
+    "beispielEn": "The tree casts a long shadow on the lawn."
+  },
+  {
+    "id": 2827,
+    "tr": "olgu",
+    "en": "fact",
+    "beispiel": "Diese Zahlen sind Tatsachen, keine Meinungen.",
+    "beispielTr": "Bu sayılar birer olgudur, görüş değil.",
+    "beispielEn": "These numbers are facts, not opinions."
+  },
+  {
+    "id": 2191,
+    "tr": "kapıyı çalmak",
+    "en": "to knock",
+    "beispiel": "Es hat gerade jemand an die Tür geklopft.",
+    "beispielTr": "Az önce biri kapıyı çaldı.",
+    "beispielEn": "Someone just knocked on the door."
+  },
+  {
+    "id": 1679,
+    "tr": "pislik",
+    "en": "dirt",
+    "beispiel": "Nach dem Regen war das Auto voller Dreck.",
+    "beispielTr": "Yağmurdan sonra araba pislik içindeydi.",
+    "beispielEn": "After the rain the car was covered in dirt."
+  },
+  {
+    "id": 2377,
+    "tr": "zahmet",
+    "en": "trouble",
+    "beispiel": "Vielen Dank für Ihre Mühe!",
+    "beispielTr": "Zahmetiniz için çok teşekkürler!",
+    "beispielEn": "Thank you very much for your trouble!"
+  },
+  {
+    "id": 2196,
+    "tr": "kemik",
+    "en": "bone",
+    "beispiel": "Der Hund hat einen Knochen im Garten vergraben.",
+    "beispielTr": "Köpek bahçeye bir kemik gömdü.",
+    "beispielEn": "The dog buried a bone in the garden."
+  },
+  {
+    "id": 1692,
+    "tr": "aynı şekilde",
+    "en": "likewise",
+    "beispiel": "Er arbeitet viel und seine Frau ebenso.",
+    "beispielTr": "O çok çalışıyor, karısı da aynı şekilde.",
+    "beispielEn": "He works a lot, and so does his wife."
+  },
+  {
+    "id": 1583,
+    "tr": "sunmak",
+    "en": "to offer",
+    "beispiel": "Die Firma bietet ihren Mitarbeitern kostenlose Sprachkurse.",
+    "beispielTr": "Şirket çalışanlarına ücretsiz dil kursları sunuyor.",
+    "beispielEn": "The company offers its employees free language courses."
+  },
+  {
+    "id": 1518,
+    "tr": "tedavi etmek",
+    "en": "to treat",
+    "beispiel": "Welcher Arzt hat Sie bisher behandelt?",
+    "beispielTr": "Sizi şimdiye kadar hangi doktor tedavi etti?",
+    "beispielEn": "Which doctor has treated you so far?"
+  }
+]

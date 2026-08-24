@@ -1,0 +1,402 @@
+[
+  {
+    "id": 2229,
+    "tr": "elektrik santrali",
+    "en": "power plant",
+    "beispiel": "Die Menschen protestieren gegen das neue Kraftwerk.",
+    "beispielTr": "İnsanlar yeni elektrik santralini protesto ediyor.",
+    "beispielEn": "People are protesting against the new power plant."
+  },
+  {
+    "id": 3026,
+    "tr": "vekâlet",
+    "en": "substitution",
+    "beispiel": "Während meines Urlaubs übernimmt eine Kollegin die Vertretung.",
+    "beispielTr": "İzindeyken bir meslektaşım bana vekâlet edecek.",
+    "beispielEn": "While I'm on vacation, a colleague will fill in for me."
+  },
+  {
+    "id": 1615,
+    "tr": "oğlan",
+    "en": "boy",
+    "beispiel": "Der Bub spielt mit seinem Hund im Garten.",
+    "beispielTr": "Oğlan bahçede köpeğiyle oynuyor.",
+    "beispielEn": "The boy is playing with his dog in the garden."
+  },
+  {
+    "id": 2590,
+    "tr": "çiğ",
+    "en": "raw",
+    "beispiel": "Das Fleisch ist innen noch roh.",
+    "beispielTr": "Etin içi hâlâ çiğ.",
+    "beispielEn": "The meat is still raw inside."
+  },
+  {
+    "id": 2153,
+    "tr": "demlik",
+    "en": "teapot",
+    "beispiel": "Auf dem Tisch steht eine Kanne heißer Tee.",
+    "beispielTr": "Masada bir demlik sıcak çay duruyor.",
+    "beispielEn": "There's a pot of hot tea on the table."
+  },
+  {
+    "id": 2393,
+    "tr": "özel ders",
+    "en": "tutoring",
+    "beispiel": "Mein Sohn bekommt seit einem Jahr Nachhilfe in Mathe.",
+    "beispielTr": "Oğlum bir yıldır matematikten özel ders alıyor.",
+    "beispielEn": "My son has been getting math tutoring for a year."
+  },
+  {
+    "id": 2864,
+    "tr": "gözyaşı",
+    "en": "tear",
+    "beispiel": "Sie wischte sich die Tränen aus dem Gesicht.",
+    "beispielTr": "Gözyaşlarını yüzünden sildi.",
+    "beispielEn": "She wiped the tears from her face."
+  },
+  {
+    "id": 1721,
+    "tr": "giriş",
+    "en": "introduction",
+    "beispiel": "Am Anfang gab der Dozent eine kurze Einführung.",
+    "beispielTr": "Başta hoca kısa bir giriş yaptı.",
+    "beispielEn": "At the beginning the lecturer gave a short introduction."
+  },
+  {
+    "id": 2498,
+    "tr": "mantar",
+    "en": "mushroom",
+    "beispiel": "Im Herbst sammeln wir im Wald Pilze.",
+    "beispielTr": "Sonbaharda ormanda mantar toplarız.",
+    "beispielEn": "In autumn we pick mushrooms in the forest."
+  },
+  {
+    "id": 1367,
+    "tr": "bulaşık yıkamak",
+    "en": "to wash the dishes",
+    "beispiel": "Ich muss noch das Geschirr abwaschen.",
+    "beispielTr": "Bir de bulaşıkları yıkamam lazım.",
+    "beispielEn": "I still have to wash the dishes."
+  },
+  {
+    "id": 1366,
+    "tr": "aşağı doğru",
+    "en": "downward",
+    "beispiel": "Von dort führt der Weg abwärts ins Tal.",
+    "beispielTr": "Oradan yol aşağı doğru vadiye iniyor.",
+    "beispielEn": "From there the path leads downward into the valley."
+  },
+  {
+    "id": 2094,
+    "tr": "dinleyici",
+    "en": "listener",
+    "beispiel": "Nach dem Vortrag stellten die Zuhörer viele Fragen.",
+    "beispielTr": "Konuşmadan sonra dinleyiciler çok soru sordu.",
+    "beispielEn": "After the talk the listeners asked many questions."
+  },
+  {
+    "id": 2936,
+    "tr": "girişimci",
+    "en": "entrepreneur",
+    "beispiel": "Mein Onkel ist ein erfolgreicher Unternehmer.",
+    "beispielTr": "Amcam başarılı bir girişimci.",
+    "beispielEn": "My uncle is a successful entrepreneur."
+  },
+  {
+    "id": 2279,
+    "tr": "çırak",
+    "en": "apprentice",
+    "beispiel": "Als Lehrling verdient man nicht sehr viel Geld.",
+    "beispielTr": "Çırakken insan pek fazla para kazanmıyor.",
+    "beispielEn": "As an apprentice you don't earn much money."
+  },
+  {
+    "id": 2946,
+    "tr": "sertifika",
+    "en": "certificate",
+    "beispiel": "Wenn wir das Spiel gewinnen, bekommen wir eine Urkunde.",
+    "beispielTr": "Maçı kazanırsak bir sertifika alacağız.",
+    "beispielEn": "If we win the game, we'll get a certificate."
+  },
+  {
+    "id": 2157,
+    "tr": "bozmak",
+    "en": "to break",
+    "beispiel": "Wer hat die Lampe kaputtgemacht?",
+    "beispielTr": "Lambayı kim bozdu?",
+    "beispielEn": "Who broke the lamp?"
+  },
+  {
+    "id": 2261,
+    "tr": "tarım",
+    "en": "agriculture",
+    "beispiel": "Auf dem Land arbeiten die meisten Leute in der Landwirtschaft.",
+    "beispielTr": "Kırsalda insanların çoğu tarımda çalışıyor.",
+    "beispielEn": "In the countryside most people work in agriculture."
+  },
+  {
+    "id": 2938,
+    "tr": "yasak",
+    "en": "prohibited",
+    "beispiel": "Es ist untersagt, hier zu rauchen.",
+    "beispielTr": "Burada sigara içmek yasaktır.",
+    "beispielEn": "Smoking is prohibited here."
+  },
+  {
+    "id": 1547,
+    "tr": "istihdam",
+    "en": "employment",
+    "beispiel": "In dieser Region ist die Beschäftigung stark gestiegen.",
+    "beispielTr": "Bu bölgede istihdam epey arttı.",
+    "beispielEn": "Employment has risen sharply in this region."
+  },
+  {
+    "id": 2397,
+    "tr": "genç nesil",
+    "en": "young generation",
+    "beispiel": "Unser Verein fördert seit Jahren den Nachwuchs.",
+    "beispielTr": "Kulübümüz yıllardır genç nesli destekliyor.",
+    "beispielEn": "Our club has supported the young generation for years."
+  },
+  {
+    "id": 2769,
+    "tr": "hostes",
+    "en": "flight attendant",
+    "beispiel": "Die Stewardess brachte uns etwas zu trinken.",
+    "beispielTr": "Hostes bize içecek bir şey getirdi.",
+    "beispielEn": "The flight attendant brought us something to drink."
+  },
+  {
+    "id": 1848,
+    "tr": "etken",
+    "en": "factor",
+    "beispiel": "Der Preis ist für viele Kunden der wichtigste Faktor.",
+    "beispielTr": "Fiyat, birçok müşteri için en önemli etken.",
+    "beispielEn": "For many customers the price is the most important factor."
+  },
+  {
+    "id": 2358,
+    "tr": "kadın çalışan",
+    "en": "female employee",
+    "beispiel": "Unsere neue Mitarbeiterin kommt aus Polen.",
+    "beispielTr": "Yeni çalışanımız Polonyalı.",
+    "beispielEn": "Our new employee is from Poland."
+  },
+  {
+    "id": 2304,
+    "tr": "değmek",
+    "en": "to be worth it",
+    "beispiel": "Die lange Reise hat sich wirklich gelohnt.",
+    "beispielTr": "Uzun yolculuk gerçekten değdi.",
+    "beispielEn": "The long trip was really worth it."
+  },
+  {
+    "id": 1807,
+    "tr": "bilgi almak",
+    "en": "to inquire",
+    "beispiel": "Ich habe mich nach den Zugverbindungen erkundigt.",
+    "beispielTr": "Tren seferleri hakkında bilgi aldım.",
+    "beispielEn": "I inquired about the train connections."
+  },
+  {
+    "id": 3160,
+    "tr": "erişilebilir",
+    "en": "accessible",
+    "beispiel": "Die Bibliothek ist auch für Rollstuhlfahrer zugänglich.",
+    "beispielTr": "Kütüphane tekerlekli sandalye kullananlar için de erişilebilir.",
+    "beispielEn": "The library is also accessible to wheelchair users."
+  },
+  {
+    "id": 3010,
+    "tr": "kaçırmak",
+    "en": "to miss",
+    "beispiel": "Tut mir leid, ich habe die Anmeldefrist versäumt.",
+    "beispielTr": "Üzgünüm, kayıt süresini kaçırdım.",
+    "beispielEn": "I'm sorry, I missed the registration deadline."
+  },
+  {
+    "id": 1911,
+    "tr": "fotoğrafçılık",
+    "en": "photography",
+    "beispiel": "Ich interessiere mich schon lange für Fotografie.",
+    "beispielTr": "Uzun zamandır fotoğrafçılığa ilgi duyuyorum.",
+    "beispielEn": "I've been interested in photography for a long time."
+  },
+  {
+    "id": 2986,
+    "tr": "kadın satıcı",
+    "en": "saleswoman",
+    "beispiel": "Die Verkäuferin hat mir eine andere Größe gebracht.",
+    "beispielTr": "Satıcı bana başka bir beden getirdi.",
+    "beispielEn": "The saleswoman brought me a different size."
+  },
+  {
+    "id": 2551,
+    "tr": "bilgisayar",
+    "en": "computer",
+    "beispiel": "Mein Rechner läuft seit dem Update langsamer.",
+    "beispielTr": "Bilgisayarım güncellemeden beri daha yavaş çalışıyor.",
+    "beispielEn": "My computer has been slower since the update."
+  },
+  {
+    "id": 2646,
+    "tr": "nezle",
+    "en": "runny nose",
+    "beispiel": "Ich habe seit gestern einen starken Schnupfen.",
+    "beispielTr": "Dünden beri ağır bir nezlem var.",
+    "beispielEn": "I've had a bad runny nose since yesterday."
+  },
+  {
+    "id": 3156,
+    "tr": "yemek hazırlamak",
+    "en": "to prepare",
+    "beispiel": "Er bereitet das Abendessen für die Gäste zu.",
+    "beispielTr": "Misafirler için akşam yemeğini hazırlıyor.",
+    "beispielEn": "He is preparing dinner for the guests."
+  },
+  {
+    "id": 2826,
+    "tr": "faaliyet",
+    "en": "activity",
+    "beispiel": "Diese Tätigkeit ist für ältere Menschen zu anstrengend.",
+    "beispielTr": "Bu faaliyet yaşlılar için fazla yorucu.",
+    "beispielEn": "This activity is too strenuous for older people."
+  },
+  {
+    "id": 1830,
+    "tr": "sirke",
+    "en": "vinegar",
+    "beispiel": "Am Salat fehlt noch etwas Essig.",
+    "beispielTr": "Salatada biraz sirke eksik.",
+    "beispielEn": "The salad needs a bit more vinegar."
+  },
+  {
+    "id": 3126,
+    "tr": "sözlük",
+    "en": "dictionary",
+    "beispiel": "Ich muss das Wort im Wörterbuch nachschlagen.",
+    "beispielTr": "Bu kelimeye sözlükten bakmam lazım.",
+    "beispielEn": "I have to look up the word in the dictionary."
+  },
+  {
+    "id": 2823,
+    "tr": "tuş",
+    "en": "key",
+    "beispiel": "An meiner Tastatur klemmt eine Taste.",
+    "beispielTr": "Klavyemde bir tuş sıkışıyor.",
+    "beispielEn": "One key on my keyboard is stuck."
+  },
+  {
+    "id": 2384,
+    "tr": "kas",
+    "en": "muscle",
+    "beispiel": "Nach dem Training tun mir alle Muskeln weh.",
+    "beispielTr": "Antrenmandan sonra bütün kaslarım ağrıyor.",
+    "beispielEn": "After the workout all my muscles hurt."
+  },
+  {
+    "id": 1551,
+    "tr": "sınırlamak",
+    "en": "to limit",
+    "beispiel": "Wir müssen unsere Ausgaben etwas beschränken.",
+    "beispielTr": "Harcamalarımızı biraz sınırlamamız gerekiyor.",
+    "beispielEn": "We have to limit our spending a bit."
+  },
+  {
+    "id": 2843,
+    "tr": "ajanda",
+    "en": "planner",
+    "beispiel": "Hast du unser Treffen schon in deinen Terminkalender eingetragen?",
+    "beispielTr": "Buluşmamızı ajandana yazdın mı?",
+    "beispielEn": "Have you already put our meeting in your planner?"
+  },
+  {
+    "id": 2786,
+    "tr": "cezalandırılabilir",
+    "en": "punishable",
+    "beispiel": "Diese Tat ist nach dem Gesetz strafbar.",
+    "beispielTr": "Bu eylem yasaya göre cezalandırılabilir.",
+    "beispielEn": "This act is punishable by law."
+  },
+  {
+    "id": 2888,
+    "tr": "sollamak",
+    "en": "to overtake",
+    "beispiel": "Der Lastwagen überholte uns auf der Autobahn.",
+    "beispielTr": "Kamyon otoyolda bizi solladı.",
+    "beispielEn": "The truck overtook us on the highway."
+  },
+  {
+    "id": 3172,
+    "tr": "olumlu yanıt vermek",
+    "en": "to accept",
+    "beispiel": "Ich habe der Einladung gestern schon zugesagt.",
+    "beispielTr": "Davete dün olumlu yanıt verdim.",
+    "beispielEn": "I accepted the invitation yesterday."
+  },
+  {
+    "id": 2750,
+    "tr": "istatistik",
+    "en": "statistics",
+    "beispiel": "Die Statistik zeigt, dass jeder zweite ein Fahrrad besitzt.",
+    "beispielTr": "İstatistik, her iki kişiden birinin bisikleti olduğunu gösteriyor.",
+    "beispielEn": "The statistics show that every second person owns a bicycle."
+  },
+  {
+    "id": 1515,
+    "tr": "gerekçe",
+    "en": "justification",
+    "beispiel": "Die Miete wurde ohne Begründung erhöht.",
+    "beispielTr": "Kira, hiçbir gerekçe gösterilmeden artırıldı.",
+    "beispielEn": "The rent was raised without any justification."
+  },
+  {
+    "id": 2838,
+    "tr": "katılım",
+    "en": "participation",
+    "beispiel": "Die Teilnahme am Gewinnspiel ist kostenlos.",
+    "beispielTr": "Çekilişe katılım ücretsiz.",
+    "beispielEn": "Participation in the contest is free."
+  },
+  {
+    "id": 2790,
+    "tr": "grev yapmak",
+    "en": "to strike",
+    "beispiel": "Die Arbeiter streiken für höhere Löhne.",
+    "beispielTr": "İşçiler daha yüksek ücret için grev yapıyor.",
+    "beispielEn": "The workers are striking for higher wages."
+  },
+  {
+    "id": 2861,
+    "tr": "geleneksel",
+    "en": "traditional",
+    "beispiel": "Meine Großeltern leben noch sehr traditionell.",
+    "beispielTr": "Dedemler hâlâ çok geleneksel yaşıyor.",
+    "beispielEn": "My grandparents still live very traditionally."
+  },
+  {
+    "id": 1382,
+    "tr": "alfabe",
+    "en": "alphabet",
+    "beispiel": "Wie viele Buchstaben hat das Alphabet in Ihrer Sprache?",
+    "beispielTr": "Sizin dilinizde alfabede kaç harf var?",
+    "beispielEn": "How many letters does the alphabet have in your language?"
+  },
+  {
+    "id": 1664,
+    "tr": "dijital",
+    "en": "digital",
+    "beispiel": "Alle unsere Fotos sind inzwischen digital.",
+    "beispielTr": "Bütün fotoğraflarımız artık dijital.",
+    "beispielEn": "All our photos are digital now."
+  },
+  {
+    "id": 1349,
+    "tr": "kopya çekmek",
+    "en": "to copy",
+    "beispiel": "Er hat die Hausaufgaben von mir abgeschrieben.",
+    "beispielTr": "Ödevi benden kopya çekti.",
+    "beispielEn": "He copied the homework from me."
+  }
+]
