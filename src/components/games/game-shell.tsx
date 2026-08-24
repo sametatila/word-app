@@ -1,8 +1,9 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mascot } from "@/components/mascot";
+import { useStill } from "@/lib/use-still";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -128,24 +129,81 @@ function VerdictBar({
   verdict: "correct" | "wrong" | null;
   feedback?: ReactNode;
 }) {
+  const still = useStill();
+  /*
+    Arada bir (her seferinde DEĞİL — sürpriz sık tekrar edince gürültü olur)
+    şeridi Erdi'nin kendisi getiriyor ya da götürüyor: "push"ta şerit soldan,
+    arkasında iterek yürüyen mirketle girer; "pull"da şerit kapanırken sağdan
+    yapışan mirket onu sürükleyerek çıkarır. Kliplerdeki duruşlar buna göre
+    üretildi: push sağa dönük ileri iter, pull sola dönük geri geri çeker.
+    Zar, şerit her yeniden kurulduğunda bir kez atılır.
+  */
+  const fx = useMemo<"push" | "pull" | null>(() => {
+    if (!verdict || still) return null;
+    const r = Math.random();
+    return r < 0.18 ? "push" : r < 0.36 ? "pull" : null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [verdict, still]);
+
   // Şerit yalnızca söyleyecek sözü olan oyunlarda var. Eşleştirme ve tanıtım
   // kartında cevaptan sonra gösterilecek bir düzeltme yok; orada boş bir şerit
   // ekranın dibinde 80 piksel ölü alan demek olurdu.
   if (!feedback) return null;
 
   return (
-    <div className="mt-4 min-h-[4.5rem] shrink-0">
+    /* overflow-hidden: koreografide şerit ve mirket kenardan girip çıkıyor;
+       taşan kısım sayfaya yatay kaydırma çubuğu açmasın. */
+    <div className="mt-4 min-h-[4.5rem] shrink-0 overflow-hidden">
       <AnimatePresence initial={false}>
         {verdict ? (
           <motion.div
             key={verdict}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className={`verdict flex min-h-[4.5rem] items-center gap-1 py-1 pl-1 pr-4 text-left text-sm font-semibold ${
+            initial={fx === "push" ? { x: "-110%", opacity: 1 } : { opacity: 0, y: 10 }}
+            animate={fx === "push" ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
+            exit={
+              fx === "pull"
+                ? { x: "110%", transition: { duration: 0.7, ease: "easeIn" } }
+                : { opacity: 0, transition: { duration: 0 } }
+            }
+            transition={
+              fx === "push"
+                ? { duration: 0.8, ease: "easeOut" }
+                : { duration: 0.2, ease: [0.22, 1, 0.36, 1] }
+            }
+            className={`verdict relative flex min-h-[4.5rem] items-center gap-1 py-1 pl-1 pr-4 text-left text-sm font-semibold ${
               verdict === "correct" ? "verdict-correct" : "verdict-wrong"
             }`}
           >
+            {fx === "push" && (
+              /* Şeridi getiren Erdi — şeridin hemen solunda, onunla birlikte
+                 kayar; şerit yerine oturunca işini bitirip kaybolur. */
+              <motion.img
+                src="/anim/push-right.webp"
+                alt=""
+                aria-hidden
+                draggable={false}
+                className="pointer-events-none absolute bottom-1 h-14 w-auto"
+                style={{ left: -60 }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: [1, 1, 0] }}
+                transition={{ duration: 1.6, times: [0, 0.6, 1] }}
+              />
+            )}
+            {fx === "pull" && (
+              /* Şeridi götüren Erdi — yalnız çıkış sırasında belirir, şeridin
+                 sağından tutup geri geri sürükler. */
+              <motion.img
+                src="/anim/pull-right.webp"
+                alt=""
+                aria-hidden
+                draggable={false}
+                className="pointer-events-none absolute bottom-1 h-14 w-auto"
+                style={{ right: -60 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0 }}
+                exit={{ opacity: 1, transition: { duration: 0.1 } }}
+              />
+            )}
             {/*
               Şeritteki tepki bir onay/çarpı simgesi değil, Erdi'nin kendisi.
               Simge yalnızca "doğru" ya da "yanlış" diyor; renk ve metin zaten
@@ -166,7 +224,7 @@ function VerdictBar({
               transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
               className="shrink-0"
             >
-              <Mascot mood={verdict === "correct" ? "happy" : "sad"} size={48} />
+              <Mascot mood={verdict === "correct" ? "thumbsup" : "sad"} size={48} />
             </motion.span>
             <div className="min-w-0">{feedback}</div>
           </motion.div>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { MascotFx } from "@/components/mascot-fx";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { SKILL_LABELS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
@@ -95,6 +96,7 @@ export function PlayerShell({
 }) {
   return (
     <div className="mx-auto w-full max-w-2xl">
+      <MascotFx />
       <div className="mb-5 flex items-center gap-3">
         <Link href="/skills" aria-label="Becerilere dön" className="btn btn-ghost h-9 w-9 shrink-0">
           <ArrowLeftIcon size={18} />

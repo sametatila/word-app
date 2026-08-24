@@ -32,6 +32,7 @@ import { ShareResult } from "@/components/share-result";
 import { GamePicker } from "@/components/game-picker";
 import { Mascot } from "@/components/mascot";
 import { MascotPop } from "@/components/mascot-pop";
+import { MascotFx } from "@/components/mascot-fx";
 import { Stagger } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
@@ -611,6 +612,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   return (
     <Screen fills>
     <MascotPop trigger={cheer} />
+    <MascotFx />
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
       <div className="mb-2 shrink-0">
         <LevelBadge

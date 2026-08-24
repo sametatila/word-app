@@ -1,0 +1,135 @@
+#!/usr/bin/env python3
+"""Erdi aksiyon klipleri — ai-story'deki Wan 2.2 I2V hattının uyarlaması.
+
+Kullanım: python3 wan-gen.py <aksiyon> [...] | all | loops | states
+Çıktılar: ./anim/raw/<aksiyon>.mp4
+
+Döngü klipleri `last_image` = base görsel ile üretiliyor: ilk ve son kare aynı
+olduğundan animasyon kusursuz döngüye giriyor, karakter uçlara sabitlendiği
+için sürüklenme de azalıyor. Durum klipleri (sad/sleep) iki aşamalı: önce
+nötrden duyguya geçiş klibi, sonra o klibin son halinden seçilen kareyle
+duygunun kendi içinde dönen döngüsü (base'i *-enter çıktısından geliyor).
+"""
+
+import base64
+import sys
+import time
+from pathlib import Path
+
+import requests
+
+BASE = Path(__file__).parent
+ENV = Path("/mnt/windows/Users/LinkinqArk/Desktop/Workspace/ai-story/animated-story/credentials/.env")
+MODEL_VERSION = "4eaf2b01d3bf70d8a2e00b219efeb7cb415855ad18b7dacdc4cae664a73a6eea"  # wan-video/wan-2.2-i2v-fast
+
+SILENT = "silent 2D cartoon animation, mouth closed and completely still, no talking, no lip movement, "
+SUFFIX = ", consistent character design, plain solid white background, no camera movement, full body always visible, character centered"
+
+NEUTRAL = "erdi-white.png"
+WIDE = "erdi-wide.png"  # yürüyüş/itme klipleri: geniş tuval, kuyruk kadrajda kalsın
+
+# ad -> (prompt, base görsel, loop mu)
+ACTIONS = {
+    "lookaround": ("the cute meerkat stands tall like a sentinel and calmly turns its head left, then right, scanning the horizon, ears twitching, tail flicking gently", NEUTRAL, True),
+    "wave": ("the cute meerkat raises one paw and waves hello in a friendly way, its mouth stays firmly closed and completely still the entire time, calm friendly eyes", NEUTRAL, True),
+    "thumbsup": ("the cute meerkat lifts one paw and gives a big thumbs up, nodding once approvingly, proud closed-mouth smile", NEUTRAL, True),
+    "dance": ("the cute meerkat dances with real choreography: steps side to side on the beat, swings its hips left and right, raises alternating arms up in the air, does a playful little spin, taps its feet with rhythm, energetic expressive groovy dance moves, joyful closed-mouth smile, the whole body stays fully inside the frame with clear empty margins on all sides", WIDE, True),
+    "happy": ("the cute meerkat hops up and down joyfully and claps its front paws, big closed-mouth smile", NEUTRAL, True),
+    "celebrate": ("the cute meerkat throws both arms up in victory and jumps in celebration, excited closed-mouth smile", NEUTRAL, True),
+    "think": ("the cute meerkat taps its chin with one paw and glances upward thoughtfully, curious expression", NEUTRAL, True),
+    "peek": ("the cute meerkat keeps both front paws pressed together low in front of its chest and, without moving its arms at all, bends its whole upper body far to one side in a smooth arc, head tilting sideways, peeking curiously at the viewer with big wide playful eyes, then bends smoothly back upright, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    "walk-right": ("the cute meerkat turns to face right and walks in place on its hind legs, side profile view facing right, natural cartoon walking cycle, arms swinging gently, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    "walk-left": ("the cute meerkat turns to face left and walks in place on its hind legs, side profile view facing left, natural cartoon walking cycle, arms swinging gently, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    "push-right": ("the cute meerkat stands in side profile facing right and walks in place on its hind legs, body leaning far forward, both front arms fully outstretched forward at chest height with palms flat and facing forward, slow effortful steps, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    "pull-right": ("the cute meerkat stands in side profile facing left with both front arms outstretched forward at chest height, paws curled downward and gripping, body leaning backward away from its paws, and it takes slow heavy steps walking backward in place, dragging with great effort, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    "sad-enter": ("the cute meerkat slowly becomes sad: ears droop, shoulders slump, head lowers, gazing at the ground, small closed-mouth frown", NEUTRAL, False),
+    "sleep-enter": ("the cute meerkat gets sleepy: eyelids slowly close, head nods down, it dozes off while standing, breathing slowly", NEUTRAL, False),
+    # base'ler *-enter kliplerinden seçilen karelerle oluşturulur (frames2webp sonrası):
+    "sad": ("the sad meerkat stays sad, swaying very slightly, ears drooped, head low, blinking slowly, small closed-mouth frown", "sad-base.png", True),
+    "sleep": ("the meerkat sleeps peacefully while standing, eyes closed, breathing slowly and deeply, chest gently rising and falling", "sleep-base.png", True),
+}
+
+LOOPS = [k for k, v in ACTIONS.items() if v[2] and v[1] == NEUTRAL]
+STATES = ["sad-enter", "sleep-enter"]
+
+
+def load_token():
+    for line in ENV.read_text().splitlines():
+        if line.startswith("REPLICATE_API_TOKEN="):
+            return line.split("=", 1)[1].strip().strip('"')
+    sys.exit("REPLICATE_API_TOKEN yok")
+
+
+def data_uri(path: Path) -> str:
+    return "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode()
+
+
+def generate(token: str, name: str, seed: int) -> bool:
+    prompt, base_img, loop = ACTIONS[name]
+    out = BASE / "anim" / "raw" / f"{name}.mp4"
+    if out.exists():
+        print(f"[skip] {name} zaten var")
+        return True
+    image = BASE / base_img
+    if not image.exists():
+        print(f"[HATA] {name}: base görsel yok: {image.name}")
+        return False
+    inp = {
+        "image": data_uri(image),
+        "prompt": SILENT + prompt + SUFFIX,
+        "num_frames": 81,
+        "resolution": "480p",
+        "frames_per_second": 16,
+        "go_fast": True,
+        "seed": seed,
+    }
+    if loop:
+        inp["last_image"] = inp["image"]
+    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+    r = requests.post("https://api.replicate.com/v1/predictions", headers=headers,
+                      json={"version": MODEL_VERSION, "input": inp}, timeout=180)
+    if r.status_code not in (200, 201, 202):
+        print(f"[HATA] {name}: {r.status_code} {r.text[:300]}")
+        return False
+    pid = r.json()["id"]
+    print(f"[{name}] prediction: {pid}")
+    t0 = time.time()
+    while time.time() - t0 < 900:
+        s = requests.get(f"https://api.replicate.com/v1/predictions/{pid}", headers=headers, timeout=60).json()
+        st = s.get("status")
+        if st == "succeeded":
+            url = s["output"] if isinstance(s["output"], str) else s["output"][0]
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_bytes(requests.get(url, timeout=300).content)
+            print(f"[OK] {name} -> {out.name} ({out.stat().st_size} B, {time.time()-t0:.0f}s)")
+            return True
+        if st in ("failed", "canceled"):
+            print(f"[HATA] {name}: {st}: {s.get('error')}")
+            return False
+        time.sleep(5)
+    print(f"[HATA] {name}: zaman aşımı")
+    return False
+
+
+def main():
+    token = load_token()
+    names = sys.argv[1:] or ["lookaround"]
+    if names == ["all"]:
+        names = LOOPS + STATES
+    elif names == ["loops"]:
+        names = LOOPS
+    elif names == ["states"]:
+        names = STATES
+    ok = 0
+    for i, n in enumerate(names):
+        if n not in ACTIONS:
+            print(f"[?] bilinmeyen aksiyon: {n}")
+            continue
+        if i > 0:
+            time.sleep(10)  # ai-story'deki oran sınırı: istekler arası min 10 sn
+        ok += generate(token, n, seed=5000 + 97 * i)
+    print(f"bitti: {ok}/{len(names)}")
+
+
+if __name__ == "__main__":
+    main()

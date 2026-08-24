@@ -106,7 +106,7 @@ export default function Home() {
               ama ilk karşılaşılan yerde — ana sayfada — hiç yoktu; yani
               uygulamayı açmadan önce kimse onu görmüyordu. */}
           <Reveal delay={0.04}>
-            <Mascot mood="happy" size={132} className="mx-auto mt-6" />
+            <Mascot mood="wave" size={132} className="mx-auto mt-6" />
           </Reveal>
           <Reveal delay={0.06}>
             <h1 className="mt-2 text-4xl font-black leading-tight sm:text-6xl">

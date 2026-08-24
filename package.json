@@ -59,6 +59,7 @@
     "@types/web-push": "^3.6.4",
     "dotenv": "^17.2.3",
     "drizzle-kit": "^0.31.5",
+    "imagetracerjs": "^1.2.6",
     "pg": "^8.22.0",
     "playwright-core": "^1.62.1",
     "sharp": "^0.35.3",
