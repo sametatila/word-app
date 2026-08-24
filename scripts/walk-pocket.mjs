@@ -269,13 +269,22 @@ const SESSION = {
   },
 };
 
-await page.route("**/api/session**", (route) =>
-  route.fulfill({
+let progressPosts = 0;
+await page.route("**/api/session**", (route) => {
+  /*
+    İlerleme yazımı ayrıca sayılıyor.
+
+    Duyulmayan tur cevap üretmiyor ve eskiden ilerleme de yazılmıyordu; sunucu
+    turu yarım görüyor, uygulamaya her girişte AYNI yirmi tur geliyordu.
+    Dışarıdan görülebilen kanıt bu istek.
+  */
+  if (route.request().method() === "POST") progressPosts++;
+  return route.fulfill({
     status: 200,
     contentType: "application/json",
-    body: JSON.stringify(SESSION),
-  }),
-);
+    body: route.request().method() === "POST" ? '{"ok":true}' : JSON.stringify(SESSION),
+  });
+});
 await page.route("**/api/answers**", (route) =>
   route.fulfill({
     status: 200,
@@ -355,6 +364,7 @@ console.log("\n─────────────────────�
 console.log("ekran kapandıktan sonra okunan parça :", after.length);
 console.log("farklı metin                        :", uniq.length);
 console.log("sunucuya giden kayıt                :", sttPosts);
+console.log("ilerleme yazımı                     :", progressPosts);
 if (after.length) {
   const gaps = after.slice(1).map((s, i) => s.ms - after[i].ms);
   console.log("en uzun sessizlik                   :", Math.max(...gaps, 0), "ms");
@@ -377,6 +387,8 @@ const explained = uniq.some((t) => t.includes("duyamıyorum"));
   dışarıdan ayırt edilebiliyor.
 */
 const asNoise = uniq.some((t) => t.includes("Duyamadım")) && !uniq.some((t) => t.includes("Doğrusu"));
+// Duyulmayan turda ilerleme yine de yazılmalı — yoksa aynı tur geri gelir.
+const kept = progressPosts > 0;
 /*
   Erken kapatma ölçütü: sahte tanıyıcı `onend` vermediği için tur yalnızca
   erken kapatma sayesinde ilerleyebilir. Üstelik hızlı ilerlemeli — zaman
@@ -389,7 +401,7 @@ const ok =
     : SCENARIO === "stt-off"
     ? explained
     : SCENARIO === "stt-noise"
-      ? uniq.length >= 3 && asNoise
+      ? uniq.length >= 3 && asNoise && kept
       : uniq.length >= 3;
 console.log(
   ok
@@ -398,7 +410,7 @@ console.log(
       : SCENARIO === "stt-off"
       ? "\nGEÇTİ — donmadı, sebebini sesle söyleyip durdu"
       : SCENARIO === "stt-noise"
-        ? "\nGEÇTİ — güveni düşük metin yanlış sayılmadı"
+        ? "\nGEÇTİ — güveni düşük metin yanlış sayılmadı, ilerleme yine de yazıldı"
         : "\nGEÇTİ — ekran kapalıyken tur ilerledi"
     : "\nKALDI — tur ekran kapalıyken durdu",
 );
