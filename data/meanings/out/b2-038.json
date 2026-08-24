@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5496,
+    "tr": "elle",
+    "en": "manually",
+    "beispiel": "Diesen Schritt muss man leider immer noch manuell erledigen.",
+    "beispielTr": "Bu adımı maalesef hâlâ elle yapmak gerekiyor.",
+    "beispielEn": "This step unfortunately still has to be done manually."
+  },
+  {
+    "id": 5497,
+    "tr": "iklim koruma",
+    "en": "climate protection",
+    "beispiel": "Die Regierung investiert jährlich Milliarden in den Klimaschutz.",
+    "beispielTr": "Hükümet her yıl iklim korumaya milyarlarca euro yatırıyor.",
+    "beispielEn": "The government invests billions in climate protection every year."
+  },
+  {
+    "id": 5498,
+    "tr": "sera gazı",
+    "en": "greenhouse gas",
+    "beispiel": "Der Verkehr verursacht rund ein Fünftel aller Treibhausgase.",
+    "beispielTr": "Ulaşım, tüm sera gazlarının yaklaşık beşte birine yol açıyor.",
+    "beispielEn": "Traffic causes about a fifth of all greenhouse gases."
+  },
+  {
+    "id": 5499,
+    "tr": "karbondioksit",
+    "en": "carbon dioxide",
+    "beispiel": "Wälder nehmen große Mengen Kohlendioxid aus der Luft auf.",
+    "beispielTr": "Ormanlar havadan büyük miktarda karbondioksit emer.",
+    "beispielEn": "Forests absorb large amounts of carbon dioxide from the air."
+  },
+  {
+    "id": 5500,
+    "tr": "hava kirliliği",
+    "en": "air pollution",
+    "beispiel": "In vielen Großstädten ist die Luftverschmutzung deutlich gestiegen.",
+    "beispielTr": "Birçok büyük şehirde hava kirliliği belirgin biçimde arttı.",
+    "beispielEn": "Air pollution has risen sharply in many big cities."
+  },
+  {
+    "id": 5501,
+    "tr": "ince toz",
+    "en": "fine dust",
+    "beispiel": "Der Feinstaub in der Innenstadt gefährdet vor allem ältere Menschen.",
+    "beispielTr": "Şehir merkezindeki ince toz özellikle yaşlıları tehdit ediyor.",
+    "beispielEn": "Fine dust in the city center endangers older people most of all."
+  },
+  {
+    "id": 5502,
+    "tr": "egzoz gazı",
+    "en": "exhaust gas",
+    "beispiel": "Der Katalysator reinigt die Abgase des Motors zuverlässig.",
+    "beispielTr": "Katalizör motorun egzoz gazlarını güvenilir biçimde temizliyor.",
+    "beispielEn": "The catalytic converter reliably cleans the engine's exhaust gases."
+  },
+  {
+    "id": 5503,
+    "tr": "zararlı madde",
+    "en": "pollutant",
+    "beispiel": "Im Boden wurden Schadstoffe aus der alten Fabrik gefunden.",
+    "beispielTr": "Toprakta eski fabrikadan kalma zararlı maddeler bulundu.",
+    "beispielEn": "Pollutants from the old factory were found in the soil."
+  },
+  {
+    "id": 5504,
+    "tr": "çöp ayrıştırma",
+    "en": "waste separation",
+    "beispiel": "In deutschen Haushalten ist die Mülltrennung längst selbstverständlich.",
+    "beispielTr": "Alman evlerinde çöp ayrıştırma çoktan sıradan bir şey oldu.",
+    "beispielEn": "In German households waste separation has long been routine."
+  },
+  {
+    "id": 5505,
+    "tr": "depozitolu şişe",
+    "en": "deposit bottle",
+    "beispiel": "Er bringt die Pfandflaschen jeden Samstag zum Supermarkt zurück.",
+    "beispielTr": "Depozitolu şişeleri her cumartesi markete geri götürüyor.",
+    "beispielEn": "He takes the deposit bottles back to the supermarket every Saturday."
+  },
+  {
+    "id": 5506,
+    "tr": "enerji tüketimi",
+    "en": "energy consumption",
+    "beispiel": "Durch neue Fenster sank der Energieverbrauch des Hauses erheblich.",
+    "beispielTr": "Yeni pencereler sayesinde evin enerji tüketimi belirgin şekilde düştü.",
+    "beispielEn": "New windows brought the house's energy consumption down considerably."
+  },
+  {
+    "id": 5507,
+    "tr": "rüzgâr türbini",
+    "en": "wind turbine",
+    "beispiel": "Hinter dem Dorf drehen sich seit einem Jahr drei Windräder.",
+    "beispielTr": "Köyün arkasında bir yıldır üç rüzgâr türbini dönüyor.",
+    "beispielEn": "Three wind turbines have been turning behind the village for a year."
+  },
+  {
+    "id": 5508,
+    "tr": "güneş paneli",
+    "en": "solar panel",
+    "beispiel": "Die Solaranlage auf dem Dach deckt fast den halben Strombedarf.",
+    "beispielTr": "Çatıdaki güneş paneli elektrik ihtiyacının neredeyse yarısını karşılıyor.",
+    "beispielEn": "The solar panel on the roof covers almost half the electricity demand."
+  },
+  {
+    "id": 5509,
+    "tr": "linyit",
+    "en": "lignite",
+    "beispiel": "Der Ausstieg aus der Braunkohle ist politisch umstritten.",
+    "beispielTr": "Linyitten çıkış siyasi olarak tartışmalı.",
+    "beispielEn": "Phasing out lignite is politically controversial."
+  },
+  {
+    "id": 5510,
+    "tr": "petrol",
+    "en": "crude oil",
+    "beispiel": "Ein großer Teil der Kunststoffe wird aus Erdöl hergestellt.",
+    "beispielTr": "Plastiklerin büyük bir kısmı petrolden üretiliyor.",
+    "beispielEn": "A large part of plastics is made from crude oil."
+  },
+  {
+    "id": 5511,
+    "tr": "enerji dönüşümü",
+    "en": "energy transition",
+    "beispiel": "Die Energiewende kommt langsamer voran als ursprünglich geplant.",
+    "beispielTr": "Enerji dönüşümü başlangıçta planlanandan daha yavaş ilerliyor.",
+    "beispielEn": "The energy transition is progressing more slowly than originally planned."
+  },
+  {
+    "id": 5512,
+    "tr": "içten yanmalı motor",
+    "en": "combustion engine",
+    "beispiel": "Ab 2035 sollen kaum noch Verbrennungsmotoren verkauft werden.",
+    "beispielTr": "2035'ten itibaren neredeyse hiç içten yanmalı motor satılmayacak.",
+    "beispielEn": "From 2035 hardly any combustion engines are to be sold."
+  },
+  {
+    "id": 5513,
+    "tr": "sınır değer",
+    "en": "limit value",
+    "beispiel": "Der gesetzliche Grenzwert für Stickoxide wurde mehrfach überschritten.",
+    "beispielTr": "Azot oksitler için yasal sınır değer defalarca aşıldı.",
+    "beispielEn": "The legal limit value for nitrogen oxides was exceeded several times."
+  },
+  {
+    "id": 5514,
+    "tr": "iklim hedefi",
+    "en": "climate target",
+    "beispiel": "Ohne strengere Vorgaben werden die Klimaziele klar verfehlt.",
+    "beispielTr": "Daha sıkı kurallar olmadan iklim hedefleri açıkça tutturulamayacak.",
+    "beispielEn": "Without stricter rules the climate targets will clearly be missed."
+  },
+  {
+    "id": 5515,
+    "tr": "iklim nötrlüğü",
+    "en": "climate neutrality",
+    "beispiel": "Der Konzern will bis 2040 vollständige Klimaneutralität erreichen.",
+    "beispielTr": "Şirket 2040'a kadar tam iklim nötrlüğüne ulaşmak istiyor.",
+    "beispielEn": "The group wants to reach full climate neutrality by 2040."
+  },
+  {
+    "id": 5516,
+    "tr": "türlerin yok oluşu",
+    "en": "species extinction",
+    "beispiel": "Das weltweite Artensterben schreitet schneller voran als befürchtet.",
+    "beispielTr": "Dünya genelinde türlerin yok oluşu korkulandan daha hızlı ilerliyor.",
+    "beispielEn": "Worldwide species extinction is advancing faster than feared."
+  },
+  {
+    "id": 5517,
+    "tr": "yağmur ormanı",
+    "en": "rainforest",
+    "beispiel": "Für Weideflächen wird jedes Jahr viel Regenwald vernichtet.",
+    "beispielTr": "Her yıl otlak açmak için çok fazla yağmur ormanı yok ediliyor.",
+    "beispielEn": "A lot of rainforest is destroyed every year for pastureland."
+  },
+  {
+    "id": 5518,
+    "tr": "ormansızlaştırma",
+    "en": "deforestation",
+    "beispiel": "Die Abholzung im Amazonasgebiet hat wieder zugenommen.",
+    "beispielTr": "Amazon bölgesindeki ormansızlaştırma yeniden arttı.",
+    "beispielEn": "Deforestation in the Amazon region has increased again."
+  },
+  {
+    "id": 5519,
+    "tr": "deniz seviyesi",
+    "en": "sea level",
+    "beispiel": "Ein steigender Meeresspiegel bedroht viele flache Küstenregionen.",
+    "beispielTr": "Yükselen deniz seviyesi birçok alçak kıyı bölgesini tehdit ediyor.",
+    "beispielEn": "A rising sea level threatens many low-lying coastal regions."
+  },
+  {
+    "id": 5520,
+    "tr": "içme suyu",
+    "en": "drinking water",
+    "beispiel": "In manchen Regionen wird sauberes Trinkwasser immer teurer.",
+    "beispielTr": "Bazı bölgelerde temiz içme suyu giderek pahalılaşıyor.",
+    "beispielEn": "In some regions clean drinking water is getting more expensive."
+  },
+  {
+    "id": 5521,
+    "tr": "atık su",
+    "en": "wastewater",
+    "beispiel": "Das Abwasser der Fabrik floss jahrelang ungeklärt in den Fluss.",
+    "beispielTr": "Fabrikanın atık suyu yıllarca arıtılmadan nehre aktı.",
+    "beispielEn": "The factory's wastewater flowed untreated into the river for years."
+  },
+  {
+    "id": 5522,
+    "tr": "arıtma tesisi",
+    "en": "treatment plant",
+    "beispiel": "Die neue Kläranlage reinigt das Wasser von tausend Haushalten.",
+    "beispielTr": "Yeni arıtma tesisi bin hanenin suyunu temizliyor.",
+    "beispielEn": "The new treatment plant cleans the water of a thousand households."
+  },
+  {
+    "id": 5523,
+    "tr": "su kıtlığı",
+    "en": "water shortage",
+    "beispiel": "Im Sommer führt die Wasserknappheit oft zu strengen Auflagen.",
+    "beispielTr": "Yazın su kıtlığı çoğu zaman sıkı kısıtlamalara yol açıyor.",
+    "beispielEn": "In summer the water shortage often leads to strict restrictions."
+  },
+  {
+    "id": 5524,
+    "tr": "gübre",
+    "en": "fertilizer",
+    "beispiel": "Zu viele Düngemittel schaden dem Grundwasser der Region.",
+    "beispielTr": "Aşırı gübre bölgenin yer altı suyuna zarar veriyor.",
+    "beispielEn": "Too much fertilizer harms the region's groundwater."
+  },
+  {
+    "id": 5525,
+    "tr": "çevre felaketi",
+    "en": "environmental disaster",
+    "beispiel": "Der Unfall im Chemiewerk gilt als schwere Umweltkatastrophe.",
+    "beispielTr": "Kimya fabrikasındaki kaza ağır bir çevre felaketi sayılıyor.",
+    "beispielEn": "The accident at the chemical plant counts as a severe environmental disaster."
+  },
+  {
+    "id": 5526,
+    "tr": "gürültü kirliliği",
+    "en": "noise pollution",
+    "beispiel": "Die Anwohner klagen über die Lärmbelästigung durch den Flughafen.",
+    "beispielTr": "Mahalle sakinleri havalimanının yarattığı gürültü kirliliğinden şikâyetçi.",
+    "beispielEn": "Residents complain about the noise pollution from the airport."
+  },
+  {
+    "id": 5527,
+    "tr": "ozon tabakası",
+    "en": "ozone layer",
+    "beispiel": "Die Ozonschicht erholt sich langsam von den früheren Schäden.",
+    "beispielTr": "Ozon tabakası eski hasarlardan yavaş yavaş toparlanıyor.",
+    "beispielEn": "The ozone layer is slowly recovering from the earlier damage."
+  },
+  {
+    "id": 5528,
+    "tr": "çöp sahası",
+    "en": "landfill",
+    "beispiel": "Auf der Deponie am Stadtrand wird kaum noch Restmüll gelagert.",
+    "beispielTr": "Şehrin kenarındaki çöp sahasında artık pek atık depolanmıyor.",
+    "beispielEn": "Hardly any residual waste is stored at the landfill outside town."
+  },
+  {
+    "id": 5529,
+    "tr": "çevre politikası",
+    "en": "environmental policy",
+    "beispiel": "Die Umweltpolitik der Regierung wird von Fachleuten scharf kritisiert.",
+    "beispielTr": "Hükümetin çevre politikası uzmanlarca sert biçimde eleştiriliyor.",
+    "beispielEn": "The government's environmental policy is sharply criticized by experts."
+  },
+  {
+    "id": 5530,
+    "tr": "emisyon ticareti",
+    "en": "emissions trading",
+    "beispiel": "Der europäische Emissionshandel macht Kohlestrom deutlich teurer.",
+    "beispielTr": "Avrupa emisyon ticareti kömür elektriğini belirgin şekilde pahalılaştırıyor.",
+    "beispielEn": "European emissions trading makes coal power much more expensive."
+  },
+  {
+    "id": 5531,
+    "tr": "tüketim alışkanlığı",
+    "en": "consumer behavior",
+    "beispiel": "Ohne verändertes Konsumverhalten sind die Ziele nicht zu schaffen.",
+    "beispielTr": "Tüketim alışkanlıkları değişmeden bu hedeflere ulaşılamaz.",
+    "beispielEn": "Without changed consumer behavior the targets cannot be reached."
+  },
+  {
+    "id": 5532,
+    "tr": "kullan-at toplumu",
+    "en": "throwaway society",
+    "beispiel": "Reparieren statt kaufen ist eine Antwort auf die Wegwerfgesellschaft.",
+    "beispielTr": "Satın almak yerine tamir etmek, kullan-at toplumuna bir yanıttır.",
+    "beispielEn": "Repairing instead of buying is an answer to the throwaway society."
+  },
+  {
+    "id": 5533,
+    "tr": "mikroplastik",
+    "en": "microplastic",
+    "beispiel": "Selbst in abgelegenen Seen findet man inzwischen Mikroplastik.",
+    "beispielTr": "Artık ıssız göllerde bile mikroplastik bulunuyor.",
+    "beispielEn": "Microplastic is now found even in remote lakes."
+  },
+  {
+    "id": 5534,
+    "tr": "yeşil elektrik",
+    "en": "green electricity",
+    "beispiel": "Wir beziehen seit letztem Jahr ausschließlich Ökostrom.",
+    "beispielTr": "Geçen yıldan beri yalnızca yeşil elektrik kullanıyoruz.",
+    "beispielEn": "Since last year we have been buying only green electricity."
+  },
+  {
+    "id": 5535,
+    "tr": "ısı pompası",
+    "en": "heat pump",
+    "beispiel": "Die Wärmepumpe ersetzt in vielen Neubauten die alte Gasheizung.",
+    "beispielTr": "Isı pompası birçok yeni binada eski gazlı kombinin yerini alıyor.",
+    "beispielEn": "The heat pump replaces the old gas heating in many new buildings."
+  },
+  {
+    "id": 5536,
+    "tr": "yük bindirmek",
+    "en": "to burden",
+    "beispiel": "Der viele Verpackungsmüll belastet die Umwelt zusätzlich.",
+    "beispielTr": "Bunca ambalaj çöpü çevreye ayrıca yük bindiriyor.",
+    "beispielEn": "All this packaging waste puts an extra burden on the environment."
+  },
+  {
+    "id": 5537,
+    "tr": "tasarruf etmek",
+    "en": "to save",
+    "beispiel": "Durch neue Geräte können wir viel Strom einsparen.",
+    "beispielTr": "Yeni cihazlarla çok elektrik tasarruf edebiliriz.",
+    "beispielEn": "With new appliances we can save a lot of electricity."
+  },
+  {
+    "id": 5538,
+    "tr": "üretmek",
+    "en": "to generate",
+    "beispiel": "Das Kraftwerk erzeugt Strom fast ausschließlich aus Wasserkraft.",
+    "beispielTr": "Santral elektriği neredeyse tamamen su gücünden üretiyor.",
+    "beispielEn": "The power plant generates electricity almost entirely from water power."
+  },
+  {
+    "id": 5539,
+    "tr": "salmak",
+    "en": "to emit",
+    "beispiel": "Ein Flug nach New York stößt mehrere Tonnen Kohlendioxid aus.",
+    "beispielTr": "New York'a yapılan bir uçuş birkaç ton karbondioksit salıyor.",
+    "beispielEn": "A flight to New York emits several tons of carbon dioxide."
+  },
+  {
+    "id": 5540,
+    "tr": "korumak",
+    "en": "to preserve",
+    "beispiel": "Wir müssen diese Landschaft für die nächsten Generationen bewahren.",
+    "beispielTr": "Bu doğayı gelecek kuşaklar için korumak zorundayız.",
+    "beispielEn": "We have to preserve this landscape for the coming generations."
+  },
+  {
+    "id": 5541,
+    "tr": "arıtmak",
+    "en": "to treat",
+    "beispiel": "Das Werk bereitet gebrauchtes Wasser für die Industrie auf.",
+    "beispielTr": "Tesis kullanılmış suyu sanayi için arıtıyor.",
+    "beispielEn": "The plant treats used water for industry."
+  },
+  {
+    "id": 5542,
+    "tr": "yalıtmak",
+    "en": "to insulate",
+    "beispiel": "Wer sein Dach gut dämmt, spart im Winter viel Heizöl.",
+    "beispielTr": "Çatısını iyi yalıtan biri kışın çok yakıt tasarrufu yapar.",
+    "beispielEn": "Whoever insulates their roof well saves a lot of heating oil in winter."
+  },
+  {
+    "id": 5543,
+    "tr": "kurumak",
+    "en": "to dry up",
+    "beispiel": "Der kleine Bach ist im vergangenen Sommer völlig ausgetrocknet.",
+    "beispielTr": "Küçük dere geçen yaz tamamen kurudu.",
+    "beispielEn": "The little stream dried up completely last summer."
+  },
+  {
+    "id": 5544,
+    "tr": "yükselmek",
+    "en": "to rise",
+    "beispiel": "Die Durchschnittstemperatur ist seit 1900 deutlich angestiegen.",
+    "beispielTr": "Ortalama sıcaklık 1900'den bu yana belirgin biçimde yükseldi.",
+    "beispielEn": "The average temperature has risen noticeably since 1900."
+  },
+  {
+    "id": 5545,
+    "tr": "zehirlemek",
+    "en": "to contaminate",
+    "beispiel": "Auslaufendes Öl hat den Boden im Hafen verseucht.",
+    "beispielTr": "Sızan petrol limandaki toprağı zehirledi.",
+    "beispielEn": "Leaking oil contaminated the ground in the harbor."
+  }
+]

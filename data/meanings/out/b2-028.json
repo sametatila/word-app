@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4995,
+    "tr": "günü gününe güncel",
+    "en": "up-to-date",
+    "beispiel": "Die App liefert tagesaktuelle Meldungen aus der ganzen Region.",
+    "beispielTr": "Uygulama tüm bölgeden günü gününe haber veriyor.",
+    "beispielEn": "The app delivers up-to-date news from the whole region."
+  },
+  {
+    "id": 4996,
+    "tr": "oturma izni",
+    "en": "residence title",
+    "beispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
+    "beispielTr": "Geçerli bir oturma izni olmadan burada çalışamazsın.",
+    "beispielEn": "Without a valid residence title you may not work here."
+  },
+  {
+    "id": 4997,
+    "tr": "süresiz oturma izni",
+    "en": "permanent residence permit",
+    "beispiel": "Nach fünf Jahren kann sie eine Niederlassungserlaubnis bekommen.",
+    "beispielTr": "Beş yıl sonra süresiz oturma izni alabilir.",
+    "beispielEn": "After five years she can get a permanent residence permit."
+  },
+  {
+    "id": 4998,
+    "tr": "vatandaşlığa geçiş",
+    "en": "naturalization",
+    "beispiel": "Die Einbürgerung wurde nach acht Monaten Prüfung genehmigt.",
+    "beispielTr": "Vatandaşlığa geçiş sekiz aylık incelemenin ardından onaylandı.",
+    "beispielEn": "The naturalization was approved after eight months of review."
+  },
+  {
+    "id": 4999,
+    "tr": "yabancılar dairesi",
+    "en": "immigration office",
+    "beispiel": "Die Ausländerbehörde hat mir einen Termin im Mai gegeben.",
+    "beispielTr": "Yabancılar dairesi bana mayısta bir randevu verdi.",
+    "beispielEn": "The immigration office gave me an appointment in May."
+  },
+  {
+    "id": 5000,
+    "tr": "uyum kursu",
+    "en": "integration course",
+    "beispiel": "Der Integrationskurs endet mit einer schriftlichen und einer mündlichen Prüfung.",
+    "beispielTr": "Uyum kursu yazılı ve sözlü bir sınavla sona eriyor.",
+    "beispielEn": "The integration course ends with a written and an oral exam."
+  },
+  {
+    "id": 5001,
+    "tr": "tanınma",
+    "en": "recognition",
+    "beispiel": "Die Anerkennung ihres Diploms dauerte fast ein Jahr.",
+    "beispielTr": "Diplomasının tanınması neredeyse bir yıl sürdü.",
+    "beispielEn": "The recognition of her diploma took almost a year."
+  },
+  {
+    "id": 5002,
+    "tr": "denklik",
+    "en": "equivalence",
+    "beispiel": "Das Amt prüft die Gleichwertigkeit des ausländischen Berufsabschlusses.",
+    "beispielTr": "Kurum, yurt dışındaki meslek diplomasının denkliğini inceliyor.",
+    "beispielEn": "The office checks the equivalence of the foreign qualification."
+  },
+  {
+    "id": 5003,
+    "tr": "aile birleşimi",
+    "en": "family reunification",
+    "beispiel": "Beim Familiennachzug muss der Lebensunterhalt gesichert sein.",
+    "beispielTr": "Aile birleşiminde geçimin güvence altında olması gerekiyor.",
+    "beispielEn": "For family reunification the livelihood must be secured."
+  },
+  {
+    "id": 5004,
+    "tr": "ret kararı",
+    "en": "rejection notice",
+    "beispiel": "Gegen den Ablehnungsbescheid kann man innerhalb eines Monats klagen.",
+    "beispielTr": "Ret kararına karşı bir ay içinde dava açılabilir.",
+    "beispielEn": "You can take legal action against the rejection notice within a month."
+  },
+  {
+    "id": 5005,
+    "tr": "yasak süresi",
+    "en": "ban period",
+    "beispiel": "Nach der Ausweisung gilt eine Sperrfrist von drei Jahren.",
+    "beispielTr": "Sınır dışı edildikten sonra üç yıllık yasak süresi başlıyor.",
+    "beispielEn": "After the deportation a three-year ban period applies."
+  },
+  {
+    "id": 5006,
+    "tr": "doğum belgesi",
+    "en": "birth certificate",
+    "beispiel": "Bitte bringen Sie die Geburtsurkunde Ihres Kindes im Original mit.",
+    "beispielTr": "Lütfen çocuğunuzun doğum belgesinin aslını yanınızda getirin.",
+    "beispielEn": "Please bring the original birth certificate of your child."
+  },
+  {
+    "id": 5007,
+    "tr": "adli sicil kaydı",
+    "en": "criminal record certificate",
+    "beispiel": "Für die Einbürgerung wird ein aktuelles Führungszeugnis verlangt.",
+    "beispielTr": "Vatandaşlığa geçiş için güncel bir adli sicil kaydı isteniyor.",
+    "beispielEn": "A current criminal record certificate is required for naturalization."
+  },
+  {
+    "id": 5008,
+    "tr": "geçim",
+    "en": "livelihood",
+    "beispiel": "Sie muss ihren Lebensunterhalt ohne staatliche Hilfe bestreiten.",
+    "beispielTr": "Geçimini devlet yardımı olmadan sağlamak zorunda.",
+    "beispielEn": "She has to earn her livelihood without state support."
+  },
+  {
+    "id": 5009,
+    "tr": "sağlık sigortası",
+    "en": "health insurance",
+    "beispiel": "Ohne Krankenversicherung wird der Antrag gar nicht erst geprüft.",
+    "beispielTr": "Sağlık sigortası olmadan başvuru hiç incelenmiyor bile.",
+    "beispielEn": "Without health insurance the application is not even reviewed."
+  },
+  {
+    "id": 5010,
+    "tr": "iltica süreci",
+    "en": "asylum procedure",
+    "beispiel": "Das Asylverfahren zieht sich seit mehr als zwei Jahren hin.",
+    "beispielTr": "İltica süreci iki yıldan fazladır uzayıp gidiyor.",
+    "beispielEn": "The asylum procedure has been dragging on for over two years."
+  },
+  {
+    "id": 5011,
+    "tr": "mülteci",
+    "en": "refugee",
+    "beispiel": "Die Stadt hat im vergangenen Jahr dreihundert Flüchtlinge aufgenommen.",
+    "beispielTr": "Şehir geçen yıl üç yüz mülteci kabul etti.",
+    "beispielEn": "The city took in three hundred refugees last year."
+  },
+  {
+    "id": 5012,
+    "tr": "üniversite diploması",
+    "en": "university degree",
+    "beispiel": "Für dieses Visum ist ein anerkannter Hochschulabschluss Bedingung.",
+    "beispielTr": "Bu vize için tanınmış bir üniversite diploması şart.",
+    "beispielEn": "A recognized university degree is a condition for this visa."
+  },
+  {
+    "id": 5013,
+    "tr": "katılım",
+    "en": "participation",
+    "beispiel": "Der Verein kämpft für die Teilhabe behinderter Kinder am Sport.",
+    "beispielTr": "Dernek, engelli çocukların spora katılımı için mücadele ediyor.",
+    "beispielEn": "The club fights for disabled children's participation in sports."
+  },
+  {
+    "id": 5014,
+    "tr": "randevu verme",
+    "en": "appointment scheduling",
+    "beispiel": "Die Terminvergabe läuft inzwischen nur noch online.",
+    "beispielTr": "Randevu verme işlemi artık yalnızca internetten yürüyor.",
+    "beispielEn": "Appointments are now scheduled only online."
+  },
+  {
+    "id": 5015,
+    "tr": "pasaport",
+    "en": "passport",
+    "beispiel": "Mein Reisepass läuft in drei Monaten ab.",
+    "beispielTr": "Pasaportumun süresi üç ay sonra doluyor.",
+    "beispielEn": "My passport expires in three months."
+  },
+  {
+    "id": 5016,
+    "tr": "taahhütname",
+    "en": "declaration of commitment",
+    "beispiel": "Mein Onkel hat für den Besuch eine Verpflichtungserklärung unterschrieben.",
+    "beispielTr": "Amcam ziyaret için bir taahhütname imzaladı.",
+    "beispielEn": "My uncle signed a declaration of commitment for the visit."
+  },
+  {
+    "id": 5017,
+    "tr": "vatandaş hizmetleri bürosu",
+    "en": "citizen service office",
+    "beispiel": "Im Bürgerbüro kannst du deine neue Adresse anmelden.",
+    "beispielTr": "Yeni adresini vatandaş hizmetleri bürosunda kaydettirebilirsin.",
+    "beispielEn": "You can register your new address at the citizen service office."
+  },
+  {
+    "id": 5018,
+    "tr": "gelip yerleşme",
+    "en": "influx",
+    "beispiel": "Der starke Zuzug junger Familien verändert das Viertel spürbar.",
+    "beispielTr": "Genç ailelerin akın akın gelip yerleşmesi mahalleyi belirgin biçimde değiştiriyor.",
+    "beispielEn": "The strong influx of young families is visibly changing the neighborhood."
+  },
+  {
+    "id": 5019,
+    "tr": "gelir getiren çalışma",
+    "en": "gainful employment",
+    "beispiel": "Eine selbstständige Erwerbstätigkeit ist mit diesem Titel nicht gestattet.",
+    "beispielTr": "Bu belgeyle serbest meslek olarak çalışmaya izin verilmiyor.",
+    "beispielEn": "Self-employment is not permitted with this residence title."
+  },
+  {
+    "id": 5020,
+    "tr": "kalma hakkı",
+    "en": "right to stay",
+    "beispiel": "Die Familie kämpft seit Jahren um ein sicheres Bleiberecht.",
+    "beispielTr": "Aile yıllardır güvenceli bir kalma hakkı için mücadele ediyor.",
+    "beispielEn": "The family has been fighting for a secure right to stay for years."
+  },
+  {
+    "id": 5021,
+    "tr": "mağduriyet durumu",
+    "en": "hardship case",
+    "beispiel": "In einem Härtefall kann die Kommission eine Ausnahme empfehlen.",
+    "beispielTr": "Mağduriyet durumunda komisyon bir istisna önerebilir.",
+    "beispielEn": "In a hardship case the commission can recommend an exception."
+  },
+  {
+    "id": 5022,
+    "tr": "dil becerileri",
+    "en": "language skills",
+    "beispiel": "Ihre Sprachkenntnisse reichen für den Beruf längst aus.",
+    "beispielTr": "Dil becerileri bu meslek için çoktan yeterli.",
+    "beispielEn": "Her language skills have long been enough for the job."
+  },
+  {
+    "id": 5023,
+    "tr": "seviye",
+    "en": "level",
+    "beispiel": "Für die Ausbildung wird mindestens die Niveaustufe B1 verlangt.",
+    "beispielTr": "Meslek eğitimi için en az B1 seviyesi isteniyor.",
+    "beispielEn": "At least level B1 is required for the training."
+  },
+  {
+    "id": 5024,
+    "tr": "danışma merkezi",
+    "en": "counseling center",
+    "beispiel": "Die Beratungsstelle hilft kostenlos beim Ausfüllen der Formulare.",
+    "beispielTr": "Danışma merkezi formların doldurulmasına ücretsiz yardım ediyor.",
+    "beispielEn": "The counseling center helps fill out the forms for free."
+  },
+  {
+    "id": 5025,
+    "tr": "federal daire",
+    "en": "federal office",
+    "beispiel": "Das zuständige Bundesamt entscheidet über den Antrag.",
+    "beispielTr": "Başvuru hakkında yetkili federal daire karar veriyor.",
+    "beispielEn": "The responsible federal office decides on the application."
+  },
+  {
+    "id": 5026,
+    "tr": "köken dili",
+    "en": "heritage language",
+    "beispiel": "Viele Kinder verlieren ihre Herkunftssprache schon in der Grundschule.",
+    "beispielTr": "Birçok çocuk köken dilini daha ilkokulda yitiriyor.",
+    "beispielEn": "Many children lose their heritage language already in primary school."
+  },
+  {
+    "id": 5027,
+    "tr": "çifte vatandaşlık",
+    "en": "dual citizenship",
+    "beispiel": "Seit der Reform ist die Doppelstaatsangehörigkeit deutlich einfacher geworden.",
+    "beispielTr": "Reformdan bu yana çifte vatandaşlık belirgin biçimde kolaylaştı.",
+    "beispielEn": "Since the reform dual citizenship has become much easier."
+  },
+  {
+    "id": 5028,
+    "tr": "kabul eden ülke",
+    "en": "host country",
+    "beispiel": "Das Aufnahmeland trägt die Kosten der ersten Unterbringung.",
+    "beispielTr": "İlk barınmanın masraflarını kabul eden ülke karşılıyor.",
+    "beispielEn": "The host country covers the costs of the first accommodation."
+  },
+  {
+    "id": 5029,
+    "tr": "bekleme süresi",
+    "en": "waiting time",
+    "beispiel": "Die Wartezeit für einen Termin beträgt derzeit vier Monate.",
+    "beispielTr": "Randevu için bekleme süresi şu anda dört ay.",
+    "beispielEn": "The waiting time for an appointment is currently four months."
+  },
+  {
+    "id": 5030,
+    "tr": "sosyal yardım",
+    "en": "welfare benefit",
+    "beispiel": "Wer Sozialleistungen bezieht, hat es beim Familiennachzug schwerer.",
+    "beispielTr": "Sosyal yardım alan biri aile birleşiminde daha çok zorlanır.",
+    "beispielEn": "Anyone who receives welfare benefits has a harder time with family reunification."
+  },
+  {
+    "id": 5031,
+    "tr": "iş piyasasına erişim",
+    "en": "labor market access",
+    "beispiel": "Nach drei Monaten bekommen sie einen freien Arbeitsmarktzugang.",
+    "beispielTr": "Üç ay sonra iş piyasasına serbest erişim hakkı kazanıyorlar.",
+    "beispielEn": "After three months they get free access to the labor market."
+  },
+  {
+    "id": 5032,
+    "tr": "uyum eğitimi",
+    "en": "adaptation course",
+    "beispiel": "Die Ärztin muss noch einen Anpassungslehrgang im Krankenhaus machen.",
+    "beispielTr": "Doktorun hastanede bir uyum eğitimi daha alması gerekiyor.",
+    "beispielEn": "The doctor still has to do an adaptation course at the hospital."
+  },
+  {
+    "id": 5033,
+    "tr": "dış temsilcilik",
+    "en": "diplomatic mission",
+    "beispiel": "Den Antrag stellt man bei der deutschen Auslandsvertretung im Heimatland.",
+    "beispielTr": "Başvuru, kendi ülkendeki Alman dış temsilciliğine yapılıyor.",
+    "beispielEn": "You file the application at the German mission in your home country."
+  },
+  {
+    "id": 5034,
+    "tr": "karşılama kültürü",
+    "en": "welcoming culture",
+    "beispiel": "Von der viel gelobten Willkommenskultur ist wenig übrig geblieben.",
+    "beispielTr": "Çok övülen karşılama kültüründen geriye pek bir şey kalmadı.",
+    "beispielEn": "Little is left of the much-praised welcoming culture."
+  },
+  {
+    "id": 5035,
+    "tr": "paralel toplum",
+    "en": "parallel society",
+    "beispiel": "Über angebliche Parallelgesellschaften wird oft ohne Belege gestritten.",
+    "beispielTr": "Sözde paralel toplumlar üzerine sık sık dayanaksız tartışılıyor.",
+    "beispielEn": "People often argue about alleged parallel societies without any evidence."
+  },
+  {
+    "id": 5036,
+    "tr": "noter",
+    "en": "notary",
+    "beispiel": "Den Kaufvertrag unterschreiben wir morgen beim Notar.",
+    "beispielTr": "Satış sözleşmesini yarın noterde imzalıyoruz.",
+    "beispielEn": "We are signing the purchase contract at the notary tomorrow."
+  },
+  {
+    "id": 5037,
+    "tr": "ek eğitim",
+    "en": "supplementary training",
+    "beispiel": "Ohne Nachqualifizierung darf er den Beruf hier nicht ausüben.",
+    "beispielTr": "Ek eğitim almadan mesleğini burada yapamaz.",
+    "beispielEn": "Without supplementary training he may not practice the profession here."
+  },
+  {
+    "id": 5038,
+    "tr": "göç",
+    "en": "immigration",
+    "beispiel": "Die Wirtschaft ist auf gezielte Zuwanderung dringend angewiesen.",
+    "beispielTr": "Ekonominin planlı göçe acilen ihtiyacı var.",
+    "beispielEn": "The economy urgently depends on targeted immigration."
+  },
+  {
+    "id": 5039,
+    "tr": "sınav ücreti",
+    "en": "exam fee",
+    "beispiel": "Die Prüfungsgebühr muss vor dem Termin überwiesen werden.",
+    "beispielTr": "Sınav ücretinin randevudan önce havale edilmesi gerekiyor.",
+    "beispielEn": "The exam fee must be transferred before the appointment."
+  },
+  {
+    "id": 5040,
+    "tr": "vermek",
+    "en": "to grant",
+    "beispiel": "Die Arbeitserlaubnis wurde ihm für zwei Jahre erteilt.",
+    "beispielTr": "Çalışma izni ona iki yıllığına verildi.",
+    "beispielEn": "The work permit was granted to him for two years."
+  },
+  {
+    "id": 5041,
+    "tr": "tasdik etmek",
+    "en": "to certify",
+    "beispiel": "Lass die Kopie deines Zeugnisses im Rathaus beglaubigen.",
+    "beispielTr": "Diplomanın fotokopisini belediyede tasdik ettir.",
+    "beispielEn": "Have the copy of your diploma certified at the town hall."
+  },
+  {
+    "id": 5042,
+    "tr": "işleme almak",
+    "en": "to process",
+    "beispiel": "Mein Antrag wird seit sechs Wochen bearbeitet.",
+    "beispielTr": "Başvurum altı haftadır işleme alınmış durumda.",
+    "beispielEn": "My application has been in process for six weeks."
+  },
+  {
+    "id": 5043,
+    "tr": "geri almak",
+    "en": "to revoke",
+    "beispiel": "Nach dem Unfall wurde ihm der Führerschein entzogen.",
+    "beispielTr": "Kazadan sonra ehliyeti geri alındı.",
+    "beispielEn": "His driver's license was revoked after the accident."
+  },
+  {
+    "id": 5044,
+    "tr": "sonradan teslim etmek",
+    "en": "to submit later",
+    "beispiel": "Die fehlende Bescheinigung kannst du bis Freitag nachreichen.",
+    "beispielTr": "Eksik belgeyi cumaya kadar sonradan teslim edebilirsin.",
+    "beispielEn": "You can hand in the missing certificate by Friday."
+  }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4744,
+  "tr": "omurga",
+  "en": "spine",
+  "beispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben.",
+  "beispielTr": "Uzun süre oturmak omurgayı ağır kaldırmaktan daha çok zorlar.",
+  "beispielEn": "Sitting for a long time strains the spine more than heavy lifting."
+ },
+ {
+  "id": 4745,
+  "tr": "vücut direnci",
+  "en": "immune defenses",
+  "beispiel": "Frische Luft und Bewegung stärken die Abwehrkräfte im Winter.",
+  "beispielTr": "Temiz hava ve hareket kışın vücut direncini güçlendirir.",
+  "beispielEn": "Fresh air and exercise strengthen the body's defenses in winter."
+ },
+ {
+  "id": 4746,
+  "tr": "beslenme alışkanlığı",
+  "en": "eating habit",
+  "beispiel": "Alte Essgewohnheiten lassen sich nur mit viel Geduld ändern.",
+  "beispielTr": "Eski beslenme alışkanlıkları ancak çok sabırla değiştirilebilir.",
+  "beispielEn": "Old eating habits can only be changed with a lot of patience."
+ },
+ {
+  "id": 4747,
+  "tr": "sindirim",
+  "en": "digestion",
+  "beispiel": "Nach dem üppigen Essen brauchte seine Verdauung eine Weile.",
+  "beispielTr": "Ağır yemekten sonra sindirimi biraz zaman aldı.",
+  "beispielEn": "After the rich meal his digestion took a while."
+ },
+ {
+  "id": 4748,
+  "tr": "açlık krizi",
+  "en": "craving",
+  "beispiel": "Am späten Abend überfällt mich oft der Heißhunger auf Süßes.",
+  "beispielTr": "Akşamın geç saatlerinde beni sık sık tatlı krizi basar.",
+  "beispielEn": "Late in the evening I often get a craving for sweets."
+ },
+ {
+  "id": 4749,
+  "tr": "tokluk",
+  "en": "fullness",
+  "beispiel": "Das Gefühl der Sättigung setzt erst nach zwanzig Minuten ein.",
+  "beispielTr": "Tokluk hissi ancak yirmi dakika sonra başlar.",
+  "beispielEn": "The feeling of fullness only sets in after twenty minutes."
+ },
+ {
+  "id": 4750,
+  "tr": "sıvı alımı",
+  "en": "fluid intake",
+  "beispiel": "An heißen Tagen ist eine ausreichende Flüssigkeitszufuhr besonders wichtig.",
+  "beispielTr": "Sıcak günlerde yeterli sıvı alımı özellikle önemlidir.",
+  "beispielEn": "On hot days sufficient fluid intake is especially important."
+ },
+ {
+  "id": 4751,
+  "tr": "keyif verici madde",
+  "en": "stimulant",
+  "beispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung.",
+  "beispielTr": "Kahve ve alkol besin değil, keyif verici madde sayılır.",
+  "beispielEn": "Coffee and alcohol count as stimulants, not as food."
+ },
+ {
+  "id": 4752,
+  "tr": "bağımlılık",
+  "en": "dependence",
+  "beispiel": "Der Übergang vom Genuss zur Abhängigkeit verläuft oft unbemerkt.",
+  "beispielTr": "Keyiften bağımlılığa geçiş çoğu zaman fark edilmeden olur.",
+  "beispielEn": "The shift from enjoyment to dependence often goes unnoticed."
+ },
+ {
+  "id": 4753,
+  "tr": "biyolojik ritim",
+  "en": "biorhythm",
+  "beispiel": "Nachtschichten bringen den Biorhythmus komplett durcheinander.",
+  "beispielTr": "Gece vardiyaları biyolojik ritmi tamamen alt üst eder.",
+  "beispielEn": "Night shifts throw your biorhythm completely off."
+ },
+ {
+  "id": 4754,
+  "tr": "şekerleme",
+  "en": "nap",
+  "beispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
+  "beispielTr": "Öğle yemeğinden sonra kısa bir şekerleme insanı şaşırtıcı derecede açar.",
+  "beispielEn": "A short nap after lunch makes you surprisingly alert."
+ },
+ {
+  "id": 4755,
+  "tr": "performans",
+  "en": "performance",
+  "beispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen.",
+  "beispielTr": "Öğleden sonra birçok insanda zihinsel performans düşer.",
+  "beispielEn": "In the afternoon mental performance drops for many people."
+ },
+ {
+  "id": 4756,
+  "tr": "aşırı yüklenme",
+  "en": "overload",
+  "beispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung.",
+  "beispielTr": "Dizdeki ağrılar aşırı yüklenmenin klasik bir sonucudur.",
+  "beispielEn": "The knee pain is a classic result of overload."
+ },
+ {
+  "id": 4757,
+  "tr": "koruyucu bakım",
+  "en": "preventive care",
+  "beispiel": "Zur Vorsorge geht sie einmal im Jahr zum Zahnarzt.",
+  "beispielTr": "Koruyucu bakım için yılda bir kez diş hekimine gidiyor.",
+  "beispielEn": "For preventive care she goes to the dentist once a year."
+ },
+ {
+  "id": 4758,
+  "tr": "antrenman programı",
+  "en": "training plan",
+  "beispiel": "Sein Trainingsplan sieht drei Einheiten pro Woche vor.",
+  "beispielTr": "Antrenman programı haftada üç seans öngörüyor.",
+  "beispielEn": "His training plan calls for three sessions a week."
+ },
+ {
+  "id": 4759,
+  "tr": "kas zorlanması",
+  "en": "muscle strain",
+  "beispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung.",
+  "beispielTr": "Isınmadan insan kolayca kas zorlanması yaşar.",
+  "beispielEn": "Without warming up you easily get a muscle strain."
+ },
+ {
+  "id": 4760,
+  "tr": "berelenme",
+  "en": "bruise",
+  "beispiel": "Der Sturz endete zum Glück nur mit einer Prellung.",
+  "beispielTr": "Düşüş neyse ki sadece bir berelenmeyle bitti.",
+  "beispielEn": "Luckily the fall ended with just a bruise."
+ },
+ {
+  "id": 4761,
+  "tr": "iyileşme",
+  "en": "healing",
+  "beispiel": "Die Heilung des Bruchs dauerte länger als erwartet.",
+  "beispielTr": "Kırığın iyileşmesi beklenenden uzun sürdü.",
+  "beispielEn": "The healing of the fracture took longer than expected."
+ },
+ {
+  "id": 4762,
+  "tr": "ara",
+  "en": "time off",
+  "beispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit.",
+  "beispielTr": "Stresli yılın ardından kendine uzunca bir ara verdi.",
+  "beispielEn": "After the stressful year he took a long time off."
+ },
+ {
+  "id": 4763,
+  "tr": "farkındalık",
+  "en": "mindfulness",
+  "beispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht.",
+  "beispielTr": "Biraz farkındalıkla bedenin ne zaman mola istediğini daha erken anlarsın.",
+  "beispielEn": "With a little mindfulness you notice sooner when your body needs a break."
+ },
+ {
+  "id": 4764,
+  "tr": "duruş",
+  "en": "posture",
+  "beispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen.",
+  "beispielTr": "Ekran başındaki kötü duruş çoğu zaman boyun ağrısına yol açar.",
+  "beispielEn": "Bad posture at the screen often leads to neck pain."
+ },
+ {
+  "id": 4765,
+  "tr": "beden algısı",
+  "en": "body awareness",
+  "beispiel": "Tanzen hat ihr ein ganz neues Körpergefühl gegeben.",
+  "beispielTr": "Dans ona bambaşka bir beden algısı kazandırdı.",
+  "beispielEn": "Dancing has given her a whole new body awareness."
+ },
+ {
+  "id": 4766,
+  "tr": "denge",
+  "en": "counterbalance",
+  "beispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob.",
+  "beispielTr": "Yüzmek onun için ofis işinin mükemmel dengeleyicisi.",
+  "beispielEn": "Swimming is the perfect counterbalance to his office job."
+ },
+ {
+  "id": 4767,
+  "tr": "gece uykusu",
+  "en": "night's sleep",
+  "beispiel": "Der Lärm der Nachbarn stört regelmäßig meine Nachtruhe.",
+  "beispielTr": "Komşuların gürültüsü gece uykumu düzenli olarak bölüyor.",
+  "beispielEn": "The neighbors' noise regularly disturbs my night's sleep."
+ },
+ {
+  "id": 4768,
+  "tr": "derin uyku",
+  "en": "deep sleep",
+  "beispiel": "Im Tiefschlaf erholt sich der Körper am gründlichsten.",
+  "beispielTr": "Beden en iyi derin uykuda toparlanır.",
+  "beispielEn": "The body recovers most thoroughly in deep sleep."
+ },
+ {
+  "id": 4769,
+  "tr": "öz disiplin",
+  "en": "self-discipline",
+  "beispiel": "Frühsport verlangt am Anfang eine Menge Selbstdisziplin.",
+  "beispielTr": "Sabah sporu başlangıçta epeyce öz disiplin ister.",
+  "beispielEn": "Morning exercise takes a lot of self-discipline at first."
+ },
+ {
+  "id": 4770,
+  "tr": "esneme yapmak",
+  "en": "to stretch",
+  "beispiel": "Nach dem Laufen solltest du dich gründlich dehnen.",
+  "beispielTr": "Koşudan sonra iyice esneme yapmalısın.",
+  "beispielEn": "After running you should stretch thoroughly."
+ },
+ {
+  "id": 4771,
+  "tr": "kendini tüketmek",
+  "en": "to wear oneself out",
+  "beispiel": "Er hat sich im ersten Kilometer völlig verausgabt.",
+  "beispielTr": "İlk kilometrede kendini tamamen tüketti.",
+  "beispielEn": "He completely wore himself out in the first kilometer."
+ },
+ {
+  "id": 4772,
+  "tr": "yorulmak",
+  "en": "to get tired",
+  "beispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist.",
+  "beispielTr": "Işık çok zayıfsa gözler çabuk yorulur.",
+  "beispielEn": "Your eyes get tired quickly when the light is too dim."
+ },
+ {
+  "id": 4773,
+  "tr": "alışkanlığı bırakmak",
+  "en": "to give up a habit",
+  "beispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt.",
+  "beispielTr": "Geç saatte atıştırma alışkanlığımı zorlukla bıraktım.",
+  "beispielEn": "I gave up my habit of late-night snacking with real effort."
+ },
+ {
+  "id": 4774,
+  "tr": "kesintisiz uyumak",
+  "en": "to sleep through",
+  "beispiel": "Seit Wochen kann sie nachts nicht mehr durchschlafen.",
+  "beispielTr": "Haftalardır geceleri kesintisiz uyuyamıyor.",
+  "beispielEn": "For weeks she has not been able to sleep through the night."
+ },
+ {
+  "id": 4775,
+  "tr": "güçlendirmek",
+  "en": "to strengthen",
+  "beispiel": "Diese Übung stärkt vor allem den unteren Rücken.",
+  "beispielTr": "Bu egzersiz özellikle bel bölgesini güçlendirir.",
+  "beispielEn": "This exercise mainly strengthens the lower back."
+ },
+ {
+  "id": 4776,
+  "tr": "kasılmak",
+  "en": "to cramp up",
+  "beispiel": "Beim Schwimmen hat sich seine Wade plötzlich verkrampft.",
+  "beispielTr": "Yüzerken baldırı birden kasıldı.",
+  "beispielEn": "While swimming his calf suddenly cramped up."
+ },
+ {
+  "id": 4777,
+  "tr": "ısınmak",
+  "en": "to warm up",
+  "beispiel": "Vor dem Spiel wärmt sich die Mannschaft zwanzig Minuten auf.",
+  "beispielTr": "Maçtan önce takım yirmi dakika ısınıyor.",
+  "beispielEn": "Before the game the team warms up for twenty minutes."
+ },
+ {
+  "id": 4778,
+  "tr": "yığılmak",
+  "en": "to collapse",
+  "beispiel": "Kurz vor dem Ziel brach der Läufer erschöpft zusammen.",
+  "beispielTr": "Bitişe az kala koşucu bitkin hâlde yere yığıldı.",
+  "beispielEn": "Just before the finish the runner collapsed in exhaustion."
+ },
+ {
+  "id": 4779,
+  "tr": "dizginlemek",
+  "en": "to curb",
+  "beispiel": "Beim Buffet muss ich meinen Appetit wirklich zügeln.",
+  "beispielTr": "Açık büfede iştahımı gerçekten dizginlemem gerekiyor.",
+  "beispielEn": "At the buffet I really have to curb my appetite."
+ },
+ {
+  "id": 4780,
+  "tr": "bastırmak",
+  "en": "to suppress",
+  "beispiel": "Im Meeting konnte er ein Gähnen kaum unterdrücken.",
+  "beispielTr": "Toplantıda esnemesini zar zor bastırabildi.",
+  "beispielEn": "In the meeting he could hardly suppress a yawn."
+ },
+ {
+  "id": 4781,
+  "tr": "kendini toparlamak",
+  "en": "to rouse oneself",
+  "beispiel": "Abends kann ich mich kaum noch zum Sport aufraffen.",
+  "beispielTr": "Akşamları kendimi zor toparlayıp spora gidiyorum.",
+  "beispielEn": "In the evening I can barely rouse myself to exercise."
+ },
+ {
+  "id": 4782,
+  "tr": "dayanmak",
+  "en": "to hold out",
+  "beispiel": "Die letzten zwei Kilometer hat sie tapfer durchgehalten.",
+  "beispielTr": "Son iki kilometreye cesurca dayandı.",
+  "beispielEn": "She bravely held out for the last two kilometers."
+ },
+ {
+  "id": 4783,
+  "tr": "yeniden düzenlemek",
+  "en": "to change over",
+  "beispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt.",
+  "beispielTr": "Teşhisten sonra beslenmesini baştan sona yeniden düzenledi.",
+  "beispielEn": "After the diagnosis he completely overhauled his diet."
+ },
+ {
+  "id": 4784,
+  "tr": "uzak durmak",
+  "en": "to avoid",
+  "beispiel": "Seit der Diät meidet sie Zucker fast vollständig.",
+  "beispielTr": "Diyetten beri şekerden neredeyse tamamen uzak duruyor.",
+  "beispielEn": "Since the diet she avoids sugar almost completely."
+ },
+ {
+  "id": 4785,
+  "tr": "kendine tanımak",
+  "en": "to treat oneself",
+  "beispiel": "Am Wochenende gönnt er sich eine lange Mittagspause.",
+  "beispielTr": "Hafta sonu kendine uzun bir öğle molası tanıyor.",
+  "beispielEn": "On the weekend he treats himself to a long lunch break."
+ },
+ {
+  "id": 4786,
+  "tr": "uyuklamak",
+  "en": "to doze",
+  "beispiel": "Im Zug döste ich zwei Stunden vor mich hin.",
+  "beispielTr": "Trende iki saat boyunca kendi hâlimde uyukladım.",
+  "beispielEn": "On the train I dozed for two hours."
+ },
+ {
+  "id": 4787,
+  "tr": "canlandırmak",
+  "en": "to boost",
+  "beispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an.",
+  "beispielTr": "Sabahları soğuk bir duş kan dolaşımını canlandırır.",
+  "beispielEn": "A cold shower in the morning boosts your circulation."
+ },
+ {
+  "id": 4788,
+  "tr": "topallamak",
+  "en": "to limp",
+  "beispiel": "Nach dem Sturz humpelte er den ganzen Weg nach Hause.",
+  "beispielTr": "Düştükten sonra eve kadar bütün yol topalladı.",
+  "beispielEn": "After the fall he limped all the way home."
+ },
+ {
+  "id": 4789,
+  "tr": "dinlenmiş",
+  "en": "rested",
+  "beispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht.",
+  "beispielTr": "Tatilden sonra nihayet yeniden dinlenmiş görünüyordu.",
+  "beispielEn": "After the vacation she finally looked rested again."
+ },
+ {
+  "id": 4790,
+  "tr": "uyuşuk",
+  "en": "sluggish",
+  "beispiel": "Nach dem schweren Essen fühlte ich mich richtig träge.",
+  "beispielTr": "Ağır yemekten sonra kendimi iyice uyuşuk hissettim.",
+  "beispielEn": "After the heavy meal I felt really sluggish."
+ },
+ {
+  "id": 4791,
+  "tr": "zinde",
+  "en": "wide awake",
+  "beispiel": "Nach zwei Tassen Kaffee war er wieder munter.",
+  "beispielTr": "İki fincan kahveden sonra yeniden zinde oldu.",
+  "beispielEn": "After two cups of coffee he was wide awake again."
+ },
+ {
+  "id": 4792,
+  "tr": "dengeli",
+  "en": "balanced",
+  "beispiel": "Eine ausgewogene Ernährung ist wichtiger als jede Diät.",
+  "beispielTr": "Dengeli bir beslenme her diyetten daha önemlidir.",
+  "beispielEn": "A balanced diet is more important than any crash diet."
+ },
+ {
+  "id": 4793,
+  "tr": "ruhsal",
+  "en": "emotional",
+  "beispiel": "Dauerstress belastet den Menschen körperlich und seelisch.",
+  "beispielTr": "Sürekli stres insanı hem bedensel hem ruhsal olarak yıpratır.",
+  "beispielEn": "Constant stress wears people down physically and emotionally."
+ }
+]

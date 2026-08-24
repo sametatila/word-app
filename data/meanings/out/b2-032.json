@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5195,
+    "tr": "partiler üstü",
+    "en": "nonpartisan",
+    "beispiel": "Das Bündnis versteht sich als überparteilich und offen für alle.",
+    "beispielTr": "Birlik kendini partiler üstü ve herkese açık görüyor.",
+    "beispielEn": "The alliance sees itself as nonpartisan and open to everyone."
+  },
+  {
+    "id": 5196,
+    "tr": "bağımsız",
+    "en": "independent",
+    "beispiel": "Ein unabhängiger Gutachter soll die Kosten noch einmal prüfen.",
+    "beispielTr": "Bağımsız bir bilirkişi maliyetleri bir kez daha inceleyecek.",
+    "beispielEn": "An independent expert is to review the costs once more."
+  },
+  {
+    "id": 5197,
+    "tr": "ülke çapında",
+    "en": "nationwide",
+    "beispiel": "Die neue Regelung gilt ab Januar bundesweit.",
+    "beispielTr": "Yeni düzenleme ocak ayından itibaren ülke çapında geçerli.",
+    "beispielEn": "The new rule applies nationwide from January."
+  },
+  {
+    "id": 5198,
+    "tr": "resmî",
+    "en": "official",
+    "beispiel": "Das amtliche Endergebnis liegt erst am Mittwoch vor.",
+    "beispielTr": "Resmî kesin sonuç ancak çarşamba günü belli oluyor.",
+    "beispielEn": "The official final result won't be available until Wednesday."
+  },
+  {
+    "id": 5199,
+    "tr": "muhafazakâr",
+    "en": "conservative",
+    "beispiel": "In ländlichen Regionen wählen die Menschen eher konservativ.",
+    "beispielTr": "Kırsal bölgelerde insanlar daha çok muhafazakâr oy veriyor.",
+    "beispielEn": "In rural areas people tend to vote conservative."
+  },
+  {
+    "id": 5200,
+    "tr": "göz önüne alındığında",
+    "en": "in view of",
+    "beispiel": "Angesichts der leeren Kassen wurden alle Neubauten verschoben.",
+    "beispielTr": "Boş kasalar göz önüne alındığında bütün yeni yapılar ertelendi.",
+    "beispielEn": "In view of the empty coffers all new buildings were postponed."
+  },
+  {
+    "id": 5201,
+    "tr": "avukat",
+    "en": "lawyer",
+    "beispiel": "Mein Rechtsanwalt rät mir, den Bescheid nicht zu akzeptieren.",
+    "beispielTr": "Avukatım tebligatı kabul etmememi öneriyor.",
+    "beispielEn": "My lawyer advises me not to accept the notice."
+  },
+  {
+    "id": 5202,
+    "tr": "fesih",
+    "en": "dissolution",
+    "beispiel": "Die Auflösung des Vertrags erfolgte im gegenseitigen Einvernehmen.",
+    "beispielTr": "Sözleşme karşılıklı anlaşmayla feshedildi.",
+    "beispielEn": "The contract was dissolved by mutual consent."
+  },
+  {
+    "id": 5203,
+    "tr": "kanıt",
+    "en": "proof",
+    "beispiel": "Für diese Behauptung fehlt bis heute jeder Nachweis.",
+    "beispielTr": "Bu iddia için bugüne kadar hiçbir kanıt yok.",
+    "beispielEn": "There is still no proof for this claim."
+  },
+  {
+    "id": 5204,
+    "tr": "evrak",
+    "en": "document",
+    "beispiel": "Bitte bringen Sie alle Unterlagen im Original zum Termin mit.",
+    "beispielTr": "Lütfen bütün evrakları randevuya asıllarıyla getirin.",
+    "beispielEn": "Please bring all the original documents to the appointment."
+  },
+  {
+    "id": 5205,
+    "tr": "para cezası",
+    "en": "fine",
+    "beispiel": "Wer zu schnell fährt, muss mit einem empfindlichen Bußgeld rechnen.",
+    "beispielTr": "Hızlı giden sürücüler yüklü bir para cezasını göze almalı.",
+    "beispielEn": "Anyone who drives too fast must expect a hefty fine."
+  },
+  {
+    "id": 5206,
+    "tr": "yaptırım",
+    "en": "sanction",
+    "beispiel": "Bei wiederholten Verstößen drohen dem Betrieb harte Sanktionen.",
+    "beispielTr": "Tekrarlanan ihlallerde işletmeyi ağır yaptırımlar bekliyor.",
+    "beispielEn": "The company faces tough sanctions for repeated violations."
+  },
+  {
+    "id": 5207,
+    "tr": "ihlal",
+    "en": "violation",
+    "beispiel": "Ein Verstoß gegen die Auflagen führt zum Entzug der Lizenz.",
+    "beispielTr": "Şartların ihlali lisansın geri alınmasına yol açar.",
+    "beispielEn": "A violation of the conditions leads to the loss of the license."
+  },
+  {
+    "id": 5208,
+    "tr": "hafif suç",
+    "en": "misdemeanor",
+    "beispiel": "Für ein solches Vergehen sieht das Gesetz eine Geldbuße vor.",
+    "beispielTr": "Kanun bu tür hafif suçlar için para cezası öngörüyor.",
+    "beispielEn": "For such a misdemeanor the law provides a fine."
+  },
+  {
+    "id": 5209,
+    "tr": "suç",
+    "en": "criminal offense",
+    "beispiel": "Die Zahl der angezeigten Straftaten ist im letzten Jahr gesunken.",
+    "beispielTr": "Bildirilen suçların sayısı geçen yıl azaldı.",
+    "beispielEn": "The number of reported criminal offenses fell last year."
+  },
+  {
+    "id": 5210,
+    "tr": "kabahat",
+    "en": "administrative offense",
+    "beispiel": "Falsches Parken gilt lediglich als Ordnungswidrigkeit, nicht als Straftat.",
+    "beispielTr": "Hatalı park sadece kabahat sayılır, suç değil.",
+    "beispielEn": "Illegal parking counts only as an administrative offense, not a crime."
+  },
+  {
+    "id": 5211,
+    "tr": "yasal dayanak",
+    "en": "legal basis",
+    "beispiel": "Für diese Maßnahme fehlt der Behörde jede Rechtsgrundlage.",
+    "beispielTr": "İdarenin bu tedbir için hiçbir yasal dayanağı yok.",
+    "beispielEn": "The authority has no legal basis for this measure."
+  },
+  {
+    "id": 5212,
+    "tr": "tazminat",
+    "en": "compensation",
+    "beispiel": "Die Fluggesellschaft zahlte den Reisenden eine Entschädigung für die Verspätung.",
+    "beispielTr": "Havayolu şirketi yolculara gecikme için tazminat ödedi.",
+    "beispielEn": "The airline paid the passengers compensation for the delay."
+  },
+  {
+    "id": 5213,
+    "tr": "belediye",
+    "en": "municipality",
+    "beispiel": "Die Gemeinde erhebt für die Müllabfuhr eine jährliche Gebühr.",
+    "beispielTr": "Belediye çöp toplama için yıllık ücret alıyor.",
+    "beispielEn": "The municipality charges an annual fee for garbage collection."
+  },
+  {
+    "id": 5214,
+    "tr": "oturma izni",
+    "en": "residence permit",
+    "beispiel": "Meine Aufenthaltserlaubnis läuft am Ende des Monats ab.",
+    "beispielTr": "Oturma iznim ay sonunda doluyor.",
+    "beispielEn": "My residence permit expires at the end of the month."
+  },
+  {
+    "id": 5215,
+    "tr": "kimlik kartı",
+    "en": "ID card",
+    "beispiel": "Zur Abholung des Pakets benötigen Sie einen gültigen Personalausweis.",
+    "beispielTr": "Paketi teslim almak için geçerli bir kimlik kartı gerekiyor.",
+    "beispielEn": "You need a valid ID card to pick up the package."
+  },
+  {
+    "id": 5216,
+    "tr": "alt kiralama",
+    "en": "subletting",
+    "beispiel": "Eine Untervermietung ist nur mit Erlaubnis des Vermieters zulässig.",
+    "beispielTr": "Alt kiralama ancak ev sahibinin izniyle mümkün.",
+    "beispielEn": "Subletting is only allowed with the landlord's permission."
+  },
+  {
+    "id": 5217,
+    "tr": "kanun yolu",
+    "en": "appeal",
+    "beispiel": "Gegen dieses Urteil sind keine weiteren Rechtsmittel mehr möglich.",
+    "beispielTr": "Bu karara karşı başka kanun yolu kalmadı.",
+    "beispielEn": "No further appeal is possible against this judgment."
+  },
+  {
+    "id": 5218,
+    "tr": "dava",
+    "en": "case",
+    "beispiel": "Das Verfahren gegen den Konzern wurde nach zwei Jahren eingestellt.",
+    "beispielTr": "Şirkete karşı açılan dava iki yıl sonra düştü.",
+    "beispielEn": "The case against the corporation was dropped after two years."
+  },
+  {
+    "id": 5219,
+    "tr": "soruşturma",
+    "en": "investigation",
+    "beispiel": "Die Ermittlungen gegen den Bürgermeister dauern noch an.",
+    "beispielTr": "Belediye başkanına yönelik soruşturma hâlâ sürüyor.",
+    "beispielEn": "The investigation against the mayor is still ongoing."
+  },
+  {
+    "id": 5220,
+    "tr": "savcılık",
+    "en": "prosecutor's office",
+    "beispiel": "Die Staatsanwaltschaft hat Anklage wegen Betrugs erhoben.",
+    "beispielTr": "Savcılık dolandırıcılıktan dava açtı.",
+    "beispielEn": "The prosecutor's office has filed charges for fraud."
+  },
+  {
+    "id": 5221,
+    "tr": "savunma",
+    "en": "defense",
+    "beispiel": "Die Verteidigung beantragte, weitere Zeugen zu laden.",
+    "beispielTr": "Savunma, başka tanıkların da çağrılmasını istedi.",
+    "beispielEn": "The defense asked for more witnesses to be summoned."
+  },
+  {
+    "id": 5222,
+    "tr": "beraat",
+    "en": "acquittal",
+    "beispiel": "Nach langem Prozess endete der Fall mit einem Freispruch.",
+    "beispielTr": "Uzun yargılamanın ardından dava beraatle sonuçlandı.",
+    "beispielEn": "After a long trial the case ended in an acquittal."
+  },
+  {
+    "id": 5223,
+    "tr": "denetimli serbestlik",
+    "en": "probation",
+    "beispiel": "Er erhielt eine Freiheitsstrafe von einem Jahr auf Bewährung.",
+    "beispielTr": "Bir yıllık hapis cezası aldı, ceza denetimli serbestliğe çevrildi.",
+    "beispielEn": "He received a one-year prison sentence on probation."
+  },
+  {
+    "id": 5224,
+    "tr": "yargı",
+    "en": "judiciary",
+    "beispiel": "Die überlastete Justiz braucht dringend mehr Personal.",
+    "beispielTr": "Aşırı yüklenen yargının acilen daha çok personele ihtiyacı var.",
+    "beispielEn": "The overburdened judiciary urgently needs more staff."
+  },
+  {
+    "id": 5225,
+    "tr": "yazışma",
+    "en": "correspondence",
+    "beispiel": "Bewahren Sie den gesamten Schriftverkehr mit dem Amt sorgfältig auf.",
+    "beispielTr": "Daireyle yaptığınız bütün yazışmayı özenle saklayın.",
+    "beispielEn": "Keep all the correspondence with the office carefully."
+  },
+  {
+    "id": 5226,
+    "tr": "madde",
+    "en": "section",
+    "beispiel": "Der zuständige Paragraf regelt die Kündigung von Mietverhältnissen.",
+    "beispielTr": "İlgili madde kira sözleşmesinin feshini düzenliyor.",
+    "beispielEn": "The relevant section governs the termination of tenancies."
+  },
+  {
+    "id": 5227,
+    "tr": "sır saklama yükümlülüğü",
+    "en": "confidentiality",
+    "beispiel": "Ärzte unterliegen gegenüber Dritten einer strengen Schweigepflicht.",
+    "beispielTr": "Doktorlar üçüncü kişilere karşı katı bir sır saklama yükümlülüğü altında.",
+    "beispielEn": "Doctors are bound by strict confidentiality toward third parties."
+  },
+  {
+    "id": 5228,
+    "tr": "dosya",
+    "en": "case file",
+    "beispiel": "Der Anwalt bat um Einsicht in die vollständige Akte.",
+    "beispielTr": "Avukat dosyanın tamamını görmek için izin istedi.",
+    "beispielEn": "The lawyer asked to see the complete case file."
+  },
+  {
+    "id": 5229,
+    "tr": "cebri icra",
+    "en": "compulsory enforcement",
+    "beispiel": "Wenn Sie nicht zahlen, droht die Zwangsvollstreckung in Ihr Vermögen.",
+    "beispielTr": "Ödeme yapmazsanız mal varlığınıza cebri icra uygulanır.",
+    "beispielEn": "If you don't pay, your assets face compulsory enforcement."
+  },
+  {
+    "id": 5230,
+    "tr": "vesayet",
+    "en": "guardianship",
+    "beispiel": "Das Gericht übertrug die Vormundschaft für das Kind der Tante.",
+    "beispielTr": "Mahkeme çocuğun vesayetini teyzesine verdi.",
+    "beispielEn": "The court gave guardianship of the child to the aunt."
+  },
+  {
+    "id": 5231,
+    "tr": "miras",
+    "en": "inheritance",
+    "beispiel": "Er hat die Erbschaft wegen der hohen Schulden ausgeschlagen.",
+    "beispielTr": "Yüksek borçlar yüzünden mirası reddetti.",
+    "beispielEn": "He turned down the inheritance because of the high debts."
+  },
+  {
+    "id": 5232,
+    "tr": "vasiyetname",
+    "en": "will",
+    "beispiel": "Sein Testament wurde nach dem Tod beim Nachlassgericht eröffnet.",
+    "beispielTr": "Vasiyetnamesi ölümünden sonra miras mahkemesinde açıldı.",
+    "beispielEn": "His will was opened at the probate court after his death."
+  },
+  {
+    "id": 5233,
+    "tr": "tapu sicili",
+    "en": "land register",
+    "beispiel": "Der neue Eigentümer wird erst nach Wochen ins Grundbuch eingetragen.",
+    "beispielTr": "Yeni malik ancak haftalar sonra tapu siciline kaydediliyor.",
+    "beispielEn": "The new owner is entered in the land register only weeks later."
+  },
+  {
+    "id": 5234,
+    "tr": "yan giderler hesabı",
+    "en": "utility statement",
+    "beispiel": "Die Nebenkostenabrechnung brachte diesmal eine hohe Nachzahlung.",
+    "beispielTr": "Yan giderler hesabı bu sefer yüksek bir ek ödeme getirdi.",
+    "beispielEn": "This time the utility statement brought a large extra payment."
+  },
+  {
+    "id": 5235,
+    "tr": "dava açmak",
+    "en": "to sue",
+    "beispiel": "Die Mieterin will den Eigentümer wegen der Mieterhöhung verklagen.",
+    "beispielTr": "Kiracı, kira artışı yüzünden ev sahibine dava açmak istiyor.",
+    "beispielEn": "The tenant wants to sue the owner over the rent increase."
+  },
+  {
+    "id": 5236,
+    "tr": "sunmak",
+    "en": "to file",
+    "beispiel": "Wir haben gegen die Entscheidung fristgerecht Beschwerde eingelegt.",
+    "beispielTr": "Karara karşı süresi içinde şikâyet dilekçesi sunduk.",
+    "beispielEn": "We filed a complaint against the decision on time."
+  },
+  {
+    "id": 5237,
+    "tr": "hükmetmek",
+    "en": "to impose",
+    "beispiel": "Das Gericht verhängte gegen ihn eine hohe Geldbuße.",
+    "beispielTr": "Mahkeme onun hakkında yüksek bir para cezasına hükmetti.",
+    "beispielEn": "The court imposed a heavy fine on him."
+  },
+  {
+    "id": 5238,
+    "tr": "cezalandırmak",
+    "en": "to penalize",
+    "beispiel": "Solche Verstöße werden von der Behörde konsequent geahndet.",
+    "beispielTr": "Bu tür ihlaller idare tarafından kararlılıkla cezalandırılıyor.",
+    "beispielEn": "Such violations are consistently penalized by the authorities."
+  },
+  {
+    "id": 5239,
+    "tr": "caymak",
+    "en": "to withdraw",
+    "beispiel": "Sie können den Vertrag innerhalb von vierzehn Tagen widerrufen.",
+    "beispielTr": "Sözleşmeden on dört gün içinde cayabilirsiniz.",
+    "beispielEn": "You can withdraw from the contract within fourteen days."
+  },
+  {
+    "id": 5240,
+    "tr": "süreyle sınırlamak",
+    "en": "to limit in time",
+    "beispiel": "Meine Stelle ist auf ein Jahr befristet.",
+    "beispielTr": "İşim bir yıl süreyle sınırlı.",
+    "beispielEn": "My job is limited to one year."
+  },
+  {
+    "id": 5241,
+    "tr": "hak vermek",
+    "en": "to entitle",
+    "beispiel": "Diese Karte berechtigt Sie zur kostenlosen Nutzung der Bibliothek.",
+    "beispielTr": "Bu kart size kütüphaneyi ücretsiz kullanma hakkı veriyor.",
+    "beispielEn": "This card entitles you to free use of the library."
+  },
+  {
+    "id": 5242,
+    "tr": "sorgulamak",
+    "en": "to question",
+    "beispiel": "Die Polizei vernahm den Zeugen mehr als drei Stunden lang.",
+    "beispielTr": "Polis tanığı üç saatten uzun süre sorguladı.",
+    "beispielEn": "The police questioned the witness for more than three hours."
+  },
+  {
+    "id": 5243,
+    "tr": "adres değişikliğini bildirmek",
+    "en": "to re-register",
+    "beispiel": "Nach dem Umzug müssen Sie sich innerhalb von zwei Wochen ummelden.",
+    "beispielTr": "Taşındıktan sonra iki hafta içinde adres değişikliğinizi bildirmelisiniz.",
+    "beispielEn": "After moving you have to re-register within two weeks."
+  },
+  {
+    "id": 5244,
+    "tr": "tebliğ etmek",
+    "en": "to deliver",
+    "beispiel": "Der Bescheid wurde ihm gestern persönlich zugestellt.",
+    "beispielTr": "Tebligat kendisine dün bizzat tebliğ edildi.",
+    "beispielEn": "The notice was delivered to him in person yesterday."
+  }
+]

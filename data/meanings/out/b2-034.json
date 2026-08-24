@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5295,
+  "tr": "yön bulmak",
+  "en": "to orient oneself",
+  "beispiel": "Ohne Handy konnte er sich in der Altstadt kaum orientieren.",
+  "beispielTr": "Telefon olmadan tarihi merkezde neredeyse hiç yön bulamadı.",
+  "beispielEn": "Without his phone he could barely find his way in the old town."
+ },
+ {
+  "id": 5296,
+  "tr": "baştan başa geçmek",
+  "en": "to cross",
+  "beispiel": "Die Gruppe hat die Wüste in elf Tagen durchquert.",
+  "beispielTr": "Grup çölü on bir günde baştan başa geçti.",
+  "beispielEn": "The group crossed the desert in eleven days."
+ },
+ {
+  "id": 5297,
+  "tr": "yönelmek",
+  "en": "to head for",
+  "beispiel": "Das Schiff steuerte wegen des Sturms einen geschützten Hafen an.",
+  "beispielTr": "Gemi fırtına yüzünden korunaklı bir limana yöneldi.",
+  "beispielEn": "The ship headed for a sheltered harbor because of the storm."
+ },
+ {
+  "id": 5298,
+  "tr": "pazarlamak",
+  "en": "to market",
+  "beispiel": "Die Region vermarktet sich seit Jahren als sanftes Urlaubsziel.",
+  "beispielTr": "Bölge yıllardır kendini doğa dostu bir tatil yeri olarak pazarlıyor.",
+  "beispielEn": "The region has marketed itself as a gentle holiday destination for years."
+ },
+ {
+  "id": 5299,
+  "tr": "kısıtlamak",
+  "en": "to restrict",
+  "beispiel": "Die Stadt will die Zahl der Ferienwohnungen deutlich einschränken.",
+  "beispielTr": "Şehir tatil dairelerinin sayısını belirgin biçimde kısıtlamak istiyor.",
+  "beispielEn": "The city wants to sharply restrict the number of vacation rentals."
+ },
+ {
+  "id": 5300,
+  "tr": "yola çıkmak",
+  "en": "to set off",
+  "beispiel": "Wir sind noch vor Sonnenaufgang zur Hütte aufgebrochen.",
+  "beispielTr": "Daha gün doğmadan dağ evine doğru yola çıktık.",
+  "beispielEn": "We set off for the mountain hut before sunrise."
+ },
+ {
+  "id": 5301,
+  "tr": "gümrük vergisi ödemek",
+  "en": "to pay customs duty",
+  "beispiel": "Diese Waren müssen Sie bei der Einreise verzollen.",
+  "beispielTr": "Bu mallar için girişte gümrük vergisi ödemeniz gerekiyor.",
+  "beispielEn": "You must pay customs duty on these goods when entering the country."
+ },
+ {
+  "id": 5302,
+  "tr": "ağaçları kesmek",
+  "en": "to deforest",
+  "beispiel": "Für die neue Hotelanlage wurde ein ganzer Hang abgeholzt.",
+  "beispielTr": "Yeni otel tesisi için koca bir yamacın ağaçları kesildi.",
+  "beispielEn": "An entire slope was deforested for the new hotel complex."
+ },
+ {
+  "id": 5303,
+  "tr": "tehlikeye atmak",
+  "en": "to endanger",
+  "beispiel": "Unvorsichtige Besucher gefährden das Gleichgewicht des empfindlichen Ökosystems.",
+  "beispielTr": "Dikkatsiz ziyaretçiler hassas ekosistemin dengesini tehlikeye atıyor.",
+  "beispielEn": "Careless visitors endanger the balance of the fragile ecosystem."
+ },
+ {
+  "id": 5304,
+  "tr": "yatışmak",
+  "en": "to subside",
+  "beispiel": "Erst am Nachmittag ist der Sturm allmählich abgeklungen.",
+  "beispielTr": "Fırtına ancak öğleden sonra yavaş yavaş yatıştı.",
+  "beispielEn": "Only in the afternoon did the storm gradually subside."
+ },
+ {
+  "id": 5305,
+  "tr": "ücra",
+  "en": "remote",
+  "beispiel": "Das Ferienhaus liegt abgelegen und ist nur über einen Feldweg erreichbar.",
+  "beispielTr": "Tatil evi ücra bir yerde ve oraya yalnızca toprak yoldan ulaşılıyor.",
+  "beispielEn": "The vacation home is remote and can only be reached by a dirt road."
+ },
+ {
+  "id": 5306,
+  "tr": "el değmemiş",
+  "en": "untouched",
+  "beispiel": "Im Norden gibt es noch weitgehend unberührte Küstenabschnitte.",
+  "beispielTr": "Kuzeyde hâlâ büyük ölçüde el değmemiş kıyı kesimleri var.",
+  "beispielEn": "In the north there are still largely untouched stretches of coast."
+ },
+ {
+  "id": 5307,
+  "tr": "resim gibi",
+  "en": "picturesque",
+  "beispiel": "Das malerische Dorf zieht jedes Wochenende Hunderte Besucher an.",
+  "beispielTr": "Resim gibi köye her hafta sonu yüzlerce ziyaretçi geliyor.",
+  "beispielEn": "The picturesque village attracts hundreds of visitors every weekend."
+ },
+ {
+  "id": 5308,
+  "tr": "nefes kesici",
+  "en": "breathtaking",
+  "beispiel": "Vom Pass aus bot sich uns ein atemberaubender Blick.",
+  "beispielTr": "Geçitten bize nefes kesici bir manzara açıldı.",
+  "beispielEn": "From the pass we had a breathtaking view."
+ },
+ {
+  "id": 5309,
+  "tr": "tamamen dolu",
+  "en": "fully booked",
+  "beispiel": "Alle Zimmer am See sind für Juli bereits ausgebucht.",
+  "beispielTr": "Göl kenarındaki bütün odalar temmuz için çoktan doldu.",
+  "beispielEn": "All the rooms by the lake are already fully booked for July."
+ },
+ {
+  "id": 5310,
+  "tr": "geçit vermez",
+  "en": "impassable",
+  "beispiel": "Das Gelände ist unwegsam und für Kinderwagen völlig ungeeignet.",
+  "beispielTr": "Arazi geçit vermez ve bebek arabası için hiç uygun değil.",
+  "beispielEn": "The terrain is impassable and completely unsuitable for strollers."
+ },
+ {
+  "id": 5311,
+  "tr": "değişken",
+  "en": "changeable",
+  "beispiel": "Im Frühjahr ist das Wetter in den Bergen sehr wechselhaft.",
+  "beispielTr": "İlkbaharda dağlarda hava çok değişken oluyor.",
+  "beispielEn": "In spring the weather in the mountains is very changeable."
+ },
+ {
+  "id": 5312,
+  "tr": "yıl boyunca",
+  "en": "year-round",
+  "beispiel": "Die Berghütte ist ganzjährig geöffnet und gut ausgelastet.",
+  "beispielTr": "Dağ evi yıl boyunca açık ve doluluğu yüksek.",
+  "beispielEn": "The mountain hut is open year-round and usually busy."
+ },
+ {
+  "id": 5313,
+  "tr": "kundaklama",
+  "en": "arson",
+  "beispiel": "Die Ermittler schließen Brandstiftung inzwischen nicht mehr aus.",
+  "beispielTr": "Soruşturmacılar artık kundaklama ihtimalini dışlamıyor.",
+  "beispielEn": "Investigators no longer rule out arson."
+ },
+ {
+  "id": 5314,
+  "tr": "duman dedektörü",
+  "en": "smoke detector",
+  "beispiel": "In jedem Schlafzimmer muss ein funktionierender Rauchmelder angebracht sein.",
+  "beispielTr": "Her yatak odasında çalışır durumda bir duman dedektörü bulunmalı.",
+  "beispielEn": "A working smoke detector must be installed in every bedroom."
+ },
+ {
+  "id": 5315,
+  "tr": "yangın söndürücü",
+  "en": "fire extinguisher",
+  "beispiel": "Der Feuerlöscher im Flur wird einmal im Jahr geprüft.",
+  "beispielTr": "Koridordaki yangın söndürücü yılda bir kez kontrol ediliyor.",
+  "beispielEn": "The fire extinguisher in the hallway is checked once a year."
+ },
+ {
+  "id": 5316,
+  "tr": "ilk yardımcı",
+  "en": "first aider",
+  "beispiel": "Jeder Betrieb muss eine bestimmte Zahl ausgebildeter Ersthelfer beschäftigen.",
+  "beispielTr": "Her işletme belirli sayıda eğitimli ilk yardımcı çalıştırmak zorunda.",
+  "beispielEn": "Every company must employ a certain number of trained first aiders."
+ },
+ {
+  "id": 5317,
+  "tr": "kaçış yolu",
+  "en": "escape route",
+  "beispiel": "Die Fluchtwege dürfen unter keinen Umständen zugestellt werden.",
+  "beispielTr": "Kaçış yollarının önü hiçbir koşulda kapatılmamalı.",
+  "beispielEn": "The escape routes must not be blocked under any circumstances."
+ },
+ {
+  "id": 5318,
+  "tr": "güvenlik mesafesi",
+  "en": "safe distance",
+  "beispiel": "Auf der Autobahn hielt kaum jemand den vorgeschriebenen Sicherheitsabstand ein.",
+  "beispielTr": "Otoyolda neredeyse kimse öngörülen güvenlik mesafesini korumadı.",
+  "beispielEn": "On the highway hardly anyone kept the required safe distance."
+ },
+ {
+  "id": 5319,
+  "tr": "tehlike kaynağı",
+  "en": "source of danger",
+  "beispiel": "Lose Kabel sind in einer Werkstatt eine ständige Gefahrenquelle.",
+  "beispielTr": "Gevşek kablolar bir atölyede sürekli bir tehlike kaynağıdır.",
+  "beispielEn": "Loose cables are a constant source of danger in a workshop."
+ },
+ {
+  "id": 5320,
+  "tr": "kaza yeri",
+  "en": "accident scene",
+  "beispiel": "Die Polizei sperrte die Unfallstelle für mehrere Stunden ab.",
+  "beispielTr": "Polis kaza yerini birkaç saat boyunca kapattı.",
+  "beispielEn": "The police closed off the accident scene for several hours."
+ },
+ {
+  "id": 5321,
+  "tr": "saldırı",
+  "en": "attack",
+  "beispiel": "Nach dem Anschlag wurden die Kontrollen an Bahnhöfen deutlich verschärft.",
+  "beispielTr": "Saldırının ardından tren garlarındaki kontroller belirgin biçimde sıkılaştırıldı.",
+  "beispielEn": "After the attack, checks at train stations were tightened considerably."
+ },
+ {
+  "id": 5322,
+  "tr": "afet yönetimi",
+  "en": "disaster management",
+  "beispiel": "Der Katastrophenschutz übt zweimal jährlich den Ernstfall.",
+  "beispielTr": "Afet yönetimi yılda iki kez gerçek durum tatbikatı yapıyor.",
+  "beispielEn": "Disaster management drills for a real emergency twice a year."
+ },
+ {
+  "id": 5323,
+  "tr": "suç",
+  "en": "crime",
+  "beispiel": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt.",
+  "beispielTr": "Suç, yıllar süren soruşturmalara rağmen aydınlatılamadı.",
+  "beispielEn": "The crime remained unsolved despite years of investigation."
+ },
+ {
+  "id": 5324,
+  "tr": "deprem",
+  "en": "earthquake",
+  "beispiel": "Das Erdbeben hat mehrere Brücken in der Region unbrauchbar gemacht.",
+  "beispielTr": "Deprem bölgedeki birkaç köprüyü kullanılamaz hale getirdi.",
+  "beispielEn": "The earthquake left several bridges in the region unusable."
+ },
+ {
+  "id": 5325,
+  "tr": "enkaz",
+  "en": "rubble",
+  "beispiel": "Unter den Trümmern des Hauses suchten Helfer die ganze Nacht.",
+  "beispielTr": "Yardım ekipleri bütün gece evin enkazı altında arama yaptı.",
+  "beispielEn": "Rescuers searched under the rubble of the house all night."
+ },
+ {
+  "id": 5326,
+  "tr": "müdahale görevlisi",
+  "en": "emergency responder",
+  "beispiel": "Über zweihundert Einsatzkräfte waren die ganze Nacht im Einsatz.",
+  "beispielTr": "İki yüzden fazla müdahale görevlisi bütün gece sahadaydı.",
+  "beispielEn": "More than two hundred emergency responders were on duty all night."
+ },
+ {
+  "id": 5327,
+  "tr": "olay yeri",
+  "en": "crime scene",
+  "beispiel": "Am Tatort wurden Spuren gefunden, die zum Verdächtigen führten.",
+  "beispielTr": "Olay yerinde şüpheliye götüren izler bulundu.",
+  "beispielEn": "Traces were found at the crime scene that led to the suspect."
+ },
+ {
+  "id": 5328,
+  "tr": "hırsızlık",
+  "en": "theft",
+  "beispiel": "Für den Diebstahl im Lager gibt es bisher keine Zeugen.",
+  "beispielTr": "Depodaki hırsızlıkla ilgili şimdiye kadar hiç tanık yok.",
+  "beispielEn": "So far there are no witnesses to the theft in the warehouse."
+ },
+ {
+  "id": 5329,
+  "tr": "dolandırıcılık",
+  "en": "fraud",
+  "beispiel": "Der Angeklagte wurde wegen Betrugs in mehreren Fällen verurteilt.",
+  "beispielTr": "Sanık birden fazla dolandırıcılık suçundan mahkûm edildi.",
+  "beispielEn": "The defendant was convicted of fraud in several cases."
+ },
+ {
+  "id": 5330,
+  "tr": "soygun",
+  "en": "robbery",
+  "beispiel": "Nach dem Raub flüchteten die Täter in einem Auto.",
+  "beispielTr": "Soygunun ardından failler bir arabayla kaçtı.",
+  "beispielEn": "After the robbery the offenders fled in a car."
+ },
+ {
+  "id": 5331,
+  "tr": "şantaj",
+  "en": "blackmail",
+  "beispiel": "Die Firma erstattete Anzeige wegen versuchter Erpressung.",
+  "beispielTr": "Şirket şantaj girişimi nedeniyle suç duyurusunda bulundu.",
+  "beispielEn": "The company filed a complaint for attempted blackmail."
+ },
+ {
+  "id": 5332,
+  "tr": "yaralama",
+  "en": "bodily harm",
+  "beispiel": "Nach der Schlägerei ermittelt die Polizei wegen gefährlicher Körperverletzung.",
+  "beispielTr": "Kavganın ardından polis nitelikli yaralama suçundan soruşturma yürütüyor.",
+  "beispielEn": "After the brawl the police are investigating serious bodily harm."
+ },
+ {
+  "id": 5333,
+  "tr": "arama",
+  "en": "manhunt",
+  "beispiel": "Die Fahndung nach den Tätern läuft seit dem frühen Morgen.",
+  "beispielTr": "Faillerin aranması sabahın erken saatlerinden beri sürüyor.",
+  "beispielEn": "The manhunt for the offenders has been going on since early morning."
+ },
+ {
+  "id": 5334,
+  "tr": "tutuklama emri",
+  "en": "arrest warrant",
+  "beispiel": "Das Gericht erließ noch am selben Abend einen Haftbefehl.",
+  "beispielTr": "Mahkeme aynı akşam bir tutuklama emri çıkardı.",
+  "beispielEn": "The court issued an arrest warrant that same evening."
+ },
+ {
+  "id": 5335,
+  "tr": "polis karakolu",
+  "en": "police station",
+  "beispiel": "Sie musste ihre Aussage auf dem Polizeirevier noch einmal wiederholen.",
+  "beispielTr": "İfadesini polis karakolunda bir kez daha tekrarlamak zorunda kaldı.",
+  "beispielEn": "She had to repeat her statement at the police station."
+ },
+ {
+  "id": 5336,
+  "tr": "caydırıcılık",
+  "en": "deterrence",
+  "beispiel": "Höhere Strafen wirken nach Ansicht vieler Fachleute kaum als Abschreckung.",
+  "beispielTr": "Birçok uzmana göre ağır cezaların caydırıcılığı neredeyse yok.",
+  "beispielEn": "In the view of many experts, harsher penalties hardly work as a deterrent."
+ },
+ {
+  "id": 5337,
+  "tr": "suç oranı",
+  "en": "crime rate",
+  "beispiel": "Die Kriminalität im Stadtteil ist seit zwei Jahren rückläufig.",
+  "beispielTr": "Mahalledeki suç oranı iki yıldır düşüşte.",
+  "beispielEn": "The crime rate in the neighborhood has been falling for two years."
+ },
+ {
+  "id": 5338,
+  "tr": "zor durum",
+  "en": "hardship",
+  "beispiel": "Der Fonds hilft Familien, die unverschuldet in eine Notlage geraten sind.",
+  "beispielTr": "Fon, kendi kusuru olmadan zor duruma düşen ailelere yardım ediyor.",
+  "beispielEn": "The fund helps families who fall into hardship through no fault of their own."
+ },
+ {
+  "id": 5339,
+  "tr": "olay",
+  "en": "incident",
+  "beispiel": "Das Spiel verlief bis auf einen kleinen Zwischenfall völlig ruhig.",
+  "beispielTr": "Maç küçük bir olay dışında tamamen sakin geçti.",
+  "beispielEn": "The match was completely calm apart from one small incident."
+ },
+ {
+  "id": 5340,
+  "tr": "uyarı mesajı",
+  "en": "warning alert",
+  "beispiel": "Die Warnmeldung erreichte alle Handys in der Region gleichzeitig.",
+  "beispielTr": "Uyarı mesajı bölgedeki bütün telefonlara aynı anda ulaştı.",
+  "beispielEn": "The warning alert reached every phone in the region at once."
+ },
+ {
+  "id": 5341,
+  "tr": "koruyucu ekipman",
+  "en": "protective gear",
+  "beispiel": "Ohne vollständige Schutzausrüstung darf niemand die Halle betreten.",
+  "beispielTr": "Eksiksiz koruyucu ekipman olmadan kimse salona giremez.",
+  "beispielEn": "No one may enter the hall without complete protective gear."
+ },
+ {
+  "id": 5342,
+  "tr": "canlandırma",
+  "en": "resuscitation",
+  "beispiel": "Die Wiederbelebung gelang erst nach mehreren Minuten.",
+  "beispielTr": "Canlandırma ancak birkaç dakika sonra başarılı oldu.",
+  "beispielEn": "The resuscitation only succeeded after several minutes."
+ },
+ {
+  "id": 5343,
+  "tr": "zehirlenme",
+  "en": "poisoning",
+  "beispiel": "Die Kinder wurden mit einer leichten Vergiftung ins Krankenhaus gebracht.",
+  "beispielTr": "Çocuklar hafif bir zehirlenmeyle hastaneye kaldırıldı.",
+  "beispielEn": "The children were taken to the hospital with mild poisoning."
+ },
+ {
+  "id": 5344,
+  "tr": "salgın",
+  "en": "epidemic",
+  "beispiel": "Die Seuche breitete sich zuerst unter den Tieren der Region aus.",
+  "beispielTr": "Salgın önce bölgedeki hayvanlar arasında yayıldı.",
+  "beispielEn": "The epidemic first spread among the animals in the region."
+ }
+]

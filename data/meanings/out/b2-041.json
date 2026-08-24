@@ -1,0 +1,330 @@
+[
+ {
+  "id": 5646,
+  "tr": "semt",
+  "en": "neighborhood",
+  "beispiel": "Das Stadtviertel hat sich in zehn Jahren völlig verändert.",
+  "beispielTr": "Semt on yılda tamamen değişti.",
+  "beispielEn": "The neighborhood has changed completely in ten years."
+ },
+ {
+  "id": 5647,
+  "tr": "şehir merkezi",
+  "en": "city center",
+  "beispiel": "In der Innenstadt sollen künftig deutlich weniger Autos fahren.",
+  "beispielTr": "Şehir merkezinde bundan sonra çok daha az araba dolaşacak.",
+  "beispielEn": "Far fewer cars will be driving in the city center in the future."
+ },
+ {
+  "id": 5648,
+  "tr": "sosyal konut",
+  "en": "subsidized apartment",
+  "beispiel": "Die Stadt plant den Bau von tausend neuen Sozialwohnungen.",
+  "beispielTr": "Şehir bin yeni sosyal konut yapmayı planlıyor.",
+  "beispielEn": "The city is planning to build a thousand new subsidized apartments."
+ },
+ {
+  "id": 5649,
+  "tr": "evsizlik",
+  "en": "homelessness",
+  "beispiel": "Steigende Mieten treiben immer mehr Menschen in die Obdachlosigkeit.",
+  "beispielTr": "Artan kiralar giderek daha çok insanı evsizliğe sürüklüyor.",
+  "beispielEn": "Rising rents are driving more and more people into homelessness."
+ },
+ {
+  "id": 5650,
+  "tr": "kullanım alanı",
+  "en": "living space",
+  "beispiel": "Die Wohnung hat eine Wohnfläche von siebzig Quadratmetern.",
+  "beispielTr": "Dairenin yetmiş metrekare kullanım alanı var.",
+  "beispielEn": "The apartment has seventy square meters of living space."
+ },
+ {
+  "id": 5651,
+  "tr": "park yeri",
+  "en": "parking space",
+  "beispiel": "Zur Wohnung gehört ein überdachter Stellplatz für ein Auto.",
+  "beispielTr": "Daireye bir araba için üstü kapalı park yeri dahil.",
+  "beispielEn": "The apartment comes with a covered parking space for one car."
+ },
+ {
+  "id": 5652,
+  "tr": "nakliye firması",
+  "en": "shipping company",
+  "beispiel": "Die Spedition liefert unsere Möbel erst am Samstag.",
+  "beispielTr": "Nakliye firması mobilyalarımızı ancak cumartesi getiriyor.",
+  "beispielEn": "The shipping company is not delivering our furniture until Saturday."
+ },
+ {
+  "id": 5653,
+  "tr": "trafik yoğunluğu",
+  "en": "traffic volume",
+  "beispiel": "Am Freitagnachmittag ist das Verkehrsaufkommen besonders hoch.",
+  "beispielTr": "Cuma öğleden sonraları trafik yoğunluğu özellikle yüksek oluyor.",
+  "beispielEn": "Traffic volume is especially high on Friday afternoons."
+ },
+ {
+  "id": 5654,
+  "tr": "dönel kavşak",
+  "en": "roundabout",
+  "beispiel": "Am Kreisverkehr müssen Sie die zweite Ausfahrt nehmen.",
+  "beispielTr": "Dönel kavşakta ikinci çıkıştan çıkmanız gerekiyor.",
+  "beispielEn": "At the roundabout you have to take the second exit."
+ },
+ {
+  "id": 5655,
+  "tr": "bisiklet yolu",
+  "en": "bike path",
+  "beispiel": "Der neue Radweg verläuft getrennt von der Fahrbahn.",
+  "beispielTr": "Yeni bisiklet yolu araç şeridinden ayrı ilerliyor.",
+  "beispielEn": "The new bike path runs separately from the road."
+ },
+ {
+  "id": 5656,
+  "tr": "banliyö yolcusu",
+  "en": "commuter",
+  "beispiel": "Tausende Pendler fahren täglich mit dem Zug in die Stadt.",
+  "beispielTr": "Binlerce banliyö yolcusu her gün trenle şehre gidiyor.",
+  "beispielEn": "Thousands of commuters take the train into the city every day."
+ },
+ {
+  "id": 5657,
+  "tr": "geçiş ücreti",
+  "en": "toll",
+  "beispiel": "In Österreich muss man für die Autobahn eine Maut zahlen.",
+  "beispielTr": "Avusturya'da otoyol için geçiş ücreti ödemek gerekiyor.",
+  "beispielEn": "In Austria you have to pay a toll for the highway."
+ },
+ {
+  "id": 5658,
+  "tr": "yeraltı otoparkı",
+  "en": "underground garage",
+  "beispiel": "In der Tiefgarage sind am Abend noch einige Plätze frei.",
+  "beispielTr": "Yeraltı otoparkında akşamları hâlâ birkaç yer boş oluyor.",
+  "beispielEn": "A few spaces are still free in the underground garage in the evening."
+ },
+ {
+  "id": 5659,
+  "tr": "hız sınırı",
+  "en": "speed limit",
+  "beispiel": "Vor der Schule gilt eine Geschwindigkeitsbegrenzung von dreißig.",
+  "beispielTr": "Okulun önünde otuz kilometrelik hız sınırı geçerli.",
+  "beispielEn": "There is a speed limit of thirty in front of the school."
+ },
+ {
+  "id": 5660,
+  "tr": "şarj ünitesi",
+  "en": "charging point",
+  "beispiel": "Vor dem Rathaus wurden zwei neue Ladesäulen installiert.",
+  "beispielTr": "Belediye binasının önüne iki yeni şarj ünitesi kuruldu.",
+  "beispielEn": "Two new charging points were installed in front of the city hall."
+ },
+ {
+  "id": 5661,
+  "tr": "demiryolu ağı",
+  "en": "rail network",
+  "beispiel": "Das Schienennetz im Norden wird in den nächsten Jahren erweitert.",
+  "beispielTr": "Kuzeydeki demiryolu ağı önümüzdeki yıllarda genişletilecek.",
+  "beispielEn": "The rail network in the north will be expanded in the coming years."
+ },
+ {
+  "id": 5662,
+  "tr": "çevre yolu",
+  "en": "bypass",
+  "beispiel": "Seit dem Bau der Umgehungsstraße ist es im Dorf ruhiger.",
+  "beispielTr": "Çevre yolu yapıldığından beri köy daha sakin.",
+  "beispielEn": "The village has been quieter since the bypass was built."
+ },
+ {
+  "id": 5663,
+  "tr": "tren seferi iptali",
+  "en": "train cancellation",
+  "beispiel": "Wegen des Sturms kam es zu zahlreichen Zugausfällen.",
+  "beispielTr": "Fırtına yüzünden çok sayıda tren seferi iptali yaşandı.",
+  "beispielEn": "The storm led to numerous train cancellations."
+ },
+ {
+  "id": 5664,
+  "tr": "mahalle sakini",
+  "en": "local resident",
+  "beispiel": "Die Anwohner beschweren sich über den Lärm der Baustelle.",
+  "beispielTr": "Mahalle sakinleri şantiyenin gürültüsünden şikâyetçi.",
+  "beispielEn": "The local residents are complaining about the noise from the building site."
+ },
+ {
+  "id": 5665,
+  "tr": "modernleştirmek",
+  "en": "to modernize",
+  "beispiel": "Der Eigentümer will das Bad und die Heizung modernisieren.",
+  "beispielTr": "Mal sahibi banyoyu ve kaloriferi modernleştirmek istiyor.",
+  "beispielEn": "The owner wants to modernize the bathroom and the heating."
+ },
+ {
+  "id": 5666,
+  "tr": "inşa etmek",
+  "en": "to construct",
+  "beispiel": "Auf dem Gelände soll ein neues Wohnhaus errichtet werden.",
+  "beispielTr": "Arazide yeni bir apartman inşa edilecek.",
+  "beispielEn": "A new apartment building is to be constructed on the site."
+ },
+ {
+  "id": 5667,
+  "tr": "yıkmak",
+  "en": "to demolish",
+  "beispiel": "Die alte Fabrik am Kanal wird im Sommer abgerissen.",
+  "beispielTr": "Kanal kenarındaki eski fabrika yazın yıkılacak.",
+  "beispielEn": "The old factory by the canal will be demolished in the summer."
+ },
+ {
+  "id": 5668,
+  "tr": "başka yöne yönlendirmek",
+  "en": "to divert",
+  "beispiel": "Der Verkehr wird wegen der Bauarbeiten großräumig umgeleitet.",
+  "beispielTr": "İnşaat çalışmaları yüzünden trafik geniş bir alanda başka yöne yönlendiriliyor.",
+  "beispielEn": "Traffic is being diverted over a wide area because of the roadwork."
+ },
+ {
+  "id": 5669,
+  "tr": "genişletmek",
+  "en": "to expand",
+  "beispiel": "Die Stadt will das Radwegenetz in den nächsten Jahren ausbauen.",
+  "beispielTr": "Şehir bisiklet yolu ağını önümüzdeki yıllarda genişletmek istiyor.",
+  "beispielEn": "The city wants to expand the bike path network in the coming years."
+ },
+ {
+  "id": 5670,
+  "tr": "imara açmak",
+  "en": "to develop",
+  "beispiel": "Die Gemeinde will das Gelände am Waldrand erschließen.",
+  "beispielTr": "Belediye orman kenarındaki araziyi imara açmak istiyor.",
+  "beispielEn": "The municipality wants to develop the land at the edge of the forest."
+ },
+ {
+  "id": 5671,
+  "tr": "döşemek",
+  "en": "to lay",
+  "beispiel": "Die Handwerker verlegen im Keller neue Rohre.",
+  "beispielTr": "Ustalar bodrumda yeni borular döşüyor.",
+  "beispielEn": "The workers are laying new pipes in the basement."
+ },
+ {
+  "id": 5672,
+  "tr": "park etmek",
+  "en": "to park",
+  "beispiel": "In dieser engen Straße kann man kaum einparken.",
+  "beispielTr": "Bu dar sokakta neredeyse park edilemiyor.",
+  "beispielEn": "You can hardly park in this narrow street."
+ },
+ {
+  "id": 5673,
+  "tr": "araçla geçmek",
+  "en": "to drive on",
+  "beispiel": "Diese Straße darf nur von Anliegern befahren werden.",
+  "beispielTr": "Bu yoldan yalnızca civarda oturanlar araçla geçebilir.",
+  "beispielEn": "Only residents are allowed to drive on this street."
+ },
+ {
+  "id": 5674,
+  "tr": "donatmak",
+  "en": "to equip",
+  "beispiel": "Die Wohnung ist mit einer neuen Küche ausgestattet.",
+  "beispielTr": "Daire yeni bir mutfakla donatılmış.",
+  "beispielEn": "The apartment is equipped with a new kitchen."
+ },
+ {
+  "id": 5675,
+  "tr": "yeniden düzenlemek",
+  "en": "to redesign",
+  "beispiel": "Der Platz vor dem Bahnhof wird komplett umgestaltet.",
+  "beispielTr": "İstasyonun önündeki meydan baştan aşağı yeniden düzenleniyor.",
+  "beispielEn": "The square in front of the station is being completely redesigned."
+ },
+ {
+  "id": 5676,
+  "tr": "maddi destek vermek",
+  "en": "to subsidize",
+  "beispiel": "Der Staat bezuschusst den Einbau neuer Fenster.",
+  "beispielTr": "Devlet yeni pencere takılmasına maddi destek veriyor.",
+  "beispielEn": "The state subsidizes the installation of new windows."
+ },
+ {
+  "id": 5677,
+  "tr": "bırakmak",
+  "en": "to leave",
+  "beispiel": "Fahrräder dürfen nicht im Treppenhaus abgestellt werden.",
+  "beispielTr": "Bisikletler merdiven boşluğuna bırakılamaz.",
+  "beispielEn": "Bicycles may not be left in the stairwell."
+ },
+ {
+  "id": 5678,
+  "tr": "yörede alışılmış",
+  "en": "locally customary",
+  "beispiel": "Die Miete liegt leicht über der ortsüblichen Vergleichsmiete.",
+  "beispielTr": "Kira, yörede alışılmış kira bedelinin biraz üzerinde.",
+  "beispielEn": "The rent is slightly above the usual local rate."
+ },
+ {
+  "id": 5679,
+  "tr": "oturmaya hazır",
+  "en": "ready to move into",
+  "beispiel": "Die Wohnungen sollen schon im Herbst bezugsfertig sein.",
+  "beispielTr": "Dairelerin daha sonbaharda oturmaya hazır olması bekleniyor.",
+  "beispielEn": "The apartments are supposed to be ready to move into as early as autumn."
+ },
+ {
+  "id": 5680,
+  "tr": "yürüme mesafesinde",
+  "en": "within walking distance",
+  "beispiel": "Der Bahnhof ist von hier aus fußläufig zu erreichen.",
+  "beispielTr": "İstasyon buradan yürüme mesafesinde.",
+  "beispielEn": "The station is within walking distance from here."
+ },
+ {
+  "id": 5681,
+  "tr": "yerleşim yeri içinde",
+  "en": "within town limits",
+  "beispiel": "Innerorts gilt in der Regel Tempo fünfzig.",
+  "beispielTr": "Yerleşim yeri içinde hız sınırı genelde elli kilometredir.",
+  "beispielEn": "Within town limits the speed limit is usually fifty."
+ },
+ {
+  "id": 5682,
+  "tr": "engelsiz",
+  "en": "accessible",
+  "beispiel": "Der Umbau macht das Gebäude endlich barrierefrei.",
+  "beispielTr": "Tadilat binayı nihayet engelsiz hale getiriyor.",
+  "beispielEn": "The renovation finally makes the building accessible."
+ },
+ {
+  "id": 5683,
+  "tr": "trafiği yavaşlatılmış",
+  "en": "traffic-calmed",
+  "beispiel": "In verkehrsberuhigten Zonen darf man nur Schritt fahren.",
+  "beispielTr": "Trafiği yavaşlatılmış bölgelerde ancak yürüme hızında gidilebilir.",
+  "beispielEn": "In traffic-calmed zones you may only drive at walking speed."
+ },
+ {
+  "id": 5684,
+  "tr": "katlanılmaz",
+  "en": "unacceptable",
+  "beispiel": "Der Lärm in der Wohnung ist für Familien unzumutbar.",
+  "beispielTr": "Dairedeki gürültü aileler için katlanılmaz.",
+  "beispielEn": "The noise in the apartment is unacceptable for families."
+ },
+ {
+  "id": 5685,
+  "tr": "çevredeki",
+  "en": "surrounding",
+  "beispiel": "Die umliegenden Gemeinden wachsen schneller als die Großstadt.",
+  "beispielTr": "Çevredeki belediyeler büyük şehirden daha hızlı büyüyor.",
+  "beispielEn": "The surrounding towns are growing faster than the big city."
+ },
+ {
+  "id": 5686,
+  "tr": "harap",
+  "en": "dilapidated",
+  "beispiel": "Das baufällige Haus an der Ecke steht seit Jahren leer.",
+  "beispielTr": "Köşedeki harap ev yıllardır boş duruyor.",
+  "beispielEn": "The dilapidated house on the corner has been empty for years."
+ }
+]

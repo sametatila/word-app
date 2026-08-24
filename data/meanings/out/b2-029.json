@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5045,
+    "tr": "geri çevirmek",
+    "en": "to reject",
+    "beispiel": "Die Behörde hat meinen Antrag ohne Begründung zurückgewiesen.",
+    "beispielTr": "Kurum başvurumu gerekçe göstermeden geri çevirdi.",
+    "beispielEn": "The authority rejected my application without giving a reason."
+  },
+  {
+    "id": 5046,
+    "tr": "sağlamak",
+    "en": "to grant",
+    "beispiel": "Die Bank gewährt uns einen Kredit zu günstigen Bedingungen.",
+    "beispielTr": "Banka bize uygun koşullarda kredi sağlıyor.",
+    "beispielEn": "The bank is granting us a loan on favorable terms."
+  },
+  {
+    "id": 5047,
+    "tr": "belgelemek",
+    "en": "to certify",
+    "beispiel": "Der Kursleiter bescheinigt uns die regelmäßige Teilnahme am Unterricht.",
+    "beispielTr": "Kurs öğretmeni derse düzenli katıldığımızı belgeliyor.",
+    "beispielEn": "The course teacher certifies our regular attendance in class."
+  },
+  {
+    "id": 5048,
+    "tr": "göz yummak",
+    "en": "to tolerate",
+    "beispiel": "Der Chef duldet keine Verspätungen in seinem Team.",
+    "beispielTr": "Patron ekibinde hiçbir gecikmeye göz yummuyor.",
+    "beispielEn": "The boss tolerates no lateness in his team."
+  },
+  {
+    "id": 5049,
+    "tr": "bizzat gitmek",
+    "en": "to appear in person",
+    "beispiel": "Sie müssen nächste Woche bei der Ausländerbehörde vorsprechen.",
+    "beispielTr": "Gelecek hafta yabancılar dairesine bizzat gitmeniz gerekiyor.",
+    "beispielEn": "You have to appear in person at the immigration office next week."
+  },
+  {
+    "id": 5050,
+    "tr": "askıya almak",
+    "en": "to suspend",
+    "beispiel": "Das Gericht hat das Verfahren vorerst ausgesetzt.",
+    "beispielTr": "Mahkeme davayı şimdilik askıya aldı.",
+    "beispielEn": "The court has suspended the proceedings for now."
+  },
+  {
+    "id": 5051,
+    "tr": "başarısız olmak",
+    "en": "to fail",
+    "beispiel": "Im entscheidenden Spiel hat unser bester Stürmer völlig versagt.",
+    "beispielTr": "Belirleyici maçta en iyi forvetimiz tamamen başarısız oldu.",
+    "beispielEn": "Our best striker failed completely in the decisive game."
+  },
+  {
+    "id": 5052,
+    "tr": "yeniden yazmak",
+    "en": "to rewrite",
+    "beispiel": "Ich habe den ganzen Absatz noch einmal umgeschrieben.",
+    "beispielTr": "Bütün paragrafı bir kez daha yeniden yazdım.",
+    "beispielEn": "I rewrote the whole paragraph one more time."
+  },
+  {
+    "id": 5053,
+    "tr": "eklemek",
+    "en": "to enclose",
+    "beispiel": "Bitte fügen Sie Ihrer Bewerbung ein aktuelles Foto bei.",
+    "beispielTr": "Lütfen başvurunuza güncel bir fotoğraf ekleyin.",
+    "beispielEn": "Please enclose a current photo with your application."
+  },
+  {
+    "id": 5054,
+    "tr": "soyundan gelmek",
+    "en": "to be descended from",
+    "beispiel": "Er stammt von einer alten Bauernfamilie ab.",
+    "beispielTr": "Eski bir çiftçi ailesinin soyundan geliyor.",
+    "beispielEn": "He is descended from an old farming family."
+  },
+  {
+    "id": 5055,
+    "tr": "ülkeye girmek",
+    "en": "to enter the country",
+    "beispiel": "Mit diesem Visum darfst du zweimal einreisen.",
+    "beispielTr": "Bu vizeyle ülkeye iki kez girebilirsin.",
+    "beispielEn": "With this visa you may enter the country twice."
+  },
+  {
+    "id": 5056,
+    "tr": "yasal",
+    "en": "lawful",
+    "beispiel": "Sie lebt seit sieben Jahren rechtmäßig in Deutschland.",
+    "beispielTr": "Yedi yıldır Almanya'da yasal olarak yaşıyor.",
+    "beispielEn": "She has been living lawfully in Germany for seven years."
+  },
+  {
+    "id": 5057,
+    "tr": "izinsiz",
+    "en": "unauthorized",
+    "beispiel": "Er hat das Gebäude unerlaubt betreten.",
+    "beispielTr": "Binaya izinsiz girdi.",
+    "beispielEn": "He entered the building without permission."
+  },
+  {
+    "id": 5058,
+    "tr": "vatansız",
+    "en": "stateless",
+    "beispiel": "Nach dem Zerfall des Landes wurden viele Menschen staatenlos.",
+    "beispielTr": "Ülkenin dağılmasından sonra birçok insan vatansız kaldı.",
+    "beispielEn": "After the country fell apart, many people became stateless."
+  },
+  {
+    "id": 5059,
+    "tr": "vizeye tabi",
+    "en": "requiring a visa",
+    "beispiel": "Für dieses Land sind wir leider immer noch visumpflichtig.",
+    "beispielTr": "Bu ülke için ne yazık ki hâlâ vizeye tabiyiz.",
+    "beispielEn": "Unfortunately we still need a visa for this country."
+  },
+  {
+    "id": 5060,
+    "tr": "kurallara uygun",
+    "en": "proper",
+    "beispiel": "Der Antrag wurde ordnungsgemäß bei der Behörde eingereicht.",
+    "beispielTr": "Başvuru, kurallara uygun biçimde kuruma verildi.",
+    "beispielEn": "The application was properly submitted to the authority."
+  },
+  {
+    "id": 5061,
+    "tr": "gerekirse",
+    "en": "if necessary",
+    "beispiel": "Weitere Unterlagen fordern wir gegebenenfalls schriftlich an.",
+    "beispielTr": "Gerekirse başka evrakları sizden yazılı olarak isteriz.",
+    "beispielEn": "If necessary, we will request further documents in writing."
+  },
+  {
+    "id": 5062,
+    "tr": "çok dilli",
+    "en": "multilingual",
+    "beispiel": "Die Kinder wachsen in unserer Familie mehrsprachig auf.",
+    "beispielTr": "Çocuklar ailemizde çok dilli büyüyor.",
+    "beispielEn": "The children grow up multilingual in our family."
+  },
+  {
+    "id": 5063,
+    "tr": "geçici",
+    "en": "temporary",
+    "beispiel": "Die Straße ist wegen der Bauarbeiten vorübergehend gesperrt.",
+    "beispielTr": "Yol, inşaat çalışmaları yüzünden geçici olarak kapalı.",
+    "beispielEn": "The road is temporarily closed because of the construction work."
+  },
+  {
+    "id": 5064,
+    "tr": "yağış",
+    "en": "precipitation",
+    "beispiel": "Im Süden wird für morgen kräftiger Niederschlag erwartet.",
+    "beispielTr": "Güneyde yarın için kuvvetli yağış bekleniyor.",
+    "beispielEn": "Heavy precipitation is expected in the south tomorrow."
+  },
+  {
+    "id": 5065,
+    "tr": "dolu",
+    "en": "hail",
+    "beispiel": "Der Hagel hat gestern die ganze Ernte zerstört.",
+    "beispielTr": "Dolu dün bütün ürünü mahvetti.",
+    "beispielEn": "The hail destroyed the entire harvest yesterday."
+  },
+  {
+    "id": 5066,
+    "tr": "don",
+    "en": "frost",
+    "beispiel": "Der späte Frost hat die Obstblüte stark geschädigt.",
+    "beispielTr": "Geç gelen don meyve çiçeklerine ağır zarar verdi.",
+    "beispielEn": "The late frost badly damaged the fruit blossoms."
+  },
+  {
+    "id": 5067,
+    "tr": "karların erimesi",
+    "en": "thaw",
+    "beispiel": "Nach dem Tauwetter standen die Wiesen unter Wasser.",
+    "beispielTr": "Karlar eridikten sonra çayırlar suyla kaplandı.",
+    "beispielEn": "After the thaw the meadows were under water."
+  },
+  {
+    "id": 5068,
+    "tr": "rüzgâr hamlesi",
+    "en": "gust of wind",
+    "beispiel": "Ein heftiger Windstoß riss den Sonnenschirm um.",
+    "beispielTr": "Şiddetli bir rüzgâr hamlesi güneş şemsiyesini devirdi.",
+    "beispielEn": "A violent gust of wind knocked over the parasol."
+  },
+  {
+    "id": 5069,
+    "tr": "nem",
+    "en": "humidity",
+    "beispiel": "Bei hoher Luftfeuchtigkeit wirkt die Hitze noch drückender.",
+    "beispielTr": "Nem yüksek olduğunda sıcak daha da bunaltıcı geliyor.",
+    "beispielEn": "When humidity is high, the heat feels even more oppressive."
+  },
+  {
+    "id": 5070,
+    "tr": "sıcaklık değişimi",
+    "en": "temperature fluctuation",
+    "beispiel": "Die starken Temperaturschwankungen machen den Pflanzen zu schaffen.",
+    "beispielTr": "Sert sıcaklık değişimleri bitkileri epey zorluyor.",
+    "beispielEn": "The sharp temperature fluctuations are hard on the plants."
+  },
+  {
+    "id": 5071,
+    "tr": "şiddetli fırtına",
+    "en": "severe storm",
+    "beispiel": "Das Unwetter hat am Abend viele Bäume entwurzelt.",
+    "beispielTr": "Şiddetli fırtına akşam birçok ağacı kökünden söktü.",
+    "beispielEn": "The severe storm uprooted many trees in the evening."
+  },
+  {
+    "id": 5072,
+    "tr": "sel",
+    "en": "flood",
+    "beispiel": "Nach tagelangem Regen kam es zu schweren Überschwemmungen.",
+    "beispielTr": "Günlerce süren yağmurdan sonra ağır seller yaşandı.",
+    "beispielEn": "After days of rain there were severe floods."
+  },
+  {
+    "id": 5073,
+    "tr": "taşkın",
+    "en": "high water",
+    "beispiel": "Die Stadt hat am Fluss Mauern gegen Hochwasser gebaut.",
+    "beispielTr": "Şehir, nehir kenarına taşkına karşı duvarlar yaptı.",
+    "beispielEn": "The city built walls against high water along the river."
+  },
+  {
+    "id": 5074,
+    "tr": "çığ",
+    "en": "avalanche",
+    "beispiel": "Nach dem starken Schneefall ging eine große Lawine ab.",
+    "beispielTr": "Yoğun kar yağışından sonra büyük bir çığ düştü.",
+    "beispielEn": "After the heavy snowfall a large avalanche came down."
+  },
+  {
+    "id": 5075,
+    "tr": "sıcak hava dalgası",
+    "en": "heat wave",
+    "beispiel": "Die Hitzewelle hielt in diesem Sommer drei Wochen an.",
+    "beispielTr": "Sıcak hava dalgası bu yaz üç hafta sürdü.",
+    "beispielEn": "The heat wave lasted three weeks this summer."
+  },
+  {
+    "id": 5076,
+    "tr": "hava basıncı",
+    "en": "air pressure",
+    "beispiel": "Ein fallender Luftdruck kündigt meist schlechtes Wetter an.",
+    "beispielTr": "Düşen hava basıncı çoğunlukla kötü havanın habercisidir.",
+    "beispielEn": "Falling air pressure usually announces bad weather."
+  },
+  {
+    "id": 5077,
+    "tr": "bulutluluk",
+    "en": "cloud cover",
+    "beispiel": "Am Nachmittag nimmt die Bewölkung von Westen her zu.",
+    "beispielTr": "Öğleden sonra bulutluluk batıdan itibaren artıyor.",
+    "beispielEn": "In the afternoon the cloud cover increases from the west."
+  },
+  {
+    "id": 5078,
+    "tr": "kar örtüsü",
+    "en": "snow cover",
+    "beispiel": "Unter der dicken Schneedecke überstehen die Pflanzen den Winter.",
+    "beispielTr": "Kalın kar örtüsünün altında bitkiler kışı atlatıyor.",
+    "beispielEn": "Under the thick snow cover the plants survive the winter."
+  },
+  {
+    "id": 5079,
+    "tr": "heyelan",
+    "en": "landslide",
+    "beispiel": "Ein Erdrutsch hat die Straße ins Dorf verschüttet.",
+    "beispielTr": "Bir heyelan köye giden yolu kapattı.",
+    "beispielEn": "A landslide buried the road to the village."
+  },
+  {
+    "id": 5080,
+    "tr": "küresel ısınma",
+    "en": "global warming",
+    "beispiel": "Die Erderwärmung lässt die Gletscher schneller schmelzen.",
+    "beispielTr": "Küresel ısınma buzulların daha hızlı erimesine yol açıyor.",
+    "beispielEn": "Global warming is making the glaciers melt faster."
+  },
+  {
+    "id": 5081,
+    "tr": "iklim kuşağı",
+    "en": "climate zone",
+    "beispiel": "Diese Pflanze wächst nur in tropischen Klimazonen.",
+    "beispielTr": "Bu bitki yalnızca tropik iklim kuşaklarında yetişir.",
+    "beispielEn": "This plant only grows in tropical climate zones."
+  },
+  {
+    "id": 5082,
+    "tr": "kuraklık",
+    "en": "drought",
+    "beispiel": "Die anhaltende Trockenheit hat die Ernte stark verringert.",
+    "beispielTr": "Süregelen kuraklık hasadı büyük ölçüde azalttı.",
+    "beispielEn": "The ongoing drought has greatly reduced the harvest."
+  },
+  {
+    "id": 5083,
+    "tr": "alacakaranlık",
+    "en": "dusk",
+    "beispiel": "In der Dämmerung kommen die Rehe auf die Wiese.",
+    "beispielTr": "Alacakaranlıkta karacalar çayıra çıkıyor.",
+    "beispielEn": "At dusk the deer come out onto the meadow."
+  },
+  {
+    "id": 5084,
+    "tr": "iğne yapraklı orman",
+    "en": "coniferous forest",
+    "beispiel": "Der dichte Nadelwald reicht bis an den See.",
+    "beispielTr": "Sık iğne yapraklı orman göle kadar uzanıyor.",
+    "beispielEn": "The dense coniferous forest reaches all the way to the lake."
+  },
+  {
+    "id": 5085,
+    "tr": "orman açıklığı",
+    "en": "clearing",
+    "beispiel": "Auf der Lichtung haben wir Rast gemacht.",
+    "beispielTr": "Orman açıklığında mola verdik.",
+    "beispielEn": "We took a break in the clearing."
+  },
+  {
+    "id": 5086,
+    "tr": "orman kenarı",
+    "en": "edge of the forest",
+    "beispiel": "Am Waldrand blühen im Frühling viele wilde Blumen.",
+    "beispielTr": "Orman kenarında ilkbaharda birçok yabani çiçek açıyor.",
+    "beispielEn": "Many wild flowers bloom at the edge of the forest in spring."
+  },
+  {
+    "id": 5087,
+    "tr": "doğa koruma alanı",
+    "en": "nature reserve",
+    "beispiel": "Im Naturschutzgebiet dürfen Besucher die Wege nicht verlassen.",
+    "beispielTr": "Doğa koruma alanında ziyaretçiler yollardan ayrılamaz.",
+    "beispielEn": "Visitors may not leave the paths in the nature reserve."
+  },
+  {
+    "id": 5088,
+    "tr": "bataklık",
+    "en": "bog",
+    "beispiel": "Ein intaktes Moor speichert große Mengen Kohlenstoff.",
+    "beispielTr": "Bozulmamış bir bataklık büyük miktarda karbon depolar.",
+    "beispielEn": "An intact bog stores large amounts of carbon."
+  },
+  {
+    "id": 5089,
+    "tr": "tarla",
+    "en": "arable field",
+    "beispiel": "Nach der Ernte lag der Acker wochenlang brach.",
+    "beispielTr": "Hasattan sonra tarla haftalarca boş kaldı.",
+    "beispielEn": "After the harvest the field lay fallow for weeks."
+  },
+  {
+    "id": 5090,
+    "tr": "tomurcuk",
+    "en": "bud",
+    "beispiel": "An den Zweigen zeigen sich die ersten Knospen.",
+    "beispielTr": "Dallarda ilk tomurcuklar görünmeye başladı.",
+    "beispielEn": "The first buds are appearing on the branches."
+  },
+  {
+    "id": 5091,
+    "tr": "filiz",
+    "en": "shoot",
+    "beispiel": "Die jungen Triebe schneidet man erst nach dem Frost.",
+    "beispielTr": "Genç filizler ancak dondan sonra budanır.",
+    "beispielEn": "The young shoots are pruned only after the frost."
+  },
+  {
+    "id": 5092,
+    "tr": "ağaç kabuğu",
+    "en": "bark",
+    "beispiel": "An der rissigen Rinde erkennt man die alte Eiche.",
+    "beispielTr": "Çatlamış ağaç kabuğundan yaşlı meşeyi tanırsın.",
+    "beispielEn": "You can tell the old oak by its cracked bark."
+  },
+  {
+    "id": 5093,
+    "tr": "ağaç tepesi",
+    "en": "treetop",
+    "beispiel": "Der Sturm hat mehrere Baumkronen im Park abgebrochen.",
+    "beispielTr": "Fırtına parkta birkaç ağacın tepesini kırdı.",
+    "beispielEn": "The storm broke off several treetops in the park."
+  },
+  {
+    "id": 5094,
+    "tr": "çalı",
+    "en": "bush",
+    "beispiel": "Vor dem Fenster trägt der Strauch rote Beeren.",
+    "beispielTr": "Pencerenin önündeki çalı kırmızı meyveler veriyor.",
+    "beispielEn": "The bush in front of the window bears red berries."
+  }
+]

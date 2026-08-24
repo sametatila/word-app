@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5145,
+    "tr": "şehir yönetimi",
+    "en": "city administration",
+    "beispiel": "Die Stadtverwaltung bearbeitet den Antrag innerhalb von vier Wochen.",
+    "beispielTr": "Şehir yönetimi başvuruyu dört hafta içinde işleme alıyor.",
+    "beispielEn": "The city administration processes the application within four weeks."
+  },
+  {
+    "id": 5146,
+    "tr": "oturum",
+    "en": "session",
+    "beispiel": "Die Sitzung wurde nach drei Stunden ohne Ergebnis unterbrochen.",
+    "beispielTr": "Oturum üç saat sonra sonuç alınamadan yarıda kesildi.",
+    "beispielEn": "The session was adjourned after three hours without a result."
+  },
+  {
+    "id": 5147,
+    "tr": "yasama",
+    "en": "legislation",
+    "beispiel": "Die Gesetzgebung hinkt der technischen Entwicklung deutlich hinterher.",
+    "beispielTr": "Yasama, teknik gelişmenin belirgin biçimde gerisinde kalıyor.",
+    "beispielEn": "Legislation is clearly lagging behind technical development."
+  },
+  {
+    "id": 5148,
+    "tr": "meclis grubu",
+    "en": "parliamentary group",
+    "beispiel": "Die größte Fraktion stellt den Vorsitzenden des Ausschusses.",
+    "beispielTr": "En büyük meclis grubu komisyon başkanını belirliyor.",
+    "beispielEn": "The largest parliamentary group provides the committee chair."
+  },
+  {
+    "id": 5149,
+    "tr": "parti kongresi",
+    "en": "party conference",
+    "beispiel": "Auf dem Parteitag in Hannover wurde heftig über Steuern gestritten.",
+    "beispielTr": "Hannover'deki parti kongresinde vergiler sert biçimde tartışıldı.",
+    "beispielEn": "At the party conference in Hanover there was a fierce argument about taxes."
+  },
+  {
+    "id": 5150,
+    "tr": "görev süresi",
+    "en": "term of office",
+    "beispiel": "Seine zweite Amtszeit endet im Frühjahr nächsten Jahres.",
+    "beispielTr": "İkinci görev süresi gelecek yıl ilkbaharda sona eriyor.",
+    "beispielEn": "His second term of office ends next spring."
+  },
+  {
+    "id": 5151,
+    "tr": "milletvekilliği",
+    "en": "parliamentary seat",
+    "beispiel": "Die kleine Partei verlor bei der Wahl drei Mandate.",
+    "beispielTr": "Küçük parti seçimde üç milletvekilliği kaybetti.",
+    "beispielEn": "The small party lost three parliamentary seats in the election."
+  },
+  {
+    "id": 5152,
+    "tr": "demokrasi",
+    "en": "democracy",
+    "beispiel": "Eine Demokratie lebt davon, dass Menschen sich einmischen.",
+    "beispielTr": "Demokrasi, insanların işe karışmasıyla ayakta kalır.",
+    "beispielEn": "A democracy lives on people getting involved."
+  },
+  {
+    "id": 5153,
+    "tr": "seçmen kitlesi",
+    "en": "electorate",
+    "beispiel": "Die Partei hat ihre traditionelle Wählerschaft in den Städten verloren.",
+    "beispielTr": "Parti şehirlerdeki geleneksel seçmen kitlesini kaybetti.",
+    "beispielEn": "The party has lost its traditional electorate in the cities."
+  },
+  {
+    "id": 5154,
+    "tr": "protesto gösterisi",
+    "en": "protest",
+    "beispiel": "An der Demonstration gegen die Mieterhöhungen nahmen Tausende teil.",
+    "beispielTr": "Kira artışlarına karşı düzenlenen protesto gösterisine binlerce kişi katıldı.",
+    "beispielEn": "Thousands took part in the protest against the rent increases."
+  },
+  {
+    "id": 5155,
+    "tr": "dilekçe",
+    "en": "petition",
+    "beispiel": "Die Petition für den Erhalt des Schwimmbads sammelte viele Unterschriften.",
+    "beispielTr": "Yüzme havuzunun korunması için açılan dilekçe çok imza topladı.",
+    "beispielEn": "The petition to save the swimming pool collected many signatures."
+  },
+  {
+    "id": 5156,
+    "tr": "şeffaflık",
+    "en": "transparency",
+    "beispiel": "Bei der Vergabe der Aufträge fehlt es an Transparenz.",
+    "beispielTr": "İhalelerin dağıtımında şeffaflık eksik.",
+    "beispielEn": "There is a lack of transparency in awarding the contracts."
+  },
+  {
+    "id": 5157,
+    "tr": "kamu yararı",
+    "en": "common good",
+    "beispiel": "Der Politiker beruft sich bei jeder Entscheidung auf das Gemeinwohl.",
+    "beispielTr": "Siyasetçi her kararında kamu yararını öne sürüyor.",
+    "beispielEn": "The politician invokes the common good with every decision."
+  },
+  {
+    "id": 5158,
+    "tr": "resmî duyuru",
+    "en": "public notice",
+    "beispiel": "Die amtliche Bekanntmachung hing zwei Wochen im Schaukasten.",
+    "beispielTr": "Resmî duyuru iki hafta boyunca ilan panosunda asılı kaldı.",
+    "beispielEn": "The official notice hung in the display case for two weeks."
+  },
+  {
+    "id": 5159,
+    "tr": "dinleme oturumu",
+    "en": "hearing",
+    "beispiel": "Vor der Entscheidung findet eine öffentliche Anhörung der Anwohner statt.",
+    "beispielTr": "Karardan önce mahalle sakinleriyle açık bir dinleme oturumu yapılıyor.",
+    "beispielEn": "A public hearing of the residents takes place before the decision."
+  },
+  {
+    "id": 5160,
+    "tr": "itiraz",
+    "en": "objection",
+    "beispiel": "Gegen den Bescheid können Sie innerhalb eines Monats Einspruch erheben.",
+    "beispielTr": "Karara karşı bir ay içinde itiraz edebilirsiniz.",
+    "beispielEn": "You can file an objection against the decision within a month."
+  },
+  {
+    "id": 5161,
+    "tr": "güvensizlik oyu",
+    "en": "vote of no confidence",
+    "beispiel": "Die Regierung überstand das Misstrauensvotum mit nur zwei Stimmen.",
+    "beispielTr": "Hükümet güvensizlik oylamasını yalnızca iki oyla atlattı.",
+    "beispielEn": "The government survived the vote of no confidence by just two votes."
+  },
+  {
+    "id": 5162,
+    "tr": "sandık merkezi",
+    "en": "polling station",
+    "beispiel": "Die Wahllokale öffnen um acht Uhr und schließen um achtzehn Uhr.",
+    "beispielTr": "Sandık merkezleri saat sekizde açılıp on sekizde kapanıyor.",
+    "beispielEn": "The polling stations open at eight and close at six in the evening."
+  },
+  {
+    "id": 5163,
+    "tr": "seçim tahmini",
+    "en": "projection",
+    "beispiel": "Die erste Hochrechnung zeigte einen knappen Vorsprung der Grünen.",
+    "beispielTr": "İlk seçim tahmini Yeşiller'in kıl payı önde olduğunu gösterdi.",
+    "beispielEn": "The first projection showed a narrow lead for the Greens."
+  },
+  {
+    "id": 5164,
+    "tr": "oy sayımı",
+    "en": "vote count",
+    "beispiel": "Die Auszählung der Briefwahlstimmen dauerte bis in die Nacht.",
+    "beispielTr": "Mektupla verilen oyların sayımı gece yarısına kadar sürdü.",
+    "beispielEn": "The count of the postal votes lasted into the night."
+  },
+  {
+    "id": 5165,
+    "tr": "oy hakkı",
+    "en": "right to vote",
+    "beispiel": "Das Wahlrecht ab sechzehn wird in mehreren Bundesländern diskutiert.",
+    "beispielTr": "On altı yaşından itibaren oy hakkı birçok eyalette tartışılıyor.",
+    "beispielEn": "The right to vote from sixteen is being discussed in several federal states."
+  },
+  {
+    "id": 5166,
+    "tr": "basın toplantısı",
+    "en": "press conference",
+    "beispiel": "Der Minister verließ die Pressekonferenz ohne eine einzige Frage zu beantworten.",
+    "beispielTr": "Bakan tek bir soruya bile cevap vermeden basın toplantısını terk etti.",
+    "beispielEn": "The minister left the press conference without answering a single question."
+  },
+  {
+    "id": 5167,
+    "tr": "seçim vaadi",
+    "en": "campaign promise",
+    "beispiel": "Von den Wahlversprechen ist nach zwei Jahren wenig übrig geblieben.",
+    "beispielTr": "İki yıl sonra seçim vaatlerinden geriye pek bir şey kalmadı.",
+    "beispielEn": "Little is left of the campaign promises after two years."
+  },
+  {
+    "id": 5168,
+    "tr": "iktidar değişimi",
+    "en": "change of power",
+    "beispiel": "Nach zwölf Jahren kam es endlich zu einem Machtwechsel.",
+    "beispielTr": "On iki yıl sonra nihayet bir iktidar değişimi yaşandı.",
+    "beispielEn": "After twelve years there was finally a change of power."
+  },
+  {
+    "id": 5169,
+    "tr": "yasama dönemi",
+    "en": "legislative term",
+    "beispiel": "Das Gesetz soll noch in dieser Legislaturperiode verabschiedet werden.",
+    "beispielTr": "Yasanın bu yasama dönemi içinde çıkarılması planlanıyor.",
+    "beispielEn": "The law is supposed to be passed within this legislative term."
+  },
+  {
+    "id": 5170,
+    "tr": "parlamento",
+    "en": "parliament",
+    "beispiel": "Das Parlament stimmte gestern über den umstrittenen Entwurf ab.",
+    "beispielTr": "Parlamento dün tartışmalı tasarıyı oyladı.",
+    "beispielEn": "Parliament voted on the controversial bill yesterday."
+  },
+  {
+    "id": 5171,
+    "tr": "siyaset bıkkınlığı",
+    "en": "political disillusionment",
+    "beispiel": "Die wachsende Politikverdrossenheit zeigt sich an der niedrigen Wahlbeteiligung.",
+    "beispielTr": "Artan siyaset bıkkınlığı düşük seçim katılımında kendini gösteriyor.",
+    "beispielEn": "The growing political disillusionment shows in the low turnout."
+  },
+  {
+    "id": 5172,
+    "tr": "vergi artışı",
+    "en": "tax increase",
+    "beispiel": "Vor der Wahl schließt jede Partei eine Steuererhöhung aus.",
+    "beispielTr": "Seçim öncesinde her parti vergi artışı ihtimalini reddediyor.",
+    "beispielEn": "Before the election every party rules out a tax increase."
+  },
+  {
+    "id": 5173,
+    "tr": "hesap verme",
+    "en": "accountability",
+    "beispiel": "Gewählte Vertreter müssen den Bürgern Rechenschaft über ihre Arbeit ablegen.",
+    "beispielTr": "Seçilmiş temsilciler yaptıkları işin hesabını vatandaşa vermek zorundadır.",
+    "beispielEn": "Elected representatives must account to the citizens for their work."
+  },
+  {
+    "id": 5174,
+    "tr": "seçim sonucu",
+    "en": "election result",
+    "beispiel": "Das vorläufige Wahlergebnis wird kurz nach Mitternacht erwartet.",
+    "beispielTr": "Geçici seçim sonucu gece yarısından kısa süre sonra bekleniyor.",
+    "beispielEn": "The preliminary election result is expected shortly after midnight."
+  },
+  {
+    "id": 5175,
+    "tr": "güvenoyu talebi",
+    "en": "vote of confidence",
+    "beispiel": "Der Kanzler stellte im Dezember überraschend die Vertrauensfrage.",
+    "beispielTr": "Başbakan aralık ayında beklenmedik biçimde güvenoyu istedi.",
+    "beispielEn": "The chancellor unexpectedly called a vote of confidence in December."
+  },
+  {
+    "id": 5176,
+    "tr": "temel hak",
+    "en": "fundamental right",
+    "beispiel": "Die Versammlungsfreiheit ist ein Grundrecht und keine Gefälligkeit des Staates.",
+    "beispielTr": "Toplanma özgürlüğü bir temel haktır, devletin lütfu değil.",
+    "beispielEn": "Freedom of assembly is a fundamental right, not a favor of the state."
+  },
+  {
+    "id": 5177,
+    "tr": "vatandaş katılımı",
+    "en": "citizen participation",
+    "beispiel": "Bei großen Bauprojekten ist eine frühe Bürgerbeteiligung inzwischen üblich.",
+    "beispielTr": "Büyük inşaat projelerinde erken vatandaş katılımı artık olağan sayılıyor.",
+    "beispielEn": "Early citizen participation is now standard in large construction projects."
+  },
+  {
+    "id": 5178,
+    "tr": "aday olmak",
+    "en": "to run for office",
+    "beispiel": "Sie kandidiert im Herbst zum ersten Mal für den Stadtrat.",
+    "beispielTr": "Sonbaharda ilk kez şehir meclisine aday oluyor.",
+    "beispielEn": "She is running for the city council for the first time this fall."
+  },
+  {
+    "id": 5179,
+    "tr": "yönetmek",
+    "en": "to govern",
+    "beispiel": "Die beiden Parteien regieren das Land seit vier Jahren gemeinsam.",
+    "beispielTr": "İki parti dört yıldır ülkeyi birlikte yönetiyor.",
+    "beispielEn": "The two parties have been governing the country together for four years."
+  },
+  {
+    "id": 5180,
+    "tr": "desteklemek",
+    "en": "to be in favor of",
+    "beispiel": "Eine knappe Mehrheit befürwortet den Ausbau des Radwegenetzes.",
+    "beispielTr": "Kıl payı bir çoğunluk bisiklet yolu ağının genişletilmesini destekliyor.",
+    "beispielEn": "A narrow majority is in favor of expanding the bike path network."
+  },
+  {
+    "id": 5181,
+    "tr": "atamak",
+    "en": "to appoint",
+    "beispiel": "Der Rat ernannte sie zur neuen Leiterin des Ordnungsamts.",
+    "beispielTr": "Meclis onu zabıta müdürlüğünün başına atadı.",
+    "beispielEn": "The council appointed her the new head of the public order office."
+  },
+  {
+    "id": 5182,
+    "tr": "yemin ettirmek",
+    "en": "to swear in",
+    "beispiel": "Der neue Bürgermeister wurde gestern feierlich vereidigt.",
+    "beispielTr": "Yeni belediye başkanına dün törenle yemin ettirildi.",
+    "beispielEn": "The new mayor was sworn in yesterday at a ceremony."
+  },
+  {
+    "id": 5183,
+    "tr": "kaldırmak",
+    "en": "to abolish",
+    "beispiel": "Die Gebühren für Kindergärten wurden im ganzen Land abgeschafft.",
+    "beispielTr": "Anaokulu ücretleri ülke genelinde kaldırıldı.",
+    "beispielEn": "The fees for kindergartens were abolished nationwide."
+  },
+  {
+    "id": 5184,
+    "tr": "reform yapmak",
+    "en": "to reform",
+    "beispiel": "Das Rentensystem soll bis 2030 grundlegend reformiert werden.",
+    "beispielTr": "Emeklilik sisteminde 2030'a kadar kökten reform yapılması planlanıyor.",
+    "beispielEn": "The pension system is to be fundamentally reformed by 2030."
+  },
+  {
+    "id": 5185,
+    "tr": "yürürlüğe koymak",
+    "en": "to enact",
+    "beispiel": "Das Land hat ein neues Gesetz zum Schutz der Wälder erlassen.",
+    "beispielTr": "Eyalet, ormanları korumak için yeni bir yasayı yürürlüğe koydu.",
+    "beispielEn": "The state has enacted a new law to protect the forests."
+  },
+  {
+    "id": 5186,
+    "tr": "imzalamak",
+    "en": "to sign",
+    "beispiel": "Beide Regierungen haben das Abkommen in Berlin unterzeichnet.",
+    "beispielTr": "İki hükümet anlaşmayı Berlin'de imzaladı.",
+    "beispielEn": "Both governments signed the agreement in Berlin."
+  },
+  {
+    "id": 5187,
+    "tr": "oylamada yenmek",
+    "en": "to outvote",
+    "beispiel": "Die Minderheit wurde bei der Abstimmung deutlich überstimmt.",
+    "beispielTr": "Azınlık oylamada açık farkla yenildi.",
+    "beispielEn": "The minority was clearly outvoted."
+  },
+  {
+    "id": 5188,
+    "tr": "çağrı yapmak",
+    "en": "to call for",
+    "beispiel": "Die Gewerkschaft rief für Freitag zu einem Warnstreik auf.",
+    "beispielTr": "Sendika cuma günü için uyarı grevi çağrısı yaptı.",
+    "beispielEn": "The union called for a warning strike on Friday."
+  },
+  {
+    "id": 5189,
+    "tr": "kısmak",
+    "en": "to cut",
+    "beispiel": "Die Mittel für Bibliotheken wurden erneut um zehn Prozent gekürzt.",
+    "beispielTr": "Kütüphanelere ayrılan kaynak yeniden yüzde on kısıldı.",
+    "beispielEn": "The funds for libraries were cut by ten percent again."
+  },
+  {
+    "id": 5190,
+    "tr": "tahsil etmek",
+    "en": "to charge",
+    "beispiel": "Die Gemeinde erhebt seit Januar eine Gebühr für Straßenreinigung.",
+    "beispielTr": "Belediye ocak ayından beri sokak temizliği için ücret tahsil ediyor.",
+    "beispielEn": "The municipality has charged a fee for street cleaning since January."
+  },
+  {
+    "id": 5191,
+    "tr": "gündeme getirmek",
+    "en": "to introduce",
+    "beispiel": "Die Opposition brachte im Rat einen eigenen Vorschlag ein.",
+    "beispielTr": "Muhalefet mecliste kendi önerisini gündeme getirdi.",
+    "beispielEn": "The opposition introduced its own proposal in the council."
+  },
+  {
+    "id": 5192,
+    "tr": "yerel",
+    "en": "municipal",
+    "beispiel": "Über den Bau der neuen Sporthalle wird auf kommunaler Ebene entschieden.",
+    "beispielTr": "Yeni spor salonunun yapımına yerel yönetim düzeyinde karar veriliyor.",
+    "beispielEn": "The construction of the new sports hall is decided at the municipal level."
+  },
+  {
+    "id": 5193,
+    "tr": "oybirliğiyle",
+    "en": "unanimously",
+    "beispiel": "Der Ausschuss lehnte den Antrag am Ende einstimmig ab.",
+    "beispielTr": "Komisyon başvuruyu sonunda oybirliğiyle reddetti.",
+    "beispielEn": "The committee finally rejected the application unanimously."
+  },
+  {
+    "id": 5194,
+    "tr": "oy çokluğuyla",
+    "en": "by a majority",
+    "beispiel": "Der Bundestag hat den Haushalt mehrheitlich beschlossen.",
+    "beispielTr": "Federal Meclis bütçeyi oy çokluğuyla kabul etti.",
+    "beispielEn": "The Bundestag passed the budget by a majority."
+  }
+]

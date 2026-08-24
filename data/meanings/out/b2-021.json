@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4644,
+    "tr": "dengelemek",
+    "en": "to stabilize",
+    "beispiel": "Die Regierung will die Preise mit Subventionen stabilisieren.",
+    "beispielTr": "Hükümet fiyatları desteklerle dengelemek istiyor.",
+    "beispielEn": "The government wants to stabilize prices with subsidies."
+  },
+  {
+    "id": 4645,
+    "tr": "uyuşturmak",
+    "en": "to numb",
+    "beispiel": "Der Zahnarzt betäubt die Stelle vor dem Bohren.",
+    "beispielTr": "Diş hekimi delmeden önce o bölgeyi uyuşturuyor.",
+    "beispielEn": "The dentist numbs the spot before drilling."
+  },
+  {
+    "id": 4646,
+    "tr": "iğne yapmak",
+    "en": "to inject",
+    "beispiel": "Sie muss sich täglich Insulin in den Bauch spritzen.",
+    "beispielTr": "Her gün karnına insülin iğnesi yapmak zorunda.",
+    "beispielEn": "She has to inject insulin into her belly every day."
+  },
+  {
+    "id": 4647,
+    "tr": "dezenfekte etmek",
+    "en": "to disinfect",
+    "beispiel": "Vor jedem Eingriff werden die Hände gründlich desinfiziert.",
+    "beispielTr": "Her müdahaleden önce eller iyice dezenfekte ediliyor.",
+    "beispielEn": "Before every procedure the hands are thoroughly disinfected."
+  },
+  {
+    "id": 4648,
+    "tr": "düzelmek",
+    "en": "to improve",
+    "beispiel": "Ihr Husten hat sich nach dem Urlaub deutlich gebessert.",
+    "beispielTr": "Öksürüğü tatilden sonra belirgin şekilde düzeldi.",
+    "beispielEn": "Her cough improved noticeably after the vacation."
+  },
+  {
+    "id": 4649,
+    "tr": "hastalanmak",
+    "en": "to fall ill",
+    "beispiel": "Jedes Jahr erkranken Tausende Menschen an dieser Infektion.",
+    "beispielTr": "Her yıl binlerce insan bu enfeksiyona yakalanıyor.",
+    "beispielEn": "Every year thousands of people fall ill with this infection."
+  },
+  {
+    "id": 4650,
+    "tr": "önlemek",
+    "en": "to prevent",
+    "beispiel": "Mit Sport und guter Ernährung kann man vielen Krankheiten vorbeugen.",
+    "beispielTr": "Spor ve iyi beslenmeyle birçok hastalık önlenebilir.",
+    "beispielEn": "With exercise and a good diet you can prevent many diseases."
+  },
+  {
+    "id": 4651,
+    "tr": "kronik",
+    "en": "chronic",
+    "beispiel": "Er lebt seit seiner Jugend mit einer chronischen Krankheit.",
+    "beispielTr": "Gençliğinden beri kronik bir hastalıkla yaşıyor.",
+    "beispielEn": "He has been living with a chronic illness since his youth."
+  },
+  {
+    "id": 4652,
+    "tr": "akut",
+    "en": "acute",
+    "beispiel": "Bei akuten Schmerzen solltest du sofort zum Arzt gehen.",
+    "beispielTr": "Akut ağrılarda hemen doktora gitmelisin.",
+    "beispielEn": "With acute pain you should go to the doctor immediately."
+  },
+  {
+    "id": 4653,
+    "tr": "ayakta tedavi",
+    "en": "outpatient",
+    "beispiel": "Die meisten dieser Operationen werden heute ambulant durchgeführt.",
+    "beispielTr": "Bu ameliyatların çoğu bugün ayakta tedaviyle yapılıyor.",
+    "beispielEn": "Most of these operations are done on an outpatient basis today."
+  },
+  {
+    "id": 4654,
+    "tr": "yatarak tedavi",
+    "en": "inpatient",
+    "beispiel": "Nach dem Sturz wurde sie zwei Wochen stationär behandelt.",
+    "beispielTr": "Düşmeden sonra iki hafta hastanede yatarak tedavi gördü.",
+    "beispielEn": "After the fall she was treated as an inpatient for two weeks."
+  },
+  {
+    "id": 4655,
+    "tr": "reçeteye tabi",
+    "en": "prescription-only",
+    "beispiel": "Dieses starke Schlafmittel ist in Deutschland rezeptpflichtig.",
+    "beispielTr": "Bu güçlü uyku ilacı Almanya'da reçeteye tabidir.",
+    "beispielEn": "This strong sleeping pill is prescription-only in Germany."
+  },
+  {
+    "id": 4656,
+    "tr": "psikolojik",
+    "en": "mental",
+    "beispiel": "Der Unfall hat ihn psychisch stark belastet.",
+    "beispielTr": "Kaza onu psikolojik olarak çok yıprattı.",
+    "beispielEn": "The accident took a heavy mental toll on him."
+  },
+  {
+    "id": 4657,
+    "tr": "yatkın",
+    "en": "susceptible",
+    "beispiel": "Im Winter bin ich besonders anfällig für Erkältungen.",
+    "beispielTr": "Kışın soğuk algınlığına özellikle yatkınım.",
+    "beispielEn": "In winter I am especially susceptible to colds."
+  },
+  {
+    "id": 4658,
+    "tr": "iş göremez",
+    "en": "unfit for work",
+    "beispiel": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig.",
+    "beispielTr": "Doktor ona on gün iş göremez raporu verdi.",
+    "beispielEn": "The doctor declared him unfit for work for ten days."
+  },
+  {
+    "id": 4659,
+    "tr": "aç karnına",
+    "en": "on an empty stomach",
+    "beispiel": "Sie müssen morgen nüchtern zur Blutabnahme kommen.",
+    "beispielTr": "Yarın kan alımına aç karnına gelmeniz gerekiyor.",
+    "beispielEn": "You have to come to the blood test on an empty stomach tomorrow."
+  },
+  {
+    "id": 4660,
+    "tr": "bulaşıcı",
+    "en": "transmissible",
+    "beispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar.",
+    "beispielTr": "Bu hastalık sadece doğrudan temasla bulaşıyor.",
+    "beispielEn": "This disease is only transmissible through direct contact."
+  },
+  {
+    "id": 4661,
+    "tr": "imalat",
+    "en": "manufacturing",
+    "beispiel": "Die Fertigung läuft seit Montag wieder im Zweischichtbetrieb.",
+    "beispielTr": "İmalat pazartesiden beri yeniden iki vardiyalı çalışıyor.",
+    "beispielEn": "Manufacturing has been running two shifts again since Monday."
+  },
+  {
+    "id": 4662,
+    "tr": "malzeme",
+    "en": "material",
+    "beispiel": "Für das Gehäuse haben wir einen leichteren Werkstoff gewählt.",
+    "beispielTr": "Gövde için daha hafif bir malzeme seçtik.",
+    "beispielEn": "For the housing we chose a lighter material."
+  },
+  {
+    "id": 4663,
+    "tr": "aşınma",
+    "en": "wear",
+    "beispiel": "Der Verschleiß an den Lagern ist deutlich höher als erwartet.",
+    "beispielTr": "Yataklardaki aşınma beklenenden belirgin şekilde fazla.",
+    "beispielEn": "The wear on the bearings is significantly higher than expected."
+  },
+  {
+    "id": 4664,
+    "tr": "bakım",
+    "en": "maintenance",
+    "beispiel": "Während der Wartung steht die gesamte Linie still.",
+    "beispielTr": "Bakım sırasında bütün hat duruyor.",
+    "beispielEn": "The entire line stands still during maintenance."
+  },
+  {
+    "id": 4665,
+    "tr": "kaynak dikişi",
+    "en": "weld seam",
+    "beispiel": "Der Prüfer entdeckte einen feinen Riss in der Schweißnaht.",
+    "beispielTr": "Kontrolör kaynak dikişinde ince bir çatlak buldu.",
+    "beispielEn": "The inspector found a fine crack in the weld seam."
+  },
+  {
+    "id": 4666,
+    "tr": "yağlayıcı",
+    "en": "lubricant",
+    "beispiel": "Bei hohen Temperaturen versagt dieser Schmierstoff sehr schnell.",
+    "beispielTr": "Yüksek sıcaklıklarda bu yağlayıcı çok çabuk bozuluyor.",
+    "beispielEn": "At high temperatures this lubricant fails very quickly."
+  },
+  {
+    "id": 4667,
+    "tr": "alaşım",
+    "en": "alloy",
+    "beispiel": "Die neue Legierung ist leichter und trotzdem sehr belastbar.",
+    "beispielTr": "Yeni alaşım daha hafif ama yine de çok dayanıklı.",
+    "beispielEn": "The new alloy is lighter and still very durable."
+  },
+  {
+    "id": 4668,
+    "tr": "düzenek",
+    "en": "device",
+    "beispiel": "Ohne diese Vorrichtung lässt sich das Bauteil kaum einspannen.",
+    "beispielTr": "Bu düzenek olmadan parçayı sıkıştırmak neredeyse imkânsız.",
+    "beispielEn": "Without this device the part can hardly be clamped."
+  },
+  {
+    "id": 4669,
+    "tr": "modül",
+    "en": "module",
+    "beispiel": "Jede Baugruppe wird vor dem Einbau einzeln getestet.",
+    "beispielTr": "Her modül montajdan önce tek tek test ediliyor.",
+    "beispielEn": "Every module is tested individually before installation."
+  },
+  {
+    "id": 4670,
+    "tr": "bileşen",
+    "en": "component",
+    "beispiel": "Das defekte Bauteil stammt aus einer älteren Serie.",
+    "beispielTr": "Arızalı bileşen daha eski bir seriden geliyor.",
+    "beispielEn": "The defective component comes from an older series."
+  },
+  {
+    "id": 4671,
+    "tr": "yeniden işleme",
+    "en": "rework",
+    "beispiel": "Die Nacharbeit kostet uns jeden Monat mehrere Tausend Euro.",
+    "beispielTr": "Yeniden işleme bize her ay birkaç bin euroya mal oluyor.",
+    "beispielEn": "The rework costs us several thousand euros every month."
+  },
+  {
+    "id": 4672,
+    "tr": "test tezgâhı",
+    "en": "test bench",
+    "beispiel": "Der Motor lief auf dem Prüfstand über vierzig Stunden.",
+    "beispielTr": "Motor test tezgâhında kırk saatten fazla çalıştı.",
+    "beispielEn": "The engine ran on the test bench for over forty hours."
+  },
+  {
+    "id": 4673,
+    "tr": "ölçüm aleti",
+    "en": "measuring device",
+    "beispiel": "Das Messgerät muss einmal im Jahr überprüft werden.",
+    "beispielTr": "Ölçüm aletinin yılda bir kez kontrol edilmesi gerekiyor.",
+    "beispielEn": "The measuring device has to be checked once a year."
+  },
+  {
+    "id": 4674,
+    "tr": "tolerans",
+    "en": "tolerance",
+    "beispiel": "Diese Toleranz ist für unsere Maschinen viel zu eng.",
+    "beispielTr": "Bu tolerans bizim makineler için fazla dar.",
+    "beispielEn": "This tolerance is far too tight for our machines."
+  },
+  {
+    "id": 4675,
+    "tr": "tedarikçi",
+    "en": "supplier",
+    "beispiel": "Unser wichtigster Zulieferer sitzt keine dreißig Kilometer entfernt.",
+    "beispielTr": "En önemli tedarikçimiz otuz kilometre bile uzakta değil.",
+    "beispielEn": "Our most important supplier is not even thirty kilometers away."
+  },
+  {
+    "id": 4676,
+    "tr": "stok",
+    "en": "inventory",
+    "beispiel": "Der Lagerbestand reicht höchstens noch für zwei Wochen.",
+    "beispielTr": "Stok en fazla iki hafta daha yeter.",
+    "beispielEn": "The inventory will last two weeks at most."
+  },
+  {
+    "id": 4677,
+    "tr": "forklift",
+    "en": "forklift",
+    "beispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren.",
+    "beispielTr": "Atölyede forklifti yalnızca eğitimli personel kullanabilir.",
+    "beispielEn": "Only trained staff may drive the forklift in the hall."
+  },
+  {
+    "id": 4678,
+    "tr": "montaj bandı",
+    "en": "assembly line",
+    "beispiel": "Am Fließband bleibt für jeden Handgriff nur eine Minute.",
+    "beispielTr": "Bantta her hareket için sadece bir dakika var.",
+    "beispielEn": "On the assembly line there is only one minute for each step."
+  },
+  {
+    "id": 4679,
+    "tr": "sabah vardiyası",
+    "en": "early shift",
+    "beispiel": "Meine Frühschicht beginnt schon um halb sechs.",
+    "beispielTr": "Sabah vardiyam daha beş buçukta başlıyor.",
+    "beispielEn": "My early shift starts as early as half past five."
+  },
+  {
+    "id": 4680,
+    "tr": "üretim süresi",
+    "en": "lead time",
+    "beispiel": "Durch die neue Software sank die Durchlaufzeit um ein Drittel.",
+    "beispielTr": "Yeni yazılımla üretim süresi üçte bir azaldı.",
+    "beispielEn": "The new software cut the lead time by a third."
+  },
+  {
+    "id": 4681,
+    "tr": "hammadde",
+    "en": "raw material",
+    "beispiel": "Die Preise für wichtige Rohstoffe sind erneut gestiegen.",
+    "beispielTr": "Önemli hammaddelerin fiyatları yeniden yükseldi.",
+    "beispielEn": "The prices for important raw materials have risen again."
+  },
+  {
+    "id": 4682,
+    "tr": "korozyon",
+    "en": "corrosion",
+    "beispiel": "Gegen Korrosion hilft nur eine ordentliche Schutzschicht.",
+    "beispielTr": "Korozyona karşı ancak düzgün bir koruyucu katman işe yarar.",
+    "beispielEn": "Only a proper protective coating helps against corrosion."
+  },
+  {
+    "id": 4683,
+    "tr": "montaj",
+    "en": "assembly",
+    "beispiel": "Die Montage der Anlage dauert voraussichtlich drei Tage.",
+    "beispielTr": "Tesisin montajı tahminen üç gün sürecek.",
+    "beispielEn": "The assembly of the plant will probably take three days."
+  },
+  {
+    "id": 4684,
+    "tr": "işyeri",
+    "en": "business site",
+    "beispiel": "Das Unternehmen unterhält drei Betriebsstätten in Süddeutschland.",
+    "beispielTr": "Şirketin Güney Almanya'da üç işyeri var.",
+    "beispielEn": "The company runs three business sites in southern Germany."
+  },
+  {
+    "id": 4685,
+    "tr": "conta",
+    "en": "seal",
+    "beispiel": "Die poröse Dichtung war die Ursache für den Ölverlust.",
+    "beispielTr": "Gözenekli conta yağ kaçağının nedeniydi.",
+    "beispielEn": "The porous seal was the cause of the oil leak."
+  },
+  {
+    "id": 4686,
+    "tr": "kumanda sistemi",
+    "en": "control system",
+    "beispiel": "Die Steuerung der Presse wird nächstes Jahr komplett erneuert.",
+    "beispielTr": "Presin kumanda sistemi gelecek yıl tamamen yenilenecek.",
+    "beispielEn": "The control system of the press will be completely renewed next year."
+  },
+  {
+    "id": 4687,
+    "tr": "kullanım kılavuzu",
+    "en": "operating manual",
+    "beispiel": "Lesen Sie die Betriebsanleitung, bevor Sie die Maschine einschalten.",
+    "beispielTr": "Makineyi çalıştırmadan önce kullanım kılavuzunu okuyun.",
+    "beispielEn": "Read the operating manual before you switch on the machine."
+  },
+  {
+    "id": 4688,
+    "tr": "tehlikeli madde",
+    "en": "hazardous substance",
+    "beispiel": "Gefahrstoffe werden in einem separaten Raum aufbewahrt.",
+    "beispielTr": "Tehlikeli maddeler ayrı bir odada saklanıyor.",
+    "beispielEn": "Hazardous substances are kept in a separate room."
+  },
+  {
+    "id": 4689,
+    "tr": "verim",
+    "en": "efficiency",
+    "beispiel": "Der Wirkungsgrad des alten Kessels liegt unter sechzig Prozent.",
+    "beispielTr": "Eski kazanın verimi yüzde altmışın altında.",
+    "beispielEn": "The efficiency of the old boiler is below sixty percent."
+  },
+  {
+    "id": 4690,
+    "tr": "prototip",
+    "en": "prototype",
+    "beispiel": "Der erste Prototyp wird im Herbst der Geschäftsleitung vorgestellt.",
+    "beispielTr": "İlk prototip sonbaharda yönetime tanıtılacak.",
+    "beispielEn": "The first prototype will be presented to management in the fall."
+  },
+  {
+    "id": 4691,
+    "tr": "yedek parça",
+    "en": "spare part",
+    "beispiel": "Für dieses Modell gibt es kaum noch passende Ersatzteile.",
+    "beispielTr": "Bu model için neredeyse hiç uygun yedek parça kalmadı.",
+    "beispielEn": "There are hardly any matching spare parts left for this model."
+  },
+  {
+    "id": 4692,
+    "tr": "hazırlık süresi",
+    "en": "setup time",
+    "beispiel": "Kürzere Rüstzeiten machen auch kleine Serien wieder rentabel.",
+    "beispielTr": "Kısa hazırlık süreleri küçük serileri de yeniden kârlı kılıyor.",
+    "beispielEn": "Shorter setup times make small batches profitable again."
+  },
+  {
+    "id": 4693,
+    "tr": "adet",
+    "en": "quantity",
+    "beispiel": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich.",
+    "beispielTr": "Belli bir adetten sonra parça başına fiyat belirgin şekilde düşüyor.",
+    "beispielEn": "Above a certain quantity the price per part drops significantly."
+  }
+]

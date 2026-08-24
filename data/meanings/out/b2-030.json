@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5095,
+  "tr": "çok yıllık bitki",
+  "en": "perennial",
+  "beispiel": "Diese Stauden blühen jedes Jahr wieder ohne großen Aufwand.",
+  "beispielTr": "Bu çok yıllık bitkiler her yıl fazla uğraş gerektirmeden yeniden çiçek açıyor.",
+  "beispielEn": "These perennials bloom again every year without much effort."
+ },
+ {
+  "id": 5096,
+  "tr": "meyve ağacı",
+  "en": "fruit tree",
+  "beispiel": "Im Februar werden die alten Obstbäume im Garten ausgelichtet.",
+  "beispielTr": "Şubatta bahçedeki yaşlı meyve ağaçları seyreltiliyor.",
+  "beispielEn": "In February the old fruit trees in the garden are thinned out."
+ },
+ {
+  "id": 5097,
+  "tr": "tarh",
+  "en": "garden bed",
+  "beispiel": "Im hinteren Beet haben wir dieses Jahr Kräuter gepflanzt.",
+  "beispielTr": "Arkadaki tarha bu yıl baharat bitkileri ektik.",
+  "beispielEn": "This year we planted herbs in the back garden bed."
+ },
+ {
+  "id": 5098,
+  "tr": "sera",
+  "en": "greenhouse",
+  "beispiel": "Im Gewächshaus reifen die Tomaten gut zwei Wochen früher.",
+  "beispielTr": "Serada domatesler iki hafta kadar daha erken olgunlaşıyor.",
+  "beispielEn": "In the greenhouse the tomatoes ripen a good two weeks earlier."
+ },
+ {
+  "id": 5099,
+  "tr": "kompost",
+  "en": "compost",
+  "beispiel": "Küchenabfälle und Laub kommen bei uns auf den Kompost.",
+  "beispielTr": "Mutfak atıkları ve yapraklar bizde komposta gidiyor.",
+  "beispielEn": "Kitchen scraps and leaves go onto our compost pile."
+ },
+ {
+  "id": 5100,
+  "tr": "fide",
+  "en": "seedling",
+  "beispiel": "Die Setzlinge kommen erst Mitte Mai ins Freiland.",
+  "beispielTr": "Fideler ancak mayıs ortasında açık toprağa dikiliyor.",
+  "beispielEn": "The seedlings only go outside in the middle of May."
+ },
+ {
+  "id": 5101,
+  "tr": "bahçe makası",
+  "en": "pruning shears",
+  "beispiel": "Mit einer scharfen Gartenschere verletzt man die Rinde weniger.",
+  "beispielTr": "Keskin bir bahçe makasıyla kabuğa daha az zarar verilir.",
+  "beispielEn": "With sharp pruning shears you damage the bark less."
+ },
+ {
+  "id": 5102,
+  "tr": "sulama kabı",
+  "en": "watering can",
+  "beispiel": "Er füllte die Gießkanne aus der Regentonne hinter dem Schuppen.",
+  "beispielTr": "Kulübenin arkasındaki yağmur fıçısından sulama kabını doldurdu.",
+  "beispielEn": "He filled the watering can from the rain barrel behind the shed."
+ },
+ {
+  "id": 5103,
+  "tr": "yabani hayvan",
+  "en": "wild animal",
+  "beispiel": "Der neue Zaun soll Wildtiere von der Autobahn fernhalten.",
+  "beispielTr": "Yeni çit, yabani hayvanları otoyoldan uzak tutacak.",
+  "beispielEn": "The new fence is meant to keep wild animals off the highway."
+ },
+ {
+  "id": 5104,
+  "tr": "kemirgen",
+  "en": "rodent",
+  "beispiel": "Nagetiere haben im Winter die Rinde der jungen Bäume abgefressen.",
+  "beispielTr": "Kemirgenler kışın genç ağaçların kabuğunu kemirmiş.",
+  "beispielEn": "In winter rodents gnawed the bark off the young trees."
+ },
+ {
+  "id": 5105,
+  "tr": "göçmen kuş",
+  "en": "migratory bird",
+  "beispiel": "Viele Zugvögel kehren wegen des milderen Klimas früher zurück.",
+  "beispielTr": "Birçok göçmen kuş ılıman iklim yüzünden daha erken dönüyor.",
+  "beispielEn": "Many migratory birds return earlier because of the milder climate."
+ },
+ {
+  "id": 5106,
+  "tr": "arı kolonisi",
+  "en": "bee colony",
+  "beispiel": "Ein starkes Bienenvolk übersteht auch einen langen Winter.",
+  "beispielTr": "Güçlü bir arı kolonisi uzun bir kışı bile atlatır.",
+  "beispielEn": "A strong bee colony survives even a long winter."
+ },
+ {
+  "id": 5107,
+  "tr": "yuvalanma yeri",
+  "en": "nesting site",
+  "beispiel": "Alte Scheunen bieten Schwalben einen sicheren Nistplatz.",
+  "beispielTr": "Eski ambarlar kırlangıçlara güvenli bir yuvalanma yeri sunuyor.",
+  "beispielEn": "Old barns offer swallows a safe nesting site."
+ },
+ {
+  "id": 5108,
+  "tr": "solmak",
+  "en": "to wilt",
+  "beispiel": "Ohne Wasser welken die Blätter schon nach zwei Tagen.",
+  "beispielTr": "Susuz kalınca yapraklar daha iki günde soluyor.",
+  "beispielEn": "Without water the leaves wilt after just two days."
+ },
+ {
+  "id": 5109,
+  "tr": "kurumak",
+  "en": "to wither",
+  "beispiel": "Der Rasen ist im heißen August völlig verdorrt.",
+  "beispielTr": "Çimenlik sıcak ağustosta tamamen kurudu.",
+  "beispielEn": "The lawn withered completely in the hot August."
+ },
+ {
+  "id": 5110,
+  "tr": "filizlenmek",
+  "en": "to sprout",
+  "beispiel": "Nach dem warmen Regen sprießt überall frisches Grün.",
+  "beispielTr": "Ilık yağmurdan sonra her yerde taze yeşillikler filizleniyor.",
+  "beispielEn": "After the warm rain fresh green sprouts everywhere."
+ },
+ {
+  "id": 5111,
+  "tr": "bellemek",
+  "en": "to dig over",
+  "beispiel": "Im Herbst hat er das ganze Gemüsebeet noch einmal umgegraben.",
+  "beispielTr": "Sonbaharda bütün sebze tarhını bir kez daha belledi.",
+  "beispielEn": "In the fall he dug over the whole vegetable bed once more."
+ },
+ {
+  "id": 5112,
+  "tr": "ot ayıklamak",
+  "en": "to weed",
+  "beispiel": "Nach dem Regen lässt sich das Unkraut leichter jäten.",
+  "beispielTr": "Yağmurdan sonra otları ayıklamak daha kolay oluyor.",
+  "beispielEn": "After the rain the weeds are easier to pull."
+ },
+ {
+  "id": 5113,
+  "tr": "budamak",
+  "en": "to prune",
+  "beispiel": "Die Hecke sollte man zweimal im Jahr beschneiden.",
+  "beispielTr": "Çit bitkisini yılda iki kez budamak gerekir.",
+  "beispielEn": "You should prune the hedge twice a year."
+ },
+ {
+  "id": 5114,
+  "tr": "başıboş dolaşmak",
+  "en": "to roam",
+  "beispiel": "Nachts streunen Füchse sogar durch die Gärten am Stadtrand.",
+  "beispielTr": "Geceleri tilkiler şehir kenarındaki bahçelerde bile dolaşıyor.",
+  "beispielEn": "At night foxes even roam through the gardens on the edge of town."
+ },
+ {
+  "id": 5115,
+  "tr": "ağaçlandırmak",
+  "en": "to reforest",
+  "beispiel": "Die Gemeinde will die kahlen Hänge wieder aufforsten.",
+  "beispielTr": "Belediye çıplak yamaçları yeniden ağaçlandırmak istiyor.",
+  "beispielEn": "The town wants to reforest the bare slopes."
+ },
+ {
+  "id": 5116,
+  "tr": "aşınmak",
+  "en": "to weather",
+  "beispiel": "Der Zaun ist über die Jahre in Wind und Regen verwittert.",
+  "beispielTr": "Çit yıllar içinde rüzgâr ve yağmurda aşındı.",
+  "beispielEn": "Over the years the fence has weathered in wind and rain."
+ },
+ {
+  "id": 5117,
+  "tr": "soğumak",
+  "en": "to cool down",
+  "beispiel": "Nach dem Gewitter hat sich die Luft spürbar abgekühlt.",
+  "beispielTr": "Sağanaktan sonra hava gözle görülür biçimde soğudu.",
+  "beispielEn": "After the thunderstorm the air cooled down noticeably."
+ },
+ {
+  "id": 5118,
+  "tr": "çiselemek",
+  "en": "to drizzle",
+  "beispiel": "Draußen nieselt es seit dem frühen Morgen ununterbrochen.",
+  "beispielTr": "Dışarıda sabahın erken saatlerinden beri aralıksız çiseliyor.",
+  "beispielEn": "Outside it has been drizzling nonstop since early morning."
+ },
+ {
+  "id": 5119,
+  "tr": "hava açmak",
+  "en": "to clear up",
+  "beispiel": "Gegen Mittag klarte es auf und die Sonne kam heraus.",
+  "beispielTr": "Öğleye doğru hava açtı ve güneş çıktı.",
+  "beispielEn": "Around noon it cleared up and the sun came out."
+ },
+ {
+  "id": 5120,
+  "tr": "sular altında bırakmak",
+  "en": "to flood",
+  "beispiel": "Der Bach hat nach der Schneeschmelze die Wiesen überflutet.",
+  "beispielTr": "Dere, kar erimesinden sonra çayırları sular altında bıraktı.",
+  "beispielEn": "After the snowmelt the stream flooded the meadows."
+ },
+ {
+  "id": 5121,
+  "tr": "toprağa sızmak",
+  "en": "to seep away",
+  "beispiel": "Auf verdichtetem Boden versickert das Regenwasser nur langsam.",
+  "beispielTr": "Sıkışmış toprakta yağmur suyu ancak yavaş yavaş sızıyor.",
+  "beispielEn": "On compacted soil the rainwater seeps away only slowly."
+ },
+ {
+  "id": 5122,
+  "tr": "tozlaştırmak",
+  "en": "to pollinate",
+  "beispiel": "Wildbienen bestäuben viele Obstsorten zuverlässiger als Honigbienen.",
+  "beispielTr": "Yabani arılar birçok meyve türünü bal arılarından daha iyi tozlaştırır.",
+  "beispielEn": "Wild bees pollinate many fruit varieties more reliably than honeybees."
+ },
+ {
+  "id": 5123,
+  "tr": "kuluçkaya yatmak",
+  "en": "to brood",
+  "beispiel": "Auf dem Dach des Rathauses brüten seit Jahren Störche.",
+  "beispielTr": "Belediye binasının çatısında yıllardır leylekler kuluçkaya yatıyor.",
+  "beispielEn": "Storks have been brooding on the town hall roof for years."
+ },
+ {
+  "id": 5124,
+  "tr": "fırtına esmek",
+  "en": "to storm",
+  "beispiel": "An der Küste stürmte es die ganze Nacht hindurch.",
+  "beispielTr": "Kıyıda bütün gece boyunca fırtına esti.",
+  "beispielEn": "On the coast it stormed all night long."
+ },
+ {
+  "id": 5125,
+  "tr": "buharlaşmak",
+  "en": "to evaporate",
+  "beispiel": "In der Mittagshitze verdunstet das Gießwasser fast sofort.",
+  "beispielTr": "Öğle sıcağında sulama suyu neredeyse anında buharlaşıyor.",
+  "beispielEn": "In the midday heat the water evaporates almost immediately."
+ },
+ {
+  "id": 5126,
+  "tr": "erimek",
+  "en": "to melt",
+  "beispiel": "Der Schnee auf den Gipfeln schmilzt von Jahr zu Jahr früher.",
+  "beispielTr": "Zirvelerdeki kar her yıl biraz daha erken eriyor.",
+  "beispielEn": "The snow on the peaks melts earlier every year."
+ },
+ {
+  "id": 5127,
+  "tr": "aşırı büyümek",
+  "en": "to grow rampantly",
+  "beispiel": "Die Minze wuchert im ganzen Garten und verdrängt andere Kräuter.",
+  "beispielTr": "Nane bütün bahçede aşırı büyüyüp diğer bitkileri bastırıyor.",
+  "beispielEn": "The mint grows rampantly all over the garden and crowds out other herbs."
+ },
+ {
+  "id": 5128,
+  "tr": "ağaçları kesip temizlemek",
+  "en": "to clear",
+  "beispiel": "Für die neue Trasse wurde ein ganzer Streifen Wald gerodet.",
+  "beispielTr": "Yeni güzergâh için ormanın bütün bir şeridi kesilip temizlendi.",
+  "beispielEn": "A whole strip of forest was cleared for the new route."
+ },
+ {
+  "id": 5129,
+  "tr": "verimli",
+  "en": "fertile",
+  "beispiel": "Der Boden am Flussufer ist besonders fruchtbar und leicht zu bearbeiten.",
+  "beispielTr": "Nehir kıyısındaki toprak özellikle verimli ve işlemesi kolay.",
+  "beispielEn": "The soil by the river is especially fertile and easy to work."
+ },
+ {
+  "id": 5130,
+  "tr": "kıraç",
+  "en": "barren",
+  "beispiel": "Auf dem kargen Bergboden wachsen nur wenige zähe Pflanzen.",
+  "beispielTr": "Kıraç dağ toprağında yalnızca birkaç dayanıklı bitki yetişiyor.",
+  "beispielEn": "Only a few tough plants grow on the barren mountain soil."
+ },
+ {
+  "id": 5131,
+  "tr": "bataklık gibi",
+  "en": "swampy",
+  "beispiel": "Nach der Schneeschmelze ist die Wiese hinter dem Hof sumpfig.",
+  "beispielTr": "Kar eridikten sonra çiftliğin arkasındaki çayır bataklık gibi oluyor.",
+  "beispielEn": "After the snowmelt the meadow behind the farm is swampy."
+ },
+ {
+  "id": 5132,
+  "tr": "her dem yeşil",
+  "en": "evergreen",
+  "beispiel": "Immergrüne Hecken bieten Vögeln auch im Winter Schutz.",
+  "beispielTr": "Her dem yeşil çitler kuşlara kışın da barınak sağlıyor.",
+  "beispielEn": "Evergreen hedges give birds shelter in winter too."
+ },
+ {
+  "id": 5133,
+  "tr": "kışa dayanıklı",
+  "en": "hardy",
+  "beispiel": "Diese Sorte ist winterhart und muss nicht abgedeckt werden.",
+  "beispielTr": "Bu tür kışa dayanıklı ve üzerinin örtülmesi gerekmiyor.",
+  "beispielEn": "This variety is hardy and does not have to be covered."
+ },
+ {
+  "id": 5134,
+  "tr": "tür bakımından zengin",
+  "en": "species-rich",
+  "beispiel": "Eine artenreiche Wiese kommt ohne chemische Mittel gut zurecht.",
+  "beispielTr": "Tür bakımından zengin bir çayır kimyasal madde olmadan da idare eder.",
+  "beispielEn": "A species-rich meadow gets by fine without any chemicals."
+ },
+ {
+  "id": 5135,
+  "tr": "gür",
+  "en": "lush",
+  "beispiel": "Nach dem regnerischen Frühling wächst alles besonders üppig.",
+  "beispielTr": "Yağmurlu ilkbahardan sonra her şey alabildiğine gür büyüyor.",
+  "beispielEn": "After the rainy spring everything is growing especially lush."
+ },
+ {
+  "id": 5136,
+  "tr": "mevsimsel",
+  "en": "seasonal",
+  "beispiel": "Der Wasserstand des Sees schwankt jahreszeitlich stark.",
+  "beispielTr": "Gölün su seviyesi mevsimlere göre çok değişiyor.",
+  "beispielEn": "The lake's water level varies a lot with the seasons."
+ },
+ {
+  "id": 5137,
+  "tr": "bunaltıcı",
+  "en": "muggy",
+  "beispiel": "Die Luft war den ganzen Tag schwül und drückend.",
+  "beispielTr": "Hava bütün gün bunaltıcı ve ağırdı.",
+  "beispielEn": "The air was muggy and heavy all day."
+ },
+ {
+  "id": 5138,
+  "tr": "doğaya yakın",
+  "en": "near-natural",
+  "beispiel": "Der Bach wurde naturnah umgestaltet und mäandert wieder frei.",
+  "beispielTr": "Dere doğaya yakın biçimde yeniden düzenlendi ve yine serbestçe kıvrılıyor.",
+  "beispielEn": "The stream was redesigned to be near-natural and meanders freely again."
+ },
+ {
+  "id": 5139,
+  "tr": "oy pusulası",
+  "en": "ballot",
+  "beispiel": "Er faltete den Stimmzettel und warf ihn in die Urne.",
+  "beispielTr": "Oy pusulasını katladı ve sandığa attı.",
+  "beispielEn": "He folded the ballot and dropped it into the box."
+ },
+ {
+  "id": 5140,
+  "tr": "halk oylaması",
+  "en": "referendum",
+  "beispiel": "Über den Bau der neuen Brücke entscheidet eine Volksabstimmung.",
+  "beispielTr": "Yeni köprünün yapımına halk oylaması karar verecek.",
+  "beispielEn": "A referendum will decide on the building of the new bridge."
+ },
+ {
+  "id": 5141,
+  "tr": "yurttaş girişimi",
+  "en": "citizens' initiative",
+  "beispiel": "Eine Bürgerinitiative kämpft seit Jahren gegen den geplanten Flughafen.",
+  "beispielTr": "Bir yurttaş girişimi yıllardır planlanan havalimanına karşı mücadele ediyor.",
+  "beispielEn": "A citizens' initiative has been fighting the planned airport for years."
+ },
+ {
+  "id": 5142,
+  "tr": "belediye başkanı",
+  "en": "mayor",
+  "beispiel": "Der Bürgermeister eröffnete die Sitzung mit einer kurzen Rede.",
+  "beispielTr": "Belediye başkanı oturumu kısa bir konuşmayla açtı.",
+  "beispielEn": "The mayor opened the session with a short speech."
+ },
+ {
+  "id": 5143,
+  "tr": "belediye meclisi",
+  "en": "municipal council",
+  "beispiel": "Der Gemeinderat tritt jeden zweiten Donnerstag im Rathaus zusammen.",
+  "beispielTr": "Belediye meclisi iki haftada bir perşembe belediye binasında toplanıyor.",
+  "beispielEn": "The municipal council meets at the town hall every other Thursday."
+ },
+ {
+  "id": 5144,
+  "tr": "şehir meclisi",
+  "en": "city council",
+  "beispiel": "Im Stadtrat gibt es keine klare Mehrheit für den Vorschlag.",
+  "beispielTr": "Şehir meclisinde öneri için net bir çoğunluk yok.",
+  "beispielEn": "There is no clear majority for the proposal on the city council."
+ }
+]

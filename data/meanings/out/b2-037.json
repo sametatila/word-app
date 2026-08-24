@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5446,
+  "tr": "zararlı yazılım",
+  "en": "malware",
+  "beispiel": "Über einen Anhang gelangte Schadsoftware in das gesamte Firmennetz.",
+  "beispielTr": "Bir ek dosya üzerinden zararlı yazılım tüm şirket ağına bulaştı.",
+  "beispielEn": "Malware got into the entire company network through an attachment."
+ },
+ {
+  "id": 5447,
+  "tr": "saldırgan",
+  "en": "attacker",
+  "beispiel": "Die Angreifer verschafften sich mit gestohlenen Daten Zugang zum System.",
+  "beispielTr": "Saldırganlar çalınan verilerle sisteme erişim sağladı.",
+  "beispielEn": "The attackers gained access to the system with stolen data."
+ },
+ {
+  "id": 5448,
+  "tr": "veri kötüye kullanımı",
+  "en": "data misuse",
+  "beispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs.",
+  "beispielTr": "Sağlayıcı hakkında olası veri kötüye kullanımı nedeniyle soruşturma yürütülüyor.",
+  "beispielEn": "The provider is under investigation for possible data misuse."
+ },
+ {
+  "id": 5449,
+  "tr": "veri kaybı",
+  "en": "data loss",
+  "beispiel": "Eine regelmäßige Sicherung schützt am besten vor plötzlichem Datenverlust.",
+  "beispielTr": "Düzenli yedekleme ani veri kaybına karşı en iyi korumadır.",
+  "beispielEn": "Regular backups are the best protection against sudden data loss."
+ },
+ {
+  "id": 5450,
+  "tr": "erişilebilirlik",
+  "en": "availability",
+  "beispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
+  "beispielTr": "Sözleşme bize neredeyse yüzde yüz erişilebilirlik güvencesi veriyor.",
+  "beispielEn": "The contract guarantees us almost one hundred percent availability."
+ },
+ {
+  "id": 5451,
+  "tr": "işlem gücü",
+  "en": "computing power",
+  "beispiel": "Für diese Auswertung brauchen wir deutlich mehr Rechenleistung als bisher.",
+  "beispielTr": "Bu analiz için şimdiye kadarkinden çok daha fazla işlem gücü gerekiyor.",
+  "beispielEn": "For this analysis we need much more computing power than before."
+ },
+ {
+  "id": 5452,
+  "tr": "uç cihaz",
+  "en": "end device",
+  "beispiel": "Die Seite passt sich an jedes Endgerät automatisch an.",
+  "beispielTr": "Sayfa her uç cihaza kendiliğinden uyum sağlıyor.",
+  "beispielEn": "The page adapts automatically to every end device."
+ },
+ {
+  "id": 5453,
+  "tr": "sensör",
+  "en": "sensor",
+  "beispiel": "Ein Sensor an der Tür meldet jede Bewegung im Flur.",
+  "beispielTr": "Kapıdaki bir sensör koridordaki her hareketi bildiriyor.",
+  "beispielEn": "A sensor on the door reports every movement in the hallway."
+ },
+ {
+  "id": 5454,
+  "tr": "uzaktan kontrol",
+  "en": "remote control",
+  "beispiel": "Die Heizung lässt sich per Fernsteuerung vom Handy aus regeln.",
+  "beispielTr": "Kalorifer telefon üzerinden uzaktan kontrol edilebiliyor.",
+  "beispielEn": "The heating can be adjusted by remote control from a phone."
+ },
+ {
+  "id": 5455,
+  "tr": "robot",
+  "en": "robot",
+  "beispiel": "In der Halle übernehmen Roboter inzwischen die schwersten Arbeitsschritte.",
+  "beispielTr": "Fabrikada en ağır işleri artık robotlar üstleniyor.",
+  "beispielEn": "In the factory hall robots now handle the heaviest tasks."
+ },
+ {
+  "id": 5456,
+  "tr": "geliştirici",
+  "en": "developer",
+  "beispiel": "Die Entwickler arbeiten seit Wochen an einer neuen Version.",
+  "beispielTr": "Geliştiriciler haftalardır yeni bir sürüm üzerinde çalışıyor.",
+  "beispielEn": "The developers have been working on a new version for weeks."
+ },
+ {
+  "id": 5457,
+  "tr": "yenilik",
+  "en": "innovation",
+  "beispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten.",
+  "beispielTr": "En önemli yenilik kişisel verilerin korunmasıyla ilgili.",
+  "beispielEn": "The most important innovation concerns the protection of personal data."
+ },
+ {
+  "id": 5458,
+  "tr": "işleyiş",
+  "en": "process",
+  "beispiel": "Der gesamte Ablauf der Bestellung wird jetzt vom Rechner gesteuert.",
+  "beispielTr": "Siparişin tüm işleyişini artık bilgisayar yönetiyor.",
+  "beispielEn": "The entire ordering process is now controlled by the computer."
+ },
+ {
+  "id": 5459,
+  "tr": "şarj cihazı",
+  "en": "charger",
+  "beispiel": "Ich habe mein Ladegerät im Zug liegen lassen.",
+  "beispielTr": "Şarj cihazımı trende unuttum.",
+  "beispielEn": "I left my charger on the train."
+ },
+ {
+  "id": 5460,
+  "tr": "veri tabanı",
+  "en": "database",
+  "beispiel": "In der Datenbank stehen die Angaben von mehreren Millionen Kunden.",
+  "beispielTr": "Veri tabanında milyonlarca müşterinin bilgileri bulunuyor.",
+  "beispielEn": "The database holds the details of several million customers."
+ },
+ {
+  "id": 5461,
+  "tr": "arama motoru",
+  "en": "search engine",
+  "beispiel": "Die Suchmaschine zeigt Werbung immer vor den eigentlichen Ergebnissen.",
+  "beispielTr": "Arama motoru reklamları hep asıl sonuçlardan önce gösteriyor.",
+  "beispielEn": "The search engine always shows ads before the actual results."
+ },
+ {
+  "id": 5462,
+  "tr": "dosya formatı",
+  "en": "file format",
+  "beispiel": "Bitte schicken Sie den Bericht in einem gängigen Dateiformat.",
+  "beispielTr": "Lütfen raporu yaygın bir dosya formatında gönderin.",
+  "beispielEn": "Please send the report in a common file format."
+ },
+ {
+  "id": 5463,
+  "tr": "virüs koruması",
+  "en": "virus protection",
+  "beispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen.",
+  "beispielTr": "Güncel virüs koruması olmadan yabancı ekler açılmamalı.",
+  "beispielEn": "Without current virus protection you should not open unknown attachments."
+ },
+ {
+  "id": 5464,
+  "tr": "operatör",
+  "en": "network operator",
+  "beispiel": "Der Netzbetreiber hat die Störung nach zwei Tagen behoben.",
+  "beispielTr": "Operatör arızayı iki gün sonra giderdi.",
+  "beispielEn": "The network operator fixed the fault after two days."
+ },
+ {
+  "id": 5465,
+  "tr": "hizmet",
+  "en": "service",
+  "beispiel": "Viele Dienstleistungen der Behörde lassen sich inzwischen online erledigen.",
+  "beispielTr": "Kurumun birçok hizmeti artık internetten halledilebiliyor.",
+  "beispielEn": "Many of the agency's services can now be handled online."
+ },
+ {
+  "id": 5466,
+  "tr": "elektronik",
+  "en": "electronics",
+  "beispiel": "Bei dem Unfall wurde vor allem die Elektronik des Wagens beschädigt.",
+  "beispielTr": "Kazada en çok aracın elektroniği zarar gördü.",
+  "beispielEn": "In the accident it was mainly the car's electronics that were damaged."
+ },
+ {
+  "id": 5467,
+  "tr": "elektrik beslemesi",
+  "en": "power supply",
+  "beispiel": "Eine unterbrochene Stromversorgung kann den ganzen Betrieb lahmlegen.",
+  "beispielTr": "Kesintiye uğrayan elektrik beslemesi tüm işletmeyi felç edebilir.",
+  "beispielEn": "An interrupted power supply can paralyze the whole plant."
+ },
+ {
+  "id": 5468,
+  "tr": "kullanım",
+  "en": "handling",
+  "beispiel": "Die Handhabung des Programms ist auch für Ungeübte leicht.",
+  "beispielTr": "Programın kullanımı deneyimsizler için bile kolay.",
+  "beispielEn": "The program is easy to handle even for beginners."
+ },
+ {
+  "id": 5469,
+  "tr": "telsiz bağlantısı",
+  "en": "radio connection",
+  "beispiel": "Im Tunnel brach die Funkverbindung zum Fahrzeug plötzlich ab.",
+  "beispielTr": "Tünelde araçla olan telsiz bağlantısı birden koptu.",
+  "beispielEn": "In the tunnel the radio connection to the vehicle suddenly broke off."
+ },
+ {
+  "id": 5470,
+  "tr": "sinyal",
+  "en": "signal",
+  "beispiel": "Das Signal wird auf dem Land oft von Bäumen abgeschwächt.",
+  "beispielTr": "Kırsalda sinyal çoğu zaman ağaçlar yüzünden zayıflıyor.",
+  "beispielEn": "In the countryside the signal is often weakened by trees."
+ },
+ {
+  "id": 5471,
+  "tr": "simülasyon",
+  "en": "simulation",
+  "beispiel": "In der Simulation hielt die Brücke auch starkem Wind stand.",
+  "beispielTr": "Simülasyonda köprü şiddetli rüzgâra da dayandı.",
+  "beispielEn": "In the simulation the bridge withstood strong wind as well."
+ },
+ {
+  "id": 5472,
+  "tr": "uyarı",
+  "en": "warning",
+  "beispiel": "Die meisten Leute klicken den Warnhinweis einfach weg.",
+  "beispielTr": "İnsanların çoğu uyarıyı okumadan kapatıp geçiyor.",
+  "beispielEn": "Most people simply click the warning away."
+ },
+ {
+  "id": 5473,
+  "tr": "ekran çözünürlüğü",
+  "en": "screen resolution",
+  "beispiel": "Bei dieser Bildschirmauflösung ist die Schrift kaum noch lesbar.",
+  "beispielTr": "Bu ekran çözünürlüğünde yazı neredeyse okunmuyor.",
+  "beispielEn": "At this screen resolution the text is hardly readable anymore."
+ },
+ {
+  "id": 5474,
+  "tr": "deneme çalışması",
+  "en": "test run",
+  "beispiel": "Vor der Einführung gab es mehrere Testläufe mit echten Kunden.",
+  "beispielTr": "Hizmete alınmadan önce gerçek müşterilerle birkaç deneme çalışması yapıldı.",
+  "beispielEn": "Before the launch there were several test runs with real customers."
+ },
+ {
+  "id": 5475,
+  "tr": "şifrelemek",
+  "en": "to encrypt",
+  "beispiel": "Alle Nachrichten werden bereits auf dem Gerät verschlüsselt.",
+  "beispielTr": "Bütün iletiler daha cihazın üzerindeyken şifreleniyor.",
+  "beispielEn": "All messages are encrypted on the device itself."
+ },
+ {
+  "id": 5476,
+  "tr": "güncellemek",
+  "en": "to update",
+  "beispiel": "Wir aktualisieren die Angaben auf der Seite jeden Morgen.",
+  "beispielTr": "Sayfadaki bilgileri her sabah güncelliyoruz.",
+  "beispielEn": "We update the details on the page every morning."
+ },
+ {
+  "id": 5477,
+  "tr": "programlamak",
+  "en": "to program",
+  "beispiel": "Sie hat die Steuerung der Maschine selbst programmiert.",
+  "beispielTr": "Makinenin kontrol sistemini kendisi programladı.",
+  "beispielEn": "She programmed the machine's control system herself."
+ },
+ {
+  "id": 5478,
+  "tr": "çökmek",
+  "en": "to crash",
+  "beispiel": "Das Programm ist mitten in der Bearbeitung wieder abgestürzt.",
+  "beispielTr": "Program düzenleme sırasında yine çöktü.",
+  "beispielEn": "The program crashed again in the middle of editing."
+ },
+ {
+  "id": 5479,
+  "tr": "çalıştırmak",
+  "en": "to execute",
+  "beispiel": "Der Rechner führt den Befehl erst nach der Bestätigung aus.",
+  "beispielTr": "Bilgisayar komutu ancak onaydan sonra çalıştırıyor.",
+  "beispielEn": "The computer executes the command only after confirmation."
+ },
+ {
+  "id": 5480,
+  "tr": "geri yüklemek",
+  "en": "to restore",
+  "beispiel": "Zum Glück konnten wir die gelöschten Dateien wiederherstellen.",
+  "beispielTr": "Neyse ki silinen dosyaları geri yükleyebildik.",
+  "beispielEn": "Luckily we were able to restore the deleted files."
+ },
+ {
+  "id": 5481,
+  "tr": "kaydetmek",
+  "en": "to record",
+  "beispiel": "Das Gerät erfasst den Verbrauch jeder einzelnen Wohnung.",
+  "beispielTr": "Cihaz her dairenin tüketimini ayrı ayrı kaydediyor.",
+  "beispielEn": "The device records the consumption of each individual apartment."
+ },
+ {
+  "id": 5482,
+  "tr": "girmek",
+  "en": "to enter",
+  "beispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
+  "beispielTr": "Lütfen mesajdaki onay kodunu girin.",
+  "beispielEn": "Please enter the confirmation code from the message."
+ },
+ {
+  "id": 5483,
+  "tr": "bloke etmek",
+  "en": "to block",
+  "beispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt.",
+  "beispielTr": "Üç yanlış denemeden sonra erişim otomatik olarak bloke ediliyor.",
+  "beispielEn": "After three wrong attempts the access is blocked automatically."
+ },
+ {
+  "id": 5484,
+  "tr": "etkinleştirmek",
+  "en": "to activate",
+  "beispiel": "Die Funktion wird erst nach der Bezahlung freigeschaltet.",
+  "beispielTr": "Bu özellik ancak ödemeden sonra etkinleştiriliyor.",
+  "beispielEn": "The feature is only activated after payment."
+ },
+ {
+  "id": 5485,
+  "tr": "sorgulamak",
+  "en": "to retrieve",
+  "beispiel": "Den Kontostand kann man jederzeit vom Handy abrufen.",
+  "beispielTr": "Hesap bakiyesi istendiği an telefondan sorgulanabiliyor.",
+  "beispielEn": "The account balance can be retrieved from the phone anytime."
+ },
+ {
+  "id": 5486,
+  "tr": "engellemek",
+  "en": "to block",
+  "beispiel": "Das Programm blockiert Werbung und unerwünschte Verbindungen.",
+  "beispielTr": "Program reklamları ve istenmeyen bağlantıları engelliyor.",
+  "beispielEn": "The program blocks ads and unwanted connections."
+ },
+ {
+  "id": 5487,
+  "tr": "filtrelemek",
+  "en": "to filter",
+  "beispiel": "Der Dienst filtert verdächtige Nachrichten schon vor der Zustellung.",
+  "beispielTr": "Servis şüpheli iletileri daha teslim edilmeden filtreliyor.",
+  "beispielEn": "The service filters suspicious messages before they are delivered."
+ },
+ {
+  "id": 5488,
+  "tr": "ilişkilendirmek",
+  "en": "to link",
+  "beispiel": "Die App verknüpft deinen Kalender mit dem Firmenkonto.",
+  "beispielTr": "Uygulama takvimini şirket hesabıyla ilişkilendiriyor.",
+  "beispielEn": "The app links your calendar with the company account."
+ },
+ {
+  "id": 5489,
+  "tr": "kablosuz",
+  "en": "wireless",
+  "beispiel": "Die Kopfhörer verbinden sich kabellos mit jedem Gerät im Raum.",
+  "beispielTr": "Kulaklık odadaki her cihaza kablosuz bağlanıyor.",
+  "beispielEn": "The headphones connect wirelessly to every device in the room."
+ },
+ {
+  "id": 5490,
+  "tr": "uyumlu",
+  "en": "compatible",
+  "beispiel": "Der Drucker ist leider nicht mit unserem System kompatibel.",
+  "beispielTr": "Yazıcı ne yazık ki sistemimizle uyumlu değil.",
+  "beispielEn": "Unfortunately the printer is not compatible with our system."
+ },
+ {
+  "id": 5491,
+  "tr": "eskimiş",
+  "en": "outdated",
+  "beispiel": "Die Ausstattung im Labor ist inzwischen hoffnungslos veraltet.",
+  "beispielTr": "Laboratuvardaki donanım artık iyice eskimiş.",
+  "beispielEn": "The equipment in the lab is hopelessly outdated by now."
+ },
+ {
+  "id": 5492,
+  "tr": "varsayılan olarak",
+  "en": "by default",
+  "beispiel": "Die Ortung ist bei diesem Gerät standardmäßig ausgeschaltet.",
+  "beispielTr": "Bu cihazda konum takibi varsayılan olarak kapalı.",
+  "beispielEn": "On this device location tracking is switched off by default."
+ },
+ {
+  "id": 5493,
+  "tr": "zahmetli",
+  "en": "laborious",
+  "beispiel": "Die Umstellung war aufwendiger, als wir zunächst gedacht hatten.",
+  "beispielTr": "Geçiş ilk düşündüğümüzden daha zahmetli oldu.",
+  "beispielEn": "The switch was more laborious than we first thought."
+ },
+ {
+  "id": 5494,
+  "tr": "çağa uygun",
+  "en": "up-to-date",
+  "beispiel": "Eine zeitgemäße Ausrüstung gehört heute zu jedem Arbeitsplatz.",
+  "beispielTr": "Bugün her iş yerinde çağa uygun bir donanım olmalı.",
+  "beispielEn": "Up-to-date equipment is part of every workplace today."
+ },
+ {
+  "id": 5495,
+  "tr": "yetkisiz",
+  "en": "unauthorized",
+  "beispiel": "Unbefugte Zugriffe werden vom System sofort gemeldet.",
+  "beispielTr": "Yetkisiz erişimler sistem tarafından hemen bildiriliyor.",
+  "beispielEn": "Unauthorized access is reported by the system immediately."
+ }
+]

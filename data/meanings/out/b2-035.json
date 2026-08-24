@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5345,
+    "tr": "olağanüstü hal",
+    "en": "state of emergency",
+    "beispiel": "Die Regierung rief für die Küstenregion den Ausnahmezustand aus.",
+    "beispielTr": "Hükümet kıyı bölgesi için olağanüstü hal ilan etti.",
+    "beispielEn": "The government declared a state of emergency for the coastal region."
+  },
+  {
+    "id": 5346,
+    "tr": "bariyer",
+    "en": "barrier",
+    "beispiel": "Neugierige drängten sich bis dicht an die Absperrung heran.",
+    "beispielTr": "Meraklılar bariyerin hemen dibine kadar sokuldu.",
+    "beispielEn": "Onlookers pressed right up to the barrier."
+  },
+  {
+    "id": 5347,
+    "tr": "kriz masası",
+    "en": "crisis team",
+    "beispiel": "Der Krisenstab tagte bis spät in die Nacht im Rathaus.",
+    "beispielTr": "Kriz masası gecenin geç saatlerine kadar belediyede toplandı.",
+    "beispielEn": "The crisis team met at the town hall late into the night."
+  },
+  {
+    "id": 5348,
+    "tr": "geçici barınak",
+    "en": "emergency shelter",
+    "beispiel": "In der Turnhalle wurde über Nacht eine Notunterkunft eingerichtet.",
+    "beispielTr": "Spor salonunda bir gecede geçici barınak kuruldu.",
+    "beispielEn": "An emergency shelter was set up in the gym overnight."
+  },
+  {
+    "id": 5349,
+    "tr": "delil",
+    "en": "evidence",
+    "beispiel": "Die Aufnahmen der Kamera gelten als wichtigstes Beweismittel.",
+    "beispielTr": "Kamera görüntüleri en önemli delil sayılıyor.",
+    "beispielEn": "The camera footage counts as the most important evidence."
+  },
+  {
+    "id": 5350,
+    "tr": "sorgu",
+    "en": "questioning",
+    "beispiel": "Bei der Vernehmung verwickelte sich der Zeuge in Widersprüche.",
+    "beispielTr": "Tanık sorgu sırasında çelişkiye düştü.",
+    "beispielEn": "The witness got tangled in contradictions during the questioning."
+  },
+  {
+    "id": 5351,
+    "tr": "enkazdan çıkarmak",
+    "en": "to recover",
+    "beispiel": "Die Feuerwehr konnte zwei Verletzte aus dem Wrack bergen.",
+    "beispielTr": "İtfaiye enkazdan iki yaralı çıkarabildi.",
+    "beispielEn": "The fire brigade was able to recover two injured people from the wreck."
+  },
+  {
+    "id": 5352,
+    "tr": "tahliye etmek",
+    "en": "to evacuate",
+    "beispiel": "Wegen der Bombe musste man das halbe Viertel evakuieren.",
+    "beispielTr": "Bomba yüzünden mahallenin yarısını tahliye etmek gerekti.",
+    "beispielEn": "Because of the bomb they had to evacuate half the district."
+  },
+  {
+    "id": 5353,
+    "tr": "alarma geçirmek",
+    "en": "to alert",
+    "beispiel": "Der laute Knall alarmierte die ganze Nachbarschaft.",
+    "beispielTr": "Yüksek patlama sesi tüm mahalleyi alarma geçirdi.",
+    "beispielEn": "The loud bang alerted the whole neighborhood."
+  },
+  {
+    "id": 5354,
+    "tr": "gidermek",
+    "en": "to eliminate",
+    "beispiel": "Die Mängel an der Anlage müssen bis Freitag beseitigt werden.",
+    "beispielTr": "Tesisteki eksiklikler cumaya kadar giderilmek zorunda.",
+    "beispielEn": "The defects in the plant must be eliminated by Friday."
+  },
+  {
+    "id": 5356,
+    "tr": "şüphelenmek",
+    "en": "to suspect",
+    "beispiel": "Die Kollegen verdächtigten zunächst den neuen Praktikanten.",
+    "beispielTr": "Meslektaşlar önce yeni stajyerden şüphelendi.",
+    "beispielEn": "The colleagues first suspected the new intern."
+  },
+  {
+    "id": 5357,
+    "tr": "el koymak",
+    "en": "to confiscate",
+    "beispiel": "Der Zoll beschlagnahmte mehrere Kisten mit gefälschter Ware.",
+    "beispielTr": "Gümrük sahte mal dolu birkaç kasaya el koydu.",
+    "beispielEn": "Customs confiscated several crates of counterfeit goods."
+  },
+  {
+    "id": 5358,
+    "tr": "çökmek",
+    "en": "to cave in",
+    "beispiel": "Ein Teil des Dachs stürzte unter der Schneelast ein.",
+    "beispielTr": "Çatının bir bölümü kar yükü altında çöktü.",
+    "beispielEn": "Part of the roof caved in under the weight of the snow."
+  },
+  {
+    "id": 5359,
+    "tr": "kaçıp kurtulmak",
+    "en": "to escape",
+    "beispiel": "Zwei der Täter konnten über den Hinterhof entkommen.",
+    "beispielTr": "Faillerden ikisi arka avludan kaçıp kurtuldu.",
+    "beispielEn": "Two of the offenders escaped through the backyard."
+  },
+  {
+    "id": 5360,
+    "tr": "kaza geçirmek",
+    "en": "to have an accident",
+    "beispiel": "Auf dem Heimweg ist sie mit dem Rad verunglückt.",
+    "beispielTr": "Eve dönerken bisikletiyle kaza geçirdi.",
+    "beispielEn": "She had an accident on her bike on the way home."
+  },
+  {
+    "id": 5361,
+    "tr": "tetiklemek",
+    "en": "to trigger",
+    "beispiel": "Ein defekter Toaster löste im ganzen Haus den Alarm aus.",
+    "beispielTr": "Bozuk bir tost makinesi tüm binada alarmı tetikledi.",
+    "beispielEn": "A faulty toaster set off the alarm in the whole building."
+  },
+  {
+    "id": 5362,
+    "tr": "abluka altına almak",
+    "en": "to seal off",
+    "beispiel": "Die Polizei riegelte das gesamte Bahnhofsgelände ab.",
+    "beispielTr": "Polis tüm gar alanını abluka altına aldı.",
+    "beispielEn": "The police sealed off the entire station area."
+  },
+  {
+    "id": 5363,
+    "tr": "etkisiz hale getirmek",
+    "en": "to defuse",
+    "beispiel": "Die Bombe wurde noch vor Sonnenaufgang entschärft.",
+    "beispielTr": "Bomba güneş doğmadan etkisiz hale getirildi.",
+    "beispielEn": "The bomb was defused before sunrise."
+  },
+  {
+    "id": 5364,
+    "tr": "harap etmek",
+    "en": "to devastate",
+    "beispiel": "Der Orkan verwüstete ganze Straßenzüge im Norden der Stadt.",
+    "beispielTr": "Kasırga şehrin kuzeyindeki koca sokakları harap etti.",
+    "beispielEn": "The hurricane devastated entire streets in the north of the city."
+  },
+  {
+    "id": 5365,
+    "tr": "mücadele etmek",
+    "en": "to combat",
+    "beispiel": "Hundert Helfer bekämpften das Feuer bis zum Morgengrauen.",
+    "beispielTr": "Yüz kadar görevli şafağa kadar yangınla mücadele etti.",
+    "beispielEn": "A hundred helpers fought the fire until dawn."
+  },
+  {
+    "id": 5366,
+    "tr": "takip etmek",
+    "en": "to pursue",
+    "beispiel": "Die Polizei verfolgte den Wagen bis zur Landesgrenze.",
+    "beispielTr": "Polis aracı eyalet sınırına kadar takip etti.",
+    "beispielEn": "The police pursued the car up to the state border."
+  },
+  {
+    "id": 5367,
+    "tr": "ihmalkâr",
+    "en": "negligent",
+    "beispiel": "Der Fahrer hat fahrlässig gehandelt und den Unfall verursacht.",
+    "beispielTr": "Sürücü ihmalkâr davrandı ve kazaya sebep oldu.",
+    "beispielEn": "The driver acted negligently and caused the accident."
+  },
+  {
+    "id": 5368,
+    "tr": "kasıtlı",
+    "en": "deliberate",
+    "beispiel": "Der Richter hielt die Brandstiftung für vorsätzlich.",
+    "beispielTr": "Hâkim kundaklamanın kasıtlı olduğu kanaatine vardı.",
+    "beispielEn": "The judge considered the arson deliberate."
+  },
+  {
+    "id": 5369,
+    "tr": "tedbiren",
+    "en": "as a precaution",
+    "beispiel": "Die Schule blieb vorsorglich einen weiteren Tag geschlossen.",
+    "beispielTr": "Okul tedbiren bir gün daha kapalı kaldı.",
+    "beispielEn": "The school stayed closed one more day as a precaution."
+  },
+  {
+    "id": 5370,
+    "tr": "yanıcı",
+    "en": "flammable",
+    "beispiel": "Brennbare Flüssigkeiten gehören nicht in den Heizungskeller.",
+    "beispielTr": "Yanıcı sıvıların kazan dairesinde yeri yok.",
+    "beispielEn": "Flammable liquids do not belong in the boiler room."
+  },
+  {
+    "id": 5371,
+    "tr": "riskli",
+    "en": "risky",
+    "beispiel": "Ein Überholmanöver an dieser Stelle wäre viel zu riskant.",
+    "beispielTr": "Bu noktada sollamak fazlasıyla riskli olurdu.",
+    "beispielEn": "Overtaking at this spot would be far too risky."
+  },
+  {
+    "id": 5372,
+    "tr": "derhal",
+    "en": "promptly",
+    "beispiel": "Bitte verlassen Sie das Gebäude umgehend über den Hinterausgang.",
+    "beispielTr": "Lütfen binayı derhal arka çıkıştan terk edin.",
+    "beispielEn": "Please leave the building promptly through the rear exit."
+  },
+  {
+    "id": 5373,
+    "tr": "yanlışlıkla",
+    "en": "by mistake",
+    "beispiel": "Ich habe versehentlich deine Nachricht gelöscht.",
+    "beispielTr": "Yanlışlıkla mesajını sildim.",
+    "beispielEn": "I deleted your message by mistake."
+  },
+  {
+    "id": 5374,
+    "tr": "baygın",
+    "en": "unconscious",
+    "beispiel": "Der Mann lag bewusstlos neben seinem Fahrrad im Gras.",
+    "beispielTr": "Adam bisikletinin yanında çimlerde baygın yatıyordu.",
+    "beispielEn": "The man lay unconscious in the grass next to his bike."
+  },
+  {
+    "id": 5375,
+    "tr": "yara almamış",
+    "en": "unharmed",
+    "beispiel": "Der Fahrer kam bei dem Unfall unversehrt davon.",
+    "beispielTr": "Sürücü kazadan yara almadan kurtuldu.",
+    "beispielEn": "The driver came out of the accident unharmed."
+  },
+  {
+    "id": 5376,
+    "tr": "vurgu",
+    "en": "stress",
+    "beispiel": "Bei diesem Wort liegt die Betonung auf der zweiten Silbe.",
+    "beispielTr": "Bu kelimede vurgu ikinci hecede.",
+    "beispielEn": "In this word the stress falls on the second syllable."
+  },
+  {
+    "id": 5377,
+    "tr": "deyim",
+    "en": "idiom",
+    "beispiel": "Diese Redewendung lässt sich kaum wörtlich übersetzen.",
+    "beispielTr": "Bu deyim neredeyse birebir çevrilemiyor.",
+    "beispielEn": "This idiom can hardly be translated literally."
+  },
+  {
+    "id": 5378,
+    "tr": "kelime hazinesi",
+    "en": "vocabulary",
+    "beispiel": "Ihr Wortschatz reicht inzwischen für anspruchsvolle Fachtexte aus.",
+    "beispielTr": "Kelime hazinesi artık zorlu uzmanlık metinlerine yetiyor.",
+    "beispielEn": "Her vocabulary is now enough for demanding technical texts."
+  },
+  {
+    "id": 5379,
+    "tr": "günlük konuşma dili",
+    "en": "colloquial language",
+    "beispiel": "In der Umgangssprache wird der Genitiv oft durch den Dativ ersetzt.",
+    "beispielTr": "Günlük konuşma dilinde genitif sıklıkla datifle değiştirilir.",
+    "beispielEn": "In colloquial language the genitive is often replaced by the dative."
+  },
+  {
+    "id": 5380,
+    "tr": "uzmanlık dili",
+    "en": "technical language",
+    "beispiel": "Die medizinische Fachsprache bleibt für Laien oft unverständlich.",
+    "beispielTr": "Tıp dili uzman olmayanlar için çoğu zaman anlaşılmaz kalıyor.",
+    "beispielEn": "Medical technical language often remains incomprehensible to laypeople."
+  },
+  {
+    "id": 5381,
+    "tr": "dil sezgisi",
+    "en": "feel for language",
+    "beispiel": "Ohne gutes Sprachgefühl klingen selbst korrekte Sätze seltsam.",
+    "beispielTr": "İyi bir dil sezgisi olmadan doğru cümleler bile kulağa tuhaf gelir.",
+    "beispielEn": "Without a good feel for language even correct sentences sound odd."
+  },
+  {
+    "id": 5382,
+    "tr": "dil engeli",
+    "en": "language barrier",
+    "beispiel": "Die Sprachbarriere machte die Zusammenarbeit im Team schwierig.",
+    "beispielTr": "Dil engeli ekipteki iş birliğini zorlaştırdı.",
+    "beispielEn": "The language barrier made working together in the team difficult."
+  },
+  {
+    "id": 5383,
+    "tr": "dil kursu",
+    "en": "language course",
+    "beispiel": "Der Sprachkurs findet zweimal wöchentlich am Abend statt.",
+    "beispielTr": "Dil kursu haftada iki kez akşamları yapılıyor.",
+    "beispielEn": "The language course takes place twice a week in the evening."
+  },
+  {
+    "id": 5384,
+    "tr": "değerlendirme",
+    "en": "assessment",
+    "beispiel": "Die Beurteilung der mündlichen Leistung fiel überraschend positiv aus.",
+    "beispielTr": "Sözlü performansın değerlendirmesi şaşırtıcı biçimde olumlu çıktı.",
+    "beispielEn": "The assessment of the oral performance turned out surprisingly positive."
+  },
+  {
+    "id": 5385,
+    "tr": "konuşma",
+    "en": "speaking contribution",
+    "beispiel": "Jeder Redebeitrag sollte höchstens drei Minuten dauern.",
+    "beispielTr": "Her konuşma en fazla üç dakika sürmeli.",
+    "beispielEn": "Each speaking contribution should last three minutes at most."
+  },
+  {
+    "id": 5386,
+    "tr": "karşı argüman",
+    "en": "counterargument",
+    "beispiel": "Auf sein Gegenargument hatte niemand eine überzeugende Antwort.",
+    "beispielTr": "Onun karşı argümanına kimsenin ikna edici bir cevabı yoktu.",
+    "beispielEn": "Nobody had a convincing answer to his counterargument."
+  },
+  {
+    "id": 5387,
+    "tr": "nezaket",
+    "en": "politeness",
+    "beispiel": "Aus reiner Höflichkeit hörte sie ihm bis zum Schluss zu.",
+    "beispielTr": "Sırf nezaketen onu sonuna kadar dinledi.",
+    "beispielEn": "She listened to him to the end out of sheer politeness."
+  },
+  {
+    "id": 5388,
+    "tr": "üslup",
+    "en": "tone",
+    "beispiel": "Der Umgangston in dieser Abteilung ist erstaunlich rau.",
+    "beispielTr": "Bu bölümdeki üslup şaşırtıcı derecede sert.",
+    "beispielEn": "The tone in this department is surprisingly harsh."
+  },
+  {
+    "id": 5389,
+    "tr": "yüz ifadesi",
+    "en": "facial expression",
+    "beispiel": "Seine Mimik verriet mehr als jedes gesprochene Wort.",
+    "beispielTr": "Yüz ifadesi söylediği her sözden fazlasını ele veriyordu.",
+    "beispielEn": "His facial expression gave away more than any spoken word."
+  },
+  {
+    "id": 5390,
+    "tr": "görüşme yönetimi",
+    "en": "conversation management",
+    "beispiel": "Eine ruhige Gesprächsführung hilft besonders bei schwierigen Kunden.",
+    "beispielTr": "Sakin bir görüşme yönetimi özellikle zor müşterilerde işe yarar.",
+    "beispielEn": "Calm conversation management helps especially with difficult customers."
+  },
+  {
+    "id": 5391,
+    "tr": "yorum",
+    "en": "interpretation",
+    "beispiel": "Diese Geste lässt mehr als eine Deutung zu.",
+    "beispielTr": "Bu jest birden fazla yoruma açık.",
+    "beispielEn": "This gesture allows more than one interpretation."
+  },
+  {
+    "id": 5392,
+    "tr": "yorumlama",
+    "en": "interpretation",
+    "beispiel": "Die Auslegung des Paragrafen ist unter Juristen umstritten.",
+    "beispielTr": "Bu maddenin yorumlanması hukukçular arasında tartışmalı.",
+    "beispielEn": "The interpretation of the paragraph is disputed among lawyers."
+  },
+  {
+    "id": 5393,
+    "tr": "ara soru",
+    "en": "interrupting question",
+    "beispiel": "Zwischenfragen sind erlaubt, aber bitte erst nach dem Vortrag.",
+    "beispielTr": "Ara sorular serbest ama lütfen sunumdan sonra.",
+    "beispielEn": "Interrupting questions are allowed but please only after the talk."
+  },
+  {
+    "id": 5394,
+    "tr": "anahtar kelime",
+    "en": "keyword",
+    "beispiel": "Er hatte sich nur ein paar Stichwörter notiert.",
+    "beispielTr": "Yalnızca birkaç anahtar kelime not almıştı.",
+    "beispielEn": "He had jotted down only a few keywords."
+  },
+  {
+    "id": 5395,
+    "tr": "klişe söz",
+    "en": "empty phrase",
+    "beispiel": "Seine Rede bestand fast nur aus leeren Floskeln.",
+    "beispielTr": "Konuşması neredeyse tamamen içi boş klişelerden ibaretti.",
+    "beispielEn": "His speech consisted almost entirely of empty phrases."
+  }
+]

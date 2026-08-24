@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5396,
+  "tr": "yabancı kelime",
+  "en": "foreign word",
+  "beispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken.",
+  "beispielTr": "Bilgili görünmek için yabancı kelimeleri bolca kullanıyor.",
+  "beispielEn": "He likes to use foreign words to seem educated."
+ },
+ {
+  "id": 5397,
+  "tr": "tespit",
+  "en": "observation",
+  "beispiel": "Seine nüchterne Feststellung beendete die hitzige Diskussion.",
+  "beispielTr": "Onun soğukkanlı tespiti hararetli tartışmayı bitirdi.",
+  "beispielEn": "His sober observation ended the heated discussion."
+ },
+ {
+  "id": 5398,
+  "tr": "ek açıklama",
+  "en": "remark",
+  "beispiel": "Die Lehrerin schrieb einige kritische Anmerkungen an den Rand.",
+  "beispielTr": "Öğretmen kenara birkaç eleştirel açıklama yazdı.",
+  "beispielEn": "The teacher wrote a few critical remarks in the margin."
+ },
+ {
+  "id": 5399,
+  "tr": "övgü",
+  "en": "praise",
+  "beispiel": "Ein ehrliches Lob motiviert oft mehr als eine gute Note.",
+  "beispielTr": "Samimi bir övgü çoğu zaman iyi bir nottan daha çok motive eder.",
+  "beispielEn": "Honest praise often motivates more than a good grade."
+ },
+ {
+  "id": 5400,
+  "tr": "azar",
+  "en": "reprimand",
+  "beispiel": "Sein scharfer Tadel verletzte den jungen Kollegen sehr.",
+  "beispielTr": "Sert azarı genç meslektaşını çok kırdı.",
+  "beispielEn": "His sharp reprimand hurt the young colleague deeply."
+ },
+ {
+  "id": 5401,
+  "tr": "hafıza",
+  "en": "memory",
+  "beispiel": "Neue Vokabeln bleiben nur mit regelmäßiger Wiederholung im Gedächtnis.",
+  "beispielTr": "Yeni kelimeler ancak düzenli tekrarla hafızada kalıyor.",
+  "beispielEn": "New words stay in your memory only with regular repetition."
+ },
+ {
+  "id": 5402,
+  "tr": "sahne heyecanı",
+  "en": "stage fright",
+  "beispiel": "Vor jedem Vortrag hat sie schreckliches Lampenfieber.",
+  "beispielTr": "Her sunumdan önce müthiş bir sahne heyecanı yaşıyor.",
+  "beispielEn": "She gets terrible stage fright before every talk."
+ },
+ {
+  "id": 5403,
+  "tr": "özgüven",
+  "en": "self-confidence",
+  "beispiel": "Mit jedem gelungenen Gespräch wuchs sein Selbstvertrauen.",
+  "beispielTr": "Başarılı geçen her konuşmayla özgüveni arttı.",
+  "beispielEn": "His self-confidence grew with every successful conversation."
+ },
+ {
+  "id": 5404,
+  "tr": "hazırcevaplık",
+  "en": "quick wit",
+  "beispiel": "Ihre Schlagfertigkeit rettete sie in der schwierigen Diskussion.",
+  "beispielTr": "Hazırcevaplığı onu o zor tartışmada kurtardı.",
+  "beispielEn": "Her quick wit saved her in that difficult discussion."
+ },
+ {
+  "id": 5405,
+  "tr": "özet",
+  "en": "summary",
+  "beispiel": "Am Ende gab er eine kurze Zusammenfassung der wichtigsten Punkte.",
+  "beispielTr": "Sonunda en önemli noktaların kısa bir özetini verdi.",
+  "beispielEn": "At the end he gave a short summary of the main points."
+ },
+ {
+  "id": 5406,
+  "tr": "moderatörlük",
+  "en": "moderation",
+  "beispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin.",
+  "beispielTr": "Oturumun moderatörlüğünü deneyimli bir gazeteci üstlendi.",
+  "beispielEn": "An experienced journalist took over the moderation of the panel."
+ },
+ {
+  "id": 5407,
+  "tr": "konuşmacı",
+  "en": "speaker",
+  "beispiel": "Der Redner sprach frei und ohne einen einzigen Zettel.",
+  "beispielTr": "Konuşmacı tek bir kâğıda bakmadan doğaçlama konuştu.",
+  "beispielEn": "The speaker spoke freely without a single note."
+ },
+ {
+  "id": 5408,
+  "tr": "konuşma çekingenliği",
+  "en": "speaking inhibition",
+  "beispiel": "Viele Lernende überwinden ihre Sprechhemmung erst im Ausland.",
+  "beispielTr": "Birçok öğrenci konuşma çekingenliğini ancak yurt dışında aşıyor.",
+  "beispielEn": "Many learners overcome their speaking inhibition only abroad."
+ },
+ {
+  "id": 5409,
+  "tr": "ifade gücü",
+  "en": "expressive power",
+  "beispiel": "Dieses Foto hat eine enorme Aussagekraft.",
+  "beispielTr": "Bu fotoğrafın ifade gücü çok yüksek.",
+  "beispielEn": "This photo has enormous expressive power."
+ },
+ {
+  "id": 5410,
+  "tr": "iyileştirme önerisi",
+  "en": "suggestion for improvement",
+  "beispiel": "Der Dozent notierte zu jedem Text zwei Verbesserungsvorschläge.",
+  "beispielTr": "Öğretim görevlisi her metne iki iyileştirme önerisi not etti.",
+  "beispielEn": "The lecturer noted two suggestions for improvement on every text."
+ },
+ {
+  "id": 5411,
+  "tr": "incelik",
+  "en": "tact",
+  "beispiel": "Kritik muss man mit etwas Taktgefühl vorbringen.",
+  "beispielTr": "Eleştiriyi biraz incelikle dile getirmek gerekir.",
+  "beispielEn": "You have to voice criticism with some tact."
+ },
+ {
+  "id": 5412,
+  "tr": "ana dili konuşuru",
+  "en": "native speaker",
+  "beispiel": "Selbst Muttersprachler machen bei der Kommasetzung oft Fehler.",
+  "beispielTr": "Ana dili konuşurları bile virgül kullanımında sık sık hata yapar.",
+  "beispielEn": "Even native speakers often make mistakes with comma placement."
+ },
+ {
+  "id": 5413,
+  "tr": "sorup öğrenmek",
+  "en": "to ask",
+  "beispiel": "Wenn du etwas nicht verstehst, solltest du sofort nachfragen.",
+  "beispielTr": "Bir şeyi anlamadığında hemen sorup öğrenmelisin.",
+  "beispielEn": "If you don't understand something, you should ask right away."
+ },
+ {
+  "id": 5414,
+  "tr": "itiraz etmek",
+  "en": "to object",
+  "beispiel": "Gegen diesen Vorschlag hatte niemand etwas einzuwenden.",
+  "beispielTr": "Bu öneriye kimsenin itirazı yoktu.",
+  "beispielEn": "No one had anything to object to this proposal."
+ },
+ {
+  "id": 5415,
+  "tr": "kekelemek",
+  "en": "to stutter",
+  "beispiel": "Vor Aufregung stotterte er bei den ersten Sätzen.",
+  "beispielTr": "Heyecandan ilk cümlelerde kekeledi.",
+  "beispielEn": "He stuttered on the first sentences out of nervousness."
+ },
+ {
+  "id": 5416,
+  "tr": "tereddüt etmek",
+  "en": "to hesitate",
+  "beispiel": "Er zögerte kurz, bevor er auf die heikle Frage antwortete.",
+  "beispielTr": "Hassas soruyu yanıtlamadan önce biraz tereddüt etti.",
+  "beispielEn": "He hesitated briefly before answering the delicate question."
+ },
+ {
+  "id": 5417,
+  "tr": "netleştirmek",
+  "en": "to make clear",
+  "beispiel": "Ich möchte kurz klarstellen, wie meine Bemerkung gemeint war.",
+  "beispielTr": "Sözümün ne anlama geldiğini kısaca netleştirmek istiyorum.",
+  "beispielEn": "Let me briefly make clear how I meant my remark."
+ },
+ {
+  "id": 5418,
+  "tr": "yeniden ifade etmek",
+  "en": "to rephrase",
+  "beispiel": "Diesen Satz solltest du höflicher umformulieren.",
+  "beispielTr": "Bu cümleyi daha kibar biçimde yeniden ifade etmelisin.",
+  "beispielEn": "You should rephrase this sentence more politely."
+ },
+ {
+  "id": 5419,
+  "tr": "taklit etmek",
+  "en": "to imitate",
+  "beispiel": "Kinder ahmen die Aussprache ihrer Umgebung fast automatisch nach.",
+  "beispielTr": "Çocuklar çevrelerindeki telaffuzu neredeyse kendiliğinden taklit ediyor.",
+  "beispielEn": "Children imitate the pronunciation around them almost automatically."
+ },
+ {
+  "id": 5420,
+  "tr": "sonuç almak",
+  "en": "to perform",
+  "beispiel": "Im mündlichen Teil hat sie deutlich besser abgeschnitten.",
+  "beispielTr": "Sözlü bölümde belirgin biçimde daha iyi sonuç aldı.",
+  "beispielEn": "She performed clearly better in the oral part."
+ },
+ {
+  "id": 5421,
+  "tr": "ortaya koymak",
+  "en": "to lay out",
+  "beispiel": "Sie möchte ihren Standpunkt in der Einleitung darlegen.",
+  "beispielTr": "Kendi bakış açısını girişte ortaya koymak istiyor.",
+  "beispielEn": "She wants to lay out her position in the introduction."
+ },
+ {
+  "id": 5422,
+  "tr": "itiraf etmek",
+  "en": "to admit",
+  "beispiel": "Er gab offen zu, den Termin völlig vergessen zu haben.",
+  "beispielTr": "Randevuyu tamamen unuttuğunu açıkça itiraf etti.",
+  "beispielEn": "He openly admitted that he had completely forgotten the appointment."
+ },
+ {
+  "id": 5423,
+  "tr": "aksansız",
+  "en": "accent-free",
+  "beispiel": "Nach zwanzig Jahren spricht er nahezu akzentfrei Deutsch.",
+  "beispielTr": "Yirmi yıl sonra neredeyse aksansız Almanca konuşuyor.",
+  "beispielEn": "After twenty years he speaks almost accent-free German."
+ },
+ {
+  "id": 5424,
+  "tr": "konuşkan",
+  "en": "talkative",
+  "beispiel": "Nach dem zweiten Kaffee wurde sie erstaunlich gesprächig.",
+  "beispielTr": "İkinci kahveden sonra şaşırtıcı derecede konuşkan oldu.",
+  "beispielEn": "After the second coffee she got surprisingly talkative."
+ },
+ {
+  "id": 5425,
+  "tr": "ikna edici",
+  "en": "convincing",
+  "beispiel": "Seine Argumente waren sachlich und ausgesprochen überzeugend.",
+  "beispielTr": "Argümanları nesnel ve son derece ikna ediciydi.",
+  "beispielEn": "His arguments were objective and extremely convincing."
+ },
+ {
+  "id": 5426,
+  "tr": "aşina",
+  "en": "familiar",
+  "beispiel": "Dieser Ausdruck ist mir aus dem Berufsalltag durchaus geläufig.",
+  "beispielTr": "Bu ifadeye iş hayatımdan epeyce aşinayım.",
+  "beispielEn": "This expression is quite familiar to me from working life."
+ },
+ {
+  "id": 5427,
+  "tr": "kesik kesik",
+  "en": "haltingly",
+  "beispiel": "Am Anfang las er noch stockend, später ganz flüssig.",
+  "beispielTr": "Başlarda kesik kesik okuyordu, sonra tamamen akıcıydı.",
+  "beispielEn": "At first he read haltingly, later quite fluently."
+ },
+ {
+  "id": 5428,
+  "tr": "ısrarla",
+  "en": "emphatically",
+  "beispiel": "Der Prüfer wies nachdrücklich auf die Zeitbegrenzung hin.",
+  "beispielTr": "Sınav görevlisi süre sınırına ısrarla dikkat çekti.",
+  "beispielEn": "The examiner emphatically pointed out the time limit."
+ },
+ {
+  "id": 5429,
+  "tr": "laf arasında",
+  "en": "casually",
+  "beispiel": "Sie erwähnte ganz beiläufig, dass sie kündigen werde.",
+  "beispielTr": "İşten ayrılacağını laf arasında söyleyiverdi.",
+  "beispielEn": "She mentioned quite casually that she was going to quit."
+ },
+ {
+  "id": 5430,
+  "tr": "isabetli",
+  "en": "apt",
+  "beispiel": "Für dieses Gefühl gibt es im Deutschen kein treffendes Wort.",
+  "beispielTr": "Bu duygu için Almancada isabetli bir kelime yok.",
+  "beispielEn": "There is no apt word for this feeling in German."
+ },
+ {
+  "id": 5431,
+  "tr": "veri güvenliği",
+  "en": "data security",
+  "beispiel": "Die Datensicherheit hat in unserem Unternehmen oberste Priorität.",
+  "beispielTr": "Şirketimizde veri güvenliği en öncelikli konu.",
+  "beispielEn": "Data security is the top priority at our company."
+ },
+ {
+  "id": 5432,
+  "tr": "kullanıcı arayüzü",
+  "en": "user interface",
+  "beispiel": "Die neue Benutzeroberfläche wirkt deutlich übersichtlicher als die alte.",
+  "beispielTr": "Yeni kullanıcı arayüzü eskisinden çok daha derli toplu görünüyor.",
+  "beispielEn": "The new user interface looks much clearer than the old one."
+ },
+ {
+  "id": 5433,
+  "tr": "uygulama",
+  "en": "application",
+  "beispiel": "Diese Anwendung läuft auch auf älteren Geräten ohne Probleme.",
+  "beispielTr": "Bu uygulama eski cihazlarda da sorunsuz çalışıyor.",
+  "beispielEn": "This application runs on older devices without any problems."
+ },
+ {
+  "id": 5434,
+  "tr": "erişim",
+  "en": "access",
+  "beispiel": "Ohne Berechtigung hat niemand Zugriff auf die vertraulichen Unterlagen.",
+  "beispielTr": "Yetki olmadan kimsenin gizli belgelere erişimi yok.",
+  "beispielEn": "Without permission nobody has access to the confidential documents."
+ },
+ {
+  "id": 5435,
+  "tr": "parola",
+  "en": "password",
+  "beispiel": "Bitte ändern Sie Ihr Kennwort mindestens alle drei Monate.",
+  "beispielTr": "Lütfen parolanızı en az üç ayda bir değiştirin.",
+  "beispielEn": "Please change your password at least every three months."
+ },
+ {
+  "id": 5436,
+  "tr": "depolama alanı",
+  "en": "storage space",
+  "beispiel": "Auf dem Server ist kaum noch Speicherplatz für neue Aufnahmen.",
+  "beispielTr": "Sunucuda yeni kayıtlar için neredeyse hiç depolama alanı kalmadı.",
+  "beispielEn": "There is hardly any storage space left on the server for new recordings."
+ },
+ {
+  "id": 5437,
+  "tr": "çalışma belleği",
+  "en": "RAM",
+  "beispiel": "Der Arbeitsspeicher reicht für so ein aufwendiges Programm nicht aus.",
+  "beispielTr": "Çalışma belleği bu kadar ağır bir program için yetmiyor.",
+  "beispielEn": "The RAM is not enough for such a demanding program."
+ },
+ {
+  "id": 5438,
+  "tr": "veri aktarımı",
+  "en": "data transfer",
+  "beispiel": "Die Datenübertragung wurde wegen einer schlechten Verbindung mehrmals unterbrochen.",
+  "beispielTr": "Kötü bağlantı yüzünden veri aktarımı birkaç kez kesildi.",
+  "beispielEn": "The data transfer was interrupted several times because of a bad connection."
+ },
+ {
+  "id": 5439,
+  "tr": "işletim sistemi",
+  "en": "operating system",
+  "beispiel": "Das Betriebssystem wird heute Nacht automatisch aktualisiert.",
+  "beispielTr": "İşletim sistemi bu gece otomatik olarak güncellenecek.",
+  "beispielEn": "The operating system will be updated automatically tonight."
+ },
+ {
+  "id": 5440,
+  "tr": "kaynak kod",
+  "en": "source code",
+  "beispiel": "Der Quellcode dieses Programms ist für alle frei einsehbar.",
+  "beispielTr": "Bu programın kaynak kodunu herkes serbestçe görebiliyor.",
+  "beispielEn": "The source code of this program is freely accessible to everyone."
+ },
+ {
+  "id": 5441,
+  "tr": "hata mesajı",
+  "en": "error message",
+  "beispiel": "Beim Start erscheint jedes Mal dieselbe rätselhafte Fehlermeldung.",
+  "beispielTr": "Açılışta her seferinde aynı anlaşılmaz hata mesajı beliriyor.",
+  "beispielEn": "The same puzzling error message appears at every startup."
+ },
+ {
+  "id": 5442,
+  "tr": "sistem arızası",
+  "en": "system failure",
+  "beispiel": "Nach dem Systemausfall konnten wir stundenlang keine Bestellungen bearbeiten.",
+  "beispielTr": "Sistem arızasından sonra saatlerce hiçbir siparişi işleyemedik.",
+  "beispielEn": "After the system failure we could not process any orders for hours."
+ },
+ {
+  "id": 5443,
+  "tr": "yetki",
+  "en": "authorization",
+  "beispiel": "Neue Mitarbeiter erhalten erst nach der Schulung erweiterte Berechtigungen.",
+  "beispielTr": "Yeni çalışanlar geniş yetkileri ancak eğitimden sonra alıyor.",
+  "beispielEn": "New employees get extended authorizations only after the training."
+ },
+ {
+  "id": 5444,
+  "tr": "kullanıcı hesabı",
+  "en": "user account",
+  "beispiel": "Sein Nutzerkonto wurde nach mehreren Verstößen dauerhaft gelöscht.",
+  "beispielTr": "Kullanıcı hesabı birkaç ihlalden sonra kalıcı olarak silindi.",
+  "beispielEn": "His user account was permanently deleted after several violations."
+ },
+ {
+  "id": 5445,
+  "tr": "güvenlik açığı",
+  "en": "security vulnerability",
+  "beispiel": "Die Sicherheitslücke wurde zum Glück vor dem Angriff entdeckt.",
+  "beispielTr": "Güvenlik açığı neyse ki saldırıdan önce fark edildi.",
+  "beispielEn": "Luckily the security vulnerability was discovered before the attack."
+ }
+]

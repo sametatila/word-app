@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4845,
+  "tr": "kaliteli",
+  "en": "high-quality",
+  "beispiel": "Für hochwertige Materialien zahlen viele Kunden gern etwas mehr.",
+  "beispielTr": "Kaliteli malzemeler için birçok müşteri seve seve biraz fazla ödüyor.",
+  "beispielEn": "Many customers gladly pay a bit more for high-quality materials."
+ },
+ {
+  "id": 4846,
+  "tr": "fahiş fiyatlı",
+  "en": "overpriced",
+  "beispiel": "Die Ersatzteile des Herstellers sind im Vergleich deutlich überteuert.",
+  "beispielTr": "Üreticinin yedek parçaları diğerlerine kıyasla bariz şekilde fahiş fiyatlı.",
+  "beispielEn": "The manufacturer's spare parts are clearly overpriced compared to others."
+ },
+ {
+  "id": 4847,
+  "tr": "katlanılabilir",
+  "en": "reasonable",
+  "beispiel": "Eine Wartezeit von zehn Wochen ist dem Kunden nicht zumutbar.",
+  "beispielTr": "On haftalık bir bekleme süresi müşteri için katlanılabilir değil.",
+  "beispielEn": "A ten-week wait is not reasonable to expect of the customer."
+ },
+ {
+  "id": 4848,
+  "tr": "usulüne uygun",
+  "en": "proper",
+  "beispiel": "Die Garantie gilt nur bei sachgemäßer Nutzung des Geräts.",
+  "beispielTr": "Garanti yalnızca cihazın usulüne uygun kullanımında geçerli.",
+  "beispielEn": "The warranty applies only with proper use of the device."
+ },
+ {
+  "id": 4849,
+  "tr": "temsil",
+  "en": "performance",
+  "beispiel": "Die Aufführung am Samstag war schon zwei Wochen vorher ausgebucht.",
+  "beispielTr": "Cumartesi günkü temsil daha iki hafta öncesinden dolmuştu.",
+  "beispielEn": "Saturday's performance was sold out two weeks in advance."
+ },
+ {
+  "id": 4850,
+  "tr": "sahneleme",
+  "en": "staging",
+  "beispiel": "Die moderne Inszenierung des Klassikers hat das Publikum gespalten.",
+  "beispielTr": "Klasiğin modern sahnelemesi seyirciyi ikiye böldü.",
+  "beispielEn": "The modern staging of the classic divided the audience."
+ },
+ {
+  "id": 4851,
+  "tr": "senaryo",
+  "en": "screenplay",
+  "beispiel": "Am Drehbuch haben drei Autoren fast zwei Jahre lang gearbeitet.",
+  "beispielTr": "Senaryo üzerinde üç yazar neredeyse iki yıl çalıştı.",
+  "beispielEn": "Three writers worked on the screenplay for almost two years."
+ },
+ {
+  "id": 4852,
+  "tr": "oyuncu",
+  "en": "performer",
+  "beispiel": "Der Darsteller der Hauptrolle bekam den Preis für seine Leistung.",
+  "beispielTr": "Başroldeki oyuncu performansıyla ödülü aldı.",
+  "beispielEn": "The performer in the lead role won the prize for his acting."
+ },
+ {
+  "id": 4853,
+  "tr": "oyuncu kadrosu",
+  "en": "cast",
+  "beispiel": "Mit dieser Besetzung hat das Theater einen echten Erfolg gelandet.",
+  "beispielTr": "Bu oyuncu kadrosuyla tiyatro gerçek bir başarı yakaladı.",
+  "beispielEn": "With this cast the theater has landed a real success."
+ },
+ {
+  "id": 4854,
+  "tr": "dekor",
+  "en": "scenery",
+  "beispiel": "Die Kulissen für den zweiten Akt wurden in der Pause umgebaut.",
+  "beispielTr": "İkinci perdenin dekorları arada yeniden kuruldu.",
+  "beispielEn": "The scenery for the second act was rebuilt during the break."
+ },
+ {
+  "id": 4855,
+  "tr": "gala",
+  "en": "premiere",
+  "beispiel": "Zur Premiere kamen auch mehrere Kritiker aus dem Ausland.",
+  "beispielTr": "Galaya yurt dışından birkaç eleştirmen de geldi.",
+  "beispielEn": "Several critics from abroad came to the premiere as well."
+ },
+ {
+  "id": 4856,
+  "tr": "alkış",
+  "en": "applause",
+  "beispiel": "Nach dem letzten Lied hielt der Beifall minutenlang an.",
+  "beispielTr": "Son şarkının ardından alkış dakikalarca sürdü.",
+  "beispielEn": "After the last song the applause went on for minutes."
+ },
+ {
+  "id": 4857,
+  "tr": "perde",
+  "en": "curtain",
+  "beispiel": "Der Vorhang fiel, und das ganze Haus erhob sich.",
+  "beispielTr": "Perde indi ve bütün salon ayağa kalktı.",
+  "beispielEn": "The curtain fell and the whole house rose to its feet."
+ },
+ {
+  "id": 4858,
+  "tr": "tablo",
+  "en": "painting",
+  "beispiel": "Das Gemälde hängt seit über hundert Jahren in diesem Saal.",
+  "beispielTr": "Tablo yüz yılı aşkın süredir bu salonda asılı.",
+  "beispielEn": "The painting has hung in this hall for over a hundred years."
+ },
+ {
+  "id": 4859,
+  "tr": "tuval",
+  "en": "canvas",
+  "beispiel": "Der Maler spannte eine neue Leinwand auf den hölzernen Rahmen.",
+  "beispielTr": "Ressam ahşap çerçeveye yeni bir tuval gerdi.",
+  "beispielEn": "The painter stretched a new canvas over the wooden frame."
+ },
+ {
+  "id": 4860,
+  "tr": "heykel",
+  "en": "sculpture",
+  "beispiel": "Vor dem Rathaus steht eine Skulptur aus rostigem Stahl.",
+  "beispielTr": "Belediye binasının önünde paslı çelikten bir heykel duruyor.",
+  "beispielEn": "A sculpture of rusty steel stands in front of the town hall."
+ },
+ {
+  "id": 4861,
+  "tr": "koleksiyon",
+  "en": "collection",
+  "beispiel": "Seine private Sammlung umfasst mehr als vierhundert Zeichnungen.",
+  "beispielTr": "Özel koleksiyonu dört yüzden fazla çizim içeriyor.",
+  "beispielEn": "His private collection includes more than four hundred drawings."
+ },
+ {
+  "id": 4862,
+  "tr": "sergi eseri",
+  "en": "exhibit",
+  "beispiel": "Das wertvollste Exponat wird nur hinter Glas gezeigt.",
+  "beispielTr": "En değerli sergi eseri yalnızca cam arkasında gösteriliyor.",
+  "beispielEn": "The most valuable exhibit is shown only behind glass."
+ },
+ {
+  "id": 4863,
+  "tr": "sanat eseri",
+  "en": "artwork",
+  "beispiel": "Jedes Kunstwerk im Museum hat eine eigene Geschichte.",
+  "beispielTr": "Müzedeki her sanat eserinin kendine ait bir hikâyesi var.",
+  "beispielEn": "Every artwork in the museum has its own story."
+ },
+ {
+  "id": 4864,
+  "tr": "restorasyon",
+  "en": "restoration",
+  "beispiel": "Die Restaurierung der alten Fresken dauert noch bis nächsten Herbst.",
+  "beispielTr": "Eski freskolerin restorasyonu gelecek sonbahara kadar sürecek.",
+  "beispielEn": "The restoration of the old frescoes will last until next autumn."
+ },
+ {
+  "id": 4865,
+  "tr": "oyun programı",
+  "en": "performance schedule",
+  "beispiel": "Der neue Spielplan der Oper erscheint immer im Juni.",
+  "beispielTr": "Operanın yeni oyun programı her yıl haziranda çıkar.",
+  "beispielEn": "The opera's new performance schedule always comes out in June."
+ },
+ {
+  "id": 4866,
+  "tr": "besteci",
+  "en": "composer",
+  "beispiel": "Der Komponist schrieb die Musik eigens für diesen Film.",
+  "beispielTr": "Besteci müziği özellikle bu film için yazdı.",
+  "beispielEn": "The composer wrote the music especially for this film."
+ },
+ {
+  "id": 4867,
+  "tr": "orkestra şefi",
+  "en": "conductor",
+  "beispiel": "Der Dirigent hob den Taktstock und der Saal wurde still.",
+  "beispielTr": "Orkestra şefi bagetini kaldırdı ve salon sessizleşti.",
+  "beispielEn": "The conductor raised his baton and the hall fell silent."
+ },
+ {
+  "id": 4868,
+  "tr": "melodi",
+  "en": "melody",
+  "beispiel": "Diese Melodie geht mir seit gestern nicht mehr aus dem Kopf.",
+  "beispielTr": "Bu melodi dünden beri aklımdan çıkmıyor.",
+  "beispielEn": "This melody has been stuck in my head since yesterday."
+ },
+ {
+  "id": 4869,
+  "tr": "ritim",
+  "en": "rhythm",
+  "beispiel": "Der Rhythmus des Stücks wechselt in der zweiten Hälfte.",
+  "beispielTr": "Parçanın ritmi ikinci yarıda değişiyor.",
+  "beispielEn": "The rhythm of the piece changes in the second half."
+ },
+ {
+  "id": 4870,
+  "tr": "turne",
+  "en": "tour",
+  "beispiel": "Die Band geht im Frühjahr auf Tournee durch acht Länder.",
+  "beispielTr": "Grup ilkbaharda sekiz ülkeyi kapsayan bir turneye çıkıyor.",
+  "beispielEn": "The band goes on tour through eight countries in the spring."
+ },
+ {
+  "id": 4871,
+  "tr": "tiyatro oyunu",
+  "en": "play",
+  "beispiel": "Das Theaterstück behandelt den Alltag einer Familie nach dem Krieg.",
+  "beispielTr": "Tiyatro oyunu, savaş sonrası bir ailenin gündelik hayatını anlatıyor.",
+  "beispielEn": "The play deals with a family's daily life after the war."
+ },
+ {
+  "id": 4872,
+  "tr": "müsabaka",
+  "en": "competition",
+  "beispiel": "Vor dem Wettkampf war sie so nervös wie nie zuvor.",
+  "beispielTr": "Müsabakadan önce hiç olmadığı kadar gergindi.",
+  "beispielEn": "Before the competition she was more nervous than ever."
+ },
+ {
+  "id": 4873,
+  "tr": "turnuva",
+  "en": "tournament",
+  "beispiel": "Das Turnier wird in diesem Jahr in drei Städten ausgetragen.",
+  "beispielTr": "Turnuva bu yıl üç şehirde düzenleniyor.",
+  "beispielEn": "The tournament is being held in three cities this year."
+ },
+ {
+  "id": 4874,
+  "tr": "şampiyona",
+  "en": "championship",
+  "beispiel": "Die Meisterschaft findet nächstes Jahr in Norwegen statt.",
+  "beispielTr": "Şampiyona gelecek yıl Norveç'te yapılacak.",
+  "beispielEn": "The championship will take place in Norway next year."
+ },
+ {
+  "id": 4875,
+  "tr": "yenilgi",
+  "en": "defeat",
+  "beispiel": "Die knappe Niederlage im Halbfinale hat alle sehr enttäuscht.",
+  "beispielTr": "Yarı finaldeki kıl payı yenilgi herkesi hayal kırıklığına uğrattı.",
+  "beispielEn": "The narrow defeat in the semifinal disappointed everyone."
+ },
+ {
+  "id": 4876,
+  "tr": "hakem",
+  "en": "referee",
+  "beispiel": "Der Schiedsrichter pfiff das Spiel drei Minuten früher ab.",
+  "beispielTr": "Hakem maçı üç dakika erken bitirdi.",
+  "beispielEn": "The referee ended the match three minutes early."
+ },
+ {
+  "id": 4877,
+  "tr": "performans sporu",
+  "en": "competitive sport",
+  "beispiel": "Im Leistungssport entscheiden oft nur wenige Hundertstelsekunden.",
+  "beispielTr": "Performans sporunda çoğu zaman yalnızca saliseler belirleyici olur.",
+  "beispielEn": "In competitive sport a few hundredths of a second often decide."
+ },
+ {
+  "id": 4878,
+  "tr": "taraftar",
+  "en": "supporter",
+  "beispiel": "Tausende Anhänger begleiteten die Mannschaft zum Auswärtsspiel.",
+  "beispielTr": "Binlerce taraftar takıma deplasman maçında eşlik etti.",
+  "beispielEn": "Thousands of supporters accompanied the team to the away game."
+ },
+ {
+  "id": 4879,
+  "tr": "tribün",
+  "en": "grandstand",
+  "beispiel": "Auf der oberen Tribüne waren noch einige Plätze frei.",
+  "beispielTr": "Üst tribünde hâlâ birkaç boş yer vardı.",
+  "beispielEn": "There were still a few empty seats in the upper grandstand."
+ },
+ {
+  "id": 4880,
+  "tr": "ekipman",
+  "en": "equipment",
+  "beispiel": "Ohne die richtige Ausrüstung sollte man nicht in die Berge gehen.",
+  "beispielTr": "Doğru ekipman olmadan dağa çıkılmamalı.",
+  "beispielEn": "You shouldn't go into the mountains without the right equipment."
+ },
+ {
+  "id": 4881,
+  "tr": "gelenek",
+  "en": "custom",
+  "beispiel": "Dieser Brauch wird in der Region seit Jahrhunderten gepflegt.",
+  "beispielTr": "Bu gelenek bölgede yüzyıllardır yaşatılıyor.",
+  "beispielEn": "This custom has been kept alive in the region for centuries."
+ },
+ {
+  "id": 4882,
+  "tr": "halk şenliği",
+  "en": "folk festival",
+  "beispiel": "Zum Volksfest im August kommen Besucher aus der ganzen Umgebung.",
+  "beispielTr": "Ağustostaki halk şenliğine çevredeki her yerden ziyaretçi geliyor.",
+  "beispielEn": "Visitors from all around come to the folk festival in August."
+ },
+ {
+  "id": 4883,
+  "tr": "yöresel kıyafet",
+  "en": "traditional costume",
+  "beispiel": "Beim Umzug trugen viele Teilnehmer die Tracht ihrer Großeltern.",
+  "beispielTr": "Geçit töreninde birçok katılımcı dedelerinin yöresel kıyafetini giydi.",
+  "beispielEn": "In the parade many participants wore their grandparents' traditional costume."
+ },
+ {
+  "id": 4884,
+  "tr": "gidilecek yer",
+  "en": "travel destination",
+  "beispiel": "Als Reiseziel wählten sie diesmal eine kleine Insel im Norden.",
+  "beispielTr": "Gidilecek yer olarak bu kez kuzeyde küçük bir ada seçtiler.",
+  "beispielEn": "This time they chose a small island in the north as their destination."
+ },
+ {
+  "id": 4885,
+  "tr": "yürüyüş yolu",
+  "en": "hiking trail",
+  "beispiel": "Der markierte Wanderweg führt am Fluss entlang bis zur Mühle.",
+  "beispielTr": "İşaretli yürüyüş yolu nehir boyunca değirmene kadar gidiyor.",
+  "beispielEn": "The marked hiking trail runs along the river to the mill."
+ },
+ {
+  "id": 4886,
+  "tr": "belgesel",
+  "en": "documentary",
+  "beispiel": "Der Dokumentarfilm zeigt das Leben in einem abgelegenen Bergdorf.",
+  "beispielTr": "Belgesel, ücra bir dağ köyündeki yaşamı anlatıyor.",
+  "beispielEn": "The documentary shows life in a remote mountain village."
+ },
+ {
+  "id": 4887,
+  "tr": "altyazı",
+  "en": "subtitle",
+  "beispiel": "Den Film schauen wir lieber im Original mit deutschen Untertiteln.",
+  "beispielTr": "Filmi orijinal dilinde Almanca altyazıyla izlemeyi tercih ediyoruz.",
+  "beispielEn": "We prefer to watch the film in the original with German subtitles."
+ },
+ {
+  "id": 4888,
+  "tr": "eleştirmen",
+  "en": "critic",
+  "beispiel": "Die Kritiker lobten vor allem die Kameraarbeit des jungen Regisseurs.",
+  "beispielTr": "Eleştirmenler özellikle genç yönetmenin kamera çalışmasını övdü.",
+  "beispielEn": "The critics praised above all the young director's camera work."
+ },
+ {
+  "id": 4889,
+  "tr": "ödül",
+  "en": "award",
+  "beispiel": "Für ihr Lebenswerk erhielt sie eine besondere Auszeichnung.",
+  "beispielTr": "Yaşam boyu başarısı için özel bir ödül aldı.",
+  "beispielEn": "She received a special award for her life's work."
+ },
+ {
+  "id": 4890,
+  "tr": "ödül töreni",
+  "en": "award ceremony",
+  "beispiel": "Die Preisverleihung findet in diesem Jahr im alten Opernhaus statt.",
+  "beispielTr": "Ödül töreni bu yıl eski opera binasında yapılıyor.",
+  "beispielEn": "The award ceremony is being held in the old opera house this year."
+ },
+ {
+  "id": 4891,
+  "tr": "izlenme oranı",
+  "en": "audience rating",
+  "beispiel": "Die Einschaltquote der Sportsendung ist am Sonntagabend am höchsten.",
+  "beispielTr": "Spor programının izlenme oranı pazar akşamları en yüksek.",
+  "beispielEn": "The audience rating for the sports show is highest on Sunday evening."
+ },
+ {
+  "id": 4892,
+  "tr": "doruk noktası",
+  "en": "highlight",
+  "beispiel": "Der Höhepunkt des Abends war der Auftritt des Chors.",
+  "beispielTr": "Akşamın doruk noktası koronun performansıydı.",
+  "beispielEn": "The highlight of the evening was the choir's performance."
+ },
+ {
+  "id": 4893,
+  "tr": "tutku",
+  "en": "passion",
+  "beispiel": "Das Klettern ist für ihn keine Pflicht, sondern eine Leidenschaft.",
+  "beispielTr": "Tırmanmak onun için bir zorunluluk değil, bir tutku.",
+  "beispielEn": "Climbing is not a duty for him but a passion."
+ },
+ {
+  "id": 4894,
+  "tr": "jüri",
+  "en": "jury",
+  "beispiel": "Die Jury konnte sich lange nicht auf einen Sieger einigen.",
+  "beispielTr": "Jüri uzun süre bir kazanan üzerinde anlaşamadı.",
+  "beispielEn": "The jury could not agree on a winner for a long time."
+ }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5546,
+    "tr": "kompost yapmak",
+    "en": "to compost",
+    "beispiel": "Küchenreste kompostieren wir im Garten hinter dem Haus.",
+    "beispielTr": "Mutfak artıklarını evin arkasındaki bahçede komposta çeviriyoruz.",
+    "beispielEn": "We compost the kitchen scraps in the garden behind the house."
+  },
+  {
+    "id": 5547,
+    "tr": "değerlendirmek",
+    "en": "to utilize",
+    "beispiel": "Fast neunzig Prozent des Altpapiers werden erneut verwertet.",
+    "beispielTr": "Atık kâğıdın neredeyse yüzde doksanı yeniden değerlendiriliyor.",
+    "beispielEn": "Almost ninety percent of the waste paper is used again."
+  },
+  {
+    "id": 5548,
+    "tr": "geri kazanmak",
+    "en": "to recover",
+    "beispiel": "Aus alten Handys lassen sich wertvolle Metalle zurückgewinnen.",
+    "beispielTr": "Eski cep telefonlarından değerli metaller geri kazanılabiliyor.",
+    "beispielEn": "Valuable metals can be recovered from old cell phones."
+  },
+  {
+    "id": 5549,
+    "tr": "azaltmak",
+    "en": "to reduce",
+    "beispiel": "Nach der Arbeit baue ich beim Laufen Stress ab.",
+    "beispielTr": "İşten sonra koşarak stresimi azaltıyorum.",
+    "beispielEn": "After work I reduce stress by going for a run."
+  },
+  {
+    "id": 5550,
+    "tr": "çevreye zararlı",
+    "en": "environmentally harmful",
+    "beispiel": "Diese Reinigungsmittel gelten als besonders umweltschädlich.",
+    "beispielTr": "Bu temizlik maddeleri özellikle çevreye zararlı sayılıyor.",
+    "beispielEn": "These cleaning products are considered especially harmful to the environment."
+  },
+  {
+    "id": 5551,
+    "tr": "fosil",
+    "en": "fossil",
+    "beispiel": "Der Ausstieg aus fossilen Brennstoffen dauert länger als erhofft.",
+    "beispielTr": "Fosil yakıtlardan çıkış umulandan uzun sürüyor.",
+    "beispielEn": "The phaseout of fossil fuels is taking longer than hoped."
+  },
+  {
+    "id": 5552,
+    "tr": "enerji verimli",
+    "en": "energy-efficient",
+    "beispiel": "Das Bürogebäude wurde besonders energieeffizient geplant.",
+    "beispielTr": "Ofis binası özellikle enerji verimli olacak şekilde planlandı.",
+    "beispielEn": "The office building was designed to be especially energy-efficient."
+  },
+  {
+    "id": 5553,
+    "tr": "yeniden kullanılabilir",
+    "en": "reusable",
+    "beispiel": "Im Café gibt es Kaffee nur noch in wiederverwendbaren Bechern.",
+    "beispielTr": "Kafede kahve artık yalnızca yeniden kullanılabilir bardaklarda veriliyor.",
+    "beispielEn": "The café now serves coffee only in reusable cups."
+  },
+  {
+    "id": 5554,
+    "tr": "savurgan",
+    "en": "wasteful",
+    "beispiel": "Wir gehen mit Wasser und Energie noch immer verschwenderisch um.",
+    "beispielTr": "Suyu ve enerjiyi hâlâ savurganca kullanıyoruz.",
+    "beispielEn": "We are still wasteful with water and energy."
+  },
+  {
+    "id": 5555,
+    "tr": "yıkıcı",
+    "en": "devastating",
+    "beispiel": "Der Sturm hatte für die Küstendörfer verheerende Folgen.",
+    "beispielTr": "Fırtınanın kıyı köyleri için yıkıcı sonuçları oldu.",
+    "beispielEn": "The storm had devastating consequences for the coastal villages."
+  },
+  {
+    "id": 5556,
+    "tr": "türüne göre ayrılmış",
+    "en": "sorted by type",
+    "beispiel": "Nur sortenrein gesammelte Kunststoffe lassen sich gut wiederverwerten.",
+    "beispielTr": "Yalnızca türüne göre ayrılmış plastikler iyi geri dönüştürülebiliyor.",
+    "beispielEn": "Only plastics collected by type can be recycled properly."
+  },
+  {
+    "id": 5557,
+    "tr": "iklim dostu",
+    "en": "climate-friendly",
+    "beispiel": "Mit dem Zug zu reisen ist deutlich klimafreundlicher als zu fliegen.",
+    "beispielTr": "Trenle seyahat etmek uçmaktan çok daha iklim dostudur.",
+    "beispielEn": "Traveling by train is much more climate-friendly than flying."
+  },
+  {
+    "id": 5558,
+    "tr": "kira artışı",
+    "en": "rent increase",
+    "beispiel": "Der Vermieter muss die Mieterhöhung schriftlich begründen.",
+    "beispielTr": "Ev sahibi kira artışını yazılı olarak gerekçelendirmek zorunda.",
+    "beispielEn": "The landlord has to justify the rent increase in writing."
+  },
+  {
+    "id": 5559,
+    "tr": "kira indirimi",
+    "en": "rent reduction",
+    "beispiel": "Wegen des Schimmels im Bad verlangt sie eine Mietminderung.",
+    "beispielTr": "Banyodaki küf yüzünden kira indirimi talep ediyor.",
+    "beispielEn": "Because of the mold in the bathroom she is demanding a rent reduction."
+  },
+  {
+    "id": 5560,
+    "tr": "sonraki kiracı",
+    "en": "next tenant",
+    "beispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag.",
+    "beispielTr": "Sonraki kiracıyı bulursan sözleşmeden daha erken çıkabilirsin.",
+    "beispielEn": "If you find a replacement tenant, you can leave the contract earlier."
+  },
+  {
+    "id": 5561,
+    "tr": "cayma hakkı",
+    "en": "right of withdrawal",
+    "beispiel": "Bei Bestellungen im Internet haben Sie ein Widerrufsrecht von vierzehn Tagen.",
+    "beispielTr": "İnternetten verilen siparişlerde on dört günlük cayma hakkınız var.",
+    "beispielEn": "For orders placed online you have a fourteen-day right of withdrawal."
+  },
+  {
+    "id": 5562,
+    "tr": "kalan tutar",
+    "en": "remaining amount",
+    "beispiel": "Den Restbetrag überweisen Sie bitte innerhalb von zehn Tagen.",
+    "beispielTr": "Kalan tutarı lütfen on gün içinde havale edin.",
+    "beispielEn": "Please transfer the remaining amount within ten days."
+  },
+  {
+    "id": 5563,
+    "tr": "tahsilat",
+    "en": "debt collection",
+    "beispiel": "Nach der dritten Mahnung übergibt die Firma die Forderung dem Inkasso.",
+    "beispielTr": "Üçüncü ihtardan sonra firma alacağı tahsilat şirketine devrediyor.",
+    "beispielEn": "After the third reminder the company hands the claim over to debt collection."
+  },
+  {
+    "id": 5564,
+    "tr": "apartman kuralları",
+    "en": "house rules",
+    "beispiel": "Die Hausordnung verbietet lautes Musizieren nach zweiundzwanzig Uhr.",
+    "beispielTr": "Apartman kuralları saat yirmi ikiden sonra yüksek sesle müzik yapmayı yasaklıyor.",
+    "beispielEn": "The house rules forbid playing loud music after ten at night."
+  },
+  {
+    "id": 5565,
+    "tr": "huzur bozma",
+    "en": "disturbance of the peace",
+    "beispiel": "Die Nachbarn meldeten die nächtliche Ruhestörung der Polizei.",
+    "beispielTr": "Komşular gece huzurun bozulmasını polise bildirdi.",
+    "beispielEn": "The neighbors reported the nighttime disturbance to the police."
+  },
+  {
+    "id": 5566,
+    "tr": "cezai şart",
+    "en": "contractual penalty",
+    "beispiel": "Wer zu spät liefert, muss eine Vertragsstrafe zahlen.",
+    "beispielTr": "Geç teslim eden taraf cezai şart ödemek zorunda.",
+    "beispielEn": "Whoever delivers late has to pay a contractual penalty."
+  },
+  {
+    "id": 5567,
+    "tr": "ispat yükü",
+    "en": "burden of proof",
+    "beispiel": "Im ersten Jahr nach dem Kauf liegt die Beweislast beim Verkäufer.",
+    "beispielTr": "Satıştan sonraki ilk yılda ispat yükü satıcıdadır.",
+    "beispielEn": "In the first year after the purchase the burden of proof lies with the seller."
+  },
+  {
+    "id": 5568,
+    "tr": "uyuşmazlık",
+    "en": "dispute",
+    "beispiel": "Im Streitfall entscheidet das Gericht am Sitz des Anbieters.",
+    "beispielTr": "Uyuşmazlık hâlinde sağlayıcının bulunduğu yerdeki mahkeme karar verir.",
+    "beispielEn": "In case of a dispute the court at the provider's location decides."
+  },
+  {
+    "id": 5569,
+    "tr": "sözleşme koşulları",
+    "en": "terms and conditions",
+    "beispiel": "Die allgemeinen Geschäftsbedingungen stehen klein gedruckt auf der Rückseite.",
+    "beispielTr": "Sözleşme koşulları arka sayfada küçük puntolarla yazıyor.",
+    "beispielEn": "The general terms and conditions are printed in small type on the back."
+  },
+  {
+    "id": 5570,
+    "tr": "yasal hak",
+    "en": "legal claim",
+    "beispiel": "Auf eine kostenlose Reparatur besteht in diesem Fall kein Rechtsanspruch.",
+    "beispielTr": "Bu durumda ücretsiz onarım için yasal bir hak yok.",
+    "beispielEn": "In this case there is no legal claim to a free repair."
+  },
+  {
+    "id": 5571,
+    "tr": "aidat dökümü",
+    "en": "utility cost statement",
+    "beispiel": "Laut Betriebskostenabrechnung müssen wir dreihundert Euro nachzahlen.",
+    "beispielTr": "Aidat dökümüne göre üç yüz euro daha ödememiz gerekiyor.",
+    "beispielEn": "According to the utility cost statement we owe three hundred euros more."
+  },
+  {
+    "id": 5572,
+    "tr": "kendi ihtiyacı",
+    "en": "personal use",
+    "beispiel": "Der Vermieter hat uns wegen Eigenbedarf gekündigt.",
+    "beispielTr": "Ev sahibi kendi ihtiyacı nedeniyle sözleşmemizi feshetti.",
+    "beispielEn": "The landlord terminated our lease because he needs the apartment himself."
+  },
+  {
+    "id": 5573,
+    "tr": "teslim tutanağı",
+    "en": "handover report",
+    "beispiel": "Beim Auszug haben wir jeden Kratzer im Übergabeprotokoll vermerkt.",
+    "beispielTr": "Taşınırken her çiziği teslim tutanağına kaydettik.",
+    "beispielEn": "When we moved out we noted every scratch in the handover report."
+  },
+  {
+    "id": 5574,
+    "tr": "ek anlaşma",
+    "en": "supplementary agreement",
+    "beispiel": "Die Haltung von Haustieren regelt eine gesonderte Zusatzvereinbarung.",
+    "beispielTr": "Evcil hayvan beslemeyi ayrı bir ek anlaşma düzenliyor.",
+    "beispielEn": "Keeping pets is governed by a separate supplementary agreement."
+  },
+  {
+    "id": 5575,
+    "tr": "fiyat güncellemesi",
+    "en": "price adjustment",
+    "beispiel": "Der Anbieter kündigte eine Preisanpassung zum Jahreswechsel an.",
+    "beispielTr": "Sağlayıcı yılbaşında bir fiyat güncellemesi olacağını duyurdu.",
+    "beispielEn": "The provider announced a price adjustment at the turn of the year."
+  },
+  {
+    "id": 5576,
+    "tr": "irade beyanı",
+    "en": "declaration of intent",
+    "beispiel": "Mit seiner Unterschrift gibt er eine verbindliche Willenserklärung ab.",
+    "beispielTr": "İmzasıyla bağlayıcı bir irade beyanında bulunuyor.",
+    "beispielEn": "With his signature he makes a binding declaration of intent."
+  },
+  {
+    "id": 5577,
+    "tr": "haczetmek",
+    "en": "to seize",
+    "beispiel": "Der Gerichtsvollzieher darf einen Teil des Lohns pfänden.",
+    "beispielTr": "İcra memuru maaşın bir kısmını haczedebilir.",
+    "beispielEn": "The bailiff may seize part of the wages."
+  },
+  {
+    "id": 5578,
+    "tr": "tahliye etmek",
+    "en": "to vacate",
+    "beispiel": "Der Mieter muss die Wohnung bis Monatsende räumen.",
+    "beispielTr": "Kiracı daireyi ay sonuna kadar tahliye etmek zorunda.",
+    "beispielEn": "The tenant has to vacate the apartment by the end of the month."
+  },
+  {
+    "id": 5579,
+    "tr": "tasdik etmek",
+    "en": "to notarize",
+    "beispiel": "Der Kaufvertrag wird im Beisein beider Parteien beurkundet.",
+    "beispielTr": "Satış sözleşmesi her iki tarafın huzurunda tasdik ediliyor.",
+    "beispielEn": "The purchase contract is notarized in the presence of both parties."
+  },
+  {
+    "id": 5580,
+    "tr": "inkâr etmek",
+    "en": "to deny",
+    "beispiel": "Die Firma bestreitet, den Schaden verursacht zu haben.",
+    "beispielTr": "Firma zarara yol açtığını inkâr ediyor.",
+    "beispielEn": "The company denies having caused the damage."
+  },
+  {
+    "id": 5581,
+    "tr": "devretmek",
+    "en": "to assign",
+    "beispiel": "Er hat seine Forderung an ein anderes Unternehmen abgetreten.",
+    "beispielTr": "Alacağını başka bir şirkete devretti.",
+    "beispielEn": "He assigned his claim to another company."
+  },
+  {
+    "id": 5582,
+    "tr": "emanet bırakmak",
+    "en": "to deposit",
+    "beispiel": "Den Ersatzschlüssel habe ich beim Hausmeister hinterlegt.",
+    "beispielTr": "Yedek anahtarı kapıcıya emanet bıraktım.",
+    "beispielEn": "I left the spare key with the caretaker."
+  },
+  {
+    "id": 5583,
+    "tr": "hakkı olmak",
+    "en": "to be entitled",
+    "beispiel": "Ihnen steht in diesem Fall eine volle Rückzahlung zu.",
+    "beispielTr": "Bu durumda tam iade almaya hakkınız var.",
+    "beispielEn": "In this case you are entitled to a full refund."
+  },
+  {
+    "id": 5584,
+    "tr": "hesaba geçirmek",
+    "en": "to credit",
+    "beispiel": "Der Betrag wird Ihrem Konto in zwei Tagen gutgeschrieben.",
+    "beispielTr": "Tutar iki gün içinde hesabınıza geçirilecek.",
+    "beispielEn": "The amount will be credited to your account in two days."
+  },
+  {
+    "id": 5585,
+    "tr": "sözleşmeye dayalı",
+    "en": "contractual",
+    "beispiel": "Die Reinigung des Treppenhauses ist vertraglich klar geregelt.",
+    "beispielTr": "Merdiven boşluğunun temizliği sözleşmede açıkça düzenlenmiş.",
+    "beispielEn": "The cleaning of the stairwell is clearly regulated in the contract."
+  },
+  {
+    "id": 5586,
+    "tr": "hükümsüz",
+    "en": "void",
+    "beispiel": "Eine solche Klausel ist nach ständiger Rechtsprechung unwirksam.",
+    "beispielTr": "Böyle bir madde yerleşik içtihada göre hükümsüzdür.",
+    "beispielEn": "According to settled case law such a clause is void."
+  },
+  {
+    "id": 5587,
+    "tr": "kesinleşmiş",
+    "en": "legally binding",
+    "beispiel": "Das Urteil ist seit letzter Woche rechtskräftig.",
+    "beispielTr": "Karar geçen haftadan beri kesinleşmiş durumda.",
+    "beispielEn": "The verdict has been legally binding since last week."
+  },
+  {
+    "id": 5588,
+    "tr": "üstü kapalı",
+    "en": "tacit",
+    "beispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr.",
+    "beispielTr": "Sözleşme üstü kapalı biçimde bir yıl daha uzuyor.",
+    "beispielEn": "The contract is tacitly extended by another year."
+  },
+  {
+    "id": 5589,
+    "tr": "yasal",
+    "en": "statutory",
+    "beispiel": "Die gesetzliche Frist für die Rückgabe beträgt vierzehn Tage.",
+    "beispielTr": "İade için yasal süre on dört gündür.",
+    "beispielEn": "The statutory deadline for returns is fourteen days."
+  },
+  {
+    "id": 5590,
+    "tr": "karşılıklı rızayla",
+    "en": "by mutual consent",
+    "beispiel": "Beide Seiten haben den Vertrag einvernehmlich aufgehoben.",
+    "beispielTr": "İki taraf sözleşmeyi karşılıklı rızayla sona erdirdi.",
+    "beispielEn": "Both sides terminated the contract by mutual consent."
+  },
+  {
+    "id": 5591,
+    "tr": "kâr marjı",
+    "en": "margin",
+    "beispiel": "Bei diesem Produkt ist die Marge erschreckend gering.",
+    "beispielTr": "Bu üründe kâr marjı ürkütücü derecede düşük.",
+    "beispielEn": "The margin on this product is frighteningly small."
+  },
+  {
+    "id": 5592,
+    "tr": "satış bölümü",
+    "en": "sales department",
+    "beispiel": "Der Vertrieb meldet steigende Bestellungen aus Osteuropa.",
+    "beispielTr": "Satış bölümü Doğu Avrupa'dan gelen siparişlerin arttığını bildiriyor.",
+    "beispielEn": "The sales department reports rising orders from Eastern Europe."
+  },
+  {
+    "id": 5593,
+    "tr": "toptancılık",
+    "en": "wholesale",
+    "beispiel": "Wir beziehen unsere Waren direkt aus dem Großhandel.",
+    "beispielTr": "Mallarımızı doğrudan toptancıdan alıyoruz.",
+    "beispielEn": "We source our goods directly from wholesalers."
+  },
+  {
+    "id": 5594,
+    "tr": "ihale",
+    "en": "tender",
+    "beispiel": "Die Firma hat sich an der öffentlichen Ausschreibung beteiligt.",
+    "beispielTr": "Firma kamu ihalesine katıldı.",
+    "beispielEn": "The company took part in the public tender."
+  },
+  {
+    "id": 5595,
+    "tr": "ihracat",
+    "en": "export",
+    "beispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen.",
+    "beispielTr": "Bazı teknolojilerin ihracatı sıkı denetim altında.",
+    "beispielEn": "The export of certain technologies is subject to strict controls."
+  }
+]

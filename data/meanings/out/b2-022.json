@@ -1,0 +1,402 @@
+[
+ {
+  "id": 4694,
+  "tr": "hata oranı",
+  "en": "error rate",
+  "beispiel": "Nach der Schulung sank die Fehlerquote auf unter ein Prozent.",
+  "beispielTr": "Eğitimden sonra hata oranı yüzde birin altına indi.",
+  "beispielEn": "After the training the error rate dropped below one percent."
+ },
+ {
+  "id": 4695,
+  "tr": "iş adımı",
+  "en": "work step",
+  "beispiel": "Dieser Arbeitsgang lässt sich mit dem nächsten zusammenlegen.",
+  "beispielTr": "Bu iş adımı bir sonrakiyle birleştirilebilir.",
+  "beispielEn": "This work step can be combined with the next one."
+ },
+ {
+  "id": 4696,
+  "tr": "sertifikasyon",
+  "en": "certification",
+  "beispiel": "Ohne Zertifizierung dürfen wir das Gerät nicht verkaufen.",
+  "beispielTr": "Sertifikasyon olmadan cihazı satamayız.",
+  "beispielEn": "Without certification we may not sell the device."
+ },
+ {
+  "id": 4697,
+  "tr": "kabul",
+  "en": "acceptance",
+  "beispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt.",
+  "beispielTr": "Müşteri kabulü önümüzdeki cuma yapılacak.",
+  "beispielEn": "The acceptance by the customer takes place next Friday."
+ },
+ {
+  "id": 4698,
+  "tr": "şikâyet",
+  "en": "complaint",
+  "beispiel": "Die Reklamation betraf eine ganze Lieferung fehlerhafter Teile.",
+  "beispielTr": "Şikâyet, hatalı parçalardan oluşan bütün bir sevkiyatla ilgiliydi.",
+  "beispielEn": "The complaint concerned an entire delivery of faulty parts."
+ },
+ {
+  "id": 4699,
+  "tr": "arıza",
+  "en": "failure",
+  "beispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
+  "beispielTr": "Soğutmanın arızası üretimi bir gün felç etti.",
+  "beispielEn": "The failure of the cooling shut down production for a day."
+ },
+ {
+  "id": 4700,
+  "tr": "yasal garanti",
+  "en": "warranty",
+  "beispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum.",
+  "beispielTr": "Yasal garanti, teslim tarihinden itibaren iki yıl sürüyor.",
+  "beispielEn": "The warranty runs for two years from the delivery date."
+ },
+ {
+  "id": 4701,
+  "tr": "randıman",
+  "en": "yield",
+  "beispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter.",
+  "beispielTr": "İnce sacda levha başına randıman belirgin biçimde daha düşük.",
+  "beispielEn": "With thin sheet metal the yield per panel is much worse."
+ },
+ {
+  "id": 4702,
+  "tr": "tezgâh",
+  "en": "workbench",
+  "beispiel": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile durcheinander.",
+  "beispielTr": "Tezgâhın üstünde aletler ve yarım kalmış parçalar karmakarışık duruyordu.",
+  "beispielEn": "Tools and half-finished parts lay scattered on the workbench."
+ },
+ {
+  "id": 4703,
+  "tr": "frezelemek",
+  "en": "to mill",
+  "beispiel": "Die Nut wird in einem Durchgang sauber gefräst.",
+  "beispielTr": "Kanal tek geçişte temiz bir şekilde frezeleniyor.",
+  "beispielEn": "The groove is milled cleanly in a single pass."
+ },
+ {
+  "id": 4704,
+  "tr": "delmek",
+  "en": "to drill",
+  "beispiel": "Bevor du bohrst, prüfe bitte noch einmal die Maße.",
+  "beispielTr": "Delmeden önce lütfen ölçüleri bir kez daha kontrol et.",
+  "beispielEn": "Before you drill, please check the measurements once more."
+ },
+ {
+  "id": 4705,
+  "tr": "zımparalamak",
+  "en": "to sand",
+  "beispiel": "Die Kanten müssen noch geschliffen werden, sonst verletzt sich jemand.",
+  "beispielTr": "Kenarların zımparalanması gerek, yoksa biri yaralanır.",
+  "beispielEn": "The edges still have to be sanded, otherwise someone will get hurt."
+ },
+ {
+  "id": 4706,
+  "tr": "dövmek",
+  "en": "to forge",
+  "beispiel": "Früher wurden solche Beschläge von Hand geschmiedet.",
+  "beispielTr": "Eskiden böyle aksamlar elle dövülürdü.",
+  "beispielEn": "Such fittings used to be forged by hand."
+ },
+ {
+  "id": 4707,
+  "tr": "takmak",
+  "en": "to install",
+  "beispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
+  "beispielTr": "Teknisyen yarın daha güçlü bir motor takacak.",
+  "beispielEn": "The technician is installing a stronger motor tomorrow."
+ },
+ {
+  "id": 4708,
+  "tr": "sonradan takmak",
+  "en": "to retrofit",
+  "beispiel": "Die alten Pressen wurden mit einer Schutzeinrichtung nachgerüstet.",
+  "beispielTr": "Eski preslere sonradan bir koruma düzeneği takıldı.",
+  "beispielEn": "The old presses were retrofitted with a safety guard."
+ },
+ {
+  "id": 4709,
+  "tr": "ayarlamak",
+  "en": "to adjust",
+  "beispiel": "Der Anschlag muss nach jedem Werkzeugwechsel neu justiert werden.",
+  "beispielTr": "Dayama, her takım değişiminden sonra yeniden ayarlanmalı.",
+  "beispielEn": "The stop must be adjusted again after every tool change."
+ },
+ {
+  "id": 4710,
+  "tr": "kalibre etmek",
+  "en": "to calibrate",
+  "beispiel": "Die Waage wird jedes Jahr von einem externen Institut kalibriert.",
+  "beispielTr": "Terazi her yıl dışarıdan bir kuruluş tarafından kalibre ediliyor.",
+  "beispielEn": "The scale is calibrated every year by an external institute."
+ },
+ {
+  "id": 4711,
+  "tr": "aşınmak",
+  "en": "to wear out",
+  "beispiel": "Die Schneide nutzt sich bei hartem Material schnell ab.",
+  "beispielTr": "Sert malzemede kesici ağız çabuk aşınıyor.",
+  "beispielEn": "The cutting edge wears out quickly on hard material."
+ },
+ {
+  "id": 4712,
+  "tr": "yüklemek",
+  "en": "to load",
+  "beispiel": "Die Container werden noch heute Abend auf Lastwagen verladen.",
+  "beispielTr": "Konteynerler daha bu akşam kamyonlara yüklenecek.",
+  "beispielEn": "The containers will be loaded onto trucks tonight."
+ },
+ {
+  "id": 4713,
+  "tr": "sevk etmek",
+  "en": "to ship",
+  "beispiel": "Die Maschinen werden erst nach der Endprüfung ausgeliefert.",
+  "beispielTr": "Makineler ancak son kontrolden sonra sevk ediliyor.",
+  "beispielEn": "The machines are only shipped after the final inspection."
+ },
+ {
+  "id": 4714,
+  "tr": "ölçüye göre kesmek",
+  "en": "to cut to size",
+  "beispiel": "Das Blech wird per Laser exakt auf Maß zugeschnitten.",
+  "beispielTr": "Sac, lazerle tam ölçüsünde kesiliyor.",
+  "beispielEn": "The sheet metal is cut to size precisely by laser."
+ },
+ {
+  "id": 4715,
+  "tr": "zımbalamak",
+  "en": "to punch",
+  "beispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt.",
+  "beispielTr": "Tek harekette aynı anda dört delik zımbalanıyor.",
+  "beispielEn": "Four holes are punched simultaneously in a single stroke."
+ },
+ {
+  "id": 4716,
+  "tr": "sertleştirmek",
+  "en": "to harden",
+  "beispiel": "Die Zahnräder werden anschließend im Ofen gehärtet.",
+  "beispielTr": "Dişliler ardından fırında sertleştiriliyor.",
+  "beispielEn": "The gears are then hardened in the furnace."
+ },
+ {
+  "id": 4717,
+  "tr": "boyamak",
+  "en": "to lacquer",
+  "beispiel": "Die Rahmen werden nach dem Schweißen schwarz lackiert.",
+  "beispielTr": "Çerçeveler kaynaktan sonra siyaha boyanıyor.",
+  "beispielEn": "The frames are lacquered black after welding."
+ },
+ {
+  "id": 4718,
+  "tr": "kaplamak",
+  "en": "to coat",
+  "beispiel": "Die Oberfläche wird mit einer dünnen Keramikschicht beschichtet.",
+  "beispielTr": "Yüzey ince bir seramik tabakayla kaplanıyor.",
+  "beispielEn": "The surface is coated with a thin ceramic layer."
+ },
+ {
+  "id": 4719,
+  "tr": "kapatmak",
+  "en": "to shut down",
+  "beispiel": "Der Konzern will das alte Werk zum Jahresende stilllegen.",
+  "beispielTr": "Şirket eski fabrikayı yıl sonunda kapatmak istiyor.",
+  "beispielEn": "The company wants to shut down the old plant at the end of the year."
+ },
+ {
+  "id": 4720,
+  "tr": "sıkmak",
+  "en": "to tighten",
+  "beispiel": "Ziehen Sie die Schrauben über Kreuz gleichmäßig fest.",
+  "beispielTr": "Vidaları çapraz sırayla eşit şekilde sıkın.",
+  "beispielEn": "Tighten the screws evenly in a crosswise pattern."
+ },
+ {
+  "id": 4721,
+  "tr": "ölçüm yapmak",
+  "en": "to survey",
+  "beispiel": "Das Grundstück wurde vor dem Verkauf neu vermessen.",
+  "beispielTr": "Arsanın ölçümü satıştan önce yeniden yapıldı.",
+  "beispielEn": "The plot was surveyed again before the sale."
+ },
+ {
+  "id": 4722,
+  "tr": "kısmak",
+  "en": "to cut back",
+  "beispiel": "Wegen der hohen Energiepreise hat der Betrieb die Produktion gedrosselt.",
+  "beispielTr": "Yüksek enerji fiyatları yüzünden işletme üretimi kıstı.",
+  "beispielEn": "Because of high energy prices the plant cut back production."
+ },
+ {
+  "id": 4723,
+  "tr": "seri üretime hazır",
+  "en": "ready for mass production",
+  "beispiel": "Das Verfahren ist vielversprechend, aber noch nicht serienreif.",
+  "beispielTr": "Yöntem umut verici ama henüz seri üretime hazır değil.",
+  "beispielEn": "The process is promising but not ready for mass production yet."
+ },
+ {
+  "id": 4724,
+  "tr": "çalışmaya hazır",
+  "en": "ready for operation",
+  "beispiel": "Nach der Reparatur ist die Anlage wieder betriebsbereit.",
+  "beispielTr": "Onarımdan sonra tesis yeniden çalışmaya hazır.",
+  "beispielEn": "After the repair the plant is ready for operation again."
+ },
+ {
+  "id": 4725,
+  "tr": "hava koşullarına dayanıklı",
+  "en": "weatherproof",
+  "beispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material.",
+  "beispielTr": "Dış mekân için hava koşullarına dayanıklı bir malzeme lazım.",
+  "beispielEn": "For outdoor use we need a weatherproof material."
+ },
+ {
+  "id": 4726,
+  "tr": "paslanmaz",
+  "en": "stainless",
+  "beispiel": "Die Behälter bestehen komplett aus rostfreiem Stahl.",
+  "beispielTr": "Kaplar tamamen paslanmaz çelikten yapılmış.",
+  "beispielEn": "The containers are made entirely of stainless steel."
+ },
+ {
+  "id": 4727,
+  "tr": "tekniğine uygun",
+  "en": "professional",
+  "beispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
+  "beispielTr": "Atık yağ tekniğine uygun şekilde imha edilmeli, öylece dökülmemeli.",
+  "beispielEn": "Waste oil must be disposed of professionally, not simply poured away."
+ },
+ {
+  "id": 4728,
+  "tr": "el işçiliğiyle",
+  "en": "by hand",
+  "beispiel": "Die Möbel werden bei uns noch rein handwerklich gefertigt.",
+  "beispielTr": "Mobilyalar bizde hâlâ tamamen el işçiliğiyle üretiliyor.",
+  "beispielEn": "Our furniture is still made purely by hand."
+ },
+ {
+  "id": 4729,
+  "tr": "makineyle",
+  "en": "by machine",
+  "beispiel": "Diese Naht wird maschinell genäht, nicht mehr von Hand.",
+  "beispielTr": "Bu dikiş artık elle değil, makineyle dikiliyor.",
+  "beispielEn": "This seam is sewn by machine now, no longer by hand."
+ },
+ {
+  "id": 4730,
+  "tr": "arızaya yatkın",
+  "en": "prone to faults",
+  "beispiel": "Die ältere Steuerung gilt als besonders störanfällig.",
+  "beispielTr": "Eski kumanda sistemi özellikle arızaya yatkın sayılıyor.",
+  "beispielEn": "The older control system is considered especially prone to faults."
+ },
+ {
+  "id": 4731,
+  "tr": "gevrek",
+  "en": "brittle",
+  "beispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht.",
+  "beispielTr": "Soğukta plastik gevrekleşiyor ve kolayca kırılıyor.",
+  "beispielEn": "In the cold the plastic turns brittle and breaks easily."
+ },
+ {
+  "id": 4732,
+  "tr": "dayanıklılık",
+  "en": "endurance",
+  "beispiel": "Mit regelmäßigem Training verbessert sich deine Ausdauer erstaunlich schnell.",
+  "beispielTr": "Düzenli antrenmanla dayanıklılığın şaşırtıcı derecede hızlı gelişir.",
+  "beispielEn": "With regular training your endurance improves astonishingly fast."
+ },
+ {
+  "id": 4733,
+  "tr": "hareket kabiliyeti",
+  "en": "flexibility",
+  "beispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab.",
+  "beispielTr": "Yaşlandıkça eklemlerin hareket kabiliyeti belirgin biçimde azalır.",
+  "beispielEn": "With age the flexibility of the joints clearly decreases."
+ },
+ {
+  "id": 4734,
+  "tr": "kas ağrısı",
+  "en": "muscle soreness",
+  "beispiel": "Nach dem ersten Lauftraining hatte ich drei Tage Muskelkater.",
+  "beispielTr": "İlk koşu antrenmanından sonra üç gün kas ağrım vardı.",
+  "beispielEn": "After my first running session I had sore muscles for three days."
+ },
+ {
+  "id": 4735,
+  "tr": "rahatlama",
+  "en": "relief",
+  "beispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens.",
+  "beispielTr": "Yüksekliği ayarlanabilir bir masa sırta rahatlama sağlar.",
+  "beispielEn": "A height-adjustable desk provides relief for the back."
+ },
+ {
+  "id": 4736,
+  "tr": "toparlanma",
+  "en": "recovery",
+  "beispiel": "Ohne ausreichende Regeneration bringt hartes Training gar nichts.",
+  "beispielTr": "Yeterli toparlanma olmadan sert antrenmanın hiçbir faydası olmaz.",
+  "beispielEn": "Without enough recovery hard training does nothing at all."
+ },
+ {
+  "id": 4737,
+  "tr": "denge",
+  "en": "balance",
+  "beispiel": "Auf dem schmalen Balken verlor sie kurz das Gleichgewicht.",
+  "beispielTr": "Dar denge tahtasında bir an dengesini kaybetti.",
+  "beispielEn": "She briefly lost her balance on the narrow beam."
+ },
+ {
+  "id": 4738,
+  "tr": "kan akışı",
+  "en": "blood flow",
+  "beispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine.",
+  "beispielTr": "Kısa bir yürüyüş bacaklardaki kan akışını artırır.",
+  "beispielEn": "A short walk improves the blood flow in the legs."
+ },
+ {
+  "id": 4739,
+  "tr": "solunum",
+  "en": "breathing",
+  "beispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung.",
+  "beispielTr": "Yogada özellikle sakin bir solunuma dikkat edilir.",
+  "beispielEn": "In yoga you pay attention above all to calm breathing."
+ },
+ {
+  "id": 4740,
+  "tr": "gerginlik",
+  "en": "tension",
+  "beispiel": "Nach der Prüfung fiel die ganze Anspannung endlich von ihm ab.",
+  "beispielTr": "Sınavdan sonra üzerindeki bütün gerginlik nihayet dağıldı.",
+  "beispielEn": "After the exam all the tension finally fell away from him."
+ },
+ {
+  "id": 4741,
+  "tr": "eklem",
+  "en": "joint",
+  "beispiel": "Beim Joggen auf Asphalt werden die Gelenke stark beansprucht.",
+  "beispielTr": "Asfaltta koşarken eklemler ciddi biçimde zorlanır.",
+  "beispielEn": "Jogging on asphalt puts a lot of strain on the joints."
+ },
+ {
+  "id": 4742,
+  "tr": "tendon",
+  "en": "tendon",
+  "beispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt.",
+  "beispielTr": "Tenis oynarken dirseğindeki bir tendonu zorlamış.",
+  "beispielEn": "He irritated a tendon in his elbow playing tennis."
+ },
+ {
+  "id": 4743,
+  "tr": "kas yapısı",
+  "en": "musculature",
+  "beispiel": "Eine kräftige Muskulatur stützt die Wirbelsäule im Alltag.",
+  "beispielTr": "Güçlü bir kas yapısı gündelik hayatta omurgayı destekler.",
+  "beispielEn": "Strong musculature supports the spine in everyday life."
+ }
+]

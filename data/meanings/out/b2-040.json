@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5596,
+  "tr": "ithalat",
+  "en": "import",
+  "beispiel": "Die Einfuhr frischer Lebensmittel wurde vorübergehend untersagt.",
+  "beispielTr": "Taze gıda ürünlerinin ithalatı geçici olarak yasaklandı.",
+  "beispielEn": "The import of fresh food was temporarily banned."
+ },
+ {
+  "id": 5597,
+  "tr": "KDV",
+  "en": "sales tax",
+  "beispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen.",
+  "beispielTr": "Faturada KDV ayrı olarak gösterilmiş.",
+  "beispielEn": "The sales tax is listed separately on the invoice."
+ },
+ {
+  "id": 5598,
+  "tr": "iş kurma",
+  "en": "starting a business",
+  "beispiel": "Die Stadt berät junge Leute bei der Existenzgründung kostenfrei.",
+  "beispielTr": "Belediye gençlere iş kurma konusunda ücretsiz danışmanlık veriyor.",
+  "beispielEn": "The city advises young people on starting a business for free."
+ },
+ {
+  "id": 5599,
+  "tr": "pay",
+  "en": "stake",
+  "beispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent.",
+  "beispielTr": "Yatırımcı yüzde yirmi beş pay sahibi.",
+  "beispielEn": "The investor holds a twenty-five percent stake."
+ },
+ {
+  "id": 5600,
+  "tr": "borsa",
+  "en": "stock exchange",
+  "beispiel": "An der Börse reagierten die Anleger nervös auf die neuen Zahlen.",
+  "beispielTr": "Borsada yatırımcılar yeni rakamlara gergin tepki verdi.",
+  "beispielEn": "Investors on the stock exchange reacted nervously to the new figures."
+ },
+ {
+  "id": 5601,
+  "tr": "fiyatlandırma",
+  "en": "pricing",
+  "beispiel": "Die aggressive Preisgestaltung des Anbieters ärgert die ganze Branche.",
+  "beispielTr": "Sağlayıcının agresif fiyatlandırması bütün sektörü rahatsız ediyor.",
+  "beispielEn": "The provider's aggressive pricing annoys the whole industry."
+ },
+ {
+  "id": 5602,
+  "tr": "tedarik",
+  "en": "procurement",
+  "beispiel": "Die Beschaffung der Ersatzteile dauert länger als geplant.",
+  "beispielTr": "Yedek parçaların tedariki planlanandan uzun sürüyor.",
+  "beispielEn": "The procurement of the spare parts is taking longer than planned."
+ },
+ {
+  "id": 5603,
+  "tr": "kalite güvencesi",
+  "en": "quality assurance",
+  "beispiel": "In der Qualitätssicherung wird jedes zehnte Teil genau geprüft.",
+  "beispielTr": "Kalite güvencesinde her onuncu parça titizlikle kontrol ediliyor.",
+  "beispielEn": "In quality assurance every tenth part is checked closely."
+ },
+ {
+  "id": 5604,
+  "tr": "verimlilik",
+  "en": "efficiency",
+  "beispiel": "Neue Maschinen sollen die Effizienz der gesamten Produktion erhöhen.",
+  "beispielTr": "Yeni makinelerin bütün üretimin verimliliğini artırması amaçlanıyor.",
+  "beispielEn": "New machines are meant to raise the efficiency of the whole production."
+ },
+ {
+  "id": 5605,
+  "tr": "yeniden yapılandırma",
+  "en": "restructuring",
+  "beispiel": "Die Sanierung des Unternehmens dauerte fast drei Jahre.",
+  "beispielTr": "Şirketin yeniden yapılandırılması neredeyse üç yıl sürdü.",
+  "beispielEn": "The restructuring of the company took almost three years."
+ },
+ {
+  "id": 5606,
+  "tr": "ticari işletme",
+  "en": "business",
+  "beispiel": "Wer ein Gewerbe anmeldet, braucht am Anfang wenig Kapital.",
+  "beispielTr": "Ticari işletme açan kişi başlangıçta az sermayeye ihtiyaç duyar.",
+  "beispielEn": "Whoever registers a business needs little capital at the start."
+ },
+ {
+  "id": 5607,
+  "tr": "tekel",
+  "en": "monopoly",
+  "beispiel": "Der Anbieter besitzt in dieser Region praktisch ein Monopol.",
+  "beispielTr": "Sağlayıcı bu bölgede fiilen tekel konumunda.",
+  "beispielEn": "The provider practically has a monopoly in this region."
+ },
+ {
+  "id": 5608,
+  "tr": "kartel",
+  "en": "cartel",
+  "beispiel": "Das Kartell hatte die Preise über Jahre künstlich hochgehalten.",
+  "beispielTr": "Kartel yıllarca fiyatları yapay biçimde yüksek tutmuştu.",
+  "beispielEn": "The cartel had kept prices artificially high for years."
+ },
+ {
+  "id": 5609,
+  "tr": "tedarik darboğazı",
+  "en": "supply shortage",
+  "beispiel": "Ein Lieferengpass bei Chips bremst die gesamte Branche.",
+  "beispielTr": "Çiplerdeki tedarik darboğazı bütün sektörü yavaşlatıyor.",
+  "beispielEn": "A supply shortage of chips is slowing the whole industry."
+ },
+ {
+  "id": 5610,
+  "tr": "öz sermaye",
+  "en": "equity",
+  "beispiel": "Ohne ausreichendes Eigenkapital gewährt die Bank keinen Kredit.",
+  "beispielTr": "Yeterli öz sermaye olmadan banka kredi vermiyor.",
+  "beispielEn": "Without enough equity the bank will not grant a loan."
+ },
+ {
+  "id": 5611,
+  "tr": "elde etmek",
+  "en": "to achieve",
+  "beispiel": "Mit dem neuen Modell erzielte die Firma hohe Verkaufszahlen.",
+  "beispielTr": "Firma yeni modelle yüksek satış rakamları elde etti.",
+  "beispielEn": "With the new model the company achieved high sales figures."
+ },
+ {
+  "id": 5612,
+  "tr": "rekabet etmek",
+  "en": "to compete",
+  "beispiel": "Kleine Läden können mit den großen Ketten kaum konkurrieren.",
+  "beispielTr": "Küçük dükkânlar büyük zincirlerle neredeyse hiç rekabet edemiyor.",
+  "beispielEn": "Small shops can hardly compete with the big chains."
+ },
+ {
+  "id": 5613,
+  "tr": "ihraç etmek",
+  "en": "to export",
+  "beispiel": "Die Region exportiert vor allem Maschinen und Fahrzeugteile.",
+  "beispielTr": "Bölge özellikle makine ve araç parçası ihraç ediyor.",
+  "beispielEn": "The region mainly exports machines and vehicle parts."
+ },
+ {
+  "id": 5614,
+  "tr": "taşımak",
+  "en": "to relocate",
+  "beispiel": "Der Hersteller hat die Fertigung nach Osteuropa verlagert.",
+  "beispielTr": "Üretici imalatı Doğu Avrupa'ya taşıdı.",
+  "beispielEn": "The manufacturer has relocated production to Eastern Europe."
+ },
+ {
+  "id": 5615,
+  "tr": "iyi gitmek",
+  "en": "to flourish",
+  "beispiel": "Trotz der Krise floriert der Handel mit Gebrauchtwagen.",
+  "beispielTr": "Krize rağmen ikinci el araba ticareti iyi gidiyor.",
+  "beispielEn": "Despite the crisis the used car trade is flourishing."
+ },
+ {
+  "id": 5616,
+  "tr": "elden çıkarmak",
+  "en": "to sell off",
+  "beispiel": "Der Konzern veräußerte seine Anteile an dem kleinen Zulieferer.",
+  "beispielTr": "Holding küçük tedarikçideki paylarını elden çıkardı.",
+  "beispielEn": "The group sold off its shares in the small supplier."
+ },
+ {
+  "id": 5617,
+  "tr": "altına inmek",
+  "en": "to undercut",
+  "beispiel": "Der Wettbewerber hat unser Angebot deutlich unterboten.",
+  "beispielTr": "Rakip firma teklifimizin belirgin biçimde altına indi.",
+  "beispielEn": "The competitor clearly undercut our offer."
+ },
+ {
+  "id": 5618,
+  "tr": "ekonomik",
+  "en": "economic",
+  "beispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt.",
+  "beispielTr": "İşletmenin durumu ekonomik açıdan son derece gergin.",
+  "beispielEn": "The company is in an extremely tense economic situation."
+ },
+ {
+  "id": 5619,
+  "tr": "pazar lideri",
+  "en": "market-leading",
+  "beispiel": "Bei Sicherheitstechnik ist die Firma in Europa marktführend.",
+  "beispielTr": "Güvenlik teknolojisinde firma Avrupa'da pazar lideri konumunda.",
+  "beispielEn": "In security technology the company is market-leading in Europe."
+ },
+ {
+  "id": 5620,
+  "tr": "azalan",
+  "en": "declining",
+  "beispiel": "Die Bestellungen aus dem Ausland sind seit Monaten rückläufig.",
+  "beispielTr": "Yurt dışından gelen siparişler aylardır azalıyor.",
+  "beispielEn": "Orders from abroad have been declining for months."
+ },
+ {
+  "id": 5621,
+  "tr": "iş için",
+  "en": "on business",
+  "beispiel": "Er ist diese Woche geschäftlich in Mailand unterwegs.",
+  "beispielTr": "Bu hafta iş için Milano'da bulunuyor.",
+  "beispielEn": "He is in Milan on business this week."
+ },
+ {
+  "id": 5622,
+  "tr": "standart olarak",
+  "en": "as standard",
+  "beispiel": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut.",
+  "beispielTr": "Bu modelde navigasyon sistemi standart olarak takılı geliyor.",
+  "beispielEn": "The navigation system is fitted as standard in this model."
+ },
+ {
+  "id": 5623,
+  "tr": "orta ölçekli",
+  "en": "mid-sized",
+  "beispiel": "Die Region lebt vor allem von mittelständischen Betrieben.",
+  "beispielTr": "Bölge esas olarak orta ölçekli işletmelerle geçiniyor.",
+  "beispielEn": "The region depends mainly on mid-sized companies."
+ },
+ {
+  "id": 5624,
+  "tr": "kazançlı",
+  "en": "profitable",
+  "beispiel": "Der Handel mit Ersatzteilen ist erstaunlich einträglich geworden.",
+  "beispielTr": "Yedek parça ticareti şaşırtıcı derecede kazançlı hâle geldi.",
+  "beispielEn": "Trading in spare parts has become surprisingly profitable."
+ },
+ {
+  "id": 5625,
+  "tr": "alt kiralama",
+  "en": "sublease",
+  "beispiel": "Er wohnt zur Untermiete in einem Zimmer bei einer Familie.",
+  "beispielTr": "Bir ailenin yanındaki odada alt kiracı olarak kalıyor.",
+  "beispielEn": "He lives as a subtenant in a room with a family."
+ },
+ {
+  "id": 5626,
+  "tr": "kira endeksi",
+  "en": "rent index",
+  "beispiel": "Laut Mietspiegel ist die geforderte Miete deutlich zu hoch.",
+  "beispielTr": "Kira endeksine göre istenen kira açıkça çok yüksek.",
+  "beispielEn": "According to the rent index the asking rent is far too high."
+ },
+ {
+  "id": 5627,
+  "tr": "kira freni",
+  "en": "rent cap",
+  "beispiel": "Die Mietpreisbremse soll den Anstieg der Mieten in Großstädten dämpfen.",
+  "beispielTr": "Kira freni, büyük şehirlerde kira artışını yavaşlatmayı amaçlıyor.",
+  "beispielEn": "The rent cap is meant to slow the rise of rents in big cities."
+ },
+ {
+  "id": 5628,
+  "tr": "bina yönetimi",
+  "en": "property management",
+  "beispiel": "Die Hausverwaltung reagiert seit Wochen nicht auf unsere Beschwerden.",
+  "beispielTr": "Bina yönetimi haftalardır şikâyetlerimize yanıt vermiyor.",
+  "beispielEn": "The property management has not answered our complaints for weeks."
+ },
+ {
+  "id": 5629,
+  "tr": "zorla tahliye",
+  "en": "eviction",
+  "beispiel": "Nach monatelangem Streit kam es zur Zwangsräumung der Wohnung.",
+  "beispielTr": "Aylarca süren anlaşmazlığın ardından daire zorla tahliye edildi.",
+  "beispielEn": "After months of dispute the eviction was carried out."
+ },
+ {
+  "id": 5630,
+  "tr": "küf",
+  "en": "mold",
+  "beispiel": "Hinter dem Schrank hat sich im Winter Schimmel gebildet.",
+  "beispielTr": "Kışın dolabın arkasında küf oluştu.",
+  "beispielEn": "Mold formed behind the cupboard during the winter."
+ },
+ {
+  "id": 5631,
+  "tr": "gayrimenkul",
+  "en": "property",
+  "beispiel": "Er hat sein Geld in Immobilien statt in Aktien angelegt.",
+  "beispielTr": "Parasını hisse senedi yerine gayrimenkule yatırdı.",
+  "beispielEn": "He invested his money in property instead of shares."
+ },
+ {
+  "id": 5632,
+  "tr": "emlakçı",
+  "en": "real estate agent",
+  "beispiel": "Der Makler verlangt eine Provision von zwei Monatsmieten.",
+  "beispielTr": "Emlakçı iki aylık kira tutarında komisyon istiyor.",
+  "beispielEn": "The real estate agent charges a commission of two months' rent."
+ },
+ {
+  "id": 5633,
+  "tr": "mülk daire",
+  "en": "condominium",
+  "beispiel": "Sie haben eine kleine Eigentumswohnung am Stadtrand gekauft.",
+  "beispielTr": "Şehrin kenarında küçük bir daire satın aldılar.",
+  "beispielEn": "They bought a small condominium on the edge of the city."
+ },
+ {
+  "id": 5634,
+  "tr": "değer artışı",
+  "en": "increase in value",
+  "beispiel": "Der neue Bahnhof sorgte für eine deutliche Wertsteigerung der Grundstücke.",
+  "beispielTr": "Yeni tren istasyonu arsaların değerinde belirgin bir artışa yol açtı.",
+  "beispielEn": "The new station caused a clear increase in the value of the plots."
+ },
+ {
+  "id": 5635,
+  "tr": "konut piyasası",
+  "en": "housing market",
+  "beispiel": "Der Wohnungsmarkt in der Hauptstadt ist seit Jahren angespannt.",
+  "beispielTr": "Başkentteki konut piyasası yıllardır gergin.",
+  "beispielEn": "The housing market in the capital has been tight for years."
+ },
+ {
+  "id": 5636,
+  "tr": "boş kalma",
+  "en": "vacancy",
+  "beispiel": "In der Altstadt nimmt der Leerstand von Ladenlokalen zu.",
+  "beispielTr": "Eski şehirde boş kalan dükkânların sayısı artıyor.",
+  "beispielEn": "In the old town more and more shops are standing empty."
+ },
+ {
+  "id": 5637,
+  "tr": "yalıtım",
+  "en": "insulation",
+  "beispiel": "Eine bessere Dämmung senkt die Heizkosten spürbar.",
+  "beispielTr": "Daha iyi bir yalıtım ısınma masraflarını hissedilir ölçüde düşürür.",
+  "beispielEn": "Better insulation noticeably lowers the heating costs."
+ },
+ {
+  "id": 5638,
+  "tr": "cephe",
+  "en": "facade",
+  "beispiel": "Die Fassade des Gebäudes wird im Frühjahr neu gestrichen.",
+  "beispielTr": "Binanın cephesi ilkbaharda yeniden boyanacak.",
+  "beispielEn": "The facade of the building will be repainted in the spring."
+ },
+ {
+  "id": 5639,
+  "tr": "kat planı",
+  "en": "floor plan",
+  "beispiel": "Auf dem Grundriss erkennt man drei Zimmer und einen Balkon.",
+  "beispielTr": "Kat planında üç oda ve bir balkon görülüyor.",
+  "beispielEn": "On the floor plan you can see three rooms and a balcony."
+ },
+ {
+  "id": 5640,
+  "tr": "çatı katı",
+  "en": "top floor",
+  "beispiel": "Im Dachgeschoss ist es im Sommer unerträglich heiß.",
+  "beispielTr": "Çatı katı yazın dayanılmayacak kadar sıcak oluyor.",
+  "beispielEn": "On the top floor it is unbearably hot in summer."
+ },
+ {
+  "id": 5641,
+  "tr": "eski bina",
+  "en": "old building",
+  "beispiel": "Viele Studenten wohnen gern in einem Altbau mit hohen Decken.",
+  "beispielTr": "Birçok öğrenci tavanları yüksek eski binalarda oturmayı seviyor.",
+  "beispielEn": "Many students like living in an old building with high ceilings."
+ },
+ {
+  "id": 5642,
+  "tr": "yeni bina",
+  "en": "new building",
+  "beispiel": "Der Neubau am Fluss bietet Platz für achtzig Familien.",
+  "beispielTr": "Nehir kenarındaki yeni bina seksen aileye yer sunuyor.",
+  "beispielEn": "The new building by the river has room for eighty families."
+ },
+ {
+  "id": 5643,
+  "tr": "yapı ruhsatı",
+  "en": "building permit",
+  "beispiel": "Ohne Baugenehmigung darf hier nicht gebaut werden.",
+  "beispielTr": "Yapı ruhsatı olmadan burada inşaat yapılamaz.",
+  "beispielEn": "Without a building permit nothing may be built here."
+ },
+ {
+  "id": 5644,
+  "tr": "imar planı",
+  "en": "zoning plan",
+  "beispiel": "Der neue Bebauungsplan sieht deutlich mehr Grünflächen vor.",
+  "beispielTr": "Yeni imar planı belirgin biçimde daha fazla yeşil alan öngörüyor.",
+  "beispielEn": "The new zoning plan provides for considerably more green spaces."
+ },
+ {
+  "id": 5645,
+  "tr": "kentsel gelişim",
+  "en": "urban development",
+  "beispiel": "Die Stadtentwicklung orientiert sich künftig stärker am Klimaschutz.",
+  "beispielTr": "Kentsel gelişim bundan sonra daha çok iklim korumasına yönelecek.",
+  "beispielEn": "Urban development will focus more strongly on climate protection."
+ }
+]

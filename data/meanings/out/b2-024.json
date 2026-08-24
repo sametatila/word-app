@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4794,
+    "tr": "sağlıksız",
+    "en": "unhealthy",
+    "beispiel": "So wenig zu schlafen ist auf Dauer ziemlich ungesund.",
+    "beispielTr": "Bu kadar az uyumak uzun vadede oldukça sağlıksız.",
+    "beispielEn": "Sleeping so little is pretty unhealthy in the long run."
+  },
+  {
+    "id": 4795,
+    "tr": "rahatlatıcı",
+    "en": "soothing",
+    "beispiel": "Ein warmes Bad ist nach einem langen Tag wohltuend.",
+    "beispielTr": "Uzun bir günün ardından sıcak bir banyo rahatlatıcı oluyor.",
+    "beispielEn": "A warm bath is soothing after a long day."
+  },
+  {
+    "id": 4796,
+    "tr": "dik",
+    "en": "upright",
+    "beispiel": "Versuch, beim Tippen aufrecht auf dem Stuhl zu sitzen.",
+    "beispielTr": "Yazarken sandalyede dik oturmaya çalış.",
+    "beispielEn": "Try to sit up straight on the chair while typing."
+  },
+  {
+    "id": 4797,
+    "tr": "ölçülü",
+    "en": "moderate",
+    "beispiel": "Er trinkt Alkohol nur maßvoll und selten.",
+    "beispielTr": "Alkolü sadece ölçülü ve nadiren içiyor.",
+    "beispielEn": "He only drinks alcohol in moderation and rarely."
+  },
+  {
+    "id": 4798,
+    "tr": "satış sözleşmesi",
+    "en": "purchase contract",
+    "beispiel": "Mit dem Klick auf den Button kommt ein Kaufvertrag zustande.",
+    "beispielTr": "Düğmeye tıklamakla bir satış sözleşmesi kurulmuş oluyor.",
+    "beispielEn": "Clicking the button creates a purchase contract."
+  },
+  {
+    "id": 4799,
+    "tr": "cayma",
+    "en": "revocation",
+    "beispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden.",
+    "beispielTr": "Cayma bildirimi on dört gün içinde yapılmalı.",
+    "beispielEn": "The revocation has to be declared within fourteen days."
+  },
+  {
+    "id": 4800,
+    "tr": "geri ödeme",
+    "en": "refund",
+    "beispiel": "Die Rückerstattung des Kaufpreises dauerte fast drei Wochen.",
+    "beispielTr": "Satış bedelinin geri ödenmesi neredeyse üç hafta sürdü.",
+    "beispielEn": "The refund of the purchase price took almost three weeks."
+  },
+  {
+    "id": 4801,
+    "tr": "satın alma belgesi",
+    "en": "proof of purchase",
+    "beispiel": "Ohne Kaufbeleg nimmt der Händler die Ware nicht zurück.",
+    "beispielTr": "Satın alma belgesi olmadan satıcı ürünü geri almıyor.",
+    "beispielEn": "Without proof of purchase the retailer won't take the item back."
+  },
+  {
+    "id": 4802,
+    "tr": "fiyat indirimi",
+    "en": "discount",
+    "beispiel": "Wegen des Kratzers gewährte uns der Verkäufer einen Preisnachlass.",
+    "beispielTr": "Çizik yüzünden satıcı bize fiyat indirimi yaptı.",
+    "beispielEn": "Because of the scratch the seller gave us a discount."
+  },
+  {
+    "id": 4803,
+    "tr": "hizmet sağlayıcı",
+    "en": "service provider",
+    "beispiel": "Der Dienstleister haftet für Schäden, die seine Mitarbeiter verursachen.",
+    "beispielTr": "Hizmet sağlayıcı, çalışanlarının yol açtığı zararlardan sorumlu.",
+    "beispielEn": "The service provider is liable for damage its employees cause."
+  },
+  {
+    "id": 4804,
+    "tr": "müşteri hizmetleri",
+    "en": "customer service",
+    "beispiel": "Der Kundendienst war stundenlang telefonisch nicht zu erreichen.",
+    "beispielTr": "Müşteri hizmetlerine saatlerce telefonla ulaşılamadı.",
+    "beispielEn": "Customer service was unreachable by phone for hours."
+  },
+  {
+    "id": 4805,
+    "tr": "uzlaştırma kurulu",
+    "en": "arbitration board",
+    "beispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter.",
+    "beispielTr": "Havayolu şirketiyle anlaşmazlıkta bağımsız bir uzlaştırma kurulu yardımcı oluyor.",
+    "beispielEn": "In a dispute with the airline an independent arbitration board helps."
+  },
+  {
+    "id": 4806,
+    "tr": "tüketici danışma merkezi",
+    "en": "consumer advice center",
+    "beispiel": "Die Verbraucherzentrale hat uns bei diesem Vertrag kostenlos beraten.",
+    "beispielTr": "Tüketici danışma merkezi bu sözleşmede bize ücretsiz danışmanlık verdi.",
+    "beispielEn": "The consumer advice center advised us on this contract for free."
+  },
+  {
+    "id": 4807,
+    "tr": "fiyat karşılaştırması",
+    "en": "price comparison",
+    "beispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro.",
+    "beispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz euro kazandırır.",
+    "beispielEn": "A quick price comparison online often saves a hundred euros."
+  },
+  {
+    "id": 4808,
+    "tr": "kargo ücreti",
+    "en": "shipping costs",
+    "beispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
+    "beispielTr": "Elli euroluk sipariş tutarından itibaren kargo ücreti alınmıyor.",
+    "beispielEn": "From an order value of fifty euros the shipping costs are waived."
+  },
+  {
+    "id": 4809,
+    "tr": "alacak kaydı",
+    "en": "credit note",
+    "beispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
+    "beispielTr": "Nakit yerine seksen euroluk bir alacak kaydı aldı.",
+    "beispielEn": "Instead of cash she got a credit note for eighty euros."
+  },
+  {
+    "id": 4810,
+    "tr": "hediye çeki",
+    "en": "voucher",
+    "beispiel": "Der Gutschein ist drei Jahre lang in allen Filialen gültig.",
+    "beispielTr": "Hediye çeki üç yıl boyunca bütün şubelerde geçerli.",
+    "beispielEn": "The voucher is valid in all branches for three years."
+  },
+  {
+    "id": 4811,
+    "tr": "raf ömrü",
+    "en": "shelf life",
+    "beispiel": "Die Haltbarkeit der Milch beträgt nur wenige Tage.",
+    "beispielTr": "Sütün raf ömrü sadece birkaç gün.",
+    "beispielEn": "The shelf life of the milk is only a few days."
+  },
+  {
+    "id": 4813,
+    "tr": "müşteri bağlılığı",
+    "en": "customer retention",
+    "beispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung.",
+    "beispielTr": "İndirim kampanyalarının asıl amacı uzun vadeli müşteri bağlılığı.",
+    "beispielEn": "Discount campaigns serve above all long-term customer retention."
+  },
+  {
+    "id": 4814,
+    "tr": "tarife",
+    "en": "rate plan",
+    "beispiel": "Wir haben in einen günstigeren Tarif ohne Mindestlaufzeit gewechselt.",
+    "beispielTr": "Asgari süresi olmayan daha ucuz bir tarifeye geçtik.",
+    "beispielEn": "We switched to a cheaper rate plan with no minimum term."
+  },
+  {
+    "id": 4815,
+    "tr": "sabit ücret",
+    "en": "base fee",
+    "beispiel": "Neben der Grundgebühr zahlen Sie für jede Minute extra.",
+    "beispielTr": "Sabit ücretin yanında her dakika için ayrıca ödüyorsunuz.",
+    "beispielEn": "Besides the base fee you pay extra for every minute."
+  },
+  {
+    "id": 4816,
+    "tr": "iyi niyet",
+    "en": "goodwill",
+    "beispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenlos.",
+    "beispielTr": "Firma iyi niyet göstererek cihazı yine de ücretsiz onardı.",
+    "beispielEn": "As a goodwill gesture the company repaired the device for free."
+  },
+  {
+    "id": 4817,
+    "tr": "sigorta teminatı",
+    "en": "insurance coverage",
+    "beispiel": "Der Versicherungsschutz erlischt, wenn Sie die Prämie nicht zahlen.",
+    "beispielTr": "Primi ödemezseniz sigorta teminatınız sona erer.",
+    "beispielEn": "The insurance coverage lapses if you don't pay the premium."
+  },
+  {
+    "id": 4818,
+    "tr": "sipariş veren",
+    "en": "client",
+    "beispiel": "Der Auftraggeber muss die Arbeiten innerhalb einer Woche abnehmen.",
+    "beispielTr": "Sipariş veren, işleri bir hafta içinde teslim almak zorunda.",
+    "beispielEn": "The client has to accept the work within a week."
+  },
+  {
+    "id": 4819,
+    "tr": "muhatap",
+    "en": "contact person",
+    "beispiel": "Wer ist bei euch der Ansprechpartner für Reklamationen?",
+    "beispielTr": "Sizde şikâyetler için muhatap kim?",
+    "beispielEn": "Who is the contact person for complaints at your company?"
+  },
+  {
+    "id": 4820,
+    "tr": "şube",
+    "en": "branch",
+    "beispiel": "Online gekaufte Kleidung können Sie in jeder Filiale zurückgeben.",
+    "beispielTr": "İnternetten aldığınız giysileri her şubede iade edebilirsiniz.",
+    "beispielEn": "You can return clothes bought online at any branch."
+  },
+  {
+    "id": 4821,
+    "tr": "perakende",
+    "en": "retail",
+    "beispiel": "Der stationäre Einzelhandel leidet seit Jahren unter dem Onlinegeschäft.",
+    "beispielTr": "Fiziksel perakende yıllardır internet satışından zarar görüyor.",
+    "beispielEn": "Brick-and-mortar retail has been suffering from online business for years."
+  },
+  {
+    "id": 4822,
+    "tr": "alışveriş sepeti",
+    "en": "shopping cart",
+    "beispiel": "Viele Kunden brechen den Kauf mit vollem Warenkorb ab.",
+    "beispielTr": "Birçok müşteri sepeti doluyken alışverişi yarıda bırakıyor.",
+    "beispielEn": "Many customers abandon the purchase with a full shopping cart."
+  },
+  {
+    "id": 4823,
+    "tr": "ürün yelpazesi",
+    "en": "product range",
+    "beispiel": "Der Discounter hat sein Sortiment um regionale Produkte erweitert.",
+    "beispielTr": "İndirim marketi ürün yelpazesini yöresel ürünlerle genişletti.",
+    "beispielEn": "The discounter has expanded its product range with regional goods."
+  },
+  {
+    "id": 4824,
+    "tr": "kullanım koşulları",
+    "en": "terms of use",
+    "beispiel": "Kaum jemand liest die Nutzungsbedingungen vor der Anmeldung durch.",
+    "beispielTr": "Kayıt olmadan önce kullanım koşullarını neredeyse kimse okumuyor.",
+    "beispielEn": "Hardly anyone reads the terms of use before signing up."
+  },
+  {
+    "id": 4825,
+    "tr": "sözleşme tarafı",
+    "en": "contracting party",
+    "beispiel": "Ihr Vertragspartner ist nicht der Hersteller, sondern der Händler.",
+    "beispielTr": "Sözleşmedeki karşı tarafınız üretici değil, satıcıdır.",
+    "beispielEn": "Your contracting party is not the manufacturer but the retailer."
+  },
+  {
+    "id": 4826,
+    "tr": "iade hakkı",
+    "en": "right of return",
+    "beispiel": "Im Laden besteht kein gesetzliches Rückgaberecht für einwandfreie Ware.",
+    "beispielTr": "Mağazada kusursuz ürün için yasal bir iade hakkı yok.",
+    "beispielEn": "In a store there is no legal right of return for flawless goods."
+  },
+  {
+    "id": 4827,
+    "tr": "sözleşmeden dönme",
+    "en": "withdrawal",
+    "beispiel": "Der Rücktritt vom Kaufvertrag ist nur bei Mängeln möglich.",
+    "beispielTr": "Satış sözleşmesinden dönmek ancak üründe kusur varsa mümkün.",
+    "beispielEn": "Withdrawal from the purchase contract is only possible if there are defects."
+  },
+  {
+    "id": 4828,
+    "tr": "sadakat programı",
+    "en": "loyalty program",
+    "beispiel": "Im Treueprogramm sammeln Kunden Punkte für spätere Einkäufe.",
+    "beispielTr": "Sadakat programında müşteriler sonraki alışverişler için puan topluyor.",
+    "beispielEn": "In the loyalty program customers collect points for later purchases."
+  },
+  {
+    "id": 4829,
+    "tr": "şikâyet etmek",
+    "en": "to file a complaint",
+    "beispiel": "Ich habe die defekte Kaffeemaschine sofort beim Händler reklamiert.",
+    "beispielTr": "Bozuk kahve makinesini hemen satıcıya şikâyet ettim.",
+    "beispielEn": "I filed a complaint about the broken coffee machine right away."
+  },
+  {
+    "id": 4830,
+    "tr": "sonradan düzeltmek",
+    "en": "to rework",
+    "beispiel": "Der Handwerker musste die schiefe Fliesenreihe kostenlos nachbessern.",
+    "beispielTr": "Usta, eğri fayans sırasını ücretsiz düzeltmek zorunda kaldı.",
+    "beispielEn": "The contractor had to rework the crooked row of tiles for free."
+  },
+  {
+    "id": 4831,
+    "tr": "ihtar etmek",
+    "en": "to send a reminder",
+    "beispiel": "Der Verlag hat den Kunden zweimal wegen der Rechnung gemahnt.",
+    "beispielTr": "Yayınevi, fatura için müşteriye iki kez ihtar gönderdi.",
+    "beispielEn": "The publisher sent the customer two reminders about the invoice."
+  },
+  {
+    "id": 4832,
+    "tr": "tavsiye etmemek",
+    "en": "to advise against",
+    "beispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab.",
+    "beispielTr": "Danışman bize pahalı ek sigortayı tavsiye etmedi.",
+    "beispielEn": "The advisor advised us against the expensive extra insurance."
+  },
+  {
+    "id": 4833,
+    "tr": "kullanmak",
+    "en": "to redeem",
+    "beispiel": "Kann ich den Gutschein auch online einlösen?",
+    "beispielTr": "Hediye çekini internetten de kullanabilir miyim?",
+    "beispielEn": "Can I redeem the voucher online too?"
+  },
+  {
+    "id": 4834,
+    "tr": "yükümlü kılmak",
+    "en": "to oblige",
+    "beispiel": "Das Gesetz verpflichtet Händler zu klaren Preisangaben.",
+    "beispielTr": "Yasa, satıcıları açık fiyat bilgisi vermeye yükümlü kılıyor.",
+    "beispielEn": "The law obliges retailers to state prices clearly."
+  },
+  {
+    "id": 4835,
+    "tr": "aldatmak",
+    "en": "to deceive",
+    "beispiel": "Mit der halb leeren Packung täuscht der Hersteller die Käufer.",
+    "beispielTr": "Yarı boş ambalajla üretici alıcıları aldatıyor.",
+    "beispielEn": "With the half-empty package the manufacturer deceives buyers."
+  },
+  {
+    "id": 4836,
+    "tr": "gidermek",
+    "en": "to fix",
+    "beispiel": "Der Techniker konnte die Störung erst nach zwei Besuchen beheben.",
+    "beispielTr": "Teknisyen arızayı ancak iki ziyaretten sonra giderebildi.",
+    "beispielEn": "The technician could only fix the fault after two visits."
+  },
+  {
+    "id": 4837,
+    "tr": "reklam yapmak",
+    "en": "to advertise",
+    "beispiel": "Die Kette wirbt seit Wochen mit angeblich unschlagbaren Preisen.",
+    "beispielTr": "Zincir haftalardır sözde rakipsiz fiyatlarla reklam yapıyor.",
+    "beispielEn": "The chain has been advertising unbeatable prices for weeks."
+  },
+  {
+    "id": 4838,
+    "tr": "taahhüt etmek",
+    "en": "to assure",
+    "beispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert.",
+    "beispielTr": "Satıcı bize üç gün içinde teslimat taahhüt etmişti.",
+    "beispielEn": "The seller had assured us delivery within three days."
+  },
+  {
+    "id": 4839,
+    "tr": "faturalandırmak",
+    "en": "to bill",
+    "beispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet.",
+    "beispielTr": "Danışmanlık götürü değil, saat üzerinden faturalandırılıyor.",
+    "beispielEn": "The consulting is billed by the hour, not at a flat rate."
+  },
+  {
+    "id": 4840,
+    "tr": "geri göndermek",
+    "en": "to send back",
+    "beispiel": "Bitte senden Sie die Ware in der Originalverpackung zurück.",
+    "beispielTr": "Lütfen ürünü orijinal ambalajında geri gönderin.",
+    "beispielEn": "Please send the item back in its original packaging."
+  },
+  {
+    "id": 4841,
+    "tr": "pazarlamak",
+    "en": "to tout",
+    "beispiel": "Im Fernsehen wird das Mittel als Wunderkur angepriesen.",
+    "beispielTr": "Televizyonda bu ilaç mucize tedavi diye pazarlanıyor.",
+    "beispielEn": "On TV the remedy is touted as a miracle cure."
+  },
+  {
+    "id": 4842,
+    "tr": "ücretli",
+    "en": "chargeable",
+    "beispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
+    "beispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli oluyor.",
+    "beispielEn": "After the trial month the offer automatically becomes chargeable."
+  },
+  {
+    "id": 4843,
+    "tr": "bağlayıcı olmayan",
+    "en": "non-binding",
+    "beispiel": "Das Angebot ist völlig unverbindlich und kostet nichts.",
+    "beispielTr": "Teklif tamamen bağlayıcı değil ve hiçbir ücreti yok.",
+    "beispielEn": "The offer is completely non-binding and costs nothing."
+  },
+  {
+    "id": 4844,
+    "tr": "yanıltıcı",
+    "en": "misleading",
+    "beispiel": "Das Gericht hielt die Werbung für irreführend und verbot sie.",
+    "beispielTr": "Mahkeme reklamı yanıltıcı buldu ve yasakladı.",
+    "beispielEn": "The court found the ad misleading and banned it."
+  }
+]

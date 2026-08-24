@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5245,
+  "tr": "zorunlu kılmak",
+  "en": "to require",
+  "beispiel": "Die Verordnung schreibt eine schriftliche Begründung ausdrücklich vor.",
+  "beispielTr": "Yönetmelik yazılı gerekçeyi açıkça zorunlu kılıyor.",
+  "beispielEn": "The regulation expressly requires a written justification."
+ },
+ {
+  "id": 5246,
+  "tr": "yasaklamak",
+  "en": "to prohibit",
+  "beispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
+  "beispielTr": "Şehre, arsanın üzerine yeni yapı yapması yasaklandı.",
+  "beispielEn": "The city was prohibited from building further on the plot."
+ },
+ {
+  "id": 5247,
+  "tr": "izin vermek",
+  "en": "to permit",
+  "beispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
+  "beispielTr": "Ev sahibi köpek beslenmesine ancak istisnai olarak izin veriyor.",
+  "beispielEn": "The landlord permits keeping a dog only in exceptional cases."
+ },
+ {
+  "id": 5248,
+  "tr": "hukuka aykırı",
+  "en": "unlawful",
+  "beispiel": "Das Gericht erklärte die Kündigung für rechtswidrig.",
+  "beispielTr": "Mahkeme fesih işlemini hukuka aykırı buldu.",
+  "beispielEn": "The court declared the dismissal unlawful."
+ },
+ {
+  "id": 5249,
+  "tr": "idari",
+  "en": "administrative",
+  "beispiel": "Der Betrieb wurde durch eine behördliche Anordnung geschlossen.",
+  "beispielTr": "İşletme idari bir kararla kapatıldı.",
+  "beispielEn": "The business was closed by an administrative order."
+ },
+ {
+  "id": 5250,
+  "tr": "kabul edilemez",
+  "en": "inadmissible",
+  "beispiel": "Die Klage wurde als unzulässig zurückgewiesen.",
+  "beispielTr": "Dava kabul edilemez bulunarak reddedildi.",
+  "beispielEn": "The lawsuit was dismissed as inadmissible."
+ },
+ {
+  "id": 5251,
+  "tr": "ücrete tabi",
+  "en": "subject to a fee",
+  "beispiel": "Die Ausstellung einer zweiten Bescheinigung ist gebührenpflichtig.",
+  "beispielTr": "İkinci bir belgenin düzenlenmesi ücrete tabidir.",
+  "beispielEn": "Issuing a second certificate is subject to a fee."
+ },
+ {
+  "id": 5252,
+  "tr": "ilgili",
+  "en": "relevant",
+  "beispiel": "Der Anwalt zitierte die einschlägigen Vorschriften des Mietrechts.",
+  "beispielTr": "Avukat kira hukukunun ilgili hükümlerini aktardı.",
+  "beispielEn": "The lawyer cited the relevant provisions of tenancy law."
+ },
+ {
+  "id": 5253,
+  "tr": "esas alınan",
+  "en": "decisive",
+  "beispiel": "Für die Berechnung ist das Datum des Eingangs maßgeblich.",
+  "beispielTr": "Hesaplamada evrakın geliş tarihi esas alınır.",
+  "beispielEn": "The date of receipt is decisive for the calculation."
+ },
+ {
+  "id": 5254,
+  "tr": "geçersiz",
+  "en": "invalid",
+  "beispiel": "Ohne Stempel ist das Formular leider ungültig.",
+  "beispielTr": "Mühür olmadan form maalesef geçersiz.",
+  "beispielEn": "Without a stamp the form is unfortunately invalid."
+ },
+ {
+  "id": 5255,
+  "tr": "uyarınca",
+  "en": "according to",
+  "beispiel": "Gemäß dem Vertrag haften Sie für alle entstandenen Schäden.",
+  "beispielTr": "Sözleşme uyarınca doğan bütün zararlardan siz sorumlusunuz.",
+  "beispielEn": "According to the contract you are liable for all damages incurred."
+ },
+ {
+  "id": 5256,
+  "tr": "tur operatörü",
+  "en": "tour operator",
+  "beispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt.",
+  "beispielTr": "Tur operatörü uçuşun iptalini bize daha dün bildirdi.",
+  "beispielEn": "The tour operator informed us of the flight cancellation only yesterday."
+ },
+ {
+  "id": 5257,
+  "tr": "kapora",
+  "en": "down payment",
+  "beispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig.",
+  "beispielTr": "Rezervasyon sırasında yüzde yirmi kapora ödenmesi gerekiyor.",
+  "beispielEn": "A down payment of twenty percent is due when booking."
+ },
+ {
+  "id": 5258,
+  "tr": "yeme içme",
+  "en": "board",
+  "beispiel": "Im Preis sind Übernachtung und Verpflegung enthalten.",
+  "beispielTr": "Fiyata konaklama ve yeme içme dahil.",
+  "beispielEn": "The price includes lodging and board."
+ },
+ {
+  "id": 5259,
+  "tr": "paket tur",
+  "en": "package tour",
+  "beispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen.",
+  "beispielTr": "Pek çok tatilci tek tek hizmet yerine paket tur tercih ediyor.",
+  "beispielEn": "Many vacationers prefer a package tour to booking separate services."
+ },
+ {
+  "id": 5260,
+  "tr": "tur gezisi",
+  "en": "round trip",
+  "beispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
+  "beispielTr": "Sicilya turumuzda on iki yeri gezdik.",
+  "beispielEn": "On our round trip through Sicily we visited twelve places."
+ },
+ {
+  "id": 5261,
+  "tr": "gemi turu",
+  "en": "cruise",
+  "beispiel": "Die Kreuzfahrt durch die Ostsee war günstiger als erwartet.",
+  "beispielTr": "Baltık Denizi'ndeki gemi turu beklediğimizden ucuza geldi.",
+  "beispielEn": "The cruise through the Baltic Sea was cheaper than expected."
+ },
+ {
+  "id": 5262,
+  "tr": "gezme",
+  "en": "viewing",
+  "beispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich.",
+  "beispielTr": "Katedral ancak rehber eşliğinde gezilebiliyor.",
+  "beispielEn": "The cathedral can only be viewed on a guided tour."
+ },
+ {
+  "id": 5263,
+  "tr": "turist hareketliliği",
+  "en": "tourist trade",
+  "beispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein.",
+  "beispielTr": "Turist hareketliliği bölgeye her yıl milyonlar kazandırıyor.",
+  "beispielEn": "The tourist trade brings the region millions every year."
+ },
+ {
+  "id": 5264,
+  "tr": "yüksek sezon",
+  "en": "high season",
+  "beispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste.",
+  "beispielTr": "Yüksek sezonda kıyıdaki fiyatlar ikiye katlanıyor.",
+  "beispielEn": "In high season prices on the coast double."
+ },
+ {
+  "id": 5265,
+  "tr": "izdiham",
+  "en": "rush",
+  "beispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen.",
+  "beispielTr": "Büyük izdiham yüzünden iki saat sıra beklemek zorunda kaldık.",
+  "beispielEn": "Because of the big rush we had to wait in line for two hours."
+ },
+ {
+  "id": 5266,
+  "tr": "ara iniş",
+  "en": "stopover",
+  "beispiel": "Der Flug nach Chile hat eine Zwischenlandung in Madrid.",
+  "beispielTr": "Şili uçuşunun Madrid'de bir ara inişi var.",
+  "beispielEn": "The flight to Chile has a stopover in Madrid."
+ },
+ {
+  "id": 5267,
+  "tr": "gümrük kontrolü",
+  "en": "customs check",
+  "beispiel": "Bei der Zollkontrolle wurde mein Koffer gründlich durchsucht.",
+  "beispielTr": "Gümrük kontrolünde valizim baştan sona arandı.",
+  "beispielEn": "My suitcase was searched thoroughly at the customs check."
+ },
+ {
+  "id": 5268,
+  "tr": "ülkeye giriş",
+  "en": "entry",
+  "beispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass.",
+  "beispielTr": "Ülkeye giriş için en az altı ay geçerli bir pasaport gerekiyor.",
+  "beispielEn": "For entry you need a passport valid for at least six months."
+ },
+ {
+  "id": 5269,
+  "tr": "sınır kapısı",
+  "en": "border crossing",
+  "beispiel": "Am Grenzübergang stauten sich die Autos über mehrere Kilometer.",
+  "beispielTr": "Sınır kapısında araçlar kilometrelerce kuyruk oluşturdu.",
+  "beispielEn": "The cars backed up for several kilometers at the border crossing."
+ },
+ {
+  "id": 5270,
+  "tr": "yerleştirme",
+  "en": "accommodation",
+  "beispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet.",
+  "beispielTr": "Grubun yerleştirilmesi için sade bir misafirhane kiralandı.",
+  "beispielEn": "A simple guesthouse was rented for the group's accommodation."
+ },
+ {
+  "id": 5271,
+  "tr": "konukevi",
+  "en": "hostel",
+  "beispiel": "Die Wanderer übernachteten in einer einfachen Herberge am Weg.",
+  "beispielTr": "Yürüyüşçüler yol kenarındaki mütevazı bir konukevinde gecelediler.",
+  "beispielEn": "The hikers spent the night in a simple hostel along the way."
+ },
+ {
+  "id": 5272,
+  "tr": "seyahat güzergâhı",
+  "en": "itinerary",
+  "beispiel": "Wegen des Unwetters mussten wir unsere Reiseroute kurzfristig ändern.",
+  "beispielTr": "Fırtına yüzünden güzergâhımızı son anda değiştirmek zorunda kaldık.",
+  "beispielEn": "Because of the storm we had to change our itinerary at short notice."
+ },
+ {
+  "id": 5273,
+  "tr": "kısa uğrama",
+  "en": "side trip",
+  "beispiel": "Auf dem Rückweg machten wir einen Abstecher an den See.",
+  "beispielTr": "Dönüş yolunda göle kısa bir uğrama yaptık.",
+  "beispielEn": "On the way back we made a side trip to the lake."
+ },
+ {
+  "id": 5274,
+  "tr": "zirve",
+  "en": "summit",
+  "beispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer.",
+  "beispielTr": "Hava açıkken zirveden denizi bile görebiliyorsunuz.",
+  "beispielEn": "On a clear day you can see the sea from the summit."
+ },
+ {
+  "id": 5275,
+  "tr": "kanyon",
+  "en": "gorge",
+  "beispiel": "Ein schmaler Pfad führt durch die enge Schlucht hinunter zum Fluss.",
+  "beispielTr": "Dar bir patika kanyonun içinden nehre iniyor.",
+  "beispielEn": "A narrow path leads down through the gorge to the river."
+ },
+ {
+  "id": 5276,
+  "tr": "koy",
+  "en": "bay",
+  "beispiel": "In der versteckten Bucht ankerten nur zwei kleine Segelboote.",
+  "beispielTr": "Gizli koyda yalnızca iki küçük yelkenli demirlemişti.",
+  "beispielEn": "Only two small sailboats were anchored in the hidden bay."
+ },
+ {
+  "id": 5277,
+  "tr": "yarımada",
+  "en": "peninsula",
+  "beispiel": "Die Halbinsel ist nur über eine schmale Landbrücke erreichbar.",
+  "beispielTr": "Yarımadaya ancak dar bir kara köprüsünden ulaşılabiliyor.",
+  "beispielEn": "The peninsula can only be reached over a narrow land bridge."
+ },
+ {
+  "id": 5278,
+  "tr": "buzul",
+  "en": "glacier",
+  "beispiel": "Der Gletscher hat sich in dreißig Jahren um einen Kilometer zurückgezogen.",
+  "beispielTr": "Buzul otuz yılda bir kilometre geriledi.",
+  "beispielEn": "The glacier has retreated by one kilometer in thirty years."
+ },
+ {
+  "id": 5279,
+  "tr": "yanardağ",
+  "en": "volcano",
+  "beispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt.",
+  "beispielTr": "Kül bulutu yüzünden yanardağa tırmanış kapalı.",
+  "beispielEn": "The climb to the volcano is closed because of the ash cloud."
+ },
+ {
+  "id": 5280,
+  "tr": "çöl",
+  "en": "desert",
+  "beispiel": "Nachts fallen die Temperaturen in der Wüste unter null Grad.",
+  "beispielTr": "Geceleri çölde sıcaklık sıfırın altına düşüyor.",
+  "beispielEn": "At night temperatures in the desert drop below zero."
+ },
+ {
+  "id": 5281,
+  "tr": "nehir ağzı",
+  "en": "river mouth",
+  "beispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel.",
+  "beispielTr": "Nehrin ağzında çok sayıda nadir kuş kuluçkaya yatıyor.",
+  "beispielEn": "Numerous rare birds nest at the mouth of the river."
+ },
+ {
+  "id": 5282,
+  "tr": "akıntı",
+  "en": "current",
+  "beispiel": "Wegen der starken Strömung ist das Baden hier verboten.",
+  "beispielTr": "Güçlü akıntı yüzünden burada yüzmek yasak.",
+  "beispielEn": "Swimming is prohibited here because of the strong current."
+ },
+ {
+  "id": 5283,
+  "tr": "vahşi doğa",
+  "en": "wilderness",
+  "beispiel": "Nur wenige Kilometer weiter beginnt die echte Wildnis.",
+  "beispielTr": "Birkaç kilometre ötede gerçek vahşi doğa başlıyor.",
+  "beispielEn": "Just a few kilometers further on the real wilderness begins."
+ },
+ {
+  "id": 5284,
+  "tr": "teleferik",
+  "en": "cable car",
+  "beispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein.",
+  "beispielTr": "Şiddetli rüzgârda teleferik seferlerini hemen durduruyor.",
+  "beispielEn": "In strong wind the cable car stops running immediately."
+ },
+ {
+  "id": 5285,
+  "tr": "kitle turizmi",
+  "en": "mass tourism",
+  "beispiel": "Der Massentourismus belastet die Wasserversorgung der Insel erheblich.",
+  "beispielTr": "Kitle turizmi adanın su kaynaklarını ciddi biçimde zorluyor.",
+  "beispielEn": "Mass tourism puts a heavy strain on the island's water supply."
+ },
+ {
+  "id": 5286,
+  "tr": "simge yapı",
+  "en": "landmark",
+  "beispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens.",
+  "beispielTr": "Eski deniz feneri bugün hâlâ limanın simge yapısı.",
+  "beispielEn": "The old lighthouse is still the landmark of the harbor."
+ },
+ {
+  "id": 5287,
+  "tr": "iskele",
+  "en": "pier",
+  "beispiel": "Das Ausflugsschiff verlässt die Anlegestelle jede volle Stunde.",
+  "beispielTr": "Gezi teknesi iskeleden her saat başı kalkıyor.",
+  "beispielEn": "The excursion boat leaves the pier every hour on the hour."
+ },
+ {
+  "id": 5288,
+  "tr": "ağırlama sektörü",
+  "en": "hospitality industry",
+  "beispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte.",
+  "beispielTr": "Ağırlama sektöründe yıllardır nitelikli eleman bulunamıyor.",
+  "beispielEn": "The hospitality industry has been short of trained staff for years."
+ },
+ {
+  "id": 5289,
+  "tr": "etap",
+  "en": "leg",
+  "beispiel": "Die letzte Etappe des Weges war die anstrengendste von allen.",
+  "beispielTr": "Yolun son etabı hepsinin en yorucusuydu.",
+  "beispielEn": "The last leg of the route was the most exhausting of all."
+ },
+ {
+  "id": 5290,
+  "tr": "manzara",
+  "en": "view",
+  "beispiel": "Von der Terrasse hat man einen weiten Ausblick über das Tal.",
+  "beispielTr": "Terastan vadiye doğru geniş bir manzara var.",
+  "beispielEn": "From the terrace you have a wide view over the valley."
+ },
+ {
+  "id": 5291,
+  "tr": "rezervasyonu değiştirmek",
+  "en": "to rebook",
+  "beispiel": "Wir mussten den Flug wegen des Streiks kostenlos umbuchen.",
+  "beispielTr": "Grev yüzünden uçuşu ücretsiz olarak değiştirmek zorunda kaldık.",
+  "beispielEn": "Because of the strike we had to rebook the flight free of charge."
+ },
+ {
+  "id": 5292,
+  "tr": "başvurmak",
+  "en": "to consult",
+  "beispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen.",
+  "beispielTr": "Şikâyet durumunda yolcular hemen bir doktora başvurmalı.",
+  "beispielEn": "Travelers with symptoms should consult a doctor immediately."
+ },
+ {
+  "id": 5293,
+  "tr": "gelmek",
+  "en": "to arrive",
+  "beispiel": "Die meisten Gäste reisen mit dem Zug oder dem Bus an.",
+  "beispielTr": "Konukların çoğu trenle ya da otobüsle geliyor.",
+  "beispielEn": "Most guests arrive by train or by bus."
+ },
+ {
+  "id": 5294,
+  "tr": "yolunu kaybetmek",
+  "en": "to lose one's way",
+  "beispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
+  "beispielTr": "Yoğun siste iki yürüyüşçü dağda yolunu kaybetti.",
+  "beispielEn": "In thick fog two hikers lost their way in the mountains."
+ }
+]
