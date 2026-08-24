@@ -156,7 +156,7 @@
     "tr": "kıyma",
     "en": "minced meat",
     "beispiel": "Geben Sie mir bitte ein Kilo Faschiertes.",
-    "beispielTr": "Bir kilo kıyma verir misiniz lütfen.",
+    "beispielTr": "Bana bir kilo kıyma verin lütfen.",
     "beispielEn": "Please give me a kilo of minced meat."
   },
   {
@@ -193,7 +193,7 @@
   },
   {
     "id": 1873,
-    "tr": "kesinleşmek",
+    "tr": "kesin olmak",
     "en": "to be settled",
     "beispiel": "Der Termin steht seit Langem fest.",
     "beispielTr": "Tarih uzun zamandır kesin.",
@@ -356,7 +356,7 @@
     "tr": "piliç",
     "en": "chicken",
     "beispiel": "Zum Mittagessen gibt es Hendl mit Reis.",
-    "beispielTr": "Öğle yemeğinde pilavla piliç var.",
+    "beispielTr": "Öğle yemeğinde pilavlı piliç var.",
     "beispielEn": "For lunch there's chicken with rice."
   },
   {
