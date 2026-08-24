@@ -38,17 +38,31 @@ const exercises = JSON.parse(readFileSync(dumpPath, "utf8"));
 /** Kelime havuzunun yenilenmiş karşılıkları (data/meanings/out). */
 const words = JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8"));
 const byId = new Map(words.map((w) => [w.id, w]));
+/**
+ * Havuz iki anahtarla tutuluyor: isim mi değil mi.
+ *
+ * Küçük harfe indirip tek anahtar kullanmak isimle sıfatı aynı yere
+ * çöktürüyordu: `das Fest` ("bayram") ile `fest` ("sağlam") havuzda ayrı iki
+ * madde ve sonuncusu diğerini eziyordu. Bir paket ajanı `das Fest` için
+ * "sıkı" ipucu görüp durumu bildirdi — ipucu yanlış olunca ajan ya yanlış
+ * karşılığa yönlendiriliyor ya da onu doğrulamak için vakit harcıyor.
+ */
 const havuz = new Map();
 for (const f of readdirSync(`${ROOT}data/meanings/out`).filter((f) => f.endsWith(".json"))) {
   for (const m of JSON.parse(readFileSync(`${ROOT}data/meanings/out/${f}`, "utf8"))) {
     const w = byId.get(m.id);
-    if (w) havuz.set(w.de.toLocaleLowerCase("de-DE"), { tr: m.tr, en: m.en });
+    if (!w) continue;
+    const isim = Boolean(w.artikel);
+    havuz.set(`${isim ? "N" : "-"}:${w.de.toLocaleLowerCase("de-DE")}`, { tr: m.tr, en: m.en });
   }
 }
 
-/** Madde başlığından artikeli düşürerek havuzda arar. */
-const havuzda = (de) =>
-  havuz.get(de.replace(/^(der|die|das|de|d|s)\s+/i, "").toLocaleLowerCase("de-DE"));
+/** Madde başlığından artikeli düşürerek havuzda arar; isim/isim değil ayrımıyla. */
+function havuzda(de) {
+  const isim = /^(der|die|das|de|d|s)\s+/i.test(de);
+  const gövde = de.replace(/^(der|die|das|de|d|s)\s+/i, "").toLocaleLowerCase("de-DE");
+  return havuz.get(`${isim ? "N" : "-"}:${gövde}`) ?? havuz.get(`${isim ? "-" : "N"}:${gövde}`);
+}
 
 /** Egzersizin öğrencinin gördüğü Almanca gövdesi. */
 function govde(e) {
