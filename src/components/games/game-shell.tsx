@@ -132,16 +132,18 @@ function VerdictBar({
   const still = useStill();
   /*
     Arada bir (her seferinde DEĞİL — sürpriz sık tekrar edince gürültü olur)
-    şeridi Erdi'nin kendisi getiriyor ya da götürüyor: "push"ta şerit soldan,
-    arkasında iterek yürüyen mirketle girer; "pull"da şerit kapanırken sağdan
-    yapışan mirket onu sürükleyerek çıkarır. Kliplerdeki duruşlar buna göre
-    üretildi: push sağa dönük ileri iter, pull sola dönük geri geri çeker.
+    şeridi Erdi'nin kendisi getiriyor: "push"ta soldan iterek, "pull"da
+    sağdan çekerek. İkisi de GİRİŞ koreografisi — ilk sürümde çekme çıkışa
+    bağlıydı ve hiç görünmedi: tur ilerleyince şerit animasyonsuz söküldüğü
+    için çıkış animasyonu hiçbir zaman oynamıyordu. Kliplerin duruşları:
+    push-right sağa dönük ileri iter (şeridin solunda), pull-left sağa dönük
+    geri geri sola yürüyerek sağındaki şeridi çeker (şeridin solunda).
     Zar, şerit her yeniden kurulduğunda bir kez atılır.
   */
   const fx = useMemo<"push" | "pull" | null>(() => {
     if (!verdict || still) return null;
     const r = Math.random();
-    return r < 0.18 ? "push" : r < 0.36 ? "pull" : null;
+    return r < 0.2 ? "push" : r < 0.4 ? "pull" : null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [verdict, still]);
 
@@ -158,15 +160,17 @@ function VerdictBar({
         {verdict ? (
           <motion.div
             key={verdict}
-            initial={fx === "push" ? { x: "-110%", opacity: 1 } : { opacity: 0, y: 10 }}
-            animate={fx === "push" ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
-            exit={
-              fx === "pull"
-                ? { x: "110%", transition: { duration: 0.7, ease: "easeIn" } }
-                : { opacity: 0, transition: { duration: 0 } }
-            }
-            transition={
+            initial={
               fx === "push"
+                ? { x: "-110%", opacity: 1 }
+                : fx === "pull"
+                  ? { x: "110%", opacity: 1 }
+                  : { opacity: 0, y: 10 }
+            }
+            animate={fx ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
+            exit={{ opacity: 0, transition: { duration: 0 } }}
+            transition={
+              fx
                 ? { duration: 0.8, ease: "easeOut" }
                 : { duration: 0.2, ease: [0.22, 1, 0.36, 1] }
             }
@@ -190,18 +194,19 @@ function VerdictBar({
               />
             )}
             {fx === "pull" && (
-              /* Şeridi götüren Erdi — yalnız çıkış sırasında belirir, şeridin
-                 sağından tutup geri geri sürükler. */
+              /* Şeridi çekerek getiren Erdi — sağa dönük, geri geri sola
+                 yürüyor, sağındaki şeridi sürüklüyor; şeritle birlikte kayar,
+                 şerit oturunca işini bitirip kaybolur. */
               <motion.img
-                src="/anim/pull-right.webp"
+                src="/anim/pull-left.webp"
                 alt=""
                 aria-hidden
                 draggable={false}
                 className="pointer-events-none absolute bottom-1 h-14 w-auto"
-                style={{ right: -60 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0 }}
-                exit={{ opacity: 1, transition: { duration: 0.1 } }}
+                style={{ left: -60 }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: [1, 1, 0] }}
+                transition={{ duration: 1.6, times: [0, 0.6, 1] }}
               />
             )}
             {/*

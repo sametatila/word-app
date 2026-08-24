@@ -77,8 +77,10 @@ function Walker() {
   return (
     <motion.div
       aria-hidden
+      /* Ayaklar klipte alt kenara basıyor (işlemede alt pay kırpıldı); bottom
+         tam nav yüksekliği - 2px: mirket navigasyonun ÜSTÜNDE yürüyor hissi. */
       className="pointer-events-none fixed z-30"
-      style={{ bottom: "calc(var(--nav-h, 4.5rem) + 0.25rem)", left: 0 }}
+      style={{ bottom: "calc(var(--nav-h, 4.5rem) - 2px)", left: 0 }}
       initial={{ x: fromX }}
       animate={{ x: toX }}
       transition={{ duration: walk.dur, ease: "linear" }}

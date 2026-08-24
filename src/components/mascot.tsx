@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
 
@@ -76,8 +76,27 @@ const CLIP: Record<Mood, { file: string; aspect: number }> = {
   çünkü hepsi last_image = base ile üretildi: her klip AYNI nötr duruşta
   başlayıp bitiyor; hangi sırayla oynarlarsa oynasınlar geçiş görünmez.
 */
-const IDLE_CLIPS = ["lookaround", "idle-dog", "idle-stretch", "idle-scratch", "idle-tail"];
-const IDLE_MS = 5083; // 61 kare @ 12fps — bir klibin tam süresi
+const IDLE_CLIPS = [
+  "lookaround",
+  "idle-dog",
+  "idle-stretch",
+  "idle-scratch",
+  "idle-tail",
+  "idle-spin",
+  "idle-hop",
+  "idle-dig",
+  "idle-sniff",
+  "idle-sit",
+  "idle-wink",
+];
+/*
+  Bir klibin tam süresi (61 kare @ 12fps) + küçük pay. Idle ve duygu klipleri
+  loop=1 kodlu: bir tur oynayıp NÖTR karede donuyorlar. JS zamanlayıcısı WebP
+  ile senkron olamaz; sonsuz döngüde takas klibin ortasına denk gelip "gidip
+  gelme" yaratıyordu. Donmuş nötr kareden takas görünmez — pay, donuşun bir
+  an görünmesini garantiler, sıçramayı değil.
+*/
+const IDLE_MS = 5450;
 
 /** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
 const STICKY: Mood[] = ["sad", "sleep"];
@@ -140,6 +159,22 @@ export function Mascot({
   const clip = CLIP[mood];
   const file = inIdle ? idleClip : clip.file;
 
+  /*
+    Çift tampon: klip takasında eski <img> hemen sökülürse yeni WebP çözülene
+    kadar yarım saniyelik bir boşluk (blick) görünüyor. Eski kare 500 ms daha
+    altta kalıyor; yeni klip nötr karede başladığı ve eskisi nötrde donduğu
+    için üst üste binme de görünmez.
+  */
+  const [prevFile, setPrevFile] = useState<string | null>(null);
+  const lastFile = useRef(file);
+  useEffect(() => {
+    if (lastFile.current === file) return;
+    setPrevFile(lastFile.current);
+    lastFile.current = file;
+    const t = setTimeout(() => setPrevFile(null), 500);
+    return () => clearTimeout(t);
+  }, [file]);
+
   return (
     <div
       className={`pointer-events-none relative select-none ${className}`}
@@ -161,23 +196,34 @@ export function Mascot({
       {still ? (
         <img src="/erdi.svg" alt="" className="block h-full w-full object-contain" draggable={false} />
       ) : (
-        /*
-          Duygu değişince `key` değişiyor: aynı <img>'de yalnızca src
-          değiştirmek, yeni klip çözülene kadar eski animasyon karesini
-          gösteriyor; yeni öğe temiz başlıyor ve döngü baştan oynuyor.
-        */
-        <img
-          key={file}
-          src={`/anim/${file}.webp`}
-          alt=""
-          className="block h-full w-full object-contain"
-          draggable={false}
-          /* Klip yoksa (henüz üretilmedi / yüklenemedi) statik illüstrasyona düş. */
-          onError={(e) => {
-            e.currentTarget.onerror = null;
-            e.currentTarget.src = "/erdi.svg";
-          }}
-        />
+        <>
+          {/* Takas tamponu: yeni klip çözülene kadar eskinin donmuş nötr karesi. */}
+          {prevFile && (
+            <img
+              src={`/anim/${prevFile}.webp`}
+              alt=""
+              className="absolute inset-0 block h-full w-full object-contain"
+              draggable={false}
+            />
+          )}
+          {/*
+            Duygu değişince `key` değişiyor: aynı <img>'de yalnızca src
+            değiştirmek, yeni klip çözülene kadar eski animasyon karesini
+            gösteriyor; yeni öğe temiz başlıyor ve döngü baştan oynuyor.
+          */}
+          <img
+            key={file}
+            src={`/anim/${file}.webp`}
+            alt=""
+            className="absolute inset-0 block h-full w-full object-contain"
+            draggable={false}
+            /* Klip yoksa (henüz üretilmedi / yüklenemedi) statik illüstrasyona düş. */
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = "/erdi.svg";
+            }}
+          />
+        </>
       )}
     </div>
   );

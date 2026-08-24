@@ -27,6 +27,7 @@ SUFFIX = ", consistent character design, plain solid white background, no camera
 
 NEUTRAL = "erdi-white.png"
 WIDE = "erdi-wide.png"  # yürüyüş/itme klipleri: geniş tuval, kuyruk kadrajda kalsın
+SQUARE = "erdi-square.png"  # kare tuval idle'ları: her yönde pay, kadraj sorunu yok
 
 # ad -> (prompt, base görsel, loop mu)
 ACTIONS = {
@@ -46,6 +47,12 @@ ACTIONS = {
     "idle-stretch": ("the cute meerkat puffs up and quickly shakes its whole body like shaking off water, fur fluffing out in every direction, arms staying tucked against its body, then its fur smooths back down and it stands calm again", NEUTRAL, True),
     "idle-scratch": ("the cute meerkat scratches the side of its head behind its ear with one front paw a few times, wobbling slightly on its feet, then returns to its calm upright posture", NEUTRAL, True),
     "idle-tail": ("the cute meerkat lifts the fluffy white tip of its own tail up in front of its chest with both front paws, holds it close to its body and inspects it curiously, staying compact and fully inside the frame, then lets the tail drop back down", NEUTRAL, True),
+    "idle-spin": ("the cute meerkat does a quick playful full turn in place, spinning around once and ending facing the viewer again", SQUARE, True),
+    "idle-hop": ("the cute meerkat does two small excited hops in place, tail wagging happily, then settles back to calm standing", SQUARE, True),
+    "idle-dig": ("the cute meerkat crouches slightly and digs at the ground with both front paws a few times like a burrowing meerkat, then looks up at the viewer and stands tall again", SQUARE, True),
+    "idle-sniff": ("the cute meerkat sniffs the air curiously, nose twitching, lifting its head and turning it slightly side to side, whiskers quivering, then relaxes", SQUARE, True),
+    "idle-sit": ("the cute meerkat sits down on its bottom, shoulders relaxing, looks around calmly, then pushes itself back up to stand upright", SQUARE, True),
+    "idle-wink": ("the cute meerkat leans slightly toward the viewer and gives a friendly wink with one eye, gentle closed-mouth smile, then straightens back up", SQUARE, True),
     "sad-enter": ("the cute meerkat slowly becomes sad: ears droop, shoulders slump, head lowers, gazing at the ground, small closed-mouth frown", NEUTRAL, False),
     "sleep-enter": ("the cute meerkat gets sleepy: eyelids slowly close, head nods down, it dozes off while standing, breathing slowly", NEUTRAL, False),
     # base'ler *-enter kliplerinden seçilen karelerle oluşturulur (frames2webp sonrası):
