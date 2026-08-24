@@ -87,7 +87,7 @@ const SPEECH_BYTES = 300;
 const FLOOR_PERCENTILE = 0.15;
 const FLOOR_FACTOR = 3;
 /** Konuşma bittikten sonra kaydın kapanması için beklenen sessiz parça sayısı. */
-const TAIL_SLICES = 4;
+const TAIL_SLICES = 3;
 /**
  * Konuşma sayılması için gereken ARDIŞIK gürültülü parça.
  *
@@ -105,7 +105,7 @@ const MIN_SPEECH_SLICES = 2;
  * kapandı" tam olarak buydu. Alt sınır, konuşmaya başlamak için her koşulda
  * bir pay bırakıyor.
  */
-const MIN_LISTEN_MS = 1800;
+const MIN_LISTEN_MS = 1200;
 
 /** Tarayıcının kabul ettiği ilk kayıt biçimi. */
 function pickMime(): string {
@@ -418,19 +418,39 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
       const loud = all.findIndex((c) => c.t >= from && c.data.size >= threshold);
 
       let first: number;
+      let last: number;
       if (loud >= 0) {
         // Konuşma bulundu: başını kaçırmamak için geriye yürünüyor. Kelimenin
         // ilk sesi (patlamalı ünsüz) çoğu zaman eşiğin altında kalıyor.
         first = loud;
         while (first > 0 && all[first - 1].data.size >= threshold) first--;
         first = Math.max(0, first - 2);
+
+        /*
+          Klibin SONU da kırpılıyor.
+
+          Önceden pencerenin sonuna kadar her şey gönderiliyordu: kullanıcı
+          sustuktan sonraki sessizlik, sokak gürültüsü ve —asıl sorun— arkadan
+          gelen konuşmalar. Tanıyıcıya duyacak bir şey verilince duyuyor;
+          "arkadaki konuşmaları da algılıyor, başka dillerde kelimeler duyduğunu
+          iddia ediyor" şikâyetinin doğrudan kaynağı buydu.
+
+          Son gürültülü parçadan sonra yalnızca kuyruk payı kalıyor: kelimenin
+          sönen sonunu kesmemek için gerekli, fazlası zararlı.
+        */
+        last = all.length - 1;
+        while (last > first && all[last].data.size < threshold) last--;
+        last = Math.min(all.length - 1, last + TAIL_SLICES);
       } else {
-        // Eşiğe takılan olmadı: pencerenin tamamı gönderiliyor.
+        // Eşiğe takılan olmadı: pencerenin tamamı gönderiliyor. Reddetmek
+        // ölçüldü ve gerçek cihazda "her cevap duyamadım" oldu — karar
+        // tanıyıcıya bırakılıyor (bkz. aşağıdaki not).
         first = all.findIndex((c) => c.t >= from);
         if (first < 0) return resolve(null);
+        last = all.length - 1;
       }
 
-      const parts = all.slice(first).map((c) => c.data);
+      const parts = all.slice(first, last + 1).map((c) => c.data);
       if (!parts.length) return resolve(null);
       resolve({
         blob: new Blob([header, ...parts], { type: mime || "audio/webm" }),
