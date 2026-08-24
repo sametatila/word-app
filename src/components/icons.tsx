@@ -793,16 +793,26 @@ export const RefreshIcon = (p: IconProps) => (
  * Marka işareti: "W" (Wort) ve üzerinde umlaut noktaları — Almancanın görsel
  * imzası. public/ altındaki uygulama ikonlarıyla aynı çizim.
  */
-export const LogoMark = ({ size = 24, ...props }: IconProps) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-    <circle cx="10.5" cy="6.1" r="1.25" fill="currentColor" />
-    <circle cx="13.5" cy="6.1" r="1.25" fill="currentColor" />
-    <path
-      d="M5.9 9.6 8.8 17.9 12 10.8 15.2 17.9 18.1 9.6"
-      stroke="currentColor"
-      strokeWidth="2.1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
+/**
+ * Marka işareti — maskotun kafası.
+ *
+ * Uygulama simgesiyle BİREBİR aynı görsel (`scripts/icons.mjs` ikisini de aynı
+ * kaynaktan üretiyor). Önce gradyan bir kutuda geometrik bir "W" ve umlaut
+ * noktaları vardı; fikir iyiydi ama maskotla hiçbir bağı yoktu — kullanıcı ana
+ * ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
+ *
+ * Kendi yuvarlak köşeli zeminini getiriyor: PNG'nin köşeleri saydam, o yüzden
+ * sarmalayıcı bir kutuya ya da `rounded-*` sınıfına ihtiyacı yok. Bu yüzden
+ * `currentColor` de almıyor — marka tek renkli bir simge değil, bir portre.
+ */
+export const LogoMark = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
+  <img
+    src="/logo-mark.png"
+    alt=""
+    width={size}
+    height={size}
+    className={`shrink-0 select-none ${className}`}
+    draggable={false}
+    aria-hidden="true"
+  />
 );
