@@ -5,10 +5,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
 import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
 import { askCoach } from "@/lib/coach-client";
-import { speakGerman, speakSlowly, useSpeechAvailable, SpeakButton } from "@/components/speak-button";
+import {
+  speakGerman,
+  speakSlowly,
+  useSpeechAvailable,
+  SpeakButton,
+} from "@/components/speak-button";
 import { AlertIcon, CheckIcon, MicIcon, XIcon } from "@/components/icons";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
-import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
+import { GlossEntry } from "./gloss-entry";
+import {
+  recognitionCtor,
+  requestMicrophone,
+  type Recognition,
+} from "@/components/microphone";
 
 /**
  * Konuşma oynatıcısı — iki katmanlı ve bozulmadan düşen bir tasarım.
@@ -23,11 +33,13 @@ import { recognitionCtor, requestMicrophone, type Recognition } from "@/componen
  * "anlaşıldın mı", telaffuz notu değil (bkz. lib/speech.ts).
  */
 
-
-
 type Phase = "idle" | "asking" | "listening" | "judging" | "done";
 
-export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }) {
+export function SpeakingPlayer({
+  exercise,
+}: {
+  exercise: SpeakingDrillExercise;
+}) {
   const tasks = exercise.tasks;
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("idle");
@@ -104,7 +116,12 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
         }
       }
       setPhase("judging");
-      const outcome = judgeSpeech(task.de, heard, task.confusions ?? [], scores);
+      const outcome = judgeSpeech(
+        task.de,
+        heard,
+        task.confusions ?? [],
+        scores,
+      );
       setVerdict(outcome);
       setPhase("done");
 
@@ -202,7 +219,8 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
         <div
           className="mb-4 flex items-start gap-2 rounded-xl px-3 py-2.5 text-sm"
           style={{
-            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            background:
+              "color-mix(in srgb, var(--color-flame) 12%, transparent)",
             color: "var(--color-flame)",
           }}
         >
@@ -242,13 +260,18 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
           <p className="text-center text-base font-semibold">
             {task.tr}
             {task.en ? (
-              <span className="mt-0.5 block text-sm font-normal opacity-60" lang="en">
+              <span
+                className="mt-0.5 block text-sm font-normal opacity-60"
+                lang="en"
+              >
                 {task.en}
               </span>
             ) : null}
           </p>
           <div className="mt-2 flex items-center justify-center gap-2">
-            <p className="brand-text text-center text-xl font-bold sm:text-2xl">{task.de}</p>
+            <p className="brand-text text-center text-xl font-bold sm:text-2xl">
+              {task.de}
+            </p>
             <SpeakButton text={task.de} />
             {/* Shadowing'in yöntemi: önce yavaş duyup heceleri ayırt et, sonra
                 normal hızda tekrarla. Ayrı bir düğme çünkü ikisi ayrı iş —
@@ -264,25 +287,40 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
               </button>
             ) : null}
           </div>
-          {task.hint ? <p className="muted mt-2 text-center text-xs">{task.hint}</p> : null}
+          {task.hint ? (
+            <p className="muted mt-2 text-center text-xs">{task.hint}</p>
+          ) : null}
 
           <div className="mt-5 flex flex-col items-center gap-2">
             {asrAvailable ? (
               <motion.button
                 type="button"
                 whileTap={{ scale: 0.94 }}
-                onClick={() => (phase === "listening" ? stopListening() : void listen())}
+                onClick={() =>
+                  phase === "listening" ? stopListening() : void listen()
+                }
                 disabled={phase === "judging" || phase === "asking"}
-                aria-label={phase === "listening" ? "Kaydı bitir" : "Konuşmaya başla"}
+                aria-label={
+                  phase === "listening" ? "Kaydı bitir" : "Konuşmaya başla"
+                }
                 className="flex h-20 w-20 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-60"
                 style={{
                   background:
-                    phase === "listening" ? "var(--color-rose)" : "var(--color-brand)",
+                    phase === "listening"
+                      ? "var(--color-rose)"
+                      : "var(--color-brand)",
                 }}
               >
                 <motion.span
-                  animate={phase === "listening" ? { scale: [1, 1.18, 1] } : { scale: 1 }}
-                  transition={{ repeat: phase === "listening" ? Infinity : 0, duration: 1.1 }}
+                  animate={
+                    phase === "listening"
+                      ? { scale: [1, 1.18, 1] }
+                      : { scale: 1 }
+                  }
+                  transition={{
+                    repeat: phase === "listening" ? Infinity : 0,
+                    duration: 1.1,
+                  }}
                 >
                   <MicIcon size={32} />
                 </motion.span>
@@ -302,7 +340,10 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
           </div>
 
           {error ? (
-            <p className="muted mt-4 text-center text-sm" style={{ color: "var(--color-flame)" }}>
+            <p
+              className="muted mt-4 text-center text-sm"
+              style={{ color: "var(--color-flame)" }}
+            >
               {error}
             </p>
           ) : null}
@@ -322,7 +363,11 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             {verdict && !isSpeechCorrect(verdict) ? (
-              <button type="button" onClick={retry} className="btn btn-ghost px-5 py-2.5 text-sm">
+              <button
+                type="button"
+                onClick={retry}
+                className="btn btn-ghost px-5 py-2.5 text-sm"
+              >
                 Tekrar dene
               </button>
             ) : null}
@@ -362,19 +407,20 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
 
       {exercise.gloss.length ? (
         <section className="card mt-4 p-4">
-          <h2 className="muted mb-2 text-xs font-bold uppercase tracking-wide">Sözlükçe</h2>
+          <h2 className="muted mb-2 text-xs font-bold uppercase tracking-wide">
+            Sözlükçe
+          </h2>
           <ul className="grid gap-1.5 sm:grid-cols-2">
+            {/*
+              Sözlükçe maddesi burada kendi bileşeniyle çiziliyor. Daha önce bu
+              satırlar elle yazılmıştı ve yalnızca `tr` ile `en`'i biliyordu:
+              Züritüütsch maddelerinin Hochdeutsch köprüsü (`hd`) ve kültür
+              notu (`note`) bu ekranda sessizce düşüyordu. Aynı şeyin dört
+              kopyası olması `contains` tarafında zaten başımıza geldi.
+            */}
             {exercise.gloss.map((g) => (
-              <li key={g.de} className="flex items-baseline justify-between gap-2 text-sm">
-                <span className="font-semibold">{g.de}</span>
-                <span className="muted min-w-0 text-right">
-                  <span className="block truncate">{g.tr}</span>
-                  {g.en ? (
-                    <span className="block truncate text-xs opacity-70" lang="en">
-                      {g.en}
-                    </span>
-                  ) : null}
-                </span>
+              <li key={g.de} className="text-sm">
+                <GlossEntry g={g} />
               </li>
             ))}
           </ul>
@@ -423,7 +469,10 @@ function Feedback({
       style={{ background: "var(--surface-2)", border: `1px solid ${tone}` }}
     >
       {verdict.kind === "correct" ? (
-        <p className="flex items-center justify-center gap-2 text-sm font-bold" style={{ color: tone }}>
+        <p
+          className="flex items-center justify-center gap-2 text-sm font-bold"
+          style={{ color: tone }}
+        >
           <CheckIcon size={16} /> Anlaşıldı
         </p>
       ) : verdict.kind === "uncertain" ? (
@@ -431,7 +480,10 @@ function Feedback({
         // en sık şikâyet edilen davranışı bunun tersi: tanıyıcı zorlanınca
         // "doğru" deyip geçiyorlar ve öğrenci yanlışını hiç öğrenmiyor.
         <div>
-          <p className="flex items-center gap-2 text-sm font-bold" style={{ color: tone }}>
+          <p
+            className="flex items-center gap-2 text-sm font-bold"
+            style={{ color: tone }}
+          >
             <AlertIcon size={15} /> Tam net duyulmadı
           </p>
           <p className="muted mt-2 text-sm">
@@ -450,7 +502,10 @@ function Feedback({
         </p>
       ) : (
         <>
-          <p className="flex items-center gap-2 text-sm font-bold" style={{ color: tone }}>
+          <p
+            className="flex items-center gap-2 text-sm font-bold"
+            style={{ color: tone }}
+          >
             <XIcon size={15} />
             {verdict.kind === "confusion"
               ? "Bu değil, şu"
@@ -469,7 +524,10 @@ function Feedback({
             <p className="mt-2 text-sm">{verdict.fix}</p>
           ) : verdict.missing.length ? (
             <p className="muted mt-2 text-sm">
-              Tanınmayan: <span className="font-semibold">{verdict.missing.join(", ")}</span>
+              Tanınmayan:{" "}
+              <span className="font-semibold">
+                {verdict.missing.join(", ")}
+              </span>
             </p>
           ) : null}
 
@@ -485,14 +543,18 @@ function Feedback({
           <div className="mt-3 flex items-center gap-2">
             <span className="muted text-xs">Doğrusu:</span>
             <span className="brand-text text-sm font-bold">
-              {verdict.kind === "confusion" && verdict.expected ? verdict.expected : task.de}
+              {verdict.kind === "confusion" && verdict.expected
+                ? verdict.expected
+                : task.de}
             </span>
             {ttsAvailable ? (
               <button
                 type="button"
                 onClick={() =>
                   speakGerman(
-                    verdict.kind === "confusion" && verdict.expected ? verdict.expected : task.de,
+                    verdict.kind === "confusion" && verdict.expected
+                      ? verdict.expected
+                      : task.de,
                   )
                 }
                 className="btn btn-ghost h-7 px-2 text-xs"

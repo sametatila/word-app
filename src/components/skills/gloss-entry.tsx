@@ -37,7 +37,11 @@ export function GlossEntry({ g }: { g: Gloss }) {
   );
 }
 
-/** Kalıp düğmelerinin ipucu metni: iki dil tek satırda. */
+/**
+ * Kalıp düğmelerinin ipucu metni: düğmenin üstünde yalnızca Almanca duruyor,
+ * karşılık buraya sığıyor. Hochdeutsch köprüsü de giriyor — Züritüütsch
+ * kalıplarında düğmedeki lehçe biçimin Almancası başka türlü hiç görünmüyor.
+ */
 export function glossTitle(g: Gloss): string {
-  return [g.tr, g.en].filter(Boolean).join(" · ");
+  return [g.tr, g.en, g.hd ? `HD: ${g.hd}` : null].filter(Boolean).join(" · ");
 }
