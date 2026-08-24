@@ -312,7 +312,34 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const flush = useCallback(async (final: boolean, progress: SessionProgress) => {
     const batch = pending.current;
     pending.current = [];
-    if (!batch.length) return;
+    /*
+      Cevap yoksa da NEREDE KALINDIĞI yazılmalı.
+
+      Eskiden burada dönülüyordu ve sonucu ağırdı: duyulmayan tur cevap
+      üretmiyor (bilerek — yanlış sayılmıyor), yani bir turun bütün cevapları
+      duyulmadığında ilerleme hiç kaydedilmiyordu. Sunucudaki tur yarım kalmış
+      görünüyor ve `loadSession` yarım turu olduğu gibi geri veriyor. Yani hem
+      "devam edelim mi?" sonrası hem de uygulamaya yeniden girişte AYNI yirmi
+      tur geliyordu — "yapamadıklarımı tekrar tekrar veriyor" ve "her girip
+      bitirdiğimde aynı kelimeler geliyor" şikâyetlerinin ikisi de buydu.
+
+      İlerleme için ayrı bir uç zaten var; cevap üretmeyen adımlar için
+      yazılmıştı (bkz. api/session POST).
+    */
+    if (!batch.length) {
+      try {
+        await fetch("/api/session", {
+          signal: AbortSignal.timeout(NET_TIMEOUT_MS),
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ day: localDay(), progress }),
+          keepalive: true,
+        });
+      } catch {
+        /* çevrimdışıysa ilerleme bu tur için kaybolur */
+      }
+      return;
+    }
     try {
       const res = await fetch("/api/answers", {
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
