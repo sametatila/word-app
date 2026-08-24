@@ -41,22 +41,62 @@ const flat = (t) =>
     .replace(/\d/g, "");
 
 /**
- * Çekimde kökten kopabilen ön ekler — **uzundan kısaya** sıralı.
+ * Çekimde kökten kopabilen ön ekler.
  *
- * Sıra bir üslup meselesi değil: düzenli ifade alternatifleri soldan sağa
- * denendiği için "zu" listede "zusammen"den önce gelince "zusammenkommen"
- * maddesi "zu" + "sammenkommen" diye bölünüyor ve cümlede ayrı bir "zu"
- * arandığı için doğru cümle ("Die Familie kommt zusammen.") reddediliyordu.
- */
-const SEPARABLE =
-  /^(auseinander|gegenuber|hinunter|herunter|zusammen|entgegen|spazieren|nebenan|entlang|stehen|bleiben|kennen|sitzen|liegen|heruber|hinuber|herein|hinein|herauf|hinauf|voraus|vorbei|vorher|zurecht|heraus|hinaus|zuruck|kaputt|weiter|wieder|nieder|dabei|davon|daran|darauf|durch|statt|unter|drauf|fern|fest|fort|frei|heim|hoch|nach|teil|uber|dran|drin|wahr|warm|rein|raus|fern|frei|los|auf|aus|bei|ein|her|hin|mit|vor|weg|weh|ab|an|um|zu)(.{3,})$/;
-
-/**
- * Ön ekler düzleştirilmiş biçimde yazılıyor (`zuruck`, `uber`, `gegenuber`):
+ * Ön ekler düzleştirilmiş biçimde yazılıyor (`zuruck`, `uber`, `gross`):
  * karşılaştırma umlautları düşürülmüş metin üzerinde yapılıyor ve umlautlu
  * yazılan alternatifler hiçbir zaman eşleşmiyordu — `zurückfahren` maddesi
  * bu yüzden ayrılabilir fiil olarak hiç tanınmadı.
+ *
+ * Sıfat ve isim kökenli ön ekler (`still`, `klar`, `bekannt`, `gut`, `offen`,
+ * `gross`, `richtig`, `gleich`, `dar`, `bereit`…) listede hiç yoktu. Bunlar
+ * Almancada çok üretken ve o maddelerin **hiçbir** tipik biçimi tanınmıyordu:
+ * "hat stillgelegt", "gab … bekannt", "hat klargestellt", "hat gutgeschrieben",
+ * "hat dargestellt". Ajanlar ya doğru cümleyi bozuyor ya da eski imlaya
+ * kaçıyordu; ikisi de sessiz kalite kaybı.
+ *
+ * Sıra artık önemsiz — `splits()` bütün bölünmeleri deniyor, yalnızca en
+ * uzununu değil. Tek bölünme iki yönden birden yanlıştı: kısa ön ek öne
+ * geçince "zusammenkommen" maddesi "zu" + "sammenkommen" diye bölünüyordu,
+ * uzun ön ek öne geçince de "vorherrschen" maddesi "vorher" + "rschen" diye —
+ * oysa doğrusu "vor" + "herrschen" ("hat vorgeherrscht"). Hepsini denemek
+ * ikisini birden çözüyor.
  */
+const PREFIXES = [
+  "auseinander", "gegenuber", "hinunter", "herunter", "zusammen", "entgegen",
+  "spazieren", "nebenan", "entlang", "richtig", "bekannt", "bereit", "zugute",
+  "stehen", "bleiben", "kennen", "sitzen", "liegen", "heruber", "hinuber",
+  "herein", "hinein", "herauf", "hinauf", "voraus", "vorbei", "vorher",
+  "zurecht", "heraus", "hinaus", "zuruck", "kaputt", "weiter", "wieder",
+  "nieder", "gleich", "gegen", "wider", "offen", "bloss", "gross", "still",
+  "brach", "dabei", "davon", "daran", "darauf", "durch", "statt", "unter",
+  "drauf", "fern", "fest", "fort", "frei", "heim", "hoch", "nach", "teil",
+  "uber", "dran", "drin", "wahr", "warm", "rein", "raus", "klar", "nahe",
+  "inne", "gut", "dar", "los", "auf", "aus", "bei", "ein", "her", "hin",
+  "mit", "vor", "weg", "weh", "ab", "an", "um", "zu", "ob",
+];
+
+/**
+ * Bir gövdenin bütün ön ek bölünmeleri — zincirlenmiş olanlar dâhil.
+ *
+ * Ön ekler üst üste binebiliyor: "heranziehen" = her + an + ziehen,
+ * "wiederherstellen" = wieder + her + stellen, "vorwegnehmen" = vor + weg +
+ * nehmen, "zuwiderhandeln" = zu + wider + handeln. Ortaç "ge" en içteki
+ * gövdenin önüne giriyor ("herangezogen", "vorangetrieben"), yani zincirin
+ * tamamı tek bir ön ek gibi davranıyor. Tek kademeli bölünme bu ailenin
+ * tamamını kaçırıyor ve o maddeler doğal Perfekt cümlesi üretemiyordu.
+ */
+function splits(bare) {
+  const out = [];
+  const yürü = (onek, kalan) => {
+    if (onek) out.push([onek, kalan]);
+    for (const p of PREFIXES)
+      if (kalan.startsWith(p) && kalan.length - p.length >= 3)
+        yürü(onek + p, kalan.slice(p.length));
+  };
+  yürü("", bare);
+  return out;
+}
 
 /**
  * Gövde ünlüsü çekimde tanınmayacak kadar değişen fiiller.
@@ -148,6 +188,28 @@ const IRREGULAR = {
   heben: ["hob", "gehoben"],
   biegen: ["bog", "gebogen"],
   lügen: ["log", "gelogen"],
+  // Düzleştirme bu üçünde de yetmiyor: gövde ünlüsü Ablaut kurallarının
+  // dışında değişiyor ("gären" → "gegoren") ya da gövde iki harfe iniyor
+  // ("säen" → "sät", "ölen" → "ölt") ve kök araması üç harften kısa köke
+  // inmiyor. Üçü de kendi ortacında bulunamıyordu, yani hiçbir doğru cümle
+  // üretemiyorlardı.
+  gären: ["gor", "gegoren"],
+  säen: ["sät", "gesät"],
+  ölen: ["ölt", "geölt"],
+};
+
+/**
+ * Düzensiz fiil arama — anahtarlar umlautlu yazılı, aranan gövde ise
+ * düzleştirilmiş oluyor. `IRREGULAR["mogen"]` hiçbir zaman tutmuyordu, yani
+ * ön ekli bileşiklerde ("vermögen", "zurückschließen") düzensiz biçimler
+ * aranmadan geçiliyordu.
+ */
+const IRREGULAR_FLAT = new Map(
+  Object.entries(IRREGULAR).map(([k, v]) => [flat(k).replace(/[^a-z]/g, ""), v]),
+);
+const irrForms = (gövde) => {
+  const f = flat(gövde).replace(/[^a-z]/g, "");
+  return IRREGULAR[gövde] ?? IRREGULAR_FLAT.get(f) ?? IRREGULAR_FLAT.get(`${f}en`) ?? [];
 };
 
 /**
@@ -261,23 +323,23 @@ function stemVariants(r) {
  */
 function prefixedForms(part) {
   const bare = flat(part).replace(/[^a-z]/g, "");
-  const sep = bare.match(SEPARABLE);
-  if (!sep) return [];
   const out = [];
-  const govde = root(sep[2]);
-  // "ge" Perfekt ortacı, "zu" ise mastar: ikisi de ön ek ile gövdenin arasına
-  // giriyor ("ist abgeschoben", "um abzuschieben"). `zu`'lu mastar B2'den
-  // itibaren çok yaygın ve tanınmadığında ajan doğal biçimden kaçınıyordu.
-  //
-  // Gövde ayrıca güçlü fiil olabiliyor ve ön ekle Ablaut aynı anda oluyor:
-  // "ausweichen" → "ist ausgewichen". Ön ek ile ünlü değişimi ayrı ayrı
-  // işlendiğinde bu biçim hiçbir kurala uymuyordu.
-  if (govde.length >= 3)
-    for (const g of [govde, ...stemVariants(govde)])
-      out.push(`${sep[1]}ge${g}`, `${sep[1]}zu${g}`, `${sep[1]}${g}`);
-  for (const form of IRREGULAR[sep[2]] ?? []) {
-    const f = flat(form).replace(/[^a-z]/g, "");
-    out.push(`${sep[1]}${f}`);
+  for (const [onek, kalan] of splits(bare)) {
+    const govde = root(kalan);
+    // "ge" Perfekt ortacı, "zu" ise mastar: ikisi de ön ek ile gövdenin arasına
+    // giriyor ("ist abgeschoben", "um abzuschieben"). `zu`'lu mastar B2'den
+    // itibaren çok yaygın ve tanınmadığında ajan doğal biçimden kaçınıyordu.
+    //
+    // Gövde ayrıca güçlü fiil olabiliyor ve ön ekle Ablaut aynı anda oluyor:
+    // "ausweichen" → "ist ausgewichen". Ön ek ile ünlü değişimi ayrı ayrı
+    // işlendiğinde bu biçim hiçbir kurala uymuyordu.
+    if (govde.length >= 3)
+      for (const g of [govde, ...stemVariants(govde)])
+        out.push(`${onek}ge${g}`, `${onek}zu${g}`, `${onek}${g}`);
+    for (const form of irrForms(kalan)) {
+      const f = flat(form).replace(/[^a-z]/g, "");
+      out.push(`${onek}${f}`);
+    }
   }
   return out;
 }
@@ -312,6 +374,13 @@ function contains(sentence, headword) {
     if (!r) return true;
     if (roots(part).some((c) => varMi(c))) return true;
 
+    // Üç harflik gövde kelime BAŞI olarak aranıyor (bkz. `varMi`), oysa
+    // düzenli ortaçta gövde başta değil: "dösen" → "gedöst", "rügen" →
+    // "gerügt", "fügen" → "gefügt". Bu fiiller kendi Perfekt cümlelerini hiç
+    // kuramıyordu. Gevşeme ortaç/mastar imiyle sınırlı: aranan "ge"/"zu" ile
+    // başlayan tam sözcük, serbest bir gövde değil.
+    if (r.length === 3 && (bas(`ge${r}`) || bas(`zu${r}`))) return true;
+
     // Perfekt: "hat angerufen", "ist zurückgefahren", "hat übertrieben".
     if (prefixedForms(part).some((f) => kok(f))) return true;
 
@@ -322,18 +391,22 @@ function contains(sentence, headword) {
 
     // Ayrılabilir fiil: ön ek cümlenin sonuna kaçar ("Siehst du viel fern?").
     // Ön ekin ayrı bir kelime olarak bulunması şart, kök ise gövde olarak.
-    const sep = bare.match(SEPARABLE);
-    if (sep && kelime(sep[1])) {
-      const govde = root(sep[2]);
+    for (const [onek, kalan] of splits(bare)) {
+      if (!kelime(onek)) continue;
+      const govde = root(kalan);
       if (govde.length >= 3 && kok(govde)) return true;
-      const irrSep = IRREGULAR[sep[2]] ?? IRREGULAR[`${sep[2]}en`];
-      if (irrSep?.some((f) => varMi(flat(f)))) return true;
+      // Ayrılmış hâlde de gövde ünlüsü değişiyor: "mitreißen" → "riss … mit",
+      // "aufgeben" → "gab … auf". Ablaut yalnızca bitişik biçimlerde
+      // deneniyordu, bu yüzden ayrılabilir güçlü fiillerin doğru Präteritum
+      // cümleleri reddediliyor ve ajanlar Präsens'e çekilmek zorunda kalıyordu.
+      if (govde.length >= 4 && stemVariants(govde).some((f) => kok(f))) return true;
+      if (irrForms(kalan).some((f) => varMi(flat(f).replace(/[^a-z]/g, "")))) return true;
       // Gövdesi kısa olanlar ("einüben" → "übt … ein"). `root()` iki harften
       // kısa sonuçlarda kırpılmamış hâle geri döndüğü için buradaki gövde
       // ("ub") hiç üretilmiyor ve "übt" bulunamıyordu. Ön ekin cümlede ayrı
       // bir kelime olarak durduğu zaten doğrulandı; bu güçlü bir işaret
       // olduğu için gövde kelime BAŞI olarak aranıyor.
-      const kisa = flat(sep[2]).replace(/[^a-z]/g, "").replace(/(en|n)$/, "");
+      const kisa = flat(kalan).replace(/[^a-z]/g, "").replace(/(en|n)$/, "");
       if (kisa.length >= 2 && bas(kisa)) return true;
     }
 
