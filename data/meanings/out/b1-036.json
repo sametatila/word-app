@@ -157,23 +157,23 @@
     "en": "stairwell",
     "beispiel": "Im Stiegenhaus brennt seit Tagen kein Licht.",
     "beispielTr": "Merdiven boşluğunda günlerdir ışık yanmıyor.",
-    "beispielEn": "The light in the stairwell hasn't worked for days."
+    "beispielEn": "There has been no light in the stairwell for days."
   },
   {
     "id": 2799,
-    "tr": "erkek öğrenci",
+    "tr": "erkek üniversite öğrencisi",
     "en": "male student",
     "beispiel": "Der Studierende wohnt noch bei seinen Eltern.",
-    "beispielTr": "Öğrenci hâlâ ailesinin yanında yaşıyor.",
+    "beispielTr": "Üniversite öğrencisi hâlâ ailesinin yanında yaşıyor.",
     "beispielEn": "The student still lives with his parents."
   },
   {
     "id": 2800,
-    "tr": "kadın öğrenci",
+    "tr": "kadın üniversite öğrencisi",
     "en": "female student",
-    "beispiel": "Die Studierende jobbt neben dem Studium in einem Café.",
-    "beispielTr": "Öğrenci okurken bir kafede çalışıyor.",
-    "beispielEn": "The student works in a café alongside her studies."
+    "beispiel": "Die Studierende hat ihre Bachelorarbeit schon abgegeben.",
+    "beispielTr": "Üniversite öğrencisi bitirme tezini çoktan teslim etti.",
+    "beispielEn": "The student has already handed in her bachelor's thesis."
   },
   {
     "id": 2808,
@@ -299,9 +299,9 @@
     "id": 3048,
     "tr": "özellikle",
     "en": "above all",
-    "beispiel": "Ich mag alle Jahreszeiten, vor allem den Herbst.",
-    "beispielTr": "Bütün mevsimleri severim, özellikle de sonbaharı.",
-    "beispielEn": "I like all the seasons, above all the fall."
+    "beispiel": "Grüßen Sie alle von mir, vor allem Frau Meier.",
+    "beispielTr": "Herkese benden selam söyleyin, özellikle Bayan Meier'e.",
+    "beispielEn": "Say hello to everyone from me, above all to Mrs. Meier."
   },
   {
     "id": 3055,
@@ -357,7 +357,7 @@
     "en": "marital status",
     "beispiel": "Beim Zivilstand musst du hier „ledig“ ankreuzen.",
     "beispielTr": "Medeni hâl kısmında „bekâr“ seçeneğini işaretlemelisin.",
-    "beispielEn": "For marital status you have to check single here."
+    "beispielEn": "For marital status you have to check the single box here."
   },
   {
     "id": 3168,
