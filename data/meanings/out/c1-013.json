@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5853,
+  "tr": "meslektaş dayanışması",
+  "en": "collegiality",
+  "beispiel": "Aus reiner Kollegialität übernahm sie meine Nachtschicht.",
+  "beispielTr": "Sırf meslektaş dayanışmasından gece vardiyamı devraldı.",
+  "beispielEn": "Out of pure collegiality she took over my night shift."
+ },
+ {
+  "id": 5854,
+  "tr": "rekabet baskısı",
+  "en": "competitive pressure",
+  "beispiel": "Der Konkurrenzdruck im Büro raubt ihm den Schlaf.",
+  "beispielTr": "Ofisteki rekabet baskısı adamın uykusunu kaçırıyor.",
+  "beispielEn": "The competitive pressure at the office robs him of sleep."
+ },
+ {
+  "id": 5855,
+  "tr": "segmentasyon",
+  "en": "segmentation",
+  "beispiel": "Für die neue Kampagne brauchen wir eine feinere Segmentierung.",
+  "beispielTr": "Yeni kampanya için daha ince bir segmentasyon gerekiyor.",
+  "beispielEn": "For the new campaign we need a finer segmentation."
+ },
+ {
+  "id": 5856,
+  "tr": "kenara itilme",
+  "en": "marginalization",
+  "beispiel": "Befristete Verträge beschleunigen die Marginalisierung junger Forscherinnen.",
+  "beispielTr": "Süreli sözleşmeler genç kadın araştırmacıların kenara itilmesini hızlandırıyor.",
+  "beispielEn": "Fixed-term contracts accelerate the marginalization of young female researchers."
+ },
+ {
+  "id": 5857,
+  "tr": "hizaya sokma",
+  "en": "disciplining",
+  "beispiel": "Der Chef nutzt die Anwesenheitsliste zur Disziplinierung des Teams.",
+  "beispielTr": "Patron yoklama listesini ekibi hizaya sokmak için kullanıyor.",
+  "beispielEn": "The boss uses the attendance list to discipline the team."
+ },
+ {
+  "id": 5858,
+  "tr": "meşrulaştırma",
+  "en": "legitimization",
+  "beispiel": "Das Gutachten diente nur der Legitimation einer längst gefallenen Entscheidung.",
+  "beispielTr": "Rapor yalnızca çoktan alınmış bir kararı meşrulaştırmaya yarıyordu.",
+  "beispielEn": "The report merely served to legitimize a decision made long ago."
+ },
+ {
+  "id": 5859,
+  "tr": "söz sahibi olma",
+  "en": "participation",
+  "beispiel": "Die Belegschaft fordert bei der Schichtplanung echte Partizipation.",
+  "beispielTr": "Çalışanlar vardiya planlamasında gerçekten söz sahibi olmak istiyor.",
+  "beispielEn": "The workforce demands real participation in shift planning."
+ },
+ {
+  "id": 5860,
+  "tr": "pazarlık",
+  "en": "negotiation",
+  "beispiel": "Die Aushandlung des neuen Mietvertrags zog sich über Wochen.",
+  "beispielTr": "Yeni kira sözleşmesinin pazarlığı haftalarca sürdü.",
+  "beispielEn": "The negotiation of the new lease dragged on for weeks."
+ },
+ {
+  "id": 5861,
+  "tr": "uzlaşıya varma",
+  "en": "consensus building",
+  "beispiel": "Die Konsensfindung im Gemeinderat dauerte bis nach Mitternacht.",
+  "beispielTr": "Belediye meclisinde uzlaşıya varmak gece yarısını buldu.",
+  "beispielEn": "Reaching consensus in the town council took until past midnight."
+ },
+ {
+  "id": 5862,
+  "tr": "statü belirsizliği",
+  "en": "status insecurity",
+  "beispiel": "Nach der Umstrukturierung wuchs die Statusunsicherheit in der ganzen Abteilung.",
+  "beispielTr": "Yeniden yapılanmadan sonra tüm birimde statü belirsizliği arttı.",
+  "beispielEn": "After the restructuring, status insecurity grew throughout the department."
+ },
+ {
+  "id": 5863,
+  "tr": "baltalamak",
+  "en": "to undermine",
+  "beispiel": "Mit seiner ständigen Kritik untergräbt er die Autorität der Trainerin.",
+  "beispielTr": "Sürekli eleştirileriyle antrenörün otoritesini baltalıyor.",
+  "beispielEn": "With his constant criticism he undermines the coach's authority."
+ },
+ {
+  "id": 5864,
+  "tr": "tabi olmak",
+  "en": "to subordinate oneself",
+  "beispiel": "Der neue Kollege ordnet sich der Teamleiterin bereitwillig unter.",
+  "beispielTr": "Yeni iş arkadaşı ekip liderine seve seve tabi oluyor.",
+  "beispielEn": "The new colleague willingly subordinates himself to the team leader."
+ },
+ {
+  "id": 5865,
+  "tr": "sürece katmak",
+  "en": "to involve",
+  "beispiel": "Die Chefin bindet die Azubis früh in die Planung ein.",
+  "beispielTr": "Müdür, çırakları planlama sürecine erkenden katıyor.",
+  "beispielEn": "The boss involves the trainees in the planning early on."
+ },
+ {
+  "id": 5866,
+  "tr": "yetkin kılmak",
+  "en": "to enable",
+  "beispiel": "Die Schulung befähigt die Mitarbeiter zu selbstständiger Arbeit.",
+  "beispielTr": "Eğitim, çalışanları bağımsız çalışmaya yetkin kılıyor.",
+  "beispielEn": "The training enables the employees to work independently."
+ },
+ {
+  "id": 5867,
+  "tr": "yetkilendirmek",
+  "en": "to authorize",
+  "beispiel": "Der Vorstand ermächtigte sie, den Vertrag allein zu unterschreiben.",
+  "beispielTr": "Yönetim kurulu, sözleşmeyi tek başına imzalaması için onu yetkilendirdi.",
+  "beispielEn": "The board authorized her to sign the contract alone."
+ },
+ {
+  "id": 5868,
+  "tr": "ödüllendirmek",
+  "en": "to reward",
+  "beispiel": "Niemand hat ihre Mehrarbeit am Wochenende honoriert.",
+  "beispielTr": "Hafta sonundaki fazla mesaisini kimse ödüllendirmedi.",
+  "beispielEn": "Nobody rewarded her extra work on the weekend."
+ },
+ {
+  "id": 5869,
+  "tr": "üstüne yıkmak",
+  "en": "to offload",
+  "beispiel": "Die Firma wälzt die Kosten auf die Kunden ab.",
+  "beispielTr": "Şirket masrafları müşterilerin üstüne yıkıyor.",
+  "beispielEn": "The company offloads the costs onto the customers."
+ },
+ {
+  "id": 5870,
+  "tr": "esirgemek",
+  "en": "to withhold",
+  "beispiel": "Man hat ihr den Bonus ohne Begründung vorenthalten.",
+  "beispielTr": "Primini hiçbir gerekçe göstermeden ondan esirgediler.",
+  "beispielEn": "They withheld her bonus without giving any reason."
+ },
+ {
+  "id": 5871,
+  "tr": "sınır koymak",
+  "en": "to set boundaries",
+  "beispiel": "Sie grenzt sich abends klar von der Arbeit ab.",
+  "beispielTr": "Akşamları işe karşı net bir sınır koyuyor.",
+  "beispielEn": "In the evenings she sets clear boundaries with work."
+ },
+ {
+  "id": 5872,
+  "tr": "örtbas etmek",
+  "en": "to obscure",
+  "beispiel": "Die schönen Zahlen verschleiern den Zustand der Werkstatt.",
+  "beispielTr": "Güzel rakamlar atölyenin gerçek durumunu örtbas ediyor.",
+  "beispielEn": "The nice figures obscure the real state of the workshop."
+ },
+ {
+  "id": 5873,
+  "tr": "hak iddia etmek",
+  "en": "to claim",
+  "beispiel": "Beide Abteilungen beanspruchen den Erfolg des Projekts für sich.",
+  "beispielTr": "İki birim de projenin başarısı üzerinde hak iddia ediyor.",
+  "beispielEn": "Both departments claim the project's success for themselves."
+ },
+ {
+  "id": 5874,
+  "tr": "açığa çıkarmak",
+  "en": "to unfold",
+  "beispiel": "Erst im kleinen Team konnte sie ihr Talent entfalten.",
+  "beispielTr": "Yeteneğini ancak küçük bir ekipte açığa çıkarabildi.",
+  "beispielEn": "Only in a small team could she unfold her talent."
+ },
+ {
+  "id": 5875,
+  "tr": "kalıcılaştırmak",
+  "en": "to make permanent",
+  "beispiel": "Die Stadt will das Projekt nach der Testphase verstetigen.",
+  "beispielTr": "Şehir, deneme aşamasından sonra projeyi kalıcılaştırmak istiyor.",
+  "beispielEn": "The city wants to make the project permanent after the trial phase."
+ },
+ {
+  "id": 5876,
+  "tr": "dış kaynağa vermek",
+  "en": "to outsource",
+  "beispiel": "Die Klinik hat die Reinigung an eine Fremdfirma ausgegliedert.",
+  "beispielTr": "Klinik, temizlik işini dışarıdan bir firmaya verdi.",
+  "beispielEn": "The clinic outsourced the cleaning to an outside company."
+ },
+ {
+  "id": 5877,
+  "tr": "şirket içi",
+  "en": "in-house",
+  "beispiel": "Der Bericht wurde betriebsintern erstellt und nie veröffentlicht.",
+  "beispielTr": "Rapor şirket içinde hazırlandı ve hiç yayımlanmadı.",
+  "beispielEn": "The report was produced in-house and never published."
+ },
+ {
+  "id": 5878,
+  "tr": "yıpratıcı",
+  "en": "draining",
+  "beispiel": "Das ständige Warten auf eine Antwort ist zermürbend.",
+  "beispielTr": "Sürekli bir cevap beklemek çok yıpratıcı.",
+  "beispielEn": "Constantly waiting for an answer is draining."
+ },
+ {
+  "id": 5879,
+  "tr": "ödenmemiş",
+  "en": "unpaid",
+  "beispiel": "Die Überstunden vom letzten Monat sind bis heute unbezahlt.",
+  "beispielTr": "Geçen ayın fazla mesaileri bugüne kadar ödenmedi.",
+  "beispielEn": "Last month's overtime is unpaid to this day."
+ },
+ {
+  "id": 5880,
+  "tr": "gayriresmî",
+  "en": "informal",
+  "beispiel": "Die wichtigen Absprachen werden hier informell in der Kaffeeküche getroffen.",
+  "beispielTr": "Önemli anlaşmalar burada gayriresmî olarak çay ocağında yapılıyor.",
+  "beispielEn": "The important arrangements here are made informally in the break room."
+ },
+ {
+  "id": 5881,
+  "tr": "yapısal",
+  "en": "structural",
+  "beispiel": "Der Personalmangel in der Pflege ist strukturell bedingt.",
+  "beispielTr": "Bakımdaki personel açığı yapısal nedenlerden kaynaklanıyor.",
+  "beispielEn": "The staff shortage in nursing has structural causes."
+ },
+ {
+  "id": 5882,
+  "tr": "kolektif",
+  "en": "collective",
+  "beispiel": "Die Fahrer haben den Streik kollektiv beschlossen.",
+  "beispielTr": "Şoförler grev kararını kolektif olarak aldı.",
+  "beispielEn": "The drivers decided on the strike collectively."
+ },
+ {
+  "id": 5883,
+  "tr": "geçirgen",
+  "en": "permeable",
+  "beispiel": "Das Schulsystem ist nur auf dem Papier durchlässig.",
+  "beispielTr": "Okul sistemi yalnızca kâğıt üzerinde geçirgen.",
+  "beispielEn": "The school system is permeable only on paper."
+ },
+ {
+  "id": 5884,
+  "tr": "katı",
+  "en": "rigid",
+  "beispiel": "Der Zeitplan ist zu starr für spontane Änderungen.",
+  "beispielTr": "Program ani değişiklikler için fazla katı.",
+  "beispielEn": "The schedule is too rigid for spontaneous changes."
+ },
+ {
+  "id": 5885,
+  "tr": "başkasının belirlediği",
+  "en": "externally determined",
+  "beispiel": "Sein Arbeitstag ist von morgens bis abends fremdbestimmt.",
+  "beispielTr": "Mesai günü sabahtan akşama kadar başkaları tarafından belirleniyor.",
+  "beispielEn": "His workday is determined by others from morning till night."
+ },
+ {
+  "id": 5886,
+  "tr": "araçsal akılcı",
+  "en": "instrumentally rational",
+  "beispiel": "Er entscheidet rein zweckrational und fragt nie nach Gefühlen.",
+  "beispielTr": "Kararlarını salt araçsal akılcı verir, duyguları hiç sormaz.",
+  "beispielEn": "He decides in purely instrumental terms and never asks about feelings."
+ },
+ {
+  "id": 5887,
+  "tr": "düzensiz yapılaşma",
+  "en": "urban sprawl",
+  "beispiel": "Die Zersiedelung frisst jedes Jahr mehr Ackerland.",
+  "beispielTr": "Düzensiz yapılaşma her yıl daha çok tarım arazisi yutuyor.",
+  "beispielEn": "Urban sprawl devours more farmland every year."
+ },
+ {
+  "id": 5888,
+  "tr": "yapı projesi",
+  "en": "construction project",
+  "beispiel": "Das Bauvorhaben am Hafen wurde vorerst gestoppt.",
+  "beispielTr": "Limandaki yapı projesi şimdilik durduruldu.",
+  "beispielEn": "The construction project at the harbor was halted for now."
+ },
+ {
+  "id": 5889,
+  "tr": "tarihî eser koruma",
+  "en": "heritage protection",
+  "beispiel": "Die alte Markthalle steht seit 1994 unter Denkmalschutz.",
+  "beispielTr": "Eski hal binası 1994'ten beri koruma altında.",
+  "beispielEn": "The old market hall has been under heritage protection since 1994."
+ },
+ {
+  "id": 5890,
+  "tr": "yapı kültürü",
+  "en": "building culture",
+  "beispiel": "Der neue Bahnhof zeigt, wie ernst die Stadt es mit Baukultur meint.",
+  "beispielTr": "Yeni gar, şehrin yapı kültürü konusunda ne kadar ciddi olduğunu gösteriyor.",
+  "beispielEn": "The new station shows how serious the city is about building culture."
+ },
+ {
+  "id": 5891,
+  "tr": "yapı dokusu",
+  "en": "building fabric",
+  "beispiel": "Die Bausubstanz des Altbaus ist erstaunlich gut erhalten.",
+  "beispielTr": "Eski binanın yapı dokusu şaşırtıcı derecede iyi korunmuş.",
+  "beispielEn": "The building fabric of the old house is remarkably well preserved."
+ },
+ {
+  "id": 5892,
+  "tr": "müteahhit",
+  "en": "property developer",
+  "beispiel": "Der Bauträger hat den Fertigstellungstermin schon zweimal verschoben.",
+  "beispielTr": "Müteahhit teslim tarihini şimdiden iki kez erteledi.",
+  "beispielEn": "The property developer has already postponed the completion date twice."
+ },
+ {
+  "id": 5893,
+  "tr": "atıl arazi",
+  "en": "vacant lot",
+  "beispiel": "Auf der Brachfläche hinter dem Bahnhof entsteht ein neues Wohnviertel.",
+  "beispielTr": "Gar arkasındaki atıl arazide yeni bir konut mahallesi yükseliyor.",
+  "beispielEn": "A new residential quarter is going up on the vacant lot behind the station."
+ },
+ {
+  "id": 5894,
+  "tr": "zemin betonlaşması",
+  "en": "soil sealing",
+  "beispiel": "Die Flächenversiegelung im Neubaugebiet verschärft die Hochwassergefahr.",
+  "beispielTr": "Yeni yapı bölgesindeki zemin betonlaşması sel tehlikesini artırıyor.",
+  "beispielEn": "Soil sealing in the new development area increases the flood risk."
+ },
+ {
+  "id": 5895,
+  "tr": "yapı bütünü",
+  "en": "ensemble",
+  "beispiel": "Das barocke Ensemble am Marktplatz darf nicht verändert werden.",
+  "beispielTr": "Meydandaki barok yapı bütününe dokunulamaz.",
+  "beispielEn": "The baroque ensemble on the market square may not be altered."
+ },
+ {
+  "id": 5896,
+  "tr": "geçici kullanım",
+  "en": "interim use",
+  "beispiel": "Die Zwischennutzung der Halle als Atelier endet im Mai.",
+  "beispielTr": "Salonun atölye olarak geçici kullanımı mayısta sona eriyor.",
+  "beispielEn": "The interim use of the hall as a studio ends in May."
+ },
+ {
+  "id": 5897,
+  "tr": "değer kazandırma",
+  "en": "upgrading",
+  "beispiel": "Die Aufwertung des Viertels hat die Mieten verdoppelt.",
+  "beispielTr": "Mahalleye değer kazandırılması kiraları ikiye katladı.",
+  "beispielEn": "The upgrading of the neighborhood has doubled the rents."
+ },
+ {
+  "id": 5898,
+  "tr": "ayrışma",
+  "en": "segregation",
+  "beispiel": "Die Segregation zeigt sich am deutlichsten in den Grundschulen.",
+  "beispielTr": "Ayrışma en açık biçimde ilkokullarda göze çarpıyor.",
+  "beispielEn": "Segregation shows most clearly in the elementary schools."
+ },
+ {
+  "id": 5899,
+  "tr": "çeper",
+  "en": "periphery",
+  "beispiel": "An der Peripherie wächst die Stadt schneller als im Zentrum.",
+  "beispielTr": "Kent, çeperinde merkezdekinden daha hızlı büyüyor.",
+  "beispielEn": "The city is growing faster on the periphery than in the center."
+ },
+ {
+  "id": 5900,
+  "tr": "uydu kent",
+  "en": "satellite town",
+  "beispiel": "Meine Großeltern wohnen in einer Trabantenstadt bei Hannover.",
+  "beispielTr": "Büyükannemler Hannover yakınlarındaki bir uydu kentte oturuyor.",
+  "beispielEn": "My grandparents live in a satellite town near Hanover."
+ },
+ {
+  "id": 5901,
+  "tr": "altyapıya bağlama",
+  "en": "infrastructure development",
+  "beispiel": "Die Erschließung des neuen Baugebiets kostet die Gemeinde Millionen.",
+  "beispielTr": "Yeni imar alanının altyapıya bağlanması belediyeye milyonlara mal oluyor.",
+  "beispielEn": "Infrastructure development for the new building area costs the municipality millions."
+ },
+ {
+  "id": 5902,
+  "tr": "kent görünümü",
+  "en": "cityscape",
+  "beispiel": "Der neue Turm passt nicht ins historische Stadtbild.",
+  "beispielTr": "Yeni kule tarihî kent görünümüne hiç uymuyor.",
+  "beispielEn": "The new tower does not fit the historic cityscape."
+ }
+]

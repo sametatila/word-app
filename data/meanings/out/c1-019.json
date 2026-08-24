@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6153,
+    "tr": "kuşku",
+    "en": "skepticism",
+    "beispiel": "Die Anleger reagierten auf die Zahlen mit offener Skepsis.",
+    "beispielTr": "Yatırımcılar rakamlara açık bir kuşkuyla tepki verdi.",
+    "beispielEn": "Investors reacted to the figures with open skepticism."
+  },
+  {
+    "id": 6154,
+    "tr": "tek yanlılık",
+    "en": "one-sidedness",
+    "beispiel": "Man warf dem Bericht Einseitigkeit bei der Auswahl der Quellen vor.",
+    "beispielTr": "Rapor kaynak seçiminde tek yanlılıkla suçlandı.",
+    "beispielEn": "The report was accused of one-sidedness in its choice of sources."
+  },
+  {
+    "id": 6155,
+    "tr": "nesnellik",
+    "en": "objectivity",
+    "beispiel": "Bei aller Leidenschaft sollten wir die Sachlichkeit nicht verlieren.",
+    "beispielTr": "Bunca tutkuya rağmen nesnelliği elden bırakmamalıyız.",
+    "beispielEn": "For all our passion we should not lose our objectivity."
+  },
+  {
+    "id": 6156,
+    "tr": "ima",
+    "en": "hint",
+    "beispiel": "Statt klarer Kritik blieb es bei vagen Andeutungen.",
+    "beispielTr": "Açık eleştiri yerine ortada yalnızca belirsiz imalar kaldı.",
+    "beispielEn": "Instead of clear criticism there were only vague hints."
+  },
+  {
+    "id": 6157,
+    "tr": "ironi",
+    "en": "irony",
+    "beispiel": "Die Ironie seiner Bemerkung entging der Hälfte des Publikums.",
+    "beispielTr": "Sözündeki ironiyi seyircilerin yarısı fark etmedi.",
+    "beispielEn": "Half the audience missed the irony of his remark."
+  },
+  {
+    "id": 6158,
+    "tr": "mantıksal tutarlılık",
+    "en": "rigor",
+    "beispiel": "Der Aufsatz besticht durch Stringenz und eine klare Gliederung.",
+    "beispielTr": "Makale mantıksal tutarlılığı ve net kurgusuyla etkiliyor.",
+    "beispielEn": "The essay impresses with its rigor and clear structure."
+  },
+  {
+    "id": 6159,
+    "tr": "özlülük",
+    "en": "conciseness",
+    "beispiel": "Mit bewundernswerter Prägnanz fasste sie die gesamte Debatte zusammen.",
+    "beispielTr": "Hayranlık verici bir özlülükle bütün tartışmayı özetledi.",
+    "beispielEn": "She summed up the whole debate with admirable conciseness."
+  },
+  {
+    "id": 6160,
+    "tr": "gereksiz tekrar",
+    "en": "redundancy",
+    "beispiel": "Der Text gewinnt deutlich, wenn man die zahlreichen Redundanzen streicht.",
+    "beispielTr": "Sayısız gereksiz tekrarı çıkarırsan metin çok daha iyi olur.",
+    "beispielEn": "The text gets much better if you cut the many redundancies."
+  },
+  {
+    "id": 6161,
+    "tr": "konu dışına sapma",
+    "en": "digression",
+    "beispiel": "Nach einem längeren Exkurs kehrte er zum eigentlichen Thema zurück.",
+    "beispielTr": "Uzunca bir sapmanın ardından asıl konuya döndü.",
+    "beispielEn": "After a long digression he returned to the actual topic."
+  },
+  {
+    "id": 6162,
+    "tr": "değerlendirme",
+    "en": "assessment",
+    "beispiel": "Zum Schluss zog die Moderatorin ein nüchternes Resümee.",
+    "beispielTr": "Sonunda moderatör serinkanlı bir değerlendirme yaptı.",
+    "beispielEn": "At the end the moderator gave a sober assessment."
+  },
+  {
+    "id": 6163,
+    "tr": "öz",
+    "en": "essence",
+    "beispiel": "Die Quintessenz seiner Rede passt in einen einzigen Satz.",
+    "beispielTr": "Konuşmasının özü tek bir cümleye sığıyor.",
+    "beispielEn": "The essence of his speech fits into a single sentence."
+  },
+  {
+    "id": 6164,
+    "tr": "ana mesaj",
+    "en": "core message",
+    "beispiel": "Die Kernaussage der Studie wurde in den Medien stark verzerrt.",
+    "beispielTr": "Çalışmanın ana mesajı medyada epeyce çarpıtıldı.",
+    "beispielEn": "The study's core message was badly distorted in the media."
+  },
+  {
+    "id": 6165,
+    "tr": "yönlendirici soru",
+    "en": "leading question",
+    "beispiel": "Mit dieser Suggestivfrage lenkte der Journalist das ganze Gespräch.",
+    "beispielTr": "Gazeteci bu yönlendirici soruyla bütün söyleşiyi istediği yere çekti.",
+    "beispielEn": "With that leading question the journalist steered the whole conversation."
+  },
+  {
+    "id": 6166,
+    "tr": "klişe",
+    "en": "platitude",
+    "beispiel": "Seine Rede bestand fast ausschließlich aus abgegriffenen Gemeinplätzen.",
+    "beispielTr": "Konuşması neredeyse tamamen eskimiş klişelerden ibaretti.",
+    "beispielEn": "His speech consisted almost entirely of worn-out platitudes."
+  },
+  {
+    "id": 6167,
+    "tr": "herkesin bildiği gerçek",
+    "en": "truism",
+    "beispiel": "Dass Bildung wichtig ist, gilt inzwischen als Binsenweisheit.",
+    "beispielTr": "Eğitimin önemli olduğu artık herkesin bildiği bir gerçek.",
+    "beispielEn": "That education matters counts as a truism by now."
+  },
+  {
+    "id": 6168,
+    "tr": "hakkını teslim etmek",
+    "en": "to grant",
+    "beispiel": "Man muss ihm zugestehen, dass seine Zahlen korrekt sind.",
+    "beispielTr": "Rakamlarının doğru olduğu konusunda hakkını teslim etmek gerekir.",
+    "beispielEn": "You have to grant him that his figures are correct."
+  },
+  {
+    "id": 6169,
+    "tr": "sonuç çıkarmak",
+    "en": "to conclude",
+    "beispiel": "Daraus folgerte der Autor voreilig einen kausalen Zusammenhang.",
+    "beispielTr": "Yazar bundan aceleyle nedensel bir ilişki olduğu sonucunu çıkardı.",
+    "beispielEn": "From this the author hastily concluded a causal link."
+  },
+  {
+    "id": 6170,
+    "tr": "kuşku duymak",
+    "en": "to doubt",
+    "beispiel": "Niemand bezweifelt die Fakten, wohl aber ihre Deutung.",
+    "beispielTr": "Olgulardan kimse kuşku duymuyor, ama yorumlarından duyuyor.",
+    "beispielEn": "Nobody doubts the facts, but they do doubt their interpretation."
+  },
+  {
+    "id": 6171,
+    "tr": "ayrım yapmak",
+    "en": "to differentiate",
+    "beispiel": "An dieser Stelle müssen wir sehr genau differenzieren.",
+    "beispielTr": "Bu noktada çok dikkatli bir ayrım yapmalıyız.",
+    "beispielEn": "At this point we have to differentiate very carefully."
+  },
+  {
+    "id": 6172,
+    "tr": "öne sürmek",
+    "en": "to cite",
+    "beispiel": "Als Beleg führte er eine ältere Studie aus Schweden an.",
+    "beispielTr": "Kanıt olarak İsveç'ten eski bir çalışmayı öne sürdü.",
+    "beispielEn": "As evidence he cited an older study from Sweden."
+  },
+  {
+    "id": 6173,
+    "tr": "dile getirmek",
+    "en": "to raise",
+    "beispiel": "Gegen diesen Vorschlag hat bislang niemand ernsthafte Bedenken vorgebracht.",
+    "beispielTr": "Bu öneriye karşı şimdiye dek kimse ciddi bir çekince dile getirmedi.",
+    "beispielEn": "So far nobody has raised serious concerns about this proposal."
+  },
+  {
+    "id": 6174,
+    "tr": "hak vermek",
+    "en": "to concur",
+    "beispiel": "In diesem Punkt kann ich meinem Vorredner nur beipflichten.",
+    "beispielTr": "Bu noktada benden önce konuşana ancak hak verebilirim.",
+    "beispielEn": "On this point I can only concur with the previous speaker."
+  },
+  {
+    "id": 6175,
+    "tr": "karşı çıkmak",
+    "en": "to counter",
+    "beispiel": "Dem hielt die Kritikerin eine ganze Reihe neuerer Studien entgegen.",
+    "beispielTr": "Eleştirmen buna bir dizi yeni çalışmayla karşı çıktı.",
+    "beispielEn": "The critic countered this with a whole series of newer studies."
+  },
+  {
+    "id": 6176,
+    "tr": "kusur bulmak",
+    "en": "to criticize",
+    "beispiel": "Mehrere Gutachter monierten die unklare Fragestellung der Arbeit.",
+    "beispielTr": "Birkaç hakem çalışmanın belirsiz soru kurgusuna kusur buldu.",
+    "beispielEn": "Several reviewers criticized the study's unclear research question."
+  },
+  {
+    "id": 6177,
+    "tr": "savunmak",
+    "en": "to advocate",
+    "beispiel": "Die Fachleute plädieren für ein deutlich behutsameres Vorgehen.",
+    "beispielTr": "Uzmanlar çok daha temkinli bir yaklaşımı savunuyor.",
+    "beispielEn": "The experts advocate a much more cautious approach."
+  },
+  {
+    "id": 6178,
+    "tr": "kabul etmek",
+    "en": "to concede",
+    "beispiel": "Selbst seine Gegner konzedieren ihm eine gewisse gedankliche Konsequenz.",
+    "beispielTr": "Rakipleri bile onda belli bir düşünsel tutarlılık olduğunu kabul ediyor.",
+    "beispielEn": "Even his opponents concede that he is intellectually consistent."
+  },
+  {
+    "id": 6179,
+    "tr": "revize etmek",
+    "en": "to revise",
+    "beispiel": "Angesichts neuer Daten musste sie ihre These revidieren.",
+    "beispielTr": "Yeni veriler karşısında tezini revize etmek zorunda kaldı.",
+    "beispielEn": "In light of new data she had to revise her thesis."
+  },
+  {
+    "id": 6180,
+    "tr": "işaret etmek",
+    "en": "to suggest",
+    "beispiel": "Die Befunde legen einen ganz anderen Schluss nahe.",
+    "beispielTr": "Bulgular tamamen başka bir sonuca işaret ediyor.",
+    "beispielEn": "The findings suggest a completely different conclusion."
+  },
+  {
+    "id": 6181,
+    "tr": "ne var ki",
+    "en": "however",
+    "beispiel": "Sein Einwand klang plausibel, entbehrte indes jeder empirischen Grundlage.",
+    "beispielTr": "İtirazı makul geliyordu, ne var ki hiçbir ampirik dayanağı yoktu.",
+    "beispielEn": "His objection sounded plausible; however it had no empirical basis."
+  },
+  {
+    "id": 6182,
+    "tr": "buna karşılık",
+    "en": "by contrast",
+    "beispiel": "Die erste Studie bestätigt den Effekt, die zweite hingegen nicht.",
+    "beispielTr": "İlk çalışma etkiyi doğruluyor, ikincisi ise doğrulamıyor.",
+    "beispielEn": "The first study confirms the effect; the second by contrast does not."
+  },
+  {
+    "id": 6183,
+    "tr": "dolayısıyla",
+    "en": "consequently",
+    "beispiel": "Die Prämisse ist falsch, folglich bricht die ganze Argumentation zusammen.",
+    "beispielTr": "Öncül yanlış, dolayısıyla bütün argümantasyon çöküyor.",
+    "beispielEn": "The premise is false; consequently the whole argument collapses."
+  },
+  {
+    "id": 6184,
+    "tr": "gerçi",
+    "en": "admittedly",
+    "beispiel": "Der Vergleich ist reizvoll, trägt freilich nur bedingt.",
+    "beispielTr": "Karşılaştırma ilgi çekici, gerçi ancak belli ölçüde geçerli.",
+    "beispielEn": "The comparison is appealing, admittedly it only goes so far."
+  },
+  {
+    "id": 6185,
+    "tr": "her ne kadar",
+    "en": "although",
+    "beispiel": "Seine Kritik ist berechtigt, wenngleich sie deutlich zu scharf ausfällt.",
+    "beispielTr": "Eleştirisi yerinde, her ne kadar fazlasıyla sert olsa da.",
+    "beispielEn": "His criticism is justified, although it turns out far too harsh."
+  },
+  {
+    "id": 6186,
+    "tr": "hiç de değil",
+    "en": "by no means",
+    "beispiel": "Damit ist die entscheidende Frage mitnichten beantwortet.",
+    "beispielTr": "Bununla belirleyici soru hiç de yanıtlanmış olmuyor.",
+    "beispielEn": "That by no means answers the decisive question."
+  },
+  {
+    "id": 6187,
+    "tr": "sözde",
+    "en": "supposed",
+    "beispiel": "Der vermeintliche Widerspruch löst sich bei genauerer Betrachtung auf.",
+    "beispielTr": "Sözde çelişki daha yakından bakılınca ortadan kalkıyor.",
+    "beispielEn": "The supposed contradiction dissolves on closer inspection."
+  },
+  {
+    "id": 6188,
+    "tr": "sudan",
+    "en": "flimsy",
+    "beispiel": "Mit fadenscheinigen Argumenten versuchte er, die Kritik abzuwehren.",
+    "beispielTr": "Sudan argümanlarla eleştiriyi savuşturmaya çalıştı.",
+    "beispielEn": "He tried to fend off the criticism with flimsy arguments."
+  },
+  {
+    "id": 6189,
+    "tr": "geçerli",
+    "en": "valid",
+    "beispiel": "Für diese Annahme gibt es bislang kein stichhaltiges Argument.",
+    "beispielTr": "Bu varsayım için şimdiye dek geçerli bir argüman yok.",
+    "beispielEn": "So far there is no valid argument for this assumption."
+  },
+  {
+    "id": 6190,
+    "tr": "kuşkusuz",
+    "en": "undoubtedly",
+    "beispiel": "Sie war zweifelsohne die klügste Rednerin des Abends.",
+    "beispielTr": "Kuşkusuz akşamın en zeki konuşmacısıydı.",
+    "beispielEn": "She was undoubtedly the smartest speaker of the evening."
+  },
+  {
+    "id": 6191,
+    "tr": "örtük",
+    "en": "implicit",
+    "beispiel": "Diese Kritik war in seinem Vortrag nur implizit enthalten.",
+    "beispielTr": "Bu eleştiri sunumunda yalnızca örtük biçimde vardı.",
+    "beispielEn": "In his talk this criticism was only implicit."
+  },
+  {
+    "id": 6192,
+    "tr": "şebeke genişletme",
+    "en": "grid expansion",
+    "beispiel": "Ohne einen zügigen Netzausbau bleibt der erzeugte Strom im Norden liegen.",
+    "beispielTr": "Şebeke hızla genişletilmezse üretilen elektrik kuzeyde sıkışıp kalır.",
+    "beispielEn": "Without rapid grid expansion the power generated stays stuck in the north."
+  },
+  {
+    "id": 6193,
+    "tr": "şebeke bedeli",
+    "en": "grid fee",
+    "beispiel": "Steigende Netzentgelte treffen vor allem Haushalte mit geringem Einkommen.",
+    "beispielTr": "Artan şebeke bedelleri en çok düşük gelirli haneleri vuruyor.",
+    "beispielEn": "Rising grid fees hit low-income households hardest."
+  },
+  {
+    "id": 6194,
+    "tr": "şebeke istikrarı",
+    "en": "grid stability",
+    "beispiel": "Bei schwankender Einspeisung wird die Netzstabilität zur eigentlichen Herausforderung.",
+    "beispielTr": "Besleme dalgalanınca asıl zorluk şebeke istikrarı oluyor.",
+    "beispielEn": "With fluctuating feed-in grid stability becomes the real challenge."
+  },
+  {
+    "id": 6195,
+    "tr": "iletim şebekesi",
+    "en": "transmission grid",
+    "beispiel": "Das Übertragungsnetz stammt in weiten Teilen noch aus den siebziger Jahren.",
+    "beispielTr": "İletim şebekesinin büyük bölümü hâlâ yetmişli yıllardan kalma.",
+    "beispielEn": "Much of the transmission grid still dates from the seventies."
+  },
+  {
+    "id": 6196,
+    "tr": "baz yük",
+    "en": "base load",
+    "beispiel": "Wer deckt künftig die Grundlast, wenn die alten Kraftwerke wegfallen?",
+    "beispielTr": "Eski santraller devreden çıkınca baz yükü bundan sonra kim karşılayacak?",
+    "beispielEn": "Who will cover the base load once the old plants are gone?"
+  },
+  {
+    "id": 6197,
+    "tr": "puant yük",
+    "en": "peak load",
+    "beispiel": "An kalten Winterabenden erreicht die Spitzenlast regelmäßig kritische Werte.",
+    "beispielTr": "Soğuk kış akşamlarında puant yük düzenli olarak kritik değerlere çıkıyor.",
+    "beispielEn": "On cold winter evenings the peak load regularly hits critical levels."
+  },
+  {
+    "id": 6198,
+    "tr": "şebekeye besleme",
+    "en": "feed-in",
+    "beispiel": "Die Einspeisung aus privaten Anlagen hat sich binnen fünf Jahren verdoppelt.",
+    "beispielTr": "Özel tesislerden şebekeye besleme beş yılda ikiye katlandı.",
+    "beispielEn": "Feed-in from private installations has doubled within five years."
+  },
+  {
+    "id": 6199,
+    "tr": "depolama kapasitesi",
+    "en": "storage capacity",
+    "beispiel": "Ohne zusätzliche Speicherkapazität lässt sich der Überschuss kaum sinnvoll nutzen.",
+    "beispielTr": "Ek depolama kapasitesi olmadan fazla üretimi anlamlı biçimde kullanmak güç.",
+    "beispielEn": "Without extra storage capacity the surplus can hardly be used sensibly."
+  },
+  {
+    "id": 6200,
+    "tr": "elektrik kesintisi",
+    "en": "power outage",
+    "beispiel": "Nach dem Sturm gab es im ganzen Landkreis einen Stromausfall.",
+    "beispielTr": "Fırtınadan sonra bütün ilçede elektrik kesintisi oldu.",
+    "beispielEn": "After the storm there was a power outage across the whole district."
+  },
+  {
+    "id": 6201,
+    "tr": "yedek kapasite",
+    "en": "capacity reserve",
+    "beispiel": "Die Kapazitätsreserve wird nur in ausgewiesenen Notlagen überhaupt abgerufen.",
+    "beispielTr": "Yedek kapasite yalnızca tanımlı acil durumlarda devreye alınıyor.",
+    "beispielEn": "The capacity reserve is called on only in declared emergencies."
+  },
+  {
+    "id": 6202,
+    "tr": "yatırım döngüsü",
+    "en": "investment cycle",
+    "beispiel": "Der Vorstand denkt in Investitionszyklen von dreißig Jahren.",
+    "beispielTr": "Yönetim kurulu otuz yıllık yatırım döngüleriyle düşünüyor.",
+    "beispielEn": "The board thinks in investment cycles of thirty years."
+  }
+]

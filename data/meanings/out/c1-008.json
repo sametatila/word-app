@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3927,
+  "tr": "personel gelişimi",
+  "en": "staff development",
+  "beispiel": "Unsere Abteilung investiert kaum in Personalentwicklung.",
+  "beispielTr": "Bölümümüz personel gelişimine neredeyse hiç yatırım yapmıyor.",
+  "beispielEn": "Our department invests almost nothing in staff development."
+ },
+ {
+  "id": 3928,
+  "tr": "personel devri",
+  "en": "staff turnover",
+  "beispiel": "Im Callcenter ist die Fluktuation besonders hoch.",
+  "beispielTr": "Çağrı merkezinde personel devri özellikle yüksek.",
+  "beispielEn": "Staff turnover is especially high at the call center."
+ },
+ {
+  "id": 3930,
+  "tr": "çalışan bağlılığı",
+  "en": "employee retention",
+  "beispiel": "Der Betriebskindergarten hat die Mitarbeiterbindung deutlich verbessert.",
+  "beispielTr": "Şirket kreşi çalışan bağlılığını belirgin biçimde artırdı.",
+  "beispielEn": "The company daycare clearly improved employee retention."
+ },
+ {
+  "id": 3931,
+  "tr": "işyeri atmosferi",
+  "en": "workplace atmosphere",
+  "beispiel": "Seit dem Chefwechsel ist das Betriebsklima viel entspannter.",
+  "beispielTr": "Patron değişikliğinden beri işyeri atmosferi çok daha rahat.",
+  "beispielEn": "The workplace atmosphere has been much more relaxed since the new boss."
+ },
+ {
+  "id": 3932,
+  "tr": "hizmet içi eğitim",
+  "en": "training initiative",
+  "beispiel": "Die Firma finanziert zwei Weiterbildungsmaßnahmen pro Jahr.",
+  "beispielTr": "Şirket yılda iki hizmet içi eğitimi finanse ediyor.",
+  "beispielEn": "The company finances two training initiatives per year."
+ },
+ {
+  "id": 3933,
+  "tr": "liderlik tarzı",
+  "en": "leadership style",
+  "beispiel": "Ihr autoritärer Führungsstil vertreibt die besten Mitarbeiter.",
+  "beispielTr": "Otoriter liderlik tarzı en iyi çalışanları kaçırıyor.",
+  "beispielEn": "Her authoritarian leadership style drives away the best employees."
+ },
+ {
+  "id": 3934,
+  "tr": "iş-yaşam dengesi",
+  "en": "work-life balance",
+  "beispiel": "Wegen der Schichtarbeit leidet seine Work-Life-Balance.",
+  "beispielTr": "Vardiyalı çalışma yüzünden iş-yaşam dengesi bozuluyor.",
+  "beispielEn": "His work-life balance suffers because of the shift work."
+ },
+ {
+  "id": 3935,
+  "tr": "ciro düşüşü",
+  "en": "revenue slump",
+  "beispiel": "Der Umsatzeinbruch im Sommer kostete zwanzig Leute den Job.",
+  "beispielTr": "Yazın yaşanan ciro düşüşü yirmi kişinin işine mal oldu.",
+  "beispielEn": "The summer revenue slump cost twenty people their jobs."
+ },
+ {
+  "id": 3936,
+  "tr": "verimlilik artışı",
+  "en": "efficiency gain",
+  "beispiel": "Die neue Software brachte eine spürbare Effizienzsteigerung.",
+  "beispielTr": "Yeni yazılım gözle görülür bir verimlilik artışı sağladı.",
+  "beispielEn": "The new software brought a noticeable efficiency gain."
+ },
+ {
+  "id": 3937,
+  "tr": "yeniden yapılandırma",
+  "en": "restructuring",
+  "beispiel": "Nach der Restrukturierung arbeiten hier nur noch zwölf Leute.",
+  "beispielTr": "Yeniden yapılandırmadan sonra burada sadece on iki kişi çalışıyor.",
+  "beispielEn": "After the restructuring only twelve people still work here."
+ },
+ {
+  "id": 3939,
+  "tr": "iflas süreci",
+  "en": "insolvency proceedings",
+  "beispiel": "Gegen unseren Zulieferer läuft seit Mai ein Insolvenzverfahren.",
+  "beispielTr": "Tedarikçimiz hakkında mayıstan beri bir iflas süreci yürüyor.",
+  "beispielEn": "Insolvency proceedings against our supplier have been running since May."
+ },
+ {
+  "id": 3940,
+  "tr": "pazar doygunluğu",
+  "en": "market saturation",
+  "beispiel": "Wegen der Marktsättigung verkaufen wir kaum noch Drucker.",
+  "beispielTr": "Pazar doygunluğu yüzünden neredeyse hiç yazıcı satamıyoruz.",
+  "beispielEn": "Because of market saturation we hardly sell any printers."
+ },
+ {
+  "id": 3941,
+  "tr": "kârlılık",
+  "en": "profitability",
+  "beispiel": "Die Rentabilität der kleinen Filiale sinkt seit Jahren.",
+  "beispielTr": "Küçük şubenin kârlılığı yıllardır düşüyor.",
+  "beispielEn": "The small branch's profitability has been falling for years."
+ },
+ {
+  "id": 3944,
+  "tr": "mevzuata uygunluk",
+  "en": "compliance",
+  "beispiel": "Die Bank hat wegen mangelnder Compliance eine Strafe bekommen.",
+  "beispielTr": "Banka, mevzuata uygunluk eksikliği yüzünden ceza aldı.",
+  "beispielEn": "The bank was fined for insufficient compliance."
+ },
+ {
+  "id": 3945,
+  "tr": "kitle manipülasyonu",
+  "en": "mass manipulation",
+  "beispiel": "Der Film zeigt Massenmanipulation durch Radio und Plakate.",
+  "beispielTr": "Film, radyo ve afişler yoluyla kitle manipülasyonunu gösteriyor.",
+  "beispielEn": "The film shows mass manipulation through radio and posters."
+ },
+ {
+  "id": 3946,
+  "tr": "magazinleşme",
+  "en": "tabloidization",
+  "beispiel": "Die Boulevardisierung der Abendnachrichten ärgert viele Zuschauer.",
+  "beispielTr": "Akşam haberlerinin magazinleşmesi birçok izleyiciyi rahatsız ediyor.",
+  "beispielEn": "The tabloidization of the evening news annoys many viewers."
+ },
+ {
+  "id": 3947,
+  "tr": "kamuoyu yönlendirmesi",
+  "en": "opinion manipulation",
+  "beispiel": "Bei dieser Zeitung riecht jede Schlagzeile nach Meinungsmache.",
+  "beispielTr": "Bu gazetede her manşet kamuoyu yönlendirmesi kokuyor.",
+  "beispielEn": "Every headline in this paper smells of opinion manipulation."
+ },
+ {
+  "id": 3948,
+  "tr": "skandallaştırma",
+  "en": "scandalization",
+  "beispiel": "Die Skandalisierung seines Urlaubsfotos war völlig übertrieben.",
+  "beispielTr": "Tatil fotoğrafının skandallaştırılması tamamen abartılıydı.",
+  "beispielEn": "The scandalization of his vacation photo was completely overblown."
+ },
+ {
+  "id": 3949,
+  "tr": "öfke dalgası",
+  "en": "wave of outrage",
+  "beispiel": "Sein Interview löste eine Empörungswelle auf Twitter aus.",
+  "beispielTr": "Röportajı Twitter'da bir öfke dalgası başlattı.",
+  "beispielEn": "His interview triggered a wave of outrage on Twitter."
+ },
+ {
+  "id": 3950,
+  "tr": "filtre balonu",
+  "en": "filter bubble",
+  "beispiel": "In seiner Filterblase liest er nur eine Meinung.",
+  "beispielTr": "Kendi filtre balonunda tek bir görüş okuyor.",
+  "beispielEn": "In his filter bubble he only reads one opinion."
+ },
+ {
+  "id": 3951,
+  "tr": "yankı odası",
+  "en": "echo chamber",
+  "beispiel": "Sein Forum ist längst eine reine Echokammer geworden.",
+  "beispielTr": "Forumu çoktan tam bir yankı odasına dönüştü.",
+  "beispielEn": "His forum has long since become a pure echo chamber."
+ },
+ {
+  "id": 3952,
+  "tr": "dezenformasyon",
+  "en": "disinformation",
+  "beispiel": "Vor der Wahl verbreiteten Bots gezielt Desinformation.",
+  "beispielTr": "Seçim öncesinde botlar bilinçli olarak dezenformasyon yaydı.",
+  "beispielEn": "Before the election bots deliberately spread disinformation."
+ },
+ {
+  "id": 3953,
+  "tr": "uyaran bombardımanı",
+  "en": "sensory overload",
+  "beispiel": "Im Einkaufszentrum leidet sie unter Reizüberflutung.",
+  "beispielTr": "Alışveriş merkezinde uyaran bombardımanından bunalıyor.",
+  "beispielEn": "She suffers from sensory overload in the shopping mall."
+ },
+ {
+  "id": 3954,
+  "tr": "yüzeysellik",
+  "en": "superficiality",
+  "beispiel": "Die Oberflächlichkeit seiner Antworten hat mich enttäuscht.",
+  "beispielTr": "Cevaplarının yüzeyselliği beni hayal kırıklığına uğrattı.",
+  "beispielEn": "The superficiality of his answers disappointed me."
+ },
+ {
+  "id": 3955,
+  "tr": "kendini optimize etme",
+  "en": "self-optimization",
+  "beispiel": "Seine Selbstoptimierung beginnt jeden Morgen um fünf Uhr.",
+  "beispielTr": "Kendini optimize etmesi her sabah beşte başlıyor.",
+  "beispielEn": "His self-optimization starts every morning at five."
+ },
+ {
+  "id": 3956,
+  "tr": "ilkesizlik",
+  "en": "arbitrariness",
+  "beispiel": "Die Beliebigkeit seiner Versprechen ärgert viele Wähler.",
+  "beispielTr": "Vaatlerindeki ilkesizlik birçok seçmeni kızdırıyor.",
+  "beispielEn": "The arbitrariness of his promises annoys many voters."
+ },
+ {
+  "id": 3957,
+  "tr": "araçsallaştırma",
+  "en": "instrumentalization",
+  "beispiel": "Die Instrumentalisierung des Unglücks durch die Partei empört viele.",
+  "beispielTr": "Partinin felaketi araçsallaştırması birçok kişiyi öfkelendiriyor.",
+  "beispielEn": "The party's instrumentalization of the disaster outrages many people."
+ },
+ {
+  "id": 3958,
+  "tr": "vesayet",
+  "en": "paternalism",
+  "beispiel": "Das Rauchverbot empfindet er als reine Bevormundung.",
+  "beispielTr": "Sigara yasağını tam bir vesayet olarak görüyor.",
+  "beispielEn": "He sees the smoking ban as pure paternalism."
+ },
+ {
+  "id": 3959,
+  "tr": "güdüm altında tutma",
+  "en": "patronizing",
+  "beispiel": "Er beschwert sich über die ständige Gängelung durch Vorschriften.",
+  "beispielTr": "Kuralların onu sürekli güdüm altında tutmasından şikâyet ediyor.",
+  "beispielEn": "He complains about constantly being patronized by regulations."
+ },
+ {
+  "id": 3960,
+  "tr": "iradesizleştirme",
+  "en": "disempowerment",
+  "beispiel": "Sie erlebt die Kontrolle ihrer Kinder als Entmündigung.",
+  "beispielTr": "Çocuklarının onu denetlemesini iradesizleştirme olarak görüyor.",
+  "beispielEn": "She experiences her children's control as disempowerment."
+ },
+ {
+  "id": 3961,
+  "tr": "ikirciklilik",
+  "en": "ambivalence",
+  "beispiel": "Vor dem Umzug spürt sie eine starke Ambivalenz.",
+  "beispielTr": "Taşınmadan önce güçlü bir ikirciklilik hissediyor.",
+  "beispielEn": "She feels a strong ambivalence before the move."
+ },
+ {
+  "id": 3964,
+  "tr": "yapılabilirlik saplantısı",
+  "en": "feasibility delusion",
+  "beispiel": "Sein Machbarkeitswahn hat das ganze Projekt ruiniert.",
+  "beispielTr": "Yapılabilirlik saplantısı bütün projeyi mahvetti.",
+  "beispielEn": "His feasibility delusion ruined the whole project."
+ },
+ {
+  "id": 3965,
+  "tr": "kontrol kaybı",
+  "en": "loss of control",
+  "beispiel": "Beim Autofahren im Schnee fürchtet sie den Kontrollverlust.",
+  "beispielTr": "Karda araba kullanırken kontrolü kaybetmekten korkuyor.",
+  "beispielEn": "She fears losing control when driving in the snow."
+ },
+ {
+  "id": 3966,
+  "tr": "determinizm",
+  "en": "determinism",
+  "beispiel": "Der Professor lehnt jeden Determinismus in der Geschichte ab.",
+  "beispielTr": "Profesör, tarihte her türlü determinizmi reddediyor.",
+  "beispielEn": "The professor rejects any determinism in history."
+ },
+ {
+  "id": 3967,
+  "tr": "insanlıktan çıkarma",
+  "en": "dehumanization",
+  "beispiel": "Die Sprache der Propaganda beginnt mit Entmenschlichung.",
+  "beispielTr": "Propaganda dili insanlıktan çıkarmayla başlıyor.",
+  "beispielEn": "The language of propaganda begins with dehumanization."
+ },
+ {
+  "id": 3968,
+  "tr": "veri açlığı",
+  "en": "data hunger",
+  "beispiel": "Der Datenhunger dieser App macht mich misstrauisch.",
+  "beispielTr": "Bu uygulamanın veri açlığı beni kuşkulandırıyor.",
+  "beispielEn": "This app's data hunger makes me suspicious."
+ },
+ {
+  "id": 3969,
+  "tr": "sınırların silinmesi",
+  "en": "blurring of boundaries",
+  "beispiel": "Das Homeoffice führt zur Entgrenzung von Arbeit und Freizeit.",
+  "beispielTr": "Evden çalışma, işle boş zaman arasındaki sınırları siliyor.",
+  "beispielEn": "Working from home blurs the boundaries between work and leisure."
+ },
+ {
+  "id": 3970,
+  "tr": "özerklik",
+  "en": "autonomy",
+  "beispiel": "Im Heim verliert sie Stück für Stück ihre Autonomie.",
+  "beispielTr": "Huzurevinde özerkliğini yavaş yavaş yitiriyor.",
+  "beispielEn": "In the nursing home she gradually loses her autonomy."
+ },
+ {
+  "id": 3973,
+  "tr": "insan anlayışı",
+  "en": "view of humanity",
+  "beispiel": "Hinter dem Gesetz steckt ein düsteres Menschenbild.",
+  "beispielTr": "Bu yasanın arkasında karanlık bir insan anlayışı var.",
+  "beispielEn": "A dark view of humanity lies behind this law."
+ },
+ {
+  "id": 3974,
+  "tr": "devrilme noktası",
+  "en": "tipping point",
+  "beispiel": "Das Grönlandeis hat seinen Kipppunkt womöglich schon überschritten.",
+  "beispielTr": "Grönland buzulu devrilme noktasını belki de çoktan aştı.",
+  "beispielEn": "The Greenland ice may have already passed its tipping point."
+ },
+ {
+  "id": 3975,
+  "tr": "toparlanma gücü",
+  "en": "resilience",
+  "beispiel": "Nach der Flut zeigte das Dorf erstaunliche Resilienz.",
+  "beispielTr": "Selden sonra köy şaşırtıcı bir toparlanma gücü gösterdi.",
+  "beispielEn": "After the flood the village showed astonishing resilience."
+ },
+ {
+  "id": 3976,
+  "tr": "yetinme",
+  "en": "sufficiency",
+  "beispiel": "Die Stadt setzt beim Klimaschutz auch auf Suffizienz.",
+  "beispielTr": "Şehir, iklim korumasında yetinmeye de bel bağlıyor.",
+  "beispielEn": "The city also relies on sufficiency for climate protection."
+ },
+ {
+  "id": 3977,
+  "tr": "sonluluk",
+  "en": "finiteness",
+  "beispiel": "Die Endlichkeit des Öls zwingt uns zum Umdenken.",
+  "beispielTr": "Petrolün sonluluğu bizi yeniden düşünmeye zorluyor.",
+  "beispielEn": "The finiteness of oil forces us to rethink."
+ },
+ {
+  "id": 3978,
+  "tr": "kuşaklar arası sözleşme",
+  "en": "generational contract",
+  "beispiel": "Der Generationenvertrag der Rentenkasse gerät zunehmend ins Wanken.",
+  "beispielTr": "Emeklilik sistemindeki kuşaklar arası sözleşme giderek sarsılıyor.",
+  "beispielEn": "The pension system's generational contract is increasingly faltering."
+ },
+ {
+  "id": 3979,
+  "tr": "gelecek kaygısı",
+  "en": "fear of the future",
+  "beispiel": "Ihre Zukunftsangst hält sie oft nachts wach.",
+  "beispielTr": "Gelecek kaygısı onu geceleri sık sık uyanık tutuyor.",
+  "beispielEn": "Her fear of the future often keeps her awake at night."
+ },
+ {
+  "id": 3980,
+  "tr": "büyüme zorunluluğu",
+  "en": "growth imperative",
+  "beispiel": "Der Wachstumszwang treibt den Konzern in immer neue Märkte.",
+  "beispielTr": "Büyüme zorunluluğu holdingi hep yeni pazarlara sürüklüyor.",
+  "beispielEn": "The growth imperative drives the corporation into ever new markets."
+ },
+ {
+  "id": 3981,
+  "tr": "kuşak çatışması",
+  "en": "generational conflict",
+  "beispiel": "Beim Abendessen bricht der alte Generationenkonflikt wieder aus.",
+  "beispielTr": "Akşam yemeğinde eski kuşak çatışması yine patlak veriyor.",
+  "beispielEn": "The old generational conflict flares up again at dinner."
+ },
+ {
+  "id": 3982,
+  "tr": "felaket tellallığı",
+  "en": "alarmism",
+  "beispiel": "Der Zeitung wird bei jedem Sturm Alarmismus vorgeworfen.",
+  "beispielTr": "Gazete her fırtınada felaket tellallığıyla suçlanıyor.",
+  "beispielEn": "The paper is accused of alarmism during every storm."
+ },
+ {
+  "id": 3983,
+  "tr": "kabalaşmak",
+  "en": "to coarsen",
+  "beispiel": "Der Ton in den Kommentarspalten verroht immer mehr.",
+  "beispielTr": "Yorum bölümlerindeki üslup giderek kabalaşıyor.",
+  "beispielEn": "The tone in the comment sections keeps getting coarser."
+ },
+ {
+  "id": 3984,
+  "tr": "araçsallaştırmak",
+  "en": "to instrumentalize",
+  "beispiel": "Der Trainer instrumentalisiert die Presse für seine Zwecke.",
+  "beispielTr": "Antrenör basını kendi amaçları için araçsallaştırıyor.",
+  "beispielEn": "The coach instrumentalizes the press for his own purposes."
+ }
+]

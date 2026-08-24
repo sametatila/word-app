@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3511,
+    "tr": "özetlemek",
+    "en": "to sum up",
+    "beispiel": "Zum Abschluss resümiert die Autorin die wichtigsten Ergebnisse.",
+    "beispielTr": "Yazar, sonunda en önemli bulguları özetliyor.",
+    "beispielEn": "At the end the author sums up the key findings."
+  },
+  {
+    "id": 3512,
+    "tr": "konu edinmek",
+    "en": "to address",
+    "beispiel": "Der Film thematisiert die Armut in den Vorstädten.",
+    "beispielTr": "Film, banliyölerdeki yoksulluğu konu ediniyor.",
+    "beispielEn": "The film addresses poverty in the suburbs."
+  },
+  {
+    "id": 3514,
+    "tr": "göreceleştirmek",
+    "en": "to put into perspective",
+    "beispiel": "Neue Befunde relativieren die bisherige Einschätzung erheblich.",
+    "beispielTr": "Yeni bulgular önceki değerlendirmeyi büyük ölçüde göreceleştiriyor.",
+    "beispielEn": "New findings put the earlier assessment into perspective."
+  },
+  {
+    "id": 3515,
+    "tr": "genellemek",
+    "en": "to generalize",
+    "beispiel": "Man darf Einzelfälle nicht vorschnell verallgemeinern.",
+    "beispielTr": "Tek tek olayları aceleyle genellememek gerekir.",
+    "beispielEn": "One should not generalize individual cases too quickly."
+  },
+  {
+    "id": 3517,
+    "tr": "somutlaştırmak",
+    "en": "to specify",
+    "beispiel": "Können Sie Ihren Vorschlag bitte etwas konkretisieren?",
+    "beispielTr": "Önerinizi biraz somutlaştırabilir misiniz?",
+    "beispielEn": "Could you make your proposal a bit more specific?"
+  },
+  {
+    "id": 3519,
+    "tr": "başka sözcüklerle anlatmak",
+    "en": "to paraphrase",
+    "beispiel": "Der Student paraphrasierte die Textstelle in eigenen Worten.",
+    "beispielTr": "Öğrenci, o bölümü kendi sözcükleriyle anlattı.",
+    "beispielEn": "The student paraphrased the passage in his own words."
+  },
+  {
+    "id": 3521,
+    "tr": "dolayısıyla",
+    "en": "hence",
+    "beispiel": "Die Stichprobe war klein, mithin bleiben die Ergebnisse vorläufig.",
+    "beispielTr": "Örneklem küçüktü, dolayısıyla sonuçlar şimdilik geçici.",
+    "beispielEn": "The sample was small, hence the results remain preliminary."
+  },
+  {
+    "id": 3528,
+    "tr": "bunun sonucunda",
+    "en": "as a result",
+    "beispiel": "Der Zug hatte Verspätung, infolgedessen verpasste ich den Anschluss.",
+    "beispielTr": "Tren rötar yaptı, bunun sonucunda aktarmayı kaçırdım.",
+    "beispielEn": "The train was late, and as a result I missed my connection."
+  },
+  {
+    "id": 3532,
+    "tr": "sağlam temelli",
+    "en": "well-founded",
+    "beispiel": "Seine Einwände waren fundiert und gut belegt.",
+    "beispielTr": "İtirazları sağlam temelliydi ve iyi belgelenmişti.",
+    "beispielEn": "His objections were well-founded and well documented."
+  },
+  {
+    "id": 3533,
+    "tr": "ampirik",
+    "en": "empirical",
+    "beispiel": "Die Behauptung ist empirisch gut belegt.",
+    "beispielTr": "Bu iddia ampirik olarak iyi belgelenmiş.",
+    "beispielEn": "The claim is well supported by empirical evidence."
+  },
+  {
+    "id": 3534,
+    "tr": "varsayılan",
+    "en": "presumed",
+    "beispiel": "Der mutmaßliche Zusammenhang ließ sich nicht bestätigen.",
+    "beispielTr": "Varsayılan bağlantı doğrulanamadı.",
+    "beispielEn": "The presumed connection could not be confirmed."
+  },
+  {
+    "id": 3540,
+    "tr": "zamanaşımı",
+    "en": "limitation period",
+    "beispiel": "Nach drei Jahren tritt die Verjährung ein.",
+    "beispielTr": "Üç yıl sonra zamanaşımı devreye girer.",
+    "beispielEn": "After three years the limitation period takes effect."
+  },
+  {
+    "id": 3548,
+    "tr": "suç unsuru",
+    "en": "criminal offense",
+    "beispiel": "Der Straftatbestand des Betrugs war eindeutig erfüllt.",
+    "beispielTr": "Dolandırıcılığın suç unsurları açıkça oluşmuştu.",
+    "beispielEn": "The criminal offense of fraud was clearly established."
+  },
+  {
+    "id": 3555,
+    "tr": "idari talimat",
+    "en": "administrative regulation",
+    "beispiel": "Die neue Verwaltungsvorschrift regelt die Bearbeitung der Anträge.",
+    "beispielTr": "Yeni idari talimat, başvuruların işlenmesini düzenliyor.",
+    "beispielEn": "The new administrative regulation governs how applications are processed."
+  },
+  {
+    "id": 3559,
+    "tr": "yetkilendirme",
+    "en": "authorization",
+    "beispiel": "Ohne ausdrückliche Ermächtigung darf er nichts unterschreiben.",
+    "beispielTr": "Açık bir yetkilendirme olmadan hiçbir şey imzalayamaz.",
+    "beispielEn": "Without explicit authorization he may not sign anything."
+  },
+  {
+    "id": 3560,
+    "tr": "kamu görevlisi",
+    "en": "public official",
+    "beispiel": "Als Amtsträger darf er keine Geschenke annehmen.",
+    "beispielTr": "Kamu görevlisi olarak hediye kabul edemez.",
+    "beispielEn": "As a public official he may not accept gifts."
+  },
+  {
+    "id": 3562,
+    "tr": "yetki dağılımı",
+    "en": "division of powers",
+    "beispiel": "Die Kompetenzverteilung zwischen Bund und Ländern sorgt für Streit.",
+    "beispielTr": "Federal devletle eyaletler arasındaki yetki dağılımı tartışma yaratıyor.",
+    "beispielEn": "The division of powers between federal and state governments causes disputes."
+  },
+  {
+    "id": 3563,
+    "tr": "idari işlem",
+    "en": "administrative act",
+    "beispiel": "Der Verwaltungsakt wurde fristgerecht angefochten.",
+    "beispielTr": "İdari işleme süresi içinde itiraz edildi.",
+    "beispielEn": "The administrative act was challenged within the deadline."
+  },
+  {
+    "id": 3565,
+    "tr": "vekâlet vermek",
+    "en": "to authorize",
+    "beispiel": "Sie bevollmächtigte ihren Sohn zum Verkauf des Hauses.",
+    "beispielTr": "Evi satması için oğluna vekâlet verdi.",
+    "beispielEn": "She authorized her son to sell the house."
+  },
+  {
+    "id": 3567,
+    "tr": "hak düşürücü süre",
+    "en": "cut-off period",
+    "beispiel": "Die Ausschlussfrist für den Antrag endet am Freitag.",
+    "beispielTr": "Başvuru için hak düşürücü süre cuma günü doluyor.",
+    "beispielEn": "The cut-off period for the application ends on Friday."
+  },
+  {
+    "id": 3570,
+    "tr": "itiraz yolları bildirimi",
+    "en": "notice of appeal rights",
+    "beispiel": "Dem Bescheid lag keine Rechtsbehelfsbelehrung bei.",
+    "beispielTr": "Karara itiraz yolları bildirimi eklenmemişti.",
+    "beispielEn": "The decision came without a notice of appeal rights."
+  },
+  {
+    "id": 3571,
+    "tr": "tebligat",
+    "en": "service of documents",
+    "beispiel": "Die Zustellung des Bescheids erfolgte per Einschreiben.",
+    "beispielTr": "Kararın tebligatı iadeli taahhütlü mektupla yapıldı.",
+    "beispielEn": "The decision was served by registered mail."
+  },
+  {
+    "id": 3575,
+    "tr": "dosya numarası",
+    "en": "file number",
+    "beispiel": "Bitte geben Sie bei Rückfragen das Aktenzeichen an.",
+    "beispielTr": "Sorularınızda lütfen dosya numarasını belirtin.",
+    "beispielEn": "Please quote the file number if you have questions."
+  },
+  {
+    "id": 3576,
+    "tr": "şekle bağlı olmayan",
+    "en": "informal",
+    "beispiel": "Ein formloser Antrag per E-Mail genügt völlig.",
+    "beispielTr": "E-posta ile şekle bağlı olmayan bir başvuru yeterli.",
+    "beispielEn": "An informal application by email is entirely sufficient."
+  },
+  {
+    "id": 3577,
+    "tr": "hukuken bağlayıcı",
+    "en": "legally binding",
+    "beispiel": "Erst die Unterschrift macht den Vertrag rechtsverbindlich.",
+    "beispielTr": "Sözleşmeyi hukuken bağlayıcı kılan şey imzadır.",
+    "beispielEn": "Only the signature makes the contract legally binding."
+  },
+  {
+    "id": 3578,
+    "tr": "devlet bütçesi",
+    "en": "national budget",
+    "beispiel": "Der Staatshaushalt wies letztes Jahr ein großes Defizit auf.",
+    "beispielTr": "Devlet bütçesi geçen yıl büyük bir açık verdi.",
+    "beispielEn": "The national budget showed a large deficit last year."
+  },
+  {
+    "id": 3580,
+    "tr": "sübvansiyon",
+    "en": "subsidy",
+    "beispiel": "Die Subventionen für die Landwirtschaft wurden gekürzt.",
+    "beispielTr": "Tarıma verilen sübvansiyonlar kısıldı.",
+    "beispielEn": "The subsidies for agriculture were cut."
+  },
+  {
+    "id": 3581,
+    "tr": "konjonktür politikası",
+    "en": "business cycle policy",
+    "beispiel": "Mit ihrer Konjunkturpolitik will die Regierung die Nachfrage stärken.",
+    "beispielTr": "Hükümet, konjonktür politikasıyla talebi güçlendirmek istiyor.",
+    "beispielEn": "With its business cycle policy the government wants to boost demand."
+  },
+  {
+    "id": 3582,
+    "tr": "para politikası",
+    "en": "monetary policy",
+    "beispiel": "Die Geldpolitik der Notenbank hält die Zinsen niedrig.",
+    "beispielTr": "Merkez bankasının para politikası faizleri düşük tutuyor.",
+    "beispielEn": "The central bank's monetary policy keeps interest rates low."
+  },
+  {
+    "id": 3583,
+    "tr": "politika faizi",
+    "en": "key interest rate",
+    "beispiel": "Die Notenbank erhöhte den Leitzins um einen halben Punkt.",
+    "beispielTr": "Merkez bankası politika faizini yarım puan artırdı.",
+    "beispielEn": "The central bank raised its key interest rate by half a point."
+  },
+  {
+    "id": 3584,
+    "tr": "kamu borcu",
+    "en": "national debt",
+    "beispiel": "Die Staatsverschuldung stieg im letzten Jahr deutlich an.",
+    "beispielTr": "Kamu borcu geçen yıl belirgin biçimde arttı.",
+    "beispielEn": "The national debt rose sharply last year."
+  },
+  {
+    "id": 3585,
+    "tr": "ekonomik büyüme",
+    "en": "economic growth",
+    "beispiel": "Das Wirtschaftswachstum hat sich im letzten Quartal verlangsamt.",
+    "beispielTr": "Ekonomik büyüme geçen çeyrekte yavaşladı.",
+    "beispielEn": "Economic growth slowed in the last quarter."
+  },
+  {
+    "id": 3586,
+    "tr": "deregülasyon",
+    "en": "deregulation",
+    "beispiel": "Die Deregulierung des Strommarktes brachte mehr Wettbewerb.",
+    "beispielTr": "Elektrik piyasasının deregülasyonu rekabeti artırdı.",
+    "beispielEn": "The deregulation of the electricity market brought more competition."
+  },
+  {
+    "id": 3587,
+    "tr": "piyasa ekonomisi",
+    "en": "market economy",
+    "beispiel": "Viele Länder Osteuropas führten damals die Marktwirtschaft ein.",
+    "beispielTr": "Doğu Avrupa ülkelerinin çoğu o dönemde piyasa ekonomisine geçti.",
+    "beispielEn": "Many Eastern European countries adopted a market economy back then."
+  },
+  {
+    "id": 3588,
+    "tr": "yapısal değişim",
+    "en": "structural change",
+    "beispiel": "Der Strukturwandel trifft die alten Industrieregionen besonders hart.",
+    "beispielTr": "Yapısal değişim eski sanayi bölgelerini özellikle sert vuruyor.",
+    "beispielEn": "Structural change hits the old industrial regions especially hard."
+  },
+  {
+    "id": 3589,
+    "tr": "satın alma gücü",
+    "en": "purchasing power",
+    "beispiel": "Die hohe Inflation frisst die Kaufkraft der Familien auf.",
+    "beispielTr": "Yüksek enflasyon ailelerin satın alma gücünü eritiyor.",
+    "beispielEn": "High inflation is eating up families' purchasing power."
+  },
+  {
+    "id": 3590,
+    "tr": "gayri safi yurtiçi hasıla",
+    "en": "gross domestic product",
+    "beispiel": "Das Bruttoinlandsprodukt wuchs im letzten Jahr um zwei Prozent.",
+    "beispielTr": "Gayri safi yurtiçi hasıla geçen yıl yüzde iki büyüdü.",
+    "beispielEn": "Gross domestic product grew by two percent last year."
+  },
+  {
+    "id": 3591,
+    "tr": "mali",
+    "en": "fiscal",
+    "beispiel": "Aus fiskalischer Sicht war die Reform ein Erfolg.",
+    "beispielTr": "Mali açıdan bakıldığında reform bir başarıydı.",
+    "beispielEn": "From a fiscal perspective the reform was a success."
+  },
+  {
+    "id": 3592,
+    "tr": "konjonktürel",
+    "en": "cyclical",
+    "beispiel": "Der Auftragsrückgang ist rein konjunkturell bedingt.",
+    "beispielTr": "Siparişlerdeki düşüş tamamen konjonktürel nedenlerden kaynaklanıyor.",
+    "beispielEn": "The drop in orders is purely cyclical."
+  },
+  {
+    "id": 3598,
+    "tr": "mütevelli heyeti",
+    "en": "board of trustees",
+    "beispiel": "Das Kuratorium entscheidet über die Vergabe der Stipendien.",
+    "beispielTr": "Mütevelli heyeti, bursların dağıtımına karar veriyor.",
+    "beispielEn": "The board of trustees decides how the scholarships are awarded."
+  },
+  {
+    "id": 3599,
+    "tr": "tüzel kişilik",
+    "en": "corporate body",
+    "beispiel": "Die Universität ist eine Körperschaft des öffentlichen Rechts.",
+    "beispielTr": "Üniversite, kamu hukuku tüzel kişiliğidir.",
+    "beispielEn": "The university is a corporate body under public law."
+  },
+  {
+    "id": 3601,
+    "tr": "görevdeki kişi",
+    "en": "incumbent",
+    "beispiel": "Der Amtsinhaber tritt bei der Wahl erneut an.",
+    "beispielTr": "Görevdeki kişi seçimde yeniden aday oluyor.",
+    "beispielEn": "The incumbent is running again in the election."
+  },
+  {
+    "id": 3602,
+    "tr": "özyönetim",
+    "en": "self-government",
+    "beispiel": "Die Gemeinden wehren sich gegen Eingriffe in ihre Selbstverwaltung.",
+    "beispielTr": "Belediyeler özyönetimlerine yapılan müdahalelere karşı çıkıyor.",
+    "beispielEn": "The municipalities are resisting interference in their self-government."
+  },
+  {
+    "id": 3606,
+    "tr": "öğreti",
+    "en": "doctrine",
+    "beispiel": "Er hält bis heute an dieser politischen Doktrin fest.",
+    "beispielTr": "Bugün hâlâ bu siyasi öğretiye bağlı kalıyor.",
+    "beispielEn": "He still clings to this political doctrine today."
+  },
+  {
+    "id": 3608,
+    "tr": "avangart",
+    "en": "avant-garde",
+    "beispiel": "Die Avantgarde brach damals mit allen ästhetischen Regeln.",
+    "beispielTr": "Avangart, o dönemde bütün estetik kuralları yıktı.",
+    "beispielEn": "The avant-garde broke with every aesthetic rule back then."
+  },
+  {
+    "id": 3609,
+    "tr": "kanon",
+    "en": "canon",
+    "beispiel": "Frauen fehlen bis heute im literarischen Kanon.",
+    "beispielTr": "Kadınlar bugün hâlâ edebi kanonda yer almıyor.",
+    "beispielEn": "Women are still missing from the literary canon."
+  },
+  {
+    "id": 3610,
+    "tr": "eleştiri yazısı",
+    "en": "review",
+    "beispiel": "Die Rezension in der Zeitung hat dem Roman geschadet.",
+    "beispielTr": "Gazetedeki eleştiri yazısı romana zarar verdi.",
+    "beispielEn": "The review in the newspaper hurt the novel."
+  },
+  {
+    "id": 3611,
+    "tr": "deneme yazarı",
+    "en": "essayist",
+    "beispiel": "Als Essayist schreibt er über Politik und Kunst.",
+    "beispielTr": "Deneme yazarı olarak siyaset ve sanat üzerine yazıyor.",
+    "beispielEn": "As an essayist he writes about politics and art."
+  },
+  {
+    "id": 3616,
+    "tr": "uzun öykü",
+    "en": "novella",
+    "beispiel": "Die Novelle erzählt die Geschichte einer unglücklichen Ehe.",
+    "beispielTr": "Uzun öykü, mutsuz bir evliliğin hikâyesini anlatıyor.",
+    "beispielEn": "The novella tells the story of an unhappy marriage."
+  },
+  {
+    "id": 3617,
+    "tr": "anlatı bakış açısı",
+    "en": "narrative perspective",
+    "beispiel": "Die Erzählperspektive wechselt in jedem Kapitel.",
+    "beispielTr": "Anlatı bakış açısı her bölümde değişiyor.",
+    "beispielEn": "The narrative perspective changes in every chapter."
+  }
+]

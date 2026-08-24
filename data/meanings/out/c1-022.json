@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6303,
+    "tr": "ayakta kalmak",
+    "en": "to outlast",
+    "beispiel": "Nur wenige Handschriften haben die Jahrhunderte überdauert.",
+    "beispielTr": "Yüzyıllar boyunca yalnızca birkaç el yazması ayakta kalabildi.",
+    "beispielEn": "Only a few manuscripts have outlasted the centuries."
+  },
+  {
+    "id": 6304,
+    "tr": "silikleşmek",
+    "en": "to fade",
+    "beispiel": "Die Tinte auf dem Brief ist mit der Zeit verblasst.",
+    "beispielTr": "Mektubun üzerindeki mürekkep zamanla silikleşti.",
+    "beispielEn": "The ink on the letter has faded over time."
+  },
+  {
+    "id": 6305,
+    "tr": "kaldığı yerden sürdürmek",
+    "en": "to build on",
+    "beispiel": "Der neue Trainer knüpft an die Erfolge seines Vorgängers an.",
+    "beispielTr": "Yeni antrenör, selefinin başarılarını kaldığı yerden sürdürüyor.",
+    "beispielEn": "The new coach builds on his predecessor's successes."
+  },
+  {
+    "id": 6306,
+    "tr": "yeniden yorumlamak",
+    "en": "to reinterpret",
+    "beispiel": "Der Redner deutete die Niederlage in einen Erfolg um.",
+    "beispielTr": "Konuşmacı yenilgiyi bir başarı olarak yeniden yorumladı.",
+    "beispielEn": "The speaker reinterpreted the defeat as a success."
+  },
+  {
+    "id": 6307,
+    "tr": "belgelenmiş",
+    "en": "documented",
+    "beispiel": "Der genaue Todestag des Dichters ist historisch verbürgt.",
+    "beispielTr": "Şairin tam ölüm günü tarihsel olarak belgelenmiştir.",
+    "beispielEn": "The poet's exact date of death is historically documented."
+  },
+  {
+    "id": 6308,
+    "tr": "sonuçları ağır",
+    "en": "consequential",
+    "beispiel": "Der Rücktritt des Ministers war folgenreicher als erwartet.",
+    "beispielTr": "Bakanın istifasının sonuçları beklenenden ağır oldu.",
+    "beispielEn": "The minister's resignation was more consequential than expected."
+  },
+  {
+    "id": 6309,
+    "tr": "geriye dönüp bakıldığında",
+    "en": "in retrospect",
+    "beispiel": "Rückblickend war der Umzug die beste Entscheidung.",
+    "beispielTr": "Geriye dönüp bakıldığında taşınmak en doğru karardı.",
+    "beispielEn": "In retrospect, moving was the best decision."
+  },
+  {
+    "id": 6310,
+    "tr": "ikircikli",
+    "en": "ambivalent",
+    "beispiel": "Ihre Gefühle nach dem Wiedersehen waren sehr zwiespältig.",
+    "beispielTr": "Kavuşmanın ardından duyguları çok ikircikliydi.",
+    "beispielEn": "Her feelings after the reunion were very ambivalent."
+  },
+  {
+    "id": 6311,
+    "tr": "acımasız",
+    "en": "unsparing",
+    "beispiel": "Der Bericht benennt die Versäumnisse der Behörden schonungslos.",
+    "beispielTr": "Rapor, kurumların ihmallerini acımasızca ortaya koyuyor.",
+    "beispielEn": "The report names the authorities' failures unsparingly."
+  },
+  {
+    "id": 6312,
+    "tr": "dünya ticareti",
+    "en": "world trade",
+    "beispiel": "Die Blockade der Meerenge bremst den Welthandel spürbar.",
+    "beispielTr": "Boğaz ablukası dünya ticaretini belirgin biçimde yavaşlatıyor.",
+    "beispielEn": "The blockade of the strait is noticeably slowing world trade."
+  },
+  {
+    "id": 6313,
+    "tr": "yoksullukla mücadele",
+    "en": "poverty reduction",
+    "beispiel": "Das Ministerium kürzt die Mittel für die Armutsbekämpfung.",
+    "beispielTr": "Bakanlık yoksullukla mücadeleye ayrılan kaynakları kısıyor.",
+    "beispielEn": "The ministry is cutting funds for poverty reduction."
+  },
+  {
+    "id": 6314,
+    "tr": "yükselen ekonomi",
+    "en": "emerging economy",
+    "beispiel": "Indien gilt längst nicht mehr als Schwellenland.",
+    "beispielTr": "Hindistan çoktandır yükselen ekonomi sayılmıyor.",
+    "beispielEn": "India has long since ceased to be an emerging economy."
+  },
+  {
+    "id": 6315,
+    "tr": "gelişmekte olan ülke",
+    "en": "developing country",
+    "beispiel": "Der Impfstoff erreicht die Entwicklungsländer erst Monate später.",
+    "beispielTr": "Aşı, gelişmekte olan ülkelere ancak aylar sonra ulaşıyor.",
+    "beispielEn": "The vaccine reaches developing countries only months later."
+  },
+  {
+    "id": 6316,
+    "tr": "korumacılık",
+    "en": "protectionism",
+    "beispiel": "Die neuen Strafzölle sind purer Protektionismus.",
+    "beispielTr": "Yeni cezai gümrük vergileri düpedüz korumacılık.",
+    "beispielEn": "The new punitive tariffs are pure protectionism."
+  },
+  {
+    "id": 6317,
+    "tr": "gümrük engeli",
+    "en": "tariff barrier",
+    "beispiel": "Die Zollschranken fallen erst nach langen Verhandlungen.",
+    "beispielTr": "Gümrük engelleri ancak uzun görüşmelerden sonra kalkıyor.",
+    "beispielEn": "The tariff barriers fall only after long negotiations."
+  },
+  {
+    "id": 6318,
+    "tr": "çocuk işçiliği",
+    "en": "child labor",
+    "beispiel": "In den Steinbrüchen ist Kinderarbeit noch immer üblich.",
+    "beispielTr": "Taş ocaklarında çocuk işçiliği hâlâ yaygın.",
+    "beispielEn": "Child labor is still common in the quarries."
+  },
+  {
+    "id": 6319,
+    "tr": "özen yükümlülüğü",
+    "en": "duty of care",
+    "beispiel": "Der Konzern hat seine Sorgfaltspflicht grob verletzt.",
+    "beispielTr": "Şirket özen yükümlülüğünü ağır biçimde ihlal etti.",
+    "beispielEn": "The corporation grossly violated its duty of care."
+  },
+  {
+    "id": 6320,
+    "tr": "kaynak tüketimi",
+    "en": "resource consumption",
+    "beispiel": "Das Rechenzentrum senkt seinen Ressourcenverbrauch deutlich.",
+    "beispielTr": "Veri merkezi kaynak tüketimini belirgin biçimde azaltıyor.",
+    "beispielEn": "The data center is significantly cutting its resource consumption."
+  },
+  {
+    "id": 6321,
+    "tr": "borç affı",
+    "en": "debt relief",
+    "beispiel": "Die Gläubiger stimmten einem teilweisen Schuldenerlass zu.",
+    "beispielTr": "Alacaklılar kısmi bir borç affına onay verdi.",
+    "beispielEn": "The creditors agreed to partial debt relief."
+  },
+  {
+    "id": 6322,
+    "tr": "doğrudan yatırım",
+    "en": "direct investment",
+    "beispiel": "Chinesische Direktinvestitionen fließen vor allem in Häfen.",
+    "beispielTr": "Çin'in doğrudan yatırımları özellikle limanlara akıyor.",
+    "beispielEn": "Chinese direct investment flows mainly into ports."
+  },
+  {
+    "id": 6323,
+    "tr": "dünya düzeni",
+    "en": "world order",
+    "beispiel": "Nach dem Krieg entstand eine neue Weltordnung.",
+    "beispielTr": "Savaştan sonra yeni bir dünya düzeni doğdu.",
+    "beispielEn": "A new world order emerged after the war."
+  },
+  {
+    "id": 6324,
+    "tr": "rekabet gücü",
+    "en": "competitiveness",
+    "beispiel": "Die hohen Energiepreise schwächen die Wettbewerbsfähigkeit der Industrie.",
+    "beispielTr": "Yüksek enerji fiyatları sanayinin rekabet gücünü zayıflatıyor.",
+    "beispielEn": "High energy prices weaken the industry's competitiveness."
+  },
+  {
+    "id": 6325,
+    "tr": "ticaret açığı",
+    "en": "trade deficit",
+    "beispiel": "Das Handelsdefizit ist im letzten Quartal weiter gewachsen.",
+    "beispielTr": "Ticaret açığı geçen çeyrekte daha da büyüdü.",
+    "beispielEn": "The trade deficit grew further in the last quarter."
+  },
+  {
+    "id": 6326,
+    "tr": "iç pazar",
+    "en": "domestic market",
+    "beispiel": "Die Firma verkauft fast alles auf dem Binnenmarkt.",
+    "beispielTr": "Şirket neredeyse her şeyi iç pazarda satıyor.",
+    "beispielEn": "The company sells almost everything on the domestic market."
+  },
+  {
+    "id": 6327,
+    "tr": "göç hareketi",
+    "en": "migration flow",
+    "beispiel": "Der Bürgerkrieg löste gewaltige Migrationsbewegungen aus.",
+    "beispielTr": "İç savaş çok büyük göç hareketlerine yol açtı.",
+    "beispielEn": "The civil war triggered enormous migration flows."
+  },
+  {
+    "id": 6328,
+    "tr": "kentleşme",
+    "en": "urbanization",
+    "beispiel": "Die rasante Urbanisierung überfordert die Wasserwerke der Stadt.",
+    "beispielTr": "Hızlı kentleşme kentin su şebekesini zorluyor.",
+    "beispielEn": "Rapid urbanization is overwhelming the city's water system."
+  },
+  {
+    "id": 6329,
+    "tr": "kıtlık",
+    "en": "famine",
+    "beispiel": "In der Region droht nach der Dürre eine Hungersnot.",
+    "beispielTr": "Kuraklığın ardından bölgede kıtlık tehlikesi var.",
+    "beispielEn": "A famine threatens the region after the drought."
+  },
+  {
+    "id": 6330,
+    "tr": "teknoloji aktarımı",
+    "en": "technology transfer",
+    "beispiel": "Der Vertrag sieht einen Technologietransfer nach Vietnam vor.",
+    "beispielTr": "Sözleşme Vietnam'a teknoloji aktarımı öngörüyor.",
+    "beispielEn": "The contract provides for a technology transfer to Vietnam."
+  },
+  {
+    "id": 6331,
+    "tr": "karşılıklı bağımlılık",
+    "en": "interdependence",
+    "beispiel": "Die Lieferkrise zeigte die Interdependenz beider Volkswirtschaften.",
+    "beispielTr": "Tedarik krizi iki ekonominin karşılıklı bağımlılığını gösterdi.",
+    "beispielEn": "The supply crisis showed the interdependence of both economies."
+  },
+  {
+    "id": 6332,
+    "tr": "kalite etiketi",
+    "en": "quality seal",
+    "beispiel": "Auf der Packung klebt ein Gütesiegel für fairen Handel.",
+    "beispielTr": "Ambalajın üzerinde adil ticaret kalite etiketi var.",
+    "beispielEn": "A fair trade quality seal is stuck on the package."
+  },
+  {
+    "id": 6333,
+    "tr": "kalkınma işbirliği",
+    "en": "development cooperation",
+    "beispiel": "Die Entwicklungszusammenarbeit mit Kenia läuft seit dreißig Jahren.",
+    "beispielTr": "Kenya ile kalkınma işbirliği otuz yıldır sürüyor.",
+    "beispielEn": "Development cooperation with Kenya has been running for thirty years."
+  },
+  {
+    "id": 6334,
+    "tr": "sivil toplum kuruluşu",
+    "en": "nongovernmental organization",
+    "beispiel": "Eine Nichtregierungsorganisation betreut das Lager an der Grenze.",
+    "beispielTr": "Sınırdaki kampa bir sivil toplum kuruluşu bakıyor.",
+    "beispielEn": "A nongovernmental organization runs the camp at the border."
+  },
+  {
+    "id": 6335,
+    "tr": "göçe zorlayan neden",
+    "en": "cause of displacement",
+    "beispiel": "Die Ministerin will die Fluchtursachen vor Ort bekämpfen.",
+    "beispielTr": "Bakan, göçe zorlayan nedenlerle yerinde mücadele etmek istiyor.",
+    "beispielEn": "The minister wants to tackle the causes of displacement on site."
+  },
+  {
+    "id": 6336,
+    "tr": "refah uçurumu",
+    "en": "wealth gap",
+    "beispiel": "Zwischen Nord und Süd wächst das Wohlstandsgefälle weiter.",
+    "beispielTr": "Kuzeyle güney arasındaki refah uçurumu büyümeyi sürdürüyor.",
+    "beispielEn": "The wealth gap between north and south keeps growing."
+  },
+  {
+    "id": 6337,
+    "tr": "toprak gaspı",
+    "en": "land grabbing",
+    "beispiel": "Die Bauern wehren sich gegen den Landraub der Konzerne.",
+    "beispielTr": "Köylüler şirketlerin toprak gaspına karşı direniyor.",
+    "beispielEn": "The farmers are resisting the corporations' land grabbing."
+  },
+  {
+    "id": 6338,
+    "tr": "vergi cenneti",
+    "en": "tax haven",
+    "beispiel": "Die Reederei verbucht ihre Gewinne in einer Steueroase.",
+    "beispielTr": "Denizcilik şirketi kârlarını bir vergi cennetinde kaydediyor.",
+    "beispielEn": "The shipping company books its profits in a tax haven."
+  },
+  {
+    "id": 6339,
+    "tr": "kâr kaydırma",
+    "en": "profit shifting",
+    "beispiel": "Die Prüfer stießen auf eine systematische Gewinnverlagerung.",
+    "beispielTr": "Denetçiler sistemli bir kâr kaydırmayla karşılaştı.",
+    "beispielEn": "The auditors came across systematic profit shifting."
+  },
+  {
+    "id": 6340,
+    "tr": "sermaye kaçışı",
+    "en": "capital flight",
+    "beispiel": "Nach der Wahl setzte eine massive Kapitalflucht ein.",
+    "beispielTr": "Seçimden sonra büyük bir sermaye kaçışı başladı.",
+    "beispielEn": "A massive capital flight set in after the election."
+  },
+  {
+    "id": 6341,
+    "tr": "uyumlaştırmak",
+    "en": "to align",
+    "beispiel": "Die EU will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
+    "beispielTr": "AB, üyelerinin sosyal standartlarını adım adım uyumlaştırmak istiyor.",
+    "beispielEn": "The EU wants to align its members' social standards step by step."
+  },
+  {
+    "id": 6342,
+    "tr": "boykot etmek",
+    "en": "to boycott",
+    "beispiel": "Mehrere Staaten boykottieren die Konferenz aus politischen Gründen.",
+    "beispielTr": "Birkaç devlet konferansı siyasi nedenlerle boykot ediyor.",
+    "beispielEn": "Several states are boycotting the conference for political reasons."
+  },
+  {
+    "id": 6343,
+    "tr": "yaptırım uygulamak",
+    "en": "to sanction",
+    "beispiel": "Verstöße gegen die Auflagen werden bisher kaum sanktioniert.",
+    "beispielTr": "Şartların ihlaline şimdiye dek neredeyse hiç yaptırım uygulanmıyor.",
+    "beispielEn": "Violations of the conditions have hardly been sanctioned so far."
+  },
+  {
+    "id": 6344,
+    "tr": "özelleştirmek",
+    "en": "to privatize",
+    "beispiel": "Die Stadt hat ihre Wasserversorgung privatisiert.",
+    "beispielTr": "Kent, su dağıtımını özelleştirdi.",
+    "beispielEn": "The city has privatized its water supply."
+  },
+  {
+    "id": 6345,
+    "tr": "devletleştirmek",
+    "en": "to nationalize",
+    "beispiel": "Die Regierung drohte, die Ölförderung zu verstaatlichen.",
+    "beispielTr": "Hükümet petrol üretimini devletleştirmekle tehdit etti.",
+    "beispielEn": "The government threatened to nationalize oil production."
+  },
+  {
+    "id": 6346,
+    "tr": "yararına olmak",
+    "en": "to benefit",
+    "beispiel": "Das Wachstum kam bislang nur einer schmalen Oberschicht zugute.",
+    "beispielTr": "Büyüme şimdiye dek yalnızca dar bir üst tabakanın yararına oldu.",
+    "beispielEn": "So far the growth has only benefited a narrow upper class."
+  },
+  {
+    "id": 6347,
+    "tr": "sınır ötesi",
+    "en": "cross-border",
+    "beispiel": "Die Polizei ermittelt grenzüberschreitend gegen die Bande.",
+    "beispielTr": "Polis çeteye karşı sınır ötesi soruşturma yürütüyor.",
+    "beispielEn": "The police are investigating the gang across borders."
+  },
+  {
+    "id": 6348,
+    "tr": "ikili",
+    "en": "bilateral",
+    "beispiel": "Die beiden Länder regeln den Fischfang bilateral.",
+    "beispielTr": "İki ülke balıkçılığı ikili olarak düzenliyor.",
+    "beispielEn": "The two countries regulate fishing bilaterally."
+  },
+  {
+    "id": 6349,
+    "tr": "eşitsiz",
+    "en": "unequal",
+    "beispiel": "Die Lasten des Klimawandels sind extrem ungleich verteilt.",
+    "beispielTr": "İklim değişikliğinin yükleri son derece eşitsiz dağılmış.",
+    "beispielEn": "The burdens of climate change are extremely unequally distributed."
+  },
+  {
+    "id": 6350,
+    "tr": "kamu yararına",
+    "en": "nonprofit",
+    "beispiel": "Der Verein ist als gemeinnützig anerkannt.",
+    "beispielTr": "Dernek kamu yararına dernek olarak tanınıyor.",
+    "beispielEn": "The association is recognized as nonprofit."
+  },
+  {
+    "id": 6351,
+    "tr": "lehine",
+    "en": "in favor of",
+    "beispiel": "Die Regeln wurden zugunsten der Exporteure geändert.",
+    "beispielTr": "Kurallar ihracatçıların lehine değiştirildi.",
+    "beispielEn": "The rules were changed in favor of the exporters."
+  },
+  {
+    "id": 6352,
+    "tr": "hukukun üstünlüğü",
+    "en": "rule of law",
+    "beispiel": "Die Reform stellt die Rechtsstaatlichkeit des Verfahrens infrage.",
+    "beispielTr": "Reform, sürecin hukukun üstünlüğünü tartışmaya açıyor.",
+    "beispielEn": "The reform casts doubt on the rule of law in the procedure."
+  }
+]

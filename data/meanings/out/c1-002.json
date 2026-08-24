@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3478,
+    "tr": "yorum",
+    "en": "interpretation",
+    "beispiel": "Die Daten lassen mehrere Interpretationen zu.",
+    "beispielTr": "Veriler birden fazla yoruma açık.",
+    "beispielEn": "The data allow several interpretations."
+  },
+  {
+    "id": 3893,
+    "tr": "müzakere etmek",
+    "en": "to negotiate",
+    "beispiel": "Die Gewerkschaft hat bessere Konditionen ausgehandelt.",
+    "beispielTr": "Sendika daha iyi koşulları müzakereyle elde etti.",
+    "beispielEn": "The union negotiated better terms."
+  },
+  {
+    "id": 4014,
+    "tr": "önyargılı",
+    "en": "biased",
+    "beispiel": "Der Algorithmus erwies sich als überraschend voreingenommen.",
+    "beispielTr": "Algoritmanın şaşırtıcı biçimde önyargılı olduğu ortaya çıktı.",
+    "beispielEn": "The algorithm turned out to be surprisingly biased."
+  },
+  {
+    "id": 3569,
+    "tr": "şablon",
+    "en": "template",
+    "beispiel": "Für den Antrag gibt es eine fertige Vorlage.",
+    "beispielTr": "Başvuru için hazır bir şablon var.",
+    "beispielEn": "There is a ready-made template for the application."
+  },
+  {
+    "id": 3647,
+    "tr": "yorumlamak",
+    "en": "to interpret",
+    "beispiel": "Kritiker interpretieren das Ende des Romans völlig unterschiedlich.",
+    "beispielTr": "Eleştirmenler romanın sonunu bambaşka biçimde yorumluyor.",
+    "beispielEn": "Critics interpret the ending of the novel completely differently."
+  },
+  {
+    "id": 4043,
+    "tr": "giderek",
+    "en": "increasingly",
+    "beispiel": "Sie fühlt sich in ihrer neuen Rolle zunehmend sicher.",
+    "beispielTr": "Yeni rolünde giderek daha rahat hissediyor.",
+    "beispielEn": "She feels increasingly confident in her new role."
+  },
+  {
+    "id": 4031,
+    "tr": "birleşmek",
+    "en": "to merge",
+    "beispiel": "Die beiden Firmen verschmolzen zu einem einzigen Konzern.",
+    "beispielTr": "İki şirket tek bir holding çatısı altında birleşti.",
+    "beispielEn": "The two companies merged into a single group."
+  },
+  {
+    "id": 3690,
+    "tr": "olumsuz etkilemek",
+    "en": "to impair",
+    "beispiel": "Lärm kann die Konzentration erheblich beeinträchtigen.",
+    "beispielTr": "Gürültü konsantrasyonu ciddi biçimde olumsuz etkileyebilir.",
+    "beispielEn": "Noise can seriously impair concentration."
+  },
+  {
+    "id": 3552,
+    "tr": "resmi daire",
+    "en": "government office",
+    "beispiel": "Die zuständige Dienststelle bearbeitet Anträge innerhalb von sechs Wochen.",
+    "beispielTr": "Yetkili daire başvuruları altı hafta içinde işleme alıyor.",
+    "beispielEn": "The responsible office processes applications within six weeks."
+  },
+  {
+    "id": 3516,
+    "tr": "daraltmak",
+    "en": "to narrow down",
+    "beispiel": "Die Polizei konnte den Täterkreis deutlich eingrenzen.",
+    "beispielTr": "Polis şüpheli çemberini belirgin biçimde daralttı.",
+    "beispielEn": "The police were able to narrow down the suspects considerably."
+  },
+  {
+    "id": 4015,
+    "tr": "bölünmüş",
+    "en": "divided",
+    "beispiel": "Die Belegschaft ist über den Streik tief gespalten.",
+    "beispielTr": "Çalışanlar grev konusunda derinden bölünmüş durumda.",
+    "beispielEn": "The workforce is deeply divided over the strike."
+  },
+  {
+    "id": 3618,
+    "tr": "gönderme",
+    "en": "allusion",
+    "beispiel": "Der Film steckt voller Anspielungen auf alte Western.",
+    "beispielTr": "Film, eski westernlere göndermelerle dolu.",
+    "beispielEn": "The film is full of allusions to old Westerns."
+  },
+  {
+    "id": 3504,
+    "tr": "çürütmek",
+    "en": "to refute",
+    "beispiel": "Die neuen Daten widerlegen die ursprüngliche Hypothese.",
+    "beispielTr": "Yeni veriler ilk hipotezi çürütüyor.",
+    "beispielEn": "The new data refute the original hypothesis."
+  },
+  {
+    "id": 4013,
+    "tr": "dar görüşlü",
+    "en": "short-sighted",
+    "beispiel": "Den Wald abzuholzen war eine kurzsichtige Entscheidung.",
+    "beispielTr": "Ormanı kesmek dar görüşlü bir karardı.",
+    "beispielEn": "Cutting down the forest was a short-sighted decision."
+  },
+  {
+    "id": 3727,
+    "tr": "aceleci",
+    "en": "hasty",
+    "beispiel": "Sein Urteil über den Neuen war vorschnell.",
+    "beispielTr": "Yeni gelen hakkındaki yargısı aceleciydi.",
+    "beispielEn": "His judgment about the new guy was hasty."
+  },
+  {
+    "id": 3721,
+    "tr": "aydınlatıcı",
+    "en": "revealing",
+    "beispiel": "Das Gespräch mit dem Zeugen war äußerst aufschlussreich.",
+    "beispielTr": "Tanıkla yapılan görüşme son derece aydınlatıcıydı.",
+    "beispielEn": "The conversation with the witness was extremely revealing."
+  },
+  {
+    "id": 4022,
+    "tr": "önlemek",
+    "en": "to prevent",
+    "beispiel": "Der Lehrer unterbindet jedes Gespräch während der Prüfung.",
+    "beispielTr": "Öğretmen sınav boyunca her türlü konuşmayı önlüyor.",
+    "beispielEn": "The teacher prevents any talking during the exam."
+  },
+  {
+    "id": 3470,
+    "tr": "itiraz",
+    "en": "objection",
+    "beispiel": "Gegen den Plan gab es nur einen Einwand.",
+    "beispielTr": "Plana karşı yalnızca bir itiraz geldi.",
+    "beispielEn": "There was only one objection to the plan."
+  },
+  {
+    "id": 3558,
+    "tr": "takdir yetkisi",
+    "en": "discretion",
+    "beispiel": "Die Entscheidung liegt im Ermessen des Richters.",
+    "beispielTr": "Karar, hâkimin takdir yetkisinde.",
+    "beispielEn": "The decision is at the judge's discretion."
+  },
+  {
+    "id": 4018,
+    "tr": "uygulamak",
+    "en": "to carry out",
+    "beispiel": "Die Strafe wurde erst nach zwei Jahren vollzogen.",
+    "beispielTr": "Ceza ancak iki yıl sonra uygulandı.",
+    "beispielEn": "The sentence was not carried out until two years later."
+  },
+  {
+    "id": 3529,
+    "tr": "buna rağmen",
+    "en": "nevertheless",
+    "beispiel": "Es regnete stark, nichtsdestotrotz gingen wir spazieren.",
+    "beispielTr": "Şiddetli yağmur yağıyordu, buna rağmen yürüyüşe çıktık.",
+    "beispielEn": "It was raining hard, but we nevertheless went for a walk."
+  },
+  {
+    "id": 3554,
+    "tr": "yönetmelik",
+    "en": "regulation",
+    "beispiel": "Die neue Verordnung tritt zum Jahresbeginn in Kraft.",
+    "beispielTr": "Yeni yönetmelik yıl başında yürürlüğe giriyor.",
+    "beispielEn": "The new regulation takes effect at the start of the year."
+  },
+  {
+    "id": 3500,
+    "tr": "ele almak",
+    "en": "to discuss",
+    "beispiel": "Die Autoren erörtern das Problem aus verschiedenen Blickwinkeln.",
+    "beispielTr": "Yazarlar sorunu farklı açılardan ele alıyor.",
+    "beispielEn": "The authors discuss the problem from various angles."
+  },
+  {
+    "id": 3564,
+    "tr": "emretmek",
+    "en": "to order",
+    "beispiel": "Das Ministerium ordnete eine sofortige Überprüfung an.",
+    "beispielTr": "Bakanlık derhal bir inceleme yapılmasını emretti.",
+    "beispielEn": "The ministry ordered an immediate investigation."
+  },
+  {
+    "id": 3655,
+    "tr": "sahneye koymak",
+    "en": "to stage",
+    "beispiel": "Der Regisseur inszeniert Hamlet in einer Fabrikhalle.",
+    "beispielTr": "Yönetmen, Hamlet'i bir fabrika salonunda sahneye koyuyor.",
+    "beispielEn": "The director is staging Hamlet in a factory hall."
+  },
+  {
+    "id": 3902,
+    "tr": "güvence",
+    "en": "safeguard",
+    "beispiel": "Zur Absicherung schloss die Familie eine Versicherung ab.",
+    "beispielTr": "Aile, güvence için bir sigorta yaptırdı.",
+    "beispielEn": "The family took out insurance as a safeguard."
+  },
+  {
+    "id": 3553,
+    "tr": "kararname",
+    "en": "decree",
+    "beispiel": "Der Erlass regelt die Vergabe öffentlicher Aufträge.",
+    "beispielTr": "Kararname, kamu ihalelerinin verilmesini düzenliyor.",
+    "beispielEn": "The decree governs the awarding of public contracts."
+  },
+  {
+    "id": 3917,
+    "tr": "telafi etmek",
+    "en": "to compensate",
+    "beispiel": "Mit Sport kompensiert er den Stress im Büro.",
+    "beispielTr": "Ofisteki stresi sporla telafi ediyor.",
+    "beispielEn": "He compensates for the stress at the office with sports."
+  },
+  {
+    "id": 3531,
+    "tr": "akla yatkın",
+    "en": "plausible",
+    "beispiel": "Seine Erklärung für die Verspätung klingt plausibel.",
+    "beispielTr": "Gecikme için verdiği açıklama akla yatkın geliyor.",
+    "beispielEn": "His explanation for the delay sounds plausible."
+  },
+  {
+    "id": 3566,
+    "tr": "dilekçe",
+    "en": "petition",
+    "beispiel": "Sie reichte ein Gesuch um Fristverlängerung ein.",
+    "beispielTr": "Süre uzatımı için bir dilekçe verdi.",
+    "beispielEn": "She submitted a petition for an extension of the deadline."
+  },
+  {
+    "id": 3561,
+    "tr": "idari denetim",
+    "en": "official oversight",
+    "beispiel": "Die Dienstaufsicht prüfte das Verhalten des Beamten.",
+    "beispielTr": "İdari denetim, memurun davranışını inceledi.",
+    "beispielEn": "The supervisory body examined the official's conduct."
+  },
+  {
+    "id": 3604,
+    "tr": "dönem",
+    "en": "era",
+    "beispiel": "Das Museum zeigt Möbel aus einer vergessenen Epoche.",
+    "beispielTr": "Müze, unutulmuş bir döneme ait mobilyalar sergiliyor.",
+    "beispielEn": "The museum shows furniture from a forgotten era."
+  },
+  {
+    "id": 3704,
+    "tr": "çıkmaz",
+    "en": "predicament",
+    "beispiel": "Zwischen Job und Familie steckt er in einer Zwickmühle.",
+    "beispielTr": "İşiyle ailesi arasında bir çıkmazda kaldı.",
+    "beispielEn": "He is caught in a predicament between job and family."
+  },
+  {
+    "id": 3607,
+    "tr": "manifesto",
+    "en": "manifesto",
+    "beispiel": "Die Band veröffentlichte ein Manifest gegen den Krieg.",
+    "beispielTr": "Grup, savaşa karşı bir manifesto yayımladı.",
+    "beispielEn": "The band published a manifesto against the war."
+  },
+  {
+    "id": 3686,
+    "tr": "ertelemek",
+    "en": "to adjourn",
+    "beispiel": "Die Sitzung wurde auf nächste Woche vertagt.",
+    "beispielTr": "Toplantı gelecek haftaya ertelendi.",
+    "beispielEn": "The meeting was adjourned until next week."
+  },
+  {
+    "id": 3518,
+    "tr": "sorgulamak",
+    "en": "to call into question",
+    "beispiel": "Kritiker zweifeln die Ergebnisse der Studie an.",
+    "beispielTr": "Eleştirmenler, çalışmanın sonuçlarını sorguluyor.",
+    "beispielEn": "Critics call the results of the study into question."
+  },
+  {
+    "id": 3698,
+    "tr": "yorumlamak",
+    "en": "to construe",
+    "beispiel": "Das Gericht legt den Vertrag anders aus.",
+    "beispielTr": "Mahkeme sözleşmeyi farklı yorumluyor.",
+    "beispielEn": "The court construes the contract differently."
+  },
+  {
+    "id": 3595,
+    "tr": "kurul",
+    "en": "committee",
+    "beispiel": "Ein unabhängiges Gremium prüft die erhobenen Vorwürfe.",
+    "beispielTr": "Bağımsız bir kurul, öne sürülen suçlamaları inceliyor.",
+    "beispielEn": "An independent committee is examining the allegations."
+  },
+  {
+    "id": 4046,
+    "tr": "etki",
+    "en": "impact",
+    "beispiel": "Der Klimawandel hat spürbare Auswirkungen auf die Region.",
+    "beispielTr": "İklim değişikliğinin bölge üzerinde hissedilir etkileri var.",
+    "beispielEn": "Climate change has a noticeable impact on the region."
+  },
+  {
+    "id": 3666,
+    "tr": "paradoksal",
+    "en": "paradoxical",
+    "beispiel": "Es klingt paradox, doch der Verlust machte ihn freier.",
+    "beispielTr": "Kulağa paradoksal geliyor ama kayıp onu özgürleştirdi.",
+    "beispielEn": "It sounds paradoxical, but the loss made him freer."
+  },
+  {
+    "id": 3542,
+    "tr": "sözleşme maddesi",
+    "en": "clause",
+    "beispiel": "Die Klausel im Mietvertrag wurde für unwirksam erklärt.",
+    "beispielTr": "Kira sözleşmesindeki madde geçersiz sayıldı.",
+    "beispielEn": "The clause in the lease was declared invalid."
+  },
+  {
+    "id": 3625,
+    "tr": "Rönesans",
+    "en": "Renaissance",
+    "beispiel": "Diese Kirche stammt aus der italienischen Renaissance.",
+    "beispielTr": "Bu kilise İtalyan Rönesansı'ndan kalma.",
+    "beispielEn": "This church dates from the Italian Renaissance."
+  },
+  {
+    "id": 3525,
+    "tr": "kimi zaman",
+    "en": "at times",
+    "beispiel": "Der Chef kann mitunter sehr ungeduldig sein.",
+    "beispielTr": "Patron kimi zaman çok sabırsız olabiliyor.",
+    "beispielEn": "The boss can be very impatient at times."
+  },
+  {
+    "id": 3522,
+    "tr": "bu bakımdan",
+    "en": "in that respect",
+    "beispiel": "Insofern hatte der Kritiker mit seinem Einwand recht.",
+    "beispielTr": "Bu bakımdan eleştirmen itirazında haklıydı.",
+    "beispielEn": "In that respect the critic was right with his objection."
+  },
+  {
+    "id": 3896,
+    "tr": "pazarlık etmek",
+    "en": "to haggle",
+    "beispiel": "Auf dem Markt feilschte er um jeden Euro.",
+    "beispielTr": "Pazarda her euro için pazarlık etti.",
+    "beispielEn": "At the market he haggled over every euro."
+  },
+  {
+    "id": 3527,
+    "tr": "buna göre",
+    "en": "accordingly",
+    "beispiel": "Die Nachfrage stieg, dementsprechend wurden die Preise erhöht.",
+    "beispielTr": "Talep arttı, buna göre fiyatlar da yükseltildi.",
+    "beispielEn": "Demand rose, and prices were raised accordingly."
+  },
+  {
+    "id": 3615,
+    "tr": "monolog",
+    "en": "monologue",
+    "beispiel": "Der Schauspieler übte seinen langen Monolog vor dem Spiegel.",
+    "beispielTr": "Oyuncu, uzun monologunu aynanın karşısında çalıştı.",
+    "beispielEn": "The actor rehearsed his long monologue in front of the mirror."
+  },
+  {
+    "id": 3468,
+    "tr": "sonuç",
+    "en": "conclusion",
+    "beispiel": "Sein Fazit nach dem ersten Jahr fiel positiv aus.",
+    "beispielTr": "İlk yılın ardından vardığı sonuç olumluydu.",
+    "beispielEn": "His conclusion after the first year was positive."
+  },
+  {
+    "id": 3714,
+    "tr": "şüpheli",
+    "en": "questionable",
+    "beispiel": "Die Methoden des Trainers sind höchst fragwürdig.",
+    "beispielTr": "Antrenörün yöntemleri son derece şüpheli.",
+    "beispielEn": "The coach's methods are highly questionable."
+  },
+  {
+    "id": 4045,
+    "tr": "kaçınılmaz olarak",
+    "en": "inevitably",
+    "beispiel": "Solche Fehler führen unweigerlich zu hohen Kosten.",
+    "beispielTr": "Bu tür hatalar kaçınılmaz olarak yüksek maliyete yol açar.",
+    "beispielEn": "Such mistakes inevitably lead to high costs."
+  }
+]

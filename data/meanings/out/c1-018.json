@@ -1,0 +1,402 @@
+[
+ {
+  "id": 6103,
+  "tr": "güven inşası",
+  "en": "confidence building",
+  "beispiel": "Der Gefangenenaustausch war ein erster Schritt zur Vertrauensbildung.",
+  "beispielTr": "Esir takası güven inşası yolunda ilk adımdı.",
+  "beispielEn": "The prisoner exchange was a first step toward confidence building."
+ },
+ {
+  "id": 6104,
+  "tr": "niyet beyanı",
+  "en": "declaration of intent",
+  "beispiel": "Bisher liegt nur eine unverbindliche Absichtserklärung vor.",
+  "beispielTr": "Şimdilik yalnızca bağlayıcı olmayan bir niyet beyanı var.",
+  "beispielEn": "So far there is only a nonbinding declaration of intent."
+ },
+ {
+  "id": 6105,
+  "tr": "mutabakat",
+  "en": "agreement",
+  "beispiel": "Nach langem Ringen erzielten die Delegationen eine tragfähige Übereinkunft.",
+  "beispielTr": "Uzun bir çekişmenin ardından heyetler sağlam bir mutabakata vardı.",
+  "beispielEn": "After a long struggle the delegations reached a workable agreement."
+ },
+ {
+  "id": 6106,
+  "tr": "müdahalecilik",
+  "en": "interventionism",
+  "beispiel": "Der Autor kritisiert den humanitären Interventionismus westlicher Regierungen.",
+  "beispielTr": "Yazar Batılı hükümetlerin insani müdahaleciliğini eleştiriyor.",
+  "beispielEn": "The author criticizes the humanitarian interventionism of Western governments."
+ },
+ {
+  "id": 6107,
+  "tr": "ambargo",
+  "en": "embargo",
+  "beispiel": "Das Embargo auf Rüstungsgüter gilt seit über zehn Jahren.",
+  "beispielTr": "Silah ürünlerine yönelik ambargo on yılı aşkın süredir geçerli.",
+  "beispielEn": "The embargo on arms has been in force for over ten years."
+ },
+ {
+  "id": 6108,
+  "tr": "resmen onaylamak",
+  "en": "to ratify",
+  "beispiel": "Das Parlament ratifizierte den Vertrag erst nach heftiger Debatte.",
+  "beispielTr": "Meclis anlaşmayı ancak sert bir tartışmanın ardından resmen onayladı.",
+  "beispielEn": "Parliament ratified the treaty only after a fierce debate."
+ },
+ {
+  "id": 6109,
+  "tr": "feshetmek",
+  "en": "to terminate",
+  "beispiel": "Die Regierung kündigte das Abkommen ohne Vorwarnung auf.",
+  "beispielTr": "Hükümet anlaşmayı hiçbir uyarı yapmadan feshetti.",
+  "beispielEn": "The government terminated the agreement without any warning."
+ },
+ {
+  "id": 6110,
+  "tr": "gevşetmek",
+  "en": "to loosen",
+  "beispiel": "Als Geste des guten Willens lockerte man die Einreisebeschränkungen.",
+  "beispielTr": "İyi niyet göstergesi olarak giriş kısıtlamaları gevşetildi.",
+  "beispielEn": "As a gesture of goodwill the entry restrictions were loosened."
+ },
+ {
+  "id": 6111,
+  "tr": "geri adım atmak",
+  "en": "to relent",
+  "beispiel": "Erst unter wirtschaftlichem Druck lenkte die Führung ein.",
+  "beispielTr": "Yönetim ancak ekonomik baskı altında geri adım attı.",
+  "beispielEn": "Only under economic pressure did the leadership relent."
+ },
+ {
+  "id": 6112,
+  "tr": "teyit etmek",
+  "en": "to reaffirm",
+  "beispiel": "Beide Seiten bekräftigten ihren Willen zu weiteren Gesprächen.",
+  "beispielTr": "İki taraf da görüşmeleri sürdürme iradesini teyit etti.",
+  "beispielEn": "Both sides reaffirmed their willingness to hold further talks."
+ },
+ {
+  "id": 6113,
+  "tr": "hiçe saymak",
+  "en": "to disregard",
+  "beispiel": "Wer die Auflagen missachtet, muss mit weiteren Strafen rechnen.",
+  "beispielTr": "Koşulları hiçe sayan yeni cezalara hazır olmalı.",
+  "beispielEn": "Anyone who disregards the conditions must expect further penalties."
+ },
+ {
+  "id": 6114,
+  "tr": "müdahale etmek",
+  "en": "to intervene",
+  "beispiel": "Die Nachbarstaaten wollten nicht in den Konflikt eingreifen.",
+  "beispielTr": "Komşu devletler çatışmaya müdahale etmek istemedi.",
+  "beispielEn": "The neighboring states did not want to intervene in the conflict."
+ },
+ {
+  "id": 6115,
+  "tr": "sevk etmek",
+  "en": "to dispatch",
+  "beispiel": "Die Organisation entsandte Beobachter in das Krisengebiet.",
+  "beispielTr": "Örgüt kriz bölgesine gözlemciler sevk etti.",
+  "beispielEn": "The organization dispatched observers to the crisis area."
+ },
+ {
+  "id": 6116,
+  "tr": "kuşatmak",
+  "en": "to besiege",
+  "beispiel": "Die Stadt wurde monatelang belagert und von Hilfslieferungen abgeschnitten.",
+  "beispielTr": "Şehir aylarca kuşatıldı ve yardım sevkiyatından koparıldı.",
+  "beispielEn": "The city was besieged for months and cut off from aid deliveries."
+ },
+ {
+  "id": 6117,
+  "tr": "püskürtmek",
+  "en": "to repel",
+  "beispiel": "Die Verteidiger schlugen den Vorstoß an der Ostflanke zurück.",
+  "beispielTr": "Savunmacılar doğu kanadındaki saldırıyı püskürttü.",
+  "beispielEn": "The defenders repelled the attack on the eastern flank."
+ },
+ {
+  "id": 6118,
+  "tr": "üye olmak",
+  "en": "to join",
+  "beispiel": "Das Land will dem Bündnis so rasch wie möglich beitreten.",
+  "beispielTr": "Ülke ittifaka mümkün olduğunca çabuk üye olmak istiyor.",
+  "beispielEn": "The country wants to join the alliance as quickly as possible."
+ },
+ {
+  "id": 6119,
+  "tr": "yatıştırmak",
+  "en": "to placate",
+  "beispiel": "Der Minister versuchte, die aufgebrachte Öffentlichkeit zu beschwichtigen.",
+  "beispielTr": "Bakan öfkeli kamuoyunu yatıştırmaya çalıştı.",
+  "beispielEn": "The minister tried to placate the angry public."
+ },
+ {
+  "id": 6120,
+  "tr": "dayanışma göstermek",
+  "en": "to show solidarity",
+  "beispiel": "Mehrere Nachbarstaaten solidarisierten sich öffentlich mit dem angegriffenen Land.",
+  "beispielTr": "Birkaç komşu devlet saldırıya uğrayan ülkeyle açıkça dayanışma gösterdi.",
+  "beispielEn": "Several neighboring states publicly showed solidarity with the attacked country."
+ },
+ {
+  "id": 6121,
+  "tr": "çok taraflı",
+  "en": "multilateral",
+  "beispiel": "Beim Klimaschutz kommen wir nur multilateral voran.",
+  "beispielTr": "İklim korumasında ancak çok taraflı ilerleyebiliriz.",
+  "beispielEn": "On climate protection we only make progress multilaterally."
+ },
+ {
+  "id": 6122,
+  "tr": "tek taraflı",
+  "en": "unilateral",
+  "beispiel": "Der einseitige Rückzug aus dem Vertrag überraschte selbst enge Partner.",
+  "beispielTr": "Anlaşmadan tek taraflı çekilme yakın ortakları bile şaşırttı.",
+  "beispielEn": "The unilateral withdrawal from the treaty surprised even close partners."
+ },
+ {
+  "id": 6123,
+  "tr": "diplomatik",
+  "en": "diplomatic",
+  "beispiel": "Auf diplomatischem Weg ließ sich die Krise vorerst entschärfen.",
+  "beispielTr": "Kriz diplomatik yoldan şimdilik yumuşatılabildi.",
+  "beispielEn": "The crisis could be defused for now through diplomatic channels."
+ },
+ {
+  "id": 6124,
+  "tr": "askeri",
+  "en": "military",
+  "beispiel": "Eine militärische Lösung schließt die Regierung bislang aus.",
+  "beispielTr": "Hükümet askeri bir çözümü şimdilik dışlıyor.",
+  "beispielEn": "The government has so far ruled out a military solution."
+ },
+ {
+  "id": 6125,
+  "tr": "insani",
+  "en": "humanitarian",
+  "beispiel": "Die humanitäre Lage in der belagerten Stadt verschlechtert sich täglich.",
+  "beispielTr": "Kuşatılmış şehirdeki insani durum her gün kötüleşiyor.",
+  "beispielEn": "The humanitarian situation in the besieged city is worsening daily."
+ },
+ {
+  "id": 6126,
+  "tr": "hassas",
+  "en": "delicate",
+  "beispiel": "Die Frage der Grenzziehung bleibt der heikelste Punkt der Gespräche.",
+  "beispielTr": "Sınır çizimi görüşmelerin en hassas noktası olmayı sürdürüyor.",
+  "beispielEn": "The border question remains the most delicate point of the talks."
+ },
+ {
+  "id": 6127,
+  "tr": "gergin",
+  "en": "tense",
+  "beispiel": "Das Verhältnis der beiden Staaten ist seit Monaten angespannt.",
+  "beispielTr": "İki devletin ilişkisi aylardır gergin.",
+  "beispielEn": "Relations between the two states have been tense for months."
+ },
+ {
+  "id": 6128,
+  "tr": "taviz vermeyen",
+  "en": "unyielding",
+  "beispiel": "In der Frage der Entschädigungen blieb die Delegation unnachgiebig.",
+  "beispielTr": "Tazminatlar konusunda heyet hiç taviz vermedi.",
+  "beispielEn": "On the question of compensation the delegation remained unyielding."
+ },
+ {
+  "id": 6129,
+  "tr": "görüşmeye açık",
+  "en": "willing to talk",
+  "beispiel": "Trotz aller Rückschläge zeigt sich die Gegenseite weiterhin gesprächsbereit.",
+  "beispielTr": "Bütün aksiliklere rağmen karşı taraf hâlâ görüşmeye açık.",
+  "beispielEn": "Despite all setbacks the other side still seems willing to talk."
+ },
+ {
+  "id": 6130,
+  "tr": "buna karşılık",
+  "en": "in return",
+  "beispiel": "Im Gegenzug verlangte man die Freilassung aller politischen Gefangenen.",
+  "beispielTr": "Buna karşılık bütün siyasi tutukluların serbest bırakılması istendi.",
+  "beispielEn": "In return they demanded the release of all political prisoners."
+ },
+ {
+  "id": 6131,
+  "tr": "emare",
+  "en": "indication",
+  "beispiel": "Die Studie liefert nur Indizien, aber keinen eindeutigen Nachweis.",
+  "beispielTr": "Çalışma yalnızca emareler sunuyor, kesin bir kanıt değil.",
+  "beispielEn": "The study provides only indications, not conclusive proof."
+ },
+ {
+  "id": 6132,
+  "tr": "karşılık",
+  "en": "reply",
+  "beispiel": "Seine Entgegnung auf die Kritik wirkte souverän und gut vorbereitet.",
+  "beispielTr": "Eleştiriye verdiği karşılık kendinden emin ve hazırlıklı görünüyordu.",
+  "beispielEn": "His reply to the criticism seemed confident and well prepared."
+ },
+ {
+  "id": 6133,
+  "tr": "tartıp değerlendirme",
+  "en": "weighing up",
+  "beispiel": "Nach sorgfältiger Abwägung aller Argumente fiel die Entscheidung knapp aus.",
+  "beispielTr": "Bütün argümanlar dikkatle tartılıp değerlendirildikten sonra karar kıl payı çıktı.",
+  "beispielEn": "After carefully weighing up all arguments the decision came out narrowly."
+ },
+ {
+  "id": 6134,
+  "tr": "irdeleme",
+  "en": "discussion",
+  "beispiel": "Die Erörterung dieser Frage nahm den halben Abend in Anspruch.",
+  "beispielTr": "Bu sorunun irdelenmesi akşamın yarısını aldı.",
+  "beispielEn": "The discussion of this question took up half the evening."
+ },
+ {
+  "id": 6135,
+  "tr": "anlaşmazlık konusu",
+  "en": "point of contention",
+  "beispiel": "Der eigentliche Streitpunkt blieb bis zum Schluss ungeklärt.",
+  "beispielTr": "Asıl anlaşmazlık konusu sonuna kadar çözülmeden kaldı.",
+  "beispielEn": "The real point of contention remained unresolved until the end."
+ },
+ {
+  "id": 6136,
+  "tr": "bakış açısı",
+  "en": "angle",
+  "beispiel": "Aus diesem Blickwinkel betrachtet erscheint der Einwand plötzlich berechtigt.",
+  "beispielTr": "Bu bakış açısından bakıldığında itiraz birden yerinde görünüyor.",
+  "beispielEn": "Seen from this angle the objection suddenly seems justified."
+ },
+ {
+  "id": 6137,
+  "tr": "retorik",
+  "en": "rhetoric",
+  "beispiel": "Hinter der brillanten Rhetorik verbarg sich kein einziges Argument.",
+  "beispielTr": "Parlak retoriğin arkasında tek bir argüman bile yoktu.",
+  "beispielEn": "Behind the brilliant rhetoric there was not a single argument."
+ },
+ {
+  "id": 6138,
+  "tr": "asılsız suçlama",
+  "en": "insinuation",
+  "beispiel": "Solche Unterstellungen haben in einer sachlichen Debatte nichts verloren.",
+  "beispielTr": "Böyle asılsız suçlamaların nesnel bir tartışmada yeri yoktur.",
+  "beispielEn": "Such insinuations have no place in a factual debate."
+ },
+ {
+  "id": 6139,
+  "tr": "çürütme",
+  "en": "refutation",
+  "beispiel": "Die Widerlegung seiner Hauptthese gelang der Rednerin in wenigen Sätzen.",
+  "beispielTr": "Konuşmacı onun ana tezini birkaç cümlede çürütmeyi başardı.",
+  "beispielEn": "The speaker managed the refutation of his main thesis in a few sentences."
+ },
+ {
+  "id": 6140,
+  "tr": "boyut",
+  "en": "facet",
+  "beispiel": "Der Vortrag beleuchtete auch die weniger bekannten Facetten des Problems.",
+  "beispielTr": "Sunum sorunun daha az bilinen boyutlarına da ışık tuttu.",
+  "beispielEn": "The talk also shed light on the lesser known facets of the problem."
+ },
+ {
+  "id": 6141,
+  "tr": "yönelim",
+  "en": "thrust",
+  "beispiel": "Die Stoßrichtung seiner Kritik war von Anfang an klar.",
+  "beispielTr": "Eleştirisinin yönelimi baştan beri belliydi.",
+  "beispielEn": "The thrust of his criticism was clear from the very start."
+ },
+ {
+  "id": 6142,
+  "tr": "üslup",
+  "en": "style",
+  "beispiel": "Der akademische Duktus des Textes schreckt viele Leser ab.",
+  "beispielTr": "Metnin akademik üslubu birçok okuru ürkütüyor.",
+  "beispielEn": "The academic style of the text puts many readers off."
+ },
+ {
+  "id": 6143,
+  "tr": "genel hava",
+  "en": "overall tone",
+  "beispiel": "Der Tenor der gesamten Debatte war überraschend versöhnlich.",
+  "beispielTr": "Bütün tartışmanın genel havası şaşırtıcı biçimde uzlaşmacıydı.",
+  "beispielEn": "The overall tone of the whole debate was surprisingly conciliatory."
+ },
+ {
+  "id": 6144,
+  "tr": "karşı cevap",
+  "en": "rejoinder",
+  "beispiel": "Ihre Replik auf den Zwischenruf erntete Applaus im ganzen Saal.",
+  "beispielTr": "Laf atmaya verdiği karşı cevap bütün salondan alkış aldı.",
+  "beispielEn": "Her rejoinder to the heckling drew applause from the whole hall."
+ },
+ {
+  "id": 6145,
+  "tr": "görüş ayrılığı",
+  "en": "disagreement",
+  "beispiel": "Der Dissens betrifft weniger die Fakten als deren Deutung.",
+  "beispielTr": "Görüş ayrılığı olgulardan çok onların yorumuyla ilgili.",
+  "beispielEn": "The disagreement concerns less the facts than their interpretation."
+ },
+ {
+  "id": 6146,
+  "tr": "yanılgı",
+  "en": "fallacy",
+  "beispiel": "Wer so argumentiert, unterliegt einem weit verbreiteten Trugschluss.",
+  "beispielTr": "Böyle akıl yürüten çok yaygın bir yanılgıya düşüyor.",
+  "beispielEn": "Anyone who argues like that falls for a widespread fallacy."
+ },
+ {
+  "id": 6147,
+  "tr": "döngüsel akıl yürütme",
+  "en": "circular reasoning",
+  "beispiel": "Seine Begründung entpuppte sich bei genauem Hinsehen als Zirkelschluss.",
+  "beispielTr": "Gerekçesi dikkatle bakıldığında döngüsel bir akıl yürütme çıktı.",
+  "beispielEn": "On closer inspection his justification turned out to be circular reasoning."
+ },
+ {
+  "id": 6148,
+  "tr": "analoji",
+  "en": "analogy",
+  "beispiel": "Die Analogie zwischen Markt und Ökosystem hinkt an entscheidender Stelle.",
+  "beispielTr": "Piyasa ile ekosistem arasındaki analoji can alıcı noktada aksıyor.",
+  "beispielEn": "The analogy between market and ecosystem breaks down at a crucial point."
+ },
+ {
+  "id": 6149,
+  "tr": "karşı örnek",
+  "en": "counterexample",
+  "beispiel": "Ein einziges Gegenbeispiel genügt, um die Regel zu erschüttern.",
+  "beispielTr": "Kuralı sarsmak için tek bir karşı örnek yeter.",
+  "beispielEn": "A single counterexample is enough to shake the rule."
+ },
+ {
+  "id": 6150,
+  "tr": "temel varsayım",
+  "en": "basic assumption",
+  "beispiel": "Die Grundannahme des Modells wurde nie ernsthaft geprüft.",
+  "beispielTr": "Modelin temel varsayımı hiçbir zaman ciddi biçimde sınanmadı.",
+  "beispielEn": "The basic assumption of the model was never seriously tested."
+ },
+ {
+  "id": 6151,
+  "tr": "araya atılan söz",
+  "en": "interjection",
+  "beispiel": "Sein Einwurf brachte die Rednerin kurz aus dem Konzept.",
+  "beispielTr": "Araya attığı söz konuşmacının bir an aklını karıştırdı.",
+  "beispielEn": "His interjection briefly threw the speaker off her train of thought."
+ },
+ {
+  "id": 6152,
+  "tr": "ikna gücü",
+  "en": "persuasiveness",
+  "beispiel": "Seinem Vortrag fehlte es trotz guter Daten an Überzeugungskraft.",
+  "beispielTr": "Sunumu iyi verilere rağmen ikna gücünden yoksundu.",
+  "beispielEn": "Despite good data his talk lacked persuasiveness."
+ }
+]

@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5953,
+  "tr": "akreditasyon",
+  "en": "accreditation",
+  "beispiel": "Ohne Akkreditierung darf der Studiengang keine Abschlüsse vergeben.",
+  "beispielTr": "Akreditasyon olmadan bu program diploma veremez.",
+  "beispielEn": "Without accreditation the program may not award degrees."
+ },
+ {
+  "id": 5954,
+  "tr": "üniversite özerkliği",
+  "en": "university autonomy",
+  "beispiel": "Die Reform stärkt die Hochschulautonomie in Personalfragen erheblich.",
+  "beispielTr": "Reform, personel konularında üniversite özerkliğini önemli ölçüde güçlendiriyor.",
+  "beispielEn": "The reform considerably strengthens university autonomy in staffing matters."
+ },
+ {
+  "id": 5955,
+  "tr": "dış kaynaklı fon",
+  "en": "third-party funding",
+  "beispiel": "Ein Großteil der Forschung wird inzwischen über Drittmittel finanziert.",
+  "beispielTr": "Araştırmaların büyük kısmı artık dış kaynaklı fonlarla finanse ediliyor.",
+  "beispielEn": "A large part of the research is now financed by third-party funding."
+ },
+ {
+  "id": 5956,
+  "tr": "temel finansman",
+  "en": "core funding",
+  "beispiel": "Die Grundfinanzierung der Universitäten stagniert seit über einem Jahrzehnt.",
+  "beispielTr": "Üniversitelerin temel finansmanı on yılı aşkın süredir yerinde sayıyor.",
+  "beispielEn": "The core funding of the universities has stagnated for over a decade."
+ },
+ {
+  "id": 5957,
+  "tr": "mükemmeliyet programı",
+  "en": "excellence initiative",
+  "beispiel": "Die Exzellenzinitiative hat den Wettbewerb zwischen den Hochschulen verschärft.",
+  "beispielTr": "Mükemmeliyet programı yükseköğretim kurumları arasındaki rekabeti keskinleştirdi.",
+  "beispielEn": "The excellence initiative has sharpened the competition between universities."
+ },
+ {
+  "id": 5958,
+  "tr": "yayın baskısı",
+  "en": "publication pressure",
+  "beispiel": "Der Publikationsdruck verleitet manche Forscher zu voreiligen Ergebnissen.",
+  "beispielTr": "Yayın baskısı bazı araştırmacıları aceleci sonuçlara sürüklüyor.",
+  "beispielEn": "Publication pressure drives some researchers to premature results."
+ },
+ {
+  "id": 5959,
+  "tr": "seçicilik",
+  "en": "selectivity",
+  "beispiel": "Die hohe Selektivität des Schulsystems wird seit Jahren kritisiert.",
+  "beispielTr": "Okul sisteminin yüksek seçiciliği yıllardır eleştiriliyor.",
+  "beispielEn": "The high selectivity of the school system has been criticized for years."
+ },
+ {
+  "id": 5960,
+  "tr": "öğrenimi yarıda bırakma",
+  "en": "dropping out of university",
+  "beispiel": "In den Ingenieurfächern ist der Studienabbruch besonders häufig.",
+  "beispielTr": "Mühendislik dallarında öğrenimi yarıda bırakma özellikle yaygın.",
+  "beispielEn": "Dropping out is especially common in engineering subjects."
+ },
+ {
+  "id": 5961,
+  "tr": "doçentlik",
+  "en": "habilitation",
+  "beispiel": "Sie hat ihre Habilitation letztes Jahr abgeschlossen.",
+  "beispielTr": "Doçentliğini geçen yıl tamamladı.",
+  "beispielEn": "She completed her habilitation last year."
+ },
+ {
+  "id": 5962,
+  "tr": "profesör atama süreci",
+  "en": "appointment procedure",
+  "beispiel": "Das Berufungsverfahren zog sich über mehr als zwei Jahre hin.",
+  "beispielTr": "Profesör atama süreci iki yıldan fazla sürdü.",
+  "beispielEn": "The appointment procedure dragged on for more than two years."
+ },
+ {
+  "id": 5963,
+  "tr": "kürsü",
+  "en": "chair",
+  "beispiel": "Nach der Emeritierung blieb der Lehrstuhl zwei Semester unbesetzt.",
+  "beispielTr": "Emekliliğin ardından kürsü iki dönem boş kaldı.",
+  "beispielEn": "After the retirement the chair stayed vacant for two semesters."
+ },
+ {
+  "id": 5964,
+  "tr": "yeterlilik dönemi",
+  "en": "qualification phase",
+  "beispiel": "In der Qualifikationsphase hängen viele Stellen an befristeten Projekten.",
+  "beispielTr": "Yeterlilik döneminde birçok kadro süreli projelere bağlı.",
+  "beispielEn": "In the qualification phase many posts depend on temporary projects."
+ },
+ {
+  "id": 5965,
+  "tr": "araştırma desteği",
+  "en": "research funding",
+  "beispiel": "Ohne Forschungsförderung könnte das Labor nicht weiterarbeiten.",
+  "beispielTr": "Araştırma desteği olmasa laboratuvar çalışmalarını sürdüremezdi.",
+  "beispielEn": "Without research funding the lab could not carry on its work."
+ },
+ {
+  "id": 5966,
+  "tr": "ödenek dağıtımı",
+  "en": "allocation of funds",
+  "beispiel": "Die Mittelvergabe erfolgt heute überwiegend nach Leistungskriterien.",
+  "beispielTr": "Ödenek dağıtımı bugün ağırlıklı olarak performans ölçütlerine göre yapılıyor.",
+  "beispielEn": "Funds are now allocated mainly according to performance criteria."
+ },
+ {
+  "id": 5967,
+  "tr": "performans göstergesi",
+  "en": "performance indicator",
+  "beispiel": "Kritiker halten die gewählten Leistungsindikatoren für wenig aussagekräftig.",
+  "beispielTr": "Eleştirmenler seçilen performans göstergelerini pek anlamlı bulmuyor.",
+  "beispielEn": "Critics find the chosen performance indicators barely meaningful."
+ },
+ {
+  "id": 5968,
+  "tr": "hesap verme yükümlülüğü",
+  "en": "accountability",
+  "beispiel": "Die neue Satzung verschärft die Rechenschaftspflicht der Institutsleitung.",
+  "beispielTr": "Yeni yönetmelik, enstitü yönetiminin hesap verme yükümlülüğünü ağırlaştırıyor.",
+  "beispielEn": "The new statute tightens the accountability of the institute's management."
+ },
+ {
+  "id": 5969,
+  "tr": "değerlendirme",
+  "en": "evaluation",
+  "beispiel": "Die externe Evaluierung des Instituts fiel überraschend kritisch aus.",
+  "beispielTr": "Enstitünün dış değerlendirmesi beklenmedik ölçüde eleştirel çıktı.",
+  "beispielEn": "The external evaluation of the institute turned out surprisingly critical."
+ },
+ {
+  "id": 5970,
+  "tr": "meritokrasi",
+  "en": "meritocracy",
+  "beispiel": "Der Glaube an die Meritokratie verdeckt strukturelle Startvorteile.",
+  "beispielTr": "Meritokrasiye duyulan inanç yapısal başlangıç avantajlarını gizliyor.",
+  "beispielEn": "Belief in meritocracy hides structural head starts."
+ },
+ {
+  "id": 5971,
+  "tr": "elit yetiştirme",
+  "en": "formation of elites",
+  "beispiel": "Privatschulen tragen in vielen Ländern zur Elitenbildung bei.",
+  "beispielTr": "Özel okullar birçok ülkede elit yetiştirmeye katkıda bulunuyor.",
+  "beispielEn": "In many countries private schools contribute to the formation of elites."
+ },
+ {
+  "id": 5972,
+  "tr": "bilgi aktarımı",
+  "en": "knowledge transfer",
+  "beispiel": "Das Institut fördert den Wissenstransfer in kleine Unternehmen.",
+  "beispielTr": "Enstitü, küçük şirketlere bilgi aktarımını destekliyor.",
+  "beispielEn": "The institute promotes knowledge transfer to small companies."
+ },
+ {
+  "id": 5973,
+  "tr": "temel araştırma",
+  "en": "basic research",
+  "beispiel": "Für Grundlagenforschung bleibt in diesem Programm kaum Geld übrig.",
+  "beispielTr": "Bu programda temel araştırmaya neredeyse hiç para kalmıyor.",
+  "beispielEn": "Hardly any money is left for basic research in this program."
+ },
+ {
+  "id": 5974,
+  "tr": "yetkinlik odaklılık",
+  "en": "competence orientation",
+  "beispiel": "Die Kompetenzorientierung hat die Lehrpläne grundlegend verändert.",
+  "beispielTr": "Yetkinlik odaklılık müfredatları kökten değiştirdi.",
+  "beispielEn": "The competence orientation has fundamentally changed the curricula."
+ },
+ {
+  "id": 5975,
+  "tr": "bilim özgürlüğü",
+  "en": "academic freedom",
+  "beispiel": "Der Rektor berief sich in seiner Rede auf die Wissenschaftsfreiheit.",
+  "beispielTr": "Rektör konuşmasında bilim özgürlüğüne atıfta bulundu.",
+  "beispielEn": "In his speech the rector invoked academic freedom."
+ },
+ {
+  "id": 5976,
+  "tr": "rekabet mantığı",
+  "en": "competitive logic",
+  "beispiel": "Die Wettbewerbslogik hat den Umgang mit Kollegen spürbar verändert.",
+  "beispielTr": "Rekabet mantığı meslektaşlarla ilişkileri belirgin biçimde değiştirdi.",
+  "beispielEn": "The competitive logic has noticeably changed how colleagues treat each other."
+ },
+ {
+  "id": 5977,
+  "tr": "bilimsel dergi",
+  "en": "specialist journal",
+  "beispiel": "Der Aufsatz erschien in einer angesehenen internationalen Fachzeitschrift.",
+  "beispielTr": "Makale saygın bir uluslararası bilimsel dergide yayımlandı.",
+  "beispielEn": "The paper appeared in a respected international specialist journal."
+ },
+ {
+  "id": 5978,
+  "tr": "dürüstlük",
+  "en": "honesty",
+  "beispiel": "Er zweifelte öffentlich an der Redlichkeit seines Koautors.",
+  "beispielTr": "Ortak yazarının dürüstlüğünden açıkça kuşku duydu.",
+  "beispielEn": "He publicly doubted the honesty of his coauthor."
+ },
+ {
+  "id": 5979,
+  "tr": "tekrarlanabilirlik",
+  "en": "reproducibility",
+  "beispiel": "Die mangelnde Reproduzierbarkeit vieler Studien beunruhigt die Fachwelt.",
+  "beispielTr": "Birçok çalışmanın tekrarlanabilir olmaması bilim dünyasını kaygılandırıyor.",
+  "beispielEn": "The poor reproducibility of many studies worries the research community."
+ },
+ {
+  "id": 5980,
+  "tr": "araştırma amacı",
+  "en": "research interest",
+  "beispiel": "Im ersten Kapitel legt sie ihr Erkenntnisinteresse offen.",
+  "beispielTr": "İlk bölümde araştırma amacını açıkça ortaya koyuyor.",
+  "beispielEn": "In the first chapter she states her research interest."
+ },
+ {
+  "id": 5981,
+  "tr": "beşerî sermaye",
+  "en": "human capital",
+  "beispiel": "Der Bericht behandelt Beschäftigte nur als Humankapital.",
+  "beispielTr": "Rapor, çalışanları yalnızca beşerî sermaye olarak ele alıyor.",
+  "beispielEn": "The report treats employees merely as human capital."
+ },
+ {
+  "id": 5982,
+  "tr": "liseye yönlendirme tavsiyesi",
+  "en": "recommendation for Gymnasium",
+  "beispiel": "Die Gymnasialempfehlung hängt statistisch stark vom Elternhaus ab.",
+  "beispielTr": "Liseye yönlendirme tavsiyesi istatistiksel olarak büyük ölçüde aile kökenine bağlı.",
+  "beispielEn": "The recommendation for Gymnasium depends heavily on the family background."
+ },
+ {
+  "id": 5983,
+  "tr": "geçiş oranı",
+  "en": "transition rate",
+  "beispiel": "Die Übergangsquote an die Hochschulen ist regional sehr unterschiedlich.",
+  "beispielTr": "Üniversiteye geçiş oranı bölgeden bölgeye büyük farklılık gösteriyor.",
+  "beispielEn": "The transition rate to universities varies greatly by region."
+ },
+ {
+  "id": 5984,
+  "tr": "kapsayıcılık",
+  "en": "inclusion",
+  "beispiel": "Inklusion gelingt nur mit ausreichend geschultem Personal.",
+  "beispielTr": "Kapsayıcılık ancak yeterince eğitimli personelle başarılabilir.",
+  "beispielEn": "Inclusion succeeds only with sufficiently trained staff."
+ },
+ {
+  "id": 5985,
+  "tr": "öğretmen açığı",
+  "en": "teacher shortage",
+  "beispiel": "Der Lehrkräftemangel trifft benachteiligte Schulen am härtesten.",
+  "beispielTr": "Öğretmen açığı en çok dezavantajlı okulları vuruyor.",
+  "beispielEn": "The teacher shortage hits disadvantaged schools hardest."
+ },
+ {
+  "id": 5986,
+  "tr": "alan dışından geçiş",
+  "en": "lateral entry",
+  "beispiel": "Der Quereinstieg in den Schuldienst wurde deutlich erleichtert.",
+  "beispielTr": "Öğretmenliğe alan dışından geçiş belirgin biçimde kolaylaştırıldı.",
+  "beispielEn": "Lateral entry into school teaching has been made much easier."
+ },
+ {
+  "id": 5987,
+  "tr": "piyasalaşma",
+  "en": "economization",
+  "beispiel": "Viele Lehrende beklagen die Ökonomisierung der Universitäten.",
+  "beispielTr": "Birçok öğretim elemanı üniversitelerin piyasalaşmasından yakınıyor.",
+  "beispielEn": "Many teaching staff complain about the economization of universities."
+ },
+ {
+  "id": 5988,
+  "tr": "en iyileri seçme",
+  "en": "selection of the best",
+  "beispiel": "Das Verfahren soll eine faire Bestenauslese gewährleisten.",
+  "beispielTr": "Bu yöntem, en iyilerin adil biçimde seçilmesini güvence altına almalı.",
+  "beispielEn": "The procedure is meant to guarantee a fair selection of the best."
+ },
+ {
+  "id": 5989,
+  "tr": "akademik düzen",
+  "en": "academic system",
+  "beispiel": "Im heutigen Wissenschaftsbetrieb zählt Sichtbarkeit oft mehr als Tiefe.",
+  "beispielTr": "Bugünkü akademik düzende görünürlük çoğu zaman derinlikten daha önemli.",
+  "beispielEn": "In today's academic system visibility often counts more than depth."
+ },
+ {
+  "id": 5990,
+  "tr": "kaynak sağlamak",
+  "en": "to raise funds",
+  "beispiel": "Die Arbeitsgruppe hat für das Projekt beachtliche Mittel eingeworben.",
+  "beispielTr": "Çalışma grubu proje için hatırı sayılır bir kaynak sağladı.",
+  "beispielEn": "The research group raised considerable funds for the project."
+ },
+ {
+  "id": 5991,
+  "tr": "değerlendirmek",
+  "en": "to review",
+  "beispiel": "Zwei unabhängige Fachleute begutachten jeden eingereichten Antrag.",
+  "beispielTr": "Sunulan her başvuruyu iki bağımsız uzman değerlendiriyor.",
+  "beispielEn": "Two independent experts review every submitted application."
+ },
+ {
+  "id": 5992,
+  "tr": "dezavantajlı duruma düşürmek",
+  "en": "to disadvantage",
+  "beispiel": "Das frühe Auswahlverfahren benachteiligt Kinder ohne akademischen Hintergrund.",
+  "beispielTr": "Erken eleme, akademik geçmişi olmayan çocukları dezavantajlı duruma düşürüyor.",
+  "beispielEn": "The early selection process disadvantages children without an academic background."
+ },
+ {
+  "id": 5993,
+  "tr": "alt dallara ayırmak",
+  "en": "to differentiate",
+  "beispiel": "Die Hochschule hat ihr Studienangebot stark ausdifferenziert.",
+  "beispielTr": "Üniversite, ders programını güçlü biçimde alt dallara ayırdı.",
+  "beispielEn": "The university has strongly differentiated its range of courses."
+ },
+ {
+  "id": 5994,
+  "tr": "kadroya geçirmek",
+  "en": "to make permanent",
+  "beispiel": "Nach acht Jahren wurde ihre Stelle endlich entfristet.",
+  "beispielTr": "Sekiz yılın ardından nihayet kadroya geçirildi.",
+  "beispielEn": "After eight years her position was finally made permanent."
+ },
+ {
+  "id": 5995,
+  "tr": "meşrulaştırmak",
+  "en": "to legitimize",
+  "beispiel": "Mit dem Verweis auf Exzellenz legitimiert man ungleiche Mittelverteilung.",
+  "beispielTr": "Mükemmeliyete atıf yaparak eşitsiz kaynak dağılımı meşrulaştırılıyor.",
+  "beispielEn": "Pointing to excellence legitimizes the unequal distribution of funds."
+ },
+ {
+  "id": 5996,
+  "tr": "önceliklendirmek",
+  "en": "to prioritize",
+  "beispiel": "Bei knappen Kassen muss die Fakultät ihre Vorhaben priorisieren.",
+  "beispielTr": "Bütçe kısıtlıyken fakülte projelerini önceliklendirmek zorunda.",
+  "beispielEn": "With tight budgets the faculty has to prioritize its projects."
+ },
+ {
+  "id": 5997,
+  "tr": "sayısallaştırmak",
+  "en": "to quantify",
+  "beispiel": "Nicht jede Form von Lehrqualität lässt sich sinnvoll quantifizieren.",
+  "beispielTr": "Öğretim kalitesinin her boyutu anlamlı biçimde sayısallaştırılamaz.",
+  "beispielEn": "Not every aspect of teaching quality can be meaningfully quantified."
+ },
+ {
+  "id": 5998,
+  "tr": "sonuna kadar kullanmak",
+  "en": "to make full use of",
+  "beispiel": "Das Land schöpft sein Bildungspotenzial bei Weitem nicht aus.",
+  "beispielTr": "Ülke eğitim potansiyelini sonuna kadar kullanmaktan çok uzak.",
+  "beispielEn": "The country is far from making full use of its educational potential."
+ },
+ {
+  "id": 5999,
+  "tr": "tahsis etmek",
+  "en": "to allocate",
+  "beispiel": "Den Fakultäten werden die Stellen nach einem festen Schlüssel zugewiesen.",
+  "beispielTr": "Kadrolar fakültelere belirli bir anahtara göre tahsis ediliyor.",
+  "beispielEn": "Positions are allocated to the faculties by a fixed formula."
+ },
+ {
+  "id": 6000,
+  "tr": "belirlemek",
+  "en": "to determine",
+  "beispiel": "Der Zuschuss wird nach der Zahl der Absolventen bemessen.",
+  "beispielTr": "Ödenek, mezun sayısına göre belirleniyor.",
+  "beispielEn": "The subsidy is determined by the number of graduates."
+ },
+ {
+  "id": 6001,
+  "tr": "atfetmek",
+  "en": "to attribute",
+  "beispiel": "Die schlechten Ergebnisse werden allein den Lehrkräften zugeschrieben.",
+  "beispielTr": "Kötü sonuçlar yalnızca öğretmenlere atfediliyor.",
+  "beispielEn": "The poor results are attributed to the teachers alone."
+ },
+ {
+  "id": 6002,
+  "tr": "fırsat eşitliğine uygun",
+  "en": "equitable",
+  "beispiel": "Ein chancengerechtes System darf Kinder nicht so früh sortieren.",
+  "beispielTr": "Fırsat eşitliğine uygun bir sistem çocukları bu kadar erken ayırmamalı.",
+  "beispielEn": "An equitable system must not sort children so early."
+ }
+]

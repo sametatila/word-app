@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6003,
+    "tr": "performansa dayalı",
+    "en": "performance-based",
+    "beispiel": "Bei uns wird die Prämie rein leistungsbezogen berechnet.",
+    "beispielTr": "Bizde prim tamamen performansa dayalı hesaplanıyor.",
+    "beispielEn": "Here the bonus is calculated purely on performance."
+  },
+  {
+    "id": 6004,
+    "tr": "disiplinler arası",
+    "en": "interdisciplinary",
+    "beispiel": "Unser Team arbeitet seit Jahren interdisziplinär.",
+    "beispielTr": "Ekibimiz yıllardır disiplinler arası çalışıyor.",
+    "beispielEn": "Our team has worked across disciplines for years."
+  },
+  {
+    "id": 6005,
+    "tr": "kökenden kaynaklanan",
+    "en": "background-related",
+    "beispiel": "Herkunftsbedingte Nachteile zeigen sich schon im Kindergarten.",
+    "beispielTr": "Kökenden kaynaklanan dezavantajlar daha anaokulunda görülüyor.",
+    "beispielEn": "Disadvantages linked to background already show up in kindergarten."
+  },
+  {
+    "id": 6006,
+    "tr": "amaca bağlı",
+    "en": "earmarked",
+    "beispiel": "Diese Spende ist zweckgebunden und finanziert nur den Spielplatz.",
+    "beispielTr": "Bu bağış amaca bağlı ve sadece oyun parkını finanse ediyor.",
+    "beispielEn": "This donation is earmarked and funds only the playground."
+  },
+  {
+    "id": 6007,
+    "tr": "rağmen",
+    "en": "regardless of",
+    "beispiel": "Ungeachtet der schlechten Noten wurde er versetzt.",
+    "beispielTr": "Kötü notlarına rağmen sınıfı geçti.",
+    "beispielEn": "He was moved up regardless of his bad grades."
+  },
+  {
+    "id": 6008,
+    "tr": "nüfusun yaşlanması",
+    "en": "population aging",
+    "beispiel": "Die Überalterung macht unserem Dorf schwer zu schaffen.",
+    "beispielTr": "Nüfusun yaşlanması köyümüzü fena hâlde zorluyor.",
+    "beispielEn": "Population aging is hitting our village hard."
+  },
+  {
+    "id": 6009,
+    "tr": "doğumlardaki düşüş",
+    "en": "declining birth rate",
+    "beispiel": "Wegen des Geburtenrückgangs schließt die Grundschule im Dorf.",
+    "beispielTr": "Doğumlardaki düşüş yüzünden köydeki ilkokul kapanıyor.",
+    "beispielEn": "The village primary school is closing because of the declining birth rate."
+  },
+  {
+    "id": 6010,
+    "tr": "doğurganlık hızı",
+    "en": "fertility rate",
+    "beispiel": "Die Fruchtbarkeitsziffer ist auf 1,4 Kinder je Frau gesunken.",
+    "beispielTr": "Doğurganlık hızı kadın başına 1,4 çocuğa düştü.",
+    "beispielEn": "The fertility rate has fallen to 1.4 children per woman."
+  },
+  {
+    "id": 6011,
+    "tr": "nüfus tahmini",
+    "en": "population forecast",
+    "beispiel": "Die Stadt plant ihre Schulen nach der Bevölkerungsprognose.",
+    "beispielTr": "Şehir okullarını nüfus tahminine göre planlıyor.",
+    "beispielEn": "The city plans its schools according to the population forecast."
+  },
+  {
+    "id": 6012,
+    "tr": "yaş yapısı",
+    "en": "age structure",
+    "beispiel": "Die Altersstruktur unserer Belegschaft hat sich stark verschoben.",
+    "beispielTr": "Personelimizin yaş yapısı epey değişti.",
+    "beispielEn": "The age structure of our workforce has shifted a lot."
+  },
+  {
+    "id": 6013,
+    "tr": "dışa göç",
+    "en": "out-migration",
+    "beispiel": "Die Abwanderung junger Leute leert das ganze Tal.",
+    "beispielTr": "Gençlerin dışa göçü bütün vadiyi boşaltıyor.",
+    "beispielEn": "The out-migration of young people is emptying the whole valley."
+  },
+  {
+    "id": 6014,
+    "tr": "iç göç",
+    "en": "internal migration",
+    "beispiel": "Durch die Binnenwanderung wächst München jedes Jahr weiter.",
+    "beispielTr": "İç göç sayesinde Münih her yıl büyümeye devam ediyor.",
+    "beispielEn": "Internal migration makes Munich grow further every year."
+  },
+  {
+    "id": 6015,
+    "tr": "ölüm oranı",
+    "en": "mortality",
+    "beispiel": "Die Sterblichkeit bei Herzinfarkten ist deutlich gesunken.",
+    "beispielTr": "Kalp krizinde ölüm oranı belirgin biçimde düştü.",
+    "beispielEn": "Mortality from heart attacks has dropped significantly."
+  },
+  {
+    "id": 6016,
+    "tr": "kohort",
+    "en": "cohort",
+    "beispiel": "Die Kohorte der Babyboomer geht jetzt in Rente.",
+    "beispielTr": "Baby boomer kohortu şimdi emekliye ayrılıyor.",
+    "beispielEn": "The baby boomer cohort is now retiring."
+  },
+  {
+    "id": 6017,
+    "tr": "demografi",
+    "en": "demography",
+    "beispiel": "Sie hat Demografie studiert und arbeitet beim Statistikamt.",
+    "beispielTr": "Demografi okudu ve istatistik kurumunda çalışıyor.",
+    "beispielEn": "She studied demography and works at the statistics office."
+  },
+  {
+    "id": 6018,
+    "tr": "net göç",
+    "en": "net migration",
+    "beispiel": "Der Wanderungssaldo war letztes Jahr zum ersten Mal negativ.",
+    "beispielTr": "Net göç geçen yıl ilk kez eksiye düştü.",
+    "beispielEn": "Net migration was negative for the first time last year."
+  },
+  {
+    "id": 6019,
+    "tr": "işgücüne katılım oranı",
+    "en": "labor force participation rate",
+    "beispiel": "Die Erwerbsquote der Frauen ist hier besonders hoch.",
+    "beispielTr": "Buralarda kadınların işgücüne katılım oranı özellikle yüksek.",
+    "beispielEn": "The labor force participation rate of women is especially high here."
+  },
+  {
+    "id": 6020,
+    "tr": "emekli aylığı düzeyi",
+    "en": "pension level",
+    "beispiel": "Die Regierung will das Rentenniveau bis 2031 stabil halten.",
+    "beispielTr": "Hükümet emekli aylığı düzeyini 2031'e kadar sabit tutmak istiyor.",
+    "beispielEn": "The government wants to keep the pension level stable until 2031."
+  },
+  {
+    "id": 6021,
+    "tr": "prim oranı",
+    "en": "contribution rate",
+    "beispiel": "Der Beitragssatz zur Pflegeversicherung steigt im Januar wieder.",
+    "beispielTr": "Bakım sigortası prim oranı ocakta yine artıyor.",
+    "beispielEn": "The contribution rate for long-term care insurance rises again in January."
+  },
+  {
+    "id": 6022,
+    "tr": "dağıtım esaslı sistem",
+    "en": "pay-as-you-go system",
+    "beispiel": "Unsere Rente läuft über das Umlageverfahren, nicht über Ersparnisse.",
+    "beispielTr": "Emekliliğimiz birikimle değil, dağıtım esaslı sistemle işliyor.",
+    "beispielEn": "Our pension runs on a pay-as-you-go system, not on savings."
+  },
+  {
+    "id": 6023,
+    "tr": "yaşlılıkta yoksulluk",
+    "en": "old-age poverty",
+    "beispiel": "Meine Nachbarin lebt von 700 Euro und fürchtet Altersarmut.",
+    "beispielTr": "Komşum 700 euroyla geçiniyor ve yaşlılıkta yoksulluktan korkuyor.",
+    "beispielEn": "My neighbor lives on 700 euros and fears old-age poverty."
+  },
+  {
+    "id": 6024,
+    "tr": "bakıma muhtaçlık",
+    "en": "need for care",
+    "beispiel": "Nach dem Sturz wurde bei ihm Pflegebedürftigkeit festgestellt.",
+    "beispielTr": "Düştükten sonra bakıma muhtaç olduğu tespit edildi.",
+    "beispielEn": "After the fall he was assessed as needing care."
+  },
+  {
+    "id": 6025,
+    "tr": "çocuksuzluk",
+    "en": "childlessness",
+    "beispiel": "Sie steht offen zu ihrer gewollten Kinderlosigkeit.",
+    "beispielTr": "İsteyerek çocuksuz kalmasını açıkça savunuyor.",
+    "beispielEn": "She openly stands by her chosen childlessness."
+  },
+  {
+    "id": 6026,
+    "tr": "aile politikası",
+    "en": "family policy",
+    "beispiel": "Über Familienpolitik streiten die Parteien in jedem Wahlkampf.",
+    "beispielTr": "Partiler her seçim kampanyasında aile politikası üzerine tartışıyor.",
+    "beispielEn": "The parties argue about family policy in every election campaign."
+  },
+  {
+    "id": 6027,
+    "tr": "temel kamu hizmeti",
+    "en": "basic public services",
+    "beispiel": "Der Bus fährt nur noch wegen der Daseinsvorsorge.",
+    "beispielTr": "Otobüs artık sadece temel kamu hizmeti olsun diye çalışıyor.",
+    "beispielEn": "The bus still runs only because of basic public services."
+  },
+  {
+    "id": 6028,
+    "tr": "senaryo",
+    "en": "scenario",
+    "beispiel": "Selbst im besten Szenario schrumpft die Stadt weiter.",
+    "beispielTr": "En iyi senaryoda bile şehir küçülmeye devam ediyor.",
+    "beispielEn": "Even in the best scenario the city keeps shrinking."
+  },
+  {
+    "id": 6029,
+    "tr": "eğilimin tersine dönmesi",
+    "en": "trend reversal",
+    "beispiel": "Nach drei guten Monaten sprechen alle von einer Trendwende.",
+    "beispielTr": "Üç iyi aydan sonra herkes eğilimin tersine döndüğünü söylüyor.",
+    "beispielEn": "After three good months everyone is talking about a trend reversal."
+  },
+  {
+    "id": 6030,
+    "tr": "yasal emeklilik yaşı",
+    "en": "standard retirement age",
+    "beispiel": "Er erreicht die Regelaltersgrenze erst in zwei Jahren.",
+    "beispielTr": "Yasal emeklilik yaşına ancak iki yıl sonra ulaşacak.",
+    "beispielEn": "He will not reach the standard retirement age for two years."
+  },
+  {
+    "id": 6031,
+    "tr": "erken emeklilik",
+    "en": "early retirement",
+    "beispiel": "Der Konzern bot älteren Mitarbeitern die Frühverrentung an.",
+    "beispielTr": "Şirket yaşlı çalışanlarına erken emeklilik teklif etti.",
+    "beispielEn": "The company offered older employees early retirement."
+  },
+  {
+    "id": 6032,
+    "tr": "çalışma ömrü",
+    "en": "working life",
+    "beispiel": "Am Ende kam er auf 44 Jahre Lebensarbeitszeit.",
+    "beispielTr": "Sonunda 44 yıllık bir çalışma ömrü geride bıraktı.",
+    "beispielEn": "In the end he reached forty-four years of working life."
+  },
+  {
+    "id": 6033,
+    "tr": "dayanışma ilkesi",
+    "en": "solidarity principle",
+    "beispiel": "Die Krankenkasse zahlt nach dem Solidarprinzip für alle.",
+    "beispielTr": "Sağlık sigortası dayanışma ilkesine göre herkes için ödeme yapıyor.",
+    "beispielEn": "The health insurance fund pays for everyone on the solidarity principle."
+  },
+  {
+    "id": 6034,
+    "tr": "kuşaklar arası adalet",
+    "en": "intergenerational fairness",
+    "beispiel": "Im Wahlkampf beruft sich jede Partei auf Generationengerechtigkeit.",
+    "beispielTr": "Seçim kampanyasında her parti kuşaklar arası adaleti öne sürüyor.",
+    "beispielEn": "In the campaign every party appeals to intergenerational fairness."
+  },
+  {
+    "id": 6035,
+    "tr": "finansman açığı",
+    "en": "funding gap",
+    "beispiel": "Im Haushalt klafft eine Finanzierungslücke von acht Milliarden.",
+    "beispielTr": "Bütçede sekiz milyarlık bir finansman açığı var.",
+    "beispielEn": "The budget has a funding gap of eight billion."
+  },
+  {
+    "id": 6036,
+    "tr": "nüfus politikası",
+    "en": "population policy",
+    "beispiel": "China hat seine Bevölkerungspolitik komplett umgestellt.",
+    "beispielTr": "Çin nüfus politikasını tamamen değiştirdi.",
+    "beispielEn": "China has completely changed its population policy."
+  },
+  {
+    "id": 6037,
+    "tr": "üreme",
+    "en": "reproduction",
+    "beispiel": "Das Virus braucht eine Wirtszelle für seine Reproduktion.",
+    "beispielTr": "Virüs üremek için bir konak hücreye ihtiyaç duyar.",
+    "beispielEn": "The virus needs a host cell for its reproduction."
+  },
+  {
+    "id": 6038,
+    "tr": "hane büyüklüğü",
+    "en": "household size",
+    "beispiel": "Die durchschnittliche Haushaltsgröße liegt bei 1,9 Personen.",
+    "beispielTr": "Ortalama hane büyüklüğü 1,9 kişi civarında.",
+    "beispielEn": "The average household size is around 1.9 people."
+  },
+  {
+    "id": 6039,
+    "tr": "çok kuşaklı hane",
+    "en": "multigenerational household",
+    "beispiel": "Meine Großeltern lebten noch im Mehrgenerationenhaushalt.",
+    "beispielTr": "Büyükannemle dedem hâlâ çok kuşaklı bir hanede yaşıyordu.",
+    "beispielEn": "My grandparents still lived in a multigenerational household."
+  },
+  {
+    "id": 6040,
+    "tr": "sosyal devlet",
+    "en": "welfare state",
+    "beispiel": "Ohne den Sozialstaat wäre sie nach der Kündigung mittellos.",
+    "beispielTr": "Sosyal devlet olmasa işten çıkarıldıktan sonra beş parasız kalırdı.",
+    "beispielEn": "Without the welfare state she would be penniless after the layoff."
+  },
+  {
+    "id": 6041,
+    "tr": "yeniden dağıtım",
+    "en": "redistribution",
+    "beispiel": "Die neue Steuer bedeutet eine Umverteilung von oben nach unten.",
+    "beispielTr": "Yeni vergi yukarıdan aşağıya bir yeniden dağıtım anlamına geliyor.",
+    "beispielEn": "The new tax means a redistribution from the top downward."
+  },
+  {
+    "id": 6042,
+    "tr": "nüfusun boşalması",
+    "en": "depopulation",
+    "beispiel": "Gegen die Entvölkerung des Dorfes hilft kein Förderprogramm.",
+    "beispielTr": "Köyün boşalmasına hiçbir teşvik programı çare olmuyor.",
+    "beispielEn": "No funding program can stop the depopulation of the village."
+  },
+  {
+    "id": 6043,
+    "tr": "işgücü rezervi",
+    "en": "labor reserve",
+    "beispiel": "Ältere Beschäftigte gelten als letzte Arbeitskräftereserve.",
+    "beispielTr": "Yaşlı çalışanlar son işgücü rezervi sayılıyor.",
+    "beispielEn": "Older employees are seen as the last labor reserve."
+  },
+  {
+    "id": 6044,
+    "tr": "emeklilik reformu",
+    "en": "pension reform",
+    "beispiel": "Über die Rentenreform wird seit Monaten heftig gestritten.",
+    "beispielTr": "Emeklilik reformu aylardır sert biçimde tartışılıyor.",
+    "beispielEn": "The pension reform has been fiercely debated for months."
+  },
+  {
+    "id": 6045,
+    "tr": "ülkeden göç etmek",
+    "en": "to emigrate",
+    "beispiel": "Nach dem Studium ist sie nach Kanada ausgewandert.",
+    "beispielTr": "Üniversiteden sonra Kanada'ya göç etti.",
+    "beispielEn": "After her studies she emigrated to Canada."
+  },
+  {
+    "id": 6046,
+    "tr": "öngörmek",
+    "en": "to forecast",
+    "beispiel": "Das Institut prognostiziert für 2035 zwei Millionen weniger Beschäftigte.",
+    "beispielTr": "Enstitü 2035 için iki milyon daha az çalışan öngörüyor.",
+    "beispielEn": "The institute forecasts two million fewer workers for 2035."
+  },
+  {
+    "id": 6047,
+    "tr": "projeksiyon yapmak",
+    "en": "to extrapolate",
+    "beispiel": "Die Forscher haben die Stichprobe auf ganz Deutschland hochgerechnet.",
+    "beispielTr": "Araştırmacılar örneklemden Almanya geneli için projeksiyon yaptı.",
+    "beispielEn": "The researchers extrapolated the sample to all of Germany."
+  },
+  {
+    "id": 6048,
+    "tr": "ileriye taşımak",
+    "en": "to carry forward",
+    "beispiel": "Die Behörde schreibt den Haushaltsplan jedes Jahr fort.",
+    "beispielTr": "Kurum bütçe planını her yıl aynı şekilde ileriye taşıyor.",
+    "beispielEn": "The authority carries the budget plan forward every year."
+  },
+  {
+    "id": 6049,
+    "tr": "karşı önlem almak",
+    "en": "to counteract",
+    "beispiel": "Die Stadt versucht mit billigem Bauland gegenzusteuern.",
+    "beispielTr": "Şehir ucuz arsa sunarak karşı önlem almaya çalışıyor.",
+    "beispielEn": "The city is trying to counteract with cheap building land."
+  },
+  {
+    "id": 6050,
+    "tr": "gençleştirmek",
+    "en": "to rejuvenate",
+    "beispiel": "Der Verein will seinen Vorstand endlich verjüngen.",
+    "beispielTr": "Dernek yönetim kurulunu artık gençleştirmek istiyor.",
+    "beispielEn": "The club finally wants to rejuvenate its board."
+  },
+  {
+    "id": 6051,
+    "tr": "ayakta tutmak",
+    "en": "to maintain",
+    "beispiel": "Den Betrieb konnten sie nur mit Mühe aufrechterhalten.",
+    "beispielTr": "İşletmeyi ancak güç bela ayakta tutabildiler.",
+    "beispielEn": "They could only just keep the business going."
+  },
+  {
+    "id": 6052,
+    "tr": "kan kaybetmek",
+    "en": "to bleed out",
+    "beispiel": "Ohne Arbeitsplätze blutet die ganze Region aus.",
+    "beispielTr": "İş imkânı olmayınca bütün bölge kan kaybediyor.",
+    "beispielEn": "Without jobs the whole region is bleeding out."
+  }
+]

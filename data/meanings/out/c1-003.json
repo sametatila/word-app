@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3475,
+  "tr": "önem",
+  "en": "relevance",
+  "beispiel": "Die Relevanz der Studie für die Praxis ist unbestritten.",
+  "beispielTr": "Çalışmanın uygulama açısından önemi tartışmasız.",
+  "beispielEn": "The study's relevance for practice is undisputed."
+ },
+ {
+  "id": 3887,
+  "tr": "genişleme",
+  "en": "expansion",
+  "beispiel": "Die geplante Expansion nach Südamerika wurde vorerst gestoppt.",
+  "beispielTr": "Güney Amerika'ya planlanan genişleme şimdilik durduruldu.",
+  "beispielEn": "The planned expansion into South America was halted for now."
+ },
+ {
+  "id": 3649,
+  "tr": "temsil etmek",
+  "en": "to embody",
+  "beispiel": "Der Gründer verkörpert für viele den amerikanischen Traum.",
+  "beispielTr": "Kurucu, çoğu kişi için Amerikan rüyasını temsil ediyor.",
+  "beispielEn": "For many the founder embodies the American dream."
+ },
+ {
+  "id": 3697,
+  "tr": "amaçlamak",
+  "en": "to intend",
+  "beispiel": "Was bezweckt er mit dieser Aussage eigentlich?",
+  "beispielTr": "Bu sözüyle aslında neyi amaçlıyor?",
+  "beispielEn": "What does he actually intend with that statement?"
+ },
+ {
+  "id": 3605,
+  "tr": "ideoloji",
+  "en": "ideology",
+  "beispiel": "Die Ideologie des Autors spiegelt sich in jedem Kapitel wider.",
+  "beispielTr": "Yazarın ideolojisi her bölüme yansıyor.",
+  "beispielEn": "The author's ideology shows in every single chapter."
+ },
+ {
+  "id": 3640,
+  "tr": "kalıntı",
+  "en": "relic",
+  "beispiel": "Das alte Telefon ist ein Relikt aus den Achtzigern.",
+  "beispielTr": "Eski telefon, seksenlerden kalma bir kalıntı.",
+  "beispielEn": "The old telephone is a relic from the eighties."
+ },
+ {
+  "id": 3675,
+  "tr": "ölçüp biçmek",
+  "en": "to weigh up",
+  "beispiel": "Sie wägt jedes Angebot mehrere Tage lang ab.",
+  "beispielTr": "Her teklifi günlerce ölçüp biçiyor.",
+  "beispielEn": "She weighs up every offer for several days."
+ },
+ {
+  "id": 3537,
+  "tr": "temyiz",
+  "en": "appeal",
+  "beispiel": "Die Revision wurde vom Bundesgerichtshof zugelassen.",
+  "beispielTr": "Temyiz, Federal Yargıtay tarafından kabul edildi.",
+  "beispielEn": "The appeal was allowed by the Federal Court."
+ },
+ {
+  "id": 4001,
+  "tr": "sömürmek",
+  "en": "to exploit",
+  "beispiel": "Konzerne beuten die Ressourcen ärmerer Länder rücksichtslos aus.",
+  "beispielTr": "Şirketler yoksul ülkelerin kaynaklarını acımasızca sömürüyor.",
+  "beispielEn": "Corporations ruthlessly exploit the resources of poorer countries."
+ },
+ {
+  "id": 3482,
+  "tr": "yaklaşım",
+  "en": "approach",
+  "beispiel": "Ihre Herangehensweise an das Problem hat mich überzeugt.",
+  "beispielTr": "Soruna yaklaşımı beni ikna etti.",
+  "beispielEn": "Her approach to the problem convinced me."
+ },
+ {
+  "id": 3962,
+  "tr": "eziyet",
+  "en": "imposition",
+  "beispiel": "Die lange Wartezeit empfand sie als reine Zumutung.",
+  "beispielTr": "Uzun bekleme süresini tam bir eziyet olarak gördü.",
+  "beispielEn": "She found the long wait a sheer imposition."
+ },
+ {
+  "id": 3689,
+  "tr": "kabul etmek",
+  "en": "to concede",
+  "beispiel": "Der Minister räumte Fehler in der Planung ein.",
+  "beispielTr": "Bakan, planlamadaki hataları kabul etti.",
+  "beispielEn": "The minister conceded mistakes in the planning."
+ },
+ {
+  "id": 3642,
+  "tr": "parça",
+  "en": "fragment",
+  "beispiel": "Nur ein Fragment des antiken Dramas ist erhalten geblieben.",
+  "beispielTr": "Antik oyundan geriye yalnızca bir parça kalmış.",
+  "beispielEn": "Only a fragment of the ancient drama has survived."
+ },
+ {
+  "id": 3509,
+  "tr": "kanıtlarla desteklemek",
+  "en": "to substantiate",
+  "beispiel": "Er untermauerte seine Kritik mit konkreten Zahlen.",
+  "beispielTr": "Eleştirisini somut rakamlarla destekledi.",
+  "beispielEn": "He substantiated his criticism with concrete figures."
+ },
+ {
+  "id": 3888,
+  "tr": "hedeflemek",
+  "en": "to aim for",
+  "beispiel": "Der Vorstand strebt eine Verdopplung des Umsatzes an.",
+  "beispielTr": "Yönetim kurulu ciroyu ikiye katlamayı hedefliyor.",
+  "beispielEn": "The board is aiming to double its revenue."
+ },
+ {
+  "id": 4009,
+  "tr": "ikiyüzlü",
+  "en": "hypocritical",
+  "beispiel": "Kritiker nennen die Kampagne des Unternehmens schlicht scheinheilig.",
+  "beispielTr": "Eleştirmenler şirketin kampanyasını düpedüz ikiyüzlü buluyor.",
+  "beispielEn": "Critics simply call the company's campaign hypocritical."
+ },
+ {
+  "id": 3708,
+  "tr": "azim",
+  "en": "persistence",
+  "beispiel": "Nur durch Beharrlichkeit erreichte sie ihr Ziel.",
+  "beispielTr": "Hedefine ancak azimle ulaştı.",
+  "beispielEn": "She reached her goal only through persistence."
+ },
+ {
+  "id": 4007,
+  "tr": "erdemli",
+  "en": "virtuous",
+  "beispiel": "In ihren Reden gibt sie sich besonders tugendhaft.",
+  "beispielTr": "Konuşmalarında kendini özellikle erdemli gösteriyor.",
+  "beispielEn": "In her speeches she presents herself as especially virtuous."
+ },
+ {
+  "id": 3943,
+  "tr": "çıkar çatışması",
+  "en": "conflict of interest",
+  "beispiel": "Der Berater verschwieg einen offensichtlichen Interessenkonflikt.",
+  "beispielTr": "Danışman, apaçık bir çıkar çatışmasını gizledi.",
+  "beispielEn": "The consultant concealed an obvious conflict of interest."
+ },
+ {
+  "id": 3471,
+  "tr": "polemik",
+  "en": "controversy",
+  "beispiel": "Die Kontroverse zwischen den beiden Autoren dauert seit Jahren.",
+  "beispielTr": "İki yazar arasındaki polemik yıllardır sürüyor.",
+  "beispielEn": "The controversy between the two authors has lasted for years."
+ },
+ {
+  "id": 3908,
+  "tr": "hasar kontrolü",
+  "en": "damage control",
+  "beispiel": "Nach dem Skandal betrieb die Firma reine Schadensbegrenzung.",
+  "beispielTr": "Skandaldan sonra şirket sadece hasar kontrolü yaptı.",
+  "beispielEn": "After the scandal the firm did pure damage control."
+ },
+ {
+  "id": 3465,
+  "tr": "analiz",
+  "en": "analysis",
+  "beispiel": "Die statistische Auswertung dauerte mehrere Wochen.",
+  "beispielTr": "İstatistiksel analiz birkaç hafta sürdü.",
+  "beispielEn": "The statistical analysis took several weeks."
+ },
+ {
+  "id": 3660,
+  "tr": "eskimeyen",
+  "en": "timeless",
+  "beispiel": "Das Design des Stuhls ist völlig zeitlos.",
+  "beispielTr": "Sandalyenin tasarımı hiç eskimiyor.",
+  "beispielEn": "The chair's design is completely timeless."
+ },
+ {
+  "id": 3551,
+  "tr": "itiraz etmek",
+  "en": "to contest",
+  "beispiel": "Der Kläger hat den Bescheid vor Gericht angefochten.",
+  "beispielTr": "Davacı, karara mahkemede itiraz etti.",
+  "beispielEn": "The plaintiff contested the decision in court."
+ },
+ {
+  "id": 3648,
+  "tr": "üzerine düşünmek",
+  "en": "to reflect",
+  "beispiel": "Nach dem Streit reflektierte sie ihr eigenes Verhalten.",
+  "beispielTr": "Kavgadan sonra kendi davranışı üzerine düşündü.",
+  "beispielEn": "After the argument she reflected on her own behavior."
+ },
+ {
+  "id": 4016,
+  "tr": "açıkça göstermek",
+  "en": "to illustrate",
+  "beispiel": "Die Grafik verdeutlicht den Rückgang der Geburtenrate.",
+  "beispielTr": "Grafik, doğum oranındaki düşüşü açıkça gösteriyor.",
+  "beispielEn": "The chart clearly shows the drop in births."
+ },
+ {
+  "id": 3717,
+  "tr": "makul",
+  "en": "understandable",
+  "beispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
+  "beispielTr": "Koşullar göz önüne alınınca kararı gayet makul.",
+  "beispielEn": "Given the circumstances his decision is understandable."
+ },
+ {
+  "id": 3907,
+  "tr": "çığırından çıkmak",
+  "en": "to escalate",
+  "beispiel": "Der Streit zwischen den Nachbarn ist völlig eskaliert.",
+  "beispielTr": "Komşular arasındaki kavga tamamen çığırından çıktı.",
+  "beispielEn": "The dispute between the neighbors escalated completely."
+ },
+ {
+  "id": 3574,
+  "tr": "şerh",
+  "en": "memo",
+  "beispiel": "Der Sachbearbeiter fügte der Akte einen Vermerk hinzu.",
+  "beispielTr": "Memur, dosyaya bir şerh düştü.",
+  "beispielEn": "The clerk added a memo to the file."
+ },
+ {
+  "id": 3541,
+  "tr": "hukuki anlaşmazlık",
+  "en": "legal dispute",
+  "beispiel": "Der Rechtsstreit zog sich über Jahre hin.",
+  "beispielTr": "Hukuki anlaşmazlık yıllarca sürdü.",
+  "beispielEn": "The legal dispute dragged on for years."
+ },
+ {
+  "id": 3622,
+  "tr": "parodi",
+  "en": "parody",
+  "beispiel": "Seine Parodie auf den Chef brachte alle zum Lachen.",
+  "beispielTr": "Patronun parodisi herkesi güldürdü.",
+  "beispielEn": "His parody of the boss made everyone laugh."
+ },
+ {
+  "id": 3556,
+  "tr": "infaz",
+  "en": "enforcement",
+  "beispiel": "Der Vollzug des Urteils wurde vorläufig ausgesetzt.",
+  "beispielTr": "Hükmün infazı geçici olarak durduruldu.",
+  "beispielEn": "Enforcement of the judgment was suspended for now."
+ },
+ {
+  "id": 3526,
+  "tr": "büyük ölçüde",
+  "en": "largely",
+  "beispiel": "Die Fachwelt stimmt der These weitgehend zu.",
+  "beispielTr": "Uzmanlar teze büyük ölçüde katılıyor.",
+  "beispielEn": "Experts largely agree with the thesis."
+ },
+ {
+  "id": 3550,
+  "tr": "merci",
+  "en": "authority",
+  "beispiel": "Für solche Fragen ist er die höchste Instanz.",
+  "beispielTr": "Bu tür sorularda en yüksek merci odur.",
+  "beispielEn": "For such questions he is the highest authority."
+ },
+ {
+  "id": 4008,
+  "tr": "kendini haklı gören",
+  "en": "self-righteous",
+  "beispiel": "Sein selbstgerechter Ton stieß bei vielen auf Ablehnung.",
+  "beispielTr": "Kendini haklı gören ses tonu birçok kişide tepki uyandırdı.",
+  "beispielEn": "His self-righteous tone met with rejection from many."
+ },
+ {
+  "id": 3463,
+  "tr": "argümantasyon",
+  "en": "argumentation",
+  "beispiel": "Ihre Argumentation überzeugte selbst die schärfsten Kritiker.",
+  "beispielTr": "Argümantasyonu en sert eleştirmenleri bile ikna etti.",
+  "beispielEn": "Her argumentation convinced even the harshest critics."
+ },
+ {
+  "id": 4005,
+  "tr": "kınanacak",
+  "en": "reprehensible",
+  "beispiel": "Sein Verhalten gegenüber den Angestellten war verwerflich.",
+  "beispielTr": "Çalışanlara karşı davranışı kınanacak bir şeydi.",
+  "beispielEn": "His behavior toward the employees was reprehensible."
+ },
+ {
+  "id": 3718,
+  "tr": "çelişkili",
+  "en": "contradictory",
+  "beispiel": "Die Aussagen der Zeugen waren teilweise widersprüchlich.",
+  "beispielTr": "Tanıkların ifadeleri yer yer çelişkiliydi.",
+  "beispielEn": "The witnesses' statements were partly contradictory."
+ },
+ {
+  "id": 3700,
+  "tr": "sabit kalmak",
+  "en": "to remain",
+  "beispiel": "Die Preise verharren seit Monaten auf hohem Niveau.",
+  "beispielTr": "Fiyatlar aylardır yüksek seviyede sabit kalıyor.",
+  "beispielEn": "Prices have remained at a high level for months."
+ },
+ {
+  "id": 4004,
+  "tr": "endişe verici",
+  "en": "worrying",
+  "beispiel": "Die Blutwerte des Patienten sind wirklich bedenklich.",
+  "beispielTr": "Hastanın kan değerleri gerçekten endişe verici.",
+  "beispielEn": "The patient's blood values are really worrying."
+ },
+ {
+  "id": 3603,
+  "tr": "estetik",
+  "en": "aesthetics",
+  "beispiel": "Die Ästhetik dieses Gebäudes überzeugt mich nicht.",
+  "beispielTr": "Bu binanın estetiği beni ikna etmiyor.",
+  "beispielEn": "The aesthetics of this building don't convince me."
+ },
+ {
+  "id": 3543,
+  "tr": "sorumluluk",
+  "en": "liability",
+  "beispiel": "Die Haftung des Herstellers ist gesetzlich geregelt.",
+  "beispielTr": "Üreticinin sorumluluğu yasayla düzenlenmiştir.",
+  "beispielEn": "The manufacturer's liability is regulated by law."
+ },
+ {
+  "id": 3898,
+  "tr": "ısrar etmek",
+  "en": "to insist",
+  "beispiel": "Er beharrte auf seiner ursprünglichen Forderung.",
+  "beispielTr": "İlk talebinde ısrar etti.",
+  "beispielEn": "He insisted on his original demand."
+ },
+ {
+  "id": 3991,
+  "tr": "adına karar vermek",
+  "en": "to patronize",
+  "beispiel": "Meine Eltern bevormunden mich noch immer.",
+  "beispielTr": "Ailem hâlâ benim adıma karar veriyor.",
+  "beispielEn": "My parents still patronize me."
+ },
+ {
+  "id": 3662,
+  "tr": "tartışmalı",
+  "en": "controversial",
+  "beispiel": "Der Vorschlag bleibt in der Partei kontrovers.",
+  "beispielTr": "Öneri parti içinde hâlâ tartışmalı.",
+  "beispielEn": "The proposal remains controversial within the party."
+ },
+ {
+  "id": 3712,
+  "tr": "kaçınılmaz",
+  "en": "unavoidable",
+  "beispiel": "Eine Reform des Systems ist unumgänglich geworden.",
+  "beispielTr": "Sistemin reformu artık kaçınılmaz hâle geldi.",
+  "beispielEn": "A reform of the system has become unavoidable."
+ },
+ {
+  "id": 3494,
+  "tr": "tutarlılık",
+  "en": "consistency",
+  "beispiel": "Der Studie fehlt es an innerer Konsistenz.",
+  "beispielTr": "Çalışmada iç tutarlılık eksik.",
+  "beispielEn": "The study lacks internal consistency."
+ },
+ {
+  "id": 3579,
+  "tr": "açık",
+  "en": "deficit",
+  "beispiel": "Das Defizit im Staatshaushalt wächst weiter.",
+  "beispielTr": "Devlet bütçesindeki açık büyümeye devam ediyor.",
+  "beispielEn": "The deficit in the state budget keeps growing."
+ },
+ {
+  "id": 3725,
+  "tr": "ağır",
+  "en": "grave",
+  "beispiel": "Der Vorfall hatte schwerwiegende Folgen für alle Beteiligten.",
+  "beispielTr": "Olay, ilgili herkes için ağır sonuçlar doğurdu.",
+  "beispielEn": "The incident had grave consequences for everyone involved."
+ },
+ {
+  "id": 3726,
+  "tr": "yadsınamaz",
+  "en": "undeniable",
+  "beispiel": "Der Klimawandel ist mittlerweile eine unbestreitbare Tatsache.",
+  "beispielTr": "İklim değişikliği artık yadsınamaz bir gerçek.",
+  "beispielEn": "Climate change is by now an undeniable fact."
+ }
+]

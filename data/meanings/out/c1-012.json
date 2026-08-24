@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5803,
+  "tr": "romantikleştirmek",
+  "en": "to romanticize",
+  "beispiel": "Der Film romantisiert das harte Leben auf dem Land.",
+  "beispielTr": "Film kırdaki zorlu hayatı romantikleştiriyor.",
+  "beispielEn": "The movie romanticizes hard life in the countryside."
+ },
+ {
+  "id": 5804,
+  "tr": "bağlama oturtmak",
+  "en": "to contextualize",
+  "beispiel": "Ohne das Datum kann man den Brief nicht kontextualisieren.",
+  "beispielTr": "Tarih olmadan mektubu bir bağlama oturtmak mümkün değil.",
+  "beispielEn": "Without the date you cannot contextualize the letter."
+ },
+ {
+  "id": 5805,
+  "tr": "deşifre etmek",
+  "en": "to decipher",
+  "beispiel": "Ich kann die Handschrift meines Großvaters kaum entziffern.",
+  "beispielTr": "Dedemin el yazısını zar zor deşifre edebiliyorum.",
+  "beispielEn": "I can barely decipher my grandfather's handwriting."
+ },
+ {
+  "id": 5806,
+  "tr": "boşa çıkarmak",
+  "en": "to circumvent",
+  "beispiel": "Mit Werkverträgen unterlaufen manche Firmen den Mindestlohn.",
+  "beispielTr": "Bazı şirketler taşeron sözleşmeleriyle asgari ücreti boşa çıkarıyor.",
+  "beispielEn": "Some companies circumvent the minimum wage with service contracts."
+ },
+ {
+  "id": 5807,
+  "tr": "başkalaştırmak",
+  "en": "to reshape",
+  "beispiel": "Der Tourismus hat das alte Fischerdorf völlig überformt.",
+  "beispielTr": "Turizm eski balıkçı köyünü tamamen başkalaştırdı.",
+  "beispielEn": "Tourism has completely reshaped the old fishing village."
+ },
+ {
+  "id": 5808,
+  "tr": "sinmek",
+  "en": "to permeate",
+  "beispiel": "Der Geruch von Zwiebeln durchdringt die ganze Wohnung.",
+  "beispielTr": "Soğan kokusu bütün eve siniyor.",
+  "beispielEn": "The smell of onions permeates the whole apartment."
+ },
+ {
+  "id": 5809,
+  "tr": "üyesi olmak",
+  "en": "to be a member of",
+  "beispiel": "Sie gehört seit zehn Jahren dem Betriebsrat an.",
+  "beispielTr": "On yıldır işyeri kurulunun üyesi.",
+  "beispielEn": "She has been a member of the works council for ten years."
+ },
+ {
+  "id": 5810,
+  "tr": "şekillenmek",
+  "en": "to take shape",
+  "beispiel": "Im Laufe der Jahre hat sich eine feste Routine herausgebildet.",
+  "beispielTr": "Yıllar içinde yerleşik bir rutin şekillendi.",
+  "beispielEn": "Over the years a fixed routine took shape."
+ },
+ {
+  "id": 5811,
+  "tr": "kalıplaşmak",
+  "en": "to become entrenched",
+  "beispiel": "Die Rollenverteilung im Haushalt hat sich schnell verfestigt.",
+  "beispielTr": "Evdeki rol dağılımı çabucak kalıplaştı.",
+  "beispielEn": "The division of chores at home quickly became entrenched."
+ },
+ {
+  "id": 5812,
+  "tr": "saygı göstermek",
+  "en": "to pay homage",
+  "beispiel": "Die Fans huldigten ihrem Idol mit einem Sprechchor.",
+  "beispielTr": "Hayranlar tezahüratla idollerine saygı gösterdi.",
+  "beispielEn": "The fans paid homage to their idol with a chant."
+ },
+ {
+  "id": 5813,
+  "tr": "parçalara ayırmak",
+  "en": "to dissect",
+  "beispiel": "Der Trainer zergliedert jede Bewegung in kleinste Schritte.",
+  "beispielTr": "Antrenör her hareketi en küçük adımlara ayırıyor.",
+  "beispielEn": "The coach dissects every movement into the smallest steps."
+ },
+ {
+  "id": 5814,
+  "tr": "sembol yüklü",
+  "en": "highly symbolic",
+  "beispiel": "Sie wählten für die Unterschrift einen symbolträchtigen Ort.",
+  "beispielTr": "İmza için sembol yüklü bir yer seçtiler.",
+  "beispielEn": "They chose a highly symbolic place for the signing."
+ },
+ {
+  "id": 5815,
+  "tr": "kural koyucu",
+  "en": "normative",
+  "beispiel": "Der Ratgeber klingt beschreibend, ist aber durchweg normativ.",
+  "beispielTr": "Rehber betimleyici gibi duruyor ama baştan sona kural koyucu.",
+  "beispielEn": "The guidebook sounds descriptive but is thoroughly normative."
+ },
+ {
+  "id": 5816,
+  "tr": "sıradan",
+  "en": "mundane",
+  "beispiel": "Die Kapelle dient heute ganz profanen Zwecken.",
+  "beispielTr": "Şapel bugün tamamen sıradan amaçlara hizmet ediyor.",
+  "beispielEn": "The chapel serves entirely mundane purposes today."
+ },
+ {
+  "id": 5817,
+  "tr": "kutsal",
+  "en": "sacred",
+  "beispiel": "In der alten Truhe liegen sakrale Gegenstände aus der Kirche.",
+  "beispielTr": "Eski sandıkta kiliseden gelen kutsal eşyalar duruyor.",
+  "beispielEn": "Sacred objects from the church lie in the old chest."
+ },
+ {
+  "id": 5818,
+  "tr": "yaygın",
+  "en": "commonly used",
+  "beispiel": "Diese Anrede ist nur noch in wenigen Bergdörfern gebräuchlich.",
+  "beispielTr": "Bu hitap biçimi artık yalnızca birkaç dağ köyünde yaygın.",
+  "beispielEn": "This form of address is still common only in a few mountain villages."
+ },
+ {
+  "id": 5819,
+  "tr": "baskın",
+  "en": "prevailing",
+  "beispiel": "Im Norden ist Westwind das ganze Jahr vorherrschend.",
+  "beispielTr": "Kuzeyde batı rüzgârı bütün yıl baskındır.",
+  "beispielEn": "In the north the west wind prevails all year."
+ },
+ {
+  "id": 5820,
+  "tr": "karşılıklı",
+  "en": "reciprocal",
+  "beispiel": "Die beiden Nachbarn helfen sich wechselseitig bei der Ernte.",
+  "beispielTr": "İki komşu hasatta karşılıklı olarak birbirine yardım ediyor.",
+  "beispielEn": "The two neighbors help each other with the harvest."
+ },
+ {
+  "id": 5821,
+  "tr": "söylenmemiş",
+  "en": "unspoken",
+  "beispiel": "Zwischen den beiden steht ein unausgesprochener Vorwurf.",
+  "beispielTr": "İkisinin arasında söylenmemiş bir sitem duruyor.",
+  "beispielEn": "An unspoken reproach stands between the two of them."
+ },
+ {
+  "id": 5822,
+  "tr": "kadim",
+  "en": "time-honored",
+  "beispiel": "Die Bauern berufen sich auf althergebrachte Weiderechte.",
+  "beispielTr": "Çiftçiler kadim otlatma haklarına dayanıyor.",
+  "beispielEn": "The farmers invoke time-honored grazing rights."
+ },
+ {
+  "id": 5823,
+  "tr": "dünya görüşüyle ilgili",
+  "en": "ideological",
+  "beispiel": "Der Streit im Verein ist weltanschaulich, nicht sachlich.",
+  "beispielTr": "Dernekteki kavga nesnel değil, dünya görüşüyle ilgili.",
+  "beispielEn": "The dispute in the club is ideological, not factual."
+ },
+ {
+  "id": 5824,
+  "tr": "hiyerarşi",
+  "en": "hierarchy",
+  "beispiel": "In der Küche gilt eine strenge Hierarchie.",
+  "beispielTr": "Mutfakta katı bir hiyerarşi geçerlidir.",
+  "beispielEn": "A strict hierarchy applies in the kitchen."
+ },
+ {
+  "id": 5825,
+  "tr": "iş bölümü",
+  "en": "division of labor",
+  "beispiel": "Zu Hause haben wir eine klare Arbeitsteilung.",
+  "beispielTr": "Evde net bir iş bölümümüz var.",
+  "beispielEn": "At home we have a clear division of labor."
+ },
+ {
+  "id": 5826,
+  "tr": "rasyonelleştirme",
+  "en": "rationalization",
+  "beispiel": "Die Rationalisierung im Werk kostete zweihundert Stellen.",
+  "beispielTr": "Fabrikadaki rasyonelleştirme iki yüz kişinin işine mal oldu.",
+  "beispielEn": "The rationalization at the plant cost two hundred jobs."
+ },
+ {
+  "id": 5827,
+  "tr": "bürokratikleşme",
+  "en": "bureaucratization",
+  "beispiel": "Die Bürokratisierung frisst die Zeit der Ärzte auf.",
+  "beispielTr": "Bürokratikleşme doktorların zamanını yiyip bitiriyor.",
+  "beispielEn": "Bureaucratization eats up the doctors' time."
+ },
+ {
+  "id": 5828,
+  "tr": "iş yoğunlaşması",
+  "en": "work intensification",
+  "beispiel": "Nach dem Stellenabbau klagen alle über die Arbeitsverdichtung.",
+  "beispielTr": "Kadro azaltmasının ardından herkes iş yoğunlaşmasından şikâyetçi.",
+  "beispielEn": "After the job cuts everyone complains about the work intensification."
+ },
+ {
+  "id": 5829,
+  "tr": "güvencesizleşme",
+  "en": "precarization",
+  "beispiel": "Die Prekarisierung trifft inzwischen auch gut ausgebildete Leute.",
+  "beispielTr": "Güvencesizleşme artık iyi eğitimli insanları da vuruyor.",
+  "beispielEn": "Precarization now hits well-educated people as well."
+ },
+ {
+  "id": 5830,
+  "tr": "kendini sömürme",
+  "en": "self-exploitation",
+  "beispiel": "Bei Selbstständigen beginnt die Selbstausbeutung oft ganz leise.",
+  "beispielTr": "Serbest çalışanlarda kendini sömürme çoğu zaman sessizce başlar.",
+  "beispielEn": "Among freelancers self-exploitation often starts very quietly."
+ },
+ {
+  "id": 5831,
+  "tr": "şirket kültürü",
+  "en": "company culture",
+  "beispiel": "Die Unternehmenskultur merkt man schon im Flur.",
+  "beispielTr": "Şirket kültürü daha koridorda belli oluyor.",
+  "beispielEn": "You notice the company culture already in the hallway."
+ },
+ {
+  "id": 5832,
+  "tr": "güç dengesizliği",
+  "en": "power imbalance",
+  "beispiel": "Trotz des Duzens bleibt das Machtgefälle im Team spürbar.",
+  "beispielTr": "Samimi hitaba rağmen ekipteki güç dengesizliği hissediliyor.",
+  "beispielEn": "Despite the informal address the power imbalance in the team stays noticeable."
+ },
+ {
+  "id": 5833,
+  "tr": "talimat verme yetkisi",
+  "en": "authority to give orders",
+  "beispiel": "Der Praktikant hat gegenüber niemandem Weisungsbefugnis.",
+  "beispielTr": "Stajyerin kimseye karşı talimat verme yetkisi yok.",
+  "beispielEn": "The intern has no authority to give orders to anyone."
+ },
+ {
+  "id": 5834,
+  "tr": "rol çatışması",
+  "en": "role conflict",
+  "beispiel": "Als Chefin und Freundin geriet sie in einen Rollenkonflikt.",
+  "beispielTr": "Hem patron hem arkadaş olunca bir rol çatışmasına düştü.",
+  "beispielEn": "As boss and friend she ended up in a role conflict."
+ },
+ {
+  "id": 5835,
+  "tr": "boyun eğme",
+  "en": "subordination",
+  "beispiel": "Beim Militär gilt Subordination bis heute als selbstverständlich.",
+  "beispielTr": "Orduda boyun eğmek bugün hâlâ doğal karşılanıyor.",
+  "beispielEn": "In the military subordination is still taken for granted."
+ },
+ {
+  "id": 5836,
+  "tr": "yetki devri",
+  "en": "delegation",
+  "beispiel": "Der Chef scheitert an der Delegation und macht alles selbst.",
+  "beispielTr": "Patron yetki devrinde başarısız olup her şeyi kendi yapıyor.",
+  "beispielEn": "The boss fails at delegation and does everything himself."
+ },
+ {
+  "id": 5837,
+  "tr": "hareket alanı",
+  "en": "room to maneuver",
+  "beispiel": "Im neuen Job hat sie deutlich mehr Handlungsspielraum.",
+  "beispielTr": "Yeni işinde belirgin biçimde daha fazla hareket alanı var.",
+  "beispielEn": "In her new job she has much more room to maneuver."
+ },
+ {
+  "id": 5838,
+  "tr": "toplu sözleşme özerkliği",
+  "en": "collective bargaining autonomy",
+  "beispiel": "Die Tarifautonomie hält den Staat aus der Lohnfindung heraus.",
+  "beispielTr": "Toplu sözleşme özerkliği devleti ücret pazarlığının dışında tutar.",
+  "beispielEn": "Collective bargaining autonomy keeps the state out of wage setting."
+ },
+ {
+  "id": 5839,
+  "tr": "ikramiye",
+  "en": "bonus",
+  "beispiel": "Zu Weihnachten zahlt die Firma eine kleine Gratifikation.",
+  "beispielTr": "Şirket Noel'de küçük bir ikramiye ödüyor.",
+  "beispielEn": "At Christmas the company pays a small bonus."
+ },
+ {
+  "id": 5840,
+  "tr": "özdeşleşme",
+  "en": "identification",
+  "beispiel": "Ihre Identifikation mit dem Verein geht sehr weit.",
+  "beispielTr": "Kulüple özdeşleşmesi çok ileri gidiyor.",
+  "beispielEn": "Her identification with the club goes very far."
+ },
+ {
+  "id": 5841,
+  "tr": "sadakat",
+  "en": "loyalty",
+  "beispiel": "Nach zwanzig Jahren Loyalität wurde er einfach entlassen.",
+  "beispielTr": "Yirmi yıllık sadakatin ardından öylece işten çıkarıldı.",
+  "beispielEn": "After twenty years of loyalty he was simply let go."
+ },
+ {
+  "id": 5842,
+  "tr": "bağdaşabilirlik",
+  "en": "compatibility",
+  "beispiel": "Über die Vereinbarkeit von Beruf und Familie reden alle.",
+  "beispielTr": "İş ile ailenin bağdaşabilirliği üzerine herkes konuşuyor.",
+  "beispielEn": "Everyone talks about the compatibility of work and family."
+ },
+ {
+  "id": 5843,
+  "tr": "esnekleştirme",
+  "en": "flexibilization",
+  "beispiel": "Die Flexibilisierung der Arbeitszeit nützt vor allem dem Betrieb.",
+  "beispielTr": "Çalışma saatlerinin esnekleştirilmesi en çok işletmeye yarıyor.",
+  "beispielEn": "The flexibilization of working hours mainly benefits the company."
+ },
+ {
+  "id": 5844,
+  "tr": "standartlaştırma",
+  "en": "standardization",
+  "beispiel": "Die Standardisierung der Rezepte macht jede Filiale gleich.",
+  "beispielTr": "Tariflerin standartlaştırılması her şubeyi birbirinin aynısı yapıyor.",
+  "beispielEn": "The standardization of the recipes makes every branch identical."
+ },
+ {
+  "id": 5845,
+  "tr": "tempo",
+  "en": "pacing",
+  "beispiel": "Die enge Taktung der Schichten lässt kaum Pausen zu.",
+  "beispielTr": "Vardiyaların sıkı temposu neredeyse hiç molaya izin vermiyor.",
+  "beispielEn": "The tight pacing of the shifts barely allows any breaks."
+ },
+ {
+  "id": 5846,
+  "tr": "parça başı iş",
+  "en": "piecework",
+  "beispiel": "In der Näherei wird noch im Akkord gearbeitet.",
+  "beispielTr": "Dikimhanede hâlâ parça başı iş yapılıyor.",
+  "beispielEn": "In the sewing shop they still work piecework."
+ },
+ {
+  "id": 5847,
+  "tr": "vasıfsızlaşma",
+  "en": "deskilling",
+  "beispiel": "Die neuen Automaten führen zur Dequalifizierung der Bäcker.",
+  "beispielTr": "Yeni otomatlar fırıncıların vasıfsızlaşmasına yol açıyor.",
+  "beispielEn": "The new machines lead to the deskilling of bakers."
+ },
+ {
+  "id": 5848,
+  "tr": "profesyonelleşme",
+  "en": "professionalization",
+  "beispiel": "Die Professionalisierung der Pflege kam viel zu spät.",
+  "beispielTr": "Bakım mesleğinin profesyonelleşmesi çok geç geldi.",
+  "beispielEn": "The professionalization of nursing came far too late."
+ },
+ {
+  "id": 5849,
+  "tr": "meslek ahlakı",
+  "en": "professional ethic",
+  "beispiel": "Sein Berufsethos verbietet ihm, Patienten anzulügen.",
+  "beispielTr": "Meslek ahlakı hastalara yalan söylemesine izin vermiyor.",
+  "beispielEn": "His professional ethic forbids him to lie to patients."
+ },
+ {
+  "id": 5850,
+  "tr": "ücretli çalışma",
+  "en": "paid work",
+  "beispiel": "Neben der Erwerbsarbeit bleibt kaum Zeit für die Kinder.",
+  "beispielTr": "Ücretli çalışmanın yanında çocuklara neredeyse hiç zaman kalmıyor.",
+  "beispielEn": "Alongside paid work there is barely any time for the children."
+ },
+ {
+  "id": 5851,
+  "tr": "yeniden üretim emeği",
+  "en": "reproductive labor",
+  "beispiel": "Die Reproduktionsarbeit erledigt zu Hause meist die Frau.",
+  "beispielTr": "Evdeki yeniden üretim emeğini çoğunlukla kadın üstlenir.",
+  "beispielEn": "At home reproductive labor is mostly done by the woman."
+ },
+ {
+  "id": 5852,
+  "tr": "bilgi emeği",
+  "en": "knowledge work",
+  "beispiel": "Wissensarbeit lässt sich schlecht in Stunden messen.",
+  "beispielTr": "Bilgi emeğini saatle ölçmek zordur.",
+  "beispielEn": "Knowledge work is hard to measure in hours."
+ }
+]

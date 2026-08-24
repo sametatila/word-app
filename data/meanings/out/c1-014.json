@@ -1,0 +1,402 @@
+[
+ {
+  "id": 5903,
+  "tr": "görüş aksı",
+  "en": "sightline",
+  "beispiel": "Der Neubau verstellt die historische Sichtachse zum Dom.",
+  "beispielTr": "Yeni bina katedrale uzanan tarihî görüş aksını kapatıyor.",
+  "beispielEn": "The new building blocks the historic sightline to the cathedral."
+ },
+ {
+  "id": 5904,
+  "tr": "anıtsallık",
+  "en": "monumentality",
+  "beispiel": "Die Monumentalität des Baus wirkt heute eher einschüchternd als erhaben.",
+  "beispielTr": "Yapının anıtsallığı bugün yüceden çok ürkütücü geliyor.",
+  "beispielEn": "The building's monumentality feels intimidating today rather than sublime."
+ },
+ {
+  "id": 5905,
+  "tr": "işlevselcilik",
+  "en": "functionalism",
+  "beispiel": "Der strenge Funktionalismus der Nachkriegszeit übersah das Bedürfnis nach Schönheit.",
+  "beispielTr": "Savaş sonrasının katı işlevselciliği güzellik ihtiyacını gözden kaçırdı.",
+  "beispielEn": "The strict functionalism of the postwar years overlooked the need for beauty."
+ },
+ {
+  "id": 5906,
+  "tr": "postmodernizm",
+  "en": "postmodernism",
+  "beispiel": "In der Postmoderne kehrten Farbe und Ironie an die Fassaden zurück.",
+  "beispielTr": "Postmodernizmle birlikte renk ve ironi cephelere geri döndü.",
+  "beispielEn": "With postmodernism, color and irony returned to the facades."
+ },
+ {
+  "id": 5907,
+  "tr": "malzeme niteliği",
+  "en": "materiality",
+  "beispiel": "Die raue Materialität des Betons prägt den ganzen Raum.",
+  "beispielTr": "Betonun ham malzeme niteliği bütün mekâna damgasını vuruyor.",
+  "beispielEn": "The raw materiality of the concrete shapes the entire space."
+ },
+ {
+  "id": 5908,
+  "tr": "mekân kalitesi",
+  "en": "quality of stay",
+  "beispiel": "Ohne Schatten und Bänke fehlt dem Platz jede Aufenthaltsqualität.",
+  "beispielTr": "Gölge ve bank olmadığı için meydanın hiçbir mekân kalitesi yok.",
+  "beispielEn": "Without shade or benches the square has no quality of stay."
+ },
+ {
+  "id": 5909,
+  "tr": "erişilebilirlik",
+  "en": "accessibility",
+  "beispiel": "Barrierefreiheit wurde beim Umbau des Bahnhofs endlich mitgedacht.",
+  "beispielTr": "Gar yenilenirken erişilebilirlik nihayet hesaba katıldı.",
+  "beispielEn": "Accessibility was finally taken into account in the station's rebuild."
+ },
+ {
+  "id": 5910,
+  "tr": "moratoryum",
+  "en": "moratorium",
+  "beispiel": "Der Stadtrat verhängte ein Moratorium für weitere Hochhäuser.",
+  "beispielTr": "Belediye meclisi yeni gökdelenler için moratoryum ilan etti.",
+  "beispielEn": "The city council imposed a moratorium on further high-rises."
+ },
+ {
+  "id": 5911,
+  "tr": "inşaatın durdurulması",
+  "en": "construction halt",
+  "beispiel": "Ein Fund aus der Römerzeit führte zum sofortigen Baustopp.",
+  "beispielTr": "Roma dönemine ait bir buluntu inşaatın derhâl durdurulmasına yol açtı.",
+  "beispielEn": "A Roman-era find led to an immediate construction halt."
+ },
+ {
+  "id": 5912,
+  "tr": "kentlilik",
+  "en": "urbanity",
+  "beispiel": "Dem neuen Viertel fehlt trotz vieler Cafés jede Urbanität.",
+  "beispielTr": "Yeni mahallede bunca kafeye rağmen hiç kentlilik yok.",
+  "beispielEn": "Despite all its cafes, the new district has no urbanity."
+ },
+ {
+  "id": 5913,
+  "tr": "mekânsal planlama",
+  "en": "spatial planning",
+  "beispiel": "Die Raumordnung des Landes bremst neue Einkaufszentren auf der grünen Wiese.",
+  "beispielTr": "Eyaletin mekânsal planlaması kır alanlarındaki yeni alışveriş merkezlerini frenliyor.",
+  "beispielEn": "The state's spatial planning curbs new shopping malls on greenfield land."
+ },
+ {
+  "id": 5914,
+  "tr": "üst hakkı",
+  "en": "leasehold",
+  "beispiel": "Die Stadt vergibt das Grundstück nur noch im Erbbaurecht.",
+  "beispielTr": "Şehir arsayı artık yalnızca üst hakkı yoluyla veriyor.",
+  "beispielEn": "The city now grants the plot only as a leasehold."
+ },
+ {
+  "id": 5915,
+  "tr": "gayrimenkul piyasası",
+  "en": "real estate market",
+  "beispiel": "Der überhitzte Immobilienmarkt treibt selbst Gutverdienende aus der Stadt.",
+  "beispielTr": "Aşırı ısınan gayrimenkul piyasası iyi kazananları bile şehirden kaçırıyor.",
+  "beispielEn": "The overheated real estate market drives even high earners out of the city."
+ },
+ {
+  "id": 5916,
+  "tr": "kamu yararı statüsü",
+  "en": "nonprofit status",
+  "beispiel": "Mit der Abschaffung der Gemeinnützigkeit verschwand der soziale Wohnungsbau.",
+  "beispielTr": "Kamu yararı statüsünün kaldırılmasıyla sosyal konut üretimi de yok oldu.",
+  "beispielEn": "When nonprofit status was abolished, social housing disappeared with it."
+ },
+ {
+  "id": 5917,
+  "tr": "ısı adası",
+  "en": "heat island",
+  "beispiel": "Dicht bebaute Viertel werden im Sommer zu regelrechten Hitzeinseln.",
+  "beispielTr": "Sık yapılaşmış mahalleler yazın adeta birer ısı adasına dönüşüyor.",
+  "beispielEn": "Densely built neighborhoods turn into real heat islands in summer."
+ },
+ {
+  "id": 5918,
+  "tr": "iklime uyum",
+  "en": "climate adaptation",
+  "beispiel": "Für die Klimaanpassung pflanzt die Stadt tausend neue Bäume.",
+  "beispielTr": "Şehir, iklime uyum için bin yeni ağaç dikiyor.",
+  "beispielEn": "The city is planting a thousand new trees for climate adaptation."
+ },
+ {
+  "id": 5919,
+  "tr": "ulaşım dönüşümü",
+  "en": "mobility transition",
+  "beispiel": "Die versprochene Verkehrswende scheitert bei uns an der Parkplatzfrage.",
+  "beispielTr": "Vaat edilen ulaşım dönüşümü bizde otopark meselesine takılıyor.",
+  "beispielEn": "The promised mobility transition fails here over the parking question."
+ },
+ {
+  "id": 5920,
+  "tr": "sökme",
+  "en": "dismantling",
+  "beispiel": "Der Rückbau der Stadtautobahn schuf Platz für einen Park.",
+  "beispielTr": "Şehir otoyolunun sökülmesi bir parka yer açtı.",
+  "beispielEn": "The dismantling of the urban highway made room for a park."
+ },
+ {
+  "id": 5921,
+  "tr": "yeniden işlevlendirme",
+  "en": "change of use",
+  "beispiel": "Die Umnutzung der Kirche zur Bibliothek stieß auf heftigen Widerstand.",
+  "beispielTr": "Kilisenin kütüphane olarak yeniden işlevlendirilmesi sert bir tepkiyle karşılandı.",
+  "beispielEn": "The change of use from church to library met fierce resistance."
+ },
+ {
+  "id": 5922,
+  "tr": "dönüşüm",
+  "en": "conversion",
+  "beispiel": "Die Konversion der Kaserne dauert deutlich länger als geplant.",
+  "beispielTr": "Kışlanın dönüşümü planlanandan epey uzun sürüyor.",
+  "beispielEn": "The conversion of the barracks is taking much longer than planned."
+ },
+ {
+  "id": 5923,
+  "tr": "kamulaştırma",
+  "en": "expropriation",
+  "beispiel": "Eine Enteignung großer Wohnungskonzerne halten manche Juristen für zulässig.",
+  "beispielTr": "Bazı hukukçular büyük konut şirketlerinin kamulaştırılmasını hukuka uygun buluyor.",
+  "beispielEn": "Some lawyers consider the expropriation of large housing corporations lawful."
+ },
+ {
+  "id": 5924,
+  "tr": "sosyal doku koruması",
+  "en": "neighborhood protection",
+  "beispiel": "Der Milieuschutz soll die alteingesessenen Mieter im Viertel halten.",
+  "beispielTr": "Sosyal doku koruması, eskiden beri oturan kiracıları mahallede tutmayı amaçlıyor.",
+  "beispielEn": "Neighborhood protection is meant to keep long-standing tenants in the district."
+ },
+ {
+  "id": 5925,
+  "tr": "tasarlamak",
+  "en": "to design",
+  "beispiel": "Sie entwarf das Rathaus als bewusst zurückhaltenden Baukörper.",
+  "beispielTr": "Belediye binasını bilinçli biçimde geri planda duran bir kütle olarak tasarladı.",
+  "beispielEn": "She designed the town hall as a deliberately restrained volume."
+ },
+ {
+  "id": 5926,
+  "tr": "canlandırmak",
+  "en": "to revitalize",
+  "beispiel": "Kleine Läden sollen das verödete Zentrum wieder revitalisieren.",
+  "beispielTr": "Küçük dükkânların ıssızlaşan merkezi yeniden canlandırması bekleniyor.",
+  "beispielEn": "Small shops are meant to revitalize the deserted center."
+ },
+ {
+  "id": 5927,
+  "tr": "restore etmek",
+  "en": "to restore",
+  "beispiel": "Die Stuckdecke wurde nach alten Fotografien restauriert.",
+  "beispielTr": "Alçı tavan eski fotoğraflara bakılarak restore edildi.",
+  "beispielEn": "The stucco ceiling was restored from old photographs."
+ },
+ {
+  "id": 5928,
+  "tr": "ilan etmek",
+  "en": "to designate",
+  "beispiel": "Die Gemeinde hat das ganze Ufer als Schutzgebiet ausgewiesen.",
+  "beispielTr": "Belediye kıyının tamamını koruma alanı ilan etti.",
+  "beispielEn": "The municipality designated the entire shore as a protected area."
+ },
+ {
+  "id": 5929,
+  "tr": "yerleştirmek",
+  "en": "to establish",
+  "beispiel": "Im Erdgeschoss will die Stadt Gewerbe und Cafés ansiedeln.",
+  "beispielTr": "Şehir, zemin kata dükkânlar ve kafeler yerleştirmek istiyor.",
+  "beispielEn": "The city wants to establish shops and cafes on the ground floor."
+ },
+ {
+  "id": 5930,
+  "tr": "bölümlere ayırmak",
+  "en": "to structure",
+  "beispiel": "Vorsprünge gliedern die lange Fassade in ruhige Abschnitte.",
+  "beispielTr": "Çıkmalar uzun cepheyi sakin bölümlere ayırıyor.",
+  "beispielEn": "Projections structure the long facade into calm sections."
+ },
+ {
+  "id": 5931,
+  "tr": "belirginleştirmek",
+  "en": "to accentuate",
+  "beispiel": "Ein roter Sockel akzentuiert den Eingang des Gebäudes.",
+  "beispielTr": "Kırmızı bir kaide binanın girişini belirginleştiriyor.",
+  "beispielEn": "A red plinth accentuates the entrance of the building."
+ },
+ {
+  "id": 5932,
+  "tr": "hâkim olmak",
+  "en": "to dominate",
+  "beispiel": "Der Büroturm dominiert die Silhouette der ganzen Innenstadt.",
+  "beispielTr": "Ofis kulesi bütün şehir merkezinin siluetine hâkim.",
+  "beispielEn": "The office tower dominates the skyline of the whole downtown."
+ },
+ {
+  "id": 5933,
+  "tr": "içini boşaltmak",
+  "en": "to gut",
+  "beispiel": "Das Kaufhaus wurde entkernt und komplett neu aufgeteilt.",
+  "beispielTr": "Mağazanın içi tamamen boşaltıldı ve baştan bölümlendi.",
+  "beispielEn": "The department store was gutted and laid out completely anew."
+ },
+ {
+  "id": 5934,
+  "tr": "yeniden tahsis etmek",
+  "en": "to repurpose",
+  "beispiel": "Der Parkplatz wurde kurzerhand zu einer Spielfläche umgewidmet.",
+  "beispielTr": "Otopark hiç vakit kaybedilmeden oyun alanı olarak yeniden tahsis edildi.",
+  "beispielEn": "The parking lot was promptly repurposed as a play area."
+ },
+ {
+  "id": 5935,
+  "tr": "bakımsız kalmak",
+  "en": "to fall into neglect",
+  "beispiel": "Die Anlage verwahrloste, seit die Stadt kein Geld mehr hatte.",
+  "beispielTr": "Şehrin parası kalmadığından beri tesis bakımsız kaldı.",
+  "beispielEn": "The grounds fell into neglect once the city ran out of money."
+ },
+ {
+  "id": 5936,
+  "tr": "harabeye dönmek",
+  "en": "to fall into ruin",
+  "beispiel": "Das Herrenhaus verfällt, seit die Erben zerstritten sind.",
+  "beispielTr": "Mirasçılar birbirine düştüğünden beri konak harabeye dönüyor.",
+  "beispielEn": "The manor has been falling into ruin since the heirs fell out."
+ },
+ {
+  "id": 5937,
+  "tr": "konumlandırmak",
+  "en": "to situate",
+  "beispiel": "Der Kritiker verortet den Bau zwischen Brutalismus und Klassizismus.",
+  "beispielTr": "Eleştirmen yapıyı brütalizmle klasisizm arasında konumlandırıyor.",
+  "beispielEn": "The critic situates the building between brutalism and classicism."
+ },
+ {
+  "id": 5938,
+  "tr": "serbestleştirmek",
+  "en": "to deregulate",
+  "beispiel": "Die Regierung will den Mietmarkt weiter deregulieren.",
+  "beispielTr": "Hükûmet kira piyasasını daha da serbestleştirmek istiyor.",
+  "beispielEn": "The government wants to deregulate the rental market further."
+ },
+ {
+  "id": 5939,
+  "tr": "şehircilik açısından",
+  "en": "in urban design terms",
+  "beispiel": "Der Turm passt städtebaulich überhaupt nicht an diese Ecke.",
+  "beispielTr": "Kule şehircilik açısından bu köşeye hiç yakışmıyor.",
+  "beispielEn": "In urban design terms the tower does not fit this corner."
+ },
+ {
+  "id": 5940,
+  "tr": "ölçek bakımından",
+  "en": "in terms of scale",
+  "beispiel": "Der Anbau ist maßstäblich viel zu groß für die enge Gasse.",
+  "beispielTr": "Ek yapı, dar sokak için ölçek bakımından fazlasıyla büyük.",
+  "beispielEn": "In terms of scale the annex is far too big for the narrow alley."
+ },
+ {
+  "id": 5941,
+  "tr": "küçük parçalı",
+  "en": "fine-grained",
+  "beispiel": "Die kleinteilige Erdgeschosszone macht die Straße lebendig.",
+  "beispielTr": "Küçük parçalı zemin kat dokusu sokağı canlı kılıyor.",
+  "beispielEn": "The fine-grained ground floor zone makes the street lively."
+ },
+ {
+  "id": 5942,
+  "tr": "tekdüze",
+  "en": "monotonous",
+  "beispiel": "Die endlosen Reihenhäuser wirken auf Dauer ausgesprochen monoton.",
+  "beispielTr": "Sonu gelmeyen sıra evler uzun vadede son derece tekdüze görünüyor.",
+  "beispielEn": "The endless row houses look utterly monotonous over time."
+ },
+ {
+  "id": 5943,
+  "tr": "kimliksiz",
+  "en": "faceless",
+  "beispiel": "Zwischen Autobahn und Gewerbepark wirkt der Ort völlig gesichtslos.",
+  "beispielTr": "Otoyolla sanayi parkı arasındaki yer tamamen kimliksiz görünüyor.",
+  "beispielEn": "Between the highway and the business park the place seems utterly faceless."
+ },
+ {
+  "id": 5944,
+  "tr": "otomobil odaklı",
+  "en": "car-oriented",
+  "beispiel": "Die autogerechte Stadt der Sechzigerjahre gilt heute als Irrweg.",
+  "beispielTr": "Altmışlı yılların otomobil odaklı kenti bugün yanlış bir yol sayılıyor.",
+  "beispielEn": "The car-oriented city of the sixties is now seen as a wrong turn."
+ },
+ {
+  "id": 5945,
+  "tr": "gösterişli",
+  "en": "prestigious",
+  "beispiel": "Das Foyer sollte vor allem repräsentativ wirken.",
+  "beispielTr": "Fuayenin her şeyden önce gösterişli durması isteniyordu.",
+  "beispielEn": "The foyer was meant above all to look prestigious."
+ },
+ {
+  "id": 5946,
+  "tr": "yaşanmaz",
+  "en": "inhospitable",
+  "beispiel": "Bei Wind wird der weite Vorplatz ausgesprochen unwirtlich.",
+  "beispielTr": "Rüzgârlı havada geniş ön meydan iyice yaşanmaz oluyor.",
+  "beispielEn": "In the wind the wide forecourt becomes thoroughly inhospitable."
+ },
+ {
+  "id": 5947,
+  "tr": "iri kütleli",
+  "en": "massive",
+  "beispiel": "Der wuchtige Sockel erdrückt die zierlichen Nachbarhäuser förmlich.",
+  "beispielTr": "İri kütleli kaide, yanındaki narin evleri adeta eziyor.",
+  "beispielEn": "The massive plinth all but crushes the delicate neighboring houses."
+ },
+ {
+  "id": 5948,
+  "tr": "eğitimde adalet",
+  "en": "educational equity",
+  "beispiel": "Für mehr Bildungsgerechtigkeit bekommen Brennpunktschulen zusätzliche Lehrer.",
+  "beispielTr": "Eğitimde adalet için sorunlu okullara ek öğretmen veriliyor.",
+  "beispielEn": "For more educational equity, struggling schools are getting extra teachers."
+ },
+ {
+  "id": 5949,
+  "tr": "eğitim eşitsizliği",
+  "en": "educational inequality",
+  "beispiel": "Die Studie belegt, dass die Bildungsungleichheit seit Jahren kaum abnimmt.",
+  "beispielTr": "Araştırma, eğitim eşitsizliğinin yıllardır neredeyse hiç azalmadığını gösteriyor.",
+  "beispielEn": "The study shows that educational inequality has barely declined for years."
+ },
+ {
+  "id": 5950,
+  "tr": "eğitimle yükselme",
+  "en": "upward mobility through education",
+  "beispiel": "Für Kinder aus Arbeiterfamilien bleibt der Bildungsaufstieg die Ausnahme.",
+  "beispielTr": "İşçi ailelerinin çocukları için eğitimle yükselmek hâlâ istisna.",
+  "beispielEn": "For children from working-class families, upward mobility through education stays rare."
+ },
+ {
+  "id": 5951,
+  "tr": "eğitimin yaygınlaşması",
+  "en": "educational expansion",
+  "beispiel": "Die Bildungsexpansion hat die Zahl der Studierenden vervielfacht.",
+  "beispielTr": "Eğitimin yaygınlaşması öğrenci sayısını kat kat artırdı.",
+  "beispielEn": "Educational expansion has multiplied the number of university students."
+ },
+ {
+  "id": 5952,
+  "tr": "eğitimin getirisi",
+  "en": "return on education",
+  "beispiel": "Ökonomen berechnen die Bildungsrendite eines zusätzlichen Schuljahres.",
+  "beispielTr": "İktisatçılar fazladan bir okul yılının eğitim getirisini hesaplıyor.",
+  "beispielEn": "Economists calculate the return on an additional year of schooling."
+ }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 5703,
+    "tr": "kırdan kente göç",
+    "en": "rural exodus",
+    "beispiel": "Die Landflucht junger Menschen entleert ganze Landstriche.",
+    "beispielTr": "Gençlerin kırdan kente göçü koca bölgeleri boşaltıyor.",
+    "beispielEn": "Young people's exodus to the cities is emptying whole regions."
+  },
+  {
+    "id": 5704,
+    "tr": "çiftliğin devri",
+    "en": "farm succession",
+    "beispiel": "Bei jedem zweiten Betrieb ist die Hofnachfolge völlig ungeklärt.",
+    "beispielTr": "Her iki işletmeden birinde çiftliğin devri tamamen belirsiz.",
+    "beispielEn": "At every second farm the succession is completely unresolved."
+  },
+  {
+    "id": 5705,
+    "tr": "pestisit kullanımı",
+    "en": "pesticide use",
+    "beispiel": "Der Pestizideinsatz soll bis zum Ende des Jahrzehnts halbiert werden.",
+    "beispielTr": "Pestisit kullanımının on yılın sonuna kadar yarıya indirilmesi hedefleniyor.",
+    "beispielEn": "Pesticide use is to be halved by the end of the decade."
+  },
+  {
+    "id": 5706,
+    "tr": "nitrat kirliliği",
+    "en": "nitrate pollution",
+    "beispiel": "Die Nitratbelastung des Grundwassers überschreitet vielerorts die Grenzwerte.",
+    "beispielTr": "Yeraltı suyundaki nitrat kirliliği birçok yerde sınır değerleri aşıyor.",
+    "beispielEn": "Nitrate pollution of the groundwater exceeds the limits in many places."
+  },
+  {
+    "id": 5707,
+    "tr": "biyoçeşitlilik",
+    "en": "biodiversity",
+    "beispiel": "Der Verlust an Biodiversität schreitet auf Agrarflächen besonders schnell voran.",
+    "beispielTr": "Biyoçeşitlilik kaybı tarım alanlarında özellikle hızlı ilerliyor.",
+    "beispielEn": "The loss of biodiversity is advancing especially fast on farmland."
+  },
+  {
+    "id": 5708,
+    "tr": "sürdürülebilirlik standardı",
+    "en": "sustainability standard",
+    "beispiel": "Der Discounter verlangt von seinen Lieferanten strenge Nachhaltigkeitsstandards.",
+    "beispielTr": "İndirim marketi tedarikçilerinden sıkı sürdürülebilirlik standartları istiyor.",
+    "beispielEn": "The discount chain demands strict sustainability standards from its suppliers."
+  },
+  {
+    "id": 5709,
+    "tr": "menşe etiketlemesi",
+    "en": "origin labeling",
+    "beispiel": "Eine verpflichtende Herkunftskennzeichnung würde regionale Erzeuger deutlich stärken.",
+    "beispielTr": "Zorunlu bir menşe etiketlemesi bölgesel üreticileri belirgin biçimde güçlendirirdi.",
+    "beispielEn": "Mandatory origin labeling would considerably strengthen regional producers."
+  },
+  {
+    "id": 5710,
+    "tr": "izlenebilirlik",
+    "en": "traceability",
+    "beispiel": "Die Rückverfolgbarkeit endet oft schon beim ersten Zwischenhändler.",
+    "beispielTr": "İzlenebilirlik çoğu zaman daha ilk aracıda son buluyor.",
+    "beispielEn": "Traceability often ends already at the first middleman."
+  },
+  {
+    "id": 5711,
+    "tr": "arz güvenliği",
+    "en": "supply security",
+    "beispiel": "Versorgungssicherheit wird derzeit als Argument gegen strengere Auflagen benutzt.",
+    "beispielTr": "Arz güvenliği şu sıralar daha sıkı koşullara karşı argüman olarak kullanılıyor.",
+    "beispielEn": "Supply security is currently being used as an argument against stricter rules."
+  },
+  {
+    "id": 5712,
+    "tr": "organik tarım",
+    "en": "organic farming",
+    "beispiel": "Der Ökolandbau wächst langsamer, als die Politik es versprochen hatte.",
+    "beispielTr": "Organik tarım siyasetin vaat ettiğinden daha yavaş büyüyor.",
+    "beispielEn": "Organic farming is growing more slowly than politicians had promised."
+  },
+  {
+    "id": 5713,
+    "tr": "düzenleyici hukuk",
+    "en": "regulatory law",
+    "beispiel": "Anreize allein genügen nicht, irgendwann greift das Ordnungsrecht.",
+    "beispielTr": "Teşvikler tek başına yetmez, bir noktada düzenleyici hukuk devreye girer.",
+    "beispielEn": "Incentives alone are not enough, and at some point regulatory law steps in."
+  },
+  {
+    "id": 5714,
+    "tr": "arazi toplulaştırması",
+    "en": "land consolidation",
+    "beispiel": "Die Flurbereinigung der Nachkriegszeit hat unzählige Hecken beseitigt.",
+    "beispielTr": "Savaş sonrası dönemin arazi toplulaştırması sayısız çalıyı yok etti.",
+    "beispielEn": "The postwar land consolidation removed countless hedgerows."
+  },
+  {
+    "id": 5715,
+    "tr": "toprak ele geçirme",
+    "en": "land grabbing",
+    "beispiel": "Investoren betreiben in mehreren Ländern eine kaum regulierte Landnahme.",
+    "beispielTr": "Yatırımcılar birçok ülkede neredeyse hiç denetlenmeden toprak ele geçiriyor.",
+    "beispielEn": "In several countries investors carry out barely regulated land grabbing."
+  },
+  {
+    "id": 5716,
+    "tr": "çeşit koruma hakkı",
+    "en": "plant variety protection",
+    "beispiel": "Für diese Kartoffel gilt der Sortenschutz noch fünf Jahre.",
+    "beispielTr": "Bu patates için çeşit koruma hakkı beş yıl daha geçerli.",
+    "beispielEn": "For this potato the plant variety protection lasts five more years."
+  },
+  {
+    "id": 5717,
+    "tr": "gen teknolojisi",
+    "en": "genetic engineering",
+    "beispiel": "Über neue Gentechnik wird in Brüssel seit Jahren erbittert gestritten.",
+    "beispielTr": "Yeni gen teknolojisi Brüksel'de yıllardır sert biçimde tartışılıyor.",
+    "beispielEn": "New genetic engineering has been fiercely debated in Brussels for years."
+  },
+  {
+    "id": 5718,
+    "tr": "tohumu yeniden ekme hakkı",
+    "en": "seed replanting right",
+    "beispiel": "Das Nachbaurecht der Bauern wurde durch Lizenzverträge schrittweise ausgehöhlt.",
+    "beispielTr": "Çiftçilerin tohumu yeniden ekme hakkı lisans sözleşmeleriyle adım adım aşındırıldı.",
+    "beispielEn": "Farmers' right to replant their seed was gradually hollowed out by licenses."
+  },
+  {
+    "id": 5719,
+    "tr": "hayvan nakli",
+    "en": "animal transport",
+    "beispiel": "Lange Tiertransporte in Drittstaaten sind rechtlich kaum zu kontrollieren.",
+    "beispielTr": "Üçüncü ülkelere yapılan uzun hayvan nakilleri hukuken neredeyse denetlenemiyor.",
+    "beispielEn": "Long animal transports to third countries can hardly be controlled legally."
+  },
+  {
+    "id": 5720,
+    "tr": "mezbaha",
+    "en": "slaughterhouse",
+    "beispiel": "Wenige große Schlachtbetriebe bestimmen faktisch die Preise am Markt.",
+    "beispielTr": "Birkaç büyük mezbaha piyasadaki fiyatları fiilen belirliyor.",
+    "beispielEn": "A few large slaughterhouses effectively set the prices on the market."
+  },
+  {
+    "id": 5721,
+    "tr": "süt kotası",
+    "en": "milk quota",
+    "beispiel": "Nach dem Ende der Milchquote brachen die Preise dramatisch ein.",
+    "beispielTr": "Süt kotasının kalkmasının ardından fiyatlar sert biçimde çöktü.",
+    "beispielEn": "After the milk quota ended, prices collapsed dramatically."
+  },
+  {
+    "id": 5722,
+    "tr": "aşırı üretim",
+    "en": "overproduction",
+    "beispiel": "Die Überproduktion wird über Exporte auf ärmere Märkte abgewälzt.",
+    "beispielTr": "Aşırı üretim ihracat yoluyla daha yoksul pazarların sırtına yıkılıyor.",
+    "beispielEn": "The overproduction is offloaded onto poorer markets through exports."
+  },
+  {
+    "id": 5723,
+    "tr": "serbest ticaret anlaşması",
+    "en": "free trade agreement",
+    "beispiel": "Das Freihandelsabkommen öffnet den Markt für billige Importe.",
+    "beispielTr": "Serbest ticaret anlaşması pazarı ucuz ithalata açıyor.",
+    "beispielEn": "The free trade agreement opens the market to cheap imports."
+  },
+  {
+    "id": 5724,
+    "tr": "rekabetin bozulması",
+    "en": "distortion of competition",
+    "beispiel": "Unterschiedliche Sozialstandards führen zu erheblichen Wettbewerbsverzerrungen.",
+    "beispielTr": "Farklı sosyal standartlar ciddi rekabet bozulmalarına yol açıyor.",
+    "beispielEn": "Different social standards lead to considerable distortions of competition."
+  },
+  {
+    "id": 5725,
+    "tr": "doğrudan pazarlama",
+    "en": "direct marketing",
+    "beispiel": "Über die Direktvermarktung umgehen Höfe den Druck des Handels.",
+    "beispielTr": "Doğrudan pazarlamayla çiftlikler perakendenin baskısını atlatıyor.",
+    "beispielEn": "Through direct marketing farms bypass the pressure of the retail trade."
+  },
+  {
+    "id": 5726,
+    "tr": "kullanım çatışması",
+    "en": "land use conflict",
+    "beispiel": "Zwischen Naturschutz und Energieerzeugung entstehen wachsende Nutzungskonflikte.",
+    "beispielTr": "Doğa koruma ile enerji üretimi arasında büyüyen kullanım çatışmaları doğuyor.",
+    "beispielEn": "Growing land use conflicts arise between nature conservation and energy production."
+  },
+  {
+    "id": 5727,
+    "tr": "küçük çiftçi",
+    "en": "small farmer",
+    "beispiel": "Kleinbauern ernähren weltweit einen erstaunlich großen Teil der Bevölkerung.",
+    "beispielTr": "Küçük çiftçiler dünya nüfusunun şaşırtıcı ölçüde büyük bir kısmını doyuruyor.",
+    "beispielEn": "Small farmers feed a surprisingly large share of the world's population."
+  },
+  {
+    "id": 5728,
+    "tr": "atıl durmak",
+    "en": "to lie fallow",
+    "beispiel": "Tausende Hektar liegen aus rein spekulativen Gründen brach.",
+    "beispielTr": "Binlerce hektar salt spekülatif nedenlerle atıl duruyor.",
+    "beispielEn": "Thousands of hectares lie fallow for purely speculative reasons."
+  },
+  {
+    "id": 5729,
+    "tr": "kiraya vermek",
+    "en": "to lease out",
+    "beispiel": "Die Gemeinde verpachtet ihre Flächen bevorzugt an ökologisch wirtschaftende Betriebe.",
+    "beispielTr": "Belediye arazilerini öncelikle ekolojik üretim yapan işletmelere kiraya veriyor.",
+    "beispielEn": "The municipality leases its land preferably to organically farming businesses."
+  },
+  {
+    "id": 5730,
+    "tr": "ayrıştırmak",
+    "en": "to decouple",
+    "beispiel": "Die Beihilfen wurden von der produzierten Menge entkoppelt.",
+    "beispielTr": "Destekler üretilen miktardan ayrıştırıldı.",
+    "beispielEn": "The subsidies were decoupled from the quantity produced."
+  },
+  {
+    "id": 5731,
+    "tr": "beyan etmek",
+    "en": "to declare",
+    "beispiel": "Der Hersteller muss die Herkunft der Rohstoffe vollständig deklarieren.",
+    "beispielTr": "Üretici hammaddelerin kökenini eksiksiz beyan etmek zorunda.",
+    "beispielEn": "The manufacturer must fully declare the origin of the raw materials."
+  },
+  {
+    "id": 5732,
+    "tr": "çeşitlendirmek",
+    "en": "to diversify",
+    "beispiel": "Viele Betriebe diversifizieren ihre Einkommensquellen, um Krisen zu überstehen.",
+    "beispielTr": "Birçok işletme krizleri atlatmak için gelir kaynaklarını çeşitlendiriyor.",
+    "beispielEn": "Many farms diversify their income sources to survive crises."
+  },
+  {
+    "id": 5733,
+    "tr": "çoraklaştırmak",
+    "en": "to deplete",
+    "beispiel": "Jahrzehntelanger Maisanbau hat die Böden vollständig ausgelaugt.",
+    "beispielTr": "Onlarca yıllık mısır ekimi toprakları tamamen çoraklaştırdı.",
+    "beispielEn": "Decades of maize cultivation have completely depleted the soils."
+  },
+  {
+    "id": 5734,
+    "tr": "kaymağını almak",
+    "en": "to skim off",
+    "beispiel": "Der Zwischenhandel schöpft den größten Teil der Marge ab.",
+    "beispielTr": "Aracı ticaret marjın en büyük kısmının kaymağını alıyor.",
+    "beispielEn": "The middlemen skim off the largest part of the margin."
+  },
+  {
+    "id": 5735,
+    "tr": "işlemek",
+    "en": "to refine",
+    "beispiel": "Regional veredelte Produkte erzielen auf dem Markt höhere Preise.",
+    "beispielTr": "Bölgede işlenen ürünler piyasada daha yüksek fiyat getiriyor.",
+    "beispielEn": "Regionally refined products fetch higher prices on the market."
+  },
+  {
+    "id": 5736,
+    "tr": "otlatmak",
+    "en": "to graze",
+    "beispiel": "Extensiv beweidete Wiesen beherbergen deutlich mehr Insektenarten.",
+    "beispielTr": "Seyrek otlatılan çayırlar belirgin biçimde daha çok böcek türü barındırıyor.",
+    "beispielEn": "Extensively grazed meadows host considerably more insect species."
+  },
+  {
+    "id": 5737,
+    "tr": "kirletmek",
+    "en": "to contaminate",
+    "beispiel": "Abdrift kann benachbarte Felder unbeabsichtigt kontaminieren.",
+    "beispielTr": "İlaç sürüklenmesi komşu tarlaları istemeden kirletebilir.",
+    "beispielEn": "Spray drift can unintentionally contaminate neighboring fields."
+  },
+  {
+    "id": 5738,
+    "tr": "toptan satın almak",
+    "en": "to buy up",
+    "beispiel": "Fonds kaufen in Ostdeutschland ganze Betriebe samt Flächen auf.",
+    "beispielTr": "Fonlar Doğu Almanya'da arazileriyle birlikte bütün işletmeleri toptan satın alıyor.",
+    "beispielEn": "In eastern Germany funds buy up entire farms along with their land."
+  },
+  {
+    "id": 5739,
+    "tr": "kıtlaştırmak",
+    "en": "to make scarce",
+    "beispiel": "Exportverbote verknappen das Angebot und treiben die Preise hoch.",
+    "beispielTr": "İhracat yasakları arzı kıtlaştırıp fiyatları yukarı itiyor.",
+    "beispielEn": "Export bans make supply scarce and drive prices up."
+  },
+  {
+    "id": 5740,
+    "tr": "aşırı gübrelemek",
+    "en": "to overfertilize",
+    "beispiel": "Wer die Felder überdüngt, belastet über Jahre das Grundwasser.",
+    "beispielTr": "Tarlaları aşırı gübreleyen, yıllarca yeraltı suyunu kirletir.",
+    "beispielEn": "Whoever overfertilizes the fields pollutes the groundwater for years."
+  },
+  {
+    "id": 5741,
+    "tr": "yetiştirmek",
+    "en": "to grow",
+    "beispiel": "In der Region werden fast ausschließlich Energiepflanzen angebaut.",
+    "beispielTr": "Bölgede neredeyse yalnızca enerji bitkileri yetiştiriliyor.",
+    "beispielEn": "In the region almost only energy crops are grown."
+  },
+  {
+    "id": 5742,
+    "tr": "her yeri kapsayan",
+    "en": "across the board",
+    "beispiel": "Die Kontrollen finden bisher nicht flächendeckend statt.",
+    "beispielTr": "Denetimler şimdiye dek her yeri kapsayacak biçimde yapılmıyor.",
+    "beispielEn": "So far the inspections do not take place across the board."
+  },
+  {
+    "id": 5743,
+    "tr": "çok işlevli",
+    "en": "multifunctional",
+    "beispiel": "Der neue Stall ist multifunktional und dient auch als Lager.",
+    "beispielTr": "Yeni ahır çok işlevli ve aynı zamanda depo olarak kullanılıyor.",
+    "beispielEn": "The new barn is multifunctional and also serves as storage."
+  },
+  {
+    "id": 5744,
+    "tr": "ithalata bağımlı",
+    "en": "import-dependent",
+    "beispiel": "Bei Futtermitteln ist Europa nach wie vor stark importabhängig.",
+    "beispielTr": "Yem konusunda Avrupa hâlâ büyük ölçüde ithalata bağımlı.",
+    "beispielEn": "When it comes to feed, Europe is still heavily import-dependent."
+  },
+  {
+    "id": 5745,
+    "tr": "yöreye uyarlanmış",
+    "en": "site-adapted",
+    "beispiel": "Standortangepasste Sorten kommen mit Trockenheit deutlich besser zurecht.",
+    "beispielTr": "Yöreye uyarlanmış çeşitler kuraklıkla belirgin biçimde daha iyi baş ediyor.",
+    "beispielEn": "Site-adapted varieties cope considerably better with drought."
+  },
+  {
+    "id": 5746,
+    "tr": "tüketiciye yakın",
+    "en": "close to the consumer",
+    "beispiel": "Verbrauchernahe Erzeugung verkürzt die Wege und schafft Vertrauen.",
+    "beispielTr": "Tüketiciye yakın üretim mesafeleri kısaltıyor ve güven yaratıyor.",
+    "beispielEn": "Production close to the consumer shortens distances and builds trust."
+  },
+  {
+    "id": 5747,
+    "tr": "kırsal",
+    "en": "rural",
+    "beispiel": "Der ländliche Raum verliert seit Jahren an Infrastruktur und Einfluss.",
+    "beispielTr": "Kırsal alan yıllardır altyapı ve etki kaybediyor.",
+    "beispielEn": "For years the rural areas have been losing infrastructure and influence."
+  },
+  {
+    "id": 5748,
+    "tr": "toprağı koruyan",
+    "en": "soil-conserving",
+    "beispiel": "Bodenschonende Verfahren setzen sich nur langsam in der Praxis durch.",
+    "beispielTr": "Toprağı koruyan yöntemler pratikte ancak yavaş yavaş yaygınlaşıyor.",
+    "beispielEn": "Soil-conserving methods are only slowly catching on in practice."
+  },
+  {
+    "id": 5749,
+    "tr": "tarla tarımına ilişkin",
+    "en": "agronomic",
+    "beispiel": "Ackerbauliche Maßnahmen allein lösen das Problem der Verdichtung nicht.",
+    "beispielTr": "Tarla tarımına ilişkin önlemler tek başına sıkışma sorununu çözmez.",
+    "beispielEn": "Agronomic measures alone do not solve the problem of soil compaction."
+  },
+  {
+    "id": 5750,
+    "tr": "ritüel",
+    "en": "ritual",
+    "beispiel": "Jeden Morgen kocht er Kaffee, ein Ritual seit Jahren.",
+    "beispielTr": "Her sabah kahve yapıyor, yıllardır süren bir ritüel.",
+    "beispielEn": "Every morning he makes coffee, a ritual he has kept for years."
+  },
+  {
+    "id": 5751,
+    "tr": "gelenek görenek",
+    "en": "folk tradition",
+    "beispiel": "Das Brauchtum im Dorf lebt vor allem beim Erntefest auf.",
+    "beispielTr": "Köydeki gelenek görenek en çok hasat şenliğinde canlanıyor.",
+    "beispielEn": "The village's folk traditions come alive above all at the harvest festival."
+  },
+  {
+    "id": 5752,
+    "tr": "âdet",
+    "en": "custom",
+    "beispiel": "In manchen Regionen verlangt die Sitte ein Gastgeschenk.",
+    "beispielTr": "Bazı yörelerde âdet, misafirin hediye getirmesini gerektirir.",
+    "beispielEn": "In some regions custom requires a gift for the host."
+  }
+]

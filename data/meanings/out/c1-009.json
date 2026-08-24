@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3985,
+  "tr": "önemsiz göstermek",
+  "en": "to trivialize",
+  "beispiel": "Der Politiker bagatellisierte die Vorwürfe in der Pressekonferenz.",
+  "beispielTr": "Politikacı, basın toplantısında suçlamaları önemsiz gösterdi.",
+  "beispielEn": "The politician trivialized the accusations at the press conference."
+ },
+ {
+  "id": 3986,
+  "tr": "dramatize etmek",
+  "en": "to dramatize",
+  "beispiel": "Die Boulevardpresse dramatisiert selbst kleinste Vorfälle.",
+  "beispielTr": "Bulvar basını en küçük olayları bile dramatize ediyor.",
+  "beispielEn": "The tabloid press dramatizes even the smallest incidents."
+ },
+ {
+  "id": 3987,
+  "tr": "skandal haline getirmek",
+  "en": "to scandalize",
+  "beispiel": "Die Medien skandalisierten den Vorfall, bevor die Fakten geklärt waren.",
+  "beispielTr": "Medya, gerçekler netleşmeden olayı skandal haline getirdi.",
+  "beispielEn": "The media scandalized the incident before the facts were clear."
+ },
+ {
+  "id": 3989,
+  "tr": "gizlemek",
+  "en": "to conceal",
+  "beispiel": "Mit warmen Worten kaschierte er das eigentliche Problem.",
+  "beispielTr": "Tatlı sözlerle asıl sorunu gizledi.",
+  "beispielEn": "With warm words he concealed the real problem."
+ },
+ {
+  "id": 3990,
+  "tr": "zararsız göstermek",
+  "en": "to downplay",
+  "beispiel": "Der Konzern verharmloste jahrelang die Risiken seiner Produkte.",
+  "beispielTr": "Şirket, ürünlerinin risklerini yıllarca zararsız gösterdi.",
+  "beispielEn": "The company downplayed the risks of its products for years."
+ },
+ {
+  "id": 3992,
+  "tr": "vesayet altında tutmak",
+  "en": "to patronize",
+  "beispiel": "Die Bürokratie gängelt kleine Unternehmen mit unnötigen Vorschriften.",
+  "beispielTr": "Bürokrasi, küçük işletmeleri gereksiz kurallarla vesayet altında tutuyor.",
+  "beispielEn": "Bureaucracy patronizes small businesses with unnecessary regulations."
+ },
+ {
+  "id": 3993,
+  "tr": "iradesini elinden almak",
+  "en": "to disempower",
+  "beispiel": "Solche Regeln entmündigen die Bewohner des Pflegeheims.",
+  "beispielTr": "Bu kurallar, bakımevi sakinlerinin iradesini elinden alıyor.",
+  "beispielEn": "Such rules disempower the residents of the care home."
+ },
+ {
+  "id": 3994,
+  "tr": "telkin etmek",
+  "en": "to suggest",
+  "beispiel": "Die Werbung suggeriert, Glück sei käuflich.",
+  "beispielTr": "Reklam, mutluluğun satın alınabileceğini telkin ediyor.",
+  "beispielEn": "The ad suggests that happiness can be bought."
+ },
+ {
+  "id": 3995,
+  "tr": "kışkırtmak",
+  "en": "to incite",
+  "beispiel": "Der Redner versuchte, die Menge gegen die Regierung aufzuwiegeln.",
+  "beispielTr": "Konuşmacı, kalabalığı hükümete karşı kışkırtmaya çalıştı.",
+  "beispielEn": "The speaker tried to incite the crowd against the government."
+ },
+ {
+  "id": 3996,
+  "tr": "karalamak",
+  "en": "to disparage",
+  "beispiel": "In Kommentaren wurde die Wissenschaftlerin wüst verunglimpft.",
+  "beispielTr": "Yorumlarda bilim insanı ağır biçimde karalandı.",
+  "beispielEn": "In the comments the scientist was viciously disparaged."
+ },
+ {
+  "id": 3997,
+  "tr": "iftira atmak",
+  "en": "to defame",
+  "beispiel": "Politische Gegner werden in sozialen Medien oft diffamiert.",
+  "beispielTr": "Siyasi rakiplere sosyal medyada sık sık iftira atılıyor.",
+  "beispielEn": "Political opponents are often defamed on social media."
+ },
+ {
+  "id": 3998,
+  "tr": "damgalamak",
+  "en": "to stigmatize",
+  "beispiel": "Psychische Erkrankungen werden in vielen Kulturen noch immer stigmatisiert.",
+  "beispielTr": "Ruhsal hastalıklar birçok kültürde hâlâ damgalanıyor.",
+  "beispielEn": "Mental illnesses are still stigmatized in many cultures."
+ },
+ {
+  "id": 3999,
+  "tr": "ötekileştirmek",
+  "en": "to marginalize",
+  "beispiel": "Die neue Wohnungspolitik marginalisiert arme Familien noch stärker.",
+  "beispielTr": "Yeni konut politikası yoksul aileleri daha da ötekileştiriyor.",
+  "beispielEn": "The new housing policy marginalizes poor families even further."
+ },
+ {
+  "id": 4002,
+  "tr": "sorunsallaştırmak",
+  "en": "to problematize",
+  "beispiel": "Die Studie problematisiert den unkritischen Umgang mit Algorithmen.",
+  "beispielTr": "Araştırma, algoritmaların eleştirisiz kullanımını sorunsallaştırıyor.",
+  "beispielEn": "The study problematizes the uncritical use of algorithms."
+ },
+ {
+  "id": 4003,
+  "tr": "insanlıktan çıkarmak",
+  "en": "to dehumanize",
+  "beispiel": "Kriegspropaganda entmenschlicht den Feind gezielt in der Sprache.",
+  "beispielTr": "Savaş propagandası, düşmanı dil yoluyla bilinçli olarak insanlıktan çıkarıyor.",
+  "beispielEn": "War propaganda deliberately dehumanizes the enemy through language."
+ },
+ {
+  "id": 4006,
+  "tr": "vicdansız",
+  "en": "unscrupulous",
+  "beispiel": "Der Makler nutzte die Not der Familie gewissenlos aus.",
+  "beispielTr": "Emlakçı, ailenin çaresizliğinden vicdansızca yararlandı.",
+  "beispielEn": "The broker unscrupulously exploited the family's plight."
+ },
+ {
+  "id": 4010,
+  "tr": "geniş kapsamlı",
+  "en": "far-reaching",
+  "beispiel": "Die Entscheidung hat weitreichende Folgen für kommende Generationen.",
+  "beispielTr": "Karar, gelecek kuşaklar için geniş kapsamlı sonuçlar doğuruyor.",
+  "beispielEn": "The decision has far-reaching consequences for future generations."
+ },
+ {
+  "id": 4011,
+  "tr": "geri döndürülemez",
+  "en": "irreversible",
+  "beispiel": "Manche Umweltschäden gelten inzwischen als unumkehrbar.",
+  "beispielTr": "Bazı çevre zararları artık geri döndürülemez sayılıyor.",
+  "beispielEn": "Some environmental damage is now considered irreversible."
+ },
+ {
+  "id": 4012,
+  "tr": "uygulanabilir",
+  "en": "viable",
+  "beispiel": "Ein wirklich tragfähiges Konzept für die Energiewende fehlt bislang.",
+  "beispielTr": "Enerji dönüşümü için gerçekten uygulanabilir bir plan hâlâ yok.",
+  "beispielEn": "A truly viable plan for the energy transition is still missing."
+ },
+ {
+  "id": 4019,
+  "tr": "kayırmak",
+  "en": "to favor",
+  "beispiel": "Das neue Gesetz begünstigt vor allem große Konzerne.",
+  "beispielTr": "Yeni yasa her şeyden önce büyük şirketleri kayırıyor.",
+  "beispielEn": "The new law mainly favors large corporations."
+ },
+ {
+  "id": 4021,
+  "tr": "öne çıkmak",
+  "en": "to stand out",
+  "beispiel": "Die Studie zeichnet sich durch hohe Präzision aus.",
+  "beispielTr": "Çalışma, yüksek hassasiyetiyle öne çıkıyor.",
+  "beispielEn": "The study stands out for its high precision."
+ },
+ {
+  "id": 4023,
+  "tr": "yitirmek",
+  "en": "to forfeit",
+  "beispiel": "Die Partei büßte bei der Wahl deutlich an Zustimmung ein.",
+  "beispielTr": "Parti, seçimde ciddi ölçüde destek yitirdi.",
+  "beispielEn": "The party forfeited considerable support in the election."
+ },
+ {
+  "id": 4024,
+  "tr": "kurgulamak",
+  "en": "to conceive",
+  "beispiel": "Das Projekt wurde für ein internationales Publikum konzipiert.",
+  "beispielTr": "Proje, uluslararası bir kitle için kurgulandı.",
+  "beispielEn": "The project was conceived for an international audience."
+ },
+ {
+  "id": 4025,
+  "tr": "içselleştirmek",
+  "en": "to internalize",
+  "beispiel": "Kinder verinnerlichen Werte vor allem durch Vorbilder.",
+  "beispielTr": "Çocuklar değerleri en çok rol modellerden içselleştirir.",
+  "beispielEn": "Children internalize values mainly through role models."
+ },
+ {
+  "id": 4026,
+  "tr": "kurallara bağlamak",
+  "en": "to regulate",
+  "beispiel": "Die Schule reglementiert sogar die Pausen der Kinder.",
+  "beispielTr": "Okul, çocukların teneffüslerini bile kurallara bağlıyor.",
+  "beispielEn": "The school regulates even the children's breaks."
+ },
+ {
+  "id": 4027,
+  "tr": "geçersiz kılmak",
+  "en": "to invalidate",
+  "beispiel": "Die neuen Beweise entkräften das alte Argument vollständig.",
+  "beispielTr": "Yeni kanıtlar, eski savı tamamen geçersiz kılıyor.",
+  "beispielEn": "The new evidence completely invalidates the old argument."
+ },
+ {
+  "id": 4028,
+  "tr": "güvence altına almak",
+  "en": "to enshrine",
+  "beispiel": "Das Recht auf Bildung ist im Grundgesetz verankert.",
+  "beispielTr": "Eğitim hakkı anayasada güvence altına alınmıştır.",
+  "beispielEn": "The right to education is enshrined in the constitution."
+ },
+ {
+  "id": 4029,
+  "tr": "kontrolden çıkmak",
+  "en": "to get out of hand",
+  "beispiel": "Die Feier uferte in dieser Nacht völlig aus.",
+  "beispielTr": "Parti o gece tamamen kontrolden çıktı.",
+  "beispielEn": "The party got completely out of hand that night."
+ },
+ {
+  "id": 4035,
+  "tr": "boşa çıkarmak",
+  "en": "to thwart",
+  "beispiel": "Die Maßnahme konterkariert am Ende das eigentliche Ziel.",
+  "beispielTr": "Önlem, sonunda asıl amacı boşa çıkarıyor.",
+  "beispielEn": "In the end the measure thwarts the actual goal."
+ },
+ {
+  "id": 4036,
+  "tr": "tespit etmek",
+  "en": "to ascertain",
+  "beispiel": "Die Kommission soll die genauen Ursachen eruieren.",
+  "beispielTr": "Komisyon, kesin nedenleri tespit edecek.",
+  "beispielEn": "The commission is to ascertain the exact causes."
+ },
+ {
+  "id": 4037,
+  "tr": "karşılığını vermek",
+  "en": "to return the favor",
+  "beispiel": "Er will sich für die großzügige Hilfe revanchieren.",
+  "beispielTr": "Cömert yardımın karşılığını vermek istiyor.",
+  "beispielEn": "He wants to return the favor for the generous help."
+ },
+ {
+  "id": 4038,
+  "tr": "çok yönlü",
+  "en": "multifaceted",
+  "beispiel": "Die Ausstellung zeigt ein facettenreiches Bild der Stadt.",
+  "beispielTr": "Sergi, kentin çok yönlü bir portresini sunuyor.",
+  "beispielEn": "The exhibition shows a multifaceted portrait of the city."
+ },
+ {
+  "id": 4039,
+  "tr": "şeffaf olmayan",
+  "en": "opaque",
+  "beispiel": "Die Finanzierung des Projekts bleibt bis heute undurchsichtig.",
+  "beispielTr": "Projenin finansmanı bugüne kadar şeffaf değil.",
+  "beispielEn": "The project's funding remains opaque to this day."
+ },
+ {
+  "id": 4040,
+  "tr": "titiz",
+  "en": "meticulous",
+  "beispiel": "Sie bereitet jede Präsentation akribisch vor.",
+  "beispielTr": "Her sunumu titizlikle hazırlıyor.",
+  "beispielEn": "She prepares every presentation meticulously."
+ },
+ {
+  "id": 5687,
+  "tr": "tarım sübvansiyonu",
+  "en": "agricultural subsidy",
+  "beispiel": "Die Agrarsubventionen fließen überwiegend an ohnehin große Betriebe.",
+  "beispielTr": "Tarım sübvansiyonları ağırlıklı olarak zaten büyük olan işletmelere akıyor.",
+  "beispielEn": "Agricultural subsidies mostly flow to farms that are already large."
+ },
+ {
+  "id": 5688,
+  "tr": "tarımsal dönüşüm",
+  "en": "agricultural transition",
+  "beispiel": "Ohne verbindliche Ziele bleibt die Agrarwende ein leeres Versprechen.",
+  "beispielTr": "Bağlayıcı hedefler olmadan tarımsal dönüşüm boş bir vaat olarak kalır.",
+  "beispielEn": "Without binding targets the agricultural transition remains an empty promise."
+ },
+ {
+  "id": 5689,
+  "tr": "tarım reformu",
+  "en": "agricultural reform",
+  "beispiel": "Die letzte Agrarreform hat die Verteilungsfrage kaum berührt.",
+  "beispielTr": "Son tarım reformu bölüşüm sorununa neredeyse hiç değinmedi.",
+  "beispielEn": "The last agricultural reform barely touched the question of distribution."
+ },
+ {
+  "id": 5690,
+  "tr": "agroekoloji",
+  "en": "agroecology",
+  "beispiel": "Immer mehr Höfe setzen inzwischen auf Agrarökologie.",
+  "beispielTr": "Giderek daha fazla çiftlik agroekolojiye yöneliyor.",
+  "beispielEn": "More and more farms are now turning to agroecology."
+ },
+ {
+  "id": 5691,
+  "tr": "gıda egemenliği",
+  "en": "food sovereignty",
+  "beispiel": "Kleinbauern fordern weltweit mehr Ernährungssouveränität statt Freihandel.",
+  "beispielTr": "Küçük çiftçiler dünya genelinde serbest ticaret yerine daha fazla gıda egemenliği istiyor.",
+  "beispielEn": "Small farmers worldwide demand more food sovereignty instead of free trade."
+ },
+ {
+  "id": 5692,
+  "tr": "gıda sistemi",
+  "en": "food system",
+  "beispiel": "Das globale Ernährungssystem reagiert empfindlich auf politische Krisen.",
+  "beispielTr": "Küresel gıda sistemi siyasi krizlere karşı hassas tepki veriyor.",
+  "beispielEn": "The global food system reacts sensitively to political crises."
+ },
+ {
+  "id": 5693,
+  "tr": "arazi tüketimi",
+  "en": "land consumption",
+  "beispiel": "Der Flächenverbrauch durch Siedlungen wächst schneller als geplant.",
+  "beispielTr": "Yerleşimlerin yol açtığı arazi tüketimi planlanandan hızlı büyüyor.",
+  "beispielEn": "Land consumption caused by settlements is growing faster than planned."
+ },
+ {
+  "id": 5694,
+  "tr": "doğrudan ödeme",
+  "en": "direct payment",
+  "beispiel": "Die Direktzahlungen sollen künftig an ökologische Leistungen gekoppelt werden.",
+  "beispielTr": "Doğrudan ödemeler bundan böyle çevresel hizmetlere bağlanacak.",
+  "beispielEn": "Direct payments are to be linked to ecological services in the future."
+ },
+ {
+  "id": 5695,
+  "tr": "arazi spekülasyonu",
+  "en": "land speculation",
+  "beispiel": "Bodenspekulation treibt die Pachten in vielen Regionen nach oben.",
+  "beispielTr": "Arazi spekülasyonu birçok bölgede kira bedellerini yukarı çekiyor.",
+  "beispielEn": "Land speculation is driving up leases in many regions."
+ },
+ {
+  "id": 5696,
+  "tr": "toprak verimliliği",
+  "en": "soil fertility",
+  "beispiel": "Zwischenfrüchte verbessern die Bodenfruchtbarkeit deutlich.",
+  "beispielTr": "Ara ürünler toprak verimliliğini belirgin biçimde artırıyor.",
+  "beispielEn": "Cover crops noticeably improve soil fertility."
+ },
+ {
+  "id": 5697,
+  "tr": "dünya piyasa fiyatı",
+  "en": "world market price",
+  "beispiel": "Fallende Weltmarktpreise ruinieren kleine Erzeuger im globalen Süden.",
+  "beispielTr": "Düşen dünya piyasa fiyatları küresel güneydeki küçük üreticileri mahvediyor.",
+  "beispielEn": "Falling world market prices ruin small producers in the global South."
+ },
+ {
+  "id": 5698,
+  "tr": "üretici fiyatı",
+  "en": "producer price",
+  "beispiel": "Die Erzeugerpreise decken bei vielen Höfen nicht einmal die Kosten.",
+  "beispielTr": "Üretici fiyatları birçok çiftlikte maliyeti bile karşılamıyor.",
+  "beispielEn": "On many farms producer prices do not even cover costs."
+ },
+ {
+  "id": 5699,
+  "tr": "fiyat oynaklığı",
+  "en": "price volatility",
+  "beispiel": "Die Preisvolatilität auf den Rohstoffmärkten erschwert jede Investitionsplanung.",
+  "beispielTr": "Emtia piyasalarındaki fiyat oynaklığı her yatırım planını zorlaştırıyor.",
+  "beispielEn": "Price volatility on commodity markets complicates any investment planning."
+ },
+ {
+  "id": 5700,
+  "tr": "ticaretin serbestleşmesi",
+  "en": "trade liberalization",
+  "beispiel": "Die Handelsliberalisierung hat den Wettbewerbsdruck auf europäische Betriebe erhöht.",
+  "beispielTr": "Ticaretin serbestleşmesi, Avrupalı işletmeler üzerindeki rekabet baskısını artırdı.",
+  "beispielEn": "Trade liberalization has increased competitive pressure on European businesses."
+ },
+ {
+  "id": 5701,
+  "tr": "piyasa düzeni",
+  "en": "market organization",
+  "beispiel": "Ohne eine wirksame Marktordnung bleiben die Erzeuger dem Handel ausgeliefert.",
+  "beispielTr": "Etkili bir piyasa düzeni olmadan üreticiler ticaretin insafına kalıyor.",
+  "beispielEn": "Without an effective market organization producers are at the mercy of trade."
+ },
+ {
+  "id": 5702,
+  "tr": "değer zinciri",
+  "en": "value chain",
+  "beispiel": "In der Wertschöpfungskette bleibt beim Bauern der kleinste Anteil.",
+  "beispielTr": "Değer zincirinde en küçük pay çiftçiye kalıyor.",
+  "beispielEn": "In the value chain the farmer keeps the smallest share."
+ }
+]

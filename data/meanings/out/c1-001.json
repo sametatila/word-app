@@ -1,0 +1,402 @@
+[
+  {
+    "id": 4042,
+    "tr": "yine de",
+    "en": "nevertheless",
+    "beispiel": "Es regnete stark, dennoch ging sie spazieren.",
+    "beispielTr": "Şiddetli yağmur yağıyordu, yine de yürüyüşe çıktı.",
+    "beispielEn": "It rained hard, but she went for a walk anyway."
+  },
+  {
+    "id": 3549,
+    "tr": "iddianame",
+    "en": "indictment",
+    "beispiel": "Die Staatsanwaltschaft erhob Anklage gegen den ehemaligen Bürgermeister.",
+    "beispielTr": "Savcılık, eski belediye başkanı hakkında iddianame düzenledi.",
+    "beispielEn": "The prosecution filed an indictment against the former mayor."
+  },
+  {
+    "id": 3568,
+    "tr": "talimat",
+    "en": "order",
+    "beispiel": "Gegen die Verfügung des Amtes legte er Einspruch ein.",
+    "beispielTr": "İdarenin talimatına karşı itiraz etti.",
+    "beispielEn": "He filed an objection against the authority's order."
+  },
+  {
+    "id": 3613,
+    "tr": "trajedi",
+    "en": "tragedy",
+    "beispiel": "Wir haben gestern Abend eine Tragödie von Sophokles gesehen.",
+    "beispielTr": "Dün akşam Sofokles'in bir trajedisini izledik.",
+    "beispielEn": "Last night we saw a tragedy by Sophocles."
+  },
+  {
+    "id": 3612,
+    "tr": "dram",
+    "en": "drama",
+    "beispiel": "In der elften Klasse lesen wir ein Drama von Schiller.",
+    "beispielTr": "On birinci sınıfta Schiller'den bir dram okuyoruz.",
+    "beispielEn": "In eleventh grade we're reading a drama by Schiller."
+  },
+  {
+    "id": 3535,
+    "tr": "dava",
+    "en": "lawsuit",
+    "beispiel": "Die Klage gegen den Vermieter hatte vor Gericht Erfolg.",
+    "beispielTr": "Ev sahibine açılan dava mahkemede kazanıldı.",
+    "beispielEn": "The lawsuit against the landlord succeeded in court."
+  },
+  {
+    "id": 3883,
+    "tr": "strateji",
+    "en": "strategy",
+    "beispiel": "Der Trainer änderte in der Halbzeit die Strategie.",
+    "beispielTr": "Antrenör devre arasında stratejiyi değiştirdi.",
+    "beispielEn": "The coach changed the strategy at halftime."
+  },
+  {
+    "id": 3547,
+    "tr": "hüküm",
+    "en": "provision",
+    "beispiel": "Diese Bestimmung gilt nicht für Verträge aus dem Vorjahr.",
+    "beispielTr": "Bu hüküm, geçen yılki sözleşmeler için geçerli değil.",
+    "beispielEn": "This provision doesn't apply to contracts from last year."
+  },
+  {
+    "id": 3474,
+    "tr": "varsayım",
+    "en": "assumption",
+    "beispiel": "Seine Annahme, der Zug sei pünktlich, war leider falsch.",
+    "beispielTr": "Trenin dakik olacağı varsayımı ne yazık ki yanlış çıktı.",
+    "beispielEn": "His assumption that the train would be on time was wrong."
+  },
+  {
+    "id": 3536,
+    "tr": "istinaf",
+    "en": "appeal",
+    "beispiel": "Der Anwalt legte gegen das Urteil Berufung ein.",
+    "beispielTr": "Avukat, karara karşı istinafa başvurdu.",
+    "beispielEn": "The lawyer appealed against the verdict."
+  },
+  {
+    "id": 3523,
+    "tr": "hiç de değil",
+    "en": "by no means",
+    "beispiel": "Das Essen war teuer, aber keineswegs gut.",
+    "beispielTr": "Yemek pahalıydı ama hiç de iyi değildi.",
+    "beispielEn": "The food was expensive but by no means good."
+  },
+  {
+    "id": 3897,
+    "tr": "çıkmaz",
+    "en": "dead end",
+    "beispiel": "Die Verhandlungen sind in eine Sackgasse geraten.",
+    "beispielTr": "Müzakereler çıkmaza girdi.",
+    "beispielEn": "The negotiations have reached a dead end."
+  },
+  {
+    "id": 3596,
+    "tr": "birlik",
+    "en": "association",
+    "beispiel": "Der Verband der Bäcker fordert niedrigere Energiepreise.",
+    "beispielTr": "Fırıncılar birliği daha düşük enerji fiyatları istiyor.",
+    "beispielEn": "The bakers' association is demanding lower energy prices."
+  },
+  {
+    "id": 3730,
+    "tr": "şayet",
+    "en": "provided that",
+    "beispiel": "Sofern es nicht regnet, grillen wir im Garten.",
+    "beispielTr": "Şayet yağmur yağmazsa bahçede mangal yaparız.",
+    "beispielEn": "Provided it doesn't rain, we'll barbecue in the garden."
+  },
+  {
+    "id": 3557,
+    "tr": "gözetim",
+    "en": "supervision",
+    "beispiel": "Die Kinder dürfen nur unter Aufsicht ins Wasser.",
+    "beispielTr": "Çocuklar suya ancak gözetim altında girebilir.",
+    "beispielEn": "The children may only go into the water under supervision."
+  },
+  {
+    "id": 3593,
+    "tr": "bakanlık",
+    "en": "ministry",
+    "beispiel": "Das Ministerium hat den Antrag bereits genehmigt.",
+    "beispielTr": "Bakanlık başvuruyu çoktan onayladı.",
+    "beispielEn": "The ministry has already approved the application."
+  },
+  {
+    "id": 3479,
+    "tr": "bakış açısı",
+    "en": "perspective",
+    "beispiel": "Aus meiner Perspektive war die Kritik völlig berechtigt.",
+    "beispielTr": "Benim bakış açımdan eleştiri tamamen haklıydı.",
+    "beispielEn": "From my perspective the criticism was entirely justified."
+  },
+  {
+    "id": 3530,
+    "tr": "aksine",
+    "en": "rather",
+    "beispiel": "Er ist nicht faul, vielmehr völlig überfordert.",
+    "beispielTr": "Tembel değil, aksine tamamen bunalmış durumda.",
+    "beispielEn": "He isn't lazy, but rather completely overwhelmed."
+  },
+  {
+    "id": 3644,
+    "tr": "efsane",
+    "en": "myth",
+    "beispiel": "Der Mythos von Prometheus wird bis heute erzählt.",
+    "beispielTr": "Prometheus efsanesi bugün hâlâ anlatılıyor.",
+    "beispielEn": "The myth of Prometheus is still told today."
+  },
+  {
+    "id": 3594,
+    "tr": "komisyon",
+    "en": "committee",
+    "beispiel": "Der Ausschuss tagt am Dienstag im kleinen Sitzungssaal.",
+    "beispielTr": "Komisyon salı günü küçük toplantı salonunda toplanıyor.",
+    "beispielEn": "The committee meets on Tuesday in the small conference room."
+  },
+  {
+    "id": 3597,
+    "tr": "komisyon",
+    "en": "commission",
+    "beispiel": "Die Kommission legte dem Parlament ihren Abschlussbericht vor.",
+    "beispielTr": "Komisyon nihai raporunu meclise sundu.",
+    "beispielEn": "The commission presented its final report to parliament."
+  },
+  {
+    "id": 3614,
+    "tr": "komedi",
+    "en": "comedy",
+    "beispiel": "Am Samstag läuft im Theater eine neue Komödie.",
+    "beispielTr": "Cumartesi günü tiyatroda yeni bir komedi oynuyor.",
+    "beispielEn": "A new comedy is playing at the theater on Saturday."
+  },
+  {
+    "id": 3709,
+    "tr": "görünüş",
+    "en": "appearance",
+    "beispiel": "Allem Anschein nach hat er die Wohnung längst verkauft.",
+    "beispielTr": "Görünüşe göre daireyi çoktan satmış.",
+    "beispielEn": "By all appearances he sold the apartment long ago."
+  },
+  {
+    "id": 4044,
+    "tr": "bir bakıma",
+    "en": "in a sense",
+    "beispiel": "Er ist gewissermaßen der Gründer dieses kleinen Vereins.",
+    "beispielTr": "O, bir bakıma bu küçük derneğin kurucusu.",
+    "beispielEn": "He is in a sense the founder of this small club."
+  },
+  {
+    "id": 3538,
+    "tr": "karar",
+    "en": "decision",
+    "beispiel": "Der Vorstand fasste den Beschluss einstimmig.",
+    "beispielTr": "Yönetim kurulu kararı oybirliğiyle aldı.",
+    "beispielEn": "The board took the decision unanimously."
+  },
+  {
+    "id": 3624,
+    "tr": "Aydınlanma",
+    "en": "Enlightenment",
+    "beispiel": "Kant gilt als wichtigster Denker der Aufklärung.",
+    "beispielTr": "Kant, Aydınlanma'nın en önemli düşünürü sayılır.",
+    "beispielEn": "Kant is seen as the most important thinker of the Enlightenment."
+  },
+  {
+    "id": 3572,
+    "tr": "sunmak",
+    "en": "to submit",
+    "beispiel": "Ich habe meinen Antrag gestern online eingereicht.",
+    "beispielTr": "Başvurumu dün internet üzerinden sundum.",
+    "beispielEn": "I submitted my application online yesterday."
+  },
+  {
+    "id": 3573,
+    "tr": "iletmek",
+    "en": "to transmit",
+    "beispiel": "Die Klinik hat die Befunde an den Hausarzt übermittelt.",
+    "beispielTr": "Klinik, tahlil sonuçlarını aile hekimine iletti.",
+    "beispielEn": "The clinic transmitted the results to the family doctor."
+  },
+  {
+    "id": 3545,
+    "tr": "bilirkişi raporu",
+    "en": "expert report",
+    "beispiel": "Der Richter ordnete ein Gutachten zum Wert des Hauses an.",
+    "beispielTr": "Hâkim, evin değeri için bilirkişi raporu istedi.",
+    "beispielEn": "The judge ordered an expert report on the value of the house."
+  },
+  {
+    "id": 3505,
+    "tr": "kanıtlamak",
+    "en": "to substantiate",
+    "beispiel": "Neue Zahlen belegen den Rückgang der Arbeitslosigkeit.",
+    "beispielTr": "Yeni rakamlar işsizlikteki düşüşü kanıtlıyor.",
+    "beispielEn": "New figures substantiate the decline in unemployment."
+  },
+  {
+    "id": 3963,
+    "tr": "günah keçisi",
+    "en": "scapegoat",
+    "beispiel": "Der Torwart wurde nach der Niederlage zum Sündenbock.",
+    "beispielTr": "Kaleci, yenilginin ardından günah keçisi ilan edildi.",
+    "beispielEn": "The goalkeeper became the scapegoat after the defeat."
+  },
+  {
+    "id": 4020,
+    "tr": "yol açmak",
+    "en": "to prompt",
+    "beispiel": "Der Vorfall veranlasste eine gründliche Untersuchung des Betriebs.",
+    "beispielTr": "Olay, işletmede kapsamlı bir soruşturmaya yol açtı.",
+    "beispielEn": "The incident prompted a thorough investigation of the plant."
+  },
+  {
+    "id": 4032,
+    "tr": "anlamak",
+    "en": "to comprehend",
+    "beispiel": "Ich kann seine Entscheidung wirklich nicht nachvollziehen.",
+    "beispielTr": "Onun kararını gerçekten anlayamıyorum.",
+    "beispielEn": "I really cannot comprehend his decision."
+  },
+  {
+    "id": 3938,
+    "tr": "devralma",
+    "en": "takeover",
+    "beispiel": "Die Übernahme des Konkurrenten kostete das Unternehmen Millionen.",
+    "beispielTr": "Rakip firmanın devralınması şirkete milyonlara mal oldu.",
+    "beispielEn": "The takeover of the competitor cost the company millions."
+  },
+  {
+    "id": 3469,
+    "tr": "çelişki",
+    "en": "contradiction",
+    "beispiel": "Seine Aussage steht im Widerspruch zum Bericht der Polizei.",
+    "beispielTr": "İfadesi, polisin raporuyla çelişki içinde.",
+    "beispielEn": "His statement stands in contradiction to the police report."
+  },
+  {
+    "id": 4030,
+    "tr": "inkar etmek",
+    "en": "to deny",
+    "beispiel": "Der Fahrer hat jede Schuld an dem Unfall abgestritten.",
+    "beispielTr": "Sürücü, kazadaki her türlü kusuru inkar etti.",
+    "beispielEn": "The driver denied any fault in the accident."
+  },
+  {
+    "id": 4034,
+    "tr": "önlemek",
+    "en": "to avert",
+    "beispiel": "Die Feuerwehr konnte eine Katastrophe im letzten Moment abwenden.",
+    "beispielTr": "İtfaiye, bir felaketi son anda önleyebildi.",
+    "beispielEn": "The fire brigade averted a disaster at the last moment."
+  },
+  {
+    "id": 3600,
+    "tr": "kurum",
+    "en": "institution",
+    "beispiel": "Viele Bürger verlieren das Vertrauen in staatliche Institutionen.",
+    "beispielTr": "Pek çok vatandaş devlet kurumlarına olan güvenini yitiriyor.",
+    "beispielEn": "Many citizens are losing their trust in state institutions."
+  },
+  {
+    "id": 3464,
+    "tr": "çıkarım",
+    "en": "conclusion",
+    "beispiel": "Aus diesen Zahlen zog er eine voreilige Schlussfolgerung.",
+    "beispielTr": "Bu rakamlardan aceleci bir çıkarım yaptı.",
+    "beispielEn": "He drew a hasty conclusion from these figures."
+  },
+  {
+    "id": 3544,
+    "tr": "vekaletname",
+    "en": "power of attorney",
+    "beispiel": "Ohne Vollmacht darf die Bank kein Geld auszahlen.",
+    "beispielTr": "Vekaletname olmadan banka para ödeyemez.",
+    "beispielEn": "Without a power of attorney the bank cannot pay out money."
+  },
+  {
+    "id": 3462,
+    "tr": "tez",
+    "en": "thesis",
+    "beispiel": "Der Autor verteidigt seine These mit vielen Beispielen.",
+    "beispielTr": "Yazar, tezini birçok örnekle savunuyor.",
+    "beispielEn": "The author defends his thesis with many examples."
+  },
+  {
+    "id": 3670,
+    "tr": "düşünmek",
+    "en": "to consider",
+    "beispiel": "Wir erwägen, den Vertrag früher zu kündigen.",
+    "beispielTr": "Sözleşmeyi daha erken feshetmeyi düşünüyoruz.",
+    "beispielEn": "We are considering terminating the contract early."
+  },
+  {
+    "id": 3929,
+    "tr": "işe almak",
+    "en": "to recruit",
+    "beispiel": "Die Firma rekrutiert ihre Ingenieure vor allem im Ausland.",
+    "beispielTr": "Şirket, mühendislerini ağırlıklı olarak yurt dışından işe alıyor.",
+    "beispielEn": "The company recruits its engineers mainly from abroad."
+  },
+  {
+    "id": 3988,
+    "tr": "maskesini düşürmek",
+    "en": "to unmask",
+    "beispiel": "Ein Video entlarvte den Betrüger vor der ganzen Stadt.",
+    "beispielTr": "Bir video, dolandırıcının maskesini bütün şehrin önünde düşürdü.",
+    "beispielEn": "A video unmasked the fraudster in front of the whole town."
+  },
+  {
+    "id": 3524,
+    "tr": "hele ki",
+    "en": "especially since",
+    "beispiel": "Wir bleiben zu Hause, zumal es stark schneit.",
+    "beispielTr": "Evde kalıyoruz, hele ki böyle kar yağarken.",
+    "beispielEn": "We are staying home, especially since it is snowing hard."
+  },
+  {
+    "id": 3707,
+    "tr": "manevra alanı",
+    "en": "leeway",
+    "beispiel": "Beim Preis haben wir leider keinen Spielraum mehr.",
+    "beispielTr": "Fiyat konusunda ne yazık ki manevra alanımız kalmadı.",
+    "beispielEn": "Unfortunately we have no leeway left on the price."
+  },
+  {
+    "id": 3623,
+    "tr": "bağlam",
+    "en": "context",
+    "beispiel": "Du hast meinen Satz aus dem Kontext gerissen.",
+    "beispielTr": "Cümlemi bağlamından kopardın.",
+    "beispielEn": "You took my sentence out of context."
+  },
+  {
+    "id": 4017,
+    "tr": "güvence altına almak",
+    "en": "to ensure",
+    "beispiel": "Zwei Notärzte gewährleisten die medizinische Versorgung beim Festival.",
+    "beispielTr": "İki acil doktoru, festivalde tıbbi bakımı güvence altına alıyor.",
+    "beispielEn": "Two emergency doctors ensure medical care at the festival."
+  },
+  {
+    "id": 3703,
+    "tr": "ipucu",
+    "en": "clue",
+    "beispiel": "Die Polizei fand keinen Anhaltspunkt für einen Einbruch.",
+    "beispielTr": "Polis, hırsızlığa dair hiçbir ipucu bulamadı.",
+    "beispielEn": "The police found no clue pointing to a break-in."
+  },
+  {
+    "id": 3513,
+    "tr": "sorgulamak",
+    "en": "to question",
+    "beispiel": "Warum hinterfragst du jede meiner Entscheidungen?",
+    "beispielTr": "Neden her kararımı sorguluyorsun?",
+    "beispielEn": "Why do you question every decision I make?"
+  }
+]

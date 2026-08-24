@@ -1,0 +1,402 @@
+[
+ {
+  "id": 3942,
+  "tr": "sadeleştirmek",
+  "en": "to streamline",
+  "beispiel": "Wir straffen den Ablauf, damit alle pünktlich fertig werden.",
+  "beispielTr": "Herkes zamanında bitirsin diye süreci sadeleştiriyoruz.",
+  "beispielEn": "We are streamlining the process so everyone finishes on time."
+ },
+ {
+  "id": 3546,
+  "tr": "durum",
+  "en": "state of affairs",
+  "beispiel": "Bitte schildern Sie den Sachverhalt aus Ihrer Sicht.",
+  "beispielTr": "Lütfen durumu kendi bakış açınızdan anlatın.",
+  "beispielEn": "Please describe the matter from your point of view."
+ },
+ {
+  "id": 3621,
+  "tr": "hiciv",
+  "en": "satire",
+  "beispiel": "Seine Satire über den Politiker sorgte für Ärger.",
+  "beispielTr": "Politikacı hakkındaki hicvi ortalığı karıştırdı.",
+  "beispielEn": "His satire about the politician caused trouble."
+ },
+ {
+  "id": 3643,
+  "tr": "şifre",
+  "en": "cipher",
+  "beispiel": "Die Nachricht war in einer alten Chiffre geschrieben.",
+  "beispielTr": "Mesaj eski bir şifreyle yazılmıştı.",
+  "beispielEn": "The message was written in an old cipher."
+ },
+ {
+  "id": 3722,
+  "tr": "aldatıcı",
+  "en": "deceptive",
+  "beispiel": "Die Ruhe vor dem Sturm ist oft trügerisch.",
+  "beispielTr": "Fırtına öncesi sessizlik çoğu zaman aldatıcıdır.",
+  "beispielEn": "The calm before the storm is often deceptive."
+ },
+ {
+  "id": 3641,
+  "tr": "gelenek",
+  "en": "tradition",
+  "beispiel": "Die mündliche Überlieferung hielt die alten Lieder lebendig.",
+  "beispielTr": "Sözlü gelenek eski şarkıları yaşattı.",
+  "beispielEn": "Oral tradition kept the old songs alive."
+ },
+ {
+  "id": 3631,
+  "tr": "dünya görüşü",
+  "en": "worldview",
+  "beispiel": "Seine Weltanschauung änderte sich nach der langen Reise.",
+  "beispielTr": "Uzun yolculuktan sonra dünya görüşü değişti.",
+  "beispielEn": "His worldview changed after the long journey."
+ },
+ {
+  "id": 3680,
+  "tr": "öne çıkarmak",
+  "en": "to highlight",
+  "beispiel": "Ich möchte einen Punkt besonders hervorheben.",
+  "beispielTr": "Bir noktayı özellikle öne çıkarmak istiyorum.",
+  "beispielEn": "I would like to highlight one point in particular."
+ },
+ {
+  "id": 3539,
+  "tr": "icra",
+  "en": "enforcement",
+  "beispiel": "Die Vollstreckung des Urteils beginnt nächste Woche.",
+  "beispielTr": "Kararın icrası önümüzdeki hafta başlıyor.",
+  "beispielEn": "Enforcement of the judgment begins next week."
+ },
+ {
+  "id": 3683,
+  "tr": "olduğundan iyi göstermek",
+  "en": "to gloss over",
+  "beispiel": "Er beschönigt seine Fehler vor dem Chef.",
+  "beispielTr": "Hatalarını patronun önünde olduğundan iyi gösteriyor.",
+  "beispielEn": "He glosses over his mistakes in front of the boss."
+ },
+ {
+  "id": 3971,
+  "tr": "yanılsama",
+  "en": "illusion",
+  "beispiel": "Sein Reichtum entpuppte sich als reines Trugbild.",
+  "beispielTr": "Zenginliğinin koca bir yanılsama olduğu ortaya çıktı.",
+  "beispielEn": "His wealth turned out to be a pure illusion."
+ },
+ {
+  "id": 4033,
+  "tr": "eksiltmek",
+  "en": "to diminish",
+  "beispiel": "Ein einziger Fehler schmälert seine Leistung nicht.",
+  "beispielTr": "Tek bir hata başarısını eksiltmez.",
+  "beispielEn": "A single mistake does not diminish his achievement."
+ },
+ {
+  "id": 4041,
+  "tr": "şaibeli",
+  "en": "shady",
+  "beispiel": "Das Angebot klingt mir zu dubios.",
+  "beispielTr": "Bu teklif bana fazla şaibeli geliyor.",
+  "beispielEn": "This offer sounds too shady to me."
+ },
+ {
+  "id": 3702,
+  "tr": "önem",
+  "en": "importance",
+  "beispiel": "Die Tragweite seiner Entscheidung erkannte er zu spät.",
+  "beispielTr": "Kararının önemini çok geç fark etti.",
+  "beispielEn": "He realized the importance of his decision too late."
+ },
+ {
+  "id": 3972,
+  "tr": "dünya tasavvuru",
+  "en": "picture of the world",
+  "beispiel": "Kopernikus zerstörte das mittelalterliche Weltbild.",
+  "beispielTr": "Kopernik, ortaçağın dünya tasavvurunu yıktı.",
+  "beispielEn": "Copernicus destroyed the medieval picture of the world."
+ },
+ {
+  "id": 3719,
+  "tr": "olmazsa olmaz",
+  "en": "indispensable",
+  "beispiel": "Vertrauen ist für dieses Projekt unabdingbar.",
+  "beispielTr": "Bu proje için güven olmazsa olmaz.",
+  "beispielEn": "Trust is indispensable for this project."
+ },
+ {
+  "id": 3520,
+  "tr": "bununla birlikte",
+  "en": "nonetheless",
+  "beispiel": "Der Preis ist hoch, gleichwohl kaufe ich das Buch.",
+  "beispielTr": "Fiyat yüksek; bununla birlikte kitabı alıyorum.",
+  "beispielEn": "The price is high; nonetheless I am buying the book."
+ },
+ {
+  "id": 4000,
+  "tr": "yaftalamak",
+  "en": "to brand",
+  "beispiel": "Die Zeitung brandmarkte ihn als Lügner.",
+  "beispielTr": "Gazete onu yalancı diye yaftaladı.",
+  "beispielEn": "The newspaper branded him a liar."
+ },
+ {
+  "id": 3650,
+  "tr": "yansıtmak",
+  "en": "to reflect",
+  "beispiel": "Die Umfrage soll die Meinung der Bürger widerspiegeln.",
+  "beispielTr": "Anket, vatandaşların görüşünü yansıtmalı.",
+  "beispielEn": "The survey should reflect the opinion of the citizens."
+ },
+ {
+  "id": 3466,
+  "tr": "araştırma sorusu",
+  "en": "research question",
+  "beispiel": "Die zentrale Fragestellung der Arbeit blieb unbeantwortet.",
+  "beispielTr": "Çalışmanın temel araştırma sorusu yanıtsız kaldı.",
+  "beispielEn": "The central research question of the paper remained unanswered."
+ },
+ {
+  "id": 3467,
+  "tr": "metodoloji",
+  "en": "methodology",
+  "beispiel": "Die Methodik der Studie überzeugte die Gutachter nicht.",
+  "beispielTr": "Çalışmanın metodolojisi hakemleri ikna etmedi.",
+  "beispielEn": "The methodology of the study did not convince the reviewers."
+ },
+ {
+  "id": 3472,
+  "tr": "söylem",
+  "en": "discourse",
+  "beispiel": "Im öffentlichen Diskurs fehlt oft die Sachlichkeit.",
+  "beispielTr": "Kamusal söylemde çoğu zaman nesnellik eksik.",
+  "beispielEn": "Public discourse often lacks objectivity."
+ },
+ {
+  "id": 3473,
+  "tr": "öznellik",
+  "en": "subjectivity",
+  "beispiel": "Die Subjektivität des Autors stört viele Leser.",
+  "beispielTr": "Yazarın öznelliği birçok okuru rahatsız ediyor.",
+  "beispielEn": "The author's subjectivity bothers many readers."
+ },
+ {
+  "id": 3476,
+  "tr": "akla yatkınlık",
+  "en": "plausibility",
+  "beispiel": "An der Plausibilität dieser Erklärung zweifeln viele Fachleute.",
+  "beispielTr": "Birçok uzman bu açıklamanın akla yatkınlığından şüphe ediyor.",
+  "beispielEn": "Many experts doubt the plausibility of this explanation."
+ },
+ {
+  "id": 3477,
+  "tr": "anlamlılık",
+  "en": "significance",
+  "beispiel": "Das Ergebnis erreichte keine statistische Signifikanz.",
+  "beispielTr": "Sonuç istatistiksel anlamlılığa ulaşamadı.",
+  "beispielEn": "The result did not reach statistical significance."
+ },
+ {
+  "id": 3480,
+  "tr": "ayrıştırma",
+  "en": "differentiation",
+  "beispiel": "Hier fehlt eine klare Differenzierung zwischen beiden Begriffen.",
+  "beispielTr": "Burada iki kavram arasında net bir ayrıştırma eksik.",
+  "beispielEn": "A clear differentiation between the two terms is missing here."
+ },
+ {
+  "id": 3481,
+  "tr": "genelleme",
+  "en": "generalization",
+  "beispiel": "Solche Verallgemeinerungen führen schnell zu falschen Schlüssen.",
+  "beispielTr": "Bu tür genellemeler çabucak yanlış sonuçlara götürür.",
+  "beispielEn": "Such generalizations quickly lead to wrong conclusions."
+ },
+ {
+  "id": 3483,
+  "tr": "alan yazını",
+  "en": "specialist literature",
+  "beispiel": "Die Fachliteratur zu diesem Thema füllt ganze Regale.",
+  "beispielTr": "Bu konudaki alan yazını rafları dolduruyor.",
+  "beispielEn": "The specialist literature on this topic fills entire shelves."
+ },
+ {
+  "id": 3484,
+  "tr": "paradigma",
+  "en": "paradigm",
+  "beispiel": "Mit dieser Entdeckung setzte sich ein neues Paradigma durch.",
+  "beispielTr": "Bu keşifle birlikte yeni bir paradigma yerleşti.",
+  "beispielEn": "With this discovery a new paradigm took hold."
+ },
+ {
+  "id": 3485,
+  "tr": "öncül",
+  "en": "premise",
+  "beispiel": "Seine ganze Argumentation beruht auf einer falschen Prämisse.",
+  "beispielTr": "Bütün savı yanlış bir öncüle dayanıyor.",
+  "beispielEn": "His entire argument rests on a false premise."
+ },
+ {
+  "id": 3486,
+  "tr": "nedensellik",
+  "en": "causality",
+  "beispiel": "Der Forscher konnte keine Kausalität nachweisen.",
+  "beispielTr": "Araştırmacı bir nedensellik ilişkisi kanıtlayamadı.",
+  "beispielEn": "The researcher could not prove any causality."
+ },
+ {
+  "id": 3487,
+  "tr": "korelasyon",
+  "en": "correlation",
+  "beispiel": "Zwischen Schlaf und Konzentration zeigt sich eine deutliche Korrelation.",
+  "beispielTr": "Uyku ile dikkat arasında belirgin bir korelasyon görülüyor.",
+  "beispielEn": "There is a clear correlation between sleep and concentration."
+ },
+ {
+  "id": 3488,
+  "tr": "örneklem",
+  "en": "sample",
+  "beispiel": "Die Stichprobe umfasste nur fünfzig Personen.",
+  "beispielTr": "Örneklem yalnızca elli kişiden oluşuyordu.",
+  "beispielEn": "The sample included only fifty people."
+ },
+ {
+  "id": 3489,
+  "tr": "veri toplama",
+  "en": "data collection",
+  "beispiel": "Die Datenerhebung dauerte insgesamt drei Monate.",
+  "beispielTr": "Veri toplama toplam üç ay sürdü.",
+  "beispielEn": "Data collection took three months in total."
+ },
+ {
+  "id": 3490,
+  "tr": "araştırma durumu",
+  "en": "state of research",
+  "beispiel": "Der aktuelle Forschungsstand wird im zweiten Kapitel dargestellt.",
+  "beispielTr": "Güncel araştırma durumu ikinci bölümde anlatılıyor.",
+  "beispielEn": "The current state of research is presented in the second chapter."
+ },
+ {
+  "id": 3491,
+  "tr": "varsayım",
+  "en": "postulate",
+  "beispiel": "Dieses Postulat blieb jahrzehntelang unbestritten.",
+  "beispielTr": "Bu varsayım onlarca yıl tartışılmadan kabul gördü.",
+  "beispielEn": "This postulate remained unchallenged for decades."
+ },
+ {
+  "id": 3492,
+  "tr": "nüans",
+  "en": "nuance",
+  "beispiel": "Solche Nuancen gehen in der Übersetzung leicht verloren.",
+  "beispielTr": "Bu tür nüanslar çeviride kolayca kaybolur.",
+  "beispielEn": "Such nuances are easily lost in translation."
+ },
+ {
+  "id": 3493,
+  "tr": "tutarlılık",
+  "en": "coherence",
+  "beispiel": "Dem Aufsatz fehlt es an innerer Kohärenz.",
+  "beispielTr": "Yazının iç tutarlılığı eksik.",
+  "beispielEn": "The essay lacks inner coherence."
+ },
+ {
+  "id": 3495,
+  "tr": "tartışma katkısı",
+  "en": "contribution to the discussion",
+  "beispiel": "Ihr Diskussionsbeitrag brachte die Debatte deutlich voran.",
+  "beispielTr": "Tartışmadaki katkısı, konuyu belirgin biçimde ilerletti.",
+  "beispielEn": "Her contribution to the discussion moved the debate forward."
+ },
+ {
+  "id": 3496,
+  "tr": "karşı görüş",
+  "en": "opposing view",
+  "beispiel": "Eine überzeugende Gegenposition hat bisher niemand vorgetragen.",
+  "beispielTr": "Şimdiye dek kimse ikna edici bir karşı görüş ortaya koymadı.",
+  "beispielEn": "Nobody has put forward a convincing opposing view so far."
+ },
+ {
+  "id": 3497,
+  "tr": "vaka çalışması",
+  "en": "case study",
+  "beispiel": "Die Fallstudie zeigt, wie das Modell in der Praxis funktioniert.",
+  "beispielTr": "Vaka çalışması, modelin pratikte nasıl işlediğini gösteriyor.",
+  "beispielEn": "The case study shows how the model works in practice."
+ },
+ {
+  "id": 3498,
+  "tr": "argüman zinciri",
+  "en": "chain of argument",
+  "beispiel": "Seine Argumentationskette hat an einer Stelle eine Lücke.",
+  "beispielTr": "Argüman zincirinde bir yerde boşluk var.",
+  "beispielEn": "His chain of argument has a gap at one point."
+ },
+ {
+  "id": 3499,
+  "tr": "açıklama yaklaşımı",
+  "en": "explanatory approach",
+  "beispiel": "Für dieses Phänomen gibt es mehrere Erklärungsansätze.",
+  "beispielTr": "Bu olgu için birden çok açıklama yaklaşımı var.",
+  "beispielEn": "There are several explanatory approaches for this phenomenon."
+ },
+ {
+  "id": 3501,
+  "tr": "öne sürmek",
+  "en": "to postulate",
+  "beispiel": "Der Forscher postuliert einen bisher unbekannten Zusammenhang.",
+  "beispielTr": "Araştırmacı, şimdiye dek bilinmeyen bir bağlantı öne sürüyor.",
+  "beispielEn": "The researcher postulates a previously unknown connection."
+ },
+ {
+  "id": 3502,
+  "tr": "saptamak",
+  "en": "to note",
+  "beispiel": "Der Arzt konstatierte einen leichten Bruch.",
+  "beispielTr": "Doktor hafif bir kırık saptadı.",
+  "beispielEn": "The doctor noted a slight fracture."
+ },
+ {
+  "id": 3503,
+  "tr": "somutlaştırmak",
+  "en": "to illustrate",
+  "beispiel": "Eine Grafik veranschaulicht die Entwicklung der Preise.",
+  "beispielTr": "Bir grafik, fiyatların gelişimini somutlaştırıyor.",
+  "beispielEn": "A graphic illustrates how prices developed."
+ },
+ {
+  "id": 3506,
+  "tr": "türetmek",
+  "en": "to derive",
+  "beispiel": "Daraus lässt sich die Regel logisch herleiten.",
+  "beispielTr": "Kural buradan mantıksal olarak türetilebilir.",
+  "beispielEn": "The rule can be derived from this logically."
+ },
+ {
+  "id": 3507,
+  "tr": "doğrulamak",
+  "en": "to verify",
+  "beispiel": "Ein zweites Labor konnte die Messung verifizieren.",
+  "beispielTr": "İkinci bir laboratuvar ölçümü doğrulayabildi.",
+  "beispielEn": "A second lab was able to verify the measurement."
+ },
+ {
+  "id": 3508,
+  "tr": "yanlışlamak",
+  "en": "to falsify",
+  "beispiel": "Schon ein Gegenbeweis kann die Theorie falsifizieren.",
+  "beispielTr": "Tek bir karşı kanıt bile teoriyi yanlışlayabilir.",
+  "beispielEn": "A single counterexample can already falsify the theory."
+ },
+ {
+  "id": 3510,
+  "tr": "çıkarım yapmak",
+  "en": "to conclude",
+  "beispiel": "Aus den Zahlen schlussfolgert sie, dass die Kampagne wirkte.",
+  "beispielTr": "Rakamlardan, kampanyanın işe yaradığı çıkarımını yapıyor.",
+  "beispielEn": "From the figures she concludes that the campaign worked."
+ }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6203,
+    "tr": "amortisman",
+    "en": "amortization",
+    "beispiel": "Die Amortisation der Solaranlage dauert etwa zehn Jahre.",
+    "beispielTr": "Güneş enerjisi tesisinin amortismanı yaklaşık on yıl sürüyor.",
+    "beispielEn": "The solar array takes about ten years to pay for itself."
+  },
+  {
+    "id": 6204,
+    "tr": "başlangıç finansmanı",
+    "en": "start-up funding",
+    "beispiel": "Ohne Anschubfinanzierung wäre das Projekt nie gestartet.",
+    "beispielTr": "Başlangıç finansmanı olmasaydı proje hiç başlamazdı.",
+    "beispielEn": "Without start-up funding the project would never have got going."
+  },
+  {
+    "id": 6205,
+    "tr": "sermaye ihtiyacı",
+    "en": "capital requirement",
+    "beispiel": "Der Kapitalbedarf für den Netzausbau liegt bei mehreren Milliarden Euro.",
+    "beispielTr": "Şebeke genişletmesinin sermaye ihtiyacı birkaç milyar avro.",
+    "beispielEn": "The capital requirement for the grid expansion runs to several billion euros."
+  },
+  {
+    "id": 6206,
+    "tr": "getiri beklentisi",
+    "en": "expected return",
+    "beispiel": "Die Renditeerwartung der Anleger war deutlich zu optimistisch.",
+    "beispielTr": "Yatırımcıların getiri beklentisi fazlasıyla iyimserdi.",
+    "beispielEn": "The investors' return expectations were far too optimistic."
+  },
+  {
+    "id": 6207,
+    "tr": "marjinal maliyet",
+    "en": "marginal cost",
+    "beispiel": "Windkraft verdrängt teure Kraftwerke, weil ihre Grenzkosten fast null sind.",
+    "beispielTr": "Rüzgâr enerjisi marjinal maliyeti neredeyse sıfır olduğu için pahalı santralleri devre dışı bırakıyor.",
+    "beispielEn": "Wind power pushes expensive plants out because its marginal cost is almost zero."
+  },
+  {
+    "id": 6208,
+    "tr": "sonradan çıkan maliyetler",
+    "en": "follow-up costs",
+    "beispiel": "Die Folgekosten des Rückbaus tauchen im ersten Angebot gar nicht auf.",
+    "beispielTr": "Sökümün sonradan çıkan maliyetleri ilk teklifte hiç yer almıyor.",
+    "beispielEn": "The follow-up costs of dismantling do not appear in the first quote at all."
+  },
+  {
+    "id": 6209,
+    "tr": "maliyet aşımı",
+    "en": "cost overrun",
+    "beispiel": "Die Kostenüberschreitung beim Flughafen ging in die Milliarden.",
+    "beispielTr": "Havalimanındaki maliyet aşımı milyarları buldu.",
+    "beispielEn": "The cost overrun at the airport ran into the billions."
+  },
+  {
+    "id": 6210,
+    "tr": "ölçek etkisi",
+    "en": "economy of scale",
+    "beispiel": "Erst bei großen Stückzahlen greifen die erhofften Skaleneffekte wirklich.",
+    "beispielTr": "Umulan ölçek etkileri ancak yüksek üretim adetlerinde gerçekten işliyor.",
+    "beispielEn": "The hoped-for economies of scale only kick in at high production volumes."
+  },
+  {
+    "id": 6211,
+    "tr": "tasarruf potansiyeli",
+    "en": "savings potential",
+    "beispiel": "Das größte Einsparpotenzial liegt nach wie vor im Gebäudebestand.",
+    "beispielTr": "En büyük tasarruf potansiyeli hâlâ mevcut bina stokunda.",
+    "beispielEn": "The biggest savings potential still lies in existing buildings."
+  },
+  {
+    "id": 6212,
+    "tr": "ithalata bağımlılık",
+    "en": "import dependency",
+    "beispiel": "Beim Gas ist die Importabhängigkeit in den letzten Jahren gesunken.",
+    "beispielTr": "Gazda ithalata bağımlılık son yıllarda azaldı.",
+    "beispielEn": "Import dependency for gas has fallen in recent years."
+  },
+  {
+    "id": 6213,
+    "tr": "işletme sorumluluğu",
+    "en": "operating responsibility",
+    "beispiel": "Über die künftige Trägerschaft des Krankenhauses wird noch verhandelt.",
+    "beispielTr": "Hastanenin gelecekteki işletme sorumluluğu hâlâ görüşülüyor.",
+    "beispielEn": "Who will run the hospital in future is still being negotiated."
+  },
+  {
+    "id": 6214,
+    "tr": "imtiyaz",
+    "en": "concession",
+    "beispiel": "Die Konzession läuft in zwei Jahren aus und wird neu vergeben.",
+    "beispielTr": "İmtiyaz iki yıl sonra sona eriyor ve yeniden ihale edilecek.",
+    "beispielEn": "The concession expires in two years and will be awarded again."
+  },
+  {
+    "id": 6215,
+    "tr": "ihale süreci",
+    "en": "tender procedure",
+    "beispiel": "Das Vergabeverfahren wurde nach einer Rüge der Aufsicht vollständig wiederholt.",
+    "beispielTr": "İhale süreci denetim kurumunun uyarısı üzerine baştan tekrarlandı.",
+    "beispielEn": "The tender procedure was repeated in full after a reprimand from the regulator."
+  },
+  {
+    "id": 6216,
+    "tr": "işletme modeli",
+    "en": "operator model",
+    "beispiel": "Man einigte sich auf ein Betreibermodell mit öffentlicher Mehrheitsbeteiligung.",
+    "beispielTr": "Kamunun çoğunluk payına sahip olduğu bir işletme modelinde uzlaşıldı.",
+    "beispielEn": "They agreed on an operator model with a public majority stake."
+  },
+  {
+    "id": 6217,
+    "tr": "konsorsiyum",
+    "en": "consortium",
+    "beispiel": "Ein internationales Konsortium übernimmt Bau und Betrieb der Anlage.",
+    "beispielTr": "Uluslararası bir konsorsiyum tesisin inşasını ve işletmesini üstleniyor.",
+    "beispielEn": "An international consortium is taking over construction and operation of the plant."
+  },
+  {
+    "id": 6218,
+    "tr": "ortaklık modeli",
+    "en": "participation model",
+    "beispiel": "Über ein Beteiligungsmodell verdienen die Anwohner am Windpark mit.",
+    "beispielTr": "Bir ortaklık modeliyle çevre sakinleri de rüzgâr santralinden kazanıyor.",
+    "beispielEn": "Through a participation model the locals earn from the wind farm too."
+  },
+  {
+    "id": 6219,
+    "tr": "yeniden belediyeleştirme",
+    "en": "remunicipalization",
+    "beispiel": "Nach der Rekommunalisierung sanken die Wasserpreise in der Stadt.",
+    "beispielTr": "Yeniden belediyeleştirmeden sonra şehirde su fiyatları düştü.",
+    "beispielEn": "After remunicipalization the water prices in the city went down."
+  },
+  {
+    "id": 6220,
+    "tr": "izin süreci",
+    "en": "approval procedure",
+    "beispiel": "Das Genehmigungsverfahren dauert länger als der eigentliche Bau der Leitung.",
+    "beispielTr": "İzin süreci hattın asıl inşasından daha uzun sürüyor.",
+    "beispielEn": "The approval procedure takes longer than actually building the line."
+  },
+  {
+    "id": 6221,
+    "tr": "plan onayı",
+    "en": "plan approval",
+    "beispiel": "Erst nach der Planfeststellung darf mit den Erdarbeiten begonnen werden.",
+    "beispielTr": "Kazı çalışmalarına ancak plan onayından sonra başlanabilir.",
+    "beispielEn": "Earthworks may begin only after the plan approval."
+  },
+  {
+    "id": 6222,
+    "tr": "hat güzergâhı",
+    "en": "routing",
+    "beispiel": "Gegen die geplante Trassenführung regt sich in den Dörfern Widerstand.",
+    "beispielTr": "Planlanan hat güzergâhına karşı köylerde direniş oluşuyor.",
+    "beispielEn": "Resistance to the planned routing is building in the villages."
+  },
+  {
+    "id": 6223,
+    "tr": "hedef çatışması",
+    "en": "conflict of goals",
+    "beispiel": "Zwischen Naturschutz und Netzausbau besteht ein kaum auflösbarer Zielkonflikt.",
+    "beispielTr": "Doğa koruma ile şebeke genişletmesi arasında neredeyse çözülemez bir hedef çatışması var.",
+    "beispielEn": "There is a barely resolvable conflict of goals between conservation and grid expansion."
+  },
+  {
+    "id": 6224,
+    "tr": "yol bağımlılığı",
+    "en": "path dependency",
+    "beispiel": "Das Land steckt wegen billiger Kohle in einer Pfadabhängigkeit.",
+    "beispielTr": "Ülke ucuz kömür yüzünden bir yol bağımlılığına saplanmış durumda.",
+    "beispielEn": "Cheap coal has locked the country into a path dependency."
+  },
+  {
+    "id": 6225,
+    "tr": "düzenleyici kurum",
+    "en": "regulatory authority",
+    "beispiel": "Die Regulierungsbehörde prüft, ob die veranschlagten Kosten anerkennungsfähig sind.",
+    "beispielTr": "Düzenleyici kurum, öngörülen maliyetlerin kabul edilebilir olup olmadığını inceliyor.",
+    "beispielEn": "The regulatory authority is checking whether the estimated costs can be recognized."
+  },
+  {
+    "id": 6226,
+    "tr": "ayrıştırma",
+    "en": "unbundling",
+    "beispiel": "Die Entflechtung von Netzbetrieb und Stromhandel war politisch hart umkämpft.",
+    "beispielTr": "Şebeke işletmeciliği ile elektrik ticaretinin ayrıştırılması siyaseten çok tartışıldı.",
+    "beispielEn": "The unbundling of grid operation and electricity trading was politically hard fought."
+  },
+  {
+    "id": 6227,
+    "tr": "katkı payı",
+    "en": "surcharge",
+    "beispiel": "Die Kosten werden über eine Umlage auf alle Verbraucher verteilt.",
+    "beispielTr": "Maliyetler bir katkı payı üzerinden bütün tüketicilere dağıtılıyor.",
+    "beispielEn": "The costs are spread across all consumers through a surcharge."
+  },
+  {
+    "id": 6228,
+    "tr": "kirleten öder ilkesi",
+    "en": "polluter pays principle",
+    "beispiel": "Nach dem Verursacherprinzip müsste die Industrie einen größeren Anteil tragen.",
+    "beispielTr": "Kirleten öder ilkesine göre sanayinin daha büyük bir payı üstlenmesi gerekirdi.",
+    "beispielEn": "Under the polluter pays principle industry would have to bear a larger share."
+  },
+  {
+    "id": 6229,
+    "tr": "fizibilite çalışması",
+    "en": "feasibility study",
+    "beispiel": "Die Machbarkeitsstudie kam zu einem deutlich nüchterneren Ergebnis als erwartet.",
+    "beispielTr": "Fizibilite çalışması beklenenden çok daha ölçülü bir sonuca vardı.",
+    "beispielEn": "The feasibility study came to a far more sober conclusion than expected."
+  },
+  {
+    "id": 6230,
+    "tr": "teşvik mekanizması",
+    "en": "support mechanism",
+    "beispiel": "Der neue Fördermechanismus zahlt nur noch für gespeicherten Strom.",
+    "beispielTr": "Yeni teşvik mekanizması artık yalnızca depolanan elektriğe ödeme yapıyor.",
+    "beispielEn": "The new support mechanism only pays for stored electricity now."
+  },
+  {
+    "id": 6231,
+    "tr": "dönüşüm rotası",
+    "en": "transformation path",
+    "beispiel": "Alle Szenarien beschreiben denselben Transformationspfad mit unterschiedlichem Tempo.",
+    "beispielTr": "Bütün senaryolar aynı dönüşüm rotasını farklı hızlarla tarif ediyor.",
+    "beispielEn": "All the scenarios describe the same transformation path at different speeds."
+  },
+  {
+    "id": 6232,
+    "tr": "sağlamak",
+    "en": "to provide",
+    "beispiel": "Für den Umbau der Kraftwerke werden zusätzliche Mittel bereitgestellt.",
+    "beispielTr": "Santrallerin dönüştürülmesi için ek kaynak sağlanıyor.",
+    "beispielEn": "Additional funds are being provided for converting the power plants."
+  },
+  {
+    "id": 6233,
+    "tr": "dönüştürmek",
+    "en": "to retrofit",
+    "beispiel": "Die Anlage soll bis zum Winter auf Wasserstoff umgerüstet werden.",
+    "beispielTr": "Tesisin kışa kadar hidrojene dönüştürülmesi planlanıyor.",
+    "beispielEn": "The plant is to be retrofitted for hydrogen by winter."
+  },
+  {
+    "id": 6234,
+    "tr": "yeniden finanse etmek",
+    "en": "to refinance",
+    "beispiel": "Der Betreiber muss den Kredit zu deutlich schlechteren Konditionen refinanzieren.",
+    "beispielTr": "İşletmeci krediyi çok daha kötü koşullarla yeniden finanse etmek zorunda.",
+    "beispielEn": "The operator has to refinance the loan on much worse terms."
+  },
+  {
+    "id": 6235,
+    "tr": "serbestleştirmek",
+    "en": "to liberalize",
+    "beispiel": "Der Strommarkt wurde in den neunziger Jahren schrittweise liberalisiert.",
+    "beispielTr": "Elektrik piyasası doksanlı yıllarda adım adım serbestleştirildi.",
+    "beispielEn": "The electricity market was gradually liberalized in the nineties."
+  },
+  {
+    "id": 6236,
+    "tr": "güçlendirmek",
+    "en": "to upgrade",
+    "beispiel": "Die alte Brücke wurde für schwere Lkw ertüchtigt.",
+    "beispielTr": "Eski köprü ağır kamyonlar için güçlendirildi.",
+    "beispielEn": "The old bridge was upgraded for heavy trucks."
+  },
+  {
+    "id": 6237,
+    "tr": "geçici olarak kapatmak",
+    "en": "to bridge",
+    "beispiel": "Ein Kredit soll die Lücke bis zur Auszahlung überbrücken.",
+    "beispielTr": "Bir kredi, ödeme yapılana kadarki açığı geçici olarak kapatacak.",
+    "beispielEn": "A loan is meant to bridge the gap until the payout."
+  },
+  {
+    "id": 6238,
+    "tr": "kademelendirmek",
+    "en": "to stagger",
+    "beispiel": "Die Elternbeiträge für die Kita werden nach Einkommen gestaffelt.",
+    "beispielTr": "Kreş için ödenen veli katkıları gelire göre kademelendiriliyor.",
+    "beispielEn": "The parents' fees for daycare are staggered according to income."
+  },
+  {
+    "id": 6239,
+    "tr": "tavan koymak",
+    "en": "to cap",
+    "beispiel": "Die Regierung hat die Gaspreise für ein Jahr gedeckelt.",
+    "beispielTr": "Hükümet gaz fiyatlarına bir yıllığına tavan koydu.",
+    "beispielEn": "The government capped gas prices for a year."
+  },
+  {
+    "id": 6240,
+    "tr": "aktarmak",
+    "en": "to reallocate",
+    "beispiel": "Mittel aus dem Straßenbau wurden in die Schiene umgeschichtet.",
+    "beispielTr": "Karayolu yapımına ayrılan ödenekler demiryoluna aktarıldı.",
+    "beispielEn": "Funds from road building were reallocated to rail."
+  },
+  {
+    "id": 6241,
+    "tr": "hükme bağlamak",
+    "en": "to enshrine",
+    "beispiel": "Das Abkommen schreibt verbindliche Zwischenziele bis 2035 fest.",
+    "beispielTr": "Anlaşma 2035'e kadar bağlayıcı ara hedefleri hükme bağlıyor.",
+    "beispielEn": "The agreement enshrines binding interim targets up to 2035."
+  },
+  {
+    "id": 6242,
+    "tr": "sürüncemede bırakmak",
+    "en": "to drag out",
+    "beispiel": "Die Betreiber zögern kostspielige Nachrüstungen mit juristischen Mitteln hinaus.",
+    "beispielTr": "İşletmeciler pahalı iyileştirmeleri hukuki yollarla sürüncemede bırakıyor.",
+    "beispielEn": "The operators drag out costly upgrades through legal channels."
+  },
+  {
+    "id": 6243,
+    "tr": "ilerletmek",
+    "en": "to drive forward",
+    "beispiel": "Die Region treibt den Aufbau eigener Speicher konsequent voran.",
+    "beispielTr": "Bölge kendi depolama tesislerinin kurulmasını kararlılıkla ilerletiyor.",
+    "beispielEn": "The region is steadily driving forward the build-out of its own storage."
+  },
+  {
+    "id": 6244,
+    "tr": "boyutlandırmak",
+    "en": "to size",
+    "beispiel": "Das Netz ist für solche Lastspitzen schlicht zu klein dimensioniert.",
+    "beispielTr": "Şebeke bu tür yük tepeleri için fazla küçük boyutlandırılmış.",
+    "beispielEn": "The grid is simply sized too small for such load peaks."
+  },
+  {
+    "id": 6245,
+    "tr": "şebeke dostu",
+    "en": "grid-friendly",
+    "beispiel": "Wer netzdienlich lädt, soll künftig ein niedrigeres Entgelt zahlen.",
+    "beispielTr": "Şebeke dostu biçimde şarj eden bundan böyle daha az ödeyecek.",
+    "beispielEn": "Anyone who charges in a grid-friendly way will pay a lower fee."
+  },
+  {
+    "id": 6246,
+    "tr": "sermaye yoğun",
+    "en": "capital-intensive",
+    "beispiel": "Chipfabriken sind so kapitalintensiv, dass nur wenige Konzerne mithalten.",
+    "beispielTr": "Çip fabrikaları o kadar sermaye yoğun ki, ancak birkaç şirket yetişebiliyor.",
+    "beispielEn": "Chip plants are so capital-intensive that only a few corporations can keep up."
+  },
+  {
+    "id": 6247,
+    "tr": "merkezi olmayan",
+    "en": "decentralized",
+    "beispiel": "Die Firma speichert ihre Daten dezentral auf mehreren Servern.",
+    "beispielTr": "Şirket verilerini merkezi olmayan biçimde birden çok sunucuda saklıyor.",
+    "beispielEn": "The company keeps its data decentralized across several servers."
+  },
+  {
+    "id": 6248,
+    "tr": "maliyeti karşılayan",
+    "en": "cost-covering",
+    "beispiel": "Der Ticketpreis ist seit Jahren nicht mehr kostendeckend.",
+    "beispielTr": "Bilet fiyatı yıllardır maliyeti karşılamıyor.",
+    "beispielEn": "The ticket price has not covered costs for years."
+  },
+  {
+    "id": 6249,
+    "tr": "olmazsa olmaz",
+    "en": "essential",
+    "beispiel": "Für die Bewerbung ist ein Nachweis über Deutschkenntnisse unerlässlich.",
+    "beispielTr": "Başvuru için Almanca bilgisini belgelemek olmazsa olmaz.",
+    "beispielEn": "Proof of German skills is essential for the application."
+  },
+  {
+    "id": 6250,
+    "tr": "tarih yazımı",
+    "en": "historiography",
+    "beispiel": "Die koloniale Geschichtsschreibung hat viele Stimmen jahrzehntelang ausgeblendet.",
+    "beispielTr": "Sömürgeci tarih yazımı pek çok sesi onlarca yıl görmezden geldi.",
+    "beispielEn": "Colonial historiography ignored many voices for decades."
+  },
+  {
+    "id": 6251,
+    "tr": "kaynak eleştirisi",
+    "en": "source criticism",
+    "beispiel": "Ohne saubere Quellenkritik bleibt jede historische Deutung angreifbar.",
+    "beispielTr": "Düzgün bir kaynak eleştirisi olmadan her tarihsel yorum tartışmaya açık kalır.",
+    "beispielEn": "Without careful source criticism every historical reading stays open to attack."
+  },
+  {
+    "id": 6252,
+    "tr": "dönemin tanığı",
+    "en": "contemporary witness",
+    "beispiel": "Ein Zeitzeuge berichtete den Schülern von der Flucht 1945.",
+    "beispielTr": "Dönemin bir tanığı öğrencilere 1945'teki kaçışı anlattı.",
+    "beispielEn": "A contemporary witness told the students about fleeing in 1945."
+  }
+]

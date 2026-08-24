@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3619,
+    "tr": "alegori",
+    "en": "allegory",
+    "beispiel": "Das Gemälde zeigt eine Allegorie der Gerechtigkeit.",
+    "beispielTr": "Tablo, adaletin alegorisini gösteriyor.",
+    "beispielEn": "The painting shows an allegory of justice."
+  },
+  {
+    "id": 3620,
+    "tr": "edebi motif",
+    "en": "topos",
+    "beispiel": "Ihre Doktorarbeit untersucht den Topos der treuen Ehefrau.",
+    "beispielTr": "Doktora tezi, sadık eş motifini inceliyor.",
+    "beispielEn": "Her dissertation examines the topos of the faithful wife."
+  },
+  {
+    "id": 3626,
+    "tr": "metafizik",
+    "en": "metaphysics",
+    "beispiel": "Im dritten Semester belegte er ein Seminar zur Metaphysik.",
+    "beispielTr": "Üçüncü dönemde metafizik semineri aldı.",
+    "beispielEn": "In his third semester he took a seminar on metaphysics."
+  },
+  {
+    "id": 3627,
+    "tr": "nihilizm",
+    "en": "nihilism",
+    "beispiel": "Nach dem Tod seiner Frau verfiel er dem Nihilismus.",
+    "beispielTr": "Karısının ölümünden sonra nihilizme saplandı.",
+    "beispielEn": "After his wife's death he sank into nihilism."
+  },
+  {
+    "id": 3628,
+    "tr": "varoluşçuluk",
+    "en": "existentialism",
+    "beispiel": "Im Studium hat sie sich intensiv mit dem Existenzialismus beschäftigt.",
+    "beispielTr": "Üniversitede varoluşçulukla yoğun biçimde ilgilendi.",
+    "beispielEn": "During her studies she engaged deeply with existentialism."
+  },
+  {
+    "id": 3629,
+    "tr": "diyalektik",
+    "en": "dialectic",
+    "beispiel": "Der Professor erklärte Hegels Dialektik an einem Beispiel.",
+    "beispielTr": "Profesör, Hegel'in diyalektiğini bir örnekle açıkladı.",
+    "beispielEn": "The professor explained Hegel's dialectic with an example."
+  },
+  {
+    "id": 3630,
+    "tr": "bilgi kuramı",
+    "en": "epistemology",
+    "beispiel": "Er schreibt seine Masterarbeit über Kants Erkenntnistheorie.",
+    "beispielTr": "Yüksek lisans tezini Kant'ın bilgi kuramı üzerine yazıyor.",
+    "beispielEn": "He is writing his master's thesis on Kant's epistemology."
+  },
+  {
+    "id": 3632,
+    "tr": "polemik",
+    "en": "polemic",
+    "beispiel": "Seine Polemik gegen die Kritiker war scharf und unversöhnlich.",
+    "beispielTr": "Eleştirmenlere yönelttiği polemik sert ve uzlaşmazdı.",
+    "beispielEn": "His polemic against the critics was sharp and unforgiving."
+  },
+  {
+    "id": 3633,
+    "tr": "özdeyiş",
+    "en": "aphorism",
+    "beispiel": "Über seinem Schreibtisch hängt ein Aphorismus von Nietzsche.",
+    "beispielTr": "Yazı masasının üstünde Nietzsche'den bir özdeyiş asılı.",
+    "beispielEn": "An aphorism by Nietzsche hangs above his desk."
+  },
+  {
+    "id": 3634,
+    "tr": "çağrışım",
+    "en": "reminiscence",
+    "beispiel": "Der Roman ist voller Reminiszenzen an die eigene Kindheit.",
+    "beispielTr": "Roman, yazarın kendi çocukluğuna dair çağrışımlarla dolu.",
+    "beispielEn": "The novel is full of reminiscences of his own childhood."
+  },
+  {
+    "id": 3635,
+    "tr": "yan anlam",
+    "en": "connotation",
+    "beispiel": "Der Begriff Heimat hat für viele eine positive Konnotation.",
+    "beispielTr": "Heimat kelimesi çoğu kişi için olumlu bir yan anlam taşıyor.",
+    "beispielEn": "For many the word Heimat carries a positive connotation."
+  },
+  {
+    "id": 3636,
+    "tr": "düz anlam",
+    "en": "denotation",
+    "beispiel": "Wörterbücher geben nur die Denotation eines Wortes an.",
+    "beispielTr": "Sözlükler bir kelimenin yalnızca düz anlamını verir.",
+    "beispielEn": "Dictionaries only give the denotation of a word."
+  },
+  {
+    "id": 3637,
+    "tr": "alt metin",
+    "en": "subtext",
+    "beispiel": "Zwischen den Zeilen verbirgt sich ein politischer Subtext.",
+    "beispielTr": "Satır aralarında politik bir alt metin gizli.",
+    "beispielEn": "A political subtext hides between the lines."
+  },
+  {
+    "id": 3638,
+    "tr": "kırılma",
+    "en": "rupture",
+    "beispiel": "Der Mauerfall war eine tiefe Zäsur für das Land.",
+    "beispielTr": "Duvarın yıkılması ülke için derin bir kırılmaydı.",
+    "beispielEn": "The fall of the Wall was a deep rupture for the country."
+  },
+  {
+    "id": 3639,
+    "tr": "köklü değişim",
+    "en": "upheaval",
+    "beispiel": "Die Firma steckt mitten in einem großen Umbruch.",
+    "beispielTr": "Şirket, köklü bir değişimin tam ortasında.",
+    "beispielEn": "The company is in the middle of a major upheaval."
+  },
+  {
+    "id": 3645,
+    "tr": "zamanın ruhu",
+    "en": "zeitgeist",
+    "beispiel": "Die Serie trifft den Zeitgeist der neunziger Jahre.",
+    "beispielTr": "Dizi, doksanlı yılların ruhunu tam yakalıyor.",
+    "beispielEn": "The series captures the zeitgeist of the nineties."
+  },
+  {
+    "id": 3646,
+    "tr": "kültürel miras",
+    "en": "cultural heritage",
+    "beispiel": "Die Altstadt gehört zum Kulturerbe der ganzen Region.",
+    "beispielTr": "Eski şehir, tüm bölgenin kültürel mirasının bir parçası.",
+    "beispielEn": "The old town is part of the whole region's cultural heritage."
+  },
+  {
+    "id": 3651,
+    "tr": "kutuplaştırmak",
+    "en": "to polarize",
+    "beispiel": "Das umstrittene Kunstwerk polarisiert die Öffentlichkeit stark.",
+    "beispielTr": "Tartışmalı sanat eseri kamuoyunu iyice kutuplaştırıyor.",
+    "beispielEn": "The controversial artwork strongly polarizes the public."
+  },
+  {
+    "id": 3652,
+    "tr": "idealleştirmek",
+    "en": "to idealize",
+    "beispiel": "Die Romantiker idealisierten das Landleben und die Natur.",
+    "beispielTr": "Romantikler kır hayatını ve doğayı idealleştirdi.",
+    "beispielEn": "The Romantics idealized country life and nature."
+  },
+  {
+    "id": 3653,
+    "tr": "yüceltmek",
+    "en": "to glorify",
+    "beispiel": "Das Epos glorifiziert die Taten vergangener Helden.",
+    "beispielTr": "Destan, geçmiş kahramanların yaptıklarını yüceltiyor.",
+    "beispielEn": "The epic glorifies the deeds of past heroes."
+  },
+  {
+    "id": 3654,
+    "tr": "stilize etmek",
+    "en": "to stylize",
+    "beispiel": "Der Maler stilisiert die Figuren zu abstrakten Formen.",
+    "beispielTr": "Ressam, figürleri soyut biçimlere dönüştürerek stilize ediyor.",
+    "beispielEn": "The painter stylizes the figures into abstract forms."
+  },
+  {
+    "id": 3656,
+    "tr": "alımlamak",
+    "en": "to receive",
+    "beispiel": "Das Publikum rezipiert das Werk auf ganz unterschiedliche Weise.",
+    "beispielTr": "İzleyiciler eseri çok farklı biçimlerde alımlıyor.",
+    "beispielEn": "The audience receives the work in very different ways."
+  },
+  {
+    "id": 3657,
+    "tr": "olduğundan güzel göstermek",
+    "en": "to romanticize",
+    "beispiel": "Die Erinnerung verklärt die Vergangenheit oft ins Positive.",
+    "beispielTr": "Hafıza, geçmişi çoğu zaman olduğundan güzel gösterir.",
+    "beispielEn": "Memory often romanticizes the past."
+  },
+  {
+    "id": 3658,
+    "tr": "ötesine geçmek",
+    "en": "to transcend",
+    "beispiel": "Die Kunst versucht, die Grenzen der Sprache zu transzendieren.",
+    "beispielTr": "Sanat, dilin sınırlarının ötesine geçmeye çalışır.",
+    "beispielEn": "Art tries to transcend the limits of language."
+  },
+  {
+    "id": 3659,
+    "tr": "soyutlamak",
+    "en": "to abstract",
+    "beispiel": "Der Künstler abstrahiert die Form bis zur reinen Geometrie.",
+    "beispielTr": "Sanatçı, biçimi saf geometriye varana dek soyutluyor.",
+    "beispielEn": "The artist abstracts the form down to pure geometry."
+  },
+  {
+    "id": 3661,
+    "tr": "ikircikli",
+    "en": "ambivalent",
+    "beispiel": "Sie steht dem Umzug ambivalent gegenüber.",
+    "beispielTr": "Taşınma konusunda ikircikli bir tutumu var.",
+    "beispielEn": "She feels ambivalent about the move."
+  },
+  {
+    "id": 3663,
+    "tr": "çığır açan",
+    "en": "epochal",
+    "beispiel": "Die Entdeckung des Penizillins war ein epochaler Fortschritt.",
+    "beispielTr": "Penisilinin keşfi çığır açan bir ilerlemeydi.",
+    "beispielEn": "The discovery of penicillin was an epochal advance."
+  },
+  {
+    "id": 3664,
+    "tr": "avangart",
+    "en": "avant-garde",
+    "beispiel": "Die avantgardistische Malerei brach mit allen bisherigen Regeln.",
+    "beispielTr": "Avangart resim, o güne dek geçerli tüm kuralları yıktı.",
+    "beispielEn": "Avant-garde painting broke with all previous rules."
+  },
+  {
+    "id": 3665,
+    "tr": "diyalektik",
+    "en": "dialectical",
+    "beispiel": "Ihre Argumentation ist streng dialektisch aufgebaut.",
+    "beispielTr": "Akıl yürütmesi baştan sona diyalektik biçimde kurulmuş.",
+    "beispielEn": "Her argument is built in a strictly dialectical way."
+  },
+  {
+    "id": 3667,
+    "tr": "varoluşsal",
+    "en": "existential",
+    "beispiel": "Nach der Kündigung steckte er in einer existenziellen Krise.",
+    "beispielTr": "İşten çıkarıldıktan sonra varoluşsal bir krize girdi.",
+    "beispielEn": "After being laid off he fell into an existential crisis."
+  },
+  {
+    "id": 3668,
+    "tr": "parça parça",
+    "en": "fragmentary",
+    "beispiel": "Das Manuskript ist nur fragmentarisch überliefert worden.",
+    "beispielTr": "El yazması günümüze yalnızca parça parça ulaştı.",
+    "beispielEn": "The manuscript has survived only in fragmentary form."
+  },
+  {
+    "id": 3669,
+    "tr": "derin düşünceli",
+    "en": "contemplative",
+    "beispiel": "Im Kloster führt sie ein kontemplatives Leben.",
+    "beispielTr": "Manastırda derin düşüncelere adanmış bir hayat sürüyor.",
+    "beispielEn": "In the monastery she leads a contemplative life."
+  },
+  {
+    "id": 3671,
+    "tr": "belirmek",
+    "en": "to emerge",
+    "beispiel": "Am Horizont zeichnet sich ein Gewitter ab.",
+    "beispielTr": "Ufukta bir fırtına beliriyor.",
+    "beispielEn": "A storm is taking shape on the horizon."
+  },
+  {
+    "id": 3672,
+    "tr": "çoğalmak",
+    "en": "to pile up",
+    "beispiel": "In den letzten Wochen haben sich die Beschwerden gehäuft.",
+    "beispielTr": "Son haftalarda şikâyetler iyice çoğaldı.",
+    "beispielEn": "Complaints have piled up in recent weeks."
+  },
+  {
+    "id": 3674,
+    "tr": "gereksiz olmak",
+    "en": "to be unnecessary",
+    "beispiel": "Nach der Absage erübrigt sich jede weitere Diskussion.",
+    "beispielTr": "Ret cevabından sonra her türlü tartışma gereksiz kaldı.",
+    "beispielEn": "After the rejection any further discussion is unnecessary."
+  },
+  {
+    "id": 3676,
+    "tr": "önceden söylemek",
+    "en": "to anticipate",
+    "beispiel": "Ich will das Ergebnis nicht vorwegnehmen.",
+    "beispielTr": "Sonucu şimdiden söylemek istemiyorum.",
+    "beispielEn": "I don't want to anticipate the result."
+  },
+  {
+    "id": 3677,
+    "tr": "çıkmak",
+    "en": "to turn out",
+    "beispiel": "Der vermeintliche Freund entpuppte sich als Betrüger.",
+    "beispielTr": "Dost sandığı kişi dolandırıcı çıktı.",
+    "beispielEn": "The supposed friend turned out to be a con man."
+  },
+  {
+    "id": 3678,
+    "tr": "yanlış değerlendirmek",
+    "en": "to misjudge",
+    "beispiel": "Die Jury hat sein Talent völlig verkannt.",
+    "beispielTr": "Jüri, yeteneğini tamamen yanlış değerlendirdi.",
+    "beispielEn": "The jury completely misjudged his talent."
+  },
+  {
+    "id": 3679,
+    "tr": "kabullenmek",
+    "en": "to resign oneself",
+    "beispiel": "Sie musste sich mit der Niederlage abfinden.",
+    "beispielTr": "Yenilgiyi kabullenmek zorunda kaldı.",
+    "beispielEn": "She had to resign herself to the defeat."
+  },
+  {
+    "id": 3681,
+    "tr": "uçup gitmek",
+    "en": "to vanish",
+    "beispiel": "Die anfängliche Begeisterung hat sich schnell verflüchtigt.",
+    "beispielTr": "Baştaki heyecan çabucak uçup gitti.",
+    "beispielEn": "The initial enthusiasm quickly vanished."
+  },
+  {
+    "id": 3682,
+    "tr": "teşhir etmek",
+    "en": "to denounce",
+    "beispiel": "Der Journalist prangert die Missstände öffentlich an.",
+    "beispielTr": "Gazeteci, aksaklıkları kamuoyu önünde teşhir ediyor.",
+    "beispielEn": "The journalist publicly denounces the abuses."
+  },
+  {
+    "id": 3684,
+    "tr": "yerleşmek",
+    "en": "to catch on",
+    "beispiel": "Der Ausdruck hat sich im Alltag eingebürgert.",
+    "beispielTr": "Bu ifade günlük dile iyice yerleşti.",
+    "beispielEn": "The expression has caught on in everyday speech."
+  },
+  {
+    "id": 3685,
+    "tr": "kaynaklanmak",
+    "en": "to result",
+    "beispiel": "Der Konflikt resultiert aus einem Missverständnis.",
+    "beispielTr": "Çatışma bir yanlış anlamadan kaynaklanıyor.",
+    "beispielEn": "The conflict results from a misunderstanding."
+  },
+  {
+    "id": 3687,
+    "tr": "kontrolden çıkmak",
+    "en": "to spiral out of control",
+    "beispiel": "Das Projekt hat sich völlig verselbstständigt.",
+    "beispielTr": "Proje tamamen kontrolden çıktı.",
+    "beispielEn": "The project has completely spiraled out of control."
+  },
+  {
+    "id": 3688,
+    "tr": "öne çıkmak",
+    "en": "to stand out",
+    "beispiel": "Das Produkt hebt sich deutlich von der Konkurrenz ab.",
+    "beispielTr": "Ürün, rakiplerinden açıkça öne çıkıyor.",
+    "beispielEn": "The product clearly stands out from the competition."
+  },
+  {
+    "id": 3691,
+    "tr": "dağılmak",
+    "en": "to lose focus",
+    "beispiel": "Bei so vielen Aufgaben verzettelt man sich leicht.",
+    "beispielTr": "Bu kadar çok işin arasında insan kolayca dağılıyor.",
+    "beispielEn": "With so many tasks you easily lose focus."
+  },
+  {
+    "id": 3692,
+    "tr": "kusur bulmak",
+    "en": "to fault",
+    "beispiel": "Die Prüfer bemängeln die fehlende Dokumentation.",
+    "beispielTr": "Denetçiler, belgelerin eksikliğine kusur buluyor.",
+    "beispielEn": "The auditors fault the missing documentation."
+  },
+  {
+    "id": 3693,
+    "tr": "yaşanmak",
+    "en": "to play out",
+    "beispiel": "Die Szene spielte sich vor den Augen der Zeugen ab.",
+    "beispielTr": "Sahne, tanıkların gözleri önünde yaşandı.",
+    "beispielEn": "The scene played out in front of the witnesses."
+  },
+  {
+    "id": 3694,
+    "tr": "netleştirmek",
+    "en": "to specify",
+    "beispiel": "Bitte präzisieren Sie Ihre Angaben zum Unfall.",
+    "beispielTr": "Lütfen kazayla ilgili bilgilerinizi netleştirin.",
+    "beispielEn": "Please specify the details of the accident."
+  },
+  {
+    "id": 3695,
+    "tr": "karşılığını vermek",
+    "en": "to pay off",
+    "beispiel": "Die harte Arbeit hat sich am Ende ausgezahlt.",
+    "beispielTr": "Sıkı çalışma sonunda karşılığını verdi.",
+    "beispielEn": "The hard work paid off in the end."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": 3696,
+    "tr": "kendine mal etmek",
+    "en": "to co-opt",
+    "beispiel": "Die Partei versucht, das Thema politisch zu vereinnahmen.",
+    "beispielTr": "Parti konuyu siyasi olarak kendine mal etmeye çalışıyor.",
+    "beispielEn": "The party is trying to co-opt the issue politically."
+  },
+  {
+    "id": 3699,
+    "tr": "yansımak",
+    "en": "to be reflected",
+    "beispiel": "Der Preisanstieg hat sich deutlich in den Umsätzen niedergeschlagen.",
+    "beispielTr": "Fiyat artışı cirolara belirgin biçimde yansıdı.",
+    "beispielEn": "The price increase was clearly reflected in sales."
+  },
+  {
+    "id": 3701,
+    "tr": "güdü",
+    "en": "motive",
+    "beispiel": "Seine wahren Beweggründe blieben lange im Dunkeln.",
+    "beispielTr": "Gerçek güdüleri uzun süre karanlıkta kaldı.",
+    "beispielEn": "His true motives remained unclear for a long time."
+  },
+  {
+    "id": 3705,
+    "tr": "aksaklık",
+    "en": "abuse",
+    "beispiel": "Der Bericht deckt schwere Missstände in der Pflege auf.",
+    "beispielTr": "Rapor, bakım sektöründeki ağır aksaklıkları ortaya çıkarıyor.",
+    "beispielEn": "The report exposes serious abuses in elderly care."
+  },
+  {
+    "id": 3706,
+    "tr": "sinsi zorluk",
+    "en": "snag",
+    "beispiel": "Das neue Buchungssystem hat seine ganz eigenen Tücken.",
+    "beispielTr": "Yeni rezervasyon sisteminin kendine has sinsi zorlukları var.",
+    "beispielEn": "The new booking system has snags all of its own."
+  },
+  {
+    "id": 3710,
+    "tr": "taşıma kapasitesi",
+    "en": "load capacity",
+    "beispiel": "Die Tragfähigkeit der Brücke reicht für den Schwertransport nicht.",
+    "beispielTr": "Köprünün taşıma kapasitesi ağır nakliye için yetmiyor.",
+    "beispielEn": "The bridge's load capacity is not enough for the heavy transport."
+  },
+  {
+    "id": 3711,
+    "tr": "yetersizlik",
+    "en": "shortcoming",
+    "beispiel": "Beim ersten Test zeigten sich die Unzulänglichkeiten der App.",
+    "beispielTr": "İlk testte uygulamanın yetersizlikleri ortaya çıktı.",
+    "beispielEn": "The app's shortcomings showed up in the first test."
+  },
+  {
+    "id": 3713,
+    "tr": "ağır",
+    "en": "severe",
+    "beispiel": "Der Fehler hatte gravierende Folgen für das Unternehmen.",
+    "beispielTr": "Hata, şirket için ağır sonuçlar doğurdu.",
+    "beispielEn": "The mistake had severe consequences for the company."
+  },
+  {
+    "id": 3715,
+    "tr": "tartışmasız",
+    "en": "undisputed",
+    "beispiel": "Seine Position als Kapitän ist im Team unumstritten.",
+    "beispielTr": "Takımdaki kaptanlığı tartışmasız kabul ediliyor.",
+    "beispielEn": "His position as captain is undisputed in the team."
+  },
+  {
+    "id": 3716,
+    "tr": "çok katmanlı",
+    "en": "multilayered",
+    "beispiel": "Die Ursachen des Konflikts sind vielschichtiger als gedacht.",
+    "beispielTr": "Çatışmanın nedenleri sanıldığından daha katmanlı.",
+    "beispielEn": "The causes of the conflict are more multilayered than thought."
+  },
+  {
+    "id": 3720,
+    "tr": "hassas",
+    "en": "explosive",
+    "beispiel": "Das Dokument enthält politisch brisante Details.",
+    "beispielTr": "Belge, siyaseten hassas ayrıntılar içeriyor.",
+    "beispielEn": "The document contains politically explosive details."
+  },
+  {
+    "id": 3723,
+    "tr": "yaygın",
+    "en": "common",
+    "beispiel": "Diese Methode ist in der Branche längst gängige Praxis.",
+    "beispielTr": "Bu yöntem sektörde çoktandır yaygın bir uygulama.",
+    "beispielEn": "This method has long been common practice in the industry."
+  },
+  {
+    "id": 3724,
+    "tr": "güvencesiz",
+    "en": "precarious",
+    "beispiel": "Viele Freiberufler leben in prekären Verhältnissen.",
+    "beispielTr": "Birçok serbest çalışan güvencesiz koşullarda yaşıyor.",
+    "beispielEn": "Many freelancers live in precarious conditions."
+  },
+  {
+    "id": 3728,
+    "tr": "köklü",
+    "en": "profound",
+    "beispiel": "Die Reform bringt tiefgreifende Veränderungen mit sich.",
+    "beispielTr": "Reform, beraberinde köklü değişiklikler getiriyor.",
+    "beispielEn": "The reform brings about profound changes."
+  },
+  {
+    "id": 3729,
+    "tr": "buna rağmen",
+    "en": "nevertheless",
+    "beispiel": "Die Warnungen waren deutlich, dessenungeachtet handelte niemand.",
+    "beispielTr": "Uyarılar açıktı, buna rağmen kimse harekete geçmedi.",
+    "beispielEn": "The warnings were clear; nevertheless, nobody acted."
+  },
+  {
+    "id": 3731,
+    "tr": "suya düşmek",
+    "en": "to fall through",
+    "beispiel": "Wegen des schlechten Wetters ist das Fest ins Wasser gefallen.",
+    "beispielTr": "Kötü hava yüzünden şenlik suya düştü.",
+    "beispielEn": "The festival fell through because of the bad weather."
+  },
+  {
+    "id": 3732,
+    "tr": "ilk seferde",
+    "en": "on the first try",
+    "beispiel": "Sie hat die Prüfung auf Anhieb bestanden.",
+    "beispielTr": "Sınavı ilk seferde geçti.",
+    "beispielEn": "She passed the exam on the first try."
+  },
+  {
+    "id": 3884,
+    "tr": "rekabet avantajı",
+    "en": "competitive advantage",
+    "beispiel": "Durch Innovation sichert sich das Unternehmen einen Wettbewerbsvorteil.",
+    "beispielTr": "Şirket, inovasyonla rekabet avantajı sağlıyor.",
+    "beispielEn": "The company secures a competitive advantage through innovation."
+  },
+  {
+    "id": 3885,
+    "tr": "pazara nüfuz etme",
+    "en": "market penetration",
+    "beispiel": "Die Marktdurchdringung in Asien verlief schleppender als erwartet.",
+    "beispielTr": "Asya pazarına nüfuz etmek beklenenden yavaş ilerledi.",
+    "beispielEn": "Market penetration in Asia progressed more slowly than expected."
+  },
+  {
+    "id": 3886,
+    "tr": "ayırt edici özellik",
+    "en": "unique selling point",
+    "beispiel": "Ohne klares Alleinstellungsmerkmal geht das Produkt im Markt unter.",
+    "beispielTr": "Net bir ayırt edici özellik olmadan ürün pazarda kaybolur.",
+    "beispielEn": "Without a clear unique selling point the product gets lost."
+  },
+  {
+    "id": 3889,
+    "tr": "konumlandırma",
+    "en": "positioning",
+    "beispiel": "Die strategische Positionierung der Marke muss überdacht werden.",
+    "beispielTr": "Markanın stratejik konumlandırması yeniden düşünülmeli.",
+    "beispielEn": "The brand's strategic positioning needs to be rethought."
+  },
+  {
+    "id": 3890,
+    "tr": "geleceğe yön veren",
+    "en": "forward-looking",
+    "beispiel": "Die Stadt setzt auf ein zukunftsweisendes Verkehrskonzept.",
+    "beispielTr": "Şehir, geleceğe yön veren bir ulaşım konseptini benimsiyor.",
+    "beispielEn": "The city is betting on a forward-looking transport concept."
+  },
+  {
+    "id": 3891,
+    "tr": "yön belirleyici karar",
+    "en": "course-setting decision",
+    "beispiel": "Diese Weichenstellung entscheidet über die nächsten zehn Jahre.",
+    "beispielTr": "Bu karar, önümüzdeki on yılın yönünü belirliyor.",
+    "beispielEn": "This decision sets the course for the next ten years."
+  },
+  {
+    "id": 3892,
+    "tr": "ana iş kolu",
+    "en": "core business",
+    "beispiel": "Das Unternehmen konzentriert sich wieder auf sein Kerngeschäft.",
+    "beispielTr": "Şirket yeniden ana iş koluna odaklanıyor.",
+    "beispielEn": "The company is focusing on its core business again."
+  },
+  {
+    "id": 3894,
+    "tr": "taviz",
+    "en": "concession",
+    "beispiel": "Ein weiteres Zugeständnis wollte die Geschäftsführung nicht machen.",
+    "beispielTr": "Yönetim bir taviz daha vermek istemedi.",
+    "beispielEn": "Management was not willing to make another concession."
+  },
+  {
+    "id": 3895,
+    "tr": "pazarlık kozu",
+    "en": "bargaining chip",
+    "beispiel": "Der Bonus diente als zusätzliche Verhandlungsmasse.",
+    "beispielTr": "İkramiye, ek bir pazarlık kozu işlevi gördü.",
+    "beispielEn": "The bonus served as an extra bargaining chip."
+  },
+  {
+    "id": 3899,
+    "tr": "arabuluculuk",
+    "en": "arbitration",
+    "beispiel": "Der Tarifstreit wurde durch eine Schlichtung beigelegt.",
+    "beispielTr": "Toplu sözleşme anlaşmazlığı arabuluculukla çözüldü.",
+    "beispielEn": "The pay dispute was settled through arbitration."
+  },
+  {
+    "id": 3900,
+    "tr": "risk iştahı",
+    "en": "risk appetite",
+    "beispiel": "Die Risikobereitschaft der Investoren ist deutlich gesunken.",
+    "beispielTr": "Yatırımcıların risk iştahı belirgin biçimde azaldı.",
+    "beispielEn": "Investors' risk appetite has dropped significantly."
+  },
+  {
+    "id": 3901,
+    "tr": "etkisini yumuşatmak",
+    "en": "to cushion",
+    "beispiel": "Rücklagen sollen den Umsatzeinbruch abfedern.",
+    "beispielTr": "Yedek akçeler ciro düşüşünün etkisini yumuşatacak.",
+    "beispielEn": "Reserves are meant to cushion the drop in sales."
+  },
+  {
+    "id": 3903,
+    "tr": "temerrüt riski",
+    "en": "default risk",
+    "beispiel": "Die Bank bewertet das Ausfallrisiko des Kreditnehmers neu.",
+    "beispielTr": "Banka, borçlunun temerrüt riskini yeniden değerlendiriyor.",
+    "beispielEn": "The bank is reassessing the borrower's default risk."
+  },
+  {
+    "id": 3904,
+    "tr": "yedek akçe",
+    "en": "reserve",
+    "beispiel": "Die Firma bildet Rücklagen für schlechtere Zeiten.",
+    "beispielTr": "Şirket kötü günler için yedek akçe ayırıyor.",
+    "beispielEn": "The company sets aside reserves for harder times."
+  },
+  {
+    "id": 3905,
+    "tr": "öngörülemez",
+    "en": "incalculable",
+    "beispiel": "Politische Krisen machen die Lieferkosten unkalkulierbar.",
+    "beispielTr": "Siyasi krizler nakliye maliyetlerini öngörülemez kılıyor.",
+    "beispielEn": "Political crises make delivery costs incalculable."
+  },
+  {
+    "id": 3906,
+    "tr": "tuzak",
+    "en": "pitfall",
+    "beispiel": "Der Vertrag enthält einige rechtliche Fallstricke.",
+    "beispielTr": "Sözleşmede birkaç hukuki tuzak var.",
+    "beispielEn": "The contract contains a few legal pitfalls."
+  },
+  {
+    "id": 3909,
+    "tr": "karbon ayak izi",
+    "en": "carbon footprint",
+    "beispiel": "Der Konzern will seinen CO2-Fußabdruck bis 2030 halbieren.",
+    "beispielTr": "Şirket, karbon ayak izini 2030'a kadar yarıya indirmek istiyor.",
+    "beispielEn": "The group wants to halve its carbon footprint by 2030."
+  },
+  {
+    "id": 3910,
+    "tr": "kaynak tasarrufu",
+    "en": "resource conservation",
+    "beispiel": "Die neue Anlage dient vor allem der Ressourcenschonung.",
+    "beispielTr": "Yeni tesis, öncelikle kaynak tasarrufuna hizmet ediyor.",
+    "beispielEn": "The new plant serves above all to conserve resources."
+  },
+  {
+    "id": 3911,
+    "tr": "iklim nötr",
+    "en": "climate-neutral",
+    "beispiel": "Die Produktion soll bis 2035 klimaneutral werden.",
+    "beispielTr": "Üretim 2035'e kadar iklim nötr hâle gelecek.",
+    "beispielEn": "Production is to become climate-neutral by 2035."
+  },
+  {
+    "id": 3912,
+    "tr": "döngüsel ekonomi",
+    "en": "circular economy",
+    "beispiel": "Das Startup setzt konsequent auf Kreislaufwirtschaft.",
+    "beispielTr": "Girişim kararlılıkla döngüsel ekonomiye yöneliyor.",
+    "beispielEn": "The startup consistently relies on the circular economy."
+  },
+  {
+    "id": 3913,
+    "tr": "sürdürülebilirlik hedefi",
+    "en": "sustainability goal",
+    "beispiel": "Die Nachhaltigkeitsziele wurden im Geschäftsbericht verankert.",
+    "beispielTr": "Sürdürülebilirlik hedefleri faaliyet raporuna işlendi.",
+    "beispielEn": "The sustainability goals were anchored in the annual report."
+  },
+  {
+    "id": 3914,
+    "tr": "çevre yükümlülüğü",
+    "en": "environmental requirement",
+    "beispiel": "Strengere Umweltauflagen erhöhen die Produktionskosten.",
+    "beispielTr": "Daha sıkı çevre yükümlülükleri üretim maliyetlerini artırıyor.",
+    "beispielEn": "Stricter environmental requirements raise production costs."
+  },
+  {
+    "id": 3915,
+    "tr": "emisyon azaltma",
+    "en": "emission reduction",
+    "beispiel": "Das Werk investiert in Anlagen zur Emissionsminderung.",
+    "beispielTr": "Fabrika, emisyon azaltma tesislerine yatırım yapıyor.",
+    "beispielEn": "The plant is investing in emission reduction systems."
+  },
+  {
+    "id": 3916,
+    "tr": "aşırı sömürü",
+    "en": "overexploitation",
+    "beispiel": "Kritiker werfen dem Konzern Raubbau an den Wäldern vor.",
+    "beispielTr": "Eleştirmenler şirketi ormanları aşırı sömürmekle suçluyor.",
+    "beispielEn": "Critics accuse the group of overexploiting the forests."
+  },
+  {
+    "id": 3918,
+    "tr": "çevre bilinci",
+    "en": "environmental awareness",
+    "beispiel": "Das gestiegene Umweltbewusstsein der Kunden verändert die Nachfrage.",
+    "beispielTr": "Müşterilerin artan çevre bilinci talebi değiştiriyor.",
+    "beispielEn": "Customers' growing environmental awareness is changing demand."
+  },
+  {
+    "id": 3919,
+    "tr": "otomasyon",
+    "en": "automation",
+    "beispiel": "Durch Automatisierung sollen die Produktionskosten sinken.",
+    "beispielTr": "Otomasyonla üretim maliyetleri düşecek.",
+    "beispielEn": "Automation is meant to lower production costs."
+  },
+  {
+    "id": 3920,
+    "tr": "ölçeklenebilirlik",
+    "en": "scalability",
+    "beispiel": "Investoren achten besonders auf die Skalierbarkeit des Geschäftsmodells.",
+    "beispielTr": "Yatırımcılar özellikle iş modelinin ölçeklenebilirliğine bakıyor.",
+    "beispielEn": "Investors look closely at the business model's scalability."
+  },
+  {
+    "id": 3921,
+    "tr": "dijitalleştirmek",
+    "en": "to digitize",
+    "beispiel": "Das Unternehmen hat sämtliche Prozesse digitalisiert.",
+    "beispielTr": "Şirket bütün süreçleri dijitalleştirdi.",
+    "beispielEn": "The company has digitized all its processes."
+  },
+  {
+    "id": 3922,
+    "tr": "veri seli",
+    "en": "flood of data",
+    "beispiel": "Die Datenflut überfordert viele Abteilungen ohne geeignete Tools.",
+    "beispielTr": "Veri seli, uygun araçları olmayan birçok bölümü zorluyor.",
+    "beispielEn": "The flood of data overwhelms many departments without proper tools."
+  },
+  {
+    "id": 3923,
+    "tr": "iş modeli",
+    "en": "business model",
+    "beispiel": "Das bisherige Geschäftsmodell steht zunehmend unter Druck.",
+    "beispielTr": "Mevcut iş modeli giderek baskı altına giriyor.",
+    "beispielEn": "The current business model is increasingly under pressure."
+  },
+  {
+    "id": 3924,
+    "tr": "yıkıcı",
+    "en": "disruptive",
+    "beispiel": "Die Branche wird derzeit von disruptiven Technologien erschüttert.",
+    "beispielTr": "Sektör şu sıralar yıkıcı teknolojilerle sarsılıyor.",
+    "beispielEn": "The industry is currently being shaken by disruptive technologies."
+  },
+  {
+    "id": 3925,
+    "tr": "ağ oluşturma",
+    "en": "networking",
+    "beispiel": "Die Vernetzung der Abteilungen verbessert den Informationsfluss.",
+    "beispielTr": "Bölümler arasında ağ oluşturmak bilgi akışını iyileştiriyor.",
+    "beispielEn": "Networking the departments improves the flow of information."
+  },
+  {
+    "id": 3926,
+    "tr": "siber suç",
+    "en": "cybercrime",
+    "beispiel": "Cyberkriminalität verursacht jedes Jahr Schäden in Milliardenhöhe.",
+    "beispielTr": "Siber suçlar her yıl milyarlarca euroluk zarara yol açıyor.",
+    "beispielEn": "Cybercrime causes billions in damage every year."
+  }
+]

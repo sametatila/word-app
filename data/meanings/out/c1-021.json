@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6253,
+    "tr": "süreklilik",
+    "en": "continuity",
+    "beispiel": "Der Forscher betont die personelle Kontinuität in den Behörden nach 1945.",
+    "beispielTr": "Araştırmacı 1945 sonrasında kurumlardaki kadro sürekliliğini vurguluyor.",
+    "beispielEn": "The researcher stresses the continuity of staff in the agencies after 1945."
+  },
+  {
+    "id": 6254,
+    "tr": "kopuş",
+    "en": "break",
+    "beispiel": "Ob das Jahr wirklich einen Bruch markiert, ist unter Fachleuten strittig.",
+    "beispielTr": "O yılın gerçekten bir kopuşu simgeleyip simgelemediği uzmanlar arasında tartışmalı.",
+    "beispielEn": "Whether that year really marks a break is disputed among experts."
+  },
+  {
+    "id": 6255,
+    "tr": "sömürgecilik",
+    "en": "colonialism",
+    "beispiel": "Der Kolonialismus wirkt in Handelsstrukturen und Sprachpolitik bis heute nach.",
+    "beispielTr": "Sömürgecilik ticaret yapılarında ve dil politikasında bugüne dek etkisini sürdürüyor.",
+    "beispielEn": "Colonialism still shapes trade structures and language policy today."
+  },
+  {
+    "id": 6256,
+    "tr": "arşiv",
+    "en": "archive",
+    "beispiel": "Im Archiv lagern Akten, die noch nie jemand ausgewertet hat.",
+    "beispielTr": "Arşivde henüz kimsenin incelemediği dosyalar duruyor.",
+    "beispielEn": "The archive holds files that no one has ever examined."
+  },
+  {
+    "id": 6257,
+    "tr": "yüzleşme",
+    "en": "reckoning",
+    "beispiel": "Die Aufarbeitung der Diktatur begann erst zwei Jahrzehnte später.",
+    "beispielTr": "Diktatörlükle yüzleşme ancak yirmi yıl sonra başladı.",
+    "beispielEn": "The reckoning with the dictatorship began only two decades later."
+  },
+  {
+    "id": 6258,
+    "tr": "geçmişle hesaplaşma",
+    "en": "coming to terms with the past",
+    "beispiel": "Die Schule widmet der Vergangenheitsbewältigung eine ganze Projektwoche.",
+    "beispielTr": "Okul geçmişle hesaplaşmaya bütün bir proje haftası ayırıyor.",
+    "beispielEn": "The school devotes a whole project week to coming to terms with the past."
+  },
+  {
+    "id": 6259,
+    "tr": "yorum tekeli",
+    "en": "interpretive authority",
+    "beispiel": "Um die Deutungshoheit über das Jubiläum streiten zwei Ministerien.",
+    "beispielTr": "Yıldönümünün yorum tekeli için iki bakanlık çekişiyor.",
+    "beispielEn": "Two ministries are fighting over interpretive authority for the anniversary."
+  },
+  {
+    "id": 6260,
+    "tr": "anlatı",
+    "en": "narrative",
+    "beispiel": "Das nationale Narrativ vom ewigen Opfer hält sich hartnäckig.",
+    "beispielTr": "Ebedî mağduriyet üzerine kurulu ulusal anlatı inatla ayakta duruyor.",
+    "beispielEn": "The national narrative of eternal victimhood stubbornly persists."
+  },
+  {
+    "id": 6261,
+    "tr": "yüceltme",
+    "en": "glorification",
+    "beispiel": "Seine Rede war eine Verklärung einer Epoche, die er nie erlebt hat.",
+    "beispielTr": "Konuşması, hiç yaşamadığı bir dönemin yüceltilmesinden ibaretti.",
+    "beispielEn": "His speech was a glorification of an era he never lived through."
+  },
+  {
+    "id": 6262,
+    "tr": "uyarı anıtı",
+    "en": "memorial",
+    "beispiel": "Das Mahnmal steht bewusst mitten im Alltag der Stadt.",
+    "beispielTr": "Uyarı anıtı bilinçli olarak şehrin gündelik hayatının ortasında duruyor.",
+    "beispielEn": "The memorial deliberately stands in the middle of the city's everyday life."
+  },
+  {
+    "id": 6263,
+    "tr": "anma mekânı",
+    "en": "memorial site",
+    "beispiel": "Die Gedenkstätte empfängt jedes Jahr Tausende von Schulklassen.",
+    "beispielTr": "Anma mekânı her yıl binlerce okul sınıfını ağırlıyor.",
+    "beispielEn": "The memorial site receives thousands of school groups every year."
+  },
+  {
+    "id": 6264,
+    "tr": "iade",
+    "en": "restitution",
+    "beispiel": "Die Restitution der Bronzen wurde nach langen Verhandlungen beschlossen.",
+    "beispielTr": "Bronzların iadesi uzun görüşmelerin ardından karara bağlandı.",
+    "beispielEn": "The restitution of the bronzes was decided after long negotiations."
+  },
+  {
+    "id": 6265,
+    "tr": "köken",
+    "en": "provenance",
+    "beispiel": "Bei mehreren Objekten ist die Provenienz bis heute ungeklärt.",
+    "beispielTr": "Birçok nesnenin kökeni bugün hâlâ aydınlatılmış değil.",
+    "beispielEn": "For several objects the provenance is still unclear today."
+  },
+  {
+    "id": 6266,
+    "tr": "yağmalanmış sanat eseri",
+    "en": "looted art",
+    "beispiel": "Das Museum prüft seine Sammlung systematisch auf Raubkunst.",
+    "beispielTr": "Müze koleksiyonunu yağmalanmış sanat eserleri açısından sistemli biçimde tarıyor.",
+    "beispielEn": "The museum systematically checks its collection for looted art."
+  },
+  {
+    "id": 6267,
+    "tr": "yakın dönem tarihi",
+    "en": "contemporary history",
+    "beispiel": "Sie lehrt Zeitgeschichte und forscht zu den Nachkriegsjahren.",
+    "beispielTr": "Yakın dönem tarihi okutuyor ve savaş sonrası yıllar üzerine çalışıyor.",
+    "beispielEn": "She teaches contemporary history and researches the postwar years."
+  },
+  {
+    "id": 6268,
+    "tr": "tarihçi",
+    "en": "historian",
+    "beispiel": "Zwei Historiker widersprachen der offiziellen Darstellung entschieden.",
+    "beispielTr": "İki tarihçi resmî anlatıya kararlı biçimde karşı çıktı.",
+    "beispielEn": "Two historians firmly contradicted the official account."
+  },
+  {
+    "id": 6269,
+    "tr": "yeniden kurgulama",
+    "en": "reconstruction",
+    "beispiel": "Die Rekonstruktion der Ereignisse stützt sich auf drei unabhängige Quellen.",
+    "beispielTr": "Olayların yeniden kurgulanması birbirinden bağımsız üç kaynağa dayanıyor.",
+    "beispielEn": "The reconstruction of the events rests on three independent sources."
+  },
+  {
+    "id": 6270,
+    "tr": "sahtecilik",
+    "en": "forgery",
+    "beispiel": "Die Fälschung des Dokuments flog erst nach Jahrzehnten auf.",
+    "beispielTr": "Belgedeki sahtecilik ancak onlarca yıl sonra ortaya çıktı.",
+    "beispielEn": "The forgery of the document came to light only decades later."
+  },
+  {
+    "id": 6271,
+    "tr": "gerçeklik",
+    "en": "authenticity",
+    "beispiel": "Die Authentizität des Dokuments wird von mehreren Fachleuten bezweifelt.",
+    "beispielTr": "Belgenin gerçekliği birçok uzman tarafından şüpheyle karşılanıyor.",
+    "beispielEn": "Several experts doubt the authenticity of the document."
+  },
+  {
+    "id": 6272,
+    "tr": "yabancı egemenliği",
+    "en": "foreign rule",
+    "beispiel": "Vier Jahrhunderte Fremdherrschaft prägen das Selbstbild der Region.",
+    "beispielTr": "Dört yüzyıllık yabancı egemenliği bölgenin kendine bakışını biçimlendiriyor.",
+    "beispielEn": "Four centuries of foreign rule shape the region's self-image."
+  },
+  {
+    "id": 6273,
+    "tr": "sömürü",
+    "en": "exploitation",
+    "beispiel": "Der Wohlstand der Metropole beruhte auf der Ausbeutung der Kolonien.",
+    "beispielTr": "Metropolün refahı sömürgelerin sömürülmesine dayanıyordu.",
+    "beispielEn": "The wealth of the metropolis rested on the exploitation of the colonies."
+  },
+  {
+    "id": 6274,
+    "tr": "barışma",
+    "en": "reconciliation",
+    "beispiel": "Die Aussöhnung beider Länder begann mit einem stillen Kniefall.",
+    "beispielTr": "İki ülkenin barışması sessiz bir diz çöküşle başladı.",
+    "beispielEn": "The reconciliation between the two countries began with a silent kneeling."
+  },
+  {
+    "id": 6275,
+    "tr": "telafi",
+    "en": "reparation",
+    "beispiel": "Die Opfer warten seit Jahrzehnten auf eine finanzielle Wiedergutmachung.",
+    "beispielTr": "Mağdurlar onlarca yıldır maddi bir telafi bekliyor.",
+    "beispielEn": "The victims have been waiting decades for financial reparation."
+  },
+  {
+    "id": 6276,
+    "tr": "faillik",
+    "en": "perpetration",
+    "beispiel": "Die Akten belegen eine aktive Täterschaft, nicht bloßes Mitlaufen.",
+    "beispielTr": "Dosyalar sadece sürüklenmeyi değil, etkin bir failliği belgeliyor.",
+    "beispielEn": "The files prove active perpetration, not just tagging along."
+  },
+  {
+    "id": 6277,
+    "tr": "mağdur rolü",
+    "en": "victim role",
+    "beispiel": "Die Nachkriegsgesellschaft flüchtete sich bequem in die Opferrolle.",
+    "beispielTr": "Savaş sonrası toplumu rahatça mağdur rolüne sığındı.",
+    "beispielEn": "Postwar society comfortably retreated into the victim role."
+  },
+  {
+    "id": 6278,
+    "tr": "göreceleştirme",
+    "en": "relativization",
+    "beispiel": "Solche Vergleiche laufen auf eine Relativierung der Verbrechen hinaus.",
+    "beispielTr": "Bu tür karşılaştırmalar suçların göreceleştirilmesine varır.",
+    "beispielEn": "Such comparisons amount to a relativization of the crimes."
+  },
+  {
+    "id": 6279,
+    "tr": "kendine mal etme",
+    "en": "appropriation",
+    "beispiel": "Die Familie wehrte sich gegen die politische Vereinnahmung des Gedenkens.",
+    "beispielTr": "Aile, anmanın siyaseten kendine mal edilmesine karşı çıktı.",
+    "beispielEn": "The family resisted the political appropriation of the commemoration."
+  },
+  {
+    "id": 6280,
+    "tr": "kahraman kültü",
+    "en": "hero worship",
+    "beispiel": "Statt Heldenverehrung fordern die Autoren eine nüchterne Bilanz.",
+    "beispielTr": "Yazarlar kahraman kültü yerine serinkanlı bir bilanço istiyor.",
+    "beispielEn": "Instead of hero worship the authors demand a sober assessment."
+  },
+  {
+    "id": 6281,
+    "tr": "nostalji",
+    "en": "nostalgia",
+    "beispiel": "Hinter der Nostalgie verbirgt sich oft eine sehr selektive Erinnerung.",
+    "beispielTr": "Nostaljinin ardında çoğu zaman son derece seçici bir hafıza gizlenir.",
+    "beispielEn": "Behind the nostalgia often hides a very selective memory."
+  },
+  {
+    "id": 6282,
+    "tr": "kalıcı etki",
+    "en": "aftereffect",
+    "beispiel": "Die Nachwirkungen der Teilung zeigen sich noch in den Wahlergebnissen.",
+    "beispielTr": "Bölünmenin kalıcı etkileri seçim sonuçlarında hâlâ görülüyor.",
+    "beispielEn": "The aftereffects of the division still show in the election results."
+  },
+  {
+    "id": 6283,
+    "tr": "çöküş",
+    "en": "decline",
+    "beispiel": "Der Niedergang des Reiches vollzog sich über mehrere Generationen.",
+    "beispielTr": "İmparatorluğun çöküşü birkaç kuşağa yayıldı.",
+    "beispielEn": "The decline of the empire unfolded over several generations."
+  },
+  {
+    "id": 6284,
+    "tr": "sekülerleşme",
+    "en": "secularization",
+    "beispiel": "Die Säkularisierung veränderte auch die Formen des öffentlichen Gedenkens.",
+    "beispielTr": "Sekülerleşme kamusal anmanın biçimlerini de değiştirdi.",
+    "beispielEn": "Secularization also changed the forms of public commemoration."
+  },
+  {
+    "id": 6285,
+    "tr": "iktidarı ele geçirme",
+    "en": "seizure of power",
+    "beispiel": "Nach der Machtergreifung verloren Tausende Beamte ihre Stellen.",
+    "beispielTr": "İktidarın ele geçirilmesinden sonra binlerce memur işini kaybetti.",
+    "beispielEn": "After the seizure of power thousands of officials lost their jobs."
+  },
+  {
+    "id": 6286,
+    "tr": "diktatörlük",
+    "en": "dictatorship",
+    "beispiel": "Zwei Diktaturen innerhalb eines Jahrhunderts haben das Land gezeichnet.",
+    "beispielTr": "Bir yüzyıl içindeki iki diktatörlük ülkede derin izler bıraktı.",
+    "beispielEn": "Two dictatorships within one century have marked the country."
+  },
+  {
+    "id": 6287,
+    "tr": "ayaklanma",
+    "en": "uprising",
+    "beispiel": "Der Aufstand wurde binnen weniger Tage blutig niedergeschlagen.",
+    "beispielTr": "Ayaklanma birkaç gün içinde kanlı biçimde bastırıldı.",
+    "beispielEn": "The uprising was crushed bloodily within a few days."
+  },
+  {
+    "id": 6288,
+    "tr": "komplo",
+    "en": "conspiracy",
+    "beispiel": "Die Verschwörung scheiterte, doch ihr Andenken wurde später politisch genutzt.",
+    "beispielTr": "Komplo başarısız oldu ama anısı sonradan siyasi amaçla kullanıldı.",
+    "beispielEn": "The conspiracy failed, but its memory was later used politically."
+  },
+  {
+    "id": 6289,
+    "tr": "tek tipleştirme",
+    "en": "forced conformity",
+    "beispiel": "Die Gleichschaltung der Presse dauerte kaum ein halbes Jahr.",
+    "beispielTr": "Basının tek tipleştirilmesi yarım yıl bile sürmedi.",
+    "beispielEn": "The forced conformity of the press took barely half a year."
+  },
+  {
+    "id": 6290,
+    "tr": "sürgün",
+    "en": "deportation",
+    "beispiel": "Die Deportationen wurden von örtlichen Beamten sorgfältig organisiert.",
+    "beispielTr": "Sürgünler yerel memurlar tarafından titizlikle örgütlendi.",
+    "beispielEn": "The deportations were carefully organized by local officials."
+  },
+  {
+    "id": 6291,
+    "tr": "soykırım",
+    "en": "genocide",
+    "beispiel": "Das Parlament stufte die Verbrechen offiziell als Völkermord ein.",
+    "beispielTr": "Parlamento bu suçları resmen soykırım olarak nitelendirdi.",
+    "beispielEn": "Parliament officially classified the crimes as genocide."
+  },
+  {
+    "id": 6292,
+    "tr": "araştırmak",
+    "en": "to research",
+    "beispiel": "Ein Team erforscht die Rolle der Kirche in jenen Jahren.",
+    "beispielTr": "Bir ekip kilisenin o yıllardaki rolünü araştırıyor.",
+    "beispielEn": "A team is researching the role of the church in those years."
+  },
+  {
+    "id": 6293,
+    "tr": "derinlemesine araştırmak",
+    "en": "to fathom",
+    "beispiel": "Die Studie versucht, die Motive der Mitläufer zu ergründen.",
+    "beispielTr": "Çalışma, sürüklenip gidenlerin güdülerini derinlemesine araştırmaya çalışıyor.",
+    "beispielEn": "The study tries to fathom the motives of the followers."
+  },
+  {
+    "id": 6294,
+    "tr": "izini sürmek",
+    "en": "to trace",
+    "beispiel": "Das Buch zeichnet den Weg der Familie durch drei Länder nach.",
+    "beispielTr": "Kitap, ailenin üç ülkeden geçen yolunun izini sürüyor.",
+    "beispielEn": "The book traces the family's path through three countries."
+  },
+  {
+    "id": 6295,
+    "tr": "bağlamına oturtmak",
+    "en": "to contextualize",
+    "beispiel": "Ohne Kontext lässt sich die Quelle kaum sinnvoll einordnen.",
+    "beispielTr": "Bağlam olmadan bu kaynağı doğru bir yere oturtmak zor.",
+    "beispielEn": "Without context the source can hardly be situated properly."
+  },
+  {
+    "id": 6296,
+    "tr": "taramak",
+    "en": "to sift through",
+    "beispiel": "Sie hat monatelang Akten gesichtet, bevor sie zu schreiben begann.",
+    "beispielTr": "Yazmaya başlamadan önce aylarca dosyaları taradı.",
+    "beispielEn": "She sifted through files for months before she began writing."
+  },
+  {
+    "id": 6297,
+    "tr": "inkâr etmek",
+    "en": "to deny",
+    "beispiel": "Wer die Massenmorde leugnet, macht sich hier strafbar.",
+    "beispielTr": "Toplu katliamları inkâr eden burada suç işlemiş olur.",
+    "beispielEn": "Anyone who denies the mass murders is committing a crime here."
+  },
+  {
+    "id": 6298,
+    "tr": "kabullenmek",
+    "en": "to admit",
+    "beispiel": "Der Staat gestand seine Mitverantwortung erst sehr spät ein.",
+    "beispielTr": "Devlet ortak sorumluluğunu ancak çok geç kabullendi.",
+    "beispielEn": "The state admitted its share of responsibility only very late."
+  },
+  {
+    "id": 6299,
+    "tr": "kefaretini ödemek",
+    "en": "to atone for",
+    "beispiel": "Kein Denkmal kann sühnen, was damals geschehen ist.",
+    "beispielTr": "Hiçbir anıt o zaman olanların kefaretini ödeyemez.",
+    "beispielEn": "No monument can atone for what happened back then."
+  },
+  {
+    "id": 6300,
+    "tr": "başkaldırmak",
+    "en": "to rebel",
+    "beispiel": "Die Studenten lehnten sich gegen das Schweigen ihrer Eltern auf.",
+    "beispielTr": "Öğrenciler ebeveynlerinin suskunluğuna başkaldırdı.",
+    "beispielEn": "The students rebelled against their parents' silence."
+  },
+  {
+    "id": 6301,
+    "tr": "sansürlemek",
+    "en": "to censor",
+    "beispiel": "Ganze Passagen des Berichts wurden nachträglich zensiert.",
+    "beispielTr": "Raporun koca koca bölümleri sonradan sansürlendi.",
+    "beispielEn": "Entire passages of the report were censored afterwards."
+  },
+  {
+    "id": 6302,
+    "tr": "varlığını sürdürmek",
+    "en": "to persist",
+    "beispiel": "Alte Netzwerke bestanden auch nach dem Systemwechsel fort.",
+    "beispielTr": "Eski ağlar rejim değişikliğinden sonra da varlığını sürdürdü.",
+    "beispielEn": "Old networks persisted even after the change of system."
+  }
+]
