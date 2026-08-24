@@ -18,6 +18,7 @@ import {
   closeMic,
   deactivateMic,
   micHeld,
+  micSettings,
   micSupported,
   openMic,
   recordClip,
@@ -808,6 +809,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     startedAt.current = Date.now();
     setStatus("playing");
     track("walk_start", from);
+    // Kısıtın gerçekten uygulanıp uygulanmadığı kayda geçiyor: bozuk ses
+    // şikâyetini tahmin ederek değil, veriye bakarak ayırt edebilelim.
+    if (sttReady.current) track("walk_capture", micSettings()?.echoCancellation ? 1 : 0);
     void loop(rounds, from);
   }
 

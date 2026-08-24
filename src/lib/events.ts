@@ -24,6 +24,11 @@ export const EVENT_NAMES = [
   "daily_play", // günün turu oynandı
   "challenge_play", // hayatta kalma turu oynandı
   "walk_start", // yürürken (ekransız) modu başlatıldı (value = kaçıncı turdan)
+  // Mikrofon gerçekte hangi kısıtlarla açıldı (value = yankı bastırma açık mı).
+  // İstemek ile almak aynı şey değil: cihaz kısıtı sessizce yok sayabiliyor ve
+  // yankı bastırma açık kalırsa Android ses ÇIKIŞINI konuşma yoluna alıyor,
+  // yani turun tamamı bozuk duyuluyor. Ses kalitesi şikâyetinde bakılacak yer.
+  "walk_capture",
   "boss_play", // modül sınavına girildi (value = modül sırası)
   "boss_clear", // modül sınavı geçildi (value = kalan saniye)
   "quest_claim", // görev ödülü alındı
