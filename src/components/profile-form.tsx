@@ -153,8 +153,8 @@ export function ProfileForm({
             <p
               className="mt-2 rounded-xl px-3 py-2 text-xs"
               style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)",
-                color: "var(--color-brand-500)",
+                background: "color-mix(in srgb, var(--color-brand) 10%, transparent)",
+                color: "var(--color-brand)",
               }}
             >
               Kelimeler ve tekrar kuyruğun yeni kursa geçer. Diğer kurs silinmez.
@@ -178,7 +178,7 @@ export function ProfileForm({
             onChange={(e) => setDisplayName(e.target.value)}
             maxLength={60}
             placeholder="Adın"
-            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand-400)]"
+            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
           />
         </label>
 
@@ -246,7 +246,7 @@ export function ProfileForm({
             <motion.span
               initial={{ opacity: 0, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-1 text-sm font-semibold text-[color:var(--color-mint-500)]"
+              className="flex items-center gap-1 text-sm font-semibold text-[color:var(--color-mint)]"
             >
               <CheckIcon size={16} /> Kaydedildi
             </motion.span>
@@ -256,8 +256,8 @@ export function ProfileForm({
           <p
             className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
             style={{
-              background: "color-mix(in srgb, var(--color-rose-500) 12%, transparent)",
-              color: "var(--color-rose-500)",
+              background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
+              color: "var(--color-rose)",
             }}
           >
             <AlertIcon size={16} /> {saveError}
@@ -337,7 +337,7 @@ function Slider({
     <label className="block">
       <span className="mb-1.5 flex items-baseline justify-between text-sm font-semibold">
         <span className="muted">{label}</span>
-        <span className="text-[color:var(--color-brand-500)]">
+        <span className="text-[color:var(--color-brand)]">
           {value} {suffix}
         </span>
       </span>
@@ -348,7 +348,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[color:var(--color-brand-500)] surface-2"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[color:var(--color-brand)] surface-2"
       />
     </label>
   );

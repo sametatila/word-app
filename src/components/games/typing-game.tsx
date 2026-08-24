@@ -178,8 +178,8 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           spellCheck={false}
           placeholder="Almanca yaz..."
           className={`card min-h-14 w-full px-4 text-lg outline-none ${
-            status === "wrong" ? "animate-shake border-[color:var(--color-rose-500)]" : ""
-          } ${status === "correct" ? "border-[color:var(--color-mint-500)]" : ""}`}
+            status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
+          } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}
         />
 
         <div className="flex flex-wrap justify-center gap-2">

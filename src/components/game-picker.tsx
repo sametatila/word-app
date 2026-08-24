@@ -117,14 +117,14 @@ export function GamePicker({
               className="flex min-h-12 items-center gap-2.5 rounded-xl px-3 py-2 text-left transition-colors disabled:opacity-50"
               style={{
                 background: on
-                  ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)"
+                  ? "color-mix(in srgb, var(--color-brand) 14%, transparent)"
                   : "var(--surface-2)",
-                outline: on ? "1px solid var(--color-brand-500)" : "none",
+                outline: on ? "1px solid var(--color-brand)" : "none",
               }}
             >
               <span
                 className="shrink-0"
-                style={{ color: on ? "var(--color-brand-500)" : "var(--text-muted)" }}
+                style={{ color: on ? "var(--color-brand)" : "var(--text-muted)" }}
               >
                 <Icon size={18} />
               </span>

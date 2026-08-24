@@ -220,8 +220,8 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
         <div
           className="mb-4 flex items-start gap-2 rounded-xl px-3 py-2.5 text-sm"
           style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-            color: "var(--color-flame-500)",
+            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            color: "var(--color-flame)",
           }}
         >
           <AlertIcon size={16} className="mt-0.5 shrink-0" />
@@ -263,8 +263,8 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
                     className="max-w-[85%] rounded-2xl rounded-tr-sm px-3.5 py-2.5 text-sm"
                     style={{
                       background: b.understood
-                        ? "color-mix(in srgb, var(--color-brand-500) 16%, transparent)"
-                        : "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
+                        ? "color-mix(in srgb, var(--color-brand) 16%, transparent)"
+                        : "color-mix(in srgb, var(--color-rose) 14%, transparent)",
                     }}
                   >
                     {b.heard}
@@ -294,7 +294,7 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
                   className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-60"
                   style={{
                     background:
-                      phase === "listening" ? "var(--color-rose-500)" : "var(--color-brand-500)",
+                      phase === "listening" ? "var(--color-rose)" : "var(--color-brand)",
                   }}
                 >
                   <motion.span
@@ -340,7 +340,7 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
             ) : null}
 
             {error ? (
-              <p className="mt-3 text-center text-sm" style={{ color: "var(--color-flame-500)" }}>
+              <p className="mt-3 text-center text-sm" style={{ color: "var(--color-flame)" }}>
                 {error}
               </p>
             ) : null}
@@ -361,7 +361,7 @@ export function DialoguePlayer({ exercise }: { exercise: SpeakingDialogueExercis
                 <span
                   className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full"
                   style={{
-                    background: done ? "var(--color-mint-500)" : "var(--surface-2)",
+                    background: done ? "var(--color-mint)" : "var(--surface-2)",
                     color: "white",
                   }}
                 >

@@ -249,7 +249,7 @@ export function BossPlayer({
     const ready = data.meta.lessonsDone >= data.meta.lessonsTotal;
     return (
       <Frame>
-        <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl text-white">
+        <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl">
           <TrophyIcon size={26} />
         </div>
         <p className="muted text-xs font-bold uppercase tracking-wide">
@@ -267,8 +267,8 @@ export function BossPlayer({
           <p
             className="mt-4 rounded-xl px-3 py-2.5 text-sm"
             style={{
-              background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
-              color: "var(--color-flame-500)",
+              background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
+              color: "var(--color-flame)",
             }}
           >
             Bu modülün {data.meta.lessonsDone}/{data.meta.lessonsTotal} dersini bitirdin. Sınav
@@ -299,7 +299,7 @@ export function BossPlayer({
         <div
           className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl"
           style={{
-            background: won ? "var(--color-mint-500)" : "var(--surface-2)",
+            background: won ? "var(--color-mint)" : "var(--surface-2)",
             color: won ? "#fff" : "var(--text-muted)",
           }}
         >
@@ -312,7 +312,7 @@ export function BossPlayer({
             : `${tally.correct}/${tally.total} doğru — bu sefer yetmedi.`}
         </p>
         {won && isRecord ? (
-          <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-mint-500)" }}>
+          <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-mint)" }}>
             Yeni rekor: <CountUp value={secondsLeft} /> sn kalan
           </p>
         ) : null}
@@ -347,7 +347,7 @@ export function BossPlayer({
           key={`${urgent}-${Math.ceil(left)}`}
           animate={urgent ? { scale: [1, 1.12, 1] } : {}}
           className="text-sm font-black tabular-nums"
-          style={{ color: urgent ? "var(--color-flame-500)" : "var(--text)" }}
+          style={{ color: urgent ? "var(--color-flame)" : "var(--text)" }}
         >
           {left.toFixed(1)} sn
         </motion.span>
@@ -357,7 +357,7 @@ export function BossPlayer({
           className="h-full rounded-full transition-[width] duration-100"
           style={{
             width: `${pct}%`,
-            background: urgent ? "var(--color-flame-500)" : "var(--color-brand-500)",
+            background: urgent ? "var(--color-flame)" : "var(--color-brand)",
           }}
         />
       </div>

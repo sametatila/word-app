@@ -28,8 +28,8 @@ export function ChallengeCard({ best, onPlay, bare = false }: { best: number; on
         <span
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
           style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
-            color: "var(--color-flame-500)",
+            background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
+            color: "var(--color-flame)",
           }}
         >
           <SparkIcon size={22} />

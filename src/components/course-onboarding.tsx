@@ -75,9 +75,7 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
     <main className="mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 py-10">
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}>
         <div className="mb-8 flex items-center gap-2.5">
-          <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl text-white">
-            <LogoMark size={22} />
-          </span>
+          <LogoMark size={40} />
           <div>
             <h1 className="text-xl font-bold">Hoş geldin!</h1>
             <p className="muted text-sm">Birkaç soruyla başlayalım — sonra profilden değiştirebilirsin.</p>
@@ -114,13 +112,13 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
                 {active ? (
                   <span
                     className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full text-white"
-                    style={{ background: "var(--color-brand-500)" }}
+                    style={{ background: "var(--color-brand-600)" }}
                   >
                     <CheckIcon size={13} />
                   </span>
                 ) : null}
                 <p className="font-bold">{c.title}</p>
-                <p className="text-xs font-semibold text-[color:var(--color-brand-500)]">
+                <p className="text-xs font-semibold text-[color:var(--color-brand)]">
                   {c.subtitle}
                 </p>
                 <p className="muted mt-1.5 text-xs leading-relaxed">{c.desc}</p>
@@ -162,8 +160,8 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
           <p
             className="mt-3 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
             style={{
-              background: "color-mix(in srgb, var(--color-rose-500) 12%, transparent)",
-              color: "var(--color-rose-500)",
+              background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
+              color: "var(--color-rose)",
             }}
           >
             <AlertIcon size={16} /> {error}

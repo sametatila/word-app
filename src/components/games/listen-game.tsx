@@ -104,7 +104,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
             }}
             whileTap={{ scale: 0.93 }}
             aria-label="Tekrar dinle"
-            className="brand-gradient flex h-20 w-20 items-center justify-center rounded-full text-white shadow-lg"
+            className="brand-gradient flex h-20 w-20 items-center justify-center rounded-full shadow-lg"
           >
             <SpeakerIcon size={34} />
           </motion.button>

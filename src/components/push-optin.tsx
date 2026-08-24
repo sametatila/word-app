@@ -88,7 +88,7 @@ export function PushOptIn({ streak }: { streak: number }) {
       <Card tone="mint">
         <span
           className="flex items-center gap-2 text-sm font-bold"
-          style={{ color: "var(--color-mint-500)" }}
+          style={{ color: "var(--color-mint)" }}
         >
           <CheckIcon size={16} /> Hatırlatmalar açık
         </span>
@@ -141,7 +141,7 @@ function Card({
   onClose?: () => void;
   children: React.ReactNode;
 }) {
-  const color = tone === "mint" ? "var(--color-mint-500)" : "var(--color-brand-500)";
+  const color = tone === "mint" ? "var(--color-mint)" : "var(--color-brand)";
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}

@@ -96,9 +96,7 @@ export function InstallPrompt() {
           className="safe-bottom fixed inset-x-3 bottom-16 z-40 md:bottom-4 md:left-auto md:right-4 md:w-80"
         >
           <div className="card flex items-start gap-3 p-3.5 shadow-lg">
-            <span className="brand-gradient flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white">
-              <LogoMark size={22} />
-            </span>
+            <LogoMark size={40} className="shrink-0" />
             <div className="min-w-0 flex-1">
               <p className="text-sm font-bold">Ana ekrana ekle</p>
               <p className="muted mt-0.5 text-xs">

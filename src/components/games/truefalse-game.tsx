@@ -82,8 +82,8 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
         style={{
           borderColor: settled
             ? wasRight
-              ? "var(--color-mint-500)"
-              : "var(--color-rose-500)"
+              ? "var(--color-mint)"
+              : "var(--color-rose)"
             : undefined,
         }}
       >

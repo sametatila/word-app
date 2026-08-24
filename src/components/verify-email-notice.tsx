@@ -69,7 +69,7 @@ export function VerifyEmailNotice({
           className="flex gap-2 rounded-xl px-3 py-2.5 text-sm"
           style={{ background: "var(--surface-2)" }}
         >
-          <span className="mt-0.5 shrink-0 text-[color:var(--color-brand-500)]">
+          <span className="mt-0.5 shrink-0 text-[color:var(--color-brand)]">
             <InfoIcon size={16} />
           </span>
           <div className="muted space-y-1">

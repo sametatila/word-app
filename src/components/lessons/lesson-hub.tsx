@@ -204,12 +204,12 @@ const LEVEL_LABELS: Record<string, string> = {
  * dili sayfa boyunca sabit kalsın.
  */
 const MODULE_ACCENTS = [
-  "var(--color-brand-500)",
-  "var(--color-sky-400)",
-  "var(--color-violet-400)",
-  "var(--color-flame-500)",
-  "var(--color-rose-400)",
-  "var(--color-mint-500)",
+  "var(--color-brand)",
+  "var(--color-sky)",
+  "var(--color-violet)",
+  "var(--color-flame)",
+  "var(--color-rose)",
+  "var(--color-mint)",
 ];
 
 /**
@@ -316,9 +316,9 @@ export function LessonHub({
       {weak.length ? (
         <section
           className="rounded-2xl px-4 py-3.5"
-          style={{ background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)" }}
+          style={{ background: "color-mix(in srgb, var(--color-flame) 10%, transparent)" }}
         >
-          <p className="text-sm font-bold" style={{ color: "var(--color-flame-500)" }}>
+          <p className="text-sm font-bold" style={{ color: "var(--color-flame)" }}>
             Oturmamış kurallar
           </p>
           <p className="mt-1 text-xs">{weak.join(" · ")}</p>
@@ -414,7 +414,7 @@ function ModuleBoss({
 }) {
   const ready = size > 0 && done >= size;
   const cleared = bestLeft !== null;
-  const tone = cleared ? "var(--color-mint-500)" : ready ? accent : "var(--text-muted)";
+  const tone = cleared ? "var(--color-mint)" : ready ? accent : "var(--text-muted)";
 
   return (
     <div className="mb-6 flex flex-col items-center">
@@ -428,7 +428,7 @@ function ModuleBoss({
         className="flex w-full max-w-sm items-center gap-3 rounded-2xl px-4 py-3 transition-transform active:scale-[0.98]"
         style={{
           background: cleared
-            ? "color-mix(in srgb, var(--color-mint-500) 12%, var(--surface))"
+            ? "color-mix(in srgb, var(--color-mint) 12%, var(--surface))"
             : ready
               ? `color-mix(in srgb, ${accent} 12%, var(--surface))`
               : "var(--surface-2)",
@@ -500,15 +500,15 @@ function ModuleBanner({
       className="flex items-center justify-between gap-3 rounded-2xl px-4 py-3"
       style={{
         background: complete
-          ? "color-mix(in srgb, var(--color-mint-500) 12%, var(--surface))"
+          ? "color-mix(in srgb, var(--color-mint) 12%, var(--surface))"
           : `color-mix(in srgb, ${accent} 12%, var(--surface))`,
-        border: `1px solid color-mix(in srgb, ${complete ? "var(--color-mint-500)" : accent} 30%, transparent)`,
+        border: `1px solid color-mix(in srgb, ${complete ? "var(--color-mint)" : accent} 30%, transparent)`,
       }}
     >
       <div className="min-w-0">
         <p
           className="text-[10px] font-bold uppercase tracking-widest"
-          style={{ color: complete ? "var(--color-mint-500)" : accent }}
+          style={{ color: complete ? "var(--color-mint)" : accent }}
         >
           {level} · {moduleIdx + 1}. Modül
         </p>
@@ -517,7 +517,7 @@ function ModuleBanner({
       {complete ? (
         <span
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white"
-          style={{ background: "var(--color-mint-500)" }}
+          style={{ background: "var(--color-mint-600)" }}
         >
           <TrophyIcon size={18} />
         </span>
@@ -564,7 +564,7 @@ function ModulePath({ nodes }: { nodes: PathNode[] }) {
             key={i}
             d={e.d}
             fill="none"
-            stroke={e.passed ? "var(--color-mint-500)" : "var(--border)"}
+            stroke={e.passed ? "var(--color-mint)" : "var(--border)"}
             strokeOpacity={e.passed ? 0.55 : 1}
             strokeWidth={4}
             strokeLinecap="round"
@@ -593,18 +593,18 @@ function LessonNode({
 
   const circle: React.CSSProperties =
     state === "done"
-      ? { background: "var(--color-mint-500)", color: "#fff" }
+      ? { background: "var(--color-mint-600)", color: "#fff" }
       : state === "due"
         ? {
-            background: "var(--color-flame-500)",
+            background: "var(--color-flame-600)",
             color: "#fff",
-            boxShadow: "0 10px 26px -10px var(--color-flame-500)",
+            boxShadow: "0 10px 26px -10px var(--color-flame-600)",
           }
         : state === "started"
           ? {
               background: "var(--surface)",
-              border: "2px solid var(--color-brand-500)",
-              color: "var(--color-brand-500)",
+              border: "2px solid var(--color-brand)",
+              color: "var(--color-brand)",
             }
           : state === "locked"
             ? { background: "var(--surface-2)", color: "var(--text-muted)" }
@@ -629,7 +629,7 @@ function LessonNode({
       {state === "next" ? (
         <motion.span
           className="absolute -top-9 z-20 rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wide text-white brand-gradient"
-          style={{ boxShadow: "0 6px 16px -6px var(--color-brand-500)" }}
+          style={{ boxShadow: "0 6px 16px -6px var(--color-brand)" }}
           animate={still ? undefined : { y: [0, -5, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -637,20 +637,20 @@ function LessonNode({
           <span
             aria-hidden
             className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45"
-            style={{ background: "var(--color-brand-500)" }}
+            style={{ background: "var(--color-brand)" }}
           />
         </motion.span>
       ) : null}
       <motion.div
         whileTap={{ scale: 0.93 }}
         className={`relative flex items-center justify-center rounded-full ${
-          state === "next" ? "brand-gradient text-white" : ""
+          state === "next" ? "brand-gradient" : ""
         }`}
         style={{
           width: NODE,
           height: NODE,
           ...(state === "next"
-            ? { boxShadow: "0 14px 32px -10px var(--color-brand-500)" }
+            ? { boxShadow: "0 14px 32px -10px var(--color-brand)" }
             : circle),
         }}
       >
@@ -662,12 +662,12 @@ function LessonNode({
             <span
               aria-hidden
               className="lesson-ping absolute -inset-1.5 rounded-full"
-              style={{ border: "2px solid var(--color-brand-500)" }}
+              style={{ border: "2px solid var(--color-brand)" }}
             />
             <span
               aria-hidden
               className="lesson-ping absolute -inset-1.5 rounded-full"
-              style={{ border: "2px solid var(--color-brand-500)", animationDelay: "1s" }}
+              style={{ border: "2px solid var(--color-brand)", animationDelay: "1s" }}
             />
           </>
         ) : null}
@@ -699,11 +699,11 @@ function NodeBadge({ state }: { state: NodeState }) {
   if (state === "next" || state === "open") return null;
   const [bg, icon] =
     state === "done"
-      ? ["var(--color-mint-500)", <CheckIcon key="i" size={12} />]
+      ? ["var(--color-mint)", <CheckIcon key="i" size={12} />]
       : state === "due"
-        ? ["var(--color-flame-500)", <RefreshIcon key="i" size={12} />]
+        ? ["var(--color-flame)", <RefreshIcon key="i" size={12} />]
         : state === "started"
-          ? ["var(--color-brand-500)", <ChatIcon key="i" size={12} />]
+          ? ["var(--color-brand)", <ChatIcon key="i" size={12} />]
           : ["var(--text-muted)", <LockIcon key="i" size={12} />];
   return (
     <span

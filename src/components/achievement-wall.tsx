@@ -226,7 +226,7 @@ export function AchievementWall() {
             <p className="muted mt-1 text-sm">{open.hint}</p>
 
             {open.unlocked ? (
-              <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-mint-500)" }}>
+              <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-mint)" }}>
                 Açıldı
                 {open.unlockedAt
                   ? ` · ${new Date(open.unlockedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}`
@@ -235,7 +235,7 @@ export function AchievementWall() {
             ) : (
               <div className="mt-2">
                 <div className="mb-1 flex items-baseline justify-between text-xs font-semibold tabular-nums">
-                  <span style={{ color: "var(--color-brand-500)" }}>
+                  <span style={{ color: "var(--color-brand)" }}>
                     {open.done.toLocaleString("tr-TR")} / {open.target.toLocaleString("tr-TR")}
                   </span>
                   <span className="muted">
@@ -280,8 +280,8 @@ function Tab({
       aria-pressed={active}
       className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-colors"
       style={{
-        background: active ? "var(--color-brand-500)" : "var(--surface-2)",
-        color: active ? "#fff" : complete ? "var(--color-mint-500)" : "var(--text-muted)",
+        background: active ? "var(--color-brand)" : "var(--surface-2)",
+        color: active ? "#fff" : complete ? "var(--color-mint)" : "var(--text-muted)",
       }}
     >
       {label}

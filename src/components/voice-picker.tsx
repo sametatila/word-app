@@ -63,7 +63,7 @@ export function VoicePicker({
               {active ? (
                 <span
                   className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full text-white"
-                  style={{ background: "var(--color-brand-500)" }}
+                  style={{ background: "var(--color-brand-600)" }}
                 >
                   <CheckIcon size={13} />
                 </span>

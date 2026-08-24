@@ -32,7 +32,7 @@ export function AnswerPulse() {
   }, [pulse]);
 
   const tone =
-    pulse?.kind === "wrong" ? "var(--color-rose-500)" : "var(--color-mint-500)";
+    pulse?.kind === "wrong" ? "var(--color-rose)" : "var(--color-mint)";
 
   return (
     <div aria-hidden className="pointer-events-none relative h-0.5 w-full overflow-hidden rounded-full">

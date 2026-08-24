@@ -633,9 +633,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
                   className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wide"
                   style={{
                     background: isNew
-                      ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)"
-                      : "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
-                    color: isNew ? "var(--color-brand-500)" : "var(--color-flame-500)",
+                      ? "color-mix(in srgb, var(--color-brand) 14%, transparent)"
+                      : "color-mix(in srgb, var(--color-flame) 16%, transparent)",
+                    color: isNew ? "var(--color-brand)" : "var(--color-flame)",
                   }}
                 >
                   {isNew ? "yeni" : "tekrar"}
@@ -653,8 +653,8 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
               transition={{ type: "spring", stiffness: 420, damping: 16 }}
               className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
               style={{
-                background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
-                color: "var(--color-flame-500)",
+                background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
+                color: "var(--color-flame)",
               }}
             >
               <FlameIcon size={12} /> {combo} üst üste
@@ -683,8 +683,8 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         <div
           className="mb-3 flex shrink-0 items-center gap-2 rounded-xl px-3 py-2 text-sm"
           style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-            color: "var(--color-flame-500)",
+            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            color: "var(--color-flame)",
           }}
         >
           <AlertIcon size={16} />
@@ -780,7 +780,7 @@ function StartCard({
     */
     <Stagger className="mx-auto w-full max-w-md">
       <div className="card overflow-hidden">
-        <div className="brand-gradient px-6 py-5 text-white sm:py-7">
+        <div className="brand-gradient-deep px-6 py-5 text-white sm:py-7">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <p className="text-sm opacity-90">
@@ -821,11 +821,11 @@ function StartCard({
 
         <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
           <div className="px-4 py-3 text-center sm:py-4">
-            <div className="text-xl font-bold text-[color:var(--color-flame-500)]">{reviewCount}</div>
+            <div className="text-xl font-bold text-[color:var(--color-flame)]">{reviewCount}</div>
             <div className="muted text-xs">tekrar sırası gelen</div>
           </div>
           <div className="px-4 py-3 text-center sm:py-4">
-            <div className="text-xl font-bold text-[color:var(--color-brand-500)]">{newCount}</div>
+            <div className="text-xl font-bold text-[color:var(--color-brand)]">{newCount}</div>
             <div className="muted text-xs">yeni kelime</div>
           </div>
         </div>
@@ -839,7 +839,7 @@ function StartCard({
               className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
               style={{ background: "var(--surface-2)" }}
             >
-              <strong style={{ color: "var(--color-flame-500)" }}>
+              <strong style={{ color: "var(--color-flame)" }}>
                 {meta.pacing === "review" ? "Bugün tekrar günü" : "Bugün tempo biraz düşük"}
               </strong>
               <p className="muted mt-1 text-xs">
@@ -879,7 +879,7 @@ function StartCard({
           {meta.coverage.total > 0 ? (
             <p className="muted mt-4 text-center text-sm">
               {meta.level} havuzunda{" "}
-              <strong style={{ color: "var(--color-mint-500)" }}>
+              <strong style={{ color: "var(--color-mint)" }}>
                 {meta.coverage.mastered.toLocaleString("tr-TR")}
               </strong>
               {" / "}
@@ -1093,7 +1093,7 @@ function StageCard({
       <Confetti fire={perfect ? stage : 0} count={22} />
 
       <div className="card overflow-hidden">
-        <div className="brand-gradient px-6 py-5 text-center text-white">
+        <div className="brand-gradient-deep px-6 py-5 text-center text-white">
           <motion.div
             initial={{ scale: 0.6, y: 10, opacity: 0 }}
             animate={{ scale: 1, y: 0, opacity: 1 }}
@@ -1136,9 +1136,9 @@ function StageCard({
             style={{
               color:
                 wagerResult > 0
-                  ? "var(--color-mint-500)"
+                  ? "var(--color-mint)"
                   : wagerResult < 0
-                    ? "var(--color-flame-500)"
+                    ? "var(--color-flame)"
                     : "var(--text-muted)",
             }}
           >
@@ -1164,14 +1164,14 @@ function StageCard({
             className="flex w-full items-center gap-3 rounded-xl px-3.5 py-3 text-left transition-colors"
             style={{
               background: bet
-                ? "color-mix(in srgb, var(--color-flame-500) 12%, transparent)"
+                ? "color-mix(in srgb, var(--color-flame) 12%, transparent)"
                 : "var(--surface-2)",
-              boxShadow: bet ? "inset 0 0 0 1.5px var(--color-flame-500)" : undefined,
+              boxShadow: bet ? "inset 0 0 0 1.5px var(--color-flame)" : undefined,
             }}
           >
             <span
               className="flex h-5 w-9 shrink-0 items-center rounded-full p-0.5 transition-colors"
-              style={{ background: bet ? "var(--color-flame-500)" : "var(--border)" }}
+              style={{ background: bet ? "var(--color-flame)" : "var(--border)" }}
             >
               <motion.span
                 layout
@@ -1257,7 +1257,7 @@ function SummaryCard({
         aynı: önce Erdi ve kazanılan XP, sonra sayılar, sonra ayrıntı.
       */}
       <Stagger className="card overflow-hidden">
-        <div className="brand-gradient p-8 text-center text-white">
+        <div className="brand-gradient-deep p-8 text-center text-white">
           {/* Turun nasıl geçtiğini söyleyen şey artık bir simge değil, Erdi'nin
               hâli: hak edilmiş turda kutluyor, iyi turda gülümsüyor, kötü turda
               üzülüyor. Aynı bilgi bir cümleyle de yazılabilirdi ama okunması
@@ -1291,7 +1291,7 @@ function SummaryCard({
             className="border-b px-6 py-2.5 text-center text-sm font-bold"
             style={{
               borderColor: "var(--border)",
-              color: result.wagerXp > 0 ? "var(--color-mint-500)" : "var(--color-flame-500)",
+              color: result.wagerXp > 0 ? "var(--color-mint)" : "var(--color-flame)",
             }}
           >
             {result.wagerXp > 0
@@ -1311,7 +1311,7 @@ function SummaryCard({
             <div className="h-2 w-full overflow-hidden rounded-full surface-2">
               <motion.div
                 className="h-full rounded-full"
-                style={{ background: "var(--color-mint-500)" }}
+                style={{ background: "var(--color-mint)" }}
                 initial={{ width: 0 }}
                 animate={{
                   width: `${Math.min(100, (result.reviewsToday / result.dailyGoal) * 100)}%`,
@@ -1320,7 +1320,7 @@ function SummaryCard({
               />
             </div>
             {result.goalReached ? (
-              <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-sm font-semibold text-[color:var(--color-mint-500)]">
+              <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-sm font-semibold text-[color:var(--color-mint)]">
                 <FlameIcon size={16} /> Günlük hedefi tamamladın
               </p>
             ) : null}
@@ -1332,9 +1332,9 @@ function SummaryCard({
         {mastered > 0 ? (
           <div
             className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
-            style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" }}
+            style={{ background: "color-mix(in srgb, var(--color-mint) 14%, transparent)" }}
           >
-            <p className="text-sm font-bold" style={{ color: "var(--color-mint-500)" }}>
+            <p className="text-sm font-bold" style={{ color: "var(--color-mint)" }}>
               {mastered} kelime pekişti
             </p>
 
@@ -1347,11 +1347,11 @@ function SummaryCard({
         {result?.streakRepaired ? (
           <div
             className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
-            style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)" }}
+            style={{ background: "color-mix(in srgb, var(--color-flame) 14%, transparent)" }}
           >
             <p
               className="flex items-center justify-center gap-1.5 text-sm font-bold"
-              style={{ color: "var(--color-flame-500)" }}
+              style={{ color: "var(--color-flame)" }}
             >
               <FlameIcon size={16} /> Serin kurtarıldı
             </p>
@@ -1368,7 +1368,7 @@ function SummaryCard({
         {result && result.dueTomorrow > 0 ? (
           <p className="px-6 pt-2 text-center text-sm font-semibold">
             Yarın{" "}
-            <span style={{ color: "var(--color-brand-500)" }}>
+            <span style={{ color: "var(--color-brand)" }}>
               {result.dueTomorrow} kelimenin
             </span>{" "}
             tekrarı var.

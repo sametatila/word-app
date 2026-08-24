@@ -258,7 +258,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <div className="text-center">
-          <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl text-white">
+          <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl">
             <FlameIcon size={26} />
           </div>
           <h2 className="text-xl font-bold">Hayatta kalma turu</h2>
@@ -310,7 +310,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             <CountUp value={score} /> <span className="text-lg font-bold">puan</span>
           </h2>
           {isRecord ? (
-            <p className="mt-1 text-sm font-bold text-[color:var(--color-mint-500)]">
+            <p className="mt-1 text-sm font-bold text-[color:var(--color-mint)]">
               Yeni rekor! Önceki: {previous}
             </p>
           ) : (
@@ -350,8 +350,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             <span
               className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wide"
               style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
-                color: "var(--color-brand-500)",
+                background: "color-mix(in srgb, var(--color-brand) 14%, transparent)",
+                color: "var(--color-brand)",
               }}
             >
               {TIER_LABEL[tier]}
@@ -365,7 +365,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             initial={urgent ? { scale: 1.18 } : false}
             animate={{ scale: 1 }}
             className="font-bold tabular-nums"
-            style={{ color: urgent ? "var(--color-rose-500)" : "var(--color-flame-500)" }}
+            style={{ color: urgent ? "var(--color-rose)" : "var(--color-flame)" }}
           >
             {left.toFixed(1)} sn
           </motion.span>
@@ -376,7 +376,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             className="h-full rounded-full"
             style={{
               width: `${pct}%`,
-              background: urgent ? "var(--color-rose-500)" : "var(--color-flame-500)",
+              background: urgent ? "var(--color-rose)" : "var(--color-flame)",
               transition: "width .12s linear, background-color .3s ease",
             }}
           />
@@ -391,7 +391,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
                 className="flex items-center gap-1 text-xs font-black"
-                style={{ color: "var(--color-flame-500)" }}
+                style={{ color: "var(--color-flame)" }}
               >
                 <FlameIcon size={13} /> {combo} seri · {mult}x
               </motion.span>

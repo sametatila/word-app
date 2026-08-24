@@ -5,7 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { FlameIcon, TrophyIcon } from "@/components/icons";
 
-const COLORS = ["#6366f1", "#c084fc", "#38bdf8", "#34d399", "#fbbf24", "#fb7185"];
+/* Konfeti — üstünde yazı yok, o yüzden rampanın en canlı basamakları. */
+const COLORS = ["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"];
 
 /** Deterministik olmayan ama tur boyunca sabit kalan parçacık listesi. */
 function particles(count: number) {
@@ -101,7 +102,7 @@ export function AchievementFlash({
   fire: number;
 }) {
   const [shown, setShown] = useState<{ key: number; text: string } | null>(null);
-  const color = tone === "mint" ? "var(--color-mint-500)" : "var(--color-flame-500)";
+  const color = tone === "mint" ? "var(--color-mint)" : "var(--color-flame)";
 
   useEffect(() => {
     if (!fire) return;

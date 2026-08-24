@@ -869,9 +869,9 @@ export function LessonPlayer({
       {resumed && phase !== "summary" ? (
         <div
           className="flex items-center gap-2 rounded-xl px-3 py-2 text-xs"
-          style={{ background: "color-mix(in srgb, var(--color-brand-500) 10%, transparent)" }}
+          style={{ background: "color-mix(in srgb, var(--color-brand) 10%, transparent)" }}
         >
-          <span className="flex-1" style={{ color: "var(--color-brand-500)" }}>
+          <span className="flex-1" style={{ color: "var(--color-brand)" }}>
             {phase === "roleplay"
               ? "Konuşmaya kaldığın yerden devam ediyorsun."
               : "Derse kaldığın yerden devam ediyorsun."}
@@ -928,7 +928,7 @@ export function LessonPlayer({
                     onClick={() => void toggleHandsFree()}
                     aria-pressed={handsFree}
                     className="btn btn-ghost flex shrink-0 items-center gap-1.5 px-2 py-1 text-xs"
-                    style={{ color: handsFree ? "var(--color-brand-500)" : undefined }}
+                    style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
                     {handsFree ? "Eller serbest: açık" : "Eller serbest"}
@@ -950,7 +950,7 @@ export function LessonPlayer({
             </div>
 
             {error ? (
-              <p className="shrink-0 px-4 pb-2 text-xs" style={{ color: "var(--color-flame-500)" }}>
+              <p className="shrink-0 px-4 pb-2 text-xs" style={{ color: "var(--color-flame)" }}>
                 {error}
               </p>
             ) : null}
@@ -1028,7 +1028,7 @@ export function LessonPlayer({
                     aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
                     className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg"
                     style={{
-                      background: listening ? "var(--color-rose-500)" : "var(--color-brand-500)",
+                      background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}
                   >
                     <motion.span
@@ -1042,7 +1042,7 @@ export function LessonPlayer({
                     className="text-center text-xs"
                     style={{
                       color:
-                        hint && !listening ? "var(--color-flame-500)" : "var(--text-muted)",
+                        hint && !listening ? "var(--color-flame)" : "var(--text-muted)",
                     }}
                   >
                     {listening
@@ -1145,7 +1145,7 @@ export function LessonPlayer({
                     onClick={() => void toggleHandsFree()}
                     aria-pressed={handsFree}
                     className="btn btn-ghost flex items-center gap-1.5 px-2 py-1 text-xs"
-                    style={{ color: handsFree ? "var(--color-brand-500)" : undefined }}
+                    style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
                     {handsFree ? "Eller serbest: açık" : "Eller serbest"}
@@ -1173,8 +1173,8 @@ export function LessonPlayer({
                 <div
                   className="flex max-w-[85%] items-start gap-1.5 rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm"
                   style={{
-                    background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-                    color: "var(--color-flame-500)",
+                    background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+                    color: "var(--color-flame)",
                   }}
                 >
                   <AlertIcon size={15} className="mt-0.5 shrink-0" />
@@ -1217,7 +1217,7 @@ export function LessonPlayer({
                     aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
                     className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-50"
                     style={{
-                      background: listening ? "var(--color-rose-500)" : "var(--color-brand-500)",
+                      background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}
                   >
                     <motion.span
@@ -1232,7 +1232,7 @@ export function LessonPlayer({
                     style={{
                       color:
                         hint && !listening && !busy
-                          ? "var(--color-flame-500)"
+                          ? "var(--color-flame)"
                           : "var(--text-muted)",
                     }}
                   >
@@ -1352,7 +1352,7 @@ export function LessonPlayer({
                 </ul>
               </div>
             ) : turns.length > 1 ? (
-              <p className="mt-4 text-xs" style={{ color: "var(--color-mint-500)" }}>
+              <p className="mt-4 text-xs" style={{ color: "var(--color-mint)" }}>
                 Konuşmada hiç düzeltme gerekmedi.
               </p>
             ) : null}
@@ -1406,11 +1406,11 @@ function Steps({ phase }: { phase: Phase }) {
         <div key={s.id} className="flex flex-1 flex-col gap-1">
           <span
             className="h-1 rounded-full"
-            style={{ background: i <= at ? "var(--color-brand-500)" : "var(--border)" }}
+            style={{ background: i <= at ? "var(--color-brand)" : "var(--border)" }}
           />
           <span
             className="text-[11px] font-semibold"
-            style={{ color: i <= at ? "var(--color-brand-500)" : "var(--text-muted)" }}
+            style={{ color: i <= at ? "var(--color-brand)" : "var(--text-muted)" }}
           >
             {s.label}
           </span>
@@ -1443,9 +1443,9 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok
         style={{
           color:
             tone === "warn"
-              ? "var(--color-flame-500)"
+              ? "var(--color-flame)"
               : tone === "ok"
-                ? "var(--color-mint-500)"
+                ? "var(--color-mint)"
                 : undefined,
         }}
       >
@@ -1509,7 +1509,7 @@ function SpeakingBars({ inline = false }: { inline?: boolean }) {
         <motion.span
           key={i}
           className="w-0.5 rounded-full"
-          style={{ background: "var(--color-brand-500)", height: 11, originY: 0.5 }}
+          style={{ background: "var(--color-brand)", height: 11, originY: 0.5 }}
           animate={still ? undefined : { scaleY: [0.35, 1, 0.5, 0.85, 0.35] }}
           transition={{ repeat: Infinity, duration: 1, delay: i * 0.16, ease: "easeInOut" }}
         />
@@ -1540,7 +1540,7 @@ function LectureBubble({
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
           className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
-          style={{ background: "var(--color-brand-500)" }}
+          style={{ background: "var(--color-brand-600)" }}
         >
           {item.text}
         </p>
@@ -1554,7 +1554,7 @@ function LectureBubble({
         className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm leading-relaxed"
         style={{
           background: hint
-            ? "color-mix(in srgb, var(--color-flame-500) 10%, transparent)"
+            ? "color-mix(in srgb, var(--color-flame) 10%, transparent)"
             : "var(--surface-2)",
         }}
       >
@@ -1619,7 +1619,7 @@ function Bubble({
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
           className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
-          style={{ background: "var(--color-brand-500)" }}
+          style={{ background: "var(--color-brand-600)" }}
         >
           {turn.content}
         </p>
@@ -1656,8 +1656,8 @@ function Bubble({
           key={i}
           className="flex max-w-[85%] items-start gap-1.5 rounded-xl px-3 py-1.5 text-xs"
           style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-            color: "var(--color-flame-500)",
+            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            color: "var(--color-flame)",
           }}
         >
           <XIcon size={13} className="mt-0.5 shrink-0" />
@@ -1675,8 +1675,8 @@ function AsrNote({ visible }: { visible: boolean }) {
     <div
       className="flex items-start gap-2 rounded-xl px-3 py-2.5 text-xs"
       style={{
-        background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-        color: "var(--color-flame-500)",
+        background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+        color: "var(--color-flame)",
       }}
     >
       <AlertIcon size={14} className="mt-0.5 shrink-0" />

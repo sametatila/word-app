@@ -1075,8 +1075,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           <p
             className="mt-3 rounded-xl px-3 py-2.5 text-sm leading-relaxed"
             style={{
-              background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
-              color: "var(--color-flame-500)",
+              background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
+              color: "var(--color-flame)",
             }}
           >
             Bu kurulumda ekran kapalıyken ses yakalanamıyor: tur sürer ama cevapların
@@ -1088,8 +1088,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           <p
             className="mt-3 rounded-xl px-3 py-2.5 text-sm"
             style={{
-              background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
-              color: "var(--color-flame-500)",
+              background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
+              color: "var(--color-flame)",
             }}
           >
             Ses gelmediği ya da uygulamadan çıkıldığı için durduruldu. Cevapların kaydedildi.
@@ -1114,7 +1114,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <h2 className="text-2xl font-bold">Yürüyüş bitti</h2>
-        <p className="mt-2 text-sm" style={{ color: "var(--color-mint-500)" }}>
+        <p className="mt-2 text-sm" style={{ color: "var(--color-mint)" }}>
           {tally.correct}/{tally.total} doğru
           {walkRef.current.sessions > 1 ? ` · ${walkRef.current.sessions} tur` : ""}
         </p>
@@ -1140,9 +1140,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             style={{
               background:
                 capture === "stt"
-                  ? "color-mix(in srgb, var(--color-mint-500) 16%, transparent)"
-                  : "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
-              color: capture === "stt" ? "var(--color-mint-500)" : "var(--color-flame-500)",
+                  ? "color-mix(in srgb, var(--color-mint) 16%, transparent)"
+                  : "color-mix(in srgb, var(--color-flame) 14%, transparent)",
+              color: capture === "stt" ? "var(--color-mint)" : "var(--color-flame)",
             }}
           >
             {capture === "stt" ? "cepte" : "ekran açık"}
@@ -1165,7 +1165,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               animate={phase === "listening" ? { scale: [1, 1.15, 1] } : {}}
               transition={{ repeat: Infinity, duration: 1.4 }}
               className="flex h-16 w-16 items-center justify-center rounded-full"
-              style={{ background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)", color: "var(--color-mint-500)" }}
+              style={{ background: "color-mix(in srgb, var(--color-mint) 16%, transparent)", color: "var(--color-mint)" }}
             >
               <MicIcon size={28} />
             </motion.span>
@@ -1181,8 +1181,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               transition={{ repeat: Infinity, duration: 1.4 }}
               className="flex h-16 w-16 items-center justify-center rounded-full"
               style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 16%, transparent)",
-                color: "var(--color-brand-500)",
+                background: "color-mix(in srgb, var(--color-brand) 16%, transparent)",
+                color: "var(--color-brand)",
               }}
             >
               <MicIcon size={28} />
@@ -1197,9 +1197,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               style={{
                 background:
                   verdict === "correct"
-                    ? "color-mix(in srgb, var(--color-mint-500) 18%, transparent)"
-                    : "color-mix(in srgb, var(--color-flame-500) 18%, transparent)",
-                color: verdict === "correct" ? "var(--color-mint-500)" : "var(--color-flame-500)",
+                    ? "color-mix(in srgb, var(--color-mint) 18%, transparent)"
+                    : "color-mix(in srgb, var(--color-flame) 18%, transparent)",
+                color: verdict === "correct" ? "var(--color-mint)" : "var(--color-flame)",
               }}
             >
               {verdict === "correct" ? <CheckIcon size={28} /> : <XIcon size={28} />}

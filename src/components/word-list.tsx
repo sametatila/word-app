@@ -27,9 +27,9 @@ export type WordRow = {
 };
 
 const ARTIKEL_TONE: Record<string, string> = {
-  der: "var(--color-sky-400)",
-  die: "var(--color-rose-400)",
-  das: "var(--color-mint-400)",
+  der: "var(--color-sky)",
+  die: "var(--color-rose)",
+  das: "var(--color-mint)",
 };
 
 const LEVELS = [
@@ -49,11 +49,11 @@ const STATUSES = [
 ];
 
 function statusOf(r: WordRow): { label: string; tone: string } {
-  if (r.leech) return { label: "zorlanıyorsun", tone: "var(--color-rose-500)" };
+  if (r.leech) return { label: "zorlanıyorsun", tone: "var(--color-rose)" };
   if (r.intervalDays == null) return { label: "yeni", tone: "var(--text-muted)" };
-  if (r.intervalDays >= 21) return { label: "pekişmiş", tone: "var(--color-mint-500)" };
-  if (r.intervalDays >= 3) return { label: "tanıdık", tone: "var(--color-sky-400)" };
-  return { label: "öğreniliyor", tone: "var(--color-flame-500)" };
+  if (r.intervalDays >= 21) return { label: "pekişmiş", tone: "var(--color-mint)" };
+  if (r.intervalDays >= 3) return { label: "tanıdık", tone: "var(--color-sky)" };
+  return { label: "öğreniliyor", tone: "var(--color-flame)" };
 }
 
 function dueLabel(dueAt: string | null): string | null {
@@ -125,7 +125,7 @@ export function WordList({
           value={term}
           onChange={(e) => setTerm(e.target.value)}
           placeholder="Almanca, Türkçe veya İngilizce ara…"
-          className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand-400)]"
+          className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
         />
         <div className="flex flex-wrap items-center gap-2">
           {LEVELS.map((l) => (

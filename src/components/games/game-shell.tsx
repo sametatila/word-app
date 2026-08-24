@@ -92,7 +92,7 @@ export function GameShell({
       <div aria-hidden className="grow md:hidden" />
 
       <div className="text-center">
-        <span className="brand-gradient inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+        <span className="brand-gradient inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">
           {label}
         </span>
         {prompt ? <div className="mt-2.5 text-lg font-medium sm:text-xl">{prompt}</div> : null}

@@ -31,16 +31,25 @@ import {
  * Rozetin görsel dili.
  *
  * Kademe rengi metalden geliyor (bronz · gümüş · altın) ve en üst kademe
- * "efsane" bir metal değil, markanın gradyanı: sayıca az olan şey renkçe de
- * ayrışmalı. Kilitli rozet silinmiyor, SÖNÜYOR — ne olduğu görünür kalıyor
- * çünkü görünmeyen hedef, hedef değildir.
+ * "efsane" bir metal değil: sayıca az olan şey renkçe de ayrışmalı. Kilitli
+ * rozet silinmiyor, SÖNÜYOR — ne olduğu görünür kalıyor çünkü görünmeyen
+ * hedef, hedef değildir.
+ *
+ * Efsane eskiden markanın rengiydi ve marka indigoyken üç metalden kendiliğinden
+ * ayrılıyordu. Marka maskotun kehribarına taşınınca bu bozuldu: koyu temada
+ * efsane ile ALTIN arasında ΔE 8.8 kalıyordu, yani iki kademe aynı görünüyordu.
+ * Kural aynı kaldı, rengi değişti — efsane artık paletin metallere en uzak
+ * hue'su olan erikte (altınla ΔE 63.4).
+ *
+ * Gümüş de değişti: #93a3b8 mavi-gri idi ve sıcak paletin içinde tek başına
+ * soğuk duruyordu; aynı açıklıkta sıcak bir griye alındı.
  */
 
 export const TIER_COLOR: Record<string, string> = {
-  bronze: "#c47a3d",
-  silver: "#93a3b8",
-  gold: "#e0a63a",
-  legend: "var(--color-brand-500)",
+  bronze: "#a9683c",
+  silver: "#a8a29a",
+  gold: "#d4a017",
+  legend: "var(--color-violet)",
 };
 
 export const TIER_LABEL: Record<string, string> = {
@@ -99,7 +108,7 @@ export function AchievementBadge({
   selected?: boolean;
 }) {
   const Icon = ICONS[row.icon] ?? StarIcon;
-  const color = TIER_COLOR[row.tier] ?? "var(--color-brand-500)";
+  const color = TIER_COLOR[row.tier] ?? "var(--color-brand)";
   const pct = row.target > 0 ? Math.min(100, Math.round((row.done / row.target) * 100)) : 0;
 
   return (

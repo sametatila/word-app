@@ -10,7 +10,7 @@ import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
-import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, LogoMark, ChatIcon } from "./icons";
+import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, ChatIcon } from "./icons";
 
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon },
@@ -117,9 +117,12 @@ export function AppShell({
         style={{ borderColor: "var(--border)" }}
       >
         <Link href="/learn" className="mb-8 flex items-center gap-2">
-          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
-            <LogoMark size={20} />
-          </span>
+          {/*
+            Marka = maskotun kafası, uygulama simgesiyle BİREBİR aynı görsel.
+            Önce gradyan bir kutuda geometrik bir "W" vardı; kullanıcı ana
+            ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
+          */}
+          <img src="/logo-mark.png" alt="" width={36} height={36} className="rounded-xl" />
           <span className="text-lg font-bold">Wortspiel</span>
         </Link>
 
@@ -131,7 +134,7 @@ export function AppShell({
                 key={item.href}
                 href={item.href}
                 className={`relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
-                  active ? "text-white" : "muted hover:text-[color:var(--text)]"
+                  active ? "text-[color:#2f1911]" : "muted hover:text-[color:var(--text)]"
                 }`}
               >
                 {active && (
@@ -161,9 +164,7 @@ export function AppShell({
           style={{ borderColor: "var(--border)", background: "color-mix(in srgb, var(--bg) 85%, transparent)" }}
         >
           <Link href="/learn" className="flex items-center gap-2">
-            <span className="brand-gradient flex h-8 w-8 items-center justify-center rounded-lg text-white">
-              <LogoMark size={18} />
-            </span>
+            <img src="/logo-mark.png" alt="" width={32} height={32} className="rounded-lg" />
             <span className="font-bold">Wortspiel</span>
           </Link>
           <div className="flex items-center gap-2">
@@ -219,7 +220,7 @@ export function AppShell({
                 key={item.href}
                 href={item.href}
                 className="relative flex flex-1 flex-col items-center gap-0.5 pt-2.5 text-xs font-semibold"
-                style={{ color: active ? "var(--color-brand-500)" : "var(--text-muted)" }}
+                style={{ color: active ? "var(--color-brand)" : "var(--text-muted)" }}
               >
                 <item.Icon size={20} />
                 {item.label}
@@ -243,13 +244,13 @@ function StatPills({ streak, xp }: { streak: number; xp: number }) {
     <div className="flex items-center gap-2 text-sm font-bold">
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
-        style={{ background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)", color: "var(--color-flame-500)" }}
+        style={{ background: "color-mix(in srgb, var(--color-flame) 16%, transparent)", color: "var(--color-flame)" }}
       >
         <FlameIcon size={15} /> {streak}
       </span>
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
-        style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand-500)" }}
+        style={{ background: "color-mix(in srgb, var(--color-brand) 14%, transparent)", color: "var(--color-brand)" }}
       >
         <SparkIcon size={15} /> {xp}
       </span>

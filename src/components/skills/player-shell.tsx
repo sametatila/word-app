@@ -105,7 +105,7 @@ export function PlayerShell({
           <div className="flex items-center gap-2">
             <span
               className="rounded-md px-1.5 py-0.5 text-[11px] font-black text-white"
-              style={{ background: LEVEL_TONE[exercise.level] ?? "var(--color-brand-500)" }}
+              style={{ background: LEVEL_TONE[exercise.level] ?? "var(--color-brand)" }}
             >
               {exercise.level}
             </span>
@@ -165,10 +165,10 @@ export function ResultCard({
       {state.phase === "saved" ? (
         <>
           <p className="mt-2 flex items-center justify-center gap-3 text-sm font-bold">
-            <span className="flex items-center gap-1" style={{ color: "var(--color-brand-500)" }}>
+            <span className="flex items-center gap-1" style={{ color: "var(--color-brand)" }}>
               <SparkIcon size={16} /> +{state.xpGained} XP
             </span>
-            <span className="flex items-center gap-1" style={{ color: "var(--color-flame-500)" }}>
+            <span className="flex items-center gap-1" style={{ color: "var(--color-flame)" }}>
               <FlameIcon size={16} /> {state.currentStreak} gün
             </span>
           </p>

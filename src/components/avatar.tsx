@@ -32,22 +32,29 @@ function hash(seed: string): number {
 }
 
 /**
- * Arma paleti — her biri beyaz metinle okunur, hepsi uygulamanın tonuyla
- * uyumlu. Çiftler gradyanın iki ucu.
+ * Arma paleti — çiftler gradyanın iki ucu.
+ *
+ * Ham hex, CSS değişkeni değil: arma bir KİMLİK. Aynı kişi açık ve koyu temada
+ * aynı renkte görünmeli, yoksa listede tanıdığın kişiyi renginden bulamazsın.
+ *
+ * İki kısıt var. Her uç beyaz metinle okunmalı — hepsi rampanın 600 ve daha
+ * koyu basamaklarından, en düşüğü 5.0 kontrast. Ve on iki çift birbirinden
+ * ayrılmalı: altı ailenin her biri önce kendi içinde koyulaşan bir çift veriyor,
+ * sonra farklı ailelerden altı çapraz çift.
  */
 const PALETTE: [string, string][] = [
-  ["#6366f1", "#a855f7"], // indigo → mor
-  ["#0ea5e9", "#22d3ee"], // gök → turkuaz
-  ["#f97316", "#f59e0b"], // turuncu → kehribar
-  ["#10b981", "#84cc16"], // zümrüt → fıstık
-  ["#ec4899", "#f43f5e"], // pembe → gül
-  ["#8b5cf6", "#6366f1"], // menekşe → indigo
-  ["#14b8a6", "#0ea5e9"], // deniz → gök
-  ["#ef4444", "#f97316"], // kırmızı → turuncu
-  ["#a855f7", "#ec4899"], // mor → pembe
-  ["#22c55e", "#14b8a6"], // yeşil → deniz
-  ["#eab308", "#f97316"], // sarı → turuncu
-  ["#3b82f6", "#8b5cf6"], // mavi → menekşe
+  ["#a65c15", "#653916"], // kehribar → kestane
+  ["#16748a", "#115a6b"], // turkuaz → derin turkuaz
+  ["#237a4c", "#1a5c39"], // yosun → koyu yosun
+  ["#b62e43", "#8e2335"], // kiremit → koyu kiremit
+  ["#77439d", "#5d347a"], // erik → koyu erik
+  ["#86690e", "#6a530b"], // hardal → koyu hardal
+  ["#a65c15", "#8e2335"], // kehribar → kiremit
+  ["#16748a", "#5d347a"], // turkuaz → erik
+  ["#237a4c", "#115a6b"], // yosun → turkuaz
+  ["#b62e43", "#5d347a"], // kiremit → erik
+  ["#86690e", "#854a15"], // hardal → kestane
+  ["#77439d", "#1a5c39"], // erik → yosun
 ];
 
 /**

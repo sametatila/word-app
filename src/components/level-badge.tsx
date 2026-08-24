@@ -2,12 +2,20 @@
 
 import { motion } from "framer-motion";
 
+/*
+ * Rozet DOLU bir zemin ve üstünde beyaz yazı taşıyor, o yüzden tonlar temaya
+ * duyarlı DEĞİL: rozet kendi zeminini getiriyor, önemli olan yalnızca beyazla
+ * kontrastı. Beşi de 5.0 ve üstünde.
+ *
+ * C1 eskiden hardaldı; B2'nin kehribarıyla ΔE 14.9 veriyordu ve rozette rengi
+ * açıklayan bir etiket yok — iki seviye birbirine karışıyordu. Kiremitle 26.1.
+ */
 const TONE: Record<string, string> = {
-  A1: "var(--color-mint-500)",
-  A2: "var(--color-sky-400)",
-  B1: "var(--color-violet-400)",
-  B2: "var(--color-brand-500)",
-  C1: "var(--color-flame-500)",
+  A1: "var(--color-mint-600)",
+  A2: "var(--color-sky-600)",
+  B1: "var(--color-violet-600)",
+  B2: "var(--color-brand-600)",
+  C1: "var(--color-rose-600)",
 };
 
 /**
@@ -29,7 +37,7 @@ export function LevelBadge({
   total: number;
   compact?: boolean;
 }) {
-  const tone = TONE[level] ?? "var(--color-brand-500)";
+  const tone = TONE[level] ?? "var(--color-brand)";
   const pct = total > 0 ? Math.min(100, (mastered / total) * 100) : 0;
 
   return (

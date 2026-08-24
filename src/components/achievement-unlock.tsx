@@ -187,7 +187,7 @@ export function AchievementUnlock() {
           <Card tier="legend">
             <p
               className="text-[11px] font-black uppercase tracking-[0.18em]"
-              style={{ color: "var(--color-brand-500)" }}
+              style={{ color: "var(--color-brand)" }}
             >
               {view.items.length} rozet açıldı
             </p>
@@ -240,7 +240,7 @@ function Card({ tier, children }: { tier: string; children: React.ReactNode }) {
       exit={{ scale: 0.9, y: -10, opacity: 0 }}
       transition={{ type: "spring", stiffness: 320, damping: 20 }}
       className="card w-full max-w-xs p-6 text-center"
-      style={{ boxShadow: `0 24px 60px -20px ${TIER_COLOR[tier] ?? "var(--color-brand-500)"}` }}
+      style={{ boxShadow: `0 24px 60px -20px ${TIER_COLOR[tier] ?? "var(--color-brand)"}` }}
     >
       {children}
     </motion.div>

@@ -17,11 +17,11 @@ type DayRow = { day: string; reviews: number; correct: number; xp: number };
 type GameRow = { game: string; total: number; correct: number; avgMs: number };
 
 const LEVEL_COLOR: Record<string, string> = {
-  A1: "var(--color-mint-500)",
-  A2: "var(--color-sky-400)",
-  B1: "var(--color-violet-400)",
-  B2: "var(--color-brand-500)",
-  C1: "var(--color-flame-500)",
+  A1: "var(--color-mint)",
+  A2: "var(--color-sky)",
+  B1: "var(--color-violet)",
+  B2: "var(--color-brand)",
+  C1: "var(--color-rose)",
 };
 
 export function ProgressView({
@@ -56,10 +56,10 @@ export function ProgressView({
     // Başlığı üstteki profil sayfası verir; burada yalnızca istatistikler var.
     <div className="space-y-6">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame-500)" Icon={FlameIcon} />
-        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand-500)" Icon={TrophyIcon} />
-        <KpiCard label="Çalışma süresi" value={formatDuration(seconds)} tone="var(--color-violet-400)" Icon={SparkIcon} />
-        <KpiCard label="Öğrenilen" value={`${totalMastered}`} tone="var(--color-mint-500)" Icon={BookIcon} />
+        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame)" Icon={FlameIcon} />
+        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand)" Icon={TrophyIcon} />
+        <KpiCard label="Çalışma süresi" value={formatDuration(seconds)} tone="var(--color-violet)" Icon={SparkIcon} />
+        <KpiCard label="Öğrenilen" value={`${totalMastered}`} tone="var(--color-mint)" Icon={BookIcon} />
       </div>
 
       {/* CEFR seviyeleri */}
@@ -80,14 +80,14 @@ export function ProgressView({
                 <div className="relative h-3 w-full overflow-hidden rounded-full surface-2">
                   <motion.div
                     className="absolute inset-y-0 left-0 rounded-full opacity-40"
-                    style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand-500)" }}
+                    style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
                     initial={{ width: 0 }}
                     animate={{ width: `${pct}%` }}
                     transition={{ delay: i * 0.08, type: "spring", stiffness: 140, damping: 24 }}
                   />
                   <motion.div
                     className="absolute inset-y-0 left-0 rounded-full"
-                    style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand-500)" }}
+                    style={{ background: LEVEL_COLOR[l.niveau] ?? "var(--color-brand)" }}
                     initial={{ width: 0 }}
                     animate={{ width: `${masteredPct}%` }}
                     transition={{ delay: i * 0.08 + 0.1, type: "spring", stiffness: 140, damping: 24 }}
@@ -127,12 +127,12 @@ export function ProgressView({
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
             <div className="text-sm">
               <p>
-                <strong className="text-[color:var(--color-flame-500)]">{dueNow}</strong> kelime şu an
+                <strong className="text-[color:var(--color-flame)]">{dueNow}</strong> kelime şu an
                 hazır
               </p>
               <p className="muted mt-1">{upcoming} kelime ileri tarihe planlandı</p>
               {leeches > 0 ? (
-                <p className="mt-1 text-[color:var(--color-rose-500)]">
+                <p className="mt-1 text-[color:var(--color-rose)]">
                   {leeches} kelimede zorlanıyorsun — sık sık geri gelecekler
                 </p>
               ) : null}
@@ -256,10 +256,10 @@ function Heatmap({ byDay, today }: { byDay: Map<string, DayRow>; today: string }
 
 function heatColor(count: number) {
   if (count <= 0) return "var(--surface-2)";
-  if (count < 8) return "color-mix(in srgb, var(--color-brand-500) 28%, var(--surface-2))";
-  if (count < 16) return "color-mix(in srgb, var(--color-brand-500) 50%, var(--surface-2))";
-  if (count < 32) return "color-mix(in srgb, var(--color-brand-500) 72%, var(--surface-2))";
-  return "var(--color-brand-500)";
+  if (count < 8) return "color-mix(in srgb, var(--color-brand) 28%, var(--surface-2))";
+  if (count < 16) return "color-mix(in srgb, var(--color-brand) 50%, var(--surface-2))";
+  if (count < 32) return "color-mix(in srgb, var(--color-brand) 72%, var(--surface-2))";
+  return "var(--color-brand)";
 }
 
 function Donut({ value, total }: { value: number; total: number }) {
@@ -268,7 +268,7 @@ function Donut({ value, total }: { value: number; total: number }) {
     <div
       className="relative h-20 w-20 shrink-0 rounded-full"
       style={{
-        background: `conic-gradient(var(--color-flame-500) ${pct}%, var(--surface-2) ${pct}% 100%)`,
+        background: `conic-gradient(var(--color-flame) ${pct}%, var(--surface-2) ${pct}% 100%)`,
       }}
     >
       <div

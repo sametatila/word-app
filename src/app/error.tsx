@@ -20,8 +20,8 @@ export default function ErrorPage({
       <span
         className="flex h-12 w-12 items-center justify-center rounded-2xl"
         style={{
-          background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
-          color: "var(--color-rose-500)",
+          background: "color-mix(in srgb, var(--color-rose) 14%, transparent)",
+          color: "var(--color-rose)",
         }}
       >
         <AlertIcon size={24} />

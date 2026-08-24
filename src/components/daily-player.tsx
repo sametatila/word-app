@@ -177,7 +177,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   if (status === "ready" && data) {
     return (
       <Card>
-        <div className="brand-gradient px-6 py-6 text-center text-white">
+        <div className="brand-gradient-deep px-6 py-6 text-center text-white">
           <p className="text-sm opacity-90">Bugünün turu · {data.level}</p>
           <h2 className="mt-1 text-2xl font-bold">Herkes aynı kelimeler</h2>
           <p className="mx-auto mt-2 max-w-xs text-sm opacity-90">
@@ -221,14 +221,14 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
                   animate={{ scale: 1 }}
                   className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
                   style={{
-                    background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
-                    color: "var(--color-flame-500)",
+                    background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
+                    color: "var(--color-flame)",
                   }}
                 >
                   <FlameIcon size={12} /> {combo}
                 </motion.span>
               ) : null}
-              <span className="font-black" style={{ color: "var(--color-brand-500)" }}>
+              <span className="font-black" style={{ color: "var(--color-brand)" }}>
                 {score.toLocaleString("tr-TR")}
               </span>
             </span>
@@ -270,7 +270,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     <div className="relative mx-auto w-full max-w-md">
       <Confetti fire={1} />
       <div className="card overflow-hidden">
-        <div className="brand-gradient p-8 text-center text-white">
+        <div className="brand-gradient-deep p-8 text-center text-white">
           {/* Günün turu da bir kapanış anı: kelime turu, oyun içindeki sonuç
               şeridi, beceri egzersizi ve ders aynı karakterle kapanıyor.
               Kupa simgesi bunun dışında kalan tek yerdi. */}
@@ -327,7 +327,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
             style={{
               borderColor: "var(--border)",
               background: r.isMe
-                ? "color-mix(in srgb, var(--color-brand-500) 8%, transparent)"
+                ? "color-mix(in srgb, var(--color-brand) 8%, transparent)"
                 : undefined,
             }}
           >
@@ -341,7 +341,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
             </span>
             <span
               className="w-16 shrink-0 text-right font-bold tabular-nums"
-              style={{ color: "var(--color-brand-500)" }}
+              style={{ color: "var(--color-brand)" }}
             >
               {r.score.toLocaleString("tr-TR")}
             </span>

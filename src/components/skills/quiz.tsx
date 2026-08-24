@@ -62,9 +62,9 @@ export function QuestionList({
                   >
                     <span>{opt}</span>
                     {done && oi === q.answer ? (
-                      <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint-500)]" />
+                      <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
                     ) : done && picks[qi] === oi ? (
-                      <XIcon size={16} className="shrink-0 text-[color:var(--color-rose-500)]" />
+                      <XIcon size={16} className="shrink-0 text-[color:var(--color-rose)]" />
                     ) : null}
                   </button>
                 );
@@ -77,8 +77,8 @@ export function QuestionList({
                 className="mt-3 rounded-xl px-3 py-2 text-xs leading-relaxed"
                 style={{
                   background: wasCorrect
-                    ? "color-mix(in srgb, var(--color-mint-500) 10%, transparent)"
-                    : "color-mix(in srgb, var(--color-rose-500) 9%, transparent)",
+                    ? "color-mix(in srgb, var(--color-mint) 10%, transparent)"
+                    : "color-mix(in srgb, var(--color-rose) 9%, transparent)",
                   color: "var(--text)",
                 }}
               >
@@ -104,7 +104,7 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
         className="flex w-full items-center justify-between text-left"
       >
         <span className="flex items-center gap-2 text-sm font-bold">
-          <InfoIcon size={16} className="text-[color:var(--color-brand-500)]" />
+          <InfoIcon size={16} className="text-[color:var(--color-brand)]" />
           Sözlükçe
           <span className="muted font-semibold">({gloss.length} kelime)</span>
         </span>

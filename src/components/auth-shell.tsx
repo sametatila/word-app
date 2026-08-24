@@ -20,9 +20,7 @@ export function AuthShell({
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col justify-center px-5 py-10">
       <Link href="/" className="mb-8 flex items-center justify-center gap-2">
-        <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl text-white">
-          <LogoMark size={22} />
-        </span>
+        <LogoMark size={40} />
         <span className="text-lg font-bold">Wortspiel</span>
       </Link>
 
@@ -38,7 +36,7 @@ export function AuthShell({
 }
 
 export function AuthNotice({ tone, children }: { tone: "error" | "success"; children: ReactNode }) {
-  const color = tone === "error" ? "var(--color-rose-500)" : "var(--color-mint-500)";
+  const color = tone === "error" ? "var(--color-rose)" : "var(--color-mint)";
   return (
     <p
       className="rounded-xl px-3 py-2 text-sm"
@@ -50,4 +48,4 @@ export function AuthNotice({ tone, children }: { tone: "error" | "success"; chil
 }
 
 export const authInputClass =
-  "option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand-400)]";
+  "option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]";

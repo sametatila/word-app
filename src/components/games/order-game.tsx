@@ -114,9 +114,9 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
 
   const slotTone =
     status === "correct"
-      ? "var(--color-mint-500)"
+      ? "var(--color-mint)"
       : status === "wrong"
-        ? "var(--color-rose-500)"
+        ? "var(--color-rose)"
         : "var(--border)";
 
   return (

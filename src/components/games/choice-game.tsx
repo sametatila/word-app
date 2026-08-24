@@ -126,9 +126,9 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               <MeaningText tr={opt.text} en={opt.sub} />
               {/* Seçim sonucu simgeyle de anlatılır: renk körlüğünde de okunur. */}
               {picked != null && isAnswer ? (
-                <CheckIcon size={18} className="shrink-0 text-[color:var(--color-mint-500)]" />
+                <CheckIcon size={18} className="shrink-0 text-[color:var(--color-mint)]" />
               ) : picked === opt.text ? (
-                <XIcon size={18} className="shrink-0 text-[color:var(--color-rose-500)]" />
+                <XIcon size={18} className="shrink-0 text-[color:var(--color-rose)]" />
               ) : null}
             </motion.button>
           );

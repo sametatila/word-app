@@ -199,7 +199,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
             onClick={() => (playing ? stop() : play())}
             disabled={available === false && !hasAudio}
             aria-label={playing ? "Durdur" : "Dinle"}
-            className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-40"
+            className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full shadow-lg disabled:opacity-40"
           >
             {playing ? <XIcon size={26} /> : <SpeakerIcon size={28} />}
           </motion.button>
@@ -223,7 +223,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
                   className="h-1.5 flex-1 rounded-full transition-colors"
                   style={{
                     background:
-                      playing && i <= segIdx ? "var(--color-brand-500)" : "var(--surface-2)",
+                      playing && i <= segIdx ? "var(--color-brand)" : "var(--surface-2)",
                   }}
                 />
               ))}
@@ -255,8 +255,8 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
           <p
             className="mt-3 rounded-xl px-3 py-2 text-xs"
             style={{
-              background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-              color: "var(--color-flame-500)",
+              background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+              color: "var(--color-flame)",
             }}
           >
             Bu tarayıcıda konuşma sentezi yok; egzersizi metni okuyarak çözebilirsin.
@@ -281,7 +281,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
                 } ${available ? "cursor-pointer hover:bg-[color:var(--surface-2)]" : ""}`}
               >
                 {seg.speaker ? (
-                  <strong className="mr-1.5 text-[color:var(--color-brand-500)]">
+                  <strong className="mr-1.5 text-[color:var(--color-brand)]">
                     {seg.speaker}:
                   </strong>
                 ) : null}

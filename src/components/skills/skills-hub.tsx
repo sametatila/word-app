@@ -119,10 +119,10 @@ export function SkillsHub({
         <section
           className="rounded-2xl px-4 py-3.5"
           style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
+            background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
           }}
         >
-          <p className="text-sm font-bold" style={{ color: "var(--color-flame-500)" }}>
+          <p className="text-sm font-bold" style={{ color: "var(--color-flame)" }}>
             Telaffuzda zorlandıkların
           </p>
           <ul className="mt-2 space-y-1.5">
@@ -153,7 +153,7 @@ export function SkillsHub({
               <span
                 title="Çalışma seviyen"
                 className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full"
-                style={{ background: "var(--color-flame-500)" }}
+                style={{ background: "var(--color-flame)" }}
               />
             ) : null}
           </button>
@@ -253,8 +253,8 @@ export function SkillsHub({
                       <span
                         className="flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold"
                         style={{
-                          background: "color-mix(in srgb, var(--color-mint-500) 15%, transparent)",
-                          color: "var(--color-mint-500)",
+                          background: "color-mix(in srgb, var(--color-mint) 15%, transparent)",
+                          color: "var(--color-mint)",
                         }}
                       >
                         <CheckIcon size={13} />

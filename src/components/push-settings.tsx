@@ -104,7 +104,7 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
             {state === "busy" ? "Bekle…" : state === "on" ? "Hatırlatmaları kapat" : "Hatırlatmaları aç"}
           </button>
           {state === "on" ? (
-            <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-mint-500)" }}>
+            <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-mint)" }}>
               Bu cihazda açık.
             </p>
           ) : null}
@@ -112,7 +112,7 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
       )}
 
       {error ? (
-        <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-flame-500)" }}>
+        <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
           {error}
         </p>
       ) : null}

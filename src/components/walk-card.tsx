@@ -28,8 +28,8 @@ export function WalkCard({ onPlay, bare = false }: { onPlay: () => void; bare?: 
         <span
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
           style={{
-            background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)",
-            color: "var(--color-mint-500)",
+            background: "color-mix(in srgb, var(--color-mint) 16%, transparent)",
+            color: "var(--color-mint)",
           }}
         >
           <HeadphonesIcon size={22} />

@@ -24,12 +24,20 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 90px",
-          background: "linear-gradient(135deg, #0e1020 0%, #1a1638 55%, #2a1f52 100%)",
-          color: "#ffffff",
+          background: "linear-gradient(135deg, #2c2521 0%, #1e1916 55%, #14100e 100%)",
+          color: "#f4eee4",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Marka satırı */}
+        {/*
+          Marka satırı.
+
+          Maskot burada raster olarak YOK: `next/og` sunucuda çalışıyor ve
+          `public/` altındaki bir dosyayı okumak dağıtım ortamına göre sessizce
+          boş dönebiliyor — bozuk bir önizleme, önizlemesiz bağlantıdan daha
+          kötü. Kart bu yüzden tipografik, ama rengi maskotun: kestane zemin
+          üstünde kehribar.
+        */}
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <div
             style={{
@@ -39,7 +47,8 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "linear-gradient(135deg, #6366f1, #a855f7)",
+              background: "linear-gradient(135deg, #eda45d, #c87318)",
+              color: "#2f1911",
               fontSize: 38,
               fontWeight: 800,
             }}
@@ -62,7 +71,7 @@ export default function Image() {
           Almanca kelimeleri oynayarak öğren
         </div>
 
-        <div style={{ display: "flex", fontSize: 34, color: "#b6b9d8", marginTop: 30 }}>
+        <div style={{ display: "flex", fontSize: 34, color: "#a79684", marginTop: 30 }}>
           A1–C1 · 10 oyun · tekrarı kendi planlayan sistem
         </div>
 

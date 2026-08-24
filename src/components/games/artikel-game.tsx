@@ -14,7 +14,7 @@ type ArtikelRound = Extract<Round, { game: "artikel" }>;
 /** Kurs setleri: Hochdeutsch der/die/das, Züritüütsch de/d/s. Cevaptan türetilir. */
 const HD_OPTIONS = ["der", "die", "das"];
 const GSW_OPTIONS = ["de", "d", "s"];
-const OPTION_COLORS = ["var(--color-sky-400)", "var(--color-rose-400)", "var(--color-mint-400)"];
+const OPTION_COLORS = ["var(--color-sky)", "var(--color-rose)", "var(--color-mint)"];
 
 export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
   const { word } = round;

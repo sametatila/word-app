@@ -98,9 +98,9 @@ export function DailyCard({ onPlay, bare = false }: { onPlay: () => void; bare?:
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
           style={{
             background: done
-              ? "color-mix(in srgb, var(--color-mint-500) 16%, transparent)"
-              : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
-            color: done ? "var(--color-mint-500)" : "var(--color-brand-500)",
+              ? "color-mix(in srgb, var(--color-mint) 16%, transparent)"
+              : "color-mix(in srgb, var(--color-brand) 14%, transparent)",
+            color: done ? "var(--color-mint)" : "var(--color-brand)",
           }}
         >
           {done ? <CheckIcon size={22} /> : <TrophyIcon size={22} />}

@@ -114,8 +114,8 @@ export function QuestCard() {
           <span
             className="rounded-full px-2 py-0.5 text-[11px] font-bold"
             style={{
-              background: "color-mix(in srgb, var(--color-mint-500) 18%, transparent)",
-              color: "var(--color-mint-500)",
+              background: "color-mix(in srgb, var(--color-mint) 18%, transparent)",
+              color: "var(--color-mint)",
             }}
           >
             {claimable} ödül hazır
@@ -139,9 +139,9 @@ export function QuestCard() {
                 className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-bold"
                 style={{
                   background: done
-                    ? "color-mix(in srgb, var(--color-mint-500) 18%, transparent)"
+                    ? "color-mix(in srgb, var(--color-mint) 18%, transparent)"
                     : "var(--surface-2)",
-                  color: done ? "var(--color-mint-500)" : "var(--text-muted)",
+                  color: done ? "var(--color-mint)" : "var(--text-muted)",
                 }}
               >
                 {done ? <CheckIcon size={15} /> : `${q.done}`}
@@ -160,7 +160,7 @@ export function QuestCard() {
                 <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full surface-2">
                   <motion.div
                     className="h-full rounded-full"
-                    style={{ background: done ? "var(--color-mint-500)" : "var(--color-brand-500)" }}
+                    style={{ background: done ? "var(--color-mint)" : "var(--color-brand)" }}
                     initial={{ width: 0 }}
                     animate={{ width: `${pct}%` }}
                   />
@@ -190,7 +190,7 @@ export function QuestCard() {
       {board.allDone ? (
         <div
           className="flex items-center gap-3 px-5 py-3.5"
-          style={{ background: "color-mix(in srgb, var(--color-mint-500) 10%, transparent)" }}
+          style={{ background: "color-mix(in srgb, var(--color-mint) 10%, transparent)" }}
         >
           <GiftIcon size={20} />
           <p className="min-w-0 flex-1 text-sm font-semibold">
@@ -215,7 +215,7 @@ export function QuestCard() {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           className="px-5 py-2 text-center text-sm font-bold"
-          style={{ color: "var(--color-mint-500)" }}
+          style={{ color: "var(--color-mint)" }}
         >
           +{flash} XP kazandın
         </motion.p>

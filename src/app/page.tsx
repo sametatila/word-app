@@ -76,14 +76,12 @@ export default function Home() {
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full opacity-25 blur-3xl"
-        style={{ background: "radial-gradient(circle, var(--color-brand-500), transparent 65%)" }}
+        style={{ background: "radial-gradient(circle, var(--color-brand), transparent 65%)" }}
       />
 
       <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <div className="flex items-center gap-2">
-          <span className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
-            <LogoMark size={20} />
-          </span>
+          <LogoMark size={36} />
           <span className="text-lg font-bold">Wortspiel</span>
         </div>
         <div className="flex items-center gap-2">
@@ -141,7 +139,7 @@ export default function Home() {
               <div className="card h-full p-6">
                 <div className="flex items-baseline gap-2">
                   <h3 className="text-lg font-bold">{c.name}</h3>
-                  <span className="text-xs font-semibold text-[color:var(--color-brand-500)]">
+                  <span className="text-xs font-semibold text-[color:var(--color-brand)]">
                     {c.sub}
                   </span>
                 </div>
@@ -174,7 +172,7 @@ export default function Home() {
             {GAMES.map((g, i) => (
               <Reveal key={g.name} delay={i * 0.06}>
                 <div className="card flex h-full items-start gap-4 p-5">
-                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[color:var(--color-brand-500)]">
+                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[color:var(--color-brand)]">
                     <g.Icon size={22} />
                   </span>
                   <div>
@@ -207,7 +205,7 @@ export default function Home() {
 
         <section className="mt-20">
           <Reveal>
-            <div className="card brand-gradient p-8 text-center text-white sm:p-12">
+            <div className="card brand-gradient-deep p-8 text-center text-white sm:p-12">
               <h2 className="text-2xl font-bold sm:text-3xl">Bugün 5 dakika ayır</h2>
               <p className="mx-auto mt-3 max-w-md text-sm opacity-90">
   Serini başlat, ilk kelimelerini öğren. Neyi ne zaman tekrar edeceğini uygulama takip ediyor.

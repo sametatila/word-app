@@ -4,9 +4,9 @@ import type { LeaderboardWeek } from "@/lib/session";
 
 /** İlk üç için madalya rengi; sonrası nötr kalır ki tablo yorucu olmasın. */
 const MEDAL: Record<number, string> = {
-  1: "var(--color-flame-500)",
-  2: "var(--color-sky-400)",
-  3: "var(--color-mint-500)",
+  1: "var(--color-flame)",
+  2: "var(--color-sky)",
+  3: "var(--color-mint)",
 };
 
 /**
@@ -67,14 +67,14 @@ export function Leaderboard({ week }: { week: LeaderboardWeek }) {
       {me && gap > 0 ? (
         <p
           className="border-t px-5 py-2.5 text-center text-xs font-semibold"
-          style={{ borderColor: "var(--border)", color: "var(--color-brand-500)" }}
+          style={{ borderColor: "var(--border)", color: "var(--color-brand)" }}
         >
           Bir üsttekine {gap.toLocaleString("tr-TR")} XP — bir turluk mesafe.
         </p>
       ) : me && me.rank === 1 ? (
         <p
           className="border-t px-5 py-2.5 text-center text-xs font-semibold"
-          style={{ borderColor: "var(--border)", color: "var(--color-flame-500)" }}
+          style={{ borderColor: "var(--border)", color: "var(--color-flame)" }}
         >
           Zirvedesin. Pazartesi herkes sıfırdan başlıyor.
         </p>
@@ -91,7 +91,7 @@ function Row({ row }: { row: { rank: number; userId: string; name: string | null
       style={{
         borderColor: "var(--border)",
         background: row.isMe
-          ? "color-mix(in srgb, var(--color-brand-500) 8%, transparent)"
+          ? "color-mix(in srgb, var(--color-brand) 8%, transparent)"
           : undefined,
       }}
     >
@@ -110,8 +110,8 @@ function Row({ row }: { row: { rank: number; userId: string; name: string | null
           <span
             className="ml-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide"
             style={{
-              background: "color-mix(in srgb, var(--color-brand-500) 16%, transparent)",
-              color: "var(--color-brand-500)",
+              background: "color-mix(in srgb, var(--color-brand) 16%, transparent)",
+              color: "var(--color-brand)",
             }}
           >
             sen
@@ -122,7 +122,7 @@ function Row({ row }: { row: { rank: number; userId: string; name: string | null
       {row.streak > 0 ? (
         <span
           className="flex shrink-0 items-center gap-1 text-xs font-semibold tabular-nums"
-          style={{ color: "var(--color-flame-500)" }}
+          style={{ color: "var(--color-flame)" }}
           title={`${row.streak} günlük seri`}
         >
           <FlameIcon size={13} />
@@ -132,7 +132,7 @@ function Row({ row }: { row: { rank: number; userId: string; name: string | null
 
       <span
         className="w-16 shrink-0 text-right text-sm font-bold tabular-nums"
-        style={{ color: "var(--color-brand-500)" }}
+        style={{ color: "var(--color-brand)" }}
       >
         {row.xp.toLocaleString("tr-TR")}
       </span>

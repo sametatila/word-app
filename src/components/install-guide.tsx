@@ -110,11 +110,11 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
     return (
       <div
         className="flex items-center gap-3 rounded-2xl px-4 py-3.5"
-        style={{ background: "color-mix(in srgb, var(--color-mint-500) 12%, transparent)" }}
+        style={{ background: "color-mix(in srgb, var(--color-mint) 12%, transparent)" }}
       >
         <span
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white"
-          style={{ background: "var(--color-mint-500)" }}
+          style={{ background: "var(--color-mint-600)" }}
         >
           <CheckIcon size={16} />
         </span>
@@ -139,9 +139,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
       }
     >
       <div className="flex items-start gap-3">
-        <span className="brand-gradient flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white">
-          <LogoMark size={22} />
-        </span>
+        <LogoMark size={40} className="shrink-0" />
         <div className="min-w-0 flex-1">
           {/* Başlık yok: rehber her iki yerde de kendi başlığı olan bir bölümün
               içinde duruyor, buraya bir tane daha koymak onu tekrarlıyordu. */}
@@ -164,7 +162,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
       <div className="mt-4 space-y-4">
         {goster.map((p) => (
           <div key={p}>
-            <p className="text-xs font-bold" style={{ color: "var(--color-brand-500)" }}>
+            <p className="text-xs font-bold" style={{ color: "var(--color-brand)" }}>
               {STEPS[p].title}
             </p>
             <ol className="mt-1.5 space-y-1.5">

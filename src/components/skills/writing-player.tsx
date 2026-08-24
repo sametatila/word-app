@@ -37,7 +37,7 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
       <div className="mt-3 px-1">
         <div className="mb-1.5 flex justify-between text-xs font-semibold">
           <span className="muted">Görev {Math.min(step + 1, total)} / {total}</span>
-          <span className="text-[color:var(--color-brand-500)]">
+          <span className="text-[color:var(--color-brand)]">
             {correctCount} tamam
           </span>
         </div>
@@ -145,7 +145,7 @@ function BuildTask({
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand-500)]">
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
         Cümleyi kur
       </p>
       <p className="mt-1.5 font-semibold">{task.tr}</p>
@@ -194,7 +194,7 @@ function BuildTask({
       ) : null}
 
       {phase === "correct" ? (
-        <p className="mt-3 flex items-start gap-2 text-sm font-semibold text-[color:var(--color-mint-500)]">
+        <p className="mt-3 flex items-start gap-2 text-sm font-semibold text-[color:var(--color-mint)]">
           <CheckIcon size={17} className="mt-0.5 shrink-0" />
           <span lang="de">{task.answer}</span>
         </p>
@@ -311,7 +311,7 @@ function FreeTask({
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand-500)]">
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
         Serbest yazma
       </p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
@@ -320,7 +320,7 @@ function FreeTask({
         <blockquote
           lang="de"
           className="mt-3 rounded-xl border-l-4 px-3.5 py-2.5 text-sm leading-relaxed surface-2"
-          style={{ borderColor: "var(--color-brand-400)" }}
+          style={{ borderColor: "var(--color-brand)" }}
         >
           {task.stimulus.split("\n\n").map((p, i) => (
             <p key={i} className={`whitespace-pre-line ${i > 0 ? "mt-2" : ""}`}>
@@ -358,7 +358,7 @@ function FreeTask({
         rows={7}
         lang="de"
         placeholder="Hier schreiben…"
-        className="option mt-3 w-full px-3.5 py-3 text-[15px] leading-relaxed outline-none focus:border-[color:var(--color-brand-400)]"
+        className="option mt-3 w-full px-3.5 py-3 text-[15px] leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
       />
       <div className="mt-1.5 flex items-center justify-between">
         <div className="flex gap-1">
@@ -375,7 +375,7 @@ function FreeTask({
         </div>
         <span
           className="text-xs font-bold"
-          style={{ color: enough ? "var(--color-mint-500)" : "var(--text-muted)" }}
+          style={{ color: enough ? "var(--color-mint)" : "var(--text-muted)" }}
         >
           {words} / {task.minWords} kelime
         </span>
@@ -394,8 +394,8 @@ function FreeTask({
             <span
               className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border text-white"
               style={{
-                borderColor: checks[i] ? "var(--color-mint-500)" : "var(--border)",
-                background: checks[i] ? "var(--color-mint-500)" : "transparent",
+                borderColor: checks[i] ? "var(--color-mint)" : "var(--border)",
+                background: checks[i] ? "var(--color-mint)" : "transparent",
               }}
             >
               {checks[i] ? <CheckIcon size={13} /> : null}

@@ -79,7 +79,7 @@ export function TopProgress() {
         style={{
           width: `${value}%`,
           transition: "width .18s ease-out",
-          boxShadow: "0 0 8px color-mix(in srgb, var(--color-brand-500) 60%, transparent)",
+          boxShadow: "0 0 8px color-mix(in srgb, var(--color-brand) 60%, transparent)",
         }}
       />
     </div>

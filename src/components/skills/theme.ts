@@ -4,11 +4,11 @@ import { BookOpenIcon, HeadphonesIcon, MicIcon, PenIcon } from "@/components/ico
 
 /** CEFR seviye renkleri — level-badge ve ilerleme çubuklarıyla aynı ton dili. */
 export const LEVEL_TONE: Record<string, string> = {
-  A1: "var(--color-mint-500)",
-  A2: "var(--color-sky-400)",
-  B1: "var(--color-violet-400)",
-  B2: "var(--color-brand-500)",
-  C1: "var(--color-flame-500)",
+  A1: "var(--color-mint-600)",
+  A2: "var(--color-sky-600)",
+  B1: "var(--color-violet-600)",
+  B2: "var(--color-brand-600)",
+  C1: "var(--color-rose-600)",
 };
 
 export const SKILL_ICON: Record<

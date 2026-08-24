@@ -202,8 +202,8 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
         <div
           className="mb-4 flex items-start gap-2 rounded-xl px-3 py-2.5 text-sm"
           style={{
-            background: "color-mix(in srgb, var(--color-flame-500) 12%, transparent)",
-            color: "var(--color-flame-500)",
+            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            color: "var(--color-flame)",
           }}
         >
           <AlertIcon size={16} className="mt-0.5 shrink-0" />
@@ -270,7 +270,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
                 className="flex h-20 w-20 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-60"
                 style={{
                   background:
-                    phase === "listening" ? "var(--color-rose-500)" : "var(--color-brand-500)",
+                    phase === "listening" ? "var(--color-rose)" : "var(--color-brand)",
                 }}
               >
                 <motion.span
@@ -295,7 +295,7 @@ export function SpeakingPlayer({ exercise }: { exercise: SpeakingDrillExercise }
           </div>
 
           {error ? (
-            <p className="muted mt-4 text-center text-sm" style={{ color: "var(--color-flame-500)" }}>
+            <p className="muted mt-4 text-center text-sm" style={{ color: "var(--color-flame)" }}>
               {error}
             </p>
           ) : null}
@@ -395,10 +395,10 @@ function Feedback({
 }) {
   const tone =
     verdict.kind === "correct"
-      ? "var(--color-mint-500)"
+      ? "var(--color-mint)"
       : verdict.kind === "partial" || verdict.kind === "uncertain"
-        ? "var(--color-flame-500)"
-        : "var(--color-rose-500)";
+        ? "var(--color-flame)"
+        : "var(--color-rose)";
 
   return (
     <motion.div
