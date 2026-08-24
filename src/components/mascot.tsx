@@ -80,7 +80,7 @@ const IDLE_CLIPS = ["lookaround", "idle-dog", "idle-stretch", "idle-scratch", "i
 const IDLE_MS = 5083; // 61 kare @ 12fps — bir klibin tam süresi
 
 /** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
-const STICKY: Mood[] = ["sad", "sleep", "dance"];
+const STICKY: Mood[] = ["sad", "sleep"];
 
 export function Mascot({
   mood = "idle",
@@ -98,9 +98,12 @@ export function Mascot({
     maskot kendiliğinden idle rotasyonuna geçer. Bunsuz uzun yaşayan her yer
     (seri kutusu, ana sayfa, sonuç kartları) aynı klibi sonsuza dek döndürüyordu.
     Kısa ömürlü kullanımlar (cevap şeridi ~1.5 sn) bir turu zaten göremeden
-    kapanır, etkilenmez. İstisnalar STICKY'de: sad ve sleep birer duygu DURUMU
-    (üzgünün neşeyle boşta gezinmesi tonu bozar), dance ise geniş tuvalli —
-    dikey idle'lara geçmek kadraj oranını zıplatırdı.
+    kapanır, etkilenmez. İstisnalar STICKY'de: sad ve sleep birer duygu DURUMU —
+    üzgünün ya da uyuyanın neşeyle boşta gezinmesi tonu bozar. Dance de dahil
+    diğer her duygu rotasyona katılır; kutunun oranı o an GÖSTERİLEN klibe
+    bağlı, geniş tuvalli dance'ten dikey idle'a geçişte içerik oranı değişir
+    ama dance yalnız kısa ömürlü kutlama pop'unda kullanıldığından bu geçiş
+    pratikte görülmez.
   */
   const drifts = mood !== "idle" && !STICKY.includes(mood);
   const [drifted, setDrifted] = useState(false);
@@ -140,7 +143,7 @@ export function Mascot({
   return (
     <div
       className={`pointer-events-none relative select-none ${className}`}
-      style={{ width: size, aspectRatio: `${clip.aspect}` }}
+      style={{ width: size, aspectRatio: `${inIdle ? 2 / 3 : clip.aspect}` }}
       aria-hidden="true"
     >
       {/* Yer gölgesi — karakteri havada asılı olmaktan kurtarıyor. */}
