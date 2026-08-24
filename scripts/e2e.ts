@@ -192,6 +192,24 @@ async function main() {
   check("2. günde yeni kelime kotası yenilendi",
     s3.rounds.filter((r) => r.game === "intro").length > 0);
 
+  /*
+    Yürüyüşün devam turu aynı kelimeleri getirmemeli.
+
+    Yirmi tur bitince taze bir tur çekiliyor ve o tur aynı havuzdan
+    kuruluyordu: az önce yanlış bilinen kelime tekrar borcuna düştüğü için
+    hemen geri geliyor, kullanıcı aynı kelimeleri arka arkaya duyuyordu.
+  */
+  const walked = [...new Set(s3.rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]).map((w) => w.id)))];
+  const s3b = await buildSession(USER, day2, false, false, undefined, walked);
+  const repeated = s3b.rounds
+    .flatMap((r) => (r.game === "match" ? r.words : [r.word]))
+    .filter((w) => walked.includes(w.id));
+  check(
+    "devam turu bu yürüyüşün kelimelerini getirmiyor",
+    repeated.length === 0,
+    `(${repeated.length} tekrar)`,
+  );
+
   console.log("\n6) Yanlış cevap kelimeyi öne çekiyor");
   const knownIds = new Set(stored.map((r) => r.wordId));
   const target = s3.rounds.find(

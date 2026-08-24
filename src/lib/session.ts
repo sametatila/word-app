@@ -1,5 +1,5 @@
 import "server-only";
-import { and, asc, desc, eq, gt, gte, inArray, lt, lte, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gt, gte, inArray, lt, lte, notInArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
@@ -214,6 +214,20 @@ export async function buildSession(
    * oynarsa oynasın, karışık tura döndüğünde yeni kelimeleri onu bekliyor.
    */
   only?: PlayableGame,
+  /**
+   * Bu oturumda ATLANACAK kelimeler.
+   *
+   * Yürürken modu yirmi tur bitince sesli onay alıp taze bir tur çekiyor ve
+   * o tur aynı havuzdan kuruluyordu: az önce yanlış bilinen kelime tekrar
+   * borcuna düştüğü için hemen geri geliyor, kullanıcı da aynı kelimeleri
+   * arka arkaya duyuyordu. Aralıklı tekrar açısından doğru, yürüyüş açısından
+   * yanlış — aynı yürüyüşte aynı kelimeyi ikinci kez sormanın öğretici bir
+   * karşılığı yok, sıkıcı olmaktan başka.
+   *
+   * Yalnızca tekrar kuyruğunu daraltıyor; yeni kelimeler zaten görülmemiş
+   * olanlardan seçiliyor.
+   */
+  skip: number[] = [],
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
   const now = new Date();
@@ -235,7 +249,14 @@ export async function buildSession(
     .select({ w: words, uw: userWords })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
-    .where(and(eq(userWords.userId, userId), lte(userWords.dueAt, now), eq(words.course, course)))
+    .where(
+      and(
+        eq(userWords.userId, userId),
+        lte(userWords.dueAt, now),
+        eq(words.course, course),
+        skip.length ? notInArray(userWords.wordId, skip) : undefined,
+      ),
+    )
     .orderBy(asc(userWords.dueAt))
     .limit(ROUNDS_PER_SESSION * 2);
 
@@ -325,6 +346,15 @@ export async function buildSession(
             select 1 from ${userWords}
             where ${userWords.wordId} = ${words.id} and ${userWords.userId} = ${userId}
           )`,
+          /*
+            Atlananlar YENİ kelimelerden de çıkarılıyor.
+
+            Yalnızca tekrar kuyruğunu süzmek yetmiyordu: bu yürüyüşte tanıtılan
+            bir kelime, cevabı henüz sunucuya ulaşmadıysa hâlâ "hiç görülmemiş"
+            sayılıyor ve devam turunda yeni kelime olarak geri geliyor. Turun
+            ortasında ağ kesilmesi de aynı sonucu veriyor.
+          */
+          skip.length ? notInArray(words.id, skip) : undefined,
         ),
       )
       // Seviye içinde en yaygın kelimeler önce gelir (sıklık sırası).
@@ -465,6 +495,8 @@ export async function loadSession(
   extra = false,
   /** Tek oyunlu tur istendiğinde o oyunun kimliği (bkz. buildSession). */
   only?: PlayableGame,
+  /** Bu turda atlanacak kelimeler — bkz. `buildSession`. */
+  skip: number[] = [],
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
 
@@ -529,7 +561,7 @@ export async function loadSession(
     }
   }
 
-  const built = await buildSession(userId, today, extra, false, only);
+  const built = await buildSession(userId, today, extra, false, only, skip);
   await db
     .insert(sessionState)
     .values({

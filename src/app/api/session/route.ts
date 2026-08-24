@@ -7,6 +7,9 @@ import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
+/** Atlanacak kelime listesinin üst sınırı — adres uzunluğu için. */
+const SKIP_LIMIT = 200;
+
 /** Günün turu: yarım kalan varsa o, yoksa yenisi. Tur sunucuda tutulur. */
 export async function GET(req: Request) {
   const userId = await getUserId();
@@ -20,8 +23,24 @@ export async function GET(req: Request) {
   const raw = url.searchParams.get("game");
   const only =
     raw && (PLAYABLE_GAMES as readonly string[]).includes(raw) ? (raw as PlayableGame) : undefined;
+  /*
+    Atlanacak kelimeler: "?skip=12,34".
+
+    Yürürken modu yirmi tur bitince taze bir tur çekiyor ve bu yürüyüşte
+    sorulanları veriyor — aynı yürüyüşte aynı kelimeyi ikinci kez sormanın
+    öğretici bir karşılığı yok.
+
+    Sayı sınırlı: adres uzunluğunun sınırı var ve uzun bir yürüyüşte liste
+    büyümeye devam ederdi. Sondaki kırpılıyor değil BAŞTAKİ, çünkü en son
+    sorulanların tekrar gelmemesi daha önemli.
+  */
+  const skip = (url.searchParams.get("skip") ?? "")
+    .split(",")
+    .map((x) => Number.parseInt(x, 10))
+    .filter((n) => Number.isInteger(n) && n > 0)
+    .slice(-SKIP_LIMIT);
   try {
-    const payload = await loadSession(userId, today, extra, only);
+    const payload = await loadSession(userId, today, extra, only, skip);
     return NextResponse.json(payload);
   } catch (err) {
     console.error("[session]", err);

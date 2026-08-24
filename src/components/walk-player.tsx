@@ -247,6 +247,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const browserMisses = useRef(0);
   /** Üst üste kaç turda klip üretilemedi — kayıt arızasını sessizce sürüklememek için. */
   const captureFails = useRef(0);
+  /** Bu yürüyüşte sorulan kelimeler — devam turunda tekrar sorulmasın diye. */
+  const askedIds = useRef<Set<number>>(new Set());
   /**
    * Turu durduran işlev, ref üzerinden.
    *
@@ -548,10 +550,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     };
   }, []);
 
-  /** Sunucudan taze bir tur — oturum bitince devam etmek için. */
+  /**
+   * Sunucudan taze bir tur — oturum bitince devam etmek için.
+   *
+   * Bu yürüyüşte SORULAN kelimeler dışarıda bırakılıyor. Yanlış bilinen
+   * kelime tekrar borcuna düştüğü için hemen geri geliyordu ve kullanıcı aynı
+   * kelimeleri arka arkaya duyuyordu. Aralıklı tekrar açısından doğru, yürüyüş
+   * açısından yanlış: kelime yarın yine karşına çıkacak, on dakika sonra
+   * çıkmasının öğretici bir karşılığı yok.
+   */
   const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
     try {
-      const res = await fetch("/api/session", {
+      const skip = [...askedIds.current].join(",");
+      const res = await fetch(`/api/session${skip ? `?skip=${skip}` : ""}`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
@@ -631,6 +642,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         for (const word of wordsOf(round)) {
           if (!alive()) return;
           const target = withArtikel(word);
+          askedIds.current.add(word.id);
           setPrompt({ tr: word.tr, de: target });
           setVerdict(null);
 
@@ -867,6 +879,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     startPocketAudio("Wortspiel · Yürürken", {});
     resetCombo();
     heardLog.current = [];
+    askedIds.current = new Set();
     startedAt.current = Date.now();
     setStatus("playing");
     track("walk_start", from);
