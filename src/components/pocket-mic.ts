@@ -1,5 +1,7 @@
 "use client";
 
+import { afterMs, tickClock } from "@/components/pocket-clock";
+
 /**
  * Cepte çalışan mikrofon.
  *
@@ -199,6 +201,9 @@ function startRecorder(): boolean {
   header = null;
 
   recorder.ondataavailable = (e) => {
+    // Kaydedici gizli sayfada da 200 ms'de bir ateşliyor: saatin en güvenilir
+    // ikinci nabzı bu (bkz. pocket-clock).
+    tickClock();
     if (!e.data.size) return;
     // İlk parça başlık: saklanıyor ve tampona girmiyor, yoksa her dilimde iki
     // kez yer alırdı.
@@ -299,7 +304,7 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
     if (!micHeld() && !(await openMic())) return oneShotClip(maxMs);
     activateMic();
     // Başlık parçasının gelmesi için bir soluk.
-    await new Promise((r) => setTimeout(r, SLICE_MS * 3));
+    await new Promise<void>((r) => afterMs(SLICE_MS * 3, r));
     if (!micOpen() || !header) return oneShotClip(maxMs);
   }
   const from = Date.now() - preRollMs;
@@ -355,7 +360,12 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
       const elapsed = Date.now() - detectFrom;
       const finished = started && quiet >= TAIL_SLICES && elapsed >= MIN_LISTEN_MS;
       if (!finished && Date.now() < deadline) {
-        setTimeout(tick, SLICE_MS);
+        // `setTimeout` DEĞİL: sayfa gizliyken zamanlayıcılar dakikada bire
+        // kısılıyor ve bu döngü tam ekran kapalıyken, yani asıl gerekli
+        // olduğu anda duruyordu. Sonuç, cevap penceresinin hiç kapanmaması ve
+        // turun üst sınıra kadar sessiz beklemesiydi. Saat nabzını kaydedicinin
+        // kendi parçalarından da alıyor (bkz. pocket-clock).
+        afterMs(SLICE_MS, tick);
         return;
       }
 
@@ -395,7 +405,7 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
       });
     };
 
-    setTimeout(tick, SLICE_MS);
+    afterMs(SLICE_MS, tick);
   });
 }
 
@@ -433,15 +443,25 @@ function oneShotClip(ms: number): Promise<ClipResult> {
     } catch {
       return done(null);
     }
-    setTimeout(() => {
+    afterMs(ms, () => {
       try {
         if (rec.state !== "inactive") rec.stop();
       } catch {
         done(null);
       }
-    }, ms);
+    });
   });
 }
+
+/**
+ * Yazıya çevirmenin üst sınırı.
+ *
+ * Deepgram tipik olarak bir saniyenin altında dönüyor; sekiz saniye ağın kötü
+ * olduğu ama çalıştığı hâli kapsıyor. Ötesi artık gecikme değil, kopukluk.
+ */
+const STT_TIMEOUT_MS = 8_000;
+/** Yalnızca "yapılandırılmış mı" sorusu — kısa tutulabilir. */
+const PROBE_TIMEOUT_MS = 5_000;
 
 /** Kaydı sunucuya gönderip yazıya çevirir. Başarısızsa boş dizi. */
 export async function transcribe(
@@ -456,7 +476,14 @@ export async function transcribe(
   form.append("language", language);
   if (expected) form.append("expected", expected);
   try {
-    const res = await fetch("/api/stt", { method: "POST", body: form });
+    const res = await fetch("/api/stt", {
+      method: "POST",
+      body: form,
+      // Zaman aşımı ŞART. Cepteki telefon zayıf sinyalde bir isteği dakikalarca
+      // asılı tutabiliyor ve tur o istekte donuyordu. Süresi geçen bir yazıya
+      // çevirme zaten işe yaramaz: kullanıcı çoktan sıradakini bekliyor.
+      signal: AbortSignal.timeout(STT_TIMEOUT_MS),
+    });
     if (!res.ok) return [];
     const data = (await res.json()) as { text?: string };
     const text = (data.text ?? "").trim();
@@ -469,7 +496,10 @@ export async function transcribe(
 /** Sunucuda yazıya çevirme açık mı — mod hangi yolu kullanacağını buna göre seçiyor. */
 export async function sttAvailable(): Promise<boolean> {
   try {
-    const res = await fetch("/api/stt", { cache: "no-store" });
+    const res = await fetch("/api/stt", {
+      cache: "no-store",
+      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS),
+    });
     if (!res.ok) return false;
     const data = (await res.json()) as { configured?: boolean };
     return data.configured === true;

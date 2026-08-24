@@ -1,5 +1,7 @@
 "use client";
 
+import { startClock, stopClock } from "@/components/pocket-clock";
+
 /**
  * Cepte çalmayı ayakta tutan katman.
  *
@@ -33,6 +35,8 @@
  */
 
 let silent: HTMLAudioElement | null = null;
+/** Döngü bilerek mi durduruldu — `onpause` bunu ayırt edemiyor. */
+let keepAlive = false;
 
 /**
  * Bir saniyelik sessiz WAV.
@@ -66,6 +70,64 @@ function silentTrack(): string {
   return URL.createObjectURL(new Blob([buf], { type: "audio/wav" }));
 }
 
+/**
+ * Kısa bir bip — ses ÖĞESİ olarak.
+ *
+ * Dersin işitsel işaretleri (`lib/lessons/cues`) WebAudio ile üretiliyor ve
+ * ekran kapandığında `AudioContext` askıya alındığı için tam ihtiyaç duyulan
+ * yerde susuyorlar. Cepteki kullanıcı mikrofonun açıldığını yalnızca kulağıyla
+ * anlayabiliyor; işaret duyulmazsa ya boşluğa konuşuyor ya da sessizce
+ * bekliyor.
+ *
+ * Öğe yolu askıya alınmıyor, o yüzden bip de burada üretiliyor: 8 kHz, 8 bit,
+ * tek kanal, kısa bir sinüs. Bir dosya eklemeye değmez.
+ */
+function beepTrack(freq: number, ms: number): string {
+  const rate = 8000;
+  const samples = Math.round((rate * ms) / 1000);
+  const buf = new ArrayBuffer(44 + samples);
+  const view = new DataView(buf);
+  const ascii = (offset: number, text: string) => {
+    for (let i = 0; i < text.length; i++) view.setUint8(offset + i, text.charCodeAt(i));
+  };
+  ascii(0, "RIFF");
+  view.setUint32(4, 36 + samples, true);
+  ascii(8, "WAVEfmt ");
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true);
+  view.setUint32(24, rate, true);
+  view.setUint32(28, rate, true);
+  view.setUint16(32, 1, true);
+  view.setUint16(34, 8, true);
+  ascii(36, "data");
+  view.setUint32(40, samples, true);
+  const pcm = new Uint8Array(buf, 44);
+  for (let i = 0; i < samples; i++) {
+    // Kenarlar yumuşatılıyor: sert başlayan bir kare kulakta "tık" oluyor.
+    const fade = Math.min(1, i / 64, (samples - i) / 64);
+    pcm[i] = 128 + Math.round(56 * fade * Math.sin((2 * Math.PI * freq * i) / rate));
+  }
+  return URL.createObjectURL(new Blob([buf], { type: "audio/wav" }));
+}
+
+let cue: HTMLAudioElement | null = null;
+
+/** Mikrofonun açıldığını kulağa söyler — ekran kapalıyken de duyulur. */
+export function pocketCue() {
+  if (typeof window === "undefined") return;
+  if (!cue) {
+    cue = new Audio(beepTrack(880, 140));
+    cue.preload = "auto";
+  }
+  try {
+    cue.currentTime = 0;
+  } catch {
+    /* henüz yüklenmediyse önemsiz */
+  }
+  void cue.play().catch(() => {});
+}
+
 export type PocketControls = {
   onPause?: () => void;
   onResume?: () => void;
@@ -80,6 +142,7 @@ export type PocketControls = {
  */
 export function startPocketAudio(title: string, controls: PocketControls = {}) {
   if (typeof window === "undefined") return;
+  keepAlive = true;
   if (!silent) {
     silent = new Audio(silentTrack());
     silent.loop = true;
@@ -91,6 +154,25 @@ export function startPocketAudio(title: string, controls: PocketControls = {}) {
   void silent.play().catch(() => {
     /* dokunuş dışında çağrıldıysa reddedilir; mod yine çalışır, arka plan zayıflar */
   });
+  startClock(silent);
+
+  /*
+    Döngünün DURMADIĞINDAN emin olunuyor.
+
+    Sessiz ses yalnızca "hoş olurdu" değil, arka planın taşıyıcı direği: sekme
+    "medya çalıyor" sayıldığı sürece zamanlayıcılar kısılmıyor ve `timeupdate`
+    saatin nabzını veriyor. Durursa ikisi birden gidiyor ve tur, kimsenin
+    göremediği bir yerde donuyor.
+
+    Kendiliğinden durabiliyor: gelen çağrı, başka bir uygulamanın ses odağını
+    alması, işletim sisteminin kod çözücüyü geri alması. `onpause` bunların
+    hepsini yakalıyor ve yeniden başlatıyor — kullanıcı hareketi gerekmiyor,
+    çünkü öğe bir kez serbest bırakılmış oluyor.
+  */
+  silent.onpause = () => {
+    if (!keepAlive) return;
+    void silent?.play().catch(() => {});
+  };
 
   const nav = navigator as Navigator & {
     mediaSession?: {
@@ -128,6 +210,8 @@ export function updatePocketTitle(title: string) {
 }
 
 export function stopPocketAudio() {
+  keepAlive = false;
+  stopClock();
   silent?.pause();
   const nav = navigator as Navigator & {
     mediaSession?: { playbackState: string; setActionHandler: (a: string, h: null) => void };
