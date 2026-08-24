@@ -134,6 +134,20 @@ const IRREGULAR = {
   sinken: ["sank", "gesunken"],
   weisen: ["wies", "gewiesen"],
   greifen: ["griff", "gegriffen"],
+  // Ayrılabilir bileşiklerde çok üretken olanlar: anwerben/abwerben,
+  // antreten/auftreten/eintreten/zurücktreten. Bunlar listede yokken o
+  // maddelerin en tipik Präsens cümlesi ("wirbt … an", "tritt … an")
+  // hiç üretilemiyordu.
+  werben: ["wirbt", "warb", "geworben"],
+  treten: ["tritt", "trat", "getreten"],
+  gelten: ["gilt", "galt", "gegolten"],
+  messen: ["misst", "mass", "gemessen"],
+  stehlen: ["stiehlt", "stahl", "gestohlen"],
+  geschehen: ["geschieht", "geschah"],
+  stossen: ["stösst", "stiess", "gestossen"],
+  heben: ["hob", "gehoben"],
+  biegen: ["bog", "gebogen"],
+  lügen: ["log", "gelogen"],
 };
 
 /**
