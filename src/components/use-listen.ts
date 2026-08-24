@@ -41,6 +41,26 @@ export type ListenOptions = {
   silenceMs?: number;
   /** Konuşma başladıktan sonra en fazla ne kadar dinlenir. */
   maxMs?: number;
+  /**
+   * Ara sonuç yeterliyse turu HEMEN kapatır.
+   *
+   * Tanıyıcı bir cevabı çoktan anlamışken duraklama payının dolmasını
+   * beklemek, kullanıcının cepteki telefonda hissettiği tek şey: beklemek.
+   * Beklenen cevap belliyken (kelime turu, evet/hayır onayı) o payın hiçbir
+   * karşılığı yok — ara sonuç zaten tutuyorsa tur biter.
+   *
+   * Yalnızca KAPATMAK için kullanılıyor, kabul kararı için değil: son sözü
+   * yine çağıran taraf söylüyor.
+   */
+  accept?: (alternatives: string[]) => boolean;
+  /**
+   * Mikrofon açıldığı anda çalışır — varsayılan işitsel işaret.
+   *
+   * Çağıran taraf kendi işaretini verebilsin diye açıldı: dersin WebAudio
+   * işareti ekran kapalıyken susuyor ve cepteki kullanıcı mikrofonun
+   * açıldığını yalnızca kulağıyla anlayabiliyor.
+   */
+  onOpen?: () => void;
 };
 
 export function useListen() {
@@ -62,7 +82,14 @@ export function useListen() {
   }, []);
 
   const listen = useCallback(
-    ({ lang, pauseMs = 900, silenceMs = 9000, maxMs = 6000 }: ListenOptions): Promise<ListenResult> => {
+    ({
+      lang,
+      pauseMs = 900,
+      silenceMs = 9000,
+      maxMs = 6000,
+      accept,
+      onOpen = cueListen,
+    }: ListenOptions): Promise<ListenResult> => {
       const Ctor = recognitionCtor();
       if (!Ctor) return Promise.resolve({ alternatives: [], confidences: [] });
 
@@ -113,6 +140,16 @@ export function useListen() {
             best = alts;
             confidences = confs;
           }
+          // Beklenen cevap zaten duyulduysa beklemenin karşılığı yok.
+          if (best.length && accept?.(best)) {
+            try {
+              r.stop();
+            } catch {
+              /* zaten kapanmışsa önemsiz */
+            }
+            deliver();
+            return;
+          }
           // Konuşma başladı: sessizlik tavanı kalkıyor, duraklama payı kuruluyor.
           if (silence) clearTimeout(silence);
           silence = null;
@@ -135,7 +172,7 @@ export function useListen() {
 
         try {
           r.start();
-          cueListen();
+          onOpen();
           silence = setTimeout(() => {
             r.stop();
             deliver();

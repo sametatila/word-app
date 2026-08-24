@@ -374,7 +374,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * askıya alınıyor ve çözümleyici tam ihtiyaç duyulan yerde duruyor.
    */
   const hearOnce = useCallback(
-    async (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> => {
+    async (
+      lang: "de" | "tr",
+      windowMs: number,
+      expected = "",
+      /** Ara sonuç bunu geçerse dinleme HEMEN kapanır (bkz. use-listen). */
+      accept?: (alternatives: string[]) => boolean,
+    ): Promise<string[]> => {
       /*
         Sıra: sayfa GÖRÜNÜRKEN önce tarayıcının kendi tanıyıcısı.
 
@@ -398,6 +404,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           lang: lang === "tr" ? "tr-TR" : "de-DE",
           silenceMs: Math.min(windowMs, BROWSER_SILENCE_MS),
           maxMs: Math.min(windowMs, BROWSER_SILENCE_MS),
+          accept,
+          // İşaret tanıyıcı BAŞLADIKTAN sonra çalıyor: kullanıcı bipi duyduğu
+          // anda mikrofon zaten dinliyor, yani bipi beklemesi gerekmiyor.
+          // Ses öğesiyle veriliyor çünkü WebAudio yolu ekran kapalıyken askıda.
+          onOpen: pocketCue,
         });
         if (heard.alternatives.length) {
           browserMisses.current = 0;
@@ -421,6 +432,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       // Kayıt yolu yalnızca ekran kapalıyken (ya da tanıyıcı hiç yokken).
       if (sttReady.current && (!stillVisible || !browserRef.current)) {
+        /*
+          İşaret kaydın İÇİNDEN veriliyor.
+
+          Kaydedici zaten dönüyor ve klip halka tampondan geriye doğru
+          kesiliyor, yani bipten önce söylenen de klibe giriyor. Kullanıcının
+          bipi bekleyip sonra konuşması gerekmiyor — "kesinti olmadan
+          yapabileyim" istenen şey bu.
+        */
+        pocketCue();
         // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
         // pencere değil ÜST SINIR.
         const clip = await recordClip(windowMs);
@@ -464,8 +484,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * duyulmayan cevap zaten yanlış sayılmıyor (bkz. UNHEARD_IS_NOT_WRONG).
    */
   const hear = useCallback(
-    (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> =>
-      withDeadline(hearOnce(lang, windowMs, expected), windowMs + HEAR_SLACK_MS, [] as string[]),
+    (
+      lang: "de" | "tr",
+      windowMs: number,
+      expected = "",
+      accept?: (alternatives: string[]) => boolean,
+    ): Promise<string[]> =>
+      withDeadline(
+        hearOnce(lang, windowMs, expected, accept),
+        windowMs + HEAR_SLACK_MS,
+        [] as string[],
+      ),
     [hearOnce],
   );
 
@@ -531,7 +560,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           },
         ]);
         setPhase("listening");
-        const heard = await hear("tr", CONFIRM_SILENCE_MS);
+        const heard = await hear(
+          "tr",
+          CONFIRM_SILENCE_MS,
+          "",
+          (alts) => parseConfirm(alts[0] ?? "") !== null,
+        );
         const intent = parseConfirm(heard[0] ?? "");
         if (intent === "yes") return "yes";
         if (intent === "no") return "no";
@@ -600,12 +634,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           if (!alive()) return;
 
           setPhase("listening");
-          // İşaret ses ÖĞESİYLE veriliyor: WebAudio yolu ekran kapalıyken
-          // askıda ve cepteki kullanıcı mikrofonun açıldığını yalnızca
-          // kulağıyla anlayabiliyor.
-          pocketCue();
           const askedAt = Date.now();
-          const heard = await hear("de", ANSWER_WINDOW_MS, target);
+          // Doğru cevap duyulur duyulmaz dinleme kapanıyor: beklenen cevap
+          // belliyken duraklama payının dolmasını beklemenin karşılığı yok.
+          const heard = await hear("de", ANSWER_WINDOW_MS, target, (alts) =>
+            spokenMatches(alts, [target, word.de]),
+          );
           if (!alive()) return;
 
           setPhase("judging");
