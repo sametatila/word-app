@@ -1,402 +1,402 @@
 [
- {
-  "id": 6453,
-  "tr": "kaymak",
-  "en": "to slip",
-  "beispiel": "Am nassen Fels rutschte sie plötzlich ab.",
-  "beispielTr": "Islak kayada birden ayağı kaydı.",
-  "beispielEn": "On the wet rock she suddenly slipped."
- },
- {
-  "id": 6454,
-  "tr": "yerleştirmek",
-  "en": "to accommodate",
-  "beispiel": "Die Stadt brachte die Familien in einer Turnhalle unter.",
-  "beispielTr": "Şehir aileleri bir spor salonuna yerleştirdi.",
-  "beispielEn": "The city accommodated the families in a gym."
- },
- {
-  "id": 6455,
-  "tr": "cezasını çekmek",
-  "en": "to serve a sentence",
-  "beispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei.",
-  "beispielTr": "Cezasının üçte ikisini çekti ve sonra tahliye oldu.",
-  "beispielEn": "He served two thirds of his sentence and then walked free."
- },
- {
-  "id": 6456,
-  "tr": "nöbet tutmak",
-  "en": "to guard",
-  "beispiel": "Die ganze Nacht bewachten zwei Polizisten den Eingang.",
-  "beispielTr": "Bütün gece girişte iki polis nöbet tuttu.",
-  "beispielEn": "Two police officers guarded the entrance all night."
- },
- {
-  "id": 6457,
-  "tr": "tecrit etmek",
-  "en": "to isolate",
-  "beispiel": "Die Anstalt isolierte den Häftling drei Wochen lang.",
-  "beispielTr": "Kurum mahkûmu üç hafta boyunca tecrit etti.",
-  "beispielEn": "The facility isolated the inmate for three weeks."
- },
- {
-  "id": 6458,
-  "tr": "yüzleşmek",
-  "en": "to work through",
-  "beispiel": "In der Therapie arbeitet er seine Tat Schritt für Schritt auf.",
-  "beispielTr": "Terapide işlediği suçla adım adım yüzleşiyor.",
-  "beispielEn": "In therapy he works through his crime step by step."
- },
- {
-  "id": 6459,
-  "tr": "yatıştırmak",
-  "en": "to de-escalate",
-  "beispiel": "Der Beamte deeskalierte die Situation mit ruhiger Stimme.",
-  "beispielTr": "Görevli sakin bir sesle durumu yatıştırdı.",
-  "beispielEn": "The officer de-escalated the situation with a calm voice."
- },
- {
-  "id": 6460,
-  "tr": "dış dünyaya kapatmak",
-  "en": "to seal off",
-  "beispiel": "Der Konzern schottet seine Labore von der Außenwelt ab.",
-  "beispielTr": "Holding laboratuvarlarını dış dünyaya kapatıyor.",
-  "beispielEn": "The group seals its labs off from the outside world."
- },
- {
-  "id": 6461,
-  "tr": "topluma kazandırmak",
-  "en": "to rehabilitate",
-  "beispiel": "Das Programm rehabilitiert junge Täter durch Arbeit und Therapie.",
-  "beispielTr": "Program genç suçluları işle ve terapiyle topluma kazandırıyor.",
-  "beispielEn": "The program rehabilitates young offenders through work and therapy."
- },
- {
-  "id": 6462,
-  "tr": "raydan çıkmak",
-  "en": "to derail",
-  "beispiel": "Die Diskussion entgleiste nach wenigen Minuten völlig.",
-  "beispielTr": "Tartışma birkaç dakika sonra tamamen raydan çıktı.",
-  "beispielEn": "The discussion completely derailed after a few minutes."
- },
- {
-  "id": 6463,
-  "tr": "eziyet etmek",
-  "en": "to harass",
-  "beispiel": "Sein Chef schikanierte ihn monatelang mit sinnlosen Aufgaben.",
-  "beispielTr": "Patronu aylarca anlamsız görevlerle ona eziyet etti.",
-  "beispielEn": "His boss harassed him for months with pointless tasks."
- },
- {
-  "id": 6464,
-  "tr": "suç işlemiş",
-  "en": "delinquent",
-  "beispiel": "Sein Bruder wurde mit sechzehn zum ersten Mal straffällig.",
-  "beispielTr": "Kardeşi on altı yaşında ilk kez suç işledi.",
-  "beispielEn": "His brother committed his first offense at sixteen."
- },
- {
-  "id": 6465,
-  "tr": "tekrar suç işleyen",
-  "en": "reoffending",
-  "beispiel": "Fast die Hälfte der Entlassenen wird binnen drei Jahren rückfällig.",
-  "beispielTr": "Tahliye edilenlerin neredeyse yarısı üç yıl içinde yeniden suç işliyor.",
-  "beispielEn": "Almost half of those released reoffend within three years."
- },
- {
-  "id": 6466,
-  "tr": "şiddete eğilimli",
-  "en": "prone to violence",
-  "beispiel": "Eine kleine gewaltbereite Gruppe zog durch die Innenstadt.",
-  "beispielTr": "Şiddete eğilimli küçük bir grup şehir merkezinde yürüdü.",
-  "beispielEn": "A small group prone to violence marched through downtown."
- },
- {
-  "id": 6467,
-  "tr": "sabıkalı",
-  "en": "previously convicted",
-  "beispiel": "Der Bewerber ist vorbestraft und verschwieg es im Gespräch.",
-  "beispielTr": "Başvuran sabıkalı ve bunu görüşmede sakladı.",
-  "beispielEn": "The applicant has a prior conviction and hid it in the interview."
- },
- {
-  "id": 6468,
-  "tr": "çevre kaynaklı",
-  "en": "socially determined",
-  "beispiel": "Seine Probleme sind milieubedingt und nicht angeboren.",
-  "beispielTr": "Sorunları doğuştan değil, çevre kaynaklı.",
-  "beispielEn": "His problems are socially determined, not innate."
- },
- {
-  "id": 6469,
-  "tr": "suça yol açan",
-  "en": "criminogenic",
-  "beispiel": "Armut und Enge wirken in diesem Viertel kriminogen.",
-  "beispielTr": "Bu mahallede yoksulluk ve sıkışıklık suça yol açıyor.",
-  "beispielEn": "Poverty and crowding have a criminogenic effect here."
- },
- {
-  "id": 6470,
-  "tr": "zorla",
-  "en": "forcibly",
-  "beispiel": "Die Familie wurde zwangsweise aus der Wohnung geholt.",
-  "beispielTr": "Aile evden zorla çıkarıldı.",
-  "beispielEn": "The family was forcibly removed from the apartment."
- },
- {
-  "id": 6471,
-  "tr": "önleyici",
-  "en": "preventive",
-  "beispiel": "Die Polizei sperrte die Straße rein präventiv ab.",
-  "beispielTr": "Polis caddeyi salt önleyici amaçla kapattı.",
-  "beispielEn": "The police closed the street purely as a preventive measure."
- },
- {
-  "id": 6472,
-  "tr": "sahne dekoru",
-  "en": "stage set",
-  "beispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache.",
-  "beispielTr": "Yalın sahne dekoru dikkati bütünüyle dile yöneltiyor.",
-  "beispielEn": "The bare stage set draws all attention to the language."
- },
- {
-  "id": 6473,
-  "tr": "ilk gösterim",
-  "en": "world premiere",
-  "beispiel": "Die Uraufführung findet im Herbst in Hamburg statt.",
-  "beispielTr": "İlk gösterim sonbaharda Hamburg'da yapılacak.",
-  "beispielEn": "The world premiere takes place in Hamburg this fall."
- },
- {
-  "id": 6474,
-  "tr": "dramaturji",
-  "en": "dramaturgy",
-  "beispiel": "Die Dramaturgie des zweiten Akts überzeugt mich nicht.",
-  "beispielTr": "İkinci perdenin dramaturjisi beni ikna etmiyor.",
-  "beispielEn": "The dramaturgy of the second act does not convince me."
- },
- {
-  "id": 6475,
-  "tr": "sanat eleştirisi",
-  "en": "art criticism",
-  "beispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen.",
-  "beispielTr": "Sanat eleştirisi onun erken dönem yapıtlarını uzun süre görmezden geldi.",
-  "beispielEn": "Art criticism long overlooked his early work."
- },
- {
-  "id": 6476,
-  "tr": "kültür politikası",
-  "en": "cultural policy",
-  "beispiel": "Die Kulturpolitik der Stadt bevorzugt seit Jahren große Häuser.",
-  "beispielTr": "Kentin kültür politikası yıllardır büyük kurumları kayırıyor.",
-  "beispielEn": "The city's cultural policy has favored big venues for years."
- },
- {
-  "id": 6477,
-  "tr": "izleyici kitlesi",
-  "en": "audience",
-  "beispiel": "Die Zuschauerschaft des Theaters ist deutlich jünger geworden.",
-  "beispielTr": "Tiyatronun izleyici kitlesi belirgin biçimde gençleşti.",
-  "beispielEn": "The theater's audience has become noticeably younger."
- },
- {
-  "id": 6478,
-  "tr": "görsel dil",
-  "en": "visual language",
-  "beispiel": "Ihre Bildsprache erinnert stark an alte Ikonen.",
-  "beispielTr": "Onun görsel dili güçlü biçimde eski ikonaları andırıyor.",
-  "beispielEn": "Her visual language strongly recalls old icons."
- },
- {
-  "id": 6479,
-  "tr": "tür",
-  "en": "genre",
-  "beispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen.",
-  "beispielTr": "Oyun klasik türlerin sınırlarını zorluyor.",
-  "beispielEn": "The play bursts the boundaries of the classical genres."
- },
- {
-  "id": 6480,
-  "tr": "üslup akımı",
-  "en": "stylistic movement",
-  "beispiel": "Der Maler lässt sich keiner Stilrichtung zuordnen.",
-  "beispielTr": "Ressam hiçbir üslup akımına sığmıyor.",
-  "beispielEn": "The painter cannot be assigned to any stylistic movement."
- },
- {
-  "id": 6481,
-  "tr": "ustaca hile",
-  "en": "clever trick",
-  "beispiel": "Der Autor löst das Problem mit einem eleganten Kunstgriff.",
-  "beispielTr": "Yazar sorunu zarif bir hileyle çözüyor.",
-  "beispielEn": "The author solves the problem with an elegant trick."
- },
- {
-  "id": 6482,
-  "tr": "virtüözlük",
-  "en": "virtuosity",
-  "beispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation.",
-  "beispielTr": "Piyanodaki virtüözlüğü kimi zaman yorumu gölgeliyor.",
-  "beispielEn": "His virtuosity at the piano sometimes hides the interpretation."
- },
- {
-  "id": 6483,
-  "tr": "doğaçlama",
-  "en": "improvisation",
-  "beispiel": "Der zweite Teil des Konzerts besteht fast nur aus Improvisation.",
-  "beispielTr": "Konserin ikinci bölümü neredeyse tümüyle doğaçlamadan oluşuyor.",
-  "beispielEn": "The second half of the concert is almost all improvisation."
- },
- {
-  "id": 6484,
-  "tr": "okuma biçimi",
-  "en": "reading",
-  "beispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend.",
-  "beispielTr": "Oyunun bu okuma biçimi cüretkâr ama inandırıcı.",
-  "beispielEn": "This reading of the drama is bold but convincing."
- },
- {
-  "id": 6485,
-  "tr": "yapıt kavramı",
-  "en": "concept of the work",
-  "beispiel": "Die Installation stellt den traditionellen Werkbegriff radikal infrage.",
-  "beispielTr": "Yerleştirme geleneksel yapıt kavramını kökten sorguluyor.",
-  "beispielEn": "The installation radically challenges the traditional concept of the work."
- },
- {
-  "id": 6486,
-  "tr": "yazarlık",
-  "en": "authorship",
-  "beispiel": "Die Autorschaft dieses Textes ist bis heute umstritten.",
-  "beispielTr": "Bu metnin yazarlığı bugüne dek tartışmalı.",
-  "beispielEn": "The authorship of this text is still disputed today."
- },
- {
-  "id": 6487,
-  "tr": "özgünlük",
-  "en": "originality",
-  "beispiel": "Diesem Entwurf fehlt nach Ansicht der Jury jede Originalität.",
-  "beispielTr": "Jüriye göre bu tasarımda hiçbir özgünlük yok.",
-  "beispielEn": "In the jury's view this design lacks any originality."
- },
- {
-  "id": 6488,
-  "tr": "yabancılaştırma",
-  "en": "alienation",
-  "beispiel": "Brecht arbeitet in diesem Stück konsequent mit Verfremdung.",
-  "beispielTr": "Brecht bu oyunda tutarlı biçimde yabancılaştırma kullanıyor.",
-  "beispielEn": "In this play Brecht works consistently with alienation."
- },
- {
-  "id": 6489,
-  "tr": "tabu ihlali",
-  "en": "taboo breaking",
-  "beispiel": "Mit diesem Tabubruch verlor der Autor viele Leser.",
-  "beispielTr": "Bu tabu ihlaliyle yazar birçok okurunu kaybetti.",
-  "beispielEn": "Breaking that taboo cost the author many readers."
- },
- {
-  "id": 6490,
-  "tr": "alımlanma tarihi",
-  "en": "reception history",
-  "beispiel": "Die Rezeptionsgeschichte des Romans verlief sehr wechselhaft.",
-  "beispielTr": "Romanın alımlanma tarihi çok değişken seyretti.",
-  "beispielEn": "The novel's reception history was very changeable."
- },
- {
-  "id": 6491,
-  "tr": "beğeni yargısı",
-  "en": "judgment of taste",
-  "beispiel": "Sein Geschmacksurteil hat im Museum großes Gewicht.",
-  "beispielTr": "Onun beğeni yargısının müzede büyük ağırlığı var.",
-  "beispielEn": "His judgment of taste carries great weight at the museum."
- },
- {
-  "id": 6492,
-  "tr": "uzmanlık",
-  "en": "connoisseurship",
-  "beispiel": "Seine Kennerschaft der Barockmalerei ist unbestritten.",
-  "beispielTr": "Barok resim konusundaki uzmanlığı tartışmasız.",
-  "beispielEn": "His connoisseurship of Baroque painting is undisputed."
- },
- {
-  "id": 6493,
-  "tr": "sanat hamisi",
-  "en": "patron",
-  "beispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden.",
-  "beispielTr": "Özel hamiler olmasaydı koleksiyon hiç kurulamazdı.",
-  "beispielEn": "Without private patrons the collection would never have existed."
- },
- {
-  "id": 6494,
-  "tr": "kültür dünyası",
-  "en": "cultural sector",
-  "beispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent.",
-  "beispielTr": "Kültür dünyasında ilişkiler çoğu zaman yetenekten daha önemlidir.",
-  "beispielEn": "In the cultural sector connections often count more than talent."
- },
- {
-  "id": 6495,
-  "tr": "sanat piyasası",
-  "en": "art market",
-  "beispiel": "Der Kunstmarkt reagiert empfindlich auf jede Krise.",
-  "beispielTr": "Sanat piyasası her krize duyarlı tepki veriyor.",
-  "beispielEn": "The art market reacts sensitively to every crisis."
- },
- {
-  "id": 6496,
-  "tr": "retrospektif",
-  "en": "retrospective",
-  "beispiel": "Das Museum widmet der Fotografin eine große Retrospektive.",
-  "beispielTr": "Müze fotoğrafçıya büyük bir retrospektif ayırıyor.",
-  "beispielEn": "The museum is devoting a big retrospective to the photographer."
- },
- {
-  "id": 6497,
-  "tr": "sergi açılışı",
-  "en": "gallery opening",
-  "beispiel": "Zur Vernissage kamen mehr Journalisten als erwartet.",
-  "beispielTr": "Sergi açılışına beklenenden fazla gazeteci geldi.",
-  "beispielEn": "More journalists came to the gallery opening than expected."
- },
- {
-  "id": 6498,
-  "tr": "anıt koruma",
-  "en": "heritage conservation",
-  "beispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt.",
-  "beispielTr": "Anıt koruma kurulu cephenin değiştirilmesini yasakladı.",
-  "beispielEn": "Heritage conservation banned the remodeling of the facade."
- },
- {
-  "id": 6499,
-  "tr": "uyumsuzluk",
-  "en": "dissonance",
-  "beispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer.",
-  "beispielTr": "Sondaki çözülmemiş uyumsuzluk birçok dinleyiciyi rahatsız ediyor.",
-  "beispielEn": "The unresolved dissonance at the end unsettles many listeners."
- },
- {
-  "id": 6500,
-  "tr": "partisyon",
-  "en": "score",
-  "beispiel": "Der Dirigent kennt die Partitur fast auswendig.",
-  "beispielTr": "Şef partisyonu neredeyse ezbere biliyor.",
-  "beispielEn": "The conductor knows the score almost by heart."
- },
- {
-  "id": 6501,
-  "tr": "kompozisyon",
-  "en": "composition",
-  "beispiel": "Die Komposition des Bildes folgt einer strengen Diagonale.",
-  "beispielTr": "Resmin kompozisyonu katı bir köşegen düzenine dayanıyor.",
-  "beispielEn": "The composition of the picture follows a strict diagonal."
- },
- {
-  "id": 6502,
-  "tr": "uyarlama",
-  "en": "adaptation",
-  "beispiel": "Die filmische Adaption bleibt hinter dem Roman zurück.",
-  "beispielTr": "Sinema uyarlaması romanın gerisinde kalıyor.",
-  "beispielEn": "The film adaptation falls short of the novel."
- }
+  {
+    "id": 6453,
+    "tr": "kaymak",
+    "en": "to slip",
+    "beispiel": "Beim Abstieg rutschte er auf dem nassen Fels ab.",
+    "beispielTr": "İnişte ıslak kayanın üstünde ayağı kaydı.",
+    "beispielEn": "On the way down he slipped on the wet rock."
+  },
+  {
+    "id": 6454,
+    "tr": "barındırmak",
+    "en": "to accommodate",
+    "beispiel": "Die Stadt bringt die Flüchtlinge in einer Turnhalle unter.",
+    "beispielTr": "Kent, mültecileri bir spor salonunda barındırıyor.",
+    "beispielEn": "The city is housing the refugees in a gym."
+  },
+  {
+    "id": 6455,
+    "tr": "cezasını çekmek",
+    "en": "to serve a sentence",
+    "beispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei.",
+    "beispielTr": "Cezasının üçte ikisini çekti ve sonra serbest kaldı.",
+    "beispielEn": "He served two thirds of his sentence and then went free."
+  },
+  {
+    "id": 6456,
+    "tr": "nöbet tutmak",
+    "en": "to guard",
+    "beispiel": "Zwei Polizisten bewachen den Eingang zum Gericht.",
+    "beispielTr": "İki polis adliyenin girişinde nöbet tutuyor.",
+    "beispielEn": "Two officers guard the entrance to the courthouse."
+  },
+  {
+    "id": 6457,
+    "tr": "tecrit etmek",
+    "en": "to isolate",
+    "beispiel": "Die Anstalt isolierte den Häftling nach dem Vorfall.",
+    "beispielTr": "Kurum, olaydan sonra mahkûmu tecrit etti.",
+    "beispielEn": "The facility isolated the inmate after the incident."
+  },
+  {
+    "id": 6458,
+    "tr": "yüzleşmek",
+    "en": "to work through",
+    "beispiel": "In der Therapie arbeitet er seine Tat Schritt für Schritt auf.",
+    "beispielTr": "Terapide işlediği suçla adım adım yüzleşiyor.",
+    "beispielEn": "In therapy he works through his crime step by step."
+  },
+  {
+    "id": 6459,
+    "tr": "yatıştırmak",
+    "en": "to de-escalate",
+    "beispiel": "Der Beamte deeskalierte die Lage mit ruhiger Stimme.",
+    "beispielTr": "Görevli, sakin sesiyle ortamı yatıştırdı.",
+    "beispielEn": "The officer de-escalated the situation with a calm voice."
+  },
+  {
+    "id": 6460,
+    "tr": "dışa kapatmak",
+    "en": "to seal off",
+    "beispiel": "Nach dem Skandal schottete sich die Familie völlig ab.",
+    "beispielTr": "Skandaldan sonra aile kendini tamamen dışa kapattı.",
+    "beispielEn": "After the scandal the family sealed itself off completely."
+  },
+  {
+    "id": 6461,
+    "tr": "rehabilite etmek",
+    "en": "to rehabilitate",
+    "beispiel": "Das Programm rehabilitiert junge Täter durch Arbeit und Therapie.",
+    "beispielTr": "Program genç suçluları iş ve terapiyle rehabilite ediyor.",
+    "beispielEn": "The program rehabilitates young offenders through work and therapy."
+  },
+  {
+    "id": 6462,
+    "tr": "raydan çıkmak",
+    "en": "to derail",
+    "beispiel": "Der Zug entgleiste kurz vor dem Bahnhof.",
+    "beispielTr": "Tren istasyona az kala raydan çıktı.",
+    "beispielEn": "The train derailed shortly before the station."
+  },
+  {
+    "id": 6463,
+    "tr": "eziyet etmek",
+    "en": "to harass",
+    "beispiel": "Der Chef schikanierte sie mit ständigen Sonderaufgaben.",
+    "beispielTr": "Patron, sürekli ek görevlerle ona eziyet etti.",
+    "beispielEn": "The boss harassed her with constant extra tasks."
+  },
+  {
+    "id": 6464,
+    "tr": "suç işlemiş",
+    "en": "delinquent",
+    "beispiel": "Er wurde mit sechzehn zum ersten Mal straffällig.",
+    "beispielTr": "On altı yaşında ilk kez suç işledi.",
+    "beispielEn": "He committed his first offense at sixteen."
+  },
+  {
+    "id": 6465,
+    "tr": "tekrar suç işleyen",
+    "en": "recidivist",
+    "beispiel": "Nach der Entlassung wurde er schnell wieder rückfällig.",
+    "beispielTr": "Tahliyeden sonra kısa sürede yeniden suç işledi.",
+    "beispielEn": "After his release he soon reoffended."
+  },
+  {
+    "id": 6466,
+    "tr": "şiddete eğilimli",
+    "en": "prone to violence",
+    "beispiel": "Ein paar gewaltbereite Fans stürmten auf das Spielfeld.",
+    "beispielTr": "Şiddete eğilimli birkaç taraftar sahaya daldı.",
+    "beispielEn": "A few fans prone to violence stormed onto the field."
+  },
+  {
+    "id": 6467,
+    "tr": "sabıkalı",
+    "en": "previously convicted",
+    "beispiel": "Er ist vorbestraft und findet deshalb keine Wohnung.",
+    "beispielTr": "Sabıkalı olduğu için kendine ev bulamıyor.",
+    "beispielEn": "He has a criminal record and therefore cannot find an apartment."
+  },
+  {
+    "id": 6468,
+    "tr": "çevre kaynaklı",
+    "en": "socially conditioned",
+    "beispiel": "Ihre Schwierigkeiten in der Schule sind vor allem milieubedingt.",
+    "beispielTr": "Okuldaki zorlukları her şeyden çok çevre kaynaklı.",
+    "beispielEn": "Her difficulties at school are mainly socially conditioned."
+  },
+  {
+    "id": 6469,
+    "tr": "suça yol açan",
+    "en": "criminogenic",
+    "beispiel": "Die Studie nennt Armut den stärksten kriminogenen Faktor.",
+    "beispielTr": "Araştırma, yoksulluğu suça yol açan en güçlü etken sayıyor.",
+    "beispielEn": "The study calls poverty the strongest criminogenic factor."
+  },
+  {
+    "id": 6470,
+    "tr": "zorla",
+    "en": "forcibly",
+    "beispiel": "Der Patient wurde zwangsweise in die Klinik eingewiesen.",
+    "beispielTr": "Hasta zorla kliniğe yatırıldı.",
+    "beispielEn": "The patient was forcibly committed to the clinic."
+  },
+  {
+    "id": 6471,
+    "tr": "önleyici",
+    "en": "preventive",
+    "beispiel": "Die Schule bietet präventive Kurse gegen Mobbing an.",
+    "beispielTr": "Okul, zorbalığa karşı önleyici kurslar sunuyor.",
+    "beispielEn": "The school offers preventive courses against bullying."
+  },
+  {
+    "id": 6472,
+    "tr": "sahne dekoru",
+    "en": "stage set",
+    "beispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache.",
+    "beispielTr": "Yalın sahne dekoru dikkati bütünüyle dile yöneltiyor.",
+    "beispielEn": "The bare stage set draws the eye entirely to the language."
+  },
+  {
+    "id": 6473,
+    "tr": "dünya prömiyeri",
+    "en": "world premiere",
+    "beispiel": "Die Uraufführung der Oper findet in Hamburg statt.",
+    "beispielTr": "Operanın dünya prömiyeri Hamburg'da yapılacak.",
+    "beispielEn": "The world premiere of the opera takes place in Hamburg."
+  },
+  {
+    "id": 6474,
+    "tr": "dramaturji",
+    "en": "dramaturgy",
+    "beispiel": "Die Dramaturgie des Abends wirkt streckenweise überladen.",
+    "beispielTr": "Gecenin dramaturjisi yer yer fazla yüklü duruyor.",
+    "beispielEn": "The dramaturgy of the evening feels overloaded in places."
+  },
+  {
+    "id": 6475,
+    "tr": "sanat eleştirisi",
+    "en": "art criticism",
+    "beispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen.",
+    "beispielTr": "Sanat eleştirisi onun ilk dönem işlerini uzun süre gözden kaçırdı.",
+    "beispielEn": "Art criticism overlooked his early work for a long time."
+  },
+  {
+    "id": 6476,
+    "tr": "kültür politikası",
+    "en": "cultural policy",
+    "beispiel": "Die Kulturpolitik der Stadt bevorzugt seit Jahren große Häuser.",
+    "beispielTr": "Kentin kültür politikası yıllardır büyük kurumları kayırıyor.",
+    "beispielEn": "The city's cultural policy has favored large institutions for years."
+  },
+  {
+    "id": 6477,
+    "tr": "izleyici kitlesi",
+    "en": "audience",
+    "beispiel": "Die Zuschauerschaft des Hauses ist deutlich jünger geworden.",
+    "beispielTr": "Kurumun izleyici kitlesi belirgin biçimde gençleşti.",
+    "beispielEn": "The theater's audience has become noticeably younger."
+  },
+  {
+    "id": 6478,
+    "tr": "görsel dil",
+    "en": "visual language",
+    "beispiel": "Ihre Bildsprache schöpft aus mittelalterlichen Vorlagen.",
+    "beispielTr": "Onun görsel dili ortaçağ örneklerinden besleniyor.",
+    "beispielEn": "Her visual language draws on medieval models."
+  },
+  {
+    "id": 6479,
+    "tr": "tür",
+    "en": "genre",
+    "beispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen.",
+    "beispielTr": "Oyun, klasik türlerin sınırlarını zorluyor.",
+    "beispielEn": "The play bursts the limits of the classical genres."
+  },
+  {
+    "id": 6480,
+    "tr": "üslup akımı",
+    "en": "stylistic movement",
+    "beispiel": "Der Maler lässt sich keiner einzigen Stilrichtung zuordnen.",
+    "beispielTr": "Ressam tek bir üslup akımına yerleştirilemiyor.",
+    "beispielEn": "The painter cannot be assigned to any single stylistic movement."
+  },
+  {
+    "id": 6481,
+    "tr": "ustaca numara",
+    "en": "clever trick",
+    "beispiel": "Mit einem raffinierten Kunstgriff verdoppelt der Regisseur die Hauptfigur.",
+    "beispielTr": "Yönetmen, ustaca bir numarayla ana karakteri ikiye katlıyor.",
+    "beispielEn": "With a clever trick the director doubles the main character."
+  },
+  {
+    "id": 6482,
+    "tr": "virtüözlük",
+    "en": "virtuosity",
+    "beispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation.",
+    "beispielTr": "Piyanodaki virtüözlüğü kimi zaman yorumu gölgeliyor.",
+    "beispielEn": "His virtuosity at the piano sometimes hides the interpretation."
+  },
+  {
+    "id": 6483,
+    "tr": "doğaçlama",
+    "en": "improvisation",
+    "beispiel": "Der zweite Teil des Konzerts besteht fast nur aus Improvisation.",
+    "beispielTr": "Konserin ikinci bölümü neredeyse tümüyle doğaçlamadan oluşuyor.",
+    "beispielEn": "The second half of the concert consists almost entirely of improvisation."
+  },
+  {
+    "id": 6484,
+    "tr": "okuma biçimi",
+    "en": "reading",
+    "beispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend.",
+    "beispielTr": "Oyunun bu okuma biçimi cüretkâr ama inandırıcı.",
+    "beispielEn": "This reading of the drama is daring but convincing."
+  },
+  {
+    "id": 6485,
+    "tr": "yapıt kavramı",
+    "en": "concept of the work",
+    "beispiel": "Die Installation stellt den traditionellen Werkbegriff radikal infrage.",
+    "beispielTr": "Yerleştirme, geleneksel yapıt kavramını kökten sorguluyor.",
+    "beispielEn": "The installation radically questions the traditional concept of the work."
+  },
+  {
+    "id": 6486,
+    "tr": "yazarlık",
+    "en": "authorship",
+    "beispiel": "Die Autorschaft des Textes ist bis heute umstritten.",
+    "beispielTr": "Metnin yazarlığı bugüne dek tartışmalı kaldı.",
+    "beispielEn": "The authorship of the text is disputed to this day."
+  },
+  {
+    "id": 6487,
+    "tr": "özgünlük",
+    "en": "originality",
+    "beispiel": "Der Jury fehlte in diesem Entwurf jede Originalität.",
+    "beispielTr": "Jüri bu tasarımda hiçbir özgünlük bulamadı.",
+    "beispielEn": "The jury found no originality at all in this design."
+  },
+  {
+    "id": 6488,
+    "tr": "yabancılaştırma",
+    "en": "alienation",
+    "beispiel": "Die Verfremdung hindert das Publikum am bequemen Mitfühlen.",
+    "beispielTr": "Yabancılaştırma, seyircinin rahatça duygudaşlık kurmasını engelliyor.",
+    "beispielEn": "The alienation keeps the audience from comfortable empathy."
+  },
+  {
+    "id": 6489,
+    "tr": "tabu ihlali",
+    "en": "taboo breaking",
+    "beispiel": "Sein letzter Film lebt allein vom Tabubruch.",
+    "beispielTr": "Son filmi yalnızca tabu ihlalinden besleniyor.",
+    "beispielEn": "His latest film lives off taboo breaking alone."
+  },
+  {
+    "id": 6490,
+    "tr": "alımlanma tarihi",
+    "en": "reception history",
+    "beispiel": "Die Rezeptionsgeschichte des Romans verlief äußerst wechselhaft.",
+    "beispielTr": "Romanın alımlanma tarihi son derece değişken seyretti.",
+    "beispielEn": "The reception history of the novel was extremely uneven."
+  },
+  {
+    "id": 6491,
+    "tr": "beğeni yargısı",
+    "en": "judgment of taste",
+    "beispiel": "Über sein Geschmacksurteil stritten die beiden den ganzen Abend.",
+    "beispielTr": "Beğeni yargısı yüzünden ikisi bütün akşam tartıştı.",
+    "beispielEn": "The two argued about his judgment of taste all evening."
+  },
+  {
+    "id": 6492,
+    "tr": "uzmanlık",
+    "en": "connoisseurship",
+    "beispiel": "Seine Kennerschaft der Barockmalerei ist im Fach unbestritten.",
+    "beispielTr": "Barok resim konusundaki uzmanlığı alanda tartışmasızdır.",
+    "beispielEn": "His connoisseurship of Baroque painting is undisputed in the field."
+  },
+  {
+    "id": 6493,
+    "tr": "sanat hamisi",
+    "en": "patron",
+    "beispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden.",
+    "beispielTr": "Özel sanat hamileri olmasa koleksiyon hiç oluşmazdı.",
+    "beispielEn": "Without private patrons the collection would never have come about."
+  },
+  {
+    "id": 6494,
+    "tr": "kültür camiası",
+    "en": "cultural scene",
+    "beispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent.",
+    "beispielTr": "Kültür camiasında ilişkiler çoğu zaman yetenekten daha önemlidir.",
+    "beispielEn": "In the cultural scene connections often count more than talent."
+  },
+  {
+    "id": 6495,
+    "tr": "sanat piyasası",
+    "en": "art market",
+    "beispiel": "Der Kunstmarkt reagiert empfindlich auf jede Krise.",
+    "beispielTr": "Sanat piyasası her krize duyarlı tepki veriyor.",
+    "beispielEn": "The art market reacts sensitively to every crisis."
+  },
+  {
+    "id": 6496,
+    "tr": "retrospektif",
+    "en": "retrospective",
+    "beispiel": "Das Museum widmet der Fotografin eine große Retrospektive.",
+    "beispielTr": "Müze, fotoğrafçıya büyük bir retrospektif ayırıyor.",
+    "beispielEn": "The museum is devoting a large retrospective to the photographer."
+  },
+  {
+    "id": 6497,
+    "tr": "sergi açılışı",
+    "en": "opening reception",
+    "beispiel": "Zur Vernissage kamen mehr Journalisten als erwartet.",
+    "beispielTr": "Sergi açılışına beklenenden çok gazeteci geldi.",
+    "beispielEn": "More journalists came to the opening reception than expected."
+  },
+  {
+    "id": 6498,
+    "tr": "anıt koruma",
+    "en": "historic preservation",
+    "beispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt.",
+    "beispielTr": "Anıt koruma kurulu cephenin değiştirilmesini yasakladı.",
+    "beispielEn": "The historic preservation office banned the alteration of the facade."
+  },
+  {
+    "id": 6499,
+    "tr": "uyumsuzluk",
+    "en": "dissonance",
+    "beispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer.",
+    "beispielTr": "Sondaki çözülmemiş uyumsuzluk birçok dinleyiciyi rahatsız ediyor.",
+    "beispielEn": "The unresolved dissonance at the end unsettles many listeners."
+  },
+  {
+    "id": 6500,
+    "tr": "partisyon",
+    "en": "score",
+    "beispiel": "Der Dirigent kennt die Partitur bis in jede Nebenstimme.",
+    "beispielTr": "Şef partisyonu en küçük ara sese kadar biliyor.",
+    "beispielEn": "The conductor knows the score down to every inner voice."
+  },
+  {
+    "id": 6501,
+    "tr": "kompozisyon",
+    "en": "composition",
+    "beispiel": "Die Komposition des Bildes folgt einer strengen Diagonale.",
+    "beispielTr": "Resmin kompozisyonu katı bir köşegeni izliyor.",
+    "beispielEn": "The composition of the picture follows a strict diagonal."
+  },
+  {
+    "id": 6502,
+    "tr": "uyarlama",
+    "en": "adaptation",
+    "beispiel": "Die filmische Adaption bleibt hinter der Vorlage zurück.",
+    "beispielTr": "Sinema uyarlaması özgün metnin gerisinde kalıyor.",
+    "beispielEn": "The film adaptation falls short of the original."
+  }
 ]

@@ -4,7 +4,7 @@
     "tr": "dize",
     "en": "verse",
     "beispiel": "Die letzten beiden Verse bleiben bewusst unvollendet.",
-    "beispielTr": "Son iki dize bilinçli olarak yarım bırakılıyor.",
+    "beispielTr": "Son iki dize bilerek yarım bırakılmış.",
     "beispielEn": "The last two verses are deliberately left unfinished."
   },
   {
@@ -20,16 +20,16 @@
     "tr": "düzyazı",
     "en": "prose",
     "beispiel": "Ihre Prosa ist nüchtern und kommt ohne Schmuck aus.",
-    "beispielTr": "Düzyazısı yalın ve hiçbir süse başvurmuyor.",
-    "beispielEn": "Her prose is sober and does without any ornament."
+    "beispielTr": "Düzyazısı yalın ve hiç süse kaçmıyor.",
+    "beispielEn": "Her prose is sober and does without ornament."
   },
   {
     "id": 6556,
     "tr": "şiir",
     "en": "poetry",
-    "beispiel": "Sie liest abends am liebsten moderne Lyrik.",
-    "beispielTr": "Akşamları en çok modern şiir okumayı seviyor.",
-    "beispielEn": "In the evening she likes reading modern poetry best."
+    "beispiel": "Moderne Lyrik verlangt vom Leser viel Geduld.",
+    "beispielTr": "Modern şiir okurdan çok sabır ister.",
+    "beispielEn": "Modern poetry demands a lot of patience from the reader."
   },
   {
     "id": 6557,
@@ -37,14 +37,14 @@
     "en": "treatise",
     "beispiel": "Er hat eine trockene Abhandlung über Satzzeichen geschrieben.",
     "beispielTr": "Noktalama işaretleri üzerine kuru bir inceleme yazdı.",
-    "beispielEn": "He wrote a dry treatise on punctuation marks."
+    "beispielEn": "He wrote a dry treatise about punctuation marks."
   },
   {
     "id": 6558,
     "tr": "ana motif",
     "en": "leitmotif",
     "beispiel": "Das Meer bildet in ihrem Werk ein wiederkehrendes Leitmotiv.",
-    "beispielTr": "Deniz, eserinde yinelenen bir ana motif oluşturuyor.",
+    "beispielTr": "Deniz, onun eserinde yinelenen bir ana motif oluşturuyor.",
     "beispielEn": "The sea forms a recurring leitmotif in her work."
   },
   {
@@ -52,7 +52,7 @@
     "tr": "polemik yazısı",
     "en": "polemic",
     "beispiel": "Seine Streitschrift gegen die Akademie erschien zunächst anonym.",
-    "beispielTr": "Akademiye karşı yazdığı polemik yazısı önce imzasız çıktı.",
+    "beispielTr": "Akademiye karşı yazdığı polemik yazısı önce imzasız yayımlandı.",
     "beispielEn": "His polemic against the academy first appeared anonymously."
   },
   {
@@ -61,7 +61,7 @@
     "en": "quotation",
     "beispiel": "Das Zitat ist im Original deutlich schärfer formuliert.",
     "beispielTr": "Alıntı özgün metinde çok daha sert ifade edilmiş.",
-    "beispielEn": "The quotation is worded far more sharply in the original."
+    "beispielEn": "The quotation is worded much more sharply in the original."
   },
   {
     "id": 6561,
@@ -76,16 +76,16 @@
     "tr": "kelime oyunu",
     "en": "pun",
     "beispiel": "Das Wortspiel im Titel lässt sich kaum übersetzen.",
-    "beispielTr": "Başlıktaki kelime oyunu neredeyse hiç çevrilemiyor.",
+    "beispielTr": "Başlıktaki kelime oyunu neredeyse çevrilemiyor.",
     "beispielEn": "The pun in the title can hardly be translated."
   },
   {
     "id": 6563,
     "tr": "dil imgesi",
-    "en": "verbal image",
+    "en": "figure of speech",
     "beispiel": "Ihre Sprachbilder stammen fast alle aus der Landwirtschaft.",
-    "beispielTr": "Dil imgelerinin neredeyse tamamı tarımdan geliyor.",
-    "beispielEn": "Almost all her verbal images come from farming."
+    "beispielTr": "Dil imgelerinin neredeyse hepsi tarımdan geliyor.",
+    "beispielEn": "Almost all her figures of speech come from farming."
   },
   {
     "id": 6564,
@@ -93,7 +93,7 @@
     "en": "frame story",
     "beispiel": "Die Rahmenhandlung spielt in einem verschneiten Gasthaus.",
     "beispielTr": "Çerçeve öykü karla kaplı bir handa geçiyor.",
-    "beispielEn": "The frame story takes place in a snowbound inn."
+    "beispielEn": "The frame story takes place in a snowed-in inn."
   },
   {
     "id": 6565,
@@ -107,9 +107,9 @@
     "id": 6566,
     "tr": "fabl",
     "en": "fable",
-    "beispiel": "Der Lehrer las den Kindern eine alte Fabel vor.",
-    "beispielTr": "Öğretmen çocuklara eski bir fabl okudu.",
-    "beispielEn": "The teacher read the children an old fable."
+    "beispiel": "Die Fabel vom Fuchs und den Trauben kennt jeder.",
+    "beispielTr": "Tilki ile üzümler fablını herkes bilir.",
+    "beispielEn": "Everyone knows the fable of the fox and the grapes."
   },
   {
     "id": 6567,
@@ -117,14 +117,14 @@
     "en": "stylistic break",
     "beispiel": "Der plötzliche Wechsel in die Amtssprache wirkt wie ein Stilbruch.",
     "beispielTr": "Resmî dile ani geçiş üslup kopukluğu gibi duruyor.",
-    "beispielEn": "The sudden switch into official jargon feels like a stylistic break."
+    "beispielEn": "The sudden switch to official language feels like a stylistic break."
   },
   {
     "id": 6568,
     "tr": "arka kapak yazısı",
     "en": "blurb",
     "beispiel": "Der Klappentext verspricht mehr, als das Buch einlöst.",
-    "beispielTr": "Arka kapak yazısı kitabın tuttuğundan fazlasını vaat ediyor.",
+    "beispielTr": "Arka kapak yazısı kitabın verdiğinden fazlasını vaat ediyor.",
     "beispielEn": "The blurb promises more than the book delivers."
   },
   {
@@ -140,7 +140,7 @@
     "tr": "keskinleştirmek",
     "en": "to sharpen",
     "beispiel": "Der Essayist spitzt seine These bewusst zu.",
-    "beispielTr": "Denemeci tezini bilinçli olarak keskinleştiriyor.",
+    "beispielTr": "Denemeci tezini bilerek keskinleştiriyor.",
     "beispielEn": "The essayist deliberately sharpens his thesis."
   },
   {
@@ -148,7 +148,7 @@
     "tr": "ödünçlemek",
     "en": "to borrow",
     "beispiel": "Das Wort wurde im Mittelalter aus dem Lateinischen entlehnt.",
-    "beispielTr": "Kelime Orta Çağ'da Latinceden ödünçlenmiş.",
+    "beispielTr": "Kelime Orta Çağ'da Latinceden ödünç alınmış.",
     "beispielEn": "The word was borrowed from Latin in the Middle Ages."
   },
   {
@@ -171,8 +171,8 @@
     "id": 6574,
     "tr": "atıfta bulunmak",
     "en": "to refer",
-    "beispiel": "Die Autorin verweist im Anhang auf ältere Untersuchungen.",
-    "beispielTr": "Yazar ekte daha eski incelemelere atıfta bulunuyor.",
+    "beispiel": "Die Autorin verweist im Anhang auf ältere Studien.",
+    "beispielTr": "Yazar ekte daha eski çalışmalara atıfta bulunuyor.",
     "beispielEn": "In the appendix the author refers to older studies."
   },
   {
@@ -195,25 +195,25 @@
     "id": 6577,
     "tr": "anlaşılmak",
     "en": "to be evident",
-    "beispiel": "Aus dem Briefwechsel geht ihre tiefe Freundschaft hervor.",
-    "beispielTr": "Mektuplaşmadan derin dostlukları anlaşılıyor.",
-    "beispielEn": "Their deep friendship is evident from the letters."
+    "beispiel": "Aus dem Briefwechsel geht ihre Freundschaft klar hervor.",
+    "beispielTr": "Mektuplaşmadan dostlukları açıkça anlaşılıyor.",
+    "beispielEn": "Their friendship is clearly evident from the correspondence."
   },
   {
     "id": 6578,
     "tr": "serpiştirmek",
     "en": "to weave in",
-    "beispiel": "Sie flicht immer wieder kleine Beobachtungen in die Handlung ein.",
-    "beispielTr": "Olay örgüsüne durmadan küçük gözlemler serpiştiriyor.",
-    "beispielEn": "She keeps weaving small observations into the plot."
+    "beispiel": "Sie flicht kleine Beobachtungen in die Handlung ein.",
+    "beispielTr": "Olay örgüsüne küçük gözlemler serpiştiriyor.",
+    "beispielEn": "She weaves small observations into the plot."
   },
   {
     "id": 6579,
     "tr": "konudan sapmak",
     "en": "to digress",
-    "beispiel": "Der Redner schweift ständig vom eigentlichen Thema ab.",
-    "beispielTr": "Konuşmacı sürekli asıl konudan sapıyor.",
-    "beispielEn": "The speaker constantly digresses from the actual topic."
+    "beispiel": "Der Redner schweift ständig vom Thema ab.",
+    "beispielTr": "Konuşmacı sürekli konudan sapıyor.",
+    "beispielEn": "The speaker keeps digressing from the topic."
   },
   {
     "id": 6580,
@@ -221,7 +221,7 @@
     "en": "vivid",
     "beispiel": "Ihre Sprache ist ungewöhnlich bildhaft und zugleich konkret.",
     "beispielTr": "Dili alışılmadık ölçüde imgesel ve aynı zamanda somut.",
-    "beispielEn": "Her language is unusually vivid and at the same time concrete."
+    "beispielEn": "Her language is unusually vivid and concrete at once."
   },
   {
     "id": 6581,
@@ -229,7 +229,7 @@
     "en": "unambiguous",
     "beispiel": "Der Kritiker äußert seine Ablehnung unmissverständlich.",
     "beispielTr": "Eleştirmen beğenmediğini açık seçik dile getiriyor.",
-    "beispielEn": "The critic states his rejection in no uncertain terms."
+    "beispielEn": "The critic voices his rejection unambiguously."
   },
   {
     "id": 6582,
@@ -237,7 +237,7 @@
     "en": "laconic",
     "beispiel": "Sein Stil bleibt bis zum letzten Satz lakonisch.",
     "beispielTr": "Üslubu son cümleye kadar kısa ve öz kalıyor.",
-    "beispielEn": "His style stays laconic until the very last sentence."
+    "beispielEn": "His style stays laconic to the very last sentence."
   },
   {
     "id": 6583,
@@ -245,135 +245,135 @@
     "en": "as it were",
     "beispiel": "Die Wiederholung wirkt gleichsam wie ein musikalisches Motiv.",
     "beispielTr": "Yineleme adeta müzikal bir motif gibi etki ediyor.",
-    "beispielEn": "The repetition works like a musical motif, as it were."
+    "beispielEn": "The repetition works, as it were, like a musical motif."
   },
   {
     "id": 6584,
-    "tr": "yayıncılık sektörü",
-    "en": "publishing industry",
-    "beispiel": "Sie arbeitet seit zwanzig Jahren im Verlagswesen.",
-    "beispielTr": "Yirmi yıldır yayıncılık sektöründe çalışıyor.",
-    "beispielEn": "She has worked in the publishing industry for twenty years."
+    "tr": "yayıncılık",
+    "en": "publishing",
+    "beispiel": "Das Verlagswesen steht durch sinkende Anzeigenerlöse unter Druck.",
+    "beispielTr": "Yayıncılık, azalan ilan gelirleri yüzünden baskı altında.",
+    "beispielEn": "Publishing is under pressure from falling advertising revenues."
   },
   {
     "id": 6585,
     "tr": "propaganda",
     "en": "propaganda",
-    "beispiel": "Das Plakat ist reine Propaganda aus der Kriegszeit.",
-    "beispielTr": "Afiş savaş döneminden kalma katıksız bir propaganda.",
-    "beispielEn": "The poster is pure propaganda from the war years."
+    "beispiel": "Der Film wurde damals als Propaganda verboten.",
+    "beispielTr": "Film o dönemde propaganda sayılıp yasaklandı.",
+    "beispielEn": "The film was banned as propaganda back then."
   },
   {
     "id": 6586,
     "tr": "kaynak gizliliği",
     "en": "source protection",
-    "beispiel": "Die Redaktion nimmt den Quellenschutz sehr ernst.",
-    "beispielTr": "Yayın kurulu kaynak gizliliğini çok ciddiye alıyor.",
-    "beispielEn": "The newsroom takes source protection very seriously."
+    "beispiel": "Ohne Quellenschutz spricht kaum ein Insider mit Journalisten.",
+    "beispielTr": "Kaynak gizliliği olmasa hiçbir içeriden kişi gazetecilerle konuşmaz.",
+    "beispielEn": "Without source protection hardly any insider talks to journalists."
   },
   {
     "id": 6587,
     "tr": "bilgi kaynağı",
     "en": "informant",
     "beispiel": "Der Informant übergab die Unterlagen nur anonym.",
-    "beispielTr": "Bilgi kaynağı belgeleri yalnızca isimsiz olarak verdi.",
+    "beispielTr": "Bilgi kaynağı belgeleri yalnızca isimsiz olarak teslim etti.",
     "beispielEn": "The informant handed over the documents only anonymously."
   },
   {
     "id": 6588,
     "tr": "ifşa",
     "en": "revelation",
-    "beispiel": "Die Enthüllung brachte den Konzernchef schwer in Bedrängnis.",
-    "beispielTr": "İfşa, holding patronunu ciddi biçimde zor durumda bıraktı.",
-    "beispielEn": "The revelation put the company boss under serious pressure."
+    "beispiel": "Die Enthüllung kostete den Chefredakteur sein Amt.",
+    "beispielTr": "İfşa, genel yayın yönetmeninin görevine mal oldu.",
+    "beispielEn": "The revelation cost the editor-in-chief his job."
   },
   {
     "id": 6589,
-    "tr": "magazin basını",
+    "tr": "bulvar basını",
     "en": "tabloid press",
-    "beispiel": "Die Boulevardpresse druckte das Foto ohne ihre Zustimmung.",
-    "beispielTr": "Magazin basını fotoğrafı onun izni olmadan bastı.",
-    "beispielEn": "The tabloid press printed the photo without her consent."
+    "beispiel": "Die Boulevardpresse lebt von Empörung und Skandalen.",
+    "beispielTr": "Bulvar basını öfke ve skandallardan besleniyor.",
+    "beispielEn": "The tabloid press thrives on outrage and scandal."
   },
   {
     "id": 6590,
-    "tr": "referans yayın organı",
+    "tr": "öncü yayın organı",
     "en": "leading medium",
-    "beispiel": "Alle Leitmedien berichteten am selben Tag darüber.",
-    "beispielTr": "Bütün referans yayın organları aynı gün bunu haber yaptı.",
-    "beispielEn": "All the leading media reported on it the same day."
+    "beispiel": "Was die Leitmedien aufgreifen, prägt die Debatte.",
+    "beispielTr": "Öncü yayın organlarının ele aldığı konu tartışmayı belirliyor.",
+    "beispielEn": "What the leading media pick up shapes the debate."
   },
   {
     "id": 6591,
     "tr": "kanaat oluşumu",
-    "en": "opinion forming",
-    "beispiel": "Soziale Netzwerke greifen tief in die politische Meinungsbildung ein.",
-    "beispielTr": "Sosyal ağlar siyasi kanaat oluşumuna derinden müdahale ediyor.",
-    "beispielEn": "Social networks intervene deeply in political opinion forming."
+    "en": "opinion formation",
+    "beispiel": "Algorithmen greifen tief in die politische Meinungsbildung ein.",
+    "beispielTr": "Algoritmalar siyasi kanaat oluşumuna derinden müdahale ediyor.",
+    "beispielEn": "Algorithms intervene deeply in political opinion formation."
   },
   {
     "id": 6592,
     "tr": "görüş çeşitliliği",
     "en": "diversity of opinion",
-    "beispiel": "Im Stadtrat fehlt es spürbar an Meinungsvielfalt.",
-    "beispielTr": "Belediye meclisinde görüş çeşitliliği gözle görülür biçimde eksik.",
-    "beispielEn": "The city council noticeably lacks diversity of opinion."
+    "beispiel": "Der Gesetzgeber soll die Meinungsvielfalt im Rundfunk sichern.",
+    "beispielTr": "Yasa koyucu yayıncılıkta görüş çeşitliliğini güvence altına almalı.",
+    "beispielEn": "Lawmakers should safeguard diversity of opinion in broadcasting."
   },
   {
     "id": 6593,
     "tr": "doğruluk",
     "en": "truthfulness",
-    "beispiel": "Seine Wahrhaftigkeit hat ihm viele Feinde gemacht.",
-    "beispielTr": "Doğruluğu ona pek çok düşman kazandırdı.",
-    "beispielEn": "His truthfulness has made him many enemies."
+    "beispiel": "Der Richter zweifelte an der Wahrhaftigkeit seiner Aussage.",
+    "beispielTr": "Hâkim, ifadesinin doğruluğundan kuşku duydu.",
+    "beispielEn": "The judge doubted the truthfulness of his statement."
   },
   {
     "id": 6594,
     "tr": "kişilik hakkı",
     "en": "personality right",
-    "beispiel": "Das Gericht sah ihr Persönlichkeitsrecht klar verletzt.",
-    "beispielTr": "Mahkeme, kişilik hakkının açıkça ihlal edildiğini gördü.",
-    "beispielEn": "The court found her personality right clearly violated."
+    "beispiel": "Das Persönlichkeitsrecht der Betroffenen wiegt hier schwerer.",
+    "beispielTr": "Burada ilgililerin kişilik hakkı daha ağır basıyor.",
+    "beispielEn": "Here the personality right of those affected weighs more heavily."
   },
   {
     "id": 6595,
     "tr": "dikkat ekonomisi",
     "en": "attention economy",
-    "beispiel": "Der Vortrag handelte von der Aufmerksamkeitsökonomie sozialer Netzwerke.",
-    "beispielTr": "Konferans sosyal ağların dikkat ekonomisini konu alıyordu.",
-    "beispielEn": "The lecture was about the attention economy of social networks."
+    "beispiel": "Die Aufmerksamkeitsökonomie zwingt Redaktionen zu schrillen Überschriften.",
+    "beispielTr": "Dikkat ekonomisi haber merkezlerini çarpıcı başlıklara zorluyor.",
+    "beispielEn": "The attention economy pushes newsrooms toward shrill headlines."
   },
   {
     "id": 6596,
     "tr": "yayın katkı payı",
     "en": "broadcasting fee",
-    "beispiel": "Den Rundfunkbeitrag zahlt in Deutschland jeder Haushalt.",
-    "beispielTr": "Almanya'da yayın katkı payını her hane ödüyor.",
-    "beispielEn": "In Germany every household pays the broadcasting fee."
+    "beispiel": "Viele Studenten lassen sich vom Rundfunkbeitrag befreien.",
+    "beispielTr": "Birçok öğrenci yayın katkı payından muaf tutuluyor.",
+    "beispielEn": "Many students get exempted from the broadcasting fee."
   },
   {
     "id": 6597,
-    "tr": "medya tekelleşmesi",
+    "tr": "medya yoğunlaşması",
     "en": "media concentration",
     "beispiel": "Die wachsende Medienkonzentration verringert die Zahl unabhängiger Stimmen.",
-    "beispielTr": "Artan medya tekelleşmesi bağımsız seslerin sayısını azaltıyor.",
+    "beispielTr": "Artan medya yoğunlaşması bağımsız seslerin sayısını azaltıyor.",
     "beispielEn": "Growing media concentration reduces the number of independent voices."
   },
   {
     "id": 6598,
     "tr": "basın meslek ilkeleri",
     "en": "press code",
-    "beispiel": "Die Zeitung hat gegen den Pressekodex verstoßen.",
-    "beispielTr": "Gazete basın meslek ilkelerini çiğnedi.",
-    "beispielEn": "The newspaper violated the press code."
+    "beispiel": "Der Pressekodex verbietet es, Opfer erkennbar zu zeigen.",
+    "beispielTr": "Basın meslek ilkeleri mağdurları tanınacak şekilde göstermeyi yasaklıyor.",
+    "beispielEn": "The press code forbids showing victims in a recognizable way."
   },
   {
     "id": 6599,
     "tr": "yayın kurulu gizliliği",
-    "en": "editorial secrecy",
+    "en": "editorial confidentiality",
     "beispiel": "Die Durchsuchung verletzte nach Ansicht des Gerichts das Redaktionsgeheimnis.",
     "beispielTr": "Mahkemeye göre arama, yayın kurulu gizliliğini ihlal etti.",
-    "beispielEn": "In the court's view the search violated editorial secrecy."
+    "beispielEn": "According to the court the search violated editorial confidentiality."
   },
   {
     "id": 6600,
@@ -387,16 +387,16 @@
     "id": 6601,
     "tr": "bilgi edinme özgürlüğü",
     "en": "freedom of information",
-    "beispiel": "Dank der Informationsfreiheit bekam sie die Akten zu sehen.",
-    "beispielTr": "Bilgi edinme özgürlüğü sayesinde dosyaları görebildi.",
-    "beispielEn": "Thanks to freedom of information she got to see the files."
+    "beispiel": "Die Informationsfreiheit gibt jedem Bürger Zugang zu Akten.",
+    "beispielTr": "Bilgi edinme özgürlüğü her yurttaşa dosyalara erişim sağlıyor.",
+    "beispielEn": "Freedom of information gives every citizen access to files."
   },
   {
     "id": 6602,
     "tr": "haber değeri",
     "en": "news value",
-    "beispiel": "Der Chefredakteur zweifelte am Nachrichtenwert des Themas.",
-    "beispielTr": "Genel yayın yönetmeni konunun haber değerinden kuşku duydu.",
-    "beispielEn": "The editor-in-chief doubted the news value of the topic."
+    "beispiel": "Nähe und Konflikt erhöhen den Nachrichtenwert eines Ereignisses.",
+    "beispielTr": "Yakınlık ve çatışma bir olayın haber değerini artırır.",
+    "beispielEn": "Proximity and conflict raise the news value of an event."
   }
 ]

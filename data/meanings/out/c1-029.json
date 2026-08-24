@@ -212,7 +212,7 @@
   "tr": "haklı çıkarmak",
   "en": "to justify",
   "beispiel": "Wie willst du diese Ausgaben vor dem Vorstand rechtfertigen?",
-  "beispielTr": "Bu harcamaları yönetim kurulunun önünde nasıl haklı çıkaracaksın?",
+  "beispielTr": "Bu harcamaları yönetim kuruluna nasıl haklı çıkaracaksın?",
   "beispielEn": "How are you going to justify these expenses to the board?"
  },
  {
@@ -355,9 +355,9 @@
   "id": 6697,
   "tr": "hükümranlık yetkisi",
   "en": "sovereign authority",
-  "beispiel": "Das Abkommen gilt für alle unter seiner Hoheitsgewalt.",
-  "beispielTr": "Anlaşma hükümranlık yetkisi altındaki herkes için geçerli.",
-  "beispielEn": "The treaty applies to everyone under its sovereign authority."
+  "beispiel": "Der Vertrag gilt für alle unter der Hoheitsgewalt des Staates.",
+  "beispielTr": "Anlaşma devletin hükümranlık yetkisi altındaki herkes için geçerli.",
+  "beispielEn": "The treaty applies to everyone under the state's sovereign authority."
  },
  {
   "id": 6698,

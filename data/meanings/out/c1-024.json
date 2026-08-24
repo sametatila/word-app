@@ -76,7 +76,7 @@
   "tr": "ceza infazı",
   "en": "penal system",
   "beispiel": "Im deutschen Strafvollzug arbeiten viele Gefangene für wenig Geld.",
-  "beispielTr": "Alman ceza infaz sisteminde birçok mahkûm çok az parayla çalışıyor.",
+  "beispielTr": "Alman ceza infazında birçok mahkûm çok az parayla çalışıyor.",
   "beispielEn": "In the German penal system many inmates work for little money."
  },
  {
@@ -164,7 +164,7 @@
   "tr": "bakımsızlık",
   "en": "dereliction",
   "beispiel": "Die Verwahrlosung des Bahnhofsviertels ist unübersehbar.",
-  "beispielTr": "İstasyon mahallesindeki bakımsızlık göze batıyor.",
+  "beispielTr": "Gar çevresindeki bakımsızlık göze batıyor.",
   "beispielEn": "The dereliction of the station district is impossible to miss."
  },
  {
@@ -219,13 +219,13 @@
   "id": 6430,
   "tr": "özel önleme",
   "en": "specific deterrence",
-  "beispiel": "Seine Therapie im Gefängnis zielt auf Spezialprävention.",
+  "beispiel": "Seine Therapie im Gefängnis zielt auf Spezialprävention ab.",
   "beispielTr": "Cezaevindeki terapisi özel önlemeyi hedefliyor.",
   "beispielEn": "His therapy in prison aims at specific deterrence."
  },
  {
   "id": 6431,
-  "tr": "kayıt dışı suçlar",
+  "tr": "kayıt dışı suç",
   "en": "unreported crime",
   "beispiel": "Bei häuslicher Gewalt ist das Dunkelfeld besonders groß.",
   "beispielTr": "Aile içi şiddette kayıt dışı suç sayısı çok yüksek.",
@@ -260,7 +260,7 @@
   "tr": "norm ihlali",
   "en": "norm violation",
   "beispiel": "Nicht jeder Normverstoß wird strafrechtlich verfolgt.",
-  "beispielTr": "Her norm ihlali cezai olarak takip edilmiyor.",
+  "beispielTr": "Her norm ihlali cezai kovuşturmaya konu olmuyor.",
   "beispielEn": "Not every norm violation is prosecuted."
  },
  {
