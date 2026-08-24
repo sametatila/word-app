@@ -6,9 +6,13 @@ import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/sp
 import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
 import { parseConfirm } from "@/lib/voice-intent";
-import { cueListen } from "@/lib/lessons/cues";
 import { useWakeLock } from "@/components/use-wake-lock";
-import { startPocketAudio, stopPocketAudio, updatePocketTitle } from "@/components/pocket-audio";
+import {
+  pocketCue,
+  startPocketAudio,
+  stopPocketAudio,
+  updatePocketTitle,
+} from "@/components/pocket-audio";
 import {
   activateMic,
   closeMic,
@@ -20,6 +24,7 @@ import {
   sttAvailable,
   transcribe,
 } from "@/components/pocket-mic";
+import { withDeadline } from "@/components/pocket-clock";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
@@ -142,6 +147,34 @@ const BROWSER_GIVE_UP = 2;
 /** Kaç ardışık başarısız kayıttan sonra tur durur. */
 const CAPTURE_FAIL_LIMIT = 2;
 
+/**
+ * Ağ isteklerinin üst sınırı.
+ *
+ * Cepteki telefon uyku kipine yaklaştıkça ağ yavaşlıyor; zaman aşımı olmayan
+ * bir istek turu dakikalarca dondurabiliyor. Cevap gönderimi kaybolursa SRS
+ * bozulmuyor (sunucu son duruma göre çalışıyor), yani beklemek pahalı, vazgeçmek
+ * ucuz.
+ */
+const NET_TIMEOUT_MS = 10_000;
+
+/**
+ * Bir okumanın en fazla süresi.
+ *
+ * Zincirin kendi parça korumaları var (bkz. speak-button) ama bu ONLARIN da
+ * çuvallamasına karşı son kapı: `say` çözülmezse tur o satırda kalıyor ve
+ * kullanıcı hiçbir şey duymuyor. Dört parçalık en uzun tanıtım bile on
+ * saniyeyi geçmiyor, otuz saniye rahat bir tavan.
+ */
+const SPEAK_CAP_MS = 30_000;
+
+/**
+ * Bir dinlemenin en fazla süresi.
+ *
+ * Pencerenin kendisi zaten sınırlı; buradaki pay kaydediciye, ağa ve yazıya
+ * çevirmeye. Süre dolarsa "duyulmadı" sayılıyor — turun donması değil.
+ */
+const HEAR_SLACK_MS = 15_000;
+
 function localDay(): string {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -188,6 +221,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * eski değeri görürdü).
    */
   const [capture, setCapture] = useState<"stt" | "browser">("browser");
+  /**
+   * Cepte kipi bu kurulumda GERÇEKTEN çalışıyor mu — daha tur başlamadan.
+   *
+   * `capture` ancak tur başlayınca belli oluyor, yani başlangıç ekranı bunu
+   * söyleyemiyordu ve kullanıcı ekranı kapattıktan sonra öğreniyordu. Oysa
+   * ekran kapalıyken çalışan tek yol sunucudaki yazıya çevirme; anahtarı
+   * yoksa "kulaklığı tak, cebe koy" daveti karşılanamayan bir söz oluyor.
+   */
+  const [pocketReady, setPocketReady] = useState<boolean | null>(null);
   const captureRef = useRef<"stt" | "browser">("browser");
   /** Tarayıcının kendi tanıyıcısı kullanılabiliyor mu — görünürken tercih edilen yol. */
   const browserRef = useRef(false);
@@ -240,7 +282,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch("/api/session", { cache: "no-store" });
+      const res = await fetch("/api/session", {
+        cache: "no-store",
+        signal: AbortSignal.timeout(NET_TIMEOUT_MS),
+      });
       if (!res.ok) return setStatus("error");
       const data = (await res.json()) as SessionPayload & { resume?: SessionProgress | null };
       if (!data.rounds.length) return setStatus("empty");
@@ -269,6 +314,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     if (!batch.length) return;
     try {
       const res = await fetch("/api/answers", {
+        signal: AbortSignal.timeout(NET_TIMEOUT_MS),
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
@@ -295,7 +341,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   /** Okur ve bitmesini bekler. İptal edilirse söz elle çözülür, döngü kilitlenmez. */
   const say = useCallback((segments: SpeechSegment[]): Promise<void> => {
-    return new Promise<void>((resolve) => {
+    const spoken = new Promise<void>((resolve) => {
       speakDone.current = resolve;
       // Cepte kipinde ses ÖĞESİ yolu zorlanıyor: telefon kilitlendiğinde
       // `AudioContext` askıya alınıyor ve WebAudio ile çalan her şey susuyor.
@@ -312,6 +358,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         { background: true },
       );
     });
+    // Son kapı: okuma çözülmezse tur burada kalırdı (bkz. SPEAK_CAP_MS).
+    return withDeadline(spoken, SPEAK_CAP_MS, undefined);
   }, []);
 
   /**
@@ -324,7 +372,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * çözümleyicisi kullanılabilirdi ama ekran kapandığında `AudioContext`
    * askıya alınıyor ve çözümleyici tam ihtiyaç duyulan yerde duruyor.
    */
-  const hear = useCallback(
+  const hearOnce = useCallback(
     async (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> => {
       /*
         Sıra: sayfa GÖRÜNÜRKEN önce tarayıcının kendi tanıyıcısı.
@@ -358,8 +406,20 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         if (browserMisses.current >= BROWSER_GIVE_UP) browserRef.current = false;
       }
 
+      /*
+        Görünürlük YENİDEN okunuyor.
+
+        Ekran, tanıyıcı dinlerken kapanabiliyor — kullanıcı soruyu duyup
+        telefonu cebine koyduğunda tam olarak bu oluyor. Tanıyıcı o anda
+        susuyor ve elinde bir şey olmadan dönüyor. Girişteki "görünürdü"
+        bilgisiyle karar verilince kayıt yolu denenmiyor ve ekranın
+        kapanmasına denk gelen soru daima "duyamadım" oluyordu.
+      */
+      const stillVisible =
+        typeof document === "undefined" || document.visibilityState === "visible";
+
       // Kayıt yolu yalnızca ekran kapalıyken (ya da tanıyıcı hiç yokken).
-      if (sttReady.current && (!visible || !browserRef.current)) {
+      if (sttReady.current && (!stillVisible || !browserRef.current)) {
         // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
         // pencere değil ÜST SINIR.
         const clip = await recordClip(windowMs);
@@ -391,6 +451,23 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     [listen, say],
   );
 
+  /**
+   * Dinlemenin süreye bağlanmış hâli — döngünün kullandığı budur.
+   *
+   * İçerideki her yolun kendi sınırı var ama hiçbiri kesin değil: tanıyıcı
+   * `onend` vermeyebiliyor, kaydedici parça üretmeyi bırakabiliyor, ağ
+   * kopabiliyor. Bunların hepsi aynı sonucu veriyordu — tur o satırda donuyor
+   * ve kullanıcı cepteki telefondan bir daha hiçbir şey duymuyor.
+   *
+   * Süre dolarsa "duyulmadı" dönüyor. Bu bir kayıp ama turu öldürmüyor:
+   * duyulmayan cevap zaten yanlış sayılmıyor (bkz. UNHEARD_IS_NOT_WRONG).
+   */
+  const hear = useCallback(
+    (lang: "de" | "tr", windowMs: number, expected = ""): Promise<string[]> =>
+      withDeadline(hearOnce(lang, windowMs, expected), windowMs + HEAR_SLACK_MS, [] as string[]),
+    [hearOnce],
+  );
+
   const stopAll = useCallback(() => {
     run.current++;
     stopSpeaking();
@@ -401,10 +478,26 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   useEffect(() => () => stopAll(), [stopAll]);
 
+  // Kurulum yoklaması: cevabı beklerken hiçbir şey engellenmiyor, yalnızca
+  // başlangıç ekranındaki söz doğru olsun diye.
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const ok = micSupported() && (await sttAvailable());
+      if (alive) setPocketReady(ok);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
+
   /** Sunucudan taze bir tur — oturum bitince devam etmek için. */
   const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
     try {
-      const res = await fetch("/api/session", { cache: "no-store" });
+      const res = await fetch("/api/session", {
+        cache: "no-store",
+        signal: AbortSignal.timeout(NET_TIMEOUT_MS),
+      });
       if (!res.ok) return null;
       return (await res.json()) as SessionPayload;
     } catch {
@@ -506,7 +599,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           if (!alive()) return;
 
           setPhase("listening");
-          cueListen();
+          // İşaret ses ÖĞESİYLE veriliyor: WebAudio yolu ekran kapalıyken
+          // askıda ve cepteki kullanıcı mikrofonun açıldığını yalnızca
+          // kulağıyla anlayabiliyor.
+          pocketCue();
           const askedAt = Date.now();
           const heard = await hear("de", ANSWER_WINDOW_MS, target);
           if (!alive()) return;
@@ -773,10 +869,33 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           activateMic();
           return;
         }
-        // Kayıt yolu yoksa yapılacak bir şey yok: tur duruyor.
+        /*
+          Kayıt yolu yoksa tur duruyor — ama SESSİZCE değil.
+
+          Önceki hâli tam da kullanıcının anlattığı şeydi: ekran kapanıyor ve
+          o andan sonra hiçbir şey olmuyor. Kelime okunmuyor, "duyamadım"
+          denmiyor, sıradakine geçilmiyor. Cepteki kullanıcı için bu, sebebi
+          olmayan bir ölüm: telefonu çıkarıp ekrana bakana kadar turun durduğunu
+          bile bilmiyor.
+
+          Sıra önemli: önce döngü durduruluyor (yoksa yarıda kalan bir okuma
+          duyuruyla çakışır), sonra sebep söyleniyor. Duyuru döngünün `say`ini
+          kullanmıyor çünkü o artık geçersiz bir jetona bağlı.
+        */
         stopAll();
         void release();
         setStatus("paused");
+        speakSegments(
+          [
+            {
+              lang: "tr",
+              text: "Ekran kapandığında sesini duyamıyorum. Turu durdurdum, telefonu açınca devam edelim.",
+            },
+          ],
+          undefined,
+          undefined,
+          { background: true },
+        );
         return;
       }
       // Ekran geri açıldı: kayıt durup parçalar susturuluyor, ama akış
@@ -851,6 +970,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           koy. Yanlışta doğrusu okunur, duyulmayan tur yanlış sayılmaz. Yirmi tur bitince
           <strong> “devam edelim mi?”</strong> diye sorulur; “evet” demen yeter.
         </p>
+        {pocketReady === false ? (
+          <p
+            className="mt-3 rounded-xl px-3 py-2.5 text-sm leading-relaxed"
+            style={{
+              background: "color-mix(in srgb, var(--color-flame-500) 10%, transparent)",
+              color: "var(--color-flame-500)",
+            }}
+          >
+            Bu kurulumda ekran kapalıyken ses yakalanamıyor: tur sürer ama cevapların
+            duyulmaz. Cepte çalışması için sunucuda bir konuşma tanıma anahtarı
+            (<code>DEEPGRAM_API_KEY</code>) tanımlı olmalı.
+          </p>
+        ) : null}
         {status === "paused" ? (
           <p
             className="mt-3 rounded-xl px-3 py-2.5 text-sm"
@@ -912,7 +1044,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               color: capture === "stt" ? "var(--color-mint-500)" : "var(--color-flame-500)",
             }}
           >
-            {capture === "stt" ? "cepte çalışır" : "ekran açık kalmalı"}
+            {capture === "stt" ? "cepte" : "ekran açık"}
           </span>
           <span className="muted tabular-nums">{tally.correct}/{tally.total} doğru</span>
         </span>
