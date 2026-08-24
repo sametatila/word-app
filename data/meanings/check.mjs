@@ -55,6 +55,13 @@ const flat = (t) =>
  * "hat dargestellt". Ajanlar ya doğru cümleyi bozuyor ya da eski imlaya
  * kaçıyordu; ikisi de sessiz kalite kaybı.
  *
+ * Aynı boşluğun isim kökenli yarısı sonra çıktı: `preis`, `stand`, `acht`,
+ * `wett`, `fehl`, `haus`, `mass`, `kund`, `irre`, `voll`. Bunlarda **yalnızca**
+ * ayrılmış hâl düşüyordu — "gibt … preis" reddedilirken bitişik mastar ve
+ * ortaç ("preisgeben", "preisgegeben") geçiyordu. Yani madde denetleyiciden
+ * geçiyor ama en tipik cümlesini kuramıyordu; kusur ancak ajan doğru cümleyi
+ * bırakıp bildirdiği için görüldü.
+ *
  * Sıra artık önemsiz — `splits()` bütün bölünmeleri deniyor, yalnızca en
  * uzununu değil. Tek bölünme iki yönden birden yanlıştı: kısa ön ek öne
  * geçince "zusammenkommen" maddesi "zu" + "sammenkommen" diye bölünüyordu,
@@ -72,8 +79,9 @@ const PREFIXES = [
   "brach", "dabei", "davon", "daran", "darauf", "durch", "statt", "unter",
   "drauf", "fern", "fest", "fort", "frei", "heim", "hoch", "nach", "teil",
   "uber", "dran", "drin", "wahr", "warm", "rein", "raus", "klar", "nahe",
-  "inne", "gut", "dar", "los", "auf", "aus", "bei", "ein", "her", "hin",
-  "mit", "vor", "weg", "weh", "ab", "an", "um", "zu", "ob",
+  "inne", "preis", "stand", "wett", "fehl", "haus", "mass", "kund", "irre",
+  "voll", "acht", "gut", "dar", "los", "auf", "aus", "bei", "ein", "her",
+  "hin", "mit", "vor", "weg", "weh", "ab", "an", "um", "zu", "ob",
 ];
 
 /**
