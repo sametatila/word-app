@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SpeakerIcon } from "./icons";
 import { sharedAudioContext } from "@/lib/audio-context";
+import { afterMs } from "@/components/pocket-clock";
 import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 
 /**
@@ -473,12 +474,45 @@ function playGapless(
  * bu yol yalnızca bağlam açılamadığında ya da bir dosya çözülemediğinde
  * devrede.
  */
+/**
+ * En uzun parçanın makul tavanı.
+ *
+ * Süre bilinmeden önce geçerli: `loadedmetadata` gelir gelmez gerçek süreye
+ * göre daraltılıyor. Buradaki iş bir parçayı kısa kesmek değil, HİÇ bitmeyen
+ * bir parçanın turu dondurmasını engellemek — o yüzden cömert.
+ */
+const SEGMENT_CAP_MS = 12_000;
+/** Bilinen sürenin üstüne bırakılan pay: ağ duraklaması, kod çözücü gecikmesi. */
+const SEGMENT_SLACK_MS = 2_500;
+/**
+ * Sesin BAŞLAMASI için tanınan süre.
+ *
+ * Ayrı tutuluyor çünkü iki farklı arıza var ve süreleri çok farklı: çalmaya
+ * başlamış ama bitmeyen bir parça uzun sürebilir, hiç başlamayan bir parça ise
+ * gelmiyordur. İkisine aynı cömert tavanı vermek, ağ takıldığında her kelime
+ * için on iki saniye sessizlik demekti.
+ */
+const SEGMENT_START_MS = 4_500;
+
 function chainWithElements(
   queue: SpeechSegment[],
   startIndex: number,
   onEnd: (() => void) | undefined,
   mine: number,
   onStart?: () => void,
+  /**
+   * Arka plan kipi: tarayıcı sentezine DÜŞÜLMÜYOR ve her parça bir süreye
+   * bağlanıyor.
+   *
+   * İkisi de aynı gerçeğin sonucu — telefon kilitliyken `speechSynthesis`
+   * konuşmuyor VE `onend` olayını hiç vermiyor. Yani yedek diye oraya düşmek
+   * sesi kurtarmıyor, üstüne zinciri sonsuza dek asılı bırakıyor. Ekran
+   * kapalıyken kelime okunmaması ve ardından hiçbir şeyin olmaması buydu.
+   *
+   * Arka planda bir parça çalınamazsa doğru davranış onu ATLAMAK: eksik bir
+   * kelime, duran bir turdan iyi.
+   */
+  background = false,
 ) {
   const a = audioElement();
   const b = extraElement();
@@ -522,17 +556,59 @@ function chainWithElements(
       return;
     }
     const el = els[i % 2];
+
+    /*
+      Bu parça için tek çıkış kapısı.
+
+      Zincirin ilerlemesi üç ayrı olaya bağlı (bitti, hata, süre doldu) ve
+      üçünün de aynı anda gelmesi mümkün. `moved` olmadan bir parça iki kez
+      ilerletilebilir ve sıra bozulurdu.
+    */
+    let moved = false;
+    let disarm = () => {};
+    const next = () => {
+      if (moved || token !== mine) return;
+      moved = true;
+      disarm();
+      el.onended = null;
+      el.onerror = null;
+      el.onplaying = null;
+      playAt(i + 1);
+    };
+
     const fallback = () => {
+      if (moved || token !== mine) return;
+      // Arka planda tarayıcı sentezi yok: konuşmuyor ve `onend` vermiyor,
+      // yani zinciri kurtarmak yerine asıyor. Parça atlanıyor.
+      if (background) {
+        next();
+        return;
+      }
       // Uç düşmüş ya da dosya çalınamıyor: bu parçayı tarayıcı sentezi okusun,
       // zincir kopmasın.
-      if (token !== mine) return;
+      moved = true;
+      disarm();
       const { voice, course } = voiceForSegment(queue[i]);
       speakWithBrowser(queue[i].text, voice, course, () => playAt(i + 1));
     };
-    el.onended = () => {
-      if (token === mine) playAt(i + 1);
-    };
+
+    el.onended = next;
     el.onerror = fallback;
+
+    if (background) {
+      // Önce yalnızca BAŞLAMASI bekleniyor; ses akmaya başlayınca tavan
+      // parçanın kendi süresine göre yeniden kuruluyor.
+      disarm = afterMs(SEGMENT_START_MS, next);
+      el.onplaying = () => {
+        if (moved || token !== mine) return;
+        disarm();
+        const d = el.duration;
+        const cap =
+          Number.isFinite(d) && d > 0 ? d * 1000 + SEGMENT_SLACK_MS : SEGMENT_CAP_MS;
+        disarm = afterMs(cap, next);
+      };
+    }
+
     if (i + 1 < queue.length) preload(i + 1);
     void el.play().catch(fallback);
   };
@@ -590,7 +666,7 @@ export function speakSegments(
   };
 
   if (opts?.background) {
-    chainWithElements(queue, 0, onEnd, mine, startOnce);
+    chainWithElements(queue, 0, onEnd, mine, startOnce, true);
     return () => {
       if (token !== mine) return;
       token++;
