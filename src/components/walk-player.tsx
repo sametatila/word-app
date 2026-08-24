@@ -489,6 +489,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         captureFails.current += 1;
         if (captureFails.current >= CAPTURE_FAIL_LIMIT) {
           captureFails.current = 0;
+          track("walk_end", 4);
           await say([
             { lang: "tr", text: "Mikrofona ulaşamıyorum. Turu durdurdum, telefonu açınca devam edelim." },
           ]);
@@ -718,6 +719,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
                 },
               ]);
               if (!alive()) return;
+              track("walk_end", 3);
               heardLog.current = [];
               setStatus("paused");
               void release();
@@ -785,6 +787,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       const again = await askContinue(tallyRef.current.correct, tallyRef.current.total);
       if (!alive()) return;
       if (again === "no") {
+        track("walk_end", 1);
         setPhase("speaking");
         await say([{ lang: "tr", text: "Tamam, iyi günler." }]);
         stopPocketAudio();
@@ -799,6 +802,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       const next = await fetchSession();
       if (!alive()) return;
       if (!next?.rounds.length) {
+        track("walk_end", 2);
         await say([{ lang: "tr", text: "Bugünlük tekrar kalmadı." }]);
         setStatus("done");
         return;
@@ -890,6 +894,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   }
 
   function pause() {
+    track("walk_end", 6);
     stopAll();
     void release();
     stopPocketAudio();
@@ -960,6 +965,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           duyuruyla çakışır), sonra sebep söyleniyor. Duyuru döngünün `say`ini
           kullanmıyor çünkü o artık geçersiz bir jetona bağlı.
         */
+        track("walk_end", 5);
         stopAll();
         void release();
         setStatus("paused");

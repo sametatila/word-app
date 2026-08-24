@@ -29,6 +29,18 @@ export const EVENT_NAMES = [
   // yankı bastırma açık kalırsa Android ses ÇIKIŞINI konuşma yoluna alıyor,
   // yani turun tamamı bozuk duyuluyor. Ses kalitesi şikâyetinde bakılacak yer.
   "walk_capture",
+  /*
+    Yürüyüş NASIL bitti (value = sebep).
+
+      1 kullanıcı "hayır" dedi        4 mikrofona ulaşılamadı
+      2 tur kalmadı                   5 ekran kapandı, kayıt yolu yok
+      3 duyulmama sınırı aşıldı       6 elle duraklatıldı / çıkıldı
+
+    Sebebi olmayan bir bitiş, dışarıdan "takıldı"dan ayırt edilemiyor.
+    Kullanıcı cepteki telefondan yalnızca sesi duyuyor ve bir daha hiçbir şey
+    olmadığında bunun hangisi olduğunu söyleyemiyor — biz de tahmin ediyorduk.
+  */
+  "walk_end",
   "boss_play", // modül sınavına girildi (value = modül sırası)
   "boss_clear", // modül sınavı geçildi (value = kalan saniye)
   "quest_claim", // görev ödülü alındı
