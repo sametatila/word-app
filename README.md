@@ -596,6 +596,27 @@ kulaklığın KENDİ mikrofonunu açmak için SCO bağlantısı kurmasıdır; on
 çaresi girişi telefonun dahili mikrofonuna sabitlemek — cepteki telefonda
 konuşmayı kumaşın arkasından dinlemek demek olduğu için bilerek yapılmadı.
 
+#### Bekleme ve yanlış duyma
+
+Üç şikâyet aynı turdan çıktı: mikrofon çok bekliyor, bipi beklemeden
+konuşulamıyor, ve tanıyıcı arkadan gelen konuşmaları da kelimeye çeviriyor
+(bazen başka bir dilde).
+
+| Parça | Neden |
+|---|---|
+| Doğru cevap duyulunca **hemen** kapanıyor | Beklenen cevap belliyken duraklama payının dolmasını beklemenin karşılığı yok; kullanıcının hissettiği tek şey bekleme oluyordu. Ara sonuç zaten tutuyorsa tur biter. Yalnızca KAPATMAK için: kabul kararını yine çağıran taraf veriyor. Aynısı "devam edelim mi?" onayında da geçerli |
+| İşaret, mikrofon **açıldıktan sonra** çalıyor | Bip duyulduğunda tanıyıcı zaten dinliyor, yani bipi beklemek gerekmiyor. Kayıt yolunda klip halka tampondan geriye kesildiği için bipten önce söylenen de klibe giriyor |
+| Bip **bir kez** | Ekran açık yolda iki işaret birden çalıyordu (biri turdan, biri dinleme kancasından); ikisi arka arkaya gelince mikrofonun ne zaman açıldığı belirsizleşiyordu |
+| Kuyruk payı ve en kısa dinleme **kısaldı** | 800 → 600 ms ve 1,8 → 1,2 sn. İkisi de erken kapanmaya karşı konmuştu; erken kapanmanın asıl sebebi (ön-payın okuma kuyruğunu içermesi) ayrıca çözüldüğü için bu kadar cömert olmalarına gerek kalmadı |
+| Klibin **sonu da kırpılıyor** | Önceden pencerenin sonuna kadar her şey gidiyordu: kullanıcı sustuktan sonraki sokak gürültüsü ve arkadan gelen konuşmalar dâhil. Tanıyıcıya duyacak bir şey verilince duyuyor — "arkadaki konuşmaları da algılıyor" şikâyetinin doğrudan kaynağı buydu |
+| Güveni düşük metin **duyulmamış** sayılıyor | Ayırt eden şey metnin kendisi değil, tanıyıcının o metne ne kadar inandığı. Eşik bilerek gevşek (0,4): daha önce bir eşik ölçülmeden kondu ve gerçek cihazda "her cevap duyamadım"a dönüştü. Duyulmayan tur zaten yanlış sayılmıyor, yani bedeli bir tur |
+| Güven **kaydediliyor** | Eşiği tahminle sıkmamak için: gerçek cevaplarla uydurmaların değerleri `ai_usage`'da yan yana duruyor. `0024` göçü bu sütunu ekliyor |
+
+`browser-fast` senaryosu bunu dışarıdan kanıtlıyor: sahte tanıyıcı doğru cevabı
+ara sonuç olarak veriyor ve `onend` **hiç vermiyor**. Tur yine de 20 sorunun
+tamamını bitiriyor ve en uzun sessizlik 0,9 saniye — erken kapatma olmasa her
+soru zaman aşımını beklerdi.
+
 #### Donmayan döngü
 
 Ekran kapalıyken kalan şikâyet artık yanlış cevap değil, HİÇBİR cevaptı: kelime okunmuyor,
@@ -614,8 +635,8 @@ adımın takılması tamamını sessizce dondurmaya yetiyordu — ve gizli sayfa
 | Sessiz döngü **kendini toparlıyor** | Arka planın taşıyıcı direği o: durursa hem zamanlayıcılar kısılıyor hem nabız gidiyor. Gelen çağrı ya da ses odağının kaybı durdurabiliyor; `onpause` yeniden başlatıyor |
 | Durmak zorunda kalınırsa **sesle söyleniyor** | Sunucuda yazıya çevirme yoksa ekran kapalıyken cevap duyulamıyor ve tur durmak zorunda. Eskiden bu sessizce oluyordu: kullanıcı telefonu çıkarana kadar turun durduğunu bilmiyordu |
 
-Altı arıza senaryosu `npm run test:walk -- <senaryo>` ile koşuluyor (`ok`, `stt-off`,
-`stt-hang`, `stt-500`, `tts-hang`, `tts-500`). Test gerçek tarayıcıda gerçek uygulamayı
+Altı arıza senaryosu `npm run test:walk -- <senaryo>` ile koşuluyor (`ok`, `browser-fast`,
+`stt-off`, `stt-noise`, `stt-hang`, `stt-500`, `tts-hang`, `tts-500`). Test gerçek tarayıcıda gerçek uygulamayı
 oynatıyor ve ekran kapanmasını taklit ederken **gerçek kısıtları** kuruyor: `getUserMedia`
 gizliyken reddediliyor, zamanlayıcılar dakikada bire kısılıyor. İkisi de masaüstü Chrome'da
 kendiliğinden olmuyor; eklenmezse test yalancı bir "geçti" veriyor — bu bölümdeki hataların

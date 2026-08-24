@@ -19,7 +19,17 @@
  *     `setTimeout` böyle davranıyor ve zaman aşımlarını buna dayanmadan kurmak
  *     korumasız kalmak demek.
  *
- * Senaryolar: ok | tts-hang | tts-500 | stt-hang | stt-500 | stt-off
+ * Senaryolar: ok | tts-hang | tts-500 | stt-hang | stt-500 | stt-off | stt-noise
+ *              | browser-fast
+ *
+ * `browser-fast` EKRAN AÇIK yolu: doğru cevap ara sonuç olarak duyulur duyulmaz
+ * dinleme kapanmalı. Sahte tanıyıcı bilerek `onend` VERMİYOR — tur ilerliyorsa
+ * bunu yapan tek şey erken kapatmadır, yoksa zaman aşımına kadar beklenirdi.
+ *
+ * `stt-noise` tanıyıcının gürültüyü kelimeye çevirdiği hâl: metin geliyor ama
+ * güveni düşük. Beklenen davranış onu YANLIŞ CEVAP saymak değil, duyulmamış
+ * saymak — yanlış saymak kelimeyi gerçekten unutulduğu için değil arkadan
+ * geçen bir konuşma yüzünden öne çekerdi.
  *
  * `stt-off` sunucuda konuşma tanıma anahtarının hiç olmadığı hâl. Cevaplar
  * duyulamıyor ama tur DONMAMALI: soru okunmalı, duyulmadığı söylenmeli ve
@@ -62,6 +72,18 @@ const never = () => new Promise(() => {});
 const spoken = [];
 let sttPosts = 0;
 
+/** Sahte tanıyıcının okuyacağı kelimeler — tur verisiyle aynı sıra. */
+const WORDS_FOR_FAKE = [
+  ["der", "Weg"],
+  ["die", "Katze"],
+  ["das", "Haus"],
+  ["der", "Baum"],
+  ["die", "Blume"],
+  ["das", "Buch"],
+  ["der", "Tisch"],
+  ["die", "Tür"],
+];
+
 const browser = await chromium.launch({
   // Kurulu sürüm dışarıdan verilebiliyor: bu depo `playwright-core` kullanıyor
   // ve tarayıcıyı kendi indirmiyor.
@@ -80,6 +102,41 @@ const ctx = await browser.newContext({
   userAgent:
     "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Mobile Safari/537.36",
 });
+
+if (SCENARIO === "browser-fast") {
+  await ctx.addInitScript((words) => {
+    /*
+      Sahte konuşma tanıyıcı.
+
+      Başsız tarayıcıda gerçek tanıma yok, yani "doğru cevabı duyar duymaz
+      dinlemeyi kapat" davranışı hiç sınanamıyordu. Bu sahte tanıyıcı doğru
+      cevabı ARA SONUÇ olarak veriyor ve `onend` hiç vermiyor: tur ilerliyorsa
+      bunu yapan tek şey erken kapatmadır.
+    */
+    let n = 1; // ilk tur tanıtım, ilk dinleme ikinci kelimede
+    class Fake {
+      lang = "";
+      interimResults = false;
+      maxAlternatives = 1;
+      continuous = false;
+      onresult = null;
+      onend = null;
+      onerror = null;
+      start() {
+        const [artikel, de] = words[n++ % words.length];
+        setTimeout(() => {
+          const alt = { transcript: `${artikel} ${de}`, confidence: 0.95 };
+          const res = Object.assign([alt], { length: 1, isFinal: false });
+          this.onresult?.({ results: Object.assign([res], { length: 1 }) });
+        }, 400);
+      }
+      stop() {}
+      abort() {}
+    }
+    Object.defineProperty(window, "webkitSpeechRecognition", { value: Fake, writable: true });
+    Object.defineProperty(window, "SpeechRecognition", { value: Fake, writable: true });
+  }, WORDS_FOR_FAKE);
+}
 
 await ctx.addInitScript(() => {
   let hidden = false;
@@ -250,7 +307,10 @@ await page.route("**/api/stt**", async (route) => {
   return route.fulfill({
     status: 200,
     contentType: "application/json",
-    body: JSON.stringify({ text: "der Weg" }),
+    body:
+      SCENARIO === "stt-noise"
+        ? JSON.stringify({ text: "and then he said", confidence: 0.18 })
+        : JSON.stringify({ text: "der Weg", confidence: 0.96 }),
   });
 });
 
@@ -267,9 +327,13 @@ await page.getByRole("button", { name: /Kulaklığı tak, başla|Devam et/ }).cl
 log("tur başladı (ekran açık)");
 
 await page.waitForTimeout(HIDE_AT_MS);
-log("--- EKRAN KAPANDI ---");
 const beforeHide = spoken.length;
-await page.evaluate(() => window.__setHidden(true));
+if (SCENARIO === "browser-fast") {
+  log("--- EKRAN AÇIK KALIYOR (tarayıcı tanıyıcısı yolu) ---");
+} else {
+  log("--- EKRAN KAPANDI ---");
+  await page.evaluate(() => window.__setHidden(true));
+}
 
 // Nabız gerçekten atıyor mu — donmanın sebebini ayırt eden tek ölçü.
 await page.waitForTimeout(4000);
@@ -307,12 +371,35 @@ console.log("okunanlar:", uniq.slice(0, 12).map((t) => JSON.stringify(t)).join("
   yorardı. Aranan şey donma değil, sesli bir açıklamayla durmak.
 */
 const explained = uniq.some((t) => t.includes("duyamıyorum"));
-const ok = SCENARIO === "stt-off" ? explained : uniq.length >= 3;
+/*
+  Gürültü senaryosunda ölçüt: gelen metin YANLIŞ CEVAP olarak işlenmemeli.
+  Yanlış cevapta "Doğrusu:" okunuyor, duyulmayanda "Duyamadım." — ikisi
+  dışarıdan ayırt edilebiliyor.
+*/
+const asNoise = uniq.some((t) => t.includes("Duyamadım")) && !uniq.some((t) => t.includes("Doğrusu"));
+/*
+  Erken kapatma ölçütü: sahte tanıyıcı `onend` vermediği için tur yalnızca
+  erken kapatma sayesinde ilerleyebilir. Üstelik hızlı ilerlemeli — zaman
+  aşımıyla kurtarılsaydı her soru 21 saniye sürerdi.
+*/
+const quick = after.length > 1 && Math.max(...after.slice(1).map((s2, i) => s2.ms - after[i].ms), 0) < 8000;
+const ok =
+  SCENARIO === "browser-fast"
+    ? uniq.length >= 3 && quick
+    : SCENARIO === "stt-off"
+    ? explained
+    : SCENARIO === "stt-noise"
+      ? uniq.length >= 3 && asNoise
+      : uniq.length >= 3;
 console.log(
   ok
-    ? SCENARIO === "stt-off"
+    ? SCENARIO === "browser-fast"
+      ? "\nGEÇTİ — doğru cevap duyulur duyulmaz dinleme kapandı"
+      : SCENARIO === "stt-off"
       ? "\nGEÇTİ — donmadı, sebebini sesle söyleyip durdu"
-      : "\nGEÇTİ — ekran kapalıyken tur ilerledi"
+      : SCENARIO === "stt-noise"
+        ? "\nGEÇTİ — güveni düşük metin yanlış sayılmadı"
+        : "\nGEÇTİ — ekran kapalıyken tur ilerledi"
     : "\nKALDI — tur ekran kapalıyken durdu",
 );
 process.exit(ok ? 0 : 1);
