@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7153,
+    "tr": "eğitimden uzak",
+    "en": "educationally disadvantaged",
+    "beispiel": "Das Programm erreicht bildungsferne Familien bisher kaum.",
+    "beispielTr": "Program şimdiye kadar eğitimden uzak ailelere pek ulaşamadı.",
+    "beispielEn": "So far the program has barely reached educationally disadvantaged families."
+  },
+  {
+    "id": 7154,
+    "tr": "etnik",
+    "en": "ethnic",
+    "beispiel": "Die Polizei erfasst die ethnische Herkunft der Opfer nicht.",
+    "beispielTr": "Polis, mağdurların etnik kökenini kaydetmiyor.",
+    "beispielEn": "The police do not record the victims' ethnic background."
+  },
+  {
+    "id": 7155,
+    "tr": "heterojen",
+    "en": "heterogeneous",
+    "beispiel": "Die Klasse ist sprachlich sehr heterogen.",
+    "beispielTr": "Sınıf, dil bakımından çok heterojen.",
+    "beispielEn": "The class is linguistically very heterogeneous."
+  },
+  {
+    "id": 7156,
+    "tr": "yerleşik",
+    "en": "settled",
+    "beispiel": "Nach Jahren des Pendelns ist die Familie endlich sesshaft geworden.",
+    "beispielTr": "Yıllarca gidip geldikten sonra aile nihayet yerleşik hâle geldi.",
+    "beispielEn": "After years of commuting the family has finally settled down."
+  },
+  {
+    "id": 7157,
+    "tr": "her ne kadar",
+    "en": "although",
+    "beispiel": "Obgleich er kaum Deutsch spricht, hat er den Job bekommen.",
+    "beispielTr": "Her ne kadar Almancayı zar zor konuşsa da işi aldı.",
+    "beispielEn": "Although he barely speaks German, he got the job."
+  },
+  {
+    "id": 7158,
+    "tr": "veri toplama",
+    "en": "data collection",
+    "beispiel": "Die Erhebung wurde in vier Bundesländern gleichzeitig durchgeführt.",
+    "beispielTr": "Veri toplama çalışması dört eyalette aynı anda yürütüldü.",
+    "beispielEn": "The data collection was carried out in four federal states at once."
+  },
+  {
+    "id": 7159,
+    "tr": "ölçüm",
+    "en": "measurement",
+    "beispiel": "Die zweite Messung bestätigte die Werte der ersten Reihe.",
+    "beispielTr": "İkinci ölçüm ilk serinin değerlerini doğruladı.",
+    "beispielEn": "The second measurement confirmed the values of the first series."
+  },
+  {
+    "id": 7160,
+    "tr": "yayılım",
+    "en": "dispersion",
+    "beispiel": "Die Streuung der Einzelwerte ist deutlich größer als erwartet.",
+    "beispielTr": "Tekil değerlerin yayılımı beklenenden belirgin biçimde daha büyük.",
+    "beispielEn": "The dispersion of the individual values is clearly greater than expected."
+  },
+  {
+    "id": 7161,
+    "tr": "tahmin",
+    "en": "estimate",
+    "beispiel": "Vorsichtige Schätzungen gehen von etwa zwölf Prozent aus.",
+    "beispielTr": "Temkinli tahminler yaklaşık yüzde on ikiden söz ediyor.",
+    "beispielEn": "Cautious estimates put the figure at around twelve percent."
+  },
+  {
+    "id": 7162,
+    "tr": "öngörü",
+    "en": "forecast",
+    "beispiel": "Die Prognose für das nächste Quartal fiel deutlich schlechter aus.",
+    "beispielTr": "Gelecek çeyreğe ilişkin öngörü belirgin biçimde daha kötü çıktı.",
+    "beispielEn": "The forecast for the next quarter came out much worse."
+  },
+  {
+    "id": 7163,
+    "tr": "özellik",
+    "en": "characteristic",
+    "beispiel": "Alter und Bildungsstand wurden als zentrale Merkmale erfasst.",
+    "beispielTr": "Yaş ve eğitim düzeyi temel özellikler olarak kaydedildi.",
+    "beispielEn": "Age and education level were recorded as central characteristics."
+  },
+  {
+    "id": 7164,
+    "tr": "görünüm biçimi",
+    "en": "form",
+    "beispiel": "Die Krankheit tritt bei Kindern in milderer Ausprägung auf.",
+    "beispielTr": "Hastalık çocuklarda daha hafif bir biçimde ortaya çıkıyor.",
+    "beispielEn": "In children the disease appears in a milder form."
+  },
+  {
+    "id": 7165,
+    "tr": "veri seti",
+    "en": "data set",
+    "beispiel": "Unvollständige Datensätze wurden vor der Analyse aussortiert.",
+    "beispielTr": "Eksik veri setleri analizden önce ayıklandı.",
+    "beispielEn": "Incomplete data sets were sorted out before the analysis."
+  },
+  {
+    "id": 7166,
+    "tr": "anket",
+    "en": "survey",
+    "beispiel": "An der Befragung nahmen rund zweitausend Haushalte teil.",
+    "beispielTr": "Ankete yaklaşık iki bin hane katıldı.",
+    "beispielEn": "About two thousand households took part in the survey."
+  },
+  {
+    "id": 7167,
+    "tr": "olasılık",
+    "en": "probability",
+    "beispiel": "Die Wahrscheinlichkeit für Regen liegt heute bei achtzig Prozent.",
+    "beispielTr": "Bugün yağmur olasılığı yüzde seksen.",
+    "beispielEn": "The probability of rain today is eighty percent."
+  },
+  {
+    "id": 7168,
+    "tr": "sıklık",
+    "en": "frequency",
+    "beispiel": "Die Häufigkeit solcher Fälle hat sich seit 2010 verdoppelt.",
+    "beispielTr": "Bu tür vakaların sıklığı 2010'dan beri iki katına çıktı.",
+    "beispielEn": "The frequency of such cases has doubled since 2010."
+  },
+  {
+    "id": 7169,
+    "tr": "dağılım",
+    "en": "distribution",
+    "beispiel": "Die Verteilung der Einkommen ist in diesem Land sehr ungleich.",
+    "beispielTr": "Bu ülkede gelirlerin dağılımı çok eşitsiz.",
+    "beispielEn": "In this country the distribution of incomes is very unequal."
+  },
+  {
+    "id": 7170,
+    "tr": "ortalama değer",
+    "en": "mean",
+    "beispiel": "Der Mittelwert verdeckt hier erhebliche Unterschiede zwischen den Gruppen.",
+    "beispielTr": "Ortalama değer burada gruplar arasındaki büyük farkları gizliyor.",
+    "beispielEn": "The mean hides considerable differences between the groups here."
+  },
+  {
+    "id": 7171,
+    "tr": "aykırı değer",
+    "en": "outlier",
+    "beispiel": "Ein einzelner Ausreißer verschiebt den Durchschnitt spürbar nach oben.",
+    "beispielTr": "Tek bir aykırı değer ortalamayı gözle görülür biçimde yukarı çekiyor.",
+    "beispielEn": "A single outlier pushes the average noticeably upward."
+  },
+  {
+    "id": 7172,
+    "tr": "ana kütle",
+    "en": "population",
+    "beispiel": "Die Grundgesamtheit umfasst alle Haushalte in Bayern.",
+    "beispielTr": "Ana kütle, Bavyera'daki bütün haneleri kapsıyor.",
+    "beispielEn": "The population comprises all households in Bavaria."
+  },
+  {
+    "id": 7173,
+    "tr": "geçerlilik",
+    "en": "validity",
+    "beispiel": "Die Gültigkeit des Führerscheins läuft nächsten Monat ab.",
+    "beispielTr": "Ehliyetin geçerliliği önümüzdeki ay sona eriyor.",
+    "beispielEn": "The validity of the driver's license expires next month."
+  },
+  {
+    "id": 7174,
+    "tr": "eşik değer",
+    "en": "threshold",
+    "beispiel": "Sobald der Schwellenwert überschritten wird, schlägt der Sensor Alarm.",
+    "beispielTr": "Eşik değer aşılır aşılmaz sensör alarm veriyor.",
+    "beispielEn": "As soon as the threshold is exceeded, the sensor sounds an alarm."
+  },
+  {
+    "id": 7175,
+    "tr": "referans büyüklük",
+    "en": "reference value",
+    "beispiel": "Ohne klare Bezugsgröße bleibt die Prozentangabe wenig aussagekräftig.",
+    "beispielTr": "Net bir referans büyüklük olmadan yüzde bilgisi pek bir şey söylemiyor.",
+    "beispielEn": "Without a clear reference value the percentage says very little."
+  },
+  {
+    "id": 7176,
+    "tr": "deney düzeneği",
+    "en": "experimental setup",
+    "beispiel": "Die Versuchsanordnung erlaubt keine eindeutige Aussage über die Ursache.",
+    "beispielTr": "Deney düzeneği, nedene ilişkin kesin bir yargıya izin vermiyor.",
+    "beispielEn": "The experimental setup allows no clear statement about the cause."
+  },
+  {
+    "id": 7177,
+    "tr": "boylamsal çalışma",
+    "en": "longitudinal study",
+    "beispiel": "Die Längsschnittstudie begleitet die Kinder bis zum Schulabschluss.",
+    "beispielTr": "Boylamsal çalışma, çocukları okulu bitirene kadar izliyor.",
+    "beispielEn": "The longitudinal study follows the children until they finish school."
+  },
+  {
+    "id": 7178,
+    "tr": "meta-analiz",
+    "en": "meta-analysis",
+    "beispiel": "Die Metaanalyse fasst die Befunde aus 34 Einzelstudien zusammen.",
+    "beispielTr": "Meta-analiz 34 ayrı çalışmanın bulgularını bir araya getiriyor.",
+    "beispielEn": "The meta-analysis combines the findings of 34 individual studies."
+  },
+  {
+    "id": 7179,
+    "tr": "karıştırıcı etken",
+    "en": "confounding factor",
+    "beispiel": "Mögliche Störgrößen wurden im Modell statistisch herausgerechnet.",
+    "beispielTr": "Olası karıştırıcı etkenler modelde istatistiksel olarak ayıklandı.",
+    "beispielEn": "Possible confounding factors were statistically removed in the model."
+  },
+  {
+    "id": 7180,
+    "tr": "belirleyici etken",
+    "en": "influencing factor",
+    "beispiel": "Das Einkommen erweist sich als stärkste Einflussgröße im Modell.",
+    "beispielTr": "Gelir, modeldeki en güçlü belirleyici etken olarak öne çıkıyor.",
+    "beispielEn": "Income proves to be the strongest influencing factor in the model."
+  },
+  {
+    "id": 7181,
+    "tr": "değişken",
+    "en": "variable",
+    "beispiel": "Zwei Variablen erklären zusammen fast die Hälfte der Unterschiede.",
+    "beispielTr": "İki değişken birlikte farkların neredeyse yarısını açıklıyor.",
+    "beispielEn": "Two variables together explain almost half of the differences."
+  },
+  {
+    "id": 7182,
+    "tr": "parametre",
+    "en": "parameter",
+    "beispiel": "Schon kleine Änderungen der Parameter verändern das Ergebnis erheblich.",
+    "beispielTr": "Parametrelerdeki küçük değişiklikler bile sonucu epeyce değiştiriyor.",
+    "beispielEn": "Even small changes to the parameters alter the result considerably."
+  },
+  {
+    "id": 7183,
+    "tr": "gösterge",
+    "en": "indicator",
+    "beispiel": "Die Arbeitslosenquote gilt als grober Indikator für die Wirtschaftslage.",
+    "beispielTr": "İşsizlik oranı, ekonomik durumun kaba bir göstergesi sayılıyor.",
+    "beispielEn": "The unemployment rate counts as a rough indicator of the economy."
+  },
+  {
+    "id": 7184,
+    "tr": "katsayı",
+    "en": "coefficient",
+    "beispiel": "Der Koeffizient bleibt auch nach der Bereinigung deutlich positiv.",
+    "beispielTr": "Katsayı, arındırmadan sonra da belirgin biçimde pozitif kalıyor.",
+    "beispielEn": "The coefficient stays clearly positive even after the adjustment."
+  },
+  {
+    "id": 7185,
+    "tr": "belirsizlik",
+    "en": "uncertainty",
+    "beispiel": "Wegen der wirtschaftlichen Unsicherheit verschiebt die Firma alle Neueinstellungen.",
+    "beispielTr": "Ekonomik belirsizlik yüzünden şirket bütün yeni işe alımları erteliyor.",
+    "beispielEn": "Because of the economic uncertainty the company is postponing all new hires."
+  },
+  {
+    "id": 7186,
+    "tr": "sağlamlık",
+    "en": "robustness",
+    "beispiel": "Zusätzliche Tests bestätigen die Robustheit der berichteten Effekte.",
+    "beispielTr": "Ek testler, bildirilen etkilerin sağlamlığını doğruluyor.",
+    "beispielEn": "Additional tests confirm the robustness of the reported effects."
+  },
+  {
+    "id": 7187,
+    "tr": "çıkarım",
+    "en": "inference",
+    "beispiel": "Aus einer einzigen Erhebung lassen sich kaum Rückschlüsse ziehen.",
+    "beispielTr": "Tek bir veri toplama çalışmasından pek çıkarım yapılamaz.",
+    "beispielEn": "From a single survey one can hardly draw any inferences."
+  },
+  {
+    "id": 7188,
+    "tr": "aktarılabilirlik",
+    "en": "transferability",
+    "beispiel": "Die Übertragbarkeit der Ergebnisse auf andere Länder ist fraglich.",
+    "beispielTr": "Sonuçların başka ülkelere aktarılabilirliği tartışmalı.",
+    "beispielEn": "The transferability of the results to other countries is doubtful."
+  },
+  {
+    "id": 7189,
+    "tr": "izlenen yol",
+    "en": "approach",
+    "beispiel": "Die gewählte Vorgehensweise wird im Anhang ausführlich dokumentiert.",
+    "beispielTr": "Seçilen yol ekte ayrıntılı olarak belgeleniyor.",
+    "beispielEn": "The chosen approach is documented in detail in the appendix."
+  },
+  {
+    "id": 7190,
+    "tr": "anlamlılık düzeyi",
+    "en": "significance level",
+    "beispiel": "Der Effekt bleibt auf dem üblichen Signifikanzniveau nachweisbar.",
+    "beispielTr": "Etki, olağan anlamlılık düzeyinde hâlâ saptanabiliyor.",
+    "beispielEn": "The effect remains detectable at the usual significance level."
+  },
+  {
+    "id": 7191,
+    "tr": "normalleştirme",
+    "en": "normalization",
+    "beispiel": "Ohne Normierung sind die Werte der beiden Skalen nicht vergleichbar.",
+    "beispielTr": "Normalleştirme olmadan iki ölçeğin değerleri karşılaştırılamaz.",
+    "beispielEn": "Without normalization the values of the two scales are not comparable."
+  },
+  {
+    "id": 7192,
+    "tr": "arındırmak",
+    "en": "to adjust",
+    "beispiel": "Die Zahlen sind um saisonale Effekte bereinigt worden.",
+    "beispielTr": "Rakamlar mevsimsel etkilerden arındırıldı.",
+    "beispielEn": "The figures have been adjusted for seasonal effects."
+  },
+  {
+    "id": 7193,
+    "tr": "ekstrapolasyon yapmak",
+    "en": "to extrapolate",
+    "beispiel": "Man sollte den Trend nicht unbesehen in die Zukunft extrapolieren.",
+    "beispielTr": "Bu eğilime bakıp körü körüne geleceğe ekstrapolasyon yapılmamalı.",
+    "beispielEn": "One should not blindly extrapolate the trend into the future."
+  },
+  {
+    "id": 7194,
+    "tr": "doğrulamak",
+    "en": "to validate",
+    "beispiel": "Das Modell wurde anhand unabhängiger Daten validiert.",
+    "beispielTr": "Model, bağımsız verilerle doğrulandı.",
+    "beispielEn": "The model was validated against independent data."
+  },
+  {
+    "id": 7195,
+    "tr": "bir nedene bağlamak",
+    "en": "to attribute",
+    "beispiel": "Der Rückgang wird vor allem auf die Alterung der Bevölkerung zurückgeführt.",
+    "beispielTr": "Düşüş her şeyden önce nüfusun yaşlanmasına bağlanıyor.",
+    "beispielEn": "The decline is attributed above all to the aging population."
+  },
+  {
+    "id": 7196,
+    "tr": "hafife almak",
+    "en": "to underestimate",
+    "beispiel": "Ältere Modelle haben das Tempo der Entwicklung deutlich unterschätzt.",
+    "beispielTr": "Eski modeller gelişmenin hızını iyice hafife aldı.",
+    "beispielEn": "Older models clearly underestimated the pace of development."
+  },
+  {
+    "id": 7197,
+    "tr": "karşı karşıya koymak",
+    "en": "to contrast",
+    "beispiel": "Die Tabelle stellt die Werte beider Erhebungsjahre gegenüber.",
+    "beispielTr": "Tablo, iki araştırma yılının değerlerini karşı karşıya koyuyor.",
+    "beispielEn": "The table contrasts the values of the two survey years."
+  },
+  {
+    "id": 7198,
+    "tr": "toplulaştırmak",
+    "en": "to aggregate",
+    "beispiel": "Die Einzelangaben wurden auf Kreisebene aggregiert.",
+    "beispielTr": "Tekil veriler ilçe düzeyinde toplulaştırıldı.",
+    "beispielEn": "The individual figures were aggregated at the district level."
+  },
+  {
+    "id": 7199,
+    "tr": "yinelemek",
+    "en": "to replicate",
+    "beispiel": "Bislang konnte kein Team den Effekt erfolgreich replizieren.",
+    "beispielTr": "Şimdiye dek hiçbir ekip etkiyi başarıyla yineleyemedi.",
+    "beispielEn": "So far no team has successfully replicated the effect."
+  },
+  {
+    "id": 7200,
+    "tr": "ölçülebilir kılmak",
+    "en": "to operationalize",
+    "beispiel": "Wie man Lebensqualität operationalisiert, bleibt umstritten.",
+    "beispielTr": "Yaşam kalitesinin nasıl ölçülebilir kılınacağı tartışmalı.",
+    "beispielEn": "How to operationalize quality of life remains disputed."
+  },
+  {
+    "id": 7201,
+    "tr": "güçlendirmek",
+    "en": "to substantiate",
+    "beispiel": "Neuere Daten erhärten den Verdacht auf einen systematischen Fehler.",
+    "beispielTr": "Yeni veriler, sistematik bir hata şüphesini güçlendiriyor.",
+    "beispielEn": "Newer data substantiate the suspicion of a systematic error."
+  },
+  {
+    "id": 7202,
+    "tr": "temsil etmek",
+    "en": "to represent",
+    "beispiel": "Der Index bildet die tatsächliche Belastung nur unvollständig ab.",
+    "beispielTr": "Endeks, gerçek yükü ancak eksik biçimde temsil ediyor.",
+    "beispielEn": "The index represents the actual burden only incompletely."
+  }
+]

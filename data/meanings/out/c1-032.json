@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6803,
+    "tr": "fiyatlandırma",
+    "en": "pricing",
+    "beispiel": "Ohne konsequente Bepreisung des Kohlendioxids bleiben Appelle wirkungslos.",
+    "beispielTr": "Karbondioksit tutarlı biçimde fiyatlandırılmadıkça çağrılar etkisiz kalır.",
+    "beispielEn": "Without consistent pricing of carbon dioxide, appeals remain ineffective."
+  },
+  {
+    "id": 6804,
+    "tr": "yönlendirici etki",
+    "en": "steering effect",
+    "beispiel": "Die Abgabe entfaltet nur bei hohen Sätzen eine spürbare Lenkungswirkung.",
+    "beispielTr": "Bu vergi ancak yüksek oranlarda hissedilir bir yönlendirici etki yaratıyor.",
+    "beispielEn": "The levy has a noticeable steering effect only at high rates."
+  },
+  {
+    "id": 6805,
+    "tr": "ihtiyat ilkesi",
+    "en": "precautionary principle",
+    "beispiel": "Das Ministerium verbot den Stoff unter Berufung auf das Vorsorgeprinzip.",
+    "beispielTr": "Bakanlık, ihtiyat ilkesine dayanarak maddeyi yasakladı.",
+    "beispielEn": "The ministry banned the substance, invoking the precautionary principle."
+  },
+  {
+    "id": 6806,
+    "tr": "kamusal varlık",
+    "en": "common good",
+    "beispiel": "Sauberes Wasser gilt vielen Ökonomen als klassisches Gemeingut.",
+    "beispielTr": "Temiz su, birçok iktisatçıya göre klasik bir kamusal varlıktır.",
+    "beispielEn": "Many economists regard clean water as a classic common good."
+  },
+  {
+    "id": 6807,
+    "tr": "ortak kullanım alanı",
+    "en": "commons",
+    "beispiel": "Jeder im Dorf durfte sein Vieh auf die Allmende treiben.",
+    "beispielTr": "Köydeki herkes hayvanlarını ortak kullanım alanına salabilirdi.",
+    "beispielEn": "Everyone in the village could drive their cattle onto the commons."
+  },
+  {
+    "id": 6808,
+    "tr": "büyüme eleştirisi",
+    "en": "criticism of growth",
+    "beispiel": "Auf dem Kongress stieß die Wachstumskritik auf heftigen Widerspruch.",
+    "beispielTr": "Kongrede büyüme eleştirisi sert bir karşı çıkışla karşılaştı.",
+    "beispielEn": "At the congress, the criticism of growth met with fierce opposition."
+  },
+  {
+    "id": 6809,
+    "tr": "ayrıştırma",
+    "en": "decoupling",
+    "beispiel": "Eine absolute Entkopplung von Wachstum und Emissionen ist bislang selten gelungen.",
+    "beispielTr": "Büyüme ile emisyonların mutlak ayrıştırılması şimdiye dek nadiren başarıldı.",
+    "beispielEn": "An absolute decoupling of growth and emissions has rarely succeeded so far."
+  },
+  {
+    "id": 6810,
+    "tr": "ikincil hammadde",
+    "en": "secondary raw material",
+    "beispiel": "Aus Altgeräten gewonnene Sekundärrohstoffe ersetzen zunehmend importierte Metalle.",
+    "beispielTr": "Eski cihazlardan elde edilen ikincil hammaddeler ithal metallerin yerini alıyor.",
+    "beispielEn": "Secondary raw materials from old devices increasingly replace imported metals."
+  },
+  {
+    "id": 6811,
+    "tr": "atık önleme",
+    "en": "waste prevention",
+    "beispiel": "Die Stadt setzt bei Verpackungen konsequent auf Abfallvermeidung.",
+    "beispielTr": "Belediye, ambalajlarda kararlılıkla atık önlemeye ağırlık veriyor.",
+    "beispielEn": "The city consistently focuses on waste prevention in packaging."
+  },
+  {
+    "id": 6812,
+    "tr": "uzun ömürlülük",
+    "en": "longevity",
+    "beispiel": "Reparierbarkeit und Langlebigkeit müssen wieder zu Verkaufsargumenten werden.",
+    "beispielTr": "Onarılabilirlik ve uzun ömürlülük yeniden birer satış gerekçesi olmalı.",
+    "beispielEn": "Repairability and longevity must become selling points again."
+  },
+  {
+    "id": 6813,
+    "tr": "eskime",
+    "en": "obsolescence",
+    "beispiel": "Ob geplante Obsoleszenz tatsächlich existiert, ist wissenschaftlich umstritten.",
+    "beispielTr": "Planlı eskimenin gerçekten var olup olmadığı bilimsel olarak tartışmalı.",
+    "beispielEn": "Whether planned obsolescence really exists is scientifically disputed."
+  },
+  {
+    "id": 6814,
+    "tr": "karbonsuzlaştırma",
+    "en": "decarbonization",
+    "beispiel": "Die Dekarbonisierung der Schwerindustrie gilt als besonders schwierige Aufgabe.",
+    "beispielTr": "Ağır sanayinin karbonsuzlaştırılması özellikle zor bir görev sayılıyor.",
+    "beispielEn": "The decarbonization of heavy industry is seen as a particularly hard task."
+  },
+  {
+    "id": 6815,
+    "tr": "yaşam döngüsü değerlendirmesi",
+    "en": "life cycle assessment",
+    "beispiel": "Die Ökobilanz eines Produkts fällt je nach Systemgrenze völlig anders aus.",
+    "beispielTr": "Bir ürünün yaşam döngüsü değerlendirmesi, sistem sınırına göre bambaşka çıkıyor.",
+    "beispielEn": "A product's life cycle assessment turns out quite differently depending on the system boundary."
+  },
+  {
+    "id": 6816,
+    "tr": "yaşam döngüsü",
+    "en": "life cycle",
+    "beispiel": "Bewertet wird der gesamte Lebenszyklus von der Rohstoffgewinnung bis zur Entsorgung.",
+    "beispielTr": "Hammadde çıkarımından bertarafa kadar tüm yaşam döngüsü değerlendiriliyor.",
+    "beispielEn": "The entire life cycle from raw material extraction to disposal is assessed."
+  },
+  {
+    "id": 6817,
+    "tr": "doğal sermaye",
+    "en": "natural capital",
+    "beispiel": "Wer Naturkapital verbraucht, lebt von der Substanz künftiger Generationen.",
+    "beispielTr": "Doğal sermayeyi tüketen, gelecek kuşakların birikimini yiyor demektir.",
+    "beispielEn": "Whoever consumes natural capital lives off the reserves of future generations."
+  },
+  {
+    "id": 6818,
+    "tr": "çevre etiği",
+    "en": "environmental ethics",
+    "beispiel": "Sie hält an der Universität Vorlesungen über Umweltethik.",
+    "beispielTr": "Üniversitede çevre etiği üzerine dersler veriyor.",
+    "beispielEn": "She gives lectures on environmental ethics at the university."
+  },
+  {
+    "id": 6819,
+    "tr": "iklim adaleti",
+    "en": "climate justice",
+    "beispiel": "Junge Aktivistinnen fordern auf der Konferenz echte Klimagerechtigkeit.",
+    "beispielTr": "Genç aktivistler konferansta gerçek bir iklim adaleti talep ediyor.",
+    "beispielEn": "Young activists at the conference are demanding real climate justice."
+  },
+  {
+    "id": 6820,
+    "tr": "tüketmek",
+    "en": "to deplete",
+    "beispiel": "Die intensive Fischerei hat die Bestände in der Nordsee erschöpft.",
+    "beispielTr": "Yoğun balıkçılık, Kuzey Denizi'ndeki stokları tüketti.",
+    "beispielEn": "Intensive fishing has depleted the stocks in the North Sea."
+  },
+  {
+    "id": 6821,
+    "tr": "düzenlemek",
+    "en": "to regulate",
+    "beispiel": "Der Staat reguliert den Zugang zu knappen Wasserrechten streng.",
+    "beispielTr": "Devlet, kıt su haklarına erişimi sıkı biçimde düzenliyor.",
+    "beispielEn": "The state strictly regulates access to scarce water rights."
+  },
+  {
+    "id": 6822,
+    "tr": "yeniden düşünmek",
+    "en": "to rethink",
+    "beispiel": "Beim Umgang mit Wasser muss die Landwirtschaft grundlegend umdenken.",
+    "beispielTr": "Tarım, suyla ilişkisinde köklü biçimde yeniden düşünmek zorunda.",
+    "beispielEn": "Agriculture must fundamentally rethink its approach to water."
+  },
+  {
+    "id": 6823,
+    "tr": "rotayı değiştirmek",
+    "en": "to change course",
+    "beispiel": "Die Politik müsste jetzt umsteuern, um die Ziele noch zu erreichen.",
+    "beispielTr": "Hedeflere hâlâ ulaşmak için siyasetin şimdi rotayı değiştirmesi gerekirdi.",
+    "beispielEn": "Politics would have to change course now to still reach the targets."
+  },
+  {
+    "id": 6824,
+    "tr": "hafifletmek",
+    "en": "to mitigate",
+    "beispiel": "Grüne Dächer können die Hitze in dicht bebauten Vierteln abmildern.",
+    "beispielTr": "Yeşil çatılar, yoğun yapılaşmış mahallelerdeki sıcağı hafifletebilir.",
+    "beispielEn": "Green roofs can mitigate the heat in densely built neighborhoods."
+  },
+  {
+    "id": 6825,
+    "tr": "geri dönüştürmek",
+    "en": "to recycle",
+    "beispiel": "Bislang wird nur ein Bruchteil der Kunststoffe tatsächlich wiederverwertet.",
+    "beispielTr": "Şimdiye dek plastiklerin ancak küçük bir kısmı gerçekten geri dönüştürülüyor.",
+    "beispielEn": "So far only a fraction of plastics is actually recycled."
+  },
+  {
+    "id": 6826,
+    "tr": "bilanço çıkarmak",
+    "en": "to account for",
+    "beispiel": "Unternehmen müssen ihre Emissionen künftig lückenlos bilanzieren.",
+    "beispielTr": "Şirketler bundan böyle emisyonlarının eksiksiz bilançosunu çıkarmak zorunda.",
+    "beispielEn": "In future, companies must account for their emissions without gaps."
+  },
+  {
+    "id": 6827,
+    "tr": "doğal hâline döndürmek",
+    "en": "to renaturalize",
+    "beispiel": "Der begradigte Fluss wird abschnittsweise wieder renaturiert.",
+    "beispielTr": "Düzleştirilmiş nehir, kısım kısım yeniden doğal hâline döndürülüyor.",
+    "beispielEn": "The straightened river is being restored to its natural state section by section."
+  },
+  {
+    "id": 6828,
+    "tr": "kaynak tasarruflu",
+    "en": "resource-saving",
+    "beispiel": "Das Verfahren gilt als besonders ressourcenschonend und energieeffizient.",
+    "beispielTr": "Yöntem, özellikle kaynak tasarruflu ve enerji açısından verimli sayılıyor.",
+    "beispielEn": "The process is considered especially resource-saving and energy-efficient."
+  },
+  {
+    "id": 6829,
+    "tr": "düşük emisyonlu",
+    "en": "low-emission",
+    "beispiel": "Emissionsarme Verfahren setzen sich nur bei klaren Vorgaben durch.",
+    "beispielTr": "Düşük emisyonlu yöntemler ancak net kurallar olduğunda yaygınlaşıyor.",
+    "beispielEn": "Low-emission processes catch on only when the rules are clear."
+  },
+  {
+    "id": 6830,
+    "tr": "geri döndürülemez",
+    "en": "irreversible",
+    "beispiel": "Manche Schäden am Korallenriff sind praktisch irreversibel.",
+    "beispielTr": "Mercan resifindeki bazı hasarlar pratikte geri döndürülemez.",
+    "beispielEn": "Some damage to the coral reef is practically irreversible."
+  },
+  {
+    "id": 6831,
+    "tr": "ağır sonuçlar doğuran",
+    "en": "consequential",
+    "beispiel": "Die Entscheidung über den Tagebau war folgenschwerer als erwartet.",
+    "beispielTr": "Açık ocak madeni kararı, beklenenden daha ağır sonuçlar doğurdu.",
+    "beispielEn": "The decision on the open-pit mine was more consequential than expected."
+  },
+  {
+    "id": 6832,
+    "tr": "geleceğe dayanıklı",
+    "en": "future-proof",
+    "beispiel": "Ein zukunftsfähiges Wirtschaftsmodell darf nicht auf ewigem Mengenwachstum beruhen.",
+    "beispielTr": "Geleceğe dayanıklı bir ekonomi modeli sonsuz nicelik büyümesine dayanamaz.",
+    "beispielEn": "A future-proof economic model must not rest on endless growth in volume."
+  },
+  {
+    "id": 6833,
+    "tr": "yenilenebilir",
+    "en": "renewable",
+    "beispiel": "Regenerative Energien decken inzwischen mehr als die Hälfte des Bedarfs.",
+    "beispielTr": "Yenilenebilir enerjiler artık ihtiyacın yarısından fazlasını karşılıyor.",
+    "beispielEn": "Renewable energies now cover more than half of the demand."
+  },
+  {
+    "id": 6834,
+    "tr": "kanıtlanmış biçimde",
+    "en": "demonstrably",
+    "beispiel": "Die Maßnahme hat den Nitratgehalt nachweislich gesenkt.",
+    "beispielTr": "Bu önlem, nitrat düzeyini kanıtlanmış biçimde düşürdü.",
+    "beispielEn": "The measure has demonstrably lowered the nitrate level."
+  },
+  {
+    "id": 6835,
+    "tr": "erdem",
+    "en": "virtue",
+    "beispiel": "Für Aristoteles war Mut eine Tugend zwischen Feigheit und Tollkühnheit.",
+    "beispielTr": "Aristoteles için cesaret, korkaklıkla delice atılganlık arasında bir erdemdi.",
+    "beispielEn": "For Aristotle, courage was a virtue between cowardice and recklessness."
+  },
+  {
+    "id": 6836,
+    "tr": "irade özgürlüğü",
+    "en": "free will",
+    "beispiel": "Die Hirnforschung stellt unsere Vorstellung von Willensfreiheit ernsthaft infrage.",
+    "beispielTr": "Beyin araştırmaları, irade özgürlüğü tasavvurumuzu ciddi biçimde sorguluyor.",
+    "beispielEn": "Brain research seriously calls our notion of free will into question."
+  },
+  {
+    "id": 6837,
+    "tr": "ceza sorumluluğu",
+    "en": "criminal responsibility",
+    "beispiel": "Das Gericht ließ die Zurechnungsfähigkeit des Angeklagten psychiatrisch prüfen.",
+    "beispielTr": "Mahkeme, sanığın ceza sorumluluğunu psikiyatrik olarak inceletti.",
+    "beispielEn": "The court had the defendant's criminal responsibility examined by a psychiatrist."
+  },
+  {
+    "id": 6838,
+    "tr": "dürüstlük",
+    "en": "integrity",
+    "beispiel": "Seine Integrität blieb selbst unter politischem Druck unbeschädigt.",
+    "beispielTr": "Dürüstlüğü, siyasi baskı altında bile zedelenmeden kaldı.",
+    "beispielEn": "His integrity remained intact even under political pressure."
+  },
+  {
+    "id": 6839,
+    "tr": "merhamet",
+    "en": "mercy",
+    "beispiel": "Die Nonnen begegneten den Flüchtlingen mit großer Barmherzigkeit.",
+    "beispielTr": "Rahibeler, mültecilere büyük bir merhametle yaklaştı.",
+    "beispielEn": "The nuns treated the refugees with great mercy."
+  },
+  {
+    "id": 6840,
+    "tr": "bencillik",
+    "en": "selfishness",
+    "beispiel": "Manche Denker halten Egoismus für die ehrlichste Triebkraft des Handelns.",
+    "beispielTr": "Bazı düşünürler bencilliği, eylemin en dürüst itici gücü sayar.",
+    "beispielEn": "Some thinkers consider selfishness the most honest driving force of action."
+  },
+  {
+    "id": 6841,
+    "tr": "özgecilik",
+    "en": "altruism",
+    "beispiel": "Ob echter Altruismus überhaupt existiert, ist bis heute umstritten.",
+    "beispielTr": "Gerçek bir özgeciliğin var olup olmadığı bugün hâlâ tartışmalı.",
+    "beispielEn": "Whether real altruism exists at all is still disputed today."
+  },
+  {
+    "id": 6842,
+    "tr": "görev duygusu",
+    "en": "sense of duty",
+    "beispiel": "Sie blieb aus reinem Pflichtgefühl bei ihrer kranken Mutter.",
+    "beispielTr": "Salt görev duygusuyla hasta annesinin yanında kaldı.",
+    "beispielEn": "She stayed with her sick mother purely out of a sense of duty."
+  },
+  {
+    "id": 6843,
+    "tr": "iç çatışma",
+    "en": "inner conflict",
+    "beispiel": "Der Arzt geriet in einen tiefen Zwiespalt zwischen Schweigepflicht und Warnung.",
+    "beispielTr": "Doktor, sır saklama yükümlülüğüyle uyarma arasında derin bir iç çatışmaya düştü.",
+    "beispielEn": "The doctor fell into a deep inner conflict between confidentiality and warning."
+  },
+  {
+    "id": 6844,
+    "tr": "ikilem",
+    "en": "dilemma",
+    "beispiel": "Sie steckte in einem Dilemma zwischen Karriere und Familie.",
+    "beispielTr": "Kariyerle aile arasında bir ikilemde sıkışıp kalmıştı.",
+    "beispielEn": "She was caught in a dilemma between career and family."
+  },
+  {
+    "id": 6845,
+    "tr": "akıl",
+    "en": "reason",
+    "beispiel": "Kant wollte die Grenzen der reinen Vernunft genau bestimmen.",
+    "beispielTr": "Kant, saf aklın sınırlarını tam olarak belirlemek istiyordu.",
+    "beispielEn": "Kant wanted to define the limits of pure reason precisely."
+  },
+  {
+    "id": 6846,
+    "tr": "zihin",
+    "en": "mind",
+    "beispiel": "Sein wacher Verstand fiel allen sofort auf.",
+    "beispielTr": "Uyanık zihni herkesin hemen dikkatini çekti.",
+    "beispielEn": "His alert mind immediately struck everyone."
+  },
+  {
+    "id": 6847,
+    "tr": "kavrayış",
+    "en": "insight",
+    "beispiel": "Diese Einsicht kam ihm erst nach jahrelanger Beschäftigung mit dem Thema.",
+    "beispielTr": "Bu kavrayışa ancak konuyla yıllarca uğraştıktan sonra vardı.",
+    "beispielEn": "This insight came to him only after years of working on the topic."
+  },
+  {
+    "id": 6848,
+    "tr": "bilgelik",
+    "en": "wisdom",
+    "beispiel": "Die Weisheit meiner Großmutter half mir durch schwere Zeiten.",
+    "beispielTr": "Büyükannemin bilgeliği zor zamanlarda bana yardımcı oldu.",
+    "beispielEn": "My grandmother's wisdom helped me through hard times."
+  },
+  {
+    "id": 6849,
+    "tr": "soğukkanlılık",
+    "en": "composure",
+    "beispiel": "In der Krise zeigte sie eine bemerkenswerte Besonnenheit.",
+    "beispielTr": "Kriz sırasında dikkate değer bir soğukkanlılık gösterdi.",
+    "beispielEn": "In the crisis she showed remarkable composure."
+  },
+  {
+    "id": 6850,
+    "tr": "görecelilik",
+    "en": "relativism",
+    "beispiel": "Ein radikaler Relativismus macht jede Kritik an Unrecht unmöglich.",
+    "beispielTr": "Radikal bir görecelilik, haksızlığa yönelik her eleştiriyi imkânsız kılar.",
+    "beispielEn": "A radical relativism makes any criticism of injustice impossible."
+  },
+  {
+    "id": 6851,
+    "tr": "ilke",
+    "en": "maxim",
+    "beispiel": "Handle nur nach einer Maxime, die du allgemein wollen kannst.",
+    "beispielTr": "Yalnızca genel geçer olmasını isteyebileceğin bir ilkeye göre davran.",
+    "beispielEn": "Act only according to a maxim that you can will to be universal."
+  },
+  {
+    "id": 6852,
+    "tr": "buyruk",
+    "en": "commandment",
+    "beispiel": "Fairness ist hier weniger ein Gesetz als ein moralisches Gebot.",
+    "beispielTr": "Adillik burada bir yasadan çok ahlaki bir buyruktur.",
+    "beispielEn": "Fairness here is less a law than a moral commandment."
+  }
+]

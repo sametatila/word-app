@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7053,
+    "tr": "hürmet etmek",
+    "en": "to revere",
+    "beispiel": "In dieser Region verehrt man den Heiligen bis heute.",
+    "beispielTr": "Bu bölgede halk azize bugün de hürmet ediyor.",
+    "beispielEn": "In this region people still revere the saint."
+  },
+  {
+    "id": 7054,
+    "tr": "tapmak",
+    "en": "to worship",
+    "beispiel": "Sie beten dort seit Generationen dieselbe Gottheit an.",
+    "beispielTr": "Orada kuşaklardır aynı tanrıya tapıyorlar.",
+    "beispielEn": "They have worshipped the same deity there for generations."
+  },
+  {
+    "id": 7055,
+    "tr": "kutsamak",
+    "en": "to bless",
+    "beispiel": "Der Priester segnete die Versammelten am Ende der Feier.",
+    "beispielTr": "Rahip, törenin sonunda toplananları kutsadı.",
+    "beispielEn": "The priest blessed those assembled at the end of the ceremony."
+  },
+  {
+    "id": 7056,
+    "tr": "misyonerlik yapmak",
+    "en": "to proselytize",
+    "beispiel": "Die Gemeinschaft missioniert nicht, sondern wartet auf Interessierte.",
+    "beispielTr": "Topluluk misyonerlik yapmıyor, ilgi duyanları bekliyor.",
+    "beispielEn": "The community does not proselytize but waits for interested people."
+  },
+  {
+    "id": 7057,
+    "tr": "vaaz vermek",
+    "en": "to preach",
+    "beispiel": "Er predigte über Nachsicht, ohne jemanden zu belehren.",
+    "beispielTr": "Kimseye ders vermeden hoşgörü üzerine vaaz verdi.",
+    "beispielEn": "He preached about forbearance without lecturing anyone."
+  },
+  {
+    "id": 7058,
+    "tr": "hacca gitmek",
+    "en": "to make a pilgrimage",
+    "beispiel": "Jährlich pilgern Zehntausende zu diesem abgelegenen Bergkloster.",
+    "beispielTr": "Her yıl on binlerce kişi bu ıssız dağ manastırına hac için gidiyor.",
+    "beispielEn": "Every year tens of thousands make a pilgrimage to this remote mountain monastery."
+  },
+  {
+    "id": 7059,
+    "tr": "oruç tutmak",
+    "en": "to fast",
+    "beispiel": "Viele fasten aus gesundheitlichen und nicht aus religiösen Gründen.",
+    "beispielTr": "Birçok kişi dinî nedenlerle değil sağlık nedenleriyle oruç tutuyor.",
+    "beispielEn": "Many people fast for health reasons rather than religious ones."
+  },
+  {
+    "id": 7060,
+    "tr": "feragat etmek",
+    "en": "to renounce",
+    "beispiel": "Sie entsagte dem Besitz und lebte fortan im Kloster.",
+    "beispielTr": "Mülkünden feragat etti ve bundan böyle manastırda yaşadı.",
+    "beispielEn": "She renounced her property and lived in a monastery from then on."
+  },
+  {
+    "id": 7061,
+    "tr": "hoş görmek",
+    "en": "to tolerate",
+    "beispiel": "Abweichende Meinungen wurden innerhalb der Gemeinde kaum toleriert.",
+    "beispielTr": "Farklı görüşler cemaat içinde neredeyse hiç hoş görülmedi.",
+    "beispielEn": "Dissenting opinions were barely tolerated within the congregation."
+  },
+  {
+    "id": 7062,
+    "tr": "sapkın ilan etmek",
+    "en": "to denounce as heretical",
+    "beispiel": "Damals verketzerte die Kirche jede kritische Stimme.",
+    "beispielTr": "O dönemde kilise her eleştirel sesi sapkın ilan etti.",
+    "beispielEn": "Back then the church denounced every critical voice as heretical."
+  },
+  {
+    "id": 7063,
+    "tr": "takdis etmek",
+    "en": "to consecrate",
+    "beispiel": "Die neue Kapelle wurde in einer schlichten Feier geweiht.",
+    "beispielTr": "Yeni şapel sade bir törenle takdis edildi.",
+    "beispielEn": "The new chapel was consecrated in a simple ceremony."
+  },
+  {
+    "id": 7064,
+    "tr": "tövbe etmek",
+    "en": "to swear off",
+    "beispiel": "Nach dem Unfall schwor er dem Alkohol ab.",
+    "beispielTr": "Kazadan sonra içkiye tövbe etti.",
+    "beispielEn": "After the accident he swore off alcohol."
+  },
+  {
+    "id": 7065,
+    "tr": "din değiştirmek",
+    "en": "to convert",
+    "beispiel": "Nach langem Zweifel konvertierte er zum Islam.",
+    "beispielTr": "Uzun tereddütlerden sonra din değiştirip Müslüman oldu.",
+    "beispielEn": "After long doubts he converted to Islam."
+  },
+  {
+    "id": 7066,
+    "tr": "uygulamak",
+    "en": "to practice",
+    "beispiel": "Diese Methode wird in Japan seit Langem praktiziert.",
+    "beispielTr": "Bu yöntem Japonya'da uzun zamandır uygulanıyor.",
+    "beispielEn": "This method has been practiced in Japan for a long time."
+  },
+  {
+    "id": 7067,
+    "tr": "mesafe koymak",
+    "en": "to distance oneself",
+    "beispiel": "Die Leitung distanzierte sich klar von den radikalen Äußerungen.",
+    "beispielTr": "Yönetim, radikal açıklamalara açıkça mesafe koydu.",
+    "beispielEn": "The management clearly distanced itself from the radical statements."
+  },
+  {
+    "id": 7068,
+    "tr": "dayanak göstermek",
+    "en": "to invoke",
+    "beispiel": "Beide Seiten berufen sich auf dieselbe heilige Schrift.",
+    "beispielTr": "Her iki taraf da aynı kutsal metni dayanak gösteriyor.",
+    "beispielEn": "Both sides invoke the same holy scripture."
+  },
+  {
+    "id": 7069,
+    "tr": "dünyevi",
+    "en": "secular",
+    "beispiel": "Weltliche und geistliche Macht waren hier lange verflochten.",
+    "beispielTr": "Dünyevi ve ruhani iktidar burada uzun süre iç içeydi.",
+    "beispielEn": "Secular and spiritual power were intertwined here for a long time."
+  },
+  {
+    "id": 7070,
+    "tr": "dinler arası",
+    "en": "interreligious",
+    "beispiel": "Der interreligiöse Dialog kommt in der Praxis nur langsam voran.",
+    "beispielTr": "Dinler arası diyalog pratikte ancak yavaş ilerliyor.",
+    "beispielEn": "In practice the interreligious dialogue is progressing only slowly."
+  },
+  {
+    "id": 7071,
+    "tr": "huşu içinde",
+    "en": "reverently",
+    "beispiel": "Die Zuhörer verfolgten die Zeremonie andächtig und völlig still.",
+    "beispielTr": "Dinleyiciler töreni huşu içinde ve tam bir sessizlikle izledi.",
+    "beispielEn": "The listeners followed the ceremony reverently and in complete silence."
+  },
+  {
+    "id": 7072,
+    "tr": "saygıdeğer",
+    "en": "venerable",
+    "beispiel": "Das ehrwürdige Gebäude dient seit dem Mittelalter demselben Zweck.",
+    "beispielTr": "Saygıdeğer yapı, Orta Çağ'dan beri aynı amaca hizmet ediyor.",
+    "beispielEn": "The venerable building has served the same purpose since the Middle Ages."
+  },
+  {
+    "id": 7073,
+    "tr": "çoğulcu",
+    "en": "pluralistic",
+    "beispiel": "In einer pluralistischen Gesellschaft muss man andere Meinungen aushalten.",
+    "beispielTr": "Çoğulcu bir toplumda insan başka görüşlere katlanmak zorundadır.",
+    "beispielEn": "In a pluralistic society you have to put up with other opinions."
+  },
+  {
+    "id": 7074,
+    "tr": "anlam değişimi",
+    "en": "semantic change",
+    "beispiel": "Das Wort hat im Lauf der Jahrhunderte einen erstaunlichen Bedeutungswandel durchgemacht.",
+    "beispielTr": "Kelime yüzyıllar içinde şaşırtıcı bir anlam değişimi geçirdi.",
+    "beispielEn": "The word has undergone a remarkable semantic change over the centuries."
+  },
+  {
+    "id": 7075,
+    "tr": "eşdeğerlik",
+    "en": "equivalence",
+    "beispiel": "Eine vollständige Äquivalenz zwischen zwei Sprachen gibt es selten.",
+    "beispielTr": "İki dil arasında tam bir eşdeğerlik nadiren bulunur.",
+    "beispielEn": "Full equivalence between two languages rarely exists."
+  },
+  {
+    "id": 7076,
+    "tr": "anlam içeriği",
+    "en": "semantic content",
+    "beispiel": "Die Übersetzung bewahrt den Sinngehalt, nicht aber den Klang des Originals.",
+    "beispielTr": "Çeviri, özgün metnin anlam içeriğini koruyor ama sesini koruyamıyor.",
+    "beispielEn": "The translation preserves the semantic content but not the sound of the original."
+  },
+  {
+    "id": 7077,
+    "tr": "dil kullanımı",
+    "en": "language usage",
+    "beispiel": "Im heutigen Sprachgebrauch klingt dieser Ausdruck deutlich veraltet.",
+    "beispielTr": "Bugünkü dil kullanımında bu ifade epeyce eskimiş duruyor.",
+    "beispielEn": "In today's language usage this expression sounds clearly outdated."
+  },
+  {
+    "id": 7078,
+    "tr": "dil düzeyi",
+    "en": "language level",
+    "beispiel": "Der Redner wechselte mitten im Vortrag die Sprachebene.",
+    "beispielTr": "Konuşmacı sunumun ortasında dil düzeyini değiştirdi.",
+    "beispielEn": "The speaker switched language level in the middle of the talk."
+  },
+  {
+    "id": 7079,
+    "tr": "üslup düzeyi",
+    "en": "stylistic level",
+    "beispiel": "Beide Wörter bedeuten dasselbe, gehören aber verschiedenen Stilebenen an.",
+    "beispielTr": "İki kelime de aynı anlama geliyor ama farklı üslup düzeylerine ait.",
+    "beispielEn": "Both words mean the same but belong to different stylistic levels."
+  },
+  {
+    "id": 7080,
+    "tr": "hedef dil",
+    "en": "target language",
+    "beispiel": "Der Übersetzer muss vor allem die Zielsprache souverän beherrschen.",
+    "beispielTr": "Çevirmenin her şeyden önce hedef dile tam hâkim olması gerekir.",
+    "beispielEn": "A translator must above all have full command of the target language."
+  },
+  {
+    "id": 7081,
+    "tr": "kaynak dil",
+    "en": "source language",
+    "beispiel": "Manche Wortspiele der Ausgangssprache gehen bei der Übertragung verloren.",
+    "beispielTr": "Kaynak dildeki bazı kelime oyunları aktarımda kayboluyor.",
+    "beispielEn": "Some of the source language's wordplay gets lost in the transfer."
+  },
+  {
+    "id": 7082,
+    "tr": "kelime alanı",
+    "en": "lexical field",
+    "beispiel": "Alle diese Verben gehören zum Wortfeld der Wahrnehmung.",
+    "beispielTr": "Bütün bu fiiller algı kelime alanına ait.",
+    "beispielEn": "All these verbs belong to the lexical field of perception."
+  },
+  {
+    "id": 7083,
+    "tr": "anlam bağlamı",
+    "en": "semantic context",
+    "beispiel": "Aus dem Sinnzusammenhang gerissen wirkt die Aussage schlicht falsch.",
+    "beispielTr": "Anlam bağlamından koparılınca bu söz düpedüz yanlış görünüyor.",
+    "beispielEn": "Torn out of its semantic context the statement seems plainly wrong."
+  },
+  {
+    "id": 7084,
+    "tr": "yanlışlık",
+    "en": "inaccuracy",
+    "beispiel": "Kleine Ungenauigkeiten in der Terminologie führen später zu großen Missverständnissen.",
+    "beispielTr": "Terminolojideki küçük yanlışlıklar sonradan büyük yanlış anlamalara yol açıyor.",
+    "beispielEn": "Small inaccuracies in the terminology later lead to big misunderstandings."
+  },
+  {
+    "id": 7085,
+    "tr": "derecelendirme",
+    "en": "gradation",
+    "beispiel": "Die Jury arbeitet mit einer feinen Abstufung der Punkte.",
+    "beispielTr": "Jüri, puanlarda ince bir derecelendirmeyle çalışıyor.",
+    "beispielEn": "The jury works with a fine gradation of the points."
+  },
+  {
+    "id": 7086,
+    "tr": "söz edimi",
+    "en": "speech act",
+    "beispiel": "„Kannst du das Fenster schließen?“ ist ein indirekter Sprechakt.",
+    "beispielTr": "“Pencereyi kapatabilir misin?” cümlesi dolaylı bir söz edimidir.",
+    "beispielEn": "“Can you close the window?” is an indirect speech act."
+  },
+  {
+    "id": 7087,
+    "tr": "ifade",
+    "en": "statement",
+    "beispiel": "Seine Äußerung in der Sitzung sorgte für Empörung.",
+    "beispielTr": "Toplantıdaki ifadesi büyük tepki topladı.",
+    "beispielEn": "His statement in the meeting caused outrage."
+  },
+  {
+    "id": 7088,
+    "tr": "çevrilemezlik",
+    "en": "untranslatability",
+    "beispiel": "Die Unübersetzbarkeit mancher Begriffe ist ein altes Thema der Sprachtheorie.",
+    "beispielTr": "Bazı kavramların çevrilemezliği dil kuramının eski bir konusudur.",
+    "beispielEn": "The untranslatability of some concepts is an old topic in language theory."
+  },
+  {
+    "id": 7089,
+    "tr": "çağrışım",
+    "en": "overtone",
+    "beispiel": "Das Wort trägt einen abschätzigen Beiklang, den kein Wörterbuch verzeichnet.",
+    "beispielTr": "Kelime, hiçbir sözlükte yazmayan küçümseyici bir çağrışım taşıyor.",
+    "beispielEn": "The word carries a disparaging overtone that no dictionary records."
+  },
+  {
+    "id": 7090,
+    "tr": "yan anlam",
+    "en": "connotation",
+    "beispiel": "Im Fachtext stört die spöttische Nebenbedeutung des Begriffs erheblich.",
+    "beispielTr": "Uzmanlık metninde terimin alaycı yan anlamı epeyce rahatsız ediyor.",
+    "beispielEn": "In a technical text the mocking connotation of the term is quite disruptive."
+  },
+  {
+    "id": 7091,
+    "tr": "dil normu",
+    "en": "language norm",
+    "beispiel": "Die Sprachnorm folgt dem Gebrauch, nicht umgekehrt.",
+    "beispielTr": "Dil normu kullanımı izler, tersi değil.",
+    "beispielEn": "The language norm follows usage and not the other way around."
+  },
+  {
+    "id": 7092,
+    "tr": "terminoloji",
+    "en": "terminology",
+    "beispiel": "Ohne einheitliche Terminologie wird jede Fachdiskussion mühsam.",
+    "beispielTr": "Ortak bir terminoloji olmadan her uzmanlık tartışması zahmetli olur.",
+    "beispielEn": "Without a uniform terminology every specialist discussion becomes tedious."
+  },
+  {
+    "id": 7093,
+    "tr": "kavram tanımı",
+    "en": "definition of terms",
+    "beispiel": "Am Anfang der Studie steht eine sorgfältige Begriffsbestimmung.",
+    "beispielTr": "Çalışmanın başında özenli bir kavram tanımı yer alıyor.",
+    "beispielEn": "A careful definition of terms stands at the beginning of the study."
+  },
+  {
+    "id": 7094,
+    "tr": "kavramsal çerçeve",
+    "en": "conceptual framework",
+    "beispiel": "Die Autorin übernimmt die Begrifflichkeit der älteren Forschung nicht.",
+    "beispielTr": "Yazar, eski araştırmanın kavramsal çerçevesini devralmıyor.",
+    "beispielEn": "The author does not adopt the conceptual framework of earlier research."
+  },
+  {
+    "id": 7095,
+    "tr": "adlandırma",
+    "en": "designation",
+    "beispiel": "Für dieselbe Sache gibt es in den Regionen ganz verschiedene Bezeichnungen.",
+    "beispielTr": "Aynı şey için bölgelere göre bambaşka adlandırmalar var.",
+    "beispielEn": "There are quite different designations for the same thing in the regions."
+  },
+  {
+    "id": 7096,
+    "tr": "kelime anlamı",
+    "en": "literal meaning",
+    "beispiel": "Im engeren Wortsinn trifft der Begriff hier gar nicht zu.",
+    "beispielTr": "Dar kelime anlamıyla bu terim burada hiç uymuyor.",
+    "beispielEn": "In the narrower literal meaning the term does not apply here at all."
+  },
+  {
+    "id": 7097,
+    "tr": "ödünç kelime",
+    "en": "loanword",
+    "beispiel": "Viele Lehnwörter haben ihre ursprüngliche Bedeutung längst verloren.",
+    "beispielTr": "Birçok ödünç kelime asıl anlamını çoktan yitirdi.",
+    "beispielEn": "Many loanwords have long lost their original meaning."
+  },
+  {
+    "id": 7098,
+    "tr": "hafife alma",
+    "en": "understatement",
+    "beispiel": "Von einem kleinen Problem zu sprechen war eine glatte Untertreibung.",
+    "beispielTr": "Küçük bir sorundan söz etmek düpedüz hafife almaktı.",
+    "beispielEn": "Calling it a small problem was a plain understatement."
+  },
+  {
+    "id": 7099,
+    "tr": "abartma",
+    "en": "exaggeration",
+    "beispiel": "Seine Erzählungen enthalten immer eine kleine Übertreibung.",
+    "beispielTr": "Anlattıklarında hep küçük bir abartma olur.",
+    "beispielEn": "His stories always contain a little exaggeration."
+  },
+  {
+    "id": 7100,
+    "tr": "önemsizleştirme",
+    "en": "trivialization",
+    "beispiel": "Solche Ausdrücke dienen der Verharmlosung eines ernsten Sachverhalts.",
+    "beispielTr": "Bu tür ifadeler ciddi bir durumu önemsizleştirmeye yarıyor.",
+    "beispielEn": "Such expressions serve the trivialization of a serious matter."
+  },
+  {
+    "id": 7101,
+    "tr": "aşağılama",
+    "en": "disparagement",
+    "beispiel": "Die Bemerkung enthält eine kaum verhüllte Herabsetzung der Gegenseite.",
+    "beispielTr": "Bu söz, karşı tarafa yönelik neredeyse örtüsüz bir aşağılama içeriyor.",
+    "beispielEn": "The remark contains a barely veiled disparagement of the other side."
+  },
+  {
+    "id": 7102,
+    "tr": "atlama",
+    "en": "omission",
+    "beispiel": "Gerade die Auslassungen im Text verraten die Absicht des Verfassers.",
+    "beispielTr": "Metindeki atlamalar tam da yazarın niyetini ele veriyor.",
+    "beispielEn": "It is precisely the omissions in the text that reveal the author's intention."
+  }
+]

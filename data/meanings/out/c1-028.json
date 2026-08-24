@@ -3,198 +3,198 @@
     "id": 6603,
     "tr": "kışkırtma",
     "en": "rabble-rousing",
-    "beispiel": "Der Wahlkampf war reine Stimmungsmache gegen Zuwanderer.",
-    "beispielTr": "Seçim kampanyası göçmenlere karşı düpedüz kışkırtmaydı.",
-    "beispielEn": "The campaign was pure rabble-rousing against immigrants."
+    "beispiel": "Der Kommentar war keine Analyse, sondern plumpe Stimmungsmache.",
+    "beispielTr": "Yazı bir analiz değil, kaba bir kışkırtmaydı.",
+    "beispielEn": "The column was not analysis but crude rabble-rousing."
   },
   {
     "id": 6604,
     "tr": "pamflet",
     "en": "pamphlet",
-    "beispiel": "Sein neues Buch ist ein Pamphlet gegen die Regierung.",
-    "beispielTr": "Yeni kitabı hükûmete karşı yazılmış bir pamflet.",
-    "beispielEn": "His new book is a pamphlet against the government."
+    "beispiel": "Sein Buch ist weniger Studie als politisches Pamphlet gegen die Regierung.",
+    "beispielTr": "Kitabı bir incelemeden çok hükûmete karşı yazılmış siyasi bir pamflet.",
+    "beispielEn": "His book is less a study than a political pamphlet against the government."
   },
   {
     "id": 6605,
     "tr": "taşlama yazısı",
     "en": "satirical column",
-    "beispiel": "Ihre Glosse über den Bürgermeister sorgte für Ärger.",
-    "beispielTr": "Belediye başkanı hakkındaki taşlama yazısı kızgınlık yarattı.",
-    "beispielEn": "Her satirical column about the mayor caused trouble."
+    "beispiel": "Seine Glosse über den Bahnstreik hat viele Leser amüsiert.",
+    "beispielTr": "Demiryolu grevi üzerine yazdığı taşlama yazısı birçok okuru güldürdü.",
+    "beispielEn": "His satirical column about the rail strike amused many readers."
   },
   {
     "id": 6606,
     "tr": "kültür sanat eki",
     "en": "arts section",
-    "beispiel": "Im Feuilleton der Zeitung stand eine lange Filmkritik.",
-    "beispielTr": "Gazetenin kültür sanat ekinde uzun bir film eleştirisi vardı.",
-    "beispielEn": "The paper's arts section had a long film review."
+    "beispiel": "Im Feuilleton wird seit Wochen über den Begriff der Cancel-Kultur gestritten.",
+    "beispielTr": "Kültür sanat ekinde haftalardır iptal kültürü kavramı tartışılıyor.",
+    "beispielEn": "The arts section has been arguing over the term cancel culture for weeks."
   },
   {
     "id": 6607,
     "tr": "anonimleştirme",
     "en": "anonymization",
-    "beispiel": "Nach der Anonymisierung der Daten begann die Auswertung.",
-    "beispielTr": "Verilerin anonimleştirilmesinden sonra değerlendirme başladı.",
-    "beispielEn": "The analysis began after the anonymization of the data."
+    "beispiel": "Erst nach sorgfältiger Anonymisierung durfte das Interview gesendet werden.",
+    "beispielTr": "Röportaj ancak özenli bir anonimleştirmeden sonra yayınlanabildi.",
+    "beispielEn": "The interview could only be aired after careful anonymization."
   },
   {
     "id": 6608,
     "tr": "boşboğazlık",
     "en": "indiscretion",
-    "beispiel": "Eine Indiskretion aus dem Ministerium brachte den Plan ans Licht.",
-    "beispielTr": "Bakanlıktaki bir boşboğazlık planı gün yüzüne çıkardı.",
-    "beispielEn": "An indiscretion at the ministry brought the plan to light."
+    "beispiel": "Eine einzige Indiskretion im Aufzug kostete ihn den Posten.",
+    "beispielTr": "Asansördeki tek bir boşboğazlık ona görevini kaybettirdi.",
+    "beispielEn": "A single indiscretion in the elevator cost him his job."
   },
   {
     "id": 6609,
-    "tr": "söylem talimatı",
-    "en": "official wording",
-    "beispiel": "Alle Sprecher hielten sich genau an die Sprachregelung.",
-    "beispielTr": "Bütün sözcüler söylem talimatına harfiyen uydu.",
-    "beispielEn": "All the spokespeople stuck closely to the official wording."
+    "tr": "ağız birliği",
+    "en": "agreed wording",
+    "beispiel": "Alle Sprecher hielten sich auffällig genau an dieselbe Sprachregelung.",
+    "beispielTr": "Bütün sözcüler dikkat çekecek kadar sıkı bir ağız birliği içindeydi.",
+    "beispielEn": "All the spokespeople stuck strikingly closely to the same agreed wording."
   },
   {
     "id": 6610,
     "tr": "iftira",
-    "en": "slander",
-    "beispiel": "Er verklagte die Zeitung wegen Verleumdung.",
-    "beispielTr": "Gazeteyi iftira nedeniyle dava etti.",
-    "beispielEn": "He sued the newspaper for slander."
+    "en": "defamation",
+    "beispiel": "Der Politiker zeigte den Blogger wegen Verleumdung an.",
+    "beispielTr": "Siyasetçi, blog yazarı hakkında iftiradan suç duyurusunda bulundu.",
+    "beispielEn": "The politician filed a defamation complaint against the blogger."
   },
   {
     "id": 6611,
     "tr": "tekrarlamama taahhüdü",
     "en": "cease-and-desist declaration",
-    "beispiel": "Das Magazin unterschrieb eine Unterlassungserklärung und löschte den Artikel.",
-    "beispielTr": "Dergi bir tekrarlamama taahhüdü imzaladı ve yazıyı sildi.",
-    "beispielEn": "The magazine signed a cease-and-desist declaration and deleted the article."
+    "beispiel": "Das Magazin unterschrieb eine Unterlassungserklärung und nahm den Beitrag offline.",
+    "beispielTr": "Dergi bir tekrarlamama taahhüdü imzaladı ve yazıyı yayından kaldırdı.",
+    "beispielEn": "The magazine signed a cease-and-desist declaration and took the piece offline."
   },
   {
     "id": 6612,
     "tr": "otosansür",
     "en": "self-censorship",
-    "beispiel": "Aus Angst vor Klagen üben viele Redaktionen Selbstzensur.",
-    "beispielTr": "Dava korkusuyla birçok yayın kurulu otosansür uyguluyor.",
-    "beispielEn": "Fearing lawsuits, many newsrooms practice self-censorship."
+    "beispiel": "Aus Angst vor Anzeigen übte der Verlag stille Selbstzensur.",
+    "beispielTr": "Yayınevi, dava korkusuyla sessizce otosansür uyguladı.",
+    "beispielEn": "Out of fear of lawsuits the publisher quietly practiced self-censorship."
   },
   {
     "id": 6613,
     "tr": "alımlayıcı",
     "en": "recipient",
-    "beispiel": "Der Rezipient sucht sich seine Nachrichten heute selbst aus.",
-    "beispielTr": "Alımlayıcı bugün haberlerini kendisi seçiyor.",
-    "beispielEn": "The recipient picks his own news these days."
+    "beispiel": "Jeder Rezipient sucht sich seine Nachrichten inzwischen selbst aus.",
+    "beispielTr": "Artık her alımlayıcı haberlerini kendisi seçiyor.",
+    "beispielEn": "These days every recipient picks their own news."
   },
   {
     "id": 6614,
     "tr": "duygusallaştırma",
     "en": "emotionalization",
-    "beispiel": "Der Sender setzt bewusst auf Emotionalisierung statt auf Fakten.",
-    "beispielTr": "Kanal bilinçli olarak olgular yerine duygusallaştırmayı seçiyor.",
-    "beispielEn": "The channel deliberately relies on emotionalization instead of facts."
+    "beispiel": "Die Emotionalisierung des Falls trieb die Klickzahlen nach oben.",
+    "beispielTr": "Olayın duygusallaştırılması tıklanma sayılarını yukarı çekti.",
+    "beispielEn": "The emotionalization of the case drove the click numbers up."
   },
   {
     "id": 6615,
     "tr": "ticarileşme",
     "en": "commercialization",
-    "beispiel": "Die Kommerzialisierung des Sports ärgert viele alte Fans.",
-    "beispielTr": "Sporun ticarileşmesi birçok eski taraftarı kızdırıyor.",
-    "beispielEn": "The commercialization of sports annoys many old fans."
+    "beispiel": "Die Kommerzialisierung des Sports hat die Ticketpreise verdoppelt.",
+    "beispielTr": "Sporun ticarileşmesi bilet fiyatlarını ikiye katladı.",
+    "beispielEn": "The commercialization of sport has doubled ticket prices."
   },
   {
     "id": 6616,
     "tr": "ödeme duvarı",
     "en": "paywall",
-    "beispiel": "Der Artikel verschwand nach zwei Absätzen hinter der Bezahlschranke.",
-    "beispielTr": "Yazı iki paragraf sonra ödeme duvarının arkasında kayboldu.",
-    "beispielEn": "The article disappeared behind the paywall after two paragraphs."
+    "beispiel": "Der Artikel verschwand nach zwei Tagen hinter der Bezahlschranke.",
+    "beispielTr": "Yazı iki gün sonra ödeme duvarının arkasına geçti.",
+    "beispielEn": "After two days the article disappeared behind the paywall."
   },
   {
     "id": 6617,
     "tr": "bekçilik görevi",
     "en": "watchdog role",
-    "beispiel": "Mit dieser Recherche nahm die Zeitung ihr Wächteramt wahr.",
-    "beispielTr": "Bu araştırmayla gazete bekçilik görevini yerine getirdi.",
-    "beispielEn": "With this investigation the paper fulfilled its watchdog role."
+    "beispiel": "Bei diesem Skandal nahm die Lokalzeitung ihr Wächteramt wahr.",
+    "beispielTr": "Yerel gazete bu skandalda bekçilik görevini yerine getirdi.",
+    "beispielEn": "In this scandal the local paper played its watchdog role."
   },
   {
     "id": 6618,
     "tr": "güven kaybı",
     "en": "loss of trust",
-    "beispiel": "Ein einziger erfundener Bericht führte zu einem enormen Vertrauensverlust.",
-    "beispielTr": "Tek bir uydurma haber büyük bir güven kaybına yol açtı.",
-    "beispielEn": "A single fabricated report caused an enormous loss of trust."
+    "beispiel": "Ein einziger gefälschter Beitrag löste einen dauerhaften Vertrauensverlust aus.",
+    "beispielTr": "Tek bir sahte haber kalıcı bir güven kaybına yol açtı.",
+    "beispielEn": "A single faked article caused a lasting loss of trust."
   },
   {
     "id": 6619,
     "tr": "itibarsızlaştırma",
     "en": "discrediting",
-    "beispiel": "Statt Argumenten folgte die Diskreditierung der Journalistin.",
-    "beispielTr": "Argümanlar yerine gazetecinin itibarsızlaştırılması geldi.",
-    "beispielEn": "Instead of arguments came the discrediting of the journalist."
+    "beispiel": "Statt Argumenten folgte die systematische Diskreditierung der Kritikerin.",
+    "beispielTr": "Argümanların yerini eleştirmenin sistemli biçimde itibarsızlaştırılması aldı.",
+    "beispielEn": "Instead of arguments came the systematic discrediting of the critic."
   },
   {
     "id": 6620,
     "tr": "şeffaflık ilkesi",
     "en": "transparency requirement",
-    "beispiel": "Das Transparenzgebot verlangt, bezahlte Beiträge klar zu kennzeichnen.",
-    "beispielTr": "Şeffaflık ilkesi, ücretli içeriklerin açıkça işaretlenmesini gerektirir.",
-    "beispielEn": "The transparency requirement demands that paid content be clearly labeled."
+    "beispiel": "Das Transparenzgebot zwingt den Sender, jeden Sponsor zu nennen.",
+    "beispielTr": "Şeffaflık ilkesi kanalı her sponsoru açıkça belirtmeye zorluyor.",
+    "beispielEn": "The transparency requirement forces the channel to name every sponsor."
   },
   {
     "id": 6621,
     "tr": "kitle iletişim aracı",
     "en": "mass medium",
-    "beispiel": "Das Fernsehen war lange das wichtigste Massenmedium des Landes.",
-    "beispielTr": "Televizyon uzun süre ülkenin en önemli kitle iletişim aracıydı.",
-    "beispielEn": "Television was long the country's most important mass medium."
+    "beispiel": "Kein Massenmedium erreicht heute noch das gesamte Publikum gleichzeitig.",
+    "beispielTr": "Bugün hiçbir kitle iletişim aracı tüm izleyiciye aynı anda ulaşamıyor.",
+    "beispielEn": "No mass medium reaches the entire audience at the same time today."
   },
   {
     "id": 6622,
     "tr": "suskunluk sarmalı",
     "en": "spiral of silence",
-    "beispiel": "Im Büro entstand eine Schweigespirale, weil niemand dem Chef widersprach.",
-    "beispielTr": "Kimse patrona karşı çıkmadığı için ofiste bir suskunluk sarmalı oluştu.",
-    "beispielEn": "A spiral of silence formed in the office because nobody contradicted the boss."
+    "beispiel": "Wer sich in der Minderheit wähnt, schweigt und verstärkt die Schweigespirale.",
+    "beispielTr": "Kendini azınlıkta sanan susar ve suskunluk sarmalını güçlendirir.",
+    "beispielEn": "Whoever thinks they are in the minority stays silent and feeds the spiral of silence."
   },
   {
     "id": 6623,
-    "tr": "gündeme sokmak",
+    "tr": "servis etmek",
     "en": "to plant",
     "beispiel": "Die Geschichte wurde kurz vor der Abstimmung gezielt lanciert.",
-    "beispielTr": "Haber, oylamadan hemen önce planlı biçimde gündeme sokuldu.",
-    "beispielEn": "The story was deliberately planted just before the vote."
+    "beispielTr": "Haber, oylamadan hemen önce bilinçli biçimde servis edildi.",
+    "beispielEn": "The story was deliberately planted shortly before the vote."
   },
   {
     "id": 6624,
     "tr": "düzeltmek",
     "en": "to set straight",
-    "beispiel": "Der Minister stellte die falsche Behauptung öffentlich richtig.",
-    "beispielTr": "Bakan, yanlış iddiayı kamuoyu önünde düzeltti.",
-    "beispielEn": "The minister publicly set the false claim straight."
+    "beispiel": "Die Redaktion stellte die falsche Zahl erst nach drei Tagen richtig.",
+    "beispielTr": "Yayın kurulu yanlış sayıyı ancak üç gün sonra düzeltti.",
+    "beispielEn": "The editors set the wrong figure straight only after three days."
   },
   {
     "id": 6625,
     "tr": "ima etmek",
     "en": "to insinuate",
-    "beispiel": "Der Beitrag insinuiert einen Zusammenhang, den niemand belegt hat.",
-    "beispielTr": "Yazı, kimsenin kanıtlamadığı bir bağlantıyı ima ediyor.",
-    "beispielEn": "The piece insinuates a connection that nobody has proven."
+    "beispiel": "Der Beitrag insinuiert einen Zusammenhang, den er nirgends belegt.",
+    "beispielTr": "Yazı, hiçbir yerde kanıtlamadığı bir bağlantıyı ima ediyor.",
+    "beispielEn": "The piece insinuates a connection it never backs up."
   },
   {
     "id": 6626,
     "tr": "isnat etmek",
     "en": "to impute",
-    "beispiel": "Man unterstellte ihr Absicht, obwohl es ein Versehen war.",
-    "beispielTr": "Bir yanlışlık olmasına rağmen ona kasıt isnat edildi.",
-    "beispielEn": "They imputed intent to her, although it was an oversight."
+    "beispiel": "Man unterstellte ihr Absicht, obwohl der Fehler technisch bedingt war.",
+    "beispielTr": "Hata teknik kaynaklı olmasına rağmen ona kasıt isnat edildi.",
+    "beispielEn": "They imputed intent to her although the error was technical."
   },
   {
     "id": 6627,
     "tr": "rezil etmek",
-    "en": "to humiliate publicly",
+    "en": "to humiliate",
     "beispiel": "Der Moderator stellte seinen Gast vor laufender Kamera bloß.",
     "beispielTr": "Sunucu, konuğunu canlı yayında rezil etti.",
     "beispielEn": "The host humiliated his guest on live television."
@@ -203,65 +203,65 @@
     "id": 6628,
     "tr": "örtbas etmek",
     "en": "to cover up",
-    "beispiel": "Die Firma vertuschte den Unfall jahrelang.",
-    "beispielTr": "Şirket kazayı yıllarca örtbas etti.",
-    "beispielEn": "The company covered up the accident for years."
+    "beispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet.",
+    "beispielTr": "Olaylar yıllarca kurum içinde örtbas edildi ve küçük gösterildi.",
+    "beispielEn": "For years the incidents were covered up and played down internally."
   },
   {
     "id": 6629,
     "tr": "şişirmek",
     "en": "to blow out of proportion",
-    "beispiel": "Die Boulevardpresse bauschte den Streit zur Staatskrise auf.",
-    "beispielTr": "Magazin basını tartışmayı devlet krizine kadar şişirdi.",
-    "beispielEn": "The tabloids blew the quarrel up into a national crisis."
+    "beispiel": "Ein Randthema wurde wochenlang zur Staatskrise aufgebauscht.",
+    "beispielTr": "Kenarda kalmış bir konu haftalarca devlet krizine kadar şişirildi.",
+    "beispielEn": "A side issue was blown out of proportion into a state crisis for weeks."
   },
   {
     "id": 6630,
-    "tr": "yaymak",
-    "en": "to peddle",
+    "tr": "dolaşıma sokmak",
+    "en": "to circulate",
     "beispiel": "Diese Zahl wird seit Jahren ungeprüft kolportiert.",
-    "beispielTr": "Bu rakam yıllardır doğrulanmadan yayılıyor.",
-    "beispielEn": "This figure has been peddled unchecked for years."
+    "beispielTr": "Bu rakam yıllardır doğrulanmadan dolaşıma sokuluyor.",
+    "beispielEn": "This figure has been circulated unchecked for years."
   },
   {
     "id": 6631,
     "tr": "açıklamak",
     "en": "to disclose",
-    "beispiel": "Die Autorin musste ihre Nebeneinkünfte offenlegen.",
-    "beispielTr": "Yazar, ek gelirlerini açıklamak zorunda kaldı.",
-    "beispielEn": "The author had to disclose her additional income."
+    "beispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
+    "beispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır.",
+    "beispielEn": "Authors have to disclose possible conflicts of interest at the end."
   },
   {
     "id": 6632,
     "tr": "ifşa etmek",
     "en": "to divulge",
-    "beispiel": "Kein Journalist darf die Identität seiner Quelle preisgeben.",
-    "beispielTr": "Hiçbir gazeteci kaynağının kimliğini ifşa edemez.",
-    "beispielEn": "No journalist may divulge the identity of his source."
+    "beispiel": "Kein seriöser Journalist gibt die Identität seiner Quelle preis.",
+    "beispielTr": "Ciddi hiçbir gazeteci kaynağının kimliğini ifşa etmez.",
+    "beispielEn": "No serious journalist divulges the identity of their source."
   },
   {
     "id": 6633,
-    "tr": "geçiştirmek",
-    "en": "to play down",
-    "beispiel": "Der Sprecher wiegelte ab und wechselte schnell das Thema.",
-    "beispielTr": "Sözcü konuyu geçiştirdi ve hızla başka konuya geçti.",
-    "beispielEn": "The spokesman played it down and quickly changed the subject."
+    "tr": "önemsizleştirmek",
+    "en": "to downplay",
+    "beispiel": "Die Behörde wiegelte ab, statt die offenen Fragen zu beantworten.",
+    "beispielTr": "Kurum, açık soruları yanıtlamak yerine konuyu önemsizleştirdi.",
+    "beispielEn": "The agency played it down instead of answering the open questions."
   },
   {
     "id": 6634,
     "tr": "harekete geçirmek",
     "en": "to mobilize",
-    "beispiel": "Ein einziger Aufruf mobilisierte Tausende von Unterstützern.",
-    "beispielTr": "Tek bir çağrı binlerce destekçiyi harekete geçirdi.",
-    "beispielEn": "A single appeal mobilized thousands of supporters."
+    "beispiel": "Ein einziger Aufruf mobilisierte binnen Stunden Tausende Unterstützer.",
+    "beispielTr": "Tek bir çağrı saatler içinde binlerce destekçiyi harekete geçirdi.",
+    "beispielEn": "A single appeal mobilized thousands of supporters within hours."
   },
   {
     "id": 6635,
-    "tr": "yorumlamak",
-    "en": "to comment on",
-    "beispiel": "Der Trainer wollte die Niederlage nicht kommentieren.",
-    "beispielTr": "Antrenör yenilgiyi yorumlamak istemedi.",
-    "beispielEn": "The coach did not want to comment on the defeat."
+    "tr": "yorum yapmak",
+    "en": "to comment",
+    "beispiel": "Der Trainer wollte die Niederlage nach dem Spiel nicht kommentieren.",
+    "beispielTr": "Antrenör maçtan sonra yenilgi hakkında yorum yapmak istemedi.",
+    "beispielEn": "The coach did not want to comment on the defeat after the game."
   },
   {
     "id": 6636,
@@ -269,111 +269,111 @@
     "en": "journalistic",
     "beispiel": "Die Fusion hätte erhebliche publizistische Folgen für die Region.",
     "beispielTr": "Birleşmenin bölge için ciddi yayıncılık sonuçları olurdu.",
-    "beispielEn": "The merger would have serious journalistic consequences for the region."
+    "beispielEn": "The merger would have serious consequences for journalism in the region."
   },
   {
     "id": 6637,
     "tr": "medyayla ilgili",
     "en": "media-related",
-    "beispiel": "Die mediale Aufmerksamkeit für den Fall war enorm.",
-    "beispielTr": "Olaya gösterilen medya ilgisi muazzamdı.",
-    "beispielEn": "The media attention for the case was enormous."
+    "beispiel": "Der Prozess wurde medial begleitet wie ein sportliches Großereignis.",
+    "beispielTr": "Dava, medyada büyük bir spor olayı gibi izlendi.",
+    "beispielEn": "The trial got media coverage like a big sporting event."
   },
   {
     "id": 6638,
     "tr": "tarafsız",
     "en": "impartial",
-    "beispiel": "Ein Schiedsrichter muss vollkommen unparteiisch bleiben.",
-    "beispielTr": "Bir hakem tamamen tarafsız kalmalıdır.",
-    "beispielEn": "A referee must remain completely impartial."
+    "beispiel": "Der Schiedsrichter blieb bis zum Schlusspfiff völlig unparteiisch.",
+    "beispielTr": "Hakem son düdüğe kadar tamamen tarafsız kaldı.",
+    "beispielEn": "The referee stayed completely impartial until the final whistle."
   },
   {
     "id": 6639,
     "tr": "araştırmacı",
     "en": "investigative",
-    "beispiel": "Investigative Recherchen brauchen Zeit, Geld und Geduld.",
-    "beispielTr": "Araştırmacı çalışmalar zaman, para ve sabır ister.",
-    "beispielEn": "Investigative research takes time, money and patience."
+    "beispiel": "Zwei investigative Journalisten deckten den Skandal nach Monaten auf.",
+    "beispielTr": "İki araştırmacı gazeteci skandalı aylar sonra ortaya çıkardı.",
+    "beispielEn": "Two investigative journalists uncovered the scandal after months."
   },
   {
     "id": 6640,
     "tr": "slogan gibi",
     "en": "simplistic",
-    "beispiel": "Seine Thesen sind plakativ und halten keiner Prüfung stand.",
-    "beispielTr": "Tezleri slogan gibi ve hiçbir incelemeye dayanmıyor.",
-    "beispielEn": "His theses are simplistic and hold up to no scrutiny."
+    "beispiel": "Seine Thesen sind plakativ formuliert und halten der Prüfung kaum stand.",
+    "beispielTr": "Tezleri slogan gibi kurulmuş ve incelemeye pek dayanmıyor.",
+    "beispielEn": "His theses are phrased simplistically and hardly stand up to scrutiny."
   },
   {
     "id": 6641,
     "tr": "yönlendirici",
     "en": "leading",
-    "beispiel": "Der Anwalt stellte eine suggestive Frage und wurde gerügt.",
-    "beispielTr": "Avukat yönlendirici bir soru sordu ve uyarı aldı.",
-    "beispielEn": "The lawyer asked a leading question and was reprimanded."
+    "beispiel": "Der Anwalt stellte dem Zeugen mehrere suggestive Fragen.",
+    "beispielTr": "Avukat, tanığa birkaç yönlendirici soru sordu.",
+    "beispielEn": "The lawyer asked the witness several leading questions."
   },
   {
     "id": 6642,
-    "tr": "kanıtsız",
+    "tr": "dayanaksız",
     "en": "unsubstantiated",
-    "beispiel": "Der Vorwurf blieb bis zum Schluss unbelegt.",
-    "beispielTr": "Suçlama sonuna kadar kanıtsız kaldı.",
-    "beispielEn": "The accusation remained unsubstantiated until the end."
+    "beispiel": "Der Vorwurf blieb bis zum Schluss unbelegt und wurde dennoch wiederholt.",
+    "beispielTr": "Suçlama sonuna kadar dayanaksız kaldı ve yine de tekrarlandı.",
+    "beispielEn": "The accusation stayed unsubstantiated to the end and was still repeated."
   },
   {
     "id": 6643,
     "tr": "devletten bağımsız",
     "en": "independent of the state",
-    "beispiel": "Der Rundfunkrat muss staatsfern besetzt werden.",
-    "beispielTr": "Yayın kurulu devletten bağımsız biçimde oluşturulmalıdır.",
-    "beispielEn": "The broadcasting council must be staffed independently of the state."
+    "beispiel": "Die Aufsicht über den Rundfunk muss staatsfern organisiert sein.",
+    "beispielTr": "Yayıncılık denetimi devletten bağımsız biçimde örgütlenmelidir.",
+    "beispielEn": "Broadcasting oversight has to be organized independently of the state."
   },
   {
     "id": 6644,
     "tr": "aydınlatma yükümlülüğü",
     "en": "duty to inform",
-    "beispiel": "Die Ärztin verletzte ihre Aufklärungspflicht über mögliche Risiken.",
-    "beispielTr": "Doktor, olası riskler konusundaki aydınlatma yükümlülüğünü ihlal etti.",
-    "beispielEn": "The doctor breached her duty to inform about possible risks."
+    "beispiel": "Die Ärztin verletzte ihre Aufklärungspflicht über mögliche Spätfolgen.",
+    "beispielTr": "Doktor, olası geç etkiler konusunda aydınlatma yükümlülüğünü ihlal etti.",
+    "beispielEn": "The doctor breached her duty to inform about possible late effects."
   },
   {
     "id": 6645,
-    "tr": "kendi kaderini tayin",
+    "tr": "kendi kaderini belirleme",
     "en": "self-determination",
-    "beispiel": "Die Selbstbestimmung des Patienten geht der ärztlichen Fürsorge vor.",
-    "beispielTr": "Hastanın kendi kaderini tayin hakkı, hekimin koruyuculuğundan önce gelir.",
-    "beispielEn": "The patient's self-determination takes precedence over medical care."
+    "beispiel": "Bei jeder Behandlung hat die Selbstbestimmung des Patienten Vorrang.",
+    "beispielTr": "Her tedavide hastanın kendi kararı öncelik taşır.",
+    "beispielEn": "In every treatment the patient's self-determination comes first."
   },
   {
     "id": 6646,
     "tr": "ötanazi",
     "en": "euthanasia",
-    "beispiel": "Über aktive Sterbehilfe wird seit Jahrzehnten gestritten.",
-    "beispielTr": "Aktif ötanazi onlarca yıldır tartışılıyor.",
-    "beispielEn": "Active euthanasia has been debated for decades."
+    "beispiel": "Über die Zulässigkeit aktiver Sterbehilfe wird seit Jahrzehnten gestritten.",
+    "beispielTr": "Aktif ötanazinin serbest olup olmadığı onlarca yıldır tartışılıyor.",
+    "beispielEn": "The admissibility of active euthanasia has been disputed for decades."
   },
   {
     "id": 6647,
     "tr": "hasta vasiyeti",
-    "en": "living will",
-    "beispiel": "In ihrer Patientenverfügung hatte sie künstliche Beatmung abgelehnt.",
-    "beispielTr": "Hasta vasiyetinde yapay solunumu reddetmişti.",
-    "beispielEn": "In her living will she had refused artificial ventilation."
+    "en": "advance directive",
+    "beispiel": "In seiner Patientenverfügung hatte er künstliche Beatmung ausdrücklich abgelehnt.",
+    "beispielTr": "Hasta vasiyetinde yapay solunumu açıkça reddetmişti.",
+    "beispielEn": "In his advance directive he had expressly refused artificial ventilation."
   },
   {
     "id": 6648,
     "tr": "katlanılabilirlik",
     "en": "reasonableness",
-    "beispiel": "Das Gericht prüfte die Zumutbarkeit des täglichen Arbeitswegs.",
-    "beispielTr": "Mahkeme, günlük işe gidiş yolunun katlanılabilirliğini inceledi.",
-    "beispielEn": "The court examined the reasonableness of the daily commute."
+    "beispiel": "Die Zumutbarkeit einer belastenden Therapie muss im Einzelfall geprüft werden.",
+    "beispielTr": "Ağır bir tedavinin katlanılabilirliği her vakada ayrıca değerlendirilmelidir.",
+    "beispielEn": "The reasonableness of a burdensome therapy must be assessed case by case."
   },
   {
     "id": 6649,
     "tr": "dağıtım adaleti",
     "en": "distributive justice",
     "beispiel": "Bei knappen Spenderorganen stellt sich die Frage der Verteilungsgerechtigkeit.",
-    "beispielTr": "Bağış organları kıt olduğunda dağıtım adaleti sorusu ortaya çıkar.",
-    "beispielEn": "When donor organs are scarce, distributive justice becomes the question."
+    "beispielTr": "Bağış organları kıt olunca dağıtım adaleti sorunu gündeme gelir.",
+    "beispielEn": "When donor organs are scarce the question of distributive justice arises."
   },
   {
     "id": 6650,
@@ -381,22 +381,22 @@
     "en": "scarcity",
     "beispiel": "Die Knappheit an Intensivbetten zwang die Klinik zu harten Entscheidungen.",
     "beispielTr": "Yoğun bakım yatağı kıtlığı kliniği zor kararlara zorladı.",
-    "beispielEn": "The scarcity of intensive care beds forced the clinic into hard decisions."
+    "beispielEn": "The scarcity of intensive care beds forced the clinic into hard choices."
   },
   {
     "id": 6651,
     "tr": "tayınlama",
     "en": "rationing",
-    "beispiel": "Im Krieg wurde die Rationierung von Brot eingeführt.",
-    "beispielTr": "Savaşta ekmek tayınlaması getirildi.",
-    "beispielEn": "Bread rationing was introduced during the war."
+    "beispiel": "Eine verdeckte Rationierung teurer Therapien findet längst statt.",
+    "beispielTr": "Pahalı tedaviler çoktandır örtülü biçimde tayınlanıyor.",
+    "beispielEn": "A covert rationing of expensive therapies has long been under way."
   },
   {
     "id": 6652,
     "tr": "triyaj",
     "en": "triage",
-    "beispiel": "Nach dem Zugunglück begann im Krankenhaus die Triage.",
-    "beispielTr": "Tren kazasından sonra hastanede triyaj başladı.",
-    "beispielEn": "After the train crash triage began at the hospital."
+    "beispiel": "In der Notaufnahme entscheidet die Triage über die Reihenfolge.",
+    "beispielTr": "Acil serviste sıralamayı triyaj belirler.",
+    "beispielEn": "In the emergency room triage decides the order of treatment."
   }
 ]

@@ -1,402 +1,402 @@
 [
- {
-  "id": 6403,
-  "tr": "anayasaya aykırı",
-  "en": "unconstitutional",
-  "beispiel": "Das Gericht erklärte die neue Regelung für verfassungswidrig.",
-  "beispielTr": "Mahkeme yeni düzenlemeyi anayasaya aykırı buldu.",
-  "beispielEn": "The court declared the new rule unconstitutional."
- },
- {
-  "id": 6404,
-  "tr": "açıkça",
-  "en": "explicitly",
-  "beispiel": "Sie hat mich ausdrücklich um Diskretion gebeten.",
-  "beispielTr": "Benden açıkça sır tutmamı istedi.",
-  "beispielEn": "She explicitly asked me to be discreet."
- },
- {
-  "id": 6405,
-  "tr": "saklı kalmak kaydıyla",
-  "en": "notwithstanding",
-  "beispiel": "Unbeschadet dieser Regelung bleiben ältere Ansprüche bestehen.",
-  "beispielTr": "Bu düzenleme saklı kalmak kaydıyla eski hak talepleri geçerliliğini korur.",
-  "beispielEn": "Notwithstanding this rule, older claims remain valid."
- },
- {
-  "id": 6406,
-  "tr": "yeterli",
-  "en": "sufficient",
-  "beispiel": "Für eine Anklage fehlt bislang ein hinreichender Tatverdacht.",
-  "beispielTr": "İddianame için şimdilik yeterli suç şüphesi yok.",
-  "beispielEn": "So far there is not sufficient suspicion to press charges."
- },
- {
-  "id": 6407,
-  "tr": "tartışmasız",
-  "en": "undisputed",
-  "beispiel": "Der Sachverhalt ist zwischen den Parteien weitgehend unbestritten.",
-  "beispielTr": "Olayın kendisi taraflar arasında büyük ölçüde tartışmasız.",
-  "beispielEn": "The facts are largely undisputed between the parties."
- },
- {
-  "id": 6408,
-  "tr": "topluma kazandırma",
-  "en": "rehabilitation",
-  "beispiel": "Die Werkstatt im Gefängnis dient vor allem der Resozialisierung.",
-  "beispielTr": "Cezaevindeki atölye öncelikle topluma kazandırmaya hizmet ediyor.",
-  "beispielEn": "The prison workshop serves above all to rehabilitate inmates."
- },
- {
-  "id": 6409,
-  "tr": "tekrar suç işleme oranı",
-  "en": "recidivism rate",
-  "beispiel": "Bei jungen Männern liegt die Rückfallquote deutlich über dem Durchschnitt.",
-  "beispielTr": "Genç erkeklerde tekrar suç işleme oranı ortalamanın epey üzerinde.",
-  "beispielEn": "Among young men the recidivism rate is well above average."
- },
- {
-  "id": 6410,
-  "tr": "suça yönelim",
-  "en": "delinquency",
-  "beispiel": "Frühe Delinquenz hängt oft mit brüchigen familiären Bindungen zusammen.",
-  "beispielTr": "Erken yaşta suça yönelim çoğu kez kırılgan aile bağlarıyla ilişkilidir.",
-  "beispielEn": "Early delinquency often goes together with fragile family ties."
- },
- {
-  "id": 6411,
-  "tr": "suç faili",
-  "en": "offender",
-  "beispiel": "Der Straftäter zeigte vor Gericht keinerlei Reue.",
-  "beispielTr": "Suç faili mahkemede hiçbir pişmanlık göstermedi.",
-  "beispielEn": "The offender showed no remorse in court."
- },
- {
-  "id": 6412,
-  "tr": "ceza infazı",
-  "en": "penal system",
-  "beispiel": "Sie arbeitet seit zehn Jahren im Strafvollzug.",
-  "beispielTr": "On yıldır ceza infazı alanında çalışıyor.",
-  "beispielEn": "She has worked in the penal system for ten years."
- },
- {
-  "id": 6413,
-  "tr": "cezaevi",
-  "en": "prison",
-  "beispiel": "In der überfüllten Haftanstalt teilen sich drei Männer eine Zelle.",
-  "beispielTr": "Aşırı dolu cezaevinde üç adam bir hücreyi paylaşıyor.",
-  "beispielEn": "In the overcrowded prison three men share one cell."
- },
- {
-  "id": 6414,
-  "tr": "özgürlükten yoksun bırakma",
-  "en": "deprivation of liberty",
-  "beispiel": "Der Richter hielt einen Freiheitsentzug für unangemessen.",
-  "beispielTr": "Hâkim, özgürlükten yoksun bırakmayı orantısız buldu.",
-  "beispielEn": "The judge considered a deprivation of liberty inappropriate."
- },
- {
-  "id": 6415,
-  "tr": "denetimli serbestlik",
-  "en": "supervised release",
-  "beispiel": "Nach der Entlassung stand er fünf Jahre unter Führungsaufsicht.",
-  "beispielTr": "Tahliyesinden sonra beş yıl denetimli serbestlik altında kaldı.",
-  "beispielEn": "After getting out he spent five years on supervised release."
- },
- {
-  "id": 6416,
-  "tr": "hapsedilme",
-  "en": "imprisonment",
-  "beispiel": "Die lange Inhaftierung hat seine sozialen Kontakte fast völlig zerstört.",
-  "beispielTr": "Uzun süren hapsedilme sosyal bağlarını neredeyse tümüyle yok etti.",
-  "beispielEn": "The long imprisonment destroyed almost all his social contacts."
- },
- {
-  "id": 6417,
-  "tr": "mahkûm",
-  "en": "inmate",
-  "beispiel": "Jeder dritte Insasse leidet unter einer unbehandelten Suchterkrankung.",
-  "beispielTr": "Her üç mahkûmdan biri tedavi edilmemiş bir bağımlılık yaşıyor.",
-  "beispielEn": "Every third inmate suffers from an untreated addiction."
- },
- {
-  "id": 6418,
-  "tr": "infaz koşullarında gevşetme",
-  "en": "relaxation of prison rules",
-  "beispiel": "Nach zwei Jahren bekam er erste Vollzugslockerungen.",
-  "beispielTr": "İki yıl sonra infaz koşulları ilk kez gevşetildi.",
-  "beispielEn": "After two years he was granted his first prison privileges."
- },
- {
-  "id": 6419,
-  "tr": "güvenlik amaçlı alıkoyma",
-  "en": "preventive detention",
-  "beispiel": "Nach der Haft kam er in Sicherungsverwahrung.",
-  "beispielTr": "Cezasını çektikten sonra güvenlik amaçlı alıkoymaya alındı.",
-  "beispielEn": "After his sentence he was placed in preventive detention."
- },
- {
-  "id": 6420,
-  "tr": "topluma yeniden uyum",
-  "en": "reintegration",
-  "beispiel": "Ohne Wohnung und Arbeit scheitert die Wiedereingliederung meistens.",
-  "beispielTr": "Ev ve iş olmadan topluma yeniden uyum çoğunlukla başarısız oluyor.",
-  "beispielEn": "Without an apartment and a job reintegration usually fails."
- },
- {
-  "id": 6421,
-  "tr": "damgalama",
-  "en": "stigmatization",
-  "beispiel": "Die Stigmatisierung ehemaliger Häftlinge beginnt beim Bewerbungsgespräch.",
-  "beispielTr": "Eski mahkûmların damgalanması iş görüşmesinde başlıyor.",
-  "beispielEn": "The stigmatization of ex-prisoners starts at the job interview."
- },
- {
-  "id": 6422,
-  "tr": "alt kültür",
-  "en": "subculture",
-  "beispiel": "Hinter Gittern entsteht rasch eine eigene Subkultur mit strengen Regeln.",
-  "beispielTr": "Parmaklıklar ardında katı kuralları olan bir alt kültür hızla oluşuyor.",
-  "beispielEn": "Behind bars a subculture with strict rules quickly emerges."
- },
- {
-  "id": 6423,
-  "tr": "bakımsızlık",
-  "en": "neglect",
-  "beispiel": "Die Verwahrlosung des alten Hauses fällt sofort auf.",
-  "beispielTr": "Eski evin bakımsızlığı hemen göze çarpıyor.",
-  "beispielEn": "The neglect of the old house is immediately obvious."
- },
- {
-  "id": 6424,
-  "tr": "şiddete yatkınlık",
-  "en": "readiness for violence",
-  "beispiel": "Die Gewaltbereitschaft steigt, wenn Alkohol und Gruppendruck zusammenkommen.",
-  "beispielTr": "Alkolle grup baskısı bir araya gelince şiddete yatkınlık artıyor.",
-  "beispielEn": "Readiness for violence rises when alcohol and peer pressure combine."
- },
- {
-  "id": 6425,
-  "tr": "mağdurun korunması",
-  "en": "victim protection",
-  "beispiel": "Der Verein setzt sich seit Jahren für den Opferschutz ein.",
-  "beispielTr": "Dernek yıllardır mağdurun korunması için mücadele ediyor.",
-  "beispielEn": "The association has campaigned for victim protection for years."
- },
- {
-  "id": 6426,
-  "tr": "mağduriyet",
-  "en": "victimization",
-  "beispiel": "Die Studie belegt eine hohe Viktimisierung obdachloser Menschen.",
-  "beispielTr": "Araştırma evsizlerin yüksek oranda mağdur olduğunu ortaya koyuyor.",
-  "beispielEn": "The study documents high victimization among homeless people."
- },
- {
-  "id": 6427,
-  "tr": "kefaret",
-  "en": "atonement",
-  "beispiel": "Für viele Angehörige zählt vor allem die Sühne.",
-  "beispielTr": "Yakınlarının çoğu için asıl önemli olan kefarettir.",
-  "beispielEn": "For many relatives what counts most is atonement."
- },
- {
-  "id": 6428,
-  "tr": "cezanın amacı",
-  "en": "purpose of punishment",
-  "beispiel": "Über den eigentlichen Strafzweck streiten Fachleute seit Jahrhunderten.",
-  "beispielTr": "Cezanın asıl amacını uzmanlar yüzyıllardır tartışıyor.",
-  "beispielEn": "Experts have argued about the real purpose of punishment for centuries."
- },
- {
-  "id": 6429,
-  "tr": "genel önleme",
-  "en": "general deterrence",
-  "beispiel": "Mit hohen Strafen setzt der Gesetzgeber auf Generalprävention.",
-  "beispielTr": "Yasa koyucu ağır cezalarla genel önlemeye bel bağlıyor.",
-  "beispielEn": "With harsh penalties the legislator relies on general deterrence."
- },
- {
-  "id": 6430,
-  "tr": "özel önleme",
-  "en": "specific deterrence",
-  "beispiel": "Der Richter begründete das milde Urteil mit Spezialprävention.",
-  "beispielTr": "Hâkim hafif cezayı özel önlemeyle gerekçelendirdi.",
-  "beispielEn": "The judge justified the mild sentence with specific deterrence."
- },
- {
-  "id": 6431,
-  "tr": "karanlık alan",
-  "en": "dark figure",
-  "beispiel": "Bei häuslicher Gewalt ist das Dunkelfeld besonders groß.",
-  "beispielTr": "Aile içi şiddette karanlık alan özellikle geniştir.",
-  "beispielEn": "In domestic violence the dark figure is especially large."
- },
- {
-  "id": 6432,
-  "tr": "suç istatistiği",
-  "en": "crime statistics",
-  "beispiel": "Die neue Kriminalstatistik zeigt weniger Einbrüche als im Vorjahr.",
-  "beispielTr": "Yeni suç istatistiği geçen yıla göre daha az hırsızlık gösteriyor.",
-  "beispielEn": "The new crime statistics show fewer burglaries than last year."
- },
- {
-  "id": 6433,
-  "tr": "ihbar etme eğilimi",
-  "en": "willingness to report",
-  "beispiel": "Nach der Kampagne stieg die Anzeigebereitschaft der Opfer deutlich.",
-  "beispielTr": "Kampanyanın ardından mağdurların ihbar etme eğilimi belirgin biçimde arttı.",
-  "beispielEn": "After the campaign the victims' willingness to report rose clearly."
- },
- {
-  "id": 6434,
-  "tr": "normdan sapma",
-  "en": "deviance",
-  "beispiel": "Seine Doktorarbeit handelt von Devianz in der Schule.",
-  "beispielTr": "Doktora tezi okuldaki normdan sapmaları konu alıyor.",
-  "beispielEn": "His dissertation deals with deviance at school."
- },
- {
-  "id": 6435,
-  "tr": "norm ihlali",
-  "en": "norm violation",
-  "beispiel": "Nicht jeder Normverstoß wird strafrechtlich verfolgt.",
-  "beispielTr": "Her norm ihlali cezai olarak takip edilmiyor.",
-  "beispielEn": "Not every norm violation is prosecuted."
- },
- {
-  "id": 6436,
-  "tr": "normsuzluk",
-  "en": "anomie",
-  "beispiel": "Durkheim erklärte steigende Kriminalität mit gesellschaftlicher Anomie.",
-  "beispielTr": "Durkheim artan suçluluğu toplumsal normsuzlukla açıklıyordu.",
-  "beispielEn": "Durkheim explained rising crime with social anomie."
- },
- {
-  "id": 6437,
-  "tr": "özdenetim",
-  "en": "self-control",
-  "beispiel": "Im Streit verlor er kurz die Selbstkontrolle.",
-  "beispielTr": "Tartışma sırasında kısa süreliğine özdenetimini kaybetti.",
-  "beispielEn": "During the argument he briefly lost his self-control."
- },
- {
-  "id": 6438,
-  "tr": "suç işleme fırsatı",
-  "en": "opportunity for crime",
-  "beispiel": "Bessere Beleuchtung verringert die Tatgelegenheit in dunklen Unterführungen.",
-  "beispielTr": "Daha iyi aydınlatma karanlık alt geçitlerde suç işleme fırsatını azaltıyor.",
-  "beispielEn": "Better lighting reduces the opportunity for crime in dark underpasses."
- },
- {
-  "id": 6439,
-  "tr": "risk faktörü",
-  "en": "risk factor",
-  "beispiel": "Schulabbruch zählt zu den stärksten Risikofaktoren im Jugendalter.",
-  "beispielTr": "Okulu bırakmak, ergenlikteki en güçlü risk faktörlerinden biridir.",
-  "beispielEn": "Dropping out of school is a major risk factor in adolescence."
- },
- {
-  "id": 6440,
-  "tr": "tehlikelilik",
-  "en": "dangerousness",
-  "beispiel": "Der Gutachter soll die Gefährlichkeit des Täters einschätzen.",
-  "beispielTr": "Bilirkişi failin tehlikeliliğini değerlendirecek.",
-  "beispielEn": "The expert is to assess the offender's dangerousness."
- },
- {
-  "id": 6441,
-  "tr": "gençlik suçluluğu",
-  "en": "juvenile crime",
-  "beispiel": "Die Stadt hat ein Programm gegen Jugendkriminalität gestartet.",
-  "beispielTr": "Şehir, gençlik suçluluğuna karşı bir program başlattı.",
-  "beispielEn": "The city has launched a program against juvenile crime."
- },
- {
-  "id": 6442,
-  "tr": "uyuşturucu temini amaçlı suç",
-  "en": "crime to fund addiction",
-  "beispiel": "Ein großer Teil der Einbrüche geht auf Beschaffungskriminalität zurück.",
-  "beispielTr": "Hırsızlıkların büyük bölümü uyuşturucu temini amaçlı suçlardan kaynaklanıyor.",
-  "beispielEn": "A large share of burglaries stems from crime to fund addiction."
- },
- {
-  "id": 6443,
-  "tr": "suç olmaktan çıkarma",
-  "en": "decriminalization",
-  "beispiel": "Die Entkriminalisierung leichter Drogen entlastet die Behörden spürbar.",
-  "beispielTr": "Hafif uyuşturucuların suç olmaktan çıkarılması kurumların yükünü azaltıyor.",
-  "beispielEn": "Decriminalizing soft drugs noticeably relieves the authorities."
- },
- {
-  "id": 6444,
-  "tr": "hücre hapsi",
-  "en": "solitary confinement",
-  "beispiel": "Monatelange Einzelhaft hinterlässt tiefe psychische Spuren.",
-  "beispielTr": "Aylarca süren hücre hapsi derin ruhsal izler bırakıyor.",
-  "beispielEn": "Months of solitary confinement leave deep psychological scars."
- },
- {
-  "id": 6445,
-  "tr": "baskı",
-  "en": "repression",
-  "beispiel": "Reine Repression ohne soziale Maßnahmen verschiebt das Problem nur.",
-  "beispielTr": "Sosyal önlemler olmadan salt baskı sorunu yalnızca öteliyor.",
-  "beispielEn": "Pure repression without social measures only shifts the problem."
- },
- {
-  "id": 6446,
-  "tr": "geleceksizlik",
-  "en": "lack of prospects",
-  "beispiel": "Im Dorf treibt die Perspektivlosigkeit viele junge Leute weg.",
-  "beispielTr": "Köyde geleceksizlik pek çok genci göçe zorluyor.",
-  "beispielEn": "In the village a lack of prospects drives young people away."
- },
- {
-  "id": 6447,
-  "tr": "suç korkusu",
-  "en": "fear of crime",
-  "beispiel": "Die Kriminalitätsfurcht älterer Menschen übersteigt ihr tatsächliches Risiko.",
-  "beispielTr": "Yaşlıların suç korkusu gerçek risklerinin çok üstünde.",
-  "beispielEn": "Older people's fear of crime exceeds their actual risk."
- },
- {
-  "id": 6448,
-  "tr": "kabalaşma",
-  "en": "brutalization",
-  "beispiel": "Manche beklagen eine allgemeine Verrohung des öffentlichen Umgangs.",
-  "beispielTr": "Kimileri kamusal ilişkilerde genel bir kabalaşmadan yakınıyor.",
-  "beispielEn": "Some complain about a general brutalization of public life."
- },
- {
-  "id": 6449,
-  "tr": "hapsetmek",
-  "en": "to lock up",
-  "beispiel": "Sie sperrten den Dieb bis zum Morgen ein.",
-  "beispielTr": "Hırsızı sabaha kadar hapsettiler.",
-  "beispielEn": "They locked the thief up until morning."
- },
- {
-  "id": 6450,
-  "tr": "bedelini ödemek",
-  "en": "to pay the price",
-  "beispiel": "Er musste für einen einzigen Abend jahrelang büßen.",
-  "beispielTr": "Tek bir akşamın bedelini yıllarca ödedi.",
-  "beispielEn": "He spent years paying for one single evening."
- },
- {
-  "id": 6451,
-  "tr": "sürüklenmek",
-  "en": "to slip",
-  "beispiel": "Nach dem Jobverlust glitt er allmählich in die Illegalität ab.",
-  "beispielTr": "İşini kaybettikten sonra yavaş yavaş yasa dışılığa sürüklendi.",
-  "beispielEn": "After losing his job he slowly slipped into crime."
- },
- {
-  "id": 6452,
-  "tr": "yoldan çıkmak",
-  "en": "to stumble",
-  "beispiel": "Wer einmal gestrauchelt ist, verdient eine zweite Chance.",
-  "beispielTr": "Bir kez yoldan çıkmış olan ikinci bir şansı hak eder.",
-  "beispielEn": "Whoever has stumbled once deserves a second chance."
- }
+  {
+    "id": 6403,
+    "tr": "anayasaya aykırı",
+    "en": "unconstitutional",
+    "beispiel": "Das Gericht erklärte die neue Regelung für verfassungswidrig.",
+    "beispielTr": "Mahkeme yeni düzenlemeyi anayasaya aykırı buldu.",
+    "beispielEn": "The court declared the new rule unconstitutional."
+  },
+  {
+    "id": 6404,
+    "tr": "açıkça",
+    "en": "expressly",
+    "beispiel": "Sie hat mich ausdrücklich um Diskretion gebeten.",
+    "beispielTr": "Benden açıkça sır tutmamı istedi.",
+    "beispielEn": "She expressly asked me to be discreet."
+  },
+  {
+    "id": 6405,
+    "tr": "saklı kalmak kaydıyla",
+    "en": "notwithstanding",
+    "beispiel": "Unbeschadet dieser Regelung bleiben ältere Ansprüche bestehen.",
+    "beispielTr": "Bu düzenleme saklı kalmak kaydıyla eski hak talepleri geçerliliğini korur.",
+    "beispielEn": "Notwithstanding this rule, older claims remain valid."
+  },
+  {
+    "id": 6406,
+    "tr": "yeterli",
+    "en": "sufficient",
+    "beispiel": "Für eine Anklage fehlt bislang ein hinreichender Tatverdacht.",
+    "beispielTr": "İddianame için şimdilik yeterli suç şüphesi yok.",
+    "beispielEn": "So far there is not sufficient suspicion to press charges."
+  },
+  {
+    "id": 6407,
+    "tr": "tartışmasız",
+    "en": "undisputed",
+    "beispiel": "Der Sachverhalt ist zwischen den Parteien weitgehend unbestritten.",
+    "beispielTr": "Olayın kendisi taraflar arasında büyük ölçüde tartışmasız.",
+    "beispielEn": "The facts are largely undisputed between the parties."
+  },
+  {
+    "id": 6408,
+    "tr": "topluma kazandırma",
+    "en": "rehabilitation",
+    "beispiel": "Die Werkstatt im Gefängnis dient vor allem der Resozialisierung.",
+    "beispielTr": "Cezaevindeki atölye öncelikle topluma kazandırmaya hizmet ediyor.",
+    "beispielEn": "The prison workshop serves above all to rehabilitate inmates."
+  },
+  {
+    "id": 6409,
+    "tr": "tekrar suç işleme oranı",
+    "en": "recidivism rate",
+    "beispiel": "Bei jungen Männern liegt die Rückfallquote deutlich über dem Durchschnitt.",
+    "beispielTr": "Genç erkeklerde tekrar suç işleme oranı ortalamanın epey üzerinde.",
+    "beispielEn": "Among young men the recidivism rate is well above average."
+  },
+  {
+    "id": 6410,
+    "tr": "suça yönelim",
+    "en": "delinquency",
+    "beispiel": "Frühe Delinquenz hängt oft mit brüchigen familiären Bindungen zusammen.",
+    "beispielTr": "Erken yaşta suça yönelim çoğu kez kırılgan aile bağlarıyla ilişkilidir.",
+    "beispielEn": "Early delinquency is often linked to fragile family ties."
+  },
+  {
+    "id": 6411,
+    "tr": "suç faili",
+    "en": "offender",
+    "beispiel": "Der Straftäter zeigte vor Gericht keinerlei Reue.",
+    "beispielTr": "Suç faili mahkemede hiçbir pişmanlık göstermedi.",
+    "beispielEn": "The offender showed no remorse in court."
+  },
+  {
+    "id": 6412,
+    "tr": "ceza infazı",
+    "en": "penal system",
+    "beispiel": "Sie arbeitet seit zehn Jahren im Strafvollzug.",
+    "beispielTr": "On yıldır ceza infazı alanında çalışıyor.",
+    "beispielEn": "She has worked in the penal system for ten years."
+  },
+  {
+    "id": 6413,
+    "tr": "cezaevi",
+    "en": "prison",
+    "beispiel": "In der überfüllten Haftanstalt teilen sich drei Männer eine Zelle.",
+    "beispielTr": "Aşırı dolu cezaevinde üç adam bir hücreyi paylaşıyor.",
+    "beispielEn": "In the overcrowded prison three men share one cell."
+  },
+  {
+    "id": 6414,
+    "tr": "özgürlükten yoksun bırakma",
+    "en": "deprivation of liberty",
+    "beispiel": "Der Richter hielt den Freiheitsentzug für unverhältnismäßig.",
+    "beispielTr": "Hâkim, özgürlükten yoksun bırakmayı orantısız buldu.",
+    "beispielEn": "The judge considered the deprivation of liberty disproportionate."
+  },
+  {
+    "id": 6415,
+    "tr": "denetimli serbestlik",
+    "en": "supervised release",
+    "beispiel": "Nach der Entlassung stand er fünf Jahre unter Führungsaufsicht.",
+    "beispielTr": "Tahliyesinden sonra beş yıl denetimli serbestlik altında kaldı.",
+    "beispielEn": "After getting out he spent five years on supervised release."
+  },
+  {
+    "id": 6416,
+    "tr": "hapsedilme",
+    "en": "imprisonment",
+    "beispiel": "Die lange Inhaftierung hat seine sozialen Kontakte fast völlig zerstört.",
+    "beispielTr": "Uzun süre hapsedilmesi sosyal bağlarını neredeyse tümüyle yok etti.",
+    "beispielEn": "The long imprisonment destroyed almost all his social contacts."
+  },
+  {
+    "id": 6417,
+    "tr": "mahkûm",
+    "en": "inmate",
+    "beispiel": "Jeder dritte Insasse leidet unter einer unbehandelten Suchterkrankung.",
+    "beispielTr": "Her üç mahkûmdan biri tedavi edilmemiş bir bağımlılık yaşıyor.",
+    "beispielEn": "Every third inmate suffers from an untreated addiction."
+  },
+  {
+    "id": 6418,
+    "tr": "infaz koşullarında gevşetme",
+    "en": "relaxation of prison rules",
+    "beispiel": "Nach zwei Jahren bekam er erste Vollzugslockerungen.",
+    "beispielTr": "İki yıl sonra infaz koşulları ilk kez gevşetildi.",
+    "beispielEn": "After two years he was granted his first prison privileges."
+  },
+  {
+    "id": 6419,
+    "tr": "güvenlik amaçlı alıkoyma",
+    "en": "preventive detention",
+    "beispiel": "Nach der Haft kam er in Sicherungsverwahrung.",
+    "beispielTr": "Cezasını çektikten sonra güvenlik amaçlı alıkoymaya alındı.",
+    "beispielEn": "After his sentence he was placed in preventive detention."
+  },
+  {
+    "id": 6420,
+    "tr": "topluma yeniden uyum",
+    "en": "reintegration",
+    "beispiel": "Ohne Wohnung und Arbeit scheitert die Wiedereingliederung meistens.",
+    "beispielTr": "Ev ve iş olmadan topluma yeniden uyum çoğunlukla başarısız oluyor.",
+    "beispielEn": "Without an apartment and a job reintegration usually fails."
+  },
+  {
+    "id": 6421,
+    "tr": "damgalama",
+    "en": "stigmatization",
+    "beispiel": "Die Stigmatisierung ehemaliger Häftlinge beginnt beim Bewerbungsgespräch.",
+    "beispielTr": "Eski mahkûmların damgalanması iş görüşmesinde başlıyor.",
+    "beispielEn": "The stigmatization of ex-prisoners starts at the job interview."
+  },
+  {
+    "id": 6422,
+    "tr": "alt kültür",
+    "en": "subculture",
+    "beispiel": "Hinter Gittern entsteht rasch eine eigene Subkultur mit strengen Regeln.",
+    "beispielTr": "Parmaklıklar ardında katı kuralları olan bir alt kültür hızla oluşuyor.",
+    "beispielEn": "Behind bars a subculture with strict rules quickly emerges."
+  },
+  {
+    "id": 6423,
+    "tr": "bakımsızlık",
+    "en": "neglect",
+    "beispiel": "Die Verwahrlosung des alten Hauses fällt sofort auf.",
+    "beispielTr": "Eski evin bakımsızlığı hemen göze çarpıyor.",
+    "beispielEn": "The neglect of the old house is immediately obvious."
+  },
+  {
+    "id": 6424,
+    "tr": "şiddete yatkınlık",
+    "en": "readiness for violence",
+    "beispiel": "Die Gewaltbereitschaft steigt, wenn Alkohol und Gruppendruck zusammenkommen.",
+    "beispielTr": "Alkolle grup baskısı bir araya gelince şiddete yatkınlık artıyor.",
+    "beispielEn": "Readiness for violence rises when alcohol and peer pressure combine."
+  },
+  {
+    "id": 6425,
+    "tr": "mağdurun korunması",
+    "en": "victim protection",
+    "beispiel": "Der Verein setzt sich seit Jahren für den Opferschutz ein.",
+    "beispielTr": "Dernek yıllardır mağdurun korunması için mücadele ediyor.",
+    "beispielEn": "The association has campaigned for victim protection for years."
+  },
+  {
+    "id": 6426,
+    "tr": "mağduriyet",
+    "en": "victimization",
+    "beispiel": "Die Studie belegt eine hohe Viktimisierung obdachloser Menschen.",
+    "beispielTr": "Araştırma evsizlerin yüksek oranda mağdur olduğunu ortaya koyuyor.",
+    "beispielEn": "The study documents high victimization among homeless people."
+  },
+  {
+    "id": 6427,
+    "tr": "kefaret",
+    "en": "atonement",
+    "beispiel": "Für viele Angehörige zählt vor allem die Sühne.",
+    "beispielTr": "Yakınlarının çoğu için asıl önemli olan kefarettir.",
+    "beispielEn": "For many relatives what counts most is atonement."
+  },
+  {
+    "id": 6428,
+    "tr": "cezanın amacı",
+    "en": "purpose of punishment",
+    "beispiel": "Über den eigentlichen Strafzweck streiten Fachleute seit Jahrhunderten.",
+    "beispielTr": "Cezanın asıl amacını uzmanlar yüzyıllardır tartışıyor.",
+    "beispielEn": "Experts have argued about the real purpose of punishment for centuries."
+  },
+  {
+    "id": 6429,
+    "tr": "genel önleme",
+    "en": "general deterrence",
+    "beispiel": "Mit hohen Strafen setzt der Gesetzgeber auf Generalprävention.",
+    "beispielTr": "Yasa koyucu ağır cezalarla genel önlemeye bel bağlıyor.",
+    "beispielEn": "With harsh penalties the legislator relies on general deterrence."
+  },
+  {
+    "id": 6430,
+    "tr": "özel önleme",
+    "en": "specific deterrence",
+    "beispiel": "Der Richter begründete das milde Urteil mit Spezialprävention.",
+    "beispielTr": "Hâkim hafif cezayı özel önlemeyle gerekçelendirdi.",
+    "beispielEn": "The judge justified the mild sentence with specific deterrence."
+  },
+  {
+    "id": 6431,
+    "tr": "karanlık alan",
+    "en": "dark figure",
+    "beispiel": "Bei häuslicher Gewalt ist das Dunkelfeld besonders groß.",
+    "beispielTr": "Aile içi şiddette karanlık alan özellikle geniştir.",
+    "beispielEn": "In domestic violence the dark figure is especially large."
+  },
+  {
+    "id": 6432,
+    "tr": "suç istatistiği",
+    "en": "crime statistics",
+    "beispiel": "Die neue Kriminalstatistik zeigt weniger Einbrüche als im Vorjahr.",
+    "beispielTr": "Yeni suç istatistiği geçen yıla göre daha az hırsızlık gösteriyor.",
+    "beispielEn": "The new crime statistics show fewer burglaries than last year."
+  },
+  {
+    "id": 6433,
+    "tr": "ihbar etme eğilimi",
+    "en": "willingness to report",
+    "beispiel": "Nach der Kampagne stieg die Anzeigebereitschaft der Opfer deutlich.",
+    "beispielTr": "Kampanyanın ardından mağdurların ihbar etme eğilimi belirgin biçimde arttı.",
+    "beispielEn": "After the campaign the victims' willingness to report rose markedly."
+  },
+  {
+    "id": 6434,
+    "tr": "normdan sapma",
+    "en": "deviance",
+    "beispiel": "Seine Doktorarbeit handelt von Devianz in der Schule.",
+    "beispielTr": "Doktora tezi okuldaki normdan sapmaları konu alıyor.",
+    "beispielEn": "His dissertation deals with deviance at school."
+  },
+  {
+    "id": 6435,
+    "tr": "norm ihlali",
+    "en": "norm violation",
+    "beispiel": "Nicht jeder Normverstoß wird strafrechtlich verfolgt.",
+    "beispielTr": "Her norm ihlali cezai olarak takip edilmiyor.",
+    "beispielEn": "Not every norm violation is prosecuted."
+  },
+  {
+    "id": 6436,
+    "tr": "normsuzluk",
+    "en": "anomie",
+    "beispiel": "Durkheim erklärte steigende Kriminalität mit gesellschaftlicher Anomie.",
+    "beispielTr": "Durkheim artan suçluluğu toplumsal normsuzlukla açıklıyordu.",
+    "beispielEn": "Durkheim explained rising crime with social anomie."
+  },
+  {
+    "id": 6437,
+    "tr": "özdenetim",
+    "en": "self-control",
+    "beispiel": "Im Streit verlor er kurz die Selbstkontrolle.",
+    "beispielTr": "Tartışma sırasında kısa süreliğine özdenetimini kaybetti.",
+    "beispielEn": "During the argument he briefly lost his self-control."
+  },
+  {
+    "id": 6438,
+    "tr": "suç işleme fırsatı",
+    "en": "opportunity for crime",
+    "beispiel": "Bessere Beleuchtung verringert die Tatgelegenheit in dunklen Unterführungen.",
+    "beispielTr": "Daha iyi aydınlatma karanlık alt geçitlerde suç işleme fırsatını azaltıyor.",
+    "beispielEn": "Better lighting reduces the opportunity for crime in dark underpasses."
+  },
+  {
+    "id": 6439,
+    "tr": "risk faktörü",
+    "en": "risk factor",
+    "beispiel": "Schulabbruch zählt zu den stärksten Risikofaktoren im Jugendalter.",
+    "beispielTr": "Okulu bırakmak, ergenlikteki en güçlü risk faktörlerinden biridir.",
+    "beispielEn": "Dropping out of school is a major risk factor in adolescence."
+  },
+  {
+    "id": 6440,
+    "tr": "tehlikelilik",
+    "en": "dangerousness",
+    "beispiel": "Der Gutachter soll die Gefährlichkeit des Täters einschätzen.",
+    "beispielTr": "Bilirkişi failin tehlikeliliğini değerlendirecek.",
+    "beispielEn": "The expert is to assess the offender's dangerousness."
+  },
+  {
+    "id": 6441,
+    "tr": "gençlik suçluluğu",
+    "en": "juvenile crime",
+    "beispiel": "Die Stadt hat ein Programm gegen Jugendkriminalität gestartet.",
+    "beispielTr": "Şehir, gençlik suçluluğuna karşı bir program başlattı.",
+    "beispielEn": "The city has launched a program against juvenile crime."
+  },
+  {
+    "id": 6442,
+    "tr": "uyuşturucu temini amaçlı suç",
+    "en": "crime to fund addiction",
+    "beispiel": "Ein großer Teil der Einbrüche geht auf Beschaffungskriminalität zurück.",
+    "beispielTr": "Hırsızlıkların büyük bölümü uyuşturucu temini amaçlı suçlardan kaynaklanıyor.",
+    "beispielEn": "A large share of burglaries stems from crime to fund addiction."
+  },
+  {
+    "id": 6443,
+    "tr": "suç olmaktan çıkarma",
+    "en": "decriminalization",
+    "beispiel": "Die Entkriminalisierung leichter Drogen entlastet die Behörden spürbar.",
+    "beispielTr": "Hafif uyuşturucuların suç olmaktan çıkarılması kurumların yükünü azaltıyor.",
+    "beispielEn": "Decriminalizing soft drugs noticeably relieves the authorities."
+  },
+  {
+    "id": 6444,
+    "tr": "hücre hapsi",
+    "en": "solitary confinement",
+    "beispiel": "Monatelange Einzelhaft hinterlässt tiefe psychische Spuren.",
+    "beispielTr": "Aylarca süren hücre hapsi derin ruhsal izler bırakıyor.",
+    "beispielEn": "Months of solitary confinement leave deep psychological scars."
+  },
+  {
+    "id": 6445,
+    "tr": "baskı",
+    "en": "repression",
+    "beispiel": "Reine Repression ohne soziale Maßnahmen verschiebt das Problem nur.",
+    "beispielTr": "Sosyal önlemler olmadan salt baskı sorunu yalnızca öteliyor.",
+    "beispielEn": "Pure repression without social measures only shifts the problem."
+  },
+  {
+    "id": 6446,
+    "tr": "geleceksizlik",
+    "en": "lack of prospects",
+    "beispiel": "Im Dorf treibt die Perspektivlosigkeit viele junge Leute weg.",
+    "beispielTr": "Köyde geleceksizlik pek çok genci göçe zorluyor.",
+    "beispielEn": "In the village a lack of prospects drives young people away."
+  },
+  {
+    "id": 6447,
+    "tr": "suç korkusu",
+    "en": "fear of crime",
+    "beispiel": "Die Kriminalitätsfurcht älterer Menschen übersteigt ihr tatsächliches Risiko.",
+    "beispielTr": "Yaşlıların suç korkusu gerçek risklerinin çok üstünde.",
+    "beispielEn": "Older people's fear of crime exceeds their actual risk."
+  },
+  {
+    "id": 6448,
+    "tr": "kabalaşma",
+    "en": "brutalization",
+    "beispiel": "Manche beklagen eine allgemeine Verrohung des öffentlichen Umgangs.",
+    "beispielTr": "Kimileri kamusal ilişkilerde genel bir kabalaşmadan yakınıyor.",
+    "beispielEn": "Some complain about a general brutalization of public life."
+  },
+  {
+    "id": 6449,
+    "tr": "hapsetmek",
+    "en": "to lock up",
+    "beispiel": "Sie sperrten den Dieb bis zum Morgen ein.",
+    "beispielTr": "Hırsızı sabaha kadar hapsettiler.",
+    "beispielEn": "They locked the thief up until morning."
+  },
+  {
+    "id": 6450,
+    "tr": "bedelini ödemek",
+    "en": "to pay the price",
+    "beispiel": "Er musste für einen einzigen Abend jahrelang büßen.",
+    "beispielTr": "Tek bir akşamın bedelini yıllarca ödedi.",
+    "beispielEn": "He spent years paying for one single evening."
+  },
+  {
+    "id": 6451,
+    "tr": "sürüklenmek",
+    "en": "to slip",
+    "beispiel": "Nach dem Jobverlust glitt er allmählich in die Illegalität ab.",
+    "beispielTr": "İşini kaybettikten sonra yavaş yavaş yasa dışılığa sürüklendi.",
+    "beispielEn": "After losing his job he slowly slipped into crime."
+  },
+  {
+    "id": 6452,
+    "tr": "yoldan çıkmak",
+    "en": "to stumble",
+    "beispiel": "Wer einmal gestrauchelt ist, verdient eine zweite Chance.",
+    "beispielTr": "Bir kez yoldan çıkmış olan ikinci bir şansı hak eder.",
+    "beispielEn": "Whoever has stumbled once deserves a second chance."
+  }
 ]

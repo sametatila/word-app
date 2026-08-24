@@ -1,402 +1,402 @@
 [
- {
-  "id": 6653,
-  "tr": "ödeyici kurum",
-  "en": "payer",
-  "beispiel": "Der Kostenträger lehnte die Übernahme der neuen Therapie ab.",
-  "beispielTr": "Ödeyici kurum yeni tedavinin masrafını üstlenmeyi reddetti.",
-  "beispielEn": "The payer refused to cover the new therapy."
- },
- {
-  "id": 6654,
-  "tr": "geri ödeme",
-  "en": "reimbursement",
-  "beispiel": "Die Kasse hat die Erstattung der Fahrtkosten abgelehnt.",
-  "beispielTr": "Sigorta yol masraflarının geri ödemesini reddetti.",
-  "beispielEn": "The insurer refused reimbursement of the travel costs."
- },
- {
-  "id": 6655,
-  "tr": "hizmet kapsamı",
-  "en": "benefits catalog",
-  "beispiel": "Die Akupunktur wurde in den Leistungskatalog aufgenommen.",
-  "beispielTr": "Akupunktur hizmet kapsamına alındı.",
-  "beispielEn": "Acupuncture was added to the benefits catalog."
- },
- {
-  "id": 6656,
-  "tr": "etik kurul",
-  "en": "ethics committee",
-  "beispiel": "Die Ethikkommission gab das Studienvorhaben mit Auflagen frei.",
-  "beispielTr": "Etik kurul araştırma projesine şartlı olarak izin verdi.",
-  "beispielEn": "The ethics committee approved the study with conditions."
- },
- {
-  "id": 6657,
-  "tr": "ruhsatlandırma kurumu",
-  "en": "regulatory agency",
-  "beispiel": "Die Zulassungsbehörde verlangte weitere Daten zur Langzeitsicherheit.",
-  "beispielTr": "Ruhsatlandırma kurumu uzun vadeli güvenlik için ek veri istedi.",
-  "beispielEn": "The regulatory agency demanded more long-term safety data."
- },
- {
-  "id": 6658,
-  "tr": "fayda değerlendirmesi",
-  "en": "benefit assessment",
-  "beispiel": "Nach der Nutzenbewertung sank der Preis des Medikaments deutlich.",
-  "beispielTr": "Fayda değerlendirmesinden sonra ilacın fiyatı belirgin şekilde düştü.",
-  "beispielEn": "After the benefit assessment the price of the drug dropped sharply."
- },
- {
-  "id": 6659,
-  "tr": "kanıt",
-  "en": "evidence",
-  "beispiel": "Für diese Behandlung fehlt bislang belastbare Evidenz.",
-  "beispielTr": "Bu tedavi için şimdiye dek sağlam bir kanıt yok.",
-  "beispielEn": "So far there is no solid evidence for this treatment."
- },
- {
-  "id": 6660,
-  "tr": "körleme",
-  "en": "blinding",
-  "beispiel": "Die Verblindung wurde erst nach der Auswertung aufgehoben.",
-  "beispielTr": "Körleme ancak değerlendirmeden sonra kaldırıldı.",
-  "beispielEn": "The blinding was lifted only after the analysis."
- },
- {
-  "id": 6661,
-  "tr": "kontrol grubu",
-  "en": "control group",
-  "beispiel": "Die Kontrollgruppe erhielt lediglich ein wirkstofffreies Präparat.",
-  "beispielTr": "Kontrol grubuna yalnızca etkin madde içermeyen bir ilaç verildi.",
-  "beispielEn": "The control group received only a placebo preparation."
- },
- {
-  "id": 6662,
-  "tr": "aşı zorunluluğu",
-  "en": "mandatory vaccination",
-  "beispiel": "Für Pflegekräfte gilt seit März eine Impfpflicht.",
-  "beispielTr": "Mart'tan beri bakım personeli için aşı zorunluluğu var.",
-  "beispielEn": "Mandatory vaccination has applied to care workers since March."
- },
- {
-  "id": 6663,
-  "tr": "sürü bağışıklığı",
-  "en": "herd immunity",
-  "beispiel": "Ohne Herdenimmunität breitete sich die Masernwelle rasch aus.",
-  "beispielTr": "Sürü bağışıklığı olmadan kızamık dalgası hızla yayıldı.",
-  "beispielEn": "Without herd immunity the measles wave spread quickly."
- },
- {
-  "id": 6664,
-  "tr": "bildirim zorunluluğu",
-  "en": "duty to report",
-  "beispiel": "Der Arzt hatte die Meldepflicht bei Masern übersehen.",
-  "beispielTr": "Doktor kızamıkta bildirim zorunluluğunu gözden kaçırmıştı.",
-  "beispielEn": "The doctor had overlooked the duty to report measles."
- },
- {
-  "id": 6665,
-  "tr": "önleme",
-  "en": "prevention",
-  "beispiel": "Die Stadt steckt mehr Geld in die Prävention.",
-  "beispielTr": "Şehir önlemeye daha fazla para ayırıyor.",
-  "beispielEn": "The city is putting more money into prevention."
- },
- {
-  "id": 6666,
-  "tr": "sağlık okuryazarlığı",
-  "en": "health literacy",
-  "beispiel": "Der Kurs soll die Gesundheitskompetenz älterer Patienten stärken.",
-  "beispielTr": "Kurs yaşlı hastaların sağlık okuryazarlığını güçlendirmeyi amaçlıyor.",
-  "beispielEn": "The course is meant to strengthen older patients' health literacy."
- },
- {
-  "id": 6667,
-  "tr": "hastalık yükü",
-  "en": "burden of disease",
-  "beispiel": "Rauchen verursacht in dieser Region die größte Krankheitslast.",
-  "beispielTr": "Bu bölgede en büyük hastalık yükünün nedeni sigara.",
-  "beispielEn": "Smoking causes the greatest burden of disease in this region."
- },
- {
-  "id": 6668,
-  "tr": "tedavinin kesilmesi",
-  "en": "treatment discontinuation",
-  "beispiel": "Die Familie stimmte dem Behandlungsabbruch schweren Herzens zu.",
-  "beispielTr": "Aile ağır bir kalple tedavinin kesilmesine razı oldu.",
-  "beispielEn": "The family reluctantly agreed to the discontinuation of treatment."
- },
- {
-  "id": 6669,
-  "tr": "palyatif tıp",
-  "en": "palliative medicine",
-  "beispiel": "Sie arbeitet seit zehn Jahren in der Palliativmedizin.",
-  "beispielTr": "On yıldır palyatif tıp alanında çalışıyor.",
-  "beispielEn": "She has worked in palliative medicine for ten years."
- },
- {
-  "id": 6670,
-  "tr": "vesayetçilik",
-  "en": "paternalism",
-  "beispiel": "Der Arzt verschwieg die Diagnose aus reinem Paternalismus.",
-  "beispielTr": "Doktor sırf vesayetçilik yüzünden teşhisi gizledi.",
-  "beispielEn": "The doctor concealed the diagnosis out of sheer paternalism."
- },
- {
-  "id": 6671,
-  "tr": "endikasyon",
-  "en": "indication",
-  "beispiel": "Für den Eingriff bestand keine zwingende medizinische Indikation.",
-  "beispielTr": "Müdahale için zorunlu bir tıbbi endikasyon yoktu.",
-  "beispielEn": "There was no compelling medical indication for the procedure."
- },
- {
-  "id": 6672,
-  "tr": "germ hattı",
-  "en": "germline",
-  "beispiel": "Das Gesetz verbietet jeden Eingriff in die Keimbahn.",
-  "beispielTr": "Yasa germ hattına her türlü müdahaleyi yasaklıyor.",
-  "beispielEn": "The law forbids any intervention in the germline."
- },
- {
-  "id": 6673,
-  "tr": "organ bağışı",
-  "en": "organ donation",
-  "beispiel": "Ihre Eltern stimmten der Organspende schließlich zu.",
-  "beispielTr": "Ailesi sonunda organ bağışına razı oldu.",
-  "beispielEn": "Her parents finally consented to the organ donation."
- },
- {
-  "id": 6674,
-  "tr": "beyin ölümü",
-  "en": "brain death",
-  "beispiel": "Die Ärzte stellten am Abend den Hirntod fest.",
-  "beispielTr": "Doktorlar akşam beyin ölümünü tespit etti.",
-  "beispielEn": "The doctors confirmed brain death in the evening."
- },
- {
-  "id": 6675,
-  "tr": "varsayılan rıza modeli",
-  "en": "opt-out system",
-  "beispiel": "Spanien fährt seit Jahren gut mit der Widerspruchslösung.",
-  "beispielTr": "İspanya yıllardır varsayılan rıza modeliyle iyi sonuç alıyor.",
-  "beispielEn": "Spain has done well with the opt-out system for years."
- },
- {
-  "id": 6676,
-  "tr": "vaka başı ödeme",
-  "en": "case-based payment",
-  "beispiel": "Die Klinik rechnet den Eingriff über eine Fallpauschale ab.",
-  "beispielTr": "Klinik müdahaleyi vaka başı ödeme üzerinden faturalandırıyor.",
-  "beispielEn": "The clinic bills the procedure as a case-based payment."
- },
- {
-  "id": 6677,
-  "tr": "kaynak dağılımı",
-  "en": "resource allocation",
-  "beispiel": "Über die Ressourcenallokation stritt der Ausschuss bis Mitternacht.",
-  "beispielTr": "Komisyon kaynak dağılımını gece yarısına kadar tartıştı.",
-  "beispielEn": "The committee argued about the resource allocation until midnight."
- },
- {
-  "id": 6678,
-  "tr": "uygulamak",
-  "en": "to administer",
-  "beispiel": "Die Ärztin verabreichte das Medikament direkt in die Vene.",
-  "beispielTr": "Doktor ilacı doğrudan damara uyguladı.",
-  "beispielEn": "The doctor administered the drug directly into the vein."
- },
- {
-  "id": 6679,
-  "tr": "haklı çıkarmak",
-  "en": "to justify",
-  "beispiel": "Wie willst du diese Ausgaben vor dem Vorstand rechtfertigen?",
-  "beispielTr": "Bu harcamaları yönetim kuruluna nasıl haklı çıkaracaksın?",
-  "beispielEn": "How are you going to justify these expenses to the board?"
- },
- {
-  "id": 6680,
-  "tr": "çıkarmak",
-  "en": "to remove",
-  "beispiel": "Der Arzt entnahm ihm Gewebe aus der Leber.",
-  "beispielTr": "Doktor karaciğerinden bir parça doku çıkardı.",
-  "beispielEn": "The doctor removed some tissue from his liver."
- },
- {
-  "id": 6681,
-  "tr": "belgelemek",
-  "en": "to document",
-  "beispiel": "Die Forscher dokumentierten jeden Schritt mit Fotos.",
-  "beispielTr": "Araştırmacılar her adımı fotoğraflarla belgeledi.",
-  "beispielEn": "The researchers documented every step with photos."
- },
- {
-  "id": 6682,
-  "tr": "almak",
-  "en": "to obtain",
-  "beispiel": "Wir müssen vorher die Zustimmung der Eltern einholen.",
-  "beispielTr": "Önceden ailenin onayını almamız gerekiyor.",
-  "beispielEn": "We have to obtain the parents' consent beforehand."
- },
- {
-  "id": 6683,
-  "tr": "tabi olmak",
-  "en": "to undergo",
-  "beispiel": "Er musste sich einer zweiten Operation unterziehen.",
-  "beispielTr": "İkinci bir ameliyat olmak zorunda kaldı.",
-  "beispielEn": "He had to undergo a second operation."
- },
- {
-  "id": 6684,
-  "tr": "tedavi edilemez",
-  "en": "incurable",
-  "beispiel": "Der Arzt sagte ihm, sein Krebs sei unheilbar.",
-  "beispielTr": "Doktor ona kanserinin tedavi edilemez olduğunu söyledi.",
-  "beispielEn": "The doctor told him his cancer was incurable."
- },
- {
-  "id": 6685,
-  "tr": "girişimsel",
-  "en": "invasive",
-  "beispiel": "Der Eingriff war weniger invasiv als erwartet.",
-  "beispielTr": "Müdahale beklenenden daha az girişimseldi.",
-  "beispielEn": "The procedure was less invasive than expected."
- },
- {
-  "id": 6686,
-  "tr": "anlamlı",
-  "en": "meaningful",
-  "beispiel": "Bei so kleinen Fallzahlen ist das Ergebnis kaum aussagekräftig.",
-  "beispielTr": "Bu kadar az vakayla sonuç pek anlamlı değil.",
-  "beispielEn": "With so few cases the result is hardly meaningful."
- },
- {
-  "id": 6687,
-  "tr": "reşit",
-  "en": "of age",
-  "beispiel": "Seit ihrem achtzehnten Geburtstag ist sie mündig.",
-  "beispielTr": "On sekizinci doğum gününden beri reşit.",
-  "beispielEn": "She has been of age since her eighteenth birthday."
- },
- {
-  "id": 6688,
-  "tr": "evrensellik",
-  "en": "universality",
-  "beispiel": "Manche Regierungen bestreiten die Universalität der Menschenrechte offen.",
-  "beispielTr": "Bazı hükümetler insan haklarının evrenselliğini açıkça reddediyor.",
-  "beispielEn": "Some governments openly dispute the universality of human rights."
- },
- {
-  "id": 6689,
-  "tr": "uluslararası teamül hukuku",
-  "en": "customary international law",
-  "beispiel": "Das Folterverbot gilt heute als Teil des Völkergewohnheitsrechts.",
-  "beispielTr": "İşkence yasağı bugün uluslararası teamül hukukunun parçası sayılıyor.",
-  "beispielEn": "The ban on torture now counts as customary international law."
- },
- {
-  "id": 6690,
-  "tr": "taraf devlet",
-  "en": "state party",
-  "beispiel": "Jeder Vertragsstaat muss alle vier Jahre einen Bericht vorlegen.",
-  "beispielTr": "Her taraf devlet dört yılda bir rapor sunmak zorunda.",
-  "beispielEn": "Every state party must submit a report every four years."
- },
- {
-  "id": 6691,
-  "tr": "ek protokol",
-  "en": "additional protocol",
-  "beispiel": "Das Parlament hat das Zusatzprotokoll gestern ratifiziert.",
-  "beispielTr": "Meclis ek protokolü dün onayladı.",
-  "beispielEn": "Parliament ratified the additional protocol yesterday."
- },
- {
-  "id": 6692,
-  "tr": "mülteci sözleşmesi",
-  "en": "refugee convention",
-  "beispiel": "Die Anwältin berief sich auf die Flüchtlingskonvention.",
-  "beispielTr": "Avukat mülteci sözleşmesine dayandı.",
-  "beispielEn": "The lawyer invoked the refugee convention."
- },
- {
-  "id": 6693,
-  "tr": "geri çevirme",
-  "en": "rejection",
-  "beispiel": "Die Zurückweisung an der Grenze war offensichtlich rechtswidrig.",
-  "beispielTr": "Sınırda geri çevirme açıkça hukuka aykırıydı.",
-  "beispielEn": "The rejection at the border was clearly unlawful."
- },
- {
-  "id": 6694,
-  "tr": "menşe ülke",
-  "en": "country of origin",
-  "beispiel": "Die Lage im Herkunftsstaat wird vor jeder Entscheidung geprüft.",
-  "beispielTr": "Menşe ülkedeki durum her karardan önce inceleniyor.",
-  "beispielEn": "The situation in the country of origin is examined before every decision."
- },
- {
-  "id": 6695,
-  "tr": "vatansızlık",
-  "en": "statelessness",
-  "beispiel": "Die Staatenlosigkeit seiner Kinder blieb jahrelang ungelöst.",
-  "beispielTr": "Çocuklarının vatansızlığı yıllarca çözülmeden kaldı.",
-  "beispielEn": "His children's statelessness remained unresolved for years."
- },
- {
-  "id": 6696,
-  "tr": "müdahale",
-  "en": "intervention",
-  "beispiel": "Der Sicherheitsrat lehnte eine militärische Intervention ab.",
-  "beispielTr": "Güvenlik Konseyi askeri bir müdahaleyi reddetti.",
-  "beispielEn": "The Security Council rejected a military intervention."
- },
- {
-  "id": 6697,
-  "tr": "hükümranlık yetkisi",
-  "en": "sovereign authority",
-  "beispiel": "Der Vertrag gilt für alle unter der Hoheitsgewalt des Staates.",
-  "beispielTr": "Anlaşma devletin hükümranlık yetkisi altındaki herkes için geçerli.",
-  "beispielEn": "The treaty applies to everyone under the state's sovereign authority."
- },
- {
-  "id": 6698,
-  "tr": "ceza mahkemesi",
-  "en": "criminal court",
-  "beispiel": "Der Strafgerichtshof erließ einen Haftbefehl gegen den früheren Befehlshaber.",
-  "beispielTr": "Ceza mahkemesi eski komutan hakkında tutuklama emri çıkardı.",
-  "beispielEn": "The criminal court issued an arrest warrant against the former commander."
- },
- {
-  "id": 6699,
-  "tr": "usul güvencesi",
-  "en": "procedural guarantee",
-  "beispiel": "Im Eilverfahren wurden zentrale Verfahrensgarantien schlicht übergangen.",
-  "beispielTr": "Hızlandırılmış usulde temel usul güvenceleri göz ardı edildi.",
-  "beispielEn": "In the fast-track procedure key procedural guarantees were simply ignored."
- },
- {
-  "id": 6700,
-  "tr": "bireysel başvuru",
-  "en": "individual complaint",
-  "beispiel": "Seine Individualbeschwerde wurde in Straßburg für zulässig erklärt.",
-  "beispielTr": "Bireysel başvurusu Strazburg'da kabul edilebilir bulundu.",
-  "beispielEn": "His individual complaint was declared admissible in Strasbourg."
- },
- {
-  "id": 6701,
-  "tr": "emsal",
-  "en": "precedent",
-  "beispiel": "Das Urteil gilt als Präzedenzfall für spätere Klagen.",
-  "beispielTr": "Karar sonraki davalar için emsal sayılıyor.",
-  "beispielEn": "The ruling counts as a precedent for later lawsuits."
- },
- {
-  "id": 6702,
-  "tr": "bağlayıcılık",
-  "en": "binding force",
-  "beispiel": "Über die Verbindlichkeit der Erklärung streiten die Juristen bis heute.",
-  "beispielTr": "Bildirinin bağlayıcılığını hukukçular bugün hâlâ tartışıyor.",
-  "beispielEn": "Lawyers still argue about the binding force of the declaration."
- }
+  {
+    "id": 6653,
+    "tr": "ödeyici kurum",
+    "en": "payer",
+    "beispiel": "Der Kostenträger lehnte die Übernahme der neuen Therapie ab.",
+    "beispielTr": "Ödeyici kurum yeni tedavinin masrafını üstlenmeyi reddetti.",
+    "beispielEn": "The payer refused to cover the new therapy."
+  },
+  {
+    "id": 6654,
+    "tr": "geri ödeme",
+    "en": "reimbursement",
+    "beispiel": "Die Kasse zahlte die Erstattung erst nach drei Monaten.",
+    "beispielTr": "Sigorta geri ödemeyi ancak üç ay sonra yaptı.",
+    "beispielEn": "The insurer paid the reimbursement only after three months."
+  },
+  {
+    "id": 6655,
+    "tr": "hizmet kapsamı",
+    "en": "benefits catalog",
+    "beispiel": "Diese Therapie steht nicht im Leistungskatalog der Krankenkasse.",
+    "beispielTr": "Bu tedavi sigortanın hizmet kapsamında yer almıyor.",
+    "beispielEn": "This therapy is not in the insurer's benefits catalog."
+  },
+  {
+    "id": 6656,
+    "tr": "etik kurul",
+    "en": "ethics committee",
+    "beispiel": "Die Ethikkommission gab das Studienvorhaben mit Auflagen frei.",
+    "beispielTr": "Etik kurul araştırma projesine şartlı olarak izin verdi.",
+    "beispielEn": "The ethics committee approved the study with conditions."
+  },
+  {
+    "id": 6657,
+    "tr": "ruhsatlandırma kurumu",
+    "en": "regulatory authority",
+    "beispiel": "Die Zulassungsbehörde verlangte weitere Daten zur Langzeitsicherheit.",
+    "beispielTr": "Ruhsatlandırma kurumu uzun vadeli güvenlik için ek veri istedi.",
+    "beispielEn": "The regulatory authority asked for more long-term safety data."
+  },
+  {
+    "id": 6658,
+    "tr": "fayda değerlendirmesi",
+    "en": "benefit assessment",
+    "beispiel": "Nach der Nutzenbewertung senkte der Hersteller den Preis deutlich.",
+    "beispielTr": "Fayda değerlendirmesinden sonra üretici fiyatı belirgin biçimde düşürdü.",
+    "beispielEn": "After the benefit assessment the manufacturer cut the price sharply."
+  },
+  {
+    "id": 6659,
+    "tr": "bilimsel kanıt",
+    "en": "evidence",
+    "beispiel": "Für diese Behandlung fehlt bislang belastbare Evidenz.",
+    "beispielTr": "Bu tedavi için hâlâ sağlam bir bilimsel kanıt yok.",
+    "beispielEn": "There is still no solid evidence for this treatment."
+  },
+  {
+    "id": 6660,
+    "tr": "körleme",
+    "en": "blinding",
+    "beispiel": "Die Verblindung wurde erst nach Studienende aufgehoben.",
+    "beispielTr": "Körleme ancak çalışma bittikten sonra kaldırıldı.",
+    "beispielEn": "The blinding was lifted only after the trial ended."
+  },
+  {
+    "id": 6661,
+    "tr": "kontrol grubu",
+    "en": "control group",
+    "beispiel": "Die Kontrollgruppe bekam nur ein Placebo.",
+    "beispielTr": "Kontrol grubuna yalnızca plasebo verildi.",
+    "beispielEn": "The control group received only a placebo."
+  },
+  {
+    "id": 6662,
+    "tr": "aşı zorunluluğu",
+    "en": "vaccination mandate",
+    "beispiel": "Für Pflegepersonal wurde im März eine Impfpflicht eingeführt.",
+    "beispielTr": "Mart ayında bakım personeli için aşı zorunluluğu getirildi.",
+    "beispielEn": "A vaccination mandate for care staff was introduced in March."
+  },
+  {
+    "id": 6663,
+    "tr": "sürü bağışıklığı",
+    "en": "herd immunity",
+    "beispiel": "Für Herdenimmunität müssten fast alle Kinder geimpft sein.",
+    "beispielTr": "Sürü bağışıklığı için neredeyse tüm çocukların aşılı olması gerekirdi.",
+    "beispielEn": "Herd immunity would require nearly all children to be vaccinated."
+  },
+  {
+    "id": 6664,
+    "tr": "bildirim zorunluluğu",
+    "en": "reporting obligation",
+    "beispiel": "Der Arzt übersah die Meldepflicht und bekam ein Bußgeld.",
+    "beispielTr": "Doktor bildirim zorunluluğunu atladı ve para cezası aldı.",
+    "beispielEn": "The doctor overlooked the reporting obligation and was fined."
+  },
+  {
+    "id": 6665,
+    "tr": "önleme",
+    "en": "prevention",
+    "beispiel": "Der Betrieb investiert viel Geld in Prävention.",
+    "beispielTr": "Şirket önlemeye çok para harcıyor.",
+    "beispielEn": "The company invests a lot of money in prevention."
+  },
+  {
+    "id": 6666,
+    "tr": "sağlık okuryazarlığı",
+    "en": "health literacy",
+    "beispiel": "Die Broschüre soll die Gesundheitskompetenz älterer Patienten stärken.",
+    "beispielTr": "Broşür yaşlı hastaların sağlık okuryazarlığını güçlendirmeyi amaçlıyor.",
+    "beispielEn": "The brochure aims to strengthen older patients' health literacy."
+  },
+  {
+    "id": 6667,
+    "tr": "hastalık yükü",
+    "en": "disease burden",
+    "beispiel": "Chronische Krankheiten machen den größten Teil der Krankheitslast aus.",
+    "beispielTr": "Hastalık yükünün en büyük kısmını kronik hastalıklar oluşturuyor.",
+    "beispielEn": "Chronic illnesses account for most of the disease burden."
+  },
+  {
+    "id": 6668,
+    "tr": "tedavinin kesilmesi",
+    "en": "treatment discontinuation",
+    "beispiel": "Die Ärztin besprach den Behandlungsabbruch mit der ganzen Familie.",
+    "beispielTr": "Doktor tedavinin kesilmesini bütün aileyle konuştu.",
+    "beispielEn": "The doctor discussed stopping the treatment with the whole family."
+  },
+  {
+    "id": 6669,
+    "tr": "palyatif tıp",
+    "en": "palliative medicine",
+    "beispiel": "Die Station arbeitet eng mit der Palliativmedizin zusammen.",
+    "beispielTr": "Servis palyatif tıp birimiyle yakın işbirliği içinde çalışıyor.",
+    "beispielEn": "The ward works closely with palliative medicine."
+  },
+  {
+    "id": 6670,
+    "tr": "vesayetçilik",
+    "en": "paternalism",
+    "beispiel": "Viele Patienten empfinden solche Ratschläge als reinen Paternalismus.",
+    "beispielTr": "Birçok hasta bu tür öğütleri düpedüz vesayetçilik olarak görüyor.",
+    "beispielEn": "Many patients see such advice as pure paternalism."
+  },
+  {
+    "id": 6671,
+    "tr": "endikasyon",
+    "en": "indication",
+    "beispiel": "Für den Eingriff bestand keine zwingende medizinische Indikation.",
+    "beispielTr": "Müdahale için zorunlu bir tıbbi endikasyon yoktu.",
+    "beispielEn": "There was no compelling medical indication for the procedure."
+  },
+  {
+    "id": 6672,
+    "tr": "germ hattı",
+    "en": "germline",
+    "beispiel": "Das Gesetz verbietet jede Veränderung der Keimbahn.",
+    "beispielTr": "Yasa germ hattında her türlü değişikliği yasaklıyor.",
+    "beispielEn": "The law bans any change to the germline."
+  },
+  {
+    "id": 6673,
+    "tr": "organ bağışı",
+    "en": "organ donation",
+    "beispiel": "Er hat sich vor Jahren für die Organspende entschieden.",
+    "beispielTr": "Yıllar önce organ bağışına karar vermişti.",
+    "beispielEn": "He decided in favor of organ donation years ago."
+  },
+  {
+    "id": 6674,
+    "tr": "beyin ölümü",
+    "en": "brain death",
+    "beispiel": "Die Ärzte stellten am Abend den Hirntod fest.",
+    "beispielTr": "Doktorlar akşam beyin ölümünü tespit etti.",
+    "beispielEn": "The doctors confirmed brain death in the evening."
+  },
+  {
+    "id": 6675,
+    "tr": "varsayılan rıza modeli",
+    "en": "opt-out system",
+    "beispiel": "Spanien setzt seit Langem auf die Widerspruchslösung.",
+    "beispielTr": "İspanya uzun süredir varsayılan rıza modelini uyguluyor.",
+    "beispielEn": "Spain has relied on the opt-out system for a long time."
+  },
+  {
+    "id": 6676,
+    "tr": "vaka başı ödeme",
+    "en": "flat rate per case",
+    "beispiel": "Das Krankenhaus rechnet die Geburt über eine Fallpauschale ab.",
+    "beispielTr": "Hastane doğumu vaka başı ödeme üzerinden faturalandırıyor.",
+    "beispielEn": "The hospital bills the delivery at a flat rate per case."
+  },
+  {
+    "id": 6677,
+    "tr": "kaynak dağılımı",
+    "en": "resource allocation",
+    "beispiel": "Die Pandemie zwang die Kliniken zu einer harten Ressourcenallokation.",
+    "beispielTr": "Salgın klinikleri sert bir kaynak dağılımına zorladı.",
+    "beispielEn": "The pandemic forced clinics into a harsh resource allocation."
+  },
+  {
+    "id": 6678,
+    "tr": "uygulamak",
+    "en": "to administer",
+    "beispiel": "Das Mittel wurde ohne Wissen der Angehörigen verabreicht.",
+    "beispielTr": "İlaç, yakınlarının bilgisi olmadan uygulandı.",
+    "beispielEn": "The drug was administered without the family's knowledge."
+  },
+  {
+    "id": 6679,
+    "tr": "haklı çıkarmak",
+    "en": "to justify",
+    "beispiel": "Nichts rechtfertigt es, Patienten so lange warten zu lassen.",
+    "beispielTr": "Hiçbir şey hastaları bu kadar bekletmeyi haklı çıkarmaz.",
+    "beispielEn": "Nothing justifies making patients wait this long."
+  },
+  {
+    "id": 6680,
+    "tr": "çıkarmak",
+    "en": "to remove",
+    "beispiel": "Gewebe darf nur mit ausdrücklicher Zustimmung entnommen werden.",
+    "beispielTr": "Doku ancak açık onay varsa çıkarılabilir.",
+    "beispielEn": "Tissue may only be removed with explicit consent."
+  },
+  {
+    "id": 6681,
+    "tr": "belgelemek",
+    "en": "to document",
+    "beispiel": "Jede Abweichung von der Leitlinie ist lückenlos zu dokumentieren.",
+    "beispielTr": "Kılavuzdan her sapma eksiksiz biçimde belgelenmelidir.",
+    "beispielEn": "Every deviation from the guideline must be fully documented."
+  },
+  {
+    "id": 6682,
+    "tr": "almak",
+    "en": "to obtain",
+    "beispiel": "Vor der Operation muss eine zweite Meinung eingeholt werden.",
+    "beispielTr": "Ameliyattan önce ikinci bir görüş alınmalıdır.",
+    "beispielEn": "A second opinion must be obtained before the operation."
+  },
+  {
+    "id": 6683,
+    "tr": "tabi olmak",
+    "en": "to undergo",
+    "beispiel": "Sie hat sich freiwillig einer belastenden Untersuchung unterzogen.",
+    "beispielTr": "Gönüllü olarak zorlu bir tetkikten geçti.",
+    "beispielEn": "She voluntarily underwent a demanding examination."
+  },
+  {
+    "id": 6684,
+    "tr": "tedavi edilemez",
+    "en": "incurable",
+    "beispiel": "Der Onkologe sagte ihr offen, die Krankheit sei unheilbar.",
+    "beispielTr": "Onkolog ona hastalığın tedavi edilemez olduğunu açıkça söyledi.",
+    "beispielEn": "The oncologist told her frankly that the illness was incurable."
+  },
+  {
+    "id": 6685,
+    "tr": "girişimsel",
+    "en": "invasive",
+    "beispiel": "Der Chirurg wählte bewusst das weniger invasive Verfahren.",
+    "beispielTr": "Cerrah bilinçli olarak daha az girişimsel yöntemi seçti.",
+    "beispielEn": "The surgeon deliberately chose the less invasive method."
+  },
+  {
+    "id": 6686,
+    "tr": "anlamlı",
+    "en": "meaningful",
+    "beispiel": "Bei so kleinen Fallzahlen ist das Ergebnis kaum aussagekräftig.",
+    "beispielTr": "Bu kadar az vakayla sonuç pek anlamlı değil.",
+    "beispielEn": "With so few cases the result is hardly meaningful."
+  },
+  {
+    "id": 6687,
+    "tr": "reşit",
+    "en": "of legal age",
+    "beispiel": "Mit achtzehn ist man in Deutschland mündig.",
+    "beispielTr": "Almanya'da on sekiz yaşında reşit olunur.",
+    "beispielEn": "In Germany you are legally an adult at eighteen."
+  },
+  {
+    "id": 6688,
+    "tr": "evrensellik",
+    "en": "universality",
+    "beispiel": "Manche Regierungen bestreiten die Universalität der Menschenrechte offen.",
+    "beispielTr": "Bazı hükümetler insan haklarının evrenselliğini açıkça reddediyor.",
+    "beispielEn": "Some governments openly deny the universality of human rights."
+  },
+  {
+    "id": 6689,
+    "tr": "uluslararası örf ve âdet hukuku",
+    "en": "customary international law",
+    "beispiel": "Das Folterverbot gehört heute zum Völkergewohnheitsrecht.",
+    "beispielTr": "İşkence yasağı bugün uluslararası örf ve âdet hukukuna dahildir.",
+    "beispielEn": "The ban on torture is now part of customary international law."
+  },
+  {
+    "id": 6690,
+    "tr": "taraf devlet",
+    "en": "state party",
+    "beispiel": "Jeder Vertragsstaat legt alle vier Jahre einen Bericht vor.",
+    "beispielTr": "Her taraf devlet dört yılda bir rapor sunuyor.",
+    "beispielEn": "Every state party submits a report every four years."
+  },
+  {
+    "id": 6691,
+    "tr": "ek protokol",
+    "en": "additional protocol",
+    "beispiel": "Mehrere Staaten haben das Zusatzprotokoll bis heute nicht unterzeichnet.",
+    "beispielTr": "Birçok devlet ek protokolü bugüne dek imzalamadı.",
+    "beispielEn": "Several states have still not signed the additional protocol."
+  },
+  {
+    "id": 6692,
+    "tr": "mülteci sözleşmesi",
+    "en": "refugee convention",
+    "beispiel": "Das Gericht berief sich auf die Flüchtlingskonvention.",
+    "beispielTr": "Mahkeme mülteci sözleşmesine dayandı.",
+    "beispielEn": "The court based its ruling on the refugee convention."
+  },
+  {
+    "id": 6693,
+    "tr": "geri çevirme",
+    "en": "rejection",
+    "beispiel": "Die Zurückweisung an der Grenze verstößt gegen geltendes Recht.",
+    "beispielTr": "Sınırda geri çevirme yürürlükteki hukuka aykırıdır.",
+    "beispielEn": "Rejection at the border breaches applicable law."
+  },
+  {
+    "id": 6694,
+    "tr": "menşe ülke",
+    "en": "country of origin",
+    "beispiel": "Die Lage im Herkunftsstaat wird vor jeder Entscheidung geprüft.",
+    "beispielTr": "Menşe ülkedeki durum her karardan önce inceleniyor.",
+    "beispielEn": "The situation in the country of origin is checked before every decision."
+  },
+  {
+    "id": 6695,
+    "tr": "vatansızlık",
+    "en": "statelessness",
+    "beispiel": "Ohne Geburtsurkunde droht dem Kind die Staatenlosigkeit.",
+    "beispielTr": "Doğum belgesi olmayan çocuğu vatansızlık bekliyor.",
+    "beispielEn": "Without a birth certificate the child faces statelessness."
+  },
+  {
+    "id": 6696,
+    "tr": "müdahale",
+    "en": "intervention",
+    "beispiel": "Der Sicherheitsrat stimmte gegen eine militärische Intervention.",
+    "beispielTr": "Güvenlik Konseyi askeri müdahaleye karşı oy verdi.",
+    "beispielEn": "The Security Council voted against a military intervention."
+  },
+  {
+    "id": 6697,
+    "tr": "egemenlik yetkisi",
+    "en": "sovereign authority",
+    "beispiel": "Das Abkommen gilt für alle Menschen unter deutscher Hoheitsgewalt.",
+    "beispielTr": "Anlaşma Alman egemenlik yetkisi altındaki herkes için geçerli.",
+    "beispielEn": "The treaty applies to everyone under German sovereign authority."
+  },
+  {
+    "id": 6698,
+    "tr": "ceza mahkemesi",
+    "en": "criminal court",
+    "beispiel": "Der Strafgerichtshof erließ einen Haftbefehl gegen den früheren Befehlshaber.",
+    "beispielTr": "Ceza mahkemesi eski komutan hakkında tutuklama emri çıkardı.",
+    "beispielEn": "The criminal court issued an arrest warrant against the former commander."
+  },
+  {
+    "id": 6699,
+    "tr": "usul güvencesi",
+    "en": "procedural safeguard",
+    "beispiel": "Im Eilverfahren wurden zentrale Verfahrensgarantien schlicht übergangen.",
+    "beispielTr": "Hızlandırılmış usulde temel usul güvenceleri göz ardı edildi.",
+    "beispielEn": "Key procedural safeguards were simply ignored in the fast-track procedure."
+  },
+  {
+    "id": 6700,
+    "tr": "bireysel başvuru",
+    "en": "individual complaint",
+    "beispiel": "Seine Individualbeschwerde wurde in Straßburg für zulässig erklärt.",
+    "beispielTr": "Bireysel başvurusu Strazburg'da kabul edilebilir bulundu.",
+    "beispielEn": "His individual complaint was declared admissible in Strasbourg."
+  },
+  {
+    "id": 6701,
+    "tr": "emsal",
+    "en": "precedent",
+    "beispiel": "Das Urteil gilt als Präzedenzfall für künftige Klagen gegen Konzerne.",
+    "beispielTr": "Karar şirketlere karşı açılacak davalar için emsal sayılıyor.",
+    "beispielEn": "The ruling counts as a precedent for future suits against corporations."
+  },
+  {
+    "id": 6702,
+    "tr": "bağlayıcılık",
+    "en": "binding force",
+    "beispiel": "Über die rechtliche Verbindlichkeit der Erklärung streiten Fachleute bis heute.",
+    "beispielTr": "Bildirinin hukuki bağlayıcılığı konusunda uzmanlar hâlâ tartışıyor.",
+    "beispielEn": "Experts still argue about the legal binding force of the declaration."
+  }
 ]

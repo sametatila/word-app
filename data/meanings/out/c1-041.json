@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7253,
+    "tr": "tüzük",
+    "en": "bylaws",
+    "beispiel": "Die Satzung des Vereins wurde grundlegend geändert.",
+    "beispielTr": "Derneğin tüzüğü esaslı biçimde değiştirildi.",
+    "beispielEn": "The club's bylaws were fundamentally changed."
+  },
+  {
+    "id": 7254,
+    "tr": "hesap verebilirlik",
+    "en": "accountability",
+    "beispiel": "Das Gesetz stärkt die Verantwortlichkeit der Unternehmensleitung.",
+    "beispielTr": "Yasa, şirket yönetiminin hesap verebilirliğini güçlendiriyor.",
+    "beispielEn": "The law strengthens the accountability of company management."
+  },
+  {
+    "id": 7255,
+    "tr": "yönetim aygıtı",
+    "en": "administrative apparatus",
+    "beispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil des Budgets.",
+    "beispielTr": "Şişkin bir yönetim aygıtı bütçenin büyük bölümünü yutuyor.",
+    "beispielEn": "A bloated administrative apparatus devours a large part of the budget."
+  },
+  {
+    "id": 7256,
+    "tr": "yönetim reformu",
+    "en": "administrative reform",
+    "beispiel": "Die geplante Verwaltungsreform scheiterte am Widerstand der Ministerien.",
+    "beispielTr": "Planlanan yönetim reformu bakanlıkların direnişine takıldı.",
+    "beispielEn": "The planned administrative reform failed because of ministerial resistance."
+  },
+  {
+    "id": 7257,
+    "tr": "yetki alanı",
+    "en": "area of responsibility",
+    "beispiel": "Diese Frage fällt nicht in unseren Zuständigkeitsbereich.",
+    "beispielTr": "Bu soru bizim yetki alanımıza girmiyor.",
+    "beispielEn": "This question does not fall within our area of responsibility."
+  },
+  {
+    "id": 7258,
+    "tr": "kırtasiyecilik",
+    "en": "red tape",
+    "beispiel": "Bei diesem Formular wiehert wieder der Amtsschimmel.",
+    "beispielTr": "Bu formda kırtasiyecilik yine kendini gösteriyor.",
+    "beispielEn": "With this form, the red tape is running wild again."
+  },
+  {
+    "id": 7259,
+    "tr": "memur sınıfı",
+    "en": "civil service",
+    "beispiel": "Das preußische Beamtentum galt lange als Vorbild.",
+    "beispielTr": "Prusya memur sınıfı uzun süre örnek sayıldı.",
+    "beispielEn": "The Prussian civil service was long considered a model."
+  },
+  {
+    "id": 7260,
+    "tr": "bilgi verme yükümlülüğü",
+    "en": "duty to provide information",
+    "beispiel": "Der Zeuge verletzte seine Auskunftspflicht gegenüber dem Ausschuss.",
+    "beispielTr": "Tanık, komisyona karşı bilgi verme yükümlülüğünü ihlal etti.",
+    "beispielEn": "The witness breached his duty to provide information to the committee."
+  },
+  {
+    "id": 7261,
+    "tr": "yerelleşme",
+    "en": "decentralization",
+    "beispiel": "Die Dezentralisierung hat die Genehmigungsverfahren spürbar beschleunigt.",
+    "beispielTr": "Yerelleşme, izin süreçlerini hissedilir biçimde hızlandırdı.",
+    "beispielEn": "Decentralization has noticeably sped up the approval procedures."
+  },
+  {
+    "id": 7262,
+    "tr": "gizlilik",
+    "en": "confidentiality",
+    "beispiel": "Die Vertraulichkeit der Personalakten muss unbedingt gewahrt bleiben.",
+    "beispielTr": "Personel dosyalarının gizliliği mutlaka korunmalıdır.",
+    "beispielEn": "The confidentiality of the personnel files must be preserved."
+  },
+  {
+    "id": 7263,
+    "tr": "idari yardım",
+    "en": "administrative assistance",
+    "beispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe.",
+    "beispielTr": "Polis, aramada vergi dairesine idari yardım sağladı.",
+    "beispielEn": "The police provided administrative assistance to the tax office."
+  },
+  {
+    "id": 7264,
+    "tr": "denetim raporu",
+    "en": "audit report",
+    "beispiel": "Der Prüfbericht deckte erhebliche Mängel in der Buchführung auf.",
+    "beispielTr": "Denetim raporu muhasebede ciddi eksiklikler ortaya çıkardı.",
+    "beispielEn": "The audit report revealed serious flaws in the bookkeeping."
+  },
+  {
+    "id": 7265,
+    "tr": "sayıştay",
+    "en": "court of audit",
+    "beispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Behörden.",
+    "beispielTr": "Sayıştay, birkaç kurumun ihale uygulamasını eleştirdi.",
+    "beispielEn": "The court of audit criticized the tendering practice of several agencies."
+  },
+  {
+    "id": 7266,
+    "tr": "resmen karar vermek",
+    "en": "to decree",
+    "beispiel": "Die Behörde verfügte die sofortige Schließung des Betriebs.",
+    "beispielTr": "Kurum, işletmenin derhal kapatılmasına resmen karar verdi.",
+    "beispielEn": "The authority decreed the immediate closure of the business."
+  },
+  {
+    "id": 7267,
+    "tr": "müdahale etmek",
+    "en": "to step in",
+    "beispiel": "Die Polizei schreitet erst bei Gewalt ein.",
+    "beispielTr": "Polis ancak şiddet olunca müdahale ediyor.",
+    "beispielEn": "The police only step in when there is violence."
+  },
+  {
+    "id": 7268,
+    "tr": "gün belirlemek",
+    "en": "to schedule",
+    "beispiel": "Für Montag wurde eine zusätzliche Sitzung anberaumt.",
+    "beispielTr": "Pazartesi için ek bir oturum günü belirlendi.",
+    "beispielEn": "An extra session was scheduled for Monday."
+  },
+  {
+    "id": 7269,
+    "tr": "aykırı davranmak",
+    "en": "to contravene",
+    "beispiel": "Wer den Auflagen zuwiderhandelt, muss ein Bußgeld zahlen.",
+    "beispielTr": "Şartlara aykırı davranan para cezası öder.",
+    "beispielEn": "Anyone who contravenes the conditions must pay a fine."
+  },
+  {
+    "id": 7270,
+    "tr": "elde etmek",
+    "en": "to obtain",
+    "beispiel": "Die Anwältin erwirkte eine einstweilige Verfügung gegen ihn.",
+    "beispielTr": "Avukat, ona karşı ihtiyati tedbir kararı elde etti.",
+    "beispielEn": "The lawyer obtained an injunction against him."
+  },
+  {
+    "id": 7271,
+    "tr": "resmî",
+    "en": "formal",
+    "beispiel": "Für den Empfang war formelle Kleidung vorgeschrieben.",
+    "beispielTr": "Kabul töreni için resmî kıyafet zorunluydu.",
+    "beispielEn": "Formal attire was required for the reception."
+  },
+  {
+    "id": 7272,
+    "tr": "hantal",
+    "en": "cumbersome",
+    "beispiel": "Die Bürokratie in diesem Land ist unglaublich schwerfällig.",
+    "beispielTr": "Bu ülkedeki bürokrasi inanılmaz derecede hantal.",
+    "beispielEn": "The bureaucracy in this country is incredibly cumbersome."
+  },
+  {
+    "id": 7273,
+    "tr": "başvuru hakkı olan",
+    "en": "eligible to apply",
+    "beispiel": "Antragsberechtigt sind nur Vereine mit Sitz in Deutschland.",
+    "beispielTr": "Yalnızca Almanya'da merkezi olan dernekler başvuru hakkına sahiptir.",
+    "beispielEn": "Only associations based in Germany are eligible to apply."
+  },
+  {
+    "id": 7274,
+    "tr": "tarafından",
+    "en": "on the part of",
+    "beispiel": "Seitens der Verwaltung kam bisher keine Stellungnahme.",
+    "beispielTr": "İdare tarafından şimdiye dek bir açıklama gelmedi.",
+    "beispielEn": "There has been no statement on the part of the administration."
+  },
+  {
+    "id": 7275,
+    "tr": "yokluğundan",
+    "en": "for lack of",
+    "beispiel": "Das Verfahren wurde mangels Beweisen eingestellt.",
+    "beispielTr": "Dava delil yokluğundan düşürüldü.",
+    "beispielEn": "The case was dropped for lack of evidence."
+  },
+  {
+    "id": 7276,
+    "tr": "deflasyon",
+    "en": "deflation",
+    "beispiel": "In Japan hat eine lange Deflation die Wirtschaft gelähmt.",
+    "beispielTr": "Japonya'da uzun bir deflasyon ekonomiyi felce uğrattı.",
+    "beispielEn": "In Japan, a long deflation paralyzed the economy."
+  },
+  {
+    "id": 7277,
+    "tr": "durgunluk",
+    "en": "stagnation",
+    "beispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft wieder.",
+    "beispielTr": "İki yıllık durgunluğun ardından ekonomi yeniden büyüyor.",
+    "beispielEn": "After two years of stagnation, the economy is growing again."
+  },
+  {
+    "id": 7278,
+    "tr": "maliye politikası",
+    "en": "fiscal policy",
+    "beispiel": "Die Regierung verfolgt seit Jahren eine sparsame Fiskalpolitik.",
+    "beispielTr": "Hükümet yıllardır tutumlu bir maliye politikası izliyor.",
+    "beispielEn": "The government has pursued a thrifty fiscal policy for years."
+  },
+  {
+    "id": 7279,
+    "tr": "tahvil",
+    "en": "bond",
+    "beispiel": "Die Notenbank kauft Anleihen, um die Zinsen zu senken.",
+    "beispielTr": "Merkez bankası faizleri düşürmek için tahvil alıyor.",
+    "beispielEn": "The central bank buys bonds to lower interest rates."
+  },
+  {
+    "id": 7280,
+    "tr": "sermaye piyasası",
+    "en": "capital market",
+    "beispiel": "Die Kapitalmärkte reagierten nervös auf die Zinsentscheidung.",
+    "beispielTr": "Sermaye piyasaları faiz kararına gergin tepki verdi.",
+    "beispielEn": "The capital markets reacted nervously to the interest rate decision."
+  },
+  {
+    "id": 7281,
+    "tr": "bütçe açığı",
+    "en": "budget deficit",
+    "beispiel": "Das Haushaltsdefizit stieg im letzten Jahr deutlich an.",
+    "beispielTr": "Bütçe açığı geçen yıl belirgin biçimde arttı.",
+    "beispielEn": "The budget deficit rose sharply last year."
+  },
+  {
+    "id": 7282,
+    "tr": "konjonktür döngüsü",
+    "en": "business cycle",
+    "beispiel": "Der aktuelle Konjunkturzyklus dauert bereits acht Jahre.",
+    "beispielTr": "Mevcut konjonktür döngüsü şimdiden sekiz yıldır sürüyor.",
+    "beispielEn": "The current business cycle has already lasted eight years."
+  },
+  {
+    "id": 7283,
+    "tr": "üretkenlik",
+    "en": "productivity",
+    "beispiel": "Die neuen Maschinen haben die Produktivität deutlich erhöht.",
+    "beispielTr": "Yeni makineler üretkenliği belirgin biçimde artırdı.",
+    "beispielEn": "The new machines have significantly increased productivity."
+  },
+  {
+    "id": 7284,
+    "tr": "fiyat istikrarı",
+    "en": "price stability",
+    "beispiel": "Die Notenbank verteidigt die Preisstabilität mit hohen Zinsen.",
+    "beispielTr": "Merkez bankası fiyat istikrarını yüksek faizle savunuyor.",
+    "beispielEn": "The central bank defends price stability with high interest rates."
+  },
+  {
+    "id": 7285,
+    "tr": "sosyal transfer",
+    "en": "social transfer",
+    "beispiel": "Ohne Sozialtransfers wäre die Armut hier deutlich größer.",
+    "beispielTr": "Sosyal transferler olmasa buradaki yoksulluk çok daha büyük olurdu.",
+    "beispielEn": "Without social transfers, poverty here would be much greater."
+  },
+  {
+    "id": 7286,
+    "tr": "mali denetim kurumu",
+    "en": "financial regulator",
+    "beispiel": "Die Finanzaufsicht prüft die Rücklagen der großen Banken.",
+    "beispielTr": "Mali denetim kurumu büyük bankaların karşılıklarını denetliyor.",
+    "beispielEn": "The financial regulator checks the reserves of the big banks."
+  },
+  {
+    "id": 7287,
+    "tr": "ödeme gücü",
+    "en": "solvency",
+    "beispiel": "Zweifel an der Zahlungsfähigkeit des Landes trieben die Zinsen hoch.",
+    "beispielTr": "Ülkenin ödeme gücüne duyulan kuşku faizleri yukarı itti.",
+    "beispielEn": "Doubts about the country's solvency drove interest rates up."
+  },
+  {
+    "id": 7288,
+    "tr": "spekülasyon balonu",
+    "en": "speculative bubble",
+    "beispiel": "Die Spekulationsblase am Immobilienmarkt platzte im Herbst.",
+    "beispielTr": "Konut piyasasındaki spekülasyon balonu sonbaharda patladı.",
+    "beispielEn": "The speculative bubble in the property market burst in autumn."
+  },
+  {
+    "id": 7289,
+    "tr": "finansal kriz",
+    "en": "financial crisis",
+    "beispiel": "Die Finanzkrise von 2008 kostete viele Menschen ihr Erspartes.",
+    "beispielTr": "2008 finansal krizi birçok insanın birikimine mal oldu.",
+    "beispielEn": "The 2008 financial crisis cost many people their savings."
+  },
+  {
+    "id": 7290,
+    "tr": "sistemik risk",
+    "en": "systemic risk",
+    "beispiel": "Sehr große Banken bergen ein Systemrisiko für die Wirtschaft.",
+    "beispielTr": "Çok büyük bankalar ekonomi için sistemik risk taşır.",
+    "beispielEn": "Very large banks carry a systemic risk for the economy."
+  },
+  {
+    "id": 7291,
+    "tr": "kurtarma paketi",
+    "en": "bailout package",
+    "beispiel": "Das Parlament billigte ein Rettungspaket über zwanzig Milliarden Euro.",
+    "beispielTr": "Meclis yirmi milyar euroluk bir kurtarma paketini onayladı.",
+    "beispielEn": "Parliament approved a bailout package of twenty billion euros."
+  },
+  {
+    "id": 7292,
+    "tr": "merkez bankası",
+    "en": "central bank",
+    "beispiel": "Die Notenbank hat den Leitzins erneut angehoben.",
+    "beispielTr": "Merkez bankası politika faizini yeniden yükseltti.",
+    "beispielEn": "The central bank has raised the key interest rate again."
+  },
+  {
+    "id": 7293,
+    "tr": "para arzı",
+    "en": "money supply",
+    "beispiel": "Die Geldmenge ist im letzten Jahr rasch gewachsen.",
+    "beispielTr": "Para arzı geçen yıl hızla büyüdü.",
+    "beispielEn": "The money supply grew rapidly last year."
+  },
+  {
+    "id": 7294,
+    "tr": "değer kaybı",
+    "en": "devaluation",
+    "beispiel": "Die Abwertung der Landeswährung verteuerte alle Importe schlagartig.",
+    "beispielTr": "Ülke parasının değer kaybı bütün ithalatı bir anda pahalılaştırdı.",
+    "beispielEn": "The devaluation of the local currency made all imports more expensive overnight."
+  },
+  {
+    "id": 7295,
+    "tr": "dış ticaret dengesi",
+    "en": "trade balance",
+    "beispiel": "Das Land hat seit Jahren eine positive Handelsbilanz.",
+    "beispielTr": "Ülkenin yıllardır dış ticaret dengesi fazla veriyor.",
+    "beispielEn": "The country has had a positive trade balance for years."
+  },
+  {
+    "id": 7296,
+    "tr": "serbest ticaret",
+    "en": "free trade",
+    "beispiel": "Beide Länder haben ein Abkommen über Freihandel unterzeichnet.",
+    "beispielTr": "İki ülke serbest ticaret üzerine bir anlaşma imzaladı.",
+    "beispielEn": "Both countries signed an agreement on free trade."
+  },
+  {
+    "id": 7297,
+    "tr": "marjinal fayda",
+    "en": "marginal utility",
+    "beispiel": "Der Grenznutzen des zweiten Stücks Kuchen ist gering.",
+    "beispielTr": "İkinci dilim pastanın marjinal faydası düşüktür.",
+    "beispielEn": "The marginal utility of the second piece of cake is low."
+  },
+  {
+    "id": 7298,
+    "tr": "fırsat maliyeti",
+    "en": "opportunity cost",
+    "beispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne.",
+    "beispielTr": "Üniversite okuyan kişi, kazanamadığı ücretler biçiminde fırsat maliyeti üstlenir.",
+    "beispielEn": "Anyone who studies bears opportunity costs in the form of lost wages."
+  },
+  {
+    "id": 7299,
+    "tr": "piyasa başarısızlığı",
+    "en": "market failure",
+    "beispiel": "Bei der Luftverschmutzung sprechen Ökonomen von Marktversagen.",
+    "beispielTr": "İktisatçılar hava kirliliği için piyasa başarısızlığından söz eder.",
+    "beispielEn": "Economists speak of market failure in the case of air pollution."
+  },
+  {
+    "id": 7300,
+    "tr": "tahsis",
+    "en": "allocation",
+    "beispiel": "Der Preis sorgt für eine effiziente Allokation knapper Güter.",
+    "beispielTr": "Fiyat, kıt malların etkin tahsisini sağlar.",
+    "beispielEn": "The price ensures an efficient allocation of scarce goods."
+  },
+  {
+    "id": 7301,
+    "tr": "tasarruf oranı",
+    "en": "savings rate",
+    "beispiel": "Die Sparquote der Haushalte ist auf zwölf Prozent gestiegen.",
+    "beispielTr": "Hanehalklarının tasarruf oranı yüzde on ikiye çıktı.",
+    "beispielEn": "The households' savings rate has risen to twelve percent."
+  },
+  {
+    "id": 7302,
+    "tr": "kâr marjı",
+    "en": "profit margin",
+    "beispiel": "Steigende Rohstoffpreise drücken die Gewinnmargen der Hersteller.",
+    "beispielTr": "Yükselen hammadde fiyatları üreticilerin kâr marjlarını baskılıyor.",
+    "beispielEn": "Rising raw material prices are squeezing manufacturers' profit margins."
+  }
+]

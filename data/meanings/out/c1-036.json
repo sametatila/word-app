@@ -1,0 +1,402 @@
+[
+ {
+  "id": 7003,
+  "tr": "kayıtsızlık",
+  "en": "indifference",
+  "beispiel": "Ihre Gleichgültigkeit beim Abschied hat mich verletzt.",
+  "beispielTr": "Vedalaşırken takındığı kayıtsızlık beni incitti.",
+  "beispielEn": "Her indifference at the farewell hurt me."
+ },
+ {
+  "id": 7004,
+  "tr": "sertlik",
+  "en": "vehemence",
+  "beispiel": "Mit unerwarteter Vehemenz wies er die Vorwürfe zurück.",
+  "beispielTr": "Suçlamaları beklenmedik bir sertlikle reddetti.",
+  "beispielEn": "He rejected the accusations with unexpected vehemence."
+ },
+ {
+  "id": 7005,
+  "tr": "nüans",
+  "en": "nuance",
+  "beispiel": "Er beschrieb die Lage ohne jede Schattierung.",
+  "beispielTr": "Durumu en ufak bir nüans olmadan anlattı.",
+  "beispielEn": "He described the situation without any nuance."
+ },
+ {
+  "id": 7006,
+  "tr": "zihniyet",
+  "en": "mindset",
+  "beispiel": "Über die politische Gesinnung des Autors sagt der Roman wenig.",
+  "beispielTr": "Roman, yazarın siyasi zihniyeti hakkında pek bir şey söylemiyor.",
+  "beispielEn": "The novel says little about the author's political mindset."
+ },
+ {
+  "id": 7007,
+  "tr": "sükûnet",
+  "en": "equanimity",
+  "beispiel": "Mit erstaunlichem Gleichmut nahm sie die Niederlage hin.",
+  "beispielTr": "Yenilgiyi şaşırtıcı bir sükûnetle karşıladı.",
+  "beispielEn": "She took the defeat with astonishing equanimity."
+ },
+ {
+  "id": 7008,
+  "tr": "dinginlik",
+  "en": "serenity",
+  "beispiel": "Seine Abgeklärtheit in der Krise beeindruckte alle Kollegen.",
+  "beispielTr": "Kriz sırasındaki dinginliği bütün meslektaşlarını etkiledi.",
+  "beispielEn": "His serenity during the crisis impressed all his colleagues."
+ },
+ {
+  "id": 7009,
+  "tr": "kuşku",
+  "en": "suspicion",
+  "beispiel": "Sein plötzlicher Reichtum weckte bei den Nachbarn Argwohn.",
+  "beispielTr": "Ani zenginliği komşularda kuşku uyandırdı.",
+  "beispielEn": "His sudden wealth aroused suspicion among the neighbors."
+ },
+ {
+  "id": 7010,
+  "tr": "bıkkınlık",
+  "en": "weariness",
+  "beispiel": "Der Überdruss an leeren Versprechen wächst in der Bevölkerung.",
+  "beispielTr": "Halkta boş vaatlere karşı bıkkınlık artıyor.",
+  "beispielEn": "Weariness with empty promises is growing among the public."
+ },
+ {
+  "id": 7011,
+  "tr": "hüzün",
+  "en": "wistfulness",
+  "beispiel": "Mit leiser Wehmut blickte er auf die vergangenen Jahre zurück.",
+  "beispielTr": "Geçmiş yıllara hafif bir hüzünle baktı.",
+  "beispielEn": "He looked back on the past years with quiet wistfulness."
+ },
+ {
+  "id": 7012,
+  "tr": "içtenlik",
+  "en": "sincerity",
+  "beispiel": "An seiner Aufrichtigkeit zweifelte im Saal niemand.",
+  "beispielTr": "Salonda kimse onun içtenliğinden kuşku duymadı.",
+  "beispielEn": "No one in the hall doubted his sincerity."
+ },
+ {
+  "id": 7013,
+  "tr": "laiklik",
+  "en": "secularism",
+  "beispiel": "In der Türkei wird über den Laizismus heftig gestritten.",
+  "beispielTr": "Türkiye'de laiklik üzerine sert tartışmalar yapılıyor.",
+  "beispielEn": "In Turkey there are heated arguments about secularism."
+ },
+ {
+  "id": 7014,
+  "tr": "dindarlık",
+  "en": "piety",
+  "beispiel": "Ihre stille Frömmigkeit war für Außenstehende kaum sichtbar.",
+  "beispielTr": "Onun sessiz dindarlığı dışarıdan pek fark edilmiyordu.",
+  "beispielEn": "Her quiet piety was barely visible to outsiders."
+ },
+ {
+  "id": 7015,
+  "tr": "iman ikrarı",
+  "en": "creed",
+  "beispiel": "Die Gemeinde spricht das Glaubensbekenntnis nach der Predigt.",
+  "beispielTr": "Cemaat, vaazdan sonra iman ikrarını okur.",
+  "beispielEn": "The congregation recites the creed after the sermon."
+ },
+ {
+  "id": 7016,
+  "tr": "mezhep",
+  "en": "denomination",
+  "beispiel": "Das Formular fragt nach Name, Alter und Konfession.",
+  "beispielTr": "Formda ad, yaş ve mezhep soruluyor.",
+  "beispielEn": "The form asks for name, age and denomination."
+ },
+ {
+  "id": 7017,
+  "tr": "vicdan özgürlüğü",
+  "en": "freedom of conscience",
+  "beispiel": "Er berief sich vor Gericht auf seine Gewissensfreiheit.",
+  "beispielTr": "Mahkemede vicdan özgürlüğünü öne sürdü.",
+  "beispielEn": "In court he invoked his freedom of conscience."
+ },
+ {
+  "id": 7018,
+  "tr": "din özgürlüğü",
+  "en": "freedom of religion",
+  "beispiel": "Sie floh in ein Land mit garantierter Religionsfreiheit.",
+  "beispielTr": "Din özgürlüğü güvence altında olan bir ülkeye kaçtı.",
+  "beispielEn": "She fled to a country with guaranteed freedom of religion."
+ },
+ {
+  "id": 7019,
+  "tr": "dogma",
+  "en": "dogma",
+  "beispiel": "Er weigerte sich, das alte Dogma unkritisch zu übernehmen.",
+  "beispielTr": "Eski dogmayı sorgusuzca benimsemeyi reddetti.",
+  "beispielEn": "He refused to accept the old dogma uncritically."
+ },
+ {
+  "id": 7020,
+  "tr": "ortodoksi",
+  "en": "orthodoxy",
+  "beispiel": "Sein Vater hielt streng an der alten Orthodoxie fest.",
+  "beispielTr": "Babası eski ortodoksiye sıkı sıkıya bağlıydı.",
+  "beispielEn": "His father held strictly to the old orthodoxy."
+ },
+ {
+  "id": 7021,
+  "tr": "sapkınlık",
+  "en": "heresy",
+  "beispiel": "Seine Thesen wurden damals als Häresie verurteilt.",
+  "beispielTr": "Tezleri o dönemde sapkınlık olarak mahkûm edildi.",
+  "beispielEn": "His theses were condemned as heresy at the time."
+ },
+ {
+  "id": 7022,
+  "tr": "vahiy",
+  "en": "revelation",
+  "beispiel": "Der Prophet empfing die Offenbarung in einer Höhle.",
+  "beispielTr": "Peygamber vahyi bir mağarada aldı.",
+  "beispielEn": "The prophet received the revelation in a cave."
+ },
+ {
+  "id": 7023,
+  "tr": "aşkınlık",
+  "en": "transcendence",
+  "beispiel": "Der Philosoph sprach zwei Stunden über Transzendenz.",
+  "beispielTr": "Filozof iki saat boyunca aşkınlık üzerine konuştu.",
+  "beispielEn": "The philosopher spoke about transcendence for two hours."
+ },
+ {
+  "id": 7024,
+  "tr": "öte dünya",
+  "en": "afterlife",
+  "beispiel": "Meine Großmutter glaubt fest an das Jenseits.",
+  "beispielTr": "Büyükannem öte dünyaya kesinlikle inanıyor.",
+  "beispielEn": "My grandmother firmly believes in an afterlife."
+ },
+ {
+  "id": 7025,
+  "tr": "kurtuluş",
+  "en": "salvation",
+  "beispiel": "Der Priester versprach den Gläubigen Erlösung.",
+  "beispielTr": "Rahip, inananlara kurtuluş vaat etti.",
+  "beispielEn": "The priest promised the faithful salvation."
+ },
+ {
+  "id": 7026,
+  "tr": "lütuf",
+  "en": "grace",
+  "beispiel": "Sie führte ihr Überleben auf göttliche Gnade zurück.",
+  "beispielTr": "Hayatta kalmasını ilahi lütfa bağladı.",
+  "beispielEn": "She attributed her survival to divine grace."
+ },
+ {
+  "id": 7027,
+  "tr": "tövbe",
+  "en": "penance",
+  "beispiel": "Der Mönch tat wochenlang Buße für seinen Fehler.",
+  "beispielTr": "Keşiş, hatası için haftalarca tövbe etti.",
+  "beispielEn": "The monk did penance for weeks for his mistake."
+ },
+ {
+  "id": 7028,
+  "tr": "çilecilik",
+  "en": "asceticism",
+  "beispiel": "Er lebte jahrelang in strenger Askese.",
+  "beispielTr": "Yıllarca katı bir çilecilik içinde yaşadı.",
+  "beispielEn": "He lived in strict asceticism for years."
+ },
+ {
+  "id": 7029,
+  "tr": "mistisizm",
+  "en": "mysticism",
+  "beispiel": "Sie schrieb ihre Doktorarbeit über mittelalterliche Mystik.",
+  "beispielTr": "Doktora tezini ortaçağ mistisizmi üzerine yazdı.",
+  "beispielEn": "She wrote her dissertation on medieval mysticism."
+ },
+ {
+  "id": 7030,
+  "tr": "sakrament",
+  "en": "sacrament",
+  "beispiel": "Das Paar empfing das Sakrament der Ehe.",
+  "beispielTr": "Çift, evlilik sakramentini aldı.",
+  "beispielEn": "The couple received the sacrament of marriage."
+ },
+ {
+  "id": 7031,
+  "tr": "ayin düzeni",
+  "en": "liturgy",
+  "beispiel": "Der neue Pfarrer änderte die Liturgie behutsam.",
+  "beispielTr": "Yeni papaz ayin düzenini ölçülü biçimde değiştirdi.",
+  "beispielEn": "The new pastor cautiously changed the liturgy."
+ },
+ {
+  "id": 7032,
+  "tr": "vaaz",
+  "en": "sermon",
+  "beispiel": "Die Predigt am Sonntag dauerte fast eine Stunde.",
+  "beispielTr": "Pazar günkü vaaz neredeyse bir saat sürdü.",
+  "beispielEn": "Sunday's sermon lasted almost an hour."
+ },
+ {
+  "id": 7033,
+  "tr": "manevi rehberlik",
+  "en": "pastoral care",
+  "beispiel": "Im Krankenhaus arbeitet sie seit Jahren in der Seelsorge.",
+  "beispielTr": "Hastanede yıllardır manevi rehberlik alanında çalışıyor.",
+  "beispielEn": "She has worked in pastoral care at the hospital for years."
+ },
+ {
+  "id": 7034,
+  "tr": "din adamları",
+  "en": "clergy",
+  "beispiel": "Die Geistlichkeit verlor im Zuge der Modernisierung erheblich an Autorität.",
+  "beispielTr": "Din adamları, modernleşme sürecinde otoritelerini büyük ölçüde yitirdi.",
+  "beispielEn": "The clergy lost much of its authority through modernization."
+ },
+ {
+  "id": 7035,
+  "tr": "ruhban sınıfı",
+  "en": "clergy",
+  "beispiel": "Der Klerus wehrte sich lange gegen jede staatliche Aufsicht.",
+  "beispielTr": "Ruhban sınıfı uzun süre her türlü devlet denetimine direndi.",
+  "beispielEn": "The clergy long resisted any state supervision."
+ },
+ {
+  "id": 7036,
+  "tr": "hac yolculuğu",
+  "en": "pilgrimage",
+  "beispiel": "Jedes Frühjahr brechen Tausende zu einer Wallfahrt auf.",
+  "beispielTr": "Her ilkbaharda binlerce kişi hac yolculuğuna çıkar.",
+  "beispielEn": "Every spring thousands set out on a pilgrimage."
+ },
+ {
+  "id": 7037,
+  "tr": "oruç dönemi",
+  "en": "fasting period",
+  "beispiel": "Während der Fastenzeit isst er kein Fleisch.",
+  "beispielTr": "Oruç döneminde et yemiyor.",
+  "beispielEn": "During the fasting period he eats no meat."
+ },
+ {
+  "id": 7038,
+  "tr": "kiliseden ayrılma",
+  "en": "leaving the church",
+  "beispiel": "Nach dem Skandal erklärte sie ihren Kirchenaustritt.",
+  "beispielTr": "Skandaldan sonra kiliseden ayrıldığını açıkladı.",
+  "beispielEn": "After the scandal she announced her departure from the church."
+ },
+ {
+  "id": 7039,
+  "tr": "tefsir",
+  "en": "exegesis",
+  "beispiel": "Seine Exegese weicht von der herrschenden Lesart ab.",
+  "beispielTr": "Onun tefsiri, yerleşik okumadan ayrılıyor.",
+  "beispielEn": "His exegesis departs from the prevailing reading."
+ },
+ {
+  "id": 7040,
+  "tr": "köktencilik",
+  "en": "fundamentalism",
+  "beispiel": "Der Autor warnt seit Jahren vor religiösem Fundamentalismus.",
+  "beispielTr": "Yazar yıllardır dinî köktenciliğe karşı uyarıyor.",
+  "beispielEn": "The author has been warning about religious fundamentalism for years."
+ },
+ {
+  "id": 7041,
+  "tr": "batıl inanç",
+  "en": "superstition",
+  "beispiel": "Ihre Angst vor schwarzen Katzen ist reiner Aberglaube.",
+  "beispielTr": "Kara kedilerden korkması tam bir batıl inanç.",
+  "beispielEn": "Her fear of black cats is pure superstition."
+ },
+ {
+  "id": 7042,
+  "tr": "maneviyat",
+  "en": "spirituality",
+  "beispiel": "Nach der Krankheit entdeckte er seine Spiritualität neu.",
+  "beispielTr": "Hastalıktan sonra maneviyatını yeniden keşfetti.",
+  "beispielEn": "After the illness he rediscovered his spirituality."
+ },
+ {
+  "id": 7043,
+  "tr": "dinî topluluk",
+  "en": "religious community",
+  "beispiel": "Der Staat behandelt alle Religionsgemeinschaften rechtlich gleich.",
+  "beispielTr": "Devlet, bütün dinî toplulukları hukuken eşit sayar.",
+  "beispielEn": "The state treats all religious communities equally by law."
+ },
+ {
+  "id": 7044,
+  "tr": "agnostisizm",
+  "en": "agnosticism",
+  "beispiel": "Nach langem Zweifeln landete er beim Agnostizismus.",
+  "beispielTr": "Uzun tereddütlerin ardından agnostisizme vardı.",
+  "beispielEn": "After long doubts he ended up with agnosticism."
+ },
+ {
+  "id": 7045,
+  "tr": "yaratılış",
+  "en": "creation",
+  "beispiel": "Das Fresko zeigt die Schöpfung der Welt.",
+  "beispielTr": "Fresk, dünyanın yaratılışını gösteriyor.",
+  "beispielEn": "The fresco depicts the creation of the world."
+ },
+ {
+  "id": 7046,
+  "tr": "ilahi takdir",
+  "en": "providence",
+  "beispiel": "Nach dem Unfall sprach sie von der Vorsehung.",
+  "beispielTr": "Kazadan sonra ilahi takdirden söz etti.",
+  "beispielEn": "After the accident she spoke of providence."
+ },
+ {
+  "id": 7047,
+  "tr": "kutsal emanet",
+  "en": "relic",
+  "beispiel": "Die Reliquie zog jahrhundertelang Pilger aus ganz Europa an.",
+  "beispielTr": "Kutsal emanet, yüzyıllarca Avrupa'nın her yerinden hacı çekti.",
+  "beispielEn": "For centuries the relic drew pilgrims from all over Europe."
+ },
+ {
+  "id": 7048,
+  "tr": "ekümenizm",
+  "en": "ecumenism",
+  "beispiel": "Er engagiert sich seit Jahren in der Ökumene.",
+  "beispielTr": "Yıllardır ekümenizm çalışmalarında etkin biçimde yer alıyor.",
+  "beispielEn": "He has been active in ecumenism for years."
+ },
+ {
+  "id": 7049,
+  "tr": "huşu",
+  "en": "awe",
+  "beispiel": "Er betrat den alten Betsaal mit sichtbarer Ehrfurcht.",
+  "beispielTr": "Eski ibadet salonuna gözle görülür bir huşuyla girdi.",
+  "beispielEn": "He entered the old prayer hall with visible awe."
+ },
+ {
+  "id": 7050,
+  "tr": "adak",
+  "en": "vow",
+  "beispiel": "Er legte ein Gelübde ab, das ihn lebenslang band.",
+  "beispielTr": "Kendisini ömür boyu bağlayan bir adak adadı.",
+  "beispielEn": "He made a vow that bound him for life."
+ },
+ {
+  "id": 7051,
+  "tr": "büyübozumu",
+  "en": "disenchantment",
+  "beispiel": "Max Weber nannte diesen Prozess die Entzauberung der Welt.",
+  "beispielTr": "Max Weber bu süreci dünyanın büyübozumu olarak adlandırdı.",
+  "beispielEn": "Max Weber called this process the disenchantment of the world."
+ },
+ {
+  "id": 7052,
+  "tr": "inanç krizi",
+  "en": "crisis of faith",
+  "beispiel": "Nach dem Tod seiner Frau geriet er in eine Glaubenskrise.",
+  "beispielTr": "Karısının ölümünden sonra bir inanç krizine düştü.",
+  "beispielEn": "After his wife's death he fell into a crisis of faith."
+ }
+]

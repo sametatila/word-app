@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7303,
+    "tr": "varlık",
+    "en": "asset",
+    "beispiel": "In unsicheren Zeiten flüchten Anleger in reale Vermögenswerte.",
+    "beispielTr": "Belirsiz zamanlarda yatırımcılar reel varlıklara sığınıyor.",
+    "beispielEn": "In uncertain times investors flee into real assets."
+  },
+  {
+    "id": 7304,
+    "tr": "reel ekonomi",
+    "en": "real economy",
+    "beispiel": "Die Krise sprang schnell vom Finanzsektor auf die Realwirtschaft über.",
+    "beispielTr": "Kriz finans sektöründen hızla reel ekonomiye sıçradı.",
+    "beispielEn": "The crisis quickly spread from finance to the real economy."
+  },
+  {
+    "id": 7305,
+    "tr": "ekonomik daralma",
+    "en": "downturn",
+    "beispiel": "Der Abschwung traf die exportorientierte Industrie besonders hart.",
+    "beispielTr": "Ekonomik daralma ihracata dayalı sanayiyi özellikle sert vurdu.",
+    "beispielEn": "The downturn hit export-oriented industry especially hard."
+  },
+  {
+    "id": 7306,
+    "tr": "işsizlik oranı",
+    "en": "unemployment rate",
+    "beispiel": "Trotz des Wachstums sank die Arbeitslosenquote nur geringfügig.",
+    "beispielTr": "Büyümeye rağmen işsizlik oranı yalnızca çok az geriledi.",
+    "beispielEn": "Despite the growth the unemployment rate fell only slightly."
+  },
+  {
+    "id": 7307,
+    "tr": "toplu sözleşme",
+    "en": "wage settlement",
+    "beispiel": "Der Tarifabschluss sieht Lohnerhöhungen in zwei Stufen vor.",
+    "beispielTr": "Toplu sözleşme iki aşamalı ücret artışı öngörüyor.",
+    "beispielEn": "The wage settlement provides for pay rises in two steps."
+  },
+  {
+    "id": 7308,
+    "tr": "hayat pahalılığı",
+    "en": "inflation",
+    "beispiel": "Vor allem Mieten und Lebensmittel treiben die Teuerung derzeit an.",
+    "beispielTr": "Hayat pahalılığını şu sıralar başta kiralar ve gıda körüklüyor.",
+    "beispielEn": "Rents and food are the main drivers of inflation now."
+  },
+  {
+    "id": 7309,
+    "tr": "vergilendirmek",
+    "en": "to tax",
+    "beispiel": "Kapitalerträge werden in vielen Ländern niedriger besteuert als Arbeitseinkommen.",
+    "beispielTr": "Sermaye gelirleri birçok ülkede emek gelirlerinden daha düşük vergilendiriliyor.",
+    "beispielEn": "In many countries capital gains are taxed lower than wages."
+  },
+  {
+    "id": 7310,
+    "tr": "frenlemek",
+    "en": "to curb",
+    "beispiel": "Höhere Zinsen dämpfen den Konsum der privaten Haushalte.",
+    "beispielTr": "Yüksek faizler hanelerin tüketimini frenliyor.",
+    "beispielEn": "Higher interest rates curb private household spending."
+  },
+  {
+    "id": 7311,
+    "tr": "faiz işletmek",
+    "en": "to pay interest",
+    "beispiel": "Das Guthaben wird mit knapp zwei Prozent jährlich verzinst.",
+    "beispielTr": "Mevduata yıllık yüzde ikiye yakın faiz işletiliyor.",
+    "beispielEn": "Interest of just under two percent a year is paid on the balance."
+  },
+  {
+    "id": 7312,
+    "tr": "istiflemek",
+    "en": "to hoard",
+    "beispiel": "Aus Angst vor der Krise horteten viele Haushalte Bargeld.",
+    "beispielTr": "Kriz korkusuyla birçok hane nakit istifledi.",
+    "beispielEn": "Fearing the crisis many households hoarded cash."
+  },
+  {
+    "id": 7313,
+    "tr": "kâr dağıtmak",
+    "en": "to pay out",
+    "beispiel": "Der Vorstand will einen größeren Teil des Gewinns ausschütten.",
+    "beispielTr": "Yönetim kurulu kârın daha büyük bölümünü dağıtmak istiyor.",
+    "beispielEn": "The board wants to pay out a larger share of profits."
+  },
+  {
+    "id": 7314,
+    "tr": "çarpıtmak",
+    "en": "to distort",
+    "beispiel": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren.",
+    "beispielTr": "Devlet müdahaleleri rekabeti ciddi biçimde çarpıtabilir.",
+    "beispielEn": "State intervention can seriously distort competition."
+  },
+  {
+    "id": 7315,
+    "tr": "parasal",
+    "en": "monetary",
+    "beispiel": "Rein monetäre Erklärungen greifen bei dieser Krise deutlich zu kurz.",
+    "beispielTr": "Salt parasal açıklamalar bu krizde açıkça yetersiz kalıyor.",
+    "beispielEn": "Purely monetary explanations clearly fall short in this crisis."
+  },
+  {
+    "id": 7316,
+    "tr": "piyasa ekonomisine dayalı",
+    "en": "market-based",
+    "beispiel": "Er verteidigt marktwirtschaftliche Lösungen auch im Gesundheitswesen.",
+    "beispielTr": "Sağlık alanında da piyasa ekonomisine dayalı çözümleri savunuyor.",
+    "beispielEn": "He defends market-based solutions in healthcare too."
+  },
+  {
+    "id": 7317,
+    "tr": "oynak",
+    "en": "volatile",
+    "beispiel": "Die Rohstoffmärkte blieben über das ganze Jahr hinweg volatil.",
+    "beispielTr": "Emtia piyasaları yıl boyunca oynak kaldı.",
+    "beispielEn": "Commodity markets stayed volatile all year long."
+  },
+  {
+    "id": 7318,
+    "tr": "konjonktür karşıtı",
+    "en": "countercyclical",
+    "beispiel": "In der Krise investierte die Regierung bewusst antizyklisch.",
+    "beispielTr": "Krizde hükümet bilinçli olarak konjonktür karşıtı yatırım yaptı.",
+    "beispielEn": "During the crisis the government deliberately invested countercyclically."
+  },
+  {
+    "id": 7319,
+    "tr": "ödeme gücü olan",
+    "en": "solvent",
+    "beispiel": "Nur solvente Kunden erhalten von der Bank größere Kredite.",
+    "beispielTr": "Bankadan büyük kredileri yalnızca ödeme gücü olan müşteriler alır.",
+    "beispielEn": "Only solvent customers get larger loans from the bank."
+  },
+  {
+    "id": 7320,
+    "tr": "nominal",
+    "en": "in nominal terms",
+    "beispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum.",
+    "beispielTr": "Ücretler nominal olarak belirgin arttı, reel olarak neredeyse hiç.",
+    "beispielEn": "Wages rose noticeably in nominal terms but hardly in real ones."
+  },
+  {
+    "id": 7321,
+    "tr": "genişletici",
+    "en": "expansionary",
+    "beispiel": "Eine expansive Geldpolitik verbilligt Kredite für Unternehmen und Haushalte.",
+    "beispielTr": "Genişletici para politikası şirketler ve haneler için kredileri ucuzlatır.",
+    "beispielEn": "Expansionary monetary policy makes loans cheaper for firms and households."
+  },
+  {
+    "id": 7322,
+    "tr": "sıkı",
+    "en": "restrictive",
+    "beispiel": "Die Zentralbank verfolgt seit Monaten einen ausgesprochen restriktiven Kurs.",
+    "beispielTr": "Merkez bankası aylardır belirgin biçimde sıkı bir çizgi izliyor.",
+    "beispielEn": "The central bank has followed a markedly restrictive course for months."
+  },
+  {
+    "id": 7323,
+    "tr": "aşırı borçlu",
+    "en": "over-indebted",
+    "beispiel": "Überschuldete Haushalte finden nur schwer aus der Zinsfalle heraus.",
+    "beispielTr": "Aşırı borçlu haneler faiz tuzağından zor kurtuluyor.",
+    "beispielEn": "Over-indebted households find it hard to escape the interest trap."
+  },
+  {
+    "id": 7324,
+    "tr": "kayırmacılık",
+    "en": "nepotism",
+    "beispiel": "Bei der Vergabe der Posten herrschte offenkundig Vetternwirtschaft.",
+    "beispielTr": "Kadroların dağıtımında açıkça kayırmacılık hüküm sürüyordu.",
+    "beispielEn": "Nepotism clearly ruled when the posts were handed out."
+  },
+  {
+    "id": 7325,
+    "tr": "ihbarcı",
+    "en": "whistleblower",
+    "beispiel": "Der Hinweisgeber machte die Bestechungszahlungen der Tochterfirma öffentlich.",
+    "beispielTr": "İhbarcı, yan şirketin rüşvet ödemelerini kamuoyuna açıkladı.",
+    "beispielEn": "The whistleblower made the subsidiary's bribe payments public."
+  },
+  {
+    "id": 7326,
+    "tr": "usulsüzlük",
+    "en": "misconduct",
+    "beispiel": "Systematisches Fehlverhalten im Einkauf blieb jahrelang unentdeckt.",
+    "beispielTr": "Satın almadaki sistematik usulsüzlük yıllarca fark edilmedi.",
+    "beispielEn": "Systematic misconduct in purchasing went unnoticed for years."
+  },
+  {
+    "id": 7327,
+    "tr": "rüşvet",
+    "en": "bribe",
+    "beispiel": "Über Beraterverträge flossen jahrelang Schmiergelder an lokale Beamte.",
+    "beispielTr": "Danışmanlık sözleşmeleri üzerinden yıllarca yerel memurlara rüşvet aktı.",
+    "beispielEn": "Bribes flowed to local officials through consulting contracts for years."
+  },
+  {
+    "id": 7328,
+    "tr": "çıkar sağlama",
+    "en": "acceptance of benefits",
+    "beispiel": "Gegen den Abteilungsleiter wird wegen Vorteilsnahme im Amt ermittelt.",
+    "beispielTr": "Bölüm müdürü hakkında görevde çıkar sağlama nedeniyle soruşturma yürütülüyor.",
+    "beispielEn": "The department head is under investigation for accepting benefits in office."
+  },
+  {
+    "id": 7329,
+    "tr": "yetki suistimali",
+    "en": "abuse of power",
+    "beispiel": "Die Untersuchung ergab klare Hinweise auf Machtmissbrauch in der Personalabteilung.",
+    "beispielTr": "İnceleme, insan kaynaklarında yetki suistimaline dair açık bulgular ortaya koydu.",
+    "beispielEn": "The inquiry found clear signs of abuse of power in the HR department."
+  },
+  {
+    "id": 7330,
+    "tr": "çıkar ağı",
+    "en": "old boys' network",
+    "beispiel": "Alte Seilschaften bestimmten weiterhin, wer in den Aufsichtsrat einzog.",
+    "beispielTr": "Denetim kuruluna kimin gireceğini hâlâ eski çıkar ağları belirliyordu.",
+    "beispielEn": "Old boys' networks still decided who joined the supervisory board."
+  },
+  {
+    "id": 7331,
+    "tr": "şeffaflık eksikliği",
+    "en": "lack of transparency",
+    "beispiel": "Die Intransparenz der Zahlungsströme erschwerte jede unabhängige Prüfung erheblich.",
+    "beispielTr": "Ödeme akışlarındaki şeffaflık eksikliği her bağımsız denetimi çok zorlaştırdı.",
+    "beispielEn": "The lack of transparency in payments hindered every independent audit."
+  },
+  {
+    "id": 7332,
+    "tr": "beyan",
+    "en": "disclosure",
+    "beispiel": "Die vollständige Offenlegung der Nebeneinkünfte ist inzwischen verpflichtend.",
+    "beispielTr": "Ek gelirlerin eksiksiz beyanı artık zorunlu hâle geldi.",
+    "beispielEn": "Full disclosure of side income is now mandatory."
+  },
+  {
+    "id": 7333,
+    "tr": "sürdürülebilirlik raporu",
+    "en": "sustainability report",
+    "beispiel": "Der Nachhaltigkeitsbericht nennt beeindruckende Zahlen ohne überprüfbare Grundlage.",
+    "beispielTr": "Sürdürülebilirlik raporu doğrulanabilir dayanağı olmayan etkileyici rakamlar veriyor.",
+    "beispielEn": "The sustainability report cites impressive figures without any verifiable basis."
+  },
+  {
+    "id": 7334,
+    "tr": "yeşil aklama",
+    "en": "greenwashing",
+    "beispiel": "Kritiker werfen dem Konzern reine Grünfärberei ohne echte Emissionsminderung vor.",
+    "beispielTr": "Eleştirmenler holdingi gerçek emisyon azaltımı olmadan yeşil aklama yapmakla suçluyor.",
+    "beispielEn": "Critics accuse the group of pure greenwashing without real emission cuts."
+  },
+  {
+    "id": 7335,
+    "tr": "etiket aldatmacası",
+    "en": "false labeling",
+    "beispiel": "Das angeblich klimaneutrale Produkt entpuppte sich als reiner Etikettenschwindel.",
+    "beispielTr": "İklim nötr denilen ürün düpedüz bir etiket aldatmacası çıktı.",
+    "beispielEn": "The supposedly climate-neutral product was pure false labeling."
+  },
+  {
+    "id": 7336,
+    "tr": "çifte standart",
+    "en": "double standard",
+    "beispiel": "Wer Menschenrechte predigt und Zulieferer presst, betreibt Doppelmoral.",
+    "beispielTr": "İnsan haklarından dem vurup tedarikçiyi ezen, çifte standart uygular.",
+    "beispielEn": "Preaching human rights while squeezing suppliers is a double standard."
+  },
+  {
+    "id": 7337,
+    "tr": "itibar riski",
+    "en": "reputational risk",
+    "beispiel": "Das Reputationsrisiko wog am Ende schwerer als der erwartete Gewinn.",
+    "beispielTr": "Sonunda itibar riski beklenen kârdan daha ağır bastı.",
+    "beispielEn": "In the end the reputational risk outweighed the expected profit."
+  },
+  {
+    "id": 7338,
+    "tr": "gri alan",
+    "en": "gray area",
+    "beispiel": "Solche Geschenke bewegen sich in einer rechtlichen Grauzone.",
+    "beispielTr": "Bu tür hediyeler hukuki bir gri alanda duruyor.",
+    "beispielEn": "Such gifts fall into a legal gray area."
+  },
+  {
+    "id": 7339,
+    "tr": "sorumluluk bilinci",
+    "en": "sense of responsibility",
+    "beispiel": "Ihm fehlte jedes Verantwortungsbewusstsein für die Folgen seiner Entscheidungen.",
+    "beispielTr": "Kararlarının sonuçlarına karşı hiç sorumluluk bilinci yoktu.",
+    "beispielEn": "He had no sense of responsibility for the consequences of his decisions."
+  },
+  {
+    "id": 7340,
+    "tr": "içeriden ticaret",
+    "en": "insider trading",
+    "beispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung.",
+    "beispielTr": "Denetim kurumu, devralma duyurusu öncesindeki olası içeriden ticareti inceliyor.",
+    "beispielEn": "The regulator is examining possible insider trading before the takeover announcement."
+  },
+  {
+    "id": 7341,
+    "tr": "bilanço tahrifatı",
+    "en": "accounting fraud",
+    "beispiel": "Die jahrelange Bilanzfälschung flog erst durch einen internen Hinweis auf.",
+    "beispielTr": "Yıllardır süren bilanço tahrifatı ancak bir iç ihbarla ortaya çıktı.",
+    "beispielEn": "The years of accounting fraud came out only through an internal tip."
+  },
+  {
+    "id": 7342,
+    "tr": "zimmete geçirme",
+    "en": "embezzlement",
+    "beispiel": "Wegen Veruntreuung von Fördermitteln wurde die Geschäftsführerin entlassen.",
+    "beispielTr": "Teşvik fonlarını zimmete geçirdiği için genel müdür görevden alındı.",
+    "beispielEn": "The managing director was dismissed for embezzling public subsidies."
+  },
+  {
+    "id": 7343,
+    "tr": "kara para aklama",
+    "en": "money laundering",
+    "beispiel": "Die Bank verschärfte ihre Kontrollen gegen Geldwäsche erheblich.",
+    "beispielTr": "Banka kara para aklamaya karşı denetimlerini hayli sıkılaştırdı.",
+    "beispielEn": "The bank sharply tightened its controls against money laundering."
+  },
+  {
+    "id": 7344,
+    "tr": "paydaş",
+    "en": "stakeholder",
+    "beispiel": "Die Strategie berücksichtigt die Erwartungen aller relevanten Anspruchsgruppen.",
+    "beispielTr": "Strateji, ilgili bütün paydaşların beklentilerini dikkate alıyor.",
+    "beispielEn": "The strategy takes the expectations of all relevant stakeholders into account."
+  },
+  {
+    "id": 7345,
+    "tr": "haklı çıkarma",
+    "en": "justification",
+    "beispiel": "Der Wettbewerbsdruck taugt nicht als Rechtfertigung für gefälschte Prüfberichte.",
+    "beispielTr": "Rekabet baskısı sahte denetim raporlarını haklı çıkarmaz.",
+    "beispielEn": "Competitive pressure is no justification for faked audit reports."
+  },
+  {
+    "id": 7346,
+    "tr": "bildirim birimi",
+    "en": "reporting office",
+    "beispiel": "Verdachtsfälle können anonym an die interne Meldestelle gerichtet werden.",
+    "beispielTr": "Şüpheli durumlar iç bildirim birimine isimsiz olarak iletilebilir.",
+    "beispielEn": "Suspected cases can be sent anonymously to the internal reporting office."
+  },
+  {
+    "id": 7347,
+    "tr": "yan iş",
+    "en": "side job",
+    "beispiel": "Jede bezahlte Nebentätigkeit muss dem Arbeitgeber gemeldet werden.",
+    "beispielTr": "Ücretli her yan iş işverene bildirilmek zorundadır.",
+    "beispielEn": "Every paid side job must be reported to the employer."
+  },
+  {
+    "id": 7348,
+    "tr": "karşılık",
+    "en": "something in return",
+    "beispiel": "Für die Spende wurde offenbar eine politische Gegenleistung erwartet.",
+    "beispielTr": "Bağış için görünüşe göre siyasi bir karşılık bekleniyordu.",
+    "beispielEn": "Apparently something political was expected in return for the donation."
+  },
+  {
+    "id": 7349,
+    "tr": "fiyat anlaşması",
+    "en": "price fixing",
+    "beispiel": "Die Preisabsprachen kosteten die Verbraucher jährlich Millionenbeträge.",
+    "beispielTr": "Fiyat anlaşmaları tüketicilere yılda milyonlarca euroya mal oldu.",
+    "beispielEn": "The price fixing cost consumers millions every year."
+  },
+  {
+    "id": 7350,
+    "tr": "tekel konumu",
+    "en": "monopoly position",
+    "beispiel": "Der Anbieter nutzte seine Monopolstellung zulasten kleinerer Händler aus.",
+    "beispielTr": "Sağlayıcı, tekel konumunu küçük satıcıların aleyhine kullandı.",
+    "beispielEn": "The provider exploited its monopoly position at the expense of smaller retailers."
+  },
+  {
+    "id": 7351,
+    "tr": "kılıf",
+    "en": "pretext",
+    "beispiel": "Unter dem Deckmantel der Forschung wurden Werbekampagnen finanziert.",
+    "beispielTr": "Araştırma kılıfı altında reklam kampanyaları finanse edildi.",
+    "beispielEn": "Advertising campaigns were funded under the pretext of research."
+  },
+  {
+    "id": 7352,
+    "tr": "rüşvet vermek",
+    "en": "to bribe",
+    "beispiel": "Der Vertriebsleiter soll mehrere Zollbeamte bestochen haben.",
+    "beispielTr": "Satış müdürünün birkaç gümrük memuruna rüşvet verdiği ileri sürülüyor.",
+    "beispielEn": "The sales manager allegedly bribed several customs officers."
+  }
+]

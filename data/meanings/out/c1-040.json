@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7203,
+    "tr": "modellemek",
+    "en": "to model",
+    "beispiel": "Die Forscher modellieren den Verlauf unter drei verschiedenen Szenarien.",
+    "beispielTr": "Araştırmacılar gidişatı üç farklı senaryoya göre modelliyor.",
+    "beispielEn": "The researchers model the progression under three different scenarios."
+  },
+  {
+    "id": 7204,
+    "tr": "simüle etmek",
+    "en": "to simulate",
+    "beispiel": "Das Programm simuliert die Entwicklung über einen Zeitraum von 50 Jahren.",
+    "beispielTr": "Program, gelişimi elli yıllık bir dönem boyunca simüle ediyor.",
+    "beispielEn": "The program simulates the development over a period of fifty years."
+  },
+  {
+    "id": 7205,
+    "tr": "yaklaşık olarak",
+    "en": "approximately",
+    "beispiel": "Der Verlauf lässt sich näherungsweise durch eine Gerade beschreiben.",
+    "beispielTr": "Gidişat yaklaşık olarak bir doğruyla betimlenebilir.",
+    "beispielEn": "The trend can be described approximately by a straight line."
+  },
+  {
+    "id": 7206,
+    "tr": "eğilim olarak",
+    "en": "tend to",
+    "beispiel": "Jüngere Befragte antworten tendenziell kritischer als ältere.",
+    "beispielTr": "Genç katılımcılar eğilim olarak yaşlılardan daha eleştirel yanıt veriyor.",
+    "beispielEn": "Younger respondents tend to answer more critically than older ones."
+  },
+  {
+    "id": 7207,
+    "tr": "nicel",
+    "en": "quantitative",
+    "beispiel": "Die Arbeit verbindet quantitative Verfahren mit ausführlichen Interviews.",
+    "beispielTr": "Çalışma nicel yöntemleri ayrıntılı görüşmelerle birleştiriyor.",
+    "beispielEn": "The thesis combines quantitative methods with detailed interviews."
+  },
+  {
+    "id": 7208,
+    "tr": "nitel",
+    "en": "qualitative",
+    "beispiel": "Für diese Fragestellung eignet sich ein qualitativer Zugang besser.",
+    "beispielTr": "Bu araştırma sorusu için nitel bir yaklaşım daha uygun.",
+    "beispielEn": "A qualitative approach suits this research question better."
+  },
+  {
+    "id": 7209,
+    "tr": "yöntemsel",
+    "en": "methodological",
+    "beispiel": "Die Studie weist mehrere methodische Schwächen auf.",
+    "beispielTr": "Çalışma birkaç yöntemsel zayıflık taşıyor.",
+    "beispielEn": "The study shows several methodological weaknesses."
+  },
+  {
+    "id": 7210,
+    "tr": "veri etiği",
+    "en": "data ethics",
+    "beispiel": "Die Klinik hat eine Kommission für Datenethik eingerichtet.",
+    "beispielTr": "Klinik, veri etiği için bir kurul oluşturdu.",
+    "beispielEn": "The clinic has set up a committee for data ethics."
+  },
+  {
+    "id": 7211,
+    "tr": "gözetim",
+    "en": "surveillance",
+    "beispiel": "Am Bahnhof läuft die Überwachung rund um die Uhr.",
+    "beispielTr": "Garda gözetim gece gündüz sürüyor.",
+    "beispielEn": "Surveillance at the station runs around the clock."
+  },
+  {
+    "id": 7212,
+    "tr": "veri minimizasyonu",
+    "en": "data minimization",
+    "beispiel": "Die App speichert aus Datensparsamkeit keine Standortdaten.",
+    "beispielTr": "Uygulama, veri minimizasyonu gereği konum verisi tutmuyor.",
+    "beispielEn": "For data minimization, the app stores no location data."
+  },
+  {
+    "id": 7213,
+    "tr": "anlaşılabilirlik",
+    "en": "comprehensibility",
+    "beispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen.",
+    "beispielTr": "Karmaşık modellerde tek tek kararların anlaşılabilirliği azalıyor.",
+    "beispielEn": "With complex models, the comprehensibility of individual decisions suffers."
+  },
+  {
+    "id": 7214,
+    "tr": "amaca bağlılık",
+    "en": "purpose limitation",
+    "beispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen.",
+    "beispielTr": "Amaca bağlılık, verilerin sonradan bambaşka amaçlarla işlenmesine izin vermez.",
+    "beispielEn": "Purpose limitation does not allow later analysis for entirely different aims."
+  },
+  {
+    "id": 7215,
+    "tr": "profil çıkarma",
+    "en": "profiling",
+    "beispiel": "Kommerzielle Profilbildung erfasst längst auch politische Neigungen der Nutzer.",
+    "beispielTr": "Ticari profil çıkarma çoktan kullanıcıların siyasi eğilimlerini de kapsıyor.",
+    "beispielEn": "Commercial profiling has long covered users' political leanings as well."
+  },
+  {
+    "id": 7216,
+    "tr": "örüntü tanıma",
+    "en": "pattern recognition",
+    "beispiel": "Die Software nutzt Mustererkennung, um gefälschte Rechnungen zu finden.",
+    "beispielTr": "Yazılım, sahte faturaları bulmak için örüntü tanıma kullanıyor.",
+    "beispielEn": "The software uses pattern recognition to find forged invoices."
+  },
+  {
+    "id": 7217,
+    "tr": "öğrenme yöntemi",
+    "en": "learning method",
+    "beispiel": "Das Labor testet ein neues Lernverfahren an alten Röntgenbildern.",
+    "beispielTr": "Laboratuvar yeni bir öğrenme yöntemini eski röntgen görüntülerinde deniyor.",
+    "beispielEn": "The lab is testing a new learning method on old X-rays."
+  },
+  {
+    "id": 7218,
+    "tr": "eğitim verileri",
+    "en": "training data",
+    "beispiel": "Woher die Trainingsdaten stammen, bleibt bei vielen Anbietern unklar.",
+    "beispielTr": "Eğitim verilerinin nereden geldiği birçok sağlayıcıda belirsiz kalıyor.",
+    "beispielEn": "Where the training data come from stays unclear with many providers."
+  },
+  {
+    "id": 7219,
+    "tr": "düzenleme",
+    "en": "regulation",
+    "beispiel": "Die EU plant eine strengere Regulierung von Kryptowährungen.",
+    "beispielTr": "AB, kripto paralar için daha sıkı bir düzenleme planlıyor.",
+    "beispielEn": "The EU plans a stricter regulation of cryptocurrencies."
+  },
+  {
+    "id": 7220,
+    "tr": "katma değer",
+    "en": "value creation",
+    "beispiel": "Die eigentliche Wertschöpfung verlagert sich von der Hardware zur Software.",
+    "beispielTr": "Asıl katma değer donanımdan yazılıma kayıyor.",
+    "beispielEn": "The real value creation is shifting from hardware to software."
+  },
+  {
+    "id": 7221,
+    "tr": "istihdam yapısı",
+    "en": "employment structure",
+    "beispiel": "Die Beschäftigungsstruktur verschiebt sich zugunsten hochqualifizierter Tätigkeiten.",
+    "beispielTr": "İstihdam yapısı yüksek nitelikli işler lehine kayıyor.",
+    "beispielEn": "The employment structure is shifting toward highly qualified jobs."
+  },
+  {
+    "id": 7222,
+    "tr": "nesnel zorunluluk",
+    "en": "practical constraint",
+    "beispiel": "Technischer Fortschritt wird oft als Sachzwang dargestellt, nicht als politische Wahl.",
+    "beispielTr": "Teknik ilerleme çoğu kez siyasi bir tercih değil, nesnel bir zorunluluk gibi sunuluyor.",
+    "beispielEn": "Technical progress is often presented as a practical constraint, not a political choice."
+  },
+  {
+    "id": 7223,
+    "tr": "teknoloji etki değerlendirmesi",
+    "en": "technology assessment",
+    "beispiel": "Eine ernsthafte Technikfolgenabschätzung müsste vor der Markteinführung stattfinden.",
+    "beispielTr": "Ciddi bir teknoloji etki değerlendirmesi piyasaya sürülmeden önce yapılmalıydı.",
+    "beispielEn": "A serious technology assessment would have to happen before the market launch."
+  },
+  {
+    "id": 7224,
+    "tr": "ilerleme inancı",
+    "en": "belief in progress",
+    "beispiel": "Ein ungebrochener Fortschrittsglaube verstellt den Blick auf die Nebenwirkungen.",
+    "beispielTr": "Sarsılmamış bir ilerleme inancı, yan etkileri görmeyi engelliyor.",
+    "beispielEn": "An unbroken belief in progress blocks the view of the side effects."
+  },
+  {
+    "id": 7225,
+    "tr": "teknoloji şüpheciliği",
+    "en": "technology skepticism",
+    "beispiel": "Ihre Technikskepsis beruht auf Erfahrung, nicht auf bloßer Angst.",
+    "beispielTr": "Onun teknoloji şüpheciliği korkuya değil, deneyime dayanıyor.",
+    "beispielEn": "Her technology skepticism rests on experience, not on mere fear."
+  },
+  {
+    "id": 7226,
+    "tr": "sorumluluğun dağılması",
+    "en": "diffusion of responsibility",
+    "beispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern.",
+    "beispielTr": "Dağıtık sistemlerde geliştiricilerle işletmeciler arasında sorumluluğun dağılması tehlikesi var.",
+    "beispielEn": "In distributed systems, responsibility risks diffusing between developers and operators."
+  },
+  {
+    "id": 7227,
+    "tr": "saldırı yüzeyi",
+    "en": "attack surface",
+    "beispiel": "Jede zusätzliche Vernetzung vergrößert die Angriffsfläche des gesamten Systems.",
+    "beispielTr": "Her ek bağlantı, sistemin tümünün saldırı yüzeyini büyütüyor.",
+    "beispielEn": "Every additional connection enlarges the attack surface of the whole system."
+  },
+  {
+    "id": 7228,
+    "tr": "erişim yetkisi",
+    "en": "access right",
+    "beispiel": "Zu weit gefasste Zugriffsrechte sind eine häufige Ursache für Datenpannen.",
+    "beispielTr": "Fazla geniş tanımlanmış erişim yetkileri veri sızıntılarının sık görülen sebebidir.",
+    "beispielEn": "Overly broad access rights are a common cause of data breaches."
+  },
+  {
+    "id": 7229,
+    "tr": "hesaplanabilirlik",
+    "en": "calculability",
+    "beispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare Grenzen.",
+    "beispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin sınırları var.",
+    "beispielEn": "The calculability of human behavior has clear limits."
+  },
+  {
+    "id": 7230,
+    "tr": "sayısallaştırma",
+    "en": "quantification",
+    "beispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
+    "beispielTr": "Eğitimin sayısallaştırılması, zor ölçülen şeyleri görmezden geliyor.",
+    "beispielEn": "The quantification of education ignores what is hard to measure."
+  },
+  {
+    "id": 7231,
+    "tr": "gönüllü taahhüt",
+    "en": "voluntary commitment",
+    "beispiel": "Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze.",
+    "beispielTr": "Sektörün gönüllü taahhütleri bağlayıcı yasaların yerini tutmaz.",
+    "beispielEn": "The industry's voluntary commitments are no substitute for binding laws."
+  },
+  {
+    "id": 7232,
+    "tr": "denetim kurumu",
+    "en": "supervisory authority",
+    "beispiel": "Der Aufsichtsbehörde fehlt es an Fachpersonal und technischer Ausstattung.",
+    "beispielTr": "Denetim kurumunun uzman personeli ve teknik donanımı yetersiz.",
+    "beispielEn": "The supervisory authority lacks specialist staff and technical equipment."
+  },
+  {
+    "id": 7233,
+    "tr": "gizlice gözetlemek",
+    "en": "to spy on",
+    "beispiel": "Der Dienst hat jahrelang die Kommunikation befreundeter Regierungen ausgespäht.",
+    "beispielTr": "İstihbarat servisi yıllarca dost hükümetlerin iletişimini gizlice gözetledi.",
+    "beispielEn": "The agency spied on friendly governments' communication for years."
+  },
+  {
+    "id": 7234,
+    "tr": "kayda geçirmek",
+    "en": "to log",
+    "beispiel": "Jeder Zugriff auf die Datenbank wird lückenlos protokolliert.",
+    "beispielTr": "Veri tabanına yapılan her erişim eksiksiz biçimde kayda geçiriliyor.",
+    "beispielEn": "Every access to the database is logged without gaps."
+  },
+  {
+    "id": 7235,
+    "tr": "yeniden üretmek",
+    "en": "to replicate",
+    "beispiel": "Maschinen bilden sprachliche Muster nach, ohne sie zu verstehen.",
+    "beispielTr": "Makineler dilsel kalıpları anlamadan yeniden üretiyor.",
+    "beispielEn": "Machines replicate linguistic patterns without understanding them."
+  },
+  {
+    "id": 7236,
+    "tr": "ölçeklendirmek",
+    "en": "to scale",
+    "beispiel": "Das Start-up will sein Geschäftsmodell international skalieren.",
+    "beispielTr": "Girişim, iş modelini uluslararası düzeyde ölçeklendirmek istiyor.",
+    "beispielEn": "The start-up wants to scale its business model internationally."
+  },
+  {
+    "id": 7237,
+    "tr": "etkisiz kılmak",
+    "en": "to nullify",
+    "beispiel": "Technische Voreinstellungen hebeln bestehende Schutzrechte faktisch aus.",
+    "beispielTr": "Teknik ön ayarlar mevcut koruma haklarını fiilen etkisiz kılıyor.",
+    "beispielEn": "Technical default settings effectively nullify existing protection rights."
+  },
+  {
+    "id": 7238,
+    "tr": "varsaymak",
+    "en": "to presuppose",
+    "beispiel": "Diese Argumentation setzt voraus, dass Daten neutral sind.",
+    "beispielTr": "Bu akıl yürütme, verilerin tarafsız olduğunu peşinen varsayıyor.",
+    "beispielEn": "This line of reasoning presupposes that data are neutral."
+  },
+  {
+    "id": 7239,
+    "tr": "dizginlemek",
+    "en": "to rein in",
+    "beispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen.",
+    "beispielTr": "Yasa koyucu, platformların gücünü hukuken dizginlemeye çalışıyor.",
+    "beispielEn": "The legislator is trying to rein in the platforms' power legally."
+  },
+  {
+    "id": 7240,
+    "tr": "öğrenebilen",
+    "en": "capable of learning",
+    "beispiel": "Ein lernfähiges System verändert sein Verhalten nach der Zulassung.",
+    "beispielTr": "Öğrenebilen bir sistem, onaydan sonra davranışını değiştirir.",
+    "beispielEn": "A system capable of learning changes its behavior after approval."
+  },
+  {
+    "id": 7241,
+    "tr": "hataya açık",
+    "en": "error-prone",
+    "beispiel": "Gerade bei seltenen Fällen bleibt die Erkennung fehleranfällig.",
+    "beispielTr": "Özellikle ender durumlarda tanıma işlemi hataya açık kalıyor.",
+    "beispielEn": "Especially in rare cases the recognition stays error-prone."
+  },
+  {
+    "id": 7242,
+    "tr": "veriye dayalı",
+    "en": "data-driven",
+    "beispiel": "Datengetriebene Verwaltung verspricht Effizienz und riskiert zugleich Kontrollverluste.",
+    "beispielTr": "Veriye dayalı yönetim verimlilik vaat ederken denetim kaybı riski taşıyor.",
+    "beispielEn": "Data-driven administration promises efficiency and at the same time risks losing control."
+  },
+  {
+    "id": 7243,
+    "tr": "her yerde olan",
+    "en": "ubiquitous",
+    "beispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden.",
+    "beispielTr": "Veri toplama gündelik hayatın çoktan her yerine sindi.",
+    "beispielEn": "The collection of data has long become ubiquitous in everyday life."
+  },
+  {
+    "id": 7244,
+    "tr": "kişiye ilişkin",
+    "en": "personally identifiable",
+    "beispiel": "Auch scheinbar harmlose Angaben können personenbezogen sein.",
+    "beispielTr": "Görünüşte zararsız bilgiler de kişiye ilişkin olabilir.",
+    "beispielEn": "Even seemingly harmless details can be personally identifiable."
+  },
+  {
+    "id": 7245,
+    "tr": "zorunlu olarak",
+    "en": "necessarily",
+    "beispiel": "Mehr Rechenleistung führt nicht zwangsläufig zu besseren Entscheidungen.",
+    "beispielTr": "Daha fazla işlem gücü zorunlu olarak daha iyi kararlar getirmez.",
+    "beispielEn": "More computing power does not necessarily lead to better decisions."
+  },
+  {
+    "id": 7246,
+    "tr": "yetki",
+    "en": "authority",
+    "beispiel": "Der Ausschuss überschritt seine Befugnisse bei der Vergabe der Mittel.",
+    "beispielTr": "Komisyon, kaynakların dağıtımında yetkilerini aştı.",
+    "beispielEn": "The committee exceeded its authority in allocating the funds."
+  },
+  {
+    "id": 7247,
+    "tr": "resmî onay",
+    "en": "approval",
+    "beispiel": "Ohne die Bewilligung der Fördermittel kann das Projekt nicht starten.",
+    "beispielTr": "Destek ödeneğinin resmî onayı olmadan proje başlayamaz.",
+    "beispielEn": "Without the approval of the funding the project cannot start."
+  },
+  {
+    "id": 7248,
+    "tr": "bürokrasinin azaltılması",
+    "en": "reduction of bureaucracy",
+    "beispiel": "Der versprochene Bürokratieabbau blieb bislang weitgehend folgenlos.",
+    "beispielTr": "Vaat edilen bürokrasi azaltımı şimdiye dek büyük ölçüde sonuçsuz kaldı.",
+    "beispielEn": "The promised reduction of bureaucracy has so far had little effect."
+  },
+  {
+    "id": 7249,
+    "tr": "resmî yol",
+    "en": "official channels",
+    "beispiel": "Beschwerden müssen zunächst auf dem üblichen Dienstweg eingereicht werden.",
+    "beispielTr": "Şikâyetler önce olağan resmî yoldan iletilmeli.",
+    "beispielEn": "Complaints must first be submitted through the usual official channels."
+  },
+  {
+    "id": 7250,
+    "tr": "denetim mercii",
+    "en": "oversight body",
+    "beispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung.",
+    "beispielTr": "Bağımsız bir denetim mercii olmadan her reform niyet beyanı olarak kalır.",
+    "beispielEn": "Without an independent oversight body every reform stays a declaration of intent."
+  },
+  {
+    "id": 7251,
+    "tr": "kamu denetçiliği",
+    "en": "ombudsman's office",
+    "beispiel": "Bürger können sich bei Konflikten mit Ämtern an die Ombudsstelle wenden.",
+    "beispielTr": "Vatandaşlar dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir.",
+    "beispielEn": "Citizens can turn to the ombudsman's office in conflicts with public offices."
+  },
+  {
+    "id": 7252,
+    "tr": "kurallar bütünü",
+    "en": "set of rules",
+    "beispiel": "Das Regelwerk ist über die Jahre unübersichtlich und widersprüchlich geworden.",
+    "beispielTr": "Kurallar bütünü yıllar içinde karmaşık ve çelişkili hâle geldi.",
+    "beispielEn": "The set of rules has become confusing and contradictory over the years."
+  }
+]

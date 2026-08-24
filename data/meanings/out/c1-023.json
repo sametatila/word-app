@@ -131,9 +131,9 @@
     "id": 6369,
     "tr": "norm denetimi",
     "en": "judicial review",
-    "beispiel": "Die Länder beantragten eine Normenkontrolle gegen das neue Gesetz.",
-    "beispielTr": "Eyaletler, yeni yasaya karşı norm denetimi başvurusunda bulundu.",
-    "beispielEn": "The states applied for judicial review of the new law."
+    "beispiel": "Mehrere Länder haben eine Normenkontrolle des Gesetzes beantragt.",
+    "beispielTr": "Birkaç eyalet, yasanın norm denetimini talep etti.",
+    "beispielEn": "Several states have applied for judicial review of the law."
   },
   {
     "id": 6370,
@@ -157,7 +157,7 @@
     "en": "prohibition of arbitrariness",
     "beispiel": "Das Amt behandelte gleiche Fälle unterschiedlich und missachtete das Willkürverbot.",
     "beispielTr": "İdare aynı olayları farklı ele alarak keyfilik yasağını çiğnedi.",
-    "beispielEn": "The office treated identical cases differently and ignored the arbitrariness ban."
+    "beispielEn": "The office treated identical cases differently and ignored the prohibition of arbitrariness."
   },
   {
     "id": 6373,
@@ -317,7 +317,7 @@
     "en": "judiciary",
     "beispiel": "In diesem Land ist die Judikative längst nicht mehr unabhängig.",
     "beispielTr": "Bu ülkede yargı erki çoktandır bağımsız değil.",
-    "beispielEn": "In that country the judiciary has long ceased to be independent."
+    "beispielEn": "In this country the judiciary has long ceased to be independent."
   },
   {
     "id": 6393,

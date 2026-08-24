@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7103,
+    "tr": "referans çerçevesi",
+    "en": "frame of reference",
+    "beispiel": "Ohne gemeinsamen Bezugsrahmen reden Ärzte und Patienten aneinander vorbei.",
+    "beispielTr": "Ortak bir referans çerçevesi olmadan doktorlarla hastalar birbirini anlamıyor.",
+    "beispielEn": "Without a shared frame of reference doctors and patients talk past each other."
+  },
+  {
+    "id": 7104,
+    "tr": "konuşanın niyeti",
+    "en": "speaker's intention",
+    "beispiel": "Der Richter fragte nach der Sprecherabsicht hinter der Bemerkung.",
+    "beispielTr": "Hâkim, sözün ardındaki konuşanın niyetini sordu.",
+    "beispielEn": "The judge asked about the speaker's intention behind the remark."
+  },
+  {
+    "id": 7105,
+    "tr": "karşılık gelmek",
+    "en": "to correspond",
+    "beispiel": "Diese Summe entspricht ungefähr einem Monatsgehalt.",
+    "beispielTr": "Bu tutar aşağı yukarı bir aylık maaşa karşılık geliyor.",
+    "beispielEn": "This sum corresponds to roughly one month's salary."
+  },
+  {
+    "id": 7106,
+    "tr": "sapmak",
+    "en": "to deviate",
+    "beispiel": "Der Pilot weicht wegen des Gewitters vom Kurs ab.",
+    "beispielTr": "Pilot fırtına yüzünden rotadan sapıyor.",
+    "beispielEn": "The pilot is deviating from the course because of the storm."
+  },
+  {
+    "id": 7107,
+    "tr": "kısaltmak",
+    "en": "to shorten",
+    "beispiel": "Die neue Bahnstrecke verkürzt die Fahrt um zwanzig Minuten.",
+    "beispielTr": "Yeni demiryolu hattı yolculuğu yirmi dakika kısaltıyor.",
+    "beispielEn": "The new rail line shortens the trip by twenty minutes."
+  },
+  {
+    "id": 7108,
+    "tr": "bir tutmak",
+    "en": "to equate",
+    "beispiel": "Viele setzen ein teures Auto mit Erfolg gleich.",
+    "beispielTr": "Çoğu kişi pahalı bir arabayı başarıyla bir tutuyor.",
+    "beispielEn": "Many people equate an expensive car with success."
+  },
+  {
+    "id": 7109,
+    "tr": "sezilmek",
+    "en": "to resonate",
+    "beispiel": "In ihrem Lob schwingt ein leiser Spott mit.",
+    "beispielTr": "Övgüsünde hafif bir alay da seziliyor.",
+    "beispielEn": "A faint mockery resonates in her praise."
+  },
+  {
+    "id": 7110,
+    "tr": "simgelemek",
+    "en": "to symbolize",
+    "beispiel": "Der leere Stuhl versinnbildlicht den verschwundenen Journalisten.",
+    "beispielTr": "Boş sandalye kaybolan gazeteciyi simgeliyor.",
+    "beispielEn": "The empty chair symbolizes the missing journalist."
+  },
+  {
+    "id": 7111,
+    "tr": "belirtmek",
+    "en": "to state",
+    "beispiel": "Das Schild besagt, dass hier nicht geparkt werden darf.",
+    "beispielTr": "Tabela burada park edilemeyeceğini belirtiyor.",
+    "beispielEn": "The sign states that parking is not allowed here."
+  },
+  {
+    "id": 7112,
+    "tr": "sulandırmak",
+    "en": "to water down",
+    "beispiel": "Die Lobby hat das Gesetz im Ausschuss völlig verwässert.",
+    "beispielTr": "Lobi, yasayı komisyonda tamamen sulandırdı.",
+    "beispielEn": "The lobby completely watered down the law in committee."
+  },
+  {
+    "id": 7113,
+    "tr": "çarpıtmak",
+    "en": "to misrepresent",
+    "beispiel": "Die Zeitung hat sein Zitat völlig entstellt.",
+    "beispielTr": "Gazete onun sözünü tamamen çarpıttı.",
+    "beispielEn": "The newspaper completely misrepresented his quote."
+  },
+  {
+    "id": 7114,
+    "tr": "adlandırmak",
+    "en": "to name",
+    "beispiel": "Die Forscher benennen die neue Art nach ihrem Entdecker.",
+    "beispielTr": "Araştırmacılar yeni türü onu keşfedenin adıyla adlandırıyor.",
+    "beispielEn": "The researchers name the new species after its discoverer."
+  },
+  {
+    "id": 7115,
+    "tr": "yorumlamak",
+    "en": "to construe",
+    "beispiel": "Sie hat die Bemerkung als versteckte Kritik aufgefasst.",
+    "beispielTr": "Bu sözü örtük bir eleştiri olarak yorumladı.",
+    "beispielEn": "She construed the remark as veiled criticism."
+  },
+  {
+    "id": 7116,
+    "tr": "açıkça",
+    "en": "explicitly",
+    "beispiel": "Der Vertrag nennt diese Pflicht explizit im dritten Absatz.",
+    "beispielTr": "Sözleşme bu yükümlülüğü üçüncü paragrafta açıkça belirtiyor.",
+    "beispielEn": "The contract explicitly names this obligation in the third paragraph."
+  },
+  {
+    "id": 7117,
+    "tr": "yanlış anlaşılmaya açık",
+    "en": "ambiguous",
+    "beispiel": "Die Überschrift war missverständlich und wurde später geändert.",
+    "beispielTr": "Başlık yanlış anlaşılmaya açıktı ve sonradan değiştirildi.",
+    "beispielEn": "The headline was ambiguous and was changed later."
+  },
+  {
+    "id": 7118,
+    "tr": "deyimsel",
+    "en": "idiomatic",
+    "beispiel": "Die Übersetzung ist korrekt, klingt aber nicht idiomatisch.",
+    "beispielTr": "Çeviri doğru ama kulağa deyimsel gelmiyor.",
+    "beispielEn": "The translation is correct but does not sound idiomatic."
+  },
+  {
+    "id": 7119,
+    "tr": "bağlama bağlı",
+    "en": "context-dependent",
+    "beispiel": "Ob der Witz ankommt, ist stark kontextabhängig.",
+    "beispielTr": "Şakanın tutup tutmaması büyük ölçüde bağlama bağlı.",
+    "beispielEn": "Whether the joke lands is highly context-dependent."
+  },
+  {
+    "id": 7120,
+    "tr": "aşağılayıcı",
+    "en": "derogatory",
+    "beispiel": "Er sprach abwertend über die neuen Nachbarn.",
+    "beispielTr": "Yeni komşulardan aşağılayıcı bir tonda söz etti.",
+    "beispielEn": "He spoke about the new neighbors in a derogatory tone."
+  },
+  {
+    "id": 7121,
+    "tr": "toplumsal katman",
+    "en": "social stratum",
+    "beispiel": "Kinder aus ärmeren Schichten schaffen seltener das Abitur.",
+    "beispielTr": "Yoksul katmanların çocukları liseyi daha seyrek bitiriyor.",
+    "beispielEn": "Children from poorer strata less often finish high school."
+  },
+  {
+    "id": 7122,
+    "tr": "diaspora",
+    "en": "diaspora",
+    "beispiel": "Die armenische Diaspora sammelt Geld für den Wiederaufbau.",
+    "beispielTr": "Ermeni diasporası yeniden inşa için para topluyor.",
+    "beispielEn": "The Armenian diaspora is collecting money for the reconstruction."
+  },
+  {
+    "id": 7123,
+    "tr": "yükselme",
+    "en": "rise",
+    "beispiel": "Sein Aufstieg vom Praktikanten zum Abteilungsleiter dauerte drei Jahre.",
+    "beispielTr": "Stajyerlikten bölüm müdürlüğüne yükselmesi üç yıl sürdü.",
+    "beispielEn": "His rise from intern to department head took three years."
+  },
+  {
+    "id": 7124,
+    "tr": "başat kültür",
+    "en": "guiding culture",
+    "beispiel": "Im Wahlkampf sprach die Partei ständig von deutscher Leitkultur.",
+    "beispielTr": "Parti seçim kampanyasında sürekli Alman başat kültüründen söz etti.",
+    "beispielEn": "In the campaign the party constantly spoke of German guiding culture."
+  },
+  {
+    "id": 7125,
+    "tr": "mağduriyet",
+    "en": "disadvantage",
+    "beispiel": "Frauen klagen in dieser Branche über systematische Benachteiligung.",
+    "beispielTr": "Kadınlar bu sektörde sistematik mağduriyetten yakınıyor.",
+    "beispielEn": "Women in this industry complain about systematic disadvantage."
+  },
+  {
+    "id": 7126,
+    "tr": "iç göç",
+    "en": "internal migration",
+    "beispiel": "Die Binnenmigration in die Großstädte hält seit Jahren an.",
+    "beispielTr": "Büyükşehirlere iç göç yıllardır sürüyor.",
+    "beispielEn": "Internal migration to the big cities has continued for years."
+  },
+  {
+    "id": 7127,
+    "tr": "yabancı düşmanlığı",
+    "en": "xenophobia",
+    "beispiel": "Nach dem Anschlag nahm die Fremdenfeindlichkeit im Ort zu.",
+    "beispielTr": "Saldırıdan sonra kasabada yabancı düşmanlığı arttı.",
+    "beispielEn": "After the attack xenophobia grew in the town."
+  },
+  {
+    "id": 7128,
+    "tr": "ırkçılık",
+    "en": "racism",
+    "beispiel": "Nach dem Spiel sprach der Torwart offen über Rassismus.",
+    "beispielTr": "Maçtan sonra kaleci ırkçılık hakkında açıkça konuştu.",
+    "beispielEn": "After the match the goalkeeper spoke openly about racism."
+  },
+  {
+    "id": 7129,
+    "tr": "çoğulculuk",
+    "en": "pluralism",
+    "beispiel": "Die Verfassung schützt den religiösen Pluralismus ausdrücklich.",
+    "beispielTr": "Anayasa dinsel çoğulculuğu açıkça koruyor.",
+    "beispielEn": "The constitution explicitly protects religious pluralism."
+  },
+  {
+    "id": 7130,
+    "tr": "değerlerin dönüşümü",
+    "en": "change in values",
+    "beispiel": "Der Wertewandel zeigt sich deutlich im Verhältnis zur Arbeit.",
+    "beispielTr": "Değerlerin dönüşümü işe bakışta açıkça görülüyor.",
+    "beispielEn": "The change in values is clearly visible in attitudes toward work."
+  },
+  {
+    "id": 7131,
+    "tr": "prekarya",
+    "en": "precariat",
+    "beispiel": "Viele Lieferfahrer gehören längst zum neuen Prekariat.",
+    "beispielTr": "Pek çok kurye çoktan yeni prekaryanın bir parçası.",
+    "beispielEn": "Many delivery drivers have long belonged to the new precariat."
+  },
+  {
+    "id": 7132,
+    "tr": "yoksulluk riski",
+    "en": "risk of poverty",
+    "beispiel": "Alleinerziehende tragen ein deutlich höheres Armutsrisiko.",
+    "beispielTr": "Tek başına çocuk büyütenler belirgin biçimde daha yüksek bir yoksulluk riski taşıyor.",
+    "beispielEn": "Single parents carry a considerably higher risk of poverty."
+  },
+  {
+    "id": 7133,
+    "tr": "geçirgenlik",
+    "en": "permeability",
+    "beispiel": "Die Durchlässigkeit des Bildungssystems ist geringer als behauptet.",
+    "beispielTr": "Eğitim sisteminin geçirgenliği iddia edilenden daha düşük.",
+    "beispielEn": "The permeability of the education system is lower than claimed."
+  },
+  {
+    "id": 7134,
+    "tr": "seçkinler",
+    "en": "elite",
+    "beispiel": "Die politische Elite kommt noch immer aus wenigen Familien.",
+    "beispielTr": "Siyasi seçkinler hâlâ birkaç aileden geliyor.",
+    "beispielEn": "The political elite still comes from a few families."
+  },
+  {
+    "id": 7135,
+    "tr": "burjuvazi",
+    "en": "bourgeoisie",
+    "beispiel": "Das städtische Bürgertum verlor im letzten Jahrhundert an Einfluss.",
+    "beispielTr": "Kentli burjuvazi geçen yüzyılda etkisini yitirdi.",
+    "beispielEn": "The urban bourgeoisie lost influence in the last century."
+  },
+  {
+    "id": 7136,
+    "tr": "sınıflı toplum",
+    "en": "class society",
+    "beispiel": "Manche Forscher sprechen von der Rückkehr der Klassengesellschaft.",
+    "beispielTr": "Bazı araştırmacılar sınıflı toplumun geri döndüğünü söylüyor.",
+    "beispielEn": "Some researchers speak of the return of class society."
+  },
+  {
+    "id": 7137,
+    "tr": "enklav",
+    "en": "enclave",
+    "beispiel": "Hinter dem hohen Zaun liegt eine wohlhabende Enklave.",
+    "beispielTr": "Yüksek çitin arkasında varlıklı bir enklav uzanıyor.",
+    "beispielEn": "Behind the high fence lies a wealthy enclave."
+  },
+  {
+    "id": 7138,
+    "tr": "uçurum",
+    "en": "divide",
+    "beispiel": "Zwischen Stadt und Land öffnet sich eine wachsende Kluft.",
+    "beispielTr": "Şehirle kır arasında büyüyen bir uçurum açılıyor.",
+    "beispielEn": "A growing divide is opening between city and countryside."
+  },
+  {
+    "id": 7139,
+    "tr": "kutuplaşma",
+    "en": "polarization",
+    "beispiel": "Die Polarisierung im Netz macht sachliche Gespräche fast unmöglich.",
+    "beispielTr": "İnternetteki kutuplaşma nesnel konuşmayı neredeyse imkânsız kılıyor.",
+    "beispielEn": "Polarization online makes objective conversation almost impossible."
+  },
+  {
+    "id": 7140,
+    "tr": "hınç",
+    "en": "resentment",
+    "beispiel": "Wirtschaftliche Unsicherheit nährt Ressentiments gegenüber Neuankömmlingen.",
+    "beispielTr": "Ekonomik güvensizlik yeni gelenlere karşı hınç besliyor.",
+    "beispielEn": "Economic insecurity feeds resentment toward newcomers."
+  },
+  {
+    "id": 7141,
+    "tr": "dışlamak",
+    "en": "to exclude",
+    "beispiel": "Die Klasse grenzt den neuen Schüler systematisch aus.",
+    "beispielTr": "Sınıf yeni öğrenciyi sistemli biçimde dışlıyor.",
+    "beispielEn": "The class systematically excludes the new student."
+  },
+  {
+    "id": 7142,
+    "tr": "bünyesine katmak",
+    "en": "to integrate",
+    "beispiel": "Der Betrieb hat die neuen Kollegen schnell eingegliedert.",
+    "beispielTr": "İşletme yeni çalışanları çabucak bünyesine kattı.",
+    "beispielEn": "The company quickly integrated the new colleagues."
+  },
+  {
+    "id": 7143,
+    "tr": "tercih etmek",
+    "en": "to prefer",
+    "beispiel": "Viele Kunden bevorzugen inzwischen regionale Produkte.",
+    "beispielTr": "Pek çok müşteri artık yöresel ürünleri tercih ediyor.",
+    "beispielEn": "Many customers now prefer regional products."
+  },
+  {
+    "id": 7144,
+    "tr": "miras bırakmak",
+    "en": "to bequeath",
+    "beispiel": "Meine Großmutter hat mir ihr altes Klavier vererbt.",
+    "beispielTr": "Büyükannem bana eski piyanosunu miras bıraktı.",
+    "beispielEn": "My grandmother bequeathed her old piano to me."
+  },
+  {
+    "id": 7145,
+    "tr": "yeniden üretmek",
+    "en": "to reproduce",
+    "beispiel": "Das Schulsystem reproduziert bestehende Unterschiede statt sie abzubauen.",
+    "beispielTr": "Okul sistemi mevcut farkları azaltmak yerine yeniden üretiyor.",
+    "beispielEn": "The school system reproduces existing differences instead of reducing them."
+  },
+  {
+    "id": 7146,
+    "tr": "alışmak",
+    "en": "to settle in",
+    "beispiel": "Die Familie hat sich im neuen Viertel schnell eingelebt.",
+    "beispielTr": "Aile yeni mahallesine çabucak alıştı.",
+    "beispielEn": "The family quickly settled into the new neighborhood."
+  },
+  {
+    "id": 7147,
+    "tr": "yerleşmek",
+    "en": "to settle",
+    "beispiel": "Die Ärztin hat sich in einem kleinen Dorf niedergelassen.",
+    "beispielTr": "Kadın doktor küçük bir köye yerleşti.",
+    "beispielEn": "The doctor settled in a small village."
+  },
+  {
+    "id": 7148,
+    "tr": "kökünden koparmak",
+    "en": "to uproot",
+    "beispiel": "Der Krieg hat eine ganze Generation entwurzelt.",
+    "beispielTr": "Savaş koca bir kuşağı kökünden kopardı.",
+    "beispielEn": "The war uprooted an entire generation."
+  },
+  {
+    "id": 7149,
+    "tr": "genelleme yapmak",
+    "en": "to generalize",
+    "beispiel": "Der Kommentar pauschalisiert und beleidigt eine ganze Gruppe.",
+    "beispielTr": "Yorum genelleme yapıyor ve koca bir grubu aşağılıyor.",
+    "beispielEn": "The comment generalizes and insults an entire group."
+  },
+  {
+    "id": 7150,
+    "tr": "zorlaştırmak",
+    "en": "to hamper",
+    "beispiel": "Der starke Schnee erschwert die Rettungsarbeiten erheblich.",
+    "beispielTr": "Yoğun kar, kurtarma çalışmalarını hayli zorlaştırıyor.",
+    "beispielEn": "The heavy snow considerably hampers the rescue work."
+  },
+  {
+    "id": 7151,
+    "tr": "kaynaşmak",
+    "en": "to grow together",
+    "beispiel": "Die beiden Stadtteile sind erst nach Jahrzehnten zusammengewachsen.",
+    "beispielTr": "İki semt ancak onlarca yıl sonra kaynaştı.",
+    "beispielEn": "The two districts only grew together after decades."
+  },
+  {
+    "id": 7152,
+    "tr": "aşınmak",
+    "en": "to erode",
+    "beispiel": "Das Vertrauen in die Polizei ist langsam erodiert.",
+    "beispielTr": "Polise duyulan güven yavaş yavaş aşındı.",
+    "beispielEn": "Trust in the police has slowly eroded."
+  }
+]

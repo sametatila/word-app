@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6903,
+    "tr": "aday göstermek",
+    "en": "to nominate",
+    "beispiel": "Der Film wurde für drei Oscars nominiert.",
+    "beispielTr": "Film üç Oscar'a aday gösterildi.",
+    "beispielEn": "The film was nominated for three Oscars."
+  },
+  {
+    "id": 6904,
+    "tr": "yetkisiz bırakmak",
+    "en": "to disempower",
+    "beispiel": "Der neue Präsident entmachtete das Parlament innerhalb weniger Monate.",
+    "beispielTr": "Yeni cumhurbaşkanı birkaç ay içinde parlamentoyu yetkisiz bıraktı.",
+    "beispielEn": "The new president stripped parliament of its power within months."
+  },
+  {
+    "id": 6905,
+    "tr": "içini boşaltmak",
+    "en": "to hollow out",
+    "beispiel": "Die vielen Ausnahmen höhlen das neue Gesetz völlig aus.",
+    "beispielTr": "Sayısız istisna yeni yasanın içini tamamen boşaltıyor.",
+    "beispielEn": "The many exceptions completely hollow out the new law."
+  },
+  {
+    "id": 6906,
+    "tr": "parlamenter",
+    "en": "parliamentary",
+    "beispiel": "Die Opposition forderte einen parlamentarischen Untersuchungsausschuss.",
+    "beispielTr": "Muhalefet, parlamenter bir soruşturma komisyonu kurulmasını istedi.",
+    "beispielEn": "The opposition demanded a parliamentary committee of inquiry."
+  },
+  {
+    "id": 6907,
+    "tr": "kamu gücüne dayalı",
+    "en": "sovereign",
+    "beispiel": "Private Firmen dürfen keine hoheitlichen Aufgaben übernehmen.",
+    "beispielTr": "Özel şirketler kamu gücüne dayalı görevleri üstlenemez.",
+    "beispielEn": "Private companies may not take on sovereign tasks."
+  },
+  {
+    "id": 6908,
+    "tr": "talimata bağlı",
+    "en": "bound by instructions",
+    "beispiel": "Die Staatsanwaltschaft ist gegenüber dem Ministerium weisungsgebunden.",
+    "beispielTr": "Savcılık bakanlığın talimatlarına bağlıdır.",
+    "beispielEn": "The prosecution service is bound by the ministry's instructions."
+  },
+  {
+    "id": 6909,
+    "tr": "popülist",
+    "en": "populist",
+    "beispiel": "Der Bürgermeister gewann die Wahl mit populistischen Versprechen.",
+    "beispielTr": "Belediye başkanı seçimi popülist vaatlerle kazandı.",
+    "beispielEn": "The mayor won the election with populist promises."
+  },
+  {
+    "id": 6910,
+    "tr": "hatırlama yetisi",
+    "en": "memory",
+    "beispiel": "Nach dem Unfall ließ ihr Erinnerungsvermögen deutlich nach.",
+    "beispielTr": "Kazadan sonra hatırlama yetisi belirgin biçimde zayıfladı.",
+    "beispielEn": "After the accident her memory declined noticeably."
+  },
+  {
+    "id": 6911,
+    "tr": "çarpıtma",
+    "en": "distortion",
+    "beispiel": "Die Statistik enthält eine Verzerrung zugunsten junger Befragter.",
+    "beispielTr": "İstatistikte genç katılımcılar lehine bir çarpıtma var.",
+    "beispielEn": "The statistics contain a distortion favoring young respondents."
+  },
+  {
+    "id": 6912,
+    "tr": "önyargı",
+    "en": "bias",
+    "beispiel": "Seine Voreingenommenheit gegenüber Bewerberinnen fiel sofort auf.",
+    "beispielTr": "Kadın adaylara karşı önyargısı hemen göze çarptı.",
+    "beispielEn": "His bias against female applicants was immediately obvious."
+  },
+  {
+    "id": 6913,
+    "tr": "karar verme süreci",
+    "en": "decision-making",
+    "beispiel": "Im Team zog sich die Entscheidungsfindung über Wochen hin.",
+    "beispielTr": "Ekipte karar verme süreci haftalarca sürüncemede kaldı.",
+    "beispielEn": "In the team the decision-making dragged on for weeks."
+  },
+  {
+    "id": 6914,
+    "tr": "bilinç",
+    "en": "consciousness",
+    "beispiel": "Nach dem Sturz verlor er kurz das Bewusstsein.",
+    "beispielTr": "Düşmenin ardından kısa süre bilincini kaybetti.",
+    "beispielEn": "After the fall he briefly lost consciousness."
+  },
+  {
+    "id": 6915,
+    "tr": "ihtiyaç",
+    "en": "need",
+    "beispiel": "Nach dem lauten Tag hatte er das Bedürfnis nach Stille.",
+    "beispielTr": "Gürültülü günün ardından sessizlik ihtiyacı duydu.",
+    "beispielEn": "After the noisy day he felt a need for quiet."
+  },
+  {
+    "id": 6916,
+    "tr": "uyaran",
+    "en": "stimulus",
+    "beispiel": "Das Gehirn filtert die meisten Reize unbewusst heraus.",
+    "beispielTr": "Beyin uyaranların çoğunu farkında olmadan süzer.",
+    "beispielEn": "The brain filters out most stimuli unconsciously."
+  },
+  {
+    "id": 6917,
+    "tr": "düşünme hatası",
+    "en": "flaw in reasoning",
+    "beispiel": "In seiner Rechnung steckt ein einfacher Denkfehler.",
+    "beispielTr": "Hesabında basit bir düşünme hatası var.",
+    "beispielEn": "There is a simple flaw in his reasoning."
+  },
+  {
+    "id": 6918,
+    "tr": "muhakeme yetisi",
+    "en": "judgment",
+    "beispiel": "Der Alkohol trübte sein Urteilsvermögen an diesem Abend.",
+    "beispielTr": "Alkol o akşam muhakeme yetisini bulandırdı.",
+    "beispielEn": "The alcohol clouded his judgment that evening."
+  },
+  {
+    "id": 6919,
+    "tr": "benlik algısı",
+    "en": "self-image",
+    "beispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein.",
+    "beispielTr": "Onun benlik algısı meslektaşlarının izlenimiyle pek örtüşmüyor.",
+    "beispielEn": "Her self-image hardly matches how her colleagues see her."
+  },
+  {
+    "id": 6920,
+    "tr": "kimlik",
+    "en": "identity",
+    "beispiel": "Der Betrüger gab sich mit falscher Identität als Polizist aus.",
+    "beispielTr": "Dolandırıcı sahte kimlikle kendini polis olarak tanıttı.",
+    "beispielEn": "The con man posed as a police officer with a false identity."
+  },
+  {
+    "id": 6921,
+    "tr": "koşullanma",
+    "en": "conditioning",
+    "beispiel": "Durch Konditionierung reagierten die Hunde allein auf die Glocke.",
+    "beispielTr": "Koşullanma sonucu köpekler yalnızca zil sesine tepki verdi.",
+    "beispielEn": "Through conditioning the dogs reacted to the bell alone."
+  },
+  {
+    "id": 6922,
+    "tr": "pekiştirme",
+    "en": "reinforcement",
+    "beispiel": "Positive Verstärkung wirkt bei Kindern besser als Strafe.",
+    "beispielTr": "Olumlu pekiştirme çocuklarda cezadan daha iyi işe yarar.",
+    "beispielEn": "Positive reinforcement works better with children than punishment."
+  },
+  {
+    "id": 6923,
+    "tr": "ödül sistemi",
+    "en": "reward system",
+    "beispiel": "Jede neue Nachricht aktiviert das Belohnungssystem im Gehirn.",
+    "beispielTr": "Her yeni bildirim beyindeki ödül sistemini harekete geçirir.",
+    "beispielEn": "Every new message activates the reward system in the brain."
+  },
+  {
+    "id": 6924,
+    "tr": "nevroz",
+    "en": "neurosis",
+    "beispiel": "Seine Angst vor Keimen entwickelte sich zu einer Neurose.",
+    "beispielTr": "Mikrop korkusu zamanla bir nevroza dönüştü.",
+    "beispielEn": "His fear of germs developed into a neurosis."
+  },
+  {
+    "id": 6925,
+    "tr": "başa çıkma stratejisi",
+    "en": "coping strategy",
+    "beispiel": "Laufen ist seine Bewältigungsstrategie in stressigen Wochen.",
+    "beispielTr": "Koşmak stresli haftalarda onun başa çıkma stratejisidir.",
+    "beispielEn": "Running is his coping strategy during stressful weeks."
+  },
+  {
+    "id": 6926,
+    "tr": "savunma mekanizması",
+    "en": "defense mechanism",
+    "beispiel": "Sein Spott ist ein Abwehrmechanismus gegen zu viel Nähe.",
+    "beispielTr": "Alaycılığı, fazla yakınlığa karşı bir savunma mekanizmasıdır.",
+    "beispielEn": "His mockery is a defense mechanism against too much closeness."
+  },
+  {
+    "id": 6927,
+    "tr": "yansıtma",
+    "en": "projection",
+    "beispiel": "Seine Wut auf den Kollegen war reine Projektion.",
+    "beispielTr": "Meslektaşına duyduğu öfke tümüyle yansıtmaydı.",
+    "beispielEn": "His anger at his colleague was pure projection."
+  },
+  {
+    "id": 6928,
+    "tr": "aktarım",
+    "en": "transference",
+    "beispiel": "In der Therapie richtete sich die Übertragung auf den Arzt.",
+    "beispielTr": "Terapide aktarım doğrudan doktora yöneldi.",
+    "beispielEn": "In therapy the transference was directed at the doctor."
+  },
+  {
+    "id": 6929,
+    "tr": "davranış terapisi",
+    "en": "behavioral therapy",
+    "beispiel": "Gegen ihre Flugangst half nur eine Verhaltenstherapie.",
+    "beispielTr": "Uçak korkusuna yalnızca davranış terapisi iyi geldi.",
+    "beispielEn": "Only behavioral therapy helped against her fear of flying."
+  },
+  {
+    "id": 6930,
+    "tr": "psikanaliz",
+    "en": "psychoanalysis",
+    "beispiel": "Nach der Trennung begann sie eine Psychoanalyse.",
+    "beispielTr": "Ayrılıktan sonra psikanalize başladı.",
+    "beispielEn": "After the breakup she started psychoanalysis."
+  },
+  {
+    "id": 6931,
+    "tr": "hastalık tablosu",
+    "en": "clinical picture",
+    "beispiel": "Bei Kindern zeigt sich das Krankheitsbild oft ganz anders.",
+    "beispielTr": "Çocuklarda hastalık tablosu çoğu zaman bambaşka görünür.",
+    "beispielEn": "In children the clinical picture often looks quite different."
+  },
+  {
+    "id": 6932,
+    "tr": "bağlanma kuramı",
+    "en": "attachment theory",
+    "beispiel": "Im Seminar ging es um die Bindungstheorie nach Bowlby.",
+    "beispielTr": "Seminerde Bowlby'nin bağlanma kuramı ele alındı.",
+    "beispielEn": "The seminar dealt with Bowlby's attachment theory."
+  },
+  {
+    "id": 6933,
+    "tr": "kopuş",
+    "en": "separation",
+    "beispiel": "Die Ablösung vom Elternhaus fiel ihr sehr schwer.",
+    "beispielTr": "Aile evinden kopuş ona çok zor geldi.",
+    "beispielEn": "The separation from her parents' home was very hard for her."
+  },
+  {
+    "id": 6934,
+    "tr": "uyum yeteneği",
+    "en": "adaptability",
+    "beispiel": "Im neuen Team zeigte er erstaunliche Anpassungsfähigkeit.",
+    "beispielTr": "Yeni ekipte şaşırtıcı bir uyum yeteneği gösterdi.",
+    "beispielEn": "In the new team he showed remarkable adaptability."
+  },
+  {
+    "id": 6935,
+    "tr": "dayanıklılık",
+    "en": "resilience",
+    "beispiel": "Stabile Freundschaften stärken die psychische Widerstandsfähigkeit.",
+    "beispielTr": "İstikrarlı dostluklar ruhsal dayanıklılığı güçlendirir.",
+    "beispielEn": "Stable friendships strengthen psychological resilience."
+  },
+  {
+    "id": 6936,
+    "tr": "öz düzenleme",
+    "en": "self-regulation",
+    "beispiel": "Kinder lernen Selbstregulation vor allem von ihren Eltern.",
+    "beispielTr": "Çocuklar öz düzenlemeyi en çok anne babasından öğrenir.",
+    "beispielEn": "Children learn self-regulation mainly from their parents."
+  },
+  {
+    "id": 6937,
+    "tr": "dürtü kontrolü",
+    "en": "impulse control",
+    "beispiel": "Nach zwei Bier ließ seine Impulskontrolle spürbar nach.",
+    "beispielTr": "İki biradan sonra dürtü kontrolü belirgin biçimde azaldı.",
+    "beispielEn": "After two beers his impulse control weakened noticeably."
+  },
+  {
+    "id": 6938,
+    "tr": "engellenmişlik",
+    "en": "frustration",
+    "beispiel": "Die ständige Frustration im Job machte ihn aggressiv.",
+    "beispielTr": "İşteki sürekli engellenmişlik duygusu onu saldırganlaştırdı.",
+    "beispielEn": "The constant frustration at work made him aggressive."
+  },
+  {
+    "id": 6939,
+    "tr": "duygulanım",
+    "en": "affect",
+    "beispiel": "Der Täter handelte im Affekt und nicht geplant.",
+    "beispielTr": "Fail planlayarak değil, ani bir duygulanımla hareket etti.",
+    "beispielEn": "The offender acted in the heat of the moment and not by plan."
+  },
+  {
+    "id": 6940,
+    "tr": "duygu",
+    "en": "emotion",
+    "beispiel": "Beim Abschied konnte er seine Emotionen kaum verbergen.",
+    "beispielTr": "Vedalaşırken duygularını güçlükle gizleyebildi.",
+    "beispielEn": "At the farewell he could hardly hide his emotions."
+  },
+  {
+    "id": 6941,
+    "tr": "hoşlanmama",
+    "en": "dislike",
+    "beispiel": "Seine Abneigung gegen große Feiern wurde immer stärker.",
+    "beispielTr": "Büyük kutlamalardan hoşlanmaması giderek arttı.",
+    "beispielEn": "His dislike of big celebrations kept growing."
+  },
+  {
+    "id": 6942,
+    "tr": "utanç",
+    "en": "shame",
+    "beispiel": "Aus Scham erzählte er niemandem von den Schulden.",
+    "beispielTr": "Utancından borçlarını kimseye anlatmadı.",
+    "beispielEn": "Out of shame he told no one about his debts."
+  },
+  {
+    "id": 6943,
+    "tr": "kaydetmek",
+    "en": "to save",
+    "beispiel": "Ich habe die Datei unter einem neuen Namen abgespeichert.",
+    "beispielTr": "Dosyayı yeni bir adla kaydettim.",
+    "beispielEn": "I saved the file under a new name."
+  },
+  {
+    "id": 6944,
+    "tr": "yok saymak",
+    "en": "to block out",
+    "beispiel": "Beim Lernen blendet sie den Lärm völlig aus.",
+    "beispielTr": "Ders çalışırken gürültüyü tamamen yok sayıyor.",
+    "beispielEn": "When studying she blocks out the noise completely."
+  },
+  {
+    "id": 6945,
+    "tr": "yönlendirmek",
+    "en": "to steer",
+    "beispiel": "Werbung steuert unsere Wünsche oft ganz unbemerkt.",
+    "beispielTr": "Reklamlar isteklerimizi çoğu zaman fark ettirmeden yönlendirir.",
+    "beispielEn": "Advertising often steers our desires without us noticing."
+  },
+  {
+    "id": 6946,
+    "tr": "ketlemek",
+    "en": "to inhibit",
+    "beispiel": "Zu strenge Kritik hemmt die Kreativität von Kindern.",
+    "beispielTr": "Aşırı sert eleştiri çocukların yaratıcılığını ketler.",
+    "beispielEn": "Overly harsh criticism inhibits children's creativity."
+  },
+  {
+    "id": 6947,
+    "tr": "yol açmak",
+    "en": "to cause",
+    "beispiel": "Das Medikament ruft bei manchen Patienten Übelkeit hervor.",
+    "beispielTr": "İlaç bazı hastalarda mide bulantısına yol açıyor.",
+    "beispielEn": "The drug causes nausea in some patients."
+  },
+  {
+    "id": 6948,
+    "tr": "sağlamak",
+    "en": "to bring about",
+    "beispiel": "Die neue Regel bewirkte eine deutliche Verbesserung im Team.",
+    "beispielTr": "Yeni kural ekipte belirgin bir iyileşme sağladı.",
+    "beispielEn": "The new rule brought about a clear improvement in the team."
+  },
+  {
+    "id": 6949,
+    "tr": "kendini birinin yerine koymak",
+    "en": "to empathize",
+    "beispiel": "Er kann sich gut in andere Menschen hineinversetzen.",
+    "beispielTr": "Kendini başkalarının yerine iyi koyabiliyor.",
+    "beispielEn": "He can easily put himself in other people's shoes."
+  },
+  {
+    "id": 6950,
+    "tr": "yorumlamak",
+    "en": "to read",
+    "beispiel": "Sie deutete sein Schweigen als Zustimmung.",
+    "beispielTr": "Onun sessizliğini onay olarak yorumladı.",
+    "beispielEn": "She read his silence as agreement."
+  },
+  {
+    "id": 6951,
+    "tr": "olduğundan fazla görmek",
+    "en": "to overestimate",
+    "beispiel": "Viele Fahrer überschätzen ihr Können bei Schnee.",
+    "beispielTr": "Birçok sürücü karda becerisini olduğundan fazla görür.",
+    "beispielEn": "Many drivers overestimate their skill in snow."
+  },
+  {
+    "id": 6952,
+    "tr": "takıntılı",
+    "en": "compulsive",
+    "beispiel": "Er prüft zwanghaft, ob die Tür verschlossen ist.",
+    "beispielTr": "Kapının kilitli olup olmadığını takıntılı biçimde kontrol ediyor.",
+    "beispielEn": "He compulsively checks whether the door is locked."
+  }
+]

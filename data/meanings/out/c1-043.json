@@ -1,0 +1,402 @@
+[
+  {
+    "id": 7353,
+    "tr": "mercek altına almak",
+    "en": "to scrutinize",
+    "beispiel": "Die Prüfer durchleuchteten alle Konten der Stiftung.",
+    "beispielTr": "Denetçiler vakfın bütün hesaplarını mercek altına aldı.",
+    "beispielEn": "The auditors scrutinized all the foundation's accounts."
+  },
+  {
+    "id": 7354,
+    "tr": "zarara uğratmak",
+    "en": "to harm",
+    "beispiel": "Die Kartellabsprachen haben Tausende Kunden geschädigt.",
+    "beispielTr": "Kartel anlaşmaları binlerce müşteriyi zarara uğrattı.",
+    "beispielEn": "The price-fixing deals harmed thousands of customers."
+  },
+  {
+    "id": 7355,
+    "tr": "uygun bulmak",
+    "en": "to approve of",
+    "beispiel": "Die Mehrheit billigte den Vorschlag ohne große Debatte.",
+    "beispielTr": "Çoğunluk öneriyi büyük bir tartışma olmadan uygun buldu.",
+    "beispielEn": "The majority approved of the proposal without much debate."
+  },
+  {
+    "id": 7356,
+    "tr": "zimmetine geçirmek",
+    "en": "to embezzle",
+    "beispiel": "Der Kassenwart hat über Jahre Spendengelder unterschlagen.",
+    "beispielTr": "Sayman yıllar boyunca bağış paralarını zimmetine geçirdi.",
+    "beispielEn": "The treasurer embezzled donations for years."
+  },
+  {
+    "id": 7357,
+    "tr": "numara yapmak",
+    "en": "to feign",
+    "beispiel": "Er täuschte eine Verletzung vor, um nicht zu spielen.",
+    "beispielTr": "Oynamamak için sakatlık numarası yaptı.",
+    "beispielEn": "He feigned an injury so he wouldn't have to play."
+  },
+  {
+    "id": 7358,
+    "tr": "haksız kazanç sağlamak",
+    "en": "to enrich oneself",
+    "beispiel": "Einzelne Manager bereicherten sich auf Kosten der Belegschaft.",
+    "beispielTr": "Bazı yöneticiler çalışanların sırtından haksız kazanç sağladı.",
+    "beispielEn": "A few managers enriched themselves at the staff's expense."
+  },
+  {
+    "id": 7359,
+    "tr": "yüklemek",
+    "en": "to impose",
+    "beispiel": "Das Gericht erlegte ihm die Kosten des Verfahrens auf.",
+    "beispielTr": "Mahkeme dava masraflarını ona yükledi.",
+    "beispielEn": "The court imposed the costs of the proceedings on him."
+  },
+  {
+    "id": 7360,
+    "tr": "dürüst",
+    "en": "upright",
+    "beispiel": "Im ganzen Ministerium hält man sie für integer.",
+    "beispielTr": "Bakanlığın tamamında onu dürüst biri sayıyorlar.",
+    "beispielEn": "Throughout the ministry she is thought to be upright."
+  },
+  {
+    "id": 7361,
+    "tr": "haksız",
+    "en": "unfair",
+    "beispiel": "Der Konkurrent klagte wegen unlauteren Wettbewerbs.",
+    "beispielTr": "Rakip firma haksız rekabet nedeniyle dava açtı.",
+    "beispielEn": "The competitor sued over unfair competition."
+  },
+  {
+    "id": 7362,
+    "tr": "savunulabilir",
+    "en": "justifiable",
+    "beispiel": "Sein Vorgehen war unter diesen Umständen durchaus vertretbar.",
+    "beispielTr": "Bu koşullar altında yaptığı gayet savunulabilirdi.",
+    "beispielEn": "Under these circumstances his approach was quite justifiable."
+  },
+  {
+    "id": 7363,
+    "tr": "etik",
+    "en": "ethical",
+    "beispiel": "Der Betriebsrat hält die Überwachung für ethisch bedenklich.",
+    "beispielTr": "İşçi temsilciliği bu gözetimi etik açıdan sakıncalı buluyor.",
+    "beispielEn": "The works council considers the surveillance ethically questionable."
+  },
+  {
+    "id": 7364,
+    "tr": "bilerek",
+    "en": "knowingly",
+    "beispiel": "Sie hat die falschen Angaben wissentlich weitergeleitet.",
+    "beispielTr": "Yanlış bilgileri bilerek iletti.",
+    "beispielEn": "She knowingly passed on the false information."
+  },
+  {
+    "id": 7365,
+    "tr": "iyi niyetli",
+    "en": "trusting",
+    "beispiel": "Viele Anleger vertrauten gutgläubig auf die geprüften Zahlen.",
+    "beispielTr": "Birçok yatırımcı iyi niyetle denetlenmiş rakamlara güvendi.",
+    "beispielEn": "Many investors trustingly relied on the audited figures."
+  },
+  {
+    "id": 7366,
+    "tr": "kesinlik",
+    "en": "accuracy",
+    "beispiel": "Die Genauigkeit der Messung hängt vom Gerät ab.",
+    "beispielTr": "Ölçümün kesinliği kullanılan cihaza bağlı.",
+    "beispielEn": "The accuracy of the measurement depends on the device."
+  },
+  {
+    "id": 7367,
+    "tr": "yaklaşık değer",
+    "en": "approximation",
+    "beispiel": "Das Modell liefert nur eine grobe Näherung.",
+    "beispielTr": "Model yalnızca kaba bir yaklaşık değer veriyor.",
+    "beispielEn": "The model only gives a rough approximation."
+  },
+  {
+    "id": 7368,
+    "tr": "kanıtlama",
+    "en": "line of argument",
+    "beispiel": "Seine Beweisführung überzeugte die Gutachter nicht.",
+    "beispielTr": "Kanıtlaması hakemleri ikna etmedi.",
+    "beispielEn": "His line of argument did not convince the reviewers."
+  },
+  {
+    "id": 7369,
+    "tr": "tekrarlanabilirlik",
+    "en": "repeatability",
+    "beispiel": "Die Wiederholbarkeit des Versuchs konnte niemand belegen.",
+    "beispielTr": "Deneyin tekrarlanabilirliğini kimse gösteremedi.",
+    "beispielEn": "Nobody could demonstrate the repeatability of the experiment."
+  },
+  {
+    "id": 7370,
+    "tr": "hata kaynağı",
+    "en": "source of error",
+    "beispiel": "Die größte Fehlerquelle war die ungenaue Zeitmessung.",
+    "beispielTr": "En büyük hata kaynağı kesin olmayan zaman ölçümüydü.",
+    "beispielEn": "The biggest source of error was the imprecise timing."
+  },
+  {
+    "id": 7371,
+    "tr": "bakış açısı",
+    "en": "point of view",
+    "beispiel": "Nach ein paar Jahren änderte sich seine Sichtweise.",
+    "beispielTr": "Birkaç yıl sonra bakış açısı değişti.",
+    "beispielEn": "After a few years his point of view changed."
+  },
+  {
+    "id": 7372,
+    "tr": "düşünce okulu",
+    "en": "school of thought",
+    "beispiel": "Beide Denkschulen berufen sich auf denselben Klassiker.",
+    "beispielTr": "Her iki düşünce okulu da aynı klasik esere dayanıyor.",
+    "beispielEn": "Both schools of thought appeal to the same classic text."
+  },
+  {
+    "id": 7373,
+    "tr": "uygulamayla bağlantı",
+    "en": "practical relevance",
+    "beispiel": "Der Arbeit fehlt bislang jeder erkennbare Anwendungsbezug.",
+    "beispielTr": "Çalışmanın şimdiye dek uygulamayla görünür bir bağlantısı yok.",
+    "beispielEn": "So far the work shows no recognizable practical relevance."
+  },
+  {
+    "id": 7374,
+    "tr": "bilgi kazanımı",
+    "en": "gain in knowledge",
+    "beispiel": "Der Erkenntnisgewinn rechtfertigt den enormen Aufwand kaum.",
+    "beispielTr": "Elde edilen bilgi kazanımı bu büyük emeği pek karşılamıyor.",
+    "beispielEn": "The gain in knowledge hardly justifies the enormous effort."
+  },
+  {
+    "id": 7375,
+    "tr": "makale",
+    "en": "essay",
+    "beispiel": "Ihr Aufsatz erschien in einer angesehenen Fachzeitschrift.",
+    "beispielTr": "Makalesi saygın bir uzmanlık dergisinde yayımlandı.",
+    "beispielEn": "Her essay appeared in a respected academic journal."
+  },
+  {
+    "id": 7376,
+    "tr": "kaynakça",
+    "en": "bibliography",
+    "beispiel": "Im Literaturverzeichnis fehlen mehrere zitierte Werke.",
+    "beispielTr": "Kaynakçada alıntılanan birkaç eser eksik.",
+    "beispielEn": "Several cited works are missing from the bibliography."
+  },
+  {
+    "id": 7377,
+    "tr": "bilirkişi incelemesi",
+    "en": "expert appraisal",
+    "beispiel": "Die Begutachtung des Schadens dauerte mehrere Wochen.",
+    "beispielTr": "Hasarın bilirkişi incelemesi haftalarca sürdü.",
+    "beispielEn": "The expert appraisal of the damage took several weeks."
+  },
+  {
+    "id": 7378,
+    "tr": "meslektaş",
+    "en": "fellow specialist",
+    "beispiel": "Zwei Fachkollegen bestätigten die Ergebnisse in eigenen Versuchen.",
+    "beispielTr": "İki meslektaş sonuçları kendi deneylerinde doğruladı.",
+    "beispielEn": "Two fellow specialists confirmed the results in their own experiments."
+  },
+  {
+    "id": 7379,
+    "tr": "uzmanlık alanı",
+    "en": "field of expertise",
+    "beispiel": "In ihrem Fachgebiet gilt sie als führende Stimme.",
+    "beispielTr": "Kendi uzmanlık alanında öncü bir isim sayılıyor.",
+    "beispielEn": "In her field of expertise she counts as a leading voice."
+  },
+  {
+    "id": 7380,
+    "tr": "başvuru yapma",
+    "en": "filing an application",
+    "beispiel": "Die Antragstellung kostet mehr Zeit als die Forschung selbst.",
+    "beispielTr": "Başvuru yapmak asıl araştırmadan daha çok vakit alıyor.",
+    "beispielEn": "Filing an application takes more time than the research itself."
+  },
+  {
+    "id": 7381,
+    "tr": "bilimsel toplantı",
+    "en": "conference",
+    "beispiel": "Auf der Tagung hielt sie den Eröffnungsvortrag.",
+    "beispielTr": "Bilimsel toplantıda açılış konuşmasını o yaptı.",
+    "beispielEn": "She gave the opening lecture at the conference."
+  },
+  {
+    "id": 7382,
+    "tr": "alan içi tartışma",
+    "en": "expert debate",
+    "beispiel": "Die Fachdebatte über den Mindestlohn wird immer schärfer.",
+    "beispielTr": "Asgari ücret üzerine alan içi tartışma giderek sertleşiyor.",
+    "beispielEn": "The expert debate about the minimum wage keeps getting sharper."
+  },
+  {
+    "id": 7383,
+    "tr": "tartışmalı konu",
+    "en": "contentious issue",
+    "beispiel": "Diese Streitfrage spaltet die Forschung bis heute.",
+    "beispielTr": "Bu tartışmalı konu araştırmacıları bugün hâlâ ikiye bölüyor.",
+    "beispielEn": "This contentious issue still divides researchers today."
+  },
+  {
+    "id": 7384,
+    "tr": "yerleşik görüş",
+    "en": "prevailing doctrine",
+    "beispiel": "Diese Lehrmeinung hält sich in den Lehrbüchern hartnäckig.",
+    "beispielTr": "Bu yerleşik görüş ders kitaplarında inatla varlığını sürdürüyor.",
+    "beispielEn": "This prevailing doctrine stubbornly persists in the textbooks."
+  },
+  {
+    "id": 7385,
+    "tr": "desteklemek",
+    "en": "to back",
+    "beispiel": "Die neuen Funde stützen diese These nur teilweise.",
+    "beispielTr": "Yeni buluntular bu tezi ancak kısmen destekliyor.",
+    "beispielEn": "The new findings only partly back this thesis."
+  },
+  {
+    "id": 7386,
+    "tr": "sınamak",
+    "en": "to test out",
+    "beispiel": "Das Verfahren wurde zunächst an kleinen Gruppen erprobt.",
+    "beispielTr": "Yöntem önce küçük gruplarda sınandı.",
+    "beispielEn": "The method was first tested out on small groups."
+  },
+  {
+    "id": 7387,
+    "tr": "ortaya koymak",
+    "en": "to point out",
+    "beispiel": "Die Studie zeigt deutliche Lücken im Wissen auf.",
+    "beispielTr": "Çalışma bilgideki belirgin boşlukları ortaya koyuyor.",
+    "beispielEn": "The study points out clear gaps in our knowledge."
+  },
+  {
+    "id": 7388,
+    "tr": "doktora yapmak",
+    "en": "to earn a doctorate",
+    "beispiel": "Sie promovierte über mittelalterliche Handschriften in Freiburg.",
+    "beispielTr": "Freiburg'da ortaçağ el yazmaları üzerine doktora yaptı.",
+    "beispielEn": "She earned her doctorate in Freiburg on medieval manuscripts."
+  },
+  {
+    "id": 7389,
+    "tr": "çığır açıcı",
+    "en": "groundbreaking",
+    "beispiel": "Ihre frühe Studie zur Zellteilung war wegweisend.",
+    "beispielTr": "Hücre bölünmesi üzerine erken çalışması çığır açıcıydı.",
+    "beispielEn": "Her early study on cell division was groundbreaking."
+  },
+  {
+    "id": 7390,
+    "tr": "tartışmalı",
+    "en": "disputed",
+    "beispiel": "Ob der Effekt existiert, bleibt weiterhin strittig.",
+    "beispielTr": "Etkinin var olup olmadığı hâlâ tartışmalı.",
+    "beispielEn": "Whether the effect exists at all remains disputed."
+  },
+  {
+    "id": 7391,
+    "tr": "çok anlamlı",
+    "en": "ambiguous",
+    "beispiel": "Der Begriff wird in der Literatur oft mehrdeutig verwendet.",
+    "beispielTr": "Kavram literatürde çoğu zaman çok anlamlı kullanılıyor.",
+    "beispielEn": "The term is often used ambiguously in the literature."
+  },
+  {
+    "id": 7392,
+    "tr": "geri dönülmezlik",
+    "en": "irreversibility",
+    "beispiel": "Die Unumkehrbarkeit dieser Entscheidung schreckt viele ab.",
+    "beispielTr": "Bu kararın geri dönülmezliği çoğu kişiyi caydırıyor.",
+    "beispielEn": "The irreversibility of this decision deters many people."
+  },
+  {
+    "id": 7393,
+    "tr": "gerçekleşme olasılığı",
+    "en": "probability of occurrence",
+    "beispiel": "Die Versicherung schätzt die Eintrittswahrscheinlichkeit des Schadens.",
+    "beispielTr": "Sigorta şirketi hasarın gerçekleşme olasılığını hesaplıyor.",
+    "beispielEn": "The insurer estimates the probability of the damage occurring."
+  },
+  {
+    "id": 7394,
+    "tr": "tehlike potansiyeli",
+    "en": "hazard potential",
+    "beispiel": "Fachleute streiten über das Gefahrenpotenzial dieser Technik.",
+    "beispielTr": "Uzmanlar bu tekniğin tehlike potansiyelini tartışıyor.",
+    "beispielEn": "Experts disagree about the hazard potential of this technology."
+  },
+  {
+    "id": 7395,
+    "tr": "erken uyarı sistemi",
+    "en": "early warning system",
+    "beispiel": "Das Frühwarnsystem meldete die Flutwelle rechtzeitig.",
+    "beispielTr": "Erken uyarı sistemi sel dalgasını zamanında bildirdi.",
+    "beispielEn": "The early warning system reported the flood wave in time."
+  },
+  {
+    "id": 7396,
+    "tr": "bilinmezlik",
+    "en": "uncertainty",
+    "beispiel": "Die Ungewissheit über den Ausgang zermürbte die Familie.",
+    "beispielTr": "Sonucun bilinmezliği aileyi yıprattı.",
+    "beispielEn": "The uncertainty about the outcome wore the family down."
+  },
+  {
+    "id": 7397,
+    "tr": "zaman ufku",
+    "en": "time horizon",
+    "beispiel": "Der Zeithorizont dieser Planung reicht über Jahrzehnte.",
+    "beispielTr": "Bu planlamanın zaman ufku onlarca yıla uzanıyor.",
+    "beispielEn": "The time horizon of this plan spans decades."
+  },
+  {
+    "id": 7398,
+    "tr": "veri durumu",
+    "en": "available data",
+    "beispiel": "Bei dieser dünnen Datenlage sind klare Aussagen unmöglich.",
+    "beispielTr": "Bu zayıf veri durumunda net yargılara varmak imkânsız.",
+    "beispielEn": "With data this thin, clear conclusions are impossible."
+  },
+  {
+    "id": 7399,
+    "tr": "referans değer",
+    "en": "guideline value",
+    "beispiel": "Der Richtwert für Feinstaub wird oft überschritten.",
+    "beispielTr": "İnce toz için referans değer sık sık aşılıyor.",
+    "beispielEn": "The guideline value for particulates is often exceeded."
+  },
+  {
+    "id": 7400,
+    "tr": "etki değerlendirmesi",
+    "en": "impact assessment",
+    "beispiel": "Vor der Einführung wurde eine Folgenabschätzung vorgelegt.",
+    "beispielTr": "Uygulamaya geçilmeden önce bir etki değerlendirmesi sunuldu.",
+    "beispielEn": "An impact assessment was submitted before the rollout."
+  },
+  {
+    "id": 7401,
+    "tr": "yan hasar",
+    "en": "collateral damage",
+    "beispiel": "Die Kollateralschäden der Sparpolitik zeigen sich erst später.",
+    "beispielTr": "Tasarruf politikasının yan hasarları ancak sonra ortaya çıkıyor.",
+    "beispielEn": "The collateral damage of the austerity policy shows up only later."
+  },
+  {
+    "id": 7402,
+    "tr": "kırılganlık",
+    "en": "vulnerability",
+    "beispiel": "Die Pandemie legte die Verwundbarkeit der Lieferketten offen.",
+    "beispielTr": "Salgın, tedarik zincirlerinin kırılganlığını gözler önüne serdi.",
+    "beispielEn": "The pandemic exposed the vulnerability of supply chains."
+  }
+]

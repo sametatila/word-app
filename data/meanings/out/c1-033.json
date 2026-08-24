@@ -1,0 +1,402 @@
+[
+  {
+    "id": 6853,
+    "tr": "değer anlayışı",
+    "en": "moral value",
+    "beispiel": "Ihre Wertvorstellungen prallten schon beim ersten Abendessen aufeinander.",
+    "beispielTr": "Değer anlayışları daha ilk akşam yemeğinde çarpıştı.",
+    "beispielEn": "Their moral values clashed at the very first dinner."
+  },
+  {
+    "id": 6854,
+    "tr": "geçicilik",
+    "en": "transience",
+    "beispiel": "Am Grab seines Vaters begriff er die Vergänglichkeit.",
+    "beispielTr": "Babasının mezarı başında geçiciliği kavradı.",
+    "beispielEn": "At his father's grave he grasped how fleeting life is."
+  },
+  {
+    "id": 6855,
+    "tr": "temel karakter özelliği",
+    "en": "essential trait",
+    "beispiel": "Diese Sturheit ist ein Wesenszug seiner ganzen Familie.",
+    "beispielTr": "Bu inatçılık bütün ailesinin temel bir karakter özelliği.",
+    "beispielEn": "That stubbornness is an essential trait of his whole family."
+  },
+  {
+    "id": 6856,
+    "tr": "itici güç",
+    "en": "driving force",
+    "beispiel": "Neid war die eigentliche Triebfeder hinter seiner Kandidatur.",
+    "beispielTr": "Adaylığının asıl itici gücü kıskançlıktı.",
+    "beispielEn": "Envy was the real driving force behind his candidacy."
+  },
+  {
+    "id": 6857,
+    "tr": "arayış",
+    "en": "pursuit",
+    "beispiel": "Sein Streben nach Anerkennung bestimmt jede seiner Entscheidungen.",
+    "beispielTr": "Tanınma arayışı bütün kararlarını belirliyor.",
+    "beispielEn": "His pursuit of recognition shapes every decision he makes."
+  },
+  {
+    "id": 6858,
+    "tr": "kendini bilme",
+    "en": "self-knowledge",
+    "beispiel": "Nach dem Streit fehlte ihm jede Selbsterkenntnis.",
+    "beispielTr": "Kavgadan sonra kendini bilmekten eser yoktu.",
+    "beispielEn": "After the quarrel he showed no self-knowledge at all."
+  },
+  {
+    "id": 6859,
+    "tr": "kendi başına amaç",
+    "en": "end in itself",
+    "beispiel": "Diese Sitzungen sind längst zum Selbstzweck geworden.",
+    "beispielTr": "Bu toplantılar çoktan kendi başına bir amaç hâline geldi.",
+    "beispielEn": "These meetings have long since become an end in themselves."
+  },
+  {
+    "id": 6860,
+    "tr": "çıkışsızlık",
+    "en": "hopelessness",
+    "beispiel": "Nach der dritten Absage packte ihn die Ausweglosigkeit.",
+    "beispielTr": "Üçüncü ret cevabından sonra çıkışsızlık duygusuna kapıldı.",
+    "beispielEn": "After the third rejection a sense of hopelessness gripped him."
+  },
+  {
+    "id": 6861,
+    "tr": "bağışlama",
+    "en": "forgiveness",
+    "beispiel": "Nach Jahren des Schweigens bat er um Vergebung.",
+    "beispielTr": "Yıllar süren sessizliğin ardından bağışlanma diledi.",
+    "beispielEn": "After years of silence he asked for forgiveness."
+  },
+  {
+    "id": 6862,
+    "tr": "hoşgörü",
+    "en": "leniency",
+    "beispiel": "Mit Anfängern zeigt der Trainer erstaunlich viel Nachsicht.",
+    "beispielTr": "Antrenör yeni başlayanlara şaşırtıcı ölçüde hoşgörü gösteriyor.",
+    "beispielEn": "The coach shows beginners a surprising amount of leniency."
+  },
+  {
+    "id": 6863,
+    "tr": "satın alınamazlık",
+    "en": "incorruptibility",
+    "beispiel": "Der Beamte lehnte das Geld ab und bewies seine Unbestechlichkeit.",
+    "beispielTr": "Memur parayı geri çevirerek satın alınamazlığını kanıtladı.",
+    "beispielEn": "The official refused the money and proved his incorruptibility."
+  },
+  {
+    "id": 6864,
+    "tr": "erginlik",
+    "en": "maturity",
+    "beispiel": "Die Schule soll die Kinder zur Mündigkeit erziehen.",
+    "beispielTr": "Okul, çocukları ergin bireyler olarak yetiştirmeli.",
+    "beispielEn": "School should raise children to think for themselves."
+  },
+  {
+    "id": 6865,
+    "tr": "kendini kandırma",
+    "en": "self-deception",
+    "beispiel": "Er nannte es Optimismus, doch es war Selbsttäuschung.",
+    "beispielTr": "Buna iyimserlik diyordu, oysa kendini kandırmaktı.",
+    "beispielEn": "He called it optimism, but it was self-deception."
+  },
+  {
+    "id": 6866,
+    "tr": "tevazu",
+    "en": "humility",
+    "beispiel": "Vor diesem alten Wald empfand sie plötzlich Demut.",
+    "beispielTr": "Bu yaşlı ormanın karşısında birden tevazu duydu.",
+    "beispielEn": "Standing before this ancient forest she suddenly felt humility."
+  },
+  {
+    "id": 6867,
+    "tr": "kibir",
+    "en": "arrogance",
+    "beispiel": "Sein Hochmut kostete ihn am Ende alle Freunde.",
+    "beispielTr": "Kibri yüzünden sonunda bütün arkadaşlarını kaybetti.",
+    "beispielEn": "His arrogance cost him all his friends in the end."
+  },
+  {
+    "id": 6868,
+    "tr": "gerektirmek",
+    "en": "to demand",
+    "beispiel": "Der Zustand der Brücke gebietet eine sofortige Sperrung.",
+    "beispielTr": "Köprünün durumu derhal kapatılmasını gerektiriyor.",
+    "beispielEn": "The state of the bridge demands an immediate closure."
+  },
+  {
+    "id": 6869,
+    "tr": "onaylamamak",
+    "en": "to disapprove",
+    "beispiel": "Ihre Eltern missbilligten die Hochzeit von Anfang an.",
+    "beispielTr": "Ailesi düğünü en başından beri onaylamadı.",
+    "beispielEn": "Her parents disapproved of the wedding from the start."
+  },
+  {
+    "id": 6870,
+    "tr": "olumlamak",
+    "en": "to affirm",
+    "beispiel": "Sie bejaht ihr Leben trotz aller Rückschläge.",
+    "beispielTr": "Bütün aksiliklere rağmen hayatını olumluyor.",
+    "beispielEn": "She affirms her life despite all the setbacks."
+  },
+  {
+    "id": 6871,
+    "tr": "hayır demek",
+    "en": "to say no",
+    "beispiel": "Die Frage nach einem Zeugen verneinte er knapp.",
+    "beispielTr": "Tanık olup olmadığı sorusuna kısaca hayır dedi.",
+    "beispielEn": "He curtly said no to the question about a witness."
+  },
+  {
+    "id": 6872,
+    "tr": "önem vermek",
+    "en": "to attach importance",
+    "beispiel": "Sie misst dem Urteil ihrer Kollegen große Bedeutung bei.",
+    "beispielTr": "Meslektaşlarının görüşüne büyük önem veriyor.",
+    "beispielEn": "She attaches great importance to her colleagues' opinion."
+  },
+  {
+    "id": 6873,
+    "tr": "kendinde hak görmek",
+    "en": "to presume",
+    "beispiel": "Er maßt sich ein Urteil über meine Ehe an.",
+    "beispielTr": "Evliliğim hakkında hüküm verme hakkını kendinde görüyor.",
+    "beispielEn": "He presumes to pass judgment on my marriage."
+  },
+  {
+    "id": 6874,
+    "tr": "kabullenmek",
+    "en": "to put up with",
+    "beispiel": "Diese Verspätungen müssen wir nicht länger hinnehmen.",
+    "beispielTr": "Bu gecikmeleri daha fazla kabullenmek zorunda değiliz.",
+    "beispielEn": "We don't have to put up with these delays any longer."
+  },
+  {
+    "id": 6875,
+    "tr": "ahlaki",
+    "en": "moral",
+    "beispiel": "Er lehnte den Auftrag aus sittlichen Gründen ab.",
+    "beispielTr": "İşi ahlaki gerekçelerle geri çevirdi.",
+    "beispielEn": "He turned down the job on moral grounds."
+  },
+  {
+    "id": 6876,
+    "tr": "vicdansız",
+    "en": "unscrupulous",
+    "beispiel": "Er nutzte die Notlage seiner Nachbarn völlig skrupellos aus.",
+    "beispielTr": "Komşularının zor durumundan tamamen vicdansızca yararlandı.",
+    "beispielEn": "He took utterly unscrupulous advantage of his neighbors' plight."
+  },
+  {
+    "id": 6877,
+    "tr": "akla yatkın",
+    "en": "plausible",
+    "beispiel": "Seine Erklärung klang einleuchtend, stimmte aber nicht.",
+    "beispielTr": "Açıklaması akla yatkın geldi, ama doğru değildi.",
+    "beispielEn": "His explanation sounded plausible, but it was not true."
+  },
+  {
+    "id": 6878,
+    "tr": "görünüşte",
+    "en": "ostensibly",
+    "beispiel": "Vordergründig geht es um Geld, eigentlich aber um Anerkennung.",
+    "beispielTr": "Görünüşte mesele para, aslında ise takdir görmek.",
+    "beispielEn": "Ostensibly it is about money, but really about recognition."
+  },
+  {
+    "id": 6879,
+    "tr": "kasten",
+    "en": "deliberately",
+    "beispiel": "Diesen Fehler hat er nicht willentlich begangen.",
+    "beispielTr": "Bu hatayı kasten yapmadı.",
+    "beispielEn": "He did not commit this mistake deliberately."
+  },
+  {
+    "id": 6880,
+    "tr": "anayasa mahkemesi",
+    "en": "constitutional court",
+    "beispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz für nichtig.",
+    "beispielTr": "Anayasa mahkemesi tartışmalı yasayı geçersiz ilan etti.",
+    "beispielEn": "The constitutional court declared the disputed law void."
+  },
+  {
+    "id": 6881,
+    "tr": "nispi temsil",
+    "en": "proportional representation",
+    "beispiel": "Bei der Verhältniswahl kommen auch kleine Parteien ins Parlament.",
+    "beispielTr": "Nispi temsilde küçük partiler de meclise giriyor.",
+    "beispielEn": "Under proportional representation small parties also enter parliament."
+  },
+  {
+    "id": 6882,
+    "tr": "yürütme",
+    "en": "executive branch",
+    "beispiel": "Die Exekutive setzte den Beschluss des Parlaments nicht um.",
+    "beispielTr": "Yürütme, parlamentonun kararını uygulamadı.",
+    "beispielEn": "The executive branch did not implement parliament's decision."
+  },
+  {
+    "id": 6883,
+    "tr": "yasama",
+    "en": "legislature",
+    "beispiel": "Die Legislative beschloss das Gesetz gegen den Willen der Regierung.",
+    "beispielTr": "Yasama, yasayı hükümetin isteğine rağmen kabul etti.",
+    "beispielEn": "The legislature passed the law against the government's will."
+  },
+  {
+    "id": 6884,
+    "tr": "federalizm",
+    "en": "federalism",
+    "beispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die Länder.",
+    "beispielTr": "Alman federalizmi eğitim politikasını eyaletlere dağıtır.",
+    "beispielEn": "German federalism distributes education policy among the states."
+  },
+  {
+    "id": 6885,
+    "tr": "yerindenlik ilkesi",
+    "en": "subsidiarity",
+    "beispiel": "Nach dem Grundsatz der Subsidiarität entscheidet die Gemeinde selbst.",
+    "beispielTr": "Yerindenlik ilkesine göre kararı belediyenin kendisi verir.",
+    "beispielEn": "Under the principle of subsidiarity the municipality decides itself."
+  },
+  {
+    "id": 6886,
+    "tr": "yerel yönetim birimi",
+    "en": "local authority",
+    "beispiel": "Die Gebietskörperschaften finanzieren den Ausbau der Schulen gemeinsam.",
+    "beispielTr": "Yerel yönetim birimleri okulların yapımını birlikte finanse ediyor.",
+    "beispielEn": "The local authorities jointly finance the expansion of the schools."
+  },
+  {
+    "id": 6887,
+    "tr": "birim",
+    "en": "department",
+    "beispiel": "Für diese Frage ist ein anderes Ressort zuständig.",
+    "beispielTr": "Bu konudan başka bir birim sorumlu.",
+    "beispielEn": "A different department is responsible for this question."
+  },
+  {
+    "id": 6888,
+    "tr": "bürokrasi",
+    "en": "bureaucracy",
+    "beispiel": "Kleine Betriebe klagen seit Jahren über die ausufernde Bürokratie.",
+    "beispielTr": "Küçük işletmeler yıllardır büyüyen bürokrasiden şikâyetçi.",
+    "beispielEn": "Small firms have complained for years about mushrooming bureaucracy."
+  },
+  {
+    "id": 6889,
+    "tr": "referandum",
+    "en": "referendum",
+    "beispiel": "Über den Beitritt soll ein landesweites Referendum entscheiden.",
+    "beispielTr": "Katılım konusunda ülke çapında bir referandum karar verecek.",
+    "beispielEn": "A nationwide referendum is to decide on the accession."
+  },
+  {
+    "id": 6890,
+    "tr": "iktidar yetkisi",
+    "en": "governmental power",
+    "beispiel": "Der Präsident überschritt seine Machtbefugnisse deutlich.",
+    "beispielTr": "Cumhurbaşkanı iktidar yetkilerini açıkça aştı.",
+    "beispielEn": "The president clearly exceeded his governmental powers."
+  },
+  {
+    "id": 6891,
+    "tr": "irade oluşumu",
+    "en": "will formation",
+    "beispiel": "Parteien wirken an der politischen Willensbildung des Volkes mit.",
+    "beispielTr": "Partiler halkın siyasi irade oluşumuna katkıda bulunur.",
+    "beispielEn": "Parties take part in the political will formation of the people."
+  },
+  {
+    "id": 6892,
+    "tr": "çıkar grubu",
+    "en": "interest group",
+    "beispiel": "Mächtige Interessenverbände treten in Berlin für ihre Branche ein.",
+    "beispielTr": "Güçlü çıkar grupları Berlin'de kendi sektörlerini savunuyor.",
+    "beispielEn": "Powerful interest groups in Berlin stand up for their industry."
+  },
+  {
+    "id": 6893,
+    "tr": "lobicilik",
+    "en": "lobbying",
+    "beispiel": "Ein öffentliches Register soll den Lobbyismus transparenter machen.",
+    "beispielTr": "Kamuya açık bir kayıt sistemi lobiciliği şeffaflaştıracak.",
+    "beispielEn": "A public register is meant to make lobbying more transparent."
+  },
+  {
+    "id": 6894,
+    "tr": "etki etme",
+    "en": "exerting influence",
+    "beispiel": "Die Staatsanwaltschaft prüft eine mögliche Einflussnahme auf die Vergabe.",
+    "beispielTr": "Savcılık, ihalelerin dağıtımına etki edilip edilmediğini araştırıyor.",
+    "beispielEn": "Prosecutors are examining possible influence on the awarding of contracts."
+  },
+  {
+    "id": 6895,
+    "tr": "şiddet tekeli",
+    "en": "monopoly on violence",
+    "beispiel": "In manchen Regionen hat der Staat sein Gewaltmonopol praktisch verloren.",
+    "beispielTr": "Bazı bölgelerde devlet şiddet tekelini fiilen yitirdi.",
+    "beispielEn": "In some regions the state has practically lost its monopoly on violence."
+  },
+  {
+    "id": 6896,
+    "tr": "devlet çıkarı",
+    "en": "reason of state",
+    "beispiel": "Der Minister berief sich auf die Staatsräson und schwieg zu Details.",
+    "beispielTr": "Bakan devlet çıkarını öne sürüp ayrıntılara girmedi.",
+    "beispielEn": "The minister invoked reason of state and stayed silent on details."
+  },
+  {
+    "id": 6897,
+    "tr": "hükümet programı",
+    "en": "government policy statement",
+    "beispiel": "In seiner Regierungserklärung kündigte der Kanzler höhere Renten an.",
+    "beispielTr": "Başbakan hükümet programı konuşmasında emekli maaşlarına zam duyurdu.",
+    "beispielEn": "In his policy statement the chancellor announced higher pensions."
+  },
+  {
+    "id": 6898,
+    "tr": "Federal Meclis",
+    "en": "federal parliament",
+    "beispiel": "Der Bundestag debattierte bis in die frühen Morgenstunden über den Haushalt.",
+    "beispielTr": "Federal Meclis bütçeyi sabahın ilk saatlerine kadar tartıştı.",
+    "beispielEn": "The Bundestag debated the budget into the early morning hours."
+  },
+  {
+    "id": 6899,
+    "tr": "yeter sayı",
+    "en": "quorum",
+    "beispiel": "Nur zwanzig Mitglieder kamen, damit fehlte das Quorum.",
+    "beispielTr": "Yalnızca yirmi üye geldi, böylece yeter sayı sağlanamadı.",
+    "beispielEn": "Only twenty members came, so the quorum was not met."
+  },
+  {
+    "id": 6900,
+    "tr": "içtüzük",
+    "en": "rules of procedure",
+    "beispiel": "Der Antrag verstieß eindeutig gegen die Geschäftsordnung des Parlaments.",
+    "beispielTr": "Önerge açıkça meclisin içtüzüğüne aykırıydı.",
+    "beispielEn": "The motion clearly violated parliament's rules of procedure."
+  },
+  {
+    "id": 6901,
+    "tr": "diplomasi",
+    "en": "diplomacy",
+    "beispiel": "Stille Diplomatie erreichte mehr als jede öffentliche Drohung.",
+    "beispielTr": "Sessiz diplomasi açık tehditlerden daha fazlasını sağladı.",
+    "beispielEn": "Quiet diplomacy achieved more than any public threat."
+  },
+  {
+    "id": 6902,
+    "tr": "görev yapmak",
+    "en": "to hold office",
+    "beispiel": "Er amtierte zwölf Jahre lang als Bürgermeister dieser Stadt.",
+    "beispielTr": "On iki yıl boyunca bu şehrin belediye başkanlığını yaptı.",
+    "beispielEn": "He served as mayor of this town for twelve years."
+  }
+]

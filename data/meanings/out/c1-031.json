@@ -1,0 +1,402 @@
+[
+ {
+  "id": 6753,
+  "tr": "fotosentez",
+  "en": "photosynthesis",
+  "beispiel": "Im Dunkeln stellen die Blätter die Photosynthese ein.",
+  "beispielTr": "Karanlıkta yapraklar fotosentezi durduruyor.",
+  "beispielEn": "In the dark the leaves stop photosynthesis."
+ },
+ {
+  "id": 6754,
+  "tr": "hücre çekirdeği",
+  "en": "cell nucleus",
+  "beispiel": "Unter dem Mikroskop erkennt man den Zellkern deutlich.",
+  "beispielTr": "Mikroskop altında hücre çekirdeği açıkça görülüyor.",
+  "beispielEn": "Under the microscope the cell nucleus is clearly visible."
+ },
+ {
+  "id": 6755,
+  "tr": "kromozom",
+  "en": "chromosome",
+  "beispiel": "Auf diesem Chromosom liegt das gesuchte Gen.",
+  "beispielTr": "Aranan gen bu kromozomun üzerinde bulunuyor.",
+  "beispielEn": "The gene they are looking for lies on this chromosome."
+ },
+ {
+  "id": 6756,
+  "tr": "kalıtım maddesi",
+  "en": "genetic material",
+  "beispiel": "Der Forscher veränderte das Erbgut der Pflanze gezielt.",
+  "beispielTr": "Araştırmacı bitkinin kalıtım maddesini bilinçli olarak değiştirdi.",
+  "beispielEn": "The researcher deliberately altered the plant's genetic material."
+ },
+ {
+  "id": 6757,
+  "tr": "enzim",
+  "en": "enzyme",
+  "beispiel": "Ohne dieses Enzym kann der Körper den Zucker nicht abbauen.",
+  "beispielTr": "Bu enzim olmadan vücut şekeri parçalayamaz.",
+  "beispielEn": "Without this enzyme the body cannot break down sugar."
+ },
+ {
+  "id": 6758,
+  "tr": "hormon",
+  "en": "hormone",
+  "beispiel": "Bei Stress schüttet der Körper vermehrt bestimmte Hormone aus.",
+  "beispielTr": "Stres altında vücut belirli hormonları daha çok salgılıyor.",
+  "beispielEn": "Under stress the body releases more of certain hormones."
+ },
+ {
+  "id": 6759,
+  "tr": "evrim",
+  "en": "evolution",
+  "beispiel": "Im Museum erklärt eine Tafel die Evolution des Pferdes.",
+  "beispielTr": "Müzede bir pano atın evrimini anlatıyor.",
+  "beispielEn": "In the museum a panel explains the evolution of the horse."
+ },
+ {
+  "id": 6760,
+  "tr": "buharlaşmak",
+  "en": "to vaporize",
+  "beispiel": "Bei hundert Grad verdampft das Wasser vollständig.",
+  "beispielTr": "Yüz derecede su tamamen buharlaşıyor.",
+  "beispielEn": "At a hundred degrees the water vaporizes completely."
+ },
+ {
+  "id": 6761,
+  "tr": "katılaşmak",
+  "en": "to solidify",
+  "beispiel": "Die glühende Lava erstarrt an der Luft zu schwarzem Gestein.",
+  "beispielTr": "Kızgın lav havada katılaşıp siyah kayaya dönüşüyor.",
+  "beispielEn": "The glowing lava solidifies into black rock in the air."
+ },
+ {
+  "id": 6762,
+  "tr": "yarmak",
+  "en": "to split",
+  "beispiel": "Er spaltet das Holz mit einer schweren Axt.",
+  "beispielTr": "Ağır bir baltayla odunu yarıyor.",
+  "beispielEn": "He splits the wood with a heavy axe."
+ },
+ {
+  "id": 6763,
+  "tr": "genleşmek",
+  "en": "to expand",
+  "beispiel": "Metall dehnt sich bei Hitze deutlich messbar aus.",
+  "beispielTr": "Metal sıcakta ölçülebilir biçimde genleşiyor.",
+  "beispielEn": "Metal expands measurably when it gets hot."
+ },
+ {
+  "id": 6764,
+  "tr": "büzülmek",
+  "en": "to contract",
+  "beispiel": "Bei Kälte ziehen sich die Blutgefäße in der Haut zusammen.",
+  "beispielTr": "Soğukta derideki kan damarları büzülüyor.",
+  "beispielEn": "In the cold the blood vessels in the skin contract."
+ },
+ {
+  "id": 6765,
+  "tr": "itmek",
+  "en": "to repel",
+  "beispiel": "Gleiche Pole eines Magneten stoßen einander ab.",
+  "beispielTr": "Bir mıknatısın aynı kutupları birbirini itiyor.",
+  "beispielEn": "Like poles of a magnet repel each other."
+ },
+ {
+  "id": 6766,
+  "tr": "salgılamak",
+  "en": "to secrete",
+  "beispiel": "Die Pflanze sondert bei Verletzung einen klebrigen Saft ab.",
+  "beispielTr": "Bitki yaralandığında yapışkan bir öz salgılıyor.",
+  "beispielEn": "When injured the plant secretes a sticky sap."
+ },
+ {
+  "id": 6767,
+  "tr": "çoğalmak",
+  "en": "to multiply",
+  "beispiel": "In warmem Wasser vermehren sich die Keime besonders schnell.",
+  "beispielTr": "Ilık suda mikroplar özellikle hızlı çoğalıyor.",
+  "beispielEn": "In warm water the germs multiply especially fast."
+ },
+ {
+  "id": 6768,
+  "tr": "biriktirmek",
+  "en": "to deposit",
+  "beispiel": "Der Fluss lagert an der Mündung feinen Sand ab.",
+  "beispielTr": "Nehir, ağzında ince kum biriktiriyor.",
+  "beispielEn": "The river deposits fine sand at its mouth."
+ },
+ {
+  "id": 6769,
+  "tr": "seyreltmek",
+  "en": "to dilute",
+  "beispiel": "Die Säure muss vor dem Versuch stark verdünnt werden.",
+  "beispielTr": "Asidin deneyden önce iyice seyreltilmesi gerekiyor.",
+  "beispielEn": "The acid has to be heavily diluted before the experiment."
+ },
+ {
+  "id": 6770,
+  "tr": "dönüştürmek",
+  "en": "to convert",
+  "beispiel": "Der Muskel wandelt chemische Energie in Bewegung um.",
+  "beispielTr": "Kas kimyasal enerjiyi harekete dönüştürüyor.",
+  "beispielEn": "The muscle converts chemical energy into movement."
+ },
+ {
+  "id": 6771,
+  "tr": "açığa çıkarmak",
+  "en": "to release",
+  "beispiel": "Beim Auftauen der Böden wird viel Methan freigesetzt.",
+  "beispielTr": "Toprakların çözülmesiyle bol miktarda metan açığa çıkıyor.",
+  "beispielEn": "As the soils thaw a lot of methane is released."
+ },
+ {
+  "id": 6772,
+  "tr": "bağlamak",
+  "en": "to tie",
+  "beispiel": "Sie bindet den Strauß mit einem roten Band.",
+  "beispielTr": "Buketi kırmızı bir kurdeleyle bağlıyor.",
+  "beispielEn": "She ties the bouquet with a red ribbon."
+ },
+ {
+  "id": 6773,
+  "tr": "yetiştirmek",
+  "en": "to breed",
+  "beispiel": "Mein Nachbar züchtet seit Jahren seltene Tauben.",
+  "beispielTr": "Komşum yıllardır nadir güvercinler yetiştiriyor.",
+  "beispielEn": "My neighbor has been breeding rare pigeons for years."
+ },
+ {
+  "id": 6774,
+  "tr": "çürümek",
+  "en": "to decompose",
+  "beispiel": "Im feuchten Boden verwesen die Reste innerhalb weniger Wochen.",
+  "beispielTr": "Nemli toprakta kalıntılar birkaç hafta içinde çürüyor.",
+  "beispielEn": "In damp soil the remains decompose within a few weeks."
+ },
+ {
+  "id": 6775,
+  "tr": "emmek",
+  "en": "to soak up",
+  "beispiel": "Ein Tuch saugt die verschüttete Milch schnell auf.",
+  "beispielTr": "Bir bez dökülen sütü çabucak emiyor.",
+  "beispielEn": "A cloth quickly soaks up the spilled milk."
+ },
+ {
+  "id": 6776,
+  "tr": "süzülmek",
+  "en": "to float",
+  "beispiel": "Der bunte Ballon schwebt über den Dächern.",
+  "beispielTr": "Rengârenk balon çatıların üzerinde süzülüyor.",
+  "beispielEn": "The colorful balloon floats above the rooftops."
+ },
+ {
+  "id": 6777,
+  "tr": "dönmek",
+  "en": "to rotate",
+  "beispiel": "Die Erde rotiert einmal am Tag um ihre Achse.",
+  "beispielTr": "Dünya günde bir kez kendi ekseni etrafında dönüyor.",
+  "beispielEn": "The earth rotates around its axis once a day."
+ },
+ {
+  "id": 6778,
+  "tr": "uçucu",
+  "en": "volatile",
+  "beispiel": "Aceton ist sehr flüchtig und riecht deshalb stark.",
+  "beispielTr": "Aseton çok uçucudur ve bu yüzden keskin kokar.",
+  "beispielEn": "Acetone is very volatile and therefore smells strongly."
+ },
+ {
+  "id": 6779,
+  "tr": "organik",
+  "en": "organic",
+  "beispiel": "Im Sediment fanden die Forscher überraschend viel organisches Material.",
+  "beispielTr": "Araştırmacılar tortuda şaşırtıcı ölçüde çok organik madde buldu.",
+  "beispielEn": "The researchers found a surprising amount of organic material in the sediment."
+ },
+ {
+  "id": 6780,
+  "tr": "ısıl",
+  "en": "thermal",
+  "beispiel": "Die alte Fassade ist thermisch schlecht isoliert.",
+  "beispielTr": "Eski cephe ısıl olarak kötü yalıtılmış.",
+  "beispielEn": "The old facade has poor thermal insulation."
+ },
+ {
+  "id": 6781,
+  "tr": "esnek",
+  "en": "elastic",
+  "beispiel": "Das Material bleibt auch bei tiefen Temperaturen elastisch.",
+  "beispielTr": "Malzeme düşük sıcaklıklarda da esnek kalıyor.",
+  "beispielEn": "The material stays elastic even at low temperatures."
+ },
+ {
+  "id": 6782,
+  "tr": "hava geçirmez",
+  "en": "airtight",
+  "beispiel": "Bewahre den Kaffee in einer luftdichten Dose auf.",
+  "beispielTr": "Kahveyi hava geçirmez bir kutuda sakla.",
+  "beispielEn": "Keep the coffee in an airtight container."
+ },
+ {
+  "id": 6783,
+  "tr": "kararsız",
+  "en": "unstable",
+  "beispiel": "Diese Verbindung ist chemisch unbeständig und zerfällt rasch.",
+  "beispielTr": "Bu bileşik kimyasal olarak kararsızdır ve hızla parçalanır.",
+  "beispielEn": "This compound is chemically unstable and breaks down fast."
+ },
+ {
+  "id": 6784,
+  "tr": "saydam",
+  "en": "transparent",
+  "beispiel": "Die Larve ist fast durchsichtig und kaum zu erkennen.",
+  "beispielTr": "Larva neredeyse saydam ve güçlükle fark ediliyor.",
+  "beispielEn": "The larva is almost transparent and hard to spot."
+ },
+ {
+  "id": 6785,
+  "tr": "su itici",
+  "en": "water-repellent",
+  "beispiel": "Die Blätter der Pflanze sind von Natur aus wasserabweisend.",
+  "beispielTr": "Bitkinin yaprakları doğası gereği su iticidir.",
+  "beispielEn": "The leaves of the plant are naturally water-repellent."
+ },
+ {
+  "id": 6786,
+  "tr": "ekosistem hizmeti",
+  "en": "ecosystem service",
+  "beispiel": "Die Stadt bezahlt Bauern jetzt für ihre Ökosystemleistungen.",
+  "beispielTr": "Şehir artık çiftçilere ekosistem hizmetleri için para ödüyor.",
+  "beispielEn": "The city now pays farmers for their ecosystem services."
+ },
+ {
+  "id": 6787,
+  "tr": "iklim politikası",
+  "en": "climate policy",
+  "beispiel": "Die Regierung streitet seit Monaten über ihre Klimapolitik.",
+  "beispielTr": "Hükümet aylardır kendi iklim politikasını tartışıyor.",
+  "beispielEn": "The government has been arguing about its climate policy for months."
+ },
+ {
+  "id": 6788,
+  "tr": "karbon yutağı",
+  "en": "carbon sink",
+  "beispiel": "Alte Wälder wirken über Jahrhunderte als zuverlässige Kohlenstoffsenke.",
+  "beispielTr": "Yaşlı ormanlar yüzyıllarca güvenilir bir karbon yutağı işlevi görüyor.",
+  "beispielEn": "Old forests act as a reliable carbon sink for centuries."
+ },
+ {
+  "id": 6789,
+  "tr": "ormansızlaşma",
+  "en": "deforestation",
+  "beispiel": "Die Entwaldung schreitet trotz internationaler Abkommen ungebremst voran.",
+  "beispielTr": "Ormansızlaşma uluslararası anlaşmalara rağmen hız kesmeden sürüyor.",
+  "beispielEn": "Deforestation continues unchecked despite international agreements."
+ },
+ {
+  "id": 6790,
+  "tr": "toprak erozyonu",
+  "en": "soil erosion",
+  "beispiel": "Hecken am Feldrand bremsen die Bodenerosion wirksam.",
+  "beispielTr": "Tarla kenarındaki çitler toprak erozyonunu etkili biçimde yavaşlatıyor.",
+  "beispielEn": "Hedges along the field edge effectively slow soil erosion."
+ },
+ {
+  "id": 6791,
+  "tr": "aşırı kullanım",
+  "en": "overuse",
+  "beispiel": "Die Übernutzung der Grundwasservorräte lässt sich kaum rückgängig machen.",
+  "beispielTr": "Yeraltı suyu rezervlerinin aşırı kullanımı neredeyse geri döndürülemiyor.",
+  "beispielEn": "The overuse of groundwater reserves can hardly be reversed."
+ },
+ {
+  "id": 6792,
+  "tr": "dayanma sınırı",
+  "en": "load limit",
+  "beispiel": "Viele Böden haben ihre ökologische Belastungsgrenze längst überschritten.",
+  "beispielTr": "Birçok toprak ekolojik dayanma sınırını çoktan aştı.",
+  "beispielEn": "Many soils passed their ecological load limit long ago."
+ },
+ {
+  "id": 6793,
+  "tr": "yenilenme yetisi",
+  "en": "regenerative capacity",
+  "beispiel": "Die Regenerationsfähigkeit der Meere wird systematisch überschätzt.",
+  "beispielTr": "Denizlerin yenilenme yetisi sistemli biçimde abartılıyor.",
+  "beispielEn": "The regenerative capacity of the seas is systematically overestimated."
+ },
+ {
+  "id": 6794,
+  "tr": "geri besleme",
+  "en": "feedback loop",
+  "beispiel": "Tauender Permafrost löst eine gefährliche Rückkopplung im Klimasystem aus.",
+  "beispielTr": "Çözülen donmuş toprak iklim sisteminde tehlikeli bir geri besleme başlatıyor.",
+  "beispielEn": "Thawing permafrost triggers a dangerous feedback loop in the climate system."
+ },
+ {
+  "id": 6795,
+  "tr": "çevreyle uyumluluk",
+  "en": "environmental compatibility",
+  "beispiel": "Vor dem Bau wird die Umweltverträglichkeit des Vorhabens geprüft.",
+  "beispielTr": "İnşaattan önce projenin çevreyle uyumluluğu inceleniyor.",
+  "beispielEn": "Before construction the project's environmental compatibility is examined."
+ },
+ {
+  "id": 6796,
+  "tr": "kirletici madde yükü",
+  "en": "pollutant load",
+  "beispiel": "Die Schadstoffbelastung der Luft sinkt in den Innenstädten langsam.",
+  "beispielTr": "Havadaki kirletici madde yükü şehir merkezlerinde yavaş azalıyor.",
+  "beispielEn": "The pollutant load of the air is falling slowly in the city centers."
+ },
+ {
+  "id": 6797,
+  "tr": "betonlaşma",
+  "en": "soil sealing",
+  "beispiel": "Die Versiegelung der Böden verschärft die Folgen starker Regenfälle.",
+  "beispielTr": "Toprakların betonlaşması şiddetli yağmurların sonuçlarını ağırlaştırıyor.",
+  "beispielEn": "The sealing of soils worsens the effects of heavy rainfall."
+ },
+ {
+  "id": 6798,
+  "tr": "besin zinciri",
+  "en": "food chain",
+  "beispiel": "Giftstoffe reichern sich am oberen Ende der Nahrungskette an.",
+  "beispielTr": "Zehirli maddeler besin zincirinin üst ucunda birikiyor.",
+  "beispielEn": "Toxins accumulate at the top of the food chain."
+ },
+ {
+  "id": 6799,
+  "tr": "madde döngüsü",
+  "en": "material cycle",
+  "beispiel": "Der natürliche Stoffkreislauf wird durch industrielle Eingriffe empfindlich gestört.",
+  "beispielTr": "Doğal madde döngüsü sanayi müdahaleleriyle ciddi biçimde bozuluyor.",
+  "beispielEn": "Industrial interventions seriously disturb the natural material cycle."
+ },
+ {
+  "id": 6800,
+  "tr": "popülasyon azalması",
+  "en": "population decline",
+  "beispiel": "Der starke Bestandsrückgang der Insekten alarmiert auch die Landwirte.",
+  "beispielTr": "Böceklerdeki güçlü popülasyon azalması çiftçileri de tedirgin ediyor.",
+  "beispielEn": "The sharp population decline of insects alarms farmers too."
+ },
+ {
+  "id": 6801,
+  "tr": "dönüşüm süreci",
+  "en": "transformation process",
+  "beispiel": "Der ökologische Transformationsprozess verlangt tiefgreifende institutionelle Reformen.",
+  "beispielTr": "Ekolojik dönüşüm süreci köklü kurumsal reformlar gerektiriyor.",
+  "beispielEn": "The ecological transformation process demands far-reaching institutional reforms."
+ },
+ {
+  "id": 6802,
+  "tr": "koruma alanı",
+  "en": "protected area",
+  "beispiel": "Im Schutzgebiet dürfen keine neuen Häuser gebaut werden.",
+  "beispielTr": "Koruma alanında yeni ev yapılmasına izin verilmiyor.",
+  "beispielEn": "No new houses may be built in the protected area."
+ }
+]
