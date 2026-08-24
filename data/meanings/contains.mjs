@@ -62,18 +62,103 @@ const flat = (t) =>
  * ikisini birden çözüyor.
  */
 const PREFIXES = [
-  "auseinander", "gegenuber", "hinunter", "herunter", "zusammen", "entgegen",
-  "spazieren", "nebenan", "entlang", "richtig", "bekannt", "bereit", "zugute",
-  "stehen", "bleiben", "kennen", "sitzen", "liegen", "heruber", "hinuber",
-  "herein", "hinein", "herauf", "hinauf", "voraus", "vorbei", "vorher",
-  "zurecht", "heraus", "hinaus", "zuruck", "kaputt", "weiter", "wieder",
-  "nieder", "gleich", "gegen", "wider", "offen", "bloss", "gross", "still",
-  "brach", "dabei", "davon", "daran", "darauf", "durch", "statt", "unter",
-  "drauf", "fern", "fest", "fort", "frei", "heim", "hoch", "nach", "teil",
-  "uber", "dran", "drin", "wahr", "warm", "rein", "raus", "klar", "nahe",
-  "inne", "preis", "stand", "wett", "fehl", "haus", "mass", "kund", "irre",
-  "voll", "acht", "gut", "dar", "los", "auf", "aus", "bei", "ein", "her",
-  "hin", "mit", "vor", "weg", "weh", "ab", "an", "um", "zu", "ob",
+  "auseinander",
+  "gegenuber",
+  "hinunter",
+  "herunter",
+  "zusammen",
+  "entgegen",
+  "spazieren",
+  "nebenan",
+  "entlang",
+  "richtig",
+  "bekannt",
+  "bereit",
+  "zugute",
+  "stehen",
+  "bleiben",
+  "kennen",
+  "sitzen",
+  "liegen",
+  "heruber",
+  "hinuber",
+  "herein",
+  "hinein",
+  "herauf",
+  "hinauf",
+  "voraus",
+  "vorbei",
+  "vorher",
+  "zurecht",
+  "heraus",
+  "hinaus",
+  "zuruck",
+  "kaputt",
+  "weiter",
+  "wieder",
+  "nieder",
+  "gleich",
+  "gegen",
+  "wider",
+  "offen",
+  "bloss",
+  "gross",
+  "still",
+  "brach",
+  "dabei",
+  "davon",
+  "daran",
+  "darauf",
+  "durch",
+  "statt",
+  "unter",
+  "drauf",
+  "fern",
+  "fest",
+  "fort",
+  "frei",
+  "heim",
+  "hoch",
+  "nach",
+  "teil",
+  "uber",
+  "dran",
+  "drin",
+  "wahr",
+  "warm",
+  "rein",
+  "raus",
+  "klar",
+  "nahe",
+  "inne",
+  "preis",
+  "stand",
+  "wett",
+  "fehl",
+  "haus",
+  "mass",
+  "kund",
+  "irre",
+  "voll",
+  "acht",
+  "gut",
+  "dar",
+  "los",
+  "auf",
+  "aus",
+  "bei",
+  "ein",
+  "her",
+  "hin",
+  "mit",
+  "vor",
+  "weg",
+  "weh",
+  "ab",
+  "an",
+  "um",
+  "zu",
+  "ob",
 ];
 
 /**
@@ -205,11 +290,55 @@ const IRREGULAR = {
  * aranmadan geçiliyordu.
  */
 const IRREGULAR_FLAT = new Map(
-  Object.entries(IRREGULAR).map(([k, v]) => [flat(k).replace(/[^a-z]/g, ""), v]),
+  Object.entries(IRREGULAR).map(([k, v]) => [
+    flat(k).replace(/[^a-z]/g, ""),
+    v,
+  ]),
 );
+/**
+ * Ayrılmayan ön ekler.
+ *
+ * Bunlar güçlü fiilin gövdesini gizliyor: "erfahren" düzensizler listesinde
+ * yok ama "fahren" var, ve "erfuhr" ancak ön ek soyulunca bulunabiliyor. Sınıf
+ * üretken (erfahren, versprechen, bekommen, entnehmen, zerbrechen…) ve kural
+ * olmadan her biri listeye tek tek yazılmak zorundaydı — yazılmayanların
+ * Präteritum cümlesi reddediliyordu.
+ */
+const AYRILMAYAN = ["be", "emp", "ent", "er", "ge", "miss", "ver", "zer"];
+
+/**
+ * "da(r)-" / "wo(r)-" ile kaynaşabilen edatlar.
+ *
+ * Çok parçalı maddede edat ayrı bir sözcük olarak aranıyor, oysa en tipik
+ * cümlede kaynaşmış oluyor: `sich freuen auf` için "Ich freue mich **darauf**,
+ * Sie kennenzulernen." Kaynaşmış hâl aranmayınca doğru cümle reddediliyordu.
+ */
+const EDATLAR = new Set([
+  "auf",
+  "an",
+  "in",
+  "uber",
+  "mit",
+  "von",
+  "zu",
+  "fur",
+  "bei",
+  "nach",
+  "um",
+  "aus",
+  "vor",
+  "unter",
+  "gegen",
+]);
+
 const irrForms = (gövde) => {
   const f = flat(gövde).replace(/[^a-z]/g, "");
-  return IRREGULAR[gövde] ?? IRREGULAR_FLAT.get(f) ?? IRREGULAR_FLAT.get(`${f}en`) ?? [];
+  return (
+    IRREGULAR[gövde] ??
+    IRREGULAR_FLAT.get(f) ??
+    IRREGULAR_FLAT.get(`${f}en`) ??
+    []
+  );
 };
 
 /**
@@ -247,7 +376,19 @@ function root(part) {
 }
 
 /** Çekim ekleri — her biri ayrı ayrı denenir, biri kısa kök bırakırsa atlanır. */
-const SUFFIXES = ["ern", "eln", "en", "er", "es", "em", "st", "te", "n", "e", "s"];
+const SUFFIXES = [
+  "ern",
+  "eln",
+  "en",
+  "er",
+  "es",
+  "em",
+  "st",
+  "te",
+  "n",
+  "e",
+  "s",
+];
 
 /**
  * Bir parçanın aranacak kökleri — kırpılmamış hâli de dâhil.
@@ -264,7 +405,8 @@ function roots(part) {
   const bare = flat(part).replace(/[^a-z]/g, "");
   const out = new Set([bare]);
   for (const suf of SUFFIXES) {
-    if (bare.endsWith(suf) && bare.length - suf.length >= 3) out.add(bare.slice(0, -suf.length));
+    if (bare.endsWith(suf) && bare.length - suf.length >= 3)
+      out.add(bare.slice(0, -suf.length));
   }
   return [...out].filter(Boolean);
 }
@@ -300,11 +442,16 @@ function stemVariants(r) {
     if (i >= 0) out.push(r.slice(0, i) + to + r.slice(i + from.length));
   }
 
-  const son = r.search(/[ie](?=[^aeiou]*$)/);
+  // `a` da kaynak ünlü: Almancanın en kalabalık güçlü sınıfı buradan geçiyor
+  // ve hiç aranmıyordu — fahren → fuhr, tragen → trug, halten → hielt,
+  // fangen → fing. Kusur `erfahren von` maddesinde görüldü: metinde
+  // "Von manchen Verabredungen **erfuhr** ich zu spät." yazıyordu ve
+  // denetleyici kelimeyi bulamıyordu.
+  const son = r.search(/[iea](?=[^aeiou]*$)/);
   if (son >= 0)
     // e → i de gerekli: Präsens 3. tekil şahısta gövde inceliyor
     // (bewerben → bewirbt, sprechen → spricht, helfen → hilft).
-    for (const v of r[son] === "i" ? ["a", "u"] : ["a", "o", "i"])
+    for (const v of r[son] === "i" ? ["a", "u"] : r[son] === "a" ? ["u", "ie", "i"] : ["a", "o", "i"])
       out.push(r.slice(0, son) + v + r.slice(son + 1));
   return out;
 }
@@ -354,6 +501,17 @@ function prefixedForms(part) {
  */
 function contains(sentence, headword) {
   const hay = flat(sentence);
+  /**
+   * Kök araması: son iki harf çekimde değişebiliyor, o yüzden düşürülüyor.
+   *
+   * Taban dörtte kalıyor. Beşe çıkarmak `der Termin` gibi yanlış kabulleri
+   * kapatıyor ("wei**term**ache") ama karşılığında doğru cümleleri reddetmeye
+   * başlıyor: "Es tut mir leid…" (`leidtun`) ve "Lies die Aufgabe … durch!"
+   * (`durchlesen`) ikisi de kusursuz Almanca ve ikisi de düşüyordu. Yanlış ret
+   * yanlış kabulden tehlikeli — ret, ajanı doğru veriyi bozmaya itiyor; kabul
+   * yalnızca bir uyarıyı susturuyor. Bu yüzden gevşek taraf seçildi ve
+   * `der Termin` bilinen bir sınır olarak duruyor.
+   */
   const kok = (r) => hay.includes(r.slice(0, Math.max(4, r.length - 2)));
   const kelime = (t) => new RegExp(`(?<![a-z])${t}(?![a-z])`).test(hay);
   const bas = (t) => new RegExp(`(?<![a-z])${t}`).test(hay);
@@ -366,13 +524,19 @@ function contains(sentence, headword) {
    * aransa "Ich gehe" eşleşmezdi. Dörtten uzun kök serbest gövdedir; bileşik
    * kelimede ortada da durabilir ("Rucksack" içindeki "sack").
    */
-  const varMi = (r) => (r.length <= 2 ? kelime(r) : r.length === 3 ? bas(r) : kok(r));
+  const varMi = (r) =>
+    r.length <= 2 ? kelime(r) : r.length === 3 ? bas(r) : kok(r);
 
   const parcaVar = (part) => {
     const bare = flat(part).replace(/[^a-z]/g, "");
     const r = root(part);
     if (!r) return true;
     if (roots(part).some((c) => varMi(c))) return true;
+
+    // Edat "darauf"/"worauf" içinde kaynaşmış olabilir (bkz. EDATLAR).
+    if (EDATLAR.has(bare))
+      for (const ön of ["da", "dar", "wo", "wor"])
+        if (kelime(`${ön}${bare}`)) return true;
 
     // Üç harflik gövde kelime BAŞI olarak aranıyor (bkz. `varMi`), oysa
     // düzenli ortaçta gövde başta değil: "dösen" → "gedöst", "rügen" →
@@ -391,27 +555,49 @@ function contains(sentence, headword) {
 
     // Ayrılabilir fiil: ön ek cümlenin sonuna kaçar ("Siehst du viel fern?").
     // Ön ekin ayrı bir kelime olarak bulunması şart, kök ise gövde olarak.
-    for (const [onek, kalan] of splits(bare)) {
-      if (!kelime(onek)) continue;
-      const govde = root(kalan);
-      if (govde.length >= 3 && kok(govde)) return true;
-      // Ayrılmış hâlde de gövde ünlüsü değişiyor: "mitreißen" → "riss … mit",
-      // "aufgeben" → "gab … auf". Ablaut yalnızca bitişik biçimlerde
-      // deneniyordu, bu yüzden ayrılabilir güçlü fiillerin doğru Präteritum
-      // cümleleri reddediliyor ve ajanlar Präsens'e çekilmek zorunda kalıyordu.
-      if (govde.length >= 4 && stemVariants(govde).some((f) => kok(f))) return true;
-      if (irrForms(kalan).some((f) => varMi(flat(f).replace(/[^a-z]/g, "")))) return true;
-      // Gövdesi kısa olanlar ("einüben" → "übt … ein"). `root()` iki harften
-      // kısa sonuçlarda kırpılmamış hâle geri döndüğü için buradaki gövde
-      // ("ub") hiç üretilmiyor ve "übt" bulunamıyordu. Ön ekin cümlede ayrı
-      // bir kelime olarak durduğu zaten doğrulandı; bu güçlü bir işaret
-      // olduğu için gövde kelime BAŞI olarak aranıyor.
-      const kisa = flat(kalan).replace(/[^a-z]/g, "").replace(/(en|n)$/, "");
-      if (kisa.length >= 2 && bas(kisa)) return true;
+    //
+    // Yalnızca mastar görünümlü parçalarda deneniyor: ayrılan şey **fiilin**
+    // ön ekidir, ismin değil. Koşul yokken isimler kendi parçalarına bölünüp
+    // metinde varmış sayılıyordu — `der Ausgleich` "aus … gleiche"den,
+    // `der Nachteil` "nach … Vorteil"den, `der Beitrag` "bei … tragen"den.
+    // Üçü de yanlış kabul ve üçünü de ayrı paket ajanları bildirdi. Bu yönde
+    // hata masum değil: denetimin işi sözlükçede metinde hiç geçmeyen
+    // kelimeleri bulmak ve kusur tam o aramayı köreltiyordu.
+    if (/(en|n)$/.test(bare))
+      for (const [onek, kalan] of splits(bare)) {
+        if (!kelime(onek)) continue;
+        const govde = root(kalan);
+        if (govde.length >= 3 && kok(govde)) return true;
+        // Ayrılmış hâlde de gövde ünlüsü değişiyor: "mitreißen" → "riss … mit",
+        // "aufgeben" → "gab … auf". Ablaut yalnızca bitişik biçimlerde
+        // deneniyordu, bu yüzden ayrılabilir güçlü fiillerin doğru Präteritum
+        // cümleleri reddediliyor ve ajanlar Präsens'e çekilmek zorunda kalıyordu.
+        if (govde.length >= 4 && stemVariants(govde).some((f) => kok(f)))
+          return true;
+        if (irrForms(kalan).some((f) => varMi(flat(f).replace(/[^a-z]/g, ""))))
+          return true;
+        // Gövdesi kısa olanlar ("einüben" → "übt … ein"). `root()` iki harften
+        // kısa sonuçlarda kırpılmamış hâle geri döndüğü için buradaki gövde
+        // ("ub") hiç üretilmiyor ve "übt" bulunamıyordu. Ön ekin cümlede ayrı
+        // bir kelime olarak durduğu zaten doğrulandı; bu güçlü bir işaret
+        // olduğu için gövde kelime BAŞI olarak aranıyor.
+        const kisa = flat(kalan)
+          .replace(/[^a-z]/g, "")
+          .replace(/(en|n)$/, "");
+        if (kisa.length >= 2 && bas(kisa)) return true;
+      }
+
+    // Ayrılmayan ön ekin altındaki güçlü gövde (bkz. AYRILMAYAN).
+    for (const ön of AYRILMAYAN) {
+      if (!bare.startsWith(ön) || bare.length - ön.length < 4) continue;
+      const biçimler = irrForms(bare.slice(ön.length));
+      if (biçimler.some((f) => kok(`${ön}${flat(f).replace(/[^a-z]/g, "")}`)))
+        return true;
     }
 
     // Güçlü fiiller: gövde ünlüsü değiştiği için kök araması işe yaramıyor.
-    const irr = IRREGULAR[part.toLowerCase().replace(/[.,]+$/, "")] ?? IRREGULAR[bare];
+    const irr =
+      IRREGULAR[part.toLowerCase().replace(/[.,]+$/, "")] ?? IRREGULAR[bare];
     return irr ? irr.some((f) => varMi(flat(f).replace(/[^a-z]/g, ""))) : false;
   };
 
