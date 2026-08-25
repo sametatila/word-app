@@ -9,6 +9,7 @@ import {
   BedIcon,
   BikeIcon,
   BookIcon,
+  BookOpenIcon,
   BreadIcon,
   BriefcaseIcon,
   BusIcon,
@@ -291,12 +292,39 @@ export function LessonHub({
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-5">
-      <header>
+      {/*
+        Sabit üst şerit — başlık ve cheatsheet düğmesi.
+
+        Şeridin YAPIŞIK olmasının sebebi yolun kendisi: 500 düğümlük bir
+        haritada kullanıcı çoğu zaman sayfanın ortasında duruyor ve dilbilgisi
+        tablosuna ihtiyaç duyduğu an tam da bir dersin içindeyken oluyor.
+        Düğme sayfanın tepesinde sabit dursaydı, ona ulaşmak için önce yüzlerce
+        düğüm geri kaydırmak gerekirdi.
+
+        İlerleme çubuğu şeride ALINMADI: yapışık şerit ne kadar yüksekse
+        haritadan o kadar çok yer çalıyor ve ilerleme her an görülmesi gereken
+        bir bilgi değil.
+      */}
+      <div
+        className="sticky top-0 z-10 -mt-4 flex items-center justify-between gap-3 pb-3 pt-4 md:-mt-8 md:pt-8"
+        style={{ background: "var(--bg)" }}
+      >
         <h1 className="text-2xl font-bold">Dersler</h1>
+        <Link
+          href="/lessons/cheatsheet"
+          prefetch={false}
+          className="btn btn-primary shrink-0 px-3.5 py-2 text-sm"
+        >
+          <BookOpenIcon size={16} />
+          Cheatsheet
+        </Link>
+      </div>
+
+      <header>
         {/* Dersin nasıl işlediğini anlatan tanıtım satırı kalktı: dersin
             kendisi iki adımda zaten onu gösteriyor ve bu satır her açılışta
             ilerleme çubuğunu aşağı itiyordu. */}
-        <div className="mt-3">
+        <div>
           <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
             <span className="muted tabular-nums">
               {doneCount} / {total} ders tamamlandı
