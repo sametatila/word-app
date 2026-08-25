@@ -129,6 +129,27 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
     setBusy(false);
   }, [busy]);
 
+  /**
+   * Arama seviyeyi AŞIYOR: "Passiv" yazan biri o konunun hangi seviyede
+   * olduğunu bilmek zorunda değil. Arama boşken seçili seviye geçerli.
+   */
+  const results = useMemo(() => {
+    const pool = query ? CHEATSHEETS : CHEATSHEETS.filter((s) => s.level === level);
+    if (!query) return pool.map((sheet) => ({ sheet, blocks: sheet.blocks, hits: 0 }));
+    return pool
+      .map((sheet) => match(sheet, query))
+      .filter((r): r is SheetResult => r !== null);
+  }, [level, query]);
+
+  /*
+    Tur ekranına geçiş BÜTÜN kancalardan SONRA.
+
+    Erken dönüş bir üst satırda duruyordu ve "Sına" her basıldığında ekran
+    hata sayfasına düşüyordu: `results` bir `useMemo` ve dönüşün ALTINDA
+    kalıyordu, yani tur açılınca o kanca hiç çağrılmıyor, React de
+    "beklenenden az kanca çizildi" diye patlıyordu. Kanca sayısı çizimden
+    çizime değişemez.
+  */
   if (quiz) {
     return (
       <CheatQuiz
@@ -142,18 +163,6 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
       />
     );
   }
-
-  /**
-   * Arama seviyeyi AŞIYOR: "Passiv" yazan biri o konunun hangi seviyede
-   * olduğunu bilmek zorunda değil. Arama boşken seçili seviye geçerli.
-   */
-  const results = useMemo(() => {
-    const pool = query ? CHEATSHEETS : CHEATSHEETS.filter((s) => s.level === level);
-    if (!query) return pool.map((sheet) => ({ sheet, blocks: sheet.blocks, hits: 0 }));
-    return pool
-      .map((sheet) => match(sheet, query))
-      .filter((r): r is SheetResult => r !== null);
-  }, [level, query]);
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
