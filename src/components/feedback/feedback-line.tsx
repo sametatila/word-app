@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { track } from "@/lib/track";
-import { whyLabel, type DiffSeg, type Why } from "@/lib/why";
+import { whyLabel, type Why } from "@/lib/why";
+import { CharDiff } from "@/components/feedback/diff-text";
 
 /**
  * "Neden" satırı (plan WP-13/61): [hata etiketi] [gerekçe] [Kural ↗].
@@ -27,7 +28,7 @@ export function FeedbackLine({ why, compact = false }: { why: Why; compact?: boo
       </span>
       {why.diff ? (
         <>
-          <DiffText diff={why.diff} /> — {why.text}
+          <CharDiff diff={why.diff} /> — {why.text}
         </>
       ) : (
         why.text
@@ -41,39 +42,6 @@ export function FeedbackLine({ why, compact = false }: { why: Why; compact?: boo
           Kural ↗
         </Link>
       ) : null}
-    </span>
-  );
-}
-
-/**
- * Harf düzeyinde fark: yazılanda fazla harfler üstü çizili, doğrusunda eksik
- * harfler altı çizili ve kalın. Ekran okuyucu için düz metin de var.
- */
-function DiffText({ diff }: { diff: { typed: DiffSeg[]; target: DiffSeg[] } }) {
-  const plain = `${diff.typed.map((s) => s.text).join("")} → ${diff.target.map((s) => s.text).join("")}`;
-  return (
-    <span aria-label={plain}>
-      <span aria-hidden lang="de">
-        {diff.typed.map((s, i) =>
-          s.kind === "extra" ? (
-            <s key={i} className="opacity-70">
-              {s.text}
-            </s>
-          ) : (
-            <span key={i}>{s.text}</span>
-          ),
-        )}
-        {" → "}
-        {diff.target.map((s, i) =>
-          s.kind === "missing" ? (
-            <strong key={i} className="underline decoration-2 underline-offset-2">
-              {s.text}
-            </strong>
-          ) : (
-            <span key={i}>{s.text}</span>
-          ),
-        )}
-      </span>
     </span>
   );
 }

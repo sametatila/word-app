@@ -10,6 +10,7 @@ import { prefetchGerman } from "@/components/speak-button";
 import { matchSentence, VERDICT_TEXT, type SentenceMatch } from "@/lib/sentence-match";
 import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
+import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 
 type TranslateRound = Extract<Round, { game: "translate" }>;
 type Status = "idle" | "checking" | "correct" | "wrong";
@@ -157,11 +158,11 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           <span>
             <span className="block">
               {aiAccepted ? "Anlamca doğru — başka bir kuruluş. " : `${VERDICT_TEXT[result.verdict]} `}
-              <DiffSentence result={result} />
+              <TokenDiff tokens={result.target} />
             </span>
             {status === "wrong" && result.typed.some((t) => t.mark !== "same") ? (
               <span className="block text-xs font-normal opacity-80">
-                Yazdığın: <TypedLine result={result} />
+                Yazdığın: <TypedTokens tokens={result.typed} />
               </span>
             ) : null}
           </span>
@@ -257,47 +258,5 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         </p>
       ) : null}
     </GameShell>
-  );
-}
-
-/** Doğru cümle, farkla: eksik altı çizili, yer değiştirmiş ↔ ile, yazım hatalı kalın. */
-function DiffSentence({ result }: { result: SentenceMatch }) {
-  return (
-    <strong lang="de">
-      {result.target.map((t, i) => (
-        <span
-          key={i}
-          className={
-            t.mark === "missing"
-              ? "underline decoration-2 underline-offset-2"
-              : t.mark === "moved"
-                ? "rounded px-0.5"
-                : t.mark === "typo"
-                  ? "underline decoration-dotted underline-offset-2"
-                  : ""
-          }
-          style={t.mark === "moved" ? { background: "color-mix(in srgb, currentColor 16%, transparent)" } : undefined}
-          title={t.mark === "missing" ? "eksik" : t.mark === "moved" ? "yeri yanlış" : t.mark === "typo" ? "yazım" : undefined}
-        >
-          {t.mark === "moved" ? "↔" : ""}
-          {t.text}
-          {i < result.target.length - 1 ? " " : ""}
-        </span>
-      ))}
-    </strong>
-  );
-}
-
-/** Öğrencinin cümlesi: fazla kelime üstü çizili, yer değiştirmiş/yazım işaretli. */
-function TypedLine({ result }: { result: SentenceMatch }) {
-  return (
-    <span lang="de">
-      {result.typed.map((t, i) => (
-        <span key={i} className={t.mark === "extra" ? "line-through opacity-70" : t.mark === "typo" ? "underline decoration-dotted" : t.mark === "moved" ? "opacity-80" : ""}>
-          {t.text}
-          {i < result.typed.length - 1 ? " " : ""}
-        </span>
-      ))}
-    </span>
   );
 }

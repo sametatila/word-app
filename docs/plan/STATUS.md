@@ -28,7 +28,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-51 | Hata analitiği | 5 | bekliyor | | | | |
 | WP-52 | Gelişim raporu | 5 | bekliyor | | | | |
 | WP-60 | /learn yeniden kompozisyon | 6 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/plan.ts`, `GET /api/plan`, `PlanCard`; modlar şeridi/sınav kartı yapılmadı (karar kaydı); kanıt `reports/shots/wp60-plan.png` |
-| WP-61 | Geri bildirim bileşeni | 6 | bekliyor | | | | |
+| WP-61 | Geri bildirim bileşeni | 6 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `feedback/{feedback-line,diff-text,assessment-card}.tsx`, `/demo-feedback`; kanıt `reports/shots/wp61-feedback.png` |
 | WP-62 | Ders oynatıcı akışı | 6 | bekliyor | | | | |
 | WP-63 | Beceri merkezi | 6 | bekliyor | | | | |
 | WP-64 | Profil ve analitik | 6 | bekliyor | | | | |

@@ -52,6 +52,8 @@ Genel ilkeler (her WP için):
 
 **Süre.** 3 gün. **Bağımlılık.** WP-13.
 
+**Durum (2026-08-25).** Bitti. `src/components/feedback/`: `feedback-line.tsx` (WP-13), `diff-text.tsx` (`CharDiff` harf farkı, `TokenDiff`/`TypedTokens` cümle farkı — eksik altı çizili, ↔ yer değiştirmiş, noktalı yazım, üstü çizili fazla; ekran okuyucu için düz metin `aria-label`; `DiffLegend`), `assessment-card.tsx` (WP-12). Şerit, çeviri turu ve serbest cümle aynı bileşenleri kullanıyor; `/demo-feedback` hikâye sayfası 10 hata tipini, harf/cümle farklarını, AI ve yedek değerlendirme kartlarını tek sayfada gösteriyor. Şerit yüksekliği korunuyor (gerekçe küçük yazı, sarar). Kanıt: `reports/shots/wp61-feedback.png`.
+
 ---
 
 ## WP-62 · Ders oynatıcı akışı
