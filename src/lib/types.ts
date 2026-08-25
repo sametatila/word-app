@@ -12,6 +12,7 @@ export type GameId =
   | "listen"
   | "truefalse"
   | "translate"
+  | "free_sentence"
   | "speak";
 
 export const GAME_LABELS: Record<GameId, string> = {
@@ -27,6 +28,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   listen: "Kulaktan Tanı",
   truefalse: "Doğru mu Yanlış mı",
   translate: "Çevir",
+  free_sentence: "Cümle Kur",
   speak: "Sesli Söyle",
 };
 
@@ -36,6 +38,9 @@ export const GAME_LABELS: Record<GameId, string> = {
  * `intro` dışarıda: o bir oyun değil, yeni kelimenin tanıtım kartı. Yirmi tur
  * boyunca kart okumak bir seçenek olmamalı — yine de karışık turlarda ve tek
  * oyunlu turlarda yeni kelimelerin önüne kendiliğinden ekleniyor.
+ *
+ * `free_sentence` dışarıda: hakemi AI ve günde en çok iki kez çıkıyor
+ * (lib/session.ts); "20 tur Cümle Kur" hem kotayı hem sabrı tüketirdi.
  *
  * `speak` de dışarıda ve sebebi başka: o bir oyun değil bir MOD. Yürürken
  * modu turun tamamını sesli sürüyor ve ekranda oynanmıyor; oyun seçicide bir
@@ -183,6 +188,15 @@ export type Round =
       sentence: { tr: string; de: string; en: string | null };
       /** Kabul edilen başka kuruluşlar (içerikten; bugün boş). */
       alternatives: string[];
+    }
+  | {
+      id: string;
+      game: "free_sentence";
+      word: RoundWord;
+      /** Cümlede birlikte kullanılacak 1–2 kelime daha (havuzdan, aynı seviye). */
+      partners: RoundWord[];
+      /** Rubriğin seviyesi — kelimenin seviyesi. */
+      level: string;
     };
 
 export type Answer = {

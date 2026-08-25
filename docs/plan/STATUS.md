@@ -11,7 +11,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-04 | Çevrimdışı rol yapma yedeği | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | senaryo motoru + 10 A1 senaryosu; kanıt `reports/shots/wp04-roleplay-*.png` |
 | WP-10 | Çeviri oyunu | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `translate` turu, `lib/sentence-match`, kısmi SRS kalitesi, AI onayı; kanıt `reports/shots/wp10-translate-*.png` |
 | WP-11 | Dönüştürme drilleri | 1 | bekliyor | | | | |
-| WP-12 | Serbest cümle görevi | 1 | bekliyor | | | | |
+| WP-12 | Serbest cümle görevi | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `free_sentence` turu, `AssessmentCard`, yazma görevi `kind:"sentence"`; kanıt `reports/shots/wp12-free-*.png` |
 | WP-13 | "Neden" geri bildirimi | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/why.ts`, `FeedbackLine`, şerit 2. satır, cheatsheet derin bağlantı; kanıt `reports/shots/wp13-*.png` |
 | WP-14 | Oyun merdiveni | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/ladder.ts`, yazarak tamamla, yeni kelimeye ipuçlu yazma, oturum içi basamak inişi; kanıt `reports/shots/wp14-*.png` |
 | WP-20 | Telaffuz puanlama | 2 | bekliyor | | | | sağlayıcı kararı önce |
@@ -67,3 +67,5 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — KPI 2 tanımı genişledi: üretim = `production_attempt` olayları + `reviews` içinde üretim oyunları (`lib/ladder.ts PRODUCTION_GAMES`: typing/scramble/order/translate/speak). Önce yalnız olaylar sayılıyordu ve kelime turundaki üretim görünmez kalıyordu. Claude.
 - 2026-08-25 — Yeni kelimenin ipuçlu yazma turu kuyruğun sonuna değil iki kelime sonrasına serpiştiriliyor: 10 yeni kelime × 3 tur = 30 > 20 tavan, sona konunca hiç çıkmıyordu (e2e ile ölçüldü). Claude.
 - 2026-08-25 — Oturum içi basamak inişi istemcide: sunucu turları önceden kurduğu için `easeRound` eldeki veriyle dönüştürür (çeviri → cümle diz, yazarak tamamla → şıklı, yazma → ipuçlu); cevap oynanan oyunun adıyla kaydedilir. Claude.
+- 2026-08-25 — `free_sentence` turu PLAYABLE dışında ve oturumda en çok 2: hakemi AI (kota + süre), sağlayıcı yokken tur hiç kurulmuyor (yedek dilbilgisini ölçemiyor; ölçülmeyen iş yaptırmak yerine tur yok). Beceri tarafındaki `kind:"sentence"` görevi ise sağlayıcı yokken yedekle çalışır ve "AI kapalı" der. Claude.
+- 2026-08-25 — Serbest cümle SRS eşlemesi: overall ≥ 90 → 5, ≥ 70 → 4 (doğru), 40–69 → 3 (yanlış, lapse yok), < 40 → 2; yedekte en çok 3. Hata tipi rubriğin ilk hatasından. Claude.

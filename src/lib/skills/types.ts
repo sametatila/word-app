@@ -101,6 +101,19 @@ export type ListeningExercise = ExerciseBase & {
 
 export type WritingTask =
   | {
+      /**
+       * Serbest cümle (WP-12): verilen kelimelerle özgün cümle; hakem AI
+       * rubriği (`/api/assess`), sağlayıcı yoksa kural tabanlı yedek.
+       */
+      kind: "sentence";
+      /** Cümlede geçmesi gereken 2–3 kelime. */
+      words: Gloss[];
+      /** İsteğe bağlı yönerge, Türkçe ("geçmiş zamanda"). */
+      prompt?: string;
+      /** Örnek cevap — değerlendirme sonrası gösterilir. */
+      sample?: string;
+    }
+  | {
       /** Verilen Türkçe anlamı, karışık parçalardan Almanca cümle kurarak yaz. */
       kind: "build";
       tr: string;

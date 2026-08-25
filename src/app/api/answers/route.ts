@@ -9,6 +9,7 @@ import type { Answer, GameId, Wager } from "@/lib/types";
 export const dynamic = "force-dynamic";
 
 const GAMES: GameId[] = [
+  "free_sentence",
   "intro",
   "match",
   "choice",

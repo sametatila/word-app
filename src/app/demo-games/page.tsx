@@ -13,6 +13,7 @@ import { PluralGame } from "@/components/games/plural-game";
 import { ListenGame } from "@/components/games/listen-game";
 import { TrueFalseGame } from "@/components/games/truefalse-game";
 import { TranslateGame } from "@/components/games/translate-game";
+import { FreeSentenceGame } from "@/components/games/free-sentence-game";
 
 const w = (
   id: number,
@@ -119,6 +120,13 @@ const ROUNDS: Round[] = [
     sentence: { tr: "Bugün sinemaya gidiyorum.", de: "Ich gehe heute ins Kino.", en: "I'm going to the cinema today." },
     alternatives: ["Heute gehe ich ins Kino."],
   },
+  {
+    id: "d14",
+    game: "free_sentence",
+    word: w(18, "Kaffee", "der", "kahve", "coffee"),
+    partners: [w(19, "trinken", null, "içmek", "to drink")],
+    level: "A1",
+  },
 ];
 
 /** Yalnızca geliştirme kontrolü için: tüm oyunları tek sayfada render eder. */
@@ -140,6 +148,7 @@ export default function DemoGames() {
           {round.game === "listen" && <ListenGame round={round} onDone={() => {}} />}
           {round.game === "truefalse" && <TrueFalseGame round={round} onDone={() => {}} />}
           {round.game === "translate" && <TranslateGame round={round} onDone={() => {}} />}
+          {round.game === "free_sentence" && <FreeSentenceGame round={round} onDone={() => {}} />}
         </section>
       ))}
     </div>

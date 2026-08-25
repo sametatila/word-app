@@ -86,6 +86,8 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-13 (bileşen).
 
+**Durum (2026-08-25).** Bitti. `Round.free_sentence` (`word`, `partners[1]` aynı seviye farklı tür, `level`), `GAME_LABELS.free_sentence = "Cümle Kur"` (PLAYABLE dışı); `pickRound`: sağlam kelime, oturumda ≤ 2, sınav/meydan okuma dalgalarında yok, yalnız `chatConfigured()`. `free-sentence-game.tsx`: kelime çipleri (dokununca cümleye eklenir), textarea + umlaut, "Değerlendir" → `askAssess` → `AssessmentCard` (`src/components/feedback/assessment-card.tsx`: puan halkası, 4 çubuk, span vurgulu metin, hata satırları FeedbackLine, düzeltilmiş, övgü, ipucu, örnek cümle; yedekte "AI kapalı" + kontrol listesi, dilbilgisi/kelime "ölçülmedi"); "Devam" → `quality` eşlemeli cevap. Yazma egzersizi `WritingTask.kind:"sentence"` (+ `writing-player` `SentenceTask`, doğrulayıcı kuralı, `a1-w1`'e bir görev). e2e §33 (5 kontrol). Kanıt: `reports/shots/wp12-free-{start,good,bad}.png` (gerçek Mistral değerlendirmesi: 100 ve 54 puan, artikel/hâl hataları span'li).
+
 ---
 
 ## WP-13 · "Neden" geri bildirimi (şerit ve soru geri bildirimleri)

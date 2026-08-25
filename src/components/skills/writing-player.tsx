@@ -5,11 +5,15 @@ import { motion } from "framer-motion";
 import { glossTitle } from "./gloss-entry";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
+import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
+import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
+import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { CheckIcon } from "@/components/icons";
 import { seededShuffle } from "@/lib/shuffle";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
+type SentenceTaskData = Extract<WritingTask, { kind: "sentence" }>;
 
 /**
  * Yazma egzersizi: önce karışık parçalardan cümle kurma (otomatik kontrol),
@@ -59,6 +63,8 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
             seed={`${round}-${step}`}
             onDone={completeTask}
           />
+        ) : active.kind === "sentence" ? (
+          <SentenceTask key={`${round}-${step}`} task={active} level={exercise.level} onDone={completeTask} />
         ) : (
           <FreeTask
             key={`${round}-${step}`}
@@ -447,6 +453,102 @@ function FreeTask({
           Bitirmek için en az {task.minWords} kelime yaz ve kontrol listesini işaretle.
         </p>
       ) : null}
+    </section>
+  );
+}
+
+/**
+ * Serbest cümle görevi (WP-12): 2–3 kelimeyle özgün cümle, AI rubriğiyle
+ * puan. Kelime turundaki "Cümle Kur" ile aynı hakem ve aynı kart; burada
+ * görev "tamam" sayılması için genel puan ≥ 70 (yedekte: kelimeler geçti).
+ */
+function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: string; onDone: (ok: boolean) => void }) {
+  const [text, setText] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
+  const [failure, setFailure] = useState<AssessFailure | null>(null);
+  const [ok, setOk] = useState(false);
+  const areaRef = useRef<HTMLTextAreaElement>(null);
+
+  async function evaluate() {
+    const typed = text.trim();
+    if (!typed || busy || result) return;
+    setBusy(true);
+    const req: AssessRequest = {
+      kind: "sentence",
+      level: level as AssessLevel,
+      task: { prompt: task.prompt ?? `Bu kelimelerle bir cümle kur: ${task.words.map((w) => w.de).join(", ")}`, targets: task.words.map((w) => w.de) },
+      answer: { text: typed },
+      locale: "tr",
+    };
+    const ai = await askAssess(req);
+    if (ai.ok) {
+      setResult(ai.result);
+      setOk(ai.result.score.overall >= 70);
+    } else {
+      const fb = fallbackAssessment(req);
+      setResult(fb);
+      setFailure(ai.reason);
+      setOk(fb.checks.filter((c) => c.label.startsWith("Kalıp")).every((c) => c.ok) && fb.words >= 3);
+    }
+    setBusy(false);
+  }
+
+  function insert(ch: string) {
+    const el = areaRef.current;
+    if (!el) return setText(text + ch);
+    const start = el.selectionStart ?? text.length;
+    const end = el.selectionEnd ?? text.length;
+    setText(text.slice(0, start) + ch + text.slice(end));
+    requestAnimationFrame(() => {
+      el.focus();
+      el.setSelectionRange(start + ch.length, start + ch.length);
+    });
+  }
+
+  return (
+    <section className="card mt-4 p-5">
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Cümle kur</p>
+      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt ?? "Bu kelimelerle bir cümle kur:"}</p>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {task.words.map((w) => (
+          <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-sm" title={w.tr}>
+            <strong lang="de">{w.de}</strong>
+            <span className="muted ml-1.5 text-xs">{w.tr}</span>
+          </button>
+        ))}
+      </div>
+      {result ? (
+        <div className="mt-3 flex flex-col gap-3">
+          <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample ?? null} />
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 px-4 text-sm">
+            Devam
+          </button>
+        </div>
+      ) : (
+        <>
+          <textarea
+            ref={areaRef}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            rows={3}
+            lang="de"
+            spellCheck={false}
+            placeholder="Almanca bir cümle yaz…"
+            className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-base outline-none"
+          />
+          <div className="mt-2 flex flex-wrap gap-2">
+            {(["ä", "ö", "ü", "ß"] as const).map((ch) => (
+              <button key={ch} type="button" onClick={() => insert(ch)} className="btn btn-ghost min-h-9 min-w-9 px-3 text-base">
+                {ch}
+              </button>
+            ))}
+          </div>
+          <button type="button" onClick={() => void evaluate()} disabled={busy || text.trim().split(/\s+/).length < 2} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
+            {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+          </button>
+        </>
+      )}
     </section>
   );
 }

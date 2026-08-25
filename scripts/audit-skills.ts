@@ -101,6 +101,8 @@ for (const ex of BUNDLED_EXERCISES as SkillExercise[]) {
         for (const alt of t.alternatives ?? [])
           if (bag(alt) !== bag(t.answer))
             add(id, "alternatif farklı kelimeler", `görev ${i + 1}: "${alt}"`);
+      } else if (t.kind === "sentence") {
+        if ((t.words?.length ?? 0) < 2) add(id, "kelime yok", `görev ${i + 1}`);
       } else {
         if (!t.prompt?.trim()) add(id, "senaryo yok", `görev ${i + 1}`);
         if (!t.checklist?.length) add(id, "kontrol listesi yok", `görev ${i + 1}`);

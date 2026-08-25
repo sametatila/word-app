@@ -1359,10 +1359,11 @@ async function main() {
   check("aynı oyun üç tur içinde tekrarlanmıyor", withinWindow === 0, `(${withinWindow})`);
   const avgDistinct = distinctPerSession.reduce((a, b) => a + b, 0) / distinctPerSession.length;
   check("oturum başına en az 6 farklı oyun", avgDistinct >= 6, `(ortalama ${avgDistinct.toFixed(1)})`);
-  // On oynanabilir oyun + tanıtım kartı + yürürken modunun sesli cevabı.
-  // `speak` bir oyun değil bir mod ama cevapları kendi adıyla kaydediliyor
-  // (bkz. lib/types), o yüzden etiketi var ve seçicide yok.
-  check("etiketler eksiksiz", Object.keys(GAME_LABELS).length === PLAYABLE_GAMES.length + 2,
+  // Oynanabilir oyunlar + tanıtım kartı + yürürken modunun sesli cevabı +
+  // serbest cümle (AI hakemli, seçicide değil). `speak` bir oyun değil bir
+  // mod ama cevapları kendi adıyla kaydediliyor (bkz. lib/types), o yüzden
+  // etiketi var ve seçicide yok.
+  check("etiketler eksiksiz", Object.keys(GAME_LABELS).length === PLAYABLE_GAMES.length + 3,
     `(${Object.keys(GAME_LABELS).length})`);
   check("speak oyun seçicide değil", !(PLAYABLE_GAMES as readonly string[]).includes("speak"));
 
@@ -2166,6 +2167,17 @@ async function main() {
   const firstIntro = sL.rounds.findIndex((r) => r.game === "intro");
   const firstAssist = sL.rounds.findIndex((r) => r.game === "typing" && (r as { assist?: boolean }).assist);
   check("ipuçlu yazma tanıtımdan en az iki tur sonra", firstAssist - firstIntro >= 2, `${firstIntro} → ${firstAssist}`);
+
+  console.log("\n33) Serbest cümle turu (WP-12)");
+  const fsPool = await db.select().from(words).where(eq(words.niveau, "A1")).limit(30);
+  const fsRound = makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, fsPool, () => "f1", "strong");
+  check("free_sentence turu kuruluyor: bir ortak, aynı seviye", fsRound?.game === "free_sentence" && (fsRound as { partners: { id: number }[] }).partners.length === 1 && (fsRound as { partners: { id: number }[] }).partners[0].id !== fsPool[0].id);
+  check("havuzsuz kurulamıyor", makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, [], () => "f2", "strong") === null);
+  check("PLAYABLE dışında, etiket var", !(PLAYABLE_GAMES as readonly string[]).includes("free_sentence") && GAME_LABELS.free_sentence === "Cümle Kur");
+  check("üretim oyunu sayılıyor", isProductionGame("free_sentence"));
+  await submitAnswers(USER, [{ wordId: fsPool[0].id, game: "free_sentence", correct: true, latencyMs: 30000, quality: 4 }], monday, 40);
+  const [fsRv] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, fsPool[0].id))).orderBy(desc(reviews.id)).limit(1);
+  check("serbest cümle cevabı kalitesiyle kaydediliyor", fsRv?.game === "free_sentence" && fsRv?.quality === 4);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

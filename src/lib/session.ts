@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { dailyStats, events, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/errors";
 import { clozeTypeChance, gamesFor, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
+import { chatConfigured } from "@/lib/chat-providers";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
@@ -36,6 +37,8 @@ const ROUNDS_PER_SESSION = 20;
  * Bu pencere kümelenmeyi doğrudan engeller.
  */
 const RECENT_GAME_WINDOW = 3;
+/** Serbest cümle turu oturum başına tavanı (AI kotası ve süre). */
+const FREE_SENTENCE_PER_SESSION = 2;
 
 /**
  * Bir oturumda bulunması istenen en az olgun kelime sayısı.
@@ -878,6 +881,13 @@ function pickRound(
   // Basamağa göre aday küme merdivende (lib/ladder.ts): sunucu, istemci ve
   // rapor aynı listeyi okuyor. Gerekçeler orada.
   const candidates: Round["game"][] = gamesFor(strength, word);
+  // Serbest cümle (WP-12): yalnız sağlam kelimede, oturumda en çok iki kez,
+  // meydan okuma/sınav dalgalarında hiç (hakemi AI, süresi belirsiz) ve
+  // sağlayıcı varken — yedek hakem dilbilgisini ölçemiyor, onunla tur kurmak
+  // öğrenciye ölçülmeyen bir iş yaptırmak olurdu.
+  if (strength === "strong" && !bias && (usage?.get("free_sentence") ?? 0) < FREE_SENTENCE_PER_SESSION && chatConfigured()) {
+    candidates.push("free_sentence");
+  }
   // Parçaları ekranda olsa da bu oyunlar öğrenciden bir şey **kurmasını**
   // ister; tanıma oyunlarında ise doğru cevap zaten şıklardan biridir.
   const PRODUCTION: Round["game"][] = PRODUCTION_GAMES.filter((g): g is Round["game"] => g !== "speak");
@@ -987,6 +997,13 @@ export function makeRound(
         sentenceTr: firstExample(word.beispielTr),
         sentenceEn: firstExample(word.beispielEn),
       };
+    }
+    case "free_sentence": {
+      // Ortak: aynı seviyeden, farklı türden bir kelime daha; yoksa herhangi biri.
+      const others = pool.filter((p) => p.id !== word.id && p.niveau === word.niveau);
+      const pick = shuffle(others.filter((p) => p.typ !== word.typ).concat(others.filter((p) => p.typ === word.typ)))[0];
+      if (!pick) return null;
+      return { id: nextId(), game: "free_sentence", word, partners: [toRoundWord(pick, false)], level: word.niveau };
     }
     case "translate": {
       // Kaynak: kelimenin kendi örnek cümlesi ve Türkçesi. Türkçesi yoksa

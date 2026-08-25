@@ -1366,6 +1366,15 @@ export const a1: SkillExercise[] = [
     minutes: 6,
     tasks: [
       {
+        kind: "sentence",
+        words: [
+          { de: "der Kaffee", tr: "kahve", en: "coffee" },
+          { de: "trinken", tr: "içmek", en: "to drink" },
+        ],
+        prompt: "Bu iki kelimeyle sabah rutinin hakkında bir cümle kur.",
+        sample: "Ich trinke jeden Morgen einen Kaffee.",
+      },
+      {
         kind: "build",
         tr: "Benim adım Elif ve İzmir'den geliyorum.",
         answer: "Ich heiße Elif und komme aus Izmir.",

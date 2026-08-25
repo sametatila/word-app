@@ -145,7 +145,10 @@ function checkSkills(list: SkillExercise[]) {
       if (!e.tasks.length) E(w, "yazma görevi yok");
       e.tasks.forEach((t, i) => {
         const tw = `${w} görev ${i + 1}`;
-        if (t.kind === "build") {
+        if (t.kind === "sentence") {
+          if (!t.words || t.words.length < 2 || t.words.length > 3) E(tw, `sentence: ${t.words?.length ?? 0} kelime (2–3)`);
+          for (const g of t.words ?? []) if (!g.de?.trim() || !g.tr?.trim()) E(tw, `sentence: kelime eksik ${JSON.stringify(g)}`);
+        } else if (t.kind === "build") {
           if (!t.tr?.trim() || !t.answer?.trim()) E(tw, "build: tr/answer boş");
           if (trLetters(t.answer)) E(tw, "build: answer içinde Türkçe harf");
         } else {

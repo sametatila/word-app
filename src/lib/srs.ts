@@ -37,6 +37,8 @@ const GAME_TIME_BUDGET: Record<string, number> = {
   truefalse: 5000,
   // Cümle yazmak: okuma + kurma + yazma; en geniş bütçe.
   translate: 40000,
+  // Serbest cümle: düşünmek de dâhil; hız burada ölçüt değil.
+  free_sentence: 90000,
 };
 
 /**

@@ -24,7 +24,7 @@ export type Strength = "fresh" | "shaky" | "solid" | "strong";
  * cevap zaten ekranda. KPI 2 (üretim oranı) buradan sayılır: production /
  * (production + recognition) ≥ %40 hedefi.
  */
-export const PRODUCTION_GAMES: readonly GameId[] = ["typing", "scramble", "order", "translate", "speak"];
+export const PRODUCTION_GAMES: readonly GameId[] = ["typing", "scramble", "order", "translate", "free_sentence", "speak"];
 
 export function isProductionGame(game: string): boolean {
   return (PRODUCTION_GAMES as readonly string[]).includes(game);
