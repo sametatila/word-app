@@ -10,7 +10,7 @@ Kullanım: python3 process-all.py [klip ...]   (argümansız: hepsi)
             AYNI ayak çizgisinde olacak şekilde ölçeklenip (≈%31) 360×540
             tuvale oturtulur — idle zinciri klipler arasında zıplamaz.
             Taşan yan pay zaten saydam.
-  strip     Alt kenarda yürüyen klipler (walk/push/pull). Ayak altındaki
+  strip     Alt kenarda yürüyen klipler (walk/stroll/pull). Ayak altındaki
             saydam pay kırpılır ki ayak WebP'nin alt kenarına bassın —
             arayüz onları doğrudan navigasyonun üstüne oturtur.
 
@@ -59,7 +59,6 @@ CLIPS = {
     "peek":         ("wide", None, 300, "peek-mirror", 1),
     "walk-right":   ("strip", 2.0, 300, None, 0),
     "walk-left":    ("strip", 3.0, 300, None, 0),
-    "push-right":   ("strip", 1.5, 300, "push-left", 0),
     "pull-right":   ("strip", 2.0, 300, "pull-left", 0),   # ping-pong (PINGPONG)
     "stroll-right": ("strip", 2.0, 300, "stroll-left", 0),
 }

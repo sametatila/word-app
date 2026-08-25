@@ -21,7 +21,7 @@ import numpy as np
 ANIM = Path(__file__).resolve().parents[2] / "public" / "anim"
 CH, FEET = 514 / 540, 527 / 540
 CLIPS = {  # ad -> webp döngü sayısı
-    "walk-right": 0, "walk-left": 0, "push-right": 0, "push-left": 0,
+    "walk-right": 0, "walk-left": 0,
     "pull-right": 0, "pull-left": 0, "stroll-right": 0, "stroll-left": 0, "peek": 1, "peek-mirror": 1, "dance": 1, "idle-heave": 1,
 }
 # Nötr karede başlayıp biten klipler: dikey ölçek ve ayak çizgisi İLK kareden
