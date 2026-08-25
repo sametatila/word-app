@@ -3,9 +3,9 @@ import { and, desc, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { events, reviews, userLessons, userSkills, userWords } from "@/lib/db/schema";
 import { ERROR_LABELS, isErrorType, type ErrorType } from "@/lib/errors";
-import { listExerciseMeta } from "@/lib/skills";
-import { SKILL_LABELS, SKILL_ORDER } from "@/lib/skills/meta";
-import type { CefrLevel, SkillId } from "@/lib/skills/types";
+import type { CefrLevel } from "@/lib/skills/types";
+import { computeProficiency } from "@/lib/proficiency";
+import { gatherEvidence, nextStep } from "@/lib/proficiency-data";
 import { nextLesson } from "@/lib/lessons/progress";
 import { weeklyStatus } from "@/lib/weekly";
 
@@ -111,32 +111,25 @@ export async function buildPlan(
     console.error("[plan] ders okunamadı", err);
   }
 
-  // 3. Beceri egzersizi — seviyede en az yapılmış beceri
+  // 3. Sıradaki en iyi adım — yetkinlik modeli (WP-50): en düşük kanıtlı
+  //    beceriden yapılmamış egzersiz; kelime/dilbilgisi zaten 1. öğede.
   try {
-    const metas = (await listExerciseMeta(course)).filter((m) => m.level === (level as CefrLevel));
-    const rows = await db
-      .select({ exerciseId: userSkills.exerciseId, skill: userSkills.skill, lastAt: userSkills.lastAt })
-      .from(userSkills)
-      .where(eq(userSkills.userId, userId));
-    const done = new Set(rows.map((r) => r.exerciseId));
-    let best: { skill: SkillId; ratio: number; exerciseId: string; title: string; minutes: number } | null = null;
-    for (const skill of SKILL_ORDER) {
-      const list = metas.filter((m) => m.skill === skill);
-      if (!list.length) continue;
-      const open = list.find((m) => !done.has(m.id));
-      if (!open) continue;
-      const ratio = list.filter((m) => done.has(m.id)).length / list.length;
-      if (!best || ratio < best.ratio) best = { skill, ratio, exerciseId: open.id, title: open.title, minutes: open.minutes };
-    }
-    if (best) {
-      const skillDoneToday = rows.some((r) => r.skill === best!.skill && r.lastAt.toISOString().slice(0, 10) >= today);
+    const lv = (["A1", "A2", "B1", "B2", "C1"].includes(level) ? level : "A1") as CefrLevel;
+    const prof = computeProficiency(await gatherEvidence(userId));
+    const step = await nextStep(userId, course, lv, prof);
+    if (step && step.href.startsWith("/skills/")) {
+      const rows = await db
+        .select({ skill: userSkills.skill, lastAt: userSkills.lastAt })
+        .from(userSkills)
+        .where(eq(userSkills.userId, userId));
+      const skillDoneToday = rows.some((r) => r.skill === step.skill && r.lastAt.toISOString().slice(0, 10) >= today);
       items.push({
         id: "skill",
-        title: `${SKILL_LABELS[best.skill]}: ${best.title}`,
-        detail: `${level} · en az çalıştığın beceri`,
-        minutes: best.minutes,
+        title: `${step.label}: ${step.title}`,
+        detail: step.reason,
+        minutes: step.minutes,
         done: skillDoneToday,
-        href: `/skills/${best.exerciseId}`,
+        href: step.href,
       });
     }
   } catch (err) {

@@ -21,6 +21,8 @@ Rapor: profil yalnız kelime metrikleri; beceri yetkinliği, hata tipleri, zaman
 
 **Süre.** 4 gün. **Bağımlılık.** WP-01, 03, 40–42.
 
+**Durum (2026-08-25).** Bitti. `src/lib/proficiency.ts` (saf: `computeProficiency` ağırlıklı ortalama sınav ×3 / AI ×2 / egzersiz ×1, 30 gün doğrusal sönüm, `bandOf`, `weakestSkill`); `proficiency-data.ts` (`gatherEvidence` üç tablodan, `nextStep`: en düşük kanıtlı beceriden yapılmamış egzersiz → kelime turu / dilbilgisi → sıradaki ders, `proficiencyFor`); `GET /api/profile` (seviye + yetkinlik + sıradaki adım); profilde `ProficiencyCard` (seviye sekmeleri, 6 çubuk, bant, kanıt sayısı, "Sıradaki en iyi adım"); plan kartı 3. öğesi artık bu motordan. e2e §39 (10 kontrol). Kanıt: `reports/shots/wp50-proficiency.png`.
+
 ---
 
 ## WP-51 · Hata analitiği ve hedefli tekrar

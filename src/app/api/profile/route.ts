@@ -6,8 +6,28 @@ import { profiles } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
+import { proficiencyFor } from "@/lib/proficiency-data";
+import type { CefrLevel } from "@/lib/skills/types";
 
 export const dynamic = "force-dynamic";
+
+/**
+ * Profil özeti (WP-50): seviye + beceri yetkinliği + sıradaki en iyi adım.
+ * Ayarlar POST'ta; burası yalnız okur.
+ */
+export async function GET() {
+  const userId = await getUserId();
+  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  try {
+    const profile = await ensureProfile(userId);
+    const level = (["A1", "A2", "B1", "B2", "C1"].includes(profile.level) ? profile.level : "A1") as CefrLevel;
+    const data = await proficiencyFor(userId, profile.course, level);
+    return NextResponse.json({ level, ...data }, { headers: { "cache-control": "no-store" } });
+  } catch (err) {
+    console.error("[profile] yetkinlik", err);
+    return NextResponse.json({ error: "database" }, { status: 500 });
+  }
+}
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });

@@ -80,6 +80,8 @@ import { nextLevel, scorePlacement, type PlacementAnswer, type PlacementStage } 
 import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement } from "../src/lib/placement";
 import type { CefrLevel } from "../src/lib/skills/types";
 import { buildWeeklyExam, finishWeekly, weeklyStatus } from "../src/lib/weekly";
+import { bandOf, computeProficiency, weakestSkill, type Evidence, type EvidenceSource, type ProficiencySkill } from "../src/lib/proficiency";
+import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2300,6 +2302,29 @@ async function main() {
   check("exam_finish kind=usage:A1", examEv.length === 1 && examEv[0].kind === "usage:A1" && examEv[0].value === 67);
   const planW = await buildPlan(USER, monday, "de", "A1", 20);
   check("plan kartında haftalık sınav öğesi (yapıldı)", planW.items.some((i) => i.id === "weekly" && i.done));
+
+  console.log("\n39) Beceri yetkinlik modeli (WP-50)");
+  const nowP = new Date();
+  const ev = (skill: ProficiencySkill, level: CefrLevel, score: number, source: EvidenceSource, daysAgo = 0): Evidence => ({ skill, level, score, source, at: new Date(nowP.getTime() - daysAgo * 86400000) });
+  const prof1 = computeProficiency([ev("reading", "A2", 60, "exercise"), ev("reading", "A2", 90, "exam")], nowP);
+  check("sınav ×3 ağırlık: (60 + 90×3)/4 = 83 → sağlam", prof1.reading.A2?.score === 83 && prof1.reading.A2?.band === "sağlam", JSON.stringify(prof1.reading.A2));
+  const prof2 = computeProficiency([ev("writing", "B1", 100, "assessment", 29), ev("writing", "B1", 40, "exercise", 0)], nowP);
+  check("29 gün önceki kanıt neredeyse sönmüş → puan 40'a yakın", (prof2.writing.B1?.score ?? 0) < 50 && prof2.writing.B1?.n === 2, JSON.stringify(prof2.writing.B1));
+  const prof3 = computeProficiency([ev("listening", "A1", 50, "exercise", 31)], nowP);
+  check("31 gün önceki kanıt sayılmaz", prof3.listening.A1 === undefined);
+  check("bantlar", bandOf(39) === "başlangıç" && bandOf(40) === "gelişiyor" && bandOf(70) === "sağlam" && bandOf(85) === "ustalaştı");
+  check("en zayıf: ölçülmemiş beceri önce", weakestSkill(prof1, "A2") !== "reading" && weakestSkill({ ...prof1, listening: { A2: { score: 20, band: "başlangıç", n: 1, weight: 1 } }, writing: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } }, speaking: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } }, grammar: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } }, vocab: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } } }, "A2") === "listening");
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const rdP = BUNDLED_EXERCISES.find((e) => e.skill === "reading" && e.level === "A1" && (!e.course || e.course === "de"))!;
+  await recordSkillAttempt(USER, rdP, { exerciseId: rdP.id, correct: itemCount(rdP), day: monday, score: 90 });
+  const evid = await gatherEvidence(USER);
+  check("egzersiz kanıtı toplanıyor", evid.some((e) => e.skill === "reading" && e.level === "A1" && e.score === 90 && e.source === "exercise"));
+  const pf = await proficiencyFor(USER, "de", "A1");
+  check("okuma A1 ustalaştı, diğerleri ölçülmedi", pf.proficiency.reading.A1?.band === "ustalaştı" && pf.proficiency.listening.A1 === undefined);
+  check("sıradaki adım okuma değil, ölçülmemiş bir beceri", pf.next !== null && pf.next.skill !== "reading" && pf.next.reason.includes("ölçülmedi"), pf.next?.reason);
+  const planP = await buildPlan(USER, monday, "de", "A1", 20);
+  check("plan beceri öğesi yetkinlikten geliyor", planP.items.some((i) => i.id === "skill" && i.detail.includes("ölçülmedi")));
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));
