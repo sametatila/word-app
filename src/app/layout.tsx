@@ -72,6 +72,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="tr" suppressHydrationWarning>
       <head>
+        {/*
+          iOS'un ESKİ adı — Next yalnızca standart `mobile-web-app-capable`
+          etiketini üretiyor ve Safari onu bu iş için tanımıyor.
+
+          Sonucu ölçüldü: bu etiket olmadan `apple-mobile-web-app-status-bar-style:
+          black-translucent` yok sayılıyor ve ana ekrandan açılan uygulama
+          kenardan kenara çizmiyor. Sistem web görünümünü güvenli alanın İÇİNE
+          yerleştiriyor, ama `env(safe-area-inset-bottom)` yine de fiziksel payı
+          (34pt) bildirmeye devam ediyor. İkisi toplanınca alt gezinmenin
+          altında ~70 piksellik bir bant kalıyordu: 34'ü sistemin ayırdığı,
+          34'ü bizim eklediğimiz.
+
+          Etiket geldiğinde sayfa gerçekten ekranın dibine uzanıyor, o bant
+          gezinme çubuğunun KENDİ zeminine dönüşüyor ve boşluk kapanıyor.
+          Üstteki durum çubuğu payı zaten `.safe-top` ile karşılanıyor.
+        */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-dvh antialiased">{children}</body>

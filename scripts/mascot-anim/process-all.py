@@ -55,6 +55,7 @@ CLIPS = {
     "idle-sit":     ("square", None, 540, None, 1),
     "idle-wink":    ("square", None, 540, None, 1),
     "dance":        ("wide", None, 300, None, 1),
+    "idle-heave":   ("wide", None, 540, None, 1),  # geniş idle: repack-wide ile normalize
     "peek":         ("wide", None, 300, "peek-mirror", 1),
     "walk-right":   ("strip", 2.0, 300, None, 0),
     "walk-left":    ("strip", 3.0, 300, None, 0),
