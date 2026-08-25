@@ -72,6 +72,8 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // dili zaten görevi anlatıyor, fazladan metin ekranı yorar.
     <GameShell
       label="Doğru Anlam"
+      /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
+      pull={false}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       feedback={
         // Şerit doğruda da doluyor: cevabı görmek kadar onu bir kez daha

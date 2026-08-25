@@ -121,6 +121,7 @@ export function Mascot({
   size = 132,
   className = "",
   stage,
+  pinned = false,
 }: {
   mood?: Mood;
   size?: number;
@@ -131,11 +132,17 @@ export function Mascot({
    * Sahneyi alan gezici sarmalayıcılar (pop, çekme) kendi kimliğini verir.
    */
   stage?: string;
+  /**
+   * Tek Erdi kuralından MUAF: sahne başkasınınken de görünür. Cevap şeridinin
+   * baş parmağı/üzülmesi için — o, süs değil, cevabın kendisi; yürüyüş ya da
+   * çekme sürerken bile gizlenmez.
+   */
+  pinned?: boolean;
 }) {
   const still = useStill();
   const stageOwner = useStageOwner();
   /* Sahne başkasınınsa bu Erdi burada değil: kutu yerinde kalır, içi boşalır. */
-  const away = stageOwner !== null && stageOwner !== stage;
+  const away = !pinned && stageOwner !== null && stageOwner !== stage;
   const [idleClip, setIdleClip] = useState(IDLE_CLIPS[0]);
   /*
     Duygu bir SELAMLAMA, kalıcı bir durum değil: klip bir tur oynadıktan sonra

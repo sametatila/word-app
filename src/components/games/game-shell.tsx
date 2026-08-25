@@ -72,6 +72,7 @@ export function GameShell({
   footer,
   verdict = null,
   feedback,
+  pull = true,
 }: {
   label: string;
   /** Sorunun kendisi. Oyunun içeriği zaten yeterince açıksa boş bırakılabilir. */
@@ -89,6 +90,8 @@ export function GameShell({
   verdict?: "correct" | "wrong" | null;
   /** Şeritte yazacak olan: doğru karşılık, anlam, düzeltme. */
   feedback?: ReactNode;
+  /** Erdi'nin şeridi çekerek getirme koreografisi bu oyunda olabilir mi. */
+  pull?: boolean;
 }) {
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col md:block">
@@ -113,7 +116,7 @@ export function GameShell({
           ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
       <div aria-hidden className="max-h-8 grow md:hidden" />
 
-      <VerdictBar verdict={verdict} feedback={feedback} />
+      <VerdictBar verdict={verdict} feedback={feedback} pull={pull} />
     </div>
   );
 }
@@ -133,9 +136,11 @@ const PULL_LINGER_MS = 900;
 function VerdictBar({
   verdict,
   feedback,
+  pull,
 }: {
   verdict: "correct" | "wrong" | null;
   feedback?: ReactNode;
+  pull: boolean;
 }) {
   const still = useStill();
 
@@ -172,13 +177,13 @@ function VerdictBar({
      geri sola yürür). "left": şerit soldan gelir, mirket sağında (pull-right:
      sola dönük, geri geri sağa yürür). İki yön de eşit olasılıkta. */
   const fx = useMemo<"right" | "left" | null>(() => {
-    if (!verdict || still) return null;
+    if (!verdict || still || !pull) return null;
     if (Math.random() >= 0.25) return null;
     // Erdi başka yerdeyse (altta yürüyor, köşede kutluyor) şeridi getiremez.
     if (!claimStage("pull", PULL_MS + PULL_LINGER_MS)) return null;
     return Math.random() < 0.5 ? "right" : "left";
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [verdict, still]);
+  }, [verdict, still, pull]);
 
   useEffect(() => {
     if (!fx) return;
@@ -253,7 +258,8 @@ function VerdictBar({
               transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
               className="shrink-0"
             >
-              <Mascot mood={verdict === "correct" ? "thumbsup" : "sad"} size={48} />
+              {/* `pinned`: cevabın kendisi — yürüyüş, çekme ya da kutlama sürerken de görünür. */}
+              <Mascot mood={verdict === "correct" ? "thumbsup" : "sad"} size={48} pinned />
             </motion.span>
             <div className="min-w-0">{feedback}</div>
           </motion.div>
