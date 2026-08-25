@@ -63,3 +63,5 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 **Kabul.** Her hata tipi için en az bir gerekçe üretiliyor; 60 tablonun hepsinde drill; doğrulayıcı yeşil.
 
 **Süre.** Pilot 3 gün; tamamı ~2 hafta içerik.
+
+**Durum (2026-08-26).** Adım 1 ve 2 bitti. `src/lib/cheatsheet/rules.ts`: `Rule {id, level, trigger {errorType, pattern?}, why, example, link}`; 35 kural — hâl 8 (Dativ/Akkusativ edatları, yer edatları, Dativ fiiller, eril Akkusativ, Dativ çoğul -n, zamir hâli, genel), çekim 10 (Perfekt yardımcı, sein, haben, modal, Partizip II, ayrılabilen, kök değişimi, Präteritum, emir, genel), fiil yeri 7, kelime sırası 4, diğer tiplere genel. `ruleFor`, `ruleById`, `uncoveredErrorTypes`. `why.ts`: `whyFromRule` + `contextOf` (doğru cümle + yazılan + kelime). Test `scripts/test-rules.ts` (`npm run test:rules`: ≥30, her tipte genel kural, tekil kimlik, bağlantılar var, 19 bağlam → kural, 4 why.ts bağı). Adım 2 (5 tablo × 12 drill) WP-11'de. Kalan: 55 tablo drill (adım 3), karıştırma çiftleri `data/content/confusables.json` (adım 4) — LLM aday üretimi + gözden geçirme, sahibin onayıyla.

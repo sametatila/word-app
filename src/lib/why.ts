@@ -1,5 +1,6 @@
 import { cheatsheetHref, ERROR_LABELS, type ErrorType } from "@/lib/errors";
 import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
+import { ruleFor } from "@/lib/cheatsheet/rules";
 
 /**
  * "Neden" — yanlış cevabın tek cümlelik gerekçesi (plan WP-13).
@@ -217,7 +218,10 @@ const W_WORDS = /^(wer|was|wo|wann|wie|warum|wohin|woher|welche[rs]?|wieso|wesha
 const SUBORDINATORS = /\b(weil|dass|wenn|ob|obwohl|damit|während|bevor|nachdem|als|sobald|falls)\b/i;
 
 function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
-  const href = cheatsheetHref("verb_position");
+  // Bağlantı kural parçacığından (WP-73): "weil" geçen cümle a2-nebensatz'a,
+  // soru a1-wfragen'e gider — hata tipinin genel tablosundan daha isabetli.
+  const rule = ruleFor("verb_position", `${(answer ?? []).join(" ")}${tail ?? ""}`);
+  const href = rule?.link ? `/cheatsheet#${rule.link}` : cheatsheetHref("verb_position");
   const sentence = (answer ?? []).join(" ");
   const first = answer?.[0]?.replace(/[^a-zäöüß]/gi, "") ?? "";
   if (SUBORDINATORS.test(sentence)) {
@@ -236,12 +240,20 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
   return { type: "verb_position", text: "Ana cümlede çekimli fiil her zaman ikinci sırada durur.", href };
 }
 
-function whyWordOrder(): Why {
-  return {
-    type: "word_order",
-    text: "Fiil dışı öğelerin sırası: zaman – tarz – yer (wann – wie – wo); zamir nesne isimden önce gelir.",
-    href: cheatsheetHref("word_order"),
-  };
+/**
+ * Kural parçacığından gerekçe (WP-73): bağlamda geçen ipucuna göre seçilen
+ * kural + Almanca örnek; tabloya kuralın kendi bağlantısıyla gider.
+ */
+function whyFromRule(type: ErrorType, context: string): Why {
+  const rule = ruleFor(type, context);
+  if (!rule) return { type, text: ERROR_LABELS[type], href: cheatsheetHref(type) };
+  const text = `${rule.why.charAt(0).toLocaleUpperCase("tr-TR")}${rule.why.slice(1)}: ${rule.example}`;
+  return { type, text, href: rule.link ? `/cheatsheet#${rule.link}` : cheatsheetHref(type) };
+}
+
+/** Kural seçimi için bağlam: doğru cümle + yazılan + kelime. */
+function contextOf(input: WhyInput): string {
+  return [(input.answer ?? []).join(" ") + (input.tail ?? ""), input.correct ?? "", input.detail ?? "", input.word?.de ?? ""].filter(Boolean).join(" ");
 }
 
 /* ───────────────────────────── giriş ───────────────────────────── */
@@ -275,11 +287,9 @@ export function whyFor(input: WhyInput): Why {
     case "verb_position":
       return whyVerbPosition(input.answer, input.tail);
     case "word_order":
-      return whyWordOrder();
     case "case":
-      return { type: "case", text: "Edat ya da fiil hâli belirler: mit/aus/bei/nach/von/zu Dativ, durch/für/gegen/ohne/um Akkusativ ister.", href: cheatsheetHref("case") };
     case "conjugation":
-      return { type: "conjugation", text: "Fiil özneye göre çekilir: ich -e, du -st, er/sie/es -t, wir/sie -en, ihr -t.", href: cheatsheetHref("conjugation") };
+      return whyFromRule(input.type, contextOf(input));
     case "meaning":
       return {
         type: "meaning",
