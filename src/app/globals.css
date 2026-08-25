@@ -466,14 +466,38 @@
   display: none;
 }
 
-/* Mobil güvenli alan */
+/*
+ * Mobil güvenli alan.
+ *
+ * Güvenli alan payı YALNIZCA uygulama ana ekrandan açıldığında ekleniyor ve
+ * sebebi ölçülebilir bir hata: tarayıcı sekmesinde sayfa zaten sistem
+ * çubuğunun ÜSTÜNDE bitiyor — tarayıcı görünen alanı kendisi kısaltıyor — ama
+ * `viewport-fit=cover` yüzünden `env(safe-area-inset-bottom)` yine de fiziksel
+ * payı bildiriyor. İkisi toplanınca pay iki kez sayılıyordu ve alt gezinme
+ * boşlukta duruyordu.
+ *
+ * Hata yalnızca donanım gezinme tuşu OLMAYAN telefonlarda görünüyordu: tuşlu
+ * telefonlarda pay zaten sıfır olduğu için çift sayma da sıfır kalıyor.
+ *
+ * Ana ekrandan açıldığında (standalone) durum tersine dönüyor: orada sayfa
+ * gerçekten ekranın dibine kadar uzanıyor ve payı biz koymazsak gezinme
+ * çubuğu parmak hareketi çubuğunun altında kalıyor.
+ */
 .safe-bottom {
-  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  padding-bottom: 0.75rem;
 }
 
-/* Ana ekrana eklendiğinde durum çubuğunun altına girmesin */
 .safe-top {
-  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-top: 0.75rem;
+}
+
+@media (display-mode: standalone), (display-mode: fullscreen), (display-mode: minimal-ui) {
+  .safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+  .safe-top {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
 }
 
 /* Uygulama hissiyatı: arayüzde metin seçimi ve uzun basma menüsü olmasın,

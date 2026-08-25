@@ -57,13 +57,13 @@ export function AppShell({
     }
   }, [course, voice]);
   /**
-   * İçerik alanının alt boşluğu, alt gezinmenin GERÇEK yüksekliğinden geliyor.
+   * Alt gezinmenin GERÇEK yüksekliği — `--nav-h`.
    *
-   * Önce sabit bir değer (pb-24) kullanılıyordu ve iki ayrı şikâyet üretiyordu:
-   * gezinme o değerden yüksek olan telefonlarda içerik altında kalıyor, alçak
-   * olanlarda ise fazladan boşluk kalıp sayfayı gereksiz yere kaydırılabilir
-   * yapıyordu. Yükseklik sabit değil — cihazın alt güvenli alanı ve
-   * kullanıcının yazı tipi ölçeği onu değiştiriyor.
+   * İçeriğin altında kalmaması için artık gerekmiyor: gezinme akışta duruyor
+   * ve kendi yerini kendisi açıyor. Ama çubuğun ÜSTÜNDE duran serbest öğeler
+   * hâlâ bu ölçüye bakıyor — mirketin açılır balonu, ders yolundaki "kaldığın
+   * yer" düğmesi ve alt şerit. Sabit bir değer yazılamaz: yükseklik cihazın
+   * güvenli alanına ve kullanıcının yazı tipi ölçeğine göre değişiyor.
    *
    * Ölçüm `ResizeObserver` ile: yazı tipi ölçeği ya da yönlendirme değişince
    * kendiliğinden güncelleniyor.
@@ -177,41 +177,31 @@ export function AppShell({
             kalan alanı tam olarak bilir ve taşmaz.
             `overscroll-contain` elastik kaydırmanın sayfa gövdesine zincirlenip
             kaymıyormuş gibi durmasını engelliyor. */}
-        <main className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 pt-4 md:px-8 md:pb-8 md:pt-8">
+        <main className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 py-4 md:px-8 md:py-8">
           {children}
-          {/* Gezinmenin altında kalan boşluk bir DOLGU değil, akıştaki gerçek
-              bir öğe.
-              Önce `main` üzerinde `padding-bottom` olarak duruyordu ve bir
-              telefonda içerik gezinmenin altında kalıyordu: bir kaydırma
-              kutusunun alt dolgusu, içindeki bir öğe TAŞTIĞINDA kaydırma
-              alanına eklenmiyor. Ölçüldü — dört telefon profilinde de içeriğin
-              son 96 pikseli kaydırma sonuna gelindiğinde bile gezinmenin
-              altında kalıyordu. Akıştaki bir öğe ise her zaman sayılıyor.
-
-              Yükseklik gezinmenin GERÇEK yüksekliğinden: sabit bir değer,
-              cihazın alt güvenli alanı ve kullanıcının yazı tipi ölçeği
-              yüzünden bazı telefonlarda az, bazılarında fazla kalıyordu.
-
-              Üstüne bir nefes payı ekleniyor. Yalnızca gezinme yüksekliği
-              kadar boşluk bırakmak içeriği tam gezinmeye DEĞDİRİYOR: son kart
-              çubuğa yapışık duruyor ve sayfa bitmemiş gibi görünüyor. Pay
-              sayfanın yatay boşluğuyla aynı (`px-4`), böylece alt kenar diğer
-              üç kenarla aynı ritmi tutuyor. */}
-          <div
-            aria-hidden
-            className="shrink-0 md:hidden"
-            style={{ height: "calc(var(--nav-h, 6rem) + 1rem)" }}
-          />
         </main>
 
-        {/* Mobil alt gezinme */}
+        {/*
+          Mobil alt gezinme — AKIŞTA, sabit konumlu değil.
+
+          Önce `fixed bottom-0` idi ve içeriğin altında kalmaması için `main`
+          içine gezinme yüksekliğinde bir dolgu öğesi konuyordu. İki ayrı ölçü
+          aynı şeyi anlatmaya çalışıyordu ve donanım gezinme tuşu olmayan
+          telefonlarda ikisi tutmuyordu: sabit konumun dayandığı düzen alanı
+          ile ekranın gerçek dibi aynı yer değil, çubuk boşlukta kalıyordu.
+
+          Kabuk zaten tam ekran yüksekliğinde (`h-dvh`) ve içeride yalnızca
+          `main` kayıyor. Gezinme o sütunun son öğesi olunca ekranın dibine
+          kendiliğinden oturuyor: ölçülecek bir şey, telafi edilecek bir dolgu
+          ve çakışacak bir katman kalmıyor.
+
+          `--nav-h` yine ölçülüyor: mirket açılır balonu ve "kaldığın yer"
+          düğmesi çubuğun üstünde durmak için onu kullanıyor.
+        */}
         <nav
           ref={navRef}
-          className="safe-bottom fixed inset-x-0 bottom-0 z-30 flex border-t backdrop-blur md:hidden"
-          style={{
-            borderColor: "var(--border)",
-            background: "color-mix(in srgb, var(--bg) 92%, transparent)",
-          }}
+          className="safe-bottom flex shrink-0 border-t md:hidden"
+          style={{ borderColor: "var(--border)", background: "var(--bg)" }}
         >
           {NAV.map((item) => {
             const active = pathname.startsWith(item.href);
