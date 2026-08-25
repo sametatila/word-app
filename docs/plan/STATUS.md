@@ -9,7 +9,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-02 | Hata taksonomisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/errors.ts`, `reviews.error_type/detail`, 11 oyun + yürüyüş, e2e §28 |
 | WP-03 | AI değerlendirme servisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `/api/assess`, `assessments` tablosu, istemci yedeği; kalite testi 20/20 (assess-samples.md) |
 | WP-04 | Çevrimdışı rol yapma yedeği | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | senaryo motoru + 10 A1 senaryosu; kanıt `reports/shots/wp04-roleplay-*.png` |
-| WP-10 | Çeviri oyunu | 1 | bekliyor | | | | |
+| WP-10 | Çeviri oyunu | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `translate` turu, `lib/sentence-match`, kısmi SRS kalitesi, AI onayı; kanıt `reports/shots/wp10-translate-*.png` |
 | WP-11 | Dönüştürme drilleri | 1 | bekliyor | | | | |
 | WP-12 | Serbest cümle görevi | 1 | bekliyor | | | | |
 | WP-13 | "Neden" geri bildirimi | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/why.ts`, `FeedbackLine`, şerit 2. satır, cheatsheet derin bağlantı; kanıt `reports/shots/wp13-*.png` |
@@ -61,3 +61,5 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — İçerik doğrulayıcı uyarıları toplam değil ETİKET başına bütçeliyor (`data/content/baseline.json`): toplam tavan, bir borcu azaltırken başka yerde borç almaya izin verirdi. Mevcut borç 2.227 uyarı (en yok 1.254, metinde geçmeyen sözlükçe 485, çok anlamlı tr 163, parantezli tr 158…); WP-72 kapatır. Claude.
 - 2026-08-25 — Almanca metinde Türkçe harf kuralı özel adları (büyük harfle başlayan kelimeler) dışarıda bırakıyor: metinlerdeki "Frau Yıldız" bilinçli. Claude.
 - 2026-08-25 — WP-70 adım 4 (paket/apply genelleştirme) bu turda yazılmadı: mevcut `data/skills/make-packets.mjs` + `apply-skills.ts` deseni SPEC'te akış olarak tarif edildi; ilk yeni içerik türü (WP-71 B1 pilotu) gelince genelleştirilecek — soyut bir üretici yazmak, tüketicisi olmadan yanlış soyutlama riski. Claude.
+- 2026-08-25 — Çeviri turunda sıra hatası `correct=false` + `quality=3`: istatistikte ve hata tipinde yanlış sayılır (öğrenci cümleyi kuramadı), SRS'te kelime lapse etmez (kelime bilinmiş). `Answer.quality` sunucuda 0–5'e kilitlenir; yanlış cevap 3'ü aşamaz, doğru cevap 3'ün altına inemez. Claude.
+- 2026-08-25 — Çeviri AI onayı: yerel hakem "yanlış" dediğinde ve cümle ≥ 3 kelimeyse `/api/assess` (sentence) 6 sn tavanla sorulur; overall ≥ 75 ve task ≥ 3 ise kabul (kalite 4, "anlamca doğru — başka kuruluş"). Sağlayıcı yok/zaman aşımı → yerel karar. Kota bu yolla tüketilir; `report:learning` üretim satırında görünür. Claude.

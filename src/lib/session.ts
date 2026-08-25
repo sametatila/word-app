@@ -869,6 +869,9 @@ function pickRound(
     candidates.push("choice", "cloze", "order", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
+    // Çeviri (Türkçe cümle → Almanca) oturmuş kelimede açılıyor: Cümleyi
+    // Diz'de parçaları verilen cümle burada sıfırdan kuruluyor (WP-10).
+    candidates.push("translate");
     // Yazma oyunu önceden yalnızca "sağlam" kelimelerde açılıyordu ve pratikte
     // hiç çıkmıyordu: sağlamlık üç koşulu birden istiyor (üst üste 4 doğru,
     // aralık ≥ 7 gün, kolaylık ≥ 2.3) ve gerçek hesaplarda kelimelerin ancak
@@ -879,14 +882,14 @@ function pickRound(
     // değil imla oluyor.
     if (word.de.length <= 14) candidates.push("typing");
   } else {
-    candidates.push("typing", "cloze", "choice", "order", "listen", "truefalse");
+    candidates.push("typing", "translate", "cloze", "choice", "order", "listen", "truefalse");
     if (word.artikel) candidates.push("artikel", "plural");
     if (word.de.length <= 12) candidates.push("scramble");
   }
 
   // Parçaları ekranda olsa da bu oyunlar öğrenciden bir şey **kurmasını**
   // ister; tanıma oyunlarında ise doğru cevap zaten şıklardan biridir.
-  const PRODUCTION: Round["game"][] = ["typing", "scramble", "order"];
+  const PRODUCTION: Round["game"][] = ["typing", "scramble", "order", "translate"];
   const tuned =
     bias === "production"
       ? [...candidates.filter((g) => PRODUCTION.includes(g)), ...candidates]
@@ -992,6 +995,23 @@ export function makeRound(
         tail: built.tail,
         sentenceTr: firstExample(word.beispielTr),
         sentenceEn: firstExample(word.beispielEn),
+      };
+    }
+    case "translate": {
+      // Kaynak: kelimenin kendi örnek cümlesi ve Türkçesi. Türkçesi yoksa
+      // soru yok; 4'ten kısa cümle yazdırmaya değmez, 12'den uzunu telefonda
+      // bir turluk iş olmaktan çıkar.
+      const de = firstExample(word.beispiel)?.trim();
+      const tr = firstExample(word.beispielTr)?.trim();
+      if (!de || !tr) return null;
+      const n = de.replace(/[.!?…]+$/, "").split(/\s+/).filter(Boolean).length;
+      if (n < 4 || n > 12) return null;
+      return {
+        id: nextId(),
+        game: "translate",
+        word,
+        sentence: { tr, de, en: firstExample(word.beispielEn) },
+        alternatives: [],
       };
     }
     case "cloze": {
@@ -1299,7 +1319,19 @@ export async function submitAnswers(
         };
 
     if (!prevRow) newCount += 1;
-    const q = grade(ans.game, ans.correct, ans.latencyMs, ans.hintUsed);
+    // Kısmi puanlı oyunlar (Çevir) kaliteyi kendisi verir; gerisi hız ve
+    // doğruluktan hesaplanır. Sınır 0–5; yanlış cevap 3'ü aşamaz, doğru cevap
+    // 3'ün altına inemez — oyun ne gönderirse göndersin SRS mantığı korunur.
+    const own =
+      typeof ans.quality === "number" && Number.isFinite(ans.quality)
+        ? Math.max(0, Math.min(5, Math.round(ans.quality)))
+        : null;
+    const q =
+      own === null
+        ? grade(ans.game, ans.correct, ans.latencyMs, ans.hintUsed)
+        : ans.correct
+          ? Math.max(3, own)
+          : Math.min(3, own);
     const next = schedule(prev, q, now, srsWeightFor(lastErrorByWord.get(ans.wordId)));
 
     xpGained += xpForQuality(q);

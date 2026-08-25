@@ -12,6 +12,7 @@ import { OrderGame } from "@/components/games/order-game";
 import { PluralGame } from "@/components/games/plural-game";
 import { ListenGame } from "@/components/games/listen-game";
 import { TrueFalseGame } from "@/components/games/truefalse-game";
+import { TranslateGame } from "@/components/games/translate-game";
 
 const w = (
   id: number,
@@ -100,6 +101,13 @@ const ROUNDS: Round[] = [
     claim: o("kapı", "door"),
     isTrue: false,
   },
+  {
+    id: "d12",
+    game: "translate",
+    word: w(16, "Kino", "das", "sinema", "cinema"),
+    sentence: { tr: "Bugün sinemaya gidiyorum.", de: "Ich gehe heute ins Kino.", en: "I'm going to the cinema today." },
+    alternatives: ["Heute gehe ich ins Kino."],
+  },
 ];
 
 /** Yalnızca geliştirme kontrolü için: tüm oyunları tek sayfada render eder. */
@@ -120,6 +128,7 @@ export default function DemoGames() {
           {round.game === "plural" && <PluralGame round={round} onDone={() => {}} />}
           {round.game === "listen" && <ListenGame round={round} onDone={() => {}} />}
           {round.game === "truefalse" && <TrueFalseGame round={round} onDone={() => {}} />}
+          {round.game === "translate" && <TranslateGame round={round} onDone={() => {}} />}
         </section>
       ))}
     </div>

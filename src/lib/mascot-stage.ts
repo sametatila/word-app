@@ -25,8 +25,23 @@ let until = 0;
 let timer: ReturnType<typeof setTimeout> | null = null;
 const subs = new Set<() => void>();
 
+/*
+  Bildirim bir sonraki mikro göreve ertelenir. `claimStage` bir bileşenin
+  RENDER'ı sırasında çağrılabiliyor (şerit, koreografi kararını çizilirken
+  veriyor — animasyonun ilk karesi o karara bağlı) ve aboneler aynı anda
+  setState yapınca React "başka bileşen çizilirken güncelleme" uyarısı
+  veriyordu. Bir mikro görev gecikmesi diğer Erdi'lerin sahne değişimini
+  fark etmesini insan gözü için ölçülemeyecek kadar geciktirir; uyarıyı ve
+  olası eşzamansız çizim hatasını ortadan kaldırır.
+*/
+let pending = false;
 function emit() {
-  subs.forEach((f) => f());
+  if (pending) return;
+  pending = true;
+  queueMicrotask(() => {
+    pending = false;
+    subs.forEach((f) => f());
+  });
 }
 
 function clearTimer() {

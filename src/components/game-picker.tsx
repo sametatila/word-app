@@ -16,6 +16,7 @@ import {
   TargetIcon,
   XIcon,
   ChevronIcon,
+  GlobeIcon,
 } from "@/components/icons";
 
 /**
@@ -47,6 +48,7 @@ const ICONS: Record<PlayableGame, typeof LinkIcon> = {
   plural: BookIcon,
   listen: HeadphonesIcon,
   truefalse: CheckIcon,
+  translate: GlobeIcon,
 };
 
 export function GamePicker({

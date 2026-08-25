@@ -13,6 +13,7 @@ import { OrderGame } from "@/components/games/order-game";
 import { PluralGame } from "@/components/games/plural-game";
 import { ListenGame } from "@/components/games/listen-game";
 import { TrueFalseGame } from "@/components/games/truefalse-game";
+import { TranslateGame } from "@/components/games/translate-game";
 
 /** Tur tipine göre doğru oyunu render eder — hem normal turda hem meydan okumada. */
 export function GameSwitch({
@@ -45,5 +46,7 @@ export function GameSwitch({
       return <ListenGame round={round} onDone={onDone} />;
     case "truefalse":
       return <TrueFalseGame round={round} onDone={onDone} />;
+    case "translate":
+      return <TranslateGame round={round} onDone={onDone} />;
   }
 }

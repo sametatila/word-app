@@ -35,6 +35,8 @@ const GAME_TIME_BUDGET: Record<string, number> = {
   listen: 12000,
   // İkili karar: düşünmek değil tanımak isteniyor, bütçe dar.
   truefalse: 5000,
+  // Cümle yazmak: okuma + kurma + yazma; en geniş bütçe.
+  translate: 40000,
 };
 
 /**

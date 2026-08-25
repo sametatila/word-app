@@ -7,6 +7,8 @@ export type GameResult = {
   correct: boolean;
   latencyMs: number;
   hintUsed?: boolean;
+  /** Oyunun verdiği SRS kalitesi 0–5 (kısmi puanlı oyunlar); yoksa sunucu hesaplar. */
+  quality?: number;
   /** Yanlışsa hata tipi; oyun bilir (bkz. lib/errors.ts `miss`). */
   errorType?: ErrorType;
   /** Yanlışın kendisi: seçilen şık, yazılan kelime. */

@@ -3,7 +3,7 @@
  *   TEST_DATABASE_URL=postgres://... npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/e2e.ts
  * Oturum kurgusu, SRS zamanlaması, streak ve ilerleme sorguları doğrulanır.
  */
-import { and, eq, inArray, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, isNotNull, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
 import { dailyStats, profiles, reviews, sessionState, userLessons, userSkills, userWords, words } from "../src/lib/db/schema";
 import {
@@ -20,6 +20,7 @@ import {
   ensureProfile,
   markKnown,
   shiftDay,
+  makeRound,
 } from "../src/lib/session";
 import { schedule, grade, type SrsState } from "../src/lib/srs";
 import {
@@ -2121,6 +2122,27 @@ async function main() {
   await db.delete(userLessons).where(eq(userLessons.userId, USER));
   const offlineRec = await recordLesson(USER, hallo, scoredSteps(hallo), ost.userTurns >= hallo.roleplay.minTurns, monday);
   check("senaryolu konuşmayla ders geçildi", offlineRec.passed === true);
+
+  console.log("\n31) Çeviri turu ve kısmi kalite (WP-10)");
+  await db.delete(reviews).where(eq(reviews.userId, USER));
+  await db.delete(userWords).where(eq(userWords.userId, USER));
+  const trWords = await db.select().from(words).where(and(isNotNull(words.beispielTr), sql`${words.beispiel} ~ '^\\S+ \\S+ \\S+ \\S+'`)).limit(3);
+  check("örnek cümlesi Türkçeli kelime var", trWords.length > 0);
+  const trRound = trWords.length ? makeRound("translate", { ...trWords[0], isNew: false } as never, [], () => "t1", "strong") : null;
+  check("makeRound çeviri turu kuruyor", trRound?.game === "translate" && (trRound as { sentence: { tr: string } }).sentence.tr.length > 0);
+  check("örnek cümlesi olmayan kelimeye çeviri turu yok", makeRound("translate", { ...trWords[0], beispiel: null, isNew: false } as never, [], () => "t2", "strong") === null);
+  const w0 = trWords[0].id;
+  await submitAnswers(USER, [{ wordId: w0, game: "translate", correct: false, latencyMs: 9000, quality: 3, errorType: "word_order", detail: "Ich gehe ins Kino heute" }], monday, 20);
+  const [uwOrder] = await db.select().from(userWords).where(and(eq(userWords.userId, USER), eq(userWords.wordId, w0)));
+  check("sıra hatası: yanlış sayıldı ama lapse etmedi (kalite 3)", uwOrder?.lapses === 0 && uwOrder?.reps === 1);
+  const [rvOrder] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, w0)));
+  check("sıra hatası kaydı: correct=false, quality=3, error_type=word_order", rvOrder?.correct === false && rvOrder?.quality === 3 && rvOrder?.errorType === "word_order");
+  await submitAnswers(USER, [{ wordId: w0, game: "translate", correct: true, latencyMs: 9000, quality: 9 }], monday, 20);
+  const [rv2] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, w0))).orderBy(desc(reviews.id)).limit(1);
+  check("kalite 0–5'e kilitleniyor", rv2?.quality === 5);
+  await submitAnswers(USER, [{ wordId: w0, game: "translate", correct: false, latencyMs: 9000, quality: 5 }], monday, 20);
+  const [rv3] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, w0))).orderBy(desc(reviews.id)).limit(1);
+  check("yanlış cevap kalite 3'ü aşamıyor", rv3?.quality === 3);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

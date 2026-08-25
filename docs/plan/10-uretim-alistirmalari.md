@@ -32,6 +32,8 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 
 **Süre.** 5 gün. **Bağımlılık.** WP-02, (isteğe bağlı) WP-03.
 
+**Durum (2026-08-25).** Bitti. `Round.translate` (`sentence {tr,de,en}`, `alternatives`), `GAME_LABELS.translate = "Çevir"`, `PLAYABLE_GAMES`'e eklendi (tek oyun seçici, profil tablosu otomatik); `makeRound("translate")`: örnek cümle 4–12 kelime ve Türkçesi varsa; `pickRound` solid/strong adaylarında ve PRODUCTION listesinde. `src/lib/sentence-match.ts` (katlama, LCS hizalama, eksik/fazla/yer değiştirmiş/yazım işaretleri, karar tam 5 / yazım 4 / sıra 3 / yanlış 1; `npm run test:match` 20 kontrol). `translate-game.tsx`: textarea + umlaut tuşları, ipucu (ilk harf iskeleti, kalite ≤ 3), şeritte fark vurgulu doğru cümle + "Yazdığın" satırı + WP-13 gerekçesi; AI onayı (WP-03, 6 sn). `Answer.quality` → `submitAnswers` (0–5, yanlışta ≤ 3), `/api/answers` alanı; SRS bütçesi 40 sn. e2e §31 (7 kontrol). `/demo-games`'e eklendi. Kanıt: `reports/shots/wp10-translate-{start,order,typo,wrong}.png`.
+
 ---
 
 ## WP-11 · Dönüştürme drilleri (dilbilgisi tablolarına bağlı)

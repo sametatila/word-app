@@ -75,6 +75,7 @@ function parseBody(body: unknown) {
       correct: a.correct,
       latencyMs: typeof a.latencyMs === "number" ? Math.max(0, Math.round(a.latencyMs)) : 0,
       hintUsed: a.hintUsed === true,
+      quality: typeof a.quality === "number" && Number.isFinite(a.quality) ? a.quality : undefined,
       // Hata tipi yalnız yanlış cevapta ve yalnız listeden; gerisi düşer.
       errorType: a.correct === false && isErrorType(a.errorType) ? a.errorType : undefined,
       detail: a.correct === false ? (cleanDetail(a.detail) ?? undefined) : undefined,

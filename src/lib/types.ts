@@ -11,6 +11,7 @@ export type GameId =
   | "plural"
   | "listen"
   | "truefalse"
+  | "translate"
   | "speak";
 
 export const GAME_LABELS: Record<GameId, string> = {
@@ -25,6 +26,7 @@ export const GAME_LABELS: Record<GameId, string> = {
   plural: "Çoğul Bilmece",
   listen: "Kulaktan Tanı",
   truefalse: "Doğru mu Yanlış mı",
+  translate: "Çevir",
   speak: "Sesli Söyle",
 };
 
@@ -52,6 +54,7 @@ export const PLAYABLE_GAMES = [
   "plural",
   "listen",
   "truefalse",
+  "translate",
 ] as const satisfies readonly GameId[];
 
 export type PlayableGame = (typeof PLAYABLE_GAMES)[number];
@@ -152,6 +155,18 @@ export type Round =
       /** Öne sürülen anlam — kelimenin kendi karşılığı ya da başka bir kelimenin. */
       claim: Option;
       isTrue: boolean;
+    }
+  | {
+      id: string;
+      game: "translate";
+      word: RoundWord;
+      /**
+       * Çevrilecek cümle: kelimenin kendi örnek cümlesi. Türkçesi soru,
+       * Almancası cevap; İngilizcesi ayırt edici olarak küçük yazıyla.
+       */
+      sentence: { tr: string; de: string; en: string | null };
+      /** Kabul edilen başka kuruluşlar (içerikten; bugün boş). */
+      alternatives: string[];
     };
 
 export type Answer = {
@@ -160,6 +175,13 @@ export type Answer = {
   correct: boolean;
   latencyMs: number;
   hintUsed?: boolean;
+  /**
+   * Oyunun kendi verdiği SRS kalitesi (0–5). Yalnız kısmi puanlı oyunlar
+   * gönderir (Çevir: yazım 4, sıra 3, yanlış 1); verilmezse sunucu doğruluk
+   * ve hızdan hesaplar (`grade`). `correct=false` ama `quality=3` mümkündür:
+   * cümle yanlış sayılır ve hata tipi kaydedilir, kelime lapse etmez.
+   */
+  quality?: number;
   /** Yanlışsa hata tipi — oyun sınıflandırır (bkz. lib/errors.ts). */
   errorType?: ErrorType;
   /** Yanlışın kendisi: seçilen şık / yazılan kelime. */

@@ -185,10 +185,17 @@ const W_WORDS = new Set(["wer", "was", "wo", "wann", "wie", "warum", "wohin", "w
  * "kelime sırası" (nesne/zaman zarfı sırası vb.), değilse "fiilin yeri" —
  * öğrencinin en sık yaptığı ve kuralı en net olan hata bu.
  */
+const SUBORDINATORS = new Set(["weil", "dass", "wenn", "ob", "obwohl", "damit", "während", "bevor", "nachdem", "als", "sobald", "falls", "seit", "seitdem", "bis"]);
+
 export function classifyOrder(placed: string[], answer: string[], tail: string): ErrorType {
   if (!answer.length) return "word_order";
   const first = answer[0]?.toLocaleLowerCase("de-DE").replace(/[^a-zäöüß]/g, "") ?? "";
-  const verbIdx = tail.trim() === "?" && !W_WORDS.has(first) ? 0 : Math.min(1, answer.length - 1);
+  // Yan cümle parçası ("weil ich krank bin"): çekimli fiil en sonda.
+  const verbIdx = SUBORDINATORS.has(first)
+    ? answer.length - 1
+    : tail.trim() === "?" && !W_WORDS.has(first)
+      ? 0
+      : Math.min(1, answer.length - 1);
   const verb = answer[verbIdx];
   const placedIdx = placed.indexOf(verb);
   if (placedIdx !== -1 && placedIdx !== verbIdx) return "verb_position";
