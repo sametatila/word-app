@@ -441,6 +441,16 @@ export const events = pgTable(
     name: text("name").notNull(),
     /** Olayla ilgili tek sayı (tur uzunluğu, sekme sırası…); yoksa 0. */
     value: integer("value").notNull().default(0),
+    /**
+     * Kısa, kapalı sözlükten etiket: oyun adı, hata tipi, "level:B1".
+     *
+     * Tek sayı öğrenme olaylarına yetmedi — "hangi tür üretim görevi, kaç
+     * puan" iki boyut ve ikisini tek tam sayıya sıkıştırmak (kind×1000+puan
+     * gibi) sorguları okunmaz yapardı. Serbest metin yasağı sürüyor: biçim
+     * sunucuda doğrulanıyor (lib/events.ts `cleanKind`), 32 karakteri ve
+     * `[a-z0-9_:-]` kümesini aşan değer düşüyor.
+     */
+    kind: text("kind"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [

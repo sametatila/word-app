@@ -27,6 +27,8 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Süre.** 2–3 gün. **Bağımlılık.** Yok.
 
+**Durum (2026-08-25).** Bitti. Olay adları eklendi (`src/lib/events.ts`), `events.kind` sütunu + migrasyon `0026_learning_events.sql` (üretim DB'sine uygulandı), `docs/plan/kpi.md` (8 KPI, SQL, hedef), `scripts/report-learning.ts` (`npm run report:learning` üretimde çalıştı: 4 haftalık WAU/ders/tutunma basıyor; üretim, sınav, beceri, hata satırları ilgili WP'ler gelene kadar boş). `session_round` bilinçli olarak yazılmıyor (STATUS karar kaydı).
+
 ---
 
 ## WP-01 · Beceri ilerlemesini sunucuya taşı

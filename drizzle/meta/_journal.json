@@ -183,6 +183,13 @@
       "when": 1787663911863,
       "tag": "0025_nostalgic_proudstar",
       "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1787681896017,
+      "tag": "0026_learning_events",
+      "breakpoints": true
     }
   ]
 }

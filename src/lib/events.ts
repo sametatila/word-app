@@ -50,6 +50,25 @@ export const EVENT_NAMES = [
   "sound_toggle", // ses açıldı/kapandı (value = 1 açık, 0 kapalı)
   "invite_open", // davet bağlantısıyla gelindi
   "share", // sonuç paylaşıldı
+
+  /*
+    Öğrenme ölçümü (plan WP-00).
+
+    Buraya kadarki olaylar ÜRÜNÜ ölçüyordu: kim nereye tıkladı, tur bitti mi.
+    "Daha iyi öğreniyorlar mı" sorusu bunlarla cevaplanamıyordu; XP ve doğruluk
+    öğrenme sonucunu değil çabayı ölçer. Aşağıdakiler sonuç olayları. Hepsinde
+    `kind` kapalı sözlükten kısa bir etiket, `value` bir sayı; serbest metin
+    (öğrencinin yazdığı cümle, konuşma dökümü) hiçbir zaman buraya yazılmaz —
+    o içerik kendi tablosunda durur (`assessments`), burada yalnız puanı var.
+  */
+  "session_round", // bir oyun turu cevaplandı (kind = oyun, value = 1 doğru / 0 yanlış)
+  "production_attempt", // üretim görevi puanlandı (kind = translate|transform|free_sentence|writing_free|speaking_drill|roleplay, value = 0–100)
+  "exam_start", // sınava girildi (kind = sınav türü:seviye, örn. "level:B1")
+  "exam_finish", // sınav bitti (kind = sınav türü:seviye, value = puan 0–100)
+  "placement_finish", // yerleştirme testi bitti (kind = bulunan seviye, value = puan 0–100)
+  "error_recorded", // yanlış cevabın hata tipi (kind = ErrorType, bkz. lib/errors.ts)
+  "feedback_why_opened", // "neden?" açıklaması açıldı (kind = ErrorType)
+  "skill_finish", // beceri egzersizi bitti (kind = beceri:seviye, örn. "reading:A2", value = puan 0–100)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];
@@ -58,6 +77,20 @@ const VALID = new Set<string>(EVENT_NAMES);
 
 export function isEventName(name: string): name is EventName {
   return VALID.has(name);
+}
+
+/**
+ * `kind` etiketi: küçük harf, rakam, alt çizgi, iki nokta, tire; en çok 32
+ * karakter. Bu bir serbest metin alanı DEĞİL — oyun adı, hata tipi, "level:B1"
+ * gibi kapalı sözlük etiketleri için var. Uymayan değer sessizce düşer; olay
+ * yine yazılır çünkü etiket bilgi katmanı, olayın kendisi değil.
+ */
+const KIND_RE = /^[a-z0-9_:-]{1,32}$/i;
+
+export function cleanKind(kind: unknown): string | null {
+  if (typeof kind !== "string") return null;
+  const k = kind.trim();
+  return KIND_RE.test(k) ? k : null;
 }
 
 /**
@@ -72,9 +105,12 @@ export async function track(
   name: EventName,
   day: string,
   value = 0,
+  kind?: string | null,
 ): Promise<void> {
   try {
-    await db.insert(events).values({ userId, name, day, value: Math.round(value) });
+    await db
+      .insert(events)
+      .values({ userId, name, day, value: Math.round(value), kind: cleanKind(kind) });
   } catch (err) {
     console.error("[events] yazılamadı", name, err);
   }

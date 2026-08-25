@@ -4,7 +4,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 
 | WP | Başlık | Faz | Durum | Sahip | Başlangıç | Son commit | Not |
 |---|---|---|---|---|---|---|---|
-| WP-00 | Öğrenme ölçüm çerçevesi | 0 | bekliyor | | | | |
+| WP-00 | Öğrenme ölçüm çerçevesi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `kind` sütunu eklendi; `session_round` yazılmıyor (karar kaydı) |
 | WP-01 | Beceri ilerlemesi sunucuya | 0 | bekliyor | | | | |
 | WP-02 | Hata taksonomisi | 0 | bekliyor | | | | |
 | WP-03 | AI değerlendirme servisi | 0 | bekliyor | | | | |
@@ -44,3 +44,5 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 
 - 2026-08-25 — Plan yazıldı; kaynak `reports/ogrenme-kesif-raporu.html`.
+- 2026-08-25 — `events` tablosuna `kind text` sütunu (kapalı sözlük etiketi, ≤32 karakter, sunucuda doğrulanır). Gerekçe: üretim türü+puan, beceri+seviye+puan gibi iki boyutlu olaylar tek tam sayıya sığmıyordu; serbest metin yasağı sürüyor. Claude.
+- 2026-08-25 — `session_round` olayı yazılmıyor: `reviews` zaten oyun/doğruluk/gecikmeyi satır satır tutuyor, ikinci kopya yalnız hacim üretirdi. Ad listede duruyor, KPI'lar `reviews`'dan okuyor. Claude.

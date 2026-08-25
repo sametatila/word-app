@@ -13,8 +13,11 @@ import type { EventName } from "@/lib/events";
  *     edilir ve tam da en çok merak edilen olaylar kaybolurdu.
  *   - **Yerel gün.** Sunucunun UTC günü, gece çalışan kullanıcıyı ertesi güne
  *     yazardı — uygulamanın geri kalanı da yerel günle çalışıyor.
+ *
+ * `kind` isteğe bağlı kısa etiket (oyun adı, hata tipi, "level:B1"); serbest
+ * metin değil — sunucu biçimi doğrular, uymayanı düşürür (bkz. lib/events.ts).
  */
-export function track(name: EventName, value = 0) {
+export function track(name: EventName, value = 0, kind?: string) {
   if (typeof window === "undefined") return;
   const d = new Date();
   const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -22,7 +25,7 @@ export function track(name: EventName, value = 0) {
     void fetch("/api/events", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ name, day, value }),
+      body: JSON.stringify({ name, day, value, kind }),
       keepalive: true,
     }).catch(() => {});
   } catch {
