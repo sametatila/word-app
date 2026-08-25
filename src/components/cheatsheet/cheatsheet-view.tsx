@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeftIcon, BookOpenIcon, ChevronIcon, FlameIcon, TargetIcon } from "@/components/icons";
+import { ArrowLeftIcon, ChevronIcon, FlameIcon } from "@/components/icons";
 import { LEVEL_TONE } from "@/components/skills/theme";
 import { CHEATSHEETS, CHEAT_LEVELS } from "@/lib/cheatsheet";
 import type { CheatBlock, CheatSheet } from "@/lib/cheatsheet";
@@ -11,7 +11,7 @@ import { itemById, itemsOfSheet, type CheatItem } from "@/lib/cheatsheet/items";
 import { CheatQuiz } from "./cheat-quiz";
 
 /**
- * Cheatsheet ekranı — dilbilgisi başvurusu ve tek mekanikli çalışma modu.
+ * Cheatsheet ekranı — dilbilgisi başvurusu.
  *
  * Üç karar tasarımın tamamını açıklıyor:
  *
@@ -24,13 +24,11 @@ import { CheatQuiz } from "./cheat-quiz";
  *    yapmadığı işi kullanıcıya yıkmak olurdu. Arama yazılınca eşleşen sayfalar
  *    kendiliğinden açılıyor ve tablolarda yalnızca eşleşen satırlar kalıyor.
  *
- * 3. **Çalışma modu tek mekanik: sütun gizleme.** Basılı bir fiil listesini
- *    elle kapatıp kendini yoklamanın karşılığı. Her tabloya ayrı alıştırma
- *    yazılmadığı için altmış tablonun hepsi aynı anda çalışılabilir durumda —
- *    ve yeni bir tablo eklemek yalnızca veri eklemek oluyor.
- *
- * Burada puan, ilerleme ya da kilit YOK. Ders yolu ilerlemeyi ölçüyor;
- * başvuru ekranı ölçmüyor, açılıyor ve kapanıyor.
+ * 3. **Sayfa okunur ya da sınanır; arası yok.** Bir ara mod vardı — sütunlar
+ *    gizleniyor, dokunulunca açılıyordu. Kaldırıldı: ölçmeyen bir "çalışma"
+ *    kullanıcıyı kendi kendini yoklamaya bırakıyor ve hiçbir yere yazılmıyor.
+ *    Kendini yoklamak isteyen zaten SINA'ya basıyor ve orada cevap ölçülüp
+ *    tekrar planına giriyor.
  */
 type Quiz = {
   title: string;
@@ -328,32 +326,6 @@ function SheetCard({
   onQuiz: (sheet: CheatSheet) => void;
 }) {
   const [open, setOpen] = useState(defaultOpen);
-  const [study, setStudy] = useState(false);
-  /** Gizli sütunlar — sütun BAŞLIĞINA göre, tablo tablo değil. */
-  const [hidden, setHidden] = useState<Set<string>>(new Set());
-  /** Açılmış hücreler: "blok:satır:sütun". */
-  const [shown, setShown] = useState<Set<string>>(new Set());
-
-  /**
-   * Gizlenebilir sütun başlıkları: her tablonun İLK sütunu hariç hepsi.
-   * İlk sütun satırın kimliği — gizlenirse neyin sorulduğu kalmaz.
-   */
-  const columns = useMemo(() => {
-    const seen: string[] = [];
-    for (const block of blocks) {
-      if (block.kind !== "table") continue;
-      for (const label of block.columns.slice(1)) if (!seen.includes(label)) seen.push(label);
-    }
-    return seen;
-  }, [blocks]);
-
-  function toggleStudy() {
-    const next = !study;
-    setStudy(next);
-    // Çalışmaya geçerken varsayılan: ilk sütun dışında her şey kapalı.
-    setHidden(next ? new Set(columns) : new Set());
-    setShown(new Set());
-  }
 
   const tone = LEVEL_TONE[sheet.level] ?? "var(--color-brand)";
 
@@ -395,103 +367,18 @@ function SheetCard({
             <div className="space-y-4 px-4 pb-4">
               <p className="muted text-xs font-semibold italic">{sheet.de}</p>
 
-              {columns.length ? (
-                <div className="flex flex-wrap items-center gap-2">
-                  <button
-                    onClick={toggleStudy}
-                    aria-pressed={study}
-                    className={`chip flex items-center gap-1.5 px-3 py-1.5 text-xs ${
-                      study ? "chip-active" : ""
-                    }`}
-                  >
-                    {study ? <BookOpenIcon size={14} /> : <TargetIcon size={14} />}
-                    {study ? "Okumaya dön" : "Kapat"}
-                  </button>
-                  <button
-                    onClick={() => onQuiz(sheet)}
-                    className="btn btn-primary flex items-center gap-1.5 px-3 py-1.5 text-xs"
-                  >
-                    <FlameIcon size={14} /> Sına
-                  </button>
-
-                  {study ? (
-                    <>
-                      <span className="mx-0.5 h-5 w-px" style={{ background: "var(--border)" }} />
-                      <span className="muted text-xs font-semibold">Kapalı:</span>
-                      {columns.map((label) => {
-                        const off = hidden.has(label);
-                        return (
-                          <button
-                            key={label}
-                            onClick={() =>
-                              setHidden((prev) => {
-                                const next = new Set(prev);
-                                if (next.has(label)) next.delete(label);
-                                else next.add(label);
-                                return next;
-                              })
-                            }
-                            aria-pressed={off}
-                            className="chip px-2.5 py-1 text-xs"
-                            /*
-                              Kapalı sütun çipi VURGULU zeminle değil hafif bir
-                              tonla işaretleniyor: beş çipin beşi birden kehribar
-                              gradyan taşıyınca satır "Çalış" düğmesinden daha
-                              çok bağırıyordu ve asıl bakılması gereken tablo
-                              geri planda kalıyordu.
-
-                              Yazı rengi tonlanmıyor. Zemin markanın %14'ü ve
-                              üstüne marka rengi yazı koymak ölçülen kontrastı
-                              düşürürdü; durumu kenarlık taşıyor.
-                            */
-                            style={
-                              off
-                                ? {
-                                    background:
-                                      "color-mix(in srgb, var(--color-brand) 14%, var(--surface))",
-                                    borderColor: "var(--color-brand)",
-                                    color: "var(--text)",
-                                  }
-                                : undefined
-                            }
-                          >
-                            {label}
-                          </button>
-                        );
-                      })}
-                      {shown.size ? (
-                        <button
-                          onClick={() => setShown(new Set())}
-                          className="chip px-2.5 py-1 text-xs"
-                        >
-                          Açılanları kapat ({shown.size})
-                        </button>
-                      ) : null}
-                    </>
-                  ) : null}
-                </div>
-              ) : null}
-
-              {study ? (
-                <p className="muted text-xs">
-                  Kapalı hücreye dokununca açılıyor. Çipler hangi sütunun kapalı
-                  olduğunu değiştiriyor.
-                </p>
-              ) : null}
+              <button
+                onClick={() => onQuiz(sheet)}
+                className="btn btn-primary flex items-center gap-1.5 px-3.5 py-2 text-xs"
+              >
+                <FlameIcon size={14} /> Bu sayfayı sına
+              </button>
 
               {blocks.map((block, bi) =>
                 block.kind === "note" ? (
                   <Note key={bi} text={block.text} tone={tone} />
                 ) : (
-                  <Table
-                    key={bi}
-                    block={block}
-                    study={study}
-                    hidden={hidden}
-                    shown={shown}
-                    reveal={(key) => setShown((prev) => new Set(prev).add(key))}
-                    prefix={String(bi)}
-                  />
+                  <Table key={bi} block={block} />
                 ),
               )}
             </div>
@@ -516,21 +403,7 @@ function Note({ text, tone }: { text: string; tone: string }) {
   );
 }
 
-function Table({
-  block,
-  study,
-  hidden,
-  shown,
-  reveal,
-  prefix,
-}: {
-  block: Extract<CheatBlock, { kind: "table" }>;
-  study: boolean;
-  hidden: Set<string>;
-  shown: Set<string>;
-  reveal: (key: string) => void;
-  prefix: string;
-}) {
+function Table({ block }: { block: Extract<CheatBlock, { kind: "table" }> }) {
   /**
    * Sütun uzun metin taşıyor mu?
    *
@@ -546,11 +419,9 @@ function Table({
   );
 
   /**
-   * Anahtar sütun yatay kaydırmada YERİNDE kalıyor.
-   *
-   * Çalışma modunda asıl sorun buydu: 189 satırlık tabloda Perfekt sütununu
-   * görmek için sağa kaydırıldığında Infinitiv ekrandan çıkıyor ve geriye
-   * "neyin sorulduğu belli olmayan boş kutular" kalıyordu.
+   * Anahtar sütun yatay kaydırmada YERİNDE kalıyor: 189 satırlık tabloda
+   * Perfekt'i görmek için sağa kaydırıldığında Infinitiv ekrandan çıkarsa
+   * geriye hangi fiilin satırı olduğu belirsiz hücreler kalır.
    *
    * Yalnızca kısa ve üçten çok sütunlu tablolarda: iki sütunlu cümle
    * tablolarında yapışkan sütun ekranın yarısını kaplardı.
@@ -592,7 +463,7 @@ function Table({
                 <th
                   key={ci}
                   scope="col"
-                  className="px-2.5 py-2 text-xs font-bold whitespace-nowrap"
+                  className="whitespace-nowrap px-2.5 py-2 text-xs font-bold"
                   style={{
                     ...cellStyle(ci),
                     color: "var(--text-muted)",
@@ -608,34 +479,17 @@ function Table({
           <tbody>
             {block.rows.map((row, ri) => (
               <tr key={ri}>
-                {row.map((cell, ci) => {
-                  const key = `${prefix}:${ri}:${ci}`;
-                  const masked =
-                    study && ci > 0 && hidden.has(block.columns[ci]) && !shown.has(key);
-                  return (
-                    <td
-                      key={ci}
-                      className={`px-2.5 py-1.5 align-top ${
-                        wraps[ci] ? "min-w-52 max-w-80" : "whitespace-nowrap"
-                      }`}
-                      style={cellStyle(ci)}
-                    >
-                      {masked ? (
-                        <button
-                          onClick={() => reveal(key)}
-                          aria-label="Cevabı göster"
-                          className="block h-6 w-full min-w-16 rounded-md"
-                          style={{
-                            border: "1px dashed var(--border)",
-                            background: "var(--surface-2)",
-                          }}
-                        />
-                      ) : (
-                        cell
-                      )}
-                    </td>
-                  );
-                })}
+                {row.map((cell, ci) => (
+                  <td
+                    key={ci}
+                    className={`px-2.5 py-1.5 align-top ${
+                      wraps[ci] ? "min-w-52 max-w-80" : "whitespace-nowrap"
+                    }`}
+                    style={cellStyle(ci)}
+                  >
+                    {cell}
+                  </td>
+                ))}
               </tr>
             ))}
           </tbody>
