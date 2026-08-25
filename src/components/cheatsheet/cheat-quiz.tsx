@@ -14,6 +14,7 @@ import { CheckIcon, FlameIcon, RefreshIcon, XIcon } from "@/components/icons";
 import { SpeakButton, prefetchGerman } from "@/components/speak-button";
 import { LEVEL_TONE } from "@/components/skills/theme";
 import { fx, vibrate } from "@/lib/fx";
+import { preloadClips } from "@/lib/mascot-clips";
 import { play, resetCombo } from "@/lib/sfx";
 import { accepts, buildRound, CHEAT_GAME_LABELS, type CheatRound } from "@/lib/cheatsheet/quiz";
 import type { CheatItem } from "@/lib/cheatsheet/items";
@@ -70,6 +71,16 @@ export type QuizResult = {
  * hangi maddelerin sorulacağına karar veriliyor.
  */
 export function CheatQuizLoading({ title }: { title: string }) {
+  /*
+    Yükleme ekranı bir bekleme değil, bir HAZIRLIK anı: sunucudan ilerleme
+    okunurken sonuç şeridinin klipleri de indiriliyor. İlk cevap verildiğinde
+    Erdi kutuda hazır olsun diye — orada indirmeye başlamak, şerit kapanana
+    kadar yetişmiyor.
+  */
+  useEffect(() => {
+    preloadClips(["thumbsup", "sad"]);
+  }, []);
+
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
       <motion.div

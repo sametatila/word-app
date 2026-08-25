@@ -6,6 +6,7 @@ import { Mascot } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
 import { holdRound } from "@/lib/mascot-hold";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
+import { preloadClips } from "@/lib/mascot-clips";
 import { useClipUrl } from "@/lib/mascot-clips";
 
 /**
@@ -137,6 +138,23 @@ function VerdictBar({
   feedback?: ReactNode;
 }) {
   const still = useStill();
+
+  /*
+    Şeridin klipleri, şerit GÖRÜNMEDEN indiriliyor.
+
+    Cevap verildiği ana kadar beklenirse geç kalıyor: thumbsup 1,3 MB, sad
+    1,1 MB ve şerit doğru cevapta yalnızca 900 ms açık kalıyor. Yavaş bir
+    bağlantıda ilk cevaplarda kutunun içi boş görünüyordu — öğe yerinde,
+    yeri ayrılmış, ama klip henüz çözülmemiş.
+
+    Burada tetiklemenin sebebi yer: şeridi kim kullanıyorsa klipleri de o
+    kullanacak, yani hiçbir oyun bunu ayrıca hatırlamak zorunda kalmıyor.
+    Aynı dosya iki kez indirilmiyor (bkz. lib/mascot-clips).
+  */
+  useEffect(() => {
+    preloadClips(["thumbsup", "sad"]);
+  }, []);
+
   /*
     Arada bir (her seferinde DEĞİL — sürpriz sık tekrar edince gürültü olur)
     şeridi Erdi'nin kendisi sağdan sürükleyerek getiriyor. Kliplerdeki
