@@ -90,6 +90,7 @@ const IDLE_CLIPS = [
   "idle-sniff",
   "idle-sit",
   "idle-wink",
+  "idle-heave",
 ];
 /*
   Bir klibin tam süresi (61 kare @ 12fps) + küçük pay. Idle ve duygu klipleri
@@ -214,7 +215,7 @@ export function Mascot({
         karakter geometrisiyle paketli (karakter tuvalin %95'i), yani karakter
         her klipte aynı boyda görünür — dev ya da minik yok.
       */
-      style={{ height: size * 1.5, width: size * 1.5 * (inIdle ? 2 / 3 : clip.aspect) }}
+      style={{ height: size * 1.5, width: size * 1.5 * (inIdle ? 2 / 3 : clip.aspect), overflow: "visible" }}
       aria-hidden="true"
       initial={false}
       animate={{ opacity: away ? 0 : 1, scale: away ? 0.9 : 1 }}
@@ -241,7 +242,7 @@ export function Mascot({
             <img
               src={prevUrl}
               alt=""
-              className="absolute inset-0 block h-full w-full object-contain"
+              className="absolute left-1/2 top-0 block h-full w-auto max-w-none -translate-x-1/2"
               draggable={false}
             />
           )}
@@ -255,7 +256,10 @@ export function Mascot({
             key={url}
             src={url}
             alt=""
-            className="absolute inset-0 block h-full w-full object-contain"
+            /* Yükseklik kutuya eşit, genişlik klibin kendi oranı, ortalı: geniş
+               idle'larda (kollar açık) görsel kutudan yana taşar ama karakter
+               boyu değişmez — kutu hep 2:3, yerleşim oynamaz. */
+            className="absolute left-1/2 top-0 block h-full w-auto max-w-none -translate-x-1/2"
             draggable={false}
             onLoad={(e) => {
               /* Safari'de yükleme ≠ oynatma başlangıcı; çözümlemeyi bekle. */

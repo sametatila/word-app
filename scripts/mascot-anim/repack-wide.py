@@ -24,6 +24,10 @@ CLIPS = {  # ad -> webp döngü sayısı
     "walk-right": 0, "walk-left": 0, "push-right": 0, "push-left": 0,
     "pull-right": 0, "pull-left": 0, "stroll-right": 0, "stroll-left": 0, "peek": 1, "peek-mirror": 1, "dance": 1, "idle-heave": 1,
 }
+# Nötr karede başlayıp biten klipler: dikey ölçek ve ayak çizgisi İLK kareden
+# alınır (birleşik kutu, kollar/zıplama yüzünden karakteri küçültüyordu);
+# yatay genişlik yine birleşik kutudan — kollar kırpılmasın.
+NEUTRAL_FIRST = {"idle-heave", "peek", "peek-mirror"}
 
 def frames(name):
     tmp = Path("/tmp/rp") / name
@@ -40,6 +44,10 @@ def repack(name, loop):
         if len(ys):
             top, bottom = min(top, ys.min()), max(bottom, ys.max())
             left, right = min(left, xs.min()), max(right, xs.max())
+    if name in NEUTRAL_FIRST:
+        al0 = np.array(Image.open(fs[0]).convert("RGBA"))[..., 3] > 16
+        ys0 = np.where(al0)[0]
+        top, bottom = int(ys0.min()), int(ys0.max())
     ch = bottom - top + 1
     H = round(ch / CH / 2) * 2
     y0 = round((bottom + 1) - FEET * H)

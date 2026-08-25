@@ -31,21 +31,36 @@ def encode(name, fs):
     print(f"{name}: {len(fs)} kare, loop={loop}, {(ANIM / f'{name}.webp').stat().st_size // 1024} KB")
 
 def pockets(name):
+    """Kapalı beyaz cepler: pati yüze/göğse yaklaşınca arada kalan arka plan.
+
+    Göz akı da katı beyaz ve alan olarak ceplerle örtüşüyor; ayrım bileşenin
+    ÇEVRESİYLE yapılıyor: göz akı iris ve konturla çevrili (koyu halka oranı
+    ölçümde ≥ 0.52), cep kürk/patiyle çevrili (0.31–0.44). Eşik 0.47."""
     fs = frames(name)
     for f in fs:
         a = np.array(Image.open(f).convert("RGBA")).astype(int)
         r, g, b, al = a[..., 0], a[..., 1], a[..., 2], a[..., 3]
         mx = np.maximum(np.maximum(r, g), b); mn = np.minimum(np.minimum(r, g), b)
-        white = (al > 0) & (r > 236) & (g > 236) & (b > 236) & ((mx - mn) < 14)
+        white = (al > 0) & (r > 226) & (g > 226) & (b > 226) & ((mx - mn) < 18)
+        dark = (al > 0) & ((r + g + b) < 150)
         if not white.any():
             continue
-        m = Path("/tmp/fixwebp/m.png"); k = Path("/tmp/fixwebp/k.png")
+        m = Path("/tmp/fixwebp/m.png")
         Image.fromarray((white * 255).astype("uint8")).save(m)
-        subprocess.run(["magick", str(m), "-define", "connected-components:area-threshold=220",
-                        "-define", "connected-components:mean-color=true", "-connected-components", "8",
-                        "-threshold", "50%", str(k)], check=True)
-        big = np.array(Image.open(k).convert("L")) > 0
-        mask = white & big
+        res = subprocess.run(["magick", str(m), "-define", "connected-components:verbose=true",
+                              "-define", "connected-components:area-threshold=20",
+                              "-connected-components", "8", "null:"], capture_output=True, text=True)
+        mask = np.zeros_like(white)
+        for line in (res.stdout + res.stderr).splitlines():
+            p = line.strip().split()
+            if len(p) >= 5 and p[0].rstrip(":").isdigit() and p[-1].startswith("gray(255)"):
+                w, h, x, y = [int(v) for v in p[1].replace("+", " ").replace("x", " ").split()]
+                comp = np.zeros_like(white); comp[y:y + h, x:x + w] = white[y:y + h, x:x + w]
+                ring = (np.array(Image.fromarray((comp * 255).astype("uint8")).filter(ImageFilter.MaxFilter(9))) > 0) & ~comp
+                if dark[ring].sum() / max(1, ring.sum()) < 0.47:
+                    mask |= comp
+        if not mask.any():
+            continue
         for _ in range(2):  # kenar halesi
             grown = np.array(Image.fromarray((mask * 255).astype("uint8")).filter(ImageFilter.MaxFilter(3))) > 0
             mask = mask | (grown & (mn > 222) & ((mx - mn) < 28))
