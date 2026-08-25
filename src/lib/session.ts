@@ -48,6 +48,132 @@ const MIN_MATURE = 6;
 const MASTERED_DAYS = 21;
 
 /**
+ * Tek oyun modunun dolgusu — görülmüş koleksiyonun tamamından, üç banttan.
+ *
+ * Eski dolgu "zamanı en yakın" kelimeleri alıyordu ve bu, tekrar zamanı gelmiş
+ * kelimesi az olan öğrencide her turu aynı ~40 kelimeye kilitliyordu: en
+ * yakın tarihli kelimeler tanım gereği aralığı en kısa, en az oturmuş
+ * olanlardır; 500 pekişmiş kelime listenin sonunda durur ve sıra ona hiç
+ * gelmez. Oysa tek oyun modunun amacı bilinen kelimeleri sevilen oyunla
+ * tazelemek — pekişmiş kelime de "bilinen" kelimedir, hatta asıl odur.
+ *
+ * Üç bant, koleksiyon büyüklüğüne orantılı pay:
+ *
+ *   YAKLAŞAN     Üç gün içinde zamanı gelecek olanlar — en yakından başlayarak.
+ *                Dolgunun en çok üçte biri: erken sormanın tekrar planına en
+ *                çok katkı yaptığı yer burası.
+ *   ÖĞRENİLİYOR  Aralığı 21 günün altında kalanlar — rastgele örnek.
+ *   PEKİŞMİŞ     Aralığı 21 gün ve üstü — rastgele örnek. Pay, bandın
+ *                büyüklüğüyle büyür: pekişmiş havuz öğrenilenleri geçtiğinde
+ *                dolgunun yarısından çoğu oradan gelir. Pekişmiş kelimeyi
+ *                erken sormak SM-2 açısından zararsız — doğru bilinince
+ *                aralık yine büyür, yanlışsa zaten öğrenilmemiş demektir ve
+ *                kuyruğa dönmesi doğrudur.
+ *
+ * Aynı gün tekrarı yok: son 24 saatte sorulmuş kelime hiçbir banda girmez.
+ * Bantlar payı dolduramazsa (küçük koleksiyon, gün içinde birkaç tur) eleme
+ * 30 dakikaya gevşetilip kalan rastgele tamamlanır — tur boş kalmaz, ama
+ * gevşeme yalnızca zorunlu olduğunda ve yalnız açık kadar.
+ *
+ * Rastgelelik bilinçli: sıralama ne olursa olsun deterministik seçim aynı
+ * kümeyi üretir; farklı turda farklı kelime görmek istiyorsak örneklem
+ * rastgele olmak zorunda.
+ */
+async function pickSingleGameFiller(
+  userId: string,
+  course: string,
+  now: Date,
+  want: number,
+  exclude: number[],
+) {
+  type Row = { w: typeof words.$inferSelect; uw: typeof userWords.$inferSelect };
+  const soon = new Date(now.getTime() + 3 * 86400000);
+  const base = (rest: string) =>
+    and(
+      eq(userWords.userId, userId),
+      gt(userWords.dueAt, now),
+      eq(words.course, course),
+      exclude.length ? notInArray(userWords.wordId, exclude) : undefined,
+      sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - ${sql.raw(`interval '${rest}'`)})`,
+    );
+  const bands = [
+    { where: lte(userWords.dueAt, soon), order: asc(userWords.dueAt) },
+    { where: and(gt(userWords.dueAt, soon), lt(userWords.intervalDays, MASTERED_DAYS)), order: sql`random()` },
+    { where: and(gt(userWords.dueAt, soon), gte(userWords.intervalDays, MASTERED_DAYS)), order: sql`random()` },
+  ] as const;
+
+  const counts = await Promise.all(
+    bands.map((b) =>
+      db
+        .select({ n: sql<number>`count(*)::int` })
+        .from(userWords)
+        .innerJoin(words, eq(words.id, userWords.wordId))
+        .where(and(base("24 hours"), b.where))
+        .then((r) => r[0]?.n ?? 0),
+    ),
+  );
+  const [nUp, nLearn, nMast] = counts;
+
+  // Paylar: yaklaşan en çok üçte bir, kalanı öğreniliyor/pekişmiş arasında
+  // bant büyüklüğüne orantılı; bir bant payını dolduramazsa açık diğerlerine.
+  const quota = [Math.min(nUp, Math.ceil(want / 3)), 0, 0];
+  const rest = want - quota[0];
+  const restPool = nLearn + nMast;
+  quota[1] = restPool ? Math.min(nLearn, Math.round((rest * nLearn) / restPool)) : 0;
+  quota[2] = Math.min(nMast, rest - quota[1]);
+  let open = want - quota[0] - quota[1] - quota[2];
+  for (const i of [1, 2, 0]) {
+    if (open <= 0) break;
+    const spare = counts[i] - quota[i];
+    const take = Math.min(spare, open);
+    quota[i] += take;
+    open -= take;
+  }
+
+  const picked: Row[] = [];
+  for (let i = 0; i < bands.length; i++) {
+    if (quota[i] <= 0) continue;
+    const rows = await db
+      .select({ w: words, uw: userWords })
+      .from(userWords)
+      .innerJoin(words, eq(words.id, userWords.wordId))
+      .where(and(base("24 hours"), bands[i].where))
+      .orderBy(bands[i].order)
+      .limit(quota[i]);
+    picked.push(...rows);
+  }
+
+  // Gün içinde birkaç tur atan küçük koleksiyon: 24 saat elemesi turu boş
+  // bırakıyorsa yalnız açık kadar, 30 dakika elemesiyle tamamla.
+  if (picked.length < want) {
+    const have = [...exclude, ...picked.map((r) => r.w.id)];
+    const more = await db
+      .select({ w: words, uw: userWords })
+      .from(userWords)
+      .innerJoin(words, eq(words.id, userWords.wordId))
+      .where(
+        and(
+          eq(userWords.userId, userId),
+          gt(userWords.dueAt, now),
+          eq(words.course, course),
+          have.length ? notInArray(userWords.wordId, have) : undefined,
+          sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
+        ),
+      )
+      .orderBy(sql`random()`)
+      .limit(want - picked.length);
+    picked.push(...more);
+  }
+
+  // Bantlar sırayla eklendi; turda yaklaşanlar önde yığılmasın.
+  for (let i = picked.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [picked[i], picked[j]] = [picked[j], picked[i]];
+  }
+  return picked;
+}
+
+/**
  * Kelimenin öğrencide ne kadar oturduğu.
  *
  * Zorluk kararı **buna** bakar, kullanıcının genel başarısına değil.
@@ -420,8 +546,14 @@ export async function buildSession(
    */
   const onlyDeficit = only ? Math.max(0, ROUNDS_PER_SESSION * 2 - dueWords.length) : 0;
 
-  if (thin || needMature > 0 || onlyDeficit > 0) {
-    const want = onlyDeficit || (thin ? 10 - dueWords.length - newWords.length : needMature);
+  if (onlyDeficit > 0) {
+    const seen = dueWords.map((i) => i.word.id);
+    const filler = await pickSingleGameFiller(userId, course, now, onlyDeficit, [...skip, ...seen]);
+    for (const r of filler) {
+      dueWords.push({ word: toRoundWord(r.w, false), strength: wordStrength(r.uw) });
+    }
+  } else if (thin || needMature > 0) {
+    const want = thin ? 10 - dueWords.length - newWords.length : needMature;
     const early = await db
       .select({ w: words, uw: userWords })
       .from(userWords)
@@ -434,11 +566,7 @@ export async function buildSession(
           sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
           // Çeşitlilik için çekiyorsak yalnızca oturmuş kelime işe yarıyor:
           // erken çekilen bir "fresh" kelime aynı tanıma oyunlarını doğurur.
-          // Tek oyun modunda böyle bir eleme yok: orada oyun zaten seçili ve
-          // amaç görülmüş her kelimeyi tazelemek.
-          thin || only
-            ? sql`true`
-            : sql`${userWords.correctStreak} >= 2 and ${userWords.intervalDays} >= 1`,
+          thin ? sql`true` : sql`${userWords.correctStreak} >= 2 and ${userWords.intervalDays} >= 1`,
         ),
       )
       .orderBy(asc(userWords.dueAt))
