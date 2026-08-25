@@ -23,7 +23,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-40 | Yerleştirme testi | 4 | bekliyor | | | | |
 | WP-41 | Seviye ve modül sınavı v2 | 4 | bekliyor | | | | |
 | WP-42 | Haftalık kullanım sınavı | 4 | bekliyor | | | | |
-| WP-43 | CEFR can-do haritası | 4 | bekliyor | | | | önce yapılır |
+| WP-43 | CEFR can-do haritası | 4 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/cando.ts` 121 ifade, kural tabanlı etiket haritası, `GET /api/cando`, profil kartı; kanıt `reports/shots/wp43-cando.png` |
 | WP-50 | Beceri yetkinlik modeli | 5 | bekliyor | | | | |
 | WP-51 | Hata analitiği | 5 | bekliyor | | | | |
 | WP-52 | Gelişim raporu | 5 | bekliyor | | | | |
@@ -73,3 +73,4 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Groq varsayılan modeli `llama-3.3-70b-versatile` → `openai/gpt-oss-120b`: eski model Groq'tan kaldırılmış (404), zincirdeki yedek sessizce ölüydü; WP-30 kalite testinde Mistral 429 verince görüldü. Sağlayıcı model kataloğu için `report:providers`'a "404 model_not_found" uyarısı eklenmeli (WP-52 ile). Claude.
 - 2026-08-25 — Rubrikte `task` puanı dilbilgisinden ayrıldı ("içerik varsa hatalı da olsa 4"): gpt-oss hatalı metinlerde görevi de düşürüyordu. Claude.
 - 2026-08-25 — Yazma kuyruğu: `assessments.result` null = bekleyen; `/api/assess/queue` yazar, `/api/cron/assess` (6 saatte bir, `vercel.json`) puanlar ve push bildirir. Kuyrukta görev metni saklanmıyor (yalnız tür/seviye/metin); gecikmeli değerlendirme görev puanında yaklaşık — kart "gecikmeli" der. Claude.
+- 2026-08-25 — Can-do etiketleme ilk turda KURALLA (`lib/cando-map.ts`: dersin simgesi+seviye+focusId, egzersizin beceri+seviye+tür); içeriğin kendi `cando` alanı varsa o kazanır. 564 içeriğe LLM+insan etiketi WP-71/72 gözden geçirmesine bırakıldı; harita o zaman küçülür. Kanıt eşiği: ≥2 bağlı içerik tamamlandı → kanıtlı, 1 → gelişiyor; sınav bölümü (WP-41/42) gelince üçüncü kanıt türü. Claude.

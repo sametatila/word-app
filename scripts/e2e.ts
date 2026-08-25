@@ -73,6 +73,9 @@ import { assess, assessHash, deleteAssessment, listAssessments, queueAssessment,
 import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
 import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
 import { buildPlan } from "../src/lib/plan";
+import { CANDO } from "../src/lib/cando";
+import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
+import { candoSummary } from "../src/lib/cando-progress";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2215,6 +2218,28 @@ async function main() {
   }
   check("silme yalnız sahibine", (await deleteAssessment("baskasi", q1.id!)) === false && (await deleteAssessment(USER, q1.id!)) === true);
   check("silindi", (await listAssessments(USER)).length === 0);
+
+  console.log("\n36) CEFR can-do haritası (WP-43)");
+  check("~120 ifade, kimlikler benzersiz", CANDO.length >= 110 && new Set(CANDO.map((c) => c.id)).size === CANDO.length);
+  check("her seviyede 4+ beceri", (["A1", "A2", "B1", "B2", "C1"] as const).every((l) => new Set(CANDO.filter((c) => c.level === l).map((c) => c.skill)).size >= 4));
+  check("her ders ve egzersiz etiketleniyor", LESSONS.every((l) => candoForLesson(l).length > 0) && BUNDLED_EXERCISES.every((e) => candoForExercise(e).length > 0));
+  check("tanışma dersi → A1.SPK.1", candoForLesson(findLesson("de-a1-hallo")!).includes("A1.SPK.1"));
+  check("içeriğin kendi etiketi kazanır", candoForLesson({ level: "A1", icon: "greet", focusId: "x", cando: ["A1.WR.3"] }).join() === "A1.WR.3");
+  await reset();
+  await ensureProfile(USER, "E2E");
+  let cs = await candoSummary(USER, "de");
+  check("kanıt yokken hepsi 'none'", cs.items.every((i) => i.state === "none") && cs.byLevel.A1.proven === 0);
+  // A1.SPK.1'e bağlı iki ders geçilince kanıtlı
+  const spk1 = LESSONS.filter((l) => l.course === "de" && candoForLesson(l).includes("A1.SPK.1")).slice(0, 2);
+  check("A1.SPK.1'e bağlı en az iki ders var", spk1.length === 2, `${spk1.length}`);
+  for (const l of spk1) await recordLesson(USER, l, scoredSteps(l), true, monday);
+  cs = await candoSummary(USER, "de");
+  check("iki ders → A1.SPK.1 kanıtlı", cs.items.find((i) => i.cando.id === "A1.SPK.1")?.state === "proven" && cs.byLevel.A1.proven >= 1);
+  const rdEx = BUNDLED_EXERCISES.find((e) => e.skill === "reading" && e.level === "A1" && (!e.course || e.course === "de"))!;
+  await recordSkillAttempt(USER, rdEx, { exerciseId: rdEx.id, correct: itemCount(rdEx), day: monday });
+  cs = await candoSummary(USER, "de");
+  const rdId = candoForExercise(rdEx)[0];
+  check("bir egzersiz → ifade 'gelişiyor'", cs.items.find((i) => i.cando.id === rdId)?.state === "progressing", rdId);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

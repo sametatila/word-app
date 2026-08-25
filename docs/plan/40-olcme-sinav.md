@@ -20,6 +20,8 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Süre.** 4 gün (+ etiketleme). **Bağımlılık.** WP-70.
 
+**Durum (2026-08-25).** Adım 1, 2, 4, 5 bitti; adım 3 kural tabanlı (STATUS karar kaydı). `src/lib/cando.ts`: 121 ifade (5 seviye × RD/LS/WR/SPK/GR, Türkçe "…yapabilirim", CEFR-CV/Profile Deutsch kaynağı, kalıcı kimlik `A1.SPK.1`). `cando-map.ts`: `candoForLesson` (simge teması × seviye → SPK; focusId → GR), `candoForExercise` (beceri × seviye × tür). Doğrulayıcı: bilinmeyen kimlik ve etiketsiz içerik hata (bugün 0). `cando-progress.ts` `candoSummary` (kanıtlı ≥2, gelişiyor 1) + `GET /api/cando`; profilde `CandoCard` (seviye sekmeleri, beceri başına ifadeler, kanıt sayacı). e2e §36 (8 kontrol). Kanıt: `reports/shots/wp43-cando.png`.
+
 ---
 
 ## WP-40 · Yerleştirme testi

@@ -26,6 +26,8 @@ import type { DialogueTurn } from "../src/lib/dialogue";
 import type { Lesson } from "../src/lib/lessons/types";
 import type { SkillExercise } from "../src/lib/skills/types";
 import type { CheatSheet } from "../src/lib/cheatsheet/types";
+import { isCandoId } from "../src/lib/cando";
+import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
 // contains.mjs: kelimenin metinde çekimli hâliyle geçip geçmediği (kelime hattıyla ortak).
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore — .mjs, tip bildirimi yok
@@ -103,6 +105,8 @@ function checkSkills(list: SkillExercise[]) {
     need(w, e as unknown as Record<string, unknown>, ["id", "level", "title", "genre", "intro", "minutes"]);
     if (!LEVELS.has(e.level)) E(w, `geçersiz seviye ${e.level}`);
     if (e.minutes < 1 || e.minutes > 20) W(w, `minutes ${e.minutes} aralık dışı (1–20)`);
+    for (const id of e.cando ?? []) if (!isCandoId(id)) E(w, `bilinmeyen can-do kimliği ${id}`);
+    if (!candoForExercise(e).length) E(w, "can-do etiketi üretilemedi");
     if (TR_HARF.test(e.intro) === false && /[ßÄÖÜäöü]/.test(e.intro) && !/„|"/.test(e.intro)) W(w, "intro Türkçe olmalı; Almanca harf var");
 
     const text =
@@ -187,6 +191,8 @@ function checkLessons(list: Lesson[]) {
     need(w, l as unknown as Record<string, unknown>, ["id", "level", "course", "icon", "title", "titleTr", "summary", "minutes", "focusId", "vocab", "patterns", "lecture", "roleplay"]);
     if (!LEVELS.has(l.level)) E(w, `geçersiz seviye ${l.level}`);
     if (!icons.has(l.icon)) E(w, `bilinmeyen ikon ${l.icon}`);
+    for (const id of l.cando ?? []) if (!isCandoId(id)) E(w, `bilinmeyen can-do kimliği ${id}`);
+    if (!candoForLesson(l).length) E(w, "can-do etiketi üretilemedi");
     if (l.minutes < 3 || l.minutes > 20) W(w, `minutes ${l.minutes}`);
     if (l.vocab.length < 4 || l.vocab.length > 10) W(w, `vocab ${l.vocab.length} (4–10)`);
     if (l.patterns.length < 2 || l.patterns.length > 5) W(w, `patterns ${l.patterns.length} (2–5)`);
