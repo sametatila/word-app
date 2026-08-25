@@ -20,7 +20,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-23 | Açık diyalog motoru | 2 | bekliyor | | | | |
 | WP-30 | AI yazma değerlendirmesi | 3 | inceleme | Claude | 2026-08-25 | (bkz. git log) | serbest görev → rubrik kartı, kuyruk + cron, Yazılarım; kanıt `reports/shots/wp30-writings.png` |
 | WP-31 | Yazma / soru türleri | 3 | bekliyor | | | | |
-| WP-40 | Yerleştirme testi | 4 | bekliyor | | | | |
+| WP-40 | Yerleştirme testi | 4 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `/placement`, `lib/placement{,-score}.ts`, `placements` tablosu, profil kartı; kalibrasyon (10 kişi) bekliyor; kanıt `reports/shots/wp40-placement-*.png` |
 | WP-41 | Seviye ve modül sınavı v2 | 4 | bekliyor | | | | |
 | WP-42 | Haftalık kullanım sınavı | 4 | bekliyor | | | | |
 | WP-43 | CEFR can-do haritası | 4 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/cando.ts` 121 ifade, kural tabanlı etiket haritası, `GET /api/cando`, profil kartı; kanıt `reports/shots/wp43-cando.png` |
@@ -74,3 +74,5 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Rubrikte `task` puanı dilbilgisinden ayrıldı ("içerik varsa hatalı da olsa 4"): gpt-oss hatalı metinlerde görevi de düşürüyordu. Claude.
 - 2026-08-25 — Yazma kuyruğu: `assessments.result` null = bekleyen; `/api/assess/queue` yazar, `/api/cron/assess` (6 saatte bir, `vercel.json`) puanlar ve push bildirir. Kuyrukta görev metni saklanmıyor (yalnız tür/seviye/metin); gecikmeli değerlendirme görev puanında yaklaşık — kart "gecikmeli" der. Claude.
 - 2026-08-25 — Can-do etiketleme ilk turda KURALLA (`lib/cando-map.ts`: dersin simgesi+seviye+focusId, egzersizin beceri+seviye+tür); içeriğin kendi `cando` alanı varsa o kazanır. 564 içeriğe LLM+insan etiketi WP-71/72 gözden geçirmesine bırakıldı; harita o zaman küçülür. Kanıt eşiği: ≥2 bağlı içerik tamamlandı → kanıtlı, 1 → gelişiyor; sınav bölümü (WP-41/42) gelince üçüncü kanıt türü. Claude.
+- 2026-08-25 — Yerleştirme testi yazma/konuşma aşamaları (isteğe bağlı) bu turda yok: yazma WP-03 ile bağlanabilir ama süreyi 15 dk sınırına yaklaştırıyor, konuşma WP-20'ye bağlı. Kelime aşaması "biliyorum/emin değilim" öz bildirimi yerine doğrudan 6 kontrol sorusu: öz bildirim + kontrol iki kat süre alıyordu, ölçtüğü şey aynı. Dilbilgisi maddeleri WP-11 drill havuzu yerine dilbilgisi tablosu hücrelerinden (`CHEAT_ITEMS`, ≥3 kardeşli). Kalibrasyon (10 kişi) proje sahibinin çevresiyle; eşikler `placement-score.ts` (`PASS_RATIO` 0,75, alt medyan). Claude.
+- 2026-08-25 — Yerleştirme maddelerinde doğru cevap istemciye gider: test bir kendini ölçme, sınav değil; sunucu yine puanlar ve olay atar. Claude.

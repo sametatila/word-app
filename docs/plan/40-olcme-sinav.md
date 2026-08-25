@@ -46,6 +46,8 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Kabul.** Test 15 dk altında bitiyor; sonuç seviye + beceri profili; profilden yeniden alınabiliyor; 10 kişilik kalibrasyonda önerilen seviye ±1 içinde.
 
+**Durum (2026-08-25).** Adım 1–3 bitti; 4 (onboarding) WP-65'e, 5 (kalibrasyon) proje sahibine. `src/lib/placement-score.ts` (saf: `nextLevel` %75 uyarlaması, `estimateStage` sınanmayan seviyeyi atlar, `scorePlacement` alt medyan, `describePerSkill`); `src/lib/placement.ts` (`buildPlacement`: seviye başına 6 kelime rank'tan + 3 dilbilgisi hücresi, A2/B1 okuma ve dinleme egzersizleri; `finishPlacement` → `placements` + `placement_finish` olayı; `acceptPlacement` profil seviyesi; `lastPlacement`; 30 günde bir). `POST/GET /api/placement`; `/placement` sayfası (`placement-test.tsx`: dört aşama, "Bilmiyorum", aşama atlama, sonuç ekranı "kabul et / değiştir"); profilde `PlacementCard`. Migrasyon `0031_placements.sql` üretime uygulandı. e2e §37 (10 kontrol). Tarayıcıda uçtan uca (tümü "Bilmiyorum") ~1 dk: `reports/shots/wp40-placement-{intro,vocab,stage,result}.png`.
+
 **Süre.** 7 gün. **Bağımlılık.** WP-11 (drill maddeleri), WP-03, WP-20 (isteğe bağlı aşamalar), WP-43.
 
 ---

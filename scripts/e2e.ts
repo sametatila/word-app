@@ -63,7 +63,7 @@ import {
   recordBossClear,
 } from "../src/lib/lessons/boss";
 import { buildShareText } from "../src/components/share-result";
-import { achievements, aiUsage, assessments, events, moduleClears } from "../src/lib/db/schema";
+import { achievements, aiUsage, assessments, events, moduleClears, placements } from "../src/lib/db/schema";
 import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
 import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
@@ -76,6 +76,9 @@ import { buildPlan } from "../src/lib/plan";
 import { CANDO } from "../src/lib/cando";
 import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
 import { candoSummary } from "../src/lib/cando-progress";
+import { nextLevel, scorePlacement, type PlacementAnswer, type PlacementStage } from "../src/lib/placement-score";
+import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement } from "../src/lib/placement";
+import type { CefrLevel } from "../src/lib/skills/types";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -117,6 +120,7 @@ async function reset() {
   await db.delete(moduleClears).where(eq(moduleClears.userId, USER));
   await db.delete(events).where(eq(events.userId, USER));
   await db.delete(assessments).where(eq(assessments.userId, USER));
+  await db.delete(placements).where(eq(placements.userId, USER));
   await db.delete(reviews).where(eq(reviews.userId, USER));
   await db.delete(userWords).where(eq(userWords.userId, USER));
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
@@ -2240,6 +2244,29 @@ async function main() {
   cs = await candoSummary(USER, "de");
   const rdId = candoForExercise(rdEx)[0];
   check("bir egzersiz → ifade 'gelişiyor'", cs.items.find((i) => i.cando.id === rdId)?.state === "progressing", rdId);
+
+  console.log("\n37) Yerleştirme testi (WP-40)");
+  check("uyarlama: %75 geçilince üst seviye, altında durur", nextLevel("A1", 5, 6) === "A2" && nextLevel("A1", 4, 6) === null && nextLevel("C1", 6, 6) === null);
+  const pa = (stage: PlacementStage, level: CefrLevel, correct: number, wrong: number): PlacementAnswer[] => [
+    ...Array.from({ length: correct }, (_, i) => ({ stage, level, itemId: `${stage}-${level}-${i}`, correct: true })),
+    ...Array.from({ length: wrong }, (_, i) => ({ stage, level, itemId: `${stage}-${level}-w${i}`, correct: false })),
+  ];
+  const pr1 = scorePlacement([...pa("vocab", "A1", 6, 0), ...pa("vocab", "A2", 5, 1), ...pa("vocab", "B1", 3, 3), ...pa("grammar", "A1", 3, 0), ...pa("grammar", "A2", 2, 1), ...pa("reading", "A2", 3, 0), ...pa("reading", "B1", 1, 2), ...pa("listening", "A2", 2, 1), ...pa("listening", "B1", 0, 3)]);
+  check("aşama tahminleri: kelime A2, dilbilgisi A1, okuma A2, dinleme A2", pr1.perSkill.vocab === "A2" && pr1.perSkill.grammar === "A1" && pr1.perSkill.reading === "A2" && pr1.perSkill.listening === "A2", JSON.stringify(pr1.perSkill));
+  check("öneri alt medyan → A2", pr1.suggested === "A2");
+  const pr2 = scorePlacement([...pa("vocab", "A1", 2, 4), ...pa("grammar", "A1", 1, 2), ...pa("reading", "A2", 1, 2), ...pa("listening", "A2", 0, 3)]);
+  check("hiçbir seviye geçilmezse A1", pr2.suggested === "A1" && pr2.perSkill.vocab === null);
+  const pr3 = scorePlacement([...pa("vocab", "A1", 6, 0), ...pa("vocab", "A2", 6, 0), ...pa("vocab", "B1", 6, 0), ...pa("vocab", "B2", 6, 0), ...pa("grammar", "A1", 3, 0), ...pa("grammar", "A2", 3, 0), ...pa("grammar", "B1", 3, 0), ...pa("reading", "A2", 3, 0), ...pa("reading", "B1", 3, 0)]);
+  check("güçlü profil, dinleme atlandı → B1 (medyan atlananı saymaz)", pr3.suggested === "B1", pr3.suggested);
+  const test = await buildPlacement("de");
+  check("madde bankası: A1 kelime 6, A1 dilbilgisi 3, okuma/dinleme 2'şer", test.vocab.A1.length === 6 && test.grammar.A1.length === 3 && test.reading.length === 2 && test.listening.length === 2, `${test.vocab.A1.length}/${test.grammar.A1.length}/${test.reading.length}/${test.listening.length}`);
+  check("kelime şıkları 4 ve cevap indeksi doğru", test.vocab.A1.every((v) => v.options.length === 4 && v.answer >= 0 && v.answer < 4));
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const rec = await finishPlacement(USER, [...pa("vocab", "A1", 6, 0), ...pa("vocab", "A2", 5, 1)], monday);
+  check("sonuç kaydedildi, olay atıldı", rec.suggested === "A2" && (await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "placement_finish")))).length === 1);
+  check("kabul: profil seviyesi güncellenir", (await acceptPlacement(USER, rec.id, "B1")) === true && (await ensureProfile(USER)).level === "B1");
+  check("son alma okunuyor", (await lastPlacement(USER))?.accepted === "B1");
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

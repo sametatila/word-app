@@ -733,3 +733,27 @@ export const assessments = pgTable(
     index("assessments_hash_idx").on(t.userId, t.hash),
   ],
 );
+
+/**
+ * Yerleştirme testleri (WP-40). Her alma bir satır: önerilen seviye, kabul
+ * edilen (kullanıcı değiştirebilir — karar hep onun), beceri başına tahmin
+ * ve cevapların tamamı (kalibrasyon: 10 kişilik karşılaştırma bu satırlardan
+ * yapılır, `docs/plan/40-olcme-sinav.md`). 30 günde bir yeniden alınabilir.
+ */
+export const placements = pgTable(
+  "placements",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    at: timestamp("at", { withTimezone: true }).notNull().defaultNow(),
+    suggested: text("suggested").notNull(),
+    accepted: text("accepted"),
+    /** { vocab, grammar, reading, listening } → seviye ya da null */
+    perSkill: jsonb("per_skill").notNull(),
+    /** PlacementAnswer[] — madde kimliği, seviye, doğru mu. */
+    answers: jsonb("answers").notNull(),
+    /** Toplam doğru oranı 0–100. */
+    score: integer("score").notNull().default(0),
+  },
+  (t) => [index("placements_user_idx").on(t.userId, t.at)],
+);

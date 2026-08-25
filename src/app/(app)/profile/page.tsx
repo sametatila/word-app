@@ -5,6 +5,8 @@ import { ProgressView } from "@/components/progress-view";
 import { AchievementWall } from "@/components/achievement-wall";
 import { WritingsCard } from "@/components/writings-card";
 import { CandoCard } from "@/components/cando-card";
+import { PlacementCard } from "@/components/placement-card";
+import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +27,8 @@ export default async function ProfilePage() {
     const profile = await ensureProfile(user.id, user.name);
     const today = localDayFallback();
     const data = await getProgress(user.id, today);
+    const placement = await lastPlacement(user.id).catch(() => null);
+    const canRetake = !placement || Date.now() - new Date(placement.at).getTime() >= RETAKE_DAYS * 86400000;
 
     return (
       <ProfileForm
@@ -62,6 +66,8 @@ export default async function ProfilePage() {
           longest={data.profile.longestStreak}
           today={today}
         />
+        {/* Seviye testi (WP-40): son sonuç, yeniden alma. */}
+        <PlacementCard last={placement} canRetake={canRetake} retakeDays={RETAKE_DAYS} />
         {/* Yapabildiklerim (WP-43): CEFR can-do kanıtları. */}
         <CandoCard />
         {/* Yazılarım (WP-30): değerlendirme arşivi, silme. */}
