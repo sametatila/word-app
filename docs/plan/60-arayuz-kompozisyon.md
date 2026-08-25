@@ -73,6 +73,8 @@ Genel ilkeler (her WP için):
 
 **Süre.** 4 gün. **Bağımlılık.** WP-04, WP-11, WP-71.
 
+**Durum (2026-08-25).** Adım 2 ve 3 bitti, 1 kısmen (mevcut dört türün gösterimi; `transform`/`choose` WP-11 + WP-71 ile), 4'ün görüntüsü var, 3 kişilik test sahibinde. `lesson-player.tsx`: `TYPE_AFTER_MS` 4000 — kendiliğinden açılan mikrofona ses gelmezse `typing` açılır, mikrofon açık kalır (`heard` bayrağı `onresult`'ta); `LectureProgress` adım başına parça + tür lejantı (`STEP_TONE`/`STEP_LABEL`); özet: kalıp çipleri (`patternUsed`: kalıbın "…" öncesi gövdesi kullanıcı turlarında), "Yapabildiklerim" satırı, "Sıradaki ders" düğmesi. `lessons/[id]/page.tsx` `LessonExtras` (can-do metinleri `candoForLesson`→`candoById`, `nextLesson` aynı ders değilse). Kanıt: `reports/shots/wp62-lesson-progress.png`.
+
 ---
 
 ## WP-63 · Beceri merkezi

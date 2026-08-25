@@ -67,6 +67,38 @@ const HANDSFREE_KEY = "wortspiel-lesson-handsfree";
 const SILENCE_MS = 12000;
 
 /**
+ * Kendiliğinden açılan mikrofona bu kadar süre ses gelmezse yazma alanı da
+ * açılır (WP-62). Mikrofon KAPANMAZ — konuşmaya başlayan konuşur; yazmak
+ * isteyen "Yazarak cevapla"yı aramadan yazar. Dört saniye: cümleyi kurmak
+ * için düşünme payı, ama "ne yapacağım?" takılmasından kısa.
+ */
+const TYPE_AFTER_MS = 4000;
+
+/** Kalıbın gövdesi ("Ich möchte …" → "ich möchte") konuşma turunda geçiyor mu. */
+function patternUsed(pattern: string, turns: Turn[]): boolean {
+  const stem = pattern.split(/…|\.\.\./)[0].replace(/[^\p{L}\p{N}' ]/gu, " ").trim().toLowerCase();
+  if (stem.length < 3) return false;
+  return turns.some((t) => t.role === "user" && t.content.toLowerCase().includes(stem));
+}
+
+/** Adım türü → ilerleme çubuğu rengi (WP-62): tekrar / üret / doğru-yanlış / onay. */
+const STEP_TONE: Record<string, string> = {
+  repeat: "var(--color-sky-600)",
+  produce: "var(--color-brand)",
+  truefalse: "var(--color-violet-600)",
+  confirm: "var(--text-muted)",
+  say: "var(--border)",
+};
+const STEP_LABEL: Record<string, string> = { repeat: "tekrar", produce: "üret", truefalse: "doğru/yanlış" };
+
+/** Özet köprüleri — sunucuda hesaplanıp sayfadan gelir. */
+export type LessonExtras = {
+  /** Dersin kanıt olduğu can-do ifadeleri, Türkçe. */
+  cando: string[];
+  next: { id: string; title: string; titleTr: string } | null;
+};
+
+/**
  * Cümle İÇİNDEKİ duraklamaya tanınan pay.
  *
  * Tanıyıcı tek atışlık kipte ilk duraklamada kapanıyordu ve düşünerek konuşan
@@ -130,10 +162,12 @@ function parseJudgment(text: string): boolean | null {
 export function LessonPlayer({
   lesson,
   character,
+  extras = { cando: [], next: null },
 }: {
   lesson: Lesson;
   /** Rol yapma muhatabının adı — sunucuda türetiliyor (lib/lessons/characters). */
   character: { name: string; note: string };
+  extras?: LessonExtras;
 }) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("lecture");
@@ -185,6 +219,9 @@ export function LessonPlayer({
 
   const recognition = useRef<Recognition | null>(null);
   const silence = useRef<ReturnType<typeof setTimeout> | null>(null);
+  /** Dört saniyelik "yazma alanını aç" sayacı ve bu dinlemede ses duyuldu mu. */
+  const typeNudge = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const heard = useRef(false);
   const scroller = useRef<HTMLDivElement>(null);
   const handsFreeRef = useRef(true);
   const draftRef = useRef("");
@@ -300,6 +337,8 @@ export function LessonPlayer({
   const clearSilence = () => {
     if (silence.current) clearTimeout(silence.current);
     silence.current = null;
+    if (typeNudge.current) clearTimeout(typeNudge.current);
+    typeNudge.current = null;
   };
 
   /**
@@ -358,6 +397,7 @@ export function LessonPlayer({
       };
 
       rec.onresult = (e) => {
+        heard.current = true;
         collected = [];
         for (let i = 0; i < e.results.length; i++) {
           const t = e.results[i]?.[0]?.transcript?.trim();
@@ -405,6 +445,10 @@ export function LessonPlayer({
             setListening(false);
             setHint("Sesini duyamadım. Hazır olunca mikrofona dokun ya da yazarak devam et.");
           }, SILENCE_MS);
+          heard.current = false;
+          typeNudge.current = setTimeout(() => {
+            if (!heard.current) setTyping(true);
+          }, TYPE_AFTER_MS);
         }
       } catch {
         clearSilence();
@@ -944,7 +988,7 @@ export function LessonPlayer({
       <Steps phase={phase} />
 
       {phase === "lecture" ? (
-        <LectureProgress at={stepIndex} total={lesson.lecture.length} />
+        <LectureProgress at={stepIndex} steps={lesson.lecture} />
       ) : null}
 
       {resumed && phase !== "summary" ? (
@@ -1436,6 +1480,36 @@ export function LessonPlayer({
               </div>
             </div>
 
+            {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
+                geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. */}
+            {lesson.patterns.length && turns.length > 1 ? (
+              <div className="mt-4">
+                <p className="muted text-xs font-semibold">Kalıplar</p>
+                <div className="mt-1.5 flex flex-wrap gap-1.5">
+                  {lesson.patterns.map((pt) => {
+                    const used = patternUsed(pt.de, turns);
+                    return (
+                      <span
+                        key={pt.de}
+                        className="chip px-2 py-1 text-xs"
+                        style={used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
+                        title={pt.tr}
+                      >
+                        {used ? "✓ " : ""}
+                        {pt.de}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : null}
+
+            {extras.cando.length ? (
+              <p className="muted mt-4 text-xs leading-relaxed">
+                <span className="font-semibold">Yapabildiklerim:</span> {extras.cando.join(" · ")}
+              </p>
+            ) : null}
+
             {corrections.length ? (
               <div className="mt-4">
                 <p className="muted text-xs font-semibold">Konuşmadaki düzeltmeler</p>
@@ -1474,10 +1548,20 @@ export function LessonPlayer({
                   Konuşmaya dön
                 </button>
               ) : null}
+              {roleplayDone && extras.next ? (
+                <button
+                  type="button"
+                  onClick={() => router.push(`/lessons/${extras.next!.id}`)}
+                  className="btn btn-primary flex-1 py-3 text-sm"
+                  title={`${extras.next.title} · ${extras.next.titleTr}`}
+                >
+                  Sıradaki ders: {extras.next.title}
+                </button>
+              ) : null}
               <button
                 type="button"
                 onClick={() => router.push("/lessons")}
-                className={`btn flex-1 py-3 text-sm ${roleplayDone ? "btn-primary" : "btn-ghost"}`}
+                className={`btn flex-1 py-3 text-sm ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
               >
                 Derslere dön
               </button>
@@ -1516,16 +1600,36 @@ function Steps({ phase }: { phase: Phase }) {
   );
 }
 
-/** Anlatımın ince ilerleme çizgisi — kaç adımdan kaçındayız. */
-function LectureProgress({ at, total }: { at: number; total: number }) {
-  const pct = total ? Math.round(((at + 1) / total) * 100) : 0;
+/**
+ * Anlatımın ilerleme çizgisi — adım başına bir parça, rengi adım türü
+ * (WP-62): tekrar mavi, üret turuncu, doğru/yanlış mor, yalnız anlatım gri.
+ * Geçilen parçalar dolu, gelecekler soluk; öğrenci dersin kaçta kaçının
+ * "söyle" kaçının "kendin kur" olduğunu baştan görüyor. Lejant yalnız
+ * derste olan türleri sayar.
+ */
+function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectation }[] }) {
+  const kinds = Array.from(new Set(steps.map((s) => s.expect?.kind ?? "say"))).filter((k) => k in STEP_LABEL);
   return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
-      <motion.div
-        className="brand-gradient h-full rounded-full"
-        animate={{ width: `${pct}%` }}
-        transition={{ type: "spring", stiffness: 150, damping: 24 }}
-      />
+    <div>
+      <div className="flex h-1.5 w-full gap-[2px] overflow-hidden rounded-full" aria-hidden>
+        {steps.map((s, i) => (
+          <span
+            key={i}
+            className="h-full flex-1 rounded-sm transition-opacity"
+            style={{ background: STEP_TONE[s.expect?.kind ?? "say"], opacity: i <= at ? 1 : 0.28 }}
+          />
+        ))}
+      </div>
+      {kinds.length ? (
+        <p className="muted mt-1 flex flex-wrap gap-x-3 text-[10px]">
+          {kinds.map((k) => (
+            <span key={k} className="flex items-center gap-1">
+              <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: STEP_TONE[k] }} />
+              {STEP_LABEL[k]} {steps.filter((s) => (s.expect?.kind ?? "say") === k).length}
+            </span>
+          ))}
+        </p>
+      ) : null}
     </div>
   );
 }
