@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
-import { readSkillProgress, type SkillProgress } from "@/lib/skills/progress";
+import { readSkillProgress, syncSkillProgress, type SkillProgress } from "@/lib/skills/progress";
 import type { SpeechTopic } from "@/lib/speech-progress";
 import { CheckIcon } from "@/components/icons";
 import { LEVEL_TONE, SKILL_ICON } from "./theme";
@@ -66,8 +66,11 @@ export function SkillsHub({
       /* depolama kapalıysa yalnızca bu ekran için geçerli olur */
     }
   }
-  // Sunucu kaydı temel alınır; localStorage çevrimdışı tamamlamaları ekler.
-  // localStorage sunucu render'ında yok; birleştirme hidrasyondan sonra yapılır.
+  // Sunucu kaydı temel alınır (sayfa render'ında geliyor); localStorage
+  // çevrimdışı tamamlamaları ekler ve hidrasyondan sonra bir kez daha sunucuyla
+  // eşitlenir — eski cihaz kayıtları bu ilk eşitlemede sunucuya taşınır
+  // (bkz. lib/skills/progress.ts). Egzersizden dönüşte `wortspiel:skills`
+  // olayı listeyi tazeler.
   const [progress, setProgress] = useState<SkillProgress>(() => {
     const merged: SkillProgress = {};
     for (const [id, rec] of Object.entries(serverProgress)) {
@@ -77,14 +80,20 @@ export function SkillsHub({
   });
 
   useEffect(() => {
-    setProgress((prev) => {
-      const merged = { ...prev };
-      for (const [id, rec] of Object.entries(readSkillProgress())) {
-        const cur = merged[id];
-        if (!cur || rec.correct > cur.correct) merged[id] = rec;
-      }
-      return merged;
-    });
+    const merge = (incoming: SkillProgress) =>
+      setProgress((prev) => {
+        const merged = { ...prev };
+        for (const [id, rec] of Object.entries(incoming)) {
+          const cur = merged[id];
+          if (!cur || rec.correct > cur.correct) merged[id] = rec;
+        }
+        return merged;
+      });
+    merge(readSkillProgress());
+    void syncSkillProgress().then(merge);
+    const onChange = (e: Event) => merge((e as CustomEvent<SkillProgress>).detail ?? {});
+    window.addEventListener("wortspiel:skills", onChange);
+    return () => window.removeEventListener("wortspiel:skills", onChange);
   }, []);
 
   function pickSkill(s: SkillId | "all") {

@@ -25,9 +25,13 @@ type FinishState =
   | { phase: "offline" };
 
 /**
- * Egzersiz bitişini işler: yerel kayıt + sunucuda XP/seri + üst bardaki
- * rozetlerin anında güncellenmesi. Sunucuya ulaşılamazsa yerel kayıt yine
- * tutulur; kullanıcı çevrimdışıyken de egzersiz "tamamlandı" görünür.
+ * Egzersiz bitişini işler: sunucuda kayıt + XP/seri, cihazda önbellek, üst
+ * bardaki rozetlerin anında güncellenmesi. Sunucuya ulaşılamazsa yerel kayıt
+ * yine tutulur; kullanıcı çevrimdışıyken de egzersiz "tamamlandı" görünür ve
+ * bir sonraki senkronda sunucuya taşınır (bkz. lib/skills/progress.ts).
+ *
+ * `score` isteğe bağlı rubrik puanı (0–100): serbest yazma/konuşma AI
+ * değerlendirmesinden gelir (WP-03); verilmezse doğru/toplam oranı.
  */
 export function useSkillFinish(exercise: SkillExercise, total: number) {
   const [state, setState] = useState<FinishState>({ phase: "idle" });
@@ -35,10 +39,10 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
   const sent = useRef(false);
 
   const finish = useCallback(
-    async (correct: number) => {
+    async (correct: number, score?: number) => {
       if (sent.current) return;
       sent.current = true;
-      recordSkillResult(exercise.id, correct, total);
+      recordSkillResult(exercise.id, correct, total, score);
       setState({ phase: "saving" });
       try {
         const res = await fetch("/api/skills", {
@@ -47,6 +51,7 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
           body: JSON.stringify({
             id: exercise.id,
             correct,
+            score,
             day: localDay(),
             seconds: Math.round((Date.now() - startedAt.current) / 1000),
           }),
@@ -57,7 +62,9 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
           totalXp: number;
           currentStreak: number;
           repeat?: boolean;
+          lastScore?: number;
         };
+        recordSkillResult(exercise.id, correct, total, data.lastScore ?? score);
         window.dispatchEvent(
           new CustomEvent("wortspiel:stats", {
             detail: { xp: data.totalXp, streak: data.currentStreak },

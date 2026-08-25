@@ -53,6 +53,8 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Süre.** 2–3 gün. **Bağımlılık.** WP-00 (olay adları).
 
+**Durum (2026-08-25).** Bitti. `user_skills` + `skill, level, last_score, first_at` (migrasyon `0027_skill_progress.sql`, eski satırlar dolduruldu, üretime uygulandı). Kayıt mantığı `src/lib/skills/record.ts`'e taşındı (`recordSkillAttempt` → `skill_finish` olayı, `listSkillStatus`, `importSkillRecords`). `/api/skills`: GET `?level=`, POST `+score`, PUT taşıma. `progress.ts` sunucu-öncelikli (`syncSkillProgress`, tek seferlik taşıma bayrağı), `skills-hub` senkron + olay dinliyor, `useSkillFinish(correct, score?)`. e2e §27 (11 kontrol) yeşil.
+
 ---
 
 ## WP-02 · Hata taksonomisi

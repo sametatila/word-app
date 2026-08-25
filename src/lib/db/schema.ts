@@ -304,8 +304,32 @@ export const userSkills = pgTable(
     total: integer("total").notNull(),
     attempts: integer("attempts").notNull().default(1),
     lastAt: timestamp("last_at", { withTimezone: true }).notNull().defaultNow(),
+    /**
+     * Beceri ve seviye, egzersiz tablosundan kopya (WP-01).
+     *
+     * `skill_exercises` ile birleştirerek de bulunabilirdi; kopyalanmasının
+     * sebebi analitik: "bu hafta A2 dinlemede kaç kişi kaç puan" sorusunun
+     * jsonb içerik tablosuna hiç dokunmadan cevaplanması ve egzersiz bir gün
+     * silinse ya da seviyesi değişse bile o günkü kaydın ne olduğunu
+     * söylemesi. Eski satırlar migrasyonda dolduruldu; null yalnız eski bir
+     * istemcinin bilinmeyen egzersiz göndermesi hâlinde kalır.
+     */
+    skill: text("skill"),
+    level: text("level"),
+    /**
+     * Son denemenin puanı, 0–100. Çoktan seçmeli egzersizde doğru/toplam;
+     * serbest yazma ve konuşmada AI rubriğinin genel puanı (WP-03). `correct`
+     * en iyi denemeyi saklar, bu ise son denemeyi: yetkinlik "en iyi gün"den
+     * değil, bugün ne yapabildiğinden çıkarılır.
+     */
+    lastScore: integer("last_score"),
+    /** İlk deneme — "bu egzersize ilk ne zaman girdi" sorusu için. */
+    firstAt: timestamp("first_at", { withTimezone: true }).notNull().defaultNow(),
   },
-  (t) => [primaryKey({ columns: [t.userId, t.exerciseId] })],
+  (t) => [
+    primaryKey({ columns: [t.userId, t.exerciseId] }),
+    index("user_skills_skill_level_idx").on(t.skill, t.level),
+  ],
 );
 
 /**

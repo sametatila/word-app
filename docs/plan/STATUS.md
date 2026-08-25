@@ -5,7 +5,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP | Başlık | Faz | Durum | Sahip | Başlangıç | Son commit | Not |
 |---|---|---|---|---|---|---|---|
 | WP-00 | Öğrenme ölçüm çerçevesi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `kind` sütunu eklendi; `session_round` yazılmıyor (karar kaydı) |
-| WP-01 | Beceri ilerlemesi sunucuya | 0 | bekliyor | | | | |
+| WP-01 | Beceri ilerlemesi sunucuya | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | GET/POST/PUT `/api/skills`, `lib/skills/record.ts`, e2e §27 |
 | WP-02 | Hata taksonomisi | 0 | bekliyor | | | | |
 | WP-03 | AI değerlendirme servisi | 0 | bekliyor | | | | |
 | WP-04 | Çevrimdışı rol yapma yedeği | 0 | bekliyor | | | | |

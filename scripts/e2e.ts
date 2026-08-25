@@ -65,6 +65,8 @@ import { buildShareText } from "../src/components/share-result";
 import { achievements, aiUsage, events, moduleClears } from "../src/lib/db/schema";
 import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
+import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
+import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
 const USER = "e2e-user";
 let failures = 0;
@@ -1955,6 +1957,48 @@ async function main() {
   const evRows = await db.select().from(events).where(eq(events.userId, USER));
   check("olaylar yazıldı", evRows.length === 2);
   check("değer taşınıyor", evRows.some((e) => e.name === "stage_done" && e.value === 2));
+
+  console.log("\n27) Beceri ilerlemesi sunucuda (WP-01)");
+  await db.delete(userSkills).where(eq(userSkills.userId, USER));
+  await db.delete(events).where(eq(events.userId, USER));
+  const skillEx = BUNDLED_EXERCISES.find((e) => e.skill === "reading" && e.level === "A1")!;
+  const skillTotal = itemCount(skillEx);
+  const firstTry = await recordSkillAttempt(USER, skillEx, {
+    exerciseId: skillEx.id,
+    correct: Math.max(1, skillTotal - 1),
+    day: monday,
+    seconds: 90,
+  });
+  check("ilk deneme XP verdi", firstTry.xpGained > 0 && firstTry.repeat === false);
+  check("son puan doğru/toplamdan", firstTry.lastScore === scoreOf(skillTotal - 1, skillTotal));
+  const second = await recordSkillAttempt(USER, skillEx, {
+    exerciseId: skillEx.id,
+    correct: 1,
+    day: monday,
+    score: 42,
+  });
+  check("kötü tekrar en iyiyi düşürmedi", second.bestCorrect === Math.max(1, skillTotal - 1));
+  check("rubrik puanı son puana yazıldı", second.lastScore === 42 && second.repeat);
+  const [skillRow] = await db
+    .select()
+    .from(userSkills)
+    .where(and(eq(userSkills.userId, USER), eq(userSkills.exerciseId, skillEx.id)));
+  check("beceri/seviye satırda", skillRow?.skill === "reading" && skillRow?.level === "A1");
+  check("deneme sayısı 2", skillRow?.attempts === 2);
+  const skillEvents = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "skill_finish")));
+  check("skill_finish olayı kind=reading:A1", skillEvents.length === 2 && skillEvents.every((e) => e.kind === "reading:A1"));
+  const status = await listSkillStatus(USER, "A1");
+  check("GET seviye süzgeci", Object.keys(status).length === 1 && status[skillEx.id]?.lastScore === 42);
+  check("başka seviye boş", Object.keys(await listSkillStatus(USER, "B2")).length === 0);
+  const other = BUNDLED_EXERCISES.find((e) => e.skill === "listening" && e.level === "A1")!;
+  const imported = await importSkillRecords(USER, [
+    { id: other.id, correct: 2, total: itemCount(other), at: "2026-02-01T10:00:00Z" },
+    { id: skillEx.id, correct: 0, total: skillTotal }, // sunucudakinden kötü: atlanır
+    { id: "yok-boyle-bir-sey", correct: 3, total: 3 },
+  ]);
+  check("taşıma: yalnız yeni/iyi kayıt yazıldı", imported === 1);
+  const afterImport = await listSkillStatus(USER);
+  check("taşınan kayıt listede", afterImport[other.id]?.correct === 2 && afterImport[skillEx.id]?.correct === Math.max(1, skillTotal - 1));
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));
