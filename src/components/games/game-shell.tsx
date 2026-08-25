@@ -148,14 +148,18 @@ function VerdictBar({
     ilerliyor, animasyon yarıda kesiliyordu. Zar, şerit her yeniden
     kurulduğunda bir kez atılır.
   */
-  const fx = useMemo<"pull" | null>(() => {
+  /* "right": şerit sağdan gelir, mirket solunda (pull-left: sağa dönük, geri
+     geri sola yürür). "left": şerit soldan gelir, mirket sağında (pull-right:
+     sola dönük, geri geri sağa yürür). İki yön de eşit olasılıkta. */
+  const fx = useMemo<"right" | "left" | null>(() => {
     if (!verdict || still) return null;
-    return Math.random() < 0.25 ? "pull" : null;
+    if (Math.random() >= 0.25) return null;
+    return Math.random() < 0.5 ? "right" : "left";
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [verdict, still]);
 
   useEffect(() => {
-    if (fx === "pull") holdRound(PULL_MS + PULL_LINGER_MS);
+    if (fx) holdRound(PULL_MS + PULL_LINGER_MS);
   }, [fx]);
 
   // Şerit yalnızca söyleyecek sözü olan oyunlarda var. Eşleştirme ve tanıtım
@@ -171,11 +175,11 @@ function VerdictBar({
         {verdict ? (
           <motion.div
             key={verdict}
-            initial={fx === "pull" ? { x: "110%", opacity: 1 } : { opacity: 0, y: 10 }}
-            animate={fx === "pull" ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
+            initial={fx ? { x: fx === "right" ? "110%" : "-110%", opacity: 1 } : { opacity: 0, y: 10 }}
+            animate={fx ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
             transition={
-              fx === "pull"
+              fx
                 ? { duration: PULL_MS / 1000, ease: "easeInOut" }
                 : { duration: 0.2, ease: [0.22, 1, 0.36, 1] }
             }
@@ -183,17 +187,19 @@ function VerdictBar({
               verdict === "correct" ? "verdict-correct" : "verdict-wrong"
             }`}
           >
-            {fx === "pull" && (
-              /* Şeridi çekerek getiren Erdi — sağa dönük, geri geri sola
-                 yürüyor, sağındaki şeridi sürüklüyor; şeritle birlikte kayar,
-                 şerit oturunca işini bitirip kaybolur. */
+            {fx && (
+              /* Şeridi çekerek getiren Erdi — şeridin geldiği kenarın karşı
+                 tarafında, şeritle birlikte kayar; şerit oturunca işini
+                 bitirip kaybolur. Boy şeridi aşıyor (70px): sürükleyen
+                 karakter şeridin içindeki simgeden büyük olmalı ki
+                 "getiren" o olsun. */
               <motion.img
-                src="/anim/pull-left.webp"
+                src={fx === "right" ? "/anim/pull-left.webp" : "/anim/pull-right.webp"}
                 alt=""
                 aria-hidden
                 draggable={false}
-                className="pointer-events-none absolute bottom-1 h-14 w-auto"
-                style={{ left: -60 }}
+                className="pointer-events-none absolute -bottom-1 w-auto"
+                style={{ height: 70, ...(fx === "right" ? { left: -76 } : { right: -76 }) }}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: [1, 1, 0] }}
                 transition={{
