@@ -1548,6 +1548,16 @@ export function LessonPlayer({
                   Konuşmaya dön
                 </button>
               ) : null}
+              {roleplayDone ? (
+                <button
+                  type="button"
+                  onClick={() => router.push(`/lessons/${lesson.id}/exam`)}
+                  className="btn btn-ghost flex-1 py-3 text-sm"
+                  title="Aynı sahne, yardım yok, 5 tur, puanlı (WP-22)"
+                >
+                  Sınav olarak dene
+                </button>
+              ) : null}
               {roleplayDone && extras.next ? (
                 <button
                   type="button"

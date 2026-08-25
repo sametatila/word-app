@@ -692,6 +692,8 @@ export const roleplayLogs = pgTable(
      * oluyordu.
      */
     limits: jsonb("limits").$type<Record<string, string>>(),
+    /** "practice" | "exam" (WP-22); eski satırlarda boş = alıştırma. */
+    mode: text("mode"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     /** Bu tarihten sonra silinir. */
     expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),

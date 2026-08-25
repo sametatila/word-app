@@ -4,6 +4,7 @@ import { CORRECTION_MARK, SUGGESTION_MARK } from "@/lib/chat-format";
 import type { Lesson } from "./types";
 import { lessonIndexInLevel } from "./index";
 import { characterFor } from "./characters";
+import { EXAM_TURNS } from "./roleplay-const";
 
 /**
  * Rol yapma — dersin son ve asıl parçası.
@@ -25,6 +26,14 @@ import { characterFor } from "./characters";
 export type RoleplayTurn = ChatMessage;
 
 /**
+ * Mod (WP-22): `practice` dersin rol yapması — düzeltme, öneri, Türkçe yardım.
+ * `exam` sınav — muhatap doğal, yardım yok, düzeltme yok, öneri yok; beş
+ * turda kapanır ve sonra bütün konuşma rubrikle puanlanır.
+ */
+export type RoleplayMode = "practice" | "exam";
+export { EXAM_TURNS, EXAM_SECONDS } from "./roleplay-const";
+
+/**
  * Dersin rol yapma istemi.
  *
  * Dersin öğrettiği kalıplar ve kelimeler olduğu gibi veriliyor: model
@@ -33,7 +42,8 @@ export type RoleplayTurn = ChatMessage;
  * düzeltmesi yerine "bu dersin kalıbına göre" düzeltme almak, dersin
  * bütünlüğünü koruyan şey.
  */
-export function roleplayPrompt(lesson: Lesson, opts?: { closing?: boolean }): string {
+export function roleplayPrompt(lesson: Lesson, opts?: { closing?: boolean; mode?: RoleplayMode }): string {
+  if (opts?.mode === "exam") return examPrompt(lesson, Boolean(opts.closing));
   const dialect =
     lesson.course === "gsw-zh"
       ? "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil."
@@ -177,6 +187,43 @@ düzeltme satırını yine yaz.`
 }
 
 /**
+ * Sınav istemi (WP-22): yardım etme, yönlendirme, düzeltme — doğal muhatap.
+ *
+ * Alıştırma isteminin düzeltme/öneri makinesi burada YOK: sınavda öğrenciye
+ * ne diyeceğini fısıldamak ölçümü bozar. Model yalnız rolünü oynar; hata
+ * görse de düzeltmez (puanlama sonra, bütün konuşma üstünde). Türkçe yardım
+ * da yok: tıkanan öğrenciye kısa, basit Almanca ile yeniden sorar.
+ */
+function examPrompt(lesson: Lesson, closing: boolean): string {
+  const dialect = lesson.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
+  const who = characterFor(lesson, lessonIndexInLevel(lesson));
+  return `Sen bir Almanca KONUŞMA SINAVINDA öğrencinin muhatabısın. Öğrencinin seviyesi ${lesson.level}. ${dialect}
+
+ROLÜN
+Adın ${who.name}. ${lesson.roleplay.partner} rolündesin — ${who.note}. Gerçek bir kişi gibi davran.
+
+SAHNE
+${lesson.roleplay.scene}
+
+SINAV KURALLARI — bunlara kesinlikle uy
+- YARDIM ETME: kalıp önerme, doğru cümleyi söyleme, "şöyle de" deme.
+- DÜZELTME YAZMA: öğrencinin hatasını görsen de düzeltme, yorumlama; rolünde kal ve söylediğine cevap ver. Anlaşılmayan bir şey söylerse gerçek bir muhatap gibi kısa, basit Almanca ile yeniden sor.
+- TÜRKÇE KULLANMA: öğrenci Türkçe konuşsa bile Almanca cevap ver.
+- ${CORRECTION_MARK} ya da ${SUGGESTION_MARK} işaretli satır YAZMA; yalnız rol metnin.
+- Kısa konuş: en fazla 2 cümle, sonunda bir soru. ${lesson.level} seviyesinde kal.
+- Sahneyi ilerlet: her turda yeni bir ayrıntı, aynı soruyu tekrar sorma. Övgü cümleleri yok.
+- Yıldız, tire, madde işareti yok; düz metin. Rol metnin sesli okunuyor.
+Almanca (ä ö ü ß) harfleri doğru yaz.${
+    closing
+      ? `
+
+KAPANIŞ TURU — sınav bitti
+Bu cevabında sahneyi doğal biçimde kapat: rolüne uygun kısa bir toparlama ve veda (en fazla 2 cümle). SORU SORMA.`
+      : ""
+  }`;
+}
+
+/**
  * Rol yapma cevabını akıtır; birincil sağlayıcı düşerse yedeğe geçer.
  *
  * Yedeğe yalnızca tek bir parça bile gönderilmeden önce geçiliyor: akış
@@ -190,6 +237,7 @@ export async function* streamRoleplay(
   onMeta?: (meta: ProviderMeta) => void,
   /** Her denemenin muhasebesi — başarısız olanlar dâhil. */
   report?: CallReport,
+  mode: RoleplayMode = "practice",
 ): AsyncGenerator<string> {
   const providers = chatProviders();
   if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
@@ -199,7 +247,8 @@ export async function* streamRoleplay(
   // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci dersi bitiriyor.
   const userTurns = messages.filter((m) => m.role === "user").length;
   const system = roleplayPrompt(lesson, {
-    closing: userTurns >= lesson.roleplay.minTurns,
+    closing: userTurns >= (mode === "exam" ? EXAM_TURNS : lesson.roleplay.minTurns),
+    mode,
   });
   const failures: string[] = [];
 

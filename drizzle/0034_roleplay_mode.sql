@@ -1,0 +1,1 @@
+ALTER TABLE "roleplay_logs" ADD COLUMN "mode" text;

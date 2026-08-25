@@ -75,6 +75,8 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-20, WP-43.
 
+**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/lessons/roleplay.ts`: `RoleplayMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamRoleplay(..., mode)`; `/api/roleplay` `mode` alır ve `roleplay_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/lessons/roleplay-exam.tsx` + `/lessons/[id]/exam`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `roleplay`, `exerciseId` `<ders>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Ders özetinde "Sınav olarak dene". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
+
 ---
 
 ## WP-23 · Açık diyalog motoru (LLM + senaryo yedeği)

@@ -3,7 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
-import { streamRoleplay, type RoleplayTurn } from "@/lib/lessons/roleplay";
+import { streamRoleplay, type RoleplayMode, type RoleplayTurn } from "@/lib/lessons/roleplay";
 import { logRoleplayTurn } from "@/lib/lessons/log";
 import { recordAiUsage } from "@/lib/ai-usage";
 
@@ -52,7 +52,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
 
-  const { lessonId, messages: raw } = body as { lessonId?: unknown; messages?: unknown };
+  const { lessonId, messages: raw, mode: rawMode } = body as { lessonId?: unknown; messages?: unknown; mode?: unknown };
+  // Mod (WP-22): sınavda yardım/düzeltme yok; kayıtta da işaretlenir.
+  const mode: RoleplayMode = rawMode === "exam" ? "exam" : "practice";
   const lesson = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
   if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
 
@@ -82,6 +84,7 @@ export async function POST(req: Request) {
             messages,
             (m) => (meta = m),
             (r) => recordAiUsage(userId, { kind: "roleplay", ...r }),
+            mode,
           )) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
@@ -93,7 +96,7 @@ export async function POST(req: Request) {
           controller.enqueue(encoder.encode("\n\n[Bağlantı koptu — tekrar dener misin?]"));
         } finally {
           controller.close();
-          if (full.trim()) void logRoleplayTurn(userId, lesson.id, turn, said, full, meta);
+          if (full.trim()) void logRoleplayTurn(userId, lesson.id, turn, said, full, meta, mode);
         }
       },
     });

@@ -37,11 +37,13 @@ export async function logRoleplayTurn(
   reply: string,
   /** Cevabı veren sağlayıcı ve bildirdiği kalan hak — bilinmiyorsa boş. */
   meta?: { provider: string; model: string; limits: Record<string, string> },
+  mode: "practice" | "exam" = "practice",
 ): Promise<void> {
   try {
     await db.insert(roleplayLogs).values({
       userId,
       lessonId,
+      mode,
       turn,
       said: said.slice(0, MAX_CHARS),
       reply: reply.slice(0, MAX_CHARS),
