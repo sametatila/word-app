@@ -7,7 +7,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-00 | Öğrenme ölçüm çerçevesi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `kind` sütunu eklendi; `session_round` yazılmıyor (karar kaydı) |
 | WP-01 | Beceri ilerlemesi sunucuya | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | GET/POST/PUT `/api/skills`, `lib/skills/record.ts`, e2e §27 |
 | WP-02 | Hata taksonomisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/errors.ts`, `reviews.error_type/detail`, 11 oyun + yürüyüş, e2e §28 |
-| WP-03 | AI değerlendirme servisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `/api/assess`, `assessments` tablosu, istemci yedeği; 20 örnek kalite testi anahtar bekliyor |
+| WP-03 | AI değerlendirme servisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `/api/assess`, `assessments` tablosu, istemci yedeği; kalite testi 20/20 (assess-samples.md) |
 | WP-04 | Çevrimdışı rol yapma yedeği | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | senaryo motoru + 10 A1 senaryosu; kanıt `reports/shots/wp04-roleplay-*.png` |
 | WP-10 | Çeviri oyunu | 1 | bekliyor | | | | |
 | WP-11 | Dönüştürme drilleri | 1 | bekliyor | | | | |
@@ -54,3 +54,4 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Çevrimdışı rol yapmada anlaşılmayan cevap da tur sayılıyor (modelli akışla aynı kural: her kullanıcı sözü bir tur). Ders geçme kalıp kullanımına değil tur sayısına bağlı kaldı; kalıp kullanımı `production_attempt(roleplay)` puanı olarak ölçülüyor — WP-22 sınav modu bunu koşula çevirebilir. Claude.
 - 2026-08-25 — Senaryolar ders dosyasına değil `content/scripts-a1.ts`'e yazıldı; `lessons/index.ts` kimlikle bağlıyor. İçerik hattı (WP-70/71) senaryoyu ders metninden bağımsız üretip gözden geçirebilsin diye. Claude.
 - 2026-08-25 — Faz 0 e2e için yerel Postgres: `docker run … postgres:16-alpine` (5439), `DATABASE_URL=<test> npx drizzle-kit migrate`, `TEST_DATABASE_URL=<test> npm run test:seed && npm run test:e2e`. README'ye taşınmalı (WP-70 sırasında). Claude.
+- 2026-08-25 — WP-03 kalite testi Mistral ile koşuldu: 20/20 ±1, hata tipi 14/14, span 11/11. Modelin JSON'u beş biçimde bozduğu ölçüldü; ayrıştırıcı tek kuralla (`closesString`) onarıyor, istem iç tırnağı yasaklıyor, bütçe 1600 jeton. Model insan puanından ~+1 cömert (WP-50 notu). Claude.

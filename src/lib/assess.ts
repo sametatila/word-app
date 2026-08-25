@@ -7,6 +7,7 @@ import { chatConfigured, completeChat, type CallReport } from "@/lib/chat-provid
 import { track } from "@/lib/events";
 import {
   ASSESS_MAX_CHARS,
+  ASSESS_MAX_TOKENS,
   assessSystemPrompt,
   assessUserMessage,
   parseAssessment,
@@ -38,8 +39,6 @@ export function dailyLimit(): number {
   return Number.isFinite(n) && n > 0 ? Math.round(n) : 60;
 }
 
-/** Uzun cevap: akıl yürütme modellerinde bütçe, çıktı JSON'u için. */
-const MAX_TOKENS = 900;
 /** Aynı görev+cevap için önbellek ömrü. */
 const CACHE_HOURS = 24;
 
@@ -106,7 +105,7 @@ export async function assess(
     raw = await completeChat(
       assessSystemPrompt(clean.kind, clean.level),
       [{ role: "user", content: assessUserMessage(clean) }],
-      MAX_TOKENS,
+      ASSESS_MAX_TOKENS,
       reportAndRemember,
     );
   } catch (err) {

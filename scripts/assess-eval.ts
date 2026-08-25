@@ -4,6 +4,7 @@
  *   MISTRAL_API_KEY=... npm run test:assess
  *   CHAT_PROVIDER=groq GROQ_API_KEY=... npm run test:assess     (tek sağlayıcı)
  *   npm run test:assess -- --json                                 (ham çıktıyı da bas)
+ *   npm run test:assess -- --only a2-w-mixed                     (tek örnek)
  *
  * 20 örnek cevap (A1–B2, doğru/yanlış/karışık, dört tür). Her örnekte insan
  * değerlendirmesi (rubrik puanları ve beklenen hata tipleri) önceden yazılı;
@@ -15,8 +16,10 @@
  * karar insanın. Üretimle aynı istem ve aynı ayrıştırıcı kullanılır
  * (`assess-prompts.ts`); sağlayıcı zinciri de üretimdeki (`completeChat`).
  */
+import "dotenv/config";
 import { completeChat, chatProviders } from "../src/lib/chat-providers";
 import {
+  ASSESS_MAX_TOKENS,
   assessSystemPrompt,
   assessUserMessage,
   parseAssessment,
@@ -87,21 +90,26 @@ async function main() {
     process.exit(2);
   }
   const showJson = process.argv.includes("--json");
+  const onlyAt = process.argv.indexOf("--only");
+  const only = onlyAt >= 0 ? process.argv[onlyAt + 1] : null;
+  const samples = only ? SAMPLES.filter((s) => s.id === only) : SAMPLES;
   console.log(`Sağlayıcı zinciri: ${providers.map((p) => `${p.name}/${p.model}`).join(" → ")}\n`);
 
   let within = 0, subscores = 0, errorsHit = 0, errorsExpected = 0, spansOk = 0, spansExpected = 0, parsed = 0, extraErrorsOnClean = 0;
-  for (const s of SAMPLES) {
+  for (const s of samples) {
     const started = Date.now();
     let raw = "";
     try {
-      raw = await completeChat(assessSystemPrompt(s.req.kind, s.req.level), [{ role: "user", content: assessUserMessage(s.req) }], 900);
+      raw = await completeChat(assessSystemPrompt(s.req.kind, s.req.level), [{ role: "user", content: assessUserMessage(s.req) }], ASSESS_MAX_TOKENS);
     } catch (err) {
       console.log(`✗ ${s.id}: sağlayıcı hatası — ${(err as Error).message}`);
       continue;
     }
     const a = parseAssessment(raw, s.req.answer.text, s.req.kind);
     if (!a) {
-      console.log(`✗ ${s.id}: JSON ayrıştırılamadı\n   ${raw.slice(0, 200)}`);
+      // Ham çıktı tam basılıyor: kırpılmış hâlinden ayrıştırma hatasının
+      // sebebi anlaşılmıyordu (tırnak, kesik JSON, tek tırnak kapanış…).
+      console.log(`✗ ${s.id}: JSON ayrıştırılamadı\n   ${raw.slice(0, 1500)}`);
       continue;
     }
     parsed++;
@@ -127,7 +135,7 @@ async function main() {
     console.log(`     övgü: ${a.praise_tr}\n     ipucu: ${a.next_tip_tr}`);
     if (showJson) console.log(raw);
   }
-  const n = SAMPLES.length;
+  const n = samples.length;
   console.log(`\nÖzet: ${parsed}/${n} ayrıştı · ${within}/${parsed} örnekte dört alt puan ±1 içinde · alt puan isabeti ${subscores}/${parsed * 4} · beklenen hata tipi ${errorsHit}/${errorsExpected} · span ${spansOk}/${spansExpected} · temiz cevaba hata yazma ${extraErrorsOnClean}`);
   console.log("Kabul (WP-03): ±1 içinde ≥ 16/20, hata tipi ≥ %75, span ≥ %75, temiz cevaba hata ≤ 2.");
 }

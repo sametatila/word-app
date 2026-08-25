@@ -39,10 +39,19 @@ Kabul ölçütleri (plan): 20 örnekte dört alt puan da insan puanına ±1 içi
 
 ## Sonuçlar
 
-**Henüz çalıştırılmadı.** Bu makinede sohbet sağlayıcı anahtarı yok (`MISTRAL/GROQ/CEREBRAS_API_KEY` yalnız Vercel'de, "Sensitive" olarak; dışa aktarılamıyor). Anahtarı olan biri yukarıdaki komutu koşup özet satırını buraya işler:
+Zincir üretimdekiyle aynı: mistral/mistral-medium-latest → groq → cerebras (bütün koşularda Mistral cevapladı). Yedi koşu yapıldı; ilk koşu istem/ayrıştırıcı hatalarını ortaya çıkardı, sonrakiler düzeltmeleri ölçtü.
 
-| tarih | sağlayıcı/model | ±1 içinde | hata tipi | span | temiz cevaba hata | not |
+| koşu | ±1 içinde | hata tipi | span | temiz cevaba hata | ayrıştı | ne değişti |
 |---|---|---|---|---|---|---|
-| | | /20 | | | | |
+| 1 | 11/12 | 3/4 | 4/4 | 2 | 12/20 | başlangıç — 8 cevap JSON içinde kaçırılmamış tırnak yüzünden okunamadı; konuşma dökümünde büyük harf "hatası"; yan cümle fiil sonu `word_order` |
+| 2 | 19/19 | 12/12 | 9/9 | 0 | 19/20 | istem: iç tırnak yasağı, döküm kuralı, `verb_position` tanımı, "doğru cümleye hata yazma"; ayrıştırıcı: tırnak onarımı; 1 cevap jeton bütçesinde kesildi |
+| 3–6 | hepsi ±1 | 11–12/12 | 9–10 | 0–1 | 18–19/20 | bütçe 900→1600; tek tırnaklı kapanış, `,"` bakışı, tırnaksız anahtar, sarmalayan tırnak, `wrong === fix` süzgeci |
+| **7** | **20/20** | **14/14** | **11/11** | **0** | **20/20** | kapanış tırnağı unutulmuş dize onarımı |
 
-Kabul altında kalan ölçüt varsa istem `src/lib/assess-prompts.ts`'te düzeltilir (tek kaynak; üretim ve test aynı istemi kullanır) ve tablo yeniden koşulur.
+Son koşu (2026-08-25, `scripts/assess-eval.ts`): 20/20 ayrıştı · 20/20 örnekte dört alt puan ±1 içinde · alt puan isabeti 80/80 · beklenen hata tipi 14/14 · span 11/11 · temiz cevaba hata 0. **Kabul ölçütlerinin hepsi sağlandı.**
+
+Gözlemler:
+- Model insan puanından sistematik olarak **+1 daha cömert** (özellikle `task` ve `grammar`), hiç ±1 dışına çıkmadı. Yetkinlik modeli (WP-50) bu sapmayı bilmeli; ham puanı eşiklere çevirirken 5 puanlık pay bırakılabilir.
+- Ayrıştırıcı sağlamlığı asıl kazanım: modelin JSON'u beş farklı biçimde bozduğu görüldü (iç tırnak, dizeyi saran çift tırnak, tek tırnaklı kapanış/anahtar, virgüllü alıntı listesi, unutulmuş kapanış). Hepsi `assess-prompts.ts` `extractJson`/`repairQuotes` içinde tek kuralla (`closesString`) ele alınıyor ve e2e §29'da sabitlendi.
+- Konuşma dökümünde model bir kez `spelling` yazdı (a2-w-mixed'de değil, yazmada — geçerli); dökümde `spelling` ayrıştırıcıda düşürülüyor.
+- Diğer sağlayıcılar (Groq llama-3.3-70b, Cerebras gpt-oss-120b) bu turda hiç devreye girmedi; Mistral limiti dolduğunda davranış farkı olabilir — `CHAT_PROVIDER=groq npm run test:assess` ile ayrıca ölçülmeli.

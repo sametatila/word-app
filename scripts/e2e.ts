@@ -66,7 +66,7 @@ import { achievements, aiUsage, assessments, events, moduleClears } from "../src
 import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
 import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
-import { overallScore, parseAssessment } from "../src/lib/assess-prompts";
+import { overallScore, parseAssessment, repairQuotes } from "../src/lib/assess-prompts";
 import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash } from "../src/lib/assess";
 import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
@@ -2055,6 +2055,21 @@ async function main() {
   check("bilinmeyen tip → meaning; konuşmada yazım hatası düşer", parsedB?.errors.length === 1 && parsedB?.errors[0].type === "meaning");
   check("boş corrected → cevabın kendisi", parsedB?.corrected === "abc");
   check("overallScore tam puan 100", overallScore({ task: 4, grammar: 4, vocab: 4, structure: 4 }) === 100);
+  // Modelin kaçırılmamış iç tırnakları (ölçüldü: 20 örnekte 8 kez) onarılıyor.
+  const rawQuotes = `{"score":{"task":3,"grammar":2,"vocab":4,"structure":3},"errors":[{"wrong":"Die Tisch","type":"article","fix":"Der Tisch","why_tr":""Tisch" eril bir isimdir ve "der" alır."},{"wrong":"mit dir","type":"case","fix":""mit dir"","why_tr":""zaten doğru"}],"corrected":"Der Tisch ist groß.","praise_tr":"Cümle "tam" olmuş.","next_tip_tr":"x"}`;
+  const parsedQ = parseAssessment(rawQuotes, "Die Tisch ist groß.", "sentence");
+  check("kaçırılmamış iç tırnaklar „“ oluyor", parsedQ !== null && parsedQ.praise_tr === "Cümle „tam“ olmuş.");
+  check("dizeyi saran fazladan tırnak da alıntı oluyor", parsedQ?.errors[0]?.why_tr === "„Tisch“ eril bir isimdir ve „der“ alır.");
+  const parsedS = parseAssessment(`{"score":{"task":4,"grammar":3,"vocab":4,"structure":3},"errors":[{"wrong":"weil ich bin krank","type":"verb_position","fix":"weil ich krank bin","why_tr":"Yan cümlede fiil sonda olmalıdır'}],"corrected":"x","praise_tr":"iyi","next_tip_tr":"x"}`, "weil ich bin krank", "sentence");
+  const parsedU = parseAssessment(`{"score":{"task":4,"grammar":3,"vocab":4,"structure":4},"errors":[{"wrong":"wohne","type":"conjugation","fix":"wohnt","why_tr":""Özne 'Sie' (o) üçüncü tekil şahıs, fiil "-t" eki alır."}],"corrected":"x","praise_tr":"","next_tip_tr":""}`, "Sie wohne in Berlin.", "sentence");
+  check("eşsiz baştaki alıntı işareti atılıyor", parsedU?.errors[0]?.why_tr === "Özne 'Sie' (o) üçüncü tekil şahıs, fiil „-t“ eki alır.");
+  const parsedC = parseAssessment(`{"score":{"task":4,"grammar":3,"vocab":3,"structure":3},"errors":[],"corrected":"x","praise_tr":"Basit ama doğru.','next_tip_tr":"Bağlaçlar: "weil", "und" veya "außerdem" kullan."}`, "x", "sentence");
+  check("virgüllü iç alıntılar ve tek tırnaklı anahtar onarılıyor", parsedC?.praise_tr === "Basit ama doğru." && parsedC?.next_tip_tr === "Bağlaçlar: „weil“, „und“ veya „außerdem“ kullan.");
+  const parsedN = parseAssessment(`{"score":{"task":3,"grammar":2,"vocab":3,"structure":2},"errors":[{"wrong":"Bitte schreiben mir","type":"conjugation","fix":"Bitte schreib mir","why_tr":"Emir kipinde fiil yalın olmalı (du-formu)}],"corrected":"Bitte schreib mir.","praise_tr":"ok","next_tip_tr":"x"}`, "Bitte schreiben mir", "sentence");
+  check("kapanış tırnağı unutulmuş dize onarılıyor", parsedN?.errors[0]?.why_tr === "Emir kipinde fiil yalın olmalı (du-formu)" && parsedN?.corrected === "Bitte schreib mir.");
+  check("tek tırnakla kapatılmış dize onarılıyor", parsedS?.errors[0]?.why_tr === "Yan cümlede fiil sonda olmalıdır" && parsedS?.errors[0]?.span[1] === 18);
+  check("wrong === fix olan madde hata sayılmıyor", parsedQ?.errors.length === 1 && parsedQ.errors[0].type === "article");
+  check("kaçırılmış tırnak bozulmuyor", JSON.parse(repairQuotes('{"a":"he said \\"hi\\"","b":1}')).a === 'he said "hi"');
   const fb = fallbackAssessment({ kind: "writing", level: "A2", task: { prompt: "mesaj yaz", targets: ["Wollen wir uns treffen?", "Ich hätte gern"], constraints: ["en az 10 kelime"] }, answer: { text: "Hallo Anna, wollen wir uns morgen um drei Uhr treffen? Ich hätte gern einen Kaffee." } });
   check("yedek: offline işaretli, hata listesi boş", fb.offline === true && fb.errors.length === 0);
   check("yedek: kelime sayısı ve kalıplar", fb.words === 15 && fb.checks.filter((c) => c.ok).length === fb.checks.length);
