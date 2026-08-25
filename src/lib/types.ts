@@ -1,3 +1,4 @@
+import type { ErrorType } from "@/lib/errors";
 export type GameId =
   | "intro"
   | "match"
@@ -159,6 +160,10 @@ export type Answer = {
   correct: boolean;
   latencyMs: number;
   hintUsed?: boolean;
+  /** Yanlışsa hata tipi — oyun sınıflandırır (bkz. lib/errors.ts). */
+  errorType?: ErrorType;
+  /** Yanlışın kendisi: seçilen şık / yazılan kelime. */
+  detail?: string;
 };
 
 /** Oturumun sunucuda tutulan ilerlemesi — yarım kalan tur her cihazda aynı yerden sürer. */

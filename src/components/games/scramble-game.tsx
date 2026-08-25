@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -88,7 +89,16 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     const tail = isCorrect ? 0 : 1100;
     speakAndExit(
       withArtikel(word),
-      () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
+      () =>
+        onDoneRef.current([
+          {
+            wordId: word.id,
+            correct: isCorrect,
+            latencyMs,
+            hintUsed,
+            ...miss(isCorrect, "spelling", placed.map((t) => t.char).join("")),
+          },
+        ]),
       { tail, onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail) },
     );
   }, [placed, status, targetLetters.length, compareTarget, word, hintUsed, speakAndExit]);

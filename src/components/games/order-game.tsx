@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { classifyOrder, miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -78,7 +79,20 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     const rest = isCorrect ? 0 : 1400;
     speakAndExit(
       full,
-      () => onDoneRef.current([{ wordId: word.id, correct: isCorrect, latencyMs, hintUsed }]),
+      () =>
+        onDoneRef.current([
+          {
+            wordId: word.id,
+            correct: isCorrect,
+            latencyMs,
+            hintUsed,
+            ...miss(
+              isCorrect,
+              classifyOrder(placed.map((t) => t.text), answer, tail),
+              placed.map((t) => t.text).join(" "),
+            ),
+          },
+        ]),
       {
         tail: rest,
         maxWaitMs: 12000,

@@ -1,4 +1,5 @@
 import type { Round, RoundWord } from "@/lib/types";
+import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
 
 export type GameResult = {
@@ -6,6 +7,10 @@ export type GameResult = {
   correct: boolean;
   latencyMs: number;
   hintUsed?: boolean;
+  /** Yanlışsa hata tipi; oyun bilir (bkz. lib/errors.ts `miss`). */
+  errorType?: ErrorType;
+  /** Yanlışın kendisi: seçilen şık, yazılan kelime. */
+  detail?: string;
 };
 
 /**

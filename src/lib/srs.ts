@@ -60,8 +60,22 @@ const MIN_EASE = 1.3;
 const LEARNING_STEPS_MIN = [1, 5]; // dakika
 
 /** Bir sonraki durumu hesaplar. Saf fonksiyon — test edilebilir. */
-export function schedule(prev: SrsState, quality: number, now = new Date()): SrsState {
+/**
+ * `errorWeight`: kelimenin son yanlışının hata tipine göre aralık katsayısı
+ * (bkz. lib/errors.ts `ERROR_SRS_WEIGHT`). 1 = etkisiz. Yalnız tekrar
+ * evresindeki gün aralıklarına uygulanır; öğrenme adımları dakikalık ve
+ * zaten kısa. Aşağı yuvarlanmaz: 3 gün × 0,9 = 2,7 → 3 gün; etkisi ancak
+ * uzun aralıklarda görünür (30 → 27), amaçlanan da bu.
+ */
+export function schedule(
+  prev: SrsState,
+  quality: number,
+  now = new Date(),
+  errorWeight = 1,
+): SrsState {
   const next: SrsState = { ...prev };
+  const weigh = (days: number) =>
+    errorWeight > 0 && errorWeight < 1 ? Math.max(1, Math.round(days * errorWeight)) : days;
 
   if (quality < 3) {
     // Hata: kelime öğrenme adımına düşer, kısa süre sonra tekrar gelir.
@@ -117,7 +131,7 @@ export function schedule(prev: SrsState, quality: number, now = new Date()): Srs
   const base = prev.intervalDays > 0 ? prev.intervalDays : 1;
   const factor = quality >= 5 ? next.ease * 1.15 : quality === 4 ? next.ease : next.ease * 0.8;
   next.state = 2;
-  next.intervalDays = clamp(round1(base * factor), 1, 365);
+  next.intervalDays = clamp(weigh(round1(base * factor)), 1, 365);
   next.dueAt = addDays(now, next.intervalDays);
   return next;
 }

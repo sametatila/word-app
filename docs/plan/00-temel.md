@@ -81,6 +81,8 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Süre.** 3 gün. **Bağımlılık.** WP-00.
 
+**Durum (2026-08-25).** Bitti. `src/lib/errors.ts` (10 tip, Türkçe ad, cheatsheet bağlantısı, SRS ağırlığı, `miss`, `classifyTyping` Levenshtein ≤ 2, `classifyOrder` fiil konumu kuralı). `GameResult`/`Answer` → `errorType`, `detail`; 10 oyun + yürüyüş (`pronunciation`) sınıflandırıyor; `/api/answers` listeden doğruluyor; `submitAnswers` `reviews.error_type/detail` yazıyor, `error_recorded` olaylarını toplu atıyor, SRS ağırlığını uyguluyor; `getProgress().errors` 30 günlük dağılım. Migrasyon `0028_review_error_type.sql` üretime uygulandı. e2e §28 (17 kontrol) yeşil.
+
 ---
 
 ## WP-03 · AI değerlendirme servisi (`/api/assess`)

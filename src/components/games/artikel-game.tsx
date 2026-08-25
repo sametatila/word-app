@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -45,7 +46,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     // bekletiyordu. Yanlışta doğruyu görmek için kısa bir ek süre kalıyor.
     vibrate(correct ? "correct" : "wrong");
     const tail = correct ? 0 : 900;
-    speakAndExit(`${answer} ${word.de}`, () => onDone([{ wordId: word.id, correct, latencyMs }]), {
+    speakAndExit(`${answer} ${word.de}`, () => onDone([{ wordId: word.id, correct, latencyMs, ...miss(correct, "article", opt) }]), {
       tail,
       onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
     });

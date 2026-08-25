@@ -65,6 +65,7 @@ import { buildShareText } from "../src/components/share-result";
 import { achievements, aiUsage, events, moduleClears } from "../src/lib/db/schema";
 import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
+import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -1999,6 +2000,40 @@ async function main() {
   check("taşıma: yalnız yeni/iyi kayıt yazıldı", imported === 1);
   const afterImport = await listSkillStatus(USER);
   check("taşınan kayıt listede", afterImport[other.id]?.correct === 2 && afterImport[skillEx.id]?.correct === Math.max(1, skillTotal - 1));
+
+  console.log("\n28) Hata taksonomisi (WP-02)");
+  await db.delete(reviews).where(eq(reviews.userId, USER));
+  await db.delete(events).where(eq(events.userId, USER));
+  check("yazım: 1 harf sapma", classifyTyping("Katse", ["Katze"]) === "spelling");
+  check("yazım: umlaut/ss katlanıyor", classifyTyping("Strasse", ["Straße"]) === "spelling");
+  check("anlam: alakasız kelime", classifyTyping("Hund", ["Katze"]) === "meaning");
+  check("anlam: boş cevap", classifyTyping("", ["Katze"]) === "meaning");
+  check("fiilin yeri: bildirme cümlesi", classifyOrder(["Ich", "heute", "gehe", "ins", "Kino"], ["Ich", "gehe", "heute", "ins", "Kino"], ".") === "verb_position");
+  check("kelime sırası: fiil yerinde", classifyOrder(["Ich", "gehe", "ins", "Kino", "heute"], ["Ich", "gehe", "heute", "ins", "Kino"], ".") === "word_order");
+  check("evet/hayır sorusu: fiil başta", classifyOrder(["du", "Kommst", "mit"], ["Kommst", "du", "mit"], "?") === "verb_position");
+  check("soru kelimesi: fiil ikinci", classifyOrder(["Wann", "du", "kommst"], ["Wann", "kommst", "du"], "?") === "verb_position");
+  check("miss doğru cevapta boş", Object.keys(miss(true, "article", "der")).length === 0);
+  check("miss yanlışta tip+detay", miss(false, "article", "  der ").errorType === "article" && miss(false, "article", "  der ").detail === "der");
+  check("SRS ağırlığı aralığı kısaltıyor", schedule({ state: 2, ease: 2.5, intervalDays: 30, reps: 5, lapses: 0, correctStreak: 5, leech: false, dueAt: new Date(), lastReviewedAt: new Date(Date.now() - 40 * 3600 * 1000) }, 4, new Date(), 0.9).intervalDays < schedule({ state: 2, ease: 2.5, intervalDays: 30, reps: 5, lapses: 0, correctStreak: 5, leech: false, dueAt: new Date(), lastReviewedAt: new Date(Date.now() - 40 * 3600 * 1000) }, 4, new Date(), 1).intervalDays);
+  const errWords = await db.select().from(words).limit(2);
+  await submitAnswers(
+    USER,
+    [
+      { wordId: errWords[0].id, game: "artikel", correct: false, latencyMs: 2000, errorType: "article", detail: "das" },
+      { wordId: errWords[1].id, game: "typing", correct: false, latencyMs: 4000, errorType: "spelling", detail: "Katse" },
+      { wordId: errWords[1].id, game: "choice", correct: true, latencyMs: 1000, errorType: "meaning" as never, detail: "olmamalı" },
+    ],
+    monday,
+    30,
+  );
+  const errReviews = await db.select().from(reviews).where(eq(reviews.userId, USER));
+  check("yanlış artikel → error_type=article, detail=das", errReviews.some((r) => r.game === "artikel" && r.errorType === "article" && r.detail === "das"));
+  check("yazım hatası kaydedildi", errReviews.some((r) => r.game === "typing" && r.errorType === "spelling"));
+  check("doğru cevapta hata tipi yok", errReviews.every((r) => !r.correct || (r.errorType === null && r.detail === null)));
+  const errEvents = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "error_recorded")));
+  check("error_recorded olayları (2)", errEvents.length === 2 && errEvents.some((e) => e.kind === "article"));
+  const errProgress = await getProgress(USER, monday);
+  check("getProgress hata dağılımı", errProgress.errors.length === 2 && errProgress.errors.every((e) => e.n === 1));
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

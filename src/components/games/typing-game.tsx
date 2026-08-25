@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { classifyTyping, miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -96,7 +97,16 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     // yarıda kesiliyordu.
     vibrate(correct ? "correct" : "wrong");
     const tail = correct ? 0 : WRONG_TAIL_MS;
-    const finish = () => onDone([{ wordId: word.id, correct, latencyMs, hintUsed }]);
+    const finish = () =>
+      onDone([
+        {
+          wordId: word.id,
+          correct,
+          latencyMs,
+          hintUsed,
+          ...miss(correct, classifyTyping(value, [word.de, ...(round.alternatives ?? [])]), value),
+        },
+      ]);
     speakAndExit(withArtikel(word), finish, {
       tail,
       onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),

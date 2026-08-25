@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -51,7 +52,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
     if (rightItem.wordId === leftId) {
       const latencyMs = Date.now() - startedRef.current;
       const correct = !wrongBeforeRef.current.has(leftId);
-      resultsRef.current.push({ wordId: leftId, correct, latencyMs });
+      resultsRef.current.push({ wordId: leftId, correct, latencyMs, ...miss(correct, "meaning") });
 
       const next = new Set(matched);
       next.add(leftId);

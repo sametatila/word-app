@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
@@ -58,6 +59,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
             latencyMs,
             // Tekrar tekrar dinlemek yardım almaktır: kalite puanı bunu bilsin.
             hintUsed: replays >= 2,
+            ...miss(isCorrect, "listening", option.text),
           },
         ]);
     // Erdi şeridi sürükleyerek getiriyorsa kapanış onu bekler (bkz. lib/mascot-hold).

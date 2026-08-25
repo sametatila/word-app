@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -60,7 +61,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     // Geçiş çizgisi sesin GERÇEK uzunluğunda dolduruluyor ve tur tam o bitince
     // kapanıyor. Sabit süre iki yönde de yanlıştı: kısa tahminde çizgi dolup
     // kullanıcı bekliyor, uzun tahminde ses bittikten sonra boşuna bekleniyordu.
-    const advance = () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]);
+    const advance = () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", opt) }]);
 
     vibrate(isCorrect ? "correct" : "wrong");
     const tail = isCorrect ? 0 : WRONG_TAIL_MS;

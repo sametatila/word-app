@@ -6,7 +6,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 |---|---|---|---|---|---|---|---|
 | WP-00 | Öğrenme ölçüm çerçevesi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `kind` sütunu eklendi; `session_round` yazılmıyor (karar kaydı) |
 | WP-01 | Beceri ilerlemesi sunucuya | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | GET/POST/PUT `/api/skills`, `lib/skills/record.ts`, e2e §27 |
-| WP-02 | Hata taksonomisi | 0 | bekliyor | | | | |
+| WP-02 | Hata taksonomisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/errors.ts`, `reviews.error_type/detail`, 11 oyun + yürüyüş, e2e §28 |
 | WP-03 | AI değerlendirme servisi | 0 | bekliyor | | | | |
 | WP-04 | Çevrimdışı rol yapma yedeği | 0 | bekliyor | | | | |
 | WP-10 | Çeviri oyunu | 1 | bekliyor | | | | |
@@ -46,3 +46,5 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Plan yazıldı; kaynak `reports/ogrenme-kesif-raporu.html`.
 - 2026-08-25 — `events` tablosuna `kind text` sütunu (kapalı sözlük etiketi, ≤32 karakter, sunucuda doğrulanır). Gerekçe: üretim türü+puan, beceri+seviye+puan gibi iki boyutlu olaylar tek tam sayıya sığmıyordu; serbest metin yasağı sürüyor. Claude.
 - 2026-08-25 — `session_round` olayı yazılmıyor: `reviews` zaten oyun/doğruluk/gecikmeyi satır satır tutuyor, ikinci kopya yalnız hacim üretirdi. Ad listede duruyor, KPI'lar `reviews`'dan okuyor. Claude.
+- 2026-08-25 — `reviews.detail` sütunu: yanlışın kendisi (seçilen şık / yazılan kelime, ≤ 60 karakter). Plan yalnız `error_type` diyordu; WP-51'in karıştırma çiftleri ("meaning" hatasında hangi kelime seçildi) bu olmadan hesaplanamazdı. Serbest metin değil: şık metni ya da tek kelime. Claude.
+- 2026-08-25 — SRS hata ağırlığı: `schedule(prev, q, now, errorWeight)`; kelimenin son 14 gündeki son yanlışının tipine göre (`ERROR_SRS_WEIGHT`, artikel/çoğul 0,9, gerisi 1). Yalnız tekrar evresi gün aralığına uygulanır. WP-51 ölçüme göre ayarlar. Claude.

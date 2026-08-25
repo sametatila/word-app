@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -48,7 +49,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     // Yanlış eşleşmede gerçek karşılığı okumaya vakit gerekir.
     const wait = isCorrect ? 900 : 2400;
     fx(isCorrect ? "correct" : "wrong", wait);
-    exitAfter(wait, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]));
+    exitAfter(wait, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", claim.text) }]));
   }
 
   const settled = answered !== null;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -48,7 +49,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // pekiştirmek öğrenmenin tersine çalışırdı.
     // Titreşim dokunuşun kaydedildiğini anında belli ediyor.
     vibrate(correct ? "correct" : "wrong");
-    const finish = () => onDone([{ wordId: word.id, correct, latencyMs }]);
+    const finish = () => onDone([{ wordId: word.id, correct, latencyMs, ...miss(correct, "meaning", opt.text) }]);
 
     if (deSide) {
       // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok, dolayısıyla

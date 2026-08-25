@@ -243,6 +243,18 @@ export const reviews = pgTable(
     correct: boolean("correct").notNull(),
     quality: integer("quality").notNull(), // 0-5
     latencyMs: integer("latency_ms").notNull().default(0),
+    /**
+     * Yanlış cevabın hata tipi (WP-02) — `lib/errors.ts` listesinden; doğru
+     * cevapta null. İstemci sınıflandırır (ne sorulduğunu o bilir), sunucu
+     * yalnız listeden doğrular.
+     */
+    errorType: text("error_type"),
+    /**
+     * Yanlışın kendisi: seçilen şık, yazılan kelime (≤ 60 karakter). "Anlam"
+     * hatasında hangi kelimeyle karıştırıldığını söyler — WP-51'in karıştırma
+     * çiftleri buradan çıkar. Serbest metin değil: şık metni ya da tek kelime.
+     */
+    detail: text("detail"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("reviews_user_idx").on(t.userId, t.createdAt)],

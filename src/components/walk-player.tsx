@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useListen } from "@/components/use-listen";
@@ -758,6 +759,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             correct: ok,
             latencyMs: Date.now() - askedAt,
             hintUsed: false,
+            ...miss(ok, "pronunciation"),
           });
           tallyRef.current = {
             correct: tallyRef.current.correct + (ok ? 1 : 0),

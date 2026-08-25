@@ -1,7 +1,8 @@
 import "server-only";
-import { and, asc, desc, eq, gt, gte, inArray, lt, lte, notInArray, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gt, gte, inArray, isNotNull, lt, lte, notInArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
+import { dailyStats, events, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
+import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/errors";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
@@ -1241,10 +1242,33 @@ export async function submitAnswers(
     : [];
   const byId = new Map(existing.map((r) => [r.wordId, r]));
 
+  // Kelimenin son yanlışının hata tipi → tekrar aralığı katsayısı (WP-02
+  // kancası, bkz. lib/errors.ts). Tek sorgu: son 14 günün yanlışlarından
+  // kelime başına en yenisi. Kayıt yoksa katsayı 1, yani bugünkü davranış.
+  const lastErrorByWord = new Map<number, ErrorType>();
+  if (wordIds.length) {
+    const rows = await db
+      .selectDistinctOn([reviews.wordId], { wordId: reviews.wordId, errorType: reviews.errorType })
+      .from(reviews)
+      .where(
+        and(
+          eq(reviews.userId, userId),
+          inArray(reviews.wordId, wordIds),
+          eq(reviews.correct, false),
+          isNotNull(reviews.errorType),
+          gte(reviews.createdAt, new Date(now.getTime() - 14 * 86400000)),
+        ),
+      )
+      .orderBy(reviews.wordId, desc(reviews.createdAt));
+    for (const r of rows) if (isErrorType(r.errorType)) lastErrorByWord.set(r.wordId, r.errorType);
+  }
+
   let xpGained = 0;
   let correctCount = 0;
   let newCount = 0;
   const reviewRows: (typeof reviews.$inferInsert)[] = [];
+  /** Yanlışların hata tipi olayları — KPI 7 buradan okur. */
+  const errorEvents: (typeof events.$inferInsert)[] = [];
   const upserts: (typeof userWords.$inferInsert)[] = [];
   /** Aralığın cevap öncesi/sonrası hâli — pekişme eşiğini geçenleri saymak için. */
   const updates: { before: number; after: number }[] = [];
@@ -1276,7 +1300,7 @@ export async function submitAnswers(
 
     if (!prevRow) newCount += 1;
     const q = grade(ans.game, ans.correct, ans.latencyMs, ans.hintUsed);
-    const next = schedule(prev, q, now);
+    const next = schedule(prev, q, now, srsWeightFor(lastErrorByWord.get(ans.wordId)));
 
     xpGained += xpForQuality(q);
     if (ans.correct) correctCount += 1;
@@ -1289,7 +1313,15 @@ export async function submitAnswers(
       correct: ans.correct,
       quality: q,
       latencyMs: Math.min(ans.latencyMs, 600000),
+      errorType: !ans.correct && isErrorType(ans.errorType) ? ans.errorType : null,
+      detail: !ans.correct ? cleanDetail(ans.detail) : null,
     });
+    if (!ans.correct && isErrorType(ans.errorType)) {
+      errorEvents.push({ userId, name: "error_recorded", day: today, value: 1, kind: ans.errorType });
+      // Bu turdan sonra aynı kelime yine gelirse (eşleştirme + yazma) son
+      // yanlış artık bu.
+      lastErrorByWord.set(ans.wordId, ans.errorType);
+    }
 
     upserts.push({
       userId,
@@ -1328,6 +1360,14 @@ export async function submitAnswers(
   }
 
   if (reviewRows.length) await db.insert(reviews).values(reviewRows);
+  if (errorEvents.length) {
+    // Ölçüm turu bozmamalı: olay yazılamazsa cevaplar yine kaydedilmiş olur.
+    try {
+      await db.insert(events).values(errorEvents);
+    } catch (err) {
+      console.error("[events] error_recorded yazılamadı", err);
+    }
+  }
 
   /**
    * Bahsin farkı.
@@ -1797,5 +1837,24 @@ export async function getProgress(userId: string, today: string) {
     .from(userWords)
     .where(and(eq(userWords.userId, userId), eq(userWords.leech, true)));
 
-  return { profile, levels, days, dueNow, upcoming, games, seconds, leeches };
+  // Son 30 günün yanlışları hata tipine göre (WP-02). Profil "zayıf noktaların"
+  // bölümü (WP-51) bunun üstüne kurulur; burada yalnız ham sayı.
+  const errorRows = await db
+    .select({ type: reviews.errorType, n: sql<number>`count(*)::int` })
+    .from(reviews)
+    .where(
+      and(
+        eq(reviews.userId, userId),
+        eq(reviews.correct, false),
+        isNotNull(reviews.errorType),
+        gte(reviews.createdAt, new Date(Date.now() - 30 * 86400000)),
+      ),
+    )
+    .groupBy(reviews.errorType)
+    .orderBy(desc(sql`count(*)`));
+  const errors = errorRows
+    .filter((r): r is { type: ErrorType; n: number } => isErrorType(r.type))
+    .map((r) => ({ type: r.type, n: r.n }));
+
+  return { profile, levels, days, dueNow, upcoming, games, seconds, leeches, errors };
 }

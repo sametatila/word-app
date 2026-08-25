@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cleanDetail, isErrorType } from "@/lib/errors";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { saveSessionProgress, submitAnswers } from "@/lib/session";
@@ -74,6 +75,9 @@ function parseBody(body: unknown) {
       correct: a.correct,
       latencyMs: typeof a.latencyMs === "number" ? Math.max(0, Math.round(a.latencyMs)) : 0,
       hintUsed: a.hintUsed === true,
+      // Hata tipi yalnız yanlış cevapta ve yalnız listeden; gerisi düşer.
+      errorType: a.correct === false && isErrorType(a.errorType) ? a.errorType : undefined,
+      detail: a.correct === false ? (cleanDetail(a.detail) ?? undefined) : undefined,
     });
   }
 

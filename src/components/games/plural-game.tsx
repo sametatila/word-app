@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
@@ -51,7 +52,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // çalışırdı. Çoğul artikeli hep „die“.
     vibrate(isCorrect ? "correct" : "wrong");
     const tail = isCorrect ? 0 : 1200;
-    speakAndExit(`die ${answer}`, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs }]), {
+    speakAndExit(`die ${answer}`, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "plural", option) }]), {
       tail,
       onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail),
     });
