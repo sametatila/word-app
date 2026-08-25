@@ -164,8 +164,23 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
+      {/*
+        Yapışkan başlık şeridi — ve `top` neden NEGATİF.
+
+        Yapışkan konum, kaydırma kabının PADDING kutusuna göre hesaplanıyor.
+        `main`in üstünde 1rem dolgu var, dolayısıyla `top-0` şeridi üst
+        başlığın 16 piksel ALTINA çiviliyordu: arada kalan o şeritten liste
+        kartları kayarak geçiyor, başlıkla üst başlık arasından bir şeyler
+        akıyordu. Aynı 16 piksel durgun hâlde de başlığı gereğinden uzağa
+        itiyordu.
+
+        `-top-4` o dolguyu geri alıyor: şerit tam üst başlığın dibine oturuyor
+        ve kendi `pt-4`ü nefes payını İÇERİDE veriyor. Negatif üst pay ile
+        birlikte durgun ve yapışmış hâl aynı yere denk geliyor — kaydırma
+        başladığında başlık zıplamıyor.
+      */}
       <div
-        className="sticky top-0 z-10 -mt-4 space-y-3 pb-3 pt-4 md:-mt-8 md:pt-8"
+        className="sticky -top-4 z-10 -mt-4 space-y-3 pb-3 pt-4 md:-top-8 md:-mt-8 md:pt-8"
         style={{ background: "var(--bg)" }}
       >
         <div className="flex items-center gap-3">
