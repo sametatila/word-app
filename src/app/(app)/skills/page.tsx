@@ -5,15 +5,25 @@ import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
-import { SkillsHub, type ServerSkillProgress } from "@/components/skills/skills-hub";
+import { SkillsHub, type ExamHubData, type ServerSkillProgress, type SkillItem, type SkillsBoard } from "@/components/skills/skills-hub";
 import { weakSpeechTopics, type SpeechTopic } from "@/lib/speech-progress";
+import { proficiencyFor } from "@/lib/proficiency-data";
+import { examHistory } from "@/lib/exam";
+import { weeklyStatus } from "@/lib/weekly";
+import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
+import { candoForExercise } from "@/lib/cando-map";
+import { candoById } from "@/lib/cando";
 
 export const dynamic = "force-dynamic";
 
 /**
- * Beceriler ana ekranı. Egzersizlerin tam içeriği buraya inmez; yalnızca
- * liste bilgisi gider. Varsayılan seviye, kelime oyunlarının performansa göre
- * belirlediği aktif CEFR seviyesidir — beceri içeriği de seviyeyle birlikte yürür.
+ * Beceriler ana ekranı (WP-63: yetkinlik panosu + sekmeler + sınav girişi).
+ * Egzersizlerin tam içeriği buraya inmez; yalnızca liste bilgisi gider.
+ * Varsayılan seviye, kelime oyunlarının performansa göre belirlediği aktif
+ * CEFR seviyesidir — beceri içeriği de seviyeyle birlikte yürür.
+ *
+ * Pano, sınav geçmişi ve haftalık durum ayrı ayrı denenir: biri okunamazsa
+ * liste yine açılır — o bölüm yalnızca görünmez.
  */
 export default async function SkillsPage() {
   const user = await getUserInfo();
@@ -32,7 +42,12 @@ export default async function SkillsPage() {
   }
 
   // İçerik veritabanından gelir (aktif kurs); ulaşılamazsa gömülü kopya kullanılır.
-  const items = await listExerciseMeta(course);
+  // Her egzersize can-do ifadesi (WP-43 haritası) kartta gösterilmek üzere eklenir.
+  const items: SkillItem[] = (await listExerciseMeta(course)).map((m) => {
+    const ids = candoForExercise({ skill: m.skill, level: m.level, genre: m.genre });
+    const cando = ids.length ? candoById(ids[0])?.tr : undefined;
+    return { ...m, cando };
+  });
 
   // Tamamlanma durumu sunucudan gelir ki cihazlar arasında senkron olsun;
   // istemci bunu localStorage'daki (çevrimdışı) kayıtlarla birleştirir.
@@ -48,13 +63,36 @@ export default async function SkillsPage() {
         correct: userSkills.correct,
         total: userSkills.total,
         attempts: userSkills.attempts,
+        lastScore: userSkills.lastScore,
       })
       .from(userSkills)
       .where(eq(userSkills.userId, user.id));
-    for (const r of rows) serverProgress[r.exerciseId] = { correct: r.correct, total: r.total };
+    for (const r of rows) serverProgress[r.exerciseId] = { correct: r.correct, total: r.total, attempts: r.attempts, lastScore: r.lastScore };
     weakSounds = weakSpeechTopics(items, rows);
   } catch (err) {
     console.error("[skills] kullanıcı ilerlemesi okunamadı", err);
+  }
+
+  let board: SkillsBoard | null = null;
+  try {
+    const p = await proficiencyFor(user.id, course, activeLevel);
+    board = { proficiency: p.proficiency, next: p.next, evidenceCount: p.evidenceCount };
+  } catch (err) {
+    console.error("[skills] yetkinlik okunamadı", err);
+  }
+
+  let exams: ExamHubData | null = null;
+  try {
+    const day = new Date().toISOString().slice(0, 10);
+    const [history, weekly, placement] = await Promise.all([
+      examHistory(user.id, 5),
+      weeklyStatus(user.id, day).catch(() => null),
+      lastPlacement(user.id).catch(() => null),
+    ]);
+    const canRetake = !placement || Date.now() - new Date(placement.at).getTime() >= RETAKE_DAYS * 86400000;
+    exams = { history, weekly, placement, canRetake };
+  } catch (err) {
+    console.error("[skills] sınav verisi okunamadı", err);
   }
 
   return (
@@ -63,6 +101,8 @@ export default async function SkillsPage() {
       activeLevel={activeLevel}
       serverProgress={serverProgress}
       weakSounds={weakSounds}
+      board={board}
+      exams={exams}
     />
   );
 }

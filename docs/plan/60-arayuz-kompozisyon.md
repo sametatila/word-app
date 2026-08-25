@@ -85,6 +85,8 @@ Genel ilkeler (her WP için):
 
 **Süre.** 3 gün. **Bağımlılık.** WP-01, WP-50, WP-41.
 
+**Durum (2026-08-25).** Adım 1–4 bitti. `src/app/(app)/skills/page.tsx` panoyu (`proficiencyFor`), sınav geçmişini (`examHistory` 5), haftalık durumu, son yerleştirmeyi ve egzersiz başına can-do metnini (`candoForExercise` → `candoById().tr`) ve `user_skills.last_score/attempts`'i sayfayla indiriyor; her bölüm ayrı denenir, okunamayan görünmez. `src/components/skills/skills-hub.tsx`: seviye çipleri → yetkinlik panosu (6 çubuk, "Önerilen sıradaki" yalnız çalışma seviyesinde) → sekmeler (Okuma/Dinleme/Yazma/Konuşma/Dilbilgisi/Sınav; varsayılan en zayıf beceri, oturumda hatırlanır) → süzgeç çipleri (Hepsi/Yapılmamış/Geliştir/Tamam, boş olan gizli) → kartlar (tür etiketi, dk, madde, can-do, "tamam/geliştir" rozeti, son % ve deneme sayısı). Kanıt: `reports/shots/wp63-hub-{default,grammar,exam}.png`.
+
 ---
 
 ## WP-64 · Profil ve analitik sayfası
