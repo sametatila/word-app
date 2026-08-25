@@ -29,7 +29,7 @@ export function MascotPop({
   mood = "cheer",
   side = "right",
   /** Ekranda kalma süresi (ms). */
-  hold = 1500,
+  hold = 2600,
 }: {
   trigger: number;
   mood?: Mood;
@@ -87,8 +87,8 @@ export function MascotPop({
             ...(side === "right" ? { right: 8 } : { left: 8 }),
           }}
         >
-          {/* Dans klibi geniş tuvalde: aynı görsel ağırlık için biraz daha geniş. */}
-          <Mascot mood={shown} size={shown === "dance" ? 132 : 92} />
+          {/* Hepsi aynı boy: dans geniş tuvalde diye büyütülmüştü, ekranda iri kaçıyordu. */}
+          <Mascot mood={shown} size={92} />
         </motion.div>
       ) : null}
     </AnimatePresence>
