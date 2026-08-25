@@ -82,6 +82,12 @@ export const profiles = pgTable("profiles", {
   voice: text("voice"),
   // İlk girişte kurs/seviye soruldu mu? Null ise onboarding gösterilir.
   courseChosenAt: timestamp("course_chosen_at", { withTimezone: true }),
+  /**
+   * Neden Almanca (WP-65): work | daily | exam | swiss. Görev ve içerik
+   * önerileri buna göre; kullanıcı profilden değiştirebilir. Null = eski
+   * hesap, hiç sorulmadı.
+   */
+  goal: text("goal"),
   currentStreak: integer("current_streak").notNull().default(0),
   longestStreak: integer("longest_streak").notNull().default(0),
   lastActiveDay: date("last_active_day"),

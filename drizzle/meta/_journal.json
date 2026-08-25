@@ -232,6 +232,13 @@
       "when": 1787690683445,
       "tag": "0032_exams",
       "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1787693020179,
+      "tag": "0033_profile_goal",
+      "breakpoints": true
     }
   ]
 }

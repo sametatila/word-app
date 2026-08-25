@@ -111,6 +111,8 @@ Genel ilkeler (her WP için):
 
 **Süre.** 3 gün. **Bağımlılık.** WP-40, WP-60.
 
+**Durum (2026-08-25).** Adım 1–2 bitti, 3'ün görüntüleri var, 3 kişilik test proje sahibinde. `src/components/course-onboarding.tsx`: dört adım — (1) isim + kurs + ses, (2) "Neden Almanca?" iş/günlük/sınav/İsviçre, (3) "Seviyemi ölçelim" (profil A1 ile kaydedilir → `/placement`) ya da "Seviyemi biliyorum" (A1–C1 çipi, kısa açıklama), (4) "Bugünkü planın hazır, {isim}" → `/learn`. Başlıkta "Adım n / 4", ilerleme çubuğu, her adımda Erdi'nin bir cümlesi; Geri düğmesi. `profiles.goal` (migrasyon 0033, üretime uygulandı), `POST /api/profile` `goal` kabul ediyor; `nav` olayı kind `onboarding:<adım>`. Kanıt: `reports/shots/wp65-onboarding-{1..4}.png` (demo kullanıcının `course_chosen_at` alanı sıfırlanıp akış baştan yürütüldü; profil A2 · daily ile yazıldı).
+
 ---
 
 ## WP-66 · Erdi koç sesi
