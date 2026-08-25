@@ -38,7 +38,47 @@ export type CheatItem = {
   siblings: string[];
   /** Satırın geri kalanı — cevaptan sonra gösterilen bağlam. */
   context: { label: string; value: string }[];
+  /**
+   * Cevap Almanca sesle okunabilir mi?
+   *
+   * Tablolarda iki cins sütun var: Almanca BİÇİM taşıyanlar (Perfekt, Dativ,
+   * Örnek cümle, çekim sütunları) ve Türkçe AÇIKLAMA taşıyanlar (anlam, kural,
+   * kullanım). İkisi de aynı tablonun içinde. Türkçe bir açıklamayı Almanca
+   * sesle okutmak, dersin öğrettiği telaffuzu bozar — ve bunu sütun başlığı
+   * söylüyor, hücrenin kendisi değil.
+   */
+  speak: boolean;
 };
+
+/**
+ * Hücreleri TÜRKÇE olan sütunlar.
+ *
+ * Liste beyaz değil kara: 198 sütun başlığının büyük çoğunluğu Almanca biçim
+ * taşıyor, Türkçe olanlar sayılabilecek kadar az. Beyaz liste tutulsaydı yeni
+ * eklenen her Almanca sütun sessiz kalırdı ve eksiklik fark edilmezdi;
+ * kara listede ise unutulan sütun okunur — yanlış tarafta olmak daha ucuz.
+ */
+const TURKISH_COLUMNS = new Set([
+  "Adı", "Anlam", "Anlamı", "Cevap biçimi", "Cinsiyet", "Cümle türü", "Değişim",
+  "Fark", "Fiil nerede", "Fiil türü", "Görev", "Grup", "Hangisi", "Kattığı anlam",
+  "Kelime", "Kesinlik", "Kısaltma", "Koşul", "Kullanılabilenler", "Kullanılır mı",
+  "Kullanım", "Kural", "Ne katıyor", "Ne oldu", "Ne soruluyor", "Ne söyleniyor",
+  "Ne söyler", "Ne yapar", "Ne zaman", "Neden", "Neden dikkat", "Neden o hâl",
+  "Nerede kullanılır", "Nachfeld'e çıkabilen", "nicht nerede", "Not", "Olumsuzlanan",
+  "Partizip II kuralı", "Rakam", "Sayı", "Sıra", "Tipik grup", "Tür", "Türkçe",
+  "Türkçe hissi", "Yapılışı", "Zaman", "Zaman / kip", "Zaman uyumu", "Öznel anlam",
+  "Önce olan", "Sonra olan", "İşaret", "İşlev", "İşlevi",
+]);
+
+/**
+ * Türkçeye özgü harfler — Almancada hiç geçmez.
+ *
+ * Kara listeden kaçan bir sütun için ikinci emniyet: "ı", "ğ", "ş" gören
+ * hücre kesinlikle Almanca değildir. Tersi doğru değil ("almak" bu harflerin
+ * hiçbirini taşımıyor), o yüzden tek başına yeterli olmaz — sütun başlığıyla
+ * birlikte çalışıyor.
+ */
+const TURKISH_LETTERS = /[ıİğĞşŞ]/;
 
 /**
  * Cevap olarak sorulamayacak hücreler.
@@ -99,6 +139,7 @@ function build(): CheatItem[] {
             siblings: block.rows
               .map((r) => (r[ci] ?? "").trim())
               .filter((v) => v && v !== answer && v !== "—"),
+            speak: !TURKISH_COLUMNS.has(label) && !TURKISH_LETTERS.test(answer),
             context: block.columns
               .map((c, i) => ({ label: c, value: (row[i] ?? "").trim() }))
               .filter((c, i) => i !== 0 && i !== ci && c.value && c.value !== "—"),

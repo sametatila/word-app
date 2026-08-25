@@ -8,10 +8,10 @@ import { LEVEL_TONE } from "@/components/skills/theme";
 import { CHEATSHEETS, CHEAT_LEVELS } from "@/lib/cheatsheet";
 import type { CheatBlock, CheatSheet } from "@/lib/cheatsheet";
 import { itemById, itemsOfSheet, type CheatItem } from "@/lib/cheatsheet/items";
-import { CheatQuiz } from "./cheat-quiz";
+import { CheatQuiz, CheatQuizLoading } from "./cheat-quiz";
 
 /**
- * Cheatsheet ekranı — dilbilgisi başvurusu.
+ * Dilbilgisi ekranı — kural ve çekim tablolarının başvuru yeri.
  *
  * Üç karar tasarımın tamamını açıklıyor:
  *
@@ -47,7 +47,8 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
   const [term, setTerm] = useState("");
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [summary, setSummary] = useState<Summary | null>(null);
-  const [busy, setBusy] = useState(false);
+  /** Tur kurulurken gösterilecek başlık — kelime turundaki yükleme ekranının aynısı. */
+  const [preparing, setPreparing] = useState<string | null>(null);
 
   const query = term.trim().toLocaleLowerCase("de-DE");
 
@@ -74,8 +75,8 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
    * sormak olurdu.
    */
   const startSheetQuiz = useCallback(async (sheet: CheatSheet) => {
-    if (busy) return;
-    setBusy(true);
+    if (preparing) return;
+    setPreparing(sheet.title);
     const all = itemsOfSheet(sheet);
     let states: Record<string, { reps: number; lapses: number; due: boolean }> = {};
     try {
@@ -94,13 +95,13 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
     };
     const items = [...all].sort((a, b) => rank(a) - rank(b)).slice(0, QUIZ_SIZE);
     setQuiz({ title: sheet.title, items, states });
-    setBusy(false);
-  }, [busy]);
+    setPreparing(null);
+  }, [preparing]);
 
   /** Karışık tekrar turu — bütün sayfalardan, yalnızca zamanı gelmişler. */
   const startDueQuiz = useCallback(async () => {
-    if (busy) return;
-    setBusy(true);
+    if (preparing) return;
+    setPreparing("Tekrar turu");
     try {
       const res = await fetch("/api/cheat", {
         method: "POST",
@@ -124,8 +125,8 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
     } catch {
       /* çevrimdışı */
     }
-    setBusy(false);
-  }, [busy]);
+    setPreparing(null);
+  }, [preparing]);
 
   /**
    * Arama seviyeyi AŞIYOR: "Passiv" yazan biri o konunun hangi seviyede
@@ -148,6 +149,8 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
     "beklenenden az kanca çizildi" diye patlıyordu. Kanca sayısı çizimden
     çizime değişemez.
   */
+  if (preparing) return <CheatQuizLoading title={preparing} />;
+
   if (quiz) {
     return (
       <CheatQuiz
@@ -193,7 +196,7 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
             <ArrowLeftIcon size={18} />
           </Link>
           <div className="min-w-0">
-            <h1 className="truncate text-xl font-bold">Cheatsheet</h1>
+            <h1 className="truncate text-xl font-bold">Dilbilgisi</h1>
             <p className="muted truncate text-xs font-semibold">
               Seviye seviye dilbilgisi ve fiil tabloları
             </p>
@@ -246,7 +249,7 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
       {summary && summary.due > 0 && !query ? (
         <button
           onClick={startDueQuiz}
-          disabled={busy}
+          disabled={preparing !== null}
           className="card flex w-full items-center gap-3 px-4 py-3 text-left disabled:opacity-60"
         >
           <span
