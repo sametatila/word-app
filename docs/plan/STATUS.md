@@ -7,7 +7,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-00 | Öğrenme ölçüm çerçevesi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `kind` sütunu eklendi; `session_round` yazılmıyor (karar kaydı) |
 | WP-01 | Beceri ilerlemesi sunucuya | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | GET/POST/PUT `/api/skills`, `lib/skills/record.ts`, e2e §27 |
 | WP-02 | Hata taksonomisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/errors.ts`, `reviews.error_type/detail`, 11 oyun + yürüyüş, e2e §28 |
-| WP-03 | AI değerlendirme servisi | 0 | bekliyor | | | | |
+| WP-03 | AI değerlendirme servisi | 0 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `/api/assess`, `assessments` tablosu, istemci yedeği; 20 örnek kalite testi anahtar bekliyor |
 | WP-04 | Çevrimdışı rol yapma yedeği | 0 | bekliyor | | | | |
 | WP-10 | Çeviri oyunu | 1 | bekliyor | | | | |
 | WP-11 | Dönüştürme drilleri | 1 | bekliyor | | | | |
@@ -48,3 +48,6 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — `session_round` olayı yazılmıyor: `reviews` zaten oyun/doğruluk/gecikmeyi satır satır tutuyor, ikinci kopya yalnız hacim üretirdi. Ad listede duruyor, KPI'lar `reviews`'dan okuyor. Claude.
 - 2026-08-25 — `reviews.detail` sütunu: yanlışın kendisi (seçilen şık / yazılan kelime, ≤ 60 karakter). Plan yalnız `error_type` diyordu; WP-51'in karıştırma çiftleri ("meaning" hatasında hangi kelime seçildi) bu olmadan hesaplanamazdı. Serbest metin değil: şık metni ya da tek kelime. Claude.
 - 2026-08-25 — SRS hata ağırlığı: `schedule(prev, q, now, errorWeight)`; kelimenin son 14 gündeki son yanlışının tipine göre (`ERROR_SRS_WEIGHT`, artikel/çoğul 0,9, gerisi 1). Yalnız tekrar evresi gün aralığına uygulanır. WP-51 ölçüme göre ayarlar. Claude.
+- 2026-08-25 — `/api/assess` JSON'u sağlayıcının JSON modundan değil istemden istiyor (`assess-prompts.ts`) ve toleranslı ayrıştırıcıyla okuyor; span'ler modelden değil, modelin verdiği "wrong" parçasının metinde aranmasıyla hesaplanıyor (karakter indeksi modellerde güvenilmez). Geçersiz çıktı 502. Claude.
+- 2026-08-25 — Değerlendirme önbelleği bellek değil `assessments` tablosu (hash, 24 sa): sunucusuz ortamda süreç belleği paylaşılmıyor; tablo zaten gelişim grafiği için gerekiyordu. Kota önbellek isabetlerini saymıyor. Claude.
+- 2026-08-25 — WP-03 kalite testi (20 örnek) yerelde koşulamadı: sohbet anahtarları yalnız Vercel'de (Sensitive). Betik ve insan puanları hazır (`npm run test:assess`, `docs/plan/assess-samples.md`); anahtarı olan koşup tabloyu doldurur. Claude.

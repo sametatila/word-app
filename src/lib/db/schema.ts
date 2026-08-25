@@ -692,3 +692,38 @@ export const roleplayLogs = pgTable(
   },
   (t) => [index("roleplay_logs_user_idx").on(t.userId, t.createdAt)],
 );
+
+/**
+ * AI değerlendirme kayıtları (WP-03).
+ *
+ * Her satır bir üretim görevinin rubrikli sonucu: serbest cümle, yazma,
+ * konuşma dökümü, rol yapma. `answer` öğrencinin metnidir ve BİLEREK burada
+ * saklanır — kendi yazılarını geri okuyabilsin, silebilsin (WP-52); `events`
+ * tablosuna yalnız puan gider. `result` doğrulanmış JSON (lib/assess-prompts
+ * `Assessment`). `hash` görev+cevap özeti: 24 saat içinde aynı cevap
+ * yeniden gönderilirse model çağrılmaz.
+ */
+export const assessments = pgTable(
+  "assessments",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** sentence | writing | speaking | roleplay */
+    kind: text("kind").notNull(),
+    exerciseId: text("exercise_id"),
+    level: text("level").notNull(),
+    /** Kullanıcının yerel günü — kota ve gelişim grafiği buna göre. */
+    day: date("day").notNull(),
+    answer: text("answer").notNull(),
+    result: jsonb("result").notNull(),
+    /** "groq/llama-3.3-70b-versatile" gibi; önbellekten dönende de aynı. */
+    provider: text("provider"),
+    hash: text("hash").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("assessments_user_idx").on(t.userId, t.createdAt),
+    index("assessments_user_day_idx").on(t.userId, t.day),
+    index("assessments_hash_idx").on(t.userId, t.hash),
+  ],
+);

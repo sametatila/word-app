@@ -110,6 +110,8 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Süre.** 4–5 gün. **Bağımlılık.** WP-02 (hata tipleri).
 
+**Durum (2026-08-25).** Kod bitti, kalite testi anahtar bekliyor. `src/lib/assess-prompts.ts` (tipler, tür×seviye sistem istemi, `parseAssessment`, `overallScore`), `src/lib/assess.ts` (kota `ASSESS_DAILY_LIMIT`=60, 24 sa önbellek, `assessments` kaydı, `production_attempt` olayı), `POST /api/assess` (400/413/429/502/503), `src/lib/assess-client.ts` (`askAssess` 20 sn zaman aşımı + iptal, `fallbackAssessment` kural tabanlı yedek, `ASSESS_FAILURE_TEXT`), `aiUsage.kind = "assess"`. Migrasyon `0029_assessments.sql` üretime uygulandı. e2e §29 (16 kontrol) yeşil. Adım 5: `scripts/assess-eval.ts` + `docs/plan/assess-samples.md` yazıldı; **çalıştırılmadı** (yerelde sağlayıcı anahtarı yok) — anahtarı olan `npm run test:assess` koşup tabloyu doldurur.
+
 ---
 
 ## WP-04 · Çevrimdışı rol yapma yedeği

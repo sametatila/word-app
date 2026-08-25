@@ -62,10 +62,13 @@ import {
   recordBossClear,
 } from "../src/lib/lessons/boss";
 import { buildShareText } from "../src/components/share-result";
-import { achievements, aiUsage, events, moduleClears } from "../src/lib/db/schema";
+import { achievements, aiUsage, assessments, events, moduleClears } from "../src/lib/db/schema";
 import { recordAiUsage } from "../src/lib/ai-usage";
 import { track } from "../src/lib/events";
 import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
+import { overallScore, parseAssessment } from "../src/lib/assess-prompts";
+import { fallbackAssessment } from "../src/lib/assess-client";
+import { assess, assessHash } from "../src/lib/assess";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -106,6 +109,7 @@ async function reset() {
   await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
   await db.delete(moduleClears).where(eq(moduleClears.userId, USER));
   await db.delete(events).where(eq(events.userId, USER));
+  await db.delete(assessments).where(eq(assessments.userId, USER));
   await db.delete(reviews).where(eq(reviews.userId, USER));
   await db.delete(userWords).where(eq(userWords.userId, USER));
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
@@ -2034,6 +2038,31 @@ async function main() {
   check("error_recorded olayları (2)", errEvents.length === 2 && errEvents.some((e) => e.kind === "article"));
   const errProgress = await getProgress(USER, monday);
   check("getProgress hata dağılımı", errProgress.errors.length === 2 && errProgress.errors.every((e) => e.n === 1));
+
+  console.log("\n29) AI değerlendirme — ayrıştırıcı ve yedek (WP-03)");
+  const assessAnswer = "Heute ich gehe ins Kino.";
+  const rawOk = `Tabii, işte değerlendirme:\n\`\`\`json\n{"score":{"task":3,"grammar":2,"vocab":4,"structure":1},"errors":[{"wrong":"ich gehe","type":"verb_position","fix":"gehe ich","why_tr":"Zaman zarfı başa gelince fiil ikinci sırada kalır, özne fiilden sonra gelir."}],"corrected":"Heute gehe ich ins Kino.","praise_tr":"Kelimeler doğru.","next_tip_tr":"Cümleye zarfla başlıyorsan fiili ikinci sıraya koy."}\n\`\`\``;
+  const parsedA = parseAssessment(rawOk, assessAnswer, "sentence");
+  check("markdown içindeki JSON ayrıştı", parsedA !== null);
+  check("genel puan ağırlıklı (3/2/4/1 → 61)", parsedA?.score.overall === overallScore({ task: 3, grammar: 2, vocab: 4, structure: 1 }) && parsedA?.score.overall === 61);
+  check("hata span'i metinde doğru yerde", parsedA?.errors[0]?.span[0] === 6 && assessAnswer.slice(parsedA!.errors[0].span[0], parsedA!.errors[0].span[1]) === "ich gehe");
+  check("hata tipi korunuyor", parsedA?.errors[0]?.type === "verb_position");
+  check("eksik alt puan → geçersiz", parseAssessment('{"score":{"task":3,"grammar":2},"errors":[]}', assessAnswer, "sentence") === null);
+  check("JSON yok → geçersiz", parseAssessment("Üzgünüm, değerlendiremem.", assessAnswer, "sentence") === null);
+  const parsedB = parseAssessment('{"score":{"task":"4","grammar":5,"vocab":-1,"structure":4},"errors":[{"wrong":"x","type":"Artikel","fix":"y","why_tr":"z"},{"wrong":"q","type":"spelling","fix":"w","why_tr":"e"}],"corrected":""}', "abc", "speaking");
+  check("puanlar 0–4'e kilitleniyor, string sayı okunuyor", parsedB?.score.task === 4 && parsedB?.score.grammar === 4 && parsedB?.score.vocab === 0);
+  check("bilinmeyen tip → meaning; konuşmada yazım hatası düşer", parsedB?.errors.length === 1 && parsedB?.errors[0].type === "meaning");
+  check("boş corrected → cevabın kendisi", parsedB?.corrected === "abc");
+  check("overallScore tam puan 100", overallScore({ task: 4, grammar: 4, vocab: 4, structure: 4 }) === 100);
+  const fb = fallbackAssessment({ kind: "writing", level: "A2", task: { prompt: "mesaj yaz", targets: ["Wollen wir uns treffen?", "Ich hätte gern"], constraints: ["en az 10 kelime"] }, answer: { text: "Hallo Anna, wollen wir uns morgen um drei Uhr treffen? Ich hätte gern einen Kaffee." } });
+  check("yedek: offline işaretli, hata listesi boş", fb.offline === true && fb.errors.length === 0);
+  check("yedek: kelime sayısı ve kalıplar", fb.words === 15 && fb.checks.filter((c) => c.ok).length === fb.checks.length);
+  const fb2 = fallbackAssessment({ kind: "sentence", level: "A1", task: { prompt: "çevir", target: "Ich trinke Kaffee." }, answer: { text: "ben kahve içiyorum" } });
+  check("yedek: Türkçe metin yakalanıyor, kalıp yok", fb2.checks.some((c) => c.label.startsWith("Almanca") && !c.ok) && fb2.score.overall < 50);
+  check("assessHash aynı cevap → aynı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: " Ich trinke. " } }) === assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "Ich trinke." } }));
+  check("assessHash farklı seviye → farklı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }) !== assessHash({ kind: "sentence", level: "A2", task: { prompt: "a" }, answer: { text: "x" } }));
+  const noProvider = await assess(USER, { kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }, monday);
+  check("sağlayıcısız ortamda not_configured", chatConfigured() ? noProvider.ok || !noProvider.ok : !noProvider.ok && noProvider.reason === "not_configured");
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));
