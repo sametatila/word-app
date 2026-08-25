@@ -82,7 +82,7 @@ const IDLE_CLIPS = [
   "idle-stretch",
   "idle-scratch",
   "idle-tail",
-  "idle-spin",
+  "idle-peekaboo",
   "idle-hop",
   "idle-dig",
   "idle-sniff",

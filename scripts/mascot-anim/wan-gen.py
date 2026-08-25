@@ -48,6 +48,7 @@ ACTIONS = {
     "idle-scratch": ("the cute meerkat scratches the side of its head behind its ear with one front paw a few times, wobbling slightly on its feet, then returns to its calm upright posture", NEUTRAL, True),
     "idle-tail": ("the cute meerkat lifts the fluffy white tip of its own tail up in front of its chest with both front paws, holds it close to its body and inspects it curiously, staying compact and fully inside the frame, then lets the tail drop back down", NEUTRAL, True),
     "idle-spin": ("the cute meerkat does a quick playful full turn in place, spinning around once and ending facing the viewer again", SQUARE, True),
+    "idle-peekaboo": ("the cute meerkat covers both eyes with its front paws, pauses, then pulls the paws away with a playful surprised wide-eyed look at the viewer, closed-mouth smile, then lowers the paws and stands calm again", SQUARE, True),
     "idle-hop": ("the cute meerkat does two small excited hops in place, tail wagging happily, then settles back to calm standing", SQUARE, True),
     "idle-dig": ("the cute meerkat crouches slightly and digs at the ground with both front paws a few times like a burrowing meerkat, then looks up at the viewer and stands tall again", SQUARE, True),
     "idle-sniff": ("the cute meerkat sniffs the air curiously, nose twitching, lifting its head and turning it slightly side to side, whiskers quivering, then relaxes", SQUARE, True),

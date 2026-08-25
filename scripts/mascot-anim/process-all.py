@@ -46,7 +46,7 @@ CLIPS = {
     "idle-stretch": ("portrait", None, 540, None, 1),
     "idle-scratch": ("portrait", None, 540, None, 1),
     "idle-tail":    ("portrait", None, 540, None, 1),
-    "idle-spin":    ("square", None, 540, None, 1),
+    "idle-peekaboo": ("square", None, 540, None, 1),
     "idle-hop":     ("square", None, 540, None, 1),
     "idle-dig":     ("square", None, 540, None, 1),
     "idle-sniff":   ("square", None, 540, None, 1),
