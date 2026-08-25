@@ -54,6 +54,9 @@ export function PlanCard({ onStartSession }: { onStartSession: () => void }) {
   }
 
   const next = plan?.items.find((i) => !i.done);
+  // Haftanın başında (Pzt–Sal) geçen haftanın tek satırlık özeti (WP-52).
+  const dow = new Date().getDay();
+  const showSummary = plan?.summary && (dow === 1 || dow === 2);
 
   return (
     <section className="card mx-auto w-full max-w-md p-4">
@@ -118,6 +121,11 @@ export function PlanCard({ onStartSession }: { onStartSession: () => void }) {
         </ol>
       )}
 
+      {showSummary ? (
+        <Link href="/profile#growth" className="muted mt-3 block rounded-xl px-3 py-2 text-xs surface-2">
+          {plan!.summary}
+        </Link>
+      ) : null}
       {plan && next ? (
         <button type="button" onClick={() => go(next, plan.items.indexOf(next))} className="btn btn-primary mt-3 w-full px-5 py-3 text-sm">
           Başla: {next.title.replace(/^(Ders tekrarı|Ders|Zayıf nokta): /, "")}

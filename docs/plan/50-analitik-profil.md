@@ -61,3 +61,5 @@ Rapor: profil yalnız kelime metrikleri; beceri yetkinliği, hata tipleri, zaman
 **Kabul.** 3 haftalık veri olan hesapta trend çizgileri; Pazartesi özet kartı; yazılar listeleniyor ve silinebiliyor.
 
 **Süre.** 4 gün. **Bağımlılık.** WP-30, WP-42, WP-50.
+
+**Durum (2026-08-25).** Bitti. `src/lib/growth.ts` (`growthReport`: 8 haftalık yazma/konuşma/kullanım/cevap serileri, yetkinlik şimdi vs 4 hafta önce, kilometre taşları — ilk sınav, ilk 70+ yazı, ilk konuşmalı ders, seviye testi; `weeklySummary`: geçen haftanın tek satırı), `GET /api/growth`, profilde `GrowthCard` (SVG kıvılcım çizgileri, ▲▼ değişim, taşlar), plan kartında Pzt–Sal özet satırı (`Plan.summary`), `/api/cron/summary` (Pazartesi 07:00, push "Haftalık özetin"). e2e §41 (8 kontrol). Kanıt: `reports/shots/wp52-growth.png`.

@@ -8,6 +8,7 @@ import { CandoCard } from "@/components/cando-card";
 import { PlacementCard } from "@/components/placement-card";
 import { ProficiencyCard } from "@/components/proficiency-card";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
+import { GrowthCard } from "@/components/growth-card";
 import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
 
 export const dynamic = "force-dynamic";
@@ -70,6 +71,8 @@ export default async function ProfilePage() {
         />
         {/* Yetkinlik (WP-50): beceri × seviye kanıt çubukları + sıradaki adım. */}
         <ProficiencyCard />
+        {/* Gelişim (WP-52): 8 haftalık çizgiler, yetkinlik değişimi, kilometre taşları. */}
+        <GrowthCard />
         {/* Zayıf noktaların (WP-51): hata tipleri, karıştırmalar, hedefli tur. */}
         <WeakSpotsCard />
         {/* Seviye testi (WP-40): son sonuç, yeniden alma. */}

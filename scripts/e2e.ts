@@ -83,6 +83,7 @@ import { buildWeeklyExam, finishWeekly, weeklyStatus } from "../src/lib/weekly";
 import { bandOf, computeProficiency, weakestSkill, type Evidence, type EvidenceSource, type ProficiencySkill } from "../src/lib/proficiency";
 import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
 import { errorReport, frequentErrorTypes } from "../src/lib/error-analytics";
+import { growthReport } from "../src/lib/growth";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2350,6 +2351,30 @@ async function main() {
   check("sık artikel hatası → aralık ağırlıksızdan kısa", (uwW?.intervalDays ?? 0) < plainIv && (uwW?.intervalDays ?? 0) > 0, `${uwW?.intervalDays} < ${plainIv}`);
   const wEv = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "srs_weight")));
   check("srs_weight olayı kind=article, value=75", wEv.length === 1 && wEv[0].kind === "article" && wEv[0].value === 75);
+
+  console.log("\n41) Gelişim raporu (WP-52)");
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const today41 = "2026-08-25";
+  const lastMon = shiftDay(weekStart(today41), -7);
+  // Geçen hafta: 2 cevap günü, bir yazma değerlendirmesi (65), bir kullanım sınavı (80), bir artikel hatası
+  await db.insert(dailyStats).values([{ userId: USER, day: lastMon, reviews: 30, correct: 20, newWords: 3, xp: 100, seconds: 300 }, { userId: USER, day: shiftDay(lastMon, 2), reviews: 20, correct: 15, newWords: 0, xp: 60, seconds: 200 }]);
+  await db.insert(assessments).values({ userId: USER, kind: "writing", level: "A2", day: shiftDay(lastMon, 1), answer: "x", result: { score: { task: 3, grammar: 2, vocab: 3, structure: 3, overall: 65 }, errors: [], corrected: "x", praise_tr: "", next_tip_tr: "" }, provider: "t", hash: "h1", createdAt: new Date(`${shiftDay(lastMon, 1)}T10:00:00Z`) });
+  await db.insert(exams).values({ userId: USER, kind: "weekly", week: lastMon, level: "A2", score: 80, correct: 12, total: 15, answers: [], createdAt: new Date(`${shiftDay(lastMon, 3)}T10:00:00Z`) });
+  const gw = await db.select().from(words).limit(1);
+  await db.insert(reviews).values({ userId: USER, wordId: gw[0].id, game: "artikel", correct: false, quality: 1, latencyMs: 1000, errorType: "article", detail: "die", createdAt: new Date(`${shiftDay(lastMon, 2)}T10:00:00Z`) });
+  const gr = await growthReport(USER, "A2", today41);
+  check("8 haftalık eksen, sonuncusu bu hafta", gr.weeks.length === 8 && gr.weeks[7] === weekStart(today41));
+  const lw = gr.series.writing.find((p) => p.week === lastMon);
+  check("yazma serisinde geçen hafta 65", lw?.value === 65 && lw.n === 1, JSON.stringify(lw));
+  check("kullanım serisinde geçen hafta 80", gr.series.usage.find((p) => p.week === lastMon)?.value === 80);
+  check("veri olmayan hafta null (sıfır değil)", gr.series.writing[0].value === null);
+  check("kilometre taşları: ilk sınav", gr.milestones.some((m) => m.text.includes("İlk kullanım sınavı: 80")));
+  const sm = gr.summary;
+  check("özet: 50 cevap, yazma 65, kullanım 80, en çok hata artikel", sm.answers === 50 && sm.writing.to === 65 && sm.usage === 80 && sm.topError?.type === "article", sm.text);
+  check("özet metni tek satır Türkçe", sm.text.startsWith("Geçen hafta:") && sm.text.includes("kullanım 80"));
+  const planS = await buildPlan(USER, today41, "de", "A2", 20);
+  check("plan özet satırı taşıyor", typeof planS.summary === "string" && planS.summary!.includes("50 cevap"));
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

@@ -9,6 +9,7 @@ import { computeProficiency } from "@/lib/proficiency";
 import { gatherEvidence, nextStep } from "@/lib/proficiency-data";
 import { nextLesson } from "@/lib/lessons/progress";
 import { weeklyStatus } from "@/lib/weekly";
+import { weeklySummary } from "@/lib/growth";
 
 /**
  * Bugünkü plan (plan WP-60).
@@ -49,6 +50,8 @@ export type Plan = {
   minutes: number;
   /** Hepsi bitti mi. */
   complete: boolean;
+  /** Geçen haftanın tek satırlık özeti (WP-52) — kart hafta başında gösterir. */
+  summary?: string;
 };
 
 
@@ -180,9 +183,17 @@ export async function buildPlan(
   }
 
   const remaining = items.filter((i) => !i.done);
+  let summary: string | undefined;
+  try {
+    const s = await weeklySummary(userId, today);
+    if (s.answers || s.exercises || s.lessonsPassed) summary = s.text;
+  } catch (err) {
+    console.error("[plan] haftalık özet", err);
+  }
   return {
     items,
     minutes: remaining.reduce((a, i) => a + i.minutes, 0),
     complete: items.length > 0 && remaining.length === 0,
+    summary,
   };
 }
