@@ -59,9 +59,14 @@ CLIPS = {
     "walk-right":   ("strip", 2.0, 300, None, 0),
     "walk-left":    ("strip", 3.0, 300, None, 0),
     "push-right":   ("strip", 1.5, 300, "push-left", 0),
-    "pull-right":   ("strip", None, 300, "pull-left", 0),  # ilk=son kare: tüm klip döngü
+    "pull-right":   ("strip", 2.0, 300, "pull-left", 0),   # ping-pong (PINGPONG)
+    "stroll-right": ("strip", 2.0, 300, "stroll-left", 0),
 }
 FPS_IN = 16
+# İleri + geri sarılarak döngülenen klipler: başlangıçtan sona kadar alınır,
+# sonra tersten eklenir. Döngü noktası yapısal olarak dikişsiz; geri sarım
+# çekme klibinde "geri geri sürükleme" hissini veriyor.
+PINGPONG = {"pull-right"}
 
 def key_bg(fin, fout, w, h):
     pts = [(1, 1), (w - 2, 1), (1, h - 2), (w - 2, h - 2), (w // 2, 1), (1, h // 2), (w - 2, h // 2)]
@@ -215,7 +220,12 @@ def main():
         print(f"[{name}]")
         clean(name)
         files = sorted((CLEAN / name).glob("f*.png"))
-        if start_s is not None:
+        if name in PINGPONG:
+            s = round((start_s or 0) * FPS_IN)
+            fwd = files[s:]
+            files = fwd + fwd[-2:0:-1]
+            print(f"  ping-pong: kare {s}.. ({len(files)} kare)")
+        elif start_s is not None:
             s = round(start_s * FPS_IN)
             e = pick_loop(files, s)
             print(f"  döngü: kare {s}..{e} ({(e - s) / FPS_IN:.2f} sn)")

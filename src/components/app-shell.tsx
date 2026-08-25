@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode, useRef } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
+import { ScreenDiag } from "@/components/screen-diag";
 import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
 import { AchievementUnlock } from "./achievement-unlock";
@@ -111,6 +112,9 @@ export function AppShell({
     document.body.appendChild(probe);
 
     const apply = () => {
+      // Düzen alanının gerçek yüksekliği — kabuk buna göre kuruluyor.
+      document.documentElement.style.setProperty("--app-h", `${window.innerHeight}px`);
+
       const inset = probe.getBoundingClientRect().height;
       // Uygulama dikey kilitli (manifest), o yüzden ekranın uzun kenarı esas.
       const screenH = Math.max(window.screen?.height ?? 0, window.screen?.width ?? 0);
@@ -149,7 +153,25 @@ export function AppShell({
   return (
     // h-dvh + iç kaydırma: sayfa gövdesi kaymaz, yalnızca içerik alanı kayar.
     // Böylece oyun ekranları kalan alanı tam olarak bilir ve taşma olmaz.
-    <div ref={shellRef} className="mx-auto flex h-dvh w-full max-w-6xl overflow-hidden">
+    <div
+      ref={shellRef}
+      className="mx-auto flex w-full max-w-6xl overflow-hidden"
+      /*
+        Yükseklik ÖLÇÜLÜYOR; `100dvh` yalnızca yedek.
+
+        `dvh` iOS'ta ana ekrandan açılan uygulamada görünen alanla her zaman
+        aynı gelmiyor ve aradaki fark doğrudan alt gezinmenin altında boşluk
+        olarak beliriyor: kabuk erken bitiyor, çubuk onunla birlikte yukarıda
+        kalıyor, altta gövde zemini görünüyor. `innerHeight` düzen alanının
+        gerçek yüksekliği ve ölçülebiliyor — varsaymak yerine ölçmek, iki
+        turdur yanlış teşhis edilen şeyi kesin olarak kapatıyor.
+
+        Klavye açılınca iOS'ta `innerHeight` değişmiyor (yalnızca
+        `visualViewport` küçülüyor), Android'de ise `dvh` ile aynı biçimde
+        küçülüyor — yani mevcut davranış korunuyor.
+      */
+      style={{ height: "var(--app-h, 100dvh)" }}
+    >
       {/* Kurs/ses aynasının yazılmasından önce çalışması gerekiyor: hesap
           değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
           etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
@@ -159,11 +181,12 @@ export function AppShell({
           altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.
           Tetikleyici zaten var olan `wortspiel:stats` olayı. */}
       <AchievementUnlock />
+      <ScreenDiag />
       <TopProgress />
       <InstallPrompt />
       {/* Masaüstü kenar çubuğu */}
       <aside
-        className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r p-5 md:flex"
+        className="sticky top-0 hidden h-full w-60 shrink-0 flex-col border-r p-5 md:flex"
         style={{ borderColor: "var(--border)" }}
       >
         <Link href="/learn" className="mb-8 flex items-center gap-2">
