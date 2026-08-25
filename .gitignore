@@ -78,6 +78,9 @@ Thumbs.db
 desktop.ini
 data/skills/.exercises.json
 data/skills/.verify.json
+/reports
 
 # Maskot ham Replicate çıktıları — yerelde saklanır, depoya girmez
 data/mascot/raw/
+.vercel
+.env*
