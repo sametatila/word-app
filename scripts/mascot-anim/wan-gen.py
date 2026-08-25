@@ -18,7 +18,9 @@ from pathlib import Path
 
 import requests
 
-BASE = Path(__file__).parent
+REPO = Path(__file__).resolve().parents[2]
+BASE = REPO / "data" / "mascot"          # taban görseller
+RAW = REPO / "data" / "mascot" / "raw"   # ham çıktılar — depoya girer, /tmp'de kaybolmaz
 ENV = Path("/mnt/windows/Users/LinkinqArk/Desktop/Workspace/ai-story/animated-story/credentials/.env")
 MODEL_VERSION = "4eaf2b01d3bf70d8a2e00b219efeb7cb415855ad18b7dacdc4cae664a73a6eea"  # wan-video/wan-2.2-i2v-fast
 
@@ -42,7 +44,12 @@ ACTIONS = {
     "walk-right": ("the cute meerkat turns to face right and walks in place on its hind legs, side profile view facing right, natural cartoon walking cycle, arms swinging gently, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
     "walk-left": ("the cute meerkat turns to face left and walks in place on its hind legs, side profile view facing left, natural cartoon walking cycle, arms swinging gently, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
     "push-right": ("the cute meerkat stands in side profile facing right and walks in place on its hind legs, body leaning far forward, both front arms fully outstretched forward at chest height with palms flat and facing forward, slow effortful steps, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
-    "pull-right": ("the cute meerkat stands in side profile facing left with both front arms outstretched forward at chest height, paws curled downward and gripping, body leaning backward away from its paws, and it takes slow heavy steps walking backward in place, dragging with great effort, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    # Çekme iki aşamalı (sad/sleep gibi): önce nötrden çekme duruşuna geçiş, oradan
+    # seçilen kare pull-base.png olur; sonra o kare hem başlangıç hem bitiş
+    # (last_image) verilerek yerinde geri geri yürüme döngüsü üretilir — klip
+    # kendi içinde dikişsiz döner, kısa pencere kesmeye gerek kalmaz.
+    "pull-enter": ("the cute meerkat turns to face left and settles into a pulling stance: body leaning backward, both front arms outstretched forward at chest height, paws curled downward and gripping tightly, feet planted, then holds this stance while taking slow heavy steps backward in place, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", WIDE, False),
+    "pull-right": ("the cute meerkat, already in a pulling stance facing left with both front arms outstretched forward and paws curled downward, takes slow heavy steps backward in place, straining with effort, its position on the ground never changes and it does not slide, and it finishes in exactly the same stance it started in, the whole body including the tail stays fully inside the frame with clear empty margins on all sides", "pull-base.png", True),
     "idle-dog": ("the cute meerkat drops down to stand on all four paws like a playful little dog, curls its fluffy tail in around its side, tilts its head and looks at the viewer with big cute eyes for a moment, then pushes itself back up to stand upright on its hind legs", NEUTRAL, True),
     "idle-stretch": ("the cute meerkat puffs up and quickly shakes its whole body like shaking off water, fur fluffing out in every direction, arms staying tucked against its body, then its fur smooths back down and it stands calm again", NEUTRAL, True),
     "idle-scratch": ("the cute meerkat scratches the side of its head behind its ear with one front paw a few times, wobbling slightly on its feet, then returns to its calm upright posture", NEUTRAL, True),
@@ -66,10 +73,14 @@ STATES = ["sad-enter", "sleep-enter"]
 
 
 def load_token():
-    for line in ENV.read_text().splitlines():
-        if line.startswith("REPLICATE_API_TOKEN="):
-            return line.split("=", 1)[1].strip().strip('"')
-    sys.exit("REPLICATE_API_TOKEN yok")
+    import os
+    if os.environ.get("REPLICATE_API_TOKEN"):
+        return os.environ["REPLICATE_API_TOKEN"]
+    if ENV.exists():
+        for line in ENV.read_text().splitlines():
+            if line.startswith("REPLICATE_API_TOKEN="):
+                return line.split("=", 1)[1].strip().strip('"')
+    sys.exit("REPLICATE_API_TOKEN yok: ortam değişkeni ver ya da Windows diskini bağla")
 
 
 def data_uri(path: Path) -> str:
@@ -78,7 +89,7 @@ def data_uri(path: Path) -> str:
 
 def generate(token: str, name: str, seed: int) -> bool:
     prompt, base_img, loop = ACTIONS[name]
-    out = BASE / "anim" / "raw" / f"{name}.mp4"
+    out = RAW / f"{name}.mp4"
     if out.exists():
         print(f"[skip] {name} zaten var")
         return True

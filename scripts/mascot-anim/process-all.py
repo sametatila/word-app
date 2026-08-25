@@ -25,8 +25,10 @@ from pathlib import Path
 from PIL import Image, ImageFilter
 import numpy as np
 
-BASE = Path(__file__).parent
-RAW, FRAMES, CLEAN, OUT = (BASE / "anim" / d for d in ("raw", "frames", "clean", "out"))
+REPO = Path(__file__).resolve().parents[2]
+RAW = REPO / "data" / "mascot" / "raw"          # ham mp4'ler (depoda)
+FRAMES, CLEAN = (Path("/tmp/mascot-work") / d for d in ("frames", "clean"))  # ara ürünler
+OUT = REPO / "public" / "anim"                    # doğrudan uygulamaya
 
 # Dikey kliplerde karakter geometrisi (512×768 ölçümü: bbox 437x726+9+21).
 P_FEET = 747 / 768   # ayak çizgisi
@@ -57,7 +59,7 @@ CLIPS = {
     "walk-right":   ("strip", 2.0, 300, None, 0),
     "walk-left":    ("strip", 3.0, 300, None, 0),
     "push-right":   ("strip", 1.5, 300, "push-left", 0),
-    "pull-right":   ("strip", 1.5, 300, "pull-left", 0),
+    "pull-right":   ("strip", None, 300, "pull-left", 0),  # ilk=son kare: tüm klip döngü
 }
 FPS_IN = 16
 
@@ -218,6 +220,10 @@ def main():
             e = pick_loop(files, s)
             print(f"  döngü: kare {s}..{e} ({(e - s) / FPS_IN:.2f} sn)")
             files = files[s:e]
+        elif loop == 0:
+            # Sonsuz döngü + ilk kare = son kare (last_image ile üretildi):
+            # son kare atılır, yoksa döngü noktasında aynı kare iki kez oynar.
+            files = files[:-1]
         pack(name, files, OUT / f"{name}.webp", mode, height, loop)
         if mirror:
             pack(name, files, OUT / f"{mirror}.webp", mode, height, loop, flip=True)
