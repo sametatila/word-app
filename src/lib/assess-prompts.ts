@@ -119,7 +119,7 @@ ${KIND_BRIEF[kind]}
 ${level} SEVİYESİNDEN BEKLENEN: ${LEVEL_EXPECTATIONS[level]}
 
 RUBRİK (her ölçüt 0–4):
-- task: görev karşılandı mı. 4 tam, 3 küçük eksik, 2 kısmen, 1 çok az, 0 konu dışı/boş.
+- task: görev karşılandı mı — DİLBİLGİSİNDEN BAĞIMSIZ: istenen içeriğin hepsi varsa hatalı yazılmış olsa da 4, biri eksikse 3, yarısı varsa 2, çok azı 1, konu dışı/boş 0. Hataları grammar ölçer, task ölçmez.
 - grammar: dilbilgisi doğruluğu seviyeye göre. 4 hatasız ya da seviyenin üstünde yapı denemesinde tek küçük hata, 3 anlamı bozmayan 1–2 hata, 2 birkaç hata ama anlaşılır, 1 sık hata, 0 anlaşılmaz.
 - vocab: kelime seçimi ve çeşitlilik. Yanlış kelime, Türkçeden birebir çeviri, seviyeye göre fakir dağarcık puan düşürür.
 - structure: cümle kurma ve bağlama (cümle için: kelime sırası ve cümlenin bütünlüğü; metin için: akış, bağlaçlar, kayıt).

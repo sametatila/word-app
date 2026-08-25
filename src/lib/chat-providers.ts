@@ -89,8 +89,14 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     baseUrl: "https://api.groq.com/openai/v1",
     envKey: "GROQ_API_KEY",
     envModel: "GROQ_MODEL",
-    defaultModel: "llama-3.3-70b-versatile",
+    // 2026-08: `llama-3.3-70b-versatile` Groq'tan kaldırıldı (404 "model does
+    // not exist") ve zincirdeki yedek sessizce ölmüştü — WP-30 kalite testinde
+    // Mistral 429 verince ortaya çıktı. Kataloğun bugünkü genel modeli
+    // gpt-oss-120b; akıl yürütme modeli olduğu için düşünme bütçesi kısılıyor
+    // (Cerebras'taki aynı modelle aynı ayar).
+    defaultModel: "openai/gpt-oss-120b",
     freeTier: "12K token/dk · 1000 istek/gün",
+    reasoningEffort: "low",
     // Ücretsiz katmanı bu iş için fazlasıyla geniş: günde 2.000 istek ve
     // 28.800 saniye ses. Bir yürüyüş turu ~20 saniyelik ses demek.
     sttModel: "whisper-large-v3-turbo",

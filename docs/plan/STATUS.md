@@ -18,7 +18,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-21 | Konuşma içeriği + monolog | 2 | bekliyor | | | | |
 | WP-22 | Rol yapma sınav modu | 2 | bekliyor | | | | |
 | WP-23 | Açık diyalog motoru | 2 | bekliyor | | | | |
-| WP-30 | AI yazma değerlendirmesi | 3 | bekliyor | | | | |
+| WP-30 | AI yazma değerlendirmesi | 3 | inceleme | Claude | 2026-08-25 | (bkz. git log) | serbest görev → rubrik kartı, kuyruk + cron, Yazılarım; kanıt `reports/shots/wp30-writings.png` |
 | WP-31 | Yazma / soru türleri | 3 | bekliyor | | | | |
 | WP-40 | Yerleştirme testi | 4 | bekliyor | | | | |
 | WP-41 | Seviye ve modül sınavı v2 | 4 | bekliyor | | | | |
@@ -70,3 +70,6 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — `free_sentence` turu PLAYABLE dışında ve oturumda en çok 2: hakemi AI (kota + süre), sağlayıcı yokken tur hiç kurulmuyor (yedek dilbilgisini ölçemiyor; ölçülmeyen iş yaptırmak yerine tur yok). Beceri tarafındaki `kind:"sentence"` görevi ise sağlayıcı yokken yedekle çalışır ve "AI kapalı" der. Claude.
 - 2026-08-25 — Serbest cümle SRS eşlemesi: overall ≥ 90 → 5, ≥ 70 → 4 (doğru), 40–69 → 3 (yanlış, lapse yok), < 40 → 2; yedekte en çok 3. Hata tipi rubriğin ilk hatasından. Claude.
 - 2026-08-25 — WP-60 kapsam: plan kartı (adım 1–2, 5) yapıldı; modlar şeridi (adım 3) ve sınavlar kartı (adım 4) yapılmadı — mevcut "Başka türlü oyna" bölümü ve tek oyun seçici zaten görünür, sınavlar WP-40/41/42 gelmeden boş bir kart olurdu. `dailyStats.plan_done` sütunu açılmadı: "yapıldı" bugünün kayıtlarından türetiliyor (session_done olayı, ders/egzersiz lastAt, oyun cevapları); ayrı bir kayıt planı sözleşmeye çevirirdi. Öneri motoru WP-50 gelene kadar geçici kural: en az çalışılan beceri + en sık hata tipi (≥5/14 gün) → tek oyunlu tur. Claude.
+- 2026-08-25 — Groq varsayılan modeli `llama-3.3-70b-versatile` → `openai/gpt-oss-120b`: eski model Groq'tan kaldırılmış (404), zincirdeki yedek sessizce ölüydü; WP-30 kalite testinde Mistral 429 verince görüldü. Sağlayıcı model kataloğu için `report:providers`'a "404 model_not_found" uyarısı eklenmeli (WP-52 ile). Claude.
+- 2026-08-25 — Rubrikte `task` puanı dilbilgisinden ayrıldı ("içerik varsa hatalı da olsa 4"): gpt-oss hatalı metinlerde görevi de düşürüyordu. Claude.
+- 2026-08-25 — Yazma kuyruğu: `assessments.result` null = bekleyen; `/api/assess/queue` yazar, `/api/cron/assess` (6 saatte bir, `vercel.json`) puanlar ve push bildirir. Kuyrukta görev metni saklanmıyor (yalnız tür/seviye/metin); gecikmeli değerlendirme görev puanında yaklaşık — kart "gecikmeli" der. Claude.

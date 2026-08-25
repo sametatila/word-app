@@ -1,0 +1,1 @@
+ALTER TABLE "assessments" ALTER COLUMN "result" DROP NOT NULL;

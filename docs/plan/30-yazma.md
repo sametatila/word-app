@@ -28,6 +28,8 @@ Rapor: 80 serbest görev var ama metin hiç okunmuyor; "Bitirdim" 20 kelime + ö
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-01.
 
+**Durum (2026-08-25).** Bitti. `writing-player` serbest görev: "Değerlendir" (≥5 kelime) → `askAssess(writing)` (kontrol listesi + kelime sınırı kısıt olarak) → `AssessmentCard` + "Devam"/"Bir daha dene"; tamamlama overall ≥ 60 ve kelime sınırı (40–59 "geliştir", <40 tekrar önerisi, zorlama yok); yedekte eski kural + metin `/api/assess/queue`'ya. Egzersiz bitişinde rubrik ortalaması `useSkillFinish(correct, score)` → `user_skills.last_score`. Kuyruk: `assessments.result` null (migrasyon `0030_assess_queue.sql`, üretime uygulandı), `runAssessQueue` + `/api/cron/assess` (vercel.json, 6 saatte bir) + push bildirimi. "Yazılarım": `GET/DELETE /api/assessments`, `writings-card.tsx` profilde (`#writings`). Kalite testi: 6 yazma örneği (kabul cümlesi `eine → einer` Dativ gerekçesiyle ✓), sonuçlar `assess-samples.md` WP-30 eki; yol boyunca Groq'un ölü modeli düzeltildi. e2e §35 (6 kontrol). Kanıt: `reports/shots/wp30-writings.png`.
+
 ---
 
 ## WP-31 · Yazma görev türleri ve okuma/dinleme soru türleri

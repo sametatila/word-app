@@ -69,7 +69,7 @@ import { track } from "../src/lib/events";
 import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
 import { overallScore, parseAssessment, repairQuotes } from "../src/lib/assess-prompts";
 import { fallbackAssessment } from "../src/lib/assess-client";
-import { assess, assessHash } from "../src/lib/assess";
+import { assess, assessHash, deleteAssessment, listAssessments, queueAssessment, runAssessQueue } from "../src/lib/assess";
 import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
 import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
 import { buildPlan } from "../src/lib/plan";
@@ -2195,6 +2195,26 @@ async function main() {
   check("5 artikel hatası → zayıf nokta öğesi, Artikel Yarışı", weak?.href === "/learn?game=artikel" && weak.title.includes("artikel"), weak?.title);
   check("tur bugün tamamlandı işareti (session_done)", plan.items.find((i) => i.id === "review")?.done === true);
   check("zayıf nokta öğesi bugün 5 artikel cevabıyla yapıldı sayılıyor", weak?.done === true);
+
+  console.log("\n35) Yazma değerlendirme kuyruğu ve arşiv (WP-30)");
+  await db.delete(assessments).where(eq(assessments.userId, USER));
+  const qReq = { kind: "writing" as const, level: "A2" as const, task: { prompt: "mesaj yaz" }, answer: { text: "Hallo Anna, wollen wir uns morgen treffen?" }, exerciseId: "a2-w1" };
+  const q1 = await queueAssessment(USER, qReq, monday);
+  const q2 = await queueAssessment(USER, qReq, monday);
+  check("kuyruğa alındı, aynı metin ikinci kez alınmadı", q1.queued && !q2.queued && q1.id === q2.id);
+  const listed = await listAssessments(USER);
+  check("arşivde bekleyen kayıt (result null)", listed.length === 1 && listed[0].result === null && listed[0].answer.startsWith("Hallo Anna"));
+  const cacheMiss = await assess(USER, qReq, monday);
+  check("bekleyen kayıt önbellek sayılmıyor", !(cacheMiss.ok && cacheMiss.cached));
+  if (!chatConfigured()) {
+    const run = await runAssessQueue(5);
+    check("sağlayıcısız kuyruk dokunulmadan bekliyor", run.pending === 1 && run.done === 0);
+  } else {
+    const run = await runAssessQueue(5);
+    check("kuyruk işlendi (sağlayıcı var)", run.done + run.failed + run.pending === 1);
+  }
+  check("silme yalnız sahibine", (await deleteAssessment("baskasi", q1.id!)) === false && (await deleteAssessment(USER, q1.id!)) === true);
+  check("silindi", (await listAssessments(USER)).length === 0);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

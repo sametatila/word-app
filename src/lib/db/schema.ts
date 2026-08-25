@@ -715,7 +715,13 @@ export const assessments = pgTable(
     /** Kullanıcının yerel günü — kota ve gelişim grafiği buna göre. */
     day: date("day").notNull(),
     answer: text("answer").notNull(),
-    result: jsonb("result").notNull(),
+    /**
+     * Doğrulanmış JSON; sağlayıcı kapalıyken KUYRUK kaydı olarak null
+     * (WP-30): metin saklanır, `/api/cron/assess` servis açılınca puanlar ve
+     * kullanıcıya bildirim gider. Null satırlar önbellek ve gelişim
+     * sorgularına girmez.
+     */
+    result: jsonb("result"),
     /** "groq/llama-3.3-70b-versatile" gibi; önbellekten dönende de aynı. */
     provider: text("provider"),
     hash: text("hash").notNull(),

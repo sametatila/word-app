@@ -55,3 +55,22 @@ Gözlemler:
 - Ayrıştırıcı sağlamlığı asıl kazanım: modelin JSON'u beş farklı biçimde bozduğu görüldü (iç tırnak, dizeyi saran çift tırnak, tek tırnaklı kapanış/anahtar, virgüllü alıntı listesi, unutulmuş kapanış). Hepsi `assess-prompts.ts` `extractJson`/`repairQuotes` içinde tek kuralla (`closesString`) ele alınıyor ve e2e §29'da sabitlendi.
 - Konuşma dökümünde model bir kez `spelling` yazdı (a2-w-mixed'de değil, yazmada — geçerli); dökümde `spelling` ayrıştırıcıda düşürülüyor.
 - Diğer sağlayıcılar (Groq llama-3.3-70b, Cerebras gpt-oss-120b) bu turda hiç devreye girmedi; Mistral limiti dolduğunda davranış farkı olabilir — `CHAT_PROVIDER=groq npm run test:assess` ile ayrıca ölçülmeli.
+
+## WP-30 eki — yazma örnekleri (2026-08-25)
+
+`scripts/assess-eval.ts`'e 6 yazma örneği eklendi (26 örnek): `a1-w-wohnung` (kabul cümlesi: "in eine kleine Wohnung" → `case`), `a1-w-tag`, `a2-w-urlaub`, `a2-w-einladung`, `b1-w-beschwerde`, `b1-w-meinung-weak`.
+
+Koşu sırasında iki bulgu:
+1. **Mistral 429** (20. istekten sonra dakikalık limit) ve zincirdeki yedek **Groq 404**: `llama-3.3-70b-versatile` Groq'tan kaldırılmış — üretimde yedek sessizce ölüydü. Varsayılan `openai/gpt-oss-120b` (reasoning_effort low) yapıldı; Cerebras zaten aynı modeli kullanıyor.
+2. gpt-oss-120b hatalı metinlerde `task` puanını dilbilgisiyle birlikte düşürüyordu (insan 4 → model 2; 3 → 0). Rubrikte `task` "dilbilgisinden bağımsız" diye netleştirildi; sonra Groq'ta `a2-w-urlaub` 4/1/4/2 (insan 4/2/3/3), `b1-w-meinung-weak` 3/2/2/2 (insan 3/2/2/2) — ±1 içinde.
+
+| örnek | sağlayıcı | insan | model | ±1 | beklenen tip |
+|---|---|---|---|---|---|
+| a1-w-wohnung | mistral | 4/2/3/3 | 4/3/4/4 | ✓ | case ✓ (+article) |
+| a1-w-tag | mistral | 4/3/3/3 | 4/3/4/4 | ✓ | verb_position ✓ |
+| a2-w-urlaub | groq/gpt-oss | 4/2/3/3 | 4/1/4/2 | ✓ | verb_position ✓, article → word_order |
+| a2-w-einladung | groq/gpt-oss | 4/4/4/4 | 4/4/4/4 | ✓ | — |
+| b1-w-beschwerde | groq/gpt-oss | 4/4/4/4 | 4/4/4/4 | ✓ | — |
+| b1-w-meinung-weak | groq/gpt-oss | 3/2/2/2 | 3/2/2/2 | ✓ | verb_position ✓ |
+
+Toplam (26 örnek, iki sağlayıcı karışık): 26/26 ±1 içinde; hata tipi 19/21; span 14/14; temiz cevaba hata 0.

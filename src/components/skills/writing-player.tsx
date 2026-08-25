@@ -25,14 +25,20 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
   const [step, setStep] = useState(0);
   const [round, setRound] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
+  /** AI rubrik puanları (yalnız değerlendirilen görevler) — ortalaması beceri kaydına `score` olarak gider. */
+  const scores = useRef<number[]>([]);
   const active = step < total ? exercise.tasks[step] : null;
 
-  function completeTask(ok: boolean) {
+  function completeTask(ok: boolean, score?: number) {
     const c = correctCount + (ok ? 1 : 0);
     setCorrectCount(c);
+    if (typeof score === "number") scores.current.push(score);
     const next = step + 1;
     setStep(next);
-    if (next >= total) void finish(c);
+    if (next >= total) {
+      const avg = scores.current.length ? Math.round(scores.current.reduce((a, b) => a + b, 0) / scores.current.length) : undefined;
+      void finish(c, avg);
+    }
   }
 
   return (
@@ -69,6 +75,8 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
           <FreeTask
             key={`${round}-${step}`}
             task={active}
+            level={exercise.level}
+            exerciseId={exercise.id}
             draftKey={`wortspiel-draft-${exercise.id}-${step}`}
             onDone={completeTask}
           />
@@ -82,6 +90,7 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
         state={state}
         onRetry={() => {
           reset();
+          scores.current = [];
           setCorrectCount(0);
           setStep(0);
           setRound((r) => r + 1);
@@ -254,11 +263,15 @@ const UMLAUTS = ["ä", "ö", "ü", "ß", "Ä", "Ö", "Ü"];
 function FreeTask({
   task,
   draftKey,
+  level,
+  exerciseId,
   onDone,
 }: {
   task: FreeTaskData;
   draftKey: string;
-  onDone: (ok: boolean) => void;
+  level: string;
+  exerciseId: string;
+  onDone: (ok: boolean, score?: number) => void;
 }) {
   // Taslak cihazda saklanır: sayfadan çıkıp dönen öğrenci yazdığını kaybetmez.
   // localStorage yalnızca istemcide var; hidrasyon uyuşmazlığı olmasın diye
@@ -268,6 +281,13 @@ function FreeTask({
   const [checks, setChecks] = useState<boolean[]>(() => task.checklist.map(() => false));
   const [showSample, setShowSample] = useState(false);
   const areaRef = useRef<HTMLTextAreaElement>(null);
+  // AI değerlendirmesi (WP-30): kontrol listesi bilgi amaçlı kaldı, kilit
+  // değil; görevi tamamlayan şey rubrik puanı. Sağlayıcı yoksa eski kural
+  // (liste + kelime sayısı) ve metin kuyruğa yazılır.
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
+  const [failure, setFailure] = useState<AssessFailure | null>(null);
+  const [queued, setQueued] = useState(false);
 
   useEffect(() => {
     try {
@@ -289,18 +309,61 @@ function FreeTask({
     }
   }, [draftKey, text]);
 
-  function done(ok: boolean) {
+  function done(ok: boolean, score?: number) {
     try {
       localStorage.removeItem(draftKey);
     } catch {
       /* yok say */
     }
-    onDone(ok);
+    onDone(ok, score);
   }
+
+  function request(): AssessRequest {
+    return {
+      kind: "writing",
+      level: level as AssessLevel,
+      task: {
+        prompt: task.prompt,
+        targets: task.phrases.map((p) => p.de),
+        constraints: [...task.checklist, `en az ${task.minWords} kelime`],
+      },
+      answer: { text: text.trim() },
+      exerciseId,
+      locale: "tr",
+    };
+  }
+
+  async function evaluate() {
+    if (busy || result) return;
+    setBusy(true);
+    const req = request();
+    const ai = await askAssess(req);
+    if (ai.ok) {
+      setResult(ai.result);
+      setFailure(null);
+    } else {
+      setResult(fallbackAssessment(req));
+      setFailure(ai.reason);
+      if (ai.reason === "not_configured" || ai.reason === "upstream" || ai.reason === "timeout") {
+        // Metin kaybolmasın: sunucu kuyruğa alır, servis dönünce puanlar.
+        try {
+          const res = await fetch("/api/assess/queue", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(req) });
+          setQueued(res.ok);
+        } catch {
+          setQueued(false);
+        }
+      }
+    }
+    setBusy(false);
+  }
+
 
   const words = text.trim().split(/\s+/).filter(Boolean).length;
   const enough = words >= task.minWords;
   const ready = enough && checks.every(Boolean);
+  /** Görev tamamlandı mı: AI → genel puan ≥ 60 ve kelime sınırı; yedekte eski kural. */
+  const aiScore = result && !("offline" in result && result.offline) ? result.score.overall : null;
+  const ok = aiScore !== null ? aiScore >= 60 && enough : ready;
 
   /** Türkçe klavyede olmayan Almanca harfleri imlecin olduğu yere ekler. */
   function insert(ch: string) {
@@ -431,28 +494,51 @@ function FreeTask({
         ) : null}
       </div>
 
-      <div className="mt-4 flex items-center gap-3">
-        <button
-          type="button"
-          disabled={!ready}
-          onClick={() => done(true)}
-          className="btn btn-primary px-6 py-2.5 disabled:opacity-50"
-        >
-          Bitirdim
-        </button>
-        <button
-          type="button"
-          onClick={() => done(false)}
-          className="btn btn-ghost px-4 py-2.5 text-sm"
-        >
-          Bu görevi atla
-        </button>
-      </div>
-      {!ready ? (
-        <p className="muted mt-2 text-xs">
-          Bitirmek için en az {task.minWords} kelime yaz ve kontrol listesini işaretle.
-        </p>
-      ) : null}
+      {result ? (
+        <div className="mt-4 flex flex-col gap-3">
+          <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample} />
+          {queued ? (
+            <p className="muted text-xs">Metnin kaydedildi; servis açılınca puanlanacak ve bildirim alacaksın.</p>
+          ) : null}
+          {aiScore !== null && aiScore < 60 ? (
+            <p className="text-xs" style={{ color: "var(--color-flame)" }}>
+              {aiScore >= 40 ? "Geliştir: düzeltmelere bakıp bir daha dene." : "Bir daha denemeni öneririm — zorlama yok, devam da edebilirsin."}
+            </p>
+          ) : null}
+          <div className="flex items-center gap-3">
+            <button type="button" onClick={() => done(ok, aiScore ?? undefined)} className="btn btn-primary px-6 py-2.5">
+              Devam
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setResult(null);
+                setFailure(null);
+                setQueued(false);
+              }}
+              className="btn btn-ghost px-4 py-2.5 text-sm"
+            >
+              Bir daha dene
+            </button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="mt-4 flex items-center gap-3">
+            <button type="button" disabled={busy || words < 5} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-50">
+              {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+            </button>
+            <button type="button" onClick={() => done(false)} className="btn btn-ghost px-4 py-2.5 text-sm">
+              Bu görevi atla
+            </button>
+          </div>
+          {!enough ? (
+            <p className="muted mt-2 text-xs">
+              En az {task.minWords} kelime ({words}) — değerlendirme yine yapılır, görev "tamamlandı" sayılmaz.
+            </p>
+          ) : null}
+        </>
+      )}
     </section>
   );
 }

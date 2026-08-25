@@ -3,6 +3,7 @@ import { ensureProfile, getProgress } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
 import { ProgressView } from "@/components/progress-view";
 import { AchievementWall } from "@/components/achievement-wall";
+import { WritingsCard } from "@/components/writings-card";
 
 export const dynamic = "force-dynamic";
 
@@ -60,6 +61,8 @@ export default async function ProfilePage() {
           longest={data.profile.longestStreak}
           today={today}
         />
+        {/* Yazılarım (WP-30): değerlendirme arşivi, silme. */}
+        <WritingsCard />
       </ProfileForm>
     );
   } catch (err) {
