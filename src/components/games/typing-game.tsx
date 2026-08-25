@@ -52,7 +52,8 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   const [value, setValue] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [hintUsed, setHintUsed] = useState(false);
-  const [hintShown, setHintShown] = useState(false);
+  // İpuçlu tur (yeni kelime / basamak inişi): iskelet baştan açık, ceza yok.
+  const [hintShown, setHintShown] = useState(Boolean(round.assist));
 
   const inputRef = useRef<HTMLInputElement>(null);
   const started = useRef(Date.now());
@@ -62,13 +63,13 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     setValue("");
     setStatus("idle");
     setHintUsed(false);
-    setHintShown(false);
+    setHintShown(Boolean(round.assist));
     started.current = Date.now();
     inputRef.current?.focus();
     // Cevaptan sonra okunacak metin baştan belli: kelimenin doğru yazımı.
     // Önden indirmek dokunuşla sesin başlaması arasındaki boşluğu kapatıyor.
     prefetchGerman(withArtikel(word));
-  }, [round.id, word]);
+  }, [round.id, word, round.assist]);
 
   const letterCount = word.de.replace(/\s+/g, "").length;
   const firstLetter = word.de.trim().charAt(0).toUpperCase();
@@ -176,6 +177,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           </span>
           <span>
             {letterCount} harf · <strong>{firstLetter}</strong> ile başlıyor
+            {round.assist ? " · ipuçlu" : ""}
           </span>
         </div>
       }

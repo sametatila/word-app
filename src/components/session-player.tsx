@@ -18,6 +18,7 @@ import {
 } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
+import { EASE_AFTER_MISSES, easeRound, isProductionGame } from "@/lib/ladder";
 import { LevelBadge } from "@/components/level-badge";
 import { prefetchGerman } from "@/components/speak-button";
 import { ChallengePlayer } from "@/components/challenge-player";
@@ -353,11 +354,25 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     [],
   );
 
+  /**
+   * Oturum içi basamak inişi (WP-14): art arda üç üretim yanlışında kalan
+   * üretim turları hafifler (çeviri → cümle diz, yazarak tamamla → şıklı,
+   * yazma → ipuçlu). Kalıcı değil: sonraki oturum sunucuda yeniden kurulur.
+   * A/B bayrağı profilde yok (STATUS karar kaydı); etkisi raporda üretim
+   * payı ve doğruluk olarak izlenir.
+   */
+  const [eased, setEased] = useState(false);
+  const missStreak = useRef(0);
+
   const handleDone = useCallback(
     async (round: Round, results: GameResult[]) => {
       const enriched: Answer[] = results.map((r) => ({ ...r, game: round.game }));
       pending.current.push(...enriched);
       marks.current.push(...results.map((r) => r.correct));
+      if (isProductionGame(round.game)) {
+        missStreak.current = results.every((r) => r.correct) ? 0 : missStreak.current + 1;
+        if (missStreak.current >= EASE_AFTER_MISSES) setEased(true);
+      }
 
       // Yanlış bilinen kelimeleri oturum özetinde göstermek için topla
       if (results.some((r) => !r.correct)) {
@@ -704,7 +719,12 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           className="flex min-h-0 flex-1 flex-col"
         >
           <FitBox>
-            <GameSwitch round={round} onDone={(res) => void handleDone(round, res)} />
+            {/* Basamak inişinde oynanan tur hafifletilmiş olanıdır; cevap da
+                onun oyun adıyla kaydedilir (çeviri yerine cümle diz). */}
+            {(() => {
+              const played = eased ? easeRound(round) : round;
+              return <GameSwitch round={played} onDone={(res) => void handleDone(played, res)} />;
+            })()}
           </FitBox>
         </motion.div>
       </AnimatePresence>

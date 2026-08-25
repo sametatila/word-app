@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { whyFor } from "@/lib/why";
-import { miss } from "@/lib/errors";
+import { classifyTyping, miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import type { GameProps } from "./types";
+import { matchesAnswer, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
@@ -25,26 +25,32 @@ type ClozeRound = Extract<Round, { game: "cloze" }>;
 export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   const { word, sentence, sentenceTr, sentenceEn, answer, options } = round;
   const [before, after] = sentence.split("_____");
+  const typeMode = round.mode === "type";
 
   const [picked, setPicked] = useState<string | null>(null);
+  const [draft, setDraft] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
   const started = useRef(Date.now());
   const { speakAndExit } = useRoundExit();
 
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
+    setDraft("");
     // Doğru cümlenin sesi tur açılırken iniyor. Hangi şıkkın seçileceği belli
     // değil ama doğru cümle her hâlükârda okunuyor; önden indirmek dokunuşla
     // sesin başlaması arasındaki boşluğu kapatıyor.
     prefetchGerman(`${before}${answer}${after}`.trim());
   }, [round.id, before, after, answer]);
 
-  const correct = picked === answer;
+  // Yazarak tamamlamada büyük/küçük harf ve umlaut yazımı hoş görülür
+  // (kelime oyunlarındaki kural); şıkta metin birebir.
+  const correct = picked !== null && (typeMode ? matchesAnswer(picked, [answer]) : picked === answer);
 
   function choose(opt: string) {
     if (picked) return;
     setPicked(opt);
-    const isCorrect = opt === answer;
+    const isCorrect = typeMode ? matchesAnswer(opt, [answer]) : opt === answer;
     const latencyMs = Date.now() - started.current;
 
     // Okunan şey KELİME değil, tamamlanmış CÜMLE. Boşluk doldurma oyununda
@@ -62,7 +68,15 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     // Geçiş çizgisi sesin GERÇEK uzunluğunda dolduruluyor ve tur tam o bitince
     // kapanıyor. Sabit süre iki yönde de yanlıştı: kısa tahminde çizgi dolup
     // kullanıcı bekliyor, uzun tahminde ses bittikten sonra boşuna bekleniyordu.
-    const advance = () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", opt) }]);
+    const advance = () =>
+      onDone([
+        {
+          wordId: word.id,
+          correct: isCorrect,
+          latencyMs,
+          ...miss(isCorrect, typeMode ? classifyTyping(opt, [answer]) : "meaning", opt),
+        },
+      ]);
 
     vibrate(isCorrect ? "correct" : "wrong");
     const tail = isCorrect ? 0 : WRONG_TAIL_MS;
@@ -74,9 +88,13 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
 
   return (
     <GameShell
-      label="Cümleyi Tamamla"
-      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
-      why={picked != null && picked !== answer ? whyFor({ type: "meaning", word, detail: picked }) : null}
+      label={typeMode ? "Yazarak Tamamla" : "Cümleyi Tamamla"}
+      verdict={picked == null ? null : correct ? "correct" : "wrong"}
+      why={
+        picked != null && !correct
+          ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked })
+          : null
+      }
       feedback={
         <span>
           <strong>{answer}</strong> — {word.tr}
@@ -126,6 +144,52 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
         ) : undefined
       }
     >
+      {typeMode ? (
+        /* Yazarak tamamlama (WP-14): şık yok, boşluğa yazılır. Umlaut tuşları
+           yazma oyunundaki gibi; ipucu olarak kelimenin Türkçesi yer tutucuda. */
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (draft.trim()) choose(draft.trim());
+          }}
+          className="flex flex-col gap-3"
+        >
+          <input
+            ref={inputRef}
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            disabled={picked != null}
+            autoFocus
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
+            lang="de"
+            placeholder={`Boşluğa yaz… (${word.tr})`}
+            className={`card min-h-14 w-full px-4 text-lg outline-none ${
+              picked != null && !correct ? "animate-shake border-[color:var(--color-rose)]" : ""
+            } ${picked != null && correct ? "border-[color:var(--color-mint)]" : ""}`}
+          />
+          <div className="flex flex-wrap justify-center gap-2">
+            {(["ä", "ö", "ü", "ß"] as const).map((ch) => (
+              <button
+                key={ch}
+                type="button"
+                disabled={picked != null}
+                onClick={() => {
+                  setDraft((v) => v + ch);
+                  inputRef.current?.focus();
+                }}
+                className="btn btn-ghost min-h-9 min-w-9 px-3 text-base"
+              >
+                {ch}
+              </button>
+            ))}
+          </div>
+          <button type="submit" disabled={picked != null || !draft.trim()} className="btn btn-primary min-h-12 px-4 text-sm">
+            Kontrol Et
+          </button>
+        </form>
+      ) : (
       <div className="grid grid-cols-2 gap-3">
         {options.map((opt, i) => {
           const isAnswer = opt === answer;
@@ -148,6 +212,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
           );
         })}
       </div>
+      )}
     </GameShell>
   );
 }

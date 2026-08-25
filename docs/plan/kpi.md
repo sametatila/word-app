@@ -31,21 +31,23 @@ group by 1 order by 1;
 **Hedef.** Artan; kayıtlı kullanıcının ≥ %40'ı.
 
 ### 2. Üretim oranı
-**Tanım.** Öğrencinin kendisinin ürettiği cevaplar (çeviri, dönüştürme, serbest cümle, yazma, konuşma drill'i, rol yapma) / bütün cevaplar. Tanıma cevapları (çoktan seçmeli, eşleştirme, doğru-yanlış) paydada.
-**Kaynak.** `events.production_attempt` (pay) + `reviews` (payda).
+**Tanım.** Öğrencinin kendisinin ürettiği cevaplar / bütün cevaplar. Üretim = kelime turunda üretim oyunları (`lib/ladder.ts` `PRODUCTION_GAMES`: yazma, harf bulmacası, cümle diz, çeviri, sesli) + üretim görevleri (`production_attempt`: serbest cümle, yazma, konuşma drill'i, rol yapma). Tanıma = çoktan seçmeli, eşleştirme, doğru-yanlış, artikel, çoğul, dinleme.
+**Kaynak.** `events.production_attempt` + `reviews.game`.
 ```sql
 with p as (
   select date_trunc('week', day)::date as week, count(*) as n
   from events where name = 'production_attempt' group by 1),
 r as (
-  select date_trunc('week', created_at)::date as week, count(*) as n
+  select date_trunc('week', created_at)::date as week,
+         count(*) filter (where game in ('typing','scramble','order','translate','speak')) as prod,
+         count(*) filter (where game not in ('typing','scramble','order','translate','speak')) as recog
   from reviews group by 1)
 select coalesce(p.week, r.week) as week,
-       coalesce(p.n,0) as production, coalesce(r.n,0) as recognition,
-       round(100.0 * coalesce(p.n,0) / nullif(coalesce(p.n,0) + coalesce(r.n,0), 0)) as production_pct
+       coalesce(p.n,0) + coalesce(r.prod,0) as production, coalesce(r.recog,0) as recognition,
+       round(100.0 * (coalesce(p.n,0) + coalesce(r.prod,0)) / nullif(coalesce(p.n,0) + coalesce(r.prod,0) + coalesce(r.recog,0), 0)) as production_pct
 from p full join r on p.week = r.week order by 1;
 ```
-**Hedef.** Bugün ~%0 (yalnız yazma/konuşma egzersizleri) → Faz 1 sonunda ≥ %35, Faz 3 sonunda ≥ %45.
+**Hedef.** ≥ %40 (WP-14 merdiveni); Faz 3 sonunda ≥ %45. Oyun listesi `lib/ladder.ts` ile aynı tutulur.
 
 ### 3. Kullanım sınavı skoru
 **Tanım.** Haftalık kullanım sınavının (WP-42) ortalama puanı ve giren kişi sayısı. Seviye/modül sınavları ayrı satırda.

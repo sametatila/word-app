@@ -71,6 +71,7 @@ import { overallScore, parseAssessment, repairQuotes } from "../src/lib/assess-p
 import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash } from "../src/lib/assess";
 import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
+import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2143,6 +2144,28 @@ async function main() {
   await submitAnswers(USER, [{ wordId: w0, game: "translate", correct: false, latencyMs: 9000, quality: 5 }], monday, 20);
   const [rv3] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, w0))).orderBy(desc(reviews.id)).limit(1);
   check("yanlış cevap kalite 3'ü aşamıyor", rv3?.quality === 3);
+
+  console.log("\n32) Oyun merdiveni (WP-14)");
+  check("üretim oyunları listesi", isProductionGame("translate") && isProductionGame("typing") && !isProductionGame("choice"));
+  check("yeni kelimede tanıma + harf bulmacası, yazma yok", ladderGames("fresh", { de: "Haus", artikel: "das" }).includes("scramble") && !ladderGames("fresh", { de: "Haus", artikel: "das" }).includes("typing"));
+  check("sağlam kelimede üretim önde", ladderGames("strong", { de: "Haus", artikel: "das" }).filter((g) => isProductionGame(g)).length >= 4);
+  check("yazarak tamamlama olasılığı basamağa göre", clozeTypeChance("fresh") === 0 && clozeTypeChance("strong") > clozeTypeChance("solid"));
+  const trRoundE = { id: "x", game: "translate" as const, word: { ...trWords[0], isNew: false } as never, sentence: { tr: "t", de: "Ich gehe heute ins Kino.", en: null }, alternatives: [] };
+  const eased = easeRound(trRoundE);
+  check("basamak inişi: çeviri → cümle diz, aynı cümle", eased.game === "order" && eased.answer.join(" ") === "Ich gehe heute ins Kino" && eased.tail === "." && eased.tokens.length === 5);
+  const clozeE = easeRound({ id: "c", game: "cloze", word: trRoundE.word, sentence: "a _____ b", sentenceTr: null, sentenceEn: null, answer: "x", options: ["x", "y"], mode: "type" });
+  check("basamak inişi: yazarak tamamla → şıklı", clozeE.game === "cloze" && clozeE.mode === undefined);
+  const typE = easeRound({ id: "t", game: "typing", word: trRoundE.word, alternatives: [] });
+  check("basamak inişi: yazma → ipuçlu", typE.game === "typing" && typE.assist === true);
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const sL = await buildSession(USER, day1);
+  const introIds = sL.rounds.filter((r) => r.game === "intro").map((r) => (r as { word: { id: number } }).word.id);
+  const assistedIds = sL.rounds.filter((r) => r.game === "typing" && (r as { assist?: boolean }).assist).map((r) => (r as { word: { id: number } }).word.id);
+  check("yeni kelimelerin bir kısmı aynı oturumda ipuçlu yazılıyor", assistedIds.length > 0 && assistedIds.every((id) => introIds.includes(id)), `intro ${introIds.length}, assist ${assistedIds.length}`);
+  const firstIntro = sL.rounds.findIndex((r) => r.game === "intro");
+  const firstAssist = sL.rounds.findIndex((r) => r.game === "typing" && (r as { assist?: boolean }).assist);
+  check("ipuçlu yazma tanıtımdan en az iki tur sonra", firstAssist - firstIntro >= 2, `${firstIntro} → ${firstAssist}`);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

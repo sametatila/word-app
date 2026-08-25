@@ -13,7 +13,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-11 | Dönüştürme drilleri | 1 | bekliyor | | | | |
 | WP-12 | Serbest cümle görevi | 1 | bekliyor | | | | |
 | WP-13 | "Neden" geri bildirimi | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/why.ts`, `FeedbackLine`, şerit 2. satır, cheatsheet derin bağlantı; kanıt `reports/shots/wp13-*.png` |
-| WP-14 | Oyun merdiveni | 1 | bekliyor | | | | |
+| WP-14 | Oyun merdiveni | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/ladder.ts`, yazarak tamamla, yeni kelimeye ipuçlu yazma, oturum içi basamak inişi; kanıt `reports/shots/wp14-*.png` |
 | WP-20 | Telaffuz puanlama | 2 | bekliyor | | | | sağlayıcı kararı önce |
 | WP-21 | Konuşma içeriği + monolog | 2 | bekliyor | | | | |
 | WP-22 | Rol yapma sınav modu | 2 | bekliyor | | | | |
@@ -63,3 +63,7 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — WP-70 adım 4 (paket/apply genelleştirme) bu turda yazılmadı: mevcut `data/skills/make-packets.mjs` + `apply-skills.ts` deseni SPEC'te akış olarak tarif edildi; ilk yeni içerik türü (WP-71 B1 pilotu) gelince genelleştirilecek — soyut bir üretici yazmak, tüketicisi olmadan yanlış soyutlama riski. Claude.
 - 2026-08-25 — Çeviri turunda sıra hatası `correct=false` + `quality=3`: istatistikte ve hata tipinde yanlış sayılır (öğrenci cümleyi kuramadı), SRS'te kelime lapse etmez (kelime bilinmiş). `Answer.quality` sunucuda 0–5'e kilitlenir; yanlış cevap 3'ü aşamaz, doğru cevap 3'ün altına inemez. Claude.
 - 2026-08-25 — Çeviri AI onayı: yerel hakem "yanlış" dediğinde ve cümle ≥ 3 kelimeyse `/api/assess` (sentence) 6 sn tavanla sorulur; overall ≥ 75 ve task ≥ 3 ise kabul (kalite 4, "anlamca doğru — başka kuruluş"). Sağlayıcı yok/zaman aşımı → yerel karar. Kota bu yolla tüketilir; `report:learning` üretim satırında görünür. Claude.
+- 2026-08-25 — WP-14 A/B bayrağı (`profiles.flags.ladder`) yazılmadı: `profiles` tablosunda `flags` sütunu yok, salt bunun için şema açmak gereksiz; merdiven herkese açık, etkisi `report:learning` KPI 2 (üretim payı) ve doğrulukla izlenir. Claude.
+- 2026-08-25 — KPI 2 tanımı genişledi: üretim = `production_attempt` olayları + `reviews` içinde üretim oyunları (`lib/ladder.ts PRODUCTION_GAMES`: typing/scramble/order/translate/speak). Önce yalnız olaylar sayılıyordu ve kelime turundaki üretim görünmez kalıyordu. Claude.
+- 2026-08-25 — Yeni kelimenin ipuçlu yazma turu kuyruğun sonuna değil iki kelime sonrasına serpiştiriliyor: 10 yeni kelime × 3 tur = 30 > 20 tavan, sona konunca hiç çıkmıyordu (e2e ile ölçüldü). Claude.
+- 2026-08-25 — Oturum içi basamak inişi istemcide: sunucu turları önceden kurduğu için `easeRound` eldeki veriyle dönüştürür (çeviri → cümle diz, yazarak tamamla → şıklı, yazma → ipuçlu); cevap oynanan oyunun adıyla kaydedilir. Claude.

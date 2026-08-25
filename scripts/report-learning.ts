@@ -57,12 +57,14 @@ async function main() {
       select date_trunc('week', day)::date as week, count(*)::int as n
       from events where name = 'production_attempt' and day >= current_date - ${days}::int group by 1),
     r as (
-      select date_trunc('week', created_at)::date as week, count(*)::int as n
+      select date_trunc('week', created_at)::date as week,
+             count(*) filter (where game in ('typing','scramble','order','translate','speak'))::int as prod,
+             count(*) filter (where game not in ('typing','scramble','order','translate','speak'))::int as recog
       from reviews where created_at >= current_date - ${days}::int group by 1)
-    select coalesce(p.week, r.week)::text as week, coalesce(p.n,0)::int as production, coalesce(r.n,0)::int as recognition
+    select coalesce(p.week, r.week)::text as week, (coalesce(p.n,0) + coalesce(r.prod,0))::int as production, coalesce(r.recog,0)::int as recognition
     from p full join r on p.week = r.week order by 1
   `) as Row[];
-  head("2. Üretim oranı", "üretim cevabı / tüm cevaplar · hedef Faz 1 sonu ≥ %35");
+  head("2. Üretim oranı", "üretim cevabı (yazma/bulmaca/diz/çeviri/sesli + üretim görevleri) / tüm cevaplar · hedef ≥ %40");
   for (const r of prod) {
     const p = n(r.production), q = n(r.recognition);
     console.log(`  ${r.week}  ${pad(p, 5)} üretim  ${pad(q, 6)} tanıma  → ${pct(p, p + q)}`);

@@ -3,6 +3,7 @@ import { and, asc, desc, eq, gt, gte, inArray, isNotNull, lt, lte, notInArray, s
 import { db } from "@/lib/db";
 import { dailyStats, events, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/errors";
+import { clozeTypeChance, gamesFor, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
@@ -188,13 +189,15 @@ async function pickSingleGameFiller(
  * Kelime bazında ise ölçüm dürüsttür: bu kelimeyi kaç kez üst üste bildin,
  * kaç kez unuttun, aralık ne kadar açıldı. Zorluk buradan gelir.
  */
-type Strength = "fresh" | "shaky" | "solid" | "strong";
+type Strength = LadderStrength;
 
 /** Tanıtım kartı bir güç seviyesi değil, kuyruktaki özel bir adımdır. */
 type QueueItem = {
   word: RoundWord;
   strength: Strength;
   intro?: boolean;
+  /** Yeni kelimenin aynı oturumdaki ipuçlu yazma turu (WP-14). */
+  assist?: boolean;
   /** Oyun seçiminde eğilim — yalnızca çeşitlilik için öne çekilen kelimelerde. */
   bias?: "recognition" | "production";
 };
@@ -773,10 +776,21 @@ function composeRounds(
 
   // Yeni kelimeler önce tanıtım kartı, ardından tanıma oyunu olarak girer.
   const queue: QueueItem[] = [];
-  for (const item of fresh) {
+  /**
+   * Yeni kelimeye aynı oturumda bir üretim dokunuşu (WP-14): tanıtım ve
+   * tanıma turundan sonra, araya başka turlar girmiş olarak, ipuçlu yazma.
+   * Tanımanın hemen ardına konmaz — o zaman ekrandan kopyalamak olurdu;
+   * kuyruğun sonuna eklenir ve serpiştirme onu tanımadan uzağa düşürür.
+   */
+  fresh.forEach((item, k) => {
     queue.push({ ...item, intro: true });
     queue.push(item);
-  }
+    // İki kelime sonra: k. kelimenin tanıtım+tanıma çifti ile ipuçlu yazması
+    // arasına en az iki başka kelimenin çifti girer. Sona atılsaydı 20 turluk
+    // tavan onları hiç göstermezdi (ölçüldü: 10 yeni kelime = 30 tur).
+    if (!only && k >= 2) queue.push({ ...fresh[k - 2], assist: true });
+  });
+  if (!only) for (const item of fresh.slice(-2)) queue.push({ ...item, assist: true });
   // Tekrarları araya serpiştir
   const merged: QueueItem[] = [];
   const a = [...due];
@@ -817,7 +831,9 @@ function composeRounds(
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
     const round = item.intro
       ? ({ id: nextId(), game: "intro", word: item.word } as Round)
-      : only
+      : item.assist
+        ? ({ id: nextId(), game: "typing", word: item.word, alternatives: [], assist: true } as Round)
+        : only
         ? // Tek oyun modu: kelimeye o oyun kurulamıyorsa (çoğulu olmayan bir
           // isim, örnek cümlesi olmayan bir kelime) kelime atlanıyor. Zorla
           // başka bir oyuna düşmek, seçimi anlamsız kılardı.
@@ -859,37 +875,12 @@ function pickRound(
   /** Oturumda her oyunun kaç kez çıktığı; az çıkan öne alınır. */
   usage?: Map<string, number>,
 ): Round | null {
-  const candidates: Round["game"][] = [];
-  if (strength === "fresh" || strength === "shaky") {
-    // Yeni ya da takılan kelime: cevabın ekranda olduğu tanıma oyunları.
-    // Boş sayfaya yazdırmak bu aşamada öğretmez, yalnızca yıldırır.
-    candidates.push("choice", "cloze", "listen", "truefalse");
-    if (word.artikel) candidates.push("artikel");
-  } else if (strength === "solid") {
-    candidates.push("choice", "cloze", "order", "listen", "truefalse");
-    if (word.artikel) candidates.push("artikel", "plural");
-    if (word.de.length <= 12) candidates.push("scramble");
-    // Çeviri (Türkçe cümle → Almanca) oturmuş kelimede açılıyor: Cümleyi
-    // Diz'de parçaları verilen cümle burada sıfırdan kuruluyor (WP-10).
-    candidates.push("translate");
-    // Yazma oyunu önceden yalnızca "sağlam" kelimelerde açılıyordu ve pratikte
-    // hiç çıkmıyordu: sağlamlık üç koşulu birden istiyor (üst üste 4 doğru,
-    // aralık ≥ 7 gün, kolaylık ≥ 2.3) ve gerçek hesaplarda kelimelerin ancak
-    // %7'si o eşiği geçiyor — üstelik o kelimelerin tekrarı haftalar sonrasına
-    // planlandığı için oturuma da girmiyorlardı. Oturmuş bir kelimeyi yazdırmak
-    // fazla sert değil: aynı anlamı taşıyan diğer Almanca karşılıklar da kabul
-    // ediliyor. Uzun kelimeler yine dışarıda — orada ölçülen şey hatırlama
-    // değil imla oluyor.
-    if (word.de.length <= 14) candidates.push("typing");
-  } else {
-    candidates.push("typing", "translate", "cloze", "choice", "order", "listen", "truefalse");
-    if (word.artikel) candidates.push("artikel", "plural");
-    if (word.de.length <= 12) candidates.push("scramble");
-  }
-
+  // Basamağa göre aday küme merdivende (lib/ladder.ts): sunucu, istemci ve
+  // rapor aynı listeyi okuyor. Gerekçeler orada.
+  const candidates: Round["game"][] = gamesFor(strength, word);
   // Parçaları ekranda olsa da bu oyunlar öğrenciden bir şey **kurmasını**
   // ister; tanıma oyunlarında ise doğru cevap zaten şıklardan biridir.
-  const PRODUCTION: Round["game"][] = ["typing", "scramble", "order", "translate"];
+  const PRODUCTION: Round["game"][] = PRODUCTION_GAMES.filter((g): g is Round["game"] => g !== "speak");
   const tuned =
     bias === "production"
       ? [...candidates.filter((g) => PRODUCTION.includes(g)), ...candidates]
@@ -1021,6 +1012,9 @@ export function makeRound(
         id: nextId(),
         game: "cloze",
         word,
+        // Yazarak tamamlama: sağlam kelimede yarı yarıya, oturmuşta dörtte
+        // bir (lib/ladder.ts). Şıklar yine kuruluyor: basamak inişi onlara döner.
+        mode: Math.random() < clozeTypeChance(strength) ? "type" : undefined,
         sentence: cloze.sentence,
         // Cümle ilk örnekten kurulduğu için çeviri de ilk parçadan alınır.
         sentenceTr: firstExample(word.beispielTr),

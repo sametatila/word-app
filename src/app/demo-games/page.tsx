@@ -102,6 +102,17 @@ const ROUNDS: Round[] = [
     isTrue: false,
   },
   {
+    id: "d13",
+    game: "cloze",
+    mode: "type",
+    word: w(17, "Bahnhof", "der", "tren istasyonu", "train station"),
+    sentence: "Der Zug fährt vom _____ ab.",
+    sentenceTr: "Tren istasyondan kalkıyor.",
+    sentenceEn: "The train departs from the station.",
+    answer: "Bahnhof",
+    options: ["Bahnhof", "Flughafen", "Hafen", "Markt"],
+  },
+  {
     id: "d12",
     game: "translate",
     word: w(16, "Kino", "das", "sinema", "cinema"),

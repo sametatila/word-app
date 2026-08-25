@@ -117,9 +117,25 @@ export type Round =
       sentenceEn: string | null;
       answer: string;
       options: string[];
+      /**
+       * "type": şık yerine yazarak tamamlama (WP-14 merdiveni). Şıklar yine
+       * turda durur — oturum içi basamak inişinde (`easeRound`) şıklı hâle
+       * dönülebilsin diye.
+       */
+      mode?: "type";
     }
   | { id: string; game: "scramble"; word: RoundWord }
-  | { id: string; game: "typing"; word: RoundWord; alternatives: string[] }
+  | {
+      id: string;
+      game: "typing";
+      word: RoundWord;
+      alternatives: string[];
+      /**
+       * İpuçlu yazma: iskelet (ilk harfler) baştan açık ve ceza yok. Yeni
+       * kelimenin aynı oturumdaki ilk yazılışı ve basamak inişi (WP-14).
+       */
+      assist?: boolean;
+    }
   | {
       id: string;
       game: "order";

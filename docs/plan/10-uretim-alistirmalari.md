@@ -143,3 +143,5 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 **Kabul.** 20 turluk karışık oturumda üretim oranı ≥ %40; yeni kelime aynı oturumda bir kez yazılıyor; test betiği (`scripts/playtest.mjs`) tamamlanma oranı düşmüyor.
 
 **Süre.** 4 gün. **Bağımlılık.** WP-10, WP-02.
+
+**Durum (2026-08-25).** Bitti (A/B bayrağı hariç — STATUS karar kaydı; `playtest.mjs` koşulmadı). `src/lib/ladder.ts`: `Strength`, `PRODUCTION_GAMES`/`isProductionGame`, `gamesFor(strength, word)` (fresh/shaky: tanıma + harf bulmacası; solid: + yazma/diz/çeviri; strong: üretim çift ağırlıklı), `clozeTypeChance`, `easeRound`, `EASE_AFTER_MISSES=3`; `session.ts` aday listesini ve PRODUCTION'ı buradan okuyor. Cloze `mode:"type"` (Yazarak Tamamla: giriş + umlaut, `matchesAnswer` toleransı, yazım/anlam hata tipi). Yeni kelime: tanıtım + tanıma + iki kelime sonra `typing{assist}` (iskelet açık, ceza yok). Oturum içi: art arda 3 üretim yanlışında `session-player` kalan turları `easeRound` ile hafifletir. KPI 2 raporu üretim oyunlarını sayıyor. e2e §32 (10 kontrol). Kanıt: `reports/shots/wp14-cloze-type-{start,typo,ok}.png`.
