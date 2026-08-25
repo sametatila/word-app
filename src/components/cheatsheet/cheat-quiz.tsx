@@ -14,6 +14,7 @@ import { CheckIcon, FlameIcon, RefreshIcon, XIcon } from "@/components/icons";
 import { SpeakButton, prefetchGerman } from "@/components/speak-button";
 import { LEVEL_TONE } from "@/components/skills/theme";
 import { fx, vibrate } from "@/lib/fx";
+import { play, resetCombo } from "@/lib/sfx";
 import { accepts, buildRound, CHEAT_GAME_LABELS, type CheatRound } from "@/lib/cheatsheet/quiz";
 import type { CheatItem } from "@/lib/cheatsheet/items";
 
@@ -30,7 +31,13 @@ import type { CheatItem } from "@/lib/cheatsheet/items";
  * (okuma/dokunma/sonuç bölgeleri), `useRoundExit` (Erdi şeridi çekerken turun
  * beklemesi), `FitBox` (küçük ekranda kaydırma yerine küçültme).
  *
- * Ses de aynı: cevap verildiğinde DOĞRU biçim okunuyor ve tur okumanın
+ * Ses efektleri de tam takım ve kelime turuyla aynı üçlü: tur başlarken
+ * "start", her cevapta doğru/yanlış (`fx` → `sfx`), tur biterken tertemizse
+ * "perfect" yoksa "finish". Kombo merdiveni tur başında SIFIRLANIYOR —
+ * sıfırlanmasaydı bir önceki turdan kalan basamakla başlar ve ilk doğru cevap
+ * hak edilmemiş bir tiz notayla duyulurdu.
+ *
+ * Okuma da aynı: cevap verildiğinde DOĞRU biçim okunuyor ve tur okumanın
  * gerçek uzunluğu kadar bekliyor — kelime oyunlarındaki `speakAndExit`
  * davranışının aynısı. Yanlış seçilen biçim asla okunmuyor; yanlışı sesli
  * pekiştirmek öğrenmenin tersine çalışır.
@@ -111,6 +118,12 @@ export function CheatQuiz({
   const [combo, setCombo] = useState(0);
   const [cheer, setCheer] = useState(0);
   const startedAt = useRef(Date.now());
+
+  // Tur açılış sesi ve kombo merdiveninin sıfırlanması — kelime turuyla aynı.
+  useEffect(() => {
+    resetCombo();
+    play("start");
+  }, []);
 
   function record(result: QuizResult) {
     setResults((prev) => [...prev, result]);
@@ -529,6 +542,12 @@ function Summary({
   const correct = results.filter((r) => r.correct).length;
   const accuracy = results.length ? Math.round((correct / results.length) * 100) : 0;
   const perfect = results.length > 0 && correct === results.length;
+
+  useEffect(() => {
+    // Kapanış sesi: tertemizse kutlama, değilse sade bitiş.
+    play(perfect ? "perfect" : "finish");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (sent.current || !results.length) return;
