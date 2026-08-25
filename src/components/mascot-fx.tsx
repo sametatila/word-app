@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
+import { useClipUrl } from "@/lib/mascot-clips";
 
 /**
  * Erdi'nin ortam sürprizleri — oyun oynanırken araya giren eğlence anları.
@@ -77,7 +78,8 @@ function Walker() {
     };
   }, [walk]);
 
-  if (!walk) return null;
+  const walkUrl = useClipUrl(walk ? (walk.dir === "ltr" ? "walk-right" : "walk-left") : null);
+  if (!walk || !walkUrl) return null;
   const fromX = walk.dir === "ltr" ? -140 : walk.w + 140;
   const toX = walk.dir === "ltr" ? walk.w + 140 : -140;
   return (
@@ -92,7 +94,7 @@ function Walker() {
       transition={{ duration: walk.dur, ease: "linear" }}
     >
       <img
-        src={walk.dir === "ltr" ? "/anim/walk-right.webp" : "/anim/walk-left.webp"}
+        src={walkUrl}
         alt=""
         style={{ height: WALK_H, width: "auto" }}
         draggable={false}
@@ -126,9 +128,10 @@ function Peeker() {
     };
   }, [side]);
 
+  const peekUrl = useClipUrl(side ? (side === "right" ? "peek" : "peek-mirror") : null);
   return (
     <AnimatePresence>
-      {side ? (
+      {side && peekUrl ? (
         <motion.div
           aria-hidden
           className="pointer-events-none fixed z-30"
@@ -144,7 +147,7 @@ function Peeker() {
         >
           {/* Klip sağa yaslanıp sola sarkıyor: sağ kenar için doğal, sol kenar aynalı. */}
           <img
-            src={side === "right" ? "/anim/peek.webp" : "/anim/peek-mirror.webp"}
+            src={peekUrl}
             alt=""
             style={{ height: 190, width: "auto" }}
             draggable={false}

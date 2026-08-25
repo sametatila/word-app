@@ -6,6 +6,7 @@ import { Mascot } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
 import { holdRound } from "@/lib/mascot-hold";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
+import { useClipUrl } from "@/lib/mascot-clips";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -166,6 +167,7 @@ function VerdictBar({
     holdRound(PULL_MS + PULL_LINGER_MS);
     return () => releaseStage("pull");
   }, [fx]);
+  const pullUrl = useClipUrl(fx ? (fx === "right" ? "pull-left" : "pull-right") : null);
 
   // Şerit yalnızca söyleyecek sözü olan oyunlarda var. Eşleştirme ve tanıtım
   // kartında cevaptan sonra gösterilecek bir düzeltme yok; orada boş bir şerit
@@ -192,14 +194,14 @@ function VerdictBar({
               verdict === "correct" ? "verdict-correct" : "verdict-wrong"
             }`}
           >
-            {fx && (
+            {fx && pullUrl && (
               /* Şeridi çekerek getiren Erdi — şeridin geldiği kenarın karşı
                  tarafında, şeritle birlikte kayar; şerit oturunca işini
                  bitirip kaybolur. Boy şeridi aşıyor (70px): sürükleyen
                  karakter şeridin içindeki simgeden büyük olmalı ki
                  "getiren" o olsun. */
               <motion.img
-                src={fx === "right" ? "/anim/pull-left.webp" : "/anim/pull-right.webp"}
+                src={pullUrl}
                 alt=""
                 aria-hidden
                 draggable={false}

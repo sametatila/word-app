@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
 import { useStageOwner } from "@/lib/mascot-stage";
+import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
 
 /**
  * Erdi — uygulamanın mirketi.
@@ -67,7 +68,7 @@ const CLIP: Record<Mood, { file: string; aspect: number }> = {
   wow: { file: "lookaround", aspect: 2 / 3 },
   sleep: { file: "sleep", aspect: 2 / 3 },
   thumbsup: { file: "thumbsup", aspect: 2 / 3 },
-  dance: { file: "dance", aspect: 720 / 544 },
+  dance: { file: "dance", aspect: 194 / 228 },
   wave: { file: "wave", aspect: 2 / 3 },
 };
 
@@ -92,12 +93,13 @@ const IDLE_CLIPS = [
 ];
 /*
   Bir klibin tam süresi (61 kare @ 12fps) + küçük pay. Idle ve duygu klipleri
-  loop=1 kodlu: bir tur oynayıp NÖTR karede donuyorlar. JS zamanlayıcısı WebP
-  ile senkron olamaz; sonsuz döngüde takas klibin ortasına denk gelip "gidip
-  gelme" yaratıyordu. Donmuş nötr kareden takas görünmez — pay, donuşun bir
-  an görünmesini garantiler, sıçramayı değil.
+  loop=1 kodlu: bir tur oynayıp NÖTR karede donuyorlar; takas donmuş nötr
+  kareden yapılır, görünmez. Süre klibin GERÇEK başlangıcından ölçülür
+  (<img onLoad>): sabit zamanlayıcı yüklenme gecikmesini bilmediği için ya
+  klibi ortasında kesiyor (gidip gelme) ya da donmuş karede bekletiyordu
+  (takılma).
 */
-const IDLE_MS = 5450;
+const CLIP_MS = (61 / 12) * 1000 + 60;
 
 /** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
 const STICKY: Mood[] = ["sad", "sleep"];
@@ -137,38 +139,41 @@ export function Mascot({
   */
   const drifts = mood !== "idle" && !STICKY.includes(mood);
   const [drifted, setDrifted] = useState(false);
+  /* Gösterilen klibin gerçekten oynamaya başladığı an (img onLoad). */
+  const [startedAt, setStartedAt] = useState(0);
 
   useEffect(() => {
     setDrifted(false);
-    if (!drifts || still) return;
-    const t = setTimeout(() => setDrifted(true), IDLE_MS);
-    return () => clearTimeout(t);
-  }, [mood, drifts, still]);
+  }, [mood]);
 
   const inIdle = mood === "idle" || (drifts && drifted);
 
+  // Klip bir tur oynayınca: duyguysa idle'a geç, idle'sa sıradaki idle'a.
   useEffect(() => {
-    if (!inIdle || still) return;
-    const t = setTimeout(() => {
-      setIdleClip((cur) => {
-        const rest = IDLE_CLIPS.filter((c) => c !== cur);
-        return rest[Math.floor(Math.random() * rest.length)];
-      });
-    }, IDLE_MS);
+    if (still || !startedAt || (!inIdle && !drifts)) return;
+    const t = setTimeout(
+      () => {
+        if (inIdle) {
+          setIdleClip((cur) => {
+            const rest = IDLE_CLIPS.filter((c) => c !== cur);
+            return rest[Math.floor(Math.random() * rest.length)];
+          });
+        } else setDrifted(true);
+      },
+      Math.max(0, CLIP_MS - (Date.now() - startedAt)),
+    );
     return () => clearTimeout(t);
-  }, [inIdle, still, idleClip]);
+  }, [startedAt, inIdle, drifts, still]);
 
   // Sıradaki idle klibi ilk geçişte takılmasın diye hepsi önden ısıtılıyor.
   useEffect(() => {
     if (still || (mood !== "idle" && !drifts)) return;
-    for (const c of IDLE_CLIPS) {
-      const img = new window.Image();
-      img.src = `/anim/${c}.webp`;
-    }
+    preloadClips(IDLE_CLIPS);
   }, [mood, drifts, still]);
 
   const clip = CLIP[mood];
   const file = inIdle ? idleClip : clip.file;
+  const url = useClipUrl(still ? null : file);
 
   /*
     Çift tampon: klip takasında eski <img> hemen sökülürse yeni WebP çözülene
@@ -176,20 +181,29 @@ export function Mascot({
     altta kalıyor; yeni klip nötr karede başladığı ve eskisi nötrde donduğu
     için üst üste binme de görünmez.
   */
-  const [prevFile, setPrevFile] = useState<string | null>(null);
-  const lastFile = useRef(file);
+  const [prevUrl, setPrevUrl] = useState<string | null>(null);
+  const lastUrl = useRef<string | null>(null);
   useEffect(() => {
-    if (lastFile.current === file) return;
-    setPrevFile(lastFile.current);
-    lastFile.current = file;
-    const t = setTimeout(() => setPrevFile(null), 500);
-    return () => clearTimeout(t);
-  }, [file]);
+    if (!url) return;
+    if (lastUrl.current && lastUrl.current !== url) {
+      setPrevUrl(lastUrl.current);
+      const t = setTimeout(() => setPrevUrl(null), 500);
+      lastUrl.current = url;
+      return () => clearTimeout(t);
+    }
+    lastUrl.current = url;
+  }, [url]);
 
   return (
     <motion.div
       className={`pointer-events-none relative select-none ${className}`}
-      style={{ width: size, aspectRatio: `${inIdle ? 2 / 3 : clip.aspect}` }}
+      /*
+        Boyut YÜKSEKLİKTEN verilir: `size` dikey klibin genişliği (2:3 → yükseklik
+        1.5×size), geniş klipler aynı yüksekliğe oturur. Bütün klipler aynı
+        karakter geometrisiyle paketli (karakter tuvalin %95'i), yani karakter
+        her klipte aynı boyda görünür — dev ya da minik yok.
+      */
+      style={{ height: size * 1.5, width: size * 1.5 * (inIdle ? 2 / 3 : clip.aspect) }}
       aria-hidden="true"
       initial={false}
       animate={{ opacity: away ? 0 : 1, scale: away ? 0.9 : 1 }}
@@ -212,9 +226,9 @@ export function Mascot({
       ) : (
         <>
           {/* Takas tamponu: yeni klip çözülene kadar eskinin donmuş nötr karesi. */}
-          {prevFile && (
+          {prevUrl && (
             <img
-              src={`/anim/${prevFile}.webp`}
+              src={prevUrl}
               alt=""
               className="absolute inset-0 block h-full w-full object-contain"
               draggable={false}
@@ -225,18 +239,21 @@ export function Mascot({
             değiştirmek, yeni klip çözülene kadar eski animasyon karesini
             gösteriyor; yeni öğe temiz başlıyor ve döngü baştan oynuyor.
           */}
+          {url && (
           <img
-            key={file}
-            src={`/anim/${file}.webp`}
+            key={url}
+            src={url}
             alt=""
             className="absolute inset-0 block h-full w-full object-contain"
             draggable={false}
+            onLoad={() => setStartedAt(Date.now())}
             /* Klip yoksa (henüz üretilmedi / yüklenemedi) statik illüstrasyona düş. */
             onError={(e) => {
               e.currentTarget.onerror = null;
               e.currentTarget.src = "/erdi.svg";
             }}
           />
+          )}
         </>
       )}
     </motion.div>
