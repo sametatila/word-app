@@ -124,8 +124,8 @@ export function GameShell({
  * tek bakışta okunan bir cevap, bir metin bloğu değil.
  */
 /** Şeridin sürüklenerek gelme süresi ve mirketin ardından oyalanıp kaybolma payı (ms). */
-const PULL_MS = 1600;
-const PULL_LINGER_MS = 700;
+const PULL_MS = 2600;
+const PULL_LINGER_MS = 900;
 
 function VerdictBar({
   verdict,
@@ -142,7 +142,7 @@ function VerdictBar({
     çekiyor — yani şeridin solunda durur. İtme koreografisi denendi ve
     inandırıcı olmadı; yalnız çekme kaldı.
 
-    Koreografi ağır çekimde (1.6 sn) ki çekme hissi okunsun; tur bu sürede
+    Koreografi ağır çekimde (2.6 sn) ki çekme hissi okunsun; tur bu sürede
     kapanmasın diye şerit kurulurken kapanış saati ileri alınıyor
     (lib/mascot-hold) — ilk sürümde tur, mirket daha şeridi getirmeden
     ilerliyor, animasyon yarıda kesiliyordu. Zar, şerit her yeniden
