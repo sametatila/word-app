@@ -53,7 +53,13 @@ const WALK_SPEED = 95;
 const WALK_H = 76;
 
 function Walker() {
-  const [walk, setWalk] = useState<{ dir: "ltr" | "rtl"; dur: number; w: number } | null>(null);
+  const [walk, setWalk] = useState<{
+    dir: "ltr" | "rtl";
+    /* "walk": normal yürüyüş; "stroll": patiler ensede rahat gezinti — çeşitlilik. */
+    kind: "walk" | "stroll";
+    dur: number;
+    w: number;
+  } | null>(null);
 
   useEffect(() => {
     if (walkNextAt === 0) walkNextAt = Date.now() + rand(15_000, 60_000);
@@ -64,7 +70,12 @@ function Walker() {
       // Sahne doluysa (şerit çekiliyor, kutlama sürüyor) bir sonraki saniyede yine bak.
       if (!claimStage("walk", dur * 1000 + 400)) return;
       walkNextAt = Date.now() + dur * 1000 + rand(90_000, 210_000);
-      setWalk({ dir: Math.random() < 0.5 ? "ltr" : "rtl", dur, w });
+      setWalk({
+        dir: Math.random() < 0.5 ? "ltr" : "rtl",
+        kind: Math.random() < 0.35 ? "stroll" : "walk",
+        dur,
+        w,
+      });
     }, 1000);
     return () => clearInterval(tick);
   }, [walk]);
@@ -78,7 +89,9 @@ function Walker() {
     };
   }, [walk]);
 
-  const walkUrl = useClipUrl(walk ? (walk.dir === "ltr" ? "walk-right" : "walk-left") : null);
+  const walkUrl = useClipUrl(
+    walk ? `${walk.kind}-${walk.dir === "ltr" ? "right" : "left"}` : null,
+  );
   if (!walk || !walkUrl) return null;
   const fromX = walk.dir === "ltr" ? -140 : walk.w + 140;
   const toX = walk.dir === "ltr" ? walk.w + 140 : -140;

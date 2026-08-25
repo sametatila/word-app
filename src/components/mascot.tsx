@@ -100,6 +100,17 @@ const IDLE_CLIPS = [
   (takılma).
 */
 const CLIP_MS = (61 / 12) * 1000 + 60;
+/*
+  iOS Safari animasyonu, görsel "yüklendi" dedikten bir süre sonra başlatıyor
+  (çözümleme + ilk boyama); Android/Chrome hemen. Aynı zamanlayıcı iPhone'da
+  klibi son karelerinde kesip "hafif gidip gelme" yapıyordu. Başlangıç anı
+  artık img.decode() tamamlanınca alınıyor ve iOS'ta küçük bir pay ekleniyor.
+*/
+const IOS =
+  typeof navigator !== "undefined" &&
+  /iP(hone|ad|od)/.test(navigator.userAgent) &&
+  !/CriOS|FxiOS/.test(navigator.userAgent);
+const SWAP_MARGIN_MS = IOS ? 260 : 0;
 
 /** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
 const STICKY: Mood[] = ["sad", "sleep"];
@@ -160,7 +171,7 @@ export function Mascot({
           });
         } else setDrifted(true);
       },
-      Math.max(0, CLIP_MS - (Date.now() - startedAt)),
+      Math.max(0, CLIP_MS + SWAP_MARGIN_MS - (Date.now() - startedAt)),
     );
     return () => clearTimeout(t);
   }, [startedAt, inIdle, drifts, still]);
@@ -246,7 +257,13 @@ export function Mascot({
             alt=""
             className="absolute inset-0 block h-full w-full object-contain"
             draggable={false}
-            onLoad={() => setStartedAt(Date.now())}
+            onLoad={(e) => {
+              /* Safari'de yükleme ≠ oynatma başlangıcı; çözümlemeyi bekle. */
+              const img = e.currentTarget;
+              const mark = () => setStartedAt(Date.now());
+              if (typeof img.decode === "function") img.decode().then(mark, mark);
+              else mark();
+            }}
             /* Klip yoksa (henüz üretilmedi / yüklenemedi) statik illüstrasyona düş. */
             onError={(e) => {
               e.currentTarget.onerror = null;
