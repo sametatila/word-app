@@ -34,7 +34,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-64 | Profil ve analitik | 6 | bekliyor | | | | |
 | WP-65 | Onboarding + yerleştirme akışı | 6 | bekliyor | | | | |
 | WP-66 | Erdi koç sesi | 6 | bekliyor | | | | |
-| WP-70 | İçerik şeması ve doğrulayıcı | 7 | bekliyor | | | | en başta |
+| WP-70 | İçerik şeması ve doğrulayıcı | 7 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `data/content/SPEC.md`, `npm run test:content`, etiket başına uyarı bütçesi; paket/apply genelleştirme WP-71 pilotunda |
 | WP-71 | Ders kapsamı B1–C1 | 7 | bekliyor | | | | sürekli |
 | WP-72 | Konuşma/yazma/okuma içeriği | 7 | bekliyor | | | | sürekli |
 | WP-73 | Gerekçe ve kural parçacıkları | 7 | bekliyor | | | | |
@@ -58,3 +58,6 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Sıra: Faz 0'dan sonra WP-70 yerine WP-13 alındı (sahibi "devam et" dedi; kullanıcıya en görünür kazanç geri bildirim). WP-70 sıradaki. Claude.
 - 2026-08-25 — WP-13 adım 3 (okuma/dinleme sorusu gerekçesi): `SkillQuestion.explain` zaten cevaptan sonra Türkçe gerekçe gösteriyor; ayrı `why_tr` alanı açılmadı, WP-70 şemasında `explain` bu rolü üstlenir. Adım 4 (ders `produce`): ilk yanlışta içerikteki hedefe özgü ipucu zaten "neden" işlevi görüyor; dokunulmadı. Claude.
 - 2026-08-25 — Artikel kuralları `lib/why.ts`'te "hep/genelde" güçlü/zayıf işaretli ve istisnada dürüst ("istisna — kelimeyle ezberle"); 50 isimlik test 35+ kural isabetiyle sabitlendi. Çoğul kalıbı turun doğru biçiminden türetiliyor (`formen` demo/dış veride eksik olabiliyor). Claude.
+- 2026-08-25 — İçerik doğrulayıcı uyarıları toplam değil ETİKET başına bütçeliyor (`data/content/baseline.json`): toplam tavan, bir borcu azaltırken başka yerde borç almaya izin verirdi. Mevcut borç 2.227 uyarı (en yok 1.254, metinde geçmeyen sözlükçe 485, çok anlamlı tr 163, parantezli tr 158…); WP-72 kapatır. Claude.
+- 2026-08-25 — Almanca metinde Türkçe harf kuralı özel adları (büyük harfle başlayan kelimeler) dışarıda bırakıyor: metinlerdeki "Frau Yıldız" bilinçli. Claude.
+- 2026-08-25 — WP-70 adım 4 (paket/apply genelleştirme) bu turda yazılmadı: mevcut `data/skills/make-packets.mjs` + `apply-skills.ts` deseni SPEC'te akış olarak tarif edildi; ilk yeni içerik türü (WP-71 B1 pilotu) gelince genelleştirilecek — soyut bir üretici yazmak, tüketicisi olmadan yanlış soyutlama riski. Claude.

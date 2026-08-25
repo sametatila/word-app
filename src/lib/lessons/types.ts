@@ -129,72 +129,75 @@ export type LessonRoleplay = {
  * aileleri için birer simge var (bkz. data/lessons-plan/SPEC.md). İçerik
  * üreten ajan bu listeden seçiyor ve ikon dosyalarına hiç dokunmuyor.
  */
-export type LessonIcon =
-  | "greet"
-  | "cafe"
-  | "doctor"
-  | "vacation"
-  | "job"
-  | "home"
-  | "shopping"
-  | "transport"
-  | "family"
-  | "phone"
-  | "school"
-  | "food"
-  | "weather"
-  | "money"
-  | "calendar"
-  | "sport"
-  | "nature"
-  | "city"
-  | "media"
-  | "feelings"
-  | "culture"
-  | "repair"
-  | "office"
-  | "music"
-  | "mail"
-  | "party"
-  | "tech"
-  | "clock"
-  | "bed"
-  | "car"
-  | "train"
-  | "plane"
-  | "map"
-  | "camera"
-  | "book"
-  | "pen"
-  | "gift"
-  | "cake"
-  | "ring"
-  | "baby"
-  | "dog"
-  | "flower"
-  | "sun"
-  | "snow"
-  | "rain"
-  | "tooth"
-  | "pill"
-  | "run"
-  | "bike"
-  | "film"
-  | "art"
-  | "law"
-  | "flag"
-  | "suitcase"
-  | "ticket"
-  | "chart"
-  | "idea"
-  | "handshake"
-  | "recycle"
-  | "shirt"
-  | "bread"
-  | "mountain"
-  | "star"
-  | "question"
-  | "key";
+export const LESSON_ICONS = [
+  "greet",
+  "cafe",
+  "doctor",
+  "vacation",
+  "job",
+  "home",
+  "shopping",
+  "transport",
+  "family",
+  "phone",
+  "school",
+  "food",
+  "weather",
+  "money",
+  "calendar",
+  "sport",
+  "nature",
+  "city",
+  "media",
+  "feelings",
+  "culture",
+  "repair",
+  "office",
+  "music",
+  "mail",
+  "party",
+  "tech",
+  "clock",
+  "bed",
+  "car",
+  "train",
+  "plane",
+  "map",
+  "camera",
+  "book",
+  "pen",
+  "gift",
+  "cake",
+  "ring",
+  "baby",
+  "dog",
+  "flower",
+  "sun",
+  "snow",
+  "rain",
+  "tooth",
+  "pill",
+  "run",
+  "bike",
+  "film",
+  "art",
+  "law",
+  "flag",
+  "suitcase",
+  "ticket",
+  "chart",
+  "idea",
+  "handshake",
+  "recycle",
+  "shirt",
+  "bread",
+  "mountain",
+  "star",
+  "question",
+  "key",
+] as const;
+
+export type LessonIcon = (typeof LESSON_ICONS)[number];
 
 export type Lesson = {
   id: string;
@@ -225,6 +228,8 @@ export type Lesson = {
   lecture: LectureStep[];
   /** Konuşma fazı. */
   roleplay: LessonRoleplay;
+  /** CEFR yapabilirlik etiketleri (WP-43; ör. "a1.self.introduce"). */
+  cando?: string[];
 };
 
 /**

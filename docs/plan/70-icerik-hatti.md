@@ -22,6 +22,8 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 
 **Süre.** 4 gün. **Bağımlılık.** Yok (en başta).
 
+**Durum (2026-08-25).** Adım 1–3 ve 5 bitti; adım 4 WP-71 pilotuna ertelendi (STATUS karar kaydı). `data/content/SPEC.md` (türler, yerler, dil kuralları, zorunlu alanlar/iş kuralları, üretim akışı); tip eklemeleri: `SkillQuestion.kind?`, `ExerciseBase.cando?`, `Lesson.cando?`, `LESSON_ICONS` çalışma zamanı listesi (`Lesson.roleplay.script` WP-04'te eklendi); `scripts/check-content.ts` → `npm run test:content`: 344 egzersiz, 220 ders, 60 sayfa; 0 hata, 2.227 uyarı etiket başına bütçede (`data/content/baseline.json`). `explain` alanı soru gerekçesi (`why_tr`) rolünü üstleniyor.
+
 ---
 
 ## WP-71 · Ders kapsamı: B1 100, B2 100, C1 60 + adım dengesi

@@ -41,6 +41,12 @@ export type Gloss = {
 };
 
 export type SkillQuestion = {
+  /**
+   * Soru türü (WP-70 şeması). Bugün hepsi çoktan seçmeli; `truefalse`
+   * ["Richtig","Falsch"] şıklı olanlar için, `gapfill`/`produce` WP-72'nin
+   * yazılı üretim soruları için ayrılmış. Verilmezse `mcq`.
+   */
+  kind?: "mcq" | "truefalse" | "gapfill" | "produce";
   /** Soru — Almanca (Goethe tarzı). Seviyeye uygun sadelikte yazılır. */
   text: string;
   /** Şıklar. Doğru/yanlış soruları için ["Richtig", "Falsch"]. */
@@ -54,6 +60,11 @@ export type SkillQuestion = {
 type ExerciseBase = {
   /** "a1-r1", "zh-a1-r1" gibi kalıcı kimlik — değiştirme. */
   id: string;
+  /**
+   * CEFR yapabilirlik etiketleri (WP-43 haritası; ör. "a1.self.introduce").
+   * Egzersizin hangi "…yapabilirim" ifadesine kanıt olduğunu söyler.
+   */
+  cando?: string[];
   /** Hangi kursa ait: "de" (varsayılan) ya da "gsw-zh" (Zürih Almancası). */
   course?: "de" | "gsw-zh";
   level: CefrLevel;
