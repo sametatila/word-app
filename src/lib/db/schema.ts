@@ -757,3 +757,31 @@ export const placements = pgTable(
   },
   (t) => [index("placements_user_idx").on(t.userId, t.at)],
 );
+
+/**
+ * Sınavlar (WP-42 haftalık kullanım sınavı; WP-41 seviye/modül sınavı da
+ * buraya yazar). `kind` + `week` (haftanın Pazartesi'si) tek hak kuralı:
+ * aynı hafta ikinci satır yazılmaz. `answers` kelime başına doğru/yanlış —
+ * sonraki haftalar aynı kelimeyi sormasın ve kalibrasyon yapılabilsin diye.
+ */
+export const exams = pgTable(
+  "exams",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** weekly | module | level */
+    kind: text("kind").notNull(),
+    week: date("week").notNull(),
+    level: text("level").notNull(),
+    /** 0–100 */
+    score: integer("score").notNull(),
+    correct: integer("correct").notNull(),
+    total: integer("total").notNull(),
+    answers: jsonb("answers").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("exams_user_idx").on(t.userId, t.kind, t.week),
+    uniqueIndex("exams_user_kind_week_idx").on(t.userId, t.kind, t.week),
+  ],
+);

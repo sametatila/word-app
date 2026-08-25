@@ -7,6 +7,7 @@ import { listExerciseMeta } from "@/lib/skills";
 import { SKILL_LABELS, SKILL_ORDER } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { nextLesson } from "@/lib/lessons/progress";
+import { weeklyStatus } from "@/lib/weekly";
 
 /**
  * Bugünkü plan (plan WP-60).
@@ -31,7 +32,7 @@ import { nextLesson } from "@/lib/lessons/progress";
  */
 
 export type PlanItem = {
-  id: "review" | "lesson" | "skill" | "weak";
+  id: "review" | "lesson" | "skill" | "weak" | "weekly";
   title: string;
   detail: string;
   minutes: number;
@@ -170,6 +171,27 @@ export async function buildPlan(
     }
   } catch (err) {
     console.error("[plan] hata tipi okunamadı", err);
+  }
+
+  // 5. Haftanın kullanım sınavı (WP-42): en az 15 çalışılmış kelime varsa.
+  try {
+    const [{ studied }] = await db
+      .select({ studied: sql<number>`count(*)::int` })
+      .from(userWords)
+      .where(and(eq(userWords.userId, userId), gte(userWords.reps, 1)));
+    if (studied >= 15) {
+      const ws = await weeklyStatus(userId, today);
+      items.push({
+        id: "weekly",
+        title: ws.short ? "Haftanın kısa kontrolü" : "Haftanın kullanım sınavı",
+        detail: ws.done ? `skor ${ws.score}` : "15 soru · yazarak · tek hak",
+        minutes: 8,
+        done: ws.done,
+        href: "/learn/haftalik",
+      });
+    }
+  } catch (err) {
+    console.error("[plan] haftalık sınav okunamadı", err);
   }
 
   const remaining = items.filter((i) => !i.done);
