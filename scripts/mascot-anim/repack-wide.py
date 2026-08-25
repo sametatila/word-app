@@ -27,7 +27,7 @@ CLIPS = {  # ad -> webp döngü sayısı
 # Nötr karede başlayıp biten klipler: dikey ölçek ve ayak çizgisi İLK kareden
 # alınır (birleşik kutu, kollar/zıplama yüzünden karakteri küçültüyordu);
 # yatay genişlik yine birleşik kutudan — kollar kırpılmasın.
-NEUTRAL_FIRST = {"idle-heave", "peek", "peek-mirror"}
+NEUTRAL_FIRST = {"idle-heave", "peek", "peek-mirror", "dance"}
 
 def frames(name):
     tmp = Path("/tmp/rp") / name
