@@ -798,9 +798,27 @@ function StartCard({
                 </span>
               </div>
             </div>
-            {/* Erdi karşılamayı üstleniyor. Seri varsa keyfi yerinde, yoksa
-                bekliyor — "bugün serini başlat" cümlesinin altını çiziyor. */}
-            <Mascot mood={meta.currentStreak > 0 ? "happy" : "idle"} size={62} className="-my-2 shrink-0" />
+            {/*
+              Erdi karşılamayı üstleniyor ve üç hâli var.
+
+              Seri duruyorsa keyfi yerinde. Seri KIRILMIŞSA uyuyor: "Bugün
+              serini başlat" cümlesinin resmi bu — buralar sessizdi. Uyku
+              klibi bilerek seçildi, çünkü tek klip bir tur oynayıp neşeli
+              boşta-bekleme rotasyonuna geçmeyenlerden (bkz. mascot STICKY):
+              bu bir tepki değil, düzelene kadar süren bir DURUM.
+
+              Ama hiç oynamamış kullanıcıya uyuyan bir maskotla açmak yanlış
+              olurdu — orada kırılmış bir şey yok, henüz başlamamış bir şey
+              var. Ayrım birikimde: puanı olup serisi kopmuş kişi dönen
+              kullanıcıdır.
+            */}
+            <Mascot
+              mood={
+                meta.currentStreak > 0 ? "happy" : meta.totalXp > 0 ? "sleep" : "idle"
+              }
+              size={62}
+              className="-my-2 shrink-0"
+            />
           </div>
           <div className="mt-3 sm:mt-4">
             <div className="mb-1.5 flex justify-between text-xs font-semibold opacity-90">
