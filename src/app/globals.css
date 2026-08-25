@@ -469,25 +469,23 @@
 /*
  * Mobil güvenli alan.
  *
- * Alt gezinme, güvenli alan payını ARTIK EKLEMİYOR. Sebebi ölçülebilir bir
- * çift sayma: iOS'ta ana ekrandan açılan uygulamada düzen alanı (`dvh`) zaten
- * parmak hareketi çubuğunun ÜSTÜNDE bitiyor. Gezinme o alanın son öğesi
- * olduğu için dibe kendiliğinden oturuyor; üstüne bir de `env(safe-area-
- * inset-bottom)` kadar dolgu koyunca çubuk 34 piksel daha yukarı çıkıyor ve o
- * kadar yer içerikten gidiyor.
+ * Alt pay `--safe-b`den geliyor ve o değeri kabuk ÖLÇEREK yazıyor
+ * (bkz. components/app-shell). Sebebi ölçülebilir bir çift sayma:
+ * `env(safe-area-inset-bottom)` cihazın fiziksel payını bildiriyor ama
+ * sayfanın o paya uzanıp uzanmadığını söylemiyor. Uzanmıyorsa pay zaten
+ * sistem tarafından ayrılmıştır; bir kez daha koymak onu ikiye katlar.
  *
- * Değişikliğin donanım gezinme tuşu olan Android telefonları BOZAMAYACAĞI
- * kesin: orada `env(safe-area-inset-bottom)` zaten 0 ve dolayısıyla eski
- * kural da 0.75rem veriyordu. Yani dokunulan tek durum, payın sıfırdan büyük
- * olduğu — yani hatanın görüldüğü — cihazlar.
+ * Donanım gezinme tuşu olan telefonlarda `env` zaten 0 olduğu için hangi dala
+ * girilirse girilsin sonuç 0.75rem — o cihazlarda davranış hiç değişmiyor.
  *
- * Üst pay aynı kalıyor: durum çubuğu ana ekrandan açıldığında sayfanın
- * ÜSTÜNE biniyor ve orada payı biz koymazsak saat başlığın üstüne düşüyor.
+ * Değişken hiç yazılamazsa (JS kapalı, ölçüm başarısız) yedek 0px: fazladan
+ * pay koymamak, iki kez koymaktan iyi.
  */
 .safe-bottom {
-  padding-bottom: 0.75rem;
+  padding-bottom: max(0.75rem, var(--safe-b, 0px));
 }
 
+/* Üst pay: durum çubuğu ana ekrandan açıldığında sayfanın ÜSTÜNE biniyor. */
 .safe-top {
   padding-top: 0.75rem;
 }

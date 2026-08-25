@@ -79,6 +79,56 @@ export function AppShell({
     return () => ro.disconnect();
   }, []);
 
+  /**
+   * Alt güvenli alan payı — ÖLÇÜLEREK veriliyor, varsayılarak değil.
+   *
+   * Sorun şu: `env(safe-area-inset-bottom)` cihazın fiziksel payını bildiriyor
+   * ama sayfanın o paya UZANIP uzanmadığını söylemiyor. İkisi ayrı şeyler:
+   *
+   *   - Sayfa ekranın dibine kadar uzanıyorsa (edge-to-edge) payı biz koymak
+   *     ZORUNDAYIZ, yoksa gezinme etiketleri parmak hareketi çubuğunun altında
+   *     kalır.
+   *   - Uzanmıyorsa (iOS'ta çoğu zaman böyle; tarayıcı sekmesinde her zaman)
+   *     pay zaten sistem tarafından ayrılmış demektir ve bir kez daha koymak
+   *     onu İKİYE katlar.
+   *
+   * İkinci durum ölçüldü: donanım tuşu olmayan bir iPhone'da gezinme
+   * etiketlerinin altında 71 CSS piksel boşluk vardı — 34 sistemin, 34 bizim.
+   *
+   * Ayrım tek bir karşılaştırmayla yapılabiliyor: sayfanın görünen yüksekliği
+   * ekranın yüksekliğine eşitse sayfa gerçekten dibe uzanıyordur. Pay o zaman
+   * bizim, değilse sistemin.
+   *
+   * Donanım gezinme tuşu olan Android'i etkilemesi mümkün değil: orada
+   * `env(safe-area-inset-bottom)` zaten 0, yani hangi dala girilirse girilsin
+   * sonuç aynı taban değer.
+   */
+  useEffect(() => {
+    // env() değeri JS'ten okunamıyor; ölçmek için görünmez bir sonda gerekiyor.
+    const probe = document.createElement("div");
+    probe.style.cssText =
+      "position:fixed;left:0;bottom:0;width:0;height:env(safe-area-inset-bottom);visibility:hidden;pointer-events:none";
+    document.body.appendChild(probe);
+
+    const apply = () => {
+      const inset = probe.getBoundingClientRect().height;
+      // Uygulama dikey kilitli (manifest), o yüzden ekranın uzun kenarı esas.
+      const screenH = Math.max(window.screen?.height ?? 0, window.screen?.width ?? 0);
+      // Birkaç pikselik pay: tarayıcılar yüksekliği kesirli bildirebiliyor.
+      const reaches = screenH > 0 && Math.abs(window.innerHeight - screenH) <= 12;
+      document.documentElement.style.setProperty("--safe-b", reaches ? `${inset}px` : "0px");
+    };
+
+    apply();
+    window.addEventListener("resize", apply);
+    window.addEventListener("orientationchange", apply);
+    return () => {
+      window.removeEventListener("resize", apply);
+      window.removeEventListener("orientationchange", apply);
+      probe.remove();
+    };
+  }, []);
+
   // Hangi sekmeye gerçekten uğranıyor. Ölçüm bunu bir kez elle yapmıştı ve
   // sonuç görevler bölümünü doğurmuştu: yedi kullanıcıdan biri becerileri,
   // üçü dersleri açmıştı. Artık her açılış kendiliğinden yazılıyor.
