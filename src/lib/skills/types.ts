@@ -46,13 +46,22 @@ export type SkillQuestion = {
    * ["Richtig","Falsch"] şıklı olanlar için, `gapfill`/`produce` WP-72'nin
    * yazılı üretim soruları için ayrılmış. Verilmezse `mcq`.
    */
-  kind?: "mcq" | "truefalse" | "gapfill" | "produce";
+  kind?: "mcq" | "truefalse" | "gapfill" | "produce" | "short_answer" | "order" | "dictation";
   /** Soru — Almanca (Goethe tarzı). Seviyeye uygun sadelikte yazılır. */
   text: string;
-  /** Şıklar. Doğru/yanlış soruları için ["Richtig", "Falsch"]. */
+  /** Şıklar. Doğru/yanlış soruları için ["Richtig", "Falsch"]; yazılı türlerde boş. */
   options: string[];
-  /** Doğru şıkkın indeksi. */
+  /** Doğru şıkkın indeksi; yazılı türlerde 0 (kullanılmaz). */
   answer: number;
+  /**
+   * Yazılı türler (WP-31): `gapfill` metinden kelime/sayı, `short_answer`
+   * 1–5 kelime, `dictation` dinlenen cümle. İlk madde kanonik cevap, geri
+   * kalanı kabul edilen biçimler; eşleşme umlaut/büyük-küçük harf ve tek
+   * harflik sapmaya (≥ 5 harf) toleranslı.
+   */
+  accept?: string[];
+  /** `order`: doğru sıra — oyuncu karışık gösterir. */
+  items?: string[];
   /** Cevaptan sonra gösterilen Türkçe açıklama: neden doğru, metinde nerede. */
   explain: string;
 };
@@ -123,6 +132,48 @@ export type WritingTask =
       alternatives?: string[];
       /** Türkçe dil bilgisi ipucu. */
       hint?: string;
+    }
+  | {
+      /**
+       * Gelen mesaja cevap (WP-31): `stimulus` zorunlu — e-posta, mesaj, ilan.
+       * Değerlendirme serbest yazmayla aynı (AI rubriği); rubrik görevi
+       * uyaranla birlikte görür.
+       */
+      kind: "reply";
+      prompt: string;
+      stimulus: string;
+      checklist: string[];
+      minWords: number;
+      phrases: Gloss[];
+      sample: string;
+    }
+  | {
+      /** Form doldurma (WP-31): alan → kısa cevap, tam (toleranslı) eşleşme. */
+      kind: "form";
+      /** Türkçe senaryo: kim, hangi form. */
+      prompt: string;
+      /** Formu dolduran kişinin bilgileri, Türkçe (öğrenci Almanca alanlara yazar). */
+      facts: string;
+      fields: { label: string; answer: string; accept?: string[] }[];
+    }
+  | {
+      /** Yeniden yaz (WP-31): verilen cümleyi başka biçimde — resmî, olumsuz, geçmiş. */
+      kind: "rewrite";
+      /** Türkçe yönerge: "resmî hitapla yaz". */
+      prompt: string;
+      source: string;
+      answer: string;
+      alternatives?: string[];
+      /** Gerekçe, Türkçe. */
+      why?: string;
+    }
+  | {
+      /** Özet (B1+, WP-31): metni en çok N cümleyle özetle; AI rubriği. */
+      kind: "summary";
+      prompt: string;
+      source: string;
+      maxSentences: number;
+      sample: string;
     }
   | {
       /** Serbest yazma: senaryo + kontrol listesi + örnek cevap. */

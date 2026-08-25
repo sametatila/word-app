@@ -10,9 +10,39 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { CheckIcon } from "@/components/icons";
 import { seededShuffle } from "@/lib/shuffle";
+import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
+import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
+import { levenshtein } from "@/lib/errors";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
+type ReplyTaskData = Extract<WritingTask, { kind: "reply" }>;
+type FormTaskData = Extract<WritingTask, { kind: "form" }>;
+type RewriteTaskData = Extract<WritingTask, { kind: "rewrite" }>;
+type SummaryTaskData = Extract<WritingTask, { kind: "summary" }>;
+
+/**
+ * Serbest yazma oynatıcısının beklediği biçim. `reply` ve `summary` (WP-31)
+ * aynı oynatıcıyla oynanır — ikisi de "metin yaz, rubrik puanlasın": cevap
+ * görevinde uyaran gelen mesaj, özet görevinde kaynak metin. Ayrı oynatıcı
+ * yazmak aynı ekranı üç kez yazmak olurdu.
+ */
+function asFree(task: FreeTaskData | ReplyTaskData | SummaryTaskData): FreeTaskData & { title: string } {
+  if (task.kind === "summary") {
+    return {
+      kind: "free",
+      title: "Özetle",
+      prompt: task.prompt,
+      stimulus: task.source,
+      checklist: [`En çok ${task.maxSentences} cümle`, "Ana fikir var, ayrıntı yok", "Kendi kelimelerinle"],
+      minWords: 10,
+      phrases: [],
+      sample: task.sample,
+    };
+  }
+  if (task.kind === "reply") return { ...task, kind: "free", title: "Cevap yaz" };
+  return { ...task, title: "Serbest yazma" };
+}
 type SentenceTaskData = Extract<WritingTask, { kind: "sentence" }>;
 
 /**
@@ -71,10 +101,14 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
           />
         ) : active.kind === "sentence" ? (
           <SentenceTask key={`${round}-${step}`} task={active} level={exercise.level} onDone={completeTask} />
+        ) : active.kind === "form" ? (
+          <FormTask key={`${round}-${step}`} task={active} onDone={completeTask} />
+        ) : active.kind === "rewrite" ? (
+          <RewriteTask key={`${round}-${step}`} task={active} onDone={completeTask} />
         ) : (
           <FreeTask
             key={`${round}-${step}`}
-            task={active}
+            task={asFree(active)}
             level={exercise.level}
             exerciseId={exercise.id}
             draftKey={`wortspiel-draft-${exercise.id}-${step}`}
@@ -267,7 +301,7 @@ function FreeTask({
   exerciseId,
   onDone,
 }: {
-  task: FreeTaskData;
+  task: FreeTaskData & { title?: string };
   draftKey: string;
   level: string;
   exerciseId: string;
@@ -382,7 +416,7 @@ function FreeTask({
   return (
     <section className="card mt-4 p-5">
       <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
-        Serbest yazma
+        {task.title ?? "Serbest yazma"}
       </p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
 
@@ -632,6 +666,151 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
           </div>
           <button type="button" onClick={() => void evaluate()} disabled={busy || text.trim().split(/\s+/).length < 2} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
             {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+          </button>
+        </>
+      )}
+    </section>
+  );
+}
+
+
+/* ───────────── form (WP-31) ───────────── */
+
+function foldShort(s: string): string {
+  return s.toLocaleLowerCase("de-DE").replace(/[.,!?;:]/g, "").replace(/\s+/g, " ").trim().replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
+}
+function fieldOk(typed: string, answer: string, accept: string[] = []): boolean {
+  const t = foldShort(typed);
+  if (!t) return false;
+  return [answer, ...accept].some((a) => {
+    const f = foldShort(a);
+    return f === t || (f.length >= 5 && levenshtein(f, t) <= 1);
+  });
+}
+
+/**
+ * Form doldurma: Türkçe verilen bilgileri Almanca alanlara yaz. Goethe A1
+ * "Schreiben Teil 1"in karşılığı — alan adını anlayıp doğru bilgiyi doğru
+ * yere koymak. Alanların ≥ %70'i doğruysa görev tamam.
+ */
+function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) => void }) {
+  const [values, setValues] = useState<string[]>(() => task.fields.map(() => ""));
+  const [checked, setChecked] = useState(false);
+  const results = task.fields.map((f, i) => fieldOk(values[i], f.answer, f.accept));
+  const okCount = results.filter(Boolean).length;
+  const ok = okCount >= Math.ceil(task.fields.length * 0.7);
+  return (
+    <section className="card mt-4 p-5">
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Formu doldur</p>
+      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
+      <p className="muted mt-1 rounded-xl px-3 py-2 text-xs leading-relaxed surface-2">{task.facts}</p>
+      <div className="mt-3 space-y-2">
+        {task.fields.map((f, i) => (
+          <label key={f.label} className="block">
+            <span className="muted text-xs font-semibold" lang="de">{f.label}</span>
+            <div className="mt-0.5 flex items-center gap-2">
+              <input
+                type="text"
+                value={values[i]}
+                onChange={(e) => setValues(values.map((v, j) => (j === i ? e.target.value : v)))}
+                disabled={checked}
+                lang="de"
+                spellCheck={false}
+                className="input flex-1 py-2 text-sm"
+                style={checked ? { borderColor: results[i] ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
+              />
+              {checked ? (
+                results[i] ? (
+                  <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
+                ) : (
+                  <span className="shrink-0 text-xs" lang="de">
+                    <span className="muted">doğrusu: </span>
+                    <strong>{f.answer}</strong>
+                  </span>
+                )
+              ) : null}
+            </div>
+          </label>
+        ))}
+      </div>
+      {checked ? (
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <p className="text-sm font-semibold" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+            {okCount} / {task.fields.length} alan doğru
+          </p>
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-11 px-4 text-sm">
+            Devam
+          </button>
+        </div>
+      ) : (
+        <button type="button" onClick={() => setChecked(true)} disabled={values.every((v) => !v.trim())} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
+          Kontrol et
+        </button>
+      )}
+    </section>
+  );
+}
+
+/* ───────────── yeniden yaz (WP-31) ───────────── */
+
+/**
+ * Verilen cümleyi başka biçimde yaz (resmî/samimi, olumsuz, geçmiş).
+ * Eşleştirme WP-10 cümle kütüphanesi: yazım sapması geçer, sıra hatası ve
+ * yanlış biçim geçmez; fark vurgusu + gerekçe drill'le aynı dilde.
+ */
+function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boolean) => void }) {
+  const [text, setText] = useState("");
+  const [match, setMatch] = useState<SentenceMatch | null>(null);
+  const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
+  return (
+    <section className="card mt-4 p-5">
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Yeniden yaz</p>
+      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
+      <p className="mt-2 rounded-xl px-3 py-2 text-base font-semibold surface-2" lang="de">
+        {task.source}
+      </p>
+      {match ? (
+        <div className="mt-3 space-y-2">
+          <p className="text-sm font-bold" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+            {match.verdict === "exact" ? "Doğru!" : match.verdict === "spelling" ? "Doğru — yazımda küçük sapma" : match.verdict === "order" ? "Kelimeler doğru, sıra yanlış" : "Olmadı"}
+          </p>
+          {match.verdict !== "exact" ? (
+            <div className="rounded-xl px-3 py-2 text-sm surface-2">
+              <p className="muted text-[11px]">Senin yazdığın</p>
+              <TypedTokens tokens={match.typed} />
+              <p className="muted mt-1.5 text-[11px]">Doğrusu</p>
+              <TokenDiff tokens={match.target} />
+            </div>
+          ) : null}
+          {task.why ? <p className="muted text-xs leading-relaxed">{task.why}</p> : null}
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 w-full px-4 text-sm">
+            Devam
+          </button>
+        </div>
+      ) : (
+        <>
+          <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                if (text.trim()) setMatch(matchSentence(text, task.answer, task.alternatives ?? []));
+              }
+            }}
+            rows={2}
+            lang="de"
+            spellCheck={false}
+            placeholder="Cümleyi yeni biçimiyle yaz…"
+            className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-base outline-none"
+          />
+          <button
+            type="button"
+            onClick={() => text.trim() && setMatch(matchSentence(text, task.answer, task.alternatives ?? []))}
+            disabled={!text.trim()}
+            className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
+          >
+            Kontrol et
           </button>
         </>
       )}

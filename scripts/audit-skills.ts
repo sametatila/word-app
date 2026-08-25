@@ -24,7 +24,13 @@ function bodyOf(ex: SkillExercise): string {
   if (ex.skill === "listening") return ex.segments.map((s) => s.text).join(" ");
   if (ex.skill === "writing")
     return ex.tasks
-      .map((t) => (t.kind === "build" ? `${t.answer} ${(t.alternatives ?? []).join(" ")}` : (t.sample ?? "")))
+      .map((t) =>
+        t.kind === "build" || t.kind === "rewrite"
+          ? `${t.answer} ${(t.alternatives ?? []).join(" ")}`
+          : t.kind === "form"
+            ? t.fields.map((f) => f.answer).join(" ")
+            : (t.sample ?? ""),
+      )
       .join(" ");
   return "";
 }
@@ -103,7 +109,7 @@ for (const ex of BUNDLED_EXERCISES as SkillExercise[]) {
             add(id, "alternatif farklı kelimeler", `görev ${i + 1}: "${alt}"`);
       } else if (t.kind === "sentence") {
         if ((t.words?.length ?? 0) < 2) add(id, "kelime yok", `görev ${i + 1}`);
-      } else {
+      } else if (t.kind === "free" || t.kind === "reply") {
         if (!t.prompt?.trim()) add(id, "senaryo yok", `görev ${i + 1}`);
         if (!t.checklist?.length) add(id, "kontrol listesi yok", `görev ${i + 1}`);
         if (!t.sample?.trim()) add(id, "örnek cevap yok", `görev ${i + 1}`);

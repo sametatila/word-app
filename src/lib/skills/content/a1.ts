@@ -50,6 +50,22 @@ export const a1: SkillExercise[] = [
         explain:
           "Son cümle „Schreib mir bitte bis 17 Uhr!“ — Murat en geç saat 17'ye kadar yazmalı.",
       },
+      {
+        kind: "gapfill",
+        text: "Metinden tamamla: „Wir können uns um ___ Uhr vor dem Kino treffen.“",
+        options: [],
+        answer: 0,
+        accept: ["19:30", "19.30", "halb acht"],
+        explain: "Buluşma saati metinde „um 19:30 Uhr“ — film 20'de başlıyor, yarım saat önce buluşuyorlar.",
+      },
+      {
+        kind: "short_answer",
+        text: "Wer kommt auch mit ins Kino? (1–3 kelime)",
+        options: [],
+        answer: 0,
+        accept: ["Lena", "Schwester Lena", "Sofias Schwester", "ihre Schwester", "die Schwester"],
+        explain: "„Meine Schwester Lena kommt auch mit“ — Sofia'nın kız kardeşi Lena da geliyor.",
+      },
     ],
   },
   {
@@ -679,6 +695,22 @@ export const a1: SkillExercise[] = [
         answer: 0,
         explain:
           "Satıcı „die Bäckerei ist gleich neben dem Markt“ diyor — fırın pazarın hemen yanında.",
+      },
+      {
+        kind: "dictation",
+        text: "Dikte: Lena'nın ilk cümlesini dinle ve yaz.",
+        options: [],
+        answer: 0,
+        accept: ["Ja, gern. Ich suche Äpfel.", "Ja gern, ich suche Äpfel."],
+        explain: "„Ja, gern. Ich suche Äpfel.“ — suchen (aramak) + Akkusativ nesne; Äpfel çoğul, umlautlu.",
+      },
+      {
+        kind: "order",
+        text: "Konuşmanın sırası: olayları doğru sıraya koy.",
+        options: [],
+        answer: 0,
+        items: ["Lena sucht Äpfel.", "Der Verkäufer sagt den Preis.", "Lena fragt nach Brot.", "Lena zahlt 5 Euro."],
+        explain: "Önce elma aranır, fiyat söylenir, ekmek sorulur (yok), sonra yalnız elmalar ödenir.",
       },
     ],
   },
@@ -1363,8 +1395,28 @@ export const a1: SkillExercise[] = [
       { de: "arbeiten als", tr: "… olarak çalışmak", en: "to work as" },
       { de: "das Hobby", tr: "hobi", en: "hobby" },
     ],
-    minutes: 6,
+    minutes: 7,
     tasks: [
+      {
+        kind: "form",
+        prompt: "Kurs kayıt formunu Elif için doldur.",
+        facts: "Elif Kaya, 29 yaşında, İzmir doğumlu; Berlin'de Schillerstraße 12'de oturuyor; öğretmen; Türkçe ve İngilizce biliyor.",
+        fields: [
+          { label: "Vorname", answer: "Elif" },
+          { label: "Nachname", answer: "Kaya" },
+          { label: "Alter", answer: "29", accept: ["29 Jahre"] },
+          { label: "Geburtsort", answer: "Izmir", accept: ["İzmir"] },
+          { label: "Wohnort", answer: "Berlin" },
+          { label: "Beruf", answer: "Lehrerin", accept: ["Lehrer"] },
+        ],
+      },
+      {
+        kind: "rewrite",
+        prompt: "Aynı cümleyi resmî hitapla (Sie) yaz.",
+        source: "Wo wohnst du?",
+        answer: "Wo wohnen Sie?",
+        why: "Resmî hitapta özne Sie (büyük harf) ve fiil -en biçiminde: wohnen Sie.",
+      },
       {
         kind: "sentence",
         words: [

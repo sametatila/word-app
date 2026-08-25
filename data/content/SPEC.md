@@ -30,9 +30,10 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 ### SkillExercise
 - `id` benzersiz (bütün kurslar arasında), `level` ∈ A1–C1, `title` Almanca, `genre`, `intro` Türkçe, `minutes` 1–20.
 - `gloss[]`: `de` metinde geçer (`contains`, `data/meanings/contains.mjs`), `tr` tek karşılık, `en` var (uyarı).
-- `questions[]` (okuma/dinleme): ≥ 3 soru; `options` 2–4; `answer` indeks aralıkta; `explain` Türkçe, boş değil — geri bildirimin "neden"i budur (WP-13).
+- `questions[]` (okuma/dinleme): ≥ 3 soru; `explain` Türkçe, boş değil — geri bildirimin "neden"i budur (WP-13). `kind` (WP-31): `mcq`/`truefalse` → `options` 2–4, `answer` indeks aralıkta; `gapfill` (soruda `___`), `short_answer` (≤ 5 kelime), `dictation` (cümle bölümlerde geçer) → `accept[]` (ilk kanonik), `options: []`, `answer: 0`; `order` → `items[]` doğru sıra (3–6). Egzersiz başına çoktan seçmeli olmayan ≥ 2 soru hedefi (uyarı).
 - `cando?: string[]` — CEFR yapabilirlik etiketleri (WP-43 listesi; şimdilik serbest kısa etiket, ör. `"a1.self.introduce"`).
 - Yazma `free` görevi: `checklist` ≥ 2, `minWords` 15–200, `phrases` ≥ 2, `sample` ≥ minWords kelime.
+- Yazma görev türleri (WP-31): `reply` (free + zorunlu `stimulus`), `form` (`facts` Türkçe, `fields[]` 3–8: `label` Almanca alan adı, `answer`, `accept?`), `rewrite` (`prompt` Türkçe yönerge, `source` ≠ `answer`, `alternatives?`, `why?`), `summary` (B1+; `source`, `maxSentences` 1–4, `sample`).
 - Konuşma drill'i: `tasks` ≥ 4, her `de` ≤ 12 kelime; `confusions[].heard` boş değil.
 - Konuşma diyaloğu: `dialogue[].id` benzersiz, her `next` var olan bir tura gider, `fallback.example` boş değil, `targets` ≥ 2.
 

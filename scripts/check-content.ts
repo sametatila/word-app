@@ -136,14 +136,29 @@ function checkSkills(list: SkillExercise[]) {
       if (e.questions.length < 3) W(w, `${e.questions.length} soru (< 3)`);
       e.questions.forEach((q, i) => {
         const qw = `${w} soru ${i + 1}`;
+        const kind = q.kind ?? "mcq";
         if (!q.text?.trim()) E(qw, "soru metni boş");
-        if (!q.options || q.options.length < 2 || q.options.length > 4) E(qw, `şık sayısı ${q.options?.length ?? 0}`);
-        if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options?.length ?? 0)) E(qw, `answer indeksi aralık dışı: ${q.answer}`);
+        // Yazılı türler (WP-31): şık yerine kabul listesi; sıralama: maddeler.
+        if (kind === "gapfill" || kind === "short_answer" || kind === "dictation" || kind === "produce") {
+          if (!q.accept?.length) E(qw, `${kind}: accept boş`);
+          for (const a of q.accept ?? []) if (trLetters(a)) E(qw, `${kind}: accept içinde Türkçe harf "${a}"`);
+          if (kind === "short_answer" && (q.accept ?? []).some((a) => wc(a) > 5)) W(qw, "short_answer: kabul edilen cevap > 5 kelime");
+          if (kind === "gapfill" && !/___/.test(q.text)) W(qw, "gapfill: soruda ___ boşluğu yok");
+          if (kind === "dictation" && e.skill === "listening" && !e.segments.some((s) => s.text.includes(q.accept![0]))) W(qw, "dictation: cümle bölümlerde geçmiyor");
+        } else if (kind === "order") {
+          if (!q.items || q.items.length < 3 || q.items.length > 6) E(qw, `order: ${q.items?.length ?? 0} madde (3–6)`);
+        } else {
+          if (!q.options || q.options.length < 2 || q.options.length > 4) E(qw, `şık sayısı ${q.options?.length ?? 0}`);
+          if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options?.length ?? 0)) E(qw, `answer indeksi aralık dışı: ${q.answer}`);
+          if (new Set(q.options).size !== q.options?.length) E(qw, "yinelenen şık");
+        }
         if (!q.explain?.trim()) E(qw, "explain (neden) boş");
         else if (q.explain.length > 260) W(qw, `explain ${q.explain.length} karakter (> 260)`);
-        if (new Set(q.options).size !== q.options?.length) E(qw, "yinelenen şık");
         if (wc(q.text) > 30) W(qw, `soru ${wc(q.text)} kelime (> 30)`);
       });
+      // WP-31 kabul ölçütü: üretim/gapfill soruları — henüz pilot; eksikse uyarı.
+      const written = e.questions.filter((q) => ["gapfill", "short_answer", "dictation", "order", "produce"].includes(q.kind ?? "mcq")).length;
+      if (written < 2) W(w, `çoktan seçmeli olmayan soru ${written} (< 2)`);
     }
     if (e.skill === "writing") {
       if (!e.tasks.length) E(w, "yazma görevi yok");
@@ -155,6 +170,22 @@ function checkSkills(list: SkillExercise[]) {
         } else if (t.kind === "build") {
           if (!t.tr?.trim() || !t.answer?.trim()) E(tw, "build: tr/answer boş");
           if (trLetters(t.answer)) E(tw, "build: answer içinde Türkçe harf");
+        } else if (t.kind === "form") {
+          if (!t.prompt?.trim() || !t.facts?.trim()) E(tw, "form: prompt/facts boş");
+          if (!t.fields || t.fields.length < 3 || t.fields.length > 8) E(tw, `form: ${t.fields?.length ?? 0} alan (3–8)`);
+          for (const f of t.fields ?? []) if (!f.label?.trim() || !f.answer?.trim()) E(tw, `form: alan eksik ${JSON.stringify(f)}`);
+        } else if (t.kind === "rewrite") {
+          if (!t.prompt?.trim() || !t.source?.trim() || !t.answer?.trim()) E(tw, "rewrite: prompt/source/answer boş");
+          if (trLetters(t.answer)) E(tw, "rewrite: answer içinde Türkçe harf");
+          if (t.source.trim() === t.answer.trim()) E(tw, "rewrite: source ile answer aynı");
+        } else if (t.kind === "summary") {
+          if (!t.prompt?.trim() || !t.source?.trim() || !t.sample?.trim()) E(tw, "summary: prompt/source/sample boş");
+          if (t.maxSentences < 1 || t.maxSentences > 4) W(tw, `summary: maxSentences ${t.maxSentences}`);
+          if (e.level === "A1" || e.level === "A2") W(tw, "summary görevi B1+ için");
+        } else if (t.kind === "reply") {
+          if (!t.prompt?.trim() || !t.stimulus?.trim()) E(tw, "reply: prompt/stimulus boş");
+          if ((t.checklist?.length ?? 0) < 2) W(tw, "reply: checklist < 2");
+          if (t.minWords < 15 || t.minWords > 200) W(tw, `reply: minWords ${t.minWords}`);
         } else {
           if (!t.prompt?.trim()) E(tw, "free: prompt boş");
           if ((t.checklist?.length ?? 0) < 2) W(tw, "free: checklist < 2");
